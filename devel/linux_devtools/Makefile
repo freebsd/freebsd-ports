@@ -36,6 +36,7 @@ RUN_DEPENDS= ${LINUXBASE}/lib/libc-2.3.2.so:${PORTSDIR}/emulators/linux_base-8
 
 RESTRICTED=		"binaries under GNU GPL without accompanying source"
 
+NO_LATEST_LINK=		yes
 ONLY_FOR_ARCHS=		i386
 CONFLICTS=		linux_devtools-*
 DIST_SUBDIR=		rpm/${MACHINE_ARCH}/${PORTVERSION}
