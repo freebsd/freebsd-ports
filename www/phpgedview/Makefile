@@ -5,35 +5,63 @@
 # $FreeBSD$
 #
 
-PORTNAME=	phpgedview
-PORTVERSION=	2.65.3
+PORTNAME=	phpGedView
+PORTVERSION=	3.1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	phpGedView-${PORTVERSION}
+MASTER_SITE_SUBDIR=	phpgedview
 
-MAINTAINER=	hubert@frbsd.org
+MAINTAINER=	alecn2002@yandex.ru
 COMMENT=	Online genealogy viewer
 
+.if	defined(WITH_APACHE1)
+RUN_DEPENDS=	${LOCALBASE}/sbin/httpd:${PORTSDIR}/www/apache13
+.else
+RUN_DEPENDS=	${LOCALBASE}/sbin/httpd:${PORTSDIR}/www/apache2
+.endif
+
+.if	defined(WITH_MYSQL) || defined(WITH_MYSQL41)
+RUN_DEPENDS+=	${LOCALBASE}/bin/mysql_config:${PORTSDIR}/database/mysql41-server
+.endif
+.if	defined(WITH_MYSQL40)
+RUN_DEPENDS+=	${LOCALBASE}/sbin/mysqlcc:${PORTSDIR}/database/mysql40-server
+.endif
+# .if	defined(WITH_MYSQL50)
+# RUN_DEPENDS+=	${LOCALBASE}/sbin/mysqlcc:${PORTSDIR}/database/mysql50-server
+# .endif
+
+WRKSRC=		${WRKDIR}/${PORTNAME}
+
 USE_PHP=	yes
-WRKSRC=		${WRKDIR}/phpGedView
 NO_BUILD=	yes
 
 GEDVIEWDIR?=	www/data/phpGedView
+FULLGWDIR=	${LOCALBASE}/${GEDVIEWDIR}
 PLIST_SUB+=	GEDVIEWDIR=${GEDVIEWDIR}
 
+PLIST=		${WRKDIR}/pkg-plist
+
+FILES_TO_DISTATE=	authentication_index.php \
+			authentication_mysql.php \
+			config.php \
+			config_download.php \
+			config_gedcom.php
+
+pre-install:
+.for f in ${FILES_TO_DISTATE}
+	${CP}  ${WRKSRC}/${f} ${WRKSRC}/${f}-dist
+.endfor
+	${FIND} -s -d ${WRKSRC} -type f | ${SED} "s?${WRKSRC}?%%GEDVIEWDIR%%?g" >${PLIST}
+	${FIND} -s -d ${WRKSRC} -type d  | ${SED} "s?${WRKSRC}?@dirrm %%GEDVIEWDIR%%?g" >> ${PLIST}
+
 do-install:
-	${MKDIR} ${PREFIX}/${GEDVIEWDIR}
-	${LN} -f ${WRKSRC}/authenticate.php ${WRKSRC}/authenticate.php-dist
-	${LN} -f ${WRKSRC}/config.php ${WRKSRC}/config.php-dist
-	${CP} -Rn ${WRKSRC}/* ${PREFIX}/${GEDVIEWDIR}
-	${RM} ${PREFIX}/${GEDVIEWDIR}/GPL.txt
-	${RM} ${PREFIX}/${GEDVIEWDIR}/changelog.txt
-	${RM} ${PREFIX}/${GEDVIEWDIR}/languages/LANG_CHANGELOG.txt
-	${FIND} ${PREFIX}/${GEDVIEWDIR} -type d -exec ${CHMOD} a+x {} \;
-	${CHMOD} a+w ${PREFIX}/${GEDVIEWDIR}/authenticate.php
-	${CHMOD} a+w ${PREFIX}/${GEDVIEWDIR}/config.php
-	${CHMOD} a+w ${PREFIX}/${GEDVIEWDIR}/index
+	${INSTALL_DATA} -d ${FULLGWDIR}
+	${CP} -Rnv ${WRKSRC}/* ${FULLGWDIR}
+	${FIND} ${FULLGWDIR} -type d -exec ${CHMOD} a+x {} \;
+.for f in ${FILES_TO_DISTATE}
+	${CHMOD} a+w ${FULLGWDIR}/${f}
+.endfor
+	${CHMOD} a+w ${FULLGWDIR}/index
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
