@@ -39,8 +39,8 @@ MAN5=	access.5 aliases.5 canonical.5 pcre_table.5 regexp_table.5 \
 	relocated.5 transport.5 virtual.5
 
 MAN8=	bounce.8 cleanup.8 defer.8 error.8 flush.8 lmtp.8 local.8 \
-	master.8 nqmgr.8 pickup.8 pipe.8 qmgr.8 qmqpd.8 showq.8 smtp.8 \
-	smtpd.8 spawn.8 trivial-rewrite.8 virtual.8
+	master.8 nqmgr.8 pickup.8 pipe.8 proxymap.8 qmgr.8 qmqpd.8 showq.8 \
+	smtp.8 smtpd.8 spawn.8 trivial-rewrite.8 virtual.8
 
 # TLS patch adds to MAN8 but doesn't have .html file, so avoid trying to
 # patch it.
