@@ -1,4 +1,4 @@
-bin/ko-communicator-4.07
+bin/ko-communicator-4.08
 @exec /bin/ln -sf %f %B/netscape
 lib/netscape/ko_KR.EUC/Netscape
 lib/netscape/ko_KR.EUC/about

@@ -1,16 +1,16 @@
 # New ports collection makefile for: Netscape browser with Korean resources
-# Version required:	4.07
+# Version required:	4.08
 # Date created:		25 Oct 1998
 # Whom:			CHOI Junho <junker@jazz.snu.ac.kr>
 #
-# $Id$
+# $Id: Makefile,v 1.9 1998/12/13 22:00:40 kuriyama Exp $
 #
 # based on japanese/netscape4-*
 
 DISTNAME=	ko-netscape-${BROWSER}
 CATEGORIES=	korean www
 MASTER_SITES=	ftp://jazz.snu.ac.kr/pub/unix/netscape-ko/
-DISTFILES=	netscape-v407.generic-generic-generic-981014.tar.gz
+DISTFILES=	${KOREAN_KIT}.tar.gz
 
 MAINTAINER?=	junker@jazz.snu.ac.kr
 
@@ -21,12 +21,13 @@ RUN_DEPENDS= \
 
 NO_BUILD=	yes
 STRIP=
-WRKSRC=		${WRKDIR}/netscape-v407.generic-generic-generic
+WRKSRC=		${WRKDIR}/${KOREAN_KIT}
 
 BROWSER=	${BROWSER_NAME}-${BROWSER_VER}
 BROWSER_NAME?=	communicator
-BROWSER_VER=	4.07
+BROWSER_VER=	4.08
 LANG=		ko_KR.EUC
+KOREAN_KIT=	netscape-v408.generic-generic-generic-19981227
 NDIR=		${PREFIX}/lib/netscape
 MAKESCRIPT=	${SED} -e "s;@X11BASE@;${X11BASE};g" \
 			-e "s;@PREFIX@;${PREFIX};g" \
