@@ -1,0 +1,11 @@
+--- hostfiles.c.orig	Sat Sep 11 10:40:33 1999
++++ hostfiles.c	Sat Sep 11 10:42:36 1999
+@@ -166,7 +166,7 @@
+ 	else
+ 		{
+ 		tmtime = gmtime (&nexttime);
+-		ndate = (tmtime -> tm_year * 10000) +
++		ndate = (tmtime -> tm_year%100 * 10000) +
+ 			   ((tmtime -> tm_mon + 1) * 100) +
+ 				 tmtime -> tm_mday;
+ 		ntime = (tmtime -> tm_hour * 10000) +
