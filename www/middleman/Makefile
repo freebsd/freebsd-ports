@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	middleman
-PORTVERSION=	1.7
+PORTVERSION=	1.7.1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	middle-man
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ponomarew@oberon.net
 COMMENT=	A robust proxy server
@@ -52,11 +51,9 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/scripts/mman.init \
 		${PREFIX}/etc/rc.d/mman.sh.sample
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/middleman
-	${INSTALL_DATA} ${WRKSRC}/scripts/filter.pl \
-		${PREFIX}/share/doc/middleman/
-	${INSTALL_DATA} ${WRKSRC}/README.html \
-		${PREFIX}/share/doc/middleman/
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/scripts/filter.pl ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.html ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
