@@ -1191,6 +1191,7 @@
     SUBDIR += simgear
     SUBDIR += simulavr
     SUBDIR += skalibs
+    SUBDIR += smc
     SUBDIR += smv
     SUBDIR += soup
     SUBDIR += sourcenav
