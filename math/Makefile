@@ -11,6 +11,7 @@
     SUBDIR += blas
     SUBDIR += calc
     SUBDIR += calctool
+    SUBDIR += cln
     SUBDIR += concorde
     SUBDIR += dcdflib
     SUBDIR += eispack

@@ -1,0 +1,19 @@
+--- Makefile.in.orig	Sun Feb 11 16:52:48 2001
++++ Makefile.in	Sun Feb 11 17:03:58 2001
+@@ -33,14 +33,13 @@
+ 
+ install : installdirs force
+ 	cd @subdir@; $(MAKE) install
+-	$(INSTALL_PROGRAM) cln-config $(DESTDIR)$(bindir)/cln-config
++	$(INSTALL) cln-config $(DESTDIR)$(bindir)/cln-config
+ 	$(INSTALL_DATA) cln-config.1 $(DESTDIR)$(mandir)/man1/cln-config.1
+-	$(INSTALL_DATA) cln.m4 $(DESTDIR)$(datadir)/aclocal/cln.m4
++	$(INSTALL_DATA) cln.m4 $(DESTDIR)$(prefix)/share/aclocal/cln.m4
+ 
+ installdirs : force
+ 	cd @subdir@; $(MAKE) installdirs
+ 	$(MKDIR) $(DESTDIR)$(mandir)/man1
+-	$(MKDIR) $(DESTDIR)$(datadir)/aclocal
+ 	$(MKDIR) $(DESTDIR)$(bindir)
+ 
+ uninstall : force
