@@ -1,0 +1,23 @@
+--- xconfig.h.orig	Thu Mar 25 08:47:31 1999
++++ xconfig.h	Fri May 24 04:35:10 2002
+@@ -4,10 +4,10 @@
+ #include <time.h>
+ #include <string.h>
+ #include <strings.h>
+-#include <qapplication.h>
+-#include <qpushbutton.h>
+-#include <qlabel.h>
+-#include <qstring.h>
++#include <X11/qt1/qapplication.h>
++#include <X11/qt1/qpushbutton.h>
++#include <X11/qt1/qlabel.h>
++#include <X11/qt1/qstring.h>
+ 
+ /* strmid.cpp */
+ char strmid(char*,char*,int,int);
+@@ -32,4 +32,4 @@
+ long fsize(FILE*);
+ 
+ /* xpeq.cpp */
+-void f(char*);
++void f(char*);

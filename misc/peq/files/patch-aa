@@ -1,0 +1,90 @@
+--- Makefile.orig	Thu Mar 25 08:47:31 1999
++++ Makefile	Fri May 24 04:36:25 2002
+@@ -4,10 +4,10 @@
+ VERSION = 0.7.1
+ 
+ # Your C++ compiler
+-CC = g++
++CC = $(CXX)
+ 
+ # Flags to pass to the C++ compiler
+-FLAGS = -O -Wall
++FLAGS = -DPREFIX=\"${PREFIX}\" ${CFLAGS} -L /usr/X11R6/lib -I /usr/X11R6/include
+ 
+ # Your tar
+ TAR = tar
+@@ -17,13 +17,13 @@
+ ZIPR = gzip -9
+ 
+ # Default installion directory for the console version of PEQ
+-DIR_CONSOLE_PEQ = /usr/games
++DIR_CONSOLE_PEQ = ${PREFIX}/bin
+ 
+ # Default installion directory for the X version of PEQ
+-DIR_X_PEQ = /usr/games
++DIR_X_PEQ = ${PREFIX}/bin
+ 
+ # Default installion directory for peq.lib (the quote library)
+-DIR_LIB = /usr/share/games
++DIR_LIB = ${PREFIX}/share/peq
+ 
+ # Get current date
+ LIB_DATE = `date +%m%d%y`
+@@ -40,31 +40,21 @@
+ 	$(CC) $(FLAGS) -c ocfile.cpp
+ 	$(CC) $(FLAGS) -c arg.cpp
+ 	$(CC) $(FLAGS) -o peq peq.cpp strmid.o show.o read.o proc.o ocfile.o arg.o
+-	$(CC) $(FLAGS) -o xpeq -lqt xpeq.cpp strmid.o show.o read.o proc.o ocfile.o
++	$(CC) $(FLAGS) -o xpeq -lqt1 xpeq.cpp strmid.o show.o read.o proc.o ocfile.o
+ 
+-## "install" gives a handy message about how to install PEQ
+ install:
+-	@echo "No such option! Use..."
+-	@echo "'make install-console' to install the console of PEQ"
+-	@echo "'make install-x' to install the X version of PEQ"
+-	@echo "'make install-lib' to install peq.lib (the quote library)"
+-	@echo "'make install-all' to install all of the above"
+-	@echo "'make install-console-lib' to install console PEQ and peq.lib"
+-	@echo "'make install-x-lib' to install X PEQ and peq.lib"
+-	@echo "'make install-console-x' to install console and X PEQ"
+-	@echo "If in doubt... just type 'make install-all' :-)"
++	make install-console ; make install-x ; make install-lib
+ 
+ install-console:
+-	cp peq $(DIR_CONSOLE_PEQ)/peq -f
++	cp -f peq $(DIR_CONSOLE_PEQ)/peq
+ 
+ install-x:
+-	cp xpeq $(DIR_X_PEQ)/xpeq -f
++	cp -f xpeq $(DIR_X_PEQ)/xpeq
+ 
+ install-lib:
+-	cp peq.lib $(DIR_LIB)/peq.lib -f
+-
+-install-all:
+-	make install-console ; make install-x ; make install-lib
++	rm -rf $(DIR_LIB)
++	mkdir $(DIR_LIB)
++	cp -f peq.lib $(DIR_LIB)/peq.lib
+ 
+ install-console-lib:
+ 	make install-console ; make install-lib
+@@ -78,9 +68,9 @@
+ ## "uninstall" erases all traces of PEQ from your system (but why would you
+ ## want to do that?)
+ uninstall:
+-	rm $(DIR_CONSOLE_PEQ)/peq -f
+-	rm $(DIR_X_PEQ)/xpeq -f
+-	rm $(DIR_LIB)/peq.lib -f
++	rm -f $(DIR_CONSOLE_PEQ)/peq
++	rm -f $(DIR_X_PEQ)/xpeq
++	rm -f $(DIR_LIB)/peq.lib
+ 
+ ## "clean" cleans up all the junk and leaves the uncompiled code alone
+ clean:
+@@ -126,4 +116,4 @@
+ ## "dist" wraps peq.lib into a neat little tarball
+ dist-lib:
+ 	cp peq.lib peq.lib.$(LIB_DATE)
+-	$(ZIPR) peq.lib.$(LIB_DATE)
++	$(ZIPR) peq.lib.$(LIB_DATE)
