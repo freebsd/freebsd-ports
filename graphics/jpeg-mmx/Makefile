@@ -19,7 +19,7 @@ RUN_DEPENDS=	cjpeg:${PORTSDIR}/graphics/jpeg
 
 ONLY_FOR_ARCHS=	i386
 
-USE_LIBTOOL_VER=13
+USE_LIBTOOL_VER=15
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--enable-shared --enable-static
@@ -42,6 +42,9 @@ PLIST_FILES=	${BIN_FILES:S|^|bin/|:S|$|${JPEG_EXT}|} \
 .if defined(J_MAXMEM)
 CONFIGURE_ARGS+=	--enable-maxmem=${J_MAXMEM}
 .endif
+
+post-patch:
+	@${LN} -sf ${LIBTOOL} ${WRKSRC}/libtool
 
 do-install:
 .for f in ${BIN_FILES}
