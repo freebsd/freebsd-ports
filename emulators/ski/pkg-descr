@@ -1,0 +1,27 @@
+Ski provides a functional IA-64 simulator, meaning that it simulates the
+IA-64 architecture, as opposed to a particular implementation (such as
+Itanium).  The advantage of a functional simulator is that it executes
+quickly---Ski simulatues in excess of 2 million IA-64 instructions per
+second on a fast Pentium-III.  On the other hand, since it doesn't
+simulate the micro-architecture, it cannot be used for performance
+tuning as the results would be completely meaningless.  For example,
+Ski simulates instructions one at a time, whereas all IA-64 chips
+allow simultaneous execution of multiple instructions.
+
+Ski simulates the complete architecture, as defined by the IA-64
+architecture manuals that can be found at the following URLs:
+
+	http://developer.intel.com/design/ia-64/manuals/
+	http://devresource.hp.com/devresource/Docs/Refs/IA64ISA/
+
+Ski can execute in one of two modes: system-mode or user-mode.  In
+system-mode, both application and system-mode execution is simulated.
+In user-mode, only application-level instructions are simulated.  All
+system calls are intercepted and translated into corresponding calls
+on the host OS (i.e., Linux/x86).  Since user-mode involves less
+simulation, it executes faster.  On the other hand, certain things
+(such as multi-threading) are not supported in user-mode execution.
+Thus, for perfect simulation accuracy, it's best to use system-mode.
+For more details on the internal works of the user-mode environment,
+please refer to HP Labs technical report HPL-2000-85
+(http://www.hpl.hp.com/techreports/2000/HPL-2000-85.html).
