@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ipa
-PORTVERSION=	1.2.5
+PORTVERSION=	1.2.6
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.simon.org.ua/ipa/ \
 		http://www.mirrors.wiretapped.net/security/network-monitoring/ipa/ \
@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.simon.org.ua/ipa/ \
 
 MAINTAINER=	simon@simon.org.ua
 
-NO_PACKAGE=	"Needs to be built uniquely for each site"
+NO_PACKAGE=	"Needs to be built uniquely for each host"
 ALL_TARGET=	FreeBSD
 .ifdef(NOPORTDOCS)
 MAKE_ENV=	NOPORTDOCS="${NOPORTDOCS}"
