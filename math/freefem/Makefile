@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	freefem
-PORTVERSION=	3.5.4
+PORTVERSION=	3.5.7
 CATEGORIES=	math cad
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	kfem
@@ -23,12 +23,6 @@ INSTALLS_SHLIB=	yes
 
 MAN1=		freefem.1
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile (bad C++ code)"
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O3 |\$$CXXFLAGS |g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|debian doc freefem|debian freefem|g ; \
@@ -44,4 +38,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/examples/*.pde ${EXAMPLESDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
