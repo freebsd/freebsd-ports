@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	maradns
-PORTVERSION=	0.8.06
+PORTVERSION=	0.8.16
 CATEGORIES=	net
 MASTER_SITES=	http://www.maradns.org/download/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/
@@ -18,11 +18,13 @@ USE_BZIP2=	yes
 MAN1=	askmara.1 getzone.1
 MAN8=	maradns.8 zoneserver.8
 
-DOCS=	RFC1035.compliance csv1.format draft-skwan-utf8-dns-05.txt \
-	example_csv1 example_mararc faq.txt handling.compression \
-	mararc.format multiple.qdcount recursive-case-insensitive \
-	recursive.algorithm resolution.algorithm rfc2044.txt rtest.output \
-	www.monty.de ../0QuickStart ../CHANGELOG.html ../ROADMAP ../CREDITS
+DDOCS=	RFC1035.compliance cache.poison.protection csv1.format \
+	draft-skwan-utf8-dns-05.txt example_full_mararc faq.html \
+	firewall.configuration handling.compression mararc.format \
+	multiple.qdcount recursive-case-insensitive recursive.algorithm \
+	resolution.algorithm rfc2044.txt rtest.output www.monty.de
+DOCS=	example_csv1 example_mararc faq.txt ../0QuickStart ../CHANGELOG.html \
+	../TODO.done ../TODO.first ../TODO.second ../changelog.html ../CREDITS
 
 FIXPREFIX=	00QuickStart CHANGELOG.html doc/man/maradns.8 doc/faq.txt \
 		doc/man/zoneserver.8 parse/ParseMaraRc.c doc/example_mararc
@@ -44,7 +46,14 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/man/askmara.1 ${PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/doc/man/getzone.1 ${PREFIX}/man/man1
 .if !defined(NOPORTDOCS)
-	${INSTALL} -d -o root -g wheel -m 0755 ${PREFIX}/share/doc/maradns
+	${INSTALL} -d -o root -g wheel -m 0755 \
+		${PREFIX}/share/doc/maradns/detailed/spammers
+	${INSTALL_DATA} ${WRKSRC}/doc/detailed/spammers/azmalink.net \
+		${PREFIX}/share/doc/maradns/detailed/spammers
+.for f in ${DDOCS}
+	${INSTALL_DATA} ${WRKSRC}/doc/detailed/${f} \
+		${PREFIX}/share/doc/maradns/detailed
+.endfor
 .for f in ${DOCS}
 	${INSTALL_DATA} ${WRKSRC}/doc/${f} ${PREFIX}/share/doc/maradns
 .endfor

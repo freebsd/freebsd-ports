@@ -3,23 +3,33 @@ sbin/zoneserver
 sbin/getzone
 bin/askmara
 etc/mararc.sample
-%%PORTDOCS%%share/doc/maradns/RFC1035.compliance
-%%PORTDOCS%%share/doc/maradns/csv1.format
-%%PORTDOCS%%share/doc/maradns/draft-skwan-utf8-dns-05.txt
+%%PORTDOCS%%share/doc/maradns/detailed/spammers/azmalink.net
+%%PORTDOCS%%share/doc/maradns/detailed/RFC1035.compliance
+%%PORTDOCS%%share/doc/maradns/detailed/cache.poison.protection
+%%PORTDOCS%%share/doc/maradns/detailed/csv1.format
+%%PORTDOCS%%share/doc/maradns/detailed/draft-skwan-utf8-dns-05.txt
+%%PORTDOCS%%share/doc/maradns/detailed/example_full_mararc
+%%PORTDOCS%%share/doc/maradns/detailed/faq.html
+%%PORTDOCS%%share/doc/maradns/detailed/firewall.configuration
+%%PORTDOCS%%share/doc/maradns/detailed/handling.compression
+%%PORTDOCS%%share/doc/maradns/detailed/mararc.format
+%%PORTDOCS%%share/doc/maradns/detailed/multiple.qdcount
+%%PORTDOCS%%share/doc/maradns/detailed/recursive-case-insensitive
+%%PORTDOCS%%share/doc/maradns/detailed/recursive.algorithm
+%%PORTDOCS%%share/doc/maradns/detailed/resolution.algorithm
+%%PORTDOCS%%share/doc/maradns/detailed/rfc2044.txt
+%%PORTDOCS%%share/doc/maradns/detailed/rtest.output
+%%PORTDOCS%%share/doc/maradns/detailed/www.monty.de
 %%PORTDOCS%%share/doc/maradns/example_csv1
 %%PORTDOCS%%share/doc/maradns/example_mararc
 %%PORTDOCS%%share/doc/maradns/faq.txt
-%%PORTDOCS%%share/doc/maradns/handling.compression
-%%PORTDOCS%%share/doc/maradns/mararc.format
-%%PORTDOCS%%share/doc/maradns/multiple.qdcount
-%%PORTDOCS%%share/doc/maradns/recursive-case-insensitive
-%%PORTDOCS%%share/doc/maradns/recursive.algorithm
-%%PORTDOCS%%share/doc/maradns/resolution.algorithm
-%%PORTDOCS%%share/doc/maradns/rfc2044.txt
-%%PORTDOCS%%share/doc/maradns/rtest.output
-%%PORTDOCS%%share/doc/maradns/www.monty.de
 %%PORTDOCS%%share/doc/maradns/0QuickStart
-%%PORTDOCS%%share/doc/maradns/CHANGELOG.html
 %%PORTDOCS%%share/doc/maradns/CREDITS
-%%PORTDOCS%%share/doc/maradns/ROADMAP
+%%PORTDOCS%%share/doc/maradns/CHANGELOG.html
+%%PORTDOCS%%share/doc/maradns/TODO.done
+%%PORTDOCS%%share/doc/maradns/TODO.first
+%%PORTDOCS%%share/doc/maradns/TODO.second
+%%PORTDOCS%%share/doc/maradns/changelog.html
+%%PORTDOCS%%@dirrm share/doc/maradns/detailed/spammers
+%%PORTDOCS%%@dirrm share/doc/maradns/detailed
 %%PORTDOCS%%@dirrm share/doc/maradns
