@@ -7,7 +7,7 @@
 
 PORTNAME=	wesnoth
 PORTVERSION=	0.6.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://www.wesnoth.org/files/
 

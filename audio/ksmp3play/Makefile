@@ -8,7 +8,7 @@
 
 PORTNAME=	ksmp3play
 PORTVERSION=	0.5.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://www.xanadunet.net/ksmp3play/
 

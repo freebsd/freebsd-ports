@@ -7,7 +7,7 @@
 
 PORTNAME=	powerpak
 PORTVERSION=	20000511
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://www.angelfire.com/va/powerpakgsdk/images/
 DISTNAME=	PowerPak

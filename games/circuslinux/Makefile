@@ -7,7 +7,7 @@
 
 PORTNAME=	circuslinux
 PORTVERSION=	1.0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://www.nbswebfx.com/downloads/
 

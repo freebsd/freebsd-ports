@@ -8,7 +8,7 @@
 
 PORTNAME=	sdl_gui
 PORTVERSION=	0.10.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://www.newimage.com/~rhk/SDL_gui/
 DISTNAME=	SDL_gui-${PORTVERSION}

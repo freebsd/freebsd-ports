@@ -7,6 +7,7 @@
 
 PORTNAME=	frabs
 PORTVERSION=	2.1.0
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.cs.uidaho.edu/~cass0664/fRaBs/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}

@@ -7,7 +7,7 @@
 
 PORTNAME=	uhexen
 PORTVERSION=	0.601
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://uhexen.sourceforge.net/
 DISTNAME=	${PORTNAME}-latest
