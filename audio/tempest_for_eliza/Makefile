@@ -10,7 +10,7 @@ PORTVERSION=	1.0.2
 CATEGORIES=     audio
 MASTER_SITES=   http://www.erikyyy.de/tempest/
 
-MAINTAINER=	greid@ukug.uk.freebsd.org
+MAINTAINER=	greid@FreeBSD.org
 
 LIB_DEPENDS=	SDL-1.0.2:${PORTSDIR}/devel/sdl10
 
