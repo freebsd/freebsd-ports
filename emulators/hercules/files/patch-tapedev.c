@@ -1,7 +1,6 @@
-diff -uNr tapedev.c
---- tapedev.c	Tue Nov 20 17:39:47 2001
-+++ tapedev.c	Thu Jan 17 15:07:35 2002
-@@ -194,6 +194,7 @@
+--- tapedev.c.orig	Wed Jul  3 13:21:52 2002
++++ tapedev.c	Mon Sep  2 11:43:24 2002
+@@ -195,6 +195,7 @@
  /*-------------------------------------------------------------------*/
  /* Static data areas                                                 */
  /*-------------------------------------------------------------------*/
@@ -9,7 +8,7 @@ diff -uNr tapedev.c
  static struct mt_tape_info tapeinfo[] = MT_TAPE_INFO;
  static struct mt_tape_info densinfo[] = {
      {0x01, "NRZI (800 bpi)"},
-@@ -221,6 +222,7 @@
+@@ -222,6 +223,7 @@
      {0x8C, "EXB-8505 compressed"},
      {0x90, "EXB-8205 compressed"},
      {0, NULL}};
@@ -17,7 +16,7 @@ diff -uNr tapedev.c
  
  static PARSER ptab[] =
  {
-@@ -1142,6 +1144,7 @@
+@@ -1143,6 +1145,7 @@
  /*-------------------------------------------------------------------*/
  static U32 status_scsitape (DEVBLK *dev)
  {
@@ -25,7 +24,7 @@ diff -uNr tapedev.c
  U32             stat;                   /* Tape status bits          */
  int             rc;                     /* Return code               */
  struct mtget    stblk;                  /* Area for MTIOCGET ioctl   */
-@@ -1158,6 +1161,7 @@
+@@ -1159,6 +1162,7 @@
                  dev->filename, strerror(errno));
          return 0;
      }
@@ -33,12 +32,12 @@ diff -uNr tapedev.c
      stat = stblk.mt_gstat;
  
      /* Display tape status */
-@@ -1190,10 +1194,14 @@
+@@ -1191,10 +1195,14 @@
          dev->prvblkpos = -1;
          dev->blockid = 0;
      }
 +#else
-+	stat = 0;
++	 stat = 0;
 +#endif
  
      /* Return tape status */
@@ -48,7 +47,7 @@ diff -uNr tapedev.c
  } /* end function status_scsitape */
  
  /*-------------------------------------------------------------------*/
-@@ -1204,6 +1212,7 @@
+@@ -1205,6 +1213,7 @@
  /*-------------------------------------------------------------------*/
  static int open_scsitape (DEVBLK *dev, BYTE *unitstat)
  {
@@ -56,7 +55,7 @@ diff -uNr tapedev.c
  int             rc;                     /* Return code               */
  int             i;                      /* Array subscript           */
  struct mtop     opblk;                  /* Area for MTIOCTOP ioctl   */
-@@ -1248,6 +1257,7 @@
+@@ -1249,6 +1258,7 @@
          return -1;
      }
  
@@ -64,7 +63,7 @@ diff -uNr tapedev.c
      /* Intervention required if no tape is mounted */
      if (GMT_DR_OPEN(stblk.mt_gstat))
      {
-@@ -1283,6 +1293,7 @@
+@@ -1284,6 +1294,7 @@
  
      /* Set the tape device to process variable length blocks */
      opblk.mt_op = MTSETBLK;
@@ -72,20 +71,20 @@ diff -uNr tapedev.c
      opblk.mt_count = 0;
      rc = ioctl (dev->fd, MTIOCTOP, (char*)&opblk);
      if (rc < 0)
-@@ -1311,6 +1322,12 @@
+@@ -1312,6 +1323,12 @@
  
      return 0;
  
 +#else
 +
-+	logmsg ("HHC286I SCSI Support is disabled\n");
-+	return -1;
++	 logmsg ("HHC286I SCSI Support is disabled\n");
++	 return -1
 +
 +#endif
  } /* end function open_scsitape */
  
  /*-------------------------------------------------------------------*/
-@@ -1323,6 +1340,7 @@
+@@ -1324,6 +1341,7 @@
  /*-------------------------------------------------------------------*/
  static int read_scsitape (DEVBLK *dev, BYTE *buf, BYTE *unitstat)
  {
@@ -93,20 +92,20 @@ diff -uNr tapedev.c
  int             rc;                     /* Return code               */
  
      /* Read data block from SCSI tape device */
-@@ -1346,6 +1364,12 @@
+@@ -1347,6 +1365,12 @@
      /* Return block length or zero if tapemark  */
      return rc;
  
 +#else
 +
-+	logmsg ("HHC286I SCSI Support is disabled\n");
-+	return -1;
++	 logmsg ("HHC286I SCSI Support is disabled\n");
++	 return -1;
 +
 +#endif
  } /* end function read_scsitape */
  
  /*-------------------------------------------------------------------*/
-@@ -1357,6 +1381,7 @@
+@@ -1358,6 +1382,7 @@
  static int write_scsitape (DEVBLK *dev, BYTE *buf, U16 len,
                          BYTE *unitstat)
  {
@@ -114,20 +113,20 @@ diff -uNr tapedev.c
  int             rc;                     /* Return code               */
  
      /* Write data block to SCSI tape device */
-@@ -1376,6 +1401,12 @@
+@@ -1377,6 +1402,12 @@
      /* Return normal status */
      return 0;
  
 +#else
 +
-+	logmsg ("HHC286I SCSI Support is disabled\n");
-+	return -1;
++	 logmsg ("HHC286I SCSI Support is disabled\n");
++	 return -1;
 +
 +#endif
  } /* end function write_scsitape */
  
  /*-------------------------------------------------------------------*/
-@@ -1386,6 +1417,7 @@
+@@ -1387,6 +1418,7 @@
  /*-------------------------------------------------------------------*/
  static int write_scsimark (DEVBLK *dev, BYTE *unitstat)
  {
@@ -135,20 +134,20 @@ diff -uNr tapedev.c
  int             rc;                     /* Return code               */
  struct mtop     opblk;                  /* Area for MTIOCTOP ioctl   */
  
-@@ -1408,6 +1440,12 @@
+@@ -1409,6 +1441,12 @@
      /* Return normal status */
      return 0;
  
 +#else
 +
-+	logmsg ("HHC286I SCSI Support is disabled\n");
-+	return -1;
++	 logmsg ("HHC286I SCSI Support is disabled\n");
++	 return -1;
 +
 +#endif
  } /* end function write_scsimark */
  
  /*-------------------------------------------------------------------*/
-@@ -1420,6 +1458,7 @@
+@@ -1421,6 +1459,7 @@
  /*-------------------------------------------------------------------*/
  static int fsb_scsitape (DEVBLK *dev, BYTE *unitstat)
  {
@@ -156,7 +155,7 @@ diff -uNr tapedev.c
  int             rc;                     /* Return code               */
  int             fsrerrno;               /* Value of errno after MTFSR*/
  U32             stat;                   /* Tape status bits          */
-@@ -1434,6 +1473,7 @@
+@@ -1435,6 +1474,7 @@
      /* Obtain tape status after forward space */
      stat = status_scsitape (dev);
  
@@ -164,7 +163,7 @@ diff -uNr tapedev.c
      /* If I/O error and status indicates EOF, then a tapemark
         was detected, so increment the file number and return 0 */
      if (rc < 0 && fsrerrno == EIO && GMT_EOF(stat))
-@@ -1442,6 +1482,7 @@
+@@ -1443,6 +1483,7 @@
          dev->blockid++;
          return 0;
      }
@@ -172,20 +171,20 @@ diff -uNr tapedev.c
  
      /* Handle MTFSR error condition */
      if (rc < 0)
-@@ -1460,6 +1501,12 @@
+@@ -1461,6 +1502,12 @@
      /* Return +1 to indicate forward space successful */
      return +1;
  
 +#else
 +
-+	logmsg ("HHC286I SCSI Support is disabled\n");
-+	return -1;
++	 logmsg ("HHC286I SCSI Support is disabled\n");
++	 return -1;
 +
 +#endif
  } /* end function fsb_scsitape */
  
  /*-------------------------------------------------------------------*/
-@@ -1472,6 +1519,7 @@
+@@ -1473,6 +1520,7 @@
  /*-------------------------------------------------------------------*/
  static int bsb_scsitape (DEVBLK *dev, BYTE *unitstat)
  {
@@ -193,7 +192,7 @@ diff -uNr tapedev.c
  int             rc;                     /* Return code               */
  int             bsrerrno;               /* Value of errno after MTBSR*/
  U32             stat;                   /* Tape status bits          */
-@@ -1480,6 +1528,7 @@
+@@ -1481,6 +1529,7 @@
      /* Obtain tape status before backward space */
      stat = status_scsitape (dev);
  
@@ -201,7 +200,7 @@ diff -uNr tapedev.c
      /* Unit check if already at start of tape */
      if (GMT_BOT(stat))
      {
-@@ -1488,6 +1537,7 @@
+@@ -1489,6 +1538,7 @@
          *unitstat = CSW_CE | CSW_DE | CSW_UC;
          return -1;
      }
@@ -209,20 +208,20 @@ diff -uNr tapedev.c
  
      /* Backspace block on SCSI tape */
      opblk.mt_op = MTBSR;
-@@ -1526,6 +1576,12 @@
+@@ -1527,6 +1577,12 @@
      /* Return +1 to indicate backspace successful */
      return +1;
  
 +#else
 +
-+	logmsg ("HHC286I SCSI Support is disabled\n");
-+	return -1;
++	 logmsg ("HHC286I SCSI Support is disabled\n");
++	 return -1;
 +
 +#endif
  } /* end function bsb_scsitape */
  
  /*-------------------------------------------------------------------*/
-@@ -1537,6 +1593,7 @@
+@@ -1538,6 +1594,7 @@
  /*-------------------------------------------------------------------*/
  static int fsf_scsitape (DEVBLK *dev, BYTE *unitstat)
  {
@@ -230,20 +229,20 @@ diff -uNr tapedev.c
  int             rc;                     /* Return code               */
  struct mtop     opblk;                  /* Area for MTIOCTOP ioctl   */
  
-@@ -1562,6 +1619,12 @@
+@@ -1563,6 +1620,12 @@
      /* Return normal status */
      return 0;
  
 +#else
 +
-+	logmsg ("HHC286I SCSI Support is disabled\n");
-+	return -1;
++	 logmsg ("HHC286I SCSI Support is disabled\n");
++	 return -1;
 +
 +#endif
  } /* end function fsf_scsitape */
  
  /*-------------------------------------------------------------------*/
-@@ -1573,6 +1636,7 @@
+@@ -1574,6 +1637,7 @@
  /*-------------------------------------------------------------------*/
  static int bsf_scsitape (DEVBLK *dev, BYTE *unitstat)
  {
@@ -251,20 +250,20 @@ diff -uNr tapedev.c
  int             rc;                     /* Return code               */
  struct mtop     opblk;                  /* Area for MTIOCTOP ioctl   */
  
-@@ -1599,6 +1663,12 @@
+@@ -1600,6 +1664,12 @@
      /* Return normal status */
      return 0;
  
 +#else
 +
-+	logmsg ("HHC286I SCSI Support is disabled\n");
-+	return -1;
++	 logmsg("HHC286I SCSI Support is disabled\n");
++	 return -1;
 +
 +#endif
  } /* end function bsf_scsitape */
  
  /*-------------------------------------------------------------------*/
-@@ -2725,7 +2795,9 @@
+@@ -2726,7 +2796,9 @@
  
          case TAPEDEVT_SCSITAPE:
              stat = status_scsitape (dev);
