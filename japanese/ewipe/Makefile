@@ -1,13 +1,13 @@
 # New ports collection makefile for:	ewipe
-# Version required:	0.4.3
+# Version required:	0.4.7
 # Date created:		17 October 1997
 # Whom:			itojun@itojun.org
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/10/17 13:02:48 itojun Exp $
 #
 
-DISTNAME=	ewipe0.4.4
-PKGNAME=	ewipe-0.4.4
+DISTNAME=	ewipe0.4.7
+PKGNAME=	ewipe-0.4.7
 CATEGORIES=	japanese x11
 MASTER_SITES=	http://al.ei.tuat.ac.jp/~sekisita/ewipe/
 
@@ -22,11 +22,11 @@ do-install:
 	${MKDIR} ${PREFIX}/lib/ewipe
 	${MKDIR} ${PREFIX}/share/doc/ewipe
 	${INSTALL_SCRIPT} ${WRKSRC}/ewipe ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/viewer.tcl ${PREFIX}/lib/ewipe
-	${INSTALL_DATA} ${WRKSRC}/tclIndex ${PREFIX}/lib/ewipe
+	for i in viewer.tcl edittable.tcl tclIndex; do \
+		${INSTALL_DATA} ${WRKSRC}/$$i ${PREFIX}/lib/ewipe; \
+	done
 .if !defined(NOPORTDOCS)
-	for i in dot.ewipe README Changes ewipe_sample.ewp \
-	    ewipe_sample2.ewp; do\
+	for i in dot.ewipe README Changes sample.ewp; do \
 		${INSTALL_DATA} ${WRKSRC}/$$i ${PREFIX}/share/doc/ewipe; \
 	done
 .endif
