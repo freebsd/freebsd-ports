@@ -1,0 +1,2 @@
+book create /dev/fd/3 60 3
+quit
