@@ -5,17 +5,18 @@
 # $FreeBSD$
 #
 
-PORTNAME=	wxgtk
+PORTNAME=	wx
 PORTVERSION=	2.4.2
-PORTREVISION?=	3
+PORTREVISION?=	4
+PKGNAMESUFFIX=	${WXGTK_FLAVOR}
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://wesley.informatik.uni-freiburg.de/pub/linux/wxxt/source/
 MASTER_SITE_SUBDIR=	wxwindows
 DISTNAME=	wxGTK-${PORTVERSION}
 
-MAINTAINER?=	ports@FreeBSD.org
-COMMENT?=	The wxWindows GUI toolkit with GTK+ bindings (unstable version)
+MAINTAINER?=	fjoe@FreeBSD.org
+COMMENT?=	The wxWindows GUI toolkit with GTK+ bindings
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
@@ -28,7 +29,7 @@ USE_GMAKE=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
-CONFIGURE_ARGS=	--with-libpng=sys \
+CONFIGURE_ARGS=--with-libpng=sys \
 		--with-libjpeg=sys \
 		--with-libtiff=sys \
 		--with-zlib=sys \
@@ -40,43 +41,56 @@ CONFIGURE_ENV=	CPPFLAGS="-I${WRKSRC}/include \
 		LDFLAGS="-L${LOCALBASE}/lib -liconv \
 			 -L${X11BASE}/lib \
 			 ${PTHREAD_LIBS}"
+MAKE_ENV=	WXGTK_FLAVOR="${WXGTK_FLAVOR}"
+PLIST=		${.CURDIR}/pkg-plist
 
-.if defined(WITH_GTK2)
-USE_GNOME=	gtk20
-.else
-USE_GNOME=	gtk12
+WXGTK_FLAVOR?=	gtk
+
+.if ${WXGTK_FLAVOR} != "gtk-common"
+RUN_DEPENDS=	${X11BASE}/include/wx/wx.h:${PORTSDIR}/x11-toolkits/wxgtk-common
 .endif
+
+.if ${WXGTK_FLAVOR:M*-common} != ""
+NO_BUILD=	yes
+INSTALL_TARGET=	install-common
+.endif # *-common
+
+.if ${WXGTK_FLAVOR:M*-contrib*} != ""
+BUILD_WRKSRC=	${WRKSRC}/contrib/src
+INSTALL_WRKSRC=	${BUILD_WRKSRC}
+
+.if ${WXGTK_FLAVOR} != "gtk-contrib-common"
+RUN_DEPENDS=	${X11BASE}/include/wx/stc/stc.h:${PORTSDIR}/x11-toolkits/wxgtk-contrib-common
+.if ${WXGTK_FLAVOR} == "gtk-contrib"
+LIB_DEPENDS+=	wx_gtk-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk-devel
+.elif ${WXGTK_FLAVOR} == "gtk2-contrib"
+LIB_DEPENDS+=	wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk2
+.elif ${WXGTK_FLAVOR} == "gtk2-unicode-contrib"
+LIB_DEPENDS+=	wx_gtk2u-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk2-unicode
+.endif
+.endif # !gtk-contrib-common
+.endif # *-contrib*
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_UNICODE)
-WITH_GTK2=	yes
-
+.if ${WXGTK_FLAVOR:M*-unicode*} != ""
 .if ${OSVERSION} < 500000
-BROKEN=		Unicode mode is not supported on your system
+BROKEN=		Systems prior to FreeBSD 5.0 currently out of support
 .else
 CONFIGURE_ARGS+=--enable-unicode
 .endif
-.endif # WITH_UNICODE
+.endif # *-unicode*
 
-.if defined(WITH_GTK2)
+.if ${WXGTK_FLAVOR:Mgtk2*} != ""
+USE_GNOME=	gtk20
 CONFIGURE_ARGS+=--enable-gtk2 ${MACHINE_ARCH}-portbld-freebsd${OSREL}
 .else
+USE_GNOME=	gtk12
 CONFIGURE_ARGS+=--host=${CONFIGURE_TARGET} --build=${CONFIGURE_TARGET}
 .endif
 
-pre-everything::
-.if !defined(WITH_GTK2)
-	@${ECHO_MSG} "* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *"
-	@${ECHO_MSG} "You can define WITH_GTK2=yes if you want to use Gtk20 toolkit."
-	@${ECHO_MSG} "This is marked as experimental by wxGTK authors."
-	@${ECHO_MSG} "Note: applications already linked to Gtk12 wxGTK will no longer work."
-	@${ECHO_MSG} "      You have to rebuild them by hand."
-	@${ECHO_MSG} "* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *"
-.endif
-
 pre-patch:
-.if defined(WITH_GTK2)
+.if ${WXGTK_FLAVOR:Mgtk2*} != ""
 	@${REINPLACE_CMD} -e 's|lgdk|lgdk-x11-2.0|g' ${WRKSRC}/configure
 .else
 	@${REINPLACE_CMD} -e 's|lgdk|lgdk12|g' ${WRKSRC}/configure

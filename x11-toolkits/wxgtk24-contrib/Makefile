@@ -5,16 +5,12 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	0
-PKGNAMESUFFIX=	-contrib
+PORTREVISION=	1
 
 MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	The wxWindows GUI toolkit contributed libraries
 
-BUILD_WRKSRC=	${WRKSRC}/contrib/src
-INSTALL_WRKSRC=	${BUILD_WRKSRC}
-
+WXGTK_FLAVOR=	gtk-contrib
 MASTERDIR=	${.CURDIR}/../wxgtk-devel
-PLIST=		${PKGDIR}/pkg-plist.contrib
 
 .include "${MASTERDIR}/Makefile"

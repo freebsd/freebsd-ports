@@ -85,24 +85,6 @@ include/wx/xrc/xh_unkwn.h
 include/wx/xrc/xh_wizrd.h
 include/wx/xrc/xml.h
 include/wx/xrc/xmlres.h
-lib/libwx_gtk_canvas.so
-lib/libwx_gtk_canvas.so.0
-lib/libwx_gtk_dcsvg.so
-lib/libwx_gtk_dcsvg.so.0
-lib/libwx_gtk_fl.so
-lib/libwx_gtk_fl.so.0
-lib/libwx_gtk_gizmos.so
-lib/libwx_gtk_gizmos.so.0
-lib/libwx_gtk_net.so
-lib/libwx_gtk_net.so.0
-lib/libwx_gtk_ogl.so
-lib/libwx_gtk_ogl.so.0
-lib/libwx_gtk_plot.so
-lib/libwx_gtk_plot.so.0
-lib/libwx_gtk_stc.so
-lib/libwx_gtk_stc.so.0
-lib/libwx_gtk_xrc.so
-lib/libwx_gtk_xrc.so.0
 @dirrm include/wx/xrc
 @dirrm include/wx/svg
 @dirrm include/wx/stc
@@ -112,4 +94,3 @@ lib/libwx_gtk_xrc.so.0
 @dirrm include/wx/gizmos
 @dirrm include/wx/fl
 @dirrm include/wx/canvas
-@unexec rmdir %D/include/wx 2>/dev/null || true
