@@ -1,6 +1,6 @@
---- Makefile.orig	Thu Aug 21 04:24:06 1997
-+++ Makefile	Fri Aug 22 11:59:58 1997
-@@ -578,7 +578,7 @@
+--- Makefile.orig	Sun Sep 28 13:45:32 1997
++++ Makefile	Wed Oct 15 02:24:25 1997
+@@ -597,7 +597,7 @@
  MOTIF_DEFS	= -DUSE_GUI_MOTIF $(NARROW_PROTO)
  MOTIF_IPATH	= -I$(GUI_INC_LOC)
  MOTIF_LIBS_DIR	= -L$(GUI_LIB_LOC)
@@ -9,3 +9,12 @@
  MOTIF_TARGETS	= $(BINDIR)/$(GVIMTARGET) \
  				$(BINDIR)/$(GEXTARGET) \
  				$(BINDIR)/$(GVIEWTARGET) \
+@@ -837,7 +837,7 @@
+ 	GUI_INC_LOC="$(GUI_INC_LOC)" GUI_LIB_LOC="$(GUI_LIB_LOC)" \
+ 		CC="$(CC)" CFLAGS="$(CFLAGS)" TERM_LIB="$(TERM_LIB)" \
+ 	$(CONF_SHELL) ./configure $(CONF_OPT_GUI) $(CONF_OPT_X) \
+-	$(CONF_OPT_PERL) $(CONF_OPT_PYTHON) $(CONF_ARGS)
++	$(CONF_OPT_PYTHON) $(CONF_ARGS)
+ 
+ # When configure.in has changed, run autoconf to produce configure
+ # If you don't have autoconf, use the configure that's there
