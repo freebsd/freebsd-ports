@@ -17,6 +17,8 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	A set of Ruby modules to provide Ruby 1.8 functionalities
 
+BROKEN=		Incomplete pkg-plist
+
 USE_BZIP2=	yes
 USE_OPENSSL=	yes
 

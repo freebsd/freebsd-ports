@@ -19,6 +19,8 @@ COMMENT=	Ocaml Object interface for ocaml's standard library modules
 
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
 
+BROKEN=		Incomplete pkg-plist
+
 post-extract:
 	@${CP} ${FILESDIR}/META ${WRKSRC}
 

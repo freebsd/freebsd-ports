@@ -15,6 +15,8 @@ DISTNAME=	${PORTNAME}-4.0+i18n
 MAINTAINER=	mistral@imasy.or.jp
 COMMENT=	A calendar with a notebook for X11 (internationalized version)
 
+BROKEN=		Incomplete pkg-plist
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_IMAKE=	yes

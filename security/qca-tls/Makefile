@@ -16,6 +16,8 @@ COMMENT=	SSL/TLS plugin for Qt
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 
+BROKEN=		Incomplete pkg-plist
+
 HAS_CONFIGURE=	yes
 USE_X_PREFIX=	yes
 USE_BZIP2=	yes

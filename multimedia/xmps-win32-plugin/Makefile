@@ -17,6 +17,8 @@ COMMENT=	xmps plugin for Win32 (TM) Codecs
 LIB_DEPENDS=	xmps.0:${PORTSDIR}/multimedia/xmps
 RUN_DEPENDS=	${CODEC_DETECTION_FILE}:${CODEC_PORT}
 
+BROKEN=		Incomplete pkg-plist
+
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL_VER=13

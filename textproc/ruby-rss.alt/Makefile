@@ -22,6 +22,8 @@ RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/uconv.so:${PORTSDIR}/japanese/ruby-uconv
 # Or ruby-xmlparser:
 #		${RUBY_SITELIBDIR}/xmlscan/parser.rb:${PORTSDIR}/textproc/ruby-xmlscan
 
+BROKEN=		Incomplete pkg-plist
+
 CONFLICTS=	ruby-rss-*
 
 USE_RUBY=	yes

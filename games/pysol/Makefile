@@ -15,6 +15,8 @@ COMMENT=	Solitaire game, written in Python
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
 
+BROKEN=		Incomplete pkg-plist
+
 USE_BZIP2=	yes
 USE_PYTHON=	-2.3
 

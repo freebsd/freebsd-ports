@@ -19,6 +19,8 @@ COMMENT=	Ruby interface to the SQLite DB engine version 3
 BUILD_DEPENDS=	swig:${PORTSDIR}/devel/swig13
 LIB_DEPENDS=	sqlite3.8:${PORTSDIR}/databases/sqlite3
 
+BROKEN=		Incomplete pkg-plist
+
 USE_BZIP2=	yes
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes

@@ -15,6 +15,8 @@ DISTNAME=	xipmsg-8087
 MAINTAINER=	candy@kgc.co.jp
 COMMENT=	A popup style message communication tool for X11
 
+BROKEN=		Incomplete pkg-plist
+
 USE_IMAKE=	yes
 MAN1=		xipmsg.1
 MANCOMPRESSED=	yes
