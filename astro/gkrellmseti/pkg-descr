@@ -1,0 +1,12 @@
+SETI@home GKrellM plugin
+(for GKrellM 0.10.3 or later)
+
+SETI@home GKrellM plugin is a progress meter that shows the current
+computation progress of a seti-workunit.
+Current working unit and completion percent is available via a
+tooltip.
+Progress value is read every minute as client write his results
+every minute.
+
+Author: Xavier Serpaggi <xavier.serpaggi@free.fr>
+WWW: http://xavier.serpaggi.free.fr/seti/

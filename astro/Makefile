@@ -7,6 +7,7 @@
     SUBDIR += fooseti
     SUBDIR += gkrellmearth
     SUBDIR += gkrellmoon
+    SUBDIR += gkrellmseti
     SUBDIR += glunarclock
     SUBDIR += jday
     SUBDIR += ksetiwatch
