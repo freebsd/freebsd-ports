@@ -7,6 +7,7 @@ include/kino/image_filters.h
 include/kino/image_transitions.h
 include/kino/kino_extra.h
 include/kino/playlist.h
+share/applications/kino.desktop
 share/kino/editor_fast.xpm
 share/kino/editor_fast_i.xpm
 share/kino/editor_movie.xpm
@@ -26,6 +27,7 @@ share/kino/film_on.xpm
 share/kino/join.xpm
 share/kino/kino.glade
 share/kino/kino.jpeg
+share/kino/kino.png
 share/kino/link.xpm
 share/kino/link_off.xpm
 share/kino/magick.glade
@@ -59,6 +61,7 @@ share/kino/scripts/exports/rawplay.sh
 share/kino/scripts/publish/frame.sh
 share/kino/scripts/publish/project.sh
 @dirrm include/kino
+@dirrm share/applications
 @dirrm share/kino/help
 @dirrm share/kino/scripts/exports
 @dirrm share/kino/scripts/publish

@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	kino
-PORTVERSION=	0.7.1
-PORTREVISION=	1
+PORTVERSION=	0.7.3
 CATEGORIES=	multimedia
-MASTER_SITES=	http://kino.schirmacher.de/filemanager/download/31/
+MASTER_SITES=	http://kino.schirmacher.de/filemanager/download/38/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	pb@FreeBSD.org
@@ -20,6 +19,7 @@ LIB_DEPENDS=	dv.4:${PORTSDIR}/multimedia/libdv	\
 		samplerate.1:${PORTSDIR}/audio/libsamplerate
 
 USE_GETTEXT=	yes
+USE_GMAKE=	yes
 USE_GNOME=	libgnomeui libxml2
 USE_ICONV=	yes
 GNU_CONFIGURE=	yes
