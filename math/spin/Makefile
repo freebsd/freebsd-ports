@@ -1,17 +1,17 @@
 # Ports collection makefile for: spin
-# Version required:	3.3.8
+# Version required:	3.3.9
 # Date created:		Oct 23, 1997
 # Whom:			jhanna@home.com
 #
 # $FreeBSD$
 #
 
-DISTNAME=	spin-3.38
+DISTNAME=	spin-3.39
 CATEGORIES=	math
 MASTER_SITES=	ftp://netlib.bell-labs.com/netlib/spin/ \
 		ftp://www.netlib.org/spin/ \
 		ftp://wcarchive.cdrom.com/pub/netlib/spin/
-DISTFILES=	spin338.tar.gz html.tar.gz
+DISTFILES=	spin339.tar.gz html.tar.gz
 
 MAINTAINER=	jhanna@home.com
 
