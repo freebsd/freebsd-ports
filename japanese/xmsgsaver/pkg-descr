@@ -1,0 +1,10 @@
+xmsgsaver is a screensaver program. When activated, a message moves across
+the screen.
+
+It runs under an X server that supports MIT-SCREEN-SAVER extension.
+It uses VFlib version 2.
+
+WWW: http://delegate.uec.ac.jp:8081/club/koken/~kudoh/soft/xmsgsaver/
+
+	-- Tatsuya Kudoh (CDR/TK)
+	kudoh@koken.club.uec.ac.jp
