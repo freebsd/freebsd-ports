@@ -1,6 +1,20 @@
---- Makefile.in.orig	Mon May  7 18:13:12 2001
-+++ Makefile.in	Tue May  8 13:28:38 2001
-@@ -153,6 +153,6 @@
+
+$FreeBSD$
+
+--- Makefile.in.orig	Fri Jul 27 16:29:51 2001
++++ Makefile.in	Fri Jul 27 16:30:27 2001
+@@ -110,7 +110,7 @@
+ XML_CONFIG = @XML_CONFIG@
+ XML_LIBS = @XML_LIBS@
+ 
+-noinst_PROGRAMS = test-ft-gtk test-ft test-rsvg
++noinst_PROGRAMS = #test-ft-gtk test-ft test-rsvg
+ 
+ bin_SCRIPTS =  	librsvg-config
+ 
+@@ -151,10 +151,10 @@
+ test_rsvg_DEPENDENCIES = $(DEPS)
+ test_rsvg_LDADD = $(LDADDS) -lm
  
 -m4datadir = $(datadir)/aclocal
 +m4datadir = $(prefix)/share/aclocal
@@ -9,19 +23,33 @@
 -confexecdir = $(libdir)
 +confexecdir = $(sysconfdir)
  confexec_DATA = librsvgConf.sh
-@@ -190,3 +190,3 @@
+ 
+ pkgconfigdir = $(libdir)/pkgconfig
+@@ -188,7 +188,7 @@
+ LTCOMPILE = $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+ CCLD = $(CC)
  LINK = $(LIBTOOL) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(LDFLAGS) -o $@
 -DATA =  $(confexec_DATA) $(m4data_DATA) $(pkgconfig_DATA)
 +DATA =  $(confexec_DATA) $(m4data_DATA)
  
-@@ -534,4 +534,3 @@
+ HEADERS =  $(librsvginc_HEADERS)
+ 
+@@ -560,8 +560,7 @@
+ 		install-confexecDATA
+ install-exec: install-exec-am
  
 -install-data-am: install-m4dataDATA install-pkgconfigDATA \
 -		install-librsvgincHEADERS
 +install-data-am: install-m4dataDATA install-librsvgincHEADERS
  install-data: install-data-am
-@@ -553,3 +552,3 @@
+ 
+ install-am: all-am
+@@ -579,7 +578,7 @@
+ installdirs:
+ 	$(mkinstalldirs)  $(DESTDIR)$(libdir) $(DESTDIR)$(bindir) \
  		$(DESTDIR)$(confexecdir) $(DESTDIR)$(m4datadir) \
 -		$(DESTDIR)$(pkgconfigdir) $(DESTDIR)$(librsvgincdir)
 +		$(DESTDIR)$(librsvgincdir)
  
+ 
+ mostlyclean-generic:
