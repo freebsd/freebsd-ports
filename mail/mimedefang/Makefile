@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mimedefang
-PORTVERSION=	2.41
+PORTVERSION=	2.42
 CATEGORIES=	mail
 MASTER_SITES=	http://www.mimedefang.org/static/ \
 		http://www.roaringpenguin.com/mimedefang/
@@ -44,8 +44,14 @@ MAN7=	mimedefang-protocol.7
 MAN8=	mimedefang.8 mimedefang.pl.8 mimedefang-multiplexor.8 \
 	md-mx-ctrl.8 watch-mimedefang.8
 
+.include <bsd.port.pre.mk>
+
 .if !exists( /usr/include/libmilter/mfapi.h )
 BUILD_DEPENDS+=	${LOCALBASE}/include/libmilter/mfapi.h:${PORTSDIR}/mail/sendmail
+.endif
+
+.if ${PERL_LEVEL} < 500601
+IGNORE=		Port requires perl 5.6.1 or later. Install lang/perl5 or lang/perl5.8 then try again
 .endif
 
 post-install:
@@ -63,4 +69,4 @@ post-install:
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
