@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.83 1996/08/09 04:17:51 asami Exp $
+# $Id: Makefile,v 1.84 1996/08/19 12:35:39 asami Exp $
 #
 
     SUBDIR += amanda
@@ -33,6 +33,7 @@
     SUBDIR += tkinfo
     SUBDIR += tkman
     SUBDIR += trans
+    SUBDIR += unclutter
     SUBDIR += xcalendar
     SUBDIR += xephem
     SUBDIR += zorro
