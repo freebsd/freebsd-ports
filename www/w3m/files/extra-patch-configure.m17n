@@ -1,0 +1,10 @@
+--- configure.orig	Sun Jan  6 16:26:25 2002
++++ configure	Sun Jan  6 16:27:18 2002
+@@ -486,7 +486,6 @@
+ 
+ echo "Which suffix do you want to add to the program name?"
+ Echo "(default: $suffix) "
+-readanswer suffix "$suffix"
+ echo "suffix='$suffix'" >> config.param
+ 
+ d_bindir=$bindir
