@@ -1,10 +1,5 @@
-# $Id: Makefile,v 1.4 1994/11/10 01:32:09 jkh Exp $
+# $Id: Makefile,v 1.5 1994/11/20 21:17:25 ats Exp $
 #
-SUBDIR=	nas sox
-
-.if make(clean) 
-# tracker is in the moment not compilable, so put it here as a clean target
-SUBDIR+= tracker
-.endif
+SUBDIR=	nas sox tracker
 
 .include <bsd.port.subdir.mk>
