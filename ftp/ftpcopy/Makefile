@@ -10,7 +10,7 @@ PORTVERSION=	0.5.1
 CATEGORIES=	ftp
 MASTER_SITES=	http://www.ohse.de/uwe/ftpcopy/
 
-MAINTAINER=	sobomax@FreeBSD.org
+MAINTAINER=	Matthias Andree <matthias.andree@web.de>
 
 WRKSRC=		${WRKDIR}/web/${DISTNAME}
 
