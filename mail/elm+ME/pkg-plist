@@ -4,6 +4,7 @@ bin/answer
 bin/checkalias
 bin/elmalias
 bin/fastmail
+bin/filter
 bin/frm
 @exec ln -f %D/%F %D/bin/nfrm
 bin/listalias
@@ -14,7 +15,7 @@ bin/newmail
 bin/printmail
 bin/readmsg
 lib/prlong
-bin/filter
+lib/elm.mimetypes
 lib/elmrc-info
 lib/elm-help.0
 lib/elm-help.1
