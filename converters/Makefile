@@ -13,6 +13,7 @@
     SUBDIR += mimepp
     SUBDIR += mmencode
     SUBDIR += mpack
+    SUBDIR += mule-ucs-emacs20
     SUBDIR += p5-Convert-Recode
     SUBDIR += p5-Convert-UU
     SUBDIR += p5-MIME-Base64
