@@ -4,6 +4,16 @@
 #
 # $FreeBSD$
 
+if [ ! -e @@LINUX_DIR@@/proc/cpuinfo ]; then
+    echo "************************************************************"
+    echo "It seems Linux procfs is not mounted on @@LINUX_DIR@@/proc."
+    echo "VMware does not work without Linux procfs mounted."
+    echo
+    echo "For details, see linprocfs(5) manpage."
+    echo "************************************************************"
+    exit 1
+fi
+
 LANG=C
 PATH=/bin:$PATH
 

@@ -76,6 +76,7 @@ setoptions:
 		${FILESDIR}/vmware.sh > ${WRKDIR}/vmware.sh
 
 	${SED} 	-e 's;@@PREFIX@@;${PREFIX};' \
+		-e 's;@@LINUX_DIR@@;${LINUX_DIR};' \
 		${FILESDIR}/vmware > ${WRKDIR}/vmware
 
 pre-install: setoptions
