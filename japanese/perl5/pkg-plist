@@ -528,5 +528,56 @@ lib/perl5/%%JPERL_VERSION%%/termcap.pl
 lib/perl5/%%JPERL_VERSION%%/timelocal.pl
 lib/perl5/%%JPERL_VERSION%%/validate.pl
 lib/perl5/%%JPERL_VERSION%%/vars.pm
-@unexec rm -rf %D/lib/perl5/%%JPERL_VERSION%%
-@unexec rm -rf %D/lib/perl5/site_perl/%%JPERL_VER%%
+@unexec rmdir %D/lib/perl5/%%JPERL_VERSION%%/B 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/%%JPERL_VERSION%%/CGI 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/%%JPERL_VERSION%%/CPAN 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/%%JPERL_VERSION%%/Class 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/%%JPERL_VERSION%%/Data 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/%%JPERL_VERSION%%/Devel 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/%%JPERL_VERSION%%/ExtUtils 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/%%JPERL_VERSION%%/File/Spec 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/%%JPERL_VERSION%%/File 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/%%JPERL_VERSION%%/Getopt 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/%%JPERL_VERSION%%/I18N 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/%%JPERL_VERSION%%/IPC 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/%%JPERL_VERSION%%/Math 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/%%JPERL_VERSION%%/Net 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/%%JPERL_VERSION%%/Pod 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/%%JPERL_VERSION%%/Search 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/%%JPERL_VERSION%%/Sys 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/%%JPERL_VERSION%%/Term 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/%%JPERL_VERSION%%/Test 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/%%JPERL_VERSION%%/Text 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/%%JPERL_VERSION%%/Tie 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/%%JPERL_VERSION%%/Time 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/%%JPERL_VERSION%%/User 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/%%JPERL_VERSION%%/auto/Getopt/Long 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/%%JPERL_VERSION%%/auto/Getopt 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/%%JPERL_VERSION%%/auto 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/%%JPERL_VERSION%%/%%PERL_ARCH%%/B 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/%%JPERL_VERSION%%/%%PERL_ARCH%%/CORE 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/%%JPERL_VERSION%%/%%PERL_ARCH%%/IO 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/%%JPERL_VERSION%%/%%PERL_ARCH%%/auto/B 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/%%JPERL_VERSION%%/%%PERL_ARCH%%/auto/DB_File 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/%%JPERL_VERSION%%/%%PERL_ARCH%%/auto/Data/Dumper 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/%%JPERL_VERSION%%/%%PERL_ARCH%%/auto/Data 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/%%JPERL_VERSION%%/%%PERL_ARCH%%/auto/DynaLoader 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/%%JPERL_VERSION%%/%%PERL_ARCH%%/auto/Fcntl 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/%%JPERL_VERSION%%/%%PERL_ARCH%%/auto/IO 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/%%JPERL_VERSION%%/%%PERL_ARCH%%/auto/IPC/SysV 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/%%JPERL_VERSION%%/%%PERL_ARCH%%/auto/IPC 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/%%JPERL_VERSION%%/%%PERL_ARCH%%/auto/NDBM_File 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/%%JPERL_VERSION%%/%%PERL_ARCH%%/auto/Opcode 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/%%JPERL_VERSION%%/%%PERL_ARCH%%/auto/POSIX 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/%%JPERL_VERSION%%/%%PERL_ARCH%%/auto/SDBM_File 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/%%JPERL_VERSION%%/%%PERL_ARCH%%/auto/Socket 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/%%JPERL_VERSION%%/%%PERL_ARCH%%/auto/attrs 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/%%JPERL_VERSION%%/%%PERL_ARCH%%/auto/re 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/%%JPERL_VERSION%%/%%PERL_ARCH%%/auto/sdbm 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/%%JPERL_VERSION%%/%%PERL_ARCH%%/auto 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/%%JPERL_VERSION%%/%%PERL_ARCH%% 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/%%JPERL_VERSION%%/%%PERL_ARCH%% 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/%%JPERL_VERSION%%/man/man3 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/%%JPERL_VERSION%%/man 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/%%JPERL_VERSION%%/pod 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/%%JPERL_VERSION%% 2>/dev/null || true
