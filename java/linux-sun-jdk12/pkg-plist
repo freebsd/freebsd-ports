@@ -1,4 +1,5 @@
-@unexec %%LOCALBASE%%/bin/unregistervm "%D/%%T%%/bin/java"
+@exec   %D/bin/registervm "%D/%%T%%/bin/java # Linux-JDK%%JDK_VERSION%%"
+@unexec %D/bin/unregistervm "%D/%%T%%/bin/java"
 %%T%%/CHANGES
 %%T%%/COPYRIGHT
 %%T%%/LICENSE
