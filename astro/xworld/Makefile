@@ -11,7 +11,7 @@ CATEGORIES=	astro
 MASTER_SITES=	ftp://gutemine.geo.uni-koeln.de/pub/xworld/ \
 		ftp://ftp.Uni-Koeln.DE/misc/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	naddy@mips.inka.de
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	CAT=${CAT} \
