@@ -368,6 +368,19 @@ MASTER_SITE_NETSCAPE+= \
 	ftp://ftp.uni-bremen.de/pub/mirrors/ftp.netscape.com/pub/%SUBDIR%/ \
 	ftp://ftp.informatik.rwth-aachen.de/pub/mirror/ftp.netscape.com/pub/%SUBDIR%/
 
+MASTER_SITE_PACKETSTORM+= \
+	http://packetstorm.linuxsecurity.com/%SUBDIR%/ \
+	http://packetstorm.dnsi.info/%SUBDIR%/ \
+	http://packetstorm.decepticons.org/%SUBDIR%/ \
+	http://packetstormsecurity.nl/%SUBDIR%/ \
+	http://packetstorm.acm.miami.edu/%SUBDIR%/ \
+	http://packetstormsecurity.org.pk/%SUBDIR%/ \
+	http://packetstorm.security-guide.de/%SUBDIR%/ \
+	http://packetstorm.globalhostnet.com/%SUBDIR%/ \
+	http://packetstormsecurity.com.ar/%SUBDIR%/ \
+	http://packetstorm.nulldetector.com/%SUBDIR%/ \
+	http://packetstormsecurity.packetstorm.org/%SUBDIR%/
+
 MASTER_SITE_PERL_CPAN+=	\
 	http://www.cpan.dk/CPAN/modules/by-module/%SUBDIR%/ \
 	ftp://ftp.funet.fi/pub/languages/perl/CPAN/modules/by-module/%SUBDIR%/ \
