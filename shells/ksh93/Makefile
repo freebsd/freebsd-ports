@@ -25,18 +25,18 @@ MAKE_ENV+=	LDFLAGS=-static
 .endif
 
 MAN1=		ksh93.1
+INSTALLROOT=	${WRKSRC}/arch/freebsd.${ARCH}
 
 do-build:
 	@cd ${WRKSRC} && env -i ${MAKE_ENV} ${SH} bin/package make
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/arch/freebsd.${ARCH}/bin/ksh \
-	    ${PREFIX}/bin/ksh93
-	${INSTALL_MAN} ${WRKSRC}/arch/freebsd.${ARCH}/man/man1/sh.1 \
+	${INSTALL_PROGRAM} ${INSTALLROOT}/bin/ksh ${PREFIX}/bin/ksh93
+	${INSTALL_MAN} ${INSTALLROOT}/man/man1/sh.1 \
 	    ${MANPREFIX}/man/man1/ksh93.1
 	${MKDIR} ${PREFIX}/share/examples/ksh93
 .for fun in dirs popd
-	${INSTALL_SCRIPT} ${WRKSRC}/arch/freebsd.${ARCH}/fun/${fun} \
+	${INSTALL_SCRIPT} ${INSTALLROOT}/fun/${fun} \
 	    ${PREFIX}/share/examples/ksh93/
 .endfor
 
@@ -46,5 +46,10 @@ post-install:
 	@(${GREP} -v ${PREFIX}/bin/ksh93 /etc/shells.bak; \
 	  ${ECHO_CMD} ${PREFIX}/bin/ksh93) >/etc/shells
 	@${RM} -f /etc/shells.bak
+
+test: build
+	@cd ${WRKSRC}/src/cmd/ksh93/tests && \
+	    ${SETENV} SHELL=${INSTALLROOT}/bin/ksh \
+		${INSTALLROOT}/bin/ksh shtests
 
 .include <bsd.port.mk>
