@@ -41,8 +41,8 @@ RUN_DEPENDS+=	mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
 .endif
 
 .if defined(WITH_BOCHS_PROCESSORS)
-.if ${WITH_BOCHS_CPU_LEVEL} < 1 || ${WITH_BOCHS_CPU_LEVEL} > 15
-.error "WITH_BOCHS_CPU_LEVEL must be an integer value between 1 and 15."
+.if ${WITH_BOCHS_PROCESSORS} < 1 || ${WITH_BOCHS_PROCESSORS} > 15
+.error "WITH_BOCHS_PROCESSORS must be an integer value between 1 and 15."
 .endif
 CONFIGURE_ARGS+=	--enable-processors=${WITH_BOCHS_PROCESSORS}
 WITH_BOCHS_CPU_LEVEL=	6
