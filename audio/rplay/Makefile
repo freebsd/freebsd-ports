@@ -25,14 +25,14 @@ MAN1=		rplay.1 rptp.1
 MAN5=		rplay.conf.5 rplay.helpers.5 rplay.hosts.5 rplay.servers.5
 MAN8=		rplayd.8
 
-INFO_FILES=	RPLAY.info RPTP.info librplay.info rplayd.info
+INFO=		RPLAY RPTP librplay rplayd
 
 post-extract:
 	@${CP} ${WRKSRC}/doc/rplay.texi ${WRKSRC}/doc/rplayd.texi
 
 post-install:
-.for info in ${INFO_FILES}
-	@install-info ${PREFIX}/info/${info} ${PREFIX}/info/dir
+.for info in ${INFO}
+	@install-info ${PREFIX}/info/${info}.info ${PREFIX}/info/dir
 .endfor
 	@${ECHO_MSG} "===>	Installing ${PREFIX}/etc/rc.d/rplayd.sh"
 	@${ECHO_MSG} "===>	startup file as ${PREFIX}/etc/rc.d/rplayd.sh.sample"
