@@ -58,6 +58,7 @@
     SUBDIR += xorg-fonts-cyrillic
     SUBDIR += xorg-fonts-encodings
     SUBDIR += xorg-fonts-miscbitmaps
+    SUBDIR += xorg-fonts-truetype
     SUBDIR += xorg-fonts-type1
 
 .include <bsd.port.subdir.mk>
