@@ -58,8 +58,8 @@ bin/kwmtheme
 bin/kwrite
 bin/kwrited
 bin/kxkb
-bin/nspluginscan
-bin/nspluginviewer
+%%MOTIF%%bin/nspluginscan
+%%MOTIF%%bin/nspluginviewer
 bin/startkde
 etc/ksysguarddrc
 include/KBackgroundIface.h
@@ -326,8 +326,8 @@ lib/kde3/kwin_web.so
 lib/kde3/launcher_panelapplet.la
 lib/kde3/launcher_panelapplet.so
 lib/kde3/launcher_panelapplet.so.1
-lib/kde3/libkcm_nsplugin.la
-lib/kde3/libkcm_nsplugin.so
+%%MOTIF%%lib/kde3/libkcm_nsplugin.la
+%%MOTIF%%lib/kde3/libkcm_nsplugin.so
 lib/kde3/libkdeprint_part.la
 lib/kde3/libkdeprint_part.so
 lib/kde3/libkhelpcenterpart.la
@@ -416,9 +416,9 @@ lib/libkonsolepart.so
 lib/libksgrd.la
 lib/libksgrd.so
 lib/libksgrd.so.0
-lib/libnsplugin.la
-lib/libnsplugin.so
-lib/libnsplugin.so.1
+%%MOTIF%%lib/libnsplugin.la
+%%MOTIF%%lib/libnsplugin.so
+%%MOTIF%%lib/libnsplugin.so.1
 lib/libsensordisplays.la
 lib/libsensordisplays.so
 lib/libsensordisplays.so.0
@@ -534,7 +534,7 @@ share/applnk/Settings/WebBrowsing/cookies.desktop
 share/applnk/Settings/WebBrowsing/ebrowsing.desktop
 share/applnk/Settings/WebBrowsing/kcmcss.desktop
 share/applnk/Settings/WebBrowsing/konqhtml.desktop
-share/applnk/Settings/WebBrowsing/nsplugin.desktop
+%%MOTIF%%share/applnk/Settings/WebBrowsing/nsplugin.desktop
 share/applnk/Settings/WebBrowsing/proxy.desktop
 share/applnk/Settings/WebBrowsing/smb.desktop
 share/applnk/Settings/WebBrowsing/useragent.desktop
