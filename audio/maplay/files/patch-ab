@@ -1,5 +1,5 @@
 *** Makefile.orig	Thu Jun 23 21:14:46 1994
---- Makefile	Thu Nov 25 02:59:22 1999
+--- Makefile	Thu Dec  9 06:09:27 1999
 ***************
 *** 27,33 ****
   #
@@ -18,19 +18,30 @@
   # profiling: -pg (gprof) or -p (prof)
   # strip command has to be removed for debugging or profiling
 ***************
-*** 39,45 ****
+*** 39,52 ****
   
   .SUFFIXES:	.cc
   
 ! install:
   		@./configuration.sh
   
-  all:		maplay
---- 39,45 ----
+- all:		maplay
+- 
+  maplay:		$(OBJS)
+  		$(COMPILER) $(CFLAGS) $(OBJS) -o $@ $(LIBRARIES) -lm
+- 		-strip $@
+  
+  .cc.o:
+  		$(COMPILER) -c $(CFLAGS) $(INCLUDEDIRS) $*.cc -o $@
+--- 39,49 ----
   
   .SUFFIXES:	.cc
   
-! pre-install:
+! all:
   		@./configuration.sh
   
-  all:		maplay
+  maplay:		$(OBJS)
+  		$(COMPILER) $(CFLAGS) $(OBJS) -o $@ $(LIBRARIES) -lm
+  
+  .cc.o:
+  		$(COMPILER) -c $(CFLAGS) $(INCLUDEDIRS) $*.cc -o $@

@@ -1,0 +1,62 @@
+*** obuffer.h.orig	Thu Jun 23 21:14:40 1994
+--- obuffer.h	Thu Dec  9 05:32:18 1999
+***************
+*** 123,142 ****
+  
+  public:
+  #ifdef ULAW
+! 	SparcObuffer (Header *, bool use_speaker, bool use_headphone, bool use_line_out);
+  #else
+  	SparcObuffer (uint32 number_of_channels, Header *,
+!  		      bool use_speaker, bool use_headphone, bool use_line_out);
+  #endif
+         ~SparcObuffer (void);
+    void	append (uint32 channel, int16 value);
+    void	write_buffer (int dummy);
+  
+  #ifdef ULAW
+!   static bool class_suitable (uint32 number_of_channels, bool force_amd);
+  	// returnvalue == False: no u-law output possible (class unsuitable)
+  #else
+!   static bool class_suitable (void);
+  	// returnvalue == False: no 16-bit output possible (class unsuitable)
+  #endif
+  };
+--- 123,142 ----
+  
+  public:
+  #ifdef ULAW
+! 	SparcObuffer (Header *, boolean use_speaker, boolean use_headphone, boolean use_line_out);
+  #else
+  	SparcObuffer (uint32 number_of_channels, Header *,
+!  		      boolean use_speaker, boolean use_headphone, boolean use_line_out);
+  #endif
+         ~SparcObuffer (void);
+    void	append (uint32 channel, int16 value);
+    void	write_buffer (int dummy);
+  
+  #ifdef ULAW
+!   static boolean class_suitable (uint32 number_of_channels, boolean force_amd);
+  	// returnvalue == False: no u-law output possible (class unsuitable)
+  #else
+!   static boolean class_suitable (void);
+  	// returnvalue == False: no 16-bit output possible (class unsuitable)
+  #endif
+  };
+***************
+*** 159,165 ****
+    void	append (uint32 channel, int16 value);
+    void	write_buffer (int dummy);
+  
+!   static bool class_suitable (uint32 number_of_channels);
+  };
+  #endif	// LINUX
+  
+--- 159,165 ----
+    void	append (uint32 channel, int16 value);
+    void	write_buffer (int dummy);
+  
+!   static boolean class_suitable (uint32 number_of_channels);
+  };
+  #endif	// LINUX
+  
