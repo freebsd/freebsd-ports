@@ -13,6 +13,8 @@ MASTER_SITES=	ftp://ftp.qualcomm.com/eudora/servers/unix/popper/%SUBDIR%/ \
 MASTER_SITE_SUBDIR=	. old
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
+FORBIDDEN=	"Software contains buffer overflow"
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 400014
