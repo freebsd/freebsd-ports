@@ -1,17 +1,17 @@
 lib/libmemchan.so.1
 lib/tcl%%TCLV%%/memchan/pkgIndex.tcl
 @dirrm lib/tcl%%TCLV%%/memchan
-%%DOC%%share/doc/memchan/img/up.gif
-%%DOC%%share/doc/memchan/memchan_ack.html
-%%DOC%%share/doc/memchan/memchan_bdist.html
-%%DOC%%share/doc/memchan/memchan_cmac.html
-%%DOC%%share/doc/memchan/memchan_cmds.html
-%%DOC%%share/doc/memchan/memchan_compile.html
-%%DOC%%share/doc/memchan/memchan_ctea.html
-%%DOC%%share/doc/memchan/memchan_cunix.html
-%%DOC%%share/doc/memchan/memchan_cwin.html
-%%DOC%%share/doc/memchan/index.html
-%%DOC%%share/doc/memchan/memchan_where.html
-%%DOC%%share/doc/memchan/sitemap.html
-%%DOC%%@dirrm share/doc/memchan/img/
-%%DOC%%@dirrm share/doc/memchan/
+%%PORTDOCS%%share/doc/memchan/img/up.gif
+%%PORTDOCS%%share/doc/memchan/memchan_ack.html
+%%PORTDOCS%%share/doc/memchan/memchan_bdist.html
+%%PORTDOCS%%share/doc/memchan/memchan_cmac.html
+%%PORTDOCS%%share/doc/memchan/memchan_cmds.html
+%%PORTDOCS%%share/doc/memchan/memchan_compile.html
+%%PORTDOCS%%share/doc/memchan/memchan_ctea.html
+%%PORTDOCS%%share/doc/memchan/memchan_cunix.html
+%%PORTDOCS%%share/doc/memchan/memchan_cwin.html
+%%PORTDOCS%%share/doc/memchan/index.html
+%%PORTDOCS%%share/doc/memchan/memchan_where.html
+%%PORTDOCS%%share/doc/memchan/sitemap.html
+%%PORTDOCS%%@dirrm share/doc/memchan/img/
+%%PORTDOCS%%@dirrm share/doc/memchan/
