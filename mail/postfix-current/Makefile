@@ -57,7 +57,7 @@ CONF1=	main.cf master.cf access aliases canonical cidr_table pcre_table \
 MAKEFILEFLAGS+=	DEBUG=
 .endif
 
-MAKEFILEFLAGS+=	OPT="${CFLAGS}"
+MAKEFILEFLAGS+=	CC="${CC}" OPT="${CFLAGS}"
 
 SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
 		TOUCH="${TOUCH}" \
