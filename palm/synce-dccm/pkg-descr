@@ -1,0 +1,5 @@
+SynCE is a project for connecting to devices running Windows CE or Pocket PC.
+Dccm is a daemon that listens for connections from a Windows CE device.
+Once connected, the synce-librapi tools are able to interact with the device.
+
+WWW: http://synce.sourceforge.net/
