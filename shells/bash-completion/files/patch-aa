@@ -1,5 +1,5 @@
---- bash_completion.orig	Wed Feb 18 09:10:18 2004
-+++ bash_completion	Wed Feb 18 09:11:01 2004
+--- bash_completion.orig	Wed Mar 31 19:45:32 2004
++++ bash_completion	Sat Jun  5 16:53:42 2004
 @@ -31,14 +31,14 @@
  if [ -n "${FUNCNAME:-}" ]; then
  	# we're being sourced from within a function, so we can't use
@@ -19,3 +19,21 @@
  	  2>/dev/null
  fi
  
+@@ -1056,7 +1056,7 @@
+ 	else
+ 		len=${#cur}
+ 		idx=0
+-		for pval in $( /usr/sbin/postconf -m ); do
++		for pval in $( postconf -m ); do
+ 			if [[ "$cur" == "${pval:0:$len}" ]]; then
+ 				COMPREPLY[$idx]="$pval:"
+ 				idx=$(($idx+1))
+@@ -1132,7 +1132,7 @@
+ 	fi
+ 	len=${#cur}
+ 	idx=0
+-	for pval in $( /usr/sbin/postconf | cut -d ' ' -f 1 ); do
++	for pval in $( postconf | cut -d ' ' -f 1 ); do
+ 		if [[ "$cur" == "${pval:0:$len}" ]]; then
+ 			COMPREPLY[$idx]="$pval$eqext"
+ 			idx=$(($idx+1))
