@@ -29,7 +29,7 @@ echo "Choose a font cache directory for automatic font generation"
 echo -n "(this directory must be world writable) [$CACHE]: "
 read answ; if [ "$answ" != "" ]; then CACHE=$answ; fi
   
-sed -e s:/usr/lib/tex:/usr/local/lib/texmf: \
+sed -e s:/usr/lib/tex:/$PREFIX/lib/texmf: \
     -e s:/LocalLibrary/Fonts/TeXFonts:$CACHE: \
      $SUBST <${WRKSRC}/MakeTeXPK.orig >${WRKSRC}/MakeTeXPK
 
@@ -51,14 +51,14 @@ else
 fi
 
 #makefile
-echo "TEXDIR=/usr/local/lib/texmf" >> ${WRKSRC}/Makefile || exit 1;
+echo "TEXDIR=$PREFIX/lib/texmf" >> ${WRKSRC}/Makefile || exit 1;
 echo "LOCALDIR=$CACHE" >> ${WRKSRC}/Makefile
 echo "TEXMACRODIR=\$(TEXDIR)/tex" >> ${WRKSRC}/Makefile
 echo "FIGPATH = .:..:\$(TEXDIR)/tex" >> ${WRKSRC}/Makefile
-echo "MANDIR=/usr/local/man/man1" >> ${WRKSRC}/Makefile
+echo "MANDIR=$PREFIX/man/man1" >> ${WRKSRC}/Makefile
 echo "DEFS= -DTPIC -DDEBUG -DDEFRES=$res"  >> ${WRKSRC}/Makefile
 echo "OPT = -O2 -funsigned-char"  >> ${WRKSRC}/Makefile
-echo "BINDIR=/usr/local/bin"  >> ${WRKSRC}/Makefile
+echo "BINDIR=$PREFIX/bin"  >> ${WRKSRC}/Makefile
 echo "FLIBS=-lm" >> ${WRKSRC}/Makefile
 
 exit 0;
