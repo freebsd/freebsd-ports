@@ -15,6 +15,12 @@ MASTER_SITE_SUBDIR= ddd
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Data Display Debugger -- a common graphical front-end for GDB/DBX/XDB
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile (bad C++ code)"
+.endif
+
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-motif-libraries="${LIBXMDIR}" \
@@ -66,4 +72,4 @@ post-install:
 check:
 	(cd ${WRKSRC} ; ${GMAKE} check)
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

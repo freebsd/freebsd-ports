@@ -13,6 +13,12 @@ MASTER_SITES=	ftp://ctgi.net/pub/ctgi/nicetext/src/ \
 MAINTAINER=	markc@ctgi.net
 COMMENT=	Convert files to pseudo-natural-language text and back again
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile (bad C++ code)"
+.endif
+
 USE_GMAKE=	YES
 MAKE_FLAGS=	CXXFLAGS="${CXXFLAGS} -pedantic" CFLAGS="${CFLAGS} -pedantic"
 
@@ -85,4 +91,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/examples/words/twlist/numeric/* ${PREFIX}/share/examples/nicetext/words/twlist/numeric/
 	${MKDIR} ${PREFIX}/share/examples/nicetext/words/twlist/rhyme/
 	${INSTALL_DATA} ${WRKSRC}/examples/words/twlist/rhyme/* ${PREFIX}/share/examples/nicetext/words/twlist/rhyme/
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

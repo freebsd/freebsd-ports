@@ -40,6 +40,10 @@ PLIST_SUB+=	VERSION="${VER_MAJ}"
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile (bad C++ code)"
+.endif
+
 MAN1=	moc.1
 .include "${FILESDIR}/man3"
 
