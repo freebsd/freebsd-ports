@@ -1,10 +1,9 @@
 bin/moneydance
-%%MDSUBDIR%%/README.txt
-%%MDSUBDIR%%/license.jar
+%%MDSUBDIR%%/jce-1.1.jar
+%%MDSUBDIR%%/jcert.jar
+%%MDSUBDIR%%/jnet.jar
+%%MDSUBDIR%%/jsse.jar
 %%MDSUBDIR%%/license.txt
-%%MDSUBDIR%%/moneydance
-%%MDSUBDIR%%/moneydance.cmd
 %%MDSUBDIR%%/moneydance.jar
 %%MDSUBDIR%%/moneydance.xpm
-%%MDSUBDIR%%/swingall.jar
 @dirrm %%MDSUBDIR%%

@@ -2,9 +2,10 @@ Moneydance Personal Finance Manager
 
 Moneydance is a personal finance management application written
 in Java.  Features include transaction auto-completion, reporting,
-graphing, check printing, scheduled transactions, and much more.
+graphing, check printing, scheduled transactions, on-line banking
+(with some financial institutions) and much more.
 
-Moneydance is shareware but unregistered copies are not feature-
-limited and do not time out in any way.
+Moneydance is shareware and unregistered copies may be feature-
+limited.
 
 WWW:  http://www.moneydance.net/
