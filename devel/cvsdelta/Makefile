@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	cvsdelta
-PORTVERSION=	1.6.3
+PORTVERSION=	1.6.4
 CATEGORIES=	devel
 MASTER_SITES=	http://belnet.dl.sourceforge.net/sourceforge/cvsdelta/ \
 		${MASTER_SITE_SOURCEFORGE}
