@@ -16,6 +16,8 @@ PATCH_SITES=	${MASTER_SITES}
 PATCHFILES=	${DISTNAME}+lx.diff.gz
 PATCH_DIST_STRIP=	-p1
 
+FORBIDDEN=	"Exploitable buffer overflows"
+
 MAINTAINER=	ports@FreeBSD.org
 
 NO_WRKSUBDIR=	yes
