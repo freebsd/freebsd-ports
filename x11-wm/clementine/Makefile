@@ -21,11 +21,13 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 DOCS=		COPYING HISTORY LICENSE
+USE_REINPLACE=	yes
+REINPLACE_ARGS=	-i'' -E
 
 post-patch:
-	${PERL} -pi -e 's:^CFLAGS:IGNORE:g ; s:^DEFINES:IGNORE:g' \
+	${REINPLACE_CMD} 's:^CFLAGS:IGNORE:g ; s:^DEFINES:IGNORE:g' \
 		${WRKSRC}/Makefile
-	${PERL} -pi -e 's:./clementine:${PREFIX}/bin/clementine:g' \
+	${REINPLACE_CMD} 's:./clementine:${PREFIX}/bin/clementine:g' \
 		${WRKSRC}/windowmanager.cpp
 
 pre-install:
