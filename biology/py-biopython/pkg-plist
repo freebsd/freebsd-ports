@@ -4,33 +4,15 @@
 %%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Adapters/__init__.py
 %%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Adapters/__init__.pyc
 %%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Adapters/__init__.pyo
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Adapters/fnorb_EnsemblPOA.py
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Adapters/fnorb_EnsemblPOA.pyc
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Adapters/fnorb_EnsemblPOA.pyo
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Adapters/fnorb_GnomePOA.py
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Adapters/fnorb_GnomePOA.pyc
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Adapters/fnorb_GnomePOA.pyo
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Adapters/fnorb_BsanePOA.py
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Adapters/fnorb_BsanePOA.pyc
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Adapters/fnorb_BsanePOA.pyo
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Adapters/fnorb_CollectionPOA.py
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Adapters/fnorb_CollectionPOA.pyc
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Adapters/fnorb_CollectionPOA.pyo
 %%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Adapters/fnorb_SeqcorePOA.py
 %%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Adapters/fnorb_SeqcorePOA.pyc
 %%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Adapters/fnorb_SeqcorePOA.pyo
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Adapters/orbit_Ensembl.py
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Adapters/orbit_Ensembl.pyc
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Adapters/orbit_Ensembl.pyo
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Adapters/orbit_EnsemblPOA.py
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Adapters/orbit_EnsemblPOA.pyc
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Adapters/orbit_EnsemblPOA.pyo
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Adapters/orbit_Gnome.py
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Adapters/orbit_Gnome.pyc
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Adapters/orbit_Gnome.pyo
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Adapters/orbit_GnomePOA.py
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Adapters/orbit_GnomePOA.pyc
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Adapters/orbit_GnomePOA.pyo
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Adapters/orbit_Seqcore.py
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Adapters/orbit_Seqcore.pyc
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Adapters/orbit_Seqcore.pyo
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Adapters/orbit_SeqcorePOA.py
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Adapters/orbit_SeqcorePOA.pyc
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Adapters/orbit_SeqcorePOA.pyo
 %%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Bio/Fasta/__init__.py
 %%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Bio/Fasta/__init__.pyc
 %%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Bio/Fasta/__init__.pyo
@@ -52,93 +34,51 @@
 %%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/BiocorbaConnect.py
 %%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/BiocorbaConnect.pyc
 %%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/BiocorbaConnect.pyo
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/Ensembl/Exon.py
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/Ensembl/Exon.pyc
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/Ensembl/Exon.pyo
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/Ensembl/Gene.py
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/Ensembl/Gene.pyc
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/Ensembl/Gene.pyo
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/Ensembl/Transcript.py
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/Ensembl/Transcript.pyc
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/Ensembl/Transcript.pyo
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/Ensembl/Translation.py
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/Ensembl/Translation.pyc
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/Ensembl/Translation.pyo
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/Ensembl/VirtualContig.py
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/Ensembl/VirtualContig.pyc
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/Ensembl/VirtualContig.pyo
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/Ensembl/__init__.py
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/Ensembl/__init__.pyc
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/Ensembl/__init__.pyo
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/GnomeMemory/CorbaUnknown.py
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/GnomeMemory/CorbaUnknown.pyc
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/GnomeMemory/CorbaUnknown.pyo
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/GnomeMemory/__init__.py
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/GnomeMemory/__init__.pyc
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/GnomeMemory/__init__.pyo
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/Seqcore/CorbaAnonymousSeq.py
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/Seqcore/CorbaAnonymousSeq.pyc
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/Seqcore/CorbaAnonymousSeq.pyo
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/Seqcore/CorbaBioEnv.py
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/Seqcore/CorbaBioEnv.pyc
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/Seqcore/CorbaBioEnv.pyo
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/Seqcore/CorbaExceptions.py
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/Seqcore/CorbaExceptions.pyc
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/Seqcore/CorbaExceptions.pyo
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/Seqcore/CorbaPrimarySeq.py
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/Seqcore/CorbaPrimarySeq.pyc
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/Seqcore/CorbaPrimarySeq.pyo
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/Seqcore/CorbaSeq.py
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/Seqcore/CorbaSeq.pyc
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/Seqcore/CorbaSeq.pyo
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/Bsane/Annotation.py
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/Bsane/Annotation.pyc
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/Bsane/Annotation.pyo
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/Bsane/Base.py
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/Bsane/Base.pyc
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/Bsane/Base.pyo
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/Bsane/CorbaExceptions.py
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/Bsane/CorbaExceptions.pyc
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/Bsane/CorbaExceptions.pyo
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/Bsane/__init__.py
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/Bsane/__init__.pyc
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/Bsane/__init__.pyo
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/Seqcore/CorbaCollection.py
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/Seqcore/CorbaCollection.pyc
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/Seqcore/CorbaCollection.pyo
 %%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/Seqcore/CorbaSeqFeature.py
 %%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/Seqcore/CorbaSeqFeature.pyc
 %%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/Seqcore/CorbaSeqFeature.pyo
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/Seqcore/CorbaUpdatableSeqDB.py
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/Seqcore/CorbaUpdatableSeqDB.pyc
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/Seqcore/CorbaUpdatableSeqDB.pyo
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/Seqcore/CorbaSequence.py
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/Seqcore/CorbaSequence.pyc
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/Seqcore/CorbaSequence.pyo
 %%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/Seqcore/__init__.py
 %%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/Seqcore/__init__.pyc
 %%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/Seqcore/__init__.pyo
 %%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/__init__.py
 %%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/__init__.pyc
 %%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/__init__.pyo
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/GNOME/__init__.py
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/GNOME/__init__.pyc
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/GNOME/__init__.pyo
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/GNOME__POA/__init__.py
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/GNOME__POA/__init__.pyc
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/GNOME__POA/__init__.pyo
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Server/GnomeMemory/CorbaUnknown.py
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Server/GnomeMemory/CorbaUnknown.pyc
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Server/GnomeMemory/CorbaUnknown.pyo
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Server/GnomeMemory/__init__.py
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Server/GnomeMemory/__init__.pyc
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Server/GnomeMemory/__init__.pyo
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Server/Seqcore/CorbaAnonymousSeq.py
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Server/Seqcore/CorbaAnonymousSeq.pyc
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Server/Seqcore/CorbaAnonymousSeq.pyo
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Server/Seqcore/CorbaBioEnv.py
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Server/Seqcore/CorbaBioEnv.pyc
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Server/Seqcore/CorbaBioEnv.pyo
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Server/Seqcore/CorbaPrimarySeq.py
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Server/Seqcore/CorbaPrimarySeq.pyc
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Server/Seqcore/CorbaPrimarySeq.pyo
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Server/Seqcore/CorbaSeq.py
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Server/Seqcore/CorbaSeq.pyc
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Server/Seqcore/CorbaSeq.pyo
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Server/Bsane/Annotation.py
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Server/Bsane/Annotation.pyc
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Server/Bsane/Annotation.pyo
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Server/Bsane/Base.py
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Server/Bsane/Base.pyc
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Server/Bsane/Base.pyo
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Server/Bsane/__init__.py
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Server/Bsane/__init__.pyc
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Server/Bsane/__init__.pyo
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Server/Seqcore/CorbaCollection.py
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Server/Seqcore/CorbaCollection.pyc
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Server/Seqcore/CorbaCollection.pyo
 %%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Server/Seqcore/CorbaSeqFeature.py
 %%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Server/Seqcore/CorbaSeqFeature.pyc
 %%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Server/Seqcore/CorbaSeqFeature.pyo
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Server/Seqcore/Database.py
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Server/Seqcore/Database.pyc
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Server/Seqcore/Database.pyo
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Server/Seqcore/Iterator.py
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Server/Seqcore/Iterator.pyc
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Server/Seqcore/Iterator.pyo
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Server/Seqcore/Vector.py
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Server/Seqcore/Vector.pyc
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Server/Seqcore/Vector.pyo
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Server/Seqcore/CorbaSequence.py
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Server/Seqcore/CorbaSequence.pyc
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Server/Seqcore/CorbaSequence.pyo
 %%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Server/Seqcore/__init__.py
 %%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Server/Seqcore/__init__.pyc
 %%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Server/Seqcore/__init__.pyo
@@ -148,89 +88,118 @@
 %%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Server/__init__.py
 %%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Server/__init__.pyc
 %%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Server/__init__.pyo
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Share/SeqFeature.py
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Share/SeqFeature.pyc
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Share/SeqFeature.pyo
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Share/__init__.py
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Share/__init__.pyc
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Share/__init__.pyo
 %%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/__init__.py
 %%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/__init__.pyc
 %%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/__init__.pyo
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/biocorba.idl
 %%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/biocorbaconfig.py
 %%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/biocorbaconfig.pyc
 %%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/biocorbaconfig.pyo
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/ensembl.idl
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/org/__init__.py
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/org/__init__.pyc
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/org/__init__.pyo
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/org/biocorba/__init__.py
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/org/biocorba/__init__.pyc
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/org/biocorba/__init__.pyo
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/org/biocorba/seqcore/__init__.py
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/org/biocorba/seqcore/__init__.pyc
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/org/biocorba/seqcore/__init__.pyo
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/org/ensembl/__init__.py
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/org/ensembl/__init__.pyc
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/org/ensembl/__init__.pyo
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/org__POA/__init__.py
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/org__POA/__init__.pyc
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/org__POA/__init__.pyo
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/org__POA/biocorba/__init__.py
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/org__POA/biocorba/__init__.pyc
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/org__POA/biocorba/__init__.pyo
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/org__POA/biocorba/seqcore/__init__.py
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/org__POA/biocorba/seqcore/__init__.pyc
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/org__POA/biocorba/seqcore/__init__.pyo
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/org__POA/ensembl/__init__.py
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/org__POA/ensembl/__init__.pyc
-%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/org__POA/ensembl/__init__.pyo
-%%PLIST_FNORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/GNOME_skel/__init__.py
-%%PLIST_FNORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/GNOME_skel/__init__.pyc
-%%PLIST_FNORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/GNOME_skel/__init__.pyo
-%%PLIST_FNORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/org_skel/__init__.py
-%%PLIST_FNORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/org_skel/__init__.pyc
-%%PLIST_FNORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/org_skel/__init__.pyo
-%%PLIST_FNORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/org_skel/biocorba_skel/__init__.py
-%%PLIST_FNORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/org_skel/biocorba_skel/__init__.pyc
-%%PLIST_FNORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/org_skel/biocorba_skel/__init__.pyo
-%%PLIST_FNORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/org_skel/biocorba_skel/seqcore_skel/__init__.py
-%%PLIST_FNORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/org_skel/biocorba_skel/seqcore_skel/__init__.pyc
-%%PLIST_FNORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/org_skel/biocorba_skel/seqcore_skel/__init__.pyo
-%%PLIST_FNORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/org_skel/ensembl_skel/__init__.py
-%%PLIST_FNORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/org_skel/ensembl_skel/__init__.pyc
-%%PLIST_FNORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/org_skel/ensembl_skel/__init__.pyo
-%%PLIST_OMNIORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/biocorba_idl.py
-%%PLIST_OMNIORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/biocorba_idl.pyc
-%%PLIST_OMNIORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/biocorba_idl.pyo
-%%PLIST_OMNIORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/ensembl_idl.py
-%%PLIST_OMNIORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/ensembl_idl.pyc
-%%PLIST_OMNIORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/ensembl_idl.pyo
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/bsane.idl
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/collection.idl
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/seqcore.idl
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/types.idl
+%%PLIST_FNORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Types/__init__.py
+%%PLIST_FNORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Types/__init__.pyc
+%%PLIST_FNORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Types/__init__.pyo
+%%PLIST_FNORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Types_skel/__init__.py
+%%PLIST_FNORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Types_skel/__init__.pyc
+%%PLIST_FNORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Types_skel/__init__.pyo
+%%PLIST_FNORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/bsane/__init__.py
+%%PLIST_FNORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/bsane/__init__.pyc
+%%PLIST_FNORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/bsane/__init__.pyo
+%%PLIST_FNORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/bsane/collection/__init__.py
+%%PLIST_FNORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/bsane/collection/__init__.pyc
+%%PLIST_FNORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/bsane/collection/__init__.pyo
+%%PLIST_FNORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/bsane/comparison/__init__.py
+%%PLIST_FNORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/bsane/comparison/__init__.pyc
+%%PLIST_FNORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/bsane/comparison/__init__.pyo
+%%PLIST_FNORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/bsane/seqcore/__init__.py
+%%PLIST_FNORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/bsane/seqcore/__init__.pyc
+%%PLIST_FNORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/bsane/seqcore/__init__.pyo
+%%PLIST_FNORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/bsane__POA/__init__.py
+%%PLIST_FNORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/bsane__POA/__init__.pyc
+%%PLIST_FNORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/bsane__POA/__init__.pyo
+%%PLIST_FNORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/bsane__POA/collection/__init__.py
+%%PLIST_FNORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/bsane__POA/collection/__init__.pyc
+%%PLIST_FNORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/bsane__POA/collection/__init__.pyo
+%%PLIST_FNORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/bsane__POA/seqcore/__init__.py
+%%PLIST_FNORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/bsane__POA/seqcore/__init__.pyc
+%%PLIST_FNORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/bsane__POA/seqcore/__init__.pyo
+%%PLIST_FNORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/bsane_skel/__init__.py
+%%PLIST_FNORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/bsane_skel/__init__.pyc
+%%PLIST_FNORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/bsane_skel/__init__.pyo
+%%PLIST_FNORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/bsane_skel/collection_skel/__init__.py
+%%PLIST_FNORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/bsane_skel/collection_skel/__init__.pyc
+%%PLIST_FNORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/bsane_skel/collection_skel/__init__.pyo
+%%PLIST_FNORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/bsane_skel/comparison_skel/__init__.py
+%%PLIST_FNORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/bsane_skel/comparison_skel/__init__.pyc
+%%PLIST_FNORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/bsane_skel/comparison_skel/__init__.pyo
+%%PLIST_FNORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/bsane_skel/seqcore_skel/__init__.py
+%%PLIST_FNORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/bsane_skel/seqcore_skel/__init__.pyc
+%%PLIST_FNORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/bsane_skel/seqcore_skel/__init__.pyo
+%%PLIST_OMNIORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Types/__init__.py
+%%PLIST_OMNIORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Types/__init__.pyc
+%%PLIST_OMNIORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Types/__init__.pyo
+%%PLIST_OMNIORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Types__POA/__init__.py
+%%PLIST_OMNIORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Types__POA/__init__.pyc
+%%PLIST_OMNIORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Types__POA/__init__.pyo
+%%PLIST_OMNIORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/bsane/__init__.py
+%%PLIST_OMNIORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/bsane/__init__.pyc
+%%PLIST_OMNIORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/bsane/__init__.pyo
+%%PLIST_OMNIORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/bsane/collection/__init__.py
+%%PLIST_OMNIORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/bsane/collection/__init__.pyc
+%%PLIST_OMNIORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/bsane/collection/__init__.pyo
+%%PLIST_OMNIORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/bsane/comparison/__init__.py
+%%PLIST_OMNIORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/bsane/comparison/__init__.pyc
+%%PLIST_OMNIORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/bsane/comparison/__init__.pyo
+%%PLIST_OMNIORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/bsane/seqcore/__init__.py
+%%PLIST_OMNIORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/bsane/seqcore/__init__.pyc
+%%PLIST_OMNIORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/bsane/seqcore/__init__.pyo
+%%PLIST_OMNIORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/bsane__POA/__init__.py
+%%PLIST_OMNIORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/bsane__POA/__init__.pyc
+%%PLIST_OMNIORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/bsane__POA/__init__.pyo
+%%PLIST_OMNIORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/bsane__POA/collection/__init__.py
+%%PLIST_OMNIORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/bsane__POA/collection/__init__.pyc
+%%PLIST_OMNIORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/bsane__POA/collection/__init__.pyo
+%%PLIST_OMNIORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/bsane__POA/comparison/__init__.py
+%%PLIST_OMNIORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/bsane__POA/comparison/__init__.pyc
+%%PLIST_OMNIORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/bsane__POA/comparison/__init__.pyo
+%%PLIST_OMNIORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/bsane__POA/seqcore/__init__.py
+%%PLIST_OMNIORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/bsane__POA/seqcore/__init__.pyc
+%%PLIST_OMNIORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/bsane__POA/seqcore/__init__.pyo
+%%PLIST_OMNIORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/bsane_idl.py
+%%PLIST_OMNIORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/bsane_idl.pyc
+%%PLIST_OMNIORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/bsane_idl.pyo
+%%PLIST_OMNIORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/collection_idl.py
+%%PLIST_OMNIORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/collection_idl.pyc
+%%PLIST_OMNIORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/collection_idl.pyo
+%%PLIST_OMNIORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/comparison_idl.py
+%%PLIST_OMNIORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/comparison_idl.pyc
+%%PLIST_OMNIORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/comparison_idl.pyo
+%%PLIST_OMNIORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/seqcore_idl.py
+%%PLIST_OMNIORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/seqcore_idl.pyc
+%%PLIST_OMNIORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/seqcore_idl.pyo
+%%PLIST_OMNIORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/types_idl.py
+%%PLIST_OMNIORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/types_idl.pyc
+%%PLIST_OMNIORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/types_idl.pyo
 %%PORTDOCS%%%%PLIST_CORBA%%share/doc/biopython/BioCorba/IntroPythonClient.pdf
 %%PORTDOCS%%%%PLIST_CORBA%%share/doc/biopython/BioCorba/IntroPythonClient.tex
-%%PORTDOCS%%%%PLIST_CORBA%%share/doc/biopython/BioCorba/README.pdf
-%%PORTDOCS%%%%PLIST_CORBA%%share/doc/biopython/BioCorba/README.tex
-%%PORTDOCS%%%%PLIST_CORBA%%share/doc/biopython/BioCorba/biocorbahowto.pdf
-%%PORTDOCS%%%%PLIST_CORBA%%share/doc/biopython/BioCorba/biocorbahowto.tex
-%%PORTDOCS%%%%PLIST_CORBA%%share/examples/biopython/BioCorba/IntroClient/MyFirstClient/messenger/__init__.py
-%%PORTDOCS%%%%PLIST_CORBA%%share/examples/biopython/BioCorba/IntroClient/MyFirstClient/messenger__POA/__init__.py
-%%PORTDOCS%%%%PLIST_CORBA%%share/examples/biopython/BioCorba/IntroClient/MyFirstClient/secret_message_client.py
-%%PORTDOCS%%%%PLIST_CORBA%%share/examples/biopython/BioCorba/IntroClient/MyFirstClient/secret_message_idl.py
-%%PORTDOCS%%%%PLIST_CORBA%%share/examples/biopython/BioCorba/IntroClient/MySecondClient/biosequence_client.py
-%%PORTDOCS%%%%PLIST_CORBA%%share/examples/biopython/BioCorba/IntroClient/MySecondClient/biosequence_idl.py
-%%PORTDOCS%%%%PLIST_CORBA%%share/examples/biopython/BioCorba/IntroClient/MySecondClient/servers/__init__.py
-%%PORTDOCS%%%%PLIST_CORBA%%share/examples/biopython/BioCorba/IntroClient/MySecondClient/servers__POA/__init__.py
-%%PORTDOCS%%%%PLIST_CORBA%%share/examples/biopython/BioCorba/IntroClient/MyThirdClient/idl_demo/__init__.py
-%%PORTDOCS%%%%PLIST_CORBA%%share/examples/biopython/BioCorba/IntroClient/MyThirdClient/idl_demo__POA/__init__.py
-%%PORTDOCS%%%%PLIST_CORBA%%share/examples/biopython/BioCorba/IntroClient/MyThirdClient/idl_demo_client.py
-%%PORTDOCS%%%%PLIST_CORBA%%share/examples/biopython/BioCorba/IntroClient/MyThirdClient/idl_demo_idl.py
-%%PORTDOCS%%%%PLIST_CORBA%%share/examples/biopython/BioCorba/Scripts/bioenv_server.py
-%%PORTDOCS%%%%PLIST_CORBA%%share/examples/biopython/BioCorba/a_drought.fasta
+%%PORTDOCS%%%%PLIST_CORBA%%share/doc/biopython/BioCorba/IntroPythonServer.pdf
+%%PORTDOCS%%%%PLIST_CORBA%%share/doc/biopython/BioCorba/IntroPythonServer.tex
+%%PORTDOCS%%%%PLIST_CORBA%%share/doc/biopython/BioCorba/Tutorial.html
+%%PORTDOCS%%%%PLIST_CORBA%%share/doc/biopython/BioCorba/Tutorial.pdf
+%%PORTDOCS%%%%PLIST_CORBA%%share/doc/biopython/BioCorba/Tutorial.tex
+%%PORTDOCS%%%%PLIST_CORBA%%share/doc/biopython/BioCorba/Tutorial.txt
 %%PORTDOCS%%%%PLIST_CORBA%%share/examples/biopython/BioCorba/a_drought.gb
-%%PORTDOCS%%%%PLIST_CORBA%%share/examples/biopython/BioCorba/embl_biocorba.py
-%%PORTDOCS%%%%PLIST_CORBA%%share/examples/biopython/BioCorba/fasta_bioenv.py
-%%PORTDOCS%%%%PLIST_CORBA%%share/examples/biopython/BioCorba/fasta_biopy.py
-%%PORTDOCS%%%%PLIST_CORBA%%share/examples/biopython/BioCorba/fasta_pseqit.py
-%%PORTDOCS%%%%PLIST_CORBA%%share/examples/biopython/BioCorba/fasta_server.py
-%%PORTDOCS%%%%PLIST_CORBA%%share/examples/biopython/BioCorba/gb_bioenv.py
-%%PORTDOCS%%%%PLIST_CORBA%%share/examples/biopython/BioCorba/gbclient.py
-%%PORTDOCS%%%%PLIST_CORBA%%share/examples/biopython/BioCorba/gbsrv.pl
-%%PORTDOCS%%%%PLIST_CORBA%%share/examples/biopython/BioCorba/genbank_db_server.py
+%%PORTDOCS%%%%PLIST_CORBA%%share/examples/biopython/BioCorba/collection_server.py
+%%PORTDOCS%%%%PLIST_CORBA%%share/examples/biopython/BioCorba/genbank_client.py
+%%PORTDOCS%%%%PLIST_CORBA%%share/examples/biopython/BioCorba/genbank_server.py
 %%PORTDOCS%%share/doc/biopython/Blast.txt
 %%PORTDOCS%%share/doc/biopython/Enzyme.txt
 %%PORTDOCS%%share/doc/biopython/Fasta.txt
@@ -241,34 +210,38 @@
 %%PORTDOCS%%share/doc/biopython/References.txt
 %%PORTDOCS%%share/doc/biopython/SCOP.txt
 %%PORTDOCS%%share/doc/biopython/SwissProt.txt
+%%PORTDOCS%%share/doc/biopython/Tutorial.pdf
 %%PORTDOCS%%share/doc/biopython/Tutorial.tex
 %%PORTDOCS%%share/doc/biopython/Tutorial.txt
 %%PORTDOCS%%share/doc/biopython/make_api_docs.py
-%%PORTDOCS%%share/examples/biopython/Scripts/SeqGui/SeqGui.py
-%%PORTDOCS%%share/examples/biopython/Scripts/query_pubmed.py
-%%PORTDOCS%%share/examples/biopython/Scripts/xbbtools/README
-%%PORTDOCS%%share/examples/biopython/Scripts/xbbtools/nextorf.py
-%%PORTDOCS%%share/examples/biopython/Scripts/xbbtools/test.fas
-%%PORTDOCS%%share/examples/biopython/Scripts/xbbtools/testrp.fas
-%%PORTDOCS%%share/examples/biopython/Scripts/xbbtools/xbb_blast.py
-%%PORTDOCS%%share/examples/biopython/Scripts/xbbtools/xbb_blastbg.py
-%%PORTDOCS%%share/examples/biopython/Scripts/xbbtools/xbb_io.py
-%%PORTDOCS%%share/examples/biopython/Scripts/xbbtools/xbb_sequence.py
-%%PORTDOCS%%share/examples/biopython/Scripts/xbbtools/xbb_translations.py
-%%PORTDOCS%%share/examples/biopython/Scripts/xbbtools/xbb_utils.py
-%%PORTDOCS%%share/examples/biopython/Scripts/xbbtools/xbb_widget.py
-%%PORTDOCS%%share/examples/biopython/Scripts/xbbtools/xbbtools.py
+%%PORTDOCS%%share/examples/biopython/SeqGui/SeqGui.py
 %%PORTDOCS%%share/examples/biopython/clustal_run.py
 %%PORTDOCS%%share/examples/biopython/fasta_consumer.py
 %%PORTDOCS%%share/examples/biopython/fasta_dictionary.py
 %%PORTDOCS%%share/examples/biopython/fasta_iterator.py
 %%PORTDOCS%%share/examples/biopython/getgene.py
 %%PORTDOCS%%share/examples/biopython/local_blast.py
+%%PORTDOCS%%share/examples/biopython/ls_orchid.fasta
+%%PORTDOCS%%share/examples/biopython/m_cold.fasta
 %%PORTDOCS%%share/examples/biopython/make_subsmat.py
+%%PORTDOCS%%share/examples/biopython/opuntia.fasta
 %%PORTDOCS%%share/examples/biopython/pubmed_search.py
 %%PORTDOCS%%share/examples/biopython/query_entrez.py
+%%PORTDOCS%%share/examples/biopython/query_pubmed.py
 %%PORTDOCS%%share/examples/biopython/swissprot.py
 %%PORTDOCS%%share/examples/biopython/www_blast.py
+%%PORTDOCS%%share/examples/biopython/xbbtools/README
+%%PORTDOCS%%share/examples/biopython/xbbtools/nextorf.py
+%%PORTDOCS%%share/examples/biopython/xbbtools/test.fas
+%%PORTDOCS%%share/examples/biopython/xbbtools/testrp.fas
+%%PORTDOCS%%share/examples/biopython/xbbtools/xbb_blast.py
+%%PORTDOCS%%share/examples/biopython/xbbtools/xbb_blastbg.py
+%%PORTDOCS%%share/examples/biopython/xbbtools/xbb_io.py
+%%PORTDOCS%%share/examples/biopython/xbbtools/xbb_sequence.py
+%%PORTDOCS%%share/examples/biopython/xbbtools/xbb_translations.py
+%%PORTDOCS%%share/examples/biopython/xbbtools/xbb_utils.py
+%%PORTDOCS%%share/examples/biopython/xbbtools/xbb_widget.py
+%%PORTDOCS%%share/examples/biopython/xbbtools/xbbtools.py
 lib/%%PYTHON_VERSION%%/site-packages/Bio/Align/AlignInfo.py
 lib/%%PYTHON_VERSION%%/site-packages/Bio/Align/AlignInfo.pyc
 lib/%%PYTHON_VERSION%%/site-packages/Bio/Align/AlignInfo.pyo
@@ -593,49 +566,44 @@ lib/%%PYTHON_VERSION%%/site-packages/Bio/utils.pyo
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/Bio/Alphabet
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/Bio/Align
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/Bio
-%%PORTDOCS%%%%PLIST_CORBA%%@dirrm share/examples/biopython/BioCorba/Scripts
-%%PORTDOCS%%%%PLIST_CORBA%%@dirrm share/examples/biopython/BioCorba/IntroClient/MyThirdClient/idl_demo__POA
-%%PORTDOCS%%%%PLIST_CORBA%%@dirrm share/examples/biopython/BioCorba/IntroClient/MyThirdClient/idl_demo
-%%PORTDOCS%%%%PLIST_CORBA%%@dirrm share/examples/biopython/BioCorba/IntroClient/MyThirdClient
-%%PORTDOCS%%%%PLIST_CORBA%%@dirrm share/examples/biopython/BioCorba/IntroClient/MySecondClient/servers__POA
-%%PORTDOCS%%%%PLIST_CORBA%%@dirrm share/examples/biopython/BioCorba/IntroClient/MySecondClient/servers
-%%PORTDOCS%%%%PLIST_CORBA%%@dirrm share/examples/biopython/BioCorba/IntroClient/MySecondClient
-%%PORTDOCS%%%%PLIST_CORBA%%@dirrm share/examples/biopython/BioCorba/IntroClient/MyFirstClient/messenger__POA
-%%PORTDOCS%%%%PLIST_CORBA%%@dirrm share/examples/biopython/BioCorba/IntroClient/MyFirstClient/messenger
-%%PORTDOCS%%%%PLIST_CORBA%%@dirrm share/examples/biopython/BioCorba/IntroClient/MyFirstClient
-%%PORTDOCS%%%%PLIST_CORBA%%@dirrm share/examples/biopython/BioCorba/IntroClient
 %%PORTDOCS%%%%PLIST_CORBA%%@dirrm share/examples/biopython/BioCorba
 %%PORTDOCS%%%%PLIST_CORBA%%@dirrm share/doc/biopython/BioCorba
-%%PORTDOCS%%@dirrm share/examples/biopython/Scripts/xbbtools
-%%PORTDOCS%%@dirrm share/examples/biopython/Scripts/SeqGui
-%%PORTDOCS%%@dirrm share/examples/biopython/Scripts
+%%PORTDOCS%%@dirrm share/examples/biopython/xbbtools
+%%PORTDOCS%%@dirrm share/examples/biopython/SeqGui
 %%PORTDOCS%%@dirrm share/examples/biopython
 %%PORTDOCS%%@dirrm share/doc/biopython
-%%PLIST_FNORB%%@dirrm lib/%%PYTHON_VERSION%%/site-packages/BioCorba/org_skel/ensembl_skel
-%%PLIST_FNORB%%@dirrm lib/%%PYTHON_VERSION%%/site-packages/BioCorba/org_skel/biocorba_skel/seqcore_skel
-%%PLIST_FNORB%%@dirrm lib/%%PYTHON_VERSION%%/site-packages/BioCorba/org_skel/biocorba_skel
-%%PLIST_FNORB%%@dirrm lib/%%PYTHON_VERSION%%/site-packages/BioCorba/org_skel
-%%PLIST_FNORB%%@dirrm lib/%%PYTHON_VERSION%%/site-packages/BioCorba/GNOME_skel
-%%PLIST_CORBA%%@dirrm lib/%%PYTHON_VERSION%%/site-packages/BioCorba/org__POA/ensembl
-%%PLIST_CORBA%%@dirrm lib/%%PYTHON_VERSION%%/site-packages/BioCorba/org__POA/biocorba/seqcore
-%%PLIST_CORBA%%@dirrm lib/%%PYTHON_VERSION%%/site-packages/BioCorba/org__POA/biocorba
-%%PLIST_CORBA%%@dirrm lib/%%PYTHON_VERSION%%/site-packages/BioCorba/org__POA
-%%PLIST_CORBA%%@dirrm lib/%%PYTHON_VERSION%%/site-packages/BioCorba/org/ensembl
-%%PLIST_CORBA%%@dirrm lib/%%PYTHON_VERSION%%/site-packages/BioCorba/org/biocorba/seqcore
-%%PLIST_CORBA%%@dirrm lib/%%PYTHON_VERSION%%/site-packages/BioCorba/org/biocorba
-%%PLIST_CORBA%%@dirrm lib/%%PYTHON_VERSION%%/site-packages/BioCorba/org
+%%PLIST_OMNIORB%%@dirrm lib/%%PYTHON_VERSION%%/site-packages/BioCorba/bsane__POA/seqcore
+%%PLIST_OMNIORB%%@dirrm lib/%%PYTHON_VERSION%%/site-packages/BioCorba/bsane__POA/comparison
+%%PLIST_OMNIORB%%@dirrm lib/%%PYTHON_VERSION%%/site-packages/BioCorba/bsane__POA/collection
+%%PLIST_OMNIORB%%@dirrm lib/%%PYTHON_VERSION%%/site-packages/BioCorba/bsane__POA
+%%PLIST_OMNIORB%%@dirrm lib/%%PYTHON_VERSION%%/site-packages/BioCorba/bsane/seqcore
+%%PLIST_OMNIORB%%@dirrm lib/%%PYTHON_VERSION%%/site-packages/BioCorba/bsane/comparison
+%%PLIST_OMNIORB%%@dirrm lib/%%PYTHON_VERSION%%/site-packages/BioCorba/bsane/collection
+%%PLIST_OMNIORB%%@dirrm lib/%%PYTHON_VERSION%%/site-packages/BioCorba/bsane
+%%PLIST_OMNIORB%%@dirrm lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Types__POA
+%%PLIST_OMNIORB%%@dirrm lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Types
+%%PLIST_FNORB%%@dirrm lib/%%PYTHON_VERSION%%/site-packages/BioCorba/bsane_skel/seqcore_skel
+%%PLIST_FNORB%%@dirrm lib/%%PYTHON_VERSION%%/site-packages/BioCorba/bsane_skel/comparison_skel
+%%PLIST_FNORB%%@dirrm lib/%%PYTHON_VERSION%%/site-packages/BioCorba/bsane_skel/collection_skel
+%%PLIST_FNORB%%@dirrm lib/%%PYTHON_VERSION%%/site-packages/BioCorba/bsane_skel
+%%PLIST_FNORB%%@dirrm lib/%%PYTHON_VERSION%%/site-packages/BioCorba/bsane__POA/seqcore
+%%PLIST_FNORB%%@dirrm lib/%%PYTHON_VERSION%%/site-packages/BioCorba/bsane__POA/collection
+%%PLIST_FNORB%%@dirrm lib/%%PYTHON_VERSION%%/site-packages/BioCorba/bsane__POA
+%%PLIST_FNORB%%@dirrm lib/%%PYTHON_VERSION%%/site-packages/BioCorba/bsane/seqcore
+%%PLIST_FNORB%%@dirrm lib/%%PYTHON_VERSION%%/site-packages/BioCorba/bsane/comparison
+%%PLIST_FNORB%%@dirrm lib/%%PYTHON_VERSION%%/site-packages/BioCorba/bsane/collection
+%%PLIST_FNORB%%@dirrm lib/%%PYTHON_VERSION%%/site-packages/BioCorba/bsane
+%%PLIST_FNORB%%@dirrm lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Types_skel
+%%PLIST_FNORB%%@dirrm lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Types
+%%PLIST_CORBA%%@dirrm lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Share
 %%PLIST_CORBA%%@dirrm lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Server/Seqcore
-%%PLIST_CORBA%%@dirrm lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Server/GnomeMemory
+%%PLIST_CORBA%%@dirrm lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Server/Bsane
 %%PLIST_CORBA%%@dirrm lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Server
-%%PLIST_CORBA%%@dirrm lib/%%PYTHON_VERSION%%/site-packages/BioCorba/GNOME__POA
-%%PLIST_CORBA%%@dirrm lib/%%PYTHON_VERSION%%/site-packages/BioCorba/GNOME
 %%PLIST_CORBA%%@dirrm lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/Seqcore
-%%PLIST_CORBA%%@dirrm lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/GnomeMemory
-%%PLIST_CORBA%%@dirrm lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/Ensembl
+%%PLIST_CORBA%%@dirrm lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/Bsane
 %%PLIST_CORBA%%@dirrm lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client
 %%PLIST_CORBA%%@dirrm lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Bio/GenBank
 %%PLIST_CORBA%%@dirrm lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Bio/Fasta
 %%PLIST_CORBA%%@dirrm lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Bio
 %%PLIST_CORBA%%@dirrm lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Adapters
 %%PLIST_CORBA%%@dirrm lib/%%PYTHON_VERSION%%/site-packages/BioCorba
-
