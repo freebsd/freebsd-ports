@@ -23,7 +23,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-user=news
 CONFIGURE_ARGS+=--with-group=dialer
 CONFIGURE_ARGS+=--with-execdir=${PREFIX}/libexec/uconnect
-CONFIGURE_ARGS+=--with-confdir=/etc/uconnect
+CONFIGURE_ARGS+=--with-confdir=${PREFIX}/etc/uconnect
 CONFIGURE_ARGS+=--with-spooldir=/var/spool/uconnect
 CONFIGURE_ARGS+=--with-mail=sendmail
 CONFIGURE_ARGS+=--with-news=cnews
