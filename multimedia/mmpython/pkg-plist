@@ -29,6 +29,9 @@ bin/mminfo
 %%PYTHON_SITELIBDIR%%/mmpython/audio/flacinfo.py
 %%PYTHON_SITELIBDIR%%/mmpython/audio/flacinfo.pyc
 %%PYTHON_SITELIBDIR%%/mmpython/audio/flacinfo.pyo
+%%PYTHON_SITELIBDIR%%/mmpython/audio/id3.py
+%%PYTHON_SITELIBDIR%%/mmpython/audio/id3.pyc
+%%PYTHON_SITELIBDIR%%/mmpython/audio/id3.pyo
 %%PYTHON_SITELIBDIR%%/mmpython/audio/m4ainfo.py
 %%PYTHON_SITELIBDIR%%/mmpython/audio/m4ainfo.pyc
 %%PYTHON_SITELIBDIR%%/mmpython/audio/m4ainfo.pyo
@@ -109,6 +112,12 @@ bin/mminfo
 %%PYTHON_SITELIBDIR%%/mmpython/misc/xmlinfo.py
 %%PYTHON_SITELIBDIR%%/mmpython/misc/xmlinfo.pyc
 %%PYTHON_SITELIBDIR%%/mmpython/misc/xmlinfo.pyo
+%%PYTHON_SITELIBDIR%%/mmpython/mpg_search.py
+%%PYTHON_SITELIBDIR%%/mmpython/mpg_search.pyc
+%%PYTHON_SITELIBDIR%%/mmpython/mpg_search.pyo
+%%PYTHON_SITELIBDIR%%/mmpython/stream_search.py
+%%PYTHON_SITELIBDIR%%/mmpython/stream_search.pyc
+%%PYTHON_SITELIBDIR%%/mmpython/stream_search.pyo
 %%PYTHON_SITELIBDIR%%/mmpython/synchronizedobject.py
 %%PYTHON_SITELIBDIR%%/mmpython/synchronizedobject.pyc
 %%PYTHON_SITELIBDIR%%/mmpython/synchronizedobject.pyo
