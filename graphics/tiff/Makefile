@@ -5,11 +5,11 @@
 #			Mikhail Teterin <mi@aldan.ziplink.net>
 #			Jun-ichiro itojun Itoh <itojun@itojun.org>
 #
-# $Id: Makefile,v 1.14 1999/01/10 17:57:37 steve Exp $
+# $Id: Makefile,v 1.15 1999/03/01 15:42:35 itojun Exp $
 #
 
 DISTNAME=	tiff-v3.4
-PKGNAME=	tiff-3.4
+PKGNAME=	tiff-3.4a
 CATEGORIES=	graphics
 MASTER_SITES=   ftp://ftp.sgi.com/graphics/tiff/
 EXTRACT_SUFX=	-tar.gz
