@@ -16,7 +16,7 @@ DISTNAME=	Supybot-${PORTVERSION}
 MAINTAINER=	x@Vex.Net
 COMMENT=	Supybot - A Superb Python IRC bot
 
-USE_PYTHON=	yes
+USE_PYTHON=	2.3+
 USE_PYDISTUTILS=	yes
 
 DOCSDIR=	${PREFIX}/share/doc/supybot
