@@ -8,10 +8,11 @@ PORTNAME=	haddock
 PORTVERSION=	0.4
 CATEGORIES=	devel haskell
 MASTER_SITES=	http://www.haskell.org/haddock/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 PKGNAMEPREFIX=	hs-
+DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	obraun@FreeBSD.org
+COMMENT=	A documentation tool for Haskell
 
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
 

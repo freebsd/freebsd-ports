@@ -8,10 +8,11 @@ PORTNAME=	drift
 PORTVERSION=	2.0.r3
 CATEGORIES=	devel haskell
 MASTER_SITES=	http://repetae.net/john/computer/haskell/DrIFT/
-DISTNAME=	DrIFT-${PORTVERSION:S/.r/rc/}
 PKGNAMEPREFIX=	hs-
+DISTNAME=	DrIFT-${PORTVERSION:S/.r/rc/}
 
 MAINTAINER=	obraun@FreeBSD.org
+COMMENT=	A type sensitive preprocessor for Haskell
 
 .if !defined(WITH_GHC)
 BUILD_DEPENDS=	nhc98:${PORTSDIR}/lang/nhc98

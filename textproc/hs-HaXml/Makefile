@@ -10,10 +10,11 @@ PORTREVISION=	0
 CATEGORIES=	textproc haskell
 MASTER_SITES=	http://www.haskell.org/HaXml/ \
 		ftp://ftp.cs.york.ac.uk/pub/haskell/HaXml/
-DISTNAME=	HaXml-${PORTVERSION}
 PKGNAMEPREFIX=	hs-
+DISTNAME=	HaXml-${PORTVERSION}
 
 MAINTAINER=	obraun@FreeBSD.org
+COMMENT=	A collection of utilities for using Haskell and XML together
 
 .if !defined(WITHOUT_NHC98)
 BUILD_DEPENDS=	nhc98:${PORTSDIR}/lang/nhc98

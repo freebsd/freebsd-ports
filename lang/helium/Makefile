@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.cs.uu.nl/~afie/helium/distr/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	obraun@FreeBSD.org
+COMMENT=	Functional programming compiler for a subset of Haskell
 
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
 RUN_DEPENDS=	ghc:${PORTSDIR}/lang/ghc

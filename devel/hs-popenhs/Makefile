@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.haskell.org/~petersen/haskell/popenhs/
 PKGNAMEPREFIX=	hs-
 
 MAINTAINER=	obraun@FreeBSD.org
+COMMENT=	A popen-like library for Haskell
 
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
 RUN_DEPENDS=	ghc:${PORTSDIR}/lang/ghc

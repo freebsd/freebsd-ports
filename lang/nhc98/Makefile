@@ -16,6 +16,7 @@ PATCH_SITES=	${MASTER_SITES}
 PATCHFILES=	patch-1.14-Time
 
 MAINTAINER=	obraun@FreeBSD.org
+COMMENT=	A fully-fledged compiler for Haskell 98
 
 USE_REINPLACE=	yes
 

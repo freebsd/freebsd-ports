@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	obraun@FreeBSD.org
+COMMENT=	Gtk+ based, file manager inspired by DirectoryOpus
 
 USE_GNOMENG=	yes
 USE_GNOME=	gtk12

@@ -10,10 +10,11 @@ PORTVERSION=	1.1
 PORTREVISION=	1
 CATEGORIES=	x11-toolkits haskell
 MASTER_SITES=	http://www.dcs.gla.ac.uk/~meurig/FranTk/
-DISTNAME=	FranTk${PORTVERSION:S/./_/}
 PKGNAMEPREFIX=	hs-
+DISTNAME=	FranTk${PORTVERSION:S/./_/}
 
 MAINTAINER=	obraun@FreeBSD.org
+COMMENT=	A GUI library for Haskell on top of Tcl-Tk
 
 LIB_DEPENDS=	tk83.1:${PORTSDIR}/x11-toolkits/tk83
 .if !defined(WITHOUT_GHC)

@@ -11,6 +11,7 @@ MASTER_SITES=	http://www.cs.uu.nl/research/projects/generic-haskell/compiler/ber
 DISTNAME=	gh-${PORTVERSION}-source
 
 MAINTAINER=	obraun@FreeBSD.org
+COMMENT=	The Generic Haskell compiler
 
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
 

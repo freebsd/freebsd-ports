@@ -11,6 +11,7 @@ MASTER_SITES=	http://www.fmi.uni-passau.de/~groessli/hdoc/
 PKGNAMEPREFIX=	hs-
 
 MAINTAINER=	obraun@FreeBSD.org
+COMMENT=	HTML documentation tool for Haskell
 
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
 
