@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	source-highlight
-PORTVERSION=	1.1
+PORTVERSION=	1.2.1
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR= source-highlight
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	kevlo@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 .if defined(NOPORTDOCS)

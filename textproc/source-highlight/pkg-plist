@@ -27,5 +27,6 @@ bin/java2html
 %%PORTDOCS%%share/doc/source-highlight/source-highlight.html
 %%PORTDOCS%%share/doc/source-highlight/startapp.cc.html
 share/source-highlight/tags.j2h 
+share/source-highlight/tags2.j2h 
 @dirrm share/source-highlight
 %%PORTDOCS%%@dirrm share/doc/source-highlight
