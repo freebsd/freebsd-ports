@@ -1,0 +1,11 @@
+--- ecushm.c.orig	Fri Jan 25 23:15:09 2002
++++ ecushm.c	Fri Jan 25 23:15:19 2002
+@@ -124,7 +124,7 @@
+ 
+ #if defined(CFG_MmapSHM)
+ 	shm = (ECU_SDS *) mmap(0, sizeof(ECU_SDS), PROT_READ | PROT_WRITE,
+-		MAP_ANON | MAP_INHERIT | MAP_SHARED, -1, 0);
++		MAP_ANON | MAP_SHARED, -1, 0);
+ 	if (shm == (ECU_SDS *) - 1)
+ 	{
+ 		perror("mmap");
