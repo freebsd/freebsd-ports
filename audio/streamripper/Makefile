@@ -14,7 +14,8 @@ MASTER_SITE_SUBDIR=	streamripper
 MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	Splits SHOUTcast stream into tracks
 
-LIB_DEPENDS=	mad.2:${PORTSDIR}/audio/libmad
+LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv \
+		mad.2:${PORTSDIR}/audio/libmad
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
