@@ -1,0 +1,15 @@
+This is a collection of four libraries which can be used to build
+foreign function call interfaces in embedded interpreters.
+
+The four packages are:
+
+    avcall - calling C functions with variable arguments
+
+    vacall - C functions accepting variable argument prototypes
+
+    trampoline - closures as first-class C functions
+
+    callback - closures with variable arguments as first-class C functions
+               (a reentrant combination of vacall and trampoline)
+
+WWW: http://clisp.cons.org/~haible/packages-ffcall.html

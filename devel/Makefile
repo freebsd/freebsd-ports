@@ -92,6 +92,7 @@
     SUBDIR += entity
     SUBDIR += f77flow
     SUBDIR += fastcrc
+    SUBDIR += ffcall
     SUBDIR += fhist
     SUBDIR += flick
     SUBDIR += flux
