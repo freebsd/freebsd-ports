@@ -70,6 +70,7 @@
     SUBDIR += mrtg
     SUBDIR += nagios
     SUBDIR += nagios-plugins
+    SUBDIR += nagios-silfreed-plugins
     SUBDIR += nagios-snmp-plugins
     SUBDIR += nagiostat
     SUBDIR += nat

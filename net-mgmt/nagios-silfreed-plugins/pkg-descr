@@ -1,0 +1,15 @@
+This is a [meta-]port of the Nagios plugins found at silfreed.net.
+
+These are useful for those individuals wishing to monitor network device
+health via SNMP, using Nagios, and to generate alerts accordingly. When
+used with Nagiostat, RRDTool-based graphs can be generated from within
+the Nagios monitoring framework, much like Cricket.
+
+It includes the following checks: check_max_clients_route,
+check_pm3_clients_route, check_snmp_counter, check_snmp_gauge,
+check_snmp_if, check_snmp_if_max, check_tcping, and dns_delegation.
+
+WWW: http://www.silfreed.net/download/progs/nagios/
+
+Bruce
+bms@FreeBSD.org

@@ -1,0 +1,24 @@
+libexec/nagios/check_snmp_counter
+libexec/nagios/check_snmp_gauge
+libexec/nagios/check_snmp_if
+libexec/nagios/check_snmp_if_max
+libexec/nagios/check_tcping
+libexec/nagios/gen_check_snmp_if_max_services
+libexec/nagios/gen_check_snmp_if_services
+%%EXPECTTOOLS%%libexec/nagios/check_max_clients_route
+%%EXPECTTOOLS%%libexec/nagios/check_pm3_clients_route
+%%EXPECTTOOLS%%libexec/nagios/iproutecheck.pm
+%%EXPECTTOOLS%%libexec/nagios/pm3
+%%EXPECTTOOLS%%libexec/nagios/pm3.exp
+%%EXPECTTOOLS%%libexec/nagios/tnt
+%%EXPECTTOOLS%%libexec/nagios/tnt.exp
+%%EXAMPLESDIR%%/services-check_snmp_if.template
+%%PORTDOCS%%%%DOCSDIR%%/check_snmp_counter-0.5.0.README
+%%PORTDOCS%%%%DOCSDIR%%/check_snmp_gauge-0.3.0.README
+%%PORTDOCS%%%%DOCSDIR%%/check_snmp_if-0.3.5.README
+%%PORTDOCS%%%%DOCSDIR%%/check_snmp_if_max-0.3.0.README
+%%PORTDOCS%%%%DOCSDIR%%/check_tcping-0.1.5.README
+%%PORTDOCS%%%%DOCSDIR%%/dns_delegation-0.1.0.README
+%%EXPECTTOOLS%%%%PORTDOCS%%%%DOCSDIR%%/check_max_clients_route-0.1.6.README
+%%EXPECTTOOLS%%%%PORTDOCS%%%%DOCSDIR%%/check_pm3_clients_route-0.1.0.README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
