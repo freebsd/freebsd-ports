@@ -19,6 +19,8 @@ DISTNAME=	nessus-plugins-${PORTVERSION}
 MAINTAINER=	udo.schweigert@siemens.com
 COMMENT=	Plugins for Nessus, the security scanner
 
+CONFLICTS=	nessus-plugins-devel-[0-9]*
+
 BUILD_DEPENDS=	${LOCALBASE}/include/nessus/nessus-devel.h:${PORTSDIR}/security/nessus
 RUN_DEPENDS=	${LOCALBASE}/include/nessus/nessus-devel.h:${PORTSDIR}/security/nessus \
 		nmap:${PORTSDIR}/security/nmap \
