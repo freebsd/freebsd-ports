@@ -14,9 +14,8 @@ DISTNAME=	${PORTNAME}-v${PORTVERSION:C/.p(.)$/pre\1/}
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	A small GNOME program for editing and converting subtitles
 
-LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
-
 USE_X_PREFIX=	yes
+USE_GETOPT_LONG=	yes
 USE_GNOMENG=	yes
 USE_GNOME=	gnomeprefix gnomelibs
 USE_REINPLACE=	yes
