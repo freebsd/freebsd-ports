@@ -10,12 +10,15 @@ if [ -z "${CLAMAVGROUP}" ]; then
 	CLAMAVGROUP=clamav
 fi
 
+UID=106
+GID=${UID}
+
 CLAMRUN=/var/run/clamav
 CLAMLOG=/var/log/clamav
 
 echo "===> Adding user \"${CLAMAVUSER}\" if necessary."
 if ! pw groupshow "${CLAMAVGROUP}" 2>/dev/null 1>&2; then
-	if pw groupadd ${CLAMAVGROUP}; then
+	if pw groupadd ${CLAMAVGROUP} -g ${GID}; then
 		echo "===> Added group \"${CLAMAVGROUP}\"."
 	else
                 echo "===> Adding group \"${CLAMAVGROUP}\" failed..."
@@ -24,7 +27,7 @@ if ! pw groupshow "${CLAMAVGROUP}" 2>/dev/null 1>&2; then
 fi
 
 if ! pw usershow "${CLAMAVUSER}" 2>/dev/null 1>&2; then
-	if pw useradd ${CLAMAVUSER} -g ${CLAMAVGROUP} -h - \
+	if pw useradd ${CLAMAVUSER} -u ${UID} -g ${CLAMAVGROUP} -h - \
 		-s "/usr/sbin/nologin" -d "/nonexistent" \
 		-c "Clam Antivirus"; \
         then
