@@ -1,4 +1,0 @@
-bin/bogosort
-@unexec install-info --delete %D/info/bogosort.info %D/info/dir
-info/bogosort.info
-@exec install-info %D/info/bogosort.info %D/info/dir
