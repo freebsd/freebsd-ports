@@ -84,3 +84,5 @@ lib/erlang/lib/esdl-%%VERSION%%/vsn
 @dirrm lib/erlang/lib/esdl-%%VERSION%%/doc
 @dirrm lib/erlang/lib/esdl-%%VERSION%%/c_src
 @dirrm lib/erlang/lib/esdl-%%VERSION%%
+@exec ln -sf esdl-%%VERSION%% %D/lib/erlang/lib/esdl
+@unexec rm -f %D/lib/erlang/lib/esdl
