@@ -13,7 +13,7 @@
  # MacOS X/Darwin need a special makefile
  .IF "$(OS)"=="MACOSX"
      BUILD_FLAGS=-f gcc-apple-macosx.mak
-+.ELSE IF "$(OS)"=="FREEBSD"
++.ELIF "$(OS)"=="FREEBSD"
 +    BUILD_FLAGS=-f gcc-freebsd.mak
  .ELSE # "$(OS)"=="MACOSX"
      BUILD_FLAGS=-f gcc.mak
