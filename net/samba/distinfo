@@ -1,4 +1,4 @@
 MD5 (samba-2.2.2.tar.gz) = d0aba688a1b6189f09f3ba0b44b1da8e
 MD5 (proto.h.patch) = b8b577540c1de5202e70584a402c2d74
 MD5 (loadparm.c.patch) = df642726476af756df8a2e6c0537eb0d
-MD5 (reply.c.patch) = b75a5312ad6c01c501d6e887c3a65357
+MD5 (reply.c.patch) = fcc861e805f74ec610ba44ab5cc9f1b7
