@@ -112,6 +112,7 @@ share/examples/zsh/zshrc
 %%ZSHFUNC_SUBDIR%%/_arp
 %%ZSHFUNC_SUBDIR%%/_arping
 %%ZSHFUNC_SUBDIR%%/_arrays
+%%ZSHFUNC_SUBDIR%%/_auto-apt
 %%ZSHFUNC_SUBDIR%%/_autocd
 %%ZSHFUNC_SUBDIR%%/_autoload
 %%ZSHFUNC_SUBDIR%%/_bash_completions
