@@ -11,16 +11,16 @@ CATEGORIES=	x11 windowmaker
 MASTER_SITES=	http://www.tcscs.com/wdm/wdm/ \
 		http://www.de.freebsd.org/de/gif/bsd/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DAEMONPIC}
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	wraster.3:${PORTSDIR}/x11-wm/windowmaker
-BUILD_DEPENDS=	automake:${PORTSDIR}/devel/automake
 
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 DIST_SUBDIR=	wdm
 USE_X_PREFIX=	yes
-USE_AUTOCONF=	yes
+USE_AUTOMAKE=	yes
+AUTOMAKE=	automake -a -i
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include \
 			-DCSRG_BASED -DHAS_SETUSERCONTEXT" \
 		LIBS="-L${LOCALBASE}/lib ${LIBPAM}"
@@ -46,14 +46,8 @@ pre-fetch:
 	@${ECHO_MSG} "To build this port with PAM support, define \"WITH_PAM\"."
 .endif
 
-post-extract:
-	@${CP} ${FILESDIR}/*.patch ${WRKSRC}/patches
-
 post-patch:
 	@${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/doc/*.man
-
-pre-configure:
-	@(cd ${WRKSRC}; automake -a --include-deps)
 
 post-install:
 	${INSTALL_DATA} ${_DISTDIR}/${DAEMONPIC} ${PREFIX}/lib/X11/wdm/pixmaps
