@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnustep-back
-PORTVERSION=	0.8.3
+PORTVERSION=	0.8.4
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_GNUSTEP} \
 		ftp://ftp.gnustep.org/pub/gnustep/%SUBDIR%/
@@ -24,6 +24,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 
 USE_XLIB=		yes
 BREAKS_IF_PEDANTIC=	yes
+USE_GCC=		3.2
 CONFIGURE_ARGS+=	--with-tiff-library=${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--with-tiff-include=${LOCALBASE}/include
 CONFIGURE_ARGS+=	--with-jpeg-library=${LOCALBASE}/lib

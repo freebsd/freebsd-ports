@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnustep-gui
-PORTVERSION=	0.8.3
+PORTVERSION=	0.8.4
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_GNUSTEP} \
 		ftp://ftp.gnustep.org/pub/gnustep/%SUBDIR%/
@@ -22,6 +22,7 @@ LIB_DEPENDS+=	tiff.4:${PORTSDIR}/graphics/tiff
 LIB_DEPENDS+=	audiofile.0:${PORTSDIR}/audio/libaudiofile
 
 BREAKS_IF_PEDANTIC=	yes
+USE_GCC=		3.2
 
 .include <bsd.port.pre.mk>
 

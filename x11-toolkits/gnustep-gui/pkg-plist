@@ -9,7 +9,9 @@ System/Headers/AppKit/GSFontInfo.h
 System/Headers/AppKit/GSFusedSilica.h
 System/Headers/AppKit/GSHbox.h
 System/Headers/AppKit/GSHelpManagerPanel.h
+System/Headers/AppKit/GSHorizontalTypesetter.h
 System/Headers/AppKit/GSInfoPanel.h
+System/Headers/AppKit/GSLayoutManager_internal.h
 System/Headers/AppKit/GSMemoryPanel.h
 System/Headers/AppKit/GSMethodTable.h
 System/Headers/AppKit/GSNibTemplates.h
@@ -18,7 +20,9 @@ System/Headers/AppKit/GSServicesManager.h
 System/Headers/AppKit/GSTable.h
 System/Headers/AppKit/GSTextConverter.h
 System/Headers/AppKit/GSTrackingRect.h
+System/Headers/AppKit/GSTypesetter.h
 System/Headers/AppKit/GSVbox.h
+System/Headers/AppKit/GSLayoutManager.h
 System/Headers/AppKit/GSVersion.h
 System/Headers/AppKit/IMConnectors.h
 System/Headers/AppKit/IMCustomObject.h
@@ -139,11 +143,11 @@ System/Headers/AppKit/NSWindow.h
 System/Headers/AppKit/NSWindowController.h
 System/Headers/AppKit/NSWorkspace.h
 System/Headers/AppKit/PSOperators.h
-System/Headers/gnustep/AppKit/GMAppKit.h
-System/Headers/gnustep/AppKit/GMArchiver.h
-System/Headers/gnustep/AppKit/IMConnectors.h
-System/Headers/gnustep/AppKit/IMCustomObject.h
-System/Headers/gnustep/AppKit/IMLoading.h
+System/Headers/gnustep/gui/GMAppKit.h
+System/Headers/gnustep/gui/GMArchiver.h
+System/Headers/gnustep/gui/IMConnectors.h
+System/Headers/gnustep/gui/IMCustomObject.h
+System/Headers/gnustep/gui/IMLoading.h
 System/Libraries/Resources/English.lproj/GSPageLayout.gorm
 System/Libraries/Resources/English.lproj/GSPrintPanel.gorm
 System/Libraries/Resources/Images/GNUstep.tiff
@@ -545,8 +549,10 @@ System/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libgnustep-gui.so.%%MAJORVER
 System/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libgnustep-gui.so.%%VERSION%%
 System/Library/Bundles/TextConverters/RTFConverter.bundle/Resources/Info-gnustep.plist
 System/Library/Bundles/TextConverters/RTFConverter.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/RTFConverter
+System/Library/Bundles/TextConverters/RTFConverter.bundle/stamp.make
 System/Library/Bundles/libgmodel.bundle/Resources/Info-gnustep.plist
 System/Library/Bundles/libgmodel.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libgmodel
+System/Library/Bundles/libgmodel.bundle/stamp.make
 System/Library/ColorPickers/StandardPicker.bundle/Resources/GSCMYKColorPicker.tiff
 System/Library/ColorPickers/StandardPicker.bundle/Resources/GSGrayColorPicker.tiff
 System/Library/ColorPickers/StandardPicker.bundle/Resources/GSHSBColorPicker.tiff
@@ -556,9 +562,11 @@ System/Library/ColorPickers/StandardPicker.bundle/Resources/English.lproj/Standa
 System/Library/ColorPickers/StandardPicker.bundle/Resources/French.lproj/StandardPicker.strings
 System/Library/ColorPickers/StandardPicker.bundle/Resources/Swedish.lproj/StandardPicker.strings
 System/Library/ColorPickers/StandardPicker.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/StandardPicker
+System/Library/ColorPickers/StandardPicker.bundle/stamp.make
 System/Library/ColorPickers/WheelPicker.bundle/Resources/GSWheelColorPicker.tiff
 System/Library/ColorPickers/WheelPicker.bundle/Resources/Info-gnustep.plist
 System/Library/ColorPickers/WheelPicker.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/WheelPicker
+System/Library/ColorPickers/WheelPicker.bundle/stamp.make
 System/Library/Model/ColorPanel.gmodel
 System/Library/Model/SavePanel.gmodel
 System/Library/Model/SpellPanel.gmodel
@@ -568,7 +576,7 @@ System/Library/Services/example.service/Resources/Info-gnustep.plist
 System/Library/Services/example.service/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/example
 System/Makefiles/Additional/gui.make
 System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/gopen
-System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/gsnd
+System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/gnustep_sndd
 System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/make_services
 System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/set_show_service
 @dirrm System/Library/Services/example.service/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
@@ -581,7 +589,6 @@ System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/set_show_service
 @dirrm System/Library/Services/GSspell.service/%%GNU_ARCH%%
 @dirrm System/Library/Services/GSspell.service/Resources
 @dirrm System/Library/Services/GSspell.service
-@dirrm System/Library/Services
 @dirrm System/Library/Model
 @dirrm System/Library/ColorPickers/StandardPicker.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
 @dirrm System/Library/ColorPickers/StandardPicker.bundle/%%GNU_ARCH%%/%%OPSYS%%
@@ -621,5 +628,5 @@ System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/set_show_service
 @dirrm System/Libraries/Resources/PrinterTypes
 @dirrm System/Libraries/Resources/KeyBindings
 @dirrm System/Libraries/Resources/Images
-@dirrm System/Headers/gnustep/AppKit
+@dirrm System/Headers/gnustep/gui
 @dirrm System/Headers/AppKit
