@@ -7,6 +7,7 @@
 
 PORTNAME=	homard
 PORTVERSION=	5.5
+PORTREVISION=	1
 CATEGORIES=	french cad linux python
 MASTER_SITES=	http://www.code-aster.org/FICHIERS/homard/
 DISTNAME=	${PORTNAME}_linux_${PORTVERSION}
@@ -35,27 +36,29 @@ ASTER_VER=	7.1
 vaster=		STA${ASTER_VER}
 ASTER_TOOLS=	${LOCALBASE}/aster/${vaster}/outils
 HOMARDDIR=	${PREFIX}/${LHOMARDDIR}
-unames!=	${UNAME} -s
 AHPY=		aster_homard_py
 # This name is requested to run aster's make test
 HOMARDPG=	${PORTNAME:U}_V${PORTVERSION}.out
-PLIST_SUB=	HOMARDDIR=${LHOMARDDIR} AHPY=${LHOMARDDIR}/${AHPY} UNAMES=${unames}	\
-		HOMARDPG=${HOMARDPG}
+
+.include <bsd.port.pre.mk>
+
+unames!=	${UNAME} -s
+PLIST_SUB=	HOMARDDIR=${LHOMARDDIR} AHPY=${LHOMARDDIR}/${AHPY} \
+		UNAMES=${unames} HOMARDPG=${HOMARDPG}
 
 BRANDELF?=	/usr/bin/brandelf
 
 post-patch:
-	@${REINPLACE_CMD} -e "s#HOMARD_REP_PRO=/??????/homard#HOMARD_REP_PRO=${ASTER_TOOLS}#"	\
-		-e "s#HOMARD_REP_EXE=/??????/homard#HOMARD_REP_EXE=${PREFIX}/bin#"		\
-		-e "s#/??????/python#${PYTHON_CMD}#"		\
+	@${REINPLACE_CMD} -e "s#HOMARD_REP_PRO=/??????#HOMARD_REP_PRO=${ASTER_TOOLS}#"	\
+		-e "s#HOMARD_REP_EXE=/??????#HOMARD_REP_EXE=${PREFIX}/bin#"		\
+		-e "s#/??????#${PYTHON_CMD}#"		\
 		${WRKSRC}/${PORTNAME}
 	@${CHMOD} u+w ${WRKSRC}/${AHPY}
 
 do-install:
 	${MKDIR} ${HOMARDDIR}
 	${MKDIR} ${PREFIX}/bin/${unames}
-	${INSTALL_PROGRAM} ${WRKDIR}/${HOMARDPG}	\
-		${PREFIX}/bin/${unames}/${HOMARDPG}
+	${INSTALL_PROGRAM} ${WRKDIR}/${HOMARDPG} ${PREFIX}/bin/${unames}
 	${BRANDELF} -t Linux ${PREFIX}/bin/${unames}/${HOMARDPG}
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${HOMARDDIR}
 	${CP} -R ${WRKSRC}/${AHPY} ${HOMARDDIR}
@@ -68,4 +71,4 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
