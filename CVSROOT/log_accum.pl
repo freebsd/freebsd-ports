@@ -670,17 +670,9 @@ while (<STDIN>) {
 
 	# collect the log line (ignoring empty template entries)?
 	if ($state == $STATE_LOG) {
-		# XXX this stuff should come from the configuration file.
-		unless (
-		    /^PR:$/i ||
-		    /^Reviewed by:$/i ||
-		    /^Submitted by:$/i ||
-		    /^Obtained from:$/i ||
-		    /^MFC after:$/i ||
-		    /^Approved by:$/i) {
-			push @log_lines, $_;
-		}
-		next;
+		next if /^(.*):$/ and $cfg::TEMPLATE_HEADERS{$1};
+
+		push @log_lines, $_;
 	}
 
 	# otherwise collect information about which files changed.
