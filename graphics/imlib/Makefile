@@ -1,17 +1,15 @@
 # New ports collection makefile for:	imlib
-# Version required:	1.9.1
+# Version required:	1.9.2
 # Date created:		10 June 1997
 # Whom:			Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.40 1999/01/14 16:53:36 vanilla Exp $
+# $Id: Makefile,v 1.41 1999/01/20 22:49:40 vanilla Exp $
 #
 
-DISTNAME=	imlib-1.9.1
+DISTNAME=	imlib-1.9.2
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://ftp.jimpick.com/pub/mirrors/gnome/sources/latest/ \
-		ftp://ftp.geo.net/pub/gnome/sources/latest/ \
-		ftp://gnomeftp.wgn.net/pub/gnome/sources/latest/ \
-		ftp://ftp.gnome.org/pub/GNOME/sources/latest/
+MASTER_SITES=	${MASTER_SITE_GNOME}
+MASTER_SITE_SUBDIR=	imlib
 
 MAINTAINER=	vanilla@FreeBSD.ORG
 
@@ -24,11 +22,9 @@ LIB_DEPENDS=    png.2:${PORTSDIR}/graphics/png \
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS=-I${LOCALBASE}/include \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		GTK_CONFIG="${X11BASE}/bin/gtk11d-config" \
-		GLIB_CONFIG="${LOCALBASE}/bin/glib11d-config" \
-		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
-		INSTALL="$${INSTALL} -c"
+		LIBS="-L${LOCALBASE}/lib"
 
 post-install:
 	@${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib

@@ -1,5 +1,5 @@
---- configure.orig	Sat Jan 16 01:23:28 1999
-+++ configure	Thu Jan 21 06:12:39 1999
+--- configure.orig	Thu Jan 21 00:10:05 1999
++++ configure	Fri Jan 22 03:38:47 1999
 @@ -2173,8 +2173,8 @@
  echo "configure:2174: checking If dynamic linking works on this system" >&5
    oLIBS="$LIBS"
@@ -202,30 +202,3 @@
  EOF
  ac_try="$ac_cpp conftest.$ac_ext >/dev/null 2>conftest.out"
  { (eval echo configure:4565: \"$ac_try\") 1>&5; (eval $ac_try) 2>&5; }
-@@ -4777,26 +4643,6 @@
- else
-   echo "configure: warning: *** Native PNG support will not be built (PNG header file not found) ***" 1>&2
- fi
--
--echo $ac_n "checking for libpng version other than 1.0.2""... $ac_c" 1>&6
--echo "configure:4783: checking for libpng version other than 1.0.2" >&5
--cat > conftest.$ac_ext <<EOF
--#line 4785 "configure"
--#include "confdefs.h"
--#include <png.h>
--PNG_LIBPNG_VER_STRING
--EOF
--if (eval "$ac_cpp conftest.$ac_ext") 2>&5 |
--  egrep ""1.0.2"" >/dev/null 2>&1; then
--  rm -rf conftest*
--  echo "********* WARNING *********** Your libpng version is 1.0.2. Build will not continue until you revert to 1.0.1 or a newer version.";exit
--else
--  rm -rf conftest*
--  png_ok=yes
--fi
--rm -f conftest*
--
--echo "$ac_t""$png_ok" 1>&6
- 
- if test "$png_ok" = yes; then
- 	PNGLIBS="-lpng -lz"

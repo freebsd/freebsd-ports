@@ -1,5 +1,5 @@
---- config/Makefile.in.orig	Sat Jan 16 02:07:15 1999
-+++ config/Makefile.in	Thu Jan 21 06:13:27 1999
+--- config/Makefile.in.orig	Thu Jan 21 00:26:15 1999
++++ config/Makefile.in	Fri Jan 22 03:36:42 1999
 @@ -23,7 +23,7 @@
  sbindir = @sbindir@
  libexecdir = @libexecdir@
@@ -9,15 +9,16 @@
  sharedstatedir = @sharedstatedir@
  localstatedir = @localstatedir@
  libdir = @libdir@
---- Imlib/Makefile.in.orig	Sat Jan 16 02:07:15 1999
-+++ Imlib/Makefile.in	Thu Jan 21 06:14:23 1999
-@@ -130,12 +130,12 @@
+--- Imlib/Makefile.in.orig	Thu Jan 21 00:26:14 1999
++++ Imlib/Makefile.in	Fri Jan 22 03:39:37 1999
+@@ -130,13 +130,13 @@
  	save.c		\
  	snprintf.c
  
--libImlib_la_LDFLAGS    = -version-info 10:1:9
+-libImlib_la_LDFLAGS    = -version-info 10:2:9
 +libImlib_la_LDFLAGS    = -version-info 2:1:0
- libImlib_la_LDDADD     = $(SUPPORT_LIBS)
+ #libImlib_la_LDDADD     = $(SUPPORT_LIBS)
+ libImlib_la_LIBADD     = $(SUPPORT_LIBS)
  
  DEFS = -DDJPEG_PROG=\"@DJPEG_PROG@\"  -DCJPEG_PROG=\"@CJPEG_PROG@\" \
  	-DCONVERT_PATH=\"@CONVERT_PATH@\" \
@@ -26,13 +27,13 @@
  
  INCLUDES = -I. -I$(srcdir) -I.. -I$(srcdir)/.. $(X_CFLAGS)
  mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
---- gdk_imlib/Makefile.in.orig	Sat Jan 16 02:07:10 1999
-+++ gdk_imlib/Makefile.in	Thu Jan 21 06:14:48 1999
+--- gdk_imlib/Makefile.in.orig	Thu Jan 21 00:26:11 1999
++++ gdk_imlib/Makefile.in	Fri Jan 22 03:39:58 1999
 @@ -167,14 +167,14 @@
  	save.c			\
  	modules.c
  
--libgdk_imlib_la_LDFLAGS = -version-info 10:1:9
+-libgdk_imlib_la_LDFLAGS = -version-info 10:2:9
 +libgdk_imlib_la_LDFLAGS = -version-info 2:1:0
  libgdk_imlib_la_LIBADD = $(GMODULE_LIBS)
  
