@@ -10,6 +10,7 @@
 # the user/port can now set this options in the makefiles.
 #
 # USE_OPENSSL_BASE=yes	- Use the version in the base system.
+# USE_OPENSSL_PORT=yes	- Use the port, even if base if up to date
 # USE_OPENSSL_BETA=yes	- Use a snapshot of recent openssl
 #
 # The makefile sets this variables:
@@ -22,9 +23,11 @@
 # LIB_DEPENDS		- are added if needed
 
 #	if no preference was set, check for an up to date base version
-.if !defined(USE_OPENSSL_BASE) && !defined(USE_OPENSSL_BETA)
-#	4-STABLE is not up to date yet
-#	5-CURRENT has 0.9.7 after 2003-01-28, 500100 was bumped at 2003-01-23
+.if	!defined(USE_OPENSSL_BASE) && \
+	!defined(USE_OPENSSL_BETA) && \
+	!defined(USE_OPENSSL_PORT)
+#	4.7-STABLE has 0.9.7 after 2003-02-14
+#	5.0-CURRENT has 0.9.7 after 2003-01-28, 500100 was bumped at 2003-01-23
 .if exists(/usr/lib/libcrypto.so.3)
 USE_OPENSSL_BASE=yes
 .endif
