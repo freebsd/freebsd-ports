@@ -1,1 +1,4 @@
 bin/loserjabber
+share/pixmaps/goat.png
+share/pixmaps/goat.xpm
+@dirrm share/pixmaps
