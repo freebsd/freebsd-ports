@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		mimepp
-PORTVERSION=		1.2.4
+PORTVERSION=		1.3.1
 CATEGORIES=		converters
 MASTER_SITES=		http://www.hunnysoft.com/mimepp/
 
