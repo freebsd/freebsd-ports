@@ -1,7 +1,0 @@
---- Makefile.in	Sat Jan 15 15:51:20 2000
-+++ Makefile.in	Mon May 22 18:08:28 2000
-@@ -244,3 +244,3 @@
- 	rm -f		$(MEMCHAN_LIB_FILE)
--	@MAKE_LIB@
-+	@MAKE_LIB@ -L$(prefix)/lib
- 	$(RANLIB)	$(MEMCHAN_LIB_FILE)

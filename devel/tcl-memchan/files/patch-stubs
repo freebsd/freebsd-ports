@@ -1,0 +1,9 @@
+--- generic/init.c	Tue Sep 26 16:52:50 2000
++++ generic/init.c	Fri Jan 25 14:13:31 2002
+@@ -87,5 +87,5 @@
+ 			(Tcl_CmdDeleteProc*) NULL);
+ 
+-#if GT81
++#ifdef USE_TCL_STUBS
+     /* register extension and its interfaces as now available package
+      */
