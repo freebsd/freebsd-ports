@@ -7,6 +7,7 @@
 
 PORTNAME=	jakarta-ant
 PORTVERSION=	1.5.1
+PORTREVISION=	1
 CATEGORIES=	devel java
 MASTER_SITES=	http://jakarta.apache.org/builds/${PORTNAME}/release/v${ANT_VERSION}/bin/ \
 		http://www.metaverse.nl/~ernst/ \
@@ -35,11 +36,16 @@ DATADIRS+=	docs
 .endif
 WRKSRC=		${WRKDIR}/${PORTNAME}-${ANT_VERSION}
 
+do-patch:
+	@${CP} ${FILESDIR}/ant ${WRKSRC}/bin/ant
+
 post-patch:
 	@${ECHO_CMD} -n ">> Customizing ant shell script..."
 	@${SED} \
+	-e "/%%ANT_HOME%%/s//${PORTDESTDIR:S/\//\\\//g}/g" \
 	-e "/%%JAVA%%/s//${JAVA:S/\//\\\//g}/g" \
 	-e "/%%JAVA_HOME%%/s//${JAVA_HOME:S/\//\\\//g}/g" \
+	-e "/%%PREFIX%%/s//${PREFIX:S/\//\\\//g}/g" \
 	${WRKSRC}/bin/ant > ${WRKDIR}/ant
 	@${MV} ${WRKDIR}/ant ${WRKSRC}/bin/ant
 	@${ECHO_CMD} " [ DONE ]"
