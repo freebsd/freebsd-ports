@@ -1,30 +1,27 @@
 # New ports collection makefile for:	LPRng
-# Version required:	3.3.3
+# Version required:	3.5.1
 # Date created:		2 Apr 1997
 # Whom:			desmo@bandwidth.org
 #
-# $Id: Makefile,v 1.2 1997/10/28 22:23:43 jseger Exp $
+# $Id: Makefile,v 1.3 1998/01/22 08:19:36 fenner Exp $
 #
 
-DISTNAME=	LPRng-3.4.1
+DISTNAME=	LPRng-3.5.1
 CATEGORIES=	sysutils print
 MASTER_SITES=	ftp://ftp.astart.com/pub/LPRng/LPRng/
 EXTRACT_SUFX=	.tgz
-EXTRA_FILES=	LPRng_DOC-3.4.1.tgz
+EXTRA_FILES=	LPRng_DOC-3.5.1.tgz
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${EXTRA_FILES}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	desmo@bandwidth.org
 
 MAKEFILE=	Makefile.bsd
-GNU_CONFIGURE=	yes
-
-pre-build:
-	(cd ${WRKSRC}/po ; ln -s Makefile ${MAKEFILE})
+HAS_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-lpddir=/usr/local/sbin
 
 post-install:
 	(cd ${WRKSRC} ; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} default)
-	${LDCONFIG} -m ${PREFIX}/lib
 	@cat ${FILESDIR}/lprng.sh | \
 		${SED} -e "s|@@PREFIX@@|${PREFIX}|g" > ${PREFIX}/etc/rc.d/lprng.sh
 	@chmod +x ${PREFIX}/etc/rc.d/lprng.sh
