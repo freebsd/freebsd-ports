@@ -19,18 +19,17 @@ USE_GMAKE=	yes
 USE_REINPLACE=	yes
 USE_SIZE=	yes
 
-QMAKE?=	${X11BASE}/bin/qmake
-QTDIR?=	${QT_PREFIX}
+QMAKE?=	${LOCALBASE}/bin/qmake
+QTDIR?=	${X11BASE}
 
 CONFIGURE_ENV+=	QTDIR=${QTDIR}
 MAKE_ENV+=	QTDIR=${QTDIR}
 
 DOC_FILES=	COPYING ChangeLog INSTALL README TODO
 
-BROKEN=		"Missing dependency"
-
 do-configure:
 	@cd ${CONFIGURE_WRKSRC} && \
+		QMAKESPEC=${LOCALBASE}/share/qt/mkspecs/freebsd-g++ \
 		${SETENV} ${CONFIGURE_ENV} ${QMAKE}
 
 post-configure:
