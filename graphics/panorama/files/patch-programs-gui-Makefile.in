@@ -1,0 +1,18 @@
+--- programs/gui/Makefile.in.orig	Wed Feb 12 02:56:36 2003
++++ programs/gui/Makefile.in	Tue Dec  9 15:42:14 2003
+@@ -39,7 +39,7 @@
+ 
+ install:        all
+ 		@echo Installing program panorama...
+-		@@INSTALL_PROGRAM@ ${EXE} ${BIN_DIR}
++		@@INSTALL_PROGRAM@ .libs/${EXE} ${BIN_DIR}
+ 
+ ${EXE}:		${OBJ}
+ 		@echo Making program ${EXE}...
+@@ -53,4 +53,4 @@
+ distclean:      clean
+ 		@rm -f Makefile
+ 
+-include ${BUILD_TOP}/Makefile.deps
+\ No newline at end of file
++include ${BUILD_TOP}/Makefile.deps

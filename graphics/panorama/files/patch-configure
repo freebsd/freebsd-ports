@@ -1,0 +1,7 @@
+--- configure.orig	Wed Feb 12 05:06:57 2003
++++ configure	Tue Dec  9 13:57:44 2003
+@@ -10538,3 +10538,4 @@
+ 
+ ln -s $ac_aux_dir/Makefile.deps . 2>/dev/null
+ ln -s $ac_aux_dir/install-sh . 2>/dev/null
++exit 0
