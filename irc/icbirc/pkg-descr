@@ -1,0 +1,9 @@
+icbirc is a proxy that allows to connect an IRC client to an ICB server.
+The proxy accepts client connections, connects to the server, and for-
+wards data between those two connections.
+
+Commands from the IRC client are translated to ICB commands and forwarded
+to the ICB server. Messages from the ICB server are translated to IRC
+messages and forwarded to the IRC client.
+
+WWW: http://www.benzedrine.cx/icbirc.html
