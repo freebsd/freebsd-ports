@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-DISTNAME=	fftw-2.1.2
+DISTNAME=	fftw-2.1.3
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.fftw.org/pub/fftw/ \
 		ftp://theory.lcs.mit.edu/pub/fftw/	\
