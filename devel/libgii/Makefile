@@ -8,7 +8,7 @@
 PORTNAME=	libgii
 PORTVERSION=	0.8.3
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.ggi-project.org/pub/ggi/ggi/v2.0/ \
+MASTER_SITES=	ftp://ftp.ggi-project.org/pub/packages/ggi/ggi/v2.0/ \
 		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ggi
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
