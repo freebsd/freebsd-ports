@@ -22,8 +22,8 @@ PLIST_DIRS=	%%DATADIR%%
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != "i386" && ${ARCH} != "amd64"
-BROKEN=		"Does not compile on !i386 and !amd64"
+.if ${ARCH} == "ia64"
+BROKEN=		"Does not compile on ia64"
 .endif
 
 post-patch:
