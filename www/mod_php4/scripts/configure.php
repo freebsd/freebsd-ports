@@ -19,6 +19,7 @@ else
 Please select desired options:" -1 -1 16 \
 GD		"GD library support" OFF \
 zlib		"zlib library support" ON \
+bzip2		"bzip2 library support" OFF \
 mcrypt		"Encryption support" OFF \
 mhash		"Crypto-hashing support" OFF \
 pdflib		"pdflib support" OFF \
@@ -35,7 +36,9 @@ OpenLDAP2	"OpenLDAP 2.x support" OFF \
 OpenSSL		"OpenSSL support" OFF \
 SNMP		"SNMP support" OFF \
 XML		"XML support" OFF \
+XMLRPC		"XMLRPC-EPI support (implies XML)" OFF \
 XSLT		"Sablotron support (implies XML and iconv)" OFF \
+WDDX		"WDDX support (implies XML)" OFF \
 DOMXML		"DOM support" OFF \
 FTP		"File Transfer Protocol support" OFF \
 CURL		"CURL support" OFF \
@@ -92,6 +95,15 @@ while [ "$1" ]; do
 		\"zlib\")
 			echo "CONFIGURE_ARGS+=--with-zlib"
 			ZLIB=1
+			;;
+		\"bzip2\")
+			if [ -x /usr/bin/bzip2 ]; then
+				BZ2PREFIX=/usr
+			else
+				BZ2PREFIX=/usr/local
+				echo "LIB_DEPENDS+=	bz2.1:\${PORTSDIR}/archivers/bzip2"
+			fi
+			echo "CONFIGURE_ARGS+=--with-bz2=${BZ2PREFIX}"
 			;;
 		\"mcrypt\")
 			echo "LIB_DEPENDS+=	mcrypt.6:\${PORTSDIR}/security/libmcrypt"
@@ -213,6 +225,12 @@ while [ "$1" ]; do
 			echo "CONFIGURE_ARGS+=--with-expat-dir=\${LOCALBASE}"
 			XML=1
 			;;
+		\"XMLRPC\")
+			echo "CONFIGURE_ARGS+=--with-xmlrpc"
+			if [ -z "$XML" ]; then
+				set $* \"XML\"
+			fi
+			;;
 		\"XSLT\")
 			echo "LIB_DEPENDS+=	sablot.67:\${PORTSDIR}/textproc/sablotron"
 			echo "CONFIGURE_ARGS+=--enable-xslt --with-xslt-sablot"
@@ -221,6 +239,12 @@ while [ "$1" ]; do
 			fi
 			if [ -z "$ICONV" ]; then
 				set $* \"iconv\"
+			fi
+			;;
+		\"WDDX\")
+			echo "CONFIGURE_ARGS+=--enable-wddx"
+			if [ -z "$XML" ]; then
+				set $* \"XML\"
 			fi
 			;;
 		\"DOMXML\")
