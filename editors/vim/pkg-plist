@@ -121,9 +121,11 @@ share/vim/%%VIM_VER%%/indent/config.vim
 share/vim/%%VIM_VER%%/indent/fortran.vim
 share/vim/%%VIM_VER%%/indent/html.vim
 share/vim/%%VIM_VER%%/indent/make.vim
+share/vim/%%VIM_VER%%/indent/matlab.vim
 share/vim/%%VIM_VER%%/indent/perl.vim
 share/vim/%%VIM_VER%%/indent/python.vim
 share/vim/%%VIM_VER%%/indent/sh.vim
+share/vim/%%VIM_VER%%/indent/tcl.vim
 share/vim/%%VIM_VER%%/indent/verilog.vim
 share/vim/%%VIM_VER%%/indent/vim.vim
 share/vim/%%VIM_VER%%/indent/xml.vim
