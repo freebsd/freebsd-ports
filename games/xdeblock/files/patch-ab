@@ -1,0 +1,19 @@
+*** main.c.orig	Sat Nov 16 05:37:16 1996
+--- main.c	Wed Mar  5 03:11:37 1997
+***************
+*** 66,72 ****
+    /***  set s_map  ***/
+    gameMainFlg.s_map = False;
+    nowDataRec.nowMap.gameSpeed = 90;
+!   nowDataRec.nowMap.dirname[0] == 0x00;
+  
+    for(i =1; i  < argc; i++)
+      {
+--- 66,72 ----
+    /***  set s_map  ***/
+    gameMainFlg.s_map = False;
+    nowDataRec.nowMap.gameSpeed = 90;
+!   strcpy(nowDataRec.nowMap.dirname, "/usr/X11R6/lib/X11/xdeblock/mapf");
+  
+    for(i =1; i  < argc; i++)
+      {
