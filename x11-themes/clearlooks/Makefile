@@ -19,6 +19,10 @@ USE_LIBTOOL_VER=15
 USE_GNOME=	gtk20 gnomehier
 USE_X_PREFIX=	yes
 
+.if defined(WITH_ANIMATION)
+CONFIGURE_ARGS+=	--enable-animation
+.endif
+
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib"
 
