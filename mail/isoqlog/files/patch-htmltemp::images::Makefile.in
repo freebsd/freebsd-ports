@@ -1,13 +1,11 @@
---- htmltemp/images/Makefile.in.orig	Sun Jul 21 00:20:41 2002
-+++ htmltemp/images/Makefile.in	Sun Jul 21 00:32:31 2002
-@@ -72,7 +72,9 @@
+--- htmltemp/images/Makefile.in.orig	Sun Jul 21 11:07:13 2002
++++ htmltemp/images/Makefile.in	Sun Jul 21 11:08:11 2002
+@@ -65,7 +65,7 @@
  
- images_DATA = isoqlog.gif \
- 	dot.gif \
--	pk.gif
-+	pk.gif \
-+	home.gif \
-+	up.gif
+ imagesdir = $(pkgdatadir)/htmltemp/images
  
- subdir = htmltemp/images
+-images_DATA = isoqlog.gif 	dot.gif 	pk.gif
++images_DATA = isoqlog.gif 	dot.gif 	pk.gif home.gif up.gif
+ 
  mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_CLEAN_FILES = 
