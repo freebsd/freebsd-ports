@@ -6468,6 +6468,7 @@ py-xmms		ports/audio/py-xmms
 py-xoltar-toolkit	ports/devel/py-xoltar-toolkit
 py-zsi		ports/net/py-zsi
 py2html		ports/textproc/py2html
+py_otp_interface	ports/devel/py_otp_interface
 pybench		ports/benchmarks/pybench
 pybliographer	ports/misc/pybliographer
 pybook		ports/textproc/pybook
