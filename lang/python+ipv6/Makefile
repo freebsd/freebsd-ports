@@ -5,28 +5,33 @@
 # $FreeBSD$
 #
 
-PORTNAME=	python+ipv6
+PORTNAME=	python
 PORTVERSION=	1.5.2
+PORTREVISION=	2
 CATEGORIES=	lang python ipv6
 MASTER_SITES=	ftp://www.python.org/pub/python/src/ \
 		ftp://ftp.cwi.nl/pub/python/src/
-DISTNAME=	py152
-EXTRACT_SUFX=	.tgz
+PKGNAMESUFFIX=	+ipv6
+DISTFILES=	${PYTHON_DISTFILE}
 
 PATCH_SITES=	ftp://ftp.kame.net/pub/kame/misc/
-PATCHFILES=	python-152-v6-20000120.diff.gz
+PATCHFILES=	${PORTNAME}-${PORTVERSION:S/.//g}-v6-20000120.diff.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	sumikawa@FreeBSD.org
 
 DIST_SUBDIR=	python
-WRKSRC=		${WRKDIR}/Python-1.5.2
+WRKSRC=		${PYTHON_WRKSRC}
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-fpectl --with-libs='-lxpg4'
+CONFIGURE_ARGS=	--with-fpectl
 CONFIGURE_ENV=	OPT="${CFLAGS}"
 INSTALL_TARGET=	install
 PLIST=		${WRKDIR}/PLIST
 MAN1=		python.1
+
+USE_PYTHON=	yes
+PYTHON_VERSION=	python1.5
+PYTHON_NO_DEPENDS=	yes
 
 #
 # The standard setup file
@@ -34,15 +39,14 @@ MAN1=		python.1
 SETUP_FILE=	Setup
 
 #
-# If you want to use Python's thread module, you need to set WITH_THREADS
-# to 'yes', and you must have the FreeBSD threading c library (libc_r)
-# installed. See 'man 3 pthread' for details on libc_r.
-#
-# This option is enabled by default.
+# If you don't want to use Python's thread module, you need to set
+# WITHOUT_THREADS. libc_r should be installed on nowadays' systems.
 #
 LIBC_R!=	/sbin/ldconfig -r | grep c_r || true
-.if (${LIBC_R} != "") && !defined(WITHOUT_THREADS)
-CONFIGURE_ARGS+=	--with-thread
+.if (${LIBC_R} == "") || defined(WITHOUT_THREADS)
+CONFIGURE_ARGS+=	--without-threads
+.else
+CONFIGURE_ARGS+=	--with-threads
 CFLAGS+=		${PTHREAD_CFLAGS}
 CONFIGURE_ENV+=		LDFLAGS="${PTHREAD_LIBS} ${LDFLAGS}"
 .endif
@@ -57,7 +61,7 @@ PLIST_GMP=	${PKGDIR}/pkg-plist.gmp
 
 #
 # Install the Tools by default. It contains scripts ranging from an IDE
-# to a web tree checker, to a collection of simple scripts that are useful
+# to a web tree checker, to a collectioln of simple scripts that are useful
 # while extending or managing Python.
 #
 .if !defined(WITHOUT_TOOLS)
@@ -83,6 +87,13 @@ CONFIGURE_ARGS+=--enable-ipv6
 CONFIGURE_ARGS+=--disable-ipv6
 .endif
 
+.if ${OSVERSION} >= 500000 && ${OSVERSION} < 500005
+CONFIGURE_ARGS+=	--with-libs='-lxpg4'
+.endif
+.if ${OSVERSION} < 400020
+CONFIGURE_ARGS+=	--with-libs='-lxpg4'
+.endif
+
 .if ${OSVERSION} >= 500000
 PLATFORMS=plat-freebsd2 plat-freebsd3 plat-freebsd4
 .elif ${OSVERSION} >= 400000
@@ -95,9 +106,9 @@ PLATFORMS=plat-freebsd3 plat-freebsd4 plat-freebsd5
 
 pre-install:
 .for platform in ${PLATFORMS}
-	${MKDIR} ${PREFIX}/lib/python1.5/${platform}
+	${MKDIR} ${PYTHON_LIBDIR}/${platform}
 	${INSTALL_DATA} ${WRKSRC}/Lib/${platform}/*                    \
-		${PREFIX}/lib/python1.5/${platform}/
+		${PYTHON_LIBDIR}/${platform}/
 .endfor
 	@sort -r -o ${PLIST} ${PLIST_GMP} ${PLIST_TOOLS} ${PLIST_V6} ${PKGDIR}/pkg-plist
 
@@ -108,10 +119,10 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/Misc/python-mode.el ${PREFIX}/share/emacs/site-lisp
 	${INSTALL_DATA} ${WRKSRC}/Misc/COPYRIGHT ${PREFIX}/share/doc/python
 	${INSTALL_DATA} ${WRKSRC}/README.v6 ${PREFIX}/share/doc/python
-	@${MKDIR} ${PREFIX}/lib/python1.5/site-packages
+	@${MKDIR} ${PYTHON_SITELIBDIR}
 .if !defined(WITHOUT_TOOLS)
 	@cd ${WRKSRC}; tar cf - Tools | \
-		(cd ${PREFIX}/lib/python1.5; tar xf -)
+		(cd ${PYTHON_LIBDIR}; tar xf -)
 .endif
 
 .include <bsd.port.post.mk>
