@@ -8,7 +8,7 @@
 PORTNAME=	xzx
 PORTVERSION=	2.9.3
 CATEGORIES=	emulators
-MASTER_SITES=	ftp://ftp.void.jump.org/pub/sinclair/emulators/unix/
+MASTER_SITES=	http://xzx.purespace.de/xzx/
 
 MAINTAINER=	ports@FreeBSD.org
 
