@@ -42,7 +42,7 @@ struct statfs *G_pmntstat = 0;
 
 struct optmap {
   int fl;
-  string st;
+  std::string st;
 };
 
 static struct optmap omap[] = {
@@ -84,7 +84,7 @@ mntent::from_statfs(struct statfs *pst)
   strcpy(mnt_type, pst->f_fstypename);
   mnt_freq = mnt_passno = 0;
 
-  string opts;
+  std::string opts;
   int fl = pst->f_flags;
 
   opts += (fl & MNT_RDONLY) ? "ro" : "rw";
@@ -118,11 +118,11 @@ setmntent(const char *, char *)
 char *
 hasmntopt(const mntent *pmnt, const char *szopt)
 {
-  string opt(szopt);
-  string mntopts(pmnt->mnt_opts);
+  std::string opt(szopt);
+  std::string mntopts(pmnt->mnt_opts);
 
-  string::size_type pos = mntopts.find(opt);
-  const char *szret = (pos == string::npos) ? "" : pmnt->mnt_opts + pos;
+  std::string::size_type pos = mntopts.find(opt);
+  const char *szret = (pos == std::string::npos) ? "" : pmnt->mnt_opts + pos;
 
   return const_cast<char *>(szret);
 }
