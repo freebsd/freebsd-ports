@@ -32,6 +32,35 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="bcf27002-94c3-11d9-a9e0-0001020eed82">
+    <topic>grip -- CDDB response multiple matches buffer overflow
+      vulnerability</topic>
+    <affects>
+      <package>
+	<name>grip</name>
+	<range><gt>0</gt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Joseph VanAndel reports that grip is vulnerability to a
+	  buffer overflow vulnerability when receiving more than 16
+	  CDDB responses.  This could lead to a crash in grip and
+	  potentially execution arbitrary code.</p>
+	<p>A workaround is to disable CDDB lookups.</p>
+      </body>
+    </description>
+    <references>
+      <bid>12770</bid>
+      <cvename>CAN-2005-0706</cvename>
+      <url>http://sourceforge.net/tracker/index.php?func=detail&amp;aid=834724&amp;group_id=3714&amp;atid=103714</url>
+    </references>
+    <dates>
+      <discovery>2003-11-02</discovery>
+      <entry>2005-03-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="619ef337-949a-11d9-b813-00d05964249f">
     <topic>mysql-server -- multiple remote vulnerabilities</topic>
     <affects>
