@@ -104,7 +104,6 @@
     SUBDIR += kdeaddons
     SUBDIR += kdeutils2
     SUBDIR += kdirstat
-    SUBDIR += khotkeys
     SUBDIR += kp
     SUBDIR += kwatch
     SUBDIR += lc
