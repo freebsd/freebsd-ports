@@ -3,7 +3,7 @@
 # Date created:		20 February 1997
 # Whom:			chris@vader.org
 #
-# $Id: Makefile,v 1.3 1999/03/08 16:42:48 foxfair Exp $
+# $Id: Makefile,v 1.4 1999/06/05 20:11:35 mharo Exp $
 #
 
 DISTNAME=	traceroute_${RELEASEDATE}
@@ -19,8 +19,7 @@ NO_WRKSUBDIR=	yes
 MAN8=		traceroute.8
 
 do-install:
-
-	${INSTALL} -m 4755 -o root -g bin ${WRKSRC}/traceroute ${PREFIX}/sbin
+	${INSTALL} -c -m 4755 -o root -g bin ${WRKSRC}/traceroute ${PREFIX}/sbin
 	${INSTALL_MAN} ${WRKSRC}/traceroute.8 ${PREFIX}/man/man8
 
 .include <bsd.port.mk>
