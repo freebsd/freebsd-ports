@@ -39,4 +39,11 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/ksh ${PREFIX}/bin/ksh93
 	${INSTALL_MAN} ${WRKSRC}/man/man1/sh.1 ${PREFIX}/man/man1/ksh93.1
 
+post-install:
+	@${ECHO_MSG} "Updating /etc/shells"
+	@${CP} /etc/shells /etc/shells.bak
+	@(${GREP} -v ${PREFIX}/bin/ksh93 /etc/shells.bak; \
+		${ECHO} ${PREFIX}/bin/ksh93) > /etc/shells
+	@${RM} /etc/shells.bak
+
 .include <bsd.port.mk>
