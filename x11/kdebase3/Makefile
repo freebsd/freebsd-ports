@@ -61,6 +61,14 @@ pre-extract::
 	@${ECHO_MSG}
 .endif # defined(WITH_MOTIF)
 
+.if exists(${X11BASE}/lib/libfontconfig.so.1)
+WITH_FONTCONFIG=yes
+.endif
+
+.if defined(WITH_FONTCONFIG)
+LIB_DEPENDS+=	fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
+.endif
+
 .if defined(WITH_XINERAMA)
 XINERAMA=	-with-xinerama
 PKGNAMESUFFIX=	-xinerama
