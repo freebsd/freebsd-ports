@@ -19,7 +19,7 @@ MASTER_SITE_SUBDIR=	. old-versions old
 MAINTAINER=	dwcjr@FreeBSD.org
 
 .if defined(WITH_CUPS)
-LIB_DEPENDS=	cups.2:${PORTSDIR}/print/cups
+LIB_DEPENDS=	cups.2:${PORTSDIR}/print/cups-base
 .endif
 
 .if defined(WITH_RECYCLE)
