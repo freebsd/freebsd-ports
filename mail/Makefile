@@ -80,6 +80,7 @@
     SUBDIR += mailx
     SUBDIR += majorcool
     SUBDIR += majordomo
+    SUBDIR += mboxgrep
     SUBDIR += mbx2mbox
     SUBDIR += mess822
     SUBDIR += metamail

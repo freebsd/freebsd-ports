@@ -1,0 +1,19 @@
+mboxgrep is a small utility that scans a mailbox for messages matching a
+regular expression. Found messages can be either displayed on standard output,
+counted, deleted, piped to a shell command or written to another mailbox.
+
+Its features include:
+
+* ability to limit the search to message body or headers (although the whole
+message is scanned by default)
+* message counting
+* ability to invert the sense of matching
+* ability to write found messages to another mailbox
+* support for mbox (either plain or compressed), MH, nnmh, nnml and maildir
+folders
+* support for basic and extended POSIX regular expressions, and, optionally,
+Perl-complatible regular expressions (if linked with the PCRE library)
+
+WWW: http://mboxgrep.sourceforge.net/
+
+- Anders Nordby <anders@fix.no>
