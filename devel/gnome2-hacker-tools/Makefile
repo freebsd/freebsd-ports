@@ -7,6 +7,7 @@
 
 PORTNAME=	gnome2-hacker-tools
 PORTVERSION=	2.4.2
+PORTREVISION=	1
 CATEGORIES=	devel gnome
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -23,7 +24,8 @@ RUN_DEPENDS=	mlv:${PORTSDIR}/editors/mlview \
 		regexxer:${PORTSDIR}/devel/regexxer \
 		conglomerate:${PORTSDIR}/editors/conglomerate \
 		anjuta:${PORTSDIR}/devel/anjuta \
-		meld:${PORTSDIR}/textproc/meld
+		meld:${PORTSDIR}/textproc/meld \
+		gtranslator:${PORTSDIR}/devel/gtranslator
 
 NO_BUILD=	yes
 
