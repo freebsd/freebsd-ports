@@ -1,5 +1,5 @@
 #
-#	$FreeBSD: /tmp/pcvs/ports/Mk/bsd.emacs.mk,v 1.9 2000-08-01 09:15:04 shige Exp $
+#	$FreeBSD: /tmp/pcvs/ports/Mk/bsd.emacs.mk,v 1.10 2000-08-25 19:50:45 asami Exp $
 #
 #	bsd.emacs.mk - 19990829 Shigeyuki Fukushima.
 #
@@ -122,7 +122,7 @@ EMACS_CORE_SUBDIR=	prim
 # XEmacs-21.x
 .elif (${EMACS_PORT_NAME} == "xemacs21")
 EMACS_NAME=		xemacs
-EMACS_VER=		21.1.11
+EMACS_VER=		21.1.12
 EMACS_MAJOR_VER=	21
 EMACS_LIBDIR?=		lib/${EMACS_NAME}
 EMACS_LIBDIR_WITH_VER?=	lib/${EMACS_NAME}-${EMACS_VER}
@@ -133,7 +133,7 @@ EMACS_HAS_MULE=		NO
 # XEmacs-21.x with Mule
 .elif (${EMACS_PORT_NAME} == "xemacs21-mule")
 EMACS_NAME=		xemacs
-EMACS_VER=		21.1.11
+EMACS_VER=		21.1.12
 EMACS_MAJOR_VER=	21
 EMACS_LIBDIR?=		lib/${EMACS_NAME}
 EMACS_LIBDIR_WITH_VER?=	lib/${EMACS_NAME}-${EMACS_VER}
