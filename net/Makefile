@@ -394,6 +394,7 @@
     SUBDIR += ssldump
     SUBDIR += sting
     SUBDIR += stone
+    SUBDIR += stools
     SUBDIR += suckblow
     SUBDIR += sup
     SUBDIR += svnc

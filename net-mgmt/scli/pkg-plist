@@ -1,0 +1,5 @@
+bin/scli
+bin/stop
+@unexec install-info --delete %D/info/stools.info %D/info/dir
+info/stools.info
+@exec install-info %D/info/stools.info %D/info/dir
