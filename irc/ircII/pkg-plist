@@ -1,5 +1,5 @@
 @cwd /usr/local
-bin/irc-2.8
+bin/irc-2.8.2
 bin/irc
 bin/ircserv
 bin/ircflush
@@ -66,6 +66,7 @@ lib/irc/script/time
 lib/irc/script/traces
 lib/irc/script/troy
 lib/irc/script/uhnotify
+lib/irc/script/undernet
 lib/irc/script/version
 lib/irc/script/voice
 lib/irc/script/wallopstat
