@@ -14,7 +14,7 @@ EMACS_PORT_NAME=	xemacs21-mule
 CONFIGURE_ARGS=	--with-xemacs=${EMACS_CMD}
 EMACS_PACKAGESDIR=	lib/xemacs/site-packages
 LISPDIR=		${EMACS_PACKAGESDIR}/lisp/w3m
-ETCDIR=			${EMACS_PACKAGESDIR}/etc/w3m
+ICONDIR=		${EMACS_PACKAGESDIR}/etc/w3m
 PKGINFODIR=		${EMACS_PACKAGESDIR}/pkginfo
 INSTALL_TARGET=		install-package
 
