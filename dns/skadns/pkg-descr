@@ -1,0 +1,16 @@
+Skadns is a kind of an Asynchronous DNS client software:
+- Kind of: it's small. Really small. But it just works.
+- Asynchronous: all DNS operations are non-blocking.
+- DNS client software: it's a DNS client, what you may know 
+  as a "stub resolver". To perform full DNS resolution, 
+  you will still need a full resolver like dnscache.
+
+The skadns library offers a simple API to make asynchronous DNS queries.
+The skadnsip, skadnsmx and skadnsfilter commands are examples 
+of how to use that API. They are mainly there for their source code.
+The skadnsd daemon, usable as a child process or as a separate service, 
+handles the grunt work of DNS querying and makes the network 
+completely invisible to the client.
+
+Author:	Laurent G. Bercot <ska-skaware@skarnet.org>
+WWW:	http://www.skarnet.org/software/skadns/
