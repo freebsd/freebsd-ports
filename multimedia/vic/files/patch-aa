@@ -9,6 +9,16 @@
  V_LIB_XIL=""
  V_OBJ_XIL=""
  
+@@ -87,9 +87,6 @@
+ 	V_OBJ_GRABBER="$V_OBJ_GRABBER grabber-qcam.o"
+ 	V_DEFINE="$V_DEFINE -DQCAMDEV"
+ fi
+-if test -r /usr/include/linux/scc.h -o -r /usr/include/machine/scc.h ; then
+-	V_OBJ_GRABBER="$V_OBJ_GRABBER grabber-scc.o"
+-fi
+ vpix_dir=/usr/src/local/vfc-1.0
+ vpix_lib=$vpix_dir/vfc_lib
+ if test -d /import/VideoPix ; then
 @@ -228,6 +228,9 @@
  	V_TARCMD="tar -h -c -f"
  	V_LIB="$V_LIB -L/usr/local/lib"
