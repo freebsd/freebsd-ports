@@ -9,7 +9,8 @@
 
 DISTNAME=	jive-1.1
 CATEGORIES=	misc
-MASTER_SITES=	ftp://ftp.nuxi.com/pub/misc/
+MASTER_SITES=	ftp://nuxi.ucdavis.edu/pub/misc/  \
+		http://people.FreeBSD.org/~obrien/Distfiles/
 
 MAINTAINER=	obrien@FreeBSD.org
 

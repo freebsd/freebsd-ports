@@ -22,7 +22,6 @@ PATCH_SITES=	http://www.frmug.org/mutt/mutt/${PKGNAME:S/^mutt-//}/  \
 		http://www.math.fu-berlin.de/~leitner/mutt/${PKGNAME:S/^mutt-//}/  \
 		http://www.efrei.fr/~parmelan/mutt/${PKGNAME:S/^mutt-//}/  \
 		ftp://www.frmug.org/pub/mutt/mutt/${PKGNAME:S/^mutt-//}/  \
-		ftp://ftp.nuxi.com/pub/mutt/${PKGNAME:S/^mutt-//}/  \
 		ftp://riemann.iam.uni-bonn.de/pub/mutt/
 PATCHFILES=
 PATCH_DIST_STRIP=	-p1

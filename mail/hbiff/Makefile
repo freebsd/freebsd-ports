@@ -9,7 +9,7 @@
 
 DISTNAME=	hbiff-1.2
 CATEGORIES=	mail
-MASTER_SITES=	ftp://ftp.nuxi.com/pub/misc/  \
+MASTER_SITES=	ftp://nuxi.ucdavis.edu/pub/misc/  \
 		http://people.FreeBSD.org/~obrien/Distfiles/
 
 MAINTAINER=	obrien@FreeBSD.org
