@@ -1,0 +1,36 @@
+# $FreeBSD$
+
+case $2 in
+POST-INSTALL)
+
+if [ ! -r ${CATALOG_MASTER_SGML} ]; then
+	echo " + Creating ${CATALOG_MASTER_SGML}"
+	${XMLCATMGR} -sc ${CATALOG_MASTER_SGML} create
+fi
+
+if ! ${XMLCATMGR} -sc ${CATALOG_MASTER_SGML} lookup catalog.ports > /dev/null 2>&1; then
+	echo " + Registering CATALOG catalog.ports (SGML)"
+	${XMLCATMGR} -sc ${CATALOG_MASTER_SGML} add CATALOG catalog.ports
+fi
+
+if [ ! -r ${CATALOG_PORTS_SGML} ]; then
+	echo " + Creating ${CATALOG_PORTS_SGML}"
+	${XMLCATMGR} -sc ${CATALOG_PORTS_SGML} create
+fi
+
+if [ ! -r ${CATALOG_MASTER_XML} ]; then
+	echo " + Creating ${CATALOG_MASTER_XML}"
+	${XMLCATMGR} -c ${CATALOG_MASTER_XML} create
+fi
+
+if ! ${XMLCATMGR} -c ${CATALOG_MASTER_XML} lookup ${CATALOG_PORTS_XML} > /dev/null 2>&1 ; then
+	echo " + Registering nextCatalog catalog.ports (XML)"
+	${XMLCATMGR} -c ${CATALOG_MASTER_XML} add nextCatalog ${CATALOG_PORTS_XML}
+fi
+
+if [ ! -r ${CATALOG_PORTS_XML} ]; then
+	echo " + Creating ${CATALOG_PORTS_XML}"
+	${XMLCATMGR} -c ${CATALOG_PORTS_XML} create
+fi
+;;
+esac
