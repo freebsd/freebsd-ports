@@ -59,9 +59,10 @@ MD5_FILE=		${MASTERDIR}/distinfo.${MACHINE_ARCH}
 # Let's avoid hardcoding 'en' as the language.
 LANG=			en
 
-UPDATES=		glibc-common-2.2.4-29.${MACHINE_ARCH}.rpm \
-				glibc-2.2.4-29.${MACHINE_ARCH}.rpm \
-				zlib-1.1.3-25.7.${MACHINE_ARCH}.rpm
+UPD_SET1=		glibc-common-2.2.4-31.${MACHINE_ARCH}.rpm \
+			glibc-2.2.4-31.${MACHINE_ARCH}.rpm
+UPD_SET2=		zlib-1.1.3-25.7.${MACHINE_ARCH}.rpm
+UPDATES=		${UPD_SET1} ${UPD_SET2}
 
 .ifdef USE_LINUX
 .error You have `USE_LINUX' variable defined either in environment or in make(1) arguments. Please undefine and try again.
@@ -73,12 +74,12 @@ UPDATES=		glibc-common-2.2.4-29.${MACHINE_ARCH}.rpm \
 RPM_BZIP2=		bzip2-1.0.1-3.i386.rpm
 RPM_FREETYPE=		freetype-2.0.1-4.i386.rpm
 RPM_GDBM=		gdbm-1.8.0-5.i386.rpm
-RPM_LIBSTDCXX=		libstdc++-2.96-85.i386.rpm
+RPM_LIBSTDCXX=
 RPM_COMPAT_LIBSTDCXX=	compat-libstdc++-6.2-2.9.0.14.i386.rpm
 RPM_SETSERIAL=		setserial-2.17-2.i386.rpm
 RPM_SETUP=		setup-2.4.7-1.noarch.rpm
 RPM_XFREE86_LIBS=	XFree86-libs-4.0.3-5.i386.rpm
-UPDATES+=		${RPM_LIBSTDCXX}
+UPDATES+=		libstdc++-2.96-112.7.1.i386.rpm
 .else
 RPM_BZIP2=		bzip2-1.0.1-4.alpha.rpm
 RPM_FREETYPE=		freetype-2.0.1-5.alpha.rpm
@@ -131,9 +132,7 @@ do-install:
 # Also, set the ELF fallback brand to Linux, so that we don't have to do
 # anything special to run staticly linked binaries.
 	@/sbin/sysctl -w ${FALLBACK_ELF_MIB}=${LINUX_ELF}
-	@for R in glibc-common-2.2.4-29.${MACHINE_ARCH}.rpm \
-		glibc-2.2.4-29.${MACHINE_ARCH}.rpm \
-		${DISTFILES} zlib-1.1.3-25.7.${MACHINE_ARCH}.rpm; do \
+	@for R in ${UPD_SET1} ${DISTFILES} ${UPD_SET2}; do \
 		${ECHO} $$R; \
 		${RPM} -U ${RPMFLAGS} ${RPMDIR}/$$R; \
 	done

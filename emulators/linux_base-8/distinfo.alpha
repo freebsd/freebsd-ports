@@ -1,10 +1,7 @@
-MD5 (rpm/glibc-common-2.2.4-29.alpha.rpm) = 157ff2a64d725590bb0f489227cb59e0
 MD5 (rpm/redhat-release-7.1-1.noarch.rpm) = db4e20d62c96ae3cd7fb3d9da89f0ec0
-MD5 (rpm/redhat-release-7.1-1.noarch.rpm) = 50c7e24be0727971a1253bb75d30a1ed
 MD5 (rpm/setup-2.4.7-2.noarch.rpm) = ce6ded4c40f0475353291c0207db96d4
 MD5 (rpm/filesystem-2.0.7-1.noarch.rpm) = c82cd42bdf4e8becfef3701f0f246270
 MD5 (rpm/basesystem-7.0-2.noarch.rpm) = 9d4e753ef487d62e1672f52ef190447a
-MD5 (rpm/glibc-2.2.4-29.alpha.rpm) = 78f97e6419fa24beeecd0d035c951c8c
 MD5 (rpm/termcap-11.0.1-8.noarch.rpm) = ee5eb175910c60f95119e8af912e4846
 MD5 (rpm/db1-1.85-5.alpha.rpm) = 3d81e088f11af780cb951be465a0a94f
 MD5 (rpm/db3-3.1.17-7.alpha.rpm) = 0f7ac3c351be032ec99679c715cca722
@@ -26,4 +23,6 @@ MD5 (rpm/sh-utils-2.0-13.alpha.rpm) = d8206bfdeb0e723555a167ba363d4368
 MD5 (rpm/rpm-4.0.2-8.alpha.rpm) = de97b0fda240f422fa2a67dd0729d775
 MD5 (rpm/freetype-2.0.1-5.alpha.rpm) = 3dfb1fad9d16c1e9114f474ebb8fa849
 MD5 (rpm/XFree86-libs-4.0.3-21.alpha.rpm) = 7e0f11ac8258f550959df98f81146d9e
+MD5 (rpm/glibc-common-2.2.4-31.alpha.rpm) = c8c0cd28dd1dbfb96f3e720116e1f9c5
+MD5 (rpm/glibc-2.2.4-31.alpha.rpm) = 7e914fcb9302c7e0cc0586e2ef9d96f3
 MD5 (rpm/zlib-1.1.3-25.7.alpha.rpm) = 73352503d0864dbfa6db5369002fb0a1
