@@ -15,4 +15,5 @@ usr/bin/tiffdump
 usr/bin/tiffinfo
 usr/bin/tiffmedian
 usr/bin/tiffsplit
+usr/lib/libtiff.so.3
 usr/lib/libtiff.so.3.4
