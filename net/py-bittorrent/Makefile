@@ -7,7 +7,7 @@
 
 PORTNAME=	BitTorrent
 PORTVERSION=	3.4.2
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES?=	net python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
@@ -44,9 +44,9 @@ pre-everything::
 	@${ECHO_MSG} '===> Define WITHOUT_GUI to disable GUI installation'
 .endif
 
-post-extract:
+#post-extract:
 # patch to work with python 2.4
-	@${CP} ${FILESDIR}/zurllib.py ${WRKSRC}/BitTorrent
+#	@${CP} ${FILESDIR}/zurllib.py ${WRKSRC}/BitTorrent
 
 post-patch:
 	@${FIND} ${WRKSRC} -type f | \
