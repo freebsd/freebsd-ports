@@ -36,6 +36,10 @@ XBUILD_DIRS=		lib/xtrans lib/lbxutil programs fonts/util
 XINSTALL_DIRS=		programs fonts/util
 XINSTALL_MAN_DIRS=	programs
 
+.for pf in patch-bdftruncate.pl patch-ucs2any.pl
+EXTRA_PATCHES+=		${FILESDIR}/${pf}
+.endfor
+
 # ---
 # XFree86 User Config:
 # Name          Default		Meaning
