@@ -5,6 +5,7 @@ share/bygfoot/support_files/pixmaps/bus.png
 share/bygfoot/support_files/pixmaps/bygfoot_team_editor_icon.png
 share/bygfoot/support_files/pixmaps/fire_player.png
 share/bygfoot/support_files/pixmaps/fixtures.png
+share/bygfoot/support_files/pixmaps/flag_be.png
 share/bygfoot/support_files/pixmaps/flag_br.png
 share/bygfoot/support_files/pixmaps/flag_cl.png
 share/bygfoot/support_files/pixmaps/flag_de.png
@@ -24,6 +25,7 @@ share/bygfoot/support_files/pixmaps/inc_cap.png
 share/bygfoot/support_files/pixmaps/inc_saf.png
 share/bygfoot/support_files/pixmaps/pay_loan.png
 share/bygfoot/support_files/pixmaps/penalty_shooter.png
+share/bygfoot/support_files/pixmaps/player_info.png
 share/bygfoot/support_files/pixmaps/preview.png
 share/bygfoot/support_files/pixmaps/stadium_fin.png
 share/bygfoot/support_files/pixmaps/striker.png
@@ -32,6 +34,7 @@ share/bygfoot/support_files/pixmaps/transfer_frm.png
 share/bygfoot/support_files/pixmaps/transfer_lst.png
 share/bygfoot/support_files/pixmaps/transfer_to.png
 share/bygfoot/support_files/text_files/bygfoot.conf
+share/bygfoot/support_files/text_files/country_be
 share/bygfoot/support_files/text_files/country_br
 share/bygfoot/support_files/text_files/country_cl
 share/bygfoot/support_files/text_files/country_de
@@ -49,6 +52,7 @@ share/bygfoot/support_files/text_files/teams
 share/locale/de/LC_MESSAGES/bygfoot.mo
 share/locale/fr/LC_MESSAGES/bygfoot.mo
 share/locale/hu/LC_MESSAGES/bygfoot.mo
+share/locale/nl/LC_MESSAGES/bygfoot.mo
 share/locale/pt_BR/LC_MESSAGES/bygfoot.mo
 share/locale/ro/LC_MESSAGES/bygfoot.mo
 share/locale/ru/LC_MESSAGES/bygfoot.mo
