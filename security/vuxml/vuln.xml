@@ -97,11 +97,11 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <affects>
       <package>
 	<name>gnomevfs2</name>
-	<range><le>2.6.2</le></range>
+	<range><lt>2.6.2_1</lt></range>
       </package>
       <package>
 	<name>gnomevfs</name>
-	<range><le>1.0.5_5</le></range>
+	<range><lt>1.0.5_6</lt></range>
       </package>
       <package>
 	<name>mc</name>
@@ -125,6 +125,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       <url>https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=127263</url>
     </references>
     <dates>
+      <modified>2004-08-26</modified>
       <discovery>2004-08-04</discovery>
       <entry>2004-08-26</entry>
     </dates>
