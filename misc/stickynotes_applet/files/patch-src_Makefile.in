@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	Mon Feb 17 17:53:40 2003
++++ src/Makefile.in	Mon Feb 17 17:54:15 2003
+@@ -103,7 +103,7 @@
+ INCLUDES =  	$(GNOME_CFLAGS) 	-DPREFIX=\""$(prefix)"\" 	-DDATADIR=\""$(datadir)"\" 	-DLIBDIR=\""$(libdir)"\" 	-DSYSCONFDIR=\""$(sysconfdir)"\" 	-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\" 	-DGNOMEGLADEDIR=\""$(datadir)/$(PACKAGE)"\" 	-DGNOMEPIXMAPDIR=\""$(datadir)/$(PACKAGE)"\"
+ 
+ 
+-CFLAGS =  	 -Wall -Wimplicit -Wreturn-type -Wunused -Wswitch -Wcomment -Wuninitialized -Wparentheses -Wpointer-arith 	 -O1 	 -g
++CFLAGS +=  	 -Wall -Wimplicit -Wreturn-type -Wunused -Wswitch -Wcomment -Wuninitialized -Wparentheses -Wpointer-arith
+ 
+ 
+ libexec_PROGRAMS = stickynotes_applet

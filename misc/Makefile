@@ -294,6 +294,7 @@
     SUBDIR += splitvt
     SUBDIR += sshbuddy
     SUBDIR += stan
+    SUBDIR += stickynotes_applet
     SUBDIR += susv2
     SUBDIR += susv3
     SUBDIR += sword

@@ -1,0 +1,42 @@
+etc/gconf/gconf.xml.defaults/apps/stickynotes_applet/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/stickynotes_applet/defaults/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/stickynotes_applet/settings/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/stickynotes_applet/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/stickynotes_applet/defaults/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/stickynotes_applet/settings/%gconf.xml
+etc/gconf/schemas/stickynotes_applet.schemas
+libdata/bonobo/servers/stickynotes_applet.server
+libexec/stickynotes_applet
+%%PORTDOCS%%share/doc/stickynotes_applet/AUTHORS
+%%PORTDOCS%%share/doc/stickynotes_applet/COPYING
+%%PORTDOCS%%share/doc/stickynotes_applet/ChangeLog
+%%PORTDOCS%%share/doc/stickynotes_applet/INSTALL
+%%PORTDOCS%%share/doc/stickynotes_applet/NEWS
+%%PORTDOCS%%share/doc/stickynotes_applet/README
+%%PORTDOCS%%share/doc/stickynotes_applet/THANKS
+%%PORTDOCS%%share/doc/stickynotes_applet/TODO
+share/gnome/gnome-2.0/ui/stickynotes_applet.xml
+share/gnome/help/stickynotes_applet/C/figures/stickynotes_applet.png
+share/gnome/help/stickynotes_applet/C/legal.xml
+share/gnome/help/stickynotes_applet/C/stickynotes_applet.xml
+share/gnome/omf/stickynotes_applet/stickynotes_applet-C.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/stickynotes_applet/stickynotes_applet-C.omf 2>/dev/null || /usr/bin/true
+share/gnome/pixmaps/stickynotes.png
+share/gnome/stickynotes_applet/close.png
+share/gnome/stickynotes_applet/resize.png
+share/gnome/stickynotes_applet/stickynotes.png
+share/gnome/stickynotes_applet/stickynotes_applet.glade
+share/gnome/stickynotes_applet/stickynotes_prelight.png
+@dirrm share/gnome/stickynotes_applet
+@dirrm share/gnome/omf/stickynotes_applet
+@dirrm share/gnome/help/stickynotes_applet/C/figures
+@dirrm share/gnome/help/stickynotes_applet/C
+@dirrm share/gnome/help/stickynotes_applet
+%%PORTDOCS%%@dirrm share/doc/stickynotes_applet
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/stickynotes_applet/settings
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/stickynotes_applet/defaults
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/stickynotes_applet
+@dirrm etc/gconf/gconf.xml.defaults/apps/stickynotes_applet/settings
+@dirrm etc/gconf/gconf.xml.defaults/apps/stickynotes_applet/defaults
+@dirrm etc/gconf/gconf.xml.defaults/apps/stickynotes_applet
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/stickynotes_applet/stickynotes_applet-C.omf 2>/dev/null || /usr/bin/true

@@ -1,0 +1,8 @@
+Stickynotes_applet is a Gnome 2 applet that allows you to create, view, and 
+maintain sticky notes on your Gnome 2 Desktop. Each note is "sticky" 
+(appears on all workspaces), has a date stamp, and can be freely moved around 
+your desktop. The notes are automatically saved and will reappear in their 
+original locations (with their original dimensions) when the Gnome Desktop is 
+restarted.
+
+WWW: http://loban.caltech.edu/stickynotes/
