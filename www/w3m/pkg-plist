@@ -5,6 +5,7 @@ libexec/w3m/inflate
 libexec/w3m/multipart.cgi
 libexec/w3m/w3mbookmark
 libexec/w3m/w3mhelp.cgi
+libexec/w3m/w3mmail.cgi
 libexec/w3m/w3mman2html.cgi
 libexec/w3m/w3mhelperpanel
 %%INLINE_IMAGE_ONLY%%libexec/w3m/w3mimgdisplay

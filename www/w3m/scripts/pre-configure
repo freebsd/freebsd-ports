@@ -23,8 +23,10 @@ fi
 
 if [ "x${JAPANESE}" = "xYes" ] ; then
     echo lang=JA >> ${WRKSRC}/config.param
+    echo use_migemo=y >> ${WRKSRC}/config.param
 else
     echo lang=EN >> ${WRKSRC}/config.param
+    echo use_migemo=n >> ${WRKSRC}/config.param
 fi
 
 if [ "x${INLINE_IMAGE}" = "xyes" ] ; then
