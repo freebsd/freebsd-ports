@@ -1,0 +1,10 @@
+! Default font configuration for hanterm-xf
+! $FreeBSD$
+!
+! Hanterm.ad has no font configuration, so we need default font working in
+! any case
+!
+*vt100.boldFont: -schumacher-clean-medium-r-normal--16-*-*-*-*-*-*
+*vt100.font: -schumacher-clean-medium-r-normal--16-*-*-*-*-*-*
+*vt100.hangulFont: -baekmuk-gulim-medium-r-normal--16-160-75-75-m-160-ksc5601.1987-0
+*fontSet: -adobe-helvetica-medium-r-normal--14-*-*-*-*-*-iso8859-1,-baekmuk-gulim-medium-r-normal--16-*-*-*-*-*-ksc5601.1987-0

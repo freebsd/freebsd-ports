@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Tue Sep 11 19:00:32 2001
++++ Makefile.in	Tue Sep 11 19:00:48 2001
+@@ -151,7 +151,7 @@
+ install-full :: $(BINNAME)$x resize$x
+ 	$(SHELL) $(srcdir)/sinstall.sh "$(INSTALL_PROGRAM)" $(BINNAME)$x  @XTERM_PATH@ $(BINDIR)/$(binary_xterm)
+ 	$(INSTALL_PROGRAM) -s -m  755 resize$x $(BINDIR)/$(binary_resize)
+-	$(INSTALL_PROGRAM) -m 444 keyboard/*.kbd $(prefix)/share/hangul_keyboard
++	$(INSTALL_DATA) -m 444 keyboard/*.kbd $(prefix)/share/hangul_keyboard
+ 
+ install \
+ install-man \
