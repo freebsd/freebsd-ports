@@ -1,2 +1,4 @@
 bin/cmail
-share/examples/cmail.rc
+share/examples/cmailrc.sample
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/cmail/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/cmail

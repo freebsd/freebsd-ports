@@ -1,27 +1,25 @@
 # New ports collection makefile for:	cmail
 # Date created:		31 Dec 1998
-# Whom:			Chip Marshall <chip@eboai.org>
+# Whom:			Chip Marshall <chip@chocobo.cx>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	cmail
-PORTVERSION=	2.10
+PORTVERSION=	3.1
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.eboai.org/pub/users/chip/
-EXTRACT_SUFX=	.tgz
+EXTRACT_SUFX=	.tar.bz2
 
-MAINTAINER=	chip@eboai.org
+MAINTAINER=	chip@chocobo.cx
 
-NO_BUILD=	yes
+USE_BZIP2=	yes
 
-USE_PERL5=	yes
+PERL_CONFIGURE=	yes
 
-pre-configure:
-	@${SED} -e '1,1s:/usr/local/bin/perl:${PERL5}:' \
-		${WRKSRC}/cmail.pl > ${WRKSRC}/cmail
-do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/cmail ${PREFIX}/bin/cmail
-	${INSTALL_MAN} ${WRKSRC}/cmail.rc ${PREFIX}/share/examples/cmail.rc
+MAN1=		cmail.1
+
+post-install:
+	${INSTALL_MAN} ${WRKSRC}/cmailrc.sample ${PREFIX}/share/examples/cmailrc.sample
 
 .include <bsd.port.mk>
