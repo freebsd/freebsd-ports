@@ -51,7 +51,7 @@ COMMENT=	AFPL Postscript interpreter
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png
-RUN_DEPENDS=	${LOCALBASE}/share/ghostscript/fonts/Fontmap:${PORTSDIR}/print/gsfonts
+RUN_DEPENDS=	${LOCALBASE}/share/ghostscript/fonts/a010013l.pfb:${PORTSDIR}/print/gsfonts
 
 NO_CDROM=	"Can only be distributed for free"
 

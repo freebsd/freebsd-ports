@@ -18,7 +18,7 @@ COMMENT=	X11 based RTF editor
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff
-RUN_DEPENDS=	${LOCALBASE}/share/ghostscript/fonts/COPYING:${PORTSDIR}/print/gsfonts
+RUN_DEPENDS=	${LOCALBASE}/share/ghostscript/fonts/a010013l.pfb:${PORTSDIR}/print/gsfonts
 
 WRKSRC=		${WRKDIR}/Ted-${PORTVERSION}
 CONFIGURE_WRKSRC=	${WRKSRC}/Ted

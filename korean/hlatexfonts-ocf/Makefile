@@ -15,7 +15,7 @@ DISTFILES=	HLaTeX-Myoungjo-OCF-PS.tar.gz HLaTeX-Gothic-OCF-PS.tar.gz
 MAINTAINER=	cjh@kr.freebsd.org
 COMMENT=	HLaTeX(OCF format) fonts collection
 
-BUILD_DEPENDS=	$(LOCALBASE)/share/ghostscript/fonts/Fontmap:${PORTSDIR}/print/gsfonts
+BUILD_DEPENDS=	$(LOCALBASE)/share/ghostscript/fonts/a010013l.pfb:${PORTSDIR}/print/gsfonts
 
 NO_BUILD=	YES
 
