@@ -32,6 +32,34 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="76904dce-ccf3-11d8-babb-000854d03344">
+    <topic>Pavuk HTTP Location header overflow</topic>
+    <affects>
+      <package>
+	<name>pavuk</name>
+	<range><lt>0.9.28_5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>When pavuk sends a request to a web server and the server
+	  sends back the HTTP status code 305 (Use Proxy), pavuk
+	  copies data from the HTTP Location header in an unsafe
+	  manner. This leads to a stack-based buffer overflow with
+	  control over EIP.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0456</cvename>
+      <url>http://lists.netsys.com/pipermail/full-disclosure/2004-July/023322.html</url>
+      <url>http://www.osvdb.org/7319</url>
+    </references>
+    <dates>
+      <discovery>2004-06-30</discovery>
+      <entry>2004-07-03</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="33ab4a47-bfc1-11d8-b00e-000347a4fa7d">
     <topic>Several vulnerabilities found in PHPNuke</topic>
     <affects>
