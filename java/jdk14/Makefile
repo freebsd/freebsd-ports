@@ -108,6 +108,15 @@ You must have a version of FreeBSD later than 4.7-STABLE February 2003\n\
 or 5-CURRENT February 2003 to compile and use JDK 1.4.1.\n
 .endif
 
+pre-fetch:
+	@${ECHO_MSG}
+	@${ECHO_MSG} "To build JDK 1.4.1 port, you should have at least"
+	@${ECHO_MSG} "1.5Gb of disk space!"
+	@${ECHO_MSG}
+	@${ECHO_MSG} "Please use \`make -DNODEBUG' if you don't want to"
+	@${ECHO_MSG} "install libraries and binaries with debugging support."
+	@${ECHO_MSG}
+
 pre-patch:
 	@cd ${WRKDIR} &&  \
 		${GZIP_CMD} -dc ${DISTDIR}/${PATCHSETFILE} | ${TAR} -xf - && \
