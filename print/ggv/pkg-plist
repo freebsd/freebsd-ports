@@ -105,6 +105,7 @@ share/locale/sv/LC_MESSAGES/ggv.mo
 share/locale/tr/LC_MESSAGES/ggv.mo
 share/locale/uk/LC_MESSAGES/ggv.mo
 share/locale/zh_CN.GB2312/LC_MESSAGES/ggv.mo
+share/locale/zh_TW/LC_MESSAGES/ggv.mo
 @dirrm share/gnome/omf/ggv
 @dirrm share/gnome/help/ggv/ja/stylesheet-images
 @dirrm share/gnome/help/ggv/ja
