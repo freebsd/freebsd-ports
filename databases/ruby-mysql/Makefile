@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mysql
-PORTVERSION=	2.3.2a
-PORTREVISION=	1
+PORTVERSION=	2.4
 CATEGORIES=	databases ruby
 MASTER_SITES=	http://www.tmtm.org/mysql/ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
