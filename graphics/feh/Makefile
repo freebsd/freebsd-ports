@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	feh
-PORTVERSION=	0.9.9
+PORTVERSION=	1.0.1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.linuxbrit.co.uk/downloads/
 
