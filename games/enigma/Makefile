@@ -20,6 +20,8 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libzipios.a:${PORTSDIR}/archivers/zipios++
 BUILD_DEPENDS+=	${LOCALBASE}/bin/tolua:${PORTSDIR}/lang/tolua4
 LIB_DEPENDS=	lua.4:${PORTSDIR}/lang/lua4
 
+BROKEN=		Does not compile
+
 USE_GCC=	3.3
 
 GNU_CONFIGURE=	yes
