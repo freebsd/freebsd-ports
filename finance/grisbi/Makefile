@@ -6,19 +6,16 @@
 #
 
 PORTNAME=	grisbi
-PORTVERSION=	0.4.3
-PORTREVISION=	1
+PORTVERSION=	0.4.4
 CATEGORIES=	finance
-MASTER_SITES=	http://grisbi.org/download/packages/${PORTVERSION}/sources/		\
-		http://cedricauger.free.fr/download/packages/${PORTVERSION}/sources/	\
-		http://grisbi.gegeweb.net/download/packages/${PORTVERSION}/sources/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	thierry@pompo.net
+MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	A personnal accounting application
 
-LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
-
 USE_GETTEXT=	yes
+USE_ICONV=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOMENG=	yes
