@@ -8,12 +8,16 @@
 
 PORTNAME=	dhcp
 PORTVERSION=	3.0.1.r11
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_ISC}
 MASTER_SITE_SUBDIR=	dhcp dhcp/dhcp-3.0-history
 PKGNAMEPREFIX=	isc-
 PKGNAMESUFFIX=	3
 DISTNAME=	${PORTNAME}-${RELEASE}${VERSION}${PATCHLEVEL}
+PATCH_SITES=	http://security.debian.org/pool/updates/main/d/dhcp3/
+PATCHFILES=	dhcp3_3.0+3.0.1rc9-2.2.diff.gz
+PATCH_DIST_STRIP=-p1
 
 MAINTAINER=	cyrille.lefevre@laposte.net
 
