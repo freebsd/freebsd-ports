@@ -1,13 +1,12 @@
 #!/bin/sh
 
 # Set some variables
-NAME=%%PORTNAME%%
 VERSION=%%PORTVERSION%%
-ORION_HOME=%%ORION_HOME%%
+APP_HOME=%%APP_HOME%%
 USER_NAME=%%USER_NAME%%
-LOG=${ORION_HOME}/log/${NAME}.log
-PID_FILE=/var/run/${NAME}.pid
-JAR_FILE=${ORION_HOME}/${NAME}.jar
+LOG=%%LOG_DIR%%/%%APP_SHORTNAME%%.log
+PID_FILE=/var/run/%%PORTNAME%%.pid
+JAR_FILE=${APP_HOME}/%%APP_SHORTNAME%%.jar
 MYSELF=`basename $0`
 
 # Check if we're being run as a shell script or as an rc script
@@ -24,82 +23,95 @@ if [ "${JAVA_HOME}a" = "a" ]; then
 fi
 JAVA_CMD=${JAVA_HOME}/bin/java
 
+# Function that starts the application
+start() {
+	# Make sure the application is not started previously
+	if [ -e ${PID_FILE} ]; then
+		if [ "${AS_RC_SCRIPT}" = "yes" ]; then
+			echo ""
+		fi
+		echo "%%APP_SHORTNAME%%: ERROR: Found %%APP_TITLE%% PID file at ${PID_FILE}. It is probably already running."
+		exit 1
+	fi
+
+	# Make sure the application directory does exist
+	if [ ! -d ${APP_HOME} ]; then
+		if [ "${AS_RC_SCRIPT}" = "yes" ]; then
+			echo ""
+		fi
+		echo "%%APP_SHORTNAME%%: ERROR: Unable to find %%APP_TITLE%% home directory at ${APP_HOME}."
+		exit 2
+	fi
+
+	# Make sure the application JAR file exists
+	if [ ! -r ${JAR_FILE} ]; then
+		if [ "${AS_RC_SCRIPT}" = "yes" ]; then
+			echo ""
+		fi
+		echo "%%APP_SHORTNAME%%: ERROR: Unable to find %%APP_TITLE%% JAR file at ${JAR_FILE}."
+		exit 3
+	fi
+
+	# Make sure the Java VM can be found
+	if [ ! -x ${JAVA_CMD} ]; then
+		if [ "${AS_RC_SCRIPT}" = "yes" ]; then
+			echo ""
+		fi
+		echo "%%APP_SHORTNAME%%: ERROR: Unable to find Java VM at ${JAVA_HOME}."
+		exit 4
+	fi
+
+	# Create the process ID file
+	rm -f ${PID_FILE}
+	touch ${PID_FILE}
+	chown ${USER_NAME} ${PID_FILE}
+	chmod 600 ${PID_FILE}
+
+	if [ "${AS_RC_SCRIPT}" = "yes" ]; then
+		echo -n " %%APP_SHORTNAME%%"
+	fi
+	touch ${PID_FILE}
+	chown ${USER_NAME} ${PID_FILE}
+	chmod 600 ${PID_FILE}
+	su - ${USER_NAME} -c "(cd ${APP_HOME} && ${JAVA_CMD} -jar ${JAR_FILE} & echo \$! > ${PID_FILE}) > ${LOG} 2>&1"
+}
+
+# Function that stops the application
+stop() {
+	if [ ! -e ${PID_FILE} ]; then
+
+		# If run as an rc script, die silently...
+		if [ "${AS_RC_SCRIPT}" = "yes" ]; then
+			exit 0
+
+		# ...otherwise complain
+		else
+			echo "%%APP_SHORTNAME%%: ERROR: Unable to find %%APP_TITLE%% PID file at ${PID_FILE}. It is probably not running."
+			exit 16
+		fi
+	else
+		if [ "${AS_RC_SCRIPT}" = "yes" ]; then
+			echo -n " %%APP_SHORTNAME%%"
+		fi
+		/bin/kill `cat ${PID_FILE}`
+		rm -f ${PID_FILE}
+	fi
+}
+
 case "$1" in
 	start)
-		# Make sure Orion is not started previously
-		if [ -e ${PID_FILE} ]; then
-			if [ "${AS_RC_SCRIPT}" = "yes" ]; then
-				echo ""
-			fi
-			echo "${NAME}: ERROR: Found Orion PID file at ${PID_FILE}. Orion is probably already running."
-			exit 1
-		fi
-
-		# Make sure the Orion directory does exist
-		if [ ! -d ${ORION_HOME} ]; then
-			if [ "${AS_RC_SCRIPT}" = "yes" ]; then
-				echo ""
-			fi
-			echo "${NAME}: ERROR: Unable to find Orion home directory at ${ORION_HOME}."
-			exit 2
-		fi
-
-		# Make sure the Orion JAR file exists
-		if [ ! -r ${JAR_FILE} ]; then
-			if [ "${AS_RC_SCRIPT}" = "yes" ]; then
-				echo ""
-			fi
-			echo "${NAME}: ERROR: Unable to find Orion JAR file at ${JAR_FILE}."
-			exit 3
-		fi
-
-		# Make sure the Java VM can be found
-		if [ ! -x ${JAVA_CMD} ]; then
-			if [ "${AS_RC_SCRIPT}" = "yes" ]; then
-				echo ""
-			fi
-			echo "${NAME}: ERROR: Unable to find Java VM at ${JAVA_HOME}."
-			exit 4
-		fi
-
-		# Create the process ID file
-		rm -f ${PID_FILE}
-		touch ${PID_FILE}
-		chown ${USER_NAME} ${PID_FILE}
-		chmod 600 ${PID_FILE}
-
-		if [ "${AS_RC_SCRIPT}" = "yes" ]; then
-			echo -n " ${NAME}"
-		fi
-		touch ${PID_FILE}
-		chown ${USER_NAME} ${PID_FILE}
-		chmod 600 ${PID_FILE}
-		su - ${USER_NAME} -c "(cd ${ORION_HOME} && ${JAVA_CMD} -jar orion.jar & echo \$! > ${PID_FILE}) > ${LOG} 2>&1"
+		start
 		;;
 	stop)
-		if [ ! -e ${PID_FILE} ]; then
-
-			# If run as an rc script, die silently...
-			if [ "${AS_RC_SCRIPT}" = "yes" ]; then
-				exit 0
-
-			# ...otherwise complain
-			else
-				echo "${NAME}: ERROR: Unable to find Orion PID file at ${PID_FILE}. Orion is probably not running."
-				exit 16
-			fi
-		else
-			if [ "${AS_RC_SCRIPT}" = "yes" ]; then
-				echo -n " ${NAME}"
-			fi
-			/bin/kill `cat ${PID_FILE}`
-			rm -f ${PID_FILE}
-		fi
-
+		stop
+		;;
+	restart)
+		stop
+		start
 		;;
 	*)
 		echo ""
-		echo "Usage: ${MYSELF} { start | stop }"
+		echo "Usage: ${MYSELF} { start | stop | restart }"
 		echo ""
 		exit 64
 		;;

@@ -7,30 +7,34 @@
 
 PORTNAME=	orion
 PORTVERSION=	1.4.5
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	www java
-MASTER_SITES=	ftp://ftp.sunet.se/pub/database/utils/orionserver/ \
+MASTER_SITES=	http://www.orionserver.com/distributions/ \
 		http://www.metaverse.nl/~ernst/ \
 		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	sobomax
+MASTER_SITE_SUBDIR=	znerd
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	znerd@FreeBSD.org
 
-BUILD_DEPENDS=	${JAVA_HOME}/bin/java:${PORTSDIR}/java/jdk13
-RUN_DEPENDS=	${JAVA_HOME}/bin/java:${PORTSDIR}/java/jdk13
+BUILD_DEPENDS=	${JAVA_HOME}/bin/javac:${JAVA_PORT}
+RUN_DEPENDS=	${JAVA_HOME}/bin/javac:${JAVA_PORT}
 
 USE_ZIP=	YES
 NO_BUILD=	YES
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-PLIST_SUB+=	T=${ORION_HOME:S/^${PREFIX}\///}
-ORION_HOME?=	${PREFIX}/${PKGBASE}${PORTVERSION}
-PORTTITLE=	Orion Server
-ORIONCTL_NAME=	orionctl
-ORIONCTL_DEST=	${PREFIX}/bin/${ORIONCTL_NAME}
-RC_SCRIPT=	${PREFIX}/etc/rc.d/${PORTNAME}.sh
+APP_HOME?=	${PREFIX}/${PKGBASE}${PORTVERSION}
+LOG_DIR=	${APP_HOME}/log
+PLIST_SUB+=	T=${APP_HOME:S/^${PREFIX}\///}
+APP_TITLE=	Orion Server
+APP_SHORTNAME=	${PORTNAME}
+APPCTL_NAME=	${APP_SHORTNAME}ctl
+CTL_SCRIPT=	${PREFIX}/bin/${APPCTL_NAME}
+STARTUP_ORDER?=	020
+RC_SCRIPT=	${PREFIX}/etc/rc.d/${STARTUP_ORDER}.${PORTNAME}.sh
 JAVA_HOME?=	${LOCALBASE}/jdk1.3.1
+JAVA_PORT?=	${PORTSDIR}/java/jdk13
 JIKES_LOCATION=	${LOCALBASE}/bin/jikes
 WITH_JIKES?=	YES
 .if ${WITH_JIKES} == "YES"
@@ -44,15 +48,13 @@ PW?=		/usr/sbin/pw
 LISTEN_PORT?=	8090
 AUTO_START?=	YES
 
-.include <bsd.port.pre.mk>
-
 pre-install:
 	@${ECHO} "Installation settings:"
-	@${ECHO} "   Destination directory:   ${ORION_HOME}"
-	@${ECHO} "   Control script location: ${ORIONCTL_DEST}"
-	@${ECHO} "   Startup script location: ${RC_SCRIPT}"
+	@${ECHO} "   Destination directory:   ${APP_HOME}"
+	@${ECHO} "   Control script location: ${CTL_SCRIPT}"
 	@${ECHO} "   Startup script location: ${RC_SCRIPT}"
 	@${ECHO} "   Location of JDK:         ${JAVA_HOME}"
+	@${ECHO} "   Location of Java port:   ${JAVA_PORT}"
 	@${ECHO} "   Using Jikes:             ${WITH_JIKES}"
 	@${ECHO} "   Running as (user/group): ${USER_NAME}/${GROUP_NAME} (${USER_ID}:${GROUP_ID})"
 	@${ECHO} "   Port to listen at:       ${LISTEN_PORT}"
@@ -61,73 +63,77 @@ pre-install:
 do-install:
 	@# Add the group and the user if they do not exist
 	${PW} groupadd -n ${GROUP_NAME} -g ${GROUP_ID} || true
-	${PW} useradd -n ${USER_NAME} -u ${USER_ID} -g ${GROUP_NAME} -c "Orion Server account" -d ${ORION_HOME} -s ${SH} -h - || true
+	${PW} useradd -n ${USER_NAME} -u ${USER_ID} -g ${GROUP_NAME} -c "${APP_TITLE} account" -d ${APP_HOME} -s ${SH} -h - || true
 
-	@# Create the destination directory for Orion
-	${MKDIR} ${ORION_HOME}
+	@# Create the destination directory
+	${MKDIR} ${APP_HOME}
 
-	@# Copy all files and make them rwxr-xr-x
-	${CP} -R ${WRKSRC}/* ${ORION_HOME}
-	${CHMOD} 755 `find ${ORION_HOME} -type d`
+	@# Copy all files except .bat and .orig files
+	${RM} -f `${FIND} ${WRKSRC} -name '*.bat'`
+	${RM} -f `${FIND} ${WRKSRC} -name '*.orig'`
+	${CP} -R ${WRKSRC}/* ${APP_HOME}
+	${CHMOD} 755 `find ${APP_HOME} -type d`
 
 	@# Configure for use of Jikes, if necessary
 .if ${WITH_JIKES} == "YES"
 	${CAT} ${WRKSRC}/config/server.xml \
 	| ${SED} "/\<!-- \<compiler executable=\"jikes\" classpath=\"\/myjdkdir\/jre\/lib\/rt.jar\" \/\> -->/s//\<compiler executable=\"${JIKES_LOCATION:S/\//\\\//g}\" classpath=\"${JAVA_HOME:S/\//\\\//g}\/jre\/lib\/rt.jar\"\/\>/" \
-	> ${ORION_HOME}/config/server.xml
+	> ${APP_HOME}/config/server.xml
 .endif
 
 	@# Configure the port to listen to
 	${CAT} ${WRKSRC}/config/default-web-site.xml \
 	| ${SED} "/port=\"80\"/s//port=\"${LISTEN_PORT}\"/" \
-	> ${ORION_HOME}/config/default-web-site.xml
+	> ${APP_HOME}/config/default-web-site.xml
 
-	@# Install the 'orionctl' script
-	${CAT} ${FILESDIR}/${ORIONCTL_NAME} \
+	@# Install the control script
+	${CAT} ${FILESDIR}/${APPCTL_NAME} \
 	| ${SED} "/%%PORTNAME%%/s//${PORTNAME}/" \
 	| ${SED} "/%%PORTVERSION%%/s//${PORTVERSION}/" \
-	| ${SED} "/%%ORION_HOME%%/s//${ORION_HOME:S/\//\\\//g}/" \
+	| ${SED} "/%%APP_TITLE%%/s//${APP_TITLE}/" \
+	| ${SED} "/%%APP_SHORTNAME%%/s//${APP_SHORTNAME}/" \
+	| ${SED} "/%%APP_HOME%%/s//${APP_HOME:S/\//\\\//g}/" \
+	| ${SED} "/%%LOG_DIR%%/s//${LOG_DIR:S/\//\\\//g}/" \
 	| ${SED} "/%%RC_SCRIPT_NAME%%/s//${PORTNAME}.sh/" \
 	| ${SED} "/%%JAVA_HOME%%/s//${JAVA_HOME:S/\//\\\//g}/" \
 	| ${SED} "/%%USER_NAME%%/s//${USER_NAME}/" \
-	> ${ORIONCTL_DEST}
-	${CHMOD} 755 ${ORIONCTL_DEST}
+	> ${CTL_SCRIPT}
+	${CHMOD} 755 ${CTL_SCRIPT}
+
+	@# Install the startup script
+	${LN} -sf ${CTL_SCRIPT} ${RC_SCRIPT}
+
+	@# Create the directories that the application will create it at the
+	@# first run
+	${MKDIR} ${APP_HOME}/application-deployments
 
 	@# Fix a small typo in the index.html served as the root
 	${CAT} ${WRKSRC}/default-web-app/index.html \
 	| ${SED} "/1\.4\.0/s//${PORTVERSION}/" \
-	> ${ORION_HOME}/default-web-app/index.html
-
-	@# Install the startup script
-	${LN} -sf ${ORIONCTL_DEST} ${RC_SCRIPT}
-
-	@# Create the 'application-deployments' directory, since Orion will
-	@# otherwise create it when it is first run
-	${MKDIR} ${ORION_HOME}/application-deployments
+	> ${APP_HOME}/default-web-app/index.html
 
 	@# Install the tools.jar file from the JDK, since it is needed by Orion
-	${LN} -sf ${JAVA_HOME}/lib/tools.jar ${ORION_HOME}/tools.jar
+	${LN} -sf ${JAVA_HOME}/lib/tools.jar ${APP_HOME}/tools.jar
 
 	@# Change ownership for the files
-	${CHOWN} -R ${USER_NAME}:${GROUP_NAME} ${ORION_HOME}
+	${CHOWN} -R ${USER_NAME}:${GROUP_NAME} ${APP_HOME}
 
 	@# Install the man page
 .if !defined(NOPORTDOCS)
-	${CAT} ${FILESDIR}/${ORIONCTL_NAME}.1 \
+	${CAT} ${FILESDIR}/${APPCTL_NAME}.1 \
 	| ${SED} "/%%PREFIX%%/s//${PREFIX:S/\//\\\//g}/" \
-	> ${WRKDIR}/${ORIONCTL_NAME}.1
-	${INSTALL_MAN} ${WRKDIR}/${ORIONCTL_NAME}.1 ${MANPREFIX}/man/man1
+	> ${WRKDIR}/${APPCTL_NAME}.1
+	${INSTALL_MAN} ${WRKDIR}/${APPCTL_NAME}.1 ${MANPREFIX}/man/man1
 .endif
 
 post-install:
-	@${ECHO} "${PORTTITLE} ${PORTVERSION} has been installed in ${ORION_HOME}."
+	@${ECHO} "${APP_TITLE} ${PORTVERSION} has been installed in ${APP_HOME}."
 .if !defined(NOPORTDOCS)
-	@${ECHO} "Use 'man orionctl' for information about starting and stopping Orion."
+	@${ECHO} "Use 'man ${APPCTL_NAME}' for information about starting and stopping ${APP_TITLE}."
 .endif
 .if ${AUTO_START} == "YES"
-	@${ECHO} -n "Starting..."
-	@${RC_SCRIPT} start
-	@${ECHO} ""
+	@${ECHO} "Starting ${APP_TITLE}..."
+	@${CTL_SCRIPT} start || true
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
