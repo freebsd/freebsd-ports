@@ -1,0 +1,18 @@
+--- Makefile.in.orig	Wed Dec  3 23:54:18 2003
++++ Makefile.in	Thu Dec  4 21:00:54 2003
+@@ -182,11 +182,11 @@
+ SUBDIRS = pixmaps po m4 libproxy sounds doc src modules
+ ACLOCAL_AMFLAGS = -I m4
+ 
+-Utilitiesdir = $(datadir)/applnk/Internet
+-Utilities_DATA = @PACKAGE@.desktop
++#Utilitiesdir = $(datadir)/applnk/Internet
++#Utilities_DATA = @PACKAGE@.desktop
+ 
+-gnomedir = $(datadir)/gnome/apps/Internet
+-gnome_DATA = @PACKAGE@.desktop
++#gnomedir = $(datadir)/gnome/apps/Internet
++#gnome_DATA = @PACKAGE@.desktop
+ 
+ sysconf_DATA = @PACKAGE@rc
+ 
