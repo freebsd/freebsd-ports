@@ -7,6 +7,7 @@
 
 PORTNAME=	man2web
 PORTVERSION=	0.88
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= ${PORTNAME}
@@ -16,7 +17,9 @@ COMMENT=	Convert man pages to HTML
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET= --build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=	--sysconfdir="${PREFIX}/etc" \
+CONFIGURE_ARGS=	--bindir="${PREFIX}/${CGIDIR}" \
+		--sysconfdir="${PREFIX}/etc" \
+		--with-manpath=/usr/share/man:${X11BASE}/man:${LOCALBASE}/man \
 		--with-distro=freebsd --enable-lynx
 
 PLIST_SUB=	CGIDIR="${CGIDIR}"
@@ -30,7 +33,6 @@ post-extract:
 
 # default Apache configuration disallows symlinks in cgi-bin
 post-install:
-	${LN} -f ${PREFIX}/bin/man2web ${PREFIX}/${CGIDIR}/man2web || \
-	    ${INSTALL_PROGRAM} ${WRKSRC}/src/man2web ${PREFIX}/${CGIDIR}/
+	${LN} -sf ${PREFIX}/${CGIDIR}/man2web ${PREFIX}/bin/man2web
 
 .include <bsd.port.mk>
