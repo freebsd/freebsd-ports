@@ -1,5 +1,5 @@
 # New ports collection makefile for:	tiff
-# Version required:	3.5.2
+# Version required:	3.5.3
 # Date created:		8 October 1996
 # Whom:			Richard Hwang <rhwang@bigpanda.com>
 #			Mikhail Teterin <mi@aldan.algebra.com>
@@ -8,8 +8,8 @@
 # $FreeBSD$
 #
 
-DISTNAME=	tiff-v3.5.2
-PKGNAME=	tiff-3.5.2
+DISTNAME=	tiff-v3.5.3
+PKGNAME=	tiff-3.5.3
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.onshore.com/pub/libtiff/ \
 		http://www.libtiff.org/
@@ -33,7 +33,6 @@ CONFIGURE_ARGS=	--with-ZIP --with-JPEG \
 		--noninteractive
 
 .if defined(NOPORTDOCS)
-CONFIGURE_ARGS+=	--with-HTML=no
 PLIST=			${PKGDIR}/PLIST.nodocs
 .else
 CONFIGURE_ARGS+=	--with-HTML --with-DIR_HTML=${PREFIX}/share/doc/tiff
@@ -65,10 +64,10 @@ MAN3=	TIFFCheckTile.3t TIFFClose.3t TIFFComputeStrip.3t TIFFComputeTile.3t \
 	TIFFVStripSize.3t TIFFVTileSize.3t TIFFWarning.3t \
 	TIFFWriteBufferSetup.3t TIFFWriteDirectory.3t TIFFWriteEncodedStrip.3t \
 	TIFFWriteEncodedTile.3t TIFFWriteRawStrip.3t TIFFWriteRawTile.3t \
-	TIFFWriteScanline.3t TIFFbuffer.3t TIFFcodec.3t TIFFfree.3t \
-	TIFFmalloc.3t TIFFmemcmp.3t TIFFmemcpy.3t TIFFmemory.3t TIFFmemset.3t \
-	TIFFquery.3t TIFFrealloc.3t TIFFsize.3t TIFFstrip.3t TIFFswab.3t \
-	TIFFtile.3t libtiff.3t
+	TIFFWriteScanline.3t TIFFWriteTile.3t TIFFbuffer.3t TIFFcodec.3t \
+	TIFFfree.3t TIFFmalloc.3t TIFFmemcmp.3t TIFFmemcpy.3t TIFFmemory.3t \
+	TIFFmemset.3t TIFFquery.3t TIFFrealloc.3t TIFFsize.3t TIFFstrip.3t \
+	TIFFswab.3t TIFFtile.3t libtiff.3t
 
 post-install:
 	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib

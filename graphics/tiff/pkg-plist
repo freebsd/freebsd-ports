@@ -17,6 +17,7 @@ bin/tiffinfo
 bin/tiffmedian
 bin/tiffsplit
 include/tiff.h
+include/tiffconf.h
 include/tiffio.h
 lib/libtiff.a
 lib/libtiff.so
