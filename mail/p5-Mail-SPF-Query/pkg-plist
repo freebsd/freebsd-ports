@@ -1,0 +1,4 @@
+bin/spfd
+bin/spfquery
+%%SITE_PERL%%/Mail/SPF/Query.pm
+@dirrm %%SITE_PERL%%/Mail/SPF
