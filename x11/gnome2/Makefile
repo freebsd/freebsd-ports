@@ -44,7 +44,7 @@ RUN_DEPENDS=	${X11BASE}/libexec/cdplayer_applet2:${PORTSDIR}/x11/gnomeapplets2 \
 		gnome-pkgview:${PORTSDIR}/sysutils/gnome-pkgview \
 		acme:${PORTSDIR}/multimedia/acme \
 		gst-thumbnail:${PORTSDIR}/multimedia/nautilus-media \
-		${X11BASE}/lib/X11/fonts/bitsream-vera/Vera.ttf:${PORTSDIR}/x11-fonts/bitstream-vera
+		${X11BASE}/lib/X11/fonts/bitstream-vera/Vera.ttf:${PORTSDIR}/x11-fonts/bitstream-vera
 
 NO_BUILD=	yes
 
