@@ -663,11 +663,10 @@ MASTER_SITE_REDHAT_LINUX+= \
 	ftp://ftp.lip6.fr/pub/linux/distributions/redhat/linux/%SUBDIR%/ \
 	ftp://ftp.inet.it/pub/Linux/redhat/%SUBDIR%/ \
 	ftp://ftp.nluug.nl/site/ftp.redhat.com/redhat/linux/%SUBDIR%/ \
-	ftp://ftp.icm.edu.pl/vol/rzm9/linux-redhat/linux/%SUBDIR%/ \
+	ftp://ftp.icm.edu.pl/pub/linux/redhat/linux/%SUBDIR%/ \
 	ftp://ftp.mirrorservice.org/sites/ftp.redhat.com/pub/redhat/linux/%SUBDIR%/ \
      ftp://ftp.cs.nott.ac.uk/Mirrors/ftp.redhat.com/pub/redhat/linux/%SUBDIR%/ \
 	ftp://ftp.carrier.kiev.ua/pub/Linux/RedHat/redhat/linux/%SUBDIR%/ \
-	ftp://ftp.kobe-u.ac.jp/pub/Linux/packages/RedHat/redhat/linux/%SUBDIR%/\
 	ftp://ftp.riken.go.jp/pub/Linux/redhat/releases/%SUBDIR%/ \
 	ftp://ftp.kddlabs.co.jp/pub/Linux/packages/RedHat/redhat/linux/%SUBDIR%/ \
 	ftp://ftp.cse.cuhk.edu.hk/pub2/redhat/%SUBDIR%/ \
