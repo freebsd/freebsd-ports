@@ -3,16 +3,16 @@
 # Date created:		10 November 1995
 # Whom:			pst
 #
-# $Id: Makefile,v 1.10 1997/01/11 12:17:47 asami Exp $
+# $Id: Makefile,v 1.11 1997/02/17 04:12:17 pst Exp $
 #
 
 DISTNAME=       gnats-3.101-beta
+PKGNAME=	gnats-3.101b
 CATEGORIES=	databases
 MASTER_SITES=   ftp://ftp.cygnus.com/pub/
 
 MAINTAINER=	pst@FreeBSD.org
 
-# we've got some .elc and info files to compile (yuck)
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
 NO_PACKAGE=	"Requires gnats UID"
