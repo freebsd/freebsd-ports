@@ -1,5 +1,5 @@
 --- configure.orig	Mon Jun 12 07:07:43 2000
-+++ configure	Wed Jun 28 10:19:30 2000
++++ configure	Sun Aug  6 19:43:37 2000
 @@ -3180,9 +3180,9 @@
    
    rm -f conf.glibtest
@@ -23,7 +23,7 @@
      if test "$vers" -ge 1002002; then
          echo "$ac_t""found" 1>&6
      else
-@@ -4044,8 +4044,8 @@
+@@ -4044,15 +4044,15 @@
  
  GB_LIBDIR='-L${libdir}'
  GB_INCLUDEDIR='-I${includedir}'
@@ -31,6 +31,14 @@
 -GB_LIBS="-lgb `glib-config --libs glib`"
 +GB_INCLUDEDIR="$GB_INCLUDEDIR `$GLIB_CONFIG --cflags glib`"
 +GB_LIBS="-lgb `$GLIB_CONFIG --libs glib`"
+ 
+ 
+ 
+ 
+ 
+ EXTRA_GNOME_LIBS=`gnome-config --libs gnomeui`
+-EXTRA_GNOME_CFLAGS="-Werror `gnome-config --cflags gnomeui`"
++EXTRA_GNOME_CFLAGS="`gnome-config --cflags gnomeui`"
  
  
  
