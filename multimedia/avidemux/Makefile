@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	avidemux
-PORTVERSION=	0.9.0.101
+PORTVERSION=	0.9.0.110
 CATEGORIES=	multimedia
 MASTER_SITES=	http://fixounet.free.fr/avidemux/
-DISTNAME=	avidemux-0.9rc1
+DISTNAME=	avidemux-0.9
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	amistry@am-productions.biz
-COMMENT=	GUI based AVI (DivX) editor
+COMMENT=	Simple GUI-based video editor
 
 LIB_DEPENDS=	mp3lame.0:${PORTSDIR}/audio/lame \
 		mad.1:${PORTSDIR}/audio/mad \
@@ -33,11 +33,13 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include \
 CONFIGURE_ARGS=	--disable-warnings
 USE_GMAKE=	yes
 
+.include <bsd.port.pre.mk>
+
 .if exists(${LOCALBASE}/lib/liba52.so.0)
 WITH_A52=	yes
 .endif
 
-.if exists(${LOCALBASE}/lib/xvidcore.so.0)
+.if exists(${LOCALBASE}/lib/libxvidcore.so.0)
 WITH_XVID=	yes
 .endif
 
@@ -63,7 +65,4 @@ post-patch:
 	@${TOUCH} ${WRKSRC}/*
 	@${REINPLACE_CMD} 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 
-post-configure:
-	@${SH} ${WRKSRC}/buildLavCodec.sh
-
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
