@@ -1,18 +1,18 @@
 # New ports collection makefile for:	postgres95
-# Version required:			1.07
-# Date created:				Sep 14 1996
+# Version required:			1.08
+# Date created:				Oct 9 1996
 # Whom:	      				Matthew Stein <matt@bdd.net>
 #
-#   $Id: Makefile,v 1.1.1.1 1996/09/23 22:40:13 jfitz Exp $
+#   $Id: Makefile,v 1.2 1996/09/26 01:40:19 jfitz Exp $
 
-PKGNAME=	postgres95-1.07
+PKGNAME=	postgres95-1.08
 CATEGORIES+=	databases
 MASTER_SITES=	ftp://ftp.ki.net/pub/postgres95/ \
 		ftp://ftp.luga.or.at/pub/postgres95/ \
 		ftp://ftp.jaist.ac.jp/pub/dbms/postgres95/ \
 		ftp://cal011111.student.utwente.nl/pub/postgres95/
 
-DISTFILES=	postgres95-1.07.tar.gz \
+DISTFILES=	postgres95-1.08.tar.gz \
 		flex-2.5.2.tgz
 		
 MAINTAINER=	matt@bdd.net
