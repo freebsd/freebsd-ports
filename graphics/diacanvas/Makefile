@@ -17,7 +17,7 @@ LIB_DEPENDS=	gnome.4:${PORTSDIR}/x11/gnomelibs
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 
 USE_X_PREFIX=	yes
-INSTALLS_SHLIBS=	yes
+INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share/gnome \
 		--datadir=${PREFIX}/share/gnome

@@ -14,7 +14,7 @@ MAINTAINER=	mwest@uct.ac.za
 
 USE_BZIP2=	yes
 USE_XLIB=	yes
-INSTALLS_SHLIBS=	yes
+INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 # NOTE: We can not define USE_LIBTOOL for this port to build.
 #USE_LIBTOOL=	yes

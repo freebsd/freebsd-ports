@@ -15,7 +15,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	s974123@cc.matsuyama-u.ac.jp
 
 USE_IMAKE=	yes
-INSTALLS_SHLIBS=	yes
+INSTALLS_SHLIB=	yes
 NO_INSTALL_MANPAGES=	yes
 
 do-install:

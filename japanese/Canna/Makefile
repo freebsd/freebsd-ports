@@ -16,7 +16,7 @@ MAINTAINER=	max@FreeBSD.org
 
 BUILD_DEPENDS=	imake:${PORTSDIR}/devel/imake
 
-INSTALLS_SHLIBS=	yes
+INSTALLS_SHLIB=	yes
 
 ALL_TARGET=	canna
 INSTALL_TARGET=	install install.man

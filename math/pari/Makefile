@@ -15,7 +15,7 @@ MAINTAINER=     yoshiaki@kt.rim.or.jp
 
 ONLY_FOR_ARCHS=	i386
 
-INSTALLS_SHLIBS=	yes
+INSTALLS_SHLIB=	yes
 HAS_CONFIGURE = yes
 CONFIGURE_SCRIPT = Configure
 CONFIGURE_ARGS = --prefix=${PREFIX}

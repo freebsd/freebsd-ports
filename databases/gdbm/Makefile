@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	gdbm
 MAINTAINER=	bjn@visi.com
 
 USE_LIBTOOL=	yes
-INSTALLS_SHLIBS=	yes
+INSTALLS_SHLIB=	yes
 
 MAN3=		gdbm.3
 

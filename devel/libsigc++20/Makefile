@@ -15,7 +15,7 @@ MAINTAINER=	JoeLu@JoeLu.m8.ntu.edu.tw
 
 GNU_CONFIGURE=	yes
 USE_NEWGCC=	yes
-INSTALLS_SHLIBS=	yes
+INSTALLS_SHLIB=	yes
 
 post-install:
 .if !defined(NOPORTDOCS)

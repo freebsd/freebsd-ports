@@ -15,7 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 LIB_DEPENDS?=	tk82.1:${PORTSDIR}/x11-toolkits/tk82
 
 WRKSRC=		${WRKDIR}/expect-5.31
-INSTALLS_SHLIBS=	yes
+INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS?= --enable-shared \
 		--with-tclconfig=${PREFIX}/lib/tcl8.2 \

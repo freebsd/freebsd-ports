@@ -18,7 +18,7 @@ LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
 
 FETCH_BEFORE_ARGS=	-b
-INSTALLS_SHLIBS=	yes
+INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-perl5=${PERL} \
 		--with-tiff=${PREFIX} \

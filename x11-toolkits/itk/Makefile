@@ -17,7 +17,7 @@ LIB_DEPENDS=	tk82.1:${PORTSDIR}/x11-toolkits/tk82 \
 		itcl30.1:${PORTSDIR}/lang/itcl
 
 WRKSRC=		${WRKDIR}/itcl3.0.1/itk/unix
-INSTALLS_SHLIBS=	yes
+INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared --with-tcl=${PREFIX}/lib/tcl8.2 --with-itcl=${PREFIX}/lib/itcl3.0 --with-tk=${PREFIX}/lib/tk8.2
 CONFIGURE_ENV=	PORTSDIR=${PORTSDIR} ITK_LIB_FILE=${ITK_LIB_FILE}

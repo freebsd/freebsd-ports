@@ -14,7 +14,7 @@ DISTFILES=	SimPack3.tar.Z
 MAINTAINER=	rssh@cki.ipri.kiev.ua
 
 USE_XLIB=	yes
-INSTALLS_SHLIBS=	yes
+INSTALLS_SHLIB=	yes
 
 WRKSRC=		${WRKDIR}/simpack
 

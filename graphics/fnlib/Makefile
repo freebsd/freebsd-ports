@@ -20,7 +20,7 @@ LIB_DEPENDS=	Imlib.5:${PORTSDIR}/graphics/imlib
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
-INSTALLS_SHLIBS=	yes
+INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>

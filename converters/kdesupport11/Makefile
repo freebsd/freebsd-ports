@@ -18,7 +18,7 @@ USE_BZIP2=	yes
 
 USE_QT=		yes
 USE_LIBTOOL=	yes
-INSTALLS_SHLIBS=	yes
+INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--without-libjpeg --without-libgif \
 		--without-libgdbm --without-libuulib
 CONFIGURE_ENV=	CXXFLAGS="$(CFLAGS)" INSTALL_SCRIPT="install -c -m 555"

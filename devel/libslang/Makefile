@@ -15,7 +15,7 @@ MAINTAINER=	xaa+ports@timewasters.nl
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIBS=	yes
+INSTALLS_SHLIB=	yes
 #WRKSRC=		${WRKDIR}/slang
 
 ALL_TARGET=	all elf

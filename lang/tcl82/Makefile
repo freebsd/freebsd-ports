@@ -16,7 +16,7 @@ MAINTAINER=	jseger@FreeBSD.org
 Y2K=            http://www.scriptics.com/Y2K.html
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/unix
-INSTALLS_SHLIBS=	yes
+INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared
 CONFIGURE_ENV=  PORTSDIR=${PORTSDIR}

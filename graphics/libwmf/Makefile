@@ -19,7 +19,7 @@ LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_XLIB=	yes
-INSTALLS_SHLIBS=	yes
+INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/freetype \
 		          -I${LOCALBASE}/include" \

@@ -22,7 +22,7 @@ GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 GLIB_CONFIG?=	${LOCALBASE}/bin/glib12-config
 
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIBS=	yes
+INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS+=	--with-guile-prefix=${LOCALBASE}
 CONFIGURE_ENV+=	CPPFLAGS="-I${X11BASE}/include" \
 		GTK_CONFIG="${GTK_CONFIG}" \

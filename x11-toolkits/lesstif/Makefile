@@ -20,7 +20,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/automake:${PORTSDIR}/devel/automake
 MANUAL_PACKAGE_BUILD=	do not want to install during interactive build
 USE_AUTOCONF=	yes
 USE_X_PREFIX=	yes
-INSTALLS_SHLIBS=	yes
+INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=  yes
 CONFIGURE_ARGS+=--enable-static --enable-shared --disable-build-Xlt \
 		--enable-production --disable-debug --disable-build-Xbae

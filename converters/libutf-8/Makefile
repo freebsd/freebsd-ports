@@ -15,7 +15,7 @@ DISTNAME=	libutf-8-1.0
 
 MAINTAINER=	adam@whizkidtech.net
 
-INSTALLS_SHLIBS=	yes
+INSTALLS_SHLIB=	yes
 
 MAN3=		libutf-8.3 fgetu8.3 fputu8.3 sgetu8.3 sputu8.3
 

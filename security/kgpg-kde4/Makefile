@@ -19,7 +19,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 MOC?=		${X11BASE}/bin/moc2
 USE_BZIP2=	yes
 USE_QT2=	yes
-INSTALLS_SHLIBS=	yes
+INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-qt-dir=${X11BASE} \
 		--with-qt-includes=${X11BASE}/include/qt2 \

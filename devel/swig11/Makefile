@@ -21,12 +21,12 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/python:${PORTSDIR}/lang/python \
 		${LOCALBASE}/bin/tclsh8.2:${PORTSDIR}/lang/tcl82
 
 USE_PERL5=	yes
-INSTALLS_SHLIBS=	yes
+INSTALLS_SHLIB=	yes
 WRKSRC=		${WRKDIR}/SWIG${PORTVERSION}
 USE_LIBTOOL=	yes
 CONFIGURE_ARGS=	--with-tclincl=${PREFIX}/include/tcl8.2/ \
 		--with-tcllib=${PREFIX}/lib/tcl8.2/
 ALL_TARGET=     swig runtime
 PLIST_SUB+=     VER="1.3"
-		
+
 .include <bsd.port.mk>

@@ -16,7 +16,7 @@ MAINTAINER=	jim@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/libworkman
 USE_IMAKE=	yes
-INSTALLS_SHLIBS=	yes
+INSTALLS_SHLIB=	yes
 
 post-patch:
 	@${CP} ${WRKSRC}/Config ${WRKSRC}/Config.orig;

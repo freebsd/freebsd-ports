@@ -21,7 +21,7 @@ BUILD_DEPENDS=		nasm:${PORTSDIR}/devel/nasm
 
 USE_GMAKE=		yes
 USE_XLIB=		yes
-INSTALLS_SHLIBS=		yes
+INSTALLS_SHLIB=		yes
 GNU_CONFIGURE=		yes
 
 CONFIGURE_ENV=		NASM="${LOCALBASE}/bin/nasm" \

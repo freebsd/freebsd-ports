@@ -12,7 +12,7 @@ MASTER_SITES=	http://flo.mech.eng.usyd.edu.au/~norris/src/
 
 MAINTAINER=	ports@FreeBSD.org
 
-INSTALLS_SHLIBS=	yes
+INSTALLS_SHLIB=	yes
 
 pre-build:
 	${CP} ${FILESDIR}/makefile.lib ${WRKSRC}/Makefile

@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.trolltech.com/qt/source/
 MAINTAINER=	will@FreeBSD.org
 
 USE_GMAKE=	yes
-INSTALLS_SHLIBS=	yes
+INSTALLS_SHLIB=	yes
 USE_X_PREFIX=	yes
 USE_NEWGCC=	yes
 MAKE_ENV+=	QTDIR=${WRKSRC} CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" CC="${CC}"

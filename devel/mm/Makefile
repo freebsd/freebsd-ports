@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.engelschall.com/sw/mm/ \
 
 MAINTAINER=	rse@engelschall.com
 
-INSTALLS_SHLIBS=	yes
+INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 
 MAN1=		mm-config.1

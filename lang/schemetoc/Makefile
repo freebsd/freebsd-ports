@@ -15,7 +15,7 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	jmacd@FreeBSD.org
 
 USE_XLIB=	yes
-INSTALLS_SHLIBS=	yes
+INSTALLS_SHLIB=	yes
 NO_WRKSUBDIR=	yes
 MAN1=		scc.1 sci.1
 

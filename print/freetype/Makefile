@@ -23,7 +23,7 @@ MAINTAINER=	jseger@FreeBSD.org
 
 USE_XLIB=	yes
 USE_GMAKE=	yes
-INSTALLS_SHLIBS=	yes
+INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-nls --enable-static --enable-shared
 

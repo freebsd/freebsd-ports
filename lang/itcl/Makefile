@@ -16,7 +16,7 @@ MAINTAINER=	dmlb@ragnet.demon.co.uk
 LIB_DEPENDS=	tcl82.1:${PORTSDIR}/lang/tcl82
 
 WRKSRC=		${WRKDIR}/itcl3.0.1/itcl/unix
-INSTALLS_SHLIBS=	yes
+INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared --with-tcl=${PREFIX}/lib/tcl8.2
 CONFIGURE_ENV=	PORTSDIR=${PORTSDIR} ITCL_LIB_FILE=${ITCL_LIB_FILE}

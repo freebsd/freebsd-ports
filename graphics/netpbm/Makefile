@@ -19,7 +19,7 @@ LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 		png.3:${PORTSDIR}/graphics/png
 
 USE_GMAKE=	yes
-INSTALLS_SHLIBS=	yes
+INSTALLS_SHLIB=	yes
 MAKEFILE=	GNUmakefile
 ALL_TARGET=	merge
 INSTALL_TARGET=	install-merge install-dev

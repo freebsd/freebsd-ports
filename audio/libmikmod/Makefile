@@ -15,7 +15,7 @@ MAINTAINER=	mharo@FreeBSD.org
 LIB_DEPENDS=	esd.2:${PORTSDIR}/audio/esound
 
 USE_LIBTOOL=	yes
-INSTALLS_SHLIBS=	yes
+INSTALLS_SHLIB=	yes
 USE_GMAKE=	yes
 
 MAN1=	libmikmod-config.1

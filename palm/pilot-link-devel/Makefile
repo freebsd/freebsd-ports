@@ -17,7 +17,7 @@ MAINTAINER=	dima@freebsd.org
 LIB_DEPENDS=	tk82.1:${PORTSDIR}/x11-toolkits/tk82
 
 USE_LIBTOOL=	yes
-INSTALLS_SHLIBS=	yes
+INSTALLS_SHLIB=	yes
 USE_PERL5=	yes
 PREFIX=		${LOCALBASE}/pilot
 GNU_CONFIGURE=	yes

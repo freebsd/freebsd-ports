@@ -14,7 +14,7 @@ MAINTAINER=	snar@paranoia.ru
 
 ONLY_FOR_ARCHS=	i386
 
-INSTALLS_SHLIBS=	yes
+INSTALLS_SHLIB=	yes
 
 # this library depends on system-defined headers "SYS.h" and "DEFS.h"
 # which may differ from release to release.
