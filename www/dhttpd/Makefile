@@ -8,7 +8,8 @@
 PORTNAME=	dhttpd
 PORTVERSION=	1.02a
 CATEGORIES=	www
-MASTER_SITES=	http://uts.cc.utexas.edu/~foxx/dhttpd/
+MASTER_SITES=	http://uts.cc.utexas.edu/~foxx/dhttpd/	\
+		http://ccca.nctu.edu.tw/~gslin/Software/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	gslin@ccca.nctu.edu.tw
