@@ -1,0 +1,17 @@
+%%SITE_PERL%%/Net/Delicious.pm
+%%SITE_PERL%%/Net/Delicious/Constants.pm
+%%SITE_PERL%%/Net/Delicious/Constants/Api.pm
+%%SITE_PERL%%/Net/Delicious/Constants/Response.pm
+%%SITE_PERL%%/Net/Delicious/Constants/Uri.pm
+%%SITE_PERL%%/Net/Delicious/Date.pm
+%%SITE_PERL%%/Net/Delicious/Iterator.pm
+%%SITE_PERL%%/Net/Delicious/Post.pm
+%%SITE_PERL%%/Net/Delicious/Subscription.pm
+%%SITE_PERL%%/Net/Delicious/Tag.pm
+%%SITE_PERL%%/Net/Delicious/User.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Delicious/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Delicious
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net 2>/dev/null || true
+@dirrm %%SITE_PERL%%/Net/Delicious/Constants
+@dirrm %%SITE_PERL%%/Net/Delicious
+@unexec rmdir %D/%%SITE_PERL%%/Net 2>/dev/null || true
