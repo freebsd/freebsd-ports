@@ -1,0 +1,20 @@
+--- main.c.orig	Wed Mar  8 08:32:07 2000
++++ main.c	Wed Mar  8 08:32:28 2000
+@@ -177,7 +177,7 @@
+ 	char		*addr;
+ 	char		*port;
+ 	char		 cmd[100];
+-	u_int32		 curr_rtp_time;
++	u_int32_t	 curr_rtp_time;
+ #ifdef WIN32
+ 	WSADATA WSAdata;
+ 	if (WSAStartup(WS_VERSION_TWO, &WSAdata) != 0 && WSAStartup(WS_VERSION_ONE, &WSAdata) != 0) {
+@@ -215,7 +215,7 @@
+ 	rtp_set_sdes(rtp_session, rtp_my_ssrc(rtp_session), RTCP_SDES_TOOL, VERSION, strlen(VERSION));
+ 
+ 	gettimeofday(&prev_t, NULL);
+-	curr_rtp_time = (u_int32) lrand48();
++	curr_rtp_time = (u_int32_t) lrand48();
+ 	while (Tk_GetNumMainWindows() > 0) {
+ 		gettimeofday(&curr_t, NULL);
+ 		curr_rtp_time += (int) (tv_diff(curr_t, prev_t) * 8000);
