@@ -15,8 +15,9 @@ MAINTAINER=	sada@FreeBSD.org
 
 RUN_DEPENDS=	${X11BASE}/lib/aout/libX11.so.6.1:${PORTSDIR}/x11/XFree86-aoutlibs
 
-ONLY_FOR_ARCHS=	i386
+FORBIDDEN=	"This version should have 'GIF comment vulnerability'"
 
+ONLY_FOR_ARCHS=	i386
 USE_XLIB=	yes
 NO_LATEST_LINK=	yes
 NO_WRKSUBDIR=	yes
