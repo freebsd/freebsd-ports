@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.228 1999/03/08 00:22:37 jseger Exp $
+# $Id: Makefile,v 1.229 1999/03/09 02:34:33 nectar Exp $
 #
 
     SUBDIR += SSLtelnet
@@ -69,7 +69,7 @@
     SUBDIR += ipw
     SUBDIR += irc
     SUBDIR += ircII
-    SUBDIR += ircd-hybrid-5
+    SUBDIR += ircd-hybrid
     SUBDIR += ircii-epic
     SUBDIR += isc-dhcp2
     SUBDIR += ivs
