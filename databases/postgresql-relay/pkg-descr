@@ -1,0 +1,13 @@
+postgresql-relay can be used to as a single point of origin for all
+your databases. Instead of having to remember (or modify in case
+of changes) all the names of your databases, on which machines and
+on which ports they are running, you only need to remember one
+machine and the name of the database. The postgresql-relay will
+then forward the connection to the proper database on the proper
+port of the proper server. No more changes in the hundreds of clients
+and scripts!
+
+WWW: http://www.mavetju.org/unix/general.php
+
+- Edwin Groothuis
+edwin@mavetju.org
