@@ -34,8 +34,8 @@ PATCH_SITES+=	http://david.acz.org/software/:sendmail_flagf
 PATCHFILES+=	sendmail-flagf.patch:sendmail_flagf
 .endif # MAIN_QMAIL_PORT_SENDMAIL_F_PATCH_BARRIER
 
-PATCH_SITES+=	${MASTER_SITE_LOCAL:S/$/:local,dns,ldap,mysql,tls/}
-PATCH_SITE_SUBDIR+=	lioux/:local,dns,ldap,mysql,tls
+PATCH_SITES+=  ${MASTER_SITE_LOCAL:S/$/:local,dns,ldap,mysql,smtp_auth_tls,tls/}
+PATCH_SITE_SUBDIR+=    lioux/:local,dns,ldap,mysql,smtp_auth_tls,tls
 
 MASTER_SITE_QMAIL+= \
 	http://qmail.geto.net/%SUBDIR%/ \
@@ -131,8 +131,6 @@ COMMENT?=	A secure, reliable, efficient, simple, and fast MTA
 
 NO_PACKAGE=	djb\'s packaging license does not allow non-standard\
 		qmail binary distributions
-
-USE_SIZE=	yes
 
 # A normal qmail installation puts everything into /var/qmail/.
 # If you want to install to /usr/local/, then "/usr/local/qmail" is
