@@ -1,0 +1,15 @@
+--- configure.orig	Tue Sep  9 00:06:31 2003
++++ configure	Tue Sep  9 09:03:46 2003
+@@ -12735,9 +12735,9 @@
+   CFLAGS="$MAINTAINER_CFLAGS $CFLAGS"
+ fi
+ 
+-LIBS=
+-CPPFLAGS=
+-LDFLAGS=
++LIBS="$LIBS"
++CPPFLAGS="$CPPFLAGS"
++LDFLAGS="$LDFLAGS"
+ 
+ LIBRDF_LIBTOOLLIBS=librdf.la
+ 

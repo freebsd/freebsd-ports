@@ -1,3 +1,4 @@
+bin/rdfproc
 bin/redland-config
 bin/redland-db-upgrade
 include/librdf.h
