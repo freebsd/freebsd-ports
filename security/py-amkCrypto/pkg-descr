@@ -1,0 +1,12 @@
+amkCrypto is an OpenSSL based package containing various cryptographic
+modules available for the Python programming language.
+
+The Python cryptography modules are intended to provide a reliable and
+stable base for writing Python programs that require cryptographic
+functions.
+
+Contains hashing algorithms, chaffing/winnowing, random number
+generation, various utility modules, and several block encryption and
+digital signature algorithms.
+
+WWW: http://www.amk.ca/python/code/crypto.html
