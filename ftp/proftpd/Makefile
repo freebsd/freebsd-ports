@@ -3,15 +3,16 @@
 # Date created:		26 January 1998
 # Whom:			Stephane Legrand
 #
-# $Id: Makefile,v 1.10 1999/04/03 00:50:18 steve Exp $
+# $Id: Makefile,v 1.11 1999/04/09 17:25:44 obrien Exp $
 #
 
 DISTNAME=	proftpd-1.2.0pre3
 PKGNAME=	proftpd-1.2.0
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.proftpd.org/distrib/
+MASTER_SITES=	ftp://ftp.proftpd.org/distrib/ \
+		ftp://ftp3.proftpd.org/distrib/
 
-MAINTAINER=	mharo@area51.fremont.ca.us
+MAINTAINER=	mharo@FreeBSD.org
 
 MAN1=	ftpcount.1
 MAN8=	proftpd.8 ftpshut.8
