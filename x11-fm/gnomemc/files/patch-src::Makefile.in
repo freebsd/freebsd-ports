@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- src/Makefile.in	2001/12/14 08:48:56	1.1
++++ src/Makefile.in	2001/12/14 08:49:23
+@@ -8,7 +8,7 @@
+ @MCF@
+ 
+ CFLAGS   = $(XCFLAGS)
+-CPPFLAGS = $(XCPPFLAGS) @MCCFLAGS@
++CPPFLAGS = -I. $(XCPPFLAGS) @MCCFLAGS@
+ LDFLAGS  = $(XLDFLAGS)
+ DEFS     = $(XDEFS) -DREGEX_MALLOC -DLIBDIR=\""$(mclibdir)/"\" \
+ 	-DCONFDIR=\""$(confdir)/"\" -DLOCALEDIR=\""$(localedir)/"\"
