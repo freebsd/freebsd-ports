@@ -11,7 +11,7 @@ etc/raddb/naslist.sample
 etc/raddb/naspasswd.sample
 etc/raddb/realms.sample
 etc/raddb/users.sample
-etc/rc.d/radiusd.sh
+etc/rc.d/radiusd-cistron.sh
 sbin/checkrad
 sbin/radiusd
 sbin/radrelay

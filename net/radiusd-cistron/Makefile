@@ -7,7 +7,7 @@
 
 PORTNAME=	radiusd-cistron
 PORTVERSION=	1.6.7
-PORTREVISTION=	2
+PORTREVISTION=	3
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.cistron.nl/pub/people/miquels/radius/ \
 		ftp://ftp.freeradius.org/pub/radius/
@@ -29,9 +29,22 @@ do-build:
 
 do-install:
 	cd ${WRKSRC}/src && ${SETENV} ${MAKE_ENV} ${MAKE} -f ${MAKEFILE} install
+	${SED} -e "s=%%PREFIX%%=${PREFIX}=" \
+		${FILESDIR}/radiusd-cistron.sh \
+		> ${WRKSRC}/radiusd-cistron.sh
+	${INSTALL_SCRIPT} ${WRKSRC}/radiusd-cistron.sh \
+		${PREFIX}/etc/rc.d/radiusd-cistron.sh
 	@${MKDIR} -m 700 /var/log/radacct
+	${INSTALL_MAN} ${WRKSRC}/doc/radlast.1 ${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/doc/radtest.1 ${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/doc/radwho.1 ${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/doc/radzap.1 ${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/doc/clients.5rad ${MANPREFIX}/man/man5
+	${INSTALL_MAN} ${WRKSRC}/doc/naslist.5rad ${MANPREFIX}/man/man5
+	${INSTALL_MAN} ${WRKSRC}/doc/radiusd.8 ${MANPREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/doc/radwatch.8 ${MANPREFIX}/man/man8
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/radiusd-cistron
+	${MKDIR} ${PREFIX}/share/doc/radiusd-cistron
 	${INSTALL_DATA} ${WRKSRC}/COPYRIGHT ${PREFIX}/share/doc/radiusd-cistron
 	${INSTALL_DATA} ${WRKSRC}/doc/ChangeLog ${PREFIX}/share/doc/radiusd-cistron
 	${INSTALL_DATA} ${WRKSRC}/INSTALL ${PREFIX}/share/doc/radiusd-cistron
@@ -43,19 +56,5 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/README.simul ${PREFIX}/share/doc/radiusd-cistron
 	${INSTALL_DATA} ${WRKSRC}/doc/README.usersfile ${PREFIX}/share/doc/radiusd-cistron
 .endif
-	${INSTALL_MAN} ${WRKSRC}/doc/radlast.1 ${MANPREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/doc/radtest.1 ${MANPREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/doc/radwho.1 ${MANPREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/doc/radzap.1 ${MANPREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/doc/clients.5rad ${MANPREFIX}/man/man5
-	${INSTALL_MAN} ${WRKSRC}/doc/naslist.5rad ${MANPREFIX}/man/man5
-	${INSTALL_MAN} ${WRKSRC}/doc/radiusd.8 ${MANPREFIX}/man/man8
-	${INSTALL_MAN} ${WRKSRC}/doc/radwatch.8 ${MANPREFIX}/man/man8
-
-post-install:
-	@${SED} -e "s=!!PREFIX!!=${PREFIX}=g" ${FILESDIR}/radiusd.sh.tmpl \
-		> ${PREFIX}/etc/rc.d/radiusd.sh
-	@${CHMOD} 555 ${PREFIX}/etc/rc.d/radiusd.sh
-	@${CHOWN} root:wheel ${PREFIX}/etc/rc.d/radiusd.sh
 
 .include <bsd.port.mk>
