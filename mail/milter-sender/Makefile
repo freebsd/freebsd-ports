@@ -6,50 +6,50 @@
 #
 
 PORTNAME=       milter-sender
-PORTVERSION=    0.36
+PORTVERSION=    0.38
 CATEGORIES=     mail
 MASTER_SITES=   http://www.snert.com/Software/download/
-DISTFILES=      libsnert-1.18.tgz milter-sender-0.36.tgz
+DISTFILES=      libsnert-1.20.tgz milter-sender-0.38.tgz
 RESTRICTED=     see LICENSE.TXT
 
 MAINTAINER=     ache@FreeBSD.org
 COMMENT=        Real-time sender address verification, based on Milter API
 
 DOCDIR=         ${PREFIX}/share/doc/milter-sender
-WRKSRC=         ${WRKDIR}/com/snert/src
+WRKSRC=         ${WRKDIR}/com/snert/src/milter-sender
 MAKEFILE=       makefile
-ALL_TARGET=     build
+GNU_CONFIGURE=  yes
 
 .if !exists(/usr/lib/libmilter.a)
 IGNORE=		requires Sendmail 8.12; upgrade the base system
 .endif
 
-do-build:
-	@cd ${WRKSRC}/lib && \
-	${SETENV} ${MAKE_ENV} ${MAKE} -f ../mk/FreeBSD.mk \
-	${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET}
-	@cd ${WRKSRC}/milter-sender && \
-	${SETENV} ${MAKE_ENV} ${MAKE} -f ../mk/FreeBSD.mk \
-	${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET}
+CFLAGS+= ${PTHREAD_CFLAGS}
+CONFIGURE_ENV=  LIBS="${PTHREAD_LIBS}"
+CONFIGURE_ARGS= --localstatedir=${PREFIX} --with-db
+MAKE_ENV=       PREFIX="${PREFIX}"
 
-do-install:
-	@cd ${WRKSRC}/milter-sender && \
-	${SETENV} ${MAKE_ENV} ${MAKE} -f ../mk/FreeBSD.mk \
-	${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET}
-	@${INSTALL} -d ${DOCDIR}/Img
-	@cd ${WRKSRC}/milter-sender && \
-	${INSTALL_DATA} CHANGES.TXT index.shtml style.css mailto.js \
-	license-body.html LICENSE.TXT milter-sender.mc ${DOCDIR}
-	@cd ${WRKSRC}/milter-sender/Img && \
-	${INSTALL_DATA} *.gif *.png ${DOCDIR}/Img
-
-EXTRA_CFLAGS=   ${PTHREAD_CFLAGS}
-LDFLAGS=	${PTHREAD_LIBS}
-MAKE_ENV=       EXTRA_CFLAGS="${EXTRA_CFLAGS}" \
-		LDFLAGS="${LDFLAGS}" \
-		WRKDIR="${WRKDIR}"
+pre-configure:
+	@cd ${WRKSRC}/../lib && \
+	${SETENV} CC="${CC}" CXX="${CXX}" \
+	CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}" \
+	INSTALL="/usr/bin/install -c ${_BINOWNGRP}" \
+	INSTALL_DATA="${INSTALL_DATA}" \
+	INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
+	INSTALL_SCRIPT="${INSTALL_SCRIPT}" \
+	${CONFIGURE_ENV} ./${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS}
+	@cd ${WRKSRC}/../lib && \
+	${SETENV} ${MAKE_ENV} ${MAKE} \
+	${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET}
 
 post-install:
+	@${INSTALL} -d ${DOCDIR}/Img
+	@cd ${WRKSRC} && \
+	${INSTALL_DATA} CHANGES.TXT index.shtml style.css mailto.js \
+	license-body.html LICENSE.TXT milter-sender.mc responses.txt \
+	${DOCDIR}
+	@cd ${WRKSRC}/Img && \
+	${INSTALL_DATA} *.gif *.png ${DOCDIR}/Img
 	@${CAT} ${PKGMESSAGE}
 
 post-deinstall:
