@@ -16,11 +16,9 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	XSL FO processor, written in TeX
 
-BUILD_DEPENDS=	${LOCALBASE}/share/texmf/web2c/xmltex.fmt:${PORTSDIR}/print/xmltex \
+BUILD_DEPENDS=	${LOCALBASE}/${TEXMFLOCAL}/web2c/xmltex.fmt:${PORTSDIR}/print/xmltex \
 		${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal
 RUN_DEPENDS=	${BUILD_DEPENDS}
-
-BROKEN=		Broken dependency
 
 NO_BUILD=	yes
 USE_ZIP=	yes
