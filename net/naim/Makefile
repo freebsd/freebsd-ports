@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	naim
-PORTVERSION=	0.11.5.6
+PORTVERSION=	0.11.5.9
 CATEGORIES=	net
-MASTER_SITES=	http://www.acm.rpi.edu/~n/naim/ \
-		http://128.113.139.111/~n/.naim_archive/0/11/
+MASTER_SITES=	http://shell.n.ml.org/n/naim/
 
 MAINTAINER=	rtdean@cytherianage.net
 COMMENT=	Curses based AOL Instant Messager implementation
