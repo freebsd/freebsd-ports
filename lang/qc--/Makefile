@@ -15,6 +15,8 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Quick C-- Compiler
 
+BROKEN=		"Does not fetch"
+
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml \
 		notangle:${PORTSDIR}/devel/noweb \
 		latex:${PORTSDIR}/print/teTeX \
