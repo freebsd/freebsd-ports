@@ -1,0 +1,21 @@
+--- Makefile.orig	Fri Feb 27 11:23:08 2004
++++ Makefile	Wed Mar  3 16:32:42 2004
+@@ -78,9 +78,6 @@
+ lLIBS_CFLAGS += -shared -fPIC -DPIC
+ lLDFLAGS = $(LDFLAGS)
+ lLDFLAGS += `pkg-config --libs gtk+-2.0`
+-ifeq ($(OPSY),FreeBSD)
+-lLDFLAGS += -lgnugetopt
+-endif
+ # gthread-2.0
+ 
+ .PHONY: all plugins install install_plugins uninstall uninstall_plugins doc clean dist-src dist-bin dist dist-pre deps marshals test test2
+@@ -92,7 +89,7 @@
+ 
+ install: all install_plugins
+ 	@echo "installing $(TARGET) to prefix '$(PREFIX)'"
+-	@install -D -c -s -m 755 $(TARGET) $(BIN_DIR)/$(TARGET)
++	@install -c -s -m 755 $(TARGET) $(BIN_DIR)/$(TARGET)
+ 	@install -d $(ICON_DIR)
+ 	@for file in `ls icons/ |grep -v CVS`; do \
+ 		install -c -m 644 icons/$$file $(ICON_DIR); \

@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	emelfm2
-PORTVERSION=	0.0.5
-PORTREVISION=	1
+PORTVERSION=	0.0.6
 CATEGORIES=	x11-fm
 MASTER_SITES=	http://dasui.prima.de/~tooar/
 
@@ -24,8 +23,8 @@ INSTALLS_SHLIB=	yes
 MAKE_ENV=	CC=${CC} LDFLAGS="${LDFLAGS}" DOCSDIR="${DOCSDIR}"
 
 PLUGINDIR=	${WRKSRC}/objs/plugins
-PLUGINS=	cdburner.so clone.so copy_to_clipboard.so du.so for_each.so \
-		glob.so pack.so rename_ext.so sort_by_ext.so unpack.so view.so
+PLUGINS=	cdburner.so clone.so copy_to_clipboard.so cpbar.so du.so for_each.so \
+		glob.so mvbar.so pack.so rename_ext.so sort_by_ext.so unpack.so view.so
 
 .if defined(NOPORTDOCS)
 do-install::
