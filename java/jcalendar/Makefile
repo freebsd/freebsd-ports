@@ -15,6 +15,8 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java Date Chooser
 
+BROKEN=		Size mismatch
+
 USE_ZIP=	yes
 USE_JAVA=	yes
 NO_BUILD=	yes
