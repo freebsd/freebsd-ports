@@ -32,7 +32,6 @@ include/postgresql/internal/libpq-int.h
 include/postgresql/internal/port.h
 include/postgresql/internal/postgres_fe.h
 include/postgresql/internal/pqexpbuffer.h
-@dirrm include/postgresql/internal/lib
 @dirrm include/postgresql/internal/libpq
 @dirrm include/postgresql/internal
 include/postgresql/server/access/attnum.h
@@ -252,6 +251,18 @@ include/postgresql/server/port/ultrix4.h
 include/postgresql/server/port/univel.h
 include/postgresql/server/port/unixware.h
 include/postgresql/server/port/win32.h
+include/postgresql/server/port/win32/arpa/inet.h
+include/postgresql/server/port/win32/netinet/in.h
+include/postgresql/server/port/win32/sys/socket.h
+include/postgresql/server/port/win32/sys/wait.h
+include/postgresql/server/port/win32/dlfcn.h
+include/postgresql/server/port/win32/grp.h
+include/postgresql/server/port/win32/netdb.h
+include/postgresql/server/port/win32/pwd.h
+@dirrm include/postgresql/server/port/win32/arpa
+@dirrm include/postgresql/server/port/win32/netinet
+@dirrm include/postgresql/server/port/win32/sys
+@dirrm include/postgresql/server/port/win32
 include/postgresql/server/port.h
 include/postgresql/server/pgtime.h
 include/postgresql/server/regex/regcustom.h
@@ -498,6 +509,7 @@ share/postgresql/psqlrc.sample
 %%GETTEXT%%share/locale/de/LC_MESSAGES/psql.mo
 %%GETTEXT%%share/locale/es/LC_MESSAGES/initdb.mo
 %%GETTEXT%%share/locale/es/LC_MESSAGES/libpq.mo
+%%GETTEXT%%share/locale/es/LC_MESSAGES/pg_config.mo
 %%GETTEXT%%share/locale/es/LC_MESSAGES/pg_controldata.mo
 %%GETTEXT%%share/locale/es/LC_MESSAGES/pg_ctl.mo
 %%GETTEXT%%share/locale/es/LC_MESSAGES/pg_dump.mo
@@ -509,6 +521,7 @@ share/postgresql/psqlrc.sample
 %%GETTEXT%%share/locale/fa/LC_MESSAGES/psql.mo
 %%GETTEXT%%share/locale/fr/LC_MESSAGES/initdb.mo
 %%GETTEXT%%share/locale/fr/LC_MESSAGES/libpq.mo
+%%GETTEXT%%share/locale/fr/LC_MESSAGES/pg_config.mo
 %%GETTEXT%%share/locale/fr/LC_MESSAGES/pg_controldata.mo
 %%GETTEXT%%share/locale/fr/LC_MESSAGES/pg_ctl.mo
 %%GETTEXT%%share/locale/fr/LC_MESSAGES/pg_dump.mo
@@ -530,6 +543,15 @@ share/postgresql/psqlrc.sample
 %%GETTEXT%%share/locale/it/LC_MESSAGES/pgscripts.mo
 %%GETTEXT%%share/locale/it/LC_MESSAGES/postgres.mo
 %%GETTEXT%%share/locale/it/LC_MESSAGES/psql.mo
+%%GETTEXT%%share/locale/ko/LC_MESSAGES/postgres.mo
+%%GETTEXT%%share/locale/ko/LC_MESSAGES/libpq.mo
+%%GETTEXT%%share/locale/ko/LC_MESSAGES/initdb.mo
+%%GETTEXT%%share/locale/ko/LC_MESSAGES/pg_ctl.mo
+%%GETTEXT%%share/locale/ko/LC_MESSAGES/psql.mo
+%%GETTEXT%%share/locale/ko/LC_MESSAGES/pgscripts.mo
+%%GETTEXT%%share/locale/ko/LC_MESSAGES/pg_config.mo
+%%GETTEXT%%share/locale/ko/LC_MESSAGES/pg_controldata.mo
+%%GETTEXT%%share/locale/ko/LC_MESSAGES/pg_resetxlog.mo
 %%GETTEXT%%share/locale/nb/LC_MESSAGES/libpq.mo
 %%GETTEXT%%share/locale/nb/LC_MESSAGES/pg_controldata.mo
 %%GETTEXT%%share/locale/nb/LC_MESSAGES/pg_dump.mo
@@ -546,6 +568,12 @@ share/postgresql/psqlrc.sample
 %%GETTEXT%%share/locale/pt_BR/LC_MESSAGES/pgscripts.mo
 %%GETTEXT%%share/locale/pt_BR/LC_MESSAGES/postgres.mo
 %%GETTEXT%%share/locale/pt_BR/LC_MESSAGES/psql.mo
+%%GETTEXT%%share/locale/ro/LC_MESSAGES/initdb.mo
+%%GETTEXT%%share/locale/ro/LC_MESSAGES/pg_ctl.mo
+%%GETTEXT%%share/locale/ro/LC_MESSAGES/pg_dump.mo
+%%GETTEXT%%share/locale/ro/LC_MESSAGES/psql.mo
+%%GETTEXT%%share/locale/ro/LC_MESSAGES/pg_config.mo
+%%GETTEXT%%share/locale/ro/LC_MESSAGES/pg_resetxlog.mo
 %%GETTEXT%%share/locale/ru/LC_MESSAGES/initdb.mo
 %%GETTEXT%%share/locale/ru/LC_MESSAGES/libpq.mo
 %%GETTEXT%%share/locale/ru/LC_MESSAGES/pg_config.mo
@@ -570,6 +598,11 @@ share/postgresql/psqlrc.sample
 %%GETTEXT%%share/locale/sl/LC_MESSAGES/pg_resetxlog.mo
 %%GETTEXT%%share/locale/sl/LC_MESSAGES/pgscripts.mo
 %%GETTEXT%%share/locale/sl/LC_MESSAGES/psql.mo
+%%GETTEXT%%share/locale/sl/LC_MESSAGES/postgres.mo
+%%GETTEXT%%share/locale/sl/LC_MESSAGES/initdb.mo
+%%GETTEXT%%share/locale/sl/LC_MESSAGES/pg_ctl.mo
+%%GETTEXT%%share/locale/sl/LC_MESSAGES/pg_dump.mo
+%%GETTEXT%%share/locale/sl/LC_MESSAGES/pg_config.mo
 %%GETTEXT%%share/locale/sv/LC_MESSAGES/initdb.mo
 %%GETTEXT%%share/locale/sv/LC_MESSAGES/libpq.mo
 %%GETTEXT%%share/locale/sv/LC_MESSAGES/pg_config.mo
@@ -592,6 +625,7 @@ share/postgresql/psqlrc.sample
 %%GETTEXT%%share/locale/tr/LC_MESSAGES/psql.mo
 %%GETTEXT%%share/locale/zh_CN/LC_MESSAGES/initdb.mo
 %%GETTEXT%%share/locale/zh_CN/LC_MESSAGES/libpq.mo
+%%GETTEXT%%share/locale/zh_CN/LC_MESSAGES/pg_config.mo
 %%GETTEXT%%share/locale/zh_CN/LC_MESSAGES/pg_controldata.mo
 %%GETTEXT%%share/locale/zh_CN/LC_MESSAGES/pg_ctl.mo
 %%GETTEXT%%share/locale/zh_CN/LC_MESSAGES/pg_dump.mo
