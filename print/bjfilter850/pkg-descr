@@ -28,6 +28,6 @@ bjfilter850_gui|Canon BJ F850 with GUI:\
         :mx#0:\
         :lf=/var/log/lpd-errs
 
-Notice: If you use filter850_gui then the host which you are using
-have to be the printer saver. Then before using it, you have to run X
-and execute "xhost localhost".
+Notice: If you use filter850_gui in the printer server, for example
+hostA then you have to run X, execute "xhost hostA" and execute "lpr" on
+the host which you are using.
