@@ -1,5 +1,5 @@
 #!/bin/sh
-if [ -z ${BATCH} ]; then
+if [ X"${BATCH}" != X"yes" ]; then
     echo "This port comes with reasonable defaults as follows:"
     echo "  Native Ethertalk with Phase 2 compatibility."
     echo "  Critical AUFS stat() calls to be cached. (STAT_CACHE)"
@@ -24,7 +24,7 @@ if [ -z ${BATCH} ]; then
 echo "===>  Copying custom m4.features file."
 cp ${FILESDIR}/m4.features ${WRKSRC}
 
-if [ -z ${BATCH} ]; then
+if [ X"${BATCH}" != X"yes" ]; then
     (cd ${WRKSRC}; ./Configure)
   else
     sed -e s+@CWD@+${WRKSRC}+ -e s+@PREFIX@+${PREFIX}+ \
