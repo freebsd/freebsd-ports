@@ -1,9 +1,7 @@
-WindowMaker is a new Windowmanager for X written by Alfredo Kojima. It follows
+Window Maker is a new Windowmanager for X written by Alfredo Kojima. It follows
 in the tradition of Afterstep, attempting to emulate the most fantastic of
-UI's posessed by the NeXT STEP(tm) operating system. It has many qualities
-that make it superior to AfterStep, although it is still in development, and
-does lack features. When it is completed, it will be a GNUSTEP compliant
-Windowmanager that requires no editing of messy configuration files.
+UI's posessed by the NeXT STEP(tm) operating system.  Window Maker is an
+official part of the GNU Project.
 
 This port based on x11-wm/windowmaker ports skelton, enhanced i18n. 
 If use first, execute "wmaker.inst" and "wsetfont you_choosed_language".
