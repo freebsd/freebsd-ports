@@ -158,6 +158,7 @@
     SUBDIR += mpeg_stat
     SUBDIR += mpegedit
     SUBDIR += mpgtx
+    SUBDIR += mplayer
     SUBDIR += mplayer-codecs
     SUBDIR += mplayer-fonts
     SUBDIR += mplex
