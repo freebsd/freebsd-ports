@@ -1,0 +1,3 @@
+@cwd /usr/local
+sbin/in.identd
+man/man8/identd.8

@@ -1,0 +1,9 @@
+#!/bin/sh
+#
+# $Id$
+#
+
+mv ${WRKSRC}/src/paths.h ${WRKSRC}/src/paths.h.bak
+sed <${WRKSRC}/src/paths.h.bak >${WRKSRC}/src/paths.h s+!!PREFIX!!+$PREFIX+g
+
+cp ${FILESDIR}/freebsd.c ${WRKSRC}/src/kernel/freebsd.c
