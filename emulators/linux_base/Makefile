@@ -137,6 +137,12 @@ pre-install:
 .endif
 
 do-install:
+# Make sure we have a /dev/null in the chrooted environment.
+	@${MKDIR} ${LINUXBASE}/dev
+	@${RM} -f ${LINUXBASE}/dev/null
+	@mknod ${LINUXBASE}/dev/null c 2 2
+	@${CHMOD} 666 ${LINUXBASE}/dev/null
+#
 	@${MKDIR} ${LINUXBASE}/${DBPATH}
 	@${MKDIR} ${LINUXBASE}/var/tmp ${LINUXBASE}/lib
 	@cd ${LINUXBASE}/lib && ${LN} -sf libtermcap.so.2.0.8 libtermcap.so.2
