@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zwiki
-PORTVERSION=	0.36.2
+PORTVERSION=	0.37.0
 CATEGORIES=	www zope
 MASTER_SITES=	http://zwiki.org/releases/
 PKGNAMEPREFIX=	zope-
@@ -25,7 +25,7 @@ ZOPEPRODUCTNAME=	ZWiki
 WRKSRC=		${WRKDIR}/${ZOPEPRODUCTNAME}
 
 do-build:
-	-@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
+	-@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py -x "tools/" ${WRKSRC}
 
 do-install:
 	@${MKDIR} ${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}/

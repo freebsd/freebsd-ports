@@ -109,6 +109,8 @@
 %%ZOPEPRODUCTDIR%%/ZWiki/i18n/zwiki-zh-TW.po
 %%ZOPEPRODUCTDIR%%/ZWiki/i18n/zwiki.pot
 %%ZOPEPRODUCTDIR%%/ZWiki/images/ZWikiPage_icon.gif
+%%ZOPEPRODUCTDIR%%/ZWiki/images/blank_star.png
+%%ZOPEPRODUCTDIR%%/ZWiki/images/star.png
 %%ZOPEPRODUCTDIR%%/ZWiki/pagetypes/__init__.py
 %%ZOPEPRODUCTDIR%%/ZWiki/pagetypes/__init__.pyc
 %%ZOPEPRODUCTDIR%%/ZWiki/pagetypes/common.py
@@ -239,6 +241,11 @@
 %%ZOPEPRODUCTDIR%%/ZWiki/tests/testZWikiWeb.pyc
 %%ZOPEPRODUCTDIR%%/ZWiki/tests/testmailin.py
 %%ZOPEPRODUCTDIR%%/ZWiki/tests/testmailin.pyc
+%%ZOPEPRODUCTDIR%%/ZWiki/tools/zwikiimport.py
+%%ZOPEPRODUCTDIR%%/ZWiki/tools/zwikiexport.py
+%%ZOPEPRODUCTDIR%%/ZWiki/tools/test_zwikiimport.py
+%%ZOPEPRODUCTDIR%%/ZWiki/tools/test_zwikiexport.py
+%%ZOPEPRODUCTDIR%%/ZWiki/tools/README
 %%ZOPEPRODUCTDIR%%/ZWiki/version.txt
 @dirrm %%ZOPEPRODUCTDIR%%/ZWiki/Extensions
 @dirrm %%ZOPEPRODUCTDIR%%/ZWiki/content/basic
@@ -258,4 +265,5 @@
 @dirrm %%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki_plone
 @dirrm %%ZOPEPRODUCTDIR%%/ZWiki/skins
 @dirrm %%ZOPEPRODUCTDIR%%/ZWiki/tests
+@dirrm %%ZOPEPRODUCTDIR%%/ZWiki/tools
 @dirrm %%ZOPEPRODUCTDIR%%/ZWiki
