@@ -14,9 +14,6 @@ Differences from original game:
 * Jumping;
 ....
 
-No music support is available in SDL compiled version at the moment.
-Sound effects are 8 bit, 44100KHz, stereo.
-
 WWW:	http://www.vavoom-engine.com/
 
 - Igor Pokrovsky

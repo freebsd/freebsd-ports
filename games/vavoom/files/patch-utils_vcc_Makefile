@@ -1,0 +1,41 @@
+--- utils/vcc/Makefile.orig
++++ utils/vcc/Makefile
+@@ -6,7 +6,7 @@
+ LIBS=-lstdc++
+ endif
+ 
+-CFLAGS = -Wall -O3 -ffast-math -fomit-frame-pointer -march=pentiumpro
++CFLAGS += -Wall -O3 -ffast-math -fomit-frame-pointer
+ 
+ OBJS = \
+ 	cmdlib.o \
+@@ -35,19 +35,23 @@
+ 
+ all: ../bin/vcc$(EXE)
+ 
+-../bin/vcc$(EXE): $(OBJS) vcpp/libcpp.a
+-	gcc -s -o $@ $^ $(LIBS)
++../bin/vcc$(EXE): $(OBJS) clean_libcpp vcpp/libcpp.a
++	${CC} -s -o $@ $(OBJS) vcpp/libcpp.a $(LIBS)
+ 
++.PHONY: all clean_libcpp
++clean_libcpp:
++	${RM} -rf vcpp/*.o vcpp/libcpp.a
++
+ vcpp/libcpp.a: $(CPP_OBJS)
+-	ar rc $@ $^
++	${AR} rc $@ $^
+ 	ranlib $@
+ 
+ %.o : %.cpp vcc.h ../../source/progdefs.h ../common/cmdlib.h
+-	gcc $(CFLAGS) -I../common -c -o $@ $<
++	${CC} $(CFLAGS) -I../common -c -o $@ $<
+ 
+ %.o : ../common/%.cpp ../common/cmdlib.h
+-	gcc $(CFLAGS) -c -o $@ $<
++	${CC} $(CFLAGS) -c -o $@ $<
+ 
+ vcpp/%.o : vcpp/%.cpp vcpp/cpp.h
+-	gcc $(CFLAGS) -c -o $@ $<
++	${CC} $(CFLAGS) -c -o $@ $<
+ 

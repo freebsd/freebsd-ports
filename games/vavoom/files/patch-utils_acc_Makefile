@@ -1,0 +1,21 @@
+--- utils/acc/Makefile.orig
++++ utils/acc/Makefile
+@@ -6,7 +6,7 @@
+ #LIBS=-lstdc++
+ endif
+ 
+-CFLAGS = -Wall -O3 -ffast-math -fomit-frame-pointer -march=pentiumpro
++CFLAGS += -Wall -O3 -ffast-math -fomit-frame-pointer
+ 
+ OBJS = \
+ 	acc.o \
+@@ -21,7 +21,7 @@
+ all: ../bin/acc$(EXE)
+ 
+ ../bin/acc$(EXE): $(OBJS)
+-	gcc -s -o $@ $^ $(LIBS)
++	${CC} -s -o $@ $^ $(LIBS)
+ 
+ %.o : %.c *.h
+-	gcc $(CFLAGS) -c -o $@ $<
++	${CC} $(CFLAGS) -c -o $@ $<
