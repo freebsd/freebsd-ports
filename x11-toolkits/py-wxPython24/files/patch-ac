@@ -1,9 +1,9 @@
 
 $FreeBSD$
 
---- setup.py.orig	Fri Jan 10 06:24:53 2003
-+++ setup.py	Tue Jan 14 21:02:25 2003
-@@ -159,6 +159,16 @@
+--- setup.py.orig	Fri Mar 21 01:49:39 2003
++++ setup.py	Fri Apr 18 18:02:09 2003
+@@ -152,6 +152,16 @@
  
  
  #----------------------------------------------------------------------
@@ -13,14 +13,14 @@ $FreeBSD$
 +try: gtk_config = os.environ['GTK_CONFIG']
 +except KeyError: gtk_config = 'gtk-config'
 +
-+try: sys_libs = string.split(os.environ['LIBS'])
++try: sys_libs = os.environ['LIBS'].split()
 +except KeyError: sys_libs = []
 +
 +#----------------------------------------------------------------------
  # Check for build flags on the command line
  #----------------------------------------------------------------------
  
-@@ -382,7 +392,7 @@
+@@ -434,7 +444,7 @@
  
      if WXPORT == 'gtk':
          WXPLAT = '__WXGTK__'
@@ -29,16 +29,16 @@ $FreeBSD$
      elif WXPORT == 'gtk2':
          WXPLAT = '__WXGTK__'
          GENDIR = 'gtk' # no code differences so use the same generated sources
-@@ -402,6 +412,7 @@
-                ]
+@@ -457,6 +467,7 @@
+ 
      libdirs = []
      libs = []
 +    libs.extend(sys_libs)
  
      Verify_WX_CONFIG()
  
-@@ -633,8 +644,8 @@
- if not GL_ONLY and BUILD_OGL:
+@@ -691,8 +702,8 @@
+ if BUILD_OGL:
      msg('Preparing OGL...')
      location = 'contrib/ogl'
 -    OGLLOC = opj(location, 'contrib/src/ogl')
@@ -48,8 +48,8 @@ $FreeBSD$
  
      swig_files = ['ogl.i', 'oglbasic.i', 'oglshapes.i', 'oglshapes2.i',
                    'oglcanvas.i']
-@@ -682,9 +693,9 @@
- if not GL_ONLY and BUILD_STC:
+@@ -740,9 +751,9 @@
+ if BUILD_STC:
      msg('Preparing STC...')
      location = 'contrib/stc'
 -    STCLOC = opj(location, 'contrib/src/stc')
@@ -61,8 +61,8 @@ $FreeBSD$
  
      if IN_CVS_TREE:
          # Check if gen_iface needs to be run for the wxSTC sources
-@@ -826,8 +837,8 @@
- if not GL_ONLY and BUILD_XRC:
+@@ -885,8 +896,8 @@
+ if BUILD_XRC:
      msg('Preparing XRC...')
      location = 'contrib/xrc'
 -    XMLLOC = opj(location, 'contrib/src/xrc')
@@ -72,8 +72,8 @@ $FreeBSD$
  
      swig_files = ['xrc.i']
  
-@@ -915,8 +926,8 @@
- if not GL_ONLY and BUILD_GIZMOS:
+@@ -974,8 +985,8 @@
+ if BUILD_GIZMOS:
      msg('Preparing GIZMOS...')
      location = 'contrib/gizmos'
 -    GIZMOLOC = opj(location, 'contrib/src/gizmos')
@@ -83,8 +83,8 @@ $FreeBSD$
  
      swig_files = ['gizmos.i']
  
-@@ -993,8 +1004,8 @@
- if not GL_ONLY and BUILD_CANVAS:
+@@ -1052,8 +1063,8 @@
+ if BUILD_CANVAS:
      msg('Preparing CANVAS...')
      location = 'contrib/canvas'
 -    CANVASLOC = opj(location, 'contrib/src/canvas')
@@ -94,8 +94,8 @@ $FreeBSD$
  
      swig_files = ['canvas.i']
  
-@@ -1032,10 +1043,10 @@
- if not GL_ONLY and BUILD_ART2D:
+@@ -1091,10 +1102,10 @@
+ if BUILD_ART2D:
      msg('Preparing ART2D...')
      location = 'contrib/art2d'
 -    ART2DLOC = opj(location, 'modules/canvas/src')
