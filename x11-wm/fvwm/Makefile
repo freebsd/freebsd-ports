@@ -3,18 +3,18 @@
 # Date created:		25 August 1994
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.1.1.1 1994/08/21 19:08:10 jkh Exp $
+# $Id: Makefile,v 1.1.1.1 1994/08/25 21:04:07 jkh Exp $
 #
 
 DISTNAME=	fvwm-1.23b
 WRKSRC=		${.CURDIR}/work
-HOME_LOCATION=	spcot.sanders.com:~ftp/pub/fvwm
+HOME_LOCATION=	ftp://spcot.sanders.com/pub/fvwm
 USE_IMAKE=	yes
 
+# Gack!  This is annoyingly necessary, since fvwm comes in 3 parts
+# and I've no easy way of coping in the default rules.
 EXTRACT_COOKIE=	${.CURDIR}/.extract_done
-
 extract: ${EXTRACT_COOKIE}
-
 ${EXTRACT_COOKIE}:
 	@echo "===>  Extracting for ${DISTNAME}"
 	@rm -rf ${WRKDIR}
