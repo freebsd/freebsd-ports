@@ -1,0 +1,140 @@
+bin/qtez
+share/doc/qtez/INSTALL
+share/doc/qtez/KDE.README
+share/doc/qtez/README
+share/doc/qtez/TODO
+share/doc/qtez/index.htm
+share/doc/qtez/qtez.jpg
+share/doc/qtez/dnload/index.htm
+share/doc/qtez/features/index.htm
+share/doc/qtez/help/index.htm
+share/doc/qtez/help/qtez.gif
+share/doc/qtez/help/attribs/atdlgcap.gif
+share/doc/qtez/help/attribs/attribs.gif
+share/doc/qtez/help/attribs/index.htm
+share/doc/qtez/help/compons/compon.gif
+share/doc/qtez/help/compons/index.htm
+share/doc/qtez/help/compons/savesrc.gif
+share/doc/qtez/help/compons/toolbar.gif
+share/doc/qtez/help/demos/demos.gif
+share/doc/qtez/help/demos/index.htm
+share/doc/qtez/help/demos/chap1/index.htm
+share/doc/qtez/help/demos/chap1/tut1cap.gif
+share/doc/qtez/help/demos/chap2/index.htm
+share/doc/qtez/help/demos/chap2/tut2cap.gif
+share/doc/qtez/help/demos/chap3/index.htm
+share/doc/qtez/help/demos/chap3/tut3cap.gif
+share/doc/qtez/help/demos/chap4/index.htm
+share/doc/qtez/help/demos/chap4/tut4cap.gif
+share/doc/qtez/help/demos/chap5/index.htm
+share/doc/qtez/help/demos/chap5/tut5cap.gif
+share/doc/qtez/help/glbedit/glbedit.gif
+share/doc/qtez/help/glbedit/gldlgcap.gif
+share/doc/qtez/help/glbedit/index.htm
+share/doc/qtez/help/menubar/cfdlgcap.gif
+share/doc/qtez/help/menubar/index.htm
+share/doc/qtez/help/menubar/menubar.gif
+share/doc/qtez/help/menubar/mndlgcap.gif
+share/doc/qtez/help/mnuedit/index.htm
+share/doc/qtez/help/mnuedit/mndlgcap.gif
+share/doc/qtez/help/mnuedit/mnuedit.gif
+share/doc/qtez/help/projects/index.htm
+share/doc/qtez/help/projects/projects.gif
+share/doc/qtez/help/projview/index.htm
+share/doc/qtez/help/projview/projview.gif
+share/doc/qtez/help/projview/pvdlgcap.gif
+share/doc/qtez/help/sigslo/index.htm
+share/doc/qtez/help/sigslo/sgdlgcap.gif
+share/doc/qtez/help/sigslo/sigslo.gif
+share/doc/qtez/help/sigslo/ssdlgcap.gif
+share/doc/qtez/help/srcedit/fndlgcap.gif
+share/doc/qtez/help/srcedit/index.htm
+share/doc/qtez/help/srcedit/scdlgcap.gif
+share/doc/qtez/help/srcedit/srcedit.gif
+share/doc/qtez/tech/index.htm
+share/examples/qtez/a.qtz
+share/examples/qtez/arnt/arnt.qtz
+share/examples/qtez/arnt/arnt2.qtz
+share/examples/qtez/bnacho/demo.qtz
+share/examples/qtez/bnacho/qtez.bmp
+share/examples/qtez/bnacho/qtezicon.bmp
+share/examples/qtez/bnacho/quitButt.xpm
+share/examples/qtez/calculator/calc.qtz
+share/examples/qtez/calendar/calend.qtz
+share/examples/qtez/custom/custom.qtz
+share/examples/qtez/d.qtz
+share/examples/qtez/dblclick.qtz
+share/examples/qtez/dynamic/dynamic.qtz
+share/examples/qtez/echo/client.qtz.debunct
+share/examples/qtez/echo/server.qtz.debunct
+share/examples/qtez/finger/finger.qtz
+share/examples/qtez/include/include.qtz
+share/examples/qtez/krash.qtz
+share/examples/qtez/menubar/highlight.qtz
+share/examples/qtez/menubar/menubar.qtz
+share/examples/qtez/multdlg/2dialog.qtz
+share/examples/qtez/multdlg/3dialog.qtz
+share/examples/qtez/notepad/notepad.qtz
+share/examples/qtez/painter/painter.qtz
+share/examples/qtez/painter/painter_new.qtz
+share/examples/qtez/parent/bttngrp.qtz
+share/examples/qtez/parent/mult_par.qtz
+share/examples/qtez/piano.qtz
+share/examples/qtez/resize.qtz
+share/examples/qtez/stress/30buttons.qtz
+share/examples/qtez/stress/all.qtz
+share/examples/qtez/swatch/time.qtz
+share/examples/qtez/tablevw/table.qtz
+share/examples/qtez/tutorial/chap1.qtz
+share/examples/qtez/tutorial/chap2.qtz
+share/examples/qtez/tutorial/chap3.qtz
+share/examples/qtez/tutorial/chap4.qtz
+share/examples/qtez/tutorial/chap5.qtz
+share/examples/qtez/tutorial/frame1.bmp
+share/examples/qtez/tutorial/frame2.bmp
+share/examples/qtez/tutorial/frame3.bmp
+share/examples/qtez/tutorial/frame4.bmp
+share/examples/qtez/tutorial/frame5.bmp
+share/examples/qtez/tutorial/frame6.bmp
+share/examples/qtez/tutorial/frame7.bmp
+share/examples/qtez/tutorial/frame8.bmp
+share/examples/qtez/xalarm.qtz
+@dirrm share/doc/qtez/dnload
+@dirrm share/doc/qtez/features
+@dirrm share/doc/qtez/help/attribs
+@dirrm share/doc/qtez/help/compons
+@dirrm share/doc/qtez/help/demos/chap1
+@dirrm share/doc/qtez/help/demos/chap2
+@dirrm share/doc/qtez/help/demos/chap3
+@dirrm share/doc/qtez/help/demos/chap4
+@dirrm share/doc/qtez/help/demos/chap5
+@dirrm share/doc/qtez/help/demos
+@dirrm share/doc/qtez/help/glbedit
+@dirrm share/doc/qtez/help/menubar
+@dirrm share/doc/qtez/help/mnuedit
+@dirrm share/doc/qtez/help/projects
+@dirrm share/doc/qtez/help/projview
+@dirrm share/doc/qtez/help/sigslo
+@dirrm share/doc/qtez/help/srcedit
+@dirrm share/doc/qtez/help
+@dirrm share/doc/qtez/tech
+@dirrm share/doc/qtez
+@dirrm share/examples/qtez/arnt
+@dirrm share/examples/qtez/bnacho
+@dirrm share/examples/qtez/calculator
+@dirrm share/examples/qtez/calendar
+@dirrm share/examples/qtez/custom
+@dirrm share/examples/qtez/dynamic
+@dirrm share/examples/qtez/echo
+@dirrm share/examples/qtez/finger
+@dirrm share/examples/qtez/include
+@dirrm share/examples/qtez/menubar
+@dirrm share/examples/qtez/multdlg
+@dirrm share/examples/qtez/notepad
+@dirrm share/examples/qtez/painter
+@dirrm share/examples/qtez/parent
+@dirrm share/examples/qtez/stress
+@dirrm share/examples/qtez/swatch
+@dirrm share/examples/qtez/tablevw
+@dirrm share/examples/qtez/tutorial
+@dirrm share/examples/qtez
