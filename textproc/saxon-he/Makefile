@@ -16,8 +16,7 @@ DISTNAME=	${PORTNAME}b${PORTVERSION:S,.,-,g}
 MAINTAINER=	hq@FreeBSD.org
 COMMENT=	An XSLT 2.0 / XPath 2.0 / XQuery 1.0 processor for Java
 
-RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper \
-		${JAVALIBDIR}/xml-apis.jar:${PORTSDIR}/textproc/xerces-j
+RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper
 
 USE_ZIP=	yes
 USE_JAVA=	yes
@@ -34,7 +33,8 @@ PORTDOCS=	background documentation img javadoc
 .endif
 
 do-configure:
-	@${SED} 's|%%LOCALBASE%%|${LOCALBASE}|g ; s|%%JAVAVM%%|${JAVA}|g' \
+	@${SED} -e 's|%%LOCALBASE%%|${LOCALBASE}|g ; s|%%JAVAVM%%|${JAVA}|g ; \
+		s|%%SAXON_JARS%%|${JARFILES:S,^,${JAVAJARDIR}/,}|' \
 		${FILESDIR}/saxon.sh >${WRKSRC}/saxon
 
 do-install:
