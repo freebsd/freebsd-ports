@@ -1,5 +1,5 @@
---- Makefile.orig	Fri Dec 28 21:16:12 2001
-+++ Makefile	Fri Dec 28 21:17:01 2001
+--- Makefile.orig	Sat Feb  2 00:21:14 2002
++++ Makefile	Sat Feb  2 00:23:47 2002
 @@ -6,14 +6,9 @@
  
  # Configuration defaults
@@ -16,15 +16,15 @@
 +BINDIR   = $(PREFIX)/bin
  MANDIR   = $(PREFIX)/man
  
- RDPOBJ   = rdesktop.o tcp.o iso.o mcs.o secure.o licence.o rdp.o orders.o bitmap.o cache.o
-@@ -30,8 +25,8 @@
- GMP_INCLUDES =
+ RDPOBJ   = rdesktop.o tcp.o iso.o mcs.o secure.o licence.o rdp.o orders.o bitmap.o cache.o decompress.o
+@@ -26,8 +21,8 @@
+ SSL_LIBS =
  
- #default to X11
--GUI_INCLUDES = -I/usr/X11R6/include
--GUI_LIBS = -L/usr/X11R6/lib -lX11
-+GUI_INCLUDES = -I${X11BASE}/include
-+GUI_LIBS = -L${X11BASE}/lib -lX11
- GUI_OBJ = gl/xwin.o
+ #the xlib layer ( default )
+-GUI_XWIN_INC = -I/usr/X11R6/include
+-GUI_XWIN_LIB = -L/usr/X11R6/lib -lX11
++GUI_XWIN_INC = -I${X11BASE}/include
++GUI_XWIN_LIB = -L${X11BASE}/lib -lX11
+ GUI_XWIN_OBJ = gl/xwin.o
  
- #the nt xlib emul layer
+ #the nt layer
