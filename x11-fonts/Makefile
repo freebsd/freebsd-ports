@@ -55,6 +55,7 @@
     SUBDIR += xmbdfed
     SUBDIR += xorg-fonts-100dpi
     SUBDIR += xorg-fonts-75dpi
+    SUBDIR += xorg-fonts-cyrillic
     SUBDIR += xorg-fonts-encodings
     SUBDIR += xorg-fonts-type1
 
