@@ -161,9 +161,13 @@ PLIST_SUB+=		RUBY_VERSION="${RUBY_VERSION}" \
 .if defined(RUBY_REQUIRE)
 USE_RUBY=		yes
 
+.if exists(${RUBY})
 RUBY_PROVIDED!=		${RUBY} -e '\
 	Ruby = ${RUBY_VERSION_CODE}; \
 	value = begin; ${RUBY_REQUIRE}; end and puts value'
+.else
+RUBY_PROVIDED=		"should be"	# the latest version is going to be installed
+.endif
 
 .if empty(RUBY_PROVIDED)
 .undef RUBY_PROVIDED
