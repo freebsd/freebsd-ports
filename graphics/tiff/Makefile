@@ -5,7 +5,7 @@
 #			Mikhail Teterin <mi@aldan.algebra.com>
 #			Jun-ichiro itojun Itoh <itojun@itojun.org>
 #
-# $Id: Makefile,v 1.16 1999/03/29 06:41:43 asami Exp $
+# $Id: Makefile,v 1.17 1999/05/10 19:57:10 steve Exp $
 #
 
 DISTNAME=	tiff-v3.4beta037
@@ -22,6 +22,7 @@ HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ZIP --with-JPEG --with-DIR_BIN=${PREFIX}/bin \
 		--with-DIR_LIB=${PREFIX}/lib \
 		--with-DIR_INC=${PREFIX}/include \
+		--with-DIR_MAN=${PREFIX}/man \
 		--with-CC="${CC}" --with-GCOPTS="${CFLAGS}" \
 		--with-DIRS_LIBINC=${PREFIX}/include \
 		--with-DIR_GZLIB=/usr/lib \
