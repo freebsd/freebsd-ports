@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	penv
-PORTVERSION=	1.0.b2
+PORTVERSION=	1.0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://devel.ringlet.net/sysutils/penv/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/pre/}
@@ -26,15 +26,6 @@ MAKE_ENV+=	RELEASE=yes
 .endif
 
 DBDIR?=		/var/db/${PORTNAME}
-
-PREFIXCONF=	penv.1 penv.conf.default
-DBCONF=		pathnames.h penv.1 penv.conf.default
-
-post-patch:
-		${PERL} -pi.pfx -e "s,/usr/local,${PREFIX},g" \
-			${PREFIXCONF:S,^,${WRKSRC}/,}
-		${PERL} -pi.dbdir -e "s,/var/db/penv,${DBDIR},g" \
-			${DBCONF:S,^,${WRKSRC}/,}
 
 post-install:
 		${MKDIR} ${PREFIX}/etc
