@@ -18,7 +18,6 @@ LIB_DEPENDS=	gnutls.13:${PORTSDIR}/security/gnutls \
 		oop.4:${PORTSDIR}/devel/liboop \
 		ltdl.4:${PORTSDIR}/devel/libltdl
 
-USE_SIZE=	yes
 GNU_CONFIGURE=	yes
 USE_LIBTOOL_VER=13
 INSTALLS_SHLIB=	yes

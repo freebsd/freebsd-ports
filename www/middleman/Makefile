@@ -15,7 +15,6 @@ MASTER_SITE_SUBDIR=	middle-man
 MAINTAINER=	krion@FreeBSD.org
 COMMENT=	A robust proxy server
 
-USE_SIZE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

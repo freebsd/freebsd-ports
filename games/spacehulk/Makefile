@@ -14,7 +14,6 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b1/-beta1/}
 MAINTAINER=	krion@FreeBSD.org
 COMMENT=	Science-fiction board game in the world of Warhammer 40000
 
-USE_SIZE=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_KDELIBS_VER=3

@@ -17,7 +17,6 @@ COMMENT=	Breakout clone with an OpenGL 3D representation
 LIB_DEPENDS=	GUI.0:${PORTSDIR}/graphics/guilib \
 		png.5:${PORTSDIR}/graphics/png
 
-USE_SIZE=	yes
 USE_BZIP2=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
