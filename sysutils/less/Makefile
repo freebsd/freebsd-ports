@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	less
-PORTVERSION=	378
+PORTVERSION=	381
 CATEGORIES=	misc
 MASTER_SITES=	http://www.greenwoodsoftware.com/%SUBDIR%/ \
 		${MASTER_SITE_GNU}
@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	less
 
 MAINTAINER=	jharris@widomaker.com
 COMMENT=	A better pager utility
+
+PLIST_FILES=	bin/less bin/lesskey bin/lessecho
 
 .include <bsd.port.pre.mk>
 
