@@ -7,10 +7,9 @@
 #
 
 PORTNAME=	mutt
-PORTVERSION=	1.2.5
-PORTREVISION=	1
+PORTVERSION=	1.2.5.1
 CATEGORIES+=	mail
-MASTER_SITES=	ftp://ftp.guug.de/pub/mutt/ \
+MASTER_SITES=	ftp://ftp.mutt.org/pub/mutt/ \
 		ftp://ftp.uib.no/pub/mutt/ \
 		ftp://pgp.rasip.fer.hr/pub/mutt/international/ \
 		ftp://ftp.gbnet.net/pub/mutt-international/ \
@@ -18,7 +17,6 @@ MASTER_SITES=	ftp://ftp.guug.de/pub/mutt/ \
 		ftp://ftp.fu-berlin.de/pub/unix/mail/mutt/mutt-international/ \
 		ftp://ftp.gwdg.de/pub/unix/mail/mutt/international/ \
 		ftp://ftp.iks-jena.de/pub/mitarb/lutz/crypt/software/pgp/mutt/
-DISTNAME=	${PORTNAME}-${PORTVERSION}i
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} charmaps-0.0.tar.gz
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
