@@ -41,6 +41,13 @@ CONFIGURE_ARGS=	--libdir=${SAMBA_CONFDIR} \
 
 .include <bsd.port.pre.mk>
 
+.if defined(WITH_LDAP)
+LIB_DEPENDS+=  ldap.2:\${PORTSDIR}/net/openldap2
+CONFIGURE_ARGS+=--with-ldapsam
+CONFIGURE_ENV+=	CPPFLAGS=-I${LOCALBASE}/include \
+		LDFLAGS=-L${LOCALBASE}/lib
+.endif
+
 .if !defined(WITHOUT_CUPS)
 WITH_CUPS=	yes
 .endif
