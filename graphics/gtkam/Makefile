@@ -7,6 +7,7 @@
 
 PORTNAME=	gtkam
 PORTVERSION=	0.1.12
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gphoto
@@ -14,7 +15,7 @@ MASTER_SITE_SUBDIR=	gphoto
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Download and view files from various digital cameras
 
-LIB_DEPENDS=	exif-gtk.4:${PORTSDIR}/graphics/libexif-gtk \
+LIB_DEPENDS=	exif-gtk.5:${PORTSDIR}/graphics/libexif-gtk \
 		gphoto2.2:${PORTSDIR}/graphics/libgphoto2
 
 USE_X_PREFIX=	yes
