@@ -13,6 +13,13 @@
 %%RUBY_EXAMPLESDIR%%/xmlparser/dtd/ext2.dtd
 %%RUBY_EXAMPLESDIR%%/xmlparser/dtd/extdtd.rb
 %%RUBY_EXAMPLESDIR%%/xmlparser/dtd/extdtd.xml
+%%RUBY_EXAMPLESDIR%%/xmlparser/expat-1.2/ext.ent
+%%RUBY_EXAMPLESDIR%%/xmlparser/expat-1.2/exttest.rb
+%%RUBY_EXAMPLESDIR%%/xmlparser/expat-1.2/exttesti.rb
+%%RUBY_EXAMPLESDIR%%/xmlparser/expat-1.2/hoge.dtd
+%%RUBY_EXAMPLESDIR%%/xmlparser/expat-1.2/idtest.rb
+%%RUBY_EXAMPLESDIR%%/xmlparser/expat-1.2/idtest.xml
+%%RUBY_EXAMPLESDIR%%/xmlparser/expat-1.2/xmlextparser.rb
 %%RUBY_EXAMPLESDIR%%/xmlparser/namespaces/namespace1.rb
 %%RUBY_EXAMPLESDIR%%/xmlparser/namespaces/namespace1.xml
 %%RUBY_EXAMPLESDIR%%/xmlparser/namespaces/namespace2.rb
@@ -40,6 +47,9 @@
 %%RUBY_EXAMPLESDIR%%/xmlparser/ja/xpointer.rb
 %%RUBY_EXAMPLESDIR%%/xmlparser/ja/xpointertest.rb
 %%RUBY_EXAMPLESDIR%%/xmlparser/digesttest.rb
+%%RUBY_EXAMPLESDIR%%/xmlparser/doctype.rb
+%%RUBY_EXAMPLESDIR%%/xmlparser/doctype.xml
+%%RUBY_EXAMPLESDIR%%/xmlparser/doctypei.rb
 %%RUBY_EXAMPLESDIR%%/xmlparser/idattrtest.rb
 %%RUBY_EXAMPLESDIR%%/xmlparser/my-html.rb
 %%RUBY_EXAMPLESDIR%%/xmlparser/saxtest.rb
@@ -49,6 +59,7 @@
 %%RUBY_EXAMPLESDIR%%/xmlparser/xmlstats.rb
 @dirrm %%RUBY_EXAMPLESDIR%%/xmlparser/ja
 @dirrm %%RUBY_EXAMPLESDIR%%/xmlparser/namespaces
+@dirrm %%RUBY_EXAMPLESDIR%%/xmlparser/expat-1.2
 @dirrm %%RUBY_EXAMPLESDIR%%/xmlparser/dtd
 @dirrm %%RUBY_EXAMPLESDIR%%/xmlparser
 %%RUBY_DOCDIR%%/xmlparser/ja/README.ja
