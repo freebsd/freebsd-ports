@@ -6,7 +6,8 @@
 #
 
 PORTNAME=	liferea
-PORTVERSION=	0.4.7b 
+PORTVERSION=	0.4.7b
+PORTREVISION=	1
 CATEGORIES=	net gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	liferea
@@ -18,8 +19,13 @@ USE_X_PREFIX=	yes
 USE_GNOME=	gnomeprefix gnomehack gconf2 libxml2 libgtkhtml \
 		gnomevfs2
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
+post-patch:
+	${REINPLACE_CMD} -e 's,/usr/lib/moz,${X11BASE}/lib/moz,g' \
+		${WRKSRC}/src/liferea
 
 .include <bsd.port.mk>
