@@ -18,6 +18,7 @@ bin/gammu
 %%DOCSDIR%%/readme.txt
 share/gammu/gammu_cs.txt
 share/gammu/gammu_de.txt
+share/gammu/gammu_it.txt
 share/gammu/gammu_pl.txt
 share/gammu/gammu_us.txt
 @dirrm share/gammu
