@@ -5164,6 +5164,7 @@ p5-DBIx-DBSchema	ports/databases/p5-DBIx-DBSchema
 p5-DBIx-DataSource	ports/databases/p5-DBIx-DataSource
 p5-DBIx-Password	ports/databases/p5-DBIx-Password
 p5-DBIx-Recordset	ports/databases/p5-DBIx-Recordset
+p5-DBIx-SQLEngine	ports/databaes/p5-DBIx-SQLEngine
 p5-DBIx-SearchBuilder	ports/databases/p5-DBIx-SearchBuilder
 p5-DBIx-Table	ports/databases/p5-DBIx-Table
 p5-DBIx-Tree	ports/databases/p5-DBIx-Tree
