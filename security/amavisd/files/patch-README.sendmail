@@ -1,0 +1,26 @@
+--- README.sendmail.orig        Sun Aug  4 18:38:01 2002
++++ README.sendmail     Sun Aug  4 18:39:50 2002
+@@ -18,7 +18,7 @@
+ 
+ Mlocal, P=/usr/sbin/amavis, F=lsDFMAw5:/|@qrn9, S=10/30, R=20/40,
+         T=DNS/RFC822/X-Unix,
+-        A=amavis $f $u -- /bin/mail.local -d $u
++        A=amavis $f $u -- /usr/libexec/mail.local -d $u
+ 
+   Note that m (delivery to multiple recipients) has been removed from the
+ F equate! Amavis receives sender ($f) and recipient ($u) from the command
+@@ -33,11 +33,9 @@
+ you should add the following just before the MAILER definitions:
+ 
+ dnl
+-dnl Change Mlocal to use AMaViS-Perl
+-define(`LOCAL_MAILER_PATH', `/usr/sbin/amavis')dnl
+-define(`LOCAL_MAILER_ARGS', CONCAT(`amavis $f $u -- ',
+-define(`LOCAL_MAILER_ARGS', CONCAT(`amavis $f $u -- /usr/bin/',
+-LOCAL_MAILER_ARGS))dnl
++dnl Change Mlocal to use AMaViS
++define(`LOCAL_MAILER_PATH', `/usr/local/sbin/amavis')dnl
++define(`LOCAL_MAILER_ARGS', CONCAT(`amavis $f $u -- /usr/libexec/', LOCAL_MAILER_ARGS, ` -d $u'))dnl
+ dnl please set the path to your procmail accordingly!
+ dnl the following works only with sendmail 8.10.x or above
+ MODIFY_MAILER_FLAGS(`LOCAL', -m')dnl
