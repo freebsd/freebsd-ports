@@ -7,14 +7,15 @@
 
 PORTNAME=	matrix
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://www.belousov.com/download/
 PKGNAMESUFFIX=	-kmod
 
-MAINTAINER=     strijar@urai.ru
+MAINTAINER=	strijar@urai.ru
 COMMENT=	Screensaver for console (matrix_saver.ko) "Matrix" like
 
-MAKE_ENV=	DESTDIR="${PREFIX}/lib/matrix"
+KMODDIR=	${PREFIX}/modules
 
 .include <bsd.port.pre.mk>
 
@@ -22,11 +23,9 @@ MAKE_ENV=	DESTDIR="${PREFIX}/lib/matrix"
 BROKEN=		"Need FreeBSD 4.0 or above"
 .endif
 
-.if ${OSVERSION} >= 500113
-BROKEN=         "Installation fails"
-.endif
-
-pre-install:
-	${MKDIR} ${PREFIX}/lib/matrix/modules
+do-install:
+	@${MKDIR} ${KMODDIR}
+	${INSTALL_SCRIPT} ${FILESDIR}/matrix_saver.sh ${PREFIX}/etc/rc.d
+	${INSTALL_SCRIPT} ${WRKSRC}/*.ko ${KMODDIR}
 
 .include <bsd.port.post.mk>
