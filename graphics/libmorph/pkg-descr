@@ -1,0 +1,22 @@
+The main purpose of LibMorph is loading (and saving) 3d models (3d modeller
+object files). Given loader is dynamically linked when format of requested file
+is recognized.
+
+The library is very young piece of software, so chances are high that some
+things don't work yet as they should or at all. If you have need for some
+particular feature, drop me a mail, I'll try to reprioritize my TODO list.
+
+LibMorph currently supports following formats (only loading at the moment):
+        LWOB    -- LightWave[TM],
+        3DS     -- 3D Studio[TM],
+
+In future hopefully it'll support:
+        ?       -- Alias Wavefront[TM]
+        MAX     -- 3D Studio Max[TM]
+        DXF     -- CAD?
+        ?       -- Maya[TM]
+        ?       -- Soft Image[TM]
+        SVG     -- XML, 2d Vector files converted to 3d (via libart?)
+        and more
+
+WWW: http://wine.sexcity.pl/morpheus/

@@ -93,6 +93,7 @@
     SUBDIR += libdjvu++
     SUBDIR += libggi
     SUBDIR += libimg
+    SUBDIR += libmorph
     SUBDIR += libungif
     SUBDIR += libwmf
     SUBDIR += linux-bmrt

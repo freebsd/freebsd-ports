@@ -1,0 +1,11 @@
+etc/libmorphConf.sh
+include/morph/morph-io.h
+include/morph/morph.h
+lib/libmorph.a
+lib/libmorph.so
+lib/libmorph.so.0
+lib/morph/loaders/libmorph-a3ds.so
+lib/morph/loaders/libmorph-lwob.so
+@dirrm lib/morph/loaders
+@dirrm lib/morph
+@dirrm include/morph
