@@ -10,9 +10,7 @@ PORTVERSION=	1.07.2
 CATEGORIES=	net comms
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=dinoex
-.if defined(WITH_PAM)
-PKGNAMESUFFIX?=	-pam
-.endif
+PKGNAMESUFFIX?=	${PAM_SUFFIX}${PKGNAMESUFFIX2}
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	FreeBSD-modified Taylor UUCP (unix-to-unix copy program)
@@ -32,6 +30,7 @@ BPKGNAME=	base-uucp-1.06.1
 MAKE_ENV+=	CSTD=gnu99
 
 .if defined(WITH_PAM)
+PAM_SUFFIX=	-pam
 MAKE_ENV+=	WITH_PAM=${WITH_PAM}
 CONFLICTS?=	freebsd-uucp-1.*
 .else
@@ -83,7 +82,7 @@ post-install:
 	@if test "$$(pw usershow uucp)" != "uucp:*:66:66::0:0:UUCP pseudo-user:/var/spool/uucppublic:${PREFIX}/libexec/uucp/uucico"; then \
 	pw usermod uucp -s ${PREFIX}/libexec/uucp/uucico; fi
 	@pw usershow uucp
-.endif 
+.endif
 	@${ECHO_MSG} "Use the 'make upgrade' command to copy your old configuration"
 	@${ECHO_MSG} "files from /etc/uucp to the new location in ${PREFIX}/etc/uucp"
 	@${ECHO_MSG}
