@@ -19,8 +19,9 @@ MAINTAINER=	dirk.meyer@dinoex.sub.org
 
 USE_OPENSSL=	YES
 
-MAN1=		scp.1 slogin.1 ssh-add.1 ssh-agent.1 ssh-keygen.1 ssh.1
-MAN8=		sshd.8
+MAN1=		scp.1 slogin.1 ssh-add.1 ssh-agent.1 ssh-keygen.1 ssh.1 \
+		ssh-keyscan.1 sftp.1
+MAN8=		sshd.8 sftp-server.8
 MANCOMPRESSED=	yes
 
 .include <bsd.port.pre.mk>
@@ -69,6 +70,7 @@ post-patch:
 		${WRKSRC}/pathnames.h
 
 post-install:
+.if !defined(BATCH)
 .if !exists(${PREFIX}/etc/ssh_host_key)
 	@${ECHO_MSG} ">> Generating an RSA secret host key."
 	${PREFIX}/bin/ssh-keygen -N "" -f ${PREFIX}/etc/ssh_host_key
@@ -76,6 +78,7 @@ post-install:
 .if !exists(${PREFIX}/etc/ssh_host_dsa_key)
 	@${ECHO_MSG} ">> Generating a DSA secret host key."
 	${PREFIX}/bin/ssh-keygen -d -N "" -f ${PREFIX}/etc/ssh_host_dsa_key
+.endif
 .endif
 .if !exists(${PREFIX}/etc/rc.d/sshd.sh)
 	@${INSTALL_SCRIPT} ${WRKSRC}/sshd.sh ${PREFIX}/etc/rc.d/
