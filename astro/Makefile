@@ -8,6 +8,7 @@
     SUBDIR += ephem
     SUBDIR += fooseti
     SUBDIR += gdesklets-goodweather
+    SUBDIR += gdesklets-seti
     SUBDIR += gkrellmearth
     SUBDIR += gkrellmoon
     SUBDIR += gkrellmseti
