@@ -1,0 +1,7 @@
+##
+It is recommend for you to remove the ~/.liferea and ~/.gconf/apps/liferea,
+because it's heavy rewritten and made some changed in the cache of vfolder and
+directory. This can be done following the command line:
+
+	rm -rf ~/.liferea ~/.gconf/apps/liferea
+##
