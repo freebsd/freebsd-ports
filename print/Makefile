@@ -56,6 +56,7 @@
     SUBDIR += enscriptfonts
     SUBDIR += envelope
     SUBDIR += font2svg
+    SUBDIR += foomatic-db
     SUBDIR += freetype
     SUBDIR += freetype2
     SUBDIR += ft2demos
