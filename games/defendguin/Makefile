@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	defendguin
-PORTVERSION=	0.0.9
+PORTVERSION=	0.0.10
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.sonic.net/pub/users/nbs/unix/x/defendguin/
+MASTER_SITES=	http://www.nbswebfx.com/downloads/
 
-MAINTAINER=	sobomax@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer
 
