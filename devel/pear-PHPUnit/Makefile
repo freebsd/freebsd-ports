@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	PHPUnit
-PORTVERSION=	1.0.1
+PORTVERSION=	1.1.0
 CATEGORIES=	devel www pear
 
 MAINTAINER=	tux@pinguru.net
@@ -18,7 +18,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 FILES=		PHPUnit.php \
 		PHPUnit/Assert.php PHPUnit/RepeatedTest.php PHPUnit/TestCase.php \
 		PHPUnit/TestDecorator.php PHPUnit/TestFailure.php PHPUnit/TestListener.php \
-		PHPUnit/TestResult.php PHPUnit/TestSuite.php \
+		PHPUnit/TestResult.php PHPUnit/TestSuite.php PHPUnit/Skeleton.php \
 		PHPUnit/GUI/HTML.php PHPUnit/GUI/HTML.tpl PHPUnit/GUI/SetupDecorator.php
 
 .include <bsd.port.pre.mk>
