@@ -1,7 +1,7 @@
-Gtk.pm is a perl module to access Gtk library,
-and this version(0.1.10) was designed around gtk 971025,
+Gtk-Perl is a set of modules that let you exploit the Gtk+ and Gnome
+libraries from Perl. The module maps the Gtk+ objects to Perl packages
+while trying to remain as close as possible to the C API, but not closer.
 
-Gtk is available at <ftp://ftp.gimp.org/pub/gtk/>.
+This is the base module (Gtk and Gtk::Gdk namespaces).
 
-- Vanilla
-vanilla@MinJe.com.TW
+WWW: http://projects.prosa.it/gtkperl/
