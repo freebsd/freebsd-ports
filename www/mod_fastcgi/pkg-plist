@@ -1,4 +1,4 @@
-libexec/apache/mod_fastcgi.so
-share/doc/mod_fastcgi/LICENSE.TERMS
-share/doc/mod_fastcgi/mod_fastcgi.html
-@dirrm share/doc/mod_fastcgi
+libexec/apache%%APACHE%%/mod_fastcgi.so
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE.TERMS
+%%PORTDOCS%%%%DOCSDIR%%/mod_fastcgi.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
