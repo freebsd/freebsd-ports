@@ -7,12 +7,13 @@
 
 PORTNAME=	fontconfig
 PORTVERSION=	2.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://www.fontconfig.org/fontconfig/release/
 DISTNAME=	fcpackage.${PORTVERSION:S/./_/}
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	An XML-based font configuration API for X Windows
 
 BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
@@ -30,6 +31,7 @@ CONFIGURE_ARGS=	--with-confdir=${PREFIX}/etc/fonts \
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 WRKSRC=	${WRKDIR}/${DISTNAME}/fontconfig
 
+MAN1=		fc-cache.1 fc-list.1
 MAN3=		fontconfig.3
 
 .include <bsd.port.pre.mk>
@@ -45,6 +47,10 @@ pre-patch:
 post-install:
 	@${INSTALL_DATA} ${WRKSRC}/src/fontconfig.man \
 		${PREFIX}/man/man3/fontconfig.3
+	@${INSTALL_DATA} ${WRKSRC}/fc-cache/fc-cache.man \
+		${PREFIX}/man/man1/fc-cache.1
+	@${INSTALL_DATA} ${WRKSRC}/fc-list/fc-list.man \
+		${PREFIX}/man/man1/fc-list.1
 .if !defined(PACKAGE_BUILDING)
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 .endif

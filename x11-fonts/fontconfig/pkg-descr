@@ -1,6 +1,7 @@
 Fontconfig does the following:
 
-    * discover new fonts when installed automatically, removing a common source       of configuration problems.
+    * discover new fonts when installed automatically, removing a common source 
+      of configuration problems.
     * perform font name substitution, so that appropriate alternative fonts can 
       be selected if fonts are missing.
     * identify the set of fonts required to completely cover a set of languages.
