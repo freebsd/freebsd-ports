@@ -1,0 +1,16 @@
+Pyexif is a Python library and associated command line tool to extract EXIF
+format metadata from the headers of JPEG and TIFF image files.  EXIF
+information is typically included in images created using digital imaging
+devices such as digital cameras and digital film scanners.
+
+Currently, pyexif provides the following functionality:
+- Parse EXIF headers in JPEG files.
+- Parse EXIF headers in TIFF files.
+- Support for camera-specific MakerNote tags (e.g. Nikon, Canon, etc.).
+- Provide a simple cmdline interfaces to format the data in human-readable
+  format.
+
+WWW: http://pyexif.sourceforge.net/
+EXIF specification:  http://www.pima.net/standards/it10/PIMA15740/exif.htm
+
+-- Johann Visagie <wjv@FreeBSD.org>

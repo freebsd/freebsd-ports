@@ -242,6 +242,7 @@
     SUBDIR += proj
     SUBDIR += pstoedit
     SUBDIR += pvmpov
+    SUBDIR += py-exif
     SUBDIR += py-gd
     SUBDIR += py-gdchart
     SUBDIR += py-imaging

@@ -1,0 +1,13 @@
+%%PORTDOCS%%share/doc/py-exif/README
+%%PORTDOCS%%share/doc/py-exif/README.exiftool
+bin/exiftool
+lib/%%PYTHON_VERSION%%/site-packages/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/exif.py
+lib/%%PYTHON_VERSION%%/site-packages/exif.pyc
+lib/%%PYTHON_VERSION%%/site-packages/exif.pyo
+share/py-exif/template.html
+share/py-exif/template.txt
+@dirrm share/py-exif
+%%PORTDOCS%%@dirrm share/doc/py-exif
