@@ -1,11 +1,11 @@
---- Makefile.in.orig	Thu Feb  7 09:08:04 2002
-+++ Makefile.in	Thu Feb  7 09:08:12 2002
-@@ -72,7 +72,7 @@
- VERSION = @VERSION@
- lispdir = @lispdir@
- 
+--- Makefile.in.orig	Mon Mar 29 06:58:19 2004
++++ Makefile.in	Sun Jan 23 09:55:14 2005
+@@ -150,7 +150,7 @@
+ sharedstatedir = @sharedstatedir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
 -SUBDIRS = src emacs doc check
 +SUBDIRS = src doc check
- 
  EXTRA_DIST = README.win
- 
+ all: config.h
+ 	$(MAKE) $(AM_MAKEFLAGS) all-recursive
