@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dctc
-PORTVERSION=	0.83.8
+PORTVERSION=	0.84.1
 CATEGORIES=	net
 MASTER_SITES=	http://unixpages.org/distfiles/ \
 		http://ac2i.tzo.com/dctc/
@@ -79,9 +79,6 @@ post-patch:
 		${WRKSRC}/src/Makefile.in
 
 pre-build:
-	@${ECHO_CMD} '#ifndef MSG_NOSIGNAL' >> ${CONFIGURE_WRKSRC}/config.h
-	@${ECHO_CMD} '# define MSG_NOSIGNAL 0' >> ${CONFIGURE_WRKSRC}/config.h
-	@${ECHO_CMD} '#endif' >> ${CONFIGURE_WRKSRC}/config.h
 	@${ECHO_CMD} '#ifndef ENODATA' >> ${CONFIGURE_WRKSRC}/config.h
 	@${ECHO_CMD} '# define ENODATA ENOMSG' >> ${CONFIGURE_WRKSRC}/config.h
 	@${ECHO_CMD} '#endif' >> ${CONFIGURE_WRKSRC}/config.h
