@@ -1,7 +1,7 @@
---- makefile.orig	Thu Jul  4 23:46:37 2002
-+++ makefile	Thu Jul  4 23:50:24 2002
-@@ -2,13 +2,13 @@
- # Makefile for Generic Unix with GCC compiler
+--- makefile.orig	Mon Oct 28 19:50:00 2002
++++ makefile	Sun Nov  3 09:09:41 2002
+@@ -4,13 +4,13 @@
+ FAULT_TOLERANT=0
  
  # Place where to copy GastDB header files
 -INCSPATH=/usr/local/include/fastdb
@@ -16,19 +16,19 @@
 +BINSPATH=${PREFIX}/bin
  
  OBJS = class.o compiler.o database.o hashtab.o file.o symtab.o ttree.o \
- 	cursor.o query.o wwwapi.o unisock.o sync.o
-@@ -30,8 +30,8 @@
- TFLAGS=-pthread
- THRLIBS=
- else 
--TFLAGS=-D_REENTRANT -D_THREAD_SAFE
--THRLIBS=-lpthread
+ 	cursor.o query.o wwwapi.o unisock.o sync.o localcli.o
+@@ -29,8 +29,8 @@
+ SUFF=
+ else
+ ifneq (,$(findstring freebsd,$(OSTYPE)))
+-TFLAGS=-pthread
+-THRLIBS=
 +TFLAGS=-D_REENTRANT ${PTHREAD_CFLAGS}
 +THRLIBS=${PTHREAD_LIBS}
- endif
- SUFF=_r
- endif
-@@ -60,7 +60,6 @@
+ else 
+ TFLAGS=-D_REENTRANT -D_THREAD_SAFE
+ THRLIBS=-lpthread
+@@ -62,7 +62,6 @@
  
  WEB_EXAMPLES = cgistub bugdb clidb
  
@@ -36,12 +36,12 @@
  
  # Possible FastDB compile time parameters (-Dxxx should be added to DEFS macro):
  # 1. USE_LOCALE_SETTING - use C locale for string comparison operations
-@@ -93,13 +92,13 @@
+@@ -98,13 +97,13 @@
+ DEFS = -DUSE_QUEUE_MANAGER -DUSE_LOCALE_SETTINGS
  
- #CFLAGS = $(TFLAGS) -c -Wall -O5 -g $(TFLAGS) 
- 
+ #CFLAGS = $(TFLAGS) -c -Wall -O5 -g $(DEFS) 
 -CFLAGS = -c -Wall -O0 -g $(DEFS) $(TFLAGS)
-+CFLAGS += -c $(TFLAGS)
++CFLAGS += -c $(DEFS) $(TFLAGS)
  #CFLAGS = -c -Wall -O0 -DDEBUG=DEBUG_TRACE -g $(DEFS) $(TFLAGS)
 -SHFLAGS=-shared
 +SHFLAGS=-shared -Wl,-soname,$@
@@ -53,7 +53,13 @@
  
  AR = ar
  ARFLAGS = -cru
-@@ -302,14 +301,13 @@
+@@ -314,14 +313,13 @@
+ 
+ install: subsql installlib
+ 	mkdir -p $(BINSPATH)
+-	cp subsql $(BINSPATH)
+-	strip $(BINSPATH)/subsql
++	${BSD_INSTALL_PROGRAM} subsql $(BINSPATH)
  
  installlib: $(FASTDB_LIB) $(CLI_LIB) $(FASTDB_SHARED) $(CLI_SHARED)
  	mkdir -p $(INCSPATH)
@@ -61,13 +67,7 @@
 +	${BSD_INSTALL_DATA} $(INCS) $(INCSPATH)
  	mkdir -p $(LIBSPATH)
 -	cp $(FASTDB_LIB) $(CLI_LIB) $(FASTDB_SHARED) $(CLI_SHARED) $(LIBSPATH)
--	cp -P libcli.so $(LIBSPATH)
 +	${BSD_INSTALL_DATA} $(FASTDB_LIB) $(CLI_LIB) $(FASTDB_SHARED) $(CLI_SHARED) $(LIBSPATH)
  	ln -f -s $(LIBSPATH)/$(FASTDB_SHARED) $(LIBSPATH)/libfastdb$(SUFF).so
  	ln -f -s $(LIBSPATH)/$(CLI_SHARED) $(LIBSPATH)/libcli$(SUFF).so
- 	mkdir -p $(BINSPATH)
--	cp subsql $(BINSPATH)
-+	${BSD_INSTALL_PROGRAM} subsql $(BINSPATH)
- 
- 
  
