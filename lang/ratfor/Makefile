@@ -1,3 +1,4 @@
+# ex:ts=8
 # Ports collection makefile for:  ratfor
 # Date created:			  Sat Aug 26, 2000
 # Whom:				  David O'Brien (obrien@NUXI.com)
@@ -20,7 +21,6 @@ NO_WRKSUBDIR=	yes
 EXTRACT_CMD=	${CAT}
 EXTRACT_BEFORE_ARGS=
 EXTRACT_AFTER_ARGS=	| ${SH}
-#USE_GMAKE=	yes
 ALL_TARGET=	all tests
 MAN1=		ratfor.1
 
