@@ -121,7 +121,6 @@
     SUBDIR += qmailanalog
     SUBDIR += qpopper
     SUBDIR += rblcheck
-    SUBDIR += rblsmtpd
     SUBDIR += rftp
     SUBDIR += rlytest
     SUBDIR += ruby-tmail
