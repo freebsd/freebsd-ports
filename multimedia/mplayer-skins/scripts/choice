@@ -36,6 +36,7 @@ only the skins you really want. \n\n\
   "WindowsMediaPlayer6"	"no comment"				OFF \
   "Xanim"	"xanim \"feeling\""					OFF \
   "Xine-LCD"	"MPlayer conversion of Xine's LCD skin"		OFF \
+  "Mini"	"Mplayer-plugin for mozilla"			OFF \
 2> /tmp/mplayer-skins-checklist.$$
 
 retval=$?
