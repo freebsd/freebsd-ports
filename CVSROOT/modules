@@ -473,6 +473,7 @@ balsa		ports/mail/balsa
 balsa2		ports/mail/balsa2
 barcode		ports/graphics/barcode
 barque		ports/www/barque
+barrage		ports/games/barrage
 barry		ports/sysutils/barry
 base64		ports/converters/base64
 bash1		ports/shells/bash1
@@ -3862,6 +3863,7 @@ logrotate	ports/sysutils/logrotate
 logsurfer	ports/misc/logsurfer
 logtool		ports/sysutils/logtool
 logtools	ports/www/logtools
+lookat		ports/sysutils/lookat
 lookout		ports/mail/lookout
 lopster		ports/audio/lopster
 loserjabber	ports/deskutils/loserjabber
@@ -4362,6 +4364,7 @@ napster		ports/audio/napster
 narval		ports/deskutils/narval
 nas		ports/audio/nas
 nasm		ports/devel/nasm
+nast		ports/net/nast
 nat		ports/net/nat
 naturalmath	ports/math/naturalmath
 nautilus	ports/x11-fm/nautilus
