@@ -23,6 +23,11 @@ DIST_SUBDIR=	python
 USE_PYTHON=	yes
 WRKSRC=		${PYTHON_WRKSRC}/Tools/${PORTNAME}
 
+.include <bsd.port.pre.mk>
+.if ${PYTHON_REL} >= 220
+FORBIDDEN=	"Part of the standard library from Python 2.2 upwards"
+.endif
+
 do-build:
 	@ cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} setup.py build
 
@@ -30,4 +35,4 @@ do-install:
 	@ cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} \
 	  setup.py install -c -O1 --prefix=${PREFIX}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
