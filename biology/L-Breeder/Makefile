@@ -15,16 +15,17 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	dyeske@yahoo.com
 COMMENT=	Allows you to display and breed L-system forms
 
-LIB_DEPENDS=	wx_gtk_gl-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk-devel
+LIB_DEPENDS=	wx_gtk2_gl-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk2
 
 WRKSRC=		${WRKDIR}/LBreeder/LBreeder
 PATCH_WRKSRC=	${WRKDIR}/LBreeder
 
 USE_X_PREFIX=	yes
-USE_GNOME=	gtk12 gdkpixbuf
-USE_MESA=	yes
+USE_GL=		yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
+
+WX_CONFIG=	${X11BASE}/bin/wxgtk2-2.4-config
 
 .if defined(WITH_OPTIMIZED_CFLAGS)
 CFLAGS+=	-O3 -ffast-math
@@ -54,11 +55,12 @@ post-patch:
 		s|/usr/lib/libGL.a|-lGL|; \
 		s|/usr/lib/libGLU.so|-lGLU|; \
 		s|-O2|"${CFLAGS} ${PTHREAD_CFLAGS}"|; \
-		s|-lglib|`${GLIB_CONFIG} --libs`|; \
+		s|-lglib||; \
 		s|g\+\+|${CXX} -I${X11BASE}/include|; \
-		s|-lgdk|`${GDK_PIXBUF_CONFIG} --libs`|; \
-		s|-lwx_gtk[[:space:]]|`wx-config --libs`|; \
-		s|-lwx_gtk_gl|-lwx_gtk_gl-2.4|'
+		s|-lgdk||; \
+		s|wx-config|${WX_CONFIG}|; \
+		s|-lwx_gtk[[:space:]]|`${WX_CONFIG} --libs`|; \
+		s|-lwx_gtk_gl|-lwx_gtk2_gl-2.4|'
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/L-Breeder ${PREFIX}/bin
