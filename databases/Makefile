@@ -5,6 +5,7 @@
     SUBDIR += bbdb
     SUBDIR += bbdb-emacs20
     SUBDIR += cdb
+    SUBDIR += clip
     SUBDIR += db
     SUBDIR += db3
     SUBDIR += db4
