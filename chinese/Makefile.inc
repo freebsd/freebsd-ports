@@ -1,4 +1,4 @@
 # $FreeBSD$
 #
 
-PKGNAMEPREFIX=	zh-
+PKGNAMEPREFIX?=	zh-

@@ -1,4 +1,4 @@
 # $FreeBSD$
 #
 
-PKGNAMEPREFIX=	ja-
+PKGNAMEPREFIX?=	ja-

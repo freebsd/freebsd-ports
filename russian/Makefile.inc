@@ -1,4 +1,4 @@
 # $FreeBSD$
 #
 
-PKGNAMEPREFIX=	ru-
+PKGNAMEPREFIX?=	ru-
