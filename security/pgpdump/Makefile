@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	pgpdump
-PORTVERSION=	0.13
+PORTVERSION=	0.14
 CATEGORIES=	security
 MASTER_SITES=	ftp://pgp.iijlab.net/pub/pgp/tools/
 
 MAINTAINER=	kaoru@kaisei.org
 
-GNU_CONFIGURE=  yes
+GNU_CONFIGURE=	yes
 
 MAN1=		pgpdump.1
 
