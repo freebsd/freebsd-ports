@@ -39,12 +39,12 @@ pre-fetch:
 .endif
 
 pre-install:
-	@cp ${PKGDIR}/PLIST ${WRKDIR}/PLIST.DYN
+	@cp ${PKGDIR}/pkg-plist ${WRKDIR}/PLIST.DYN
 .if !defined(NOPORSDOCS)
-	@cat ${PKGDIR}/PLIST.DOC >> ${WRKDIR}/PLIST.DYN
+	@cat ${PKGDIR}/pkg-plist.doc >> ${WRKDIR}/PLIST.DYN
 .endif
 .if defined(CGI)
-	@cat ${PKGDIR}/PLIST.CGI >> ${WRKDIR}/PLIST.DYN
+	@cat ${PKGDIR}/pkg-plist.cgi >> ${WRKDIR}/PLIST.DYN
 .endif
 
 post-install:
