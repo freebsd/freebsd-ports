@@ -3,7 +3,7 @@
 # Date created:		30 Jul 1995
 # Whom:			torstenb@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.66 1998/10/07 23:03:44 jkh Exp $
+# $Id: Makefile,v 1.67 1998/10/08 03:42:23 jkh Exp $
 #
 # Maximal ssh package requires YES values for
 # USE_PERL, USE_TCPWRAP
@@ -18,7 +18,6 @@ MAINTAINER=	torstenb@FreeBSD.ORG
 # You can set USA_RESIDENT appropriately in /etc/make.conf if this bugs you..
 
 .if defined(USA_RESIDENT) && ${USA_RESIDENT} == YES
-DISTFILES=	${DISTNAME}.tar.gz
 MASTER_SITES=	\
 	ftp://ftp.funet.fi/pub/unix/security/login/ssh/ \
 	ftp://nic.funet.fi/pub/crypt/mirrors/ftp.dsi.unimi.it/applied-crypto/ \
@@ -26,7 +25,11 @@ MASTER_SITES=	\
 	ftp://idea.sec.dsi.unimi.it/pub/security/crypt/math/ \
 	ftp://ftp.univie.ac.at/security/crypt/cryptography/asymmetric/rsa/ \
 	ftp://isdec.vc.cvut.cz/pub/security/unimi/crypt/applied-crypto/
+
+CONFIGURE_ARGS+= --with-rsaref
+BUILD_DEPENDS+= ${PORTSDIR}/security/rsaref/work/.extract_done:${PORTSDIR}/security/rsaref
 .endif
+
 #
 # Use Phil Karn's asm patches to speed up DES on intel.
 # Download by hand from http://www.cryptography.org/cgi-bin/crypto.cgi/ssh/  
@@ -53,11 +56,6 @@ CONFIGURE_ARGS= --prefix=${PREFIX} --with-etcdir=${PREFIX}/etc
 #over a secure medium.  This is normally dangerous since it can lead to the
 #disclosure keys and passwords.
 #CONFIGURE_ARGS+= --with-none
-
-.if defined(USA_RESIDENT) && ${USA_RESIDENT} == YES
-CONFIGURE_ARGS+= --with-rsaref
-BUILD_DEPENDS+= ${PORTSDIR}/security/rsaref/work/.extract_done:${PORTSDIR}/security/rsaref
-.endif
 
 .if defined(KRB5_HOME) && exists(${KRB5_HOME})
 CONFIGURE_ARGS+=--with-kerberos5=${KRB5_HOME} --enable-kerberos-tgt-passing
