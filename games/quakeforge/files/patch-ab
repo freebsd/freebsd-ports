@@ -1,32 +1,19 @@
-
-$FreeBSD$
-
---- configure.in.orig	Sun Feb 27 13:26:03 2000
-+++ configure.in	Wed Apr 17 17:43:43 2002
-@@ -210,7 +210,7 @@
-    fi
-    save_CPPFLAGS="$CPPFLAGS"
-    CPPFLAGS="$CPPFLAGS $SDL_CFLAGS"
--   AC_CHECK_HEADER(SDL/SDL.h, HAS_SDL=yes, HAS_SDL=no)
-+   AC_CHECK_HEADER(SDL.h, HAS_SDL=yes, HAS_SDL=no)
-    CPPFLAGS="$save_CPPFLAGS"
- fi
- 
-@@ -335,7 +335,7 @@
- dnl Make sure -lpthread works (for SDL)
- if test "x$HAS_SDL" = xyes; then
-    AC_CHECK_LIB(pthread, pthread_exit ,SDL_LIBS="$SDL_LIBS -lpthread"
--     HAS_SDL=yes, HAS_SDL=no, [$SDL_LIBS])
-+     HAS_SDL=yes, HAS_SDL=yes, [$SDL_LIBS])
- fi
- if test "x$HAS_SDL" != xyes; then
-    SDL_CFLAGS="" SDL_LIBS=""
-@@ -343,7 +343,7 @@
- 
- dnl Make sure -lSDL works
- if test "x$HAS_SDL" = xyes; then
--   AC_CHECK_LIB(SDL, SDL_Init, SDL_LIBS="$SDL_LIBS -lSDL"
-+   AC_CHECK_LIB(SDL-1.1, SDL_Init, SDL_LIBS="$SDL_LIBS"
-      HAS_SDL=yes, HAS_SDL=no, [$SDL_LIBS])
- fi
- if test "x$HAS_SDL" != xyes; then
+--- libs/util/quakeio.c.orig	16 Oct 2002 04:59:34 -0000	1.18
++++ libs/util/quakeio.c	24 Oct 2002 22:36:15 -0000	1.19
+@@ -425,8 +425,14 @@
+ 				res = fseek (file->file, offset, whence);
+ 				break;
+ 			case SEEK_END:
+-				res = fseek (file->file,
+-							 file->start + file->size - offset, SEEK_SET);
++				if (file->size == -1) {
++					// we don't know the size (due to writing) so punt and
++					// pass on the request as-is
++					res = fseek (file->file, offset, SEEK_END);
++				} else {
++					res = fseek (file->file,
++								 file->start + file->size - offset, SEEK_SET);
++				}
+ 				break;
+ 			default:
+ 				errno = EINVAL;
