@@ -20,6 +20,7 @@ MAINTAINER=	anders@FreeBSD.org
 IGNOREFILES=	notes.html
 
 GNU_CONFIGURE=	yes
+USE_REINPLACE=	yes
 
 MAN1=		makeweb.1 htpasswd.1
 MAN8=		thttpd.8 redirect.8 ssi.8 syslogtocern.8
@@ -61,6 +62,7 @@ do-install:
 	@if [ ! -f ${PREFIX}/etc/rc.d/thttpd.sh ]; then \
 		${ECHO} "Installing ${PREFIX}/etc/rc.d/thttpd.sh startup file."; \
 		${INSTALL_SCRIPT} -m 751 ${FILESDIR}/thttpd.sh ${PREFIX}/etc/rc.d/thttpd.sh; \
+		${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${PREFIX}/etc/rc.d/thttpd.sh; \
 	fi
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/thttpd
