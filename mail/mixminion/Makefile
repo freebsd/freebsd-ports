@@ -13,6 +13,8 @@ MASTER_SITES=	http://www.mixminion.net/dist/${PORTVERSION}/
 MAINTAINER=	freebsd-ports@rikrose.net
 COMMENT=	A Type III Anonymous Remailer
 
+BROKEN=		"Unfetchable"
+
 USE_OPENSSL=	yes
 USE_REINPLACE=	yes
 USE_PYTHON=	2.0+
