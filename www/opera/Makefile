@@ -7,31 +7,31 @@
 
 PORTNAME=	opera
 PORTVERSION=	${OPERA_VER}.${OPERA_DATE}
-PORTREVISION=	2
 CATEGORIES=	www
-MASTER_SITES=	http://ftp.scarlet.be/pub/opera/unix/freebsd/${OPERA_VER:S/.//}/${OPERA_REL}/en/static/ \
-		ftp://ftp.planetmirror.com/pub/opera/unix/freebsd/${OPERA_VER:S/.//}/${OPERA_REL}/en/static/ \
-		http://www.mehok.uni-miskolc.hu/opera/unix/freebsd/${OPERA_VER:S/.//}/${OPERA_REL}/en/static/ \
-		ftp://ftp.heanet.ie/pub/opera/unix/freebsd/${OPERA_VER:S/.//}/${OPERA_REL}/en/static/ \
-		ftp://opera.nsc.no/pub/opera/unix/freebsd/${OPERA_VER:S/.//}/${OPERA_REL}/en/static/ \
-		http://ftp.task.gda.pl/pub/opera/unix/freebsd/${OPERA_VER:S/.//}/${OPERA_REL}/en/static/ \
-		ftp://ftp.idilis.ro/mirrors/opera/unix/freebsd/${OPERA_VER:S/.//}/${OPERA_REL}/en/static/ \
-		http://www.fastmirrors.org/pub/opera/unix/freebsd/${OPERA_VER:S/.//}/${OPERA_REL}/en/static/ \
-		http://ftp.sunet.se/pub/www/clients/Opera/unix/freebsd/${OPERA_VER:S/.//}/${OPERA_REL}/en/static/ \
-		ftp://mirror.switch.ch/mirror/opera/unix/freebsd/${OPERA_VER:S/.//}/${OPERA_REL}/en/static/ \
-		ftp://ftp.tiscali.nl/pub/mirrors/opera/unix/freebsd/${OPERA_VER:S/.//}/${OPERA_REL}/en/static/ \
-		http://ftp.ankara.edu.tr/opera/unix/freebsd/${OPERA_VER:S/.//}/${OPERA_REL}/en/static/ \
-		ftp://files.downloadthat.com/opera/unix/freebsd/${OPERA_VER:S/.//}/${OPERA_REL}/en/static/ \
-		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/www/opera/unix/freebsd/${OPERA_VER:S/.//}/${OPERA_REL}/en/static/&,} \
-		ftp://ftp.opera.com/pub/opera/unix/freebsd/${OPERA_VER:S/.//}/${OPERA_REL}/en/static/
+MASTER_SITES=	http://ftp.scarlet.be/pub/opera/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/${OPERA_REL}/en/static/ \
+		ftp://ftp.planetmirror.com/pub/opera/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/${OPERA_REL}/en/static/ \
+		http://www.mehok.uni-miskolc.hu/opera/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/${OPERA_REL}/en/static/ \
+		ftp://ftp.heanet.ie/pub/opera/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/${OPERA_REL}/en/static/ \
+		ftp://opera.nsc.no/pub/opera/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/${OPERA_REL}/en/static/ \
+		http://ftp.task.gda.pl/pub/opera/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/${OPERA_REL}/en/static/ \
+		ftp://ftp.idilis.ro/mirrors/opera/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/${OPERA_REL}/en/static/ \
+		http://www.fastmirrors.org/pub/opera/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/${OPERA_REL}/en/static/ \
+		http://ftp.sunet.se/pub/www/clients/Opera/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/${OPERA_REL}/en/static/ \
+		ftp://mirror.switch.ch/mirror/opera/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/${OPERA_REL}/en/static/ \
+		ftp://ftp.tiscali.nl/pub/mirrors/opera/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/${OPERA_REL}/en/static/ \
+		http://ftp.ankara.edu.tr/opera/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/${OPERA_REL}/en/static/ \
+		ftp://files.downloadthat.com/opera/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/${OPERA_REL}/en/static/ \
+		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/www/opera/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/${OPERA_REL}/en/static/&,} \
+		ftp://ftp.opera.com/pub/opera/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/${OPERA_REL}/en/static/
 DISTNAME=	${PORTNAME}-${OPERA_VER}-${OPERA_DATE}.1-static-qt.i386.freebsd-en
 
 MAINTAINER=	avleeuwen@piwebs.com
 COMMENT=	A blazingly fast, full-featured, standards-compliant browser
 
 OPERA_VER=	7.54
+OPERA_MINVER=	u1
 OPERA_REL=	final
-OPERA_DATE=	20040803
+OPERA_DATE=	20041210
 
 DATADIR=	${PREFIX}/share/${PORTNAME}
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}
@@ -73,6 +73,9 @@ pre-everything::
 	@${ECHO_CMD} '===>'
 	@${ECHO_CMD} '===> Define WITHOUT_ASPELL to not install aspell.'
 .endif
+
+pre-patch:
+	@${REINPLACE_CMD} -e 's|||' ${WRKSRC}/ini/pluginpath.ini
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g ; \

@@ -1,5 +1,5 @@
---- install.sh.orig	Mon Jul 19 22:19:01 2004
-+++ install.sh	Mon Jul 19 22:52:26 2004
+--- install.sh.orig	Fri Dec 10 13:53:57 2004
++++ install.sh	Wed Dec 15 15:35:18 2004
 @@ -373,7 +373,7 @@
  	    mvv=''    # SunOS mv (no -v verbose option)
  	;;
@@ -9,41 +9,7 @@
  		cpf='-f'
  		if test "$verbose" -gt '1'; then
  		    chmodv='-v'
-@@ -760,12 +760,10 @@
- 
-     wrapper_opera_plugin_paths="    \"\${HOME}/.opera/plugins\" \\
-     ${str_localdirplugin} \\
--    /usr/lib/opera/plugins \\
--    /usr/local/lib/opera/plugins \\
--    /opt/lib/opera/plugins \\"
-+    %%LOCALBASE%%/share/opera/plugins \\"
- 
-     case "${machine}:${os}" in
--	i[3456]86:Linux|x86_64:Linux|i[3456]86:FreeBSD|i[3456]86:NetBSD|i[3456]86:OpenBSD)
-+	i[3456]86:Linux|x86_64:Linux|i[3456]86:FreeBSD|amd64:FreeBSD|i[3456]86:NetBSD|i[3456]86:OpenBSD)
- 	    wrapper_plugin_paths="
-     /usr/local/Acrobat[45]/Browsers/intellinux \\
-     /usr/lib/Acrobat[45]/Browsers/intellinux \\
-@@ -817,15 +815,10 @@
- 	;;
-     esac
-     wrapper_netscape_plugin_paths="
--    /usr/lib/RealPlayer8/Plugins \\
--    /usr/lib/realplay/plugins \\
--    /usr/lib/RealPlayer8 \\
--    /usr/lib/realplay \\
-+    %%LOCALBASE%%/lib/RealPlayer8/Plugins \\
-+    %%X11BASE%%/lib/browser_plugins \\
-     \"\${HOME}/.netscape/plugins\" \\
--    /opt/netscape/plugins \\
--    /usr/lib/netscape/plugins \\
--    /usr/local/netscape/plugins \\
--    /usr/local/lib/netscape/plugins \\"
-+    %%LOCALBASE%%/lib/netscape-linux/plugins \\"
- 
-     wrapper_file="${wrapper_dir}/opera"
-     
-@@ -887,39 +880,12 @@
+@@ -873,47 +873,12 @@
  
  if test ! \"\${OPERA_JAVA_DIR}\"; then
  
@@ -56,6 +22,12 @@
 +    PREFIXES=\"%%LOCALBASE%%\"
  
      for SUNJAVA in \\
+-	j2re1.4.2_04 \\
+-	j2sdk1.4.2_04/jre \\
+-	j2re1.4.2_03 \\
+-	j2sdk1.4.2_03/jre \\
+-	j2re1.4.2_02 \\
+-	j2sdk1.4.2_02/jre \\
 -	j2re1.4.2_01 \\
 -	j2sdk1.4.2_01/jre \\
 -	j2re1.4.2 \\
@@ -77,16 +49,18 @@
 -	jre1.3.1 \\
 -	j2re1.3 \\
 -	j2se/1.3/jre \\
+-	SunJava2-1.3/jre \\
 -	java2re \\
  	jdk1.2.2/jre \\
 -	jdk1.2/jre \\
 -	jre \\
+-	java \\
 +	jdk1.3.1/jre \\
 +	jdk1.4.2/jre \\
  	; do
  	for PREFIX in \${PREFIXES}; do
  	    if test -f \"\${PREFIX}/\${SUNJAVA}/lib/${wrapper_sunjava_machine}/libjava.so\"; then OPERA_JAVA_DIR=\"\${PREFIX}/\${SUNJAVA}/lib/${wrapper_sunjava_machine}\" && break; fi
-@@ -983,11 +949,8 @@
+@@ -962,11 +927,8 @@
  
  # Acrobat Reader
  for BINDIR in \\
@@ -100,7 +74,7 @@
      ; do
      if test -d \${BINDIR} ; then PATH=\${PATH}:\${BINDIR}; fi
  done
-@@ -1278,36 +1241,13 @@
+@@ -1281,36 +1243,13 @@
  
  	if test -z "${OPERADESTDIR}"; then
  
@@ -141,7 +115,7 @@
  
  	fi # OPERADESTDIR
  
-@@ -1436,72 +1376,36 @@
+@@ -1439,72 +1378,36 @@
  
      debug_msg 1 "in gnome()"
  
@@ -236,7 +210,7 @@
     fi
     # Add ximian here
  }
-@@ -1512,39 +1416,31 @@
+@@ -1515,39 +1418,31 @@
  
      debug_msg 1 "in kde()"
  

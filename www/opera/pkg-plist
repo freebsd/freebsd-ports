@@ -18,7 +18,6 @@ bin/opera
 %%DATADIR%%/help/glossary.html
 %%DATADIR%%/help/help.css
 %%DATADIR%%/help/history.html
-%%DATADIR%%/help/hotlist.html
 %%DATADIR%%/help/index.html
 %%DATADIR%%/help/input.html
 %%DATADIR%%/help/keyboard.html
@@ -46,6 +45,7 @@ bin/opera
 %%DATADIR%%/help/toolbars.html
 %%DATADIR%%/help/windows.html
 %%DATADIR%%/hhd.ssr
+%%DATADIR%%/html40_entities.dtd
 %%DATADIR%%/images/background.gif
 %%DATADIR%%/images/blank.gif
 %%DATADIR%%/images/drive.gif
