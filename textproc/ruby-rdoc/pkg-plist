@@ -4,20 +4,35 @@ bin/rdoc
 %%RUBY_SITELIBDIR%%/markup/simple_markup/fragments.rb
 %%RUBY_SITELIBDIR%%/markup/simple_markup/inline.rb
 %%RUBY_SITELIBDIR%%/markup/simple_markup/lines.rb
+%%RUBY_SITELIBDIR%%/markup/simple_markup/preprocess.rb
 %%RUBY_SITELIBDIR%%/markup/simple_markup/to_html.rb
 %%RUBY_SITELIBDIR%%/rdoc/code_objects.rb
 %%RUBY_SITELIBDIR%%/rdoc/diagram.rb
+%%RUBY_SITELIBDIR%%/rdoc/generators/chm_generator.rb
 %%RUBY_SITELIBDIR%%/rdoc/generators/html_generator.rb
-%%RUBY_SITELIBDIR%%/rdoc/generators/html_template/kilmer.rb
-%%RUBY_SITELIBDIR%%/rdoc/generators/html_template/standard.rb
+%%RUBY_SITELIBDIR%%/rdoc/generators/template/chm/chm.rb
+%%RUBY_SITELIBDIR%%/rdoc/generators/template/html/html.rb
+%%RUBY_SITELIBDIR%%/rdoc/generators/template/html/kilmer.rb
+%%RUBY_SITELIBDIR%%/rdoc/generators/template/xml/rdf.rb
+%%RUBY_SITELIBDIR%%/rdoc/generators/template/xml/xml.rb
+%%RUBY_SITELIBDIR%%/rdoc/generators/xml_generator.rb
 %%RUBY_SITELIBDIR%%/rdoc/options.rb
-%%RUBY_SITELIBDIR%%/rdoc/parse.rb
+%%RUBY_SITELIBDIR%%/rdoc/parsers/parse_c.rb
+%%RUBY_SITELIBDIR%%/rdoc/parsers/parse_f95.rb
+%%RUBY_SITELIBDIR%%/rdoc/parsers/parse_rb.rb
+%%RUBY_SITELIBDIR%%/rdoc/parsers/parse_simple.rb
+%%RUBY_SITELIBDIR%%/rdoc/parsers/parserfactory.rb
+%%RUBY_SITELIBDIR%%/rdoc/rdoc.rb
 %%RUBY_SITELIBDIR%%/rdoc/template.rb
 %%RUBY_SITELIBDIR%%/rdoc/tokenstream.rb
 @dirrm %%RUBY_SITELIBDIR%%/dot
 @dirrm %%RUBY_SITELIBDIR%%/markup/simple_markup
 @dirrm %%RUBY_SITELIBDIR%%/markup
-@dirrm %%RUBY_SITELIBDIR%%/rdoc/generators/html_template
+@dirrm %%RUBY_SITELIBDIR%%/rdoc/parsers
+@dirrm %%RUBY_SITELIBDIR%%/rdoc/generators/template/xml
+@dirrm %%RUBY_SITELIBDIR%%/rdoc/generators/template/html
+@dirrm %%RUBY_SITELIBDIR%%/rdoc/generators/template/chm
+@dirrm %%RUBY_SITELIBDIR%%/rdoc/generators/template
 @dirrm %%RUBY_SITELIBDIR%%/rdoc/generators
 @dirrm %%RUBY_SITELIBDIR%%/rdoc
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/rdoc/markup/sample.rb
