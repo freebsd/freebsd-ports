@@ -8,7 +8,8 @@
 PORTNAME=	gpa
 PORTVERSION=	0.4.3
 CATEGORIES=	security
-MASTER_SITES=	ftp://ftp.gnupg.org/gcrypt/alpha/gpa/
+MASTER_SITES=	${MASTER_SITE_GNUPG}
+MASTER_SITE_SUBDIR=	alpha/gpa
 
 MAINTAINER=	ports@FreeBSD.org
 
