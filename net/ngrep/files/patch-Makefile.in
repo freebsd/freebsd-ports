@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Thu Feb 24 17:24:22 2005
++++ Makefile.in	Thu Feb 24 17:24:27 2005
+@@ -25,7 +25,7 @@
+ 
+ bindir      = $(prefix)/bin
+ datadir     = $(prefix)/share
+-mandir      = $(datadir)/man
++mandir      = $(prefix)/man
+ 
+ BINDIR_INSTALL = $(prefix)/bin
+ MANDIR_INSTALL = $(mandir)/man8
