@@ -1,0 +1,31 @@
+--- functions	Fri Apr  7 11:11:34 2000
++++ functions.new	Sat Jun 10 13:31:31 2000
+@@ -11,7 +11,7 @@
+ #
+ 
+ # First set up a default search path.
+-PATH=/opt/gnu/bin:/sbin:/usr/sbin:/bin:/usr/bin:/usr/X11R6/bin
++PATH=/sbin:/usr/sbin:/bin:/usr/bin:/usr/X11R6/bin:/usr/local/bin:/usr/local/sbin
+ export PATH
+ 
+ # Get a sane screen width
+@@ -174,7 +174,7 @@
+ #	fi
+ 
+ 	# Finally try to extract it from ps
+-	pid=`ps -eo pid,ppid,fname | egrep -v $$ | awk 'BEGIN { prog=ARGV[1]; ARGC=1 } { if ((prog == $3) || (("(" prog ")") == $3) || (("[" prog "]") == $3) || ((prog ":") == $3)) { print $1 ; exit 0 } }' $1`
++	pid=`ps -axco pid,ppid,command | egrep -v $$ | awk 'BEGIN { prog=ARGV[1]; ARGC=1 } { if ((prog == $3) || (("(" prog ")") == $3) || (("[" prog "]") == $3) || ((prog ":") == $3)) { print $1 ; exit 0 } }' $1`
+ 	if [ "$pid" != "" ] ; then
+ 	        echo $pid
+ 	        return 0
+@@ -206,8 +206,8 @@
+ 	        fi
+ 	fi
+ 
+-	# See if /var/lock/subsys/$1 exists
+-	if [ -f /var/lock/subsys/$1 ]; then
++	# See if /var/spool/lock/$1 exists
++	if [ -f /var/spool/lock/$1 ]; then
+ 		echo "$1 dead but subsys locked"
+ 		return 2
+ 	fi

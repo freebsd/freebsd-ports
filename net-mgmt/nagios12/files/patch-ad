@@ -1,0 +1,69 @@
+--- configure.orig	Tue Feb  3 05:45:08 2004
++++ configure	Wed Feb  4 21:26:46 2004
+@@ -11,7 +11,7 @@
+ ac_help=
+ ac_default_prefix=/usr/local
+ # Any additions from configure.in:
+-ac_default_prefix=/usr/local/nagios
++#ac_default_prefix=/usr/local/nagios
+ ac_help="$ac_help
+ --with-nagios-user=<user> sets user name to run nagios"
+ ac_help="$ac_help
+@@ -576,9 +576,9 @@
+ # Prefer explicitly selected file to automatically selected ones.
+ if test -z "$CONFIG_SITE"; then
+   if test "x$prefix" != xNONE; then
+-    CONFIG_SITE="$prefix/share/config.site $prefix/etc/config.site"
++    CONFIG_SITE="$prefix/share/nagios/config.site $prefix/etc/nagios/config.site"
+   else
+-    CONFIG_SITE="$ac_default_prefix/share/config.site $ac_default_prefix/etc/config.site"
++    CONFIG_SITE="$ac_default_prefix/share/nagios/config.site $ac_default_prefix/etc/nagios/config.site"
+   fi
+ fi
+ for ac_site_file in $CONFIG_SITE; do
+@@ -2608,6 +2608,9 @@
+ 	LDFLAGS="${LDFLAGS} -L${withval}"
+ 	LD_RUN_PATH="${withval}${LD_RUN_PATH:+:}${LD_RUN_PATH}"
+ 	
++else
++	LDFLAGS="${LDFLAGS} -L/usr/local/lib"
++	LD_RUN_PATH="/usr/local/ib${LD_RUN_PATH:+:}${LD_RUN_PATH}"
+ fi
+ 
+ # Check whether --with-gd-inc or --without-gd-inc was given.
+@@ -2615,6 +2618,8 @@
+   withval="$with_gd_inc"
+   
+ 	CFLAGS="${CFLAGS} -I${withval}"
++else
++	CFLAGS="${CFLAGS} -I/usr/local/include/gd"
+ 	
+ fi
+ 
+@@ -2692,14 +2697,14 @@
+ 
+ 
+ 	
+-		echo $ac_n "checking for gdImagePng in -lgd (order 1)""... $ac_c" 1>&6
+-echo "configure:2697: checking for gdImagePng in -lgd (order 1)" >&5
++		echo $ac_n "checking for gdImagePng in -lgd1 (order 1)""... $ac_c" 1>&6
++echo "configure:2697: checking for gdImagePng in -lgd1 (order 1)" >&5
+ 					ac_lib_var=`echo gd'_'gdImagePng'_'1 | sed 'y%./+-%__p_%'`
+ 	if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-	LIBS="-lgd $ICONV -lz -lm -lpng -ljpeg $LIBS"
++	LIBS="-lgd1 $ICONV -lz -lm -lpng -ljpeg $LIBS"
+ 	cat > conftest.$ac_ext <<EOF
+ #line 2705 "configure"
+ #include "confdefs.h"
+@@ -2729,7 +2734,7 @@
+ 	  echo "$ac_t""yes" 1>&6
+ 	  
+ 			GDLIBFOUND=yep
+-			GDLIBS="-lgd $ICONV -lz -lm -lpng -ljpeg"
++			GDLIBS="-lgd1 $ICONV -lz -lm -lpng -ljpeg"
+ 	        	
+ 	else
+ 	  echo "$ac_t""no" 1>&6
