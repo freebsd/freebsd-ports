@@ -16,7 +16,10 @@ MAINTAINER=	thierry@pompo.net
 COMMENT=	Prepare the installation of the PEAR framework
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/php-config:${PORTSDIR}/www/mod_php4
+.if defined(WITH_APACHE2)
+RUN_DEPENDS=	${LOCALBASE}/libexec/apache2/libphp4.so:${PORTSDIR}/www/mod_php4.else
 RUN_DEPENDS=	${LOCALBASE}/libexec/apache/libphp4.so:${PORTSDIR}/www/mod_php4
+.endif
 
 NO_BUILD=	yes
 EXAMPLESDIR=	${PREFIX}/share/examples/pear
@@ -27,7 +30,7 @@ EXAMPLESDIR=	${PREFIX}/share/examples/pear
 PHP_VERSION!=	${LOCALBASE}/bin/php-config --version
 PHP_BASE!=	${LOCALBASE}/bin/php-config --prefix
 .else
-PHP_VERSION=	4.3.0
+PHP_VERSION=	4.3.1
 PHP_BASE=	${LOCALBASE}
 .endif
 LPHP_LIB=	lib/php
