@@ -1,0 +1,8 @@
+--- src/tiff/Imakefile.orig	Mon May 22 20:04:49 2000
++++ src/tiff/Imakefile	Mon May 22 20:04:52 2000
+@@ -1,4 +1,4 @@
+-TIFFDIR = /Apps/WSoundPrefs.app/tiff/
++TIFFDIR = /GNUstep/Apps/WSoundPrefs.app/tiff/
+ 
+ TIFFS = loadset.tiff saveset.tiff
+ 

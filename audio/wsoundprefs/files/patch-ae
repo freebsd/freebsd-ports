@@ -1,0 +1,8 @@
+--- src/xpm/Imakefile.orig	Mon May 22 20:05:03 2000
++++ src/xpm/Imakefile	Mon May 22 20:06:04 2000
+@@ -1,4 +1,4 @@
+-XPMDIR = /Apps/WSoundPrefs.app/xpm/
++XPMDIR = /GNUstep/Apps/WSoundPrefs.app/xpm/
+ 
+ XPMS = loadset.xpm saveset.xpm
+ 
