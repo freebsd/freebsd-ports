@@ -28,7 +28,7 @@ BROKEN=		"Does not compile on alpha"
 .endif
 
 .if exists(${LOCALBASE}/bin/gauche-config)
-GAUCHE_VER!=	gauche-config -V
+GAUCHE_VER!=	${LOCALBASE}/bin/gauche-config -V
 .else
 GAUCHE_VER=	none
 .endif
