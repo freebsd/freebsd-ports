@@ -3323,6 +3323,7 @@ igal		ports/www/igal
 iiimecf		ports/editors/iiimecf
 iiimf-client-lib	ports/textproc/iiimf-client-lib
 iiimf-csconv	ports/textproc/iiimf-csconv
+iiimf-gnome-im-switcher	ports/textproc/iiimf-gnome-im-switcher
 iiimf-gtk	ports/textproc/iiimf-gtk
 iiimf-headers	ports/textproc/iiimf-headers
 iiimf-le-unit	ports/textproc/iiimf-le-unit
