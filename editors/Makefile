@@ -77,7 +77,6 @@
     SUBDIR += semi-xemacs21-mule-current
     SUBDIR += semi-xemacs20
     SUBDIR += semi-xemacs20-current
-    SUBDIR += staroffice
     SUBDIR += staroffice5
     SUBDIR += sted
     SUBDIR += tamago
