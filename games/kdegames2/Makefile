@@ -3,7 +3,7 @@
 # Date created:        28 October 1997
 # Whom:                Stefan Eßer <se@freebsd.org>
 #
-# $Id: Makefile,v 1.16 1998/08/12 06:29:27 asami Exp $
+# $Id: Makefile,v 1.17 1998/09/15 11:45:50 asami Exp $
 #
 
 DISTNAME=	kdegames-1.0
@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR= stable/1.0/distribution/tar/generic/source
 
 MAINTAINER=	se@freebsd.org
 
-LIB_DEPENDS=	gif\\.[23]\\.:${PORTSDIR}/graphics/giflib \
+LIB_DEPENDS=	gif.3:${PORTSDIR}/graphics/giflib \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		kdecore\\.1\\.[0-9]:${PORTSDIR}/x11/kdelibs \
 		kdeui\\.1\\.[0-9]:${PORTSDIR}/x11/kdelibs \
