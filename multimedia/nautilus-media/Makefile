@@ -15,7 +15,7 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GStreamer-based multimedia views for Nautilus
 
-LIB_DEPENDS=	gstplay-0.6.0:${PORTSDIR}/multimedia/gstreamer-plugins
+LIB_DEPENDS=	gstplay-0.6.1:${PORTSDIR}/multimedia/gstreamer-plugins
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
