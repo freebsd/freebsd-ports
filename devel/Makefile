@@ -785,6 +785,7 @@
     SUBDIR += pharmacy
     SUBDIR += php-dbg
     SUBDIR += php-xdebug
+    SUBDIR += physfs
     SUBDIR += picasm
     SUBDIR += picp
     SUBDIR += picprog
