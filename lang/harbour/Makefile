@@ -25,6 +25,12 @@ LIB_DEPENDS=    slang.1:${PORTSDIR}/devel/libslang
 
 HB_DIR=${WRKDIR}/${PORTNAME}
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != "i386"
+IGNORE=		Hangs during build on !i386
+.endif
+
 .if defined(NOPORTDOCS)
 post-install:
 	${INSTALL_PROGRAM} ${HB_DIR}/bin/harbour ${PREFIX}/bin
@@ -84,4 +90,4 @@ post-install:
 	-@echo
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
