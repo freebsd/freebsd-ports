@@ -62,7 +62,6 @@ share/namazu/filter/gfilter.pl
 share/namazu/filter/gzip.pl
 share/namazu/filter/hnf.pl
 share/namazu/filter/html.pl
-share/namazu/filter/ichitaro456.pl
 share/namazu/filter/mailnews.pl
 share/namazu/filter/man.pl
 share/namazu/filter/mhonarc.pl
