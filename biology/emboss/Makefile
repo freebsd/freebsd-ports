@@ -10,8 +10,8 @@ PORTVERSION=	2.4.1
 PORTREVISION=	3
 CATEGORIES=	biology
 MASTER_SITES=	ftp://ftp.uk.embnet.org/pub/EMBOSS/old/ \
-		ftp://ftp.es.embnet.org/pub/software/emboss/EMBOSS/old \
-		ftp://ftp.ebi.ac.uk/pub/software/unix/EMBOSS/
+		ftp://ftp.es.embnet.org/pub/software/emboss/EMBOSS/old/
+#		ftp://ftp.ebi.ac.uk/pub/software/unix/EMBOSS/
 DISTFILES=	${PORTNAME:U}-${PORTVERSION}${EXTRACT_SUFX}
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${PORTNAME:U}-${PORTVERSION}${EXTRACT_SUFX}
