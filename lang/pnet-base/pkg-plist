@@ -1,4 +1,5 @@
 bin/al
+bin/ilgac
 bin/cli-unknown-ar
 bin/cli-unknown-gcc
 bin/cli-unknown-ranlib
@@ -35,6 +36,7 @@ include/pnet/il_align.h
 include/pnet/il_bignum.h
 include/pnet/il_coder.h
 include/pnet/il_config.h
+include/pnet/il_console.h
 include/pnet/il_crypt.h
 include/pnet/il_debug.h
 include/pnet/il_decimal.h
@@ -50,6 +52,7 @@ include/pnet/il_opcodes.h
 include/pnet/il_profile.h
 include/pnet/il_program.h
 include/pnet/il_regex.h
+include/pnet/il_serial.h
 include/pnet/il_serialize.h
 include/pnet/il_sysio.h
 include/pnet/il_system.h
@@ -82,6 +85,6 @@ lib/pnet/libgc.so
 lib/pnet/libgc.so.1
 @dirrm include/pnet
 @dirrm lib/cscc/plugins
-@dirrm lib/cscc
+@unexec rmdir %D/lib/cscc 2> /dev/null || true
 @dirrm lib/pnet/elf
 @dirrm lib/pnet

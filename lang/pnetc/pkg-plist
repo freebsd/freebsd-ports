@@ -1,5 +1,7 @@
 lib/cscc/lib/libc64.dll
 lib/cscc/lib/libm64.dll
+lib/cscc/lib/1.2.3400.0/libc64.dll
+lib/cscc/lib/1.2.3400.0/libm64.dll
 share/cscc/include/alloca.h
 share/cscc/include/assert.h
 share/cscc/include/bits/libc-lock.h
@@ -52,8 +54,11 @@ share/cscc/include/varargs.h
 share/cscc/include/wchar.h
 share/cscc/include/wctype.h
 share/cscc/include/xlocale.h
+@unexec rmdir %D/lib/cscc/lib/1.2.3400.0 2> /dev/null || true
+@unexec rmdir %D/lib/cscc/lib 2> /dev/null || true
+@unexec rmdir %D/lib/cscc 2> /dev/null || true
 @dirrm share/cscc/include/bits
 @dirrm share/cscc/include/gnu
 @dirrm share/cscc/include/sys
 @dirrm share/cscc/include
-@dirrm share/cscc
+@unexec rmdir %D/share/cscc 2> /dev/null || true

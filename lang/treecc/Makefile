@@ -17,5 +17,6 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 MAN1=		treecc.1
 INFO=		treecc
+PLIST_FILES=	bin/treecc
 
 .include <bsd.port.mk>
