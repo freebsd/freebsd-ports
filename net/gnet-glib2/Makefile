@@ -7,6 +7,7 @@
 
 PORTNAME=	gnet
 PORTVERSION=	1.1.9
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.gnetlibrary.org/src/
 PKGNAMESUFFIX=	-glib2
@@ -40,6 +41,8 @@ post-patch:
 # install configincludedir correctly
 	@${REINPLACE_CMD} -E -e 's|^(configincludedir).+$$|\1=\$$\(pkgincludedir\)-glib2|' \
 		${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|-lc_r|${PTHREAD_LIBS}|g' \
+		${WRKSRC}/configure
 
 post-install:
 	@${MKDIR} ${PREFIX}/bin
