@@ -3,15 +3,18 @@
 # Date created:		09 July 1998
 # Whom:			Adrian Penisoara <ady@freebsd.ady.ro>
 #
-# $Id: Makefile,v 1.32 1999/04/21 00:39:34 scrappy Exp $
+# $Id: Makefile,v 1.33 1999/06/21 07:52:21 mharo Exp $
 #
+# The changes to ?= on some of these lines is required for the
+# pine4-ssl port. Also, please mirror changes to the files/
+# directory to the pine4-ssl port.
 
-DISTNAME=       pine4.10
-PKGNAME=        pine-4.10
+DISTNAME?=       pine4.10
+PKGNAME?=        pine-4.10
 CATEGORIES=     mail news
 MASTER_SITES=	ftp://ftp.cac.washington.edu/pine/
 
-MAINTAINER=	pine@freebsd.ady.ro
+MAINTAINER?=	pine@freebsd.ady.ro
 
 Y2K=		http://www.washington.edu/pine/QandA/sysadmins.html#Millenium
 
