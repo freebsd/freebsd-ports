@@ -12,8 +12,8 @@ sbin/slapcat
 sbin/slapindex
 sbin/slappasswd
 @exec mkdir -p %%LDAP_RUN_DIR%%
-@exec mkdir -p %%DATABASEDIR%%
-@exec mkdir -p %%SLURPDIR%%
 @unexec rmdir %%LDAP_RUN_DIR%% 2>/dev/null || true
+@exec mkdir -p %%DATABASEDIR%%
 @unexec rmdir %%DATABASEDIR%% 2>/dev/null || true
+@exec mkdir -p %%SLURPDIR%%
 @unexec rmdir %%SLURPDIR%% 2>/dev/null || true
