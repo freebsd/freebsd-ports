@@ -1,8 +1,13 @@
 bin/bless
-lib/bless/bless.exe
+lib/bless/bin/bless.exe
+lib/bless/data/Makefile
+lib/bless/data/bless-about.png
+lib/bless/data/bless-icon.png
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/Changelog
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm lib/bless/data
+@dirrm lib/bless/bin
 @dirrm lib/bless

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bless
-PORTVERSION=	0.2.3
+PORTVERSION=	0.3.0
 CATEGORIES=	editors
 MASTER_SITES=	http://download.gna.org/bless/
 
@@ -24,7 +24,7 @@ GNU_CONFIGURE=	yes
 DOCS=		AUTHORS Changelog NEWS README
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|make|${GMAKE}|g' \
+	@${REINPLACE_CMD} -e 's|make|${GMAKE}|g ; s|config.gmake|config.make|g' \
 		${WRKSRC}/Makefile
 
 .ifndef (NOPORTDOCS)
