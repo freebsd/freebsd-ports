@@ -1,5 +1,5 @@
---- share/bin/sysinfo.org	Sat May 25 18:26:02 2002
-+++ share/bin/sysinfo	Sat May 25 18:27:15 2002
+--- usr/local/MuPADscilab-3.1.1/share/bin/sysinfo~	Sun Mar 20 00:09:57 2005
++++ usr/local/MuPADscilab-3.1.1/share/bin/sysinfo	Sun Mar 20 00:17:03 2005
 @@ -10,7 +10,9 @@
  
  PATH=/bin:/usr/bin:/usr/ucb:/usr/bsd
@@ -9,5 +9,5 @@
 +echo $ARCH
 +exit
  
- if [ -x /usr/bin/hostinfo ] ; then
-     if [ "`hostinfo | grep NeXT`" != "" ] ; then
+ if test -x /usr/bin/hostinfo ; then
+     if test "`hostinfo | grep NeXT`" != "" ; then
