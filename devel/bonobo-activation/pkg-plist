@@ -1,8 +1,6 @@
 bin/activation-client
 bin/bonobo-activation-empty-server
 bin/bonobo-activation-run-query
-bin/bonobo-activation-server
-bin/bonobo-activation-sysconf
 bin/bonobo-slay
 etc/bonobo-activation/bonobo-activation-config.xml
 include/bonobo-activation-2.0/bonobo-activation/Bonobo_Activation_types.h
@@ -26,6 +24,8 @@ libdata/bonobo/servers/broken.server
 libdata/bonobo/servers/empty.server
 libdata/bonobo/servers/plugin.server
 libdata/pkgconfig/bonobo-activation-2.0.pc
+libexec/bonobo-activation-server
+sbin/bonobo-activation-sysconf
 share/doc/bonobo-activation/api-reference.html
 share/doc/bonobo-activation/architecture.html
 share/doc/bonobo-activation/async-activation.html
@@ -75,6 +75,7 @@ share/locale/fi/LC_MESSAGES/bonobo-activation.mo
 share/locale/fr/LC_MESSAGES/bonobo-activation.mo
 share/locale/ga/LC_MESSAGES/bonobo-activation.mo
 share/locale/gl/LC_MESSAGES/bonobo-activation.mo
+share/locale/hi/LC_MESSAGES/bonobo-activation.mo
 share/locale/hu/LC_MESSAGES/bonobo-activation.mo
 share/locale/it/LC_MESSAGES/bonobo-activation.mo
 share/locale/ja/LC_MESSAGES/bonobo-activation.mo
