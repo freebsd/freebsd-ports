@@ -1,10 +1,23 @@
 #!/bin/sh
+#
+# Koreanized Netscape startup file
+# basically based on Japanized Netscape
+#   ports/japanese/netscape4-communicator
+# CHOI Junho <cjh@kr.freebsd.org>, 98/12/28
+#
+
+if [ ! -d $HOME/.netscape ]; then
+        mkdir -m 700 $HOME/.netscape
+        cp @RDIR@/preferences.js $HOME/.netscape
+        chmod 644 $HOME/.netscape/preferences.js
+fi
+
 CHMOD='/bin/chmod'
 CP='/bin/cp -p'
 MKDIR='/bin/mkdir -p'
 export LANG; LANG=ko_KR.EUC
-export LC_ALL; LC_ALL=$LANG
-export LC_CTYPE; LC_CTYPE=$LANG
+export LC_ALL; LC_ALL=${LANG}
+export LC_CTYPE; LC_CTYPE=${LANG}
 export MOZILLA_HOME; MOZILLA_HOME=@NDIR@
 export MOZILLA_NO_ASYNC; MOZILLA_NO_ASYNC=True
 export CLASSPATH; CLASSPATH=.:$MOZILLA_HOME
@@ -12,8 +25,16 @@ export CLASSPATH; CLASSPATH=.:$MOZILLA_HOME
 export XKEYSYMDB; XKEYSYMDB=@X11BASE@/lib/X11/XKeysymDB
 export XAPPLRESDIR; XAPPLRESDIR=@RDIR@
 export XNLSPATH; XNLSPATH=${MOZILLA_HOME}/nls
-export PATH_LOCALE; PATH_LOCALE=@RDIR@/locale
+#export PATH_LOCALE; PATH_LOCALE=@RDIR@/locale
 export NPX_PLUGIN_PATH; NPX_PLUGIN_PATH=${MOZILLA_HOME}/plugins
 export TIMID_DIR; TIMID_DIR=/usr/local/lib/timidity
 export XCMSDB; XCMSDB=/dev/null
+if [ x$KO_NETSCAPE_USE_LD_PRELOAD != x -a x$KO_NETSCAPE_USE_LD_PRELOAD != xno ];
+then
+	export LD_PRELOAD=libxpg4.so.2.0
+	#export LD_PRELOAD=libxpg4.so.2.0:/usr/local/lib/libansi.so.1.2
+else
+	export PATH_LOCALE=@RDIR@/locale
+fi
+
 exec ${MOZILLA_HOME}/@BROWSER@.bin $*

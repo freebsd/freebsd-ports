@@ -1,9 +1,9 @@
 # New ports collection makefile for: Netscape browser with Korean resources
-# Version required:	4.07
+# Version required:	4.08
 # Date created:		25 Oct 1998
 # Whom:			CHOI Junho <junker@jazz.snu.ac.kr>
 #
-# $Id$
+# $Id: Makefile,v 1.9 1998/12/13 21:59:48 kuriyama Exp $
 #
 # based on japanese/netscape4-*
 
