@@ -1,0 +1,27 @@
+%%ZOPEBASEDIR%%/lib/python/Products/Annotations/AnnotationTool.py
+%%ZOPEBASEDIR%%/lib/python/Products/Annotations/AnnotationTool.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/Annotations/CREDITS.txt
+%%ZOPEBASEDIR%%/lib/python/Products/Annotations/Compatibility.py
+%%ZOPEBASEDIR%%/lib/python/Products/Annotations/Compatibility.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/Annotations/Configuration.py
+%%ZOPEBASEDIR%%/lib/python/Products/Annotations/Configuration.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/Annotations/Extensions/Install.py
+%%ZOPEBASEDIR%%/lib/python/Products/Annotations/Extensions/Install.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/Annotations/Extensions/SilvaInstall.py
+%%ZOPEBASEDIR%%/lib/python/Products/Annotations/Extensions/SilvaInstall.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/Annotations/Extensions/__init__.py
+%%ZOPEBASEDIR%%/lib/python/Products/Annotations/Extensions/__init__.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/Annotations/HISTORY.txt
+%%ZOPEBASEDIR%%/lib/python/Products/Annotations/INSTALL.txt
+%%ZOPEBASEDIR%%/lib/python/Products/Annotations/LICENSE.txt
+%%ZOPEBASEDIR%%/lib/python/Products/Annotations/README.txt
+%%ZOPEBASEDIR%%/lib/python/Products/Annotations/__init__.py
+%%ZOPEBASEDIR%%/lib/python/Products/Annotations/__init__.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/Annotations/helpers.py
+%%ZOPEBASEDIR%%/lib/python/Products/Annotations/helpers.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/Annotations/homepage.html
+%%ZOPEBASEDIR%%/lib/python/Products/Annotations/version.txt
+%%ZOPEBASEDIR%%/lib/python/Products/Annotations/www/annotations.png
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/Annotations/Extensions
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/Annotations/www
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/Annotations/
