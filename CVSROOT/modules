@@ -6124,6 +6124,7 @@ poppwd		ports/mail/poppwd
 poppy		ports/mail/poppy
 popt		ports/devel/popt
 poptop		ports/net/poptop
+pornview	ports/graphics/pornview
 portal		src/sys/miscfs/portal
 portcheckout	ports/devel/portcheckout
 porteasy	ports/misc/porteasy
