@@ -1,0 +1,19 @@
+The Filter-Crypto distribution provides the means to convert your Perl
+files into an encrypted, yet still runnable, format to hide the source
+code from casual prying eyes.
+
+This is achieved using a Perl source code filter.  The encrypted files,
+produced using the Filter::Crypto::CryptFile module automatically have
+one (unencrypted) line added to the start of them which loads the
+Filter::Crypto::Decrypt module.  The latter is a Perl source code filter
+which decrypts the remaining (encrypted) part of the Perl file
+on-the-fly when it is run.  See perlfilter if you want to know more
+about how Perl source code filters work.
+
+Encrypted files can also be produced more conveniently using the
+crypt_file script, or (if you also have the PAR module available) using
+the PAR::Filter::Crypto module.  The latter can be utilised by the
+standard PAR tools to produce PAR archives in which your Perl files are
+encrypted.
+
+WWW: http://search.cpan.org/dist/Filter-Crypto/

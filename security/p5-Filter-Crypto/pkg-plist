@@ -1,0 +1,18 @@
+bin/crypt_file
+%%SITE_PERL%%/%%PERL_ARCH%%/Filter/Crypto.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Filter/Crypto/CryptFile.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Filter/Crypto/Decrypt.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/PAR/Filter/Crypto.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Filter/Crypto/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Filter/Crypto/CryptFile/CryptFile.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Filter/Crypto/CryptFile/CryptFile.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Filter/Crypto/Decrypt/Decrypt.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Filter/Crypto/Decrypt/Decrypt.so
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Filter/Crypto
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Filter 2>/dev/null || true
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/PAR/Filter
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/PAR 2>/dev/null || true
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Filter/Crypto/CryptFile
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Filter/Crypto/Decrypt
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Filter/Crypto
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Filter 2>/dev/null || true
