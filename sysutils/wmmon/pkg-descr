@@ -15,3 +15,7 @@ WMMon currently provides:
         * Can be started multiple times;
         * Commandline options for help (-h), version (-v),
           start mode (-i & -s) and display (-d);
+
+** NOTE - a trivial root exploit was discovered in the current version. As
+   a result, we no longer install the binary setuid root - meaning it
+   cannot be run by arbitrary users.
