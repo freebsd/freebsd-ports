@@ -463,6 +463,7 @@ bidwatcher	ports/misc/bidwatcher
 biew		ports/editors/biew
 biff		src/usr.bin/biff
 biffer		ports/mail/biffer
+biggles		ports/math/biggles
 bigyear		ports/deskutils/bigyear
 bin		src/bin
 bin86		ports/devel/bin86
