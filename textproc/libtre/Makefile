@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	libtre
-PORTVERSION=	0.6.5
+PORTVERSION=	0.6.6
 CATEGORIES=	textproc
 MASTER_SITES=	http://laurikari.net/tre/
 DISTNAME=	tre-${PORTVERSION}
