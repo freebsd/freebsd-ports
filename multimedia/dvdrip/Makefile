@@ -44,6 +44,8 @@ MAN1=		dvdrip.1 dr_splitpipe.1 dr_progress.1
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Video::DVDRip.3
 
+.include <bsd.port.pre.mk>
+
 pre-everything::
 .if !defined(WITHOUT_CLUSTER)
 	@${ECHO_MSG}
@@ -74,4 +76,9 @@ post-patch:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.if ${PERL_LEVEL} < 500600
+BROKEN=	"You need at least perl 5.6.0. Do not use FreeBSD 4.x' system perl,\
+	it's outdated. Install lang/perl5 and issue 'use.perl port'"
+.endif
+
+.include <bsd.port.post.mk>
