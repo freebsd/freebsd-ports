@@ -2,7 +2,7 @@
 
 case "$1" in
 start)
-	[ -x /usr/local/sbin/vnpc ] && /usr/local/sbin/vnpc --pid-file /var/run/vpnc.pid > /dev/null && echo -n ' apache'
+	[ -x /usr/local/sbin/vpnc ] && /usr/local/sbin/vpnc && echo -n ' vpnc'
 	;;
 stop)
 	#
