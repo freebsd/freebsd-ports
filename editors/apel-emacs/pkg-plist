@@ -14,10 +14,10 @@
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/emu/broken.elc
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/emu/emu.el
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/emu/emu.elc
-%%EMACS_LIBDIR_WITH_VER%%/site-lisp/emu/invisible.el
-%%EMACS_LIBDIR_WITH_VER%%/site-lisp/emu/invisible.elc
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/emu/inv-19.el
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/emu/inv-19.elc
+%%EMACS_LIBDIR_WITH_VER%%/site-lisp/emu/invisible.el
+%%EMACS_LIBDIR_WITH_VER%%/site-lisp/emu/invisible.elc
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/emu/mcharset.el
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/emu/mcharset.elc
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/emu/mcs-ltn1.el

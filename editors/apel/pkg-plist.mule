@@ -16,10 +16,10 @@
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/emu/emu.elc
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/emu/emu-mule.el
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/emu/emu-mule.elc
-%%EMACS_LIBDIR_WITH_VER%%/site-lisp/emu/invisible.el
-%%EMACS_LIBDIR_WITH_VER%%/site-lisp/emu/invisible.elc
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/emu/inv-19.el
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/emu/inv-19.elc
+%%EMACS_LIBDIR_WITH_VER%%/site-lisp/emu/invisible.el
+%%EMACS_LIBDIR_WITH_VER%%/site-lisp/emu/invisible.elc
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/emu/mcharset.el
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/emu/mcharset.elc
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/emu/mcs-om.el

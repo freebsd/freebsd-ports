@@ -50,10 +50,10 @@
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/emu/product.elc
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/emu/pym.el
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/emu/pym.elc
-%%EMACS_LIBDIR_WITH_VER%%/site-lisp/emu/static.el
-%%EMACS_LIBDIR_WITH_VER%%/site-lisp/emu/static.elc
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/emu/richtext.el
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/emu/richtext.elc
+%%EMACS_LIBDIR_WITH_VER%%/site-lisp/emu/static.el
+%%EMACS_LIBDIR_WITH_VER%%/site-lisp/emu/static.elc
 @dirrm %%EMACS_LIBDIR%%/site-lisp/apel
 @dirrm %%EMACS_LIBDIR_WITH_VER%%/site-lisp/emu
 %%APELDOCDIR%%/ChangeLog
