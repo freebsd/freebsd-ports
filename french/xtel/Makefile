@@ -29,7 +29,7 @@ MAN1=	xtel.1 xteld.1
 .include <bsd.port.pre.mk>
 
 .if defined(LANG)
-LANGUE!=${ECHO} ${LANG} | ${CUT} -c 1-2
+LANGUE!=${ECHO_CMD} ${LANG} | ${CUT} -c 1-2
 .else
 LANGUE=	english
 .endif

@@ -29,7 +29,7 @@ MAN6=		xinvaders.6
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/Vaders.ad ${PREFIX}/lib/X11/app-defaults/Vaders
 	@${MKDIR} ${PREFIX}/share/xinvaders
-	@${ECHO} '0' > ${PREFIX}/share/xinvaders/xinvaders.scores
+	@${ECHO_CMD} '0' > ${PREFIX}/share/xinvaders/xinvaders.scores
 	@${CHOWN} root:games ${PREFIX}/bin/xinvaders
 	@${CHMOD} 2555 ${PREFIX}/bin/xinvaders
 	@${CHOWN} root:games ${PREFIX}/share/xinvaders/xinvaders.scores

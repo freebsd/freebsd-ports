@@ -27,13 +27,13 @@ post-patch:
 	@${PERL} -pi -e "s:%%PREFIX%%:${PREFIX}:g" ${WRKSRC}/Makefile
 
 pre-install:
-	${ECHO} "bin/acidwarp" > ${PLIST}
+	${ECHO_CMD} "bin/acidwarp" > ${PLIST}
 .if !defined(NOPORTDOCS)
 .for i in ${DOCFILES}
-	${ECHO} -n "share/doc/acidwarp/" >> ${PLIST}
-	${ECHO} ${i} >> ${PLIST}
+	${ECHO_CMD} -n "share/doc/acidwarp/" >> ${PLIST}
+	${ECHO_CMD} ${i} >> ${PLIST}
 .endfor
-	${ECHO} "@dirrm share/doc/acidwarp" >> ${PLIST}
+	${ECHO_CMD} "@dirrm share/doc/acidwarp" >> ${PLIST}
 .endif
 
 do-install:

@@ -73,7 +73,7 @@ post-extract:
 
 pre-patch:
 # remove trailing ^M
-	@find -E ${WRKSRC} -type f \
+	@${FIND} -E ${WRKSRC} -type f \
 		-iregex ".*\.(bat|cfg|gam|htm|html|inf|ini|lst|sc|scr|txt|rc)" \
 		-exec ${PERL} -pi -ne 's!\r\n!\n!' {} 1>/dev/null 2>&1 \;
 .ifdef(WITH_PING_BOOSTER)
@@ -122,7 +122,7 @@ install-run-scripts:
 .endfor
 	@if ! (${GREP} -E \"^${HLDSDIR}$$\" ${PREFIX}/etc/ld.so.conf 1>/dev/null 2>&1) ;\
 	then \
-		${ECHO} ${HLDSDIR} >> ${PREFIX}/etc/ld.so.conf ;\
+		${ECHO_CMD} ${HLDSDIR} >> ${PREFIX}/etc/ld.so.conf ;\
 	fi
 
 scan-libs:

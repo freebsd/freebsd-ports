@@ -19,15 +19,15 @@ DOCFILES=	BOOKFILES CHANGES CONTRIB COPYING GENERAL INSTALL PORTING \
 MAN6=		gnushogi.6
 
 post-configure:
-	${ECHO} "DISTDIR=${WRKDIR}" >> ${WRKSRC}/src/${MAKEFILE}
-	${ECHO} "prefix=${PREFIX}" >> ${WRKSRC}/src/${MAKEFILE}
+	${ECHO_CMD} "DISTDIR=${WRKDIR}" >> ${WRKSRC}/src/${MAKEFILE}
+	${ECHO_CMD} "prefix=${PREFIX}" >> ${WRKSRC}/src/${MAKEFILE}
 
 do-build:
 	(cd ${WRKSRC}/src; \
-	make gnushogir; \
-	make gnushogi.bbk; \
-	make gnushogi; \
-	make gnushogix )
+	${MAKE} gnushogir; \
+	${MAKE} gnushogi.bbk; \
+	${MAKE} gnushogi; \
+	${MAKE} gnushogix )
 
 do-install:
 	@${MKDIR} ${PREFIX}/share/gnushogi

@@ -36,7 +36,7 @@ do-fetch:
 	DISTFILES="${DISTFILES2}" MASTER_SITES="${MASTER_SITES2}"
 .endif
 post-extract:
-	@cd ${WRKDIR} && tar xzf linuxdoom-1.10.src.tgz && tar xzf sndserv.tgz
+	@cd ${WRKDIR} && ${TAR} xzf linuxdoom-1.10.src.tgz && ${TAR} xzf sndserv.tgz
 
 post-patch:
 	@${FIND} ${WRKSRC} -type f | ${XARGS} ${PERL} -pi -e "s@#include +<malloc.h>@#include <stdlib.h>@g"
@@ -49,8 +49,8 @@ do-install:
 	@${MKDIR} ${PREFIX}/libexec/doom ${PREFIX}/share/doom
 	@${INSTALL_PROGRAM} ${WRKDIR}/linuxdoom-1.10/linux/linuxxdoom ${PREFIX}/libexec/doom/xdoom
 	@${INSTALL_PROGRAM} ${WRKDIR}/sndserv/linux/sndserver ${PREFIX}/libexec/doom/sndserver
-	@(${ECHO} "#!/bin/sh"; ${ECHO} "cd ${PREFIX}/libexec/doom"; \
-	  ${ECHO} 'export PATH=.:$$PATH';${ECHO} "export DOOMWADDIR=${PREFIX}/share/doom"; ${ECHO} "./xdoom $$*") > ${PREFIX}/bin/doom
+	@(${ECHO_CMD} "#!/bin/sh"; ${ECHO_CMD} "cd ${PREFIX}/libexec/doom"; \
+	  ${ECHO_CMD} 'export PATH=.:$$PATH';${ECHO_CMD} "export DOOMWADDIR=${PREFIX}/share/doom"; ${ECHO_CMD} "./xdoom $$*") > ${PREFIX}/bin/doom
 	@${CHMOD} ugo+x ${PREFIX}/bin/doom
 	@${GZCAT} ${DISTDIR}/${DISTFILES2} > ${PREFIX}/share/doom/doom1.wad
 

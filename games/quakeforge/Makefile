@@ -72,7 +72,7 @@ do-install:
 	@printf "#!/bin/sh\ncd ${PREFIX}/share/quakeforge\n./${binary} \$$@" > \
 		${WRKDIR}/${binary}.sh
 	${INSTALL_SCRIPT} ${WRKDIR}/${binary}.sh ${PREFIX}/bin/${binary}
-	@${ECHO} share/quakeforge/${binary} >>${PLIST}
+	@${ECHO_CMD} share/quakeforge/${binary} >>${PLIST}
 .endfor
 	@${CAT} ${PKGDIR}/pkg-plist.wad >>${PLIST}
 .endif

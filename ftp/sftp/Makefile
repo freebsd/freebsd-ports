@@ -36,8 +36,8 @@ do-install:
 		${ECHO} "No other sftp found, linking sftp to secftp"; \
 		${LN} -s ${PREFIX}/bin/secftp ${PREFIX}/bin/sftp; \
 		${LN} -s ${PREFIX}/man/man1/secftp.1.gz ${PREFIX}/man/man1/sftp.1.gz; \
-		${ECHO} bin/sftp >> ${PLIST}.unsorted; \
-		${ECHO} man/man1/sftp.1.gz >> ${PLIST}.unsorted; \
+		${ECHO_CMD} bin/sftp >> ${PLIST}.unsorted; \
+		${ECHO_CMD} man/man1/sftp.1.gz >> ${PLIST}.unsorted; \
 	else \
 		${ECHO} "Other sftp found, not linking sftp to secftp"; \
 	fi

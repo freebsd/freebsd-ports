@@ -34,7 +34,7 @@ do-install:
 .endif
 	@${TOUCH} ${PREFIX}/share/xnibbles/levels/LEVELS
 .for file in 001 002 003 004 005 006 007 008 009 010 011 012
-	@${ECHO} ${PREFIX}/share/xnibbles/levels/level${file}.xnl >> ${PREFIX}/share/xnibbles/levels/LEVELS
+	@${ECHO_CMD} ${PREFIX}/share/xnibbles/levels/level${file}.xnl >> ${PREFIX}/share/xnibbles/levels/LEVELS
 	${INSTALL_DATA} ${WRKSRC}/levels/*.xnl ${PREFIX}/share/xnibbles/levels
 .endfor
 	@${MKDIR} ${PREFIX}/share/doc/xnibbles

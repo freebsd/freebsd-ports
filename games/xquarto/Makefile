@@ -17,6 +17,6 @@ USE_XPM=	yes
 MAN6=		xquarto.6
 
 pre-configure:
-	@${ECHO} "MANSUFFIX=6" >>${WRKSRC}/src/Imakefile
+	@${ECHO_CMD} "MANSUFFIX=6" >>${WRKSRC}/src/Imakefile
 
 .include <bsd.port.mk>

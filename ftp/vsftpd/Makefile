@@ -22,7 +22,7 @@ post-patch:
 	@${PERL} -pi -e 's@/etc/vsftpd.conf@${PREFIX}/etc/vsftpd.conf@' \
 		${WRKSRC}/defs.h
 	@${PERL} -pi -e 's@ -ldl@@; s@^CFLAGS.*$$@@' ${WRKSRC}/Makefile
-	@${ECHO} "secure_chroot_dir=${PREFIX}/share/vsftpd/empty" >> \
+	@${ECHO_CMD} "secure_chroot_dir=${PREFIX}/share/vsftpd/empty" >> \
 		${WRKSRC}/vsftpd.conf
 
 do-install:

@@ -34,7 +34,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/pilfonts/*.pil ${PIDDLEDIR}/pilfonts
 	${INSTALL_DATA} ${WRKSRC}/pilfonts/*.pbm ${PIDDLEDIR}/pilfonts
 	${INSTALL_DATA} ${WRKSRC}/pilfonts/metrics.dat ${PIDDLEDIR}/pilfonts
-	${ECHO} 'piddle' > ${PIDDLEDIR}.pth
+	${ECHO_CMD} 'piddle' > ${PIDDLEDIR}.pth
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${PIDDLEDIR}
 	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${PIDDLEDIR}
 	${MKDIR} ${PIDDLEDOCDIR}
