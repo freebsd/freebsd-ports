@@ -1,0 +1,12 @@
+diff -ur ../tornado-1.0.3.orig/scores.h ./scores.h
+--- ../tornado-1.0.3.orig/scores.h	Fri Dec  1 08:59:55 2000
++++ ./scores.h	Sun Jul  1 16:35:36 2001
+@@ -1,7 +1,7 @@
+ /* scores.h -- highscore functions */
+ 
+ /* score file name */
+-#define SCOREFILE_NAME "/var/games/tornado.scores"
++#define SCOREFILE_NAME "/usr/local/share/games/tornado.scores"
+ 
+ /* maximum length for a player name (includes \0) */
+ #define MAX_PLAYER_LEN 22

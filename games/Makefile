@@ -221,6 +221,7 @@
     SUBDIR += tinymux
     SUBDIR += tkmoo
     SUBDIR += tksol
+    SUBDIR += tornado
     SUBDIR += trojka
     SUBDIR += tux-aqfh
     SUBDIR += tuxkart
