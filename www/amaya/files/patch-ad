@@ -1,0 +1,22 @@
+--- ../Options.in.orig	Fri Sep 15 23:24:26 2000
++++ ../Options.in	Sat Mar 17 08:53:21 2001
+@@ -9,7 +9,7 @@
+ SHELL	= /bin/sh
+ 
+ CC	= @CC@
+-CFLAGS	= @CFLAGS@
++CFLAGS	= @CFLAGS@ @CPPFLAGS@
+ CPP     = @CPP@
+ LD	= @CC@
+ LDFLAGS	= @LDFLAGS@
+@@ -24,8 +24,8 @@
+ DIFF	= @DIFF@
+ INSTALL	= @INSTALL@
+ 
+-INSTALL_DATA= $(INSTALL) -m 444
+-INSTALL_BIN= $(INSTALL) -m 755
++INSTALL_DATA=@INSTALL_DATA@
++INSTALL_BIN=@INSTALL_PROGRAM@
+ 
+ CEXTRACT_FLAGS=@CEXTRACT_FLAGS@
+ 
