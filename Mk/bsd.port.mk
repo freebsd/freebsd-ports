@@ -511,24 +511,14 @@ MASTERDIR?=	${.CURDIR}
 .include "${MASTERDIR}/Makefile.local"
 .endif
 
-.if defined(REQUIRE_PORTNAME) && !defined(PORTNAME)
+.if !defined(PORTNAME) || !defined(PORTVERSION) || defined(PKGNAME)
 .BEGIN:
 	@${ECHO} "${PKGNAME}: You need to define PORTNAME and PORTVERSION instead of PKGNAME."
 	@${ECHO} "(This port is too old for your bsd.port.mk.)"
 	@${FALSE}
 .endif
-.if defined(PORTNAME)
-.if defined(PKGNAME) || !defined(PORTVERSION)
-.BEGIN:
-	@${ECHO} "${PKGNAME}: You need to define PORTNAME and PORTVERSION instead of PKGNAME."
-	@${FALSE}
-.endif
 PKGNAME=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 DISTNAME?=	${PORTNAME}-${PORTVERSION}
-.else
-# old style
-PKGNAME?=		${DISTNAME}
-.endif
 
 # These need to be absolute since we don't know how deep in the ports
 # tree we are and thus can't go relative.  They can, of course, be overridden
@@ -1576,6 +1566,14 @@ do-fetch:
 				${ECHO_MSG} ">> Please correct this problem and try again."; \
 				exit 1; \
 			fi ; \
+			if [ -f ${MD5_FILE} ]; then \
+				if ! ${GREP} -q "^MD5 (.*$$file)" ${MD5_FILE}; then \
+					${ECHO_MSG} ">> $$file is not in ${MD5_FILE}."; \
+					${ECHO_MSG} ">> Either ${MD5_FILE} is out of date, or"; \
+					${ECHO_MSG} ">> $$file is spelled incorrectly."; \
+					exit 1; \
+				fi; \
+			fi; \
 			${ECHO_MSG} ">> $$file doesn't seem to exist on this system."; \
 			for site in ${MASTER_SITES}; do \
 			    ${ECHO_MSG} ">> Attempting to fetch from $${site}."; \
