@@ -6,9 +6,8 @@
 #
 
 PORTNAME=	mtr
-PORTVERSION=	0.54
-PORTREVISION=	4
-CATEGORIES=	net ipv6
+PORTVERSION=	0.65
+CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.bitwizard.nl/mtr/ \
 		ftp://ftp.netsw.org/net/ip/audit/packets/ \
 		ftp://ftp.gw.com/mirrors/pub/unix/mtr/
@@ -18,40 +17,24 @@ COMMENT=	Traceroute and ping in a single graphical network diagnostic tool
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-WANT_GNOME=	yes
-WANT_IPV6=	yes
 
 MAN8=		mtr.8
 PLIST_FILES=	sbin/mtr
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 400014 && defined(WANT_IPV6)
-PATCHFILES=	mtr-054-v6-20040216.diff.gz
-PATCH_SITES=	ftp://ftp.kame.net/pub/kame/misc/
-PATCH_DIST_STRIP=	-p1
-
-CONFIGURE_ARGS+=--enable-ipv6
+.if !defined(WITHOUT_X11)
+.if defined(WITH_GTK1)
+USE_GNOME=	gtk12
+PKGNAMESUFFIX=	-gtk1
 .else
-CONFIGURE_ARGS+=--disable-ipv6
+USE_GNOME=	gtk20
+CONFIGURE_ARGS=--enable-gtk2
 .endif
-
-.if !defined(WITHOUT_GNOME) && ${HAVE_GNOME:Mgtk12}!=""
-USE_GNOME+=	gtk12
-PKGNAMESUFFIX=	-gtk
 USE_XLIB=	yes
+CONFIGURE_ARGS+=--with-gtk-prefix=${X11BASE}
 .else
-CONFIGURE_ARGS+=--without-gtk --with-gtk-prefix=/nonexistant
+PKGNAMESUFFIX=	-nox11
+CONFIGURE_ARGS=--without-gtk --with-gtk-prefix=/nonexistant
 .endif
-
-post-patch:
-	@${TOUCH} ${WRKSRC}/aclocal.m4
-	@${TOUCH} ${WRKSRC}/stamp-h.in
-	@${TOUCH} ${WRKSRC}/img/Makefile.in
-
-do-install:
-	${INSTALL} -c -s -m 4755 -o root -g wheel ${WRKSRC}/mtr ${PREFIX}/sbin
-	${INSTALL_DATA} ${WRKSRC}/mtr.8 ${PREFIX}/man/man8
 
 post-install:
 	@${ECHO} ""
@@ -61,4 +44,4 @@ post-install:
 	@${ECHO} "in file ${WRKSRC}/SECURITY (not installed)"
 	@${ECHO} ""
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
