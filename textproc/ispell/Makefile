@@ -21,6 +21,8 @@ MAN4=		ispell.4 english.4
 MLINKS=		ispell.1 buildhash.1 ispell.1 findaffix.1 ispell.1 \
 		munchlist.1 ispell.1 tryaffix.1
 
+USE_REINPLACE=	yes
+
 EXTRACT_ONLY=	${ISPELL_FILES}
 EXTRA_DICT=
 MAKE_FLAGS=	TMPDIR=${WRKDIR} -f
@@ -173,7 +175,7 @@ post-extract:
 post-patch:
 .if defined(ISPELL_IT)
 	@cd ${WRKDIR} && ${PATCH} < ${FILESDIR}/IT.patch 2>/dev/null
-	@${PERL} -pi -e "s|%%BH%%|${BUILDHASH}|g;s|%%MH%%|${MUNCHLIST}|g" \
+	@${REINPLACE_CMD} -e "s|%%BH%%|${BUILDHASH}|g;s|%%MH%%|${MUNCHLIST}|g" \
 		${WRKDIR}/ispell-it/Makefile
 .endif
 .if defined(ISPELL_FR)
