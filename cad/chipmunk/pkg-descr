@@ -1,0 +1,30 @@
+  		    Chipmunk CAD  (Jan 1993 Revision)
+		    -------- ---   --- ---- --------
+
+This directory contains a revised public beta-test version of the
+Caltech electronic CAD distribution. This distribution contains tools
+for schematic capture, netlist creation, and analog and digital
+simulation (log), IC mask layout, extraction, and DRC (wol), simple
+chip compilation (wolcomp), MOSIS fabrication request generation
+(mosis), netlist comparison (netcmp), data plotting (view) and
+postscript graphics editing (until). These tools were used exclusively
+for the design and test of all the integrated circuits described in
+Carver Mead's book "Analog VLSI and Neural Systems".  Until was used
+as the primary tool for figure creation for the book.  The directory
+also contains an example of an analog VLSI chip that was designed and
+fabricated with these tools, and an example of an Actel
+field-programmable gate array design that was simulated and converted
+to Actel format with these tools (example).
+
+These tools were originally written for HP 200 Series ("Chipmunk")
+computers, and were later ported to Unix and the X Windows System.
+Many people contributed to the design and porting of these tools; we
+have made an attempt to credit authors in each package, and regret any
+omisions.  Carver Mead provided the inspiration, initiative, and
+financial support for many of the tools in this package; in several
+cases (wol and wolcomp) he wrote the original prototypes as well. The
+Systems Development Foundation, Hewlett Packard, and the Office of
+Naval Research were the main sources of funding for these tools. These
+tools are distributed under a license very similar to the GNU license;
+the minor changes protect Caltech from liability. Each tar file
+contains this license.
