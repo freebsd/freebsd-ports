@@ -19,12 +19,6 @@ When you compile:
 When you decompile
 	guavad your_class_file.class
 
-See more information at
-
-	http://www.cs.berkeley.edu/~engberg/guavac/
-
-or documents in the doc/ directory.
+See more information in the doc/ directory.
 
 Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
-
-WWW: http://www.cs.berkeley.edu/~engberg/guavac/
