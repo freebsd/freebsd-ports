@@ -46,6 +46,10 @@ CONFIGURE_ARGS+=--enable-latin2
 CONFIGURE_ARGS+=--with-pic
 .endif
 
+.if ${ARCH} == "ia64"
+BROKEN=		"Does not build on ia64"
+.endif
+
 post-extract:
 .if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -e 's/install-idocDATA install-ihtmlDATA//g' \
