@@ -1,9 +1,0 @@
-SYNOPSIS
-     chpoarp if_name mac_addr net_addr net_mask
-
-DESCRIPTION
-     choparp is a easy-to-use proxy arp daemon.  It watches arp request pack-
-     ets visible on the interface specified by argument if_name, and sends
-     proxy arp reply to the sender if the arp request queries the MAC address
-     (ethernet hardware address) for the network speicified by net_addr and
-     net_mask.

@@ -1,6 +1,0 @@
-bin/qcc
-etc/qico.conf.sample
-libexec/qico
-share/doc/qico/FAQ.ru
-share/doc/qico/README.ru
-@dirrm share/doc/qico

@@ -1,8 +1,0 @@
-*static*
-
-# Socket module compiled with SSL support; you must edit the SSL variable:
-SSL=/usr
-socket socketmodule.c \
-        -DUSE_SSL -I$(SSL)/include -I$(SSL)/include/openssl \
-        -L$(SSL)/lib -lssl -lcrypto
-

@@ -1,8 +1,0 @@
-%%RUBY_SITEARCHLIBDIR%%/snmp.so
-%%RUBY_DOCDIR%%/snmp/mib_view.html
-%%RUBY_DOCDIR%%/snmp/rubysnmp.html
-%%RUBY_DOCDIR%%/snmp/sampleout.html
-%%RUBY_DOCDIR%%/snmp/snmp_module.html
-%%RUBY_DOCDIR%%/snmp/snmp_session.html
-%%RUBY_DOCDIR%%/snmp/snmp_var.html
-@dirrm %%RUBY_DOCDIR%%/snmp

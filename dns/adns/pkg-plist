@@ -1,6 +1,0 @@
-bin/adnslogres
-bin/adnshost
-include/adns.h
-lib/libadns.a
-lib/libadns.so
-lib/libadns.so.%%LIBVERSION%%

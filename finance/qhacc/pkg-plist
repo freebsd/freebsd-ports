@@ -1,9 +1,0 @@
-bin/qhacc
-share/doc/qhacc/index.html
-share/doc/qhacc/intro.html
-share/doc/qhacc/formats.html
-share/doc/qhacc/using.html
-share/doc/qhacc/primer.html
-share/qhacc/config.sample
-@dirrm share/qhacc
-@dirrm share/doc/qhacc

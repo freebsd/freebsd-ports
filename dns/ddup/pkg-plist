@@ -1,6 +1,0 @@
-sbin/ddup
-sbin/testip
-share/doc/ddup/README
-share/doc/ddup/INSTALL-C
-share/doc/ddup/COPYING
-@dirrm share/doc/ddup
