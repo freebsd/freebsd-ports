@@ -6,6 +6,9 @@ bin/sciconsole
 bin/scidisasm
 bin/listwords
 bin/sciv
+lib/libscicore.a
+lib/libsciengine.a
+lib/libscigraphics.a
 lib/libscisound.a
 share/freesci/sci.sgml
 @dirrm share/freesci
