@@ -29,6 +29,9 @@ WRKSRC=		${WRKDIR}/mac-3.99-u4
 
 INSTALLS_SHLIB=	yes
 
+# does not compile on sparc64
+NOT_FOR_ARCHS=	sparc64 
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
