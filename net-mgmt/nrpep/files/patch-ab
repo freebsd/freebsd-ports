@@ -1,0 +1,99 @@
+--- Makefile.orig	Wed Jan  5 23:04:22 2000
++++ Makefile	Wed Apr 10 18:24:16 2002
+@@ -3,50 +3,57 @@
+ #
+ 
+ # 
+-# Configuration Files
++# Configuration Files 
+ #
+ 
+ #
+ # What directory the server program (nrpep) should live in
+ #
+-nrpepserverdir = "/usr/sbin"
++nrpepserverdir = $(PREFIX)/sbin
+ 
+ #
+ # What directory the plugin client should live in
+ #
+-nrpepplugindir = "/usr/local/netsaint/libexec"
++nrpepplugindir = $(PREFIX)/libexec/netsaint
+ 
+ #
+ # What user should own nrpep
+ #
+-nrpepowner = "root"
++nrpepowner = root
+ 
+ #
+ # What group should own nrpep
+ #
+-nrpepgroup = "root"
++nrpepgroup = wheel
+ 
+ #
+ # What user should own check_nrpep
+ #
+-checknrpepowner = "netsaint"
++checknrpepowner = root
+ 
+ # 
+ # What group should own check_nrpep
+ #
+-checknrpepgroup = "netsaint"
++checknrpepgroup = wheel
+ 
+ #
+ # What directory should the nrpep config files go to
+ #
+-nrpepconfigdir = "/usr/local/netsaint/etc"
++nrpepconfigdir = $(PREFIX)/etc/netsaint
+ 
+ # ***************************************
+ # DO NOT CHANGE ANYTHING BELOW THIS POINT
+ # ***************************************
+ 
+ all:
+-	cat README | more
++	mv nrpep.cfg nrpep.cfg.orig
++	cat nrpep.cfg.orig | sed -e 's%/usr/local/netsaint/libexec%$(PREFIX)/libexec/netsaint%' > nrpep.cfg
++
++install: install-client install-server
++	if [ ! -d "$(PREFIX)/share/doc/nrpep" ]; then \
++		mkdir -p $(PREFIX)/share/doc/nrpep; \
++	fi
++	cp README $(PREFIX)/share/doc/nrpep
+ 
+ install-client:
+ 	`if [ ! -d "$(nrpepplugindir)" ]; then \
+@@ -55,8 +62,8 @@
+ 	`if [ ! -d "$(nrpepconfigdir)" ]; then \
+ 	mkdir -p $(nrpepconfigdir); \
+ 	fi`
+-	install -b -D -g $(checknrpepgroup) -o $(checknrpepowner) -m 755 check_nrpep $(nrpepplugindir);
+-	install -b -D -g $(checknrpepgroup) -o $(checknrpepowner) -m 644 check_nrpep.cfg $(nrpepconfigdir);
++	install -g $(checknrpepgroup) -o $(checknrpepowner) -m 755 check_nrpep $(nrpepplugindir);
++	install -g $(checknrpepgroup) -o $(checknrpepowner) -m 644 check_nrpep.cfg $(nrpepconfigdir);
+ 
+ install-server:
+ 	`if [ ! -d "$(nrpepserverdir)" ]; then \
+@@ -65,8 +72,8 @@
+ 	`if [ ! -d "$(nrpepconfigdir)" ]; then \
+ 	mkdir -p $(nrpepconfigdir); \
+ 	fi`
+-	install -b -D -g $(nrpepgroup) -o $(nrpepowner) -m 755 nrpep $(nrpepserverdir);
+-	install -b -D -g $(nrpepgroup) -o $(nrpepowner) -m 644 nrpep.cfg $(nrpepconfigdir);
++	install -g $(nrpepgroup) -o $(nrpepowner) -m 755 nrpep $(nrpepserverdir);
++	install -g $(nrpepgroup) -o $(nrpepowner) -m 644 nrpep.cfg $(nrpepconfigdir);
+ 
+ uninstall-client:
+ 	rm $(nrpepplugindir)/check_nrpep
+@@ -75,3 +82,7 @@
+ uninstall-server:
+ 	rm $(nrpepserverdir)/nrpep
+ 	rm $(nrpepconfigdir)/nrpep.cfg
++
++
++
++

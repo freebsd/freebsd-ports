@@ -1,0 +1,17 @@
+###############################################################
+
+If you are going to be running the nrpep daemon on this machine,
+you will probably want something like the following in /etc/services:
+
+ nrpep           8086/tcp # Netsaint nrpep server
+
+and the following in /etc/inetd.conf:
+
+ nrpep   stream  tcp     nowait  nobody  /usr/local/sbin/nrpep   nrpep -c /usr/local/etc/netsaint/nrpep.cfg
+
+The config files are world readable. If this is a problem for you,
+then sort out the file ownership and permissions yourself.
+
+Additional documentation in $PREFIX/share/doc/nrpep
+
+###############################################################

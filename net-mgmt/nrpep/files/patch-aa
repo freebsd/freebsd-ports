@@ -1,0 +1,113 @@
+--- nrpep.bak	Sat Jan  8 01:00:45 2000
++++ nrpep	Wed Apr 10 16:50:09 2002
+@@ -13,24 +13,39 @@
+ 
+ # Perl libs and such the program needs
+ use strict;
+-use vars qw($opt_c $version %commands $key $cipher);
++use vars qw($opt_d $opt_c $version %commands $key $cipher);
+ use Getopt::Std;
+ use Crypt::TripleDES;
+ 
+ # Global Variables
+-$version = "0.2";
++$version = "0.2-fbsd";
+ 
+ # Get the command line arguments
+-getopts('c:');
++getopts('d:c:');
++
++# Open a log
++if ($opt_d) {
++        open(LOG,">>$opt_d") or die "Cannot open $opt_d for logging";
++	print LOG "\n\nNRPEP\n";
++}
++
+ # Check for the proper command line arguments, if we fail, print out an
+ # error message and die.
+ &Check_Command($opt_c);
++
+ # Grab the configuration file, and parse it for all the variables we
+ # will need.
+-&Get_Configs($opt_c);
++%commands = Get_Configs($opt_c);
++if ($opt_d) {print LOG Dumper(%commands);}
++
+ # Now that I have a set of commands, go into recieve mode
+ &Recieve;
+ 
++$opt_d && close(LOG);
++exit 0;
++
++######################################################################################
++
+ sub Recieve {
+ 	my $line;
+ 	my $commandentered;
+@@ -49,8 +64,10 @@
+ 		$_ =~ s/(\r|\n)//g;
+ # Start a new cipher with the proper key;
+ 		$cipher = new Crypt::TripleDES;
+-# Decrypt the command 
++# Decrypt the command
++		$opt_d && print LOG "Decrypting $_\n"; 
+ 		$commandentered = $cipher->decrypt3(pack("H*", $_), $key);
++		$opt_d && print LOG " ... got $commandentered\n";
+ 		$commandentered =~ s/\s+$//;
+ # If the command entered looks like one in the config file, execute it and
+ # print it's return code
+@@ -72,6 +89,8 @@
+ 	}
+ }
+ 
++#################################################################################
++
+ sub Check_Command {
+ # If I don't have a config file given, barf the mini-howto
+ 	unless ($opt_c) {
+@@ -89,30 +108,31 @@
+ 	}
+ }
+ 
++###################################################################################
++
+ sub Get_Configs {
+ 	my $opt_c = $_[0];
+-	my $line;
+-	my $command;
+-	my $plugin;
+-	my $garbage;
++
++	my %commands;
+ 
+ # Open the config file...
+ 	open(FILE, "$opt_c") || die "Cannot open file at $opt_c";
+-	foreach $line (<FILE>) {
++	foreach my $line (<FILE>) {
+ 		chomp($line);
+-# Ignore comments
+-		unless ($line =~ /^#/) {
++# Ignore comments and blank lines
++		unless ($line =~ /^#/ or $line =~ /^\s*$/) {
+ # If it's a command line, grab the command name and toss it in a name value
+ # hash.  The value is the command to execute.
+-			if ($line =~ /command\[.*\]=/) {
+-				($garbage, $plugin) = split(/\=/, $line);
+-				($garbage, $garbage, $command) = split(/(\[|\])/, $line);
++			if (my ($command,$plugin) = $line =~ /^\s*command\[(.+)\]=(.*)$/) {
+ 				$commands{$command} = $plugin;
++				$opt_d && print LOG "Got command '$command' = $plugin\n";
+ # If it's the secret, we want it!
+-			} elsif ($line =~ /secret=/) {
+-				($garbage, $key) = split(/\=/, $line, 2);
++			} elsif ($line =~ /secret=(.+)/) {
++				$key = $1;
+ 			}
+ 		}
+ 	}
+ 	close(FILE);
++
++	return %commands;
+ }
+
+

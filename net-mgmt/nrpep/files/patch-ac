@@ -1,0 +1,11 @@
+--- check_nrpep.old	Tue Apr  2 16:52:01 2002
++++ check_nrpep	Wed Apr 10 17:31:09 2002
+@@ -59,7 +59,7 @@
+ 	if ($opts{'f'}) {
+ 		&Get_Configs($opts{'f'});
+ 	} else {
+-		&Get_Configs("/usr/local/netsaint/etc/check_nrpep.cfg");
++		&Get_Configs("/usr/local/etc/netsaint/check_nrpep.cfg");
+ 	}
+ # Longer timeout?  If it's given on the command line use it, otherwise
+ # read from the config file
