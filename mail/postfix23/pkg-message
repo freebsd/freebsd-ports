@@ -25,6 +25,7 @@ ln -s /usr/local/sbin/postfix postfix.sh
 Also, you will want to disable some Sendmail-specific daily maintenance
 routines in your /etc/periodic.conf file:
 
+daily_clean_hoststat_enable="NO"
 daily_status_mail_rejects_enable="NO"                                      
 daily_status_include_submit_mailq="NO"
 daily_submit_queuerun="NO"
