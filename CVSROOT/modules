@@ -4504,6 +4504,7 @@ p5-Inline	ports/devel/p5-Inline
 p5-Inline-ASM	ports/devel/p5-Inline-ASM
 p5-Inline-CPP	ports/devel/p5-Inline-CPP
 p5-Inline-Filters	ports/devel/p5-Inline-Filters
+p5-Inline-Tcl	ports/devel/p5-Inline-Tcl
 p5-Ioctl	ports/devel/p5-Ioctl
 p5-LEGO-RCX	ports/misc/p5-LEGO-RCX
 p5-LJ-Cache	ports/sysutils/p5-LJ-Cache
