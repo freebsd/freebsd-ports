@@ -10,7 +10,7 @@ PORTVERSION=	1.2.4
 CATEGORIES=	editors
 MASTER_SITES=	http://cdsmith.twu.net/lpe/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	cj@vallcom.net
 
 LIB_DEPENDS=	slang.1:${PORTSDIR}/devel/libslang \
 		intl.1:${PORTSDIR}/devel/gettext
