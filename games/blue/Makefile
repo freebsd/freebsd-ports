@@ -8,7 +8,7 @@
 PORTNAME=	blue
 PORTVERSION=	2.4
 CATEGORIES=	games
-MASTER_SITES=	ftp://locke.ccil.org/pub/esr/
+MASTER_SITES=	http://www.tuxedo.org/~esr/
 
 MAINTAINER=	ports@FreeBSD.org
 
@@ -17,6 +17,6 @@ MAN6=		blue.6
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/blue ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/blue.6 ${PREFIX}/man/man6
+	${INSTALL_MAN} ${WRKSRC}/blue.6 ${MANPREFIX}/man/man6
 
 .include <bsd.port.mk>
