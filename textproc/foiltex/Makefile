@@ -57,7 +57,7 @@ do-install:
 	@${INSTALL_DATA} ${FOIL_FILES} ${FOIL_DIR}
 
 post-install:
-	${SETENV} LOCALBASE=${LOCALBASE} ${SH} ${PKGDIR}/pkg-install \
-		${PKGNAME} POST-INSTALL
+	${SETENV} LOCALBASE=${LOCALBASE} PKG_PREFIX=${PREFIX} \
+		${SH} ${PKGDIR}/pkg-install ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>
