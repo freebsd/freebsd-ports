@@ -1,0 +1,4 @@
+lib/xmms/Visualization/libkjofol.so
+share/xmms/kjofol/default.zip
+@unexec rmdir %D/lib/xmms/Visualization 2>&1 >/dev/null || true
+@dirrm share/xmms/kjofol
