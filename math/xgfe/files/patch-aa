@@ -1,0 +1,44 @@
+--- Makefile.freebsd-gcc.orig	Sun Jun  7 13:12:00 1998
++++ Makefile.freebsd-gcc	Fri May 24 04:40:34 2002
+@@ -7,13 +7,14 @@
+ 
+ ####### Compiler, tools and options
+ 
+-CC	=	gcc
+-CFLAGS	=	-Wall -W -O2 -fno-strength-reduce
+-INCPATH	=	-I$(QTDIR)/include
+-LINK	=	gcc
++#CC	=	gcc
++#CFLAGS	=	-Wall -W -O2 -fno-strength-reduce
++QTDIR	=	$(X11BASE)
++INCPATH	=	-I$(X11BASE)/include/X11/qt1
++LINK	=	$(CXX)
+ LFLAGS	=	
+-LIBS	=	-L$(QTDIR)/lib -lqt -L/usr/X11R6/lib -lX11
+-MOC	=	moc
++LIBS	=	-L$(QTDIR)/lib -lqt1 -L$(X11BASE)/lib -lX11
++MOC	=	${X11BASE}/bin/moc1
+ 
+ ####### Files
+ 
+@@ -224,16 +225,16 @@
+ .SUFFIXES: .cpp .cxx .cc .C .c
+ 
+ .cpp.o:
+-	$(CC) -c $(CFLAGS) $(INCPATH) -o $@ $<
++	$(CXX) -c $(CFLAGS) $(INCPATH) -o $@ $<
+ 
+ .cxx.o:
+-	$(CC) -c $(CFLAGS) $(INCPATH) -o $@ $<
++	$(CXX) -c $(CFLAGS) $(INCPATH) -o $@ $<
+ 
+ .cc.o:
+-	$(CC) -c $(CFLAGS) $(INCPATH) -o $@ $<
++	$(CXX) -c $(CFLAGS) $(INCPATH) -o $@ $<
+ 
+ .C.o:
+-	$(CC) -c $(CFLAGS) $(INCPATH) -o $@ $<
++	$(CXX) -c $(CFLAGS) $(INCPATH) -o $@ $<
+ 
+ .c.o:
+ 	$(CC) -c $(CFLAGS) $(INCPATH) -o $@ $<

@@ -149,6 +149,7 @@
     SUBDIR += wingz
     SUBDIR += wingz3
     SUBDIR += wmcalc
+    SUBDIR += xgfe
     SUBDIR += xgobi
     SUBDIR += xgraph
     SUBDIR += xldlas
