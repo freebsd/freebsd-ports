@@ -17,6 +17,8 @@ LIB_DEPENDS=	xmms.1:${PORTSDIR}/audio/xmms
 RUN_DEPENDS=	${LOCALBASE}/bin/lame:${PORTSDIR}/audio/lame
 
 WRKSRC=		${WRKDIR}/LiveIce-1.0.0
+
+USE_X_PREFIX=	yes
 USE_LIBTOOL=	yes
 
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
