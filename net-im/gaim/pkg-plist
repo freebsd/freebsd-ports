@@ -67,6 +67,7 @@ include/gaim/stock.h
 include/gaim/stringref.h
 include/gaim/util.h
 include/gaim/value.h
+include/gaim/version.h
 include/gaim/xmlnode.h
 lib/gaim/autorecon.so
 lib/gaim/docklet.so
@@ -371,6 +372,7 @@ share/locale/ca/LC_MESSAGES/gaim.mo
 share/locale/cs/LC_MESSAGES/gaim.mo
 share/locale/da/LC_MESSAGES/gaim.mo
 share/locale/de/LC_MESSAGES/gaim.mo
+share/locale/en_AU/LC_MESSAGES/gaim.mo
 share/locale/en_CA/LC_MESSAGES/gaim.mo
 share/locale/en_GB/LC_MESSAGES/gaim.mo
 share/locale/es/LC_MESSAGES/gaim.mo
