@@ -7,7 +7,7 @@
 
 PORTNAME=	namazu
 PORTVERSION=	2.0.7
-CATEGORIES=	japanese textproc databases
+CATEGORIES=	japanese databases www textproc
 MASTER_SITES=	http://www.namazu.org/stable/
 PKGNAMESUFFIX=	2
 
