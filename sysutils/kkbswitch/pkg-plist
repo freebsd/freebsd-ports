@@ -13,7 +13,6 @@ share/doc/HTML/en/kkbswitch/index.cache.bz2
 lib/X11/xkb/symbols/ru_ua
 @cwd %%PREFIX%%
 @dirrm share/apps/kkbswitch
-@dirrm share/doc/HTML/en/kkbswitch/common
 @dirrm share/doc/HTML/en/kkbswitch
 @unexec rmdir %D/share/applnk/Utilities 2>/dev/null || true
 @unexec rmdir %D/share/applnk 2>/dev/null || true
