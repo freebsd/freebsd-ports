@@ -5,12 +5,12 @@
 # $FreeBSD$
 
 PORTNAME=	antivir-milter
-PORTVERSION=	1.1
+PORTVERSION=	1.1.0p3
 CATEGORIES=	security mail
-MASTER_SITES=	ftp://ftp.antivir.de/freebsd/ \
+MASTER_SITES=	ftp://ftp.antivir.de/unix/milter/ \
 		http://dl.antivir.de/dateien/antivir/release/
-DISTNAME=	avfbmlt
-EXTRACT_SUFX=	.tgz
+DISTVERSION=	${PORTVERSION:C/p.+$//}
+DISTVERSIONPREFIX=	prof-
 
 MAINTAINER=	marius@FreeBSD.org
 COMMENT=	AntiVir Milter mail virusscanner for Sendmail
@@ -26,22 +26,36 @@ USE_REINPLACE=	yes
 FETCH_CMD=	/usr/bin/fetch -A
 # When the avmilter binary is stripped its self-check fails.
 STRIP=
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 400000
+IGNORE=		requires FreeBSD 4.0 or higher
+.endif
 
 .if (!exists(/usr/lib/libmilter.a)) && (!exists(${LOCALBASE}/lib/libmilter.a))
 IGNORE=		requires Sendmail 8.12
 .endif
 
+.if ${OSVERSION} >= 503001 && ${OSVERSION} <= 600004
+BINSRC=		${WRKSRC}/bin/freebsd5
+.else
+BINSRC=		${WRKSRC}/bin/freebsd
 .if ${OSVERSION} >= 500000
 LIB_DEPENDS=	c.4:${PORTSDIR}/misc/compat4x
 .endif
+.endif
+
+post-extract:
+	@${MV} ${WRKSRC}/templates/en/patho-admnistrator\
+		${WRKSRC}/templates/en/patho-administrator
+	@${MV} ${WRKSRC}/templates/en/virus-admnistrator\
+		${WRKSRC}/templates/en/virus-administrator
 
 post-patch:
 .for i in doc/MANUAL etc/antivir.conf etc/avmilter.conf init/rc.avmilter \
-	pgp/README script/avq
+	pgp/README script/avq script/avupdater
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g; \
 		s|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/${i}
 .endfor
@@ -54,10 +68,10 @@ post-patch:
 
 do-install:
 	@${INSTALL} -d -o ${BINOWN} -g ${BINGRP} -m 755 ${PREFIX}/AntiVir
-	@${INSTALL} -o ${BINOWN} -g ${BINGRP} -m 755 ${WRKSRC}/bin/antivir \
+	@${INSTALL} -o ${BINOWN} -g ${BINGRP} -m 755 ${BINSRC}/antivir \
 		${PREFIX}/AntiVir/antivir-dist_avmilter
 .if !exists(${PREFIX}/AntiVir/antivir)
-	@${INSTALL} -o ${BINOWN} -g ${BINGRP} -m 755 ${WRKSRC}/bin/antivir \
+	@${INSTALL} -o ${BINOWN} -g ${BINGRP} -m 755 ${BINSRC}/antivir \
 		${PREFIX}/AntiVir
 .endif
 	@${INSTALL} -o ${BINOWN} -g ${BINGRP} -m 644 ${WRKSRC}/vdf/antivir.vdf \
@@ -79,12 +93,14 @@ do-install:
 .if !exists(${PREFIX}/etc/antivir.conf)
 	@${INSTALL_DATA} ${WRKSRC}/etc/antivir.conf ${PREFIX}/etc
 .endif
-	@${INSTALL_PROGRAM} ${WRKSRC}/bin/avmilter ${PREFIX}/sbin
+	@${INSTALL_PROGRAM} ${BINSRC}/avmilter ${PREFIX}/sbin
 	@${INSTALL_SCRIPT} ${WRKDIR}/antivirupdater.sh \
 		${PREFIX}/sbin/antivirupdater
 	@${INSTALL_SCRIPT} ${WRKDIR}/avqrm.sh ${PREFIX}/bin/avqrm
 	@${INSTALL_SCRIPT} ${WRKSRC}/init/rc.avmilter \
 		${PREFIX}/etc/rc.d/avmilter.sh
+	@${INSTALL_SCRIPT} ${WRKSRC}/script/avupdater \
+		${PREFIX}/etc/rc.d/avupdater.sh-dist_avmilter
 	@${INSTALL} -d -o smmsp -g smmsp -m 700 /var/spool/avmilter
 .for i in incoming outgoing rejected
 	@${INSTALL} -d -o smmsp -g smmsp -m 700 /var/spool/avmilter/${i}
@@ -103,8 +119,7 @@ do-install:
 .for i in ChangeLog LICENSE LICENSE.DE
 	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
-	@${INSTALL_DATA} ${WRKSRC}/doc/MANUAL ${DOCSDIR}
-.for i in avmilter_de.pdf avmilter_en.pdf
+.for i in MANUAL avmilter_de.pdf
 	@${INSTALL_DATA} ${WRKSRC}/doc/${i} ${DOCSDIR}
 .endfor
 	@${INSTALL_DATA} ${WRKSRC}/pgp/README ${DOCSDIR}/README.gpg

@@ -1,15 +1,15 @@
 --- script/avq.orig	Sat Oct 11 13:26:02 2003
 +++ script/avq	Sat Oct 11 13:31:54 2003
-@@ -38,7 +38,7 @@
+@@ -39,7 +39,7 @@
  #   59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
  #******************************************************************************
  
 -configuration=/etc/avmilter.conf
 +configuration=%%PREFIX%%/etc/avmilter/avmilter.conf
- queue="`egrep -i '^[Ss][Pp][Oo][Oo][Ll][Dd][Ii][Rr]' ${configuration} | awk '{print $2;}'`"
- queue_set=0
- pname="`basename $0`"
-@@ -49,6 +49,15 @@
+ 
+ for arg ;
+ do
+@@ -68,6 +68,15 @@
  systeme="`uname`"
  date_param="-d"
  
@@ -24,8 +24,8 @@
 +
  usage() {
      echo "${pname} usage:"
-     echo "    ${pname} [--queue=DIR] "
-@@ -124,7 +133,7 @@
+     echo "    ${pname} [--conf=.conf] "
+@@ -149,7 +158,7 @@
          data=`/bin/ls "${queue}"/*/[Dd]f-"${id}"`
         echo "ctor: ${ctrl} ${data}" 
          if [ ! -f "${data}" ] ; then
@@ -34,7 +34,7 @@
                   "in queue '$queue'."
              exit 3            
          fi
-@@ -136,9 +145,13 @@
+@@ -161,9 +170,13 @@
          bnam="`basename ${ctrl}`"
          case $newstate in
          R)
@@ -51,7 +51,7 @@
              ;;
          *)
              Qtrl="`echo $bnam|sed -e 's/^.\(.*\)$/'${newstate}'\1/'`"
-@@ -179,7 +192,7 @@
+@@ -204,7 +217,7 @@
              group=`egrep -i '^group' "$configuration"|awk '{print $2;}'`
              if [ -f "${data}" ] ; then
                  if /bin/ls "${queue}"/*/??-"${id}" > /dev/null 2>&1 ; then

@@ -1,0 +1,106 @@
+--- script/avupdater.orig	Thu Nov 25 10:29:31 2004
++++ script/avupdater	Wed Dec  8 15:23:09 2004
+@@ -5,10 +5,8 @@
+ # Copyright (c) 2002-2004 H+BEDV Datentechnik GmbH
+ #
+ 
+-PATH="/bin:/usr/bin:/usr/local/bin:/sbin:/usr/sbin:/usr/local/sbin"
+-
+ DAEMONNAME="antivir"
+-AVDIR="/usr/lib/AntiVir"
++AVDIR="%%PREFIX%%/AntiVir"
+ 
+ DAEMON="$AVDIR/$DAEMONNAME"
+ 
+@@ -41,6 +39,17 @@
+ 	PROCESSLIST=""
+ 
+ 	case "${OS}" in
++		freebsd)
++			# Work around bug in some versions of ps(1) where
++			# `ps -o 'pid= command='` doesn't work.
++			for PROC in `ps axw -o 'pid=' -o 'command=' | grep ${DAEMONNAME}.*[-]-updater-daemon`
++			do
++				if [ -z "`$ECHO ${PROC} | sed -e s/[0-9]//g`" ]
++				then
++					PROCESSLIST="${PROCESSLIST} ${PROC}"
++				fi
++			done
++			;;
+ 		sunos)
+ 			for PROC in `ps -Ao pid,args | grep ${DAEMONNAME}.*[-]-updater-daemon`
+ 			do
+@@ -64,63 +73,41 @@
+ 
+ case "$1" in
+ 	start)
+-		$ECHO -n "Starting AntiVir: avupdater"
+-
+-		if [ ! -x "$DAEMON" ]
+-		then
+-			$ECHO " (FAILED)"
+-			$ECHO " "
+-			$ECHO "error: $DAEMON is missing"
+-			$ECHO " "
+-			exit 1
+-		fi
+-
+-		$DAEMON --updater-daemon -q
+-
+-		if [ $? -ne 0 ]
+-		then
+-			$ECHO " (FAILED)"
+-			$ECHO " "
+-			$ECHO "error: $DAEMONNAME failed to start"
+-			$ECHO "See log files for details."
+-			$ECHO " "
+-			exit 1
++		if [ -x "$DAEMON" ]; then
++			$DAEMON --updater-daemon -q \
++				-C %%PREFIX%%/etc/antivir.conf
++			if [ $? -eq 0 ]; then
++				$ECHO -n " avupdater"
++			fi
+ 		fi
+-
+-		$ECHO "."
+ 		;;
+ 	stop)
+-		$ECHO -n "Stopping AntiVir: avupdater"
+-
+ 		getPROCESSLIST
+ 		for PROC in $PROCESSLIST
+ 		do
+ 			kill -15 $PROC
+ 		done
+ 
+-		$ECHO "."
++		$ECHO -n " avupdater"
+ 		;;
+ 	restart)
+ 		$0 stop
+ 		$0 start
+ 		;;
+ 	status)
+-		$ECHO -n "AntiVir Status: avupdater "
+-
+ 		getPROCESSLIST
+ 		if [ ! -z "$PROCESSLIST" ]
+ 		then
+-			$ECHO -n "(running)"
++			$ECHO "OK avupdater is running!"
+ 			RC=0
+ 		else
+-			$ECHO -n "(not running)"
++			$ECHO "FAILED avupdater is not running!"
+ 			RC=3
+ 		fi
+-		$ECHO "."
+ 		exit $RC
+ 		;;
+ 	*)
+-		$ECHO "usage: $0 {start|stop|restart|status}"
++		$ECHO "Usage: `basename $0` {start|stop|restart|status}" >&2
+ 		exit 1
+ 		;;
+ esac
