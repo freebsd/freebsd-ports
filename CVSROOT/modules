@@ -4102,6 +4102,7 @@ libXpm		ports/x11/libXpm
 libXrandr	ports/x11/libXrandr
 libXrender	ports/x11/libXrender
 libXres		ports/x11/libXres
+libXt		ports/x11-toolkits/libXt
 libXtrans	ports/x11/libXtrans
 libXv		ports/x11/libXv
 liba52		ports/audio/liba52
