@@ -1,0 +1,16 @@
+@cd /usr/local
+@owner bin
+@mode 755
+bin/p2c
+bin/p2cc
+@mode 644
+lib/libp2c.a
+man/man1/p2c.1
+man/man1/p2cc.1
+include/p2c/p2c.h
+lib/p2c/p2crc
+lib/p2c/loc.p2crc
+lib/p2c/system.imp
+lib/p2c/system.m2
+lib/p2c/turbo.imp
+lib/p2c/string.pas
