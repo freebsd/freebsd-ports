@@ -1,0 +1,5 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Math/Logic/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/Math/Logic.pm
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Math
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Math/Logic
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Math
