@@ -16,7 +16,7 @@ XBL implements 6 different ways to perform animation under X11!
 - Player can move or rotate blocks (perfect real time if you have a fast host).
 The goal is to play as long as possible.
 
-XBL home is : "ftp://ftp710.univ-lyon1.fr/pub/xbl"
-XBL URL  is : "http://www710.univ-lyon1.fr/ftp/xbl/xbl.html"
+WWW: http://www710.univ-lyon1.fr/ftp/xbl/xbl.html
+ftp://ftp710.univ-lyon1.fr/pub/xbl
 
 Thierry.EXCOFFIER@ligia.univ-lyon1.fr

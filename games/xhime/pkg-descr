@@ -3,7 +3,7 @@ Xhime changes its animation when the user-defined special key is pressed.
 Special key is pressed. The default special key is Return. 
 See also /usr/X11R6/share/doc/xhime.
 
-http://www.tcp-ip.or.jp/~shochan/linux/xhime.html
+WWW: http://www.tcp-ip.or.jp/~shochan/linux/xhime.html
 
 - Seiichirou Hiraoka
 flathill@FreeBSD.ORG
