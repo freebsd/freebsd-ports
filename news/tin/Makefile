@@ -4,7 +4,7 @@
 # Date created:		25 July 1996
 # Whom:			obrien@cs.ucdavis.edu
 #
-# $Id: Makefile,v 1.15 1996/11/29 14:07:53 ache Exp $
+# $Id: Makefile,v 1.16 1996/12/04 21:00:08 ache Exp $
 #
 
 DISTNAME=       tin1.3-unoff-BETA-961203
@@ -20,7 +20,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME:S/tin1.3-unoff-BETA-//}
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+= --with-nntp-default-server=news  \
 		 --with-spooldir=/var/news  \
-		 --with-libdir=${PREFIX}/lib/news \
+		 --with-libdir=${PREFIX}/news/lib \
 		 --with-mime-default-charset=US-ASCII \
 		 --enable-forgery \
 		 --with-pgp=${PREFIX}/bin/pgp \
