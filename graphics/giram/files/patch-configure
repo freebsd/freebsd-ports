@@ -1,31 +1,19 @@
---- configure.orig	Sun Jul 20 17:02:58 2003
-+++ configure	Sun Jul 20 17:03:44 2003
-@@ -4152,7 +4152,6 @@
-     #
-     have_pthread=no
-     mesa_requires_pthread=no
--    if test "$ac_have_mesa_gl" = yes; then
-       echo $ac_n "checking for pthread_create in -lpthread""... $ac_c" 1>&6
- echo "configure:4158: checking for pthread_create in -lpthread" >&5
- ac_lib_var=`echo pthread'_'pthread_create | sed 'y%./+-%__p_%'`
-@@ -4240,12 +4239,7 @@
- LIBS="$ac_save_LIBS"
+--- configure.orig	Sat Mar  8 21:30:47 2003
++++ configure	Sun May 25 21:41:54 2003
+@@ -5432,6 +5432,7 @@
  
+ # This can be used to rebuild libtool when needed
+ LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
++$ac_aux_dir/ltconfig $LIBTOOL_DEPS
+ 
+ # Always use our own libtool.
+ LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+ +@@ -5843,7 +5844,7 @@ 
  fi
--if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
--  echo "$ac_t""yes" 1>&6
-   mesa_requires_pthread=yes
--else
--  echo "$ac_t""no" 1>&6
--fi
  
-   CPPFLAGS="$ac_save_CPPFLAGS"
-   LDFLAGS="$ac_save_LDFLAGS"
-@@ -4253,7 +4247,6 @@
-       if test "$mesa_requires_pthread" = yes; then
-         GL_LIBS="$GL_LIBS -lpthread"
-       fi
--    fi
-     # Check for OpenGL 1.1 features.
-     #
-     
+ 
+-CFLAGS="-g -Wall -DGTK_DISABLE_DEPRECATED -DGDK_DISABLE_DEPRECATED -DG_DISABLE_DEPRECATED $CFLAGS"
++CFLAGS="-DGTK_DISABLE_DEPRECATED -DGDK_DISABLE_DEPRECATED -DG_DISABLE_DEPRECATED $CFLAGS"
+ 
+ if test -n "$DEBUGFLAG"; then
+   CFLAGS="$DEBUGFLAG $CFLAGS"
