@@ -1,0 +1,11 @@
+GLADE is GNAT's companion package for building distributed systems in Ada.
+GNAT+GLADE is a complete implementation of the Ada 95 programming language.
+
+WWW: http://www.gnat.com/
+
+Note: because of the existence of GLADE, the GTK GUI builder, this package
+      has been renamed gnat-glade, as is done in Linux distributions such
+      as Debian
+
+  -- Samuel Tardieu
+     sam@inf.enst.fr

@@ -1,0 +1,11 @@
+--- Dist/xe_usage.adb.orig	Wed May  3 20:07:54 2000
++++ Dist/xe_usage.adb	Wed May  3 20:08:07 2000
+@@ -70,7 +70,7 @@
+    Write_Eol;
+ 
+    Write_Str ("Gcc switches such as -g, -O, etc.");
+-   Write_Str (" are directly passed to gcc");
++   Write_Str (" are directly passed to adagcc");
+    Write_Eol;
+    Write_Eol;
+ 
