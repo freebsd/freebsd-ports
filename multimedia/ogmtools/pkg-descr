@@ -9,4 +9,5 @@ and Vorbis audio from Ogg files. The resulting files can be played
 back with mplayer or with the OggDS Direct Show filters under
 Windows.
 
+Author: Moritz Bunkus <moritz@bunkus.org>
 WWW: http://www.bunkus.org/videotools/ogmtools/
