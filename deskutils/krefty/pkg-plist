@@ -1,0 +1,33 @@
+bin/krefty
+lib/kde3/libkreftypart.la
+lib/kde3/libkreftypart.so
+share/applnk/Utilities/krefty.desktop
+share/apps/krefty/data/krefty-intro.xml
+share/apps/krefty/data/krefty.css
+share/apps/krefty/data/krefty.dtd
+share/apps/krefty/data/krefty.xsl
+share/apps/krefty/data/note.png
+share/apps/krefty/krefty_shell.rc
+share/doc/HTML/en/krefty/common
+share/doc/HTML/en/krefty/index.cache.bz2
+share/doc/HTML/en/krefty/index.docbook
+share/doc/HTML/en/krefty/krefty01.png
+share/icons/hicolor/16x16/apps/krefty.png
+share/icons/hicolor/32x32/apps/krefty.png
+share/services/krefty_part.desktop
+@unexec rmdir %D/share/services 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/32x32/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/32x32 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/16x16/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/16x16 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor 2>/dev/null || true
+@unexec rmdir %D/share/icons 2>/dev/null || true
+@dirrm share/doc/HTML/en/krefty
+@unexec rmdir %D/share/doc/HTML/en 2>/dev/null || true
+@unexec rmdir %D/share/doc/HTML 2>/dev/null || true
+@dirrm share/apps/krefty/data
+@dirrm share/apps/krefty
+@unexec rmdir %D/share/apps 2>/dev/null || true
+@unexec rmdir %D/share/applnk/Utilities 2>/dev/null || true
+@unexec rmdir %D/share/applnk 2>/dev/null || true
+@unexec rmdir %D/lib/kde3 2>/dev/null || true
