@@ -204,6 +204,10 @@ LDFLAGS+=	${PTHREAD_LIBS}
 BROKEN=		"Does not compile on FreeBSD-${OSREL}"
 .endif
 
+.if ${ARCH} != "i386" && ${ARCH} != "amd64"
+BROKEN=		"Does not compile on !i386 and !amd64"
+.endif
+
 pre-install:
 	${CP} ${FILESDIR}/mged.sh ${WRKSRC}
 	${REINPLACE_CMD} -e 's+%%BRLCAD_ROOT%%+${PREFIX}+g;'	\
