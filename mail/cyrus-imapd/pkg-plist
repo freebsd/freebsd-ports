@@ -46,6 +46,7 @@ include/cyrus/nonblock.h
 include/cyrus/parseaddr.h
 include/cyrus/prot.h
 include/cyrus/retry.h
+include/cyrus/rfc822date.h
 include/cyrus/stristr.h
 include/cyrus/sysexits.h
 include/cyrus/util.h
