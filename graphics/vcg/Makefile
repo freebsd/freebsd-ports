@@ -9,8 +9,8 @@ PORTNAME=	vcg
 PORTVERSION=	1.30
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.cs.uni-sb.de/pub/graphics/vcg/
-DISTNAME=	${PORTNAME}.${PORTVERSION}
-EXTRACT_SUFX=	.r3.17.tgz
+DISTNAME=	${PORTNAME}.20050204
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Visualization Tool for compiler graphs
@@ -19,6 +19,8 @@ BUILD_DEPENDS=	imake:${X_IMAKE_PORT}
 
 USE_X_PREFIX=	yes
 MANL=		pbmrot90.l pbmshift.l pbm2hp.l vcgdemomaker.l vcg.l xvcg.l
+
+WRKSRC=		${WRKDIR}/${PORTNAME}.${PORTVERSION}
 
 pre-patch:
 	@${MKDIR} ${WRKSRC}/preconf/X11ccFreeBSD
