@@ -6,6 +6,25 @@
 #
 # Makefile variables of interest:
 #
+# NMH_EDITOR - pass an EDITOR specification through to nmh's configure
+#           script's '--with-editor' option.
+#
+# NMH_EXTRA_CONFIGURE_ARGS - extra args passed through to 'configure'.
+#
+# NMH_LOCKING - specify the style of locking to be used by nmh for the
+#           users' spool files (e.g. the 'inc' command). Must match the
+#           locking style used by your MTA - the default is FLOCK_LOCKING
+#           (the documented behavior for the 'mail.local' delivery program).
+#           Do a 'make patch', then look in the source directory (currently
+#           the config.h.in file) for more information on different locking
+#           settings. Current valid settings are:
+#             DOT_LOCKING FCNTL_LOCKING LOCKF_LOCKING FLOCK_LOCKING
+#
+# NMH_MASQUERADE - specify the type(s) of masquerading to allow.  This
+#           is passed through to nmh's "--enable-masquerade" configure
+#           option and the current syntax for that string is:
+#             'draft_from[ mmailid[ username_extension]]'
+#
 # NMH_MTS - pass an MTS specification through to nmh's configure
 #           script's "--with-mts" option.  Do a "make extract" and check
 #           the NMH distribution's "INSTALL" file for more info.
@@ -21,25 +40,11 @@
 #           rewriting facilities of "qmail-inject", if you are using qmail,
 #           may be available this way, but not via NMH_MTS=smtp.
 #
-# NMH_EDITOR - pass an EDITOR specification through to nmh's configure
-#           script's '--with-editor' option.
-#
 # NMH_PAGER - pass an PAGER specification through to nmh's configure
 #           script's '--with-pager' option.
 #
-# NMH_LOCKING - specify the style of locking to be used by nmh for the
-#           users' spool files (e.g. the 'inc' command). Must match the
-#           locking style used by your MTA - the default is FLOCK_LOCKING
-#           (the documented behavior for the 'mail.local' delivery program).
-#           Do a 'make patch', then look in the source directory (currently
-#           the config.h.in file) for more information on different locking
-#           settings. Current valid settings are:
-#             DOT_LOCKING FCNTL_LOCKING LOCKF_LOCKING FLOCK_LOCKING
-#
-# NMH_MASQUERADE - specify the type(s) of masquerading to allow.  This
-#           is passed through to nmh's "--enable-masquerade" configure
-#           option and the current syntax for that string is:
-#             'draft_from[ mmailid[ username_extension]]'
+# NMH_POP - specify "enable" or "disable" for --enable-pop (or --disable-pop).
+#           Default is "enable".
 #
 # NMH_SMTPSERVERS - specify a blank-separated list of SMTP servers -
 #           passed through to nmh's configure scripts '--with-smtpservers'
@@ -58,26 +63,35 @@ MAINTAINER=	Scott.Blachowicz@seaslug.org
 
 USE_AUTOCONF_VER=213
 CONFIGURE_ARGS=	--libdir=${PREFIX}/libexec/nmh \
-		--sysconfdir=${PREFIX}/etc/nmh --enable-nmh-pop
-.ifdef NMH_MTS
-CONFIGURE_ARGS+= --with-mts=${NMH_MTS}
-.endif
+		--sysconfdir=${PREFIX}/etc/nmh
 .ifdef NMH_EDITOR
 CONFIGURE_ARGS+= --with-editor=${NMH_EDITOR}
 .endif
 .ifdef NMH_MASQUERADE
 CONFIGURE_ARGS+= --enable-masquerade="${NMH_MASQUERADE}"
 .endif
+.ifndef NMH_LOCKING
+NMH_LOCKING=FLOCK_LOCKING
+.endif
+.ifdef NMH_MTS
+CONFIGURE_ARGS+= --with-mts=${NMH_MTS}
+.endif
 .ifdef NMH_PAGER
 CONFIGURE_ARGS+= --with-pager=${NMH_PAGER}
+.endif
+.ifdef NMH_POP
+CONFIGURE_ARGS+= --${NMH_POP}-pop
+.else
+CONFIGURE_ARGS+= --enable-pop
 .endif
 .ifdef NMH_SMTPSERVERS
 CONFIGURE_ARGS+= --with-smtpservers="${NMH_SMTPSERVERS}"
 .endif
 
-.ifndef NMH_LOCKING
-NMH_LOCKING=FLOCK_LOCKING
+.ifdef NMH_EXTRA_CONFIGURE_ARGS
+CONFIGURE_ARGS+= ${NMH_EXTRA_CONFIGURE_ARGS}
 .endif
+
 CFLAGS+= -D${NMH_LOCKING}
 
 MAN1=	ali.1 anno.1 burst.1 comp.1 dist.1 flist.1 folder.1 forw.1 \
