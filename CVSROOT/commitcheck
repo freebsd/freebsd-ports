@@ -41,6 +41,7 @@ if (defined($cfg::COMMITCHECK_EXTRA) && $cfg::COMMITCHECK_EXTRA) {
 my $VERSTR = `$cfg::PROG_CVS -v`;
 $VERSTR =~ s/.*Concurrent\D*(\S*).*/$1/s;
 $VERSTR =~ s/\D+/./g;
+$VERSTR =~ s/\.$/.0/;
 my $VERSION = sprintf "%d%02d%02d%02d\n", split /\./, $VERSTR;
 unless ($VERSION && $VERSION >= $cfg::MINCVSVERSION) {
 	print "The wrong version of CVS is installed (commitcheck)!\n";
