@@ -11,7 +11,7 @@ CATEGORIES=		devel
 MASTER_SITES=		http://www710.univ-lyon1.fr/~yperret/
 DISTNAME=		${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=		greid@ukug.uk.freebsd.org
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=	A profiling library/utilities for C/C++ programs
 
 INSTALLS_SHLIB=		yes

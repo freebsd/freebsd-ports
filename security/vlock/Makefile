@@ -11,7 +11,7 @@ CATEGORIES=		security
 MASTER_SITES=		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	utils/console
 
-MAINTAINER=		greid@ukug.uk.freebsd.org
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=	Locks a terminal
 
 MAN1=			vlock.1

@@ -11,7 +11,7 @@ CATEGORIES=     sysutils
 MASTER_SITES=	http://asic-linux.com.mx/~izto/checkinstall/files/source/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	greid@ukug.uk.freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A file creation/modification logger
 
 .include <bsd.port.mk>

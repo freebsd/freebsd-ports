@@ -10,7 +10,7 @@ PORTVERSION=		3.0.2
 CATEGORIES=     	comms
 MASTER_SITES=   	http://www.styx.demon.co.uk/archive/
 
-MAINTAINER=		greid@ukug.uk.freebsd.org
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=	A simple UNIX SMS client to send messages to phones or pagers
 
 HAS_CONFIGURE=		yes

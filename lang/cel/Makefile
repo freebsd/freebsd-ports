@@ -11,7 +11,7 @@ CATEGORIES=	lang
 MASTER_SITES=	http://www.redwoodsoft.com/cel/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	greid@ukug.uk.freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A small, simple prototype-based OO language
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

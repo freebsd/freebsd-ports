@@ -11,7 +11,7 @@ CATEGORIES=		graphics
 MASTER_SITES=		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	libs/graphics
 
-MAINTAINER=		greid@ukug.uk.freebsd.org
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=	A multi-format graphics manipulation library
 
 LIB_DEPENDS=		tiff.4:${PORTSDIR}/graphics/tiff

@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	apps/graphics/viewers/svga
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	greid@ukug.uk.freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A console graphics viewer using the svga console graphics library
 
 LIB_DEPENDS=	vga.1:${PORTSDIR}/graphics/svgalib \

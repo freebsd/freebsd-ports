@@ -11,7 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	greid@ukug.uk.freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A console Yahoo! messenger client
 
 GNU_CONFIGURE=	yes

@@ -17,7 +17,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=		crypto${PORTVERSION:S/.//g}
 EXTRACT_SUFX=		.zip
 
-MAINTAINER=		greid@ukug.uk.freebsd.org
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		A free C++ class library of Cryptographic Primitives
 
 NO_WRKSUBDIR=		yes
