@@ -1,9 +1,12 @@
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/DataCash/External/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/External/.packlist
 lib/perl5/site_perl/%%PERL_VER%%/CCCheck.pm
 lib/perl5/site_perl/%%PERL_VER%%/CCCheck/visa.db
 lib/perl5/site_perl/%%PERL_VER%%/CCCheck/mastercard.db
+lib/perl5/site_perl/%%PERL_VER%%/DataCash/External.pm
 lib/perl5/site_perl/%%PERL_VER%%/DataCash/datacash.pl
-@dirrm lib/perl5/site_perl/5.6.0/mach/auto/DataCash/External
-@dirrm lib/perl5/site_perl/5.6.0/mach/auto/DataCash
-@dirrm lib/perl5/site_perl/5.6.0/CCCheck
-@dirrm lib/perl5/site_perl/5.6.0/DataCash
+lib/perl5/site_perl/%%PERL_VER%%/File/KGlob.pm
+lib/perl5/site_perl/%%PERL_VER%%/File/KGlob2RE.pm
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/External
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/CCCheck
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/DataCash
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/File
