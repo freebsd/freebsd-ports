@@ -59,7 +59,6 @@ share/groff/tmac/tmac.andoc
 share/groff/tmac/tmac.groff_an
 share/groff/tmac/tmac.orig_me
 share/groff/tmac/tmac.vgrind
-share/groff/tmac/tcl.macros
 share/groff/tmac/tmac.pic
 share/groff/tmac/tmac.ps
 share/groff/tmac/tmac.psnew
