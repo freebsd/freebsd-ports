@@ -9,7 +9,7 @@
 #       Program and compiler flags are finetuned to gcc.
 
 PORTNAME=	atlas
-PORTVERSION=	3.7.5
+PORTVERSION=	3.7.8
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	math-atlas
@@ -64,15 +64,11 @@ ANSWER=	${ANSWER_${ARCH}}
 do-configure:
 	@(cd ${WRKSRC}; ${MAKE_ENV} ${MAKE} xconfig && \
 		${ANSWER} | ./xconfig -N 1 -c ${CC} -f ${FC} -m ${CC} -g ${CC} -x ${CC} -a NON_THREADED && \
-		${ANSWER} | ./xconfig -N 1 -c ${CC} -f ${FC} -m ${CC} -g ${CC} -x ${CC} -a NON_THREADED_PIC \
-			-F c '${PICFLAG} -DPIC' -F f '${PICFLAG} -DPIC' \
-			-F m '${PICFLAG} -DPIC' -F x '${PICFLAG} -DPIC')
+		${ANSWER} | ./xconfig -N 1 -c ${CC} -f ${FC} -m ${CC} -g ${CC} -x ${CC} -a NON_THREADED_PIC -C '${PICFLAG} -DPIC' -F f '${PICFLAG} -DPIC -O' )
 	@(cd ${WRKSRC}; ${PATCH} < ${FILESDIR}/thread-patch && \
 		${MAKE_ENV} ${MAKE} xconfig && \
 		${ANSWER} | ./xconfig -c ${CC} -f ${FC} -m ${CC} -g ${CC} -x ${CC} -a THREADED && \
-		${ANSWER} | ./xconfig -c ${CC} -f ${FC} -m ${CC} -g ${CC} -x ${CC} -a THREADED_PIC \
-			-F c '${PICFLAG} -DPIC' -F f '${PICFLAG} -DPIC' \
-			-F m '${PICFLAG} -DPIC' -F x '${PICFLAG} -DPIC' )
+		${ANSWER} | ./xconfig -c ${CC} -f ${FC} -m ${CC} -g ${CC} -x ${CC} -a THREADED_PIC -C '${PICFLAG} -DPIC' -F f '${PICFLAG} -DPIC -O' )
 
 ATLAS_LIBS1=libalapack libatlas libcblas libf77blas libtstatlas
 ATLAS_LIBS2=libptcblas libptf77blas
