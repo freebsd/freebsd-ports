@@ -1,8 +1,9 @@
 #!/bin/sh
 
 # configurable variables
-pb=/a/asami/portbuild
-mailto=asami@freebsd.org
+pb=/var/portbuild
+
+. ${pb}/portbuild.conf
 
 lock=${pb}/lock
 status=${pb}/status

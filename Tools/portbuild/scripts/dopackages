@@ -1,8 +1,9 @@
 #!/bin/sh
 
 # configurable variables
-pb=/a/asami/portbuild
-user=asami
+pb=/var/portbuild
+
+. ${pb}/portbuild.conf
 
 # packages for dependencies only
 dummyports="x11/XFree86 x11-toolkits/Motif-dummy"
