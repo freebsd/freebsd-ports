@@ -385,6 +385,7 @@
     SUBDIR += libghthash
     SUBDIR += libgii
     SUBDIR += libglade
+    SUBDIR += libglade-java
     SUBDIR += libglade2
     SUBDIR += libglademm
     SUBDIR += libgnugetopt

@@ -1,0 +1,4 @@
+lib/libgladejava%%GLADE_API_VERSION%%.so
+lib/libgladejava%%GLADE_API_VERSION%%.so.%%PORTVERSION%%
+share/java/classes/glade%%GLADE_API_VERSION%%-%%PORTVERSION%%.jar
+share/java/classes/glade%%GLADE_API_VERSION%%.jar
