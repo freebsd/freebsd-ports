@@ -2,9 +2,9 @@ bin/editcap
 bin/ethereal
 bin/tethereal
 etc/manuf
-lib/ethereal/plugins/0.8.7/gryphon.la
-lib/ethereal/plugins/0.8.7/gryphon.a
-lib/ethereal/plugins/0.8.7/gryphon.so
-@dirrm lib/ethereal/plugins/0.8.7
+lib/ethereal/plugins/%%PORTVERSION%%/gryphon.la
+lib/ethereal/plugins/%%PORTVERSION%%/gryphon.a
+lib/ethereal/plugins/%%PORTVERSION%%/gryphon.so
+@dirrm lib/ethereal/plugins/%%PORTVERSION%%
 @dirrm lib/ethereal/plugins
 @dirrm lib/ethereal
