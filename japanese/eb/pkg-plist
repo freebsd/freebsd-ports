@@ -205,6 +205,10 @@ share/eb/appendix/readers2-2.0/catalogs
 share/eb/appendix/readers2-2.0/catalogs.app
 share/eb/appendix/readers2-2.0/readers.app
 share/eb/appendix/readers2-2.0/readers/data/furoku
+share/eb/appendix/ruigigo-1.0/ruigigo/data/furoku
+share/eb/appendix/ruigigo-1.0/ruigigo.app
+share/eb/appendix/ruigigo-1.0/catalogs.app
+share/eb/appendix/ruigigo-1.0/catalogs
 share/eb/appendix/superdic98-1.0/catalogs
 share/eb/appendix/superdic98-1.0/catalogs.app
 share/eb/appendix/superdic98-1.0/chujiten.app
@@ -319,6 +323,9 @@ share/eb/appendix/superdic98-1.0/koujien/data/furoku
 @dirrm share/eb/appendix/readers2-2.0/readers/data
 @dirrm share/eb/appendix/readers2-2.0/readers
 @dirrm share/eb/appendix/readers2-2.0
+@dirrm share/eb/appendix/ruigigo-1.0/ruigigo/data
+@dirrm share/eb/appendix/ruigigo-1.0/ruigigo
+@dirrm share/eb/appendix/ruigigo-1.0
 @dirrm share/eb/appendix/superdic98-1.0/chujiten/data
 @dirrm share/eb/appendix/superdic98-1.0/chujiten
 @dirrm share/eb/appendix/superdic98-1.0/furoku/data
