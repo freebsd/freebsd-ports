@@ -1,0 +1,10 @@
+--- configure.orig	Wed Aug 27 21:54:38 2003
++++ configure	Wed Aug 27 21:55:32 2003
+@@ -24767,6 +24767,7 @@
+ 
+ 
+ 
++LDFLAGS="$LDFLAGS $INTLLIBS"
+ 
+ 
+ 

@@ -1,0 +1,16 @@
+bin/ticables-config
+include/tilp/cabl_def.h
+include/tilp/cabl_err.h
+include/tilp/cabl_int.h
+include/tilp/cabl_ver.h
+include/tilp/export.h
+include/tilp/intl.h
+include/tilp/ticables.h
+include/tilp/timeout.h
+lib/libticables.la
+lib/libticables.so
+lib/libticables.so.10
+libdata/pkgconfig/ticables.pc
+share/aclocal/ticables.m4
+share/locale/fr/LC_MESSAGES/libticables.mo
+@unexec rmdir %D/include/tilp 2>/dev/null || true
