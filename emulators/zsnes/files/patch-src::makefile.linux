@@ -1,0 +1,22 @@
+--- src/makefile.linux.orig	Tue May  1 21:33:15 2001
++++ src/makefile.linux	Fri May  4 13:21:00 2001
+@@ -23,7 +23,7 @@
+ WINDIR=linux
+ OBJDIR=obj
+ ZIPDIR=zip
+-MANDIR=/usr/man/man1
++MANDIR=$(PREFIX)/man/man1
+ 
+ CHIPSOBJ=${CHIPDIR}/sfxproc.o ${CHIPDIR}/fxemu2.o ${CHIPDIR}/dsp1proc.o\
+ 	 ${CHIPDIR}/fxemu2b.o ${CHIPDIR}/fxemu2c.o ${CHIPDIR}/fxtable.o\
+@@ -58,8 +58,8 @@
+ MAINOBJ=cfgload.o endmem.o fixsin.o init.o ui.o vcache.o water.o
+ 
+ OBJS=${CHIPSOBJ} ${CPUOBJ} ${WINOBJ} ${WINDOSOBJ} ${GUIOBJ} ${VIDEOBJ} ${ZIPOBJ} ${MAINOBJ}
+-SDLLIBS := $(shell sdl-config --libs)
+-SDLCFLAGS := $(shell sdl-config --cflags)
++SDLLIBS := $(shell $(SDL_CONFIG) --libs)
++SDLCFLAGS := $(shell $(SDL_CONFIG) --cflags)
+ LIBS=${SDLLIBS} -lz
+ CFLAGS=-g -Wall -D__LINUX__ ${SDLCFLAGS}
+ ASM=nasm

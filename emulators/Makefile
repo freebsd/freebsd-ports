@@ -1,5 +1,6 @@
 # $FreeBSD$
 #
+    SUBDIR += zsnes
 
     SUBDIR += aftp
     SUBDIR += atari800
