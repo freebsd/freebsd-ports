@@ -1,0 +1,10 @@
+         ***********************************
+         * !!!!!!!!!!! WARNING !!!!!!!!!!! *
+         ***********************************
+Since 2.1.1_1, to run nessusd server from startup, add nessusd_enable="YES"
+in your /etc/rc.conf.
+
+Available variables you add/set to /etc/rc.conf.
+- nessusd_enable (bool):      Set to "NO" by default.
+                              Set it to "YES" to enable nessusd.
+- nessusd_flags (str):        Set to "-D" by default.

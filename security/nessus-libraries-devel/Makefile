@@ -20,6 +20,8 @@ DISTNAME=	nessus-libraries-${PORTVERSION}
 MAINTAINER=	udo.schweigert@siemens.com
 COMMENT=	Libraries for Nessus, the security scanner
 
+CONFLICTS=	nessus-libraries-[0-9]*
+
 DIST_SUBDIR=	nessus
 WRKSRC=		${WRKDIR}/nessus-libraries
 
