@@ -4,28 +4,30 @@
 # Date created:				9 Jan 1998
 # Whom:					John Polstra <jdp@polstra.com>
 #
-# $Id: Makefile,v 1.38 1998/12/02 09:41:27 obrien Exp $
+# $Id: Makefile,v 1.39 1998/12/04 11:05:05 obrien Exp $
 #
 
-DISTNAME=	egcs-1.1.1-prerelease-3
-PKGNAME=	egcs-1.1.1b3
+DISTNAME=	egcs-1.1.1
 CATEGORIES=	lang
-MASTER_SITES=	ftp://go.cygnus.com/pub/ftp.cygnus.com/egcs/snapshots/1.1.1-prerelease/ \
-		ftp://egcs.cygnus.com/pub/egcs/snapshots/1.1.1-prerelease/ \
-		ftp://ftp.fu-berlin.de/unix/languages/egcs/snapshots/1.1.1-prerelease/ \
-		ftp://cambridge.cygnus.com/pub/egcs/snapshots/1.1.1-prerelease/
+MASTER_SITES=	ftp://go.cygnus.com/pub/ftp.cygnus.com/egcs/releases/egcs-1.1.1/ \
+		ftp://ftp.funet.fi/mirrors/ftp.cygnus.com/pub/egcs/releases/egcs-1.1.1/ \
+		ftp://egcs.cygnus.com/pub/egcs/releases/egcs-1.1.1/ \
+		ftp://ftp.fu-berlin.de/unix/languages/egcs/releases/egcs-1.1.1/ \
+		ftp://cambridge.cygnus.com/pub/egcs/releases/egcs-1.1.1/
 
 MAINTAINER=	obrien@FreeBSD.org
 
 .include <bsd.port.pre.mk>
 
-EGCS_REV=	egcs-2.91.59
+EGCS_REV=	egcs-2.91.60
 LIBSTDCPP_REV=	2.9.0
 
 .if ${PORTOBJFORMAT} == "elf"
-GNUHOST=	${ARCH}-unknown-freebsdelf${OSREL}
+#GNUHOST=	${ARCH}-unknown-freebsdelf${OSREL}
+GNUHOST=	${ARCH}-unknown-freebsdelf
 .else
-GNUHOST=	${ARCH}-unknown-freebsd${OSREL}
+#GNUHOST=	${ARCH}-unknown-freebsd${OSREL}
+GNUHOST=	${ARCH}-unknown-freebsd
 .endif
 
 PLIST_SUB=	EGCS_REV=${EGCS_REV} GNU_HOST=${GNUHOST}
