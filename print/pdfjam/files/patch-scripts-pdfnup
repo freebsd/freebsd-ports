@@ -1,0 +1,11 @@
+--- scripts/pdfnup.orig	Tue Jan 25 14:19:21 2005
++++ scripts/pdfnup	Wed Mar 16 09:17:40 2005
+@@ -23,7 +23,7 @@
+ ##  
+ ##  First say where your "pdflatex" program lives:
+ ##
+-pdflatex=pdflatex
++pdflatex=__LOCALBASE__/bin/pdflatex
+ #pdflatex="pdflatex.exe"    ## this for Windows computers
+ ##
+ ##  Next a permitted location for temporary files on your system:

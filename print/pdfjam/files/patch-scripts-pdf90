@@ -1,0 +1,11 @@
+--- scripts/pdf90.orig	Tue Jan 25 14:19:21 2005
++++ scripts/pdf90	Wed Mar 16 09:16:35 2005
+@@ -23,7 +23,7 @@
+ ##  
+ ##  First say where your "pdflatex" program lives:
+ ##
+-pdflatex=pdflatex
++pdflatex=__LOCALBASE__/bin/pdflatex
+ #pdflatex="pdflatex.exe"    ## this for Windows computers
+ ##
+ ##  Next a permitted location for temporary files on your system:
