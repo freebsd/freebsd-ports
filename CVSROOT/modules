@@ -7878,6 +7878,7 @@ userinfo	ports/sysutils/userinfo
 userlist	ports/sysutils/userlist
 usermin		ports/sysutils/usermin
 utah-glx	ports/graphics/utah-glx
+utcount		ports/sysutils/utcount
 utf8conv	ports/converters/utf8conv
 utf8locale	ports/misc/utf8locale
 utftpd		ports/net/utftpd
