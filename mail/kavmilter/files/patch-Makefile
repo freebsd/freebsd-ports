@@ -1,0 +1,14 @@
+--- Makefile.orig	Mon Jun 16 22:58:51 2003
++++ Makefile	Mon Jun 16 22:58:44 2003
+@@ -58,6 +58,11 @@
+ $(OBJS): $(HEADERS)
+ 
+ install: kavmilter stop
++	install -d -m 755 $(INSTDIR)
++	install -d -m 755 $(RCDDIR)
++	install -d -m 755 $(ETCDIR)
++	install -d -m 755 $(MANDIR)/man5
++	install -d -m 755 $(MANDIR)/man8
+ 	install -m 755 kavmilter $(INSTDIR)/kavmilter
+ 	install -m 755 kavmilter.sh.sample $(RCDDIR)/kavmilter.sh.sample
+ 	install -m 644 kavmilter.8 $(MANDIR)/man8/kavmilter.8

@@ -1,0 +1,32 @@
+************************************************************************
+
+1. In order to run this port, please add the following line to
+/etc/mail/freebsd.mc:
+
+INPUT_MAIL_FILTER(`kavmilter',`S=unix:/var/run/kavmilter,F=T')
+
+and appropriate correct the line with confINPUT_MAIL_FILTERS, when exist.
+
+Don't forget remake sendmail configuration file after modifying freebsd.mc
+
+2. In order to run this port properly, you system have to already has
+installed, configured and run Kaspersky Antiviral Daemon (KAV). It has
+missed the ports, but you can download and install beta version from
+
+ftp://ftp.avp.ru/beta/KAVUnix/KAVFreeBSD/4X/kav-MailServerSuit-4.0.2.1-FreeBSD-4.x.tgz
+
+or
+
+ftp://ftp.avp.ru/patches/KAVUnix4.0.3.0_UrgentUpdate1/FreeBSD/4.x/kav-WorkStationSuit-4.0.3.1-FreeBSD-4.x.tgz
+
+BE AWARE! Kaspersky Lab has their own look on files and dirs hierarchy,
+which doesn't correspond with hier(7) manual page. Probably you'll want
+to manually move executable bunaries and configs as you need. Also you
+have to keep in mind that downloadbale trial version of KAV Daemon has
+some restrictions.
+
+3. When you encountered, that pointed up directory already does not exist,
+visit a www.kaspersky.com site in order to resolve this problem. I am not
+Kaspersky Antivirus distributor, and do not have permissions to distribute
+their products.
+************************************************************************
