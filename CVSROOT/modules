@@ -393,6 +393,7 @@ asp2php		ports/www/asp2php
 aspell		ports/textproc/aspell
 aspostit	ports/deskutils/aspostit
 asprint		ports/print/asprint
+asr-manpages	ports/misc/asr-manpages
 astime		ports/x11-clocks/astime
 astrolog	ports/misc/astrolog
 astyle		ports/devel/astyle
