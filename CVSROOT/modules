@@ -2263,6 +2263,7 @@ gri		ports/math/gri
 gridpix		ports/graphics/gridpix
 gringotts	ports/security/gringotts
 grip		ports/audio/grip
+grisbi		ports/finance/grisbi
 grn		ports/news/grn
 gromit		ports/x11/gromit
 groundhog	ports/games/groundhog
