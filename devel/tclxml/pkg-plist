@@ -1,0 +1,15 @@
+include/tclxml.h
+lib/TclxmlConfig.sh
+lib/Tclxml%%VER%%/libTclxml%%VER%%.so
+lib/Tclxml%%VER%%/libTclxmlstub%%VER%%.a
+lib/Tclxml%%VER%%/pkgIndex.tcl
+lib/Tclxml%%VER%%/sgml-8.0.tcl
+lib/Tclxml%%VER%%/sgml-8.1.tcl
+lib/Tclxml%%VER%%/sgmlparser.tcl
+lib/Tclxml%%VER%%/tclparser-8.0.tcl
+lib/Tclxml%%VER%%/tclparser-8.1.tcl
+lib/Tclxml%%VER%%/xml__tcl.tcl
+lib/Tclxml%%VER%%/xml-8.0.tcl
+lib/Tclxml%%VER%%/xml-8.1.tcl
+lib/Tclxml%%VER%%/xpath.tcl
+@dirrm lib/Tclxml%%VER%%
