@@ -6,33 +6,24 @@
 #
 
 PORTNAME=	pavuk
-PORTVERSION=	0.9.28
-PORTREVISION=	6
+PORTVERSION=	0.9.31
 CATEGORIES=	ftp www
-MASTER_SITES=	${MASTER_SITE_SUNSITE} \
-		http://www.idata.sk/~ondrej/sw/
-MASTER_SITE_SUBDIR=	apps/www/mirroring
-DISTNAME=	${PORTNAME}-0.9pl28
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	HTTP, FTP and Gopher mirroring tool
 
-USE_OPENSSL=	yes
+USE_BZIP2=	yes
 WANT_GNOME=	yes
+USE_GNOME=	gnometarget
+USE_OPENSSL=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-CONFIGURE_ARGS=	--with-locale-dir=${LOCALBASE}/share/locale \
-		--disable-debug --disable-gnome --enable-threads
-
-.if !defined(WITHOUT_NLS)
-USE_GETTEXT=	yes
-PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ARGS+=--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.endif
+CONFIGURE_ARGS=	--with-locale-dir=${PREFIX}/share/locale \
+		--disable-debug --disable-gnome --disable-gtk2 --disable-js \
+		--enable-threads
 
 MAN1=		pavuk.1
 
@@ -41,8 +32,17 @@ LDFLAGS=	-L${LOCALBASE}/lib
 
 .include <bsd.port.pre.mk>
 
+.if defined(WITHOUT_NLS)
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.else
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.endif
+
 .if ${HAVE_GNOME:Mgtk12}!=""
-USE_GNOME=	gtk12
+PKGNAMESUFFIX=	-gtk
+USE_GNOME+=	gtk12
 CONFIGURE_ARGS+=	--with-gtk-config="${GTK_CONFIG}"
 .else
 CONFIGURE_ARGS+=	--disable-gtk
@@ -61,7 +61,8 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/pavukrc.sample ${PREFIX}/etc
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for f in AUTHORS BUGS CREDITS ChangeLog FAQ MAILINGLIST NEWS README
+.for f in AUTHORS BUGS CREDITS ChangeLog FAQ MAILINGLIST NEWS README \
+	wget-pavuk.HOWTO
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
 .endif

@@ -1,4 +1,6 @@
 bin/pavuk
+bin/pavuk.sh
+bin/tperf.sh
 etc/pavuk_authinfo.sample
 etc/pavukrc.sample
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
@@ -9,18 +11,21 @@ etc/pavukrc.sample
 %%PORTDOCS%%%%DOCSDIR%%/MAILINGLIST
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%DATADIR%%/icons/pavuk_16x16.xpm
-%%DATADIR%%/icons/pavuk_32x32.xpm
-%%DATADIR%%/icons/pavuk_64x64.xpm
-%%DATADIR%%/icons/pavuk_as_icon.xpm
-%%DATADIR%%/icons/pavuk_prg_icon.xpm
+%%PORTDOCS%%%%DOCSDIR%%/wget-pavuk.HOWTO
 %%NLS%%share/locale/cs/LC_MESSAGES/pavuk.mo
 %%NLS%%share/locale/de/LC_MESSAGES/pavuk.mo
 %%NLS%%share/locale/es/LC_MESSAGES/pavuk.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/pavuk.mo
 %%NLS%%share/locale/it/LC_MESSAGES/pavuk.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/pavuk.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/pavuk.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/pavuk.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/pavuk.mo
+%%DATADIR%%/icons/pavuk_16x16.xpm
+%%DATADIR%%/icons/pavuk_32x32.xpm
+%%DATADIR%%/icons/pavuk_64x64.xpm
+%%DATADIR%%/icons/pavuk_as_icon.xpm
+%%DATADIR%%/icons/pavuk_prg_icon.xpm
 @dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
