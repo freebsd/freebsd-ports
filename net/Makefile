@@ -515,6 +515,7 @@
     SUBDIR += phex
     SUBDIR += php4-ldap
     SUBDIR += php4-sockets
+    SUBDIR += php4-xmlrpc
     SUBDIR += phpldapadmin
     SUBDIR += pim6dd
     SUBDIR += pim6sd
