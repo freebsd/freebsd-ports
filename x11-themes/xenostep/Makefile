@@ -26,10 +26,6 @@ MAKE_ENV=	MKDIR="${MKDIR}"
 DIRS=		"XenoStep Classic" "XenoStep Classic Small" "XenoStep HeliX" \
 		"XenoStep HeliX Small" "XenoStep Modern" "XenoStep Modern Small"
 
-.if ${MACHINE_ARCH:L} == "amd64"
-CFLAGS+=	-fPIC
-.endif
-
 post-extract:
 	for dir in ${DIRS}; do \
 		destdir=`${ECHO_CMD} $${dir} | ${SED} 's| |_|g'`; \
