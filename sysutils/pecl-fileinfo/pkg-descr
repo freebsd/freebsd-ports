@@ -1,0 +1,11 @@
+The Fileinfo extension allows retrieval of information regarding
+vast majority of file.
+This information may include dimensions, quality, length etc...
+
+Additionally it can also be used to retrieve the mime type for a
+particular file and for text files proper language encoding.
+
+WWW: http://pecl.php.net/package/Fileinfo/
+
+- Alex Dupre
+ale@FreeBSD.org
