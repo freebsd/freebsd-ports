@@ -403,69 +403,69 @@
 %%HLDSDIR%%/frontline/mapcycle.txt
 %%HLDSDIR%%/frontline/maps/flf_ascension.bsp
 %%HLDSDIR%%/frontline/maps/flf_ascension.loc
-%%HLDSDIR%%/frontline/maps/flf_ascension.txt
+%%PORTDOCS%%%%HLDSDIR%%/frontline/maps/flf_ascension.txt
 %%HLDSDIR%%/frontline/maps/flf_bier.bsp
 %%HLDSDIR%%/frontline/maps/flf_bier.loc
-%%HLDSDIR%%/frontline/maps/flf_bier.txt
+%%PORTDOCS%%%%HLDSDIR%%/frontline/maps/flf_bier.txt
 %%HLDSDIR%%/frontline/maps/flf_bridge.bsp
 %%HLDSDIR%%/frontline/maps/flf_bridge.loc
-%%HLDSDIR%%/frontline/maps/flf_bridge.txt
+%%PORTDOCS%%%%HLDSDIR%%/frontline/maps/flf_bridge.txt
 %%HLDSDIR%%/frontline/maps/flf_chion.bsp
 %%HLDSDIR%%/frontline/maps/flf_chion.loc
-%%HLDSDIR%%/frontline/maps/flf_chion.txt
+%%PORTDOCS%%%%HLDSDIR%%/frontline/maps/flf_chion.txt
 %%HLDSDIR%%/frontline/maps/flf_deep6.bsp
 %%HLDSDIR%%/frontline/maps/flf_deep6.loc
-%%HLDSDIR%%/frontline/maps/flf_deep6.txt
+%%PORTDOCS%%%%HLDSDIR%%/frontline/maps/flf_deep6.txt
 %%HLDSDIR%%/frontline/maps/flf_dlord.bsp
 %%HLDSDIR%%/frontline/maps/flf_dlord.loc
-%%HLDSDIR%%/frontline/maps/flf_dlord.txt
-%%HLDSDIR%%/frontline/maps/flf_dlordREADME.txt
+%%PORTDOCS%%%%HLDSDIR%%/frontline/maps/flf_dlord.txt
+%%PORTDOCS%%%%HLDSDIR%%/frontline/maps/flf_dlordREADME.txt
 %%HLDSDIR%%/frontline/maps/flf_fox.bsp
 %%HLDSDIR%%/frontline/maps/flf_fox.loc
-%%HLDSDIR%%/frontline/maps/flf_fox.txt
+%%PORTDOCS%%%%HLDSDIR%%/frontline/maps/flf_fox.txt
 %%HLDSDIR%%/frontline/maps/flf_heatwave.bsp
 %%HLDSDIR%%/frontline/maps/flf_heatwave.loc
-%%HLDSDIR%%/frontline/maps/flf_heatwave.txt
+%%PORTDOCS%%%%HLDSDIR%%/frontline/maps/flf_heatwave.txt
 %%HLDSDIR%%/frontline/maps/flf_hill.bsp
 %%HLDSDIR%%/frontline/maps/flf_hill.loc
-%%HLDSDIR%%/frontline/maps/flf_hill.txt
+%%PORTDOCS%%%%HLDSDIR%%/frontline/maps/flf_hill.txt
 %%HLDSDIR%%/frontline/maps/flf_icehammer.bsp
 %%HLDSDIR%%/frontline/maps/flf_icehammer.loc
-%%HLDSDIR%%/frontline/maps/flf_icehammer.txt
+%%PORTDOCS%%%%HLDSDIR%%/frontline/maps/flf_icehammer.txt
 %%HLDSDIR%%/frontline/maps/flf_job.bsp
 %%HLDSDIR%%/frontline/maps/flf_job.loc
-%%HLDSDIR%%/frontline/maps/flf_job.txt
+%%PORTDOCS%%%%HLDSDIR%%/frontline/maps/flf_job.txt
 %%HLDSDIR%%/frontline/maps/flf_kezman.bsp
 %%HLDSDIR%%/frontline/maps/flf_kezman.loc
-%%HLDSDIR%%/frontline/maps/flf_kezman.txt
+%%PORTDOCS%%%%HLDSDIR%%/frontline/maps/flf_kezman.txt
 %%HLDSDIR%%/frontline/maps/flf_lombardi.bsp
 %%HLDSDIR%%/frontline/maps/flf_lombardi.loc
-%%HLDSDIR%%/frontline/maps/flf_lombardi.txt
+%%PORTDOCS%%%%HLDSDIR%%/frontline/maps/flf_lombardi.txt
 %%HLDSDIR%%/frontline/maps/flf_rage.bsp
 %%HLDSDIR%%/frontline/maps/flf_rage.loc
-%%HLDSDIR%%/frontline/maps/flf_rage.txt
+%%PORTDOCS%%%%HLDSDIR%%/frontline/maps/flf_rage.txt
 %%HLDSDIR%%/frontline/maps/flf_risu.bsp
 %%HLDSDIR%%/frontline/maps/flf_risu.loc
-%%HLDSDIR%%/frontline/maps/flf_risu.txt
+%%PORTDOCS%%%%HLDSDIR%%/frontline/maps/flf_risu.txt
 %%HLDSDIR%%/frontline/maps/flf_snow.bsp
 %%HLDSDIR%%/frontline/maps/flf_snow.loc
-%%HLDSDIR%%/frontline/maps/flf_snow.txt
+%%PORTDOCS%%%%HLDSDIR%%/frontline/maps/flf_snow.txt
 %%HLDSDIR%%/frontline/maps/flf_village.bsp
 %%HLDSDIR%%/frontline/maps/flf_village.loc
-%%HLDSDIR%%/frontline/maps/flf_village.txt
-%%HLDSDIR%%/frontline/maptutorial/Images/Addfgd.jpg
-%%HLDSDIR%%/frontline/maptutorial/Images/Say_team.jpg
-%%HLDSDIR%%/frontline/maptutorial/Images/addfgd_thumb.jpg
-%%HLDSDIR%%/frontline/maptutorial/Images/introtext.jpg
-%%HLDSDIR%%/frontline/maptutorial/Images/introtext_thumb.jpg
-%%HLDSDIR%%/frontline/maptutorial/Images/miniturrets.jpg
-%%HLDSDIR%%/frontline/maptutorial/Images/prop_capture.jpg
-%%HLDSDIR%%/frontline/maptutorial/Images/prop_capture_thumb.jpg
-%%HLDSDIR%%/frontline/maptutorial/Images/prop_infofrontline.jpg
-%%HLDSDIR%%/frontline/maptutorial/Images/prop_infofrontline_thumb.jpg
-%%HLDSDIR%%/frontline/maptutorial/Images/prop_miniturret.jpg
-%%HLDSDIR%%/frontline/maptutorial/Images/prop_miniturret_thumb.jpg
-%%HLDSDIR%%/frontline/maptutorial/index.html
+%%PORTDOCS%%%%HLDSDIR%%/frontline/maps/flf_village.txt
+%%PORTDOCS%%%%HLDSDIR%%/frontline/maptutorial/Images/Addfgd.jpg
+%%PORTDOCS%%%%HLDSDIR%%/frontline/maptutorial/Images/Say_team.jpg
+%%PORTDOCS%%%%HLDSDIR%%/frontline/maptutorial/Images/addfgd_thumb.jpg
+%%PORTDOCS%%%%HLDSDIR%%/frontline/maptutorial/Images/introtext.jpg
+%%PORTDOCS%%%%HLDSDIR%%/frontline/maptutorial/Images/introtext_thumb.jpg
+%%PORTDOCS%%%%HLDSDIR%%/frontline/maptutorial/Images/miniturrets.jpg
+%%PORTDOCS%%%%HLDSDIR%%/frontline/maptutorial/Images/prop_capture.jpg
+%%PORTDOCS%%%%HLDSDIR%%/frontline/maptutorial/Images/prop_capture_thumb.jpg
+%%PORTDOCS%%%%HLDSDIR%%/frontline/maptutorial/Images/prop_infofrontline.jpg
+%%PORTDOCS%%%%HLDSDIR%%/frontline/maptutorial/Images/prop_infofrontline_thumb.jpg
+%%PORTDOCS%%%%HLDSDIR%%/frontline/maptutorial/Images/prop_miniturret.jpg
+%%PORTDOCS%%%%HLDSDIR%%/frontline/maptutorial/Images/prop_miniturret_thumb.jpg
+%%PORTDOCS%%%%HLDSDIR%%/frontline/maptutorial/index.html
 %%HLDSDIR%%/frontline/media/logo.avi
 %%HLDSDIR%%/frontline/models/antena.mdl
 %%HLDSDIR%%/frontline/models/antena2.mdl
@@ -590,7 +590,7 @@
 %%HLDSDIR%%/frontline/models/w_ump45.mdl
 %%HLDSDIR%%/frontline/models/w_ump45T.mdl
 %%HLDSDIR%%/frontline/pink.cfg
-%%HLDSDIR%%/frontline/readme_front.txt
+%%PORTDOCS%%%%HLDSDIR%%/frontline/readme_front.txt
 %%HLDSDIR%%/frontline/server.cfg
 %%HLDSDIR%%/frontline/settings.scr
 %%HLDSDIR%%/frontline/sound/ambience/BattleLoop.wav
@@ -620,7 +620,7 @@
 %%HLDSDIR%%/frontline/sound/ambience/thunder2.wav
 %%HLDSDIR%%/frontline/sound/ambience/thunder3.wav
 %%HLDSDIR%%/frontline/sound/ambience/waves.wav
-%%HLDSDIR%%/frontline/sound/materials.txt
+%%PORTDOCS%%%%HLDSDIR%%/frontline/sound/materials.txt
 %%HLDSDIR%%/frontline/sound/misc/captured.wav
 %%HLDSDIR%%/frontline/sound/misc/he_ambience.wav
 %%HLDSDIR%%/frontline/sound/misc/mouseover.wav
@@ -685,7 +685,7 @@
 %%HLDSDIR%%/frontline/sound/radio/waitc.wav
 %%HLDSDIR%%/frontline/sound/radio/waitcv.wav
 %%HLDSDIR%%/frontline/sound/radio/warm_auto1.wav
-%%HLDSDIR%%/frontline/sound/sentences.txt
+%%PORTDOCS%%%%HLDSDIR%%/frontline/sound/sentences.txt
 %%HLDSDIR%%/frontline/sound/sfx/sbullet.wav
 %%HLDSDIR%%/frontline/sound/sfx/sbullet1.wav
 %%HLDSDIR%%/frontline/sound/sfx/sbullet2.wav
@@ -902,7 +902,7 @@
 %%HLDSDIR%%/frontline/sprites/weapon_ump45.txt
 %%HLDSDIR%%/frontline/sprites/weapon_ump45_low.spr
 %%HLDSDIR%%/frontline/sprites/woodpuff.spr
-%%HLDSDIR%%/frontline/titles.txt
+%%PORTDOCS%%%%HLDSDIR%%/frontline/titles.txt
 %%HLDSDIR%%/frontline/user.scr
 %%PORTDOCS%%%%HLDSDIR%%/frontline/version_info.txt
 @dirrm %%HLDSDIR%%/frontline/sprites
@@ -923,8 +923,8 @@
 @dirrm %%HLDSDIR%%/frontline/models/map
 @dirrm %%HLDSDIR%%/frontline/models
 @dirrm %%HLDSDIR%%/frontline/media
-@dirrm %%HLDSDIR%%/frontline/maptutorial/Images
-@dirrm %%HLDSDIR%%/frontline/maptutorial
+%%PORTDOCS%%@dirrm %%HLDSDIR%%/frontline/maptutorial/Images
+%%PORTDOCS%%@dirrm %%HLDSDIR%%/frontline/maptutorial
 @dirrm %%HLDSDIR%%/frontline/maps
 %%PORTDOCS%%@dirrm %%HLDSDIR%%/frontline/manual
 @dirrm %%HLDSDIR%%/frontline/gfx/vgui
