@@ -31,7 +31,8 @@ require 5.003;	# to be sure.  log_accum needs perl5
 #
 ############################################################
 #
-# Check each file (except dot files) for an RCS "FreeBSD" keyword.
+# Check each file (except dot files) for our RCS header keyword.
+# (defined in the constants section.)
 #
 $check_id = 0;
 
@@ -47,22 +48,24 @@ $record_directory = 1;
 ############################################################
 $LAST_FILE     = "/tmp/#cvs.files.lastdir";
 $ENTRIES       = "CVS/Entries";
+$HEADER        = 'FreeBSD';	# Our RCS header is '$ FreeBSD $', 
+				# (without the spaces.)
 
 $NoId = "
-%s - Does not contain a line with the keyword \"\$FreeBSD:\".\n";
+%s - Does not contain a line with the keyword \"\$$HEADER:\".\n";
 
 # Protect string from substitution by RCS.
 $NoName = "
-%s - The ID line should contain only \"\$\FreeBSD\$\" for a newly created file.\n";
+%s - The ID line should contain only \$$HEADER\$ for a newly created file.\n";
 
 #$DelPath = "
-#%s - The old path and version has been deleted from \$\FreeBSD\$.\n";
+#%s - The old path and version has been deleted from \$$HEADER\$.\n";
 
-$BadId = "%s - The \$\FreeBSD\$ is mangled.\n";
+$BadId = "%s - The \$$HEADER\$ is mangled.\n";
 
 $BadName = "
 %s - The pathname '%s'
-    in the \$\FreeBSD\$ line does not match the actual filename.\n";
+    in the \$$HEADER\$ line does not match the actual filename.\n";
 
 $BadVersion = "
 %s - GRRR!!  You spammed your copy of the file
@@ -97,7 +100,7 @@ sub check_version {
 	$pos = -1;
 	last if eof(FILE);
 	$line = <FILE>;
-	$pos = index($line, "\$\FreeBSD");
+	$pos = index($line, "\$$HEADER");
 	last if ($pos >= 0);
     }
 
@@ -105,9 +108,9 @@ sub check_version {
 	printf($NoId, $filename);
 	return(1);
     }
-    $bareid = (index($line, "\$\FreeBSD: \$") >= 0 ||
-		index($line, "\$\FreeBSD\$") >= 0);
-    if (!$bareid && $line !~ /\$\FreeBSD: .* \$/) {
+    $bareid = (index($line, "\$$HEADER: \$") >= 0 ||
+		index($line, "\$$HEADER\$") >= 0);
+    if (!$bareid && $line !~ /\$$HEADER: .* \$/) {
 	printf($BadId, $filename);
 	return(1);
     }
@@ -135,7 +138,7 @@ sub check_version {
     }
     if ($rname ne "$directory/$filename,v") {
 	# If ports and the pathname is just the basename (eg: somebody sent
-	# in a port with $Id$ and the committer changed Id -> FreeBSD and
+	# in a port with $Id$ and the committer changed Id -> $HEADER and
 	# the version numbers otherwise match.
 	if (!($directory =~ /^ports\// && $rname eq "$filename,v")) {
 	    printf($BadName, "$directory/$filename,v", $rname);
