@@ -1,6 +1,59 @@
---- libIDL/Makefile.in.orig	Wed Dec 16 10:41:34 1998
-+++ libIDL/Makefile.in	Wed Dec 23 17:22:00 1998
-@@ -74,7 +74,7 @@
+--- src/IIOP/Makefile.in.orig	Mon Feb 15 13:00:01 1999
++++ src/IIOP/Makefile.in	Thu Feb 18 22:36:39 1999
+@@ -109,7 +109,7 @@
+ 
+ BUILT_SOURCES = $(libwrap_files)
+ 
+-libIIOP_la_LDFLAGS = -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
++libIIOP_la_LDFLAGS = -version-info 1:0:0
+ 
+ EXTRA_DIST = IIOP-design.txt
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+--- src/ORBitutil/Makefile.in.orig	Mon Feb 15 13:00:00 1999
++++ src/ORBitutil/Makefile.in	Thu Feb 18 22:36:39 1999
+@@ -102,7 +102,7 @@
+ libORBitutilinclude_HEADERS =  	basic_types.h 	thread-safety.h 	trace.h 	util.h 	compat.h
+ 
+ 
+-libORBitutil_la_LDFLAGS = -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
++libORBitutil_la_LDFLAGS = -version-info 1:0:0
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../../config.h
+ CONFIG_CLEAN_FILES = 
+--- src/orb/Makefile.in.orig	Mon Feb 15 12:59:59 1999
++++ src/orb/Makefile.in	Thu Feb 18 22:36:39 1999
+@@ -106,7 +106,7 @@
+ IDL = $(top_builddir)/src/idl-compiler/orbit-idl
+ IRIDL = $(top_srcdir)/src/daemons/interface_repository/interface_repository.idl
+ 
+-libORBit_la_LDFLAGS = -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
++libORBit_la_LDFLAGS = -version-info 1:0:0
+ libORBit_la_LIBADD = $(GLIB_LIBS) -lm
+ 
+ BUILT_SOURCES =  	interface_repository.h 	interface_repository-common.c 	interface_repository-stubs.c
+--- src/services/name/Makefile.in.orig	Mon Feb 15 13:00:03 1999
++++ src/services/name/Makefile.in	Thu Feb 18 22:40:23 1999
+@@ -104,7 +104,7 @@
+ libORBitservicesinclude_HEADERS =  	CosNaming.h								CosNaming_impl.h							CosNaming.idl								LName.pidl
+ 
+ 
+-libORBitCosNaming_la_LDFLAGS =  	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
++libORBitCosNaming_la_LDFLAGS =  	-version-info 1:0:0
+ 
+ 
+ INCLUDES = -I. -I$(top_builddir)/src -I$(top_srcdir)/src  @GLIB_CFLAGS@
+--- libIDL/Makefile.in.orig	Mon Feb 15 12:59:56 1999
++++ libIDL/Makefile.in	Thu Feb 18 22:55:15 1999
+@@ -50,7 +50,7 @@
+ AUTOMAKE = @AUTOMAKE@
+ AUTOHEADER = @AUTOHEADER@
+ 
+-INSTALL = @INSTALL@
++INSTALL = @INSTALL_PROGRAM@
+ INSTALL_PROGRAM = @INSTALL_PROGRAM@ $(AM_INSTALL_PROGRAM_FLAGS)
+ INSTALL_DATA = @INSTALL_DATA@
+ INSTALL_SCRIPT = @INSTALL_SCRIPT@
+@@ -76,7 +76,7 @@
  LEX = @LEX@
  LIBTOOL = @LIBTOOL@
  LN_S = @LN_S@
@@ -11,63 +64,19 @@
  RANLIB = @RANLIB@
 @@ -101,7 +101,7 @@
  
- libIDL_la_SOURCES	= parser.c parser.h lexer.c \
- 			  ns.c util.c util.h rename.h
--libIDL_la_LDFLAGS	= -version-info 5:8:5
-+libIDL_la_LDFLAGS	= -version-info 1:0:0
+ libIDL_la_SOURCES = parser.c parser.h lexer.c 			  ns.c util.c util.h rename.h
  
- tstidl_SOURCES		= tstidl.c
- tstidl_LDFLAGS		= -static
-@@ -145,7 +145,7 @@
- SOURCES = $(libIDL_la_SOURCES) $(tstidl_SOURCES)
- OBJECTS = $(libIDL_la_OBJECTS) $(tstidl_OBJECTS)
+-libIDL_la_LDFLAGS = -version-info 5:9:5
++libIDL_la_LDFLAGS = -version-info 1:0:0
  
--all: Makefile $(INFO_DEPS) $(LTLIBRARIES) $(PROGRAMS) $(HEADERS)
-+all: Makefile $(INFO_DEPS) $(LTLIBRARIES) $(HEADERS)
- 
- .SUFFIXES:
- .SUFFIXES: .S .c .dvi .info .lo .o .ps .s .texi .texinfo .txi
---- src/IIOP/Makefile.in.orig	Wed Dec 16 10:41:43 1998
-+++ src/IIOP/Makefile.in	Wed Dec 23 17:22:38 1998
-@@ -117,7 +117,7 @@
- 	iiop-encoders.h \
- 	iiop-endian.h
- 
--libIIOP_la_LDFLAGS = -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
-+libIIOP_la_LDFLAGS = -version-info 1:0:0
- 
- EXTRA_DIST = IIOP-design.txt
- mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
---- src/ORBitutil/Makefile.in.orig	Wed Dec 16 10:41:42 1998
-+++ src/ORBitutil/Makefile.in	Wed Dec 23 17:22:57 1998
-@@ -110,7 +110,7 @@
- 	util.h \
- 	compat.h
- 
--libORBitutil_la_LDFLAGS = -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
-+libORBitutil_la_LDFLAGS = -version-info 1:0:0
- mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
- CONFIG_HEADER = ../../config.h
- CONFIG_CLEAN_FILES = 
---- src/orb/Makefile.in.orig	Wed Dec 16 10:41:40 1998
-+++ src/orb/Makefile.in	Wed Dec 23 17:23:17 1998
-@@ -164,7 +164,7 @@
- INTF_REP = $(top_srcdir)/src/daemons/interface_repository
- INTF_OBJ = ../daemons/interface_repository
- 
--libORBit_la_LDFLAGS = -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
-+libORBit_la_LDFLAGS = -version-info 1:0:0
- libORBit_la_LIBADD = $(GLIB_LIBS) -lm
- 
- BUILT_SOURCES = \
---- src/services/name/Makefile.in.orig	Wed Dec 16 10:41:47 1998
-+++ src/services/name/Makefile.in	Wed Dec 23 17:57:37 1998
-@@ -107,7 +107,7 @@
- 	LName.pidl
- 
- libORBitCosNaming_la_LDFLAGS = \
--	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
-+	-version-info 1:0:0
- 
- INCLUDES = -I. -I$(top_builddir)/src -I$(top_srcdir)/src  @GLIB_CFLAGS@
- 
+ tstidl_SOURCES = tstidl.c
+ tstidl_LDFLAGS = -static
+@@ -478,7 +478,7 @@
+ uninstall-am: uninstall-libLTLIBRARIES uninstall-info \
+ 		uninstall-pkgincludeHEADERS
+ uninstall: uninstall-am
+-all-am: Makefile $(INFO_DEPS) $(LTLIBRARIES) $(PROGRAMS) $(HEADERS)
++all-am: Makefile $(INFO_DEPS) $(LTLIBRARIES) $(HEADERS)
+ all-redirect: all-am
+ install-strip:
+ 	$(MAKE) $(AM_MAKEFLAGS) AM_INSTALL_PROGRAM_FLAGS=-s install
