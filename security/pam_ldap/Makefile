@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pam_ldap
-PORTVERSION=	1.6.5
+PORTVERSION=	1.6.7
 CATEGORIES=	security net
 MASTER_SITES=	http://www.padl.com/download/ \
 		ftp://ftp.padl.com/pub/
@@ -23,7 +23,7 @@ CONFIGURE_ARGS=	--with-ldap-lib=openldap \
 		--with-ldap-dir=${LOCALBASE} \
 		--with-ldap-conf-file=${PREFIX}/etc/ldap.conf \
 		--with-ldap-secret-file=${PREFIX}/etc/ldap.secret
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-unknown-freebsd${OSREL}
+CONFIGURE_TARGET=--build=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
