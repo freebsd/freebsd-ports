@@ -32,6 +32,7 @@ libexec/uucp/uuxqt
 @group wheel
 sbin/uuchk
 sbin/uuconv
+@dirrm etc/periodic
 @dirrm etc/uucp
 @dirrm libexec/uucp
 @exec echo "updating /etc/services"; cp /etc/services /etc/services.bak; (grep -v ^suucp /etc/services.bak ; echo "suucp               4031/tcp  #UUCP over SSL";  echo "suucp               4031/udp  #UUCP over SSL") > /etc/services
