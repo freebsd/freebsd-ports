@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.223 1999/02/09 15:37:07 billf Exp $
+# $Id: Makefile,v 1.224 1999/02/22 22:46:18 billf Exp $
 #
 
     SUBDIR += SSLtelnet
@@ -54,6 +54,7 @@
     SUBDIR += ftpsearch
     SUBDIR += ftptool
     SUBDIR += gated
+    SUBDIR += ggsd
     SUBDIR += gnu-finger
     SUBDIR += gopher
     SUBDIR += gicq
