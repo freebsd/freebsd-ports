@@ -14,7 +14,7 @@ MASTER_SITES=	http://a42.com/~thor/xldlas/			\
 MASTER_SITE_SUBDIR=	apps/graphics/visualization
 EXTRACT_SUFX=	-source.tgz
 
-MAINTAINER=	giffunip@asme.org
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	xforms.0:${PORTSDIR}/x11-toolkits/xforms
 
