@@ -54,8 +54,7 @@ post-extract:
 
 post-install:
 	-@${MKDIR} ${ETCDIR}/rc.d
-	${INSTALL_SCRIPT} ${FILESDIR}/GNUstep.sh ${ETCDIR}/rc.d
-	${INSTALL_SCRIPT} ${WRKSRC}/GNUstep.sh ${ETCDIR}/rc.d
+	${INSTALL_SCRIPT} ${WRKSRC}/GNUstep.sh ${ETCDIR}/rc.d/GNUstep.sh
 	${INSTALL_DATA} ${FILESDIR}/gdomap_if ${ETCDIR}
 
 test:
