@@ -3,6 +3,8 @@ etc/gnome/config/Moleskine/LanguageModes
 etc/gnome/config/Moleskine/Preferences
 share/gnome/Moleskine/Moleskine/Config.py
 share/gnome/Moleskine/Moleskine/Config.pyc
+share/gnome/Moleskine/Moleskine/CVS.py
+share/gnome/Moleskine/Moleskine/CVS.pyc
 share/gnome/Moleskine/Moleskine/Dialogs.py
 share/gnome/Moleskine/Moleskine/Dialogs.pyc
 share/gnome/Moleskine/Moleskine/Document.py
@@ -29,12 +31,12 @@ share/gnome/Moleskine/Moleskine/menu.py
 share/gnome/Moleskine/Moleskine/menu.pyc
 share/gnome/Moleskine/Moleskine/toolbar.py
 share/gnome/Moleskine/Moleskine/toolbar.pyc
-share/gnome/Moleskine/dialogs/find_dialog.glade
 share/gnome/Moleskine/dialogs/languages_dialog.glade
 share/gnome/Moleskine/dialogs/options_dialog.glade
 share/gnome/Moleskine/dialogs/replace_dialog.glade
 share/gnome/Moleskine/dialogs/replace_prompt_dialog.glade
 share/gnome/Moleskine/dialogs/search_dialog.glade
+share/gnome/Moleskine/dialogs/search_in_files_dialog.glade
 share/gnome/Moleskine/images/moleskine-logo.jpeg
 share/gnome/Moleskine/images/moleskine.png
 share/gnome/Moleskine/moleskine
