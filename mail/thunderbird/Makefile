@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	thunderbird
-PORTVERSION=	0.6
-PORTREVISION=	1
+PORTVERSION=	0.7
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	thunderbird/releases/${PORTVERSION}
@@ -35,6 +34,7 @@ HAS_CONFIGURE=	yes
 ALL_TARGET=	default
 USE_GNOME=	gtk20 libidl
 CONFIGURE_ENV=	LOCALBASE=${LOCALBASE}
+PKGINSTALL=	${WRKDIR}/pkg-install
 
 NO_MTREE=		yes
 WRKSRC=			${WRKDIR}/mozilla
@@ -43,10 +43,6 @@ LOCAL_PREFIX=		${PREFIX}/${LOCAL_SUBDIR}
 ESD_LIB=		libesd.so.2
 
 .include <bsd.port.pre.mk>
-
-.if ${ARCH} == "i386"
-CONFIGURE_ENV+=		WITH_REORDER=yes
-.endif # ${ARCH} == "i386"
 
 .if ${ARCH} == "alpha" && ${OSVERSION} < 500035
 IGNORE=	"core dumps at runtime"
@@ -59,6 +55,9 @@ CONFIGURE_ENV+=		WITH_DEBUG=yes
 
 .if defined(WITH_OPTIMIZED_CFLAGS)
 CFLAGS+=		-O2
+CONFIGURE_ENV+=		WITH_OPTIMIZE=-O2
+.else
+CONFIGURE_ENV+=		WITH_OPTIMIZE=-O
 .endif # defined(WITH_OPTIMIZED_CFLAGS)
 
 .if defined(WITH_LOGGING)
@@ -104,7 +103,7 @@ post-patch:
 		${WRKSRC}/security/coreconf/FreeBSD.mk \
 		${WRKSRC}/directory/c-sdk/config/FreeBSD.mk \
 		${WRKSRC}/js/src/Makefile.in
-	@${REINPLACE_CMD} -e 's|libesd\.so\.0|${ESD_LIB}|g' \
+	@${REINPLACE_CMD} -E -e 's|libesd\.so\.[0-9]+|${ESD_LIB}|g' \
 		${WRKSRC}/widget/src/gtk2/nsSound.cpp
 	@${REINPLACE_CMD} -e '/accessibility.typeaheadfind.enablesound/s/true/false/' \
 		${WRKSRC}/modules/libpref/src/init/all.js \
@@ -114,6 +113,8 @@ post-patch:
 		${WRKSRC}/configure \
 		${WRKSRC}/intl/uconv/native/nsNativeUConvService.cpp \
 		${WRKSRC}/xpcom/io/nsNativeCharsetUtils.cpp
+	@${SED} -e 's|%%MOZDIR%%|${LOCAL_PREFIX}/lib/${PORTNAME}-${PORTVERSION}|g' \
+		< ${MASTERDIR}/pkg-install.in > ${PKGINSTALL}
 
 pre-configure:
 	@if [ -n "`${PKG_INFO} -xI '^bind[0-9]*-base-[0-9]'`" ]; then \
@@ -121,23 +122,32 @@ pre-configure:
 		${FALSE}; \
 	fi
 
+post-build:
+# XXX This works around an install problem that is triggered when
+# toolkit/profile/src is built after profile/src.
+	@${TOUCH} -f ${WRKSRC}/profile/build/libprofile.so
+
 pre-install:
 	${RM} -fr ${LOCAL_PREFIX}
+	${MKDIR} ${LOCAL_PREFIX}/lib/${PORTNAME}-${PORTVERSION}/extensions.port
 
 post-install:
+	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	${RM} -f ${PREFIX}/bin/thunderbird
 	${LN} -s ${LOCAL_PREFIX}/bin/thunderbird \
 		${PREFIX}/bin/thunderbird
 	${RM} -f ${PREFIX}/bin/thunderbird-config
-	${LN} -s ${LOCAL_PREFIX}/bin/mozilla-config \
+	${LN} -s ${LOCAL_PREFIX}/bin/thunderbird-config \
 		${PREFIX}/bin/thunderbird-config
 	${RM} -fr ${LOCAL_PREFIX}/share/idl
 	${RM} -fr ${LOCAL_PREFIX}/include
 .for ii in mac win
 .for jj in / .jar
-	${RM} -fr ${LOCAL_PREFIX}/lib/mozilla-1.6/chrome/en-${ii}${jj}
+	${RM} -fr ${LOCAL_PREFIX}/lib/${PORTNAME}-${PORTVERSION}/chrome/en-${ii}${jj}
 .endfor
 .endfor
+	@${INSTALL_DATA} ${FILESDIR}/Extensions.rdf \
+		${LOCAL_PREFIX}/lib/${PORTNAME}-${PORTVERSION}/extensions.port
 
 cons-plist:
 	-${RM} -f ${PLIST}
