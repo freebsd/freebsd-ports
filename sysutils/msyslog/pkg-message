@@ -1,0 +1,14 @@
+================================================================================
+To replace FreeBSD's standard syslogd with msyslog, do this:
+
+a) create a configuration in ${PREFIX}/etc/syslog.conf.
+  See ${PREFIX}/share/examples/msyslog for examples.
+
+b) Set up a startup script in ${PREFIX}/etc/rc.d.
+  For your convinience, a msyslog.sh.sample has been provided.
+
+c) Stop the standard FreeBSD syslogd from starting automatically by putting this
+   in the end of /etc/rc.conf:
+
+syslogd_enable="NO"
+================================================================================
