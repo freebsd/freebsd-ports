@@ -1,0 +1,13 @@
+Multi Gnome Terminal is an enhanced version of gnome-terminal which has 
+the following features added: 
+
+    - Many terminals in each window 
+    - Switch between terminals using shortcuts 
+    - Execution of user defined commands in new terminals 
+    - Notification of terminal states (changed, changing, unchanged) using 
+      different tabs colors
+    - Reorderable tabs 
+
+All these extensions are inspired by screen and konsole (the kde2 terminal).
+
+WWW:  http://multignometerm.sourceforge.net/
