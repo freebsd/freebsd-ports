@@ -1,5 +1,4 @@
 dgd/Copyright
-dgd/Copyright.NET
 dgd/Credits
 dgd/README
 dgd/README.FreeBSD
@@ -10,7 +9,6 @@ dgd/bin/precomp.net
 dgd/doc/Commercial
 dgd/doc/Introduction.NET
 dgd/doc/LPC.html
-dgd/doc/Networking
 dgd/doc/Patching
 dgd/doc/Platforms
 dgd/doc/editor
@@ -22,7 +20,6 @@ dgd/doc/kfun/catch
 dgd/doc/kfun/ceil
 dgd/doc/kfun/clone_object
 dgd/doc/kfun/compile_object
-dgd/doc/kfun/connect
 dgd/doc/kfun/crypt
 dgd/doc/kfun/ctime
 dgd/doc/kfun/destruct_object
@@ -45,9 +42,7 @@ dgd/doc/kfun/map_sizeof
 dgd/doc/kfun/map_values
 dgd/doc/kfun/modf
 dgd/doc/kfun/object_name
-dgd/doc/kfun/open_port
 dgd/doc/kfun/parse_string
-dgd/doc/kfun/ports
 dgd/doc/kfun/previous_object
 dgd/doc/kfun/previous_program
 dgd/doc/kfun/query_editor
@@ -62,7 +57,6 @@ dgd/doc/kfun/remove_file
 dgd/doc/kfun/rename_file
 dgd/doc/kfun/restore_object
 dgd/doc/kfun/save_object
-dgd/doc/kfun/send_datagram
 dgd/doc/kfun/send_message.NET
 dgd/doc/kfun/shutdown
 dgd/doc/kfun/sizeof
