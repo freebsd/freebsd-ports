@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net-RawIP
-PORTVERSION=	0.09c
+PORTVERSION=	0.09d
 CATEGORIES=	net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN} \
 		http://quake.skif.net/RawIP/files/ \
