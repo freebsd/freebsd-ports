@@ -24,4 +24,10 @@ do-install:
 		${WRKSRC}/example/dancer.explain \
 			${PREFIX}/share/${PORTNAME}/
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 500000
+BROKEN=		Does not compile
+.endif
+
+.include <bsd.port.post.mk>
