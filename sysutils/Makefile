@@ -26,6 +26,7 @@
     SUBDIR += bbapm
     SUBDIR += bchunk
     SUBDIR += bkpupsd
+    SUBDIR += bksh
     SUBDIR += blimitd
     SUBDIR += bsdsar
     SUBDIR += bubblemon
