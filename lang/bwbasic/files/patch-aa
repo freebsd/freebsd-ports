@@ -1,0 +1,23 @@
+*** ../../original/bwbasic-2.10/Makefile.in	Wed Aug  9 20:52:34 1995
+--- ./Makefile.in	Wed Aug  9 21:54:17 1995
+***************
+*** 29,37 ****
+                  bwb_exp.o bwb_var.o bwb_inp.o bwb_fnc.o bwb_cnd.o\
+                  bwb_ops.o bwb_dio.o bwb_str.o bwb_elx.o bwb_mth.o\
+  		bwb_stc.o bwb_par.o bwx_tty.o
+!  
+  HFILES=         bwbasic.h bwb_mes.h bwx_tty.h
+!  
+  MISCFILES=	COPYING INSTALL Makefile.in README bwbasic.doc\
+  		bwbasic.mak configure.in configure makefile.qcl\
+  		bwb_tcc.c bwx_iqc.c bwx_iqc.h
+--- 29,37 ----
+                  bwb_exp.o bwb_var.o bwb_inp.o bwb_fnc.o bwb_cnd.o\
+                  bwb_ops.o bwb_dio.o bwb_str.o bwb_elx.o bwb_mth.o\
+  		bwb_stc.o bwb_par.o bwx_tty.o
+! 
+  HFILES=         bwbasic.h bwb_mes.h bwx_tty.h
+! 
+  MISCFILES=	COPYING INSTALL Makefile.in README bwbasic.doc\
+  		bwbasic.mak configure.in configure makefile.qcl\
+  		bwb_tcc.c bwx_iqc.c bwx_iqc.h
