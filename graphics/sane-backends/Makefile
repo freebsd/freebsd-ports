@@ -11,7 +11,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.mostang.com/pub/sane/  \
 		ftp://ftp.lahn.de/pub/platforms/linux/libs/
 
-MAINTAINER=	gary@hotlava.com
+MAINTAINER= 	ports@FreeBSD.org	
 
 LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
