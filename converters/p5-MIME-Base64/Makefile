@@ -21,4 +21,10 @@ CONFIGURE_ARGS=	INSTALLDIRS=site
 MAN3=		MIME::Base64.3 \
 		MIME::QuotedPrint.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} >= 500804
+IGNORE=		This port is needed only for perls below 5.8.4
+.endif
+
+.include <bsd.port.post.mk>
