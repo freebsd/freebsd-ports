@@ -5,7 +5,6 @@ lib/X11/fvwm95-2/FvwmAuto
 lib/X11/fvwm95-2/FvwmBacker
 lib/X11/fvwm95-2/FvwmBanner
 lib/X11/fvwm95-2/FvwmButtons
-lib/X11/fvwm95-2/FvwmConfig
 lib/X11/fvwm95-2/FvwmCpp
 lib/X11/fvwm95-2/FvwmDebug
 lib/X11/fvwm95-2/FvwmForm
@@ -155,7 +154,6 @@ lib/X11/fvwm95-2/mini-icons/mini-xv.xpm
 lib/X11/fvwm95-2/mini-icons/mini-zoom.xpm
 lib/X11/fvwm95-2/quantize_pixmaps
 lib/X11/fvwm95-2/system.fvwmrc
-lib/X11/fvwm95-2/system.fvwmrc.old
 man/man1/FvwmAudio.1.gz
 man/man1/FvwmAuto.1.gz
 man/man1/FvwmBacker.1.gz
