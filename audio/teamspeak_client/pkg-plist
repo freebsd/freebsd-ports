@@ -7,7 +7,7 @@ lib/teamspeak_client/client_sdk/SDK_readme.txt
 lib/teamspeak_client/client_sdk/TsRemoteImport.pas
 lib/teamspeak_client/client_sdk/tsControl
 lib/teamspeak_client/client_sdk/tsControl.dpr
-lib/teamspeak_client/client_sdk/libTSRemote.so.0.2
+lib/teamspeak_client/client_sdk/libTSRemote.so.0.4
 lib/teamspeak_client/icon.xpm
 lib/teamspeak_client/libHVDI.so.0.8.0
 lib/teamspeak_client/libborqt-6.9-qt2.3.so
