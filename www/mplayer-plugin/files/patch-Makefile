@@ -1,15 +1,13 @@
---- Makefile.orig	Sun Jan 19 08:47:31 2003
-+++ Makefile	Fri Feb 21 00:16:20 2003
-@@ -27,11 +27,11 @@
- #          
- 
+--- Makefile.orig	Sun Jan 19 10:12:43 2003
++++ Makefile	Tue Feb 25 00:51:25 2003
+@@ -29,9 +29,9 @@
  # PLUGIN_DEFINES= -DXP_UNIX -DPLUGIN_TRACE
--PLUGIN_DEFINES= -DXP_UNIX -Iinclude -ISource/_gen -I/usr/X11R6/include
-+PLUGIN_DEFINES= -DXP_UNIX -Iinclude -ISource/_gen -I%%X11BASE%%/include
+ PLUGIN_DEFINES= -DXP_UNIX -Iinclude -ISource/_gen -I/usr/X11R6/include
  
- CC= gcc
+-CC= gcc
 -OPTIMIZER= -g
 -CFLAGS=  $(OPTIMIZER) $(PLUGIN_DEFINES) -I. -I/usr/include
++CC?= gcc
 +OPTIMIZER=
 +CFLAGS+=  $(OPTIMIZER) $(PLUGIN_DEFINES) -I. -I/usr/include
  
@@ -20,7 +18,7 @@
  
  $(SHAREDTARGET): $(OBJ)
 -	$(CC) -shared -o $(SHAREDTARGET) $(OBJ) $(LDFLAGS)
-+	$(CC) -shared -L%%X11BASE%%/lib -lXt -o $(SHAREDTARGET) $(OBJ) $(LDFLAGS)
++	$(CC) -shared -L/usr/X11R6/lib -lXt -o $(SHAREDTARGET) $(OBJ) $(LDFLAGS)
  
  mplayerplug-in.o: Source/mplayerplug-in.c
  	$(CC) -c $(CFLAGS) Source/mplayerplug-in.c
