@@ -3,10 +3,10 @@
 # Date created:		?
 # Whom:			mr (original)
 #
-# $Id: Makefile,v 1.2 1995/01/15 05:17:22 gpalmer Exp $
+# $Id: Makefile,v 1.3 1995/02/11 13:48:55 asami Exp $
 #
 
-DISTNAME=	msql-1.0
+DISTNAME=	msql-1.0.5
 EXTRACT_SUFX=	.tar.gz
 MASTER_SITES=		ftp://bond.edu.au/pub/Minerva/msql/
 IS_INTERACTIVE=		YES
