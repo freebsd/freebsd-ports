@@ -24,21 +24,31 @@ PORTVERSION=	4.3.2.r4
 CATEGORIES?=	lang devel www
 MASTER_SITES=	http://downloads.php.net/jani/ \
 		http://www.gufi.org/~alex/php/
-.if defined(WITHOUT_CLI)
+.if defined(WITHOUT_CLI) && !defined(WITHOUT_APACHE)
 PKGNAMEPREFIX=	mod_
-.endif
+.else
 .if defined(WITHOUT_APACHE)
+.if defined(WITHOUT_CLI)
+PKGNAMESUFFIX=	-cgi
+.else
 PKGNAMESUFFIX=	-cli
+.endif
+.endif
 .endif
 DISTNAME=	php-${PORTVERSION:S/.r/RC/}
 
 MAINTAINER?=	sysadmin@alexdupre.com
 COMMENT=	PHP Scripting Language (Apache Module and CLI)
 .if defined(WITHOUT_APACHE)
+.if defined(WITHOUT_CLI)
+COMMENT=	PHP Common Gateway Interface
+.else
 COMMENT=	PHP Command Line Interpreter
 .endif
+.else
 .if defined(WITHOUT_CLI)
 COMMENT=	PHP Apache Module
+.endif
 .endif
 
 USE_BZIP2=	yes
@@ -54,22 +64,37 @@ CONFIGURE_ARGS=	--enable-versioning \
 		--disable-all
 
 EXT_DIR=	20020429
-SAPI_FILE=	""
+SAPI_FILE=	"@comment "
 
+CONFLICTS=	php4-cli-4* mod_php4-4* php4-cgi-4*
 .if defined(WITHOUT_APACHE)
-CONFLICTS=	php4-4* mod_php4-4*
+.if defined(WITHOUT_CLI)
+CONFLICTS=	php4-4* php4-cli-4* mod_php4-4*
+.else
+CONFLICTS=	php4-4* php4-cgi-4* mod_php4-4*
+.endif
+.else
+.if defined(WITHOUT_CLI)
+CONFLICTS=	php4-4* php4-cli-4* php4-cgi-4*
+.endif
 .endif
 
+.if defined(WITHOUT_APACHE)
+CONFIGURE_ARGS+=--enable-discard-path
+PLIST_SUB+=	APACHE="@comment "
+.else
+PLIST_SUB+=	APACHE=""
+.endif
 .if defined(WITHOUT_CLI)
-CONFLICTS=	php4-4* php4-cli-4*
 CONFIGURE_ARGS+=--disable-cli
 PLIST_SUB+=	CLI="@comment "
 .else
 MAN1=		php.1
 PLIST_SUB+=	CLI=""
 .endif
-
-CONFLICTS?=	php4-cli-4* mod_php4-4*
+.if defined(WITHOUT_APACHE) && defined(WITHOUT_CLI)
+SAPI_FILE=	"bin/php"
+.endif
 
 ALL_OPTIONS=	BCMATH BZIP2 CALENDAR CRACK CTYPE CURL DBASE DBX DOMXML \
 		DOMXSLT EXIF FILEPRO FTP GD GDBM GETTEXT GMP HYPERWAVE ICONV \
@@ -508,30 +533,28 @@ pre-configure:
 	@${ECHO_CMD} "You cannot define WITH_SYBASEDB *and* WITH_SYBASECT!"
 	@${FALSE}
 .endif
-.if defined(WITHOUT_CLI) && defined(WITHOUT_APACHE)
-	@${ECHO_CMD} "You cannot define WITHOUT_CLI *and* WITHOUT_APACHE!"
-	@${FALSE}
-.endif
-.if !defined(WITHOUT_CLI) && !defined(WITHOUT_APACHE)
+.if !defined(WITHOUT_APACHE) && !defined(WITHOUT_CLI)
 	@${ECHO_CMD} ""
-	@${ECHO_CMD} "You may use the following build options:"
+	@${ECHO_CMD} "You are building the Apache Module and the Command Line Interpreter of PHP."
 	@${ECHO_CMD} ""
-.if !defined(WITHOUT_CLI) && !defined(WITHOUT_APACHE)
-	@${ECHO_CMD} "	WITHOUT_CLI=yes		Disable Command Line Interpreter"
-	@${ECHO_CMD} "	WITHOUT_APACHE=yes	Disable Apache Module"
-.endif
+	@${ECHO_CMD} "Use port:"
+	@${ECHO_CMD} "	lang/php4-cli		for Command Line Interpreter only"
+	@${ECHO_CMD} "	www/php4-cgi		for Common Gateway Interface only"
+	@${ECHO_CMD} "	www/mod_php4		for Apache Module only"
 	@${ECHO_CMD} ""
 .endif
 
+.if !defined(WITHOUT_CLI)
 post-build:
-	@${ECHO_CMD} ""
-	@${ECHO_CMD} "You may run the tests from the PHP test framework."
-	@${ECHO_CMD} "You can do this by typing 'make test' now."
+	@${ECHO_CMD} "You may run the tests from the PHP test framework, typing 'make test' now."
+	@${ECHO_CMD} "(It is safe to ignore errors about timestamp-related tests,"
+	@${ECHO_CMD} "since they are due to the different FreeBSD mktime() implementation)."
 	@${ECHO_CMD} ""
 
 test: all
 	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} \
 		${MAKEFILE} ${MAKE_ARGS} ${.TARGET})
+.endif
 
 post-install:
 .if !defined(WITHOUT_CLI)
