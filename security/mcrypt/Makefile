@@ -9,14 +9,15 @@
 
 PORTNAME=	mcrypt
 PORTVERSION=	2.6.4
-CATEGORIES=    	security
+CATEGORIES=	security
 MASTER_SITES=	ftp://argeas.cs-net.gr/pub/unix/mcrypt/ \
 		ftp://mcrypt.hellug.gr/pub/mcrypt/ \
 		ftp://ftp.ntua.gr/pub/security/mcrypt/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	Replacement for crypt(1)
 
+BUILD_DEPENDS=	autoconf257:${PORTSDIR}/devel/autoconf257
 LIB_DEPENDS=	mcrypt.8:${PORTSDIR}/security/libmcrypt/ \
 		mhash.2:${PORTSDIR}/security/mhash/ \
 		intl.4:${PORTSDIR}/devel/gettext
@@ -24,13 +25,17 @@ LIB_DEPENDS=	mcrypt.8:${PORTSDIR}/security/libmcrypt/ \
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 CONFIGURE_ARGS+=	--enable-static --with-catgets
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
+			LDFLAGS="-L${LOCALBASE}/lib -lintl -lltdl"
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 GNU_CONFIGURE=		yes
 DOCS=			FORMAT magic
 MAN1=			mcrypt.1
 PKGMESSAGE=		${WRKDIR}/pkg-message
 PLIST=			${WRKDIR}/pkg-plist
+
+# to avoid having to read the configure script
+pre-configure:
+	cd ${WRKSRC} && ${RM} configure && autoconf257
 
 pre-install:
 	${ECHO_CMD} bin/${PORTNAME} > ${PLIST}
@@ -61,7 +66,8 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/sample.mcryptrc ${EXAMPLESDIR}/
 	${INSTALL_MAN} ${WRKSRC}/doc/${MAN1} ${MANPREFIX}/man/man1/
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+	${MKDIR} ${PREFIX}/share/examples/${PORTNAME} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/sample.mcryptrc ${EXAMPLESDIR}/
 .for i in ${DOCS}
 	${INSTALL_DATA} ${WRKSRC}/doc/${i} ${DOCSDIR}/
 .endfor
