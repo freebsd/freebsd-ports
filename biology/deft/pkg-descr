@@ -5,5 +5,11 @@ Basis sets are prepared for H to Xe.
 
 WWW: http://www.chem.uottawa.ca/DeFT.html
 
+Potring to 4.0-CURRENT (__FreeBSD_version == 400005) and later versions 
+have been assisted greatly by Glenn Johnson <gjohnson@nola.srrc.usda.gov>, 
+thanks a lot !
+He found a couple of troublesome in optimization using g77 at FreeBSD 4,
+then it is recommended to use f2c/cc.
+
 --
 rmiya
