@@ -1,0 +1,135 @@
+share/java/classes/fesi.jar
+share/java/fesi/docs/api/FESI/jslib/JSException.html
+share/java/fesi/docs/api/FESI/jslib/package-tree.html
+share/java/fesi/docs/api/FESI/jslib/package-frame.html
+share/java/fesi/docs/api/FESI/jslib/JSExtension.html
+share/java/fesi/docs/api/FESI/jslib/JSFunction.html
+share/java/fesi/docs/api/FESI/jslib/JSGlobalObject.html
+share/java/fesi/docs/api/FESI/jslib/JSObject.html
+share/java/fesi/docs/api/FESI/jslib/JSFunctionAdapter.html
+share/java/fesi/docs/api/FESI/jslib/JSUtil.html
+share/java/fesi/docs/api/FESI/jslib/package-summary.html
+share/java/fesi/docs/api/index-all.html
+share/java/fesi/docs/api/deprecated-list.html
+share/java/fesi/docs/api/allclasses-frame.html
+share/java/fesi/docs/api/index.html
+share/java/fesi/docs/api/overview-tree.html
+share/java/fesi/docs/api/serialized-form.html
+share/java/fesi/docs/api/help-doc.html
+share/java/fesi/docs/api/stylesheet.css
+share/java/fesi/docs/api/packages.html
+share/java/fesi/docs/swingev.txt
+share/java/fesi/docs/regexpext.html
+share/java/fesi/docs/pubkey.html
+share/java/fesi/docs/properties.txt
+share/java/fesi/docs/oroLogo.gif
+share/java/fesi/docs/links.html
+share/java/fesi/docs/juggler.txt
+share/java/fesi/docs/javalib.html
+share/java/fesi/docs/jaext.html
+share/java/fesi/docs/interp.html
+share/java/fesi/docs/install.html
+share/java/fesi/docs/index.html
+share/java/fesi/docs/history.html
+share/java/fesi/docs/getkawa.gif
+share/java/fesi/docs/fioext.html
+share/java/fesi/docs/fesi.gif
+share/java/fesi/docs/ext.html
+share/java/fesi/docs/events.html
+share/java/fesi/docs/download.html
+share/java/fesi/docs/docindex.html
+share/java/fesi/docs/dbext.html
+share/java/fesi/docs/copyright.html
+share/java/fesi/docs/bioext.html
+share/java/fesi/docs/xparse.txt
+share/java/fesi/docs/SampleFunc.txt
+share/java/fesi/examples/FesiForm/src/FesiForm/JSplitPaneDocumentHandler.java
+share/java/fesi/examples/FesiForm/src/FesiForm/GuiContext.java
+share/java/fesi/examples/FesiForm/src/FesiForm/JPanelDocumentHandler.java
+share/java/fesi/examples/FesiForm/src/FesiForm/DefaultDocumentHandler.java
+share/java/fesi/examples/FesiForm/src/FesiForm/GuiDocumentHandler.java
+share/java/fesi/examples/FesiForm/src/FesiForm/JFrameDocumentHandler.java
+share/java/fesi/examples/FesiForm/src/FesiForm/TemplateDocumentHandler.java
+share/java/fesi/examples/FesiForm/src/FesiForm/ContentDocumentHandler.java
+share/java/fesi/examples/FesiForm/src/FesiForm/JPopupMenuDocumentHandler.java
+share/java/fesi/examples/FesiForm/src/FesiForm/JMenuBarDocumentHandler.java
+share/java/fesi/examples/FesiForm/src/FesiForm/JMenuDocumentHandler.java
+share/java/fesi/examples/FesiForm/src/FesiForm/JDialogDocumentHandler.java
+share/java/fesi/examples/FesiForm/src/FesiForm/JScrollPaneDocumentHandler.java
+share/java/fesi/examples/FesiForm/src/FesiForm/JToolBarDocumentHandler.java
+share/java/fesi/examples/FesiForm/src/FesiForm/FesiForm.java
+share/java/fesi/examples/FesiForm/bin/FesiForm.bat
+share/java/fesi/examples/FesiForm/doc/html/index.html
+share/java/fesi/examples/FesiForm/doc/html/guide.html
+share/java/fesi/examples/FesiForm/menu.xml
+share/java/fesi/examples/FesiForm/other.xml
+share/java/fesi/examples/FesiForm/fesiform.jar
+share/java/fesi/examples/FesiForm/fixed.xml
+share/java/fesi/examples/FesiForm/nodtd.xml
+share/java/fesi/examples/FesiForm/text.xml
+share/java/fesi/examples/FesiForm/readme.txt
+share/java/fesi/examples/FesiForm/gui.dtd
+share/java/fesi/examples/FesiForm/form.xml
+share/java/fesi/examples/FesiFTP/src/MultiLineLabel.java
+share/java/fesi/examples/FesiFTP/src/ConnectDialog.java
+share/java/fesi/examples/FesiFTP/src/MessageDialog.java
+share/java/fesi/examples/FesiFTP/src/RequestDialog.java
+share/java/fesi/examples/FesiFTP/src/LocalContext.java
+share/java/fesi/examples/FesiFTP/src/FTPModel.java
+share/java/fesi/examples/FesiFTP/src/FTPController.java
+share/java/fesi/examples/FesiFTP/src/FTPInterface.java
+share/java/fesi/examples/FesiFTP/src/ConnectionInfo.java
+share/java/fesi/examples/FesiFTP/src/MessageBox.java
+share/java/fesi/examples/FesiFTP/src/FesiFTP.java
+share/java/fesi/examples/FesiFTP/bin/FesiFTP.bat
+share/java/fesi/examples/FesiFTP/doc/html/fesiftp.html
+share/java/fesi/examples/FesiFTP/doc/html/high.html
+share/java/fesi/examples/FesiFTP/doc/html/low.html
+share/java/fesi/examples/FesiFTP/doc/html/object.html
+share/java/fesi/examples/FesiFTP/doc/html/autoload.txt
+share/java/fesi/examples/FesiFTP/fesiftp.jar
+share/java/fesi/examples/FesiFTP/autoload.esftp
+share/java/fesi/examples/jslib/SampleFunc.java
+share/java/fesi/examples/jslib/SimpleIntrp.java
+share/java/fesi/examples/jslib/FesiPop.java
+share/java/fesi/examples/jslib/fesipop.es
+share/java/fesi/examples/jslib/SimpleIntrp2.java
+share/java/fesi/examples/xml/Xparse.js
+share/java/fesi/examples/xml/test.xml
+share/java/fesi/examples/xml/xmlj4.es
+share/java/fesi/examples/beans/juggler.esw
+share/java/fesi/examples/beans/molecule.esw
+share/java/fesi/examples/beans/simplegraph.esw
+share/java/fesi/examples/beans/ticktock.es
+share/java/fesi/examples/javaaccess/properties.es
+share/java/fesi/examples/javaaccess/calendar.es
+share/java/fesi/examples/javaaccess/swingev.esw
+share/java/fesi/examples/javaaccess/showfonts.esw
+share/java/fesi/examples/javaaccess/selectfont.esw
+share/java/fesi/examples/javaaccess/event.es
+share/java/fesi/examples/readme.txt
+share/java/fesi/Readme.txt
+share/java/fesi/COPYRIGHT.TXT
+@dirrm share/java/classes
+@dirrm share/java/fesi/examples/xml
+@dirrm share/java/fesi/examples/jslib
+@dirrm share/java/fesi/examples/javaaccess
+@dirrm share/java/fesi/examples/beans
+@dirrm share/java/fesi/examples/FesiForm/src/FesiForm
+@dirrm share/java/fesi/examples/FesiForm/src
+@dirrm share/java/fesi/examples/FesiForm/doc/html
+@dirrm share/java/fesi/examples/FesiForm/doc
+@dirrm share/java/fesi/examples/FesiForm/bin
+@dirrm share/java/fesi/examples/FesiForm
+@dirrm share/java/fesi/examples/FesiFTP/src
+@dirrm share/java/fesi/examples/FesiFTP/doc/html
+@dirrm share/java/fesi/examples/FesiFTP/doc
+@dirrm share/java/fesi/examples/FesiFTP/bin
+@dirrm share/java/fesi/examples/FesiFTP
+@dirrm share/java/fesi/examples
+@dirrm share/java/fesi/docs/api/FESI/jslib
+@dirrm share/java/fesi/docs/api/FESI
+@dirrm share/java/fesi/docs/api
+@dirrm share/java/fesi/docs
+@dirrm share/java/fesi
+@dirrm share/java
