@@ -16,9 +16,5 @@ avail||ports
 avail||projects
 avail||src
 avail||www
-unavail||src/contrib/gcc
-unavail||src/contrib/libio
-unavail||src/contrib/libstdc\+\+
-unavail||src/contrib/libobjc
 unavail||src/UPDATING
 avail|:updating_committers|src/UPDATING
