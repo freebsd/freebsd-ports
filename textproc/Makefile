@@ -338,6 +338,7 @@
     SUBDIR += p5-Text-Tmpl
     SUBDIR += p5-Text-WikiFormat
     SUBDIR += p5-Text-Wrapper
+    SUBDIR += p5-Time-Human
     SUBDIR += p5-Tk-XMLViewer
     SUBDIR += p5-Tree-Nary
     SUBDIR += p5-UML-Sequence

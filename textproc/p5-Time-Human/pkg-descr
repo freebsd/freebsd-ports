@@ -1,0 +1,7 @@
+From the Time::Human documentation:
+
+  This module provides a "vague" rendering of the time into natural lan-
+  guage; it's originally intended for text-to-speech applications and
+  other speech-based interfaces.
+
+Author:		Simon Cozens <simon@cpan.org>
