@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	chinese
 
 MAINTAINER=	vanilla@FreeBSD.org
