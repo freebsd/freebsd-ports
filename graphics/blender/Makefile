@@ -12,7 +12,7 @@ MASTER_SITES=	http://download.blender.org/release/Publisher${PORTVERSION}/
 DISTNAME=	blender-publisher-${PORTVERSION}-freebsd-4.2-i386
 DIST_SUBDIR=	blender
 
-MAINTAINER=	freebsd-admin@blender.nl
+MAINTAINER=	dyeske@yahoo.com
 COMMENT=	Fully functional 3D modeling/rendering/animation/gaming package
 
 USE_X_PREFIX=	YES
