@@ -102,7 +102,7 @@ do-install:
 	find ${WRKSRC} \! -type d -maxdepth 1 \! -name UPGRADING* -exec \
 		${INSTALL_SCRIPT} {} ${PREFIX}/${BUGZILLADIR} \;
 	${TAR} -C ${WRKSRC} -cf - template css | ${TAR} --unlink -C ${PREFIX}/${BUGZILLADIR} -xf -
-.if !defined(NOPORTSDOCS)
+.if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${TAR} -C ${WRKSRC}/docs -cf - . | ${TAR} --unlink -C ${DOCSDIR} -xf -
 .endif
@@ -113,7 +113,7 @@ do-install:
 		mysqld-watcher.pl yp_nomail.sh ${PREFIX}/${BUGZILLADIR}/contrib
 	cd ${WRKSRC}/contrib/cmdline; ${INSTALL_SCRIPT} buglist bugs \
 		query.conf ${PREFIX}/${BUGZILLADIR}/contrib/cmdline
-.if !defined(NOPORTSDOCS)
+.if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}/contrib
 	cd ${WRKSRC}/contrib; ${INSTALL_DATA} README README.Mailif \
 		bugmail_help.html bugzilla.procmailrc ${DOCSDIR}/contrib
