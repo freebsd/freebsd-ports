@@ -15,6 +15,7 @@ MAINTAINER=	ahze@rgv.net
 BUILD_DEPENDS=	treecc-0.1.0:${PORTSDIR}/lang/treecc
 
 GNU_CONFIGURE=	yes
+USE_BISON=	yes
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	--program-prefix=""
 
