@@ -99,6 +99,14 @@
  
 --- xcept/script.c.orig	Fri Sep 24 16:07:29 1993
 +++ xcept/script.c	Sun Sep  1 14:08:13 1996
+@@ -809,7 +809,6 @@
+    if(a->value == b->value)
+       return error("pc: %d - variables don't differ!\n",pc);
+    len = strlen(a->value) + strlen(b->value) + 1;
+-   free(a->value);
+    if(!(a->value = ralloc(a->value,len))) return errorp("realloc\n");
+    strcat(a->value,b->value);
+    
 @@ -1082,7 +1082,8 @@
  	    printf( "%s", b->value );
  	    fflush(stdout);
