@@ -8,7 +8,8 @@
 PORTNAME=	Sledge-Plugin-Dumper
 PORTVERSION=	0.03
 CATEGORIES=	www perl5
-MASTER_SITES=	http://downloads.sourceforge.jp/sledge/2361/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
+MASTER_SITE_SUBDIR=	sledge/2361
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	knu@FreeBSD.org
