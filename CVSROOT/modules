@@ -4838,6 +4838,7 @@ libdvdcss	ports/multimedia/libdvdcss
 libdvdnav	ports/multimedia/libdvdnav
 libdvdplay	ports/multimedia/libdvdplay
 libdvdread	ports/multimedia/libdvdread
+libdwarf	ports/devel/libdwarf
 libebml		ports/textproc/libebml
 libecc		ports/security/libecc
 libelf		ports/devel/libelf
