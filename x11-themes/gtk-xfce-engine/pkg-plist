@@ -29,10 +29,15 @@ share/themes/Xfce-smooth/gtk-2.0/gtkrc
 share/themes/Xfce-stellar/ICON.png
 share/themes/Xfce-stellar/README.html
 share/themes/Xfce-stellar/gtk-2.0/gtkrc
+share/themes/Xfce-winter/gtk-2.0/gtkrc
+share/themes/Xfce-winter/ICON.png
+share/themes/Xfce-winter/README.html
 share/themes/Xfce/ICON.png
 share/themes/Xfce/README.html
 share/themes/Xfce/gtk-2.0/gtkrc
 @dirrm share/themes/Xfce/gtk-2.0
+@dirrm share/themes/Xfce-winter/gtk-2.0
+@dirrm share/themes/Xfce-winter
 @dirrm share/themes/Xfce-stellar/gtk-2.0
 @dirrm share/themes/Xfce-stellar
 @dirrm share/themes/Xfce-smooth/gtk-2.0

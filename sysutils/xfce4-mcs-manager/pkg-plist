@@ -4,11 +4,13 @@ include/xfce4/xfce-mcs-manager/manager-plugin.h
 libdata/pkgconfig/xfce-mcs-manager.pc
 share/locale/ar/LC_MESSAGES/xfce-mcs-manager.mo
 share/locale/ca/LC_MESSAGES/xfce-mcs-manager.mo
+share/locale/cs/LC_MESSAGES/xfce-mcs-manager.mo
 share/locale/de/LC_MESSAGES/xfce-mcs-manager.mo
 share/locale/es/LC_MESSAGES/xfce-mcs-manager.mo
 share/locale/es_MX/LC_MESSAGES/xfce-mcs-manager.mo
 share/locale/fi/LC_MESSAGES/xfce-mcs-manager.mo
 share/locale/fr/LC_MESSAGES/xfce-mcs-manager.mo
+share/locale/hi/LC_MESSAGES/xfce-mcs-manager.mo
 share/locale/hu/LC_MESSAGES/xfce-mcs-manager.mo
 share/locale/it/LC_MESSAGES/xfce-mcs-manager.mo
 share/locale/ja/LC_MESSAGES/xfce-mcs-manager.mo
@@ -19,8 +21,11 @@ share/locale/nl/LC_MESSAGES/xfce-mcs-manager.mo
 share/locale/pl/LC_MESSAGES/xfce-mcs-manager.mo
 share/locale/pt_PT/LC_MESSAGES/xfce-mcs-manager.mo
 share/locale/ru/LC_MESSAGES/xfce-mcs-manager.mo
+share/locale/sv/LC_MESSAGES/xfce-mcs-manager.mo
 share/locale/ta/LC_MESSAGES/xfce-mcs-manager.mo
 share/locale/tr/LC_MESSAGES/xfce-mcs-manager.mo
+share/locale/uk/LC_MESSAGES/xfce-mcs-manager.mo
+share/locale/vi/LC_MESSAGES/xfce-mcs-manager.mo
 share/locale/zh_CN/LC_MESSAGES/xfce-mcs-manager.mo
 share/locale/zh_TW/LC_MESSAGES/xfce-mcs-manager.mo
 share/xfce4/doc/C/images/settings_manager.png
@@ -28,10 +33,17 @@ share/xfce4/doc/C/images/smgr_from_panel.png
 share/xfce4/doc/C/images/smgr_from_root_menu.png
 share/xfce4/doc/C/images/smgr_from_setup_button.png
 share/xfce4/doc/C/xfce-mcs-manager.html
+share/xfce4/doc/fr/images/settings_manager.png 
+share/xfce4/doc/fr/images/smgr_from_panel.png  
+share/xfce4/doc/fr/images/smgr_from_root_menu.png 
+share/xfce4/doc/fr/images/smgr_from_setup_button.png
+share/xfce4/doc/fr/xfce-mcs-manager.html
 @dirrm include/xfce4/xfce-mcs-manager
 @unexec rmdir %D/include/xfce4 2>/dev/null || true
 @unexec rmdir %D/libdata/pkgconfig 2>/dev/null || true
 @unexec rmdir %D/share/xfce4/doc/C/images 2>/dev/null || true
 @unexec rmdir %D/share/xfce4/doc/C 2>/dev/null || true
+@unexec rmdir %D/share/xfce4/doc/fr/images 2>/dev/null || true
+@unexec rmdir %D/share/xfce4/doc/fr 2>/dev/null || true
 @unexec rmdir %D/share/xfce4/doc 2>/dev/null || true
 @unexec rmdir %D/share/xfce4 2>/dev/null || true

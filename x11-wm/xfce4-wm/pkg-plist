@@ -7,11 +7,13 @@ lib/xfce4/mcs-plugins/xfwm4_plugin.la
 lib/xfce4/mcs-plugins/xfwm4_plugin.so
 share/locale/ar/LC_MESSAGES/xfwm4.mo
 share/locale/ca/LC_MESSAGES/xfwm4.mo
+share/locale/cs/LC_MESSAGES/xfwm4.mo
 share/locale/de/LC_MESSAGES/xfwm4.mo
 share/locale/es/LC_MESSAGES/xfwm4.mo
 share/locale/es_MX/LC_MESSAGES/xfwm4.mo
 share/locale/fi/LC_MESSAGES/xfwm4.mo
 share/locale/fr/LC_MESSAGES/xfwm4.mo
+share/locale/hi/LC_MESSAGES/xfwm4.mo
 share/locale/hu/LC_MESSAGES/xfwm4.mo
 share/locale/ja/LC_MESSAGES/xfwm4.mo
 share/locale/ko/LC_MESSAGES/xfwm4.mo
@@ -21,8 +23,11 @@ share/locale/nl/LC_MESSAGES/xfwm4.mo
 share/locale/pl/LC_MESSAGES/xfwm4.mo
 share/locale/pt_PT/LC_MESSAGES/xfwm4.mo
 share/locale/ru/LC_MESSAGES/xfwm4.mo
+share/locale/sv/LC_MESSAGES/xfwm4.mo
 share/locale/ta/LC_MESSAGES/xfwm4.mo
 share/locale/tr/LC_MESSAGES/xfwm4.mo
+share/locale/uk/LC_MESSAGES/xfwm4.mo
+share/locale/vi/LC_MESSAGES/xfwm4.mo
 share/locale/zh_CN/LC_MESSAGES/xfwm4.mo
 share/locale/zh_TW/LC_MESSAGES/xfwm4.mo
 share/xfce4/doc/C/images/decoration_style.png
@@ -31,6 +36,12 @@ share/xfce4/doc/C/images/misc_wm_prefs.png
 share/xfce4/doc/C/images/titlebar.png
 share/xfce4/doc/C/images/workspace_margins.png
 share/xfce4/doc/C/xfwm4.html
+share/xfce4/doc/fr/images/decoration_style.png
+share/xfce4/doc/fr/images/keyboard_and_focus.png
+share/xfce4/doc/fr/images/misc_wm_prefs.png
+share/xfce4/doc/fr/images/titlebar.png
+share/xfce4/doc/fr/images/workspace_margins.png
+share/xfce4/doc/fr/xfwm4.html
 share/xfwm4/defaults
 share/xfwm4/themes/bbs/README
 share/xfwm4/themes/bbs/bottom-active.xpm
@@ -491,10 +502,65 @@ share/xfwm4/themes/tgc/top-left-active.xpm
 share/xfwm4/themes/tgc/top-left-inactive.xpm
 share/xfwm4/themes/tgc/top-right-active.xpm
 share/xfwm4/themes/tgc/top-right-inactive.xpm
+share/xfwm4/themes/tgc-large/README
+share/xfwm4/themes/tgc-large/bottom-active.xpm
+share/xfwm4/themes/tgc-large/bottom-inactive.xpm
+share/xfwm4/themes/tgc-large/bottom-left-active.xpm
+share/xfwm4/themes/tgc-large/bottom-left-inactive.xpm
+share/xfwm4/themes/tgc-large/bottom-right-active.xpm
+share/xfwm4/themes/tgc-large/bottom-right-inactive.xpm
+share/xfwm4/themes/tgc-large/close-active.xpm
+share/xfwm4/themes/tgc-large/close-inactive.xpm
+share/xfwm4/themes/tgc-large/close-pressed.xpm
+share/xfwm4/themes/tgc-large/hide-active.xpm
+share/xfwm4/themes/tgc-large/hide-inactive.xpm
+share/xfwm4/themes/tgc-large/hide-pressed.xpm
+share/xfwm4/themes/tgc-large/left-active.xpm
+share/xfwm4/themes/tgc-large/left-inactive.xpm
+share/xfwm4/themes/tgc-large/maximize-active.xpm
+share/xfwm4/themes/tgc-large/maximize-inactive.xpm
+share/xfwm4/themes/tgc-large/maximize-pressed.xpm
+share/xfwm4/themes/tgc-large/maximize-toggled-active.xpm
+share/xfwm4/themes/tgc-large/maximize-toggled-inactive.xpm
+share/xfwm4/themes/tgc-large/maximize-toggled-pressed.xpm
+share/xfwm4/themes/tgc-large/menu-active.xpm
+share/xfwm4/themes/tgc-large/menu-inactive.xpm
+share/xfwm4/themes/tgc-large/menu-pressed.xpm
+share/xfwm4/themes/tgc-large/right-active.xpm
+share/xfwm4/themes/tgc-large/right-inactive.xpm
+share/xfwm4/themes/tgc-large/shade-active.xpm
+share/xfwm4/themes/tgc-large/shade-inactive.xpm
+share/xfwm4/themes/tgc-large/shade-pressed.xpm
+share/xfwm4/themes/tgc-large/shade-toggled-active.xpm
+share/xfwm4/themes/tgc-large/shade-toggled-inactive.xpm
+share/xfwm4/themes/tgc-large/shade-toggled-pressed.xpm
+share/xfwm4/themes/tgc-large/stick-active.xpm
+share/xfwm4/themes/tgc-large/stick-inactive.xpm
+share/xfwm4/themes/tgc-large/stick-pressed.xpm
+share/xfwm4/themes/tgc-large/stick-toggled-active.xpm
+share/xfwm4/themes/tgc-large/stick-toggled-inactive.xpm
+share/xfwm4/themes/tgc-large/stick-toggled-pressed.xpm
+share/xfwm4/themes/tgc-large/themerc
+share/xfwm4/themes/tgc-large/title-1-active.xpm
+share/xfwm4/themes/tgc-large/title-1-inactive.xpm
+share/xfwm4/themes/tgc-large/title-2-active.xpm
+share/xfwm4/themes/tgc-large/title-2-inactive.xpm
+share/xfwm4/themes/tgc-large/title-3-active.xpm
+share/xfwm4/themes/tgc-large/title-3-inactive.xpm
+share/xfwm4/themes/tgc-large/title-4-active.xpm
+share/xfwm4/themes/tgc-large/title-4-inactive.xpm
+share/xfwm4/themes/tgc-large/title-5-active.xpm
+share/xfwm4/themes/tgc-large/title-5-inactive.xpm
+share/xfwm4/themes/tgc-large/top-left-active.xpm
+share/xfwm4/themes/tgc-large/top-left-inactive.xpm
+share/xfwm4/themes/tgc-large/top-right-active.xpm
+share/xfwm4/themes/tgc-large/top-right-inactive.xpm
 @unexec rmdir %D/lib/xfce4/mcs-plugins 2>/dev/null || true
 @unexec rmdir %D/lib/xfce4 2>/dev/null || true
 @unexec rmdir %D/share/xfce4/doc/C/images 2>/dev/null || true
 @unexec rmdir %D/share/xfce4/doc/C 2>/dev/null || true
+@unexec rmdir %D/share/xfce4/doc/fr/images 2>/dev/null || true
+@unexec rmdir %D/share/xfce4/doc/fr 2>/dev/null || true
 @unexec rmdir %D/share/xfce4/doc 2>/dev/null || true
 @unexec rmdir %D/share/xfce4 2>/dev/null || true
 @dirrm share/xfwm4/themes/bbs
@@ -508,5 +574,6 @@ share/xfwm4/themes/tgc/top-right-inactive.xpm
 @dirrm share/xfwm4/themes/microdeck2
 @dirrm share/xfwm4/themes/microdeck3
 @dirrm share/xfwm4/themes/tgc
+@dirrm share/xfwm4/themes/tgc-large
 @unexec rmdir %D/share/xfwm4/themes 2>/dev/null || true
 @unexec rmdir %D/share/xfwm4 2>/dev/null || true

@@ -29,6 +29,7 @@ lib/xfce4/panel-plugins/libsystembuttons.la
 lib/xfce4/panel-plugins/libsystembuttons.so
 libdata/pkgconfig/xfce4-panel-1.0.pc
 share/locale/ca/LC_MESSAGES/xfce4-panel.mo
+share/locale/cs/LC_MESSAGES/xfce4-panel.mo
 share/locale/de/LC_MESSAGES/xfce4-panel.mo
 share/locale/es/LC_MESSAGES/xfce4-panel.mo
 share/locale/es_MX/LC_MESSAGES/xfce4-panel.mo
@@ -44,8 +45,11 @@ share/locale/nl/LC_MESSAGES/xfce4-panel.mo
 share/locale/pl/LC_MESSAGES/xfce4-panel.mo
 share/locale/pt_PT/LC_MESSAGES/xfce4-panel.mo
 share/locale/ru/LC_MESSAGES/xfce4-panel.mo
+share/locale/sv/LC_MESSAGES/xfce4-panel.mo
 share/locale/ta/LC_MESSAGES/xfce4-panel.mo
 share/locale/tr/LC_MESSAGES/xfce4-panel.mo
+share/locale/uk/LC_MESSAGES/xfce4-panel.mo
+share/locale/vi/LC_MESSAGES/xfce4-panel.mo
 share/locale/zh_CN/LC_MESSAGES/xfce4-panel.mo
 share/locale/zh_TW/LC_MESSAGES/xfce4-panel.mo
 share/xfce4/doc/C/images/clock-properties.png
@@ -59,6 +63,17 @@ share/xfce4/doc/C/images/nooptions-properties.png
 share/xfce4/doc/C/images/panel-settings.png
 share/xfce4/doc/C/images/systembuttons-properties.png
 share/xfce4/doc/C/xfce4-panel.html
+share/xfce4/doc/fr/images/clock-properties.png
+share/xfce4/doc/fr/images/default_panel.png
+share/xfce4/doc/fr/images/handle-popup.png
+share/xfce4/doc/fr/images/item-popup.png
+share/xfce4/doc/fr/images/launcher-properties.png
+share/xfce4/doc/fr/images/mailcheck-properties.png
+share/xfce4/doc/fr/images/menuitem-properties.png
+share/xfce4/doc/fr/images/nooptions-properties.png
+share/xfce4/doc/fr/images/panel-settings.png
+share/xfce4/doc/fr/images/systembuttons-properties.png
+share/xfce4/doc/fr/xfce4-panel.html
 share/xfce4/themes/Crystal/README
 share/xfce4/themes/Crystal/edit.png
 share/xfce4/themes/Crystal/file1.png
@@ -199,6 +214,8 @@ share/xfce4/themes/XFce/unknown.xpm
 @unexec rmdir %D/libdata/pkgconfig 2>/dev/null || true
 @unexec rmdir %D/share/xfce4/doc/C/images 2>/dev/null || true
 @unexec rmdir %D/share/xfce4/doc/C 2>/dev/null || true
+@unexec rmdir %D/share/xfce4/doc/fr/images 2>/dev/null || true
+@unexec rmdir %D/share/xfce4/doc/fr 2>/dev/null || true
 @unexec rmdir %D/share/xfce4/doc 2>/dev/null || true
 @dirrm share/xfce4/themes/Crystal
 @dirrm share/xfce4/themes/Curve
