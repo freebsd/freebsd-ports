@@ -141,7 +141,7 @@ sbin/popfile.sh
 %%DATADIR%%/skins/white.css
 %%DATADIR%%/skins/windows.css
 %%DATADIR%%/stopwords
-%%DATADIR%%/v0.21.1.change
+%%DATADIR%%/v%%PORTVERSION%%.change
 @dirrm %%DATADIR%%/Classifier
 @dirrm %%DATADIR%%/POPFile
 @dirrm %%DATADIR%%/Proxy
