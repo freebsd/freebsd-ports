@@ -69,14 +69,17 @@ while [ "$1" ]; do
 		\"OpenLDAP20\")
 			echo WITH_LDAP=YES
 			echo LDAP_PORT?=net/openldap20-client
+			echo OPENLDAP_LIB_VER?=2
 			;;
 		\"OpenLDAP21\")
 			echo WITH_LDAP=YES
 			echo LDAP_PORT?=net/openldap21-client
+			echo OPENLDAP_LIB_VER?=2
 			;;
 		\"OpenLDAP22\")
 			echo WITH_LDAP=YES
 			echo LDAP_PORT?=net/openldap22-client
+			echo OPENLDAP_LIB_VER?=202
 			;;
 		\"BerkleyDB41\")
 			echo WITH_BERKLEYDB_DRIVER=YES
