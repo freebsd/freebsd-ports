@@ -8,9 +8,8 @@
 PORTNAME=	xephem
 PORTVERSION=	3.2.3
 CATEGORIES=	astro
-MASTER_SITES=	ftp://iraf.noao.edu/contrib/xephem/ \
-		ftp://gastro23.physics.uiowa.edu/pub/xephem/ \
-		ftp://iphcip1.physik.uni-mainz.de/pub/xephem/ \
+MASTER_SITES=	http://www.clearskyinstitute.com/xephem/xephem/ \
+		ftp://iraf.noao.edu/contrib/xephem/ \
 		ftp://wolf.ifj.edu.pl/mirror/xephem/
 
 MAINTAINER=	ports@FreeBSD.org
