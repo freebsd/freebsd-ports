@@ -27,6 +27,8 @@ DISTFILES=	appendices.htm blank.gif blurb-works-1.2.gif concepts.htm \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Python Imaging Library Handbook
 
+BROKEN=		"Checksum mismatch"
+
 DIST_SUBDIR=	pil
 EXTRACT_ONLY=
 

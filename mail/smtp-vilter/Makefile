@@ -15,6 +15,8 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER?=	dan@imp.ch
 COMMENT?=	spam/virus filter infrastructure
 
+BROKEN=		"Checksum mismatch"
+
 MAKEFILE=	Makefile.freebsd
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

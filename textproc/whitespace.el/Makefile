@@ -16,6 +16,8 @@ DIST_SUBDIR=    ${PORTNAME}-${PORTVERSION}
 MAINTAINER=	stolz@i2.informatik.rwth-aachen.de
 COMMENT=	Emacs mode which detects and cleans up whitespace in source code
 
+BROKEN=		"Checksum mismatch"
+
 EXTRACT_AFTER_ARGS=	| ${CAT} >${WRKDIR}/${DISTNAME}
 
 NO_WRKSUBDIR=	yes

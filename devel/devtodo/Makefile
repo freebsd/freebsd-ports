@@ -13,6 +13,8 @@ MASTER_SITES=	http://devtodo.sourceforge.net/?${PORTVERSION}/
 MAINTAINER=	petef@FreeBSD.org
 COMMENT=	Tool to effectively maintain todo lists aimed at developers
 
+BROKEN=		"Checksum mismatch"
+
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 

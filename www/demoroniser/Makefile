@@ -16,6 +16,8 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	jedgar@FreeBSD.org
 COMMENT=	Correct moronic and gratuitously incompatible HTML from MS applications
 
+BROKEN=		"Checksum mismatch"
+
 USE_ZIP=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes

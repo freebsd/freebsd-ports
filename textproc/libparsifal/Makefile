@@ -14,6 +14,8 @@ MASTER_SITES=	http://www.saunalahti.fi/~samiuus/toni/xmlproc/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight XML Parser
 
+BROKEN=		"Checksum mismatch"
+
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
