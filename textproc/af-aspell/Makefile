@@ -14,4 +14,6 @@ MASTERDIR=	${.CURDIR}/../aspell
 
 ASPELL_AF=	ja
 
+BROKEN=		Broken pkg-plist
+
 .include "${MASTERDIR}/Makefile"
