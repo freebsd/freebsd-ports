@@ -1973,6 +1973,7 @@ ffmpeg		ports/multimedia/ffmpeg
 ffproxy		ports/www/ffproxy
 ffsrecov	ports/sysutils/ffsrecov
 fftw		ports/math/fftw
+fftw-float	ports/math/fftw-float
 fftw3		ports/math/fftw3
 fftw3-float	ports/math/fftw3-float
 fftw3-long	ports/math/fftw3-long
