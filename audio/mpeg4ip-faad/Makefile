@@ -16,7 +16,8 @@ MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	faad plugin for mpeg4ip
 
 LIB_DEPENDS=	faad.0:${PORTSDIR}/audio/faad \
-		mp4v2.0:${PORTSDIR}/multimedia/mpeg4ip-libmp4v2
+		mp4v2.0:${PORTSDIR}/multimedia/mpeg4ip-libmp4v2 \
+		mp4.0:${PORTSDIR}/multimedia/mpeg4ip
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
