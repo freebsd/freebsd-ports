@@ -65,6 +65,7 @@ System/Applications/GWorkspace.app/Resources/Dutch.lproj/Finder.nib/CVS/Entries
 System/Applications/GWorkspace.app/Resources/Dutch.lproj/Finder.nib/CVS/Repository
 System/Applications/GWorkspace.app/Resources/Dutch.lproj/Finder.nib/CVS/Root
 System/Applications/GWorkspace.app/Resources/Dutch.lproj/Localizable.strings
+System/Applications/GWorkspace.app/Resources/English.lproj/.gwsort
 System/Applications/GWorkspace.app/Resources/English.lproj/AttributesPanel.gorm/CVS/Entries
 System/Applications/GWorkspace.app/Resources/English.lproj/AttributesPanel.gorm/CVS/Repository
 System/Applications/GWorkspace.app/Resources/English.lproj/AttributesPanel.gorm/CVS/Root
@@ -112,6 +113,7 @@ System/Applications/GWorkspace.app/Resources/English.lproj/DefSortOrderPref.nib/
 System/Applications/GWorkspace.app/Resources/English.lproj/DefSortOrderPref.nib/classes.nib
 System/Applications/GWorkspace.app/Resources/English.lproj/DefSortOrderPref.nib/info.nib
 System/Applications/GWorkspace.app/Resources/English.lproj/DefSortOrderPref.nib/objects.nib
+System/Applications/GWorkspace.app/Resources/English.lproj/DeskTopPref.gorm/.gwdir
 System/Applications/GWorkspace.app/Resources/English.lproj/DeskTopPref.gorm/CVS/Entries
 System/Applications/GWorkspace.app/Resources/English.lproj/DeskTopPref.gorm/CVS/Repository
 System/Applications/GWorkspace.app/Resources/English.lproj/DeskTopPref.gorm/CVS/Root
@@ -123,6 +125,7 @@ System/Applications/GWorkspace.app/Resources/English.lproj/DeskTopPref.nib/CVS/R
 System/Applications/GWorkspace.app/Resources/English.lproj/DeskTopPref.nib/classes.nib
 System/Applications/GWorkspace.app/Resources/English.lproj/DeskTopPref.nib/info.nib
 System/Applications/GWorkspace.app/Resources/English.lproj/DeskTopPref.nib/objects.nib
+System/Applications/GWorkspace.app/Resources/English.lproj/FileOperationWin.gorm/.gwdir
 System/Applications/GWorkspace.app/Resources/English.lproj/FileOperationWin.gorm/CVS/Entries
 System/Applications/GWorkspace.app/Resources/English.lproj/FileOperationWin.gorm/CVS/Repository
 System/Applications/GWorkspace.app/Resources/English.lproj/FileOperationWin.gorm/CVS/Root
@@ -477,9 +480,11 @@ System/Applications/GWorkspace.app/Resources/Resources/English.lproj/DefSortOrde
 System/Applications/GWorkspace.app/Resources/Resources/English.lproj/DefSortOrderPref.gorm/DefSortOrderPref.gorm/objects.gorm
 System/Applications/GWorkspace.app/Resources/Resources/English.lproj/DefSortOrderPref.gorm/data.classes
 System/Applications/GWorkspace.app/Resources/Resources/English.lproj/DefSortOrderPref.gorm/objects.gorm
+System/Applications/GWorkspace.app/Resources/Resources/English.lproj/DeskTopPref.gorm/.gwdir
 System/Applications/GWorkspace.app/Resources/Resources/English.lproj/DeskTopPref.gorm/CVS/Entries
 System/Applications/GWorkspace.app/Resources/Resources/English.lproj/DeskTopPref.gorm/CVS/Repository
 System/Applications/GWorkspace.app/Resources/Resources/English.lproj/DeskTopPref.gorm/CVS/Root
+System/Applications/GWorkspace.app/Resources/Resources/English.lproj/DeskTopPref.gorm/DeskTopPref.gorm/.gwdir
 System/Applications/GWorkspace.app/Resources/Resources/English.lproj/DeskTopPref.gorm/DeskTopPref.gorm/CVS/Entries
 System/Applications/GWorkspace.app/Resources/Resources/English.lproj/DeskTopPref.gorm/DeskTopPref.gorm/CVS/Repository
 System/Applications/GWorkspace.app/Resources/Resources/English.lproj/DeskTopPref.gorm/DeskTopPref.gorm/CVS/Root
@@ -487,9 +492,11 @@ System/Applications/GWorkspace.app/Resources/Resources/English.lproj/DeskTopPref
 System/Applications/GWorkspace.app/Resources/Resources/English.lproj/DeskTopPref.gorm/DeskTopPref.gorm/objects.gorm
 System/Applications/GWorkspace.app/Resources/Resources/English.lproj/DeskTopPref.gorm/data.classes
 System/Applications/GWorkspace.app/Resources/Resources/English.lproj/DeskTopPref.gorm/objects.gorm
+System/Applications/GWorkspace.app/Resources/Resources/English.lproj/FileOperationWin.gorm/.gwdir
 System/Applications/GWorkspace.app/Resources/Resources/English.lproj/FileOperationWin.gorm/CVS/Entries
 System/Applications/GWorkspace.app/Resources/Resources/English.lproj/FileOperationWin.gorm/CVS/Repository
 System/Applications/GWorkspace.app/Resources/Resources/English.lproj/FileOperationWin.gorm/CVS/Root
+System/Applications/GWorkspace.app/Resources/Resources/English.lproj/FileOperationWin.gorm/FileOperationWin.gorm/.gwdir
 System/Applications/GWorkspace.app/Resources/Resources/English.lproj/FileOperationWin.gorm/FileOperationWin.gorm/CVS/Entries
 System/Applications/GWorkspace.app/Resources/Resources/English.lproj/FileOperationWin.gorm/FileOperationWin.gorm/CVS/Repository
 System/Applications/GWorkspace.app/Resources/Resources/English.lproj/FileOperationWin.gorm/FileOperationWin.gorm/CVS/Root
