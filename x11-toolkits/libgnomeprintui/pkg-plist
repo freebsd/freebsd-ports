@@ -17,6 +17,7 @@ share/doc/libgnomeprintui/libgnomeprintui-gnome-print-dialog.html
 share/doc/libgnomeprintui/libgnomeprintui-gnome-print-job-preview.html
 share/doc/libgnomeprintui/libgnomeprintui-gnome-print-paper-selector.html
 share/doc/libgnomeprintui/libgnomeprintui-gnome-print-preview.html
+share/doc/libgnomeprintui/libgnomeprintui-gnome-printer-dialog.html
 share/doc/libgnomeprintui/libgnomeprintui-gnome-printer-selector.html
 share/doc/libgnomeprintui/libgnomeprintui.html
 share/locale/am/LC_MESSAGES/libgnomeprintui-2.2.mo
@@ -24,6 +25,7 @@ share/locale/ar/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/az/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/be/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/bg/LC_MESSAGES/libgnomeprintui-2.2.mo
+share/locale/bn/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/ca/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/cs/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/da/LC_MESSAGES/libgnomeprintui-2.2.mo
@@ -49,6 +51,8 @@ share/locale/kn/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/ko/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/lt/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/lv/LC_MESSAGES/libgnomeprintui-2.2.mo
+share/locale/mk/LC_MESSAGES/libgnomeprintui-2.2.mo
+share/locale/ml/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/mn/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/ms/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/nl/LC_MESSAGES/libgnomeprintui-2.2.mo
@@ -61,6 +65,8 @@ share/locale/ro/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/ru/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/sk/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/sl/LC_MESSAGES/libgnomeprintui-2.2.mo
+share/locale/sr/LC_MESSAGES/libgnomeprintui-2.2.mo
+share/locale/sr@Latn/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/sv/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/ta/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/tr/LC_MESSAGES/libgnomeprintui-2.2.mo
