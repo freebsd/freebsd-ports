@@ -1,7 +1,5 @@
 bin/xcept
 libexec/ceptd
-man/man1/xcept.1.gz
-man/man8/ceptd.8.gz
 etc/cept.init
 etc/cept.users
 lib/xcept/Bundesbahn.xcept
