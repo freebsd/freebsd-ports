@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.whizkidtech.net/fports/
 
 MAINTAINER=	adam@whizkidtech.net
 
-BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm:install
+BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 
 ONLY_FOR_ARCHS=	i386
 
