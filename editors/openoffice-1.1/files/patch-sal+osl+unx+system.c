@@ -1,15 +1,16 @@
---- ../sal/osl/unx/system.c.orig	Tue Aug 20 15:49:46 2002
-+++ ../sal/osl/unx/system.c	Thu Apr  3 21:56:32 2003
-@@ -74,7 +74,7 @@
+--- ../sal/osl/unx/system.c.orig	Tue Aug 20 08:49:46 2002
++++ ../sal/osl/unx/system.c	Mon Apr 21 02:42:21 2003
+@@ -74,7 +74,8 @@
  static pthread_mutex_t getrtl_mutex = PTHREAD_MUTEX_INITIALIZER;
  
  /* struct passwd differs on some platforms */
 -#if defined NETBSD || defined MACOSX || defined FREEBSD
-+#if defined NETBSD || defined FREEBSD || defined MACOSX
++#if defined NETBSD || defined MACOSX || \
++	(defined FREEBSD && (__FreeBSD_version < 500112))
  #include <pwd.h>
  #include <sys/types.h>
  
-@@ -134,7 +134,6 @@
+@@ -134,7 +135,6 @@
    	return res;
  }
  
@@ -17,7 +18,7 @@
  int getpwuid_r(uid_t uid, struct passwd *pwd, char *buffer,
             size_t buflen, struct passwd **result)
  {
-@@ -201,8 +200,8 @@
+@@ -201,8 +201,8 @@
  
    return res;
  }
@@ -27,7 +28,7 @@
  struct tm *localtime_r(const time_t *timep, struct tm *buffer)
  {
  	struct tm* res;
-@@ -236,7 +235,8 @@
+@@ -236,7 +236,8 @@
  
  	return res;
  }
@@ -37,7 +38,7 @@
  
  #ifdef SCO
  #include <pwd.h>
-@@ -712,3 +712,50 @@
+@@ -712,3 +713,50 @@
  }
  #endif
  
