@@ -23,9 +23,16 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS= --enable-phrase \
 		--enable-shared \
 		--enable-freebsd-pthreads \
-		--with-openssl \
 		--sysconfdir=${PREFIX}/etc/mnogosearch \
 		--localstatedir=/var/mnogosearch
+
+.ifndef NO_OPENSSL
+USE_OPENSSL=    yes
+.endif
+
+.ifdef USE_OPENSSL
+CONFIGURE_ARGS+= --with-openssl=${OPENSSLBASE}
+.endif
 
 # To enable Cyrillic charset guesser, define this
 # Guesser mode ignores charsets comes from HTTP header or <META> tag
