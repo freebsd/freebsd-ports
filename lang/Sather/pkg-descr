@@ -15,3 +15,5 @@ parameterized classes, dynamic dispatch, iteration abstraction,
 higher-order routines and iters, exception handling, assertions,
 preconditions, postconditions, and class invariants.  Sather code can
 be compiled into C code and can efficiently link with C object files.
+
+WWW:  http://www.gnu.org/software/sather/

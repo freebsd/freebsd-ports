@@ -1,35 +1,13 @@
-*** Makefile.0	Thu Feb 16 07:44:53 1995
---- Makefile	Sat Feb 25 01:12:57 1995
-***************
-*** 23,37 ****
-  #
-  # Don't forget to edit (or at least inspect) the file System/CONFIG.proto.
-  
-! CPP= /lib/cpp -C -P
-  RANLIB= ranlib
-  CC= gcc 
-! CFLAGS= -O
-  GC_CC= ${CC}
-  MV= mv
-  CMP= cmp
-  CS= cs
-! SHOME= /u/davids/Sather/Working
-  AR= ar
-  RM= rm -f
-  TEST= test
---- 23,37 ----
-  #
-  # Don't forget to edit (or at least inspect) the file System/CONFIG.proto.
-  
-! CPP= /usr/bin/cpp -C -P
-  RANLIB= ranlib
-  CC= gcc 
-! CFLAGS= -O2
-  GC_CC= ${CC}
-  MV= mv
-  CMP= cmp
-  CS= cs
-! SHOME= ..
-  AR= ar
-  RM= rm -f
-  TEST= test
+--- Makefile.orig	Thu Nov  4 17:04:28 1999
++++ Makefile	Wed Feb  2 19:46:11 2000
+@@ -30,8 +30,8 @@
+ LN=ln -s
+ CP=cp
+ 
+-CPP=/lib/cpp -C -P
+-CC=gcc
++CPP=/usr/bin/cpp -C -P
++CC?=gcc
+ EXEC_SUFFIX=
+ # CC is only used for bootstrapping, check System/Common/CONFIG.proto if
+ # you want to change it for all Sather compilations
