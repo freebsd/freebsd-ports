@@ -32,11 +32,11 @@
   (setq-default quail-current-package (assoc "hangul" quail-package-alist))
   )
 
-;; Add System Info path '/usr/share/info' into Info-default-directory-list
 (setq Info-default-directory-list
       (append (list
+	       "%%LOCALBASE%%/share/mule/19.34/info"
+	       "%%X11BASE%%/info"
 	       "/usr/share/info"
-	       "/usr/X11R6/info"
 	       ) Info-default-directory-list)) 
 
 ;; END mule-family

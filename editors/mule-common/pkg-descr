@@ -1,15 +1,15 @@
 This is emacs lisp files, info pages, and so on (except executables)
-for mule-2.3, a multilingual editor based on emacs-19.28.
+for mule-2.3, a multilingual editor based on emacs-19.34.
 
 You must install one of packages, mule-2.3, ja-mule-*-2.3 (
 ja-mule-canna-2.3, ja-mule-canna+sj3-2.3, etc.), zh-mule-wnn4-2.3 and
 ko-mule-wnn4-2.3, each of which contains only the executables for
 mule-2.3.
 
-This package and the above package of the executables *will* clobber any
-existing emacs installation.  In particular, the executables and man
-pages of etags/ctags are installed, and the info pages that come with
-the original emacs get installed too.
+This package and the above package of the executables *will* clobber
+any existing emacs installation.  In particular, the executables and
+man pages of etags/ctags are installed, and the info pages that come
+with the original emacs get installed too.
 
 Although this shouldn't cause any problems to run both mule and emacs,
 it may cause some confusion when one of them is pkg_delete'd.  If
@@ -19,11 +19,6 @@ A "dir" file is supplied in the ${PORTSDIR}/editors/mule-common/files/
 subdirectory of the ports package.  Copy it into your /usr/local/info
 to read mule info pages, but also make sure you also add everything
 that may have been added to that file!
-
-[Notice]
-Mr. Yoshio KATAYAMA <kate@pfu.co.jp> fixed many bugs for mule-2.3.
-Patches for those are in 'mule-2.3.patch.tar.gz' and are applied in
-this port.
 
 - S. Taoka
 taoka@infonets.hiroshima-u.ac.jp

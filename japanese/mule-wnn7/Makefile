@@ -1,13 +1,15 @@
-# New ports collection makefile for:	mule with Wnn6
-# Version required:	2.3
+# New ports collection makefile for:	mule 2.3@19.34 with Wnn6
+# Version required:	2.3@19.34
 # Date created:		7 July 1997
 # Whom:			Satoshi Taoka <taoka@infonets.hiroshima-u.ac.jp>
 #
-# $Id: Makefile,v 1.30 1997/09/10 08:51:19 asami Exp $
+# $Id: Makefile,v 1.31 1997/09/14 21:35:20 max Exp $
 #
 
 PKGNAME=	ja-mule-wnn6-2.3
 CATEGORIES=	japanese editors
+
+BROKEN_ELF=	yes
 
 WNN6=		yes
 

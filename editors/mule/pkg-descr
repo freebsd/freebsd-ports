@@ -1,5 +1,5 @@
 This is a package containing only the executables for mule-2.3, a
-multilingual editor based on emacs-19.28.
+multilingual editor based on emacs-19.34.
 
 You should install a package, mule-common-2.3, containing emacs lisp
 files, info pages, and so on (except executables) for mule-2.3.
@@ -15,15 +15,11 @@ executables and man pages of etags/ctags are not installed, and the
 info pages that come with the original emacs don't get installed too.
 The Japanese version is build to install everything, by the way.
 
-A "dir" file is supplied in the ${PORTSDIR}/editors/mule-common/files/
-subdirectory of the ports package.  Copy it into your /usr/local/info
-to read mule info pages, but also make sure you also add everything
-that may have been added to that file!
-
-[Notice]
-Mr. Yoshio KATAYAMA <kate@pfu.co.jp> fixed many bugs for mule-2.3.
-Patches for those are in 'mule-2.3.patch.tar.gz' and are applied in
-this port.
+A "dir" file is supplied in the
+${PORTSDIR}/editors/mule-common/files/ subdirectory of the
+ports package.  Copy it into your /usr/local/info to read mule info
+pages, but also make sure you also add everything that may have been
+added to that file!
 
 - S. Taoka
 taoka@infonets.hiroshima-u.ac.jp

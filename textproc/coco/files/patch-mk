@@ -1,0 +1,45 @@
+--- Makefile.in.orig	Fri Jul 10 11:22:07 1998
++++ Makefile.in	Fri Jul 10 11:27:03 1998
+@@ -310,14 +310,14 @@
+ ### It would be nice to do something for a parallel make
+ ### to ensure that install-arch-indep finishes before this starts.
+ install-arch-dep: mkdir
+-	(cd lib-src; \
+-	  $(MAKE) install $(MFLAGS) prefix=${prefix} \
+-	    exec_prefix=${exec_prefix} bindir=${bindir} \
+-	    libexecdir=${libexecdir} archlibdir=${archlibdir})
+ 	${INSTALL_PROGRAM} src/emacs ${bindir}/${executable}-${version}
+ 	-chmod 1755  ${bindir}/${executable}-${version}
+ 	rm -f ${bindir}/$(EMACS)
+ 	-ln ${bindir}/${executable}-${version} ${bindir}/$(EMACS)
++	echo "Copying etc/DOC-* to ${docdir} ..." ; \
++	   (cd ./etc; tar -cf - DOC*)|(cd ${docdir}; umask 0; tar -xvf - ); \
++	   (cd $(docdir); chmod a+r DOC*; rm DOC) \
++
+ 
+ ### Install the files that are machine-independent.
+ ### Most of them come straight from the distribution;
+@@ -327,6 +327,10 @@
+ ### Note that we copy DOC* and then delete DOC
+ ### as a workaround for a bug in tar on Ultrix 4.2.
+ install-arch-indep: mkdir
++	(cd lib-src; \
++	  $(MAKE) install $(MFLAGS) prefix=${prefix} \
++	    exec_prefix=${exec_prefix} bindir=${bindir} \
++	    libexecdir=${libexecdir} archlibdir=${archlibdir})
+ 	-set ${COPYDESTS} ; \
+ 	for dir in ${COPYDIR} ; do \
+ 	  if [ `(cd $$1 && /bin/pwd)` != `(cd $${dir} && /bin/pwd)` ] ; then \
+@@ -360,9 +364,9 @@
+ 	-chmod -R a+r ${COPYDESTS}
+ 	if [ `(cd ./etc; /bin/pwd)` != `(cd ${docdir}; /bin/pwd)` ]; \
+ 	then \
+-	   echo "Copying etc/DOC-*, etc/CHARSETS, and etc/CODINGS to ${docdir} ..." ; \
+-	   (cd ./etc; tar -cf - DOC* CHARSETS CODINGS)|(cd ${docdir}; umask 0; tar -xvf - ); \
+-	   (cd $(docdir); chmod a+r DOC* CHARSETS CODINGS; rm DOC) \
++	   echo "Copying etc/CHARSETS, and etc/CODINGS to ${docdir} ..." ; \
++	   (cd ./etc; tar -cf - CHARSETS CODINGS)|(cd ${docdir}; umask 0; tar -xvf - ); \
++	   (cd $(docdir); chmod a+r CHARSETS CODINGS) \
+ 	else true; fi
+ 	if [ -r ./lisp ] \
+ 	   && [ x`(cd ./lisp; /bin/pwd)` != x`(cd ${lispdir}; /bin/pwd)` ] \

@@ -1,0 +1,5 @@
+--- lisp/its/han-kata.el~       Thu Aug  6 19:55:01 1998
++++ lisp/its/han-kata.el        Mon Aug 10 13:24:50 1998
+@@ -45 +45 @@
+-(defvar enable-double-n-syntax nil "*Enable ""nn"" input for ""ﾝ"" ")
++(defvar enable-double-n-syntax nil "*Enable \"nn\" input for \"ﾝ\" ")

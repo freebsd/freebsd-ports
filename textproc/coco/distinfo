@@ -1,2 +1,3 @@
-MD5 (mule-2.3.tar.gz) = e97cfbf19ee43442b416004eb92aac41
-MD5 (mule-2.3.patch-970819.tar.gz) = affdd51086c15abbb0a50999ac2e2796
+MD5 (emacs-19.34b.tar.gz) = 9bd3c694a9019c2a2ebd703a9a0394e0
+MD5 (mule-2.3-19.34.patch-981002.tar.gz) = cadf0c5e4ec4d74b921ffa96a7cca96e
+MD5 (mule-23-1934-alpha01.diff.gz) = 09b0fbf4871b701eb6371e56388db9e0
