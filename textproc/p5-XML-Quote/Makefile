@@ -18,6 +18,5 @@ COMMENT=	XML quote/dequote functions
 PERL_CONFIGURE=	yes
 
 MAN3=		XML::Quote.3
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>
