@@ -1,0 +1,12 @@
+
+$FreeBSD$
+
+--- driver/screensaver-properties.desktop.in	2002/08/06 08:25:53	1.1
++++ driver/screensaver-properties.desktop.in	2002/08/06 08:26:01
+@@ -1,5 +1,5 @@
+ [Desktop Entry]
+-Exec=xscreensaver-demo --crapplet
++Exec=xscreensaver-demo
+ TryExec=xscreensaver-demo
+ Icon=xscreensaver.xpm
+ Terminal=0
