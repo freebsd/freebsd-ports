@@ -6290,6 +6290,7 @@ py-libnet	ports/net/py-libnet
 py-log4py	ports/devel/py-log4py
 py-logging	ports/devel/py-logging
 py-m2crypto	ports/security/py-m2crypto
+py-mad		ports/audio/py-mad
 py-martel	ports/textproc/py-martel
 py-mcrypt	ports/security/py-mcrypt
 py-medusa	ports/net/py-medusa
