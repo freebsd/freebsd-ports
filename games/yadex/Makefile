@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.teaser.fr/~amajorel/yadex/
 
 MAINTAINER=	fracture@allusion.net
 
+USE_XLIB=	yes
 USE_GMAKE=	yes
 MAKEFILE=	GNUmakefile
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}

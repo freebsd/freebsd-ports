@@ -15,10 +15,12 @@ MAINTAINER=	flathill@FreeBSD.org
 
 RUN_DEPENDS=	lha:${PORTSDIR}/archivers/lha
 
+USE_XLIB=	yes
+GNU_CONFIGURE=	yes
+
 NOT_FOR_ARCHS=	alpha
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
-GNU_CONFIGURE=	yes
 MAN1=		fkiss.1
 
 INSTALL_TARGET=	install
