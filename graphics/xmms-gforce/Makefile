@@ -11,7 +11,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://dl.droso.net/ports/
 DISTNAME=	gforce-1.1.6xp3
 
-MAINTAINER=	erwin@lansing.dk
+MAINTAINER=	ports@freebsd.org
 
 BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms
 RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
