@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	rioutil
-PORTVERSION=	1.0.6
-PORTREVISION=	2
+PORTVERSION=	1.4.6
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,11 +14,21 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A program to inferface with the Rio600, Rio800 and psa[play devices
 
-USE_GETOPT_LONG=yes
+LIB_DEPENDS=	usb-0.1.7:${PORTSDIR}/devel/libusb
+
+USE_GETOPT_LONG=	yes
 USE_GMAKE=	yes
+USE_LIBTOOL_VER=	15
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 INSTALLS_SHLIB=	yes
-GNU_CONFIGURE=	yes
 
 MAN1=		rioutil.1
+
+CPPFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib
+
+post-extract:
+	@${RM} -f ${WRKSRC}/src/getopt*
 
 .include <bsd.port.mk>

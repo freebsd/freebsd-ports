@@ -1,5 +1,10 @@
-rioutil is a program/library created to interface with Diamond MM's
-Rio600, Rio800, and psa[play.
+rioutil is a utility designed for the use of interfacing with Sonic
+Blue/dnna's third, fourth, and fifth generations of flash MP3 players
+(Rio 600/800/900/S-Series/Riot/Cali/Chiba/Fuse and Nike psa[play).
+On many players, it goes beyond the packaged software by providing
+downloading.
+
+WWW:  http://rioutil.sourceforge.net/
 
 - George Reid
 greid@FreeBSD.org
