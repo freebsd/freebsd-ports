@@ -66,7 +66,7 @@
  
  
  
-@@ -353,6 +356,7 @@
+@@ -373,6 +376,7 @@
  
  # ALT_CONFIG_PREFIX=/some/directory/
  # ALT_CONFIG_PREFIX=/some/directory/exim.conf-
@@ -74,7 +74,7 @@
  
  
  #------------------------------------------------------------------------------
-@@ -397,7 +401,7 @@
+@@ -417,7 +421,7 @@
  # one that is set in the headers_charset option. The default setting is
  # defined by this setting:
  
@@ -83,7 +83,7 @@
  
  # If you are going to make use of $header_xxx expansions in your configuration
  # file, or if your users are going to use them in filter files, and the normal
-@@ -469,7 +473,7 @@
+@@ -489,7 +493,7 @@
  # SUPPORT_TLS=yes
  
  # Uncomment this setting if you are using OpenSSL
@@ -92,7 +92,7 @@
  
  # Uncomment these settings if you are using GnuTLS
  # USE_GNUTLS=yes
-@@ -520,7 +524,7 @@
+@@ -540,7 +544,7 @@
  # Once you have done this, "make install" will build the info files and
  # install them in the directory you have defined.
  
@@ -101,7 +101,7 @@
  
  
  #------------------------------------------------------------------------------
-@@ -533,7 +537,7 @@
+@@ -553,7 +557,7 @@
  # %s. This will be replaced by one of the strings "main", "panic", or "reject"
  # to form the final file names. Some installations may want something like this:
  
@@ -110,7 +110,7 @@
  
  # which results in files with names /var/log/exim_mainlog, etc. The directory
  # in which the log files are placed must exist; Exim does not try to create
-@@ -670,12 +674,20 @@
+@@ -690,12 +694,20 @@
  #
  # USE_TCP_WRAPPERS=yes
  # CFLAGS=-O -I/usr/local/include
@@ -133,7 +133,7 @@
  #------------------------------------------------------------------------------
  # The default action of the exim_install script (which is run by "make
  # install") is to install the Exim binary with a unique name such as
-@@ -917,7 +929,7 @@
+@@ -937,7 +939,7 @@
  # (process id) to a file so that it can easily be identified. The path of the
  # file can be specified here. Some installations may want something like this:
  

@@ -1,6 +1,6 @@
 --- doc/spec.txt.orig	Wed May  5 12:08:37 2004
 +++ doc/spec.txt	Wed May  5 15:10:17 2004
-@@ -14432,6 +14432,19 @@
+@@ -14962,6 +14962,19 @@
        message_prefix = "\1\1\1\1\n"
        message_suffix = "\1\1\1\1\n"
  

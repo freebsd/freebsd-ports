@@ -226,22 +226,6 @@ diff -u src/routers/redirect.h src/routers/redirect.h
  #endif
  
    int   modemask;
-diff -u src/spf.h src/spf.h
---- src/spf.h	Sat Jul 17 11:12:00 2004
-+++ src/spf.h	Sat Jul 17 12:13:52 2004
-@@ -10,9 +10,9 @@
- 
- #ifdef SPF
- 
--#include <spf_alt/spf.h>
--#include <spf_alt/spf_dns_resolv.h>
--#include <spf_alt/spf_dns_cache.h>
-+#include <spf2/spf.h>
-+#include <spf2/spf_dns_resolv.h>
-+#include <spf2/spf_dns_cache.h>
- 
- typedef struct spf_result_id {
-   uschar *name;
 diff -u src/srs.c src/srs.c
 --- src/srs.c	Sat Jul 17 11:12:00 2004
 +++ src/srs.c	Sat Jul 17 12:28:31 2004
