@@ -15,7 +15,7 @@ EXTRACT_ONLY=	# none
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	A utility to back up remote files with pdumpfs and rsync
 
-RUN_DEPENDS=	pdumpfs:${PORTSDIR}/sysutils/pdumpfs \
+RUN_DEPENDS=	${LOCALBASE}/sbin/pdumpfs:${PORTSDIR}/sysutils/pdumpfs \
 		rsync:${PORTSDIR}/net/rsync
 
 USE_RUBY=	yes
