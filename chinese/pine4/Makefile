@@ -6,17 +6,20 @@
 #
 
 PORTNAME=	pine
-PORTVERSION=	4.21
-PORTREVISION=	1
+PORTVERSION=	4.30
+PORTREVISION=	0
 CATEGORIES=	chinese mail news
 MASTER_SITES=	ftp://ftp.cac.washington.edu/pine/
-DISTNAME=	pine${PORTVERSION}
+DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	avatar@www.mmlab.cse.yzu.edu.tw
+PATCH_SITES=	ftp://freebsd.ntu.edu.tw/OS/FreeBSD/taiwan/users/benedick/patch/
+PATCHFILES=	patch-${PORTNAME}-${PORTVERSION}.gz
 
-NO_LATEST_LINK= yes
+MAINTAINER=	avatar@mmlab.cse.yzu.edu.tw
 
-MAN1= 		pine.1 pico.1 pilot.1
+NO_LATEST_LINK=	yes
+
+MAN1=		pine.1 pico.1 pilot.1
 
 pre-fetch:
 .if !defined(BATCH) && !defined(PACKAGE_BUILDING)
@@ -49,12 +52,24 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/pico ${PREFIX}/bin/pico
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/pilot ${PREFIX}/bin/pilot
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/pine ${PREFIX}/bin/pine
-	${INSTALL_SCRIPT} ${FILESDIR}/pgpencrypt ${PREFIX}/bin/pgpencrypt
-	${INSTALL_SCRIPT} ${FILESDIR}/pgpdecode ${PREFIX}/bin/pgpdecode
-	${INSTALL_SCRIPT} ${FILESDIR}/pgpsign ${PREFIX}/bin/pgpsign
-	${INSTALL_DATA} ${FILESDIR}/dot.pinerc.sample \
+	${SED} -e 's,@@PREFIX@@,${PREFIX},g' \
+		< ${FILESDIR}/pgpdecode > ${WRKSRC}/bin/pgpdecode
+	${SED} -e 's,@@PREFIX@@,${PREFIX},g' \
+		< ${FILESDIR}/pgpencrypt > ${WRKSRC}/bin/pgpencrypt
+	${SED} -e 's,@@PREFIX@@,${PREFIX},g' \
+		< ${FILESDIR}/pgpsign > ${WRKSRC}/bin/pgpsign
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/pgpencrypt ${PREFIX}/bin/pgpencrypt
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/pgpdecode ${PREFIX}/bin/pgpdecode
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/pgpsign ${PREFIX}/bin/pgpsign
+	${SED} -e 's,@@PREFIX@@,${PREFIX},g' \
+		< ${FILESDIR}/dot.pinerc.sample \
+		> ${WRKSRC}/dot.pinerc.sample
+	${INSTALL_DATA} ${WRKSRC}/dot.pinerc.sample \
 			${PREFIX}/etc/dot.pinerc.sample
-	${INSTALL_DATA} ${FILESDIR}/dot.pinerc.pgp.sample \
+	${SED} -e 's,@@PREFIX@@,${PREFIX},g' \
+		< ${FILESDIR}/dot.pinerc.pgp.sample \
+		> ${WRKSRC}/dot.pinerc.pgp.sample
+	${INSTALL_DATA} ${WRKSRC}/dot.pinerc.pgp.sample \
 			${PREFIX}/etc/dot.pinerc.pgp.sample
 	${INSTALL_MAN} ${WRKSRC}/doc/pico.1 ${PREFIX}/man/man1/pico.1
 	${INSTALL_MAN} ${WRKSRC}/doc/pilot.1 ${PREFIX}/man/man1/pilot.1

@@ -126,7 +126,7 @@ addrbook-sort-rule=
 
 # Reflects capabilities of the display you have. Default: US-ASCII.
 # Typical alternatives include ISO-8859-x, (x is a number between 1 and 9).
-character-set=ISO-8859-1
+character-set=big5
 
 # Specifies the program invoked by ^_ in the Composer,
 # or the "enable-alternate-editor-implicitly" feature.
@@ -207,12 +207,12 @@ operating-dir=
 
 # This variable takes a list of programs that message text is piped into
 # after MIME decoding, prior to display.
-display-filters="-----BEGIN PGP" /usr/local/bin/pgpdecode
+display-filters="-----BEGIN PGP" @@PREFIX@@/bin/pgpdecode
 
 # This defines a program that message text is piped into before MIME
 # encoding, prior to sending
-sending-filters=/usr/local/bin/pgpsign,
-	/usr/local/bin/pgpencrypt _RECIPIENTS_
+sending-filters=@@PREFIX@@/bin/pgpsign,
+	@@PREFIX@@/bin/pgpencrypt _RECIPIENTS_
 
 # A list of alternate addresses the user is known by
 alt-addresses=
@@ -310,7 +310,7 @@ user-input-timeout=
 
 # Sets the name of the command used to open a UNIX remote shell connection.
 # The default is tyically /usr/ucb/rsh.
-rsh-path=/usr/local/bin/ssh
+rsh-path=/usr/bin/ssh
 
 # Sets the format of the command used to open a UNIX remote
 # shell connection.  The default is "%s %s -l %s exec /etc/r%sd"
