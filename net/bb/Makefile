@@ -3,7 +3,7 @@
 # Date created:         So  17 Nov 1996 16:59:23 MET
 # Whom:                 Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.7 1997/01/06 08:51:42 asami Exp $
+# $Id: Makefile,v 1.8 1997/01/06 13:54:53 asami Exp $
 #
 
 DISTNAME=	bb
@@ -15,7 +15,6 @@ EXTRACT_SUFX=   -src.tgz
 MAINTAINER=	andreas@klemm.gtn.com
 
 BUILD_DEPENDS=	${PREFIX}/sbin/httpd:${PORTSDIR}/www/apache
-RUN_DEPENDS=	netscape:${PORTSDIR}/www/netscape3
 
 # The FreeBSD Ports Team has permission to include this in our CDROM
 # from the author, but others who wish to do likewise will have to
