@@ -123,8 +123,6 @@ include/objects/objc-malloc.h
 include/objects/objects.h
 include/objects/stdobjects.h
 lib/libobjects.a
-@exec /sbin/ldconfig -m %B
-@unexec /sbin/ldconfig -R
 share/NSCharacterSets/README.CharSet
 share/NSCharacterSets/alphanumCharSet.dat
 share/NSCharacterSets/controlCharSet.dat
