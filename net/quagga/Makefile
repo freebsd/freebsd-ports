@@ -30,7 +30,9 @@ MAN1=		vtysh.1
 MAN8=		bgpd.8 ospf6d.8 ospfd.8 ripd.8 ripngd.8 zebra.8
 
 CONFIGURE_ARGS+=--includedir=${PREFIX}/include/quagga
-SCRIPTS_ENV=	WRKDIRPREFIX=${WRKDIRPREFIX} WITH_SNMP_4=${WITH_SNMP_4}
+SCRIPTS_ENV=	WRKDIRPREFIX=${WRKDIRPREFIX} WITH_SNMP_4=${WITH_SNMP_4} \
+		SYSCONF_DIR=${SYSCONF_DIR} SYSSTATE_DIR=${SYSSTATE_DIR} \
+		ENABLE_USER=${ENABLE_USER} ENABLE_GROUP=${ENABLE_GROUP}
 
 pre-fetch:
 	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure.quagga
@@ -73,6 +75,33 @@ CONFIGURE_ARGS+=--enable-vty-group=${ENABLE_VTY_GROUP}
 
 CONFIGURE_ARGS+=--enable-vtysh
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500038
+RC_SUBR?=	${DESTDIR}/etc/rc.subr
+RC_DIR=		${DESTDIR}/etc/rc.d
+RC_SUFX=
+.else
+USE_RC_SUBR=	yes
+RC_DIR=		${PREFIX}/etc/rc.d
+RC_SUFX=	.sh
+.endif
+
+QUAGGA_SCRIPTS=	zebra ripd ripngd ospfd ospf6d bgpd
+
+SED_SCRIPT=	-e 's,%%PREFIX%%,${PREFIX},g' \
+		-e 's,%%SYSCONF_DIR%%,${SYSCONF_DIR},g' \
+		-e 's,%%LOCALSTATE_DIR%%,${LOCALSTATE_DIR},g' \
+		-e 's,%%RC_SUBR%%,${RC_SUBR},g' \
+		-e 's,%%RC_DIR%%,${RC_DIR},g' \
+		-e 's,%%RC_SUFX%%,${RC_SUFX},g'
+
+PLIST_SUB+=	RC_DIR=${RC_DIR} \
+		RC_SUFX=${RC_SUFX} \
+		LOCALSTATE_DIR=${LOCALSTATE_DIR} \
+		ENABLE_USER=${ENABLE_USER} \
+		ENABLE_GROUP=${ENABLE_GROUP}
+
 pre-everything::
 	@${ECHO} "============================================================="
 	@${ECHO}
@@ -103,26 +132,23 @@ pre-configure:
 	@(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOCONF_ENV} ${AUTOCONF} \
 		${AUTOCONF_ARGS})
 
+post-build:
+	@${SED} ${SED_SCRIPT} ${FILESDIR}/quagga.sh > ${WRKDIR}/quagga.sh
+
 post-install:
-	@${SETENV} SYSCONF_DIR=${SYSCONF_DIR} SYSSTATE_DIR=${SYSSTATE_DIR} \
-		ENABLE_USER=${ENABLE_USER} ENABLE_GROUP=${ENABLE_GROUP} \
-		${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	@${SETENV} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${ECHO} "===>     installing ${PORTNAME} startup file..."
-	@${SED} -e "s=!!PREFIX!!=${PREFIX}=" \
-		-e "s=!!SYSCONF_DIR!!=${SYSCONF_DIR}=" \
-		< ${FILESDIR}/zebractl.sh  \
-		> ${PREFIX}/sbin/zebractl
-	@${CHMOD} 555 ${PREFIX}/sbin/zebractl
-	@${ECHO} "Make these entries in /etc/rc.conf to start ${PORTNAME}:"
+	@${ECHO} "Add the folliwing lines to /etc/rc.conf to enable quagga:"
+	@${ECHO} ""
 	@${ECHO} "defaultrouter=\"NO\""
-	@${ECHO} "router_enable=\"YES\""
-	@${ECHO} "router=\"${PREFIX}/sbin/zebractl\""
-	@${ECHO} "router_flags=\"start\""
-	@${ECHO} "done."
+	@${ECHO} "quagga_enable=\"YES\""
+	@${ECHO} "Also You may want to set router_enable=\"NO\""
+	@${ECHO} ""
+	@${INSTALL_SCRIPT} ${WRKDIR}/quagga.sh ${RC_DIR}/quagga${RC_SUFX}
 
 .if !defined(BATCH)
 post-clean:
 	@${RM} -f ${WRKDIRPREFIX}${.CURDIR}/Makefile.inc
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -1,4 +1,3 @@
-sbin/zebractl
 sbin/zebra
 sbin/ripngd
 sbin/ripd
@@ -68,3 +67,6 @@ bin/vtysh
 %%OSPFAPI_PATH%%
 @dirrm include/quagga
 @dirrm etc/quagga
+@cwd %%RC_DIR%%
+quagga%%RC_SUFX%%
+@unexec rmdir %%LOCALSTATE_DIR%% 2>/dev/null || true
