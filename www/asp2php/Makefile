@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	asp2php
-PORTVERSION=	0.76.3
+PORTVERSION=	0.76.4a
 CATEGORIES=	www
 MASTER_SITES=	http://home.i1.net/~naken/asp2php/
 
 MAINTAINER=	ports@FreeBSD.org
 
-WRKSRC=		${WRKDIR}/${DISTNAME}/src
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/a//}/src
 
 WANT_GTK=	yes
 MAKE_ENV=	FLAGS="${CFLAGS}"
