@@ -1,5 +1,5 @@
---- pkg_tarup.orig	Fri Jun  1 11:12:44 2001
-+++ pkg_tarup	Fri Jun  1 11:21:06 2001
+--- pkg_tarup.orig	Sun Jun 10 12:51:53 2001
++++ pkg_tarup	Sun Jun 10 12:58:15 2001
 @@ -7,21 +7,26 @@
  #
  
@@ -47,16 +47,17 @@
  check_and_add -i ${PKG_DBDIR}/${PKG}/+INSTALL
  check_and_add -k ${PKG_DBDIR}/${PKG}/+DEINSTALL
  check_and_add -r ${PKG_DBDIR}/${PKG}/+REQUIRE
-@@ -54,7 +59,7 @@
+@@ -54,7 +59,8 @@
  sed -n \
      -e '/^@comment MD5:/d' \
      -e '/^@cwd \.$/,$d' \
 -    -e '/\$NetBSD/,$p' \
++    -e '/^@srcdir /d' \
 +    -e 'p' \
      <${PKG_DBDIR}/${PKG}/+CONTENTS >$PLIST
  
  # Duplicate first @cwd (work around pkg_create "feature" ...)
-@@ -80,10 +85,8 @@
+@@ -80,10 +86,8 @@
          ${PKG_ARGS} \
  	-v \
  	-f ${PLIST} \
