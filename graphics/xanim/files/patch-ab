@@ -1,30 +1,36 @@
-*** Imakefile.orig	Wed Mar 20 00:17:56 1996
---- Imakefile	Tue Mar 26 06:34:59 1996
+*** Imakefile.orig	Sat Aug  3 01:32:32 1996
+--- Imakefile	Fri Sep 27 00:53:38 1996
 ***************
-*** 58,67 ****
-  XCOMM -- always available in the /pub/podlipec directory on ftp.portal.com
-  XCOMM **********************************************************************
-  XCOMM =========
-! XCOMM XA_VIDEO_DEFS = -DXA_CINEPAK -DXA_INDEO
-! XCOMM XA_VIDEO_LIBS = xa2.0_cvid_sparcCOFF.o xa2.0_iv32_sparcCOFF.o
-! XA_VIDEO_DEFS =
-! XA_VIDEO_LIBS =
-  XA_VIDEO_INCS =
-  XA_VIDEO_DEPS =
+*** 68,80 ****
+  XCOMM AND have downloaded the proper decompression modules AND have verified
+  XCOMM that they are the correct size in bytes as listed in the readmes.
+  XCOMM 
+! XCOMM XA_IV32_DEF = -DXA_INDEO 
+! XCOMM XA_CVID_DEF = -DXA_CINEPAK
+! XCOMM XA_CYUV_DEF = -DXA_CYUV
+! XCOMM
+! XA_IV32_LIB = 
+! XA_CVID_LIB = 
+! XA_CYUV_LIB = 
   XCOMM
---- 58,67 ----
-  XCOMM -- always available in the /pub/podlipec directory on ftp.portal.com
-  XCOMM **********************************************************************
-  XCOMM =========
-! XA_VIDEO_DEFS = -DXA_CINEPAK -DXA_INDEO
-! XA_VIDEO_LIBS = xa2.0_cvid_netbsd386.o xa2.0_iv32_netbsd386.o
-! XCOMM XA_VIDEO_DEFS =
-! XCOMM XA_VIDEO_LIBS =
-  XA_VIDEO_INCS =
-  XA_VIDEO_DEPS =
+  XCOMM -- NOTE: SGI Machines only: if you see an error like
+  XCOMM --               "merge_ext returns nil during relocation" or similiar
+--- 68,80 ----
+  XCOMM AND have downloaded the proper decompression modules AND have verified
+  XCOMM that they are the correct size in bytes as listed in the readmes.
+  XCOMM 
+! XA_IV32_DEF = -DXA_INDEO
+! XA_CVID_DEF = -DXA_CINEPAK
+! XA_CYUV_DEF = -DXA_CYUV
+! XCOMM
+! XA_IV32_LIB = xa2.0_cvid_netbsd386.o
+! XA_CVID_LIB = xa2.0_iv32_netbsd386.o
+! XA_CYUV_LIB = xa1.0_cyuv_netbsd386.o
   XCOMM
+  XCOMM -- NOTE: SGI Machines only: if you see an error like
+  XCOMM --               "merge_ext returns nil during relocation" or similiar
 ***************
-*** 149,155 ****
+*** 183,189 ****
   XCOMM XA_AUDIO_DEFS =
   XCOMM
   XCOMM -- Sun Sparcs -----------------------------------------------------------
@@ -32,7 +38,7 @@
   XCOMM
   XCOMM NOTE: Imakefile should add the -DSVR4 to Sun Solaris machines, if not
   XCOMM       use the following:
---- 149,155 ----
+--- 183,189 ----
   XCOMM XA_AUDIO_DEFS =
   XCOMM
   XCOMM -- Sun Sparcs -----------------------------------------------------------
@@ -41,7 +47,7 @@
   XCOMM NOTE: Imakefile should add the -DSVR4 to Sun Solaris machines, if not
   XCOMM       use the following:
 ***************
-*** 185,191 ****
+*** 224,230 ****
   XCOMM XA_MACH_LIBS = -lc
   XCOMM 
   XCOMM -- Also FreeBSD, and BSDI with SBlast-BSD-1.5 (development stages)-------
@@ -49,7 +55,7 @@
   XCOMM XA_AUDIO_LIBS = -lc
   XCOMM
   XCOMM -- SGI Indigo -----------------------------------------------------------
---- 185,191 ----
+--- 224,230 ----
   XCOMM XA_MACH_LIBS = -lc
   XCOMM 
   XCOMM -- Also FreeBSD, and BSDI with SBlast-BSD-1.5 (development stages)-------
