@@ -321,5 +321,7 @@ share/doc/fltk/text.gif
 share/doc/fltk/valuators.gif
 share/doc/fltk/value_slider.gif
 share/doc/fltk/widgets.html
+share/doc/fltk/README
 @dirrm include/FL
+include/Fl
 @dirrm share/doc/fltk
