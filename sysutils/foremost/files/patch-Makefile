@@ -1,0 +1,32 @@
+--- Makefile.orig	Fri Jan  9 13:45:23 2004
++++ Makefile	Wed Jun 16 21:36:33 2004
+@@ -1,5 +1,5 @@
+ 
+-CC = gcc
++CC?= gcc
+ CC_OPTS = -Wall -O2
+ GOAL = foremost
+ 
+@@ -14,8 +14,9 @@
+ #---------------------------------------------------------------------
+ 
+ # Where foremost gets installed
+-BIN = /usr/local/bin
+-MAN = /usr/local/man/man1
++PREFIX ?= /usr/local
++BIN = $(PREFIX)/bin
++MAN = $(PREFIX)/man/man1
+ 
+ # This should be commented out when debugging is done
+ #CC_OPTS += -D__DEBUG -ggdb
+@@ -55,8 +56,8 @@
+ 	$(CC) -o $(GOAL) $(OBJS)
+ 
+ install: all
+-	install -CDm 755 $(GOAL)   $(BIN)/$(GOAL)
+-	install -CDm 644 $(GOAL).1 $(MAN)/$(GOAL).1
++	install -Cm 755 $(GOAL)   $(BIN)/$(GOAL)
++	install -Cm 644 $(GOAL).1 $(MAN)/$(GOAL).1
+ 
+ uninstall:
+ 	rm -f $(BIN)/$(GOAL) $(MAN)/$(GOAL).1

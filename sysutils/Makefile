@@ -136,6 +136,7 @@
     SUBDIR += flog
     SUBDIR += fontedit
     SUBDIR += fonteditfs
+    SUBDIR += foremost
     SUBDIR += fortunelock
     SUBDIR += freebsd-sha1
     SUBDIR += freecolor

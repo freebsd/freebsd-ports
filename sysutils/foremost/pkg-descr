@@ -1,0 +1,7 @@
+   Foremost is a console program to recover files based on their headers
+   and footers. Foremost can work on image files, such as those generated
+   by dd, Safeback, Encase, etc, or directly on a drive. The headers and
+   footers are specified by a configuration file, so you can pick and
+   choose which headers you want to look for.
+
+WWW: http://foremost.sourceforge.net
