@@ -1,0 +1,38 @@
+--- cdrecord/drv_philips.c.orig	Sun May  7 14:39:57 2000
++++ cdrecord/drv_philips.c	Fri Aug 18 22:40:38 2000
+@@ -518,7 +518,7 @@
+ 	int	*speedp;
+ 	int	dummy;
+ {
+-	struct	scsi_mode_page_header	*mp;
++	struct	scg_scsi_mode_page_header	*mp;
+ 	char				mode[256];
+ 	int				len = 16;
+ 	int				page = 0x31;
+@@ -539,7 +539,7 @@
+ 		if (len == 0)
+ 			return (-1);
+ 
+-		mp = (struct scsi_mode_page_header *)
++		mp = (struct scg_scsi_mode_page_header *)
+ 			(mode + sizeof(struct scsi_mode_header) +
+ 			((struct scsi_mode_header *)mode)->blockdesc_len);
+ 
+@@ -567,7 +567,7 @@
+ 	int	*speedp;
+ 	int	dummy;
+ {
+-	struct	scsi_mode_page_header	*mp;
++	struct	scg_scsi_mode_page_header	*mp;
+ 	char				mode[256];
+ 	int				len = 20;
+ 	int				page = 0x23;
+@@ -588,7 +588,7 @@
+ 		if (len == 0)
+ 			return (-1);
+ 
+-		mp = (struct scsi_mode_page_header *)
++		mp = (struct scg_scsi_mode_page_header *)
+ 			(mode + sizeof(struct scsi_mode_header) +
+ 			((struct scsi_mode_header *)mode)->blockdesc_len);
+ 
