@@ -4,17 +4,15 @@
 #
 # $FreeBSD$
 #
-# Instructions on how to enable preferred extensions can be found in the
-# Makefile of the master port (lang/php5).
-#
 
 CATEGORIES=	lang
+PKGNAMESUFFIX=	-cli
 
-MAINTAINER=	sysadmin@alexdupre.com
+MAINTAINER=	ale@FreeBSD.org
+COMMENT=	PHP Command Line Interpreter
 
-PKGMESSAGE=	${.CURDIR}/pkg-message
 MASTERDIR=	${.CURDIR}/../php5
 
-WITHOUT_APACHE=	yes
+CONFLICTS=	php5-5* php5-cgi-5* mod_php5-5*
 
 .include "${MASTERDIR}/Makefile"

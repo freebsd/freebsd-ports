@@ -4,59 +4,25 @@
 #
 # $FreeBSD$
 #
-# There are many ways to select which extensions you want to enable, either
-# in interactive mode or in batch mode.
-#
-# By default, the enabled extensions are: CTYPE, MYSQL, OVERLOAD, PCRE, POSIX,
-# SESSION, TOKENIZER, XML and ZLIB. This behaviour can be changed overriding
-# the PHP4_OPTIONS variable (e.g. PHP4_OPTIONS="EXT1 EXT2 EXT3").
-#
-# Another way is to use the WITH_<EXT> and WITHOUT_<EXT> knobs, for additional
-# and default extensions respectively (implies batch mode).
-#
-# The last way reads an "extension" file, located in ~/php4_options (the
-# location is overridable by the PHP4_OPTFILE variable). You may find an
-# example in scripts/php4_options (interactive mode only).
-#
 
 PORTNAME=	php4
 PORTVERSION=	4.3.8
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	lang devel www
 MASTER_SITES=	${MASTER_SITE_PHP:S,$,:release,} \
 		http://downloads.php.net/ilia/:rc \
 		http://downloads.php.net/jani/:rc
 MASTER_SITE_SUBDIR=	distributions/:release
-.if defined(WITHOUT_CLI) && !defined(WITHOUT_APACHE)
-PKGNAMEPREFIX=	mod_
-.else
-.if defined(WITHOUT_APACHE)
-.if defined(WITHOUT_CLI)
-PKGNAMESUFFIX=	-cgi
-.else
-PKGNAMESUFFIX=	-cli
-.endif
-.endif
-.endif
 DISTNAME=	php-${PORTVERSION:S/.r/RC/}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:release
 
 MAINTAINER?=	ale@FreeBSD.org
 COMMENT?=	PHP Scripting Language (Apache Module and CLI)
-.if defined(WITHOUT_APACHE)
-.if defined(WITHOUT_CLI)
-COMMENT=	PHP Common Gateway Interface
-.else
-COMMENT=	PHP Command Line Interpreter
-.endif
-.else
-.if defined(WITHOUT_CLI)
-COMMENT=	PHP Apache Module
-.endif
-.endif
+
+LATEST_LINK=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}
 
 USE_BZIP2=	yes
-USE_SUBMAKE=	yes
+.if !defined(PKGNAMESUFFIX) || ${PKGNAMESUFFIX} == "-cgi" || ${PKGNAMESUFFIX} == "-cli"
 GNU_CONFIGURE=	yes
 USE_BISON=	yes
 USE_REINPLACE=	yes
@@ -64,7 +30,6 @@ USE_REINPLACE=	yes
 CONFIGURE_ARGS=	--enable-versioning \
 		--enable-memory-limit \
 		--with-layout=GNU \
-		--with-zlib-dir=/usr \
 		--disable-all
 
 .if !defined(WITH_REGEX_TYPE) || ${WITH_REGEX_TYPE} == "php"
@@ -79,469 +44,63 @@ CONFIGURE_ARGS+=--with-regex=apache
 .endif
 .endif
 
-EXT_DIR=	20020429
-SAPI_FILE=	"@comment "
+.if !defined(PKGNAMEPREFIX) && !defined(PKGNAMESUFFIX)
+PHP_SAPI=	full
+WITH_APACHE=	yes
+.else
+.if !defined(PKGNAMEPREFIX)
+PHP_SAPI=	${PKGNAMESUFFIX:S/-//}
+.else
+PHP_SAPI=	${PKGNAMEPREFIX:S/_//}
+WITH_APACHE=	yes
+.endif
+.endif
 
-CONFLICTS=	php4-cli-4* mod_php4-4* php4-cgi-4*
-.if defined(WITHOUT_APACHE)
-.if defined(WITHOUT_CLI)
-CONFLICTS=	php4-4* php4-cli-4* mod_php4-4*
-.else
-CONFLICTS=	php4-4* php4-cgi-4* mod_php4-4*
+.if defined(WITH_APACHE)
+PKGMESSAGE=	${PKGDIR}/pkg-message.mod
 .endif
-.else
-.if defined(WITHOUT_CLI)
-CONFLICTS=	php4-4* php4-cli-4* php4-cgi-4*
+
+.if ${PHP_SAPI} == "cgi"
+OPTIONS=	REDIRECT "Enable force-cgi-redirect support" off \
+		DISCARD "Enable discard-path support" off \
+		FASTCGI "Enable fastcgi support" off \
+		PATHINFO "Enable path-info-check support" on
 .endif
+.if defined(WITH_APACHE)
+OPTIONS=	APACHE2 "Use apache 2.x instead of apache 1.3.x" off
 .endif
+OPTIONS+=	DEBUG "Enable debug" off \
+		IPV6 "Enable ipv6 support" on
+
+EXT_DIR=	20020429
+
+CONFLICTS?=	php4-cli-4* mod_php4-4* php4-cgi-4*
 CONFLICTS+=	php5-5* php5-cli-5* mod_php5-5* php5-cgi-5*
 
-.if defined(WITHOUT_APACHE)
-.if defined(WITHOUT_CLI)
-.if defined(WITH_FASTCGI)
-CONFIGURE_ARGS+=--enable-fastcgi
-.else
-CONFIGURE_ARGS+=--enable-discard-path
-.endif
-SAPI_FILE=	bin/php
-.else
-CONFIGURE_ARGS+=--disable-cgi
-.endif
-PLIST_SUB+=	APACHE="@comment "
-.else
-PLIST_SUB+=	APACHE=""
-.endif
-.if defined(WITHOUT_CLI)
+.if ${PHP_SAPI} == "cgi" || ${PHP_SAPI} == "mod"
 CONFIGURE_ARGS+=--disable-cli
-PLIST_SUB+=	CLI="@comment "
-.else
-.if !defined(WITHOUT_PEAR)
-CONFIGURE_ARGS+=--with-pear
-PLIST_SUB+=	PEAR=""
-.else
-PLIST_SUB+=	PEAR="@comment "
 .endif
-MAN1=		php.1
+
+.if ${PHP_SAPI} == "full" || ${PHP_SAPI} == "cli"
 PLIST_SUB+=	CLI=""
-.endif
-
-ALL_OPTIONS=	BCMATH BZIP2 CALENDAR CDB CRACK CTYPE CURL DB4 DBASE DBX DIO \
-		DOMXML DOMXSLT EXIF FILEPRO FRIBIDI FTP GD GDBM GETTEXT \
-		GMP HYPERWAVE ICONV IMAP INTERBASE INIFILE MBSTRING MCAL MCVE \
-		MCRYPT MHASH MIME MING MNOGOSEARCH MSSQL MYSQL NCURSES \
-		OPENLDAP OPENSSL ORACLE OVERLOAD PCNTL PCRE POSIX \
-		POSTGRESQL PSPELL READLINE RECODE SESSION SHMOP SNMP SOCKETS \
-		SYBASEDB SYBASECT SYSVMSG SYSVSEM SYSVSHM TOKENIZER UNIXODBC \
-		WDDX XML XMLRPC XSLT YAZ YP ZIP ZLIB
-
-.for opt in ${ALL_OPTIONS}
-.if defined(WITH_${opt}) || defined(WITHOUT_${opt})
-BATCH=		yes
-.endif
-.endfor
-
-.if !defined(BATCH) && !defined(PACKAGE_BUILDING)
-IS_INTERACTIVE=	yes
-.endif
-
-WRKDIR?=	${WRKDIRPREFIX}${.CURDIR}/work
-PHP4_OPTFILE?=	${HOME}/php4_options
-
-PHP4_OPTIONS?=	CTYPE MYSQL OVERLOAD PCRE POSIX SESSION TOKENIZER XML ZLIB
-
-.for opt in ${ALL_OPTIONS}
-.if defined(WITH_${opt})
-SEL_OPTIONS+=	${opt}
-.endif
-.endfor
-.for opt in ${PHP4_OPTIONS}
-.if !defined(WITHOUT_${opt})
-SEL_OPTIONS+=	${opt}
-.if !exists(${WRKDIR}/Makefile.inc)
-WITH_${opt}=	yes
-.endif
-.endif
-SCRIPTS_ENV+=	WITH_${opt}=ON
-.endfor
-
-SCRIPTS_ENV+=	SEL_OPTIONS="${SEL_OPTIONS}" \
-		OPTION_FILE="${PHP4_OPTFILE}" \
-		WRKDIR="${WRKDIR}" \
-		CAT="${CAT}" \
-		SED="${SED}"
-
-.if exists(${WRKDIR}/Makefile.inc)
-.include "${WRKDIR}/Makefile.inc"
-.endif
-
-.if !defined(WITHOUT_CLI) && !defined(WITHOUT_PEAR)
-WITH_PCRE=	yes
-WITH_XML=	yes
-.endif
-
-.if defined(WITH_CDB) || defined(WITH_DB4) || defined(WITH_GDBM) || defined(WITH_INIFILE)
-WITH_DBA=	yes
-.endif
-
-.if defined(WITH_DOMXSLT)
-WITH_DOMXML=	yes
-.endif
-
-.if defined(WITH_XMLRPC) || defined(WITH_XSLT)
-WITH_ICONV_DEP=	yes
-.endif
-
-.if defined(WITH_MCVE) || defined(WITH_SNMP)
-WITH_OPENSSL_DEP=	yes
-.endif
-
-.if defined(WITH_XMLRPC) || defined(WITH_XSLT)
-WITH_XML_DEP=	yes
-.endif
-
-.if defined(WITH_WDDX)
-WITH_XML=	yes
-.endif
-
-.if defined(WITH_BCMATH)
-CONFIGURE_ARGS+=--enable-bcmath
-.endif
-
-.if defined(WITH_BZIP2)
-.if exists(/usr/bin/bzip2)
-BZIP2BASE=	/usr
+MAN1=		php.1
 .else
-BZIP2BASE=	${LOCALBASE}
-LIB_DEPENDS+=	bz2.1:${PORTSDIR}/archivers/bzip2
-.endif
-CONFIGURE_ARGS+=--with-bz2=${BZIP2BASE}
+PLIST_SUB+=	CLI="@comment "
 .endif
 
-.if defined(WITH_CALENDAR)
-CONFIGURE_ARGS+=--enable-calendar
-.endif
-
-.if defined(WITH_CDB)
-CONFIGURE_ARGS+=--with-cdb
-.endif
-
-.if defined(WITH_CRACK)
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libcrack.a:${PORTSDIR}/security/cracklib
-RUN_DEPENDS+=	${LOCALBASE}/lib/libcrack.a:${PORTSDIR}/security/cracklib
-CONFIGURE_ARGS+=--with-crack=${LOCALBASE}
-.endif
-
-.if defined(WITH_CTYPE)
-CONFIGURE_ARGS+=--enable-ctype
-.endif
-
-.if defined(WITH_CURL)
-LIB_DEPENDS+=	curl.3:${PORTSDIR}/ftp/curl
-CONFIGURE_ARGS+=--with-curl=${LOCALBASE}
-.endif
-
-.if defined(WITH_DB4)
-WITH_DB4_VER?=	41
-.if ${WITH_DB4_VER} == 42
-LIB_DEPENDS+=	db-4.2.2:${PORTSDIR}/databases/db42
+.if defined(WITH_APACHE)
+PLIST_SUB+=	APACHE=""
 .else
-.if ${WITH_DB4_VER} == 4
-LIB_DEPENDS+=	db4.0:${PORTSDIR}/databases/db4
-.else
-LIB_DEPENDS+=	db41.1:${PORTSDIR}/databases/db41
-.endif
-.endif
-CONFIGURE_ARGS+=--with-db4=${LOCALBASE}
+PLIST_SUB+=	APACHE="@comment "
 .endif
 
-.if defined(WITH_DBA)
-CONFIGURE_ARGS+=--enable-dba
+.if ${PHP_SAPI} == "cli"
+CONFIGURE_ARGS+=--disable-cgi
+SAPI_FILE=	"@comment "
 .endif
 
-.if defined(WITH_DBASE)
-CONFIGURE_ARGS+=--enable-dbase
-.endif
-
-.if defined(WITH_DBX)
-CONFIGURE_ARGS+=--enable-dbx
-.endif
-
-.if defined(WITH_DIO)
-CONFIGURE_ARGS+=--enable-dio
-.endif
-
-.if defined(WITH_DOMXML)
-LIB_DEPENDS+=	xml2.5:${PORTSDIR}/textproc/libxml2
-CONFIGURE_ARGS+=--with-dom=${LOCALBASE}
-.endif
-
-.if defined(WITH_DOMXSLT)
-LIB_DEPENDS+=	xslt.2:${PORTSDIR}/textproc/libxslt
-CONFIGURE_ARGS+=--with-dom-xslt=${LOCALBASE} --with-dom-exslt=${LOCALBASE}
-.endif
-
-.if defined(WITH_EXIF)
-CONFIGURE_ARGS+=--enable-exif
-.endif
-
-.if defined(WITH_FILEPRO)
-CONFIGURE_ARGS+=--enable-filepro
-.endif
-
-.if defined(WITH_FRIBIDI)
-LIB_DEPENDS+=	fribidi.0:${PORTSDIR}/converters/fribidi
-CONFIGURE_ARGS+=--with-fribidi=${LOCALBASE}
-.endif
-
-.if defined(WITH_FTP)
-CONFIGURE_ARGS+=--enable-ftp
-.endif
-
-.if defined(WITH_GD)
-LIB_DEPENDS+=	freetype.9:${PORTSDIR}/print/freetype2
-LIB_DEPENDS+=	t1.5:${PORTSDIR}/devel/t1lib
-LIB_DEPENDS+=	png.5:${PORTSDIR}/graphics/png
-LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg
-CONFIGURE_ARGS+=--with-gd \
-		--enable-gd-native-ttf \
-		--with-freetype-dir=${LOCALBASE} \
-		--with-t1lib=${LOCALBASE} \
-		--with-jpeg-dir=${LOCALBASE} \
-		--with-png-dir=${LOCALBASE}
-.if !defined(WITHOUT_X11)
-USE_XPM=	yes
-CONFIGURE_ARGS+=--with-xpm-dir=${X11BASE}
-.endif
-.if defined(WITH_LZW)
-CONFIGURE_ARGS+=--enable-gd-lzw-gif
-.endif
-.endif
-
-.if defined(WITH_GDBM)
-LIB_DEPENDS+=	gdbm.3:${PORTSDIR}/databases/gdbm
-CONFIGURE_ARGS+=--with-gdbm=${LOCALBASE}
-.endif
-
-.if defined(WITH_GETTEXT)
-USE_GETTEXT=	yes
-CONFIGURE_ARGS+=--with-gettext=${LOCALBASE}
-.endif
-
-.if defined(WITH_GMP)
-LIB_DEPENDS+=	gmp.6:${PORTSDIR}/math/libgmp4
-CONFIGURE_ARGS+=--with-gmp=${LOCALBASE}
-.endif
-
-.if defined(WITH_HYPERWAVE)
-CONFIGURE_ARGS+=--with-hyperwave
-.endif
-
-.if defined(WITH_ICONV) || defined(WITH_ICONV_DEP)
-USE_ICONV=	yes
-CONFIGURE_ARGS+=--with-iconv-dir=${LOCALBASE}
-.endif
-
-.if defined(WITH_ICONV)
-CONFIGURE_ARGS+=--with-iconv=${LOCALBASE}
-.endif
-
-.if defined(WITH_INIFILE)
-CONFIGURE_ARGS+=--with-inifile
-.endif
-
-.if defined(WITH_INTERBASE)
-LIB_DEPENDS+=	gds.1:${PORTSDIR}/databases/firebird
-CONFIGURE_ARGS+=--with-interbase=${LOCALBASE}/firebird
-.endif
-
-.if defined(WITH_MBSTRING)
-CONFIGURE_ARGS+=--enable-mbstring
-.endif
-
-.if defined(WITH_MCAL)
-LIB_DEPENDS+=	mcal.0:${PORTSDIR}/misc/libmcal
-CONFIGURE_ARGS+=--with-mcal=${LOCALBASE}
-.endif
-
-.if defined(WITH_MCVE)
-LIB_DEPENDS+=	mcve.3:${PORTSDIR}/devel/libmcve
-CONFIGURE_ARGS+=--with-mcve=${LOCALBASE}
-.endif
-
-.if defined(WITH_MCRYPT)
-LIB_DEPENDS+=	mcrypt.8:${PORTSDIR}/security/libmcrypt
-USE_LIBLTDL=	yes
-CONFIGURE_ARGS+=--with-mcrypt=${LOCALBASE}
-.endif
-
-.if defined(WITH_MHASH)
-LIB_DEPENDS+=	mhash.2:${PORTSDIR}/security/mhash
-CONFIGURE_ARGS+=--with-mhash=${LOCALBASE}
-.endif
-
-.if defined(WITH_MIME)
-CONFIGURE_ARGS+=--with-mime-magic=/usr/share/misc/magic.mime
-.endif
-
-.if defined(WITH_MING)
-LIB_DEPENDS+=	ming.3:${PORTSDIR}/graphics/ming
-CONFIGURE_ARGS+=--with-ming=${LOCALBASE}
-.endif
-
-.if defined(WITH_MNOGOSEARCH)
-LIB_DEPENDS+=	udmsearch.1:${PORTSDIR}/www/mnogosearch
-CONFIGURE_ARGS+=--with-mnogosearch=${LOCALBASE}
-.endif
-
-.if defined(WITH_MSSQL)
-LIB_DEPENDS+=	sybdb.4:${PORTSDIR}/databases/freetds-msdblib
-CONFIGURE_ARGS+=--with-mssql=${LOCALBASE}
-.endif
-
-.if defined(WITH_MYSQL)
-USE_MYSQL=	yes
-CONFIGURE_ARGS+=--with-mysql=${LOCALBASE}
-.endif
-
-.if defined(WITH_OPENLDAP)
-USE_OPENLDAP=	yes
-CONFIGURE_ARGS+=--with-ldap=${LOCALBASE}
-.endif
-
-.if defined(WITH_OPENSSL) || defined(WITH_OPENSSL_DEP)
-USE_OPENSSL=	yes
-LDFLAGS+=	-lcrypto -lssl
-CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
-CONFIGURE_ARGS+=--with-openssl-dir=${OPENSSLBASE}
-.endif
-
-.if defined(WITH_OPENSSL)
-CONFIGURE_ARGS+=--with-openssl=${OPENSSLBASE}
-.endif
-
-.if defined(WITH_ORACLE)
-BUILD_DEPENDS+=	${LOCALBASE}/oracle7/lib/libcore3.a:${PORTSDIR}/databases/oracle7-client
-RUN_DEPENDS+=	${LOCALBASE}/oracle7/lib/libcore3.a:${PORTSDIR}/databases/oracle7-client
-CONFIGURE_ARGS+=--with-oracle=${LOCALBASE}/oracle7
-.endif
-
-.if defined(WITH_OVERLOAD)
-CONFIGURE_ARGS+=--enable-overload
-.endif
-
-.if defined(WITH_PCNTL)
-CONFIGURE_ARGS+=--enable-pcntl
-.endif
-
-.if defined(WITH_PCRE)
-CONFIGURE_ARGS+=--with-pcre-regex=yes
-.endif
-
-.if defined(WITH_POSIX)
-CONFIGURE_ARGS+=--enable-posix
-.endif
-
-.if defined(WITH_POSTGRESQL)
-POSTGRESQL_PORT?=	databases/postgresql7
-LIB_DEPENDS+=	pq.3:${PORTSDIR}/${POSTGRESQL_PORT}
-CONFIGURE_ARGS+=--with-pgsql=${LOCALBASE}
-.endif
-
-.if defined(WITH_PSPELL)
-LIB_DEPENDS+=	aspell.15:${PORTSDIR}/textproc/aspell
-CONFIGURE_ARGS+=--with-pspell=${LOCALBASE}
-.endif
-
-.if defined(WITH_READLINE)
-CONFIGURE_ARGS+=--with-readline
-.endif
-
-.if defined(WITH_RECODE)
-LIB_DEPENDS+=	recode.3:${PORTSDIR}/converters/recode
-CONFIGURE_ARGS+=--with-recode=${LOCALBASE}
-.endif
-
-.if defined(WITH_SESSION)
-CONFIGURE_ARGS+=--enable-session
-.endif
-
-.if defined(WITH_SHMOP)
-CONFIGURE_ARGS+=--enable-shmop
-.endif
-
-.if defined(WITH_SOCKETS)
-CONFIGURE_ARGS+=--enable-sockets
-.endif
-
-.if defined(WITH_SYBASEDB)
-LIB_DEPENDS+=	sybdb.4:${PORTSDIR}/databases/freetds
-CONFIGURE_ARGS+=--with-sybase=${LOCALBASE}
-.endif
-
-.if defined(WITH_SYBASECT)
-LIB_DEPENDS+=	ct.2:${PORTSDIR}/databases/freetds
-CONFIGURE_ARGS+=--with-sybase-ct=${LOCALBASE}
-.endif
-
-.if defined(WITH_SYSVMSG)
-CONFIGURE_ARGS+=--enable-sysvmsg
-.endif
-
-.if defined(WITH_SYSVSEM)
-CONFIGURE_ARGS+=--enable-sysvsem
-.endif
-
-.if defined(WITH_SYSVSHM)
-CONFIGURE_ARGS+=--enable-sysvshm
-.endif
-
-.if defined(WITH_TOKENIZER)
-CONFIGURE_ARGS+=--enable-tokenizer
-.endif
-
-.if defined(WITH_UNIXODBC)
-LIB_DEPENDS+=	odbc.1:${PORTSDIR}/databases/unixODBC
-CONFIGURE_ARGS+=--with-unixODBC=${LOCALBASE}
-.endif
-
-.if defined(WITH_WDDX)
-CONFIGURE_ARGS+=--enable-wddx
-.endif
-
-.if defined(WITH_XML) || defined(WITH_XML_DEP)
-LIB_DEPENDS+=	expat.5:${PORTSDIR}/textproc/expat2
-CONFIGURE_ARGS+=--with-expat-dir=${LOCALBASE}
-.endif
-
-.if defined(WITH_XML)
-CONFIGURE_ARGS+=--enable-xml
-.endif
-
-.if defined(WITH_XMLRPC)
-CONFIGURE_ARGS+=--with-xmlrpc
-.endif
-
-.if defined(WITH_XSLT)
-LIB_DEPENDS+=	sablot.70:${PORTSDIR}/textproc/sablotron
-CONFIGURE_ARGS+=--enable-xslt --with-xslt-sablot=${LOCALBASE}
-.endif
-
-.if defined(WITH_YAZ)
-LIB_DEPENDS+=	yaz.2:${PORTSDIR}/net/yaz
-CONFIGURE_ARGS+=--with-yaz=${LOCALBASE}/bin
-.endif
-
-.if defined(WITH_YP)
-CONFIGURE_ARGS+=--enable-yp
-.endif
-
-.if defined(WITH_ZIP)
-LIB_DEPENDS+=	zzip.10:${PORTSDIR}/devel/zziplib
-CONFIGURE_ARGS+=--with-zip=${LOCALBASE}
-.endif
-
-.if defined(WITH_ZLIB)
-CONFIGURE_ARGS+=--with-zlib=yes
+.if ${PHP_SAPI} == "cgi"
+SAPI_FILE=	bin/php
 .endif
 
 .include <bsd.port.pre.mk>
@@ -553,7 +112,7 @@ CONFIGURE_ENV=	ac_cv_pthreads_lib=${WITH_PTHREAD_LIBS} \
 		ac_cv_pthreads_cflags=${WITH_PTHREAD_CFLAGS}
 .endif
 
-.if !defined(WITHOUT_APACHE)
+.if defined(WITH_APACHE)
 .if exists(${LOCALBASE}/include/apache2/httpd.h)
 WITH_APACHE2=	yes
 APACHE_MPM!=	${APXS} -q MPM_NAME
@@ -586,78 +145,30 @@ PLIST_SUB+=	SAPI_FILE=${SAPI_FILE}
 CONFIGURE_ARGS+=--disable-ipv6
 .endif
 
-.if defined(WITH_IMAP)
-LIB_DEPENDS+=	c-client4.8:${PORTSDIR}/mail/cclient
-.if !exists(${LOCALBASE}/lib/libc-client4.so)
-.if !defined(WITHOUT_SSL)
-CONFIGURE_ARGS+=--with-imap=${LOCALBASE} --with-imap-ssl=${LOCALBASE}
-.else
-CONFIGURE_ARGS+=--with-imap=${LOCALBASE}
+.if ${PHP_SAPI} == "cgi"
+.if defined(WITH_REDIRECT)
+CONFIGURE_ARGS+=--enable-force-cgi-redirect
 .endif
-.else
-WITH_IMAP_SSL!=	/usr/bin/ldd ${LOCALBASE}/lib/libc-client4.so | ${GREP} libssl || ${TRUE}
-.if !empty(WITH_IMAP_SSL)
-CONFIGURE_ARGS+=--with-imap=${LOCALBASE} --with-imap-ssl=${LOCALBASE}
-.else
-CONFIGURE_ARGS+=--with-imap=${LOCALBASE}
+.if defined(WITH_DISCARD)
+CONFIGURE_ARGS+=--enable-discard-path
 .endif
+.if defined(WITH_FASTCGI)
+CONFIGURE_ARGS+=--enable-fastcgi
 .endif
+.if defined(WITHOUT_PATHINFO)
+CONFIGURE_ARGS+=--disable-path-info-check
 .endif
-
-.if defined(WITH_NCURSES)
-.if ${OSVERSION} < 400000
-NCURSESBASE=	${LOCALBASE}
-LIB_DEPENDS+=	ncurses.5:${PORTSDIR}/devel/ncurses
-.else
-NCURSESBASE=	/usr
-.endif
-CONFIGURE_ARGS+=--with-ncurses=${NCURSESBASE}
-.endif
-
-.if defined(WITH_SNMP)
-.if exists(${LOCALBASE}/lib/libsnmp.so.4) || defined(WITH_SNMP4)
-LIB_DEPENDS+=	snmp.4:${PORTSDIR}/net-mgmt/net-snmp4
-.else
-LIB_DEPENDS+=	netsnmp.6:${PORTSDIR}/net-mgmt/net-snmp
-.endif
-CONFIGURE_ARGS+=--with-snmp=${LOCALBASE} --enable-ucd-snmp-hack
 .endif
 
 _PORTSDIR!=	${REALPATH} ${PORTSDIR}
 PHP_PORT=	${.CURDIR:S|^${_PORTSDIR}||:S|^/||}
 
-pre-patch:
-	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure.php
-
 post-patch:
-	@${REINPLACE_CMD} -e "s|orainst/unix.rgs|ocommon/install/partial.prd|g" \
-		${WRKSRC}/configure
-	@${SED} "s|%%PREFIX%%|${PREFIX}|g" \
-		${WRKSRC}/pear/scripts/pearcmd.php > ${WRKSRC}/pear/scripts/pear
+	@${TOUCH} ${WRKSRC}/ext/php_config.h
 
+.if ${PHP_SAPI} == "full"
 pre-configure:
 	@${ECHO_CMD} ""
-.if defined(WITH_IMAP) && defined(WITH_RECODE)
-	@${ECHO_CMD} "You cannot define WITH_IMAP *and* WITH_RECODE!"
-	@${FALSE}
-.endif
-.if defined(WITH_IMAP) && defined(WITH_YAZ)
-	@${ECHO_CMD} "You cannot define WITH_IMAP *and* WITH_YAZ!"
-	@${FALSE}
-.endif
-.if defined(WITH_RECODE) && defined(WITH_YAZ)
-	@${ECHO_CMD} "You cannot define WITH_RECODE *and* WITH_YAZ!"
-	@${FALSE}
-.endif
-.if defined(WITH_SYBASEDB) && defined(WITH_SYBASECT)
-	@${ECHO_CMD} "You cannot define WITH_SYBASEDB *and* WITH_SYBASECT!"
-	@${FALSE}
-.endif
-.if defined(WITH_GD) && !defined(WITH_LZW)
-	@${ECHO_CMD} "To enable LZW-compressed GIF support in GD define the WITH_LZW knob."
-	@${ECHO_CMD} ""
-.endif
-.if !defined(WITHOUT_APACHE) && !defined(WITHOUT_CLI)
 	@${ECHO_CMD} "You are building the Apache Module and the Command Line Interpreter of PHP."
 	@${ECHO_CMD} ""
 	@${ECHO_CMD} "Use port:"
@@ -672,55 +183,23 @@ post-build:
 	@${ECHO_CMD} "PHP_VERSION=${PORTVERSION}" >> ${WRKDIR}/php.conf
 	@${ECHO_CMD} "PHP_EXT_DIR=${EXT_DIR}" >> ${WRKDIR}/php.conf
 	@${ECHO_CMD} "PHP_PORT=\$${PORTSDIR}/${PHP_PORT}" >> ${WRKDIR}/php.conf
-.if !defined(WITHOUT_CLI) && !defined(WITHOUT_PEAR)
-	@${ECHO_CMD} "PHP_PEAR=yes" >> ${WRKDIR}/php.conf
-.else
-	@${ECHO_CMD} "PHP_PEAR=no" >> ${WRKDIR}/php.conf
-.endif
-.if !defined(WITHOUT_APACHE) && !defined(WITHOUT_CLI)
-	@${ECHO_CMD} "PHP_SAPI=full" >> ${WRKDIR}/php.conf
-.else
-.if defined(WITHOUT_APACHE) && !defined(WITHOUT_CLI)
-	@${ECHO_CMD} "PHP_SAPI=cli" >> ${WRKDIR}/php.conf
-.endif
-.if !defined(WITHOUT_APACHE) && defined(WITHOUT_CLI)
-	@${ECHO_CMD} "PHP_SAPI=mod" >> ${WRKDIR}/php.conf
-.endif
-.if defined(WITHOUT_APACHE) && defined(WITHOUT_CLI)
-	@${ECHO_CMD} "PHP_SAPI=cgi" >> ${WRKDIR}/php.conf
-.endif
-.endif
-.if !defined(WITHOUT_CLI)
-	@${ECHO_CMD} "You may run the tests from the PHP test framework, typing 'make test' now."
-	@${ECHO_CMD} "(It is safe to ignore errors about timestamp-related tests,"
-	@${ECHO_CMD} "since they are due to the different FreeBSD mktime() implementation)."
-	@${ECHO_CMD} ""
-.endif
-
-.if !defined(WITHOUT_CLI)
-test: all
-	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} \
-		${MAKEFILE} ${MAKE_ARGS} ${.TARGET})
-.endif
+	@${ECHO_CMD} "PHP_SAPI=${PHP_SAPI}" >> ${WRKDIR}/php.conf
 
 post-install:
-.if !defined(WITHOUT_CLI) && !defined(WITHOUT_PEAR)
-	@${INSTALL_SCRIPT} ${WRKSRC}/pear/scripts/pear ${PREFIX}/bin
-.endif
 	@${INSTALL_DATA} ${WRKSRC}/php.ini-dist ${PREFIX}/etc
 	@${INSTALL_DATA} ${WRKSRC}/php.ini-recommended ${PREFIX}/etc
 	@${INSTALL_DATA} ${WRKDIR}/php.conf ${PREFIX}/etc
-.if !defined(WITHOUT_APACHE)
-	@${ECHO_CMD} "*****************************************************************************"
-	@${ECHO_CMD} ""
-	@${ECHO_CMD} "Make sure index.php is part of your DirectoryIndex."
-	@${ECHO_CMD} ""
-	@${ECHO_CMD} "You should add the following lines to your Apache configuration file:"
-	@${ECHO_CMD} ""
-	@${ECHO_CMD} "AddType application/x-httpd-php .php"
-	@${ECHO_CMD} "AddType application/x-httpd-php-source .phps"
-	@${ECHO_CMD} ""
-	@${ECHO_CMD} "*****************************************************************************"
+	@${TOUCH} ${PREFIX}/etc/php.ini
+	@${TOUCH} ${PREFIX}/include/php/ext/php_config.h
+.if defined(WITH_APACHE)
+	@${CAT} ${PKGMESSAGE}
 .endif
 
+.else
+.if ${PKGNAMESUFFIX} == "-pear"
+.include "${MASTERDIR}/Makefile.pear"
+.else
+.include "${MASTERDIR}/Makefile.ext"
+.endif
+.endif
 .include <bsd.port.post.mk>

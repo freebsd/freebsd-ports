@@ -1,12 +1,12 @@
---- main/php_config.h.in.orig	Thu Jun 19 00:06:40 2003
-+++ main/php_config.h.in	Sat Jun 28 15:47:56 2003
-@@ -1523,6 +1523,9 @@
- #undef HAVE_GD_GIF_CREATE
- 
+--- main/php_config.h.in.orig	Mon Jul 12 16:30:37 2004
++++ main/php_config.h.in	Mon Jul 12 16:31:38 2004
+@@ -2362,6 +2362,9 @@
  /*   */
-+#undef HAVE_GD_GIF_ANIM
+ #undef SOLARIS_YP
+ 
++/* Include external shared modules configurations */
++#include "ext/php_config.h"
 +
-+/*   */
- #undef HAVE_GD_WBMP
+ /* Whether sprintf is broken */
+ #undef ZEND_BROKEN_SPRINTF
  
- /*   */

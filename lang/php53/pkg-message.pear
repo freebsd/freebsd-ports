@@ -1,0 +1,8 @@
+*********************************************************
+
+To use PEAR you have to add the correct include path into
+your ${LOCALBASE}/etc/php.ini configuration file, like:
+
+include_path = ".:${PREFIX}/share/pear"
+
+*********************************************************

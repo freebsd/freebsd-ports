@@ -1,0 +1,473 @@
+COMMENT=	The ${PHP_MODNAME} shared extension for php
+
+USE_PHP=	yes
+USE_PHPEXT=	yes
+PHP_MODNAME=	${PKGNAMESUFFIX:S/-//}
+
+WRKSRC=		${WRKDIR}/php-${PORTVERSION:S/.r/RC/}/ext/${PHP_MODNAME}
+PATCHDIR=	${.CURDIR}/files
+PLIST=		${NONEXISTENT}
+
+.if ${PHP_MODNAME} == "bcmath"
+CONFIGURE_ARGS+=--enable-bcmath
+
+PHP_HEADER_DIRS=libbcmath libbcmath/src
+.endif
+
+.if ${PHP_MODNAME} == "bz2"
+.if exists(/usr/bin/bzip2)
+BZ2BASE=	/usr
+.else
+BZ2BASE=	${LOCALBASE}
+LIB_DEPENDS+=	bz2.1:${PORTSDIR}/archivers/bzip2
+.endif
+CONFIGURE_ARGS+=--with-bz2=${BZ2BASE}
+.endif
+
+.if ${PHP_MODNAME} == "calendar"
+CONFIGURE_ARGS+=--enable-calendar
+.endif
+
+.if ${PHP_MODNAME} == "crack"
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libcrack.a:${PORTSDIR}/security/cracklib
+RUN_DEPENDS+=	${LOCALBASE}/lib/libcrack.a:${PORTSDIR}/security/cracklib
+
+CONFIGURE_ARGS+=--with-crack=${LOCALBASE}
+.endif
+
+.if ${PHP_MODNAME} == "ctype"
+CONFIGURE_ARGS+=--enable-ctype
+.endif
+
+.if ${PHP_MODNAME} == "curl"
+LIB_DEPENDS+=	curl.3:${PORTSDIR}/ftp/curl
+
+CONFIGURE_ARGS+=--with-curl=${LOCALBASE}
+.endif
+
+.if ${PHP_MODNAME} == "dba"
+CONFIGURE_ARGS+=--enable-dba
+
+OPTIONS=	CDB "cdb database support" on \
+		DB4 "Berkeley DB4 support" off \
+		GDBM "GDBM database support" off \
+		INIFILE "INI file support" on \
+		FLATFILE "flatfile support" on
+
+PHP_HEADER_DIRS=	libcdb libflatfile libinifile
+.endif
+
+.if ${PHP_MODNAME} == "dbase"
+CONFIGURE_ARGS+=--enable-dbase
+.endif
+
+.if ${PHP_MODNAME} == "dbx"
+CONFIGURE_ARGS+=--enable-dbx
+.endif
+
+.if ${PHP_MODNAME} == "dio"
+CONFIGURE_ARGS+=--enable-dio
+.endif
+
+.if ${PHP_MODNAME} == "domxml"
+CONFIGURE_ARGS+=--with-dom=${LOCALBASE} \
+		--with-zlib-dir=/usr
+
+USE_GNOME=	libxml2
+
+OPTIONS=	XSLT "Include DOM (E)XSLT support" on
+.endif
+
+.if ${PHP_MODNAME} == "exif"
+CONFIGURE_ARGS+=--enable-exif
+.endif
+
+.if ${PHP_MODNAME} == "filepro"
+CONFIGURE_ARGS+=--enable-filepro
+.endif
+
+.if ${PHP_MODNAME} == "ftp"
+CONFIGURE_ARGS+=--enable-ftp
+.endif
+
+.if ${PHP_MODNAME} == "gd"
+LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
+		png.5:${PORTSDIR}/graphics/png \
+		jpeg.9:${PORTSDIR}/graphics/jpeg
+.	if !defined(WITHOUT_X11)
+USE_XPM=	yes
+.	endif
+
+CONFIGURE_ARGS+=--with-gd \
+		--with-freetype-dir=${LOCALBASE} \
+		--with-jpeg-dir=${LOCALBASE} \
+		--with-png-dir=${LOCALBASE} \
+		--with-zlib-dir=/usr
+.	if !defined(WITHOUT_X11)
+CONFIGURE_ARGS+=--with-xpm-dir=${X11BASE}
+.	endif
+
+OPTIONS=	T1LIB "Include T1lib support" on \
+		TRUETYPE "Enable TrueType string function" on \
+		JIS "Enable JIS-mapped Japanese font support" off \
+		LZW "Enable LZW-compressed GIF write support" off
+
+PHP_HEADER_DIRS=libgd
+.endif
+
+.if ${PHP_MODNAME} == "gettext"
+CONFIGURE_ARGS+=--with-gettext=${LOCALBASE}
+
+USE_GETTEXT=	yes
+.endif
+
+.if ${PHP_MODNAME} == "gmp"
+LIB_DEPENDS+=	gmp.6:${PORTSDIR}/math/libgmp4
+
+CONFIGURE_ARGS+=--with-gmp=${LOCALBASE}
+.endif
+
+.if ${PHP_MODNAME} == "iconv"
+CONFIGURE_ARGS+=--with-iconv=${LOCALBASE} \
+		--with-iconv-dir=${LOCALBASE}
+
+USE_ICONV=	yes
+.endif
+
+.if ${PHP_MODNAME} == "imap"
+LIB_DEPENDS+=	c-client4.8:${PORTSDIR}/mail/cclient
+
+CONFIGURE_ARGS+=--with-imap=${LOCALBASE}
+.endif
+
+.if ${PHP_MODNAME} == "interbase"
+LIB_DEPENDS+=	gds.1:${PORTSDIR}/databases/firebird
+
+CONFIGURE_ARGS+=--with-interbase=${LOCALBASE}/firebird
+.endif
+
+.if ${PHP_MODNAME} == "ldap"
+CONFIGURE_ARGS+=--with-ldap=${LOCALBASE}
+
+USE_OPENLDAP=	yes
+.endif
+
+.if ${PHP_MODNAME} == "mbstring"
+CONFIGURE_ARGS+=--enable-mbstring
+
+OPTIONS=	REGEX "Enable multibyte regex support" on
+
+PHP_HEADER_DIRS=libmbfl libmbfl/filters libmbfl/mbfl libmbfl/nls
+.endif
+
+.if ${PHP_MODNAME} == "mcal"
+LIB_DEPENDS+=	mcal.0:${PORTSDIR}/misc/libmcal
+
+CONFIGURE_ARGS+=--with-mcal=${LOCALBASE}
+.endif
+
+.if ${PHP_MODNAME} == "mcrypt"
+LIB_DEPENDS+=	mcrypt.8:${PORTSDIR}/security/libmcrypt
+
+CONFIGURE_ARGS+=--with-mcrypt=${LOCALBASE}
+
+USE_LIBLTDL=	yes
+.endif
+
+.if ${PHP_MODNAME} == "mcve"
+LIB_DEPENDS+=	mcve.3:${PORTSDIR}/devel/libmcve
+
+CONFIGURE_ARGS+=--with-mcve=${LOCALBASE} \
+                --with-openssl-dir=${OPENSSLBASE}
+
+LDFLAGS+=       -lcrypto -lssl
+USE_OPENSSL=    yes
+.endif
+
+.if ${PHP_MODNAME} == "mhash"
+LIB_DEPENDS+=	mhash.2:${PORTSDIR}/security/mhash
+
+CONFIGURE_ARGS+=--with-mhash=${LOCALBASE}
+.endif
+
+.if ${PHP_MODNAME} == "ming"
+LIB_DEPENDS+=	ming.3:${PORTSDIR}/graphics/ming
+
+CONFIGURE_ARGS+=--with-ming=${LOCALBASE}
+.endif
+
+.if ${PHP_MODNAME} == "mnogosearch"
+LIB_DEPENDS+=	udmsearch.1:${PORTSDIR}/www/mnogosearch
+
+CONFIGURE_ARGS+=--with-mnogosearch=${LOCALBASE}
+.endif
+
+.if ${PHP_MODNAME} == "mssql"
+LIB_DEPENDS+=	sybdb.4:${PORTSDIR}/databases/freetds-msdblib
+
+CONFIGURE_ARGS+=--with-mssql=${LOCALBASE}
+.endif
+
+.if ${PHP_MODNAME} == "mysql"
+CONFIGURE_ARGS+=--with-mysql=${LOCALBASE} \
+		--with-zlib-dir=/usr
+
+USE_MYSQL=	yes
+.endif
+
+.if ${PHP_MODNAME} == "ncurses"
+CONFIGURE_ARGS+=--with-ncurses=/usr
+.endif
+
+.if ${PHP_MODNAME} == "odbc"
+LIB_DEPENDS+=	odbc.1:${PORTSDIR}/databases/unixODBC
+
+CONFIGURE_ARGS+=--with-unixODBC=${LOCALBASE}
+.endif
+
+.if ${PHP_MODNAME} == "openssl"
+CONFIGURE_ARGS+=--with-openssl=${OPENSSLBASE} \
+		--with-openssl-dir=${OPENSSLBASE}
+
+LDFLAGS+=	-lcrypto -lssl
+USE_OPENSSL=	yes
+.endif
+
+.if ${PHP_MODNAME} == "oracle"
+BUILD_DEPENDS+=	${LOCALBASE}/oracle7/lib/libcore3.a:${PORTSDIR}/databases/oracle7-client
+RUN_DEPENDS+=	${LOCALBASE}/oracle7/lib/libcore3.a:${PORTSDIR}/databases/oracle7-client
+
+CONFIGURE_ARGS+=--with-oracle=${LOCALBASE}/oracle7
+.endif
+
+.if ${PHP_MODNAME} == "overload"
+CONFIGURE_ARGS+=--enable-overload
+.endif
+
+.if ${PHP_MODNAME} == "pcntl"
+CONFIGURE_ARGS+=--enable-pcntl
+.endif
+
+.if ${PHP_MODNAME} == "pcre"
+CONFIGURE_ARGS+=--with-pcre-regex=yes
+
+PHP_HEADER_DIRS=pcrelib
+.endif
+
+.if ${PHP_MODNAME} == "pgsql"
+POSTGRESQL_PORT?=	databases/postgresql7
+LIB_DEPENDS+=	pq.3:${PORTSDIR}/${POSTGRESQL_PORT}
+
+CONFIGURE_ARGS+=--with-pgsql=${LOCALBASE}
+.endif
+
+.if ${PHP_MODNAME} == "posix"
+CONFIGURE_ARGS+=--enable-posix
+.endif
+
+.if ${PHP_MODNAME} == "pspell"
+LIB_DEPENDS+=	aspell.15:${PORTSDIR}/textproc/aspell
+
+CONFIGURE_ARGS+=--with-pspell=${LOCALBASE}
+.endif
+
+.if ${PHP_MODNAME} == "readline"
+CONFIGURE_ARGS+=--with-readline=/usr
+.endif
+
+.if ${PHP_MODNAME} == "recode"
+LIB_DEPENDS+=	recode.3:${PORTSDIR}/converters/recode
+
+CONFIGURE_ARGS+=--with-recode=${LOCALBASE}
+.endif
+
+.if ${PHP_MODNAME} == "session"
+CONFIGURE_ARGS+=--enable-session
+.endif
+
+.if ${PHP_MODNAME} == "shmop"
+CONFIGURE_ARGS+=--enable-shmop
+.endif
+
+.if ${PHP_MODNAME} == "snmp"
+CONFIGURE_ARGS+=--with-snmp=${LOCALBASE} \
+		--with-openssl-dir=${OPENSSLBASE} \
+		--enable-ucd-snmp-hack
+
+LDFLAGS+=       -lcrypto -lssl
+USE_OPENSSL=    yes
+
+OPTIONS=	SNMP4 "Use old UCD SNMP instead of the new NET SNMP" off
+.endif
+
+.if ${PHP_MODNAME} == "sockets"
+CONFIGURE_ARGS+=--enable-sockets
+.endif
+
+.if ${PHP_MODNAME} == "sybase"
+LIB_DEPENDS+=	sybdb.4:${PORTSDIR}/databases/freetds
+
+CONFIGURE_ARGS+=--with-sybase=${LOCALBASE}
+.endif
+
+.if ${PHP_MODNAME} == "sybase_ct"
+LIB_DEPENDS+=	ct.2:${PORTSDIR}/databases/freetds
+
+CONFIGURE_ARGS+=--with-sybase-ct=${LOCALBASE}
+.endif
+
+.if ${PHP_MODNAME} == "sysvmsg"
+CONFIGURE_ARGS+=--enable-sysvmsg
+.endif
+
+.if ${PHP_MODNAME} == "sysvsem"
+CONFIGURE_ARGS+=--enable-sysvsem
+.endif
+
+.if ${PHP_MODNAME} == "sysvshm"
+CONFIGURE_ARGS+=--enable-sysvshm
+.endif
+
+.if ${PHP_MODNAME} == "tokenizer"
+CONFIGURE_ARGS+=--enable-tokenizer
+.endif
+
+.if ${PHP_MODNAME} == "wddx"
+CONFIGURE_ARGS+=--enable-wddx
+
+USE_PHP=	xml session
+USE_PHP_BUILD=	yes
+.endif
+
+.if ${PHP_MODNAME} == "xml"
+LIB_DEPENDS+=	expat.5:${PORTSDIR}/textproc/expat2
+
+CONFIGURE_ARGS+=--enable-xml \
+		--with-expat-dir=${LOCALBASE}
+.endif
+
+.if ${PHP_MODNAME} == "xmlrpc"
+LIB_DEPENDS+=	expat.5:${PORTSDIR}/textproc/expat2
+
+CONFIGURE_ARGS+=--with-xmlrpc \
+		--with-expat-dir=${LOCALBASE} \
+		--with-iconv-dir=${LOCALBASE}
+
+USE_ICONV=	yes
+
+PHP_HEADER_DIRS=libxmlrpc
+.endif
+
+.if ${PHP_MODNAME} == "xslt"
+LIB_DEPENDS+=	sablot.70:${PORTSDIR}/textproc/sablotron \
+		expat.5:${PORTSDIR}/textproc/expat2
+
+CONFIGURE_ARGS+=--enable-xslt \
+		--with-xslt-sablot=${LOCALBASE} \
+		--with-expat-dir=${LOCALBASE} \
+		--with-iconv-dir=${LOCALBASE}
+
+USE_ICONV=	yes
+.endif
+
+.if ${PHP_MODNAME} == "yp"
+CONFIGURE_ARGS+=--enable-yp
+.endif
+
+.if ${PHP_MODNAME} == "zlib"
+CONFIGURE_ARGS+=--with-zlib=/usr
+.endif
+
+.include <bsd.port.pre.mk>
+
+.if ${PHP_MODNAME} == "dba"
+.	if defined(WITHOUT_CDB)
+CONFIGURE_ARGS+=--without-cdb
+.	endif
+.	if defined(WITH_DB4)
+WITH_DB4_VER?=  41
+.		if ${WITH_DB4_VER} == 42
+LIB_DEPENDS+=   db-4.2.2:${PORTSDIR}/databases/db42
+.		else
+.		if ${WITH_DB4_VER} == 4
+LIB_DEPENDS+=   db4.0:${PORTSDIR}/databases/db4
+.		else
+LIB_DEPENDS+=   db41.1:${PORTSDIR}/databases/db41
+.		endif
+.		endif
+CONFIGURE_ARGS+=--with-db4=${LOCALBASE}
+.	endif
+.	if defined(WITH_GDBM)
+LIB_DEPENDS+=	gdbm.3:${PORTSDIR}/databases/gdbm
+
+CONFIGURE_ARGS+=--with-gdbm=${LOCALBASE}
+.	endif
+.	if defined(WITHOUT_INIFILE)
+CONFIGURE_ARGS+=--without-inifile
+.	endif
+.	if defined(WITHOUT_FLATFILE)
+CONFIGURE_ARGS+=--without-flatfile
+.	endif
+.endif
+
+.if ${PHP_MODNAME} == "domxml"
+.	if !defined(WITHOUT_XSLT)
+CONFIGURE_ARGS+=--with-dom-xslt=${LOCALBASE} \
+		--with-dom-exslt=${LOCALBASE}
+USE_GNOME+=	libxslt
+.	endif
+.endif
+
+.if ${PHP_MODNAME} == "gd"
+.	if !defined(WITHOUT_T1LIB)
+LIB_DEPENDS+=	t1.5:${PORTSDIR}/devel/t1lib
+
+CONFIGURE_ARGS+=--with-t1lib=${LOCALBASE}
+.	endif
+.	if !defined(WITHOUT_TRUETYPE)
+CONFIGURE_ARGS+=--enable-gd-native-ttf
+.	endif
+.	if defined(WITH_JIS)
+CONFIGURE_ARGS+=--enable-gd-jis-conv
+.	endif
+.	if defined(WITH_LZW)
+CONFIGURE_ARGS+=--enable-gd-lzw-gif
+.	endif
+.endif
+
+.if ${PHP_MODNAME} == "imap"
+.	if !exists(${LOCALBASE}/lib/libc-client4.so)
+.		if !defined(WITHOUT_SSL)
+CONFIGURE_ARGS+=--with-imap-ssl=${LOCALBASE}
+.		endif
+.	else
+WITH_IMAP_SSL!=	/usr/bin/ldd ${LOCALBASE}/lib/libc-client4.so | ${GREP} libssl || ${TRUE}
+.		if !empty(WITH_IMAP_SSL)
+CONFIGURE_ARGS+=--with-imap-ssl=${LOCALBASE}
+.		endif
+.	endif
+.endif
+
+.if ${PHP_MODNAME} == "mbstring"
+.	if defined(WITHOUT_REGEX)
+CONFIGURE_ARGS+=--disable-mbregex
+.	endif
+.endif
+
+.if ${PHP_MODNAME} == "openssl"
+post-extract:
+	@${MV} ${WRKSRC}/config0.m4 ${WRKSRC}/config.m4
+.endif
+
+.if ${PHP_MODNAME} == "snmp"
+.	if defined(WITH_SNMP4) || exists(${LOCALBASE}/lib/libsnmp.so.4)
+LIB_DEPENDS+=   snmp.4:${PORTSDIR}/net-mgmt/net-snmp4
+.	else
+LIB_DEPENDS+=   netsnmp.6:${PORTSDIR}/net-mgmt/net-snmp
+.	endif
+.endif
+
+.if ${PHP_MODNAME} == "zlib"
+post-extract:
+	@${MV} ${WRKSRC}/config0.m4 ${WRKSRC}/config.m4
+.endif

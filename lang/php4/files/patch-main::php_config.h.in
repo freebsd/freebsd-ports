@@ -1,12 +1,12 @@
---- main/php_config.h.in.orig	Thu Jun 19 00:06:40 2003
-+++ main/php_config.h.in	Sat Jun 28 15:47:56 2003
-@@ -1523,6 +1523,9 @@
- #undef HAVE_GD_GIF_CREATE
+--- main/php_config.h.in.orig	Tue Jul  6 16:37:01 2004
++++ main/php_config.h.in	Tue Jul  6 16:40:24 2004
+@@ -2452,6 +2452,9 @@
+ /* Whether to build zip as dynamic module */
+ #undef COMPILE_DL_ZIP
  
- /*   */
-+#undef HAVE_GD_GIF_ANIM
++/* Include external shared modules configurations */
++#include "ext/php_config.h"
 +
-+/*   */
- #undef HAVE_GD_WBMP
+ /* Whether sprintf is broken */
+ #undef ZEND_BROKEN_SPRINTF
  
- /*   */
