@@ -3,7 +3,7 @@
 # Date created:		19 August 1997
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.14 1998/08/07 22:56:47 asami Exp $
+# $Id: Makefile,v 1.15 1998/08/07 23:56:52 asami Exp $
 #
 
 DISTNAME=	tk8.1a2
@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.scriptics.com/pub/tcl/tcl8_1/
 
 MAINTAINER=	jseger@FreeBSD.ORG
 
-LIB_DEPENDS=	tcl81\\.1\\.0:${PORTSDIR}/lang/tcl81
+LIB_DEPENDS=	tcl81.1:${PORTSDIR}/lang/tcl81
 
 NO_LATEST_LINK=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/unix
