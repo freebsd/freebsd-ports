@@ -17,6 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 LIB_DEPENDS=	wwwcore.1:${PORTSDIR}/www/libwww
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Frontier/Client.pm:${PORTSDIR}/net/p5-Frontier-RPC
 
+USE_REINPLACE=	yes
 USE_LIBTOOL=	yes
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
@@ -26,10 +27,9 @@ MAN1=	meerkat-app-list.1 xml-rpc-api2cpp.1 xmlrpc-c-config.1 \
 MAN7=	xmlrpc-c.7
 
 pre-patch:
-	@${PERL} -pi -e 's,<malloc.h>,<stdlib.h>,' \
+	@${REINPLACE_CMD} -e 's,<malloc.h>,<stdlib.h>,' \
 		${WRKSRC}/lib/abyss/src/data.c \
-		${WRKSRC}/tools/turbocharger/mod_gzip.c \
-		${WRKSRC}/tools/turbocharger/mod_gzip.c
+		${WRKSRC}/tools/turbocharger/mod_gzip.c 
 
 post-install:
 	@${RM} -f ${PREFIX}/lib/*.la
