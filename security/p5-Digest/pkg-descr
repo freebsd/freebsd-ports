@@ -3,6 +3,3 @@ Digest:: modules.  It also provide documentation of the interface that
 all Digest:: modules should provide.
 
 WWW: http://search.cpan.org/dist/Digest/
-
--- Sergey Skvortsov
-skv@FreeBSD.org
