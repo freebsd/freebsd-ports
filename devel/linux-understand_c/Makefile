@@ -22,6 +22,7 @@ NO_BUILD=	yes
 
 PREFIX_LINUX?=	${LINUXBASE}
 STRIP=		${LINUXBASE}/usr/bin/strip
+BRANDELF?=	/usr/bin/brandelf
 FMT?=		/usr/bin/fmt
 
 CONF_DIRS=	compilers configs fonts license
@@ -100,6 +101,7 @@ do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/bin/pc-linux_elf/${file} \
 		${PREFIX}/lib/understand_c/bin/pc-linux_elf
 	@${STRIP} ${PREFIX}/lib/understand_c/bin/pc-linux_elf/${file}
+	@${BRANDELF} -t Linux ${PREFIX}/lib/understand_c/bin/pc-linux_elf/${file}
 	@if [ ! -f ${PREFIX}/bin/${file} ]; \
 	then \
 		${LN} -sf understand_c ${PREFIX}/bin/${file} ; \
