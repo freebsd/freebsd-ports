@@ -1,0 +1,20 @@
+--- manifest.h.orig	Thu Feb 24 09:55:52 1994
++++ manifest.h	Sun Jan  5 13:52:40 1997
+@@ -23,6 +23,9 @@
+ /*									*/
+ /************************************************************************/
+ 
++/* for BSD definition */
++#include <sys/param.h>
++
+ #define		TRUE			1
+ #define		FALSE			0
+ 
+@@ -38,5 +41,7 @@
+ #define		cond_free(x)		{if (x) free(x);}
+ 
+ PUBLIC	int	errno;
++#if !(defined(BSD) && (BSD >= 199103))
+ PUBLIC	char	*sys_errlist[];
++#endif
+ 

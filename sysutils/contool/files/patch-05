@@ -1,0 +1,35 @@
+--- filters.c.orig	Thu Feb 24 09:55:37 1994
++++ filters.c	Sun Jan  5 13:51:25 1997
+@@ -25,12 +25,17 @@
+ 
+ #include	<stdio.h>
+ #include	<string.h>
++#include	<sys/param.h>
+ 
+ #include	<xview/xview.h>
+ #include	<xview/panel.h>
+ #include	<xview/notice.h>
+ #include	<xview/xv_xrect.h>
+ 
++#if (defined(BSD) && (BSD >= 199306))
++#include	<regex.h>
++#endif
++
+ #include	"manifest.h"
+ #include	"contool.h"
+ #include	"contool_ui.h"
+@@ -122,8 +127,14 @@
+ 
+ {
+ 	cond_free(f->start);
++#if (defined(BSD) && (BSD >= 199306))
++	regfree(f->start_re);
++#endif
+ 	cond_free(f->start_re);
+ 	cond_free(f->stop);
++#if (defined(BSD) && (BSD >= 199306))
++	regfree(f->stop_re);
++#endif
+ 	cond_free(f->stop_re);
+ 	cond_free(f->command);
+ 	cond_free(f->comment);
