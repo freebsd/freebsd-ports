@@ -93,6 +93,7 @@
     SUBDIR += kdegraphics2
     SUBDIR += killustrator
     SUBDIR += kplot3d
+    SUBDIR += lcms
     SUBDIR += lfview
     SUBDIR += libdjvu++
     SUBDIR += libflash
