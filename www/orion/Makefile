@@ -7,7 +7,7 @@
 
 PORTNAME=	orion
 PORTVERSION=	1.5.2
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	www java
 MASTER_SITES=	http://www.orionserver.com/distributions/ \
 		http://www.atlassian.com/software/orion/downloads/ \
@@ -42,7 +42,7 @@ STDOUT_LOG=	${LOG_DIR}/stdout.log
 STDERR_LOG=	${LOG_DIR}/stderr.log
 AUTO_START?=	NO
 PID_FILE=	/var/run/${APP_SHORTNAME}.pid
-REPLACE_FILES=	${FILESDIR}/${CONTROL_SCRIPT_NAME} \
+REPLACE_FILES=	${FILESDIR}/daemonctl.c \
 		${FILESDIR}/${CONTROL_SCRIPT_NAME}.1 \
 		${FILESDIR}/${STARTUP_SCRIPT_NAME}
 
@@ -97,7 +97,9 @@ do-install:
 	-e "/%%CONTROL_SCRIPT%%/s//${CONTROL_SCRIPT:S/\//\\\//g}/" \
 	-e "/%%CONTROL_SCRIPT_NAME%%/s//${CONTROL_SCRIPT_NAME}/" \
 	-e "/%%GROUP%%/s//${GROUP}/" \
+	-e "/%%JAVA_CMD%%/s//bin\/java/" \
 	-e "/%%JAVA_HOME%%/s//${JAVA_HOME:S/\//\\\//g}/" \
+	-e "/%%JAR_FILE%%/s//${APP_SHORTNAME}.jar/" \
 	-e "/%%LOG_DIR%%/s//${LOG_DIR:S/\//\\\//g}/" \
 	-e "/%%PORTNAME%%/s//${PORTNAME}/" \
 	-e "/%%PORTVERSION%%/s//${PORTVERSION}/" \
@@ -118,8 +120,10 @@ do-install:
 	@${ECHO_CMD} " [ DONE ]"
 .endif
 
-	@${ECHO_CMD} -n ">> Installing control script..."
+	@${ECHO_CMD} -n ">> Compiling and installing control script..."
+	@cd ${WRKDIR} && ${CC} -ansi -o ${CONTROL_SCRIPT_NAME} daemonctl.c
 	@${CP} ${WRKDIR}/${CONTROL_SCRIPT_NAME} ${CONTROL_SCRIPT}
+	@${CHOWN} ${USER}:${GROUP} ${CONTROL_SCRIPT}
 	@${CHMOD} 6754 ${CONTROL_SCRIPT}
 	@${ECHO_CMD} " [ DONE ]"
 
