@@ -12,6 +12,8 @@ MASTER_SITES=	http://www.santafe.edu/~dirk/sixpack/Download/
 
 MAINTAINER=	des@FreeBSD.org
 
+BROKEN=		"Does not package correctly"
+
 RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget \
 		ptksh:${PORTSDIR}/x11-toolkits/p5-Tk
 
