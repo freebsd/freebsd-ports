@@ -35,6 +35,10 @@ CORO_EXAMPLES=		backdoor coro_fd coro_subproc coro_ehttpd \
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 503000
+BROKEN=		"Does not build on FreeBSD >= 5.x"
+.endif
+
 post-patch:
 .if ${PYTHON_REL} >= 230
 	@${REINPLACE_CMD} -e 's,@DEFS@,,g' ${WRKSRC}/coromodule/Makefile.pre.in
