@@ -5552,6 +5552,7 @@ psgml		ports/editors/psgml
 psgml-emacs19	ports/editors/psgml-emacs19
 psgml-emacs20	ports/editors/psgml-emacs20
 psgml-mule	ports/editors/psgml-mule
+psi		ports/net/psi
 psi88		ports/biology/psi88
 psiconv		ports/converters/psiconv
 psim-freebsd	ports/emulators/psim-freebsd
