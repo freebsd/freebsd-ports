@@ -121,6 +121,7 @@
     SUBDIR += p5-MLDBM-Sync
     SUBDIR += p5-Metadata
     SUBDIR += p5-Mysql
+    SUBDIR += p5-Mysql-Diff
     SUBDIR += p5-Pg
     SUBDIR += p5-ResourcePool-Resource-DBI
     SUBDIR += p5-SQL-Abstract
