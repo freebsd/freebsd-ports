@@ -1,5 +1,5 @@
---- spatd/prefs.c	2000/10/31 11:30:17	1.1
-+++ spatd/prefs.c	2000/10/31 11:30:43
+--- spatd/prefs.c.orig	Wed Jan  3 20:42:27 2001
++++ spatd/prefs.c	Thu Jan  4 13:45:30 2001
 @@ -16,7 +16,7 @@
  {
   struct ifreq ifi;
@@ -10,7 +10,7 @@
   sock = socket(AF_INET, SOCK_DGRAM, 0);
   if (sock < 0)
 @@ -86,7 +86,7 @@
-    printf("Failure to create config. ARG!\n");
+    printf("Failure to create config. ARG!\n"); /* If this happens then somthing serious went down */
     exit(0);
    }
 -  fprintf(fp, "interface: eth0\n");
