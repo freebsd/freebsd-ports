@@ -1,21 +1,11 @@
-*** load.c.orig	Fri Sep 19 03:24:04 1997
---- load.c	Fri Sep 19 03:25:28 1997
-*************** Image *ImlibLoadImage(ImlibData *id, cha
-*** 157,164 ****
-  	     if (needs_conv) pclose(p);
-  	     else fclose(p);
-  	  }
-! 	if (!strcasecmp(s,"jpeg")) sprintf(cmd,"%s/djpeg %s", NETPBM_PATH, file);
-! 	else if (!strcasecmp(s,"jpg")) sprintf(cmd,"%s/djpeg %s", NETPBM_PATH, file);
-  	else if (!strcasecmp(s,"bmp")) sprintf(cmd,"%s/bmptoppm %s", NETPBM_PATH, file);
-  	else if (!strcasecmp(s,"ilbm")) sprintf(cmd,"%s/ilbmtoppm %s", NETPBM_PATH, file);
-  	else if (!strcasecmp(s,"ilb")) sprintf(cmd,"%s/ilbmtoppm %s", NETPBM_PATH, file);
---- 157,164 ----
-  	     if (needs_conv) pclose(p);
-  	     else fclose(p);
-  	  }
-! 	if (!strcasecmp(s,"jpeg")) sprintf(cmd,"%s/djpeg %s", JPEG_PATH, file);
-! 	else if (!strcasecmp(s,"jpg")) sprintf(cmd,"%s/djpeg %s", JPEG_PATH, file);
-  	else if (!strcasecmp(s,"bmp")) sprintf(cmd,"%s/bmptoppm %s", NETPBM_PATH, file);
-  	else if (!strcasecmp(s,"ilbm")) sprintf(cmd,"%s/ilbmtoppm %s", NETPBM_PATH, file);
-  	else if (!strcasecmp(s,"ilb")) sprintf(cmd,"%s/ilbmtoppm %s", NETPBM_PATH, file);
+--- sys_conf.dist/imrc.orig	Tue Nov  4 12:11:30 1997
++++ sys_conf.dist/imrc	Thu Nov 13 13:05:34 1997
+@@ -55,7 +55,7 @@
+ # these pixmaps themselves, because this will trample all over the cache
+ # and give very horrid effects, or even make the apps crash with segfaults or
+ # Xlib errors.
+-Pixmap_Cache                      on
++Pixmap_Cache                      off
+ # Pixmap cache is in **-> BITS <-**... the end result is APPROXIMATELY
+ # 10000000 bits of pixmap make your Xserver grow by 1Mb of RAM (VERY rough).
+ # As wiht any cache, the more, the better. The more you have, the less likely

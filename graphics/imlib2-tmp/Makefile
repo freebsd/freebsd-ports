@@ -1,14 +1,16 @@
 # New ports collection makefile for:   imlib
-# Version required:    0.5.1
+# Version required:    0.7
 # Date created:        10 June 1997
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.7 1997/11/04 00:32:46 max Exp $
+# $Id: Makefile,v 1.8 1997/11/04 03:57:54 asami Exp $
 #
 
-DISTNAME=	imlib_DR-0.5.1
+DISTNAME=	imlib_DR-0.7
+PKGNAME=	imlib-0.7
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://cthulhu.mandrake.net/pub/imlib/
+MASTER_SITES=	ftp://cthulhu.mandrake.net/pub/imlib/ \
+		http://www.rasterman.com/ftp/
 
 MAINTAINER=	vanilla@MinJe.com.TW
 
@@ -18,7 +20,9 @@ RUN_DEPENDS=	djpeg:${PORTSDIR}/graphics/jpeg \
 
 USE_GMAKE=	yes
 USE_IMAKE=	yes
-WRKSRC=		${WRKDIR}/imlib-0.5.1
+WRKSRC=		${WRKDIR}/imlib
+
+MAN3=		imlib.3x
 
 post-patch:
 	$(CP) $(WRKSRC)/Imakefile $(WRKSRC)/Imakefile.pat

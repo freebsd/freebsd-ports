@@ -1,68 +1,50 @@
-*** Imakefile.orig	Thu Aug 28 20:36:09 1997
---- Imakefile	Fri Sep 19 03:29:21 1997
-***************
-*** 6,27 ****
-  /* ---------------------------------------------------------------- */
-  
-  LIBNAME=Im
-! LIBREV=1.0
-  
-! CONVERT_DIR=/usr/bin
-! NETPBM_DIR=/usr/bin
-  
-  #ifdef UseEtcX11
-  ETCDIR=/etc/X11/$(LIBNAME)
-  #else
-! ETCDIR=/etc
-  #endif /* def UseEtcX11 */
-  
-  CNFDIR = $(ETCDIR)
-  
-  DEFINES = -DSYSTEM_IMRC=\"$(ETCDIR)/imrc\" \
-            -DCONVERT_PATH=\"$(CONVERT_DIR)\" \
-! 	  -DNETPBM_PATH=\"$(NETPBM_DIR)\"
-  
-  SRCS = load.c rend.c misc.c colors.c cache.c
-  OBJS = load.o rend.o misc.o colors.o cache.o
---- 6,29 ----
-  /* ---------------------------------------------------------------- */
-  
-  LIBNAME=Im
-! LIBREV=3.0
-  
-! CONVERT_DIR=/usr/X11R6/bin
-! NETPBM_DIR=/usr/X11R6/bin
-! JPEG_DIR=/usr/local/bin
-  
-  #ifdef UseEtcX11
-  ETCDIR=/etc/X11/$(LIBNAME)
-  #else
-! ETCDIR=/usr/X11R6/lib/X11/enlightenment
-  #endif /* def UseEtcX11 */
-  
-  CNFDIR = $(ETCDIR)
-  
-  DEFINES = -DSYSTEM_IMRC=\"$(ETCDIR)/imrc\" \
-            -DCONVERT_PATH=\"$(CONVERT_DIR)\" \
-! 	  -DNETPBM_PATH=\"$(NETPBM_DIR)\" \
-! 	  -DJPEG_PATH=\"$(JPEG_DIR)\"
-  
-  SRCS = load.c rend.c misc.c colors.c cache.c
-  OBJS = load.o rend.o misc.o colors.o cache.o
-*************** InstallMultiple($(HDRS),$(INCROOT)/X11)
-*** 64,70 ****
-  CNFSRC = ./sys_conf
-  CNFS = $(CNFSRC)/imrc 
-  PALS = $(CNFSRC)/im_palette.pal
-! CNFFLAGS = -m 0644 -o root -g root
-  InstallMultipleFlags($(CNFS) $(PALS),$(CNFDIR),$(CNFFLAGS))
-  
-  DependTarget()
---- 66,72 ----
-  CNFSRC = ./sys_conf
-  CNFS = $(CNFSRC)/imrc 
-  PALS = $(CNFSRC)/im_palette.pal
-! CNFFLAGS = -m 0644 -o root -g wheel
-  InstallMultipleFlags($(CNFS) $(PALS),$(CNFDIR),$(CNFFLAGS))
-  
-  DependTarget()
+--- Imakefile.orig	Thu Nov 13 08:41:48 1997
++++ Imakefile	Thu Nov 13 13:37:47 1997
+@@ -3,28 +3,30 @@
+ /*#define UseEtcX11	 /* */
+ 
+ /* change this if the INSTALL script didn't get it right */
+-CONVERT_DIR=/usr/local/bin
+-NETPBM_DIR=/usr/local/bin
++CONVERT_DIR=/usr/X11R6/bin
++NETPBM_DIR=/usr/X11R6/bin
++JPEG_DIR=/usr/local/bin
+ 
+ /* change these if you don't like them */
+-INCDIR=/usr/X11/include/X11/
+-LIBDIR=/usr/X11/lib/
+-MANDIR=/usr/X11/man/man3/
++INCDIR=/usr/X11R6/include/X11/
++LIBDIR=/usr/X11R6/lib/
++MANDIR=/usr/X11R6/man/man3/
+ 
+ LIBNAME=Im
+-LIBREV=0.7
++LIBREV=3.7
+ 
+ #ifdef UseEtcX11
+ ETCDIR=/etc/X11/$(LIBNAME)
+ #else
+-ETCDIR=/etc
++ETCDIR=/usr/X11R6/lib/X11/enlightenment
+ #endif /* def UseEtcX11 */
+ 
+ CNFDIR = $(ETCDIR)
+ 
+ DEFINES = -DSYSTEM_IMRC=\"$(ETCDIR)/imrc\" \
+           -DCONVERT_PATH=\"$(CONVERT_DIR)\" \
+-	  -DNETPBM_PATH=\"$(NETPBM_DIR)\"
++	  -DNETPBM_PATH=\"$(NETPBM_DIR)\" \
++	  -DJPEG_PATH=\"$(JPEG_DIR)\"
+ 
+ SRCS = load.c rend.c misc.c colors.c cache.c
+ OBJS = load.o rend.o misc.o colors.o cache.o
+@@ -72,7 +74,7 @@
+ CNFSRC = ./sys_conf
+ CNFS = $(CNFSRC)/imrc 
+ PALS = $(CNFSRC)/im_palette.pal
+-CNFFLAGS = -m 0644 -o root -g root
++CNFFLAGS = -m 0644 -o root -g wheel
+ InstallMultipleFlags($(CNFS) $(PALS),$(CNFDIR),$(CNFFLAGS))
+ 
+ DependTarget()
