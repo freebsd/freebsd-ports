@@ -6554,6 +6554,7 @@ understand_ada	ports/devel/understand_ada
 understand_c	ports/devel/understand_c
 undms		ports/archivers/undms
 unexpand	src/usr.bin/unexpand
+unicode-uhoai	ports/vietnamese/unicode-uhoai
 unifdef		src/usr.bin/unifdef
 union		src/sys/miscfs/union
 uniq		src/usr.bin/uniq
