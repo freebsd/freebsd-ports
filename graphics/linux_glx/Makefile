@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	3d/glx/linux
 PKGNAMEPREFIX=	linux_
 DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	3d@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Libraries to make use of glx-aware Linux apps
 
 BUILD_DEPENDS= 	/compat/linux/sbin/ldconfig:${PORTSDIR}/emulators/linux_base	

@@ -18,7 +18,7 @@ DISTNAME=	linuxq3ademo-1.11-6.x86.gz.sh
 # dont uncompress
 EXTRACT_SUFX=
 
-MAINTAINER=	3d@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Linux 3d shooter from id Software / Loki Software (demo version)
 
 RUN_DEPENDS=	/compat/linux/lib/libc.so.6:${PORTSDIR}/emulators/linux_base
