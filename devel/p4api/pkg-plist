@@ -1,0 +1,37 @@
+include/perforce/clientapi.h
+include/perforce/clientmerge.h
+include/perforce/clientuser.h
+include/perforce/datetime.h
+include/perforce/debug.h
+include/perforce/diff.h
+include/perforce/echoctl.h
+include/perforce/enviro.h
+include/perforce/error.h
+include/perforce/errorlog.h
+include/perforce/errornum.h
+include/perforce/filesys.h
+include/perforce/handler.h
+include/perforce/hostenv.h
+include/perforce/ident.h
+include/perforce/keepalive.h
+include/perforce/msgclient.h
+include/perforce/netconnect.h
+include/perforce/ntservice.h
+include/perforce/options.h
+include/perforce/p4api.txt
+include/perforce/p4tags.h
+include/perforce/pathsys.h
+include/perforce/signaler.h
+include/perforce/spec.h
+include/perforce/stdhdrs.h
+include/perforce/strbuf.h
+include/perforce/strdict.h
+include/perforce/strops.h
+include/perforce/strtable.h
+include/perforce/threading.h
+include/perforce/vararray.h
+lib/perforce/libclient.a
+lib/perforce/librpc.a
+lib/perforce/libsupp.a
+@dirrm include/perforce
+@dirrm lib/perforce

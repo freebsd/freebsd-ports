@@ -1,0 +1,5 @@
+The Perforce Client API is a simple beast which packages up the
+command invocation, sends it to the server, and then acts on
+instructions from the server to carry out the actual command.
+
+WWW: http://www.perforce.com/perforce/loadsupp.html
