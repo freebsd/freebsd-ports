@@ -25,8 +25,7 @@ LIB_DEPENDS=	bz2.1:${PORTSDIR}/archivers/bzip2 \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.4:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
-		ttf.4:${PORTSDIR}/print/freetype \
-		xml.5:${PORTSDIR}/textproc/libxml2
+		ttf.4:${PORTSDIR}/print/freetype
 BUILD_DEPENDS=	gs:${PORTSDIR}/print/ghostscript55 \
 		mpeg2decode:${PORTSDIR}/graphics/mpeg2codec \
 		picttoppm:${PORTSDIR}/graphics/netpbm \
@@ -39,7 +38,7 @@ USE_AUTOCONF=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--enable-shared --enable-16bit-pixel --without-modules \
-		--with-perl=${PERL5}
+		--with-perl=${PERL5} --without-xml
 INSTALLS_SHLIB=	yes
 
 .if defined(HAVE_UNISYS_LICENSE)
