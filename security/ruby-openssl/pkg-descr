@@ -2,4 +2,4 @@ This is a Ruby module which wraps OpenSSL and provides access to the
 RSA/X509/Digest functions.
 
 Author:	Michal Rokos <m.rokos@sh.cvut.cz>
-WWW:	http://klokan.sh.cvut.cz/~rokosm/
+WWW:	http://www.freesoftware.fsf.org/rubypki/

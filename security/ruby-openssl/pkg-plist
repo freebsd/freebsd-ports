@@ -1,10 +1,11 @@
 %%RUBY_SITEARCHLIBDIR%%/openssl.so
-%%RUBY_SITELIBDIR%%/buffering.rb
 %%RUBY_SITELIBDIR%%/openssl.rb
 %%RUBY_SITELIBDIR%%/ssl.rb
 %%RUBY_SITELIBDIR%%/net/https.rb
 %%RUBY_SITELIBDIR%%/net/protocols.rb
 %%RUBY_SITELIBDIR%%/net/telnets.rb
+%%RUBY_SITELIBDIR%%/openssl/buffering.rb
+@dirrm %%RUBY_SITELIBDIR%%/openssl
 @dirrm %%RUBY_SITELIBDIR%%/net
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/openssl/01cert.pem
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/openssl/01crl.pem
