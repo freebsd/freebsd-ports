@@ -15,7 +15,7 @@ MAINTAINER=	jos@catnook.com
 MAN1=		gpp.1
 
 post-patch:
-		${PERL} -pi -e "s|/usr/local|${PREFIX}|g; \
+		${REINPLACE_CMD} -e "s|/usr/local|${PREFIX}|g; \
 			s|gcc -O2 -Wall|${CC} ${CFLAGS}|g" ${WRKSRC}/Makefile
 
 post-install:
