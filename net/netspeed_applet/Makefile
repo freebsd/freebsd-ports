@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	netspeed_applet
-PORTVERSION=	0.9
+PORTVERSION=	0.9.1
 CATEGORIES=	net gnome
-MASTER_SITES=	http://mfcn.ilo.de/netspeed_applet/
+MASTER_SITES=	http://www.wh-hms.uni-ulm.de/~mfcn/shared/netspeed/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Applet that shows how much network traffic occurs on an interface
@@ -21,5 +21,10 @@ USE_GNOME=	gnomehier gnomeprefix gnomehack gnomepanel
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
+post-patch:
+	@${FIND} ${WRKSRC} -name "intltool-merge.in" | ${XARGS} ${REINPLACE_CMD} -e \
+		's|mkdir $$lang or|mkdir $$lang, 0777 or| ; \
+		s|^push @INC, "/.*|push @INC, "${LOCALBASE}/share/intltool";|'
 
 .include <bsd.port.mk>
