@@ -56,7 +56,7 @@
 +.endif
 +.endif
 +.elif ${MACHINE_ARCH} == "alpha"
-+ARCHOPT= -funroll-loops -ffast-math
++ARCHOPT= -funroll-loops
 +ARCHFILES= decode.o dct64.o
 +.endif
 +
