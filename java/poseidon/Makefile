@@ -6,19 +6,19 @@
 #
 
 PORTNAME=	poseidon
-PORTVERSION=	3.0.1
+PORTVERSION=	3.0.1.03
 CATEGORIES=	java
 MASTER_SITES=	ftp://ftp.gentleware.org/ \
 		http://download.gentleware.org/ \
 		ftp://download.gentleware.biz/ \
 		http://download.gentleware.biz/ \
 		ftp://ftp.beine-computer.de/pub/distfiles/
-DISTNAME=	${PORTNAME}${EDITION}-${PORTVERSION}.01
+DISTNAME=	${PORTNAME}${EDITION}-${PORTVERSION:S/./_/g}
 
 MAINTAINER=	tux@pinguru.net
 COMMENT=	A popular UML CASE tool
 
-WRKSRC=		${WRKDIR}/${PORTNAME}${EDITION}-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}${EDITION}-3.0.1
 
 USE_ZIP=	yes
 USE_JAVA=	yes
