@@ -514,6 +514,7 @@
     SUBDIR += mkmf
     SUBDIR += mm
     SUBDIR += mob
+    SUBDIR += monotone
     SUBDIR += moonshine
     SUBDIR += motor
     SUBDIR += mpatrol

@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Mon Mar  1 00:49:43 2004
++++ Makefile.in	Sun Mar 21 22:49:58 2004
+@@ -1143,7 +1143,7 @@
+ 	$(CXXLINK) $(depot_cgi_LDFLAGS) $(depot_cgi_OBJECTS) $(depot_cgi_LDADD) $(LIBS)
+ monotone$(EXEEXT): $(monotone_OBJECTS) $(monotone_DEPENDENCIES) 
+ 	@rm -f monotone$(EXEEXT)
+-	$(CXXLINK) $(monotone_LDFLAGS) $(monotone_OBJECTS) $(monotone_LDADD) $(LIBS)
++	$(CXXLINK) $(monotone_LDFLAGS) $(monotone_OBJECTS) $(monotone_LDADD) $(LIBS) $(LTLIBINTL) $(LTLIBICONV)
+ unit_tests$(EXEEXT): $(unit_tests_OBJECTS) $(unit_tests_DEPENDENCIES) 
+ 	@rm -f unit_tests$(EXEEXT)
+ 	$(CXXLINK) $(unit_tests_LDFLAGS) $(unit_tests_OBJECTS) $(unit_tests_LDADD) $(LIBS)
