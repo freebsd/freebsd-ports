@@ -3,24 +3,30 @@ lib/%%PYTHON_VERSION%%/site-packages/MySQLdb.pyc
 lib/%%PYTHON_VERSION%%/site-packages/CompatMysqldb.py
 lib/%%PYTHON_VERSION%%/site-packages/CompatMysqldb.pyc
 lib/%%PYTHON_VERSION%%/site-packages/_mysql.so
-share/doc/py-MySQLdb/MySQLdb-1.html
-share/doc/py-MySQLdb/MySQLdb-2.html
-share/doc/py-MySQLdb/MySQLdb-3.html
-share/doc/py-MySQLdb/MySQLdb-4.html
-share/doc/py-MySQLdb/MySQLdb-FAQ-1.html
-share/doc/py-MySQLdb/MySQLdb-FAQ-2.html
-share/doc/py-MySQLdb/MySQLdb-FAQ-3.html
-share/doc/py-MySQLdb/MySQLdb-FAQ.html
-share/doc/py-MySQLdb/MySQLdb-FAQ.sgml
-share/doc/py-MySQLdb/MySQLdb.html
-share/doc/py-MySQLdb/MySQLdb.sgml
+lib/%%PYTHON_VERSION%%/site-packages/_mysql_const/CLIENT.py
+lib/%%PYTHON_VERSION%%/site-packages/_mysql_const/CLIENT.pyc
+lib/%%PYTHON_VERSION%%/site-packages/_mysql_const/CR.py
+lib/%%PYTHON_VERSION%%/site-packages/_mysql_const/CR.pyc
+lib/%%PYTHON_VERSION%%/site-packages/_mysql_const/ER.py
+lib/%%PYTHON_VERSION%%/site-packages/_mysql_const/ER.pyc
+lib/%%PYTHON_VERSION%%/site-packages/_mysql_const/FIELD_TYPE.py
+lib/%%PYTHON_VERSION%%/site-packages/_mysql_const/FIELD_TYPE.pyc
+lib/%%PYTHON_VERSION%%/site-packages/_mysql_const/FLAG.py
+lib/%%PYTHON_VERSION%%/site-packages/_mysql_const/FLAG.pyc
+lib/%%PYTHON_VERSION%%/site-packages/_mysql_const/REFRESH.py
+lib/%%PYTHON_VERSION%%/site-packages/_mysql_const/REFRESH.pyc
+lib/%%PYTHON_VERSION%%/site-packages/_mysql_const/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/_mysql_const/__init__.pyc
+share/doc/py-MySQLdb/MANIFEST
+share/doc/py-MySQLdb/README
+share/doc/py-MySQLdb/README.MySQLmodule
 share/doc/py-MySQLdb/examples/README
 share/doc/py-MySQLdb/examples/dbtrainer0
 share/doc/py-MySQLdb/examples/dbtrainer1
 share/doc/py-MySQLdb/examples/dbtrainer2
 share/doc/py-MySQLdb/examples/dbtrainer3
 share/doc/py-MySQLdb/examples/dbtrainer4
-share/doc/py-MySQLdb/examples/deirdre.py
 share/doc/py-MySQLdb/examples/test.sql
 @dirrm share/doc/py-MySQLdb/examples
 @dirrm share/doc/py-MySQLdb
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/_mysql_const

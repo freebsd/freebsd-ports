@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	py-MySQLdb
-PORTVERSION=	0.3.3
+PORTVERSION=	0.3.5
 CATEGORIES=	databases python
-MASTER_SITES=	http://dustman.net/andy/python/MySQLdb/${PORTVERSION}/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	mysql-python
 DISTNAME=	MySQL-python-${PORTVERSION}
 
 MAINTAINER=	sobomax@FreeBSD.org
@@ -18,6 +19,9 @@ LIB_DEPENDS=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
 
 USE_PYTHON=	yes
 SETUP_CMD=	cd ${WRKSRC} && ${PYTHON_CMD} setup.py
+
+DOCS=		README.MySQLmodule MANIFEST README
+
 
 do-configure:
 	@${PERL} -pi -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/setup.py
@@ -29,7 +33,9 @@ do-install:
 	${SETUP_CMD} install
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/py-MySQLdb/examples
-	@${INSTALL_MAN} ${WRKSRC}/doc/* ${PREFIX}/share/doc/py-MySQLdb
+.for file in ${DOCS}
+	@${INSTALL_MAN} ${WRKSRC}/${file} ${PREFIX}/share/doc/py-MySQLdb
+.endfor
 	@${INSTALL_MAN} \
 		${WRKSRC}/examples/* ${PREFIX}/share/doc/py-MySQLdb/examples
 .endif
