@@ -1,0 +1,10 @@
+--- Makefile.orig	Fri Feb 12 02:22:22 1999
++++ Makefile	Sat Feb 27 12:37:20 1999
+@@ -1,5 +1,6 @@
+ CC=gcc
+-CFLAGS=-Wall -O -DUSE_GUI `gtk-config --cflags` -DVERSION=\"0.1\"
++CFLAGS?=-O
++CFLAGS+=-Wall -DUSE_GUI `gtk-config --cflags` -DVERSION=\"0.1\"
+ LIBS=`gtk-config --libs`
+ 
+ all:
