@@ -9289,6 +9289,7 @@ wmcdplay	ports/audio/wmcdplay
 wmcliphist	ports/x11/wmcliphist
 wmclock		ports/x11-clocks/wmclock
 wmclockmon	ports/x11-clocks/wmclockmon
+wmconfig	ports/x11-wm/wmconfig
 wmcp		ports/misc/wmcp
 wmcpuload	ports/sysutils/wmcpuload
 wmcube		ports/sysutils/wmcube
