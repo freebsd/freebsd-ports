@@ -28,6 +28,7 @@ $UNEXPAND_RCSID = 1;
 
 $MAILCMD = "/usr/local/bin/mailsend -H";
 $MAIL_BRANCH_HDR  = "X-FreeBSD-CVS-Branch";
+$ADD_TO_LINE = 0;
 
 
 # Wrap this in a hostname check to prevent mail to the FreeBSD

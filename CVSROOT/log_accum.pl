@@ -441,9 +441,10 @@ sub mail_notification {
 #	}
 #	print(MAIL "\n");
 
-	my $to = $cfg::MAILADDRS;
+	my @email = ();
 
-	my @email = ("To: $to");
+	my $to = $cfg::MAILADDRS;
+	push @email, "To: $to" if $cfg::ADD_TO_LINE;
 
 	my $subject = 'Subject: cvs commit:';
 	my @subj = &read_logfile($SUBJ_FILE);

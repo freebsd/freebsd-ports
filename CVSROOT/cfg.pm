@@ -15,7 +15,7 @@ package cfg;
 use strict;
 use vars qw($DEBUG $FILE_PREFIX $MAILADDRS $MAILBANNER $MAILCMD
 	    $MAIL_BRANCH_HDR $MAIL_ON_DIR_CREATION $MAIL_TRANSFORM
-	    $TMPDIR %TEMPLATE_HEADERS
+	    $ADD_TO_LINE $TMPDIR %TEMPLATE_HEADERS
 	    $CHECK_HEADERS $LAST_FILE $PID $IDHEADER $UNEXPAND_RCSID);
 
 
@@ -110,6 +110,9 @@ $MAIL_ON_DIR_CREATION = 0;
 # using this header (leave off the trailing ':').
 # Use "" if you don't want one.
 $MAIL_BRANCH_HDR  = "X-CVS-Branch";
+
+# Include a 'To:' header in the generated commit mail?
+$ADD_TO_LINE = 1;
 
 # This is a way to post-process the log email before it is mailed.
 # Some people find it useful to use this to create URLs in their
