@@ -17,11 +17,9 @@ COMMENT=	An immensely fast jpeg thumbnailer library API
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 
 USE_LIBTOOL_VER=	15
-USE_GNOME=	gnomehack
+USE_GNOME=	gnomehack gnometarget
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>
-
-CONFIGURE_TARGET:=	--build=${CONFIGURE_TARGET}

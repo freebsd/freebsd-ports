@@ -23,7 +23,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 USE_LIBLTDL=	yes
 USE_LIBTOOL_VER=	15
 USE_X_PREFIX=	yes
-USE_GNOME=	gnomehack pkgconfig
+USE_GNOME=	gnomehack pkgconfig gnometartet
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
@@ -37,5 +37,3 @@ CONFIGURE_ARGS=	--enable-mmx
 .endif
 
 .include <bsd.port.post.mk>
-
-CONFIGURE_TARGET:=	--build=${CONFIGURE_TARGET}
