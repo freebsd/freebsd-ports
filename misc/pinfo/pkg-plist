@@ -5,6 +5,7 @@ info/pinfo.info
 @exec install-info %D/info/pinfo.info %D/info/dir
 share/locale/cs/LC_MESSAGES/pinfo.mo
 share/locale/de/LC_MESSAGES/pinfo.mo
+share/locale/ja/LC_MESSAGES/pinfo.mo
 share/locale/pl/LC_MESSAGES/pinfo.mo
 share/locale/ru/LC_MESSAGES/pinfo.mo
 share/locale/sv/LC_MESSAGES/pinfo.mo
