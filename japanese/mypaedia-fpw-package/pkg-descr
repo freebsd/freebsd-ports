@@ -1,0 +1,27 @@
+mypaedia.el is a supplement file to use "mypaedia" on lookup.
+"mypaedia" is produced by HITACHI DIGITAL HEIBONSHA.  You can get more
+detail information (written in Japanese) from
+
+WWW: http://openlab.ring.gr.jp/edict/mypaedia-fpw/
+
+[TO USE]
+(1) Get "mypaedia" from somewhere.
+
+(2) Install it by using /usr/ports/japanese/mypaedia-fpw
+    The port converts it into a files formatted "JIS X 4081" by FreePWING.
+    Then install MID, WAV, AVI files from CD-ROM by hand.
+
+(3) Add the following lines into your ~/.emacs
+
+(require 'lookup-package)
+(setq lookup-search-agents '((ndeb "/usr/local/share/dict/mypaedia-fpw")))
+(setq play-midi-process "timidity")
+(setq play-wav-process "play")
+(setq play-avi-process "xanim")
+(setq display-image-process "display")
+(setq lookup-package-directory "/usr/local/share/dict/lookup-package")
+(lookup-use-package "ndeb+/usr/local/share/dict/mypaedia-fpw" "mypaedia")
+(setq mypaedia-data-directory "/cdrom/INDEX")
+	;; a directory having BH.DAT, CH.DAT, MAP.DAT, PICT.DAT 
+(setq mypaedia-av-directory "/cdrom/DATA")
+	;; a directory having *.MID, *.WAV, *.AVI
