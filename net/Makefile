@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.142 1998/02/24 20:29:42 steve Exp $
+# $Id: Makefile,v 1.143 1998/02/25 01:26:08 steve Exp $
 #
 
     SUBDIR += archie
@@ -93,6 +93,8 @@
     SUBDIR += trafshow
     SUBDIR += ttt
     SUBDIR += ucd-snmp
+    SUBDIR += vnc
+    SUBDIR += vncjava
     SUBDIR += wais
     SUBDIR += wget
     SUBDIR += wide-dhcp
