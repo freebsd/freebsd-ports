@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	sylpheed-claws
-PORTVERSION=	0.8.2
-PORTREVISION=	2
+PORTVERSION=	0.8.5
 CATEGORIES=	mail news ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sylpheed-claws
@@ -20,8 +19,8 @@ MAINTAINER=	corecode@corecode.ath.cx
 
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 
-THEMEVERSION=	2
-THEMEFILE=	sylpheed-theme-pak${THEMEVERSION}${EXTRACT_SUFX}
+THEMEVERSION=	0.8.3
+THEMEFILE=	sylpheed-iconset-${THEMEVERSION}claws.tar.gz
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -104,7 +103,7 @@ pre-everything::
 post-extract:
 .if !defined(WITHOUT_THEMES)
 	@${MKDIR} ${WRKSRC}/themes
-	@cd ${WRKSRC}/themes && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/${THEMEFILE} ${EXTRACT_AFTER_ARGS}
+	@cd ${WRKDIR} && ${GZIP_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/${THEMEFILE} ${EXTRACT_AFTER_ARGS}
 .endif
 
 post-patch:
@@ -126,15 +125,16 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/tools/README ${DOCSDIR}/README.tools
 .endif
 	@${MKDIR} ${DATADIR}
-.for i in OOo2sylpheed.pl calypso_convert.pl eud2gc.py filter_conv.pl \
-	gif2xface.pl gpg-sign-syl kmail2sylpheed.pl ldif-to-xml.py \
-	newscache_clean.pl outlook2sylpheed.pl update-po uudec
-	@${INSTALL_SCRIPT} ${WRKSRC}/tools/${i} ${DATADIR}
-.endfor
+	@cd ${WRKSRC}/tools && \
+		${INSTALL_SCRIPT} OOo2sylpheed.pl calypso_convert.pl \
+		eud2gc.py filter_conv.pl gif2xface.pl gpg-sign-syl \
+		kmail2sylpheed.pl newscache_clean.pl outlook2sylpheed.pl \
+		tb2sylpheed update-po uudec ${DATADIR}
 .if !defined(WITHOUT_THEMES)
-	@for d in `${FIND} ${WRKSRC}/themes`; do \
-		if ${TEST} -d $${d}; then ${MKDIR} ${DATADIR}/$${d#${WRKSRC}/}; else \
-		${INSTALL_DATA} $${d} ${DATADIR}/$${d#${WRKSRC}}; fi; \
+	@${MKDIR} ${DATADIR}/themes
+	@cd ${WRKDIR}/${THEMEFILE:C/.tar.gz//} && for d in `find .`; do \
+		if ${TEST} -d $${d}; then ${MKDIR} ${DATADIR}/themes/$${d}; else \
+		${INSTALL_DATA} $${d} ${DATADIR}/themes/$${d}; fi; \
 	done
 .endif
 	@${INSTALL_SCRIPT} ${WRKSRC}/tools/sylpheed-switcher ${PREFIX}/bin
