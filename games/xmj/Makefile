@@ -14,6 +14,5 @@ DISTNAME=       ${PORTNAME}
 MAINTAINER=	swallace@FreeBSD.org
 
 USE_IMAKE=	yes
-NO_INSTALL_MANPAGES= yes
 
 .include <bsd.port.mk>
