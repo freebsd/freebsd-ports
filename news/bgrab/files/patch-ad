@@ -1,0 +1,14 @@
+--- MessageIdStore.h.orig	Tue Dec  3 17:35:18 2002
++++ MessageIdStore.h	Tue Dec  3 17:37:00 2002
+@@ -1,7 +1,10 @@
+ #include <iostream.h>
+-#include <stl.h>
++#include <set>
+ #include <string>
++#include <utility>
+ #include "common.h"
++
++using namespace std;
+ 
+ class MessageIdStore {
+ public:

@@ -1,5 +1,5 @@
---- main.cc.orig	Sat Jan 20 20:04:03 2001
-+++ main.cc	Sat Jan 20 20:04:19 2001
+--- main.cc.orig	Tue Dec  3 17:41:32 2002
++++ main.cc	Tue Dec  3 17:41:38 2002
 @@ -16,10 +16,7 @@
  #include "screen.h"
  #include "MessageIdStore.h"
@@ -12,3 +12,12 @@
  
  /* Prototype for signal handler */
  void cleanUp(int);
+@@ -529,7 +526,7 @@
+     } else if (want_fork) usage_error(argv[0]);
+ }
+ 
+-void main(int argc, char **argv) {
++int main(int argc, char **argv) {
+   char tmpstring[256];
+   int regError;
+ 
