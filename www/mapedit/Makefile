@@ -9,7 +9,7 @@ PORTNAME=	mapedit
 PORTVERSION=	2.3
 PORTREVISION=	1
 CATEGORIES=	www
-MASTER_SITES=	ftp://ftp.boutell.com/pub/boutell/mapedit/
+MASTER_SITES=	http://www.boutell.com/ftp-materials/boutell/mapedit/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
