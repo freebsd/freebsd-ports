@@ -3,7 +3,7 @@
 @@ -47,7 +47,9 @@
      PHP_CHECK_LIBRARY(mysqlclient, mysql_stmt_field_count,
      [ ],[
- 		AC_MSG_ERROR([MySQLI doesn't support versions < 4.1.3 anymore. Please update your libraries.])
+ 		AC_MSG_ERROR([MySQLI doesn't support versions < 4.1.3 (for MySQL 4.1.x) and < 5.0.1 for (MySQL 5.0.x) anymore. Please update your libraries.])
 -	],[])
 +    ],[
 +      $MYSQLI_LIBLINE
