@@ -22,12 +22,14 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 APXS?=		${LOCALBASE}/sbin/apxs
 .if exists(${APXS})
-AP_MOD_SSL_SUFFIX!=	${APXS} -q CFLAGS | ${GREP} DMOD_SSL >/dev/null \
+AP_MOD_SSL_SUFFIX!=	${APXS} -q CFLAGS 2>/dev/null \
+		| ${GREP} DMOD_SSL >/dev/null \
 		|| ${ECHO} -modssl
-AP_CATEGORY!=	${APXS} -q CFLAGS | ${GREP} DRUSSIAN_APACHE >/dev/null \
+AP_CATEGORY!=	${APXS} -q CFLAGS 2>/dev/null \
+		| ${GREP} DRUSSIAN_APACHE >/dev/null \
 		|| ${ECHO} www
-AP_TARGET!=	${APXS} -q TARGET
-AP_LIBEXEC!=	${APXS} -q LIBEXECDIR | ${SED} 's@^${PREFIX}/@@'
+AP_TARGET!=	${APXS} -q TARGET 2>/dev/null || ${ECHO}
+AP_LIBEXEC!=	${APXS} -q LIBEXECDIR 2>/dev/null | ${SED} 's@^${PREFIX}/@@'
 .else
 AP_CATEGORY=	www
 .endif
