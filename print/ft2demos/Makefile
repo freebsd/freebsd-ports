@@ -26,6 +26,8 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 MAKE_ENV=	TOP="${FREETYPE_WRKSRC}"
 
+.include <bsd.port.pre.mk>
+
 FREETYPE_WRKSRC!=	cd ${PORTSDIR}/print/freetype2; ${MAKE} -V WRKSRC
 
 FT_PROGRAMS=	ftdump ftlint ftmulti ftstring fttimer ftview ftmemchk
@@ -33,4 +35,4 @@ FT_PROGRAMS=	ftdump ftlint ftmulti ftstring fttimer ftview ftmemchk
 do-install:
 	@(cd ${WRKSRC}/bin/.libs/ ; ${INSTALL_PROGRAM} ${FT_PROGRAMS} ${PREFIX}/bin)
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
