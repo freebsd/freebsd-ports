@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	ftp://cr.yp.to/software/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	renato@galle.com.br
 COMMENT=	A collection of tools to analyze qmail-send's activity
 
 RUN_DEPENDS=	${QMAIL_DIR}/bin/qmail-send:${PORTSDIR}/mail/qmail
@@ -44,9 +44,9 @@ NO_MTREE=	yes
 USE_PERL5_BUILD=yes
 
 post-patch:
-	@perl -pi.bak -e "s|.usr.local.qmailanalog|${QMPREFIX}|" ${WRKSRC}/conf-home
-	@perl -pi.bak -e "s|-O2|${CFLAGS}|" ${WRKSRC}/conf-cc
-	@perl -pi.bak -e '$$_ = "" if /cat/' ${WRKSRC}/hier.c
+	@${PERL} -pi.bak -e "s|.usr.local.qmailanalog|${QMPREFIX}|" ${WRKSRC}/conf-home
+	@${PERL} -pi.bak -e "s|-O2|${CFLAGS}|" ${WRKSRC}/conf-cc
+	@${PERL} -pi.bak -e '$$_ = "" if /cat/' ${WRKSRC}/hier.c
 	@${ECHO_CMD} ${PREFIX} > ${WRKDIR}/.PPREFIX
 	@${ECHO_CMD} ${QMAIL_DIR} >> ${WRKDIR}/.PPREFIX
 
