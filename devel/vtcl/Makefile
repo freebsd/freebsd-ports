@@ -8,13 +8,13 @@
 
 DISTNAME=	vt-1.11
 PKGNAME=	vtcl-1.11
-CATEGORIES=	devel x11 tk81
+CATEGORIES=	devel x11 tk80
 MASTER_SITES=	http://www.neuron.com/stewart/vtcl/dload/ \
 		ftp://ftp.neuron.com/pub/
 
 MAINTAINER=	vanilla@FreeBSD.ORG
 
-RUN_DEPENDS=	wish8.1:${PORTSDIR}/x11/tk81
+RUN_DEPENDS=	wish8.0:${PORTSDIR}/x11/tk80
 
 WRKSRC=		${WRKDIR}/vtcl
 NO_BUILD=	yes

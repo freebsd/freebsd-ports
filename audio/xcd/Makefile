@@ -7,12 +7,12 @@
 #
 
 DISTNAME=	xcd-1.6
-CATEGORIES=	audio tk81
+CATEGORIES=	audio tk80
 MASTER_SITES=	ftp://ftp.obs-besancon.fr/pub/outgoing/
 
 MAINTAINER=	jmz@FreeBSD.org
 
-RUN_DEPENDS=    wish8.1:${PORTSDIR}/x11/tk81
+RUN_DEPENDS=    wish8.0:${PORTSDIR}/x11/tk80
 
 WRKSRC=		${WRKDIR}/xcd
 MAN1=		cdplayer.1 xcd.1
