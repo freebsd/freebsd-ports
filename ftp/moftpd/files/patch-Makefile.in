@@ -1,0 +1,16 @@
+--- Makefile.in.orig	Fri Apr 16 20:50:47 2004
++++ Makefile.in	Fri Apr 16 20:57:57 2004
+@@ -61,11 +61,11 @@
+ 
+ install: all
+ 	-mkdir -p $(sbindir) $(sysconfdir) $(datadir)/$(PACKAGE_NAME)/locale $(mandir)/man8
+-	-mkdir -p $(localstatedir)/run $(datadir)/examples
++	-mkdir -p $(localstatedir)/run
+ 	$(STRIP) $(program) $(admin)
+ 	$(INSTALL_PROGRAM) $(program) $(sbindir)
+ 	$(INSTALL_PROGRAM) $(admin) $(sbindir)
+-	$(INSTALL_DATA) $(srcdir)/docs/moftpd.conf.dist $(datadir)/examples
++	$(INSTALL_DATA) $(srcdir)/docs/moftpd.conf.dist $(sysconfdir)
+ 	$(INSTALL_DATA) docs/moftpd.8 $(mandir)/man8
+ 	$(INSTALL_DATA) $(srcdir)/docs/moftpadmin.8 $(mandir)/man8
+ 	for i in $(srcdir)/locale/*.loc; do \
