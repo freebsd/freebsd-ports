@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	eb
-PORTVERSION=	2.3.8
+PORTVERSION=	3.2.1
 CATEGORIES=	japanese
 MASTER_SITES=	ftp://ftp.sra.co.jp/pub/misc/eb/
 DISTFILES=	${EBFILES} \
@@ -15,9 +15,13 @@ DISTFILES=	${EBFILES} \
 EXTRACT_ONLY=	${EBFILES}
 
 PATCH_SITES=	${MASTER_SITES}
-PATCHFILES=	${DISTNAME}+.diff
+#PATCHFILES=	${DISTNAME}+.diff
 
 MAINTAINER=	takamune@avrl.mei.co.jp
+
+BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf
+LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext \
+		iconv.2:${PORTSDIR}/converters/iconv
 
 EBFILES=	${DISTNAME}${EXTRACT_SUFX}
 LISTFILES=	appendix/LIST \
@@ -49,15 +53,20 @@ APPENDIXFILES=	appendix/cencro-1.0.tar.gz \
 		appendix/superdic98-1.0.tar.gz
 
 DIST_SUBDIR=	eb
-USE_LIBTOOL=	yes
+
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--enable-nls \
+		--with-gettext-includes=${PREFIX}/include \
+		--with-gettext-libraries=${PREFIX}/lib \
+		--with-iconv-includes=${PREFIX}/include \
+		--with-iconv-libraries=${PREFIX}/lib
+
 INSTALLS_SHLIB=	yes
-CONFIGURE_ARGS=	--with-zlib
 
 APPENDIXDIR=	${PREFIX}/share/eb/appendix
 
-post-extract:
-	cd ${WRKSRC} && ${RM} -rf zlib
-
+pre-configure:
+	cd ${WRKSRC}; autoconf
 post-install:
 .for file in ${LISTFILES}
 	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/${file} ${APPENDIXDIR}
