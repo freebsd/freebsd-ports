@@ -17,6 +17,8 @@ EXTRACT_SUFX=		.tgz
 MAINTAINER=		olgeni@FreeBSD.org
 COMMENT=		Pager for the ROX desktop
 
+BROKEN=			Does not build
+
 USE_GNOME=		gtk20 pkgconfig libxml2 libwnck
 USE_AUTOCONF_VER=	213
 HAS_CONFIGURE=		yes
