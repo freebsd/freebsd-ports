@@ -13,8 +13,8 @@ EXTRACT_SUFX=		.tgz
 
 MAINTAINER=		hansen@cmu.edu
 
-#LIB_DEPENDS=		tk83.1:${PORTSDIR}/x11-toolkits/tk83
-#RUN_DEPENDS=		tclsh8.3:${PORTSDIR}/lang/tcl83
+LIB_DEPENDS=		tk83.1:${PORTSDIR}/x11-toolkits/tk83
+RUN_DEPENDS=		tclsh8.3:${PORTSDIR}/lang/tcl83
 
 GNU_CONFIGURE=		yes
 USE_BISON=		yes
