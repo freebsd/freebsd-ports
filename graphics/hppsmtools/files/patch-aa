@@ -1,0 +1,16 @@
+*** psmget.c.orig	Wed Sep  1 23:04:53 1999
+--- psmget.c	Wed Sep  1 23:06:41 1999
+***************
+*** 13,23 ****
+  #include <sys/poll.h>
+  #include <sys/ioctl.h>
+  
+- #ifdef PSM_GLIBC
+  #include <errno.h>
+- #include <termbits.h>
+  #include <termios.h>
+- #endif
+  
+  typedef unsigned char uchar;
+  
+--- 13,20 ----

@@ -1,0 +1,6 @@
+bin/psmget
+bin/psmdir
+bin/psmdel
+bin/psmsho
+share/doc/hppsmtools/README
+@dirrm share/doc/hppsmtools
