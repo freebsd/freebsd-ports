@@ -6,28 +6,19 @@
 #
 
 PORTNAME=	sweep
-PORTVERSION= 	0.0.9
+PORTVERSION= 	0.1.1
 CATEGORIES=	audio gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	sobomax@FreeBSD.org
 
-LIB_DEPENDS=	gnome.4:${PORTSDIR}/x11/gnomelibs
-RUN_DEPENDS=	panel:${PORTSDIR}/x11/gnomecore
-
 USE_X_PREFIX=	yes
+USE_GNOME=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 
-GLIB_CONFIG?=	${LOCALBASE}/bin/glib12-config
-GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
-
-CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share/gnome \
-		--datadir=${PREFIX}/share/gnome
-CONFIGURE_ENV=	GLIB_CONFIG="${GLIB_CONFIG}" \
-		GTK_CONFIG="${GTK_CONFIG}" \
-		CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 MAN1=		sweep.1
