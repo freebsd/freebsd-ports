@@ -1,21 +1,39 @@
---- configure.orig	Thu Apr 13 19:18:25 2000
-+++ configure	Thu Apr 20 09:07:57 2000
-@@ -5618,7 +5618,7 @@
+--- configure.orig	Sat Sep 30 23:16:14 2000
++++ configure	Thu Dec 21 00:49:23 2000
+@@ -5786,7 +5786,7 @@
  	echo $ac_n "checking for Qt insanity""... $ac_c" 1>&6
- echo "configure:5620: checking for Qt insanity" >&5
+ echo "configure:5788: checking for Qt insanity" >&5
  
 -    QT_CFLAGS="-I${QTDIR}/include/qt"
 +    QT_CFLAGS="-I${QTDIR}/include/X11/qt"
      QT_LIBS="-L/usr/X11R6/lib -L${QTDIR}/lib -lqt -lXext -lX11"
  
      # Check whether --with-static-qt or --without-static-qt was given.
-@@ -7108,6 +7108,9 @@
- case "$target_os" in
+@@ -7702,6 +7702,9 @@
  os2*)
      LIBS=
-+    ;;
+     ;;
 +freebsd*)
 +    CPPFLAGS="${CPPFLAGS} ${X_CFLAGS}"
-     ;;
++    ;;
  esac
  for ac_hdr in sys/byteorder.h compat.h getopt.h
+ do
+@@ -8655,8 +8658,6 @@
+ 	if test $? -eq 0; then
+ 		if test -z "`egrep -i '(unrecognize|unknown)' conftest.out | grep pthread`" && test -z "`egrep -i '(error|incorrect)' conftest.out`" ; then
+ 			ac_cv_have_dash_pthread=yes
+-			CFLAGS="$CFLAGS -pthread"
+-			CXXFLAGS="$CXXFLAGS -pthread"
+ 		fi
+ 	fi
+ 	rm -f conftest*
+@@ -8672,7 +8673,7 @@
+ EOF
+ 
+ 						if test "$ac_cv_have_dash_pthread" = "yes"; then
+-				_PTHREAD_LDFLAGS=""
++				_PTHREAD_LDFLAGS="-pthread -lgcc_r"
+ 			else
+ 				_PTHREAD_LDFLAGS="-lc_r"
+ 			fi

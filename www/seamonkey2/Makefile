@@ -49,7 +49,7 @@ CONFIGURE_ARGS=					\
 		--with-jpeg=${LOCALBASE}	\
 		--with-png=${LOCALBASE}
 MAKE_ENV=	LD_LIBRARY_PATH=${WRKSRC}/dist/bin \
-		CC_ONLY_FLAGS="${FLAGS}" CCC_ONLY_FLAGS="${CXXFLAGS}"
+		CC_ONLY_FLAGS="${CFLAGS}" CCC_ONLY_FLAGS="${CXXFLAGS}"
 
 post-build:
 	@${SED} -e "s;@PREFIX@;${PREFIX};g" \

@@ -1,0 +1,11 @@
+--- js/src/Makefile.in.orig	Thu Dec 21 01:23:12 2000
++++ js/src/Makefile.in	Thu Dec 21 01:23:22 2000
+@@ -218,7 +218,7 @@
+ endif
+ 
+ ifeq ($(OS_ARCH),FreeBSD)
+-LDFLAGS		+= -pthread
++LDFLAGS		+= -pthread -lgcc_r
+ endif
+ ifeq ($(OS_ARCH),IRIX)
+ ifdef USE_N32
