@@ -1,14 +1,5 @@
 --- /usr/ports/security/sudo/work2/sudo.v1.5.7p4/configure	Tue Nov 24 05:40:24 1998
 +++ configure	Sat Jan  2 04:07:08 1999
-@@ -22,6 +22,8 @@
- ac_help="$ac_help
-   --with-csops            add CSOps standard options"
- ac_help="$ac_help
-+  --with-fbsdops          add FreeBSD standard options"
-+ac_help="$ac_help
-   --with-skey             enable S/Key support "
- ac_help="$ac_help
-   --with-opie             enable OPIE support "
 @@ -665,8 +667,8 @@
  
  test "$mandir" = '${prefix}/man' && mandir='$(prefix)/man'
@@ -20,27 +11,6 @@
  
  
  # Check whether --with-CC or --without-CC was given.
-@@ -2068,6 +2070,20 @@
-   echo "$ac_t""no" 1>&6
- fi
- 
-+# Check whether --with-fbsdops or --without-fbsdops was given.
-+if test "${with_fbsdops+set}" = set; then
-+  withval="$with_fbsdops"
-+  case $with_fbsdops in
-+    yes)       OPTIONS="${OPTIONS} -DIGNORE_DOT_PATH -DENV_EDITOR -DUSE_TTY_TICKETS"
-+               sbindir='$(exec_prefix)/sbin'
-+	       echo 'fbsdops--adding options: IGNORE_DOT_PATH ENV_EDITOR USE_TTY_TICKETS'
-+	       ;;
-+    no)        ;;
-+    *)         echo "Ignoring unknown argument to --with-csops: $with_csops"
-+               ;;
-+  esac
-+fi
-+    
- 
- # Extract the first word of "egrep", so it can be a program name with args.
- set dummy egrep; ac_word=$2
 @@ -7000,7 +7016,7 @@
  fi
  
