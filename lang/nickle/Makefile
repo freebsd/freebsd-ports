@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	nickle
-PORTVERSION=	1.99.2
+PORTVERSION=	2.00
 CATEGORIES=	lang
 MASTER_SITES=	http://www.nickle.org/release/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	chrise@scardini.com
 
 USE_BZIP2=	yes
+USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
 MAN1=	nickle.1
