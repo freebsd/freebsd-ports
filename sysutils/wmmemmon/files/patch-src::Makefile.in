@@ -1,0 +1,20 @@
+--- src/Makefile.in.orig	Sat Mar  8 22:36:57 2003
++++ src/Makefile.in	Sun Mar 30 10:44:25 2003
+@@ -91,7 +91,7 @@
+ INCLUDES =  	@HEADER_SEARCH_PATH@
+ 
+ 
+-CFLAGS = @DFLAGS@ @CFLAGS@ -I../libdockapp/
++CFLAGS = -I../libdockapp/ @DFLAGS@ @CFLAGS@
+ 
+ wmmemmon_LDADD =  	dockapp.o 	@LIBRARY_SEARCH_PATH@ 	@XLIBS@
+ 
+@@ -112,7 +112,7 @@
+ X_PRE_LIBS = @X_PRE_LIBS@
+ wmmemmon_OBJECTS =  main.o mem_@OS@.o
+ wmmemmon_LDFLAGS = 
+-COMPILE = $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
++COMPILE = $(CC) $(DEFS) $(CFLAGS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS)
+ CCLD = $(CC)
+ LINK = $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(LDFLAGS) -o $@
+ DIST_COMMON =  Makefile.am Makefile.in
