@@ -8,7 +8,8 @@
 PORTNAME=	portoseguro
 PORTVERSION=	0.4
 CATEGORIES=	x11
-MASTER_SITES=	http://www.ic.unicamp.br/~guazzibe/random/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	trevor
 DISTNAME=	${PORTNAME}-alpha4
 
 MAINTAINER=	trevor@FreeBSD.org
