@@ -6,7 +6,7 @@ fi
 
 /usr/bin/dialog --title "configuration options" --clear \
 	--checklist "\n\
-Please select desired options:" -1 -1 11 \
+Please select desired options:" -1 -1 12 \
 tuning		"Apache: performance tuning" OFF \
 modssl		"Apache: SSL support" OFF \
 GD		"PHP3:   GD library support" ON \
