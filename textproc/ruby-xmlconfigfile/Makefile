@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xmlconfigfile
-PORTVERSION=	0.8.0
+PORTVERSION=	0.9.0
 CATEGORIES=	textproc devel ruby
 MASTER_SITES=	http://www.maik-schmidt.de/projects/xmlconfigfile/dist/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
