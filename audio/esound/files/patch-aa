@@ -1,14 +1,19 @@
---- audio_oss.c.orig	Sun Jul 19 12:13:08 1998
-+++ audio_oss.c	Sun Jul 19 12:14:39 1998
-@@ -29,9 +29,11 @@
+--- Makefile.in.orig	Tue Dec 15 01:22:45 1998
++++ Makefile.in	Wed Dec 23 04:57:49 1998
+@@ -110,14 +110,14 @@
+ 	esdfile.c	\
+ 	audio.c
  
-     /* TODO: check that this is allowable */
-     /* set for full duplex operation, if recording */
-+    /*
-     if ( (esd_audio_format & ESD_MASK_FUNC) == ESD_RECORD ) {
-         ioctl( afd, SNDCTL_DSP_SETDUPLEX, 0 );
-     }
-+     */
+-libesd_la_LDFLAGS = -version-info @ESD_VERSION_INFO@
++libesd_la_LDFLAGS = -version-info 0:2:0
  
-     /* set the sound driver fragment size and number */
-     /* fragment = max_buffers << 16 + log2(buffer_size), (256 16) */
+ libesd_la_LIBADD = @AUDIOFILE_LIBS@ -lm
+ 
+ EXTRA_LTLIBRARIES = \
+ 	libesddsp.la
+ 
+-libesddsp_la_LDFLAGS = -rpath $(libdir) -version-info @ESD_VERSION_INFO@
++libesddsp_la_LDFLAGS = -rpath $(libdir) -version-info 0:2:0
+ 
+ libesddsp_la_LIBADD = -ldl -lm
+ 
