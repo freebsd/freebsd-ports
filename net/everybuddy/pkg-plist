@@ -4,3 +4,4 @@ bin/update.pl
 bin/contact-update.pl
 share/applnk/Internet/Everybuddy.kdelnk
 share/gnome/apps/Networking/Everybuddy.desktop
+share/pixmaps/ebicon.xpm
