@@ -9,6 +9,7 @@
     SUBDIR += buffy
     SUBDIR += clean-theme-gtk
     SUBDIR += colorstep
+    SUBDIR += easygtk
     SUBDIR += eazel-themes
     SUBDIR += engradient
     SUBDIR += fltk
