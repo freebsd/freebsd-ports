@@ -56,7 +56,7 @@ else
 		SET_LDAP1="ON"
 	fi
 
-	/usr/bin/dialog --title "Additional SASL options" --clear \
+	/usr/bin/dialog --title "Additional Cyrus SASL options" --clear \
 		--checklist "\n\
 Please select desired options:" -1 -1 16 \
 NDBM		"ndbm DB" ${SET_NDBM} \
