@@ -1,5 +1,5 @@
-*** TideContext.cc.orig	Mon Apr 17 16:16:02 2000
---- TideContext.cc	Mon Apr 17 16:17:00 2000
+*** TideContext.cc.orig	Sun Dec  5 15:12:17 1999
+--- TideContext.cc	Mon Jun 19 22:51:03 2000
 ***************
 *** 53,59 ****
       }
@@ -13,7 +13,7 @@
       }
     }
     if (hfile_path.isNull())
-!     hfile_path = "/usr/local/share/xtide/harmonics";
+!     hfile_path = "/usr/X11R6/share/xtide/harmonics";
     harmonicsPath = new HarmonicsPath (hfile_path);
   
     homedir = getenv ("HOME");
