@@ -17,11 +17,18 @@ DIST_SUBDIR=	PECL
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	A PECL extension to retrieve info about files
 
-LIB_DEPENDS=	magic.1:${PORTSDIR}/sysutils/file
-
 USE_PHP=	yes
 USE_PHPEXT=	yes
 
-CONFIGURE_ARGS=	--with-fileinfo=${LOCALBASE}
+.include <bsd.port.pre.mk>
 
-.include <bsd.port.mk>
+.if ${OSVERSION} < 502128
+LIB_DEPENDS=	magic.1:${PORTSDIR}/sysutils/file
+MAGICBASE=	${LOCALBASE}
+.else
+MAGICBASE=	/usr
+.endif
+
+CONFIGURE_ARGS=	--with-fileinfo=${MAGICBASE}
+
+.include <bsd.port.post.mk>
