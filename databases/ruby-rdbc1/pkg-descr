@@ -1,0 +1,8 @@
+RDBC stands for Ruby Database Connectivity.
+
+RDBC provides a unified API to access RDBMS such as PostgreSQL and
+Oracle.  The composition of RDBC is like that of JDBC.  Almost all the
+names of the classes and the methods are mimicked.
+
+Author:	NAKAMURA Akifumi <BXQ04723@nifty.ne.jp>
+WWW:	http://member.nifty.ne.jp/guion/SOFT/RDBC/
