@@ -578,6 +578,7 @@ bkpupsd		ports/sysutils/bkpupsd
 blackbox	ports/x11-wm/blackbox
 blackened	ports/irc/blackened
 blackjack	ports/games/blackjack
+blacs		ports/math/blacs
 bladeenc	ports/audio/bladeenc
 blas		ports/math/blas
 blast		ports/x11/blast
