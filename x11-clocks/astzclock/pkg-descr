@@ -1,0 +1,4 @@
+ASTZClock is currently a fairly minimal hack to the original ASClock to
+allow the specification of a time zone for the clock to use.
+
+WWW: http://www.eyesbeyond.com/freebsddom/astzclock/
