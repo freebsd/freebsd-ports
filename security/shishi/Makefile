@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	shishi
-PORTVERSION=	0.0.20
+PORTVERSION=	0.0.21
 CATEGORIES=	security
 MASTER_SITES=	http://josefsson.org/${PORTNAME}/releases/ \
 		${MASTER_SITE_GNU_ALPHA}
@@ -17,8 +17,6 @@ COMMENT=	A free implementation of the Kerberos 5 network security system
 
 LIB_DEPENDS=	idn.16:${PORTSDIR}/devel/libidn \
 		tasn1.2:${PORTSDIR}/security/libtasn1
-
-PKGMESSAGE=	${WRKDIR}/pkg-message
 
 USE_PERL5_BUILD=	yes
 USE_GNOME=	gnomehack gnometarget pkgconfig
@@ -32,6 +30,8 @@ CONFIGURE_ARGS=	--disable-starttls \
 INSTALLS_SHLIB=	yes
 
 INFO=		shishi
+
+SUB_FILES=	pkg-message
 
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
@@ -49,10 +49,6 @@ PLIST_SUB+=	NLS=""
 
 post-extract:
 	@${RM} -f ${WRKSRC}/doc/shishi.info*
-
-post-patch:
-	@${SED} -e 's,%%PREFIX%%,${PREFIX},g' \
-		${FILESDIR}/pkg-message.in > ${PKGMESSAGE}
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
