@@ -10,17 +10,15 @@ PORTVERSION=	0.59r
 PORTREVISION=	8
 CATEGORIES=	audio ipv6
 MASTER_SITES=	http://www.mpg123.de/mpg123/ \
-		http://www-ti.informatik.uni-tuebingen.de/~hippm/mpg123/ \
-		ftp://ftp.tu-clausthal.de/pub/unix/audio/mpg123/ \
-		http://ftp.tu-clausthal.de/pub/unix/audio/mpg123/
+		http://www-ti.informatik.uni-tuebingen.de/~hippm/mpg123/
 DISTFILES=	mpg123-0.59r-pl1.tar.gz
 
-PATCH_SITES=	ftp://ftp.kame.net/pub/kame/misc/ \
-		http://www.unix-ag.org/Linux-Alpha/Packages/ \
-		${MASTER_SITE_LOCAL:S/%SUBDIR%/sobomax/}
-PATCHFILES=	mpg123-059r-v6-20000713b.diff.gz \
-		mpg123-059r-recode-20010410.diff.gz \
-		l3.diff.gz
+PATCH_SITES=	ftp://ftp.kame.net/pub/kame/misc/:ipv6 \
+		http://www.unix-ag.org/Linux-Alpha/Packages/:l3 \
+		${MASTER_SITE_LOCAL:S/%SUBDIR%/sobomax/}:recode
+PATCHFILES=	mpg123-059r-v6-20000713b.diff.gz:ipv6 \
+		mpg123-059r-recode-20010410.diff.gz:recode \
+		l3.diff.gz:l3
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	des@FreeBSD.org
