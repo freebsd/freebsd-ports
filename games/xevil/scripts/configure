@@ -4,12 +4,7 @@ cd $WRKSRC || exit 1
 
 cat >> Makefile << END
 
-all:
-	@\$(MAKE) CC="g++" CFLAGS="-DUSE_RANDOM -DPROTECTED_IS_PUBLIC" \
-		INCL_DIRS=-I/usr/X11R6/include LIBS_DIRS=-L/usr/X11R6/lib \
-		LIBS="-lX11 -lm" \$(TARGETS)
-
-DEBUG_OPT = -O2
+all: freebsd
 
 install:
 	cp xevil \$(PREFIX)/bin

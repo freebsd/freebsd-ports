@@ -1,19 +1,19 @@
-*** main.C~	Wed Feb  8 21:31:58 1995
---- main.C	Sat May  6 00:16:24 1995
+*** utils.h~	Mon Jul 24 22:22:34 1995
+--- utils.h	Thu Sep 14 04:28:35 1995
 ***************
-*** 49,55 ****
+*** 54,60 ****
   
   
   // Defines
 ! #define MSEC_PER_CLOCK (1.0e3 / CLOCKS_PER_SEC) 
   
-  
-  #ifdef SELECT_NEEDS_PROTOTYPES
---- 49,55 ----
+  #ifndef max
+  #define max(a,b)               (a<b ? b : a)
+--- 54,60 ----
   
   
   // Defines
-! #define MSEC_PER_CLOCK 8 //(1.0e3 / CLOCKS_PER_SEC)
+! #define MSEC_PER_CLOCK 8 // (1.0e3 / CLOCKS_PER_SEC) 
   
-  
-  #ifdef SELECT_NEEDS_PROTOTYPES
+  #ifndef max
+  #define max(a,b)               (a<b ? b : a)
