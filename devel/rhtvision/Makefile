@@ -31,6 +31,12 @@ CFLAGS+=	-I${X11BASE}/include
 .else
 PLIST_SUB+=	X11_ONLY="@comment "
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502126
+BROKEN=		"Does not compile on FreeBSD >= 5.x"
+.endif
+
 pre-configure:
 	${ECHO} "HAVE_X11 => no" > ${WRKSRC}/configure.cache
 .endif
@@ -46,4 +52,4 @@ post-patch:
 		${WRKSRC}/${f}
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -31,6 +31,10 @@ PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 502126
+BROKEN=		"Does not compile on FreeBSD >= 5.x"
+.endif
+
 .if ${OSVERSION} >= 400014
 ENABLE_IPv6=	--enable-ipv6
 .endif
