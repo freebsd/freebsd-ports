@@ -1,23 +1,27 @@
-# New ports collection makefile for:   orbit
+# New ports collection makefile for:   orbit2
 # Date Created:			16 Aug 1998
 # Whom:				Chia-liang Kao <clkao@CirX.ORG>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	ORBit
-PORTVERSION=	0.5.13
-PORTREVISION=	2
+PORTNAME=	ORBit2
+PORTVERSION=	2.3.103
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	stable/sources/ORBit
+MASTER_SITE_SUBDIR=	pre-gnome2/releases/gnome-2.0-desktop-alpha2
+DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 
 BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
-LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext \
+		IDL-2.0:${PORTSDIR}/devel/libIDL \
+		popt.0:${PORTSDIR}/devel/popt \
+		linc.1:${PORTSDIR}/net/linc
 RUN_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 
+USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GLIB=	yes
 INSTALLS_SHLIB=	yes
@@ -25,25 +29,13 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS= --disable-indent
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
-
-post-patch:
-	@${TOUCH} ${WRKSRC}/configure
+CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 post-install:
-	@${ECHO_CMD} "ORBIIOPIPv4=0" > ${PREFIX}/etc/orbitrc.default
-	@${ECHO_CMD} "ORBIIOPIPv6=0" >> ${PREFIX}/etc/orbitrc.default
-	@if [ ! -f ${PREFIX}/etc/orbitrc ]; then \
-		${CP} -p ${PREFIX}/etc/orbitrc.default ${PREFIX}/etc/orbitrc ; \
+	@${ECHO_CMD} "ORBIIOPIPv4=0" > ${PREFIX}/etc/orbit2rc.default
+	@${ECHO_CMD} "ORBIIOPIPv6=0" >> ${PREFIX}/etc/orbit2rc.default
+	@if [ ! -f ${PREFIX}/etc/orbit2rc ]; then \
+		${CP} -p ${PREFIX}/etc/orbitrc.default ${PREFIX}/etc/orbit2rc ; \
 	fi
-.for dir in IIOP ORBitservices ORBitutil orb orbit-idl2.h
-	@if [ -L ${PREFIX}/include/${dir} ]; then \
-		${RM} -f ${PREFIX}/include/${dir}; \
-	fi
-	@${LN} -sf ${PREFIX}/include/orbit-1.0/${dir} ${PREFIX}/include/${dir}
-.endfor
-	@if [ -L ${PREFIX}/include/libIDL ]; then \
-		${RM} -f ${PREFIX}/include/libIDL; \
-	fi
-	@${LN} -sf ${PREFIX}/include/libIDL-1.0/libIDL ${PREFIX}/include/libIDL
 
 .include <bsd.port.mk>
