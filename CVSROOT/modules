@@ -9419,6 +9419,7 @@ py-fpconst	ports/math/py-fpconst
 py-freebsd	ports/devel/py-freebsd
 py-freetype	ports/print/py-freetype
 py-game		ports/devel/py-game
+py-gamin	ports/devel/py-gamin
 py-gato		ports/math/py-gato
 py-gd		ports/graphics/py-gd
 py-gdbm		ports/databases/py-gdbm
