@@ -18,3 +18,5 @@ to move this module in the direction of mapping to/from UTF8.  I will
 probably do so, once the Unicode support in the Perl core settle.
 
 COPYRIGHT   1998-1999 Gisle Aas. All rights reserved.                 
+
+WWW: http://search.cpan.org/dist/Unicode-Map8/
