@@ -1,0 +1,8 @@
+KERMIT file transfer protocol 5A edit 189
+-----------------------------------------
+
+This is a release of C-Kermit 5A edit 189 file transfer protocol utility.
+This version supports transfer of un-escaped control characters for
+very fast file transfers with high reliability.
+
+(binaries)

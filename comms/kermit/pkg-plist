@@ -1,0 +1,3 @@
+@cwd /usr/local
+bin/kermit
+man/man1/kermit.1.gz
