@@ -14,7 +14,7 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	shanee@augusta.de
 
-REQUIRES_MOTIF=	yes
+USE_MOTIF=	yes
 USE_IMAKE=	yes
 WRKSRC=		${WRKDIR}/xmaddressbook
 MAN1=		xmaddressbook.1

@@ -20,11 +20,8 @@ USE_NEWGCC=	yes
 CONFIGURE_ARGS=	--enable-libplotter --enable-libxmi
 MAN1=		ode.1 plot.1 spline.1 tek2plot.1
 
-.ifdef HAVE_MOTIF
+USE_MOTIF=	yes
 CONFIGURE_ARGS+=	--with-motif
 CONFIGURE_ENV=	MOTIFLIB="${MOTIFLIB}"
-# to ensure dependency info is generated properly
-REQUIRES_MOTIF=	yes
-.endif
 
 .include <bsd.port.mk>

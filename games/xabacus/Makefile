@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	applications
 MAINTAINER=	ports@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/xabacus
-REQUIRES_MOTIF=	yes
+USE_MOTIF=	yes
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 

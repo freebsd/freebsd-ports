@@ -19,13 +19,11 @@ MAINTAINER=	obrien@FreeBSD.org
 
 NO_WRKSUBDIR=	yes
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
-.if defined(HAVE_MOTIF) && !defined(PACKAGE_BUILDING)
-MAKEFILE=       Makefile.XMotif
-.elif defined(WITHOUT_X11)
+.if defined(WITHOUT_X11)
 MAKEFILE=	Makefile.NoX
 .else
-USE_XLIB=	yes
-MAKEFILE=	Makefile.SimpleX
+USE_MOTIF=	yes
+MAKEFILE=       Makefile.XMotif
 .endif
 ALL_TARGET=	depend mars
 MAN1=		mars.1

@@ -14,7 +14,7 @@ DISTNAME=       Ngraph-${PORTVERSION}-src
 
 MAINTAINER=     sanpei@FreeBSD.org
 
-REQUIRES_MOTIF=	yes
+USE_MOTIF=	yes
 USE_GMAKE=	yes
 
 .include <bsd.port.mk>

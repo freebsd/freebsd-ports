@@ -14,7 +14,7 @@ MAINTAINER=		albast@xs4all.nl
 
 WRKSRC=			${WRKDIR}/${DISTNAME}/src
 USE_IMAKE=		yes
-REQUIRES_MOTIF=		yes
+USE_MOTIF=		yes
 NO_INSTALL_MANPAGES=	yes
 
 pre-configure:

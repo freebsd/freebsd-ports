@@ -20,7 +20,7 @@ MAINTAINER=	thepish@freebsd.org
 LIB_DEPENDS=    png.4:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
 
-REQUIRES_MOTIF=	yes
+USE_MOTIF=	yes
 USE_IMAKE=	yes
 XMKMF=		PORTOBJFORMAT=${PORTOBJFORMAT} xmkmf -a
 

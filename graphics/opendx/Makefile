@@ -17,7 +17,7 @@ LIB_DEPENDS=	netcdf.1:${PORTSDIR}/math/netcdf
 
 USE_XLIB=	yes
 USE_MESA=	yes
-REQUIRES_MOTIF=	yes
+USE_MOTIF=	yes
 USE_NEWGCC=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -Dfreebsd -I${PREFIX}/include" \

@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	applications
 
 MAINTAINER=	deischen@iworks.InterWorks.org
 
-REQUIRES_MOTIF=	yes
+USE_MOTIF=	yes
 WRKSRC=		${WRKDIR}/plan-1.8.2/src
 ALL_TARGET=	freebsd
 MAN1=		netplan.1 plan.1

@@ -15,13 +15,11 @@ DISTNAME=	${PKGNAME}
 
 MAINTAINER=	phj@cn.FreeBSD.org
 
-REQUIRES_MOTIF=	yes
+USE_MOTIF=	yes
 
 GNU_CONFIGURE=	yes
-USE_GMAKE    =  yes
-USE_XLIB=	yes
-
-PREFIX=		${X11BASE}
+USE_GMAKE=	yes
+USE_X_PREFIX=	yes
 
 port-install:
 	strip	$(PREFIX)/bin/${PORTNAME}

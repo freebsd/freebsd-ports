@@ -17,7 +17,7 @@ MAINTAINER=	dima@FreeBSD.org
 MAN1=	xdir.1
 
 WRKSRC=		${WRKDIR}/llnlxdir2_1_2/sources
-REQUIRES_MOTIF=	yes
+USE_MOTIF=	yes
 USE_IMAKE=	yes
 
 .include <bsd.port.mk>

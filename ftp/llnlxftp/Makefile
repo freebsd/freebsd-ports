@@ -15,7 +15,7 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	dima@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/llnlxftp2.1/sources
-REQUIRES_MOTIF=	yes
+USE_MOTIF=	yes
 USE_IMAKE=	yes
 
 .include <bsd.port.mk>

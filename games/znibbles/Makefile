@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://koala.inria.fr/pub/games/znibbles/
 
 MAINTAINER=	yinjieh@csie.nctu.edu.tw
 
-REQUIRES_MOTIF=	yes
+USE_MOTIF=	yes
 USE_GTK=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-motif \

@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.4:${PORTSDIR}/graphics/png
 
-REQUIRES_MOTIF=	yes
+USE_MOTIF=	yes
 WRKSRC=		${WRKDIR}/Mosaic-src
 ALL_TARGET=	bsdi
 USE_X_PREFIX=	yes

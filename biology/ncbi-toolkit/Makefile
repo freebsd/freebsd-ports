@@ -14,7 +14,7 @@ DIST_SUBDIR=	ncbi
 
 MAINTAINER=	tony.maher@ebioinformatics.com
 
-REQUIRES_MOTIF=	yes
+USE_MOTIF=	yes
 
 #
 # In the files directory we have:

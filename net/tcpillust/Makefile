@@ -18,7 +18,7 @@ LIB_DEPENDS=	tk82.1:${PORTSDIR}/x11-toolkits/tk82 \
 USE_IMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=
-REQUIRES_MOTIF=	yes
+USE_MOTIF=	yes
 
 MAN1=	tcpillust.1
 

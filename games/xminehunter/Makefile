@@ -16,7 +16,7 @@ MAINTAINER=	tg@FreeBSD.org
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 WRKSRC=		${WRKDIR}/xminehunter
-REQUIRES_MOTIF=	yes
+USE_MOTIF=	yes
 ALL_TARGET=	xminehunter
 
 .include <bsd.port.mk>

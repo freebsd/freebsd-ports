@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	applications
 MAINTAINER=	ports@FreeBSD.org
 
 USE_IMAKE=	yes
-REQUIRES_MOTIF=	yes
+USE_MOTIF=	yes
 
 MAN1=		xmmix.1
 

@@ -21,7 +21,7 @@ CONFIGURE_ARGS=	--with-motif-libraries="${LIBXMDIR}" \
 		--with-readline-libraries=/usr/lib
 USE_GMAKE=	yes
 USE_XPM=	yes
-REQUIRES_MOTIF=	yes
+USE_MOTIF=	yes
 
 MAN1=		ddd.1
 

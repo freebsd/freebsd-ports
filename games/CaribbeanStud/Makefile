@@ -15,7 +15,7 @@ DISTNAME=		CS
 MAINTAINER=		ports@FreeBSD.org
 
 MAKEFILE=		Xmakefile
-REQUIRES_MOTIF=		yes
+USE_MOTIF=		yes
 USE_X_PREFIX=		yes
 CFLAGS=			-pedantic
 

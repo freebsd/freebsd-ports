@@ -14,7 +14,7 @@ DISTNAME=	${PORTNAME}
 
 MAINTAINER=	andreas@marvin.robin.de
 
-REQUIRES_MOTIF=	yes
+USE_MOTIF=	yes
 USE_IMAKE=      yes
 MAN1=		mgdiff.1
 

@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	utilities
 
 MAINTAINER=	shanee@augusta.de
 
-REQUIRES_MOTIF=	yes
+USE_MOTIF=	yes
 USE_IMAKE=	yes
 MAN1=		xtar.1
 

@@ -20,9 +20,8 @@ DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 MAINTAINER=	chuckr@FreeBSD.org
 
 THOT_SUBDIR=	Target
-REQUIRES_MOTIF=	yes
+USE_MOTIF=	yes
 WRKSRC=		$(WRKDIR)/Thot/$(THOT_SUBDIR)
-REQUIRES_MOTIF=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-thot --enable-plugin --without-insure --without-amaya --disable-java --disable-intr --disable-jit --disable-math --disable-ilu
 USE_GMAKE=	yes

@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	asami/kp
 
 MAINTAINER=	asami@FreeBSD.org
 
-REQUIRES_MOTIF=	yes
+USE_MOTIF=	yes
 USE_IMAKE=	yes
 MAN1=		kp.1
 

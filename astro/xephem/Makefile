@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/GUI/xephem
 
-REQUIRES_MOTIF=	yes
+USE_MOTIF=	yes
 USE_XPM=	yes
 USE_IMAKE=	yes
 MAN1=		xephem.1
