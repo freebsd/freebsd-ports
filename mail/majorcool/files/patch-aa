@@ -1,0 +1,39 @@
+--- Configure.orig	Wed Aug 13 20:41:47 1997
++++ Configure	Wed Aug 13 20:45:03 1997
+@@ -104,15 +104,15 @@
+ #  be overwritten by any of the parameters saved in $config.
+ #  For yes/no values, 0=no, 1=yes
+ 
+-DOMO_DIR=			# Majordomo home directory
++DOMO_DIR=/usr/local/majordomo	# Majordomo home directory
+ DOMO_CONF=			# Majordomo configuration file
+ DOMO_VERSION=			# Majordomo version number
+-WEB_ROOT=			# Web server root directory
++WEB_ROOT=/usr/local/www		# Web server root directory
+ WEB_CGIDIR=			# Web server CGI directory
+ WEB_CGIURL=			# Web server CGI URL
+ WEB_IMGDIR=			# Web server images directory
+ WEB_IMGURL=			# Web server images URL
+-WEB_DOCROOT=			# Root for served documents
++WEB_DOCROOT=/usr/local/www/data	# Root for served documents
+ WEB_HEADER=			# Header for common site look
+ WEB_FOOTER=			# Footer for common site look
+ COOL_CF="$COOL_CF"		# Config file for this installation
+@@ -561,7 +561,7 @@
+ $fastread ans
+ [ -n "$ans" ] && WEB_FOOTER=$ans
+ 
+-[ "$COOL_HELPFILE" ] || COOL_HELPFILE="/majorcool.htm"
++[ "$COOL_HELPFILE" ] || COOL_HELPFILE="/majorcool.html"
+ cat <<EOM
+ 
+ MajorCool needs to place it's Help file somewhere on the Web server.
+@@ -668,7 +668,7 @@
+ Cache file name for each end-user "personality" you install.
+ EOM
+ 
+-	[ "$COOL_CACHE" ] || COOL_CACHE="$DOMO_DIR/.majordomo_keys"
++	[ "$COOL_CACHE" ] || COOL_CACHE="$DOMO_DIR/tmp/.majordomo_keys"
+ 	while : ; do
+ 		echo " "
+ 		echo "Where do you want to keep the Key Cache file?"
