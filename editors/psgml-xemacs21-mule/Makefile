@@ -7,7 +7,6 @@
 #
 
 MAINTAINER=	kuriyama@FreeBSD.org
-BROKEN=		editors/xemacs-mule is removed.
 
 # This is a slave port.
 PORTCLASS=	slave
@@ -16,7 +15,8 @@ MASTERDIR=	${.CURDIR}/../psgml-emacs
 
 # emacs port setup
 EMACS_NAME=	xemacs
-EMACS_PORT=	xemacs-mule
+EMACS_PORT=	xemacs21-mule
+EMACS_CMD=	${PREFIX}/bin/${EMACS_PORT}
 EMACS_VER=	21.1.8
 EMACS_LIBDIR=	lib/xemacs
 
