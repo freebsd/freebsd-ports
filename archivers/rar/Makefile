@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	rar
-PORTVERSION=	2.02
+PORTVERSION=    3.0b3
 CATEGORIES=	archivers
-MASTER_SITES=	ftp://rarsoft.ti.sk/pub/rar/ \
-		ftp://ftp.cdrom.com/pub/sac/pack/
-DISTNAME=	rarbsd
-EXTRACT_SUFX=	.sfx
+MASTER_SITES=   http://209.235.4.116/rar/ \
+		ftp://pubftp.slovenska.sk/pub/rarsoft/rar/
+DISTNAME=       rarbsd-3.0.b3
 
 MAINTAINER=	ache@FreeBSD.org
 
@@ -20,10 +19,7 @@ CAT1=		rar.1
 ONLY_FOR_ARCHS=	i386
 NO_PACKAGE=	Only unmodified original package can be distributed
 NO_BUILD=	yes
-NO_WRKSUBDIR=	yes
-EXTRACT_CMD=		# empty
-EXTRACT_BEFORE_ARGS=	# empty
-EXTRACT_AFTER_ARGS=	# empty
+WRKSRC=         ${WRKDIR}/rar
 
 .include <bsd.port.pre.mk>
 
@@ -31,22 +27,20 @@ EXTRACT_AFTER_ARGS=	# empty
 STRIP=
 .endif
 
-post-fetch:
-	@${CHMOD} a+x ${DISTDIR}/${DISTFILES}
-
 do-install:
-	${MKDIR} ${PREFIX}/share/doc/rar ${PREFIX}/share/rar
+	${MKDIR} ${PREFIX}/share/doc/rar
 	${INSTALL_PROGRAM} ${WRKSRC}/rar ${PREFIX}/bin/rar
+	${INSTALL_PROGRAM} ${WRKSRC}/rar ${PREFIX}/bin/unrar
 	cd ${WRKSRC} && \
-		${INSTALL_MAN} Rar.Txt ${PREFIX}/man/cat1/rar.1 && \
-		${INSTALL_DATA} Rar_FAQ.txt TechNote.Txt License.Txt \
-			       Internet.Txt \
+		${INSTALL_MAN} rar.txt ${PREFIX}/man/cat1/rar.1 && \
+		${INSTALL_DATA} rar_faq.txt technote.txt license.txt \
+				rar_site.txt register.txt order.txt \
+				readme.txt rereg.txt whatsnew.txt \
+				file_id.diz \
 			${PREFIX}/share/doc/rar && \
-		${INSTALL_DATA} RarFiles.Lst \
-			${PREFIX}/share/rar/rarfiles.lst && \
+		${INSTALL_DATA} rarfiles.lst \
+			${PREFIX}/etc && \
 		${INSTALL_DATA} default.sfx \
-			${PREFIX}/share/rar && \
-		${INSTALL_DATA} Dos.SFX \
-			${PREFIX}/share/rar/dos.sfx
+			${PREFIX}/lib
 
 .include <bsd.port.post.mk>

@@ -1,10 +1,15 @@
 bin/rar
-share/rar/dos.sfx
-share/rar/default.sfx
-share/rar/rarfiles.lst
-share/doc/rar/TechNote.Txt
-share/doc/rar/Rar_FAQ.txt
-share/doc/rar/License.Txt
-share/doc/rar/Internet.Txt
+bin/unrar
+lib/default.sfx
+etc/rarfiles.lst
+share/doc/rar/technote.txt
+share/doc/rar/rar_faq.txt
+share/doc/rar/rar_site.txt
+share/doc/rar/license.txt
+share/doc/rar/whatsnew.txt
+share/doc/rar/rereg.txt
+share/doc/rar/register.txt
+share/doc/rar/order.txt
+share/doc/rar/readme.txt
+share/doc/rar/file_id.diz
 @dirrm share/doc/rar
-@dirrm share/rar
