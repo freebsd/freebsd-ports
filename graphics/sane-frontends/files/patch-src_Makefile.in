@@ -1,14 +1,5 @@
---- src/Makefile.in.orig	Fri Dec  1 03:58:38 2000
-+++ src/Makefile.in	Wed Mar 21 17:52:10 2001
-@@ -39,7 +39,7 @@
- GTK_CFLAGS  = @GTK_CFLAGS@
- GIMP_LIBS   = @GIMP_LIBS@
- 
--BINPROGS = @BINPROGS@
-+BINPROGS = @GUIPROGS@
- 
- COMPILE = $(CC) -c $(DEFS) $(INCLUDES) $(CPPFLAGS) $(CFLAGS) $(GTK_CFLAGS)
- LINK = $(CC) $(LDFLAGS) -o $@
+--- src/Makefile.in.orig	Fri Dec  1 04:58:38 2000
++++ src/Makefile.in	Wed Feb  7 00:14:03 2001
 @@ -59,12 +59,12 @@
  all: $(PROGRAMS)
  
