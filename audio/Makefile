@@ -313,6 +313,7 @@
     SUBDIR += tracker
     SUBDIR += trm
     SUBDIR += trommler
+    SUBDIR += ufmcontrol-i18n
     SUBDIR += umix
     SUBDIR += vorbis-tools
     SUBDIR += vorbisgain
