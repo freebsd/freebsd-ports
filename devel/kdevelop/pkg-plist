@@ -590,6 +590,8 @@ share/mimelnk/application/x-kdevelop-project.kdelnk
 @dirrm share/doc/HTML/en/kdevelop
 @dirrm share/doc/HTML/de/kdevelop/welcome
 @dirrm share/doc/HTML/de/kdevelop/tutorial
+@dirrm share/doc/HTML/de/kdevelop/reference/C
+@dirrm share/doc/HTML/de/kdevelop/reference
 @dirrm share/doc/HTML/de/kdevelop/kde_libref
 @dirrm share/doc/HTML/de/kdevelop
 @dirrm share/apps/kdevelop/tools
