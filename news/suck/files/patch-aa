@@ -1,5 +1,14 @@
 --- Makefile.in.orig	Fri Aug  1 20:59:01 1997
-+++ Makefile.in	Mon Aug  4 19:04:25 1997
++++ Makefile.in	Sat Sep 13 10:17:11 1997
+@@ -7,7 +7,7 @@
+ 
+ # Step1: Define the location of the History file(s)
+ #HISTORYF=/var/news/etc/history
+-HISTORYF=/usr/lib/news/history
++HISTORYF=/usr/local/news/history
+ 
+ # Step 2: Define ONE of the CHKHISTORY 
+ CHKHISTORY=chkhistory.o	# use flat file history routine
 @@ -128,7 +128,7 @@
  
  install_bin: suck rpost testhost lmove
