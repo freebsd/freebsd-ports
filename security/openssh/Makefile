@@ -20,6 +20,8 @@ USE_OPENSSL=	YES
 
 .include <bsd.port.pre.mk>
 
+FORBIDDEN=	"Remote vulnerabilities"
+
 CRYPTOLIBS=	-L${OPENSSLLIB} -lcrypto
 # Here, MANDIR is concetenated to DESTDIR which all forms the man install dir...
 MAKE_ENV+=	DESTDIR=${PREFIX} MANDIR=/man/man CRYPTOLIBS="${CRYPTOLIBS}"
