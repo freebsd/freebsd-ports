@@ -361,3 +361,4 @@ bin/epydocgui
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/api/public
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/api/private
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/api
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
