@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.204 1999/05/03 04:31:55 steve Exp $
+# $Id: Makefile,v 1.205 1999/05/04 16:28:29 flathill Exp $
 #
 
     SUBDIR += 3dc
@@ -84,6 +84,7 @@
     SUBDIR += qcc
     SUBDIR += qstat
     SUBDIR += quakeserver
+    SUBDIR += rocksndiamonds
     SUBDIR += seabattle
     SUBDIR += seahaven
     SUBDIR += sokoban
