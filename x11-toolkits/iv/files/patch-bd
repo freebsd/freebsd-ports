@@ -6,10 +6,19 @@
  #include <ctype.h>
 -#ifndef __DECCXX
 +/*#ifndef __DECCXX*/
-+#if !defined(__DECCXX) || (__FreeBSD_cc_version < 400002)
++#if !defined(__DECCXX) && (__FreeBSD_cc_version < 400002)
  #include <osfcn.h>
  #endif
  #include <stdio.h>
+@@ -66,7 +67,7 @@
+ #include <string.h>
+ #include <stream.h>
+ #include <strstream.h>
+-#ifdef SYSV
++#if defined(SYSV) || (__FreeBSD_cc_version >= 400002)
+ #include <unistd.h>
+ #endif
+ #include <sys/file.h>
 @@ -1504,7 +1505,8 @@
              in >> graylevel;
  
