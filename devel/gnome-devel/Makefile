@@ -16,8 +16,9 @@ MAINTAINER=	gnome@FreeBSD.org
 
 RUN_DEPENDS=	intltool-merge:${PORTSDIR}/textproc/intltool
 LIB_DEPENDS=	gal:${PORTSDIR}/x11-toolkits/gal \
-		panelmm.1:${PORTSDIR}/x11-toolkits/panel--
+		gnomemm.9:${PORTSDIR}/x11-toolkits/gnome--
 
+BROKEN=	"Needs more work on the dependency chain"
 NO_BUILD=	yes
 
 USE_GNOMELIBS=	yes
