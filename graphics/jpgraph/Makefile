@@ -19,6 +19,9 @@ USE_PHP=	gd
 
 NO_CDROM=	"The free version cannot be used in a commercial context"
 
+post-extract:
+	${RM} -rf ${WRKSRC}/src/Examples/CVS
+
 do-install:
 	@${MKDIR} ${DATADIR}
 	${CP} ${WRKSRC}/src/*.php ${DATADIR}
@@ -28,7 +31,7 @@ do-install:
 	@${MKDIR} ${DOCSDIR}
 	${CP} -R ${WRKSRC}/docs/ ${DOCSDIR}
 	@${MKDIR} ${EXAMPLESDIR}
-	-${CP} ${WRKSRC}/src/Examples/* ${EXAMPLESDIR}
+	${CP} ${WRKSRC}/src/Examples/* ${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>
