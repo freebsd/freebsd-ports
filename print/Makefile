@@ -86,6 +86,7 @@
     SUBDIR += py-reportlab
     SUBDIR += rlpr
     SUBDIR += rtf2latex
+    SUBDIR += ruby-clibpdf
     SUBDIR += t1utils
     SUBDIR += teTeX
     SUBDIR += tex
