@@ -1,0 +1,10 @@
+lib/perl5/site_perl/%%PERL_VER%%/POE/Component/IRC.pm
+lib/perl5/site_perl/%%PERL_VER%%/POE/Filter/CTCP.pm
+lib/perl5/site_perl/%%PERL_VER%%/POE/Filter/IRC.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/POE/Component/IRC/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/POE/Component/IRC
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/POE/Component
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/POE/Component 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/POE/Filter 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/POE 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/POE 2>/dev/null || true

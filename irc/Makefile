@@ -26,6 +26,7 @@
     SUBDIR += ninja
     SUBDIR += olirc
     SUBDIR += p5-IRC
+    SUBDIR += p5-POE-Component-IRC
     SUBDIR += party
     SUBDIR += pure-emacs20
     SUBDIR += pure-xemacs21-mule
