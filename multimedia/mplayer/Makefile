@@ -165,6 +165,7 @@
 # default: autodetect
 # By setting this option mplayer will use libtremor (integer only vorbis 
 # decoding lib) instead of libvorbis even if libvorbis is installed.
+# Note: This is disabled at the moment due to unresolved build problems
 #
 # WITH_SDL
 # default: autodetect
@@ -244,7 +245,8 @@ DISTNAME=	MPlayer-1.0pre5
 MAINTAINER=	riggs@rrr.de
 COMMENT=	High performance media player/encoder supporting many formats
 
-PATCH_SITES=	http://homepages.ius.edu/CJEZELL/patches/
+PATCH_SITES=	http://www.win.net/~ardneh/patches/ \
+		http://www.rrr.de/~riggs/mplayer/
 PATCH_DIST_STRIP=	-p1
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
@@ -266,7 +268,8 @@ CONFIGURE_ARGS=	--with-extralibdir=${LOCALBASE}/lib \
 		--disable-libfame \
 		--disable-external-faad \
 		--disable-tv-v4l \
-		--disable-caca
+		--disable-caca \
+		--disable-tremor
 
 .if defined(WITH_LANG)
 CONFIGURE_ARGS+=--language=${WITH_LANG}
@@ -519,12 +522,12 @@ LIB_DEPENDS+=	aa.1:${PORTSDIR}/graphics/aalib
 LIB_DEPENDS+=	theora.0:${PORTSDIR}/graphics/libtheora
 .endif
 
-.if defined(WITH_TREMOR)
-LIB_DEPENDS+=	vorbisidec.1:${PORTSDIR}/audio/libtremor
-CONFIGURE_ARGS+=	--enable-tremor
-.else
-CONFIGURE_ARGS+=	--disable-tremor
-.endif
+#.if defined(WITH_TREMOR)
+#LIB_DEPENDS+=	vorbisidec.1:${PORTSDIR}/audio/libtremor
+#CONFIGURE_ARGS+=	--enable-tremor
+#.else
+#CONFIGURE_ARGS+=	--disable-tremor
+#.endif
 
 .if defined(WITH_SDL)
 USE_SDL=	sdl
@@ -695,6 +698,9 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/dev/dvd|${DEFAULT_DVD_DEVICE}|; \
 		s|/dev/cdrom|${DEFAULT_CDROM_DEVICE}|' \
 		${WRKSRC}/${CONFIGURE_SCRIPT}
+	@${FIND} ${WRKSRC}/DOCS/man -name "mplayer.1" | ${XARGS} ${REINPLACE_CMD} -E -e \
+		's|/dev/\\:(dvd[[:alnum:]]*[[:>:]])|${DEFAULT_DVD_DEVICE:S/dev\//dev\/\\\:/}|g ; \
+		 s|/dev/\\:(cdrom[[:alnum:]]*[[:>:]])|${DEFAULT_CDROM_DEVICE:S/dev\//dev\/\\\:/}|g'
 .if defined(WITH_RTC)
 	@${REINPLACE_CMD} -e \
 		's|<linux/rtc.h>|<rtc.h>|' \
