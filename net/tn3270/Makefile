@@ -22,6 +22,12 @@ MANCOMPRESSED=	maybe
 
 LIBTELNETDIR?=	/usr/src/lib/libtelnet
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=		"Does not compile on FreeBSD ${OSVERSION}"
+.endif
+
 post-extract:
 	@if [ ! -d ${LIBTELNETDIR} ]; then \
 		${ECHO} "You need libtelnet sources in"; \
@@ -39,4 +45,4 @@ do-build:
 	${MAKE} depend; \
 	${MAKE} all
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
