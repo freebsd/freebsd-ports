@@ -1,5 +1,5 @@
---- Makefile.orig	Tue Jul  9 21:26:41 2002
-+++ Makefile	Tue Aug 20 02:33:18 2002
+--- Makefile.orig	Tue Jul  9 12:26:41 2002
++++ Makefile	Sat Sep 28 22:19:21 2002
 @@ -16,23 +16,23 @@
  #CC = gcc
  
@@ -31,6 +31,15 @@
  
  # Alternatively, you can build a version of driftnet which can only be used
  # in `adjunct' mode as the back end for some other image-processing program. To
+@@ -43,7 +43,7 @@
+ # On systems with a C99 compiler, driftnet will use <stdint.h> for the
+ # definitions of types such as uint8_t. On other systems like Solaris, these
+ # are in <sys/types.h>, and you should uncomment this line.
+-#CFLAGS += -DUSE_SYS_TYPES_H
++CFLAGS += -DUSE_SYS_TYPES_H
+ 
+ # On Solaris, it is necessary to link against -lposix4 for the definition of
+ # nanosleep; uncomment the below.
 @@ -51,7 +51,7 @@
  
  # added 20020604 edobbs
