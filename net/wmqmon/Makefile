@@ -11,7 +11,7 @@ CATEGORIES=	net windowmaker games
 MASTER_SITES=	http://www.gibfest.org/~w1nter/
 DISTNAME=	${PORTNAME}.${PORTVERSION}
 
-MAINTAINER=	pat@databits.net
+MAINTAINER=	pat@FreeBSD.org
 
 ONLY_FOR_ARCHS=	i386
 WRKSRC=		${WRKDIR}/${PORTNAME}/${PORTNAME}

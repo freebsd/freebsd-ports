@@ -14,7 +14,7 @@ MASTER_SITES=	http://fileplanet.games-world.net/dl/ftp1.gamespy.com/fpnew/action
 DISTNAME=	linuxq3apoint-${PORTVERSION}.x86
 EXTRACT_SUFX=	.run
 
-MAINTAINER=	pat@databits.net
+MAINTAINER=	pat@FreeBSD.org
 
 ONLY_FOR_ARCHS=	i386
 USE_LINUX_PREFIX=	yes

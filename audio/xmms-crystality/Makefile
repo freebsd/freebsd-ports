@@ -12,7 +12,7 @@ MASTER_SITES=	http://fanthom.math.put.poznan.pl/~gyver/crystality/
 PKGNAMEPREFIX=	xmms-
 DISTNAME=	${PORTNAME}-plugin-${PORTVERSION}
 
-MAINTAINER=	pat@databits.net
+MAINTAINER=	pat@FreeBSD.org
 
 LIB_DEPENDS=	xmms.2:${PORTSDIR}/audio/xmms
 

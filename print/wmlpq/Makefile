@@ -11,7 +11,7 @@ CATEGORIES=	print windowmaker
 MASTER_SITES=	http://www.ur.uklinux.net/wmlpq/dl/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	pat@databits.net
+MAINTAINER=	pat@FreeBSD.org
 
 LIB_DEPENDS=	dockapp.1:${PORTSDIR}/x11-wm/libdockapp
 

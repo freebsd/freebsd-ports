@@ -10,7 +10,7 @@ PORTVERSION=	1.2.8r2
 CATEGORIES=	security net
 MASTER_SITES=	http://www.tenebrous.com/rain/files/
 
-MAINTAINER=	pat@databits.net
+MAINTAINER=	pat@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 

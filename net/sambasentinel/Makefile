@@ -11,7 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://boombox.campus.luth.se/files/
 DISTNAME=	SambaSentinel-${PORTVERSION}
 
-MAINTAINER=	pat@databits.net
+MAINTAINER=	pat@FreeBSD.org
 
 RUN_DEPENDS=	jags:${PORTSDIR}/net/jags
 

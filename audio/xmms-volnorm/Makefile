@@ -13,7 +13,7 @@ MASTER_SITES=	http://volnorm.sourceforge.net/ \
 MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMEPREFIX=	xmms-
 
-MAINTAINER=	pat@databits.net
+MAINTAINER=	pat@FreeBSD.org
 
 LIB_DEPENDS=	xmms.2:${PORTSDIR}/audio/xmms
 

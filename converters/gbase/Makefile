@@ -10,7 +10,7 @@ PORTVERSION=	0.5
 CATEGORIES=	converters
 MASTER_SITES=	http://www.hibernaculum.net/download/
 
-MAINTAINER=	pat@databits.net
+MAINTAINER=	pat@FreeBSD.org
 
 USE_X_PREFIX=	yes
 USE_GTK=	yes

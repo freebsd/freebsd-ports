@@ -12,7 +12,7 @@ CATEGORIES=	net games
 MASTER_SITES=	http://tadpol.org/unxware/
 DISTNAME=	gkrellm_qst-${PORTVERSION:S/.p/pre_/}
 
-MAINTAINER=	pat@databits.net
+MAINTAINER=	pat@FreeBSD.org
 
 BUILD_DEPENDS=	${X11BASE}/include/gkrellm/gkrellm.h:${PORTSDIR}/sysutils/gkrellm
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm \
