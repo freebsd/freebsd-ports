@@ -18,6 +18,7 @@ WRKSRC=		${WRKDIR}/NewsCache
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_GCC=	2.95
 
 MAN5=	newscache.conf.5
 MAN8=	NewsCache.8 NewsCacheClean.8 updatenews.8
