@@ -6,6 +6,10 @@ does lack features. When it is completed, it will be a GNUSTEP compliant
 Windowmanager that requires no editing of messy configuration files.
 
 This port based on x11-wm/windowmaker ports skelton, enhanced i18n. 
-If use first, execute "wmaker.inst" and "setlinguas you_choosed_language".
+If use first, execute "wmaker.inst" and "wsetfont you_choosed_language".
 you_choosed_language is example "japanese", "korean", etc. More info about 
-setlinguas, see help of setlinguas.
+wsetfont, see help of wsetfont.
+
+If you use with xdm, set your LANG enviroment variable in your .xsession. 
+
+Japanese notation: <URL:http://www.st.rim.or.jp/~mac/FreeBSD/wmaker/>.

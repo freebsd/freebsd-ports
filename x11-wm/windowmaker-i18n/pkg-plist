@@ -117,7 +117,6 @@ GNUstep/Apps/WPrefs.app/xpm/workspace.xpm
 GNUstep/Apps/WPrefs.app/xpm/xis.xpm
 bin/geticonset
 bin/getstyle
-bin/setlinguas
 bin/seticons
 bin/setstyle
 bin/wdwrite
@@ -125,6 +124,7 @@ bin/wm-oldmenu2new
 bin/wmaker
 bin/wmaker.inst
 bin/wmsetbg
+bin/wsetfont
 bin/wxcopy
 bin/wxpaste
 include/WINGs.h
@@ -286,22 +286,22 @@ share/WindowMaker/wmmacros
 share/locale/de/LC_MESSAGES/WindowMaker.mo
 share/locale/es/LC_MESSAGES/WindowMaker.mo
 share/locale/fi/LC_MESSAGES/WindowMaker.mo
-share/locale/fr/LC_MESSAGES/WindowMaker.mo
 share/locale/fr/LC_MESSAGES/WPrefs.mo
-share/locale/hr/LC_MESSAGES/WindowMaker.mo
+share/locale/fr/LC_MESSAGES/WindowMaker.mo
 share/locale/hr/LC_MESSAGES/WPrefs.mo
+share/locale/hr/LC_MESSAGES/WindowMaker.mo
 share/locale/it/LC_MESSAGES/WindowMaker.mo
-share/locale/ja_JP.EUC/LC_MESSAGES/WindowMaker.mo
 share/locale/ja_JP.EUC/LC_MESSAGES/WPrefs.mo
-share/locale/ja_JP.SJIS/LC_MESSAGES/WindowMaker.mo
+share/locale/ja_JP.EUC/LC_MESSAGES/WindowMaker.mo
 share/locale/ja_JP.SJIS/LC_MESSAGES/WPrefs.mo
-share/locale/ko/LC_MESSAGES/WindowMaker.mo
+share/locale/ja_JP.SJIS/LC_MESSAGES/WindowMaker.mo
 share/locale/ko/LC_MESSAGES/WPrefs.mo
+share/locale/ko/LC_MESSAGES/WindowMaker.mo
 share/locale/nl/LC_MESSAGES/WindowMaker.mo
 share/locale/no/LC_MESSAGES/WindowMaker.mo
 share/locale/pl/LC_MESSAGES/WindowMaker.mo
-share/locale/pt/LC_MESSAGES/WindowMaker.mo
 share/locale/pt/LC_MESSAGES/WPrefs.mo
+share/locale/pt/LC_MESSAGES/WindowMaker.mo
 share/locale/ru/LC_MESSAGES/WindowMaker.mo
 @dirrm share/WindowMaker/Themes
 @dirrm share/WindowMaker/Styles
