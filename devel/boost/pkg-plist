@@ -122,7 +122,9 @@ include/boost/date_time/gregorian_calendar.ipp
 include/boost/date_time/int_adapter.hpp
 include/boost/date_time/iso_format.hpp
 include/boost/date_time/local_time_adjustor.hpp
+include/boost/date_time/local_timezone_defs.hpp
 include/boost/date_time/locale_config.hpp
+include/boost/date_time/microsec_time_clock.hpp
 include/boost/date_time/parse_format_base.hpp
 include/boost/date_time/period.hpp
 include/boost/date_time/posix_time/posix_time.hpp
@@ -140,6 +142,7 @@ include/boost/date_time/time.hpp
 include/boost/date_time/time_clock.hpp
 include/boost/date_time/time_defs.hpp
 include/boost/date_time/time_duration.hpp
+include/boost/date_time/time_formatting_streams.hpp
 include/boost/date_time/time_iterator.hpp
 include/boost/date_time/time_parsing.hpp
 include/boost/date_time/time_resolution_traits.hpp
@@ -174,27 +177,39 @@ include/boost/detail/named_template_params.hpp
 include/boost/detail/numeric_traits.hpp
 include/boost/detail/ob_call_traits.hpp
 include/boost/detail/ob_compressed_pair.hpp
+include/boost/detail/quick_allocator.hpp
 include/boost/detail/select_type.hpp
 include/boost/detail/shared_array_nmt.hpp
 include/boost/detail/shared_count.hpp
 include/boost/detail/shared_ptr_nmt.hpp
-include/boost/detail/winapi.hpp
+include/boost/detail/workaround.hpp
 include/boost/dynamic_bitset.hpp
 include/boost/dynamic_bitset_fwd.hpp
+include/boost/enable_shared_from_this.hpp
+include/boost/filesystem/convenience.hpp
+include/boost/filesystem/exception.hpp
+include/boost/filesystem/fstream.hpp
+include/boost/filesystem/operations.hpp
+include/boost/filesystem/path.hpp
 include/boost/format.hpp
 include/boost/format/exceptions.hpp
 include/boost/format/feed_args.hpp
 include/boost/format/format_class.hpp
-include/boost/format/format_config.hpp
 include/boost/format/format_fwd.hpp
 include/boost/format/format_implementation.hpp
 include/boost/format/free_funcs.hpp
 include/boost/format/group.hpp
 include/boost/format/internals.hpp
 include/boost/format/internals_fwd.hpp
+include/boost/format/macros_default.hpp
+include/boost/format/macros_stlport.hpp
 include/boost/format/msvc_disambiguater.hpp
 include/boost/format/parsing.hpp
 include/boost/function.hpp
+include/boost/function/detail/function_iterate.hpp
+include/boost/function/detail/gen_maybe_include.pl
+include/boost/function/detail/maybe_include.hpp
+include/boost/function/detail/prologue.hpp
 include/boost/function/function0.hpp
 include/boost/function/function1.hpp
 include/boost/function/function10.hpp
@@ -212,6 +227,7 @@ include/boost/function/gen_function_N.pl
 include/boost/function_output_iterator.hpp
 include/boost/functional.hpp
 include/boost/generator_iterator.hpp
+include/boost/get_pointer.hpp
 include/boost/graph/adjacency_iterator.hpp
 include/boost/graph/adjacency_list.hpp
 include/boost/graph/adjacency_list_io.hpp
@@ -268,13 +284,16 @@ include/boost/graph/minimum_degree_ordering.hpp
 include/boost/graph/named_function_params.hpp
 include/boost/graph/neighbor_bfs.hpp
 include/boost/graph/prim_minimum_spanning_tree.hpp
+include/boost/graph/profile.hpp
 include/boost/graph/properties.hpp
 include/boost/graph/property_iter_range.hpp
 include/boost/graph/push_relabel_max_flow.hpp
+include/boost/graph/random.hpp
 include/boost/graph/read_dimacs.hpp
 include/boost/graph/relax.hpp
 include/boost/graph/reverse_graph.hpp
 include/boost/graph/sequential_vertex_coloring.hpp
+include/boost/graph/sloan_ordering.hpp
 include/boost/graph/smallest_last_ordering.hpp
 include/boost/graph/stanford_graph.hpp
 include/boost/graph/strong_components.hpp
@@ -286,6 +305,7 @@ include/boost/graph/tree_traits.hpp
 include/boost/graph/undirected_dfs.hpp
 include/boost/graph/vector_as_graph.hpp
 include/boost/graph/visitors.hpp
+include/boost/graph/wavefront.hpp
 include/boost/half_open_range.hpp
 include/boost/integer.hpp
 include/boost/integer/integer_mask.hpp
@@ -352,23 +372,20 @@ include/boost/mpl/O1_size_fwd.hpp
 include/boost/mpl/advance.hpp
 include/boost/mpl/alias.hpp
 include/boost/mpl/always.hpp
+include/boost/mpl/and.hpp
 include/boost/mpl/apply.hpp
 include/boost/mpl/apply_if.hpp
 include/boost/mpl/arg.hpp
 include/boost/mpl/arg_fwd.hpp
 include/boost/mpl/arithmetic.hpp
-include/boost/mpl/arithmetic/divides.hpp
-include/boost/mpl/arithmetic/minus.hpp
-include/boost/mpl/arithmetic/modulus.hpp
-include/boost/mpl/arithmetic/multiplies.hpp
-include/boost/mpl/arithmetic/negate.hpp
-include/boost/mpl/arithmetic/plus.hpp
+include/boost/mpl/as_sequence.hpp
 include/boost/mpl/assert_is_same.hpp
 include/boost/mpl/at.hpp
 include/boost/mpl/at_fwd.hpp
 include/boost/mpl/aux_/O1_size_impl.hpp
 include/boost/mpl/aux_/advance_backward.hpp
 include/boost/mpl/aux_/advance_forward.hpp
+include/boost/mpl/aux_/algorithm_namespace.hpp
 include/boost/mpl/aux_/apply.hpp
 include/boost/mpl/aux_/apply_1st.hpp
 include/boost/mpl/aux_/arg_typedef.hpp
@@ -379,6 +396,7 @@ include/boost/mpl/aux_/back_impl.hpp
 include/boost/mpl/aux_/begin_end_impl.hpp
 include/boost/mpl/aux_/bool_value_wknd.hpp
 include/boost/mpl/aux_/clear_impl.hpp
+include/boost/mpl/aux_/common_name_wknd.hpp
 include/boost/mpl/aux_/config/bind.hpp
 include/boost/mpl/aux_/config/compiler.hpp
 include/boost/mpl/aux_/config/ctps.hpp
@@ -387,12 +405,16 @@ include/boost/mpl/aux_/config/dtp.hpp
 include/boost/mpl/aux_/config/eti.hpp
 include/boost/mpl/aux_/config/internals.hpp
 include/boost/mpl/aux_/config/lambda.hpp
+include/boost/mpl/aux_/config/msvc.hpp
 include/boost/mpl/aux_/config/msvc_typename.hpp
+include/boost/mpl/aux_/config/nttp.hpp
 include/boost/mpl/aux_/config/overload_resolution.hpp
 include/boost/mpl/aux_/config/preprocessor.hpp
+include/boost/mpl/aux_/config/static_constant.hpp
 include/boost/mpl/aux_/config/ttp.hpp
 include/boost/mpl/aux_/config/use_preprocessed.hpp
 include/boost/mpl/aux_/config/vector.hpp
+include/boost/mpl/aux_/config/workaround.hpp
 include/boost/mpl/aux_/copy_if_op.hpp
 include/boost/mpl/aux_/copy_op.hpp
 include/boost/mpl/aux_/count_args.hpp
@@ -400,6 +422,7 @@ include/boost/mpl/aux_/debug_print.hpp
 include/boost/mpl/aux_/deref_wknd.hpp
 include/boost/mpl/aux_/empty_impl.hpp
 include/boost/mpl/aux_/erase_impl.hpp
+include/boost/mpl/aux_/filter_iter.hpp
 include/boost/mpl/aux_/fold_backward_impl.hpp
 include/boost/mpl/aux_/fold_backward_impl_body.hpp
 include/boost/mpl/aux_/fold_impl.hpp
@@ -408,11 +431,18 @@ include/boost/mpl/aux_/fold_op.hpp
 include/boost/mpl/aux_/fold_pred.hpp
 include/boost/mpl/aux_/front_impl.hpp
 include/boost/mpl/aux_/full_lambda.hpp
+include/boost/mpl/aux_/has_begin.hpp
 include/boost/mpl/aux_/has_rebind.hpp
 include/boost/mpl/aux_/has_size.hpp
+include/boost/mpl/aux_/has_tag.hpp
+include/boost/mpl/aux_/has_type.hpp
+include/boost/mpl/aux_/has_xxx.hpp
+include/boost/mpl/aux_/ice_cast.hpp
 include/boost/mpl/aux_/include_preprocessed.hpp
 include/boost/mpl/aux_/insert_impl.hpp
 include/boost/mpl/aux_/insert_range_impl.hpp
+include/boost/mpl/aux_/integral_wrapper.hpp
+include/boost/mpl/aux_/is_msvc_eti_arg.hpp
 include/boost/mpl/aux_/iter_apply.hpp
 include/boost/mpl/aux_/iter_distance.hpp
 include/boost/mpl/aux_/iter_fold_backward_impl.hpp
@@ -421,13 +451,16 @@ include/boost/mpl/aux_/iter_fold_impl.hpp
 include/boost/mpl/aux_/iter_push_front.hpp
 include/boost/mpl/aux_/iterator_category.hpp
 include/boost/mpl/aux_/iterator_names.hpp
+include/boost/mpl/aux_/joint_iter.hpp
 include/boost/mpl/aux_/lambda_arity_param.hpp
 include/boost/mpl/aux_/lambda_expr.hpp
 include/boost/mpl/aux_/lambda_no_ctps.hpp
 include/boost/mpl/aux_/lambda_spec.hpp
 include/boost/mpl/aux_/lambda_support.hpp
+include/boost/mpl/aux_/logical_op.hpp
 include/boost/mpl/aux_/metafunction.hpp
 include/boost/mpl/aux_/msvc_dtw.hpp
+include/boost/mpl/aux_/msvc_eti_base.hpp
 include/boost/mpl/aux_/msvc_never_true.hpp
 include/boost/mpl/aux_/nested_type_wknd.hpp
 include/boost/mpl/aux_/next.hpp
@@ -436,6 +469,7 @@ include/boost/mpl/aux_/pop_front_impl.hpp
 include/boost/mpl/aux_/pred.hpp
 include/boost/mpl/aux_/preprocessed/bcc/advance_backward.hpp
 include/boost/mpl/aux_/preprocessed/bcc/advance_forward.hpp
+include/boost/mpl/aux_/preprocessed/bcc/and.hpp
 include/boost/mpl/aux_/preprocessed/bcc/apply.hpp
 include/boost/mpl/aux_/preprocessed/bcc/arg.hpp
 include/boost/mpl/aux_/preprocessed/bcc/basic_bind.hpp
@@ -450,12 +484,15 @@ include/boost/mpl/aux_/preprocessed/bcc/lambda_helper.hpp
 include/boost/mpl/aux_/preprocessed/bcc/lambda_no_ctps.hpp
 include/boost/mpl/aux_/preprocessed/bcc/list.hpp
 include/boost/mpl/aux_/preprocessed/bcc/list_c.hpp
-include/boost/mpl/aux_/preprocessed/bcc/meta_fun.hpp
-include/boost/mpl/aux_/preprocessed/bcc/placeholder.hpp
+include/boost/mpl/aux_/preprocessed/bcc/or.hpp
+include/boost/mpl/aux_/preprocessed/bcc/placeholders.hpp
+include/boost/mpl/aux_/preprocessed/bcc/quote.hpp
+include/boost/mpl/aux_/preprocessed/bcc/template_arity.hpp
 include/boost/mpl/aux_/preprocessed/bcc/vector.hpp
 include/boost/mpl/aux_/preprocessed/bcc/vector_c.hpp
 include/boost/mpl/aux_/preprocessed/bcc551/advance_backward.hpp
 include/boost/mpl/aux_/preprocessed/bcc551/advance_forward.hpp
+include/boost/mpl/aux_/preprocessed/bcc551/and.hpp
 include/boost/mpl/aux_/preprocessed/bcc551/apply.hpp
 include/boost/mpl/aux_/preprocessed/bcc551/arg.hpp
 include/boost/mpl/aux_/preprocessed/bcc551/basic_bind.hpp
@@ -470,12 +507,15 @@ include/boost/mpl/aux_/preprocessed/bcc551/lambda_helper.hpp
 include/boost/mpl/aux_/preprocessed/bcc551/lambda_no_ctps.hpp
 include/boost/mpl/aux_/preprocessed/bcc551/list.hpp
 include/boost/mpl/aux_/preprocessed/bcc551/list_c.hpp
-include/boost/mpl/aux_/preprocessed/bcc551/meta_fun.hpp
-include/boost/mpl/aux_/preprocessed/bcc551/placeholder.hpp
+include/boost/mpl/aux_/preprocessed/bcc551/or.hpp
+include/boost/mpl/aux_/preprocessed/bcc551/placeholders.hpp
+include/boost/mpl/aux_/preprocessed/bcc551/quote.hpp
+include/boost/mpl/aux_/preprocessed/bcc551/template_arity.hpp
 include/boost/mpl/aux_/preprocessed/bcc551/vector.hpp
 include/boost/mpl/aux_/preprocessed/bcc551/vector_c.hpp
 include/boost/mpl/aux_/preprocessed/gcc/advance_backward.hpp
 include/boost/mpl/aux_/preprocessed/gcc/advance_forward.hpp
+include/boost/mpl/aux_/preprocessed/gcc/and.hpp
 include/boost/mpl/aux_/preprocessed/gcc/apply.hpp
 include/boost/mpl/aux_/preprocessed/gcc/arg.hpp
 include/boost/mpl/aux_/preprocessed/gcc/basic_bind.hpp
@@ -490,12 +530,15 @@ include/boost/mpl/aux_/preprocessed/gcc/lambda_helper.hpp
 include/boost/mpl/aux_/preprocessed/gcc/lambda_no_ctps.hpp
 include/boost/mpl/aux_/preprocessed/gcc/list.hpp
 include/boost/mpl/aux_/preprocessed/gcc/list_c.hpp
-include/boost/mpl/aux_/preprocessed/gcc/meta_fun.hpp
-include/boost/mpl/aux_/preprocessed/gcc/placeholder.hpp
+include/boost/mpl/aux_/preprocessed/gcc/or.hpp
+include/boost/mpl/aux_/preprocessed/gcc/placeholders.hpp
+include/boost/mpl/aux_/preprocessed/gcc/quote.hpp
+include/boost/mpl/aux_/preprocessed/gcc/template_arity.hpp
 include/boost/mpl/aux_/preprocessed/gcc/vector.hpp
 include/boost/mpl/aux_/preprocessed/gcc/vector_c.hpp
 include/boost/mpl/aux_/preprocessed/msvc60/advance_backward.hpp
 include/boost/mpl/aux_/preprocessed/msvc60/advance_forward.hpp
+include/boost/mpl/aux_/preprocessed/msvc60/and.hpp
 include/boost/mpl/aux_/preprocessed/msvc60/apply.hpp
 include/boost/mpl/aux_/preprocessed/msvc60/arg.hpp
 include/boost/mpl/aux_/preprocessed/msvc60/basic_bind.hpp
@@ -510,12 +553,15 @@ include/boost/mpl/aux_/preprocessed/msvc60/lambda_helper.hpp
 include/boost/mpl/aux_/preprocessed/msvc60/lambda_no_ctps.hpp
 include/boost/mpl/aux_/preprocessed/msvc60/list.hpp
 include/boost/mpl/aux_/preprocessed/msvc60/list_c.hpp
-include/boost/mpl/aux_/preprocessed/msvc60/meta_fun.hpp
-include/boost/mpl/aux_/preprocessed/msvc60/placeholder.hpp
+include/boost/mpl/aux_/preprocessed/msvc60/or.hpp
+include/boost/mpl/aux_/preprocessed/msvc60/placeholders.hpp
+include/boost/mpl/aux_/preprocessed/msvc60/quote.hpp
+include/boost/mpl/aux_/preprocessed/msvc60/template_arity.hpp
 include/boost/mpl/aux_/preprocessed/msvc60/vector.hpp
 include/boost/mpl/aux_/preprocessed/msvc60/vector_c.hpp
 include/boost/mpl/aux_/preprocessed/msvc70/advance_backward.hpp
 include/boost/mpl/aux_/preprocessed/msvc70/advance_forward.hpp
+include/boost/mpl/aux_/preprocessed/msvc70/and.hpp
 include/boost/mpl/aux_/preprocessed/msvc70/apply.hpp
 include/boost/mpl/aux_/preprocessed/msvc70/arg.hpp
 include/boost/mpl/aux_/preprocessed/msvc70/basic_bind.hpp
@@ -530,12 +576,15 @@ include/boost/mpl/aux_/preprocessed/msvc70/lambda_helper.hpp
 include/boost/mpl/aux_/preprocessed/msvc70/lambda_no_ctps.hpp
 include/boost/mpl/aux_/preprocessed/msvc70/list.hpp
 include/boost/mpl/aux_/preprocessed/msvc70/list_c.hpp
-include/boost/mpl/aux_/preprocessed/msvc70/meta_fun.hpp
-include/boost/mpl/aux_/preprocessed/msvc70/placeholder.hpp
+include/boost/mpl/aux_/preprocessed/msvc70/or.hpp
+include/boost/mpl/aux_/preprocessed/msvc70/placeholders.hpp
+include/boost/mpl/aux_/preprocessed/msvc70/quote.hpp
+include/boost/mpl/aux_/preprocessed/msvc70/template_arity.hpp
 include/boost/mpl/aux_/preprocessed/msvc70/vector.hpp
 include/boost/mpl/aux_/preprocessed/msvc70/vector_c.hpp
 include/boost/mpl/aux_/preprocessed/mwcw/advance_backward.hpp
 include/boost/mpl/aux_/preprocessed/mwcw/advance_forward.hpp
+include/boost/mpl/aux_/preprocessed/mwcw/and.hpp
 include/boost/mpl/aux_/preprocessed/mwcw/apply.hpp
 include/boost/mpl/aux_/preprocessed/mwcw/arg.hpp
 include/boost/mpl/aux_/preprocessed/mwcw/basic_bind.hpp
@@ -550,12 +599,15 @@ include/boost/mpl/aux_/preprocessed/mwcw/lambda_helper.hpp
 include/boost/mpl/aux_/preprocessed/mwcw/lambda_no_ctps.hpp
 include/boost/mpl/aux_/preprocessed/mwcw/list.hpp
 include/boost/mpl/aux_/preprocessed/mwcw/list_c.hpp
-include/boost/mpl/aux_/preprocessed/mwcw/meta_fun.hpp
-include/boost/mpl/aux_/preprocessed/mwcw/placeholder.hpp
+include/boost/mpl/aux_/preprocessed/mwcw/or.hpp
+include/boost/mpl/aux_/preprocessed/mwcw/placeholders.hpp
+include/boost/mpl/aux_/preprocessed/mwcw/quote.hpp
+include/boost/mpl/aux_/preprocessed/mwcw/template_arity.hpp
 include/boost/mpl/aux_/preprocessed/mwcw/vector.hpp
 include/boost/mpl/aux_/preprocessed/mwcw/vector_c.hpp
 include/boost/mpl/aux_/preprocessed/no_ctps/advance_backward.hpp
 include/boost/mpl/aux_/preprocessed/no_ctps/advance_forward.hpp
+include/boost/mpl/aux_/preprocessed/no_ctps/and.hpp
 include/boost/mpl/aux_/preprocessed/no_ctps/apply.hpp
 include/boost/mpl/aux_/preprocessed/no_ctps/arg.hpp
 include/boost/mpl/aux_/preprocessed/no_ctps/basic_bind.hpp
@@ -570,12 +622,38 @@ include/boost/mpl/aux_/preprocessed/no_ctps/lambda_helper.hpp
 include/boost/mpl/aux_/preprocessed/no_ctps/lambda_no_ctps.hpp
 include/boost/mpl/aux_/preprocessed/no_ctps/list.hpp
 include/boost/mpl/aux_/preprocessed/no_ctps/list_c.hpp
-include/boost/mpl/aux_/preprocessed/no_ctps/meta_fun.hpp
-include/boost/mpl/aux_/preprocessed/no_ctps/placeholder.hpp
+include/boost/mpl/aux_/preprocessed/no_ctps/or.hpp
+include/boost/mpl/aux_/preprocessed/no_ctps/placeholders.hpp
+include/boost/mpl/aux_/preprocessed/no_ctps/quote.hpp
+include/boost/mpl/aux_/preprocessed/no_ctps/template_arity.hpp
 include/boost/mpl/aux_/preprocessed/no_ctps/vector.hpp
 include/boost/mpl/aux_/preprocessed/no_ctps/vector_c.hpp
+include/boost/mpl/aux_/preprocessed/no_ttp/advance_backward.hpp
+include/boost/mpl/aux_/preprocessed/no_ttp/advance_forward.hpp
+include/boost/mpl/aux_/preprocessed/no_ttp/and.hpp
+include/boost/mpl/aux_/preprocessed/no_ttp/apply.hpp
+include/boost/mpl/aux_/preprocessed/no_ttp/arg.hpp
+include/boost/mpl/aux_/preprocessed/no_ttp/basic_bind.hpp
+include/boost/mpl/aux_/preprocessed/no_ttp/bind.hpp
+include/boost/mpl/aux_/preprocessed/no_ttp/fold_backward_impl.hpp
+include/boost/mpl/aux_/preprocessed/no_ttp/fold_impl.hpp
+include/boost/mpl/aux_/preprocessed/no_ttp/full_lambda.hpp
+include/boost/mpl/aux_/preprocessed/no_ttp/iter_fold_backward_impl.hpp
+include/boost/mpl/aux_/preprocessed/no_ttp/iter_fold_if_impl.hpp
+include/boost/mpl/aux_/preprocessed/no_ttp/iter_fold_impl.hpp
+include/boost/mpl/aux_/preprocessed/no_ttp/lambda_helper.hpp
+include/boost/mpl/aux_/preprocessed/no_ttp/lambda_no_ctps.hpp
+include/boost/mpl/aux_/preprocessed/no_ttp/list.hpp
+include/boost/mpl/aux_/preprocessed/no_ttp/list_c.hpp
+include/boost/mpl/aux_/preprocessed/no_ttp/or.hpp
+include/boost/mpl/aux_/preprocessed/no_ttp/placeholders.hpp
+include/boost/mpl/aux_/preprocessed/no_ttp/quote.hpp
+include/boost/mpl/aux_/preprocessed/no_ttp/template_arity.hpp
+include/boost/mpl/aux_/preprocessed/no_ttp/vector.hpp
+include/boost/mpl/aux_/preprocessed/no_ttp/vector_c.hpp
 include/boost/mpl/aux_/preprocessed/plain/advance_backward.hpp
 include/boost/mpl/aux_/preprocessed/plain/advance_forward.hpp
+include/boost/mpl/aux_/preprocessed/plain/and.hpp
 include/boost/mpl/aux_/preprocessed/plain/apply.hpp
 include/boost/mpl/aux_/preprocessed/plain/arg.hpp
 include/boost/mpl/aux_/preprocessed/plain/basic_bind.hpp
@@ -590,8 +668,10 @@ include/boost/mpl/aux_/preprocessed/plain/lambda_helper.hpp
 include/boost/mpl/aux_/preprocessed/plain/lambda_no_ctps.hpp
 include/boost/mpl/aux_/preprocessed/plain/list.hpp
 include/boost/mpl/aux_/preprocessed/plain/list_c.hpp
-include/boost/mpl/aux_/preprocessed/plain/meta_fun.hpp
-include/boost/mpl/aux_/preprocessed/plain/placeholder.hpp
+include/boost/mpl/aux_/preprocessed/plain/or.hpp
+include/boost/mpl/aux_/preprocessed/plain/placeholders.hpp
+include/boost/mpl/aux_/preprocessed/plain/quote.hpp
+include/boost/mpl/aux_/preprocessed/plain/template_arity.hpp
 include/boost/mpl/aux_/preprocessed/plain/vector.hpp
 include/boost/mpl/aux_/preprocessed/plain/vector_c.hpp
 include/boost/mpl/aux_/preprocessor/add.hpp
@@ -601,6 +681,8 @@ include/boost/mpl/aux_/preprocessor/enum.hpp
 include/boost/mpl/aux_/preprocessor/ext_params.hpp
 include/boost/mpl/aux_/preprocessor/filter_params.hpp
 include/boost/mpl/aux_/preprocessor/params.hpp
+include/boost/mpl/aux_/preprocessor/partial_spec_params.hpp
+include/boost/mpl/aux_/preprocessor/range.hpp
 include/boost/mpl/aux_/preprocessor/repeat.hpp
 include/boost/mpl/aux_/preprocessor/sub.hpp
 include/boost/mpl/aux_/preprocessor/tuple.hpp
@@ -616,37 +698,33 @@ include/boost/mpl/aux_/range_c/iterator.hpp
 include/boost/mpl/aux_/range_c/size.hpp
 include/boost/mpl/aux_/range_c/tag.hpp
 include/boost/mpl/aux_/sequence_tag.hpp
+include/boost/mpl/aux_/single_element_iter.hpp
 include/boost/mpl/aux_/size_impl.hpp
 include/boost/mpl/aux_/template_arity.hpp
 include/boost/mpl/aux_/template_arity_fwd.hpp
 include/boost/mpl/aux_/traits_lambda_spec.hpp
+include/boost/mpl/aux_/transform_iter.hpp
 include/boost/mpl/aux_/type_wrapper.hpp
 include/boost/mpl/aux_/typeof.hpp
+include/boost/mpl/aux_/unwrap.hpp
 include/boost/mpl/aux_/value_wknd.hpp
 include/boost/mpl/aux_/void_spec.hpp
 include/boost/mpl/aux_/yes_no.hpp
 include/boost/mpl/back.hpp
 include/boost/mpl/back_fwd.hpp
+include/boost/mpl/base.hpp
 include/boost/mpl/begin_end.hpp
 include/boost/mpl/begin_end_fwd.hpp
 include/boost/mpl/bind.hpp
-include/boost/mpl/bool_c.hpp
+include/boost/mpl/bitand.hpp
+include/boost/mpl/bitor.hpp
+include/boost/mpl/bitwise.hpp
+include/boost/mpl/bitxor.hpp
+include/boost/mpl/bool.hpp
+include/boost/mpl/bool_fwd.hpp
 include/boost/mpl/clear.hpp
 include/boost/mpl/clear_fwd.hpp
 include/boost/mpl/comparison.hpp
-include/boost/mpl/comparison/equal_to.hpp
-include/boost/mpl/comparison/greater.hpp
-include/boost/mpl/comparison/greater_equal.hpp
-include/boost/mpl/comparison/less.hpp
-include/boost/mpl/comparison/less_equal.hpp
-include/boost/mpl/comparison/not_equal_to.hpp
-include/boost/mpl/compose.hpp
-include/boost/mpl/compose/f_gx.hpp
-include/boost/mpl/compose/f_gx_hx.hpp
-include/boost/mpl/compose/f_gx_hy.hpp
-include/boost/mpl/compose/f_gxy.hpp
-include/boost/mpl/compose/f_x_hy.hpp
-include/boost/mpl/compose/f_x_x.hpp
 include/boost/mpl/contains.hpp
 include/boost/mpl/copy.hpp
 include/boost/mpl/copy_backward.hpp
@@ -654,10 +732,14 @@ include/boost/mpl/copy_backward_if.hpp
 include/boost/mpl/copy_if.hpp
 include/boost/mpl/count.hpp
 include/boost/mpl/count_if.hpp
+include/boost/mpl/deref.hpp
 include/boost/mpl/distance.hpp
+include/boost/mpl/divides.hpp
 include/boost/mpl/empty.hpp
+include/boost/mpl/empty_base.hpp
 include/boost/mpl/empty_fwd.hpp
 include/boost/mpl/equal.hpp
+include/boost/mpl/equal_to.hpp
 include/boost/mpl/erase.hpp
 include/boost/mpl/erase_fwd.hpp
 include/boost/mpl/filter_view.hpp
@@ -668,22 +750,33 @@ include/boost/mpl/fold_backward.hpp
 include/boost/mpl/for_each.hpp
 include/boost/mpl/front.hpp
 include/boost/mpl/front_fwd.hpp
+include/boost/mpl/greater.hpp
+include/boost/mpl/greater_equal.hpp
 include/boost/mpl/identity.hpp
 include/boost/mpl/if.hpp
+include/boost/mpl/inherit.hpp
+include/boost/mpl/inherit_linearly.hpp
 include/boost/mpl/insert.hpp
 include/boost/mpl/insert_fwd.hpp
 include/boost/mpl/insert_range.hpp
 include/boost/mpl/insert_range_fwd.hpp
-include/boost/mpl/int_c.hpp
+include/boost/mpl/int.hpp
+include/boost/mpl/int_fwd.hpp
 include/boost/mpl/integral_c.hpp
+include/boost/mpl/integral_c_fwd.hpp
+include/boost/mpl/is_placeholder.hpp
+include/boost/mpl/is_sequence.hpp
 include/boost/mpl/iter_fold.hpp
 include/boost/mpl/iter_fold_backward.hpp
 include/boost/mpl/iterator_category.hpp
 include/boost/mpl/iterator_range.hpp
 include/boost/mpl/iterator_tag.hpp
+include/boost/mpl/joint_view.hpp
 include/boost/mpl/lambda.hpp
 include/boost/mpl/lambda_fwd.hpp
 include/boost/mpl/lambda_helper.hpp
+include/boost/mpl/less.hpp
+include/boost/mpl/less_equal.hpp
 include/boost/mpl/limits/arity.hpp
 include/boost/mpl/limits/list.hpp
 include/boost/mpl/limits/unrolling.hpp
@@ -727,17 +820,24 @@ include/boost/mpl/list/list50.hpp
 include/boost/mpl/list/list50_c.hpp
 include/boost/mpl/list_c.hpp
 include/boost/mpl/logical.hpp
-include/boost/mpl/logical/and.hpp
-include/boost/mpl/logical/not.hpp
-include/boost/mpl/logical/or.hpp
+include/boost/mpl/long.hpp
+include/boost/mpl/long_fwd.hpp
 include/boost/mpl/lower_bound.hpp
 include/boost/mpl/math/fixed_c.hpp
+include/boost/mpl/math/is_even.hpp
 include/boost/mpl/math/rational_c.hpp
 include/boost/mpl/max_element.hpp
-include/boost/mpl/meta_fun.hpp
+include/boost/mpl/minus.hpp
+include/boost/mpl/modulus.hpp
+include/boost/mpl/multiplies.hpp
+include/boost/mpl/negate.hpp
 include/boost/mpl/next.hpp
+include/boost/mpl/not.hpp
+include/boost/mpl/not_equal_to.hpp
+include/boost/mpl/or.hpp
 include/boost/mpl/pair.hpp
-include/boost/mpl/placeholder.hpp
+include/boost/mpl/placeholders.hpp
+include/boost/mpl/plus.hpp
 include/boost/mpl/pop_back.hpp
 include/boost/mpl/pop_back_fwd.hpp
 include/boost/mpl/pop_front.hpp
@@ -750,6 +850,7 @@ include/boost/mpl/push_back.hpp
 include/boost/mpl/push_back_fwd.hpp
 include/boost/mpl/push_front.hpp
 include/boost/mpl/push_front_fwd.hpp
+include/boost/mpl/quote.hpp
 include/boost/mpl/range_c.hpp
 include/boost/mpl/remove.hpp
 include/boost/mpl/remove_if.hpp
@@ -760,10 +861,16 @@ include/boost/mpl/same_as.hpp
 include/boost/mpl/select1st.hpp
 include/boost/mpl/select2nd.hpp
 include/boost/mpl/sequence_tag.hpp
+include/boost/mpl/sequence_tag_fwd.hpp
+include/boost/mpl/shift_left.hpp
+include/boost/mpl/shift_right.hpp
+include/boost/mpl/single_view.hpp
 include/boost/mpl/size.hpp
 include/boost/mpl/size_fwd.hpp
-include/boost/mpl/size_t_c.hpp
+include/boost/mpl/size_t.hpp
+include/boost/mpl/size_t_fwd.hpp
 include/boost/mpl/sizeof.hpp
+include/boost/mpl/switch.hpp
 include/boost/mpl/transform.hpp
 include/boost/mpl/transform_view.hpp
 include/boost/mpl/unique.hpp
@@ -833,6 +940,7 @@ include/boost/mpl/vector/vector50.hpp
 include/boost/mpl/vector/vector50_c.hpp
 include/boost/mpl/vector_c.hpp
 include/boost/mpl/void.hpp
+include/boost/mpl/zip_view.hpp
 include/boost/multi_array.hpp
 include/boost/multi_array/algorithm.hpp
 include/boost/multi_array/base.hpp
@@ -851,7 +959,42 @@ include/boost/multi_array/storage_order.hpp
 include/boost/multi_array/subarray.hpp
 include/boost/multi_array/types.hpp
 include/boost/multi_array/view.hpp
+include/boost/next_prior.hpp
+include/boost/noncopyable.hpp
 include/boost/nondet_random.hpp
+include/boost/numeric/interval.hpp
+include/boost/numeric/interval/arith.hpp
+include/boost/numeric/interval/arith2.hpp
+include/boost/numeric/interval/checking.hpp
+include/boost/numeric/interval/compare.hpp
+include/boost/numeric/interval/compare/explicit.hpp
+include/boost/numeric/interval/compare/lexicographic.hpp
+include/boost/numeric/interval/compare/set.hpp
+include/boost/numeric/interval/compare/tribool.hpp
+include/boost/numeric/interval/constants.hpp
+include/boost/numeric/interval/detail/bcc_rounding_control.hpp
+include/boost/numeric/interval/detail/bugs.hpp
+include/boost/numeric/interval/detail/c99_rounding_control.hpp
+include/boost/numeric/interval/detail/c99sub_rounding_control.hpp
+include/boost/numeric/interval/detail/division.hpp
+include/boost/numeric/interval/detail/interval_prototype.hpp
+include/boost/numeric/interval/detail/msvc_rounding_control.hpp
+include/boost/numeric/interval/detail/ppc_rounding_control.hpp
+include/boost/numeric/interval/detail/sparc_rounding_control.hpp
+include/boost/numeric/interval/detail/test_input.hpp
+include/boost/numeric/interval/detail/x86_rounding_control.hpp
+include/boost/numeric/interval/detail/x86gcc_rounding_control.hpp
+include/boost/numeric/interval/ext/x86_fast_rounding_control.hpp
+include/boost/numeric/interval/hw_rounding.hpp
+include/boost/numeric/interval/interval.hpp
+include/boost/numeric/interval/io.hpp
+include/boost/numeric/interval/limits.hpp
+include/boost/numeric/interval/policies.hpp
+include/boost/numeric/interval/rounded_arith.hpp
+include/boost/numeric/interval/rounded_transc.hpp
+include/boost/numeric/interval/rounding.hpp
+include/boost/numeric/interval/transc.hpp
+include/boost/numeric/interval/utility.hpp
 include/boost/numeric/ublas/banded.hpp
 include/boost/numeric/ublas/blas.hpp
 include/boost/numeric/ublas/concepts.hpp
@@ -867,6 +1010,9 @@ include/boost/numeric/ublas/matrix_assign.hpp
 include/boost/numeric/ublas/matrix_expression.hpp
 include/boost/numeric/ublas/matrix_proxy.hpp
 include/boost/numeric/ublas/matrix_sparse.hpp
+include/boost/numeric/ublas/operation.hpp
+include/boost/numeric/ublas/operation_blocked.hpp
+include/boost/numeric/ublas/operation_sparse.hpp
 include/boost/numeric/ublas/storage.hpp
 include/boost/numeric/ublas/storage_sparse.hpp
 include/boost/numeric/ublas/symmetric.hpp
@@ -878,6 +1024,7 @@ include/boost/numeric/ublas/vector_expression.hpp
 include/boost/numeric/ublas/vector_proxy.hpp
 include/boost/numeric/ublas/vector_sparse.hpp
 include/boost/operators.hpp
+include/boost/optional.hpp
 include/boost/pending/bucket_sorter.hpp
 include/boost/pending/container_traits.hpp
 include/boost/pending/cstddef.hpp
@@ -932,6 +1079,14 @@ include/boost/preprocessor/arithmetic/sub.hpp
 include/boost/preprocessor/array.hpp
 include/boost/preprocessor/array/data.hpp
 include/boost/preprocessor/array/elem.hpp
+include/boost/preprocessor/array/insert.hpp
+include/boost/preprocessor/array/pop_back.hpp
+include/boost/preprocessor/array/pop_front.hpp
+include/boost/preprocessor/array/push_back.hpp
+include/boost/preprocessor/array/push_front.hpp
+include/boost/preprocessor/array/remove.hpp
+include/boost/preprocessor/array/replace.hpp
+include/boost/preprocessor/array/reverse.hpp
 include/boost/preprocessor/array/size.hpp
 include/boost/preprocessor/assert_msg.hpp
 include/boost/preprocessor/cat.hpp
@@ -967,6 +1122,7 @@ include/boost/preprocessor/detail/is_binary.hpp
 include/boost/preprocessor/detail/is_nullary.hpp
 include/boost/preprocessor/detail/is_unary.hpp
 include/boost/preprocessor/detail/null.hpp
+include/boost/preprocessor/detail/split.hpp
 include/boost/preprocessor/empty.hpp
 include/boost/preprocessor/enum.hpp
 include/boost/preprocessor/enum_params.hpp
@@ -982,6 +1138,9 @@ include/boost/preprocessor/facilities/empty.hpp
 include/boost/preprocessor/facilities/expand.hpp
 include/boost/preprocessor/facilities/identity.hpp
 include/boost/preprocessor/facilities/intercept.hpp
+include/boost/preprocessor/facilities/is_1.hpp
+include/boost/preprocessor/facilities/is_empty.hpp
+include/boost/preprocessor/facilities/is_empty_or_1.hpp
 include/boost/preprocessor/for.hpp
 include/boost/preprocessor/identity.hpp
 include/boost/preprocessor/if.hpp
@@ -1087,6 +1246,33 @@ include/boost/preprocessor/repetition/repeat_from_to.hpp
 include/boost/preprocessor/selection.hpp
 include/boost/preprocessor/selection/max.hpp
 include/boost/preprocessor/selection/min.hpp
+include/boost/preprocessor/seq.hpp
+include/boost/preprocessor/seq/cat.hpp
+include/boost/preprocessor/seq/detail/split.hpp
+include/boost/preprocessor/seq/elem.hpp
+include/boost/preprocessor/seq/enum.hpp
+include/boost/preprocessor/seq/filter.hpp
+include/boost/preprocessor/seq/first_n.hpp
+include/boost/preprocessor/seq/fold_left.hpp
+include/boost/preprocessor/seq/fold_right.hpp
+include/boost/preprocessor/seq/for_each.hpp
+include/boost/preprocessor/seq/for_each_i.hpp
+include/boost/preprocessor/seq/for_each_product.hpp
+include/boost/preprocessor/seq/insert.hpp
+include/boost/preprocessor/seq/pop_back.hpp
+include/boost/preprocessor/seq/pop_front.hpp
+include/boost/preprocessor/seq/push_back.hpp
+include/boost/preprocessor/seq/push_front.hpp
+include/boost/preprocessor/seq/remove.hpp
+include/boost/preprocessor/seq/replace.hpp
+include/boost/preprocessor/seq/rest_n.hpp
+include/boost/preprocessor/seq/reverse.hpp
+include/boost/preprocessor/seq/seq.hpp
+include/boost/preprocessor/seq/size.hpp
+include/boost/preprocessor/seq/subseq.hpp
+include/boost/preprocessor/seq/to_array.hpp
+include/boost/preprocessor/seq/to_tuple.hpp
+include/boost/preprocessor/seq/transform.hpp
 include/boost/preprocessor/slot.hpp
 include/boost/preprocessor/slot/detail/def.hpp
 include/boost/preprocessor/slot/detail/shared.hpp
@@ -1103,7 +1289,9 @@ include/boost/preprocessor/tuple/elem.hpp
 include/boost/preprocessor/tuple/rem.hpp
 include/boost/preprocessor/tuple/reverse.hpp
 include/boost/preprocessor/tuple/to_list.hpp
+include/boost/preprocessor/tuple/to_seq.hpp
 include/boost/preprocessor/while.hpp
+include/boost/preprocessor/wstringize.hpp
 include/boost/progress.hpp
 include/boost/property_map.hpp
 include/boost/property_map_iterator.hpp
@@ -1123,6 +1311,7 @@ include/boost/python/class_fwd.hpp
 include/boost/python/converter/arg_from_python.hpp
 include/boost/python/converter/arg_to_python.hpp
 include/boost/python/converter/arg_to_python_base.hpp
+include/boost/python/converter/as_to_python_function.hpp
 include/boost/python/converter/builtin_converters.hpp
 include/boost/python/converter/constructor_function.hpp
 include/boost/python/converter/convertible_function.hpp
@@ -1141,6 +1330,9 @@ include/boost/python/converter/registrations.hpp
 include/boost/python/converter/registry.hpp
 include/boost/python/converter/return_from_python.hpp
 include/boost/python/converter/rvalue_from_python_data.hpp
+include/boost/python/converter/shared_ptr_deleter.hpp
+include/boost/python/converter/shared_ptr_from_python.hpp
+include/boost/python/converter/shared_ptr_to_python.hpp
 include/boost/python/converter/to_python_function_type.hpp
 include/boost/python/copy_const_reference.hpp
 include/boost/python/copy_non_const_reference.hpp
@@ -1149,16 +1341,17 @@ include/boost/python/def.hpp
 include/boost/python/default_call_policies.hpp
 include/boost/python/detail/aix_init_module.hpp
 include/boost/python/detail/api_placeholder.hpp
-include/boost/python/detail/arg_tuple_size.hpp
 include/boost/python/detail/borrowed_ptr.hpp
-include/boost/python/detail/call_object.hpp
 include/boost/python/detail/caller.hpp
 include/boost/python/detail/char_array.hpp
 include/boost/python/detail/config.hpp
 include/boost/python/detail/construct.hpp
 include/boost/python/detail/convertible.hpp
+include/boost/python/detail/copy_ctor_mutates_rhs.hpp
 include/boost/python/detail/cv_category.hpp
+include/boost/python/detail/dealloc.hpp
 include/boost/python/detail/decorated_type_id.hpp
+include/boost/python/detail/decref_guard.hpp
 include/boost/python/detail/def_helper.hpp
 include/boost/python/detail/defaults_def.hpp
 include/boost/python/detail/defaults_gen.hpp
@@ -1168,12 +1361,15 @@ include/boost/python/detail/exception_handler.hpp
 include/boost/python/detail/force_instantiate.hpp
 include/boost/python/detail/if_else.hpp
 include/boost/python/detail/indirect_traits.hpp
+include/boost/python/detail/invoke.hpp
+include/boost/python/detail/is_auto_ptr.hpp
+include/boost/python/detail/is_function_ref_tester.hpp
+include/boost/python/detail/is_xxx.hpp
 include/boost/python/detail/make_keyword_range_fn.hpp
 include/boost/python/detail/make_tuple.hpp
 include/boost/python/detail/map_entry.hpp
 include/boost/python/detail/member_function_cast.hpp
-include/boost/python/detail/module_base.hpp
-include/boost/python/detail/module_init.hpp
+include/boost/python/detail/mpl_lambda.hpp
 include/boost/python/detail/msvc_typeinfo.hpp
 include/boost/python/detail/none.hpp
 include/boost/python/detail/not_specified.hpp
@@ -1185,7 +1381,6 @@ include/boost/python/detail/python22_fixed.h
 include/boost/python/detail/raw_pyobject.hpp
 include/boost/python/detail/referent_storage.hpp
 include/boost/python/detail/result.hpp
-include/boost/python/detail/returning.hpp
 include/boost/python/detail/scope.hpp
 include/boost/python/detail/string_literal.hpp
 include/boost/python/detail/target.hpp
@@ -1193,8 +1388,9 @@ include/boost/python/detail/translate_exception.hpp
 include/boost/python/detail/type_list.hpp
 include/boost/python/detail/type_list_impl.hpp
 include/boost/python/detail/type_list_impl_no_pts.hpp
-include/boost/python/detail/type_list_utils.hpp
 include/boost/python/detail/unwind_type.hpp
+include/boost/python/detail/value_is_shared_ptr.hpp
+include/boost/python/detail/value_is_xxx.hpp
 include/boost/python/detail/void_ptr.hpp
 include/boost/python/detail/void_return.hpp
 include/boost/python/detail/wrap_python.hpp
@@ -1224,7 +1420,6 @@ include/boost/python/object/class.hpp
 include/boost/python/object/class_converters.hpp
 include/boost/python/object/class_detail.hpp
 include/boost/python/object/class_wrapper.hpp
-include/boost/python/object/construct.hpp
 include/boost/python/object/enum_base.hpp
 include/boost/python/object/find_instance.hpp
 include/boost/python/object/forward.hpp
@@ -1238,6 +1433,7 @@ include/boost/python/object/iterator_core.hpp
 include/boost/python/object/life_support.hpp
 include/boost/python/object/make_holder.hpp
 include/boost/python/object/make_instance.hpp
+include/boost/python/object/make_ptr_instance.hpp
 include/boost/python/object/pickle_support.hpp
 include/boost/python/object/pointer_holder.hpp
 include/boost/python/object/py_function.hpp
@@ -1253,16 +1449,19 @@ include/boost/python/object_operators.hpp
 include/boost/python/object_protocol.hpp
 include/boost/python/object_protocol_core.hpp
 include/boost/python/object_slices.hpp
+include/boost/python/opaque_pointer_converter.hpp
 include/boost/python/operators.hpp
-include/boost/python/operators2.hpp
 include/boost/python/other.hpp
 include/boost/python/overloads.hpp
 include/boost/python/pointee.hpp
 include/boost/python/proxy.hpp
 include/boost/python/ptr.hpp
+include/boost/python/raw_function.hpp
 include/boost/python/refcount.hpp
 include/boost/python/reference_existing_object.hpp
+include/boost/python/return_by_value.hpp
 include/boost/python/return_internal_reference.hpp
+include/boost/python/return_opaque_pointer.hpp
 include/boost/python/return_value_policy.hpp
 include/boost/python/scope.hpp
 include/boost/python/self.hpp
@@ -1279,19 +1478,23 @@ include/boost/python/with_custodian_and_ward.hpp
 include/boost/random.hpp
 include/boost/random/additive_combine.hpp
 include/boost/random/bernoulli_distribution.hpp
+include/boost/random/binomial_distribution.hpp
 include/boost/random/cauchy_distribution.hpp
 include/boost/random/detail/const_mod.hpp
 include/boost/random/detail/iterator_mixin.hpp
 include/boost/random/detail/signed_unsigned_compare.hpp
 include/boost/random/discard_block.hpp
 include/boost/random/exponential_distribution.hpp
+include/boost/random/gamma_distribution.hpp
 include/boost/random/geometric_distribution.hpp
 include/boost/random/inversive_congruential.hpp
 include/boost/random/lagged_fibonacci.hpp
 include/boost/random/linear_congruential.hpp
+include/boost/random/linear_feedback_shift.hpp
 include/boost/random/lognormal_distribution.hpp
 include/boost/random/mersenne_twister.hpp
 include/boost/random/normal_distribution.hpp
+include/boost/random/poisson_distribution.hpp
 include/boost/random/random_number_generator.hpp
 include/boost/random/ranlux.hpp
 include/boost/random/shuffle_output.hpp
@@ -1302,27 +1505,32 @@ include/boost/random/uniform_int.hpp
 include/boost/random/uniform_on_sphere.hpp
 include/boost/random/uniform_real.hpp
 include/boost/random/uniform_smallint.hpp
+include/boost/random/xor_combine.hpp
 include/boost/rational.hpp
 include/boost/ref.hpp
 include/boost/regex.h
 include/boost/regex.hpp
 include/boost/regex/config.hpp
-include/boost/regex/detail/fileiter.hpp
-include/boost/regex/detail/instances.hpp
-include/boost/regex/detail/regex_compile.hpp
-include/boost/regex/detail/regex_cstring.hpp
-include/boost/regex/detail/regex_format.hpp
-include/boost/regex/detail/regex_kmp.hpp
-include/boost/regex/detail/regex_library_include.hpp
-include/boost/regex/detail/regex_match.hpp
-include/boost/regex/detail/regex_raw_buffer.hpp
-include/boost/regex/detail/regex_split.hpp
-include/boost/regex/detail/regex_stack.hpp
-include/boost/regex/detail/regex_synch.hpp
 include/boost/regex/pattern_except.hpp
 include/boost/regex/regex_traits.hpp
 include/boost/regex/src.cpp
 include/boost/regex/user.hpp
+include/boost/regex/v3/cregex.hpp
+include/boost/regex/v3/fileiter.hpp
+include/boost/regex/v3/instances.hpp
+include/boost/regex/v3/regex.hpp
+include/boost/regex/v3/regex_compile.hpp
+include/boost/regex/v3/regex_cstring.hpp
+include/boost/regex/v3/regex_format.hpp
+include/boost/regex/v3/regex_fwd.hpp
+include/boost/regex/v3/regex_kmp.hpp
+include/boost/regex/v3/regex_library_include.hpp
+include/boost/regex/v3/regex_match.hpp
+include/boost/regex/v3/regex_raw_buffer.hpp
+include/boost/regex/v3/regex_split.hpp
+include/boost/regex/v3/regex_stack.hpp
+include/boost/regex/v3/regex_synch.hpp
+include/boost/regex/v3/regex_traits.hpp
 include/boost/regex_fwd.hpp
 include/boost/scoped_array.hpp
 include/boost/scoped_ptr.hpp
@@ -1350,12 +1558,126 @@ include/boost/signals/signal_template.hpp
 include/boost/signals/slot.hpp
 include/boost/signals/trackable.hpp
 include/boost/smart_ptr.hpp
+include/boost/spirit.hpp
+include/boost/spirit/attribute.hpp
+include/boost/spirit/attribute/closure.hpp
+include/boost/spirit/attribute/closure_context.hpp
+include/boost/spirit/attribute/parametric.hpp
+include/boost/spirit/core.hpp
+include/boost/spirit/core/assert.hpp
+include/boost/spirit/core/basics.hpp
+include/boost/spirit/core/composite/actions.hpp
+include/boost/spirit/core/composite/composite.hpp
+include/boost/spirit/core/composite/directives.hpp
+include/boost/spirit/core/composite/epsilon.hpp
+include/boost/spirit/core/composite/impl/composite.ipp
+include/boost/spirit/core/composite/impl/directives.ipp
+include/boost/spirit/core/composite/impl/operators.ipp
+include/boost/spirit/core/composite/operators.hpp
+include/boost/spirit/core/impl/borland.hpp
+include/boost/spirit/core/impl/match.ipp
+include/boost/spirit/core/impl/msvc.hpp
+include/boost/spirit/core/impl/parser.ipp
+include/boost/spirit/core/match.hpp
+include/boost/spirit/core/meta/fundamental.hpp
+include/boost/spirit/core/meta/impl/fundamental.ipp
+include/boost/spirit/core/meta/impl/parser_traits.ipp
+include/boost/spirit/core/meta/impl/parser_type.hpp
+include/boost/spirit/core/meta/impl/traverse.ipp
+include/boost/spirit/core/meta/parser_traits.hpp
+include/boost/spirit/core/meta/traverse.hpp
+include/boost/spirit/core/non_terminal/grammar.hpp
+include/boost/spirit/core/non_terminal/impl/grammar.ipp
+include/boost/spirit/core/non_terminal/impl/object_with_id.ipp
+include/boost/spirit/core/non_terminal/impl/rule.ipp
+include/boost/spirit/core/non_terminal/impl/subrule.ipp
+include/boost/spirit/core/non_terminal/parser_context.hpp
+include/boost/spirit/core/non_terminal/parser_id.hpp
+include/boost/spirit/core/non_terminal/rule.hpp
+include/boost/spirit/core/non_terminal/subrule.hpp
+include/boost/spirit/core/parser.hpp
+include/boost/spirit/core/primitives/impl/numerics.ipp
+include/boost/spirit/core/primitives/impl/primitives.ipp
+include/boost/spirit/core/primitives/numerics.hpp
+include/boost/spirit/core/primitives/primitives.hpp
+include/boost/spirit/core/scanner/impl/skipper.ipp
+include/boost/spirit/core/scanner/scanner.hpp
+include/boost/spirit/core/scanner/skipper.hpp
+include/boost/spirit/debug.hpp
+include/boost/spirit/debug/debug_node.hpp
+include/boost/spirit/debug/impl/parser_names.ipp
+include/boost/spirit/debug/minimal.hpp
+include/boost/spirit/debug/parser_names.hpp
+include/boost/spirit/dynamic.hpp
+include/boost/spirit/dynamic/for.hpp
+include/boost/spirit/dynamic/if.hpp
+include/boost/spirit/dynamic/impl/conditions.ipp
+include/boost/spirit/dynamic/while.hpp
+include/boost/spirit/error_handling.hpp
+include/boost/spirit/error_handling/exceptions.hpp
+include/boost/spirit/error_handling/impl/exceptions.ipp
+include/boost/spirit/iterator.hpp
+include/boost/spirit/iterator/file_iterator.hpp
+include/boost/spirit/iterator/fixed_size_queue.hpp
+include/boost/spirit/iterator/impl/file_iterator.ipp
+include/boost/spirit/iterator/multi_pass.hpp
+include/boost/spirit/iterator/position_iterator.hpp
+include/boost/spirit/phoenix/actor.hpp
+include/boost/spirit/phoenix/binders.hpp
+include/boost/spirit/phoenix/casts.hpp
+include/boost/spirit/phoenix/closures.hpp
+include/boost/spirit/phoenix/composite.hpp
+include/boost/spirit/phoenix/functions.hpp
+include/boost/spirit/phoenix/operators.hpp
+include/boost/spirit/phoenix/primitives.hpp
+include/boost/spirit/phoenix/special_ops.hpp
+include/boost/spirit/phoenix/statements.hpp
+include/boost/spirit/phoenix/tuple_helpers.hpp
+include/boost/spirit/phoenix/tuples.hpp
+include/boost/spirit/symbols.hpp
+include/boost/spirit/symbols/impl/symbols.ipp
+include/boost/spirit/symbols/impl/tst.ipp
+include/boost/spirit/symbols/symbols.hpp
+include/boost/spirit/tree/ast.hpp
+include/boost/spirit/tree/common.hpp
+include/boost/spirit/tree/impl/parse_tree_utils.ipp
+include/boost/spirit/tree/impl/tree_to_xml.ipp
+include/boost/spirit/tree/parse_tree.hpp
+include/boost/spirit/tree/parse_tree_utils.hpp
+include/boost/spirit/tree/parsetree.dtd
+include/boost/spirit/tree/tree_iterator.hpp
+include/boost/spirit/tree/tree_to_xml.hpp
+include/boost/spirit/utility.hpp
+include/boost/spirit/utility/chset.hpp
+include/boost/spirit/utility/chset_operators.hpp
+include/boost/spirit/utility/confix.hpp
+include/boost/spirit/utility/escape_char.hpp
+include/boost/spirit/utility/flush_multi_pass.hpp
+include/boost/spirit/utility/functor_parser.hpp
+include/boost/spirit/utility/impl/chset.ipp
+include/boost/spirit/utility/impl/chset/basic_chset.hpp
+include/boost/spirit/utility/impl/chset/basic_chset.ipp
+include/boost/spirit/utility/impl/chset/range_run.hpp
+include/boost/spirit/utility/impl/chset/range_run.ipp
+include/boost/spirit/utility/impl/chset_operators.ipp
+include/boost/spirit/utility/impl/confix.ipp
+include/boost/spirit/utility/impl/escape_char.ipp
+include/boost/spirit/utility/impl/lists.ipp
+include/boost/spirit/utility/impl/refactoring.ipp
+include/boost/spirit/utility/impl/regex.ipp
+include/boost/spirit/utility/lists.hpp
+include/boost/spirit/utility/loops.hpp
+include/boost/spirit/utility/refactoring.hpp
+include/boost/spirit/utility/regex.hpp
+include/boost/spirit/utility/scoped_lock.hpp
 include/boost/static_assert.hpp
+include/boost/test/auto_unit_test.hpp
 include/boost/test/detail/class_properties.hpp
 include/boost/test/detail/nullstream.hpp
 include/boost/test/detail/unit_test_config.hpp
 include/boost/test/detail/unit_test_monitor.hpp
 include/boost/test/detail/unit_test_parameters.hpp
+include/boost/test/detail/wrap_stringstream.hpp
 include/boost/test/execution_monitor.hpp
 include/boost/test/floating_point_comparison.hpp
 include/boost/test/included/prg_exec_monitor.hpp
@@ -1368,10 +1690,13 @@ include/boost/test/unit_test_log.hpp
 include/boost/test/unit_test_result.hpp
 include/boost/test/unit_test_suite.hpp
 include/boost/test/unit_test_suite_ex.hpp
+include/boost/thread.hpp
 include/boost/thread/condition.hpp
+include/boost/thread/detail/config.hpp
 include/boost/thread/detail/force_cast.hpp
 include/boost/thread/detail/lock.hpp
 include/boost/thread/detail/singleton.hpp
+include/boost/thread/detail/threadmon.hpp
 include/boost/thread/exceptions.hpp
 include/boost/thread/mutex.hpp
 include/boost/thread/once.hpp
@@ -1435,7 +1760,7 @@ include/boost/type_traits/has_trivial_constructor.hpp
 include/boost/type_traits/has_trivial_copy.hpp
 include/boost/type_traits/has_trivial_destructor.hpp
 include/boost/type_traits/ice.hpp
-include/boost/type_traits/is_POD.hpp
+include/boost/type_traits/intrinsics.hpp
 include/boost/type_traits/is_arithmetic.hpp
 include/boost/type_traits/is_array.hpp
 include/boost/type_traits/is_base_and_derived.hpp
@@ -1452,7 +1777,9 @@ include/boost/type_traits/is_integral.hpp
 include/boost/type_traits/is_member_function_pointer.hpp
 include/boost/type_traits/is_member_pointer.hpp
 include/boost/type_traits/is_object.hpp
+include/boost/type_traits/is_pod.hpp
 include/boost/type_traits/is_pointer.hpp
+include/boost/type_traits/is_polymorphic.hpp
 include/boost/type_traits/is_reference.hpp
 include/boost/type_traits/is_same.hpp
 include/boost/type_traits/is_scalar.hpp
@@ -1481,7 +1808,9 @@ include/boost/utility_fwd.hpp
 include/boost/version.hpp
 include/boost/visit_each.hpp
 include/boost/weak_ptr.hpp
+%%BOOST_PYTHON%%lib/libboost_python.a
 %%BOOST_PYTHON%%lib/libboost_python.so
+%%BOOST_PYTHON%%lib/libboost_python_debug.a
 %%BOOST_PYTHON%%lib/libboost_python_debug.so
 lib/libboost_regex.a
 lib/libboost_regex.so
@@ -1489,9 +1818,66 @@ lib/libboost_regex_debug.a
 lib/libboost_regex_debug.so
 lib/libboost_signals.a
 lib/libboost_signals.so
-lib/libboost_thread.a
+lib/libboost_thread.so
+lib/libboost_threadd.so
 %%PORTDOCS%%share/doc/boost/boost.css
 %%PORTDOCS%%share/doc/boost/c++boost.gif
+%%PORTDOCS%%share/doc/boost/doc/html/any.html
+%%PORTDOCS%%share/doc/boost/doc/html/any.reference.html
+%%PORTDOCS%%share/doc/boost/doc/html/ch01s02.html
+%%PORTDOCS%%share/doc/boost/doc/html/ch01s04.html
+%%PORTDOCS%%share/doc/boost/doc/html/ch04s02.html
+%%PORTDOCS%%share/doc/boost/doc/html/ch04s04.html
+%%PORTDOCS%%share/doc/boost/doc/html/ch04s05.html
+%%PORTDOCS%%share/doc/boost/doc/html/ch04s06.html
+%%PORTDOCS%%share/doc/boost/doc/html/ch04s07.html
+%%PORTDOCS%%share/doc/boost/doc/html/class.boost.any.html
+%%PORTDOCS%%share/doc/boost/doc/html/class.boost.bad_any_cast.html
+%%PORTDOCS%%share/doc/boost/doc/html/class.boost.function.html
+%%PORTDOCS%%share/doc/boost/doc/html/class.boost.functionN.html
+%%PORTDOCS%%share/doc/boost/doc/html/class.boost.function_base.html
+%%PORTDOCS%%share/doc/boost/doc/html/class.boost.last_value.html
+%%PORTDOCS%%share/doc/boost/doc/html/class.boost.signal.html
+%%PORTDOCS%%share/doc/boost/doc/html/class.boost.signalN.html
+%%PORTDOCS%%share/doc/boost/doc/html/class.boost.slot.html
+%%PORTDOCS%%share/doc/boost/doc/html/function.faq.html
+%%PORTDOCS%%share/doc/boost/doc/html/function.history.html
+%%PORTDOCS%%share/doc/boost/doc/html/function.html
+%%PORTDOCS%%share/doc/boost/doc/html/function.misc.html
+%%PORTDOCS%%share/doc/boost/doc/html/function.reference.html
+%%PORTDOCS%%share/doc/boost/doc/html/function.testsuite.html
+%%PORTDOCS%%share/doc/boost/doc/html/function.tutorial.html
+%%PORTDOCS%%share/doc/boost/doc/html/id2695148.html
+%%PORTDOCS%%share/doc/boost/doc/html/id2695230.html
+%%PORTDOCS%%share/doc/boost/doc/html/id2827840.html
+%%PORTDOCS%%share/doc/boost/doc/html/id2830650.html
+%%PORTDOCS%%share/doc/boost/doc/html/id2833212.html
+%%PORTDOCS%%share/doc/boost/doc/html/id2837192.html
+%%PORTDOCS%%share/doc/boost/doc/html/id2852290.html
+%%PORTDOCS%%share/doc/boost/doc/html/id2877648.html
+%%PORTDOCS%%share/doc/boost/doc/html/id2890015.html
+%%PORTDOCS%%share/doc/boost/doc/html/id2905241.html
+%%PORTDOCS%%share/doc/boost/doc/html/images/blank.png
+%%PORTDOCS%%share/doc/boost/doc/html/images/caution.png
+%%PORTDOCS%%share/doc/boost/doc/html/images/draft.png
+%%PORTDOCS%%share/doc/boost/doc/html/images/home.png
+%%PORTDOCS%%share/doc/boost/doc/html/images/important.png
+%%PORTDOCS%%share/doc/boost/doc/html/images/next.png
+%%PORTDOCS%%share/doc/boost/doc/html/images/note.png
+%%PORTDOCS%%share/doc/boost/doc/html/images/prev.png
+%%PORTDOCS%%share/doc/boost/doc/html/images/tip.png
+%%PORTDOCS%%share/doc/boost/doc/html/images/toc-blank.png
+%%PORTDOCS%%share/doc/boost/doc/html/images/toc-minus.png
+%%PORTDOCS%%share/doc/boost/doc/html/images/toc-plus.png
+%%PORTDOCS%%share/doc/boost/doc/html/images/up.png
+%%PORTDOCS%%share/doc/boost/doc/html/images/warning.png
+%%PORTDOCS%%share/doc/boost/doc/html/index.html
+%%PORTDOCS%%share/doc/boost/doc/html/ref.ack.html
+%%PORTDOCS%%share/doc/boost/doc/html/ref.html
+%%PORTDOCS%%share/doc/boost/doc/html/ref.reference.html
+%%PORTDOCS%%share/doc/boost/doc/html/reference.css
+%%PORTDOCS%%share/doc/boost/doc/html/signals.html
+%%PORTDOCS%%share/doc/boost/doc/html/signals.reference.html
 %%PORTDOCS%%share/doc/boost/google_logo_40wht.gif
 %%PORTDOCS%%share/doc/boost/index.htm
 %%PORTDOCS%%share/doc/boost/libs/any/index.html
@@ -1562,6 +1948,7 @@ lib/libboost_thread.a
 %%PORTDOCS%%share/doc/boost/libs/date_time/doc/exp-time_periods.html
 %%PORTDOCS%%share/doc/boost/libs/date_time/doc/gregorian.html
 %%PORTDOCS%%share/doc/boost/libs/date_time/doc/index.html
+%%PORTDOCS%%share/doc/boost/libs/date_time/doc/license.html
 %%PORTDOCS%%share/doc/boost/libs/date_time/doc/local_time_adjust.html
 %%PORTDOCS%%share/doc/boost/libs/date_time/doc/posix_time.html
 %%PORTDOCS%%share/doc/boost/libs/date_time/doc/time_duration_inherit.png
@@ -1572,12 +1959,20 @@ lib/libboost_thread.a
 %%PORTDOCS%%share/doc/boost/libs/disjoint_sets/index.html
 %%PORTDOCS%%share/doc/boost/libs/dynamic_bitset/dynamic_bitset.html
 %%PORTDOCS%%share/doc/boost/libs/dynamic_bitset/index.html
+%%PORTDOCS%%share/doc/boost/libs/filesystem/doc/convenience.htm
+%%PORTDOCS%%share/doc/boost/libs/filesystem/doc/design.htm
+%%PORTDOCS%%share/doc/boost/libs/filesystem/doc/do-list.htm
+%%PORTDOCS%%share/doc/boost/libs/filesystem/doc/exception.htm
+%%PORTDOCS%%share/doc/boost/libs/filesystem/doc/faq.htm
+%%PORTDOCS%%share/doc/boost/libs/filesystem/doc/fstream.htm
+%%PORTDOCS%%share/doc/boost/libs/filesystem/doc/index.htm
+%%PORTDOCS%%share/doc/boost/libs/filesystem/doc/operations.htm
+%%PORTDOCS%%share/doc/boost/libs/filesystem/doc/path.htm
+%%PORTDOCS%%share/doc/boost/libs/filesystem/doc/portability_guide.htm
+%%PORTDOCS%%share/doc/boost/libs/filesystem/index.html
 %%PORTDOCS%%share/doc/boost/libs/format/doc/choices.html
 %%PORTDOCS%%share/doc/boost/libs/format/doc/format.html
 %%PORTDOCS%%share/doc/boost/libs/format/index.htm
-%%PORTDOCS%%share/doc/boost/libs/function/doc/faq.html
-%%PORTDOCS%%share/doc/boost/libs/function/doc/reference.html
-%%PORTDOCS%%share/doc/boost/libs/function/doc/tutorial.html
 %%PORTDOCS%%share/doc/boost/libs/function/index.html
 %%PORTDOCS%%share/doc/boost/libs/functional/binders.html
 %%PORTDOCS%%share/doc/boost/libs/functional/function_traits.html
@@ -1701,14 +2096,18 @@ lib/libboost_thread.a
 %%PORTDOCS%%share/doc/boost/libs/graph/doc/opposite.html
 %%PORTDOCS%%share/doc/boost/libs/graph/doc/predecessor_recorder.html
 %%PORTDOCS%%share/doc/boost/libs/graph/doc/prim_minimum_spanning_tree.html
+%%PORTDOCS%%share/doc/boost/libs/graph/doc/profile.htm
 %%PORTDOCS%%share/doc/boost/libs/graph/doc/property.html
 %%PORTDOCS%%share/doc/boost/libs/graph/doc/property_map.html
 %%PORTDOCS%%share/doc/boost/libs/graph/doc/property_writer.html
 %%PORTDOCS%%share/doc/boost/libs/graph/doc/publications.html
 %%PORTDOCS%%share/doc/boost/libs/graph/doc/push_relabel_max_flow.html
 %%PORTDOCS%%share/doc/boost/libs/graph/doc/quick_tour.html
+%%PORTDOCS%%share/doc/boost/libs/graph/doc/random.html
 %%PORTDOCS%%share/doc/boost/libs/graph/doc/read-graphviz.html
 %%PORTDOCS%%share/doc/boost/libs/graph/doc/reverse_graph.html
+%%PORTDOCS%%share/doc/boost/libs/graph/doc/sloan_ordering.htm
+%%PORTDOCS%%share/doc/boost/libs/graph/doc/sloan_start_end_vertices.htm
 %%PORTDOCS%%share/doc/boost/libs/graph/doc/sparse_matrix_ordering.html
 %%PORTDOCS%%share/doc/boost/libs/graph/doc/stanford_graph.html
 %%PORTDOCS%%share/doc/boost/libs/graph/doc/strong_components.html
@@ -1725,9 +2124,9 @@ lib/libboost_thread.a
 %%PORTDOCS%%share/doc/boost/libs/graph/doc/using_adjacency_list.html
 %%PORTDOCS%%share/doc/boost/libs/graph/doc/using_property_maps.html
 %%PORTDOCS%%share/doc/boost/libs/graph/doc/visitor_concepts.html
+%%PORTDOCS%%share/doc/boost/libs/graph/doc/wavefront.htm
 %%PORTDOCS%%share/doc/boost/libs/graph/doc/write-graphviz.html
 %%PORTDOCS%%share/doc/boost/libs/graph/index.html
-%%PORTDOCS%%share/doc/boost/libs/hdr_depend.html
 %%PORTDOCS%%share/doc/boost/libs/index.html
 %%PORTDOCS%%share/doc/boost/libs/integer/cstdint.htm
 %%PORTDOCS%%share/doc/boost/libs/integer/doc/integer_mask.html
@@ -1840,6 +2239,7 @@ lib/libboost_thread.a
 %%PORTDOCS%%share/doc/boost/libs/math/special_functions/graphics/special_functions_blurb9.jpeg
 %%PORTDOCS%%share/doc/boost/libs/math/special_functions/graphics/trigonometric.png
 %%PORTDOCS%%share/doc/boost/libs/math/special_functions/index.html
+%%PORTDOCS%%share/doc/boost/libs/math/special_functions/inverse_hyperbolic.html
 %%PORTDOCS%%share/doc/boost/libs/math/special_functions/special_functions.html
 %%PORTDOCS%%share/doc/boost/libs/mem_fn/index.html
 %%PORTDOCS%%share/doc/boost/libs/min_rand/index.htm
@@ -1867,12 +2267,15 @@ lib/libboost_thread.a
 %%PORTDOCS%%share/doc/boost/libs/mpl/doc/ref/Forward_Sequence.html
 %%PORTDOCS%%share/doc/boost/libs/mpl/doc/ref/Input_Iterator.html
 %%PORTDOCS%%share/doc/boost/libs/mpl/doc/ref/Integral_Constant.html
+%%PORTDOCS%%share/doc/boost/libs/mpl/doc/ref/Integral_constant_classes.html
 %%PORTDOCS%%share/doc/boost/libs/mpl/doc/ref/Iterators.html
 %%PORTDOCS%%share/doc/boost/libs/mpl/doc/ref/Metafunction.html
+%%PORTDOCS%%share/doc/boost/libs/mpl/doc/ref/Metafunction_Class.html
 %%PORTDOCS%%share/doc/boost/libs/mpl/doc/ref/Metafunctions.html
 %%PORTDOCS%%share/doc/boost/libs/mpl/doc/ref/Random_Access_Iterator.html
 %%PORTDOCS%%share/doc/boost/libs/mpl/doc/ref/Random_Access_Sequence.html
 %%PORTDOCS%%share/doc/boost/libs/mpl/doc/ref/Reference/advance.html
+%%PORTDOCS%%share/doc/boost/libs/mpl/doc/ref/Reference/and.html
 %%PORTDOCS%%share/doc/boost/libs/mpl/doc/ref/Reference/at.html
 %%PORTDOCS%%share/doc/boost/libs/mpl/doc/ref/Reference/at_c.html
 %%PORTDOCS%%share/doc/boost/libs/mpl/doc/ref/Reference/back.html
@@ -1885,6 +2288,7 @@ lib/libboost_thread.a
 %%PORTDOCS%%share/doc/boost/libs/mpl/doc/ref/Reference/copy_if.html
 %%PORTDOCS%%share/doc/boost/libs/mpl/doc/ref/Reference/count.html
 %%PORTDOCS%%share/doc/boost/libs/mpl/doc/ref/Reference/count_if.html
+%%PORTDOCS%%share/doc/boost/libs/mpl/doc/ref/Reference/deref.html
 %%PORTDOCS%%share/doc/boost/libs/mpl/doc/ref/Reference/distance.html
 %%PORTDOCS%%share/doc/boost/libs/mpl/doc/ref/Reference/divides.html
 %%PORTDOCS%%share/doc/boost/libs/mpl/doc/ref/Reference/empty.html
@@ -1892,8 +2296,6 @@ lib/libboost_thread.a
 %%PORTDOCS%%share/doc/boost/libs/mpl/doc/ref/Reference/equal.html
 %%PORTDOCS%%share/doc/boost/libs/mpl/doc/ref/Reference/equal_to.html
 %%PORTDOCS%%share/doc/boost/libs/mpl/doc/ref/Reference/erase.html
-%%PORTDOCS%%share/doc/boost/libs/mpl/doc/ref/Reference/erase_all.html
-%%PORTDOCS%%share/doc/boost/libs/mpl/doc/ref/Reference/erase_if.html
 %%PORTDOCS%%share/doc/boost/libs/mpl/doc/ref/Reference/erase_range.html
 %%PORTDOCS%%share/doc/boost/libs/mpl/doc/ref/Reference/filter_view.html
 %%PORTDOCS%%share/doc/boost/libs/mpl/doc/ref/Reference/find.html
@@ -1907,26 +2309,25 @@ lib/libboost_thread.a
 %%PORTDOCS%%share/doc/boost/libs/mpl/doc/ref/Reference/insert_range.html
 %%PORTDOCS%%share/doc/boost/libs/mpl/doc/ref/Reference/iter_fold.html
 %%PORTDOCS%%share/doc/boost/libs/mpl/doc/ref/Reference/iter_fold_backward.html
-%%PORTDOCS%%share/doc/boost/libs/mpl/doc/ref/Reference/iter_fold_if.html
 %%PORTDOCS%%share/doc/boost/libs/mpl/doc/ref/Reference/iterator_category.html
+%%PORTDOCS%%share/doc/boost/libs/mpl/doc/ref/Reference/joint_view.html
 %%PORTDOCS%%share/doc/boost/libs/mpl/doc/ref/Reference/less.html
 %%PORTDOCS%%share/doc/boost/libs/mpl/doc/ref/Reference/less_equal.html
 %%PORTDOCS%%share/doc/boost/libs/mpl/doc/ref/Reference/list.html
 %%PORTDOCS%%share/doc/boost/libs/mpl/doc/ref/Reference/list_c.html
-%%PORTDOCS%%share/doc/boost/libs/mpl/doc/ref/Reference/logical_and.html
-%%PORTDOCS%%share/doc/boost/libs/mpl/doc/ref/Reference/logical_not.html
-%%PORTDOCS%%share/doc/boost/libs/mpl/doc/ref/Reference/logical_or.html
 %%PORTDOCS%%share/doc/boost/libs/mpl/doc/ref/Reference/lower_bound.html
+%%PORTDOCS%%share/doc/boost/libs/mpl/doc/ref/Reference/max_element.html
+%%PORTDOCS%%share/doc/boost/libs/mpl/doc/ref/Reference/min_element.html
 %%PORTDOCS%%share/doc/boost/libs/mpl/doc/ref/Reference/minus.html
 %%PORTDOCS%%share/doc/boost/libs/mpl/doc/ref/Reference/modulus.html
 %%PORTDOCS%%share/doc/boost/libs/mpl/doc/ref/Reference/multiplies.html
 %%PORTDOCS%%share/doc/boost/libs/mpl/doc/ref/Reference/negate.html
-%%PORTDOCS%%share/doc/boost/libs/mpl/doc/ref/Reference/next.html
+%%PORTDOCS%%share/doc/boost/libs/mpl/doc/ref/Reference/not.html
 %%PORTDOCS%%share/doc/boost/libs/mpl/doc/ref/Reference/not_equal_to.html
+%%PORTDOCS%%share/doc/boost/libs/mpl/doc/ref/Reference/or.html
 %%PORTDOCS%%share/doc/boost/libs/mpl/doc/ref/Reference/plus.html
 %%PORTDOCS%%share/doc/boost/libs/mpl/doc/ref/Reference/pop_back.html
 %%PORTDOCS%%share/doc/boost/libs/mpl/doc/ref/Reference/pop_front.html
-%%PORTDOCS%%share/doc/boost/libs/mpl/doc/ref/Reference/prior.html
 %%PORTDOCS%%share/doc/boost/libs/mpl/doc/ref/Reference/push_back.html
 %%PORTDOCS%%share/doc/boost/libs/mpl/doc/ref/Reference/push_front.html
 %%PORTDOCS%%share/doc/boost/libs/mpl/doc/ref/Reference/range_c.html
@@ -1935,21 +2336,23 @@ lib/libboost_thread.a
 %%PORTDOCS%%share/doc/boost/libs/mpl/doc/ref/Reference/replace.html
 %%PORTDOCS%%share/doc/boost/libs/mpl/doc/ref/Reference/replace_if.html
 %%PORTDOCS%%share/doc/boost/libs/mpl/doc/ref/Reference/reverse.html
+%%PORTDOCS%%share/doc/boost/libs/mpl/doc/ref/Reference/single_view.html
 %%PORTDOCS%%share/doc/boost/libs/mpl/doc/ref/Reference/size.html
-%%PORTDOCS%%share/doc/boost/libs/mpl/doc/ref/Reference/sort.html
 %%PORTDOCS%%share/doc/boost/libs/mpl/doc/ref/Reference/transform.html
 %%PORTDOCS%%share/doc/boost/libs/mpl/doc/ref/Reference/transform_view.html
-%%PORTDOCS%%share/doc/boost/libs/mpl/doc/ref/Reference/unique.html
 %%PORTDOCS%%share/doc/boost/libs/mpl/doc/ref/Reference/upper_bound.html
 %%PORTDOCS%%share/doc/boost/libs/mpl/doc/ref/Reference/vector.html
 %%PORTDOCS%%share/doc/boost/libs/mpl/doc/ref/Reference/vector_c.html
+%%PORTDOCS%%share/doc/boost/libs/mpl/doc/ref/Reference/zip_view.html
 %%PORTDOCS%%share/doc/boost/libs/mpl/doc/ref/Sequence.html
 %%PORTDOCS%%share/doc/boost/libs/mpl/doc/ref/Sequences.html
-%%PORTDOCS%%share/doc/boost/libs/mpl/doc/ref/Table_of_Content.html
+%%PORTDOCS%%share/doc/boost/libs/mpl/doc/ref/Table_of_Contents.html
 %%PORTDOCS%%share/doc/boost/libs/mpl/doc/ref/Trivial_Iterator.html
 %%PORTDOCS%%share/doc/boost/libs/mpl/doc/ref/mpl_logo.jpg
 %%PORTDOCS%%share/doc/boost/libs/mpl/doc/ref/mpl_wiki.css
+%%PORTDOCS%%share/doc/boost/libs/mpl/index.html
 %%PORTDOCS%%share/doc/boost/libs/multi_array/doc/index.html
+%%PORTDOCS%%share/doc/boost/libs/multi_array/doc/iterator_categories.html
 %%PORTDOCS%%share/doc/boost/libs/multi_array/doc/matrix.gif
 %%PORTDOCS%%share/doc/boost/libs/multi_array/doc/notes.html
 %%PORTDOCS%%share/doc/boost/libs/multi_array/doc/reference.html
@@ -1957,6 +2360,17 @@ lib/libboost_thread.a
 %%PORTDOCS%%share/doc/boost/libs/multi_array/doc/user.html
 %%PORTDOCS%%share/doc/boost/libs/multi_array/index.html
 %%PORTDOCS%%share/doc/boost/libs/numeric/index.html
+%%PORTDOCS%%share/doc/boost/libs/numeric/interval/doc/checking.htm
+%%PORTDOCS%%share/doc/boost/libs/numeric/interval/doc/comparisons.htm
+%%PORTDOCS%%share/doc/boost/libs/numeric/interval/doc/examples.htm
+%%PORTDOCS%%share/doc/boost/libs/numeric/interval/doc/guide.htm
+%%PORTDOCS%%share/doc/boost/libs/numeric/interval/doc/includes.htm
+%%PORTDOCS%%share/doc/boost/libs/numeric/interval/doc/index.html
+%%PORTDOCS%%share/doc/boost/libs/numeric/interval/doc/interval.htm
+%%PORTDOCS%%share/doc/boost/libs/numeric/interval/doc/numbers.htm
+%%PORTDOCS%%share/doc/boost/libs/numeric/interval/doc/policies.htm
+%%PORTDOCS%%share/doc/boost/libs/numeric/interval/doc/rounding.htm
+%%PORTDOCS%%share/doc/boost/libs/numeric/interval/doc/todo.htm
 %%PORTDOCS%%share/doc/boost/libs/numeric/ublas/doc/banded.htm
 %%PORTDOCS%%share/doc/boost/libs/numeric/ublas/doc/c++boost.gif
 %%PORTDOCS%%share/doc/boost/libs/numeric/ublas/doc/container.htm
@@ -1978,6 +2392,8 @@ lib/libboost_thread.a
 %%PORTDOCS%%share/doc/boost/libs/numeric/ublas/doc/vector_proxy.htm
 %%PORTDOCS%%share/doc/boost/libs/numeric/ublas/doc/vector_sparse.htm
 %%PORTDOCS%%share/doc/boost/libs/numeric/ublas/index.html
+%%PORTDOCS%%share/doc/boost/libs/optional/doc/optional.html
+%%PORTDOCS%%share/doc/boost/libs/optional/index.html
 %%PORTDOCS%%share/doc/boost/libs/pool/doc/concepts.html
 %%PORTDOCS%%share/doc/boost/libs/pool/doc/copyright.html
 %%PORTDOCS%%share/doc/boost/libs/pool/doc/implementation/alignment.html
@@ -2010,6 +2426,7 @@ lib/libboost_thread.a
 %%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/data.html
 %%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/data/arrays.html
 %%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/data/lists.html
+%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/data/sequences.html
 %%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/data/tuples.html
 %%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/examples.html
 %%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/headers.html
@@ -2024,6 +2441,14 @@ lib/libboost_thread.a
 %%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/headers/array.hpp.html
 %%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/headers/array/data.hpp.html
 %%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/headers/array/elem.hpp.html
+%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/headers/array/insert.hpp.html
+%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/headers/array/pop_back.hpp.html
+%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/headers/array/pop_front.hpp.html
+%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/headers/array/push_back.hpp.html
+%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/headers/array/push_front.hpp.html
+%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/headers/array/remove.hpp.html
+%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/headers/array/replace.hpp.html
+%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/headers/array/reverse.hpp.html
 %%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/headers/array/size.hpp.html
 %%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/headers/assert_msg.hpp.html
 %%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/headers/cat.hpp.html
@@ -2137,6 +2562,32 @@ lib/libboost_thread.a
 %%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/headers/selection.hpp.html
 %%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/headers/selection/max.hpp.html
 %%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/headers/selection/min.hpp.html
+%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/headers/seq.hpp.html
+%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/headers/seq/cat.hpp.html
+%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/headers/seq/elem.hpp.html
+%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/headers/seq/enum.hpp.html
+%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/headers/seq/filter.hpp.html
+%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/headers/seq/first_n.hpp.html
+%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/headers/seq/fold_left.hpp.html
+%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/headers/seq/fold_right.hpp.html
+%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/headers/seq/for_each.hpp.html
+%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/headers/seq/for_each_i.hpp.html
+%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/headers/seq/for_each_product.hpp.html
+%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/headers/seq/insert.hpp.html
+%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/headers/seq/pop_back.hpp.html
+%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/headers/seq/pop_front.hpp.html
+%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/headers/seq/push_back.hpp.html
+%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/headers/seq/push_front.hpp.html
+%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/headers/seq/remove.hpp.html
+%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/headers/seq/replace.hpp.html
+%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/headers/seq/rest_n.hpp.html
+%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/headers/seq/reverse.hpp.html
+%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/headers/seq/seq.hpp.html
+%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/headers/seq/size.hpp.html
+%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/headers/seq/subseq.hpp.html
+%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/headers/seq/to_array.hpp.html
+%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/headers/seq/to_tuple.hpp.html
+%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/headers/seq/transform.hpp.html
 %%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/headers/slot.hpp.html
 %%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/headers/slot/slot.hpp.html
 %%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/headers/stringize.hpp.html
@@ -2146,7 +2597,9 @@ lib/libboost_thread.a
 %%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/headers/tuple/rem.hpp.html
 %%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/headers/tuple/reverse.hpp.html
 %%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/headers/tuple/to_list.hpp.html
+%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/headers/tuple/to_seq.hpp.html
 %%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/headers/while.hpp.html
+%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/headers/wstringize.hpp.html
 %%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/index.html
 %%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/miscellanea.html
 %%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/ref.html
@@ -2156,6 +2609,19 @@ lib/libboost_thread.a
 %%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/ref/apply.html
 %%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/ref/array_data.html
 %%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/ref/array_elem.html
+%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/ref/array_insert.html
+%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/ref/array_insert_d.html
+%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/ref/array_pop_back.html
+%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/ref/array_pop_back_z.html
+%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/ref/array_pop_front.html
+%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/ref/array_pop_front_z.html
+%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/ref/array_push_back.html
+%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/ref/array_push_front.html
+%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/ref/array_remove.html
+%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/ref/array_remove_d.html
+%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/ref/array_replace.html
+%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/ref/array_replace_d.html
+%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/ref/array_reverse.html
 %%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/ref/array_size.html
 %%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/ref/assert.html
 %%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/ref/assert_msg.html
@@ -2238,6 +2704,7 @@ lib/libboost_thread.a
 %%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/ref/limit_iteration_dim.html
 %%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/ref/limit_mag.html
 %%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/ref/limit_repeat.html
+%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/ref/limit_seq.html
 %%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/ref/limit_slot_count.html
 %%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/ref/limit_slot_sig.html
 %%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/ref/limit_tuple.html
@@ -2324,6 +2791,42 @@ lib/libboost_thread.a
 %%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/ref/repeat_z.html
 %%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/ref/rparen.html
 %%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/ref/rparen_if.html
+%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/ref/seq_cat.html
+%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/ref/seq_cat_s.html
+%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/ref/seq_elem.html
+%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/ref/seq_enum.html
+%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/ref/seq_filter.html
+%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/ref/seq_filter_s.html
+%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/ref/seq_first_n.html
+%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/ref/seq_fold_left.html
+%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/ref/seq_fold_left_s.html
+%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/ref/seq_fold_right.html
+%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/ref/seq_fold_right_s.html
+%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/ref/seq_for_each.html
+%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/ref/seq_for_each_i.html
+%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/ref/seq_for_each_i_r.html
+%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/ref/seq_for_each_product.html
+%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/ref/seq_for_each_product_r.html
+%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/ref/seq_for_each_r.html
+%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/ref/seq_head.html
+%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/ref/seq_insert.html
+%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/ref/seq_nil.html
+%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/ref/seq_pop_back.html
+%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/ref/seq_pop_front.html
+%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/ref/seq_push_back.html
+%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/ref/seq_push_front.html
+%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/ref/seq_remove.html
+%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/ref/seq_replace.html
+%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/ref/seq_rest_n.html
+%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/ref/seq_reverse.html
+%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/ref/seq_reverse_s.html
+%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/ref/seq_size.html
+%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/ref/seq_subseq.html
+%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/ref/seq_tail.html
+%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/ref/seq_to_array.html
+%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/ref/seq_to_tuple.html
+%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/ref/seq_transform.html
+%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/ref/seq_transform_s.html
 %%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/ref/slot.html
 %%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/ref/stringize.html
 %%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/ref/sub.html
@@ -2331,88 +2834,15 @@ lib/libboost_thread.a
 %%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/ref/tuple_eat.html
 %%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/ref/tuple_elem.html
 %%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/ref/tuple_rem.html
+%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/ref/tuple_rem_ctor.html
 %%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/ref/tuple_reverse.html
 %%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/ref/tuple_to_list.html
+%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/ref/tuple_to_seq.html
 %%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/ref/value.html
 %%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/ref/while.html
 %%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/ref/while_d.html
+%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/ref/wstringize.html
 %%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/ref/xor.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/reference/arithmetic.htm
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/reference/arithmetic_add.htm
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/reference/arithmetic_div.htm
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/reference/arithmetic_mod.htm
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/reference/arithmetic_mul.htm
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/reference/arithmetic_sub.htm
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/reference/assert_msg.htm
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/reference/cat.htm
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/reference/comma.htm
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/reference/comma_if.htm
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/reference/comparison.htm
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/reference/comparison_equal.htm
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/reference/comparison_greater.htm
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/reference/comparison_greater_equal.htm
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/reference/comparison_less.htm
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/reference/comparison_less_equal.htm
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/reference/comparison_not_equal.htm
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/reference/dec.htm
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/reference/empty.htm
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/reference/enum.htm
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/reference/enum_params.htm
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/reference/enum_params_with_a_default.htm
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/reference/enum_params_with_defaults.htm
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/reference/enum_shifted.htm
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/reference/enum_shifted_params.htm
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/reference/expand.htm
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/reference/expr_if.htm
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/reference/for.htm
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/reference/identity.htm
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/reference/if.htm
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/reference/inc.htm
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/reference/index.htm
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/reference/limits.htm
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/reference/list.htm
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/reference/list_adt.htm
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/reference/list_append.htm
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/reference/list_at.htm
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/reference/list_cat.htm
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/reference/list_enum.htm
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/reference/list_filter.htm
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/reference/list_first_n.htm
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/reference/list_fold_left.htm
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/reference/list_fold_left_2nd.htm
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/reference/list_fold_right.htm
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/reference/list_fold_right_2nd.htm
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/reference/list_for_each.htm
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/reference/list_for_each_i.htm
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/reference/list_for_each_product.htm
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/reference/list_rest_n.htm
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/reference/list_reverse.htm
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/reference/list_size.htm
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/reference/list_to_tuple.htm
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/reference/list_transform.htm
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/reference/logical.htm
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/reference/logical_and.htm
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/reference/logical_bool.htm
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/reference/logical_nor.htm
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/reference/logical_not.htm
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/reference/logical_or.htm
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/reference/logical_xor.htm
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/reference/max.htm
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/reference/min.htm
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/reference/repeat.htm
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/reference/repeat_2nd.htm
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/reference/repeat_3rd.htm
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/reference/repeat_from_to.htm
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/reference/repeat_from_to_2nd.htm
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/reference/repeat_from_to_3rd.htm
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/reference/stringize.htm
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/reference/tuple.htm
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/reference/tuple_eat.htm
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/reference/tuple_elem.htm
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/reference/tuple_reverse.htm
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/reference/tuple_to_list.htm
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/reference/while.htm
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/resources.html
 %%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/styles.css
 %%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/syntax.html
 %%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/terms.html
@@ -2428,294 +2858,6 @@ lib/libboost_thread.a
 %%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/topics/problems.html
 %%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/topics/reentrancy.html
 %%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/topics/techniques.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/blank.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/contents.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/data/arrays.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/data/lists.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/data/tuples.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/headers/arithmetic.hpp.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/headers/arithmetic/add.hpp.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/headers/arithmetic/dec.hpp.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/headers/arithmetic/div.hpp.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/headers/arithmetic/inc.hpp.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/headers/arithmetic/mod.hpp.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/headers/arithmetic/mul.hpp.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/headers/arithmetic/sub.hpp.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/headers/array.hpp.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/headers/array/data.hpp.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/headers/array/elem.hpp.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/headers/array/size.hpp.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/headers/cat.hpp.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/headers/comparison.hpp.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/headers/comparison/equal.hpp.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/headers/comparison/greater.hpp.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/headers/comparison/greater_equal.hpp.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/headers/comparison/less.hpp.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/headers/comparison/less_equal.hpp.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/headers/comparison/not_equal.hpp.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/headers/config/limits.hpp.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/headers/control.hpp.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/headers/control/expr_if.hpp.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/headers/control/expr_iif.hpp.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/headers/control/if.hpp.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/headers/control/iif.hpp.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/headers/control/while.hpp.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/headers/debug.hpp.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/headers/debug/assert.hpp.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/headers/debug/line.hpp.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/headers/facilities.hpp.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/headers/facilities/apply.hpp.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/headers/facilities/empty.hpp.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/headers/facilities/expand.hpp.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/headers/facilities/identity.hpp.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/headers/facilities/intercept.hpp.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/headers/iteration.hpp.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/headers/iteration/iterate.hpp.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/headers/iteration/local.hpp.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/headers/iteration/self.hpp.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/headers/library.hpp.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/headers/list.hpp.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/headers/list/adt.hpp.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/headers/list/append.hpp.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/headers/list/at.hpp.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/headers/list/cat.hpp.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/headers/list/enum.hpp.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/headers/list/filter.hpp.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/headers/list/first_n.hpp.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/headers/list/fold_left.hpp.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/headers/list/fold_right.hpp.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/headers/list/for_each.hpp.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/headers/list/for_each_i.hpp.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/headers/list/for_each_product.hpp.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/headers/list/rest_n.hpp.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/headers/list/reverse.hpp.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/headers/list/size.hpp.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/headers/list/to_tuple.hpp.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/headers/list/transform.hpp.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/headers/logical.hpp.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/headers/logical/and.hpp.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/headers/logical/bitand.hpp.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/headers/logical/bitnor.hpp.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/headers/logical/bitor.hpp.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/headers/logical/bitxor.hpp.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/headers/logical/bool.hpp.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/headers/logical/compl.hpp.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/headers/logical/nor.hpp.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/headers/logical/not.hpp.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/headers/logical/or.hpp.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/headers/logical/xor.hpp.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/headers/preprocessor.hpp.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/headers/punctuation.hpp.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/headers/punctuation/comma.hpp.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/headers/punctuation/comma_if.hpp.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/headers/punctuation/paren.hpp.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/headers/punctuation/paren_if.hpp.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/headers/repetition.hpp.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/headers/repetition/enum.hpp.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/headers/repetition/enum_binary_params.hpp.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/headers/repetition/enum_params.hpp.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/headers/repetition/enum_params_with_a_default.hpp.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/headers/repetition/enum_params_with_defaults.hpp.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/headers/repetition/enum_shifted.hpp.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/headers/repetition/enum_shifted_params.hpp.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/headers/repetition/for.hpp.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/headers/repetition/repeat.hpp.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/headers/repetition/repeat_from_to.hpp.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/headers/selection.hpp.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/headers/selection/max.hpp.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/headers/selection/min.hpp.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/headers/slot.hpp.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/headers/slot/slot.hpp.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/headers/stringize.hpp.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/headers/tuple.hpp.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/headers/tuple/eat.hpp.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/headers/tuple/elem.hpp.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/headers/tuple/rem.hpp.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/headers/tuple/reverse.hpp.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/headers/tuple/to_list.hpp.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/index.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/add.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/add_d.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/and.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/apply.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/array_data.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/array_elem.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/array_size.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/assert.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/assert_msg.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/assign_slot.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/bitand.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/bitnor.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/bitor.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/bitxor.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/bool.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/cat.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/comma.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/comma_if.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/compl.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/config_errors.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/config_extended_line_info.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/config_unrolled.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/dec.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/div.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/div_d.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/empty.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/enum.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/enum_binary_params.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/enum_binary_params_z.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/enum_params.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/enum_params_with_a_default.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/enum_params_with_defaults.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/enum_params_z.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/enum_shifted.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/enum_shifted_params.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/enum_shifted_params_z.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/enum_shifted_z.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/enum_z.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/equal.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/equal_d.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/expand.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/expr_if.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/expr_iif.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/filename_x.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/for.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/for_r.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/frame_finish.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/frame_flags.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/frame_iteration.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/frame_start.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/greater.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/greater_d.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/greater_equal.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/greater_equal_d.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/identity.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/if.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/iif.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/inc.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/include_self.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/indirect_self.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/intercept.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/is_iterating.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/is_selfish.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/iterate.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/iteration.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/iteration_depth.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/iteration_finish.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/iteration_flags.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/iteration_limits.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/iteration_params_x.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/iteration_start.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/less.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/less_d.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/less_equal.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/less_equal_d.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/limit_bool.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/limit_dim.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/limit_for.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/limit_iteration.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/limit_iteration_dim.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/limit_mag.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/limit_repeat.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/limit_slot_count.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/limit_slot_sig.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/limit_tuple.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/limit_while.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/line.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/list_append.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/list_append_d.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/list_at.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/list_at_d.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/list_cat.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/list_cat_d.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/list_cons.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/list_enum.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/list_enum_r.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/list_filter.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/list_filter_d.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/list_first.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/list_first_n.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/list_first_n_d.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/list_fold_left.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/list_fold_left_2nd.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/list_fold_left_2nd_d.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/list_fold_left_d.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/list_fold_left_d_old.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/list_fold_right.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/list_fold_right_2nd.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/list_fold_right_2nd_d.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/list_fold_right_d.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/list_fold_right_d_old.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/list_for_each.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/list_for_each_i.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/list_for_each_i_r.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/list_for_each_product.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/list_for_each_product_r.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/list_for_each_r.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/list_is_cons.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/list_is_nil.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/list_nil.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/list_rest.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/list_rest_n.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/list_rest_n_d.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/list_reverse.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/list_reverse_d.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/list_size.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/list_size_d.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/list_to_tuple.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/list_to_tuple_r.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/list_transform.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/list_transform_d.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/local_iterate.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/local_limits.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/local_macro.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/lparen.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/lparen_if.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/max.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/max_d.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/min.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/min_d.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/mod.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/mod_d.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/mul.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/mul_d.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/nil.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/nor.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/not.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/not_equal.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/not_equal_d.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/or.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/relative_finish.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/relative_flags.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/relative_iteration.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/relative_start.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/repeat.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/repeat_1st.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/repeat_2nd.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/repeat_3rd.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/repeat_from_to.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/repeat_from_to_1st.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/repeat_from_to_2nd.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/repeat_from_to_3rd.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/repeat_from_to_z.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/repeat_z.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/rparen.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/rparen_if.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/slot.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/stringize.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/sub.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/sub_d.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/tuple_eat.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/tuple_elem.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/tuple_rem.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/tuple_reverse.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/tuple_to_list.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/value.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/while.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/while_d.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/ref/xor.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/styles.css
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/syntax.html
-%%PORTDOCS%%share/doc/boost/libs/preprocessor/docs.1/top.html
 %%PORTDOCS%%share/doc/boost/libs/preprocessor/index.html
 %%PORTDOCS%%share/doc/boost/libs/property_map/LvaluePropertyMap.html
 %%PORTDOCS%%share/doc/boost/libs/property_map/ReadWritePropertyMap.html
@@ -2727,12 +2869,19 @@ lib/libboost_thread.a
 %%PORTDOCS%%share/doc/boost/libs/property_map/index.html
 %%PORTDOCS%%share/doc/boost/libs/property_map/iterator_property_map.html
 %%PORTDOCS%%share/doc/boost/libs/property_map/property_map.html
+%%PORTDOCS%%share/doc/boost/libs/python/doc/PyConDC_2003/bpl.html
+%%PORTDOCS%%share/doc/boost/libs/python/doc/PyConDC_2003/default.css
+%%PORTDOCS%%share/doc/boost/libs/python/doc/PyConDC_2003/python_cpp_mix.jpg
+%%PORTDOCS%%share/doc/boost/libs/python/doc/PyConDC_2003/python_cpp_mix.png
 %%PORTDOCS%%share/doc/boost/libs/python/doc/boost.css
 %%PORTDOCS%%share/doc/boost/libs/python/doc/building.html
 %%PORTDOCS%%share/doc/boost/libs/python/doc/index.html
 %%PORTDOCS%%share/doc/boost/libs/python/doc/new-conversions.html
+%%PORTDOCS%%share/doc/boost/libs/python/doc/news.html
+%%PORTDOCS%%share/doc/boost/libs/python/doc/projects.html
+%%PORTDOCS%%share/doc/boost/libs/python/doc/support.html
+%%PORTDOCS%%share/doc/boost/libs/python/doc/tutorial/doc/auto_overloading.html
 %%PORTDOCS%%share/doc/boost/libs/python/doc/tutorial/doc/basic_interface.html
-%%PORTDOCS%%share/doc/boost/libs/python/doc/tutorial/doc/building_an_extension_module.html
 %%PORTDOCS%%share/doc/boost/libs/python/doc/tutorial/doc/building_hello_world.html
 %%PORTDOCS%%share/doc/boost/libs/python/doc/tutorial/doc/call_policies.html
 %%PORTDOCS%%share/doc/boost/libs/python/doc/tutorial/doc/class_data_members.html
@@ -2742,6 +2891,8 @@ lib/libboost_thread.a
 %%PORTDOCS%%share/doc/boost/libs/python/doc/tutorial/doc/constructors.html
 %%PORTDOCS%%share/doc/boost/libs/python/doc/tutorial/doc/default_arguments.html
 %%PORTDOCS%%share/doc/boost/libs/python/doc/tutorial/doc/derived_object_types.html
+%%PORTDOCS%%share/doc/boost/libs/python/doc/tutorial/doc/deriving_a_python_class.html
+%%PORTDOCS%%share/doc/boost/libs/python/doc/tutorial/doc/embedding.html
 %%PORTDOCS%%share/doc/boost/libs/python/doc/tutorial/doc/enums.html
 %%PORTDOCS%%share/doc/boost/libs/python/doc/tutorial/doc/exception_translation.html
 %%PORTDOCS%%share/doc/boost/libs/python/doc/tutorial/doc/exposing_classes.html
@@ -2750,6 +2901,7 @@ lib/libboost_thread.a
 %%PORTDOCS%%share/doc/boost/libs/python/doc/tutorial/doc/inheritance.html
 %%PORTDOCS%%share/doc/boost/libs/python/doc/tutorial/doc/iterators.html
 %%PORTDOCS%%share/doc/boost/libs/python/doc/tutorial/doc/object_interface.html
+%%PORTDOCS%%share/doc/boost/libs/python/doc/tutorial/doc/overloading.html
 %%PORTDOCS%%share/doc/boost/libs/python/doc/tutorial/doc/quickstart.html
 %%PORTDOCS%%share/doc/boost/libs/python/doc/tutorial/doc/theme/alert.gif
 %%PORTDOCS%%share/doc/boost/libs/python/doc/tutorial/doc/theme/arrow.gif
@@ -2769,6 +2921,8 @@ lib/libboost_thread.a
 %%PORTDOCS%%share/doc/boost/libs/python/doc/tutorial/doc/theme/smiley.gif
 %%PORTDOCS%%share/doc/boost/libs/python/doc/tutorial/doc/theme/style.css
 %%PORTDOCS%%share/doc/boost/libs/python/doc/tutorial/doc/theme/u_arr.gif
+%%PORTDOCS%%share/doc/boost/libs/python/doc/tutorial/doc/using_the_interpreter.html
+%%PORTDOCS%%share/doc/boost/libs/python/doc/tutorial/doc/virtual_functions_with_default_implementations.html
 %%PORTDOCS%%share/doc/boost/libs/python/doc/tutorial/index.html
 %%PORTDOCS%%share/doc/boost/libs/python/doc/v2/Apr2002.html
 %%PORTDOCS%%share/doc/boost/libs/python/doc/v2/CallPolicies.html
@@ -2818,6 +2972,7 @@ lib/libboost_thread.a
 %%PORTDOCS%%share/doc/boost/libs/python/doc/v2/module.html
 %%PORTDOCS%%share/doc/boost/libs/python/doc/v2/numeric.html
 %%PORTDOCS%%share/doc/boost/libs/python/doc/v2/object.html
+%%PORTDOCS%%share/doc/boost/libs/python/doc/v2/opaque_pointer_converter.html
 %%PORTDOCS%%share/doc/boost/libs/python/doc/v2/operators.html
 %%PORTDOCS%%share/doc/boost/libs/python/doc/v2/overloads.html
 %%PORTDOCS%%share/doc/boost/libs/python/doc/v2/overview.html
@@ -2830,7 +2985,9 @@ lib/libboost_thread.a
 %%PORTDOCS%%share/doc/boost/libs/python/doc/v2/rationale.html
 %%PORTDOCS%%share/doc/boost/libs/python/doc/v2/reference.html
 %%PORTDOCS%%share/doc/boost/libs/python/doc/v2/reference_existing_object.html
+%%PORTDOCS%%share/doc/boost/libs/python/doc/v2/return_by_value.html
 %%PORTDOCS%%share/doc/boost/libs/python/doc/v2/return_internal_reference.html
+%%PORTDOCS%%share/doc/boost/libs/python/doc/v2/return_opaque_pointer.html
 %%PORTDOCS%%share/doc/boost/libs/python/doc/v2/return_value_policy.html
 %%PORTDOCS%%share/doc/boost/libs/python/doc/v2/scope.html
 %%PORTDOCS%%share/doc/boost/libs/python/doc/v2/str.html
@@ -2841,6 +2998,30 @@ lib/libboost_thread.a
 %%PORTDOCS%%share/doc/boost/libs/python/doc/v2/type_id.html
 %%PORTDOCS%%share/doc/boost/libs/python/doc/v2/with_custodian_and_ward.html
 %%PORTDOCS%%share/doc/boost/libs/python/index.html
+%%PORTDOCS%%share/doc/boost/libs/python/pyste/doc/exporting_all_declarations_from_a_header.html
+%%PORTDOCS%%share/doc/boost/libs/python/pyste/doc/introduction.html
+%%PORTDOCS%%share/doc/boost/libs/python/pyste/doc/policies.html
+%%PORTDOCS%%share/doc/boost/libs/python/pyste/doc/renaming_and_excluding.html
+%%PORTDOCS%%share/doc/boost/libs/python/pyste/doc/running_pyste.html
+%%PORTDOCS%%share/doc/boost/libs/python/pyste/doc/templates.html
+%%PORTDOCS%%share/doc/boost/libs/python/pyste/doc/the_interface_files.html
+%%PORTDOCS%%share/doc/boost/libs/python/pyste/doc/theme/alert.gif
+%%PORTDOCS%%share/doc/boost/libs/python/pyste/doc/theme/arrow.gif
+%%PORTDOCS%%share/doc/boost/libs/python/pyste/doc/theme/bkd.gif
+%%PORTDOCS%%share/doc/boost/libs/python/pyste/doc/theme/bkd2.gif
+%%PORTDOCS%%share/doc/boost/libs/python/pyste/doc/theme/bulb.gif
+%%PORTDOCS%%share/doc/boost/libs/python/pyste/doc/theme/bullet.gif
+%%PORTDOCS%%share/doc/boost/libs/python/pyste/doc/theme/c++boost.gif
+%%PORTDOCS%%share/doc/boost/libs/python/pyste/doc/theme/l_arr.gif
+%%PORTDOCS%%share/doc/boost/libs/python/pyste/doc/theme/l_arr_disabled.gif
+%%PORTDOCS%%share/doc/boost/libs/python/pyste/doc/theme/note.gif
+%%PORTDOCS%%share/doc/boost/libs/python/pyste/doc/theme/r_arr.gif
+%%PORTDOCS%%share/doc/boost/libs/python/pyste/doc/theme/r_arr_disabled.gif
+%%PORTDOCS%%share/doc/boost/libs/python/pyste/doc/theme/smiley.gif
+%%PORTDOCS%%share/doc/boost/libs/python/pyste/doc/theme/style.css
+%%PORTDOCS%%share/doc/boost/libs/python/pyste/doc/theme/u_arr.gif
+%%PORTDOCS%%share/doc/boost/libs/python/pyste/doc/wrappers.html
+%%PORTDOCS%%share/doc/boost/libs/python/pyste/index.html
 %%PORTDOCS%%share/doc/boost/libs/random/index.html
 %%PORTDOCS%%share/doc/boost/libs/random/nondet_random.html
 %%PORTDOCS%%share/doc/boost/libs/random/random-concepts.html
@@ -2848,6 +3029,7 @@ lib/libboost_thread.a
 %%PORTDOCS%%share/doc/boost/libs/random/random-generators.html
 %%PORTDOCS%%share/doc/boost/libs/random/random-misc.html
 %%PORTDOCS%%share/doc/boost/libs/random/random-performance.html
+%%PORTDOCS%%share/doc/boost/libs/random/wg21-proposal.html
 %%PORTDOCS%%share/doc/boost/libs/rational/index.html
 %%PORTDOCS%%share/doc/boost/libs/rational/rational.html
 %%PORTDOCS%%share/doc/boost/libs/regex/appendix.htm
@@ -2860,23 +3042,13 @@ lib/libboost_thread.a
 %%PORTDOCS%%share/doc/boost/libs/regex/syntax.htm
 %%PORTDOCS%%share/doc/boost/libs/regex/template_class_ref.htm
 %%PORTDOCS%%share/doc/boost/libs/regex/traits_class_ref.htm
-%%PORTDOCS%%share/doc/boost/libs/signals/doc/design.html
-%%PORTDOCS%%share/doc/boost/libs/signals/doc/design_rationale.html
-%%PORTDOCS%%share/doc/boost/libs/signals/doc/faq.html
-%%PORTDOCS%%share/doc/boost/libs/signals/doc/history.html
 %%PORTDOCS%%share/doc/boost/libs/signals/doc/index.html
-%%PORTDOCS%%share/doc/boost/libs/signals/doc/reference/connection.html
-%%PORTDOCS%%share/doc/boost/libs/signals/doc/reference/last_value.html
-%%PORTDOCS%%share/doc/boost/libs/signals/doc/reference/signal.html
-%%PORTDOCS%%share/doc/boost/libs/signals/doc/reference/signalN.html
-%%PORTDOCS%%share/doc/boost/libs/signals/doc/reference/slot.html
-%%PORTDOCS%%share/doc/boost/libs/signals/doc/reference/trackable.html
-%%PORTDOCS%%share/doc/boost/libs/signals/doc/reference/visit_each.html
-%%PORTDOCS%%share/doc/boost/libs/signals/doc/tutorial.html
 %%PORTDOCS%%share/doc/boost/libs/signals/index.html
 %%PORTDOCS%%share/doc/boost/libs/smart_ptr/compatibility.htm
+%%PORTDOCS%%share/doc/boost/libs/smart_ptr/enable_shared_from_this.html
 %%PORTDOCS%%share/doc/boost/libs/smart_ptr/gccspeed.gif
 %%PORTDOCS%%share/doc/boost/libs/smart_ptr/index.htm
+%%PORTDOCS%%share/doc/boost/libs/smart_ptr/intrusive_ptr.html
 %%PORTDOCS%%share/doc/boost/libs/smart_ptr/msvcspeed.gif
 %%PORTDOCS%%share/doc/boost/libs/smart_ptr/scoped_array.htm
 %%PORTDOCS%%share/doc/boost/libs/smart_ptr/scoped_ptr.htm
@@ -2884,7 +3056,157 @@ lib/libboost_thread.a
 %%PORTDOCS%%share/doc/boost/libs/smart_ptr/shared_ptr.htm
 %%PORTDOCS%%share/doc/boost/libs/smart_ptr/smart_ptr.htm
 %%PORTDOCS%%share/doc/boost/libs/smart_ptr/smarttests.htm
+%%PORTDOCS%%share/doc/boost/libs/smart_ptr/sp_techniques.html
 %%PORTDOCS%%share/doc/boost/libs/smart_ptr/weak_ptr.htm
+%%PORTDOCS%%share/doc/boost/libs/spirit/doc/acknowledgments.html
+%%PORTDOCS%%share/doc/boost/libs/spirit/doc/basic_concepts.html
+%%PORTDOCS%%share/doc/boost/libs/spirit/doc/calc_plain.cpp.html
+%%PORTDOCS%%share/doc/boost/libs/spirit/doc/character_sets.html
+%%PORTDOCS%%share/doc/boost/libs/spirit/doc/closures.html
+%%PORTDOCS%%share/doc/boost/libs/spirit/doc/confix.html
+%%PORTDOCS%%share/doc/boost/libs/spirit/doc/debugging.html
+%%PORTDOCS%%share/doc/boost/libs/spirit/doc/directives.html
+%%PORTDOCS%%share/doc/boost/libs/spirit/doc/dynamic_parsers.html
+%%PORTDOCS%%share/doc/boost/libs/spirit/doc/error_handling.html
+%%PORTDOCS%%share/doc/boost/libs/spirit/doc/escape_char_parser.html
+%%PORTDOCS%%share/doc/boost/libs/spirit/doc/faq.html
+%%PORTDOCS%%share/doc/boost/libs/spirit/doc/file_iterator.html
+%%PORTDOCS%%share/doc/boost/libs/spirit/doc/functional.html
+%%PORTDOCS%%share/doc/boost/libs/spirit/doc/functor_parser.html
+%%PORTDOCS%%share/doc/boost/libs/spirit/doc/grammar.html
+%%PORTDOCS%%share/doc/boost/libs/spirit/doc/indepth_the_parser.html
+%%PORTDOCS%%share/doc/boost/libs/spirit/doc/indepth_the_parser_context.html
+%%PORTDOCS%%share/doc/boost/libs/spirit/doc/indepth_the_scanner.html
+%%PORTDOCS%%share/doc/boost/libs/spirit/doc/introduction.html
+%%PORTDOCS%%share/doc/boost/libs/spirit/doc/list_parsers.html
+%%PORTDOCS%%share/doc/boost/libs/spirit/doc/loops.html
+%%PORTDOCS%%share/doc/boost/libs/spirit/doc/multi_pass.html
+%%PORTDOCS%%share/doc/boost/libs/spirit/doc/number_list.cpp.html
+%%PORTDOCS%%share/doc/boost/libs/spirit/doc/numerics.html
+%%PORTDOCS%%share/doc/boost/libs/spirit/doc/operators.html
+%%PORTDOCS%%share/doc/boost/libs/spirit/doc/organization.html
+%%PORTDOCS%%share/doc/boost/libs/spirit/doc/parametric_parsers.html
+%%PORTDOCS%%share/doc/boost/libs/spirit/doc/portability.html
+%%PORTDOCS%%share/doc/boost/libs/spirit/doc/position_iterator.html
+%%PORTDOCS%%share/doc/boost/libs/spirit/doc/predefined_actions.html
+%%PORTDOCS%%share/doc/boost/libs/spirit/doc/preface.html
+%%PORTDOCS%%share/doc/boost/libs/spirit/doc/primitives.html
+%%PORTDOCS%%share/doc/boost/libs/spirit/doc/quick_start.html
+%%PORTDOCS%%share/doc/boost/libs/spirit/doc/rationale.html
+%%PORTDOCS%%share/doc/boost/libs/spirit/doc/refactoring.html
+%%PORTDOCS%%share/doc/boost/libs/spirit/doc/references.html
+%%PORTDOCS%%share/doc/boost/libs/spirit/doc/regular_expression_parser.html
+%%PORTDOCS%%share/doc/boost/libs/spirit/doc/rule.html
+%%PORTDOCS%%share/doc/boost/libs/spirit/doc/scanner.html
+%%PORTDOCS%%share/doc/boost/libs/spirit/doc/scoped_lock.html
+%%PORTDOCS%%share/doc/boost/libs/spirit/doc/semantic_actions.html
+%%PORTDOCS%%share/doc/boost/libs/spirit/doc/style_guide.html
+%%PORTDOCS%%share/doc/boost/libs/spirit/doc/subrule_calc.cpp.html
+%%PORTDOCS%%share/doc/boost/libs/spirit/doc/subrules.html
+%%PORTDOCS%%share/doc/boost/libs/spirit/doc/symbols.html
+%%PORTDOCS%%share/doc/boost/libs/spirit/doc/theme/alert.gif
+%%PORTDOCS%%share/doc/boost/libs/spirit/doc/theme/arrow.gif
+%%PORTDOCS%%share/doc/boost/libs/spirit/doc/theme/bkd.gif
+%%PORTDOCS%%share/doc/boost/libs/spirit/doc/theme/bkd2.gif
+%%PORTDOCS%%share/doc/boost/libs/spirit/doc/theme/bulb.gif
+%%PORTDOCS%%share/doc/boost/libs/spirit/doc/theme/bullet.gif
+%%PORTDOCS%%share/doc/boost/libs/spirit/doc/theme/closure1.png
+%%PORTDOCS%%share/doc/boost/libs/spirit/doc/theme/error_handling.png
+%%PORTDOCS%%share/doc/boost/libs/spirit/doc/theme/intro1.png
+%%PORTDOCS%%share/doc/boost/libs/spirit/doc/theme/intro2.png
+%%PORTDOCS%%share/doc/boost/libs/spirit/doc/theme/intro3.png
+%%PORTDOCS%%share/doc/boost/libs/spirit/doc/theme/intro4.png
+%%PORTDOCS%%share/doc/boost/libs/spirit/doc/theme/intro5.png
+%%PORTDOCS%%share/doc/boost/libs/spirit/doc/theme/intro6.png
+%%PORTDOCS%%share/doc/boost/libs/spirit/doc/theme/intro7.png
+%%PORTDOCS%%share/doc/boost/libs/spirit/doc/theme/l_arr.gif
+%%PORTDOCS%%share/doc/boost/libs/spirit/doc/theme/l_arr_disabled.gif
+%%PORTDOCS%%share/doc/boost/libs/spirit/doc/theme/lambda.png
+%%PORTDOCS%%share/doc/boost/libs/spirit/doc/theme/lens.gif
+%%PORTDOCS%%share/doc/boost/libs/spirit/doc/theme/note.gif
+%%PORTDOCS%%share/doc/boost/libs/spirit/doc/theme/r_arr.gif
+%%PORTDOCS%%share/doc/boost/libs/spirit/doc/theme/r_arr_disabled.gif
+%%PORTDOCS%%share/doc/boost/libs/spirit/doc/theme/scanner1.png
+%%PORTDOCS%%share/doc/boost/libs/spirit/doc/theme/spirit.gif
+%%PORTDOCS%%share/doc/boost/libs/spirit/doc/theme/style.css
+%%PORTDOCS%%share/doc/boost/libs/spirit/doc/theme/subrule1.png
+%%PORTDOCS%%share/doc/boost/libs/spirit/doc/theme/trees1.png
+%%PORTDOCS%%share/doc/boost/libs/spirit/doc/theme/trees2.png
+%%PORTDOCS%%share/doc/boost/libs/spirit/doc/theme/trees3.png
+%%PORTDOCS%%share/doc/boost/libs/spirit/doc/theme/trees4.png
+%%PORTDOCS%%share/doc/boost/libs/spirit/doc/theme/u_arr.gif
+%%PORTDOCS%%share/doc/boost/libs/spirit/doc/trees.html
+%%PORTDOCS%%share/doc/boost/libs/spirit/example/application/cpp_to_html/style.css
+%%PORTDOCS%%share/doc/boost/libs/spirit/example/application/quickdoc/doc/grammar.html
+%%PORTDOCS%%share/doc/boost/libs/spirit/example/application/quickdoc/doc/introduction.html
+%%PORTDOCS%%share/doc/boost/libs/spirit/example/application/quickdoc/doc/syntax_summary.html
+%%PORTDOCS%%share/doc/boost/libs/spirit/example/application/quickdoc/doc/theme/alert.gif
+%%PORTDOCS%%share/doc/boost/libs/spirit/example/application/quickdoc/doc/theme/arrow.gif
+%%PORTDOCS%%share/doc/boost/libs/spirit/example/application/quickdoc/doc/theme/bkd.gif
+%%PORTDOCS%%share/doc/boost/libs/spirit/example/application/quickdoc/doc/theme/bkd2.gif
+%%PORTDOCS%%share/doc/boost/libs/spirit/example/application/quickdoc/doc/theme/bulb.gif
+%%PORTDOCS%%share/doc/boost/libs/spirit/example/application/quickdoc/doc/theme/bullet.gif
+%%PORTDOCS%%share/doc/boost/libs/spirit/example/application/quickdoc/doc/theme/l_arr.gif
+%%PORTDOCS%%share/doc/boost/libs/spirit/example/application/quickdoc/doc/theme/l_arr_disabled.gif
+%%PORTDOCS%%share/doc/boost/libs/spirit/example/application/quickdoc/doc/theme/lens.gif
+%%PORTDOCS%%share/doc/boost/libs/spirit/example/application/quickdoc/doc/theme/note.gif
+%%PORTDOCS%%share/doc/boost/libs/spirit/example/application/quickdoc/doc/theme/r_arr.gif
+%%PORTDOCS%%share/doc/boost/libs/spirit/example/application/quickdoc/doc/theme/r_arr_disabled.gif
+%%PORTDOCS%%share/doc/boost/libs/spirit/example/application/quickdoc/doc/theme/smiley.gif
+%%PORTDOCS%%share/doc/boost/libs/spirit/example/application/quickdoc/doc/theme/spirit.gif
+%%PORTDOCS%%share/doc/boost/libs/spirit/example/application/quickdoc/doc/theme/style.css
+%%PORTDOCS%%share/doc/boost/libs/spirit/example/application/quickdoc/doc/theme/u_arr.gif
+%%PORTDOCS%%share/doc/boost/libs/spirit/example/application/quickdoc/index.html
+%%PORTDOCS%%share/doc/boost/libs/spirit/example/application/rfcdate/peti.css
+%%PORTDOCS%%share/doc/boost/libs/spirit/example/application/rfcdate/tutorial.html
+%%PORTDOCS%%share/doc/boost/libs/spirit/index.html
+%%PORTDOCS%%share/doc/boost/libs/spirit/phoenix/doc/actors.html
+%%PORTDOCS%%share/doc/boost/libs/spirit/phoenix/doc/actors_revisited.html
+%%PORTDOCS%%share/doc/boost/libs/spirit/phoenix/doc/adaptable_closures.html
+%%PORTDOCS%%share/doc/boost/libs/spirit/phoenix/doc/architecture.html
+%%PORTDOCS%%share/doc/boost/libs/spirit/phoenix/doc/arguments.html
+%%PORTDOCS%%share/doc/boost/libs/spirit/phoenix/doc/basic_concepts.html
+%%PORTDOCS%%share/doc/boost/libs/spirit/phoenix/doc/binders.html
+%%PORTDOCS%%share/doc/boost/libs/spirit/phoenix/doc/composites.html
+%%PORTDOCS%%share/doc/boost/libs/spirit/phoenix/doc/composites_revisited.html
+%%PORTDOCS%%share/doc/boost/libs/spirit/phoenix/doc/efficiency.html
+%%PORTDOCS%%share/doc/boost/libs/spirit/phoenix/doc/functions.html
+%%PORTDOCS%%share/doc/boost/libs/spirit/phoenix/doc/inside_phoenix.html
+%%PORTDOCS%%share/doc/boost/libs/spirit/phoenix/doc/interfacing.html
+%%PORTDOCS%%share/doc/boost/libs/spirit/phoenix/doc/introduction.html
+%%PORTDOCS%%share/doc/boost/libs/spirit/phoenix/doc/lazy_construction_and_conversions.html
+%%PORTDOCS%%share/doc/boost/libs/spirit/phoenix/doc/lazy_functions.html
+%%PORTDOCS%%share/doc/boost/libs/spirit/phoenix/doc/operators.html
+%%PORTDOCS%%share/doc/boost/libs/spirit/phoenix/doc/operators_revisited.html
+%%PORTDOCS%%share/doc/boost/libs/spirit/phoenix/doc/organization.html
+%%PORTDOCS%%share/doc/boost/libs/spirit/phoenix/doc/place_holders.html
+%%PORTDOCS%%share/doc/boost/libs/spirit/phoenix/doc/polymorphic_functions.html
+%%PORTDOCS%%share/doc/boost/libs/spirit/phoenix/doc/preface.html
+%%PORTDOCS%%share/doc/boost/libs/spirit/phoenix/doc/primitives.html
+%%PORTDOCS%%share/doc/boost/libs/spirit/phoenix/doc/quick_start.html
+%%PORTDOCS%%share/doc/boost/libs/spirit/phoenix/doc/references.html
+%%PORTDOCS%%share/doc/boost/libs/spirit/phoenix/doc/statements.html
+%%PORTDOCS%%share/doc/boost/libs/spirit/phoenix/doc/theme/alert.gif
+%%PORTDOCS%%share/doc/boost/libs/spirit/phoenix/doc/theme/arrow.gif
+%%PORTDOCS%%share/doc/boost/libs/spirit/phoenix/doc/theme/bkd.gif
+%%PORTDOCS%%share/doc/boost/libs/spirit/phoenix/doc/theme/bkd2.gif
+%%PORTDOCS%%share/doc/boost/libs/spirit/phoenix/doc/theme/bulb.gif
+%%PORTDOCS%%share/doc/boost/libs/spirit/phoenix/doc/theme/bullet.gif
+%%PORTDOCS%%share/doc/boost/libs/spirit/phoenix/doc/theme/l_arr.gif
+%%PORTDOCS%%share/doc/boost/libs/spirit/phoenix/doc/theme/l_arr_disabled.gif
+%%PORTDOCS%%share/doc/boost/libs/spirit/phoenix/doc/theme/lens.gif
+%%PORTDOCS%%share/doc/boost/libs/spirit/phoenix/doc/theme/note.gif
+%%PORTDOCS%%share/doc/boost/libs/spirit/phoenix/doc/theme/r_arr.gif
+%%PORTDOCS%%share/doc/boost/libs/spirit/phoenix/doc/theme/r_arr_disabled.gif
+%%PORTDOCS%%share/doc/boost/libs/spirit/phoenix/doc/theme/smiley.gif
+%%PORTDOCS%%share/doc/boost/libs/spirit/phoenix/doc/theme/spirit.gif
+%%PORTDOCS%%share/doc/boost/libs/spirit/phoenix/doc/theme/style.css
+%%PORTDOCS%%share/doc/boost/libs/spirit/phoenix/doc/theme/u_arr.gif
+%%PORTDOCS%%share/doc/boost/libs/spirit/phoenix/doc/tuples.html
+%%PORTDOCS%%share/doc/boost/libs/spirit/phoenix/doc/values.html
+%%PORTDOCS%%share/doc/boost/libs/spirit/phoenix/doc/variables.html
+%%PORTDOCS%%share/doc/boost/libs/spirit/phoenix/doc/wrap_up.html
+%%PORTDOCS%%share/doc/boost/libs/spirit/phoenix/index.html
 %%PORTDOCS%%share/doc/boost/libs/static_assert/index.html
 %%PORTDOCS%%share/doc/boost/libs/static_assert/static_assert.htm
 %%PORTDOCS%%share/doc/boost/libs/test/doc/components_testing.htm
@@ -2903,9 +3225,11 @@ lib/libboost_thread.a
 %%PORTDOCS%%share/doc/boost/libs/test/doc/minimal.htm
 %%PORTDOCS%%share/doc/boost/libs/test/doc/output_test_stream.htm
 %%PORTDOCS%%share/doc/boost/libs/test/doc/prg_exec_monitor.htm
+%%PORTDOCS%%share/doc/boost/libs/test/doc/release_notes.htm
+%%PORTDOCS%%share/doc/boost/libs/test/doc/style/btl-gray.css
 %%PORTDOCS%%share/doc/boost/libs/test/doc/style/btl-print.css
 %%PORTDOCS%%share/doc/boost/libs/test/doc/style/btl-simple.css
-%%PORTDOCS%%share/doc/boost/libs/test/doc/style/btl.css
+%%PORTDOCS%%share/doc/boost/libs/test/doc/style/btl-white.css
 %%PORTDOCS%%share/doc/boost/libs/test/doc/test_exec_monitor.htm
 %%PORTDOCS%%share/doc/boost/libs/test/doc/test_lib_design.htm
 %%PORTDOCS%%share/doc/boost/libs/test/doc/test_tools.htm
@@ -2954,10 +3278,14 @@ lib/libboost_thread.a
 %%PORTDOCS%%share/doc/boost/libs/utility/CopyConstructible.html
 %%PORTDOCS%%share/doc/boost/libs/utility/LessThanComparable.html
 %%PORTDOCS%%share/doc/boost/libs/utility/MultiPassInputIterator.html
+%%PORTDOCS%%share/doc/boost/libs/utility/OptionalPointee.html
+%%PORTDOCS%%share/doc/boost/libs/utility/assert.html
 %%PORTDOCS%%share/doc/boost/libs/utility/base_from_member.html
 %%PORTDOCS%%share/doc/boost/libs/utility/call_traits.htm
+%%PORTDOCS%%share/doc/boost/libs/utility/checked_delete.html
 %%PORTDOCS%%share/doc/boost/libs/utility/compressed_pair.htm
 %%PORTDOCS%%share/doc/boost/libs/utility/counting_iterator.htm
+%%PORTDOCS%%share/doc/boost/libs/utility/current_function.html
 %%PORTDOCS%%share/doc/boost/libs/utility/filter_iterator.htm
 %%PORTDOCS%%share/doc/boost/libs/utility/function_output_iterator.htm
 %%PORTDOCS%%share/doc/boost/libs/utility/generator_iterator.htm
@@ -2969,6 +3297,7 @@ lib/libboost_thread.a
 %%PORTDOCS%%share/doc/boost/libs/utility/projection_iterator.htm
 %%PORTDOCS%%share/doc/boost/libs/utility/reverse_iterator.htm
 %%PORTDOCS%%share/doc/boost/libs/utility/shared_container_iterator.html
+%%PORTDOCS%%share/doc/boost/libs/utility/throw_exception.html
 %%PORTDOCS%%share/doc/boost/libs/utility/tie.html
 %%PORTDOCS%%share/doc/boost/libs/utility/transform_iterator.htm
 %%PORTDOCS%%share/doc/boost/libs/utility/utility.htm
@@ -3015,102 +3344,37 @@ lib/libboost_thread.a
 %%PORTDOCS%%share/doc/boost/more/writingdoc/template/overview.html
 %%PORTDOCS%%share/doc/boost/more/writingdoc/template/rationale.html
 %%PORTDOCS%%share/doc/boost/people/aleksey_gurtovoy.htm
-%%PORTDOCS%%share/doc/boost/people/aleksey_gurtovoy.jpg
-%%PORTDOCS%%share/doc/boost/people/aleksey_gurtovoy_small.jpg
 %%PORTDOCS%%share/doc/boost/people/beman_dawes.html
-%%PORTDOCS%%share/doc/boost/people/beman_dawes.jpg
-%%PORTDOCS%%share/doc/boost/people/beman_dawes_small.jpg
 %%PORTDOCS%%share/doc/boost/people/darin_adler.htm
-%%PORTDOCS%%share/doc/boost/people/darin_adler.jpg
-%%PORTDOCS%%share/doc/boost/people/darin_adler_small.jpg
 %%PORTDOCS%%share/doc/boost/people/daryle_walker.html
-%%PORTDOCS%%share/doc/boost/people/daryle_walker.jpg
 %%PORTDOCS%%share/doc/boost/people/dave_abrahams.htm
-%%PORTDOCS%%share/doc/boost/people/dave_abrahams.jpg
-%%PORTDOCS%%share/doc/boost/people/dave_abrahams_small.jpg
 %%PORTDOCS%%share/doc/boost/people/dietmar_kuehl.htm
-%%PORTDOCS%%share/doc/boost/people/dietmar_kuehl.jpg
-%%PORTDOCS%%share/doc/boost/people/dietmar_kuehl_small.jpg
 %%PORTDOCS%%share/doc/boost/people/doug_gregor.html
-%%PORTDOCS%%share/doc/boost/people/doug_gregor.jpg
-%%PORTDOCS%%share/doc/boost/people/doug_gregor_small.jpg
 %%PORTDOCS%%share/doc/boost/people/ed_brey.htm
-%%PORTDOCS%%share/doc/boost/people/ed_brey.jpg
-%%PORTDOCS%%share/doc/boost/people/ed_brey_small.jpg
 %%PORTDOCS%%share/doc/boost/people/gary_powell.htm
-%%PORTDOCS%%share/doc/boost/people/gary_powell.jpg
-%%PORTDOCS%%share/doc/boost/people/gary_powell_small.jpg
 %%PORTDOCS%%share/doc/boost/people/greg_colvin.htm
-%%PORTDOCS%%share/doc/boost/people/greg_colvin.jpg
-%%PORTDOCS%%share/doc/boost/people/greg_colvin_small.jpg
 %%PORTDOCS%%share/doc/boost/people/howard_hinnant.htm
-%%PORTDOCS%%share/doc/boost/people/howard_hinnant.jpg
-%%PORTDOCS%%share/doc/boost/people/howard_hinnant_small.jpg
 %%PORTDOCS%%share/doc/boost/people/hubert_holin.html
-%%PORTDOCS%%share/doc/boost/people/hubert_holin.jpg
-%%PORTDOCS%%share/doc/boost/people/hubert_holin_small.jpg
 %%PORTDOCS%%share/doc/boost/people/jaakko_jarvi.htm
-%%PORTDOCS%%share/doc/boost/people/jaakko_jarvi.jpg
-%%PORTDOCS%%share/doc/boost/people/jaakko_jarvi_small.jpg
 %%PORTDOCS%%share/doc/boost/people/jens_maurer.htm
-%%PORTDOCS%%share/doc/boost/people/jens_maurer.jpg
-%%PORTDOCS%%share/doc/boost/people/jens_maurer_small.jpg
 %%PORTDOCS%%share/doc/boost/people/jeremy_siek.htm
-%%PORTDOCS%%share/doc/boost/people/jeremy_siek.jpg
-%%PORTDOCS%%share/doc/boost/people/jeremy_siek_small.jpg
 %%PORTDOCS%%share/doc/boost/people/john_maddock.htm
-%%PORTDOCS%%share/doc/boost/people/john_maddock.jpg
-%%PORTDOCS%%share/doc/boost/people/john_maddock_small.jpg
 %%PORTDOCS%%share/doc/boost/people/kevlin_henney.htm
-%%PORTDOCS%%share/doc/boost/people/kevlin_henney.jpg
-%%PORTDOCS%%share/doc/boost/people/kevlin_henney_small.jpg
 %%PORTDOCS%%share/doc/boost/people/liequan_lee.htm
-%%PORTDOCS%%share/doc/boost/people/liequan_lee.jpg
-%%PORTDOCS%%share/doc/boost/people/liequan_lee_small.jpg
 %%PORTDOCS%%share/doc/boost/people/mac_murrett.htm
-%%PORTDOCS%%share/doc/boost/people/mac_murrett.jpg
-%%PORTDOCS%%share/doc/boost/people/mac_murrett_small.jpg
 %%PORTDOCS%%share/doc/boost/people/mark_rodgers.htm
-%%PORTDOCS%%share/doc/boost/people/mark_rodgers.jpg
-%%PORTDOCS%%share/doc/boost/people/mark_rodgers_small.jpg
 %%PORTDOCS%%share/doc/boost/people/mat_marcus.htm
-%%PORTDOCS%%share/doc/boost/people/mat_marcus.jpg
-%%PORTDOCS%%share/doc/boost/people/mat_marcus_small.jpg
-%%PORTDOCS%%share/doc/boost/people/nicolai_josuttis.jpg
-%%PORTDOCS%%share/doc/boost/people/nicolai_josuttis_small.jpg
 %%PORTDOCS%%share/doc/boost/people/paul_mensonides.htm
-%%PORTDOCS%%share/doc/boost/people/paul_mensonides.jpg
-%%PORTDOCS%%share/doc/boost/people/paul_mensonides_small.jpg
 %%PORTDOCS%%share/doc/boost/people/paul_moore.htm
-%%PORTDOCS%%share/doc/boost/people/paul_moore.jpg
-%%PORTDOCS%%share/doc/boost/people/paul_moore_small.jpg
 %%PORTDOCS%%share/doc/boost/people/people.htm
 %%PORTDOCS%%share/doc/boost/people/peter_dimov.htm
-%%PORTDOCS%%share/doc/boost/people/peter_dimov.jpg
-%%PORTDOCS%%share/doc/boost/people/peter_dimov_small.jpg
 %%PORTDOCS%%share/doc/boost/people/ralf_w_grosse_kunstleve.htm
-%%PORTDOCS%%share/doc/boost/people/ralf_w_grosse_kunstleve.jpg
-%%PORTDOCS%%share/doc/boost/people/ralf_w_grosse_kunstleve_sm.jpg
 %%PORTDOCS%%share/doc/boost/people/ronald_garcia.htm
-%%PORTDOCS%%share/doc/boost/people/ronald_garcia.jpg
-%%PORTDOCS%%share/doc/boost/people/ronald_garcia_small.jpg
 %%PORTDOCS%%share/doc/boost/people/samuel_krempp.htm
-%%PORTDOCS%%share/doc/boost/people/samuel_krempp.jpg
-%%PORTDOCS%%share/doc/boost/people/samuel_krempp_small.jpg
 %%PORTDOCS%%share/doc/boost/people/vesa_karvonen.htm
-%%PORTDOCS%%share/doc/boost/people/vesa_karvonen.jpg
 %%PORTDOCS%%share/doc/boost/people/william_kempf.htm
-%%PORTDOCS%%share/doc/boost/people/william_kempf.jpg
-%%PORTDOCS%%share/doc/boost/people/william_kempf_small.jpg
+%%PORTDOCS%%share/doc/boost/status/borland_logo.gif
 %%PORTDOCS%%share/doc/boost/status/compiler_status.html
-%%PORTDOCS%%share/doc/boost/status/cs-aix.html
-%%PORTDOCS%%share/doc/boost/status/cs-hpux.html
-%%PORTDOCS%%share/doc/boost/status/cs-irix.html
-%%PORTDOCS%%share/doc/boost/status/cs-linux.html
-%%PORTDOCS%%share/doc/boost/status/cs-macosx.html
-%%PORTDOCS%%share/doc/boost/status/cs-solaris.html
-%%PORTDOCS%%share/doc/boost/status/cs-tru64.html
-%%PORTDOCS%%share/doc/boost/status/cs-win32.html
 %%PORTDOCS%%share/doc/boost/status/index.html
 %%PORTDOCS%%share/doc/boost/status/intel_logo.gif
 %%PORTDOCS%%share/doc/boost/status/kai_logo.gif
@@ -3121,6 +3385,7 @@ lib/libboost_thread.a
 %%PORTDOCS%%share/doc/boost/tools/build/build_system.htm
 %%PORTDOCS%%share/doc/boost/tools/build/como-tools.html
 %%PORTDOCS%%share/doc/boost/tools/build/cwpro8-tools.html
+%%PORTDOCS%%share/doc/boost/tools/build/darwin-tools.html
 %%PORTDOCS%%share/doc/boost/tools/build/gcc-nocygwin-tools.html
 %%PORTDOCS%%share/doc/boost/tools/build/gcc-stlport-tools.html
 %%PORTDOCS%%share/doc/boost/tools/build/gcc-tools.html
@@ -3130,7 +3395,9 @@ lib/libboost_thread.a
 %%PORTDOCS%%share/doc/boost/tools/build/jam_src/Jam.html
 %%PORTDOCS%%share/doc/boost/tools/build/jam_src/Jambase.html
 %%PORTDOCS%%share/doc/boost/tools/build/jam_src/Jamfile.html
+%%PORTDOCS%%share/doc/boost/tools/build/jam_src/index.html
 %%PORTDOCS%%share/doc/boost/tools/build/kcc-tools.html
+%%PORTDOCS%%share/doc/boost/tools/build/kylix-tools.html
 %%PORTDOCS%%share/doc/boost/tools/build/metrowerks-tools.html
 %%PORTDOCS%%share/doc/boost/tools/build/mingw-tools.html
 %%PORTDOCS%%share/doc/boost/tools/build/mipspro-tools.html
@@ -3141,6 +3408,11 @@ lib/libboost_thread.a
 %%PORTDOCS%%share/doc/boost/tools/build/vacpp-tools.html
 %%PORTDOCS%%share/doc/boost/tools/build/variables.html
 %%PORTDOCS%%share/doc/boost/tools/build/vc7-tools.html
+%%PORTDOCS%%share/doc/boost/tools/index.html
+%%PORTDOCS%%share/doc/boost/tools/inspect/index.html
+%%PORTDOCS%%share/doc/boost/tools/regression/index.htm
+%%PORTDOCS%%share/examples/boost/libs/date_time/example/Jamfile
+%%PORTDOCS%%share/examples/boost/libs/date_time/example/gregorian/Jamfile.v2
 %%PORTDOCS%%share/examples/boost/libs/date_time/example/gregorian/dates_as_strings.cpp
 %%PORTDOCS%%share/examples/boost/libs/date_time/example/gregorian/days_alive.cpp
 %%PORTDOCS%%share/examples/boost/libs/date_time/example/gregorian/days_since_year_start.cpp
@@ -3151,10 +3423,13 @@ lib/libboost_thread.a
 %%PORTDOCS%%share/examples/boost/libs/date_time/example/gregorian/period_calc.cpp
 %%PORTDOCS%%share/examples/boost/libs/date_time/example/gregorian/print_holidays.cpp
 %%PORTDOCS%%share/examples/boost/libs/date_time/example/gregorian/print_month.cpp
+%%PORTDOCS%%share/examples/boost/libs/date_time/example/posix_time/Jamfile.v2
 %%PORTDOCS%%share/examples/boost/libs/date_time/example/posix_time/local_utc_conversion.cpp
 %%PORTDOCS%%share/examples/boost/libs/date_time/example/posix_time/print_hours.cpp
 %%PORTDOCS%%share/examples/boost/libs/date_time/example/posix_time/time_math.cpp
 %%PORTDOCS%%share/examples/boost/libs/date_time/example/posix_time/time_periods.cpp
+%%PORTDOCS%%share/examples/boost/libs/filesystem/example/Jamfile.v2
+%%PORTDOCS%%share/examples/boost/libs/filesystem/example/simple_ls.cpp
 %%PORTDOCS%%share/examples/boost/libs/format/example/Jamfile
 %%PORTDOCS%%share/examples/boost/libs/format/example/sample_advanced.cpp
 %%PORTDOCS%%share/examples/boost/libs/format/example/sample_formats.cpp
@@ -3291,6 +3566,8 @@ lib/libboost_thread.a
 %%PORTDOCS%%share/examples/boost/libs/graph/example/makefile-target-names.dat
 %%PORTDOCS%%share/examples/boost/libs/graph/example/max_flow.cpp
 %%PORTDOCS%%share/examples/boost/libs/graph/example/max_flow.dat
+%%PORTDOCS%%share/examples/boost/libs/graph/example/max_flow2.dat
+%%PORTDOCS%%share/examples/boost/libs/graph/example/max_flow3.dat
 %%PORTDOCS%%share/examples/boost/libs/graph/example/max_flow.expected
 %%PORTDOCS%%share/examples/boost/libs/graph/example/miles_span.cpp
 %%PORTDOCS%%share/examples/boost/libs/graph/example/miles_span.expected
@@ -3333,6 +3610,7 @@ lib/libboost_thread.a
 %%PORTDOCS%%share/examples/boost/libs/graph/example/scc.cpp
 %%PORTDOCS%%share/examples/boost/libs/graph/example/scc.dot
 %%PORTDOCS%%share/examples/boost/libs/graph/example/sgb-regression.cfg
+%%PORTDOCS%%share/examples/boost/libs/graph/example/sloan_ordering.cpp
 %%PORTDOCS%%share/examples/boost/libs/graph/example/strong-components.cpp
 %%PORTDOCS%%share/examples/boost/libs/graph/example/strong_components.cpp
 %%PORTDOCS%%share/examples/boost/libs/graph/example/strong_components.expected
@@ -3360,6 +3638,18 @@ lib/libboost_thread.a
 %%PORTDOCS%%share/examples/boost/libs/graph/example/vertex_basics.expected
 %%PORTDOCS%%share/examples/boost/libs/graph/example/visitor.cpp
 %%PORTDOCS%%share/examples/boost/libs/graph/example/visitor.expected
+%%PORTDOCS%%share/examples/boost/libs/mpl/example/fsm/aux_/STT_impl_gen.hpp
+%%PORTDOCS%%share/examples/boost/libs/mpl/example/fsm/aux_/base_event.hpp
+%%PORTDOCS%%share/examples/boost/libs/mpl/example/fsm/aux_/event.hpp
+%%PORTDOCS%%share/examples/boost/libs/mpl/example/fsm/aux_/state.hpp
+%%PORTDOCS%%share/examples/boost/libs/mpl/example/fsm/aux_/transition.hpp
+%%PORTDOCS%%share/examples/boost/libs/mpl/example/fsm/player.cpp
+%%PORTDOCS%%share/examples/boost/libs/mpl/example/fsm/state_machine.hpp
+%%PORTDOCS%%share/examples/boost/libs/mpl/example/inherit_linearly.cpp
+%%PORTDOCS%%share/examples/boost/libs/mpl/example/inherit_multiply.cpp
+%%PORTDOCS%%share/examples/boost/libs/mpl/example/integer.cpp
+%%PORTDOCS%%share/examples/boost/libs/mpl/example/lambda2.cpp
+%%PORTDOCS%%share/examples/boost/libs/mpl/example/tuple_from_list.cpp
 %%PORTDOCS%%share/examples/boost/libs/multi_array/example/basic1.cpp
 %%PORTDOCS%%share/examples/boost/libs/multi_array/example/basic2.cpp
 %%PORTDOCS%%share/examples/boost/libs/multi_array/example/for_each.hpp
@@ -3369,30 +3659,44 @@ lib/libboost_thread.a
 %%PORTDOCS%%share/examples/boost/libs/multi_array/example/print_array.cpp
 %%PORTDOCS%%share/examples/boost/libs/multi_array/example/subview.cpp
 %%PORTDOCS%%share/examples/boost/libs/multi_array/example/subview2.cpp
+%%PORTDOCS%%share/examples/boost/libs/numeric/interval/examples/findroot_demo.cpp
+%%PORTDOCS%%share/examples/boost/libs/numeric/interval/examples/horner.cpp
+%%PORTDOCS%%share/examples/boost/libs/numeric/interval/examples/newton-raphson.cpp
+%%PORTDOCS%%share/examples/boost/libs/numeric/interval/examples/rational.cpp
 %%PORTDOCS%%share/examples/boost/libs/preprocessor/doc/examples/array_arithmetic.c
 %%PORTDOCS%%share/examples/boost/libs/preprocessor/doc/examples/catch_builtin.cpp
 %%PORTDOCS%%share/examples/boost/libs/preprocessor/doc/examples/delay.c
 %%PORTDOCS%%share/examples/boost/libs/preprocessor/doc/examples/duffs_device.c
 %%PORTDOCS%%share/examples/boost/libs/preprocessor/doc/examples/is_integral.cpp
 %%PORTDOCS%%share/examples/boost/libs/preprocessor/doc/examples/linear_fib.c
-%%PORTDOCS%%share/examples/boost/libs/preprocessor/example/array_arithmetic.c
-%%PORTDOCS%%share/examples/boost/libs/preprocessor/example/catch_builtin.cpp
-%%PORTDOCS%%share/examples/boost/libs/preprocessor/example/count_down.c
-%%PORTDOCS%%share/examples/boost/libs/preprocessor/example/delay.c
-%%PORTDOCS%%share/examples/boost/libs/preprocessor/example/duffs_device.c
-%%PORTDOCS%%share/examples/boost/libs/preprocessor/example/is_integral.cpp
-%%PORTDOCS%%share/examples/boost/libs/preprocessor/example/linear_fib.c
-%%PORTDOCS%%share/examples/boost/libs/preprocessor/example/note.c
-%%PORTDOCS%%share/examples/boost/libs/preprocessor/example/repeat_2d.c
-%%PORTDOCS%%share/examples/boost/libs/preprocessor/example/static_assert.c
-%%PORTDOCS%%share/examples/boost/libs/preprocessor/example/subscript_layer.cpp
 %%PORTDOCS%%share/examples/boost/libs/python/example/Jamfile
+%%PORTDOCS%%share/examples/boost/libs/python/example/Jamfile.v2
 %%PORTDOCS%%share/examples/boost/libs/python/example/README
 %%PORTDOCS%%share/examples/boost/libs/python/example/getting_started1.cpp
 %%PORTDOCS%%share/examples/boost/libs/python/example/getting_started2.cpp
 %%PORTDOCS%%share/examples/boost/libs/python/example/project.zip
 %%PORTDOCS%%share/examples/boost/libs/python/example/tutorial/Jamfile
 %%PORTDOCS%%share/examples/boost/libs/python/example/tutorial/hello.cpp
+%%PORTDOCS%%share/examples/boost/libs/python/pyste/example/README
+%%PORTDOCS%%share/examples/boost/libs/python/pyste/example/basic.h
+%%PORTDOCS%%share/examples/boost/libs/python/pyste/example/basic.pyste
+%%PORTDOCS%%share/examples/boost/libs/python/pyste/example/enums.h
+%%PORTDOCS%%share/examples/boost/libs/python/pyste/example/enums.pyste
+%%PORTDOCS%%share/examples/boost/libs/python/pyste/example/header_test.h
+%%PORTDOCS%%share/examples/boost/libs/python/pyste/example/header_test.pyste
+%%PORTDOCS%%share/examples/boost/libs/python/pyste/example/nested.h
+%%PORTDOCS%%share/examples/boost/libs/python/pyste/example/nested.pyste
+%%PORTDOCS%%share/examples/boost/libs/python/pyste/example/operators.h
+%%PORTDOCS%%share/examples/boost/libs/python/pyste/example/operators.pyste
+%%PORTDOCS%%share/examples/boost/libs/python/pyste/example/templates.h
+%%PORTDOCS%%share/examples/boost/libs/python/pyste/example/templates.pyste
+%%PORTDOCS%%share/examples/boost/libs/python/pyste/example/unions.h
+%%PORTDOCS%%share/examples/boost/libs/python/pyste/example/unions.pyste
+%%PORTDOCS%%share/examples/boost/libs/python/pyste/example/virtual.h
+%%PORTDOCS%%share/examples/boost/libs/python/pyste/example/virtual.pyste
+%%PORTDOCS%%share/examples/boost/libs/python/pyste/example/wrappertest.h
+%%PORTDOCS%%share/examples/boost/libs/python/pyste/example/wrappertest.pyste
+%%PORTDOCS%%share/examples/boost/libs/python/pyste/example/wrappertest_wrappers.h
 %%PORTDOCS%%share/examples/boost/libs/regex/example/Jamfile
 %%PORTDOCS%%share/examples/boost/libs/regex/example/iso8859_1_regex_traits/iso8859_1_regex_traits.cpp
 %%PORTDOCS%%share/examples/boost/libs/regex/example/iso8859_1_regex_traits/iso8859_1_regex_traits.hpp
@@ -3436,6 +3740,192 @@ lib/libboost_thread.a
 %%PORTDOCS%%share/examples/boost/libs/signals/example/print_sum_product.cpp
 %%PORTDOCS%%share/examples/boost/libs/signals/example/quotient_controlling.cpp
 %%PORTDOCS%%share/examples/boost/libs/signals/example/quotient_named.cpp
+%%PORTDOCS%%share/examples/boost/libs/smart_ptr/example/scoped_ptr_example.cpp
+%%PORTDOCS%%share/examples/boost/libs/smart_ptr/example/scoped_ptr_example.hpp
+%%PORTDOCS%%share/examples/boost/libs/smart_ptr/example/scoped_ptr_example_test.cpp
+%%PORTDOCS%%share/examples/boost/libs/smart_ptr/example/shared_ptr_example.cpp
+%%PORTDOCS%%share/examples/boost/libs/smart_ptr/example/shared_ptr_example2.cpp
+%%PORTDOCS%%share/examples/boost/libs/smart_ptr/example/shared_ptr_example2.hpp
+%%PORTDOCS%%share/examples/boost/libs/smart_ptr/example/shared_ptr_example2_test.cpp
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/Jamfile
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/c/c_grammar.cpp
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/c/readme.txt
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/c/test_files/Ackermann.c
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/c/test_files/ArrayAccess3.c
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/c/test_files/CountLinesWordsChars.c
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/c/test_files/Fibonacci.c
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/c/test_files/HashAccess.c
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/c/test_files/HashAccess2.c
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/c/test_files/HeapSort.c
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/c/test_files/HelloWorld.c
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/c/test_files/Moments.c
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/c/test_files/MultiplyMatrices.c
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/c/test_files/NestedLoops.c
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/c/test_files/RandomGenerator.c
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/c/test_files/ReverseFile.c
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/c/test_files/Sieve.c
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/c/test_files/StringConcat.c
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/c/test_files/SumCol.c
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/cpp_lexer/.cvsignore
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/cpp_lexer/cpp_lexer.cpp
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/cpp_lexer/cpp_lexer.hpp
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/cpp_lexer/cpp_lexer_simple_test.cpp
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/cpp_lexer/cpp_lexer_test.cpp
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/cpp_lexer/cpp_lexer_token.cpp
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/cpp_lexer/cpp_lexer_token.hpp
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/cpp_lexer/lexer_base.hpp
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/cpp_lexer/lexer_token_base.hpp
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/cpp_lexer/makefile
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/cpp_to_html/cpp_to_html.cpp
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/cpp_to_html/cpp_to_html_vc6_7.cpp
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/cpp_to_html/readme.txt
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/cpp_to_html/style.css
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/pascal/readme.txt
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/pascal/sg_pascal.cpp
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/pascal/test_files/t1.pas
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/pascal/test_files/t2.pas
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/pascal/test_files/t3.pas
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/pascal/test_files/t4.pas
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/pascal/test_files/t5.pas
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/pascal/test_files/t6.pas
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/pascal/test_files/t7.pas
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/pascal/test_files/t8.pas
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/quickdoc/doc/grammar.html
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/quickdoc/doc/introduction.html
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/quickdoc/doc/quickdoc.txt
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/quickdoc/doc/syntax_summary.html
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/quickdoc/doc/theme/alert.gif
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/quickdoc/doc/theme/arrow.gif
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/quickdoc/doc/theme/bkd.gif
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/quickdoc/doc/theme/bkd2.gif
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/quickdoc/doc/theme/bulb.gif
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/quickdoc/doc/theme/bullet.gif
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/quickdoc/doc/theme/l_arr.gif
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/quickdoc/doc/theme/l_arr_disabled.gif
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/quickdoc/doc/theme/lens.gif
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/quickdoc/doc/theme/note.gif
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/quickdoc/doc/theme/r_arr.gif
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/quickdoc/doc/theme/r_arr_disabled.gif
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/quickdoc/doc/theme/smiley.gif
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/quickdoc/doc/theme/spirit.gif
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/quickdoc/doc/theme/style.css
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/quickdoc/doc/theme/u_arr.gif
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/quickdoc/index.html
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/quickdoc/quickdoc.cpp
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/quickdoc/quickdoc.hpp
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/rfcdate/mystyle.xls
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/rfcdate/peti.css
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/rfcdate/peti.dsl
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/rfcdate/rfc-skipper.hpp
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/rfcdate/rfcdate-compile-test.cpp
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/rfcdate/rfcdate-parser.hpp
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/rfcdate/rfcdate-test.cpp
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/rfcdate/rfcskipper-compile-test.cpp
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/rfcdate/runtest.sh
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/rfcdate/skipper-test.cpp
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/rfcdate/timestamp-compile-test.cpp
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/rfcdate/timestamp.hpp
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/rfcdate/tutorial.html
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/rfcdate/tutorial.pdf
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/rfcdate/tutorial.xml
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/slex/README
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/slex/callback.cpp
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/slex/lexer.cpp
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/slex/lexer.hpp
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/slex/lexer.output
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/slex/lextest.cpp
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/slex/testfiles/runtest.sh
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/slex/testfiles/test1-1.in
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/slex/testfiles/test1-1.out
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/slex/testfiles/test1-2.in
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/slex/testfiles/test1-2.out
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/slex/testfiles/test1.lex
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/slex/testfiles/test2.lex
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/slex/testfiles/test3-1.in
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/slex/testfiles/test3-1.out
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/slex/testfiles/test3-2.in
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/slex/testfiles/test3-2.out
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/slex/testfiles/test3.lex
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/slex/testfiles/test4-1.in
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/slex/testfiles/test4-1.out
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/slex/testfiles/test4.lex
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/slex/testfiles/test5-1.in
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/slex/testfiles/test5-1.out
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/slex/testfiles/test5.lex
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/slex/testfiles/test6-1.in
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/slex/testfiles/test6-1.out
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/slex/testfiles/test6.lex
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/slex/testfiles/test7-1.in
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/slex/testfiles/test7-1.out
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/slex/testfiles/test7.lex
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/slex/testfiles/test8-1.in
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/slex/testfiles/test8-1.out
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/slex/testfiles/test8.lex
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/xml/ast_xml.cpp
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/xml/goodtest/REC-xml-19980210.xml
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/xml/goodtest/dia.xml
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/xml/goodtest/rss.xml
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/xml/goodtest/xhtml1.xhtml
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/xml/goodtest/xlink.xml
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/xml/iso8859_xml_grammar.hpp
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/xml/simplexml.cpp
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/xml/simplexml.txt
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/xml/test1.cpp
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/xml/test2.cpp
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/xml/test3.cpp
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/xml/test4.cpp
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/xml/test5.cpp
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/xml/xml.cpp
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/application/xml/xml_grammar.hpp
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/fundamental/boiler_plate.cpp
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/fundamental/calc/ast_calc.cpp
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/fundamental/calc/ast_calc2.cpp
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/fundamental/calc/calc_plain.cpp
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/fundamental/calc/calc_with_variables.cpp
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/fundamental/calc/full_calc.cpp
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/fundamental/calc/parse_tree_calc1.cpp
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/fundamental/calc/phoenix_calc.cpp
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/fundamental/calc/phoenix_subrule_calc.cpp
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/fundamental/calc/primitive_calc.cpp
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/fundamental/calc/rpn_calc.cpp
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/fundamental/calc/subrule_calc.cpp
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/fundamental/calc/tree_calc_grammar.hpp
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/fundamental/calc/vmachine_calc.cpp
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/fundamental/comments.cpp
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/fundamental/complex_number.cpp
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/fundamental/dynamic_parser.cpp
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/fundamental/file_parser.cpp
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/fundamental/functor_parser.cpp
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/fundamental/list_parser.cpp
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/fundamental/matching_tags.cpp
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/fundamental/number_list.cpp
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/fundamental/parameters.cpp
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/fundamental/polynomial.cpp
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/fundamental/position_iterator/position_iterator.cpp
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/fundamental/position_iterator/position_iterator.err1
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/fundamental/position_iterator/position_iterator.err2
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/fundamental/position_iterator/position_iterator.err3
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/fundamental/position_iterator/position_iterator.ok
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/fundamental/refactoring.cpp
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/fundamental/regex_convert.cpp
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/fundamental/regular_expression.cpp
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/fundamental/rfc821.cpp
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/fundamental/roman_numerals.cpp
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/fundamental/spirit_bind.cpp
+%%PORTDOCS%%share/examples/boost/libs/spirit/example/fundamental/sum.cpp
+%%PORTDOCS%%share/examples/boost/libs/spirit/phoenix/example/Jamfile
+%%PORTDOCS%%share/examples/boost/libs/spirit/phoenix/example/fundamental/closures.cpp
+%%PORTDOCS%%share/examples/boost/libs/spirit/phoenix/example/fundamental/sample10.cpp
+%%PORTDOCS%%share/examples/boost/libs/spirit/phoenix/example/fundamental/sample2.cpp
+%%PORTDOCS%%share/examples/boost/libs/spirit/phoenix/example/fundamental/sample3.cpp
+%%PORTDOCS%%share/examples/boost/libs/spirit/phoenix/example/fundamental/sample4.cpp
+%%PORTDOCS%%share/examples/boost/libs/spirit/phoenix/example/fundamental/sample5.cpp
+%%PORTDOCS%%share/examples/boost/libs/spirit/phoenix/example/fundamental/sample6.cpp
+%%PORTDOCS%%share/examples/boost/libs/spirit/phoenix/example/fundamental/sample7.cpp
+%%PORTDOCS%%share/examples/boost/libs/spirit/phoenix/example/fundamental/sample8.cpp
+%%PORTDOCS%%share/examples/boost/libs/spirit/phoenix/example/fundamental/sample9.cpp
+%%PORTDOCS%%share/examples/boost/libs/test/example/.cvsignore
+%%PORTDOCS%%share/examples/boost/libs/test/example/Jamfile
 %%PORTDOCS%%share/examples/boost/libs/test/example/prg_exec_example.cpp
 %%PORTDOCS%%share/examples/boost/libs/test/example/test_exec_example.cpp
 %%PORTDOCS%%share/examples/boost/libs/test/example/unit_test_example1.cpp
@@ -3443,8 +3933,10 @@ lib/libboost_thread.a
 %%PORTDOCS%%share/examples/boost/libs/test/example/unit_test_example3.cpp
 %%PORTDOCS%%share/examples/boost/libs/test/example/unit_test_example4.cpp
 %%PORTDOCS%%share/examples/boost/libs/test/example/unit_test_example5.cpp
+%%PORTDOCS%%share/examples/boost/libs/test/example/unit_test_example5.input
 %%PORTDOCS%%share/examples/boost/libs/thread/example/.cvsignore
 %%PORTDOCS%%share/examples/boost/libs/thread/example/Jamfile
+%%PORTDOCS%%share/examples/boost/libs/thread/example/Jamfile.v2
 %%PORTDOCS%%share/examples/boost/libs/thread/example/condition.cpp
 %%PORTDOCS%%share/examples/boost/libs/thread/example/monitor.cpp
 %%PORTDOCS%%share/examples/boost/libs/thread/example/mutex.cpp
@@ -3460,42 +3952,8 @@ lib/libboost_thread.a
 %%PORTDOCS%%share/examples/boost/libs/type_traits/examples/fill_example.cpp
 %%PORTDOCS%%share/examples/boost/libs/type_traits/examples/iter_swap_example.cpp
 %%PORTDOCS%%share/examples/boost/libs/type_traits/examples/trivial_destructor_example.cpp
-%%PORTDOCS%%@dirrm share/examples/boost/libs/type_traits/examples
-%%PORTDOCS%%@dirrm share/examples/boost/libs/type_traits
-%%PORTDOCS%%@dirrm share/examples/boost/libs/thread/example
-%%PORTDOCS%%@dirrm share/examples/boost/libs/thread
-%%PORTDOCS%%@dirrm share/examples/boost/libs/test/example
-%%PORTDOCS%%@dirrm share/examples/boost/libs/test
-%%PORTDOCS%%@dirrm share/examples/boost/libs/signals/example
-%%PORTDOCS%%@dirrm share/examples/boost/libs/signals
-%%PORTDOCS%%@dirrm share/examples/boost/libs/regex/example/timer
-%%PORTDOCS%%@dirrm share/examples/boost/libs/regex/example/snippets
-%%PORTDOCS%%@dirrm share/examples/boost/libs/regex/example/jgrep
-%%PORTDOCS%%@dirrm share/examples/boost/libs/regex/example/iso8859_1_regex_traits
-%%PORTDOCS%%@dirrm share/examples/boost/libs/regex/example
-%%PORTDOCS%%@dirrm share/examples/boost/libs/regex
-%%PORTDOCS%%@dirrm share/examples/boost/libs/python/example/tutorial
-%%PORTDOCS%%@dirrm share/examples/boost/libs/python/example
-%%PORTDOCS%%@dirrm share/examples/boost/libs/python
-%%PORTDOCS%%@dirrm share/examples/boost/libs/preprocessor/example
-%%PORTDOCS%%@dirrm share/examples/boost/libs/preprocessor/doc/examples
-%%PORTDOCS%%@dirrm share/examples/boost/libs/preprocessor/doc
-%%PORTDOCS%%@dirrm share/examples/boost/libs/preprocessor
-%%PORTDOCS%%@dirrm share/examples/boost/libs/multi_array/example
-%%PORTDOCS%%@dirrm share/examples/boost/libs/multi_array
-%%PORTDOCS%%@dirrm share/examples/boost/libs/graph/example/figs
-%%PORTDOCS%%@dirrm share/examples/boost/libs/graph/example
-%%PORTDOCS%%@dirrm share/examples/boost/libs/graph
-%%PORTDOCS%%@dirrm share/examples/boost/libs/function/example
-%%PORTDOCS%%@dirrm share/examples/boost/libs/function
-%%PORTDOCS%%@dirrm share/examples/boost/libs/format/example
-%%PORTDOCS%%@dirrm share/examples/boost/libs/format
-%%PORTDOCS%%@dirrm share/examples/boost/libs/date_time/example/posix_time
-%%PORTDOCS%%@dirrm share/examples/boost/libs/date_time/example/gregorian
-%%PORTDOCS%%@dirrm share/examples/boost/libs/date_time/example
-%%PORTDOCS%%@dirrm share/examples/boost/libs/date_time
-%%PORTDOCS%%@dirrm share/examples/boost/libs
-%%PORTDOCS%%@dirrm share/examples/boost
+%%PORTDOCS%%@dirrm share/doc/boost/tools/regression
+%%PORTDOCS%%@dirrm share/doc/boost/tools/inspect
 %%PORTDOCS%%@dirrm share/doc/boost/tools/build/test
 %%PORTDOCS%%@dirrm share/doc/boost/tools/build/jam_src
 %%PORTDOCS%%@dirrm share/doc/boost/tools/build
@@ -3518,45 +3976,42 @@ lib/libboost_thread.a
 %%PORTDOCS%%@dirrm share/doc/boost/libs/test/doc
 %%PORTDOCS%%@dirrm share/doc/boost/libs/test
 %%PORTDOCS%%@dirrm share/doc/boost/libs/static_assert
+%%PORTDOCS%%@dirrm share/doc/boost/libs/spirit/phoenix/doc/theme
+%%PORTDOCS%%@dirrm share/doc/boost/libs/spirit/phoenix/doc
+%%PORTDOCS%%@dirrm share/doc/boost/libs/spirit/phoenix
+%%PORTDOCS%%@dirrm share/doc/boost/libs/spirit/example/application/rfcdate
+%%PORTDOCS%%@dirrm share/doc/boost/libs/spirit/example/application/quickdoc/doc/theme
+%%PORTDOCS%%@dirrm share/doc/boost/libs/spirit/example/application/quickdoc/doc
+%%PORTDOCS%%@dirrm share/doc/boost/libs/spirit/example/application/quickdoc
+%%PORTDOCS%%@dirrm share/doc/boost/libs/spirit/example/application/cpp_to_html
+%%PORTDOCS%%@dirrm share/doc/boost/libs/spirit/example/application
+%%PORTDOCS%%@dirrm share/doc/boost/libs/spirit/example
+%%PORTDOCS%%@dirrm share/doc/boost/libs/spirit/doc/theme
+%%PORTDOCS%%@dirrm share/doc/boost/libs/spirit/doc
+%%PORTDOCS%%@dirrm share/doc/boost/libs/spirit
 %%PORTDOCS%%@dirrm share/doc/boost/libs/smart_ptr
-%%PORTDOCS%%@dirrm share/doc/boost/libs/signals/doc/reference
 %%PORTDOCS%%@dirrm share/doc/boost/libs/signals/doc
 %%PORTDOCS%%@dirrm share/doc/boost/libs/signals
 %%PORTDOCS%%@dirrm share/doc/boost/libs/regex
 %%PORTDOCS%%@dirrm share/doc/boost/libs/rational
 %%PORTDOCS%%@dirrm share/doc/boost/libs/random
+%%PORTDOCS%%@dirrm share/doc/boost/libs/python/pyste/doc/theme
+%%PORTDOCS%%@dirrm share/doc/boost/libs/python/pyste/doc
+%%PORTDOCS%%@dirrm share/doc/boost/libs/python/pyste
 %%PORTDOCS%%@dirrm share/doc/boost/libs/python/doc/v2
 %%PORTDOCS%%@dirrm share/doc/boost/libs/python/doc/tutorial/doc/theme
 %%PORTDOCS%%@dirrm share/doc/boost/libs/python/doc/tutorial/doc
 %%PORTDOCS%%@dirrm share/doc/boost/libs/python/doc/tutorial
+%%PORTDOCS%%@dirrm share/doc/boost/libs/python/doc/PyConDC_2003
 %%PORTDOCS%%@dirrm share/doc/boost/libs/python/doc
 %%PORTDOCS%%@dirrm share/doc/boost/libs/python
 %%PORTDOCS%%@dirrm share/doc/boost/libs/property_map
-%%PORTDOCS%%@dirrm share/doc/boost/libs/preprocessor/docs.1/ref
-%%PORTDOCS%%@dirrm share/doc/boost/libs/preprocessor/docs.1/headers/tuple
-%%PORTDOCS%%@dirrm share/doc/boost/libs/preprocessor/docs.1/headers/slot
-%%PORTDOCS%%@dirrm share/doc/boost/libs/preprocessor/docs.1/headers/selection
-%%PORTDOCS%%@dirrm share/doc/boost/libs/preprocessor/docs.1/headers/repetition
-%%PORTDOCS%%@dirrm share/doc/boost/libs/preprocessor/docs.1/headers/punctuation
-%%PORTDOCS%%@dirrm share/doc/boost/libs/preprocessor/docs.1/headers/logical
-%%PORTDOCS%%@dirrm share/doc/boost/libs/preprocessor/docs.1/headers/list
-%%PORTDOCS%%@dirrm share/doc/boost/libs/preprocessor/docs.1/headers/iteration
-%%PORTDOCS%%@dirrm share/doc/boost/libs/preprocessor/docs.1/headers/facilities
-%%PORTDOCS%%@dirrm share/doc/boost/libs/preprocessor/docs.1/headers/debug
-%%PORTDOCS%%@dirrm share/doc/boost/libs/preprocessor/docs.1/headers/control
-%%PORTDOCS%%@dirrm share/doc/boost/libs/preprocessor/docs.1/headers/config
-%%PORTDOCS%%@dirrm share/doc/boost/libs/preprocessor/docs.1/headers/comparison
-%%PORTDOCS%%@dirrm share/doc/boost/libs/preprocessor/docs.1/headers/array
-%%PORTDOCS%%@dirrm share/doc/boost/libs/preprocessor/docs.1/headers/arithmetic
-%%PORTDOCS%%@dirrm share/doc/boost/libs/preprocessor/docs.1/headers
-%%PORTDOCS%%@dirrm share/doc/boost/libs/preprocessor/docs.1/data
-%%PORTDOCS%%@dirrm share/doc/boost/libs/preprocessor/docs.1
 %%PORTDOCS%%@dirrm share/doc/boost/libs/preprocessor/doc/topics
 %%PORTDOCS%%@dirrm share/doc/boost/libs/preprocessor/doc/terms
-%%PORTDOCS%%@dirrm share/doc/boost/libs/preprocessor/doc/reference
 %%PORTDOCS%%@dirrm share/doc/boost/libs/preprocessor/doc/ref
 %%PORTDOCS%%@dirrm share/doc/boost/libs/preprocessor/doc/headers/tuple
 %%PORTDOCS%%@dirrm share/doc/boost/libs/preprocessor/doc/headers/slot
+%%PORTDOCS%%@dirrm share/doc/boost/libs/preprocessor/doc/headers/seq
 %%PORTDOCS%%@dirrm share/doc/boost/libs/preprocessor/doc/headers/selection
 %%PORTDOCS%%@dirrm share/doc/boost/libs/preprocessor/doc/headers/repetition
 %%PORTDOCS%%@dirrm share/doc/boost/libs/preprocessor/doc/headers/punctuation
@@ -3578,8 +4033,12 @@ lib/libboost_thread.a
 %%PORTDOCS%%@dirrm share/doc/boost/libs/pool/doc/implementation
 %%PORTDOCS%%@dirrm share/doc/boost/libs/pool/doc
 %%PORTDOCS%%@dirrm share/doc/boost/libs/pool
+%%PORTDOCS%%@dirrm share/doc/boost/libs/optional/doc
+%%PORTDOCS%%@dirrm share/doc/boost/libs/optional
 %%PORTDOCS%%@dirrm share/doc/boost/libs/numeric/ublas/doc
 %%PORTDOCS%%@dirrm share/doc/boost/libs/numeric/ublas
+%%PORTDOCS%%@dirrm share/doc/boost/libs/numeric/interval/doc
+%%PORTDOCS%%@dirrm share/doc/boost/libs/numeric/interval
 %%PORTDOCS%%@dirrm share/doc/boost/libs/numeric
 %%PORTDOCS%%@dirrm share/doc/boost/libs/multi_array/doc
 %%PORTDOCS%%@dirrm share/doc/boost/libs/multi_array
@@ -3609,10 +4068,11 @@ lib/libboost_thread.a
 %%PORTDOCS%%@dirrm share/doc/boost/libs/graph/doc
 %%PORTDOCS%%@dirrm share/doc/boost/libs/graph
 %%PORTDOCS%%@dirrm share/doc/boost/libs/functional
-%%PORTDOCS%%@dirrm share/doc/boost/libs/function/doc
 %%PORTDOCS%%@dirrm share/doc/boost/libs/function
 %%PORTDOCS%%@dirrm share/doc/boost/libs/format/doc
 %%PORTDOCS%%@dirrm share/doc/boost/libs/format
+%%PORTDOCS%%@dirrm share/doc/boost/libs/filesystem/doc
+%%PORTDOCS%%@dirrm share/doc/boost/libs/filesystem
 %%PORTDOCS%%@dirrm share/doc/boost/libs/dynamic_bitset
 %%PORTDOCS%%@dirrm share/doc/boost/libs/disjoint_sets
 %%PORTDOCS%%@dirrm share/doc/boost/libs/date_time/doc
@@ -3627,7 +4087,81 @@ lib/libboost_thread.a
 %%PORTDOCS%%@dirrm share/doc/boost/libs/array
 %%PORTDOCS%%@dirrm share/doc/boost/libs/any
 %%PORTDOCS%%@dirrm share/doc/boost/libs
+%%PORTDOCS%%@dirrm share/doc/boost/doc/html/images
+%%PORTDOCS%%@dirrm share/doc/boost/doc/html
+%%PORTDOCS%%@dirrm share/doc/boost/doc
 %%PORTDOCS%%@dirrm share/doc/boost
+%%PORTDOCS%%@dirrm share/examples/boost/libs/type_traits/examples
+%%PORTDOCS%%@dirrm share/examples/boost/libs/type_traits
+%%PORTDOCS%%@dirrm share/examples/boost/libs/thread/example
+%%PORTDOCS%%@dirrm share/examples/boost/libs/thread
+%%PORTDOCS%%@dirrm share/examples/boost/libs/test/example
+%%PORTDOCS%%@dirrm share/examples/boost/libs/test
+%%PORTDOCS%%@dirrm share/examples/boost/libs/spirit/phoenix/example/fundamental
+%%PORTDOCS%%@dirrm share/examples/boost/libs/spirit/phoenix/example
+%%PORTDOCS%%@dirrm share/examples/boost/libs/spirit/phoenix
+%%PORTDOCS%%@dirrm share/examples/boost/libs/spirit/example/fundamental/position_iterator
+%%PORTDOCS%%@dirrm share/examples/boost/libs/spirit/example/fundamental/calc
+%%PORTDOCS%%@dirrm share/examples/boost/libs/spirit/example/fundamental
+%%PORTDOCS%%@dirrm share/examples/boost/libs/spirit/example/application/xml/goodtest
+%%PORTDOCS%%@dirrm share/examples/boost/libs/spirit/example/application/xml
+%%PORTDOCS%%@dirrm share/examples/boost/libs/spirit/example/application/slex/testfiles
+%%PORTDOCS%%@dirrm share/examples/boost/libs/spirit/example/application/slex
+%%PORTDOCS%%@dirrm share/examples/boost/libs/spirit/example/application/rfcdate
+%%PORTDOCS%%@dirrm share/examples/boost/libs/spirit/example/application/quickdoc/doc/theme
+%%PORTDOCS%%@dirrm share/examples/boost/libs/spirit/example/application/quickdoc/doc
+%%PORTDOCS%%@dirrm share/examples/boost/libs/spirit/example/application/quickdoc
+%%PORTDOCS%%@dirrm share/examples/boost/libs/spirit/example/application/pascal/test_files
+%%PORTDOCS%%@dirrm share/examples/boost/libs/spirit/example/application/pascal
+%%PORTDOCS%%@dirrm share/examples/boost/libs/spirit/example/application/cpp_to_html
+%%PORTDOCS%%@dirrm share/examples/boost/libs/spirit/example/application/cpp_lexer
+%%PORTDOCS%%@dirrm share/examples/boost/libs/spirit/example/application/c/test_files
+%%PORTDOCS%%@dirrm share/examples/boost/libs/spirit/example/application/c
+%%PORTDOCS%%@dirrm share/examples/boost/libs/spirit/example/application
+%%PORTDOCS%%@dirrm share/examples/boost/libs/spirit/example
+%%PORTDOCS%%@dirrm share/examples/boost/libs/spirit
+%%PORTDOCS%%@dirrm share/examples/boost/libs/smart_ptr/example
+%%PORTDOCS%%@dirrm share/examples/boost/libs/smart_ptr
+%%PORTDOCS%%@dirrm share/examples/boost/libs/signals/example
+%%PORTDOCS%%@dirrm share/examples/boost/libs/signals
+%%PORTDOCS%%@dirrm share/examples/boost/libs/regex/example/timer
+%%PORTDOCS%%@dirrm share/examples/boost/libs/regex/example/snippets
+%%PORTDOCS%%@dirrm share/examples/boost/libs/regex/example/jgrep
+%%PORTDOCS%%@dirrm share/examples/boost/libs/regex/example/iso8859_1_regex_traits
+%%PORTDOCS%%@dirrm share/examples/boost/libs/regex/example
+%%PORTDOCS%%@dirrm share/examples/boost/libs/regex
+%%PORTDOCS%%@dirrm share/examples/boost/libs/python/pyste/example
+%%PORTDOCS%%@dirrm share/examples/boost/libs/python/pyste
+%%PORTDOCS%%@dirrm share/examples/boost/libs/python/example/tutorial
+%%PORTDOCS%%@dirrm share/examples/boost/libs/python/example
+%%PORTDOCS%%@dirrm share/examples/boost/libs/python
+%%PORTDOCS%%@dirrm share/examples/boost/libs/preprocessor/doc/examples
+%%PORTDOCS%%@dirrm share/examples/boost/libs/preprocessor/doc
+%%PORTDOCS%%@dirrm share/examples/boost/libs/preprocessor
+%%PORTDOCS%%@dirrm share/examples/boost/libs/numeric/interval/examples
+%%PORTDOCS%%@dirrm share/examples/boost/libs/numeric/interval
+%%PORTDOCS%%@dirrm share/examples/boost/libs/numeric
+%%PORTDOCS%%@dirrm share/examples/boost/libs/multi_array/example
+%%PORTDOCS%%@dirrm share/examples/boost/libs/multi_array
+%%PORTDOCS%%@dirrm share/examples/boost/libs/mpl/example/fsm/aux_
+%%PORTDOCS%%@dirrm share/examples/boost/libs/mpl/example/fsm
+%%PORTDOCS%%@dirrm share/examples/boost/libs/mpl/example
+%%PORTDOCS%%@dirrm share/examples/boost/libs/mpl
+%%PORTDOCS%%@dirrm share/examples/boost/libs/graph/example/figs
+%%PORTDOCS%%@dirrm share/examples/boost/libs/graph/example
+%%PORTDOCS%%@dirrm share/examples/boost/libs/graph
+%%PORTDOCS%%@dirrm share/examples/boost/libs/function/example
+%%PORTDOCS%%@dirrm share/examples/boost/libs/function
+%%PORTDOCS%%@dirrm share/examples/boost/libs/format/example
+%%PORTDOCS%%@dirrm share/examples/boost/libs/format
+%%PORTDOCS%%@dirrm share/examples/boost/libs/filesystem/example
+%%PORTDOCS%%@dirrm share/examples/boost/libs/filesystem
+%%PORTDOCS%%@dirrm share/examples/boost/libs/date_time/example/posix_time
+%%PORTDOCS%%@dirrm share/examples/boost/libs/date_time/example/gregorian
+%%PORTDOCS%%@dirrm share/examples/boost/libs/date_time/example
+%%PORTDOCS%%@dirrm share/examples/boost/libs/date_time
+%%PORTDOCS%%@dirrm share/examples/boost/libs
+%%PORTDOCS%%@dirrm share/examples/boost
 @dirrm include/boost/utility
 @dirrm include/boost/type_traits/detail
 @dirrm include/boost/type_traits
@@ -3638,9 +4172,39 @@ lib/libboost_thread.a
 @dirrm include/boost/test/included
 @dirrm include/boost/test/detail
 @dirrm include/boost/test
+@dirrm include/boost/spirit/utility/impl/chset
+@dirrm include/boost/spirit/utility/impl
+@dirrm include/boost/spirit/utility
+@dirrm include/boost/spirit/tree/impl
+@dirrm include/boost/spirit/tree
+@dirrm include/boost/spirit/symbols/impl
+@dirrm include/boost/spirit/symbols
+@dirrm include/boost/spirit/phoenix
+@dirrm include/boost/spirit/iterator/impl
+@dirrm include/boost/spirit/iterator
+@dirrm include/boost/spirit/error_handling/impl
+@dirrm include/boost/spirit/error_handling
+@dirrm include/boost/spirit/dynamic/impl
+@dirrm include/boost/spirit/dynamic
+@dirrm include/boost/spirit/debug/impl
+@dirrm include/boost/spirit/debug
+@dirrm include/boost/spirit/core/scanner/impl
+@dirrm include/boost/spirit/core/scanner
+@dirrm include/boost/spirit/core/primitives/impl
+@dirrm include/boost/spirit/core/primitives
+@dirrm include/boost/spirit/core/non_terminal/impl
+@dirrm include/boost/spirit/core/non_terminal
+@dirrm include/boost/spirit/core/meta/impl
+@dirrm include/boost/spirit/core/meta
+@dirrm include/boost/spirit/core/impl
+@dirrm include/boost/spirit/core/composite/impl
+@dirrm include/boost/spirit/core/composite
+@dirrm include/boost/spirit/core
+@dirrm include/boost/spirit/attribute
+@dirrm include/boost/spirit
 @dirrm include/boost/signals/detail
 @dirrm include/boost/signals
-@dirrm include/boost/regex/detail
+@dirrm include/boost/regex/v3
 @dirrm include/boost/regex
 @dirrm include/boost/random/detail
 @dirrm include/boost/random
@@ -3651,6 +4215,8 @@ lib/libboost_thread.a
 @dirrm include/boost/preprocessor/tuple
 @dirrm include/boost/preprocessor/slot/detail
 @dirrm include/boost/preprocessor/slot
+@dirrm include/boost/preprocessor/seq/detail
+@dirrm include/boost/preprocessor/seq
 @dirrm include/boost/preprocessor/selection
 @dirrm include/boost/preprocessor/repetition/detail/msvc
 @dirrm include/boost/preprocessor/repetition/detail/edg
@@ -3683,6 +4249,10 @@ lib/libboost_thread.a
 @dirrm include/boost/pending/detail
 @dirrm include/boost/pending
 @dirrm include/boost/numeric/ublas
+@dirrm include/boost/numeric/interval/ext
+@dirrm include/boost/numeric/interval/detail
+@dirrm include/boost/numeric/interval/compare
+@dirrm include/boost/numeric/interval
 @dirrm include/boost/numeric
 @dirrm include/boost/multi_array
 @dirrm include/boost/mpl/vector/aux_/preprocessed/typeof_based
@@ -3692,17 +4262,15 @@ lib/libboost_thread.a
 @dirrm include/boost/mpl/vector/aux_
 @dirrm include/boost/mpl/vector
 @dirrm include/boost/mpl/math
-@dirrm include/boost/mpl/logical
 @dirrm include/boost/mpl/list/aux_/preprocessed/plain
 @dirrm include/boost/mpl/list/aux_/preprocessed
 @dirrm include/boost/mpl/list/aux_
 @dirrm include/boost/mpl/list
 @dirrm include/boost/mpl/limits
-@dirrm include/boost/mpl/compose
-@dirrm include/boost/mpl/comparison
 @dirrm include/boost/mpl/aux_/range_c
 @dirrm include/boost/mpl/aux_/preprocessor
 @dirrm include/boost/mpl/aux_/preprocessed/plain
+@dirrm include/boost/mpl/aux_/preprocessed/no_ttp
 @dirrm include/boost/mpl/aux_/preprocessed/no_ctps
 @dirrm include/boost/mpl/aux_/preprocessed/mwcw
 @dirrm include/boost/mpl/aux_/preprocessed/msvc70
@@ -3713,7 +4281,6 @@ lib/libboost_thread.a
 @dirrm include/boost/mpl/aux_/preprocessed
 @dirrm include/boost/mpl/aux_/config
 @dirrm include/boost/mpl/aux_
-@dirrm include/boost/mpl/arithmetic
 @dirrm include/boost/mpl
 @dirrm include/boost/math/special_functions
 @dirrm include/boost/math
@@ -3723,8 +4290,10 @@ lib/libboost_thread.a
 @dirrm include/boost/integer
 @dirrm include/boost/graph/detail
 @dirrm include/boost/graph
+@dirrm include/boost/function/detail
 @dirrm include/boost/function
 @dirrm include/boost/format
+@dirrm include/boost/filesystem
 @dirrm include/boost/detail
 @dirrm include/boost/date_time/posix_time
 @dirrm include/boost/date_time/gregorian
