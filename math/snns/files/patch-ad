@@ -1,0 +1,11 @@
+--- tools/sources/Makefile.orig	Sat Dec  4 12:53:02 1999
++++ tools/sources/Makefile	Sat Dec  4 12:53:17 1999
+@@ -110,7 +110,7 @@
+ tools:       $(TOOLS_PRG) $(KRTOOLS_PRG) $(BATCH_PRG)
+ 
+ $(TOOLSBINDIR):
+-	-mkdir $(TOOLSBINDIR)
++	-mkdir -p $(TOOLSBINDIR)
+ 
+ install: tools $(TOOLSBINDIR)
+ 	for tooltarget in $(TOOLS_PRG) $(KRTOOLS_PRG) $(BATCH_PRG) ; do \

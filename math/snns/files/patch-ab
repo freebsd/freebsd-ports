@@ -1,0 +1,20 @@
+--- kernel/sources/Makefile.orig	Thu Sep  3 06:38:00 1998
++++ kernel/sources/Makefile	Sat Dec  4 12:52:06 1999
+@@ -27,7 +27,7 @@
+ # Define final C-preprocessor options for the kernel
+ # Additional definitions like -I... and -D... go here
+ CPPFLAGS           = -I../.. \
+-                     $(ENZOFLAGS)
++                     $(ENZOFLAGS) -DHAVE_VALUES_H
+ 
+ # Here you may change the default C-compiler flags as set in
+ # ../../Makefile.def (not recommended)
+@@ -100,7 +100,7 @@
+ all: $(LIBKERNEL) $(LIBFUNCS)
+ 
+ $(KERNELBINDIR):
+-	-mkdir $(KERNELBINDIR)
++	-mkdir -p $(KERNELBINDIR)
+ 
+ install: all $(KERNELBINDIR)
+ 	@echo "nothing to install"

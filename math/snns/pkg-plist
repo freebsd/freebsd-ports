@@ -1,23 +1,25 @@
 bin/snns
 snns/Readme
 snns/Readme.license
-snns/default.cfg
-snns/help.hdoc
 snns/bin/analyze
 snns/bin/batchman
-snns/bin/bignet
 snns/bin/convert2snns
 snns/bin/feedback-gennet
+snns/bin/ff_bignet
 snns/bin/isnns
+snns/bin/linknets
 snns/bin/mkhead
 snns/bin/mkout
 snns/bin/mkpat
 snns/bin/netlearn
 snns/bin/netperf
 snns/bin/pat_sel
+snns/bin/pat_sel_simple
 snns/bin/snns2c
 snns/bin/snnsbat
+snns/bin/td_bignet
 snns/bin/xgui
+snns/default.cfg
 snns/examples/README.all
 snns/examples/art1_letters.README
 snns/examples/art1_letters.cfg
@@ -99,18 +101,21 @@ snns/examples/letters.pat
 snns/examples/letters.res
 snns/examples/letters3D.cfg
 snns/examples/letters3D.net
-snns/examples/letters_test.net
+snns/examples/letters_auto.pat
 snns/examples/letters_untrained.net
+snns/examples/letters_with_classes.pat
 snns/examples/nettalk.README
 snns/examples/nettalk.cfg
 snns/examples/nettalk.net
 snns/examples/nettalk.pat
+snns/examples/nettalk_thr.net
 snns/examples/patmat.README
 snns/examples/patmat.cfg
 snns/examples/patmat.chk
 snns/examples/patmat.net
 snns/examples/patmat.pat
 snns/examples/patmat_untrained.net
+snns/examples/rpropMAP.net
 snns/examples/snnsbat1.cfb
 snns/examples/snnsbat2.cfb
 snns/examples/som_cube.README
@@ -123,6 +128,12 @@ snns/examples/spirals.pat
 snns/examples/spirals_dda.README
 snns/examples/spirals_dda.cfg
 snns/examples/spirals_dda.net
+snns/examples/sprach_test.pat
+snns/examples/sprach_train.pat
+snns/examples/testMAP.pat
+snns/examples/trainMAP.pat
+snns/examples/trainValidMAP.pat
+snns/examples/validMAP.pat
 snns/examples/watch.README
 snns/examples/watch.cfg
 snns/examples/watch.net
@@ -143,6 +154,7 @@ snns/examples/xor_rec.net
 snns/examples/xor_rec1.pat
 snns/examples/xor_rec2.pat
 snns/examples/xor_untrained.net
+snns/help.hdoc
 @dirrm snns/bin
 @dirrm snns/examples
 @dirrm snns

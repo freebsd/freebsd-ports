@@ -1,0 +1,11 @@
+--- xgui/sources/Makefile.orig	Sat Dec  4 12:53:34 1999
++++ xgui/sources/Makefile	Sat Dec  4 12:53:53 1999
+@@ -147,7 +147,7 @@
+ all: $(PROGRAM)
+ 
+ $(XGUIBINDIR):
+-	-mkdir $(XGUIBINDIR)
++	-mkdir -p $(XGUIBINDIR)
+ 
+ install: all $(XGUIBINDIR)
+ 	$(INSTALL_PROGRAM) $(PROGRAM) $(XGUIBINDIR)

@@ -1,0 +1,15 @@
+--- man/Makefile.orig	Sat Dec  4 12:52:20 1999
++++ man/Makefile	Sat Dec  4 12:52:35 1999
+@@ -45,10 +45,10 @@
+ 	@echo "nothing to make"
+ 
+ $(MANDIR):
+-	-mkdir $(MANDIR)
++	-mkdir -p $(MANDIR)
+ 
+ $(MAN1DIR): $(MANDIR)
+-	-mkdir $(MAN1DIR)
++	-mkdir -p $(MAN1DIR)
+ 
+ install-one: $(MAN1DIR)
+ 	for mantarget in $(MAN1FILES) ; do \
