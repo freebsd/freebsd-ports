@@ -45,7 +45,7 @@ pre-configure:
 .for AM in automake aclocal
 	${LN} -sf ${LOCALBASE}/bin/${AM}14 ${WRKSRC}/auto-bin/${AM}
 .endfor
-	cd ${WRKSRC} && env PATH=$$PATH:${WRKSRC}/auto-bin \
+	cd ${WRKSRC} && env PATH=${WRKSRC}/auto-bin:$$PATH \
 		${GMAKE} -f Makefile.cvs
 	find ${WRKSRC} -name Makefile.in | xargs ${PERL} -pi -e \
 		"s@sdl-config@${LOCALBASE}/bin/sdl11-config@g"
