@@ -1,0 +1,7 @@
+bin/coldsync
+@unexec install-info --delete %D/info/conduits.info %D/info/dir
+@unexec install-info --delete %D/info/pdb.info %D/info/dir
+info/conduits.info
+info/pdb.info
+@exec install-info %D/info/conduits.info %D/info/dir
+@exec install-info %D/info/pdb.info %D/info/dir
