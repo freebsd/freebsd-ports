@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# $Id$
+
 cd $WRKSRC || exit 1
 
 mv runbb.sh runbb.sh.orig

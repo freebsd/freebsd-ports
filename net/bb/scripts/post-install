@@ -1,0 +1,9 @@
+#! /bin/sh
+
+# $Id$
+
+sed -e "s=!!PREFIX!!=${PREFIX}=" \
+	< ${FILESDIR}/bb.sh \
+	> ${PREFIX}/etc/rc.d/bb.sh
+
+chmod 554 ${PREFIX}/etc/rc.d/bb.sh

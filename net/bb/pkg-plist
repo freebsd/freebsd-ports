@@ -1,9 +1,13 @@
+etc/rc.d/bb.sh
 bb/README
+bb/runbb.sh
 bb/bin/bb
 bb/bin/bb-local.sh
 bb/bin/bb-network.sh
 bb/bin/bb-page.sh
 bb/bin/bbd
+bb/bin/bbnet
+bb/bin/sendmsg
 bb/bin/touchtime
 bb/doc/README
 bb/doc/STRUCTURE
@@ -19,7 +23,6 @@ bb/etc/bbsys.local
 bb/etc/bbsys.sh
 bb/etc/bbsys.solaris
 bb/etc/bbsys.sunos
-bb/runbb.sh
 bb/web/mkbb.bkg
 bb/web/mkbb.cols
 bb/web/mkbb.sh
@@ -47,3 +50,14 @@ bb/www/gifs/yellow.gif
 bb/www/logs/later
 bb/tmp/.keep_me
 www/cgi-bin/bb-pager.sh
+@dirrm bb/bin
+@dirrm bb/doc
+@dirrm bb/etc
+@dirrm bb/web
+@dirrm bb/www/gifs
+@dirrm bb/www/logs
+@dirrm bb/www/notes
+@dirrm bb/www
+@dirrm bb/tmp
+@dirrm bb
+www/data/bb
