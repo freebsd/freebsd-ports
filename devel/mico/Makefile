@@ -10,17 +10,20 @@ PORTVERSION=	2.3.10
 CATEGORIES=	devel
 MASTER_SITES=	http://www.mico.org/
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A CORBA 2.0 implementation which goal is freely available
+MAINTAINER=	sem@ciam.ru
+COMMENT=	An Open Source CORBA 2.3 implementation
 
 WRKSRC=			${WRKDIR}/mico
 INSTALLS_SHLIB=		yes
 GNU_CONFIGURE=		yes
 USE_REINPLACE=		yes
 USE_GMAKE=		yes
-USE_GCC=		3.2
-CONIFUGRE_ARGS+=	--enable-minimum-corba --enable-cd \
-			--disable-mini-stl \
+CONIFUGRE_ARGS+=	--enable-cd --disable-mini-stl \
+			--enable-ccm --enable-threads
+.if !defined(WITHOUT_SSL)
+USE_OPENSSL=		yes
+CONFIGURE_ARGS+=	--enable-ssl=${OPENSSLBASE}
+.endif
 
 MAN1=		idl.1 imr.1 nsadmin.1
 MAN5=		micorc.5
