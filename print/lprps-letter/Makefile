@@ -4,7 +4,7 @@
 # Date created:         Sat Aug 3, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.1.1.1 1996/11/25 01:04:52 obrien Exp $
+# $Id: Makefile,v 1.2 1997/05/25 04:35:44 obrien Exp $
 #
 
 DISTNAME=	lprps-2.5
@@ -12,7 +12,7 @@ CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.jclark.com/pub/lprps/
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=     obrien@cs.ucdavis.edu
+MAINTAINER=     obrien@FreeBSD.org
 
 MAKE_FLAGS?=	PAPERSIZE=${PAPERSIZE} -f
 MAN1=		psrev.1 textps.1

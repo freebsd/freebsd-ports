@@ -4,7 +4,7 @@
 # Date created:         Thur Nov 21, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1996/11/22 08:16:48 obrien Exp $
 #
 
 DISTNAME=	nc110
@@ -17,7 +17,7 @@ MASTER_SITES=	ftp://avian.org/src/hacks/  \
 		ftp://ftp.rge.com:/pub/security/coast/mirrors/avian.org/netcat/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=     obrien@cs.ucdavis.edu
+MAINTAINER=     obrien@FreeBSD.org
 
 NO_WRKSUBDIR=	yes
 ALL_TARGET=	freebsd

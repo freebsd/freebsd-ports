@@ -3,7 +3,7 @@
 # Date created:		31-Dec-1995
 # Whom:                 David O'Brien <obrien@cs.ucdavis.edu>
 #
-# $Id: Makefile,v 1.7 1997/05/28 22:35:17 fenner Exp $
+# $Id: Makefile,v 1.8 1997/09/04 05:55:41 obrien Exp $
 #
 
 DISTNAME=	xcpustate-2.4
@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.cdf.toronto.edu/pub/xcpustate/  \
 MASTER_SITE_SUBDIR=	utilities
 EXTRACT_SUFX=	.shar.gz
 
-MAINTAINER=     obrien@cs.ucdavis.edu
+MAINTAINER=     obrien@FreeBSD.org
 
 EXTRACT_CMD=	zcat
 EXTRACT_BEFORE_ARGS=

@@ -4,7 +4,7 @@
 # Date created:		21-Dec-1996
 # Whom:                 David O'Brien <obrien@cs.ucdavis.edu>
 #
-# $Id: Makefile,v 1.3 1996/11/18 09:54:53 asami Exp $
+# $Id: Makefile,v 1.1.1.1 1996/12/25 12:13:00 obrien Exp $
 #
 
 DISTNAME=	mixal-1.06
@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.ccil.org/retro/  \
 		ftp://locke.ccil.org/pub/retro/
 EXTRACT_SUFX=	.shar.gz
 
-MAINTAINER=     obrien@cs.ucdavis.edu
+MAINTAINER=     obrien@FreeBSD.org
 
 EXTRACT_CMD=	zcat
 EXTRACT_BEFORE_ARGS=

@@ -4,7 +4,7 @@
 # Date created:         29 July 1996
 # Whom:                 David O'Brien <obrien@cs.ucdavis.edu>
 #
-# $Id: Makefile,v 1.2 1996/12/09 00:01:32 obrien Exp $
+# $Id: Makefile,v 1.3 1997/04/30 03:17:56 asami Exp $
 #
 
 DISTNAME=	zmtx-zmrx
@@ -16,7 +16,7 @@ MASTER_SITES=	ftp://ftp.inria.fr/network/modem/  \
 # ftp://ftp.lth.se/pub/usenet/comp.sources.unix/volume28/zm/part01.gz
 EXTRACT_SUFX=	.shar.gz
 
-MAINTAINER=	obrien@cs.ucdavis.edu
+MAINTAINER=	obrien@FreeBSD.org
 
 EXTRACT_CMD=	zcat
 EXTRACT_BEFORE_ARGS=

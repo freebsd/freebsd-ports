@@ -3,7 +3,7 @@
 # Date created:         Thur Sept 25, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.4 1996/12/08 01:45:15 max Exp $
+# $Id: Makefile,v 1.5 1997/05/28 05:52:46 fenner Exp $
 #
 
 DISTNAME=	vfrb101e
@@ -12,7 +12,7 @@ CATEGORIES=	security
 MASTER_SITES=   ftp://ftp.mcafee.com/pub/antivirus/unix/freebsd/
 EXTRACT_SUFX=	.taz
 
-MAINTAINER=     obrien@cs.ucdavis.edu
+MAINTAINER=     obrien@FreeBSD.org
 
 NO_WRKSUBDIR=	yes
 RESTRICTED=	"Commercial software"

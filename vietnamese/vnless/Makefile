@@ -3,7 +3,7 @@
 # Date created:         Tue Dec 3, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.1.1.1 1996/12/06 12:38:52 obrien Exp $
+# $Id: Makefile,v 1.2 1997/09/22 16:54:20 max Exp $
 #
 
 DISTNAME=	vnless
@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.media.mit.edu/pub/Vietnet/Viscii/Unix/  \
 		ftp://ftp.monash.edu.au/pub/vietnam/unix/
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=     obrien@cs.ucdavis.edu
+MAINTAINER=     obrien@FreeBSD.org
 
 ALL_TARGET=	clobber all
 MAN1=		vnless.1 vnlesskey.1
