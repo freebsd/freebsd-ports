@@ -387,6 +387,7 @@
     SUBDIR += p5-NetAddr-IP
     SUBDIR += p5-NetAddr-IP-Count
     SUBDIR += p5-NetPacket
+    SUBDIR += p5-POE-Component-RRDTool
     SUBDIR += p5-PlRPC
     SUBDIR += p5-RPC-XML
     SUBDIR += p5-SNMP

@@ -1,0 +1,14 @@
+RRDtool refers to round robin database tool.  Round robin databases have
+a fixed number of data points in them and contain a pointer to the
+current element.  Since the databases have a fixed number of data points
+the database size doesn't change after creation.  RRDtool allows you to
+define a set of archives which consolidate the primary data points in
+higher granularity.  RRDtool is specialized for time series data and can
+be used to create RRD files, update RRDs, retreive data from RRDs, and
+generate graphs from the databases.  This module provides a POE wrapper
+around the rrdtool command line interface.
+
+WWW: http://search.cpan.org/search?dist=POE-Component-RRDTool
+
+-- Sergey Skvortsov
+skv@FreeBSD.org
