@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	conquest
-PORTVERSION=	7.1
+PORTVERSION=	7.1.1
 CATEGORIES=	games
 MASTER_SITES=	http://www.radscan.com/conquest/
 EXTRACT_SUFX=	.src.tar.gz
