@@ -208,6 +208,7 @@ share/licq/qt-gui/skin.thomas/btnDown.png
 share/licq/qt-gui/skin.thomas/btnHighlight.png
 share/licq/qt-gui/skin.thomas/btnUp.png
 share/licq/qt-gui/skin.thomas/thomas.skin
+@dirrm lib/licq
 @dirrm share/licq/qt-gui/icons.mark
 @dirrm share/licq/qt-gui/icons.icq2
 @dirrm share/licq/qt-gui/icons.icq
