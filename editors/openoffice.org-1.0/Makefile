@@ -500,7 +500,7 @@ do-build:
 .endif
 .if defined(LANG_PKGNAME)
 	@cd ${WRKSRC}/.. && PATH="${PATH}:${LOCALBASE}/bin:${LOCALBASE}/sbin" && \
-		${TCSH} -c 'source FreeBSDEnv.Set && unsetenv TOP && cd instsetoo/util && ${BUILD} LANGEXT=${LANGEXT}'
+		${TCSH} -c 'source FreeBSDEnv.Set && unsetenv TOP && cd instsetoo/util && ${BUILD} LANGEXT=${LANG_EXT}'
 .endif
 
 pre-install:
