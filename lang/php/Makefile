@@ -7,6 +7,7 @@
 
 PORTNAME=	php
 PORTVERSION= 	3.0.18
+PORTREVISION=	1
 CATEGORIES=	lang www
 MASTER_SITES=	ftp://ftp.php.net/pub/${PHP_DISTDIR}/ \
 		http://us.php.net/${PHP_DISTDIR}/ \
