@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ncbi-toolkit
-PORTVERSION=	2002.04.26
+PORTVERSION=	2003.04.21
 CATEGORIES=	biology
 MASTER_SITES=	ftp://ftp.ncbi.nih.gov/toolbox/ncbi_tools/old/${PORTVERSION:S/.//g}/
 DISTNAME=	ncbi
@@ -15,16 +15,12 @@ MAINTAINER=	tonym@biolateral.com.au
 COMMENT=	NCBI development toolkit, including BLAST 2 and GenBank/Entrez support
 
 USE_MOTIF=	yes
-USE_REINPLACE=	yes
 
 #
 # In the files directory we have:
 #
 
 DUMMYMAKE=	Makefile
-PLATFORMDIR=	${WRKSRC}/platform
-BUILDSCRIPT=	${WRKSRC}/make/makedis.csh
-
 DOCDIR=		${PREFIX}/share/doc/${PORTNAME}
 CPIO=		cpio --quiet -pdum -R
 
@@ -37,8 +33,6 @@ CPIO=		cpio --quiet -pdum -R
 
 pre-configure:
 	@${CP} ${FILESDIR}/${DUMMYMAKE} ${WRKSRC}
-	@${CP} ${FILESDIR}/freebsd.ncbi.mk ${PLATFORMDIR}
-	@${REINPLACE_CMD} -e 's#NetBSD#FreeBSD#;'  -e 's#netbsd#freebsd#' ${BUILDSCRIPT}
 
 post-install:
 	@${MKDIR} ${DATADIR}
