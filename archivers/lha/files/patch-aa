@@ -1,7 +1,7 @@
-*** Makefile.orig	Fri Mar  1 11:59:19 1996
---- Makefile	Wed Aug 28 21:26:21 1996
+*** Makefile.orig	Fri Mar  1 17:59:19 1996
+--- Makefile	Sun Dec 15 11:00:17 1996
 ***************
-*** 11,37 ****
+*** 11,35 ****
   #-----------------------------------------------------------------------
   
   SHELL=/bin/sh
@@ -23,13 +23,11 @@
   
 ! INSTALL = install
 ! INSTALLBIN = -s -m 755
-  INSTALLMAN = -m 644
+! INSTALLMAN = -m 644
   
-! SUBDIRS = src man
+  SUBDIRS = src man
   
-  O		= .o
-  
---- 11,39 ----
+--- 11,37 ----
   #-----------------------------------------------------------------------
   
   SHELL=/bin/sh
@@ -48,14 +46,12 @@
   
 ! PREFIX ?= /usr/local
 ! BINDIR = ${PREFIX}/bin
-! MANDIR = ${PREFIX}/man
+! MANDIR = ${PREFIX}/man/ja_JP.EUC
 ! MANSECT = 1
   
 ! #INSTALL = install
 ! INSTALLBIN = -c -s -o ${BINOWN} -g ${BINGRP} -m ${BINMODE}
-  INSTALLMAN = -m 644
+! INSTALLMAN = -m 444 -o bin -g bin -c
   
-! SUBDIRS = src #man
-  
-  O		= .o
+  SUBDIRS = src man
   
