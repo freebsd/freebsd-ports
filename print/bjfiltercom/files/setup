@@ -1,0 +1,145 @@
+#!/bin/sh
+###############################################################################
+###
+### From @(#) Photo Image Print System -Setup script
+###     Mon Apr 23 2001 sk
+### in pips900-2.1.i386.tgz :-)
+### by taoka
+
+SCRIPT_PATH=%%PREFIX%%/libexec/%%PORTNAME%%/scripts
+PRMODEL=%%PRMODEL%%
+PRT_MODEL=BJ${PRMODEL}
+BJF_COMMAND=%%PORTNAME%%
+BJF_FILTER_PATH=%%PREFIX%%/libexec/%%PORTNAME%%/%%FILTER_NAME%%
+
+SETUP_PATH=%%PREFIX%%/libexec/%%PORTNAME%%/setup
+DEF_PRT_PATH=/dev/ulpt0
+
+PRT_MODEL_LOW=`echo $PRT_MODEL | tr '[A-Z]' '[a-z]'`
+
+. $SCRIPT_PATH/en.lc
+
+trap 'echo; printf "$F_TXT"
+    exit 1' 0
+
+ID=`id | sed -e 's/uid=//' -e 's/(.*//'`
+
+if [ $ID -ne 0 ]; then
+    echo must run as root.
+    exit 0;
+fi
+
+echo "-----------------------------------------------"
+echo ""
+echo "           bjfilter Setup script"
+echo ""
+echo "-----------------------------------------------"
+
+echo Please select locale to use.
+echo Select : en ja #de es fr it ko nl pt zh zh_TW
+echo -n '(english) > '
+
+read SET_LANG
+case $SET_LANG in
+#    [Dd][Ee] ) . $SCRIPT_PATH/de.lc ;;
+#    [Ee][Ss] ) . $SCRIPT_PATH/es.lc ;;
+#    [Ff][Rr] ) . $SCRIPT_PATH/fr.lc ;;
+#    [Ii][Tt] ) . $SCRIPT_PATH/it.lc ;;
+    [Jj][Aa] ) . $SCRIPT_PATH/ja.lc ;;
+#    [Kk][Oo] ) . $SCRIPT_PATH/ko.lc ;;
+#    [Nn][Ll] ) . $SCRIPT_PATH/nl.lc ;;
+#    [Pp][Tt] ) . $SCRIPT_PATH/pt.lc ;;
+#    [Zz][Hh] ) . $SCRIPT_PATH/zh.lc ;;
+#    [Zz][Hh]_[Tt][Ww] ) . $SCRIPT_PATH/zh_TW.lc ;;
+    *);;
+esac
+
+printf "$A_TXT"
+echo
+
+while :
+do
+    printf "$B_TXT"
+    echo -n "($DEF_PRT_PATH) > "
+    
+    read PRT_PATH
+
+    if [ -z $PRT_PATH ]; then
+	PRT_PATH=$DEF_PRT_PATH
+    fi
+
+    if [ -n $PRT_PATH -a -r $PRT_PATH -a -w $PRT_PATH ]; then
+	break;
+    fi
+    echo "$PRT_PATH : No such file or directory."
+done
+
+
+while :
+do
+    printf "$D_TXT"
+    echo -n '(Yes/no) > '
+
+    read ANSWER
+    case $ANSWER in
+	[Yy] | [Yy]es | YES ) break ;;
+	[Nn] | [Nn]o | NO ) exit 0 ;;
+	* ) echo ? ;;
+    esac
+done
+
+trap 0
+printf "$E1_TXT"
+printf "$E2_TXT"
+
+
+#/etc/printcap
+if [ -s /etc/printcap ]; then
+    KEY=`grep "# written for $BJF_COMMAND" /etc/printcap`
+    if [ -n "$KEY" ]; then
+	mv /etc/printcap /etc/printcap.bak
+
+	SPOOLDIR=`cat /etc/printcap.bak | sed -n "/# written for $BJF_COMMAND/,/# $BJF_COMMAND  end/p" | grep ":sd=" | sed -e "s/^.*:sd=//" -e "s/:.*$//"`
+	rm -rf $SPOOLDIR
+
+	sed -e "/# written for $BJF_COMMAND/,/# $BJF_COMMAND  end/d" < /etc/printcap.bak > /etc/printcap
+
+    else
+	cp /etc/printcap /etc/printcap.bak
+
+    fi
+else
+    touch /etc/printcap
+fi
+
+cat <<EOF >>/etc/printcap
+# written for $BJF_COMMAND
+${PRT_MODEL_LOW}|Canon BJ $PRMODEL:\\
+	:sd=/var/spool/lpd/${PRT_MODEL_LOW}:\\
+	:mx#0:\\
+	:sh:\\
+	:lp=$PRT_PATH:\\
+	:if=$BJF_FILTER_PATH:\\
+	:lf=/var/log/lpd-errs:
+${PRT_MODEL_LOW}_gui|Canon BJ $PRMODEL with GUI:\\
+	:sd=/var/spool/lpd/${PRT_MODEL_LOW}_gui:\\
+	:mx#0:\\
+	:sh:\\
+	:lp=$PRT_PATH:\\
+	:if=${BJF_FILTER_PATH}_gui:\\
+	:lf=/var/log/lpd-errs:
+# $BJF_COMMAND  end
+EOF
+
+OLDMASK=`umask`
+umask 000
+
+mkdir -p /var/spool/lpd/${PRT_MODEL_LOW}
+chown daemon:daemon /var/spool/lpd/${PRT_MODEL_LOW}
+chmod 770 /var/spool/lpd/${PRT_MODEL_LOW}
+mkdir -p /var/spool/lpd/${PRT_MODEL_LOW}_gui
+chown daemon:daemon /var/spool/lpd/${PRT_MODEL_LOW}_gui
+chmod 770 /var/spool/lpd/${PRT_MODEL_LOW}_gui
+
+umask $OLDMASK
+exit 0

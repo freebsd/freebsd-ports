@@ -1,8 +1,16 @@
 bin/bjf360ps
+bin/bjf360raw
 libexec/bjfilter360/filter360
 libexec/bjfilter360/filter360_gui
+libexec/bjfilter360/setup
+libexec/bjfilter360/scripts/en.lc
+libexec/bjfilter360/scripts/ja.lc
+@dirrm libexec/bjfilter360/scripts
 @dirrm libexec/bjfilter360
 @cwd /compat/linux
 usr/lib/bjlib/cnb_0980.tbl
+usr/lib/libcnbpo098.so
 usr/lib/libcnbpo098.so.1.0.0
 @dirrm usr/lib/bjlib
+@exec /compat/linux/sbin/ldconfig ; true
+@unexec /compat/linux/sbin/ldconfig ; true

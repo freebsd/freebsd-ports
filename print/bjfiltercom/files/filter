@@ -5,7 +5,7 @@ PATH=${PATH}:/usr/bin:/usr/local/bin
 hostname=localhost
 resolution=600
 papersize=a4
-printer=BJF%%PRTYPE%%
+printer=BJ%%PRMODEL%%
 
 GS="gs -q -r$resolution -dNOPROMPT -dSAFER \
       -sPAPERSIZE=$papersize -sDEVICE=bmp16m -sOutputFile=- -"

@@ -1,8 +1,16 @@
 bin/bjf870ps
+bin/bjf870raw
 libexec/bjfilter870/filter870
 libexec/bjfilter870/filter870_gui
+libexec/bjfilter870/setup
+libexec/bjfilter870/scripts/en.lc
+libexec/bjfilter870/scripts/ja.lc
+@dirrm libexec/bjfilter870/scripts
 @dirrm libexec/bjfilter870
 @cwd /compat/linux
 usr/lib/bjlib/cnb_1020.tbl
+usr/lib/libcnbpo102.so
 usr/lib/libcnbpo102.so.1.0.0
 @dirrm usr/lib/bjlib
+@exec /compat/linux/sbin/ldconfig ; true
+@unexec /compat/linux/sbin/ldconfig ; true

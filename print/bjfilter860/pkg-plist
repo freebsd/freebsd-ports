@@ -1,8 +1,16 @@
 bin/bjf860ps
+bin/bjf860raw
 libexec/bjfilter860/filter860
 libexec/bjfilter860/filter860_gui
+libexec/bjfilter860/setup
+libexec/bjfilter860/scripts/en.lc
+libexec/bjfilter860/scripts/ja.lc
+@dirrm libexec/bjfilter860/scripts
 @dirrm libexec/bjfilter860
 @cwd /compat/linux
 usr/lib/bjlib/cnb_1050.tbl
+usr/lib/libcnbpo105.so
 usr/lib/libcnbpo105.so.1.0.0
 @dirrm usr/lib/bjlib
+@exec /compat/linux/sbin/ldconfig ; true
+@unexec /compat/linux/sbin/ldconfig ; true

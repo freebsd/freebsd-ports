@@ -8,6 +8,6 @@
 MASTERDIR=	${.CURDIR}/../bjfilter850
 
 PRTYPE=		850
-SUFIX_PRTYPE=	ug
+SUFFIX_PRTYPE=	ug
 
 .include "${MASTERDIR}/Makefile"

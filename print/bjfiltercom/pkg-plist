@@ -1,6 +1,6 @@
 bin/bjcmd
 bin/bjfilter
-bin/bjprn
+@comment bin/bjprn
 bin/lgmon
 bin/printui
 bin/stsmon
@@ -31,28 +31,67 @@ share/doc/bjfiltercom-%%PORTVERSION%%/html/WELCOME.HTM
 @cwd /compat/linux
 usr/lib/bjlib/bjfilter.conf
 usr/lib/bjlib/cnbpname.tbl
+usr/lib/libcnbpcmcm.so
 usr/lib/libcnbpcmcm.so.1.0.0
+usr/lib/libcnbphtmg.so
 usr/lib/libcnbphtmg.so.1.0.0
+usr/lib/libcnbpsmth.so
 usr/lib/libcnbpsmth.so.1.0.0
+usr/lib/libcnbpwcc.so
 usr/lib/libcnbpwcc.so.1.0.0
+usr/lib/libcnclapi.so
 usr/lib/libcnclapi.so.1.0.0
+usr/lib/libcnclbjcmd.so
 usr/lib/libcnclbjcmd.so.1.0.0
+usr/lib/libcnclui.so
 usr/lib/libcnclui.so.1.0.0
 usr/local/share/locale/ja/LC_MESSAGES/stsmon.mo
 usr/local/share/locale/ja/LC_MESSAGES/printui.mo
 usr/local/share/printui/black_bar.xpm
 usr/local/share/printui/cyan_bar.xpm
+@comment A next file is installed by ja-bjfilter*
+@comment usr/local/share/printui/i18n
 usr/local/share/printui/locale-table
 usr/local/share/printui/magenta_bar.xpm
 usr/local/share/printui/printui.glade
 usr/local/share/printui/printui.res
 usr/local/share/printui/yellow_bar.xpm
+usr/local/share/stsmon/pixmaps/Ink_bb.xpm
+usr/local/share/stsmon/pixmaps/Ink_bk.xpm
+usr/local/share/stsmon/pixmaps/Ink_cy.xpm
+usr/local/share/stsmon/pixmaps/Ink_el.xpm
+usr/local/share/stsmon/pixmaps/Ink_er.xpm
+usr/local/share/stsmon/pixmaps/Ink_low.xpm
+usr/local/share/stsmon/pixmaps/Ink_low_bb.xpm
+usr/local/share/stsmon/pixmaps/Ink_ma.xpm
+usr/local/share/stsmon/pixmaps/Ink_out.xpm
+usr/local/share/stsmon/pixmaps/Ink_out_bb.xpm
+usr/local/share/stsmon/pixmaps/Ink_pb.xpm
+usr/local/share/stsmon/pixmaps/Ink_pc.xpm
+usr/local/share/stsmon/pixmaps/Ink_pm.xpm
+usr/local/share/stsmon/pixmaps/Ink_sp.xpm
+usr/local/share/stsmon/pixmaps/Ink_ye.xpm
+usr/local/share/stsmon/pixmaps/Inkg_bb.xpm
+usr/local/share/stsmon/pixmaps/Inkg_bk.xpm
+usr/local/share/stsmon/pixmaps/Inkg_cy.xpm
+usr/local/share/stsmon/pixmaps/Inkg_el.xpm
+usr/local/share/stsmon/pixmaps/Inkg_er.xpm
+usr/local/share/stsmon/pixmaps/Inkg_ma.xpm
+usr/local/share/stsmon/pixmaps/Inkg_pb.xpm
+usr/local/share/stsmon/pixmaps/Inkg_pc.xpm
+usr/local/share/stsmon/pixmaps/Inkg_pm.xpm
+usr/local/share/stsmon/pixmaps/Inkg_sp.xpm
+usr/local/share/stsmon/pixmaps/Inkg_ye.xpm
 @dirrm usr/local/share/printui
 @dirrm usr/local/share/locale/ja/LC_MESSAGES
 @dirrm usr/local/share/locale/ja
 @dirrm usr/local/share/locale
+@dirrm usr/local/share/stsmon/pixmaps
+@dirrm usr/local/share/stsmon
 @dirrm usr/local/share
 @dirrm usr/local
 @dirrm usr/lib/bjlib
 @dirrm usr/lib
 @dirrm usr
+@exec /compat/linux/sbin/ldconfig ; true
+@unexec /compat/linux/sbin/ldconfig ; true

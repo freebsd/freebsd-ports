@@ -1,0 +1,27 @@
+#!/bin/sh
+###############################################################################
+### 
+### From @(#) Photo Image Print System -Locale file of install script
+### in pips900-2.1.i386.tgz
+### by taoka
+
+A_TXT="It starts to set up of photo Image Print System.\n"\
+"If this product does not set up, it does not operate correctly.\n"
+
+B_TXT="Please specify the connection of a printer.\n"
+
+C_TXT="Please specify the printer name when it is using by lpr.\n"
+
+D_TXT="Setup is complete. Is it saved?\n"
+
+E1_TXT="The following files were changed.\n"\
+"/etc/printcap\n\n"\
+"The following directories were created.\n"\
+"/var/spool/lpd/${PRT_MODEL_LOW}\n"\
+"/var/spool/lpd/${PRT_MODEL_LOW}_gui\n"
+
+E2_TXT="\nIt saved. Setup is complete.\n"\
+"Start $SETUP_PATH to change setup.\n"
+
+F_TXT="Setup is canceled. Setup is not complete yet\n"\
+"Set up by starting $SETUP_PATH.\n"
