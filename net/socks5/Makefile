@@ -3,7 +3,7 @@
 # Date created:				24 Apr 1996
 # Whom:					pst
 #
-# $Id: Makefile,v 1.19 1998/07/20 22:46:57 imp Exp $
+# $Id: Makefile,v 1.20 1998/10/07 18:51:28 imp Exp $
 #
 
 DISTNAME=	socks5-v1.0r7
@@ -12,6 +12,8 @@ CATEGORIES=	net security
 EXTRACT_SUFX=	.tar.gz
 
 MAINTAINER=	imp@freebsd.org
+
+BROKEN=	'socks5-v1.0r7 is not available at NEC's website.  Latest is v1.0r8'
 
 NO_CDROM=	"NEC has a funky license for this software"
 RESTRICTED=	"no commercial use"
