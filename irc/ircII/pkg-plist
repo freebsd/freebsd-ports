@@ -251,8 +251,8 @@ share/irc/help/on/exec_prompt
 share/irc/help/on/flood
 share/irc/help/on/help
 share/irc/help/on/hook
+share/irc/help/on/icb_cmdout
 share/irc/help/on/icb_error
-share/irc/help/on/icb_motd
 share/irc/help/on/icb_status
 share/irc/help/on/icb_who
 share/irc/help/on/idle
@@ -559,6 +559,7 @@ share/irc/script/meta1
 share/irc/script/meta2
 share/irc/script/msg
 share/irc/script/mudlike
+share/irc/script/multichan
 share/irc/script/nemesis
 share/irc/script/netsplit
 share/irc/script/newaway
@@ -571,6 +572,7 @@ share/irc/script/otherstatus
 share/irc/script/ping
 share/irc/script/prefix
 share/irc/script/recursion
+share/irc/script/redirx
 share/irc/script/repeat
 share/irc/script/screen
 share/irc/script/service
