@@ -3,7 +3,7 @@
 # Date created:      11/12/96
 # Whom:              oly@world.std.com
 #
-# $Id: Makefile,v 1.1.1.1 1997/01/05 22:54:44 obrien Exp $
+# $Id: Makefile,v 1.2 1997/01/06 02:49:36 obrien Exp $
 #
 
 DISTNAME=	dotfile-2.0b5
@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.imada.ou.dk/pub/dotfile/
 
 MAINTAINER=	oly@world.std.com
 
-LIB_DEPENDS=	tk41:${PORTSDIR}/x11/tk
+LIB_DEPENDS=	tk41\\.1:${PORTSDIR}/x11/tk41
 RUN_DEPENDS=	wish4.1:${PORTSDIR}/x11/tk41
 
 GNU_CONFIGURE=	yes
