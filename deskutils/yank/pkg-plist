@@ -1,5 +1,5 @@
 bin/yank
 share/gnome/apps/Applications/yank.desktop
+share/gnome/pixmaps/yank.png
 share/locale/de/LC_MESSAGES/yank.mo
 share/locale/sv/LC_MESSAGES/yank.mo
-share/pixmaps/yank.png
