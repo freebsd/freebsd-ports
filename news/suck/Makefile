@@ -23,11 +23,12 @@ EX_DATA=	suckkillfile.sample sucknewsrc.sample suckothermsgs.sample
 CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
 MAKE_ENV+=	CHKHISTORY=chkhistory_db.o
 .if defined(NEWSBIN) && !defined(SUCK_WITH_INN)
+CNEWS_PORT?=	news/cnews
 PKGNAMESUFFIX?=	-cnews
 MAKE_ENV+=	DB_TYPE=-DUSE_DBZ DB_LIB=-lcnews
 MAKE_ENV+=	DB_LIB_LOC=-L${LOCALBASE}/lib
 MAKE_ENV+=	INCDIR2=-I${LOCALBASE}/include
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libcnews.a:${PORTSDIR}/news/cnews
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libcnews.a:${PORTSDIR}/${CNEWS_PORT}
 .else
 CFLAGS+=	-DNO_CONFIGDATA
 MAKE_ENV+=	DB_TYPE="-DUSE_INN23 -DDO_TAGGED_HASH"
