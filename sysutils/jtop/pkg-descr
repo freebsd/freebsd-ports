@@ -1,0 +1,8 @@
+This a perl wrapper to "top(1)" that gets its output and maps pids to jails.
+
+The wrapper takes all "top(1)" options and passed then to the "top(1)" if some
+specified. When no options specified the wrapper uses default options.
+
+No additional software or tools like "jailer(8)" needed.
+
+WWW: http://ext.by/jtop/
