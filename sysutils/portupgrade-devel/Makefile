@@ -6,16 +6,15 @@
 #
 
 PORTNAME=	portupgrade
-PORTVERSION=	20010922.2
+PORTVERSION=	20011006
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://www.iDaemons.org/distfiles/
 MASTER_SITE_SUBDIR=	knu
-DISTNAME=	pkgtools-${PORTVERSION:R}
+DISTNAME=	pkgtools-${PORTVERSION}
 
-PATCH_SITES=	${MASTER_SITES}
-PATCHFILES=	pkgtools-${PORTVERSION:R}.1.patch.gz \
-		pkgtools-${PORTVERSION}.patch.gz
+#PATCH_SITES=	${MASTER_SITES}
+#PATCHFILES=	pkgtools-${PORTVERSION}.1.patch.gz
 
 MAINTAINER=	knu@FreeBSD.org
 
@@ -30,7 +29,6 @@ RUBY_SHEBANG_FILES=	\
 		${WRKSRC}/pkg_fetch \
 		${WRKSRC}/pkg_glob \
 		${WRKSRC}/pkgdb \
-		${WRKSRC}/pkgdepfix \
 		${WRKSRC}/portcvsweb \
 		${WRKSRC}/portsclean \
 		${WRKSRC}/portsdb \
@@ -43,7 +41,6 @@ MAN1=		pkg_deinstall.1 \
 		pkg_fetch.1 \
 		pkg_glob.1 \
 		pkg_which.1 \
-		pkgdepfix.1 \
 		portcvsweb.1 \
 		ports_glob.1 \
 		portsclean.1 \

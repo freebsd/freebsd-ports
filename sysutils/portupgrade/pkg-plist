@@ -5,7 +5,6 @@ sbin/pkg_deinstall
 sbin/pkg_fetch
 sbin/pkg_glob
 sbin/pkgdb
-sbin/pkgdepfix
 sbin/portcvsweb
 sbin/portinstall
 sbin/ports_glob
@@ -16,6 +15,7 @@ sbin/portversion
 %%RUBY_SITELIBDIR%%/pkg.rb
 %%RUBY_SITELIBDIR%%/pkgdb.rb
 %%RUBY_SITELIBDIR%%/pkginfo.rb
+%%RUBY_SITELIBDIR%%/pkgmisc.rb
 %%RUBY_SITELIBDIR%%/pkgtools.rb
 %%RUBY_SITELIBDIR%%/pkgversion.rb
 %%RUBY_SITELIBDIR%%/portinfo.rb
@@ -26,7 +26,6 @@ share/zsh/site-functions/_pkg_deinstall
 share/zsh/site-functions/_pkg_fetch
 share/zsh/site-functions/_pkg_glob
 share/zsh/site-functions/_pkgdb
-share/zsh/site-functions/_pkgdepfix
 share/zsh/site-functions/_portsclean
 share/zsh/site-functions/_portsdb
 share/zsh/site-functions/_portupgrade
