@@ -1,0 +1,7 @@
+--- source/include/includes.h.orig	Wed Dec 11 06:55:42 2002
++++ source/include/includes.h	Sun Feb 16 16:44:53 2003
+@@ -757,3 +757,3 @@
+ /* this guess needs to be improved (tridge) */
+-#if (defined(STAT_STATVFS) || defined(STAT_STATVFS64)) && !defined(SYSV)
++#if (defined(STAT_STATVFS) || defined(STAT_STATVFS64)) && !defined(SYSV) && !defined(__FreeBSD__)
+ #define SYSV 1
