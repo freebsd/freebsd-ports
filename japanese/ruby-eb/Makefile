@@ -23,7 +23,6 @@ NO_WRKSUBDIR=	yes
 INSTALL_TARGET=	site-install
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/Mk/bsd.ruby.mk"
 
 PKGNAMEPREFIX:=	${PKGNAMEPREFIX}${RUBY_PKGNAMEPREFIX}
 

@@ -32,7 +32,6 @@ TCLTKLIB_CATEGORY?=	lang
 .endif
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/Mk/bsd.ruby.mk"
 
 .if defined(PKGNAMEPREFIX)
 PKGNAMEPREFIX:=	${PKGNAMEPREFIX}${RUBY_PKGNAMEPREFIX}

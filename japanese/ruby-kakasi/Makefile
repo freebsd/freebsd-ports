@@ -26,7 +26,6 @@ DOCS_EN=	ChangeLog	README		wdcnt.html
 DOCS_JA=	README.jp
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/Mk/bsd.ruby.mk"
 
 PKGNAMEPREFIX:=	${PKGNAMEPREFIX}${RUBY_PKGNAMEPREFIX}
 
