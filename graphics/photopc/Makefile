@@ -8,7 +8,8 @@
 PORTNAME=	photopc
 PORTVERSION=	3.05
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://ftp.average.org/pub/photopc/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
