@@ -9,13 +9,8 @@
 DISTNAME=	eb-2.3.3
 PKGNAME=	ja-eb-2.3.3
 CATEGORIES=	japanese
-MASTER_SITES=	ftp://ftp.sra.co.jp/pub/misc/eb/appendix/ \
-		ftp://ftp.sra.co.jp/pub/misc/eb/appendix/old/ \
-		ftp://ftp.sra.co.jp/pub/misc/eb/ \
-		ftp://ftp.sra.co.jp/pub/misc/eb/old/ \
-		ftp://ftp.mei.co.jp/free/others/Dictionary/eb/appendix/ \
-		ftp://ftp.mei.co.jp/free/others/Dictionary/eb/
-DISTFILES=	${EBFILES} ${APPENDIXFILES}
+MASTER_SITES=	ftp://ftp.sra.co.jp/pub/misc/eb/
+DISTFILES=	${EBFILES} ${APPENDIXFILES:S,^,appendix/,}
 
 MAINTAINER=	takamune@avrl.mei.co.jp
 
