@@ -1,0 +1,6 @@
+@mode 755
+bin/swisswatch
+@mode 644
+lib/X11/app-defaults/SwissWatch
+lib/X11/app-defaults/SwissWatch-color
+man/man1/swisswatch.1.gz
