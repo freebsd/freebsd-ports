@@ -6,10 +6,10 @@
 # $FreeBSD$
 #
 
-DISTNAME=	gEDA-19990327
-PKGNAME=	geda-19990327
+DISTNAME=	gEDA-19990516
+PKGNAME=	geda-19990516
 CATEGORIES=	cad
-MASTER_SITES=	http://www.geda.seul.org/dist/  \
+MASTER_SITES=	ftp://ftp.cc.gatech.edu/ac121/linux/X11/gtkbuffet/apps/geda/ \
 		ftp://ftp.geda.seul.org/pub/geda/dist/ \
 		ftp://ftp.infodrom.north.de/pub/unix/gtk-etc/apps/geda/
 
