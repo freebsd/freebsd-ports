@@ -1,0 +1,29 @@
+@cd /usr/local
+@owner bin
+@group bin
+@mode 755
+bin/afm2tfm
+bin/dvips
+bin/MakeTeXPK
+@mode 644
+lib/texmf/ps/tex.pro
+lib/texmf/ps/texc.pro
+lib/texmf/ps/texps.pro
+lib/texmf/ps/special.pro
+lib/texmf/ps/finclude.pro
+lib/texmf/ps/color.pro
+lib/texmf/ps/crop.pro
+lib/texmf/ps/config.ps
+lib/texmf/ps/psfonts.map
+lib/texmf/tex/epsf.tex
+lib/texmf/tex/epsf.sty
+lib/texmf/tex/rotate.tex
+lib/texmf/tex/rotate.sty
+lib/texmf/tex/colordvi.sty
+lib/texmf/tex/colordvi.tex
+lib/texmf/tex/blackdvi.sty
+lib/texmf/tex/blackdvi.tex
+lib/texmf/tex/dvips.tex
+lib/texmf/tex/dvipsmac.tex
+man/man1/dvips.1
+man/man1/afm2tfm.1

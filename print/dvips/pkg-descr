@@ -1,0 +1,6 @@
+The program dvips takes a DVI file [.dvi] produced by TeX (or by some
+other processor such as GFtoDVI) and converts it to PostScript,
+normally sending the result directly to the laserprinter. Fonts used
+may either be resident in the printer or defined as bitmaps in PK
+files, or a `virtual' combination of both. Dvips will automatically
+invoke METAFONT to generate fonts that don't already exist.
