@@ -9,15 +9,16 @@ PORTNAME=	db43
 PORTVERSION=	4.3.27
 PORTREVISION=	1
 CATEGORIES=	databases
-MASTER_SITES=	ftp://sleepycat1.inetu.net/releases/
+MASTER_SITES=	http://downloads.sleepycat.com/
 PKGNAMESUFFIX?=
 DISTNAME?=	db-${PORTVERSION}
 DIST_SUBDIR=	bdb
 
 PATCH_SITES=	http://www.sleepycat.com/update/${PORTVERSION}/
-PATCHFILES=	patch.${PORTVERSION}.1
+PATCHFILES=	patch.${PORTVERSION}.1 patch.4.3.27.3
 # patch.4.3.27.1 affects C++ DbEnv::ref_elect
 # patch.4.3.27.2 is Windows-specific
+# patch.4.3.27.3 fixes failues in HA configurations w/ private DB environments
 PATCH_DIST_STRIP=	-d ..
 
 MAINTAINER=	matthias.andree@gmx.de
