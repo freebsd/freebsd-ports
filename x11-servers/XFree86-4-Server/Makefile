@@ -25,6 +25,8 @@ EXTRACT_ONLY=	X430src-1.tgz \
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	XFree86-4 X server and related programs
 
+CONFLICTS=	xorg-server-*
+
 EXTRA_PATCHES+= \
 	${FILESDIR}/patch-FreeBSD.cf \
 	${FILESDIR}/patch-Pci.h \
