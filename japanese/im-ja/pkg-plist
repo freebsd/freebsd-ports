@@ -1,10 +1,11 @@
 bin/im-ja-conf
+bin/im-ja-xim-server
+etc/gconf/schemas/im-ja.schemas
 lib/gnome-panel/im-ja-applet
 lib/gtk-2.0/2.2.0/immodules/im-ja.so
 lib/im-ja/kpengine
 @dirrm lib/im-ja
 libdata/bonobo/servers/GNOME_ImJaApplet.server
-etc/gconf/schemas/im-ja.schemas
 share/gnome/control-center-2.0/capplets/im-ja.desktop
 share/gnome/gnome-2.0/ui/GNOME_ImJaApplet.xml
 share/gnome/im-ja/01.unistrok
@@ -31,6 +32,8 @@ share/gnome/im-ja/21.unistrok
 share/gnome/im-ja/22.unistrok
 share/gnome/im-ja/23.unistrok
 share/gnome/im-ja/im-ja-conf.glade
+share/gnome/im-ja/im-ja-doc.html
+share/gnome/im-ja/im-ja-symbols.txt
 @dirrm share/gnome/im-ja
 share/gnome/pixmaps/im-ja-about.jpg
 share/gnome/pixmaps/im-ja-capplet.png
