@@ -12,9 +12,7 @@ MASTER_SITES=	ftp://ftp.ostrich-emulators.cx/qhacc/
 
 MAINTAINER=	will@FreeBSD.org
 
-LIB_DEPENDS=	qt2.3:${PORTSDIR}/x11-toolkits/qt21
-
-USE_NEWGCC=	yes
+USE_QT2=	yes
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-qt="${X11BASE}"
