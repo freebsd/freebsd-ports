@@ -1,0 +1,9 @@
+dnl Process this file with autoconf to produce a configure header
+AC_INIT(config.h.in)
+
+dnl Check for and header files
+AC_CHECK_HEADERS(stdint.h inttypes.h)
+
+AC_CONFIG_HEADER([config.h])
+
+AC_OUTPUT(config.h)

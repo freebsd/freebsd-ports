@@ -384,6 +384,7 @@
     SUBDIR += xsane
     SUBDIR += xv
     SUBDIR += xv-m17n
+    SUBDIR += xvid
     SUBDIR += xwpick
     SUBDIR += xzgv
     SUBDIR += zimg

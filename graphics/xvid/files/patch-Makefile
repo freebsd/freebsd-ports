@@ -1,0 +1,19 @@
+--- Makefile.orig	Sat Apr  6 16:29:59 2002
++++ Makefile	Sat Apr  6 16:31:10 2002
+@@ -14,7 +14,6 @@
+ 
+ include Makefile.inc
+ 
+-CC = gcc
+ #CC=icc
+ #CC = /opt/experimental/bin/gcc 	# that's where SuSE installs gcc3
+ 
+@@ -33,7 +32,7 @@
+ # CFLAGS += -march=pentium -mcpu=pentium
+ # CFLAGS += -march=pentiumpro -mcpu=pentiumpro
+ 
+-    CFLAGS += -Wall -O3 -funroll-loops -ffast-math -march=pentiumpro -mcpu=pentiumpro 
++    CFLAGS += -Wall -O3 -funroll-loops -ffast-math
+     CFLAGS += -fstrict-aliasing -fomit-frame-pointer 
+ endif
+ 
