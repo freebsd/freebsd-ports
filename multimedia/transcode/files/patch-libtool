@@ -1,6 +1,6 @@
---- libtool.orig	Thu Oct 10 17:56:49 2002
-+++ libtool	Mon Oct 28 21:56:19 2002
-@@ -2727,7 +2727,7 @@
+--- libtool.orig	Sun Jun  1 11:30:47 2003
++++ libtool	Sun Jun  1 11:31:28 2003
+@@ -2730,7 +2730,7 @@
  	  *-*-netbsd*)
  	    # Don't link with libc until the a.out ld.so is fixed.
  	    ;;
@@ -9,11 +9,11 @@
  	    # Do not include libc due to us having libc/libc_r.
  	    ;;
  	  *)
-@@ -4496,10 +4496,12 @@
+@@ -4499,10 +4499,12 @@
  	fi
  
  	# Install the pseudo-library for information purposes.
-+	if /usr/bin/false; then
++	if /usr/bin/false ; then
  	name=`$echo "X$file" | $Xsed -e 's%^.*/%%'`
  	instname="$dir/$name"i
  	$show "$install_prog $instname $destdir/$name"
