@@ -1,12 +1,15 @@
 @comment $FreeBSD$
 sbin/darkstat
 share/locale/da/LC_MESSAGES/darkstat.mo
+share/locale/es/LC_MESSAGES/darkstat.mo
 share/locale/fr/LC_MESSAGES/darkstat.mo
+share/locale/nl/LC_MESSAGES/darkstat.mo
 share/locale/pt_BR/LC_MESSAGES/darkstat.mo
 share/locale/sv/LC_MESSAGES/darkstat.mo
 share/locale/zh_TW/LC_MESSAGES/darkstat.mo
 share/locale/zh_CN/LC_MESSAGES/darkstat.mo
 share/locale/lt/LC_MESSAGES/darkstat.mo
+share/locale/hu/LC_MESSAGES/darkstat.mo
 share/locale/hr/LC_MESSAGES/darkstat.mo
 %%PORTDOCS%%share/doc/darkstat/AUTHORS
 %%PORTDOCS%%share/doc/darkstat/ChangeLog
