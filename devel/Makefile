@@ -558,6 +558,7 @@
     SUBDIR += p5-DateTime-Format-Bork
     SUBDIR += p5-DateTime-Format-Builder
     SUBDIR += p5-DateTime-Format-DBI
+    SUBDIR += p5-DateTime-Format-DateManip
     SUBDIR += p5-DateTime-Format-Excel
     SUBDIR += p5-DateTime-Format-MySQL
     SUBDIR += p5-DateTime-Format-Pg
