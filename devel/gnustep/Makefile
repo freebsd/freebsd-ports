@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://ftp.gnustep.org/pub/gnustep/core/ \
 MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
-		tiff.4:${PORTSDIR}/graphics/tiff34
+		tiff.4:${PORTSDIR}/graphics/tiff
 
 BROKEN=		"Sets PREFIX in the Makefile"
 

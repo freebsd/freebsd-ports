@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.ifconnection.de/~tm/pdflib/ \
 MAINTAINER=	dirk@FreeBSD.org
 
 RUN_DEPENDS=	${PREFIX}/lib/afm/Courier:${PORTSDIR}/print/afm
-LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff34 \
+LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
 
 FETCH_BEFORE_ARGS=	-b

@@ -18,7 +18,7 @@ PATCH_DIST_STRIP=-p1
 
 MAINTAINER=	giffunip@asme.org
 
-LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff34
+LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff
 BUILD_DEPENDS=	${X11BASE}/lib/libpbm.a:${PORTSDIR}/graphics/netpbm
 
 EXTRACT_ONLY=	urt-3.1b.tar.Z
