@@ -1,5 +1,29 @@
---- configure.orig	Sat Nov 22 13:54:32 2003
-+++ configure	Sat Nov 22 13:54:48 2003
+--- configure.orig	Mon Apr 14 18:41:50 2003
++++ configure	Fri Dec 12 19:11:08 2003
+@@ -8251,9 +8251,9 @@
+             esac
+         fi
+         if test ".gd" != "."; then
+-            rc=`(echo $LIBS | grep '\-lgd ' > /dev/null 2> /dev/null; echo $?)`
++            rc=`(echo $LIBS | grep '\-lgd1 ' > /dev/null 2> /dev/null; echo $?)`
+             if [ $rc -eq 1 ]; then
+-                LIBS="$LIBS -lgd"
++                LIBS="$LIBS -lgd1"
+             fi
+         fi
+     fi
+@@ -8512,9 +8512,9 @@
+             esac
+         fi
+         if test ".glib" != "."; then
+-            rc=`(echo $LIBS | grep '\-lglib ' > /dev/null 2> /dev/null; echo $?)`
++            rc=`(echo $LIBS | grep '\-lglib12 ' > /dev/null 2> /dev/null; echo $?)`
+             if [ $rc -eq 1 ]; then
+-                LIBS="$LIBS -lglib"
++                LIBS="$LIBS -lglib12"
+             fi
+         fi
+     fi
 @@ -14711,7 +14711,7 @@
  
  
@@ -9,3 +33,47 @@
  do
  as_ac_Header=`echo "ac_cv_header_$ac_header" | $as_tr_sh`
  if eval "test \"\${$as_ac_Header+set}\" = set"; then
+@@ -17879,7 +17879,7 @@
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lgd  $LIBS"
++LIBS="-lgd1  $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ #line $LINENO "configure"
+ /* confdefs.h.  */
+@@ -17932,7 +17932,7 @@
+ #define HAVE_LIBGD 1
+ _ACEOF
+ 
+-  LIBS="-lgd $LIBS"
++  LIBS="-lgd1 $LIBS"
+ 
+ fi
+ 
+@@ -18648,13 +18648,13 @@
+ 
+ 
+ 
+-echo "$as_me:$LINENO: checking for g_date_julian in -lglib" >&5
+-echo $ECHO_N "checking for g_date_julian in -lglib... $ECHO_C" >&6
++echo "$as_me:$LINENO: checking for g_date_julian in -lglib12" >&5
++echo $ECHO_N "checking for g_date_julian in -lglib12... $ECHO_C" >&6
+ if test "${ac_cv_lib_glib_g_date_julian+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lglib  $LIBS"
++LIBS="-lglib12  $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ #line $LINENO "configure"
+ /* confdefs.h.  */
+@@ -18707,7 +18707,7 @@
+ #define HAVE_LIBGLIB 1
+ _ACEOF
+ 
+-  LIBS="-lglib $LIBS"
++  LIBS="-lglib12 $LIBS"
+ 
+ fi
+ 
