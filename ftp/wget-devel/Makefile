@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	wget
-PORTVERSION=	1.8.1
-PORTREVISION=	1
+PORTVERSION=	1.8.2
 CATEGORIES=	ftp www
 MASTER_SITES=	${MASTER_SITE_GNU} \
 		ftp://ftp.dl.ac.uk/ccp14/ftp-mirror/wget/pub/unix/util/wget/ \
@@ -16,9 +15,6 @@ MASTER_SITES=	${MASTER_SITE_GNU} \
 		ftp://ftp.max.irk.ru/unix/net/www/wget/ \
 		http://www3.big.or.jp/~sian/linux/products/
 MASTER_SITE_SUBDIR=	wget
-DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
-		${EXTRA_PO}
-EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	sf@FreeBSD.org
 
@@ -27,20 +23,13 @@ LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
-.if !defined(WITHOUT_SSL)
+.if defined(WITHOUT_SSL)
+CONFIGURE_ARGS=	--with-ssl=no
+.else
 USE_OPENSSL=	yes
-CONFIGURE_ARGS=	--with-ssl=${OPENSSLBASE}
 .endif
 CONFIGURE_ENV+=	CPPFLAGS=-I${LOCALBASE}/include \
 		LIBS=-L${LOCALBASE}/lib
-
-MAN1=		wget.1
-
-EXTRA_PO=	${PORTNAME}-${PORTVERSION}.ja.po.gz
-
-post-extract:
-	${RM} -f ${WRKSRC}/po/ja.po
-	${GZIP_CMD} -dc ${DISTDIR}/${EXTRA_PO} > ${WRKSRC}/po/ja.po
 
 post-patch:
 	${RM} -f ${WRKSRC}/doc/wget.info*
