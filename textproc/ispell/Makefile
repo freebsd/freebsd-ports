@@ -7,7 +7,7 @@
 
 PORTNAME?=	ispell
 PORTVERSION?=	3.2.04
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES+=	textproc
 MASTER_SITES=	http://fmg-www.cs.ucla.edu/geoff/tars/
 
@@ -48,6 +48,9 @@ pre-everything:
 	@${ECHO_MSG} '* Example: "make ISPELL_FR=yes ISPELL_SE=yes install"   *'
 	@${ECHO_MSG} '*********************************************************'
 .else
+.if defined(ISPELL_BRITISH)
+SCRIPTS_ENV+=	ISPELL_BRITISH=${ISPELL_BRITISH}
+.endif
 .if defined(ISPELL_FR)
 FRDISTFILE=	francais-IREQ-1.4.tar.gz
 MASTER_SITES+=	ftp://ftp.robot.ireq.ca/pub/ispell/
