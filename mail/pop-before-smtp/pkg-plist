@@ -1,0 +1,13 @@
+etc/pop-before-smtp-conf.pl.sample
+etc/rc.d/pop-before-smtp.sh.sample
+sbin/pop-before-smtp
+share/doc/pop-before-smtp/COPYING
+share/doc/pop-before-smtp/ChangeLog
+share/doc/pop-before-smtp/README
+share/doc/pop-before-smtp/README.QUICKSTART
+share/doc/pop-before-smtp/README.rootless-install
+share/doc/pop-before-smtp/TODO
+share/doc/pop-before-smtp/popa3d/README
+share/doc/pop-before-smtp/popa3d/popa3d-0.4.patch
+@dirrm share/doc/pop-before-smtp/popa3d
+@dirrm share/doc/pop-before-smtp
