@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.33 1999/05/09 17:45:27 steve Exp $
+# $Id: Makefile,v 1.34 1999/06/17 09:37:42 taoka Exp $
 #
 
     SUBDIR += CJK
@@ -21,6 +21,7 @@
     SUBDIR += hztty
     SUBDIR += kcfonts
     SUBDIR += lunar
+    SUBDIR += moettf
     SUBDIR += mule-wnn4
     SUBDIR += muni
     SUBDIR += nvi-big5
