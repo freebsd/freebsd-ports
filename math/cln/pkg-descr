@@ -17,4 +17,4 @@ of numbers known to the Common Lisp language. Therefore CLN can be used
 for Common Lisp implementations, giving `CLN' another meaning: it
 becomes an abbreviation of "Common Lisp Numbers". 
 
-WWW: http://clisp.cons.org/~haible/packages-cln.html
+WWW: http://www.ginac.de/CLN/
