@@ -12,18 +12,22 @@ MASTER_SITES=	ftp://ftp.freebsd.org/pub/FreeBSD/development/CVSup/binaries/
 
 MAINTAINER=	jdp@freebsd.org
 
+.include <bsd.port.pre.mk>
+
 .if ${MACHINE_ARCH} == "i386"
 DISTFILES=	cvsup-freebsd-ix86-${PORTOBJFORMAT}-16.1${EXTRACT_SUFX}
 .else
-DISTFILES=	cvsup.nogui-freebsd-${MACHINE_ARCH}-16.1${EXTRACT_SUFX}
-WRKSRC=		${WRKDIR}/cvsup.nogui-bin-16.1
+.if ${OSVERSION} >= 400011
+DISTFILES=	cvsup-freebsd4-${MACHINE_ARCH}-16.1${EXTRACT_SUFX}
+.else
+BROKEN=		Not supported for pre-4.0 FreeBSD/Alpha versions
+.endif
 .endif
 
 NO_BUILD=	yes
 
 MAN1=		cvpasswd.1 cvsup.1
 MANCOMPRESSED=	yes
-NOT_FOR_ARCHS=	alpha
 STRIP=
 
 do-install:
@@ -33,4 +37,4 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/${file}.gz ${PREFIX}/man/man1
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
