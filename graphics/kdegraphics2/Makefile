@@ -16,11 +16,24 @@ MAINTAINER=	will@FreeBSD.org
 BUILD_DEPENDS=	dvips:${PORTSDIR}/print/teTeX
 RUN_DEPENDS=	dvips:${PORTSDIR}/print/teTeX
 
+# temporarily disable kamera, it requires gphoto2
+PLIST_SUB+=	KAMERA:="@comment "
+
+.if defined(WITH_SANE)
+LIB_DEPENDS=	sane.1:${PORTSDIR}/graphics/sane-backends
+PLIST_SUB+=	SANE:=""
+.else
+PLIST_SUB+=	SANE:="@comment "
+pre-everything::
+	@${ECHO_MSG} "===> If you want to compile this port with scanner support, use \"make WITH_SANE=yes\""
+.endif
+
 USE_KDELIBS_VER=2
 USE_BZIP2=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+CONFIGURE_ARGS+=--without-kamera
 
 pre-configure:
 	${PERL} -pi -e "s@libkscan_la_LIBADD =@libkscan_la_LIBADD= -lintl@g" ${WRKSRC}/libkscan/Makefile.in
