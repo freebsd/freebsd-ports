@@ -6,7 +6,9 @@
 #
 
 PORTNAME=	gnome-btdownload
-PORTVERSION=	0.0.16
+PORTVERSION=	0.0.11
+PORTREVISION=	1
+PORTEPOCH=	1
 CATEGORIES=	net gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gnome-bt
@@ -25,18 +27,9 @@ USE_GNOME=	gnomehack gnomeprefix pygnome2
 GNU_CONFIGURE=	yes
 
 MAN1=		gnome-btdownload.1
-DOCS=		AUTHORS COPYING ChangeLog INSTALL README
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%X11PREFIX%%|${PREFIX}|g' \
 		${WRKSRC}/src/${PORTNAME}
-
-.ifndef (NOPORTDOCS)
-post-install:
-	@${MKDIR} ${DOCSDIR}
-.for i in ${DOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
-.endfor
-.endif
 
 .include <bsd.port.mk>
