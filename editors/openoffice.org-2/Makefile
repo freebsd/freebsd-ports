@@ -7,33 +7,35 @@
 
 PORTNAME=	openoffice
 PORTVERSION=	642
-CATEGORIES=	editors x11
+CATEGORIES=	editors
 MASTER_SITES=	ftp://sunsite.cnlab-switch.ch/mirror/OpenOffice/${PORTVERSION}/ \
 		http://sf1.mirror.openoffice.org/${PORTVERSION}/ \
 		ftp://ftp.cs.man.ac.uk/pub/toby/gpc/ \
 		http://people.freebsd.org/~mbr/distfiles/
 DISTFILES=	oo_${PORTVERSION}_src.tar.bz2 gpc231.tar.Z oo_moz_641.tar.gz
 EXTRACT_ONLY=	oo_${PORTVERSION}_src.tar.bz2
-EXTRACT_REST=	gpc231.tar.Z oo_moz_641.tar.gz
 
 MAINTAINER=	mbr@FreeBSD.org
+
+BUILD_DEPENDS=	${LOCALBASE}/lib/libstlport_gcc.so:${PORTSDIR}/devel/stlport
+BUILD_DEPENDS+= zip:${PORTSDIR}/archivers/zip
+BUILD_DEPENDS+= ${JAVAVM}:${PORTSDIR}/java/jdk13
+LIB_DEPENDS+=	pth.14:${PORTSDIR}/devel/pth
+
 BROKEN=		'Work in progress -- does not build yet till the end'
 
-USE_BZIP2= yes
+USE_XLIB=	yes
+USE_BZIP2=	yes
+USE_BISON=	yes
+USE_GMAKE=	yes
 EXTRACT_BEFORE_ARGS_R= -dc
 EXTRACT_AFTER_ARGS_R= | ${TAR} -xf -
 EXTRACT_CMD_R= ${GZIP_CMD}
+EXTRACT_REST=	gpc231.tar.Z oo_moz_641.tar.gz
 
 GCC_VERSION!=	${CC} --version
 JDK13DIR?=      ${LOCALBASE}/jdk1.3.1
 JAVAVM=         ${JDK13DIR}/bin/java
-
-BUILD_DEPENDS=	${LOCALBASE}/lib/libstlport_gcc.so:${PORTSDIR}/devel/stlport
-BUILD_DEPENDS+= bison:${PORTSDIR}/devel/bison
-BUILD_DEPENDS+= gmake:${PORTSDIR}/devel/gmake
-BUILD_DEPENDS+= zip:${PORTSDIR}/archivers/zip
-BUILD_DEPENDS+= ${JAVAVM}:${PORTSDIR}/java/jdk13
-BUILD_DEPENDS+= pth-config:${PORTSDIR}/devel/pth
 
 GNU_CONFIGURE=	yes
 USE_AUTOCONF=	yes
