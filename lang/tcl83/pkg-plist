@@ -1,6 +1,8 @@
 bin/tclsh8.1
-include/tcl8.1/generic/chr.h
-include/tcl8.1/generic/guts.h
+include/tcl8.1/generic/regcustom.h
+include/tcl8.1/generic/regerrs.h
+include/tcl8.1/generic/regex.h
+include/tcl8.1/generic/regguts.h
 include/tcl8.1/generic/tcl.h
 include/tcl8.1/generic/tclCompile.h
 include/tcl8.1/generic/tclInitScript.h
@@ -8,10 +10,8 @@ include/tcl8.1/generic/tclInt.h
 include/tcl8.1/generic/tclMath.h
 include/tcl8.1/generic/tclPort.h
 include/tcl8.1/generic/tclRegexp.h
-include/tcl8.1/tcl.h
 include/tcl8.1/unix/tclUnixPort.h
 lib/libtcl81.a
-lib/libtcl81.so
 lib/libtcl81.so.1
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
@@ -49,6 +49,7 @@ lib/tcl8.1/encoding/cp949.enc
 lib/tcl8.1/encoding/cp950.enc
 lib/tcl8.1/encoding/dingbats.enc
 lib/tcl8.1/encoding/euc-jp.enc
+lib/tcl8.1/encoding/euc-kr.enc
 lib/tcl8.1/encoding/gb12345.enc
 lib/tcl8.1/encoding/gb1988.enc
 lib/tcl8.1/encoding/gb2312.enc
@@ -67,6 +68,7 @@ lib/tcl8.1/encoding/iso8859-9.enc
 lib/tcl8.1/encoding/jis0201.enc
 lib/tcl8.1/encoding/jis0208.enc
 lib/tcl8.1/encoding/jis0212.enc
+lib/tcl8.1/encoding/ksc5601.enc
 lib/tcl8.1/encoding/macCentEuro.enc
 lib/tcl8.1/encoding/macCroatian.enc
 lib/tcl8.1/encoding/macCyrillic.enc
@@ -89,6 +91,8 @@ lib/tcl8.1/http2.0/pkgIndex.tcl
 lib/tcl8.1/init.tcl
 lib/tcl8.1/ldAix
 lib/tcl8.1/ldAout.tcl
+lib/tcl8.1/msgcat1.0/msgcat.tcl
+lib/tcl8.1/msgcat1.0/pkgIndex.tcl
 lib/tcl8.1/opt0.4/optparse.tcl
 lib/tcl8.1/opt0.4/pkgIndex.tcl
 lib/tcl8.1/package.tcl
@@ -98,11 +102,12 @@ lib/tcl8.1/tclAppInit.c
 lib/tcl8.1/tclConfig.sh
 lib/tcl8.1/tclIndex
 lib/tcl8.1/word.tcl
-@dirrm include/tcl8.1/generic
-@dirrm include/tcl8.1/unix
-@dirrm include/tcl8.1
-@dirrm lib/tcl8.1/encoding
+@dirrm lib/tcl8.1/opt0.4
+@dirrm lib/tcl8.1/msgcat1.0
 @dirrm lib/tcl8.1/http2.0
 @dirrm lib/tcl8.1/http1.0
-@dirrm lib/tcl8.1/opt0.4
+@dirrm lib/tcl8.1/encoding
 @dirrm lib/tcl8.1
+@dirrm include/tcl8.1/unix
+@dirrm include/tcl8.1/generic
+@dirrm include/tcl8.1

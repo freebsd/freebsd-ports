@@ -1,5 +1,5 @@
---- Makefile.in.orig	Mon Feb 23 20:02:50 1998
-+++ Makefile.in	Sat Oct  3 15:49:29 1998
+--- Makefile.in.orig	Fri Dec 11 18:36:13 1998
++++ Makefile.in	Sat Jan  2 14:47:02 1999
 @@ -55,7 +55,9 @@
  BIN_INSTALL_DIR =	$(INSTALL_ROOT)$(exec_prefix)/bin
  
@@ -11,16 +11,16 @@
  
  # Top-level directory in which to install manual entries:
  MAN_INSTALL_DIR =	$(INSTALL_ROOT)$(prefix)/man
-@@ -73,7 +75,7 @@
+@@ -86,7 +88,7 @@
+ #CFLAGS = 		$(CFLAGS_DEBUG)
+ #CFLAGS = 		$(CFLAGS_OPTIMIZE)
+ #CFLAGS = 		$(CFLAGS_DEBUG) $(CFLAGS_OPTIMIZE)
+-CFLAGS = 		@CFLAGS@
++CFLAGS? = 		@CFLAGS@
  
- # To change the compiler switches, for example to change from -O
- # to -g, change the following line:
--CFLAGS = -O
-+CFLAGS?= -O
  
  # To disable ANSI-C procedure prototypes reverse the comment characters
- # on the following lines:
-@@ -138,7 +140,7 @@
+@@ -152,7 +154,7 @@
  # "install" around;  better to use the install-sh script that comes
  # with the distribution, which is slower but guaranteed to work.
  
@@ -29,7 +29,7 @@
  INSTALL_PROGRAM =	${INSTALL}
  INSTALL_DATA =		${INSTALL} -m 644
  
-@@ -334,15 +336,21 @@
+@@ -357,15 +359,21 @@
  
  SRCS = $(GENERIC_SRCS) $(UNIX_SRCS)
  
@@ -52,7 +52,7 @@
  # Make target which outputs the list of the .o contained in the Tcl lib
  # usefull to build a single big shared library containing Tcl and other
  # extensions.  used for the Tcl Plugin.  -- dl
-@@ -434,7 +442,7 @@
+@@ -459,7 +467,7 @@
  # some ranlibs write to current directory, and this might not always be
  # possible (e.g. if installing as root).
  
@@ -61,7 +61,7 @@
  	@for i in $(LIB_INSTALL_DIR) $(BIN_INSTALL_DIR) ; \
  	    do \
  	    if [ ! -d $$i ] ; then \
-@@ -446,20 +454,26 @@
+@@ -471,16 +479,22 @@
  	    done;
  	@echo "Installing $(TCL_LIB_FILE)"
  	@$(INSTALL_DATA) $(TCL_LIB_FILE) $(LIB_INSTALL_DIR)/$(TCL_LIB_FILE)
@@ -87,12 +87,7 @@
  	    do \
  	    if [ ! -d $$i ] ; then \
  		echo "Making directory $$i"; \
--		mkdir $$i; \
-+		mkdir -p $$i; \
- 		chmod 755 $$i; \
- 		else true; \
- 		fi; \
-@@ -473,8 +487,15 @@
+@@ -498,8 +512,15 @@
  		else true; \
  		fi; \
  	    done;
@@ -110,7 +105,7 @@
  	@for i in $(TOP_DIR)/library/*.tcl $(TOP_DIR)/library/tclIndex $(UNIX_DIR)/tclAppInit.c $(UNIX_DIR)/ldAix; \
  	    do \
  	    echo "Installing $$i"; \
-@@ -506,30 +527,37 @@
+@@ -531,30 +552,37 @@
  	@cd $(TOP_DIR)/doc; for i in *.1; \
  	    do \
  	    echo "Installing doc/$$i"; \

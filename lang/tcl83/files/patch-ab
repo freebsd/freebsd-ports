@@ -1,6 +1,6 @@
---- configure.orig	Mon Feb 23 20:02:51 1998
-+++ configure	Sat Oct  3 15:46:42 1998
-@@ -4528,14 +4528,19 @@
+--- configure.orig	Fri Dec 11 18:36:14 1998
++++ configure	Sat Jan  2 15:04:24 1999
+@@ -4330,14 +4330,19 @@
    echo "$ac_t""yes" 1>&6
    
  	    SHLIB_CFLAGS="-fpic"
@@ -11,13 +11,14 @@
  	    DL_LIBS=""
  	    LD_FLAGS=""
  	    LD_SEARCH_FLAGS=""
-+  if eval "test \"`echo ${PORTOBJFORMAT}`\" = elf"; then
-+	    TCL_SHARED_LIB_SUFFIX='`echo ${VERSION} | tr -d .`.so.1'
-+	    SHLIB_LD="ld -shared -x -soname \$@"
-+  else
- 	    TCL_SHARED_LIB_SUFFIX='`echo ${VERSION} | tr -d .`.so.1.0'
-+	    SHLIB_LD="ld -Bshareable -x"
-+  fi
+-	    TCL_SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.so.1.0'
++        if eval "test \"`echo ${PORTOBJFORMAT}`\" = elf"; then
++            TCL_SHARED_LIB_SUFFIX='`echo ${VERSION} | tr -d .`.so.1'
++            SHLIB_LD="ld -shared -x -soname \$@"
++        else
++            TCL_SHARED_LIB_SUFFIX='`echo ${VERSION} | tr -d .`.so.1.0'
++            SHLIB_LD="ld -Bshareable -x"
++        fi
  	
  else
    echo "$ac_t""no" 1>&6
