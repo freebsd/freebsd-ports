@@ -13,8 +13,6 @@ MASTER_SITES=	http://shino.pos.to/linux/
 MAINTAINER=	mita@FreeBSD.org
 COMMENT=	Fax send/receive program
 
-FORBIDDEN=	"Buffer overflow yielding setuid uucp"
-
 RUN_DEPENDS=	xloadimage:${PORTSDIR}/x11/xloadimage
 
 USE_GMAKE=	YES
@@ -32,8 +30,6 @@ post-build:
 		${WRKSRC}/fax
 
 post-install:
-	${CHOWN}	uucp:dialer ${PREFIX}/bin/efax
-	${CHMOD}	4755 ${PREFIX}/bin/efax
 	${INSTALL_DATA} ${WRKSRC}/efax.rc.sample ${PREFIX}/etc
 	${INSTALL_DATA} ${WRKSRC}/efax.rc.sample.ja ${PREFIX}/etc
 	${MKDIR}	${DOCDIR}
