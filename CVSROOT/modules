@@ -5511,6 +5511,7 @@ p5-NetAddr-IP-Find	ports/textproc/p5-NetAddr-IP-Find
 p5-NetPacket	ports/net/p5-NetPacket
 p5-News-Article	ports/news/p5-News-Article
 p5-News-Newsrc	ports/news/p5-News-Newsrc
+p5-Nmap-Scanner	ports/security/p5-Nmap-Scanner
 p5-Number-Compare	ports/math/p5-Number-Compare
 p5-Number-Format	ports/textproc/p5-Number-Format
 p5-OLE-Storage_Lite	ports/devel/p5-OLE-Storage_Lite
