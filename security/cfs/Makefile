@@ -17,7 +17,6 @@ MAINTAINER=	green@FreeBSD.org
 ALL_TARGET=	cfs
 MAN1=		cattach.1 cdetach.1 cmkdir.1 cpasswd.1 cfssh.1
 MAN8=		ccat.8 cfsd.8 cname.8
-RESTRICTED=	"contains crypto code"
 
 NO_WRKSUBDIR=	yes
 
@@ -30,6 +29,6 @@ do-install:
 	    ${INSTALL_MAN} ${MAN8} ${PREFIX}/man/man8; \
 	    ${MKDIR} ${PREFIX}/share/doc/cfs; \
 	    ${INSTALL_DATA} README.install notes.ms ${PREFIX}/share/doc/cfs; \
-	    ${INSTALL_SCRIPT} cfsd.sh ${PREFIX}/etc/rc.d
+	    ${INSTALL_SCRIPT} ${FILESDIR}/cfsd.sh ${PREFIX}/etc/rc.d
 
 .include <bsd.port.mk>
