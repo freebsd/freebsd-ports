@@ -1,0 +1,10 @@
+The prefork pragma is intended to allow module writers to optimise
+module loading for both scenarios with as little additional code as
+possible.
+
+The prefork.pm is intended to serve as a central and optional
+marshallingM point for state detection (are we running in procedural or
+pre-forkingM mode) and to act as a relatively light-weight module
+loader.
+
+WWW: http://search.cpan.org/dist/prefork/
