@@ -7,6 +7,7 @@
 
 PORTNAME=	nut
 PORTVERSION=	9.15
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://www.lafn.org/~av832/
 PKGNAMEPREFIX=	health-
@@ -20,22 +21,18 @@ USE_GMAKE=	yes
 USE_REINPLACE=	yes
 
 post-patch:
-	@${REINPLACE_CMD} -e \
-	's|%%PREFIX%%|${PREFIX}|g' \
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
 		${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 	${MKDIR} ${PREFIX}/etc/${PORTNAME}
-	${INSTALL_DATA}	${WRKSRC}/raw.data/FOOD_DES.txt \
-		${PREFIX}/etc/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/raw.data/NUT_DATA.txt	\
-		${PREFIX}/etc/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/raw.data/WEIGHT.txt \
-		${PREFIX}/etc/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/raw.data/sr16-1.nut \
-		${PREFIX}/etc/${PORTNAME}
-	${INSTALL_MAN} ${WRKSRC}/nut.1 ${PREFIX}/man/man1
+	${INSTALL_DATA}	${WRKSRC}/raw.data/FOOD_DES.txt ${PREFIX}/etc/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/raw.data/NUT_DATA.txt	${PREFIX}/etc/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/raw.data/WEIGHT.lib ${PREFIX}/etc/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/raw.data/WEIGHT.txt ${PREFIX}/etc/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/raw.data/sr16-1.nut ${PREFIX}/etc/${PORTNAME}
+	${INSTALL_MAN} ${WRKSRC}/nut.1 ${MANPREFIX}/man/man1
 
 post-install:
 .if !defined(NOPORTDOCS)
