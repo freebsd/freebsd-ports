@@ -89,7 +89,8 @@ MAN1=		cpp33.1 g++33.1 g77-33.1 gcc33.1 gcov33.1 \
 		jcf-dump33.1 jv-scan33.1 jv-convert33.1 \
 		rmic33.1 rmiregistry33.1
 MAN7=		fsf-funding.7 gfdl.7 gpl.7
-
+INFO=		cpp cppinternals g77 gcc gccint gcj fastjar
+	
 pre-fetch:
 	@${ECHO} "Making GCC ${DISTNAME:S/^gcc-//} for ${OPSYS} ${OSREL} ${PORTOBJFORMAT}	target ${CONFIGURE_TARGET}"
 .if !defined(WITH_BOUNDSCHECKING)
