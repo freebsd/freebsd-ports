@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gimageview
-PORTVERSION=	0.2.13
+PORTVERSION=	0.2.23
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gtkmmviewer
@@ -29,6 +29,44 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 USE_GNOME+=	imlib
 PKGNAMESUFFIX=	-imlib
 WITH_IMLIB=	yes
+.endif
+
+.if exists(${LOCALBASE}/lib/libmng.so.1)
+WITH_LIBMNG=	yes
+.endif
+
+.if exists(${LOCALBASE}/lib/libwmf.so.2)
+WITH_LIBWMF=	yes
+.endif
+
+.if exists(${X11BASE}/lib/librsvg.so.1)
+WITH_LIBRSVG=	yes
+.endif
+
+.if exists(${LOCALBASE}/bin/mplayer)
+WITH_MPLAYER=	yes
+.endif
+
+.if defined(WITH_LIBMNG)
+LIB_DEPENDS+=	mng.1:${PORTSDIR}/graphics/libmng
+.endif
+
+.if defined(WITH_LIBWMF)
+LIB_DEPENDS+=	wmf.2:${PORTSDIR}/graphics/libwmf
+.endif
+
+.if defined(WITH_LIBRSVG)
+LIB_DEPENDS+=	rsvg.1:${PORTSDIR}/graphics/librsvg
+.endif
+
+.if defined(WITH_MPLAYER)
+RUN_DEPENDS+=	mplayer:${PORTSDIR}/multimedia/mplayer
+CONFIGURE_ARGS+=	--enable-mplayer
+.endif
+
+.if defined(WITH_LIBXINE)
+LIB_DEPENDS+=	xine.3:${PORTSDIR}/graphics/libxine
+CONFIGURE_ARGS+=	--with-xine
 .endif
 
 post-patch:
