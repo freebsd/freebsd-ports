@@ -25,8 +25,8 @@ PS!=		echo ${PAPERSIZE} | awk '{print toupper($$1)}'
 
 .if ${PAPERSIZE} != a4 && ${PAPERSIZE} != letter
 .BEGIN:
-	@${ECHO} "Error: invalid value for PAPERSIZE: \"${PAPERSIZE}\""
-	@${ECHO} "Possible values are:  a4 or letter"
+	@${ECHO_MSG} "Error: invalid value for PAPERSIZE: \"${PAPERSIZE}\""
+	@${ECHO_MSG} "Possible values are:  a4 or letter"
 	@${FALSE}
 .endif
 
@@ -48,9 +48,9 @@ do-install:
 	@${INSTALL_MAN} ${WRKSRC}/lprps.n ${PREFIX}/man/man8/lprps.8
 	@${INSTALL_MAN} ${WRKSRC}/psif.n ${PREFIX}/man/man8/psif.8
 	@${INSTALL_MAN} ${WRKSRC}/psof.n ${PREFIX}/man/man8/psof.8
-	@${ECHO} ""
-	@${ECHO} Now edit your /etc/printcap
-	@${ECHO} ""
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} Now edit your /etc/printcap
+	@${ECHO_MSG} ""
 
 post-install:
 .if !defined(NOPORTDOCS)

@@ -22,7 +22,7 @@ MAN1=		amiwm.1
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${ECHO} "===>  Copying documents to ${PREFIX}/share/doc/amiwm"
+	@${ECHO_MSG} "===>  Copying documents to ${PREFIX}/share/doc/amiwm"
 	@${MKDIR} ${PREFIX}/share/doc/amiwm
 	@${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/amiwm
 	@${INSTALL_DATA} ${WRKSRC}/README.modules ${PREFIX}/share/doc/amiwm

@@ -28,14 +28,14 @@ do-install:
 	${CHMOD} -R 775 ${APACHEDIR}/geeklog/public_html/images/articles
 	${CHMOD} -R 775 ${APACHEDIR}/geeklog/public_html/images/userphotos
 	${CHMOD} -R 775 ${APACHEDIR}/geeklog/public_html/backend
-	@${ECHO} ""
-	@${ECHO} "***********************************************************************"
-	@${ECHO} "* You now need to create the database that you want GeekLog           *"
-	@${ECHO} "* to reside in.                                                       *"
-	@${ECHO} "* Then edit the config.php file to your needs.                        *"
-	@${ECHO} "* Once you have done that, the goto                                   *"
-	@${ECHO} "* http://<your_website>/geeklog/public_html/admin/install/install.php *"
-	@${ECHO} "* And follow the instructions, then you are done!!                    *"
-	@${ECHO} "***********************************************************************"
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "***********************************************************************"
+	@${ECHO_MSG} "* You now need to create the database that you want GeekLog           *"
+	@${ECHO_MSG} "* to reside in.                                                       *"
+	@${ECHO_MSG} "* Then edit the config.php file to your needs.                        *"
+	@${ECHO_MSG} "* Once you have done that, the goto                                   *"
+	@${ECHO_MSG} "* http://<your_website>/geeklog/public_html/admin/install/install.php *"
+	@${ECHO_MSG} "* And follow the instructions, then you are done!!                    *"
+	@${ECHO_MSG} "***********************************************************************"
 
 .include <bsd.port.mk>

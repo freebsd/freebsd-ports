@@ -71,16 +71,18 @@ CONFIGURE_ARGS+=	--enable-gnome
 
 .if defined(WITH_KDE)
 CONFIGURE_ARGS+=	--enable-kde
-.else
-pre-extract:
-	@${ECHO} "You can add hooks for KDE by defining WITH_KDE"
 .endif
 
-.if !defined(WITHOUT_HERMES)
 pre-everything::
-	@${ECHO} "You can disable the Hermes library by defining WITHOUT_HERMES"
-	@${ECHO}
+.if !defined(WITHOUT_HERMES)
+	@${ECHO_MSG}
+	@${ECHO_MSG} "You can disable the Hermes library by defining WITHOUT_HERMES"
+	@${ECHO_MSG}
 .endif
+.if !defined(WITH_KDE)
+	@${ECHO_MSG}
+	@${ECHO_MSG} "You can add hooks for KDE by defining WITH_KDE"
+	@${ECHO_MSG}
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/WPrefs.app/Paths.c

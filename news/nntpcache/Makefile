@@ -62,13 +62,13 @@ MAN8=		nntpcached.8 newshound.8
 DOCS=		AUTHORS ChangeLog FAQ FAQ.html HACKING HTML \
 		INSTALL LICENSING NEWS README README.INN VERSION
 
+pre-everything::
 .if !defined(BATCH)
-post-fetch:
-	@${ECHO} "To enable LDAP support use either:"
-	@${ECHO} "	WITH_LDAP - LDAP v1 support"
-	@${ECHO} "	WITH_LDAP2 - LDAP v2 support"
-	@${ECHO}
-	@${ECHO} "To disable radius support use WITHOUT_RADIUS"
+	@${ECHO_MSG} "To enable LDAP support use either:"
+	@${ECHO_MSG} "	WITH_LDAP - LDAP v1 support"
+	@${ECHO_MSG} "	WITH_LDAP2 - LDAP v2 support"
+	@${ECHO_MSG}
+	@${ECHO_MSG} "To disable radius support use WITHOUT_RADIUS"
 .endif
 
 post-configure:
@@ -79,7 +79,7 @@ post-install:
 	@ ${SED} -e 's#%%PREFIX%%#${PREFIX}#g' ${FILESDIR}/nntpcached.rc \
 	  > ${WRKDIR}/nntpcached.sh
 .if !defined(BATCH)
-	@ ${ECHO} "Installing ${PREFIX}/etc/rc.d/nntpcached.sh startup file"
+	@ ${ECHO_MSG} "Installing ${PREFIX}/etc/rc.d/nntpcached.sh startup file"
 .endif
 	@ ${INSTALL_SCRIPT} -m 751 ${WRKDIR}/nntpcached.sh \
 	  ${PREFIX}/etc/rc.d

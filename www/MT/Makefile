@@ -50,7 +50,7 @@ run make again.\n
 
 do-install:
 	@cd ${WRKSRC} && ${FIND} * -name "*.orig" -delete
-	@${ECHO} "Installing cgi ${PREFIX}/${CGIDIR}"
+	@${ECHO_MSG} "Installing cgi ${PREFIX}/${CGIDIR}"
 	@${MKDIR} ${PREFIX}/${CGIDIR}
 	@cd ${WRKSRC} && ${CP} -R *.cgi lib extlib tmpl search_templates \
 	  ${PREFIX}/${CGIDIR}
@@ -59,7 +59,7 @@ do-install:
 	  -e 's#path/to/static-files#mt#g' \
 	  -e 's/# NoHTMLEntities 1/NoHTMLEntities 1/g' \
 	  ${WRKSRC}/mt.cfg > ${PREFIX}/${CGIDIR}/mt.cfg
-	@${ECHO} "Installing data ${PREFIX}/${DATADIR}"
+	@${ECHO_MSG} "Installing data ${PREFIX}/${DATADIR}"
 	@${MKDIR} ${PREFIX}/${DATADIR}
 	@cd ${WRKSRC} && ${CP} -R LICENSE LICENSE-COMMERCIAL docs images \
 	  index.html plugins schemas styles.css \
@@ -72,6 +72,6 @@ do-install:
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
-	@${ECHO} "Please read the docs to initialize a blog DB in ${DB_DIR}"
+	@${ECHO_MSG} "Please read the docs to initialize a blog DB in ${DB_DIR}"
 
 .include <bsd.port.post.mk>

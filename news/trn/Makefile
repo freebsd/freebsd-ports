@@ -25,12 +25,12 @@ CONFIGURE_ARGS=	-S
 
 post-install:
 .if !defined(BATCH)
-	@${ECHO} ""
-	@${ECHO} "############################################################################"
-	@${ECHO} "# Please edit lines 48 through 69 in ${PREFIX}/bin/Pnews                   #"
-	@${ECHO} "# to customize news posting for your site.                                 #"
-	@${ECHO} "# Remember to set the NNTPSERVER environment variable to your news server. #"
-	@${ECHO} "############################################################################"
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "############################################################################"
+	@${ECHO_MSG} "# Please edit lines 48 through 69 in ${PREFIX}/bin/Pnews                   #"
+	@${ECHO_MSG} "# to customize news posting for your site.                                 #"
+	@${ECHO_MSG} "# Remember to set the NNTPSERVER environment variable to your news server. #"
+	@${ECHO_MSG} "############################################################################"
 .endif
 
 .include <bsd.port.mk>

@@ -34,12 +34,12 @@ PLIST_SUB+=	PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR:S/^${LOCALBASE}\///g}
 
 STRIP_CMD?=	strip
 
-pre-fetch:
-	@${ECHO} ""
-	@${ECHO} "You may use the following build option:"
-	@${ECHO} ""
-	@${ECHO} "  WANT_EAPI=yes  build as apache EAPI module (for apache13-modssl)"
-	@${ECHO} ""
+pre-everything::
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "You may use the following build option:"
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "  WANT_EAPI=yes  build as apache EAPI module (for apache13-modssl)"
+	@${ECHO_MSG} ""
 
 pre-patch:
 .if defined(WANT_EAPI)

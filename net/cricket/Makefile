@@ -43,14 +43,14 @@ do-install:
 		-name \*.bak | ${XARGS} ${RM} -f
 	${CHOWN} -R ${CRICKET_USER}:${CRICKET_GROUP} ${PREFIX}/cricket
 	@if [ -L ${PREFIX}/cricket/cricket ]; then \
-		${ECHO} "Updating ${PREFIX}/cricket/cricket symbolic link" ; \
+		${ECHO_MSG} "Updating ${PREFIX}/cricket/cricket symbolic link" ; \
 		${RM} ${PREFIX}/cricket/cricket ; \
 	fi
 	${LN} -s ${PREFIX}/cricket/cricket-${PORTVERSION} \
 		${PREFIX}/cricket/cricket
 	@if [ -f ${LOCALBASE}/cricket/compile ] ; then \
-		${ECHO} "You should migrate manually to use new cricket" ; \
-		${ECHO} "installation scheme." ; \
+		${ECHO_MSG} "You should migrate manually to use new cricket" ; \
+		${ECHO_MSG} "installation scheme." ; \
 	fi
 
 post-install:

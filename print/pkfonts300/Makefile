@@ -28,8 +28,8 @@ RESOLUTION=	300
 	${RESOLUTION} != 300 && ${RESOLUTION} != 360 && \
 	${RESOLUTION} != 400 && ${RESOLUTION} != 600
 .BEGIN:
-	@${ECHO} "Error: invalid value for RESOLUTION: \"${RESOLUTION}\""
-	@${ECHO} "Possible values are: 118, 240, 300, 360, 400 and 600."
+	@${ECHO_MSG} "Error: invalid value for RESOLUTION: \"${RESOLUTION}\""
+	@${ECHO_MSG} "Possible values are: 118, 240, 300, 360, 400 and 600."
 	@${FALSE}
 .endif
 .endif
