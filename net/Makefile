@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.146 1998/03/08 04:50:57 ache Exp $
+# $Id: Makefile,v 1.147 1998/03/15 20:09:35 steve Exp $
 #
 
     SUBDIR += archie
@@ -25,6 +25,7 @@
     SUBDIR += fping
     SUBDIR += freewais-sf
     SUBDIR += fspclient
+    SUBDIR += ftpfind
     SUBDIR += ftpsearch
     SUBDIR += ftptool
     SUBDIR += gated
