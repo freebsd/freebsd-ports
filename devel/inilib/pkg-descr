@@ -1,0 +1,14 @@
+inilib is a C++ library which provides a method of saving the "state"
+of a program. inilib provides a means of storing a number of arbitrary
+settings in memory with an easy access interface, as well providing
+means for saving the information to and loading it from disk. Data is
+stored in an easy to read format, allowing the user to modify any of the
+information with a simple text editor.
+
+inilib benefits the programmer by providing a simple, intuitive means to
+store any data that can be expressed in std::string, int, double, or bool
+types. In addition, inilib handles any conversion that may be necessary
+to convert from one type to the other. Saving all information stored in
+inilib to disk or loading information from disk requires only one command.
+
+WWW: http://inilib.sourceforge.net/
