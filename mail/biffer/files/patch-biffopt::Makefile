@@ -1,0 +1,13 @@
+--- biffopt/Makefile.orig	Wed Oct 22 17:12:06 2003
++++ biffopt/Makefile	Wed Oct 22 17:12:25 2003
+@@ -7,7 +7,9 @@
+ 
+ INCLUDES = ../Include/biffer.h ../Include/biffoptions.h
+ 
+-CFLAGS	= -O -I../Include
++CC	?= cc
++CFLAGS	?= -O -pipe
++CFLAGS	+= -I../Include
+ 
+ LIBS	= -lcompat
+ 

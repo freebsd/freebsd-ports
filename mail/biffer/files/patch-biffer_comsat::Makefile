@@ -1,0 +1,11 @@
+--- biffer_comsat/Makefile.orig	Wed Oct 22 17:11:51 2003
++++ biffer_comsat/Makefile	Wed Oct 22 17:12:01 2003
+@@ -11,6 +11,8 @@
+ BINDIR=        /usr/local/libexec
+ MANDIR=        /usr/local/man/man
+ 
++CC?=		cc
++CFLAGS?=	-O -pipe
+ CFLAGS+=	-I../Include
+ 
+ .include <bsd.prog.mk>
