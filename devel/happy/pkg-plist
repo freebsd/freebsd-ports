@@ -1,15 +1,15 @@
 bin/happy
-bin/happy-1.10
-lib/happy.bin
-lib/happy/HappyTemplate
-lib/happy/HappyTemplate-arrays
-lib/happy/HappyTemplate-arrays-coerce
-lib/happy/HappyTemplate-arrays-coerce-debug
-lib/happy/HappyTemplate-arrays-debug
-lib/happy/HappyTemplate-arrays-ghc
-lib/happy/HappyTemplate-arrays-ghc-debug
-lib/happy/HappyTemplate-coerce
-lib/happy/HappyTemplate-ghc
+bin/happy-1.11
+lib/happy-1.11/happy.bin
+lib/happy-1.11/happy/HappyTemplate
+lib/happy-1.11/happy/HappyTemplate-arrays
+lib/happy-1.11/happy/HappyTemplate-arrays-coerce
+lib/happy-1.11/happy/HappyTemplate-arrays-coerce-debug
+lib/happy-1.11/happy/HappyTemplate-arrays-debug
+lib/happy-1.11/happy/HappyTemplate-arrays-ghc
+lib/happy-1.11/happy/HappyTemplate-arrays-ghc-debug
+lib/happy-1.11/happy/HappyTemplate-coerce
+lib/happy-1.11/happy/HappyTemplate-ghc
 share/doc/happy/docbook.css
 share/doc/happy/happy-introduction.html
 share/doc/happy/happy.html
@@ -46,6 +46,7 @@ share/doc/happy/stylesheet-images/toc-minus.gif
 share/doc/happy/stylesheet-images/toc-plus.gif
 share/doc/happy/stylesheet-images/up.gif
 share/doc/happy/stylesheet-images/warning.gif
-@dirrm lib/happy
+@dirrm lib/happy-1.11/happy
+@dirrm lib/happy-1.11
 @dirrm share/doc/happy/stylesheet-images
 @dirrm share/doc/happy
