@@ -15,6 +15,8 @@ MASTER_SITES=	ftp://ftp.proftpd.org/distrib/source/ \
 
 MAINTAINER=	mharo@FreeBSD.org
 
+FORBIDDEN=	"Security vulnerability - check back in a few days"
+
 .if defined(WITH_LDAP)
 MASTER_SITES+=	http://www.horde.net/~jwm/software/proftpd-ldap/
 MOD_LDAP=	mod_ldap-2.7.4.tar.bz2
