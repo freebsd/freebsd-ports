@@ -52,8 +52,6 @@ PLUGINSDIR=		${PREFIX}/lib/browser_plugins
 #BROKEN+=please make sure you have given the command \'use.perl port\'.
 #.endif # ${PERL_LEVEL} < 500601
 
-SORT?=/usr/bin/sort
-
 .if defined(WITH_DEBUG)
 WITH_LOGGING=		yes
 CONFIGURE_ENV+=		WITH_DEBUG=yes
