@@ -2,17 +2,18 @@
 # Ports collection makefile for:  nat/nbaudit
 # Version required:     	  1.0
 # Date created:			  Mon Feb 03, 1997
-# Whom:				  David O'Brien (obrien@FreeBSD.org)
+# Whom:				  David O'Brien (obrien@NUXI.com)
 #
-# $Id: Makefile,v 1.1.1.1 1998/01/21 11:37:54 obrien Exp $
+# $Id: Makefile,v 1.1.1.1 1998/02/14 04:10:30 obrien Exp $
 #
 
 DISTNAME=	nat10
 PKGNAME=	nbaudit-1.0
 CATEGORIES=	security net
-MASTER_SITES=	ftp://ftp.secnet.com/pub/tools/nat10/
+MASTER_SITES=	ftp://ftp.secnet.com/pub/tools/nat10/  \
+		ftp://ftp.auscert.org.au/pub/coast/mirrors/ftp.secnet.com/tools/nat10/
 
-MAINTAINER=     obrien@NUXI.com
+MAINTAINER=     obrien@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 MAN1=		nat.1
