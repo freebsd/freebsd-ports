@@ -1,0 +1,11 @@
+The sysinstall2 project (aka libh) is the next generation 
+sysinstall replacement.  The libh project aims to produce
+a robust installation and administration tool, which will
+provide several flexible user interfaces and an advanced 
+package management system.
+
+The name libh comes from the prefix of the shared library
+filenames and the original author packaged his first pre-alpha 
+release as libh.tar.gz.
+
+WWW: http://people.FreeBSD.org/~alex/libh/
