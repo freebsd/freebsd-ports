@@ -83,7 +83,7 @@ do-install:
 post-install:
 	@${ECHO_CMD} "${PKGNAME} is now installed in ${PREFIX}/intel, to use it you have to"
 	@${ECHO_CMD} "put your license into your \$${INTEL_FLEXLM_LICENSE} (default:"
-	@${ECHO_CMD} "${PREFIX}/intel/licenses) directory and add ${PREFIX}/intel/compiler60/bin"
+	@${ECHO_CMD} "${PREFIX}/intel/licenses) directory and add ${PREFIX}/intel/compiler60/ia32/bin"
 	@${ECHO_CMD} "to your PATH."
 
 .include <bsd.port.post.mk>
