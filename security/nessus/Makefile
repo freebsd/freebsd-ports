@@ -6,22 +6,22 @@
 #
 
 PORTNAME=	nessus
-PORTVERSION=	0.99.7
+PORTVERSION=	1.0.4
 CATEGORIES=	security
-MASTER_SITES=	ftp://ftp.cis.fed.gov/pub/nessus/nessus-${NESSUS_REV}/ \
-		ftp://ftp.nessus.org/pub/nessus/nessus-${NESSUS_REV}/ \
-		ftp://cvs.nessus.org/pub/nessus/nessus-${NESSUS_REV}/ \
-		ftp://ftp.gwdg.de/pub/linux/misc/nessus/nessus-${NESSUS_REV}/ \
-		http://ftp.gwdg.de/pub/linux/misc/nessus/nessus-${NESSUS_REV}/ \
-		ftp://ftp.esiea.fr/pub/mirrors/nessus/nessus-${NESSUS_REV}/ \
-		ftp://sunsite.cnlab-switch.ch/mirror/nessus/nessus-${NESSUS_REV}/ \
-		ftp://ftp.chg.ru/pub/security/nessus/nessus-${NESSUS_REV}/ \
-		ftp://ftp.sekure.net/pub/nessus/nessus-${NESSUS_REV}/
-DISTNAME=	nessus-core-0.99.7
+MASTER_SITES=	ftp://ftp.cis.fed.gov/pub/nessus/nessus-${NESSUS_REV}/src/ \
+		ftp://ftp.nessus.org/pub/nessus/nessus-${NESSUS_REV}/src/ \
+		ftp://cvs.nessus.org/pub/nessus/nessus-${NESSUS_REV}/src/ \
+		ftp://ftp.gwdg.de/pub/linux/misc/nessus/nessus-${NESSUS_REV}/src/ \
+		http://ftp.gwdg.de/pub/linux/misc/nessus/nessus-${NESSUS_REV}/src/ \
+		ftp://ftp.esiea.fr/pub/mirrors/nessus/nessus-${NESSUS_REV}/src/ \
+		ftp://sunsite.cnlab-switch.ch/mirror/nessus/nessus-${NESSUS_REV}/src/ \
+		ftp://ftp.chg.ru/pub/security/nessus/nessus-${NESSUS_REV}/src/ \
+		ftp://ftp.sekure.net/pub/nessus/nessus-${NESSUS_REV}/src/
+DISTNAME=	nessus-core-1.0.4
 
 MAINTAINER=	anders@fix.no
 
-LIB_DEPENDS=	nasl.99:${PORTSDIR}/security/nessus-libnasl \
+LIB_DEPENDS=	nasl.1:${PORTSDIR}/security/nessus-libnasl \
 		gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
 
 NESSUS_REV=	${DISTNAME:S/nessus-core-//g}
@@ -33,7 +33,7 @@ WRKSRC=		${WRKDIR}/nessus-core
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	GTKCONFIG="${GTK_CONFIG}"
 MAN1=		nessus.1
-MAN8=		nessusd.8
+MAN8=		nessusd.8 nessus-adduser.8
 
 post-install:
 		@${ECHO} "=========================================================="
