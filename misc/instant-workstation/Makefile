@@ -19,7 +19,6 @@ RUN_DEPENDS=	acroread:${PORTSDIR}/print/acroread4 \
 		emacs:${PORTSDIR}/editors/emacs20 \
 		fetchmail:${PORTSDIR}/mail/fetchmail \
 		ghostscript:${PORTSDIR}/print/ghostscript6 \
-		ghostview:${PORTSDIR}/print/ghostview \
 		grip:${PORTSDIR}/audio/grip \
 		gimp:${PORTSDIR}/graphics/gimp1 \
 		gv:${PORTSDIR}/print/gv \
@@ -30,7 +29,7 @@ RUN_DEPENDS=	acroread:${PORTSDIR}/print/acroread4 \
 		mount_smbfs:${PORTSDIR}/net/smbfs \
 		mutt:${PORTSDIR}/mail/mutt \
 		netscape:${PORTSDIR}/www/netscape47-communicator \
-		postfix:${PORTSDIR}/mail/postfix \
+		/usr/local/sbin/postfix:${PORTSDIR}/mail/postfix \
 		xamp:${PORTSDIR}/audio/xamp \
 		xtset:${PORTSDIR}/x11/xtset \
 		xmms:${PORTSDIR}/audio/xmms \
@@ -40,3 +39,7 @@ NO_WRKSUBDIR=	YES
 NO_BUILD=	YES
 
 .include <bsd.port.mk>
+
+
+
+
