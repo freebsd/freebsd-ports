@@ -77,4 +77,16 @@ pre-configure:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 430000
+OPENSSLBASE=	/usr/local
+OPENSSLDIR=	${OPENSSLBASE}/openssl
+LIB_DEPENDS+=	crypto.2:${PORTSDIR}/security/openssl
+OPENSSLLIB=	${OPENSSLBASE}/lib
+OPENSSLINC=	${OPENSSLBASE}/include
+MAKE_ENV+=	OPENSSLLIB=${OPENSSLLIB} OPENSSLINC=${OPENSSLINC} \
+		OPENSSLBASE=${OPENSSLBASE} OPENSSLDIR=${OPENSSLDIR}
+.endif
+
+.include <bsd.port.post.mk>
