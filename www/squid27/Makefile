@@ -74,7 +74,7 @@
 
 PORTNAME=	squid
 PORTVERSION=	2.5.7
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	www
 MASTER_SITES=	\
 		ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
@@ -93,6 +93,7 @@ PATCHFILES=	squid-2.5.STABLE7-half_closed_POST.patch \
 		squid-2.5.STABLE7-helper_shutdown.patch \
 		squid-2.5.STABLE7-blank_response.patch \
 		squid-2.5.STABLE7-dothost.patch \
+		squid-2.5.STABLE7-PURGE_internal.patch \
 		squid-2.5.STABLE7-httpd_accel_vport.patch \
 		squid-2.5.STABLE7-cachemgr_vmobjects.patch \
 		squid-2.5.STABLE7-empty_acls.patch \
@@ -103,6 +104,8 @@ PATCHFILES=	squid-2.5.STABLE7-half_closed_POST.patch \
 		squid-2.5.STABLE7-dns_memleak.patch \
 		squid-2.5.STABLE7-fqdn_truncated.patch \
 		squid-2.5.STABLE7-ldap_spaces.patch \
+		squid-2.5.STABLE7-header_parsing.patch \
+		squid-2.5.STABLE7-httpd_accel_no_pmtu_disc.patch \
 		squid-2.5.STABLE7-ftp_datachannel.patch \
 		squid-2.5.STABLE7-short_icons_urls.patch \
 		squid-2.5.STABLE7-response_splitting.patch
@@ -150,9 +153,8 @@ OPTIONS=	SQUID_LDAP_AUTH "Install LDAP authentication helpers" off \
 		SQUID_STACKTRACES "Create backtraces on fatal errors" off \
 		SQUID_RCNG "Install an rcNG startup script" on
 
-PLIST_FILES=	etc/rc.d/squid.sh etc/squid/mib.txt etc/squid/mime.conf.default \
-		etc/squid/msntauth.conf.default etc/squid/squid.conf.default \
-		sbin/RunAccel sbin/RunCache sbin/squidclient sbin/squid
+etc_files=	rc.d/squid.sh squid/mib.txt squid/mime.conf.default \
+		squid/msntauth.conf.default squid/squid.conf.default
 
 icon_files=	anthony-binhex.gif anthony-bomb.gif anthony-box.gif \
 		anthony-box2.gif anthony-c.gif anthony-compressed.gif \
@@ -169,17 +171,22 @@ error_files=	ERR_ACCESS_DENIED ERR_CACHE_ACCESS_DENIED \
 		ERR_CONNECT_FAIL ERR_DNS_FAIL ERR_FORWARDING_DENIED \
 		ERR_FTP_DISABLED ERR_FTP_FAILURE ERR_FTP_FORBIDDEN \
 		ERR_FTP_NOT_FOUND ERR_FTP_PUT_CREATED \
-		ERR_FTP_PUT_ERROR ERR_FTP_PUT_MODIFIED \
-		ERR_FTP_UNAVAILABLE ERR_INVALID_REQ ERR_INVALID_URL \
+		ERR_FTP_PUT_ERROR ERR_FTP_PUT_MODIFIED ERR_FTP_UNAVAILABLE \
+		ERR_INVALID_REQ ERR_INVALID_RESP ERR_INVALID_URL \
 		ERR_LIFETIME_EXP ERR_NO_RELAY ERR_ONLY_IF_CACHED_MISS \
 		ERR_READ_ERROR ERR_READ_TIMEOUT ERR_SHUTTING_DOWN \
 		ERR_SOCKET_FAILURE ERR_TOO_BIG ERR_UNSUP_REQ \
 		ERR_URN_RESOLVE ERR_WRITE_ERROR ERR_ZERO_SIZE_OBJECT
 
-libexec=	cachemgr.cgi digest_pw_auth diskd dnsserver ip_user_check \
-		squid_ldap_auth squid_ldap_group msnt_auth ncsa_auth ntlm_auth \
-		pam_auth pinger smb_auth smb_auth.sh squid_unix_group \
-		unlinkd wb_auth wb_group wb_ntlmauth wbinfo_group.pl
+libexec=	cachemgr.cgi digest_pw_auth diskd ip_user_check \
+		msnt_auth ncsa_auth ntlm_auth \
+		pam_auth smb_auth smb_auth.sh squid_unix_group \
+		wb_auth wb_group wb_ntlmauth wbinfo_group.pl
+.if !defined(SQUID_CONFIGURE_ARGS) || ${SQUID_CONFIGURE_ARGS:M*--disable-unlinkd*} == ""
+libexec+=	unlinkd
+.endif
+
+sbin=		RunAccel RunCache squidclient squid
 
 CONFIGURE_ARGS=	--bindir=${PREFIX}/sbin  --sysconfdir=${PREFIX}/etc/squid \
 		--datadir=${PREFIX}/etc/squid \
@@ -201,6 +208,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 MAN8+=		squid_ldap_auth.8 squid_ldap_group.8
 basic_auth+=	LDAP
 external_acl+=	ldap_group
+libexec+=	squid_ldap_auth squid_ldap_group
 .endif
 .if !defined(NO_NIS)
 basic_auth+=	YP
@@ -251,9 +259,11 @@ LDFLAGS+=	-I${LOCALBASE}/lib
 .endif
 .if defined(WITH_SQUID_PINGER)
 CONFIGURE_ARGS+=	--enable-icmp
+libexec+=	pinger
 .endif
 .if defined(WITH_SQUID_DNS_HELPER)
 CONFIGURE_ARGS+=	--disable-internal-dns
+libexec+=	dnsserver
 .endif
 .if defined(WITH_SQUID_HTCP)
 CONFIGURE_ARGS+=	--enable-htcp
@@ -301,6 +311,7 @@ CONFIGURE_ARGS+=	--enable-follow-x-forwarded-for
 .endif
 .if defined(WITH_SQUID_STACKTRACES)
 CONFIGURE_ARGS+=	--enable-stacktraces
+CFLAGS+=	-g
 STRIP=			""
 .endif
 .if !defined(WITHOUT_SQUID_RCNG)
@@ -331,6 +342,16 @@ CONFIGURE_ARGS+=	${SQUID_CONFIGURE_ARGS}
 
 CONFIGURE_ENV+=		CFLAGS="${CFLAGS}" \
 			LDFLAGS="${LDFLAGS}"
+
+PLIST_DIRS=	etc/squid/icons libexec/squid
+PLIST_FILES=	${etc_files:S,^,etc/,} ${icon_files:S,^,etc/squid/icons/,} \
+		${libexec:S,^,libexec/squid/,} ${sbin:S,^,sbin/,}
+
+.for d in ${SQUID_LANGUAGES}
+PLIST_DIRS+=	etc/squid/errors/${d}
+PLIST_FILES+=	${error_files:S,^,etc/squid/errors/${d}/,}
+.endfor
+PLIST_DIRS+=	etc/squid/errors etc/squid squid/logs squid/cache squid
 
 pre-patch:
 # Check whether we need to create the extra patch that makes pf(4)
@@ -375,27 +396,6 @@ post-install:
 .endif
 	@${SETENV} PKG_PREFIX=${PREFIX} \
 	    ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-# Create package list:
-	@for f in ${libexec}; do \
-	    ${TEST} -f ${PREFIX}/libexec/squid/$${f} && \
-	    ${ECHO_CMD} "libexec/squid/$${f}" >>${TMPPLIST} || ${TRUE} ; \
-	done
-	@${ECHO_CMD} "@unexec rmdir %D/libexec/squid 2>/dev/null || true" \
-	    >>${TMPPLIST}
-	@for f in ${icon_files}; do \
-	    ${ECHO_CMD} "etc/squid/icons/$${f}" >>${TMPPLIST}; \
-	done
-	@${ECHO_CMD} "@unexec rmdir %D/etc/squid/icons 2>/dev/null || true" \
-	    >>${TMPPLIST}
-	@for d in ${SQUID_LANGUAGES}; do \
-	    for f in ${error_files}; do \
-		${ECHO_CMD} "etc/squid/errors/$${d}/$${f}" >>${TMPPLIST} ; \
-	    done; \
-	    ${ECHO_CMD} "@unexec rmdir %D/etc/squid/errors/$${d} 2>/dev/null || true" \
-		>>${TMPPLIST}; \
-	done
-	@${ECHO_CMD} "@unexec rmdir %D/etc/squid/errors 2>/dev/null || true" \
-	    >>${TMPPLIST}
 
 changeuser:
 # Recover from the problem that earlier versions of this port created the

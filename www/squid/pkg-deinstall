@@ -13,20 +13,20 @@ DEINSTALL)
 	done
 	;;
 POST-DEINSTALL)
-	rmdir ${PKG_PREFIX}/etc/squid 2>/dev/null
-	rmdir ${PKG_PREFIX}/squid/cache 2>/dev/null
-	rmdir ${PKG_PREFIX}/squid/logs 2>/dev/null
-	rmdir ${PKG_PREFIX}/squid 2>/dev/null
 	echo "===> post-deinstallation information for $1"
 	echo ""
-	echo "     Please note that $1 was not completely removed"
-	echo "     from this system."
+	echo "     Please note that squid was not completely removed"
+	echo "     from this system:"
 	echo ""
-	echo "     The cache and log directories, squid's user account,"
-	echo "     and any modified configuration files have been preserved"
-	echo "     in case you want to install an updated version of squid"
-	echo "     on this system. You must remove them manually if you do"
-	echo "     not want to use squid any longer."
+	echo "     Any squid related user accounts were kept."
+	if  [ -d ${PKG_PREFIX}/squid -o -d ${PKG_PREFIX}/etc/squid ] ; then
+		echo ""
+		echo "     Additionally, cache and log directories as well as"
+		echo "     configuration files modified by you were preserved"
+		echo "     too, in case you want to install an updated version"
+		echo "     of squid. You need to remove them manually if you do"
+		echo "     not want to use it any longer."
+	fi
 	echo ""
 	;;
 *)
