@@ -3,13 +3,13 @@
 # Date created:        1 July 1997
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.1.1.1 1997/10/15 04:56:39 max Exp $
+# $Id: Makefile,v 1.2 1997/10/16 04:27:23 asami Exp $
 #
 
 DISTNAME=	xeyes-g
 PKGNAME=	xgolgo-1.0
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.cc.saga-u.ac.jp/pub/X/xeyes/
+MASTER_SITES=	ftp://ftp.netlab.is.tsukuba.ac.jp/pub/X/our_collections/misc/
 
 MAINTAINER=	Nakai@Mlab.t.u-tokyo.ac.jp
 

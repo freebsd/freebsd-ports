@@ -3,13 +3,14 @@
 # Date created:		25 December 1994
 # Whom:			joerg
 #
-# $Id: Makefile,v 1.15 1998/08/25 00:44:02 asami Exp $
+# $Id: Makefile,v 1.16 1998/09/21 01:35:31 steve Exp $
 #
 
 DISTNAME=	xmine-1.0.3-Xaw
 PKGNAME=	xmine-1.0.3
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITES=	ftp://ftp.sw.ru/pub/x11/ \
+		${MASTER_SITE_LOCAL}
 
 MAINTAINER=	joerg@FreeBSD.org
 

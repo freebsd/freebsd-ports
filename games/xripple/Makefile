@@ -3,13 +3,13 @@
 # Date created:				6 Oct 1996
 # Whom:					oly
 #
-# $Id: Makefile,v 1.3 1996/11/18 11:26:48 asami Exp $
+# $Id: Makefile,v 1.4 1997/06/12 06:08:02 asami Exp $
 #
 
 DISTNAME=	xripple
 PKGNAME=	xripple-1.0
 CATEGORIES=	games
-MASTER_SITES=	ftp://www.cse.unsw.edu.au/pub/users/s2154962/
+MASTER_SITES=	ftp://ftp.easynet.net/pub/X/wm/enlightenment/enlightenment/misc/
 
 MAINTAINER=	oly@world.std.com
 

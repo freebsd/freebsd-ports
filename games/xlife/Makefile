@@ -3,15 +3,14 @@
 # Date created:         15 March 1995
 # Whom:                 asami
 #
-# $Id: Makefile,v 1.8 1997/12/25 22:29:21 asami Exp $
+# $Id: Makefile,v 1.9 1998/09/28 02:28:45 steve Exp $
 #
 
 DISTNAME=       xlife
 PKGNAME=	xlife-3.0
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.cdrom.com/pub/X11/R5contrib/	\
-		ftp://ftp.iij.ad.jp/X/R5contrib/
-MASTER_SITE_SUBDIR=	../../R5contrib
+MASTER_SITES=	${MASTER_SITE_XCONTRIB}
+MASTER_SITE_SUBDIR=	../R5contrib
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.ORG

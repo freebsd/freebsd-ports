@@ -1,12 +1,12 @@
 # New ports collection makefile for:	xdigger
-# Version required:			1.0.6
+# Version required:			1.0.9
 # Date created:				29 June 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.1.1.1 1998/07/12 23:08:55 steve Exp $
+# $Id: Makefile,v 1.2 1998/08/25 00:43:49 asami Exp $
 #
 
-DISTNAME=		xdigger-1.0.6
+DISTNAME=		xdigger-1.0.9
 CATEGORIES=		games
 MASTER_SITES=		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	games/arcade
