@@ -57,6 +57,11 @@ EXTRACT_AFTER_ARGS=| ${TAR} -xf - \
 	--exclude '${DISTNAME}/include/jri*' \
 	--exclude '${DISTNAME}/include/np*'
 
+OPTIONS=	CUPS "Enable CUPS support" on \
+		NAS "Enable NAS support" on \
+		OPENGL "Enable OpenGL support" on \
+		XFT "Enable Xft support" on
+
 .include <bsd.port.pre.mk>
 
 # The previous Qt port versions installed qmake and qmake's specs under X11BASE
@@ -77,7 +82,7 @@ CONFIGURE_ARGS+=-platform ${LOCALBASE}/share/qt/mkspecs/freebsd-g++
 
 .if !defined(WITHOUT_XFT)
 LIB_DEPENDS+=	Xft.2:${PORTSDIR}/x11-fonts/libXft
-.else
+.elseif defined(WITHOUT_XFT)
 CONFIGURE_ARGS+=-no-xft
 .endif
 
@@ -87,39 +92,22 @@ CONFIGURE_ARGS+=-debug
 
 .if !defined(WITHOUT_OPENGL)
 USE_GL=		yes
-.else
+.elseif defined(WITHOUT_OPENGL)
 CONFIGURE_ARGS+=-disable-opengl
 .endif # WITHOUT_OPENGL
 
 .if !defined(WITHOUT_CUPS)
 LIB_DEPENDS+=	cups.2:${PORTSDIR}/print/cups-base
 CUPS=	-cups -L${LOCALBASE}/lib -I${LOCALBASE}/include
-.else
+.elseif defined(WITHOUT_CUPS)
 CUPS=
 .endif
 
 .if !defined(WITHOUT_NAS)
 LIB_DEPENDS+=	audio:${PORTSDIR}/audio/nas
 CONFIGURE_ARGS+=-system-nas-sound
-
-.if ${MACHINE_ARCH} == "alpha"
-CFLAGS+=	-O0
-.endif
-
-.if !defined(WITHOUT_XFT)
-pre-everything::
-	@${ECHO_MSG}
-	@${ECHO_MSG} '===> **************************************************'
-	@${ECHO_MSG} '===> If you do not want to build QT with XFT support '
-	@${ECHO_MSG} '===> press Ctrl-C and set WITHOUT_XFT'
-	@${ECHO_MSG} '===> **************************************************'
-.endif
-pre-everything::
-	@${ECHO_MSG}
-	@${ECHO_MSG} '===> **************************************************'
-	@${ECHO_MSG} '===> If you do not want to build QT with NAS support '
-	@${ECHO_MSG} '===> press Ctrl-C and set WITHOUT_NAS'
-	@${ECHO_MSG} '===> **************************************************'
+.elseif defined(WITHOUT_NAS)
+CONFIGURE_ARGS+=-no-nas-sound
 .endif
 
 .if ${XFREE86_VERSION} < 4
