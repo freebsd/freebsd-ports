@@ -370,7 +370,9 @@ for ($i = 0; ; $i++) {
 #
 if (-e "$LAST_FILE.$id") {
    $_ = &read_line("$LAST_FILE.$id");
-   exit 0 if (! grep(/$files[0]$/, $_));
+   $tmpfiles=$files[0];
+   $tmpfiles =~ s,([^a-zA-Z0-9_/]),\\$1,g;
+   exit 0 if (! grep(/$tmpfiles$/, $_));
 }
 
 #
