@@ -1386,6 +1386,7 @@ share/locale/zh_CN/LC_MESSAGES/evolution.mo
 @dirrm share/gnome/images/evolution/buttons
 @dirrm share/gnome/images/evolution
 @dirrm share/gnome/html/evolution-devel-guide
+@dirrm share/gnome/html
 @dirrm share/gnome/help/evolution/no/stylesheet-images
 @dirrm share/gnome/help/evolution/no/sgml
 @dirrm share/gnome/help/evolution/no/figures
