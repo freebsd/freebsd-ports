@@ -1234,6 +1234,7 @@ de-ooodict-DE	ports/german/ooodict-de_DE
 de-openoffice	ports/german/openoffice
 de-phone	ports/german/phone
 de-staroffice52	ports/german/staroffice52
+de-steak	ports/german/steak
 de-webalizer2	ports/german/webalizer2
 deadfs		src/sys/fs/deadfs
 deal		ports/games/deal
