@@ -46,7 +46,7 @@ Java_Include_MAINTAINER=	glewis@FreeBSD.org hq@FreeBSD.org
 #					considered to be the sub-make command. When no 'do-build'
 #					target is defined by the port, a default one will be set
 #					that simply runs Ant according to MAKE_ENV, MAKE_ARGS and
-#					ALL_TARGETS. Read the documentation in bsd.port.mk for more
+#					ALL_TARGET. Read the documentation in bsd.port.mk for more
 #					information.
 #
 #-------------------------------------------------------------------------------
