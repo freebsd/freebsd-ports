@@ -1,0 +1,27 @@
+
+$FreeBSD$
+
+--- configure.orig	Sat Dec  6 22:40:13 2003
++++ configure	Sun Dec  7 01:55:48 2003
+@@ -8766,13 +8766,6 @@
+ 	;;
+     esac
+ 
+-    if grep "^# ### BEGIN LIBTOOL TAG CONFIG: $tagname$" < "${ofile}" > /dev/null
+-    then
+-      { { echo "$as_me:$LINENO: error: tag name \"$tagname\" already exists" >&5
+-echo "$as_me: error: tag name \"$tagname\" already exists" >&2;}
+-   { (exit 1); exit 1; }; }
+-    fi
+-
+     # Update the list of available tags.
+     if test -n "$tagname"; then
+       echo appending configuration tag \"$tagname\" to $ofile
+@@ -17820,6 +17813,7 @@
+ 
+ # This can be used to rebuild libtool when needed
+ LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
++$ac_aux_dir/ltconfig $LIBTOOL_DEPS
+ 
+ # Always use our own libtool.
+ LIBTOOL='$(SHELL) $(top_builddir)/libtool'
