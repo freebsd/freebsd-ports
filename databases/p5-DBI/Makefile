@@ -7,6 +7,7 @@
 
 PORTNAME=	DBI
 PORTVERSION=	1.42
+PORTREVISION=	1
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	DBI
@@ -26,6 +27,8 @@ PERL_CONFIGURE=	yes
 MAN1=		dbiprof.1 \
 		dbiproxy.1
 MAN3=		Bundle::DBI.3 \
+		DBD::DBM.3 \
+		DBD::File.3 \
 		DBD::Proxy.3 \
 		DBD::Sponge.3 \
 		DBI.3 \
@@ -42,6 +45,7 @@ MAN3=		Bundle::DBI.3 \
 		DBI::ProfileDumper::Apache.3 \
 		DBI::ProxyServer.3 \
 		DBI::PurePerl.3 \
+		DBI::SQL::Nano.3 \
 		DBI::W32ODBC.3 \
 		Win32::DBIODBC.3
 
