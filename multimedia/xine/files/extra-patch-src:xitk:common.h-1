@@ -1,0 +1,15 @@
+--- src/xitk/common.h.orig	Fri Apr 16 04:20:51 2004
++++ src/xitk/common.h	Wed May 12 23:17:59 2004
+@@ -114,6 +114,12 @@
+ #define PLAYLIST_CONTROL_STOP   0x00000001 /* Don't start next entry in playlist */
+ #define PLAYLIST_CONTROL_IGNORE 0x00000002 /* Ignore some playlist adding action */
+ 
++#if defined(__alpha__) || defined(__amd64__) || defined(__ia64__) || defined(__sparc64__)
++#define PRIi64 "li"
++#else if defined(__i386__) || defined(__powerpc__)
++#define PRIi64 "lli"
++#endif                                                                         
++
+ #define SAFE_FREE(x)            do {           \
+                                   if((x)) {    \
+                                     free((x)); \
