@@ -16,6 +16,7 @@ MAINTAINER=	jmz@FreeBSD.org
 
 DIST_SUBDIR=	lapack
 
+MANCOMPRESSED=	maybe
 MANL=	cgbmv.l cgemm.l cgemv.l cgerc.l cgeru.l chbmv.l chemm.l chemv.l \
 	cher.l cher2.l cher2k.l cherk.l chpmv.l chpr.l chpr2.l cscal.l \
 	csymm.l csyr2k.l csyrk.l ctbmv.l ctbsv.l ctpmv.l ctpsv.l ctrmm.l \
@@ -196,5 +197,10 @@ do-install:
 	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 	${INSTALL_MAN} ${WRKDIR}/blas/man/manl/*.l ${PREFIX}/man/manl
 	${INSTALL_MAN} ${WRKDIR}/man/manl/*.l ${PREFIX}/man/manl
+.if !defined(NOMANCOMPRESS)
+.for f in ${MANL}
+	@${GZIP_CMD} ${PREFIX}/man/manl/${f}
+.endfor
+.endif
 
 .include <bsd.port.post.mk>
