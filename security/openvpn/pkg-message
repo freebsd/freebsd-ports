@@ -6,4 +6,13 @@
 ###  To retain backwards compatibility of OpenVPN 1.3.0 with OpenVPN peers ###
 ###  that run older versions (back to 1.1.0), you will have to set the MTU ###
 ###  explicitly by command line options since OpenVPN 1.3.0.               ###
+###                                                                        ###
+###  When connecting to 1.4.X or older peers with a TAP-style tunnel, set  ###
+###  --tun-mtu 1500 --tun-mtu-extra 32 on the peer.			   ###
+###                                                                        ###
+###  When using TLS security and your peer runs OpenVPN 1.3.X, the PEER    ###
+###  must use --disable-occ.  This version of OpenVPN cannot use TLS mode  ###
+###  to peers running OpenVPN 1.2.x or older.                              ###
+###                                                                        ###
+###  Note: use at most --verb 4 for regular use, --verb 5 is for debugging ###
 ### ---------------------------------------------------------------------- ###
