@@ -32,6 +32,8 @@ LDFLAGS+=      -L${LOCALBASE}/lib
 DOCS= CHANGES.TXT index.shtml style.css mailto.js \
       license-body.html LICENSE.TXT milter-sender.mc responses.txt
 
+CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+
 .include <bsd.port.pre.mk>
 
 CFLAGS+= ${PTHREAD_CFLAGS}
