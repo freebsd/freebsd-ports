@@ -12,10 +12,12 @@ MASTER_SITES=   http://www.lyra.org/sitecopy/
 
 MAINTAINER=     nik@FreeBSD.org
 
-BUILD_DEPENDS=  xgettext:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=    intl.1:${PORTSDIR}/devel/gettext
 
 FETCH_BEFORE_ARGS=	-b
 GNU_CONFIGURE=  yes
+CONFIGURE_ENV=  CC="${CC} -I${LOCALBASE}/include" LDFLAGS=-L${LOCALBASE}/lib \
+		LIBS=-lintl
 USE_GMAKE=      yes
 ALL_TARGET=     sitecopy
 
