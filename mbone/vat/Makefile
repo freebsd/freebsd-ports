@@ -8,7 +8,7 @@
 PORTNAME=	vat
 PORTVERSION=	4.0b2
 PORTREVISION=	1
-CATEGORIES=	mbone tk82
+CATEGORIES=	mbone tk83
 MASTER_SITES=	ftp://ftp.ee.lbl.gov/conferencing/vat/alpha-test/
 DISTFILES=	vatsrc-4.0b2.tar.gz
 
@@ -21,7 +21,7 @@ GSM_WORK=	${WRKDIRPREFIX}${GSM_DIR}/work/gsm-1.0-pl10
 # we can use this first BUILD_DEPENDS and save some work.
 #BUILD_DEPENDS=	${GSM_WORK}/inc/private.h:${GSM_DIR}:patch
 BUILD_DEPENDS=	${GSM_WORK}/lib/libgsm.a:${GSM_DIR}:build
-LIB_DEPENDS=	tk82.1:${PORTSDIR}/x11-toolkits/tk82 \
+LIB_DEPENDS=	tk83.1:${PORTSDIR}/x11-toolkits/tk83 \
 		gsm.1:${GSM_DIR}
 
 USE_X_PREFIX=	yes
