@@ -4,13 +4,14 @@
 # based on print/lilypond originally by trevor
 #
 # $FreeBSD$
-# $Id$
+# $Id: Makefile,v 1.34 2003/12/31 00:33:48 patrick Exp $
 #
 
 PORTNAME=	lilypond
-PORTVERSION=	2.1.0
+PORTVERSION=	2.1.4
 CATEGORIES=	print audio
-MASTER_SITES=	ftp://ftp.lilypond.org//pub/LilyPond/v2.1/
+MASTER_SITES=	http://lilypond.org/download/v2.1/ \
+		http://www.atabersk.de/lilypond/
 PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	atamaniuk-ports@frobs.net
@@ -61,6 +62,7 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch:GNUmakefile.in
 .else
 PLIST_SUB+=	CONDITIONAL=""
 .endif
+PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
 #IGNORING portlint 2.5.0 WARN: possible direct use of command "install" found at line 64. use ${INSTALL_foobaa} instead.
 INSTALL_INFO?=	install-info
@@ -80,8 +82,7 @@ post-install:
 	${MKDIR} ${DOCSDIR} ${EXAMPLESDIR}/scripts
 	cd ${WRKSRC}/input ; \
 	${TAR} -chf - --exclude=out --exclude=CVS --exclude=GNUmakefile . | \
-		${TAR} -xf - -C ${EXAMPLESDIR};\
-	${FIND} ${EXAMPLESDIR} -name "out" | ${XARGS} ${RM} -rf ;
+		${TAR} -xf - -C ${EXAMPLESDIR};
 .for ii in login profile
 	${INSTALL_SCRIPT} ${WRKSRC}/buildscripts/out/lilypond-${ii} \
 		${EXAMPLESDIR}/scripts
