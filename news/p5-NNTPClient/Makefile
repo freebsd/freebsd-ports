@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	NNTPClient
-PORTVERSION=	0.36
+PORTVERSION=	0.37
 CATEGORIES=	news perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	News
@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 
 PERL_CONFIGURE=	yes
 
-MAN3=		News::NNTPClient.3
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
+MAN3=		News::NNTPClient.3
 
 .include <bsd.port.mk>

@@ -6,13 +6,15 @@
 #
 
 PORTNAME=	Math-FixedPrecision
-PORTVERSION=	0.12
+PORTVERSION=	0.14
 CATEGORIES=	math perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Math
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
+
+USE_ZIP=	yes
 
 .include <bsd.port.pre.mk>
 
