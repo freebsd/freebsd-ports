@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	freevrrpd
-PORTVERSION=	0.8.3a
+PORTVERSION=	0.8.4
 CATEGORIES=	net
 MASTER_SITES=	http://www.bsdshell.net/download/
 
@@ -18,10 +18,8 @@ MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/freevrrpd ${PREFIX}/libexec
+	@${INSTALL_PROGRAM} ${WRKSRC}/freevrrpd ${PREFIX}/sbin
 	@${INSTALL_DATA} ${WRKSRC}/freevrrpd.conf.sample ${PREFIX}/etc
-	@${INSTALL_DATA} ${WRKSRC}/freevrrpd.conf.sample \
-		${PREFIX}/etc/freevrrpd.conf
 	@${INSTALL_SCRIPT} ${WRKSRC}/freevrrpd.sh.sample ${PREFIX}/etc/rc.d
 	@${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.8 ${MANPREFIX}/man/man8
 
