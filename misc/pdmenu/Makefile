@@ -5,12 +5,12 @@
 #
 # $FreeBSD$
 
-DISTNAME=       pdmenu_1.2.50
-PKGNAME=	pdmenu-1.2.50
+DISTNAME=       pdmenu_1.2.58
+PKGNAME=	pdmenu-1.2.58
 CATEGORIES=	misc
 MASTER_SITES=	http://kitenet.net/programs/code/pdmenu/
 
-MAINTAINER=	nbm@rucus.ru.ac.za
+MAINTAINER=	nbm@FreeBSD.org
 
 LIB_DEPENDS=    slang.1:${PORTSDIR}/devel/libslang
 
