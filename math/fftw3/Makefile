@@ -44,17 +44,16 @@ INSTALL_TARGET=	install-pkgconfigDATA install-libLTLIBRARIES install-exec
 
 OPTIONS=	OPTIMIZED_CFLAGS "Enable optimized CFLAGS" off \
 		SMP_THREADS "Enable FFTW SMP threads library" off \
-		OPTIMIZED_ATHLON "Enable AMD Athlon/3dNow! optimizations" off \
 		SSE "Enable SSE optimized routines" off
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_OPTIMIZED_CFLAGS) && !defined(WITH_OPTIMIZED_ATHLON)
+.if defined(WITH_OPTIMIZED_CFLAGS)
 CONFIGURE_ENV+=	CFLAGS="${CFLAGS:N-O:N-O*} -O2 -ffast-math -fomit-frame-pointer"
 .endif
 
 .if ${ARCH}=="i386"
-.if defined(WITH_OPTIMIZED_ATHLON)
+.if ${MACHINE_CPU:M3dnow}
 CONFIGURE_ARGS+=--enable-k7
 CONFIGURE_ENV+=	CFLAGS="${CFLAGS:N-O:N-O*} -O3 -fomit-frame-pointer -fno-schedule-insns \
 		-malign-double -fstrict-aliasing -mpreferred-stack-boundary=4 \
