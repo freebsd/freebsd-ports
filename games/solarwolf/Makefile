@@ -1,0 +1,30 @@
+# New ports collection makefile for:    solarwolf
+# Date created:         		4 May 2001
+# Whom:                 		Maxim Sobolev <sobomax@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	solarwolf
+PORTVERSION=	1.0
+CATEGORIES=	games
+MASTER_SITES=	http://shredwheat.zopesite.com/solarwolf/files/
+
+MAINTAINER=	sobomax@FreeBSD.org
+
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pygame/__init__.py:${PORTSDIR}/devel/py-game
+
+USE_PYTHON=	yes
+
+do-build:
+	${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
+
+do-install:
+	@${MKDIR} ${PREFIX}/share/solarwolf
+	(cd ${WRKSRC}; tar cf - .) | \
+		(cd ${PREFIX}/share/solarwolf; tar --unlink -xf -)
+	@printf "#!/bin/sh\ncd ${PREFIX}/share/solarwolf && \
+		${PYTHON_CMD} ${PREFIX}/share/solarwolf/solarwolf.py\n" > ${WRKDIR}/solarwolf.sh
+	@${INSTALL_SCRIPT} ${WRKDIR}/solarwolf.sh ${PREFIX}/bin/solarwolf
+
+.include <bsd.port.mk>

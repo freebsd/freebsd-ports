@@ -192,6 +192,7 @@
     SUBDIR += smacx
     SUBDIR += sokoban
     SUBDIR += sol
+    SUBDIR += solarwolf
     SUBDIR += speak
     SUBDIR += spellcast
     SUBDIR += speyes
