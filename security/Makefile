@@ -74,6 +74,7 @@
     SUBDIR += pktsuckers
     SUBDIR += portscanner
     SUBDIR += portsentry
+    SUBDIR += racoon
     SUBDIR += radiusniff
     SUBDIR += rid
     SUBDIR += rsaref
