@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.tsg.ne.jp/GANA/S/hex/
 EXTRACT_SUFX=	.tgz
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
 
-MAINTAINER=	yu@pastel.club.or.jp
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A hexadecimal dump tool which handles Japanese
 
 MANLANG=	ja

@@ -10,7 +10,7 @@ PORTVERSION=	1.1.2
 CATEGORIES=	games
 MASTER_SITES=	http://shh.thathost.com/pub-unix/files/
 
-MAINTAINER=	martin@raq.cx
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple biorythm calculation program
 
 LIB_DEPENDS=	shhmsg.1:${PORTSDIR}/devel/libshhmsg \

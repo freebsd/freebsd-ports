@@ -12,7 +12,7 @@ MASTER_SITES=		http://www.dotfunk.com/projects/coro/
 PKGNAMEPREFIX=		py-
 DISTNAME=		${PORTNAME}_2001_02_02
 
-MAINTAINER=		kbyanc@posi.net
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=	Python coroutine implementation
 
 BUILD_DEPENDS=		${LOCALBASE}/lib/libcoro.a:${PORTSDIR}/devel/libcoro

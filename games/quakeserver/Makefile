@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.sunet.se/pub/pc/games/idgames2/planetquake/threewave/uni
 DISTFILES=	unixded-${PORTVERSION}-i386-unknown-bsdi3.0.tar.gz \
 		quake106.zip
 
-MAINTAINER=	martin@raq.cx
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A server to host Quake network games under FreeBSD
 
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip \

@@ -11,7 +11,7 @@ CATEGORIES=	deskutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	loserjabber
 
-MAINTAINER=	ryan@manunkind.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A GTK interface to user journals on www.livejournal.com
 
 GNU_CONFIGURE=	yes

@@ -13,7 +13,7 @@ CATEGORIES=	converters
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	asami/LOCAL_PORTS
 
-MAINTAINER=	martin@raq.cx
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Encode/decode binary to printable ASCII
 
 MAKE_FLAGS=	DESTDIR=${PREFIX} -f

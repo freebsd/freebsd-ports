@@ -10,7 +10,7 @@ PORTVERSION=	1.4
 CATEGORIES=	games
 MASTER_SITES=	http://www19.xdsl.ne.jp/~cdr/soft/dl/
 
-MAINTAINER=	cdr@ga.xdsl.ne.jp
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Improved version of xjump
 
 USE_X_PREFIX=	yes

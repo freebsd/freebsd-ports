@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.sedl.org/pub/mirrors/nihongo/ \
 EXTRACT_SUFX=
 DISTFILES=	${DICTFILES} ${SRCFILES} ${DOCFILES}
 
-MAINTAINER=	jhanna@home.com
+MAINTAINER=	jhanna@shaw.ca
 COMMENT=	Japanese-English dictionaries with access and maintenance utilities
 
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip

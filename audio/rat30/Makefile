@@ -10,7 +10,7 @@ PORTVERSION=	3.0.35
 CATEGORIES=	mbone audio
 MASTER_SITES=	http://www-mice.cs.ucl.ac.uk/multimedia/software/rat/releases/${PORTVERSION}/
 
-MAINTAINER=	anton@urc.ac.ru
+MAINTAINER=	anton@chelcom.ru
 COMMENT=	IPv4/v6 Multicast and unicast audio conferencing tool
 
 LIB_DEPENDS=	tk82.1:${PORTSDIR}/x11-toolkits/tk82

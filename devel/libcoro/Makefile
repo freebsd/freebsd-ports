@@ -12,7 +12,7 @@ MASTER_SITES=		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	kbyanc
 DISTNAME=		coro-${PORTVERSION}
 
-MAINTAINER=		kbyanc@posi.net
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=	C library that implements coroutines
 
 ONLY_FOR_ARCHS=		i386
