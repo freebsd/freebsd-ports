@@ -152,7 +152,7 @@
   {
 + #if defined(BSD) && (BSD >= 199306)
 +     /* Check password change and expire times before granting access */
-+     time_t now = time();
++     time_t now = time((time_t *) NULL);
 + 
 +     if ((pw->pw_change && now > pw->pw_change) ||
 +         (pw->pw_expire && now > pw->pw_expire))
