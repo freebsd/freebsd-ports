@@ -188,11 +188,11 @@ post-install:
 	done; \
 
 .if !defined(NOPORTDOCS)
-	${INSTALL_DATA} ${WRKSRC}/doc/bacula.pdf ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/ReleaseNotes ${DOCSDIR}
-	${MKDIR} ${DOCSDIR}/html-manual
+	${MKDIR} -p ${DOCSDIR}/html-manual
 	cd ${WRKSRC}/doc && ${FIND} html-manual | \
 		${CPIO} -pdm -L -R root:wheel ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/bacula.pdf ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/ReleaseNotes ${DOCSDIR}
 .endif
 
 # Inform user after install about important things ....
