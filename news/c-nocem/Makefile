@@ -17,6 +17,7 @@ BUILD_DEPENDS=	${WRKDIRPREFIX}${CNEWSSRC}/conf/substitutions:${PORTSDIR}/news/cn
 
 WRKSRC=		${WRKDIR}/c-nocem
 CNEWSSRC?=	${.CURDIR}/../cnews/work
+NEWSBIN?=	${PREFIX}/news/cnewsbin
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-cnews=${WRKDIRPREFIX}${CNEWSSRC}
