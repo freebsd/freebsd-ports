@@ -1,5 +1,5 @@
-DHIS Daemon Client release 3.1
-==============================
+DHIS Daemon Client release 4.0.1
+================================
 
 dhid is the DHIS client daemon. dhid is used to update the DNS tables on
 a DHIS provider.

@@ -1,21 +1,17 @@
---- Makefile.orig	Thu Jan 13 23:15:01 2000
-+++ Makefile	Thu Feb 10 23:13:56 2000
-@@ -25,17 +25,13 @@
+--- Makefile.orig	Sun Jan 14 19:39:56 2001
++++ Makefile	Sun Jan 14 19:40:37 2001
+@@ -25,13 +25,10 @@
  #
- #      DHIS(c)  Dynamic Host Information System Release 3.1
+ #      DHIS(c)  Dynamic Host Information System Release 4.0
  
 -CC=cc
--CFLAGS=
--LFLAGS=
--LIBS=
 +CC?=cc
- RM=rm -f
  
- all:	dhid
+ # Add -lnsl and -lsocket to LIBS in SysV systems 
+ #
+-CFLAGS=-I/usr/local/include -DQRC=1 
+-LFLAGS=-L/usr/local/lib
+-LIBS=-lgmp
  
- dhid:	conf.o endian.o network.o crypt.o main.o
- 	$(CC) $(LFLAGS) -o dhid conf.o endian.o network.o crypt.o main.o $(LIBS)
--	strip dhid
- 
- main.o: dhid.h network.h conf.h main.c
- 	$(CC) $(CFLAGS) -c main.c
+ # Use these and comment the above if you wish to compile dhid without 
+ # secure public key authentication or don't have the GMP library 
