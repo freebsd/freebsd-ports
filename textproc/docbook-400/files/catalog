@@ -17,11 +17,6 @@
   --
 
   -- ...................................................................... --
-  -- SGML declaration associated with DocBook ............................. --
-
-DTDDECL "-//OASIS//DTD DocBook V4.0beta5//EN" "docbook.dcl"
-
-  -- ...................................................................... --
   -- DocBook driver file .................................................. --
 
 PUBLIC "-//OASIS//DTD DocBook V4.0beta5//EN" "docbook.dtd"
