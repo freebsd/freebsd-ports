@@ -1,7 +1,6 @@
 @comment $FreeBSD$
 bin/opera-devel
 %%DOCSDIR%%/LICENSE
-%%DOCSDIR%%/help
 %%DATADIR%%/bin/missingsyms.so
 %%DATADIR%%/bin/opera
 %%DATADIR%%/bin/spellcheck.so
@@ -9,41 +8,6 @@ bin/opera-devel
 %%DATADIR%%/chartables.bin
 %%DATADIR%%/config/opera6rc
 %%DATADIR%%/config/opera6rc.fixed
-%%DATADIR%%/help/advertising.html
-%%DATADIR%%/help/background.png
-%%DATADIR%%/help/chat.html
-%%DATADIR%%/help/dialogs.html
-%%DATADIR%%/help/filetypes.html
-%%DATADIR%%/help/fonts.html
-%%DATADIR%%/help/glossary.html
-%%DATADIR%%/help/help.css
-%%DATADIR%%/help/history.html
-%%DATADIR%%/help/index.html
-%%DATADIR%%/help/input.html
-%%DATADIR%%/help/keyboard.html
-%%DATADIR%%/help/languages.html
-%%DATADIR%%/help/layout.html
-%%DATADIR%%/help/license.txt
-%%DATADIR%%/help/m2.html
-%%DATADIR%%/help/mail.html
-%%DATADIR%%/help/menus.html
-%%DATADIR%%/help/mouse.html
-%%DATADIR%%/help/multimedia.html
-%%DATADIR%%/help/network.html
-%%DATADIR%%/help/page.html
-%%DATADIR%%/help/panels.html
-%%DATADIR%%/help/paths.html
-%%DATADIR%%/help/personal.html
-%%DATADIR%%/help/preferences.html
-%%DATADIR%%/help/privacy.html
-%%DATADIR%%/help/search.html
-%%DATADIR%%/help/security.html
-%%DATADIR%%/help/skin.html
-%%DATADIR%%/help/sounds.html
-%%DATADIR%%/help/start.html
-%%DATADIR%%/help/toc.html
-%%DATADIR%%/help/toolbars.html
-%%DATADIR%%/help/windows.html
 %%DATADIR%%/hhd.ssr
 %%DATADIR%%/html40_entities.dtd
 %%DATADIR%%/images/background.gif
@@ -74,9 +38,11 @@ bin/opera-devel
 %%DATADIR%%/ini/unix_keyboard.ini
 %%DATADIR%%/java/opera.jar
 %%DATADIR%%/java/opera.policy
+%%DATADIR%%/jsconsole.html
 %%DATADIR%%/lngcode.txt
 %%DATADIR%%/locale/en/default.adr
 %%DATADIR%%/locale/en/lngcode.txt
+%%DATADIR%%/locale/en/license.txt
 %%DATADIR%%/locale/en/search.ini
 %%DATADIR%%/locale/english.lng
 %%DATADIR%%/opera6.adr
@@ -126,7 +92,6 @@ bin/opera-devel
 @dirrm %%DATADIR%%/java
 @dirrm %%DATADIR%%/ini
 @dirrm %%DATADIR%%/images
-@dirrm %%DATADIR%%/help
 @dirrm %%DATADIR%%/config
 @dirrm %%DATADIR%%/bin
 @dirrm %%DATADIR%%
