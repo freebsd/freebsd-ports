@@ -7,7 +7,7 @@
 
 PORTNAME=	webmin
 PORTVERSION=	1.140
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.webmin.com/updates/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -28,7 +28,9 @@ SCRIPTS_ENV+=	WRKDIR="${WRKDIR}"
 WEBMIN_MODULES=	apache-1.140-1.wbm.gz \
 		cpan-1.140-1.wbm.gz \
 		mailboxes-1.140-1.wbm.gz \
-		samba-1.140-1.wbm.gz
+		net-1.140-1.wbm.gz \
+		samba-1.140-1.wbm.gz \
+		useradmin-1.140-1.wbm.gz
 
 WEBMIN_THEMES=
 
