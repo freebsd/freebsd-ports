@@ -28,10 +28,6 @@ RUN_DEPENDS=	avr-as:${PORTSDIR}/devel/avr-binutils \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 500113
-BROKEN=         "Installation fails"
-.endif
-
 USE_BZIP2=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	CC=avr-gcc PREFIX=${PREFIX}
