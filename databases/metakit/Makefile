@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	metakit
-PORTVERSION=	2.4.2
-PORTREVISION=	32
+PORTVERSION=	2.4.3
+PORTREVISION=	33
 CATEGORIES=	databases
 MASTER_SITES=	http://www.equi4.com/pub/mk/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-${PORTREVISION}
@@ -64,7 +64,7 @@ pre-patch:
 		${WRKSRC}/../unix/Makefile.in
 	@${PERL5} -pi -e "s=doc/==" ${WRKSRC}/../MetaKit.html
 .if defined(METAKIT_WITH_PYTHON)
-	${PERL5} -pi -e "s=python2.1=${PYTHON_VERSION}=" \
+	${PERL5} -pi -e "s=python2.2=${PYTHON_VERSION}=" \
 		${WRKSRC}/../unix/Makefile.in
 .endif
 
