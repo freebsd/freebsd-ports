@@ -8,7 +8,7 @@
 PORTNAME=	xmlrpclib
 PORTVERSION=	0.9.9
 CATEGORIES=	net python
-MASTER_SITES=	http://www.pythonware.com/downloads/
+MASTER_SITES=	http://www.pythonware.net/storage/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	xmlrpc-${PORTVERSION}-010226
 
