@@ -12,7 +12,7 @@ CATEGORIES=	ftp
 MASTER_SITES=	http://www.arach.net.au/~wildfire/muddleftpd/
 DISTNAME=	${PORTNAME}.${PORTVERSION}
 
-MAINTAINER=	ijliao@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 
