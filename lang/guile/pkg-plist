@@ -2,6 +2,7 @@ bin/guile
 bin/guile-config
 bin/guile-snarf
 include/guile/gh.h
+include/guile-readline/readline.h
 include/libguile/__scm.h
 include/libguile/alist.h
 include/libguile/arbiters.h
@@ -92,6 +93,9 @@ info/data-rep.info
 lib/libguile.a
 lib/libguile.so
 lib/libguile.so.6
+lib/libguilereadline.a
+lib/libguilereadline.so
+lib/libguilereadline.so.0
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 share/aclocal/guile.m4
@@ -118,6 +122,7 @@ share/guile/%%GUILE_VER%%/ice-9/psyntax.pp
 share/guile/%%GUILE_VER%%/ice-9/psyntax.ss
 share/guile/%%GUILE_VER%%/ice-9/q.scm
 share/guile/%%GUILE_VER%%/ice-9/r4rs.scm
+share/guile/%%GUILE_VER%%/ice-9/readline.scm
 share/guile/%%GUILE_VER%%/ice-9/regex.scm
 share/guile/%%GUILE_VER%%/ice-9/runq.scm
 share/guile/%%GUILE_VER%%/ice-9/session.scm
@@ -128,6 +133,7 @@ share/guile/%%GUILE_VER%%/ice-9/syncase.scm
 share/guile/%%GUILE_VER%%/ice-9/tags.scm
 share/guile/%%GUILE_VER%%/ice-9/threads.scm
 @dirrm include/guile
+@dirrm include/guile-readline
 @dirrm include/libguile
 @dirrm share/guile/%%GUILE_VER%%/ice-9
 @dirrm share/guile/%%GUILE_VER%%

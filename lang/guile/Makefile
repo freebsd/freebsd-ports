@@ -16,7 +16,7 @@ MAINTAINER=	jseger@FreeBSD.org
 GNU_CONFIGURE=	YES
 
 USE_LIBTOOL=	yes
-
+LIBTOOLFILES=	configure guile-readline/configure
 
 PLIST_SUB=	GUILE_VER=1.3.4
 
