@@ -30,9 +30,4 @@ pre-install:
 
 do-install:	# empty
 
-do-package:
-.for i in ${SUBPORTS}
-	cd ${PORTSDIR}/audio/${i} && ${MAKE} package
-.endfor
-
 .include <bsd.port.mk>
