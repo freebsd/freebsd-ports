@@ -49,7 +49,7 @@ APACHE_CNFDIR?=	${LOCALBASE}/etc/apache
 APACHE_CONF=	${APACHE_CNFDIR}/httpd.conf
 MIMETYPES=	${APACHE_CNFDIR}/mime.types
 
-pre-everything:
+pre-everything::
 .if !defined(WITHOUT_SSL)
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "Press CTRL-C and define WITHOUT_SSL"
