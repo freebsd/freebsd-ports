@@ -3,7 +3,7 @@
 # Date created:		Fri Jul 11 06:11:41 CEST 1997
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.4 1998/04/10 18:47:46 andreas Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       http-analyze2.01

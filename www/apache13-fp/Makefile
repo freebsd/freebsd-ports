@@ -3,7 +3,7 @@
 # Date created:         Sat Oct 31 16:30:00 CDT 1997
 # Whom:                 hetzels@westbend.net
 #
-# $Id: Makefile,v 1.12 1999/05/03 01:50:50 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       apache_${AP_VERS}

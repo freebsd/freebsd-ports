@@ -3,7 +3,7 @@
 # Date created:		16 October 1995
 # Whom:			pst
 #
-# $Id: Makefile,v 1.6 1998/08/23 06:46:37 hoek Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	ashe-1.1.2

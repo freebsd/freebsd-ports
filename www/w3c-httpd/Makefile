@@ -3,7 +3,7 @@
 # Date created:		29 October 1994
 # Whom:			pst (orig)
 #
-# $Id: Makefile,v 1.21 1999/05/10 20:00:22 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	w3c-httpd-3.0A

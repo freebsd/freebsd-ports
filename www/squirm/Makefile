@@ -3,7 +3,7 @@
 # Date created:     24 May 1999
 # Whom:             Maxim Sobolev <sobomax@altavista.net>
 #
-# $Id: Makefile,v 1.3 1999/08/23 04:23:59 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	squirm-1.0betaB

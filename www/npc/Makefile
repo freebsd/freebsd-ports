@@ -3,7 +3,7 @@
 # Date created:		3 December 1998
 # Whom:			Yasuhiro Fukuma <yasuf@big.or.jp>
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	npc-0.83

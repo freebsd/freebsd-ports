@@ -4,7 +4,7 @@
 # Date created:				September 30th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-# $Id: Makefile,v 1.32 1999/05/17 21:24:27 ache Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       libwww-perl-5.44

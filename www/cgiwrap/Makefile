@@ -3,7 +3,7 @@
 # Date created:         30 July 1998
 # Whom:                 Brent J. Nordquist <bjn@visi.com>
 #
-# $Id: Makefile,v 1.3 1999/05/18 02:53:40 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	cgiwrap-3.6.3

@@ -3,7 +3,7 @@
 # Date Created:				28 April 1998
 # Whom:					Vanilla I. Shu <vanilla@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.9 1999/02/20 10:45:11 vanilla Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       HTML-Parser-2.23

@@ -3,7 +3,7 @@
 # Date created:         7 August 1995
 # Whom:                 torstenb
 #
-# $Id: Makefile,v 1.22 1999/01/23 07:05:28 vanilla Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       Mosaic-src-2.7b5

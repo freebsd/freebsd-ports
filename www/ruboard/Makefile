@@ -3,7 +3,7 @@
 # Date created:                        5 October 1998
 # Whom:                                Andrew Maltsev <am@amsoft.ru>
 #
-# $Id: Makefile,v 1.1.1.1 1998/10/30 03:17:43 jkoshy Exp $
+# $FreeBSD$
 #
 
 DISTNAME=      ruboard-1.2.1

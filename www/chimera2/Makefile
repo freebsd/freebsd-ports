@@ -3,7 +3,7 @@
 # Date created:         24 Nov 1997
 # Whom:                 Bruce Gingery <bgingery@gtcs.com>
 #
-# $Id: Makefile,v 1.20 1999/01/23 07:05:20 vanilla Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	chimera-2.0a15

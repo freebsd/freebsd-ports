@@ -3,7 +3,7 @@
 # Date created:				April 26th 1997
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-# $Id: Makefile,v 1.13 1999/05/10 12:20:09 kuriyama Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	mod_perl-1.19

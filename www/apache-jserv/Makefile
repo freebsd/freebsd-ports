@@ -3,7 +3,7 @@
 # Date created:         1999/05/29
 # Whom:			Kensaku Masuda <greg@greg.rim.or.jp>
 #
-# $Id: Makefile,v 1.1.1.1 1999/06/30 22:03:11 kuriyama Exp $
+# $FreeBSD$
 
 DISTNAME=	Apache_JServ_1.0
 PKGNAME=	apache-jserv-1.0

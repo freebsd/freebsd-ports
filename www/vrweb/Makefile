@@ -3,7 +3,7 @@
 # Date created:        20 June 1997
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.9 1999/01/12 16:51:14 vanilla Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	vrweb-1.5

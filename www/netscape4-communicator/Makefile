@@ -3,7 +3,7 @@
 # Date created:         24 Feb 1997
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.43 1999/08/14 18:37:52 sada Exp $
+# $FreeBSD$
 #
 
 DISTNAME?=	netscape-${BROWSER}-${BROWSER_VER}

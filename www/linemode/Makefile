@@ -3,7 +3,7 @@
 # Date created:		17 April 1995
 # Whom:			NIIMI Satoshi <sa2c@and.or.jp>
 #
-# $Id: Makefile,v 1.14 1998/10/14 23:53:17 jseger Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	WWW

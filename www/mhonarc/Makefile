@@ -3,7 +3,7 @@
 # Date created:				18 June 1997
 # Whom:					koshy@india.hp.com
 #
-# $Id: Makefile,v 1.9 1999/01/13 04:00:07 scrappy Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	MHonArc2.3.3

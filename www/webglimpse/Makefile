@@ -4,7 +4,7 @@
 # Date created:                         2 Nov 1998
 # Whom:                                 ache
 #
-# $Id: Makefile,v 1.8 1999/08/22 23:33:34 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       webglimpse-1.6.src

@@ -3,7 +3,7 @@
 # Date created:		Sat Aug 22 12:00:00 CDT 1998
 # Whom:			rse@engelschall.com
 #
-# $Id: Makefile,v 1.44 1999/08/22 19:00:26 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	apache_${VERSION_APACHE}

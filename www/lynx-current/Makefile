@@ -3,7 +3,7 @@
 # Date created:         15 Dec 1994
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.101 1999/08/05 17:48:38 ache Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       lynx2.8.3dev.5

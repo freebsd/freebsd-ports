@@ -4,7 +4,7 @@
 # Date created:		October 21st 1996
 # Whom:			jfitz
 #
-# $Id: Makefile,v 1.16 1999/05/19 21:33:41 ache Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       analog3.3

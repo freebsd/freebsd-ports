@@ -3,7 +3,7 @@
 # Date created:		17 July 1998
 # Whom:			Shigeyuki FUKUSHIMA <shige@kuis.kyoto-u.ac.jp>
 #
-# $Id: Makefile,v 1.2 1999/03/01 09:38:29 shige Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	wcolEpre.980713_100245

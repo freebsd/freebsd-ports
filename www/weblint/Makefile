@@ -3,7 +3,7 @@
 # Date created:		Oct 14, 1995
 # Whom:			pst
 #
-# $Id: Makefile,v 1.7 1996/11/18 14:15:49 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	weblint-1.020

@@ -3,7 +3,7 @@
 # Date created:				October 20th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.6 1997/06/24 18:43:19 jfitz Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	HTML-0.6

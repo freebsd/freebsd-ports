@@ -3,7 +3,7 @@
 # Date created:		27 Oct 1998
 # Whom:			Abel Chow <achow@transoft.net>
 #
-# $Id: Makefile,v 1.9 1999/07/11 02:28:34 cpiazza Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	tidy7jul99

@@ -3,7 +3,7 @@
 # Date created:				23 Dec 1997
 # Whom:					mjhsieh
 #
-# $Id: Makefile,v 1.2 1998/05/25 19:48:50 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       hypermail

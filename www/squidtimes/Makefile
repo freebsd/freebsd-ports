@@ -3,7 +3,7 @@
 # Date created:		31 January 1999
 # Whom:			Dima Sivachenko
 #
-# $Id: Makefile,v 1.2 1999/02/12 11:21:42 flathill Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	squidtimes-1.12-freebsd.bin

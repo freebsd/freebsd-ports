@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.147 1999/08/24 09:41:33 jim Exp $
+# $FreeBSD$
 #
 
     SUBDIR += Mosaic         # requires Motif

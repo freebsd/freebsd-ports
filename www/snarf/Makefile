@@ -3,7 +3,7 @@
 # Date created:        2 January 1999
 # Whom:                Kris Kennaway <kris@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.1.1.1 1999/03/01 11:13:12 kris Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	snarf-2.0.5

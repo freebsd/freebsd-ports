@@ -3,7 +3,7 @@
 # Date created:		25 November 1998
 # Whom:			Sheldon Hearn <axl@iafrica.com>
 #
-# $Id: Makefile,v 1.3 1999/08/23 04:23:55 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	marc-search.4.3

@@ -3,7 +3,7 @@
 # Date created:         24 Feb 1997
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.9 1999/07/21 14:55:40 marcel Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	communicator-v408-export.x86-unknown-linux2.0_libc5

@@ -3,7 +3,7 @@
 # Date created:				1/11/1999
 # Whom:					nectar@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.8 1999/05/28 20:52:25 nectar Exp $
+# $FreeBSD$
 #
 
 DISTNAME=		grail-06

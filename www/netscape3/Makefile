@@ -3,7 +3,7 @@
 # Date created:		21 August 1995
 # Whom:			asami
 #
-# $Id: Makefile,v 1.31 1999/08/20 17:47:16 sada Exp $
+# $FreeBSD$
 #
 
 DISTNAME?=	netscape-3.04

@@ -3,7 +3,7 @@
 # Date created:				September 30th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.10 1998/08/23 13:44:24 jseger Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	CGI_Lite-1.8

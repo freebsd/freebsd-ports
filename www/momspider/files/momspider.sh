@@ -9,7 +9,7 @@
 #
 # The momspider documentation is in /usr/local/momspider/README.html
 #
-# $Id$
+# $FreeBSD$
 
 PATH=/bin:/usr/bin; export PATH
 momhome=/usr/local/momspider

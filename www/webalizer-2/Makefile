@@ -3,7 +3,7 @@
 # Date created:		02.Jun 1998
 # Whom:			dirk.meyer@dinoex.sub.org
 #
-# $Id: Makefile,v 1.9 1999/08/01 20:30:04 billf Exp $
+# $FreeBSD$
 
 DISTNAME=	webalizer-1.30-04-src
 PKGNAME=	webalizer-1.30.4

@@ -3,7 +3,7 @@
 # Date created:         14 Sep 1996
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.6 1996/12/07 09:28:48 max Exp $
+# $FreeBSD$
 #
 
 # WWW site: http://www.inf.utfsm.cl/~vparada/webcopy.html

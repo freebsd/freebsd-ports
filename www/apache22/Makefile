@@ -3,7 +3,7 @@
 # Date created:         Fri Aug 25 16:42:36 CDT 1995
 # Whom:                 ache@nagual.pp.ru
 #
-# $Id: Makefile,v 1.72 1999/08/22 19:00:30 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       apache_1.3.6

@@ -3,7 +3,7 @@
 # Date created:		31 December 1996
 # Whom:			MITA Yoshio <mita@ee.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.7 1998/11/14 02:18:26 kuriyama Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	w3-2.2.26

@@ -3,7 +3,7 @@
 # Date created:         21 August 1994
 # Whom:                 Trefor S. <trefor@flevel.co.uk>
 #
-# $Id: Makefile,v 1.1.1.1 1997/06/04 07:04:27 asami Exp $
+# $FreeBSD$
 #
  
 DISTNAME=       fxhtml-freebsd-1.6.7

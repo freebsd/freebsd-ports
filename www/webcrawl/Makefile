@@ -3,7 +3,7 @@
 # Date created:		31 January 1999
 # Whom:			Dima Sivachenko
 #
-# $Id: Makefile,v 1.1.1.1 1999/02/03 21:26:59 billf Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	webcrawl-1.10

@@ -3,7 +3,7 @@
 # Date created:		24 Feb 1997
 # Whom:			thepish
 #
-# $Id: Makefile,v 1.45 1999/07/14 22:39:28 sada Exp $
+# $FreeBSD$
 #
 
 MASTER_SITES?=	ftp://ftp.netscape.com/pub/communicator/english/4.61/unix/unsupported/freebsd/complete_install/

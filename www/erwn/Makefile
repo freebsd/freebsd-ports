@@ -3,7 +3,7 @@
 # Date created:			31 July 1999
 # Whom:				Jim Mock <jimFreeBSD.org>
 #
-# $Id: Makefile,v 1.2 1999/08/22 19:00:33 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	erwin-0.3.1

@@ -3,7 +3,7 @@
 # Date created:		Thu Nov  7 00:53:18 WST 1996
 # Whom:			Peter Wemm <peter@freebsd.org>
 #
-# $Id: Makefile,v 1.59 1999/08/22 19:00:55 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	squid-2.2.STABLE4

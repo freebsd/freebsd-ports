@@ -3,7 +3,7 @@
 # Date created:         30 July 1998
 # Whom:                 Brent J. Nordquist <bjn@visi.com>
 #
-# $Id: Makefile,v 1.4 1998/10/15 02:08:17 jseger Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	web500gw-2.1b2

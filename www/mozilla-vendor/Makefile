@@ -3,7 +3,7 @@
 # Date created:		31 Mar 1998
 # Whom:			eivind/dima/jseger
 #
-# $Id: Makefile,v 1.32 1999/08/22 19:00:43 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	mozilla-source-M8

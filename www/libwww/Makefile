@@ -3,7 +3,7 @@
 # Date created:		18 Feb 1996
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.16 1999/03/08 00:15:40 jseger Exp $
+# $FreeBSD$
 #
 
 PKGNAME=	libwww-5.2.6

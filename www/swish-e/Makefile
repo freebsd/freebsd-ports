@@ -3,7 +3,7 @@
 # Date created:         		23 Feb 98
 # Whom:              			Daniel O'Connor <doconnor@gsoft.com.au>
 #
-# $Id: Makefile,v 1.1.1.1 1998/12/22 22:59:16 billf Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       swish-efiles.1.3.2

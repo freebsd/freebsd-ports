@@ -3,7 +3,7 @@
 # Date created:        13 May 1999
 # Whom:                kbyanc
 #
-# $Id: Makefile,v 1.2 1999/08/11 19:01:50 cpiazza Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	fcgi-devkit-2.1

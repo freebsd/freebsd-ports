@@ -3,7 +3,7 @@
 # Date created:                         9 May 1998
 # Whom:                                 ache
 #
-# $Id: Makefile,v 1.17 1999/06/11 19:18:52 ache Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       w3mir-1.0.8
