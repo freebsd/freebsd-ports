@@ -1,9 +1,9 @@
 
 $FreeBSD$
 
---- Makefile.in.orig	Thu Apr 18 14:49:06 2002
-+++ Makefile.in	Thu Apr 18 14:51:49 2002
-@@ -212,9 +212,9 @@
+--- Makefile.in.orig	Sun Aug  4 23:01:03 2002
++++ Makefile.in	Sun Aug  4 23:22:07 2002
+@@ -219,9 +219,9 @@
  		rm -f $(srcdir)/stamp-h.in; \
  		$(MAKE) $(srcdir)/stamp-h.in; \
  	else :; fi
@@ -16,7 +16,7 @@ $FreeBSD$
  
  mostlyclean-hdr:
  
-@@ -446,7 +446,7 @@
+@@ -453,7 +453,7 @@
  install-exec-am:
  install-exec: install-exec-recursive
  
@@ -25,19 +25,19 @@ $FreeBSD$
  		install-data-local
  install-data: install-data-recursive
  
-@@ -519,13 +519,13 @@
+@@ -526,13 +526,13 @@
  	@$(NORMAL_INSTALL)
  	if test -d @PACKAGE_DATA_DIR@; then \
  	  $(mkinstalldirs) $(DESTDIR)/$(pkgdatadir)/@PACKAGE_DATA_DIR@; \
 -	  cd @PACKAGE_DATA_DIR@ ; tar cf -  --exclude "*.in" --exclude "*~" --exclude CVS --exclude .xvpics * | ( cd $(DESTDIR)/$(pkgdatadir)/@PACKAGE_DATA_DIR@ ; tar xf -) ; cd .. ; \
-+	  cd @PACKAGE_DATA_DIR@ ; tar --exclude "*.in" --exclude "*~" --exclude CVS --exclude .xvpics -cf - * | ( cd $(DESTDIR)/$(pkgdatadir)/@PACKAGE_DATA_DIR@ ; tar xf -) ; cd .. ; \
++	  cd @PACKAGE_DATA_DIR@ ; tar --exclude "*.in" --exclude "*.bak" --exclude "*~" --exclude CVS --exclude .xvpics -cf - * | ( cd $(DESTDIR)/$(pkgdatadir)/@PACKAGE_DATA_DIR@ ; tar xf -) ; cd .. ; \
  	fi
  
  dist-hook:
  	if test -d @PACKAGE_DATA_DIR@; then \
  	  $(mkinstalldirs) $(distdir)/@PACKAGE_DATA_DIR@; \
 -	  cd @PACKAGE_DATA_DIR@ ; tar cf -  --exclude "*~" --exclude ".*" --exclude CVS --exclude .xvpics * | ( cd ../$(distdir)/@PACKAGE_DATA_DIR@ ; tar xf -) ; cd .. ; \
-+	  cd @PACKAGE_DATA_DIR@ ; tar --exclude "*~" --exclude ".*" --exclude CVS --exclude .xvpics -cf - * | ( cd ../$(distdir)/@PACKAGE_DATA_DIR@ ; tar xf -) ; cd .. ; \
++	  cd @PACKAGE_DATA_DIR@ ; tar --exclude "*.bak" --exclude "*~" --exclude ".*" --exclude CVS --exclude .xvpics -cf - * | ( cd ../$(distdir)/@PACKAGE_DATA_DIR@ ; tar xf -) ; cd .. ; \
  	fi
  
  clean-local:
