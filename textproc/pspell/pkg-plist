@@ -33,40 +33,40 @@ lib/libpspell-modules.so.1
 lib/libpspell.a
 lib/libpspell.so
 lib/libpspell.so.4
-share/doc/pspell/man-html/1_Introduction.html
-share/doc/pspell/man-html/2_Getting.html
-share/doc/pspell/man-html/3_Library.html
-share/doc/pspell/man-html/4_Status.html
-share/doc/pspell/man-html/5_Feedback.html
-share/doc/pspell/man-html/6_Changelog.html
-share/doc/pspell/man-html/7_Copyright.html
-share/doc/pspell/man-html/About_this.html
-share/doc/pspell/man-html/Contents.html
-share/doc/pspell/man-html/contents.png
-share/doc/pspell/man-html/index.html
-share/doc/pspell/man-html/manual.css
-share/doc/pspell/man-html/manual.html
-share/doc/pspell/man-html/next.png
-share/doc/pspell/man-html/next_g.png
-share/doc/pspell/man-html/prev.png
-share/doc/pspell/man-html/prev_g.png
-share/doc/pspell/man-html/up.png
-share/doc/pspell/man-html/up_g.png
-share/doc/pspell/man-text/1_Introduction.txt
-share/doc/pspell/man-text/2_Getting.txt
-share/doc/pspell/man-text/3_Library.txt
-share/doc/pspell/man-text/4_Status.txt
-share/doc/pspell/man-text/5_Feedback.txt
-share/doc/pspell/man-text/6_Changelog.txt
-share/doc/pspell/man-text/7_Copyright.txt
-share/doc/pspell/man-text/About_this.txt
-share/doc/pspell/man-text/Contents.txt
-share/doc/pspell/man-text/index.txt
-share/doc/pspell/man-text/manual.txt
-share/doc/pspell/manual.aux
-share/doc/pspell/manual.dvi
-share/doc/pspell/manual.lyx
-share/doc/pspell/manual.tex
+%%PORTDOCS%%share/doc/pspell/man-html/1_Introduction.html
+%%PORTDOCS%%share/doc/pspell/man-html/2_Getting.html
+%%PORTDOCS%%share/doc/pspell/man-html/3_Library.html
+%%PORTDOCS%%share/doc/pspell/man-html/4_Status.html
+%%PORTDOCS%%share/doc/pspell/man-html/5_Feedback.html
+%%PORTDOCS%%share/doc/pspell/man-html/6_Changelog.html
+%%PORTDOCS%%share/doc/pspell/man-html/7_Copyright.html
+%%PORTDOCS%%share/doc/pspell/man-html/About_this.html
+%%PORTDOCS%%share/doc/pspell/man-html/Contents.html
+%%PORTDOCS%%share/doc/pspell/man-html/contents.png
+%%PORTDOCS%%share/doc/pspell/man-html/index.html
+%%PORTDOCS%%share/doc/pspell/man-html/manual.css
+%%PORTDOCS%%share/doc/pspell/man-html/manual.html
+%%PORTDOCS%%share/doc/pspell/man-html/next.png
+%%PORTDOCS%%share/doc/pspell/man-html/next_g.png
+%%PORTDOCS%%share/doc/pspell/man-html/prev.png
+%%PORTDOCS%%share/doc/pspell/man-html/prev_g.png
+%%PORTDOCS%%share/doc/pspell/man-html/up.png
+%%PORTDOCS%%share/doc/pspell/man-html/up_g.png
+%%PORTDOCS%%share/doc/pspell/man-text/1_Introduction.txt
+%%PORTDOCS%%share/doc/pspell/man-text/2_Getting.txt
+%%PORTDOCS%%share/doc/pspell/man-text/3_Library.txt
+%%PORTDOCS%%share/doc/pspell/man-text/4_Status.txt
+%%PORTDOCS%%share/doc/pspell/man-text/5_Feedback.txt
+%%PORTDOCS%%share/doc/pspell/man-text/6_Changelog.txt
+%%PORTDOCS%%share/doc/pspell/man-text/7_Copyright.txt
+%%PORTDOCS%%share/doc/pspell/man-text/About_this.txt
+%%PORTDOCS%%share/doc/pspell/man-text/Contents.txt
+%%PORTDOCS%%share/doc/pspell/man-text/index.txt
+%%PORTDOCS%%share/doc/pspell/man-text/manual.txt
+%%PORTDOCS%%share/doc/pspell/manual.aux
+%%PORTDOCS%%share/doc/pspell/manual.dvi
+%%PORTDOCS%%share/doc/pspell/manual.lyx
+%%PORTDOCS%%share/doc/pspell/manual.tex
 share/pspell/cp1252.map
 share/pspell/iso8859-1.map
 share/pspell/iso8859-10.map
@@ -85,7 +85,7 @@ share/pspell/koi8-r.map
 share/pspell/region-to-spelling.map
 share/pspell/viscii.map
 @dirrm share/pspell
-@dirrm share/doc/pspell/man-text
-@dirrm share/doc/pspell/man-html
-@dirrm share/doc/pspell
+%%PORTDOCS%%@dirrm share/doc/pspell/man-text
+%%PORTDOCS%%@dirrm share/doc/pspell/man-html
+%%PORTDOCS%%@dirrm share/doc/pspell
 @dirrm include/pspell
