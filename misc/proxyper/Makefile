@@ -44,7 +44,7 @@ do-install:
 		${MKDIR} ${BINDIR}; \
 	fi
 	${INSTALL_PROGRAM} ${WRKSRC}/proxyper ${BINDIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/proxyper.sh ${BINDIR}
+	${INSTALL_SCRIPT} ${FILESDIR}/proxyper.sh ${BINDIR}
 	${INSTALL_DATA} ${WRKSRC}/proxyper.ini ${BINDIR}
 	${INSTALL_MAN} ${WRKSRC}/ChangeLog.txt ${BINDIR}
 	${INSTALL_MAN} ${WRKSRC}/Readme.txt ${BINDIR}
