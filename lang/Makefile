@@ -10,6 +10,7 @@
     SUBDIR += bc-gcc
     SUBDIR += bwbasic
     SUBDIR += caml-light
+    SUBDIR += ccscript
     SUBDIR += cim
     SUBDIR += clisp
     SUBDIR += cmucl

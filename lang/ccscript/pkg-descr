@@ -1,0 +1,10 @@
+ccscript offers a class extensible threaded script interpreter that may
+be embedded in Common C++ derived packages as a native extension language.
+This script interpreter differs from traditional scripting systems in that
+it is used to script near real-time state-event transitions thru
+deterministic callback step execution rather than the linear and
+non-deterministic fashion of traditional extension languages such as tcl,
+libguile, etc.
+
+- David Sugar
+dyfet@gnu.org
