@@ -149,6 +149,7 @@ share/mime/application/x-qw.xml
 share/mime/application/x-rar.xml
 share/mime/application/x-reject.xml
 share/mime/application/x-rpm.xml
+share/mime/application/x-ruby.xml
 share/mime/application/x-sc.xml
 share/mime/application/x-shar.xml
 share/mime/application/x-shared-library-la.xml
