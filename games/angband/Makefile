@@ -16,7 +16,8 @@ MASTER_SITES=	ftp://export.andrew.cmu.edu/angband/Source/ \
 		ftp://ftp.greyhelm.com/pub/Games/Angband/Angband-2.7.x/Extra/ \
 		ftp://ftp.sunet.se/pub/games/Angband/Extra/ \
 		ftp://mirror.aarnet.edu.au/pub/games/roguelike/angband/Extra/ \
-		http://people.FreeBSD.org/~mph/distfiles/
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	mph
 DISTNAME=	angband-290
 DISTFILES=	angband-290-src.tar.gz angband-290-graf.zip \
 		angband-290-data.tar.gz

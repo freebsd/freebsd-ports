@@ -8,7 +8,8 @@
 PORTNAME=	yagirc
 PORTVERSION=	0.66.1
 CATEGORIES=	irc
-MASTER_SITES=	http://people.FreeBSD.org/~mph/distfiles/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	mph
 
 MAINTAINER=	mph@freebsd.org
 

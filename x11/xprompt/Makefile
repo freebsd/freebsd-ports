@@ -8,7 +8,8 @@
 PORTNAME=	xprompt
 PORTVERSION= 	1.4
 CATEGORIES=	x11
-MASTER_SITES=   http://people.FreeBSD.org/~mph/distfiles/
+MASTER_SITES=   ${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	mph
 
 MAINTAINER=	mph@freebsd.org
 

@@ -8,7 +8,8 @@
 PORTNAME=		xinfocom
 PORTVERSION=		1.8m
 CATEGORIES=		games
-MASTER_SITES=   	http://people.FreeBSD.org/~mph/distfiles/
+MASTER_SITES=   	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	mph
 DISTFILES=		unix8m.tgz
 
 MAINTAINER=		mph@freebsd.org
