@@ -11,8 +11,7 @@ PKGNAME=	zh-${DISTNAME}
 CATEGORIES=	chinese misc
 MASTER_SITES=	ftp://ftp.ifcss.org/pub/software/unix/c-utils/  \
 		ftp://ftp.cuhk.hk/pub/chinese/ifcss/software/unix/c-utils/ \
-		ftp://ftp.edu.tw/Chinese/ifcss/software/unix/c-utils/  \
-		ftp://ftp.mpi-sb.mpg.de/pub/chinese/mirror/ftp.ifcss.org/software/unix/c-utils/
+		ftp://ftp.edu.tw/Chinese/ifcss/software/unix/c-utils/
 
 MAINTAINER=     obrien@FreeBSD.org
 
