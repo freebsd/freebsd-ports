@@ -1,0 +1,11 @@
+--- gendata.sno.orig	Wed May 21 22:05:21 1997
++++ gendata.sno	Tue Jun  3 09:29:43 2003
+@@ -105,7 +105,7 @@
+ MK_LBL0	IDENT(PREV)					:S(MK_LBL1)
+ 	RES.H = IND 'struct ' PREVTYPE ' ' LCPREV '[' SIZE '];'
+ *	output char address of res element (since CPA is 1)!
+-	RES.H = '#define ' PREV TAB '((char *)' RES '.' LCPREV ')'
++	RES.H = '#define ' PREV TAB '((void *)' RES '.' LCPREV ')'
+ 	PREV =
+ 
+ MK_LBL1	RES.H = DIFFER(HERE) '#define ' HERE TAB NAME
