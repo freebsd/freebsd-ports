@@ -967,6 +967,7 @@ dailystrips	ports/deskutils/dailystrips
 dante		ports/net/dante
 dap		ports/audio/dap
 darcnes		ports/emulators/darcnes
+darkice		ports/audio/darkice
 datapipe	ports/net/datapipe
 date		src/bin/date
 datedif		ports/misc/datedif
