@@ -1,0 +1,11 @@
+--- configure.orig	Sat Feb 17 16:24:48 2001
++++ configure	Mon Feb 26 19:35:15 2001
+@@ -1335,7 +1335,7 @@
+ test "$libdir" = '${exec_prefix}/lib' && libdir=${prefix}/lib
+ test "$sysconfdir" = '/etc' && sysconfdir=/etc
+ cat >> confdefs.h <<EOF
+-#define PATH_MASTER_RC "/etc/nail.rc"
++#define PATH_MASTER_RC "`eval echo ${sysconfdir}/nail.rc`"
+ EOF
+ 
+ 

@@ -1,0 +1,13 @@
+--- Makefile.in.orig	Mon Feb 26 16:15:11 2001
++++ Makefile.in	Mon Feb 26 16:20:32 2001
+@@ -392,8 +392,8 @@
+ 
+ 
+ install-data-local:
+-	-test -f $(DESTDIR)/etc/nail.rc || \
+-		$(INSTALL_DATA) $(srcdir)/nail.rc $(DESTDIR)/etc/nail.rc
++	-test -f $(sysconfdir)/nail.rc || \
++		$(INSTALL_DATA) $(srcdir)/nail.rc $(sysconfdir)/nail.rc
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
