@@ -1520,6 +1520,7 @@ frontpage-fr	ports/www/frontpage-fr
 frontpage-he	ports/www/frontpage-he
 frontpage-it	ports/www/frontpage-it
 frontpage-ja	ports/www/frontpage-ja
+frontpage-ko	ports/www/frontpage-ko
 frotz		ports/games/frotz
 fsck		src/sbin/fsck
 fsck_ext2fs	ports/sysutils/fsck_ext2fs
