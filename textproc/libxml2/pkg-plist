@@ -46,6 +46,8 @@ share/doc/libxml2/html/libxml-debugxml.html
 share/doc/libxml2/html/libxml-docbparser.html
 share/doc/libxml2/html/libxml-encoding.html
 share/doc/libxml2/html/libxml-entities.html
+share/doc/libxml2/html/libxml-globals.html
+share/doc/libxml2/html/libxml-hash.html
 share/doc/libxml2/html/libxml-htmlparser.html
 share/doc/libxml2/html/libxml-htmltree.html
 share/doc/libxml2/html/libxml-lib.html
@@ -55,6 +57,7 @@ share/doc/libxml2/html/libxml-notes.html
 share/doc/libxml2/html/libxml-parser.html
 share/doc/libxml2/html/libxml-parserinternals.html
 share/doc/libxml2/html/libxml-sax.html
+share/doc/libxml2/html/libxml-threads.html
 share/doc/libxml2/html/libxml-tree.html
 share/doc/libxml2/html/libxml-uri.html
 share/doc/libxml2/html/libxml-valid.html
