@@ -230,6 +230,7 @@
     SUBDIR += p5-Text-Query
     SUBDIR += p5-Text-Quoted
     SUBDIR += p5-Text-Reflow
+    SUBDIR += p5-Text-Reform
     SUBDIR += p5-Text-Repository
     SUBDIR += p5-Text-SimpleTemplate
     SUBDIR += p5-Text-Tabs+Wrap
