@@ -16,7 +16,7 @@ EXTRACT_SUFX=	.rpm
 MAINTAINER=	sethk@meowfishies.com
 COMMENT=	An RPM of Yahoo! Messenger instant messaging client
 
-BUILD_DEPENDS=	rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
+EXTRACT_DEPENDS=	rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/libgdk_pixbuf.so.2:${PORTSDIR}/graphics/linux-gdk-pixbuf \
 		${LINUXBASE}/usr/lib/libgtk-1.2.so.0:${PORTSDIR}/x11-toolkits/linux-gtk
 
