@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Sun Jan 19 17:53:32 2003
++++ Makefile.in	Sun Jan 19 17:53:40 2003
+@@ -119,7 +119,7 @@
+ cflags_set = @cflags_set@
+ cxxflags_set = @cxxflags_set@
+ 
+-SUBDIRS = src intl po macros pixmaps
++SUBDIRS = intl src po macros pixmaps
+ 
+ EXTRA_DIST = \
+         gnmm.desktop

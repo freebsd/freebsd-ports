@@ -127,6 +127,7 @@
     SUBDIR += gma
     SUBDIR += gnarr
     SUBDIR += gniffel
+    SUBDIR += gnmm
     SUBDIR += gno3dtet
     SUBDIR += gnocatan
     SUBDIR += gnomeattacks
