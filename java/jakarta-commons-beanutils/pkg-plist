@@ -1,0 +1,22 @@
+share/doc/commons-beanutils/org/apache/commons/beanutils/package-summary.html
+share/doc/commons-beanutils/org/apache/commons/beanutils/package-tree.html
+share/doc/commons-beanutils/org/apache/commons/beanutils/package-frame.html
+share/doc/commons-beanutils/org/apache/commons/beanutils/BeanUtils.html
+share/doc/commons-beanutils/org/apache/commons/beanutils/ConvertUtils.html
+share/doc/commons-beanutils/org/apache/commons/beanutils/PropertyUtils.html
+share/doc/commons-beanutils/serialized-form.html
+share/doc/commons-beanutils/packages.html
+share/doc/commons-beanutils/package-list
+share/doc/commons-beanutils/overview-tree.html
+share/doc/commons-beanutils/index.html
+share/doc/commons-beanutils/index-all.html
+share/doc/commons-beanutils/help-doc.html
+share/doc/commons-beanutils/deprecated-list.html
+share/doc/commons-beanutils/stylesheet.css
+share/doc/commons-beanutils/allclasses-frame.html
+share/java/classes/commons-beanutils.jar
+@dirrm share/doc/commons-beanutils/org/apache/commons/beanutils
+@dirrm share/doc/commons-beanutils/org/apache/commons
+@dirrm share/doc/commons-beanutils/org/apache
+@dirrm share/doc/commons-beanutils/org
+@dirrm share/doc/commons-beanutils
