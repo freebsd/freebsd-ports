@@ -27,17 +27,15 @@ case $2 in
 
 		# install man page aliases
 		cd man
-		if [ "x${FAKE_PKG_INSTALL}" = "x" ]; then
-			if [ -f man1/megatron.1.gz ]; then
-				MANEXT=.gz
-			fi
-			for i in hqx2bin macbinary single2bin unbin unhex unsingle; do
-				ln -f man1/megatron.1${MANEXT} man1/$i.1${MANEXT}
-			done
-			for i in nbplkup nbprgstr nbpunrgstr; do
-				ln -f man1/nbp.1${MANEXT} man1/$i.1${MANEXT}
-			done
-			ln -f man1/pap.1${MANEXT} man1/papstatus.1${MANEXT}
+		if [ -f man1/megatron.1.gz ]; then
+			MANEXT=.gz
 		fi
+		for i in hqx2bin macbinary single2bin unbin unhex unsingle; do
+			ln -f man1/megatron.1${MANEXT} man1/$i.1${MANEXT}
+		done
+		for i in nbplkup nbprgstr nbpunrgstr; do
+			ln -f man1/nbp.1${MANEXT} man1/$i.1${MANEXT}
+		done
+		ln -f man1/pap.1${MANEXT} man1/papstatus.1${MANEXT}
 		;;
 esac
