@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kmess
-PORTVERSION=	1.2
+PORTVERSION=	1.2.1
 CATEGORIES=	net kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,17 +14,14 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	perky@FreeBSD.org
 COMMENT=	MSN Messenger Client for KDE3
 
+BUILD_DEPENDS= ${LOCALBASE}/include/mimelib/mimepp.h:${PORTSDIR}/net/kdenetwork3
+
 USE_KDELIBS_VER=3
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile (bad C++ code)"
-.endif
-
 pre-patch:
 	${REINPLACE_CMD} -e '23s/^.*$$/#include <unistd.h>/' \
 		${WRKSRC}/kmess/kmessview.cpp
