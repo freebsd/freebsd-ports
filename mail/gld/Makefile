@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gld
-PORTVERSION=	1.3
+PORTVERSION=	1.3.1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.gasmi.net/down/
 EXTRACT_SUFX=	.tgz
