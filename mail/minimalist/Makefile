@@ -6,17 +6,14 @@
 # $FreeBSD$
 #
 
-DISTNAME=	minimalist-latest
-PKGNAME=	minimalist-2.0.1
+DISTNAME=	minimalist-2.0.2
 CATEGORIES=	mail
 MASTER_SITES=	http://www.webest.com/minimalist/ \
 		http://www.giovannelli.it/~gmarco/files/
-EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	freebsd@scotty.masternet.it
+MAINTAINER=	gmarco@giovannelli.it
 
 NO_BUILD=	yes
-WRKSRC=		${WRKDIR}/minimalist-2.0.1
 
 post-patch:
 	@(cd ${WRKSRC}; ${PERL} -i.bak -p -e 's,/usr/local,${PREFIX},' README \
@@ -26,11 +23,12 @@ do-install:
 	@${MKDIR} ${PREFIX}/minimalist/sample
 	@${INSTALL_SCRIPT} ${WRKSRC}/minimalist.pl ${PREFIX}/bin
 	@${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/minimalist/
+	@${INSTALL_DATA} ${WRKSRC}/CHANGES.txt ${PREFIX}/minimalist/
 	@${INSTALL_DATA} ${WRKSRC}/minimalist.conf-sample ${PREFIX}/minimalist
 	@${INSTALL_DATA} ${WRKSRC}/minimalist.conf-sample ${PREFIX}/etc/minimalist.conf-sample
-	@${INSTALL_DATA} ${WRKSRC}/lists.lst ${PREFIX}/minimalist/
 	@${INSTALL_DATA} ${WRKSRC}/docs/* ${PREFIX}/minimalist/
-	@${INSTALL_DATA} ${WRKSRC}/sample/* ${PREFIX}/minimalist/sample
+	@${INSTALL_DATA} ${WRKSRC}/sample/lists.lst ${PREFIX}/minimalist/
+	@${INSTALL_DATA} ${WRKSRC}/sample/sample/* ${PREFIX}/minimalist/sample/
 	@${ECHO_MSG} "-------------------------------------------------------------------"
 	@${ECHO_MSG} "Minimalist files are in: ${PREFIX}/minimalist"
 	@${ECHO_MSG} "Minimalist binary is: ${PREFIX}/bin/minimalist.pl"
