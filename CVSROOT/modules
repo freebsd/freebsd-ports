@@ -9000,6 +9000,7 @@ vorbisgain	ports/audio/vorbisgain
 vp		ports/graphics/vp
 vpb2		ports/comms/vpb2
 vpce		ports/emulators/vpce
+vpnc		ports/security/vpnc
 vpnd		ports/security/vpnd
 vpopmail	ports/mail/vpopmail
 vpopmail-stable	ports/mail/vpopmail-stable
