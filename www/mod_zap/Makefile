@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mod_zap
-PORTVERSION=	1.3
+PORTVERSION=	1.4.1
 CATEGORIES=	www
 MASTER_SITES=	http://ftp.indexdata.dk/pub/zap/
 DISTNAME=	zap-${PORTVERSION}
@@ -16,7 +16,7 @@ COMMENT=	An Apache module that provides Z39.50 access through WWW
 
 BUILD_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache13 \
 		${LOCALBASE}/bin/tclsh8.3:${PORTSDIR}/lang/tcl83
-LIB_DEPENDS=	yaz.1:${PORTSDIR}/net/yaz
+LIB_DEPENDS=	yaz.2:${PORTSDIR}/net/yaz
 RUN_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache13 \
 		${LOCALBASE}/bin/tclsh8.3:${PORTSDIR}/lang/tcl83
 
