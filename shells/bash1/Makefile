@@ -22,13 +22,7 @@ NOMANCOMPRESS=	yes
 MAN1=		bash.1 bash_builtins.1
 INFO=		bash
 
-.include <bsd.port.pre.mk>
-
-.if ${MACHINE_ARCH} != i386
-BROKEN=		"does not compile on ${MACHINE_ARCH}"
-.endif
-
 post-install:
 	@install-info ${PREFIX}/info/bash.info ${PREFIX}/info/dir
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

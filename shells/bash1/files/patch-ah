@@ -1,5 +1,5 @@
---- machines.h.orig	Mon Dec 18 11:13:22 1995
-+++ machines.h	Sun Feb 10 02:30:49 2002
+--- machines.h.orig	Mon Dec 18 20:13:22 1995
++++ machines.h	Fri Dec 12 11:02:59 2003
 @@ -63,7 +63,7 @@
     some machines, our malloc () cannot be used (because of library
     conflicts, for example), and for those, you should specifically
@@ -9,27 +9,46 @@
  
  /* This causes the Gnu malloc library (from glibc) to be used. */
  /* #define USE_GNU_MALLOC_LIBRARY */
-@@ -80,6 +80,23 @@
- /*			Sun Microsystems Machines	      	    */
- /*								    */
- /* **************************************************************** */
-+
-+/* FreeBSD running on a 386 or 486. */
-+#if defined (__sparc64__) && defined (__FreeBSD__)
-+#  define M_MACHINE "sun4u"
-+#  define M_OS "FreeBSD"
-+#  define SYSDEP_CFLAGS -D__BSD_4_4__ -DRLIMTYPE=quad_t
-+#  define SYSDEP_LDFLAGS -static
-+#  define HAVE_SYS_SIGLIST
-+#  define HAVE_SETLINEBUF
-+#  define HAVE_GETGROUPS
-+#  define HAVE_VFPRINTF
-+#  define HAVE_STRERROR
-+#  define VOID_SIGHANDLER
-+#  define HAVE_DIRENT
-+#  define HAVE_STRCASECMP
-+#  define GCC_STANDARD
-+#endif /* __sparc64__ && __FreeBSD__ */
+@@ -846,11 +847,6 @@
+ #    define done386
+ #    define M_MACHINE "i386"
+ #    define M_OS "FreeBSD"
+-#    if __FreeBSD__ > 1
+-#      define SYSDEP_CFLAGS -D__BSD_4_4__ -DRLIMTYPE=quad_t
+-#    else
+-#      define SYSDEP_CFLAGS -DOPENDIR_NOT_ROBUST -DINT_GROUPS_ARRAY
+-#    endif
+ #    define HAVE_SYS_SIGLIST
+ #    define HAVE_SETLINEBUF
+ #    define HAVE_GETGROUPS
+@@ -2390,3 +2386,30 @@
+ #  endif /* LD_HAS_NO_DASH_L */
  
- /* NetBSD running on a sparc. */
- #if defined (sparc) && defined (__NetBSD__)
+ #endif  /* UNKNOWN_MACHINE */
++
++/* FreeBSD overrides */
++#if defined (__sparc64__)
++#  define M_MACHINE "sun4u"
++#endif
++#if defined (__ia64__)
++#  define M_MACHINE "ia64"
++#endif
++#if defined (__amd64__)
++#  define M_MACHINE "amd64"
++#endif
++#define M_OS "FreeBSD"
++#if __FreeBSD__ > 1
++#  define SYSDEP_CFLAGS -D__BSD_4_4__ -DRLIMTYPE=quad_t
++#else
++#  define SYSDEP_CFLAGS -DOPENDIR_NOT_ROBUST -DINT_GROUPS_ARRAY
++#endif
++#define SYSDEP_LDFLAGS -static
++#define HAVE_SYS_SIGLIST
++#define HAVE_SETLINEBUF
++#define HAVE_GETGROUPS
++#define HAVE_VFPRINTF
++#define HAVE_STRERROR
++#define VOID_SIGHANDLER
++#define HAVE_DIRENT
++#define HAVE_STRCASECMP
++#define GCC_STANDARD
