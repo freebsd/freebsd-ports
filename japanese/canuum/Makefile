@@ -16,6 +16,8 @@ EXTRACT_ONLY=	Uum4.109.tar.gz
 
 MAINTAINER=	kiri@pis.toba-cmt.ac.jp
 
+FORBIDDEN=	"Several root exploits"
+
 BUILD_DEPENDS=	imake:${PORTSDIR}/devel/imake
 LIB_DEPENDS=	canna.1:${PORTSDIR}/japanese/Canna
 
