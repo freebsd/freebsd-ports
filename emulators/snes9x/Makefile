@@ -17,6 +17,7 @@ MAINTAINER=	nakai@FreeBSD.org
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 .elif ${MACHINE_ARCH} == alpha
 MAKEFILE=	Makefile.alpha
+FORBIDDEN=	currently does not work on alpha
 .endif
 
 USE_GMAKE=	YES
