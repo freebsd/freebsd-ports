@@ -1,0 +1,57 @@
+--- makeflag.unx.orig	Sun Sep 10 07:43:55 2000
++++ makeflag.unx	Tue Jun  3 00:24:27 2003
+@@ -4,7 +4,7 @@
+ # be simple wrong.
+ #
+ 
+-SRC_DIR = /mach/emc2-32/isl/gershon/irit/indy
++SRC_DIR = ${WRKSRC}
+ 
+ #
+ # All libraries created will be installed into the LIB_DIR directory.
+@@ -199,16 +199,16 @@
+ #
+ # Flags for SGI 4d, Irix 6.5 using GL or X11 (tested on Indy):
+ #
+-CC = cc -xansi -fullwarn -woff 1209 -woff 1174 -mips3 -n32
+-DFLAGS = -DSGINAP -DRAND48 -DTIMES -D__UNIX__ -D__GL__ -D__OPENGL__ -D__X11__
++#CC = cc -xansi -fullwarn -woff 1209 -woff 1174 -mips3 -n32
++#DFLAGS = -DSGINAP -DRAND48 -DTIMES -D__UNIX__ -D__GL__ -D__OPENGL__ -D__X11__
+ # CFLAGS = $(DFLAGS) # -mips2
+-CFLAGS = -g -DDEBUG $(DFLAGS) -Wl,-w # -mips2
+-MORELIBS = -lbsd -lmalloc
+-GRAPX11LIBS = -lXext -lX11
+-GRAPXMTLIBS = -lXm -lXt -lXext -lX11
+-GRAPGLLIBS = -lgl
+-GRAPOGLLIBS = -lGL $(GRAPXMTLIBS)
+-GRAPDRVS = nuldrvs xgldrvs xgladap x11drvs xmtdrvs xglmdrvs xogldrvs
++#CFLAGS = -g -DDEBUG $(DFLAGS) -Wl,-w # -mips2
++#MORELIBS = -lbsd -lmalloc
++#GRAPX11LIBS = -lXext -lX11
++#GRAPXMTLIBS = -lXm -lXt -lXext -lX11
++#GRAPGLLIBS = -lgl
++#GRAPOGLLIBS = -lGL $(GRAPXMTLIBS)
++#GRAPDRVS = nuldrvs xgldrvs xgladap x11drvs xmtdrvs xglmdrvs xogldrvs
+ 
+ #
+ # For shared libraries add:
+@@ -466,13 +466,13 @@
+ #
+ # Flags for i386 FreeBSD using X11R6
+ #
+-# DFLAGS = -D__UNIX__ -DX11R6 -D__X11__ -DTIMES -DRAND48 -DUSLEEP
+-# CFLAGS = -O2 -pipe -m486 -fomit-frame-pointer $(DFLAGS)
++DFLAGS = -D__UNIX__ -DX11R6 -D__X11__ -DTIMES -DRAND48 -DUSLEEP
++CFLAGS += -I${X11BASE}/include $(DFLAGS)
+ # CFLAGS = -g -DDEBUG $(DFLAGS) 
+-# MORELIBS =  -lc
+-# GRAPX11LIBS = -L/usr/X11R6/lib -lX11
+-# GRAPXMTLIBS = -L/usr/X11R6/lib -lXm -lXt -lX11
+-# GRAPDRVS = nuldrvs x11drvs xmtdrvs
++MORELIBS =  -lc
++GRAPX11LIBS = -L${X11BASE}/lib -lX11
++GRAPXMTLIBS = -L${X11BASE}/lib ${MOTIFLIB} -lXt -lX11
++GRAPDRVS = nuldrvs x11drvs xmtdrvs
+ #
+ #
+ # For shared libraries add:

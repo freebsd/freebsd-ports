@@ -1,0 +1,15 @@
+--- docs/makefile.unx~	Wed Aug  7 19:03:12 2002
++++ docs/makefile.unx	Wed Aug  7 19:04:04 2002
+@@ -150,10 +150,10 @@
+ 
+ 
+ man3:	progman
+-	progman -M ../*_lib/*.c
++	./progman -M ../*_lib/*.c
+ 
+ man6:	irithlp irit.src
+-	irithlp -M irit.src
++	./irithlp -M irit.src
+ 
+ man:	man3 man6
+ 

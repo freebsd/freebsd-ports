@@ -1,0 +1,11 @@
+--- makefile.unx~	Wed Aug  7 18:57:54 2002
++++ makefile.unx	Wed Aug  7 18:58:35 2002
+@@ -63,7 +63,7 @@
+ #
+ doc:
+ 	(cd docs && \
+-	 $(MAKE) $(VIEW_ONLY) -f makefile.unx irit.tex irit.doc)
++	 $(MAKE) $(VIEW_ONLY) -f makefile.unx man all)
+ 
+ clean:
+ 	-rm -f .~* .\#*			# Emacs backup files.
