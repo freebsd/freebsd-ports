@@ -1,0 +1,8 @@
+Grepmail searches a normal, gzip'd, bzip'd, or tzip'd mailbox for a given
+regular expression, and returns those emails that match it. Piped input is
+allowed, and date restrictions are supported.
+
+WWW: http://www.cs.virginia.edu/~dwc3q/code/
+
+- Chris D. Faulhaber
+jedgar@fxp.org
