@@ -6,20 +6,14 @@
 #
 
 PORTNAME=	jumpgate
-PORTVERSION=	0.6
+PORTVERSION=	0.7
 CATEGORIES=	net
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	http://jumpgate.sourceforge.net/
 
 MAINTAINER=	leeym@FreeBSD.org
 
-ALL_TARGET=	generic
-USE_REINPLACE=	yes
+GNU_CONFIGURE=	yes
 
-pre-build:
-	${REINPLACE_CMD} -e "s@gcc@${CC}@g; s@-Wall@-Wall ${CFLAGS}@g" ${WRKSRC}/Makefile
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+MAN8=		jumpgate.8
 
 .include <bsd.port.mk>
