@@ -7,6 +7,7 @@
 
 PORTNAME=	pgadmin3
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_PGSQL}
 MASTER_SITE_SUBDIR= pgadmin3/release/src
@@ -14,9 +15,7 @@ MASTER_SITE_SUBDIR= pgadmin3/release/src
 MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	PostgreSQL database design and management system
 
-LIB_DEPENDS=	pq.3:${PORTSDIR}/${POSTGRESQL_PORT} \
-		wx_gtk.2:${PORTSDIR}/x11-toolkits/wxgtk-devel \
-		wx_gtk_stc.0:${PORTSDIR}/x11-toolkits/wxgtk-contrib
+LIB_DEPENDS=	pq.3:${PORTSDIR}/${POSTGRESQL_PORT}
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-wx=${X11BASE}
@@ -25,4 +24,14 @@ CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 
 POSTGRESQL_PORT?=	databases/postgresql-client
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+#.if ${OSVERSION} < 500000
+LIB_DEPENDS+=	wx_gtk2_stc-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk2-contrib
+CONFIGURE_ARGS+=--with-wx-config=wxgtk2-2.4-config
+#.else
+#LIB_DEPENDS+=	wx_gtk2u_stc-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk2-unicode-contrib
+#CONFIGURE_ARGS+=--with-wx-config=wxgtk2u-2.4-config
+#.endif
+
+.include <bsd.port.post.mk>
