@@ -6831,6 +6831,7 @@ ruby-libglade	ports/devel/ruby-libglade
 ruby-libgtop	ports/devel/ruby-libgtop
 ruby-libpng	ports/graphics/ruby-libpng
 ruby-libxml	ports/textproc/ruby-libxml
+ruby-libxslt	ports/textproc/ruby-libxslt
 ruby-locale	ports/devel/ruby-locale
 ruby-log4r	ports/sysutils/ruby-log4r
 ruby-lua	ports/lang/ruby-lua
