@@ -54,7 +54,7 @@ else
     elif grep -q 'Checksum mismatch' $1; then
       reason="checksum"; tag="checksum"
     elif grep -qE '(No checksum recorded for|(Maybe|Either) .* is out of date, or)' $1; then
-      reason="files/md5 update"; tag="md5"
+      reason="distinfo update"; tag="distinfo"
     elif grep -qE '(configure: error:|script.*failed: here are the contents of)' $1; then
       reason="configure error"; tag="configure"
     elif grep -qE '(bison:.*(No such file|not found)|multiple definition of `yy)' $1; then
@@ -82,7 +82,7 @@ else
     elif grep -qE "(crt0|c\+\+rt0)\.o: No such file" $1; then
       reason="ELF"; tag="elf"
     elif grep -q ".*\.h: No such file" $1; then
-      if grep -q "X11/.*\.h: No such file" $1; then
+      if grep -qE "(X11/.*|Xosdefs)\.h: No such file" $1; then
 	if grep -q "XFree86-.*\.tgz" $1; then
 	  reason="missing header"; tag="header"
 	else
