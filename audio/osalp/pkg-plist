@@ -1,3 +1,7 @@
+bin/audiofile-config
+include/af_vfs.h
+include/audiofile.h
+include/aupvlist.h
 include/aflib/aflib.h
 include/aflib/aflibAudio.h
 include/aflib/aflibAudioBWFilter.h
@@ -19,6 +23,7 @@ include/aflib/aflibConverterLargeFilter.h
 include/aflib/aflibConverterSmallFilter.h
 include/aflib/aflibData.h
 include/aflib/aflibDateTime.h
+include/aflib/aflibDebug.h
 include/aflib/aflibEditClip.h
 include/aflib/aflibEnvFile.h
 include/aflib/aflibFFT.h
@@ -29,15 +34,22 @@ include/aflib/aflibMemNode.h
 include/aflib/aflibMixerItem.h
 include/aflib/aflibRecorderItem.h
 include/aflib/aflibSampleData.h
-lib/aflib/libaflibBladeFile-%%VERSION%%.so
-lib/aflib/libaflibBladeFile.so
-lib/aflib/libaflibLameFile-%%VERSION%%.so
-lib/aflib/libaflibLameFile.so
+lib/aflib/libaflibAifcFile-%%VERSION%%.so
+lib/aflib/libaflibAifcFile.so
+lib/aflib/libaflibAiffFile-%%VERSION%%.so
+lib/aflib/libaflibAiffFile.so
+lib/aflib/libaflibAuFile-%%VERSION%%.so
+lib/aflib/libaflibAuFile.so
+lib/aflib/libaflibDevFile-%%VERSION%%.so
+lib/aflib/libaflibDevFile.so
 lib/aflib/libaflibMpgFile-%%VERSION%%.so
 lib/aflib/libaflibMpgFile.so
-lib/aflib/libaflibSoxFile-%%VERSION%%.so
-lib/aflib/libaflibSoxFile.so
+lib/aflib/libaflibOggFile-%%VERSION%%.so
+lib/aflib/libaflibOggFile.so
+lib/aflib/libaflibWavFile-%%VERSION%%.so
+lib/aflib/libaflibWavFile.so
 lib/libaflib-%%VERSION%%.so
 lib/libaflib.so
+share/aclocal/audiofile.m4
 @dirrm lib/aflib
 @dirrm include/aflib
