@@ -3028,6 +3028,7 @@ inform		ports/games/inform
 inilib		ports/devel/inilib
 inkscape	ports/graphics/inkscape
 inn		ports/news/inn
+inn-current	ports/news/inn-current
 inn-stable	ports/news/inn-stable
 installwatch	ports/sysutils/installwatch
 instant-server	ports/misc/instant-server
