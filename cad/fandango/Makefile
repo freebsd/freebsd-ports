@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	fandango
-PORTVERSION=	0.2.5
-PORTREVISION=	1
+PORTVERSION=	0.2.6
 CATEGORIES=	cad
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	elcad
@@ -24,10 +23,4 @@ USE_GNOME=	gnometarget
 USE_KDEBASE_VER=	3
 GNU_CONFIGURE=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		"Does not compile on 4.x"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
