@@ -1,0 +1,14 @@
+A GTK+ theme engine to make GTK+ look nicier. This theme is based on a mix of
+GTKStep and Step-pastel, with a lot of tweakings. The goal was to provide
+colors, a nicer look, and some configurability. This includes the following
+details:
+
+ o Flat buttons that pop out under the mouse. 
+ o All buttons highlights under the mouse. 
+ o Clean checkmark. 
+ o Radio buttons that clearly mark which one is selected. 
+ o Disabled buttons easily identifiables. 
+ o Internal pixmaps follow the color scheme from the gtkrc. 
+ o Multiple gtkrc files for different color combinations.
+
+WWW: http://gtk.themes.org/themes.phtml?themeid=958794603
