@@ -21,10 +21,6 @@ BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
 RUN_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
 		latex:${PORTSDIR}/print/teTeX
 
-BROKEN=		"Does not install"
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2004-04-16
-
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_PERL5=	yes
