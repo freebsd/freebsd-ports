@@ -430,6 +430,7 @@
     SUBDIR += xmlada
     SUBDIR += xmlcharent
     SUBDIR += xmlenc
+    SUBDIR += xmlindent
     SUBDIR += xmlpp
     SUBDIR += xmlppm
     SUBDIR += xmlwrapp
