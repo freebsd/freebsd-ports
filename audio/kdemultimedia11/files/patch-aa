@@ -1,0 +1,11 @@
+--- kmidi/config.h.orig	Sat Sep 18 16:36:13 1999
++++ kmidi/config.h	Sat Sep 18 16:36:49 1999
+@@ -321,7 +321,7 @@
+ #ifdef LITTLE_ENDIAN
+ #define LE_SHORT(x) x
+ #define LE_LONG(x) x
+-#ifdef __FreeBSD__
++#if defined(__FreeBSD__) && !defined(__alpha__)
+ #define BE_SHORT(x) __byte_swap_word(x)
+ #define BE_LONG(x) __byte_swap_long(x)
+ #else
