@@ -1,0 +1,11 @@
+======================================================================
+
+  In order for the 'pvc' (preview continuously) option to work 
+  perfectly, latexmk needs to know the correct way to invoke ps(1) 
+  in each operating system. Thus, users may have to change the $pscmd 
+  variable in their ~/.latexmkrc files.
+  
+  For FreeBSD-4.x the following is known to work:
+  $pscmd = "ps -w -f -u $ENV{USER}"
+
+======================================================================
