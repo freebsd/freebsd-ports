@@ -730,6 +730,7 @@ clibpdf		ports/print/clibpdf
 click		ports/net/click
 clig		ports/devel/clig
 clint		ports/devel/clint
+clip		ports/databases/clip
 clips		ports/lang/clips
 clisp		ports/lang/clisp
 cln		ports/math/cln
