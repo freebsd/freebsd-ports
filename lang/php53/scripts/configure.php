@@ -21,6 +21,7 @@ Please select desired options:" -1 -1 16 \
 BCMATH		"bc style precision math functions" ${WITH_BCMATH:-OFF} \
 BZIP2		"bzip2 library support" ${WITH_BZIP2:-OFF} \
 CALENDAR	"calendar conversion support" ${WITH_CALENDAR:-OFF} \
+CDB		"cdb database support (dba)" ${WITH_CDB:-OFF} \
 CRACK		"crack support" ${WITH_CRACK:-OFF} \
 CTYPE		"ctype functions" ${WITH_CTYPE:-OFF} \
 CURL		"CURL support" ${WITH_CURL:-OFF} \
@@ -32,12 +33,13 @@ EXIF		"EXIF support" ${WITH_EXIF:-OFF} \
 FILEPRO		"filePro support" ${WITH_FILEPRO:-OFF} \
 FTP		"FTP support" ${WITH_FTP:-OFF} \
 GD		"GD library support" ${WITH_GD:-OFF} \
-GDBM		"GDBM database support" ${WITH_GDBM:-OFF} \
+GDBM		"GDBM database support (dba)" ${WITH_GDBM:-OFF} \
 GETTEXT		"gettext library support" ${WITH_GETTEXT:-OFF} \
 GMP		"GNU MP support" ${WITH_GMP:-OFF} \
 HYPERWAVE	"Hyperwave support" ${WITH_HYPERWAVE:-OFF} \
 ICONV		"iconv support" ${WITH_ICONV:-OFF} \
 IMAP		"IMAP support" ${WITH_IMAP:-OFF} \
+INIFILE		"INI file support (dba)" ${WITH_INIFILE:-OFF} \
 INTERBASE	"Interbase 6 database support (Firebird)" ${WITH_INTERBASE:-OFF} \
 MBSTRING	"multibyte string support" ${WITH_MBSTRING:-OFF} \
 MCAL		"Modular Calendar Access Library support" ${WITH_MCAL:-OFF} \

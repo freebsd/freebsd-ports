@@ -9,18 +9,18 @@
 #
 # By default, the enabled extensions are: CTYPE, MYSQL, PCRE, POSIX, SESSION,
 # TOKENIZER, XML and ZLIB. This behaviour can be changed overriding the
-# PHP_OPTIONS variable (e.g. PHP_OPTIONS="EXT1 EXT2 EXT3").
+# PHP4_OPTIONS variable (e.g. PHP4_OPTIONS="EXT1 EXT2 EXT3").
 #
 # Another way is to use the WITH_<EXT> and WITHOUT_<EXT> knobs, for additional
 # and default extensions respectively (implies batch mode).
 #
-# The last way reads an "extension" file, located in ~/php_options (the
-# location is overridable by the OPTION_FILE variable). You may find an
-# example in scripts/php_options (interactive mode only).
+# The last way reads an "extension" file, located in ~/php4_options (the
+# location is overridable by the PHP4_OPTFILE variable). You may find an
+# example in scripts/php4_options (interactive mode only).
 #
 
 PORTNAME=	php4
-PORTVERSION=	4.3.2
+PORTVERSION=	4.3.3.r1
 CATEGORIES?=	lang devel www
 MASTER_SITES=	http://www.php.net/distributions/ \
 		http://it.php.net/distributions/ \
@@ -29,7 +29,8 @@ MASTER_SITES=	http://www.php.net/distributions/ \
 		http://gr.php.net/distributions/ \
 		http://fr.php.net/distributions/ \
 		http://es.php.net/distributions/ \
-		http://se.php.net/distributions/
+		http://se.php.net/distributions/ \
+		http://downloads.php.net/jani/
 .if defined(WITHOUT_CLI) && !defined(WITHOUT_APACHE)
 PKGNAMEPREFIX=	mod_
 .else
@@ -41,7 +42,7 @@ PKGNAMESUFFIX=	-cli
 .endif
 .endif
 .endif
-DISTNAME=	php-${PORTVERSION}
+DISTNAME=	php-${PORTVERSION:S/.r/RC/}
 
 MAINTAINER?=	sysadmin@alexdupre.com
 COMMENT=	PHP Scripting Language (Apache Module and CLI)
@@ -102,13 +103,13 @@ PLIST_SUB+=	CLI=""
 SAPI_FILE=	"bin/php"
 .endif
 
-ALL_OPTIONS=	BCMATH BZIP2 CALENDAR CRACK CTYPE CURL DBASE DBX DOMXML \
+ALL_OPTIONS=	BCMATH BZIP2 CALENDAR CDB CRACK CTYPE CURL DBASE DBX DOMXML \
 		DOMXSLT EXIF FILEPRO FTP GD GDBM GETTEXT GMP HYPERWAVE ICONV \
-		IMAP INTERBASE MBSTRING MCAL MCVE MCRYPT MHASH MIME MING MYSQL \
-		NCURSES OPENLDAP OPENSSL ORACLE PCNTL PCRE PDFLIB POSIX \
-		POSTGRESQL PSPELL READLINE RECODE SESSION SHMOP SNMP SOCKETS \
-		SYBASEDB SYBASECT SYSVSEM SYSVSHM TOKENIZER UNIXODBC WDDX XML \
-		XMLRPC XSLT YAZ YP ZIP ZLIB
+		IMAP INTERBASE INIFILE MBSTRING MCAL MCVE MCRYPT MHASH MIME \
+		MING MYSQL NCURSES OPENLDAP OPENSSL ORACLE PCNTL PCRE PDFLIB \
+		POSIX POSTGRESQL PSPELL READLINE RECODE SESSION SHMOP SNMP \
+		SOCKETS SYBASEDB SYBASECT SYSVSEM SYSVSHM TOKENIZER UNIXODBC \
+		WDDX XML XMLRPC XSLT YAZ YP ZIP ZLIB
 
 .for opt in ${ALL_OPTIONS}
 .if defined(WITH_${opt}) || defined(WITHOUT_${opt})
@@ -157,16 +158,16 @@ PLIST_SUB+=	SAPI_FILE=${SAPI_FILE} \
 		EXT_DIR=${EXT_DIR}
 
 WRKDIR?=	${WRKDIRPREFIX}${.CURDIR}/work
-OPTION_FILE?=	${HOME}/php_options
+PHP4_OPTFILE?=	${HOME}/php4_options
 
-PHP_OPTIONS?=	CTYPE MYSQL PCRE POSIX SESSION TOKENIZER XML ZLIB
+PHP4_OPTIONS?=	CTYPE MYSQL PCRE POSIX SESSION TOKENIZER XML ZLIB
 
 .for opt in ${ALL_OPTIONS}
 .if defined(WITH_${opt})
 SEL_OPTIONS+=	${opt}
 .endif
 .endfor
-.for opt in ${PHP_OPTIONS}
+.for opt in ${PHP4_OPTIONS}
 .if !defined(WITHOUT_${opt})
 SEL_OPTIONS+=	${opt}
 .endif
@@ -174,7 +175,7 @@ SCRIPTS_ENV+=	WITH_${opt}=ON
 .endfor
 
 SCRIPTS_ENV+=	SEL_OPTIONS="${SEL_OPTIONS}" \
-		OPTION_FILE="${OPTION_FILE}" \
+		OPTION_FILE="${PHP4_OPTFILE}" \
 		WRKDIR="${WRKDIR}" \
 		CAT="${CAT}" \
 		SED="${SED}"
@@ -186,6 +187,10 @@ WITH_XML=	yes
 
 .if exists(${WRKDIR}/Makefile.inc)
 .include "${WRKDIR}/Makefile.inc"
+.endif
+
+.if defined(WITH_CDB) || defined(WITH_GDBM) || defined(WITH_INIFILE)
+WITH_DBA=	yes
 .endif
 
 .if defined(WITH_DOMXSLT)
@@ -222,6 +227,10 @@ CONFIGURE_ARGS+=--with-bz2=${BZIP2BASE}
 CONFIGURE_ARGS+=--enable-calendar
 .endif
 
+.if defined(WITH_CDB)
+CONFIGURE_ARGS+=--with-cdb
+.endif
+
 .if defined(WITH_CRACK)
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libcrack.a:${PORTSDIR}/security/cracklib
 RUN_DEPENDS+=	${LOCALBASE}/lib/libcrack.a:${PORTSDIR}/security/cracklib
@@ -235,6 +244,10 @@ CONFIGURE_ARGS+=--enable-ctype
 .if defined(WITH_CURL)
 LIB_DEPENDS+=	curl.2:${PORTSDIR}/ftp/curl
 CONFIGURE_ARGS+=--with-curl=${LOCALBASE}
+.endif
+
+.if defined(WITH_DBA)
+CONFIGURE_ARGS+=--enable-dba
 .endif
 
 .if defined(WITH_DBASE)
@@ -284,7 +297,7 @@ CONFIGURE_ARGS+=--with-xpm-dir=${LOCALBASE}
 
 .if defined(WITH_GDBM)
 LIB_DEPENDS+=	gdbm.3:${PORTSDIR}/databases/gdbm
-CONFIGURE_ARGS+=--enable-dba --with-gdbm=${LOCALBASE}
+CONFIGURE_ARGS+=--with-gdbm=${LOCALBASE}
 .endif
 
 .if defined(WITH_GETTEXT)
@@ -311,7 +324,24 @@ CONFIGURE_ARGS+=--with-iconv=${LOCALBASE}
 
 .if defined(WITH_IMAP)
 LIB_DEPENDS+=	c-client4.8:${PORTSDIR}/mail/cclient
+.if !exists(${LOCALBASE}/lib/libc-client4.so)
+.if !defined(WITHOUT_SSL)
 CONFIGURE_ARGS+=--with-imap=${LOCALBASE} --with-imap-ssl=${LOCALBASE}
+.else
+CONFIGURE_ARGS+=--with-imap=${LOCALBASE}
+.endif
+.else
+WITH_IMAP_SSL!=/usr/bin/ldd ${LOCALBASE}/lib/libc-client4.so | ${GREP} libssl || ${TRUE}
+.if !empty(WITH_IMAP_SSL)
+CONFIGURE_ARGS+=--with-imap=${LOCALBASE} --with-imap-ssl=${LOCALBASE}
+.else
+CONFIGURE_ARGS+=--with-imap=${LOCALBASE}
+.endif
+.endif
+.endif
+
+.if defined(WITH_INIFILE)
+CONFIGURE_ARGS+=--with-inifile
 .endif
 
 .if defined(WITH_INTERBASE)
