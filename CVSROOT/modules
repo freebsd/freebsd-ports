@@ -10096,6 +10096,7 @@ website		ports/textproc/website
 webstats	ports/www/webstats
 webstone	ports/www/webstone
 webstone-ssl	ports/www/webstone-ssl
+websvn		ports/devel/websvn
 weechat		ports/irc/weechat
 weewm		ports/x11-wm/weewm
 wesnoth		ports/games/wesnoth
