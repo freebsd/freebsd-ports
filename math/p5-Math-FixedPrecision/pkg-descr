@@ -1,0 +1,11 @@
+Math::FixedPrecision provides a way to do decimal math without floating
+point errors.
+
+WARNING:  In order for all tests to complete successfully, you must replace
+the stock BigFloat.pm with the one located in this distribution.  This file
+will also be updated as part of the 5.6.1 distribution, when that is released.
+Please copy the included BigFloat.pm to {PERLVERSION}/lib/Math/BigFloat.pm.
+
+Author: John Peacock <jpeacock@rowman.com>
+
+--will

@@ -53,6 +53,7 @@
     SUBDIR += p5-Math-Currency
     SUBDIR += p5-Math-Expr
     SUBDIR += p5-Math-Financial
+    SUBDIR += p5-Math-FixedPrecision
     SUBDIR += p5-Math-Logic
     SUBDIR += p5-MatrixReal
     SUBDIR += p5-Set-IntSpan
