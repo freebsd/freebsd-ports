@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	soap
-PORTVERSION=	1.4.7
+PORTVERSION=	1.4.8.1
 CATEGORIES=	net ruby
-MASTER_SITES=	http://www.jin.gr.jp/~nahi/Ruby/SOAP4R/
+MASTER_SITES=	http://www.ruby-lang.org/~nahi/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}4r-${PORTVERSION:S/./_/g}
 DIST_SUBDIR=	ruby
