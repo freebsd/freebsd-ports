@@ -1,23 +1,3 @@
-%%PORTDOCS%%share/doc/ettercap/AUTHORS
-%%PORTDOCS%%share/doc/ettercap/CHANGELOG
-%%PORTDOCS%%share/doc/ettercap/CONFUSION.HOWTO
-%%PORTDOCS%%share/doc/ettercap/COPYING
-%%PORTDOCS%%share/doc/ettercap/HISTORY
-%%PORTDOCS%%share/doc/ettercap/HYDRA.HOWTO
-%%PORTDOCS%%share/doc/ettercap/INSTALL
-%%PORTDOCS%%share/doc/ettercap/KNOWN-BUGS
-%%PORTDOCS%%share/doc/ettercap/PORTINGS
-%%PORTDOCS%%share/doc/ettercap/README
-%%PORTDOCS%%share/doc/ettercap/README.PLUGINS
-%%PORTDOCS%%share/doc/ettercap/README.WIN32
-%%PORTDOCS%%share/doc/ettercap/ROPER.HOWTO
-%%PORTDOCS%%share/doc/ettercap/THANKS
-%%PORTDOCS%%share/doc/ettercap/TODO
-%%PORTDOCS%%share/doc/ettercap/TODO.WIN32
-%%PORTDOCS%%share/doc/ettercap/ZARATAN.HOWTO
-%%PORTDOCS%%share/doc/ettercap/debug.txt
-%%PORTDOCS%%share/doc/ettercap/errors.txt
-%%PORTDOCS%%share/doc/ettercap/threads.txt
 bin/lc-converter
 lib/ettercap/ec_H00_lurker.so
 lib/ettercap/ec_H01_zaratan.so
@@ -51,17 +31,37 @@ lib/ettercap/ec_phantom.so
 lib/ettercap/ec_shadow.so
 lib/ettercap/ec_spectre.so
 lib/ettercap/ec_triton.so
-sbin/ettercap
-share/ettercap/etter.conf
-share/ettercap/etter.dns
-share/ettercap/etter.filter
-share/ettercap/etter.filter.ssh
-share/ettercap/etter.mime
-share/ettercap/etter.passive.os.fp
-share/ettercap/etter.ssl.crt
-share/ettercap/mac-fingerprints
-share/ettercap/nmap-os-fingerprints
-share/ettercap/services
 @dirrm lib/ettercap
-@dirrm share/ettercap
-%%PORTDOCS%%@dirrm share/doc/ettercap
+sbin/ettercap
+%%DATADIR%%/etter.conf
+%%DATADIR%%/etter.dns
+%%DATADIR%%/etter.filter
+%%DATADIR%%/etter.filter.ssh
+%%DATADIR%%/etter.mime
+%%DATADIR%%/etter.passive.os.fp
+%%DATADIR%%/etter.ssl.crt
+%%DATADIR%%/mac-fingerprints
+%%DATADIR%%/nmap-os-fingerprints
+%%DATADIR%%/services
+@dirrm %%DATADIR%%
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
+%%PORTDOCS%%%%DOCSDIR%%/CONFUSION.HOWTO
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/HISTORY
+%%PORTDOCS%%%%DOCSDIR%%/HYDRA.HOWTO
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/KNOWN-BUGS
+%%PORTDOCS%%%%DOCSDIR%%/PORTINGS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.PLUGINS
+%%PORTDOCS%%%%DOCSDIR%%/README.WIN32
+%%PORTDOCS%%%%DOCSDIR%%/ROPER.HOWTO
+%%PORTDOCS%%%%DOCSDIR%%/THANKS
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/TODO.WIN32
+%%PORTDOCS%%%%DOCSDIR%%/ZARATAN.HOWTO
+%%PORTDOCS%%%%DOCSDIR%%/debug.txt
+%%PORTDOCS%%%%DOCSDIR%%/errors.txt
+%%PORTDOCS%%%%DOCSDIR%%/threads.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

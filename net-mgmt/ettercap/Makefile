@@ -7,7 +7,7 @@
 
 PORTNAME=	ettercap
 PORTVERSION=	0.6.b
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
@@ -53,9 +53,17 @@ INSTALL_TARGET=		install plug-ins_install
 INSTALL_TARGET+=	install-doc
 .endif
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
+post-extract:
 	@${MV} -f ${WRKSRC}/share/lc-converter.c ${WRKSRC}
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|g' \
+		${WRKSRC}/configure
+	@${REINPLACE_CMD} -E -e 's|(^DATADIR.+=).+|\1 ${DATADIR}|; \
+		s|(^DOCDIR.+=).+|\1 ${DOCSDIR}|' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|@prefix@\/share\/@PROG@|${DATADIR}|; \
+		s|@prefix@\/doc\/@PROG@-@VERSION@|${DOCSDIR}|' \
+		${WRKSRC}/ettercap.8.in
 
 post-build:
 	${CC} ${CFLAGS} -o ${WRKSRC}/lc-converter ${WRKSRC}/lc-converter.c
