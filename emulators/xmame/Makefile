@@ -149,7 +149,7 @@ ASM_COMMENT=\#
 # Heavy optimization - enabled by default because it doesn't seem
 # to break things, and enables considerable speedup.
 .if !defined(WITH_OPTIMIZATION) || ${WITH_OPTIMIZATION} != "no"
-CFLAGS+=	-O3 -march=i686 -Wall -Wno-unused -funroll-loops \
+CFLAGS+=	-O3 -Wall -Wno-unused -funroll-loops \
 		-fstrength-reduce -fomit-frame-pointer -ffast-math \
 		-malign-functions=4 -malign-jumps=4 -malign-loops=4
 .endif
