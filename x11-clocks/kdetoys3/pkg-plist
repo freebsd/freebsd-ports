@@ -3,7 +3,6 @@ bin/kmoon
 bin/kteatime
 bin/kworldwatch
 lib/libkeyesapplet.la
-lib/libkeyesapplet.so
 lib/libkeyesapplet.so.1
 share/applnk/Toys/amor.desktop
 share/applnk/Toys/kmoon.desktop
@@ -304,7 +303,6 @@ share/apps/amor/pingu/walk_r6.xpm
 share/apps/amor/pingu/walk_r7.xpm
 share/apps/amor/pingu/walk_r8.xpm
 share/apps/amor/pingurc
-share/apps/amor/tips-default
 share/apps/amor/tips-en
 share/apps/amor/worm/w-a1.xpm
 share/apps/amor/worm/w-a2.xpm
@@ -383,7 +381,6 @@ share/apps/kworldwatch/pics/flag-yellow.xpm
 share/apps/kworldwatch/pics/photo_400.png
 share/apps/kworldwatch/pics/world2.png
 share/doc/HTML/en/kodo/.anchors
-share/doc/HTML/en/kodo/common
 share/doc/HTML/en/kodo/compilationandinstallation.html
 share/doc/HTML/en/kodo/guide.png
 share/doc/HTML/en/kodo/howitworks.html

@@ -6,17 +6,17 @@
 #
 
 PORTNAME=	kdesupport
-PORTVERSION=	1.94
+PORTVERSION=	2.0
 CATEGORIES=	converters kde
 MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	unstable/distribution/2.0Beta5/tar/src
+MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/distribution/tar/generic/src
 
 MAINTAINER=	will@FreeBSD.org
 
 BUILD_DEPENDS=	jade:${PORTSDIR}/textproc/jade \
 		${PREFIX}/share/sgml/linuxdoc:${PORTSDIR}/textproc/linuxdoc
-LIB_DEPENDS=	qt2.4:${PORTSDIR}/x11-toolkits/qt22
 
+USE_QT2=	yes
 MOC=		${X11BASE}/bin/moc2
 SOMAJOR=	8
 SOMINOR=	0
@@ -40,5 +40,6 @@ PLIST_SUB+=	LIBVER="${SOMAJOR}"
 pre-configure:
 	${PERL} -pi -e "s@TOPSUBDIRS libaps@TOPSUBDIRS@g" ${WRKSRC}/configure
 	${PERL} -pi -e "s@odbc libaps@odbc@g" ${WRKSRC}/configure
+	${PERL} -pi -e "s@-version-info 1:1@-version-info 3:0@g" ${WRKSRC}/mimelib/Makefile.in
 
 .include <bsd.port.mk>

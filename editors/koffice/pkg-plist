@@ -17,6 +17,7 @@ include/kformula.h
 include/kformulaedit.h
 include/kformulatoolbar.h
 include/koApplication.h
+include/koChart.h
 include/koChild.h
 include/koDataTool.h
 include/koDocument.h
@@ -42,11 +43,11 @@ include/koTabChooser.h
 include/koTemplateChooseDia.h
 include/koTemplateCreateDia.h
 include/koTemplates.h
+include/koToolBox.h
 include/koView.h
 include/komlParser.h
 include/komlWriter.h
 include/matrixbox.h
-include/toolbox.h
 lib/kchart.la
 lib/kchart.so
 lib/killustrator.la
@@ -79,6 +80,8 @@ lib/libkformula.la
 lib/libkformula.so.3
 lib/libkillustratorpart.la
 lib/libkillustratorpart.so
+lib/libkochart.la
+lib/libkochart.so.1
 lib/libkodocinfopropspage.la
 lib/libkodocinfopropspage.so.0
 lib/libkofficecore.la
@@ -109,6 +112,17 @@ share/applnk/Office/koshell.desktop
 share/applnk/Office/kpresenter.desktop
 share/applnk/Office/kspread.desktop
 share/applnk/Office/kword.desktop
+share/apps/kchart/icons/locolor/16x16/actions/areas.png
+share/apps/kchart/icons/locolor/16x16/actions/areas3d.png
+share/apps/kchart/icons/locolor/16x16/actions/bars.png
+share/apps/kchart/icons/locolor/16x16/actions/bars3d.png
+share/apps/kchart/icons/locolor/16x16/actions/cakes.png
+share/apps/kchart/icons/locolor/16x16/actions/cakes3d.png
+share/apps/kchart/icons/locolor/16x16/actions/data.png
+share/apps/kchart/icons/locolor/16x16/actions/lines.png
+share/apps/kchart/icons/locolor/16x16/actions/lines3d.png
+share/apps/kchart/icons/locolor/16x16/actions/options.png
+share/apps/kchart/icons/locolor/16x16/actions/wizard.png
 share/apps/kchart/icons/locolor/22x22/actions/areas.png
 share/apps/kchart/icons/locolor/22x22/actions/areas3d.png
 share/apps/kchart/icons/locolor/22x22/actions/bars.png
@@ -121,12 +135,30 @@ share/apps/kchart/icons/locolor/22x22/actions/lines3d.png
 share/apps/kchart/icons/locolor/22x22/actions/options.png
 share/apps/kchart/icons/locolor/22x22/actions/wizard.png
 share/apps/kchart/kchart.rc
+share/apps/kchart/pics/3DAREA.png
+share/apps/kchart/pics/3DBAR.png
+share/apps/kchart/pics/3DCOMBO_HLC_AREA.png
+share/apps/kchart/pics/3DCOMBO_HLC_BAR.png
+share/apps/kchart/pics/3DCOMBO_LINE_AREA.png
+share/apps/kchart/pics/3DCOMBO_LINE_BAR.png
+share/apps/kchart/pics/3DLINE.png
 share/apps/kchart/pics/areasubtypebeside.png
 share/apps/kchart/pics/areasubtypedepth.png
 share/apps/kchart/pics/barsubtypebeside.png
 share/apps/kchart/pics/barsubtypedepth.png
 share/apps/kchart/pics/barsubtypelayer.png
 share/apps/kchart/pics/barsubtypepercent.png
+share/apps/kchart/pics/chart_3dhiloclose.png
+share/apps/kchart/pics/chart_area.png
+share/apps/kchart/pics/chart_bar.png
+share/apps/kchart/pics/chart_combo_hlc_area.png
+share/apps/kchart/pics/chart_combo_hlc_bar.png
+share/apps/kchart/pics/chart_combo_line_area.png
+share/apps/kchart/pics/chart_combo_line_bar.png
+share/apps/kchart/pics/chart_hiloclose.png
+share/apps/kchart/pics/chart_lines.png
+share/apps/kchart/pics/chart_pie2D.png
+share/apps/kchart/pics/chart_pie3D.png
 share/apps/killustrator/KIllustrator.rc
 share/apps/killustrator/pics/abottom.png
 share/apps/killustrator/pics/ahcenter.png
@@ -389,7 +421,61 @@ share/apps/kpresenter/templates/Screenpresentations/Plain.desktop
 share/apps/kpresenter/templates/Screenpresentations/kde.desktop
 share/apps/kpresenter/templates/Screenpresentations/kde2.desktop
 share/apps/kspread/dtd/kspread.dtd
+share/apps/kspread/extensions/builtin.xml
 share/apps/kspread/extensions/math.ks
+share/apps/kspread/icons/locolor/16x16/actions/adjustcol.png
+share/apps/kspread/icons/locolor/16x16/actions/adjustrow.png
+share/apps/kspread/icons/locolor/16x16/actions/black_sum.png
+share/apps/kspread/icons/locolor/16x16/actions/border_all.png
+share/apps/kspread/icons/locolor/16x16/actions/border_bottom.png
+share/apps/kspread/icons/locolor/16x16/actions/border_fall.png
+share/apps/kspread/icons/locolor/16x16/actions/border_horizontal.png
+share/apps/kspread/icons/locolor/16x16/actions/border_inside.png
+share/apps/kspread/icons/locolor/16x16/actions/border_left.png
+share/apps/kspread/icons/locolor/16x16/actions/border_outline.png
+share/apps/kspread/icons/locolor/16x16/actions/border_remove.png
+share/apps/kspread/icons/locolor/16x16/actions/border_right.png
+share/apps/kspread/icons/locolor/16x16/actions/border_top.png
+share/apps/kspread/icons/locolor/16x16/actions/border_up.png
+share/apps/kspread/icons/locolor/16x16/actions/border_vertical.png
+share/apps/kspread/icons/locolor/16x16/actions/bottom.png
+share/apps/kspread/icons/locolor/16x16/actions/cell_edit.png
+share/apps/kspread/icons/locolor/16x16/actions/cell_layout.png
+share/apps/kspread/icons/locolor/16x16/actions/center.png
+share/apps/kspread/icons/locolor/16x16/actions/chart.png
+share/apps/kspread/icons/locolor/16x16/actions/comment.png
+share/apps/kspread/icons/locolor/16x16/actions/delete_table.png
+share/apps/kspread/icons/locolor/16x16/actions/deletecell.png
+share/apps/kspread/icons/locolor/16x16/actions/dissociatecell.png
+share/apps/kspread/icons/locolor/16x16/actions/first_letter_upper.png
+share/apps/kspread/icons/locolor/16x16/actions/fontsizedown.png
+share/apps/kspread/icons/locolor/16x16/actions/fontsizeup.png
+share/apps/kspread/icons/locolor/16x16/actions/funct.png
+share/apps/kspread/icons/locolor/16x16/actions/insertcell.png
+share/apps/kspread/icons/locolor/16x16/actions/inserttable.png
+share/apps/kspread/icons/locolor/16x16/actions/left.png
+share/apps/kspread/icons/locolor/16x16/actions/lower.png
+share/apps/kspread/icons/locolor/16x16/actions/mergecell.png
+share/apps/kspread/icons/locolor/16x16/actions/middle.png
+share/apps/kspread/icons/locolor/16x16/actions/money.png
+share/apps/kspread/icons/locolor/16x16/actions/multirow.png
+share/apps/kspread/icons/locolor/16x16/actions/oscilloscope.png
+share/apps/kspread/icons/locolor/16x16/actions/percent.png
+share/apps/kspread/icons/locolor/16x16/actions/precminus.png
+share/apps/kspread/icons/locolor/16x16/actions/precplus.png
+share/apps/kspread/icons/locolor/16x16/actions/removecell.png
+share/apps/kspread/icons/locolor/16x16/actions/removecomment.png
+share/apps/kspread/icons/locolor/16x16/actions/resizecol.png
+share/apps/kspread/icons/locolor/16x16/actions/resizerow.png
+share/apps/kspread/icons/locolor/16x16/actions/right.png
+share/apps/kspread/icons/locolor/16x16/actions/series.png
+share/apps/kspread/icons/locolor/16x16/actions/sort_decrease.png
+share/apps/kspread/icons/locolor/16x16/actions/sort_incr.png
+share/apps/kspread/icons/locolor/16x16/actions/special_paste.png
+share/apps/kspread/icons/locolor/16x16/actions/strike_out.png
+share/apps/kspread/icons/locolor/16x16/actions/top.png
+share/apps/kspread/icons/locolor/16x16/actions/upper.png
+share/apps/kspread/icons/locolor/16x16/actions/vertical_text.png
 share/apps/kspread/icons/locolor/22x22/actions/abort.png
 share/apps/kspread/icons/locolor/22x22/actions/adjustcol.png
 share/apps/kspread/icons/locolor/22x22/actions/adjustrow.png
@@ -425,7 +511,6 @@ share/apps/kspread/icons/locolor/22x22/actions/removecomment.png
 share/apps/kspread/icons/locolor/22x22/actions/resizecol.png
 share/apps/kspread/icons/locolor/22x22/actions/resizerow.png
 share/apps/kspread/icons/locolor/22x22/actions/right.png
-share/apps/kspread/icons/locolor/22x22/actions/rotate.png
 share/apps/kspread/icons/locolor/22x22/actions/rowout.png
 share/apps/kspread/icons/locolor/22x22/actions/sort_decrease.png
 share/apps/kspread/icons/locolor/22x22/actions/sort_incr.png
@@ -440,8 +525,6 @@ share/apps/kspread/icons/locolor/22x22/actions/upper.png
 share/apps/kspread/icons/locolor/22x22/actions/vertical_text.png
 share/apps/kspread/kpartplugins/kspreadcalc.rc
 share/apps/kspread/kspread.rc
-share/apps/kspread/scripts/callme.ks
-share/apps/kspread/scripts/widget_kspread.ks
 share/apps/kspread/tablestyles/standard1.ksts
 share/apps/kspread/tablestyles/standard1.png
 share/apps/kspread/tablestyles/standard1.xml
@@ -632,28 +715,122 @@ share/doc/HTML/en/kspread/tutorial.html
 share/doc/HTML/en/kspread/updates.html
 share/doc/HTML/en/kspread/whoreads.html
 share/doc/HTML/en/kword/.anchors
+share/doc/HTML/en/kword/ChooseTempDia.png
+share/doc/HTML/en/kword/Tut1.png
+share/doc/HTML/en/kword/Tut10.png
+share/doc/HTML/en/kword/Tut11a.png
+share/doc/HTML/en/kword/Tut11b.png
+share/doc/HTML/en/kword/Tut12.png
+share/doc/HTML/en/kword/Tut13.png
+share/doc/HTML/en/kword/Tut14.png
+share/doc/HTML/en/kword/Tut14a.png
+share/doc/HTML/en/kword/Tut15.png
+share/doc/HTML/en/kword/Tut15a.png
+share/doc/HTML/en/kword/Tut16.png
+share/doc/HTML/en/kword/Tut17.png
+share/doc/HTML/en/kword/Tut18.png
+share/doc/HTML/en/kword/Tut19.png
+share/doc/HTML/en/kword/Tut2.png
+share/doc/HTML/en/kword/Tut20.png
+share/doc/HTML/en/kword/Tut21.png
+share/doc/HTML/en/kword/Tut22.png
+share/doc/HTML/en/kword/Tut3.png
+share/doc/HTML/en/kword/Tut4.png
+share/doc/HTML/en/kword/Tut6.png
+share/doc/HTML/en/kword/Tut7.png
+share/doc/HTML/en/kword/Tut8.png
+share/doc/HTML/en/kword/Tut9.png
 share/doc/HTML/en/kword/addframe.html
+share/doc/HTML/en/kword/alignBlock.png
+share/doc/HTML/en/kword/alignCenter.png
+share/doc/HTML/en/kword/alignLeft.png
+share/doc/HTML/en/kword/alignRight.png
 share/doc/HTML/en/kword/appendix.html
+share/doc/HTML/en/kword/auto1.png
+share/doc/HTML/en/kword/auto2.png
 share/doc/HTML/en/kword/autocorrect.html
+share/doc/HTML/en/kword/basic.png
 share/doc/HTML/en/kword/basicedittoolbar.html
 share/doc/HTML/en/kword/basicmenubar.html
+share/doc/HTML/en/kword/bbord.png
+share/doc/HTML/en/kword/bdselbut.png
+share/doc/HTML/en/kword/bdsizebut.png
+share/doc/HTML/en/kword/bold.png
+share/doc/HTML/en/kword/borbutB.png
+share/doc/HTML/en/kword/borbutL.png
+share/doc/HTML/en/kword/borbutR.png
+share/doc/HTML/en/kword/borbutT.png
+share/doc/HTML/en/kword/bord.png
+share/doc/HTML/en/kword/bultxtbut.png
+share/doc/HTML/en/kword/cancel.png
+share/doc/HTML/en/kword/cftb.png
 share/doc/HTML/en/kword/charformattoolbar.html
+share/doc/HTML/en/kword/chcolorbut.png
+share/doc/HTML/en/kword/chfontbut.png
+share/doc/HTML/en/kword/chsizebut.png
+share/doc/HTML/en/kword/chstylebut.png
+share/doc/HTML/en/kword/clipart-from-file.png
+share/doc/HTML/en/kword/clipart.png
 share/doc/HTML/en/kword/clipboard.html
+share/doc/HTML/en/kword/close.png
+share/doc/HTML/en/kword/colin.png
+share/doc/HTML/en/kword/colout.png
 share/doc/HTML/en/kword/columns.html
 share/doc/HTML/en/kword/conventions.html
 share/doc/HTML/en/kword/credits.html
+share/doc/HTML/en/kword/ctab.png
+share/doc/HTML/en/kword/ctab2.png
 share/doc/HTML/en/kword/datetime.html
+share/doc/HTML/en/kword/delcoldlg.png
+share/doc/HTML/en/kword/delete-table-col.png
+share/doc/HTML/en/kword/delete-table-row.png
 share/doc/HTML/en/kword/delframe.html
+share/doc/HTML/en/kword/delrowdlg.png
+share/doc/HTML/en/kword/details.png
 share/doc/HTML/en/kword/dragdrop.html
+share/doc/HTML/en/kword/dtab.png
+share/doc/HTML/en/kword/dtab2.png
+share/doc/HTML/en/kword/dtpfmtpg1.png
+share/doc/HTML/en/kword/dtpfmtpg2.png
+share/doc/HTML/en/kword/edit.png
+share/doc/HTML/en/kword/editcopy.png
+share/doc/HTML/en/kword/editcut.png
+share/doc/HTML/en/kword/editpaste.png
+share/doc/HTML/en/kword/editspace.png
+share/doc/HTML/en/kword/edittb.png
 share/doc/HTML/en/kword/endfoot.html
+share/doc/HTML/en/kword/exit.png
+share/doc/HTML/en/kword/extra.png
+share/doc/HTML/en/kword/fchardlg.png
+share/doc/HTML/en/kword/fcrtb.png
+share/doc/HTML/en/kword/file.png
 share/doc/HTML/en/kword/filedlg.html
+share/doc/HTML/en/kword/filefloppy.png
+share/doc/HTML/en/kword/filenew2.png
+share/doc/HTML/en/kword/fileopen.png
+share/doc/HTML/en/kword/fileprint.png
+share/doc/HTML/en/kword/filetb.png
 share/doc/HTML/en/kword/filetoolbar.html
 share/doc/HTML/en/kword/filters.html
+share/doc/HTML/en/kword/find.png
+share/doc/HTML/en/kword/finddlg.png
+share/doc/HTML/en/kword/format.png
 share/doc/HTML/en/kword/formatchar.html
 share/doc/HTML/en/kword/formatframe.html
 share/doc/HTML/en/kword/formatpara.html
+share/doc/HTML/en/kword/formframe1.png
+share/doc/HTML/en/kword/formframe2.png
+share/doc/HTML/en/kword/formframe3.png
+share/doc/HTML/en/kword/formframe4.png
 share/doc/HTML/en/kword/formulas.html
+share/doc/HTML/en/kword/fpara1.png
+share/doc/HTML/en/kword/fpara2.png
+share/doc/HTML/en/kword/fpara3.png
+share/doc/HTML/en/kword/fpara4.png
+share/doc/HTML/en/kword/fpara5.png
 share/doc/HTML/en/kword/framecreatetoolbar.html
+share/doc/HTML/en/kword/framemode.png
+share/doc/HTML/en/kword/framers.png
 share/doc/HTML/en/kword/frames.html
 share/doc/HTML/en/kword/frameselect.html
 share/doc/HTML/en/kword/fundimental.html
@@ -666,46 +843,130 @@ share/doc/HTML/en/kword/guides4.html
 share/doc/HTML/en/kword/headfoot.html
 share/doc/HTML/en/kword/index.docbook
 share/doc/HTML/en/kword/index.html
+share/doc/HTML/en/kword/inscoldlg.png
+share/doc/HTML/en/kword/insert-table-col.png
+share/doc/HTML/en/kword/insert-table-row.png
+share/doc/HTML/en/kword/insert.png
 share/doc/HTML/en/kword/inserttoolbar.html
 share/doc/HTML/en/kword/inskspread.html
+share/doc/HTML/en/kword/insrowdlg.png
+share/doc/HTML/en/kword/inssc.png
+share/doc/HTML/en/kword/instab1.png
+share/doc/HTML/en/kword/instab2.png
+share/doc/HTML/en/kword/instb.png
 share/doc/HTML/en/kword/introduction.html
+share/doc/HTML/en/kword/ital.png
+share/doc/HTML/en/kword/italic.png
+share/doc/HTML/en/kword/joincell.png
 share/doc/HTML/en/kword/keys.html
 share/doc/HTML/en/kword/kwordrc.html
 share/doc/HTML/en/kword/kwordscreen.html
+share/doc/HTML/en/kword/lbord.png
 share/doc/HTML/en/kword/loading.html
+share/doc/HTML/en/kword/lspcbut.png
+share/doc/HTML/en/kword/ltab.png
+share/doc/HTML/en/kword/ltab2.png
 share/doc/HTML/en/kword/menuitems.html
 share/doc/HTML/en/kword/moveframe.html
+share/doc/HTML/en/kword/neonpen.png
+share/doc/HTML/en/kword/newfolder.png
+share/doc/HTML/en/kword/nodet.png
+share/doc/HTML/en/kword/numtxtbut.png
+share/doc/HTML/en/kword/ok.png
+share/doc/HTML/en/kword/opendlg.png
 share/doc/HTML/en/kword/options.html
+share/doc/HTML/en/kword/part-kchart.png
+share/doc/HTML/en/kword/part-kformula.png
+share/doc/HTML/en/kword/part-killustrator.png
+share/doc/HTML/en/kword/part-kimage.png
+share/doc/HTML/en/kword/part-kimageshop.png
+share/doc/HTML/en/kword/part-kspread.png
+share/doc/HTML/en/kword/part-kword.png
+share/doc/HTML/en/kword/part-unspecif.png
+share/doc/HTML/en/kword/parts.png
 share/doc/HTML/en/kword/pgnumber.html
+share/doc/HTML/en/kword/picture.png
+share/doc/HTML/en/kword/pntdlg.png
 share/doc/HTML/en/kword/predefinedstyles.html
 share/doc/HTML/en/kword/printing.html
+share/doc/HTML/en/kword/product.png
 share/doc/HTML/en/kword/qanda.html
 share/doc/HTML/en/kword/qd2.html
 share/doc/HTML/en/kword/qd3.html
 share/doc/HTML/en/kword/qd4.html
 share/doc/HTML/en/kword/qd5.html
 share/doc/HTML/en/kword/quickdirty.html
+share/doc/HTML/en/kword/rbord.png
+share/doc/HTML/en/kword/redo.png
+share/doc/HTML/en/kword/repldlg.png
 share/doc/HTML/en/kword/resizeframe.html
+share/doc/HTML/en/kword/rowin.png
+share/doc/HTML/en/kword/rowout.png
+share/doc/HTML/en/kword/rtab.png
+share/doc/HTML/en/kword/rtab2.png
 share/doc/HTML/en/kword/rulers.html
+share/doc/HTML/en/kword/savedlg.png
+share/doc/HTML/en/kword/savetmpl1.png
+share/doc/HTML/en/kword/savetmpl2.png
+share/doc/HTML/en/kword/savetmpl3.png
+share/doc/HTML/en/kword/savetmpl4.png
 share/doc/HTML/en/kword/saving.html
+share/doc/HTML/en/kword/screen.png
 share/doc/HTML/en/kword/searchreplace.html
 share/doc/HTML/en/kword/selcolor.html
+share/doc/HTML/en/kword/shuffleframes.html
+share/doc/HTML/en/kword/spell.png
 share/doc/HTML/en/kword/spellcheck.html
+share/doc/HTML/en/kword/spelldlg.png
+share/doc/HTML/en/kword/styldlg1.png
+share/doc/HTML/en/kword/styldlg2.png
+share/doc/HTML/en/kword/styldlg3.png
+share/doc/HTML/en/kword/styldlg4.png
+share/doc/HTML/en/kword/styldlg5.png
+share/doc/HTML/en/kword/styldlg6.png
+share/doc/HTML/en/kword/styldlg7.png
+share/doc/HTML/en/kword/styldlg8.png
 share/doc/HTML/en/kword/styles.html
+share/doc/HTML/en/kword/subscbut.png
+share/doc/HTML/en/kword/sum.png
+share/doc/HTML/en/kword/supscbut.png
+share/doc/HTML/en/kword/table.png
 share/doc/HTML/en/kword/tableedittoolbar.html
 share/doc/HTML/en/kword/tables.html
 share/doc/HTML/en/kword/tabstops.html
+share/doc/HTML/en/kword/tb1.png
+share/doc/HTML/en/kword/tb2.png
+share/doc/HTML/en/kword/tb3.png
+share/doc/HTML/en/kword/tb4.png
+share/doc/HTML/en/kword/tbmax.png
+share/doc/HTML/en/kword/tbmin.png
+share/doc/HTML/en/kword/tbord.png
+share/doc/HTML/en/kword/tedittb.png
 share/doc/HTML/en/kword/tempcr.html
 share/doc/HTML/en/kword/templateintro.html
+share/doc/HTML/en/kword/text-bold.png
+share/doc/HTML/en/kword/text-italic.png
+share/doc/HTML/en/kword/text-underlined.png
 share/doc/HTML/en/kword/textandframe.html
+share/doc/HTML/en/kword/textmode.png
+share/doc/HTML/en/kword/tfcreatebut.png
 share/doc/HTML/en/kword/themes.html
 share/doc/HTML/en/kword/toc.html
 share/doc/HTML/en/kword/todo.html
 share/doc/HTML/en/kword/toolbars.html
+share/doc/HTML/en/kword/tools.png
 share/doc/HTML/en/kword/tutorial.html
+share/doc/HTML/en/kword/underl.png
+share/doc/HTML/en/kword/undl.png
+share/doc/HTML/en/kword/undo.png
 share/doc/HTML/en/kword/undoredo.html
 share/doc/HTML/en/kword/updates.html
+share/doc/HTML/en/kword/uplevel.png
+share/doc/HTML/en/kword/view.png
 share/doc/HTML/en/kword/whoreads.html
+share/doc/HTML/en/kword/wpfmtpg1.png
+share/doc/HTML/en/kword/wpfmtpg2.png
+share/doc/HTML/en/kword/wpfmtpg3.png
 share/doc/HTML/en/kword/wpvsdtp.html
 share/icons/hicolor/22x22/actions/abs.png
 share/icons/hicolor/22x22/actions/border_all.png
@@ -778,84 +1039,19 @@ share/icons/hicolor/48x48/apps/kpresenter.png
 share/icons/hicolor/48x48/apps/kspread.png
 share/icons/hicolor/48x48/apps/kword.png
 share/icons/locolor/16x16/actions/abs.png
-share/icons/locolor/16x16/actions/adjustcol.png
-share/icons/locolor/16x16/actions/adjustrow.png
-share/icons/locolor/16x16/actions/areas.png
-share/icons/locolor/16x16/actions/areas3d.png
-share/icons/locolor/16x16/actions/bars.png
-share/icons/locolor/16x16/actions/bars3d.png
-share/icons/locolor/16x16/actions/black_sum.png
-share/icons/locolor/16x16/actions/border_all.png
-share/icons/locolor/16x16/actions/border_bottom.png
-share/icons/locolor/16x16/actions/border_fall.png
-share/icons/locolor/16x16/actions/border_horizontal.png
-share/icons/locolor/16x16/actions/border_inside.png
-share/icons/locolor/16x16/actions/border_left.png
-share/icons/locolor/16x16/actions/border_outline.png
-share/icons/locolor/16x16/actions/border_remove.png
-share/icons/locolor/16x16/actions/border_right.png
-share/icons/locolor/16x16/actions/border_top.png
-share/icons/locolor/16x16/actions/border_up.png
-share/icons/locolor/16x16/actions/border_vertical.png
-share/icons/locolor/16x16/actions/bottom.png
 share/icons/locolor/16x16/actions/brace.png
 share/icons/locolor/16x16/actions/brackets.png
-share/icons/locolor/16x16/actions/cakes.png
-share/icons/locolor/16x16/actions/cakes3d.png
-share/icons/locolor/16x16/actions/cell_edit.png
-share/icons/locolor/16x16/actions/cell_layout.png
-share/icons/locolor/16x16/actions/center.png
-share/icons/locolor/16x16/actions/chart.png
-share/icons/locolor/16x16/actions/comment.png
-share/icons/locolor/16x16/actions/data.png
-share/icons/locolor/16x16/actions/delete_table.png
-share/icons/locolor/16x16/actions/deletecell.png
-share/icons/locolor/16x16/actions/dissociatecell.png
-share/icons/locolor/16x16/actions/first_letter_upper.png
-share/icons/locolor/16x16/actions/fontsizedown.png
-share/icons/locolor/16x16/actions/fontsizeup.png
 share/icons/locolor/16x16/actions/frac.png
-share/icons/locolor/16x16/actions/funct.png
-share/icons/locolor/16x16/actions/insertcell.png
-share/icons/locolor/16x16/actions/inserttable.png
 share/icons/locolor/16x16/actions/int.png
-share/icons/locolor/16x16/actions/left.png
-share/icons/locolor/16x16/actions/lines.png
-share/icons/locolor/16x16/actions/lines3d.png
-share/icons/locolor/16x16/actions/lower.png
 share/icons/locolor/16x16/actions/lsub.png
 share/icons/locolor/16x16/actions/lsup.png
 share/icons/locolor/16x16/actions/matrix.png
-share/icons/locolor/16x16/actions/mergecell.png
-share/icons/locolor/16x16/actions/middle.png
-share/icons/locolor/16x16/actions/money.png
-share/icons/locolor/16x16/actions/multirow.png
-share/icons/locolor/16x16/actions/options.png
-share/icons/locolor/16x16/actions/oscilloscope.png
 share/icons/locolor/16x16/actions/paren.png
-share/icons/locolor/16x16/actions/percent.png
-share/icons/locolor/16x16/actions/precminus.png
-share/icons/locolor/16x16/actions/precplus.png
 share/icons/locolor/16x16/actions/prod.png
-share/icons/locolor/16x16/actions/removecell.png
-share/icons/locolor/16x16/actions/removecomment.png
-share/icons/locolor/16x16/actions/resizecol.png
-share/icons/locolor/16x16/actions/resizerow.png
-share/icons/locolor/16x16/actions/right.png
-share/icons/locolor/16x16/actions/rotate.png
 share/icons/locolor/16x16/actions/rsub.png
 share/icons/locolor/16x16/actions/rsup.png
-share/icons/locolor/16x16/actions/series.png
-share/icons/locolor/16x16/actions/sort_decrease.png
-share/icons/locolor/16x16/actions/sort_incr.png
-share/icons/locolor/16x16/actions/special_paste.png
 share/icons/locolor/16x16/actions/sqrt.png
-share/icons/locolor/16x16/actions/strike_out.png
 share/icons/locolor/16x16/actions/sum.png
-share/icons/locolor/16x16/actions/top.png
-share/icons/locolor/16x16/actions/upper.png
-share/icons/locolor/16x16/actions/vertical_text.png
-share/icons/locolor/16x16/actions/wizard.png
 share/icons/locolor/16x16/apps/kchart.png
 share/icons/locolor/16x16/apps/killustrator.png
 share/icons/locolor/16x16/apps/kpresenter.png
@@ -889,6 +1085,7 @@ share/services/kword_html_import.desktop
 share/services/ole_excel97_import.desktop
 share/services/ole_powerpoint97_import.desktop
 share/services/ole_winword97_import.desktop
+share/servicetypes/kochart.desktop
 share/servicetypes/kofficepart.desktop
 share/servicetypes/kofilter.desktop
 share/servicetypes/kofilterdialog.desktop
@@ -905,13 +1102,16 @@ share/servicetypes/kotool.desktop
 @dirrm share/apps/kword/templates/Normal/.source
 @dirrm share/apps/kword/templates/Normal/.icon
 @dirrm share/apps/kword/templates/Normal
+@dirrm share/apps/kword/templates
 @dirrm share/apps/kword/icons/locolor/22x22/actions
+@dirrm share/apps/kword/icons/locolor/22x22
 @dirrm share/apps/kword/dtd
 @dirrm share/apps/kword
 @dirrm share/apps/kspread/tablestyles
-@dirrm share/apps/kspread/scripts
 @dirrm share/apps/kspread/kpartplugins
 @dirrm share/apps/kspread/icons/locolor/22x22/actions
+@dirrm share/apps/kspread/icons/locolor/22x22
+@dirrm share/apps/kspread/icons/locolor/16x16/actions
 @dirrm share/apps/kspread/extensions
 @dirrm share/apps/kspread/dtd
 @dirrm share/apps/kspread
@@ -921,9 +1121,11 @@ share/servicetypes/kotool.desktop
 @dirrm share/apps/kpresenter/templates/Professional/.source
 @dirrm share/apps/kpresenter/templates/Professional/.icon
 @dirrm share/apps/kpresenter/templates/Professional
+@dirrm share/apps/kpresenter/templates
 @dirrm share/apps/kpresenter/slideshow
 @dirrm share/apps/kpresenter/pics
 @dirrm share/apps/kpresenter/icons/locolor/22x22/actions
+@dirrm share/apps/kpresenter/icons/locolor/22x22
 @dirrm share/apps/kpresenter/dtd
 @dirrm share/apps/kpresenter/autoforms/Connections
 @dirrm share/apps/kpresenter/autoforms/Arrows
@@ -932,15 +1134,22 @@ share/servicetypes/kotool.desktop
 @dirrm share/apps/koffice/pics
 @dirrm share/apps/koffice/icons/locolor/22x22/actions/part
 @dirrm share/apps/koffice/icons/locolor/22x22/actions
+@dirrm share/apps/koffice/icons/locolor/22x22
 @dirrm share/apps/koffice/icons/locolor/16x16/actions
+@dirrm share/apps/koffice/icons/locolor/16x16
 @dirrm share/apps/koffice/icons/hicolor/32x32/actions
+@dirrm share/apps/koffice/icons/hicolor/32x32
 @dirrm share/apps/koffice/icons/hicolor/22x22/actions
+@dirrm share/apps/koffice/icons/hicolor/22x22
 @dirrm share/apps/koffice
 @dirrm share/apps/killustrator/templates/Simple/.source
 @dirrm share/apps/killustrator/templates/Simple/.icon
 @dirrm share/apps/killustrator/templates/Simple
+@dirrm share/apps/killustrator/templates
 @dirrm share/apps/killustrator/pics
 @dirrm share/apps/killustrator
 @dirrm share/apps/kchart/pics
 @dirrm share/apps/kchart/icons/locolor/22x22/actions
+@dirrm share/apps/kchart/icons/locolor/22x22
+@dirrm share/apps/kchart/icons/locolor/16x16/actions
 @dirrm share/apps/kchart
