@@ -1,11 +1,11 @@
---- Makefile.in.orig	Sat Sep 13 07:18:20 2003
-+++ Makefile.in	Fri Oct  3 23:27:19 2003
-@@ -84,7 +84,7 @@
+--- Makefile.in.orig	Tue Jan  6 19:00:05 2004
++++ Makefile.in	Tue Jan  6 19:00:12 2004
+@@ -136,7 +136,7 @@
  
- SUBDIRS = src data
+ SUBDIRS = include src data
  
 -bomberclonedocdir = ${prefix}/doc/bomberclone
 +bomberclonedocdir = ${prefix}/share/doc/bomberclone
- bomberclonedoc_DATA =  	README 	COPYING 	AUTHORS 	ChangeLog 	INSTALL 	NEWS 	TODO
- 
- 
+ bomberclonedoc_DATA = \
+ 	README\
+ 	COPYING\
