@@ -20,6 +20,7 @@ MAINTAINER=	statue@freebsd.sinica.edu.tw
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_REINPLACE=	yes
+REINPLACE_ARGS=	# empty
 
 MAN1=		cce.1
 
@@ -29,6 +30,9 @@ pre-configure:
 .include <bsd.port.pre.mk>
 post-patch:
 .if ${OSVERSION} > 500012
-	@${FIND} ${WRKSRC}/src/ -name "*.c" | ${XARGS} ${REINPLACE_CMD} -e 's,machine/console.h>,sys/consio.h>\n#include <sys/fbio.h>\n#include <sys/kbio.h>\n,'
+.for i in src/key.c src/main.c src/term.c src/vc.c src/vga.c
+	${REINPLACE_CMD} "s,machine/console.h>,sys/consio.h>@#include <sys/fbio.h>@#include <sys/kbio.h>@," ${WRKSRC}/${i}| tr '@' '\n' > ${WRKSRC}/${i}.bakk && \
+	${MV} ${WRKSRC}/${i}.bakk ${WRKSRC}/${i}
+.endfor
 .endif
 .include <bsd.port.post.mk>
