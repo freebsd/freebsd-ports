@@ -23,12 +23,6 @@ share/bomberclone/tileset/supermario/stone.png
 share/bomberclone/tileset/supermario/block.png
 share/bomberclone/tileset/supermario/background.png
 @dirrm share/bomberclone/tileset/supermario
-share/bomberclone/tileset/sisso_cesso/stone.png
-share/bomberclone/tileset/sisso_cesso/drop.wav
-share/bomberclone/tileset/sisso_cesso/dead.wav
-share/bomberclone/tileset/sisso_cesso/block.png
-share/bomberclone/tileset/sisso_cesso/background.png
-@dirrm share/bomberclone/tileset/sisso_cesso
 share/bomberclone/tileset/sheep/stone.png
 share/bomberclone/tileset/sheep/map.nfo
 share/bomberclone/tileset/sheep/block.png
