@@ -29,6 +29,7 @@
 
 PORTNAME=	squid
 PORTVERSION=	2.5.5
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	\
 		ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
@@ -42,7 +43,11 @@ DIST_SUBDIR=	squid2.5
 
 PATCH_SITES=	http://www.squid-cache.org/Versions/v2/2.5/bugs/
 PATCHFILES=	squid-2.5.STABLE5-ntlm_assert.patch \
-		squid-2.5.STABLE5-ldap.patch
+		squid-2.5.STABLE5-ldap.patch \
+		squid-2.5.STABLE5-helper_warning.patch \
+		squid-2.5.STABLE5-vary.patch \
+		squid-2.5.STABLE5-deny_info.patch \
+		squid-2.5.STABLE5-CONNECT_timeout.patch
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	tmseck@netcologne.de
@@ -163,7 +168,7 @@ CONFIGURE_ARGS+=	--enable-cache-digests
 .if defined(WITHOUT_SQUID_WCCP)
 CONFIGURE_ARGS+=	--disable-wccp
 .endif
-.if defined(WITH_SQUID_UNDERSCORES)
+.if !defined(WITHOUT_SQUID_UNDERSCORES)
 CONFIGURE_ARGS+=	--enable-underscores
 .endif
 .if defined(WITHOUT_SQUID_CHECK_HOSTNAME)
@@ -188,7 +193,7 @@ CONFIGURE_ARGS+=	--enable-arp-acl
 # on 5.[0-2] systems instead, go on, I will integrate your patch.
 CONFIGURE_ARGS+=	--enable-pf-transparent
 .else
-.error WITH_SQUID_PF only works on systems where pf is part of the base system.
+IGNORE=	WITH_SQUID_PF only works on systems where pf is part of the base system.
 .endif
 .endif
 .if defined(WITH_SQUID_FOLLOW_XFF)
@@ -306,7 +311,7 @@ changeuser:
 	${ECHO_CMD} "this target!"
 	exit 1
 .endif
-	@if [ `id -u` -ne 0 ]; \
+	@if [ `${ID} -u` -ne 0 ]; \
 	then ${ECHO_CMD} "Sorry, you must be root to use this target."; exit 1; fi; \
 	current_uid=`id -u ${SQUID_UID}`; \
 	current_gid=`pw groupshow ${SQUID_GID}|cut -f 3 -d :`; \

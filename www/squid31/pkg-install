@@ -148,6 +148,15 @@ POST-INSTALL)
 	echo "     Please check your squid.conf and update it if necessary."
 	tput me
 	echo ""
+	if [ -f /etc/rc.subr ]; then
+		echo "     Please note that ${PKG_PREFIX}/etc/rc.d/squid.sh"
+		echo "     will not start squid automatically on this system."
+		echo "     You need to set squid_enable=yes in either"
+		echo "     /etc/rc.conf, /etc/rc.conf.local or /etc/rc.conf.d/squid"
+		echo "     See ${PKG_PREFIX}/etc/rc.d/squid.sh for more"
+		echo "     configuration options."
+		echo ""
+	fi
 	;;
 *)
 	exit 64
