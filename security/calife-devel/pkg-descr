@@ -1,0 +1,9 @@
+Calife is a lightweight replacement to Sudo: it allows
+users listed in a particular file, $(PREFIX)/etc/calife.auth,
+to endorse the identity of any other user after entering their
+own password.
+
+WWW: http://mutt.frmug.org/calife/
+
+-- 
+Thomas Quinot -- <thomas@cuivre.fr.eu.org>
