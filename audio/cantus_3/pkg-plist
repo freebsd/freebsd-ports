@@ -1,0 +1,22 @@
+bin/cantus_3
+lib/cantus_3/id3v1.so
+lib/cantus_3/vorbis.so
+lib/cantus_3/id3copier.so
+lib/cantus_3/tag2filename.so
+lib/cantus_3/mpegheader.so
+lib/cantus_3/id3v2.so
+lib/cantus_3/cantus-3.glade
+lib/cantus_3/general.png
+lib/cantus_3/cantus_tag.png
+share/gnome/help/cantus_3/C/figures/cantus_start_window.png
+share/gnome/help/cantus_3/C/legal.xml
+share/gnome/help/cantus_3/C/cantus_3.xml
+share/gnome/help/cantus_3/C/cantus_start_window.png
+share/locale/de/LC_MESSAGES/cantus_3.mo
+share/locale/es/LC_MESSAGES/cantus_3.mo
+share/locale/fr/LC_MESSAGES/cantus_3.mo
+share/locale/pl/LC_MESSAGES/cantus_3.mo
+@dirrm lib/cantus_3/
+@dirrm share/gnome/help/cantus_3/C/figures
+@dirrm share/gnome/help/cantus_3/C
+@dirrm share/gnome/help/cantus_3/
