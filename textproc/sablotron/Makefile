@@ -7,6 +7,7 @@
 
 PORTNAME=	Sablot
 PORTVERSION=	0.96
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://download-2.gingerall.cz/download/sablot/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} sablot-docs-0.81${EXTRACT_SUFX}
@@ -14,7 +15,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} sablot-docs-0.81${EXTRACT_SUFX}
 MAINTAINER=	skv@FreeBSD.org
 
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv \
-		expat.3:${PORTSDIR}/textproc/expat2
+		expat.4:${PORTSDIR}/textproc/expat2
 
 # If WITH_DISABLE_META is defined sablot will not output the META html tag
 #WITH_DISABLE_META=	yes
