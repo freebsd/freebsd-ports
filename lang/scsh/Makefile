@@ -3,7 +3,7 @@
 # Date created:         Jul, 15, 1997
 # Whom:                 cracauer@cons.org "Martin Cracauer"
 #
-# $Id: Makefile,v 1.6 1998/12/02 23:50:37 cracauer Exp $
+# $Id: Makefile,v 1.7 1999/02/23 02:20:21 jkoshy Exp $
 #
 
 DISTNAME=	scsh-0.5.1
@@ -15,6 +15,10 @@ MASTER_SITES=	ftp://ftp-swiss.ai.mit.edu/pub/su/scsh/ \
 MAINTAINER= 	cracauer@cons.org
 
 .include <bsd.port.pre.mk>
+
+.if ${MACHINE_ARCH} == "alpha"
+BROKEN=		bus errors on unaligned accesses in scshvm
+.endif
 
 GNU_CONFIGURE=	yes
 
