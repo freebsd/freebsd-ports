@@ -21,7 +21,7 @@ MAKE_FLAGS=	-e
 MAN1=		mmv.1
 
 post-extract:
-	(cd ${WRKDIR}/${DISTNAME} ; \
+	(cd ${WRKSRC} ; \
 	 ${CAT} mmv.c.? >mmv.c ; \
 	 ${PATCH} mmv.c < mmv.patch1 ; )
 
