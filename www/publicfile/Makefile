@@ -8,7 +8,8 @@
 PORTNAME=	publicfile
 PORTVERSION= 	0.52
 CATEGORIES=	ftp
-MASTER_SITES=	http://cr.yp.to/publicfile/
+MASTER_SITES=	http://cr.yp.to/publicfile/ \
+		ftp://cr.yp.to/publicfile/
 
 MAINTAINER=	nbm@FreeBSD.org
 
