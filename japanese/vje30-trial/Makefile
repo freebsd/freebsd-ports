@@ -11,7 +11,7 @@ CATEGORIES=	japanese
 MASTER_SITES=	ftp://ftp.vacs.co.jp/pub/unix/vje30/FreeBSD/	\
 		http://www.green.machida.ne.jp/vacs/unix/FreeBSD/
 PKGNAMESUFFIX=	-trial
-DISTNAME=	${PORTNAME}-delta-${PORTVERSION}t-${DISTOBJFORMAT}
+DISTNAME=	${PORTNAME}-delta-${PORTVERSION}t-ELF
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	vje30
 
@@ -29,12 +29,6 @@ PLIST_SUB=	BINSTUFF="${BINSTUFF}"
 WRKSRC=		${WRKDIR}/usr/local
 
 .include <bsd.port.pre.mk>
-
-.if ${PORTOBJFORMAT} == "aout"
-DISTOBJFORMAT=	AOUT
-.else
-DISTOBJFORMAT=	ELF
-.endif
 
 BINSTUFF=	vje	\
 		vjed	\
