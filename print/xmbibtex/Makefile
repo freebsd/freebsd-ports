@@ -13,8 +13,9 @@ MASTER_SITE_SUBDIR=	apps/tex
 
 MAINTAINER=	ports@FreeBSD.org
 
-USE_MOTIF=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
+
+USE_MOTIF=	yes
 USE_IMAKE=	yes
 NO_INSTALL_MANPAGES=	yes
 
