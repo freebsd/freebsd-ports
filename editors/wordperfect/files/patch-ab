@@ -1,0 +1,67 @@
+*** ../orig/shared/install.wp	Wed Nov 25 08:45:15 1998
+--- shared/install.wp	Sat Dec 19 20:20:52 1998
+***************
+*** 40,47 ****
+  	cd $FromDir;
+  
+  	echo; echo $N "  Please Wait $C";
+- 	id | egrep "root" >/dev/null 2>/dev/null;	# being root adds some menues
+- 	if [ "$?" = 0 ]; then User=root; edrc=edrc; mgic=mgic; fi;
+  
+  	Version=1;
+  	while [ -d $TMPDIR/WpTmP$Version ]; do
+--- 40,45 ----
+***************
+*** 99,110 ****
+  		UNAME_R=`uname -r`;
+  		Maj=`echo $UNAME_R | sed 's/[^\.]*$//' | sed 's/\.$//'`
+  		Min=`echo $UNAME_R | sed 's/.*\.//'`
+- 
+- 		if [ "$Maj" != 2.0 -o "$Min" -lt 18 ]; then echo;
+- 			echo $N "  Linux $Maj.$Min not certified.  Continue? (y/n) $C";
+- 			read Cont;
+- 			if [ "$Cont" != y ]; then echo; do_exit; else echo $N "  $C"; fi;
+- 		fi;
+  	fi;
+  }
+  
+--- 97,102 ----
+***************
+*** 263,274 ****
+  				echo  >> shared/license;
+  			done;;
+  		idir) rm -f shared/m_idir;
+! 			if [ "$FullPart" = Full ]; then warn_work="warn_inst";
+! 			else warn_work="warn_miss"; fi;
+! 			sed -n -e '/#ifdef.*'$Platform'$/,/#endif.*'$Platform'$/p' \
+! 				-e '/#ifdef ALL/,/#endif ALL/p' shared/l_idir \
+! 				| sed -e '/^#/d' -e '/^$/d' | sed 's/warn_inst/'$warn_work'/' \
+! 				> shared/m_idir;;
+  		size) rm -f shared/m_size;
+  			if [ "$Prod" = "3 " ]; then Values=1; fi;
+  			sed -n '/#ifdef ALL/,/#endif ALL/p' shared/l_size \
+--- 255,261 ----
+  				echo  >> shared/license;
+  			done;;
+  		idir) rm -f shared/m_idir;
+! 			;;
+  		size) rm -f shared/m_size;
+  			if [ "$Prod" = "3 " ]; then Values=1; fi;
+  			sed -n '/#ifdef ALL/,/#endif ALL/p' shared/l_size \
+***************
+*** 406,412 ****
+  			Platform=`sed -n $Plat'p' $LinkDir/.plts`;;
+  		tape) Tape=`cat .wptemp`;;
+  		rm02) Rm02=`cat .wptemp`;;
+! 		idir) Idir=`cat .wptemp`;
+  			if [ -d "$Idir" ]; then	# Remove it since it could change
+  				rmdir $Idir 2>/dev/null; fi;
+  			if [ -f $Idir/.install_log ]; then
+--- 393,399 ----
+  			Platform=`sed -n $Plat'p' $LinkDir/.plts`;;
+  		tape) Tape=`cat .wptemp`;;
+  		rm02) Rm02=`cat .wptemp`;;
+! 		idir) Idir="REPLACE_ME_WITH_DESTINATION";
+  			if [ -d "$Idir" ]; then	# Remove it since it could change
+  				rmdir $Idir 2>/dev/null; fi;
+  			if [ -f $Idir/.install_log ]; then

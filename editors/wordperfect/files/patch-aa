@@ -1,0 +1,91 @@
+*** ../orig/Runme	Wed Dec  9 10:38:19 1998
+--- Runme	Sat Dec 19 20:06:28 1998
+***************
+*** 2,15 ****
+  # Script to un-tar and install WordPerfect
+  if [ "`echo -n`" = "" ]; then N="-n"; else C="\c"; fi; Work=0;
+  echo
+- echo $N "  Did you unzip and untar the files you downloaded? (y/n) $C";
+- read resp;
+- if [ "$resp" != "y" -a "$resp" != "Y" ]; then sleep 1;
+- 	echo;
+- 	echo "  Please refer to the Readme file if you have questions.";
+- 	echo;
+- 	exit;
+- fi;
+  
+  # See if the file need to be renamed
+  if [ -f Moves ]; then
+--- 2,7 ----
+***************
+*** 19,31 ****
+  	rm -f Moves Name;
+  fi;
+  
+! do_bk() { for File in `ls -1 *_* | sed '/\.bk/d'`; do
+! 	if [ -f $File ]; then mv $File $File.bk; fi; done; }
+  
+  do_cln() {
+! 	for FD in manual netscape readme sdk $Platform \
+! 	remove.wp install.wp shared; do
+! 		rm -rf $FD; done; }
+  
+  do_menu() {
+  	while [ "$Work" -lt 1 -o "$Work" -gt 9 ]; do echo; echo; echo;
+--- 11,23 ----
+  	rm -f Moves Name;
+  fi;
+  
+! do_bk() {
+! 	# Do nothing.
+! }
+  
+  do_cln() {
+! 	# Do nothing.
+! }
+  
+  do_menu() {
+  	while [ "$Work" -lt 1 -o "$Work" -gt 9 ]; do echo; echo; echo;
+***************
+*** 100,107 ****
+  if [ "$TarFiles" = "" ]; then
+  	echo; echo "Error: Nothing new to install."; echo; exit; fi;
+  
+! echo; echo "  Extracting Files..."; SWD=`pwd`;
+! for File in $TarFiles; do tar xf $File; done;
+  
+  Platform=`ls -1d */ins 2>/dev/null \
+  | sed -n '1p' | sed 's|\./||' | sed 's|/.*$||'`;
+--- 92,98 ----
+  if [ "$TarFiles" = "" ]; then
+  	echo; echo "Error: Nothing new to install."; echo; exit; fi;
+  
+! SWD=`pwd`;
+  
+  Platform=`ls -1d */ins 2>/dev/null \
+  | sed -n '1p' | sed 's|\./||' | sed 's|/.*$||'`;
+***************
+*** 171,184 ****
+  
+  if [ "$Ret" = 1 ]; then do_cln; exit 1; fi;
+  
+! if [ -f .wpdata ]; then		# Get the installation directory
+! 	Idir=`grep '^'idir= .wpdata | sed 's/idir=//'`; fi;
+! while [ "$Idir" = "" ]; do	# Prompt for it if missing
+! 	echo $N "Enter your installation directory: $C"; read Idir;
+! 	if [ -d $Idir/shlib10 ]; then break;
+! 	else echo; echo "Error: Invalid Install area"; echo; fi;
+! done
+! 		
+  # See if any files need to be manually moved to the install area.
+  if [ -f g_gra00 -a ! -f b_ins00 ]; then
+  	$Platform/ins/wpdecom $Platform/dat/graph.tar $Platform/dat/graphics;
+--- 162,169 ----
+  
+  if [ "$Ret" = 1 ]; then do_cln; exit 1; fi;
+  
+! Idir=${PREFIX}/lib/corel;
+! 
+  # See if any files need to be manually moved to the install area.
+  if [ -f g_gra00 -a ! -f b_ins00 ]; then
+  	$Platform/ins/wpdecom $Platform/dat/graph.tar $Platform/dat/graphics;
