@@ -55,6 +55,7 @@
     SUBDIR += gtkfind
     SUBDIR += gtl
     SUBDIR += gyvescm
+    SUBDIR += hello
     SUBDIR += iselect
     SUBDIR += jargon
     SUBDIR += jive
