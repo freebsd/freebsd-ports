@@ -1,0 +1,6 @@
+Ruby/Password comprises a set of useful methods for creating,
+verifying and manipulating passwords.  It includes an interface to
+CrackLib, a library commonly used for checking password strength.
+
+WWW:	http://www.caliban.org/ruby/ruby-password.shtml
+Author:	Ian Macdonald <ian@caliban.org>

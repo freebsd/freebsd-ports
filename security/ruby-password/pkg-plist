@@ -1,0 +1,8 @@
+%%RUBY_SITEARCHLIBDIR%%/crack.so
+%%RUBY_SITELIBDIR%%/password.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/password/example.rb
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/password
+%%PORTDOCS%%%%RUBY_DOCDIR%%/password/CHANGES
+%%PORTDOCS%%%%RUBY_DOCDIR%%/password/README
+%%PORTDOCS%%%%RUBY_DOCDIR%%/password/password.html
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/password
