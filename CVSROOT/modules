@@ -5879,6 +5879,7 @@ noweb		ports/devel/noweb
 npadmin		ports/sysutils/npadmin
 npc		ports/www/npc
 nqc		ports/lang/nqc
+nrg		ports/net-mgmt/nrg
 nrpe		ports/net-mgmt/nrpe
 nrpep		ports/net-mgmt/nrpep
 ns		ports/net/ns
