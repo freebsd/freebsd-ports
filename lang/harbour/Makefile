@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	harbour
-PORTVERSION=	0.43.2
-PORTREVISION=	1
+PORTVERSION=	0.44.0
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.jsd0.com/public/harbour/dgh/
 
@@ -26,31 +25,6 @@ NO_INSTALL_MANPAGES=yes
 
 HB_DIR=		${WRKDIR}/${PORTNAME}
 
-.if defined(NOPORTDOCS)
-post-install:
-	${INSTALL_PROGRAM} ${HB_DIR}/bin/harbour ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${HB_DIR}/bin/hbdoc ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${HB_DIR}/bin/hbmake ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${HB_DIR}/bin/hbpp ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${HB_DIR}/bin/hbrun ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${HB_DIR}/bin/hbtest ${PREFIX}/bin
-	${INSTALL_DATA} ${HB_DIR}/include/hb* ${PREFIX}/include
-	${INSTALL_DATA} ${HB_DIR}/lib/*.a ${PREFIX}/lib
-	.endif
-	-@${ECHO}
-	-@${ECHO} @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-	-@${ECHO} @
-	-@${ECHO} @ Executable files are installed in ${PREFIX}/bin.
-	-@${ECHO} @
-	-@${ECHO} @ Header files are installed in ${PREFIX}/include.
-	-@${ECHO} @
-	-@${ECHO} @ Library files are installed in ${PREFIX}/lib.
-	-@${ECHO} @
-	-@${ECHO} @ See pkg-plist for a list of all installed files.
-	-@${ECHO} @
-	-@${ECHO} @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-	-@${ECHO}
-.else
 post-install:
 	${INSTALL_PROGRAM} ${HB_DIR}/bin/harbour ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${HB_DIR}/bin/hbdoc ${PREFIX}/bin
@@ -61,12 +35,14 @@ post-install:
 	${INSTALL_PROGRAM} ${HB_DIR}/bin/hbverfix ${PREFIX}/bin
 	${INSTALL_DATA} ${HB_DIR}/include/hb* ${PREFIX}/include
 	${INSTALL_DATA} ${HB_DIR}/lib/*.a ${PREFIX}/lib
-	${MKDIR} ${PREFIX}/share/doc/harbour
-	${INSTALL_MAN} ${HB_DIR}/doc/*.txt ${PREFIX}/share/doc/harbour
-	${MKDIR} ${PREFIX}/share/doc/harbour/en
-	${INSTALL_MAN} ${HB_DIR}/doc/en/*.txt ${PREFIX}/share/doc/harbour/en
-	${MKDIR} ${PREFIX}/share/doc/harbour/es
-	${INSTALL_MAN} ${HB_DIR}/doc/es/*.txt ${PREFIX}/share/doc/harbour/es
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_MAN} ${HB_DIR}/doc/*.txt ${DOCSDIR}
+	${MKDIR} ${DOCSDIR}/en
+	${INSTALL_MAN} ${HB_DIR}/doc/en/*.txt ${DOCSDIR}/en
+	${MKDIR} ${DOCSDIR}/es
+	${INSTALL_MAN} ${HB_DIR}/doc/es/*.txt ${DOCSDIR}/es
+.endif
 	-@${ECHO}
 	-@${ECHO} @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 	-@${ECHO} @
@@ -76,13 +52,14 @@ post-install:
 	-@${ECHO} @
 	-@${ECHO} @ Library files are installed in ${PREFIX}/lib.
 	-@${ECHO} @
-	-@${ECHO} @ Documentation files are installed in ${PREFIX}/share/doc/harbour,
-	-@${ECHO} @ ${PREFIX}/share/doc/harbour/en, and ${PREFIX}/share/doc/harbour/es.
+.if !defined(NOPORTDOCS)
+	-@${ECHO} @ Documentation files are installed in ${DOCSDIR},
+	-@${ECHO} @ ${DOCSDIR}/en, and ${DOCSDIR}/es.
 	-@${ECHO} @
+.endif
 	-@${ECHO} @ See pkg-plist for a list of all installed files.
 	-@${ECHO} @
 	-@${ECHO} @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 	-@${ECHO}
-.endif
 
 .include <bsd.port.mk>
