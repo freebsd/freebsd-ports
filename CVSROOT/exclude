@@ -1,6 +1,8 @@
 # Exclusions list for header checking.
 # $FreeBSD$
 #
+^\.
+/\.
 ^src/contrib/.*/FREEBSD-Xlist
 ^src/contrib/nvi/catalog
 ^src/etc/motd

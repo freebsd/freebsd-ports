@@ -289,14 +289,12 @@ if ($directory =~ /^src\/etc/) {
 	$check_id = 0;
 }
 #
-# Now check each file name passed in, except for dot files.  Dot files
-# are considered to be administrative files by this script.
+# Now check each file name passed in, except those excluded.
 #
 if ($check_id != 0) {
 	my $failed = 0;
 	foreach my $arg (@ARGV) {
 		my $hastag = ($cvstag{$arg} ne '');
-		next if (index($arg, ".") == 0);
 		next if ($check_id == 2 && $arg ne "Makefile");
 		next if ($check_id == 3 && $hastag);
 
