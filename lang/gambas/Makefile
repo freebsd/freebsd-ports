@@ -61,6 +61,10 @@ PLIST_SUB+=		XML="@comment "
 BROKEN=	"Does not compile with gcc-2.95"
 .endif
 
+.if ${ARCH} == "sparc64"
+BROKEN=			"Segfault during build on sparc64"
+.endif
+
 .if ${OSVERSION} < 502110
 RUN_DEPENDS+=		pgrep:${PORTSDIR}/sysutils/pkill
 .endif
