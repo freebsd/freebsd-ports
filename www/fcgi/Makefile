@@ -11,7 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://www.fastcgi.com/dist/
 PKGNAMESUFFIX=	-devkit
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	hollywar@mail.holywar.net
 COMMENT=	FastCGI Development Kit
 
 USE_PERL5=	yes
