@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	xhippo
-PORTVERSION=	2.8
+PORTVERSION=	2.9
 CATEGORIES=	audio
-MASTER_SITES=	http://zenchaos.netpedia.net/files/ \
-		http://www.us-lot.org/~azz/xhippo/
+MASTER_SITES=	${MASTER_SITE_GNU}
+MASTER_SITE_SUBDIR=	xhippo
 
 MAINTAINER=	rod@zort.on.ca
 
