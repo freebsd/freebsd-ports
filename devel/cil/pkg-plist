@@ -100,6 +100,8 @@ libexec/cil/machdep.exe
 %%DOCSDIR%%/examples/ex42.txt
 %%DOCSDIR%%/examples/ex43.txt
 %%DOCSDIR%%/examples/ex44.txt
+%%DOCSDIR%%/examples/ex45.txt
+%%DOCSDIR%%/examples/ex46.txt
 %%DOCSDIR%%/examples/ex5.txt
 %%DOCSDIR%%/examples/ex6.txt
 %%DOCSDIR%%/examples/ex7.txt
