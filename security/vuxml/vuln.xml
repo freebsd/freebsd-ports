@@ -32,6 +32,40 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="4d49f4ba-071f-11d9-b45d-000c41e2cdad">
+    <topic>apache --- ap_resolve_env buffer overflow</topic>
+    <affects>
+      <package>
+	<name>apache</name>
+	<range><lt>2.0.51</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>SITIC discovered a vulnerability in Apache 2's handling of
+	  environmental variable settings in the httpd configuration
+	  files (the main `httpd.conf' and `.htaccess' files).
+	  According to a SITIC advisory:</p>
+	<blockquote
+	  cite="http://lists.netsys.com/pipermail/full-disclosure/2004-September/026463.html">
+          <p>The buffer overflow occurs when expanding ${ENVVAR}
+            constructs in .htaccess or httpd.conf files. The function
+            ap_resolve_env() in server/util.c copies data from
+            environment variables to the character array tmp with
+            strcat(3), leading to a buffer overflow. </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0747</cvename>
+      <mlist>http://lists.netsys.com/pipermail/full-disclosure/2004-September/026463.html</mlist>
+    </references>
+    <dates>
+      <discovery>2004-09-15</discovery>
+      <entry>2004-09-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a711de5c-05fa-11d9-a9b2-00061bc2ad93">
     <topic>samba3 DoS attack</topic>
     <affects>
