@@ -161,6 +161,9 @@ prodosemu.*		ports/emulators/prodosemu	Restrictive copyright on the ROM image
 qkmj-*			ports/games/qkmj	Do not sell for profit
 qmail-*			ports/mail/qmail-*	Restricted binary distribution
 						of modified versions
+qtools-*		ports/mail/qtools	Possibly restricted binary
+						distribution of modified
+						versions
 qvplay-*		ports/graphics/qvplay	No redistribution due to
 						beta status
 quake106.zip		ports/games/quakeserver	Shareware
@@ -173,6 +176,9 @@ rsaref*			ports/security/{rsaref,ssh} Crypto; export-controlled
 rp*_linux20_libc6_i386_*_rpm	ports/audio/linux-realplayer	Redistribution not allowed.
 Scilab-*		ports/math/Scilab	Don't sell for profit.
 sdr-2.7*		ports/mbone/sdr		Crypto; export-controlled
+service-config-*	ports/sysutils/service-config	Possibly restricted binary
+						distribution of modified
+						versions
 sharefonts-*		ports/x11-fonts/sharefonts	Shareware.  Cannot be
 						distributed w/o prior
 						authorization.
