@@ -9,12 +9,15 @@ share/locale/hu/LC_MESSAGES/lyx.mo
 share/locale/nl/LC_MESSAGES/lyx.mo
 share/locale/no/LC_MESSAGES/lyx.mo
 share/locale/ru/LC_MESSAGES/lyx.mo
+share/locale/sl/LC_MESSAGES/lyx.mo
 share/locale/sv/LC_MESSAGES/lyx.mo
 share/locale/tr/LC_MESSAGES/lyx.mo
 share/lyx/CREDITS
 share/lyx/bind/cua.bind
 share/lyx/bind/de_menus.bind
 share/lyx/bind/emacs.bind
+share/lyx/bind/fr_menus.bind
+share/lyx/bind/hollywood.bind
 share/lyx/bind/hu_menus.bind
 share/lyx/bind/math.bind
 share/lyx/bind/menus.bind
@@ -26,7 +29,6 @@ share/lyx/configure
 share/lyx/doc/BUGS.lyx
 share/lyx/doc/Customization.lyx
 share/lyx/doc/Extended.lyx
-share/lyx/doc/HowDoI-.lyx
 share/lyx/doc/Intro.lyx
 share/lyx/doc/LaTeXConfig.lyx
 share/lyx/doc/LaTeXConfig.lyx.in
@@ -35,6 +37,7 @@ share/lyx/doc/Tutorial.lyx
 share/lyx/doc/UserGuide.lyx
 share/lyx/doc/de_BUGS.lyx
 share/lyx/doc/de_Customization.lyx
+share/lyx/doc/de_Extended.lyx
 share/lyx/doc/de_Intro.lyx
 share/lyx/doc/de_Tutorial.lyx
 share/lyx/doc/escher-lsd.eps
@@ -57,6 +60,7 @@ share/lyx/examples/beispiel_roh.lyx
 share/lyx/examples/example_lyxified.lyx
 share/lyx/examples/example_raw.lyx
 share/lyx/examples/landslide.lyx
+share/lyx/examples/scriptone.lyx
 share/lyx/images/amssymb.xbm
 share/lyx/images/amssymb.xpm
 share/lyx/images/psnfss1.xbm
@@ -113,11 +117,13 @@ share/lyx/layouts/book.layout
 share/lyx/layouts/dinbrief.layout
 share/lyx/layouts/ejour2.layout
 share/lyx/layouts/foils.layout
+share/lyx/layouts/hollywood.layout
 share/lyx/layouts/iletter.layout
 share/lyx/layouts/latex8.layout
 share/lyx/layouts/letter.layout
 share/lyx/layouts/linuxdoc.layout
 share/lyx/layouts/lyxmacros.inc
+share/lyx/layouts/manpage.layout
 share/lyx/layouts/obsolete.inc
 share/lyx/layouts/paper.layout
 share/lyx/layouts/report.layout
@@ -155,6 +161,7 @@ share/lyx/reLyX/reLyXmain.pl
 share/lyx/reLyX/syntax.default
 share/lyx/templates/aapaper.lyx
 share/lyx/templates/dinbrief.lyx
+share/lyx/templates/hollywood.lyx
 share/lyx/templates/iletter.lyx
 share/lyx/templates/latex8.lyx
 share/lyx/templates/letter.lyx
@@ -162,6 +169,7 @@ share/lyx/templates/linuxdoctemplate.lyx
 share/lyx/templates/revtex.lyx
 share/lyx/templates/slides.lyx
 share/lyx/tex/ejour2.cls
+share/lyx/tex/hollywood.cls
 share/lyx/tex/iletter.cls
 share/lyx/tex/revtex.cls
 share/lyx/textclass.lst
