@@ -137,6 +137,7 @@
     SUBDIR += qt2-static
     SUBDIR += qt23
     SUBDIR += qt30
+    SUBDIR += qt31
     SUBDIR += qwt
     SUBDIR += rep-gtk
     SUBDIR += rep-gtk2
