@@ -1,0 +1,34 @@
+bin/freebirth
+bin/fusebirth
+share/freebirth/raw/202_kick_long.raw
+share/freebirth/raw/202_zap.raw
+share/freebirth/raw/606snare.raw
+share/freebirth/raw/808_kick_1.raw
+share/freebirth/raw/909_ride.raw
+share/freebirth/raw/Break1.raw
+share/freebirth/raw/Break2.raw
+share/freebirth/raw/Break3.raw
+share/freebirth/raw/bass_punch.raw
+share/freebirth/raw/chroma_sound_efct.raw
+share/freebirth/raw/cl_hat.raw
+share/freebirth/raw/electric_ping.raw
+share/freebirth/raw/harsh_snare.raw
+share/freebirth/raw/juno_pad1.raw
+share/freebirth/raw/kick.raw
+share/freebirth/raw/korg_poly6_drone.raw
+share/freebirth/raw/matrix1000_pluck.raw
+share/freebirth/raw/nice_kick.raw
+share/freebirth/raw/nord_ambient.raw
+share/freebirth/raw/op_hat.raw
+share/freebirth/raw/samp_1.raw
+share/freebirth/raw/snare.raw
+share/freebirth/raw/sys100_hihat_closed1.raw
+share/freebirth/raw/sys100_kick1.raw
+share/freebirth/raw/sys100_klick1.raw
+share/freebirth/raw/sys100_klick2.raw
+share/freebirth/raw/sys100_snare1.raw
+share/freebirth/raw/sys100_snare_short.raw
+share/freebirth/raw/sys100_wood1.raw
+share/freebirth/raw/tribe_tom.raw
+@dirrm share/freebirth/raw
+@dirrm share/freebirth
