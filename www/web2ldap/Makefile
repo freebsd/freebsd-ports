@@ -6,7 +6,7 @@
 #
 
 PORTNAME=      web2ldap
-PORTVERSION=   0.7.8
+PORTVERSION=   0.7.9
 CATEGORIES=    www
 MASTER_SITES=  http://sites.inka.de/ms/python/web2ldap/download/
 
