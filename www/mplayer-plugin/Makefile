@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mplayerplug-in
-PORTVERSION=	0.80
-PORTREVISION=	1
+PORTVERSION=	0.91
 CATEGORIES=	www multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mplayerplug-in
@@ -32,5 +31,7 @@ do-install:
 	${MKDIR} ${PREFIX}/lib/browser_plugins
 	${INSTALL_PROGRAM} ${WRKSRC}/mplayerplug-in.so \
 		${PREFIX}/lib/browser_plugins
+	${INSTALL_DATA} ${WRKSRC}/mplayerplug-in.conf \
+		${PREFIX}/etc/mplayerplug-in.conf.dist
 
 .include <bsd.port.mk>

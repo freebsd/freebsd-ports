@@ -1,8 +1,8 @@
---- Makefile.orig	Sun Jan 19 10:12:43 2003
-+++ Makefile	Tue Feb 25 00:51:25 2003
-@@ -29,9 +29,9 @@
- # PLUGIN_DEFINES= -DXP_UNIX -DPLUGIN_TRACE
- PLUGIN_DEFINES= -DXP_UNIX -Iinclude -ISource/_gen -I/usr/X11R6/include
+--- Makefile.orig	Fri Sep  5 21:48:28 2003
++++ Makefile	Mon Sep 29 00:42:38 2003
+@@ -12,9 +12,9 @@
+ 
+ PLUGIN_DEFINES= -DXP_UNIX -Iinclude -fPIC -I/usr/X11R6/include
  
 -CC= gcc
 -OPTIMIZER= -g
@@ -10,15 +10,15 @@
 +CC?= gcc
 +OPTIMIZER=
 +CFLAGS+=  $(OPTIMIZER) $(PLUGIN_DEFINES) -I. -I/usr/include
- 
- SRC= Source/mplayerplug-in.c Source/stubs.c 
- OBJ= mplayerplug-in.o stubs.o
-@@ -41,7 +41,7 @@
+ #`pkg-config gtk+-2.0 --cflags`
+ STRICTFLAGS= -O3 -Wall -W -Wno-unused-variable -Wno-unused-parameter -Wwrite-strings -Werror
+ #LDFLAGS   = `pkg-config gtk+-2.0 --libs`
+@@ -25,7 +25,7 @@
  default all: $(SHAREDTARGET)
  
  $(SHAREDTARGET): $(OBJ)
 -	$(CC) -shared -o $(SHAREDTARGET) $(OBJ) $(LDFLAGS)
 +	$(CC) -shared -L/usr/X11R6/lib -lXt -o $(SHAREDTARGET) $(OBJ) $(LDFLAGS)
  
- mplayerplug-in.o: Source/mplayerplug-in.c
- 	$(CC) -c $(CFLAGS) Source/mplayerplug-in.c
+ mplayerplug-in.o: Source/mplayerplug-in.c Source/mplayerplug-in.h
+ #	$(CC) -c $(STRICTFLAGS) $(CFLAGS) Source/mplayerplug-in.c
