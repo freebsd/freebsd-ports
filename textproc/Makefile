@@ -15,9 +15,6 @@
     SUBDIR += code2html
     SUBDIR += cole
     SUBDIR += cost
-    SUBDIR += de-ispell
-    SUBDIR += dealt-ispell
-    SUBDIR += deneu-ispell
     SUBDIR += dict
     SUBDIR += diff-mode.el
     SUBDIR += diffstat
@@ -33,7 +30,6 @@
     SUBDIR += dtd-catalogs
     SUBDIR += eruby
     SUBDIR += expat
-    SUBDIR += fr-ispell
     SUBDIR += freegrep
     SUBDIR += fribidi
     SUBDIR += gaspell
