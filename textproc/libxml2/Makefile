@@ -7,6 +7,7 @@
 
 PORTNAME=	libxml2
 PORTVERSION=	2.4.3
+PORTREVISION=	1
 CATEGORIES=	textproc gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/libxml
@@ -17,12 +18,8 @@ BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 LIB_DEPENDS=	giconv.2:${PORTSDIR}/converters/libiconv
 RUN_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 
-USE_LIBTOOL=	yes
+GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
-MAKE_FLAGS+=	LIBTOOL="${LIBTOOL}" -ELIBTOOL
-.if defined(MAKE_JOBS)
-MAKE_FLAGS+=	AM_MAKEFLAGS=-j${MAKE_JOBS}
-.endif
 
 CONFIGURE_ARGS=	--with-iconv \
 		--with-html-dir=${PREFIX}/share/doc
@@ -35,15 +32,8 @@ MAN4=		libxml.4
 pre-patch:
 	@find ${WRKSRC} -name Makefile.in | xargs ${PERL} -pi -e \
 		's|\$\(libdir\)/pkgconfig|\$\(prefix\)/libdata/pkgconfig|g'
-
-post-patch:
-	@${PERL} -pi -e 's/([^g])iconv.h/\1giconv.h/g;' \
-		-e 's/-liconv/-lgiconv/g' ${WRKSRC}/${CONFIGURE_SCRIPT} \
-		${WRKSRC}/include/libxml/encoding.h
-
-# If someone knows a better way to avoid this from even creeping into
-# lib/ -- please, tell me...	$Author$
-post-install:
-	${RM} ${PREFIX}/lib/libxml2.la
+	@cd ${WRKSRC} && ${PERL} -pi -e \
+		's|([^g])iconv.h|\1giconv.h|g ; s|-liconv|-lgiconv|g' \
+			configure include/libxml/encoding.h
 
 .include <bsd.port.mk>

@@ -1,6 +1,6 @@
 bin/xml2-config
-bin/xmllint
 bin/xmlcatalog
+bin/xmllint
 etc/xml2Conf.sh
 include/libxml2/libxml/DOCBparser.h
 include/libxml2/libxml/HTMLparser.h
@@ -65,7 +65,6 @@ share/doc/libxml2/html/libxml-xpathinternals.html
 share/doc/libxml2/html/libxml-xpointer.html
 share/doc/libxml2/html/structure.gif
 share/doc/libxml2/html/xml.html
-@dirrm share/doc/ja/
 @dirrm share/doc/libxml2/html
 @dirrm share/doc/libxml2
 @dirrm include/libxml2/libxml
