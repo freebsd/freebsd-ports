@@ -69,6 +69,9 @@ GS_DRIVERS+=	epag-3.09.tar.gz
 # replacement for pdf_sec.ps, that allows you to read encrypted PDF files
 DECRYPT_PDF=	pdf_sec.ps
 
+# Latest version is rather ja-vfghostscript-5.5.x
+NO_LATEST_LINK=yes
+
 post-extract:
 	${LN} -s ${WRKDIRPREFIX}${.CURDIR}/../../graphics/jpeg/work/jpeg-6b ${WRKSRC}/jpeg
 	@${TAR} -C ${WRKSRC} --unlink -xzf ${_DISTDIR}/gs${PORTVERSION}-vflib-1.2.tar.gz
