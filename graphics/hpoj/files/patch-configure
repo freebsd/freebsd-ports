@@ -1,6 +1,6 @@
---- configure.orig	Thu Aug  8 00:26:38 2002
-+++ configure	Fri Jul  4 09:28:31 2003
-@@ -561,7 +561,7 @@
+--- configure.orig	Mon Nov  3 11:20:29 2003
++++ configure	Thu Feb 17 10:04:29 2005
+@@ -1228,7 +1228,7 @@
  # Set up default make subdirectory and install file lists.
  SUBDIRS="lib/hpojip lib/ptal lib/sane mlcd apps/cmdline"
  bindir_program="apps/cmdline/ptal-connect apps/cmdline/ptal-device apps/cmdline/ptal-devid apps/cmdline/ptal-pml apps/cmdline/ptal-hp apps/cmdline/hpojip-test"
@@ -9,16 +9,36 @@
  includedir_data="include/hpojip.h include/ptal.h"
  
  # Select compilers and utilities.
-@@ -1295,7 +1295,7 @@
- 	    echo "$ac_t""$dir" 1>&6
+@@ -2958,15 +2958,15 @@
+ echo "${ECHO_T}$dir" >&6
  
  	    for lflagDir in "" "-L$dir/../lib" "-L$dir/../../lib" ; do
 -	      for lflagCrypto in "" "-lcrypto" ; do
 +	      for lflagCrypto in "" "-lcrypto" "-lcrypto -ldes" ; do
  		unset ac_cv_lib_snmp_snmp_open
- 		echo $ac_n "checking for snmp_open in -lsnmp""... $ac_c" 1>&6
- echo "configure:1302: checking for snmp_open in -lsnmp" >&5
-@@ -1597,7 +1597,6 @@
+-		echo "$as_me:$LINENO: checking for snmp_open in -lsnmp" >&5
+-echo $ECHO_N "checking for snmp_open in -lsnmp... $ECHO_C" >&6
++		echo "$as_me:$LINENO: checking for snmp_open in -lnetsnmp" >&5
++echo $ECHO_N "checking for snmp_open in -lnetsnmp... $ECHO_C" >&6
+ if test "${ac_cv_lib_snmp_snmp_open+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lsnmp $lflagDir $lflagCrypto $LIBS"
++LIBS="-lnetsnmp $lflagDir $lflagCrypto $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ #line $LINENO "configure"
+ #include "confdefs.h"
+@@ -3018,7 +3018,7 @@
+ if test $ac_cv_lib_snmp_snmp_open = yes; then
+   DEFINES_CMDLINE="$DEFINES_CMDLINE -DHAVE_SNMP"
+ 			 INCLUDE_PATH=$INCLUDE_PATH:$dir
+-			 LIBSNMP_CMDLINE="$lflagDir -lsnmp $lflagCrypto"
++			 LIBSNMP_CMDLINE="$lflagDir -lnetsnmp $lflagCrypto"
+ 			 break 2
+ 
+ fi
+@@ -3293,7 +3293,6 @@
  	if test -n "$QT_MOC" -a -n "$QT_INCLUDE_PATH" -a -n "$LIBQT_CMDLINE" ; then
  		QT_PATH=$dir
  		SUBDIRS="$SUBDIRS apps/xojpanel"
