@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xclasses
-PORTVERSION=	1.3.1
-PORTREVISION=	1
+PORTVERSION=	1.4.0
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	xcmail
@@ -24,12 +23,6 @@ USE_PERL5_BUILD=yes
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 WRKSRC=		${WRKDIR}/xclasses
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502000
-BROKEN=		"Does not compile"
-.endif
 
 post-patch:
 .for file in build System/ARules.FreeBSD
@@ -69,4 +62,4 @@ do-install:
 	@cd ${WRKSRC} && ${SH} build install
 	@${INSTALL_SCRIPT} ${WRKSRC}/setenvxc ${PREFIX}/bin
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
