@@ -7,7 +7,7 @@
 
 PORTNAME=	heroes
 PORTVERSION=	0.21
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -33,41 +33,38 @@ MUSICDISTNAME=	${PORTNAME}-sound-tracks-${MUSICVERSION}
 DATASRC=	${WRKDIR}/${DATADISTNAME}
 SOUNDSRC=	${WRKDIR}/${SOUNDISTNAME}
 MUSICSRC=	${WRKDIR}/${MUSICDISTNAME}
-INSTPREFIX=	${PREFIX}/share/heroes
 
-SDL_CONFIG=	${LOCALBASE}/bin/sdl11-config
-
-USE_GETOPT_LONG=yes
 USE_X_PREFIX=	yes
+USE_SDL=	yes
+USE_GETOPT_LONG=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-sdl_mixer=${LOCALBASE}
-CPPFLAGS=	-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS} -lsmpeg
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
-		SDL_CONFIG="${SDL_CONFIG}"
-CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
+		MAKEINFO="makeinfo --no-split"
+CONFIGURE_ARGS=	--with-sdl_mixer=${LOCALBASE} --without-gii
 
 MAN6=		heroes.6 heroeslvl.6
+INFO=		heroes
 
-pre-patch:
+CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+LDFLAGS=	-L${LOCALBASE}/lib -lsmpeg ${PTHREAD_LIBS}
+
+post-patch:
 	@for dir in ${DATASRC} ${SOUNDSRC} ${MUSICSRC}; do \
-		find $${dir} -name "Makefile*" | xargs ${RM}; \
+		${FIND} $${dir} -name "Makefile*" | ${XARGS} ${RM}; \
 	done
 	@${RM} -f ${WRKSRC}/lib/getopt.h
-	@${LN} -sf ${LOCALBASE}/include/getopt.h ${WRKSRC}/lib/getopt.h
+	@${RM} -f ${WRKSRC}/doc/*.info*
 
 post-install:
 .for dir in levels pics tilesets
-	${MKDIR} ${INSTPREFIX}/${dir}
-	${INSTALL_DATA} ${DATASRC}/${dir}/* ${INSTPREFIX}/${dir}
+	${MKDIR} ${DATADIR}/${dir}
+	${INSTALL_DATA} ${DATASRC}/${dir}/* ${DATADIR}/${dir}
 .endfor
-	${MKDIR} ${INSTPREFIX}/sfx
-	${INSTALL_DATA} ${SOUNDSRC}/*.wav ${SOUNDSRC}/sfx.conf ${INSTPREFIX}/sfx
-	${MKDIR} ${INSTPREFIX}/mod
-	${INSTALL_DATA} ${MUSICSRC}/*.xm ${MUSICSRC}/sound.conf ${INSTPREFIX}/mod
-	@install-info --section="X11 Games" \
-		--entry="* heroes: (heroes).           Game of yore similar to the "Tron" and "Nibbles"" \
-		${PREFIX}/info/heroes.info ${PREFIX}/info/dir
+	${MKDIR} ${DATADIR}/sfx
+	${INSTALL_DATA} ${SOUNDSRC}/*.wav ${SOUNDSRC}/sfx.conf ${DATADIR}/sfx
+	${MKDIR} ${DATADIR}/mod
+	${INSTALL_DATA} ${MUSICSRC}/*.xm ${MUSICSRC}/sound.conf ${DATADIR}/mod
 
 .include <bsd.port.mk>
