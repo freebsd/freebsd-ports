@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nickle
-PORTVERSION=	2.41
+PORTVERSION=	2.45
 CATEGORIES=	lang
 MASTER_SITES=	http://www.nickle.org/release/
 
@@ -16,6 +16,12 @@ COMMENT=	A desk calculator language
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+
+# Nickle now has bindings which are likely to pull in libraries that need
+# libpthread.  Link to it now, since it wouldn't work at runtime.
+CFLAGS+=	${PTHREAD_CFLAGS}
+LDFLAGS+=	${PTHREAD_LIBS}
+CONFIGURE_ENV+=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 
 MAN1=		nickle.1
 
