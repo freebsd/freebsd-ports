@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	Fri Feb 14 21:47:21 2003
++++ src/Makefile.in	Fri Feb 14 21:47:47 2003
+@@ -122,7 +122,7 @@
+ g2c_SOURCES =  	g2c.c 	g2c_file_parser.c g2c_file_parser.h 	g2c_helpers.c g2c_helpers.h 	g2c_widget.c g2c_widget.h 	g2c_project.c g2c_project.h 	g2c_signal.c g2c_signal.h 	g2c_doc.c g2c_doc.h 	g2c_accel.c g2c_accel.h 	am_handler.c am_handler.h
+ 
+ 
+-g2c_LDADD = $(GNOME_LIBDIR) $(GNOMEUI_LIBS) $(INTLLIBS) 
++g2c_LDADD = $(GNOME_LIBDIR) $(GNOMEUI_LIBS) $(INTLLIBS) $(XML_LIB) 
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../config.h
+ CONFIG_CLEAN_FILES = 
