@@ -1,0 +1,11 @@
+--- src/Makefile.in.bak	Fri Oct 17 02:22:23 2003
++++ src/Makefile.in	Fri Oct 17 12:11:07 2003
+@@ -213,7 +213,7 @@
+ 
+ DEFS = @DEFS@ -I. -I$(srcdir) -I..
+ LIBS = @LIBS@
+-libtestplugin_la_LDFLAGS = 
++libtestplugin_la_LDFLAGS = -module -avoid-version
+ libtestplugin_la_LIBADD = 
+ libtestplugin_la_OBJECTS =  testplugin.lo
+ bin_PROGRAMS =  gnome-genius$(EXEEXT) genius$(EXEEXT)

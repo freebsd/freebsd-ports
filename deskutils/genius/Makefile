@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	genius
-PORTVERSION=	0.5.5
-PORTREVISION=	1
+PORTVERSION=	0.5.6
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://ftp.5z.com/pub/genius/
 
@@ -18,13 +17,10 @@ LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4
 
 USE_PERL5_BUILD=	yes
 USE_X_PREFIX=	yes
-USE_GNOME=	gnomeprefix gnomehack libgnomeui vte
-GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+USE_GNOME=	gnomehack gnomeprefix gnometarget gtksourceview libgnomeui vte
+USE_LIBTOOL=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-INSTALLS_SHLIB=	yes
-LDCONFIG_DIRS+=	%%PREFIX%%/lib/genius
 
 .include <bsd.port.pre.mk>
 
