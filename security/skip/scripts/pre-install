@@ -76,6 +76,7 @@ install_doc_files ()
 		doc/BN_SOFTWARE_LICENSE \
 		doc/README.PATENT \
 		doc/README.FreeBSD \
+		doc/README.FreeBSD+NAT \
 		doc/00README \
 		doc/INSTALL \
 		doc/advanced.TOPICS \
