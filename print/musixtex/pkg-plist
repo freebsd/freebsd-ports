@@ -188,6 +188,7 @@ share/texmf/fonts/tfm/xslz20.tfm
 share/texmf/fonts/tfm/xslz20d.tfm
 share/texmf/fonts/tfm/xtie20.tfm
 share/texmf/tex/musixadd.tex
+share/texmf/tex/musixbar.tex
 share/texmf/tex/musixbbm.tex
 share/texmf/tex/musixblx.tex
 share/texmf/tex/musixbm.tex
@@ -203,6 +204,7 @@ share/texmf/tex/musixfll.sty
 share/texmf/tex/musixfll.tex
 share/texmf/tex/musixgre.tex
 share/texmf/tex/musixgui.tex
+share/texmf/tex/musixhor.tex
 share/texmf/tex/musixhou.tex
 share/texmf/tex/musixinv.tex
 share/texmf/tex/musixlit.tex
@@ -220,3 +222,5 @@ share/texmf/tex/musixsty.tex
 share/texmf/tex/musixtex.sty
 share/texmf/tex/musixtex.tex
 share/texmf/tex/musixtri.tex
+@dirrm share/texmf/documentation/musixtex.examples
+@unexec rmdir %D/share/texmf/documentation 2>/dev/null || true
