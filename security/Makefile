@@ -235,6 +235,7 @@
     SUBDIR += scanssh
     SUBDIR += seahorse
     SUBDIR += secpanel
+    SUBDIR += sfs
     SUBDIR += sha
     SUBDIR += siphon
     SUBDIR += skip

@@ -1,0 +1,51 @@
+# To set up your own SFS server, copy this file (sfsrwsd_config.sample)
+# to sfsrwsd_config, and add any necessary lines. For most installations,
+# you only need to add Export lines for any directories you want to
+# export; the hostname should be picked up automatically from your
+# system unless you're doing something complex, and the keyfile path is
+# already set correctly from the port.
+#
+# N.B.: any directories exported in an Export statement must also be
+# exported to localhost via NFS, and must follow all NFS export rules,
+# i.e. no symlinks in the exported directory pathname, the exported
+# path must be absolute to the physical mount point. If you want to
+# export /usr/ports via SFS, and /usr/ports is really a symlink to
+# /vol/h0/ports, you have to use:
+#
+#    Export /vol/h0/ports /ports
+#
+# not:
+#
+#    Export /usr/ports /ports
+#
+# And then /vol/h0/ports must be added to /etc/export, rather than
+# /usr/ports.
+#
+# Configuration reference:
+#
+# Hostname name 
+# Set the Location part of the server's self-certifying pathname. The
+# default is the current host's fully-qualified hostname.
+# 
+# Keyfile path 
+# Tells sfsrwsd to look for its private key in file path. The default
+# is sfs_host_key. SFS looks for file names that do not start with /
+# in /etc/sfs, or whatever directory you specified if you used the
+# --with-etcdir option to configure (see configure).
+# 
+# Export local-directory sfs-name [R|W] 
+# Tells sfsrwsd to export local-directory, giving it the name sfs-name
+# with respect to the server's self-certifying pathname. Appending R
+# to an export directive gives anonymous users read-only access to
+# the file system (under user ID -2 and group ID -2). Appending W
+# gives anonymous users both read and write access. See Quick server
+# setup, for an example of the Export directive.  There is almost no
+# reason to use the W flag. The R flag lets anyone on the Internet
+# issue NFS calls to your kernel as user -2. SFS filters these calls;
+# it makes sure that they operate on files covered by the export
+# directive, and it blocks any calls that would modify the file system.
+# This approach is safe given a perfect NFS3 implementation. If,
+# however, there are bugs in your NFS code, attackers may exploit
+# them if you have the R option--probably just crashing your server
+# but possibly doing worse
+
