@@ -1,5 +1,5 @@
---- Imakefile.orig	Thu Jul 10 10:33:34 1997
-+++ Imakefile	Thu Feb 11 18:28:52 1999
+--- Imakefile.orig	Fri Nov 12 03:28:53 1999
++++ Imakefile	Tue Mar 14 21:48:50 2000
 @@ -10,11 +10,8 @@
   * GLIB. The documentation (Manual.ps) is not installed, that's up to you.
   */
@@ -9,8 +9,8 @@
 -
 -CDEBUGFLAGS = -O2
 -
-+GBIN = ${X11BASE}/bin
-+GLIB = ${X11BASE}/lib/X11/xmbase-grok
++GBIN = $(BINDIR)
++GLIB = $(LIBDIR)/xmbase-grok
  
  /*
   * Do not change anyhting below.
@@ -23,20 +23,27 @@
  #endif
  
  SRC  =	canvdraw.c cardwin.c chart.c chartdrw.c convert.c dbase.c\
-@@ -55,10 +52,10 @@
+@@ -37,17 +34,14 @@
+ DOC  =	doc/files.tex doc/formedit.tex doc/grammar.tex doc/intro.tex\
+ 	doc/macro.tex doc/main.tex doc/export.tex
+ 
+-DEMO =	grokdir/*
+-
+ EXTRA_DEFINES = -DPATH=\"$(GBIN):$(GLIB)\" -DLIB=\"$(GLIB)\"
+ EXTRA_LIBS=-lXpm
  AllTarget(grok)
  NormalProgramTarget(grok,y.tab.o $(SRC:.c=.o),,,$(LIB))
  InstallProgram(grok,$(GBIN))
 -InstallProgram(grok.hlp,$(GLIB))
 +InstallNonExecFile(grok.hlp,$(GLIB))
- InstallMultiple(Manual.ps grok.hlp,$(GLIB))
- InstallMultiple($(DEMO),$(GLIB)/grokdir)
+ InstallMultiple(Manual.ps grok.hlp,$(GLIB)/grokdir)
+-InstallMultiple($(DEMO),$(GLIB)/grokdir)
 -InstallNonExec(grok.xpm,$(LIBDIR)/pixmaps)
-+InstallNonExec(grok.xpm,$(X11BASE)/include/X11/pixmaps)
++InstallNonExec(grok.xpm,$(INCDIR)/X11/pixmaps)
  
  
  $(SRC:.c=.o): config.h grok.h proto.h form.h
-@@ -90,14 +87,18 @@
+@@ -79,14 +73,18 @@
  
  
  #---------------------------------------------------------------

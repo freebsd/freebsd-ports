@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xmbase-grok
-PORTVERSION=	1.4.1
+PORTVERSION=	1.4.3
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_XCONTRIB} \
 		ftp://ftp.fu-berlin.de/pub/unix/databases/xmbase-grok/
@@ -16,5 +16,13 @@ MAINTAINER=	ports@FreeBSD.org
 
 REQUIRES_MOTIF=	yes
 USE_IMAKE=	yes
+
+GLOK_DATADIR=	${PREFIX}/lib/X11/xmbase-grok
+
+post-install:
+	${TAR} -C ${WRKSRC} -cf - grokdir | \
+		${TAR} -C ${GLOK_DATADIR} --unlink -xf -
+	find ${GLOK_DATADIR} | xargs ${CHOWN} ${SHAREOWN}:${SHAREGRP}
+	find ${GLOK_DATADIR} -type f | xargs ${CHMOD} ${SHAREMODE}
 
 .include <bsd.port.mk>
