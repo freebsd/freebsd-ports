@@ -423,6 +423,7 @@
     SUBDIR += p5-Net-Dict
     SUBDIR += p5-Net-Divert
     SUBDIR += p5-Net-Finger
+    SUBDIR += p5-Net-Gnats
     SUBDIR += p5-Net-Google
     SUBDIR += p5-Net-Gopher
     SUBDIR += p5-Net-ICQ2000

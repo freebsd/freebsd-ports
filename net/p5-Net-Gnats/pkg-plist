@@ -1,0 +1,12 @@
+%%SITE_PERL%%/Net/Gnats.pm
+%%SITE_PERL%%/Net/Gnats/PR.pm
+%%SITE_PERL%%/auto/Net/Gnats/autosplit.ix
+%%SITE_PERL%%/auto/Net/Gnats/PR/autosplit.ix
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Gnats/.packlist
+@dirrm %%SITE_PERL%%/Net/Gnats
+@dirrm %%SITE_PERL%%/auto/Net/Gnats/PR
+@dirrm %%SITE_PERL%%/auto/Net/Gnats
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Gnats
+@unexec rmdir %D/%%SITE_PERL%%/Net 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/auto/Net 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net 2>/dev/null || true
