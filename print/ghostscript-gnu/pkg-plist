@@ -60,7 +60,6 @@ bin/wftopfa
 %%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/mjc/README.mje
 %%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/mjc/README.noz
 %%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/mjc/cpem.doc
-%%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/npdl/gdevnpdl.jis
 %%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/pcl3/NEWS
 %%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/pcl3/gs-pcl3.html
 %%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/pcl3/how-to-report.txt
@@ -547,7 +546,6 @@ share/ghostscript/fonts/z003034l.pfm
 @dirrm share/ghostscript/%%GS_VERSION%%
 @unexec rmdir %D/share/ghostscript 2>/dev/null || true
 %%PORTDOCS%%@dirrm share/doc/ghostscript/%%GS_VERSION%%/pcl3
-%%PORTDOCS%%@dirrm share/doc/ghostscript/%%GS_VERSION%%/npdl
 %%PORTDOCS%%@dirrm share/doc/ghostscript/%%GS_VERSION%%/mjc
 %%PORTDOCS%%@dirrm share/doc/ghostscript/%%GS_VERSION%%/md2k
 %%PORTDOCS%%@dirrm share/doc/ghostscript/%%GS_VERSION%%/lxm3200
