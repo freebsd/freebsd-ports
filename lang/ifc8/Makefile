@@ -151,8 +151,7 @@ do-build:
 		${FILESDIR}/sysconf.c    \
 		${FILESDIR}/errno_location.c ${FILESDIR}/mcount.S
 .if ( ${OSVERSION} < 502101 )
-	@cd ${WRKSRC} && ${CC} ${CFLAGS} -c ${FILESDIR}/cxa_atexit.c \
-		${FILESDIR}/cxa_finalize.c
+	@cd ${WRKSRC} && ${CC} ${CFLAGS} -c ${FILESDIR}/cxa_atexit.c
 .endif
 .if ( ${OSVERSION} < 470101 ) || \
 	( ${OSVERSION} >= 500000 && ${OSVERSION} < 500042 )
