@@ -1,0 +1,25 @@
+# New ports collection makefile for:	wmproxyper
+# Date created:				22 June 2002
+# Whom:					Alexey Dokuchaev <danfe@regency.nsu.ru>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	wmproxyper
+PORTVERSION=	0.9.1
+CATEGORIES=	misc windowmaker afterstep
+MASTER_SITES=	http://home.student.utwente.nl/w.k.havinga/wmproxyper/
+DISTNAME=	WMProxyPer-${PORTVERSION}
+
+MAINTAINER=	ports@FreeBSD.org
+
+LIB_DEPENDS=	dockapp.1:${PORTSDIR}/x11-wm/libdockapp
+
+USE_GMAKE=	yes
+USE_XPM=	yes
+USE_X_PREFIX=	yes
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+
+.include <bsd.port.mk>

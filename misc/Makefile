@@ -293,6 +293,7 @@
     SUBDIR += wmjulia
     SUBDIR += wmmand
     SUBDIR += wmpal
+    SUBDIR += wmproxyper
     SUBDIR += wmstock
     SUBDIR += wmweather
     SUBDIR += wmwork
