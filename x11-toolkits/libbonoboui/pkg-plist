@@ -66,7 +66,7 @@ share/locale/uk/LC_MESSAGES/libbonoboui-2.0.mo
 share/locale/wa/LC_MESSAGES/libbonoboui-2.0.mo
 share/locale/zh_CN/LC_MESSAGES/libbonoboui-2.0.mo
 share/locale/zh_TW/LC_MESSAGES/libbonoboui-2.0.mo
-@dirrm share/gnome/gnome-2.0/ui
-@dirrm share/gnome/gnome-2.0
+@dirrm share/gnome2/gnome-2.0/ui
+@dirrm share/gnome2/gnome-2.0
 @dirrm include/libbonoboui-2.0/bonobo
 @dirrm include/libbonoboui-2.0
