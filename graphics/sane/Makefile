@@ -7,6 +7,7 @@
 
 PORTNAME=	sane
 PORTVERSION=	1.0.3
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 		ftp://ftp.mostang.com/pub/sane/
