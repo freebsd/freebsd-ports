@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gigabase
-PORTVERSION=	2.54
+PORTVERSION=	2.55
 CATEGORIES=	databases
 MASTER_SITES=	http://www.ispras.ru/~knizhnik/
 
