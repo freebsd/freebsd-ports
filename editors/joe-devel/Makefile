@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	joe-devel
-PORTVERSION=	2.9.8p1
+PORTVERSION=	2.9.8
+PORTEPOCH=	1
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	joe-editor
-DISTNAME=	joe-${PORTVERSION:S/p/-pre/}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	petef@FreeBSD.org
 COMMENT=	Development version of Joe's own editor
