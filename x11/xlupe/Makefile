@@ -6,15 +6,11 @@
 #
 
 PORTNAME=	xlupe
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	x11
 MASTER_SITES=	http://www.core.de/~coto/projects/xlupe/
 
 USE_IMAKE=	yes
 USE_XPM=	yes
-USE_MOTIF=	yes
-
-#post-install:
-#		strip ${PREFIX}/bin/xlupe
 
 .include <bsd.port.mk>
