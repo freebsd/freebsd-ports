@@ -17,11 +17,5 @@ MAINTAINER=	ports@FreeBSD.org
 USE_IMAKE=	yes
 USE_XPM=	yes
 MAN1=		xmail.1
-MANCOMPRESSED=	no
-
-do-install:
-	$(INSTALL_PROGRAM) $(WRKSRC)/xmail $(PREFIX)/bin/xmail
-	$(INSTALL_MAN) $(WRKSRC)/xmail.man $(PREFIX)/man/man1/xmail.1
-	$(INSTALL_DATA) $(WRKSRC)/XMail.ad $(PREFIX)/lib/X11/app-defaults/XMail
 
 .include <bsd.port.mk>
