@@ -12,12 +12,9 @@ MASTER_SITES=	http://gpasman.nl.linux.org/
 
 MAINTAINER=	domi@saargate.de
 
-LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
-
-GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
-
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
+USE_GTK=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	GTKCONFIG="${GTK_CONFIG}"
 

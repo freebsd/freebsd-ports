@@ -12,11 +12,7 @@ MASTER_SITES=	http://www.psilord.com/code/gdict/old/
 
 MAINTAINER=	domi@saargate.de
 
-LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
-
-GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
-
-MAKE_ENV=	GTK_CONFIG="${GTK_CONFIG}"
+USE_GTK=	yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gdict ${PREFIX}/bin

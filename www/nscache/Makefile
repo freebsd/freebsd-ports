@@ -14,14 +14,10 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	kris@FreeBSD.org
 
-LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
-
-GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
-
+USE_GTK=	yes
 USE_AUTOMAKE=	yes
 AUTOMAKE=	automake -a -i
 CONFIGURE_ENV=	CPPFALGS="-I${LOCALBASE}/include" \
-		GTK_CONFIG="${GTK_CONFIG}" \
 		LIBS="-L${LOCALBASE}/lib"
 
 pre-configure:

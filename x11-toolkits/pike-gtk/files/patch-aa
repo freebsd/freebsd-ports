@@ -1,0 +1,11 @@
+--- configure.orig	Thu Nov 18 01:52:35 1999
++++ configure	Thu Nov 18 01:53:02 1999
+@@ -3198,7 +3198,7 @@
+ 	next) LDSHARED="$CC $CFLAGS -nostdlib -r";;
+ 	Linux*) LDSHARED="$CC -shared";;
+         GNU*) LDSHARED="ld -Bshareable";;
+-	FreeBSD*) LDSHARED="ld -Bshareable";;
++	FreeBSD*) LDSHARED="$CC -shared";;
+ 	NetBSD) LDSHARED="ld -Bshareable";;
+ 	OpenBSD*) LDSHARED="ld -Bshareable";;
+ 	BSD/OS*) LDSHARED="shlicc -r";;

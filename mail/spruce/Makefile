@@ -13,17 +13,14 @@ MASTER_SITES=	http://www.xtorshun.org/spruce/v0.6/ \
 
 MAINTAINER=	erich@tacni.net
 
-LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
-
-GTK_CONFIG=	${X11BASE}/bin/gtk12-config
-GLIB_CONFIG=	${LOCALBASE}/bin/glib12-config
+LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
 
 USE_X_PREFIX=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	GTK_CONFIG=${GTK_CONFIG} GLIB_CONFIG=${GLIB_CONFIG} \
-		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
-		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include"
 USE_GMAKE=	yes
+USE_GTK=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LIBS="-L${LOCALBASE}/lib"
 
 MAN1=		spruce.1
 

@@ -13,26 +13,24 @@ MASTER_SITES=	http://www.stanford.edu/~satyakid/
 MAINTAINER=	nakai@FreeBSD.org
 
 RUN_DEPENDS=	sawfish:${PORTSDIR}/x11-wm/sawfish
-LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
-
-GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 
 USE_X_PREFIX=	yes
-MAKE_ENV=	GTK_CONFIG="${GTK_CONFIG}"
+USE_GTK=	yes
+
 ALL_TARGET=	spager
 
 post-extract:
-		${RM} -f ${WRKSRC}/spager
+	${RM} -f ${WRKSRC}/spager
 
 post-patch:
-		${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/sample.rc
+	${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/sample.rc
 
 do-install:
-		${INSTALL_PROGRAM} ${WRKSRC}/spager ${PREFIX}/bin/
-		${MKDIR} ${PREFIX}/share/spager
-		${INSTALL_SCRIPT} ${WRKSRC}/spager.jl ${PREFIX}/share/spager
-		${INSTALL_SCRIPT} ${WRKSRC}/x-message.jl ${PREFIX}/share/spager
-		${INSTALL_DATA} ${WRKSRC}/sample.rc ${PREFIX}/share/spager
-		@${CAT} ${PKGMESSAGE}
+	${INSTALL_PROGRAM} ${WRKSRC}/spager ${PREFIX}/bin/
+	${MKDIR} ${PREFIX}/share/spager
+	${INSTALL_SCRIPT} ${WRKSRC}/spager.jl ${PREFIX}/share/spager
+	${INSTALL_SCRIPT} ${WRKSRC}/x-message.jl ${PREFIX}/share/spager
+	${INSTALL_DATA} ${WRKSRC}/sample.rc ${PREFIX}/share/spager
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

@@ -12,14 +12,10 @@ MASTER_SITES=	http://www.student.oulu.fi/~jlof/gtkglarea/download/
 
 MAINTAINER=	jaeger16@yahoo.com
 
-LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
-
-GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
-
 USE_MESA=	yes
+USE_GTK=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
-CONFIGURE_ENV=	GTK_CONFIG="${GTK_CONFIG}"
 CONFIGURE_ARGS=	--with-lib-GL
 
 .include <bsd.port.mk>

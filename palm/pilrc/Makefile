@@ -14,12 +14,10 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	kuriyama@FreeBSD.org
 
-LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
-		glib12.3:${PORTSDIR}/devel/glib12
-
 WRKSRC=		${WRKDIR}/pilrc-${PORTVERSION}
-GNU_CONFIGURE=	YES
-CONFIGURE_ENV=	GTK_CONFIG=${X11BASE}/bin/gtk12-config
+
+USE_GTK=	yes
+GNU_CONFIGURE=	yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pilrc ${WRKSRC}/pilrcui ${PREFIX}/bin

@@ -1,0 +1,11 @@
+--- guile-gnome/libglade/Makefile.in.orig	Mon Oct  2 01:09:47 2000
++++ guile-gnome/libglade/Makefile.in	Mon Oct  2 01:11:08 2000
+@@ -97,7 +97,7 @@
+ INCLUDES = -I.. -I$(srcdir)/.. -I../../guile-gtk -I$(srcdir)/../../guile-gtk 	-I$(includedir) $(GUILE_INCS) $(GNOME_INCLUDEDIR)
+ 
+ 
+-GLADE_LIBS = -lglade -lglade-gnome -lglade-bonobo
++GLADE_LIBS = `libglade-config --libs gnome`
+ 
+ lib_LTLIBRARIES = libguileglade.la
+ libguileglade_la_SOURCES = libglade-glue.c 

@@ -21,24 +21,24 @@ DISTNAME=	nessus-core-1.0.4
 
 MAINTAINER=	anders@fix.no
 
-LIB_DEPENDS=	nasl.1:${PORTSDIR}/security/nessus-libnasl \
-		gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
+LIB_DEPENDS=	nasl.1:${PORTSDIR}/security/nessus-libnasl
 
 NESSUS_REV=	${DISTNAME:S/nessus-core-//g}
-GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 
 DIST_SUBDIR=	nessus
 WRKSRC=		${WRKDIR}/nessus-core
 
-GNU_CONFIGURE=	yes
+USE_GTK=	yes
+USE_LIBTOOL=	yes
 CONFIGURE_ENV=	GTKCONFIG="${GTK_CONFIG}"
+
 MAN1=		nessus.1
 MAN8=		nessusd.8 nessus-adduser.8
 
 post-install:
-		@${ECHO} "=========================================================="
-		@${ECHO} "Be sure to erase your old ${PREFIX}/etc/nessus!"
-		@${ECHO} "The syntax of nessusd.users and nessusd.rules has changed!"
-		@${ECHO} "=========================================================="
+	@${ECHO} "=========================================================="
+	@${ECHO} "Be sure to erase your old ${PREFIX}/etc/nessus!"
+	@${ECHO} "The syntax of nessusd.users and nessusd.rules has changed!"
+	@${ECHO} "=========================================================="
 
 .include <bsd.port.mk>

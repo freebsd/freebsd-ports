@@ -13,12 +13,8 @@ DISTNAME=	${PORTNAME}
 
 MAINTAINER=	nakai@FreeBSD.org
 
-LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
-
-GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
-
 USE_X_PREFIX=	yes
-MAKE_ENV=	GTK_CONFIG="${GTK_CONFIG}"
+USE_GTK=	yes
 
 do-install:
 		${INSTALL_PROGRAM} ${WRKSRC}/snowflake ${PREFIX}/bin
