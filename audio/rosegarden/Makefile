@@ -20,7 +20,6 @@ RUN_DEPENDS=	${LOCALBASE}/lib/tclmidi/tclmidi31.so:${PORTSDIR}/audio/tclmidi
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
 USE_AUTOCONF_VER=	213
-CONFIGURE_ENV=	MAKEDEPEND=${TRUE}
 CONFIGURE_ARGS=	--with-tclincl=${LOCALBASE}/include/tcl8.2
 
 post-patch:
