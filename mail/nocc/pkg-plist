@@ -1,13 +1,18 @@
 www/nocc/action.php
 www/nocc/check.php
-www/nocc/check_lang.php
+www/nocc/class_local.php
 www/nocc/class_send.php
 www/nocc/class_smtp.php
+www/nocc/common.php
 @unexec if cmp -s %D/www/nocc/conf.php %D/www/nocc/conf.php.dist; then rm -f %D/www/nocc/conf.php; fi
 www/nocc/conf.php.dist
 @exec [ -f %B/conf.php ] || cp %B/%f %B/conf.php
 www/nocc/conf_lang.php
+www/nocc/contacts.php
+www/nocc/contacts_manager.php
 www/nocc/delete.php
+www/nocc/detect_cyr_charset.php
+www/nocc/down_mail.php
 www/nocc/download.php
 www/nocc/exception.php
 www/nocc/functions.php
@@ -17,9 +22,13 @@ www/nocc/index.php
 www/nocc/is_uploaded_file.php
 www/nocc/logout.php
 www/nocc/mime.php
-www/nocc/prefs.php
+www/nocc/proxy.php
 www/nocc/send.php
-www/nocc/wrong.php
+www/nocc/user_filters.php
+www/nocc/user_prefs.php
+www/nocc/html/error.php
+www/nocc/html/filter_prefs.php
+www/nocc/html/folders.php
 www/nocc/html/footer.php
 www/nocc/html/header.php
 www/nocc/html/html_bottom_table.php
@@ -30,6 +39,7 @@ www/nocc/html/html_mail_top.php
 www/nocc/html/html_top_table.php
 www/nocc/html/menu_inbox.php
 www/nocc/html/menu_inbox_opts.php
+www/nocc/html/menu_inbox_status.php
 www/nocc/html/menu_mail.php
 www/nocc/html/menu_prefs.php
 www/nocc/html/no_mail.php
@@ -38,6 +48,7 @@ www/nocc/html/prefs_error.php
 www/nocc/html/send.php
 www/nocc/html/send_confirmed.php
 www/nocc/html/send_error.php
+www/nocc/lang/ar-win.php
 www/nocc/lang/ar.php
 www/nocc/lang/bg.php
 www/nocc/lang/cs.php
@@ -46,18 +57,23 @@ www/nocc/lang/de.php
 www/nocc/lang/el.php
 www/nocc/lang/en.php
 www/nocc/lang/es.php
+www/nocc/lang/farsi.php
 www/nocc/lang/fi.php
 www/nocc/lang/fr.php
 www/nocc/lang/he.php
+www/nocc/lang/hr.php
 www/nocc/lang/hu.php
+www/nocc/lang/is.php
 www/nocc/lang/it.php
 www/nocc/lang/kr.php
+www/nocc/lang/lv.php
 www/nocc/lang/nl.php
 www/nocc/lang/nn.php
 www/nocc/lang/no.php
 www/nocc/lang/pl.php
 www/nocc/lang/pt-br.php
 www/nocc/lang/pt.php
+www/nocc/lang/ro.php
 www/nocc/lang/ru-iso.php
 www/nocc/lang/ru-koi.php
 www/nocc/lang/ru.php
@@ -65,6 +81,7 @@ www/nocc/lang/sk.php
 www/nocc/lang/sl.php
 www/nocc/lang/sr.php
 www/nocc/lang/sv.php
+www/nocc/lang/th.php
 www/nocc/lang/tr.php
 www/nocc/lang/zh-gb.php
 www/nocc/lang/zh-tw.php

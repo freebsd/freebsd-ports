@@ -6,28 +6,20 @@
 #
 
 PORTNAME=	nocc
-PORTVERSION=	0.9.5
+PORTVERSION=	0.9.6.r1
 CATEGORIES=	mail www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/RC/}
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	A web-based e-mail system which access POP3 and IMAP mail servers
 
-USE_PHP=	yes
+USE_PHP=	imap
 WANT_PHP_WEB=	yes
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 NO_BUILD=	yes
-
-pre-everything::
-	@${ECHO} ""
-	@${ECHO} "You have to configure PHP with IMAP support in order"
-	@${ECHO} "to let Nocc connect to your POP3/IMAP server."
-	@${ECHO} ""
-	@${ECHO} "If you have already compiled PHP without IMAP,"
-	@${ECHO} "press CTRL+C now and rebuild it before installing Nocc."
-	@${ECHO} ""
 
 pre-patch:
 	@${SED} 's|%%PREFIX%%|${PREFIX}|g' \
