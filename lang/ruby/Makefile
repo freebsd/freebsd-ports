@@ -19,6 +19,8 @@ PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	knu@FreeBSD.org
 
+BROKEN=		"tarball incomplete - waiting for repack"
+
 USE_RUBY=	yes
 RUBY_NO_BUILD_DEPENDS=	yes
 RUBY_NO_RUN_DEPENDS=	yes
