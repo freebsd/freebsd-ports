@@ -40,9 +40,12 @@ post-extract:
 	@${RM} -f ${WRKSRC}/docs/mikmod.info-*
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|\$$CFLAGS -pthread|\$$CFLAGS ${PTHREAD_CFLAGS}|g ; \
-		 s|-pthread \$$REENTRANT|\$$REENTRANT ${PTHREAD_CFLAGS}|g ; \
-		 s|-lpthread|${PTHREAD_LIBS:S/"//g}|g ; \
-		 s|-lc_r|${PTHREAD_LIBS:S/"//g}|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} \
+		-e 's|\$$CFLAGS -pthread|\$$CFLAGS ${PTHREAD_CFLAGS}|g' \
+		-e 's|-pthread \$$REENTRANT|\$$REENTRANT ${PTHREAD_CFLAGS}|g' \
+		-e 's|-lpthread|${PTHREAD_LIBS:S/"//g}|g' \
+		-e 's|-pthread|${PTHREAD_LIBS:S/"//g}|g' \
+		-e 's|-lc_r|${PTHREAD_LIBS:S/"//g}|g' \
+		${WRKSRC}/configure
 
 .include <bsd.port.post.mk>
