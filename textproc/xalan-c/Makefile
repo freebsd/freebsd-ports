@@ -7,30 +7,43 @@
 # ------------------------------------------------------------------------------
 
 PORTNAME=	xalan-c
-PORTVERSION=	1.7.0
+PORTVERSION=	1.8.0
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_APACHE_XML:S/$/:msax,docs/}
 MASTER_SITE_SUBDIR=	${PORTNAME}/source/:msax ${PORTNAME}/docs/:docs
-.if defined(DEBUG)
-PKGNAMESUFFIX+=		-debug
-.endif
 DISTNAME=	Xalan-C_${PORTVERSION:S/./_/g}-src:msax
 DISTFILES+=	Xalan-C_${PORTVERSION:S/./_/g}-src${EXTRACT_SUFX}:msax
-.if !defined(NOPORTDOCS)
-DISTFILES+=	${DOCS_TARBALL}:docs
-EXTRACT_ONLY=	Xalan-C_${PORTVERSION:S/./_/g}-src${EXTRACT_SUFX}
-.endif
 
 MAINTAINER=	bzeeb+freebsdports@zabbadoz.net
 COMMENT=	XSLT processor from the Apache XML Project
 
+OPTIONS=	INMEM "Use inmem locale system." on \
+		ICU "Use ICU locale system." off \
+		NLS "Use nls locale system." off \
+		TRANSCODER_ICU "Use ICU transcoder (if used in xerces-c2)." off \
+		SAMPLES "Copy sample binaries and sources." on \
+		PORTDOCS "Copy documentation." on \
+		DEBUG "Include debugging information, do not strip." off
+
+.include <bsd.port.pre.mk>
+
+# move this further down though portlint might not like it but without
+# this I will not be able to make use of make config in the future.
+.if defined(WITH_DEBUG)
+PKGNAMESUFFIX+=		-debug
+.endif
+.if defined(WITHOUT_PORTDOCS)
+NOPORTDOCS=	yes
+.endif
 .if !defined(NOPORTDOCS)
+DISTFILES+=	${DOCS_TARBALL}:docs
+EXTRACT_ONLY=	Xalan-C_${PORTVERSION:S/./_/g}-src${EXTRACT_SUFX}
 DOCS_TARBALL=	Xalan-C_${PORTVERSION:S/./_/g}-docs${EXTRACT_SUFX}
 .endif
 
 # we need the _extracted_ xerces-c2 port sources to build this one
 # (installed version of port is enough)
-XERCESC_LIB_VER?=	25
+XERCESC_LIB_VER?=	26
 LIB_DEPENDS+=	xerces-c.${XERCESC_LIB_VER}:${PORTSDIR}/textproc/xerces-c2
 XERCESCROOT?=	${LOCALBASE}
 
@@ -50,8 +63,18 @@ CONFIGURE_ENV+=		XALANCROOT=${WRKSRC}
 CONFIGURE_ENV+=		XERCESCROOT=${XERCESCROOT}
 CONFIGURE_ENV+=		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 			PTHREAD_LIBS="${PTHREAD_LIBS}"
-CONFIGURE_ARGS+=	-p freebsd -c ${CC} -x ${CXX} \
+CONFIGURE_ARGS+=	-p freebsd -c ${CC} -x ${CXX} -l ${PTHREAD_LIBS} \
 				-z -I${LOCALBASE}/include -C --prefix=${PREFIX}
+
+.if defined(WITH_INMEM)
+LOCALSYS=		inmem
+.endif
+.if defined(WITH_ICU)
+LOCALSYS=		icu
+.endif
+.if defined(WITH_NLS)
+LOCALSYS=		nls
+.endif
 
 .if !defined(LOCALSYS)
 CONFIGURE_ARGS+=	-m inmem
@@ -62,7 +85,7 @@ PLIST_SUB+=		LOCALSYS_NLS="@comment "
 CONFIGURE_ARGS+=	-m icu
 PLIST_SUB+=		LOCALSYS_INMEM=""
 PLIST_SUB+=		LOCALSYS_NLS="@comment "
-TRANSCODER=		icu
+WITH_TRANSCODER_ICU=	icu
 .elif (${LOCALSYS} == "nls")
 CONFIGURE_ARGS+=	-m nls
 PLIST_SUB+=		LOCALSYS_INMEM="@comment "
@@ -74,7 +97,7 @@ PLIST_SUB+=		LOCALSYS_NLS="@comment "
 .endif
 .endif
 
-.if defined(TRANSCODER) && (${TRANSCODER} == "icu")
+.if defined(WITH_TRANSCODER_ICU)
 PKGNAMESUFFIX+=		-icu
 LIB_DEPENDS+=		icuuc.28:${PORTSDIR}/devel/icu2
 ICUROOT?=		${LOCALBASE}
@@ -91,17 +114,9 @@ MAKE_ENV+=		LDFLAGS='-L${LOCALBASE}/lib -liconv'
 PLIST_SUB+=		ICUDEP="@comment "
 .endif
 
-.if defined(DEBUG)
+.if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=	-d
 STRIP=
-.endif
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
-BROKEN=			"Does not compile on FreeBSD >= 5.x"
-.else
-BROKEN=			"Broken dependency"
 .endif
 
 .if defined(ARCH) && \
@@ -119,7 +134,7 @@ PLIST_SUB+=		XALANC_LIB=${XALANC_LIB} \
 				XALANMSG_LIB=${XALANMSG_LIB} \
 				XALANC_LIB_VERSION=${XALANC_LIB_VERSION}
 
-.if !defined(NO_SAMPLES)
+.if !defined(WITHOUT_SAMPLES)
 PLIST_SUB+=	NO_SAMPLES=""
 ALL_TARGET?=	all samples
 SAMPLE_BINS=	CompileStylesheet DocumentBuilder ExternalFunction \
@@ -135,30 +150,21 @@ PLIST_SUB+=	NO_SAMPLES="@comment "
 PORTDOCS=	*
 .endif
 
-pre-everything::
-.if !defined(BATCH) && !defined(PACKAGE_BUILDING)
-	@${ECHO} ''
-	@${ECHO} 'You may use the following build options by defining'
-	@${ECHO} 'them on the command line with -D'
-	@${ECHO} ''
-	@${ECHO} 'NO_SAMPLES	do not copy sample binaries and sources'
-	@${ECHO} 'NOPORTDOCS	do not include documentation'
-	@${ECHO} 'DEBUG		include debugging information, do not strip'
-	@${ECHO} ''
-	@${ECHO} 'Also you may set the following options (without -D):'
-	@${ECHO} ''
-	@${ECHO} 'LOCALSYS=[inmem|nls|icu]	default:inmem'
-	@${ECHO} 'TRANSCODER=icu	(most likely if xerces-c2 also' \
-					'compiled with icu support)'
-	@${ECHO} ''
-	@/bin/sleep 2
-.endif
+SCRIPTS_ENV=	WITH_INMEM="${WITH_INMEM}" \
+		WITH_ICU="${WITH_ICU}" \
+		WITH_NLS="${WITH_NLS}"
+
+pre-extract:
+	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/check-config-options
+
+post-patch:
+	${RM} -f ${WRKSRC}/src/xalanc/PlatformSupport/XalanArrayAllocator.hpp.orig
 
 post-install:
-.if !defined(DEBUG)
+.if !defined(WITH_DEBUG)
 	@${STRIP_CMD} ${PREFIX}/lib/${XALANC_LIB}
 .endif
-.if !defined(NO_SAMPLES)
+.if !defined(WITHOUT_SAMPLES)
 .for i in ${SAMPLE_BINS}
 	@${INSTALL_PROGRAM} ${WRKSRC}/bin/$i ${PREFIX}/bin
 .endfor
@@ -171,8 +177,8 @@ post-install:
 	cd ${DOCSDIR} && \
 		${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
 		${_DISTDIR}/${DOCS_TARBALL} ${EXTRACT_AFTER_ARGS} && \
-	${MV} ${DOCSDIR}/Xalan-C_${PORTVERSION:S/./_/g}-docs/* ${DOCSDIR} && \
-	${RMDIR} ${DOCSDIR}/Xalan-C_${PORTVERSION:S/./_/g}-docs
+	${MV} ${DOCSDIR}/docs/* ${DOCSDIR} && \
+	${RMDIR} ${DOCSDIR}/docs
 .endif
 
 post-clean:

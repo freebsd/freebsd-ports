@@ -1,12 +1,11 @@
-! taken from xalan-c CVS
---- samples/ThreadSafe/ThreadSafe.cpp.orig	Sun Feb 29 21:07:39 2004
-+++ samples/ThreadSafe/ThreadSafe.cpp	Sun Feb 29 21:07:55 2004
-@@ -95,7 +95,7 @@
- #elif defined(XALAN_POSIX2_AVAILABLE)
- #include <pthread.h>
- #include <unistd.h>
--    typedef   unsigned long     theThreadIDType;
-+    typedef   pthread_t         theThreadIDType;
-     typedef   pthread_t         theThreadType;
- 
- #else
+--- src/xalanc/Makefile.in.orig	Mon Dec 13 22:00:00 2004
++++ src/xalanc/Makefile.in	Mon Dec 13 22:01:57 2004
+@@ -253,7 +253,7 @@
+ 	$(MKINSTALLDIRS) $(DESTDIR)/$(includedir)/xalanc
+ 	for hdir in $(ALL_HEADERS_DIRS); do \
+ 	  $(MKINSTALLDIRS) $(DESTDIR)/$(includedir)/xalanc/$$hdir; \
+-	  cp $(XALANCROOT)/src/xalanc/$$hdir/*.h* \
++	  $(INSTALL_DATA) $(XALANCROOT)/src/xalanc/$$hdir/*.h* \
+              $(DESTDIR)/$(includedir)/xalanc/$$hdir \
+ 	     2> /dev/null; \
+ 	done
