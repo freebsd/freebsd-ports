@@ -1,0 +1,15 @@
+bin/mutt
+man/man1/mutt.1.gz
+share/misc/Muttrc
+share/misc/mime.types
+share/doc/mutt/manual-1.html
+share/doc/mutt/manual-2.html
+share/doc/mutt/manual-3.html
+share/doc/mutt/manual-4.html
+share/doc/mutt/manual-5.html
+share/doc/mutt/manual-6.html
+share/doc/mutt/manual-7.html
+share/doc/mutt/manual-8.html
+share/doc/mutt/manual-9.html
+share/doc/mutt/manual.html
+share/doc/mutt/manual.txt
