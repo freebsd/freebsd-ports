@@ -16,8 +16,7 @@ MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/ \
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	The cyrus mail server, supporting POP3 and IMAP4 protocols
 
-LIB_DEPENDS=	sasl2.2:${PORTSDIR}/security/cyrus-sasl2 \
-		db3.3:${PORTSDIR}/databases/db3
+LIB_DEPENDS=	sasl2.2:${PORTSDIR}/security/cyrus-sasl2
 BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend \
 		${LOCALBASE}/sbin/saslauthd:${PORTSDIR}/security/cyrus-sasl2
 
@@ -38,11 +37,11 @@ USE_BDB_VER=	${WITH_BDB_VER}
 USE_BDB_VER=	3
 .endif
 .if ${USE_BDB_VER} == 41
-LIB_DEPENDS=	db41.1:${PORTSDIR}/databases/db41
+LIB_DEPENDS+=	db41.1:${PORTSDIR}/databases/db41
 .elif ${USE_BDB_VER} == 4
-LIB_DEPENDS=	db4.0:${PORTSDIR}/databases/db4
+LIB_DEPENDS+=	db4.0:${PORTSDIR}/databases/db4
 .elif ${USE_BDB_VER} == 3
-LIB_DEPENDS=	db3.3:${PORTSDIR}/databases/db3
+LIB_DEPENDS+=	db3.3:${PORTSDIR}/databases/db3
 .else
 BROKEN=		"WITH_BDB_VER must be 3, 4 or 41"
 .endif
