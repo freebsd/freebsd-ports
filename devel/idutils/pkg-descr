@@ -13,4 +13,6 @@ Internet led by Tom Horsley <Tom.Horsley@mail.hcsc.com>.  Tom released
 has resumed maintenance and is releasing an improved version 3 under GPL.
 
 Version 3 is an interim release.  Version 4 will follow in the coming
-months and include a cscope clone plus other improvements.
+months and include a cscope clone plus other improvements.  This
+version is an improved version of version 3 (which hasn't been updated
+since 1996!), it now understands C++.
