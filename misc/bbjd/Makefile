@@ -3,11 +3,11 @@
 # Date created:		3 February 1999
 # Whom:			Dima Sivachenko
 #
-# $Id: $
+# $Id: Makefile,v 1.1.1.1 1999/03/06 16:41:53 billf Exp $
 #
 
 DISTNAME=	bbjd-1.01
-CATEGORIES=	misc math
+CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	games/strategy
 
