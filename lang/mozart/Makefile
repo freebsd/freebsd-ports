@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mozart
-PORTVERSION=	1.2.3.20011201
-PORTREVISION=	1
+PORTVERSION=	1.2.4.20020829
 CATEGORIES=	lang tk83
 MASTER_SITES=	ftp://ftp.mozart-oz.org/pub/mozart/${PORTVERSION}/tar/ \
 		ftp://ftp.sics.se/pub/mozart/${PORTVERSION}/tar/
