@@ -1,0 +1,9 @@
+include/tremor/config_types.h
+include/tremor/ivorbiscodec.h
+include/tremor/ivorbisfile.h
+include/tremor/ogg.h
+include/tremor/os_types.h
+lib/libvorbisidec.a
+lib/libvorbisidec.so
+lib/libvorbisidec.so.1
+@dirrm include/tremor

@@ -161,6 +161,7 @@
     SUBDIR += libsidplay
     SUBDIR += libsidplay2
     SUBDIR += libsndfile
+    SUBDIR += libtremor
     SUBDIR += libvorbis
     SUBDIR += libworkman
     SUBDIR += linux-arts
