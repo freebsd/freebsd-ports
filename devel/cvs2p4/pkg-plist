@@ -3,6 +3,7 @@ cvs2p4/MANIFEST
 cvs2p4/NEWS
 cvs2p4/README
 cvs2p4/bin/dochanges
+cvs2p4/bin/dolabels
 cvs2p4/bin/genchanges
 cvs2p4/bin/genmetadata
 cvs2p4/bin/revmap
@@ -17,6 +18,8 @@ cvs2p4/test/norm
 cvs2p4/test/p4_changes_-l.good
 cvs2p4/test/p4_describe.good
 cvs2p4/test/p4_describe.good-r97.3
+cvs2p4/test/p4_filesat.good
+cvs2p4/test/p4_labels.good
 cvs2p4/test/runtest
 cvs2p4/test/space file,v
 @dirrm cvs2p4/test
