@@ -22,6 +22,12 @@ USE_RUBY_EXTCONF=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+.include <bsd.port.pre.mk>
+
+.if ${RUBY_VER} >= 1.7
+MAKE_ARGS=	sitelibdir='$$(rubylibdir)'
+.endif
+
 do-extract:
 	${MKDIR} ${WRKDIR}
 	${LN} -sf `cd ${PORTSDIR}/${RUBY_PORT}; ${MAKE} -V WRKDIR`/${PORTNAME} ${WRKDIR}/
@@ -29,4 +35,4 @@ do-extract:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
