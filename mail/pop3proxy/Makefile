@@ -15,6 +15,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	mbr@FreeBSD.org
 COMMENT=	POP3 Proxy Server derived from UP IMAP Proxy
 
+BROKEN=		Checksum mismatch
+
 GNU_CONFIGURE=	YES
 USE_AUTOCONF_VER=213
 USE_RC_SUBR=	YES
