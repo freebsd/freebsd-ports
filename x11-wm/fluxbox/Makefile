@@ -6,14 +6,10 @@
 #
 
 PORTNAME=	fluxbox
-PORTVERSION=	0.1.9
+PORTVERSION=	0.1.10
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-
-PATCH_SITES=	http://fluxbox.sourceforge.net/download/patches/
-PATCHFILES=	fluxbox-0.1.9-bugfix2.patch
-PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	hendrik@scholz.net
 
