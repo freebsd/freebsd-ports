@@ -1,0 +1,11 @@
+--- help.c.orig	Sat Dec 25 17:57:30 1999
++++ help.c	Sat Dec 25 17:56:57 1999
+@@ -137,7 +137,7 @@
+ 		/*
+ 		 * write the line to pager, if possible
+ 		 */
+-	} while(fputs(buf, cmd) > 0);
++	} while (fputs(buf, cmd) == 0);
+ 
+ 	/*
+ 	 * all done, EOF or error, so just clean up
