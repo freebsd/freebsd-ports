@@ -8,9 +8,10 @@
 PORTNAME=	vtun
 PORTVERSION=	2.5
 CATEGORIES=	net
-MASTER_SITES=	http://vtun.sourceforge.net/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	kevlo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Virtual Tunnels over TCP/IP networks with traffic shaping
 
 LIB_DEPENDS=	lzo.1:${PORTSDIR}/archivers/lzo
