@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	tinyca
-PORTVERSION=	0.6.5
+PORTVERSION=	0.6.6
 CATEGORIES=	security net
 MASTER_SITES=	http://tinyca.sm-zone.net/ \
-		http://tinyca.sm-zone.net/old
+		http://tinyca.sm-zone.net/old/
 
 MAINTAINER=	Janos.Mohacsi@bsd.hu
 COMMENT=	Simple graphical interface to manage a small Certification Authority
