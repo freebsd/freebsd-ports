@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	demime
-PORTVERSION= 	1.1c
+PORTVERSION=	1.1d
 CATEGORIES=	mail textproc
 MASTER_SITES=	http://majordomo.squawk.com/njs/demime/:demime \
 		http://scifi.squawk.com/:junkmail
