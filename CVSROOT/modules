@@ -4157,6 +4157,7 @@ linpack		ports/math/linpack
 linphone	ports/net/linphone
 linplasma	ports/graphics/linplasma
 linpopup	ports/net/linpopup
+linux-XFree86-libs	ports/x11/linux-XFree86-libs
 linux-ac3d	ports/graphics/linux-ac3d
 linux-acu	ports/sysutils/linux-acu
 linux-afaapps	ports/sysutils/linux-afaapps
