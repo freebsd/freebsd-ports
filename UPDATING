@@ -6,6 +6,16 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20041224:
+  AFFECTS: users of sysutils/portupgrade and lang/ruby18
+  AUTHOR: knu@FreeBSD.org
+
+  Please upgrade sysutils/portupgrade prior to lang/ruby18, or
+  pkgdb(1) may coredump with a double free() problem from a misuse (or
+  a "feature") of the DL module.
+
+  In that case, you can reinstall sysutils/portupgrade manually.
+
 20041222:
   AFFECTS: users of security/clamav, security/clamav-devel
   AUTHOR: jylefort@brutele.be
@@ -275,7 +285,7 @@ upgrades.
   The format of PREFIX/etc/rskkserv.conf has changed in version 2.95.
   Please update your configuration file before restarting the server
   using PREFIX/share/examples/rskkserv/conf-o2n.rb and referring to
-  PREFIX/etc/rskkserv.conf.sample.
+  PREFIX/share/examples/rskkserv/rskkserv.conf.sample.
 
 20041031:
   AFFECTS: users of databases/mysql40-server
