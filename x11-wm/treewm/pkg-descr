@@ -1,0 +1,9 @@
+treewm is a window manager that tries to implement a new concept. In addition to
+the client windows the user can create desktops which can themselves contain
+windows and desktops. By arranging the windows in such a tree the user is able
+to manage his tasks efficiently.
+
+See also the author's website about treewm:
+  WWW: http://treewm.sourceforge.net/
+and mine:
+  WWW: http://www.informatik.uni-frankfurt.de/~polzer/treewmdurchnull/
