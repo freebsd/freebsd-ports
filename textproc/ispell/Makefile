@@ -30,6 +30,7 @@ EXTRA_DICT=
 MAKE_FLAGS=	TMPDIR=${WRKDIR} -f
 ALL_TARGET=
 BUILDHASH=	${WRKSRC}/buildhash
+UNSQ=		${WRKSRC}/unsq
 DATADIR=	${PREFIX}/share/ispell
 
 .if (!defined(ISPELL_FR) && !defined(ISPELL_SE) && !defined(ISPELL_BR) && !defined(ISPELL_DENEU) && !defined(ISPELL_DEALT) && !defined(ISPELL_BRITISH) && !defined(ISPELL_NO) && !defined(ISPELL_NL) && !defined(ISPELL_DA) && !defined(ISPELL_AF))
@@ -69,12 +70,10 @@ EXTRA_DICT+=	${BRDISTFILE}
 EXTRACT_ONLY+=	${BRDISTFILE}
 .endif
 .if defined(ISPELL_DENEU)
-DENEUDISTFILE=	igerman98-19991219.tar.gz
-MASTER_SITES+=	http://members.xoom.com/maccy/ispell/dict/ \
+DENEUDISTFILE=	igerman98-20001109.tar.bz2
+MASTER_SITES+=	http://www.suse.de/~bjacke/igerman98/dict/ \
 		ftp://student.physik.uni-dortmund.de/pub/users/jacke/ispell/
 EXTRA_DICT+=	${DENEUDISTFILE}
-EXTRACT_ONLY+=	${DENEUDISTFILE}
-FETCH_BEFORE_ARGS+=	-b		# HTTP Workaround at Xoom
 .endif
 .if defined(ISPELL_DEALT)
 DEALTDISTFILE=	hk-deutsch.tar.gz
@@ -125,6 +124,9 @@ post-extract:
 	@${MKDIR} ${WRKDIR}/hk-deutsch
 	@${TAR} -C ${WRKDIR}/hk-deutsch/ -zxf ${PORTSDIR}/distfiles/${DEALTDISTFILE}
 .endif
+.if defined(ISPELL_DENEU)
+	@${TAR} -C ${WRKDIR}/ -yxf ${DISTDIR}/${DENEUDISTFILE}
+.endif
 .if defined(ISPELL_NO)
 	@${MKDIR} ${WRKDIR}/inorsk
 	@${TAR} -C ${WRKDIR}/inorsk/ -zxf ${PORTSDIR}/distfiles/${NODISTFILE}
@@ -138,7 +140,7 @@ post-patch:
 	@cd ${WRKDIR}/${BRDISTFILE:S/.tar.gz$//} && ${PATCH} < ${FILESDIR}/BR.patch 2>/dev/null
 .endif
 .if defined(ISPELL_DENEU)
-	@cd ${WRKDIR} && ${PATCH} < ${FILESDIR}/DENEU.patch 2>/dev/null
+	@cd ${WRKDIR}/${DENEUDISTFILE:S=.tar.bz2$==} && ${PATCH} < ${FILESDIR}/DENEU.patch 2>/dev/null
 .endif
 .if defined(ISPELL_SE)
 	@cd ${WRKDIR} && ${PATCH} < ${FILESDIR}/SE.patch 2>/dev/null
@@ -165,8 +167,9 @@ post-configure:
 
 post-build:
 .if defined(ISPELL_DENEU)
-	@cd ${WRKDIR}/${DENEUDISTFILE:S=.tar.gz==} && \
-		${MAKE} ${MAKEFLAGS} BUILDHASH=${BUILDHASH} german.hash && \
+	@cd ${WRKDIR}/${DENEUDISTFILE:S=.tar.bz2==} && \
+		${MAKE} ${MAKEFLAGS} UNSQ=${UNSQ} BUILDHASH=${BUILDHASH} \
+			german.hash && \
 		${MV} german.hash ndeutsch.hash && ${MV} german.aff ndeutsch.aff
 .endif
 .if defined(ISPELL_DEALT)
