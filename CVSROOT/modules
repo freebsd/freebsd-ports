@@ -6605,7 +6605,6 @@ rox-filer	ports/x11-fm/rox-filer
 rox-session	ports/x11-fm/rox-session
 roxen		ports/www/roxen
 roxirc		ports/irc/roxirc
-rp-pppoe	ports/net/rp-pppoe
 rpc		ports/math/rpc
 rpc.lockd	src/usr.sbin/rpc.lockd
 rpc.rquotad	src/libexec/rpc.rquotad
