@@ -34,6 +34,7 @@ OPTIONS=	BCMATH          "bc style precision math functions" off \
 		DIO             "Direct I/O support" off \
 		DOMXML          "DOM support" off \
 		EXIF            "EXIF support" off \
+		FILEINFO        "fileinfo support" off \
 		FILEPRO         "filePro support" off \
 		FRIBIDI         "FriBidi support" off \
 		FTP             "FTP support" off \
@@ -95,7 +96,7 @@ OPTIONSFILE?=	${PORT_DBDIR}/${LATEST_LINK}/options
 .endif
 
 ALL_OPTIONS=	BCMATH BZ2 CALENDAR CRACK CTYPE CURL DBA DBASE DBX DIO \
-		DOMXML EXIF FILEPRO FRIBIDI FTP GD GETTEXT \
+		DOMXML EXIF FILEINFO FILEPRO FRIBIDI FTP GD GETTEXT \
 		GMP ICONV IMAGICK IMAP INTERBASE LDAP MBSTRING MCAL MCRYPT \
 		MCVE MHASH MIME_MAGIC MING MNOGOSEARCH MSSQL MYSQL NCURSES \
 		ODBC OPENSSL ORACLE OVERLOAD PANDA PCNTL PCRE PDF PGSQL POSIX \
