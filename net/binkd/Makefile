@@ -8,7 +8,7 @@
 PORTNAME=	binkd
 PORTVERSION=	0.9.4
 CATEGORIES=	net
-MASTER_SITES=	ftp://happy.kiev.ua/pub/fidosoft/mailer/binkd/
+MASTER_SITES=	http://2f.ru/binkd/
 DISTNAME=	binkd094
 
 MAINTAINER=	dsh@vlink.ru
