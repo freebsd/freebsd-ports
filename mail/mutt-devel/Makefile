@@ -72,7 +72,7 @@
 
 PORTNAME=	mutt-devel
 PORTVERSION=	1.5.4
-PORTREVISION?=	7
+PORTREVISION?=	8
 CATEGORIES+=	mail ipv6
 .if defined(WITH_MUTT_NNTP)
 CATEGORIES+=	news
@@ -94,11 +94,14 @@ MAINTAINER?=	udo.schweigert@siemens.com
 COMMENT?=	The Mongrel of Mail User Agents (part Elm, Pine, Mush, mh, etc.)
 
 DIST_SUBDIR=    mutt
+DOCSDIR?=	${PREFIX}/share/doc/mutt
+EXAMPLESDIR?=	${PREFIX}/share/examples/mutt
+DATADIR?=	${PREFIX}/share/mutt
+
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV=	CC="${CC} -I${LOCALBASE}/include" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--enable-flock --disable-fcntl --with-ssl=${OPENSSLBASE} \
-		--with-sharedir=${PREFIX}/share/mutt \
-		--with-docdir=${PREFIX}/share/doc/mutt \
+		--with-sharedir=${PREFIX}/share/mutt --with-docdir=${DOCSDIR} \
 		--sysconfdir=${PREFIX}/etc --enable-external-dotlock \
 		--with-libiconv-prefix=${PREFIX} --enable-pop --enable-imap
 .if defined(MUTT_CONFIGURE_ARGS)
@@ -115,7 +118,7 @@ SCRIPTS_ENV=	WRKDIR="${WRKDIR}"
 
 .include <bsd.port.pre.mk>
 
-CD_PATCH_VERSION=	1.5.3
+CD_PATCH_VERSION=	1.5.4
 .if !defined(VVV_PATCH_VERSION)
 VVV_PATCH_VERSION=	${PORTVERSION}
 .endif
@@ -217,12 +220,11 @@ PATCHFILES+=	patch-${VVV_PATCH_VERSION}.vvv.initials.gz:vvv \
 SGML_NEEDED=	yes
 .endif
 .if defined(WITH_MUTT_EDIT_THREADS)
-PATCHFILES+=	patch-${CD_PATCH_VERSION}.cd.edit_threads.9.3:cd
+PATCHFILES+=	patch-${CD_PATCH_VERSION}.cd.edit_threads.9.5:cd
 CONFIGURE_ARGS+=	--enable-imap-edit-threads
 SGML_NEEDED=	yes
 .endif
 .if defined(WITH_MUTT_SIGNATURE_MENU)
-.error The WITH_MUTT_SIGNATURE_MENU is not available at the moment.
 PATCHFILES+=	patch-${CD_PATCH_VERSION}.cd.signatures_menu.2.1:cd
 SGML_NEEDED=	yes
 .endif
@@ -241,6 +243,8 @@ MAN5=		muttrc.5 mbox.5
 post-patch::
 	@${REINPLACE_CMD} -e 's,/usr/bin/gpg,${LOCALBASE}/bin/gpg,g' \
 		${WRKSRC}/contrib/gpg.rc
+	${REINPLACE_CMD} -E -e 's|@samplesdir@|${EXAMPLESDIR}|g' \
+		${WRKSRC}/contrib/Makefile.in
 
 pre-configure::
 	@(cd ${WRKSRC}; ${SETENV} ${AUTOMAKE_ENV} ${ACLOCAL} -I m4)
@@ -278,8 +282,10 @@ post-patch::
 SCRIPTS_ENV+=	MUTT_PORTDOCS="yes"
 post-build:
 	${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-doc-ref
-	printf ",s|\$${PREFIX}|%s|g\nw\nq\n" ${PREFIX} | \
-		ed -s ${WRKSRC}/doc/mutt.man
+	${REINPLACE_CMD} -E -e 's|\$$\{PREFIX\}|${PREFIX}|g' \
+		-e 's|\$$\{DOCSDIR\}|${DOCSDIR}|g' \
+		-e 's|\$$\{EXAMPLESDIR\}|${EXAMPLESDIR}|g' \
+		${WRKSRC}/doc/mutt.man
 .if ! defined(WITHOUT_MUTT_HTML)
 SGML_USED=	yes
 .endif
@@ -306,23 +312,18 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/Muttrc ${PREFIX}/etc/Muttrc.dist
 .if !defined(NOPORTDOCS)
 	@${ECHO} "===>   Installing Mutt documentation"
-	@${MKDIR} ${PREFIX}/share/doc/mutt && \
-		${CHMOD} a+rx ${PREFIX}/share/doc/mutt
-	@cd ${WRKSRC}/doc ; ${INSTALL_MAN} manual.txt \
-		PGP-Notes.txt ../ABOUT-NLS ../contrib/language* \
-		${PREFIX}/share/doc/mutt
+	@${MKDIR} ${DOCSDIR} && ${CHMOD} a+rx ${DOCSDIR}
+	@cd ${WRKSRC}/doc ; ${INSTALL_MAN} manual.txt PGP-Notes.txt \
+		../ABOUT-NLS ../contrib/language*  ${DOCSDIR}
 .if ${SGML_USED} == yes
-	@cd ${WRKSRC}/doc ; ${INSTALL_MAN} manual.latin1 manual.ps \
-		${PREFIX}/share/doc/mutt
+	@cd ${WRKSRC}/doc ; ${INSTALL_MAN} manual.latin1 manual.ps ${DOCSDIR}
 .endif
 .if defined(WITH_MUTT_NNTP)
-	@cd ${WRKSRC} ; ${INSTALL_MAN} ChangeLog.nntp \
-		${PREFIX}/share/doc/mutt
+	@cd ${WRKSRC} ; ${INSTALL_MAN} ChangeLog.nntp ${DOCSDIR}
 .endif
 .if ! defined(WITHOUT_MUTT_HTML)
-	@${MKDIR} ${PREFIX}/share/doc/mutt/html && \
-		${CHMOD} a+rx ${PREFIX}/share/doc/mutt/html
-	${INSTALL_MAN} ${WRKSRC}/doc/*.html ${PREFIX}/share/doc/mutt/html
+	@${MKDIR} ${DOCSDIR}/html && ${CHMOD} a+rx ${DOCSDIR}/html
+	${INSTALL_MAN} ${WRKSRC}/doc/*.html ${DOCSDIR}/html
 .endif
 .endif
 .if defined(USE_SLANG)
