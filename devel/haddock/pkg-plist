@@ -1,8 +1,8 @@
 bin/haddock
-bin/haddock-0.2
-lib/haddock-0.2/haddock.bin
-lib/haddock-0.2/haddock.css
-lib/haddock-0.2/haskell_icon.gif
+bin/haddock-0.3
+lib/haddock-0.3/haddock.bin
+lib/haddock-0.3/haddock.css
+lib/haddock-0.3/haskell_icon.gif
 %%PORTDOCS%%share/doc/haddock/docbook.css
 %%PORTDOCS%%share/doc/haddock/haddock.html
 %%PORTDOCS%%share/doc/haddock/introduction.html
@@ -11,11 +11,11 @@ lib/haddock-0.2/haskell_icon.gif
 %%PORTDOCS%%share/doc/haddock/markup.html
 %%PORTDOCS%%share/doc/haddock/module-attributes.html
 %%PORTDOCS%%share/doc/haddock/x251.html
-%%PORTDOCS%%share/doc/haddock/x276.html
-%%PORTDOCS%%share/doc/haddock/x281.html
-%%PORTDOCS%%share/doc/haddock/x322.html
-%%PORTDOCS%%share/doc/haddock/x337.html
-%%PORTDOCS%%share/doc/haddock/x405.html
+%%PORTDOCS%%share/doc/haddock/x275.html
+%%PORTDOCS%%share/doc/haddock/x280.html
+%%PORTDOCS%%share/doc/haddock/x321.html
+%%PORTDOCS%%share/doc/haddock/x336.html
+%%PORTDOCS%%share/doc/haddock/x404.html
 %%PORTDOCS%%share/doc/haddock/x57.html
 %%PORTDOCS%%share/doc/haddock/stylesheet-images/caution.gif
 %%PORTDOCS%%share/doc/haddock/stylesheet-images/home.gif
@@ -29,6 +29,6 @@ lib/haddock-0.2/haskell_icon.gif
 %%PORTDOCS%%share/doc/haddock/stylesheet-images/toc-plus.gif
 %%PORTDOCS%%share/doc/haddock/stylesheet-images/up.gif
 %%PORTDOCS%%share/doc/haddock/stylesheet-images/warning.gif
-@dirrm lib/haddock-0.2
+@dirrm lib/haddock-0.3
 %%PORTDOCS%%@dirrm share/doc/haddock/stylesheet-images
 %%PORTDOCS%%@dirrm share/doc/haddock
