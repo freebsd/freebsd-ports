@@ -1,0 +1,29 @@
+bin/altget
+bin/altwalk
+lib/perl5/site_perl/%%PERL_VER%%/Altoids.pm
+lib/perl5/site_perl/%%PERL_VER%%/altoids.pl
+share/altoids/CISCO-ATM-IF-MIB.oid
+share/altoids/CISCO-LECS-MIB.oid
+share/altoids/CISCO-LES-MIB.oid
+share/altoids/IF-MIB.oid
+share/altoids/LAN-EMULATION-CLIENT-MIB.oid
+share/altoids/NOVELL-IPX-MIB.oid
+share/altoids/NOVELL-NLSP-MIB.oid
+share/altoids/NOVELL-RIPSAP-MIB.oid
+share/altoids/OLD-CISCO-INTERFACES-MIB.oid
+share/altoids/OLD-CISCO-NOVELL-MIB.oid
+share/altoids/RFC1213-MIB.oid
+share/altoids/RFC1229-MIB.oid
+share/altoids/RFC1231-MIB.oid
+share/altoids/RFC1243-MIB.oid
+share/altoids/RFC1253-MIB.oid
+share/altoids/RFC1271-MIB.oid
+share/altoids/RFC1285-MIB.oid
+share/altoids/RFC1315-MIB.oid
+share/altoids/RFC1381-MIB.oid
+share/altoids/RFC1382-MIB.oid
+share/altoids/RFC1398-MIB.oid
+share/altoids/RFC1406-MIB.oid
+@dirrm share/altoids
+%%PORTDOCS%%share/doc/Altoids/README
+%%PORTDOCS%%@dirrm share/doc/Altoids

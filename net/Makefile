@@ -411,6 +411,7 @@
     SUBDIR += osrtspproxy
     SUBDIR += ossp-sa
     SUBDIR += p0f
+    SUBDIR += p5-Altoids
     SUBDIR += p5-Archie
     SUBDIR += p5-BIND-Conf_Parser
     SUBDIR += p5-Cflow
