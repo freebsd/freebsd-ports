@@ -2,6 +2,7 @@ bin/devtodo
 bin/tda
 bin/tdd
 bin/tde
+bin/tdl
 bin/tdr
 bin/todo
 @unexec if cmp -s %D/etc/todorc %D/etc/todorc.sample; then rm -f %D/etc/todorc; fi
