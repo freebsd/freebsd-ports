@@ -7,6 +7,7 @@
 
 PORTNAME=	gnome2-fifth-toe
 PORTVERSION=	2.0.3
+PORTREVISION=	1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -17,6 +18,7 @@ MAINTAINER=	gnome@FreeBSD.org
 RUN_DEPENDS=	gnumeric:${PORTSDIR}/math/gnumeric2 \
 		pan:${PORTSDIR}/news/pan2 \
 		xchat:${PORTSDIR}/irc/xchat2 \
+		sodipodi:${PORTSDIR}/graphics/sodipodi \
 		balsa:${PORTSDIR}/mail/balsa2 \
 		gimp-1.3:${PORTSDIR}/graphics/gimp-devel \
 		gnomeicu:${PORTSDIR}/net/gnomeicu2 \
