@@ -3,7 +3,7 @@
 # Date created:			26 Mar. 1996
 # Whom:				Masafumi NAKANE <max@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.4 1996/09/18 12:36:25 max Exp $
+# $Id: Makefile,v 1.5 1996/10/19 04:03:18 max Exp $
 #
 
 DISTNAME=	kakasi-2.2.5
@@ -27,7 +27,7 @@ post-extract:
 
 post-install:
 	@[ -d ${PREFIX}/share/doc/kakasi ] || 				\
-	 /bin/mkdir -p ${PREFIX}/share/doc/kakasi
+	 ${MKDIR} -p ${PREFIX}/share/doc/kakasi
 .for f in README README.jpn src/kakasi.1
 	${INSTALL_DATA} ${WRKSRC}/../$f ${PREFIX}/share/doc/kakasi
 .endfor
