@@ -484,6 +484,7 @@
     SUBDIR += ruby-flex_rb
     SUBDIR += ruby-fnmatch
     SUBDIR += ruby-gemfinder
+    SUBDIR += ruby-gnustep
     SUBDIR += ruby-intl
     SUBDIR += ruby-lapidary
     SUBDIR += ruby-libglade
