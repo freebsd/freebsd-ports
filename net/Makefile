@@ -1,29 +1,20 @@
-# $Id: Makefile,v 1.60 1995/10/20 07:54:54 asami Exp $
+# $Id: Makefile,v 1.61 1995/11/09 07:41:00 asami Exp $
 #
 
-RESTRICTED += Mosaic         # requires Motif, Mosaic itself isn't
-    SUBDIR += apache
     SUBDIR += archie
-    SUBDIR += cern_httpd
-    SUBDIR += cern_linemode
-    SUBDIR += chimera
     SUBDIR += dgd
     SUBDIR += dgd-lpmud
     SUBDIR += dip
     SUBDIR += fspclient
     SUBDIR += gated
-    SUBDIR += gn
     SUBDIR += gopher
     SUBDIR += imm
     SUBDIR += irc
     SUBDIR += ircII
 RESTRICTED += ivs            # crypto, export controlled
-    SUBDIR += lynx
     SUBDIR += mirror
     SUBDIR += moxftp
     SUBDIR += ncftp2
-    SUBDIR += netscape
-    SUBDIR += netscape2
     SUBDIR += nv
     SUBDIR += pcnfsd
     SUBDIR += pmf
@@ -35,13 +26,10 @@ RESTRICTED += ivs            # crypto, export controlled
     SUBDIR += sup
     SUBDIR += tclDP
     SUBDIR += tintin++
-    SUBDIR += tkWWW
     SUBDIR += tkined
     SUBDIR += vic
     BROKEN += wais           # for XFree3.x
-    SUBDIR += wn
     SUBDIR += wu-ftpd
-    SUBDIR += wwwish
     SUBDIR += xarchie
     SUBDIR += xgopher
     SUBDIR += yale-tftpd
