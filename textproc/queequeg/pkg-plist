@@ -1,0 +1,19 @@
+bin/qq
+%%DATADIR%%/abstfilter.py
+%%DATADIR%%/constraint.py
+%%DATADIR%%/convdict.py
+%%DATADIR%%/dict.cdb
+%%DATADIR%%/dictionary.py
+%%DATADIR%%/document.py
+%%DATADIR%%/grammarerror.py
+%%DATADIR%%/markupbase_rev.py
+%%DATADIR%%/output.py
+%%DATADIR%%/postagfix.py
+%%DATADIR%%/pstring.py
+%%DATADIR%%/qq
+%%DATADIR%%/regpat.py
+%%DATADIR%%/sentence.py
+%%DATADIR%%/sgmllib_rev.py
+%%DATADIR%%/texparser.py
+%%DATADIR%%/unification.py
+@dirrm %%DATADIR%%

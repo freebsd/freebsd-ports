@@ -421,6 +421,7 @@
     SUBDIR += py-xmltools
     SUBDIR += py2html
     SUBDIR += pybook
+    SUBDIR += queequeg
     SUBDIR += rand
     SUBDIR += raptor
     SUBDIR += redland
