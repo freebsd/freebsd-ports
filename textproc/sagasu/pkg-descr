@@ -1,0 +1,9 @@
+Sagasu is a GNOME tool to find strings in a set of files. The user specifies 
+the search directory and the set of files to be searched. Double-clicking on 
+a search result launches a user command that can for example load the file in 
+an editor at the appropriate line. The search can optionally ignore CVS 
+directories.
+
+WWW: http://sarrazip.com/dev/sagasu.html
+
+Juan Salaverria -- <rael@vectorstar.net>

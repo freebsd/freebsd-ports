@@ -406,6 +406,7 @@
     SUBDIR += ruby-xtemplate
     SUBDIR += rxp
     SUBDIR += sablotron
+    SUBDIR += sagasu
     SUBDIR += sarep
     SUBDIR += sary
     SUBDIR += saxon
