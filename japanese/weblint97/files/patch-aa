@@ -1,5 +1,5 @@
 --- Makefile.orig	Sat Mar  8 00:12:00 1997
-+++ Makefile	Sun Aug 23 23:57:27 1998
++++ Makefile	Thu Oct 28 03:41:46 1999
 @@ -5,12 +5,15 @@
  
  SHELL    = /bin/sh
@@ -19,11 +19,20 @@
  EXTLIB   = html-ext.pl
  I18NLIB  = htmli18n.pl
  JCODE    = jcode.pl
-@@ -44,11 +47,10 @@
- 	-cp $(JPDIR)/$(JPROGRAM).1 $(JMANDIR)
- 	-cp $(EXTLIB) $(LIBDIR)
+@@ -39,16 +42,14 @@
  	-cp $(I18NLIB) $(LIBDIR)
+ 
+ jinstall: $(JPROGRAM)
+-	-cp $(JPROGRAM) $(BINDIR)
+-	-chmod 755 $(BINDIR)/$(JPROGRAM)
+-	-cp $(JPDIR)/$(JPROGRAM).1 $(JMANDIR)
+-	-cp $(EXTLIB) $(LIBDIR)
+-	-cp $(I18NLIB) $(LIBDIR)
 -	-cp $(JCODE) $(LIBDIR)
++	${BSD_INSTALL_SCRIPT} $(JPROGRAM) $(BINDIR)
++	${BSD_INSTALL_MAN} $(JPDIR)/$(JPROGRAM).1 $(JMANDIR)
++	${BSD_INSTALL_DATA} $(EXTLIB) $(LIBDIR)
++	${BSD_INSTALL_DATA} $(I18NLIB) $(LIBDIR)
  
  euc-jp:
  	patch < $(JPDIR)/euc-jp.patch
