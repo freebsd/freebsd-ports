@@ -15,7 +15,7 @@ MAINTAINER=	nakai@FreeBSD.org
 
 LIB_DEPENDS=	iconv.0:${PORTSDIR}/converters/iconv \
 		gnome.3:${PORTSDIR}/x11/gnomelibs
-BUILD_DEPENDS=	automake:${PORTSDIR}/devel/autoconf
+BUILD_DEPENDS=	automake:${PORTSDIR}/devel/automake
 
 WRKSRC=		${WRKDIR}/dedit-0.5.6
 
@@ -23,7 +23,6 @@ GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
-GNU_CONFIGURE=	yes
 USE_AUTOCONF=	yes
 CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share/gnome \
 		--datadir=${PREFIX}/share/gnome \
