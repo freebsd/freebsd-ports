@@ -8,8 +8,7 @@
 #
 
 PORTNAME=	knowit
-PORTVERSION=	0.8
-PORTREVISION=	1
+PORTVERSION=	0.9
 CATEGORIES=	deskutils
 MASTER_SITES=	http://knowit.sourceforge.net/files/
 
