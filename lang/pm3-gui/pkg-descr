@@ -1,0 +1,8 @@
+These are the low-level GUI libraries for the Polytechnique Montreal
+Modula-3 (PM3) distribution.  Here are the packages included:
+
+X11	images	ui	vbtkit
+
+WWW: http://m3.polymtl.ca/m3/
+
+John Polstra <jdp@FreeBSD.ORG>

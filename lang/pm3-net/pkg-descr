@@ -1,0 +1,8 @@
+These are the low-level networking libraries for the Polytechnique
+Montreal Modula-3 (PM3) distribution.  Here are the packages included:
+
+tcp             tcpextras       udp
+
+WWW: http://m3.polymtl.ca/m3/
+
+John Polstra <jdp@FreeBSD.ORG>
