@@ -2,4 +2,4 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/ParmList/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/ParmList
 @unexec rmdir %D/%%SITE_PERL%%/Class 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/ParmList 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Class 2>/dev/null || true
