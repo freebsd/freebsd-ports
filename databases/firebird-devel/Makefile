@@ -21,6 +21,7 @@ INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS=	%%PREFIX%%/firebird/lib
 MSG_FILE=	${PKGDIR}/pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
+USE_REINPLACE=	yes
 
 ONLY_FOR_ARCHS=	i386
 
@@ -41,10 +42,10 @@ do-extract:
 post-patch:
 	@${SED} 's|%%PREFIX%%|${PREFIX}|g' ${MSG_FILE} > ${PKGMESSAGE}
 .if ${OSVERSION} >= 500016 || ${OSVERSION} >= 430001
-	@${PERL} -pi -e 's,\-ldescrypt,\-lcrypt,g' \
+	@${REINPLACE_CMD} -e 's,\-ldescrypt,\-lcrypt,g' \
 		 ${WRKSRC}/builds/original/prefix.freebsd
 .else
-	@${PERL} -pi -e 's,^crypt_set_format.*,,' ${WRKSRC}/jrd/enc.c
+	@${REINPLACE_CMD} -e 's,^crypt_set_format.*,,' ${WRKSRC}/jrd/enc.c
 .endif
 
 do-configure:

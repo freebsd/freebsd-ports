@@ -18,6 +18,7 @@ MAKE_ENV+=	NABHOME=${WRKSRC} ARCH= PATH=${WRKSRC}/bin:${PATH}
 USE_BISON=	yes
 MAN1=		nab.1
 MANCOMPRESSED=	yes
+USE_REINPLACE=	yes
 
 BINARIES=	matextract      matmul          teLeap          tss_main \
 		matgen          nab             transform       tss_next \
@@ -31,7 +32,7 @@ post-extract:
 	@${CP} ${FILESDIR}/config.h ${WRKSRC}
 
 pre-patch:
-	@${PERL} -pi -e 's,<malloc.h>,<stdlib.h>,' \
+	@${REINPLACE_CMD} -e 's,<malloc.h>,<stdlib.h>,' \
 		${WRKSRC}/cifparse/cifparse.c
 
 post-patch:

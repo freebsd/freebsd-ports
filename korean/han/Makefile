@@ -15,9 +15,10 @@ MAINTAINER=	cjh@FreeBSD.org
 ONLY_FOR_ARCHS=	i386
 
 USE_GMAKE=	YES
+USE_REINPLACE=	yes
 
 pre-patch:
-	@${PERL} -pi -e 's,<malloc.h>,<stdlib.h>,' \
+	@${REINPLACE_CMD} -e 's,<malloc.h>,<stdlib.h>,' \
 		${WRKSRC}/src/vt.c ${WRKSRC}/lib/mem.c
 
 post-configure:

@@ -17,9 +17,10 @@ WRKSRC=		${WRKDIR}/${PORTNAME}20
 MAKEFILE=	makefile
 ALL_TARGET=	nauty
 NO_INSTALL_MANPAGES=yes
+USE_REINPLACE=	yes
 
 post-patch:
-	@${PERL} -pi -e "s,^CFLAGS,#CFLAGS,g" ${WRKSRC}/${MAKEFILE}
+	@${REINPLACE_CMD} -e "s,^CFLAGS,#CFLAGS,g" ${WRKSRC}/${MAKEFILE}
 
 do-install:
 	cd ${WRKSRC}; 	${INSTALL_PROGRAM} dreadnaut dreadnaut1 \

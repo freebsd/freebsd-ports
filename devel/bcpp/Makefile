@@ -16,9 +16,10 @@ MAINTAINER=	buchanon@msu.edu
 WRKSRC=		${WRKDIR}/${DISTNAME}/code
 MAKEFILE=	makefile
 ALL_TARGET=	${PORTNAME}
+USE_REINPLACE=	yes
 
 post-patch:
-	@${PERL5} -pi -e 's,%%PREFIX%%,${PREFIX},g' ${WRKSRC}/bcpp.cpp
+	@${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},g' ${WRKSRC}/bcpp.cpp
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
