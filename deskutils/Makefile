@@ -4,6 +4,7 @@
     SUBDIR += abacus
     SUBDIR += aspostit
     SUBDIR += babytrans
+    SUBDIR += basket
     SUBDIR += bigyear
     SUBDIR += cal
     SUBDIR += cbb
