@@ -182,6 +182,8 @@ share/gnome/scigraphica/python/gtkLeastSquares.py
 share/gnome/scigraphica/python/gtkLeastSquares.pyc
 share/gnome/scigraphica/python/gtkLeastSquares.pyo
 share/gnome/scigraphica/python/pstat.py
+share/gnome/scigraphica/python/pstat.pyc
+share/gnome/scigraphica/python/pstat.pyo
 share/gnome/scigraphica/python/pysga.py
 share/gnome/scigraphica/python/pysga.pyc
 share/gnome/scigraphica/python/pysga.pyo
