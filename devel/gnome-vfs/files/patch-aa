@@ -1,6 +1,6 @@
---- configure.orig	Mon Jan 13 09:43:49 2003
-+++ configure	Tue Jan 14 00:48:38 2003
-@@ -8122,6 +8122,7 @@
+--- configure.orig	Mon Mar 31 06:11:24 2003
++++ configure	Mon Mar 31 18:06:17 2003
+@@ -8344,6 +8344,7 @@
  
  # This can be used to rebuild libtool when needed
  LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
@@ -8,7 +8,7 @@
  
  # Always use our own libtool.
  LIBTOOL='$(SHELL) $(top_builddir)/libtool'
-@@ -12680,8 +12681,8 @@
+@@ -13091,8 +13092,8 @@
    done
  fi
  
@@ -19,7 +19,7 @@
  if test "${ac_cv_lib_bz2_bzCompressInit+set}" = set; then
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
-@@ -12697,11 +12698,11 @@
+@@ -13112,11 +13113,11 @@
  #endif
  /* We use char because int might match the return type of a gcc2
     builtin and then its argument prototype would still apply.  */
@@ -33,7 +33,7 @@
    ;
    return 0;
  }
-@@ -13245,7 +13246,7 @@
+@@ -13858,7 +13859,7 @@
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
  
@@ -41,8 +41,8 @@
 +		LDFLAGS="$LDFLAGS -L$with_openssl_libs -lssl -lcryptofoo -ldl"
  		cat >conftest.$ac_ext <<_ACEOF
  #line $LINENO "configure"
- #include "confdefs.h"
-@@ -13296,9 +13297,9 @@
+ /* confdefs.h.  */
+@@ -13914,9 +13915,9 @@
  
  		msg_openssl="yes"
                  if test x$with_openssl_libs != x/usr/lib; then
@@ -54,11 +54,10 @@
                  fi
  
  
-@@ -14894,7 +14895,7 @@
+@@ -15904,6 +15905,7 @@
  s,@ORBIT_IDL@,$ORBIT_IDL,;t t
  s,@BONOBO_IDLDIR@,$BONOBO_IDLDIR,;t t
  s,@WARN_CFLAGS@,$WARN_CFLAGS,;t t
--s,@PTHREAD_LIB@,$PTHREAD_LIB,;t t
 +s,@PTHREAD_LIB@,$BSD_PTHREAD_LIBS,;t t
  s,@GETTEXT_PACKAGE@,$GETTEXT_PACKAGE,;t t
  s,@USE_NLS@,$USE_NLS,;t t
