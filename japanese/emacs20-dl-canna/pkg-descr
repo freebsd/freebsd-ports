@@ -1,0 +1,15 @@
+Input method module `Canna' for Emacs with dynamic loading enhancement.
+
+This is an input method module Canna for Emacs.
+
+To use Canna, put in your $HOME/.emacs as follows:
+
+	(load "canna")
+	(canna)
+
+This dynamic loading module sources and emacs20 dynamic loading patch
+is placed on the following URL:
+
+	ftp://ftp.jaist.ac.jp/pub/GNU/elisp/emacs-20-dl/
+
+--- Porting by shige <shige@kuis.kyoto-u.ac.jp>.
