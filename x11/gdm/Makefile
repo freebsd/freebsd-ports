@@ -7,7 +7,7 @@
 
 PORTNAME=	gdm
 PORTVERSION=	2.0b4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=		stable/sources/gdm
@@ -36,5 +36,6 @@ pre-patch:
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/config/gnomerc ${PREFIX}/etc/gdm/
+	${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
