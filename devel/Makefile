@@ -244,6 +244,7 @@
     SUBDIR += lincvs
     SUBDIR += linguist
     SUBDIR += linux-libglade
+    SUBDIR += linux-sdl12
     SUBDIR += linux_devtools
     SUBDIR += linux_kdump
     SUBDIR += linuxthreads

@@ -1,0 +1,41 @@
+# New ports collection makefile for:	linux-gtk
+# Date created:				8 October 2001
+# Whom:                         Martin Matuska <matuska@wu-wien.ac.at>
+# Based on:		emulators/linux_base by marcel@FreeBSD.org
+#
+# $FreeBSD$
+#
+
+PORTNAME=	sdl
+PORTVERSION=	1.2.2.1
+CATEGORIES=	devel linux
+MASTER_SITES=	http://www.libsdl.org/release/
+PKGNAMEPREFIX=	linux-
+DISTNAME=	${PORTNAME:U}-${PORTVERSION:S/.1$/-1/}.${MACHINE_ARCH}
+EXTRACT_SUFX=	.rpm
+EXTRACT_ONLY=
+
+MAINTAINER=	matuska@wu-wien.ac.at
+
+BUILD_DEPENDS=	rpm:${PORTSDIR}/archivers/rpm
+
+USE_LINUX_PREFIX=	yes
+LDCONFIG_LINUX=	${LINUXBASE}/sbin/ldconfig
+
+ONLY_FOR_ARCHS=	i386 alpha
+DIST_SUBDIR=	rpm
+NO_BUILD=	yes
+NO_FILTER_SHLIBS=	yes
+PLIST=		${MASTERDIR}/pkg-plist.${MACHINE_ARCH}
+MD5_FILE=	${MASTERDIR}/distinfo.${MACHINE_ARCH}
+
+DBPATH=		/var/lib/rpm
+RPMFLAGS=	--ignoreos --root ${PREFIX} --dbpath ${DBPATH} \
+		--nodeps --replacepkgs
+RPMDIR=		${DISTDIR}/${DIST_SUBDIR}
+
+do-install:
+	@${LOCALBASE}/bin/rpm -U ${RPMFLAGS} ${RPMDIR}/${DISTFILES}
+	@${LDCONFIG_LINUX}
+
+.include <bsd.port.mk>
