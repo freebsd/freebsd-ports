@@ -1,18 +1,18 @@
 bin/starplot
 bin/starconvert
-%%PORTDOCS%%share/doc/starplot/README
-%%PORTDOCS%%share/doc/starplot/examples/example.spec
-%%PORTDOCS%%share/doc/starplot/html/ch1.html
-%%PORTDOCS%%share/doc/starplot/html/images/bayerdes.png
-%%PORTDOCS%%share/doc/starplot/html/images/coords.png
-%%PORTDOCS%%share/doc/starplot/html/images/gcoords.png
-%%PORTDOCS%%share/doc/starplot/html/images/hrdiagram.png
-%%PORTDOCS%%share/doc/starplot/html/index.html
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/examples/example.spec
+%%PORTDOCS%%%%DOCSDIR%%/html/ch1.html
+%%PORTDOCS%%%%DOCSDIR%%/html/images/bayerdes.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/coords.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/gcoords.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/hrdiagram.png
+%%PORTDOCS%%%%DOCSDIR%%/html/index.html
 share/starplot/examples/sample.stars
 share/starplot/examples/test.stars
 @dirrm share/starplot/examples
 @dirrm share/starplot/
-%%PORTDOCS%%@dirrm share/doc/starplot/html/images
-%%PORTDOCS%%@dirrm share/doc/starplot/html
-%%PORTDOCS%%@dirrm share/doc/starplot/examples
-%%PORTDOCS%%@dirrm share/doc/starplot/
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/images
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/
