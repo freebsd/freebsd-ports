@@ -43,6 +43,8 @@ CONFIGURE_ARGS+=	--enable-ldbm \
 			--with-ldbm-api=db2
 .endif
 
+INSTALLS_SHLIB=	yes
+
 BINS=		bin/ldapadd \
 		bin/ldapdelete \
 		bin/ldapmodify \
