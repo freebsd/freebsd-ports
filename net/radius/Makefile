@@ -16,6 +16,8 @@ MAINTAINER=	ports@FreeBSD.org
 RESTRICTED=	redistribution in binary only
 NO_CDROM=	not allowed to charge fee for redistribution
 
+FORBIDDEN=	"Remotely exploitable buffer overflow"
+
 NO_WRKSUBDIR=	yes
 INSTALL_TARGET=	install-all
 MAKE-FLAGS+=	-DPREFIX=${PREFIX}
