@@ -10,6 +10,7 @@ PORTVERSION=	0.4.1
 CATEGORIES=	converters	# ruby
 MASTER_SITES=	http://member.nifty.ne.jp/nokada/archive/
 PKGNAMEPREFIX=	ruby-
+DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
 
