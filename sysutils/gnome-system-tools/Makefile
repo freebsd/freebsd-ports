@@ -27,6 +27,8 @@ USE_LIBTOOL_VER=15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
+GCONF_SCHEMAS=	gnome-system-tools.schemas
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} > 500000

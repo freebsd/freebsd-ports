@@ -32,5 +32,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 MAN1=		gpilot-install-file.1
+GCONF_SCHEMAS=	pilot.schemas
 
 .include <bsd.port.mk>

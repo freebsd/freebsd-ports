@@ -1,7 +1,4 @@
 bin/gst-thumbnail
-@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/gst-thumbnail.schemas > /dev/null || /usr/bin/true
-etc/gconf/schemas/gst-thumbnail.schemas
-@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/gst-thumbnail.schemas > /dev/null || /usr/bin/true
 lib/bonobo/libnautilus-audio-properties-view.so
 libdata/bonobo/servers/Nautilus_View_audio.server
 libdata/bonobo/servers/Nautilus_View_audio_properties.server

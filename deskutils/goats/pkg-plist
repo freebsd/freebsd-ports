@@ -1,8 +1,5 @@
 bin/goats-applet
 bin/goat-create
-@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/goats.schemas > /dev/null || /usr/bin/true
-etc/gconf/schemas/goats.schemas
-@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/goats.schemas > /dev/null || /usr/bin/true
 libdata/bonobo/servers/GNOME_GoatsApplet.server
 share/gnome/gnome-2.0/ui/GNOME_GoatsApplet.xml
 share/gnome/goats/alarm.png

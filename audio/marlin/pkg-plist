@@ -1,7 +1,4 @@
 bin/marlin
-@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/marlin.schemas > /dev/null || /usr/bin/true
-etc/gconf/schemas/marlin.schemas
-@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/marlin.schemas > /dev/null || /usr/bin/true
 include/libmarlin/marlin-a11y-helper.h
 include/libmarlin/marlin-block.h
 include/libmarlin/marlin-cross-fader.h

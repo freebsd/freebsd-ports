@@ -50,6 +50,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_C
 		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
 MAN1=		galeon.1
+GCONF_SCHEMAS=	galeon.schemas
 
 FLASHPLAYER=	${LOCALBASE}/lib/libflashplayer.so.1
 

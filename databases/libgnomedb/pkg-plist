@@ -1,7 +1,4 @@
 bin/gnome-database-properties
-@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/libgnomedb.schemas > /dev/null || /usr/bin/true
-etc/gconf/schemas/libgnomedb.schemas
-@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/libgnomedb.schemas > /dev/null || /usr/bin/true
 include/libgnomedb/gnome-db-browser.h
 include/libgnomedb/gnome-db-combo.h
 include/libgnomedb/gnome-db-config.h

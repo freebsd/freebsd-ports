@@ -2,9 +2,6 @@ bin/gnome-pilot-make-password
 bin/gpilot-install-file
 bin/gpilotd-control-applet
 bin/gpilotd-session-wrapper
-@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/pilot.schemas > /dev/null || /usr/bin/true
-etc/gconf/schemas/pilot.schemas
-@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/pilot.schemas > /dev/null || /usr/bin/true
 include/gpilotd/gnome-pilot-client.h
 include/gpilotd/gnome-pilot-conduit-backup.h
 include/gpilotd/gnome-pilot-conduit-file.h

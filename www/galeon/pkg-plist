@@ -1,9 +1,6 @@
 bin/galeon
 bin/galeon-bin
 bin/galeon-config-tool
-@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/galeon.schemas > /dev/null || /usr/bin/true
-etc/gconf/schemas/galeon.schemas
-@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/galeon.schemas > /dev/null || /usr/bin/true
 etc/sound/events/galeon.soundlist
 lib/galeon/components/libgaleon-xpcom.a
 lib/galeon/components/libgaleon-xpcom.so

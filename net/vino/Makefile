@@ -26,4 +26,6 @@ CONFIGURE_ARGS=	--enable-session-support
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
+GCONF_SCHEMAS=	vino-server.schemas
+
 .include <bsd.port.mk>

@@ -1,7 +1,4 @@
 bin/gossip
-@unexec GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/gossip.schemas > /dev/null || /usr/bin/true
-etc/gconf/schemas/gossip.schemas
-@exec GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/gossip.schemas > /dev/null || /usr/bin/true
 share/gnome/applications/gossip.desktop
 share/gnome/gossip/channel-old4.png
 share/gnome/gossip/chat.glade

@@ -25,4 +25,6 @@ USE_GNOME=	gnomeprefix intlhack gnomehack libgnomeui
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
+GCONF_SCHEMAS=	gossip.schemas
+
 .include <bsd.port.mk>
