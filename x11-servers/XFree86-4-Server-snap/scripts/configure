@@ -92,6 +92,9 @@ if [ $answ = NO ]; then
   echo "#define BuildXIE		NO" >> $F
 fi
 echo
+yesno "Do you want your X applications linked with gnu malloc? [YES] "
+gnumalloc=$answ
+echo
 echo "End of configuration questions. No more user input required"
 echo
 }
@@ -193,11 +196,9 @@ sed -e "s/2.0.5/$version/"                       \
     -e "s/OSMajorVersion *2/OSMajorVersion $1/"  \
     -e "s/OSMinorVersion *0/OSMinorVersion $2/"  \
     -e "s/OSTeenyVersion *5/OSTeenyVersion $3/"  \
+    -e "s/m486/m486 -fno-strength-reduce/"       \
+    -e "s/UseGnuMalloc.*YES/UseGnuMalloc  $gnumalloc/" \
     <FreeBSD.cf.old >FreeBSD.cf
-#you may change ExtraLibraries too:
-#echo "#undef     ExtraLibraries >> FreeBSD.cf
-#echo "#define    ExtraLibraries -lgnumalloc >>FreeBSD.cf
-
 
 exit 0
 
