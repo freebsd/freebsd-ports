@@ -9,7 +9,6 @@ MASTERDIR=	${.CURDIR}/../../print/ghostscript-gnu-commfont
 
 .undef		COMMFONT
 
-BROKEN=		"Broken dependency"
 JPNFONT=	yes
 
 .include "${MASTERDIR}/Makefile.common"

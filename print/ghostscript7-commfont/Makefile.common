@@ -28,7 +28,7 @@ PLIST_SUB+=	CIDFNMAP="${CIDFNMAP}"
 CATEGORIES:=	japanese ${CATEGORIES}
 PKGNAMEPREFIX=	ja-
 PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-jpnfont
-RUN_DEPENDS+=	${X11BASE}/lib/X11/fonts/TrueType/kochi-mincho.ttf:${PORTSDIR}/japanese/kochi-ttfonts
+RUN_DEPENDS+=	${X11BASE}/lib/X11/fonts/TrueType/kochi-mincho-subst.ttf:${PORTSDIR}/japanese/kochi-ttfonts
 CIDFNMAP=	CIDFnmap.jp
 .elif defined(KORFONT)
 CATEGORIES:=	korean ${CATEGORIES}
