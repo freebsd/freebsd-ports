@@ -317,6 +317,7 @@ share/opera/help/interface.html
 share/opera/help/keyboard.html
 share/opera/help/languages.html
 share/opera/help/layout.html
+share/opera/help/license.txt
 share/opera/help/look.html
 share/opera/help/menus.html
 share/opera/help/mouse.html
@@ -332,6 +333,7 @@ share/opera/help/search.html
 share/opera/help/security.html
 share/opera/help/sounds.html
 share/opera/help/start.html
+share/opera/help/startup.txt
 share/opera/help/tipday.txt
 share/opera/help/windows.html
 share/opera/images/background.gif
@@ -348,11 +350,13 @@ share/opera/images/opera_48x48.png
 share/opera/images/operabanner.png
 share/opera/images/shared.gif
 share/opera/images/splash.png
+share/opera/images/startup1.png
+share/opera/images/startup2.png
 share/opera/opera6.adr
 share/opera/plugins/libnpp.so
 share/opera/plugins/libnpp.so.0
 share/opera/plugins/libnpp.so.0.1
-share/opera/plugins/libnpp.so.0.1.7
+share/opera/plugins/libnpp.so.0.1.8
 share/opera/plugins/operamotifwrapper
 share/opera/skin/foreground.png
 share/opera/styles/OPF.css
@@ -373,6 +377,7 @@ share/opera/unicode.dat
 @dirrm share/opera/styles
 @dirrm share/opera/skin
 @dirrm share/opera/plugins
+@dirrm share/opera/locale
 @dirrm share/opera/images
 @dirrm share/opera/help
 @dirrm share/opera/config

@@ -1,25 +1,26 @@
---- install.sh.orig	Thu Dec  6 12:19:52 2001
-+++ install.sh	Wed Jan  9 13:33:42 2002
-@@ -683,18 +692,11 @@
- for DIR in \\
-     \"\${HOME}/.opera/plugins\" \\
-     ${plugin_dir} \\
--    /usr/lib/opera/plugins \\
--    /usr/local/Acrobat4/Browsers/intellinux \\
--    /usr/java/jre1.3.1/plugin/i386/ns4 \\
--    /usr/lib/RealPlayer8/Plugins \\
--    /usr/lib/realplay/plugins \\
--    /usr/lib/RealPlayer8 \\
--    /usr/lib/realplay \\
-+    %%PREFIX%%/lib/opera/plugins \\
-+    %%PREFIX%%/Acrobat4/Browsers/intellinux \\
-+    %%PREFIX%%/linux-*jdk*/jre/plugin/i386/ns4 \\
-     \"\${HOME}/.netscape/plugins\" \\
--    /opt/netscape/plugins \\
--    /usr/lib/netscape/plugins \\
--    /usr/local/netscape/plugins \\
--    /usr/local/lib/netscape/plugins \\
-+    %%PREFIX%%/lib/netscape-linux/plugins \\
-     ; do
-     if test -d \${DIR} ; then 
- 	OPERA_PLUGIN_PATH=\"\${OPERA_PLUGIN_PATH}\":\"\${DIR}\"
+--- install.sh.orig	Fri Apr 12 14:01:42 2002
++++ install.sh	Sat Apr 20 16:50:05 2002
+@@ -727,6 +727,14 @@
+     /usr/lib/j2re1.3/plugin/i386/netscape4 \\"
+ 	;;
+ 
++	i386:FreeBSD)
++	    wrapper_plugin_paths="
++    %%PREFIX%%/Acrobat[45]/bin \\
++    %%PREFIX%%/linux-jdk1.3.1/jre/plugin/i386/ns4 \\
++    %%PREFIX%%/linux-ibm-jdk1.3.0/jre/bin \\
++    %%PREFIX%%/linux-jdk1.4.0b3/jre/plugin/i386/ns4 \\"
++	    ;;
++
+ 	mips*:Linux)
+ 	    wrapper_plugin_paths=''
+ 	;;
+@@ -783,7 +791,7 @@
+ 
+ # Acrobat Reader
+ for BINDIR in \\
+-    /usr/local/Acrobat[45]/bin \\
++    %%PREFIX%%/Acrobat[45]/bin \\
+     /usr/lib/Acrobat[45]/bin \\
+     /usr/X11R6/lib/Acrobat[45]/bin \\
+     /opt/Acrobat[45]/bin \\
