@@ -6,26 +6,23 @@
 #
 
 PORTNAME=	cricket
-PORTVERSION=	0.72
+PORTVERSION=	1.0.2
 CATEGORIES=	net
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-		http://www.munitions.com/~jra/cricket/dists/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	torstenb@FreeBSD.org
 
-RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VERSION}/${PERL_ARCH}/SNMP_Session.pm:${PORTSDIR}/net/p5-SNMP_Session
-RUN_DEPENDS+=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VERSION}/${PERL_ARCH}/RRDs.pm:${PORTSDIR}/net/rrdtool
-RUN_DEPENDS+=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VERSION}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5
-RUN_DEPENDS+=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VERSION}/${PERL_ARCH}/LWP.pm:${PORTSDIR}/www/p5-libwww
-RUN_DEPENDS+=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VERSION}/${PERL_ARCH}/Time/Zone.pm:${PORTSDIR}/devel/p5-TimeDate
-RUN_DEPENDS+=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VERSION}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes
+RUN_DEPENDS=	${SITE_PERL}/SNMP_Session.pm:${PORTSDIR}/net/p5-SNMP_Session \
+		${SITE_PERL}/RRDs.pm:${PORTSDIR}/net/rrdtool \
+		${SITE_PERL}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
+		${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
+		${SITE_PERL}/Time/Zone.pm:${PORTSDIR}/devel/p5-TimeDate \
+		${SITE_PERL}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes
 
+SITE_PERL=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VERSION}/${PERL_ARCH}
 NO_PACKAGE=	"needs customization"
-
 USE_PERL5=	yes
-
-FETCH_BEFORE_ARGS=	-b
 SCRIPTS_ENV+=	PERL5=${PERL5}
 
 do-build:
@@ -39,7 +36,7 @@ post-install:
 	@${ECHO} ""
 	@${ECHO} "Cricket has been installed in ${PREFIX}/cricket. You'll find"
 	@${ECHO} "executables and configfiles there. Please take a look at"
-	@${ECHO} "http://www.munitions.com/~jra/cricket/. The documentation can"
+	@${ECHO} "http://cricket.sourceforge.net/. The documentation can"
 	@${ECHO} "be found in ${PREFIX}/cricket/doc/ too."
 
 .include <bsd.port.mk>
