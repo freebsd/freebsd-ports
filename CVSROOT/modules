@@ -5968,6 +5968,7 @@ p5-Safe-Hole	ports/security/p5-Safe-Hole
 p5-Scalar-List-Utils	ports/lang/p5-Scalar-List-Utils
 p5-Schedule-At	ports/sysutils/p5-Schedule-At
 p5-Schedule-Cron	ports/sysutils/p5-Schedule-Cron
+p5-Schedule-Load	ports/sysutils/p5-Schedule-Load
 p5-Schedule-Match	ports/sysutils/p5-Schedule-Match
 p5-Search-Binary	ports/devel/p5-Search-Binary
 p5-Search-Namazu	ports/databases/p5-Search-Namazu
