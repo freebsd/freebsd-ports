@@ -18,7 +18,7 @@ while true; do
       ! -z "$(find ${buildroot}/loads/$m -newer ${stamp})" ]; then
       num=$(awk '{print $1}' ${buildroot}/loads/$m)
       if [ "x$num" = "x" ]; then
-	logger "checkmachines: file ${buildroot}/loads/$m is empty"
+#	logger "checkmachines: file ${buildroot}/loads/$m is empty"
 	num=99
       fi
     else
