@@ -3,7 +3,7 @@
 # Date created:        8 Aug 1998
 # Whom:                rom
 #
-# $Id: Makefile,v 1.3 1998/09/22 22:55:54 asami Exp $
+# $Id: Makefile,v 1.4 1998/11/18 17:33:50 vanilla Exp $
 #
 
 DISTNAME=	geg-0.15.0
@@ -17,8 +17,8 @@ LIB_DEPENDS=	gtk11.1:${PORTSDIR}/x11-toolkits/gtk11
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
 		GTK_CONFIG="${X11BASE}/bin/gtk11-config" \
-		LIBS="${LOCALBASE}/lib"
+		LIBS="-L${X11BASE}/lib -lgtk11"
 
 .include <bsd.port.mk>
