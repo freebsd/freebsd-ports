@@ -16,6 +16,7 @@
     SUBDIR += pgp.language
     SUBDIR += pine.language
     SUBDIR += pscyr
+    SUBDIR += tac+ia
     SUBDIR += rispell
     SUBDIR += rus-ispell
     SUBDIR += wmcyrx

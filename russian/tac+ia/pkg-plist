@@ -1,0 +1,27 @@
+etc/rc.d/tac_plus.sh
+etc/tac_plus/tac_plus.conf.example
+etc/tac_plus/ttys.example
+etc/tac_plus/aliases.example
+sbin/acctd
+sbin/killuser
+sbin/lasttac
+sbin/logtac
+sbin/macct
+sbin/tac_plus
+sbin/unlogtac
+sbin/whotac
+share/doc/tac_plus/README
+share/doc/tac_plus/users_guide
+@dirrm etc/tac_plus
+@dirrm share/doc/tac_plus
+@cwd /var/adm
+@exec mkdir /var/adm/tac_plus
+@exec mkdir /var/adm/tac_plus/deny
+@exec mkdir /var/adm/tac_plus/allow
+@exec mkdir /var/adm/tac_plus/parrot
+@dirrm tac_plus/deny
+@dirrm tac_plus/allow
+@dirrm tac_plus/parrot
+@dirrm tac_plus
+@cwd /var/log
+@unexec rmdir %D/tac_plus 2>/dev/null || true

@@ -1,0 +1,12 @@
+--- tac_plus/maxsess.c.orig	Mon Sep 25 16:41:35 2000
++++ tac_plus/maxsess.c	Tue Apr 17 01:29:41 2001
+@@ -741,7 +741,8 @@
+     }
+ 
+     /* If it's really too high, don't authorize more services */
+-    if (sess >= maxsess) {
++/*    if (sess >= maxsess) { */
++    if (sess > maxsess) {	/* NAS reports the current attempt as an opened session too */
+ 	char buf[80];
+ 
+ 	sprintf(buf,
