@@ -16,6 +16,7 @@ LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
 BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
 
 USE_GNOMENG=	yes
+USE_X_PREFIX=	yes
 USE_GNOME=	gnomehier gnomelibs
 CONFIGURE_ARGS+=	--disable-gtk2
 
@@ -37,7 +38,6 @@ CONFIGURE_ARGS+=	--enable-mad
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
-USE_X_PREFIX=	yes
 CONFIGURE_TARGET=
 CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
