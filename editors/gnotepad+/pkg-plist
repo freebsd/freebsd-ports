@@ -49,5 +49,6 @@ share/gnotepad+/xpm/tb_undo.xpm
 share/gnotepad+/xpm/tb_unordered.xpm
 share/gnotepad+/xpm/tb_winclose.xpm
 share/gnotepad+/xpm/tb_winnew.xpm
+share/gnome/apps/Applications/gnotepad+.desktop
 @dirrm share/gnotepad+/xpm
 @dirrm share/gnotepad+
