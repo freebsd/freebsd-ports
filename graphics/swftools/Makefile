@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	swftools
-PORTVERSION=	0.3.1
+PORTVERSION=	0.4.0
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.quiss.org/swftools/
 
@@ -25,7 +25,7 @@ MAN1=	jpeg2swf.1 pdf2swf.1 png2swf.1 swfcombine.1 swfdump.1 swfextract.1 \
 	swfstrings.1 wav2swf.1
 
 post-patch:
-	@${PERL} -pi -e 's|^CFLAGS=|#CFLAGS=|g ; \
+	@${REINPLACE_CMD} -e 's|^CFLAGS=|#CFLAGS=|g ; \
 		 s|^CXXFLAGS=|#CXXFLAGS=|g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
