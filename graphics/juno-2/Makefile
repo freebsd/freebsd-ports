@@ -8,7 +8,7 @@
 PORTNAME=	juno-2
 PORTVERSION=	1.23
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.research.digital.com/SRC/juno-2/
+MASTER_SITES=	http://www.research.compaq.com/SRC/juno-2/
 DISTNAME=	juno-sources
 
 MAINTAINER=	jdp@FreeBSD.org
