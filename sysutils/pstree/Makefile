@@ -15,6 +15,8 @@ COMMENT=	List processes as a tree
 
 NO_WRKSUBDIR=	yes
 
+CONFLICTS=	psmisc-*
+
 do-build:
 	cd ${WRKDIR} && ${CC} ${CFLAGS} -o pstree pstree.c
 
