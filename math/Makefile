@@ -9,6 +9,7 @@
     SUBDIR += abs
     SUBDIR += add
     SUBDIR += algae
+    SUBDIR += algotutor
     SUBDIR += apc
     SUBDIR += arpack
     SUBDIR += arpack++
