@@ -6,12 +6,15 @@
 #
 
 PORTNAME=       xanim
-PORTVERSION=	2.80.1
+PORTVERSION=	2.80.2
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://xanim.va.pubnix.com/ \
 		ftp://xanim.va.pubnix.com/dlls/
 DISTNAME=       xanim2801
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${EXTRA_FILES}
+
+PATCH_SITES=	http://virtual-estates.net/port-stuff/
+PATCHFILES=	xanim-2801-to-2802-patch.gz
 
 MAINTAINER=	ports@FreeBSD.org
 
@@ -26,6 +29,8 @@ USE_IMAKE=	yes
 MAN1=		xanim.1
 
 DLLDIR=		${PREFIX}/lib/X11/xanim
+
+MAKE_ARGS+=	-j 2 # safe and helps even the single-CPU machines
 
 post-extract:
 	${CP} ${WRKSRC}/docs/xanim.man ${WRKSRC}
