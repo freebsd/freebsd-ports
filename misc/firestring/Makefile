@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	firestring
-PORTVERSION=	0.1.22
+PORTVERSION=	0.1.23
 CATEGORIES=	misc net devel
 MASTER_SITES=	http://ares.penguinhosting.net/~ian/projects/ \
 		http://www.wa.apana.org.au/~dean/sources/ \
@@ -19,10 +19,11 @@ MAINTAINER=	dean@odyssey.apana.org.au
 HAS_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 
-MAN3=		firestring_chomp.3 firestring_chug.3 firestring_concat.3 \
-		firestring_conf_add.3 firestring_conf_find.3 \
-		firestring_conf_find_next.3 firestring_conf_free.3 \
-		firestring_conf_parse.3 firestring_estr_0.3 \
+MAN3=		firestring_chomp.3 firestring_chug.3 \
+		firestring_concat.3 firestring_conf_add.3 \
+		firestring_conf_find.3 firestring_conf_find_next.3 \
+		firestring_conf_free.3 firestring_conf_parse.3 \
+		firestring_conf_parse_next.3 firestring_estr_0.3 \
 		firestring_estr_alloc.3 firestring_estr_base64_decode.3 \
 		firestring_estr_base64_encode.3 firestring_estr_ends.3 \
 		firestring_estr_estrcasecmp.3 firestring_estr_estrcat.3 \
