@@ -32,7 +32,7 @@ stop)
 	kldunload -v -n ntfs && echo -n ' GB-ntfs'
 	;;
 *)
-	echo "Usage: gbfs.sh {start|stop}" >&2
+	echo "Usage: $0 {start|stop}" >&2
 	exit 1
 	;;
 esac
