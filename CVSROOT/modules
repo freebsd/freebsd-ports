@@ -43,6 +43,7 @@ commitcheck	CVSROOT commitcheck
 commitinfo	CVSROOT commitinfo
 cvs2p4		ports/devel/cvs2p4
 cvs_acls	CVSROOT cvs_acls.pl
+cvsbook		ports/devel/cvsbook
 cvsd		ports/devel/cvsd
 cvsedit		CVSROOT cvsedit
 cvswrappers	CVSROOT cvswrappers
