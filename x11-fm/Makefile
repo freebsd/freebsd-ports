@@ -1,6 +1,7 @@
 # $FreeBSD$
 #
 
+    SUBDIR += FSViewer
     SUBDIR += apotheke
     SUBDIR += asfiles
     SUBDIR += binder
