@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	portmanager
-PORTVERSION=	0.2.8
+PORTVERSION=	0.2.9
 PORTREVISION=	0
 #-----------------------------------------
 #for local use, remove before submitting PR
