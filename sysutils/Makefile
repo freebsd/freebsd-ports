@@ -144,6 +144,7 @@
     SUBDIR += gdesklets-sysinfo
     SUBDIR += gfslicer
     SUBDIR += gkleds2
+    SUBDIR += gkrellfire
     SUBDIR += gkrellflynn
     SUBDIR += gkrellm
     SUBDIR += gkrellm-trayicons
