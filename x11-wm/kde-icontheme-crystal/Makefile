@@ -14,6 +14,8 @@ DIST_SUBDIR=	KDE
 
 MAINTAINER=	olgeni@FreeBSD.org
 
+BROKEN=		"Does not install"
+
 WRKSRC=		${WRKDIR}
 NO_BUILD=	yes
 
