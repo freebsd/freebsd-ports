@@ -1,5 +1,5 @@
-*** config.h	Fri Apr  1 11:03:59 1994
---- config.h	Sat Oct  7 10:09:48 1995
+*** config.h.orig	Mon Jan 20 06:21:30 1997
+--- config.h	Thu Jan 30 16:13:31 1997
 ***************
 *** 30,35 ****
 --- 30,43 ----
@@ -16,4 +16,17 @@
 + /*
    * allow use of private file.  (for site group and site gpass)
    */
+  
+***************
+*** 64,68 ****
+   * See README-2.4-HOBBIT for more information on this option.
+   */
+  
+! #undef SKEY
+  
+--- 72,76 ----
+   * See README-2.4-HOBBIT for more information on this option.
+   */
+  
+! #define SKEY
   
