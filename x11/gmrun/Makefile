@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gmrun
-PORTVERSION=	0.9
-PORTREVISION=	2
+PORTVERSION=	0.9.2
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,21 +14,25 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A customizable program to run programs, with tab-completion
 
+LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
+
+USE_GCC=	3.3
 USE_X_PREFIX=	yes
-GNU_CONFIGURE=	yes
+USE_GNOME=	gtk20
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack gtk20
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--disable-stlport
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libstlport_gcc.so:${PORTSDIR}/devel/stlport
-.endif
+PORTDOCS=	README
+PLIST_FILES=	bin/gmrun %%DATADIR%%/gmrunrc
+PLIST_DIRS=	%%DATADIR%%
 
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
