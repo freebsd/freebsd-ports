@@ -57,6 +57,7 @@ post-patch:
 	             -e 's/\$$\w+(->\w+)?->\$$\w+\b(?!\()/$$&()/g;' \
 		     ${WRKSRC}/lib/CGI/Kwiki/New.pm \
 		     ${WRKSRC}/lib/CGI/Kwiki/Prefs.pm
+	@${FIND} ${WRKSRC} -name \*.orig | ${XARGS} ${RM}
 .endif
 .endif
 
