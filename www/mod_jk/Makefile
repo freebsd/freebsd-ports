@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	mod_jk
-PORTVERSION=	3.2.1
+PORTVERSION=	3.2.3
 CATEGORIES=	www
-MASTER_SITES=	http://jakarta.apache.org/builds/jakarta-tomcat/release/v3.2.1/src/
-DISTNAME=	jakarta-tomcat-3.2.1-src
+MASTER_SITES=	http://jakarta.apache.org/builds/jakarta-tomcat/release/v${PORTVERSION}/src/
+DISTNAME=	jakarta-tomcat-${PORTVERSION}-src
 
 MAINTAINER=	dirk@FreeBSD.org
 
@@ -20,7 +20,7 @@ RUN_DEPENDS=	${APXS}:${PORTSDIR}/www/apache13 \
 
 USE_GMAKE=	yes
 MAKEFILE=	Makefile.freebsd
-WRKSRC=		${WRKDIR}/jakarta-tomcat-3.2.1-src/src/native/apache1.3
+WRKSRC=		${WRKDIR}/jakarta-tomcat-${PORTVERSION}-src/src/native/apache1.3
 
 APXS?=		${LOCALBASE}/sbin/apxs
 
