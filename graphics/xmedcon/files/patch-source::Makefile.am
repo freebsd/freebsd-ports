@@ -1,0 +1,16 @@
+--- source/Makefile.am.orig	Sun Oct 13 22:07:58 2002
++++ source/Makefile.am	Sun Oct 13 22:08:24 2002
+@@ -216,11 +216,12 @@
+  m-dicm.h \
+  m-png.h
+ 
+-configheadersdir = $(prefix)/include
++configheadersdir = $(prefix)/include/xmedcon
+ configheaders_DATA = depend.h m-config.h
+ 
+ INCLUDES = $(DICM_INC) $(XMEDCON_INC)
+ CFLAGS = @CFLAGS@ -Wall -Wno-implicit -fsigned-char
+ 
+ EXTRA_DIST = appicon.rc
++
+ 

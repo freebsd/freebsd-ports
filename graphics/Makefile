@@ -417,6 +417,7 @@
     SUBDIR += xli
     SUBDIR += xmagv
     SUBDIR += xmandel
+    SUBDIR += xmedcon
     SUBDIR += xmfract
     SUBDIR += xmms-avi
     SUBDIR += xmms-blursk

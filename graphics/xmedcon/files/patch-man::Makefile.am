@@ -1,0 +1,29 @@
+--- man/Makefile.am.orig	Sun Oct 13 21:29:18 2002
++++ man/Makefile.am	Sun Oct 13 21:35:28 2002
+@@ -12,6 +12,7 @@
+ 
+ AUTOMAKE_OPTIONS = gnu
+ 
++if DO_XSUPPORT
+ man_MANS = \
+  medcon.1 \
+  xmedcon.1 \
+@@ -23,5 +24,17 @@
+  m-gif.4 \
+  m-intf.4 \
+  m-inw.4
++else
++man_MANS = \
++ medcon.1 \
++ xmedcon-config.1 \
++ medcon.3 \
++ m-acr.4 \
++ m-anlz.4 \
++ m-ecat.4 \
++ m-gif.4 \
++ m-intf.4 \
++ m-inw.4
++endif
+ 
+-EXTRA_DIST = $(man_MANS)
++#EXTRA_DIST = $(man_MANS)
