@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xfce4-clipman-plugin
-PORTVERSION=	0.3.1
+PORTVERSION=	0.4.0
 CATEGORIES=	x11 xfce
 MASTER_SITES=	http://download.berlios.de/xfce-goodies/
 
