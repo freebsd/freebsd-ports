@@ -607,6 +607,7 @@ c2ps-letter	ports/print/c2ps-letter
 c4		ports/devel/c4
 c89		src/usr.bin/c89
 c_c++_reference	ports/devel/c_c++_reference
+c_parser	ports/devel/c_parser
 ca-roots	ports/security/ca-roots
 cabextract	ports/archivers/cabextract
 cadaver		ports/www/cadaver
