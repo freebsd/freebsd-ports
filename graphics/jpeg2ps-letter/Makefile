@@ -21,11 +21,10 @@ INSTALL_TARGET=
 
 MAN1=           jpeg2ps.1
 
-.include <bsd.port.pre.mk>
+PLIST_FILES=	bin/jpeg2ps %%DOCSDIR%%/jpeg2ps.txt
+PLIST_DIRS=	%%DOCSDIR%%
 
-.if ${OSVERSION} >= 502000
-BROKEN=		"Broken pkg-plist"
-.endif
+.include <bsd.port.pre.mk>
 
 .if ${PAPERSIZE} == a4
 post-patch:
