@@ -63,6 +63,7 @@
     SUBDIR += fcgi
     SUBDIR += fhttpd
     SUBDIR += flashplugin
+    SUBDIR += flashplugin-mozilla
     SUBDIR += fxhtml
     SUBDIR += g-gcl
     SUBDIR += galeon
