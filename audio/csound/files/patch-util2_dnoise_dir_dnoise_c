@@ -1,0 +1,10 @@
+--- util2/dnoise.dir/dnoise.c.orig	Thu Apr 24 15:16:01 2003
++++ util2/dnoise.dir/dnoise.c	Thu Apr 24 15:16:32 2003
+@@ -109,6 +109,7 @@
+ static long  bytes = 0;
+ OPARMS	O = {0,0, 0,1,1,0, 0,0, 0,0, 0,0, 1,0,0,7, 0,0,0, 0,0,0,0, 0,0 };
+ 
++#undef POLL_EVENTS
+ int POLL_EVENTS(void)
+ {
+     return 1;

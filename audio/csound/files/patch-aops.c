@@ -8,11 +8,11 @@ $FreeBSD$
  #include "aops.h"
  #include <math.h>
 @@ -442,8 +443,6 @@ void ftsr(EVAL *p)              /**** ft
+ }
+ 
  #ifdef LINUX
- void rtclock(EVAL *p)
- {
 -#include <sys/time.h>
 -#include <unistd.h>
+ void rtclock(EVAL *p)
+ {
      struct timeval tv;
-     struct timezone tz;
-     gettimeofday(&tv, &tz);

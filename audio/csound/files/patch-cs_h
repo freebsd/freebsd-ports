@@ -1,0 +1,11 @@
+--- cs.h.orig	Thu Apr 24 15:09:06 2003
++++ cs.h	Thu Apr 24 15:09:25 2003
+@@ -782,7 +782,7 @@
+ # define POLL_EVENTS() STasks()
+ # define __cdecl
+ #else
+-#ifdef LINUX
++#if defined(LINUX) && defined(HAVE_FLTK)
+   extern int POLL_EVENTS(void);
+ #else
+ # define POLL_EVENTS()     (1)
