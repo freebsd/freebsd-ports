@@ -1,0 +1,62 @@
+bin/gettext
+bin/gettextize
+bin/msgcmp
+bin/msgfmt
+bin/msgmerge
+bin/msgunfmt
+bin/tupdate
+bin/xgettext
+include/libintl.h
+@unexec install-info --delete %D/info/gettext.info %D/info/dir
+info/gettext.info
+info/gettext.info-1
+info/gettext.info-2
+info/gettext.info-3
+info/gettext.info-4
+@exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
+@exec install-info %D/info/gettext.info %D/info/dir
+lib/libintl.a
+@exec /sbin/ldconfig -m %B
+@unexec /sbin/ldconfig -R
+lib/locale/de/LC_MESSAGES/gettext.cat
+lib/locale/fr/LC_MESSAGES/gettext.cat
+lib/locale/no/LC_MESSAGES/gettext.cat
+lib/locale/no@nynorsk/LC_MESSAGES/gettext.cat
+lib/locale/sv/LC_MESSAGES/gettext.cat
+share/gettext/aclocal.m4
+share/gettext/intl-ChangeLog
+share/gettext/intl-Makefile.in
+share/gettext/intl-VERSION
+share/gettext/intl-bindtextdom.c
+share/gettext/intl-cat-compat.c
+share/gettext/intl-dcgettext.c
+share/gettext/intl-dgettext.c
+share/gettext/intl-finddomain.c
+share/gettext/intl-gettext.c
+share/gettext/intl-gettext.h
+share/gettext/intl-gettextP.h
+share/gettext/intl-hash-string.h
+share/gettext/intl-intl-compat.c
+share/gettext/intl-libgettext.h
+share/gettext/intl-linux-msg.sed
+share/gettext/intl-loadmsgcat.c
+share/gettext/intl-localealias.c
+share/gettext/intl-po2tbl.sed.in
+share/gettext/intl-textdomain.c
+share/gettext/intl-xopen-msg.sed
+share/gettext/po-Makefile.in.in
+share/gettext/root-ABOUT-NLS
+share/locale/locale.alias
+@dirrm lib/locale/de/LC_MESSAGES
+@dirrm lib/locale/de
+@dirrm lib/locale/fr/LC_MESSAGES
+@dirrm lib/locale/fr
+@dirrm lib/locale/no/LC_MESSAGES
+@dirrm lib/locale/no
+@dirrm lib/locale/no@nynorsk/LC_MESSAGES
+@dirrm lib/locale/no@nynorsk
+@dirrm lib/locale/sv/LC_MESSAGES
+@dirrm lib/locale/sv
+@dirrm lib/locale
+@dirrm share/gettext
+@dirrm share/locale
