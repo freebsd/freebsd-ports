@@ -1,8 +1,0 @@
-include/dlmalloc/malloc.h
-lib/dlmalloc_module.so
-@comment lib/dlmalloc_module_r.so
-lib/libdlmalloc.a
-share/doc/dlmalloc/README.FreeBSD
-@comment lib/libdlmalloc_r.a
-@dirrm share/doc/dlmalloc
-@dirrm include/dlmalloc
