@@ -1,0 +1,12 @@
+diff -u move.pl~ move.pl
+--- move.pl~	Mon Dec 17 20:32:32 2001
++++ move.pl	Mon Dec 17 20:34:43 2001
+@@ -147,7 +147,7 @@
+ $msg .= $xml . "\n";
+ 
+ open(SENDMAIL,
+-  "|/usr/lib/sendmail -ODeliveryMode=background -t") ||
++  "|/usr/sbin/sendmail -ODeliveryMode=background -t") ||
+     die "Can't open sendmail";
+ print SENDMAIL $msg;
+ close SENDMAIL;

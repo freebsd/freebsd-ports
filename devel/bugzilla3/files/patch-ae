@@ -1,0 +1,12 @@
+diff -u globals.pl~ globals.pl
+--- globals.pl~	Mon Dec 17 20:32:32 2001
++++ globals.pl	Mon Dec 17 20:34:30 2001
+@@ -1243,7 +1243,7 @@
+             if (Param('sendmailnow')) {
+                $sendmailparm = '';
+             }
+-            if (open(SENDMAIL, "|/usr/lib/sendmail $sendmailparm -t")) {
++            if (open(SENDMAIL, "|/usr/sbin/sendmail $sendmailparm -t")) {
+                 my %substs;
+ 
+                 $substs{"to"} = $name;

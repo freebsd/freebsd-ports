@@ -1,0 +1,21 @@
+diff -u Token.pm~ Token.pm
+--- Token.pm~	Mon Dec 17 20:32:32 2001
++++ Token.pm	Mon Dec 17 20:34:20 2001
+@@ -102,7 +102,7 @@
+     my $emailsuffix = &::Param('emailsuffix');
+     $token = &::url_quote($token);
+ 
+-    open SENDMAIL, "|/usr/lib/sendmail -t";
++    open SENDMAIL, "|/usr/sbin/sendmail -t";
+ 
+     print SENDMAIL qq|From: bugzilla-daemon
+ To: $emailaddress$emailsuffix
+@@ -145,7 +145,7 @@
+     my $username = $realname ? $realname . " <" . $loginname . ">" : $loginname;
+ 
+     # Notify the user via email about the cancellation.
+-    open SENDMAIL, "|/usr/lib/sendmail -t";
++    open SENDMAIL, "|/usr/sbin/sendmail -t";
+     print SENDMAIL qq|From: bugzilla-daemon
+ To: $username
+ Subject: "$tokentype" token cancelled

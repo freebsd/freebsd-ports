@@ -1,0 +1,12 @@
+diff -u whineatnews.pl~ whineatnews.pl
+--- whineatnews.pl~	Mon Dec 17 20:32:33 2001
++++ whineatnews.pl	Mon Dec 17 20:33:18 2001
+@@ -62,7 +62,7 @@
+     foreach my $i (@{$bugs{$email}}) {
+         $msg .= "  ${urlbase}show_bug.cgi?id=$i\n"
+     }
+-    open(SENDMAIL, "|/usr/lib/sendmail -t") || die "Can't open sendmail";
++    open(SENDMAIL, "|/usr/sbin/sendmail -t") || die "Can't open sendmail";
+     print SENDMAIL $msg;
+     close SENDMAIL;
+     print "$email      " . join(" ", @{$bugs{$email}}) . "\n";
