@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	apache
-PORTVERSION=	2.0.36
+PORTVERSION=	2.0.39
 PORTREVISION=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://www.apache.org/dist/httpd/ \
@@ -23,33 +23,31 @@ EXTRACT_ONLY=	${DISTNAME}.tar.gz
 
 MAINTAINER?=	perky@fallin.lv
 
-FORBIDDEN=	"Vulnerable to denial-of-service.  See" \
-		"http://httpd.apache.org/info/security_bulletin_20020617.txt"
-
 LATEST_LINK=	apache2
 
-WITH_MPM?=	prefork # or worker, perchild (neither of them still has a problem on FreeBSD)
+WITH_MPM?=	prefork
 HTTP_PORT?=	80
 
-GNU_CONFIGURE=	yes
+HAS_CONFIGURE=	yes
 USE_PERL5=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX} \
+CONFIGURE_ARGS=	--prefix=${PREFIX_RELDEST} \
 		--enable-layout=FreeBSD \
 		--with-perl=${PERL5} \
 		--enable-so \
 		--with-mpm=${WITH_MPM} \
 		--with-port=${HTTP_PORT} \
-		--libdir=${PREFIX}/lib/apache2 \
-		--includedir=${PREFIX}/include/apache2
+		--libdir=${PREFIX_RELDEST}/lib/apache2 \
+		--includedir=${PREFIX_RELDEST}/include/apache2
 CONFIGURE_ENV=	CC="${CC}" CPPFLAGS="${CPPFLAGS}" CFLAGS="${CFLAGS}" \
-		LDFLAGS="${LDFLAGS}"
+		LDFLAGS="${LDFLAGS}" EXPAT_PATHS="${EXPAT_PATHS}"
 SHARED_MODULES= all cgid ext_filter bucketeer
-RC_SUB=		-e 's,@@PREFIX@@,${PREFIX},g' -e 's,@@DESTDIR@@,${DESTDIR},g'
+PREFIX_RELDEST=	${PREFIX:S,${DESTDIR},,}
+RC_SUB=		-e 's,@@PREFIX@@,${PREFIX_RELDEST},g'
 MAKE_ENV+=	DESTDIR=${DESTDIR} EXPR_COMPAT=yes
 PLIST_SUB+=	DESTDIR=${DESTDIR}
 
 .if defined(NOPORTDOCS)
-MAKE_ENV+=	NOPORTDOCS=YES
+MAKE_ENV+=	-DNOPORTDOCS
 .endif
 
 .if defined(WITH_BUNDLED_EXPAT)
@@ -57,12 +55,8 @@ EXPAT_PATHS=	xml/expat-cvs xml/expat $$srcdir/xml/expat
 PLIST_SUB+=	EXPAT=""
 .else
 LIB_DEPENDS=	expat.2:${PORTSDIR}/textproc/expat2
-EXPAT_PATHS=	${LOCALBASE} ${PREFIX} ${EXPATLIBPATH}
+EXPAT_PATHS=	${LOCALBASE} ${PREFIX} ${LOCALBASE:S,${DESTDIR},,}
 PLIST_SUB+=	EXPAT="@comment "
-.endif
-
-.if defined(WITH_THREADS)
-CONFIGURE_ARGS+= --enable-threads
 .endif
 
 .if !defined(WITHOUT_SSL) && exists(/usr/lib/libcrypto.so)
@@ -75,16 +69,16 @@ RC_SUB+=	-e 's,@@SSL@@,,g'
 .endif
 
 .if defined(WITH_SUEXEC)
-SUEXEC_DOCROOT?= ${PREFIX}/www/data
+SUEXEC_DOCROOT?= ${PREFIX_RELDEST}/www/data
 SUEXEC_USERDIR?= public_html
 CONFIGURE_ARGS+= --enable-suexec \
 		--with-suexec-caller=www \
 		--with-suexec-uidmin=1000 --with-suexec-gidmin=1000 \
 		--with-suexec-userdir="${SUEXEC_USERDIR}" \
 		--with-suexec-docroot="${SUEXEC_DOCROOT}" \
-		--with-suexec-safepath="${PREFIX}/bin:${LOCALBASE}/bin:/usr/bin:/bin" \
-		--with-suexec-logfile="${DESTDIR}/var/log/httpd-suexec.log" \
-		--with-suexec-bin="${PREFIX}/sbin/suexec"
+		--with-suexec-safepath="${PREFIX_RELDEST}/bin:${LOCALBASE}/bin:/usr/bin:/bin" \
+		--with-suexec-logfile="/var/log/httpd-suexec.log" \
+		--with-suexec-bin="${PREFIX_RELDEST}/sbin/suexec"
 PLIST_SUB+=	SUEXEC=""
 .else
 PLIST_SUB+=	SUEXEC="@comment "
@@ -113,17 +107,21 @@ PLIST_SUB+=	EXPERIMENTAL="@comment "
 
 .if ${WITH_MPM} != "prefork"
 PKGNAMESUFFIX=	-${WITH_MPM}
-.if !defined(WITH_THREADS)
-IGNORE=		"requires threads for ${WITH_MPM} mpm"
+WITH_THREADS=	yes
+.if !defined(FORCE_THREADING_MPM)
+FORBIDDEN=	"doesn\'t work with threading MPMs on FreeBSD. If you are \
+		brave enough, make again with -DFORCE_THREADING_MPM"
 .endif
 .endif
 
-CONFIGURE_ARGS+= --enable-mods-shared="${SHARED_MODULES}"
+.if defined(WITH_THREADS)
+CONFIGURE_ARGS+= --enable-threads
+.endif
+
+CONFIGURE_ARGS+= --enable-mods-shared="${SHARED_MODULES}" ${CONFIGURE_TARGET}
 
 MAN1=		dbmmanage.1 htdigest.1 htpasswd.1
 MAN8=		ab.8 apachectl.8 apxs.8 httpd.8 logresolve.8 rotatelogs.8 suexec.8
-
-.include <bsd.port.pre.mk>
 
 post-extract:
 	@${CP} ${DISTDIR}/powerlogo.gif ${WRKSRC}/docs/icons/freebsd.gif
@@ -131,13 +129,15 @@ post-extract:
 post-patch:
 	@cd ${WRKSRC}/docs/docroot && \
 	 for f in index.html.*; do (\
-	  ${PERL} -pi -e 's,apache_pb,icons/freebsd.gif" ALT="[Powered by FreeBSD]"><IMG SRC="apache_pb2_ani,g' $$f \
+	  ${REINPLACE_CMD} -e 's,apache_pb,icons/freebsd.gif" \
+		ALT="[Powered by FreeBSD]"><IMG SRC="apache_pb2_ani,g' $$f \
 	 ); done
-	@${FIND} ${WRKSRC} -name "*.orig" -exec ${RM} -f {} \;
-	@${PERL} -pi -e 's,/usr .*/xml/expat,${EXPAT_PATHS},g' \
+	@${REINPLACE_CMD} -e 's,/usr .*/xml/expat,\$${EXPAT_PATHS},g' \
 		${WRKSRC}/srclib/apr-util/configure
+	@${FIND} ${WRKSRC} \( -name "*.orig" -or -name "*.bak" \) -exec ${RM} -f {} \;
 	@${SED} ${RC_SUB} ${FILESDIR}/apache.sh >${WRKDIR}/apache2.sh
 	@${SED} ${RC_SUB} ${FILESDIR}/config.layout >>${WRKSRC}/config.layout
+	@${RM} -f ${WRKSRC}/docs/manual/index.html.ko.euc-kr
 
 pre-install:
 	PKG_PREFIX=${PREFIX} ${SH} pkg-install ${PKGNAME} PRE-INSTALL
@@ -147,7 +147,5 @@ post-install:
 		${ECHO} "Installing ${PREFIX}/etc/rc.d/apache2.sh startup file."; \
 		${INSTALL_SCRIPT} -m 751 ${WRKDIR}/apache2.sh ${PREFIX}/etc/rc.d/apache2.sh; \
 	fi
-	@[ -d ${DESTDIR}/var/log ] || ${MKDIR} ${DESTDIR}/var/log
-	@[ -d ${DESTDIR}/var/run ] || ${MKDIR} ${DESTDIR}/var/run
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -1,13 +1,13 @@
---- Makefile.in.orig	Sun Apr 28 16:41:25 2002
-+++ Makefile.in	Tue May  7 19:05:12 2002
-@@ -33,23 +33,27 @@
- 	@test -d $(sysconfdir) || $(MKINSTALLDIRS) $(sysconfdir)
+--- Makefile.in.orig	Sat Jun 15 18:41:03 2002
++++ Makefile.in	Tue Jun 18 22:37:19 2002
+@@ -31,12 +31,14 @@
+ 	@test -d $(DESTDIR)$(sysconfdir) || $(MKINSTALLDIRS) $(DESTDIR)$(sysconfdir)
  	@cd $(top_srcdir)/docs/conf; \
  	for i in mime.types magic; do \
--		$(INSTALL_DATA) $$i $(sysconfdir); \
-+		test -f $(sysconfdir)/$$i || $(INSTALL_DATA) $$i $(sysconfdir); \
+-		$(INSTALL_DATA) $$i $(DESTDIR)$(sysconfdir); \
++		test -f $(DESTDIR)$(sysconfdir)/$$i || $(INSTALL_DATA) $$i $(DESTDIR)$(sysconfdir); \
 +		cp -f $$i $$i.default; \
-+		$(INSTALL_DATA) $$i.default $(sysconfdir); \
++		$(INSTALL_DATA) $$i.default $(DESTDIR)$(sysconfdir); \
  	done; \
  	for j in $(top_srcdir)/docs/conf $(top_builddir)/docs/conf ; do \
  		cd $$j ; \
@@ -17,58 +17,35 @@
  		( \
  			n_lm=`awk 'BEGIN {n=0} /@@LoadModule@@/ {n+=1} END {print n}' < $$i`; \
  			if test $$n_lm -eq 0 -o "x$(DSO_MODULES)" = "x"; then \
- 				sed -e 's#@@ServerRoot@@#$(prefix)#g' \
- 					-e 's#@@Port@@#$(PORT)#g' \
-+					-e 's#@@DESTDIR@@#$(DESTDIR)#g' \
- 					-e '/@@LoadModule@@/d' \
- 					< $$i; \
- 			else \
- 				sed -n -e '/@@LoadModule@@/q' \
- 					-e 's#@@ServerRoot@@#$(prefix)#g' \
- 					-e 's#@@Port@@#$(PORT)#g' \
-+					-e 's#@@DESTDIR@@#$(DESTDIR)#g' \
- 					-e 'p' \
- 					< $$i; \
- 				for j in $(DSO_MODULES) "^EOL^"; do \
-@@ -57,7 +61,7 @@
- 						echo "<IfDefine SSL>"; \
- 					fi; \
- 					if test $$j != "^EOL^"; then \
--						echo "LoadModule $${j}_module modules/mod_$${j}.so"; \
-+						echo "LoadModule $${j}_module ${libexecdir:S|^${prefix}/||}/mod_$${j}.so"; \
- 					fi; \
- 					if test "x$$j" = "xssl"; then \
- 						echo "</IfDefine>"; \
-@@ -106,12 +110,14 @@
+@@ -104,11 +106,14 @@
  
  install-htdocs:
  	@echo Installing HTML documents
--	@test -d $(htdocsdir) || $(MKINSTALLDIRS) $(htdocsdir)
--	@test -d $(htdocs-srcdir) && (cd $(htdocs-srcdir) && cp -rp * $(htdocsdir))
-+	@test -d $(htdocsdir).default || $(MKINSTALLDIRS) $(htdocsdir).default
-+	@test -d $(htdocs-srcdir) && (cd $(htdocs-srcdir) && cp -rp * $(htdocsdir).default)
-+	@test -e $(htdocsdir) || ln -sf $(htdocsdir).default $(htdocsdir)
+-	@test -d $(DESTDIR)$(htdocsdir) || $(MKINSTALLDIRS) $(DESTDIR)$(htdocsdir)
+-	@test -d $(htdocs-srcdir) && (cd $(htdocs-srcdir) && cp -rp * $(DESTDIR)$(htdocsdir))
++	@test -d $(DESTDIR)$(htdocsdir).default || $(MKINSTALLDIRS) $(DESTDIR)$(htdocsdir).default
++	@test -d $(htdocs-srcdir) && (cd $(htdocs-srcdir) && cp -rp * $(DESTDIR)$(htdocsdir).default)
++	@test -e $(DESTDIR)$(htdocsdir) || ln -sf $(DESTDIR)$(htdocsdir).default $(DESTDIR)$(htdocsdir)
 +.if !defined(NOPORTDOCS)
- 	@test -d $(manualdir) || $(MKINSTALLDIRS) $(manualdir)
- 	@test -d $(top_srcdir)/docs/manual && (cd $(top_srcdir)/docs/manual && cp -rp * $(manualdir))
--	@test "x$(htdocsdir)" != "x" && cd $(htdocsdir) && find . -name "CVS" -print | xargs rm -rf {} \;
--
+ 	@test -d $(DESTDIR)$(manualdir) || $(MKINSTALLDIRS) $(DESTDIR)$(manualdir)
+ 	@test -d $(top_srcdir)/docs/manual && (cd $(top_srcdir)/docs/manual && cp -rp * $(DESTDIR)$(manualdir))
+-	-@test "x$(htdocsdir)" != "x" && cd $(DESTDIR)$(htdocsdir) && find . -name "CVS" -print | xargs rm -rf
 +.endif
-+	@test "x$(htdocsdir)" != "x" && cd $(htdocsdir).default && find . -name "CVS" -print | xargs rm -rf {} \;
++	-@test "x$(htdocsdir)" != "x" && cd $(DESTDIR)$(htdocsdir).default && find . -name "CVS" -print | xargs rm -rf
+ 
  install-error:
  	@echo Installing error documents
- 	@test -d $(errordir) || $(MKINSTALLDIRS) $(errordir)
-@@ -126,9 +132,10 @@
+@@ -124,9 +129,10 @@
  
  install-cgi:
  	@echo Installing CGIs
--	@test -d $(cgidir) || $(MKINSTALLDIRS) $(cgidir)
--	@cd $(top_srcdir)/docs/cgi-examples && cp -rp * $(cgidir)
--	@test "x$(cgidir)" != "x" && cd $(cgidir) && find . -name "CVS" -print | xargs rm -rf {} \;
-+	@test -d $(cgidir).default || $(MKINSTALLDIRS) $(cgidir).default
-+	@(cd $(top_srcdir)/docs/cgi-examples && cp -rp * $(cgidir).default)
-+	@test -e $(cgidir) || ln -sf $(cgidir).default $(cgidir)
-+	@test "x$(cgidir)" != "x" && cd $(cgidir).default && find . -name "CVS" -print | xargs rm -rf {} \;
+-	@test -d $(DESTDIR)$(cgidir) || $(MKINSTALLDIRS) $(DESTDIR)$(cgidir)
+-	@cd $(top_srcdir)/docs/cgi-examples && cp -rp * $(DESTDIR)$(cgidir)
+-	-@test "x$(cgidir)" != "x" && cd $(DESTDIR)$(cgidir) && find . -name "CVS" -print | xargs rm -rf
++	@test -d $(DESTDIR)$(cgidir).default || $(MKINSTALLDIRS) $(DESTDIR)$(cgidir).default
++	@cd $(top_srcdir)/docs/cgi-examples && cp -rp * $(DESTDIR)$(cgidir).default
++	@test -e $(DESTDIR)$(cgidir) || ln -sf $(DESTDIR)$(cgidir).default $(DESTDIR)$(cgidir)
++	-@test "x$(cgidir)" != "x" && cd $(DESTDIR)$(cgidir).default && find . -name "CVS" -print | xargs rm -rf
  
  install-other:
- 	@test -d $(logfiledir) || $(MKINSTALLDIRS) $(logfiledir)
+ 	@test -d $(DESTDIR)$(logfiledir) || $(MKINSTALLDIRS) $(DESTDIR)$(logfiledir)
