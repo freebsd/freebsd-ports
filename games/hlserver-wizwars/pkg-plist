@@ -1,17 +1,49 @@
-%%PORTDOCS%%%%HLDSDIR%%wizwars/TITLES.TXT
+%%HLDSDIR%%wizwars/1024_textscheme.txt
+%%HLDSDIR%%wizwars/1152_textscheme.txt
+%%HLDSDIR%%wizwars/1280_textscheme.txt
+%%HLDSDIR%%wizwars/1600_textscheme.txt
+%%HLDSDIR%%wizwars/320_textscheme.txt
+%%HLDSDIR%%wizwars/400_textscheme.txt
+%%HLDSDIR%%wizwars/512_textscheme.txt
+%%HLDSDIR%%wizwars/640_textscheme.txt
+%%HLDSDIR%%wizwars/800_textscheme.txt
+%%PORTDOCS%%%%HLDSDIR%%wizwars/WW_V1.0_LINUX_README.TXT
 %%HLDSDIR%%wizwars/autoexec.cfg
 %%HLDSDIR%%wizwars/buffer.dat
 %%HLDSDIR%%wizwars/cached.wad
 %%HLDSDIR%%wizwars/cl_dlls/client.dll
+%%HLDSDIR%%wizwars/class/Aeromancer.txt
+%%HLDSDIR%%wizwars/class/Aquamancer.txt
+%%HLDSDIR%%wizwars/class/Archmage.txt
+%%HLDSDIR%%wizwars/class/Dracomancer.txt
+%%HLDSDIR%%wizwars/class/Geomancer.txt
+%%HLDSDIR%%wizwars/class/Healer.txt
+%%HLDSDIR%%wizwars/class/Nature.txt
+%%HLDSDIR%%wizwars/class/Necromancer.txt
+%%HLDSDIR%%wizwars/class/Pyromancer.txt
+%%HLDSDIR%%wizwars/class/Voltamancer.txt
+%%HLDSDIR%%wizwars/commandmenu.txt
+%%HLDSDIR%%wizwars/conclaves/Abolishers.txt
+%%HLDSDIR%%wizwars/conclaves/Creationists.txt
+%%HLDSDIR%%wizwars/conclaves/Elementalists.txt
+%%HLDSDIR%%wizwars/conclaves/Naturalists.txt
+%%HLDSDIR%%wizwars/conclaves/Nihilists.txt
+%%HLDSDIR%%wizwars/conclaves/Systemics.txt
 %%HLDSDIR%%wizwars/config.cfg
-%%PORTDOCS%%%%HLDSDIR%%wizwars/credits.txt
+%%HLDSDIR%%wizwars/credits.txt
 %%HLDSDIR%%wizwars/cust.cst
 %%HLDSDIR%%wizwars/cust.dat
 %%HLDSDIR%%wizwars/custom.hpk
 %%HLDSDIR%%wizwars/delta.lst
-%%HLDSDIR%%wizwars/dlls/mp.dll
-%%HLDSDIR%%wizwars/dlls/mp_i386.so
+%%HLDSDIR%%wizwars/dlls/ww_i386.so
+%%HLDSDIR%%wizwars/events/burn.sc
+%%HLDSDIR%%wizwars/events/comboget.sc
+%%HLDSDIR%%wizwars/events/combohit.sc
+%%HLDSDIR%%wizwars/events/deathflash.sc
 %%HLDSDIR%%wizwars/events/fireballtrail.sc
+%%HLDSDIR%%wizwars/events/gibs.sc
+%%HLDSDIR%%wizwars/events/monsters/dragon/dragonfire.sc
+%%HLDSDIR%%wizwars/events/monsters/dragon/dragonflap.sc
 %%HLDSDIR%%wizwars/events/satchels/bursatchelfire.sc
 %%HLDSDIR%%wizwars/events/satchels/earthquakesatchelfire.sc
 %%HLDSDIR%%wizwars/events/satchels/firesatchelfire.sc
@@ -19,10 +51,12 @@
 %%HLDSDIR%%wizwars/events/satchels/poisonsatchelfire.sc
 %%HLDSDIR%%wizwars/events/satchels/suctionsatchelfire.sc
 %%HLDSDIR%%wizwars/events/satchels/tcrystalfire.sc
+%%HLDSDIR%%wizwars/events/satchels/toothsatchelfire.sc
+%%HLDSDIR%%wizwars/events/spark.sc
 %%HLDSDIR%%wizwars/events/spells/bearbite.sc
-%%HLDSDIR%%wizwars/events/spells/bearclaw.sc
 %%HLDSDIR%%wizwars/events/spells/birdspellfire.sc
 %%HLDSDIR%%wizwars/events/spells/doublemagicmisslespellfire.sc
+%%HLDSDIR%%wizwars/events/spells/dragonbreathspellfire.sc
 %%HLDSDIR%%wizwars/events/spells/fireballspellfire.sc
 %%HLDSDIR%%wizwars/events/spells/flamelickspellfire.sc
 %%HLDSDIR%%wizwars/events/spells/forcespellfire.sc
@@ -31,14 +65,21 @@
 %%HLDSDIR%%wizwars/events/spells/magicmisslespellfire.sc
 %%HLDSDIR%%wizwars/events/spells/mindmisslespellfire.sc
 %%HLDSDIR%%wizwars/events/spells/rollingstonespellfire.sc
+%%HLDSDIR%%wizwars/events/spells/shieldspellfire.sc
 %%HLDSDIR%%wizwars/events/spells/skullspellfire.sc
+%%HLDSDIR%%wizwars/events/spells/spotboltspellcharge.sc
 %%HLDSDIR%%wizwars/events/spells/spotboltspellfire.sc
 %%HLDSDIR%%wizwars/events/spells/staffswing.sc
 %%HLDSDIR%%wizwars/events/spells/thornblastspellfire.sc
-%%HLDSDIR%%wizwars/events/spells/whirlwindspellfire.sc
-%%HLDSDIR%%wizwars/events/spotboltdraw.sc
-%%HLDSDIR%%wizwars/events/spotboltspellfire.sc
+%%HLDSDIR%%wizwars/events/spells/updraftspellfire.sc
+%%HLDSDIR%%wizwars/events/spells/wyvernspellfire.sc
+%%HLDSDIR%%wizwars/events/sporepodfire.sc
+%%HLDSDIR%%wizwars/events/taunt.sc
+%%HLDSDIR%%wizwars/events/thornbushupgrade.sc
+%%HLDSDIR%%wizwars/fonts.wad
 %%HLDSDIR%%wizwars/game.cfg
+%%HLDSDIR%%wizwars/gfx/env/Nottingham.nfo
+%%HLDSDIR%%wizwars/gfx/env/Scorched Earth Policy.nfo
 %%HLDSDIR%%wizwars/gfx/env/darkbk.bmp
 %%HLDSDIR%%wizwars/gfx/env/darkbk.tga
 %%HLDSDIR%%wizwars/gfx/env/darkdn.bmp
@@ -51,6 +92,62 @@
 %%HLDSDIR%%wizwars/gfx/env/darkrt.tga
 %%HLDSDIR%%wizwars/gfx/env/darkup.bmp
 %%HLDSDIR%%wizwars/gfx/env/darkup.tga
+%%HLDSDIR%%wizwars/gfx/env/forest256_bk.bmp
+%%HLDSDIR%%wizwars/gfx/env/forest256_bk.pcx
+%%HLDSDIR%%wizwars/gfx/env/forest256_bk.tga
+%%HLDSDIR%%wizwars/gfx/env/forest256_dn.bmp
+%%HLDSDIR%%wizwars/gfx/env/forest256_dn.pcx
+%%HLDSDIR%%wizwars/gfx/env/forest256_dn.tga
+%%HLDSDIR%%wizwars/gfx/env/forest256_ft.bmp
+%%HLDSDIR%%wizwars/gfx/env/forest256_ft.pcx
+%%HLDSDIR%%wizwars/gfx/env/forest256_ft.tga
+%%HLDSDIR%%wizwars/gfx/env/forest256_lf.bmp
+%%HLDSDIR%%wizwars/gfx/env/forest256_lf.pcx
+%%HLDSDIR%%wizwars/gfx/env/forest256_lf.tga
+%%HLDSDIR%%wizwars/gfx/env/forest256_rt.bmp
+%%HLDSDIR%%wizwars/gfx/env/forest256_rt.pcx
+%%HLDSDIR%%wizwars/gfx/env/forest256_rt.tga
+%%HLDSDIR%%wizwars/gfx/env/forest256_up.bmp
+%%HLDSDIR%%wizwars/gfx/env/forest256_up.pcx
+%%HLDSDIR%%wizwars/gfx/env/forest256_up.tga
+%%HLDSDIR%%wizwars/gfx/env/forest256sky_readme.txt
+%%HLDSDIR%%wizwars/gfx/env/forest_Notes_MightyPete.nfo
+%%HLDSDIR%%wizwars/gfx/env/nottinghambk.bmp
+%%HLDSDIR%%wizwars/gfx/env/nottinghambk.pcx
+%%HLDSDIR%%wizwars/gfx/env/nottinghambk.tga
+%%HLDSDIR%%wizwars/gfx/env/nottinghamdn.bmp
+%%HLDSDIR%%wizwars/gfx/env/nottinghamdn.pcx
+%%HLDSDIR%%wizwars/gfx/env/nottinghamdn.tga
+%%HLDSDIR%%wizwars/gfx/env/nottinghamft.bmp
+%%HLDSDIR%%wizwars/gfx/env/nottinghamft.pcx
+%%HLDSDIR%%wizwars/gfx/env/nottinghamft.tga
+%%HLDSDIR%%wizwars/gfx/env/nottinghamlf.bmp
+%%HLDSDIR%%wizwars/gfx/env/nottinghamlf.pcx
+%%HLDSDIR%%wizwars/gfx/env/nottinghamlf.tga
+%%HLDSDIR%%wizwars/gfx/env/nottinghamrt.bmp
+%%HLDSDIR%%wizwars/gfx/env/nottinghamrt.pcx
+%%HLDSDIR%%wizwars/gfx/env/nottinghamrt.tga
+%%HLDSDIR%%wizwars/gfx/env/nottinghamup.bmp
+%%HLDSDIR%%wizwars/gfx/env/nottinghamup.pcx
+%%HLDSDIR%%wizwars/gfx/env/nottinghamup.tga
+%%HLDSDIR%%wizwars/gfx/env/osakabk.tga
+%%HLDSDIR%%wizwars/gfx/env/osakadn.tga
+%%HLDSDIR%%wizwars/gfx/env/osakaft.tga
+%%HLDSDIR%%wizwars/gfx/env/osakalf.tga
+%%HLDSDIR%%wizwars/gfx/env/osakart.tga
+%%HLDSDIR%%wizwars/gfx/env/osakaup.tga
+%%HLDSDIR%%wizwars/gfx/env/purplebk.bmp
+%%HLDSDIR%%wizwars/gfx/env/purplebk.tga
+%%HLDSDIR%%wizwars/gfx/env/purpledn.bmp
+%%HLDSDIR%%wizwars/gfx/env/purpledn.tga
+%%HLDSDIR%%wizwars/gfx/env/purpleft.bmp
+%%HLDSDIR%%wizwars/gfx/env/purpleft.tga
+%%HLDSDIR%%wizwars/gfx/env/purplelf.bmp
+%%HLDSDIR%%wizwars/gfx/env/purplelf.tga
+%%HLDSDIR%%wizwars/gfx/env/purplert.bmp
+%%HLDSDIR%%wizwars/gfx/env/purplert.tga
+%%HLDSDIR%%wizwars/gfx/env/purpleup.bmp
+%%HLDSDIR%%wizwars/gfx/env/purpleup.tga
 %%HLDSDIR%%wizwars/gfx/env/seascapebk.bmp
 %%HLDSDIR%%wizwars/gfx/env/seascapebk.tga
 %%HLDSDIR%%wizwars/gfx/env/seascapedn.bmp
@@ -63,6 +160,24 @@
 %%HLDSDIR%%wizwars/gfx/env/seascapert.tga
 %%HLDSDIR%%wizwars/gfx/env/seascapeup.bmp
 %%HLDSDIR%%wizwars/gfx/env/seascapeup.tga
+%%HLDSDIR%%wizwars/gfx/env/sep256_bk.bmp
+%%HLDSDIR%%wizwars/gfx/env/sep256_bk.pcx
+%%HLDSDIR%%wizwars/gfx/env/sep256_bk.tga
+%%HLDSDIR%%wizwars/gfx/env/sep256_dn.bmp
+%%HLDSDIR%%wizwars/gfx/env/sep256_dn.pcx
+%%HLDSDIR%%wizwars/gfx/env/sep256_dn.tga
+%%HLDSDIR%%wizwars/gfx/env/sep256_ft.bmp
+%%HLDSDIR%%wizwars/gfx/env/sep256_ft.pcx
+%%HLDSDIR%%wizwars/gfx/env/sep256_ft.tga
+%%HLDSDIR%%wizwars/gfx/env/sep256_lf.bmp
+%%HLDSDIR%%wizwars/gfx/env/sep256_lf.pcx
+%%HLDSDIR%%wizwars/gfx/env/sep256_lf.tga
+%%HLDSDIR%%wizwars/gfx/env/sep256_rt.bmp
+%%HLDSDIR%%wizwars/gfx/env/sep256_rt.pcx
+%%HLDSDIR%%wizwars/gfx/env/sep256_rt.tga
+%%HLDSDIR%%wizwars/gfx/env/sep256_up.bmp
+%%HLDSDIR%%wizwars/gfx/env/sep256_up.pcx
+%%HLDSDIR%%wizwars/gfx/env/sep256_up.tga
 %%HLDSDIR%%wizwars/gfx/env/wizbk.bmp
 %%HLDSDIR%%wizwars/gfx/env/wizbk.tga
 %%HLDSDIR%%wizwars/gfx/env/wizdn.bmp
@@ -117,32 +232,107 @@
 %%HLDSDIR%%wizwars/gfx/shell/splash.bmp
 %%HLDSDIR%%wizwars/gfx/shell/symbolbw.bmp
 %%HLDSDIR%%wizwars/gfx/shell/won_logo.bmp
+%%HLDSDIR%%wizwars/gfx/vgui/320_Arathas.tga
+%%HLDSDIR%%wizwars/gfx/vgui/320_arrow.tga
+%%HLDSDIR%%wizwars/gfx/vgui/320_arrowdn.tga
+%%HLDSDIR%%wizwars/gfx/vgui/320_arrowup.tga
+%%HLDSDIR%%wizwars/gfx/vgui/320_cross.tga
+%%HLDSDIR%%wizwars/gfx/vgui/640_Arathas.tga
+%%HLDSDIR%%wizwars/gfx/vgui/640_arrow.tga
+%%HLDSDIR%%wizwars/gfx/vgui/640_arrowdn.tga
+%%HLDSDIR%%wizwars/gfx/vgui/640_arrowup.tga
+%%HLDSDIR%%wizwars/gfx/vgui/640_cross.tga
+%%HLDSDIR%%wizwars/gfx/vgui/fonts/1024_Briefing Text.tga
+%%HLDSDIR%%wizwars/gfx/vgui/fonts/1024_CommandMenu Text.tga
+%%HLDSDIR%%wizwars/gfx/vgui/fonts/1024_Primary Button Text.tga
+%%HLDSDIR%%wizwars/gfx/vgui/fonts/1024_Scoreboard Text.tga
+%%HLDSDIR%%wizwars/gfx/vgui/fonts/1024_Team info Text.tga
+%%HLDSDIR%%wizwars/gfx/vgui/fonts/1024_Title Font.tga
+%%HLDSDIR%%wizwars/gfx/vgui/fonts/1152_Briefing Text.tga
+%%HLDSDIR%%wizwars/gfx/vgui/fonts/1152_CommandMenu Text.tga
+%%HLDSDIR%%wizwars/gfx/vgui/fonts/1152_Primary Button Text.tga
+%%HLDSDIR%%wizwars/gfx/vgui/fonts/1152_Scoreboard Text.tga
+%%HLDSDIR%%wizwars/gfx/vgui/fonts/1152_Team info Text.tga
+%%HLDSDIR%%wizwars/gfx/vgui/fonts/1152_Title Font.tga
+%%HLDSDIR%%wizwars/gfx/vgui/fonts/1280_Briefing Text.tga
+%%HLDSDIR%%wizwars/gfx/vgui/fonts/1280_CommandMenu Text.tga
+%%HLDSDIR%%wizwars/gfx/vgui/fonts/1280_Primary Button Text.tga
+%%HLDSDIR%%wizwars/gfx/vgui/fonts/1280_Scoreboard Text.tga
+%%HLDSDIR%%wizwars/gfx/vgui/fonts/1280_Team info Text.tga
+%%HLDSDIR%%wizwars/gfx/vgui/fonts/1280_Title Font.tga
+%%HLDSDIR%%wizwars/gfx/vgui/fonts/1600_Briefing Text.tga
+%%HLDSDIR%%wizwars/gfx/vgui/fonts/1600_CommandMenu Text.tga
+%%HLDSDIR%%wizwars/gfx/vgui/fonts/1600_Primary Button Text.tga
+%%HLDSDIR%%wizwars/gfx/vgui/fonts/1600_Scoreboard Text.tga
+%%HLDSDIR%%wizwars/gfx/vgui/fonts/1600_Team info Text.tga
+%%HLDSDIR%%wizwars/gfx/vgui/fonts/1600_Title Font.tga
+%%HLDSDIR%%wizwars/gfx/vgui/fonts/400_Briefing Text.tga
+%%HLDSDIR%%wizwars/gfx/vgui/fonts/400_CommandMenu Text.tga
+%%HLDSDIR%%wizwars/gfx/vgui/fonts/400_Primary Button Text.tga
+%%HLDSDIR%%wizwars/gfx/vgui/fonts/400_Scoreboard Text.tga
+%%HLDSDIR%%wizwars/gfx/vgui/fonts/400_Team info Text.tga
+%%HLDSDIR%%wizwars/gfx/vgui/fonts/400_Title Font.tga
+%%HLDSDIR%%wizwars/gfx/vgui/fonts/480_Briefing Text.tga
+%%HLDSDIR%%wizwars/gfx/vgui/fonts/480_CommandMenu Text.tga
+%%HLDSDIR%%wizwars/gfx/vgui/fonts/480_Primary Button Text.tga
+%%HLDSDIR%%wizwars/gfx/vgui/fonts/480_Scoreboard Text.tga
+%%HLDSDIR%%wizwars/gfx/vgui/fonts/480_Team info Text.tga
+%%HLDSDIR%%wizwars/gfx/vgui/fonts/480_Title Font.tga
+%%HLDSDIR%%wizwars/gfx/vgui/fonts/512_Briefing Text.tga
+%%HLDSDIR%%wizwars/gfx/vgui/fonts/512_CommandMenu Text.tga
+%%HLDSDIR%%wizwars/gfx/vgui/fonts/512_Primary Button Text.tga
+%%HLDSDIR%%wizwars/gfx/vgui/fonts/512_Scoreboard Text.tga
+%%HLDSDIR%%wizwars/gfx/vgui/fonts/512_Team info Text.tga
+%%HLDSDIR%%wizwars/gfx/vgui/fonts/512_Title Font.tga
+%%HLDSDIR%%wizwars/gfx/vgui/fonts/640_Briefing Text.tga
+%%HLDSDIR%%wizwars/gfx/vgui/fonts/640_CommandMenu Text.tga
+%%HLDSDIR%%wizwars/gfx/vgui/fonts/640_Primary Button Text.tga
+%%HLDSDIR%%wizwars/gfx/vgui/fonts/640_Scoreboard Text.tga
+%%HLDSDIR%%wizwars/gfx/vgui/fonts/640_Team info Text.tga
+%%HLDSDIR%%wizwars/gfx/vgui/fonts/640_Title Font.tga
+%%HLDSDIR%%wizwars/gfx/vgui/fonts/800_Briefing Text.tga
+%%HLDSDIR%%wizwars/gfx/vgui/fonts/800_CommandMenu Text.tga
+%%HLDSDIR%%wizwars/gfx/vgui/fonts/800_Primary Button Text.tga
+%%HLDSDIR%%wizwars/gfx/vgui/fonts/800_Scoreboard Text.tga
+%%HLDSDIR%%wizwars/gfx/vgui/fonts/800_Team info Text.tga
+%%HLDSDIR%%wizwars/gfx/vgui/fonts/800_Title Font.tga
+%%HLDSDIR%%wizwars/help.txt
 %%HLDSDIR%%wizwars/liblist.gam
-%%HLDSDIR%%wizwars/listenserver.cfg
-%%PORTDOCS%%%%HLDSDIR%%wizwars/manual.html
 %%HLDSDIR%%wizwars/mapcycle.txt
-%%PORTDOCS%%%%HLDSDIR%%wizwars/maps/Parade_readme.txt
-%%HLDSDIR%%wizwars/maps/castle_rush.bsp
-%%PORTDOCS%%%%HLDSDIR%%wizwars/maps/castle_rush_readme.txt
-%%HLDSDIR%%wizwars/maps/crusade.bsp
-%%HLDSDIR%%wizwars/maps/crusade.txt
-%%PORTDOCS%%%%HLDSDIR%%wizwars/maps/crusade_readme.txt
-%%HLDSDIR%%wizwars/maps/parade.bsp
-%%PORTDOCS%%%%HLDSDIR%%wizwars/maps/parade.txt
 %%HLDSDIR%%wizwars/maps/ww_2fort.bsp
-%%PORTDOCS%%%%HLDSDIR%%wizwars/maps/ww_2fort.txt
-%%PORTDOCS%%%%HLDSDIR%%wizwars/maps/ww_2fort_readme.txt
-%%HLDSDIR%%wizwars/maps/ww_castle.bsp
-%%PORTDOCS%%%%HLDSDIR%%wizwars/maps/ww_castle.txt
+%%HLDSDIR%%wizwars/maps/ww_2fort.txt
+%%HLDSDIR%%wizwars/maps/ww_2fort.ww
+%%HLDSDIR%%wizwars/maps/ww_2fort_readme.txt
+%%HLDSDIR%%wizwars/maps/ww_castlerush.bsp
+%%HLDSDIR%%wizwars/maps/ww_castlerush.txt
+%%HLDSDIR%%wizwars/maps/ww_castlerush.ww
+%%HLDSDIR%%wizwars/maps/ww_chasm.bsp
+%%HLDSDIR%%wizwars/maps/ww_chasm.txt
+%%HLDSDIR%%wizwars/maps/ww_chasm.ww
+%%HLDSDIR%%wizwars/maps/ww_chasm_readme.txt
+%%HLDSDIR%%wizwars/maps/ww_feudal.bsp
+%%HLDSDIR%%wizwars/maps/ww_feudal.txt
+%%HLDSDIR%%wizwars/maps/ww_feudal.ww
+%%HLDSDIR%%wizwars/maps/ww_golem.bsp
+%%HLDSDIR%%wizwars/maps/ww_golem.txt
+%%HLDSDIR%%wizwars/maps/ww_golem.ww
+%%HLDSDIR%%wizwars/maps/ww_golem_readme.txt
 %%HLDSDIR%%wizwars/maps/ww_hunt.bsp
-%%PORTDOCS%%%%HLDSDIR%%wizwars/maps/ww_hunt.txt
-%%HLDSDIR%%wizwars/maps/ww_library.bsp
-%%PORTDOCS%%%%HLDSDIR%%wizwars/maps/ww_library.txt
+%%HLDSDIR%%wizwars/maps/ww_hunt.txt
+%%HLDSDIR%%wizwars/maps/ww_mario.bsp
+%%HLDSDIR%%wizwars/maps/ww_mario.txt
+%%HLDSDIR%%wizwars/maps/ww_mario_info.txt
+%%HLDSDIR%%wizwars/maps/ww_monoliths.bsp
+%%HLDSDIR%%wizwars/maps/ww_monoliths.txt
+%%HLDSDIR%%wizwars/maps/ww_osaka.bsp
+%%HLDSDIR%%wizwars/maps/ww_osaka.res
+%%HLDSDIR%%wizwars/maps/ww_osaka.txt
 %%HLDSDIR%%wizwars/maps/ww_roc2.bsp
-%%PORTDOCS%%%%HLDSDIR%%wizwars/maps/ww_roc2.txt
-%%PORTDOCS%%%%HLDSDIR%%wizwars/maps/ww_roc2readme.txt
+%%HLDSDIR%%wizwars/maps/ww_roc2.txt
+%%HLDSDIR%%wizwars/maps/ww_roc2readme.txt
+%%HLDSDIR%%wizwars/maps/ww_skytower.bsp
 %%HLDSDIR%%wizwars/maps/ww_storm.bsp
-%%PORTDOCS%%%%HLDSDIR%%wizwars/maps/ww_storm.txt
+%%HLDSDIR%%wizwars/maps/ww_storm.txt
 %%HLDSDIR%%wizwars/media/logo.avi
 %%HLDSDIR%%wizwars/media/logo.bmp
 %%HLDSDIR%%wizwars/models/backpack.mdl
@@ -151,85 +341,98 @@
 %%HLDSDIR%%wizwars/models/bird.mdl
 %%HLDSDIR%%wizwars/models/cocklebur.mdl
 %%HLDSDIR%%wizwars/models/detpack.mdl
+%%HLDSDIR%%wizwars/models/dragon.mdl
+%%HLDSDIR%%wizwars/models/dragontooth.mdl
+%%HLDSDIR%%wizwars/models/drake.mdl
 %%HLDSDIR%%wizwars/models/fissure.mdl
 %%HLDSDIR%%wizwars/models/flag.mdl
 %%HLDSDIR%%wizwars/models/flyingskull.mdl
+%%HLDSDIR%%wizwars/models/gem.mdl
 %%HLDSDIR%%wizwars/models/giantplant.mdl
+%%HLDSDIR%%wizwars/models/hands/v_archmagestaffhands.mdl
+%%HLDSDIR%%wizwars/models/hands/v_bearhands.mdl
+%%HLDSDIR%%wizwars/models/hands/v_deathstaffhands.mdl
+%%HLDSDIR%%wizwars/models/hands/v_dragonstaffhands.mdl
+%%HLDSDIR%%wizwars/models/hands/v_earthstaffhands.mdl
+%%HLDSDIR%%wizwars/models/hands/v_firestaffhands.mdl
+%%HLDSDIR%%wizwars/models/hands/v_icestaffhands.mdl
+%%HLDSDIR%%wizwars/models/hands/v_lifestaffhands.mdl
+%%HLDSDIR%%wizwars/models/hands/v_lightningstaffhands.mdl
+%%HLDSDIR%%wizwars/models/hands/v_plantstaffhands.mdl
+%%HLDSDIR%%wizwars/models/hands/v_windstaffhands.mdl
 %%HLDSDIR%%wizwars/models/icepoke.mdl
 %%HLDSDIR%%wizwars/models/keycard.mdl
-%%HLDSDIR%%wizwars/models/p_cstaff.mdl
-%%HLDSDIR%%wizwars/models/p_dstaff.mdl
-%%HLDSDIR%%wizwars/models/p_fstaff.mdl
-%%HLDSDIR%%wizwars/models/p_lstaff.mdl
-%%HLDSDIR%%wizwars/models/p_mstaff.mdl
-%%HLDSDIR%%wizwars/models/p_pstaff.mdl
-%%HLDSDIR%%wizwars/models/p_qstaff.mdl
-%%HLDSDIR%%wizwars/models/p_wstaff.mdl
+%%HLDSDIR%%wizwars/models/osakaflag.mdl
 %%HLDSDIR%%wizwars/models/player.mdl
-%%HLDSDIR%%wizwars/models/player/ArchMage/archmage.mdl
-%%HLDSDIR%%wizwars/models/player/BearMan/bearman.mdl
-%%HLDSDIR%%wizwars/models/player/BlackWiz/blackwiz.mdl
-%%HLDSDIR%%wizwars/models/player/BlueWiz/bluewiz.mdl
-%%HLDSDIR%%wizwars/models/player/BrownWiz/brownwiz.mdl
-%%HLDSDIR%%wizwars/models/player/GreenWiz/greenwiz.mdl
-%%HLDSDIR%%wizwars/models/player/PurpleWiz/purplewiz.mdl
-%%HLDSDIR%%wizwars/models/player/RedWiz/redwiz.mdl
-%%HLDSDIR%%wizwars/models/player/WhiteWiz/whitewiz.mdl
-%%HLDSDIR%%wizwars/models/player/YellowWiz/yellowwiz.mdl
+%%HLDSDIR%%wizwars/models/player/ArchMage/ArchMage.mdl
+%%HLDSDIR%%wizwars/models/player/Bear/bear.mdl
+%%HLDSDIR%%wizwars/models/player/DeathWizard/DeathWizard.mdl
+%%HLDSDIR%%wizwars/models/player/DragonWizard/DragonWizard.mdl
+%%HLDSDIR%%wizwars/models/player/EarthWizard/EarthWizard.mdl
+%%HLDSDIR%%wizwars/models/player/FireWizard/FireWizard.mdl
+%%HLDSDIR%%wizwars/models/player/IceWizard/IceWizard.mdl
+%%HLDSDIR%%wizwars/models/player/LifeWizard/LifeWizard.mdl
+%%HLDSDIR%%wizwars/models/player/LightningWizard/LightningWizard.mdl
+%%HLDSDIR%%wizwars/models/player/NatureWizard/NatureWizard.mdl
+%%HLDSDIR%%wizwars/models/player/WindWizard/WindWizard.mdl
 %%HLDSDIR%%wizwars/models/r_armor.mdl
 %%HLDSDIR%%wizwars/models/raisedead.mdl
-%%HLDSDIR%%wizwars/models/redwiz.mdl
 %%HLDSDIR%%wizwars/models/rollingstone.mdl
 %%HLDSDIR%%wizwars/models/sentrycrystal.mdl
+%%HLDSDIR%%wizwars/models/sheep.mdl
 %%HLDSDIR%%wizwars/models/spiritwiz.mdl
+%%HLDSDIR%%wizwars/models/spore.mdl
+%%HLDSDIR%%wizwars/models/staves/p_crookstaff.mdl
+%%HLDSDIR%%wizwars/models/staves/p_crystalstaff.mdl
+%%HLDSDIR%%wizwars/models/staves/p_dragonstaff.mdl
+%%HLDSDIR%%wizwars/models/staves/p_firestaff.mdl
+%%HLDSDIR%%wizwars/models/staves/p_lifestaff.mdl
+%%HLDSDIR%%wizwars/models/staves/p_lightningstaff.mdl
+%%HLDSDIR%%wizwars/models/staves/p_quakestaff.mdl
+%%HLDSDIR%%wizwars/models/staves/p_scythestaff.mdl
+%%HLDSDIR%%wizwars/models/staves/p_stickstaff.mdl
+%%HLDSDIR%%wizwars/models/staves/p_windstaff.mdl
 %%HLDSDIR%%wizwars/models/thorn.mdl
-%%HLDSDIR%%wizwars/models/thornbush.mdl
-%%HLDSDIR%%wizwars/models/thornbush_poison.mdl
+%%HLDSDIR%%wizwars/models/thornbush1.mdl
+%%HLDSDIR%%wizwars/models/thornbush2.mdl
+%%HLDSDIR%%wizwars/models/thornbush3.mdl
 %%HLDSDIR%%wizwars/models/tornado.mdl
 %%HLDSDIR%%wizwars/models/tpgibs.mdl
-%%HLDSDIR%%wizwars/models/v_bearclaw.mdl
-%%HLDSDIR%%wizwars/models/v_cstaff.mdl
-%%HLDSDIR%%wizwars/models/v_doublemagicmisslespell.mdl
-%%HLDSDIR%%wizwars/models/v_dstaff.mdl
-%%HLDSDIR%%wizwars/models/v_fireballspell.mdl
-%%HLDSDIR%%wizwars/models/v_fstaff.mdl
-%%HLDSDIR%%wizwars/models/v_icepokespell.mdl
-%%HLDSDIR%%wizwars/models/v_lstaff.mdl
-%%HLDSDIR%%wizwars/models/v_magicmisslespell.mdl
-%%HLDSDIR%%wizwars/models/v_mstaff.mdl
-%%HLDSDIR%%wizwars/models/v_pstaff.mdl
-%%HLDSDIR%%wizwars/models/v_qstaff.mdl
-%%HLDSDIR%%wizwars/models/v_rayspell.mdl
-%%HLDSDIR%%wizwars/models/v_rollingstonespell.mdl
-%%HLDSDIR%%wizwars/models/v_spotboltspell.mdl
-%%HLDSDIR%%wizwars/models/v_taunt.mdl
-%%HLDSDIR%%wizwars/models/v_wstaff.mdl
+%%HLDSDIR%%wizwars/models/v_dragon.mdl
 %%HLDSDIR%%wizwars/models/w_battery.mdl
 %%HLDSDIR%%wizwars/models/w_bursatchel.mdl
 %%HLDSDIR%%wizwars/models/w_cyclonesatchel.mdl
+%%HLDSDIR%%wizwars/models/w_dragonskull.mdl
 %%HLDSDIR%%wizwars/models/w_earthquakesatchel.mdl
-%%HLDSDIR%%wizwars/models/w_firesatchel.mdl
+%%HLDSDIR%%wizwars/models/w_firestone.mdl
 %%HLDSDIR%%wizwars/models/w_healhurtsatchel.mdl
 %%HLDSDIR%%wizwars/models/w_lightningsatchel.mdl
 %%HLDSDIR%%wizwars/models/w_longjump.mdl
 %%HLDSDIR%%wizwars/models/w_medkit.mdl
 %%HLDSDIR%%wizwars/models/w_poisonsatchel.mdl
+%%HLDSDIR%%wizwars/models/w_rollingskull.mdl
 %%HLDSDIR%%wizwars/models/w_shield.mdl
 %%HLDSDIR%%wizwars/models/w_spellbook.mdl
 %%HLDSDIR%%wizwars/models/w_suctionsatchel.mdl
 %%HLDSDIR%%wizwars/models/w_tcrystal.mdl
 %%HLDSDIR%%wizwars/models/w_weaponbox.mdl
 %%HLDSDIR%%wizwars/models/wombat.mdl
+%%HLDSDIR%%wizwars/models/wyvern.mdl
 %%HLDSDIR%%wizwars/motd.txt
 %%HLDSDIR%%wizwars/pldecal.wad
 %%HLDSDIR%%wizwars/server.cfg
 %%HLDSDIR%%wizwars/settings.scr
+%%HLDSDIR%%wizwars/sound/ambience/burn.wav
+%%HLDSDIR%%wizwars/sound/ambience/chimandolin.wav
+%%HLDSDIR%%wizwars/sound/ambience/flute.wav
 %%HLDSDIR%%wizwars/sound/ambience/goal_1.wav
 %%HLDSDIR%%wizwars/sound/ambience/thunder.wav
+%%HLDSDIR%%wizwars/sound/ambience/water_flowing3.wav
+%%HLDSDIR%%wizwars/sound/debris/beamstart1.wav
+%%HLDSDIR%%wizwars/sound/dragon/fly1.wav
 %%HLDSDIR%%wizwars/sound/items/ammopickup1.wav
 %%HLDSDIR%%wizwars/sound/items/ammopickup2.wav
 %%HLDSDIR%%wizwars/sound/items/itembk2.wav
-%%HLDSDIR%%wizwars/sound/items/smallmedkit1.wav
 %%HLDSDIR%%wizwars/sound/misc/talk.wav
 %%HLDSDIR%%wizwars/sound/player/bear.wav
 %%HLDSDIR%%wizwars/sound/player/death4.wav
@@ -244,18 +447,23 @@
 %%HLDSDIR%%wizwars/sound/player/taunt4.wav
 %%HLDSDIR%%wizwars/sound/player/taunt5.wav
 %%HLDSDIR%%wizwars/sound/sentences.txt
+%%HLDSDIR%%wizwars/sound/sheep/baa.wav
 %%HLDSDIR%%wizwars/sound/skeleton/skfollow.wav
 %%HLDSDIR%%wizwars/sound/skeleton/skwait.wav
 %%HLDSDIR%%wizwars/sound/vox/captured.wav
+%%HLDSDIR%%wizwars/sound/vox/conch.wav
 %%HLDSDIR%%wizwars/sound/vox/enemy.wav
 %%HLDSDIR%%wizwars/sound/vox/flag.wav
+%%HLDSDIR%%wizwars/sound/vox/osaka_finale.wav
 %%HLDSDIR%%wizwars/sound/vox/returned.wav
 %%HLDSDIR%%wizwars/sound/vox/scores.wav
+%%HLDSDIR%%wizwars/sound/weather/rain1.wav
 %%HLDSDIR%%wizwars/sound/wombat/wbattack1.wav
 %%HLDSDIR%%wizwars/sound/wombat/wbattack2.wav
 %%HLDSDIR%%wizwars/sound/wombat/wbattack3.wav
 %%HLDSDIR%%wizwars/sound/wombat/wblaunch.wav
 %%HLDSDIR%%wizwars/sound/wombat/wbstrength.wav
+%%HLDSDIR%%wizwars/sprites/320hud4.spr
 %%HLDSDIR%%wizwars/sprites/640hud1.spr
 %%HLDSDIR%%wizwars/sprites/640hud10.spr
 %%HLDSDIR%%wizwars/sprites/640hud11.spr
@@ -266,77 +474,98 @@
 %%HLDSDIR%%wizwars/sprites/640hud9.spr
 %%HLDSDIR%%wizwars/sprites/arrow.spr
 %%HLDSDIR%%wizwars/sprites/crosshairs.spr
+%%HLDSDIR%%wizwars/sprites/dragon.spr
+%%HLDSDIR%%wizwars/sprites/firestone.spr
 %%HLDSDIR%%wizwars/sprites/hud.txt
+%%HLDSDIR%%wizwars/sprites/lifesprite.spr
 %%HLDSDIR%%wizwars/sprites/muzzleflash.spr
 %%HLDSDIR%%wizwars/sprites/muzzleflash1.spr
 %%HLDSDIR%%wizwars/sprites/muzzleflash2.spr
 %%HLDSDIR%%wizwars/sprites/muzzleflash3.spr
-%%HLDSDIR%%wizwars/sprites/tornado.spr
-%%PORTDOCS%%%%HLDSDIR%%wizwars/sprites/weapon_balllightningspell.txt
-%%PORTDOCS%%%%HLDSDIR%%wizwars/sprites/weapon_beanstalkspell.txt
-%%PORTDOCS%%%%HLDSDIR%%wizwars/sprites/weapon_bearbite.txt
-%%PORTDOCS%%%%HLDSDIR%%wizwars/sprites/weapon_bearclaw.txt
-%%PORTDOCS%%%%HLDSDIR%%wizwars/sprites/weapon_birdspell.txt
-%%PORTDOCS%%%%HLDSDIR%%wizwars/sprites/weapon_cometspell.txt
-%%PORTDOCS%%%%HLDSDIR%%wizwars/sprites/weapon_deathrayspell.txt
-%%PORTDOCS%%%%HLDSDIR%%wizwars/sprites/weapon_doublemagicmisslespell.txt
-%%PORTDOCS%%%%HLDSDIR%%wizwars/sprites/weapon_fireballspell.txt
-%%PORTDOCS%%%%HLDSDIR%%wizwars/sprites/weapon_flamelickspell.txt
-%%PORTDOCS%%%%HLDSDIR%%wizwars/sprites/weapon_forcespell.txt
-%%PORTDOCS%%%%HLDSDIR%%wizwars/sprites/weapon_giantplantspell.txt
-%%PORTDOCS%%%%HLDSDIR%%wizwars/sprites/weapon_icepokespell.txt
-%%PORTDOCS%%%%HLDSDIR%%wizwars/sprites/weapon_levitationspell.txt
-%%PORTDOCS%%%%HLDSDIR%%wizwars/sprites/weapon_lightningboltspell.txt
-%%PORTDOCS%%%%HLDSDIR%%wizwars/sprites/weapon_lightningcloudspell.txt
-%%PORTDOCS%%%%HLDSDIR%%wizwars/sprites/weapon_magicmisslespell.txt
-%%PORTDOCS%%%%HLDSDIR%%wizwars/sprites/weapon_meteorspell.txt
-%%PORTDOCS%%%%HLDSDIR%%wizwars/sprites/weapon_mindmisslespell.txt
-%%PORTDOCS%%%%HLDSDIR%%wizwars/sprites/weapon_rollingstonespell.txt
-%%PORTDOCS%%%%HLDSDIR%%wizwars/sprites/weapon_skeletonspell.txt
-%%PORTDOCS%%%%HLDSDIR%%wizwars/sprites/weapon_skullspell.txt
-%%PORTDOCS%%%%HLDSDIR%%wizwars/sprites/weapon_spiritwizspell.txt
-%%PORTDOCS%%%%HLDSDIR%%wizwars/sprites/weapon_spotboltspell.txt
-%%PORTDOCS%%%%HLDSDIR%%wizwars/sprites/weapon_staff.txt
-%%PORTDOCS%%%%HLDSDIR%%wizwars/sprites/weapon_thornblastspell.txt
-%%PORTDOCS%%%%HLDSDIR%%wizwars/sprites/weapon_tornadospell.txt
-%%PORTDOCS%%%%HLDSDIR%%wizwars/sprites/weapon_whirlwindspell.txt
-%%PORTDOCS%%%%HLDSDIR%%wizwars/sprites/weapon_whiterayspell.txt
-%%PORTDOCS%%%%HLDSDIR%%wizwars/sprites/weapon_wombatspell.txt
+%%HLDSDIR%%wizwars/sprites/rain1.spr
+%%HLDSDIR%%wizwars/sprites/skullsteam.spr
+%%HLDSDIR%%wizwars/sprites/soul.spr
+%%HLDSDIR%%wizwars/sprites/soul2.spr
+%%HLDSDIR%%wizwars/sprites/updraft.spr
+%%HLDSDIR%%wizwars/sprites/weapon_beanstalkspell.txt
+%%HLDSDIR%%wizwars/sprites/weapon_bearbite.txt
+%%HLDSDIR%%wizwars/sprites/weapon_birdspell.txt
+%%HLDSDIR%%wizwars/sprites/weapon_combospell.txt
+%%HLDSDIR%%wizwars/sprites/weapon_cometspell.txt
+%%HLDSDIR%%wizwars/sprites/weapon_deathrayspell.txt
+%%HLDSDIR%%wizwars/sprites/weapon_doublemagicmisslespell.txt
+%%HLDSDIR%%wizwars/sprites/weapon_dragonbreathspell.txt
+%%HLDSDIR%%wizwars/sprites/weapon_fireballspell.txt
+%%HLDSDIR%%wizwars/sprites/weapon_flamelickspell.txt
+%%HLDSDIR%%wizwars/sprites/weapon_forcespell.txt
+%%HLDSDIR%%wizwars/sprites/weapon_freezerayspell.txt
+%%HLDSDIR%%wizwars/sprites/weapon_icepokespell.txt
+%%HLDSDIR%%wizwars/sprites/weapon_levitationspell.txt
+%%HLDSDIR%%wizwars/sprites/weapon_lightningboltspell.txt
+%%HLDSDIR%%wizwars/sprites/weapon_magicmisslespell.txt
+%%HLDSDIR%%wizwars/sprites/weapon_mindmisslespell.txt
+%%HLDSDIR%%wizwars/sprites/weapon_rollingstonespell.txt
+%%HLDSDIR%%wizwars/sprites/weapon_shieldspell.txt
+%%HLDSDIR%%wizwars/sprites/weapon_skullspell.txt
+%%HLDSDIR%%wizwars/sprites/weapon_spotboltspell.txt
+%%HLDSDIR%%wizwars/sprites/weapon_staff.txt
+%%HLDSDIR%%wizwars/sprites/weapon_thornblastspell.txt
+%%HLDSDIR%%wizwars/sprites/weapon_updraftspell.txt
+%%HLDSDIR%%wizwars/sprites/weapon_whiterayspell.txt
+%%HLDSDIR%%wizwars/sprites/weapon_wyvernspell.txt
 %%HLDSDIR%%wizwars/sprites/yuck.spr
+%%HLDSDIR%%wizwars/titles.txt
 %%HLDSDIR%%wizwars/user.scr
-%%PORTDOCS%%%%HLDSDIR%%wizwars/wizwars.ico
+%%HLDSDIR%%wizwars/ww_castlerush.cfg
+%%HLDSDIR%%wizwars/ww_chasm.cfg
+%%HLDSDIR%%wizwars/ww_mario.cfg
 %%HLDSDIR%%wizwars/wwwad.wad
-@dirrm %%HLDSDIR%%wizwars/sprites
-@dirrm %%HLDSDIR%%wizwars/sound/wombat
-@dirrm %%HLDSDIR%%wizwars/sound/vox
-@dirrm %%HLDSDIR%%wizwars/sound/skeleton
-@dirrm %%HLDSDIR%%wizwars/sound/player
-@dirrm %%HLDSDIR%%wizwars/sound/misc
-@dirrm %%HLDSDIR%%wizwars/sound/items
-@dirrm %%HLDSDIR%%wizwars/sound/ambience
-@dirrm %%HLDSDIR%%wizwars/sound
-@dirrm %%HLDSDIR%%wizwars/models/player/YellowWiz
-@dirrm %%HLDSDIR%%wizwars/models/player/WhiteWiz
-@dirrm %%HLDSDIR%%wizwars/models/player/RedWiz
-@dirrm %%HLDSDIR%%wizwars/models/player/PurpleWiz
-@dirrm %%HLDSDIR%%wizwars/models/player/GreenWiz
-@dirrm %%HLDSDIR%%wizwars/models/player/BrownWiz
-@dirrm %%HLDSDIR%%wizwars/models/player/BlueWiz
-@dirrm %%HLDSDIR%%wizwars/models/player/BlackWiz
-@dirrm %%HLDSDIR%%wizwars/models/player/BearMan
-@dirrm %%HLDSDIR%%wizwars/models/player/ArchMage
-@dirrm %%HLDSDIR%%wizwars/models/player
-@dirrm %%HLDSDIR%%wizwars/models
-@dirrm %%HLDSDIR%%wizwars/media
-@dirrm %%HLDSDIR%%wizwars/maps
-@dirrm %%HLDSDIR%%wizwars/gfx/shell
-@dirrm %%HLDSDIR%%wizwars/gfx/env
-@dirrm %%HLDSDIR%%wizwars/gfx
-@dirrm %%HLDSDIR%%wizwars/events/spells
-@dirrm %%HLDSDIR%%wizwars/events/satchels
-@dirrm %%HLDSDIR%%wizwars/events
-@dirrm %%HLDSDIR%%wizwars/dlls
-@dirrm %%HLDSDIR%%wizwars/cl_dlls
+%%PORTDOCS%%@dirrm %%HLDSDIR%%wizwars/sprites
+%%PORTDOCS%%@dirrm %%HLDSDIR%%wizwars/sound/wombat
+%%PORTDOCS%%@dirrm %%HLDSDIR%%wizwars/sound/weather
+%%PORTDOCS%%@dirrm %%HLDSDIR%%wizwars/sound/weapons
+%%PORTDOCS%%@dirrm %%HLDSDIR%%wizwars/sound/vox
+%%PORTDOCS%%@dirrm %%HLDSDIR%%wizwars/sound/skeleton
+%%PORTDOCS%%@dirrm %%HLDSDIR%%wizwars/sound/sheep
+%%PORTDOCS%%@dirrm %%HLDSDIR%%wizwars/sound/player
+%%PORTDOCS%%@dirrm %%HLDSDIR%%wizwars/sound/misc
+%%PORTDOCS%%@dirrm %%HLDSDIR%%wizwars/sound/items
+%%PORTDOCS%%@dirrm %%HLDSDIR%%wizwars/sound/dragon
+%%PORTDOCS%%@dirrm %%HLDSDIR%%wizwars/sound/debris
+%%PORTDOCS%%@dirrm %%HLDSDIR%%wizwars/sound/ambience
+%%PORTDOCS%%@dirrm %%HLDSDIR%%wizwars/sound
+%%PORTDOCS%%@dirrm %%HLDSDIR%%wizwars/models/staves
+%%PORTDOCS%%@dirrm %%HLDSDIR%%wizwars/models/player/WindWizard
+%%PORTDOCS%%@dirrm %%HLDSDIR%%wizwars/models/player/NatureWizard
+%%PORTDOCS%%@dirrm %%HLDSDIR%%wizwars/models/player/LightningWizard
+%%PORTDOCS%%@dirrm %%HLDSDIR%%wizwars/models/player/LifeWizard
+%%PORTDOCS%%@dirrm %%HLDSDIR%%wizwars/models/player/IceWizard
+%%PORTDOCS%%@dirrm %%HLDSDIR%%wizwars/models/player/FireWizard
+%%PORTDOCS%%@dirrm %%HLDSDIR%%wizwars/models/player/EarthWizard
+%%PORTDOCS%%@dirrm %%HLDSDIR%%wizwars/models/player/DragonWizard
+%%PORTDOCS%%@dirrm %%HLDSDIR%%wizwars/models/player/DeathWizard
+%%PORTDOCS%%@dirrm %%HLDSDIR%%wizwars/models/player/Bear
+%%PORTDOCS%%@dirrm %%HLDSDIR%%wizwars/models/player/ArchMage
+%%PORTDOCS%%@dirrm %%HLDSDIR%%wizwars/models/player
+%%PORTDOCS%%@dirrm %%HLDSDIR%%wizwars/models/hands
+%%PORTDOCS%%@dirrm %%HLDSDIR%%wizwars/models
+%%PORTDOCS%%@dirrm %%HLDSDIR%%wizwars/media
+%%PORTDOCS%%@dirrm %%HLDSDIR%%wizwars/maps
+%%PORTDOCS%%@dirrm %%HLDSDIR%%wizwars/gfx/vgui/fonts
+%%PORTDOCS%%@dirrm %%HLDSDIR%%wizwars/gfx/vgui
+%%PORTDOCS%%@dirrm %%HLDSDIR%%wizwars/gfx/shell
+%%PORTDOCS%%@dirrm %%HLDSDIR%%wizwars/gfx/env
+%%PORTDOCS%%@dirrm %%HLDSDIR%%wizwars/gfx
+%%PORTDOCS%%@dirrm %%HLDSDIR%%wizwars/events/spells
+%%PORTDOCS%%@dirrm %%HLDSDIR%%wizwars/events/satchels
+%%PORTDOCS%%@dirrm %%HLDSDIR%%wizwars/events/monsters/dragon
+%%PORTDOCS%%@dirrm %%HLDSDIR%%wizwars/events/monsters
+%%PORTDOCS%%@dirrm %%HLDSDIR%%wizwars/events
+%%PORTDOCS%%@dirrm %%HLDSDIR%%wizwars/dlls
+%%PORTDOCS%%@dirrm %%HLDSDIR%%wizwars/conclaves
+%%PORTDOCS%%@dirrm %%HLDSDIR%%wizwars/class
+%%PORTDOCS%%@dirrm %%HLDSDIR%%wizwars/cl_dlls
 @unexec rmdir %D/%%HLDSDIR%%wizwars/SAVE 2>/dev/null || true
+@unexec rmdir %D/%%HLDSDIR%%wizwars/music 2>/dev/null || true
 @unexec rmdir %D/%%HLDSDIR%%wizwars/logs 2>/dev/null || true
 @unexec rmdir %D/%%HLDSDIR%%wizwars 2>/dev/null || echo "If you are permanently removing this port, you should do a ``rm -rf ${PKG_PREFIX}/%%HLDSDIR%%wizwars`` to remove any configuration files and logs left." | fmt
