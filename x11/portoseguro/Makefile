@@ -26,7 +26,7 @@ do-install:
 .endfor
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${X11BASE}/share/doc/portoseguro
-	${INSTALL_DATA} ${WRKSRC}/README ${LOCALBASE}/share/doc/portoseguro
+	${INSTALL_DATA} ${WRKSRC}/README ${X11BASE}/share/doc/portoseguro
 .endif
 
 .include <bsd.port.mk>
