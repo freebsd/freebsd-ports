@@ -1,9 +1,10 @@
 ************************************************************************
 
-This package includes the Marathon Infinity Demo files.  These files are
-sufficient to play AlephOne, but only contain four of Infinity's levels.
+This package does not include any Aleph One data files.  There are a few
+ways of getting a fully-playable version of Aleph One:
 
-There are two ways of getting a fully-playable version of AlephOne:
+  * Install the `alephone-data' port.  This port includes the demo files
+    from Marathon Infinity.
 
   * Buy a copy of Marathon 2 or Marathon Infinity and convert those data
     files into the appropriate AlephOne format (http://source.bungie.org

@@ -1,15 +1,9 @@
 bin/alephone
 share/AlephOne/Fonts
-share/AlephOne/Images
 share/AlephOne/MML/Interface_Rects.mml
-share/AlephOne/MML/Preferences.mml
 share/AlephOne/MML/Text_Strings.mml
 share/AlephOne/MML/Transparent_Liquids.mml
 share/AlephOne/MML/Transparent_Sprites.mml
-share/AlephOne/Map
-share/AlephOne/README
-share/AlephOne/Shapes
-share/AlephOne/Sounds
 share/AlephOne/Themes/Default/button_c.bmp
 share/AlephOne/Themes/Default/button_l.bmp
 share/AlephOne/Themes/Default/button_r.bmp
