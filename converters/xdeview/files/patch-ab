@@ -1,0 +1,13 @@
+--- tcl/Makefile.in.orig	Thu Jun  6 13:09:05 1996
++++ tcl/Makefile.in	Wed Apr  2 00:06:10 1997
+@@ -95,8 +95,8 @@
+ 	rm -f uuwish [Xx]deview gif2gfp
+ 	make all
+ 
+-uuwish:		$(OBJ) ../uulib/libuu.a
+-	$(CC) -o $@ $(OBJ) -L../uulib -luu $(LIBS)
++uuwish:		$(OBJ)
++	$(CC) -o $@ $(OBJ) -luu $(LIBS)
+ 
+ xdeview:	xdeview.head tk_MFSbox.tcl xdeview.tail
+ 	rm -f $@
