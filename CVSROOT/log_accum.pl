@@ -109,46 +109,50 @@ my $CVSROOT       = $ENV{'CVSROOT'} || "/home/ncvs";
 #
 ############################################################
 
+# Remove the temporary files.
 sub cleanup_tmpfiles {
-    my @files;		# The list of temporary files.
+	my @files;		# The list of temporary files.
 
-    # Don't clean up afterwards if in debug mode.
-    return if $DEBUG;
+	# Don't clean up afterwards if in debug mode.
+	return if $DEBUG;
 
-    opendir DIR, $TMPDIR or die "Cannot open directory: $TMPDIR!";
-    push @files, grep /^$FILE_PREFIX\..*$PID$/, readdir(DIR);
-    closedir DIR;
+	opendir DIR, $TMPDIR or die "Cannot open directory: $TMPDIR!";
+	push @files, grep /^$FILE_PREFIX\..*$PID$/, readdir(DIR);
+	closedir DIR;
 
-    foreach (@files) {
-	unlink "$TMPDIR/$_";
-    }
+	foreach (@files) {
+		unlink "$TMPDIR/$_";
+	}
 }
 
-sub append_to_logfile {
-    local($filename, @files) = @_;
 
-    open(FILE, ">>$filename") || die ("Cannot open for append file $filename.\n");
-    print(FILE join("\n", @lines), "\n");
-    close(FILE);
-}
-
+# Append a line to a named file.
 sub append_line {
-    local($filename, $line) = @_;
-    open(FILE, ">>$filename") || die("Cannot open for append file $filename.\n");
-    print(FILE $line, "\n");
-    close(FILE);
+	my ($filename, $line) = @_;
+	open FILE, ">>$filename" or
+	    die "Cannot open for append file $filename.\n";
+	print FILE "$line\n";
+	close FILE;
 }
 
+
+# Read the first line from a named file.
 sub read_line {
-    local($line);
-    local($filename) = @_;
-    open(FILE, "<$filename") || die("Cannot open for read file $filename.\n");
-    $line = <FILE>;
-    close(FILE);
-    chop($line);
-    $line;
+	my $filename = shift;	# The file to read the line from.
+
+	my $line;		# The line read from the file.
+
+	open FILE, "<$filename" or die "Cannot read file $filename!";
+	$line = <FILE>;
+	close FILE;
+	chomp $line;
+
+	return $line;
 }
 
+
+# Return the contents of a file as a list of strings,
+# with trailing line feeds removed.
 sub read_logfile {
     local(@text) = ();
     local($filename, $leader) = @_;
