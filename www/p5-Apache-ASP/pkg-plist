@@ -1,3 +1,8 @@
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/ASP/.packlist
 lib/perl5/site_perl/%%PERL_VER%%/Apache/ASP.pm
+lib/perl5/site_perl/%%PERL_VER%%/Bundle/Apache/ASP.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/ASP/.packlist
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/ASP
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache 2>/dev/null || true
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Bundle/Apache
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Bundle/Apache 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Apache 2>/dev/null || true
