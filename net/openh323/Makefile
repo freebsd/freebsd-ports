@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.openh323.org/bin/ \
 		http://www.de.openh323.org/bin/ \
-		http://www.ru.openh323.org/bin/
+		http://www.gnomemeeting.org/downloads/0.94.1/sources/
 DISTFILES=	openh323_1.9.10.tar.gz \
 		pwlib_1.3.11.tar.gz
 
