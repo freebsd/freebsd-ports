@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	basiliskII
-PORTVERSION=	0.9
-PORTREVISION=	1
+PORTVERSION=	1.0
 CATEGORIES=	emulators
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+	      	http://iphcip1.physik.uni-mainz.de/~cbauer/
 MASTER_SITE_SUBDIR=	basilisk
-DISTNAME=	BasiliskII_src_31052001
+DISTNAME=	BasiliskII_src_15012002
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A free, portable, Open Source 68k Mac emulator
