@@ -23,6 +23,7 @@ PATCH_SITE_SUBDIR=	${MASTER_SITE_SUBDIR}
 PATCHFILES=	${DISTNAME}_readdir-patch
 PATCH_DIST_STRIP=	-p1
 
+USE_REINPLACE=	yes
 MAKE_ARGS=	prefix="${PREFIX}"
 INSTALLS_SHLIB=	yes
 
@@ -31,7 +32,7 @@ DOCS=		COPYING		ChangeLog	FAQ		NEWS \
 		WISHLIST	doc/manual.ps.gz
 
 post-patch:
-	${PERL} -i -pe 's|-O[2-6]|${CFLAGS}|g' \
+	${REINPLACE_CMD} -e 's|-O[2-6]|${CFLAGS}|g' \
 		${WRKSRC}/Util/Makefile.in \
 		${WRKSRC}/Util/configure \
 		${WRKSRC}/libaltsys/utils/configure
