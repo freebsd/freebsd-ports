@@ -8,6 +8,7 @@
     SUBDIR += geda
     SUBDIR += geda-symbols
     SUBDIR += geda-symcheck
+    SUBDIR += geda-utils
     SUBDIR += gerbv
     SUBDIR += gnetlist
     SUBDIR += gnucap

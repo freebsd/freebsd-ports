@@ -1,0 +1,7 @@
+bin/gmk_sym
+bin/smash_megafile
+bin/convert_sym
+bin/sarlacc_schem
+bin/sarlacc_sym
+bin/gschupdate
+bin/gsymupdate
