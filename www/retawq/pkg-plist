@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 bin/retawq
 share/locale/de/LC_MESSAGES/retawq.mo
 share/locale/es/LC_MESSAGES/retawq.mo
@@ -17,4 +18,6 @@ share/locale/pt_BR/LC_MESSAGES/retawq.mo
 %%PORTDOCS%%share/doc/retawq/rfc.html
 %%PORTDOCS%%share/doc/retawq/rtconfig.html
 %%PORTDOCS%%share/doc/retawq/scheme.html
+%%PORTDOCS%%share/doc/retawq/session.html
+%%PORTDOCS%%share/doc/retawq/tls.html
 %%PORTDOCS%%@dirrm share/doc/retawq
