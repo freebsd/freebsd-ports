@@ -1963,6 +1963,7 @@ gnometelnet	ports/net/gnometelnet
 gnometerminal	ports/x11/gnometerminal
 gnomeuserdocs	ports/misc/gnomeuserdocs
 gnomeutils	ports/misc/gnomeutils
+gnomeutils2	ports/misc/gnomeutils2
 gnomevfs	ports/devel/gnomevfs
 gnomoku		ports/games/gnomoku
 gnosamba	ports/net/gnosamba

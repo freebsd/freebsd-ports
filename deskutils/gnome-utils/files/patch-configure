@@ -1,52 +1,25 @@
-
-$FreeBSD$
-
---- configure.orig	Fri Feb  8 11:02:55 2002
-+++ configure	Fri Feb  8 11:47:15 2002
-@@ -1193,10 +1193,10 @@
- 
- # The aliases save the names the user supplied, while $host etc.
- # will get canonicalized.
--test -n "$target_alias" &&
--  test "$program_prefix$program_suffix$program_transform_name" = \
--    NONENONEs,x,x, &&
--  program_prefix=${target_alias}-
-+#test -n "$target_alias" &&
-+#  test "$program_prefix$program_suffix$program_transform_name" = \
-+#    NONENONEs,x,x, &&
-+#  program_prefix=${target_alias}-
- 
- # Find a good install program.  We prefer a C program (faster),
- # so one script is as good as another.  But avoid the broken or
-@@ -8721,7 +8721,7 @@
- echo "$as_me:8721: result: $ac_cv_lib_dl_dlopen" >&5
- echo "${ECHO_T}$ac_cv_lib_dl_dlopen" >&6
- if test $ac_cv_lib_dl_dlopen = yes; then
--  GUILE_LIBS="-ldl $GUILE_LIBS"
-+  GUILE_LIBS="$GUILE_LIBS"
- fi
- 
- 		echo "$as_me:8727: checking for t_accept in -lnsl" >&5
-@@ -9467,7 +9467,7 @@
+--- configure.orig	Tue May  7 00:01:18 2002
++++ configure	Tue May  7 00:01:47 2002
+@@ -7011,7 +7011,7 @@
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lpam -ldl $LIBS"
 +LIBS="-lpam $LIBS"
  cat >conftest.$ac_ext <<_ACEOF
- #line 9472 "configure"
+ #line 7016 "configure"
  #include "confdefs.h"
-@@ -9522,7 +9522,7 @@
+@@ -7066,7 +7066,7 @@
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lpam_misc -ldl -lpam $LIBS"
 +LIBS="-lpam_misc -lpam $LIBS"
  cat >conftest.$ac_ext <<_ACEOF
- #line 9527 "configure"
+ #line 7071 "configure"
  #include "confdefs.h"
-@@ -9566,9 +9566,9 @@
- echo "$as_me:9566: result: $ac_cv_lib_pam_misc_pam_misc_setenv" >&5
+@@ -7110,9 +7110,9 @@
+ echo "$as_me:7110: result: $ac_cv_lib_pam_misc_pam_misc_setenv" >&5
  echo "${ECHO_T}$ac_cv_lib_pam_misc_pam_misc_setenv" >&6
  if test $ac_cv_lib_pam_misc_pam_misc_setenv = yes; then
 -  PAM_LIBS="-ldl -lpam -lpam_misc"
@@ -57,3 +30,12 @@ $FreeBSD$
  fi
  
  else
+@@ -8843,7 +8843,7 @@
+ 	< $srcdir/po/POTFILES.in > po/POTFILES
+ 
+ cat >>confdefs.h <<EOF
+-#define GNOME_ICONDIR "${prefix}/share/pixmaps"
++#define GNOME_ICONDIR "${datadir}/pixmaps"
+ EOF
+ 
+ ac_config_files="$ac_config_files Makefile gnome-utils.spec po/Makefile.in idl/Makefile gcalc/Makefile gcalc/help/Makefile gcalc/help/C/Makefile logview/Makefile logview/gnome-system-log-security logview/pixmaps/Makefile logview/help/Makefile logview/help/C/Makefile gcharmap/Makefile gcharmap/src/Makefile gcharmap/pixmaps/Makefile gcharmap/help/Makefile gcharmap/help/C/Makefile gsearchtool/Makefile gsearchtool/help/Makefile gsearchtool/help/C/Makefile gdialog/Makefile gdialog/help/Makefile gdialog/help/C/Makefile gdictsrc/Makefile gdictsrc/help/Makefile gdictsrc/help/C/Makefile gfloppy/Makefile gfloppy/doc/Makefile gfloppy/doc/C/Makefile gfloppy/src/Makefile meat-grinder/Makefile meat-grinder/help/Makefile meat-grinder/help/C/Makefile exe-handler/Makefile"
