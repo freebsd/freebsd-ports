@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	libdv
-PORTVERSION=	0.9.5
-PORTREVISION=	1
+PORTVERSION=	0.9.8
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
+DISTNAME=	libdv-${PORTVERSION:C/\.(.)$/\1/}
 
 MAINTAINER=	lioux@FreeBSD.org
 
@@ -61,20 +61,23 @@ pre-everything::
 
 post-patch:
 	@${REINPLACE_CMD} -E \
-		-e 's|(pkgconfigdir =).+(/pkgconfig)|\1 ${LOCALBASE}/libdata\2|' \
+		-e 's|(pkgconfigdir =).+(/pkgconfig)|\1 ${PREFIX}/libdata\2|' \
 		${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -E -e 's|(-lXv)|\1 -lXext -L${X11BASE}/lib|; \
 		s@(PKG_CONFIG --(cflags|libs) )"\$$REQUIRES"@\1 gtk@' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 	@${REINPLACE_CMD} -e 's|stdint.h|sys/types.h|' \
 		${WRKSRC}/libdv/dv_types.h \
+		${WRKSRC}/libdv/headers.c \
 		${WRKSRC}/libdv/encode.c
 	@${REINPLACE_CMD} -E -e 's|^void swab.+$$||' ${WRKSRC}/libdv/encode.c
-	@${REINPLACE_CMD} -e 's|SDL/|SDL11/|' ${WRKSRC}/playdv/display.h
+	@${REINPLACE_CMD} -e 's|SDL/||' ${WRKSRC}/playdv/display.h
 	@${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|' ${WRKSRC}/encodedv/dvavi.c \
 		${WRKSRC}/encodedv/dvconnect.c
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|' \
-		${WRKSRC}/encodedv/Makefile.in
+# XXX - revise at every port update
+# protect popt from prefix changes
+	@${REINPLACE_CMD} -E -e 's|(@REQUIRES_NOPKGCONFIG@)|-L${LOCALBASE}/include \1|' \
+		${WRKSRC}/libdv.pc.in
 
 post-install:
 .ifndef(NOPORTDOCS)
