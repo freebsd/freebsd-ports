@@ -43,8 +43,8 @@ pre-fetch:
 	@${ECHO} "        The default is user"
 	@${ECHO} ""
 
-RUN_DEPENDS=	${PREFIX}/sbin/amrecover:${PORTSDIR}/misc/amanda24-client
-BUILD_DEPENDS=	${PREFIX}/sbin/amrecover:${PORTSDIR}/misc/amanda24-client
+RUN_DEPENDS=	${LOCALBASE}/sbin/amrecover:${PORTSDIR}/misc/amanda24-client
+BUILD_DEPENDS=	${LOCALBASE}/sbin/amrecover:${PORTSDIR}/misc/amanda24-client
 
 CONFIGURE_ARGS=	--libexecdir=${PREFIX}/libexec/amanda \
 		--with-amandahosts --with-fqdn \
