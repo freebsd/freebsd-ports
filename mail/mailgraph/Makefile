@@ -13,11 +13,11 @@ MASTER_SITES=	http://people.ee.ethz.ch/~dws/software/mailgraph/pub/
 
 MAINTAINER=	gslin@ccca.nctu.edu.tw
 
-NO_BUILD=	yes
-NO_STRIP=	yes
-
 RUN_DEPENDS=	${SITE_PERL}/RRDs.pm:${PORTSDIR}/net/rrdtool	\
 		${SITE_PERL}/File/Tail.pm:${PORTSDIR}/devel/p5-File-Tail
+
+SITE_PERL=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
+NO_BUILD=	yes
 
 do-install:
 .for FILE in mailgraph.cgi mailgraph.pl

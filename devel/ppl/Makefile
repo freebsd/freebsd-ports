@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.cs.unipr.it/pub/ppl/releases/${PORTVERSION}/ \
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	gmp.5:${PORTSDIR}/math/libgmp4
+LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4
 
 USE_LIBTOOL=	yes
 GNU_CONFIGURE=	yes
