@@ -409,6 +409,15 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # DEPENDS_TARGET - The default target to execute when a port is calling a
 #				  dependency (default: "install").
 #
+# Conflict checking.  Use if your port cannot be installed at the same time as
+# another package.
+#
+# CONFLICTS      - A list of package name patterns that the port conflicts with.
+#                  It's possible to use any shell meta-characters for pattern
+#                  matching.
+#                  E.g. apache*-1.2* apache*-1.3.[012345] apache-*+ssl_*
+#
+#
 # Various directory definitions and variables to control them.
 # You rarely need to redefine any of these except WRKSRC and NO_WRKSUBDIR.
 #
@@ -1467,17 +1476,18 @@ FETCH_REGET?=	0
 TOUCH?=			/usr/bin/touch
 TOUCH_FLAGS?=	-f
 
+DISTORIG?=	.bak.orig
 PATCH?=			/usr/bin/patch
 PATCH_STRIP?=	-p0
 PATCH_DIST_STRIP?=	-p0
 .if defined(PATCH_DEBUG)
 PATCH_DEBUG_TMP=	yes
 PATCH_ARGS?=	-d ${PATCH_WRKSRC} -E ${PATCH_STRIP}
-PATCH_DIST_ARGS?=	-d ${PATCH_WRKSRC} -E ${PATCH_DIST_STRIP}
+PATCH_DIST_ARGS?=	-b ${DISTORIG} -d ${PATCH_WRKSRC} -E ${PATCH_DIST_STRIP}
 .else
 PATCH_DEBUG_TMP=	no
 PATCH_ARGS?=	-d ${PATCH_WRKSRC} --forward --quiet -E ${PATCH_STRIP}
-PATCH_DIST_ARGS?=	-d ${PATCH_WRKSRC} --forward --quiet -E ${PATCH_DIST_STRIP}
+PATCH_DIST_ARGS?=	-b ${DISTORIG} -d ${PATCH_WRKSRC} --forward --quiet -E ${PATCH_DIST_STRIP}
 .endif
 .if defined(BATCH)
 PATCH_ARGS+=		--batch
@@ -1592,8 +1602,14 @@ PKG_CMD?=		/usr/sbin/pkg_create
 PKG_ADD?=	/usr/sbin/pkg_add
 PKG_DELETE?=	/usr/sbin/pkg_delete
 PKG_INFO?=		/usr/sbin/pkg_info
+
+# Does the pkg_create tool support conflict checking?
+PKGINSTALLVER!= ${PKG_INFO} -P 2>/dev/null | ${SED} -e 's/.*: //'
+.if ${PKGINSTALLVER} < 20030417
+DISABLE_CONFLICTS=     YES
+.endif
 .if !defined(PKG_ARGS)
-PKG_ARGS=		-v -c ${COMMENTFILE} -d ${DESCR} -f ${TMPPLIST} -p ${PREFIX} -P "`${MAKE} package-depends | ${GREP} -v -E ${PKG_IGNORE_DEPENDS} | sort -u`" ${EXTRA_PKG_ARGS}
+PKG_ARGS=		-v -c "-${COMMENT:Q}" -d ${DESCR} -f ${TMPPLIST} -p ${PREFIX} -P "`${MAKE} package-depends | ${GREP} -v -E ${PKG_IGNORE_DEPENDS} | sort -u`" ${EXTRA_PKG_ARGS}
 .if exists(${PKGINSTALL})
 PKG_ARGS+=		-i ${PKGINSTALL}
 .endif
@@ -1611,6 +1627,9 @@ PKG_ARGS+=		-m ${MTREE_FILE}
 .endif
 .if defined(PKGORIGIN)
 PKG_ARGS+=		-o ${PKGORIGIN}
+.endif
+.if defined(CONFLICTS) && !defined(DISABLE_CONFLICTS)
+PKG_ARGS+=      -C "${CONFLICTS}"
 .endif
 .endif
 .if defined(PKG_NOCOMPRESS)
@@ -1633,25 +1652,19 @@ INSTALL_TARGET?=	install
 # This is a mid-term solution patch while pkg-comment files are
 # phased out.
 # The final simpler patch will come afterwards
-.if defined(COMMENT)
-COMMENTFILE=	${WRKDIR}/.comment.${PKGNAME}
-COMMENTFILE_DEFAULT_CMD=	${RM} -Rf ${COMMENTFILE} && ${MKDIR} ${WRKDIR} && ${ECHO_CMD} ${COMMENT:Q} > ${COMMENTFILE}
-.else
-.if !exists(${COMMENTFILE})
+.if !defined(COMMENT)
 .BEGIN:
 		@${ECHO_CMD} 'There is no COMMENT variable defined'
-		@${ECHO_CMD} 'for this port, please rectify this.'
+		@${ECHO_CMD} 'for this port. Please, rectify this.'
 		@${FALSE}
-.else
-
-COMMENT!=	${CAT} ${COMMENTFILE}
-COMMENTFILE_DEFAULT_CMD=	${DO_NADA}
 .endif
-.endif
-
-.if !target(generate-commentfile)
-generate-commentfile:
-	@${COMMENTFILE_DEFAULT_CMD}
+.if exists(${COMMENTFILE})
+.BEGIN:
+		@${ECHO_CMD} 'There is a COMMENTFILE in this port.'
+		@${ECHO_CMD} 'COMMENTFILEs have been deprecated in'
+		@${ECHO_CMD} 'favor of COMMENT variables.'
+		@${ECHO_CMD} 'Please, rectify this.'
+		@${FALSE}
 .endif
 
 # Popular master sites
@@ -2305,12 +2318,6 @@ __ARCH_OK?=     1
 .undef __ARCH_OK
 .endif
 .endfor
-.if defined(MLINKS)
-	@${ECHO_CMD} ${MLINKS} | ${AWK} \
-	'{ for (i=1; i<=NF; i++) { \
-		if (i % 2 == 0) { printf "lib/X11/doc/html/%s.html\n", $$i } \
-	} }' >> ${TMPPLIST}
-.endif
 .endif
 
 .if !defined(__ARCH_OK)
@@ -2415,6 +2422,7 @@ all:
 	  FILESDIR=${FILESDIR} PORTSDIR=${PORTSDIR} PREFIX=${PREFIX} \
 	  DEPENDS="${DEPENDS}" BUILD_DEPENDS="${BUILD_DEPENDS}" \
 	  RUN_DEPENDS="${RUN_DEPENDS}" X11BASE=${X11BASE} \
+	  CONFLICTS="${CONFLICTS}" \
 	${ALL_HOOK}
 .endif
 
@@ -2770,6 +2778,33 @@ do-build:
 .endif
 .endif
 
+# Check conflicts
+
+.if !target(check-conflicts)
+check-conflicts:
+.if defined(CONFLICTS) && !defined(DISABLE_CONFLICTS)
+	@${RM} -f ${WRKDIR}/.CONFLICTS
+.for conflict in ${CONFLICTS}
+	@found="`${LS} -d ${PKG_DBDIR}/${conflict} 2>/dev/null || ${TRUE}`"; \
+	if [ X"$$found" != X"" ]; then \
+		${ECHO} "$$found" >> ${WRKDIR}/.CONFLICTS; \
+	fi
+.endfor
+	@if [ -s ${WRKDIR}/.CONFLICTS ]; then \
+		found=`cat ${WRKDIR}/.CONFLICTS | ${SED} -e s'|${PKG_DBDIR}/||g' | tr '\012' ' '`; \
+		${ECHO_MSG} "===>  ${PKGNAME} conflicts with installed package(s): "; \
+		for entry in $$found; do \
+			${ECHO_MSG} "      $$entry"; \
+		done; \
+		${ECHO_MSG}; \
+		${ECHO_MSG} "      They install files into the same place."; \
+		${ECHO_MSG} "      Please remove them first with pkg_delete(1)."; \
+		${RM} -f ${WRKDIR}/.CONFLICTS; \
+		exit 1; \
+	fi
+.endif  # CONFLICTS
+.endif
+
 # Install
 
 .if !target(do-install)
@@ -2796,7 +2831,7 @@ do-install:
 # Package
 
 .if !target(do-package)
-do-package: ${TMPPLIST} generate-commentfile
+do-package: ${TMPPLIST}
 	@if [ -d ${PACKAGES} ]; then \
 		if [ ! -d ${PKGREPOSITORY} ]; then \
 			if ! ${MKDIR} ${PKGREPOSITORY}; then \
@@ -3059,10 +3094,10 @@ _BUILD_SEQ=		build-message pre-build pre-build-script do-build \
 				post-build post-build-script
 _INSTALL_DEP=	build
 _INSTALL_SEQ=	install-message check-categories check-already-installed \
-				check-umask run-depends lib-depends install-mtree pre-install \
-				pre-install-script do-install generate-plist post-install \
-				post-install-script compress-man run-ldconfig fake-pkg \
-				security-check
+				check-conflicts check-umask run-depends lib-depends \
+				install-mtree pre-install pre-install-script do-install \
+				generate-plist post-install post-install-script compress-man \
+				run-ldconfig fake-pkg security-check
 _PACKAGE_DEP=	install
 _PACKAGE_SEQ=	package-message pre-package pre-package-script \
 				do-package post-package-script
@@ -3383,6 +3418,16 @@ fetch-list:
 .endif
 .endif
 
+# Generates patches.
+
+update-patches:
+	@toedit=`WRKSRC=${WRKSRC} PATCHDIR=${PATCHDIR} PATCH_LIST=${PATCHDIR}/patch-* \
+		DIFF_ARGS=${DIFF_ARGS} DISTORIG=${DISTORIG} \
+		${SH} ${PORTSDIR}/Tools/scripts/update-patches`; \
+	case $$toedit in "");; \
+	*) ${ECHO} -n 'edit patches: '; read i; \
+	cd ${PATCHDIR} && $${VISUAL:-$${EDIT:-/usr/bin/vi}} $$toedit;; esac
+
 # Checksumming utilities
 
 .if !target(makesum)
@@ -3445,7 +3490,7 @@ checksum: fetch
 			  	      OK="true"; \
 			  	  fi; \
 			  fi; \
-  		  fi ; \
+			fi ; \
 		  if [ "$$OK" != "true" -a ${FETCH_REGET} -eq 0 ]; then \
 			  ${ECHO_MSG} "===>  Giving up on fetching files: $$refetchlist"; \
 			  ${ECHO_MSG} "Make sure the Makefile and distinfo file (${MD5_FILE})"; \
@@ -3856,16 +3901,15 @@ package-depends:
 #  description-file|maintainer|categories|build deps|run deps|www site
 
 .if !target(describe)
-describe: generate-commentfile
+describe:
+	@${ECHO_CMD} -n "`perl -e ' \
+		print q{${PKGNAME}|${.CURDIR}|${PREFIX}|}`"
+.if defined(COMMENT)
+	@${ECHO_CMD} -n ${COMMENT:Q}
+.else
+	@${ECHO_CMD} -n '** No Description'
+.endif
 	@${ECHO_CMD} "`perl -e ' \
-		print q{${PKGNAME}|${.CURDIR}|${PREFIX}|}; \
-		if (open(COMMENT, q{${COMMENTFILE}})) { \
-			$$_ = <COMMENT>; \
-			chomp; \
-			print; \
-		} else { \
-			print q{** No Description}; \
-		} \
 		if ( -f q{${DESCR}} ) { \
 			print q{|${DESCR}}; \
 		} else { \
@@ -3925,12 +3969,12 @@ readme:
 	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} ${.CURDIR}/README.html
 .endif
 
-${.CURDIR}/README.html:	generate-commentfile
+${.CURDIR}/README.html:
 	@${ECHO_MSG} "===>   Creating README.html for ${PKGNAME}"
 	@${SED} -e 's|%%PORT%%|'$$(${ECHO_CMD} ${.CURDIR} | \
 							  ${SED} -e 's|.*/\([^/]*/[^/]*\)$$|\1|')'|g' \
 			-e 's|%%PKG%%|${PKGNAME}|g' \
-			-e '/%%COMMENT%%/r${COMMENTFILE}' \
+			-e 's|%%COMMENT%%|'"$$(${ECHO_CMD} ${COMMENT:Q})"'|' \
 			-e '/%%COMMENT%%/d' \
 			-e 's|%%DESCR%%|'"$$(${ECHO_CMD} ${DESCR} | \
 								 ${SED} -e 's|${.CURDIR}/||')"'|' \
@@ -4005,6 +4049,12 @@ generate-plist:
 .endfor
 	@${ECHO_CMD} "@unexec %D/bin/mkhtmlindex %D/lib/X11/doc/html" >> ${TMPPLIST}
 	@${ECHO_CMD} "@exec %D/bin/mkhtmlindex %D/lib/X11/doc/html" >> ${TMPPLIST}
+.if defined(MLINKS)
+	@${ECHO_CMD} ${MLINKS} | ${AWK} \
+	'{ for (i=1; i<=NF; i++) { \
+		if (i % 2 == 0) { printf "lib/X11/doc/html/%s.html\n", $$i } \
+	} }' >> ${TMPPLIST}
+.endif
 .endif
 .endfor
 	@${SED} ${PLIST_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} ${PLIST} >> ${TMPPLIST}
@@ -4062,7 +4112,7 @@ compress-man:
 # accordance to the @pkgdep directive in the packing lists
 
 .if !target(fake-pkg)
-fake-pkg: generate-commentfile
+fake-pkg:
 .if !defined(NO_PKG_REGISTER)
 	@if [ ! -d ${PKG_DBDIR} ]; then ${RM} -f ${PKG_DBDIR}; ${MKDIR} ${PKG_DBDIR}; fi
 	@${RM} -f /tmp/${PKGNAME}-required-by
@@ -4077,7 +4127,7 @@ fake-pkg: generate-commentfile
 		${MKDIR} ${PKG_DBDIR}/${PKGNAME}; \
 		${PKG_CMD} ${PKG_ARGS} -O ${PKGFILE} > ${PKG_DBDIR}/${PKGNAME}/+CONTENTS; \
 		${CP} ${DESCR} ${PKG_DBDIR}/${PKGNAME}/+DESC; \
-		${CP} ${COMMENTFILE} ${PKG_DBDIR}/${PKGNAME}/+COMMENT; \
+		${ECHO_CMD} ${COMMENT:Q} > ${PKG_DBDIR}/${PKGNAME}/+COMMENT; \
 		if [ -f ${PKGINSTALL} ]; then \
 			${CP} ${PKGINSTALL} ${PKG_DBDIR}/${PKGNAME}/+INSTALL; \
 		fi; \
