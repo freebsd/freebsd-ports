@@ -7,8 +7,8 @@ include its reports in the output of the daily security run.
 Since this system is in development it can currently not be relied upon as an 
 extensive security auditing tool.
 
-If you found a vulnerability not listed in the database, please contact the
-FreeBSD Security Officer <security-officer@FreeBSD.org>, refer to
+If you have found a vulnerability not listed in the database, please contact 
+the FreeBSD Security Officer <security-officer@FreeBSD.org>. Refer to
 
   http://www.freebsd.org/security/#sec
 
