@@ -5,6 +5,7 @@
 p4d=@PREFIX@/sbin/p4d
 p4ftpd=@PREFIX@/sbin/p4ftpd
 p4p=@PREFIX@/sbin/p4p
+p4web=@PREFIX@/sbin/p4web
 
 case $1 in
 start)
@@ -21,6 +22,10 @@ start)
         echo -n ' p4p'
         $p4p $PERFORCE_PROXY_OPTIONS
     fi
+    if [ -x $p4web -a x$PERFORCE_WEB_START = xyes ]; then
+        echo -n ' p4web'
+        su -fm $PERFORCE_USER -c "$p4web $PERFORCE_WEB_OPTIONS > /dev/null 2>&1 &"
+    fi
 
     ;;
 stop)
@@ -33,6 +38,9 @@ stop)
     fi
     if [ -x $p4p ]; then
         killall -u 0 p4p > /dev/null 2>&1 && echo -n ' p4p'
+    fi
+    if [ -x $p4web ]; then
+        killall -u $PERFORCE_USER p4web > /dev/null 2>&1 && echo -n ' p4web'
     fi
     ;;
 restart)

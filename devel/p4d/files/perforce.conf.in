@@ -58,3 +58,18 @@ PERFORCE_PROXY_OPTIONS="-d -p $PERFORCE_PORT -t $PERFORCE_PROXY_TARGET -r $PERFO
 # Uncomment this line to have the proxy server started automatically
 #
 #PERFORCE_PROXY_START=yes
+
+#
+# p4web port
+#
+PERFORCE_WEB_PORT="6060"
+
+#
+# p4web options (see p4web -h)
+#
+PERFORCE_WEB_OPTIONS="-B -w $PERFORCE_WEB_PORT -p $PERFORCE_PORT -v server=1"
+
+#
+# Uncomment this line to have the web server started automatically
+#
+#PERFORCE_WEB_START=yes
