@@ -20,6 +20,7 @@ USE_GMAKE=	yes
 USE_OPENSSL=	yes
 USE_LIBTOOL=	yes
 USE_PERL5_BUILD=yes
+USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}" \
@@ -32,6 +33,9 @@ CONFIGURE_ARGS=	--enable-all --disable-isoc
 
 DOCS=		AUTHORS ChangeLog NEWS Notes README TODO
 EXAMPLES=	examples/*
+
+post-patch:
+	@${REINPLACE_CMD} 's,memrchr,memchr,' ${WRKSRC}/smtp-tls.c
 
 post-install:
 	@${MKDIR} ${EXAMPLESDIR}
