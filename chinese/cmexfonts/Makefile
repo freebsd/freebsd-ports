@@ -8,7 +8,7 @@
 PORTNAME=	cmexfonts
 PORTVERSION=	0.1
 CATEGORIES=	chinese x11-fonts
-MASTER_SITES=	http://freebsd.sinica.edu.tw/~statue/ \
+MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/statue/cmexfonts/ \
 		ftp://sunsite.unc.edu/pub/Linux/X11/fonts/
 
 MAINTAINER=	statue@freebsd.sinica.edu.tw
