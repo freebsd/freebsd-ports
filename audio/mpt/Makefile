@@ -11,14 +11,13 @@ CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	freetantrum
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mike's Playlist Thingie is a fingerprinting based playlist generator
 
 LIB_DEPENDS=	fftw.2:${PORTSDIR}/math/fftw \
 		songprint.1:${PORTSDIR}/audio/songprint
 
 USE_GNOME=	glib12
-USE_SIZE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
