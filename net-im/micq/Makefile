@@ -6,49 +6,28 @@
 #
 
 PORTNAME=	micq
-PORTVERSION=	0.4.6.1
-PORTREVISION=	1
+PORTVERSION=	0.4.8.pl3
+PORTREVISION=
 CATEGORIES=	net
-MASTER_SITES=   http://micq.ukeer.de/source/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/1/p1/}
+MASTER_SITES=   ftp://micq.ukeer.de/pub/micq/source/
 EXTRACT_SUFX=	.tgz
+HAS_CONFIGURE=	yes
 
 MAINTAINER=	ports@freebsd.org
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/.1/-p1/}/src
-
 MAN1=		micq.1
+MAN5=		micqrc.5
+MAN7=		micq.7
 
-SUP_LANGS=	`${SED} 's|$$|,|' < ${FILESDIR}/slangs`
-
-pre-configure:
-.if !defined(WITH_MICQ_LANG)
-	@${ECHO_MSG} "If you want to compile ${PORTNAME} with your native"
-	@${ECHO_MSG} "language support:"
-	@${ECHO_MSG} "make WITH_MICQ_LANG=<your_lang>"
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "Currently supported <your_lang> values are:"
-	@${ECHO_CMD} "  "${SUP_LANGS} | ${SED} 's|,$$|.|' | /usr/bin/fmt
-.else
-	@/usr/bin/printf "#define ${WITH_MICQ_LANG}_LANG\n#undef ENGLISH_LANG" >> \
-		${WRKSRC}/../include/config.h
-	@${ECHO_MSG} "Compiling ${PORTNAME} with ${WITH_MICQ_LANG}."
-.endif
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/micq ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/../micq.1 ${PREFIX}/man/man1
+post-install:
+	${INSTALL_MAN} ${WRKSRC}/doc/micq.1 ${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/doc/micqrc.5 ${MANPREFIX}/man/man5
+	${INSTALL_MAN} ${WRKSRC}/doc/micq.7 ${MANPREFIX}/man/man7
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/micq
-	${INSTALL_DATA} ${WRKSRC}/../README ${PREFIX}/share/doc/micq
-	${INSTALL_DATA} ${WRKSRC}/../CHANGELOG ${PREFIX}/share/doc/micq
+	${INSTALL_DATA} ${WRKSRC}/doc/commands.txt ${PREFIX}/share/doc/micq
+	${INSTALL_DATA} ${WRKSRC}/doc/icq091.txt ${PREFIX}/share/doc/micq
+	${INSTALL_DATA} ${WRKSRC}/doc/icqv7.txt ${PREFIX}/share/doc/micq
 .endif
-
-# Administrative rule to automatically extract
-# names of supported langs
-update-slangs: patch
-	${GREP} '#define .*_LANG' < ${WRKSRC}/../include/config.h | \
-		${SED} 's|.*#define || ; s|_LANG.*||' | /usr/bin/sort | \
-		/usr/bin/uniq > ${FILESDIR}/slangs
 
 .include <bsd.port.mk>
