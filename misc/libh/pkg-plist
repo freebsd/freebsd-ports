@@ -1,16 +1,19 @@
-bin/tclh
-lib/libh.a
-lib/libh.so.0
-lib/libh.so
+bin/tclh.static
 lib/libhui.a
 lib/libhui.so.0
 lib/libhui.so
 lib/libhdisk.a
 lib/libhdisk.so.0
 lib/libhdisk.so
+lib/libhfstab.a
+lib/libhfstab.so.0
+lib/libhfstab.so
 lib/libhfile.a
 lib/libhfile.so.0
 lib/libhfile.so
+lib/libh.a
+lib/libh.so.0
+lib/libh.so
 lib/libhdatabase.a
 lib/libhdatabase.so.0
 lib/libhdatabase.so
@@ -20,27 +23,18 @@ lib/libhsysinstall.so
 lib/libhtclhui.a
 lib/libhtclhui.so.0
 lib/libhtclhui.so
-lib/libhtcl.a
-lib/libhtcl.so.0
-lib/libhtcl.so
 lib/libhtclfile.a
 lib/libhtclfile.so.0
 lib/libhtclfile.so
+lib/libhtcl.a
+lib/libhtcl.so.0
+lib/libhtcl.so
 lib/libhtcldisk.a
 lib/libhtcldisk.so.0
 lib/libhtcldisk.so
 lib/libhtclsysinstall.a
 lib/libhtclsysinstall.so.0
 lib/libhtclsysinstall.so
-share/libh/console.tcl
-share/libh/console_init.tcl
-share/libh/diskedit/dialogs.tcl
-share/libh/diskedit/disk.tcl
-share/libh/diskedit/disklabel.tcl
-share/libh/diskedit/formats.tcl
-share/libh/diskedit/labeledit.tcl
-share/libh/diskedit/size.tcl
-share/libh/diskedit/sliceops.tcl
 share/libh/scripts/cdrominstall.tcl
 share/libh/scripts/choosedistrib.tcl
 share/libh/scripts/commonvars.tcl
@@ -49,10 +43,31 @@ share/libh/scripts/installdistrib.tcl
 share/libh/scripts/instmethod.tcl
 share/libh/scripts/netsetup.tcl
 share/libh/scripts/setup.tcl
-share/libh/pkgtools/create_db.tcl
-share/libh/pkgtools/file_owners.tcl
-share/libh/pkgtools/pkg_install.tcl
-@dirrm share/libh/diskedit
+share/libh/scripts/console.tcl
+share/libh/scripts/console_init.tcl
+share/libh/scripts/pkgtools/DOCUMENTATION
+share/libh/scripts/pkgtools/all_files.tcl
+share/libh/scripts/pkgtools/create_db.tcl
+share/libh/scripts/pkgtools/create_paks
+share/libh/scripts/pkgtools/create_zips
+share/libh/scripts/pkgtools/export_db.tcl
+share/libh/scripts/pkgtools/file_by_name.tcl
+share/libh/scripts/pkgtools/file_owners.tcl
+share/libh/scripts/pkgtools/import_db.tcl
+share/libh/scripts/pkgtools/makepackage.sh
+share/libh/scripts/pkgtools/packagetool.tcl
+share/libh/scripts/pkgtools/pkg_info.tcl
+share/libh/scripts/pkgtools/pkg_install.tcl
+share/libh/scripts/diskedit/TODO
+share/libh/scripts/diskedit/dialogs.tcl
+share/libh/scripts/diskedit/disk.tcl
+share/libh/scripts/diskedit/disklabel.tcl
+share/libh/scripts/diskedit/formats.tcl
+share/libh/scripts/diskedit/labeledit.tcl
+share/libh/scripts/diskedit/newfs.tcl
+share/libh/scripts/diskedit/sliceops.tcl
+share/libh/scripts/diskedit/size.tcl
+@dirrm share/libh/scripts/diskedit
+@dirrm share/libh/scripts/pkgtools
 @dirrm share/libh/scripts
-@dirrm share/libh/pkgtools
 @dirrm share/libh
