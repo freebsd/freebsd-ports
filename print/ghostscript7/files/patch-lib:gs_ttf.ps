@@ -1,0 +1,117 @@
+--- lib/gs_ttf.ps.orig	Sat Apr 12 23:02:38 2003
++++ lib/gs_ttf.ps	Fri Jul 25 13:25:33 2003
+@@ -575,7 +575,7 @@
+   (maxp) 1 index
+   (name) 1 index
+   (OS/2) 1 index
+-  (post) 1 index
++  (post) { .readbigtable }
+   (vhea) 1 index
+ 	% Big tables
+   (glyf) { .readbigtable }
+@@ -918,10 +918,17 @@
+   DEBUG { (fontname ) print fontname = } if
+ 		% Stack: ... /FontInfo mark key1 value1 ...
+   post null ne {
+-    /ItalicAngle post 4 gets32 65536.0 div
+-    /isFixedPitch post 12 getu32 0 ne
+-    /UnderlinePosition post 8 gets16 upem div
+-    /UnderlineThickness post 10 gets16 upem div
++    post type /arraytype eq {
++      % this post table is a big table. /post should be [(...) ...]
++      % data we actually need here should be first one in array.
++      /posttable post 1 get def
++    } {
++      /posttable post def
++    } ifelse
++    /ItalicAngle posttable 4 gets32 65536.0 div
++    /isFixedPitch posttable 12 getu32 0 ne
++    /UnderlinePosition posttable 8 gets16 upem div
++    /UnderlineThickness posttable 10 gets16 upem div
+   } if
+   counttomark 0 ne { .dicttomark } { pop pop } ifelse
+   /XUID [orgXUID 42 curxuid]
+@@ -1119,41 +1126,52 @@
+       %(gsubofl: ) print gsubofl =
+       (gsuboll: ) print gsuboll =
+     } if
+-    dup /gsubfmt exch gsuboll 0 add getu16 def
++    % /gsuboll should be pointed out the LookupList table, but not Lookup table.
++    % so this is wrong: dup /gsubfmt exch gsuboll 0 add getu16 def
++    dup /gsublc exch gsuboll 0 add getu16 def
+     DEBUG {
+-      (gsubfmt: ) print gsubfmt =
++      (gsublc: ) print gsublc =
+     } if
+-%    gsubver 16#00010000 eq { % ifelse
+-      gsubfmt 2 eq { % ifelse
+-	dup /gsubocv exch gsuboll 2 add getu16 def
+-	dup /gsubglc exch gsuboll 4 add getu16 def
+-	% hacked by suzuki toshiya at 2001/3/6
+-	%dup /gsubvog exch gsuboll 6 add gsubglc getinterval def
+-	%dup /gsubhog exch gsuboll gsubocv add 4 add gsubglc getinterval def
+-	dup /gsubvog exch gsuboll 6 add gsubglc 2 mul getinterval def
+-	dup /gsubhog exch gsuboll gsubocv add 4 add gsubglc 2 mul getinterval def
++    gsublc 0 ne {
++      0 1 gsublc 1 sub {
++	2 mul /gsubolt exch 2 index exch gsuboll 2 add add getu16 gsuboll add def
++	dup /gsubfmt exch gsubolt 0 add getu16 def
+ 	DEBUG {
+-	  (gsubocv: ) print gsubocv =
+-	  (gsubglc: ) print gsubglc =
+-
+-	  (gsubhog->gsubvog ) =
+-	  0 2 gsubhog length 2 sub { % for
+-	    dup
+-	    gsubhog exch getu16 =only
+-	    (->) =only
+-	    gsubvog exch getu16 =
+-	  } for
++	  (gsubfmt: ) print gsubfmt =
+ 	} if
+-	/gsubh2v << 0 2 gsubhog length 2 sub {
+-	  dup gsubhog exch getu16
+-	  exch gsubvog exch getu16
+-	} for >> def
+-      } {
+-	%(UNKNOWN GSUB FORMAT.) = flush
+-      } ifelse
+-%    } {
+-%      (ILLEGAL GSUB VERSION.) = flush
+-%    } ifelse
++%	gsubver 16#00010000 eq { % ifelse
++	gsubfmt 2 eq { % ifelse
++	  dup /gsubocv exch gsubolt 2 add getu16 def
++	  dup /gsubglc exch gsubolt 4 add getu16 def
++	  % hacked by suzuki toshiya at 2001/3/6
++	  %dup /gsubvog exch gsubolt 6 add gsubglc getinterval def
++	  %dup /gsubhog exch gsubolt gsubocv add 4 add gsubglc getinterval def
++	  dup /gsubvog exch gsubolt 6 add gsubglc 2 mul getinterval def
++	  dup /gsubhog exch gsubolt gsubocv add 4 add gsubglc 2 mul getinterval def
++	  DEBUG {
++	    (gsubocv: ) print gsubocv =
++	    (gsubglc: ) print gsubglc =
++
++	    (gsubhog->gsubvog ) =
++	    0 2 gsubhog length 2 sub { % for
++	      dup
++	      gsubhog exch getu16 =only
++	      (->) =only
++	      gsubvog exch getu16 =
++	    } for
++	  } if
++	  /gsubh2v << 0 2 gsubhog length 2 sub {
++	    dup gsubhog exch getu16
++	    exch gsubvog exch getu16
++	  } for >> def
++        } {
++	  %(UNKNOWN GSUB FORMAT.) = flush
++        } ifelse
++%       } {
++%         (ILLEGAL GSUB VERSION.) = flush
++%       } ifelse
++      } for
++    } if
+     pop
+   } if
+ } bind def
