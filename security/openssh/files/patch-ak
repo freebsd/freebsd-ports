@@ -1,6 +1,6 @@
---- /usr/ports/distfiles/OpenSSH-1.2/src/usr.bin/ssh/ssh.c	Tue Nov 23 18:57:50 1999
-+++ ./ssh.c	Tue Nov 23 19:28:33 1999
-@@ -123,6 +123,9 @@
+--- ssh.c.orig	Sat Feb 19 02:39:02 2000
++++ ssh.c	Sat Feb 19 23:47:33 2000
+@@ -131,6 +131,9 @@
  	log("Using rsh.  WARNING: Connection will not be encrypted.");
  	/* Build argument list for rsh. */
  	i = 0;
@@ -10,3 +10,12 @@
  	args[i++] = _PATH_RSH;
  	/* host may have to come after user on some systems */
  	args[i++] = host;
+@@ -490,7 +493,7 @@
+ 		int errgai;
+ 		memset(&hints, 0, sizeof(hints));
+ 		hints.ai_family = AF_UNSPEC;
+-		hints.ai_flags = AI_CANONNAME;
++		hints.ai_flags = IPv4or6;
+ 		hints.ai_socktype = SOCK_STREAM;
+ 		errgai = getaddrinfo(host, NULL, &hints, &ai);
+ 		if (errgai == 0) {
