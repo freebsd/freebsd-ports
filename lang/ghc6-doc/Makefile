@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	ghc6-doc
-PORTVERSION=	6.0.1
+PORTVERSION=	6.2
 CATEGORIES=	lang haskell
 MASTER_SITES=	http://www.haskell.org/ghc/docs/${PORTVERSION}/ \
 		http://www.haskell.org/ghc/docs/${PORTVERSION}/html/
 DISTFILES=      building.html.tar.gz building.ps.gz hslibs.html.tar.gz \
 		hslibs.ps.gz libraries.html.tar.gz users_guide.html.tar.gz \
 		users_guide.ps.gz index.html
-DIST_SUBDIR=	ghc6
+DIST_SUBDIR=	ghc-${PORTVERSION}
 EXTRACT_ONLY=
 
 MAINTAINER=	olgeni@FreeBSD.org
@@ -22,15 +22,15 @@ COMMENT=	Documentation (HTML, PS) for the Glasgow Haskell Compiler
 NO_BUILD=	yes
 
 do-install:
-	@${MKDIR} ${LOCALBASE}/share/doc/ghc
+	@${MKDIR} ${LOCALBASE}/share/doc/ghc6
 .for FILE in building.ps.gz hslibs.ps.gz users_guide.ps.gz index.html
 	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/${FILE} \
-		${LOCALBASE}/share/doc/ghc
+		${LOCALBASE}/share/doc/ghc6
 .endfor
 .for FILE in building.html.tar.gz hslibs.html.tar.gz \
 	libraries.html.tar.gz users_guide.html.tar.gz
 	@${TAR} xfz ${DISTDIR}/${DIST_SUBDIR}/${FILE} \
-		-C ${LOCALBASE}/share/doc/ghc
+		-C ${LOCALBASE}/share/doc/ghc6
 .endfor
 
 .include <bsd.port.mk>
