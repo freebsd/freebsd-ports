@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	${MASTERPORTNAME:S/-server/-client/g}
-PORTREVISION=	3
+PORTREVISION=	0
 
 MASTERDIR=	${.CURDIR}/../amanda-server
 COMMENT=	The Advanced Maryland Automatic Network Disk Archiver (client)

@@ -1,22 +1,11 @@
---- tape-src/Makefile.in.orig	Mon Feb 24 21:45:25 2003
-+++ tape-src/Makefile.in	Tue Apr 15 19:54:39 2003
-@@ -158,7 +158,8 @@
- lib_LTLIBRARIES = libamtape.la
- LIB_EXTENSION = la
- 
--sbin_PROGRAMS = ammt amdd amtapetype
-+@WANT_SERVER_TRUE@sbin_PROGRAMS = ammt amdd amtapetype
-+@WANT_CLIENT_TRUE@sbin_PROGRAMS = 
- 
- libamtape_la_SOURCES = output-file.c \
- 			output-null.c \
-@@ -215,7 +216,8 @@
- 	output-tape.lo tapeio.lo
- libamtape_la_OBJECTS = $(am_libamtape_la_OBJECTS)
- EXTRA_PROGRAMS = amtapeio$(EXEEXT)
+--- tape-src/Makefile.in.orig	Fri Oct 22 09:12:42 2004
++++ tape-src/Makefile.in	Mon Nov  8 06:27:54 2004
+@@ -41,7 +41,7 @@
+ PRE_UNINSTALL = :
+ POST_UNINSTALL = :
+ host_triplet = @host@
 -sbin_PROGRAMS = ammt$(EXEEXT) amdd$(EXEEXT) amtapetype$(EXEEXT)
 +@WANT_SERVER_TRUE@sbin_PROGRAMS = ammt$(EXEEXT) amdd$(EXEEXT) amtapetype$(EXEEXT)
-+@WANT_CLIENT_TRUE@sbin_PROGRAMS = 
- PROGRAMS = $(sbin_PROGRAMS)
- 
- amdd_SOURCES = amdd.c
+ EXTRA_PROGRAMS = $(am__EXEEXT_1)
+ subdir = tape-src
+ DIST_COMMON = $(noinst_HEADERS) $(srcdir)/Makefile.am \
