@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gtodo
-PORTVERSION=	0.13.5
-PORTREVISION=	1
+PORTVERSION=	0.14
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gtodo
@@ -19,7 +18,7 @@ BUILD_DEPENDS=	intltool-extract:${PORTSDIR}/textproc/intltool
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
-USE_GNOME=	gnomeprefix gnomehack gnometarget gconf2 gtk20 libxml2
+USE_GNOME=	gnomeprefix gnomehack gnometarget gnomevfs2
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
