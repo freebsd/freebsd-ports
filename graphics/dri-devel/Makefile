@@ -23,6 +23,7 @@ BUILD_WRKSRC=	${WRKSRC}/lib/GL
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 MAKE_ENV=	FBSDCFLAGS="${CFLAGS}" FBSDCC="${CC}" FBSDCXX="${CXX}"
+LATEST_LINK=	${PORTNAME}-devel
 
 DRILIST=	ffb gamma i810 i830 mga r128 r200 radeon sis tdfx
 

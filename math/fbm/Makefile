@@ -17,6 +17,7 @@ COMMENT=	Flexible Bayesian Modeling and Markov Chain Sampling
 
 USE_REINPLACE=	yes
 
+LATEST_LINK=	math_fbm
 SCRIPTS =	bvg-circ bvg-wrap dist-circ dist-wrap gp-circ	\
 		gp-wrap dft-circ dft-wrap mix-circ mix-wrap 	\
 		net-circ net-wrap
