@@ -1,9 +1,11 @@
 #!/bin/sh
 # usage: $0 arch branch
 
-# -j# to make index
-# XXX corrupts index file because of lack of synchronization?
-#INDEXJOBS=1
+# Don't want to pick up bento customizations
+INDEX_PRISTINE=1
+
+# Don't give luser advice if it fails
+INDEX_QUIET=1
 
 pb=/var/portbuild
 arch=$1
