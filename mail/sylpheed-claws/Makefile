@@ -23,6 +23,8 @@ USE_GTK=	yes
 CONFIGURE_ARGS=	--program-suffix="-claws" --with-included-gettext \
 		--enable-ipv6
 
+CONFIGURE_ENV=	CFLAGS="${CFLAGS}"
+
 .if defined(WITH_PIXBUF)
 LIB_DEPENDS+=		gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf
 CONFIGURE_ARGS+=	--disable-imlib
@@ -87,6 +89,7 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/share/doc/sylpheed-claws
 .endfor
 .endif
+	@${MKDIR} ${PREFIX}/share/pixmaps
 	@${INSTALL_DATA} ${WRKSRC}/sylpheed.png ${PREFIX}/share/pixmaps/sylpheed-claws.png
 
 .include <bsd.port.mk>
