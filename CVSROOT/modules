@@ -505,6 +505,7 @@ bgrab		ports/news/bgrab
 bgrot		ports/x11/bgrot
 biabam		ports/mail/biabam
 bibcard		ports/print/bibcard
+bibcursed	ports/print/bibcursed
 bibelot		ports/palm/bibelot
 biblereader	ports/misc/biblereader
 bibtex2html	ports/textproc/bibtex2html
