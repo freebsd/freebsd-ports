@@ -17,7 +17,7 @@ CATEGORIES=	japanese
 MAINTAINER=	itojun@itojun.org
 
 # dirty, but this is required for version independent-ness
-CONFIGURE_ARGS=		--with-vfontcap=`${ECHO} ${LOCALBASE}/share/VFlib/*/vfontcap | tail -1`
+CONFIGURE_ARGS=		--with-vfontcap=`ls -1 ${LOCALBASE}/share/VFlib/*/vfontcap | tail -1`
 CONFIGURE_ARGS+=	--enable-freetype-charset16
 
 .include "${MASTERDIR}/Makefile"
