@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff \
-		gmp.3:${PORTSDIR}/math/libgmp3
+		gmp.5:${PORTSDIR}/math/libgmp4
 
 USE_GTK=	yes
 USE_NEWGCC=	yes
