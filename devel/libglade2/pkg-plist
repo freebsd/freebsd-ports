@@ -7,9 +7,9 @@ include/glade/glade-build.h
 include/glade/glade-widget-tree.h
 lib/libglade.a
 lib/libglade.so
-lib/libglade.so.3
+lib/libglade.so.4
 lib/libglade-gnome.a
 lib/libglade-gnome.so
-lib/libglade-gnome.so.3
+lib/libglade-gnome.so.4
 share/aclocal/libglade.m4
 @dirrm include/glade
