@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	Eficas
-PORTVERSION=	1.4
-PORTREVISION=	1
+PORTVERSION=	1.5
 CATEGORIES=	french cad python
 MASTER_SITES=	http://www.code-aster.org/FICHIERS/eficas/
-DISTNAME=	${PORTNAME}V${PORTVERSION:C/\./_/}AsterSTA7
+DISTNAME=	${PORTNAME}V${PORTVERSION:C/\./_/}b3AsterSTA7
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ASter Command FIle Editor
@@ -32,19 +31,28 @@ LEFICASDIR?=	apps/${PORTNAME}
 EFICASDIR=	${PREFIX}/${LEFICASDIR}
 PLIST_SUB=	EFICASDIR=${LEFICASDIR}
 
-ENV2PYTHON=	Misc/Cyclops.py Aster/eficas_aster.py
+.if defined(LANG) && ${LANG:Mfr*} != ""
+EF_LANG=	fr
+.else
+EF_LANG=	ang
+.endif
+
+ENV2PYTHON=	Misc/Cyclops.py Aster/eficas_aster.py convert/Parserv5/Translate.py
 
 post-patch:
 .for FILE in ${ENV2PYTHON}
 	@${REINPLACE_CMD} -e "s|^#!*./usr/bin/env python|#!${PYTHON_CMD}|"	\
 		${WRKSRC}/${FILE}
 .endfor
+	@${REINPLACE_CMD} -e "s#lang='fr'#lang='${EF_LANG}'#"			\
+		${WRKSRC}/Aster/prefs.py
 	@${REINPLACE_CMD} -e "s#/usr/bin/acroread#${LOCALBASE}/bin/acroread#"	\
+			-e "s#os.path.join(rep_cata,'..','Doc')#\"${DOCSDIR}\"#"	\
 		${WRKSRC}/Aster/editeur.ini
 
 pre-install:
 .if defined(NOPORTDOCS)
-	@${RM} ${WRKSRC}/Aster/Doc/*
+	@${RM} -rf ${WRKSRC}/Aster/Doc
 .endif
 	@${FIND} ${WRKDIR} -type f -exec ${CHMOD} ${SHAREMODE} \{\} \;
 
@@ -58,5 +66,11 @@ do-install:
 	@${REINPLACE_CMD} -e "s#%%EFICASDIR%%#${EFICASDIR}#"		\
 		-e "s#%%PYTHON_CMD%%#${PYTHON_CMD}#" ${WRKDIR}/eficas
 	@${INSTALL_SCRIPT} ${WRKDIR}/eficas ${PREFIX}/bin
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	@${MV} ${EFICASDIR}/Aster/Doc/* ${DOCSDIR}
+	@${RMDIR} ${EFICASDIR}/Aster/Doc
+	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
+.endif
 
 .include <bsd.port.mk>

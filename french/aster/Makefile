@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	aster
-PORTVERSION=	7.1
-PORTREVISION=	1
+PORTVERSION=	7.2.0
 CATEGORIES=	french cad python tk84
 MASTER_SITES=	http://www.code-aster.org/FICHIERS/code_aster/
-DISTNAME=	${PORTNAME}_src_${PORTVERSION}
+DISTNAME=	${PORTNAME}-${PORTVERSION}-2.src
 EXTRACT_SUFX=	.tar
 
 MAINTAINER=	ports@FreeBSD.org
@@ -30,11 +29,8 @@ COMMENT=	Analyse des structures et thermo-mécanique
 # - WITHOUT_EFICAS: don't install ASter Command FIle Editor;
 # - WITHOUT_GMSH: don't install GMSH (a mesh generator);
 # - WITHOUT_GRACE: don't install Grace (used to create 2D graph);
-# - WITHOUT_HOMARD: don't install Homard (adaptative mesh capability)
 # - WITHOUT_MACR_RECAL: don't install Numerical Python
 #			(required by the macro MACR_RECAL);
-# - WITH_GIBI: not yet implemented (only for EDF's internal use,
-#			waiting for a license from CEA).
 #
 #-----------------------------------------------------------------------
 
@@ -56,7 +52,7 @@ USE_PYTHON=	yes
 USE_REINPLACE=	yes
 REINPLACE_ARGS=	-i ""
 
-WRKSRC=		${WRKDIR}/${vaster}
+WRKSRC=		${WRKDIR}/${DISTNAME}/${vaster}
 PLIST_SUB=	ASTERDIR=${PORTNAME}/${vaster}
 .if defined(WITHOUT_ASTK) || defined(WITHOUT_ASTK_CLI)
 PKGMESSAGE=	${PKGDIR}/pkg-message.sans-astk
@@ -96,19 +92,11 @@ PLIST_SUB+=	GRACE=""
 .else
 PLIST_SUB+=	GRACE="@comment "
 .endif
-.if (${ARCH} == "i386") && !defined(WITHOUT_HOMARD)
-RUN_DEPENDS+=	${LOCALBASE}/apps/homard:${PORTSDIR}/french/homard
-PLIST_SUB+=	HOMARD="" HOMARDDIR=${HOMARDDIR}
-.else
-PLIST_SUB+=	HOMARD="@comment " HOMARDDIR=""
-.endif
 .if !defined(WITHOUT_MACR_RECAL)
 RUN_DEPENDS+=	${PYNUMERIC}
 .endif
 
-.if ${OSVERSION} < 500039
-F77=		g77-${USE_GCC:C/\.//}
-.else
+.if !${OSVERSION} < 500039
 F77?=		f77
 .endif
 FFLAGS?=	-O2
@@ -142,7 +130,7 @@ SHIADEP=	bash2
 SHIADEP=	${SHIA}
 .endif
 
-vaster=		STA${PORTVERSION}
+vaster=		STA${PORTVERSION:S/.0//}
 MK_FILES=	make_aster make_cata make_etude make_exec make_lib make_test
 INST_DAT=	astest bibpyt cata_ele.pickled catalo catapy commande	\
 		config.txt elements etude materiau tcl
@@ -155,7 +143,8 @@ SHELL_INSTALL_ASTER=	${LOCALBASE}/bin/${SHIA}
 tcl_dir=	${LOCALBASE}
 tcl_bin=	tclsh${TK_VER}
 python_dir=	${PYTHONBASE}/bin
-opt_hdf=	${LOCALBASE}/lib/libhdf5.a
+hdf_dir=	${LOCALBASE}
+opt_hdf=	${hdf_dir}/lib/libhdf5.a
 opt_med=	${LOCALBASE}/lib/libmed.a
 .if defined(WITH_BLAS)
 lib_blas=	-lblas
@@ -166,12 +155,10 @@ home_ar!=	dirname `${WHICH} ${AR}`
 gzip!=		dirname `${WHICH} ${GZIP_CMD}`
 LASTKDIR?=	ASTK/ASTK_CLIENT
 ASTKDIR=	${LOCALBASE}/${LASTKDIR}
-LHOMARDDIR?=	apps/homard
-HOMARDDIR=	${LOCALBASE}/${LHOMARDDIR}
 
 post-extract:
-	@(cd ${WRKDIR} && \
-	${TAR} xfz ${WRKDIR}/${PORTNAME}.tar.gz)
+	@(cd ${WRKDIR}/${DISTNAME} && \
+	${TAR} xfz ${WRKDIR}/${DISTNAME}/${PORTNAME}.tar.gz)
 
 post-patch:
 .for mk_file in ${MK_FILES}
@@ -199,6 +186,7 @@ post-patch:
 	@${GREP} TK_LIB_SPEC ${TKCONFIG} |					\
 		${SED} -e "s#TK_LIB_SPEC='##;s#'##" > ${WRKDIR}/tk_lib_spec
 	@${REINPLACE_CMD} -e "s#OPT_HDF#${opt_hdf}#"				\
+	-e "s#HDF_DIR#${hdf_dir}#"						\
 	-e "s#OPT_MED#${opt_med}#"						\
 	-e "s#OPT_TCL#`${CAT} ${WRKDIR}/tcl_lib_spec`#"				\
 	-e "s#OPT_TK#`${CAT} ${WRKDIR}/tk_lib_spec`#"				\
@@ -257,10 +245,6 @@ post-install:
 .endif
 .if !defined(WITHOUT_GRACE)
 	${LN} -fs ${X11BASE}/bin/xmgrace ${tools_dir}/
-.endif
-.if (${ARCH} == "i386") && !defined(WITHOUT_HOMARD)
-	${LN} -fs ${HOMARDDIR}/homard ${tools_dir}/
-	${LN} -fs ${HOMARDDIR}/aster_homard_py ${tools_dir}/
 .endif
 	@${ECHO_MSG}
 	@${CAT} ${PKGMESSAGE} | ${SED} -e "s#%%inst_dir%%#${inst_dir}#"

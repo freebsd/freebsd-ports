@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	astk
-PORTVERSION=	1.0.14
-PORTREVISION?=	2
+PORTVERSION=	1.0.21
 CATEGORIES=	cad tk84
 MASTER_SITES=	http://www.code-aster.org/FICHIERS/code_aster/
 .if !defined(CLIENT_SEUL)
@@ -15,7 +14,7 @@ PKGNAMESUFFIX=	-serveur
 .else
 PKGNAMESUFFIX=	-client
 .endif
-DISTNAME=	aster_src_${ASTER_VER}
+DISTNAME=	aster-${ASTER_VER}.src
 EXTRACT_SUFX=	.tar
 
 MAINTAINER=	ports@FreeBSD.org
@@ -48,24 +47,25 @@ NO_BUILD=	yes
 USE_REINPLACE=	yes
 REINPLACE_ARGS=	-i ""
 
+EXTDIR=		${WRKDIR}/${DISTNAME}
 .if !defined(CLIENT_SEUL)
-WRKSRC=		${WRKDIR}/ASTK_SERV
+WRKSRC=		${EXTDIR}/ASTK_SERV
 PATCHDIR=	${MASTERDIR}/files
 PLIST_SUB=	SERV="" CLIENT="@comment " vaster=${vaster}
 .else
-WRKSRC=		${WRKDIR}/ASTK_CLIENT
+WRKSRC=		${EXTDIR}/ASTK_CLIENT
 PATCHDIR=	${MASTERDIR}/files.client
 PLIST_SUB=	SERV="@comment " CLIENT="" vaster=""
 PKGMESSAGE=	${PKGDIR}/pkg-message.client
 .endif
 
-SLAVEDIRS=	french/astk-client
+SLAVEDIRS=	cad/astk-client
 
 TK_VER?=	8.4
 TCL_VER?=	${TK_VER}
 
 TKTAB_VER?=	2.8
-ASTER_VER=	7.1
+ASTER_VER=	7.2.0-2
 vaster=		STA${ASTER_VER}
 
 .if defined(WITH_ZSH)
@@ -113,14 +113,20 @@ v_ifdef=	${unames:U}
 SHELL_INSTALL_ASTER=	${LOCALBASE}/bin/${SHIA}
 gzip!=		dirname `${WHICH} ${GZIP_CMD}`
 
+.if defined(LANG) && ${LANG:Mfr*} != ""
+ASTK_LANG=	FR
+.else
+ASTK_LANG=	ENG
+.endif
+
 post-extract:
-	@(cd ${WRKDIR} && \
-	${TAR} xfz ${WRKDIR}/astk.tar.gz)
+	@(cd ${EXTDIR} && \
+	${TAR} xfz ${EXTDIR}/astk.tar.gz)
 .if !defined(CLIENT_SEUL)
-	@(cd ${WRKDIR} && \
+	@(cd ${EXTDIR} && \
 	${TAR} xf ASTK_SERV.tar)
 .else
-	@(cd ${WRKDIR} && \
+	@(cd ${EXTDIR} && \
 	${TAR} xf ASTK_CLIENT.tar)
 .endif
 
@@ -142,6 +148,7 @@ post-patch:
 	-e "s#/bin/sh#${SHELL_INSTALL_ASTER}#g"					\
 	-e "s#NODE#${SERVER_NAME}#"						\
 	-e "s#%%vaster%%#${vaster}#"						\
+	-e "s#LOCALBASE#${LOCALBASE}#"						\
 	-e "s|#%%v_ifdef%%|${v_ifdef}|" ${WRKSRC}/conf/config
 	@${RM} ${WRKSRC}/conf/config.orig
 	@${CP} ${WRKSRC}/conf/config.NEW7 ${WRKSRC}/conf/config.${vaster}
@@ -183,6 +190,7 @@ post-patch:
 		-e "s#EDITOR#${WITH_ED}#" ${conf_dir}/config_serveurs
 	@${REINPLACE_CMD} -e "s#HOME_XTERM#${X11BASE}/bin#"			\
 		-e "s#VVV#${vaster}#"						\
+		-e "s#langue : ENG#langue : ${ASTK_LANG}#"			\
 		-e "s#EDITOR#${WITH_ED}#" ${conf_dir}/prefs
 	@${REINPLACE_CMD} -e "s#%%LOCALBASE%%#${LOCALBASE}#g"			\
 		${WRKSRC}/share/tkselecteur.tcl

@@ -1,6 +1,6 @@
---- conf/config.orig	Fri Jun 20 13:07:15 2003
-+++ conf/config	Wed Jul 16 12:11:03 2003
-@@ -60,6 +60,7 @@
+--- conf/config.orig	Fri Sep  5 16:48:15 2003
++++ conf/config	Fri Nov 14 22:08:22 2003
+@@ -60,39 +60,43 @@
  # for each version a config.VVV file must be created.
  # DO NOT EDIT FOLLOWING LINE !
  #vers : VVV
@@ -8,7 +8,43 @@
  
  #################################################################
  # batch commands
-@@ -93,6 +94,9 @@
+-batch_nom : LSF
++#batch_nom : LSF
+ # initialisation (shell script, sh/ksh syntax)
+-batch_ini : /usr/opt/lsf/conf/profile.lsf
++#batch_ini : /usr/opt/lsf/conf/profile.lsf
+ # submission
+-batch_sub : /usr/opt/lsf/4.2/alpha5/bin/bsub
++#batch_sub : /usr/opt/lsf/4.2/alpha5/bin/bsub
+ # variable of the job number
+-batch_jid : LSB_JOBID
++#batch_jid : LSB_JOBID
+ # to display information about jobs
+-batch_job : /usr/opt/lsf/4.2/alpha5/bin/bjobs
++#batch_job : /usr/opt/lsf/4.2/alpha5/bin/bjobs
+ # to delete jobs
+-batch_kil : /usr/opt/lsf/4.2/alpha5/bin/bkill
++#batch_kil : /usr/opt/lsf/4.2/alpha5/bin/bkill
+ 
+ # PBS example (experimental)
+-#batch_nom : PBS
++batch_nom : PBS
+ # initialisation
+ #batch_ini : 
+ # submission
+-#batch_sub : /local/openpbs-2.3.16/bin/qsub
++#batch_sub : LOCALBASE/bin/qsub
+ # variable of the job number
+ #batch_jid : PBS_JOBID
+ # to display information about jobs
+-#batch_job : /local/openpbs-2.3.16/bin/qstat
++#batch_job : LOCALBASE/bin/qstat
+ # to delete jobs
+-#batch_kil : /local/openpbs-2.3.16/bin/qdel
++#batch_kil : LOCALBASE/bin/qdel
+ 
+ #################################################################
+ # ps commands : uncomment lines corresponding to your platform
  # LINUX :
  #P_LINUXps_cpu : /bin/ps -e --width=512 -ocputime -ocommand
  #P_LINUXps_pid : /bin/ps -e --width=512 -opid -ocommand
@@ -18,11 +54,11 @@
  # TRU64 :
  #TRU64ps_cpu : /bin/ps -e -ocputime -ocommand
  #TRU64ps_pid : /bin/ps -e -opid -ocommand
-@@ -115,6 +119,7 @@
- #
+@@ -116,6 +120,7 @@
  # GDB :
- #P_LINUXcmd_dbg : gdb --dbx --command=@D @E @C
+ #P_LINUXcmd_post : gdb --dbx --command=@D @E @C
+ #P_LINUXcmd_dbg : ddd --debugger gdb --command=@D @E @C
 +#%%v_ifdef%%cmd_dbg : gdb --dbx --command=@D @E @C
  # DBX -c + filename :
+ #TRU64cmd_post : dbx -c @D @E @C
  #TRU64cmd_dbg : dbx -c @D @E @C
- #IRIXcmd_dbg : dbx -c @D @E @C

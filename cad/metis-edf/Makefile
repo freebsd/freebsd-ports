@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	metis-edf
-PORTVERSION=	3
-PORTREVISION=	1
+PORTVERSION=	3.1
+#PORTREVISION=	1
 CATEGORIES=	cad
 MASTER_SITES=	http://www.code-aster.org/FICHIERS/metis/
 

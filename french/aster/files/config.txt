@@ -28,14 +28,14 @@ BIBL | fpe    | ?   |
 BIBL | med    | 2.1 | OPT_MED
 BIBL | hdf    | 5.1 | OPT_HDF
 BIBL | blas   | ?   | OPT_BLAS
-BIBL | tcl    | 8.3 | OPT_TCL
-BIBL | tk     | 8.3 | OPT_TK
+BIBL | tcl    | 8.4 | OPT_TCL
+BIBL | tk     | 8.4 | OPT_TK
 BIBL | X11    | ?   | OPT_X11
 BIBL | sys    | ?   | -Xlinker -export-dynamic PTHREAD -lutil -lm -lz -lg2c
 #
-INCL | python | 2.1 | -IHOME_PYTHON/include/pythonPYTHON_VERSION
+INCL | python | 2.3 | -IHOME_PYTHON/include/pythonPYTHON_VERSION -IHDF_DIR/include
 #
-PYTHON | python | 2.1 | HOME_PYTHON/bin/PYTHON_BIN
+PYTHON | python | 2.3 | HOME_PYTHON/bin/PYTHON_BIN
 #
 LINK | link | ? | %%CC%% -v
 #

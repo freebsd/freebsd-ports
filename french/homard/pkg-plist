@@ -1,4 +1,7 @@
 bin/%%UNAMES%%/%%HOMARDPG%%
+%%AHPY%%/__init__.py
+%%AHPY%%/__init__.pyc
+%%AHPY%%/__init__.pyo
 %%AHPY%%/aster_homard.py
 %%AHPY%%/aster_homard.pyc
 %%AHPY%%/aster_homard.pyo
@@ -17,20 +20,52 @@ bin/%%UNAMES%%/%%HOMARDPG%%
 %%AHPY%%/aster_homard_5.py
 %%AHPY%%/aster_homard_5.pyc
 %%AHPY%%/aster_homard_5.pyo
-%%AHPY%%/aster_homard_6.py
-%%AHPY%%/aster_homard_6.pyc
-%%AHPY%%/aster_homard_6.pyo
-%%AHPY%%/aster_homard_7.py
-%%AHPY%%/aster_homard_7.pyc
-%%AHPY%%/aster_homard_7.pyo
-%%AHPY%%/aster_homard_8.py
-%%AHPY%%/aster_homard_8.pyc
-%%AHPY%%/aster_homard_8.pyo
 %%AHPY%%/aster_homard_utilitaires.py
 %%AHPY%%/aster_homard_utilitaires.pyc
 %%AHPY%%/aster_homard_utilitaires.pyo
+%%AHPY5%%/__init__.py
+%%AHPY5%%/__init__.pyc
+%%AHPY5%%/__init__.pyo
+%%AHPY5%%/aster_homard_1.py
+%%AHPY5%%/aster_homard_1.pyc
+%%AHPY5%%/aster_homard_1.pyo
+%%AHPY5%%/aster_homard_2.py
+%%AHPY5%%/aster_homard_2.pyc
+%%AHPY5%%/aster_homard_2.pyo
+%%AHPY5%%/aster_homard_3.py
+%%AHPY5%%/aster_homard_3.pyc
+%%AHPY5%%/aster_homard_3.pyo
+%%AHPY5%%/aster_homard_4.py
+%%AHPY5%%/aster_homard_4.pyc
+%%AHPY5%%/aster_homard_4.pyo
+%%AHPY5%%/aster_homard_5.py
+%%AHPY5%%/aster_homard_5.pyc
+%%AHPY5%%/aster_homard_5.pyo
+%%AHPY5%%/aster_homard_6.py
+%%AHPY5%%/aster_homard_6.pyc
+%%AHPY5%%/aster_homard_6.pyo
+%%AHPY5%%/aster_homard_7.py
+%%AHPY5%%/aster_homard_7.pyc
+%%AHPY5%%/aster_homard_7.pyo
+%%AHPY5%%/aster_homard_8.py
+%%AHPY5%%/aster_homard_8.pyc
+%%AHPY5%%/aster_homard_8.pyo
+%%AHPY5%%/aster_homard_V5x.py
+%%AHPY5%%/aster_homard_V5x.pyc
+%%AHPY5%%/aster_homard_V5x.pyo
+%%AHPY5%%/aster_homard_utilitaires.py
+%%AHPY5%%/aster_homard_utilitaires.pyc
+%%AHPY5%%/aster_homard_utilitaires.pyo
 %%HOMARDDIR%%/homard
+%%PORTDOCS%%%%DOCSDIR%%/A_Lire.txt
+%%PORTDOCS%%%%DOCSDIR%%/Readme.txt
 @dirrm %%AHPY%%
+@dirrm %%AHPY5%%
 @dirrm %%HOMARDDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@exec ln -sf %%HOMARDDIR%%/aster_homard_py %%ASTER_TOOLS%%
+@exec ln -sf %%HOMARDDIR%%/homard %%ASTER_TOOLS%%
+@unexec rm -f %%ASTER_TOOLS%%/aster_homard_py
+@unexec rm -f %%ASTER_TOOLS%%/homard
 @unexec rmdir %D/bin/%%UNAMES%% 2>/dev/null || true
 @unexec rmdir %D/apps 2>/dev/null || true

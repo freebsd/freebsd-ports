@@ -57,6 +57,7 @@
 %%CLIENT%%ASTK/ASTK_CLIENT/share/appli.tcl
 %%CLIENT%%ASTK/ASTK_CLIENT/share/config.tcl
 %%CLIENT%%ASTK/ASTK_CLIENT/share/file_funct.tcl
+%%CLIENT%%ASTK/ASTK_CLIENT/share/icons/sans_helpB.gif
 %%CLIENT%%ASTK/ASTK_CLIENT/share/icons/vaio_browseB.gif
 %%CLIENT%%ASTK/ASTK_CLIENT/share/icons/vaio_browseS.gif
 %%CLIENT%%ASTK/ASTK_CLIENT/share/icons/vaio_comp1.gif
