@@ -1,0 +1,22 @@
+--- rc/gtkrc	Sat Nov 16 22:14:56 2002
++++ rc/gtkrc	Sat Nov 16 22:16:36 2002
+@@ -27,7 +27,8 @@
+ style "normal"
+ {
+    #bg_pixmap[NORMAL] = "life12-4.xpm"
+-   bg[NORMAL] = {0.6, 0.7, 0.75}
++   #bg[NORMAL] = {0.6, 0.7, 0.75}
++   bg[NORMAL] = "#ffffff"
+ }
+ 
+ # 터미날의 배경을 설정해줍니다.
+@@ -36,7 +37,8 @@
+    #그림을 배경으로 한다.
+    #bg_pixmap[NORMAL] = "blue-tree.xpm"
+    #단일 색으로 칠한다.
+-   bg[NORMAL] = {0.1, 0.1, 0.5}
++   #bg[NORMAL] = {0.1, 0.1, 0.5}
++   bg[NORMAL] = "#ffffff"
+ }
+ 
+ widget "*Term*" style "term"

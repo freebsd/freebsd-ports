@@ -1,0 +1,11 @@
+--- gau-install.in	Sat Nov 16 22:14:56 2002
++++ gau-install.in	Sat Nov 16 22:17:20 2002
+@@ -1,7 +1,7 @@
+ #!/bin/sh
+ 
+ gau_data=@prefix@/share/@PACKAGE@
+-gau_doc=@prefix@/doc/@PACKAGE@-@VERSION@
++gau_doc=@prefix@/share/doc/@PACKAGE@
+ 
+ echo "이제 시스템에 깔려있는 가우의 데이타파일을 개인 영역으로 복사합니다"
+ 

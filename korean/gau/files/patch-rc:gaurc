@@ -1,0 +1,12 @@
+--- rc/gaurc.orig	Sat Nov 16 22:30:11 2002
++++ rc/gaurc	Sat Nov 16 22:32:06 2002
+@@ -63,7 +63,8 @@
+ # 아래의 예에서는 영문폰트의 폭이 8 (80을 10으로 나눈값)이고
+ # 한글 폰트는 폭이 16입니다. 
+ 
+-(terminal_font "-*-clean-bold-r-normal--16-*-*-*-*-*-*-*,-*-gulim-medium-r-normal--16-*-*-*-*-*-ksc5601.1987-0");
++#(terminal_font "-schumacher-clean-medium-r-normal--16-160-75-75-c-80-iso8859-1,-*-*-medium-r-normal--16-*-*-*-c-160-ksc5601.1987-0");
++(terminal_font "-*-fixed-medium-r-normal--16-*-iso8859-1,-*-gulim-medium-r-normal--16-*-*-*-*-*-ksc5601.1987-0");
+ 
+ # prevent ^G -> beep translation
+ # if you want really silent environment,
