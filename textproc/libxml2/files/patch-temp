@@ -1,0 +1,55 @@
+This patch is from CVS and fixes a seg fault due to some bad memory
+management.  This will be fixed in the next release.
+
+--- valid.c.orig	Wed Oct  9 12:03:48 2002
++++ valid.c	Wed Oct  9 12:06:17 2002
+@@ -4551,9 +4551,9 @@
+        xmlElementPtr elemDecl, int warn, xmlNodePtr parent) {
+     int ret = 1;
+ #ifndef  LIBXML_REGEXP_ENABLED
+-    xmlNodePtr last = NULL;
++    xmlNodePtr last = NULL, last = NULL, tmp;
+ #endif
+-    xmlNodePtr repl = NULL, cur, tmp;
++    xmlNodePtr cur;
+     xmlElementContentPtr cont;
+     const xmlChar *name;
+ 
+@@ -4571,6 +4571,9 @@
+     } else {
+ 	xmlRegExecCtxtPtr exec;
+ 
++	ctxt->nodeMax = 0;
++	ctxt->nodeNr = 0;
++	ctxt->nodeTab = NULL;
+ 	exec = xmlRegNewExecCtxt(elemDecl->contModel, NULL, NULL);
+ 	if (exec != NULL) {
+ 	    cur = child;
+@@ -4762,9 +4765,11 @@
+ 	    expr[0] = 0;
+ 	    xmlSnprintfElementContent(expr, 5000, cont, 1);
+ 	    list[0] = 0;
++#ifndef LIBXML_REGEXP_ENABLED
+ 	    if (repl != NULL)
+ 		xmlSnprintfElements(list, 5000, repl, 1);
+ 	    else
++#endif /* LIBXML_REGEXP_ENABLED */
+ 		xmlSnprintfElements(list, 5000, child, 1);
+ 
+ 	    if (name != NULL) {
+@@ -4797,7 +4802,6 @@
+ 
+ #ifndef  LIBXML_REGEXP_ENABLED
+ done:
+-#endif
+     /*
+      * Deallocate the copy if done, and free up the validation stack
+      */
+@@ -4811,6 +4815,7 @@
+ 	xmlFree(ctxt->vstateTab);
+ 	ctxt->vstateTab = NULL;
+     }
++#endif
+     ctxt->nodeMax = 0;
+     ctxt->nodeNr = 0;
+     if (ctxt->nodeTab != NULL) {
