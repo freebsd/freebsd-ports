@@ -148,6 +148,7 @@
     SUBDIR += scriba
     SUBDIR += siod
     SUBDIR += slib
+    SUBDIR += slisp
     SUBDIR += smalleiffel
     SUBDIR += smalleiffel-devel
     SUBDIR += smalltalk
