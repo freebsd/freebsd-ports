@@ -1,0 +1,20 @@
+You need to copy the following files from the Duke Nukem 3D CD-ROM or from the Sharware
+release to %%DUKEDIR%%:
+
+DUKE3D.GRP
+DUKE3D.CFG
+SETUP.EXE
+SETMAIN.EXE
+
+Afterwards you have to run %%DUKEDIR%%/fix.sh
+
+If you want to edit your config run dosbox, mount %%DUKEDIR%%
+and run SETUP.EXE. Be sure you have write permission. Otherwise your
+changes will get lost.
+
+WARNING: Icculus Duke3D port is still in alpha stage and runs very slowly!
+
+Thx go out to
+
+mezz @ bsdforums.org for cleaning up the code and testing it on -CURRENT
+clement for his problem reports

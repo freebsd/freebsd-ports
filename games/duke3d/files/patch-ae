@@ -1,0 +1,12 @@
+--- source/buildengine/tests/Makefile.orig	Sat Mar 13 18:29:03 2004
++++ source/buildengine/tests/Makefile	Sat Mar 13 18:29:36 2004
+@@ -1,7 +1,7 @@
+ BINARIES=sartest kreciptest
+ OBJS=kreciptest.o krecip.o sartest.o sar.o
+-CFLAGS=-g -Wall
+-CC=gcc
++CFLAGS+= %%CFLAGS%% -Wall
++#CC=gcc
+ ASM=nasm
+ 
+ all: kreciptest sartest

@@ -97,6 +97,7 @@
     SUBDIR += dopewars
     SUBDIR += drm
     SUBDIR += dsnake
+    SUBDIR += duke3d
     SUBDIR += dungeon
     SUBDIR += dungeoncrawl
     SUBDIR += easysok

@@ -1,0 +1,15 @@
+--- source/audiolib/Makefile.orig	Sat Mar 13 22:54:17 2004
++++ source/audiolib/Makefile	Sat Mar 13 23:06:25 2004
+@@ -1,8 +1,8 @@
+-CC=gcc
+-AR=ar
++#CC=gcc
++#AR=ar
+ RANLIB=ranlib
+-CFLAGS=-g -O2
+-LDLIBS=
++CFLAGS= %%CFLAGS%%
++LDLIBS= -L%%X11BASE%%/lib
+ 
+ CFLAGS += $(shell sdl-config --cflags)
+ LDLIBS += $(shell sdl-config --libs)
