@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	projectcenter.app
-PORTVERSION=	0.2.4
+PORTVERSION=	0.3.0
 CATEGORIES=	devel
-MASTER_SITES=	http://www.projectcenter.ch/
+MASTER_SITES=	ftp://ftp.gnustep.org/pub/gnustep/dev-apps/
 DISTNAME=	ProjectCenter-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org

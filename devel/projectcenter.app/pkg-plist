@@ -12,6 +12,7 @@ System/Applications/ProjectCenter.app/Resources/ProjectCenter.tiff
 System/Applications/ProjectCenter.app/Resources/ProjectCenterInfo.plist
 System/Applications/ProjectCenter.app/Resources/ProjectCenter_clean.tiff
 System/Applications/ProjectCenter.app/Resources/ProjectCenter_debug.tiff
+System/Applications/ProjectCenter.app/Resources/ProjectCenter_dist.tiff
 System/Applications/ProjectCenter.app/Resources/ProjectCenter_install.tiff
 System/Applications/ProjectCenter.app/Resources/ProjectCenter_make.tiff
 System/Applications/ProjectCenter.app/Resources/ProjectCenter_profile.tiff
@@ -31,16 +32,27 @@ System/Headers/ProjectCenter/FileCreator.h
 System/Headers/ProjectCenter/PCBrowserController.h
 System/Headers/ProjectCenter/PCBundleLoader.h
 System/Headers/ProjectCenter/PCDataSource.h
+System/Headers/ProjectCenter/PCDefines.h
+System/Headers/ProjectCenter/PCEditor.h
+System/Headers/ProjectCenter/PCEditorController.h
+System/Headers/ProjectCenter/PCEditorView+Highlighting.h
 System/Headers/ProjectCenter/PCEditorView.h
 System/Headers/ProjectCenter/PCFileManager.h
+System/Headers/ProjectCenter/PCHistoryController.h
+System/Headers/ProjectCenter/PCMakefileFactory.h
+System/Headers/ProjectCenter/PCProject+ComponentHandling.h
 System/Headers/ProjectCenter/PCProject.h
 System/Headers/ProjectCenter/PCProjectBuilder.h
 System/Headers/ProjectCenter/PCProjectDebugger.h
+System/Headers/ProjectCenter/PCProjectEditor.h
 System/Headers/ProjectCenter/PCProjectManager.h
 System/Headers/ProjectCenter/PCServer.h
+System/Headers/ProjectCenter/PCSplitView.h
+System/Headers/ProjectCenter/PCTextFinder.h
 System/Headers/ProjectCenter/PreferenceController.h
 System/Headers/ProjectCenter/ProjectBuilder.h
 System/Headers/ProjectCenter/ProjectCenter.h
+System/Headers/ProjectCenter/ProjectComponent.h
 System/Headers/ProjectCenter/ProjectDebugger.h
 System/Headers/ProjectCenter/ProjectEditor.h
 System/Headers/ProjectCenter/ProjectType.h
@@ -74,12 +86,23 @@ System/Library/ProjectCenter/PCBundleProj.bundle/Contents/Resources
 System/Library/ProjectCenter/PCBundleProj.bundle/Resources/Info-gnustep.plist
 System/Library/ProjectCenter/PCBundleProj.bundle/Resources/Info.plist
 System/Library/ProjectCenter/PCBundleProj.bundle/Resources/PC.proj
+System/Library/ProjectCenter/PCBaseFileTypes.bundle/Resources/nsviewclass.template
+System/Library/ProjectCenter/PCBaseFileTypes.bundle/Resources/nsviewheader.template
+System/Library/ProjectCenter/PCGormProj.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/PCGormProj
+System/Library/ProjectCenter/PCGormProj.bundle/Contents/Info.plist
+System/Library/ProjectCenter/PCGormProj.bundle/Contents/Resources
+System/Library/ProjectCenter/PCGormProj.bundle/Resources/Info-gnustep.plist
+System/Library/ProjectCenter/PCGormProj.bundle/Resources/Info-project.plist
+System/Library/ProjectCenter/PCGormProj.bundle/Resources/Info.plist
+System/Library/ProjectCenter/PCGormProj.bundle/Resources/PC.proj
+System/Library/ProjectCenter/PCGormProj.bundle/Resources/baseInterface.classes
+System/Library/ProjectCenter/PCGormProj.bundle/Resources/baseInterface.gorm
+System/Library/ProjectCenter/PCGormProj.bundle/Resources/main.m
 System/Library/ProjectCenter/PCLibProj.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/PCLibProj
 System/Library/ProjectCenter/PCLibProj.bundle/Contents/Info.plist
 System/Library/ProjectCenter/PCLibProj.bundle/Contents/Resources
 System/Library/ProjectCenter/PCLibProj.bundle/Resources/Info-gnustep.plist
 System/Library/ProjectCenter/PCLibProj.bundle/Resources/Info.plist
-System/Library/ProjectCenter/PCLibProj.bundle/Resources/LibProject.gmodel
 System/Library/ProjectCenter/PCLibProj.bundle/Resources/PC.proj
 System/Library/ProjectCenter/PCLibProj.bundle/Resources/Version
 System/Library/ProjectCenter/PCToolProj.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/PCToolProj
@@ -90,16 +113,6 @@ System/Library/ProjectCenter/PCToolProj.bundle/Resources/Info-project.plist
 System/Library/ProjectCenter/PCToolProj.bundle/Resources/Info.plist
 System/Library/ProjectCenter/PCToolProj.bundle/Resources/PC.proj
 System/Library/ProjectCenter/PCToolProj.bundle/Resources/main.m
-Local/Library/ProjectCenter/PCGormProj.bundle/Contents/Info.plist
-Local/Library/ProjectCenter/PCGormProj.bundle/Contents/Resources
-Local/Library/ProjectCenter/PCGormProj.bundle/Resources/Info-gnustep.plist
-Local/Library/ProjectCenter/PCGormProj.bundle/Resources/Info-project.plist
-Local/Library/ProjectCenter/PCGormProj.bundle/Resources/Info.plist
-Local/Library/ProjectCenter/PCGormProj.bundle/Resources/PC.proj
-Local/Library/ProjectCenter/PCGormProj.bundle/Resources/baseInterface.classes
-Local/Library/ProjectCenter/PCGormProj.bundle/Resources/baseInterface.gorm
-Local/Library/ProjectCenter/PCGormProj.bundle/Resources/main.m
-Local/Library/ProjectCenter/PCGormProj.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/PCGormProj
 @dirrm System/Library/ProjectCenter/PCToolProj.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
 @dirrm System/Library/ProjectCenter/PCToolProj.bundle/%%GNU_ARCH%%/%%OPSYS%%
 @dirrm System/Library/ProjectCenter/PCToolProj.bundle/%%GNU_ARCH%%
@@ -112,6 +125,12 @@ Local/Library/ProjectCenter/PCGormProj.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
 @dirrm System/Library/ProjectCenter/PCLibProj.bundle/Resources
 @dirrm System/Library/ProjectCenter/PCLibProj.bundle/Contents
 @dirrm System/Library/ProjectCenter/PCLibProj.bundle
+@dirrm System/Library/ProjectCenter/PCGormProj.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+@dirrm System/Library/ProjectCenter/PCGormProj.bundle/%%GNU_ARCH%%/%%OPSYS%%
+@dirrm System/Library/ProjectCenter/PCGormProj.bundle/%%GNU_ARCH%%
+@dirrm System/Library/ProjectCenter/PCGormProj.bundle/Resources
+@dirrm System/Library/ProjectCenter/PCGormProj.bundle/Contents
+@dirrm System/Library/ProjectCenter/PCGormProj.bundle
 @dirrm System/Library/ProjectCenter/PCBundleProj.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
 @dirrm System/Library/ProjectCenter/PCBundleProj.bundle/%%GNU_ARCH%%/%%OPSYS%%
 @dirrm System/Library/ProjectCenter/PCBundleProj.bundle/%%GNU_ARCH%%
@@ -137,12 +156,6 @@ Local/Library/ProjectCenter/PCGormProj.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
 @dirrm System/Applications/ProjectCenter.app/%%GNU_ARCH%%
 @dirrm System/Applications/ProjectCenter.app/Resources
 @dirrm System/Applications/ProjectCenter.app
-@dirrm Local/Library/ProjectCenter/PCGormProj.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-@dirrm Local/Library/ProjectCenter/PCGormProj.bundle/%%GNU_ARCH%%/%%OPSYS%%
-@dirrm Local/Library/ProjectCenter/PCGormProj.bundle/%%GNU_ARCH%%
-@dirrm Local/Library/ProjectCenter/PCGormProj.bundle/Resources
-@dirrm Local/Library/ProjectCenter/PCGormProj.bundle/Contents
-@dirrm Local/Library/ProjectCenter/PCGormProj.bundle
 @unexec rmdir %D/System/Library 2>/dev/null || true
 @unexec rmdir %D/System/Libraries 2>/dev/null || true
 @unexec rmdir %D/System/Headers 2>/dev/null || true
