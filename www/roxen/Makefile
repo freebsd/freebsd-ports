@@ -15,6 +15,7 @@ MAINTAINER=	k@123.org
 
 WRKSRC=		${WRKDIR}/roxen_1.3.111
 GNU_CONFIGURE=	yes
+PKGMESSAGE=	${WRKSRC}/MESSAGE
 
 STARTUP_SCRIPT=	${PREFIX}/etc/rc.d/roxen.sh
 
@@ -22,7 +23,7 @@ post-patch:
 	@${SED} -e "s|%%PREFIX%%|${PREFIX}|g" ${FILESDIR}/roxen.sh.in > \
 	  ${WRKDIR}/roxen.sh
 	@${SED} -e "s|%%PREFIX%%|${PREFIX}|g" ${FILESDIR}/MESSAGE.in > \
-	  ${PKGDIR}/MESSAGE
+	  ${PKGMESSAGE}
 
 do-configure:
 	@(cd ${WRKSRC}; \
