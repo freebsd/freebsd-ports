@@ -1,3 +1,4 @@
+@comment 20021010 on wwweasel.geeksrus.net by AlanE@FreeBSD.org.
 bin/aktion
 bin/artsbuilder
 bin/artscontrol
@@ -503,49 +504,6 @@ share/apps/kmidi/Mission_Impossible.mid
 share/apps/kmidi/Mr_Postman.mid
 share/apps/kmidi/Take_The_A_Train-Seq_by_Dianne_Lewandowski.mid
 share/apps/kmidi/Vangelis-Chung_Kuo.mid
-share/apps/kmidi/config/BITMAPS/arrow.xbm
-share/apps/kmidi/config/BITMAPS/back.xbm
-share/apps/kmidi/config/BITMAPS/check.xbm
-share/apps/kmidi/config/BITMAPS/fwd.xbm
-share/apps/kmidi/config/BITMAPS/fwrd.xbm
-share/apps/kmidi/config/BITMAPS/next.xbm
-share/apps/kmidi/config/BITMAPS/off.xbm
-share/apps/kmidi/config/BITMAPS/on.xbm
-share/apps/kmidi/config/BITMAPS/pause.xbm
-share/apps/kmidi/config/BITMAPS/play.xbm
-share/apps/kmidi/config/BITMAPS/prev.xbm
-share/apps/kmidi/config/BITMAPS/quit.xbm
-share/apps/kmidi/config/BITMAPS/restart.xbm
-share/apps/kmidi/config/BITMAPS/stop.xbm
-share/apps/kmidi/config/BITMAPS/tback.xbm
-share/apps/kmidi/config/BITMAPS/timidity.xbm
-share/apps/kmidi/config/BITMAPS/tnext.xbm
-share/apps/kmidi/config/BITMAPS/tpause.xbm
-share/apps/kmidi/config/BITMAPS/tprev.xbm
-share/apps/kmidi/config/BITMAPS/tquit.xbm
-share/apps/kmidi/config/chaos12-voices
-share/apps/kmidi/config/chaos8-voices
-share/apps/kmidi/config/drums
-share/apps/kmidi/config/gravis.cfg
-share/apps/kmidi/config/gsdrum.cfg
-share/apps/kmidi/config/guitar
-share/apps/kmidi/config/megadrum
-share/apps/kmidi/config/megainst
-share/apps/kmidi/config/midia.cfg
-share/apps/kmidi/config/mt32.cfg
-share/apps/kmidi/config/patch/acbass.pat
-share/apps/kmidi/config/patch/cymride1.pat
-share/apps/kmidi/config/patch/hihatcl.pat
-share/apps/kmidi/config/patch/kick1.pat
-share/apps/kmidi/config/patch/kick2.pat
-share/apps/kmidi/config/patch/nylongt2.pat
-share/apps/kmidi/config/patch/sologrnd.pat
-share/apps/kmidi/config/piano
-share/apps/kmidi/config/piano+guitar
-share/apps/kmidi/config/pila-voices
-share/apps/kmidi/config/sound-canvas-drums
-share/apps/kmidi/config/timidity.cfg
-share/apps/kmidi/config/wowpats.cfg
 share/apps/kmidi/pics/kmidilogo.png
 share/apps/kmix/kmixui.rc
 share/apps/kmix/pics/kmixdocked.png
@@ -936,45 +894,37 @@ share/services/kfile_ogg.desktop
 share/services/kfile_wav.desktop
 share/services/kmixctrl_restore.desktop
 share/servicetypes/audiomidi.desktop
-@exec /bin/mkdir -p %D/share/apps/kscd/cddb/soundtrack
-@exec /bin/mkdir -p %D/share/apps/kscd/cddb/rock
-@exec /bin/mkdir -p %D/share/apps/kscd/cddb/reggae
-@exec /bin/mkdir -p %D/share/apps/kscd/cddb/newage
-@exec /bin/mkdir -p %D/share/apps/kscd/cddb/misc
-@exec /bin/mkdir -p %D/share/apps/kscd/cddb/jazz
-@exec /bin/mkdir -p %D/share/apps/kscd/cddb/folk
-@exec /bin/mkdir -p %D/share/apps/kscd/cddb/data
-@exec /bin/mkdir -p %D/share/apps/kscd/cddb/country
-@exec /bin/mkdir -p %D/share/apps/kscd/cddb/classical
-@exec /bin/mkdir -p %D/share/apps/kscd/cddb/blues
-@exec /bin/mkdir -p %D/share/apps/kscd/cddb/rock
+@exec /bin/mkdir -p %D/share/apps/kmidi/config/BITMAPS
+@exec /bin/mkdir -p %D/share/apps/kmidi/config/patch
 @exec /bin/mkdir -p %D/share/apps/kscd/cddb/blues
 @exec /bin/mkdir -p %D/share/apps/kscd/cddb/classical
-@exec /bin/mkdir -p %D/share/apps/kscd/cddb/jazz
-@exec /bin/mkdir -p %D/share/apps/kscd/cddb/newage
-@exec /bin/mkdir -p %D/share/apps/kscd/cddb/soundtrack
-@exec /bin/mkdir -p %D/share/apps/kscd/cddb/reggae
-@exec /bin/mkdir -p %D/share/apps/kscd/cddb/folk
 @exec /bin/mkdir -p %D/share/apps/kscd/cddb/country
-@exec /bin/mkdir -p %D/share/apps/kscd/cddb/misc
 @exec /bin/mkdir -p %D/share/apps/kscd/cddb/data
+@exec /bin/mkdir -p %D/share/apps/kscd/cddb/folk
+@exec /bin/mkdir -p %D/share/apps/kscd/cddb/jazz
+@exec /bin/mkdir -p %D/share/apps/kscd/cddb/misc
+@exec /bin/mkdir -p %D/share/apps/kscd/cddb/newage
+@exec /bin/mkdir -p %D/share/apps/kscd/cddb/reggae
 @exec /bin/mkdir -p %D/share/apps/kscd/cddb/rock
-@exec /bin/mkdir -p %D/share/apps/kscd/cddb/blues
-@exec /bin/mkdir -p %D/share/apps/kscd/cddb/classical
-@exec /bin/mkdir -p %D/share/apps/kscd/cddb/jazz
-@exec /bin/mkdir -p %D/share/apps/kscd/cddb/newage
 @exec /bin/mkdir -p %D/share/apps/kscd/cddb/soundtrack
-@exec /bin/mkdir -p %D/share/apps/kscd/cddb/reggae
-@exec /bin/mkdir -p %D/share/apps/kscd/cddb/folk
-@exec /bin/mkdir -p %D/share/apps/kscd/cddb/country
-@exec /bin/mkdir -p %D/share/apps/kscd/cddb/misc
-@exec /bin/mkdir -p %D/share/apps/kscd/cddb/data
+@dirrm share/mimelnk/text
+@dirrm share/mimelnk/audio
+@dirrm share/mimelnk/application
+@dirrm share/mimelnk
 @dirrm share/icons/locolor/32x32/apps
 @dirrm share/icons/locolor/32x32
 @dirrm share/icons/locolor
 @dirrm share/icons/hicolor/48x48/apps
+@dirrm share/icons/hicolor/48x48
 @dirrm share/icons/hicolor/32x32/apps
+@dirrm share/icons/hicolor/32x32
 @dirrm share/icons/hicolor/22x22/apps
+@dirrm share/icons/hicolor/22x22/actions
+@dirrm share/icons/hicolor/22x22
+@dirrm share/icons/hicolor/16x16/apps
+@dirrm share/icons/hicolor/16x16/actions
+@dirrm share/icons/hicolor/16x16
+@dirrm share/icons/hicolor
 @dirrm share/doc/HTML/en/noatun
 @dirrm share/doc/HTML/en/kscd
 @dirrm share/doc/HTML/en/kmix
@@ -983,6 +933,8 @@ share/servicetypes/audiomidi.desktop
 @dirrm share/doc/HTML/en/artsbuilder/images
 @dirrm share/doc/HTML/en/artsbuilder
 @dirrm share/doc/HTML/en/aktion
+@dirrm share/doc/HTML/en
+@dirrm share/doc/HTML
 @dirrm share/apps/noatun/skins/winamp/Winamp
 @dirrm share/apps/noatun/skins/winamp
 @dirrm share/apps/noatun/skins/kaiman/k9
@@ -1041,6 +993,7 @@ share/servicetypes/audiomidi.desktop
 @dirrm share/apps/kmid
 @dirrm share/apps/kicker/applets
 @dirrm share/apps/kicker
+@dirrm share/apps/kconf_update
 @dirrm share/apps/kaboodle/icons/hicolor/22x22/actions
 @dirrm share/apps/kaboodle/icons/hicolor/22x22
 @dirrm share/apps/kaboodle/icons/hicolor/16x16/actions
@@ -1058,9 +1011,10 @@ share/servicetypes/audiomidi.desktop
 @dirrm share/applnk/Settings/Sound
 @dirrm share/applnk/Settings
 @dirrm share/applnk/Multimedia
-@dirrm share/applnk
 @dirrm lib/mcop/Noatun
 @dirrm lib/mcop/Arts/Environment
+@dirrm lib/mcop/Arts
+@dirrm lib/mcop
 @dirrm include/noatun
 @dirrm include/mpeglib_artsplug
 @dirrm include/mpeglib/util/yaf/yafxplayer
@@ -1078,3 +1032,4 @@ share/servicetypes/audiomidi.desktop
 @dirrm include/mpeglib/frame
 @dirrm include/mpeglib/decoder
 @dirrm include/mpeglib
+@dirrm include/arts
