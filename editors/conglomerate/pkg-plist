@@ -1,16 +1,26 @@
 bin/conglomerate
 share/gnome/applications/conglomerate.desktop
 share/gnome/conglomerate/dispspecs/cnxml.xds
+share/gnome/conglomerate/dispspecs/dispspec.xds
 share/gnome/conglomerate/dispspecs/docbook.xds
 share/gnome/conglomerate/dispspecs/kernel-traffic-newsletter.xds
 share/gnome/conglomerate/dispspecs/readme.xds
+share/gnome/conglomerate/dispspecs/relax-ng.xds
 share/gnome/conglomerate/dispspecs/website-layout.xds
 share/gnome/conglomerate/dispspecs/website-webpage.xds
-share/gnome/conglomerate/dispspecs/xsl.xds
+share/gnome/conglomerate/dispspecs/xhtml1-strict.xds
+share/gnome/conglomerate/dtd/xds.dtd
 share/gnome/conglomerate/examples/cnxml.xml
+share/gnome/conglomerate/examples/error-proposal.xml
+share/gnome/conglomerate/examples/file-roller.xml
+share/gnome/conglomerate/examples/i18n.xml
 share/gnome/conglomerate/examples/readme.xml
 share/gnome/conglomerate/examples/test-docbook.xml
+share/gnome/conglomerate/examples/test-entities.xml
+share/gnome/conglomerate/examples/test-table.xml
+share/gnome/conglomerate/glade/cong-file-import.glade
 share/gnome/conglomerate/glade/docbook-common-properties.glade
+share/gnome/conglomerate/glade/docbook-orderedlist-properties.glade
 share/gnome/help/conglomerate/C/conglomerate.xml
 share/gnome/help/conglomerate/C/figures/conglomerate_logo.png
 share/gnome/help/conglomerate/C/figures/intro.png
@@ -50,9 +60,13 @@ share/gnome/pixmaps/cong-title-16.png
 share/gnome/pixmaps/cong-wrapper-16.png
 share/gnome/pixmaps/conglomerate-icon-16.png
 share/locale/da/LC_MESSAGES/conglomerate.mo
+share/locale/de/LC_MESSAGES/conglomerate.mo
 share/locale/es/LC_MESSAGES/conglomerate.mo
 share/locale/nl/LC_MESSAGES/conglomerate.mo
 share/locale/ru/LC_MESSAGES/conglomerate.mo
+share/locale/sr/LC_MESSAGES/conglomerate.mo
+share/locale/sr@Latn/LC_MESSAGES/conglomerate.mo
+share/locale/sv/LC_MESSAGES/conglomerate.mo
 @exec scrollkeeper-install -q %D/share/gnome/omf/conglomerate/conglomerate-C.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/conglomerate/conglomerate-C.omf 2>/dev/null || /usr/bin/true
 @dirrm share/gnome/omf/conglomerate
@@ -60,6 +74,7 @@ share/locale/ru/LC_MESSAGES/conglomerate.mo
 @dirrm share/gnome/help/conglomerate/C
 @dirrm share/gnome/help/conglomerate
 @dirrm share/gnome/conglomerate/dispspecs
+@dirrm share/gnome/conglomerate/dtd
 @dirrm share/gnome/conglomerate/examples
 @dirrm share/gnome/conglomerate/glade
 @dirrm share/gnome/conglomerate
