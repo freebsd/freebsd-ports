@@ -45,8 +45,6 @@ REPLACE_FILES=	${FILESDIR}/daemonctl.c \
 		${FILESDIR}/jakarta-tomcat.sh \
 		${WRKSRC}/conf/server.xml
 JAR_FILE=	bin/bootstrap.jar
-JAVA_ARGS=	'"-Dcatalina.home=${APP_HOME}"'
-JAR_ARGS=	'"start"'
 CONTROL_SCRIPT_MANPAGE_TITLE=	TOMCAT4CTL
 WRKDIR?=	work
 
@@ -54,19 +52,19 @@ WRKDIR?=	work
 
 pre-install:
 	@${ECHO_CMD} "Installation settings:"
-	@${ECHO_CMD} "   Destination directory:   ${APP_HOME}"
-	@${ECHO_CMD} "   Control script location: ${CONTROL_SCRIPT}"
-	@${ECHO_CMD} "   Startup script location: ${STARTUP_SCRIPT}"
-	@${ECHO_CMD} "   Location of JDK:         ${JAVA_HOME}"
-	@${ECHO_CMD} "   Location of Java port:   ${JAVA_PORT}"
-	@${ECHO_CMD} "   Running as (user/group): ${USER}/${GROUP}"
-	@${ECHO_CMD} "   HTTP port:               ${HTTP_PORT}"
-	@${ECHO_CMD} "   Shutdown listener port:  ${SHUTDOWN_PORT}"
-	@${ECHO_CMD} "   WARP port:               ${WARP_PORT}"
-	@${ECHO_CMD} "   AJP 1.3 connector port:  ${AJP_1_3_PORT}"
-	@${ECHO_CMD} "   Logfile stdout:          ${STDOUT_LOG}"
-	@${ECHO_CMD} "   Logfile stderr:          ${STDERR_LOG}"
-	@${ECHO_CMD} "   Starting after install:  ${AUTO_START}"
+	@${ECHO_CMD} "   Destination directory:    ${APP_HOME}"
+	@${ECHO_CMD} "   Control program location: ${CONTROL_SCRIPT}"
+	@${ECHO_CMD} "   Startup script location:  ${STARTUP_SCRIPT}"
+	@${ECHO_CMD} "   Location of JDK:          ${JAVA_HOME}"
+	@${ECHO_CMD} "   Location of Java port:    ${JAVA_PORT}"
+	@${ECHO_CMD} "   Running as (user/group):  ${USER}/${GROUP}"
+	@${ECHO_CMD} "   HTTP port:                ${HTTP_PORT}"
+	@${ECHO_CMD} "   Shutdown listener port:   ${SHUTDOWN_PORT}"
+	@${ECHO_CMD} "   WARP port:                ${WARP_PORT}"
+	@${ECHO_CMD} "   AJP 1.3 connector port:   ${AJP_1_3_PORT}"
+	@${ECHO_CMD} "   Logfile stdout:           ${STDOUT_LOG}"
+	@${ECHO_CMD} "   Logfile stderr:           ${STDERR_LOG}"
+	@${ECHO_CMD} "   Starting after install:   ${AUTO_START}"
 	@PKG_PREFIX=${PREFIX} ${SH} pkg-install ${PKGNAME} PRE-INSTALL
 
 do-install:
@@ -115,8 +113,12 @@ do-install:
 	@${CP} ${WRKDIR}/server.xml ${APP_HOME}/conf/
 	@${ECHO_CMD} " [ DONE ]"
 
-	@${ECHO_CMD} -n ">> Compiling and installing control script..."
-	@cd ${WRKDIR} && ${CC} -DJAR_ARGS=${JAR_ARGS} -DJAVA_ARGS=${JAVA_ARGS} -ansi -o ${CONTROL_SCRIPT_NAME} daemonctl.c
+	@${ECHO_CMD} -n ">> Compiling and installing control program..."
+	@${SED} \
+	-e "/%%JAVA_ARGS%%/s//\"-Dcatalina.home=${APP_HOME:S/\//\\\//g}\",/g" \
+	-e "/%%JAR_ARGS%%/s//\"start\",/g" \
+	${WRKDIR}/daemonctl.c > ${WRKDIR}/daemonctl_.c
+	@cd ${WRKDIR} && ${CC} -DJAR_ARGS=${JAR_ARGS} -DJAVA_ARGS=${JAVA_ARGS} -ansi -o ${CONTROL_SCRIPT_NAME} daemonctl_.c
 	@${CP} ${WRKDIR}/${CONTROL_SCRIPT_NAME} ${CONTROL_SCRIPT}
 	@${CHOWN} ${USER}:${GROUP} ${CONTROL_SCRIPT}
 	@${CHMOD} 6754 ${CONTROL_SCRIPT}
