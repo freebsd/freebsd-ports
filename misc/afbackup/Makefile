@@ -162,14 +162,14 @@ pre-install:
 	@${ECHO} "==>  Creating custom pkg-plist..."
 	@${RM} -rf ${PLIST}
 .if !defined(NOPORTDOCS)
-	@for docfile in $(AFBACKUP_DOCS:S/^/share\/doc\/${PORTNAME}\//); do ${ECHO} $$docfile >>${PLIST}; done
+	@for docfile in $(AFBACKUP_DOCS:S/^/share\/doc\/${PORTNAME}\//); do ${ECHO_CMD} $$docfile >>${PLIST}; done
 .endif
 	@for plistfile in ${PLIST_SRC}; do ${CAT} ${FILESDIR}/$$plistfile >>${PLIST}; done
 	@${CAT} ${PLIST} | perl -nle 'print unless $$lines{$$_}++' >${PLIST}.tmp
 	@${CAT} ${PLIST}.tmp ${FILESDIR}/pkg-plist.fixedorder >${PLIST}
 .if !defined(NOPORTDOCS)
-	@${ECHO} @cwd ${PREFIX} >>${PLIST}
-	@${ECHO} @dirrm share/doc/${PORTNAME} >>${PLIST}
+	@${ECHO_CMD} @cwd ${PREFIX} >>${PLIST}
+	@${ECHO_CMD} @dirrm share/doc/${PORTNAME} >>${PLIST}
 .endif
 	@$(PKGINSTALL_ENV) ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 

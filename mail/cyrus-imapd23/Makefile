@@ -74,27 +74,27 @@ post-install:
 .for file in ${HTDOCS}
 		${INSTALL_DATA} ${WRKSRC}/doc/${file}.html \
 			${PREFIX}/share/doc/cyrus
-		@${ECHO} share/doc/cyrus/${file}.html >>${TMPPLIST}
+		@${ECHO_CMD} share/doc/cyrus/${file}.html >>${TMPPLIST}
 .endfor
 .for file in ${MAN1} ${MAN3} ${MAN5} ${MAN8}
 		ofile=`echo ${file} | sed s/cyrquota/quota/`; \
 		if [ -f ${WRKSRC}/doc/man/$${ofile}.html ]; then \
 		${INSTALL_DATA} ${WRKSRC}/doc/man/$${ofile}.html \
 			${PREFIX}/share/doc/cyrus/man/$${ofile}.html; \
-		${ECHO} share/doc/cyrus/man/$${ofile}.html >>${TMPPLIST}; \
+		${ECHO_CMD} share/doc/cyrus/man/$${ofile}.html >>${TMPPLIST}; \
 		fi
 .endfor
 		${INSTALL_DATA} ${WRKSRC}/doc/cyrusv2.mc \
 			${PREFIX}/share/doc/cyrus
-		@${ECHO} share/doc/cyrus/cyrusv2.mc >>${TMPPLIST}
+		@${ECHO_CMD} share/doc/cyrus/cyrusv2.mc >>${TMPPLIST}
 .for file in ${DOCS}
 		${INSTALL_DATA} ${WRKSRC}/doc/text/${file} \
 			${PREFIX}/share/doc/cyrus/text
-		@${ECHO} share/doc/cyrus/text/${file} >>${TMPPLIST}
+		@${ECHO_CMD} share/doc/cyrus/text/${file} >>${TMPPLIST}
 .endfor
-		@${ECHO} "@dirrm share/doc/cyrus/text" >>${TMPPLIST}
-		@${ECHO} "@dirrm share/doc/cyrus/man" >>${TMPPLIST}
-		@${ECHO} "@dirrm share/doc/cyrus" >>${TMPPLIST}
+		@${ECHO_CMD} "@dirrm share/doc/cyrus/text" >>${TMPPLIST}
+		@${ECHO_CMD} "@dirrm share/doc/cyrus/man" >>${TMPPLIST}
+		@${ECHO_CMD} "@dirrm share/doc/cyrus" >>${TMPPLIST}
 .endif
 		${INSTALL_SCRIPT} ${FILESDIR}/imapd.sh \
 			${PREFIX}/etc/rc.d/imapd.sh.sample

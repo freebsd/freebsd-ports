@@ -40,26 +40,26 @@ do-install:
 	@${CP} ${PKGDIR}/pkg-plist ${PLIST}
 .for d in ${SRCDIRS}
 	@${MKDIR} ${PREFIX}/${d}
-	@${ECHO} @dirrm ${d} >> ${PLIST}.dirrm
+	@${ECHO_CMD} @dirrm ${d} >> ${PLIST}.dirrm
 .endfor
 .for f in ${SRCFILES}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/share/tik/${f}
-	@${ECHO} share/tik/${f} >> ${PLIST}
+	@${ECHO_CMD} share/tik/${f} >> ${PLIST}
 .endfor
 	@${MKDIR} ${PREFIX}/${EGDIR}
-	@${ECHO} @dirrm ${EGDIR} >> ${PLIST}.dirrm
+	@${ECHO_CMD} @dirrm ${EGDIR} >> ${PLIST}.dirrm
 .for f in ${EGFILES}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/${EGDIR}/${f}
-	@${ECHO} ${EGDIR}/${f} >> ${PLIST}
+	@${ECHO_CMD} ${EGDIR}/${f} >> ${PLIST}
 .endfor
 	@${SED} 's#@PREFIX@#${PREFIX}#g' < ${FILESDIR}/tik >${WRKDIR}/tik.sh
 	${INSTALL_SCRIPT} ${WRKDIR}/tik.sh ${PREFIX}/bin/tik
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/${DOCDIR}
-	@${ECHO} @dirrm ${DOCDIR} >> ${PLIST}.dirrm
+	@${ECHO_CMD} @dirrm ${DOCDIR} >> ${PLIST}.dirrm
 .for f in ${DOCFILES}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/${DOCDIR}/${f}
-	@${ECHO} ${DOCDIR}/${f} >> ${PLIST}
+	@${ECHO_CMD} ${DOCDIR}/${f} >> ${PLIST}
 .endfor
 .endif
 	@${SORT} -r ${PLIST}.dirrm >> ${PLIST} && ${RM} ${PLIST}.dirrm

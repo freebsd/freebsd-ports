@@ -38,10 +38,10 @@ post-patch:
 		${WRKSRC}/src/init_fnc.c
 
 post-configure:
-	@${ECHO} '#include <sys/param.h>' >> ${CONFIGURE_WRKSRC}/config.h
-	@${ECHO} '#ifndef SEMVMX' >> ${WRKSRC}/config.h
-	@${ECHO} '#define SEMVMX 32767' >> ${WRKSRC}/config.h
-	@${ECHO} '#endif' >> ${WRKSRC}/config.h
+	@${ECHO_CMD} '#include <sys/param.h>' >> ${CONFIGURE_WRKSRC}/config.h
+	@${ECHO_CMD} '#ifndef SEMVMX' >> ${WRKSRC}/config.h
+	@${ECHO_CMD} '#define SEMVMX 32767' >> ${WRKSRC}/config.h
+	@${ECHO_CMD} '#endif' >> ${WRKSRC}/config.h
 
 post-install:
 .ifndef(NOPORTDOCS)

@@ -59,8 +59,8 @@ UNWANTED_LIBS=${STATIC_MODULES:S/^/lib\/rlm_/:S/$/.a/} \
 post-install:
 .if defined(WANT_KRB5) && defined(KRB5_HOME)
 	@${RM} ${PREFIX}/lib/rlm_krb5.a
-	@${ECHO} 'lib/rlm_krb5.so' >> ${TMPPLIST}
-	@${ECHO} 'lib/rlm_krb5.so.0' >> ${TMPPLIST}
+	@${ECHO_CMD} 'lib/rlm_krb5.so' >> ${TMPPLIST}
+	@${ECHO_CMD} 'lib/rlm_krb5.so.0' >> ${TMPPLIST}
 .endif
 	@cd ${PREFIX} && ${RM} ${UNWANTED_LIBS}
 .for f in acct_users attrs clients clients.conf hints huntgroups ldap.attrmap \

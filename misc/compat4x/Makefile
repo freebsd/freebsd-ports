@@ -90,7 +90,7 @@ do-extract:
 .endif
 
 do-build:
-	@( ${ECHO} '#!/bin/sh'; ${ECHO} '${LDCONFIG} -m ${LDCONFIG_RUNLIST}'; \
+	@( ${ECHO_CMD} '#!/bin/sh'; ${ECHO_CMD} '${LDCONFIG} -m ${LDCONFIG_RUNLIST}'; \
 	) > ${WRKDIR}/000.${PORTNAME}.sh
 
 do-install:

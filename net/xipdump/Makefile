@@ -31,8 +31,8 @@ post-build:
 	@${CP} ${PKGDIR}/pkg-plist ${PLIST}
 	@(cd ${WRKSRC}/data; find pkc pkt ! -type d | \
 		${SED} -e 's|^|share/xipdump/|' >> ${PLIST})
-	@${ECHO} "@dirrm share/xipdump/pkt" >> ${PLIST}
-	@${ECHO} "@dirrm share/xipdump/pkc" >> ${PLIST}
-	@${ECHO} "@dirrm share/xipdump" >> ${PLIST}
+	@${ECHO_CMD} "@dirrm share/xipdump/pkt" >> ${PLIST}
+	@${ECHO_CMD} "@dirrm share/xipdump/pkc" >> ${PLIST}
+	@${ECHO_CMD} "@dirrm share/xipdump" >> ${PLIST}
 
 .include <bsd.port.mk>

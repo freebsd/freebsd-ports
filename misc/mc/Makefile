@@ -45,7 +45,7 @@ pre-patch:
 PLIST=		${WRKDIR}/PLIST
 pre-install:
 	@${CAT} ${PKGDIR}/pkg-plist > ${PLIST}
-	@${ECHO} bin/mcedit >> ${PLIST}
+	@${ECHO_CMD} bin/mcedit >> ${PLIST}
 .endif
 
 .include <bsd.port.mk>

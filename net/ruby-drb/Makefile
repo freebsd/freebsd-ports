@@ -32,7 +32,7 @@ post-patch:
 .if !defined(NOPORTDOCS)
 	cd ${WRKSRC}/doc && for f in drb-ref.rd*; do \
 		${MV} $$f $$f.orig; \
-		( ${ECHO} '=begin'; ${CAT} $$f.orig; ${ECHO} '=end' ) > $$f; \
+		( ${ECHO_CMD} '=begin'; ${CAT} $$f.orig; ${ECHO_CMD} '=end' ) > $$f; \
 		${RM} $$f.orig; \
 	done
 .endif
@@ -40,10 +40,10 @@ post-patch:
 do-build:
 .if !defined(NOPORTDOCS)
 	cd ${WRKSRC}/doc && for f in *.rd; do \
-		${RUBY_RD} $$f > `${ECHO} $$f | ${SED} 's/\.rd$$/.html/'`; \
+		${RUBY_RD} $$f > `${ECHO_CMD} $$f | ${SED} 's/\.rd$$/.html/'`; \
 	done
 	cd ${WRKSRC}/doc && for f in *.rd.ja; do \
-		${RUBY_RD} $$f > `${ECHO} $$f | ${SED} 's/\.rd.ja$$/.ja.html/'`; \
+		${RUBY_RD} $$f > `${ECHO_CMD} $$f | ${SED} 's/\.rd.ja$$/.ja.html/'`; \
 	done
 	${MKDIR} ${WRKSRC}/doc/ja
 	cd ${WRKSRC}/doc && ${MV} *.rd.ja *.ja.html ja/

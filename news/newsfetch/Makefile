@@ -20,9 +20,9 @@ MANCOMPRESSED=	maybe
 
 do-configure:
 	cd ${WRKSRC} && ( \
-	${ECHO} "PROG= newsfetch"; \
-	${ECHO} "SRCS=" *.c; \
-	${ECHO} ".include <bsd.prog.mk>"; \
+	${ECHO_CMD} "PROG= newsfetch"; \
+	${ECHO_CMD} "SRCS=" *.c; \
+	${ECHO_CMD} ".include <bsd.prog.mk>"; \
 	) > Makefile
 
 .include <bsd.port.mk>

@@ -58,7 +58,7 @@ post-install:
 	    ${CP} -f ${WRKSRC}/scripts/README.kinzler ${PREFIX}/share/doc/${PORTNAME}; \
 	    ${CP} -f ${WRKSRC}/scripts/from.allrc-eg  ${PREFIX}/share/doc/${PORTNAME}; \
 	    ${MKDIR} ${DATADIR}/lib; \
-	    ${ECHO} ";# See ${PREFIX}/share/doc/${PORTNAME}/from.allrc-eg for an example" \
+	    ${ECHO_CMD} ";# See ${PREFIX}/share/doc/${PORTNAME}/from.allrc-eg for an example" \
 		> ${DATADIR}/lib/allrc; \
 	fi
 .endif

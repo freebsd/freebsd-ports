@@ -49,8 +49,8 @@ pre-install:
 .for skin in ${SKINS}
 	@for f in ${WRKDIR}/${skin}/* ; do \
 		file=`${BASENAME} $$f`; \
-		${ECHO} share/apps/kxicq/skins/${skin}/$$file >> ${PLIST} ; done
-	@${ECHO} @dirrm share/apps/kxicq/skins/${skin} >> ${PLIST}.dirrm
+		${ECHO_CMD} share/apps/kxicq/skins/${skin}/$$file >> ${PLIST} ; done
+	@${ECHO_CMD} @dirrm share/apps/kxicq/skins/${skin} >> ${PLIST}.dirrm
 .endfor
 	@${CAT} ${PLIST}.dirrm >> ${PLIST} && ${RM} ${PLIST}.dirrm
 	@${CAT} ${PKGDIR}/pkg-plist >> ${PLIST}

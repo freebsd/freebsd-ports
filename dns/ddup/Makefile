@@ -32,7 +32,7 @@ post-patch:
 
 pre-build:
 	${CP} ${FILESDIR}/Makefile ${WRKSRC}/
-	${ECHO} "#define file_name \"${PREFIX}/etc/ddup.conf\"" > ${WRKSRC}/options.h
+	${ECHO_CMD} "#define file_name \"${PREFIX}/etc/ddup.conf\"" > ${WRKSRC}/options.h
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/ddupcron.sh ${PREFIX}/sbin/

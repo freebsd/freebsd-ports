@@ -24,14 +24,14 @@ FONTMAP!=	if which gs > /dev/null 2>&1 ; then \
 			d=`gs -h  | awk '/^Search path:$$/ { nl=1; next } \
 					nl { print $$3; exit }'`; \
 			if [ -e $$d/Fontmap.GS ] ; then \
-				${ECHO} $$d/Fontmap.GS; \
+				${ECHO_CMD} $$d/Fontmap.GS; \
 			elif [ -e $$d/Fontmap ] ; then \
-				${ECHO} $$d/Fontmap \
+				${ECHO_CMD} $$d/Fontmap \
 			else \
-				${ECHO} /nicht/ ; \
+				${ECHO_CMD} /nicht/ ; \
 			fi; \
 		else \
-			${ECHO} /nicht/ ; \
+			${ECHO_CMD} /nicht/ ; \
 		fi
 .endif
 
@@ -46,7 +46,7 @@ do-extract:
 		> ${WRKSRC}/XFree86-Type1_fonts.dir.scale
 
 do-build:
-	${ECHO} `${GREP} koi8 ${WRKSRC}/XFree86-Type1_fonts.dir.scale | wc -l` \
+	${ECHO_CMD} `${GREP} koi8 ${WRKSRC}/XFree86-Type1_fonts.dir.scale | wc -l` \
 		> ${WRKSRC}/fonts.dir
 	${GREP} koi8 ${WRKSRC}/XFree86-Type1_fonts.dir.scale \
 		>> ${WRKSRC}/fonts.dir
@@ -82,7 +82,7 @@ do-install:
 			${RM} -f "${FONTMAP}".CyrPS ; \
 	fi
 .endif
-	${ECHO} ${FONTMAP} > ${CPS_DIR}/fontmap.path
+	${ECHO_CMD} ${FONTMAP} > ${CPS_DIR}/fontmap.path
 	${INSTALL_DATA} ${WRKSRC}/Fontmap.diff ${CPS_DIR}
 	${INSTALL_DATA} ${WRKSRC}/fonts.dir ${CPS_DIR}
 	${LN} -s fonts.dir ${CPS_DIR}/fonts.scale

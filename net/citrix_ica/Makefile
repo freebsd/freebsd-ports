@@ -52,13 +52,13 @@ do-install:
 		${FALSE} ; \
 	fi
 
-	@${ECHO} -e "1\n${CDIR}\ny\ny\ny\ny\n3" > ${WRKSRC}/response ;
+	@${ECHO_CMD} -e "1\n${CDIR}\ny\ny\ny\ny\n3" > ${WRKSRC}/response ;
 	@for dir in ${NSCP}; do \
 		if [ -e $${dir}/plugins/libnullplugin.so ]; then \
 			BIN=`${FILE} $${dir}/plugins/libnullplugin.so | ${AWK} '{print $$11}'` ; \
 			case $${BIN} in \
 			\(SYSV\),) \
-				${ECHO} -e "1\n${CDIR}\ny\ny\ny\n3" > ${WRKSRC}/response ; \
+				${ECHO_CMD} -e "1\n${CDIR}\ny\ny\ny\n3" > ${WRKSRC}/response ; \
 			esac \
 		fi \
 	done

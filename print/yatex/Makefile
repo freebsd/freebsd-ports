@@ -91,7 +91,7 @@ do-build:
 		 -e 's,%%BASENAME%%,${BASENAME},g' \
 		 -e 's,%%CAT%%,${CAT},g' \
 		 -e 's,%%CP%%,${CP},g' \
-		 -e 's,%%ECHO%%,${ECHO},g' \
+		 -e 's,%%ECHO%%,${ECHO_CMD},g' \
 		 -e 's,%%GREP%%,${GREP},g' \
 		 -e 's,%%RM%%,${RM},g' \
 		 -e 's,%%SED%%,${SED},g' \
@@ -127,12 +127,12 @@ do-install:
 	${MKDIR} ${INFODIR}
 .if (${EMACS_PORT_NAME} == xemacs21) || (${EMACS_PORT_NAME} == xemacs21-mule)
 	cd ${WRKSRC}; \
-	for file in `${ECHO} ${INFOFILES} | ${SED} "s,:, ,g"`; do \
+	for file in `${ECHO_CMD} ${INFOFILES} | ${SED} "s,:, ,g"`; do \
 		${INSTALL_DATA} ${WRKSRC}/docs/$${file} ${INFODIR}/$${file}.info; \
 	done
 .else
 	cd ${WRKSRC}; \
-	for file in `${ECHO} ${INFOFILES} | ${SED} "s,:, ,g"`; do \
+	for file in `${ECHO_CMD} ${INFOFILES} | ${SED} "s,:, ,g"`; do \
 		${INSTALL_DATA} ${WRKSRC}/docs/$${file} ${INFODIR}; \
 	done
 .endif

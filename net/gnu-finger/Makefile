@@ -23,7 +23,7 @@ post-install:
 	@${CP} ${WRKSRC}/support/ttylocs ${PREFIX}/etc/fingerdir/ttylocs.sample
 	@${CP} ${FILESDIR}/clients.sample ${PREFIX}/etc/fingerdir/clients.sample
 	@${INSTALL} ${COPY} -m 744 -o root ${FILESDIR}/fingerd.sh.sample ${PREFIX}/etc/rc.d/fingerd.sh.sample
-	@${ECHO} "GNU.finger.server.hostname" > ${PREFIX}/etc/fingerdir/serverhost.sample
-	@${ECHO} "mail.spool.server.hostname" > ${PREFIX}/etc/fingerdir/mailhost.sample
+	@${ECHO_CMD} "GNU.finger.server.hostname" > ${PREFIX}/etc/fingerdir/serverhost.sample
+	@${ECHO_CMD} "mail.spool.server.hostname" > ${PREFIX}/etc/fingerdir/mailhost.sample
 
 .include <bsd.port.mk>

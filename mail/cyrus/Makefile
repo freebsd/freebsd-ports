@@ -53,15 +53,15 @@ post-install:
 .for file in ${DOCS}
 		${INSTALL_DATA} ${WRKSRC}/doc/${file} \
 			${PREFIX}/share/doc/cyrus
-		@${ECHO} share/doc/cyrus/${file} >>${TMPPLIST}
+		@${ECHO_CMD} share/doc/cyrus/${file} >>${TMPPLIST}
 .endfor
 .for file in ${HTDOCS}
 		${INSTALL_DATA} ${WRKSRC}/doc/html/${file}.html \
 			${PREFIX}/share/doc/cyrus/html
-		@${ECHO} share/doc/cyrus/html/${file}.html >>${TMPPLIST}
+		@${ECHO_CMD} share/doc/cyrus/html/${file}.html >>${TMPPLIST}
 .endfor
-		@${ECHO} "@dirrm share/doc/cyrus/html" >>${TMPPLIST}
-		@${ECHO} "@dirrm share/doc/cyrus" >>${TMPPLIST}
+		@${ECHO_CMD} "@dirrm share/doc/cyrus/html" >>${TMPPLIST}
+		@${ECHO_CMD} "@dirrm share/doc/cyrus" >>${TMPPLIST}
 .endif
 		${INSTALL_DATA} ${FILESDIR}/imapd.conf \
 			${PREFIX}/etc/imapd.conf.dist
@@ -78,22 +78,22 @@ post-install:
 		${TOUCH} ${PREFIX}/etc/imap/mailboxes
 		${CHMOD} 640 ${PREFIX}/etc/imap/mailboxes
 		${CHOWN} cyrus:cyrus ${PREFIX}/etc/imap/mailboxes
-		@${ECHO} "@exec ${MKDIR} %D/etc/imap" >>${TMPPLIST}
-		@${ECHO} "@unexec if [ ! -s %D/etc/imap/mailboxes ]; then ${RM} %D/etc/imap/mailboxes; fi" >>${TMPPLIST}
+		@${ECHO_CMD} "@exec ${MKDIR} %D/etc/imap" >>${TMPPLIST}
+		@${ECHO_CMD} "@unexec if [ ! -s %D/etc/imap/mailboxes ]; then ${RM} %D/etc/imap/mailboxes; fi" >>${TMPPLIST}
 .for dir in user quota proc log msg
-		@${ECHO} "@exec ${MKDIR} %D/etc/imap/${dir}" >>${TMPPLIST}
-		@${ECHO} "@unexec rmdir %D/etc/imap/${dir} 2>/dev/null || true" >>${TMPPLIST}
+		@${ECHO_CMD} "@exec ${MKDIR} %D/etc/imap/${dir}" >>${TMPPLIST}
+		@${ECHO_CMD} "@unexec rmdir %D/etc/imap/${dir} 2>/dev/null || true" >>${TMPPLIST}
 .endfor
-		@${ECHO} "@unexec rmdir %D/etc/imap 2>/dev/null || true" >>${TMPPLIST}
-		@${ECHO} "@exec ${TOUCH} %D/etc/imap/mailboxes" >>${TMPPLIST}
-		@${ECHO} "@exec ${CHOWN} -R cyrus:cyrus %D/etc/imap" >>${TMPPLIST}
-		@${ECHO} "@exec ${CHMOD} -R g-w,o= %D/etc/imap" >>${TMPPLIST}
-		@${ECHO} "@mode u=rwx,go=" >>${TMPPLIST}
-		@${ECHO} "@exec ${MKDIR} /var/spool/imap" >>${TMPPLIST}
-		@${ECHO} "@exec ${CHOWN} cyrus:cyrus /var/spool/imap" >>${TMPPLIST}
-		@${ECHO} "@exec ${CHMOD} g-w,o= /var/spool/imap" >>${TMPPLIST}
-		@${ECHO} "@cwd /var" >>${TMPPLIST}
-		@${ECHO} "@dirrm spool/imap" >>${TMPPLIST}
+		@${ECHO_CMD} "@unexec rmdir %D/etc/imap 2>/dev/null || true" >>${TMPPLIST}
+		@${ECHO_CMD} "@exec ${TOUCH} %D/etc/imap/mailboxes" >>${TMPPLIST}
+		@${ECHO_CMD} "@exec ${CHOWN} -R cyrus:cyrus %D/etc/imap" >>${TMPPLIST}
+		@${ECHO_CMD} "@exec ${CHMOD} -R g-w,o= %D/etc/imap" >>${TMPPLIST}
+		@${ECHO_CMD} "@mode u=rwx,go=" >>${TMPPLIST}
+		@${ECHO_CMD} "@exec ${MKDIR} /var/spool/imap" >>${TMPPLIST}
+		@${ECHO_CMD} "@exec ${CHOWN} cyrus:cyrus /var/spool/imap" >>${TMPPLIST}
+		@${ECHO_CMD} "@exec ${CHMOD} g-w,o= /var/spool/imap" >>${TMPPLIST}
+		@${ECHO_CMD} "@cwd /var" >>${TMPPLIST}
+		@${ECHO_CMD} "@dirrm spool/imap" >>${TMPPLIST}
 		@PKG_PREFIX=${PREFIX} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>

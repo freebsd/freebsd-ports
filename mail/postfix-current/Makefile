@@ -87,7 +87,7 @@ post-extract:
 post-patch:
 	(cd ${WRKSRC} && ${MAKE} -f Makefile.init makefiles ${MAKEFILEFLAGS} \
 	CCARGS="${POSTFIX_CCARGS}" AUXLIBS="${POSTFIX_AUXLIBS}" && \
-	${ECHO} "all: default" >> Makefile)
+	${ECHO_CMD} "all: default" >> Makefile)
 
 pre-install:
 	@PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
@@ -185,14 +185,14 @@ replace:
 .if ${OSVERSION} >= 400014
 	@${ECHO_MSG} "===>  Activating postfix in /etc/mail/mailer.conf"
 	${MV} -f /etc/mail/mailer.conf /etc/mail/mailer.conf.bak
-	${ECHO} "#" > /etc/mail/mailer.conf
-	${ECHO} -n "# Execute the Postfix sendmail program" >> /etc/mail/mailer.conf
-	${ECHO} ", named ${PREFIX}/sbin/sendmail" >> /etc/mail/mailer.conf
-	${ECHO} "#" >> /etc/mail/mailer.conf
-	${ECHO} "sendmail	${PREFIX}/sbin/sendmail" >> /etc/mail/mailer.conf
-	${ECHO} "send-mail	${PREFIX}/sbin/sendmail" >> /etc/mail/mailer.conf
-	${ECHO} "mailq		${PREFIX}/sbin/sendmail" >> /etc/mail/mailer.conf
-	${ECHO} "newaliases	${PREFIX}/sbin/sendmail" >> /etc/mail/mailer.conf
+	${ECHO_CMD} "#" > /etc/mail/mailer.conf
+	${ECHO_CMD} -n "# Execute the Postfix sendmail program" >> /etc/mail/mailer.conf
+	${ECHO_CMD} ", named ${PREFIX}/sbin/sendmail" >> /etc/mail/mailer.conf
+	${ECHO_CMD} "#" >> /etc/mail/mailer.conf
+	${ECHO_CMD} "sendmail	${PREFIX}/sbin/sendmail" >> /etc/mail/mailer.conf
+	${ECHO_CMD} "send-mail	${PREFIX}/sbin/sendmail" >> /etc/mail/mailer.conf
+	${ECHO_CMD} "mailq		${PREFIX}/sbin/sendmail" >> /etc/mail/mailer.conf
+	${ECHO_CMD} "newaliases	${PREFIX}/sbin/sendmail" >> /etc/mail/mailer.conf
 .else
 	@${ECHO_MSG} "===> Replacing sendmail"
 	@if [ -e /usr/sbin/sendmail ]; then \
