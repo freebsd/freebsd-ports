@@ -1,5 +1,14 @@
---- configure.orig	Sat May 18 16:08:11 2002
-+++ configure	Sun May 19 06:09:30 2002
+--- configure.orig	Sat Mar 25 13:00:14 2000
++++ configure	Sun Oct 20 02:30:01 2002
+@@ -1306,7 +1306,7 @@
+ test -n "$OBJC" || OBJC="$CC"
+ 
+ test -n "$OBJCFLAGS" || OBJCFLAGS="$CFLAGS"
+-OBJCFLAGS="$OBJCFLAGS -Wall -Wno-import -Wno-protocol -Werror"
++OBJCFLAGS="$OBJCFLAGS -Wall -Wno-import -Wno-protocol"
+ 
+ 
+ # Check whether --enable-shared or --disable-shared was given.
 @@ -1691,8 +1691,8 @@
  LD="$LD" LDFLAGS="$LDFLAGS" LIBS="$LIBS" \
  LN_S="$LN_S" NM="$NM" RANLIB="$RANLIB" \
@@ -20,6 +29,24 @@
  
  # Always use our own libtool.
  LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+@@ -4108,7 +4108,7 @@
+ echo $ac_n "checking how to avoid implicit int return warning""... $ac_c" 1>&6
+ echo "configure:4110: checking how to avoid implicit int return warning" >&5
+ CFLAGS_NOWARN_IMPLICIT_INT=-Wno-implicit-int
+-CFLAGS="-Wall -Werror $CFLAGS_NOWARN_IMPLICIT_INT $CFLAGS"
++CFLAGS="-Wall $CFLAGS_NOWARN_IMPLICIT_INT $CFLAGS"
+ cat > conftest.$ac_ext <<EOF
+ #line 4114 "configure"
+ #include "confdefs.h"
+@@ -4133,7 +4133,7 @@
+ echo $ac_n "checking how to avoid unknown pragma warning""... $ac_c" 1>&6
+ echo "configure:4135: checking how to avoid unknown pragma warning" >&5
+ CFLAGS_NOWARN_UNKNOWN_PRAGMAS=-Wno-unknown-pragmas
+-CFLAGS="-Wall -Werror $CFLAGS_NOWARN_UNKNOWN_PRAGMAS"
++CFLAGS="-Wall $CFLAGS_NOWARN_UNKNOWN_PRAGMAS"
+ cat > conftest.$ac_ext <<EOF
+ #line 4139 "configure"
+ #include "confdefs.h"
 @@ -5049,6 +5049,7 @@
        JAVAINCLUDES="$JAVAINCLUDES -I$jdkincludedir/freebsd"
        threads=green

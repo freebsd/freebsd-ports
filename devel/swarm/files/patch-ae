@@ -1,0 +1,11 @@
+--- libobjc/configure.orig	Sat Mar 25 13:00:17 2000
++++ libobjc/configure	Sun Oct 20 02:30:33 2002
+@@ -1670,7 +1670,7 @@
+ test -n "$OBJC" || OBJC="$CC"
+ 
+ test -n "$OBJCFLAGS" || OBJCFLAGS="$CFLAGS"
+-OBJCFLAGS="-Wall -Werror $OBJCFLAGS"
++OBJCFLAGS="-Wall $OBJCFLAGS"
+    
+ 
+ # Pass with no value to take the default
