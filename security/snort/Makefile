@@ -10,10 +10,9 @@ PORTVERSION=	1.8.1
 PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://snort.sourcefire.com/releases/ \
-		http://www.physik.TU-Berlin.DE/~ibex/ports/distfiles/
 DISTNAME=	${PORTNAME}-1.8.1-RELEASE
 
-MAINTAINER=	dirk@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/snort-1.8.1-RELEASE
 GNU_CONFIGURE=	yes
