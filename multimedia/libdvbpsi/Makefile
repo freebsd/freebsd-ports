@@ -7,10 +7,11 @@
 #
 
 PORTNAME=	libdvbpsi
-PORTVERSION=	0.1.3
+PORTVERSION=	0.1.4
 CATEGORIES=	multimedia
-MASTER_SITES=	http://www.videolan.org/pub/videolan/libdvbpsi/%SUBDIR%/
+MASTER_SITES=	http://download.videolan.org/pub/videolan/libdvbpsi/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTVERSION}
+DISTNAME=	${PORTNAME}3-${PORTVERSION}
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	A library for MPEG TS and DVB PSI tables decoding and generation
