@@ -19,6 +19,7 @@ BUILD_DEPENDS=	${LOCALBASE}/share/doc/freepwing/fpwutils.mk:${PORTSDIR}/japanese
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Jcode.pm:${PORTSDIR}/japanese/p5-Jcode
 
 RESTRICTED=	"The original dictionary is not free"
+NO_PACKAGE=	"The original dictionary is not free"
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/eijiro-fpw${PORTVERSION}
 DICT_PATH?=	/cdrom
