@@ -7,14 +7,13 @@
 
 PORTNAME=	nethack
 PORTVERSION=	3.4.0
+PORTREVISION=	1
 CATEGORIES?=	games
 MASTER_SITES=	ftp://ftp.nethack.org/pub/nethack/nh${PORTVERSION:S/.//g}/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER?=	ports@freebsd.org
-
-FORBIDDEN=	"Possibly exploitable local buffer overflow, see http://online.securityfocus.com/archive/1/311172/2003-02-08/2003-02-14/0 for more information"
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
