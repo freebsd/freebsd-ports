@@ -38,10 +38,16 @@ pre-fetch:
 #post-patch:
 #	@${REINPLACE_CMD} -e "s/gtk-config/${GTK_CONFIG}/g" ${WRKSRC}/configure
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500041
+EXTRA_PATCHES=	${FILESDIR}/extra-glibc-getopt.h
+.endif
+
 post-install:
 	@${STRIP_CMD} ${PREFIX}/bin/jigdo-file
 
 post-clean:
 	@${RM} -f ${WRKDIRPREFIX}${.CURDIR}/Makefile.inc
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
