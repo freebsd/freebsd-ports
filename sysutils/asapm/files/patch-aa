@@ -1,0 +1,11 @@
+--- Makefile.orig	Thu Aug  6 16:53:24 1998
++++ Makefile	Thu Aug  6 16:54:18 1998
+@@ -1,6 +1,6 @@
+ # The locations where this program should be installed
+-INSTALL_X_DIR=/usr/X11R6/bin
+-MAN_DIR=/usr/X11R6/man/man1
++INSTALL_X_DIR=${PREFIX}/bin
++MAN_DIR=${PREFIX}/man/man1
+ 
+ # The location and names of the X11 libraries
+ LDIR = -L/usr/X11R6/lib
