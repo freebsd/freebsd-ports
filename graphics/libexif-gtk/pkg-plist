@@ -1,10 +1,8 @@
-@comment $FreeBSD$
 include/libexif-gtk/gtk-exif-browser.h
 include/libexif-gtk/gtk-exif-content-list.h
 include/libexif-gtk/gtk-exif-entry-ascii.h
 include/libexif-gtk/gtk-exif-entry-copyright.h
 include/libexif-gtk/gtk-exif-entry-date.h
-include/libexif-gtk/gtk-exif-entry-exposure.h
 include/libexif-gtk/gtk-exif-entry-flash.h
 include/libexif-gtk/gtk-exif-entry-generic.h
 include/libexif-gtk/gtk-exif-entry-number.h
@@ -14,11 +12,11 @@ include/libexif-gtk/gtk-exif-entry-resolution.h
 include/libexif-gtk/gtk-exif-entry-user-comment.h
 include/libexif-gtk/gtk-exif-entry-version.h
 include/libexif-gtk/gtk-exif-entry.h
-include/libexif-gtk/gtk-exif-tag-menu.h
 lib/libexif-gtk.a
 lib/libexif-gtk.so
-lib/libexif-gtk.so.4
+lib/libexif-gtk.so.5
 libdata/pkgconfig/libexif-gtk.pc
 share/locale/es/LC_MESSAGES/libexif-gtk.mo
 share/locale/fr/LC_MESSAGES/libexif-gtk.mo
+share/locale/ru/LC_MESSAGES/libexif-gtk.mo
 @dirrm include/libexif-gtk
