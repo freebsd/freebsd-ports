@@ -1,0 +1,69 @@
+--- Makefile.in.orig	Sun May 18 07:21:29 2003
++++ Makefile.in	Sun Jun 29 04:06:13 2003
+@@ -40,2 +40,3 @@
+ APIVERSION = @APIVERSION@
++APIPVERSION = @APIPVERSION@
+ AUTOCONF = @AUTOCONF@
+@@ -99,3 +100,3 @@
+ bin_SCRIPTS = automake aclocal
+-info_TEXINFOS = automake.texi
++info_TEXINFOS = automake${APIPVERSION}.texi
+ 
+@@ -110,3 +111,3 @@
+ 
+-TAGS_DEPENDENCIES = automake.texi
++TAGS_DEPENDENCIES = automake${APIPVERSION}.texi
+ 
+@@ -121,2 +122,3 @@
+ 	    -e 's,[@]APIVERSION[@],$(APIVERSION),g' \
++	    -e 's,[@]APIPVERSION[@],$(APIPVERSION),g' \
+ 	    -e 's,[@]SHELL[@],$(SHELL),g'
+@@ -143,3 +145,3 @@
+ am__TEXINFO_TEX_DIR = $(top_srcdir)/lib
+-INFO_DEPS = automake.info
++INFO_DEPS = automake${APIPVERSION}.info
+ DVIS = automake.dvi
+@@ -147,3 +149,3 @@
+ PSS = automake.ps
+-TEXINFOS = automake.texi
++TEXINFOS = automake${APIPVERSION}.texi
+ 
+@@ -202,3 +204,3 @@
+ 	$(MAKEINFO) $(AM_MAKEINFOFLAGS) $(MAKEINFOFLAGS) -I $(srcdir) \
+-	 -o $@ `test -f '$<' || echo '$(srcdir)/'`$<
++	 --no-split -o $@ `test -f '$<' || echo '$(srcdir)/'`$<
+ 
+@@ -213,9 +215,10 @@
+ 	$(TEXI2PDF) `test -f '$<' || echo '$(srcdir)/'`$<
+-automake.info: automake.texi version.texi
+-automake.dvi: automake.texi version.texi
+-automake.pdf: automake.texi version.texi
++
++automake${APIPVERSION}.info: automake${APIPVERSION}.texi version.texi
++automake${APIPVERSION}.dvi: automake${APIPVERSION}.texi version.texi
++automake${APIPVERSION}.pdf: automake${APIPVERSION}.texi version.texi
+ version.texi:  stamp-vti
+-stamp-vti: automake.texi $(top_srcdir)/configure
+-	@(dir=.; test -f ./automake.texi || dir=$(srcdir); \
+-	set `$(SHELL) $(top_srcdir)/lib/mdate-sh $$dir/automake.texi`; \
++stamp-vti: automake${APIPVERSION}.texi $(top_srcdir)/configure
++	@(dir=.; test -f ./automake${APIPVERSION}.texi || dir=$(srcdir); \
++	set `$(SHELL) $(top_srcdir)/lib/mdate-sh $$dir/automake${APIPVERSION}.texi`; \
+ 	echo "@set UPDATED $$1 $$2 $$3"; \
+@@ -678,16 +681,4 @@
+ 	@$(POST_INSTALL)
+-	@for p in $(bin_SCRIPTS); do \
+-	  f="`echo $$p|sed '$(transform)'`"; \
+-	  fv="$$f-$(APIVERSION)"; \
+-	  rm -f $(DESTDIR)$(bindir)/$$fv; \
+-	  echo " $(LN) $(DESTDIR)$(bindir)/$$f $(DESTDIR)$(bindir)/$$fv"; \
+-	  $(LN) $(DESTDIR)$(bindir)/$$f $(DESTDIR)$(bindir)/$$fv; \
+-	done
+ 
+ uninstall-hook:
+-	@for p in $(bin_SCRIPTS); do \
+-	  f="`echo $$p|sed '$(transform)'`"; \
+-	  fv="$$f-$(APIVERSION)"; \
+-	  rm -f $(DESTDIR)$(bindir)/$$fv; \
+-	done
+ 

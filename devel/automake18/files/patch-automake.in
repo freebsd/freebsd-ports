@@ -1,0 +1,20 @@
+--- automake.in.orig	Wed Oct 16 20:33:56 2002
++++ automake.in	Thu Feb 13 14:05:50 2003
+@@ -31,7 +31,7 @@
+ 
+ BEGIN
+ {
+-  my $perllibdir = $ENV{'perllibdir'} || '@datadir@/@PACKAGE@-@APIVERSION@';
++  my $perllibdir = $ENV{'perllibdir'} || '@datadir@/@PACKAGE@@APIPVERSION@';
+   unshift @INC, $perllibdir;
+ }
+ 
+@@ -126,7 +126,7 @@
+ # VERSION as string so that eg version 0.30 will print correctly.
+ my $VERSION = '@VERSION@';
+ my $PACKAGE = '@PACKAGE@';
+-my $libdir = '@datadir@/@PACKAGE@-@APIVERSION@';
++my $libdir = '@datadir@/@PACKAGE@@APIPVERSION@';
+ 
+ # Some regular expressions.  One reason to put them here is that it
+ # makes indentation work better in Emacs.
