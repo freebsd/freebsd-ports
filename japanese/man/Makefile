@@ -3,7 +3,7 @@
 # Date created:		4 December 1996
 # Whom:			Kiriyama Kazuhiko <kiri@kiri.toba-cmt.ac.jp>
 #
-# $Id: Makefile,v 1.7 1997/03/30 12:40:11 asami Exp $
+# $Id: Makefile,v 1.8 1997/05/20 04:27:31 asami Exp $
 #
 
 DISTNAME=	jp-man-1.1
@@ -18,6 +18,9 @@ MAINTAINER=	kiri@kiri.toba-cmt.ac.jp
 RUN_DEPENDS=	${PREFIX}/bin/groff:${PORTSDIR}/japanese/groff \
 		jless:${PORTSDIR}/japanese/less
 
+MANLANG=	ja_JP.EUC
+MAN1=		jcatman.1 jman.1 jmanpath.1 japropos.1 jwhatis.1 jmakewhatis.1
+MANCOMPRESSED=	yes
 JMANELDIR=	${PREFIX}/lib/mule/site-lisp/jman
 
 # XPG4LIBPATH specifies the path name of the xpg4 library.
