@@ -1,0 +1,7 @@
+@cd /usr/local
+@owner root
+@mode 6755
+bin/hfs
+@owner bin
+@mode 644
+man/man1/hfs.1
