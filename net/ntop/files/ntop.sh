@@ -28,7 +28,7 @@ additional_args=''
 # End of user-configurable variables
 #----------------------------------------------------------------------
 
-args='-d -L --set-pcap-nonblocking'
+args='-d -L --set-pcap-nonblocking --skip-version-check'
 
 [ ! -z $interfaces ] && args="$args -i $interfaces"
 [ ! -z $http_port ] && args="$args -w $http_port"
@@ -39,6 +39,17 @@ args='-d -L --set-pcap-nonblocking'
 
 case "$1" in
 start)
+  # is it the first time we run ntop
+  [ ! -e %%DBDIR%%/ntop/ntop_pw.db ] && {
+	# just in case...
+	[ ! -d  %%DBDIR%%/ntop ] && {
+		echo "Reinstalling database directory"
+		mkdir -p  %%DBDIR%%/ntop
+		chown -R $userid:$userid  %%DBDIR%%/ntop
+	}
+	%%PREFIX%%/bin/ntop -u $userid -A || exit 1
+	echo "Now we can start ntop!"
+  }
   if [ -d $logdir ]; then
     touch ${logdir}/ntop.access.log
     chown $userid ${logdir}/ntop.access.log

@@ -1,6 +1,6 @@
 @exec mkdir -p %%DBDIR%%/ntop
 bin/ntop
-etc/ntop/etter.passive.os.fp.gz
+etc/ntop/etter.finger.os.gz
 etc/ntop/ntop-cert.pem
 etc/ntop/oui.txt.gz
 etc/ntop/p2c.opt.table.gz
@@ -13,12 +13,11 @@ lib/libicmpPlugin.so
 lib/liblastSeenPlugin-%%SHLIB%%.so
 lib/liblastSeenPlugin.a
 lib/liblastSeenPlugin.so
+lib/libmyrrd-%%SHLIB%%.so
+lib/libmyrrd.a
 lib/libnetflowPlugin-%%SHLIB%%.so
 lib/libnetflowPlugin.a
 lib/libnetflowPlugin.so
-lib/libnfsPlugin-%%SHLIB%%.so
-lib/libnfsPlugin.a
-lib/libnfsPlugin.so
 lib/libntop-%%SHLIB%%.so
 lib/libntop.a
 lib/libntop.so
@@ -34,19 +33,29 @@ lib/librrdPlugin.so
 lib/libsflowPlugin-%%SHLIB%%.so
 lib/libsflowPlugin.a
 lib/libsflowPlugin.so
+lib/libsnmpPlugin-%%SHLIB%%.so
+lib/libsnmpPlugin.a
 lib/libxmldumpPlugin-%%SHLIB%%.so
 lib/libxmldumpPlugin.a
 lib/libxmldumpPlugin.so
 lib/ntop/plugins/icmpPlugin.so
 lib/ntop/plugins/lastSeenPlugin.so
 lib/ntop/plugins/netflowPlugin.so
-lib/ntop/plugins/nfsPlugin.so
 lib/ntop/plugins/pdaPlugin.so
 lib/ntop/plugins/rrdPlugin.so
 lib/ntop/plugins/sflowPlugin.so
+lib/ntop/plugins/snmpPlugin.so
 lib/ntop/plugins/xmldumpPlugin.so
 @dirrm lib/ntop/plugins
 @dirrm lib/ntop
+%%DATADIR%%/html/JSCookMenu.js
+%%DATADIR%%/html/theme.js
+%%DATADIR%%/html/arrow.gif
+%%DATADIR%%/html/blank.gif
+%%DATADIR%%/html/ntop_logo.gif
+%%DATADIR%%/html/spacer.gif
+%%DATADIR%%/html/theme.css
+%%DATADIR%%/html/statsicons/flags/local.gif
 %%DATADIR%%/html/About.html
 %%DATADIR%%/html/Admin.html
 %%DATADIR%%/html/All.html
@@ -103,13 +112,6 @@ lib/ntop/plugins/xmldumpPlugin.so
 %%DATADIR%%/html/help.png
 %%DATADIR%%/html/hostSortNote.html
 %%DATADIR%%/html/index.html
-%%DATADIR%%/html/index_inner.html
-%%DATADIR%%/html/index_inner_w3c.html
-%%DATADIR%%/html/index_left.html
-%%DATADIR%%/html/index_left_w3c.html
-%%DATADIR%%/html/index_top.html
-%%DATADIR%%/html/index_top_w3c.html
-%%DATADIR%%/html/index_w3c.html
 %%DATADIR%%/html/info.gif
 %%DATADIR%%/html/initiator.gif
 %%DATADIR%%/html/lock.png
