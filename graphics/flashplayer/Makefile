@@ -21,9 +21,9 @@ MAINTAINER=	knu@idaemons.org
 USE_X_PREFIX=	yes
 
 do-build:
-       cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} swfplayer
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} swfplayer
 
 do-install:
-       cd ${WRKSRC} && ${INSTALL_PROGRAM} swfplayer ${X11BASE}/bin
+	cd ${WRKSRC} && ${INSTALL_PROGRAM} swfplayer ${X11BASE}/bin
 
 .include <bsd.port.mk>
