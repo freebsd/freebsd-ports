@@ -1,0 +1,21 @@
+--- src/dbsd.c--	Mon Jun  8 00:23:26 1998
++++ src/dbsd.c	Sat Aug  1 19:29:15 1998
+@@ -51,6 +51,9 @@
+ 
+ #define DBSD
+ 
++#ifdef HAVE_SYS_PARAM_H
++#include <sys/param.h>
++#endif
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>
+@@ -80,7 +83,7 @@
+ #include <sys/fcntl.h>
+ #endif
+ 
+-#if !defined(bsdi)
++#if (!defined(BSD) || (BSD < 199306))
+ #include <malloc.h>
+ #endif
+ 

@@ -1,0 +1,12 @@
+--- script/dbs_view--	Fri Jul 11 00:53:57 1997
++++ script/dbs_view	Sat Aug  1 20:44:46 1998
+@@ -1,7 +1,7 @@
+-#!/usr/local/bin/perl
+-#!/usr/local/bin/perl -d
+ #!/usr/bin/perl
+ #!/usr/bin/perl -d
++#!/usr/local/bin/perl
++#!/usr/local/bin/perl -d
+ 
+ ######################################################################
+ # DBS: Distributed Benchmark System
