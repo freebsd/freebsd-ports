@@ -6,13 +6,11 @@
 #
 
 PORTNAME=	samba
-PORTVERSION=	2.2.5.p1
-PORTREVISION=	2
+PORTVERSION=	2.2.5
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.samba.org/pub/samba/pre/ \
-		ftp://samba.anu.edu.au/pub/samba/pre/ \
-		ftp://de.samba.org/pub/mirror/samba/pre/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.p/pre/}
+MASTER_SITES=	ftp://ftp.samba.org/pub/samba/ \
+		ftp://samba.anu.edu.au/pub/samba/ \
+		ftp://de.samba.org/pub/mirror/samba/
 
 MAINTAINER=	dwcjr@FreeBSD.org
 
