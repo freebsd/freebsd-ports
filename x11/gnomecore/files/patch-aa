@@ -1,6 +1,15 @@
---- configure.orig	Sun Feb 28 23:24:44 1999
-+++ configure	Tue Mar  2 19:12:49 1999
-@@ -5076,7 +5076,7 @@
+--- configure.orig	Sat Mar 13 17:32:41 1999
++++ configure	Wed Mar 24 20:02:38 1999
+@@ -2578,7 +2578,7 @@
+ CC="$CC" CFLAGS="$CFLAGS" CPPFLAGS="$CPPFLAGS" \
+ LD="$LD" NM="$NM" RANLIB="$RANLIB" LN_S="$LN_S" \
+ DLLTOOL="$DLLTOOL" AS="$AS" \
+-${CONFIG_SHELL-/bin/sh} $ac_aux_dir/ltconfig --no-reexec \
++${CONFIG_SHELL-/bin/sh} $ac_aux_dir/ltconfig \
+ $libtool_flags --no-verify $ac_aux_dir/ltmain.sh $host \
+ || { echo "configure: error: libtool configure failed" 1>&2; exit 1; }
+ 
+@@ -5096,7 +5096,7 @@
    cat conftest.$ac_ext >&5
    rm -rf conftest*
    CATOBJEXT=.mo
@@ -9,7 +18,7 @@
  fi
  rm -f conftest*
  		INSTOBJEXT=.mo
-@@ -5338,7 +5338,7 @@
+@@ -5358,7 +5358,7 @@
  		 USE_INCLUDED_LIBINTL=yes
  		 CATOBJEXT=.cat
  		 INSTOBJEXT=.cat
@@ -18,7 +27,7 @@
  		 INTLDEPS='$(top_builddir)/intl/libintl.a'
  		 INTLLIBS=$INTLDEPS
  		 LIBS=`echo $LIBS | sed -e 's/-lintl//'`
-@@ -6247,6 +6247,7 @@
+@@ -6267,6 +6267,7 @@
  case "$host" in
  *linux*) CDROM_HOST=linux;;
  *solaris*) CDROM_HOST=solaris;;

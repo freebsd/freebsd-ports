@@ -355,8 +355,8 @@
  cxxflags_set = @cxxflags_set@
  l = @l@
  
--SUBDIRS = C
-+# SUBDIRS = C
+-SUBDIRS = C no
++# SUBDIRS = C no
  
 -INCLUDES =  	-I$(includedir)			-I$(top_srcdir)/intl		-I$(top_builddir)/intl		$(GNOME_INCLUDEDIR)		-DGNOMELOCALEDIR=\""$(datadir)/locale\""
 +INCLUDES =  	-I$(includedir)			-I$(top_srcdir)/intl		-I$(top_builddir)/intl		$(GNOME_INCLUDEDIR)		-DGNOMELOCALEDIR=\""$(prefix)/share/locale\""
@@ -374,11 +374,13 @@
  CONFIG_HEADER = ../config.h
 --- gsm/Makefile.in.orig	Tue Mar  2 01:52:17 1999
 +++ gsm/Makefile.in	Sat Mar  6 17:59:42 1999
-@@ -154,7 +154,7 @@
+@@ -154,9 +154,9 @@
  cxxflags_set = @cxxflags_set@
  l = @l@
+
+ defaultdir = $(datadir)/gnome
  
--INCLUDES = -I$(includedir) $(GNOME_INCLUDEDIR) 	-I$(top_srcdir)/intl -I$(top_builddir)/intl		-DGNOMELOCALEDIR=\""$(datadir)/locale\"" 	-DDEFAULTDIR="\"$(datadir)\""
+-INCLUDES = -I$(includedir) $(GNOME_INCLUDEDIR) 	-I$(top_srcdir)/intl -I$(top_builddir)/intl		-DGNOMELOCALEDIR=\""$(datadir)/locale\"" 	-DDEFAULTDIR="\"$(defaultdir)\""
 +INCLUDES = -I$(includedir) $(GNOME_INCLUDEDIR) 	-I$(top_srcdir)/intl -I$(top_builddir)/intl		-DGNOMELOCALEDIR=\""$(prefix)/share/locale\"" 	-DDEFAULTDIR="\"$(datadir)\""
  
  
