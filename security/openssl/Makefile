@@ -20,8 +20,11 @@ MAINTAINER=	dirk@FreeBSD.org
 .if ${OSVERSION} >= 400014
 FORBIDDEN=	"OpenSSL is already in the base system"
 .endif
+
 .if ${PORTOBJFORMAT} == "aout"
-NOSHARED=	yes
+MAKE_ARGS+= WHOLE_ARCHIVE_FLAG=-Bforcearchive
+.else
+MAKE_ARGS+= WHOLE_ARCHIVE_FLAG=--whole-archive
 .endif
 
 USE_PERL5=	yes
