@@ -1,0 +1,23 @@
+
+                               BIBVIEW 
+            (graphical interface for BibTeX program)
+	     by Holger Martin, Peter Urban, Armin Liebl 
+		  liebla@informatik.tu-muenchen.de
+
+    The program "bibview" is a graphical interface for manipulating
+    BibTeX databases. It supports the user in making new entries,
+    searching for entries and moving entries from one BiB to another.
+    It is possible to work with more than one BiB simultaneously. 
+    bibview is implemented with Xt and Athena Widgets.
+    There are six types of windows in bibview:
+    The main window contains menus for customizing bibview and
+    for working with BiBs on the file level.
+    The bibliography window (one for every open BiB) contains commands
+    for manipulating the BiB.
+    The list window (at most one for every open BiB) shows a list of
+    entries. It displays the fields author, title, type and year.
+    The card window (at most one for every entry) helps editing an entry. 
+    It contains boxes for each field of the entry (according to the type).
+    The fields can be edited by putting the mouse cursor into the field.
+    Macros in fields and the symbol for concatenation ('#') are marked
+    with a preceding '@'.
