@@ -10,6 +10,7 @@
     SUBDIR += Xft
     SUBDIR += Xg
     SUBDIR += ae_fonts_mono
+    SUBDIR += ae_fonts_ttf
     SUBDIR += artwiz-fonts
     SUBDIR += bdfresize
     SUBDIR += bitmap-fonts
