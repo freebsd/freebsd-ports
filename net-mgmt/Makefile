@@ -4,6 +4,7 @@
     COMMENT = Network management tools
 
     SUBDIR += NeTraMet
+    SUBDIR += TkTopNetFlows
     SUBDIR += aggregate
     SUBDIR += aguri
     SUBDIR += airport

@@ -1,0 +1,6 @@
+TkTopNetFlows - GUI tool for NetFlow data visualisation.
+Written as Perl and Tcl/Tk scripts. It need Blt & Tktable extension
+for Tcl and Cflow extension for Perl. Netflow data is expected to be collected
+by flow-capture from flow-tools package.
+
+WWW: http://vfom.narod.ru/TkTopNetFlows/
