@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	aee
-PORTVERSION=	2.2.6
+PORTVERSION=	2.2.15b
 CATEGORIES=	editors
 MASTER_SITES=	http://mahon.cwx.net/sources/
 
