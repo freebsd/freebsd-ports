@@ -14,6 +14,8 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
 
+FORBIDDEN=	Remotely exploitable buffer overflow
+
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 MAN1=		${PROGRAM_NAME}.1
