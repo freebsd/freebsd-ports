@@ -22,6 +22,10 @@ LIB_DEPENDS=	wrap.7:${PORTSDIR}/security/tcp_wrapper
 
 MAKE_ARGS=	INSTALL="${INSTALL} ${COPY}"
 
+.if defined(WITHOUT_AFPASP)
+MAKE_ARGS+=	CFLAGS="${CFLAGS} -DNO_AFPASP"
+.endif
+
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_SENDFILE) && ${OSVERSION} >= 310000
