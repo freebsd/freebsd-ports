@@ -1,0 +1,20 @@
+$FreeBSD$
+
+--- Makefile.orig	Sat Sep 22 11:04:16 2001
++++ Makefile	Tue Dec 18 22:39:11 2001
+@@ -1,5 +1,5 @@
+-CXXC = g++
+-CFLAGS = -Wall -O3 -g
++CXXC = ${CXX}
++CFLAGS += -g
+ 
+ all: svm-train svm-predict svm-scale
+ 
+@@ -13,3 +13,7 @@
+ 	$(CXXC) $(CFLAGS) -c svm.cpp
+ clean:
+ 	rm -f *~ svm.o svm-train svm-predict svm-scale
++
++install:
++	install -d ${PREFIX}/bin/
++	install -s -c -m 755 svm-train svm-predict svm-scale ${PREFIX}/bin/

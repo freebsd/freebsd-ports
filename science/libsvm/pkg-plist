@@ -1,0 +1,6 @@
+bin/svm-predict
+bin/svm-scale
+bin/svm-train
+%%PORTDOCS%%share/doc/libsvm/README
+%%PORTDOCS%%share/doc/libsvm/COPYRIGHT
+%%PORTDOCS%%@dirrm share/doc/libsvm
