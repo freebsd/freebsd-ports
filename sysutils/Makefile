@@ -272,6 +272,7 @@
     SUBDIR += wmmon
     SUBDIR += wmmount
     SUBDIR += wmpccard
+    SUBDIR += wmshutdown
     SUBDIR += wmtop
     SUBDIR += wmzazof
     SUBDIR += wots
