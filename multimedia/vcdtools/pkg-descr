@@ -10,5 +10,3 @@ HOW TO MAKE A VCD:
      stereo and a bitrate of 224 KBit/sec
    - multiplex these two streams with vcdmplex
    - use mkvcdfs to create a VCD image of one ore more of those MPEG streams
-
-WWW: http://www.munich-vision.de/vcd/
