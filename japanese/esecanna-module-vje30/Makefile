@@ -9,7 +9,7 @@ PORTNAME=	esecanna-module-vje30
 PORTVERSION=	0.14.4
 CATEGORIES=	japanese
 MASTER_SITES=	http://esecanna.netfort.gr.jp/ \
-		http://people.FreeBSD.org/~knu/ports/distfiles/
+		ftp://ftp.FreeBSD.org/pub/FreeBSD/local-distfiles/knu/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	knu@FreeBSD.org

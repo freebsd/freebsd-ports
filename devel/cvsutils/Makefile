@@ -8,7 +8,7 @@
 PORTNAME=	cvsutils
 PORTVERSION=	2000.06.06
 CATEGORIES=	devel
-MASTER_SITES=	http://people.FreeBSD.org/~knu/ports/distfiles/
+MASTER_SITES=	ftp://ftp.FreeBSD.org/pub/FreeBSD/local-distfiles/knu/
 
 MAINTAINER=	knu@FreeBSD.org
 
