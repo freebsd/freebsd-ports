@@ -1,0 +1,10 @@
+--- util.c-orig	Fri Mar 22 09:30:46 2002
++++ util.c	Fri Mar 22 09:31:33 2002
+@@ -175,6 +175,7 @@
+ {	
+ 	fprintf(stdout,"%s: ",instr);
+ 	fgets(outstr, len, stdin);
++	outstr[strlen(outstr)-1] = '\0';
+ }
+ 
+ double getreal(char *instr,double minx,double maxx,double def)
