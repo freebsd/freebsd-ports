@@ -12,7 +12,7 @@ MASTER_SITES=	http://savannah.nongnu.org/download/mldonkey/release-${PORTVERSION
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.(.)$/-\1/}.sources
 
 MAINTAINER=	holger@e-gitt.net
-COMMENT=	A OCAML client for multiple peer-to-peer networks
+COMMENT?=	A OCAML client for multiple peer-to-peer networks
 
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
 
