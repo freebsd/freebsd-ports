@@ -57,6 +57,7 @@
     SUBDIR += eb2
     SUBDIR += ebd-fpw
     SUBDIR += eblook
+    SUBDIR += ebview
     SUBDIR += ebw3
     SUBDIR += edict
     SUBDIR += edict-fpw

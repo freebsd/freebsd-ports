@@ -1,0 +1,5 @@
+bin/ebview
+share/locale/ja/LC_MESSAGES/ebview.mo
+%%PORTDOCS%%share/doc/ebview/ChangeLog
+%%PORTDOCS%%share/doc/ebview/README
+%%PORTDOCS%%@dirrm share/doc/ebview
