@@ -15,12 +15,11 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	An autotrace GUI FRONTend like streamLINE(TM)
 
 LIB_DEPENDS=	autotrace.3:${PORTSDIR}/graphics/autotrace \
-		art_lgpl_2.5:${PORTSDIR}/graphics/libart_lgpl2 \
 		popt.0:${PORTSDIR}/devel/popt
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
-USE_GNOME=	gnomeprefix gnomehack gnomelibs imlib
+USE_GNOME=	gnomeprefix gnomehack gnomelibs imlib libartlgpl2
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"

@@ -16,11 +16,9 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Python bindings for ORBit2
 
-LIB_DEPENDS=	ORBit-2.0:${PORTSDIR}/devel/ORBit2
-
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack
+USE_GNOME=	gnomehack orbit2
 USE_PYTHON=	yes
 USE_LIBTOOL=	yes
 

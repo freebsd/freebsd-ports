@@ -13,11 +13,9 @@ MASTER_SITES=	http://www.gnetlibrary.org/src/
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A simple network library built upon Glib
 
-LIB_DEPENDS=	glib-2.0.200:${PORTSDIR}/devel/glib20
-
 LATEST_LINK=	gnet-glib2
 USE_REINPLACE=	yes
-USE_GNOME=	gnomehack
+USE_GNOME=	gnomehack glib20
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--enable-glib2

@@ -16,34 +16,25 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Terminal component for the GNOME 2.0 Desktop
 
-LIB_DEPENDS=	gnomeui-2.200:${PORTSDIR}/x11-toolkits/libgnomeui
-
-.if defined(WITH_ZVT)
-LIB_DEPENDS+=	zvt-2.0.0:${PORTSDIR}/x11-toolkits/libzvt
-.else
-LIB_DEPENDS+=	vte.4:${PORTSDIR}/x11-toolkits/vte
-.endif
-
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack gnomehier
+USE_GNOME=	gnomeprefix gnomehack gnomehier libgnomeui
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
-CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 .if defined(WITH_ZVT)
 CONFIGURE_ARGS=	--with-widget=zvt
+USE_GNOME+=	libzvt
 .else
 CONFIGURE_ARGS=	--with-widget=vte
+USE_GNOME+=	vte
 .endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
 		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|[(]libdir[)]/locale|(prefix)/share/locale|g' \
-		${WRKSRC}/po/Makefile.in.in
 
 .include <bsd.port.mk>

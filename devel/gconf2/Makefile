@@ -16,21 +16,16 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A configuration database system for GNOME
 
-LIB_DEPENDS=	ORBit-2.0:${PORTSDIR}/devel/ORBit2 \
-		xml2.5:${PORTSDIR}/textproc/libxml2 \
-		gtk-x11-2.0.200:${PORTSDIR}/x11-toolkits/gtk20
-
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
-USE_GNOME=	gnomehack gnomehier
+USE_GNOME=	gnomehack gnomehier orbit2 libxml2 gtk20
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \

@@ -13,17 +13,15 @@ MASTER_SITES=	http://mfcn.ilo.de/netspeed_applet/
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Applet that shows how much network traffic occurs on an interface
 
-LIB_DEPENDS=	panel-applet-2.0:${PORTSDIR}/x11/gnomepanel \
-		gtop-2.0:${PORTSDIR}/devel/libgtop2
+LIB_DEPENDS=	gtop-2.0:${PORTSDIR}/devel/libgtop2
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
-USE_GNOME=	gnomehier gnomeprefix gnomehack
+USE_GNOME=	gnomehier gnomeprefix gnomehack gnomepanel
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
-CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
