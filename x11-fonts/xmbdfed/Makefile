@@ -3,15 +3,15 @@
 # Date created:		June 20, 1997
 # Whom:			jfieber
 #
-# $Id: Makefile,v 1.7 1998/10/28 23:41:19 jfieber Exp $
+# $Id: Makefile,v 1.8 1998/10/30 07:45:50 asami Exp $
 #
 
-DISTNAME=	xmbdfed-3.4
+DISTNAME=	xmbdfed-3.7
 CATEGORIES=	x11-fonts
 MASTER_SITES=	ftp://crl.nmsu.edu/CLR/multiling/General/
 
 PATCH_SITES=	${MASTER_SITES}
-PATCHFILES=	xmbdfed-3.4.patch1
+PATCHFILES=	xmbdfed-3.7.patch1
 
 MAINTAINER=	jfieber@FreeBSD.ORG
 
