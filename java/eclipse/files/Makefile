@@ -140,7 +140,7 @@ install:
 	-e "/%%JAVA_HOME%%/s//$(JAVA_HOME:S/\//\\\//g)/g" \
         eclipse.in > eclipse.tmp
 	$(BSD_INSTALL_SCRIPT) eclipse.tmp $(PREFIX)/bin/eclipse
-	@$(ECHO) "===> Installing Eclipse plaftorm."
+	@$(ECHO) "===> Installing Eclipse platform."
 	@$(MKDIR) $(PORTDESTDIR)
 	$(BSD_INSTALL_PROGRAM) $(LAUNCHER_DST)/$(LAUNCHER) $(PORTDESTDIR)
 .for i in $(ECLIPSE_TOPLEVEL_FILES)
