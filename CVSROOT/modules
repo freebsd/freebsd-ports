@@ -5428,6 +5428,7 @@ ruby-audiofile	ports/audio/ruby-audiofile
 ruby-avl	ports/devel/ruby-avl
 ruby-bdb	ports/databases/ruby-bdb
 ruby-bigfloat	ports/math/ruby-bigfloat
+ruby-bio	ports/biology/ruby-bio
 ruby-bitvector	ports/math/ruby-bitvector
 ruby-blowfish	ports/security/ruby-blowfish
 ruby-bsearch	ports/devel/ruby-bsearch
