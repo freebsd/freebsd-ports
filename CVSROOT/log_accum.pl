@@ -245,6 +245,27 @@ sub get_revision_number {
 	return($revision, $rcsfile);
 }
 
+
+#
+# Return the previous revision number.
+#
+sub previous_revision {
+	my $rev = shift;
+
+	$rev =~ /(?:(.*)\.)?([^\.]+)\.([^\.]+)$/;
+	my ($base, $r1, $r2) = ($1, $2, $3);
+
+	my $prevrev = "";
+	if ($r2 == 1) {
+		$prevrev = $base;
+	} else {
+		$prevrev = "$base." if $base;
+		$prevrev .= "$r1." . ($r2 - 1);
+	}
+	return $prevrev;
+}
+
+
 #
 # Count the number of lines in a given revision of a file.
 #
@@ -331,17 +352,7 @@ sub change_summary_removed {
 		my ($rev, $rcsfile) = get_revision_number($file);
 
 		if ($rev and $rcsfile) {
-			$rev =~ /(?:(.*)\.)?([^\.]+)\.([^\.]+)$/;
-			my ($base, $r1, $r2) = ($1, $2, $3);
-
-			my $prevrev = "";
-			if ($r2 == 1) {
-				$prevrev = $base;
-			} else {
-				$prevrev = "$base." if $base;
-				$prevrev .= "$r1." . ($r2 - 1);
-			}
-
+			my $prevrev = previous_revision($rev);
 			my $lines = count_lines_in_revision($file, $prevrev);
 			$delta = "+0 -$lines";
 		}
