@@ -57,6 +57,7 @@
     SUBDIR += icqmail
     SUBDIR += im
     SUBDIR += imap-uw
+    SUBDIR += imp
     SUBDIR += isync
     SUBDIR += junkfilter
     SUBDIR += kbiff
