@@ -3,7 +3,7 @@
 # Date Created:			26 Sep 1998
 # Whom:				Vanilla I. Shu <vanilla@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.6 1998/10/08 15:24:37 vanilla Exp $
+# $Id: Makefile,v 1.7 1998/11/08 00:24:03 asami Exp $
 #
 
 DISTNAME=	libgtop-0.26.2
@@ -12,9 +12,9 @@ MASTER_SITES=	ftp://ftp.home-of-linux.org/pub/libgtop/0.26.2/
 
 MAINTAINER=	Nakai@technologist.com
 
-LIB_DEPENDS=	glib11.0:${PORTSDIR}/devel/glib
+LIB_DEPENDS=	glib11.0:${PORTSDIR}/devel/glib \
+		gnome.0:${PORTSDIR}/x11/gnomelibs
 
-BROKEN=		build
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
