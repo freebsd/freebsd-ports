@@ -6,26 +6,27 @@
 #
 
 PORTNAME=	gserver
-PORTVERSION=	0.0.0
+PORTVERSION=	1.1
 CATEGORIES=	net ruby
-MASTER_SITES=	http://www.ruby-lang.org/~knu/
+MASTER_SITES=	http://www.rogare.com/downloads/Ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
-DISTNAME=	GServer.rb-${PORTVERSION}
-EXTRACT_SUFX=	# none
+DISTNAME=	GServer
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
 
+USE_ZIP=	yes
 USE_RUBY=	yes
 RUBY_NO_BUILD_DEPENDS=	yes
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
-EXTRACT_CMD=	${CP}
-EXTRACT_BEFORE_ARGS=	# none
-EXTRACT_AFTER_ARGS=	.
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/${DISTNAME} ${RUBY_SITELIBDIR}/GServer.rb
+	${INSTALL_DATA} ${WRKSRC}/GServer.rb ${RUBY_SITELIBDIR}/
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${RUBY_EXAMPLESDIR}/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/HttpEchoServer.rb ${RUBY_EXAMPLESDIR}/${PORTNAME}/
+.endif
 
 .include <bsd.port.mk>
