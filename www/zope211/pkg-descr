@@ -1,16 +1,16 @@
 Zope is Copyrighted (C) Digital Creations. All rights reserved. This is
 what they themselves say about it:
 
-"Zope (WWW: http://www.zope.org/ ) is an exciting new object-based, open
-source web application platform. It allows you to build powerful and
-dynamic web applications easily. Zope comes with source code and is
-friendly to developers as well as users.
+"Zope is an exciting new object-based, open source web application 
+platform. It allows you to build powerful and dynamic web applications 
+easily. Zope comes with source code and is friendly to developers as 
+well as users.
 Zope is distinguished by its integrated object database which, when
 combined with a revolutionary object model, provides a completely unique
 facility for servicing content managers and web application developers."
 
 Here are some of the "headlines" mentioned in the features list at 
-WWW: http://www.zope.org:8080/Information/Features :
+http://www.zope.org:8080/Information/Features :
 
 Database Integration 			Content Management
 	SQL and HTML in Harmony 		Builtin Objects
@@ -23,3 +23,5 @@ Application Development 			Integrated Object Database
 This is a "beta" release. It seems to work quite stable, but no guarantee
 given.
 					Peter Cornelius <pcc@gmx.net>
+
+WWW: http://www.zope.org/
