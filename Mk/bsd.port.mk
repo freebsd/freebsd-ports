@@ -686,7 +686,7 @@ USE_NEWGCC=	yes
 .endif
 
 .if defined(USE_QT2)
-LIB_DEPENDS+=	qt2.2:${PORTSDIR}/x11-toolkits/qt20
+LIB_DEPENDS+=	qt2.3:${PORTSDIR}/x11-toolkits/qt21
 USE_NEWGCC=	yes
 .endif
 
@@ -1566,7 +1566,7 @@ do-fetch:
 				${ECHO_MSG} ">> Please correct this problem and try again."; \
 				exit 1; \
 			fi ; \
-			if [ -f ${MD5_FILE} ]; then \
+			if [ -f ${MD5_FILE} -a "x${FORCE_FETCH}" = "x" ]; then \
 				if ! ${GREP} -q "^MD5 (.*$$file)" ${MD5_FILE}; then \
 					${ECHO_MSG} ">> $$file is not in ${MD5_FILE}."; \
 					${ECHO_MSG} ">> Either ${MD5_FILE} is out of date, or"; \
@@ -2206,7 +2206,8 @@ fetch-list:
 # Checksumming utilities
 
 .if !target(makesum)
-makesum: fetch
+makesum:
+	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} fetch FORCE_FETCH=yes
 	@${MKDIR} ${FILESDIR}
 	@if [ -f ${MD5_FILE} ]; then ${RM} -f ${MD5_FILE}; fi
 	@(cd ${DISTDIR}; \
