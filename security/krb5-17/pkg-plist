@@ -102,6 +102,7 @@ sbin/sserver
 sbin/telnetd
 sbin/uuserver
 sbin/v5passwdd
+share/doc/krb5/README.FreeBSD
 share/doc/krb5/admin.html
 share/doc/krb5/admin_foot.html
 share/doc/krb5/admin_toc.html

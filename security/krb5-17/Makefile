@@ -7,11 +7,11 @@
 
 PORTNAME=		krb5
 PORTVERSION=		1.2.2
-PORTREVISION=		4
+PORTREVISION=		5
 CATEGORIES=		security
 MASTER_SITES=		# manual download
 
-MAINTAINER=		Cy.Schubert@uumail.gov.bc.ca
+MAINTAINER=		cy@FreeBSD.org
 
 BUILD_DEPENDS=		gm4:${PORTSDIR}/devel/m4
 
@@ -113,5 +113,15 @@ post-install:
 	${GREP} -v '\.so$$' ${TMPPLIST}.new > ${TMPPLIST}
 	${RM} ${TMPPLIST}.new
 .endif
+	@${SED} "s%\${PREFIX}%${PREFIX}%" ${FILESDIR} > ${PREFIX}/share/doc/krb5/README.FreeBSD
+	@${CHMOD} 444 ${PREFIX}/share/doc/krb5/README.FreeBSD
+	@${ECHO} "------------------------------------------------------"
+	@${ECHO} "This port of MIT Kerberos 5 includes remote login     "
+	@${ECHO} "daemons (telnetd and klogind).  These daemons default "
+	@${ECHO} "to using the system login program (/usr/bin/login).   "
+	@${ECHO} "Please see the file                                   "
+	@${ECHO} "${PREFIX}/share/doc/krb5/README.FreeBSD"
+	@${ECHO} "for more information.                                 "
+	@${ECHO} "------------------------------------------------------"
 
 .include <bsd.port.post.mk>
