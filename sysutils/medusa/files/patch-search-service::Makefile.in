@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- search-service/Makefile.in	2002/01/15 17:41:01	1.1
++++ search-service/Makefile.in	2002/01/15 17:41:18
+@@ -133,7 +133,7 @@
+ noinst_HEADERS =  	medusa-authenticate.h 	medusa-file-search-parse-transmission.h 	$(NULL)
+ 
+ 
+-INCLUDES =  	-I$(top_srcdir) 	-I$(top_srcdir)/libmedusa-internal 	-I$(top_srcdir)/libmedusa 	$(GLIB_CFLAGS) 	$(VFS_CFLAGS) 	$(NULL)
++INCLUDES =  	-I$(top_srcdir) 	-I$(top_srcdir)/libmedusa-internal 	-I$(top_srcdir)/libmedusa 	$(GLIB_CFLAGS) 	$(GNOME_CFLAGS)	$(VFS_CFLAGS) 	$(NULL)
+ 
+ 
+ medusa_searchd_LDADD =  	$(top_builddir)/libmedusa/libmedusa.la 	$(top_builddir)/libmedusa-internal/libmedusa-index.la 	$(VFS_LIBS) 	$(GLIB_LIBS) 	$(GNOME_LIBS) 	$(OAF_LIBS) 	$(XML_LIBS) 	$(NULL)

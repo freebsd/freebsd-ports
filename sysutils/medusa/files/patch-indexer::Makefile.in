@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- indexer/Makefile.in	2002/01/15 17:39:48	1.1
++++ indexer/Makefile.in	2002/01/15 17:40:37
+@@ -133,7 +133,7 @@
+ DEFS =  	$(NULL)
+ 
+ 
+-INCLUDES =  	-I$(top_srcdir) 	-I$(top_builddir) 	$(GLIB_CFLAGS) 	$(XML_CFLAGS) 	$(VFS_CFLAGS) 	$(NULL)
++INCLUDES =  	-I$(top_srcdir) 	-I$(top_builddir) 	$(GLIB_CFLAGS) 	$(XML_CFLAGS) 	$(GNOME_CFLAGS)	$(VFS_CFLAGS) 	$(NULL)
+ 
+ 
+ medusa_indexd_LDADD =  	$(top_builddir)/libmedusa/libmedusa.la 	$(top_builddir)/libmedusa-internal/libmedusa-index.la 	$(VFS_LIBS) 	$(GLIB_LIBS) 	$(GNOME_LIBS) 	$(OAF_LIBS) 	$(XML_LIBS) 	$(NULL)
