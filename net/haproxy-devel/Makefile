@@ -36,7 +36,7 @@ pre-everything::
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "Available options:"
 	@${ECHO_MSG} "WITH_PCRE:            Use pcre regex engine"
-	@${ECHO_MSG} "WITH_DTPROXY:         Enable Transparent proxy support"
+	@${ECHO_MSG} "WITH_TPROXY:         Enable Transparent proxy support"
 	@${ECHO_MSG} "STATS_INTERVAL=###:   Statistics interval in milliseconds,"
 	@${ECHO_MSG} "                         (default to 0, disabled)"
 	@${ECHO_MSG} ""
