@@ -74,6 +74,8 @@ CONFIGURE_ARGS=	--libdir=${SAMBA_CONFDIR} \
 
 .include <bsd.port.pre.mk>
 
+CONFIGURE_ENV+=	TESTDIR=/tmp
+
 .if defined(WITH_SYSLOG)
 CONFIGURE_ARGS+=	--with-syslog
 .endif
