@@ -3,18 +3,18 @@
 # Date created:         18 August 1997
 # Whom:                 Chuck Robey (chuckr@freebsd.org)
 #
-# $Id: Makefile,v 1.8 1996/11/17 08:44:16 obrien Exp $
+# $Id: Makefile,v 1.9 1997/08/19 03:43:55 chuckr Exp $
 #
 
 DISTNAME=	a2ps
-PKGNAME=	a2ps-${PAPERSIZE}-4.9.7
+PKGNAME=	a2ps-${PAPERSIZE}-4.9.8
 CATEGORIES=	print
 MASTER_SITES=	http://www-inf.enst.fr/~demaille/ftp/a2ps/
-DISTFILES=	a2ps-4.9.7.tar.gz
+DISTFILES=	a2ps-4.9.8.tar.gz
 
 MAINTAINER=	chuckr@FreeBSD.org
 
-WRKSRC=		$(WRKDIR)/$(DISTNAME)-4.9.7
+WRKSRC=		$(WRKDIR)/$(DISTNAME)-4.9.8
 GNU_CONFIGURE=	yes
 MAN1=		a2ps.1 ogonkify.1
 
@@ -40,6 +40,10 @@ A4::
 
 a4::
 	$(MAKE) PAPERSIZE=A4
+
+pre-build:
+	/usr/bin/touch $(WRKSRC)/doc/*.info
+	/usr/bin/touch $(WRKSRC)/doc/*.dvi
 
 pre-configure:
 .if empty(PAPERSIZE)
