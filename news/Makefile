@@ -1,9 +1,10 @@
-# $Id: Makefile,v 1.45 1999/02/16 22:05:34 andreas Exp $
+# $Id: Makefile,v 1.46 1999/03/01 11:59:24 andreas Exp $
 #
 
     SUBDIR += atp
     SUBDIR += aub
     SUBDIR += cnews
+    SUBDIR += dejasearch
     SUBDIR += diablo
     SUBDIR += dnews
     SUBDIR += fidogate
