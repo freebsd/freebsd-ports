@@ -22,7 +22,7 @@ COMMENT=	Distributed.net distributed computing project client
 WRKSRC=		${WRKDIR}/dnetc${PORTVERSION:E}-freebsd-${ARCH:S/i386/x86/}-elf
 MD5_FILE=	${MASTERDIR}/distinfo.${ARCH}
 
-ONLY_FOR_ARCHS=	i386 alpha sparc64
+ONLY_FOR_ARCHS=	i386 alpha sparc64 amd64
 
 NO_BUILD=	yes
 
@@ -45,7 +45,7 @@ MAN1=		dnetc.1
 .if ${ARCH} == sparc64 || ${ARCH} == alpha
 VERSION=	2.9003.481
 .else
-VERSION=	2.9007.489
+VERSION=	2.9008.491
 .endif
 
 .if ${OSVERSION} < 300000
