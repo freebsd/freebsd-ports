@@ -24,7 +24,19 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 LDFLAGS+=	-L${LOCALBASE}/lib -lstdc++
 CONFIGURE_ARGS=	--with-openssl --disable-konst
 
-.if defined(WITHOUT_NLS)
+OPTIONS=	NLS		"Native Language Support" on \
+		MULTIBYTE	"Multibyte Support" off \
+		FRIBIDI		"Fribidi Support" off \
+		MSN		"Support for MSN Protocol" off \
+		YAHOO		"Support for Yahoo! Messenger Protocol" off \
+		AIM		"Support for AOL's Instant Messenger Protocol" off \
+		IRC		"Support for IRC Protocol" off \
+		JABBER		"Support for Jabber Protocol" off \
+		RSS		"Support for RSS" off \
+		LJ		"Support for LiveJournal" off \
+		GG		"Support for Gadu-Gadu Protocol" off
+
+.if !defined(WITH_NLS)
 CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .else
@@ -32,17 +44,8 @@ USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502124
-BROKEN=		"Does not build with gcc-3.4.2"
-.endif
-
 .if defined(WITH_MULTIBYTE)
 CONFIGURE_ARGS+=	--enable-locales-fix
-.else
-pre-fetch:
-	@${ECHO_CMD} "Type \"make WITH_MULTIBYTE=yes\" if you want multibyte support."
 .endif
 
 .if defined(WITH_FRIBIDI)
@@ -87,6 +90,13 @@ CONFIGURE_ARGS+=	--disable-gg
 MAN1=	cicqconv.1 cicqsync.1
 
 PORTDOCS=	FAQ README
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502124
+BROKEN=		"Does not build with gcc-3.4.2"
+.endif
+
 post-patch:
 .for file in kkconsui-0.1/include/conf.h kkstrtext-0.1/conf.h kksystr-0.1/include/conf.h
 	@(cd ${WRKSRC} ; \
