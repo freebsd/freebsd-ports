@@ -43,11 +43,6 @@ CONFIGURE_ENV+=		LDFLAGS="${PTHREAD_LIBS} ${LDFLAGS}"
 CONFIGURE_ARGS+=	--disable-thread
 .endif
 
-.if !defined(PACKAGE_BUILDING)
-pre-build:
-	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
-.endif
-
 .if !defined(NOPORTDOCS)
 post-install:
 	${MKDIR} ${EG_DST_DIR}
