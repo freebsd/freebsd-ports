@@ -3,10 +3,6 @@ include/sdts++/logical/sl_Object.h
 include/sdts++/logical/sl_Ring.h
 include/sysutils/fileutils.h
 include/sysutils/stringutils.h
-info/dir
-@unexec install-info --delete %D/info/sdts++.info %D/info/dir
-info/sdts++.info
-@exec install-info %D/info/sdts++.info %D/info/dir
 lib/libsdts++.a
 lib/libsdts++.so
 lib/libsdts++.so.0
