@@ -23,5 +23,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's,cp autossh.1 ,$$\{BSD_INSTALL_MAN\} autossh.1 ,g' ${WRKSRC}/${MAKEFILE}
 	@${REINPLACE_CMD} -e 's,cp autossh ,$$\{BSD_INSTALL_PROGRAM\} autossh ,g' ${WRKSRC}/${MAKEFILE}
 	@${REINPLACE_CMD} -e 's,cp ,$$\{BSD_INSTALL_DATA\} ,g' ${WRKSRC}/${MAKEFILE}
+.if defined(NOPORTDOCS)
+	@${REINPLACE_CMD} -Ee 's,(.*doc.*),#\1,g' ${WRKSRC}/${MAKEFILE}
+.endif
 
 .include <bsd.port.mk>
