@@ -20,6 +20,7 @@ share/examples/FElt/distrib.flt
 share/examples/FElt/distrib_a.flt
 share/examples/FElt/distrib_b.flt
 share/examples/FElt/frame.flt
+share/examples/FElt/htk_modal.flt
 share/examples/FElt/mixed_dist.flt
 share/examples/FElt/mixed.flt
 share/examples/FElt/pstress_dist.flt
@@ -101,3 +102,4 @@ share/felt/german.trn
 share/felt/german_new.trn
 share/felt/spanish.trn
 @dirrm share/felt
+

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	felt
-PORTVERSION=	3.02
+PORTVERSION=	3.05
 CATEGORIES=	cad
 MASTER_SITES=	ftp://felt.sourceforge.net/pub/FElt/ \
 		http://symphony.clarku.edu/atkinson/felt/Binaries/ \
@@ -17,16 +17,13 @@ MAINTAINER=	giffunip@asme.org
 
 LIB_DEPENDS=	Xaw3d.6:${PORTSDIR}/x11-toolkits/Xaw3d
 
-WRKSRC=		${WRKDIR}/FElt-3.02
+WRKSRC=		${WRKDIR}/FElt-${PORTVERSION}
 GNU_CONFIGURE=	yes
 USE_X_PREFIX=	yes
 
 MAN1=		burlap.1 corduroy.1 felt.1 patchwork.1 velvet.1 yardstick.1
 MAN3=		Drawing.3
 MAN4=		corduroy.4 felt.4
-
-post-patch:
-	${RM} -f ${WRKSRC}/lib/Geompack/*.c
 
 post-install:
 	${MKDIR} ${PREFIX}/share/examples/FElt
