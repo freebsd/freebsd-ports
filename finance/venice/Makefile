@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	venice
-DISTVERSION=	0.4alpha
+DISTVERSION=	0.5alpha
 CATEGORIES=	finance java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mov
@@ -15,7 +15,7 @@ DISTNAME=	${PORTNAME}-${DISTVERSION}
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Merchant Of Venice, a stock market trading program
 
-BROKEN=		Does not build
+BUILD_DEPENDS=	${JYTHON_PREFIX}/jython.jar:${PORTSDIR}/lang/jython
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.4+
@@ -34,6 +34,7 @@ PLIST_FILES=	\
 
 # docs
 DOC_FILES=	\
+		doc/manual.txt \
 		changelog.txt \
 		readme.txt
 
@@ -41,6 +42,10 @@ DOC_FILES=	\
 PORTDOCS=	\
 		*
 .endif
+
+# jython
+JYTHON_PREFIX=	${LOCALBASE}/jython21
+JYTHON_JAR=	${JYTHON_PREFIX}/jython.jar
 
 post-extract:
 # extract docs
@@ -52,6 +57,7 @@ post-extract:
 post-patch:
 	@${REINPLACE_CMD} -E \
 		-e 's|(build),[[:space:]]*doc|\1|' \
+		-e 's|%%CLASSPATH%%|${CLASSPATH}|' \
 		${BUILD_WRKSRC}/build.xml
 	@${SED} -E \
 		-e "s|%%JAVAVM%%|${LOCALBASE}/bin/java|" \
@@ -75,4 +81,8 @@ do-install:
 	@${MKDIR} ${JAVAJARDIR}
 	@${INSTALL_DATA} ${BUILD_WRKSRC}/${JARFILE} ${JAVAJARDIR}/${JARFILE}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+CLASSPATH+=	${JYTHON_JAR}
+
+.include <bsd.port.post.mk>
