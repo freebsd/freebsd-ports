@@ -7171,6 +7171,7 @@ xgammon		ports/games/xgammon
 xgas		ports/misc/xgas
 xgfe		ports/math/xgfe
 xglobe		ports/astro/xglobe
+xgobi		ports/math/xgobi
 xgolgo		ports/games/xgolgo
 xgrab		ports/x11/xgrab
 xgraph		ports/math/xgraph
