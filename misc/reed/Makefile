@@ -7,26 +7,24 @@
 
 PORTNAME=	reed
 PORTVERSION=	5.4
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://www.sacredchao.net/software/reed/
 
 MAINTAINER=	petef@FreeBSD.org
 COMMENT=	A text pager with autoscrolling and more
 
-LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
-
 USE_PERL5=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	configures
-CONFIGURE_ENV=	INCDIR="${LOCALBASE}/include"
-
-CFLAGS+=	-I${LOCALBASE}/include
 
 MAN1=	breed.1 reed.1 wrap.1
 
 post-patch:
-	@${PERL} -pi -e 's!/usr/local/!${PREFIX}!g' ${WRKSRC}/configures
-	@${PERL} -pi -e 's!sys/dir.h!dirent.h!g' ${WRKSRC}/reed.c
+	@${PERL} -pi -e 's!/usr/local!${PREFIX}!g' ${WRKSRC}/configures
+	@${PERL} -pi -e 's!sys/dir.h!dirent.h!g;s!.*getopt.h.*\n!!' \
+		${WRKSRC}/reed.c
+	@${PERL} -pi -e 's!getopt.h !!' ${WRKSRC}/cfg.data
 	@${PERL} -pi -e 's!-O2!${CFLAGS}!' ${WRKSRC}/Makefile.in
 	@${PERL} -pi -e 's!^#!/usr/bin/perl!#!${PERL}!' \
 		${WRKSRC}/fix_bookmarks.pl
