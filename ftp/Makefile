@@ -36,6 +36,7 @@
     SUBDIR += ncftp
     SUBDIR += ncftp2
     SUBDIR += ncftp3
+    SUBDIR += ncftpd
     SUBDIR += oftpd
     SUBDIR += omi
     SUBDIR += paraget
