@@ -23,6 +23,7 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--enable-shared
 MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
 		AUTOHEADER="${TRUE}"
+INSTALLS_SHLIB=	yes
 
 INFO=		latte liblatte
 
@@ -32,8 +33,7 @@ LDFLAGS=	-L${LOCALBASE}/lib
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
-
+USE_GCC=	3.3
 .endif
 
 post-extract:
