@@ -1,19 +1,11 @@
---- doc/m4.texinfo.orig	Mon Oct 31 09:07:39 1994
-+++ doc/m4.texinfo	Mon Jun 16 16:36:44 1997
-@@ -2,6 +2,7 @@
- @c %**start of header
- @setfilename m4.info
- @settitle GNU macro processor
-+@dircategory Programming & development tools
- @finalout
- @c %**end of header
+--- doc/m4.texinfo.orig	Thu Mar 31 15:17:00 2005
++++ doc/m4.texinfo	Tue Apr  5 11:36:34 2005
+@@ -18,7 +18,7 @@
  
-@@ -17,7 +18,7 @@
- @ifinfo
- @format
- START-INFO-DIR-ENTRY
+ @dircategory GNU programming tools
+ @direntry
 -* m4: (m4).			A powerful macro processor.
 +* Gm4: (m4).			A powerful macro processor.
- END-INFO-DIR-ENTRY
- @end format
- @end ifinfo
+ @end direntry
+ 
+ @ifnottex
