@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	courier-imap
-PORTVERSION=	1.5.2
-PORTREVISION=	1
+PORTVERSION=	1.5.3
+PORTREVISION=	0
 CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	courier
@@ -42,6 +42,7 @@ CONFIGURE_ARGS=	--without-authshadow \
 		--datadir=${PREFIX}/share/courier-imap \
 		--libexecdir=${PREFIX}/libexec/courier-imap \
 		--enable-workarounds-for-imap-client-bugs \
+		--enable-unicode \
 		--disable-root-check
 
 VPOPMAILDIR?=	${LOCALBASE}/vpopmail
