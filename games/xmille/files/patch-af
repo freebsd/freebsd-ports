@@ -1,0 +1,11 @@
+--- move.c.orig	Thu Mar 28 15:13:44 1996
++++ move.c	Thu Feb  1 00:33:58 2001
+@@ -9,8 +9,6 @@
+ #endif
+ #define	CTRL(c)		(c - 'A' + 1)
+ 
+-#define ANIMATE 1
+-
+ /*extern FILE *outf;*/
+ 
+ char	*Movenames[] = {

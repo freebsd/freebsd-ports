@@ -1,0 +1,17 @@
+--- drawcard.c.orig	Thu Apr  2 05:55:06 1992
++++ drawcard.c	Wed Jan 31 23:04:23 2001
+@@ -183,12 +183,12 @@
+ 				WIDTH, HEIGHT);
+ 		
+ 		XSetForeground(dpy, cheap_gc, bits_p);
+-		XSetStipple(dpy, cheap_gc, bits);
++		XSetStipple(dpy, cheap_gc, mask);
+ 		XFillRectangle (dpy, cards[i].bits, cheap_gc, 0, 0,
+ 				WIDTH, HEIGHT);
+ 		
+ 		XSetForeground(dpy, cheap_gc, mask_p);
+-		XSetStipple(dpy, cheap_gc, mask);
++		XSetStipple(dpy, cheap_gc, bits);
+ 		XFillRectangle (dpy, cards[i].bits, cheap_gc, 0, 0,
+ 				WIDTH, HEIGHT);
+ 		

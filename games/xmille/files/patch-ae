@@ -1,0 +1,11 @@
+--- mille.c.orig	Thu Mar 28 14:29:31 1996
++++ mille.c	Thu Feb  1 00:23:54 2001
+@@ -10,7 +10,7 @@
+ 
+ int	rub();
+ 
+-/*char	_sobuf[BUFSIZ];*/
++char	_sobuf[BUFSIZ];
+ 
+ main(ac, av)
+ reg int		ac;

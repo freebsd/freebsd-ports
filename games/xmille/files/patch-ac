@@ -1,14 +1,12 @@
-*** save.c.orig	Wed Apr  1 12:56:45 1992
---- save.c	Fri Dec 30 21:17:28 1994
-***************
-*** 22,28 ****
---- 22,30 ----
-   *	This routine saves the current game for use at a later date
-   */
-  extern int	errno;
-+ #ifndef __FreeBSD__
-  extern char	*sys_errlist[];
-+ #endif
-  
-  save() {
-  
+--- save.c.orig	Thu Apr  2 05:56:45 1992
++++ save.c	Wed Jan 31 23:04:29 2001
+@@ -22,7 +22,9 @@
+  *	This routine saves the current game for use at a later date
+  */
+ extern int	errno;
++#ifndef __FreeBSD__
+ extern char	*sys_errlist[];
++#endif
+ 
+ save() {
+ 

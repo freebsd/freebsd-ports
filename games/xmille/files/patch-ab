@@ -1,19 +1,11 @@
-*** Imakefile.orig	Thu Apr  2 06:03:24 1992
---- Imakefile	Fri Dec 30 21:14:47 1994
-***************
-*** 5,11 ****
-  /**/# Dana Chee
-  /**/#
-  #define IHaveSubdirs
-! #define PassCDebugFlags 'CDEBUGFLAGS=$(CDEBUGFLAGS) DEFINES=$(DEFINES)'
-  
-  HEADERS = ui.h
-  SRCS=	comp.c end.c extern.c init.c mille.c misc.c move.c print.c \
---- 5,11 ----
-  /**/# Dana Chee
-  /**/#
-  #define IHaveSubdirs
-! #define PassCDebugFlags 'CDEBUGFLAGS=$(CDEBUGFLAGS) $(DEFINES)'
-  
-  HEADERS = ui.h
-  SRCS=	comp.c end.c extern.c init.c mille.c misc.c move.c print.c \
+--- Imakefile.orig	Thu Apr  2 23:03:24 1992
++++ Imakefile	Wed Jan 31 23:04:28 2001
+@@ -5,7 +5,7 @@
+ /**/# Dana Chee
+ /**/#
+ #define IHaveSubdirs
+-#define PassCDebugFlags 'CDEBUGFLAGS=$(CDEBUGFLAGS) DEFINES=$(DEFINES)'
++#define PassCDebugFlags 'CDEBUGFLAGS=$(CDEBUGFLAGS) $(DEFINES)'
+ 
+ HEADERS = ui.h
+ SRCS=	comp.c end.c extern.c init.c mille.c misc.c move.c print.c \

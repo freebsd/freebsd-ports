@@ -1,0 +1,11 @@
+--- varpush.c.orig	Wed Jul  8 11:33:36 1987
++++ varpush.c	Thu Feb  1 00:27:53 2001
+@@ -36,7 +36,7 @@
+ 			char	buf[80];
+ over:
+ 			printf("Debug file:");
+-			gets(buf);
++			fgets(buf, sizeof(buf), stdin);
+ 			if ((outf = fopen(buf, "w")) == NULL) {
+ 				perror(buf);
+ 				goto over;
