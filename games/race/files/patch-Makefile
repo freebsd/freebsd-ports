@@ -1,0 +1,11 @@
+--- Makefile.orig	Tue Jul 16 23:35:15 2002
++++ Makefile	Tue Jul 16 23:38:31 2002
+@@ -27,7 +27,7 @@
+ 	$(CC) main.o timing.o vector.o fifo.o ortho.o audio.o font.o \
+ 	init.o textures.o terrain.o menu.o game.o hud.o messages.o \
+ 	camera.o \
+-	-o $(BIN) -lGL -lGLU -lSDL_image -lSDL_mixer -lm `sdl-config --libs`
++	-o $(BIN) ${LDFLAGS} -lGL -lGLU -lSDL_image -lSDL_mixer -lm `sdl-config --libs`
+ 	
+ 	@rm -f *.o
+ 
