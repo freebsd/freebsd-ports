@@ -24,6 +24,10 @@ USE_GCC=	3.3
 
 WRKSRC=			${WRKDIR}/${DISTNAME}/build/generic
 
+.if defined(WITH_OPTIMIZED_CFLAGS)
+CFLAGS=		# let xvid's build system decide about those
+.endif
+
 post-install:
 	@ ${LN} -sf ${PREFIX}/lib/libxvidcore.so.4 ${PREFIX}/lib/libxvidcore.so
 
