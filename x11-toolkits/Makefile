@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.30 1999/06/26 19:34:25 cpiazza Exp $
+# $Id: Makefile,v 1.31 1999/07/03 06:39:12 cpiazza Exp $
 #
 
     SUBDIR += FWF
@@ -13,6 +13,7 @@
     SUBDIR += gtk11
     SUBDIR += gtk12
     SUBDIR += gtkgl
+    SUBDIR += gtkglarea
     SUBDIR += gtkstep
     SUBDIR += itk
     SUBDIR += iwidgets
