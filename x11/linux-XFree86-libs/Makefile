@@ -22,7 +22,6 @@ MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	XFree86 libraries, Linux/i386 binary
 
 BUILD_DEPENDS=	rpm:${PORTSDIR}/archivers/rpm
-RUN_DEPENDS=${LINUXBASE}/lib/libc-2.3.2.so:${PORTSDIR}/emulators/linux_base-8
 
 CONFLICTS=	linux_base-6* linux_base-7* linux_base-deb* linux_base-gentoo*
 MD5_FILE=	${MASTERDIR}/distinfo.${MACHINE_ARCH}
