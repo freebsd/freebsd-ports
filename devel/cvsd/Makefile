@@ -15,6 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ARGS=		--disable-afindep
 
 MAN5=	cvsd.conf.5
 MAN8=	cvsd.8 cvsd-buildroot.8 cvsd-passwd.8
