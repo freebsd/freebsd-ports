@@ -29,7 +29,7 @@ PATCHFILES+=	samba-2.2.9-browsing-hacks.diff
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A free SMB and CIFS client and server for UNIX
-
+FORBIDDEN=	"Potential buffer overruns"
 CONFLICTS=	ja-samba-2.* samba-3.* sharity-light-1.*
 
 USE_SUBMAKE=	YES
