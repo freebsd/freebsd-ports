@@ -36,15 +36,7 @@ diff -ur cf/sh/makeinfo.sh src/contrib/sendmail/cf/sh/makeinfo.sh
 diff -ur mail.local/mail.local.8 src/contrib/sendmail/mail.local/mail.local.8
 --- mail.local/mail.local.8.orig	Fri Dec 29 19:12:16 2000
 +++ mail.local/mail.local.8	Sun Dec 31 10:27:40 2000
-@@ -10,13 +10,15 @@
- .\"
- .\"	$Id: mail.local.8,v 8.14.14.5 2000/12/29 18:12:16 gshapiro Exp $
- .\"
-+.\" $FreeBSD: /tmp/pcvs/ports/mail/sendmail-old/files/Attic/patch-aa,v 1.5 2001-08-01 15:47:49 dinoex Exp $
-+.\"
- .TH MAIL.LOCAL 8 "$Date: 2000/12/29 18:12:16 $"
- .SH NAME
- mail.local
+@@ -16,7 +16,7 @@
  \- store mail in a mailbox
  .SH SYNOPSIS
  .B mail.local
