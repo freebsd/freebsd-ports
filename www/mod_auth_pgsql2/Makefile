@@ -17,6 +17,8 @@ BUILD_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache2
 RUN_DEPENDS=	${BUILD_DEPENDS}
 LIB_DEPENDS=	pq.3:${PORTSDIR}/databases/postgresql7
 
+LATEST_LINK=	mod_auth_pgsql2
+
 APXS?=		${LOCALBASE}/sbin/apxs
 PG_INC?=	${LOCALBASE}/include
 PG_LIBS?=	${LOCALBASE}/lib -lpq
