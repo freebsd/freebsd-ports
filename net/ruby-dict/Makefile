@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dict
-PORTVERSION=	0.9.0
+PORTVERSION=	0.9.2
 CATEGORIES=	net ruby
 MASTER_SITES=	http://www.caliban.org/files/ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -22,7 +22,7 @@ RUBY_SETUP=	install.rb
 
 RUBY_SHEBANG_FILES=	${WRKSRC}/rdict
 
-DOCS=		README doc/dict.html doc/rdict.html
+DOCS=		Changelog README doc/dict.html doc/rdict.html
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/rdict ${PREFIX}/bin/
