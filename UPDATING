@@ -6,6 +6,25 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20050303:
+  AFFECTS: users of net/i2p
+  AUTHOR: lioux@FreeBSD.org
+
+  The newest i2p version 0.5.0.1 is incompatible with all previous
+  versions. Follow these procedures if you are updating from a
+  previous port version. You can ignore these if you are installing
+  i2p for the first time.
+
+  1) Update i2p port to the new one
+  2) Use the i2prouter script to uninstall i2p from user account.
+     You are going to lose all your configuration.
+
+  $ i2prouter uninstall
+
+  3) Install the new i2p version
+
+  $ i2prouter install
+
 20050301:
   AFFECTS: users of sysutils/ganglia-monitor-core
   AUTHOR: brooks@FreeBSD.org
