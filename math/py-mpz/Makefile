@@ -20,7 +20,7 @@ LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4
 
 PLIST_FILES=	lib/%%PYTHON_VERSION%%/site-packages/mpz.so
 DIST_SUBDIR=	python
-USE_PYTHON=	yes
+USE_PYTHON=	-2.3
 USE_PYDISTUTILS=yes
 WRKSRC=		${PYTHON_WRKSRC}/Modules
 MD5_FILE=	${PORTSDIR}/lang/python/distinfo
