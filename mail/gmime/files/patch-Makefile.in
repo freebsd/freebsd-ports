@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Sat Apr  7 23:28:52 2001
++++ Makefile.in	Sat Apr  7 23:28:23 2001
+@@ -92,7 +92,7 @@
+ glib_cflags = @glib_cflags@
+ glib_libs = @glib_libs@
+ 
+-SUBDIRS = . tests doc
++SUBDIRS = . tests
+ 
+ INCLUDES = -I@srcdir@ $(VERSION_FLAGS) @GLIB_CFLAGS@ -DG_LOG_DOMAIN=\"gmime\"
+ 
