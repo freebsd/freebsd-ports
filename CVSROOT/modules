@@ -7484,7 +7484,6 @@ sp		ports/textproc/sp
 spacearyarya	ports/games/spacearyarya
 spacechart	ports/astro/spacechart
 spacehulk	ports/games/spacehulk
-spager		ports/x11-wm/spager
 spamass-milter	ports/mail/spamass-milter
 spambnc		ports/mail/spambnc
 spamcalc	ports/misc/spamcalc
