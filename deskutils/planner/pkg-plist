@@ -1,20 +1,19 @@
 bin/mrproject
 bin/mrproject-engine
 bin/run-mrproject
-lib/mrproject/components/libgantt-component.so
 lib/mrproject/components/libcalendar-component.so
+lib/mrproject/components/libgantt-component.so
 lib/mrproject/components/libmpx-file-filter.so
 lib/mrproject/components/libnetwork-component.so
 lib/mrproject/components/libresource-component.so
+lib/mrproject/components/libsend-component.so
 lib/mrproject/components/libtask-dialog-component.so
 lib/mrproject/components/libxml-file-filter.so
-share/gnome/gnome/apps/Applications/mrproject.desktop
-share/gnome/gnome/ui/GNOME_MrProject_Client.ui
-share/gnome/gnome/ui/GNOME_MrProject_GanttComponent.ui
-share/gnome/gnome/ui/GNOME_MrProject_ResourceComponent.ui
+share/gnome/apps/Applications/mrproject.desktop
 share/gnome/idl/GNOME_MrProject.idl
 share/gnome/idl/GNOME_MrProject_AllocationManager.idl
 share/gnome/idl/GNOME_MrProject_Common.idl
+share/gnome/idl/GNOME_MrProject_Engine.idl
 share/gnome/idl/GNOME_MrProject_FileFilter.idl
 share/gnome/idl/GNOME_MrProject_Project.idl
 share/gnome/idl/GNOME_MrProject_ResourceManager.idl
@@ -33,6 +32,7 @@ share/gnome/images/mrproject/16_save_as.png
 share/gnome/images/mrproject/16_send_to.png
 share/gnome/images/mrproject/24_add_resource.png
 share/gnome/images/mrproject/24_add_task.png
+share/gnome/images/mrproject/24_assign.png
 share/gnome/images/mrproject/24_calendar.png
 share/gnome/images/mrproject/24_chain.png
 share/gnome/images/mrproject/24_delete_resource.png
@@ -55,7 +55,6 @@ share/gnome/images/mrproject/network.png
 share/gnome/images/mrproject/resources.png
 share/gnome/mime-info/mrproject.keys
 share/gnome/mime-info/mrproject.mime
-share/gnome/mrproject/confirm-exit-dialog.glade
 share/gnome/mrproject/gantt-component.etspec
 share/gnome/mrproject/gantt-component.etstate
 share/gnome/mrproject/gantt-timescale-dialog.glade
@@ -66,6 +65,9 @@ share/gnome/mrproject/preferences-dialog.glade
 share/gnome/mrproject/project-properties-dialog.glade
 share/gnome/mrproject/resource-component.etspec
 share/gnome/mrproject/resource-component.etstate
+share/gnome/mrproject/resource-filter-dialog-gui.glade
+share/gnome/mrproject/resource-filter-table.etspec
+share/gnome/mrproject/resource-filter-table.etstate
 share/gnome/mrproject/task-dialog-alloc-table.etspec
 share/gnome/mrproject/task-dialog-alloc-table.etstate
 share/gnome/mrproject/task-dialog-gui.glade
@@ -75,15 +77,33 @@ share/gnome/oaf/GNOME_MrProject_MpxFileFilter.oaf
 share/gnome/oaf/GNOME_MrProject_NetworkComponent.oaf
 share/gnome/oaf/GNOME_MrProject_ProjectEngine.oaf
 share/gnome/oaf/GNOME_MrProject_ResourceComponent.oaf
+share/gnome/oaf/GNOME_MrProject_SendComponent.oaf
 share/gnome/oaf/GNOME_MrProject_TaskDialog.oaf
 share/gnome/oaf/GNOME_MrProject_XmlFileFilter.oaf
 share/gnome/pixmaps/gnome-application-x-mrproject.png
+share/gnome/pixmaps/mrproject.png
+share/gnome/ui/GNOME_MrProject_CalendarComponent.ui
+share/gnome/ui/GNOME_MrProject_Client.ui
+share/gnome/ui/GNOME_MrProject_GanttComponent.ui
+share/gnome/ui/GNOME_MrProject_ResourceComponent.ui
+share/gnome/ui/GNOME_MrProject_SendComponent.ui
+share/locale/da/LC_MESSAGES/mrproject.mo
 share/locale/de/LC_MESSAGES/mrproject.mo
+share/locale/el/LC_MESSAGES/mrproject.mo
 share/locale/es/LC_MESSAGES/mrproject.mo
+share/locale/fr/LC_MESSAGES/mrproject.mo
 share/locale/ja/LC_MESSAGES/mrproject.mo
+share/locale/nn/LC_MESSAGES/mrproject.mo
+share/locale/no/LC_MESSAGES/mrproject.mo
+share/locale/pl/LC_MESSAGES/mrproject.mo
+share/locale/pt/LC_MESSAGES/mrproject.mo
+share/locale/ru/LC_MESSAGES/mrproject.mo
+share/locale/sk/LC_MESSAGES/mrproject.mo
 share/locale/sv/LC_MESSAGES/mrproject.mo
 share/locale/tr/LC_MESSAGES/mrproject.mo
-@dirrm lib/mrproject/components
-@dirrm lib/mrproject
+share/locale/zh_CN/LC_MESSAGES/mrproject.mo
+share/locale/zh_TW/LC_MESSAGES/mrproject.mo
 @dirrm share/gnome/mrproject
 @dirrm share/gnome/images/mrproject
+@dirrm lib/mrproject/components
+@dirrm lib/mrproject

@@ -1,0 +1,26 @@
+--- configure.orig	Sun Jan 27 18:08:12 2002
++++ configure	Sun Jan 27 18:08:30 2002
+@@ -7468,12 +7468,12 @@
+ rm -f conftest*
+     if test "$am_cv_func_iconv" != yes; then
+       am_save_LIBS="$LIBS"
+-      LIBS="$LIBS -liconv"
++      LIBS="$LIBS -lgiconv"
+       cat > conftest.$ac_ext <<EOF
+ #line 7474 "configure"
+ #include "confdefs.h"
+ #include <stdlib.h>
+-#include <iconv.h>
++#include <giconv.h>
+ int main() {
+ iconv_t cd = iconv_open("","");
+          iconv(cd,NULL,NULL,NULL,NULL);
+@@ -7549,7 +7549,7 @@
+   fi
+   LIBICONV=
+   if test "$am_cv_lib_iconv" = yes; then
+-    LIBICONV="-liconv"
++    LIBICONV="-lgiconv"
+   fi
+   
+ 

@@ -1,0 +1,14 @@
+--- client/Makefile.in.orig	Mon Jan 28 14:04:20 2002
++++ client/Makefile.in	Mon Jan 28 14:05:02 2002
+@@ -215,6 +215,11 @@
+ 	$(top_builddir)/util/libmrproject-utilx.la	\
+ 	$(top_builddir)/util/libmrproject-corba-util.la	\
+ 	$(top_builddir)/client/widgets/libwidgets.la	\
++	$(top_builddir)/client/components/gantt/libgantt-component.la \
++	$(top_builddir)/client/components/network/libnetwork-component.la \
++	$(top_builddir)/client/components/resource/libresource-component.la \
++	$(top_builddir)/client/components/task-dialog/libtask-dialog-component.la \
++	$(top_builddir)/client/components/send/libsend-component.la \
+ 	$(top_builddir)/client/components/shell-component/libshell-component.la \
+ 	$(top_builddir)/client/manager-clients/libmanager-clients.la \
+ 	$(top_builddir)/libmrproject/libmrproject-interfaces.la
