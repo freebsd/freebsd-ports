@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	dnetc
-PORTVERSION=	2.8010.463
+PORTVERSION=	2.8012.465
 CATEGORIES=	misc
-MASTER_SITES=	ftp://ftp.distributed.net/pub/dcti/v2.8010/ \
-		http://http.distributed.net/pub/dcti/v2.8010/
+MASTER_SITES=	ftp://ftp.distributed.net/pub/dcti/%SUBDIR%/ \
+		http://http.distributed.net/pub/dcti/%SUBDIR%/
+MASTER_SITE_SUBDIR=	${PORTVERSION:S/^/v/:R}
 .include <bsd.port.pre.mk>
 .if ${ARCH} == "i386"
-DISTFILES=	dnetc463-freebsd-x86-elf.tar.gz
+DISTFILES=	dnetc465-freebsd-x86-elf.tar.gz
 .elif ${ARCH} == "alpha"
 BROKEN=		"Not immediately available.  Please try again tomorrow."
 .endif
@@ -30,13 +31,12 @@ BROKEN=		"rc5des/dnetc conflict: Please deinstall all rc5des ports/packages firs
 .endif
 
 MAINTAINER=	dbaker@distributed.net
-FORBIDDEN=	"Local buffer overflows yielding user nobody"
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
 BINDIR=		${PREFIX}/distributed.net
-LIBDIR=		${PREFIX}/etc/rc.d/
+LIBDIR=		${PREFIX}/etc/rc.d
 
 CLIENTUID=	nobody
 CLIENTGID=	daemon
