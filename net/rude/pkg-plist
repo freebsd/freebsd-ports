@@ -1,0 +1,12 @@
+bin/crude
+bin/grude
+bin/rude
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.crude
+%%PORTDOCS%%%%DOCSDIR%%/README.rude
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/example.cfg
+%%PORTDOCS%%%%DOCSDIR%%/crude_jitter.pl
+%%PORTDOCS%%%%DOCSDIR%%/crude_parse.pl
+%%PORTDOCS%%%%DOCSDIR%%/dump2trace.pl
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -1,0 +1,11 @@
+--- grude/grude.orig	Tue Jun 24 11:38:38 2003
++++ grude/grude	Tue Jun 24 11:39:18 2003
+@@ -1418,7 +1418,7 @@
+       $erro = 'Can\'t save file components';
+       goto ERRO;
+    }
+-   if (system('tar c * | gzip -c > archive') != 0) {
++   if (system('tar cf - * | gzip -c > archive') != 0) {
+       $erro = 'Can\'t create compressed file';
+       goto ERRO;
+    }

@@ -1,0 +1,11 @@
+--- crude/Makefile.in.orig	Tue Jun 24 11:26:39 2003
++++ crude/Makefile.in	Tue Jun 24 11:26:57 2003
+@@ -19,7 +19,7 @@
+ sbindir       = @sbindir@
+ srcdir        = @srcdir@
+ 
+-INSTALL  = @INSTALL@ -o root -g root -m 0755
++INSTALL  = @INSTALL@ -o root -g wheel -m 0755
+ VPATH    = @srcdir@
+ 
+ CC       = @CC@
