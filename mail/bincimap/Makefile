@@ -12,7 +12,7 @@
 #
 
 PORTNAME=	bincimap
-PORTVERSION=	1.2.7
+PORTVERSION=	1.2.9
 CATEGORIES=	mail
 MASTER_SITES=	http://www.bincimap.org/%SUBDIR%/ \
 		http://www.bincimap.andreas.hanssen.name/%SUBDIR%/ \
@@ -55,7 +55,8 @@ MAN1=		bincimap-up.1 bincimapd.1
 MAN5=		bincimap.conf.5
 DOCS=		AUTHORS ChangeLog README doc/bincimap* \
 		doc/manual/bincimap-manual.ps
-EXAMPLES=	contrib/README contrib/authenticators/bincimap-auth-teapop.sh
+EXAMPLES=	conf/checkpassword.pl conf/toimapdir conf/tomaildir++ \
+		contrib/README contrib/authenticators/bincimap-auth-teapop.sh
 
 post-install:
 	@${MKDIR} ${CONFDIR}
