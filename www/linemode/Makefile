@@ -1,9 +1,9 @@
-# New ports collection makefile for:	cern_linemode
+# New ports collection makefile for:	linemode
 # Version required:     4.0D
 # Date created:		17 April 1995
 # Whom:			NIIMI Satoshi <sa2c@and.or.jp>
 #
-# $Id: Makefile,v 1.9 1996/01/11 01:33:36 ache Exp $
+# $Id: Makefile,v 1.10 1996/02/19 23:39:14 ache Exp $
 #
 
 DISTNAME=	WWW
