@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.48 1997/04/11 19:41:35 erich Exp $
+# $Id: Makefile,v 1.49 1997/04/18 12:10:56 jfitz Exp $
 #
 
     SUBDIR += SWIG
@@ -49,7 +49,6 @@
     SUBDIR += scogdb
     SUBDIR += tkcvs
     SUBDIR += tvision
-    SUBDIR += uulib
     SUBDIR += xwpe
     SUBDIR += xxgdb
 
