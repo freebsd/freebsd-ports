@@ -734,13 +734,6 @@ bin/cgx
 %%WITH_EXAMPLES%%%%EXAMPLESDIR%%/compressor/ccx/lavfm.msh
 %%WITH_EXAMPLES%%%%EXAMPLESDIR%%/compressor/ccx/cyc/lavfmcyc.inp
 %%WITH_EXAMPLES%%%%EXAMPLESDIR%%/nurbs/halter.fbd
-%%WITH_EXAMPLES%%@dirrm %%EXAMPLESDIR%%/nurbs
-%%WITH_EXAMPLES%%@dirrm %%EXAMPLESDIR%%/compressor/cgx
-%%WITH_EXAMPLES%%@dirrm %%EXAMPLESDIR%%/compressor/ccx/cyc
-%%WITH_EXAMPLES%%@dirrm %%EXAMPLESDIR%%/compressor/ccx
-%%WITH_EXAMPLES%%@dirrm %%EXAMPLESDIR%%/compressor
-%%WITH_EXAMPLES%%@dirrm %%EXAMPLESDIR%%/basic
-%%WITH_EXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%WITH_EXAMPLES%%%%EXAMPLESDIR%%/test/achtel2.dat.ref
 %%WITH_EXAMPLES%%%%EXAMPLESDIR%%/test/achtel2.inp
 %%WITH_EXAMPLES%%%%EXAMPLESDIR%%/test/achtel29.dat.ref
@@ -918,3 +911,10 @@ bin/cgx
 %%WITH_EXAMPLES%%%%EXAMPLESDIR%%/test/swing.dat.ref
 %%WITH_EXAMPLES%%%%EXAMPLESDIR%%/test/swing.inp
 %%WITH_EXAMPLES%%@dirrm %%EXAMPLESDIR%%/test
+%%WITH_EXAMPLES%%@dirrm %%EXAMPLESDIR%%/nurbs
+%%WITH_EXAMPLES%%@dirrm %%EXAMPLESDIR%%/compressor/cgx
+%%WITH_EXAMPLES%%@dirrm %%EXAMPLESDIR%%/compressor/ccx/cyc
+%%WITH_EXAMPLES%%@dirrm %%EXAMPLESDIR%%/compressor/ccx
+%%WITH_EXAMPLES%%@dirrm %%EXAMPLESDIR%%/compressor
+%%WITH_EXAMPLES%%@dirrm %%EXAMPLESDIR%%/basic
+%%WITH_EXAMPLES%%@dirrm %%EXAMPLESDIR%%
