@@ -261,6 +261,8 @@
     SUBDIR += netscape4-navigator
     SUBDIR += netscape47-communicator
     SUBDIR += netscape47-navigator
+    SUBDIR += netscape48-communicator
+    SUBDIR += netscape48-navigator
     SUBDIR += netype
     SUBDIR += netypesv
     SUBDIR += newosaka
