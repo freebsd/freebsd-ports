@@ -1,0 +1,19 @@
+From the abstract:
+  The XHTML Basic document type includes the minimal set of modules
+  required to be an XHTML host language document type, and in addition
+  it includes images, forms, basic tables, and object support. It
+  is designed for Web clients that do not support the full set of
+  XHTML features; for example, Web clients such as mobile phones,
+  PDAs, pagers, and settop boxes. The document type is rich enough for
+  content authoring.
+
+  XHTML Basic is designed as a common base that may be extended. For
+  example, an event module that is more generic than the traditional
+  HTML 4 event system could be added or it could be extended by
+  additional modules from XHTML Modularization such as the Scripting
+  Module. The goal of XHTML Basic is to serve as a common language
+  supported by various kinds of user agents.
+
+The document type definition is implemented using XHTML
+modules as defined in "Modularization of XHTML", found in
+ports/textproc/xhtml-modularization.

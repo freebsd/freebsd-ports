@@ -497,6 +497,8 @@
     SUBDIR += xerces-j
     SUBDIR += xhtml
     SUBDIR += xhtml-1.1
+    SUBDIR += xhtml-basic
+    SUBDIR += xhtml-modularization
     SUBDIR += xincluder
     SUBDIR += xlhtml
     SUBDIR += xls2xml
