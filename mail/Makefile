@@ -182,6 +182,7 @@
     SUBDIR += teapop
     SUBDIR += tkrat
     SUBDIR += tkrat2
+    SUBDIR += tlb
     SUBDIR += tmda
     SUBDIR += vbsfilter
     SUBDIR += vpopmail

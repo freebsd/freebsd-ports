@@ -1,0 +1,13 @@
+bin/tlb
+bin/mungelist
+%%PORTDOCS%%share/doc/tlb/FAQ
+%%PORTDOCS%%share/doc/tlb/INSTALL
+%%PORTDOCS%%share/doc/tlb/README
+%%PORTDOCS%%share/doc/tlb/README.loglevels
+%%PORTDOCS%%share/doc/tlb/README.mungelist
+%%PORTDOCS%%share/doc/tlb/TIPS
+%%PORTDOCS%%share/doc/tlb/TODO
+%%PORTDOCS%%share/doc/tlb/complete.tlb
+%%PORTDOCS%%share/doc/tlb/mj.tlb
+%%PORTDOCS%%share/doc/tlb/simple.tlb
+%%PORTDOCS%%@dirrm share/doc/tlb
