@@ -13,6 +13,8 @@ MASTER_SITES=	http://resnet.uoregon.edu/~gurney_j/jmpc/dist/	\
 
 MAINTAINER=	jmg@FreeBSD.org
 
+BROKEN=		"Install script contains errors"
+
 LIB_DEPENDS=	mime.1:${PORTSDIR}/devel/mime:install
 
 GNU_CONFIGURE=	yes
