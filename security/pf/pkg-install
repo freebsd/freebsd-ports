@@ -156,7 +156,7 @@ EOF
 	# We need a command 'pw(8)'
 	check_pw
 	pw useradd $name -u $id -g $group -h - -d /nonexistent \
-		-s /nonexistent -c $name || exit
+		-s /nonexistent -c "Packet Filter pseudo-user" || exit
     else
 	echo "Please create it, and try again."
 	return 1
