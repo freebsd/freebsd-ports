@@ -7,7 +7,7 @@
 
 PORTNAME?=	djbdns
 PORTVERSION?=	${DJBDNS_VER}
-PORTREVISION?=	6
+PORTREVISION?=	7
 CATEGORIES?=	dns
 MASTER_SITES=	http://cr.yp.to/djbdns/ \
 		ftp://cr.yp.to/djbdns/
@@ -16,8 +16,8 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 .if !defined(WITHOUT_MAN)
 MANDATE=	-20031023
-MASTER_SITES+=	http://smarden.org/pape/djb/manpages/:1
-DISTFILES+=	${DISTNAME}-man${MANDATE}.tar.gz:1
+MASTER_SITES+=	http://smarden.org/pape/djb/manpages/:manpages
+DISTFILES+=	${DISTNAME}-man${MANDATE}.tar.gz:manpages
 
 MAN1=		dnsfilter.1 dnsip.1 dnsipq.1 dnsmx.1 dnsname.1 \
 		dnsq.1 dnsqr.1 dnstrace.1 dnstracesort.1 dnstxt.1 \
@@ -32,8 +32,8 @@ MANCOMPRESSED=	no
 .if defined(WITH_IPV6)
 PKGNAMESUFFIX=	-ipv6
 PORTVERSION=	${DJBDNS_VER}.${DJBDNS_V6_VER:S/test/b/:S/diff//}
-PATCH_SITES+=	http://www.fefe.de/dns/
-PATCHFILES+=	${PORTNAME}-${DJBDNS_VER}-${DJBDNS_V6_VER}.diff.bz2
+PATCH_SITES+=	http://www.fefe.de/dns/:ipv6
+PATCHFILES+=	${PORTNAME}-${DJBDNS_VER}-${DJBDNS_V6_VER}.diff.bz2:ipv6
 PATCH_DIST_STRIP=	-p1
 .endif
 
@@ -41,10 +41,16 @@ PATCH_DIST_STRIP=	-p1
 .if defined(WITH_IPV6)
 BROKEN=		The IPv6 and dnscache-dumpcache patches are currently in conflict.
 .endif
-PATCH_SITES+=	http://efge.free.fr/djbdns/
-PATCHFILES+=	patch-dnscache-dumpcache-v4.txt
+PATCH_SITES+=	http://efge.free.fr/djbdns/:dumpcache
+PATCHFILES+=	patch-dnscache-dumpcache-v4.txt:dumpcache
 PATCH_DIST_STRIP=	-p1
 CFLAGS+=	-DDUMPCACHE
+.endif
+
+.if defined(WITH_IGNOREIP)
+PATCH_SITES+=	http://tinydns.org/:ignoreip
+PATCHFILES+=	djbdns-1.05-ignoreip2.patch:ignoreip
+PATCH_DIST_STRIP=	-p1
 .endif
 
 DJBDNS_VER=	1.05
@@ -76,6 +82,8 @@ pre-fetch:
 	@${ECHO} "                            http://efge.free.fr/djbdns/"
 	@${ECHO} "- WITHOUT_MAN             - do NOT install Gerritt Pape's manual pages"
 	@${ECHO} "                            http://smarden.org/pape/djb/manpages/"
+	@${ECHO} "- WITH_IGNOREIP           - build with Russel Nelson's ignoreip2 patch"
+	@${ECHO} "                            http://tinydns.org/djbdns-1.05-ignoreip2.patch"
 
 post-patch:
 	@echo "${CC} ${CFLAGS}" > ${WRKSRC}/conf-cc
