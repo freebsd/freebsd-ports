@@ -1,0 +1,11 @@
+--- ./configure.org	Mon Mar 21 13:43:36 1994
++++ ./configure	Sat May 13 01:20:26 1995
+@@ -321,7 +321,7 @@
+   cd conftestdir
+   cat > Imakefile <<EOF
+ acfindx:
+-	@echo "x_includes=$(INCROOT); x_libraries=$(USRLIBDIR)"
++	@echo "x_includes=\$(INCROOT); x_libraries=\$(USRLIBDIR)"
+ EOF
+   if xmkmf >/dev/null 2>/dev/null && test -f Makefile; then
+     eval `make acfindx`
