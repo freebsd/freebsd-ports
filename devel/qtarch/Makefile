@@ -16,7 +16,6 @@ MAINTAINER=	elwood@mc5sys.in-berlin.de
 LIB_DEPENDS=	kdecore.3:${PORTSDIR}/x11/kdelibs11 \
 		kdeui.3:${PORTSDIR}/x11/kdelibs11
 
-FETCH_BEFORE_ARGS=	-b
 USE_QT=		yes
 USE_GMAKE=	yes
 USE_XLIB=	yes

@@ -14,8 +14,6 @@ DISTNAME=		pccts133mr
 
 MAINTAINER=		obrien@FreeBSD.org
 
-FETCH_BEFORE_ARGS=	-b
-
 USE_ZIP=		yes
 WRKSRC=			${WRKDIR}/pccts
 ALL_TARGET=

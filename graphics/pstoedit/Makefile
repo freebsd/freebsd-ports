@@ -17,7 +17,6 @@ RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript55
 LIB_DEPENDS=	plot.3:${PORTSDIR}/graphics/plotutils \
 		plotter.3:${PORTSDIR}/graphics/plotutils
 
-FETCH_BEFORE_ARGS=	-t
 USE_ZIP=		yes
 WRKSRC=		${WRKDIR}/pstoedit_3.17/src
 GNU_CONFIGURE=	yes

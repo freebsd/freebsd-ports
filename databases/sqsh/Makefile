@@ -16,8 +16,6 @@ LIB_DEPENDS=	tds.0:${PORTSDIR}/databases/freetds \
 		intl.1:${PORTSDIR}/devel/gettext
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash1
 
-FETCH_BEFORE_ARGS=	-b
-
 GNU_CONFIGURE=	yes
 
 MAN1=	sqsh.1

@@ -20,8 +20,6 @@ NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 NO_CDROM=	'Do not sell for profit.'
 
-FETCH_BEFORE_ARGS=	-b
-
 do-install:
 	${INSTALL} -c ${DISTDIR}/${DISTNAME} ${PREFIX}/bin/${DISTNAME}
 	@${LN} -s ${PREFIX}/bin/${DISTNAME} ${PREFIX}/bin/${PORTNAME}

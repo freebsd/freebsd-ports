@@ -17,8 +17,6 @@ MAINTAINER=	ports@FreeBSD.org
 ONLY_FOR_ARCHS=	i386	# XXX can't figure out whether to define
 #			# XXX SEARCH_FOR_DATA_START on other platforms
 
-FETCH_BEFORE_ARGS=	-b
-
 WRKSRC=		${WRKDIR}/gc
 MAN3=		gc.3
 ALL_TARGET=	FreeBSD-pkg-all
