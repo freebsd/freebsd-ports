@@ -1,0 +1,6 @@
+This is a Japanese text processing library module that provides
+kanji code conversion functions for three kanji codes EUC-JP,
+Shift_JIS and ISO-2022-JP. It also includes kanji code auto-detection
+functions. The entire module is written in Python.
+
+WWW: http://www.asahi-net.or.jp/~rd6t-kjym/python/#kanjilib
