@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bogofilter
-PORTVERSION=	0.92.6
+PORTVERSION=	0.92.7
 PORTREVISION=	0
 CATEGORIES?=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -23,7 +23,7 @@ LIB_DEPENDS+=	gsl:${PORTSDIR}/math/gsl
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash2
 .endif
 
-CONFLICTS?=	bogofilter-tdb* bogofilter-qdbm* [a-z][a-z]-bogofilter-0*
+CONFLICTS?=	bogofilter-tdb-[0-9]* bogofilter-qdbm-[0-9]* [a-z][a-z]-bogofilter-[0-9]*
 
 USE_BZIP2=	yes
 USE_REINPLACE=	yes
@@ -88,7 +88,7 @@ post-install::
 	doc/README.validation TODO \
 	CHANGES-* RELEASE.NOTES-* \
 	doc/integrating-with-postfix doc/integrating-with-qmail \
-	doc/bogofilter-tuning.HOWTO doc/bogofilter-SA-2002-01 METHODS \
+	doc/bogofilter-tuning.HOWTO.html doc/bogofilter-SA-2002-01 METHODS \
 	doc/README.tdb
 	  ${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
