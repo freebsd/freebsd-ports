@@ -18,7 +18,7 @@ PATCH_SITE_SUBDIR=	obrien
 PATCHFILES=	gdb521_xfree-loadmod.diff
 
 MAINTAINER=	mp@FreeBSD.org
-COMMENT=	GNU GDB 5.2 developmental snapshot
+COMMENT=	GNU GDB 5.2.1 debugger
 
 .include <bsd.port.pre.mk>
 
@@ -26,7 +26,7 @@ COMMENT=	GNU GDB 5.2 developmental snapshot
 BROKEN=		"Configure fails on amd64"
 .endif
 
-NO_LATEST_LINK=	yes
+LATEST_LINK=	gdb52
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-suffix=521

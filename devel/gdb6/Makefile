@@ -20,6 +20,7 @@ DISTNAME=	gdb+dejagnu-weekly-${SNAPVER}
 MAINTAINER=	obrien@FreeBSD.org
 COMMENT=	GNU GDB 6
 
+LATEST_LINK=	gdb6
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-weekly//}
 USE_BZIP2=	yes
 USE_GMAKE=	yes
