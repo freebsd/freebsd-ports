@@ -66,6 +66,7 @@
     SUBDIR += kcd
     SUBDIR += kdeutils11
     SUBDIR += kdeutils11-i18n
+    SUBDIR += kdeutils2
     SUBDIR += kp
     SUBDIR += kwatch
     SUBDIR += lc

@@ -10,6 +10,7 @@
     SUBDIR += ish
     SUBDIR += kdesupport11
     SUBDIR += kdesupport11-i18n
+    SUBDIR += kdesupport2
     SUBDIR += libutf-8
     SUBDIR += mimepp
     SUBDIR += mmencode
