@@ -136,9 +136,13 @@ bin/%%BROWSER%%-%%BROWSER_VER%%
 %%NSUBDIR%%/nethelp/netwatch.gif
 %%NSUBDIR%%/nethelp/picsfail.htm
 %%NSUBDIR%%/nethelp/picsfail.jar
+%%NSUBDIR%%/nls/C
+%%NSUBDIR%%/nls/nls.dir
 %%NSUBDIR%%/plugins/cpPack1.jar
 %%NSUBDIR%%/registry
 %%NSUBDIR%%/vreg
+@dirrm %%NSUBDIR%%/nls
+@dirrm %%NSUBDIR%%/plugins
 @dirrm %%NSUBDIR%%/nethelp/netscape/shared
 @dirrm %%NSUBDIR%%/nethelp/netscape/navigatr
 @dirrm %%NSUBDIR%%/nethelp/netscape/home
@@ -149,3 +153,4 @@ bin/%%BROWSER%%-%%BROWSER_VER%%
 @dirrm %%NSUBDIR%%/java/classes/aix
 @dirrm %%NSUBDIR%%/java/classes
 @dirrm %%NSUBDIR%%/java
+@dirrm %%NSUBDIR%%
