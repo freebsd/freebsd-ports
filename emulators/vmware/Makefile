@@ -28,6 +28,8 @@ PATCHFILES=	vmmon-freebsd-0.94.tar.gz \
 # freebsd-emulation mailing list with the following maintainer address CC'ed.
 MAINTAINER=	ak@freenet.co.uk
 
+BROKEN=		"Does not build"
+
 RUN_DEPENDS=	${LINUX_DIR}/lib/libc.so.6:${PORTSDIR}/emulators/linux_base
 
 RESTRICTED=	"Not sure if we can redistribute it"
