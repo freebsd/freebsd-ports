@@ -73,6 +73,8 @@ lib/kde3/kopete_contactnotes.la
 lib/kde3/kopete_contactnotes.so
 lib/kde3/kopete_cryptography.la
 lib/kde3/kopete_cryptography.so
+lib/kde3/kopete_gadu.la
+lib/kde3/kopete_gadu.so
 lib/kde3/kopete_highlight.la
 lib/kde3/kopete_highlight.so
 lib/kde3/kopete_history.la
@@ -226,6 +228,18 @@ share/apps/kopete/icons/crystalsvg/16x16/actions/aol_icon.png
 share/apps/kopete/icons/crystalsvg/16x16/actions/dt_icon.png
 share/apps/kopete/icons/crystalsvg/16x16/actions/emoticon.png
 share/apps/kopete/icons/crystalsvg/16x16/actions/free_icon.png
+share/apps/kopete/icons/crystalsvg/16x16/actions/gg_away.png
+share/apps/kopete/icons/crystalsvg/16x16/actions/gg_busy.png
+share/apps/kopete/icons/crystalsvg/16x16/actions/gg_busy_d.png
+share/apps/kopete/icons/crystalsvg/16x16/actions/gg_con.mng
+share/apps/kopete/icons/crystalsvg/16x16/actions/gg_connecting.png
+share/apps/kopete/icons/crystalsvg/16x16/actions/gg_ignored.png
+share/apps/kopete/icons/crystalsvg/16x16/actions/gg_invi.png
+share/apps/kopete/icons/crystalsvg/16x16/actions/gg_invi_d.png
+share/apps/kopete/icons/crystalsvg/16x16/actions/gg_offline.png
+share/apps/kopete/icons/crystalsvg/16x16/actions/gg_offline_d.png
+share/apps/kopete/icons/crystalsvg/16x16/actions/gg_online.png
+share/apps/kopete/icons/crystalsvg/16x16/actions/gg_online_d.png
 share/apps/kopete/icons/crystalsvg/16x16/actions/icq_away.png
 share/apps/kopete/icons/crystalsvg/16x16/actions/icq_connecting.mng
 share/apps/kopete/icons/crystalsvg/16x16/actions/icq_dnd.png
@@ -283,6 +297,7 @@ share/apps/kopete/icons/crystalsvg/16x16/actions/yahoo_invisible.png
 share/apps/kopete/icons/crystalsvg/16x16/actions/yahoo_mobile.png
 share/apps/kopete/icons/crystalsvg/16x16/actions/yahoo_tea.png
 share/apps/kopete/icons/crystalsvg/16x16/apps/aim_protocol.png
+share/apps/kopete/icons/crystalsvg/16x16/apps/gadu_protocol.png
 share/apps/kopete/icons/crystalsvg/16x16/apps/icq_protocol.png
 share/apps/kopete/icons/crystalsvg/16x16/apps/irc_protocol.png
 share/apps/kopete/icons/crystalsvg/16x16/apps/jabber_protocol.png
@@ -297,6 +312,7 @@ share/apps/kopete/icons/crystalsvg/32x32/actions/kopeteaway.png
 share/apps/kopete/icons/crystalsvg/32x32/actions/newmessage.mng
 share/apps/kopete/icons/crystalsvg/32x32/apps/aim_protocol.png
 share/apps/kopete/icons/crystalsvg/32x32/apps/autoreplace.png
+share/apps/kopete/icons/crystalsvg/32x32/apps/gadu_protocol.png
 share/apps/kopete/icons/crystalsvg/32x32/apps/highlight.png
 share/apps/kopete/icons/crystalsvg/32x32/apps/icq_protocol.png
 share/apps/kopete/icons/crystalsvg/32x32/apps/irc_protocol.png
@@ -1364,6 +1380,7 @@ share/services/kopete_behaviorconfig.desktop
 share/services/kopete_connectionstatus.desktop
 share/services/kopete_contactnotes.desktop
 share/services/kopete_cryptography.desktop
+share/services/kopete_gadu.desktop
 share/services/kopete_highlight.desktop
 share/services/kopete_history.desktop
 share/services/kopete_icq.desktop

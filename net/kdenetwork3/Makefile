@@ -18,10 +18,13 @@ COMMENT=	Network-related programs and modules for KDE
 
 CONFLICTS=	kopete-*
 
+LIB_DEPENDS=	slp:${PORTSDIR}/net/openslp
+
 USE_KDELIBS_VER=3
 PREFIX=		${KDE_PREFIX}
 KDE_BUILD_PLIST=yes
 
+USE_PERL5=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
@@ -32,6 +35,12 @@ LDCONFIG_DIRS+=	%%PREFIX%%/lib %%PREFIX%%/lib/kde3
 
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 .include <bsd.port.pre.mk>
+
+pre-configure:
+.if ${OSVERSION} < 500028
+	@${REINPLACE_CMD} -e 's|stdint.h|inttypes.h|g' \
+		${WRKSRC}/kopete/protocols/gadu/libgadu/libgadu-config.h.in
+.endif
 
 .if !defined(WITHOUT_KTALKD)
 UTMP?=	/var/run/utmp

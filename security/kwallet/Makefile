@@ -45,7 +45,7 @@ WITHOUT_KLAPTOP=yes
 .if defined(WITHOUT_KLAPTOP)
 DO_NOT_COMPILE+=klaptopdaemon
 .else
-PLIST_APPEND+=  plist.klaptop
+PLIST_APPEND+=	plist.klaptop
 .endif
 
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"

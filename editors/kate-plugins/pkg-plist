@@ -20,7 +20,7 @@ lib/kde3/katexmlcheckplugin.la
 lib/kde3/katexmlcheckplugin.so
 lib/kde3/katexmltoolsplugin.la
 lib/kde3/katexmltoolsplugin.so
-share/applications/kdeaddons-kate-plugins-3.2.2
+share/applications/kdeaddons-kate-plugins-3.2.3
 share/applnk/.hidden/katefll.desktop
 share/apps/kate/plugins/katecppsymbolviewer/ui.rc
 share/apps/kate/plugins/katefll/ui.rc

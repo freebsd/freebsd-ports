@@ -144,7 +144,7 @@ post-patch:
 
 post-configure:
 	@${REINPLACE_CMD} -e \
-		's|/lib/pkgconfig/qt-mt.pc|/libdata/pkgconfig/qt-mt.pc|g' \
+		's|/lib/pkgconfig/|/libdata/pkgconfig/|g' \
 			${WRKSRC}/src/Makefile
 
 post-build:

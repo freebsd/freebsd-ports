@@ -1427,7 +1427,6 @@ share/apps/kreversi/pics/background/Stones.png
 share/apps/kreversi/pics/chips.png
 share/apps/kreversi/pics/chips_mono.png
 share/apps/kreversi/sounds/reversi-click.wav
-share/apps/kreversi/sounds/reversi-lost.wav
 share/apps/kreversi/sounds/reversi-won.wav
 share/apps/ksame/eventsrc
 share/apps/ksame/ksameui.rc

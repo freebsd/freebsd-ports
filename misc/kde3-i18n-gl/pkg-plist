@@ -24,6 +24,7 @@ share/locale/gl/LC_MESSAGES/flashkard.mo
 share/locale/gl/LC_MESSAGES/fontinst.mo
 share/locale/gl/LC_MESSAGES/htmlsearch.mo
 share/locale/gl/LC_MESSAGES/imagerename_plugin.mo
+share/locale/gl/LC_MESSAGES/irkick.mo
 share/locale/gl/LC_MESSAGES/kabc_dir.mo
 share/locale/gl/LC_MESSAGES/kabc_file.mo
 share/locale/gl/LC_MESSAGES/kabc_ldap.mo
@@ -43,7 +44,10 @@ share/locale/gl/LC_MESSAGES/katedefaultproject.mo
 share/locale/gl/LC_MESSAGES/katehelloworld.mo
 share/locale/gl/LC_MESSAGES/kateprojectmanager.mo
 share/locale/gl/LC_MESSAGES/kbattleship.mo
+share/locale/gl/LC_MESSAGES/kbounce.mo
 share/locale/gl/LC_MESSAGES/kcalc.mo
+share/locale/gl/LC_MESSAGES/kcardchooser.mo
+share/locale/gl/LC_MESSAGES/kcharselecapplet.mo
 share/locale/gl/LC_MESSAGES/kcm_kviewgeneralconfig.mo
 share/locale/gl/LC_MESSAGES/kcm_kviewpluginsconfig.mo
 share/locale/gl/LC_MESSAGES/kcm_kviewviewerpluginsconfig.mo
@@ -53,6 +57,7 @@ share/locale/gl/LC_MESSAGES/kcmarts.mo
 share/locale/gl/LC_MESSAGES/kcmaudiocd.mo
 share/locale/gl/LC_MESSAGES/kcmbackground.mo
 share/locale/gl/LC_MESSAGES/kcmbell.mo
+share/locale/gl/LC_MESSAGES/kcmcddb.mo
 share/locale/gl/LC_MESSAGES/kcmcgi.mo
 share/locale/gl/LC_MESSAGES/kcmcolors.mo
 share/locale/gl/LC_MESSAGES/kcmcomponentchooser.mo
@@ -81,6 +86,7 @@ share/locale/gl/LC_MESSAGES/kcmkonsole.mo
 share/locale/gl/LC_MESSAGES/kcmkontactnt.mo
 share/locale/gl/LC_MESSAGES/kcmktalkd.mo
 share/locale/gl/LC_MESSAGES/kcmkvaio.mo
+share/locale/gl/LC_MESSAGES/kcmkwallet.mo
 share/locale/gl/LC_MESSAGES/kcmkwindecoration.mo
 share/locale/gl/LC_MESSAGES/kcmkwintheme.mo
 share/locale/gl/LC_MESSAGES/kcmkwm.mo
@@ -166,6 +172,7 @@ share/locale/gl/LC_MESSAGES/kfindpart.mo
 share/locale/gl/LC_MESSAGES/kfloppy.mo
 share/locale/gl/LC_MESSAGES/kfmclient.mo
 share/locale/gl/LC_MESSAGES/kfontinst.mo
+share/locale/gl/LC_MESSAGES/kfouleggs.mo
 share/locale/gl/LC_MESSAGES/kgamma.mo
 share/locale/gl/LC_MESSAGES/kget.mo
 share/locale/gl/LC_MESSAGES/kghostview.mo
@@ -241,9 +248,11 @@ share/locale/gl/LC_MESSAGES/kreadconfig.mo
 share/locale/gl/LC_MESSAGES/krec.mo
 share/locale/gl/LC_MESSAGES/kruler.mo
 share/locale/gl/LC_MESSAGES/krunapplet.mo
+share/locale/gl/LC_MESSAGES/ksame.mo
 share/locale/gl/LC_MESSAGES/kscreensaver.mo
 share/locale/gl/LC_MESSAGES/ksig.mo
 share/locale/gl/LC_MESSAGES/ksim.mo
+share/locale/gl/LC_MESSAGES/ksirtet.mo
 share/locale/gl/LC_MESSAGES/ksmiletris.mo
 share/locale/gl/LC_MESSAGES/ksmserver.mo
 share/locale/gl/LC_MESSAGES/ksnake.mo
@@ -289,6 +298,7 @@ share/locale/gl/LC_MESSAGES/kworldclock.mo
 share/locale/gl/LC_MESSAGES/kwriteconfig.mo
 share/locale/gl/LC_MESSAGES/kxkb.mo
 share/locale/gl/LC_MESSAGES/kxmlrpcd.mo
+share/locale/gl/LC_MESSAGES/libkcddb.mo
 share/locale/gl/LC_MESSAGES/libkdegames.mo
 share/locale/gl/LC_MESSAGES/libkicker.mo
 share/locale/gl/LC_MESSAGES/libkickermenu_kdeprint.mo

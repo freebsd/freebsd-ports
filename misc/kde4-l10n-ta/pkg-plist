@@ -244,6 +244,7 @@ share/locale/ta/LC_MESSAGES/kghostview.mo
 share/locale/ta/LC_MESSAGES/kgoldrunner.mo
 share/locale/ta/LC_MESSAGES/kgpg.mo
 share/locale/ta/LC_MESSAGES/kgpgcertmanager.mo
+share/locale/ta/LC_MESSAGES/kgreet_classic.mo
 share/locale/ta/LC_MESSAGES/khangman.mo
 share/locale/ta/LC_MESSAGES/khelpcenter.mo
 share/locale/ta/LC_MESSAGES/khexedit.mo
@@ -299,6 +300,10 @@ share/locale/ta/LC_MESSAGES/kmenuedit.mo
 share/locale/ta/LC_MESSAGES/kmessedwords.mo
 share/locale/ta/LC_MESSAGES/kmid.mo
 share/locale/ta/LC_MESSAGES/kmidi.mo
+share/locale/ta/LC_MESSAGES/kmilo_generic.mo
+share/locale/ta/LC_MESSAGES/kmilo_kvaio.mo
+share/locale/ta/LC_MESSAGES/kmilo_powerbook.mo
+share/locale/ta/LC_MESSAGES/kmilod.mo
 share/locale/ta/LC_MESSAGES/kmines.mo
 share/locale/ta/LC_MESSAGES/kminipagerapplet.mo
 share/locale/ta/LC_MESSAGES/kmix.mo
@@ -316,6 +321,7 @@ share/locale/ta/LC_MESSAGES/knotify.mo
 share/locale/ta/LC_MESSAGES/kodo.mo
 share/locale/ta/LC_MESSAGES/kolf.mo
 share/locale/ta/LC_MESSAGES/kolourpicker.mo
+share/locale/ta/LC_MESSAGES/kommander.mo
 share/locale/ta/LC_MESSAGES/kompare.mo
 share/locale/ta/LC_MESSAGES/konq_smbmounterplugin.mo
 share/locale/ta/LC_MESSAGES/konqsidebar_mediaplayer.mo

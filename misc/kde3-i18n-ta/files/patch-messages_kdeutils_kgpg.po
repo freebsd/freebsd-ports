@@ -1,0 +1,10 @@
+--- messages/kdeutils/kgpg.po.orig	Thu Jun  3 17:53:23 2004
++++ messages/kdeutils/kgpg.po	Thu Jun  3 17:54:20 2004
+@@ -3189,6 +3189,7 @@
+ "பொது விசையை பதவியிறக்கு. "
+ "முடிவில், மறைவிடக்க "
+ "செய்தியை அனுப்பு, Kgpg  "
++"\n"
+ 
+ #: tips.cpp:24
+ msgid ""

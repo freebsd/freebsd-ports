@@ -68,6 +68,8 @@ share/locale/he/LC_MESSAGES/artscontrol.mo
 share/locale/he/LC_MESSAGES/artsmodules.mo
 share/locale/he/LC_MESSAGES/atlantik.mo
 share/locale/he/LC_MESSAGES/atlantikdesigner.mo
+share/locale/he/LC_MESSAGES/audiorename_plugin.mo
+share/locale/he/LC_MESSAGES/autorefresh.mo
 share/locale/he/LC_MESSAGES/babelfish.mo
 share/locale/he/LC_MESSAGES/cervisia.mo
 share/locale/he/LC_MESSAGES/charlatanui.mo
@@ -87,6 +89,7 @@ share/locale/he/LC_MESSAGES/ffrs.mo
 share/locale/he/LC_MESSAGES/filetypes.mo
 share/locale/he/LC_MESSAGES/flashkard.mo
 share/locale/he/LC_MESSAGES/fontinst.mo
+share/locale/he/LC_MESSAGES/fsview.mo
 share/locale/he/LC_MESSAGES/htmlsearch.mo
 share/locale/he/LC_MESSAGES/imagerename_plugin.mo
 share/locale/he/LC_MESSAGES/imgalleryplugin.mo
@@ -111,12 +114,14 @@ share/locale/he/LC_MESSAGES/karm.mo
 share/locale/he/LC_MESSAGES/kasbarextension.mo
 share/locale/he/LC_MESSAGES/kasteroids.mo
 share/locale/he/LC_MESSAGES/kate.mo
+share/locale/he/LC_MESSAGES/katecppsymbolviewer.mo
 share/locale/he/LC_MESSAGES/katedefaultproject.mo
 share/locale/he/LC_MESSAGES/katefll_initplugin.mo
 share/locale/he/LC_MESSAGES/katefll_plugin.mo
 share/locale/he/LC_MESSAGES/katehelloworld.mo
 share/locale/he/LC_MESSAGES/katehtmltools.mo
 share/locale/he/LC_MESSAGES/kateinsertcommand.mo
+share/locale/he/LC_MESSAGES/katemake.mo
 share/locale/he/LC_MESSAGES/katemodeline.mo
 share/locale/he/LC_MESSAGES/kateopenheader.mo
 share/locale/he/LC_MESSAGES/katepart.mo
@@ -130,6 +135,7 @@ share/locale/he/LC_MESSAGES/katomic.mo
 share/locale/he/LC_MESSAGES/kaudiocreator.mo
 share/locale/he/LC_MESSAGES/kbackgammon.mo
 share/locale/he/LC_MESSAGES/kbattleship.mo
+share/locale/he/LC_MESSAGES/kbinaryclock.mo
 share/locale/he/LC_MESSAGES/kblackbox.mo
 share/locale/he/LC_MESSAGES/kbounce.mo
 share/locale/he/LC_MESSAGES/kcalc.mo
@@ -167,6 +173,7 @@ share/locale/he/LC_MESSAGES/kcmkmix.mo
 share/locale/he/LC_MESSAGES/kcmkonq.mo
 share/locale/he/LC_MESSAGES/kcmkonqhtml.mo
 share/locale/he/LC_MESSAGES/kcmkonsole.mo
+share/locale/he/LC_MESSAGES/kcmkontactnt.mo
 share/locale/he/LC_MESSAGES/kcmktalkd.mo
 share/locale/he/LC_MESSAGES/kcmkuick.mo
 share/locale/he/LC_MESSAGES/kcmkurifilt.mo
@@ -332,6 +339,7 @@ share/locale/he/LC_MESSAGES/knotify.mo
 share/locale/he/LC_MESSAGES/kodo.mo
 share/locale/he/LC_MESSAGES/kolf.mo
 share/locale/he/LC_MESSAGES/kolourpicker.mo
+share/locale/he/LC_MESSAGES/konq_smbmounterplugin.mo
 share/locale/he/LC_MESSAGES/konqsidebar_mediaplayer.mo
 share/locale/he/LC_MESSAGES/konqueror.mo
 share/locale/he/LC_MESSAGES/konquest.mo
@@ -431,6 +439,7 @@ share/locale/he/LC_MESSAGES/kxconfig.mo
 share/locale/he/LC_MESSAGES/kxkb.mo
 share/locale/he/LC_MESSAGES/kxmlrpcd.mo
 share/locale/he/LC_MESSAGES/kxsconfig.mo
+share/locale/he/LC_MESSAGES/libkaddrbk_geo_xxport.mo
 share/locale/he/LC_MESSAGES/libkcal.mo
 share/locale/he/LC_MESSAGES/libkcalsystem.mo
 share/locale/he/LC_MESSAGES/libkdegames.mo
@@ -455,6 +464,7 @@ share/locale/he/LC_MESSAGES/lskat.mo
 share/locale/he/LC_MESSAGES/lyrics.mo
 share/locale/he/LC_MESSAGES/mediacontrol.mo
 share/locale/he/LC_MESSAGES/megami.mo
+share/locale/he/LC_MESSAGES/minitoolsplugin.mo
 share/locale/he/LC_MESSAGES/naughtyapplet.mo
 share/locale/he/LC_MESSAGES/nexscope.mo
 share/locale/he/LC_MESSAGES/noatun.mo

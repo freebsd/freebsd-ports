@@ -24,6 +24,7 @@ CONFIGURE_ARGS+=	--enable-shared \
 			--enable-dynamic \
 			--enable-aspell \
 			--mandir=${PREFIX}/man \
+			--with-pthread
 CONFIGURE_ENV=		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 MAKE_ENV=		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \

@@ -413,8 +413,11 @@ share/apps/kmail/about/main.html
 share/apps/kmail/about/pointers.png
 share/apps/kmail/about/shadow1.png
 share/apps/kmail/eventsrc
+share/apps/kmail/icons/crystalsvg/16x16/actions/mark_as_ham.png
 share/apps/kmail/icons/crystalsvg/16x16/actions/mark_as_spam.png
+share/apps/kmail/icons/crystalsvg/22x22/actions/mark_as_ham.png
 share/apps/kmail/icons/crystalsvg/22x22/actions/mark_as_spam.png
+share/apps/kmail/icons/crystalsvg/32x32/actions/mark_as_ham.png
 share/apps/kmail/icons/crystalsvg/32x32/actions/mark_as_spam.png
 share/apps/kmail/icons/crystalsvg/48x48/actions/mark_as_spam.png
 share/apps/kmail/kmcomposerui.rc
@@ -450,6 +453,7 @@ share/apps/kmail/pics/kmmsgflag.png
 share/apps/kmail/pics/kmmsgforwarded.png
 share/apps/kmail/pics/kmmsgfullyencrypted.png
 share/apps/kmail/pics/kmmsgfullysigned.png
+share/apps/kmail/pics/kmmsgham.png
 share/apps/kmail/pics/kmmsgignored.png
 share/apps/kmail/pics/kmmsgnew.png
 share/apps/kmail/pics/kmmsgpartiallyencrypted.png
