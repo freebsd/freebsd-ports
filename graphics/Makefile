@@ -106,6 +106,7 @@
     SUBDIR += gkrellkam2
     SUBDIR += gle
     SUBDIR += glean
+    SUBDIR += glew
     SUBDIR += glide3
     SUBDIR += gliv
     SUBDIR += gltk
