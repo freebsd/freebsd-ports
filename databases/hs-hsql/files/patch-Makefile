@@ -1,22 +1,22 @@
---- Makefile.orig	Sun Sep  7 23:24:33 2003
-+++ Makefile	Fri Jan 16 00:39:58 2004
-@@ -51,7 +51,7 @@
- 	mkdir -p doc
- 	$(HADDOCK) -h -o doc $(HS_PPS)
+--- Makefile.orig	Mon Feb  2 22:42:07 2004
++++ Makefile	Tue Feb  3 12:53:54 2004
+@@ -143,7 +143,7 @@
  
--install: libHSsql.a $(HI_SRC) docs
-+install: libHSsql.a $(HI_SRC)
- 	$(INSTALL) libHSsql.a $(prefix)/libHSsql.a
- 	$(INSTALL) -d $(prefix)/imports/Database
- 	for i in $(HI_SRC); do \
-@@ -61,8 +61,8 @@
- 	rm -f $(prefix)/HSsql.o
+ install: $(patsubst %, install-%, $(COMPILERS))
+ 
+-install-ghc: $(HSQLLib) $(HI_SRC) docs
++install-ghc: $(HSQLLib) $(HI_SRC)
+ 	$(INSTALL) $(HSQLLib) $(GHC_DIR)/libHSsql.a
+ 	$(INSTALL) -d $(GHC_DIR)/imports/Database
+ 	for i in $(patsubst $(BUILDDIR)/%,%,$(HI_SRC)); do \
+@@ -153,8 +153,8 @@
+ 	rm -f $(GHC_DIR)/HSsql.o
  	$(GHC_PKG) -u -g -i hsql.pkg
- 	if test -f doc/index.html; then  \
--	   $(INSTALL) -d $(prefix)/doc/html/hsql; \
--	   $(INSTALL) -c doc/* $(prefix)/doc/html/hsql; \
+ 	if test -f $(DOCDIR)/index.html; then  \
+-	   $(INSTALL) -d $(GHC_DIR)/doc/html/libraries/hsql; \
+-	   $(INSTALL) -c $(DOCDIR)/* $(GHC_DIR)/doc/html/libraries/hsql; \
 +	   $(INSTALL) -d ${DOCSDIR}; \
-+	   $(INSTALL) -c doc/* ${DOCSDIR}; \
++	   $(INSTALL) -c $(DOCDIR)/* ${DOCSDIR}; \
  	fi
  
- ODBC/HSQL.hs : ODBC/HSQLStructs.h
+ install-hugs: $(HS_SRC) $(SO_SRC)
