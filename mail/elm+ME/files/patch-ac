@@ -1,11 +1,8 @@
-*** Configure.orig	Sun Feb 18 20:24:15 1996
---- Configure	Mon Feb 26 03:07:58 1996
+*** Configure.bak	Mon Mar 11 18:47:43 1996
+--- Configure	Tue Mar 12 14:52:18 1996
 ***************
-*** 15,28 ****
-  # working with this copy of Configure, you may wish to get metaconfig.)
-  
-  : sanity checks
-! PATH=".:/bin:/usr/bin:/usr/local/bin:/usr/ucb:/usr/local:/usr/lbin:/etc:/usr/new:/usr/new/bin:/usr/nbin:$PATH"
+*** 18,28 ****
+  PATH=".:/bin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/ucb:/usr/local:/usr/lbin:/etc:/usr/new:/usr/new/bin:/usr/nbin:$PATH"
   export PATH || (echo "OOPS, this isn't sh.  Desperation time.  I will feed myself to sh."; sh $0; kill $$)
   
 - if test ! -t 0; then
@@ -16,33 +13,7 @@
   (alias) >/dev/null 2>&1 && \
       echo "(I see you are using the Korn shell.  Some ksh's blow up on Configure," && \
       echo "especially on exotic machines.  If yours does, try the Bourne shell instead.)"
---- 15,23 ----
-  # working with this copy of Configure, you may wish to get metaconfig.)
-  
-  : sanity checks
-! PATH=".:/bin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/ucb:/usr/local:/usr/lbin:/etc:/usr/new:/usr/new/bin:/usr/nbin:$PATH"
-  export PATH || (echo "OOPS, this isn't sh.  Desperation time.  I will feed myself to sh."; sh $0; kill $$)
-  
-  (alias) >/dev/null 2>&1 && \
-      echo "(I see you are using the Korn shell.  Some ksh's blow up on Configure," && \
-      echo "especially on exotic machines.  If yours does, try the Bourne shell instead.)"
-***************
-*** 719,725 ****
-  
-  : see if date exists, if so, init c_date
-  if $test ! "x$date" = "x" ; then
-!     c_date=`LANGUAGE= $date`
-  else
-      c_date='date was unavailable at configuration'
-  fi
---- 714,720 ----
-  
-  : see if date exists, if so, init c_date
-  if $test ! "x$date" = "x" ; then
-!     c_date=`LANG= LC_TIME= $date`
-  else
-      c_date='date was unavailable at configuration'
-  fi
+--- 18,23 ----
 ***************
 *** 2278,2284 ****
   
@@ -63,37 +34,3 @@
       echo 'crypt() found.'
       d_crypt="$define"
       cryptlib=''
-***************
-*** 2477,2482 ****
---- 2475,2482 ----
-      lock_dir=/usr/spool/locks
-  elif $test -d /usr/spool/uucp ; then
-      lock_dir=/usr/spool/uucp
-+ elif $test -d /var/spool/lock ; then
-+     lock_dir=/var/spool/lock
-  elif $test -d /var/spool/locks ; then
-      lock_dir=/var/spool/locks
-  elif $test -d /var/spool/uucp ; then
-***************
-*** 3364,3373 ****
-  	$cat <<EOM
-  
-  The Character Set which your terminals support. You could set this
-! to one of the ISO-8859 charsets, even if you set the default for
-! the Text Messages to US-ASCII, as the ISO-8859 charsets could display
-! US-ASCII as well. For a X-Windows environment, ISO-8859-1 would be 
-! a convenient value.
-  
-  Default Display Character Set is overriden by environment variable
-  \$MM_CHARSET if it is set (and \$NOMETAMAIL is not set.)
---- 3364,3373 ----
-  	$cat <<EOM
-  
-  The Character Set which your terminals support. You could set this
-! to one of the ISO-8859 charsets or KOI8-R charset, even if you set
-! the default for the Text Messages to US-ASCII, as the ISO-8859 and
-! KOI8-R charsets could display US-ASCII as well. For a X-Windows
-! environment, ISO-8859-1 would be a convenient value.
-  
-  Default Display Character Set is overriden by environment variable
-  \$MM_CHARSET if it is set (and \$NOMETAMAIL is not set.)
