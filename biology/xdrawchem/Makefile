@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xdrawchem
-PORTVERSION=	0.95
+PORTVERSION=	0.99.7
 CATEGORIES=	biology
 MASTER_SITES=	http://www.prism.gatech.edu/~gte067k/xdrawchem/
 EXTRACT_SUFX=	.tgz
@@ -26,13 +26,26 @@ pre-build:
 
 pre-install:
 	${ECHO} bin/xdrawchem > ${PLIST}
-	cd ${WRKSRC}/ring && find -s . -type f | \
-		${SED} -e 's:^.:share/xdrawchem:' >> ${PLIST}
+	${LS} ${WRKSRC}/ring | \
+		${SED} -e 's:^:share/xdrawchem/:' >> ${PLIST}
 	${ECHO} @dirrm share/xdrawchem >> ${PLIST}
+.if !defined(NOPORTDOCS)
+	cd ${WRKSRC} && ${LS} *txt | \
+		${SED} -e 's:^:share/doc/xdrawchem/:' >> ${PLIST}
+	${ECHO} @dirrm share/doc/xdrawchem >> ${PLIST}
+	${LS} ${WRKSRC}/save | \
+		${SED} -e 's:^:share/examples/xdrawchem/:' >> ${PLIST}
+	${ECHO} @dirrm share/examples/xdrawchem >> ${PLIST}
+.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xdrawchem ${PREFIX}/bin
-	@${MKDIR} ${PREFIX}/share/xdrawchem
-	${INSTALL_DATA} ${WRKSRC}/ring/* ${PREFIX}/share/xdrawchem
+	${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/ring/* ${DATADIR}
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/save/* ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/*txt ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>

@@ -1,8 +1,19 @@
---- Makefile.orig	Mon Jul 23 15:15:37 2001
-+++ Makefile	Sun Aug 12 03:17:31 2001
-@@ -8,24 +8,22 @@
+--- Makefile.orig	Sat Dec  1 10:36:43 2001
++++ Makefile	Sat Jan 19 16:07:48 2002
+@@ -1,26 +1,25 @@
+ # XDrawChem configuration stuff
+ # INSTDIR: The directory where the binary will go.  Should be in your path.
+-#          The default is /usr/local/bin
++#          The default is ${PREFIX}/bin
+ # INSTRING: The directory where you will store ring templates (without quotes).
+ # RINGDIR: The directory where you will store ring templates (with quotes).
+ # INSTRING and RINGDIR should be the same :)
+-# Default should be /usr/local/lib/xdrawchem
++# Default should be ${PREFIX}/lib/xdrawchem
  # if you change RINGDIR, remember to put "\" before the directory,
  # and \"" after it, so the preprocessor will insert quotes correctly
+ # SERVER: database server.  OK to set to "herger.ibb.gatech.edu";
+ #         as of version 0.98, there are no other servers  :)
  
 -INSTDIR = /usr/local/bin
 -INSTRING = /usr/local/lib/xdrawchem
@@ -10,27 +21,31 @@
 +INSTDIR = ${PREFIX}/bin
 +INSTRING = ${PREFIX}/share/xdrawchem
 +RINGDIR = "\"${PREFIX}/share/xdrawchem/\""
+ SERVER = "\"herger.ibb.gatech.edu\""
  
- ## Compiler stuff
- ## Uncomment the appropriate compiler line
- 
- ## For Linux, SGI IRIX 6.5 (as tested)
+ ## Platform-specific flags -- uncomment appropriate section
+ ## For Linux, SGI IRIX 6.5 using gcc/g++
 -CXX	=	g++
- ## for Sun
- ##CXX	=	CC
--CXXFLAGS = -g -DRINGHOME=$(RINGDIR)
--CC	=	gcc
--CFLAGS	=	-g -DRINGHOME=$(RINGDIR)
 -INCPATH =	-I/usr/include -I$(QTDIR)/include
--LFLAGS	=	-g -L$(QTDIR)/lib -L/usr/lib -L/usr/X11R6/lib
 -LIBS	=	-lqt -lXext -lX11 -lm
--MOC	=	moc
-+CXXFLAGS += -DRINGHOME=$(RINGDIR)
-+CFLAGS	+=	-DRINGHOME=$(RINGDIR)
+-MOC	=	$(QTDIR)/bin/moc
 +INCPATH =	-I$(QTDIR)/include/qt2
-+LFLAGS	=	-L$(QTDIR)/lib -L/usr/lib -L/usr/X11R6/lib
 +LIBS	=	-lqt2 -lXext -lX11 -lm
 +MOC	=	$(QTDIR)/bin/moc2
  
- ####### Target
+ ## for Sun
+ #CXX	=	CC
+@@ -37,10 +36,9 @@
+ ## end of platform-specific flags
  
+ ## other compiler flags
+-CXXFLAGS = -g -DRINGHOME=$(RINGDIR) -DXDC_SERVER=$(SERVER)
+-CC	=	gcc
+-CFLAGS	=	-g -DRINGHOME=$(RINGDIR) -DXDC_SERVER=$(SERVER)
+-LFLAGS	=	-g -L$(QTDIR)/lib -L/usr/lib -L/usr/X11R6/lib
++CXXFLAGS += -DRINGHOME=$(RINGDIR) -DXDC_SERVER=$(SERVER)
++CFLAGS	+=	-DRINGHOME=$(RINGDIR) -DXDC_SERVER=$(SERVER)
++LFLAGS	+=	-L$(QTDIR)/lib -L/usr/lib -L/usr/X11R6/lib
+ 
+ 
+ ####### Target
