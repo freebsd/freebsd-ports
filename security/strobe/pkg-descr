@@ -1,0 +1,10 @@
+strobe   is  a  network/security  tool  that  locates  and
+describes all listening tcp ports on a (remote) host or on
+many hosts in a bandwidth utilisation maximising, and pro-
+cess resource minimizing manner.
+
+strobe approximates a parallel finite state machine inter-
+nally. In non-linear multi-host mode it attempts to appor-
+tion bandwidth and sockets amoung  the  hosts  very  effi-
+ciently.   This  can  reap  appreciable gains in speed for
+multiple distinct hosts/routes.
