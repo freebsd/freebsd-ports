@@ -3,7 +3,7 @@
 # Date created:		18 July 1997
 # Whom:			jseger@scds.com
 #
-# $Id: Makefile,v 1.2 1998/01/12 19:17:22 markm Exp $
+# $Id: Makefile,v 1.3 1998/02/04 16:23:28 wollman Exp $
 #
 
 DISTNAME=	bind-8.1.1
@@ -31,20 +31,5 @@ post-configure:
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/named/named-bootconf.pl ${PREFIX}/bin/
-#	for i in ${MAN1}; do \
-#		${INSTALL_MAN} ${WRKDIR}/doc/man/$$i ${PREFIX}/man/man1/; \
-#	done
-#	for i in ${MAN3}; do \
-#		${INSTALL_MAN} ${WRKDIR}/doc/man/$$i ${PREFIX}/man/man3/; \
-#	done
-#	for i in ${MAN5}; do \
-#		${INSTALL_MAN} ${WRKDIR}/doc/man/$$i ${PREFIX}/man/man5/; \
-#	done
-#	for i in ${MAN7}; do \
-#		${INSTALL_MAN} ${WRKDIR}/doc/man/$$i ${PREFIX}/man/man7/; \
-#	done
-#	for i in ${MAN8}; do \
-#		${INSTALL_MAN} ${WRKDIR}/doc/man/$$i ${PREFIX}/man/man8/; \
-#	done
 	@(cd ${WRKDIR}/doc/man && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} clean all ${INSTALL_TARGET})
 .include <bsd.port.mk>
