@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xmms-shn
-PORTVERSION=	2.2.7
+PORTVERSION=	2.2.8
 CATEGORIES=	audio
 MASTER_SITES=	http://shnutils.freeshell.org/xmms-shn/source/
 
