@@ -7,7 +7,7 @@
 
 PORTNAME=	avifile
 PORTVERSION=	0.7.38
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -24,14 +24,13 @@ USE_REINPLACE=	yes
 USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL_VER=13
-GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 
 LIBTOOLFILES=	acinclude.m4
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include -L${LOCALBASE}/lib" \
 		CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib ${PTHREAD_LIBS}"
-CONFIGURE_ARGS= --with-gnu-ld --enable-iconv \
+CONFIGURE_ARGS=	--with-gnu-ld --enable-iconv \
 		--disable-v4l \
 		--disable-divx4
 CONFIGURE_TARGET=
@@ -106,12 +105,20 @@ CONFIGURE_ARGS+=	--disable-a52
 PLIST_SUB+=	A52="@comment "
 .endif
 
+# faad
+.if !defined(WITHOUT_FAAD)
+LIB_DEPENDS+=	faad.0:${PORTSDIR}/audio/faad
+
+CONFIGURE_ARGS+=	--with-faad-prefix=${LOCALBASE}
+.else
+CONFIGURE_ARGS+=	--disable-faad
+.endif
+
 # libmad
 .if !defined(WITHOUT_MAD)
 LIB_DEPENDS+=	mad.2:${PORTSDIR}/audio/mad
 
-CONFIGURE_ARGS+=	--enable-mad \
-			--enable-libmad
+CONFIGURE_ARGS+=	--enable-libmad
 PLIST_SUB+=	MAD=""
 .else
 CONFIGURE_ARGS+=	--disable-mad
@@ -171,6 +178,9 @@ pre-everything::
 .if !defined(WITHOUT_A52)
 	@${ECHO_MSG} "You can disable ac3 (liba52) support by defining WITHOUT_A52."
 .endif
+.if !defined(WITHOUT_FAAD)
+	@${ECHO_MSG} "You can disable faad support by defining WITHOUT_FAAD."
+.endif
 .if !defined(WITHOUT_MAD)
 	@${ECHO_MSG} "You can disable mad support by defining WITHOUT_MAD."
 .endif
@@ -211,7 +221,9 @@ post-patch:
 	@${REINPLACE_CMD} -E -e 's|^(SUBDIRS.+)qtvidcap|\1|' \
 		${WRKSRC}/samples/Makefile.in
 .if !defined(WITHOUT_MAD)
-	@${REINPLACE_CMD} -e 's|MAD_LDADD = \@MAD_LDADD\@|MAD_LDADD = -L${LOCALBASE}/lib \@MAD_LDADD\@|' \
+	@${REINPLACE_CMD} -e 's|"mad.h"|<mad.h>|' \
+		${WRKSRC}/plugins/libmad/libmad.cpp
+	@${REINPLACE_CMD} -e 's|@AMM_USE_LIBMAD_FALSE@CUSTOMFLAGS = -I$(SUBDIRS)||' \
 		${WRKSRC}/plugins/libmad/Makefile.in
 .endif
 .if !defined(WITHOUT_QT)
@@ -271,7 +283,7 @@ post-patch:
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 
 post-configure:
-	@${LN} -sf ${LIBTOOL} ${WRKSRC}
+	@${LN} -sf ${LIBTOOL} ${WRKSRC}/libtool
 
 post-install:
 	@${FMT} < ${PKGMESSAGE}
