@@ -1,0 +1,64 @@
+--- gcc/config.gcc.orig	Sun Nov 19 16:58:02 2000
++++ gcc/config.gcc	Tue Nov 28 11:51:45 2000
+@@ -495,6 +495,20 @@
+ 	tm_file=arm/semiaof.h
+ 	tmake_file=arm/t-semiaof
+ 	;;
++arm-*-freebsd*)
++	tm_file="${tm_file} freebsd.h arm/elf.h arm/freebsd.h"
++	tmake_file="t-freebsd arm/t-arm-elf"
++	extra_parts="crtbegin.o crtend.o crtbeginS.o crtendS.o"
++	xmake_file=none
++	gas=yes gnu_ld=yes
++	stabs=yes
++	case x${enable_threads} in
++	xyes | xpthreads | xposix)
++		thread_file='posix'
++		tmake_file="${tmake_file} t-freebsd-thread"
++		;;
++	esac
++	;;
+ arm*-*-netbsd*)
+ 	tm_file=arm/netbsd.h
+ 	tmake_file="t-netbsd arm/t-netbsd"
+@@ -2674,6 +2688,19 @@
+ 	tmake_file="rs6000/t-ppcgas t-rtems rs6000/t-ppccomm"
+ 	extra_headers=ppc-asm.h
+ 	;;
++powerpc*-*-freebsd*)
++	tm_file="${tm_file} freebsd.h rs6000/freebsd.h"
++	tmake_file="rs6000/t-ppcos t-freebsd rs6000/t-ppccomm"
++	xmake_file=none
++	gas=yes gnu_ld=yes
++	stabs=yes
++	case x${enable_threads} in
++	xyes | xpthreads | xposix)
++		thread_file='posix'
++		tmake_file="${tmake_file} t-freebsd-thread"
++		;;
++	esac
++	;;
+ powerpc-*-linux*libc1)
+ 	tm_file="rs6000/sysv4.h rs6000/linux.h"
+ 	xm_file=rs6000/xm-sysv4.h
+@@ -3101,6 +3128,20 @@
+ 	tmake_file=sparc/t-sp64
+ 	tm_file=sparc/sp64-elf.h
+ 	extra_parts="crtbegin.o crtend.o"
++	;;
++sparc64-*-freebsd*)
++	tm_file="${tm_file} freebsd.h sparc/elf.h sparc/sp64-elf.h sparc/freebsd.h"
++	tmake_file=t-freebsd sparc/t-sp64
++	extra_parts="crtbegin.o crtend.o crtbeginS.o crtendS.o"
++	xmake_file=none
++	gas=yes gnu_ld=yes
++	stabs=yes
++	case x${enable_threads} in
++	xyes | xpthreads | xposix)
++		thread_file='posix'
++		tmake_file="${tmake_file} t-freebsd-thread"
++		;;
++	esac
+ 	;;
+ sparc64-*-linux*)		# 64-bit Sparc's running GNU/Linux
+ 	tmake_file="t-linux sparc/t-linux64"
