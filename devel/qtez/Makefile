@@ -3,7 +3,7 @@
 # Date created:				14 May 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/05/19 06:56:53 tg Exp $
 #
 
 DISTNAME=	QTEZ-v0.52a
@@ -13,6 +13,8 @@ MASTER_SITES=	ftp://qtez.commkey.net/pub/QtEZ/
 EXTRACT_SUFX=	-src.tar.gz
 
 MAINTAINER=	andy@icc.surw.chel.su
+
+BROKEN=		fetch
 
 BUILD_DEPENDS=	moc:${PORTSDIR}/x11/qt
 LIB_DEPENDS=	qt\\.1\\.:${PORTSDIR}/x11/qt
