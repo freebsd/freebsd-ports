@@ -7,8 +7,7 @@
 
 PORTNAME=	vmware3
 PORTVERSION=	3.2.1.2242
-PORTREVISION=	3
-PORTEPOCH=	1
+PORTREVISION=	4
 CATEGORIES=	emulators linux
 MASTER_SITES=	http://www4.vmware.com/software/ \
 		${FREEBSD_MODULE_SITES} \
@@ -130,6 +129,9 @@ post-patch:
 	${CP} ${FILESDIR}/Makefile.vmnet ${WRKSRC}/vmnet-only/Makefile
 .if ${OSVERSION} < 500000
 	${CAT} ${FILESDIR}/freebsd4.patch | (cd ${WRKSRC} && ${PATCH}) > /dev/null 2>&1
+.endif
+.if ${OSVERSION} >= 502104
+	${CAT} ${FILESDIR}/freebsd5.patch | (cd ${WRKSRC} && ${PATCH}) > /dev/null 2>&1
 .endif
 
 setoptions:
