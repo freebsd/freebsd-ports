@@ -1,93 +1,106 @@
 etc/sympa.conf
 etc/wwsympa.conf
-etc/rc.d/sympa
+etc/rc.d/sympa.sh
 sympa/bin/etc/scenari/access_web_archive.closed
-sympa/bin/etc/scenari/visibility.private
-sympa/bin/etc/scenari/visibility.noconceal
-sympa/bin/etc/scenari/visibility.intranet
-sympa/bin/etc/scenari/visibility.conceal
-sympa/bin/etc/scenari/unsubscribe.owner
-sympa/bin/etc/scenari/unsubscribe.open_notify
-sympa/bin/etc/scenari/unsubscribe.open
-sympa/bin/etc/scenari/unsubscribe.closed
-sympa/bin/etc/scenari/unsubscribe.auth_notify
-sympa/bin/etc/scenari/unsubscribe.auth
-sympa/bin/etc/scenari/topics_visibility.noconceal
-sympa/bin/etc/scenari/topics_visibility.identified
-sympa/bin/etc/scenari/topics_visibility.conceal
-sympa/bin/etc/scenari/subscribe.smimeorowner
-sympa/bin/etc/scenari/subscribe.smime
-sympa/bin/etc/scenari/subscribe.owner
-sympa/bin/etc/scenari/subscribe.open_quiet
-sympa/bin/etc/scenari/subscribe.open_notify
-sympa/bin/etc/scenari/subscribe.open
-sympa/bin/etc/scenari/subscribe.intranetorowner
-sympa/bin/etc/scenari/subscribe.intranet
-sympa/bin/etc/scenari/subscribe.closed
-sympa/bin/etc/scenari/subscribe.auth_owner
-sympa/bin/etc/scenari/subscribe.auth_notify
-sympa/bin/etc/scenari/subscribe.auth
-sympa/bin/etc/scenari/send.publicnomultipart
-sympa/bin/etc/scenari/send.publicnoattachment
-sympa/bin/etc/scenari/send.publickey
-sympa/bin/etc/scenari/send.public_nobcc
-sympa/bin/etc/scenari/send.public
-sympa/bin/etc/scenari/send.privateorpublickey
-sympa/bin/etc/scenari/send.privatekey
-sympa/bin/etc/scenari/send.privateoreditorkey
-sympa/bin/etc/scenari/send.privatekeyandeditorkeyonly
-sympa/bin/etc/scenari/send.privateandnomultipartoreditorkey
-sympa/bin/etc/scenari/send.privateandeditorkey
-sympa/bin/etc/scenari/send.private_smime
-sympa/bin/etc/scenari/send.private
-sympa/bin/etc/scenari/send.newsletterkeyonly
-sympa/bin/etc/scenari/send.newsletter
-sympa/bin/etc/scenari/send.intranetorprivate
-sympa/bin/etc/scenari/send.intranet
-sympa/bin/etc/scenari/send.editorkeyonlyauth
-sympa/bin/etc/scenari/send.editorkeyonly
-sympa/bin/etc/scenari/send.editorkey
-sympa/bin/etc/scenari/send.editor
-sympa/bin/etc/scenari/send.closed
-sympa/bin/etc/scenari/review.public
-sympa/bin/etc/scenari/review.private
-sympa/bin/etc/scenari/info.open
-sympa/bin/etc/scenari/review.owner
-sympa/bin/etc/scenari/review.listmaster
-sympa/bin/etc/scenari/review.intranet
-sympa/bin/etc/scenari/review.closed
-sympa/bin/etc/scenari/remind.owner
-sympa/bin/etc/scenari/remind.listmaster
-sympa/bin/etc/scenari/invite.public
-sympa/bin/etc/scenari/invite.private
-sympa/bin/etc/scenari/invite.owner
-sympa/bin/etc/scenari/invite.closed
-sympa/bin/etc/scenari/info.private
-sympa/bin/etc/scenari/global_remind.listmaster
-sympa/bin/etc/scenari/edit_list.owner
-sympa/bin/etc/scenari/edit_list.closed
-sympa/bin/etc/scenari/del.owner_notify
-sympa/bin/etc/scenari/del.owner
-sympa/bin/etc/scenari/del.closed
-sympa/bin/etc/scenari/del.auth
-sympa/bin/etc/scenari/d_read.public
-sympa/bin/etc/scenari/d_read.private
-sympa/bin/etc/scenari/d_read.owner
-sympa/bin/etc/scenari/d_edit.public
-sympa/bin/etc/scenari/d_edit.private
-sympa/bin/etc/scenari/d_edit.owner
-sympa/bin/etc/scenari/create_list.public_listmaster
-sympa/bin/etc/scenari/create_list.listmaster
-sympa/bin/etc/scenari/create_list.intranet
-sympa/bin/etc/scenari/add.owner_notify
-sympa/bin/etc/scenari/add.owner
-sympa/bin/etc/scenari/add.closed
-sympa/bin/etc/scenari/add.auth
-sympa/bin/etc/scenari/access_web_archive.public
-sympa/bin/etc/scenari/access_web_archive.private
-sympa/bin/etc/scenari/access_web_archive.owner
-sympa/bin/etc/scenari/access_web_archive.listmaster
 sympa/bin/etc/scenari/access_web_archive.intranet
+sympa/bin/etc/scenari/access_web_archive.listmaster
+sympa/bin/etc/scenari/access_web_archive.owner
+sympa/bin/etc/scenari/access_web_archive.private
+sympa/bin/etc/scenari/access_web_archive.public
+sympa/bin/etc/scenari/add.auth
+sympa/bin/etc/scenari/add.closed
+sympa/bin/etc/scenari/add.default
+sympa/bin/etc/scenari/add.owner
+sympa/bin/etc/scenari/add.owner_notify
+sympa/bin/etc/scenari/create_list.intranet
+sympa/bin/etc/scenari/create_list.listmaster
+sympa/bin/etc/scenari/create_list.public_listmaster
+sympa/bin/etc/scenari/d_edit.default
+sympa/bin/etc/scenari/d_edit.owner
+sympa/bin/etc/scenari/d_edit.private
+sympa/bin/etc/scenari/d_edit.public
+sympa/bin/etc/scenari/d_read.default
+sympa/bin/etc/scenari/d_read.owner
+sympa/bin/etc/scenari/d_read.private
+sympa/bin/etc/scenari/d_read.public
+sympa/bin/etc/scenari/del.auth
+sympa/bin/etc/scenari/del.closed
+sympa/bin/etc/scenari/del.default
+sympa/bin/etc/scenari/del.owner
+sympa/bin/etc/scenari/del.owner_notify
+sympa/bin/etc/scenari/edit_list.closed
+sympa/bin/etc/scenari/edit_list.owner
+sympa/bin/etc/scenari/global_remind.listmaster
+sympa/bin/etc/scenari/info.default
+sympa/bin/etc/scenari/info.open
+sympa/bin/etc/scenari/info.private
+sympa/bin/etc/scenari/invite.closed
+sympa/bin/etc/scenari/invite.default
+sympa/bin/etc/scenari/invite.owner
+sympa/bin/etc/scenari/invite.private
+sympa/bin/etc/scenari/invite.public
+sympa/bin/etc/scenari/remind.default
+sympa/bin/etc/scenari/remind.listmaster
+sympa/bin/etc/scenari/remind.owner
+sympa/bin/etc/scenari/review.closed
+sympa/bin/etc/scenari/review.default
+sympa/bin/etc/scenari/review.intranet
+sympa/bin/etc/scenari/review.listmaster
+sympa/bin/etc/scenari/review.owner
+sympa/bin/etc/scenari/review.private
+sympa/bin/etc/scenari/review.public
+sympa/bin/etc/scenari/send.closed
+sympa/bin/etc/scenari/send.default
+sympa/bin/etc/scenari/send.editor
+sympa/bin/etc/scenari/send.editorkey
+sympa/bin/etc/scenari/send.editorkeyonly
+sympa/bin/etc/scenari/send.editorkeyonlyauth
+sympa/bin/etc/scenari/send.intranet
+sympa/bin/etc/scenari/send.intranetorprivate
+sympa/bin/etc/scenari/send.newsletter
+sympa/bin/etc/scenari/send.newsletterkeyonly
+sympa/bin/etc/scenari/send.private
+sympa/bin/etc/scenari/send.private_smime
+sympa/bin/etc/scenari/send.privateandeditorkey
+sympa/bin/etc/scenari/send.privateandnomultipartoreditorkey
+sympa/bin/etc/scenari/send.privatekey
+sympa/bin/etc/scenari/send.privatekeyandeditorkeyonly
+sympa/bin/etc/scenari/send.privateoreditorkey
+sympa/bin/etc/scenari/send.privateorpublickey
+sympa/bin/etc/scenari/send.public
+sympa/bin/etc/scenari/send.public_nobcc
+sympa/bin/etc/scenari/send.publickey
+sympa/bin/etc/scenari/send.publicnoattachment
+sympa/bin/etc/scenari/send.publicnomultipart
+sympa/bin/etc/scenari/subscribe.auth
+sympa/bin/etc/scenari/subscribe.auth_notify
+sympa/bin/etc/scenari/subscribe.auth_owner
+sympa/bin/etc/scenari/subscribe.closed
+sympa/bin/etc/scenari/subscribe.default
+sympa/bin/etc/scenari/subscribe.intranet
+sympa/bin/etc/scenari/subscribe.intranetorowner
+sympa/bin/etc/scenari/subscribe.open
+sympa/bin/etc/scenari/subscribe.open_notify
+sympa/bin/etc/scenari/subscribe.open_quiet
+sympa/bin/etc/scenari/subscribe.owner
+sympa/bin/etc/scenari/subscribe.smime
+sympa/bin/etc/scenari/subscribe.smimeorowner
+sympa/bin/etc/scenari/topics_visibility.conceal
+sympa/bin/etc/scenari/topics_visibility.default
+sympa/bin/etc/scenari/topics_visibility.identified
+sympa/bin/etc/scenari/topics_visibility.noconceal
+sympa/bin/etc/scenari/unsubscribe.auth
+sympa/bin/etc/scenari/unsubscribe.auth_notify
+sympa/bin/etc/scenari/unsubscribe.closed
+sympa/bin/etc/scenari/unsubscribe.default
+sympa/bin/etc/scenari/unsubscribe.open
+sympa/bin/etc/scenari/unsubscribe.open_notify
+sympa/bin/etc/scenari/unsubscribe.owner
+sympa/bin/etc/scenari/visibility.conceal
+sympa/bin/etc/scenari/visibility.default
+sympa/bin/etc/scenari/visibility.intranet
+sympa/bin/etc/scenari/visibility.noconceal
+sympa/bin/etc/scenari/visibility.private
 sympa/bin/etc/scenari/visibility.secret
 sympa/bin/etc/create_list_templates/intranet_list/comment
 sympa/bin/etc/create_list_templates/intranet_list/config.tpl
@@ -224,6 +237,7 @@ sympa/bin/etc/wws.tt2/view_template.tt2
 sympa/bin/etc/wws.tt2/view_translations.tt2
 sympa/bin/etc/wws.tt2/viewbounce.tt2
 sympa/bin/etc/wws.tt2/viewmod.tt2
+sympa/bin/etc/wws.tt2/which.tt2
 sympa/bin/etc/mime.types
 sympa/bin/etc/sympa.wsdl
 sympa/bin/sympa.pl
@@ -359,15 +373,23 @@ sympa/doc/sympa.css
 sympa/doc/sympa.html
 sympa/doc/up.png
 sympa/doc/contents.png
+@dirrm sympa/spool/msg
+@dirrm sympa/spool/digest
+@dirrm sympa/spool/moderation
+@dirrm sympa/spool/expire
+@dirrm sympa/spool/auth
+@dirrm sympa/spool/outgoing
+@dirrm sympa/spool/tmp
+@dirrm sympa/spool/task
+@dirrm sympa/spool
 @dirrm sympa/sample/sample-list
 @dirrm sympa/sample
+@dirrm sympa/po
 @dirrm sympa/nls
 @dirrm sympa/expl
 @dirrm sympa/doc
 @dirrm sympa/bin/etc/wws.tt2
 @dirrm sympa/bin/etc/tt2
-@dirrm sympa/bin/etc/wws_templates
-@dirrm sympa/bin/etc/templates
 @dirrm sympa/bin/etc/scenari
 @dirrm sympa/bin/etc/list_task_models
 @dirrm sympa/bin/etc/global_task_models
@@ -379,6 +401,13 @@ sympa/doc/contents.png
 @dirrm sympa/bin/etc/create_list_templates/hotline
 @dirrm sympa/bin/etc/create_list_templates/discussion_list
 @dirrm sympa/bin/etc/create_list_templates
+@dirrm sympa/etc/create_list_templates
+@dirrm sympa/etc/templates
+@dirrm sympa/etc/wws_templates
+@dirrm sympa/etc/scenari
+@dirrm sympa/etc/task_models
+@dirrm sympa/etc/general_task_models
+@dirrm sympa/etc
 @dirrm sympa/bin/etc
 @dirrm sympa/bin/Marc
 @dirrm sympa/bin
