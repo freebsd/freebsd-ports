@@ -16,7 +16,6 @@ MAINTAINER=	dsh@vlink.ru
 COMMENT=	Validate method/function parameters
 
 PERL_CONFIGURE=	yes
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 MAN3=		Attribute::Params::Validate.3 Params::ValidateXS.3 \
 		Params::ValidatePP.3 Params::Validate.3
