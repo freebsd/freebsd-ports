@@ -135,6 +135,8 @@ share/locale/zh_TW/LC_MESSAGES/epiphany.mo
 @dirrm share/gnome/epiphany/glade
 @dirrm share/gnome/epiphany/art
 @dirrm share/gnome/epiphany
+@dirrm include/epiphany-1.0/epiphany
+@dirrm include/epiphany-1.0
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/epiphany/web
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/epiphany/general
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/epiphany/directories
