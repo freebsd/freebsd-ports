@@ -1,5 +1,5 @@
-*** Makefile.orig	Thu Sep  7 18:15:26 1995
---- Makefile	Fri Sep 15 03:09:44 1995
+*** Makefile.orig	Mon Sep 18 03:16:20 1995
+--- Makefile	Thu Oct  5 01:45:00 1995
 ***************
 *** 30,36 ****
   MAN_DIR = $(PREFIX)/man
@@ -55,3 +55,20 @@
   
   config.h: $(CONFIG)config.h Makefile
   	rm -f config.h
+***************
+*** 257,263 ****
+  	$(INSTALL) $(INST_BIN_OPT) randomize $(BIN_DIR)
+  	$(INSTALL) $(INST_BIN_OPT) splitmod $(BIN_DIR)
+  	[ -f ${COMPRESSION_FILE} ] || \
+! 		$(INSTALL) $(INST_MAN_OPT) compression_methods ${COMPRESSION_FILE}
+  
+  install.man:
+  	$(INSTALL) $(INST_MAN_OPT) man/tracker.1 $(MAN_DIR)/man1/tracker.1
+--- 259,265 ----
+  	$(INSTALL) $(INST_BIN_OPT) randomize $(BIN_DIR)
+  	$(INSTALL) $(INST_BIN_OPT) splitmod $(BIN_DIR)
+  	[ -f ${COMPRESSION_FILE} ] || \
+! 		$(INSTALL) $(INST_MAN_OPT) Lib/compression_methods ${COMPRESSION_FILE}
+  
+  install.man:
+  	$(INSTALL) $(INST_MAN_OPT) man/tracker.1 $(MAN_DIR)/man1/tracker.1
