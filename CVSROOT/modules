@@ -4975,6 +4975,7 @@ linux-mupen64	ports/emulators/linux-mupen64
 linux-nvu	ports/www/linux-nvu
 linux-nwnclient	ports/games/linux-nwnclient
 linux-nwserver	ports/games/linux-nwserver
+linux-nx-client	ports/net/linux-nx-client
 linux-opengroupware	ports/misc/linux-opengroupware
 linux-openmotif	ports/x11-toolkits/linux-openmotif
 linux-opera	ports/www/linux-opera
