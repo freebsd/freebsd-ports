@@ -23,6 +23,7 @@ BUILD_DEPENDS=	ant:${PORTSDIR}/devel/jakarta-ant \
 ONLY_FOR_ARCHS=	i386
 USE_ZIP=	yes
 USE_JAVA=	1.3+
+USE_REINPLACE=	yes
 NO_WRKSUBDIR=	yes
 
 MAKE_ARGS=	ECLIPSE_BUILD=${ECLIPSE_BUILD} \
@@ -35,5 +36,8 @@ ECLIPSE_BUILD=	2135
 ECLIPSE_OS=	freebsd
 ECLIPSE_WS=	gtk
 ECLIPSE_ARCH=	x86
+
+post-patch:
+		@${FIND} ${WRKSRC} -name build.xml | ${XARGS} ${REINPLACE_CMD} 's@verbose="true"@verbose="false"@g'
 
 .include <bsd.port.mk>
