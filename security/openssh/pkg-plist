@@ -15,5 +15,6 @@ man/man1/ssh-keygen.1.gz
 man/man1/ssh.1.gz
 man/man8/sshd.8.gz
 sbin/sshd
-@exec if [ ! -f %D/etc/ssh_host_key ]; then echo ">> Generating a secret host key."; %D/bin/ssh-keygen -N "" -f %D/etc/ssh_host_key; fi
+@exec if [ ! -f %D/etc/ssh_host_key ]; then echo ">> Generating a secret RSA host key."; %D/bin/ssh-keygen -N "" -f %D/etc/ssh_host_key; fi
+@exec if [ ! -f %D/etc/ssh_host_dsa_key ]; then echo ">> Generating a secret DSA host key."; %D/bin/ssh-keygen -d -N "" -f %D/etc/ssh_host_dsa_key; fi
 @exec if [ ! -x %D/etc/rc.d/sshd.sh ]; then echo "#!/bin/sh" > %D/etc/rc.d/sshd.sh && exec echo "[ -x %D/sbin/sshd ] && %D/sbin/sshd && echo -n ' sshd'" >> %D/etc/rc.d/sshd.sh && exec chmod 0555 %D/etc/rc.d/sshd.sh; fi
