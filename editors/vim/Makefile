@@ -93,12 +93,17 @@ MAKE_ARGS+=	CONF_OPT_RUBY="--enable-rubyinterp"
 .if !defined(WITHOUT_X11)
 #	for now default the GUI to the GTK+ one
 #	will be reviewed when the GTK+ 1.{3,4} behemoth is released
-.if !defined(WITH_ATHENA) && !defined(WITH_MOTIF) && !defined(WITH_GNOME)
+.if !defined(WITH_ATHENA) && !defined(WITH_MOTIF) && !defined(WITH_GNOME) && !defined(WITH_GTK2)
 WITH_GNOME=	gtk12
 .endif
 
 .if defined(WITH_ATHENA)
 MAKE_ARGS+=	CONF_OPT_GUI="--enable-gui=athena" ${I18N}
+.elif defined(WITH_GTK2)
+USE_GNOME=	gtk20
+PKGNAMESUFFIX=	-gtk2
+MAKE_ARGS+=	CONF_OPT_GUI="--enable-gui=gtk2 --with-gtk-prefix=${X11BASE}" ${I18N}
+MAKE_ARGS+=	X_LIBS="$(X_LIBS) -lXt"
 .elif defined(WITH_GNOME)
 .if ${WITH_GNOME:Mgnomelibs}!="" || ${WITH_GNOME}=="yes" || \
 	${WITH_GNOME}=="1"
