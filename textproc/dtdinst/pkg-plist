@@ -1,4 +1,4 @@
-share/java/classes/dtdinst.jar
+%%JAVAJARDIR%%/dtdinst.jar
 share/xsl/dtdinst/dtdinst2rng.xsl
 @dirrm share/xsl/dtdinst
 @unexec rmdir %D/share/xsl 2>/dev/null || true
