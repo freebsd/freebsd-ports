@@ -1,0 +1,22 @@
+
+Before Inside Systems Mail will work!!
+======================================
+
+An ismail.conf file must be created and placed in
+
+%%INSTALLDIR%%/include
+
+A reference ismail.conf has been provided at
+
+%%INSTALLDIR%%/include/ismail.conf.sample
+
+but requires modification to work. Please check the
+provided HTML documentation in %%DOCSDIR%% or browse
+http://www.insidesystems.net/projects/project.php?projectid=4
+for configuration help.
+
+Note: The default configuration data store requires domxml
+to be compiled in to to mod_php4. For alternate datastores,
+check %%EXAMPLESDIR%% for sample postgresql and mysql
+schemas and set the ismail.conf file accordingly.
+
