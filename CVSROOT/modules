@@ -5732,6 +5732,7 @@ p5-CGI_Lite	ports/www/p5-CGI_Lite
 p5-CSS-SAC	ports/textproc/p5-CSS-SAC
 p5-CSS-Tiny	ports/textproc/p5-CSS-Tiny
 p5-Cache-Cache	ports/devel/p5-Cache-Cache
+p5-Cache-FastMmap	ports/devel/p5-Cache-FastMmap
 p5-Cache-Mmap	ports/devel/p5-Cache-Mmap
 p5-Calendar-Simple	ports/devel/p5-Calendar-Simple
 p5-Carp-Assert	ports/devel/p5-Carp-Assert
