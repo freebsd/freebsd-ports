@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	serialmail
-PORTVERSION= 	0.75
+PORTVERSION=	0.75
 CATEGORIES=	mail
 MASTER_SITES=	http://cr.yp.to/software/ \
 		ftp://ftp.qmail.org/pub/koobera.math.uic.edu/pub/software/ \

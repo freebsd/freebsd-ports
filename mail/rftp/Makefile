@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rftp
-PORTVERSION= 	1.2
+PORTVERSION=	1.2
 CATEGORIES=	mail
 MASTER_SITES=	ftp://toxic.magnesium.net/pub/FreeBSD/rftp/
 

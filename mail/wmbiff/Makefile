@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wmbiff
-PORTVERSION= 	0.2
+PORTVERSION=	0.2
 CATEGORIES=	mail windowmaker afterstep
 MASTER_SITES=	http://ccat.elect.ru:8100/wmbiff/ \
 		${MASTER_SITE_LOCAL}

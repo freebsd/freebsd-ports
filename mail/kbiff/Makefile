@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kbiff
-PORTVERSION= 	2.3.12
+PORTVERSION=	2.3.12
 CATEGORIES=	mail kde
 MASTER_SITES=	http://granroth.kde.org/kbiff/
 

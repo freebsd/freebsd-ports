@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ezmlm-idx
-PORTVERSION= 	0.40	
+PORTVERSION=	0.40	
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.ezmlm.org/pub/patches/ \
 		ftp://ftp.rivertown.net/pub/ezmlm/ \

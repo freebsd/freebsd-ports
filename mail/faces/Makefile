@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	faces
-PORTVERSION= 	1.6.1
+PORTVERSION=	1.6.1
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.cs.indiana.edu/pub/faces/faces/
 EXTRACT_SUFX=	.tar.Z

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wmpop3
-PORTVERSION= 	0.5.6a
+PORTVERSION=	0.5.6a
 CATEGORIES=	mail windowmaker
 MASTER_SITES=	http://www.cs.mun.ca/~scotth/download/
 DISTFILES=	WMPop3-${PORTVERSION}.tar.gz

@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	bulk_mailer
-PORTVERSION= 	1.13
+PORTVERSION=	1.13
 CATEGORIES=	mail
 MASTER_SITES=	ftp://cs.utk.edu/pub/moore/bulk_mailer/
 
 MAINTAINER=	dlowe@saturn5.com
 
 GNU_CONFIGURE=	YES
-CONFIGURE_ARGS=--cache-file=/dev/null
+CONFIGURE_ARGS=	--cache-file=/dev/null
 
 ALL_TARGET=	bulk_mailer
 

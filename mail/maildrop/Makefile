@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	maildrop
-PORTVERSION= 	0.64
+PORTVERSION=	0.64
 CATEGORIES=	mail
 MASTER_SITES=	http://www.flounder.net/~mrsam/maildrop/ \
 		${MASTER_SITE_SUNSITE}

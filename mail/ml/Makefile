@@ -5,16 +5,16 @@
 # $FreeBSD$
 #
 
-PORTNAME=		ml
-PORTVERSION= 		3.4
-CATEGORIES=		mail
-MASTER_SITES=		http://people.netscape.com/max/ml/
+PORTNAME=	ml
+PORTVERSION=	3.4
+CATEGORIES=	mail
+MASTER_SITES=	http://people.netscape.com/max/ml/
 
-MAINTAINER=		ports@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
-WRKSRC=			${WRKDIR}/${DISTNAME}/src
-USE_IMAKE=		yes
-USE_MOTIF=		yes
+WRKSRC=		${WRKDIR}/${DISTNAME}/src
+USE_IMAKE=	yes
+USE_MOTIF=	yes
 
 pre-configure:
 	@${ECHO_MSG} "===>  Building c-client"

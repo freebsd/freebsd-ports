@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	majordomo
-PORTVERSION= 	1.94.5
+PORTVERSION=	1.94.5
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.greatcircle.com/pub/majordomo/1.94.5/ \
 		ftp://ftp.sgi.com/other/majordomo/1.94.5/

@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	hbiff
-PORTVERSION= 	1.2
+PORTVERSION=	1.2
 CATEGORIES=	mail
 MASTER_SITES=	ftp://nuxi.ucdavis.edu/pub/misc/  \
 		${MASTER_SITE_LOCAL}

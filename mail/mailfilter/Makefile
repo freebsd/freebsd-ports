@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mailfilter
-PORTVERSION= 	1.0b
+PORTVERSION=	1.0b
 CATEGORIES=	mail
 MASTER_SITES=	ftp://samurai.ruin.org/pub/All/
 

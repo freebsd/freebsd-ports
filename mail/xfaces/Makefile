@@ -8,7 +8,7 @@
 #
 
 PORTNAME=	xfaces
-PORTVERSION= 	3.3
+PORTVERSION=	3.3
 CATEGORIES=	mail
 # xfaces-sounds.tar.gz only in LOCAL_PORTS
 MASTER_SITES=	ftp://ftp.cs.indiana.edu/pub/faces/xfaces/ \

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cyrus
-PORTVERSION= 	1.6.24
+PORTVERSION=	1.6.24
 PORTREVISION=	1
 CATEGORIES=	mail tcl82
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/ \

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cmail
-PORTVERSION= 	2.10
+PORTVERSION=	2.10
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.eboai.org/pub/users/chip/
 EXTRACT_SUFX=	.tgz

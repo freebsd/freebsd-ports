@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mailx
-PORTVERSION= 	0.5
+PORTVERSION=	0.5
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_PORTS_JP} \
 		ftp://ftp.noc.titech.ac.jp/pub/tmp/aki/FreeBSD/mailx/

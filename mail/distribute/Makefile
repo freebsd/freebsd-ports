@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	distribute
-PORTVERSION= 	2.1.24
+PORTVERSION=	2.1.24
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.foretune.co.jp/pub/network/mail/distribute/
 DISTNAME=	${PORTNAME}-2.1-pl19
