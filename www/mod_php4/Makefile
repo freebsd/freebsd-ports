@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mod_php
-PORTVERSION= 	4.0.2
+PORTVERSION= 	4.0.3
 CATEGORIES=	www
 MASTER_SITES=	http://us.php.net/${PHP_DISTDIR}/ \
 		http://php.he.net/${PHP_DISTDIR}/ \
@@ -17,7 +17,7 @@ MASTER_SITES=	http://us.php.net/${PHP_DISTDIR}/ \
 		http://php.easydns.com/${PHP_DISTDIR}/ \
 		http://www.php.cz/${PHP_DISTDIR}/ \
 		http://php3.globe.de/${PHP_DISTDIR}/
-DISTNAME=	php-4.0.2
+DISTNAME=	php-${PORTVERSION}
 
 MAINTAINER=	dirk@FreeBSD.org
 
@@ -38,7 +38,8 @@ CONFIGURE_ARGS=	--with-apxs=${APXS} \
 		--disable-debug \
 		--enable-track-vars \
 		--without-gd \
-		--disable-pear
+		--disable-pear \
+		--without-mysql
 
 SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
 		TOUCH="${TOUCH}" \
