@@ -1,0 +1,13 @@
+--- wmtz.c.orig	Sun Jun 13 20:36:28 1999
++++ wmtz.c	Sat Oct  2 15:49:31 1999
+@@ -107,8 +107,8 @@
+ 
+ 	month[0] = "JAN\0";  month[1] = "FEB\0";  month[2] = "MAR\0";
+ 	month[3] = "APR\0";  month[4] = "MAY\0";  month[5] = "JUN\0";
+-	month[6] = "JUL\0";  month[7] = "AUG\0";  month[8] = "OCT\0";
+-	month[9] = "SEP\0";  month[10] = "NOV\0";  month[11] = "DEC\0";
++	month[6] = "JUL\0";  month[7] = "AUG\0";  month[8] = "SEP\0";
++	month[9] = "OCT\0";  month[10] = "NOV\0";  month[11] = "DEC\0";
+ 
+ 	week_day[0] = "SUNDAY   \0";
+ 	week_day[1] = "MONDAY   \0";
