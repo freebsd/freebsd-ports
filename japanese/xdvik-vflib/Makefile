@@ -32,6 +32,8 @@ PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	inagaki@tg.rim.or.jp
 
+BROKEN=		"Incorrect dependency information"
+
 LIB_DEPENDS=	VFlib2:${PORTSDIR}/japanese/vflib
 RUN_DEPENDS+=	makejvf:${PORTSDIR}/japanese/makejvf
 
