@@ -246,10 +246,6 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <range><le>4.3.0_13</le></range>
         <range><ge>4.3.99</ge><le>4.3.99.15_1</le></range>
       </package>
-      <package>
-	<name>linux-XFree86-libs</name>
-	<range><le>4.3.0_2</le></range>
-      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
