@@ -84,9 +84,6 @@ post-install:
 	@install-info --section=${DIRSECTION} ${PREFIX}/${EMACS_VER_LIBDIR}/info/wl-ja.info ${PREFIX}/${EMACS_VER_LIBDIR}/info/dir
 .endif
 .if (${EMACS_PORT} == "emacs20" || ${EMACS_PORT} == "mule")
-	@if [ ! -f ${PREFIX}/info/dir ]; then \
-		${SED} -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
-	fi
 	@${INSTALL_DATA} ${WRKSRC}/doc/wl-ja.info ${PREFIX}/info
 	@install-info --section=${DIRSECTION} ${PREFIX}/info/wl-ja.info ${PREFIX}/info/dir
 .endif
