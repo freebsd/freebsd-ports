@@ -1,5 +1,12 @@
-  IP Accounting Daemon allows to make IP accounting (network accounting)
+IP Accounting Daemon allows to make IP accounting (network accounting)
 based on IP Firewall and/or IP Filter accounting rules.
+
+It supports limits for accounting rules and limits events as "limit is
+reached", "reached limit is expired", etc. It understands time intervals
+like "end of day", "end of week", "end of month", etc.
+
+There is special viewer for accounting database and access control lists,
+which allow or disallow one to view accounting information for rules.
 
 WWW: http://www.simon.org.ua/ipa/
 
