@@ -19,7 +19,8 @@ RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/local/kc15f.pcf.gz:${PORTSDIR}/chinese/kcf
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
-USE_IMLIB=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	imlib
 USE_LIBTOOL=	yes
 CONFIGURE_ARGS=	--enable-trans=imlib --enable-multi-charset=big5 \
 		--enable-xim --with-theme-update
