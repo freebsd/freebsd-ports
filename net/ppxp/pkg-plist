@@ -54,7 +54,6 @@ etc/ppxp/rc/sendmail.rc
 etc/ppxp/rc/skeleton.rc
 etc/ppxp/rc/start
 etc/ppxp/rc/stop
-info/dir
 lib/ppxp/tcl/PPxP.so
 lib/ppxp/tcl/pkgIndex.tcl
 lib/ppxp/tkppxp/images/circle.xbm
