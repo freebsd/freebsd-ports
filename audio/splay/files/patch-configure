@@ -1,0 +1,21 @@
+--- configure.orig	Mon Mar 19 17:51:43 2001
++++ configure	Mon Apr  2 22:38:07 2001
+@@ -1967,12 +1969,12 @@
+ 
+ fi
+ echo "$ac_t""$ac_cv_type_pid_t" 1>&6
+-if test $ac_cv_type_pid_t = no; then
+-  cat >> confdefs.h <<\EOF
+-#define pid_t int
+-EOF
+-
+-fi
++#if test $ac_cv_type_pid_t = no; then
++#  cat >> confdefs.h <<\EOF
++##define pid_t int
++#EOF
++#
++#fi
+ 
+ 
+ if test $ac_cv_prog_gcc = yes; then

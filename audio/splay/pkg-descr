@@ -11,4 +11,5 @@ You can use these libraries under Library GPL.
 
 * This version of splay was not compiled with pthread library.
 --
-Port by CHOI Junho <junker@jazz.snu.ac.kr>
+CHOI Junho <cjh@FreeBSD.org>
+WWW: http://splay.sourceforge.net/

@@ -1,6 +1,6 @@
 # New ports collection makefile for:    splay
 # Date created:         1 Apr 1997
-# Whom:                 junker@jazz.snu.ac.kr
+# Whom:                 cjh
 #
 # $FreeBSD$
 #
@@ -8,14 +8,13 @@
 #
 
 PORTNAME=		splay
-PORTVERSION=		0.8.2
+PORTVERSION=		0.9.5.1
 CATEGORIES=		audio
-MASTER_SITES=		ftp://ftp.kr.FreeBSD.org/pub/FreeBSD-kr/distfiles/
+MASTER_SITES=		ftp://splay.sourceforge.net/pub/splay/
 
-MAINTAINER=		cjh@kr.freebsd.org
+MAINTAINER=		cjh@FreeBSD.org
 
 GNU_CONFIGURE=		yes
-CONFIGURE_ARGS=		--without-xsplay --without-pthread
 MAN1=			splay.1
 
 .include <bsd.port.mk>

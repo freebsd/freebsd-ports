@@ -1,0 +1,11 @@
+--- apps/Makefile.in.orig	Mon Apr  2 22:49:53 2001
++++ apps/Makefile.in	Mon Apr  2 22:50:05 2001
+@@ -81,7 +81,7 @@
+ INCLUDES = -I../libs  -I/usr/include/qt
+ xsplay_LDADD = -lqt $(LDADD)
+ 
+-man_MANS = splay.1 xsplay.1
++man_MANS = splay.1
+ EXTRA_DIST = $(man_MANS)
+ 
+ LIBS = @LIBS@
