@@ -1,6 +1,6 @@
 bin/Makefile
 bin/gp
-bin/gp-2.0
+bin/gp-2.1
 bin/gphelp
 bin/tex2mail
 include/pari/genpari.h
@@ -18,7 +18,7 @@ include/pari/parisys.h
 include/pari/paritype.h
 lib/libpari.so
 lib/libpari.so.2
-lib/libpari.so.2.0.20
+lib/libpari.so.2.1.0
 @exec /bin/mkdir -p %D/lib/pari/data
 lib/pari/paricfg.tex
 lib/pari/parimacro.tex
