@@ -1,5 +1,8 @@
---- configure.orig	Fri Aug 24 12:34:57 2001
-+++ configure	Fri Aug 24 12:35:13 2001
+
+$FreeBSD$
+
+--- configure.orig	Fri Jan  4 15:39:12 2002
++++ configure	Fri Jan  4 16:07:50 2002
 @@ -8,6 +8,7 @@
  # gives unlimited permission to copy, distribute and modify it.
  
@@ -8,10 +11,24 @@
  ac_help=
  ac_default_prefix=/usr/local
  # Any additions from configure.in:
-@@ -4812,12 +4813,10 @@
- intl/Makefile
- po/Makefile.in
- macros/Makefile
+@@ -6391,10 +6392,10 @@
+   packageprefix=${prefix}
+ fi
+ 
+-packagedatadir=share/${PACKAGE}
+-packagedocdir=doc/${PACKAGE}
++packagedatadir=share/gnome/${PACKAGE}
++packagedocdir=share/doc/${PACKAGE}
+ 
+-packagepixmapsdir=share/pixmaps/${PACKAGE}
++packagepixmapsdir=share/gnome/pixmaps/${PACKAGE}
+ packagehelpdir=share/gnome/help/${PACKAGE}
+ packagemenudir=share/gnome/apps
+ 
+@@ -6557,12 +6558,10 @@
+ tagmanager/Makefile
+ tagmanager/include/Makefile
+ global-tags/Makefile
 -scintilla/Makefile
  ccview/Makefile
  widgets/Makefile
@@ -21,7 +38,7 @@
  manuals/C/Makefile
  manuals/C/anjuta-manual/Makefile
  manuals/C/anjuta-faqs/Makefile
-@@ -4906,6 +4905,7 @@
+@@ -6656,6 +6655,7 @@
  s%@GNOME_CAPPLET_LIBS@%$GNOME_CAPPLET_LIBS%g
  s%@cflags_set@%$cflags_set%g
  s%@GTK_CONFIG@%$GTK_CONFIG%g
@@ -29,10 +46,10 @@
  s%@GTK_CFLAGS@%$GTK_CFLAGS%g
  s%@GTK_LIBS@%$GTK_LIBS%g
  s%@XPM_LIBS@%$XPM_LIBS%g
-@@ -4997,12 +4997,10 @@
- intl/Makefile
- po/Makefile.in
- macros/Makefile
+@@ -6759,12 +6759,10 @@
+ tagmanager/Makefile
+ tagmanager/include/Makefile
+ global-tags/Makefile
 -scintilla/Makefile
  ccview/Makefile
  widgets/Makefile
