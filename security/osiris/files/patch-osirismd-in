@@ -1,0 +1,17 @@
+--- src/install/freebsd/osirismd.in.old	Tue Jan 27 18:25:27 2004
++++ src/install/freebsd/osirismd.in	Tue Jan 27 18:26:01 2004
+@@ -1,12 +1,12 @@
+ #!/bin/sh
+ 
+-OSIRISMD=@INSTALLDIR@/osirismd
++OSIRISMD=%%PREFIX%%/sbin/osirismd
+ 
+ case "$1" in
+ 	start)
+ 		if [ -f ${SUDO} ]; then
+ 	    	    if [ -x ${OSIRISMD} ]; then
+-			${OSIRISMD} -r @OSIRISDIR@ && echo -n ' osirismd'
++			${OSIRISMD} -r %%PREFIX%%/osiris && echo -n ' osirismd'
+ 		    fi
+                 else
+ 		    echo ""
