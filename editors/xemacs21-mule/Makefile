@@ -21,6 +21,8 @@ DIST_SUBDIR=	xemacs
 MAINTAINER=	kiri@FreeBSD.org
 COMMENT?=	XEmacs(stable version) text editor with mule(Only the executables)
 
+USE_GNOME=	#
+
 .include <bsd.port.pre.mk>
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/xemacs/mule-packages/pkginfo/MANIFEST.skk:${PORTSDIR}/editors/xemacs-mule-packages
@@ -116,7 +118,7 @@ WITH_DIALOGS=	--with-dialogs=motif
 .if defined(WANT_GTK)
 WITH_GTK=	--with-gtk=yes
 WITH_XPM=	--with-xpm=no
-USE_GNOME=	gtk12
+USE_GNOME+=	gtk12
 USE_XPM=	no
 .endif
 
