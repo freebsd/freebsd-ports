@@ -8,7 +8,7 @@
 PORTNAME=	playmidi
 PORTVERSION=	2.4
 CATEGORIES=	audio
-MASTER_SITES=	http://nl.linux.org/~diz/playmidi/
+MASTER_SITES=	http://people.nl.linux.org/~diz/playmidi/
 
 MAINTAINER=	ports@FreeBSD.org
 
