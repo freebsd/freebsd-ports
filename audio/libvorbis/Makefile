@@ -15,22 +15,19 @@ MAINTAINER=	t.vanklaveren@student.utwente.nl
 
 LIB_DEPENDS=	ogg.0:${PORTSDIR}/audio/libogg
 
-GNU_CONFIGURE=	yes
+WRKSRC=		${WRKDIR}/vorbis
+
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 USE_AUTOMAKE=	yes
-WRKSRC=		${WRKDIR}/vorbis
-
-ACLOCAL?=	${LOCALBASE}/bin/aclocal
-AUTOHEADER?=	${LOCALBASE}/bin/autoheader
-CFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ARGS=	--with-ogg=${LOCALBASE}
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"
 AUTOMAKE_ARGS=	--add-missing
+AUTOCONF_ARGS=	; ${PERL} -pi -e 's|-lpthread|-pthread|g' ${WRKSRC}/configure
 
-post-patch:
-	cd ${WRKSRC} && ${ACLOCAL}
+AUTOHEADER?=	${LOCALBASE}/bin/autoheader
+
+pre-configre:
 	cd ${WRKSRC} && ${AUTOHEADER}
-	cd ${WRKSRC} && ${AUTOMAKE} --add-missing
-	cd ${WRKSRC} && ${AUTOCONF}
 
 .include <bsd.port.mk>
