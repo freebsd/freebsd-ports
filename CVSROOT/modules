@@ -854,6 +854,7 @@ ccmath		ports/math/ccmath
 ccmsn		ports/net/ccmsn
 ccrypt		ports/security/ccrypt
 ccscript	ports/lang/ccscript
+ccxstream	ports/net/ccxstream
 ccze		ports/sysutils/ccze
 cd-console	ports/audio/cd-console
 cd-discid	ports/audio/cd-discid
