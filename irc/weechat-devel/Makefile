@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	weechat
-PORTVERSION=	0.0.6
+PORTVERSION=	0.0.9
 CATEGORIES=	irc
 MASTER_SITES=	http://weechat.flashtux.org/download/
 
@@ -21,7 +21,7 @@ CFLAGS+=		-I${LOCALBASE}/include
 CONFIGURE_ENV+=		LIBS="-L${LOCALBASE}/lib -lintl"
 CONFIGURE_ARGS+=	--with-libintl-prefix=${LOCALBASE}
 
-MAN1=		weechat.1
+MAN1=		weechat-curses.1
 
 PLIST_FILES=	bin/weechat-curses share/locale/fr/LC_MESSAGES/weechat.mo
 
