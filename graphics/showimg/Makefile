@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	showimg
-PORTVERSION=	0.8.0
+PORTVERSION=	0.8.1
 PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.jalix.org/projects/showimg/download/${PORTVERSION}/
@@ -20,16 +20,13 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 
 USE_BZIP2=	yes
 USE_KDEBASE_VER=	3
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=	--with-xinerama
+MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
+		AUTOHEADER="${TRUE}"
 
 MAN1=		showimg.1
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|-pedantic||g ; \
-		 s|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
-
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.include "${PORTSDIR}/x11/kde3/Makefile.kde"
+.include <bsd.port.post.mk>
