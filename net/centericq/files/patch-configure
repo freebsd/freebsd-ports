@@ -1,11 +1,11 @@
---- configure.orig	Mon Oct  8 04:22:30 2001
-+++ configure	Mon Oct  8 04:22:48 2001
-@@ -1224,7 +1224,7 @@
-     fi
+--- configure.orig	Sun Dec 16 18:09:46 2001
++++ configure	Sun Dec 16 18:10:13 2001
+@@ -1935,7 +1935,7 @@
  fi
+ 
  
 -ALL_LINGUAS="zh_TW.Big5 ru ro pt_BR pl it hu es de cs"
 +ALL_LINGUAS="zh_TW.Big5 ru ro pt_BR pl it hu es de cs uk"
- echo $ac_n "checking how to run the C preprocessor""... $ac_c" 1>&6
- echo "configure:1230: checking how to run the C preprocessor" >&5
- # On Suns, sometimes $CPP names a directory.
+ echo $ac_n "checking for POSIXized ISC""... $ac_c" 1>&6
+ echo "configure:1941: checking for POSIXized ISC" >&5
+ if test -d /etc/conf/kconfig.d &&

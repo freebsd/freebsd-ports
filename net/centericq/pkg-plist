@@ -1,11 +1,10 @@
 bin/centericq
 bin/cicqconv
 bin/cicqsync
-share/centericq/cont.wav
 share/centericq/email.wav
-share/centericq/file.wav
 share/centericq/msg.wav
 share/centericq/online.wav
+share/centericq/sms.wav
 share/centericq/url.wav
 share/locale/cs/LC_MESSAGES/centericq.mo
 share/locale/de/LC_MESSAGES/centericq.mo
