@@ -16,7 +16,7 @@ MAINTAINER=	taoka@FreeBSD.org
 
 RUN_DEPENDS=	gmake:${PORTSDIR}/devel/gmake
 
-VERSION=	1.2
+VERSION=	1.2.1
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--datadir=${PREFIX}/share/doc
