@@ -16,7 +16,7 @@ EXTRACT_ONLY=	# none
 
 MAINTAINER=	patrick@FreeBSD.Org
 
-RUN_DEPENDS=	${LOCALBASE}/jdk1.1.8/bin/java:${PORTSDIR}/java/jdk
+RUN_DEPENDS=	${LOCALBASE}/jdk1.1.8/bin/java:${PORTSDIR}/java/jdk11
 
 ALL_TARGET=	jar
 
