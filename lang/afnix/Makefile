@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}-${PORTVERSION:S,.,-,g}
 DISTNAME=	${PORTNAME}-src-${PORTVERSION:S,.,-,g}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Aleph is a multi-threaded functional programming language
+COMMENT=	A multi-threaded functional programming language
 
 USE_GMAKE=	yes
 MAKE_ARGS=	CC="${CXX}" LD="${CXX}" LK="${CXX}" OPTCCFLAGS="${CXXFLAGS}" \
