@@ -1,0 +1,21 @@
+*** cdsearch.orig	Sat May 24 01:09:16 1997
+--- cdsearch	Sun Jun  8 18:07:37 1997
+***************
+*** 3,10 ****
+  # $Id: cdsearch,v 1.2 1995/05/01 19:03:38 root Exp $
+  #
+  
+! SERVERS='server1.your.domain server2.your.domain server3.your.domain'
+  URL='/cgi-bin/cdsearch'
+  export SERVERS URL
+  
+! /usr/local/etc/ebw3
+--- 3,10 ----
+  # $Id: cdsearch,v 1.2 1995/05/01 19:03:38 root Exp $
+  #
+  
+! SERVERS='localhost'
+  URL='/cgi-bin/cdsearch'
+  export SERVERS URL
+  
+! /usr/local/libexec/ebw3

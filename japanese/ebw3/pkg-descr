@@ -1,0 +1,15 @@
+Access to Japanese EPWING or Electric-Book based CD-ROM via HTTP.
+
+* It can be browsable from any GUI based Web client (NS, Mosaic ...)
+   on any Web terminal (WS, PC, Mac ...).
+
+* External-letters("GAIJI") are extracted as in-line image.
+
+* References in the dictionary are clickable.
+
+* Images and audio-data(pronunciations, etc.) access via browsers.
+
+* It supports dictionaries based upon Japanese standard ONLY.
+
+In use of this programs, you have to check the agreement of your
+CD-ROM dictionary for the network usage.
