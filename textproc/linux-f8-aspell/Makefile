@@ -164,7 +164,10 @@ DICTS=	${LG}
 . endfor
 .endif
 .for DICO in ${DICTS}
-MASTER_SITES+=	ftp://ftp.gnu.org/gnu/aspell/dict/${DICO}/:dict${DICO}
+MASTER_SITES+=	ftp://ftp.gnu.org/gnu/aspell/dict/${DICO}/:dict${DICO} \
+		http://gnu.mirror.mcgill.ca/aspell/dict/${DICO}/:dict${DICO} \
+		http://mirrors.usc.edu/pub/gnu/aspell/dict/${DICO}/:dict${DICO} \
+		ftp://ftp.sunsite.org.uk/package/gnu/aspell/dict/${DICO}/:dict${DICO}
 . if (${SPECDICTS:M${DICO}*} != "")
 DISTFILES+=	aspell-${DICO}-${DICTVER_${DICO:U}}${DICT_SUFFIX}:dict${DICO}
 . else
