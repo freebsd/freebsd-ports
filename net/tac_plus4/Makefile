@@ -29,7 +29,7 @@ EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-bb
 .endif
 
 # finger output differs for CISCO IOS versions 11 and 12.
-# Define version of your IOS (default is 11): 
+# Define version of your IOS (default is 11):
 # Example: make TAC_IOS_VERSION=12
 #
 .if defined(TAC_IOS_VERSION)
