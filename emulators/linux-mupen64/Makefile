@@ -20,6 +20,7 @@ COMMENT=	A Nintendo 64 emulator (Linux version)
 RUN_DEPENDS=	${LINUXBASE}/lib/libc-2.3.2.so:${PORTSDIR}/emulators/linux_base-8 \
 		${LINUXBASE}/usr/X11R6/lib/libXi.so.6:${PORTSDIR}/x11/linux-XFree86-libs \
 		${LINUXBASE}/usr/X11R6/lib/libGLU.so.1:${PORTSDIR}/graphics/linux_dri \
+		${LINUXBASE}/usr/lib/libGLcore.so.1:${PORTSDIR}/x11/nvidia-driver \
 		${LINUXBASE}/usr/lib/libSDL-1.2.so.0:${PORTSDIR}/devel/linux-sdl12 \
 		${LINUXBASE}/usr/lib/libgtk-1.2.so.0:${PORTSDIR}/x11-toolkits/linux-gtk
 

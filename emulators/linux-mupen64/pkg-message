@@ -1,13 +1,11 @@
 -------------------------------------------------------------------------------
 You must run 'linux-mupen64_install' as the user you intend to use mupen64 with
-before 'linux-mupen64' will work. If you are upgrading from a previous version,
-you should probably backup your ~/.linux-mupen64 directory and re-run the 
-installation script.
+before 'linux-mupen64' will work!
 
-Note:
+If you are upgrading from a previous version, you should probably backup your 
+~/.linux-mupen64 directory and re-run the installation script.
 
-For some of the graphics plugins to work, you must have a working libGLcore.so.1
-file located in /compat/linux/usr/lib/
+Note: This port is only known to work with nVidia boards. Sorry :-\
 
 Enjoy!
 -------------------------------------------------------------------------------
