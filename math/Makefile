@@ -32,6 +32,7 @@
     SUBDIR += fudgit
     SUBDIR += fxt
     SUBDIR += gap
+    SUBDIR += gcalctool
     SUBDIR += geg
     SUBDIR += gexpr
     SUBDIR += glove
