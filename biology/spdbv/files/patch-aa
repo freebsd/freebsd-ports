@@ -1,0 +1,118 @@
+--- install.sh.orig	Mon Dec  4 21:31:45 2000
++++ install.sh	Thu Dec 20 10:15:42 2001
+@@ -7,10 +7,9 @@
+ SPDBVNEEDOSbis="Linux"
+ 
+ SPDBVUSERDIR="$HOME"
+-SPDBVSHAREDIR="/usr/share"
+ SPDBVDIR="SPDBV"
+ SPDBVSTUFF="_stuff_"
+-SPDBVDEST=""
++SPDBVDEST="${PREFIX}"
+ SPDBVOSVERSION=`uname -r`
+ SPDBVOS=`uname -s`
+ if [ $SPDBVOS = IRIX64 ]; then
+@@ -27,20 +26,8 @@
+     echo "Will install the shared files in $SPDBVDEST."
+     if [  -d $SPDBVDEST/$SPDBVDIR ]; then
+         echo "Shared files are already installed on this system."
+-        echo "Delete old files and reinstall (Y/N)?"
+-        read INP
+-        if [ $INP = "Y" -o $INP = "y" ]; then
+-            echo " "
+-            echo "will reinstall"
+-	    if [ -w $SPDBVDEST/$SPDBVDIR ]; then
+-		rm -r $SPDBVDEST/$SPDBVDIR
+-	    else
+-	        echo "Could not delete shared files."
+-		abort
+-	    fi
+-        else
+-            abort
+-        fi
++        echo " "
++        echo "will reinstall"
+     fi
+     mkdir $SPDBVDEST/$SPDBVDIR #2> /dev/null
+     if [ ! -d $SPDBVDEST/$SPDBVDIR ]; then
+@@ -64,11 +51,11 @@
+     chmod ugo+rx $SPDBVDEST/$SPDBVDIR/bin/spdbv.sh
+ 
+     #try to make link from /usr/bin/spdbv to ./spdbv.sh
+-    if [ ! -w /usr/bin/ ]; then
++    if [ ! -w ${SPDBVDEST}/bin/ ]; then
+        echo " "
+-       echo "Can't make a link from /usr/bin/spdbv to spdbv.sh"
++       echo "Can't make a link from ${SPDBVDEST}/bin/spdbv to spdbv.sh"
+     else
+-       ln -sf $SPDBVDEST/$SPDBVDIR/bin/spdbv.sh /usr/bin/spdbv
++       ln -sf $SPDBVDEST/$SPDBVDIR/bin/spdbv.sh ${SPDBVDEST}/bin/spdbv
+     fi
+ }
+ 
+@@ -82,65 +69,18 @@
+    echo " Installation script for Release $SPDBVVERSION ($SPDBVNEEDOS)"
+    echo " " 
+    echo " " 
+-   echo " Please follow the instructions below."
+-   echo " "
+-   echo "Where do you want me to install the files:"
+-   echo "globally in /usr/share/SPDBV  ->  G"
+-   echo "or just locally in ~/SPDBV    ->  L"
+-   echo "something different           ->  O"
+-   echo "(G/L/O)?"
+-   read DEST
+-
+-   SPDBVDEST=""
+-   if [ $DEST = "G" -o $DEST = "g" ]; then
+-       SPDBVDEST=$SPDBVSHAREDIR
+-   elif [ $DEST = "L" -o $DEST = "l" ]; then
+-       SPDBVDEST=$SPDBVUSERDIR
+-   elif [ $DEST = "O" -o $DEST = "o" ]; then
+-       echo "enter target Path where to install directory SPDBV:"
+-       read SPDBVDEST
+-   fi
+-
+-   if [ -z $SPDBVDEST ]; then
+-       echo ""
+-       echo "$SPDBVDEST is not a valid answer. 1"
+-       echo ""
+-       echo "continue .. hit any key"
+-       read DEST
+-       mainmenu
+-   fi
+-   if [ ! '(' -d $SPDBVDEST ')' ]; then
+-       echo ""
+-       echo "$SPDBVDEST is not a valid answer. 2"
+-       echo ""
+-       echo "continue .. hit any key"
+-       read DEST
+-       mainmenu
+-   fi
+ 
+    makesharedinst
+ 
+-#   clear
+-
+    echo " "
+    echo " SPDBV - Swiss PDB Viewer" 
+    echo " Installation script for Release $SPDBVVERSION ($SPDBVNEEDOS)"
+    echo " "
+    echo "Installation completed."
+-   echo "Start your copy of SPDBV with the script $SPDBVDEST/$SPDBVDIR/bin/spdbv.sh"
+    echo ""
+    echo "ENJOY SPDBV!"
+    exit
+ }
+-
+-# test for the right os
+-if [ $SPDBVOS != $SPDBVNEEDOS ]; then
+-  if [ $SPDBVOS != $SPDBVNEEDOSbis ]; then 
+-    echo "SPDBV $SPDBVVERSION ($SPDBVNEEDOS) is intended to run on hardware under $SPDBVNEEDOS."
+-    abort
+-    exit
+-  fi
+-fi
+ 
+ # start up the mainmenu
+ mainmenu 
