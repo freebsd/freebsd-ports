@@ -122,6 +122,7 @@
     SUBDIR += semi113-xemacs21-mule
     SUBDIR += speedbar
     SUBDIR += speedbar-emacs20
+    SUBDIR += ssed
     SUBDIR += staroffice5
     SUBDIR += staroffice52
     SUBDIR += staroffice52-pt
