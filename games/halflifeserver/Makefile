@@ -38,11 +38,48 @@ SORT?=		/usr/bin/sort
 # files which should be installed with executables perms
 EXECUTABLES=	${HL_PROGRAM} hltv
 
+.ifdef(WITH_PING_BOOSTER)
+MASTER_SITES+=	http://www.udpsoft.com/booster/
+DISTFILES+=	HLDSPingBooster-0.99.tar.gz
+
+BOOSTER_FILES=	booster.so hlds_boost
+EXECUTABLES+=	hlds_boost
+
+PLIST_SUB+=	BOOSTER=""
+.else
+PLIST_SUB+=	BOOSTER="@comment "
+.endif
+
+pre-everything::
+.ifndef(WITH_PING_BOOSTER)
+	@${ECHO_MSG} '===>'
+	@${ECHO_MSG} '===> Define WITH_PING_BOOSTER to enable HLDS Ping Booster.'
+	@${ECHO_MSG} '===>'
+	@${ECHO_MSG} '===> HLDS Ping Booster is a small tweak to the Half-Life Dedicated'
+	@${ECHO_MSG} '===> Server that drastically reduces player pings and generally'
+	@${ECHO_MSG} '===> makes the game much more responsive.'
+	@${ECHO_MSG} '===> Besides defining this, instead of using hlds_run to start the'
+	@${ECHO_MSG} '===> server, use hlds_boost. Clients do not have to install anything.'
+	@${ECHO_MSG} '===> Check http://www.udpsoft.com/booster/ for additional information.'
+	@${ECHO_MSG} '===>'
+.endif
+
+post-extract:
+.ifdef(WITH_PING_BOOSTER)
+.for file in ${BOOSTER_FILES}
+	@${CP} ${WRKDIR}/${file} ${WRKSRC}
+.endfor
+.endif
+
 pre-patch:
 # remove trailing ^M
 	@find -E ${WRKSRC} -type f \
 		-iregex ".*\.(bat|cfg|gam|htm|html|inf|ini|lst|sc|scr|txt|rc)" \
 		-exec ${PERL} -pi -ne 's!\r\n!\n!' {} 1>/dev/null 2>&1 \;
+.ifdef(WITH_PING_BOOSTER)
+	@${PERL} -pi -e 's|booster.so|${PREFIX}${HLDSDIR}booster.so|' \
+		${WRKSRC}/hlds_boost
+.endif
 
 do-install: install-parse-plist install-run-scripts scan-libs
 
