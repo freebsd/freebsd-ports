@@ -1,0 +1,53 @@
+#!/bin/sh
+#
+# Resin startup script.
+#
+# Borrowed from jakarta-tomcat41
+#
+# $FreeBSD$
+#
+
+# Determine PREFIX
+if ! PREFIX=$(expr $0 : "\(/.*\)/etc/rc\.d/${0##*/}\$"); then
+    echo "$0: Cannot determine the PREFIX" >&2
+    exit 1
+fi
+
+# Set some variables
+MYSELF=`basename $0`
+ARGS="-conf $PREFIX/etc/%%APP_NAME%%.xml \
+-chdir \
+-name %%APP_NAME%% \
+-class com.caucho.server.resin.Resin \
+-pid %%PID_FILE%%"
+PATH=/usr/sbin:/usr/bin:/bin
+
+export JAVA_HOME=%%JAVA_HOME%%
+export RESIN_HOME=$PREFIX/%%APP_NAME%%
+
+set -e
+
+case "$1" in
+    start)
+        echo -n ' '
+        truncate -s 0 %%PID_FILE%%
+        chown %%RUNASUSER%%:%%GROUP%% %%PID_FILE%%
+        chmod 600 %%PID_FILE%%
+        su -f -m %%RUNASUSER%% -c "exec $PREFIX/sbin/%%APP_NAME%%ctl $ARGS start" \
+            >/dev/null && echo -n '%%APP_NAME%%'
+        ;;
+
+    stop)
+        echo -n ' '
+        chown %%RUNASUSER%%:%%GROUP%% %%PID_FILE%%
+        chmod 600 %%PID_FILE%%
+        su -f -m %%RUNASUSER%% -c "exec $PREFIX/sbin/%%APP_NAME%%ctl $ARGS stop" \
+            >/dev/null 2>&1 ; echo -n '%%APP_NAME%%'
+        ;;
+    *)
+        echo ""
+        echo "Usage: ${MYSELF} { start | stop }"
+        echo ""
+        exit 64
+        ;;
+esac

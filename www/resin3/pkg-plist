@@ -1,100 +1,97 @@
-resin/doc/beta.xtp
-resin/doc/changes-1.xtp
-resin/doc/changes.xtp
-resin/doc/errata.xtp
-resin/doc/features.xtp
-resin/doc/future.xtp
-resin/doc/href-map.xml
-resin/doc/index.xtp
-resin/doc/toc.xml
-resin/doc/images/caucho-blue.gif
-resin/doc/images/apache_srun.gif
-resin/doc/images/appserver.gif
-resin/doc/images/background.gif
-resin/doc/images/backup.gif
-resin/doc/images/ball8.gif
-resin/doc/images/bean.gif
-resin/doc/images/bean1.gif
-resin/doc/images/caucho.gif
-resin/doc/images/compiler.gif
-resin/doc/images/file.gif
-resin/doc/images/folder.gif
-resin/doc/images/hbleed.gif
-resin/doc/images/httpd.gif
-resin/doc/images/iis_srun.gif
-resin/doc/images/jndi_tree.gif
-resin/doc/images/jsp.gif
-resin/doc/images/logo.gif
-resin/doc/images/pixel.gif
-resin/doc/images/resin_powered.gif
-resin/doc/images/same_srun.gif
-resin/doc/images/script.gif
-resin/doc/images/srunc.gif
-resin/doc/images/sticky-sessions.gif
-resin/doc/images/style.gif
-resin/doc/images/webserver.gif
-resin/doc/images/website_srun.gif
-resin/doc/images/caucho.jpg
-resin/doc/images/.xvpics/background.gif
-resin/doc/images/.xvpics/left_background.gif
-resin/doc/images/caucho-white.jpg
-resin/doc/images/left_background.gif
-resin/lib/resin.jar
-resin/lib/jsdk24.jar
-resin/lib/jta_101.jar
-resin/lib/isorelax.jar
-resin/lib/jmx.jar
-resin/lib/jca-15.jar
-resin/lib/jstl-11.jar
-resin/lib/webutil.jar
-resin/webapps/resin-doc.war
-resin/xsl/caucho/comment.xsl
-resin/xsl/caucho/contents.xsl
-resin/xsl/caucho/control.xsl
-resin/xsl/caucho/debug.xsl
-resin/xsl/caucho/defaultcopy.xsl
-resin/xsl/caucho/format.xsl
-resin/xsl/caucho/newstyle.xsl
-resin/xsl/caucho/weblog.xsl
-resin/xsl/caucho/fun.xsl
-resin/xsl/caucho/href.xsl
-resin/xsl/caucho/include.xsl
-resin/xsl/caucho/nodeinfo.xsl
-resin/xsl/caucho/toc.xsl
-resin/xsl/caucho/viewfile.xsl
-resin/xsl/caucho_default.xsl
-resin/xsl/caucho_header.xsl
-resin/xsl/caucho_subpage.xsl
-resin/xsl/default.xsl
-resin/xsl/doc_header.xsl
-resin/xsl/header.xsl
-resin/xsl/js_header.xsl
-resin/xsl/new_doc_header.xsl
-resin/xsl/search.xsl
-resin/xsl/subpage.xsl
-resin/xsl/js/caucho/defaultcopy.xsl
-resin/xsl/js/caucho/format.xsl
-resin/xsl/js/caucho/weblog.xsl
-resin/libexec/libresin.so
-resin/libexec/libresinssl.so
+%%APP_NAME%%/doc/beta.xtp
+%%APP_NAME%%/doc/changes-1.xtp
+%%APP_NAME%%/doc/changes.xtp
+%%APP_NAME%%/doc/errata.xtp
+%%APP_NAME%%/doc/features.xtp
+%%APP_NAME%%/doc/future.xtp
+%%APP_NAME%%/doc/index.xtp
+%%APP_NAME%%/doc/href-map.xml
+%%APP_NAME%%/doc/toc.xml
+%%APP_NAME%%/doc/images/caucho-blue.gif
+%%APP_NAME%%/doc/images/apache_srun.gif
+%%APP_NAME%%/doc/images/appserver.gif
+%%APP_NAME%%/doc/images/background.gif
+%%APP_NAME%%/doc/images/backup.gif
+%%APP_NAME%%/doc/images/ball8.gif
+%%APP_NAME%%/doc/images/bean.gif
+%%APP_NAME%%/doc/images/bean1.gif
+%%APP_NAME%%/doc/images/caucho.gif
+%%APP_NAME%%/doc/images/compiler.gif
+%%APP_NAME%%/doc/images/file.gif
+%%APP_NAME%%/doc/images/folder.gif
+%%APP_NAME%%/doc/images/hbleed.gif
+%%APP_NAME%%/doc/images/httpd.gif
+%%APP_NAME%%/doc/images/iis_srun.gif
+%%APP_NAME%%/doc/images/jndi_tree.gif
+%%APP_NAME%%/doc/images/jsp.gif
+%%APP_NAME%%/doc/images/logo.gif
+%%APP_NAME%%/doc/images/pixel.gif
+%%APP_NAME%%/doc/images/resin_powered.gif
+%%APP_NAME%%/doc/images/same_srun.gif
+%%APP_NAME%%/doc/images/script.gif
+%%APP_NAME%%/doc/images/srunc.gif
+%%APP_NAME%%/doc/images/sticky-sessions.gif
+%%APP_NAME%%/doc/images/style.gif
+%%APP_NAME%%/doc/images/webserver.gif
+%%APP_NAME%%/doc/images/website_srun.gif
+%%APP_NAME%%/doc/images/caucho.jpg
+%%APP_NAME%%/doc/images/.xvpics/background.gif
+%%APP_NAME%%/doc/images/.xvpics/left_background.gif
+%%APP_NAME%%/doc/images/caucho-white.jpg
+%%APP_NAME%%/doc/images/left_background.gif
+%%APP_NAME%%/lib/resin.jar
+%%APP_NAME%%/lib/jsdk24.jar
+%%APP_NAME%%/lib/jta_101.jar
+%%APP_NAME%%/lib/isorelax.jar
+%%APP_NAME%%/lib/jmx.jar
+%%APP_NAME%%/lib/jca-15.jar
+%%APP_NAME%%/lib/jstl-11.jar
+%%APP_NAME%%/lib/webutil.jar
+%%APP_NAME%%/xsl/caucho/comment.xsl
+%%APP_NAME%%/xsl/caucho/contents.xsl
+%%APP_NAME%%/xsl/caucho/control.xsl
+%%APP_NAME%%/xsl/caucho/debug.xsl
+%%APP_NAME%%/xsl/caucho/defaultcopy.xsl
+%%APP_NAME%%/xsl/caucho/format.xsl
+%%APP_NAME%%/xsl/caucho/newstyle.xsl
+%%APP_NAME%%/xsl/caucho/weblog.xsl
+%%APP_NAME%%/xsl/caucho/fun.xsl
+%%APP_NAME%%/xsl/caucho/href.xsl
+%%APP_NAME%%/xsl/caucho/include.xsl
+%%APP_NAME%%/xsl/caucho/nodeinfo.xsl
+%%APP_NAME%%/xsl/caucho/toc.xsl
+%%APP_NAME%%/xsl/caucho/viewfile.xsl
+%%APP_NAME%%/xsl/caucho_default.xsl
+%%APP_NAME%%/xsl/caucho_header.xsl
+%%APP_NAME%%/xsl/caucho_subpage.xsl
+%%APP_NAME%%/xsl/default.xsl
+%%APP_NAME%%/xsl/doc_header.xsl
+%%APP_NAME%%/xsl/header.xsl
+%%APP_NAME%%/xsl/js_header.xsl
+%%APP_NAME%%/xsl/new_doc_header.xsl
+%%APP_NAME%%/xsl/search.xsl
+%%APP_NAME%%/xsl/subpage.xsl
+%%APP_NAME%%/xsl/js/caucho/defaultcopy.xsl
+%%APP_NAME%%/xsl/js/caucho/format.xsl
+%%APP_NAME%%/xsl/js/caucho/weblog.xsl
+%%APP_NAME%%/libexec/libresin.so
+%%APP_NAME%%/libexec/libresinssl.so
 etc/app-default.xml
-etc/rc.d/resin.sh
-sbin/resinctl
+etc/rc.d/%%APP_NAME%%.sh
+sbin/%%APP_NAME%%ctl
 %%MOD_DIR%%/mod_caucho.so
-@dirrm resin/doc/images/.xvpics
-@dirrm resin/doc/images
-@dirrm resin/doc/css
-@dirrm resin/doc/WEB-INF/classes
-@dirrm resin/doc/WEB-INF/lib
-@dirrm resin/doc/WEB-INF
-@dirrm resin/doc
-@dirrm resin/lib
-@dirrm resin/webapps
-@dirrm resin/xsl/caucho
-@dirrm resin/xsl/js/caucho
-@dirrm resin/xsl/js
-@dirrm resin/xsl
-@dirrm resin/libexec
-@dirrm resin
-@unexec if cmp -s %D/etc/resin.xml %D/etc/resin.xml-dist; then rm -f %D/etc/resin.xml; else echo If permanently deleting this package, %%PREFIX%%/etc/resin.xml must be removed manually; fi
-etc/resin.xml-dist
+%%APACHE%%@exec %%APXS%% -e -a -n caucho %f
+%%APACHE%%@unexec %%APXS%% -e -A -n caucho %f
+@dirrm %%APP_NAME%%/doc/images/.xvpics
+@dirrm %%APP_NAME%%/doc/images
+@dirrm %%APP_NAME%%/doc
+@dirrm %%APP_NAME%%/lib
+@dirrm %%APP_NAME%%/xsl/caucho
+@dirrm %%APP_NAME%%/xsl/js/caucho
+@dirrm %%APP_NAME%%/xsl/js
+@dirrm %%APP_NAME%%/xsl
+@dirrm %%APP_NAME%%/libexec
+@dirrm %%APP_NAME%%
+@unexec if cmp -s %D/etc/%%APP_NAME%%.xml %D/etc/%%APP_NAME%%.xml-dist; then rm -f %D/etc/%%APP_NAME%%.xml; else echo If permanently deleting this package, %D/etc/%%APP_NAME%%.xml must be removed manually; fi
+etc/%%APP_NAME%%.xml-dist
+@exec if test -f %B/%%APP_NAME%%.xml ; then echo Keeping %B/%%APP_NAME%%.xml intact from previous installation; else cp %F %B/%%APP_NAME%%.xml; fi

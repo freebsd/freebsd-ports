@@ -1,0 +1,12 @@
+--- src/c/plugin/apache/Makefile.in.orig	Thu Nov 13 09:27:52 2003
++++ src/c/plugin/apache/Makefile.in	Thu Nov 13 09:28:36 2003
+@@ -28,8 +28,7 @@
+ 	$(CC) -c $(INCLUDES) $(CFLAGS) $<
+ 
+ install	:
+-	sh install.sh -conf $(apache_conf) -libexec $(apache_libexec) \
+-	   -resin_home $(resin_home)
++	%%APXS%% -i -a -n caucho mod_caucho.so
+ 
+ clean	:
+ 	- rm *.o *.lo *.la *.so
