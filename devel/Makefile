@@ -1054,6 +1054,7 @@
     SUBDIR += php5-shmop
     SUBDIR += php5-sysvmsg
     SUBDIR += php5-sysvsem
+    SUBDIR += php5-sysvshm
     SUBDIR += phptags
     SUBDIR += physfs
     SUBDIR += picasm
