@@ -1,2 +1,3 @@
 @cwd /usr/local
 bin/zorro
+share/zorro/DOTzorrorc
