@@ -21,8 +21,14 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	sanpei@FreeBSD.org
 COMMENT=	A toolkit from Stanford University and Silicon Graphics + Japanese patches
 
+.include <bsd.port.pre.mk>
+
 # Warning: we cannot use USE_IMAKE.
+.if ${XFREE86_VERSION} == 3
 BUILD_DEPENDS=	imake:${PORTSDIR}/devel/imake
+.else
+BUILD_DEPENDS=	imake:${PORTSDIR}/devel/imake-4
+.endif
 
 USE_GCC=	2.95
 USE_XLIB=	yes
@@ -66,8 +72,6 @@ MANN=		Adjuster.n Banner.n BasicDialog.n Border.n Box2_6.n \
 		pspaint.n remind.n rpcbuf.n rpcstream.n splines.n \
 		statevars.n stateviews.n struct.n transfns.n \
 		transforms.n uctrls.n viewcmds.n
-
-.include <bsd.port.pre.mk>
 
 INSTALLS_SHLIB=	yes
 .if ${PORTOBJFORMAT} == "elf"
