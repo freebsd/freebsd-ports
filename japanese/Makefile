@@ -434,5 +434,6 @@
     SUBDIR += yc.el
     SUBDIR += zangband
     SUBDIR += zipcodes
+    SUBDIR += zope-ejsplitter
 
 .include <bsd.port.subdir.mk>
