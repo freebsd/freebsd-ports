@@ -2,15 +2,5 @@ bin/ubh
 share/ubh/ubhrc
 share/ubh/newsrc
 @dirrm share/ubh
-share/doc/ubh/documentation.html
-share/doc/ubh/download.html
-share/doc/ubh/index.html
-share/doc/ubh/links.html
-share/doc/ubh/lists.html
-share/doc/ubh/news.html
-share/doc/ubh/screenshots.html
-share/doc/ubh/images/emacs.gif
-share/doc/ubh/images/logo.gif
-share/doc/ubh/images/screen1.gif
-@dirrm share/doc/ubh/images
+share/doc/ubh/ubh.html
 @dirrm share/doc/ubh
