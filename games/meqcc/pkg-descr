@@ -4,4 +4,4 @@ As an added bonus a `progs.dat' which cannot be decompiled is a lot smaller.
 The compiler also has a C compatible precompiler.  A description of the
 precompiler directives can be found in a regular C manual.
 
-WWW: http://wiki.quakesrc.org/index.php/meQCC
+WWW: http://wiki.quakesrc.org/index.php?pagename=MEQCC
