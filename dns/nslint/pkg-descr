@@ -1,4 +1,4 @@
-This is nslint 2.0, a lint program for dns files.  It is produced by the
+Nslint is a lint program for DNS zone files.  It is produced by the
 Lawrence Berkeley National Laboratory, Network Research Group.
 
 Please send bugs and comments to nslint@ee.lbl.gov.
