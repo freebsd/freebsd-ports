@@ -288,6 +288,7 @@
     SUBDIR += lwp
     SUBDIR += m4
     SUBDIR += m6811-binutils
+    SUBDIR += m6811-gcc
     SUBDIR += m68k-rtems-binutils
     SUBDIR += m68k-rtems-chill
     SUBDIR += m68k-rtems-g77
