@@ -4211,7 +4211,6 @@ libfpx		ports/graphics/libfpx
 libfreenet	ports/net/libfreenet
 libfs++		ports/devel/libfs++
 libfwbuilder	ports/security/libfwbuilder
-libfxp		ports/ftp/libfxp
 libg++		ports/devel/libg++
 libgail-gnome	ports/x11-toolkits/libgail-gnome
 libgcrypt	ports/security/libgcrypt
