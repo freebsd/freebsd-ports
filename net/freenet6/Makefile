@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	freenet6
-PORTVERSION=	0.9.7
+PORTVERSION=	1.0
 CATEGORIES=	net ipv6
 MASTER_SITES=	# fetch manually
+DISTNAME=	${PORTNAME}-client-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	edwin@mavetju.org
@@ -39,11 +40,8 @@ IGNORE=		May not be automatically fetched due to licensing\
 		Once it has been downloaded, move it to\
 		${DISTDIR} and then restart this build.\
 		You also can register to use this service at\
-		http://www.freenet6.net/cgi-bin/new_account.pl
+		http://www.freenet6.net/register.shtml
 .endif
-
-NO_CDROM=	"Redistribution not allowed"
-NO_PACKAGE=	"Redistribution not allowed"
 
 .if ${OSVERSION} >= 440000
 MAKE_ARGS=	target=freebsd44 installdir=${PREFIX}

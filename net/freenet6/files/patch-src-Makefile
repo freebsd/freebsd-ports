@@ -1,5 +1,5 @@
---- src/Makefile.orig	Thu Dec  6 06:06:55 2001
-+++ src/Makefile	Tue Oct 22 22:50:38 2002
+--- src/Makefile.orig	Mon Aug 11 17:18:21 2003
++++ src/Makefile	Thu Oct 23 11:12:02 2003
 @@ -11,7 +11,7 @@
  INC=.
  BIN=../bin
@@ -7,14 +7,18 @@
 -CC=gcc -g -I$(INC) -Wall
 +CC+=$(CFLAGS) -g -I$(INC) -Wall
  
- pre-clean:
- 	@if [ -f $(BIN)/tspc.conf ]; then rm -f $(BIN)/tspc.conf; fi
-@@ -22,7 +22,7 @@
+ all: tspc tspc.conf.sample
+ 
+@@ -19,9 +19,9 @@
  	@echo Installing tspc
  	mkdir -p $(install_bin)
  	$(COPY) $(BIN)/$(TSPC) $(install_bin)/$(TSPC)
--	$(COPY) $(BIN)/tspc.conf $(install_bin)/tspc.conf
-+	$(COPY) $(BIN)/tspc.conf $(install_etc)/tspc.conf
+-	$(COPY) $(BIN)/tspc.conf.sample $(install_bin)/tspc.conf.sample
+-	@if [ ! -e "$(install_bin)/tspc.conf" ]; then \
+-	   $(COPY) $(BIN)/tspc.conf.sample $(install_bin)/tspc.conf; \
++	$(COPY) $(BIN)/tspc.conf.sample $(install_etc)/tspc.conf.sample
++	@if [ ! -e "$(install_etc)/tspc.conf" ]; then \
++	   $(COPY) $(BIN)/tspc.conf.sample $(install_etc)/tspc.conf; \
+ 	fi
  	@echo End of tspc installation
  
- $(BIN)/tspc.conf:
