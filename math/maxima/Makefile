@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.ma.utexas.edu/pub/maxima/ \
 DISTNAME=	maxima-5.6
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	sf@dsinw.com
+MAINTAINER=	sf@slappy.org
 COMMENT=	Maxima symbolic computation program
 
 BUILD_DEPENDS=	lisp:${PORTSDIR}/lang/cmucl

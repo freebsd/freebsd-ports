@@ -11,7 +11,7 @@ MASTER_SITES=	ftp://ftp.cs.virginia.edu/pub/stream/Code/
 DISTFILES=	second_cpu.c stream_d.c
 DIST_SUBDIR=	stream-${PORTVERSION}
 
-MAINTAINER=	sf@dsinw.com
+MAINTAINER=	sf@slappy.org
 COMMENT=	Synthetic benchmark program that measures sustainable memory bandwidth
 
 MAKEFILE=	${FILESDIR}/Makefile
