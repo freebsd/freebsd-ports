@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	horde
-PORTVERSION=	2.0
-PORTREVISION=	3
+PORTVERSION=	2.1
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.horde.org/pub/horde/tarballs/
+DISTNAME=	${PORTNAME}-${PORTVERSION}-RC2
 
 MAINTAINER=	thierry@pompo.net
 
@@ -36,7 +36,8 @@ NO_BUILD=	yes
 DOCS=		COPYING README docs/CHANGES docs/CODING_STANDARDS \
 		docs/CONTRIBUTING docs/CREDITS docs/HACKING docs/INSTALL
 CONFFILE=	html.php lang.php mime_drivers.php mime_mapping.php \
-		motd.php registry.php
+		motd.php prefs.php registry.php
+SUB_DIRS=	config graphics lib locale po scripts templates util
 
 LHORDEDIR?=	www/horde
 LHORDESBIN?=	sbin
@@ -65,6 +66,7 @@ pre-everything::
 	@${ECHO_MSG} "PHP with IMAP / IMAP-SSL, OpenLDAP, OpenSSL, mcrypt, XML,"
 	@${ECHO_MSG} "FTP, gettext, pspell, zlib, MCAL and"
 	@${ECHO_MSG} "a database (like MySQL or PostgreSQL)."
+	@${ECHO_MSG} "For Japanese language, please enable mbstring."
 	@${ECHO_MSG} ""
 
 pre-install:
@@ -83,9 +85,9 @@ pre-install:
 
 do-install:
 	@${MKDIR}  ${HORDEDIR}
-	@${CP} -Rp ${WRKSRC}/config ${WRKSRC}/graphics ${WRKSRC}/lib ${HORDEDIR}
-	@${CP} -Rp ${WRKSRC}/locale ${WRKSRC}/scripts ${WRKSRC}/templates ${HORDEDIR}
-	@${CP} -Rp ${WRKSRC}/po ${WRKSRC}/admin ${WRKSRC}/util ${HORDEDIR}
+.for REP in ${SUB_DIRS}
+	@${CP} -Rp ${WRKSRC}/${REP} ${HORDEDIR}
+.endfor
 	@${CP} -p  ${WRKSRC}/*.php ${HORDEDIR}
 	@if [ ! -f ${CONFDIR}/horde.php ]; then \
 		${CP} ${CONFDIR}/horde.php.dist ${CONFDIR}/horde.php ; \
