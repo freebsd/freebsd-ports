@@ -6116,6 +6116,7 @@ spat		ports/net/spat
 speak		ports/games/speak
 speak_freely	ports/mbone/speak_freely
 specfs		src/sys/miscfs/specfs
+speedbar	ports/editors/speedbar
 spegla		ports/ftp/spegla
 spellcast	ports/games/spellcast
 speyes		ports/games/speyes
