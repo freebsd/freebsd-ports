@@ -2,7 +2,7 @@ There really isn't much to say, noattach is a milter that parses the body
 of email messages from sendmail and checks if the filename of attachments
 matches one of the regular expressions in a given pattern file and rejects
 those emails that match.
-Filenames are MIME decoded if needed.
+Filenames are rfc2047 or rfc2231 decoded if needed.
 
 This program needs sendmail version 8.12.1 or newer to be compiled with
 libsm and libmilter.
