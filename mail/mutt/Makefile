@@ -18,15 +18,13 @@ MASTER_SITES=	ftp://ftp.mutt.org/mutt/ \
 		ftp://pgp.rasip.fer.hr/pub/mutt/international/
 DISTFILES=	${DISTNAME}i${EXTRACT_SUFX}
 
-PATCH_SITES=	http://www.mutt.org.ua/download/${PKGNAME}/ \
-		http://www.spinnaker.de/mutt/compressed/ \
-		http://www.frmug.org/mutt/mutt/${PKGNAME:S/^mutt-//}/ \
-		http://www.math.fu-berlin.de/~leitner/mutt/${PKGNAME:S/^mutt-//}/ \
-		http://www.efrei.fr/~parmelan/mutt/${PKGNAME:S/^mutt-//}/ \
-		ftp://www.frmug.org/pub/mutt/mutt/${PKGNAME:S/^mutt-//}/ \
-		ftp://riemann.iam.uni-bonn.de/pub/mutt/
-PATCHFILES=	patch-${PORTVERSION}.rr.compressed.1.gz \
-		patch-${PORTVERSION}.vvv.initials.gz
+PATCH_SITES=	http://www.spinnaker.de/mutt/compressed/:spinnaker \
+		http://www.mutt.org.ua/download/mutt-${PORTVERSION}/:vvv \
+		http://www2.mutt.org.ua/download/mutt-${PORTVERSION}/:vvv \
+		ftp://ftp.mutt.org.ua/pub/mutt/mutt-${PORTVERSION}/:vvv \
+		ftp://ftp2.mutt.org.ua/pub/mutt/mutt-${PORTVERSION}/:vvv
+PATCHFILES=	patch-${PORTVERSION}.rr.compressed.1.gz:spinnaker \
+		patch-${PORTVERSION}.vvv.initials.gz:vvv
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER?=	udo.schweigert@siemens.com
@@ -54,6 +52,10 @@ LIB_DEPENDS+=	sasl.8:${PORTSDIR}/security/cyrus-sasl
 .endif
 .if defined(WITH_SGML_DOCS) && ${WITH_SGML_DOCS} != "no"
 BUILD_DEPENDS+=	sgmlfmt:${PORTSDIR}/textproc/sgmlformat
+.endif
+.if defined(WITH_MUTT_XFACE)
+PATCH_DEPENDS+=	${NONEXISTENT}:${PORTSDIR}/news/slrnface:extract
+RUN_DEPENDS+=	slrnface:${PORTSDIR}/news/slrnface
 .endif
 
 DIST_SUBDIR=	mutt
@@ -84,6 +86,14 @@ CONFIGURE_ARGS+=	--with-sasl=${LOCALBASE}
 .endif
 MAN1=		flea.1 mutt.1 mutt_dotlock.1 muttbug.1
 MAN5=		mbox.5 muttrc.5
+
+.if defined(WITH_MUTT_XFACE)
+post-patch:
+	@${ECHO} "===>  Applying XFACE patch"
+	@slrnface_dir=`${FIND} ${PORTSDIR}/news/slrnface/work -type d \
+			-name slrnface-\*`; \
+	cd ${BUILD_WRKSRC}; ${PATCH} ${PATCH_ARGS} < $$slrnface_dir/mutt.patch
+.endif
 
 # XXX
 # this should be done automagically by aclocal but ....
@@ -122,6 +132,17 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/*.html ${PREFIX}/share/doc/mutt/html
 	${INSTALL_MAN} ${WRKSRC}/doc/*.latin1 ${PREFIX}/share/doc/mutt
 .endif
+.endif
+
+.if defined(WITH_MUTT_XFACE)
+	@${ECHO} ""
+	@${ECHO} "************************************************************"
+	@${ECHO} "  To enable the XFACE support in mutt you also have to add"
+	@${ECHO} "        set xface=yes"
+	@${ECHO} "  to your ~/.muttrc"
+	@${ECHO} "  Additional information is provided by news/slrnface"
+	@${ECHO} "************************************************************"
+	@${ECHO} ""
 .endif
 
 .include <bsd.port.mk>
