@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	luma
-PORTVERSION=	1.0.b2
+PORTVERSION=	1.1
 CATEGORIES=	sysutils net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}-1.0beta2
 
 MAINTAINER=	alecn2002@yandex.ru
 COMMENT=	A graphical tool for accessing and managing LDAP servers
