@@ -7,6 +7,7 @@
 
 PORTNAME=	xmbmon
 PORTVERSION=	205
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.nt.phys.kyushu-u.ac.jp/shimizu/download/xmbmon/
 .if defined(WITHOUT_X11)
@@ -17,6 +18,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	kaz@kobe1995.net
 COMMENT=	X/tty motherboard monitor for LM78/79, W8378x, AS99127F, VT82C686 and ADM9240
 
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 .if defined(WITHOUT_X11)
 PLIST_SUB=	X11_ONLY="@comment "
@@ -27,7 +29,7 @@ PLIST_SUB=	X11_ONLY=""
 
 MAKE_ARGS+=	DOCSDIR='${DOCSDIR}' INSTALL_DATA='${INSTALL_DATA}' PREFIX='${PREFIX}'
 
-MAN1=		xmbmon.1x
+MAN1=		xmbmon.1x mbmon.1
 
 .include <bsd.port.pre.mk>
 
@@ -42,10 +44,13 @@ pre-everything::
 	@${ECHO_CMD} "WITHOUT_X11	- Self explanatory"
 	@${ECHO_CMD} ""
 
+post-patch:
+	@${REINPLACE_CMD} -e 's+/usr/share/doc/mbmon+${DOCSDIR}+' ${WRKSRC}/mbmon.1
+
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	(cd ${WRKSRC}; ${MAKE} ${MAKE_ARGS} install-doc)
+	(cd ${WRKSRC}; ${MAKE} ${MAKE_ARGS} install-man install-doc)
 .endif
 
 .include <bsd.port.post.mk>
