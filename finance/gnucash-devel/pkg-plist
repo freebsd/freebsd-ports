@@ -562,12 +562,6 @@ share/gnome/gnucash/guile-modules/gnucash/report/utility-reports.scm
 share/gnome/gnucash/guile-modules/gnucash/report/view-column.scm
 share/gnome/gnucash/guile-modules/gnucash/report/welcome-to-gnucash.scm
 share/gnome/gnucash/guile-modules/gnucash/tax/us.scm
-share/gnome/gnucash/guile-modules/srfi/srfi-1.scm
-share/gnome/gnucash/guile-modules/srfi/srfi-11.scm
-share/gnome/gnucash/guile-modules/srfi/srfi-19.scm
-share/gnome/gnucash/guile-modules/srfi/srfi-2.scm
-share/gnome/gnucash/guile-modules/srfi/srfi-8.scm
-share/gnome/gnucash/guile-modules/srfi/srfi-9.scm
 share/gnome/gnucash/guile-modules/www/cgi.scm
 share/gnome/gnucash/guile-modules/www/http.scm
 share/gnome/gnucash/guile-modules/www/main.scm
