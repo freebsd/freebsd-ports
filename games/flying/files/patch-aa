@@ -13,7 +13,7 @@
  
  LOCAL_LIBRARIES = -lX11 -lm
 -
-+all: flying
++all:: flying
  flying: $(OBJS) $(DEPLIBS)
  	$(RM) $@
  	$(CXX) -o $@ $(OBJS) $(LDOPTIONS) $(LOCAL_LIBRARIES) $(LDLIBS) $(EXTRA_LOAD_FLAGS)
