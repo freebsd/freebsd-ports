@@ -3,14 +3,14 @@
 # Date created:         2 July 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.5 1998/02/18 06:24:54 steve Exp $
+# $Id: Makefile,v 1.6 1998/08/19 17:01:37 hoek Exp $
 #
 
 DISTNAME=	LAPACK
 PKGNAME=	lapack-2.0
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.netlib.org/lapack/
-DISTFILES=	lapack.tar.gz manpages.tar.gz
+DISTFILES=	lapack.tgz manpages.tgz
 
 MAINTAINER=	jmz@FreeBSD.org
 
