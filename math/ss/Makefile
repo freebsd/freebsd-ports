@@ -8,8 +8,8 @@
 PORTNAME=	ss
 PORTVERSION=	1.3.3
 CATEGORIES=	math
-MASTER_SITES=	http://www.irus.rri.on.ca/~amulder/ss/ \
-		ftp://ftp.u-aizu.ac.jp/pub/misc/tools/spreadsheet/ualberta/
+MASTER_SITES=	http://www.netsw.org/office/ \
+		http://ftp.de.cw.net/pub/netsw/office/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
