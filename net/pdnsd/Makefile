@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pdnsd
-PORTVERSION=	1.1.1
+PORTVERSION=	1.1.5
 CATEGORIES=	net
 MASTER_SITES=	http://home.t-online.de/home/Moestl/
 
@@ -14,6 +14,8 @@ MAINTAINER=	roman@xpert.com
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-cachedir=${PDNSDB}
+
+MAN8=		pdnsd-ctl.8
 
 PDNSDB=		/var/db/pdnsd
 
