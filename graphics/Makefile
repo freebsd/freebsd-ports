@@ -70,9 +70,6 @@
     SUBDIR += guilib
     SUBDIR += gview
     SUBDIR += gxanim
-    SUBDIR += gyvefigs
-    SUBDIR += gyvegui
-    SUBDIR += gyvekernel
     SUBDIR += hdf
     SUBDIR += hobbes-icons-xpm
     SUBDIR += hppsmtools
