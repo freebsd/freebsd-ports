@@ -8,18 +8,20 @@
 
 PORTNAME=	libtecla
 PORTVERSION=	1.4.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.astro.caltech.edu/~mcs/tecla/
 
 MAINTAINER=	ports@FreeBSD.org
 
 USE_SUBMAKE=	yes
-GNU_CONFIGURE=	yes
+USE_AUTOCONF=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 ALL_TARGET=	default
 SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
 	REALCURDIR="${.CURDIR}" \
 	PORTNAME="${PORTNAME}"
+INSTALLS_SHLIB=	yes
 
 post-extract:
 	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/genman3list.sh

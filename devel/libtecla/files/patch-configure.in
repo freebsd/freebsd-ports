@@ -1,0 +1,16 @@
+--- configure.in.orig	Wed Nov 13 18:46:39 2002
++++ configure.in	Wed Nov 13 18:43:42 2002
+@@ -365,6 +365,13 @@
+ *dec-osf*)
+   AC_DEFINE(_OSF_SOURCE)
+   ;;
++*freebsd*)
++  SHARED_EXT=".so.${MAJOR_VER}"
++  SHARED_ALT=".so"
++  VERSION_OPT='--version-script=$$(srcdir)/libtecla.map'
++  LINK_SHARED='ld -o $$@ -soname libtecla$$(SUFFIX).so.'${MAJOR_VER}' -shared '$VERSION_OPT' $$(LIB_OBJECTS) $$(LIBS) -lc'
++  SHARED_CFLAGS="-fpic"
++  ;;
+ esac
+ 
+ dnl The following statement checks to see if the GNU C compiler has
