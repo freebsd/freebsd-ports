@@ -8,7 +8,8 @@
 PORTNAME=	user-selector-applet
 PORTVERSION=	0.0.7
 CATEGORIES=	x11 gnome
-MASTER_SITES=	http://esco.mine.nu/downloads/
+MASTER_SITES=	http://esco.mine.nu/downloads/ \
+		${MASTER_SITE_LOCAL:S/%SUBDIR%/bland/}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	bland@FreeBSD.org
@@ -17,7 +18,6 @@ COMMENT=	Fast user switching applet for GNOME
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack intlhack gtk20 gnomepanel
-USE_LIBTOOL_VER=	13
-INSTALLS_SHLIB=	yes
+USE_LIBTOOL_VER=	15
 
 .include <bsd.port.mk>
