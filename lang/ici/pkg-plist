@@ -39,11 +39,11 @@ lib/ici3/ici3core1.ici
 lib/ici3/ici3core2.ici
 lib/ici3/ici3core3.ici
 lib/libici3.a
-share/doc/ici3/ici-a4.ps
-share/doc/ici3/ici-ltr.ps
-share/doc/ici3/ici.txt
-share/doc/ici3/ici.pdf
+%%PORTDOCS%%share/doc/ici3/ici-a4.ps
+%%PORTDOCS%%share/doc/ici3/ici-ltr.ps
+%%PORTDOCS%%share/doc/ici3/ici.txt
+%%PORTDOCS%%share/doc/ici3/ici.pdf
+%%PORTDOCS%%@dirrm share/doc/ici3
 @dirrm include/ici3/pcre
 @dirrm include/ici3
-@unexec rmdir %D/share/doc/ici3 2>/dev/null || true
 @unexec rmdir %D/lib/ici3 2>/dev/null || true
