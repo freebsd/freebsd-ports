@@ -4,23 +4,39 @@ bin/bogoutil
 bin/bogoupgrade
 etc/bogofilter.cf.example
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES-0.10
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/METHODS
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/README.Robinson
-%%PORTDOCS%%%%DOCSDIR%%/README.dcdflib
-%%PORTDOCS%%%%DOCSDIR%%/README.freebsd
-%%PORTDOCS%%%%DOCSDIR%%/README.hp-ux
-%%PORTDOCS%%%%DOCSDIR%%/README.unbase64
+%%PORTDOCS%%%%DOCSDIR%%/README.cvs
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/UPGRADE
-%%PORTDOCS%%%%DOCSDIR%%/bogo.R
 %%PORTDOCS%%%%DOCSDIR%%/bogofilter-SA-2002-01
-%%PORTDOCS%%%%DOCSDIR%%/bogofilter-qfe
-%%PORTDOCS%%%%DOCSDIR%%/bogopass
-%%PORTDOCS%%%%DOCSDIR%%/dot-qmail-bogofilter-default
+%%PORTDOCS%%%%DOCSDIR%%/contrib/README.randomtrain
+%%PORTDOCS%%%%DOCSDIR%%/contrib/bogo.R
+%%PORTDOCS%%%%DOCSDIR%%/contrib/bogofilter-qfe
+%%PORTDOCS%%%%DOCSDIR%%/contrib/bogogrep
+%%PORTDOCS%%%%DOCSDIR%%/contrib/dot-qmail-bogofilter-default
+%%PORTDOCS%%%%DOCSDIR%%/contrib/randomtrain
+%%PORTDOCS%%%%DOCSDIR%%/contrib/scramble
+%%PORTDOCS%%%%DOCSDIR%%/html/bogofilter-faq.html
+%%PORTDOCS%%%%DOCSDIR%%/html/bogofilter.html
+%%PORTDOCS%%%%DOCSDIR%%/html/bogolexer.html
+%%PORTDOCS%%%%DOCSDIR%%/html/bogoupgrade.html
+%%PORTDOCS%%%%DOCSDIR%%/html/bogoutil.html
 %%PORTDOCS%%%%DOCSDIR%%/integrating-with-qmail
-%%PORTDOCS%%%%DOCSDIR%%/unbase64
+%%PORTDOCS%%%%DOCSDIR%%/programmer/README.dcdflib
+%%PORTDOCS%%%%DOCSDIR%%/programmer/README.freebsd
+%%PORTDOCS%%%%DOCSDIR%%/programmer/README.hp-ux
+%%PORTDOCS%%%%DOCSDIR%%/xml/bogofilter.xml
+%%PORTDOCS%%%%DOCSDIR%%/xml/bogolexer.xml
+%%PORTDOCS%%%%DOCSDIR%%/xml/bogoupgrade.xml
+%%PORTDOCS%%%%DOCSDIR%%/xml/bogoutil.xml
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/xml
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/programmer
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/contrib
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
