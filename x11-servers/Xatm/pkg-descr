@@ -1,0 +1,12 @@
+Xatm is PostScript font loader for X. 
+Standerd X can only load Type1 PostScript font, but Xatm do more. 
+Xatm can load Type 0,1,3,42 and OCF & CID type 16bit fonts. And also
+supports defered glyph option. 
+This is good for Japanese or other asian font users. 
+
+NOTE: Xatm requires ghostscript! You must install one of them.
+
+WWW: http://www.netlab.is.tsukuba.ac.jp/~yokota/izumi/Xatm/xatm_e.html
+
+Taguchi, T.
+taguchi@tohoku.iij.ad.jp

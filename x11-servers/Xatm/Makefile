@@ -1,0 +1,38 @@
+# New ports collection makefile for:	xfs-atm
+# Version required:	3.0.1
+# Date created:		31 Oct 1999
+# Whom:			taguchi@tohoku.iij.ad.jp
+#
+# $FreeBSD$
+#
+
+DISTNAME=	xfs-atm+cid-3.0.1
+PKGNAME=	xfs-atm-3.0.1
+CATEGORIES=	x11
+MASTER_SITES=	http://www.netlab.is.tsukuba.ac.jp/~yokota/archive/
+
+MAINTAINER=	taguchi@tohoku.iij.ad.jp
+
+USE_IMAKE=	yes
+USE_GMAKE=	yes
+MAKE_ENV+=	MAKE=${GMAKE}
+MANCOMPRESSED=	yes
+MAN1=		xfs-atm.1
+DOCFILES=	README.t1-cid+xatm-cap README.t1-cid+xatm-cap.eng \
+		README.xfs-atm README.xfs-atm.eng \
+		lib/font/Xatm/Q_and_A.Xatm \
+		lib/font/Xatm/README lib/font/Xatm/README.eng \
+		lib/font/Xatm/README.fonts_cap \
+		lib/font/Xatm/README.fonts_cap.eng
+DOCPATH=	${PREFIX}/share/doc/Xatm
+
+post-install:
+.if !defined(NOPORTDOCS)
+	( ${MKDIR} ${DOCPATH} ; \
+	   cd ${WRKSRC}; \
+	   for i in ${DOCFILES} ; do \
+		${INSTALL_DATA} $$i ${DOCPATH}; \
+	   done )
+.endif
+
+.include <bsd.port.mk>

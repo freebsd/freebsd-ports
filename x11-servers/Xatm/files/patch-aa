@@ -1,0 +1,15 @@
+--- programs/Imakefile~	Fri Apr  2 05:38:13 1999
++++ programs/Imakefile	Sun Oct 31 09:30:22 1999
+@@ -3,9 +3,10 @@
+ #define IHaveSubdirs
+ #define PassCDebugFlags CDEBUGFLAGS="$(CDEBUGFLAGS)"
+ 
+-#ifndef BuildFontServer
+-#define BuildFontServer
++#ifdef BuildFontServer
++#undef BuildFontServer
+ #endif
++#define BuildFontServer YES
+ 
+ #if BuildServer
+        RGBSRCDIR = rgb

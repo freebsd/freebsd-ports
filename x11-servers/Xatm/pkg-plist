@@ -1,0 +1,14 @@
+bin/xfs-atm
+lib/X11/xfs-atm/config
+lib/X11/xfs-atm/fonts.cap.sample
+lib/X11/xfs-atm/fonts.dir.sample
+share/doc/Xatm/Q_and_A.Xatm
+share/doc/Xatm/README
+share/doc/Xatm/README.eng
+share/doc/Xatm/README.fonts_cap
+share/doc/Xatm/README.fonts_cap.eng
+share/doc/Xatm/README.t1-cid+xatm-cap
+share/doc/Xatm/README.t1-cid+xatm-cap.eng
+share/doc/Xatm/README.xfs-atm
+share/doc/Xatm/README.xfs-atm.eng
+@dirrm share/doc/Xatm

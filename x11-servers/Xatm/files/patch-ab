@@ -1,0 +1,25 @@
+--- Imakefile.orig	Sun Oct 31 09:42:32 1999
++++ Imakefile	Sun Oct 31 09:43:58 1999
+@@ -19,18 +19,18 @@
+ 
+ xfs-atm:: ./programs/xfs/xfs-atm
+ 	rm -f $@
+-	cp $< $@
++	cp ./programs/xfs/xfs-atm $@
+ 
+ config.sample:: ./programs/xfs/config
+ 	rm -f $@
+-	cp $< $@
++	cp ./programs/xfs/config $@
+ 
+ fonts.cap.sample:: ./lib/font/Xatm/fonts.cap.sample
+ 	rm -f $@
+-	cp $< $@
++	cp ./lib/font/Xatm/fonts.cap.sample $@
+ fonts.dir.sample:: ./lib/font/Xatm/fonts.dir.sample
+ 	rm -f $@
+-	cp $< $@
++	cp ./lib/font/Xatm/fonts.dir.sample $@
+ 
+ clean::
+ 	rm -f $(XATM_TARGET)
