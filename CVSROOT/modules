@@ -3446,6 +3446,7 @@ ko-pycodec	ports/korean/pycodec
 ko-qt31		ports/korean/qt31
 ko-texinfo	ports/korean/texinfo
 ko-uniksc	ports/korean/uniksc
+ko-unzip	ports/korean/unzip
 kobodeluxe	ports/games/kobodeluxe
 koffice-i18n	ports/misc/koffice-i18n
 koffice-i18n-af	ports/misc/koffice-i18n-af
