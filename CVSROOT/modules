@@ -4144,6 +4144,7 @@ linux-ibm-jdk13	ports/java/linux-ibm-jdk13
 linux-ibm-jdk14	ports/java/linux-ibm-jdk14
 linux-imlib	ports/graphics/linux-imlib
 linux-j		ports/lang/linux-j
+linux-jigdo	ports/net/linux-jigdo
 linux-jpeg	ports/graphics/linux-jpeg
 linux-lesstif-ns	ports/www/linux-lesstif-ns
 linux-libaudiofile	ports/audio/linux-libaudiofile
