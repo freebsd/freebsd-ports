@@ -1,6 +1,6 @@
 FreeWnn is a Japanese/Chinese/Korean input method.  
 
-WWW: www.freewnn.org
+WWW: http://www.freewnn.org/
 
 This port has only libraries for a Japanese imput method. The
 libraries containes a archive file (libwnn.a), header files and files
