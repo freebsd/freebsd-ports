@@ -164,6 +164,7 @@
     SUBDIR += jailer
     SUBDIR += jailutils
     SUBDIR += jdiskreport
+    SUBDIR += jtop
     SUBDIR += k3b
     SUBDIR += kcpuload
     SUBDIR += kcube
