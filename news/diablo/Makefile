@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.openusenet.org/diablo/download/
 DISTNAME=	${PKGNAME}-REL
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	dominic_marks@btinternet.com
+MAINTAINER=	d.marks@students.umist.ac.uk
 
 BUILD_DEPENDS=	xmake:${PORTSDIR}/devel/xmake
 

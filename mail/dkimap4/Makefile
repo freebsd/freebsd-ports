@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.dbox.handshake.de/download/ \
 		http://www-2.cs.cmu.edu/~kroening/dbox/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	dominic_marks@btinternet.com
+MAINTAINER=	d.marks@students.umist.ac.uk
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

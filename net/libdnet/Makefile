@@ -1,6 +1,6 @@
 # New ports collection makefile for:	libdnet
 # Date created:				15 April 2002
-# Whom:			Dominic Marks <dominic_marks@btinternet.com>
+# Whom:			Dominic Marks <d.marks@students.umist.ac.uk>
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	dominic_marks@btinternet.com
+MAINTAINER=	d.marks@students.umist.ac.uk
 
 GNU_CONFIGURE=	yes
 
