@@ -10,7 +10,7 @@ PORTNAME=	dlx
 PORTVERSION=	2.0
 CATEGORIES=	emulators
 MASTER_SITES=	ftp://max.stanford.edu/pub/hennessy-patterson.software/
-DISTFILE=	${PORTNAME}
+DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	obrien@FreeBSD.org
