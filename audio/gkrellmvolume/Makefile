@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gkrellmvolume
-PORTVERSION= 	0.6
+PORTVERSION= 	0.7
 CATEGORIES=	audio
 MASTER_SITES=	http://gkrellm.luon.net/files/
 DISTNAME=	volume-${PORTVERSION}
