@@ -4021,7 +4021,6 @@ mp3stat		ports/audio/mp3stat
 mpack		ports/converters/mpack
 mpage		ports/print/mpage
 mpd		ports/net/mpd
-mpd-netgraph	ports/net/mpd-netgraph
 mpeg		ports/graphics/mpeg
 mpeg-lib	ports/graphics/mpeg-lib
 mpeg2codec	ports/graphics/mpeg2codec
