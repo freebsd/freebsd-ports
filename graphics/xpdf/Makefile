@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xpdf
-PORTVERSION=	2.03
-PORTREVISION=	1
+PORTVERSION=	3.00
 CATEGORIES=	graphics print
 MASTER_SITES=	ftp://ftp.foolabs.com/pub/xpdf/ \
 		${MASTER_SITE_TEX_CTAN}
@@ -40,7 +39,7 @@ CONFIGURE_ARGS+=	--enable-a4-paper
 MAN1=		pdffonts.1 \
 		pdfimages.1 \
 		pdfinfo.1 \
-		pdftopbm.1 \
+		pdftoppm.1 \
 		pdftops.1 \
 		pdftotext.1 \
 		xpdf.1
