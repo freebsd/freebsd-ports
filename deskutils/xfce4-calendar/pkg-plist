@@ -1,0 +1,5 @@
+bin/xfcalendar
+lib/xfce4/mcs-plugins/xfcalendar_plugin.so
+lib/xfce4/mcs-plugins/xfcalendar_plugin.la
+lib/xfce4/mcs-plugins/xfcalendar_plugin.a
+@unexec rmdir %D/lib/xfce4/mcs-plugins 2>/dev/null || true
