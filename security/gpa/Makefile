@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	gpa
-PORTVERSION=	0.4.0
+PORTVERSION=	0.4.1
 CATEGORIES=	security
-MASTER_SITES=	ftp://ftp.guug.de/pub/fruis/gpa/
+MASTER_SITES=	ftp://ftp.gnupg.org/gcrypt/alpha/gpa/
 
 MAINTAINER=	clive@FreeBSD.org
 
