@@ -27,8 +27,10 @@ cd ${MOZDIR} || exit 1
 ./run-mozilla.sh ${REGXPCOM} || true
 ./run-mozilla.sh ${REGCHROME} || true
 mkdir -p ${MOZDIR}/extensions
-cp -p ${MOZDIR}/defaults/profile/extensions/Extensions.rdf ${MOZDIR}/extensions
-cp -p ${MOZDIR}/defaults/profile/extensions/installed-extensions.txt \
+cp -rp ${MOZDIR}/defaults/profile/extensions/* ${MOZDIR}/extensions
+mv -f ${MOZDIR}/extensions/installed-extensions.txt \
 	${MOZDIR}/extensions/installed-extensions-processed.txt
+cp -p ${MOZDIR}/extensions.port/Extensions.rdf \
+	${MOZDIR}/extensions
 
 exit 0
