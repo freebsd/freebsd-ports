@@ -117,6 +117,7 @@
     SUBDIR += gkrellmvolume2
     SUBDIR += glame
     SUBDIR += gmixer
+    SUBDIR += gmpc
     SUBDIR += gnapster
     SUBDIR += gnomeaudio2
     SUBDIR += gnomemedia2
@@ -360,7 +361,6 @@
     SUBDIR += toolame
     SUBDIR += tosha
     SUBDIR += tracker
-    SUBDIR += traymp
     SUBDIR += trm
     SUBDIR += trommler
     SUBDIR += tuneradio
