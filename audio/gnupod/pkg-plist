@@ -17,6 +17,3 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/iPod.pm
 %%PORTDOCS%%share/doc/gnupod/version.texi
 %%PORTDOCS%%share/doc/gnupod/ipod.svg
 %%PORTDOCS%%@dirrm share/doc/gnupod
-@unexec install-info --delete %D/info/gnupod.info %D/info/dir
-info/gnupod.info
-@exec install-info %D/info/gnupod.info %D/info/dir
