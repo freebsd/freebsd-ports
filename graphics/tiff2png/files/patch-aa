@@ -1,5 +1,5 @@
---- Makefile.orig	Mon Feb 14 05:39:40 2000
-+++ Makefile	Tue Jul  4 19:29:41 2000
+--- Makefile.unx.orig	Fri Nov 10 02:32:50 2000
++++ Makefile.unx	Wed Nov 22 21:46:33 2000
 @@ -2,9 +2,9 @@
  # Copyright (C) 1996 Willem van Schaik
  
@@ -13,14 +13,7 @@
  #COPY=cp
  COPY=/bin/cp -p
  DEL=/bin/rm -f
-@@ -49,21 +49,15 @@
- #ZLIB=/usr/lib
- ZLIB=/usr/local/lib
- #ZLIB=../zlib
--ZINC=/usr/local/include
-+#ZINC=/usr/local/include
- #ZINC=$(ZLIB)
- 
+@@ -56,15 +56,9 @@
  INSTALL=/usr/local
  
  # GRR 19990713:  FAXPECT is a custom conversion option for stretched faxes
