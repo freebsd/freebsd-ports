@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	uae
-PORTVERSION=	0.7.6
+PORTVERSION=	0.8.15
 CATEGORIES=	emulators
-MASTER_SITES=	ftp://ftp.freiburg.linux.de/pub/uae/ \
+MASTER_SITES=	ftp://ftp.freiburg.linux.de/pub/uae/sources/develop/ \
 		http://www.users.globalnet.co.uk/~simd/
 
 MAINTAINER=	simond@irrelevant.org
