@@ -26,7 +26,7 @@ LCLTARGET?=	i386-rtems
 GCCNAME=	gcc-2.95.2
 NEWLIBNAME=	newlib-1.8.2
 MASTERDIR=	${.CURDIR}/../i386-rtems-gcc
-PLIST=		${PKGDIR}/PLIST.${LCLTARGET}
+PLIST=		${PKGDIR}/pkg-plist.${LCLTARGET}
 
 BUILD_DEPENDS=	autoheader:${PORTSDIR}/devel/autoconf \
 		${LCLTARGET}-as:${PORTSDIR}/devel/${LCLTARGET}-binutils \

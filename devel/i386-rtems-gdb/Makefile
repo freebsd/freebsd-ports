@@ -23,7 +23,7 @@ LCLTARGET?=	i386-rtems
 
 GDBNAME=	gdb-5.0
 MASTERDIR=	${.CURDIR}/../i386-rtems-gdb
-PLIST=		${PKGDIR}/PLIST.${LCLTARGET}
+PLIST=		${PKGDIR}/pkg-plist.${LCLTARGET}
 
 BUILD_DEPENDS=	${LCLTARGET}-as:${PORTSDIR}/devel/${LCLTARGET}-binutils \
 		${LCLTARGET}-ld:${PORTSDIR}/devel/${LCLTARGET}-binutils
