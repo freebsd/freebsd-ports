@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	simicq
-PORTVERSION=	0.8.1
+PORTVERSION=	0.8.2
 CATEGORIES=	net kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME:S/mi/m-i/}
@@ -16,6 +16,7 @@ COMMENT=	ICQ client which supports Version 8 of the ICQ protocol (ICQ 2001)
 
 USE_GMAKE=	yes
 USE_QT_VER=	3
+USE_PERL5_BUILD=	yes
 GNU_CONFIGURE=	yes
 .if !defined(WITHOUT_SSL)
 USE_OPENSSL=	yes
@@ -23,8 +24,7 @@ USE_OPENSSL=	yes
 CONFIGURE_ARGS+=--disable-openssl
 .endif
 CONFIGURE_TARGET=
-CONFIGURE_ARGS+=	 --disable-fast-perl \
-		--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ARGS+= --build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 .if defined(WITHOUT_KDE)
 CONFIGURE_ARGS+=	--disable-kde --enable-mt
@@ -35,7 +35,8 @@ USE_KDELIBS_VER=	3
 
 post-patch:
 .if defined(WITHOUT_KDE)
-	${REINPLACE_CMD} -e "s,qtlib=\"qt\",qtlib=\"qt-mt -pthread\"," ${WRKSRC}/configure
+	${REINPLACE_CMD} -e "s,qtlib=\"qt\",qtlib=\"qt-mt -pthread\"," \
+		${WRKSRC}/configure
 .endif
 
 .include <bsd.port.mk>

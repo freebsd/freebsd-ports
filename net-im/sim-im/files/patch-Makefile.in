@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Sun Jun 22 16:38:25 2003
++++ Makefile.in	Sun Jun 22 16:38:50 2003
+@@ -591,8 +591,6 @@
+ 	uninstall-info-recursive uninstall-recursive
+ 
+ 
+-$(top_srcdir)/configure.in: configure.in.in $(top_srcdir)/subdirs
+-	cd $(top_srcdir) && $(MAKE) -f admin/Makefile.common configure.in ;
+ 
+ $(top_srcdir)/subdirs:
+ 	cd $(top_srcdir) && $(MAKE) -f admin/Makefile.common subdirs
