@@ -1,6 +1,6 @@
 # New ports collection makefile for:	fragroute
 # Date created:				19 May 2002
-# Whom:		Dominic Marks <d.marks@student.umist.ac.uk>
+# Whom:		Dominic Marks <dominic.marks@btinternet.com>
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	security net
 MASTER_SITES=	http://monkey.org/~dugsong/fragroute/
 
-MAINTAINER=	d.marks@student.umist.ac.uk
+MAINTAINER=	dominic.marks@btinternet.com
 COMMENT=	A tool for intercepting, modifying and rewriting egress traffic
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libdnet.a:${PORTSDIR}/net/libdnet \

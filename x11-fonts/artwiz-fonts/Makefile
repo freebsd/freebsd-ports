@@ -1,6 +1,6 @@
 # New ports collection makefile for:	artwiz-fonts
 # Date created:				25/08/2002
-# Whom:			Dominic Marks <d.marks@student.umist.ac.uk>
+# Whom:			Dominic Marks <dominic.marks@btinternet.com>
 #
 # $FreeBSD$
 #
@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.xs4all.nl/~hanb/software/fluxbox/ \
 		http://www.cus.org.uk/~dom/distfiles/artwiz-fonts/
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=	d.marks@student.umist.ac.uk
+MAINTAINER=	dominic.marks@btinternet.com
 COMMENT=	A set of free fonts for X11 desktops
 
 NO_BUILD=	yes

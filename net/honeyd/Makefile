@@ -1,6 +1,6 @@
 # New ports collection makefile for:	honeyd
 # Date created:				16/04/2002
-# Whom:				Dominic Marks <d.marks@student.umist.ac.uk>
+# Whom:				Dominic Marks <dominic.marks@btinternet.com>
 #
 # $FreeBSD$
 #
@@ -10,7 +10,7 @@ PORTVERSION=	0.5
 CATEGORIES=	net
 MASTER_SITES=	http://niels.xtdnet.nl/honeyd/
 
-MAINTAINER=	d.marks@student.umist.ac.uk
+MAINTAINER=	dominic.marks@btinternet.com
 COMMENT=	A utility to simualte services and hosts on a virtual network host
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libdnet.a:${PORTSDIR}/net/libdnet \
