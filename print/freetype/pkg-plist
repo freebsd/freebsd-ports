@@ -1,16 +1,22 @@
-bin/ftview
-bin/fttimer
-bin/ftlint
 bin/ftdump
-bin/ftzoom
+bin/ftlint
 bin/ftstring
 bin/ftstrpnm
+bin/fttimer
+bin/ftview
+bin/ftzoom
 include/freetype.h
-include/ttcommon.h
-include/tterror.h
+include/fterrid.h
+include/ftnameid.h
+include/ftxcmap.h
+include/ftxerr18.h
+include/ftxgasp.h
+include/ftxkern.h
+include/ftxpost.h
+include/ftxwidth.h
 lib/libttf.a
 lib/libttf.la
 lib/libttf.so
-lib/libttf.so.1.0
+lib/libttf.so.2.0
 @exec ldconfig -m %B
 @unexec /sbin/ldconfig -R
