@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnome-icon-theme
-PORTVERSION=	1.0.2
-PORTREVISION=	1
+PORTVERSION=	1.0.3
 CATEGORIES=	misc gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/1.0
@@ -19,9 +18,9 @@ COMMENT=	A collection of icons for the GNOME 2 desktop
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_LIBTOOL=	yes
-USE_GNOME=	gtk20
+GNU_CONFIGURE=	yes
+USE_GNOME=	gnomehack gtk20
 CONFIGURE_ARGS=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>
