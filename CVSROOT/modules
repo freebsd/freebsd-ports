@@ -6412,6 +6412,7 @@ rox-archive	ports/archivers/rox-archive
 rox-edit	ports/editors/rox-edit
 rox-filer	ports/x11-fm/rox-filer
 rox-memo	ports/deskutils/rox-memo
+rox-mime-editor	ports/x11-fm/rox-mime-editor
 rox-session	ports/x11-fm/rox-session
 rox-wallpaper	ports/x11/rox-wallpaper
 roxen		ports/www/roxen
