@@ -41,7 +41,7 @@ post-install:
 		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${INSTALL_TARGET})
 .endfor
 .if defined(PARALLEL_PACKAGE_BUILD) || defined(BATCH) || defined(CLEAN_ROOT)
-	rm -rf /root/GNUstep
+	${RM} -rf /root/GNUstep
 .endif
 
 .include <bsd.port.mk>
