@@ -28,7 +28,7 @@ INSTALLS_SHLIB=	yes
 
 MAN1=		mrproject.1 run-mrproject.1 mrproject-engine.1
 
-pre-patch:
+post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
 		s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
 
