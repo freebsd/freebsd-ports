@@ -95,8 +95,10 @@ post-install:
 	${ECHO_CMD} "@dirrm etc/apcupsd" >> ${TMPPLIST}
 	${ECHO_CMD} "@unexec if [ -d %D/etc/apcupsd ]; then echo \"If you are permanently removing this port, you should do a ``rm -rf ${PREFIX}/etc/apcupsd`` to remove config files left.\" | fmt ; fi" >> ${TMPPLIST}
 	# Install sample startup script
-	${INSTALL_SCRIPT} ${FILESDIR}/${STARTUP_SCRIPT} \
-			  ${PREFIX}/etc/rc.d/${STARTUP_SCRIPT}
+	${INSTALL_SCRIPT} ${FILESDIR}/${STARTUP_SCRIPT} ${PREFIX}/etc/rc.d/${STARTUP_SCRIPT}
+	${INSTALL_DATA} ${FILESDIR}/apcupsd.conf.net-master.sample ${PREFIX}/etc/apcupsd/
+	${INSTALL_DATA} ${FILESDIR}/apcupsd.conf.net-slave.sample ${PREFIX}/etc/apcupsd/
+
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for filen in ${PORTDOCS}
