@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	qscintilla
-PORTVERSION=	1.5
+PORTVERSION=	1.5.1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://www.river-bank.demon.co.uk/download/QScintilla/
 DISTNAME=	qscintilla-1.62-gpl-${PORTVERSION}
