@@ -19,6 +19,7 @@ BUILD_DEPENDS=	freetype-config:${PORTSDIR}/print/freetype2 \
 LIB_DEPENDS=	medusa.0:${PORTSDIR}/sysutils/medusa \
 		freetype.9:${PORTSDIR}/print/freetype2 \
 		eel.0:${PORTSDIR}/x11-toolkits/eel
+RUN_DEPENDS=	${X11BASE}/share/gnome/ui/nautilus-galeon-view-ui.xml:${PORTSDIR}/www/galeon
 
 WITHOUT_MOZILLA=	"Doesn't work with Mozilla-0.9.9"
 
