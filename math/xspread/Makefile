@@ -8,40 +8,34 @@
 PORTNAME=	xspread
 PORTVERSION=	3.1.1c
 CATEGORIES=	math
-MASTER_SITES=	http://linux.tucows.com/files/x11/office/
-DISTNAME=	${PORTNAME}${PORTVERSION}
+MASTER_SITES=	http://ftp.debian.org/debian/dists/potato/main/source/math/
+DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 
 MAINTAINER=	ports@FreeBSD.org
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}.orig
 
 USE_XLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
 		LIBS="-L${X11BASE}/lib"
 
-INSTALL_TARGET=	install install.man
 MAN1=		xspread.1 pxspread.1
 
-XS_DIR=		${PREFIX}/share/xspread
-
-post-extract:
-.for file in config.cache config.h config.log config.status
-	@${RM} ${WRKSRC}/${file} || ${TRUE}
-.endfor
-
-post-install:
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/pxspread ${PREFIX}/bin/pxspread
+	${INSTALL_PROGRAM} ${WRKSRC}/xspread ${PREFIX}/bin/xspread
+	${INSTALL_MAN} ${WRKSRC}/pxspread.man ${MANPREFIX}/man/man1/pxspread.1
+	${INSTALL_MAN} ${WRKSRC}/xspread.man ${MANPREFIX}/man/man1/xspread.1
 .if !defined(NOPORTDOCS)
-	@find ${WRKSRC} -name "*.tmp" -delete || ${TRUE}
-	@${MKDIR} ${XS_DIR}
-	@${MKDIR} ${XS_DIR}/doc
-	@${MKDIR} ${XS_DIR}/documents
-	@${MKDIR} ${XS_DIR}/sample_files
-	@${MKDIR} ${XS_DIR}/tests
-	${INSTALL_DATA} ${WRKSRC}/README ${XS_DIR}
-	${INSTALL_DATA} ${WRKSRC}/x/notes ${XS_DIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/* ${XS_DIR}/doc
-	${INSTALL_DATA} ${WRKSRC}/documents/* ${XS_DIR}/documents
-	${INSTALL_DATA} ${WRKSRC}/sample_files/* ${XS_DIR}/sample_files
-	${INSTALL_DATA} ${WRKSRC}/tests/* ${XS_DIR}/tests
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/x/notes ${DOCSDIR}
+.for dir in doc documents sample_files tests
+	@${TAR} -C ${WRKSRC} --exclude '*.tmp' -cf - ${dir} | \
+		${TAR} -C ${DOCSDIR} --unlink -xf -
+.endfor
+	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
