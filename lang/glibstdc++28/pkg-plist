@@ -22,7 +22,7 @@
 %%GCC28SUBDIR%%/include/g++/istream.h
 %%GCC28SUBDIR%%/include/g++/libio.h
 %%GCC28SUBDIR%%/include/g++/libioP.h
-%%GCC28SUBDIR%%/include/g++/osfnc.h
+%%GCC28SUBDIR%%/include/g++/osfcn.h
 %%GCC28SUBDIR%%/include/g++/ostream.h
 %%GCC28SUBDIR%%/include/g++/parsestream.h
 %%GCC28SUBDIR%%/include/g++/pfstream.h
