@@ -1,6 +1,1 @@
-MD5 (wu-ftpd-2.5.0.tar.gz) = 98f9c8490e0d1ca2c3c57e60e65803b7
-MD5 (data-limit.patch) = 1a3868e8533ab13c88ec572fff55957a
-MD5 (deny.not.nameserved.patch) = 5f5158c26caa9db10c02e92b258c5a1f
-MD5 (mapped.path.overrun.patch) = b01b65652eb3816f0ab11971ac52424d
-MD5 (not.in.class.patch) = 5f1eb9b3c8ab07c3005c5cb7c1c6091c
-MD5 (rfc931.timeout.patch) = 0eae85226fb40f4d717693472de19c46
+MD5 (wu-ftpd-2.6.0.tar.gz) = 652cfe4b59e0468eded736e7c281d16f
