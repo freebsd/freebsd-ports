@@ -74,6 +74,7 @@
     SUBDIR += ruby-rdbc1
     SUBDIR += ruby-mysql
     SUBDIR += ruby-o_dbm
+    SUBDIR += ruby-odbc
     SUBDIR += ruby-postgres
     SUBDIR += sqlite
     SUBDIR += sqsh
