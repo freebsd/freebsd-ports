@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	cymbaline
-PORTVERSION=	0.9b
+PORTVERSION=	0.9d
 CATEGORIES=	audio python
 MASTER_SITES=	http://www.silmarill.org/cymbaline/
 
@@ -22,5 +22,11 @@ NO_BUILD=	yes
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/cymbaline.py ${PREFIX}/bin/cymbaline
 	${INSTALL_DATA} ${WRKSRC}/mp3.py ${PYTHON_SITELIBDIR}
+
+.if !defined(NOPORTDOCS)
+post-install:
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
