@@ -143,11 +143,10 @@ post-install:
 
 install-user:
 .if !exists(/home/mb/staroffice6.0/setup)
-.if exists(${HOME}/.sversionrc)
-	@${ECHO} "StarOffice 6.0=${HOME}/${SOVERSION}" >> "${HOME}/.sversionrc"
-.else
-	@${SED} -e 's|%%HOME%%|${HOME}|' < "${FILESDIR}/sversionrc" > "${HOME}/.sversionrc"
+.if !exists(${HOME}/.sversionrc)
+	@${ECHO} "[Versions]" >> "${HOME}/.sversionrc"
 .endif
+	@${ECHO} "StarOffice 6.0=${HOME}/${SOVERSION}" >> "${HOME}/.sversionrc"
 	@${MKDIR} "${HOME}/${SOVERSION}/user/autotext"
 	@${MKDIR} "${HOME}/${SOVERSION}/user/temp"
 	@${MKDIR} "${HOME}/${SOVERSION}/user/autocorr"
