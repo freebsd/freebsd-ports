@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gtk-gnutella
-PORTVERSION=	0.91
+PORTVERSION=	0.91.1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://gtk-gnutella.sourceforge.net/download/ \
