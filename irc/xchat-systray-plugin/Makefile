@@ -24,7 +24,7 @@ USE_GNOME=	gtk20
 USE_REINPLACE=	yes
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-O2|${CFLAGS}|' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|-O2|${CFLAGS} -fPIC|' ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/systray.so ${X11BASE}/lib/xchat/plugins/
