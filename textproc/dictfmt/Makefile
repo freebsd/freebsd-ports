@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	dictfmt
-PORTVERSION=	1.9.10
-PORTREVISION=	1
+PORTVERSION=	1.9.11
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	dict
@@ -18,17 +17,21 @@ COMMENT=	Formats a DICT protocol dictionary database
 
 LIB_DEPENDS=	ltdl.4:${PORTSDIR}/devel/libltdl
 
+USE_GETOPT_LONG=	yes
 USE_GMAKE=	yes
-USE_AUTOCONF_VER=	253
+GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
-MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
-		AUTOHEADER="${TRUE}"
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ARGS=	--with-cflags="${CFLAGS}"
 ALL_TARGET=	dictfmt
 INSTALL_TARGET=	install.dictfmt
 
 MAN1=		dictfmt.1 dictfmt_index2suffix.1 dictfmt_index2word.1 \
 		dictunformat.1
+PLIST_FILES=	bin/dictfmt bin/dictfmt_index2suffix bin/dictfmt_index2word \
+		bin/dictfmt_plugin bin/dictfmt_virtual bin/dictunformat
+
+CPPFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib
 
 .include <bsd.port.mk>
