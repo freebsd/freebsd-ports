@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gtstarter
-PORTVERSION=	0.1
+PORTVERSION=	0.2
 CATEGORIES=	x11 gnome
 MASTER_SITES=	http://webonaut.com/distfiles/${PORTNAME}/
 
