@@ -1,11 +1,18 @@
---- Makefile.orig	Thu May 28 22:24:11 1998
-+++ Makefile	Thu Jan 21 05:57:29 1999
-@@ -25,13 +25,13 @@
+--- Makefile.orig	Thu May 28 22:54:11 1998
++++ Makefile	Sun Apr 11 20:09:52 1999
+@@ -20,18 +20,19 @@
+ #
+ 
+ # Generic compiler
+-CC = cc
++CC ?= cc
+ # GNU..
  #CC = gcc 
  
  # Normal systems flags
 -CFLAGS = -O  
-+CFLAGS+= -O  -DPREFIX=\"${PREFIX}\"
++CFLAGS ?= -O
++CFLAGS += -DPREFIX=\"${PREFIX}\"
  
  # Debug mode for sentry
  #CFLAGS = -Wall -g -DDEBUG
@@ -16,7 +23,7 @@
  
  
  all:
-@@ -54,21 +54,16 @@
+@@ -54,21 +55,16 @@
  		/bin/rmdir $(INSTALLDIR)
  
  install:	
