@@ -1,6 +1,9 @@
-bin/Gnome_Telnet
+bin/gnome-telnet
 share/gnome/apps/Internet/GTelnet.desktop
-share/gnome/pixmaps/gtelnet/black.jpg
-share/gnome/pixmaps/gtelnet/brown_atoms.jpg
-share/gnome/pixmaps/gtelnet/gnome-telnet.png
-@dirrm share/gnome/pixmaps/gtelnet
+share/gnome/pixmaps/gnome-telnet.png
+share/gnome/pixmaps/gnome-telnet/gnome-telnet.png
+share/gnome/pixmaps/gnome-telnet/gtelnet_bg_black.jpg
+share/gnome/pixmaps/gnome-telnet/gtelnet_bg_brown.jpg
+share/locale/de/LC_MESSAGES/gnome-telnet.mo
+share/locale/ja/LC_MESSAGES/gnome-telnet.mo
+@dirrm share/gnome/pixmaps/gnome-telnet
