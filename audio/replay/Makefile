@@ -3,7 +3,7 @@
 # Date created:			Oct 27 1998
 # Whom:				Vanilla Pooh Shu <vanilla@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.7 1999/02/02 17:05:21 vanilla Exp $
+# $Id: Makefile,v 1.8 1999/02/03 07:28:39 asami Exp $
 #
 
 DISTNAME=	replay-source-dgtk_0.61
@@ -13,7 +13,7 @@ MASTER_SITES=	http://replay.linuxpower.org/files/
 
 MAINTAINER=	nacai@iname.com
 
-LIB_DEPENDS=	gtk11d.1:${PORTSDIR}/x11-toolkits/gtk11-devel
+LIB_DEPENDS=	gtk12.1:${PORTSDIR}/x11-toolkits/gtk12
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
