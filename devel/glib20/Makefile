@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	glib
-PORTVERSION=	2.0.3
+PORTVERSION=	2.0.4
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_GNOME:S,%SUBDIR%,pre-gnome2/releases/gnome-2.0-desktop-rc1,} \
+MASTER_SITES=	${MASTER_SITE_GNOME:S,%SUBDIR%,pre-gnome2/releases/gnome-2.0-desktop-rc2,} \
 		ftp://ftp.gtk.org/pub/gtk/v2.0/ \
 		ftp://ftp.gimp.org/pub/%SUBDIR%/ \
 		ftp://ftp.cs.umn.edu/pub/gimp/%SUBDIR%/ \

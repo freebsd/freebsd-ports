@@ -9,7 +9,7 @@ PORTNAME=	libgnomeprint
 PORTVERSION=	1.115.0
 CATEGORIES=	print gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	pre-gnome2/releases/gnome-2.0-desktop-rc1
+MASTER_SITE_SUBDIR=	pre-gnome2/releases/gnome-2.0-desktop-rc2
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org

@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	pango
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.3
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	${MASTER_SITE_GNOME:S,%SUBDIR%,pre-gnome2/releases/gnome-2.0-desktop-rc1,} \
+MASTER_SITES=	${MASTER_SITE_GNOME:S,%SUBDIR%,pre-gnome2/releases/gnome-2.0-desktop-rc2,} \
 		ftp://ftp.gtk.org/pub/gtk/v2.0/ \
 		ftp://ftp.cs.umn.edu/pub/gimp/gtk/v1.3/ \
 		http://www.ameth.org/gimp/gtk/v1.3/
@@ -24,6 +24,7 @@ LIB_DEPENDS=	glib-2.0.0:${PORTSDIR}/devel/glib20 \
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-qt=no \
@@ -50,9 +51,9 @@ PLIST_SUB+=	XFREE4:=""
 .endif
 
 pre-patch:
-	@find ${WRKSRC} -name Makefile.in | xargs ${PERL} -pi -e \
-		's|\$\(libdir\)/pkgconfig|\$\(prefix\)/libdata/pkgconfig|g'
-	@find ${WRKSRC}/pango/opentype -name "*.[ch]" | xargs ${PERL} -pi -e \
+	@find ${WRKSRC} -name Makefile.in | xargs ${REINPLACE_CMD} -e \
+		's|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g'
+	@find ${WRKSRC}/pango/opentype -name "*.[ch]" | xargs ${REINPLACE_CMD} -e \
 		's|internal/tterrors\.h|fterrors.h| ; s|TT_Err_|FT_Err_|g'
 
 .include <bsd.port.post.mk>

@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	gnomepanel
-PORTVERSION=	2.0.0
+PORTVERSION=	2.0.1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	pre-gnome2/releases/gnome-2.0-desktop-rc1
+MASTER_SITE_SUBDIR=	pre-gnome2/releases/gnome-2.0-desktop-rc2
 DISTNAME=	gnome-panel-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
@@ -20,6 +20,7 @@ LIB_DEPENDS=	wnck-1.4:${PORTSDIR}/x11-toolkits/libwnck \
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share/gnome \
@@ -34,12 +35,12 @@ CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 MAN1=	gnome-panel-2.1 gnome-panel-properties.1
 
 pre-patch:
-	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
+	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
 		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
-	@find ${WRKSRC} -name "Makefile.in*" | xargs ${PERL} -pi -e \
-		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g ; \
-		 s|\$\(libdir\)/pkgconfig|\$\(prefix\)/libdata/pkgconfig|g ; \
-		 s|\$\(libdir\)/bonobo/servers|\$\(prefix\)/libdata/bonobo/servers|g ; \
-		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g'
+	@find ${WRKSRC} -name "Makefile.in*" | xargs ${REINPLACE_CMD} -e \
+		's|[(]datadir[)]/gnome/|(datadir)/|g ; \
+		 s|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g ; \
+		 s|[(]libdir[)]/bonobo/servers|(prefix)/libdata/bonobo/servers|g ; \
+		 s|[(]datadir[)]/locale|(prefix)/share/locale|g'
 
 .include <bsd.port.mk>

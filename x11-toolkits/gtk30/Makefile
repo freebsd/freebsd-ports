@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	gtk
-PORTVERSION=	2.0.3
+PORTVERSION=	2.0.5
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	${MASTER_SITE_GNOME:S,%SUBDIR%,pre-gnome2/releases/gnome-2.0-desktop-rc1,} \
+MASTER_SITES=	${MASTER_SITE_GNOME:S,%SUBDIR%,pre-gnome2/releases/gnome-2.0-desktop-rc2,} \
 		ftp://ftp.gtk.org/pub/gtk/v2.0/ \
 		ftp://ftp.gimp.org/pub/%SUBDIR%/ \
 		ftp://ftp.cs.umn.edu/pub/gimp/%SUBDIR%/ \
@@ -31,6 +31,7 @@ USE_BZIP2=	yes
 NO_LATEST_LINK=	yes
 USE_X_PREFIX=	yes
 USE_XPM=	yes
+USE_REINPLACE=	yes
 USE_PERL5=	yes
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL=	yes
@@ -45,9 +46,9 @@ MAN1=		gdk-pixbuf-csource.1
 
 post-extract:
 	@find ${WRKSRC} -name "Makefile.in" | xargs ${GREP} -l lgmodule | \
-		xargs ${PERL} -pi -e 's|-lgmodule|\@GMODULE_LIBS\@|g'
-	@find ${WRKSRC} -name Makefile.in | xargs ${PERL} -pi -e \
-		's|\$\(libdir\)/pkgconfig|\$\(prefix\)/libdata/pkgconfig|g'
+		xargs ${REINPLACE_CMD} -e 's|-lgmodule|@GMODULE_LIBS@|g'
+	@find ${WRKSRC} -name Makefile.in | xargs ${REINPLACE_CMD} -e \
+		's|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g'
 
 pre-build:
 	${RM} -rf ${WRKSRC}/docs/gtk.info*

@@ -1,4 +1,5 @@
 bin/bug-buddy
+share/gnome/application-registry/bug-buddy.applications
 share/gnome/applications/bug-buddy.desktop
 share/gnome/bug-buddy/bug-buddy.glade
 share/gnome/bug-buddy/bug-buddy.png
@@ -19,7 +20,9 @@ share/gnome/mime-info/bug-buddy.keys
 share/gnome/mime-info/bug-buddy.mime
 share/gnome/omf/bug-buddy/bug-buddy-C.omf
 share/gnome/pixmaps/bug-buddy.png
+share/locale/ar/LC_MESSAGES/bug-buddy.mo
 share/locale/az/LC_MESSAGES/bug-buddy.mo
+share/locale/bg/LC_MESSAGES/bug-buddy.mo
 share/locale/ca/LC_MESSAGES/bug-buddy.mo
 share/locale/cs/LC_MESSAGES/bug-buddy.mo
 share/locale/da/LC_MESSAGES/bug-buddy.mo
@@ -58,7 +61,6 @@ share/locale/wa/LC_MESSAGES/bug-buddy.mo
 share/locale/zh_CN/LC_MESSAGES/bug-buddy.mo
 share/locale/zh_TW/LC_MESSAGES/bug-buddy.mo
 @dirrm share/gnome/omf/bug-buddy
-@dirrm share/gnome/help/bug-buddy/C/figures
 @dirrm share/gnome/help/bug-buddy/C
 @dirrm share/gnome/help/bug-buddy
 @dirrm share/gnome/bug-buddy/bugzilla/ximian

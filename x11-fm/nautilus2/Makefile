@@ -9,7 +9,7 @@ PORTNAME=	nautilus2
 PORTVERSION=	2.0.0
 CATEGORIES=	x11-fm gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	pre-gnome2/releases/gnome-2.0-desktop-rc1
+MASTER_SITE_SUBDIR=	pre-gnome2/releases/gnome-2.0-desktop-rc2
 DIST_SUBDIR=	gnome2
 DISTNAME=	nautilus-${PORTVERSION}
 

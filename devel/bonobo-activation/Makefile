@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	bonobo-activation
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	pre-gnome2/releases/gnome-2.0-desktop-rc1
+MASTER_SITE_SUBDIR=	pre-gnome2/releases/gnome-2.0-desktop-rc2
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -20,6 +20,7 @@ LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_BISON=	yes
+USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc \
@@ -31,8 +32,8 @@ CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 MAN1=	bonobo-activation-server.1
 
 pre-patch:
-	@find ${WRKSRC} -name Makefile.in | xargs ${PERL} -pi -e \
-		's|\$\(libdir\)/pkgconfig|\$\(prefix\)/libdata/pkgconfig|g ; \
-		 s|\$\(libdir\)/bonobo/servers|\$\(prefix\)/libdata/bonobo/servers|g'
+	@find ${WRKSRC} -name Makefile.in | xargs ${REINPLACE_CMD} -e \
+		's|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g ; \
+		s|[(]libdir[)]/bonobo/servers|(prefix)/libdata/bonobo/servers|g'
 
 .include <bsd.port.mk>

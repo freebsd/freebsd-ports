@@ -1,6 +1,6 @@
---- configure.orig	Mon May  6 01:33:23 2002
-+++ configure	Mon May  6 01:33:51 2002
-@@ -7353,6 +7353,7 @@
+--- configure.orig	Mon Jun 17 17:54:50 2002
++++ configure	Tue Jun 25 22:10:20 2002
+@@ -8102,6 +8102,7 @@
  
  # This can be used to rebuild libtool when needed
  LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
@@ -8,12 +8,27 @@
  
  # Always use our own libtool.
  LIBTOOL='$(SHELL) $(top_builddir)/libtool'
-@@ -11337,7 +11338,7 @@
+@@ -12782,7 +12783,7 @@
  fi
  
- cat >>confdefs.h <<EOF
+ cat >>confdefs.h <<_ACEOF
 -#define GNOMECC_DATA_DIR "${real_prefix}/share/${GETTEXT_PACKAGE}"
 +#define GNOMECC_DATA_DIR "${datadir}/${GETTEXT_PACKAGE}"
- EOF
+ _ACEOF
  
  GNOMECC_ICONS_DIR='$(datadir)/'${GETTEXT_PACKAGE}'/icons'
+@@ -13487,11 +13488,11 @@
+ s,@XF86MISC_LIBS@,$XF86MISC_LIBS,;t t
+ s,@PKG_CONFIG@,$PKG_CONFIG,;t t
+ s,@CAPPLET_CFLAGS@,$CAPPLET_CFLAGS,;t t
+-s,@CAPPLET_LIBS@,$CAPPLET_LIBS,;t t
++s~@CAPPLET_LIBS@~$CAPPLET_LIBS~;t t
+ s,@GNOMECC_CFLAGS@,$GNOMECC_CFLAGS,;t t
+-s,@GNOMECC_LIBS@,$GNOMECC_LIBS,;t t
++s~@GNOMECC_LIBS@~$GNOMECC_LIBS~;t t
+ s,@GNOME_SETTINGS_DAEMON_CFLAGS@,$GNOME_SETTINGS_DAEMON_CFLAGS,;t t
+-s,@GNOME_SETTINGS_DAEMON_LIBS@,$GNOME_SETTINGS_DAEMON_LIBS,;t t
++s~@GNOME_SETTINGS_DAEMON_LIBS@~$GNOME_SETTINGS_DAEMON_LIBS~;t t
+ s,@OLD_CAPPLET_CFLAGS@,$OLD_CAPPLET_CFLAGS,;t t
+ s,@OLD_CAPPLET_LIBS@,$OLD_CAPPLET_LIBS,;t t
+ s,@GNOME_CFLAGS@,$GNOME_CFLAGS,;t t
