@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	nagios
-PORTVERSION=	1.1
-PORTREVISION=	4
+PORTVERSION=	1.2
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=nagios
@@ -24,24 +23,33 @@ RUN_DEPENDS=	${LOCALBASE}/libexec/nagios/check_nagios:${PORTSDIR}/net/nagios-plu
 
 USE_GETOPT_LONG=yes
 GNU_CONFIGURE=	yes
+USE_RC_SUBR=	yes
+USE_PERL5_BUILD=yes
+
+PKGINSTALL=	${WRKDIR}/INSTALL
+PKGDEINSTALL=	${WRKDIR}/DEINSTALL
+PKGMESSAGE=	${WRKDIR}/MESSAGE
+
+NAGIOSUSER?=	nagios
+NAGIOSGROUP?=	nagios
+NAGIOSDIR?=	/var/spool/nagios
 
 CPPFLAGS=	${INCGD} -I${LOCALBASE}/include
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" \
 		LDFLAGS="${LDFLAGS}" \
 		CFLAGS="${CPPFLAGS} ${CFLAGS} ${INCGD}" \
 		LIBS="-L${LOCALBASE}/lib ${LIBGD}"
-CONFIGURE_ARGS=	--with-command-user=nagios \
+CONFIGURE_ARGS=	--with-command-user=${NAGIOSUSER} \
 		--with-command-grp=www \
-		--with-nagios-user=nagios \
-		--with-nagios-grp=nagios \
+		--with-nagios-user=${NAGIOSUSER} \
+		--with-nagios-grp=${NAGIOSGROUP} \
 		--with-template-objects \
 		--with-template-extinfo \
-		--with-init-dir=${PREFIX}/etc/rc.d \
 		--sbindir=${PREFIX}/share/nagios/cgi-bin \
 		--libexecdir=${PREFIX}/libexec/nagios \
 		--datadir=${PREFIX}/share/nagios \
 		--sysconfdir=${PREFIX}/etc/nagios \
-		--localstatedir=/var/spool/nagios \
+		--localstatedir=${NAGIOSDIR} \
 		--prefix=${PREFIX}
 
 .if defined(WITH_GD1)
@@ -52,19 +60,11 @@ INCGD=		-I${LOCALBASE}/include
 LIBGD=		-lgd
 .endif
 
-.if defined(WITH_MYSQL)||defined(WITH_NAGMIN)
+.if defined(WITH_MYSQL)
 USE_MYSQL=	yes
 CONFIGURE_ARGS+=	--with-mysql-lib=${LOCALBASE}/lib/mysql \
 		--with-mysql-inc=${LOCALBASE}/include/mysql \
 		--with-mysql-xdata
-.endif
-
-.if defined(WITH_NAGMIN)
-RUN_DEPENDS+=	nagmin:${PORTSDIR}/sysutils/nagmin
-CONFIGURE_ARGS+=	--with-myqsl-comments \
-		--with-mysql-downtime \
-		--with-mysql-retention \
-		--with-mysql-status
 .endif
 
 .if defined(NAGIOS_FILE_PERFDATA)
@@ -78,9 +78,34 @@ CONFIGURE_ARGS+=--with-pgsql-lib=${LOCALBASE}/pgsql \
 		--with-pgsql-xdata
 .endif
 
-INSTALL_TARGET=	all install config install-config install-daemoninit install-commandmode
+SED_SCRIPT=	-e 's,%%NAGIOSUSER%%,${NAGIOSUSER},g' \
+		-e 's,%%NAGIOSGROUP%%,${NAGIOSGROUP},g' \
+		-e 's,%%NAGIOSDIR%%,${NAGIOSDIR},g' \
+		-e 's,%%PREFIX%%,${PREFIX},g' \
+		-e 's,%%RC_SUBR%%,${RC_SUBR},g'
+
+INSTALL_TARGET=	all install config install-config install-commandmode
+
+pre-everything::
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "nagios has the following tunables:"
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "  WITH_MYSQL=yes		Compile with MySQL suport"
+	@${ECHO_MSG} "  WITH_POSTGRES=yes		Compile with PostgreSQL suport"
+	@${ECHO_MSG} "  WITH_GD1=yes			Compile with GD1 instead of GD2"
+	@${ECHO_MSG} "  NAGIOS_FILE_PERFDATA=yes	Save performance data to files"
+	@${ECHO_MSG} ""
+
+pre-build:
+	for file in nagios.sh INSTALL DEINSTALL MESSAGE; do \
+		${SED} ${SED_SCRIPT} < ${FILESDIR}/$${file}.tmpl >${WRKDIR}/$${file}; \
+	done
 
 pre-install:
-	@PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
+	@${SH} ${PKGINSTALL} ${DISTNAME} PRE-INSTALL
+
+post-install:
+	@${INSTALL_SCRIPT} ${WRKDIR}/nagios.sh ${PREFIX}/etc/rc.d/
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
