@@ -17,14 +17,14 @@ MASTER_SITES=	ftp://ftp.netsw.org/softeng/lang/c/tools/cdecl/  \
 
 MAINTAINER=	ports@FreeBSD.org
 
-ALL_TARGET=	
+ALL_TARGET=	${PORTNAME}
 MAN1=		cdecl.1
 MLINKS=		cdecl.1 c++decl.1
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/cdecl
-	${INSTALL_DATA} ${WRKSRC}/testset* ${PREFIX}/share/doc/cdecl
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/testset* ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

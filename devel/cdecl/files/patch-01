@@ -1,5 +1,5 @@
---- Makefile.orig	Mon Jan 15 21:36:38 1996
-+++ Makefile	Sun Feb 13 21:21:04 2000
+--- Makefile.orig	Tue Jan 16 14:36:38 1996
++++ Makefile	Sat Nov 30 22:45:23 2002
 @@ -15,13 +15,13 @@
  #
  # add -DUSE_READLINE	To compile in support for the GNU readline library.
@@ -15,7 +15,21 @@
 -CATDIR= /usr/man/cat1
 +BINDIR= $(PREFIX)/bin
 +MANDIR= $(PREFIX)/man/man1
-+CATDIR= $(PREFIX/usr/man/cat1
++CATDIR= $(PREFIX)/man/cat1
  INSTALL= install -c
  INSTALL_DATA= install -c -m 644
  
+@@ -43,10 +43,10 @@
+ 	./c++decl < testset++
+ 
+ install: cdecl
+-	$(INSTALL) cdecl $(BINDIR)
++	${BSD_INSTALL_PROGRAM} cdecl $(BINDIR)
+ 	ln $(BINDIR)/cdecl $(BINDIR)/c++decl
+-	$(INSTALL_DATA) cdecl.1 $(MANDIR)
+-	$(INSTALL_DATA) c++decl.1 $(MANDIR)
++	${BSD_INSTALL_MAN} cdecl.1 $(MANDIR)
++	${BSD_INSTALL_MAN} c++decl.1 $(MANDIR)
+ 
+ clean:
+ 	rm -f cdgram.c cdlex.c cdecl y.output c++decl
