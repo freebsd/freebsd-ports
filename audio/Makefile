@@ -1,7 +1,6 @@
-# $Id: Makefile,v 1.77 1999/04/03 01:32:42 steve Exp $
+# $Id: Makefile,v 1.78 1999/04/03 01:48:28 steve Exp $
 #
 
-    SUBDIR += 8hz-mp3
     SUBDIR += amp
     SUBDIR += ascd
     SUBDIR += bladeenc
