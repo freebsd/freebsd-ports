@@ -1,0 +1,22 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/SOCKS/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/Net/SOCKS.pm
+lib/perl5/site_perl/%%PERL_VER%%/auto/Net/SOCKS/accept.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Net/SOCKS/autosplit.ix
+lib/perl5/site_perl/%%PERL_VER%%/auto/Net/SOCKS/bind.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Net/SOCKS/close.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Net/SOCKS/connect.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Net/SOCKS/new.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Net/SOCKS/param.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Net/SOCKS/_connect.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Net/SOCKS/_get_resp5.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Net/SOCKS/_get_response.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Net/SOCKS/_import_args.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Net/SOCKS/_method_request5.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Net/SOCKS/_method_response5.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Net/SOCKS/_request5.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Net/SOCKS/_request.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Net/SOCKS/_user_request5.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Net/SOCKS/_user_response5.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Net/SOCKS/_validate.al
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/Net/SOCKS
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/SOCKS
