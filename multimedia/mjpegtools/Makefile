@@ -154,6 +154,9 @@ post-patch:
 .ifdef(WITH_QUICKTIME)
 	@${REINPLACE_CMD} -E -e 's|^(have_openquicktime=).+$$|\1true|' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
+	@${REINPLACE_CMD} -E \
+		-e 's|(fileno.*)(lav_file->qt_fd)|\1(FILE *)\2|' \
+		${WRKSRC}/lavtools/lav_io.c
 	@${REINPLACE_CMD} -e 's|HAVE_OPENQUICKTIME|__FreeBSD__|' \
 		${WRKSRC}/lavtools/lav_io.h
 .endif
