@@ -607,9 +607,12 @@ sub do_diff {
 				close DIFF;
 			}
 		}
-		if (length($diff) > $cfg::MAX_DIFF_SIZE * 1024) {
-			$diff = "File/diff for $file is too large! ";
-			$diff .= "Use cvsweb.\n";
+
+		my $diff_length = length($diff);
+		if ($diff_length > $cfg::MAX_DIFF_SIZE * 1024) {
+			$diff = "File/diff for $file is too large (" .
+			    $diff_length . " bytes > " .
+			    $cfg::MAX_DIFF_SIZE * 1024 . " bytes)!\n";
 		}
 		&append_line($outfile, "\n\n$diff");
 	}
