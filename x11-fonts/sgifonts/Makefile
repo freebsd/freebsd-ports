@@ -23,8 +23,9 @@ WRKSRC=		${WRKDIR}/sgi-fonts
 
 do-extract:
 	@${MKDIR} ${WRKDIR}
-	@rpm2cpio ${DISTDIR}/${DIST_SUBDIR}/${DISTFILES} \
-		> ${WRKDIR}/sgifonts.cpio
+	@cd ${WRKDIR}; rpm2cpio ${DISTDIR}/${DIST_SUBDIR}/${DISTFILES} \
+		| cpio --extract --no-preserve-owner \
+		--preserve-modification-time --unconditional --quiet
 	@cd ${WRKDIR}; \
 		cpio --extract --no-preserve-owner \
 		--preserve-modification-time --unconditional --quiet \
