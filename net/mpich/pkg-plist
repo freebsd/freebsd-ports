@@ -143,16 +143,6 @@ mpich/share/examples/fpi.f
 mpich/share/examples/fxgraphics.f
 mpich/share/examples/mpirun
 mpich/share/examples/srtest.c
-mpich/share/jumpshot-2/README
-mpich/share/jumpshot-2/bin/jumpshot
-mpich/share/jumpshot-2/doc/jumpshot.def
-mpich/share/jumpshot-2/doc/jumpshot.doc
-mpich/share/jumpshot-2/lib/data/jumpshot.colors
-mpich/share/jumpshot-2/lib/data/jumpshot.setup
-mpich/share/jumpshot-2/lib/images.jar
-mpich/share/jumpshot-2/lib/jumpshot.jar
-mpich/share/jumpshot-2/logfiles/fpilog.clog
-mpich/share/jumpshot-2/swing/swing.jar
 mpich/share/jumpshot-3/README
 mpich/share/jumpshot-3/README.slog
 mpich/share/jumpshot-3/TourStepByStep.txt
@@ -553,14 +543,6 @@ mpich/www/www4/index.html
 @dirrm mpich/share/jumpshot-3/doc
 @dirrm mpich/share/jumpshot-3/bin
 @dirrm mpich/share/jumpshot-3
-@dirrm mpich/share/jumpshot-2/swing
-@dirrm mpich/share/jumpshot-2/sbin
-@dirrm mpich/share/jumpshot-2/logfiles
-@dirrm mpich/share/jumpshot-2/lib/data
-@dirrm mpich/share/jumpshot-2/lib
-@dirrm mpich/share/jumpshot-2/doc
-@dirrm mpich/share/jumpshot-2/bin
-@dirrm mpich/share/jumpshot-2
 @dirrm mpich/share/examples
 @dirrm mpich/share
 @dirrm mpich/sbin
@@ -578,7 +560,3 @@ mpich/www/www4/index.html
 @dirrm mpich/doc
 @dirrm mpich/bin
 @dirrm mpich
-@exec mkdir -p %D/mpich/share/upshot/sbin 2>/dev/null || true
-@exec mkdir -p %D/mpich/share/jumpshot-2/sbin 2>/dev/null || true
-@exec mkdir -p %D/mpich/lib/shared 2>/dev/null || true
-@exec mkdir -p %D/mpich/examples/MPI-2-C++ 2>/dev/null || true
