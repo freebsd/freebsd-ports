@@ -6,7 +6,7 @@
 -CC      = gcc
 -CFLAGS  = -O2 -Wall -lpng -lgd
 +CC      ?= gcc
-+INCLUDES= -ICHANGE_ME/include/gd
++INCLUDES= -ICHANGE_ME/include
 +LDFLAGS = -LCHANGE_ME/lib
 +LIBS    = -lpng -lgd
  

@@ -9,7 +9,3 @@ images is troubled because of Unisys' zeal in patent enforcement.
 +gdImagePtr gdImageCreateFromGif(FILE *fd);
 +gdImagePtr gdImageCreateFromGifCtx(gdIOCtxPtr in);
  gdImagePtr gdImageCreateFromPng(FILE *fd);
---- gd_gif_in.c	Fri Jul 27 16:13:45 2001
-+++ gd_gif_in.c	Fri Jul 27 16:14:46 2001
-@@ -6,1 +6,0 @@
--#include "io.h"

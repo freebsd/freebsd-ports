@@ -7,7 +7,7 @@
 
 PORTNAME=	mrtg
 PORTVERSION=	2.9.29
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	http://people.ee.ethz.ch/~oetiker/webtools/mrtg/pub/ \
@@ -25,7 +25,7 @@ LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd2
 CONFIGURE_ARGS=	--with-gd-lib=${LOCALBASE}/lib \
 		--with-gd-inc=${LOCALBASE}/include
 .else
-LIB_DEPENDS=	gd.2:${PORTSDIR}/graphics/gd
+LIB_DEPENDS=	gd1.2:${PORTSDIR}/graphics/gd
 CONFIGURE_ARGS=	--with-gd-lib=${LOCALBASE}/lib \
 		--with-gd-inc=${LOCALBASE}/include/gd
 .endif
@@ -43,6 +43,11 @@ MAN1=		cfgmaker.1 contrib.1 faq.1 forum.1 indexmaker.1 logfile.1 \
 
 post-patch:
 	${RM} ${WRKSRC}/lib/mrtg2/BER.pm ${WRKSRC}/lib/mrtg2/SNMP_*.pm
+.if defined(WITH_GD2)
+	${PERL} -pi -e 's:%%GD%%:-lgd:g' ${WRKSRC}/configure
+.else
+	${PERL} -pi -e 's:%%GD%%:-lgd1:g' ${WRKSRC}/configure
+.endif
 
 do-install:
 		${MKDIR} -m 755 ${PREFIX}/etc/mrtg

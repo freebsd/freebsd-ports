@@ -6,6 +6,7 @@
 
 PORTNAME=	gd
 PORTVERSION=	0.40
+PORTREVISION=	1
 CATEGORIES=	graphics python
 MASTER_SITES=	http://newcenturycomputers.net/projects/download.cgi/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +15,7 @@ DISTNAME=	gdmodule-${PORTVERSION}
 MAINTAINER=	perky@FreeBSD.org
 COMMENT=	Python interface to the GD library
 
-LIB_DEPENDS=	gd.2:${PORTSDIR}/graphics/gd
+LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd2
 
 USE_XPM=	yes
 USE_REINPLACE=  yes
@@ -27,7 +28,7 @@ EXAMPLE_DIR=	${PREFIX}/share/examples/py-gd
 post-patch:
 	${REINPLACE_CMD} -e 's,/usr/local,${LOCALBASE},g' \
 		-e 's,/usr/X11R6,${X11BASE},g' \
-		-e 's,/usr/include/X11,${LOCALBASE}/include/gd,g' \
+		-e 's,/usr/include/X11,${LOCALBASE}/include,g' \
 		${WRKSRC}/${PYSETUP}
 
 post-install:

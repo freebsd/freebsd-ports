@@ -7,32 +7,22 @@
 
 PORTNAME=	gd
 PORTVERSION=	1.8.4
-PORTREVISION=	6
+PORTREVISION=	7
 PORTEPOCH=	1
 CATEGORIES+=	graphics
 MASTER_SITES=	http://www.boutell.com/gd/http/ \
 		ftp://ftp.boutell.com/pub/boutell/gd/ \
-		http://virtual-estates.net/~mi/port-stuff/ \
 		${MASTER_SITE_RINGSERVER}
 MASTER_SITE_SUBDIR=	graphics/gd
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} gd_gif_in.c.bz2
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER?=	ports@FreeBSD.org
-COMMENT?=	A graphics library for fast image creation
+COMMENT?=	A graphics library for fast creation of images
 
-BUILD_DEPENDS=	freetype-config:${PORTSDIR}/print/freetype2     # XXX
-LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
-		png:${PORTSDIR}/graphics/png \
-		freetype:${PORTSDIR}/print/freetype2
-.if !exists(/usr/bin/bzip2)
-BUILD_DEPENDS+=	bzip2:${PORTSDIR}/archivers/bzip2
-.endif
+LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
+		png.5:${PORTSDIR}/graphics/png \
+		freetype.9:${PORTSDIR}/print/freetype2
 
-FREETYPE_CONFIG?=       ${LOCALBASE}/bin/freetype-config
-
-USE_REINPLACE=	yes
-MAKE_ENV=	FREETYPE_CONFIG="${FREETYPE_CONFIG}"
+MAKEFILE=	${FILESDIR}/Makefile.lib
 INSTALLS_SHLIB=	yes
 
 .if defined(WITH_X11)
@@ -48,16 +38,6 @@ pre-everything::
 .endif
 
 post-extract:
-	@${BZIP2_CMD} -dc ${DISTDIR}/${DIST_SUBDIR}/gd_gif_in.c.bz2 \
-		> ${WRKSRC}/gd_gif_in.c
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|<malloc.h>|<stdlib.h>|g' ${WRKSRC}/gdcache.h
-
-post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/index.html ${DOCSDIR}
-.endif
+	@${CP} ${FILESDIR}/gd_gif_in.c ${WRKSRC}
 
 .include <bsd.port.mk>

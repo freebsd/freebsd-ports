@@ -7,6 +7,7 @@
 
 PORTNAME=	zimg
 PORTVERSION=	4.19.1
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,14 +15,13 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Image-generator that uses ASCII input files to create PNGs/EDFs
 
-LIB_DEPENDS=	gd.2:${PORTSDIR}/graphics/gd
+LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd2
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-dynaload-cc="${CC}" \
-		--with-dynaload-cflags="${CFLAGS} -shared" \
-		--with-gd-includes=${LOCALBASE}/include/gd
+		--with-dynaload-cflags="${CFLAGS} -shared"
 
 MAN1=		zimg.1
 

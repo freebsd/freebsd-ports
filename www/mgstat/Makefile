@@ -7,13 +7,14 @@
 
 PORTNAME=	mgstat
 PORTVERSION=	0.11
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://wizard.ae.krakow.pl/~mike/download/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Produce graphs from mod_gzip log files
 
-LIB_DEPENDS=	gd.2:${PORTSDIR}/graphics/gd
+LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd2
 
 GNU_CONFIGURE=	yes
 

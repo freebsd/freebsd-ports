@@ -17,15 +17,15 @@ COMMENT=	Extremely powerful network monitoring system
 .if defined(WITH_GD2)
 LIB_DEPENDS=    gd.4:${PORTSDIR}/graphics/gd2
 .else
-LIB_DEPENDS=	gd.2:${PORTSDIR}/graphics/gd
+LIB_DEPENDS=	gd1.2:${PORTSDIR}/graphics/gd
 .endif
 LIB_DEPENDS+=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 RUN_DEPENDS=	${LOCALBASE}/libexec/nagios/check_nagios:${PORTSDIR}/net/nagios-plugins
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib -lgd -lgnugetopt"
+CONFIGURE_ENV=	CPPFLAGS="${INCGD} -I${LOCALBASE}/include" \
+		CFLAGS="${CFLAGS} ${INCGD} -I${LOCALBASE}/include" \
+		LIBS="-L${LOCALBASE}/lib ${LIBGD} -lgnugetopt"
 CONFIGURE_ARGS=	--with-command-user=nagios \
 		--with-command-grp=www \
 		--with-nagios-user=nagios \
@@ -39,6 +39,14 @@ CONFIGURE_ARGS=	--with-command-user=nagios \
 		--sysconfdir=${PREFIX}/etc/nagios \
 		--localstatedir=/var/spool/nagios \
 		--prefix=${PREFIX}
+
+.if defined(WITH_GD2)
+INCGD=		-I${LOCALBASE}/include
+LIBGD=		-lgd
+.else
+INCGD=		-I${LOCALBASE}/include/gd
+LIBGD=		-lgd1
+.endif
 
 .if defined(WITH_MYSQL)
 LIB_DEPENDS+=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client

@@ -7,6 +7,7 @@
 
 PORTNAME=	scr2png
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MASTER_SITES=	${MASTER_SITE_LOCAL}
@@ -16,7 +17,7 @@ NO_WRKSUBDIR=	yes
 MAINTAINER=	nik@freebsd.org
 COMMENT=	Converts the output of "vidcontrol -p" to PNG
 
-LIB_DEPENDS=	gd.2:${PORTSDIR}/graphics/gd
+LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd2
 
 USE_REINPLACE=	yes
 

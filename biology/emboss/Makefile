@@ -7,6 +7,7 @@
 
 PORTNAME=	emboss
 PORTVERSION=	2.4.1
+PORTREVISION=	1
 CATEGORIES=	biology
 MASTER_SITES=	ftp://ftp.uk.embnet.org/pub/EMBOSS/old/ \
 		ftp://ftp.es.embnet.org/pub/software/emboss/EMBOSS/ \
@@ -18,7 +19,7 @@ EXTRACT_ONLY=	${PORTNAME:U}-${PORTVERSION}${EXTRACT_SUFX}
 MAINTAINER=	wjv@FreeBSD.org
 COMMENT=	A collection of open source tools for genetic sequence analysis
 
-LIB_DEPENDS=	gd.2:${PORTSDIR}/graphics/gd
+LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd2
 
 USE_SUBMAKE=	yes
 USE_GMAKE=	yes
