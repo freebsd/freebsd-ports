@@ -7,13 +7,15 @@
 
 PORTNAME=	gyach
 PORTVERSION=	0.9.6
+PORTREVISION=	1
 CATEGORIES=	net
-MASTER_SITES=	http://www4.infi.net/~cpinkham/gyach/code/
-DISTNAME=	${PORTNAME}-${PORTVERSION}
+MASTER_SITES=	ftp://ftp.snaphat.com/pub/software/
+DISTNAME=	${PORTNAME}-${PORTVERSION}_patched
 
 MAINTAINER?=	aaron@snaphat.com
 COMMENT=	Gyach is a GTK+ based Yahoo! Chat client
 
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20
 USE_X_PREFIX=	yes
