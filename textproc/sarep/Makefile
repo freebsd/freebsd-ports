@@ -14,7 +14,7 @@ EXTRACT_SUFX=
 
 MAINTAINER=     ache@freebsd.org
 
-RUN_DEPENDS=    ${PREFIX}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Text/CSV_XS.pm:${PORTSDIR}/textproc/p5-Text-CSV_XS
+RUN_DEPENDS=    ${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Text/CSV_XS.pm:${PORTSDIR}/textproc/p5-Text-CSV_XS
 
 EXTRACT_CMD=    $(SED)
 EXTRACT_BEFORE_ARGS= 's=^\#!/usr/bin/perl =\#!${PERL} =' <
