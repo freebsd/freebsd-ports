@@ -1,0 +1,37 @@
+--- expmed.c.dist	Sat Nov  8 14:11:58 1997
++++ expmed.c	Thu Aug 13 11:18:13 1998
+@@ -2249,7 +2249,8 @@
+ 	      rtx shift_subtarget = preserve ? 0 : accum;
+ 	      rtx add_target
+ 		= (opno == alg.ops - 1 && target != 0 && variant != add_variant
+-		  ? target : 0);
++		   && ! preserve)
++		  ? target : 0;
+ 	      rtx accum_target = preserve ? 0 : accum;
+ 	      
+ 	      switch (alg.op[opno])
+@@ -2716,6 +2717,7 @@
+   optab optab1, optab2;
+   int op1_is_constant, op1_is_pow2;
+   int max_cost, extra_cost;
++  static HOST_WIDE_INT last_div_const = 0;
+ 
+   op1_is_constant = GET_CODE (op1) == CONST_INT;
+   op1_is_pow2 = (op1_is_constant
+@@ -2825,8 +2827,15 @@
+   size = GET_MODE_BITSIZE (mode);
+ #endif
+ 
++  /* Only deduct something for a REM if the last divide done was
++     for a different constant.   Then set the constant of the last
++     divide.  */
+   max_cost = div_cost[(int) compute_mode]
+-    - (rem_flag ? mul_cost[(int) compute_mode] + add_cost : 0);
++    - (rem_flag && ! (last_div_const != 0 && op1_is_constant
++		      && INTVAL (op1) == last_div_const)
++       ? mul_cost[(int) compute_mode] + add_cost : 0);
++
++  last_div_const = ! rem_flag && op1_is_constant ? INTVAL (op1) : 0;
+ 
+   /* Now convert to the best mode to use.  */
+   if (compute_mode != mode)
