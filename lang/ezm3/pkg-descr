@@ -1,0 +1,11 @@
+Ezm3 is a smaller, more portable distribution of the Modula-3 compiler
+and runtime system for people whose only need for Modula-3 is to build
+CVSup.  It supports all features of CVSup, but has smaller distfiles
+and installs more quickly than other versions of Modula-3.  Ezm3
+provides full X11 GUI support even when compiled on systems which
+do not have X11 installed.  It links programs statically with the
+Modula-3 libraries but dynamically with the system libraries, so that
+programs built with Ezm3 can run on systems which do not have
+Modula-3 installed on them.
+
+John Polstra <jdp@FreeBSD.ORG>
