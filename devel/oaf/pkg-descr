@@ -1,5 +1,5 @@
 OAF is the Object Activation Framework, a much more powerful replacement
-for gnorba in the GNOME 2.0 development platform. It's used by Nautilus
+for gnorba in the GNOME 1.4 development platform. It's used by Nautilus
 (and optinally by Bonobo by other GNOME applications) for advanced
 object query and activation capabilities.
 
