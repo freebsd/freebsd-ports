@@ -8,7 +8,7 @@
 PORTNAME=	pysol-cardsets
 PORTVERSION=	4.40
 CATEGORIES=	games
-MASTER_SITES=	http://wildsau.idv.uni-linz.ac.at/mfx/download/pysol/
+MASTER_SITES=	http://pysol2.sourceforge.net/download/
 
 MAINTAINER=	serg@tmn.ru
 
