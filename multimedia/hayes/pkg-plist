@@ -1,0 +1,21 @@
+lib/kde3/noatun_hayes.la
+lib/kde3/noatun_hayes.so
+share/apps/konqueror/servicemenus/noatunhayessetcurrent.desktop
+share/apps/noatun/hayes.plugin
+share/apps/noatun/hayesui.rc
+share/apps/noatun/icons/hicolor/22x22/actions/noatunshuffle.png
+share/apps/noatun/icons/hicolor/32x32/actions/nextsection.png
+share/apps/noatun/icons/hicolor/32x32/actions/prevsection.png
+share/services/noatunhayessetcurrent.desktop
+@unexec rmdir %D/share/services 2>/dev/null || true
+@unexec rmdir %D/share/apps/noatun/icons/hicolor/32x32/actions 2>/dev/null || true
+@unexec rmdir %D/share/apps/noatun/icons/hicolor/32x32 2>/dev/null || true
+@unexec rmdir %D/share/apps/noatun/icons/hicolor/22x22/actions 2>/dev/null || true
+@unexec rmdir %D/share/apps/noatun/icons/hicolor/22x22 2>/dev/null || true
+@unexec rmdir %D/share/apps/noatun/icons/hicolor 2>/dev/null || true
+@unexec rmdir %D/share/apps/noatun/icons 2>/dev/null || true
+@unexec rmdir %D/share/apps/noatun 2>/dev/null || true
+@unexec rmdir %D/share/apps/konqueror/servicemenus 2>/dev/null || true
+@unexec rmdir %D/share/apps/konqueror 2>/dev/null || true
+@unexec rmdir %D/share/apps 2>/dev/null || true
+@unexec rmdir %D/lib/kde3 2>/dev/null || true
