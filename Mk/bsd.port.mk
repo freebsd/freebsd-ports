@@ -2555,6 +2555,8 @@ CONFIGURE_LOG?=		config.log
 # A default message to print if do-configure fails.
 CONFIGURE_FAIL_MESSAGE?=	"Please report the problem to ${MAINTAINER} [maintainer] and attach the \"${CONFIGURE_WRKSRC}/${CONFIGURE_LOG}\" including the output of the failure of your make command. Also, it might be a good idea to provide an overview of all packages installed on your system (e.g. an \`ls ${PKG_DBDIR}\`)."
 
+
+.if defined(GNU_CONFIGURE)
 # Maximum command line length
 .if !defined(CONFIGURE_MAX_CMD_LEN)
 .if exists(/sbin/sysctl)
@@ -2563,8 +2565,6 @@ CONFIGURE_MAX_CMD_LEN!=	/sbin/sysctl -n kern.argmax
 CONFIGURE_MAX_CMD_LEN!=	/usr/sbin/sysctl -n kern.argmax
 .endif
 .endif
-
-.if defined(GNU_CONFIGURE)
 CONFIGURE_ARGS+=	--prefix=${PREFIX} ${CONFIGURE_TARGET}
 CONFIGURE_ENV+=		lt_cv_sys_max_cmd_len=${CONFIGURE_MAX_CMD_LEN}
 HAS_CONFIGURE=		yes
