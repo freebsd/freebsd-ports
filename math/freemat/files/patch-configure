@@ -1,0 +1,20 @@
+--- configure.orig	Wed Mar 16 16:39:00 2005
++++ configure	Sun Mar 27 23:34:08 2005
+@@ -7731,7 +7731,7 @@
+     PICFLAG=0
+     SHAREDSUFFIX=""
+     FLUID="fluid"
+-    LINKSHARED="-L../lib -lfltk_images -lfltk_forms -lfltk"
++    LINKSHARED="-lfltk_images -lfltk_forms -lfltk"
+ fi
+ 
+ 
+@@ -16937,7 +16937,7 @@
+           ac_config_headers="$ac_config_headers config.h:configh.in"
+ 
+ 
+-LAPACK_LIBS="-L\${top_builddir}/libs/libMiniLAPACK -lMiniLAPACK"
++LAPACK_LIBS="-llapack"
+ 
+ 
+ LIBS="$LAPACK_LIBS $BLAS_LIBS $LIBS $FLIBS $CURSES_LIB $MPILIBS"

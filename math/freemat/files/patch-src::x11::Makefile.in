@@ -1,0 +1,11 @@
+--- src/x11/Makefile.in.orig	Wed Mar 16 16:38:59 2005
++++ src/x11/Makefile.in	Sun Mar 27 22:28:54 2005
+@@ -255,7 +255,7 @@
+ Terminal.cpp \
+ Terminal.hpp 
+ 
+-FreeMat_DEPENDENCIES = @top_builddir@/libs/libCore/libCore.a @top_builddir@/libs/libFN/libFN.a @top_builddir@/libs/libGraphics/libGraphics.a @top_builddir@/libs/libFreeMat/libFreeMat.a @top_builddir@/libs/libARPACK/libARPACK.a @top_builddir@/libs/libUMFPACK/UMFPACK/libUMFPACKdi.a @top_builddir@/libs/libUMFPACK/UMFPACK/libUMFPACKzi.a @top_builddir@/libs/libUMFPACK/AMD/libAMD.a @top_builddir@/libs/libFFTPack/libFFTPack.a  @top_builddir@/libs/libffi/libffi.a @top_builddir@/libs/libXP/libXP.a $(PNGLIB) $(TIFFLIB) $(JPEGLIB) @top_builddir@/libs/libFLTK/libFLTK.a
++FreeMat_DEPENDENCIES = @top_builddir@/libs/libCore/libCore.a @top_builddir@/libs/libFN/libFN.a @top_builddir@/libs/libGraphics/libGraphics.a @top_builddir@/libs/libFreeMat/libFreeMat.a @top_builddir@/libs/libARPACK/libARPACK.a @top_builddir@/libs/libUMFPACK/UMFPACK/libUMFPACKdi.a @top_builddir@/libs/libUMFPACK/UMFPACK/libUMFPACKzi.a @top_builddir@/libs/libUMFPACK/AMD/libAMD.a @top_builddir@/libs/libFFTPack/libFFTPack.a @top_builddir@/libs/libXP/libXP.a $(PNGLIB) $(TIFFLIB) $(JPEGLIB) @top_builddir@/libs/libFLTK/libFLTK.a
+ FreeMat_LDADD = @top_builddir@/libs/libCore/libCore.a @top_builddir@/libs/libFN/libFN.a @top_builddir@/libs/libGraphics/libGraphics.a @top_builddir@/libs/libFreeMat/libFreeMat.a @top_builddir@/libs/libARPACK/libARPACK.a @top_builddir@/libs/libUMFPACK/UMFPACK/libUMFPACKdi.a @top_builddir@/libs/libUMFPACK/UMFPACK/libUMFPACKzi.a @top_builddir@/libs/libUMFPACK/AMD/libAMD.a @top_builddir@/libs/libFFTPack/libFFTPack.a  @top_builddir@/libs/libffi/libffi.a @top_builddir@/libs/libXP/libXP.a @top_builddir@/libs/libFLTK/libFLTK.a $(PNGLIB) $(TIFFLIB) $(JPEGLIB) @X_PRE_LIBS@ @X_LIBS@ -lX11 @X_EXTRA_LIBS@ -L/sw/lib -lg2c 
+ all: all-am
+ 

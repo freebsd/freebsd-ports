@@ -1,0 +1,13 @@
+--- libs/Makefile.in.orig	Wed Mar 16 16:38:46 2005
++++ libs/Makefile.in	Sun Mar 27 23:36:17 2005
+@@ -229,8 +229,8 @@
+ @NEED_JPEG_TRUE@JPEG_DIR = libjpeg6b
+ @NEED_TIFF_TRUE@TIFF_DIR = libtiff361
+ SUBDIRS = libFreeMat libFFTPack libCore libGraphics libXP \
+-	 $(BLAS_DIR) libMiniLAPACK  libffi libf2c $(JPEG_DIR) \
+-	$(TIFF_DIR) $(PNG_DIR) libFN libFLTK libUMFPACK libARPACK
++	 $(BLAS_DIR) libffi $(JPEG_DIR) \
++	$(TIFF_DIR) $(PNG_DIR) libFN
+ 
+ AUTOMAKE_OPTIONS = foreign
+ all: all-recursive
