@@ -30,7 +30,7 @@ WEBMIN_MODULES=	postgresql-0.85-1.wbm.gz squid-0.85-1.wbm.gz \
 WEBMIN_SERVER=	miniserv.pl
 
 post-extract:
-	if [ "${WEBMIN_MODULES}" != "" ]; then \
+	@if [ "${WEBMIN_MODULES}" != "" ]; then \
 		for webmin_module in ${WEBMIN_MODULES}; do \
 			${ECHO} "===> Unpacking updated module: $${webmin_module}"; \
 			${TAR} xfz ${DISTDIR}/$${webmin_module} -C ${WRKSRC}; \
@@ -40,25 +40,25 @@ post-extract:
 	@find ${WRKSRC} -name "*.bak" | xargs ${RM}
 
 post-patch:
-	${CP} ${WRKDIR}/webmin-${PORTVERSION}/bind8/config-freebsd-3.0 \
-	${WRKDIR}/webmin-${PORTVERSION}/bind8/config-freebsd-3.1
-	${CP} ${WRKDIR}/webmin-${PORTVERSION}/bind8/config-freebsd-3.0 \
-	${WRKDIR}/webmin-${PORTVERSION}/bind8/config-freebsd-3.2
-	${CP} ${WRKDIR}/webmin-${PORTVERSION}/bind8/config-freebsd-3.0 \
-	${WRKDIR}/webmin-${PORTVERSION}/bind8/config-freebsd-3.3
-	${CP} ${WRKDIR}/webmin-${PORTVERSION}/bind8/config-freebsd-3.0 \
-	${WRKDIR}/webmin-${PORTVERSION}/bind8/config-freebsd-3.4
-	${CP} ${WRKSRC}/postfix/config ${WRKSRC}/postfix/config.sed
-	${SED}	-e "s@/usr/sbin/postfix@${LOCALBASE}/sbin/postfix@" \
+	@${CP} ${WRKDIR}/webmin-${PORTVERSION}/bind8/config-freebsd-3.0 \
+		${WRKDIR}/webmin-${PORTVERSION}/bind8/config-freebsd-3.1
+	@${CP} ${WRKDIR}/webmin-${PORTVERSION}/bind8/config-freebsd-3.0 \
+		${WRKDIR}/webmin-${PORTVERSION}/bind8/config-freebsd-3.2
+	@${CP} ${WRKDIR}/webmin-${PORTVERSION}/bind8/config-freebsd-3.0 \
+		${WRKDIR}/webmin-${PORTVERSION}/bind8/config-freebsd-3.3
+	@${CP} ${WRKDIR}/webmin-${PORTVERSION}/bind8/config-freebsd-3.0 \
+		${WRKDIR}/webmin-${PORTVERSION}/bind8/config-freebsd-3.4
+	@${CP} ${WRKSRC}/postfix/config ${WRKSRC}/postfix/config.sed
+	@${SED}	-e "s@/usr/sbin/postfix@${LOCALBASE}/sbin/postfix@" \
 		-e "s@/usr/sbin/postconf@${LOCALBASE}/sbin/postconf@" \
 		-e "s@/etc/postfix/main.cf@${LOCALBASE}/etc/postfix/main.cf@" \
 		-e "s@/usr/sbin/postalias@${LOCALBASE}/sbin/postalias@" \
 		-e "s@/usr/sbin/postmap@${LOCALBASE}/sbin/postmap@" \
 		${WRKSRC}/postfix/config.sed > ${WRKSRC}/postfix/config
-	${RM} ${WRKSRC}/postfix/config.sed
+	@${RM} ${WRKSRC}/postfix/config.sed
 
-	${CP} ${WRKSRC}/postgresql/config ${WRKSRC}/postgresql/config.sed
-	${SED}	-e "s@^hba_conf=.*@hba_conf=${LOCALBASE}/pgsql/data/pg_hba.conf@" \
+	@${CP} ${WRKSRC}/postgresql/config ${WRKSRC}/postgresql/config.sed
+	@${SED}	-e "s@^hba_conf=.*@hba_conf=${LOCALBASE}/pgsql/data/pg_hba.conf@" \
 		-e "s@^login=.*@login=pgsql@" \
 		-e "s@^pid_file=.*@pid_file=${LOCALBASE}/pgsql/data/postmaster.pid@" \
 		-e "s@^start_cmd=.*@start_cmd=${LOCALBASE}/etc/rc.d/010.pgsql.sh start@" \
@@ -67,12 +67,12 @@ post-patch:
 		-e "s@^plib=.*@plib=${LOCALBASE}/lib@" \
 		${WRKSRC}/postgresql/config.sed > ${WRKSRC}/postgresql/config
 
-	${RM} ${WRKSRC}/postgresql/config.sed
+	@${RM} ${WRKSRC}/postgresql/config.sed
 
-	${CP} ${WRKSRC}/dhcpd/config-freebsd ${WRKSRC}/dhcpd/config-freebsd.sed
-	${SED}	-e "s@^dhcpd_conf=.*@dhcpd_conf=${LOCALBASE}/etc/dhcpd.conf@" \
+	@${CP} ${WRKSRC}/dhcpd/config-freebsd ${WRKSRC}/dhcpd/config-freebsd.sed
+	@${SED}	-e "s@^dhcpd_conf=.*@dhcpd_conf=${LOCALBASE}/etc/dhcpd.conf@" \
 		${WRKSRC}/dhcpd/config-freebsd.sed > ${WRKSRC}/dhcpd/config-freebsd
-	${RM} ${WRKSRC}/dhcpd/config-freebsd.sed
+	@${RM} ${WRKSRC}/dhcpd/config-freebsd.sed
 
 do-install:
 	@${MKDIR} ${PREFIX}/lib/webmin
