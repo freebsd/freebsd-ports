@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	xmame
-PORTVERSION?=	0.76.1
+PORTVERSION?=	0.77.1
 CATEGORIES=	emulators
 MASTER_SITES=	http://x.mame.net/download/:xmame \
 		http://www.sys2064.com/files/util/:history \
@@ -24,6 +24,7 @@ USE_BZIP2=	yes
 USE_PERL5=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
+MAKEFILE=	makefile.unix
 
 MAN6=		x${MAMEMESS}.6
 
@@ -163,7 +164,7 @@ CFLAGS+=	-O3 -Wall -Wno-unused -funroll-loops \
 .endif
 .endif
 
-SDLSOUNDCOMMENT= \#
+SDLSOUNDCOMMENT=	\#
 
 # Option DISPLAY_TARGET
 .if !defined(DISPLAY_TARGET)
@@ -172,7 +173,7 @@ DISPLAY_TARGET=sdl
 
 .if ${DISPLAY_TARGET:L} == "opengl"
 CFLAGS+=	${PTHREAD_CFLAGS}
-USE_MESA=	yes
+USE_GL=		yes
 DISPLAY_METHOD=	xgl
 PLIST_SUB+=	OPENGL=""
 ALL_DOCS+=	${GLDOCS}
@@ -194,7 +195,7 @@ pre-everything::
 	@${ECHO_MSG} "'make options' for more information."
 	@exit 1
 .endif
-LIB_DEPENDS=    SDL-1.1.5:${PORTSDIR}/devel/sdl12
+LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12
 SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
 DISPLAY_METHOD=	SDL
 SDLSOUNDCOMMENT=
