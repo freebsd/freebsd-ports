@@ -1,1 +1,5 @@
-alskdjasldk
+ocamlgraph is a graph library for Objective Caml.  It provides an 
+easy-to-use graph data structure together with several operations
+and algorithms over graphs.
+
+WWW: http://www.lri.fr/~filliatr/ocamlgraph/
