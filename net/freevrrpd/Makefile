@@ -7,6 +7,7 @@
 
 PORTNAME=	freevrrpd
 PORTVERSION=	0.8.4
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.bsdshell.net/download/
 
@@ -16,6 +17,11 @@ MAN8=		freevrrpd.8
 
 MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
+
+USE_REINPLACE=  yes
+
+post-patch:
+	@${REINPLACE_CMD} -e 's#libexec#sbin#g;' ${WRKSRC}/freevrrpd.sh.sample
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/freevrrpd ${PREFIX}/sbin
