@@ -31,7 +31,7 @@ PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	obrien@FreeBSD.org
 
-BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=    intl.1:${PORTSDIR}/devel/gettext
 .if defined(BATCH)
 LIB_DEPENDS=	slang.1:${PORTSDIR}/devel/libslang
 BUILD_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
@@ -55,6 +55,7 @@ RUN_DEPENDS+=	urlview:${PORTSDIR}/textproc/urlview
 DIST_SUBDIR=	mutt
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=  CC="${CC} -I${PREFIX}/include" LDFLAGS=-L${PREFIX}/lib
 CONFIGURE_ARGS= --enable-pop --enable-imap --enable-flock --disable-fcntl  \
 		--with-sharedir=${PREFIX}/share/mutt \
 		--with-docdir=${PREFIX}/share/doc/mutt --with-charmaps \
