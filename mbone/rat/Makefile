@@ -30,6 +30,10 @@ RAT_SCRIPT=	${PORTNAME}
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 501000
+BROKEN=		"Does not compile on FreeBSD ${OSVERSION}"
+.endif
+
 .if ${OSVERSION} >= 400014
 ENABLE_IPv6=	--enable-ipv6
 .endif
@@ -51,4 +55,4 @@ do-configure:
 	cd ${WRKSRC}/common && ${AUTOCONF} && ./configure ${CONFIGURE_ARGS} ${ENABLE_IPv6}
 	cd ${WRKSRC}/rat && ${AUTOCONF} && ./configure ${CONFIGURE_ARGS} --with-tcl=${LOCALBASE} --with-tk=${LOCALBASE} ${ENABLE_IPv6} --with-tcltk-version=${TCLTK_VERSION}
 
-.include "bsd.port.post.mk"
+.include <bsd.port.post.mk>

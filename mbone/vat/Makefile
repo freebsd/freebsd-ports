@@ -15,12 +15,6 @@ DISTFILES=	vatsrc-4.0b2.tar.gz
 MAINTAINER=	fenner@FreeBSD.org
 COMMENT=	The Visual Audio Tool - multicast audioconferencing
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 501000
-BROKEN=		"Does not compile on FreeBSD ${OSVERSION}"
-.endif
-
 GSM_DIR=	${.CURDIR}/../../audio/gsm
 GSM_WORK=	${WRKDIRPREFIX}${GSM_DIR}/work/gsm-1.0-pl10
 
@@ -36,6 +30,12 @@ USE_AUTOCONF=	yes
 CONFIGURE_ARGS=	--with-gsm=${GSM_WORK}
 INSTALL_TARGET=	install install-man
 MAN1=		vat.1
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 501000
+BROKEN=		"Does not compile on FreeBSD ${OSVERSION}"
+.endif
 
 post-install:
 	${STRIP_CMD} ${PREFIX}/bin/vat
