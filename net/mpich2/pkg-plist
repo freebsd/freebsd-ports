@@ -143,68 +143,77 @@ mpich/share/examples/fpi.f
 mpich/share/examples/fxgraphics.f
 mpich/share/examples/mpirun
 mpich/share/examples/srtest.c
-mpich/share/jumpshot-3/README
-mpich/share/jumpshot-3/README.slog
-mpich/share/jumpshot-3/TourStepByStep.txt
-mpich/share/jumpshot-3/UserGuide.txt
-mpich/share/jumpshot-3/bin/jumpshot
-mpich/share/jumpshot-3/bin/slog_print
-mpich/share/jumpshot-3/doc/TourStepByStep.pdf
-mpich/share/jumpshot-3/doc/html/TourStepByStep.css
-mpich/share/jumpshot-3/doc/html/TourStepByStep.html
-mpich/share/jumpshot-3/doc/html/WARNINGS
-mpich/share/jumpshot-3/doc/html/crossref.gif
-mpich/share/jumpshot-3/doc/html/footnode.html
-mpich/share/jumpshot-3/doc/html/images.aux
-mpich/share/jumpshot-3/doc/html/images.log
-mpich/share/jumpshot-3/doc/html/images.pl
-mpich/share/jumpshot-3/doc/html/images.tex
-mpich/share/jumpshot-3/doc/html/img1.gif
-mpich/share/jumpshot-3/doc/html/img10.gif
-mpich/share/jumpshot-3/doc/html/img11.gif
-mpich/share/jumpshot-3/doc/html/img12.gif
-mpich/share/jumpshot-3/doc/html/img13.gif
-mpich/share/jumpshot-3/doc/html/img2.gif
-mpich/share/jumpshot-3/doc/html/img3.gif
-mpich/share/jumpshot-3/doc/html/img4.gif
-mpich/share/jumpshot-3/doc/html/img5.gif
-mpich/share/jumpshot-3/doc/html/img6.gif
-mpich/share/jumpshot-3/doc/html/img7.gif
-mpich/share/jumpshot-3/doc/html/img8.gif
-mpich/share/jumpshot-3/doc/html/img9.gif
-mpich/share/jumpshot-3/doc/html/index.html
-mpich/share/jumpshot-3/doc/html/internals.pl
-mpich/share/jumpshot-3/doc/html/labels.pl
-mpich/share/jumpshot-3/doc/html/next.gif
-mpich/share/jumpshot-3/doc/html/next_g.gif
-mpich/share/jumpshot-3/doc/html/node1.html
-mpich/share/jumpshot-3/doc/html/node2.html
-mpich/share/jumpshot-3/doc/html/node3.html
-mpich/share/jumpshot-3/doc/html/node4.html
-mpich/share/jumpshot-3/doc/html/node5.html
-mpich/share/jumpshot-3/doc/html/node6.html
-mpich/share/jumpshot-3/doc/html/node7.html
-mpich/share/jumpshot-3/doc/html/prev.gif
-mpich/share/jumpshot-3/doc/html/prev_g.gif
-mpich/share/jumpshot-3/doc/html/up.gif
-mpich/share/jumpshot-3/doc/html/up_g.gif
-mpich/share/jumpshot-3/doc/jumpshot.def
-mpich/share/jumpshot-3/etc/jumpshot.conf
-mpich/share/jumpshot-3/lib/images.jar
-mpich/share/jumpshot-3/lib/jumpshot.jar
-mpich/share/jumpshot-3/lib/preview.jar
-mpich/share/jumpshot-3/lib/slog.jar
-mpich/share/jumpshot-3/lib/slog_print.class
-mpich/share/jumpshot-3/lib/slog_print_remote.class
-mpich/share/jumpshot-3/lib/statsviewer.jar
-mpich/share/jumpshot-3/logfiles/sample.slog
-mpich/share/jumpshot-3/logfiles/sppm.stats.0301
-mpich/share/jumpshot-3/logfiles/sppm_ic2a.slog
-mpich/share/jumpshot-3/logfiles/stats0204.txt
-mpich/share/jumpshot-3/logfiles/stats3.txt
-mpich/share/jumpshot-3/logfiles/thread1.stats
-mpich/share/jumpshot-3/sbin/exejar
-mpich/share/jumpshot-3/share/jumpshot.colors
+%%JAVA%%mpich/share/jumpshot-3/README
+%%JAVA%%mpich/share/jumpshot-3/README.slog
+%%JAVA%%mpich/share/jumpshot-3/TourStepByStep.txt
+%%JAVA%%mpich/share/jumpshot-3/UserGuide.txt
+%%JAVA%%mpich/share/jumpshot-3/bin/jumpshot
+%%JAVA%%mpich/share/jumpshot-3/bin/slog_print
+%%JAVA%%mpich/share/jumpshot-3/doc/TourStepByStep.pdf
+%%JAVA%%mpich/share/jumpshot-3/doc/html/TourStepByStep.css
+%%JAVA%%mpich/share/jumpshot-3/doc/html/TourStepByStep.html
+%%JAVA%%mpich/share/jumpshot-3/doc/html/WARNINGS
+%%JAVA%%mpich/share/jumpshot-3/doc/html/crossref.gif
+%%JAVA%%mpich/share/jumpshot-3/doc/html/footnode.html
+%%JAVA%%mpich/share/jumpshot-3/doc/html/images.aux
+%%JAVA%%mpich/share/jumpshot-3/doc/html/images.log
+%%JAVA%%mpich/share/jumpshot-3/doc/html/images.pl
+%%JAVA%%mpich/share/jumpshot-3/doc/html/images.tex
+%%JAVA%%mpich/share/jumpshot-3/doc/html/img1.gif
+%%JAVA%%mpich/share/jumpshot-3/doc/html/img10.gif
+%%JAVA%%mpich/share/jumpshot-3/doc/html/img11.gif
+%%JAVA%%mpich/share/jumpshot-3/doc/html/img12.gif
+%%JAVA%%mpich/share/jumpshot-3/doc/html/img13.gif
+%%JAVA%%mpich/share/jumpshot-3/doc/html/img2.gif
+%%JAVA%%mpich/share/jumpshot-3/doc/html/img3.gif
+%%JAVA%%mpich/share/jumpshot-3/doc/html/img4.gif
+%%JAVA%%mpich/share/jumpshot-3/doc/html/img5.gif
+%%JAVA%%mpich/share/jumpshot-3/doc/html/img6.gif
+%%JAVA%%mpich/share/jumpshot-3/doc/html/img7.gif
+%%JAVA%%mpich/share/jumpshot-3/doc/html/img8.gif
+%%JAVA%%mpich/share/jumpshot-3/doc/html/img9.gif
+%%JAVA%%mpich/share/jumpshot-3/doc/html/index.html
+%%JAVA%%mpich/share/jumpshot-3/doc/html/internals.pl
+%%JAVA%%mpich/share/jumpshot-3/doc/html/labels.pl
+%%JAVA%%mpich/share/jumpshot-3/doc/html/next.gif
+%%JAVA%%mpich/share/jumpshot-3/doc/html/next_g.gif
+%%JAVA%%mpich/share/jumpshot-3/doc/html/node1.html
+%%JAVA%%mpich/share/jumpshot-3/doc/html/node2.html
+%%JAVA%%mpich/share/jumpshot-3/doc/html/node3.html
+%%JAVA%%mpich/share/jumpshot-3/doc/html/node4.html
+%%JAVA%%mpich/share/jumpshot-3/doc/html/node5.html
+%%JAVA%%mpich/share/jumpshot-3/doc/html/node6.html
+%%JAVA%%mpich/share/jumpshot-3/doc/html/node7.html
+%%JAVA%%mpich/share/jumpshot-3/doc/html/prev.gif
+%%JAVA%%mpich/share/jumpshot-3/doc/html/prev_g.gif
+%%JAVA%%mpich/share/jumpshot-3/doc/html/up.gif
+%%JAVA%%mpich/share/jumpshot-3/doc/html/up_g.gif
+%%JAVA%%mpich/share/jumpshot-3/doc/jumpshot.def
+%%JAVA%%mpich/share/jumpshot-3/etc/jumpshot.conf
+%%JAVA%%mpich/share/jumpshot-3/lib/images.jar
+%%JAVA%%mpich/share/jumpshot-3/lib/jumpshot.jar
+%%JAVA%%mpich/share/jumpshot-3/lib/preview.jar
+%%JAVA%%mpich/share/jumpshot-3/lib/slog.jar
+%%JAVA%%mpich/share/jumpshot-3/lib/slog_print.class
+%%JAVA%%mpich/share/jumpshot-3/lib/slog_print_remote.class
+%%JAVA%%mpich/share/jumpshot-3/lib/statsviewer.jar
+%%JAVA%%mpich/share/jumpshot-3/logfiles/sample.slog
+%%JAVA%%mpich/share/jumpshot-3/logfiles/sppm.stats.0301
+%%JAVA%%mpich/share/jumpshot-3/logfiles/sppm_ic2a.slog
+%%JAVA%%mpich/share/jumpshot-3/logfiles/stats0204.txt
+%%JAVA%%mpich/share/jumpshot-3/logfiles/stats3.txt
+%%JAVA%%mpich/share/jumpshot-3/logfiles/thread1.stats
+%%JAVA%%mpich/share/jumpshot-3/sbin/exejar
+%%JAVA%%mpich/share/jumpshot-3/share/jumpshot.colors
+%%JAVA%%@dirrm mpich/share/jumpshot-3/share
+%%JAVA%%@dirrm mpich/share/jumpshot-3/sbin
+%%JAVA%%@dirrm mpich/share/jumpshot-3/logfiles
+%%JAVA%%@dirrm mpich/share/jumpshot-3/lib
+%%JAVA%%@dirrm mpich/share/jumpshot-3/etc
+%%JAVA%%@dirrm mpich/share/jumpshot-3/doc/html
+%%JAVA%%@dirrm mpich/share/jumpshot-3/doc
+%%JAVA%%@dirrm mpich/share/jumpshot-3/bin
+%%JAVA%%@dirrm mpich/share/jumpshot-3
 mpich/share/machines.freebsd
 mpich/share/machines.sample
 mpich/share/upshot/bin/upshot
@@ -534,15 +543,6 @@ mpich/www/www4/index.html
 @dirrm mpich/share/upshot/bitmaps
 @dirrm mpich/share/upshot/bin
 @dirrm mpich/share/upshot
-@dirrm mpich/share/jumpshot-3/share
-@dirrm mpich/share/jumpshot-3/sbin
-@dirrm mpich/share/jumpshot-3/logfiles
-@dirrm mpich/share/jumpshot-3/lib
-@dirrm mpich/share/jumpshot-3/etc
-@dirrm mpich/share/jumpshot-3/doc/html
-@dirrm mpich/share/jumpshot-3/doc
-@dirrm mpich/share/jumpshot-3/bin
-@dirrm mpich/share/jumpshot-3
 @dirrm mpich/share/examples
 @dirrm mpich/share
 @dirrm mpich/sbin

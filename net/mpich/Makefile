@@ -14,16 +14,24 @@ DIST_SUBDIR=	mpich
 MAINTAINER=	dbader@eece.unm.edu
 
 PATCH_SITES=	ftp://ftp.mcs.anl.gov/pub/mpi/patch/${PORTVERSION}/
-RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84 \
-		javavm:${PORTSDIR}/java/javavmwrapper \
-		${LOCALBASE}/etc/javavms:${PORTSDIR}/java/jdk13
-BUILD_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84 \
-		javavm:${PORTSDIR}/java/javavmwrapper \
-		${LOCALBASE}/etc/javavms:${PORTSDIR}/java/jdk13
 
-HAS_CONFIGURE=	yes
+RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
+BUILD_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
 CONFIGURE_ARGS=	-cflags="${CFLAGS}" -prefix=${PREFIX}/mpich \
 		-mpe_opts="--with-wishloc=wish8.4"
+
+.if defined(WITHOUT_JAVA)
+CONFIGURE_ARGS+= --without-java
+PLIST_SUB+=	JAVA="@comment "
+.else
+RUN_DEPENDS+=	javavm:${PORTSDIR}/java/javavmwrapper \
+		${LOCALBASE}/etc/javavms:${PORTSDIR}/java/jdk13
+BUILD_DEPENDS+=	javavm:${PORTSDIR}/java/javavmwrapper \
+		${LOCALBASE}/etc/javavms:${PORTSDIR}/java/jdk13
+PLIST_SUB+=     JAVA=""
+.endif
+
+HAS_CONFIGURE=	yes
 
 .include <bsd.port.pre.mk>
 
@@ -39,6 +47,7 @@ CONFIGURE_ARGS+= -rsh="${LOCALBASE}/bin/ssh"
 .endif
 
 ALL_TARGET=
+
 MANPREFIX=	${PREFIX}/mpich
 
 MAN1= 		MPI.1 cleanipcs.1 mpiCC.1 mpicc.1 mpif77.1 mpif90.1 mpiman.1		\
