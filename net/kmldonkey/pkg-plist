@@ -5,12 +5,16 @@ lib/kde3/kcm_kcmdonkey.so
 lib/kde3/mldonkeyapplet.la
 lib/kde3/mldonkeyapplet.so
 lib/kde3/mldonkeyapplet.so.1
+lib/libkmldonkey.la
+lib/libkmldonkey.so
+lib/libkmldonkey.so.1
 share/applnk/Settings/Network/kcmdonkey.desktop
 share/apps/kicker/applets/mldonkeyapplet.desktop
 share/apps/konqueror/servicemenus/ed2k_slurp.desktop
 share/apps/mlapplet/icons/mld-launchgui.png
 share/apps/mlapplet/icons/mld-mutedonkey.png
 share/apps/mlapplet/icons/mld-unmutedonkey.png
+share/doc/HTML/en/kmldonkey/common
 share/doc/HTML/en/kmldonkey/index.cache.bz2
 share/doc/HTML/en/kmldonkey/index.docbook
 share/icons/hicolor/16x16/apps/mldonkey.png
@@ -41,7 +45,7 @@ share/services/ed2k.protocol
 @unexec rmdir %D/share/doc/HTML 2>/dev/null || true
 @unexec rmdir %D/share/apps/mlapplet/icons 2>/dev/null || true
 @unexec rmdir %D/share/apps/mlapplet 2>/dev/null || true
-@unexec rmdir %D/share/apps/konqueror/servicemenu 2>/dev/null || true
+@unexec rmdir %D/share/apps/konqueror/servicemenus 2>/dev/null || true
 @unexec rmdir %D/share/apps/konqueror 2>/dev/null || true
 @unexec rmdir %D/share/apps/kicker/applets 2>/dev/null || true
 @unexec rmdir %D/share/apps/kicker 2>/dev/null || true
