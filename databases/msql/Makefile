@@ -3,7 +3,7 @@
 # Date created:		December 17th 1996
 # Whom:			jfitz
 #
-# $Id: Makefile,v 1.23 1997/11/26 23:30:11 jseger Exp $
+# $Id: Makefile,v 1.24 1998/02/13 10:54:46 tg Exp $
 #
 
 DISTNAME=	msql-2.0.3
@@ -12,6 +12,8 @@ MASTER_SITES=	http://www2.nerosworld.com/msql/ \
 		http://hughes.com.au/software/msql2/
 
 MAINTAINER=	jfitz@FreeBSD.ORG
+
+BROKEN=yes
 
 # Not free for commercial use.  Must create a user on the local system
 NO_PACKAGE=	YES
