@@ -1,0 +1,46 @@
+--- Imakefile.orig	Sun Oct  1 12:19:17 1995
++++ Imakefile	Mon Mar 12 20:54:39 2001
+@@ -1,4 +1,5 @@
+ XCALENDAR_LIBDIR = $(LIBDIR)/xcalendar
++XCALENDAR_JP_LIBDIR = $(LIBDIR)/ja_JP.EUC/xcalendar
+         LIBFILES = larrow.xbm qmark.xbm quit.xbm rarrow.xbm xcalendar.hlp
+ # Comment out the following two lines for the Motif version
+ LOCAL_LIBRARIES = $(XAWLIB) $(XMULIB) $(XTOOLLIB) $(XLIB)
+@@ -12,7 +13,7 @@
+ #
+ # for Internationalization
+ #
+-EXTRA_DEFINES = -DXI18N -DATHENA
++EXTRA_DEFINES = -DXI18N -DATHENA -DHAVE_DIRENT_H
+ ##if !SharedLibXwchar
+ #       _UseCat($(USRLIBDIR),$(CONTRIBSRC)/lib/Xwchar,/libXwchar.a)
+ #       XWCHARLIB = LoaderLibPrefix _Use(-lXwchar,$(DEPXWCHARLIB))
+@@ -40,12 +41,26 @@
+ # for Internationalization
+ #
+ XCal-uj.ad: XCal-uj.sed
+-	sed 's;%%XCALENDAR_LIBDIR%%;$(XCALENDAR_LIBDIR);'\
++	sed 's;%%XCALENDAR_LIBDIR%%;$(XCALENDAR_JP_LIBDIR);'\
++	< $? \
++	> $@
++xcalendar-uj.hlp: $(FILESDIR)/xcalendar-uj.hlp.sed
++	sed 's;%%XCALENDAR_LIBDIR%%;$(XCALENDAR_JP_LIBDIR);'\
++	< $? \
++	> $@
++xcalendar-uj.man: $(FILESDIR)/xcalendar-uj.man.sed
++	sed 's;%%XCALENDAR_LIBDIR%%;$(XCALENDAR_JP_LIBDIR);'\
+ 	< $? \
+ 	> $@
+-install:: XCal-uj.ad
++install:: 
+ 	MakeDir($(LIBDIR)/ja_JP.EUC/app-defaults)
+ 	$(INSTALL) -c $(INSTAPPFLAGS) XCal-uj.ad $(LIBDIR)/ja_JP.EUC/app-defaults/XCalendar
++	MakeDir($(XCALENDAR_JP_LIBDIR))
++	$(INSTALL) -c $(INSTAPPFLAGS) $(FILESDIR)/xcalendar.hol $(XCALENDAR_JP_LIBDIR)
++	$(INSTALL) -c $(INSTAPPFLAGS) xcalendar-uj.hlp $(XCALENDAR_JP_LIBDIR)/xcalendar.hlp
++	$(INSTALL) -c $(INSTMANFLAGS) xcalendar-uj.man \
++		$(MANPATH)/ja/man1/xcalendar.1
++	$(COMPRESSMANCMD) $(MANPATH)/ja/man1/xcalendar.1
+ 
+ #	MakeDir($(LIBDIR)/ja_JP.ujis/app-defaults)
+ #	$(INSTALL) -c $(INSTAPPFLAGS) XCal-uj.ad $(LIBDIR)/ja_JP.ujis/app-defaults/XCalendar
