@@ -9,13 +9,8 @@ PORTNAME?=	cs
 PORTVERSION?=	1.3
 CATEGORIES?=	games linux
 MASTER_SITES?=	http://games.velocity.net/files/Counter-Strike/ \
-		ftp://extreme-players.de/pub/hl/mod/cs/ \
-		http://fileplanet.games-world.net/dl/ftp1.gamespy.com/action/half-life/modifications/cstrike/ \
-		ftp://downloads2.homelanfed.com/CS/Patches/ \
-		ftp://downloads.homelanfed.com/CS/Patches/ \
-		ftp://downloads3.homelanfed.com/CS/Patches/ \
-		ftp://downloads4.homelanfed.com/CS/Patches/ \
-		http://www.redphive.org/files/
+		http://www.redphive.org/files/ \
+		http://files.ausgamers.com:81/half-life/counter-strike/linux/
 PKGNAMEPREFIX=	hlserver-
 .ifndef(DISTFILES)
 DISTNAME?=	${PORTNAME}_${PORTVERSION:S/.//}_full

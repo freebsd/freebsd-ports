@@ -10,10 +10,8 @@ PORTVERSION=	3.1.0.8.0a
 PORTREVISION=	1
 CATEGORIES=	games linux
 MASTER_SITES=	ftp://files.ausgamers.com/half-life/linux/ \
-		http://fileplanet.games-world.net/dl/ftp1.gamespy.com/action/half-life/official/ \
-		ftp://ftp.houstonlive.net/CounterStrike/ \
-		ftp://mirrors.cstrike.org/pub/mirrors/cstrike/ \
-		http://www.redphive.org/files/
+		http://www.redphive.org/files/ \
+		http://files.ausgamers.com:81/half-life/linux/
 DISTFILES=	hlds_l_3108_full.tar.gz \
 		hlds_l_3108a_up.tar.gz
 
