@@ -135,6 +135,7 @@
     SUBDIR += offix-clipboard
     SUBDIR += offix-execute
     SUBDIR += oooqs
+    SUBDIR += p5-X11-GUITest
     SUBDIR += p5-X11-IdleTime
     SUBDIR += p5-X11-Protocol
     SUBDIR += panoramixext
