@@ -1,0 +1,11 @@
+--- widget/Makefile.in.orig	Mon Jun  7 15:15:24 1999
++++ widget/Makefile.in	Mon Jun  7 15:17:00 1999
+@@ -113,7 +113,7 @@
+ 
+ libCw_la_LDFLAGS = -version-info 1:0:0
+ 
+-DEFS = -DLOCALEDIR=\"$(localedir)\" -DLIBDIR=\"${exec_prefix}/lib/cooledit\" @DEFS@ 
++DEFS = -DLOCALEDIR=\"$(localedir)\" -DLIBDIR=\"${exec_prefix}/lib/cooledit\" -DDATADIR=\"$(datadir)\" @DEFS@ 
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../config.h
+ CONFIG_CLEAN_FILES = 

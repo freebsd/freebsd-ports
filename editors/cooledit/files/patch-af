@@ -1,0 +1,11 @@
+--- widget/syntax.c.orig	Sun May 30 07:47:04 1999
++++ widget/syntax.c	Mon Jun  7 15:55:34 1999
+@@ -728,7 +728,7 @@
+     f = fopen (p, "r");
+     if (f)
+ 	return f;
+-    strcpy (p, LIBDIR "/syntax/");
++    strcpy (p, DATADIR "/cooledit/syntax/");
+     strcat (p, filename);
+     syntax_free (error_file_name);
+     error_file_name = strdup (p);
