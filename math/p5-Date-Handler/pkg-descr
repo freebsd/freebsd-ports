@@ -1,0 +1,6 @@
+Date::Handler is a container for dates that holds all the methods
+to transform itself from Timezone to Timezone and format itself.
+It uses operator overloading and Delta date objects to calculates
+time differences.
+
+WWW: http://search.cpan.org/search?dist=Date-Handler

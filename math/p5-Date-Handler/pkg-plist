@@ -1,0 +1,11 @@
+lib/perl5/site_perl/%%PERL_VER%%/Date/Handler.pm
+lib/perl5/site_perl/%%PERL_VER%%/Date/Handler.pod
+lib/perl5/site_perl/%%PERL_VER%%/Date/Handler/Constants.pm
+lib/perl5/site_perl/%%PERL_VER%%/Date/Handler/Delta.pm
+lib/perl5/site_perl/%%PERL_VER%%/Date/Handler/Range.pm
+lib/perl5/site_perl/%%PERL_VER%%/Date/Handler/Test.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Date/Handler/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Date/Handler
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Date 2>/dev/null || true
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Date/Handler
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Date 2>/dev/null || true
