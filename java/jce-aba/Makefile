@@ -8,11 +8,13 @@
 PORTNAME=	jce-aba
 PORTVERSION=	1.1
 CATEGORIES=	java
-MASTER_SITES=	http://www.openjce.org/
+MASTER_SITES=	http://www.metaverse.nl/~ernst/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	znerd
 
 MAINTAINER=	greg@greg.rim.or.jp
 
-RUN_DEPENDS=	${LOCALBASE}/jdk1.1.8/bin/java:${PORTSDIR}/java/jdk
+USE_JAVA=	1.1+
 
 RESTRICTED=	"Crypto; export-controlled"
 NO_BUILD=	yes
