@@ -83,38 +83,6 @@ makeduds () {
   cp -p ${pb}/${arch}/${branch}/duds ${pb}/${arch}/${branch}/duds.orig
 }
 
-# usage: setupnode pb arch scripts branch me node md5 tmpdir
-setupnode () {
-  pb=$1
-  arch=$2
-  scripts=$3
-  branch=$4
-  me=$5
-  node=$6
-  md5=$7
-  tmpdir=$8
-
-  echo "setting up of $node started at $(date)"
-
-  # Read in client config and decide if the node is disconnected or not (i.e. mounts via NFS)
-  disconnected=0
-  . ${pb}/${arch}/portbuild.${node}
-
-  scp -p ${scripts}/setupnode root@${node}:/tmp
-  ssh -n root@${node} sh /tmp/setupnode ${me} ${pb} ${arch} ${branch} ${tmpdir} ${md5} ${disconnected}
-
-  if [ "${disconnected}" = 1 ]; then
-    rsync -r -l -p --delete ${pb}/scripts root@${node}:${pb}/
-    rsync -r -l -p --delete ${pb}/${arch}/portbuild* root@${node}:${pb}/${arch}
-    rsync -r -l -p --delete ${pb}/${arch}/${branch}/ports root@${node}:${pb}/${arch}/${branch}
-    rsync -r -l -p --delete ${pb}/${arch}/${branch}/src root@${node}:${pb}/${arch}/${branch}
-    rsync -r -l -p --delete ${pb}/${arch}/${branch}/doc root@${node}:${pb}/${arch}/${branch}
-    rsync -r -l -p --delete ${pb}/${arch}/${branch}/tarballs/bindist* root@${node}:${pb}/${arch}/${branch}/tarballs
-  fi
-
-  echo "setting up of $node ended at $(date)"
-}
-
 # usage: restrictedlist pb scripts branch
 restrictedlist () {
   pb=$1
@@ -296,7 +264,7 @@ fi
 branch=$1
 date=$2
 
-if [ "x$branch" != x4 -a "x$branch" != x4-exp -a "x$branch" != x5 ]; then
+if [ "x$branch" != x4 -a "x$branch" != x4-exp -a "x$branch" != x5 -a "x$branch" != x6 ]; then
   usage
 fi
 
@@ -391,12 +359,11 @@ if [ "$skipstart" = 0 ]; then
 fi
 
 if [ "$nobuild" = 0 -a "$finish" = 0 ]; then
-  md5=$(/sbin/md5 ${pb}/${arch}/${branch}/tarballs/bindist.tar | awk '{print $4}')
   echo "================================================"
   echo "setting up nodes"
   echo "================================================"
   for node in $(awk '{print $1}' ${pb}/${arch}/mlist); do
-    setupnode ${pb} ${arch} ${scripts} ${branch} ${me} ${node} ${md5} ${scratchdir} &
+    ${scripts}/dosetupnode ${arch} ${branch} ${node} &
   done
 fi
 
@@ -541,12 +508,11 @@ if [ "$nobuild" = 0 ]; then
   cd ${pb}/${arch}/${branch}/old-errors
   ${scripts}/processlogs
 
-  md5=$(/sbin/md5 ${pb}/${arch}/${branch}/tarballs/bindist.tar | awk '{print $4}')
   echo "================================================"
   echo "setting up nodes"
   echo "================================================"
   for node in $(awk '{print $1}' ${pb}/${arch}/mlist); do
-    setupnode ${pb} ${arch} ${scripts} ${branch} ${me} ${node} ${md5} ${scratchdir} &
+    ${scripts}/dosetupnode ${arch} ${branch} ${node} &
     sleep 2
   done
 
