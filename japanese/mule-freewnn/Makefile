@@ -3,7 +3,7 @@
 # Date created:		22 November 1994
 # Whom:			Satoshi Asami (asami)
 #
-# $Id: Makefile,v 1.21 1995/07/23 22:32:44 asami Exp $
+# $Id: Makefile,v 1.22 1995/07/28 23:46:43 asami Exp $
 #
 
 DISTNAME=	mule-2.3
@@ -16,9 +16,7 @@ MASTER_SITES=	ftp://etlport.etl.go.jp/pub/mule/ \
 
 MAINTAINER=	asami@FreeBSD.ORG
 
-.if !exists(/usr/X11R6/lib/libwnn.a)
-DEPENDS=	${PORTSDIR}/japanese/Wnn
-.endif
+BUILD_DEPENDS=	${PREFIX}/bin/Wnn4/jserver:${PORTSDIR}/japanese/Wnn
 
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
