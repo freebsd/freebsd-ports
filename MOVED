@@ -365,3 +365,6 @@ misc/edonkey-tool-recovermet|misc/linux-edonkey-tool-recovermet|2003-06-02|accur
 multimedia/xmovie|multimedia/linux-xmovie|2003-06-02|accurate naming
 net/edonkey-core|net/linux-edonkey-core|2003-06-02|accurate naming
 audio/xnap|net/xnap|2003-06-02|accurate category
+x11-wm/bbrun|x11/bbrun|2003-06-03|accurate category
+x11-wm/bbapm|sysutils/bbapm|2003-06-03|accurate category
+x11-wm/icemc|misc/icemc|2003-06-03|accurate category
