@@ -1,0 +1,14 @@
+afterBURNER*Cache is a tool to speed up web applications written
+in PHP.
+It works by caching inside the web server compiled PHP code (the
+first time it's executed) so that the next time the same script
+is called it is simply restored, already compiled, from the cache
+with big savings in terms of execution time.
+Caching and saving scripts at compile time can be a big performance
+win, especially if your PHP script is complex and makes heavy use
+of libraries.
+
+WWW: http://afterburner.bware.it/
+
+- Alex Dupre
+sysadmin@alexdupre.com
