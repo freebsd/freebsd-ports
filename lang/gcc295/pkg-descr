@@ -1,10 +1,10 @@
-This is GNU's latest offering of GCC (the GNU Compiler Collection).
-Version 2.95 contains many improvements and features not found in the
-gcc-2.7.2 and gcc-2.8.1 compliers.  C++ support, is vastly improved, in
-particular template support is worlds above that of gcc-2.7.2.
+GCC (the GNU Compiler Collection) version 2.95 contains many improvements
+and features not found in the gcc-2.7.2 and gcc-2.8.1 compilers.
+C++ support is vastly improved, in particular template support is worlds
+above that of gcc-2.7.2.
 
-For more details, see <http://egcs.cygnus.com/>.
+For more details, see <http://gcc.gnu.org/>.
 
 - David O'Brien <obrien@FreeBSD.org>
 
-WWW: http://egcs.cygnus.com/
+WWW: http://gcc.gnu.org/
