@@ -5514,6 +5514,7 @@ pam_krb5	ports/security/pam_krb5
 pam_ldap	ports/security/pam_ldap
 pam_opie	src/lib/libpam/modules/pam_opie
 pam_passwdqc	ports/security/pam_passwdqc
+pam_pop3	ports/security/pam_pop3
 pam_pwdfile	ports/security/pam_pwdfile
 pam_radius	src/lib/libpam/modules/pam_radius
 pam_skey	src/lib/libpam/modules/pam_skey
