@@ -3,5 +3,5 @@ distributed.net/INFO
 @unexec if cmp -s %D/distributed.net/dnetc.ini %D/distributed.net/dnetc.ini.sample; then rm -f %D/distributed.net/dnetc.ini; fi
 distributed.net/dnetc.ini.sample
 @exec [ -f %B/dnetc.ini ] || cp %B/%f %B/dnetc.ini
-etc/rc.d/dnetc.sh.sample
+etc/rc.d/dnetc.sh
 @dirrm distributed.net

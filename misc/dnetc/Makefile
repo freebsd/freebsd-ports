@@ -24,6 +24,7 @@ MD5_FILE=	${MASTERDIR}/distinfo.${ARCH}
 
 ONLY_FOR_ARCHS=	i386 alpha sparc64 amd64
 
+USE_RC_SUBR=	yes
 NO_BUILD=	yes
 
 BINDIR=		${PREFIX}/distributed.net
@@ -52,17 +53,15 @@ VERSION=	2.9008.491
 IGNORE=		"This port requires FreeBSD 3.X or greater."
 .endif
 
-.if exists(${PREFIX}/distributed.net/rc5des)
-BROKEN=		"rc5des/dnetc conflict: Please deinstall all rc5des ports/packages first."
-.endif
-
 post-extract:
 	@${SED} -e 's#%%CLIENTUSER%%#${CLIENTUSER}#g' -e 's#%%CLIENTGROUP%%#${CLIENTGROUP}#' \
 		-e 's#%%CLIENTUID%%#${CLIENTUID}#g' ${MASTERDIR}/pkg-install > ${PKGINSTALL}
 	@${SED} -e 's#%%CLIENTUSER%%#${CLIENTUSER}#g' -e 's#%%CLIENTGROUP%%#${CLIENTGROUP}#' \
 		${MASTERDIR}/pkg-deinstall > ${PKGDEINSTALL}
 	@${SED} -e 's#%%BINDIR%%#${BINDIR}#' ${MASTERDIR}/pkg-message > ${PKGMESSAGE}
-	@${SED} -e 's#%%BINDIR%%#${BINDIR}#' -e 's#%%CLIENTUSER%%#${CLIENTUSER}#g' \
+	@${SED} -e 's#%%BINDIR%%#${BINDIR}#' \
+		-e 's#%%CLIENTUSER%%#${CLIENTUSER}#g' \
+		-e 's#%%RC_SUBR%%#${RC_SUBR}#g' \
 		${FILESDIR}/dnetc.sh > ${WRKDIR}/dnetc.sh
 
 do-configure:
@@ -86,7 +85,7 @@ do-install:
 	${INSTALL_DATA} ${FILESDIR}/INFO ${BINDIR}
 	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${PREFIX}/man/man1
 
-	${INSTALL_SCRIPT} ${WRKDIR}/dnetc.sh ${PREFIX}/etc/rc.d/dnetc.sh.sample
+	${INSTALL_SCRIPT} ${WRKDIR}/dnetc.sh ${PREFIX}/etc/rc.d/dnetc.sh
 
 	${INSTALL} -c -m 644 -o ${CLIENTUSER} -g ${CLIENTGROUP} ${WRKSRC}/dnetc.ini ${BINDIR}/dnetc.ini.sample
 .if !exists(${BINDIR}/dnetc.ini)
