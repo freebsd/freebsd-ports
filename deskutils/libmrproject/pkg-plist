@@ -1,4 +1,3 @@
-etc/rc.d/000.libmrproject.sh
 include/mrproject-1.0/mrproject/mrp-application.h
 include/mrproject-1.0/mrproject/mrp-assignment.h
 include/mrproject-1.0/mrproject/mrp-calendar.h

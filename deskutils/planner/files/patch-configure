@@ -1,10 +1,11 @@
---- configure.orig	Mon Feb 17 18:43:33 2003
-+++ configure	Mon Feb 17 18:45:00 2003
-@@ -8260,6 +8260,7 @@
- 
- # This can be used to rebuild libtool when needed
- LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
-+$ac_aux_dir/ltconfig $LIBTOOL_DEPS
- 
- # Always use our own libtool.
- LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+--- configure.orig	Tue Aug 19 12:17:22 2003
++++ configure	Tue Aug 19 12:19:16 2003
+@@ -5168,7 +5168,7 @@
+ # All known linkers require a `.a' archive for static linking (except M$VC,
+ # which needs '.lib').
+ libext=a
+-ltmain="$ac_aux_dir/ltmain.sh"
++ltmain="/usr/local/share/libtool14/ltmain.sh"
+ ofile="$default_ofile"
+ with_gnu_ld="$lt_cv_prog_gnu_ld"
+ need_locks="$enable_libtool_lock"
