@@ -77,6 +77,7 @@ CONFIGURE_ARGS+=--enable-gssapi=${HEIMDAL_HOME}
 CONFIGURE_ARGS+=--enable-gssapi
 .else
 CONFIGURE_ARGS+=--disable-gssapi
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-saslauthd::mechanisms.h
 .endif
 
 .include <bsd.port.pre.mk>
