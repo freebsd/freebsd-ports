@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.39 1998/10/30 23:38:26 jkh Exp $
+# $Id: Makefile,v 1.40 1998/12/12 07:41:46 asami Exp $
 #
 
 SUBDIR += archivers
@@ -67,3 +67,6 @@ search:	${.CURDIR}/INDEX
 .else
 	@grep -i "${key}|" ${.CURDIR}/INDEX | awk -F\| '{ printf("Port:\t%s\nPath:\t%s\nInfo:\t%s\nMaint:\t%s\nIndex:\t%s\nB-deps:\t%s\nR-deps:\t%s\n\n", $$1, $$2, $$4, $$6, $$7, $$8, $$9); }'
 .endif
+
+parallel: ${.CURDIR}/INDEX
+	@sed -e 's/|/.tgz|/' ${.CURDIR}/INDEX | awk -F '|' '{me=$$1; here=$$2; bdep=$$8; rdep=$$9; if (bdep != "") { gsub("$$", ".tgz", bdep); gsub(" ", ".tgz ", bdep); } if (rdep != "") { gsub("$$", ".tgz", rdep); gsub(" ", ".tgz ", rdep); } print "all:: " me; print me ": " bdep " " rdep; printf("\t@/a/asami/portbuild/pdispatch /a/asami/portbuild/portbuild %s %s", me, here); if (bdep != "") printf(" %s", bdep); if (rdep != "") printf(" %s", rdep); printf("\n")}'
