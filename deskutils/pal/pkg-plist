@@ -1,0 +1,13 @@
+bin/pal
+%%DATADIR%%/australia.pal
+%%DATADIR%%/birth-death.pal
+%%DATADIR%%/christian.pal
+%%DATADIR%%/computer.pal
+%%DATADIR%%/history.pal
+%%DATADIR%%/lotr.pal
+%%DATADIR%%/music.pal
+%%DATADIR%%/pagan.pal
+%%DATADIR%%/pal.conf
+%%DATADIR%%/us.pal
+%%DATADIR%%/world.pal
+@dirrm %%DATADIR%%

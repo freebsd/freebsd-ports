@@ -80,6 +80,7 @@
     SUBDIR += narval
     SUBDIR += notebook
     SUBDIR += offix-trash
+    SUBDIR += pal
     SUBDIR += phpgroupware
     SUBDIR += plan
     SUBDIR += planner
