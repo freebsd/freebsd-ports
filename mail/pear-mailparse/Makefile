@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mailparse
-PORTVERSION=	0.9.4
+PORTVERSION=	2.0b
 CATEGORIES=	mail www pear
 
 MAINTAINER=	ports@FreeBSD.org
