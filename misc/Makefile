@@ -135,6 +135,7 @@
     SUBDIR += rfc
     SUBDIR += rname
     SUBDIR += rtfm
+    SUBDIR += salias
     SUBDIR += screen
     SUBDIR += scriptkit
     SUBDIR += seizedesktop

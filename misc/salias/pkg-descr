@@ -1,0 +1,12 @@
+The purpose of salias is to provide an aliasing system for programs where
+arguments may wish to be aliased. This is more useful than just a shell
+environment variable as an argument, since it can ``repeat'' options, such
+as GnuPG's --recipient option as needed. Also, unlike shell enviornment
+variables, it can be used transparently inside of other programs,
+strengthening it's drop-in capabilities.
+
+salias was initially designed for wrapping around GnuPG, providing aliases
+for keys. However, the design easily extends to being useful for all types
+of programs.
+
+WWW: http://salias.sourceforge.net/
