@@ -6,21 +6,21 @@
 #
 
 PORTNAME=	xgfe
-PORTVERSION=	2.0
+PORTVERSION=	2.1
 CATEGORIES=	math
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	mph
+MASTER_SITES=	${MASTER_SITE_TEX_CTAN}
+MASTER_SITE_SUBDIR=	graphics/gnuplot/contrib
 
 MAINTAINER=	mph@freebsd.org
 COMMENT=	An X11 front-end for Gnuplot
 
 RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
 
-USE_GCC=	2.95
-USE_QT_VER=	1
+USE_QT_VER=	3
 USE_X_PREFIX=	yes
 
-MAKE_ENV=	X11BASE=$(X11BASE) PREFIX=$(PREFIX)
+MAKE_ENV+=	DOCSDIR=$(DOCSDIR) PTHREAD_CFLAGS="$(PTHREAD_CFLAGS)" \
+		PTHREAD_LIBS="$(PTHREAD_LIBS)"
 .if defined(NOPORTDOCS)
 MAKE_ENV+=	NOPORTDOCS=$(NOPORTDOCS)
 .endif
@@ -28,6 +28,6 @@ MAKE_ENV+=	NOPORTDOCS=$(NOPORTDOCS)
 WRKSRC=		$(WRKDIR)/$(DISTNAME)/source
 
 post-extract:
-	cd $(WRKSRC) && ${RM} Makefile && ${LN} -s Makefile.freebsd-gcc Makefile
+	@cd $(WRKSRC) && ${LN} -sf Makefile.freebsd-gcc Makefile
 
 .include <bsd.port.mk>
