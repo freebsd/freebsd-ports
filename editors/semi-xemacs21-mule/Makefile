@@ -13,13 +13,13 @@ PORTCLASS=	slave
 MASTERDIR=	${.CURDIR}/../../editors/semi-emacs
 
 # emacs port setup
-EMACS_NAME=	xemacs
-EMACS_PORT=	xemacs21-mule
-EMACS_VER=	21.1.10
-EMACS_CMD=	${PREFIX}/bin/${EMACS_PORT}
-EMACS_PACKAGESDIR=	lib/${EMACS_NAME}/site-packages
+EMACS_PORT_NAME=	xemacs21-mule
+EMACS_PACKAGESDIR=	${EMACS_LIBDIR}/site-packages
 # packages-subdirectories which this port requires
 EMACS_PACKAGES_SUBDIRS= info lisp man pkginfo
+
+SCRIPTS_ENV=	EMACS_PACKAGESDIR=${EMACS_PACKAGESDIR}
+PLIST_SUB=	EMACS_PACKAGESDIR=${EMACS_PACKAGESDIR}
 
 # how to make and install
 ALL_TARGET=	package
@@ -34,7 +34,7 @@ HAS_MULE=		YES
 # whether building info files by emacs or makeinfo
 BUILD_INFO_BY_EMACS=	YES
 # texinfo packages
-BUILD_DEPENDS+=	${PREFIX}/${EMACS_PACKAGESDIR}/../xemacs-packages/lisp/texinfo/texinfo.el:${PORTSDIR}/editors/xemacs-sumo-packages
+BUILD_DEPENDS+=	${LOCALBASE}/${EMACS_PACKAGESDIR}/../xemacs-packages/lisp/texinfo/texinfo.el:${PORTSDIR}/editors/xemacs-sumo-packages
 
 # use pkg/* files in ${.CURDIR}
 PKGDIR=		${.CURDIR}/pkg
@@ -57,7 +57,7 @@ SEMIDOCDIR=	${EMACS_PACKAGESDIR}/lisp/semi
 
 xemacs-package: install
 	@${RM} -f ${.CURDIR}/${XEMACS_PKG_TARBALL}
-	@(cd ${PREFIX}/${EMACS_PACKAGESDIR} ;\
+	@(cd ${LOCALBASE}/${EMACS_PACKAGESDIR} ;\
 	  ${TAR} -zcf ${.CURDIR}/${XEMACS_PKG_TARBALL} ${XEMACS_PKG_CONTENTS} ;\
 	)
 
