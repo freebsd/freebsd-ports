@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.60 1997/06/04 03:39:27 asami Exp $
+# $Id: Makefile,v 1.61 1997/06/04 05:55:00 asami Exp $
 #
 
     SUBDIR += SWIG
@@ -32,6 +32,7 @@
     SUBDIR += noweb
     SUBDIR += omniBroker
     SUBDIR += omniORB
+    SUBDIR += p5-B
     SUBDIR += p5-BSD-Resource
     SUBDIR += p5-C-Scan
     SUBDIR += p5-ConfigReader
