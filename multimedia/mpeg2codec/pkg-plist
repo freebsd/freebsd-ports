@@ -1,9 +1,0 @@
-bin/mpeg2encode
-bin/mpeg2decode
-share/mpeg2/mpeg2enc.doc
-share/mpeg2/MPEG-1.par
-share/mpeg2/NTSC.par
-share/mpeg2/PAL.par
-share/mpeg2/inter.mat
-share/mpeg2/intra.mat
-@dirrm share/mpeg2

@@ -1,8 +1,0 @@
-etc/ftpaccess.example
-etc/ftpconversions.example
-etc/ftpusers.example
-libexec/ftpd
-bin/ftpshut
-bin/ftpcount
-bin/ftpwho
-bin/ftpckconfig

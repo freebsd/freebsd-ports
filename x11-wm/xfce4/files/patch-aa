@@ -1,9 +1,0 @@
---- XFCE.def.orig	Wed Oct 21 09:11:00 1998
-+++ XFCE.def	Tue Nov 17 13:24:34 1998
-@@ -1,5 +1,5 @@
- XBINDIR        = $(BINDIR) 
--XFCE_DIR       = /var/XFCE
-+XFCE_DIR       = $(PREFIX)/lib/X11/XFCE
- XFCE_PAL       = $(XFCE_DIR)/palettes
- XFCE_BACKDROPS = $(XFCE_DIR)/backdrops
- XFCE_HELP      = $(XFCE_DIR)/help
