@@ -16,8 +16,6 @@ MAINTAINER=	mi@aldan.algebra.com
 
 LIB_DEPENDS=	pq:${PORTSDIR}/databases/postgresql7
 
-FORBIDDEN=	can be broken by carefully crafted password string
-
 # When the family of Debian mirrors is added to bsd.port.mk,
 # this will suddenly start making sense:
 MASTER_SITE_DEBIAN?= http://ftp.debian.org/debian/%SUBDIR%/
@@ -29,7 +27,7 @@ MASTER_SITES_DEBIAN+=	http://ftp.au.debian.org/pub/debian/%SUBDIR%/ \
 	ftp://ftp.bora.net/pub/linux/debian/%SUBDIR%/
 
 MAKEFILE=	${FILESDIR}/Makefile.bsd
-MAKE_ARGS+=	-j 2
+MAKE_ARGS+=	-j 2 FILESDIR=${FILESDIR}
 
 post-install:
 	${CAT} ${PKGMESSAGE}
