@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	dillo
-PORTVERSION=	0.8.1
+PORTVERSION=	0.8.2
 CATEGORIES=	www
 MASTER_SITES=	http://www.dillo.org/download/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	tmseck@netcologne.de
 COMMENT=	A fast, small graphical Web browser built upon GTK+
 
+RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png
 
