@@ -1,0 +1,15 @@
+--- utils/ppsocket.cc.orig	Wed Jan 26 20:45:31 2000
++++ utils/ppsocket.cc	Wed Jan 26 20:45:54 2000
+@@ -198,7 +198,11 @@
+ 
+ ppsocket* ppsocket::accept(char* Peer, int MaxLen)
+ { 
+-  int len;
++#if __FreeBSD_version >= 400013
++  socklen_t len;
++#else
++  unsigned len;
++#endif
+   ppsocket* accepted;
+   char* peer;
+

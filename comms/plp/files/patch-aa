@@ -1,0 +1,20 @@
+--- ncp/mp_serial.c.orig	Tue Nov  2 12:47:06 1999
++++ ncp/mp_serial.c	Wed Jan 26 20:44:56 2000
+@@ -192,7 +192,7 @@
+ #if defined(hpux) || defined(_IBMR2)
+   ti.c_cflag = CS8 | HUPCL | clocal | CREAD;
+ #endif
+-#if defined(sun) || defined(linux) || defined(__sgi) || defined(__NetBSD__)
++#if defined(sun) || defined(linux) || defined(__sgi) || defined(__NetBSD__) || defined(__FreeBSD__)
+   ti.c_cflag = CS8 | HUPCL | clocal | CRTSCTS | CREAD;
+   ti.c_iflag = IGNBRK | IGNPAR;
+   ti.c_cc[VMIN] = 1;
+@@ -223,7 +223,7 @@
+ void ser_exit(int fd)
+ {
+   struct termios ti;
+-  if(ioctl(fd, TCGETS, (caddr_t)&ti) < 0) {
++  if(tcgetattr(fd, &ti) < 0) {
+     perror("TCGETSW");
+   }
+   ti.c_cflag &= ~CRTSCTS;

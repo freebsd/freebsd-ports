@@ -1,0 +1,21 @@
+--- Makefile.orig	Wed Jan 26 20:50:25 2000
++++ Makefile	Wed Jan 26 20:53:10 2000
+@@ -16,15 +16,15 @@
+ 
+ # Compiler & flags
+ INCLUDE=-I../utils
+-CFLAGS= -Wall -g -O2
+-CC=g++ $(CFLAGS) $(INCLUDE)
++CFLAGS+= -Wall
++CC=${CXX} $(CFLAGS) $(INCLUDE)
+ 
+ # Linker and flags
+ LIBDIR=-L../utils
+ # Solaris users uncomment this line instead of the next one
+ #LIBS=-lutils -lsocket -lnsl
+ LIBS=-lutils
+-LD=g++ $(LIBDIR)
++LD=${CXX} $(LIBDIR)
+ 
+ # Archiver
+ AR=ar -cr

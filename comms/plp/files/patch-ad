@@ -1,0 +1,20 @@
+--- rfsv/main.cc.orig	Mon Apr 12 14:32:31 1999
++++ rfsv/main.cc	Wed Jan 26 20:44:56 2000
+@@ -107,7 +107,7 @@
+ 
+   skt = new ppsocket();
+   skt->startup();
+-  res = skt->connect(NULL, sockNum);
++  res = skt->connect("127.0.0.1", sockNum);
+   if (!res) {
+     delete skt;
+ 
+@@ -120,7 +120,7 @@
+       usleep(100000);
+       skt = new ppsocket();
+       skt->startup();
+-      res = skt->connect(NULL, sockNum);
++      res = skt->connect("127.0.0.1", sockNum);
+       if (!res) delete skt;
+     }
+     
