@@ -861,6 +861,7 @@
     SUBDIR += p5-Pod-Coverage
     SUBDIR += p5-Proc-Background
     SUBDIR += p5-Proc-Daemon
+    SUBDIR += p5-Proc-PID-File
     SUBDIR += p5-Proc-PIDFile
     SUBDIR += p5-Proc-ProcessTable
     SUBDIR += p5-Proc-Reliable
