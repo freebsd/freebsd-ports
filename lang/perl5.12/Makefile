@@ -3,7 +3,7 @@
 # Date created:		16 April 1995
 # Whom:			markm
 #
-# $Id: Makefile,v 1.3 1995/04/19 08:12:00 ache Exp $
+# $Id: Makefile,v 1.4 1995/04/23 17:21:34 jmz Exp $
 #
 
 DISTNAME=		perl5.001
@@ -16,7 +16,7 @@ MAINTAINER=	markm@FreeBSD.ORG
 
 HAS_CONFIGURE=		yes
 CONFIGURE_SCRIPT=	Configure
-CONFIGURE_ARGS=		-sde
+CONFIGURE_ARGS=		-sde -Dprefix=${PREFIX}
 
 PERLMAN= "" api book bot call data debug diag embed form func guts ipc mod \
 	   obj op ovl pod re ref run sec style sub syn trap var
