@@ -39,7 +39,6 @@ PLIST_SUB=	OCTAVE_VERSION=${OCTAVE_VERSION} GNU_HOST=${GNU_HOST}
 BLAS_LIBS=	"-L${LOCALBASE}/lib -lf77blas -lcblas -latlas"
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 
 CONFIGURE_ARGS=	--host=${GNU_HOST} \
 		--with-fftw --with-blas=${BLAS_LIBS} --with-lapack=-lalapack \
@@ -63,11 +62,10 @@ post-extract:
 	@${RM} -f ${WRKSRC}/doc/interpreter/octave.info*
 	@${RM} -f ${WRKSRC}/doc/liboctave/liboctave.info*
 post-install:
+	@${SED} -e 's,%%PREFIX%%,${PREFIX},g ; \
+		    s,%%OCTAVE_VERSION%%,${OCTAVE_VERSION},g' \
+		${FILESDIR}/octave > ${WRKDIR}/octave
 	${RM} ${PREFIX}/bin/octave
-	@${CP} ${FILESDIR}/octave ${WRKDIR}
-	@${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},g ; \
-			      s,%%OCTAVE_VERSION%%,${OCTAVE_VERSION},g' \
-			      ${WRKDIR}/octave
 	${INSTALL_SCRIPT} ${WRKDIR}/octave ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/doc/liboctave/liboctave.info ${PREFIX}/info
 	install-info --entry='* Octave: (octave).	Interactive language for numerical computations.' $(PREFIX)/info/octave.info $(PREFIX)/info/dir
