@@ -7,18 +7,17 @@
 PORTNAME=		basket
 PORTVERSION=		0.3.3
 CATEGORIES=		deskutils kde
-MASTER_SITES=		http://www.sebastien.laout.tuxfamily.org/basket/
+MASTER_SITES=		http://www.brueffer.de/distfiles/
 
 MAINTAINER=		brueffer@phoenix-systems.de
 COMMENT=		Desktop organization tool
 
 WRKSRC=			${WRKDIR}/${PORTNAME}-0.3.2
+USE_SIZE=		yes
 USE_KDELIBS_VER=	3
 USE_GMAKE=		yes
 GNU_CONFIGURE=		yes
 USE_REINPLACE=		yes
-
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/-O2//g' ${WRKSRC}/${CONFIGURE_SCRIPT}
