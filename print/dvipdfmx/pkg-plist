@@ -1,11 +1,12 @@
 bin/dvipdfmx
-share/texmf/dvipdfm/Resource
-share/texmf/dvipdfm/CMap/Adobe-Identity-UCS2
-share/texmf/dvipdfm/CMap/EUC-UCS2
-share/texmf/dvipdfm/CMap/UniKSCms-UCS2-H
-share/texmf/dvipdfm/CMap/UniKSCms-UCS2-V
-share/texmf/dvipdfm/config/cid-x.map
-share/texmf/dvipdfm/config/dvipdfmx.cfg
-@dirrm share/texmf/dvipdfm/CMap
-@exec %D/bin/mktexlsr
-@unexec %D/bin/mktexlsr
+%%TEXMFLOCAL%%/dvipdfm/CMap/Adobe-Identity-UCS2
+%%TEXMFLOCAL%%/dvipdfm/CMap/EUC-UCS2
+%%TEXMFLOCAL%%/dvipdfm/CMap/UniKSCms-UCS2-H
+%%TEXMFLOCAL%%/dvipdfm/CMap/UniKSCms-UCS2-V
+%%TEXMFLOCAL%%/dvipdfm/config/cid-x.map
+%%TEXMFLOCAL%%/dvipdfm/config/dvipdfmx.cfg
+@exec ln -s -f %%ADOBECMAPDIR%% %%DVIPDFMCMAPDIR%%/adobe-cmaps
+@unexec rm -f %%DVIPDFMCMAPDIR%%/adobe-cmaps
+@dirrm %%TEXMFLOCAL%%/dvipdfm/CMap
+@exec %%MKTEXLSR%%
+@unexec %%MKTEXLSR%%

@@ -6,31 +6,34 @@
 #
 
 PORTNAME=	dvipdfmx
-PORTVERSION=	20031116
-PORTREVISION=	1
+PORTVERSION=	20040411
 CATEGORIES=	print
-MASTER_SITES=	http://project.ktug.or.kr/dvipdfmx/snapshot/release/:main \
-		http://project.ktug.or.kr/dvipdfmx/snapshot/patch/:patch1
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:main \
-		dvipdfmx-${PORTVERSION}.patch:patch1
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+MASTER_SITES=	http://project.ktug.or.kr/dvipdfmx/snapshot/current/
 
 MAINTAINER=	matusita@FreeBSD.org
 COMMENT=	Dvipdfm with Asian languages by CID-keyed font technology support
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libkpathsea.a:${PORTSDIR}/print/teTeX
-LIB_DEPENDS=	png:${PORTSDIR}/graphics/png
-RUN_DEPENDS=	${LOCALBASE}/share/ghostscript/Resource/ai0/CMap/Identity-H:${PORTSDIR}/print/adobe-cmaps \
-		kpsepath:${PORTSDIR}/print/teTeX
+BUILD_DEPENDS=	${LOCALBASE}/lib/libkpathsea.a:${PORTSDIR}/print/teTeX-base
+LIB_DEPENDS=	png:${PORTSDIR}/graphics/png \
+		paper:${PORTSDIR}/print/libpaper
+RUN_DEPENDS=	${LOCALBASE}/${TEXMFLOCAL}/ls-R:${PORTSDIR}/print/tex-texmflocal \
+		${ADOBECMAPDIR}/ai0/CMap/Identity-H:${PORTSDIR}/print/adobe-cmaps \
+		kpsepath:${PORTSDIR}/print/teTeX-base
 
 GNU_CONFIGURE=	yes
-PATCH_STRIP=	-p1
+CONFIGURE_ARGS=	--datadir=${LOCALBASE}/${TEXMFLOCAL}
+PLIST_SUB=	TEXMFLOCAL=${TEXMFLOCAL} \
+		MKTEXLSR=${MKTEXLSR} \
+		ADOBECMAPDIR=${ADOBECMAPDIR} \
+		DVIPDFMCMAPDIR=${DVIPDFMCMAPDIR}
 
-post-patch:
-	(cd ${WRKSRC}/src; ${PATCH} --quiet < ${DISTDIR}/dvipdfmx-${PORTVERSION}.patch)
+TEXMFLOCAL=	share/texmf-local
+MKTEXLSR=	${LOCALBASE}/bin/mktexlsr
+DVIPDFMCMAPDIR=	${LOCALBASE}/${TEXMFLOCAL}/dvipdfm/CMap
+ADOBECMAPDIR=	${LOCALBASE}/share/fonts/adobe-cmaps
 
 post-install:
-	@${LN} -fs ${LOCALBASE}/share/ghostscript/Resource ${PREFIX}/share/texmf/dvipdfm/
-	${LOCALBASE}/bin/mktexlsr
+	${LN} -s -f ${ADOBECMAPDIR} ${DVIPDFMCMAPDIR}/adobe-cmaps
+	${MKTEXLSR}
 
 .include <bsd.port.mk>
