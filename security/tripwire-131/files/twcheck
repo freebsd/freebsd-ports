@@ -1,0 +1,3 @@
+#! /bin/sh -
+
+./gunzip < tw.db_`hostname`.gz | ./tripwire -dfd 0 -c tw.config
