@@ -163,6 +163,7 @@
     SUBDIR += pear-DB
     SUBDIR += pgaccess
     SUBDIR += pgadmin3
+    SUBDIR += pgbash
     SUBDIR += php-sqlrelay
     SUBDIR += phpmyadmin
     SUBDIR += phppgadmin
