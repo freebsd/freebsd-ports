@@ -4501,6 +4501,7 @@ mod_auth_pgsql	ports/www/mod_auth_pgsql
 mod_auth_pgsql2	ports/www/mod_auth_pgsql2
 mod_auth_pwcheck	ports/www/mod_auth_pwcheck
 mod_auth_remote	ports/www/mod_auth_remote
+mod_authenticache	ports/www/mod_authenticache
 mod_backhand	ports/www/mod_backhand
 mod_bandwidth	ports/www/mod_bandwidth
 mod_bf		ports/www/mod_bf
