@@ -1,8 +1,8 @@
 #!/bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/textproc/saxon-devel/files/Attic/saxon.sh,v 1.5 2004-11-22 16:49:34 hq Exp $
+# $FreeBSD$
 
-IAM=`basename "$0"`
+IAM="`basename "$0"`"
 
 if [ "${IAM}" = "saxon-xquery" ]
 then
