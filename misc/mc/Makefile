@@ -15,6 +15,8 @@ MASTER_SITE_SUBDIR=	utils/file/managers/mc/
 MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	Midnight Commander, a free Norton Commander Clone
 
+.include <bsd.port.pre.mk>
+
 LIB_DEPENDS=	glib-2.0.200:${PORTSDIR}/devel/glib20 \
 		intl.4:${PORTSDIR}/devel/gettext
 BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
@@ -32,6 +34,13 @@ LIB_DEPENDS+=	iconv.3:${PORTSDIR}/converters/libiconv
 PLIST_SUB=	CHARSETS=""
 .else
 PLIST_SUB=	CHARSETS="@comment "
+.endif
+
+.if ${ARCH} == "alpha"
+#
+# something is wrong with slang on alpha: mc enters an infinite loop
+# when calling has_colors() during terminal init (colors.c:250)
+WITHOUT_SLANG=	yes
 .endif
 
 .if defined(WITHOUT_SLANG)
@@ -57,4 +66,4 @@ post-patch:
 post-install:
 	@${LN} -sf mc ${PREFIX}/bin/midc
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
