@@ -3,7 +3,7 @@
 case $0 in
 	*airport)
 		class=AirportBaseStationConfigurator
-		file=AirportBaseStationConfigurator
+		file=AirportBaseStationConfig
 	;;
 	*hostmon)
 		class=HostMonitor
@@ -13,6 +13,11 @@ case $0 in
 		class=LinkMonitor
 		file=LinkMonitor
 	;;
+	*airmodem)
+		class=AirportBaseStationHangup
+		file=AirportModemUtility
+	;;
+	*)
 	*)
 	echo "Unknown command"
 	exit 1

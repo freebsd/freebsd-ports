@@ -7,12 +7,13 @@
 
 PORTNAME=	airport
 PORTVERSION=	1.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net java
 MASTER_SITES=	http://edge.mcs.drexel.edu/GICL/people/sevy/airport/
 DISTFILES=	configurator_${PORTVERSION:S/.//}${EXTRACT_SUFX} \
 		link_monitor_${LINKMONVERSION:S/.//}${EXTRACT_SUFX} \
-		host_monitor_${HOSTMONVERSION:S/.//}${EXTRACT_SUFX}
+		host_monitor_${HOSTMONVERSION:S/.//}${EXTRACT_SUFX} \
+		airportmodemutility_${MODEMVERSION:S/.//}${EXTRACT_SUFX}
 
 MAINTAINER=	nsayer@freebsd.org
 
@@ -30,6 +31,7 @@ JDK_VERSION=	1.1.8
 JFC_VERSION=	1.1.1
 LINKMONVERSION=	1.1
 HOSTMONVERSION=	1.0
+MODEMVERSION=	1.3
 
 NO_BUILD=	yes
 
@@ -40,9 +42,10 @@ do-install:
 		${MKDIR} ${PREFIX}/share/doc/airport/helpdocs; \
 		${MKDIR} ${PREFIX}/share/java; \
 		${INSTALL_DATA} ${WRKSRC}/*jar ${PREFIX}/share/java; \
-		${CP} ${WRKSRC}/AUTHORS ${PREFIX}/share/doc/airport; \
-		${CP} ${WRKSRC}/COPYING ${PREFIX}/share/doc/airport; \
-		${CP} -r ${WRKSRC}/helpdocs/* ${PREFIX}/share/doc/airport/helpdocs; \
+		${INSTALL_DATA} ${WRKSRC}/AUTHORS ${PREFIX}/share/doc/airport; \
+		${INSTALL_DATA} ${WRKSRC}/COPYING ${PREFIX}/share/doc/airport; \
+		${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/airport; \
+		${INSTALL_DATA} ${WRKSRC}/helpdocs/* ${PREFIX}/share/doc/airport/helpdocs; \
 		${SED} \
 			-e s,%%PREFIX%%,${PREFIX},g \
 			-e s/%%JFC_VERSION%%/${JFC_VERSION}/ \
@@ -51,5 +54,6 @@ do-install:
 		${CHMOD} a+x ${PREFIX}/bin/airport
 		${LN} ${PREFIX}/bin/airport ${PREFIX}/bin/hostmon
 		${LN} ${PREFIX}/bin/airport ${PREFIX}/bin/linkmon
+		${LN} ${PREFIX}/bin/airport ${PREFIX}/bin/airmodem
 
 .include <bsd.port.post.mk>
