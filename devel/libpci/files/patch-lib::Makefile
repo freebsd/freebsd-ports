@@ -1,0 +1,20 @@
+--- lib/Makefile.orig	Thu Dec 26 22:28:33 2002
++++ lib/Makefile	Sat Jun 28 05:39:36 2003
+@@ -28,6 +28,9 @@
+ ifdef HAVE_PM_FBSD_DEVICE
+ OBJS += fbsd-device.o
+ CFLAGS += -I/usr/src/sys
++ifdef FREEBSD_SYS
++CFLAGS += -I${FREEBSD_SYS}
++endif
+ endif
+ 
+ ifdef HAVE_PM_AIX_DEVICE
+@@ -49,6 +52,7 @@
+ 	rm -f $@
+ 	ar rcs $@ $^
+ 	ranlib $@
++	gcc $(CFLAGS) -shared $@ -o libpci.so
+ 
+ access.o: access.c $(INCL)
+ i386-ports.o: i386-ports.c $(INCL)

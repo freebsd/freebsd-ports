@@ -340,6 +340,7 @@
     SUBDIR += libol
     SUBDIR += libole2
     SUBDIR += liboop
+    SUBDIR += libpci
     SUBDIR += libpdel
     SUBDIR += libredblack
     SUBDIR += libshbuf
