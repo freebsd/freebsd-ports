@@ -1,5 +1,5 @@
 # Creator:  Jordan Hubbard
-# $Id: LEGAL,v 1.130 1999/03/18 05:36:54 taoka Exp $
+# $Id: LEGAL,v 1.131 1999/03/30 17:57:44 taoka Exp $
 
 Some of the ports in this directory have restrictive copyrights prohibiting
 their actual redistribution on mass media.  When creating compilations
@@ -110,7 +110,6 @@ sharefonts-*		ports/x11-fonts/sharefonts	Shareware.  Cannot be
 sim-2.3.tar.gz		ports/emulators/sim	No commercial use
 socks5-*		ports/net/socks5	No commercial use
 ssh-*			ports/security/ssh*	Crypto; export-controlled
-SSLeay-*		ports/security/SSLeay	Crypto; export-controlled
 *mod_ssl*		ports/www/apache13-modssl Crypto; export-controlled
 apache*-ssl		ports/www/apache12-ssl	
 			ports/www/apache13-ssl	Crypto; export-controlled
