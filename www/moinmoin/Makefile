@@ -6,31 +6,28 @@
 #
 
 PORTNAME=	moinmoin
-PORTVERSION=	0.11
+PORTVERSION=	1.0
 CATEGORIES=	www python
-MASTER_SITES= 	http://twiki.org/p/pub/TWiki/TWikiDrawPlugin/ \
-		${MASTER_SITE_SOURCEFORGE} \
-		http://fallin.lv/distfiles/
+MASTER_SITES= 	${MASTER_SITE_SOURCEFORGE} \
+		http://twiki.org/p/pub/TWiki/TWikiDrawPlugin/:twiki \
+		http://fallin.lv/distfiles/:twiki
 MASTER_SITE_SUBDIR=	moin
 DISTNAME=	moin-${PORTVERSION}
-DISTFILES=	${DISTNAME}.tgz twikidraw.jar
-EXTRACT_ONLY=	${DISTNAME}.tgz
+DISTFILES=	${DISTNAME}.tar.gz twikidraw.jar:twiki
+EXTRACT_ONLY=	${DISTNAME}.tar.gz
 
 MAINTAINER=	perky@fallin.lv
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-PLIST_SUB+=	PYTHON_SITELIB=${PYTHON_SITELIBDIR:S|^${LOCALBASE}/||}
+PLIST_SUB+=	PYTHON_SITELIB=${PYTHON_SITELIBDIR:S|^${LOCALBASE}/||} \
+		CGIUSER=${CGIUSER} CGIROOT=${CGIROOT}
 
-CGIUSER?=	moinmoin
+CGIUSER=	moinmoin
 CGIUSERID?=	192
 CGIROOT=	${PREFIX}/www/cgi-bin
 HTDOCSROOT=	${PREFIX}/www/data
 MOINDIR=	${PREFIX}/share/moin
-
-do-configure:
-	@# Add the username, uid, group and gid
-	${SH} ${FILESDIR}/configure.sh ${CGIUSER} ${CGIUSERID}
 
 post-patch:
 	@# Tweak configuration
@@ -44,6 +41,10 @@ post-build:
 		-DPYTHON_PATH='"${PYTHON_CMD}"' \
 		-DMOIN_PREFIX='"${MOINDIR}"' \
 		${FILESDIR}/wrapper.c
+
+pre-install:
+	PKG_PREFIX=${PREFIX} INST_UID="${CGIUSERID}" \
+	${SH} pkg-install ${PKGNAME} PRE-INSTALL
 
 post-install:
 	${INSTALL_DATA} ${DISTDIR}/twikidraw.jar ${MOINDIR}/htdocs/applets/TWikiDrawPlugin/
@@ -64,6 +65,7 @@ post-install:
 			${MOINDIR}/cgi-bin/moin_config.py
 	${TEST} -d ${MOINDIR}/data/text || \
 		${LN} -sf ${MOINDIR}/data/text.default ${MOINDIR}/data/text
+	-${MKDIR} ${HTDOCSROOT}
 	-${LN} -sf ${MOINDIR}/htdocs ${HTDOCSROOT}/moin
 
 	@${CAT} ${PKGMESSAGE}
