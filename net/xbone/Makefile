@@ -13,6 +13,8 @@ MASTER_SITES=	http://www.isi.edu/xbone/software/x-bone/
 MAINTAINER=	yushunwa@isi.edu
 COMMENT=	A system for dynamic internet overlay deployment and management
 
+BROKEN=		"Depends on nonexistent port"
+
 .include <bsd.port.pre.mk>
 .if ${OSVERSION} < 320000
 BROKEN=	"X-Bone does not support FreeBSD prior to 3.2"
@@ -53,7 +55,7 @@ BUILD_DEPENDS=	${PREFIX}/sbin/httpsd:${PORTSDIR}/www/apache13-ssl\
 		${PERL_LIB}/Net/Netmask.pm:${PORTSDIR}/net/p5-Net-Netmask\
 		${PERL_LIB}/File/CounterFile.pm:${PORTSDIR}/misc/p5-File-CounterFile \
 		${PERL_LIB}/${PERL_ARCH}/Net/SSLeay.pm:${PORTSDIR}/security/p5-Net-SSLeay \
-		$[PERL_LIB]/Parse/RecDescent.pm:$[PORTSDIR]/devel/p5-Parse-RecDescent
+		${PERL_LIB}/Parse/RecDescent.pm:${PORTSDIR}/devel/p5-Parse-RecDescent
 INSTALL_TARGET=	omgui
 MAKE_ARGS=	PERL5=${PERL5} SYS=${SYS}
 .endif
