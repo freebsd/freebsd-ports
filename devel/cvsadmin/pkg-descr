@@ -1,0 +1,19 @@
+cvsadmin is a simple program to administrate users of a CVS repository.
+
+It currently allows you to easily :
+
+      Name    Arguments
+      ----    ---------
+      list    list of usernames || nothing
+      add     list of usernames
+      del     list of usernames
+      email   user list
+      rename  list of alternating olduser/newuser
+      misc    list of usernames
+      sys     list of usernames
+      pass    list of usernames
+
+The actions name should be self-explaining, except misc, which ask you for
+all the fields (email, system user, password) on your terminal.
+
+WWW: http://www.cooptel.qc.ca/~limitln/cvsadmin/
