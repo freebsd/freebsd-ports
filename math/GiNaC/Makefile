@@ -7,12 +7,12 @@
 #
 
 PORTNAME=	GiNaC
-PORTVERSION=	0.8.2
+PORTVERSION=	0.9.0
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftpthep.physik.uni-mainz.de/pub/GiNaC/ \
 		http://www.ginac.de/
 
-MAINTAINER=	ijliao@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 USE_BZIP2=	yes
 LIB_DEPENDS=	cln.1:${PORTSDIR}/math/cln
