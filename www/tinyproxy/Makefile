@@ -3,7 +3,7 @@
 # Date created:		01 Jul 1999
 # Whom:			Mitsuru Yoshida <mitsuru@riken.go.jp>
 #
-# $Id: Makefile,v 1.2 1999/08/07 01:04:30 cpiazza Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	tinyproxy-1.2.8

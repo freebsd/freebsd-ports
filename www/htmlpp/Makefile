@@ -3,7 +3,7 @@
 # Date created:         9 Nov 1997
 # Whom:                 Donald Burr <dburr@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.4 1999/02/03 11:11:59 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	htmlp42a

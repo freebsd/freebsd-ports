@@ -3,7 +3,7 @@
 # Date created:				October 20th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.9 1998/08/23 14:04:49 jseger Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	HTTPD-Tools-0.55

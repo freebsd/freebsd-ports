@@ -3,7 +3,7 @@
 # Date created:        7 March 1999
 # Whom:                David McNett <nugget@slacker.com>
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	wmnetselect-0.4

@@ -3,7 +3,7 @@
 # Date created:		15 January 1999
 # Whom:			nik
 #
-# $Id: Makefile,v 1.8 1999/03/31 09:34:06 ache Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       sitecopy-0.6.0

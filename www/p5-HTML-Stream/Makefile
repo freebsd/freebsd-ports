@@ -3,7 +3,7 @@
 # Date created:				October 20th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-# $Id: Makefile,v 1.10 1998/08/23 13:56:19 jseger Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	HTML-Stream-1.44

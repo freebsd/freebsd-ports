@@ -3,7 +3,7 @@
 # Date created:         24 Feb 1997
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.39 1999/05/19 16:06:33 sada Exp $
+# $FreeBSD$
 #
 
 MASTER_SITES=	ftp://ftp.netscape.com/pub/communicator/${BROWSER_VER}/english/unix/unsupported/freebsd/navigator_standalone/

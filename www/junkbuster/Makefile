@@ -3,7 +3,7 @@
 # Date created:		2 May 1998
 # Whom:			Ian Struble <ian@broken.net>
 #
-# $Id: Makefile,v 1.2 1999/01/10 18:16:34 steve Exp $
+# $FreeBSD$
 
 DISTNAME=	ijb20
 PKGNAME=	ijb-2.0.2

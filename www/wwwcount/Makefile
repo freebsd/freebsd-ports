@@ -3,7 +3,7 @@
 # Date created:         16 May 1996
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.12 1998/09/28 18:02:05 smace Exp $
+# $FreeBSD$
 #
 
 # WWW site: http://www.fccc.edu/users/muquit/Count.html

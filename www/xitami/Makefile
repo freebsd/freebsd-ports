@@ -3,7 +3,7 @@
 # Date created:		15 Oct 1997
 # Whom:			Ian Vaudrey <i.vaudrey@cableinet.co.uk>
 #
-# $Id: Makefile,v 1.1.1.1 1998/08/09 00:28:23 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xiuni23d

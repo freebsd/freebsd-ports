@@ -3,7 +3,7 @@
 # Date created:				2. Feb 1998
 # Whom:	      				wosch@FreeBSD.org
 #
-# $Id: Makefile,v 1.9 1999/04/17 18:13:36 wosch Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	checkbot-1.54

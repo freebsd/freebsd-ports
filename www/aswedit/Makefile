@@ -3,7 +3,7 @@
 # Date created:		25 June 1997
 # Whom:			brett@peloton.physics.montana.edu
 #
-# $Id: Makefile,v 1.4 1999/05/05 13:45:58 flathill Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	asWedit-4.0-i386.linux

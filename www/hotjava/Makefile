@@ -3,7 +3,7 @@
 # Date created:		1999/07/03
 # Whom:			Jose Marques
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	hjb3_0-linux.sfx

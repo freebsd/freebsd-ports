@@ -3,7 +3,7 @@
 # Date created:				21 May 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	boa-0.92

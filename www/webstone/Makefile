@@ -3,7 +3,7 @@
 # Date created:        25 March 1997
 # Whom:                Soren Dossing <sauber@netcom.com>
 #
-# $Id: Makefile,v 1.2 1997/06/29 11:51:02 obrien Exp $
+# $FreeBSD$
 #
 
 DISTNAME=      WebStone-2.0

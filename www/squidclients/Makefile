@@ -3,7 +3,7 @@
 # Date created:		05 January 1999
 # Whom:			Dima Sivachenko
 #
-# $Id: Makefile,v 1.2 1999/02/12 11:18:25 flathill Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	squidclients-1.6-freebsd.bin

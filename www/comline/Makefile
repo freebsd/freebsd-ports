@@ -3,7 +3,7 @@
 # Date created:         9 Dec 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.8 1998/10/14 23:30:49 jseger Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	WWW

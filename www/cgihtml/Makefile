@@ -3,7 +3,7 @@
 # Date created:		3 Nov 1997
 # Whom:			Ian Vaudrey <i.vaudrey@bigfoot.com>
 #
-# $Id: Makefile,v 1.2 1998/06/27 05:19:48 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	cgihtml-1.69

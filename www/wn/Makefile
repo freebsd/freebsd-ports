@@ -3,7 +3,7 @@
 # Date created:         4 May 1995
 # Whom:                 adam
 #
-# $Id: Makefile,v 1.30 1999/08/27 22:30:34 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       wn-1.18.6

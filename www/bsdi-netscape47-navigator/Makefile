@@ -3,7 +3,7 @@
 # Date created:		20 Sept 1998
 # Whom:			brett@peloton.physics.montana.edu
 #
-# $Id: Makefile,v 1.37 1999/06/23 20:47:44 sada Exp $
+# $FreeBSD$
 #
 
 MASTER_SITES=	ftp://ftp.netscape.com/pub/communicator/english/4.61/unix/unsupported/freebsd/navigator_standalone/

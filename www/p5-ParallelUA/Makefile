@@ -4,7 +4,7 @@
 # Date created:                         Sep 8 1998
 # Whom:                                 ache@freebsd.org
 #
-# $Id: Makefile,v 1.8 1999/05/26 14:15:23 kuriyama Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       ParallelUserAgent-2.43

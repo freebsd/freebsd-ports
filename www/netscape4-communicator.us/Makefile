@@ -4,7 +4,7 @@
 # Date created:         14 Feb 1998
 # Whom:                 obrien@cs.ucdavis.edu
 #
-# $Id: Makefile,v 1.11 1999/08/22 19:00:45 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	communicator-v407-us.x86-unknown-linux2.0_libc5

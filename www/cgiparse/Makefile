@@ -3,7 +3,7 @@
 # Date created:				30 March 1997
 # Whom:					jmg
 #
-# $Id: Makefile,v 1.4 1998/03/01 19:31:13 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	cgiparse-0.8e

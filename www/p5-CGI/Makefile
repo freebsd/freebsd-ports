@@ -3,7 +3,7 @@
 # Date created:				September 30th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.8 1998/08/23 04:45:19 jseger Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	CGI-modules-2.76

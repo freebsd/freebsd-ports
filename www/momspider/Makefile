@@ -3,7 +3,7 @@
 # Date created:         11 October 1997
 # Whom:                 wosch
 #
-# $Id: Makefile,v 1.2 1997/10/14 12:12:47 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       MOMspider-1.00

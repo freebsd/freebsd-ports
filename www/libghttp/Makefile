@@ -3,7 +3,7 @@
 # Date Created:				24 Dec 1998
 # Whom:					Vanilla I. Shu <vanilla@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.9 1999/05/30 03:47:15 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	libghttp-1.0.4

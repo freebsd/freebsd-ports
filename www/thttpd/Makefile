@@ -3,7 +3,7 @@
 # Date created:		24 May 1999
 # Whom:			Anders Nordby <anders@fix.no>
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	thttpd-2.04

@@ -3,7 +3,7 @@
 # Date created:		So  21 Jun 1998 16:09:39 CEST
 # Whom:			Stefan Herrmann <stefan@asterix.webaffairs.net>
 #
-# $Id: Makefile,v 1.92 1999/08/26 21:18:14 dirk Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	apache_${VERSION_APACHE}

@@ -3,7 +3,7 @@
 # Date created:				21 Jun 1999
 # Whom:					G. Adam Stanislav <adam@whizkidtech.net>
 #
-# $Id: Makefile,v 1.1.1.1 1999/06/22 06:23:45 cpiazza Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	g-gcl-1.10

@@ -3,7 +3,7 @@
 # Date created:		09-Sep-1997
 # Whom:			Ralf S. Engelschall <rse@engelschall.com>
 #
-# $Id: Makefile,v 1.27 1998/11/11 05:37:38 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	wml-1.6.8

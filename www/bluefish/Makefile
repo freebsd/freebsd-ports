@@ -3,7 +3,7 @@
 # Date created:			25 July 1999
 # Whom:				Jim Mock <jim@FreeBSD.org>
 #
-# $Id: Makefile,v 1.2 1999/08/15 07:07:58 jim Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	bluefish-0.3.2

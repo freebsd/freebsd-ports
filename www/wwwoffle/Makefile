@@ -3,7 +3,7 @@
 # Date created:		1 Jun 1998
 # Whom:			Peter Mutsaers
 #
-# $Id: Makefile,v 1.4 1999/04/19 04:11:29 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	wwwoffle-2.4

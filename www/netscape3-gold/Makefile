@@ -3,7 +3,7 @@
 # Date created:		21 August 1995
 # Whom:			asami
 #
-# $Id: Makefile,v 1.2 1999/01/13 04:00:07 scrappy Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	netscape-gold-3.04

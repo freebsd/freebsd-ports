@@ -3,7 +3,7 @@
 # Date created:		Fr   4 Apr 1997 17:45:31 MET DST
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.11 1999/08/22 23:33:30 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	mapedit2.3

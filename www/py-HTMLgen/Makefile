@@ -3,7 +3,7 @@
 # Date created:				03/20/1999
 # Whom:					nectar@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.2 1999/05/28 20:55:37 nectar Exp $
+# $FreeBSD$
 #
 
 DISTNAME=		HTMLgen

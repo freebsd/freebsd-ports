@@ -3,7 +3,7 @@
 # Date created:		28 Jul 1999
 # Whom:			Will Andrews <andrews@technologist.com>
 #
-# $Id: Makefile,v 1.1.1.1 1999/08/01 03:21:01 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	httperf-0.6

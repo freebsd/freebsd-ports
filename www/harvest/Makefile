@@ -3,7 +3,7 @@
 # Date created:		Fri Mar  1 19:43:52 MET 1996
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.8 1997/11/15 19:56:47 andreas Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	harvest-1.5

@@ -3,7 +3,7 @@
 # Date created:		11 Februrary 1999
 # Whom:			Jay Sachs <sachs@cs.williams.edu>
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	plugger-3.0

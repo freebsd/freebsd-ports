@@ -4,7 +4,7 @@
 # Whom:				girgen@partitur.se
 # Based on work by:		thepish
 #
-# $Id: Makefile,v 1.11 1999/07/21 14:55:42 marcel Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	linux-netscape-${BROWSER}-${BROWSER_VER}

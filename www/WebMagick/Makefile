@@ -4,7 +4,7 @@
 # Date created:                         20 May 1998
 # Whom:                                 ache
 #
-# $Id: Makefile,v 1.10 1998/12/02 06:20:35 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       WebMagick-1.45

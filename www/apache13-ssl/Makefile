@@ -6,7 +6,7 @@
 #			and apache-ssl port by Mark Murray <mark@grondar.za>.
 #			Oh, and with a little bit of help from Ben :)
 #
-# $Id: Makefile,v 1.58 1999/06/28 09:00:47 asami Exp $
+# $FreeBSD$
 
 APACHE= 	1.3.6
 APACHE-SSL=	1.35

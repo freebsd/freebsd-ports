@@ -3,7 +3,7 @@
 # Date created:			So   2 Mär 1997 18:10:49 MET
 # Whom:				Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.10 1999/03/22 17:45:21 andreas Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	wwwstat-2.01

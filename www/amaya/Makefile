@@ -3,7 +3,7 @@
 # Date created:		26 Dec 1998
 # Whom:			Don Croyle <croyle@gelemna.ft-wayne.in.us>
 #
-# $Id: Makefile,v 1.4 1999/05/09 16:15:35 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	amaya-src-2.1

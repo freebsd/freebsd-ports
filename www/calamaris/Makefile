@@ -3,7 +3,7 @@
 # Date created:         25 December 1998
 # Whom:                 Dima Sivachenko
 #
-# $Id: Makefile,v 1.6 1999/06/08 22:33:59 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	calamaris-2.27
