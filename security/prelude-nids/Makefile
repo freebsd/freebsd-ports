@@ -1,0 +1,26 @@
+# New ports collection makefile for:	prelude-nids
+# Date created:			Sun Aug 4 19:31:17 CEST 2002
+# Whom:				Clement Laforet <sheepkiller@cultdeadsheep.org>
+#
+# $FreeBSD$
+
+PORTNAME=	prelude-nids
+PORTVERSION=	0.8.1
+CATEGORIES=	security
+MASTER_SITES=   http://www.prelude-ids.org/download/releases/
+
+MAINTAINER=	sheepkiller@cultdeadsheep.org
+COMMENT=	Prelude Network Intrusion Detection System sensor
+
+LIB_DEPENDS=		prelude.0:${PORTSDIR}/security/libprelude
+
+GNU_MAKE=	yes
+GNU_CONFIGURE=	yes
+
+CONFIGURE_ARGS+=	--prefix=${PREFIX} \
+			--with-html-dir=${PREFIX}/share/doc \
+			--program-prefix=""
+
+MAN8=			prelude-nids.8
+
+.include <bsd.port.mk>

@@ -1,0 +1,22 @@
+--- Makefile.in.orig	Sat Jun  7 10:49:54 2003
++++ Makefile.in	Sat Jun  7 10:50:43 2003
+@@ -440,17 +440,8 @@
+ 
+ 
+ install-data-local:        
+-	@if test -f $(DESTDIR)/$(configdir)/prelude-nids.conf; then                                                     \
+-		echo "********************************************************************************";     		\
+-                echo;                                                                                        		\
+-                echo "$(DESTDIR)/$(configdir)/prelude-nids.conf already exist...";                                      \
+-                echo "Installing default configuration in $(DESTDIR)/$(configdir)/prelude-nids.conf-dist";              \
+-                echo;                                                                                        		\
+-                echo "********************************************************************************";     		\
+-		$(INSTALL) -m 600 $(top_srcdir)/prelude-nids.conf $(DESTDIR)/$(configdir)/prelude-nids.conf-dist;	\
+-        else                                                                                                 		\
+-                $(INSTALL) -m 600 $(top_srcdir)/prelude-nids.conf $(DESTDIR)/$(configdir)/;                             \
+-        fi                                                                                                   
++	$(INSTALL) -m 600 $(top_srcdir)/prelude-nids.conf $(DESTDIR)/$(configdir)/prelude-nids.conf-dist;	\
++
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:
