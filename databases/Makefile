@@ -1,5 +1,6 @@
-# $Id: Makefile,v 1.27 1998/04/18 08:59:23 andreas Exp $
+# $Id: Makefile,v 1.28 1998/07/06 17:46:48 nectar Exp $
 #
+    SUBDIR += cdb
     SUBDIR += db
     SUBDIR += gdbm
     SUBDIR += gnats
