@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	shinonome
-PORTVERSION=	0.9.2
+PORTVERSION=	0.9.3
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	http://openlab.ring.gr.jp/efont/dist/shinonome/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. old
