@@ -253,3 +253,5 @@
 %%METACITY%%share/gnome/themes/AluminumAlloy-Toxic/metacity-1/button-close-focus.png
 %%METACITY%%@dirrm share/gnome/themes/AluminumAlloy-Toxic/metacity-1
 %%METACITY%%@dirrm share/gnome/themes/AluminumAlloy-Toxic
+%%METACITY%%@unexec /bin/rmdir %D/share/gnome/themes 2>/dev/null || /usr/bin/true
+%%METACITY%%@unexec /bin/rmdir %D/share/gnome 2>/dev/null || /usr/bin/true
