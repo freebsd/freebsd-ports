@@ -24,8 +24,6 @@ PATCH_SITE_SUBDIR=	obrien
 MAINTAINER=	obrien@FreeBSD.org
 COMMENT=	GNU GDB 6
 
-BROKEN=		Unfetchable
-
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-weekly//}
 USE_BZIP2=	yes
 USE_GMAKE=	yes
