@@ -1,0 +1,23 @@
+libexec/apache2/mod_injection.so
+@exec %D/sbin/apxs -e -a -n injection %D/%f
+%%PORTDOCS%%%%DOCSDIR%%/manual/Makefile
+%%PORTDOCS%%%%DOCSDIR%%/manual/build.xml
+%%PORTDOCS%%%%DOCSDIR%%/manual/changelog.xml
+%%PORTDOCS%%%%DOCSDIR%%/manual/config.xml
+%%PORTDOCS%%%%DOCSDIR%%/manual/credits.xml
+%%PORTDOCS%%%%DOCSDIR%%/manual/manual.xml
+%%PORTDOCS%%%%DOCSDIR%%/manual/readme.xml
+%%PORTDOCS%%%%DOCSDIR%%/manual/requirements.xml
+%%PORTDOCS%%%%DOCSDIR%%/VERSION
+%%PORTDOCS%%%%DOCSDIR%%/project/Makefile
+%%PORTDOCS%%%%DOCSDIR%%/project/download.xml
+%%PORTDOCS%%%%DOCSDIR%%/project/news.xml
+%%PORTDOCS%%%%DOCSDIR%%/project/project.xml
+%%PORTDOCS%%%%DOCSDIR%%/project/resources.xml
+%%PORTDOCS%%%%DOCSDIR%%/manual.txt
+%%PORTDOCS%%%%DOCSDIR%%/CREDITS
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/manual
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/project
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@unexec echo "===>  If you do not plan on reinstalling mod_injection, you must manually remove"; echo "===>  references to it in httpd.conf."
+

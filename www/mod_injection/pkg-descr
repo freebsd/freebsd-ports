@@ -1,0 +1,5 @@
+mod_injection is an Apache 2.0.X filter module. It allows you to inject text in 
+the HTTP response after a HTML tag or after any given text string. The main 
+intention of this module is to add a banner to several HTML pages on the fly.
+
+WWW: http://pmade.org/software/mod_injection/
