@@ -14,12 +14,12 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	leeym@cae.ce.ntu.edu.tw
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/i386-freebsd/Storable.pm:${PORTSDIR}/devel/p5-Storable
+RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/i386-freebsd/Storable.pm:${PORTSDIR}/devel/p5-Storable
 
 USE_PERL5=	YES
 
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
-MAN3=		IPC::Shareable.3
+MAN3=		IPC::Shareable.3 IPC::Shareable::SharedMem.3
 
 do-configure:
 		@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL
