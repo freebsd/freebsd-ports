@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mod_php
-PORTVERSION= 	3.0.16
+PORTVERSION= 	3.0.17
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.php.net/pub/${PHP_DISTDIR}/ \
 		http://us.php.net/${PHP_DISTDIR}/ \
