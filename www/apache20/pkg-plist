@@ -526,4 +526,5 @@ share/apache2/build/special.mk
 @dirrm include/apache2
 @exec mkdir -p %D/etc/apache2/Includes 2> /dev/null || true
 @unexec rmdir %D/etc/apache2/Includes 2> /dev/null || true
+@unexec rm -f %D/etc/apache2/httpd.conf.bak 2> /dev/null || true
 @unexec rmdir %D/etc/apache2 2> /dev/null || echo "===> If you plan to do not reinstall apache2, you can safely remove %D/etc/apache2."
