@@ -104,6 +104,7 @@
     SUBDIR += exult
     SUBDIR += falconseye
     SUBDIR += farblazer
+    SUBDIR += fgkicker
     SUBDIR += fkiss
     SUBDIR += flightgear
     SUBDIR += flying
