@@ -1,6 +1,4 @@
-# $Id: Makefile,v 1.16 1995/05/02 09:12:15 asami Exp $
-#
-# BROKEN: none
+# $Id: Makefile,v 1.17 1995/05/14 03:29:27 asami Exp $
 #
 
 SUBDIR=	axe emacs jove mule tkHTML uemacs vile xemacs xvile
