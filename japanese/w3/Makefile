@@ -14,6 +14,8 @@ CATEGORIES=	japanese
 BUILD_DEPENDS=	mule:${PORTSDIR}/editors/mule
 RUN_DEPENDS=	# none
 
+BROKEN=		Incomplete pkg-plist
+
 EMACSCMD=	mule
 ELISPDIR=	${PREFIX}/lib/mule/site-lisp
 

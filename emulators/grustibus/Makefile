@@ -17,6 +17,8 @@ COMMENT=	An xmame frontend for Gnome
 
 RUN_DEPENDS=	xmame:${PORTSDIR}/emulators/xmame
 
+BROKEN=		Incomplete pkg-plist
+
 WANT_GNOME=	yes
 USE_GNOME=	gnomeprefix gnomecanvas
 USE_X_PREFIX=	yes
