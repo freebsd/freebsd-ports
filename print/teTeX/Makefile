@@ -3,19 +3,19 @@
 # Date created:		27 August 1996
 # Whom:			Bernd Rosauer <br@schiele-ct.de>
 #
-# $Id: Makefile,v 1.8 1996/09/13 07:50:37 tg Exp $
+# $Id: Makefile,v 1.9 1996/11/01 19:21:53 markm Exp $
 #
 
 DISTNAME=	teTeX-src-0.4
 PKGNAME=	teTeX-0.4
 CATEGORIES+=	print
 MASTER_SITES=	${TETEX_SITE}/distrib/sources/
-DISTFILES=	teTeX-src-0.4pl2.tar.gz teTeX-lib-0.4pl1.tar.gz
+DISTFILES=	teTeX-src-0.4pl3.tar.gz teTeX-lib-0.4pl3.tar.gz
 
 MAINTAINER=	br@schiele-ct.de
 
 DIST_SUBDIR=	teTeX
-EXTRACT_ONLY=	teTeX-src-0.4pl2.tar.gz
+EXTRACT_ONLY=	teTeX-src-0.4pl3.tar.gz
 PATCH_DIST_STRIP=	-p1
 NO_CONFIGURE=	yes
 USE_GMAKE=	yes
