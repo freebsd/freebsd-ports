@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	liveMedia
-PORTVERSION=	2003.07.07
+PORTVERSION=	2003.07.14
 PORTEPOCH=	1
 CATEGORIES=	net devel
 MASTER_SITES=	http://www.LIVE.COM/liveMedia/public/
@@ -117,8 +117,10 @@ liveMedia=		\
 		liveMedia/include/ServerMediaSession.hh \
 		liveMedia/include/SimpleRTPSink.hh \
 		liveMedia/include/SimpleRTPSource.hh \
+		liveMedia/include/WAVAudioFileSource.hh \
 		liveMedia/include/liveMedia.hh \
-		liveMedia/include/liveMedia_version.hh
+		liveMedia/include/liveMedia_version.hh \
+		liveMedia/include/uLawAudioFilter.hh
 
 post-extract:
 	@${CP} ${FILESDIR}/config.fixed-${OPSYS:L} ${WRKSRC}/
