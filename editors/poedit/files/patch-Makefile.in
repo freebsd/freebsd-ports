@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Wed Sep 11 18:20:10 2002
++++ Makefile.in	Tue Sep 17 19:51:27 2002
+@@ -93,7 +93,7 @@
+ WX_LIBS_STATIC = @WX_LIBS_STATIC@
+ WX_VERSION = @WX_VERSION@
+ 
+-SUBDIRS = extras src docs install locales
++SUBDIRS = extras src docs locales
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_CLEAN_FILES = 
