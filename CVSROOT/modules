@@ -5042,6 +5042,7 @@ nautilus2	ports/x11-fm/nautilus2
 nauty		ports/math/nauty
 nawk		ports/lang/nawk
 nbaudit		ports/security/nbaudit
+nbd-server	ports/net/nbd-server
 nbench		ports/benchmarks/nbench
 nbsmtp		ports/mail/nbsmtp
 nbtscan		ports/net/nbtscan
