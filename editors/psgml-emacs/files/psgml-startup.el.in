@@ -1,3 +1,4 @@
+;; -*- lisp -*-
 ;;
 ;; @(#)psgml-startup.el -- psgml startup elisp file.
 ;;                                            --  by shige@FreeBSD.ORG
@@ -33,6 +34,12 @@
      "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\">")
     ("HTML 4.01 Frameset"
      "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Frameset//EN\">")
+    ("XHTML 1.0 Strict"
+     "<!DOCTYPE XHTML PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\">")
+    ("XHTML 1.0 Transitional"
+     "<!DOCTYPE XHTML PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\">")
+    ("XHTML 1.0 Frameset"
+     "<!DOCTYPE XHTML PUBLIC \"-//W3C//DTD XHTML 1.0 Frameset//EN\">")
     ("DocBook V2.4.1"
      "<!DOCTYPE DOCBOOK PUBLIC \"-//Davenport//DTD DocBook V2.4.1//EN\">")
     ("DocBook V3.0"
