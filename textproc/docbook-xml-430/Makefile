@@ -7,7 +7,7 @@
 PORTNAME=	docbook-xml
 PORTVERSION=	4.3
 CATEGORIES=	textproc
-MASTER_SITES=	http://docbook.org/xml/${PORTVERSION}/
+MASTER_SITES=	http://www.oasis-open.org/docbook/xml/${PORTVERSION}/
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	DocBook/XML DTD V4.3, designed for technical documentation
