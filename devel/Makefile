@@ -127,6 +127,7 @@
     SUBDIR += cvsgraph
     SUBDIR += cvslines
     SUBDIR += cvsmapfs
+    SUBDIR += cvsmonitor
     SUBDIR += cvspadm
     SUBDIR += cvsplot
     SUBDIR += cvsps
