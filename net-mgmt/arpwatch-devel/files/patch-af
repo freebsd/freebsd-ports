@@ -1,6 +1,15 @@
---- ethercodes.dat.orig	Tue Mar 21 02:37:05 2000
-+++ ethercodes.dat	Thu Sep 14 11:18:09 2000
-@@ -897,3 +897,5 @@
+--- ethercodes.dat.orig	Thu May  3 21:59:10 2001
++++ ethercodes.dat	Tue Nov 11 10:59:56 2003
+@@ -4419,7 +4419,7 @@
+ 0:d0:b4	KATSUJIMA CO., LTD.
+ 0:d0:b5	DOTCOM
+ 0:d0:b6	CRESCENT NETWORKS, INC.
+-0:d0:b7	INTEL CORPOTATION
++0:d0:b7	INTEL CORPORATION
+ 0:d0:b8	IOMEGA CORP.
+ 0:d0:b9	MICROTEK INTERNATIONAL, INC.
+ 0:d0:ba	CISCO SYSTEMS, INC.
+@@ -4964,3 +4964,5 @@
  c0:0:0	Western Digital (may be reversed 00 00 C0?)
  e2:c:f	Kingston Technologies
  ec:10:0	Enance Source Co., Ltd.	PC clones(?)
