@@ -361,6 +361,7 @@
     SUBDIR += nsd
     SUBDIR += nslint
     SUBDIR += nsping
+    SUBDIR += nss_ldap
     SUBDIR += nstreams
     SUBDIR += ntalk
     SUBDIR += ntop
