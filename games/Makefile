@@ -157,6 +157,7 @@
     SUBDIR += gnmm
     SUBDIR += gno3dtet
     SUBDIR += gnocatan
+    SUBDIR += gnome-music-quiz
     SUBDIR += gnomeattacks
     SUBDIR += gnomebreakout
     SUBDIR += gnomechess
