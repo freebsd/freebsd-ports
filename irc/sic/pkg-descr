@@ -1,0 +1,23 @@
+I could not find a client with the features I was looking for, so yes,
+here is yet another IRC client.  Here's what makes it different from
+others:
+
+   * absolutely NO scripting ability.
+   * termcap based (e.g. fast!).
+   * emacs-style key bindings
+   * full ircd 2.9+ support.
+   * virtual windows a la screen(1).
+   * multi server support.
+   * non blocking TCP connections.
+   * basic support for multi-homed systems.
+   * everything goes and stays in the lastlog.
+   * convenient scrolling (with searching abilities) in the lastlog.
+   * 10 display filters! (2 ignore features are based on this).
+   * highly customizable. (format strings, filters..)
+   * customization possible at every level (channel, window, server..).
+   * non blocking DNS lookups (A and PTR records).
+   * "tabkey" style completion for /msg, /squery and public discussion.
+   * DCC support.
+   * CTCP support.
+
+                                         -- Christophe Kalt <kalt@stealth.net>
