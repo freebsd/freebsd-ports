@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	logjam2
-PORTVERSION=	4.1.2
+PORTVERSION=	4.2.0
 CATEGORIES=	deskutils
 MASTER_SITES=	http://logjam.danga.com/download/
 DISTNAME=	logjam-${PORTVERSION}
@@ -21,25 +21,34 @@ MAN1=		logjam.1
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
-USE_GNOME=	gtk20 libxml2
-CONFIGURE_ARGS= --program-transform-name="s/$$//"
+USE_GNOME=	gnomehack \
+		gnomeprefix \
+		gtk20 \
+		libxml2
+CONFIGURE_ARGS=	--program-transform-name="s/$$//"
 
-.ifdef(WITH_GTKSPELL)
-LIB_DEPENDS+=   gtkspell.0:${PORTSDIR}/textproc/gtkspell2
+.if defined(WITH_GTKSPELL)
+LIB_DEPENDS+=	gtkspell.0:${PORTSDIR}/textproc/gtkspell2
 .else
-CONFIGURE_ARGS+=        --without-gtkspell
+CONFIGURE_ARGS+=	--without-gtkspell
 .endif
 
-.ifdef(WITH_XMMS)
+.if defined(WITH_XMMS)
 LIB_DEPENDS+=	xmms.3:${PORTSDIR}/multimedia/xmms
 .else
 CONFIGURE_ARGS+=	--without-xmms
 .endif
 
-.ifdef(WITH_GTKHTML)
-LIB_DEPENDS+=	gtkhtml-3.0.1:${PORTSDIR}/www/gtkhtml3
+.if defined(WITH_GTKHTML)
+LIB_DEPENDS+=	gtkhtml-3:${PORTSDIR}/www/gtkhtml3
 .else
 CONFIGURE_ARGS+=	--without-gtkhtml
+.endif
+
+.if defined(WITH_RSVG)
+USE_GNOME+=	librsvg2
+.else
+CONFIGURE_ARGS+=	--without-librsvg
 .endif
 
 pre-everything::
@@ -48,6 +57,7 @@ pre-everything::
 	@${ECHO_MSG} "		WITH_GTKSPELL	Enable spell checking"
 	@${ECHO_MSG} "		WITH_XMMS	Enable XMMS music detection"
 	@${ECHO_MSG} "		WITH_GTKHTML	Enable GTK HTML3 preview"
+	@${ECHO_MSG} "		WITH_RSVG	Enable librsvg"
 	@${ECHO_MSG} ""
 
 .include <bsd.port.mk>
