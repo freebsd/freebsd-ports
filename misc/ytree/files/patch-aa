@@ -1,6 +1,6 @@
---- Makefile.orig	Sun Jan  2 08:17:33 2000
-+++ Makefile	Thu Mar 30 20:28:01 2000
-@@ -6,13 +6,13 @@
+--- Makefile.orig	Sun Jul 16 07:01:56 2000
++++ Makefile	Tue Dec  5 23:30:00 2000
+@@ -6,7 +6,7 @@
  #
  ############################################################################
  
@@ -9,34 +9,27 @@
  
  #
  # ADD_CFLAGS: Add -DVI_KEYS if you want vi-cursor-keys
- #
- 
--ADD_CFLAGS  = -O # -DVI_KEYS
-+#ADD_CFLAGS  = -O # -DVI_KEYS
- 
- LFLAGS	    = 
- BINDIR      = /usr/bin
-@@ -27,10 +27,10 @@
+@@ -25,10 +25,10 @@
  ###########################
- # If color doesn't work, comment out 
- # the following line and recompile
--COLOR       = -DCOLOR_SUPPORT
-+#COLOR       = -DCOLOR_SUPPORT
- #CLOCK	    = -DCLOCK_SUPPORT
+ # LINUX (testet with ncurses 5.0)
+ ###########################
+-COLOR       = -DCOLOR_SUPPORT 
++#COLOR       = -DCOLOR_SUPPORT 
+ #CLOCK	    = -DCLOCK_SUPPORT # Experimental!
 -CFLAGS      = $(ADD_CFLAGS) $(COLOR) $(CLOCK)
 -LIBS        = -lncurses
 +#CFLAGS      = $(ADD_CFLAGS) $(COLOR) $(CLOCK)
 +#LIBS        = -lncurses
  
  ###########################
- # LINUX without ncurses
-@@ -41,8 +41,8 @@
+ # LINUX (X11 using PDCurses) thanks to  Mark Hessling
+@@ -43,8 +43,8 @@
  ###########################
  # FreeBSD (Thanks to Peter Brevik)
  ###########################
 -#CFLAGS      = -DCOLOR_SUPPORT -DNCURSES
 -#LIBS        = -lncurses -lmytinfo -lcompat
-+CFLAGS     += -DCOLOR_SUPPORT -DNCURSES
++CFLAGS      += -DCOLOR_SUPPORT -DNCURSES
 +LIBS        = -lncurses -lmytinfo -lcompat
  
  ###########################
