@@ -1,5 +1,5 @@
---- Makefile.in.orig	Thu Dec 31 10:00:04 1998
-+++ Makefile.in	Fri Jan  1 01:19:24 1999
+--- Makefile.in.orig	Mon Jan  4 17:55:18 1999
++++ Makefile.in	Tue Jan  5 07:34:01 1999
 @@ -118,9 +118,9 @@
  xinput_progs = @xinput_progs@
  
@@ -104,8 +104,8 @@
  uninstall-am install-exec install-data install uninstall all \
  installdirs mostlyclean-generic distclean-generic clean-generic \
  maintainer-clean-generic clean mostlyclean distclean maintainer-clean
---- gdk/Makefile.in.orig	Thu Dec 31 10:00:08 1998
-+++ gdk/Makefile.in	Fri Jan  1 01:19:24 1999
+--- gdk/Makefile.in.orig	Mon Jan  4 17:55:21 1999
++++ gdk/Makefile.in	Tue Jan  5 07:34:01 1999
 @@ -119,7 +119,7 @@
  
  gdkincludedir = $(includedir)/gdk
@@ -168,8 +168,8 @@
  
  mostlyclean-binPROGRAMS:
  
---- gtk/Makefile.in.orig	Thu Dec 31 10:00:10 1998
-+++ gtk/Makefile.in	Fri Jan  1 01:22:40 1999
+--- gtk/Makefile.in.orig	Mon Jan  4 17:55:25 1999
++++ gtk/Makefile.in	Tue Jan  5 07:37:26 1999
 @@ -121,7 +121,7 @@
  
  gtkincludedir = $(includedir)/gtk
@@ -188,18 +188,19 @@
  	$(static_SOURCES)	\
  	gtkmarshal.c
  
-@@ -368,8 +368,8 @@
+@@ -369,9 +369,8 @@
  	../gdk/gdktypes.h \
  	../gdk/gdkrgb.h
  
 -libgtk_la_LDFLAGS = \
--	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE) -release $(LT_RELEASE) \
+-	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)	\
+-	-release $(LT_RELEASE) 					\
 +libgtk11d_la_LDFLAGS = \
 +	-version-info 1:2:0 \
- 	@GLIB_LIBS@ 			\
- 	@x_ldflags@			\
- 	@x_libs@ 			\
-@@ -422,12 +422,12 @@
+ 	@GLIB_LIBS@ 						\
+ 	@x_ldflags@						\
+ 	@x_libs@ 						\
+@@ -424,12 +423,12 @@
  # testthreads
  
  DEPS =	\
@@ -216,7 +217,7 @@
  	@x_ldflags@					\
  	@x_libs@					\
  	@GLIB_LIBS@                                     \
-@@ -462,8 +462,8 @@
+@@ -464,8 +463,8 @@
  X_LIBS = @X_LIBS@
  X_EXTRA_LIBS = @X_EXTRA_LIBS@
  X_PRE_LIBS = @X_PRE_LIBS@
@@ -227,7 +228,7 @@
  gtkalignment.lo gtkarg.lo gtkarrow.lo gtkaspectframe.lo gtkbin.lo \
  gtkbindings.lo gtkbbox.lo gtkbox.lo gtkbutton.lo gtkcalendar.lo \
  gtkcheckbutton.lo gtkcheckmenuitem.lo gtkclist.lo gtkcolorsel.lo \
-@@ -519,10 +519,10 @@
+@@ -521,10 +520,10 @@
  
  TAR = tar
  GZIP = --best
@@ -241,7 +242,7 @@
  
  .SUFFIXES:
  .SUFFIXES: .S .c .lo .o .s
-@@ -599,8 +599,8 @@
+@@ -601,8 +600,8 @@
  
  maintainer-clean-libtool:
  
@@ -252,8 +253,8 @@
  
  mostlyclean-noinstPROGRAMS:
  
---- po/Makefile.in.in.orig	Sun Jan  3 13:09:51 1999
-+++ po/Makefile.in.in	Sun Jan  3 13:10:02 1999
+--- po/Makefile.in.in.orig	Mon Jan  4 17:54:31 1999
++++ po/Makefile.in.in	Tue Jan  5 07:34:01 1999
 @@ -18,7 +18,7 @@
  
  prefix = @prefix@
