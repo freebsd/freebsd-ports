@@ -1,42 +1,42 @@
+lib/afm/cmbsy5.afm
+lib/afm/cmbsy7.afm
+lib/afm/cmmib5.afm
+lib/afm/cmmib7.afm
+lib/afm/euex10.afm
+lib/afm/eufb10.afm
+lib/afm/eufb5.afm
+lib/afm/eufb7.afm
+lib/afm/eufm10.afm
+lib/afm/eufm5.afm
+lib/afm/eufm7.afm
+lib/afm/eurb10.afm
+lib/afm/eurb5.afm
+lib/afm/eurb7.afm
+lib/afm/eurm10.afm
+lib/afm/eurm5.afm
+lib/afm/eurm7.afm
+lib/afm/eusb10.afm
+lib/afm/eusb5.afm
+lib/afm/eusb7.afm
+lib/afm/eusm10.afm
+lib/afm/eusm5.afm
+lib/afm/eusm7.afm
+lib/afm/msam10.afm
+lib/afm/msam5.afm
+lib/afm/msam7.afm
+lib/afm/msbm10.afm
+lib/afm/msbm5.afm
+lib/afm/msbm7.afm
+lib/afm/wncyb10.afm
+lib/afm/wncyi10.afm
+lib/afm/wncyr10.afm
+lib/afm/wncysc10.afm
+lib/afm/wncyss10.afm
 share/doc/amspsfnt/READ.ME
 share/texmf/dvips/mapfiles.ams/readme.txt
 share/texmf/dvips/mapfiles.ams/psfonts.amx
 share/texmf/dvips/mapfiles.ams/psfonts.amz
 share/texmf/dvips/mapfiles.ams/psfonts.ams
-share/texmf/fonts/afm/cmbsy5.afm
-share/texmf/fonts/afm/cmbsy7.afm
-share/texmf/fonts/afm/cmmib5.afm
-share/texmf/fonts/afm/cmmib7.afm
-share/texmf/fonts/afm/euex10.afm
-share/texmf/fonts/afm/eufb10.afm
-share/texmf/fonts/afm/eufb5.afm
-share/texmf/fonts/afm/eufb7.afm
-share/texmf/fonts/afm/eufm10.afm
-share/texmf/fonts/afm/eufm5.afm
-share/texmf/fonts/afm/eufm7.afm
-share/texmf/fonts/afm/eurb10.afm
-share/texmf/fonts/afm/eurb5.afm
-share/texmf/fonts/afm/eurb7.afm
-share/texmf/fonts/afm/eurm10.afm
-share/texmf/fonts/afm/eurm5.afm
-share/texmf/fonts/afm/eurm7.afm
-share/texmf/fonts/afm/eusb10.afm
-share/texmf/fonts/afm/eusb5.afm
-share/texmf/fonts/afm/eusb7.afm
-share/texmf/fonts/afm/eusm10.afm
-share/texmf/fonts/afm/eusm5.afm
-share/texmf/fonts/afm/eusm7.afm
-share/texmf/fonts/afm/msam10.afm
-share/texmf/fonts/afm/msam5.afm
-share/texmf/fonts/afm/msam7.afm
-share/texmf/fonts/afm/msbm10.afm
-share/texmf/fonts/afm/msbm5.afm
-share/texmf/fonts/afm/msbm7.afm
-share/texmf/fonts/afm/wncyb10.afm
-share/texmf/fonts/afm/wncyi10.afm
-share/texmf/fonts/afm/wncyr10.afm
-share/texmf/fonts/afm/wncysc10.afm
-share/texmf/fonts/afm/wncyss10.afm
 share/texmf/fonts/ams/type1/Fontmap
 share/texmf/fonts/ams/type1/fonts.dir
 share/texmf/fonts/ams/type1/fonts.scale
@@ -166,6 +166,6 @@ share/texmf/fonts/ams/tfm/wncyss8.tfm
 share/texmf/fonts/ams/tfm/wncyss9.tfm
 @dirrm share/doc/amspsfnt
 @dirrm share/texmf/dvips/mapfiles.ams
-@dirrm share/texmf/fonts/afm
+@dirrm lib/afm
 @dirrm share/texmf/fonts/ams/tfm
 @dirrm share/texmf/fonts/ams/type1
