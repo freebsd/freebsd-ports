@@ -41,7 +41,7 @@ post-patch:
 	@${RM} -f ${WRKSRC}/include/stamp-h.in
 
 pre-configure:
-	@cd ${WRKSRC} && aclocal && ${SETENV} ${CONFIGURE_ENV} autoheader
+	@cd ${WRKSRC} && ${ACLOCAL} && ${SETENV} ${CONFIGURE_ENV} ${AUTOHEADER}
 
 post-configure:
 	${PERL} -pi -e "s;flex ;flex -l ;g" ${WRKSRC}/src/uipp/dxuilib/Makefile
