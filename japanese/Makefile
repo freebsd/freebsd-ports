@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.182 1999/01/18 10:02:33 steve Exp $
+# $Id: Makefile,v 1.183 1999/01/21 06:32:45 asami Exp $
 #
 
     SUBDIR += Canna
@@ -20,6 +20,7 @@
     SUBDIR += dvi2tty
     SUBDIR += dvipsk
     SUBDIR += dvipsk-vflib
+    SUBDIR += eb
     SUBDIR += ebw3
     SUBDIR += edict
     SUBDIR += elisa10x8
