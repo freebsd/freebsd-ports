@@ -8,7 +8,7 @@
 PORTNAME=	xchain
 PORTVERSION=	1.0.2
 CATEGORIES=	games
-MASTER_SITES=	http://linux.tucows.com/files/x11/entertain/
+MASTER_SITES=	# no longer available
 DISTNAME=	${PORTNAME}_1.0-2
 
 MAINTAINER=	ports@FreeBSD.org
