@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Alzabo
-PORTVERSION=	0.84
+PORTVERSION=	0.85
 CATEGORIES=	devel databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../by-authors/id/D/DR/DROLSKY/
@@ -77,6 +77,22 @@ MAN3=		\
 		Alzabo::SQLMaker::PostgreSQL.3 \
 		Alzabo::Schema.3 \
 		Alzabo::Table.3
+
+.if !defined(NOPORTDOCS)
+EXAMPLES=	eg/alzabo_grep eg/alzabo_to_ascii eg/convert.pl eg/reverse_cardinality.pl
+EXAMPLESMASON=	mason/widgets/edit_field_checkbox mason/widgets/edit_field_text_input mason/widgets/edit_field_textarea mason/widgets/fk_to_one_select mason/widgets/insert mason/widgets/insert_or_update mason/widgets/update
+PORTDOCS=	README Changes TODO
+
+post-install:
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
+	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
+	@${MKDIR} ${EXAMPLESDIR}
+	@${INSTALL_DATA} ${EXAMPLES:S|^|${WRKSRC}/|} ${EXAMPLESDIR}
+	@${MKDIR} ${EXAMPLESDIR}/mason
+	@${INSTALL_DATA} ${EXAMPLESMASON:S|^|${WRKSRC}/|} ${EXAMPLESDIR}/mason
+	@${ECHO_MSG} "===> Examples installed in ${EXAMPLESDIR}."
+.endif
 
 .include <bsd.port.pre.mk>
 
