@@ -1,0 +1,19 @@
+*** tac_plus.h	Mon Dec 18 17:58:02 2000
+--- ../../tac_plus.F5.0.0.alpha/tac_plus.h	Sun Jan 20 20:24:55 2002
+***************
+*** 70,76 ****
+   */
+  /* #define REARMSIGNAL */
+  
+! #define VERSION "F4.0.3.alpha.v7(DB&PAM support)"
+  
+  /*
+   * System definitions. 
+--- 70,76 ----
+   */
+  /* #define REARMSIGNAL */
+  
+! #define VERSION "F4.0.3.alpha.v7(DB,PAM&libradius support - incl. mmersbers patches!)"
+  
+  /*
+   * System definitions. 

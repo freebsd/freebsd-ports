@@ -1,0 +1,8 @@
+tacacs+ s program that allow authorization and authentication via net on
+remote access servers. Authenticate users, authorize commands and log 
+accounting information.
+
+This version is includes a patch to include limited libradius support which
+allows to forward authentication requests to a radius server.
+
+WWW: http://www.portal-to-web.de/tacacs/
