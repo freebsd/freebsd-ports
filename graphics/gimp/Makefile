@@ -57,6 +57,14 @@ MPEG_CONFIGURE_ARGS=	--prefix=${PREFIX} \
 MAN1=		gimp-1.3.1 gimptool-1.3.1 gimp-remote-1.3.1
 MAN5=		gimprc-1.3.5
 
+.if exists(${X11BASE}/libdata/pkgconfig/libpanelapplet-2.0.pc)
+RUN_DEPENDS+=	gnome-panel:${PORTSDIR}/x11/gnomepanel
+CONFIGURE_ARGS+=	--with-gnome-desktop=${X11BASE}/share/gnome/applications
+PLIST_SUB=	GNOME:=""
+.else
+PLIST_SUB=	GNOME:="@comment "
+.endif
+
 #.if exists(${X11BASE}/libdata/pkgconfig/libgtkhtml-2.0.pc) || defined(WITH_HTML_HELP_BROWSER)
 #LIB_DEPENDS+=	gtkhtml-2.0:${PORTSDIR}/www/libgtkhtml
 #.endif

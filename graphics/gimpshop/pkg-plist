@@ -934,6 +934,7 @@ share/gimp/themes/Default/images/stock-warning-64.png
 share/gimp/themes/Default/images/stock-wilber-16.png
 share/gimp/themes/Default/images/stock-wilber-eek-64.png
 share/gimp/tips/gimp-tips.xml
+%%GNOME:%%share/gnome/applications/gimp-1.3.desktop
 share/locale/ca/LC_MESSAGES/gimp14-libgimp.mo
 share/locale/ca/LC_MESSAGES/gimp14-script-fu.mo
 share/locale/ca/LC_MESSAGES/gimp14-std-plug-ins.mo
