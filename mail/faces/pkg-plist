@@ -3,14 +3,12 @@ share/faces/machine.tab
 share/faces/people.tab
 bin/compface
 bin/uncompface
-man/man1/compface.1.gz
 man/man1/uncompface.1.gz
 lib/libcompface.a
 lib/libcompface.so.1.0
 @exec /sbin/ldconfig -m %D/lib
 @unexec /sbin/ldconfig -R
 include/compface.h
-man/man3/compface.3.gz
 man/man3/uncompface.3.gz
 bin/icon2ikon 
 bin/ikon2icon
@@ -34,7 +32,5 @@ bin/newsfrom.faces
 bin/faces
 bin/face_update
 bin/faces.sendmail
-man/man1/faces.1.gz
-man/man1/face_update.1.gz
 @cwd /usr/X11R6
 lib/X11/app-defaults/Faces

@@ -43,10 +43,6 @@ majordomo/doc/majordomo.lisa6.ps
 majordomo/doc/majordomo.ora
 majordomo/doc/post-install-notes
 majordomo/aliases.majordomo
-man/man1/digest.1.gz
-man/man1/approve.1.gz
-man/man1/bounce-remind.1.gz
-man/man8/majordomo.8.gz
 @dirrm majordomo/bin
 @dirrm majordomo/doc
 @dirrm majordomo/digests/test-l-digest

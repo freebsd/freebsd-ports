@@ -8,9 +8,6 @@ bin/pgpencrypt
 bin/pgpdecode
 bin/pgpsign
 etc/dot.pinerc.pgp.sample
-man/man1/pico.1.gz
-man/man1/pilot.1.gz
-man/man1/pine.1.gz
 share/doc/pine/brochure.txt
 share/doc/pine/tech-notes.txt
 share/doc/pine/tech-notes/background.html

@@ -5,5 +5,3 @@ libexec/imapd
 libexec/ipop2d
 libexec/ipop3d
 bin/mboxtest
-man/man8/imapd.8.gz
-man/man8/ipopd.8.gz

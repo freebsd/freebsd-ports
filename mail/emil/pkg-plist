@@ -1,8 +1,6 @@
 bin/emil
 lib/charsets.cpl
 lib/emil.cf
-man/man1/emil.1.gz
-man/man1/emil.cf.1.gz
 share/doc/emil/analysis.html
 share/doc/emil/arguments.html
 share/doc/emil/arrow_left3.gif
