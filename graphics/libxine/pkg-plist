@@ -33,7 +33,6 @@ include/xine/xmllexer.h
 include/xine/xmlparser.h
 lib/libxine.so
 lib/libxine.so.3
-lib/pkgconfig/libxine.pc
 lib/xine/plugins/1.0.0/post/xineplug_post_goom.so
 lib/xine/plugins/1.0.0/post/xineplug_post_invert.so
 lib/xine/plugins/1.0.0/post/xineplug_post_visualizations.so
@@ -101,6 +100,7 @@ lib/xine/plugins/1.0.0/xineplug_inp_cdda.so
 lib/xine/plugins/1.0.0/xineplug_inp_dvb.so
 lib/xine/plugins/1.0.0/xineplug_inp_dvd.so
 lib/xine/plugins/1.0.0/xineplug_inp_file.so
+%%HAVE_GNOMEVFS2%%lib/xine/plugins/1.0.0/xineplug_inp_gnome_vfs.so
 lib/xine/plugins/1.0.0/xineplug_inp_http.so
 lib/xine/plugins/1.0.0/xineplug_inp_mms.so
 lib/xine/plugins/1.0.0/xineplug_inp_net.so
@@ -116,6 +116,7 @@ lib/xine/plugins/1.0.0/xineplug_vo_out_sdl.so
 lib/xine/plugins/1.0.0/xineplug_vo_out_syncfb.so
 %%HAVE_LIBXV%%lib/xine/plugins/1.0.0/xineplug_vo_out_xv.so
 lib/xine/plugins/1.0.0/xineplug_vo_out_xshm.so
+libdata/pkgconfig/libxine.pc
 share/aclocal/xine.m4
 share/doc/xine/README
 share/doc/xine/README.config_en
@@ -169,12 +170,12 @@ share/xine/libxine1/fonts/serif-20.xinefont.gz
 share/xine/libxine1/fonts/serif-24.xinefont.gz
 share/xine/libxine1/fonts/serif-32.xinefont.gz
 @dirrm include/xine
-@unexec rmdir %D/lib/pkgconfig 2>/dev/null || true
 @dirrm lib/xine/plugins/1.0.0/post
 @dirrm lib/xine/plugins/1.0.0/vidix
 @dirrm lib/xine/plugins/1.0.0
 @dirrm lib/xine/plugins
 @dirrm lib/xine
+@unexec rmdir %D/libdata/pkgconfig 2>/dev/null || true
 @dirrm share/doc/xine/faq
 @dirrm share/doc/xine
 @unexec rmdir %D/share/locale/cs/LC_MESSAGES 2>/dev/null || true
