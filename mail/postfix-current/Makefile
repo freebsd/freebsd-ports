@@ -1,4 +1,4 @@
-# New ports collection makefile for:	postfix
+# New ports collection makefile for:	postfix-current
 # Date created: 	18 Mar 1999
 # Whom:			torstenb
 #
@@ -45,7 +45,12 @@ BIN1=	bounce cleanup error flush lmtp local master nqmgr pickup \
 BIN2=	postalias postcat postconf postdrop postfix \
 	postkick postlock postlog postmap postsuper sendmail
 
-DOCDIR=	${PREFIX}/share/doc/postfix
+.if defined(NOPORTDOCS)
+PLIST_SUB+=	SUB_DOCS="@comment "
+.else
+PLIST_SUB+=	SUB_DOCS=""
+DOCDIR=		${PREFIX}/share/doc/postfix
+.endif
 
 .if !defined(DEBUG)
 MAKEFILEFLAGS+=	DEBUG=
@@ -132,11 +137,11 @@ do-install:
 		${PREFIX}/man/man8
 .endfor
 
-#.if !defined(NOPORTDOCS)
-#	@${INSTALL} -d -o ${DOCOWN} -g ${DOCGRP} -m 555 ${DOCDIR}
-#	@cd ${WRKSRC}/html && ${INSTALL_DATA} *.html *.gif ${DOCDIR} && \
-#		${ECHO_MSG} "Installed HTML documentation in ${DOCDIR}"
-#.endif
+.if !defined(NOPORTDOCS)
+	@${INSTALL} -d -o ${DOCOWN} -g ${DOCGRP} -m 555 ${DOCDIR}
+	@cd ${WRKSRC}/html && ${INSTALL_DATA} *.html *.gif ${DOCDIR} && \
+		${ECHO_MSG} "Installed HTML documentation in ${DOCDIR}"
+.endif
 
 	@${ECHO_MSG} '--------------------------------------------------'
 	@${ECHO_MSG} '- To replace your existing sendmail with postfix -'
