@@ -7,7 +7,7 @@
 
 PORTNAME=	apsfilter
 PORTVERSION=	6.0.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	print
 MASTER_SITES=	http://www.apsfilter.org/download/
 PATCH_SITES=	http://www.apsfilter.org/download/
@@ -15,9 +15,25 @@ PATCHFILES=	diff-6.0.0-09.01.2001.gz
 
 MAINTAINER=	andreas@FreeBSD.org
 
+.if defined(NO_X)   
+# XXX Hack.  If you've done something like "-DNO_X" on the command line
+# (instead of NO_X=true, or similar) gmake won't pick it up.  So make sure
+# that NO_X is defined *and* has a value.
+MAKE_ENV+=      NO_X=true
+.endif
+
+#
+# hint: for batch mode you can now draw the following decisions
+# - <default>		build and install most important filter utilities
+#			that don't require X
+# - APSFILTER_ALL	build and install all supported filter utilities
+# - NO_X		toggles not to build tools that need X11, even if
+#			APSFILTER_ALL is set
+#
 .if defined(BATCH) && defined(APSFILTER_ALL)
-# Please note: this might be needed only in rare cases or for testing
-# all of apsfilters capabilities
+#
+# Build and install all filter apsfilter knows about (rather expensive)
+#
 # ps emulator
 RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript6
 # all needed decompression utilities
@@ -25,22 +41,32 @@ RUN_DEPENDS+=	bunzip2:${PORTSDIR}/archivers/bzip2
 RUN_DEPENDS+=	melt:${PORTSDIR}/archivers/freeze
 # all needed "xxx to ps" filter utilities
 RUN_DEPENDS+=	a2ps:${PORTSDIR}/print/a2ps-letter
+RUN_DEPENDS+=	psnup:${PORTSDIR}/print/psutils-letter
+.if !defined(NO_X)
+# "xxx to ps" filter utilities that require X
 RUN_DEPENDS+=	acroread4:${PORTSDIR}/print/acroread4
 RUN_DEPENDS+=	convert:${PORTSDIR}/graphics/ImageMagick
 RUN_DEPENDS+=	dvips:${PORTSDIR}/print/teTeX
 RUN_DEPENDS+=	html2ps:${PORTSDIR}/print/html2ps-letter
-RUN_DEPENDS+=	psnup:${PORTSDIR}/print/psutils-letter
 RUN_DEPENDS+=	transfig:${PORTSDIR}/print/transfig
+.else
+# "xxx to ps" filter utilities that don't require X
+# XXX needs more work
+.endif
 # all possible remote printing support
 RUN_DEPENDS+=	pap:${PORTSDIR}/net/netatalk
 RUN_DEPENDS+=	smbclient:${PORTSDIR}/net/samba
 .elif defined(BATCH)
+#
+# in normal batch/portbuilding mode (without building all)
+# don't build too many dependencies
+# since apsfilter should fit easily on installation CD 1...
+#
 # ps emulator
 RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript6
 # most important "xxx to ps" filter utilities
 RUN_DEPENDS+=	a2ps:${PORTSDIR}/print/a2ps-letter
 RUN_DEPENDS+=	psnup:${PORTSDIR}/print/psutils-letter
-RUN_DEPENDS+=	convert:${PORTSDIR}/graphics/ImageMagick
 .endif
 
 MAN1=		apsfilter.1
