@@ -1,0 +1,9 @@
+rclean provides a command-line tool to order and clean content of 
+rc.conf, using option order from /etc/defaults/rc.conf and printing only 
+choices that were different by the default value in /etc/rc.conf.
+Output is customizable from "only used values" to "full listing".
+
+WWW: http://www.lapo.it/rclean/
+
+- Lapo Luchini
+lapo@lapo.it
