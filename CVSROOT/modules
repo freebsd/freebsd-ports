@@ -1956,6 +1956,7 @@ gauche-gdbm	ports/databases/gauche-gdbm
 gauche-gl	ports/graphics/gauche-gl
 gauche-gtk	ports/x11-toolkits/gauche-gtk
 gauche-sxml	ports/textproc/gauche-sxml
+gaul		ports/devel/gaul
 gawk		ports/lang/gawk
 gbase		ports/converters/gbase
 gbe		ports/emulators/gbe
