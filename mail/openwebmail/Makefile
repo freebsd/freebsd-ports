@@ -7,6 +7,7 @@
 
 PORTNAME=	openwebmail
 PORTVERSION=	1.80
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://openwebmail.org/openwebmail/download/ \
 		http://turtle.ee.ncku.edu.tw/openwebmail/download/
@@ -16,11 +17,13 @@ MAINTAINER=	leeym@FreeBSD.org
 
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/CGI.pm:${PORTSDIR}/www/p5-CGI.pm \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Net/SMTP.pm:${PORTSDIR}/net/p5-Net \
+		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Text/Iconv.pm:${PORTSDIR}/converters/p5-Text-Iconv \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 OWCGIDIR=	${PREFIX}/www/cgi-bin/openwebmail
+USE_REINPLACE=	yes
 
 do-install:
 .for dir in cgi-bin data
@@ -35,8 +38,10 @@ do-install:
 	openwebmail-folder.pl openwebmail-main.pl openwebmail-prefs.pl \
 	openwebmail-read.pl openwebmail-send.pl openwebmail-spell.pl \
 	openwebmail-tool.pl openwebmail-viewatt.pl openwebmail.pl
+	@${REINPLACE_CMD} -e 's,suidperl,perl,g' ${OWCGIDIR}/${file}
 	@${CHMOD} 4555 ${OWCGIDIR}/${file}
 .endfor
 	@${PERL5} ${WRKSRC}/cgi-bin/openwebmail/uty/wrapsuid.pl ${OWCGIDIR}
+	@${OWCGIDIR}/openwebmail-tool.pl --init -y
 
 .include <bsd.port.mk>
