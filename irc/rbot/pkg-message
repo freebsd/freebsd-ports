@@ -1,0 +1,4 @@
+NOTE!  If you are upgrading from Ruby 1.6.x to 1.8.x, the Marshal serialization
+format has changed, and your plugin_registry.db will BREAK!  I fixed this by
+compiling marshal.c from the Ruby 1.6 distribution into a module for Ruby 1.8,
+then writing a converter.  YMMV.

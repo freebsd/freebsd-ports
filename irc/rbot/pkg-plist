@@ -47,7 +47,6 @@ bin/rbot
 %%RUBY_SITELIBDIR%%/rbot/plugins/freshmeat.rb
 %%RUBY_SITELIBDIR%%/rbot/plugins/roulette.rb
 %%RUBY_SITELIBDIR%%/rbot/dbhash.rb
-%%RUBY_SITELIBDIR%%/rbot/keywords.rb.orig
 @dirrm %%RUBY_SITELIBDIR%%/rbot/languages
 @dirrm %%RUBY_SITELIBDIR%%/rbot/dbplugins
 @dirrm %%RUBY_SITELIBDIR%%/rbot/plugins

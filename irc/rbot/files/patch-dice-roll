@@ -1,0 +1,18 @@
+--- rbot/plugins/dice.rb.orig	Thu Mar 25 17:33:36 2004
++++ rbot/plugins/dice.rb	Mon Aug  5 14:58:04 2002
+@@ -30,7 +30,7 @@
+ 
+ class DicePlugin < Plugin
+   def help(plugin, topic="")
+-    "dice <string> (where <string> is something like: d6 or 2d6 or 2d6+4 or 2d6+1d20 or 2d6+1d5+4d7-3d4-6) => Rolls that set of virtual dice"
++    "#{plugin} <string> (where <string> is something like: d6 or 2d6 or 2d6+4 or 2d6+1d20 or 2d6+1d5+4d7-3d4-6) => Rolls that set of virtual dice"
+   end
+ 
+   def rolldice(d)
+@@ -77,5 +77,6 @@
+ end
+ plugin = DicePlugin.new
+ plugin.register("dice")
++plugin.register("roll")
+ ##############################################
+ #fin

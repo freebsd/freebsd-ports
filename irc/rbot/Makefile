@@ -7,6 +7,7 @@
 
 PORTNAME=	rbot
 PORTVERSION=	0.9.6
+PORTREVISION=	1
 CATEGORIES=	irc ruby
 MASTER_SITES=	http://linuxbrit.co.uk/downloads/
 
@@ -22,6 +23,8 @@ NO_BUILD=	yes
 
 post-patch:
 	@${RUBY} -pi -e 'sub /rbotconf/, "${PREFIX}/etc/rbot"' ${WRKSRC}/rbot.rb
+	@rm ${WRKSRC}/rbot/*.orig
+	@rm ${WRKSRC}/rbot/plugins/*.orig
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/rbot.rb ${PREFIX}/bin/rbot
@@ -34,5 +37,6 @@ do-install:
 	( cd ${WRKSRC}/doc && ${TAR} -cf - * ) | \
 		${TAR} -C ${RUBY_MODDOCDIR} -xpf -
 .endif
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
