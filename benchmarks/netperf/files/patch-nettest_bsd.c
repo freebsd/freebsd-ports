@@ -1,22 +1,47 @@
---- nettest_bsd.c	21 Jan 2003 00:26:14 -0000	1.1.1.3
-+++ nettest_bsd.c	21 Jan 2003 00:45:17 -0000
-@@ -58,6 +58,7 @@
- #include <netinet/in.h>
- #include <netinet/tcp.h>
- #include <netdb.h>
-+#include <sys/param.h>
- #else /* WIN32 */
- #include <process.h>
- #include <windows.h>
-@@ -68,6 +69,11 @@
- #include "netlib.h"
- #include "netsh.h"
- #include "nettest_bsd.h"
+--- nettest_bsd.c.orig	Tue Sep 21 22:33:40 2004
++++ nettest_bsd.c	Thu Nov 18 23:29:38 2004
+@@ -7649,7 +7649,9 @@
+   else {
+     tcp_tran_rr_request->test_length	=	test_trans * -1;
+   }
+-  
++  tcp_tran_rr_request->port             =       remote_data_port;
++  tcp_tran_rr_request->ipaddress        =       remote_data_ip;
 +
-+#ifdef	BSD
-+#include <sys/time.h>
-+#include <arpa/inet.h>
-+#endif	/* BSD */
- 
- #ifdef HISTOGRAM
- #ifdef __sgi
+   if (debug > 1) {
+     fprintf(where,"netperf: send_tcp_tran_rr: requesting TCP_TRR test\n");
+   }
+@@ -7753,9 +7755,11 @@
+     /* all depends on "reality of programming." keeping it this way is */
+     /* a bit more conservative I imagine - raj 3/95 */
+     send_socket = create_data_socket(AF_INET, 
+-				     SOCK_STREAM);
++				     SOCK_STREAM,
++				     local_data_ip,
++				     local_data_port);
+   
+-    if (send_socket == INAVLID_SOCKET) {
++    if (send_socket == INVALID_SOCKET) {
+       perror("netperf: send_tcp_tran_rr: tcp stream data socket");
+       exit(1);
+     }
+@@ -8219,7 +8223,9 @@
+   loc_sndavoid = tcp_tran_rr_request->so_sndavoid;
+   
+   s_listen = create_data_socket(AF_INET,
+-				SOCK_STREAM);
++				SOCK_STREAM,
++				tcp_tran_rr_request->ipaddress,
++				tcp_tran_rr_request->port);
+   
+   if (s_listen == INVALID_SOCKET) {
+     netperf_response.content.serv_errno = errno;
+@@ -8438,7 +8444,7 @@
+ 			  send_message_ptr,
+ 			  tcp_tran_rr_request->response_size,
+ 			  MSG_EOF,
+-			  &peeraddr_in,
++			  (struct sockaddr *)&peeraddr_in,
+ 			  sizeof(struct sockaddr_in))) == SOCKET_ERROR) {
+       if (SOCKET_EINTR(bytes_sent)) {
+ 	/* the test timer has popped */
