@@ -102,8 +102,9 @@ ARGV.each { |$dir|
 	  end
 
 	  open(commentfile) { |f|
-	    comment = f.gets.chomp
-	    contents << "COMMENT#{assign}\t#{comment}\n"
+	    comment = f.gets.strip
+	    quoted_comment = comment.gsub(/#/, '\\#').gsub(/\$/, '$$')
+	    contents << "COMMENT#{assign}\t#{quoted_comment}\n"
 	  }
 	when /^COMMENTFILE\s*([?!:]?=)/
 	  info("COMMENTFILE is defined.  Please check out and edit manually.")
