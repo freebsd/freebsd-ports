@@ -19,7 +19,7 @@ NO_MTREE=	yes
 WRKSRC=		${WRKDIR}/man
 PLIST=		${WRKDIR}/PLIST
 
-MANSECS=	1 3 5 6 7 8
+MANSECS=	1 5 6 7 8
 JAMANDIR?=	/usr/opt/doc/ja_JP.eucJP/man
 
 do-extract:
