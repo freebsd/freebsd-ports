@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sim4
-PORTVERSION=	2001.10.12
+PORTVERSION=	2001.12.30
 CATEGORIES=	biology
 MASTER_SITES=	http://globin.cse.psu.edu/ftp/dist/sim4/
 DISTNAME=	sim4
