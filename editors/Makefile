@@ -1,7 +1,8 @@
-# $Id: Makefile,v 1.38 1997/05/25 03:00:16 obrien Exp $
+# $Id: Makefile,v 1.39 1997/06/04 06:32:40 asami Exp $
 #
 
     SUBDIR += asedit
+    SUBDIR += aswedit
     SUBDIR += axe
     SUBDIR += beav
     SUBDIR += bpatch
