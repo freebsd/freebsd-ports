@@ -6,8 +6,7 @@
 #
 
 PORTNAME=       dillo
-PORTVERSION=	0.6.4
-PORTREVISION=	1
+PORTVERSION=	0.6.5
 CATEGORIES=     www
 MASTER_SITES=   http://dillo.cipsga.org.br/download/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/
@@ -23,9 +22,14 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--includedir="${LOCALBASE}/include" \
 			--libdir="${LOCALBASE}/lib" \
 			--with-jpeg-inc="${LOCALBASE}/include"
+CONFIGURE_ENV+=	CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}"
 USE_GMAKE=	yes
 
 post-patch:
-	${PERL} -pi -e "s@-lpthread@${PTHREAD_LIBS}@g" ${WRKSRC}/configure
+	${PERL} -pi -e "s@-D_REENTRANT -D_THREAD_SAFE@@" ${WRKSRC}/configure
+	${PERL} -pi -e "s@dillorc@dillorc.sample@g" ${WRKSRC}/Makefile.in
+	${MV} ${WRKSRC}/dillorc ${WRKSRC}/dillorc.sample
+	${PERL} -pi -e "s@/usr/local/etc/dillorc@${PREFIX}/etc/dillorc@g" \
+		${WRKSRC}/src/prefs.c
 
 .include <bsd.port.mk>
