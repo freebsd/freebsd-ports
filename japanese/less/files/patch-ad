@@ -1,0 +1,11 @@
+--- search.c.orig	Thu Feb 27 00:22:02 2003
++++ search.c	Thu Feb 27 00:22:54 2003
+@@ -1371,7 +1371,7 @@
+ 				if (charset)
+ 					free(charset);
+ 				charset = (CHARSET *)
+-					ecalloc(len, sizeof(CHARSET));
++					ecalloc(len+1, sizeof(CHARSET));
+ 			}
+ 
+ 			cvt_text(line, charset, line, NULL, ops);
