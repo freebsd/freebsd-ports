@@ -53,15 +53,33 @@ RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript-gnu
 RUN_DEPENDS+=	bunzip2:${PORTSDIR}/archivers/bzip2
 .endif
 RUN_DEPENDS+=	melt:${PORTSDIR}/archivers/freeze
-# all needed "xxx to ps" filter utilities
+RUN_DEPENDS+=	lzop:${PORTSDIR}/archivers/lzop
+# all needed "ASCII to ps" filter utilities
 RUN_DEPENDS+=	a2ps:${PORTSDIR}/print/a2ps-letter
+RUN_DEPENDS+=	enscript:${PORTSDIR}/print/enscript-letter
+RUN_DEPENDS+=	mpage:${PORTSDIR}/print/mpage
+RUN_DEPENDS+=	recode:${PORTSDIR}/converters/recode
+# all needed "ARCHIVE" extraction utilities
+RUN_DEPENDS+=	arc:${PORTSDIR}/archivers/arc
+RUN_DEPENDS+=	cabextract:${PORTSDIR}/archivers/cabextract
+RUN_DEPENDS+=	lha:${PORTSDIR}/archivers/lha
+RUN_DEPENDS+=	rar:${PORTSDIR}/archivers/rar
+RUN_DEPENDS+=	rpm:${PORTSDIR}/archivers/rpm
+RUN_DEPENDS+=	unarj:${PORTSDIR}/archivers/unarj
+RUN_DEPENDS+=	unzip:${PORTSDIR}/archivers/unzip
+RUN_DEPENDS+=	zoo:${PORTSDIR}/archivers/zoo
+# all needed "xxx to ps" filter utilities
+RUN_DEPENDS+=	fitstopnm:${PORTSDIR}/graphics/netpbm
+RUN_DEPENDS+=	htmldoc:${PORTSDIR}/textproc/htmldoc
 RUN_DEPENDS+=	psnup:${PORTSDIR}/print/psutils-letter
 .if !defined(WITHOUT_X11)
 # "xxx to ps" filter utilities that require X
 RUN_DEPENDS+=	acroread4:${PORTSDIR}/print/acroread4
 RUN_DEPENDS+=	convert:${PORTSDIR}/graphics/ImageMagick
 RUN_DEPENDS+=	dvips:${PORTSDIR}/print/teTeX
-RUN_DEPENDS+=	html2ps:${PORTSDIR}/print/html2ps-letter
+RUN_DEPENDS+=	wmf2eps:${PORTSDIR}/graphics/libwmf
+RUN_DEPENDS+=	sk2ps:${PORTSDIR}/graphics/sketch
+RUN_DEPENDS+=	tgif:${PORTSDIR}/graphics/tgif-nls
 RUN_DEPENDS+=	transfig:${PORTSDIR}/print/transfig
 .else
 # "xxx to ps" filter utilities that don't require X
