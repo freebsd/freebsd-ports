@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	gnut
-PORTVERSION=	0.3.24
+PORTVERSION=	0.4.8
 CATEGORIES=	net audio
-MASTER_SITES=	http://www.umr.edu/~jjp/
+MASTER_SITES=	http://www.mrob.com/gnut/tars/
 
 MAINTAINER=	kris@FreeBSD.org
 
@@ -19,7 +19,9 @@ do-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/gnut
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/gnut
-	${INSTALL_DATA} ${WRKSRC}/TUTORIAL ${PREFIX}/share/doc/gnut
+.for file in TUTORIAL gnut-1.html gnut-2.html gnut-3.html gnut-4.html gnut-5.html gnut-6.html gnut.html
+	${INSTALL_DATA} ${WRKSRC}/doc/${file} ${PREFIX}/share/doc/gnut
+.endfor
 .endif
 	${MKDIR} ${PREFIX}/share/gnut
 	${INSTALL_DATA} ${WRKSRC}/gnutrc.sample ${PREFIX}/share/gnut

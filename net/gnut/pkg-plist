@@ -1,6 +1,13 @@
 bin/gnut
 share/doc/gnut/README
 share/doc/gnut/TUTORIAL
+share/doc/gnut/gnut.html
+share/doc/gnut/gnut-1.html
+share/doc/gnut/gnut-2.html
+share/doc/gnut/gnut-3.html
+share/doc/gnut/gnut-4.html
+share/doc/gnut/gnut-5.html
+share/doc/gnut/gnut-6.html
 share/gnut/gnutrc.sample
 @dirrm share/doc/gnut/
 @dirrm share/gnut/
