@@ -3,7 +3,7 @@
 # Date created:		16 Oct 1994
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.15 1996/11/18 09:02:59 torstenb Exp $
+# $Id: Makefile,v 1.16 1996/11/19 11:16:37 torstenb Exp $
 #
 
 DISTNAME=	smail-3.2
@@ -31,22 +31,35 @@ post-install:
 
 replace:
 	@echo "===> Replacing sendmail"
-.if exists(/usr/sbin/sendmail)
-	mv -f /usr/sbin/sendmail /usr/sbin/sendmail.BAK && chmod 0 \
-		/usr/sbin/sendmail && cp -fp /usr/local/bin/smail \
-		/usr/sbin/sendmail
-.endif
-.if exists(/usr/sbin/mailstats)
-	chmod 0 /usr/sbin/mailstats
-.endif
-.if exists(/usr/bin/newaliases)
-	mv -f /usr/bin/newaliases /usr/bin/newaliases.BAK && chmod 0 \
-		/usr/bin/newaliases && cp -fp /usr/local/bin/newaliases \
-		/usr/bin/newaliases
-.endif
-.if exists(/usr/bin/mailq)
-	mv -f /usr/bin/mailq /usr/bin/mailq.BAK && chmod 0 \
-		/usr/bin/mailq && cp -fp /usr/local/bin/mailq /usr/bin/mailq
-.endif
+	if [ -e /usr/sbin/sendmail ]; then \
+		mv -f /usr/sbin/sendmail /usr/sbin/sendmail.BAK; \
+		if [ -f /usr/sbin/sendmail.BAK ]; then \
+			chmod 0 /usr/sbin/sendmail.BAK; \
+		fi;\
+	fi
+	if [ -e /usr/local/bin/smail ]; then \
+		cp -fp /usr/local/bin/smail /usr/sbin/sendmail; \
+	fi
+	if [ -f /usr/sbin/mailstats ]; then \
+		chmod 0 /usr/sbin/mailstats; \
+	fi
+	if [ -e /usr/bin/newaliases ]; then \
+		mv -f /usr/bin/newaliases /usr/bin/newaliases.BAK; \
+		if [ -f /usr/bin/newaliases.BAK ]; then \
+			chmod 0 /usr/bin/newaliases.BAK; \
+		fi;\
+	fi
+	if [ -e /usr/local/bin/newaliases ]; then \
+ 		cp -fp /usr/local/bin/newaliases /usr/bin/newaliases; \
+	fi
+	if [ -e /usr/bin/mailq ]; then \
+		mv -f /usr/bin/mailq /usr/bin/mailq.BAK; \
+		if [ -f /usr/bin/mailq.BAK ]; then \
+			chmod 0 /usr/bin/mailq.BAK; \
+		fi;\
+	fi
+	if [ -e /usr/local/bin/mailq ]; then \
+		cp -fp /usr/local/bin/mailq /usr/bin/mailq; \
+	fi
 	
 .include <bsd.port.mk>
