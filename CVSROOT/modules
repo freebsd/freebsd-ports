@@ -47,6 +47,7 @@ editinfo	CVSROOT editinfo
 log_accum	CVSROOT log_accum.pl
 loginfo		CVSROOT loginfo
 mod_accesscookie	ports/www/mod_accesscookie
+mod_auth_useragent	ports/www/mod_auth_useragent
 modules		CVSROOT modules
 rcsinfo		CVSROOT rcsinfo
 rcstemplate	CVSROOT rcstemplate
