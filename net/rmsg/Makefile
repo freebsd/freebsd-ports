@@ -3,7 +3,7 @@
 # Date created:		9 October 1995
 # Whom:			torstenb@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.1.1.1 1995/10/12 07:43:00 asami Exp $
+# $Id: Makefile,v 1.2 1995/11/27 04:05:29 asami Exp $
 #
 
 DISTNAME=	rmsg-1.64
@@ -14,6 +14,8 @@ MASTER_SITES=	ftp://ftp.funet.fi/pub/networking/tcpip/ \
 WRKSRC=		${WRKDIR}/rmsg
 
 post-install:
+.if !defined(NOMANCOMPRESS)
 	gzip -9nf ${PREFIX}/man/man1/rmsg.1 ${PREFIX}/man/man8/rmsgd.8
+.endif
 
 .include <bsd.port.mk>
