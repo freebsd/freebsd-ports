@@ -59,6 +59,9 @@ share/locale/nl/LC_MESSAGES/linkcheck.mo
 %%PYTHON_SITELIBDIR%%/linkcheck/IgnoredUrlData.py
 %%PYTHON_SITELIBDIR%%/linkcheck/IgnoredUrlData.pyc
 %%PYTHON_SITELIBDIR%%/linkcheck/IgnoredUrlData.pyo
+%%PYTHON_SITELIBDIR%%/linkcheck/LRU.py
+%%PYTHON_SITELIBDIR%%/linkcheck/LRU.pyc
+%%PYTHON_SITELIBDIR%%/linkcheck/LRU.pyo
 %%PYTHON_SITELIBDIR%%/linkcheck/MailtoUrlData.py
 %%PYTHON_SITELIBDIR%%/linkcheck/MailtoUrlData.pyc
 %%PYTHON_SITELIBDIR%%/linkcheck/MailtoUrlData.pyo
