@@ -1,6 +1,6 @@
---- po/LINGUAS.orig	Fri Apr 23 14:00:22 2004
-+++ po/LINGUAS	Fri Apr 23 14:00:30 2004
+--- po/LINGUAS.orig	Thu Apr 29 22:40:06 2004
++++ po/LINGUAS	Thu Apr 29 22:40:15 2004
 @@ -1,2 +1,2 @@
  # Set of available languages.
--da de en@boldquot en@quot fr nl pl sr sv
-+da de fr nl pl sr sv
+-da de en@boldquot en@quot fr nl pl ro sr sv
++da de fr nl pl ro sr sv
