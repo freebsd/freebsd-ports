@@ -1,2 +1,4 @@
 MD5 (konwert_1.8.orig.tar.gz) = 838e73ec911ebf25816135cbfd0f7a04
-MD5 (konwert_1.8-5.diff.gz) = d21594e55d60261de00e798bfa01687c
+MD5 (konwert_1.8-9.diff.gz) = a90cd6c0560d6682800d840fc17adbc2
+SIZE (konwert_1.8.orig.tar.gz) = 196871
+SIZE (konwert_1.8-9.diff.gz) = 8979

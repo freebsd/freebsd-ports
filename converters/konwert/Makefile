@@ -7,7 +7,7 @@
 
 PORTNAME=	konwert
 PORTVERSION=	1.8
-PORTREVISION=	6
+PORTREVISION=	9
 CATEGORIES=	converters
 MASTER_SITES=	${MASTER_SITE_DEBIAN}
 MASTER_SITE_SUBDIR=	pool/main/${DISTNAME:C/${DISTNAME:C/.//}//}/${PORTNAME}
@@ -19,10 +19,6 @@ PATCHFILES=	${PORTNAME}_${PORTVERSION}-${PORTREVISION}.diff.gz
 
 MAINTAINER=	alexs@snark.rinet.ru
 COMMENT=	Modular converter between charsets and filter
-
-BROKEN=		"Does not fetch"
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2004-06-18
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash2
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash2
@@ -41,5 +37,6 @@ MANLANG=	"" pl
 post-patch:
 	@${GREP} -Rl '#\!/bin/bash' ${WRKSRC}/* 2>/dev/null | ${XARGS} \
 		${REINPLACE_CMD} -e 's|^#\!/bin/bash|#\!${LOCALBASE}/bin/bash|'
+	@${FIND} ${WRKSRC} -name '*.orig' -delete
 
 .include <bsd.port.mk>
