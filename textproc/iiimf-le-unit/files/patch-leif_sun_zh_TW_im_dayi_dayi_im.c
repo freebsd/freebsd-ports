@@ -5,7 +5,7 @@
  		return(-1);
  
 -	sprintf(file_name, "/usr/lib/im/locale/%s/common/dayi.cfg", core->envinfo.lang_name);
-+	sprintf(file_name, "/usr/local/lib/im/locale/%s/common/dayi.cfg", core->envinfo.lang_name);
++	sprintf(file_name, IMDIR "/locale/%s/common/dayi.cfg", core->envinfo.lang_name);
  	ret = DayiData_Init(file_name, pDayiData);
  	if (ret == DAYI_ERROR) {
  		DayiData_Free(pDayiData);

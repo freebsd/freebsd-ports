@@ -5,7 +5,7 @@
  		objects[obj_id].domain = "com.sun";
  		objects[obj_id].scope = "sampleja3";
 -		objects[obj_id].path = "/usr/lib/im/locale/ja/sampleja3/aux.jar";
-+		objects[obj_id].path = "/usr/local/lib/im/locale/ja/sampleja3/aux.jar";
++		objects[obj_id].path = IMDIR "/locale/ja/sampleja3/aux.jar";
  		objects[obj_id].signature = "";
  		objects[obj_id].class_names = class_names;
  		objects[obj_id].count_names = 1;

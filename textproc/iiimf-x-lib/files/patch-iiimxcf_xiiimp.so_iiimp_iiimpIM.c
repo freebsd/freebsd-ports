@@ -5,7 +5,7 @@
  
  #ifndef IMLOCALEDIR
 -#define IMLOCALEDIR "/usr/lib/im/locale"
-+#define IMLOCALEDIR "/usr/local/lib/im/locale"
++#define IMLOCALEDIR (IMDIR "/locale")
  #endif
  
  #define	iscomment(ch)	((ch) == '\0' || (ch) == '#')

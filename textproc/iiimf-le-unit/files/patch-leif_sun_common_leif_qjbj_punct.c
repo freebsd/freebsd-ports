@@ -5,7 +5,7 @@
  	lang_name = (char *)get_langname_from_langid(lang_id);
  	DEBUG_printf("lang_name:%s\n", lang_name);
 -	sprintf(file_name, "/usr/lib/im/locale/%s/common/%s", lang_name, QJBJ_FILE_NAME);
-+	sprintf(file_name, "/usr/local/lib/im/locale/%s/common/%s", lang_name, QJBJ_FILE_NAME);
++	sprintf(file_name, IMDIR "/locale/%s/common/%s", lang_name, QJBJ_FILE_NAME);
  	DEBUG_printf("file_name:%s\n", file_name);
  
  	fd = fopen(file_name, "r");
@@ -14,7 +14,7 @@
  
  	lang_name = (char *)get_langname_from_langid(lang_id);
 -	sprintf(file_name, "/usr/lib/im/locale/%s/common/%s", lang_name, PUNCT_FILE_NAME);
-+	sprintf(file_name, "/usr/local/lib/im/locale/%s/common/%s", lang_name, PUNCT_FILE_NAME);
++	sprintf(file_name, IMDIR "/locale/%s/common/%s", lang_name, PUNCT_FILE_NAME);
  	DEBUG_printf("file_name:%s\n", file_name);
  
  	fd = fopen(file_name, "r");

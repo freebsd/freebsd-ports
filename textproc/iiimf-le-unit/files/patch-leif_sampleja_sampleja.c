@@ -5,7 +5,7 @@
      l->path = "d:\\sampleja_obj.jar";		/* path */
  #else
 -    l->path = "/usr/lib/im/locale/ja/sampleja/sampleja_obj.jar";	/* path */
-+    l->path = "/usr/local/lib/im/locale/ja/sampleja/sampleja_obj.jar";	/* path */
++    l->path = IMDIR "/locale/ja/sampleja/sampleja_obj.jar";	/* path */
  #endif
      l->signature = "";
      l->class_names = class_names;

@@ -1,13 +1,12 @@
---- leif/freewnn/Makefile.am.orig	Sun Feb 20 14:47:50 2005
-+++ leif/freewnn/Makefile.am	Sun Feb 20 14:48:49 2005
-@@ -3,8 +3,8 @@
+--- leif/freewnn/Makefile.am.orig	Wed Mar  2 23:48:30 2005
++++ leif/freewnn/Makefile.am	Wed Mar  2 23:49:21 2005
+@@ -3,7 +3,8 @@
                      -DNO_COLOR_FEEDBACK -DNO_CARET_NEGO \
                      -I$(IM_INCLUDEDIR)/iml \
                      -I$(CSCONV_DIR) \
 -                    -I/usr/include/wnn
--FreeWnnLE_la_LDFLAGS = -module -rpath $(IM_LEIFDIR) $(SHLIBLDFLAGS) $(THREAD_LDFLAGS)
-+                    -I/usr/local/include/wnn
-+FreeWnnLE_la_LDFLAGS = -module -rpath $(IM_LEIFDIR) $(SHLIBLDFLAGS) $(THREAD_LDFLAGS) -L/usr/local/lib
++		    -DLOCALBASE="\"${LOCALBASE}\"" \
++		    -DIMDIR="\"${IMDIR}\""
+ FreeWnnLE_la_LDFLAGS = -module -rpath $(IM_LEIFDIR) $(SHLIBLDFLAGS) $(THREAD_LDFLAGS)
  FreeWnnLE_la_LIBADD = -lwnn $(THREAD_LIBS)
  FreeWnnLE_la_SOURCES = freewnn.c
- noinst_LTLIBRARIES = FreeWnnLE.la

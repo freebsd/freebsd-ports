@@ -5,7 +5,7 @@
  
  
 -#define AUX_BASE_DIR		"/usr/lib/im/"
-+#define AUX_BASE_DIR		"/usr/local/lib/im/"
++#define AUX_BASE_DIR		IMDIR
  
  #if defined(__sparcv9)
  #define SPARCV9_DIR		"sparcv9/"

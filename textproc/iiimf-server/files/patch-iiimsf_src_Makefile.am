@@ -1,6 +1,15 @@
 --- iiimsf/src/Makefile.am.orig	Fri Oct 15 03:39:38 2004
-+++ iiimsf/src/Makefile.am	Sun Feb 20 19:42:40 2005
-@@ -22,6 +22,7 @@
++++ iiimsf/src/Makefile.am	Wed Mar  2 21:18:10 2005
+@@ -4,7 +4,7 @@
+ 	-DXMLCONFDIR="\"$(XMLCONFDIR)\""			\
+ 	-DSOCKETDIR="\"$(SOCKETDIR)\""				\
+ 	-DSEGVLOGGER="\"$(libexecdir)/iiimf-segv-logger\""	\
+-	-g							\
++	-DIM_DIRECTORY="\"${IMDIR}\"" \
+ 	$(NULL)
+ 
+ libiiimsf_la_SOURCES =		\
+@@ -22,6 +21,7 @@
  libiiimsf_la_LIBADD =		\
  	$(TLS_LIBS)		\
  	$(XML_LIBS)		\
@@ -8,7 +17,7 @@
  	$(NULL)
  
  sbindir = $(IMBINDIR)
-@@ -56,7 +57,6 @@
+@@ -56,7 +56,6 @@
  
  htt_server_LDADD =			\
  	$(LIB_DIR)/iml/libiml.la	\
@@ -16,7 +25,7 @@
  	$(SOCKET_LIBS)			\
  	$(LIBCRYPT_FLAGS)		\
  	$(LIBPAM_FLAGS)			\
-@@ -72,7 +72,6 @@
+@@ -72,7 +71,6 @@
  	$(NULL)
  iiimf_le_tools_LDADD =		\
  	$(XML_LIBS)		\
@@ -24,11 +33,12 @@
  	libiiimsf.la		\
  	$(NULL)
  
-@@ -82,6 +81,7 @@
+@@ -82,7 +80,7 @@
  iiimf_segv_logger_CFLAGS =				\
  	-DLOGDIR="\"$(localstatedir)/log/iiim\""	\
  	-DDATADIR="\"$(gdbcmddir)\""			\
+-	-g						\
 +	-DIMBINDIR="\"$(IMBINDIR)\""			\
- 	-g						\
  	$(NULL)
  gdbcmddir = $(datadir)/iiim
+ gdbcmd_DATA =		\

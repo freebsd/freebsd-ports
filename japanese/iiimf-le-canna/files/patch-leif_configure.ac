@@ -7,15 +7,15 @@
  CFLAGS="${COMMON_CXX_CFLAGS} ${COMMON_CFLAGS} \
          ${DEBUG_CXX_CFLAGS} ${DEBUG_CFLAGS} \
 -        ${THREAD_COMMON_CXX_CFLAGS}"
-+        ${THREAD_COMMON_CXX_CFLAGS} -I/usr/local/include -I/usr/X11R6/include"
++        ${THREAD_COMMON_CXX_CFLAGS} ${CFLAGS}"
  
  CXXFLAGS="${COMMON_CXX_CFLAGS} ${COMMON_CXXFLAGS} \
            ${DEBUG_CXX_CFLAGS} ${DEBUG_CXXFLAGS} \
 -          ${THREAD_COMMON_CXX_CFLAGS}"
-+          ${THREAD_COMMON_CXX_CFLAGS} -I/usr/local/include -I/usr/X11R6/include"
++          ${THREAD_COMMON_CXX_CFLAGS} ${CXXFLAGS}"
  
 -LDFLAGS="${COMMON_LDFLAGS} ${THREAD_LDFLAGS}"
-+LDFLAGS="${COMMON_LDFLAGS} ${THREAD_LDFLAGS} -L/usr/local/lib -L/usr/X11R6/lib"
++LDFLAGS="${COMMON_LDFLAGS} ${THREAD_LDFLAGS} ${LDFLAGS}"
  
 -LE_TARGETS="default template sampleja sampleja2 sampleja3 newpy testEIMIL unit hangul chewing"
 +LE_TARGETS="canna"

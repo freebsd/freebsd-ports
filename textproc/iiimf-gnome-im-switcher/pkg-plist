@@ -30,3 +30,63 @@ share/gnome/icons/hicolor/48x48/apps/gnome-settings-im.png
 @unexec rmdir %D/share/gnome/icons/hicolor/48x48 > /dev/null 2>&1 || true
 @unexec rmdir %D/share/gnome/icons/hicolor > /dev/null 2>&1 || true
 @unexec rmdir %D/share/gnome/icons > /dev/null 2>&1 || true
+share/locale/ja/LC_MESSAGES/gnome-im-switcher.mo
+@unexec rmdir %D/share/locale/ja/LC_MESSAGES > /dev/null 2>&1 || true
+@unexec rmdir %D/share/locale/ja > /dev/null 2>&1 || true
+share/locale/ko/LC_MESSAGES/gnome-im-switcher.mo
+@unexec rmdir %D/share/locale/ko/LC_MESSAGES > /dev/null 2>&1 || true
+@unexec rmdir %D/share/locale/ko > /dev/null 2>&1 || true
+share/locale/zh_CN/LC_MESSAGES/gnome-im-switcher.mo
+@unexec rmdir %D/share/locale/zh_CN/LC_MESSAGES > /dev/null 2>&1 || true
+@unexec rmdir %D/share/locale/zh_CN > /dev/null 2>&1 || true
+share/locale/zh_TW/LC_MESSAGES/gnome-im-switcher.mo
+@unexec rmdir %D/share/locale/zh_TW/LC_MESSAGES > /dev/null 2>&1 || true
+@unexec rmdir %D/share/locale/zh_TW > /dev/null 2>&1 || true
+share/locale/zh_HK/LC_MESSAGES/gnome-im-switcher.mo
+@unexec rmdir %D/share/locale/zh_HK/LC_MESSAGES > /dev/null 2>&1 || true
+@unexec rmdir %D/share/locale/zh_HK > /dev/null 2>&1 || true
+share/locale/de/LC_MESSAGES/gnome-im-switcher.mo
+@unexec rmdir %D/share/locale/de/LC_MESSAGES > /dev/null 2>&1 || true
+@unexec rmdir %D/share/locale/de > /dev/null 2>&1 || true
+share/locale/fr/LC_MESSAGES/gnome-im-switcher.mo
+@unexec rmdir %D/share/locale/fr/LC_MESSAGES > /dev/null 2>&1 || true
+@unexec rmdir %D/share/locale/fr > /dev/null 2>&1 || true
+share/locale/pl/LC_MESSAGES/gnome-im-switcher.mo
+@unexec rmdir %D/share/locale/pl/LC_MESSAGES > /dev/null 2>&1 || true
+@unexec rmdir %D/share/locale/pl > /dev/null 2>&1 || true
+share/locale/ru/LC_MESSAGES/gnome-im-switcher.mo
+@unexec rmdir %D/share/locale/ru/LC_MESSAGES > /dev/null 2>&1 || true
+@unexec rmdir %D/share/locale/ru > /dev/null 2>&1 || true
+share/locale/es/LC_MESSAGES/gnome-im-switcher.mo
+@unexec rmdir %D/share/locale/es/LC_MESSAGES > /dev/null 2>&1 || true
+@unexec rmdir %D/share/locale/es > /dev/null 2>&1 || true
+share/locale/it/LC_MESSAGES/gnome-im-switcher.mo
+@unexec rmdir %D/share/locale/it/LC_MESSAGES > /dev/null 2>&1 || true
+@unexec rmdir %D/share/locale/it > /dev/null 2>&1 || true
+share/locale/pt_BR/LC_MESSAGES/gnome-im-switcher.mo
+@unexec rmdir %D/share/locale/pt_BR/LC_MESSAGES > /dev/null 2>&1 || true
+@unexec rmdir %D/share/locale/pt_BR > /dev/null 2>&1 || true
+share/locale/sv/LC_MESSAGES/gnome-im-switcher.mo
+@unexec rmdir %D/share/locale/sv/LC_MESSAGES > /dev/null 2>&1 || true
+@unexec rmdir %D/share/locale/sv > /dev/null 2>&1 || true
+share/locale/cs/LC_MESSAGES/gnome-im-switcher.mo
+@unexec rmdir %D/share/locale/cs/LC_MESSAGES > /dev/null 2>&1 || true
+@unexec rmdir %D/share/locale/cs > /dev/null 2>&1 || true
+share/locale/hu/LC_MESSAGES/gnome-im-switcher.mo
+@unexec rmdir %D/share/locale/hu/LC_MESSAGES > /dev/null 2>&1 || true
+@unexec rmdir %D/share/locale/hu > /dev/null 2>&1 || true
+share/locale/bn/LC_MESSAGES/gnome-im-switcher.mo
+@unexec rmdir %D/share/locale/bn/LC_MESSAGES > /dev/null 2>&1 || true
+@unexec rmdir %D/share/locale/bn > /dev/null 2>&1 || true
+share/locale/gu/LC_MESSAGES/gnome-im-switcher.mo
+@unexec rmdir %D/share/locale/gu/LC_MESSAGES > /dev/null 2>&1 || true
+@unexec rmdir %D/share/locale/gu > /dev/null 2>&1 || true
+share/locale/hi/LC_MESSAGES/gnome-im-switcher.mo
+@unexec rmdir %D/share/locale/hi/LC_MESSAGES > /dev/null 2>&1 || true
+@unexec rmdir %D/share/locale/hi > /dev/null 2>&1 || true
+share/locale/pa/LC_MESSAGES/gnome-im-switcher.mo
+@unexec rmdir %D/share/locale/pa/LC_MESSAGES > /dev/null 2>&1 || true
+@unexec rmdir %D/share/locale/pa > /dev/null 2>&1 || true
+share/locale/ta/LC_MESSAGES/gnome-im-switcher.mo
+@unexec rmdir %D/share/locale/ta/LC_MESSAGES > /dev/null 2>&1 || true
+@unexec rmdir %D/share/locale/ta > /dev/null 2>&1 || true

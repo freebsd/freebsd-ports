@@ -5,7 +5,7 @@
  #include "getarg.h"
  
 -#define IMAGE_PATH "/usr/lib/im/locale/zh_CN/newpy/"
-+#define IMAGE_PATH "/usr/local/lib/im/locale/zh_CN/newpy/"
++#define IMAGE_PATH (IMDIR "/locale/zh_CN/newpy/")
  
  Pixmap LoadGIFFile(char * filename);
  static void AllocateColors1(void);

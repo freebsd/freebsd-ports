@@ -5,7 +5,7 @@
  #define ENGINE_INITIATED     		3
  
 -#define DEFAULT_ENGINE_PATH		"/usr/lib/im/locale"
-+#define DEFAULT_ENGINE_PATH		"/usr/local/lib/im/locale"
++#define DEFAULT_ENGINE_PATH		(IMDIR "/locale")
  #define DEFAULT_DICT_PATH		"data"
  #define COMMON_ENGINE_PATH		"common"
  #define LANGNAME                        "ko_KR"

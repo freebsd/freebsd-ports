@@ -1,12 +1,11 @@
---- lib/iiimcf/Makefile.am	Wed Oct 13 18:07:24 2004
-+++ lib/iiimcf/Makefile.am	Wed Feb 16 15:14:51 2005
-@@ -1,6 +1,7 @@
- AUTOMAKE_OPTIONS = foreign
+--- lib/iiimcf/Makefile.am.orig	Wed Mar  2 05:50:46 2005
++++ lib/iiimcf/Makefile.am	Wed Mar  2 05:51:11 2005
+@@ -2,7 +2,7 @@
  SUBDIRS = . test
  #libdir = /usr/local/lib
-+LDFLAGS = -lpthread -liiimp -L/usr/local/lib
  libiiimcf_la_LDFLAGS = -version-info $(LIBIIIMCF_MAJOR_VERSION):$(LIBIIIMCF_MINOR_VERSION) \
--                        -export-dynamic -export-symbols libiiimcf.sym ../iiimp/libiiimp.la
-+                        -export-dynamic -export-symbols libiiimcf.sym
+-                       -export-dynamic -export-symbols libiiimcf.sym ../iiimp/libiiimp.la
++                       -export-dynamic -export-symbols libiiimcf.sym -liiimp
  libiiimcf_la_CFLAGS = -DDEBUG -DSOCKETDIR="\"$(SOCKETDIR)\""
-diff -urN --exclude --Makefile --exclude config.* --exclude *.m4 --exclude *.cache --exclude *.Plo im-sdk-r12_1-svn2002.orig/lib/iiimcf/Makefile.in im-sdk-r12_1-svn2002/lib/iiimcf/Makefile.in
+ libiiimcf_la_SOURCES = iiimcf.c input-method.c attr.c commit.c context.c event.c \
+                        lookup_choice.c message.c preedit.c status.c trigger.c \

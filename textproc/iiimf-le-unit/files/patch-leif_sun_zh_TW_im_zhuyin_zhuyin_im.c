@@ -5,7 +5,7 @@
  		return(-1);
  
 -	sprintf(file_name, "/usr/lib/im/locale/%s/common/zhuyin.cfg", core->envinfo.lang_name);
-+	sprintf(file_name, "/usr/local/lib/im/locale/%s/common/zhuyin.cfg", core->envinfo.lang_name);
++	sprintf(file_name, IMDIR "/locale/%s/common/zhuyin.cfg", core->envinfo.lang_name);
  	ret = ZhuyinData_Init(file_name, pZhuyinData);
  	if (ret == ZHUYIN_ERROR) {
  		ZhuyinData_Free(pZhuyinData);

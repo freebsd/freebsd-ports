@@ -3,7 +3,8 @@
 @@ -9,14 +9,13 @@
  moduledir = $(GTK2_LIBDIR)/gtk-2.0/$(GTK2_BINARY_VERSION)/immodules
  
- im_iiim_la_CFLAGS = $(SHLIBCFLAGS) $(THREAD_CXX_CFLAGS) $(GTK_CFLAGS)
+-im_iiim_la_CFLAGS = $(SHLIBCFLAGS) $(THREAD_CXX_CFLAGS) $(GTK_CFLAGS)
++im_iiim_la_CFLAGS = $(SHLIBCFLAGS) $(THREAD_CXX_CFLAGS) $(GTK_CFLAGS) -DIMDIR="\"${IMDIR}\""
 -im_iiim_la_LDFLAGS = -rpath $(moduledir) -avoid-version -module -no-undefined
 +im_iiim_la_LDFLAGS = -rpath $(moduledir) -avoid-version -module -no-undefined \
 +		     -liiimcf -liiimp

@@ -5,7 +5,7 @@
  
    lang_name = (char *) strdup ("ko_KR");
 -  sprintf(path_name, "/usr/lib/im/locale/%s", lang_name);
-+  sprintf(path_name, "/usr/local/lib/im/locale/%s", lang_name);
++  sprintf(path_name, IMDIR "/locale/%s", lang_name);
    free (lang_name);
  
  

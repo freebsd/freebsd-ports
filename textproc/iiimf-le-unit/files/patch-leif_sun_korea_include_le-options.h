@@ -5,7 +5,7 @@
  #endif
  
 -#define DEFAULT_KOLE_OPTION_FILE "/usr/lib/im/locale/ko_KR/kole.conf"
-+#define DEFAULT_KOLE_OPTION_FILE "/usr/local/lib/im/locale/ko_KR/kole.conf"
++#define DEFAULT_KOLE_OPTION_FILE (IMDIR "/locale/ko_KR/kole.conf")
  /* NAME of Options */
  #define STR_OPTION_CHARSET "charset"
  #define STR_OPTION_DELETION "delete by jaso"

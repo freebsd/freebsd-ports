@@ -5,7 +5,7 @@
  static void iiim_aux_download (IIIMCF_downloaded_object obj);
  
 -#define AUX_BASE_DIR		"/usr/lib/im/"
-+#define AUX_BASE_DIR		"/usr/local/lib/im/"
++#define AUX_BASE_DIR		IMDIR
  
  #define IS_SPACE(len, ptr)	((0 < (len)) &&				\
  				 (('\t' == *(p)) || (' ' == *(p))))

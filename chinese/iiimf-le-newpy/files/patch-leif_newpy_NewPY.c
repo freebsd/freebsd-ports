@@ -5,7 +5,7 @@
      l->path = "d:\\newpy_obj.jar";  
  #else
 -    l->path = "/usr/lib/im/locale/zh_CN/newpy/newpy_obj.jar";  /* path */
-+    l->path = "/usr/local/lib/im/locale/zh_CN/newpy/newpy_obj.jar";  /* path */
++    l->path = (IMDIR "/locale/zh_CN/newpy/newpy_obj.jar");  /* path */
  #endif
  
      l->signature = "";

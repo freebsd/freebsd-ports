@@ -7,6 +7,7 @@
 
 PORTNAME=	csconv
 PORTVERSION=	${IIIMF_VER:S/_/./g:C/-.*//}
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.openi18n.org/download/im-sdk/src/
 PKGNAMEPREFIX=	iiimf-
@@ -22,10 +23,12 @@ USE_ICONV=	yes
 USE_GMAKE=	yes
 USE_GNOME=	intltool
 USE_REINPLACE=	yes
-WANT_AUTOCONF_VER=253
-WANT_AUTOHEADER_VER=253
-WANT_AUTOMAKE_VER=15
-WANT_LIBTOOL_VER=15
+USE_AUTOCONF_VER=	259
+#USE_AUTOHEADER_VER=	259
+WANT_AUTOMAKE_VER=	19
+WANT_LIBTOOL_VER=	15
+
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/src-//}/lib/CSConv
 PATCH_WRKSRC=	${WRKDIR}/${DISTNAME:S/src-//}
@@ -40,12 +43,13 @@ IGNORE=         "It is supported on FreeBSD 5.3 and later"
 IGNORE=	"${ARCH} is not support."
 .endif
 
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=CC=gcc CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -liconv"
+CFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+LDFLAGS+=	-L${LOCALBASE}/lib -liconv ${PTHREAD_LIBS}
+CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
 UPDATE_ARGS+=	ACLOCAL=${ACLOCAL} AUTOMAKE=${AUTOMAKE} \
 		AUTOHEADER=${AUTOHEADER} AUTOCONF=${AUTOCONF} \
-		LIBTOOL=${LIBTOOL} LIBTOOLIZE=${LIBTOOLIZE}
+		LIBTOOL=${LIBTOOL} LIBTOOLIZE=${LIBTOOLIZE} \
+		ACLOCAL_DIR="-I ${LOCALBASE}/share/aclocal -I ${ACLOCAL_DIR}"
 
 post-patch:
 	${REINPLACE_CMD} -e "s,/usr/lib/im,${PREFIX}/lib/im,g" \
@@ -58,11 +62,19 @@ post-patch:
 		${WRKSRC}/converterPI/icuconv/common/config.h
 	${REINPLACE_CMD} -e "s,ELIBBAD,ENOEXEC," \
 		${WRKSRC}/converterPI/icuconv/common/icuconv.c
+	for MKFLIN in `find ${WRKSRC} -name "Makefile.in"`; do \
+		${REINPLACE_CMD} -e "/(CC)/s,-lc,,g" $${MKFLIN}; \
+		${REINPLACE_CMD} -e "/(CC)/s,-ldl,,g" $${MKFLIN}; \
+		${REINPLACE_CMD} -e '/(CC)/s,(LIBS),(LDFLAGS),g' $${MKFLIN}; \
+		${REINPLACE_CMD} -e '/(CC)/s,{LIBS},{LDFLAGS},g' $${MKFLIN}; \
+		${REINPLACE_CMD} -e "s,LIBS = @LIBS@,LDFLAGS = @LDFLAGS@,g" $${MKFLIN}; \
+	done
 
 pre-configure:
-	(cd ${WRKSRC}/../../ && ${GMAKE} ${UPDATE_ARGS} update-acfiles)
-	(cd ${WRKSRC} && ${ACLOCAL} -I ../../acfiles && ${AUTOCONF})
-	(cd ${WRKSRC}/converterPI/ && ${AUTOCONF})
+	@cd ${WRKSRC}/../../ && ${GMAKE} ${UPDATE_ARGS} update-acfiles
+	@cd ${WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${ACLOCAL} \
+	 -I ../../acfiles -I ${LOCALBASE}/share/aclocal -I ${ACLOCAL_DIR}
+	@cd ${WRKSRC}/converterPI/ && ${SETENV} ${AUTOTOOLS_ENV} ${AUTOCONF}
 
 post-configure:
 	${REINPLACE_CMD} \

@@ -7,6 +7,7 @@
 
 PORTNAME=	client-lib
 PORTVERSION=	${IIIMF_VER:S/_/./g:C/-.*//}
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.openi18n.org/download/im-sdk/src/
 PKGNAMEPREFIX=	iiimf-
@@ -23,12 +24,12 @@ INSTALLS_SHLIB=	yes
 USE_BZIP2=	yes
 USE_REINPLACE=  yes
 USE_GMAKE=	yes
-USE_GNOME=	intltool
-USE_ICONV=	yes
-WANT_AUTOCONF_VER=253
-WANT_AUTOHEADER_VER=253
-WANT_AUTOMAKE_VER=15
-WANT_LIBTOOL_VER=15
+USE_AUTOCONF_VER=	259
+USE_AUTOHEADER_VER=	259
+USE_AUTOMAKE_VER=	19
+WANT_LIBTOOL_VER=	15
+
+CONFIGURE_TARGET=       --build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/src-//}/lib/iiimcf
 PATCH_WRKSRC=	${WRKDIR}/${DISTNAME:S/src-//}
@@ -43,28 +44,48 @@ IGNORE=         "It is supported on FreeBSD 5.3 and later"
 IGNORE=	"${ARCH} is not support."
 .endif
 
-MAKE_ARGS+=	LIBTOOL="${LIBTOOL} --tag=CXX"
+CFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
 UPDATE_ARGS+=	ACLOCAL=${ACLOCAL} AUTOMAKE=${AUTOMAKE} \
 		AUTOHEADER=${AUTOHEADER} AUTOCONF=${AUTOCONF} \
-		LIBTOOL=${LIBTOOL} LIBTOOLIZE=${LIBTOOLIZE}
+		LIBTOOL=${LIBTOOL} LIBTOOLIZE=${LIBTOOLIZE} \
+		ACLOCAL_DIR="-I ${LOCALBASE}/share/aclocal -I ${ACLOCAL_DIR}"
 
 post-patch:
 	${REINPLACE_CMD} -e "s,/usr/lib/im,${PREFIX}/lib/im,g" \
 		${WRKSRC}/../../acfiles/im_common.m4
 
 pre-configure:
-	(cd ${WRKSRC}/../.. && ${GMAKE} ${UPDATE_ARGS} update-acfiles)
-	(cd ${WRKSRC}/../../acfiles/ && ${TOUCH} ltconfig)
-
-do-configure:
-	(cd ${WRKSRC}/../EIMIL && ./autogen.sh)
-	(cd ${WRKSRC} && ./autogen.sh --prefix=${PREFIX})
+	@cd ${WRKSRC}/../.. && ${GMAKE} ${UPDATE_ARGS} update-acfiles
+	@cd ${WRKSRC}/../EIMIL && ${SETENV} ${AUTOTOOLS_ENV} ${ACLOCAL} \
+	 -I ../../acfiles -I ${LOCALBASE}/share/aclocal -I ${ACLOCAL_DIR}
+	@cd ${WRKSRC}/../EIMIL && ${REINPLACE_CMD} \
+	 -e "s^\$$ac_aux_dir/ltconfig^${LTCONFIG}^g" \
+	 -e "/^ltmain=/!s^\$$ac_aux_dir/ltmain.sh^${LIBTOOLFLAGS} ${LTMAIN}^g" \
+	 -e '/^LIBTOOL=/s^\$$(top_builddir)/libtool^${LIBTOOL}^g' \
+	 ${LIBTOOLFILES}
+	@cd ${WRKSRC}/../EIMIL && ${SETENV} ${AUTOTOOLS_ENV} ${AUTOHEADER}
+	@cd ${WRKSRC}/../EIMIL && ${SETENV} ${AUTOTOOLS_ENV} ${AUTOMAKE}
+	@cd ${WRKSRC}/../EIMIL && ${SETENV} ${AUTOTOOLS_ENV} ${AUTOCONF}
+	@cd ${WRKSRC}/../EIMIL && ${SETENV} CC="${CC}" CXX="${CXX}" \
+	 CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}" ${CONFIGURE_ENV} \
+	 ./${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS}
+	@cd ${WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${ACLOCAL} \
+	 -I ../../acfiles -I ${LOCALBASE}/share/aclocal -I ${ACLOCAL_DIR}
+	@cd ${WRKSRC} && ${REINPLACE_CMD} \
+	 -e "s^\$$ac_aux_dir/ltconfig^${LTCONFIG}^g" \
+	 -e "/^ltmain=/!s^\$$ac_aux_dir/ltmain.sh^${LIBTOOLFLAGS} ${LTMAIN}^g" \
+	 -e '/^LIBTOOL=/s^\$$(top_builddir)/libtool^${LIBTOOL}^g' \
+	 ${LIBTOOLFILES}
+	@cd ${WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${AUTOHEADER}
 
 post-configure:
 	${REINPLACE_CMD} -e "s,\$${prefix}/var,/var,g" \
 		${WRKSRC}/Makefile
 
 pre-build:
-	(cd ${WRKSRC}/../EIMIL && ${GMAKE} ${MAKE_ARGS})
+	@cd ${WRKSRC}/../EIMIL && \
+	 ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS}
 
 .include <bsd.port.post.mk>
