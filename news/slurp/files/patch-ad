@@ -1,0 +1,38 @@
+--- newnews.c.orig	Sun Nov  9 18:17:14 1997
++++ newnews.c	Sun Nov  9 18:19:29 1997
+@@ -158,10 +158,16 @@
+ process_id (char *msgid)
+ 	{
+ 	char *cp;
++#ifdef SITEEXCLUDING
++	char *host;
++#endif /*SITEXCLUDING*/
+ 
+ 	/* Modify the message id appropriate to C-News history files */
+ 	if ((cp = strchr (msgid, '@')) != NULL)
+ 		{
++#ifdef SITEEXCLUDING
++		host = cp;
++#endif /*SITEXCLUDING*/
+ 		for (; *cp != '\0'; cp++)
+ 			if (isupper (*cp))
+ 				*cp = tolower (*cp);
+@@ -169,6 +175,18 @@
+ 
+ 	if (debug_flag)
+ 		(void) fprintf (stderr, "-> %s", msgid);
++
++#ifdef SITEEXCLUDING
++	if((host)&&(site_check(host)))
++	{
++		if (debug_flag)
++			(void) fprintf (stderr, " (Excluded host %s)", host);
++		/* Excluded host */
++		site_droparticle(msgid);
++		exclart++;
++		return;
++	}
++#endif /*SITEXCLUDING*/
+ 
+ 	/* If hit maximum cache size, then store in a temporary file */
+ #ifdef MAXCACHE

@@ -1,0 +1,57 @@
+--- slurp.c.orig	Sun Nov  9 18:20:54 1997
++++ slurp.c	Sun Nov  9 18:25:16 1997
+@@ -151,6 +151,9 @@
+ int waiting = 0;
+ int dupart = 0;
+ int misart = 0;
++#ifdef SITEEXCLUDING
++int exclart = 0;
++#endif /* SITEEXCLUDING */
+ int xfrart = 0;
+ long totalsize = 0;
+ 
+@@ -627,6 +630,11 @@
+ 	if (open_history ())
+ 		log_sys ("can't open history file %s", HISTORY_FILE);
+ 
++#ifdef SITEEXCLUDING
++	/* Get site names to exclude */
++	site_init();
++#endif /* SITEEXCLUDING */
++
+ 	/* Load start time or ids from hostfile if appropriate */
+ 	read_hostfile ();
+ 
+@@ -697,6 +705,9 @@
+ 	/* Time to say goodbye */
+ 	close_server ();
+ 	close_history ();
++#ifdef SITEEXCLUDING
++	site_close();
++#endif /* SITEEXCLUDING */
+ 
+ 	/* Submit the remaining batch, if present */
+ 	enqueue_batch ();
+@@ -706,12 +717,22 @@
+ 
+ #ifdef SYSLOG
+ 	if (!debug_flag)
++#ifdef SITEEXCLUDING
++		syslog (LOG_INFO, "Processed %d new, %d duplicate, %d missing, %d excluded articles",
++				xfrart, dupart, misart, exclart);
++#else
+ 		syslog (LOG_INFO, "Processed %d new, %d duplicate, %d missing articles",
+ 				xfrart, dupart, misart);
++#endif /* SITEEXCLUDING */
+ 	else
+ #endif
++#ifdef SITEEXCLUDING
++		(void) fprintf (stderr, "Processed %d new, %d duplicate, %d missing, %d excluded articles\n",
++						xfrart, dupart, misart, exclart);
++#else
+ 		(void) fprintf (stderr, "Processed %d new, %d duplicate, %d missing articles\n",
+ 						xfrart, dupart, misart);
++#endif /* SITEEXCLUDING */
+ 
+ #ifdef SPEEDSTATS
+   #ifdef SYSLOG

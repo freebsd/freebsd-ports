@@ -1,0 +1,21 @@
+--- patchlevel.h.orig	Sun Nov  9 18:19:34 1997
++++ patchlevel.h	Sun Nov  9 18:20:34 1997
+@@ -9,6 +9,10 @@
+  * $Id: patchlevel.h,v 1.10 1995/02/07 14:33:25 root Exp root $
+  *
+  * $Log: patchlevel.h,v $
++ *
++ * 1.10.pf.b - Add siteexclusion stuff
++ * 1.10.pf.a - Save missing article ids, to try later
++ *
+  * Revision 1.10  1995/02/07  14:33:25  root
+  * Updated for new version
+  *
+@@ -18,6 +22,6 @@
+  *
+  */
+ 
+-#define PATCHLEVEL "1.10"
++#define PATCHLEVEL "1.10.pf.b"
+ 
+ /* END-OF-FILE */

@@ -6,3 +6,10 @@ forwarding on via UUCP to another news system. It replaces nntpxfer
 from the NNTP 1.5.12 reference implementation and nntpget from the INN
 distribution.
 
+Patches from Peter Fox (fox@roestock.demon.co.uk) have been added to
+avoid downloading articles from certain sites.  To make use of this
+facility, create a file ${PREFIX}/news/lib/excludesites and list the
+sites in it, eg
+
+fritter.spam.com
+lusers.org

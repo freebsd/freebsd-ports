@@ -1,0 +1,23 @@
+--- conf.h.orig	Tue Feb  7 14:29:19 1995
++++ conf.h	Sun Nov  9 18:13:56 1997
+@@ -57,6 +57,11 @@
+ #define SYSFILE			"/usr/lib/news/slurp.sys"
+ #define HOSTFILE		"/usr/lib/news/slurp."
+ 
++/* These files will be used by the site exclusion feature.  SITEFILE
++   is a list of sites that you do not wish to receive articles from.
++   The IDs of articles thus rejected will be kept in DROPFILE. */
++#define SITEFILE		"/usr/lib/news/excludesites"
++#define DROPFILE		"/usr/lib/news/exclarticles"
+ 
+ /* Speedup sets the number of extra ARTICLE requests that are stacked
+    up at the NNTP server awaiting transmission - aka pipelining.
+@@ -155,7 +160,7 @@
+    undefined. If the required define is not supplied by the compiler
+    (e.g. SVR4, SVR3) then you will need to include it yourself here. */
+ 
+-#define SVR4
++/* #define SVR4 */
+ 
+ 
+ /* The facility name which syslog reports errors and stats under. If
