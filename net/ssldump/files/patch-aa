@@ -1,0 +1,13 @@
+--- configure.in.orig	Thu Sep 27 01:03:56 2001
++++ configure.in	Mon Apr 29 13:20:27 2002
+@@ -200,7 +200,9 @@
+ 	done
+ 	if test "$ac_found_openssl_lib_dir" != "no"; then
+ 	   	echo "found in $ac_found_openssl_lib_dir"
+-		INCLUDES="-I$ac_found_openssl_inc_dir $INCLUDES"
++		if test "$ac_found_openssl_inc_dir" != "/usr/include"; then
++		  INCLUDES="-I$ac_found_openssl_inc_dir $INCLUDES"
++		fi
+ 		DEFINES="-DOPENSSL $DEFINES"
+ 	else
+ 		echo "not found."
