@@ -3,7 +3,7 @@
 # Date created:         03 Oct 1997
 # Whom:                 Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.5 1998/09/27 20:11:17 steve Exp $
+# $Id: Makefile,v 1.6 1998/11/14 09:43:24 asami Exp $
 #
 
 DISTNAME=       plplot4p99j
@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://dino.ph.utexas.edu/plplot/distrib/alpha/
 
 MAINTAINER=	tg@FreeBSD.ORG
 
+USE_XLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS= --with-gcc=yes --with-double=yes
 

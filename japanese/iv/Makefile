@@ -3,7 +3,7 @@
 # Date created:		23.Feb.1996
 # Whom:			sanpei@yy.cs.keio.ac.jp
 #
-# $Id: Makefile,v 1.6 1998/10/20 01:23:06 steve Exp $
+# $Id: Makefile,v 1.7 1998/11/14 09:43:15 asami Exp $
 #
 
 DISTNAME=	iv-3.1
@@ -14,6 +14,8 @@ MASTER_SITES=	ftp://interviews.stanford.edu/pub/ \
 DISTFILES=	3.1.tar.Z iv3_1j_gamma.tar.gz
 
 MAINTAINER=	sanpei@sanpei.org
+
+BUILD_DEPENDS=	imake:${PORTSDIR}/x11/XFree86
 
 DIST_SUBDIR=	iv
 WRKSRC=		${WRKDIR}/iv
