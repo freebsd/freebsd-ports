@@ -1,9 +1,12 @@
 --- config/i386/freebsd.h.orig	Sun Oct 19 09:31:05 1997
-+++ config/i386/freebsd.h	Wed Mar 11 03:04:25 1998
-@@ -37,6 +37,15 @@
- #undef CPP_PREDEFINES
- #define CPP_PREDEFINES "-Dunix -Di386 -D__FreeBSD__ -D__386BSD__ -Asystem(unix) -Asystem(FreeBSD) -Acpu(i386) -Amachine(i386)"
++++ config/i386/freebsd.h	Sun Apr 12 06:19:42 1998
+@@ -35,7 +35,16 @@
+ #include "i386/perform.h"
  
+ #undef CPP_PREDEFINES
+-#define CPP_PREDEFINES "-Dunix -Di386 -D__FreeBSD__ -D__386BSD__ -Asystem(unix) -Asystem(FreeBSD) -Acpu(i386) -Amachine(i386)"
++#define CPP_PREDEFINES "-Dunix -Di386 -D__FreeBSD__ -Asystem(unix) -Asystem(FreeBSD) -Acpu(i386) -Amachine(i386)"
++
 +/* need "-fsjlj-exceptions" (use setjmp/longjmp for exceptions) the default.
 +   The standard exception implementation reliably
 +   dumps core under FreeBSD.  Users can put "-fno-sjlj-exceptions" on
@@ -12,7 +15,6 @@
 +#error "CC1PLUS_SPEC needs ``-fsjlj-exceptions'', but is already defined."
 +#endif
 +#define CC1PLUS_SPEC "-fsjlj-exceptions"
-+
+ 
  /* Like the default, except no -lg.  */
  #define LIB_SPEC "%{!p:%{!pg:-lc}}%{p:-lc_p}%{pg:-lc_p}"
- 
