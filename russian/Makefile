@@ -6,6 +6,7 @@
     SUBDIR += X.language
     SUBDIR += apache13
     SUBDIR += apache13-modssl
+    SUBDIR += artwiz-ru
     SUBDIR += aspell
     SUBDIR += bogofilter
     SUBDIR += cyrproxy

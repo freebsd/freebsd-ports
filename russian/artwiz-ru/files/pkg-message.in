@@ -1,0 +1,10 @@
+============================================================
+You'll have to add X11BASE/lib/X11/fonts/artwiz-ru
+to your X font path by either:
+
+$ xset fp+ X11BASE/lib/X11/fonts/artwiz-ru
+$ xset fp rehash
+
+or by adding it to your X-server configuration file and 
+restarting the X-server.
+============================================================
