@@ -17,6 +17,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/p/pre/}
 
 MAINTAINER=	ports@FreeBSD.org
 
+IGNORE=		"has been disabled for legal issue"
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/bnetd \
 		--localstatedir=${PREFIX}/share/bnetd # --with-bits
