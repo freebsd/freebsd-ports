@@ -9,7 +9,7 @@ PORTNAME=	texi2html
 PORTVERSION= 	1.52
 CATEGORIES=	textproc
 MASTER_SITES=	http://wwwcn.cern.ch/dci/texi2html/
-DISTNAMe=	${PORTNAME}
+DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.shar.Z
 
 MAINTAINER=	i.vaudrey@bigfoot.com
