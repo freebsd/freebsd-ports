@@ -3,11 +3,11 @@
 # Date created:		24 Oct 1998
 # Whom:			Seiichirou Hiraoka
 #
-# $Id: Makefile,v 1.11 1999/02/11 13:50:29 flathill Exp $
+# $Id: Makefile,v 1.12 1999/02/12 15:41:02 flathill Exp $
 #
 
-DISTNAME=	xsystem35-1.0.1
-PKGNAME=	xsystem-3.5-1.0.1
+DISTNAME=	xsystem35-1.0.2
+PKGNAME=	xsystem-3.5-1.0.2
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.aist-nara.ac.jp/~masaki-c/private/unitbase/xsys35/down/
 
