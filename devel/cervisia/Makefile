@@ -13,19 +13,13 @@ MAINTAINER=	andrews@technologist.com
 
 RUN_DEPENDS=	kwm:${PORTSDIR}/x11/kdebase11
 
+USE_QT=		yes
 USE_X_PREFIX=	yes
-GNU_CONFIGURE=		yes
-CONFIGURE_ARGS=	--prefix=${LOCALBASE} \
-		--with-extra-includes="${LOCALBASE}/include" \
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-extra-includes="${LOCALBASE}/include" \
 		--with-extra-libraries="${LOCALBASE}/lib"
-CONFIGURE_ENV=	prefix="${LOCALBASE}" KDEDIR="${LOCALBASE}"
+CONFIGURE_ENV=	prefix="${PREFIX}" KDEDIR="${LOCALBASE}"
 
 MAN1=		cervisia.1
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 400012
-BROKEN=		"Requires NEWGCC-compiled kde libs"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
