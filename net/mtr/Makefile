@@ -18,14 +18,14 @@ MAINTAINER=	billf@FreeBSD.org
 USE_AUTOCONF=	yes
 USE_GMAKE=	yes
 WANT_GTK=	yes
-#WANT_IPV6=	yes
+WANT_IPV6=	yes
 
 MAN8=	mtr.8
 
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 400014 && defined(WANT_IPV6)
-PATCHFILES=	mtr-045-v6-20020207.diff.gz
+PATCHFILES=	mtr-049-v6-20020402.diff.gz
 PATCH_SITES=	ftp://ftp.kame.net/pub/kame/misc/
 PATCH_DIST_STRIP=	-p1
 
