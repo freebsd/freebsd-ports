@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kmldonkey
-PORTVERSION=	0.7
+PORTVERSION=	0.8
 CATEGORIES=	net kde
 MASTER_SITES=	http://savannah.nongnu.org/download/kmldonkey/unstable.pkg/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTVERSION}
