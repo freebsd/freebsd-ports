@@ -7,6 +7,7 @@
 
 PORTNAME=	libmrproject
 PORTVERSION=	0.9.1
+PORTREVISION=	1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	ftp://ftp.codefactory.se/pub/software/mrproject/source/
 
@@ -28,5 +29,9 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
 		s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
+
+post-install:
+	@${SED} "s|%%PREFIX%%|${PREFIX}|g" < ${FILESDIR}/libmrproject.sh > ${PREFIX}/etc/rc.d/000.libmrproject.sh
+	@${CHMOD} 750 ${PREFIX}/etc/rc.d/000.libmrproject.sh
 
 .include <bsd.port.mk>
