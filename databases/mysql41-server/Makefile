@@ -18,7 +18,7 @@ MASTER_SITES=	ftp://planetmirror.com/pub/mysql/Downloads/MySQL-4.1/ \
 		ftp://ftp.rtfm.no/pub/mysql/Downloads/MySQL-4.1/ \
 		http://www.mysql.cz/Downloads/MySQL-4.1/ \
 		ftp://ftp.u-paris10.fr/mysql.com/Downloads/MySQL-4.1/ \
-		http://mysql.oms-net.nl/Downloads/MySQL-4.1/ \
+		http://mysql.proserve.nl/Downloads/MySQL-4.1/ \
 		ftp://ftp.free.fr/pub/MySQL/Downloads/MySQL-4.1/
 PKGNAMESUFFIX?=	-server
 DISTNAME=	${PORTNAME}-${PORTVERSION}-alpha
