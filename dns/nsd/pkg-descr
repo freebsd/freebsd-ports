@@ -1,0 +1,11 @@
+This is NSD Name Server Daemon (NSD) version 1.0.1 beta
+
+NSD is a complete implementation of an authoritative DNS nameserver.
+
+For more information:
+
+WWW:	 http://www.nlnetlabs.nl/nsd
+
+The source code is available from:
+
+WWW:	http://www.nlnetlabs.nl/downloads/nsd

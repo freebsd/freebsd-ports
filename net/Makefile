@@ -312,6 +312,7 @@
     SUBDIR += noip
     SUBDIR += ns
     SUBDIR += nsc
+    SUBDIR += nsd
     SUBDIR += nslint
     SUBDIR += nsping
     SUBDIR += nstreams
