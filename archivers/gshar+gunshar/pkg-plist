@@ -16,8 +16,6 @@ lib/locale/ja_JP.EUC/LC_MESSAGES/sharutils.cat
 lib/locale/nl/LC_MESSAGES/sharutils.cat
 lib/locale/pt/LC_MESSAGES/sharutils.cat
 lib/locale/sv/LC_MESSAGES/sharutils.cat
-man/man1/gshar.1.gz
-man/man1/gunshar.1.gz
 share/locale/de.gmo/LC_MESSAGES/sharutils.cat
 share/locale/fr.gmo/LC_MESSAGES/sharutils.cat
 share/locale/ja_JP.EUC.gmo/LC_MESSAGES/sharutils.cat
