@@ -27,6 +27,10 @@ OPTIONS=	DOUBLE "64bit Data Precision Support" off \
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "alpha"
+BROKEN=		"Does not build on alpha"
+.endif
+
 .if defined(WITH_DOUBLE)
 MAKE_ARGS+=	COLORS=DOUBLE COORDINATES=DOUBLE
 .endif
