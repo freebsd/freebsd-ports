@@ -35,6 +35,7 @@ lib/libtkstub%%SHORT_TK_VER%%.a
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 lib/tk%%TK_VER%%/bgerror.tcl
 lib/tk%%TK_VER%%/button.tcl
+lib/tk%%TK_VER%%/choosedir.tcl
 lib/tk%%TK_VER%%/clrpick.tcl
 lib/tk%%TK_VER%%/comdlg.tcl
 lib/tk%%TK_VER%%/console.tcl

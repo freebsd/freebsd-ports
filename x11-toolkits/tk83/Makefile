@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	tk
-PORTVERSION= 	8.3.b1
-CATEGORIES=	x11-toolkits #tk83
+PORTVERSION= 	8.3.0
+CATEGORIES=	x11-toolkits tk83
 MASTER_SITES=	ftp://ftp.scriptics.com/pub/tcl/tcl8_3/
-DISTNAME=	${PORTNAME}8.3b1
+DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	jseger@FreeBSD.org
 
@@ -33,8 +33,8 @@ MAN3=	3DBorder.3 BindTable.3 CanvPsY.3 CanvTkwin.3 CanvTxtInfo.3 \
 	CrtErrHdlr.3 CrtGenHdlr.3 CrtImgType.3 CrtItemType.3 CrtPhImgFmt.3 \
 	CrtSelHdlr.3 CrtWindow.3 DeleteImg.3 DrawFocHlt.3 EventHndlr.3 \
 	FindPhoto.3 FontId.3 FreeXId.3 GeomReq.3 GetAnchor.3 GetBitmap.3 \
-	GetCapStyl.3 GetClrmap.3 GetColor.3 GetCursor.3 GetFont.3 GetGC.3 \
-	GetImage.3 GetJoinStl.3 GetJustify.3 GetOption.3 GetPixels.3 \
+	GetCapStyl.3 GetClrmap.3 GetColor.3 GetCursor.3 GetDash.3 GetFont.3 \
+	GetGC.3 GetImage.3 GetJoinStl.3 GetJustify.3 GetOption.3 GetPixels.3 \
 	GetPixmap.3 GetRelief.3 GetRootCrd.3 GetScroll.3 GetSelect.3 GetUid.3 \
 	GetVRoot.3 GetVisual.3 HandleEvent.3 IdToWindow.3 ImgChanged.3 \
 	InternAtom.3 MainLoop.3 MainWin.3 MaintGeom.3 ManageGeom.3 \
@@ -43,8 +43,8 @@ MAN3=	3DBorder.3 BindTable.3 CanvPsY.3 CanvTkwin.3 CanvTxtInfo.3 \
 	SetClass.3 SetGrid.3 SetOptions.3 SetVisual.3 StrictMotif.3 \
 	TextLayout.3 Tk_Init.3 Tk_Main.3 TkInitStubs.3 WindowId.3
 MANN=	bell.n bind.n bindtags.n bitmap.n button.n canvas.n checkbutton.n \
-	chooseColor.n clipboard.n destroy.n dialog.n entry.n event.n \
-	focus.n focusNext.n font.n frame.n getOpenFile.n grab.n grid.n \
+	chooseColor.n chooseDirectory.n clipboard.n destroy.n dialog.n entry.n\
+	event.n focus.n focusNext.n font.n frame.n getOpenFile.n grab.n grid.n\
 	image.n label.n listbox.n loadTk.n lower.n menu.n menubar.n \
 	menubutton.n message.n messageBox.n option.n optionMenu.n options.n \
 	pack-old.n pack.n palette.n photo.n place.n popup.n radiobutton.n \
@@ -117,6 +117,7 @@ MLINKS=	3DBorder.3 Tk_Alloc3DBorderFromObj.3 \
 	CrtGenHdlr.3 Tk_DeleteGenericHandler.3 \
 	CrtImgType.3 Tk_CreateImageType.3 \
 	CrtImgType.3 Tk_GetImageMasterData.3 \
+	CrtImgType.3 Tk_InitImageArgs.3 \
 	CrtItemType.3 Tk_CreateItemType.3 \
 	CrtItemType.3 Tk_GetItemTypes.3 \
 	CrtPhImgFmt.3 Tk_CreatePhotoImageFormat.3 \
@@ -273,6 +274,8 @@ MLINKS=	3DBorder.3 Tk_Alloc3DBorderFromObj.3 \
 	WindowId.3 Tk_Height.3 \
 	WindowId.3 Tk_Changes.3 \
 	WindowId.3 Tk_Attributes.3 \
+	WindowId.3 Tk_IsContainer.3 \
+	WindowId.3 Tk_IsEmbedded.3 \
 	WindowId.3 Tk_IsMapped.3 \
 	WindowId.3 Tk_IsTopLevel.3 \
 	WindowId.3 Tk_ReqWidth.3 \
@@ -282,6 +285,7 @@ MLINKS=	3DBorder.3 Tk_Alloc3DBorderFromObj.3 \
 	WindowId.3 Tk_Depth.3 \
 	WindowId.3 Tk_Colormap.3 \
 	chooseColor.n tk_chooseColor.n \
+	chooseDirectory.n tk_chooseDirectory.n \
 	dialog.n tk_dialog.n \
 	focusNext.n tk_focusNext.n \
 	focusNext.n tk_focusPrev.n \
@@ -299,7 +303,6 @@ MLINKS=	3DBorder.3 Tk_Alloc3DBorderFromObj.3 \
 .include <bsd.port.pre.mk>
 
 post-install:
-	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 .if exists(${PKGINSTALL})
 	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL}
 .endif

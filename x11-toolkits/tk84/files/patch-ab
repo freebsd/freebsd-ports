@@ -1,5 +1,5 @@
---- Makefile.in.orig	Fri Aug 13 18:06:14 1999
-+++ Makefile.in	Sat Sep  4 19:47:43 1999
+--- Makefile.in.orig	Thu Feb 10 06:11:01 2000
++++ Makefile.in	Mon Apr 24 16:10:36 2000
 @@ -56,7 +56,9 @@
  BIN_DIR =		$(exec_prefix)/bin
  
@@ -29,7 +29,7 @@
  
  # The symbol below provides support for dynamic loading and shared
  # libraries.  See configure.in for a description of what it means.
-@@ -356,8 +358,14 @@
+@@ -361,8 +363,14 @@
  ${TK_LIB_FILE}: ${OBJS}
  	rm -f ${TK_LIB_FILE}
  	@MAKE_LIB@
@@ -44,7 +44,7 @@
  ${STUB_LIB_FILE}: ${STUB_LIB_OBJS}
  	rm -f ${STUB_LIB_FILE}
  	@MAKE_STUB_LIB@
-@@ -418,7 +426,7 @@
+@@ -424,7 +432,7 @@
  # some ranlibs write to current directory, and this might not always be
  # possible (e.g. if installing as root).
  
@@ -53,9 +53,9 @@
  	@for i in $(LIB_INSTALL_DIR) $(BIN_INSTALL_DIR) ; \
  	    do \
  	    if [ ! -d $$i ] ; then \
-@@ -432,12 +440,18 @@
- 	chmod +x $(UNIX_DIR)/install-sh
- 	chmod +x $(UNIX_DIR)/mkLinks
+@@ -442,12 +450,18 @@
+ 	    fi
+ 	@echo "Installing $(TK_LIB_FILE) to $(LIB_INSTALL_DIR)/"
  	@$(INSTALL_DATA) $(TK_LIB_FILE) $(LIB_INSTALL_DIR)/$(TK_LIB_FILE)
 +	@ln -sf $(LIB_INSTALL_DIR)/$(TK_LIB_FILE) $(LIB_INSTALL_DIR)/libtk${SHORT_TK_VER}.so
  	@(cd $(LIB_INSTALL_DIR); $(RANLIB) $(TK_LIB_FILE))
@@ -64,16 +64,16 @@
 +	@$(INSTALL_DATA) libtk${SHORT_TK_VER}.a $(LIB_INSTALL_DIR)/libtk${SHORT_TK_VER}.a
 +	@(cd $(LIB_INSTALL_DIR); $(RANLIB) libtk${SHORT_TK_VER}.a)
 +	@chmod 555 $(LIB_INSTALL_DIR)/libtk${SHORT_TK_VER}.a
- 	@echo "Installing wish"
+ 	@echo "Installing wish as $(BIN_INSTALL_DIR)/wish$(VERSION)"
  	@$(INSTALL_PROGRAM) wish $(BIN_INSTALL_DIR)/wish$(VERSION)
- 	@echo "Installing tkConfig.sh"
+ 	@echo "Installing tkConfig.sh to $(LIB_INSTALL_DIR)/"
 -	@$(INSTALL_DATA) tkConfig.sh $(LIB_INSTALL_DIR)/tkConfig.sh
 +	@mkdir -p $(LIB_INSTALL_DIR)/tk$(VERSION)
 +	@$(INSTALL_DATA) tkConfig.sh $(LIB_INSTALL_DIR)/tk$(VERSION)/tkConfig.sh
  	@if test "$(TK_BUILD_EXP_FILE)" != ""; then \
- 	    echo "Installing $(TK_EXP_FILE)"; \
+ 	    echo "Installing $(TK_EXP_FILE) to $(LIB_INSTALL_DIR)/"; \
  	    $(INSTALL_DATA) $(TK_BUILD_EXP_FILE) \
-@@ -451,6 +465,7 @@
+@@ -461,6 +475,7 @@
  
  install-libraries:
  	@for i in $(INSTALL_ROOT)$(prefix)/lib $(INCLUDE_INSTALL_DIR) \
@@ -81,51 +81,46 @@
  		$(SCRIPT_INSTALL_DIR) $(SCRIPT_INSTALL_DIR)/images; \
  	    do \
  	    if [ ! -d $$i ] ; then \
-@@ -461,11 +476,19 @@
- 		fi; \
- 	    done;
- 	chmod +x $(UNIX_DIR)/install-sh
+@@ -474,10 +489,16 @@
+ 	    chmod +x $(UNIX_DIR)/install-sh; \
+ 	    fi
+ 	@echo "Installing header files";
 -	@for i in $(GENERIC_DIR)/tk.h $(GENERIC_DIR)/tkDecls.h ; \
-+	@echo "Installing headers"
 +	@for i in $(GENERIC_DIR)/*.h ; \
- 	    do \
- 	    echo "Installing $$i"; \
--	    $(INSTALL_DATA) $$i $(INCLUDE_INSTALL_DIR); \
++	    do \
 +	    $(INSTALL_DATA) $$i $(GENERIC_INCLUDE_INSTALL_DIR); \
- 	    done;
++	    done;
 +	@for i in $(UNIX_DIR)/*.h ; \
-+	do \
-+	echo "Installing $$i"; \
-+	$(INSTALL_DATA) $$i $(UNIX_INCLUDE_INSTALL_DIR); \
-+	done ;
+ 	    do \
+-	    $(INSTALL_DATA) $$i $(INCLUDE_INSTALL_DIR); \
++	    $(INSTALL_DATA) $$i $(UNIX_INCLUDE_INSTALL_DIR); \
+ 	    done;
 +	@ln -sf $(GENERIC_INCLUDE_INSTALL_DIR)/tk.h $(INCLUDE_INSTALL_DIR)/tk.h
 +	@ln -sf $(GENERIC_INCLUDE_INSTALL_DIR)/tkDecls.h $(INCLUDE_INSTALL_DIR)/tkDecls.h
- 	for i in $(SRC_DIR)/library/*.tcl $(GENERIC_DIR)/prolog.ps \
+ 	@echo "Installing library files to $(SCRIPT_INSTALL_DIR)";
+ 	@for i in $(SRC_DIR)/library/*.tcl $(GENERIC_DIR)/prolog.ps \
  	        $(SRC_DIR)/library/tclIndex $(UNIX_DIR)/tkAppInit.c; \
- 	    do \
-@@ -530,16 +553,14 @@
- 		    $$i > $(MAN1_INSTALL_DIR)/$$i; \
+@@ -543,7 +564,6 @@
  	    chmod 444 $(MAN1_INSTALL_DIR)/$$i; \
  	    done;
--	$(UNIX_DIR)/mkLinks $(MAN1_INSTALL_DIR)
+ 	@echo "Cross-linking top-level (.1) docs";
+-	@$(UNIX_DIR)/mkLinks $(MAN1_INSTALL_DIR)
+ 	@echo "Installing C API (.3) docs";
  	@cd $(SRC_DIR)/doc; for i in *.3; \
  	    do \
- 	    echo "Installing doc/$$i"; \
--	    rm -f $(MAN3_INSTALL_DIR)/$$i; \
-+	    rm -f $(MAN3_INSTALL_DIR)/$$i ; \
- 	    sed -e '/man\.macros/r man.macros' -e '/man\.macros/d' \
- 		    $$i > $(MAN3_INSTALL_DIR)/$$i; \
+@@ -553,7 +573,6 @@
  	    chmod 444 $(MAN3_INSTALL_DIR)/$$i; \
  	    done;
--	$(UNIX_DIR)/mkLinks $(MAN3_INSTALL_DIR)
+ 	@echo "Cross-linking top-level (.3) docs";
+-	@$(UNIX_DIR)/mkLinks $(MAN3_INSTALL_DIR)
+ 	@echo "Installing command (.n) docs";
  	@cd $(SRC_DIR)/doc; for i in *.n; \
  	    do \
- 	    echo "Installing doc/$$i"; \
-@@ -548,7 +569,6 @@
- 		    $$i > $(MANN_INSTALL_DIR)/$$i; \
+@@ -563,7 +582,6 @@
  	    chmod 444 $(MANN_INSTALL_DIR)/$$i; \
  	    done;
--	$(UNIX_DIR)/mkLinks $(MANN_INSTALL_DIR)
+ 	@echo "Cross-linking command (.n) docs";
+-	@$(UNIX_DIR)/mkLinks $(MANN_INSTALL_DIR)
  
  Makefile: $(UNIX_DIR)/Makefile.in
  	$(SHELL) config.status

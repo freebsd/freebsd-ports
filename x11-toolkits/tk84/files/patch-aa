@@ -1,6 +1,6 @@
---- configure.orig	Wed Nov  3 21:38:44 1999
-+++ configure	Sun Nov 21 15:55:12 1999
-@@ -1756,7 +1756,7 @@
+--- configure.orig	Thu Feb 10 06:11:02 2000
++++ configure	Mon Apr 24 15:59:27 2000
+@@ -1763,7 +1763,7 @@
  	    LDFLAGS="-Wl,-Bexport"
  	    LD_SEARCH_FLAGS=""
  	    ;;
@@ -9,29 +9,15 @@
  	    # Not available on all versions:  check for include file.
  	    ac_safe=`echo "dlfcn.h" | sed 'y%./+-%__p_%'`
  echo $ac_n "checking for dlfcn.h""... $ac_c" 1>&6
-@@ -1788,14 +1788,19 @@
-   echo "$ac_t""yes" 1>&6
-   
- 		SHLIB_CFLAGS="-fpic"
--		SHLIB_LD="ld -Bshareable -x"
- 		SHLIB_LD_LIBS=""
- 		SHLIB_SUFFIX=".so"
- 		DL_OBJS="tclLoadDl.o"
- 		DL_LIBS=""
- 		LDFLAGS=""
- 		LD_SEARCH_FLAGS=""
--		SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.so.1.0'
-+          if eval "test \"`echo ${PORTOBJFORMAT}`\" = elf" ; then
-+		SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}.so.1'
-+		SHLIB_LD="ld -shared -x -soname \$@"
-+	  else
-+		SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}.so.1.0'
-+		SHLIB_LD="ld -Bshareable -x"
-+	  fi
- 	    
- else
-   echo "$ac_t""no" 1>&6
-@@ -2266,6 +2271,7 @@
+@@ -1847,6 +1847,7 @@
+ 	    # FreeBSD doesn't handle version numbers with dots.
+ 
+ 	    UNSHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.a'
++	    SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.so.1'
+ 	    TCL_LIB_VERSIONS_OK=nodots
+ 	    ;;
+ 	FreeBSD-*)
+@@ -2303,6 +2304,7 @@
  	echo "$ac_t""no" 1>&6
      fi
  
