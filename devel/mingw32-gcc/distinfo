@@ -1,1 +1,6 @@
-MD5 (mingw/gcc-2.95.3-20010828-src.tar.gz) = 1fc0c647b42e8278e5906ee540defd3c
+MD5 (mingw/gcc-core-3.2.tar.bz2) = 237d1cd956518f89a618172467d97811
+MD5 (mingw/gcc-g++-3.2.tar.bz2) = bec8fc6679a7ba0abb79af3d9bb4f43e
+MD5 (mingw/gcc-objc-3.2.tar.bz2) = 48fabae4a46f4c12e277358b9044fb25
+MD5 (mingw/gcc-g77-3.2.tar.bz2) = b6799d840bd458562368c10ec8765ed2
+MD5 (mingw/gcc-ada-3.2.tar.bz2) = 20a5a6984a998be0a452f6240287c1ce
+MD5 (mingw/gcc-3.2-20020817-1.src.diff.gz) = 49fd6cb2e2fcf005b037c54a89b145ac
