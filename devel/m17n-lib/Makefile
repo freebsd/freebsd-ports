@@ -34,7 +34,7 @@ OPTIONS=	ANTHY	"With Anthy support" off \
 .include <bsd.port.pre.mk>
 
 .ifdef WITH_ANTHY
-LIB_DEPENDS+=	anthy.0:${PORTSDIR}/japanese/anthy
+LIB_DEPENDS+=	anthy.1:${PORTSDIR}/japanese/anthy
 .else
 CONFIGURE_ENV+=	ac_cv_lib_anthydic_anthy_init_sessions=no
 .endif
