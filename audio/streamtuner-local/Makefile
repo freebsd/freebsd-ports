@@ -5,22 +5,23 @@
 # $FreeBSD$
 #
 
-PORTNAME=		local
-PORTVERSION=		0.2.1
+PORTNAME=		streamtuner-local
+PORTVERSION=		0.3.0
 CATEGORIES=		audio www
 MASTER_SITES=		http://streamtuner.sourceforge.net/streamtuner/
-PKGNAMEPREFIX=		streamtuner-
-DISTNAME=		${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=		jylefort@brutele.be
-COMMENT=		A plugin for streamtuner that browses a local MP3 repository
+COMMENT=		A streamtuner plugin for local music access
 
 BUILD_DEPENDS=		${X11BASE}/include/streamtuner/streamtuner.h:${PORTSDIR}/audio/streamtuner
 RUN_DEPENDS=		${X11BASE}/bin/streamtuner:${PORTSDIR}/audio/streamtuner
-LIB_DEPENDS=		id3-3.8:${PORTSDIR}/audio/id3lib
+LIB_DEPENDS=		id3tag:${PORTSDIR}/audio/libid3tag \
+			vorbis:${PORTSDIR}/audio/libvorbis
 
 USE_X_PREFIX=		yes
-GNU_CONFIGURE=		yes
-CONFIGURE_ARGS=		--with-id3lib=${LOCALBASE}
+USE_LIBTOOL_VER=	15
+
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>
