@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.29 1998/10/10 13:49:33 vanilla Exp $
+# $Id: Makefile,v 1.30 1998/11/06 17:12:02 itojun Exp $
 #
 
     SUBDIR += agrep
@@ -22,6 +22,7 @@
     SUBDIR += mgdiff
     SUBDIR += mswordview
     SUBDIR += nfbtrans
+    SUBDIR += p5-XML-Parser
     SUBDIR += par
     SUBDIR += pilot_makedoc
     SUBDIR += rman
