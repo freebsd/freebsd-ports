@@ -1,11 +1,11 @@
---- python/Makefile.in.orig	Tue Mar 26 21:54:53 2002
-+++ python/Makefile.in	Tue Mar 26 21:55:17 2002
+--- python/Makefile.in.orig	Wed Apr 17 21:43:23 2002
++++ python/Makefile.in	Wed Apr 17 21:44:01 2002
 @@ -141,7 +141,7 @@
  	-I$(top_srcdir)/include
  
  
--DOCS_DIR = $(prefix)/share/doc/libxml2-python-$(LIBXML_VERSION)
-+DOCS_DIR = $(prefix)/share/doc/libxml2-python
+-DOCS_DIR = $(datadir)/doc/libxml2-python-$(LIBXML_VERSION)
++DOCS_DIR = $(datadir)/doc/libxml2-python
  # libxml2class.txt is generated
  DOCS = TODO
  
