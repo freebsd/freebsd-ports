@@ -1,0 +1,40 @@
+bin/kdissert
+lib/libkdisshtmldoc.la
+lib/libkdisshtmldoc.so
+lib/libkdisspdflatexarticle.la
+lib/libkdisspdflatexarticle.so
+lib/libkdisspdflatexbook.la
+lib/libkdisspdflatexbook.so
+share/applications/kde/kdissert.desktop
+share/applnk/Utilities/kdissert.desktop
+share/apps/kdissert/kdissertui.rc
+share/apps/kdissert/pics/nopix.png
+share/apps/kdissert/templatedata/kdisshtmldoc.tar.gz
+share/apps/kdissert/templatedata/kdisspdflatexarticle.tar.gz
+share/apps/kdissert/templatedata/kdisspdflatexbook.tar.gz
+share/apps/kdissert/tips
+share/config.kcfg/kdissert.kcfg
+share/doc/HTML/en/kdissert/common
+share/doc/HTML/en/kdissert/index.cache.bz2
+share/doc/HTML/en/kdissert/index.docbook
+share/icons/crystalsvg/128x128/actions/kdissert_sort.png
+share/icons/crystalsvg/16x16/actions/kdissert_link.png
+share/icons/crystalsvg/16x16/actions/kdissert_point.png
+share/icons/crystalsvg/16x16/actions/kdissert_sort.png
+share/icons/crystalsvg/22x22/actions/kdissert_link.png
+share/icons/crystalsvg/22x22/actions/kdissert_point.png
+share/icons/crystalsvg/22x22/actions/kdissert_sort.png
+share/icons/crystalsvg/32x32/actions/kdissert_link.png
+share/icons/crystalsvg/32x32/actions/kdissert_point.png
+share/icons/crystalsvg/32x32/actions/kdissert_sort.png
+share/icons/crystalsvg/64x64/actions/kdissert_sort.png
+share/icons/hicolor/128x128/apps/kdissert.png
+share/icons/hicolor/16x16/apps/kdissert.png
+share/icons/hicolor/32x32/apps/kdissert.png
+share/icons/hicolor/64x64/apps/kdissert.png
+share/locale/de/LC_MESSAGES/kdissert.mo
+share/locale/fr/LC_MESSAGES/kdissert.mo
+share/locale/nl/LC_MESSAGES/kdissert.mo
+@dirrm share/apps/kdissert/templatedata
+@dirrm share/apps/kdissert/pics
+@dirrm share/apps/kdissert

@@ -1,0 +1,13 @@
+The goal of kdissert is to help to structure ideas and concepts by
+associating them into a tree. The tree is there to help to see how the
+ideas interact, and then to develop them further (add ramifications).
+
+An idea is represented by a shape which can be a text or a picture. The
+ideas can be connected, but there is a constraint : an idea cannot have
+more than one parent.
+
+A kdissert mind-map can be exported as a picture, or used to generate
+documents. Templates include pdflatex (article, book) and html file
+formats.
+
+WWW: http://freehackers.org/~tnagy/kdissert/index.html

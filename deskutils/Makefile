@@ -62,6 +62,7 @@
     SUBDIR += kbirthday
     SUBDIR += kblticker
     SUBDIR += kdepim3
+    SUBDIR += kdissert
     SUBDIR += kickpim
     SUBDIR += kluje
     SUBDIR += knowit
