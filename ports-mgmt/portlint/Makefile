@@ -10,7 +10,7 @@ DISTNAME=       portlint-2.1.1
 CATEGORIES=	devel
 DISTFILES=	#empty
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	mharo@FreeBSD.org
 
 NO_BUILD=	yes
 NO_CHECKSUM=	yes
