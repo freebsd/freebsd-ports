@@ -1,0 +1,89 @@
+--- configure.orig	Wed Jan 30 06:06:31 2002
++++ configure	Wed Feb 13 12:22:43 2002
+@@ -18821,86 +18821,6 @@
+ fi
+ done
+ 
+-   echo "$as_me:18824: checking if trio library is needed" >&5
+-echo $ECHO_N "checking if trio library is needed... $ECHO_C" >&6
+-if test "${ac_cv_need_trio+set}" = set; then
+-  echo $ECHO_N "(cached) $ECHO_C" >&6
+-else
+-
+-      ac_cv_need_trio=no;
+-
+-      if test x$ac_cv_func_vsnprintf != xyes; then
+-	 ac_cv_need_trio="yes (because there is no system vsnprintf function)"
+-      else
+-
+-      if test "$cross_compiling" = yes; then
+-  { { echo "$as_me:18837: error: cannot run test program while cross compiling" >&5
+-echo "$as_me: error: cannot run test program while cross compiling" >&2;}
+-   { (exit 1); exit 1; }; }
+-else
+-  cat >conftest.$ac_ext <<_ACEOF
+-#line 18842 "configure"
+-#include "confdefs.h"
+-
+-	 int main()
+-	 {
+-	    unsigned long long x=0,x1;
+-	    long long y=0,y1;
+-	    char buf[128];
+-
+-	    x=~x;
+-	    sscanf("0","%llu",&x);
+-	    if(x!=0) return 1;
+-
+-	    y=~y;
+-	    sscanf("0","%lld",&y);
+-	    if(y!=0) return 1;
+-
+-	    x=~x;
+-	    sprintf(buf,"%lld %llu",y,x);
+-	    sscanf (buf,"%lld %llu",&y1,&x1);
+-	    if(x!=x1 || y!=y1)
+-	       return 1;
+-
+-	    return 0;
+-	 }
+-_ACEOF
+-rm -f conftest$ac_exeext
+-if { (eval echo "$as_me:18869: \"$ac_link\"") >&5
+-  (eval $ac_link) 2>&5
+-  ac_status=$?
+-  echo "$as_me:18872: \$? = $ac_status" >&5
+-  (exit $ac_status); } && { ac_try='./conftest$ac_exeext'
+-  { (eval echo "$as_me:18874: \"$ac_try\"") >&5
+-  (eval $ac_try) 2>&5
+-  ac_status=$?
+-  echo "$as_me:18877: \$? = $ac_status" >&5
+-  (exit $ac_status); }; }; then
+-  :
+-else
+-  echo "$as_me: program exited with status $ac_status" >&5
+-echo "$as_me: failed program was:" >&5
+-cat conftest.$ac_ext >&5
+-ac_cv_need_trio="yes (because %lld fails)"
+-fi
+-rm -f core core.* *.core conftest$ac_exeext conftest.$ac_objext conftest.$ac_ext
+-fi
+-
+-      fi
+-
+-fi
+-echo "$as_me:18892: result: $ac_cv_need_trio" >&5
+-echo "${ECHO_T}$ac_cv_need_trio" >&6
+-   case $ac_cv_need_trio in
+-   yes*)
+-      LIBOBJS="$LIBOBJS strio.o trio.o trionan.o"
+-
+-cat >>confdefs.h <<\EOF
+-#define TRIO_REPLACE_STDIO 1
+-EOF
+-
+-      ;;
+-   esac
+ 
+ # See if we have h_errno (the test is here so we can use -lresolv if necessary).
+ echo "$as_me:18906: checking for h_errno" >&5
