@@ -1,6 +1,10 @@
 #!/bin/sh
 
-s=/a/asami/portbuild/scripts/reportload
+b=/a/asami/portbuild
+s=$b/scripts/reportload
+
+echo -n ' chroot'
+rm -rf $b/*/chroot/*
 
 if [ -x $s ]; then
   $s &
