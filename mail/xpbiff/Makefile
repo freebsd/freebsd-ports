@@ -7,6 +7,7 @@
 
 PORTNAME?=	xpbiff
 PORTVERSION?= 	1.27
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.ics.es.osaka-u.ac.jp/pub/xpbiff/
 DISTNAME=	xpbiff
