@@ -1,11 +1,11 @@
---- gtksamba.h.orig	Wed Nov 11 10:30:20 1998
-+++ gtksamba.h	Mon Nov 16 22:43:17 1998
-@@ -30,7 +30,7 @@
-   int write;
- } SmbWin;
+--- src/prefs.c.orig	Mon Jan 18 02:34:19 1999
++++ src/prefs.c	Mon Jan 18 02:34:26 1999
+@@ -2,7 +2,7 @@
+ #include "gtksamba.h"
+ #include <unistd.h>
  
--#define CONFILE "/etc/smb.conf"
-+#define CONFILE "/usr/local/etc/smb.conf"
+-#define DEF_SMB_CONF  "/etc/smb.conf"
++#define DEF_SMB_CONF  "/usr/local/etc/smb.conf"
+ #define DEF_RESTART  "/etc/rc.d/init.d/smb restart"
  
- #define SMB_WIN(obj) ((SmbWin *)(obj))
- 
+ static GtkWidget *pbox=NULL;
