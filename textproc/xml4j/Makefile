@@ -6,16 +6,14 @@
 #
 
 PORTNAME=	xml4j
-PORTVERSION=	3.0.1
+PORTVERSION=	3.1.1
 CATEGORIES=	textproc
 MASTER_SITES=	http://apps.alphaworks.ibm.com/technologies/xml4j/
-DISTNAME=	XML4J-bin.${PORTVERSION}
+DISTNAME=	XML4J-J-bin.${PORTVERSION}
 
 MAINTAINER=	kuriyama@FreeBSD.org
 
-RUN_DEPENDS=	${LOCALBASE}/share/java/classes/jfc-1.1.1/swing.jar:${PORTSDIR}/java/jfc
-
-WRKSRC=		${WRKDIR}/XML4J_3_0_1
+WRKSRC=		${WRKDIR}/XML4J-3_1_1
 NO_BUILD=	YES
 
 JAVASUBDIR=	jdk1.1.8
