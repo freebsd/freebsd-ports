@@ -1,5 +1,5 @@
---- src/cxx/netcdfcpp.h.orig	Mon Sep 16 16:25:44 2002
-+++ src/cxx/netcdfcpp.h	Mon Sep 16 16:26:23 2002
+--- cxx/netcdfcpp.h.orig	Mon Sep 16 16:25:44 2002
++++ cxx/netcdfcpp.h	Mon Sep 16 16:26:23 2002
 @@ -154,7 +154,7 @@
      virtual ~NcDim( void );
      
