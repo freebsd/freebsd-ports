@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	wzdftpd
-PORTVERSION=	0.2.3
-PORTREVISION=	1
+PORTVERSION=	0.3
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,6 +18,7 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL_VER=13
+CONFIGURE_ARGS+=	--without-mysql
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 .if defined(WITH_SSL)
@@ -35,7 +35,7 @@ DOCS=		AUTHORS Permissions.ReadMeFirst README TLS.ReadMeFirst \
 
 post-install:
 	${MV} ${PREFIX}/etc/wzd.cfg ${PREFIX}/etc/wzd.cfg.sample
-	${MV} ${DATADIR}/users ${DATADIR}/users.sample
+	${MV} ${PREFIX}/etc/users ${DATADIR}/users.sample
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
