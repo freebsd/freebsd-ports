@@ -500,6 +500,7 @@
     SUBDIR += ruby-drb
     SUBDIR += ruby-gserver
     SUBDIR += ruby-icmp
+    SUBDIR += ruby-jabber4r
     SUBDIR += ruby-ldap
     SUBDIR += ruby-net-geoip
     SUBDIR += ruby-nis

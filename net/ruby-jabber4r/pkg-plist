@@ -1,0 +1,242 @@
+%%RUBY_SITELIBDIR%%/jabber4r/jabber4r.rb
+%%RUBY_SITELIBDIR%%/jabber4r/jid.rb
+%%RUBY_SITELIBDIR%%/jabber4r/protocol.rb
+%%RUBY_SITELIBDIR%%/jabber4r/roster.rb
+%%RUBY_SITELIBDIR%%/jabber4r/session.rb
+%%RUBY_SITELIBDIR%%/jabber4r/vcard.rb
+@dirrm %%RUBY_SITELIBDIR%%/jabber4r
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/LICENSE.txt
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/blank.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber.src/M000001.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber.src/M000002.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber.src/M000003.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/AutoSubscriptionHandler.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/AutoSubscriptionHandler.src/M000163.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/AutoSubscriptionHandler.src/M000164.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/JID.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/JID.src/M000150.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/JID.src/M000151.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/JID.src/M000152.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/JID.src/M000153.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/JID.src/M000154.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/JID.src/M000155.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/JID.src/M000156.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/JabberConnectionException.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/JabberConnectionException.src/M000157.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/JabberConnectionException.src/M000158.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Protocol.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Protocol.src/M000004.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Protocol.src/M000005.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Protocol.src/M000006.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Protocol/Connection.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Protocol/Connection.src/M000073.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Protocol/Connection.src/M000074.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Protocol/Connection.src/M000075.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Protocol/Connection.src/M000076.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Protocol/Connection.src/M000077.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Protocol/Connection.src/M000078.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Protocol/Connection.src/M000079.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Protocol/Connection.src/M000080.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Protocol/Connection.src/M000081.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Protocol/Connection.src/M000082.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Protocol/Connection.src/M000083.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Protocol/Connection.src/M000084.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Protocol/ExpatJabberParser.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Protocol/ExpatJabberParser.src/M000021.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Protocol/ExpatJabberParser.src/M000022.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Protocol/ExpatJabberParser.src/M000023.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Protocol/ExpatJabberParser.src/M000024.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Protocol/ExpatJabberParser.src/M000025.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Protocol/Iq.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Protocol/Iq.src/M000059.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Protocol/Iq.src/M000060.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Protocol/Iq.src/M000061.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Protocol/Iq.src/M000062.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Protocol/Iq.src/M000063.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Protocol/Iq.src/M000064.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Protocol/Iq.src/M000065.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Protocol/Iq.src/M000066.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Protocol/Iq.src/M000067.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Protocol/Iq.src/M000068.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Protocol/Iq.src/M000069.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Protocol/Iq.src/M000070.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Protocol/Iq.src/M000071.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Protocol/Iq.src/M000072.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Protocol/Message.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Protocol/Message.src/M000007.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Protocol/Message.src/M000008.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Protocol/Message.src/M000009.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Protocol/Message.src/M000010.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Protocol/Message.src/M000011.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Protocol/Message.src/M000012.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Protocol/Message.src/M000013.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Protocol/Message.src/M000014.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Protocol/Message.src/M000015.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Protocol/Message.src/M000016.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Protocol/Message.src/M000017.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Protocol/Message.src/M000018.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Protocol/Message.src/M000019.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Protocol/Message.src/M000020.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Protocol/ParsedXMLElement.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Protocol/ParsedXMLElement.src/M000026.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Protocol/ParsedXMLElement.src/M000027.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Protocol/ParsedXMLElement.src/M000028.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Protocol/ParsedXMLElement.src/M000029.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Protocol/ParsedXMLElement.src/M000030.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Protocol/ParsedXMLElement.src/M000031.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Protocol/ParsedXMLElement.src/M000032.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Protocol/ParsedXMLElement.src/M000033.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Protocol/ParsedXMLElement.src/M000034.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Protocol/ParsedXMLElement.src/M000035.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Protocol/ParsedXMLElement.src/M000036.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Protocol/ParsedXMLElement/NilParsedXMLElement.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Protocol/ParsedXMLElement/NilParsedXMLElement.src/M000037.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Protocol/ParsedXMLElement/NilParsedXMLElement.src/M000038.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Protocol/ParsedXMLElement/NilParsedXMLElement.src/M000039.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Protocol/Presence.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Protocol/Presence.src/M000040.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Protocol/Presence.src/M000041.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Protocol/Presence.src/M000042.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Protocol/Presence.src/M000043.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Protocol/Presence.src/M000044.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Protocol/Presence.src/M000045.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Protocol/Presence.src/M000046.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Protocol/Presence.src/M000047.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Protocol/Presence.src/M000048.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Protocol/Presence.src/M000049.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Protocol/Presence.src/M000050.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Protocol/Presence.src/M000051.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Protocol/Presence.src/M000052.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Protocol/REXMLJabberParser.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Protocol/REXMLJabberParser.src/M000053.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Protocol/REXMLJabberParser.src/M000054.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Protocol/REXMLJabberParser.src/M000055.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Protocol/REXMLJabberParser.src/M000056.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Protocol/REXMLJabberParser.src/M000057.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Protocol/REXMLJabberParser.src/M000058.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Protocol/XMLElement.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Protocol/XMLElement.src/M000085.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Protocol/XMLElement.src/M000086.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Protocol/XMLElement.src/M000087.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Protocol/XMLElement.src/M000088.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Protocol/XMLElement.src/M000089.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Protocol/XMLElement.src/M000090.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Protocol/XMLElement.src/M000091.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Protocol/XMLElement.src/M000092.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Protocol/XMLElement.src/M000093.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Protocol/XMLElement.src/M000094.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Roster.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Roster.src/M000099.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Roster.src/M000100.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Roster.src/M000101.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Roster.src/M000102.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Roster.src/M000103.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Roster.src/M000104.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Roster.src/M000105.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Roster.src/M000106.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Roster.src/M000107.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Roster/RosterItem.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Roster/RosterItem.src/M000108.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Roster/RosterItem.src/M000109.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Roster/RosterItem.src/M000110.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Roster/RosterItem.src/M000111.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Roster/RosterItem.src/M000112.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Roster/RosterItem.src/M000113.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Roster/RosterItem.src/M000114.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Roster/RosterItem/Resource.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Roster/RosterItem/Resource.src/M000115.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Roster/RosterItem/Resource.src/M000116.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Roster/RosterItem/Resource.src/M000117.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Session.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Session.src/M000118.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Session.src/M000119.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Session.src/M000120.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Session.src/M000121.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Session.src/M000122.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Session.src/M000123.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Session.src/M000124.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Session.src/M000125.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Session.src/M000126.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Session.src/M000127.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Session.src/M000128.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Session.src/M000129.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Session.src/M000130.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Session.src/M000131.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Session.src/M000132.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Session.src/M000133.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Session.src/M000134.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Session.src/M000135.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Session.src/M000136.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Session.src/M000137.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Session.src/M000138.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Session.src/M000139.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Session.src/M000140.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Session.src/M000141.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Session.src/M000142.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Session.src/M000143.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Session.src/M000144.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Session.src/M000145.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Session.src/M000146.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Session.src/M000147.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Session.src/M000148.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Session.src/M000149.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Subscription.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Subscription.src/M000161.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/Subscription.src/M000162.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/SubscriptionHandler.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/SubscriptionHandler.src/M000095.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/SubscriptionHandler.src/M000096.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/SubscriptionHandler.src/M000097.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/SubscriptionHandler.src/M000098.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/VCard.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/VCard.src/M000159.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Jabber/VCard.src/M000160.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/created.rid
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/files/jabber4r/jabber4r_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/files/jabber4r/jid_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/files/jabber4r/protocol_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/files/jabber4r/roster_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/files/jabber4r/session_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/files/jabber4r/vcard_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/fr_class_index.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/fr_file_index.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/fr_method_index.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/index.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/rdoc-style.css
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/files/jabber4r
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/files
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/Jabber/VCard.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/Jabber/SubscriptionHandler.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/Jabber/Subscription.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/Jabber/Session.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/Jabber/Roster/RosterItem/Resource.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/Jabber/Roster/RosterItem.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/Jabber/Roster/RosterItem
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/Jabber/Roster.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/Jabber/Roster
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/Jabber/Protocol/XMLElement.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/Jabber/Protocol/REXMLJabberParser.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/Jabber/Protocol/Presence.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/Jabber/Protocol/ParsedXMLElement/NilParsedXMLElement.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/Jabber/Protocol/ParsedXMLElement.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/Jabber/Protocol/ParsedXMLElement
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/Jabber/Protocol/Message.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/Jabber/Protocol/Iq.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/Jabber/Protocol/ExpatJabberParser.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/Jabber/Protocol/Connection.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/Jabber/Protocol.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/Jabber/Protocol
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/Jabber/JabberConnectionException.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/Jabber/JID.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/Jabber/AutoSubscriptionHandler.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/Jabber.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/Jabber
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/echo.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/register.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/subscription.rb
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
