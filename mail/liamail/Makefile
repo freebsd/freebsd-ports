@@ -13,7 +13,7 @@ CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	kde@freebsd.org
+MAINTAINER=	ports@freebsd.org
 COMMENT=	A graphical mail client
 
 USE_REINPLACE=	yes

@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://qtez.ibl.sk/qtez/download/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	kde@freebsd.org
+MAINTAINER=	ports@freebsd.org
 COMMENT=	Qt Rapid Application Development Environment for X Window System
 
 USE_PERL5=	yes

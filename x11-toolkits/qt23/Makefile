@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.trolltech.com/qt/source/ \
 DISTNAME=	qt-x11-${PORTVERSION}
 DIST_SUBDIR=	KDE
 
-MAINTAINER?=	kde@FreeBSD.org
+MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	A C++ X GUI toolkit
 
 LIB_DEPENDS=	mng.1:${PORTSDIR}/graphics/libmng \

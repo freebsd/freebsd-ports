@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	ViPEC-${PORTVERSION}
 
-MAINTAINER=	kde@freebsd.org
+MAINTAINER=	ports@freebsd.org
 COMMENT=	Analyze high frequency, linear electrical networks
 
 BUILD_DEPENDS=	tmake:${PORTSDIR}/devel/tmake
