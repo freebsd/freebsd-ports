@@ -5,6 +5,7 @@
 # $FreeBSD$
 #
 
+PORTREVISION=	2
 CATEGORIES=	databases
 
 MASTERDIR=	${.CURDIR}/../../lang/php5
