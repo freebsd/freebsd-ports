@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	orbit
-PORTVERSION=	0.3.0
+PORTVERSION=	0.3.1
 CATEGORIES=	devel python
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	http://orbit-python.sault.org/files/ \
+		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	orbit-python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	orbit-python-${PORTVERSION}
@@ -22,6 +23,6 @@ USE_GLIB=	yes
 GNU_CONFIGURE=	yes
 USE_PYTHON=	yes
 
-CFLAGS+=	-I/usr/local/include
+CFLAGS+=	-I${LOCALBASE}/include
 
 .include <bsd.port.mk>
