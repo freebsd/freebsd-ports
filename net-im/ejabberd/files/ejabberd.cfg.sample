@@ -84,9 +84,14 @@
 %{ldap_uidattr, "uid"}.            % LDAP attribute that holds user ID
 %{ldap_base, "dc=example,dc=com"}. % Base of LDAP directory
 
+% For authentification via external script use the following:
+%{auth_method, external}.
+%{extauth_program, "/path/to/authentification/script"}.
+
 
 % Host name: (replace for your hostname)
 {host, "localhost"}.
+
 
 % Default language for server messages
 {language, "en"}.
@@ -95,13 +100,13 @@
 {listen,
 % Ordinary client-2-server service
  [{5222, ejabberd_c2s,     [{access, c2s},
+                            starttls, {certfile, "/etc/ssl/certs/ejabberd.pem"},
                             {shaper, c2s_shaper}]},
 
-% SSL-enabled client-2-server service, uncomment these lines to
-% enable ssl
-%  {5223, ejabberd_c2s,     [{access, c2s},
-%                            ssl,
-%                            {certfile, "/etc/ssl/certs/ejabberd.pem"}]},
+% SSL-enabled client-2-server service
+  {5223, ejabberd_c2s,     [{access, c2s},
+                            tls, {certfile, "/etc/ssl/certs/ejabberd.pem"},
+			    {shaper, c2s_shaper}]},
 
 % Server-2-server service
   {5269, ejabberd_s2s_in,  [{shaper, s2s_shaper}]},
@@ -148,6 +153,7 @@
 % Used modules:
 {modules,
  [
+  {mod_announce,   [{access, announce}]},
   {mod_register,   [{access, register}]},
   {mod_roster,     []},
   {mod_privacy,    []},
