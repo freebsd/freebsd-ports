@@ -61,7 +61,7 @@ CONFIGURE_ARGS=	--bindir=${PREFIX}/sbin  --sysconfdir=${PREFIX}/etc/squid \
 		--enable-removal-policies="lru heap" \
 		--enable-auth=basic --enable-basic-auth-helpers="NCSA PAM YP" \
 		--enable-external-acl-helpers="ip_user unix_group" \
-		--enable-underscores
+		--enable-underscores ${SQUID_CONFIGURE_ARGS}
 
 MAKEFILE=	Makefile
 MAN8=	pam_auth.8 squid_unix_group.8 squid.8
