@@ -21,14 +21,16 @@ DIST_SUBDIR=	xemacs
 
 MAINTAINER?=	kiri@kiri.toba-cmt.ac.jp
 
-BUILD_DEPENDS=	${BUILD_DEP_LIST}
+BUILD_DEPENDS=	${PREFIX}/lib/xemacs/mule-packages/lisp/mule-base/japan-util.el:${PORTSDIR}/editors/xemacs-mule-base-packages \
+		${BUILD_DEP_LIST}
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.3:${PORTSDIR}/graphics/png \
 		compface.1:${PORTSDIR}/mail/faces \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		${LIB_INPUT_METHOD}
-RUN_DEPENDS=	${RUN_DEP_LIST}
+RUN_DEPENDS=	${PREFIX}/lib/xemacs/mule-packages/lisp/mule-base/japan-util.el:${PORTSDIR}/editors/xemacs-mule-base-packages \
+		${RUN_DEP_LIST}
 
 EXTRACT_ONLY=	xemacs-${VERSION}.tar.gz xemacs-${VERSION}-elc.tar.gz \
 		xemacs-${VERSION}-info.tar.gz
@@ -40,7 +42,6 @@ INSTALL_COOKIE=	${WRKDIR}/.install_done-${PKGNAME}
 PACKAGE_COOKIE=	${WRKDIR}/.package_done-${PKGNAME}
 GNU_CONFIGURE=	yes
 USE_AUTOCONF=	yes
-MAKE_ENV=	LANG=C
 CONFIGURE_TARGET=${MACHINE_ARCH}--freebsd
 CONFIGURE_ARGS=	--with-x11 \
 		--with-xim=no \
@@ -69,7 +70,6 @@ STRIP=
 INSTALL_TARGET=	install-arch-dep
 PLIST?=		${PKGLDIR}/PLIST
 PLIST_SUB=	XEMACS_DIR=${XEMACS_DIR} ARCH_SUBDIR=${ARCH_SUBDIR}
-
 
 MAJOR_VERSION=		21.1
 VERSION=		21.1.6
