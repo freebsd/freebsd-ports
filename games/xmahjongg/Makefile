@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xmahjongg
-PORTVERSION=	3.5
+PORTVERSION=	3.6.1
 CATEGORIES=	games
 MASTER_SITES=	http://www.lcdf.org/xmahjongg/
 
