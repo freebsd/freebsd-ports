@@ -1,0 +1,4 @@
+Pod::Tree parses a POD into a static syntax tree. Applications walk the tree to
+recover the structure and content of the POD.
+
+WWW: http://search.cpan.org/dist/Pod-Tree/

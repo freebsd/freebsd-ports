@@ -281,6 +281,7 @@
     SUBDIR += p5-Pod-POM
     SUBDIR += p5-Pod-Simple
     SUBDIR += p5-Pod-Stripper
+    SUBDIR += p5-Pod-Tree
     SUBDIR += p5-PodParser
     SUBDIR += p5-RADIUS-UserFile
     SUBDIR += p5-RDF-Core
