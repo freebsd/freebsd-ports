@@ -65,6 +65,7 @@ share/gnome/application-registry/.keep_me
 share/gnome/applications/.keep_me
 share/gnome/apps/.keep_me
 share/gnome/apps/Applications/.keep_me
+share/gnome/apps/Audio/.keep_me
 share/gnome/apps/Development/.keep_me
 share/gnome/apps/Games/.keep_me
 share/gnome/apps/Graphics/.keep_me
@@ -425,6 +426,7 @@ share/sawfish/themes/.keep_me
 @dirrm share/gnome/apps/Graphics
 @dirrm share/gnome/apps/Games
 @dirrm share/gnome/apps/Development
+@dirrm share/gnome/apps/Audio
 @dirrm share/gnome/apps/Applications
 @dirrm share/gnome/apps
 @dirrm share/gnome/applications

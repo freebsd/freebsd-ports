@@ -65,6 +65,7 @@ share/gnome/application-registry
 share/gnome/applications
 share/gnome/apps
 share/gnome/apps/Applications
+share/gnome/apps/Audio
 share/gnome/apps/Development
 share/gnome/apps/Games
 share/gnome/apps/Graphics
