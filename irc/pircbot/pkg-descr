@@ -1,0 +1,6 @@
+PircBot is a framework for an IRC Bot written in Java.
+It allows you to create your own custom IRC Bots using
+Java by building on the easy to use framework that is
+already provided by the PircBot.
+
+WWW: http://www.jibble.org/pircbot.php

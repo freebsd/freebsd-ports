@@ -31,6 +31,7 @@
     SUBDIR += p5-IRC
     SUBDIR += p5-POE-Component-IRC
     SUBDIR += party
+    SUBDIR += pircbot
     SUBDIR += pisg
     SUBDIR += pure-emacs20
     SUBDIR += pure-emacs21
