@@ -14,7 +14,7 @@ PORTEPOCH=	${CUPS_PORTEPOCH}
 CATEGORIES=	print
 MASTER_SITES=	${CUPS_MASTER_SITES}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	asa@gascom.ru
 COMMENT=	The CUPS BSD and system V compatibility binaries (lp* commands)
 
 USE_REINPLACE=	yes
@@ -30,6 +30,8 @@ post-patch:
 post-install:
 	${FIND} ${PREFIX}/man/cat* -type l -name '*.0' -delete
 	${FIND} ${PREFIX}/man/fr/cat* -type l -name '*.0' -delete
+	${SH} ${PKGINSTALL} placeholder POST-INSTALL
+	@${CAT} ${PKGMESSAGE}
 
 .include "${.CURDIR}/../../print/cups/Makefile.common"
 .include <bsd.port.pre.mk>
