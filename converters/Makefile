@@ -1,7 +1,8 @@
-# $Id: Makefile,v 1.4 1997/06/21 12:02:29 ache Exp $
+# $Id: Makefile,v 1.5 1997/07/08 10:11:21 tg Exp $
 #
 
     SUBDIR += btoa
+    SUBDIR += ish
     SUBDIR += mimepp
     SUBDIR += mpack
     SUBDIR += p5-Convert-UU
