@@ -9,13 +9,12 @@
 DISTNAME=	xcolors
 PKGNAME=	xcolors-1.3
 CATEGORIES=	x11
-MASTER_SITES=	ftp://ftp.tut.ac.jp/X11/X11R6/contrib/programs/
+MASTER_SITES=	http://www.lovett.com/~ade/FreeBSD/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ade@lovett.com
 
 WRKSRC=		${WRKDIR}/xcolors
 USE_IMAKE=	yes
-IGNOREFILES=	${DISTFILES}
 MAN1=		xcolors.1
 
 .include <bsd.port.mk>
