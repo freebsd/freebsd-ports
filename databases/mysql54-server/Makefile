@@ -3,7 +3,7 @@
 # Date created:				26 Jan 1998
 # Whom:					Josh Tiefenbach <josh@ican.net>
 #
-# $Id: Makefile,v 1.29 1998/10/08 01:20:26 asami Exp $
+# $Id: Makefile,v 1.30 1998/10/22 07:47:24 thepish Exp $
 #
 
 DISTNAME=	mysql-3.22.9-beta
@@ -30,7 +30,8 @@ CONFIGURE_ENV+=	PERL=${PERL5} \
 		PERL5=${PERL5} \
 		INSTALL_SCRIPT="${INSTALL_SCRIPT}"
 
-OSVERSION!=	sysctl -n kern.osreldate
+.include <bsd.port.pre.mk>
+
 .if defined(NATIVE_THREADS) && ${OSVERSION} >= 300000
 CONFIGURE_ARGS+=	--with-named-thread-libs=-lc_r
 .else
@@ -58,7 +59,7 @@ pre-fetch:
 	@${ECHO} "Using mit-pthreads."
 	@${ECHO}
 .endif
-	
+
 pre-install:
 .if defined(PACKAGE_BUILDING)
 	@ ${RM} -rf /var/db/mysql
@@ -95,4 +96,4 @@ post-install:
 
 	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib/mysql
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -3,7 +3,7 @@
 # Date created:		July 16, 1997
 # Whom:			jfieber
 #
-# $Id: Makefile,v 1.10 1998/09/15 21:18:06 jfieber Exp $
+# $Id: Makefile,v 1.11 1998/10/20 02:02:07 steve Exp $
 #
 
 DISTNAME=	sgmlformat-1.7
@@ -15,7 +15,9 @@ MAINTAINER=	jfieber@FreeBSD.ORG
 # There are two ports that satisfy the nsgmls requirement.
 # Jade is preferred, but it currently doesn't compile on 2.1.x
 # system, so use sp in that case.
-OSVERSION!=	sysctl -n kern.osreldate
+
+.include <bsd.port.pre.mk>
+
 .if ${OSVERSION} < 220000
 RUN_DEPENDS=	nsgmls:${PORTSDIR}/textproc/sp
 .else
@@ -34,4 +36,4 @@ MANCOMPRESSED=	yes
 post-install:
 	@${CAT} ${PKGDIR}/MESSAGE
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

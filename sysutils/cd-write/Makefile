@@ -3,7 +3,7 @@
 # Date created:         1 May 1997
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.10 1998/10/09 10:05:56 asami Exp $
+# $Id: Makefile,v 1.11 1998/10/14 10:41:59 jseger Exp $
 #
 
 DISTNAME=       cd-write-1.4
@@ -16,7 +16,8 @@ LIB_DEPENDS=	tixsam4180.1:${PORTSDIR}/x11-toolkits/tix
 
 WRKSRC=		${WRKDIR}/cd-write
 
-OSVERSION!=     sysctl -n kern.osreldate
+.include <bsd.port.pre.mk>
+
 .if ${OSVERSION} >= 300000
 BROKEN=		scsi.h
 .endif
@@ -31,4 +32,4 @@ pre-build:
 post-install:
 	@PREFIX=${PREFIX} ${SH} ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

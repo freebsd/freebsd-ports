@@ -3,7 +3,7 @@
 # Date created:		9 November 1994
 # Whom:			smace
 #
-# $Id: Makefile,v 1.42 1998/10/01 02:17:49 jseger Exp $
+# $Id: Makefile,v 1.43 1998/10/01 06:19:19 tg Exp $
 #
 
 DISTNAME=       xlockmore-4.12
@@ -26,7 +26,8 @@ CONFIGURE_ARGS+= --enable-kerberos4
 USE_X_PREFIX=	yes
 MAN1=		xlock.1
 
-OSVERSION!=     sysctl -n kern.osreldate
+.include <bsd.port.pre.mk>
+
 .if ${OSVERSION} > 300000
 CONFIGURE_ARGS+= --with-libraries=/usr/lib/aout
 .endif
@@ -39,4 +40,4 @@ LIB_DEPENDS+=		GL.14:${PORTSDIR}/graphics/Mesa3
 CONFIGURE_ARGS+=	--without-mesagl
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

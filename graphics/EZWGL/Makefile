@@ -3,7 +3,7 @@
 # Date created:				4 May 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.10 1998/09/19 01:36:18 hoek Exp $
+# $Id: Makefile,v 1.11 1998/10/05 02:52:24 steve Exp $
 #
 
 DISTNAME=	EZWGL-1.39
@@ -20,6 +20,14 @@ USE_X_PREFIX=	yes
 WRKSRC=		${WRKDIR}/${PKGNAME}
 
 .include "files/manpages"
+
+.include <bsd.port.pre.mk>
+
+.if ${PORTOBJFORMAT} == "elf"
+VERSION=	1
+.else
+VERSION=	1.3
+.endif
 
 pre-install:
 	-@ ${RM} ${WRKSRC}/examples/Makefile.orig
@@ -49,10 +57,4 @@ do-install:
 post-install:
 	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
-.include <bsd.port.mk>
-
-.if ${PORTOBJFORMAT} == "elf"
-VERSION=	1
-.else
-VERSION=	1.3
-.endif
+.include <bsd.port.post.mk>

@@ -3,7 +3,7 @@
 # Date created:		19 August 1995
 # Whom:			peter
 #
-# $Id: Makefile,v 1.14 1998/08/22 17:27:00 hoek Exp $
+# $Id: Makefile,v 1.15 1998/10/14 00:10:17 jseger Exp $
 #
 
 DISTNAME=	rdist-6.1.4
@@ -14,7 +14,8 @@ MASTER_SITES=	http://www.magnicomp.com/download/rdist/ \
 
 MAINTAINER=	peter@FreeBSD.org
 
-OSVERSION!=     sysctl -n kern.osreldate
+.include <bsd.port.pre.mk>
+
 .if ${OSVERSION} >= 300000
 BROKEN=         MOUNT_NFS undeclared
 .endif
@@ -32,4 +33,4 @@ post-install:
 	@strip ${PREFIX}/bin/${RDIST_NAME}
 	@strip ${PREFIX}/bin/rdistd
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

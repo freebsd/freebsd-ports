@@ -3,7 +3,7 @@
 # Date created:		09-Sep-1997
 # Whom:			Ralf S. Engelschall <rse@engelschall.com>
 #
-# $Id: Makefile,v 1.25 1998/09/15 21:31:58 asami Exp $
+# $Id: Makefile,v 1.26 1998/10/15 10:43:21 jseger Exp $
 #
 
 DISTNAME=	wml-1.6.7
@@ -15,7 +15,8 @@ MASTER_SITES=	http://www.engelschall.com/sw/wml/distrib/ \
 
 MAINTAINER=	rse@engelschall.com
 
-OSVERSION!=     sysctl -n kern.osreldate
+.include <bsd.port.pre.mk>
+
 .if ${OSVERSION} >= 300000
 BROKEN=         perl
 .endif
@@ -66,4 +67,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

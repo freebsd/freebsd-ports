@@ -3,7 +3,7 @@
 # Date created:         08 August 1995
 # Whom:                 jkh
 #
-# $Id: Makefile,v 1.39 1998/09/25 10:05:08 asami Exp $
+# $Id: Makefile,v 1.40 1998/10/06 06:49:12 tg Exp $
 #
 
 DISTNAME=       pyth151
@@ -82,7 +82,12 @@ post-configure:
 	${CAT} ${FILESDIR}/${file} >> ${WRKSRC}/Modules/Setup.local
 .endfor
 
-OSVERSION!=	sysctl -n kern.osreldate
+.include <bsd.port.pre.mk>
+
+.if ${PORTOBJFORMAT} == elf
+LDFLAGS+=	-rdynamic
+CONFIGURE_ENV?=	LDFLAGS="${LDFLAGS}"
+.endif
 
 pre-install:
 .if ${OSVERSION} < 300000
@@ -97,10 +102,4 @@ post-install:
 	${INSTALL_SCRIPT} ${PREFIX}/lib/python1.5/plat-freebsd2/regen ${PREFIX}/lib/python1.5/plat-freebsd3
 	strip ${PREFIX}/bin/python
 
-.include <bsd.port.mk>
-
-# need <bsd.port.mk> to get ${PORTOBJFORMAT}
-.if ${PORTOBJFORMAT} == elf
-LDFLAGS+=	-rdynamic
-CONFIGURE_ENV?=	LDFLAGS="${LDFLAGS}"
-.endif
+.include <bsd.port.post.mk>

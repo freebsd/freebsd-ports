@@ -3,7 +3,7 @@
 # Date created:				12 September 1997
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.3 1998/08/13 03:32:52 asami Exp $
+# $Id: Makefile,v 1.4 1998/10/12 15:54:23 jseger Exp $
 #
 
 DISTNAME=		cccc-2.1.1.src
@@ -17,7 +17,8 @@ MAINTAINER=		andy@icc.surw.chel.su
 BUILD_DEPENDS=		antlr:${PORTSDIR}/devel/pccts \
 			dlg:${PORTSDIR}/devel/pccts
 
-OSVERSION!=     sysctl -n kern.osreldate
+.include <bsd.port.pre.mk>
+
 .if ${OSVERSION} >= 300000
 BROKEN=		signal.h:163: syntax error
 .endif
@@ -36,4 +37,4 @@ do-install:
 	@ ${MKDIR} ${PREFIX}/share/doc/cccc
 	@ ${INSTALL_DATA} ${WRKSRC}/readme.txt ${PREFIX}/share/doc/cccc
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

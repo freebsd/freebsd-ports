@@ -4,7 +4,7 @@
 # Date created:		Sun June 08, 1997
 # Whom:			David O'Brien (obrien@FreeBSD.org)
 #
-# $Id: Makefile,v 1.3 1997/06/08 12:58:59 andreas Exp $
+# $Id: Makefile,v 1.1.1.1 1998/08/26 09:41:56 obrien Exp $
 #
 
 DISTNAME=	gcc-2.7.2
@@ -24,7 +24,8 @@ PATCH_DIST_STRIP=	-p1 -N -E
 
 MAINTAINER=	obrien@FreeBSD.org
 
-OSVERSION!=	sysctl -n kern.osreldate
+.include <bsd.port.pre.mk>
+
 .if ${OSVERSION} >= 300000
 BROKEN=		"can't find /usr/lib/aout/crt0.o"
 .endif
@@ -58,4 +59,4 @@ post-install:
 		do strip $$prog ; \
 		done )
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
