@@ -1,1 +1,2 @@
 bin/darcs
+%%CGIDIR%%/darcs_cgi
