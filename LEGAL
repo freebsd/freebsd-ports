@@ -1,5 +1,5 @@
 # Creator:  Jordan Hubbard
-# $Id: LEGAL,v 1.111 1998/07/13 01:24:27 dburr Exp $
+# $Id: LEGAL,v 1.112 1998/07/22 11:32:59 asami Exp $
 
 Some of the ports in this directory have restrictive copyrights prohibiting
 their actual redistribution on mass media.  When creating compilations
@@ -80,6 +80,8 @@ prodosemu.*		ports/emulators/prodosemu	Restrictive copyright on the ROM image
 qvplay-*		ports/graphics/qvplay	No redistribution due to
 						beta status
 quake101.zip		ports/games/quakeserver	Shareware
+radius*			ports/net/radius	Binary redistribution only,
+						no fee allowed
 rkive3.1.tar.gz		ports/news/rkive	Restrictive copyright
 rman-2.4.tar.Z		ports/misc/rman		Restrictive copyright
 rman-3.*		ports/textproc/rman	Don't sell for profit

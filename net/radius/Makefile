@@ -3,7 +3,7 @@
 # Date created:		4. July 1996
 # Whom:			torstenb@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.6 1996/12/01 01:23:07 obrien Exp $
+# $Id: Makefile,v 1.7 1997/08/26 12:17:56 markm Exp $
 #
 
 DISTNAME=	radius.2.4.23
@@ -13,6 +13,10 @@ MASTER_SITES=	ftp://ftp.merit.edu/radius/releases/
 DISTFILES=	radius.23c.basic.tar.gz
 
 MAINTAINER=	torstenb@FreeBSD.ORG
+
+# restrictive copyright in several files, e.g., "src/sendserver.c"
+RESTRICTED=	redistribution in binary only
+NO_CDROM=	not allowed to charge fee for redistribution
 
 NO_WRKSUBDIR=	yes
 INSTALL_TARGET=	install-all
