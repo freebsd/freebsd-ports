@@ -133,6 +133,7 @@
     SUBDIR += hello
     SUBDIR += help2man
     SUBDIR += heyu
+    SUBDIR += hicolor-icon-theme
     SUBDIR += histring
     SUBDIR += hotkeys
     SUBDIR += hulgalugha
