@@ -437,3 +437,8 @@ share/locale/zh_CN/cups_zh_CN
 @exec mkdir %D/etc/cups/interfaces || true
 @unexec rm -rf /var/spool/cups
 @unexec rmdir %D/etc/cups 2>/dev/null || true
+@dirrm man/fr/man1
+@dirrm man/fr/man3
+@dirrm man/fr/man5
+@dirrm man/fr/man8
+@dirrm man/fr
