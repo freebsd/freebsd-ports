@@ -1,0 +1,3 @@
+sbin/rskkserv
+etc/rc.d/rskkserv.sh
+@unexec rm -f %D/share/skk/SKK-JISYO.[LMS].[an] 2>/dev/null || true
