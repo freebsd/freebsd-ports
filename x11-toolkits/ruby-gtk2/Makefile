@@ -7,6 +7,7 @@
 
 PORTNAME=	gtk2
 PORTVERSION=	${RUBY_GNOME_PORTVERSION}
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits ruby
 MASTER_SITES=	${RUBY_GNOME_MASTER_SITES}
 MASTER_SITE_SUBDIR=	${RUBY_GNOME_MASTER_SITE_SUBDIR}
@@ -24,6 +25,7 @@ RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/atk.so:${PORTSDIR}/accessibility/ruby-atk \
 USE_RUBY=	yes
 USE_XLIB=	yes
 USE_GNOME=	gtk20
+USE_REINPLACE=	yes
 USE_RUBY_EXTCONF=	yes
 
 .include "${.CURDIR}/../../x11/ruby-gnome2/Makefile.common"
@@ -32,6 +34,13 @@ WRKSRC=		${RUBY_GNOME_WRKSRC}/gtk
 INSTALL_TARGET=	site-install
 
 DOCS=		COPYING.LIB ChangeLog README
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|/usr/share|${X11BASE}/share|g' \
+		${WRKSRC}/sample/gtk-demo/common.rb
+	@${REINPLACE_CMD} -e 's|/usr/local/share|${X11BASE}/share|g' \
+		${WRKSRC}/sample/testgtk/testgtkrc
+	@${FIND} ${WRKSRC} -name '*.bak' -delete
 
 post-install:
 .if !defined(NOPORTDOCS)
