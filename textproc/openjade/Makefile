@@ -3,7 +3,7 @@
 # Date created:		June 19, 1997
 # Whom:			jfieber
 #
-# $Id: Makefile,v 1.2 1997/06/29 09:49:49 obrien Exp $
+# $Id: Makefile,v 1.3 1997/07/06 02:54:02 jfieber Exp $
 #
 
 DISTNAME=	jade0_8
@@ -14,8 +14,6 @@ EXTRACT_SUFX=	.zip
 
 MAINTAINER=	jfieber@FreeBSD.ORG
 
-BROKEN=		C++ library problems on pre and post 2.2.1 systems
-
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 
 EXTRACT_CMD=	unzip
@@ -25,11 +23,11 @@ NO_WRKSUBDIR=	yes
 # Unfortunately, jade needs a more modern C++ compiler than
 # comes with FreeBSD 2.1.x.
 .if !exists(/usr/lib/libstdc++.a)
-BROKEN=		yes
+BROKEN=		Requires FreeBSD 2.2 or later.
 .endif
 
-
-post-install:
-	/sbin/ldconfig -m ${PREFIX}/lib
+# Shared libraries are currently broken for this port.
+# post-install:
+# 	/sbin/ldconfig -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
