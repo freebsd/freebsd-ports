@@ -12022,6 +12022,7 @@ zh-FreeWnn-server	ports/chinese/FreeWnn-server
 zh-MT		ports/chinese/MT
 zh-acroread5-chsfont	ports/chinese/acroread5-chsfont
 zh-acroread5-chtfont	ports/chinese/acroread5-chtfont
+zh-arnettf	ports/chinese/arnettf
 zh-arphicttf	ports/chinese/arphicttf
 zh-aterm	ports/chinese/aterm
 zh-auto-tw-l10n	ports/chinese/auto-tw-l10n
