@@ -6,16 +6,14 @@
 #
 
 PORTNAME=	visitors
-PORTVERSION=	0.2.a
+PORTVERSION=	0.3
 CATEGORIES=	www
 MASTER_SITES=	http://www.hping.org/visitors/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.a/a/}
 
 MAINTAINER=	flz@xbsd.org
 COMMENT=	Very fast and easy to use web log analyzer
 
-WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION:S/.a/a/}
-USE_REINPLACE=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}
 
 PLIST_FILES=	bin/visitors
 PORTDOCS=	doc.html
