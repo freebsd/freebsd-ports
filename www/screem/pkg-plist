@@ -6,6 +6,7 @@ share/gnome/pixmaps/screem.png
 share/locale/de/LC_MESSAGES/screem.mo
 share/locale/fr/LC_MESSAGES/screem.mo
 share/locale/pl/LC_MESSAGES/screem.mo
+share/screem/glade/css.glade
 share/screem/glade/extern_browsers.glade
 share/screem/glade/imageWizard.glade
 share/screem/glade/linkWizard.glade
@@ -16,25 +17,16 @@ share/screem/glade/sitedruid.glade
 share/screem/glade/sitetemplate.glade
 share/screem/glade/todo.glade
 share/screem/plugins/colourWizard.a
-share/screem/plugins/colourWizard.la
+share/screem/plugins/cssWizard.a
 share/screem/plugins/entityWizard.a
-share/screem/plugins/entityWizard.la
 share/screem/plugins/externBrowsers.a
-share/screem/plugins/externBrowsers.la
 share/screem/plugins/galleryWizard.a
-share/screem/plugins/galleryWizard.la
 share/screem/plugins/imageWizard.a
-share/screem/plugins/imageWizard.la
 share/screem/plugins/linkWizard.a
-share/screem/plugins/linkWizard.la
 share/screem/plugins/mailWizard.a
-share/screem/plugins/mailWizard.la
 share/screem/plugins/ssiWizard.a
-share/screem/plugins/ssiWizard.la
 share/screem/plugins/tableWizard.a
-share/screem/plugins/tableWizard.la
 share/screem/plugins/uploadWizard.a
-share/screem/plugins/uploadWizard.la
 share/screem/screem.tagtree
 share/screem/splash/1.png
 share/screem/splash/2.png
@@ -42,5 +34,10 @@ share/screem/splash/3.png
 share/screem/splash/4.png
 @dirrm share/screem/glade
 @dirrm share/screem/plugins
+@dirrm share/screem/resources/Applets
+@dirrm share/screem/resources/Images
+@dirrm share/screem/resources/Javascript
+@dirrm share/screem/resources/PHP3
+@dirrm share/screem/resources
 @dirrm share/screem/splash
 @dirrm share/screem
