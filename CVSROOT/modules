@@ -4160,6 +4160,7 @@ makekey		src/libexec/makekey
 makepatch	ports/textproc/makepatch
 makeself	ports/archivers/makeself
 makewhatis	src/gnu/usr.bin/man/makewhatis
+makeztxt	ports/palm/makeztxt
 malbolge	ports/lang/malbolge
 malsync		ports/palm/malsync
 man		src/gnu/usr.bin/man
