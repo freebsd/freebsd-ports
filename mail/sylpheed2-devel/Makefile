@@ -15,11 +15,11 @@ MAINTAINER=	lehmann@ans-netz.de
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
-USE_IMLIB=	yes
+USE_GTK=	yes
 USE_LIBTOOL=	yes
 
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
+		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 CONFIGURE_ARGS=	--enable-ipv6 --prefix=${PREFIX} --with-included-gettext
 
 .if defined(WITH_PIXBUF)
@@ -49,9 +49,9 @@ CONFIGURE_ARGS+=--enable-jconv
 CONFIGURE_ARGS+=--disable-jconv
 .endif
 .if defined(WITH_JPILOT)
-LIB_DEPENDS+=	expense.1:${PORTSDIR}/palm/jpilot
+LIB_DEPENDS+=	pisock.4:${PORTSDIR}/palm/pilot-link
+RUN_DEPENDS+=	${LOCALBASE}/pilot/bin/jpilot:${PORTSDIR}/palm/jpilot
 CONFIGURE_ARGS+=--enable-jpilot
-CFLAGS+=	-I${LOCALBASE}/pilot/include
 .else
 CONFIGURE_ARGS+=	--disable-jpilot
 .endif
