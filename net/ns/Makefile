@@ -6,24 +6,24 @@
 #
 
 PORTNAME=	ns
-PORTVERSION=	2.26
+PORTVERSION=	2.27
 CATEGORIES=	net
 MASTER_SITES=	http://www.isi.edu/nsnam/dist/
-DISTNAME=	ns-src-2.26
+DISTNAME=	ns-src-2.27
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The UCB/LBNL Network Simulator Version 2
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libtclcl.a:${PORTSDIR}/devel/tclcl
-RUN_DEPENDS=	${LOCALBASE}/bin/tclsh8.3:${PORTSDIR}/lang/tcl83
+RUN_DEPENDS=	${LOCALBASE}/bin/tclsh8.4:${PORTSDIR}/lang/tcl84
 
 MAN1=		ns.1
 MANCOMPRESSED=	no
 
-WRKSRC=		${WRKDIR}/ns-2.26
+WRKSRC=		${WRKDIR}/ns-2.27
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-tcl-ver=8.3 --with-tk-ver=8.3
+CONFIGURE_ARGS=	--with-tcl-ver=8.4 --with-tk-ver=8.4
 
 ALL_TARGET=
 
