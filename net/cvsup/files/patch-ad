@@ -5,11 +5,11 @@
        write("MODULE Version;", CR, CR, "BEGIN", CR, "  Name := ")
      end
 -    if equal("$Name: REL_16_1 $", "$" & "Name:  $")
-+    if equal("$Name: REL_16_1p1 $", "$" & "Name:  $")
++    if equal("$Name: REL_16_1p2 $", "$" & "Name:  $")
        cmd = "date -u +'\"U_%Y_%m_%d_%H_%M_%S\";'"
      else
 -      cmd = "echo '$Name: REL_16_1 $' | awk '{print \"\\\"\" $2 \"\\\"\";}'"
-+      cmd = "echo '$Name: REL_16_1p1 $' | awk '{print \"\\\"\" $2 \"\\\"\";}'"
++      cmd = "echo '$Name: REL_16_1p2 $' | awk '{print \"\\\"\" $2 \"\\\"\";}'"
      end
      cmd = cmd & " >> " & tempname
      if defined("PM3")
