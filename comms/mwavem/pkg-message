@@ -1,18 +1,20 @@
 ******************************************************************************
 *                       Driver loading information                           *
 *                                                                            *
-* This package includes a device driver in a kernel module. While it is      *
-* installed in $PREFIX/share/mwave, this results in the initial device       *
+* This package includes a device driver as a kernel module. While it is      *
+* installed in $PREFIX/share/mwavem, this results in the initial device      *
 * probe not seeing the device and possibly reporting errors for the sio      *
 * device which may be ignored.                                               *
 *                                                                            *
-* It may also result in the serial device being probed at a 8250 instead of  *
-* a 16550A as the probe may occur before he device is fully initialized. If  *
-* this happens you must re-boot to get the modem to work.                    *
-*                                                                            *
-* You can eliminate this problem by copying $PREFIX/share/mwave/mwavedd.ko   *
-* into /modules. Then add the line 'mwavedd_load="YES"' to /boot/loader.conf.*
-* This will load the driver at the start of the bootstrap and it will probe  *
-* in a normal manner.                                                        *
+* You may choose to standardize the module loading by copying                *
+* $PREFIX/share/mwavem/mwave.ko into /modules. Then add the line             *
+* 'mwave_load="YES"' to /boot/loader.conf. This will load the driver         *
+* at the start of the bootstrap and it will probe in a normal manner.        *
+******************************************************************************
+*                        Known problem!                                      *
+* If the sio device connected to the modem probe as an 8250 device, the      *
+* modem will not work. Make sure that the mwavem process is running and      *
+* reboot the system. It should probe correctly and the modem should be       *
+* opertional.                                                                *
 ******************************************************************************
 

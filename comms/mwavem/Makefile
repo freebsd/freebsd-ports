@@ -27,8 +27,7 @@ SLEEP=		/bin/sleep
 .include <bsd.port.pre.mk>
 
 pre-build:
-	${PERL} -pi.orig -e "s@/etc/mwavem@${PREFIX}/etc/mwavem@g" ${WRKSRC}/modem.c
-	${PERL} -pi.orig -e "s@ko /modules@ko ${PREFIX}/share/mwave@g" ${WRKSRC}/drivers/Makefile
+	${PERL} -pi.orig -e "s@ /modules@ ${PREFIX}/share/mwavem@g" ${WRKSRC}/src/drivers/Makefile
 
 pre-install:
 	${MKDIR} ${DATADIR}
@@ -43,19 +42,20 @@ post-install:
 	${ECHO} "*                       Driver loading information                           *"; \
 	${ECHO} "*                                                                            *"; \
 	${ECHO} "* This package includes a device driver in a kernel module. While it is      *"; \
-	${ECHO} "* installed in ${PREFIX}/share/mwave, this results in the initial device    *"; \
+	${ECHO} "* installed in ${PREFIX}/share/mwavem, this results in the initial device   *"; \
 	${ECHO} "* probe not seeing the device and possibly reporting errors for the sio      *"; \
 	${ECHO} "* device which may be ignored.                                               *"; \
 	${ECHO} "*                                                                            *"; \
-	${ECHO} "* It may also result in the serial device being probed at a 8250 instead of  *"; \
-	${ECHO} "* a 16550A as the probe may occur before he device is fully initialized. If  *"; \
-	${ECHO} "* this happens you must re-boot to get the modem to work.                    *"; \
-	${ECHO} "*                                                                            *"; \
-	${ECHO} "* You can eliminate this problem by copying ${PREFIX}/share/mwave/mwavedd.ko*"; \
-	${ECHO} "* into /modules. Then add the line:                                          *"; \
-	${ECHO} "* mwavedd_load=\"YES\"                                                         *"; \
-	${ECHO} "* to /boot/loader.conf. This will load the driver at the start of the        *"; \
-	${ECHO} "* bootstrap and it will probe in a normal manner.                            *"; \
+	${ECHO} "* You may choose to standardize the module loading by copying                *"; \
+	${ECHO} "* ${PREFIX}/share/mwavem/mwave.ko into /modules. Then add the               *"; \
+	${ECHO} "* mwavedd_load=\"YES\" to /boot/loader.conf. This will load the driver         *"; \
+	${ECHO} "* at the start of the bootstrap and it will probe in a normal manner.        *"; \
+	${ECHO} "******************************************************************************"; \
+	${ECHO} "*                        Known problem!                                      *"; \
+	${ECHO} "* If the sio device connected to the modem probe as an 8250 device, the      *"; \
+	${ECHO} "* modem will not work. Make sure that the mwavem process is running and      *"; \
+	${ECHO} "* reboot the system. It should probe correctly and the modem should be       *"; \
+	${ECHO} "* opertional.                                                                *"; \
 	${ECHO} "******************************************************************************"; \
 	${ECHO} " "
 	@${SLEEP} 5
