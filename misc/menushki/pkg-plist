@@ -1,1 +1,6 @@
 bin/menushki
+%%PORTDOCS%%share/doc/menushki/AUTHORS
+%%PORTDOCS%%share/doc/menushki/ChangeLog
+%%PORTDOCS%%share/doc/menushki/README
+%%PORTDOCS%%share/doc/menushki/TODO
+%%PORTDOCS%%@dirrm share/doc/menushki
