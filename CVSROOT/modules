@@ -7362,6 +7362,7 @@ retawq		ports/www/retawq
 rexima		ports/audio/rexima
 rexx-imc	ports/lang/rexx-imc
 rexx-regina	ports/lang/rexx-regina
+rexx-wrapper	ports/lang/rexx-wrapper
 rfbproxy	ports/net/rfbproxy
 rfc		ports/misc/rfc
 rfksay		ports/games/rfksay
