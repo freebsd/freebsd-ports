@@ -4,6 +4,7 @@ include/UMFPACK/umfpack_col_to_triplet.h
 include/UMFPACK/umfpack_defaults.h
 include/UMFPACK/umfpack_free_numeric.h
 include/UMFPACK/umfpack_free_symbolic.h
+include/UMFPACK/umfpack_get_determinant.h
 include/UMFPACK/umfpack_get_lunz.h
 include/UMFPACK/umfpack_get_numeric.h
 include/UMFPACK/umfpack_get_symbolic.h
@@ -34,7 +35,7 @@ lib/libamd.a
 lib/libumfpack.a
 %%PORTDOCS%%%%DOCSDIR%%/AMD_UserGuide.pdf
 %%PORTDOCS%%%%DOCSDIR%%/QuickStart.pdf
-%%PORTDOCS%%%%DOCSDIR%%/README.gz
+%%PORTDOCS%%%%DOCSDIR%%/README.txt.gz
 %%PORTDOCS%%%%DOCSDIR%%/UserGuide.pdf
 %%PORTDOCS%%%%EXAMPLESDIR%%/HB/arc130.rua
 %%PORTDOCS%%%%EXAMPLESDIR%%/HB/can_24.psa
@@ -50,6 +51,7 @@ lib/libumfpack.a
 %%PORTDOCS%%%%EXAMPLESDIR%%/readhb.f
 %%PORTDOCS%%%%EXAMPLESDIR%%/readhb_nozeros.f
 %%PORTDOCS%%%%EXAMPLESDIR%%/readhb_size.f
+%%PORTDOCS%%%%EXAMPLESDIR%%/simple_compile
 %%PORTDOCS%%%%EXAMPLESDIR%%/symbolic.umf
 %%PORTDOCS%%%%EXAMPLESDIR%%/umf4.c
 %%PORTDOCS%%%%EXAMPLESDIR%%/umf4.out

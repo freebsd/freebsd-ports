@@ -1,0 +1,36 @@
+--- Make/Make.freebsd.orig	Fri Mar 18 22:29:13 2005
++++ Make/Make.freebsd	Fri Mar 18 22:30:13 2005
+@@ -6,8 +6,8 @@
+ # if you use the Intel compiler and the Fortran BLAS.
+ 
+ # Using GNU gcc and f77 compilers:
+-  CC = gcc
+-  CFLAGS = -O3 -fPIC
++  CC ?= cc
++  CFLAGS ?= -O3 -fPIC
+ 
+ # Using Intel's icc and ifc compilers:
+ # F77 = ifc
+@@ -36,16 +36,16 @@
+ # LIB = -lm
+ 
+ # 2: with the ATLAS C-BLAS (http://www.netlib.org/atlas).
+-# CONFIG = -DCBLAS -I../ATLAS/include
+-# LIB = -lcblas -latlas -lm
++CONFIG = -DCBLAS -I../ATLAS/include -I${LOCALBASE}/include
++LIB = -L${LOCALBASE}/lib -lcblas -latlas -lm
+ 
+ # 3: with Fortran interface to the ATLAS BLAS
+-# CONFIG =
+-# LIB = -lf77blas -latlas -lfrtbegin -lg2c -lm
++# CONFIG = -I${LOCALBASE}/include
++# LIB = -L${LOCALBASE}/lib -lf77blas -latlas -lfrtbegin -lg2c -lm
+ 
+ # 4: with Fortran interface to the BLAS, and Goto's BLAS
+-  CONFIG =
+-  LIB = -lgoto -lxerbla -lfrtbegin -lg2c -lm
++#  CONFIG =
++#  LIB = -lgoto -lxerbla -lfrtbegin -lg2c -lm
+ 
+ # 5: with Fortran interface to the BLAS, and Goto's BLAS, and no divide-by-zero
+ # CONFIG = -DNO_DIVIDE_BY_ZERO

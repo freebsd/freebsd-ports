@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	umfpack
-PORTVERSION=	4.3
+PORTVERSION=	4.4
 CATEGORIES=	math
 MASTER_SITES=	http://www.cise.ufl.edu/research/sparse/umfpack/v${PORTVERSION}/
 DISTNAME=	UMFPACKv${PORTVERSION}
@@ -20,7 +20,8 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/UMFPACK
 ALL_TARGET=	lib
 
 post-extract:
-	${CP} ${FILESDIR}/Make.freebsd ${WRKDIR}/${DISTNAME}/AMD/Make
+	${CP}	${WRKDIR}/${DISTNAME}/AMD/Make/Make.linux	\
+		${WRKDIR}/${DISTNAME}/AMD/Make/Make.freebsd
 
 do-install:
 	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/AMD/Lib/libamd.a ${PREFIX}/lib
@@ -34,8 +35,8 @@ do-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/AMD/Doc/*.pdf ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-	${GZIP_CMD} ${DOCSDIR}/README
+	${INSTALL_DATA} ${WRKSRC}/README.txt ${DOCSDIR}
+	${GZIP_CMD} ${DOCSDIR}/README.txt
 	${INSTALL_DATA} ${WRKSRC}/Doc/*.pdf  ${DOCSDIR}
 	@${FIND} ${DOCSDIR} | ${XARGS} ${CHOWN} ${SHAREOWN}:${SHAREGRP}
 	@${FIND} ${DOCSDIR} -type f | ${XARGS} ${CHMOD} ${SHAREMODE}
