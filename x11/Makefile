@@ -57,7 +57,7 @@
     SUBDIR += gnomesession
     SUBDIR += gnometerminal
     SUBDIR += gromit
-    SUBDIR += gswitchit_applet
+    SUBDIR += gswitchit
     SUBDIR += gtk-theme-switch
     SUBDIR += gvid
     SUBDIR += gxset
