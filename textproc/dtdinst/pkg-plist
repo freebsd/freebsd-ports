@@ -2,6 +2,9 @@ share/java/classes/dtdinst.jar
 share/xsl/dtdinst/dtdinst2rng.xsl
 @dirrm share/xsl/dtdinst
 @unexec rmdir %D/share/xsl 2>/dev/null || true
-%%DOCSDIR%%/copying.txt
-%%DOCSDIR%%/index.html
-@dirrm %%DOCSDIR%%
+%%PORTDOCS%%%%DOCSDIR%%/copying.txt
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/dtdinst.rng
+%%PORTDOCS%%%%DOCSDIR%%/dtdinst.rnc.txt
+%%PORTDOCS%%%%DOCSDIR%%/teixml.dtd.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
