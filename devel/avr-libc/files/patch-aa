@@ -1,20 +1,11 @@
---- Makefile.orig	Sat Mar 31 18:10:42 2001
-+++ Makefile	Thu Apr 19 23:09:11 2001
-@@ -33,7 +33,7 @@
- else
+--- Makefile.orig	Tue Jul 17 21:10:36 2001
++++ Makefile	Sun Aug 12 17:06:41 2001
+@@ -28,7 +28,7 @@
+ AR = ${target}-ar
    RM = rm
-   MD = mkdir -p
+   MD = mkdir -p $@
 -  INSTALL = install -m644 $^/
 +  INSTALL = install -c -m644 $^/
- endif
  
  ASFLAGS = -Wa,-gstabs
-@@ -386,7 +386,7 @@
- install_lib_dirs = $(libdir) $(libdir)/avr3 $(libdir)/avr4 $(libdir)/avr5
- 
- $(libc_dirs) $(libm_dirs) $(install_lib_dirs) $(includedir):
--	$(MD)
-+	$(MD) $@
- 
- ifdef win32
- win32_make_dirs:
+ CFLAGS = -Wall -W -Wstrict-prototypes -O2 -g
