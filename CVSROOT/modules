@@ -4805,6 +4805,7 @@ mp32ogg		ports/audio/mp32ogg
 mp3_check	ports/audio/mp3_check
 mp3asm		ports/audio/mp3asm
 mp3blaster	ports/audio/mp3blaster
+mp3burn		ports/audio/mp3burn
 mp3butler	ports/audio/mp3butler
 mp3c		ports/audio/mp3c
 mp3check	ports/audio/mp3check
