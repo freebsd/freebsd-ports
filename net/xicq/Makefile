@@ -13,7 +13,7 @@ DISTNAME=	xicq-071298-snapshot.src
 
 MAINTAINER=	scrappy@FreeBSD.org
 
-WRKSRC=		${WRKDIR}/${PKGNAME}
+WRKSRC=		${WRKDIR}/xicq-071298
 
 USE_GMAKE=	yes
 MAKE_ENV=	OPT="${CFLAGS}"
