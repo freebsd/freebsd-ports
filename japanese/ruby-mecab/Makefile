@@ -21,6 +21,8 @@ USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 RUBY_WITH_PTHREAD=	yes
 
+INSTALL_TARGET=	site-install
+
 .include "${.CURDIR}/../mecab/Makefile.common"
 
 .include <bsd.port.pre.mk>
