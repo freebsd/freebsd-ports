@@ -19,6 +19,7 @@ COMMENT=	A library for dealing with Microsoft ITSS/CHM format files
 
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-io64 --disable-pread
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
 
