@@ -5,7 +5,7 @@
  #include <sys/stat.h>
  
 -#define LIBDIR "/usr/lib"
-+#define LIBDIR "%%PREFIX%%/share/biew"
++#define LIBDIR "%%PREFIX%%/share"
  
  static char _ini_name[FILENAME_MAX + 1];
  static char _rc_dir_name[FILENAME_MAX + 1];

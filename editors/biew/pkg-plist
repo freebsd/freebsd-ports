@@ -1,3 +1,4 @@
 bin/biew
 share/biew/biew.hlp
+share/biew/standard.skn
 @dirrm share/biew
