@@ -1,1 +1,5 @@
 bin/xsidplay
+%%PORTDOCS%%share/doc/xsidplay/README
+%%PORTDOCS%%share/doc/xsidplay/STIL.faq
+%%PORTDOCS%%share/doc/xsidplay/hv_sids.faq
+%%PORTDOCS%%@dirrm share/doc/xsidplay
