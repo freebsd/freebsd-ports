@@ -1,26 +1,43 @@
-*** Makefile.orig	Tue Jun  8 16:17:05 1999
---- Makefile	Tue Jun  8 17:05:25 1999
-*************** LIBDIR = /usr/local/lib/vtx
-*** 26,33 ****
-  SPOOLDIR = /var/spool/vtx
+*** Makefile.orig	Thu Oct 23 00:55:44 1997
+--- Makefile	Thu Jun 10 02:51:02 1999
+***************
+*** 22,35 ****
   
-  BINDIR = /usr/local/bin
+  # Set the installation-directories & permissions here
+  
+! LIBDIR = /usr/local/lib/vtx
+! SPOOLDIR = /var/spool/vtx
+  
+! BINDIR = /usr/local/bin
 ! XBINDIR = /usr/local/bin/X11
 ! FONTDIR = /usr/lib/X11/fonts/local
-  MANDIR = /usr/local/man
-  XMANDIR = /usr/local/man
+! MANDIR = /usr/local/man
+! XMANDIR = /usr/local/man
   
---- 26,35 ----
-  SPOOLDIR = /var/spool/vtx
+  DIRPERM = 755
+  SPOOLDIRPERM = 777
+--- 22,42 ----
   
-  BINDIR = /usr/local/bin
+  # Set the installation-directories & permissions here
+  
+! #LIBDIR = /usr/local/lib/vtx
+! #SPOOLDIR = /var/spool/vtx
+! #BINDIR = /usr/local/bin
 ! #XBINDIR = /usr/local/bin/X11
-! XBINDIR = /usr/local/bin
 ! #FONTDIR = /usr/lib/X11/fonts/local
-! FONTDIR = /usr/X11R6/lib/X11/fonts/misc
-  MANDIR = /usr/local/man
-  XMANDIR = /usr/local/man
+! #MANDIR = /usr/local/man
+! #XMANDIR = /usr/local/man
   
+! SPOOLDIR = /var/spool/vtx
+! LIBDIR = ${X11BASE}/lib/X11/vtx
+! BINDIR = ${X11BASE}/bin
+! XBINDIR = ${X11BASE}/bin
+! FONTDIR = ${X11BASE}/lib/X11/fonts/local
+! MANDIR = ${X11BASE}/man
+! XMANDIR = ${X11BASE}/man
+  
+  DIRPERM = 755
+  SPOOLDIRPERM = 777
 *************** GIF_SUPPORT = -DGIF_SUPPORT
 *** 79,88 ****
   # Uncomment the next lines if you want PNG support and have libpng and libz
@@ -33,7 +50,7 @@
   
   
   # Uncomment the following line if you want to get coredumps when an
---- 81,90 ----
+--- 86,95 ----
   # Uncomment the next lines if you want PNG support and have libpng and libz
   # installed.
   
