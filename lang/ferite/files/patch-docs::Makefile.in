@@ -1,6 +1,9 @@
---- docs/Makefile.in.orig	Sun Nov 11 11:47:01 2001
-+++ docs/Makefile.in	Sun Nov 11 21:43:41 2001
-@@ -111,7 +111,7 @@
+
+$FreeBSD$
+
+--- docs/Makefile.in.orig	Wed Jan  9 08:47:07 2002
++++ docs/Makefile.in	Wed Jan  9 12:11:41 2002
+@@ -117,7 +117,7 @@
  manual.pdf
  
  

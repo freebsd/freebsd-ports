@@ -1,0 +1,18 @@
+
+$FreeBSD$
+
+--- libs/triton/configure.orig	Wed Jan  9 08:46:55 2002
++++ libs/triton/configure	Wed Jan  9 11:35:30 2002
+@@ -2563,10 +2563,10 @@
+    fi
+    if test "$system" = "FreeBSD"; then
+ 	  cat >>confdefs.h <<\EOF
+-#define USE_LTDL 1
++#define USE_DLFCN 1
+ EOF
+ 
+-	  loader="ltdl"
++	  TRITON_LDFLAGS=""
+    fi
+    if test "$system" = "SunOS"; then
+       cat >>confdefs.h <<\EOF

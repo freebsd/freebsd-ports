@@ -6,24 +6,21 @@
 #
 
 PORTNAME=	ferite
-PORTVERSION=	0.99.3
+PORTVERSION=	0.99.4
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ishmael27@home.com
+MAINTAINER=	ishmael27x@yahoo.com
 
-LIB_DEPENDS=	ltdl.1:${PORTSDIR}/devel/libtool \
-		mysqlclient.10:${PORTSDIR}/databases/mysql323-client \
+LIB_DEPENDS=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client \
 		pcre.0:${PORTSDIR}/devel/pcre \
 		xml2.5:${PORTSDIR}/textproc/libxml2
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS} -I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib -L${LOCALBASE}/lib/mysql" \
-		sql_CFLAGS="-I${LOCALBASE}/include/mysql" \
-		sql_LIBS="-L${LOCALBASE}/lib/mysql -lmysqlclient -lz \
-			-lcrypt -lm"
+		LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 EXTRA_DOCS=	AUTHORS COPYING ChangeLog README ROADMAP TODO
 
@@ -38,12 +35,9 @@ post-install:
 .endif
 
 post-patch:
-	@${PERL} -pi -e 's|%%PTHREAD_CFLAGS%%|${PTHREAD_CFLAGS}|g ; \
+	@${PERL} -pi -e 's|%%LOCALBASE%%|${LOCALBASE}|g ; \
+		s|%%PTRHEAD_CFLAGS%%|${PTHREAD_CFLAGS}|g ; \
 		s|%%PTHREAD_LIBS%%|${PTHREAD_LIBS:S/"//g}|g' \
 		${WRKSRC}/configure ${WRKSRC}/ferite-config.in
-
-post-configure:
-	@${PERL} -pi -e 's|^s%\@LIBS.*|s%\@LIBS\@%-L${LOCALBASE}/lib%g|' \
-		${WRKSRC}/config.status
 
 .include <bsd.port.mk>
