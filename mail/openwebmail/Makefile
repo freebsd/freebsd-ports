@@ -96,10 +96,11 @@ pre-fetch:
 .endif
 
 post-patch:
-	@${PERL} -pi.bak -e 's,/usr/local/www/cgi-bin/openwebmail,${OWCGIDIR},g' ${PATCH_WRKSRC}/etc/openwebmail.conf
-	@${PERL} -pi.bak -e 's,/usr/local/www/data/openwebmail,${OWDATADIR},g' ${PATCH_WRKSRC}/etc/openwebmail.conf
+	@${MV} ${PATCH_WRKSRC}/etc/openwebmail.conf ${PATCH_WRKSRC}/etc/openwebmail.conf-dist
+	@${PERL} -pi.bak -e 's,/usr/local/www/cgi-bin/openwebmail,${OWCGIDIR},g' ${PATCH_WRKSRC}/etc/openwebmail.conf-dist
+	@${PERL} -pi.bak -e 's,/usr/local/www/data/openwebmail,${OWDATADIR},g' ${PATCH_WRKSRC}/etc/openwebmail.conf-dist
 .if !defined(WITHOUT_SPEEDYCGI)
-	@${ECHO} "savedsuid_support	no" >> ${PATCH_WRKSRC}/etc/openwebmail.conf
+	@${ECHO} "savedsuid_support	no" >> ${PATCH_WRKSRC}/etc/openwebmail.conf-dist
 	@${PERL} -pi.bak -e 's,/usr/local/bin/speedy,${LOCALBASE}/bin/speedy_suid,g' ${PATCH_WRKSRC}/openwebmail*pl
 .else
 	@${PERL} -pi.bak -e 's,/usr/bin/suidperl,${PERL},g' ${PATCH_WRKSRC}/openwebmail*pl
