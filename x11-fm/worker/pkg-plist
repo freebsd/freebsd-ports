@@ -10,6 +10,6 @@ share/worker/config-de
 share/worker/config-en
 share/worker/config-fr
 share/pixmaps/WorkerIcon.xpm
-@dirrm share/pixmaps
+@unexec rmdir %D/share/pixmaps 2>/dev/null || true
 @dirrm share/worker/catalogs
 @dirrm share/worker
