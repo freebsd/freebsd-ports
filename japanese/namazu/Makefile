@@ -9,7 +9,8 @@
 DISTNAME=	namazu-1.3.0.11
 PKGNAME=	ja-namazu-1.3.0.11
 CATEGORIES=	japanese textproc
-MASTER_SITES=	http://openlab.ring.gr.jp/namazu/release/
+MASTER_SITES=	http://www.namazu.org/stable/ \
+		http://people.FreeBSD.org/~flathill/distfiles/
 
 MAINTAINER=	flathill@FreeBSD.org
 
