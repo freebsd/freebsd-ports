@@ -267,6 +267,7 @@
     SUBDIR += lam
     SUBDIR += lambdamoo
     SUBDIR += ldap2dns
+    SUBDIR += ldapbrowser
     SUBDIR += ldapdiff
     SUBDIR += ldapsdk
     SUBDIR += lft
