@@ -2,18 +2,14 @@ bin/glib-config
 include/glib/glib.h
 include/glib/glibconfig.h
 include/glib/gmodule.h
-@unexec install-info --delete %D/info/glib.info %D/info/dir
-info/glib.info
-@exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
-@exec install-info %D/info/glib.info %D/info/dir
 lib/libglib11.a
 lib/libglib11.la
 lib/libglib11.so
-lib/libglib11.so.0.4
+lib/libglib11.so.0.3
 lib/libgmodule11.a
 lib/libgmodule11.la
 lib/libgmodule11.so
-lib/libgmodule11.so.0.4
+lib/libgmodule11.so.0.3
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 share/aclocal/glib.m4
