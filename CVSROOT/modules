@@ -4514,6 +4514,7 @@ p5-GdkImlib	ports/x11-toolkits/p5-GdkImlib
 p5-GdkPixbuf	ports/x11-toolkits/p5-GdkPixbuf
 p5-Geo-METAR	ports/astro/p5-Geo-METAR
 p5-Geo-Weather	ports/misc/p5-Geo-Weather
+p5-Getargs-Long	ports/devel/p5-Getargs-Long
 p5-Getopt-Declare	ports/devel/p5-Getopt-Declare
 p5-Getopt-Long	ports/devel/p5-Getopt-Long
 p5-Gimp		ports/graphics/p5-Gimp
