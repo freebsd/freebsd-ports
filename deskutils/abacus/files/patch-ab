@@ -4,13 +4,13 @@
  #!/bin/sh
  # The next line restarts using nxlc \
 -exec $ABACUS_HOME/tcl_interf/nxlc -f $0 ${1+"$@"}
-+exec /usr/X11R6/share/abacus/tcl_interf/nxlc -f $0 ${1+"$@"}
++exec %%PREFIX%%/share/abacus/tcl_interf/nxlc -f $0 ${1+"$@"}
 @@ -15,7 +15,7 @@
  if [info exists env(ABACUS_HOME)] {
      set home $env(ABACUS_HOME)
  } else {
 -    set home "."
-+    set home "/usr/X11R6/share/abacus"
++    set home "%%PREFIX%%/share/abacus"
  }
  
  wm withdraw .
