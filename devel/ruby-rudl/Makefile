@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rudl
-PORTVERSION=	0.1
+PORTVERSION=	0.2
 CATEGORIES=	devel ruby
 MASTER_SITES=	http://froukepc.dhs.org/rudl/download/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}

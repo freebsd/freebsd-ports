@@ -1,8 +1,9 @@
 %%RUBY_SITEARCHLIBDIR%%/RuDL.so
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/rudl/256col.bmp
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/rudl/analog.wav
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/rudl/bounce.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/rudl/bounceme.bmp
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/rudl/test.bmp
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/rudl/caribean.mod
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/rudl/schoenie.jpg
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/rudl/test.rb
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/rudl
 %%PORTDOCS%%%%RUBY_DOCDIR%%/rudl/README
