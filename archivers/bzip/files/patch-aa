@@ -1,6 +1,6 @@
 --- Makefile.orig	Sat Aug 31 09:50:33 1996
-+++ Makefile	Fri Sep 27 12:54:40 1996
-@@ -1,29 +1,15 @@
++++ Makefile	Fri Sep 27 13:57:55 1996
+@@ -1,29 +1,17 @@
 -
 -CC = gcc
 -SH = /bin/sh
@@ -8,7 +8,8 @@
 -CFLAGS = -O3 -fomit-frame-pointer -funroll-loops -Wall -Winline -Wshadow -W
 -
 -
--
++CFLAGS+= -fomit-frame-pointer
+ 
  all:
 -	cat words0
  	$(CC) $(CFLAGS) -o bzip bzip.c
