@@ -1,14 +1,5 @@
 --- config.h.orig	Fri Oct 31 11:48:00 1997
 +++ config.h	Thu Jul 22 02:30:39 1999
-@@ -21,7 +21,7 @@
- /* Operating system INdependant parameters. (Usually the same everywhere) */
- #define KERMIT "/usr/local/bin/kermit -l %l -b %b"	/* How to call kermit */
- #define UUCPLOCK	"/var/spool/uucp"	/* Lock file directory */
--#define LOGFILE		"minicom.log"		/* Not defined = not used */
-+/* #define LOGFILE		"minicom.log" */		/* Not defined = not used */
- 
- /* Operating system dependant parameters, per OS. A few samples are given. */
- #if defined(__linux__)
 @@ -58,7 +58,7 @@
  
  #ifdef __FreeBSD__
