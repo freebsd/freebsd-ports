@@ -1,0 +1,11 @@
+Mapagi is a pagination utility that prints your images/comics in
+'in folio' format.
+
+To produce a book printed in folio format, the sheet of paper is
+folded once, producing 2 leaves. Each leaf has 2 sides, the recto
+(front) and the verso (back).
+
+Page size format is "Tankobon", probably well known to anime/manga
+fans.
+
+WWW: http://members.ferrara.linux.it/calicant/mapagi/
