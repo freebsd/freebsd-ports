@@ -1,24 +1,6 @@
---- Makefile.in.orig	Wed Feb 26 06:27:28 2003
-+++ Makefile.in	Sun Apr 20 01:33:19 2003
-@@ -1,21 +1,23 @@
- 
--COMPBIN = src/dvdauthor src/dvddirgen src/mpeg2desc src/vob_dump
-+COMPBIN = src/dvdauthor src/mpeg2desc src/vob_dump
- 
--SCRIPTS = src/makedvd src/makevob
-+SCRIPTS = src/dvddirgen src/makedvd src/makevob
- 
- CC = gcc
--CFLAGS = -Wall -O3
-+CFLAGS += -Wall -O3
- # CFLAGS = -Wall -g
- 
- INSTALL = @INSTALL@
- INSTALL_PROGRAM = @INSTALL_PROGRAM@
-+INSTALL_SCRIPT = @INSTALL_SCRIPT@
- prefix = @prefix@
- exec_prefix = @exec_prefix@
- BINDIR = @bindir@
+--- Makefile.in.orig	Sat May  3 22:37:14 2003
++++ Makefile.in	Tue May 13 12:14:27 2003
+@@ -16,7 +16,8 @@
  IBINDIR = $(RPM_BUILD_ROOT)$(BINDIR)
  sysconfdir = @sysconfdir@
  
@@ -28,42 +10,3 @@
  LIBS = @LIBS@
  
  edit = sed \
-@@ -24,7 +26,7 @@
- 	-e 's,@PACKAGE_VERSION\@,@PACKAGE_VERSION@,g' \
- 	-e 's,@PACKAGE_BUGREPORT\@,@PACKAGE_BUGREPORT@,g'
- 
--all: $(COMPBIN) dvdauthor.spec
-+all: $(COMPBIN) src/dvddirgen dvdauthor.spec
- 
- src/conffile.o: src/conffile.c src/conffile.h src/config.h
- 
-@@ -33,7 +35,7 @@
- src/compat.o: src/compat.c src/config.h src/compat.h
- 
- src/dvdauthor: src/ifogen.o src/conffile.o src/compat.o
--	$(CC) $(CFLAGS) -o src/dvdauthor src/ifogen.o src/conffile.o src/compat.o $(LIBS)
-+	$(CC) $(CFLAGS) $(LDFLAGS) -o src/dvdauthor src/ifogen.o src/conffile.o src/compat.o $(LIBS)
- 
- # by having it depend on config.h, it will get rebuilt if ./configure is run
- src/dvddirgen: src/dvddirgen.in src/config.h
-@@ -48,14 +50,15 @@
- 	mv dvdauthor.spec.tmp dvdauthor.spec
- 
- src/mpeg2desc: src/mpeg2desc.o
--	$(CC) $(CFLAGS) -o src/mpeg2desc src/mpeg2desc.o
-+	$(CC) $(CFLAGS) $(LDFLAGS) -o src/mpeg2desc src/mpeg2desc.o
- 
- src/vob_dump: src/vob_dump.o
--	$(CC) $(CFLAGS) -o src/vob_dump src/vob_dump.o -ldvdread
-+	$(CC) $(CFLAGS) $(LDFLAGS) -o src/vob_dump src/vob_dump.o -ldvdread
- 
--install:
--	$(INSTALL_PROGRAM) -d $(IBINDIR)
--	$(INSTALL_PROGRAM) $(COMPBIN) $(SCRIPTS) $(IBINDIR)
-+install: $(COMPBIN) src/dvddirgen
-+	$(INSTALL) -d $(IBINDIR)
-+	$(INSTALL_PROGRAM) $(COMPBIN) $(IBINDIR)
-+	$(INSTALL_SCRIPT) $(SCRIPTS) $(IBINDIR)
- 
- clean:
- 	rm -r -f *~ src/*~ src/*.o $(COMPBIN) config.log config.status autom4te.cache Makefile src/config.h dvdauthor.spec
