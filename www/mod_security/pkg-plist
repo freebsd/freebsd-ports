@@ -5,7 +5,7 @@ libexec/%%APACHE%%/mod_security.so
 %%PORTDOCS%%share/doc/mod_security/INSTALL
 %%PORTDOCS%%share/doc/mod_security/LICENSE
 %%PORTDOCS%%share/doc/mod_security/README
-%%PORTDOCS%%share/doc/mod_security/modsecurity-manual-v1.5.pdf
+%%PORTDOCS%%share/doc/mod_security/modsecurity-manual-v1.5.1.pdf
 share/examples/mod_security/httpd.conf.example-full
 share/examples/mod_security/httpd.conf.example-minimal
 %%PORTDOCS%%@dirrm share/doc/mod_security
