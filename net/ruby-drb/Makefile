@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	drb
-PORTVERSION=	1.3.6
+PORTVERSION=	1.3.7
 CATEGORIES=	net ruby
 MASTER_SITES=	http://www2a.biglobe.ne.jp/~seki/ruby/
 MASTER_SITE_SUBDIR=	contrib
