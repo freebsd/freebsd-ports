@@ -3,12 +3,12 @@
 # Date created:				October 20th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.4 1996/10/24 11:18:40 asami Exp $
+#   $Id: Makefile,v 1.5 1996/11/18 08:45:29 asami Exp $
 #
 
 DISTNAME=	C-Scan-0.3
 PKGNAME=	p5-C-Scan-0.3
-CATEGORIES=	devel
+CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	C
 

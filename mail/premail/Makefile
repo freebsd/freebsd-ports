@@ -5,11 +5,11 @@
 # Date created:         31 Jan 1997
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.18 1996/11/18 14:13:26 asami Exp $
+# $Id: Makefile,v 1.3 1997/02/03 07:34:08 ache Exp $
 #
 
 DISTNAME=       premail-0.45
-CATEGORIES=     security mail
+CATEGORIES=     security mail perl5
 MASTER_SITES=   ftp://utopia.hacktic.nl/pub/replay/pub/remailer/
 
 BUILD_DEPENDS=  perl5.003:${PORTSDIR}/lang/perl5

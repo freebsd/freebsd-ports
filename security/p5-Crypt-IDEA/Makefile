@@ -3,12 +3,12 @@
 # Date created:				October 20th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.4 1996/11/18 08:46:54 asami Exp $
+#   $Id: Makefile,v 1.5 1996/11/22 00:21:51 asami Exp $
 #
 
 DISTNAME=	Crypt-IDEA-1.0
 PKGNAME=	p5-Crypt-IDEA-1.0
-CATEGORIES=	security
+CATEGORIES=	security perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Crypt
 

@@ -3,12 +3,12 @@
 # Date created:				October 20th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.4 1996/12/11 10:18:33 asami Exp $
+#   $Id: Makefile,v 1.5 1997/02/25 16:04:12 jfitz Exp $
 #
 
 DISTNAME=	Image-Size-1.2
 PKGNAME=	p5-Image-Size-1.2
-CATEGORIES=	graphics www
+CATEGORIES=	graphics www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Image
 

@@ -3,12 +3,12 @@
 # Date created:				October 21st 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.3 1996/11/18 08:46:00 asami Exp $
+#   $Id: Makefile,v 1.4 1996/11/20 11:45:18 asami Exp $
 #
 
 DISTNAME=	Include-1.02a
 PKGNAME=	p5-Include-1.02a
-CATEGORIES=	devel
+CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Include
 

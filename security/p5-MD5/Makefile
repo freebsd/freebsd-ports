@@ -3,12 +3,12 @@
 # Date created:				September 30th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.3 1996/11/17 07:58:00 obrien Exp $
+#   $Id: Makefile,v 1.4 1996/11/22 00:21:54 asami Exp $
 #
 
 DISTNAME=	MD5-1.7
 PKGNAME=	p5-MD5-1.7
-CATEGORIES=	security
+CATEGORIES=	security perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	MD5
 

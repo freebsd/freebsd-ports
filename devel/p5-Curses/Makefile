@@ -3,12 +3,12 @@
 # Date created:				October 17th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.3 1996/11/18 08:45:36 asami Exp $
+#   $Id: Makefile,v 1.4 1997/03/25 13:01:18 jfitz Exp $
 #
 
 DISTNAME=	Curses-1.01
 PKGNAME=	p5-Curses-1.01
-CATEGORIES=	devel
+CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Curses
 

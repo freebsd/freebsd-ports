@@ -3,12 +3,12 @@
 # Date created:				September 30th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.4 1997/04/05 20:23:43 jfitz Exp $
+#   $Id: Makefile,v 1.5 1997/04/09 12:00:40 jfitz Exp $
 #
 
 DISTNAME=	libnet-1.05
 PKGNAME=	p5-Net-1.05
-CATEGORIES=	net
+CATEGORIES=	net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Net
 
