@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wesnoth
-PORTVERSION=	0.7
+PORTVERSION=	0.7.2
 CATEGORIES=	games
 MASTER_SITES=	http://www.wesnoth.org/files/
 
@@ -15,7 +15,9 @@ COMMENT=	A fantasy turn-based strategy game
 
 USE_SDL=	image mixer net ttf sdl
 USE_GNOME=	gnometarget
+WANT_GNOME=	yes
 USE_X_PREFIX=	yes
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 
 MAN6=		wesnoth.6 wesnoth_editor.6 wesnothd.6
@@ -45,6 +47,22 @@ PLIST_SUB+=		TOOLS:=""
 PLIST_SUB+=		TOOLS:="@comment "
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${HAVE_GNOME:Mlibgnome}!=""
+CONFIGURE_ARGS+=	--enable-gnome
+PLIST_SUB+=		GNOME:=""
+.else
+PLIST_SUB+=		GNOME:="@comment "
+.endif
+
+.if exists(${LOCALBASE}/bin/kde-config)
+CONFIGURE_ARGS+=	--enable-kde
+PLIST_SUB+=		KDE:=""
+.else
+PLIST_SUB+=		KDE:="@comment "
+.endif
+
 pre-everything::
 .if !defined(WITH_DEBUG) || !defined(WITH_EDITOR) || !defined(WITH_SERVER) || !defined(WITH_TOOLS)
 	@${ECHO_MSG} "You may specify the following on the command line:"
@@ -67,4 +85,9 @@ pre-everything::
 	@${ECHO_MSG} "WITH_TOOLS=yes for enable compilation of translation tools."
 .endif
 
-.include <bsd.port.mk>
+post-patch:
+	@${REINPLACE_CMD} -e 's|[$$][(]datadir[)]/applications|${X11BASE}/share/gnome/apps/Games|g ; \
+		s|[$$][(]datadir[)]/icons|${X11BASE}/share/gnome/pixmaps|g' \
+			${WRKSRC}/icons/Makefile.in
+
+.include <bsd.port.post.mk>
