@@ -2,7 +2,3 @@ sbin/biosdecode
 sbin/dmidecode
 sbin/ownership
 sbin/vpddecode
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
