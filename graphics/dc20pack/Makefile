@@ -18,7 +18,7 @@ WRKSRC=			${WRKDIR}
 USE_REINPLACE=		yes
 
 post-extract:
-	@ /usr/bin/find ${WRKSRC} -type f | xargs ${REINPLACE_CMD} -e 's/\r//g'
+	for file in `/usr/bin/find ${WRKSRC} -type f`; do ${TR} -d '\015' < $${file} > $${file}.new; mv $${file}.new $${file}; done
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/dc20dump ${PREFIX}/bin
