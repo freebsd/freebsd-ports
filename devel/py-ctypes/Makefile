@@ -30,6 +30,12 @@ LIBFFIWRKSRC=	${WRKDIR}/libffi-${LIBFFIVERSION}
 CONFIGURE_ARGS=	--enable-static --disable-shared
 CONFIGURE_WRKSRC=${LIBFFIWRKSRC}
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "ia64"
+BROKEN=		"does not build"
+.endif
+
 post-patch:
 	${LN} -sf ${LIBFFIWRKSRC}/config-ml.in ${LIBFFIWRKSRC}/..
 	${REINPLACE_CMD} -e 's|\(include_dirs = \).*|\1["${LIBFFIWRKSRC}/include"]|' \
@@ -37,8 +43,13 @@ post-patch:
 		-e 's|\(Extension(.*\)$$|\1 define_macros=[("ffi_type_schar", \
 		"ffi_type_sint8"), ("ffi_type_sshort","ffi_type_sint16")],|' \
 		${WRKSRC}/setup.py
+.if ${ARCH} == "ia64"
+	${LN} -sf ${LIBFFIWRKSRC}/${ARCH}/${ARCH}_flags.h ${LIBFFIWRKSRC}/
+	${REINPLACE_CMD} -e 's|defined(IA64)|defined(__ia64__)|' \
+		${LIBFFIWRKSRC}/include/ffi.h
+.endif
 
 pre-build:
 	cd ${LIBFFIWRKSRC}; ${MAKE_ENV} ${GMAKE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
