@@ -12,7 +12,7 @@ CATEGORIES=	security ipv6
 MASTER_SITES=	http://download.insecure.org/nmap/dist/
 DISTNAME=	nmap-${PORTVERSION:S/.b/BETA/}
 
-MAINTAINER=	dominic.marks@btinternet.com
+MAINTAINER=	eikemeier@fillmore-labs.com
 COMMENT?=	Port scanning utility for large networks
 
 GNU_CONFIGURE=	yes

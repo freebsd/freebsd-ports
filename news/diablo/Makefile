@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.openusenet.org/diablo/download/
 DISTNAME=	${PKGNAME}-REL
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	dominic.marks@btinternet.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A comprehensive newsfeeding and newsreading software package
 
 BUILD_DEPENDS=	xmake:${PORTSDIR}/devel/xmake

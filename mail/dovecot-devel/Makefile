@@ -10,7 +10,7 @@ PORTVERSION=	0.99.10
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://dovecot.procontrol.fi/
 
-MAINTAINER=	dominic.marks@btinternet.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Secure and compact IMAP and POP3 servers
 
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv

@@ -10,7 +10,7 @@ PORTVERSION=	0.5
 CATEGORIES=	net
 MASTER_SITES=	http://niels.xtdnet.nl/honeyd/
 
-MAINTAINER=	dominic.marks@btinternet.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A utility to simualte services and hosts on a virtual network host
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libdnet.a:${PORTSDIR}/net/libdnet \

@@ -11,7 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	ftp://sid.joedog.org/pub/scout/ \
 	http://www.cus.org.uk/~dom/distfiles/scout/
 
-MAINTAINER=	dominic.marks@btinternet.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A utility to harvest URLs from a given start point
 
 USE_LIBTOOL=	yes

@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.xs4all.nl/~hanb/software/fluxbox/ \
 		http://www.cus.org.uk/~dom/distfiles/artwiz-fonts/
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=	dominic.marks@btinternet.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A set of free fonts for X11 desktops
 
 NO_BUILD=	yes
