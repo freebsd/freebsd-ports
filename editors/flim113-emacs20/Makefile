@@ -11,6 +11,7 @@ COMMENT=	FLIM, message representation or encoding emacs lisp library for emacs20
 # This is a slave port.
 PORTCLASS=	slave
 
+NO_LATEST_LINK=	yes
 MASTERDIR=	${.CURDIR}/../../editors/flim113
 
 # emacs port setup

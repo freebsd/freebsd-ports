@@ -21,6 +21,8 @@ COMMENT?=	FLIM, message representation or encoding emacs lisp library for emacs2
 
 PORTCLASS?=	master
 
+NO_LATEST_LINK=	yes
+
 # distfile version
 FLIM_TRUNK=	1.13
 FLIM_VER=	1.13.2
