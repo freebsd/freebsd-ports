@@ -1,7 +1,7 @@
 #! /usr/bin/perl -w
 #
 # $FreeBSD$
-# 
+#
 # This hack is to sanitise the results of what the user may have
 # "done" while editing the commit log message.. :-)   Peter Wemm.
 #
