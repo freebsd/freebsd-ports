@@ -1,0 +1,22 @@
+This is a binding of Ada to the C-Libraries of the X Window system and the
+Motif(tm) or Lesstif widget set.
+
+Programmers used to write X Window programs will easily use this binding. Most
+of the names for functions and procedures resemble the equivalent C interface
+names, e.g.
+   XGetRGBColormaps (C interface) <-> X_Get_RGB_Colormaps (Ada binding).
+
+"While retaining familiarity to the C interface, I tried to include the
+security of Ada by controlling the creation and release of pointer types
+wherever possible."
+
+WWW: http://home.arcor.de/hfvogt/programming.html
+
+- David Holm
+david@realityrift.com
+
+
+Patch supplied by Vadim Godunko <vgodunko@vipmail.ru>
+
+It adds support for OpenMotif 2.2 to configuration as well as support for
+XmColumn, XmDataField and widgets from OpenMotif2.2.
