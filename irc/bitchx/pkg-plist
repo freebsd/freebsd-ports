@@ -918,7 +918,6 @@ share/bx/help/functions
 share/bx/help/out
 %%PLUGINS:%%share/bx/plugins/BitchX.hints
 %%PLUGINS:%%share/bx/plugins/acro.so
-%%PLUGINS:%%share/bx/plugins/amp.so
 %%PLUGINS:%%share/bx/plugins/autobot.so
 %%PLUGINS:%%share/bx/plugins/blowfish.so
 %%PLUGINS:%%share/bx/plugins/encrypt.so

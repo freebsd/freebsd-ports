@@ -1,0 +1,58 @@
+--- configure.in.orig   Sun Mar 24 10:30:49 2002
++++ configure.in        Tue May 28 10:06:37 2002
+@@ -685,48 +685,16 @@
+
+ AC_MSG_CHECKING(whether to enable IPv6 support)
+ AC_ARG_ENABLE(ipv6,
+-[  --enable-ipv6           Enable IPv6 support (Linux only)],
++[  --enable-ipv6           Enable ipv6 support],
+ [ case "$enableval" in
+     yes)
+-      case "$(uname -s)" in
+-        Linux)
+-          if test -d "/usr/inet6/include"; then
+-            CFLAGS="$CFLAGS -I/usr/inet6/include"
+-            LIBS="-L/usr/inet6/lib -linet6 $LIBS"
+-            AC_MSG_RESULT(yes (libinet6))
+-            AC_DEFINE(IPV6, 1, Define this if you want IPV6 support.)
+-          else
+-            if test -d "/usr/local/v6/lib"; then
+-              LIBS="-L/usr/local/v6/lib -linet6 $LIBS"
+-              AC_MSG_RESULT(yes (freebsd+kame))
+-              AC_DEFINE(IPV6, 1, Define this if you want IPV6 support.)
+-            else
+-              AC_TRY_RUN([
+-              int main()
+-              {
+-                 #if !defined(__GLIBC__) || (__GLIBC__ < 2)
+-                 #define NO_GLIBC_2 1
+-                 #endif
+-
+-                 if (NO_GLIBC_2)
+-                   exit(0);
+-                 else
+-                   exit(1);
+-              }],[ AC_MSG_RESULT(yes (glibc2))
+-                   AC_DEFINE(IPV6, 1, Define this if you want IPV6 support.)
+-                 ], [AC_MSG_RESULT(no)], [AC_MSG_WARN(cross-compiling: assuming no ipv6)])
+-            fi
+-          fi
+-          ;;
+-        *)
+-          AC_MSG_RESULT(no (ipv6 support can currently be enabled on Linux only))
+-          ;;
+-      esac
+-      ;;
+-    no)
+-      AC_MSG_RESULT(no)
+-      ;;
+-  esac ],
++       AC_MSG_RESULT(yes (notchecked))
++       AC_DEFINE(IPV6, 1, Define this if you want IPV6 support.)
++       ;;
++    *)
++       AC_MSG_RESULT(no)
++       ;;
++    esac],
+ AC_MSG_RESULT(no)
+ )
