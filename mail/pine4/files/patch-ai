@@ -1,7 +1,7 @@
-*** pine/send.c.orig	Wed Jul  1 21:32:53 1998
---- pine/send.c	Fri Jul 10 00:51:41 1998
+*** pine/send.c.orig	Mon Jul 20 22:02:18 1998
+--- pine/send.c	Tue Jul 21 14:51:50 1998
 ***************
-*** 6616,6628 ****
+*** 6672,6684 ****
   		body->subtype = cpystr("octet-stream");
   	    }
   
@@ -15,7 +15,7 @@
   	}
       }
   
---- 6616,6632 ----
+--- 6672,6688 ----
   		body->subtype = cpystr("octet-stream");
   	    }
   
@@ -34,7 +34,7 @@
       }
   
 ***************
-*** 7439,7445 ****
+*** 7508,7514 ****
   
   	switch (body->encoding) {	/* all else needs filtering */
   	  case ENC8BIT:			/* encode 8BIT into QUOTED-PRINTABLE */
@@ -42,7 +42,7 @@
   	    break;
   
   	  case ENCBINARY:		/* encode binary into BASE64 */
---- 7443,7450 ----
+--- 7512,7519 ----
   
   	switch (body->encoding) {	/* all else needs filtering */
   	  case ENC8BIT:			/* encode 8BIT into QUOTED-PRINTABLE */
@@ -52,7 +52,7 @@
   
   	  case ENCBINARY:		/* encode binary into BASE64 */
 ***************
-*** 7506,7512 ****
+*** 7575,7581 ****
         sprintf (*dst += strlen (*dst),"Content-Transfer-Encoding: %s\015\012",
   	       body_encodings[(body->encoding == ENCBINARY)
   				? ENCBASE64
@@ -60,7 +60,7 @@
   				    ? ENCQUOTEDPRINTABLE
   				    : (body->encoding <= ENCMAX)
   					? body->encoding : ENCOTHER]);
---- 7511,7517 ----
+--- 7580,7586 ----
         sprintf (*dst += strlen (*dst),"Content-Transfer-Encoding: %s\015\012",
   	       body_encodings[(body->encoding == ENCBINARY)
   				? ENCBASE64

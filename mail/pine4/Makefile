@@ -1,14 +1,14 @@
 # New ports collection makefile for:	pine
 # http://www.washington.edu/pine/
-# Version required:     4.00
+# Version required:     4.01
 # Date created:		09 July 1998
 # Whom:			Adrian Penisoara <ady@freebsd.ady.ro>
 #
-# $Id$
+# $Id: Makefile,v 1.23 1998/07/18 05:48:37 ache Exp $
 #
 
-DISTNAME=       pine4.00
-PKGNAME=        pine-4.00
+DISTNAME=       pine4.01
+PKGNAME=        pine-4.01
 CATEGORIES=     mail news
 MASTER_SITES=	ftp://ftp.cac.washington.edu/pine/
 
@@ -23,7 +23,7 @@ do-build:
 
 do-install:
 	${INSTALL} ${COPY} -o ${LIBOWN} -g ${LIBGRP} -m ${LIBMODE} \
-		 ${WRKSRC}/bin/libpico.so.1.3 ${PREFIX}/lib/libpico.so.1.3
+		${WRKSRC}/bin/libpico.so.1.3 ${PREFIX}/lib/libpico.so.1.3
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/pico ${PREFIX}/bin/pico
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/pilot ${PREFIX}/bin/pilot
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/pine ${PREFIX}/bin/pine
@@ -36,7 +36,7 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/pilot.1 ${PREFIX}/man/man1/pilot.1
 	${INSTALL_MAN} ${WRKSRC}/doc/pine.1 ${PREFIX}/man/man1/pine.1
 .if !defined(NOPORTDOCS)
-	${INSTALL_DATA} -d ${PREFIX}/share/doc/pine
+	${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP} ${PREFIX}/share/doc/pine
 	${INSTALL_DATA} ${WRKSRC}/doc/tech-notes.txt ${PREFIX}/share/doc/pine
 .endif
 
