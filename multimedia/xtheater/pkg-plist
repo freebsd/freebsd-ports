@@ -1,13 +1,7 @@
 bin/xtheater
-Xtheater/player/libsmpeg-1.0.0-pre1.so
-Xtheater/player/libsmpeg.a
-Xtheater/player/libsmpeg.la
-Xtheater/player/libsmpeg.so
-Xtheater/ui/libgtkui-1.0.0-pre1.so
-Xtheater/ui/libgtkui.a
-Xtheater/ui/libgtkui.la
-Xtheater/ui/libgtkui.so
-Xtheater/config
-@dirrm Xtheater/player
-@dirrm Xtheater/ui
-@dirrm Xtheater
+lib/Xtheater/config
+lib/Xtheater/player/libsmpeg.so
+lib/Xtheater/ui/libgtkui.so
+@dirrm lib/Xtheater/ui
+@dirrm lib/Xtheater/player
+@dirrm lib/Xtheater
