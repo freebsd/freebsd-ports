@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dctc
-PORTVERSION=	0.58
+PORTVERSION=	0.59
 CATEGORIES=	net gnome
 MASTER_SITES=	http://ac2i.tzo.com/dctc/
 PKGNAMESUFFIX=	-gui
@@ -22,6 +22,7 @@ LIB_DEPENDS=	ORBit.2:${PORTSDIR}/devel/ORBit \
 USE_GNOMELIBS=	yes
 USE_GTK=	yes
 USE_XLIB=	yes
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	--with-gnome=${X11BASE} \
@@ -41,6 +42,8 @@ post-patch:
 	@${PERL} -pi -e 's|(<stdio.h>.*)$$|\1\n#include <config.h>|; \
 		s|(cmdline.+)(hublist)|\1dc_\2|' \
 		${WRKSRC}/src/init_fnc.c
+# XXX - revise at every port update
+	@${REINPLACE_CMD} -e "s|%'|%|" ${WRKSRC}/src/*.c
 
 post-configure:
 	@${ECHO_CMD} '#ifndef MSG_NOSIGNAL' >> ${CONFIGURE_WRKSRC}/config.h
