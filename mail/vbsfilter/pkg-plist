@@ -1,0 +1,3 @@
+@comment $FreeBSD: /tmp/pcvs/ports/mail/vbsfilter/Attic/pkg-plist,v 1.1 2001-03-13 06:47:25 dinoex Exp $
+libexec/vbsfilter
+etc/rc.d/vbsfilter.sh.sample

@@ -1,0 +1,11 @@
+vbsfilter will rename VBS and SHS attachments to .txt,
+thus rendering them harmless.
+
+Sendmail 8.10 introduced a new feature called the milter library,
+which provides filtering callbacks to a user-level program, which in
+turn can provide a "Yes"/"No"/"I haven't seen enough yet" answer to
+the question: Can sendmail allow this mail to be delivered?
+
+Sendmail is a trademark of Sendmail, Inc.
+
+WWW: http://aeschi.ch.eu.org/milter/
