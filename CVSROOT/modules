@@ -8923,6 +8923,7 @@ rt2		ports/www/rt2
 rt2-demo	ports/games/rt2-demo
 rt3		ports/www/rt3
 rt3-elixus	ports/www/rt3-elixus
+rt32		ports/www/rt32
 rtb		ports/games/rtb
 rtc		ports/emulators/rtc
 rtcw		ports/games/rtcw
