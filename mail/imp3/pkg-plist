@@ -121,15 +121,17 @@
 %%IMPDIR%%/locale/fi_FI/help.xml
 %%IMPDIR%%/locale/fr_FR/LC_MESSAGES/imp.mo
 %%IMPDIR%%/locale/fr_FR/help.xml
+%%IMPDIR%%/locale/hu_HU/LC_MESSAGES/imp.mo
 %%IMPDIR%%/locale/it_IT/LC_MESSAGES/imp.mo
 %%IMPDIR%%/locale/it_IT/help.xml
 %%IMPDIR%%/locale/ja_JP/LC_MESSAGES/imp.mo
 %%IMPDIR%%/locale/ko_KR/LC_MESSAGES/imp.mo
 %%IMPDIR%%/locale/ko_KR/help.xml
-%%IMPDIR%%/locale/nl_NL/LC_MESSAGES/imp.mo
-%%IMPDIR%%/locale/nl_NL/help.xml
 %%IMPDIR%%/locale/nb_NO/LC_MESSAGES/imp.mo
 %%IMPDIR%%/locale/nb_NO/help.xml
+%%IMPDIR%%/locale/nl_NL/LC_MESSAGES/imp.mo
+%%IMPDIR%%/locale/nl_NL/help.xml
+%%IMPDIR%%/locale/nn_NO/LC_MESSAGES/imp.mo
 %%IMPDIR%%/locale/pl_PL/LC_MESSAGES/imp.mo
 %%IMPDIR%%/locale/pl_PL/help.xml
 %%IMPDIR%%/locale/pt_BR/LC_MESSAGES/imp.mo
@@ -167,11 +169,13 @@
 %%IMPDIR%%/po/extract.pl
 %%IMPDIR%%/po/fi_FI.po
 %%IMPDIR%%/po/fr_FR.po
+%%IMPDIR%%/po/hu_HU.po
 %%IMPDIR%%/po/it_IT.po
 %%IMPDIR%%/po/ja_JP.po
 %%IMPDIR%%/po/ko_KR.po
-%%IMPDIR%%/po/nl_NL.po
 %%IMPDIR%%/po/nb_NO.po
+%%IMPDIR%%/po/nl_NL.po
+%%IMPDIR%%/po/nn_NO.po
 %%IMPDIR%%/po/pl_PL.po
 %%IMPDIR%%/po/pt_BR.po
 %%IMPDIR%%/po/pt_PT.po
@@ -281,16 +285,20 @@ etc/horde/httpd.conf.imp
 @dirrm %%IMPDIR%%/locale/fi_FI
 @dirrm %%IMPDIR%%/locale/fr_FR/LC_MESSAGES
 @dirrm %%IMPDIR%%/locale/fr_FR
+@dirrm %%IMPDIR%%/locale/hu_HU/LC_MESSAGES
+@dirrm %%IMPDIR%%/locale/hu_HU
 @dirrm %%IMPDIR%%/locale/it_IT/LC_MESSAGES
 @dirrm %%IMPDIR%%/locale/it_IT
 @dirrm %%IMPDIR%%/locale/ja_JP/LC_MESSAGES
 @dirrm %%IMPDIR%%/locale/ja_JP
 @dirrm %%IMPDIR%%/locale/ko_KR/LC_MESSAGES
 @dirrm %%IMPDIR%%/locale/ko_KR
-@dirrm %%IMPDIR%%/locale/nl_NL/LC_MESSAGES
-@dirrm %%IMPDIR%%/locale/nl_NL
 @dirrm %%IMPDIR%%/locale/nb_NO/LC_MESSAGES
 @dirrm %%IMPDIR%%/locale/nb_NO
+@dirrm %%IMPDIR%%/locale/nl_NL/LC_MESSAGES
+@dirrm %%IMPDIR%%/locale/nl_NL
+@dirrm %%IMPDIR%%/locale/nn_NO/LC_MESSAGES
+@dirrm %%IMPDIR%%/locale/nn_NO
 @dirrm %%IMPDIR%%/locale/pl_PL/LC_MESSAGES
 @dirrm %%IMPDIR%%/locale/pl_PL
 @dirrm %%IMPDIR%%/locale/pt_BR/LC_MESSAGES
