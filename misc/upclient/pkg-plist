@@ -3,6 +3,7 @@ etc/rc.d/upclient.sh
 @unexec if cmp -s %D/etc/upclient.conf %D/etc/upclient.conf.sample; then rm -f %D/etc/upclient.conf; fi
 etc/upclient.conf.sample
 @exec [ -f %D/etc/upclient.conf ] || cp -p %D/etc/upclient.conf.sample %D/etc/upclient.conf
+sbin/clientchk
 sbin/upchk
 sbin/upclient
 %%PORTDOCS%%share/doc/upclient/AUTHORS
@@ -13,4 +14,7 @@ sbin/upclient
 %%PORTDOCS%%share/doc/upclient/INSTALL
 %%PORTDOCS%%share/doc/upclient/README
 %%PORTDOCS%%share/doc/upclient/TODO
+%%PORTDOCS%%share/doc/upclient/UptimesProtocol5
+share/locale/de/LC_MESSAGES/upclient.mo
+share/locale/fr/LC_MESSAGES/upclient.mo
 %%PORTDOCS%%@dirrm share/doc/upclient

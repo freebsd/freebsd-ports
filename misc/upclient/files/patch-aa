@@ -1,5 +1,14 @@
---- src/Makefile.orig	Thu Oct 10 04:36:35 2002
-+++ src/Makefile	Sat Oct 19 23:21:49 2002
+--- src/Makefile.orig	Sat Nov 30 03:29:55 2002
++++ src/Makefile	Wed Dec 18 01:29:34 2002
+@@ -34,7 +34,7 @@
+ #
+   PROGRAMNAME = upclient
+ # UPCLIENT_VERSION = "5.0b6"
+-  UPCLIENT_VERSION = `grep '\#define UPCLIENT_VERSION ' version.h | sed -e 's@\#define UPCLIENT_VERSION @@g' | tr -d '"'`
++  UPCLIENT_VERSION = `sed -n 's/"//g;/\#define UPCLIENT_VERSION /s///p' version.h`
+ ################################################################################
+ 
+ binname = upclient
 @@ -44,7 +44,7 @@
  
  
@@ -18,3 +27,16 @@
  
  # Further Reading
  # Filesystem Hierarchy Standard 2.2 May 24, 2001
+@@ -82,9 +82,9 @@
+ 
+ ## [x86] FreeBSD (4.7-RC)
+ ## assumes gettext installed in /usr/local
+-#localedir = ${datadir}/locale
+-#LOCALEFLAGS = -DLOCALEPATH=\"$(localedir)\" -I/usr/local/include
+-#LOCALELIBS = -L/usr/local/lib -lintl
++localedir = ${datadir}/locale
++LOCALEFLAGS = -DLOCALEPATH=\"$(localedir)\" -I%%LOCALBASE%%/include
++LOCALELIBS = -L%%LOCALBASE%%/lib -lintl
+ 
+ ## [Sparc - R220] Sun Solaris (5.8)
+ ## not sure whether this locale dir is correct
