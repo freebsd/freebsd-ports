@@ -9,16 +9,3 @@
  EXTRA_DIST = \
  	$(monodoc_sources) $(assembler_sources) \
  	$(dump_sources) $(browser_sources) 	\
-@@ -465,10 +465,10 @@
- 	scp tables.sql server.cs server.asmx monodoc.dll root@www.go-mono.com:
- 
- install-data-local:
--	$(GACUTIL) /i monodoc.dll /f /package gtk-sharp /gacdir $(DESTDIR)$(libdir)
-+	$(GACUTIL) /i monodoc.dll /f /package gtk-sharp /root $(DESTDIR)$(libdir) /gacdir $(DESTDIR)$(libdir)
- 
- uninstall-local:
--	$(GACUTIL) /u monodoc /package gtk-sharp /gacdir $(DESTDIR)$(libdir)
-+	$(GACUTIL) /u monodoc /package gtk-sharp /root $(DESTDIR)$(libdir) /gacdir $(DESTDIR)$(libdir)
- # Tell versions [3.59,3.63) of GNU make to not export all variables.
- # Otherwise a system limit (for SysV at least) may be exceeded.
- .NOEXPORT:
