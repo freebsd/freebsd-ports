@@ -1,14 +1,14 @@
---- include/Makefile.in.orig	Mon Jan 22 14:43:55 2001
-+++ include/Makefile.in	Mon Jan 22 23:14:48 2001
-@@ -284,7 +284,11 @@
+--- include/Makefile.in.orig	Thu Dec  5 10:37:22 2002
++++ include/Makefile.in	Sat Dec 14 16:26:53 2002
+@@ -324,7 +324,11 @@
+ installdirs:
+ 	$(mkinstalldirs) $(DESTDIR)$(pkgincludedir)
  
- install-am: all-am
- 	@$(MAKE) $(AM_MAKEFLAGS) install-exec-am install-data-am
 +.if defined(CLIENT_ONLY)
  install: install-am
 +.else
 +install:
 +.endif
- uninstall-am: uninstall-pkgincludeHEADERS
+ install-exec: install-exec-am
+ install-data: install-data-am
  uninstall: uninstall-am
- all-am: Makefile $(HEADERS) all-local
