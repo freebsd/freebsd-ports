@@ -1,5 +1,5 @@
---- Makefile.in.orig	Tue Dec 21 18:07:54 1999
-+++ Makefile.in	Tue Feb  8 14:01:20 2000
+--- Makefile.in.orig	Mon Mar 27 19:38:42 2000
++++ Makefile.in	Mon Mar 27 19:39:21 2000
 @@ -9,7 +9,7 @@
  first_rule: all
  dummy:
@@ -9,9 +9,19 @@
  
  DIST =	INSTALL README.configure configure Makefile Makefile.in ChangeLog
  
---- doc/Makefile.in.orig	Tue Sep 28 15:04:39 1999
-+++ doc/Makefile.in	Tue Feb  8 14:02:31 2000
-@@ -56,7 +56,7 @@
+--- doc/Makefile.in.orig	Mon Mar 27 19:39:40 2000
++++ doc/Makefile.in	Mon Mar 27 19:44:16 2000
+@@ -40,9 +40,6 @@
+ 
+ all:	rxvt.1
+ 
+-rxvt.1: rxvt.tbl Makefile
+-	@if test x$(TBL) = x; then : ; else echo "$(TBL) $(srcdir)/rxvt.tbl | grep -v '^.lf' > rxvt.1"; $(TBL) $(srcdir)/rxvt.tbl | grep -v '^.lf' > rxvt.1 ; fi
+-
+ SEDREPLACE = -e 's%@RXVT_VERSION@%$(VERSION)%g;'\
+ 	     -e 's%@RXVT_LSMDATE@%$(LSMDATE)%g;'\
+ 	     -e 's%@RXVT_DATE@%$(DATE)%g;'\
+@@ -56,7 +53,7 @@
  
  tags allbin:
  
@@ -20,23 +30,23 @@
  
  yodl/versioninfo.yo: yodl/versioninfo.yo.in ../src/version.h
  	$(SED) $(SEDREPLACE) < $(srcdir)/yodl/versioninfo.yo.in > $@
-@@ -85,7 +85,7 @@
+@@ -85,7 +82,7 @@
  distclean:
  
  install:
--	$(INSTALL_DATA) rxvt.1 $(DESTDIR)$(mandir)/$(manprefix)rxvt.$(manext)
+-	$(INSTALL_DATA) rxvt.1 $(DESTDIR)$(mandir)/$(RXVTNAME).$(manext)
 +	$(INSTALL_DATA) rxvt.1 $(PREFIX)/man/man1/crxvt.1
  
  uninstall:
- 	-cd $(mandir); $(RMF) $(manprefix)rxvt.$(manext)
---- src/Makefile.in.orig	Tue Feb  8 14:03:35 2000
-+++ src/Makefile.in	Tue Feb  8 14:04:10 2000
-@@ -97,7 +97,7 @@
+ 	-(cd $(mandir); $(RMF) $(RXVTNAME).$(manext) )
+--- src/Makefile.in.orig	Mon Mar 27 19:41:21 2000
++++ src/Makefile.in	Mon Mar 27 19:41:38 2000
+@@ -98,7 +98,7 @@
  	(cd $(srcdir); $(RMF) Makefile)
  
  install: allbin alldoc
--	$(INSTALL_PROGRAM) rxvt $(DESTDIR)$(bindir)/$(binprefix)rxvt
+-	$(INSTALL_PROGRAM) rxvt $(DESTDIR)$(bindir)/$(RXVTNAME)
 +	$(INSTALL_PROGRAM) rxvt $(PREFIX)/bin/crxvt
  
  uninstall:
- 	(cd $(bindir); $(RMF) $(binprefix)rxvt)
+ 	-(cd $(bindir); $(RMF) $(RXVTNAME) )
