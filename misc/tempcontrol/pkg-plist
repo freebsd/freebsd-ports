@@ -1,0 +1,4 @@
+bin/tempcontrol
+share/tempcontrol/temperaturecontrolrc.sample
+etc/rc.d/temperaturecontrol.sh.sample
+@dirrm share/tempcontrol
