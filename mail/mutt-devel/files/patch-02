@@ -1,11 +1,11 @@
 --- doc/Makefile.in.orig	Tue Nov  6 20:12:31 2001
-+++ doc/Makefile.in	Tue Jan 22 20:47:07 2002
++++ doc/Makefile.in	Sat Feb  2 17:39:31 2002
 @@ -60,13 +60,19 @@
  topsrcdir_DOCFILES = COPYRIGHT GPL INSTALL ChangeLog	\
  	README NEWS TODO README.SECURITY README.SSL 
  
 -all: muttrc.man try-html try-txt
-+all: muttrc.man try-html try-txt try-latin1
++all:
  
  try-html: ../makedoc
 -	test -f manual.html || $(MAKE) manual.html || cp $(srcdir)/manual*.html ./
