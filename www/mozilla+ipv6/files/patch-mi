@@ -33,19 +33,13 @@
  else
  IMPL_STRATEGY		= _EMU
  DEFINES			+= -D_PR_LOCAL_THREADS_ONLY
-@@ -61,3 +63,16 @@
+@@ -61,3 +63,10 @@
  MKSHLIB			= $(LD) $(DSO_LDOPTS)
  
  G++INCLUDES		= -I/usr/include/g++
 +
-+# IPv6 support part of the standard FreeBSD 4.0 release.
-+ifneq (,$(filter-out 2.0 2.1 2.2 3,$(basename $(OS_RELEASE))))
-+USE_IPV6		= 1
-+endif
-+
 +# IPv6 support part of the KAME.
 +ifeq ($(shell test -f /usr/local/v6/lib/libinet6.a && echo kame),kame)
-+USE_IPV6		= 1
 +OS_LIBS			+= -L/usr/local/v6/lib -linet6
 +endif
 +
