@@ -8718,6 +8718,7 @@ txtmerge	ports/graphics/txtmerge
 tya		ports/java/tya
 tycoon		ports/x11/tycoon
 typespeed	ports/games/typespeed
+typetools	ports/print/typetools
 typhoon		ports/databases/typhoon
 ua-ispell	ports/textproc/ua-ispell
 uae		ports/emulators/uae
