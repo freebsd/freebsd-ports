@@ -44,6 +44,7 @@
     SUBDIR += krb5
     SUBDIR += kssh
     SUBDIR += l0pht-watch
+    SUBDIR += l0phtcrack
     SUBDIR += libident
     SUBDIR += libmcrypt
     SUBDIR += libmcrypt-nm

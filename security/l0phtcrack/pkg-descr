@@ -1,0 +1,21 @@
+from the readme.txt:
+
+	L0phtCrack 1.5 is a tool for turning Microsoft LANMAN and
+	NT password hashes back into the original clear text
+	passwords.  The program does this using dictionary cracking
+	and also brute force.  L0phtCrack 1.5 returns not just the
+	LANMAN password but the NT password up to 14 characters in
+	length.
+
+	L0phtCrack 1.5 includes the ability to dictionary attack
+	or brute force the network NT server challenge that is used
+	to prevent the OWF from going across the wire in its
+	plain-text format.  Sample network sniffed challenges are
+	in files sniff.txt and sniff2.txt.  This means you can get
+	NT passwords without administrator privileges if you have
+	network access between the client and the server.
+
+WWW:  http://www.l0pht.com/l0phtcrack/
+
+Trevor Johnson
+trevor@FreeBSD.org
