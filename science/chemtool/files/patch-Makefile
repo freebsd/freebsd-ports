@@ -1,0 +1,22 @@
+--- Makefile.orig	Wed Feb  7 02:52:54 2001
++++ Makefile	Sat Mar 31 03:10:38 2001
+@@ -1,7 +1,4 @@
+-PREFIX=/usr/local
+-LOCALEDIR=/usr/share/locale
+-CFLAGS=-O2 -Wall
+-CC=gcc
++LOCALEDIR=${PREFIX}/share/locale
+ CP=/bin/cp
+ RM=/bin/rm -f
+ 
+@@ -9,8 +6,8 @@
+ OBJS = main.o chemproc.o graph.o draw.o inout.o 
+ 
+ 
+-EXTRA_INCLUDES = `gtk-config --cflags`  # -DDISABLE_NLS
+-SYS_LIBRARIES = `gtk-config --libs` -lm
++EXTRA_INCLUDES = `${GTK_CONFIG} --cflags`  # -DDISABLE_NLS
++SYS_LIBRARIES = `${GTK_CONFIG} --libs` -lm
+ 
+ all: chemtool cht
+ 
