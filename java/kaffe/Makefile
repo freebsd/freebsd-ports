@@ -1,13 +1,13 @@
 # New ports collection makefile for:    kaffe
-# Version required:     0.5p3
-# Date created:         08 August 1996
+# Version required:     0.5p4
+# Date created:         18 September 1996
 # Whom:                 Mark Huizer <xaa@stack.urc.tue.nl>
 #
-# $Id$
+# $Id: Makefile,v 1.7 1996/08/08 19:43:44 chuckr Exp $
 #
 
-DISTNAME=	kaffe-0.5p3
-PKGNAME=	kaffe-0.5.3
+DISTNAME=	kaffe-0.5p4
+PKGNAME=	kaffe-0.5.4
 CATEGORIES+=	www
 MASTER_SITES=	ftp://ftp.sarc.city.ac.uk/pub/kaffe/
 EXTRACT_SUFX=	.tgz
