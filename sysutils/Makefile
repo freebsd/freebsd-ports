@@ -48,6 +48,7 @@
     SUBDIR += cdargs
     SUBDIR += cdbakeoven
     SUBDIR += cdbkup
+    SUBDIR += cdf
     SUBDIR += cdrdao
     SUBDIR += cdroot
     SUBDIR += cdrtools
