@@ -1,0 +1,11 @@
+--- man/amflush.8.orig	Mon May 20 11:11:25 1996
++++ man/amflush.8	Wed Dec  1 03:59:02 1999
+@@ -22,7 +22,7 @@
+ .B Amflush
+ will look in the holding disk specified by the
+ .I amanda.conf
+-file in /etc/amanda/\fIconfig\fR
++file in %%PREFIX%%/etc/amanda/\fIconfig\fR
+ for any non-empty Amanda work directories.  It then prompts the
+ operator to select the correct directory.  The work directories on the
+ holding disk are named by the date at the time

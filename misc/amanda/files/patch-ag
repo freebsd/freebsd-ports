@@ -1,0 +1,20 @@
+--- man/amlabel.8.orig	Mon May 20 11:11:25 1996
++++ man/amlabel.8	Wed Dec  1 03:59:02 1999
+@@ -11,7 +11,7 @@
+ .B Amlabel
+ writes an Amanda label on the tape in the tape drive specified by the
+ .I amanda.conf
+-file in /etc/amanda/\fIconfig\fR.  The
++file in %%PREFIX%%/etc/amanda/\fIconfig\fR.  The
+ .I label
+ can be any string that does not contain whitespace, and that matches the
+ .I amanda.conf 
+@@ -26,7 +26,7 @@
+ .TP
+ % amlabel csd VOL1
+ If the line "tapedev /dev/tape/1n" is in
+-/etc/amanda/csd/amanda.conf, an Amanda label with the name "VOL1" is
++%%PREFIX%%/etc/amanda/csd/amanda.conf, an Amanda label with the name "VOL1" is
+ written on the /dev/tape/1n device.
+ 
+ .SH AUTHOR

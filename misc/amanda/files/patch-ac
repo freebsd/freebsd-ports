@@ -1,13 +1,13 @@
-*** config/options.h-vanilla	Fri Feb 10 11:21:59 1995
---- config/options.h	Tue Feb 28 16:34:30 1995
+*** config/options.h-vanilla.orig	Mon May 20 11:11:25 1996
+--- config/options.h-vanilla	Fri Dec  3 00:29:56 1999
 ***************
 *** 42,51 ****
    *	LIBEXEC_DIR	- Internal support programs
    *	MAN_DIR		- Man pages
    */
 ! #define CONFIG_DIR "/etc/amanda"
-  #define LIBEXEC_DIR "/usr/local/libexec/amanda"
-  #define BIN_DIR	"/usr/local/sbin"
+! #define LIBEXEC_DIR "/usr/local/libexec/amanda"
+! #define BIN_DIR	"/usr/local/sbin"
 ! #define MAN_DIR	"/usr/share/local/man/man8"
   
   
@@ -16,10 +16,43 @@
    *	LIBEXEC_DIR	- Internal support programs
    *	MAN_DIR		- Man pages
    */
-! #define CONFIG_DIR "/usr/local/etc/amanda"
-  #define LIBEXEC_DIR "/usr/local/libexec/amanda"
-  #define BIN_DIR	"/usr/local/sbin"
-! #define MAN_DIR	"/usr/local/man/man8"
+! #define CONFIG_DIR	"%%PREFIX%%/etc/amanda"
+! #define LIBEXEC_DIR	"%%PREFIX%%/libexec/amanda"
+! #define BIN_DIR	"%%PREFIX%%/sbin"
+! #define MAN_DIR	"%%PREFIX%%/man/man8"
+  
+  
+  /*
+***************
+*** 53,66 ****
+   * I compile with -g to compile in a full symbol table, but you might choose
+   * to use -O or something else.
+   */
+! #define MK_CCOPTS -g
+  /*
+   * You can also redefine MK_CC here if you wish to override the system
+   * dependent C compiler.  If you have a stable version of GCC, you may
+   * well want to use that instead of the system compiler.
+   */
+! /* #undef  MK_CC		*/
+! /* #define MK_CC gcc -Wall	*/
+  
+  
+  /*
+--- 53,68 ----
+   * I compile with -g to compile in a full symbol table, but you might choose
+   * to use -O or something else.
+   */
+! #define MK_CCOPTS	%%CFLAGS%%
+  /*
+   * You can also redefine MK_CC here if you wish to override the system
+   * dependent C compiler.  If you have a stable version of GCC, you may
+   * well want to use that instead of the system compiler.
+   */
+! #undef  MK_INSTALL
+! #define MK_INSTALL	%%INSTALL%%
+! #undef  MK_CC
+! #define MK_CC	%%CC%%
   
   
   /*
@@ -32,7 +65,7 @@
   
   
   /*
---- 77,83 ----
+--- 79,85 ----
    * Since 2.2.1 is a major change, I recommend defining this for existing
    * Amanda sites.
    */
@@ -41,7 +74,7 @@
   
   /*
 ***************
-*** 182,196 ****
+*** 182,198 ****
   #define HAVE_GZIP
   
   #ifdef HAVE_GZIP
@@ -57,7 +90,9 @@
   #  define COMPRESS_BEST_OPT	"-f"		/* it's just a placeholder */
 ! #  define UNCOMPRESS_CMD	"zcat"
   #endif
---- 182,196 ----
+  
+  /*
+--- 184,200 ----
   #define HAVE_GZIP
   
   #ifdef HAVE_GZIP
@@ -73,3 +108,5 @@
   #  define COMPRESS_BEST_OPT	"-f"		/* it's just a placeholder */
 ! #  define UNCOMPRESS_CMD	"/usr/bin/zcat"
   #endif
+  
+  /*

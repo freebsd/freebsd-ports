@@ -12,15 +12,38 @@ MASTER_SITES=	ftp://ftp.cs.umd.edu/pub/amanda/old-versions/
 
 MAINTAINER=	ports@FreeBSD.org
 
-PATCH_STRIP=
-MAN8=		amanda.8 amadmin.8 amcheck.8 amcleanup.8 amdump.8 \
-		amflush.8 amlabel.8 amrestore.8  amtape.8
+MAN8=		amadmin.8 amanda.8 amcheck.8 amcleanup.8 amdump.8 amflush.8 \
+		amlabel.8 amrestore.8 amtape.8
 
-pre-configure:
-	${ECHO} "${CFLAGS}" > /tmp/build-ports-misc-amanda-cflags
+LIBEXEC_BIN=	amandad calcsize driver dumper getconf planner reporter \
+		runtar selfcheck sendbackup-dump sendbackup-gnutar sendsize \
+		taper
+SBIN_BIN=	amadmin amcheck amflush amlabel amrestore amtape
+
+post-patch:
+	@${LN} -sf config.h-freebsd2 ${WRKSRC}/config/config.h
+	@${SED} -e 's:%%CC%%:${CC}:g' \
+		-e 's:%%CFLAGS%%:${CFLAGS}:g' \
+	        -e 's:%%INSTALL%%:${INSTALL}:g' \
+	        -e 's:%%PREFIX%%:${PREFIX}:g' \
+		${WRKSRC}/config/options.h-vanilla > ${WRKSRC}/config/options.h
+.for file in amanda.8 amcleanup.8 amflush.8 amlabel.8
+	@cd ${WRKSRC}/man/; ${MV} ${file} ${file}.in; \
+		${SED} -e 's:%%PREFIX%%:${PREFIX}:g' ${file}.in > ${file}
+.endfor
 
 post-install:
-	${MKDIR} ${PREFIX}/share/examples/amanda
-	${CP} -R ${WRKSRC}/example/* ${PREFIX}/share/examples/amanda
+.for file in ${LIBEXEC_BIN}
+	@if [ -f ${PREFIX}/libexec/amanda/${file} ]; then \
+		strip ${PREFIX}/libexec/amanda/${file}; \
+	fi
+.endfor
+.for file in ${SBIN_BIN}
+	@if [ -f ${PREFIX}/sbin/${file} ]; then \
+		strip ${PREFIX}/sbin/${file}; \
+	fi
+.endfor
+	@${MKDIR} ${PREFIX}/share/examples/amanda
+	${INSTALL_DATA} ${WRKSRC}/example/* ${PREFIX}/share/examples/amanda
 
 .include <bsd.port.mk>
