@@ -3567,6 +3567,7 @@ ko-kaistfonts	ports/korean/kaistfonts
 ko-kde3-i18n	ports/korean/kde3-i18n
 ko-linux_locale	ports/korean/linux_locale
 ko-linuxdoc-sgml	ports/korean/linuxdoc-sgml
+ko-man-doc	ports/korean/man-doc
 ko-mizifont	ports/korean/mizifont
 ko-mkisofs	ports/korean/mkisofs
 ko-mozilla-klp	ports/korean/mozilla-klp
