@@ -7,6 +7,7 @@
 
 PORTNAME=	sylpheed-claws
 PORTVERSION=	0.8.5
+PORTREVISION=	1
 CATEGORIES=	mail news ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sylpheed-claws
@@ -58,9 +59,9 @@ LIB_DEPENDS+=		jconv.0:${PORTSDIR}/japanese/libjconv
 .else
 CONFIGURE_ARGS+=	--disable-jconv
 .endif
-.if defined(WITH_PSPELL) || defined(WITH_ALL)
+.if defined(WITH_ASPELL) || defined(WITH_ALL)
 LIB_DEPENDS+=		pspell.15:${PORTSDIR}/textproc/aspell
-CONFIGURE_ARGS+=	--enable-pspell
+CONFIGURE_ARGS+=	--enable-aspell
 .endif
 .if defined(WITH_JPILOT) || defined(WITH_ALL)
 LIB_DEPENDS+=		pisock.8:${PORTSDIR}/palm/pilot-link
@@ -92,7 +93,7 @@ pre-everything::
 	@${ECHO} "      WITH_GPGME     Enable GnuPG support using GPGME"
 	@${ECHO} "      WITH_COMPFACE  Enable compface (X-Face) support"
 	@${ECHO} "      WITH_JCONV     Enable enhanced charset conversion"
-	@${ECHO} "      WITH_PSPELL    Enable spell-checking support"
+	@${ECHO} "      WITH_ASPELL    Enable spell-checking support"
 	@${ECHO} "      WITH_JPILOT    Enable JPilot support"
 	@${ECHO} "      WITH_LDAP      Enable LDAP access support"
 	@${ECHO} ""
