@@ -74,6 +74,8 @@ MANL=		abort.l alter_table.l alter_user.l begin.l close.l cluster.l \
 		select.l set.l show.l sql.l update.l vacuum.l
 
 MANPREFIX=	${PREFIX}/${INSTALL_DIR}
+INSTALLS_SHLIB=	yes
+LDCONFIG_DIRS=	${PREFIX}/${INSTALL_DIR}/lib
 
 PLIST_SUB=	INSTALL_DIR=${INSTALL_DIR}
 PLIST=		${WRKDIR}/PLIST

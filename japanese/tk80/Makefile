@@ -31,6 +31,7 @@ USE_XLIB=	yes
 CONFIGURE_ARGS=	--enable-shared --with-tcl=${PREFIX}/lib/tcl${VERSION}jp \
 	--enable-xlibHack --enable-onTheSpot
 RANLIB=		ranlib
+INSTALLS_SHLIB=	yes
 
 .include <bsd.port.pre.mk>
 
@@ -52,7 +53,6 @@ post-install:
 		Incompat80jp ${PREFIX}/share/doc/tk${VERSION}jp; \
 	 )
 .endif
-	@${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 .if ${PORTOBJFORMAT} == "aout"
 	${LN} -sf libtk80jp.so.1.5 ${PREFIX}/lib/libtk80jp.so
 	${RANLIB} ${PREFIX}/lib/libtk80jp.so

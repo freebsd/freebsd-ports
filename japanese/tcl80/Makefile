@@ -30,6 +30,7 @@ CONFIGURE_ARGS=	--enable-shared
 RANLIB=		ranlib
 PKGINSTALL=	${PORTSDIR}/lang/tcl82/pkg/INSTALL.tclsh
 PKGDEINSTALL=	${PORTSDIR}/lang/tcl82/pkg/DEINSTALL.tclsh
+INSTALLS_SHLIB=	yes
 
 .include <bsd.port.pre.mk>
 

@@ -20,11 +20,11 @@ LIB_DEPENDS=	png.3:${PORTSDIR}/graphics/png
 
 FETCH_BEFORE_ARGS=	-b
 USE_LIBTOOL=		yes
+CFLAGS+=	-DJISX0208
 CONFIGURE_ENV+=		CFLAGS="${CFLAGS} -I${LOCALBASE}/include"
 CONFIGURE_ARGS+=	--includedir=${PREFIX}/include/gd \
 			--libdir=${PREFIX}/lib
-
-CFLAGS=		-DJISX0208
+INSTALLS_SHLIB=	yes
 
 pre-install:
 	${MKDIR} ${PREFIX}/include/gd

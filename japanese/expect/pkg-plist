@@ -31,5 +31,3 @@ lib/expect5.30jp/pkgIndex.tcl
 lib/libexpect530jp.a
 lib/libexpect530jp.so.1.2
 lib/libexpect530jp.so
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R

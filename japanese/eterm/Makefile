@@ -25,6 +25,7 @@ CONFIGURE_ENV=	LIBS="-lxpg4"
 CONFIGURE_ARGS=	--enable-trans=imlib --enable-utmp --enable-multi-charset=kanji \
 		--enable-xim --with-theme-update
 MAN1=		Eterm.1
+INSTALLS_SHLIB=	yes
 
 post-install:
 	@${CHMOD} 4711 ${PREFIX}/bin/Eterm

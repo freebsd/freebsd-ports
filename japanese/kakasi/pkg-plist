@@ -8,8 +8,6 @@ lib/libkakasi.a
 lib/libkakasi.la
 lib/libkakasi.so
 lib/libkakasi.so.2
-@exec /sbin/ldconfig -m %B
-@unexec /sbin/ldconfig -R
 share/doc/kakasi/ChangeLog.lib
 share/doc/kakasi/JISYO
 share/doc/kakasi/README.BeOS

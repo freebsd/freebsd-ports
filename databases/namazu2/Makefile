@@ -28,9 +28,9 @@ USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 
 MAN1=		namazu.1 mknmz.1
+INSTALLS_SHLIB=	yes
 
 post-install:
 	${LN} -sf ${PREFIX}/lib/libnmz.so.3 ${PREFIX}/lib/libnmz.so
-	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>

@@ -2,8 +2,6 @@ bin/tclsh8.0jp
 lib/libtcl80jp.a
 lib/libtcl80jp.so.1.5
 lib/libtcl80jp.so
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 include/tcl8.0jp/tcl.h
 include/tcl8.0jp/generic/tcl.h
 include/tcl8.0jp/generic/tclCompile.h

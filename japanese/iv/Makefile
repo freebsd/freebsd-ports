@@ -63,6 +63,7 @@ MANN=		Adjuster.n Banner.n BasicDialog.n Border.n Box2_6.n \
 
 .include <bsd.port.pre.mk>
 
+INSTALLS_SHLIB=	yes
 .if ${PORTOBJFORMAT} == "elf"
 IV_LIB_VER=	3
 .else
@@ -85,6 +86,5 @@ post-install:
 	@${LN} -fs ../interviews/lib/libUnidraw.so.${IV_LIB_VER} ${PREFIX}/lib
 	@${LN} -fs ${PREFIX}/lib/libIV.so.${IV_LIB_VER} ${PREFIX}/lib/libIV.so
 	@${LN} -fs ${PREFIX}/lib/libUnidraw.so.${IV_LIB_VER} ${PREFIX}/lib/libUnidraw.so
-	@${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.post.mk>
