@@ -99,6 +99,7 @@
     SUBDIR += gnofract4d
     SUBDIR += gnomecanvas
     SUBDIR += gnomeiconedit
+    SUBDIR += gopchop
     SUBDIR += gozer
     SUBDIR += gpaint
     SUBDIR += gphoto2

@@ -1,0 +1,6 @@
+bin/GOPchop
+bin/mpegcat
+share/GOPchop/pixmaps/about.xpm
+share/GOPchop/pixmaps/error.xpm
+@dirrm share/GOPchop/pixmaps
+@dirrm share/GOPchop
