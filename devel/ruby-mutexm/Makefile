@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mutexm
-PORTVERSION=	0.9.2
+PORTVERSION=	1.0
 CATEGORIES=	devel ruby
 MASTER_SITES=	http://www2a.biglobe.ne.jp/~seki/ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
