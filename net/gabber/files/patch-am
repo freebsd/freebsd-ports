@@ -1,7 +1,14 @@
---- src/Makefile.in.orig	Wed Mar 14 16:07:36 2001
-+++ src/Makefile.in	Wed Mar 28 14:52:10 2001
-@@ -156,3 +156,3 @@
+
+$FreeBSD$
+
+--- src/Makefile.in	2002/01/14 13:22:27	1.1
++++ src/Makefile.in	2002/01/14 13:21:55
+@@ -220,7 +220,7 @@
+ gabber_LDADD = @EXTRA_GNOME_LIBS@ @XMMS_LIBS@ @SSL_LIBS@ @XSS_LIBS@ @GABBER_STATIC_LIBS@ \
+ 	../jabberoo/src/libjabberoo.a \
+ 	../jabberoo/expat/libexpat.a \
+-	-lxml
++	-lxml -lgiconv
  
--gabber_LDADD = @EXTRA_GNOME_LIBS@ @GNOMEMM_LIBS@ @SSL_LIBS@ @XSS_LIBS@ 	../jabberoo/src/libjabberoo.a 	../jabberoo/expat/libexpat.a 	-lxml
-+gabber_LDADD = @EXTRA_GNOME_LIBS@ @GNOMEMM_LIBS@ @SSL_LIBS@ @XSS_LIBS@ 	../jabberoo/src/libjabberoo.a 	../jabberoo/expat/libexpat.a 	-lxml -lgiconv
  
+ gabber_LDFLAGS = @GABBER_STATIC@

@@ -1,0 +1,16 @@
+
+$FreeBSD$
+
+--- jabberoo/configure	2002/01/14 13:30:11	1.1
++++ jabberoo/configure	2002/01/14 13:31:00
+@@ -1532,8 +1532,8 @@
+         CFLAGS="$CFLAGS -g"
+ 	CXXFLAGS="$CXXFLAGS -g"
+ else
+-	CFLAGS="$CFLAGS -O2"
+-	CXXFLAGS="$CXXFLAGS -O2"
++	CFLAGS="$CFLAGS"
++	CXXFLAGS="$CXXFLAGS"
+         echo "$ac_t""no" 1>&6
+ fi
+ 
