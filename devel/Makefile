@@ -447,6 +447,7 @@
     SUBDIR += veepee
     SUBDIR += viewcvs
     SUBDIR += vtcl
+    SUBDIR += wedit
     SUBDIR += xmake
     SUBDIR += xwpe
     SUBDIR += xxgdb

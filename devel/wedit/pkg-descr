@@ -1,0 +1,10 @@
+Wedit is a native LCC-Win32 port to Unix-like operating systems.
+
+It features an user friendly IDE, project wizard, generation of GNU
+makefiles and automake/autoconf skeletons, fast run-time source parsing
+with syntax coloring and autoformating of C, Fortran, and Eiffel sources.
+
+It also has complete analysis of source code and object files, many charts
+and plots, and an integrated debugger.
+
+WWW: http://www.q-software-solutions.com/weditlinux/index.shtml
