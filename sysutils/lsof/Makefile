@@ -4,7 +4,7 @@
 # Date created:         Sat July 20, 1996
 # Whom:                 David O'Brien (obrien@FreeBSD.org)
 #
-# $Id: Makefile,v 1.26 1998/12/01 09:40:48 obrien Exp $
+# $Id: Makefile,v 1.27 1998/12/01 09:41:59 obrien Exp $
 #
 
 DISTNAME=	lsof_4.38_W
@@ -24,6 +24,12 @@ HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	Configure
 CONFIGURE_ARGS=	-n freebsd
 MAN8=		lsof.8
+
+.if defined(PACKAGE_BUILDING)
+.if !exists(/usr/src/sys/miscfs/fdesc/fdesc.h)
+BROKEN=	'please install kernel source for offical package builds'
+.endif
+.endif
 
 SRCBALL_NAME=	${DISTNAME:S/_W$//}
 
