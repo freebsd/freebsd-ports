@@ -1,0 +1,5 @@
+--- lib/log.tcl	Mon Apr  3 20:00:28 2000
++++ lib/log.tcl	Fri May  5 10:01:58 2000
+@@ -29,1 +29,1 @@
+-    set Log(compressProg) /usr/local/bin/gzip
++    set Log(compressProg) /usr/bin/gzip

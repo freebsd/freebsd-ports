@@ -1,0 +1,32 @@
+--- bin/httpd.tcl	Wed Jun 14 13:25:50 2000
++++ bin/httpd.tcl	Wed Jun 21 15:59:34 2000
+@@ -82,21 +82,9 @@
+ 
+ # Search around for the Standard Tcl Library
+ 
+-if {![catch {package require base64 2.0}]} {
+-    # Already available in environment
+-} elseif {[file exist [file join $home ../tcllib]]} {
+-    lappend auto_path [file join $home ../tcllib]
+-} else {
+-    # Look for the CVS development sources
+-    set cvs [lindex [lsort -decreasing \
+-	[glob -nocomplain [file join $home ../../tcllib*]]] 0]
+-    if {[file exist [file join $cvs modules]]} {
+-	lappend auto_path [file join $cvs modules]
+-    } elseif {[file exist [file join $cvs pkgIndex.tcl]]} {
+-	lappend auto_path $cvs
+-    } else {
+-	error "Cannot find Standard Tcl Library in auto_path:\n[join $auto_path \n]"
+-    }
++if {[catch {package require tcllib} e]} {
++	error "Cannot find Standard Tcl Library in auto_path:\n\
++		[join $auto_path \n($e)\n]"
+ }
+ 
+ set Config(home) $home
+@@ -130,3 +130,3 @@
+ } else {
+-    set Config(config) [file join $Config(home) tclhttpd.rc]
++    set Config(config) [file join $Config(home) ../etc/tclhttpd.rc]
+ }

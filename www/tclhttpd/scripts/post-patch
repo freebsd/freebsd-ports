@@ -1,0 +1,18 @@
+if [ ${LOCALBASE} != /usr/local ] ; then
+	for f in `find ${WRKSRC} -type f | xargs grep -l /usr/local`
+	do
+		cp -p $f $f.ul && \
+			sed "s%/usr/local%${LOCALBASE}%g" < $f.ul > $f \
+			&& rm -f $f.ul
+	done
+fi
+for f in `find ${WRKSRC} -type f | \
+		xargs grep -l '^exec tclsh.* '`
+do
+	patch --quiet $f << EOP
+@@ -1,1 +1,2 @@
+-#!/bin/sh
++#!${LOCALBASE}/bin/tclsh${TCL_DVER}
++# The ``exec tclsh<whatever>'' below will simply be ignored.
+EOP
+done

@@ -1,0 +1,22 @@
+--- Makefile.in	Wed Apr 26 16:35:29 2000
++++ Makefile.in	Thu Apr 27 16:24:39 2000
+@@ -124,3 +124,3 @@
+ SERVER_ROOT = @SERVER_ROOT@
+-htdocsdir = $(SERVER_ROOT)/htdocs
++htdocsdir = $(prefix)/share/@PACKAGE@@VERSION@
+ 
+@@ -220,3 +220,3 @@
+ 
+-all: binaries libraries doc
++all: libraries doc
+
+@@ -236,3 +236,3 @@
+ 
+-install: all install-binaries install-libraries install-doc
++install: all install-libraries install-doc
+ 
+@@ -315,3 +315,3 @@
+ installdirs:
+-	$(mkinstalldirs) $(pkglibdir) $(cryptlibdir) $(prefix)/bin $(htdocsdir)
++	$(mkinstalldirs) $(pkglibdir) $(prefix)/bin $(htdocsdir)
+ 
