@@ -6,13 +6,11 @@
 #
 
 PORTNAME=	boa
-PORTVERSION= 	0.94.8.2
+PORTVERSION= 	0.94.8.3
 CATEGORIES=	www
 MASTER_SITES=	http://www.boa.org/
 
 MAINTAINER=	ports@FreeBSD.org
-
-FORBIDDEN=	"Remote users can access files outside the document root"
 
 FETCH_BEFORE_ARGS=	-b
 
