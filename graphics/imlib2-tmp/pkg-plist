@@ -5,5 +5,5 @@ include/Imlib_private.h
 include/Imlib_types.h
 lib/libImlib.so
 lib/libImlib.so.1
-lib/libImlib.so.1.0
+lib/libImlib.so.1.1
 @dirrm etc/imlib

@@ -1,6 +1,6 @@
---- Makefile.in.orig	Tue Feb 10 07:55:09 1998
-+++ Makefile.in	Tue Feb 17 17:49:08 1998
-@@ -29,7 +29,7 @@
+--- Makefile.in.orig	Wed Feb 25 00:34:26 1998
++++ Makefile.in	Tue Mar 10 09:47:49 1998
+@@ -30,7 +30,7 @@
  INSTALL     = @INSTALL@
  INSTALLBIN  = $(INSTALL) -m 755
  INSTALLLIB  = $(INSTALL) -m 644
@@ -9,29 +9,26 @@
  
  .SUFFIXES:
  .SUFFIXES: .c .o
-@@ -39,14 +39,14 @@
+@@ -51,15 +51,14 @@
  
  top_srcdir = @top_srcdir@
  srcdir     = @srcdir@
--prefix      = /usr
--exec_prefix = /usr
+-prefix      = @prefix@
+-exec_prefix = @prefix@
 +prefix      = /usr/X11R6
 +exec_prefix = /usr/X11R6
  bindir      = $(exec_prefix)/bin
--datadir     = /usr/lib
--incdir      = /usr/include
--libdir      = /usr/lib
--exe2dir     = /usr/bin
--mandir      = /usr/man
-+datadir     = /usr/X11R6/share
-+incdir      = /usr/X11R6/include
-+libdir      = /usr/X11R6/lib
-+exe2dir     = /usr/X11R6/bin
-+mandir      = /usr/X11R6/man
+-datadir     = $(prefix)/lib
++datadir     = $(prefix)/share
+ incdir      = $(prefix)/include
+ libdir      = $(prefix)/lib
+ exe2dir     = $(prefix)bin
+ mandir      = $(prefix)/man
+-SYS_CONFIG  = @sysconfdir@
  
  LN_S   = @LN_S@
  RANLIB = @RANLIB@
-@@ -79,7 +79,7 @@
+@@ -93,7 +92,7 @@
  
  LIB         = \
  -lm           \
@@ -40,40 +37,45 @@
  -ljpeg        \
  -lpng         \
  -lgif         \
-@@ -94,6 +94,7 @@
- @X_LIBS@       \
- @X_EXTRA_LIBS@ \
- $(LIB)         \
-+-I/usr/local/lib	\
- $(XLIB)
+@@ -101,6 +100,7 @@
  
- OPT=                           \
-@@ -110,8 +111,8 @@
- @CFLAGS@                \
- @X_CFLAGS@              \
+ XLIB        = \
+ -lX11         \
++-L/usr/local/lib	\
+ -lXext
+ 
+ LIBS        =  \
+@@ -122,11 +122,11 @@
+ 
+ CFLAGS      =           \
  -fPIC                   \
 --shared                 \
  -I.                     \
+ @CFLAGS@                \
+ @X_CFLAGS@              \
+ @INCLUDES@		\
 +-I/usr/local/include	\
  $(OPT)
  
  all: $(lib)
-@@ -121,6 +122,9 @@
+@@ -136,6 +136,9 @@
  	$(INSTALLBIN) $(lib) $(libdir)/$(lib)
  	/bin/ln -sf $(libdir)/$(lib) $(libdir)/$(libname2)
  	/bin/ln -sf $(libdir)/$(lib) $(libdir)/$(libname).so
 +	if [ ! -d $(SYS_CONFIG) ]; then \
 +		mkdir $(SYS_CONFIG); \
 +	fi
- 	$(INSTALL) $(conf_dir)/imrc $(SYS_CONFIG)/imrc
  	$(INSTALL) $(conf_dir)/im_palette.pal $(SYS_CONFIG)/im_palette.pal
+ 	sed s@/etc/@$(SYS_CONFIG)/@g< $(conf_dir)/imrc > $(SYS_CONFIG)/imrc
  	$(INSTALL) Imlib.h $(incdir)/Imlib.h
-@@ -146,7 +150,7 @@
+@@ -159,8 +162,8 @@
+ .c.o:
  	$(CC) -c $(CPPFLAGS) $(CFLAGS) $<
  
- $(lib): $(OBJS) 
--	$(CC) $(CFLAGS) -o $@ $(OBJS) $(LIBS) -Wl,-soname,$(libname2)
-+	ld -Bshareable -o libImlib.so.1.0 $(OBJS) /usr/lib/c++rt0.o
+-$(lib): $(OBJS) 
+-	$(CC) $(CFLAGS) -o $@ $(OBJS) $(LIBS) $(SONAME)
++$(lib): $(OBJS)
++	ld -Bshareable -o libImlib.so.1.1 $(OBJS) /usr/lib/c++rt0.o
  	@echo "--------------------------------------------------------------------------------"
  	@echo "Imlib compiled."
  	@echo ""
