@@ -42,7 +42,7 @@ pre-everything::
 	@${ECHO_MSG} "----------------------------------------------------------------"
 .endif
 
-do-patch: patch-common
+post-patch: patch-common
 
 do-install: install-cnotice install-binaries install-libs
 	@${ECHO_MSG} "Installing ${DESTJARFILE} to ${JAVAJARDIR} ..."

@@ -18,6 +18,8 @@ PKGMESSAGE=	${.CURDIR}/pkg-message
 
 do-configure:
 
+do-patch:
+
 do-build:
 
 do-install:
