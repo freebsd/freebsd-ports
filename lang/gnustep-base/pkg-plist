@@ -104,6 +104,7 @@ System/Headers/gnustep/unicode/decomp.h
 System/Headers/gnustep/unicode/latin2.h
 System/Headers/gnustep/unicode/nextstep.h
 System/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libgnustep-base.so
+System/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libgnustep-base.so.%%MAJORVERSION%%
 System/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libgnustep-base.so.%%VERSION%%
 System/Libraries/Resources/DTDs/gsdoc-0_6_5.dtd
 System/Libraries/Resources/DTDs/gsdoc-0_6_6.dtd
