@@ -8,12 +8,10 @@ to
 
 and edit it to fit your needs.
 
-If you would like to run ddclient as a daemon consider
-copying
+If you would like to run ddclient as a daemon add the
+following line to /etc/rc.conf
 
-	/usr/local/etc/rc.d/ddclient.sh.sample
-to
-	/usr/local/etc/rc.d/ddclient.sh
+	ddclient_enable="YES"
 
 ***********************************************************
 

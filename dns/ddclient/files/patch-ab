@@ -1,5 +1,5 @@
---- sample-etc_cron.d_ddclient.orig	Sun Jun 15 03:39:16 2003
-+++ sample-etc_cron.d_ddclient	Thu Aug  7 14:31:15 2003
+--- sample-etc_cron.d_ddclient.orig	Sun Oct 24 03:48:56 2004
++++ sample-etc_cron.d_ddclient	Sun Oct 24 03:49:48 2004
 @@ -10,8 +10,8 @@
  ######################################################################
  ## force an update twice a month (only if you are not using daemon-mode)
@@ -11,11 +11,11 @@
  ##
 -##0 * * * *	root    /usr/sbin/ddclient -daemon=0 -syslog -quiet retry
 +##0 * * * *	root    %%PREFIX%%/sbin/ddclient -daemon=0 -syslog -quiet retry
---- sample-etc_dhclient-exit-hooks.orig	Sun Jun 15 03:39:16 2003
-+++ sample-etc_dhclient-exit-hooks	Thu Aug  7 14:38:38 2003
+--- sample-etc_dhclient-exit-hooks.orig	Sun Oct 24 03:51:37 2004
++++ sample-etc_dhclient-exit-hooks	Sun Oct 24 03:52:20 2004
 @@ -2,10 +2,10 @@
  ######################################################################
- ## $Header: /home/paul/src/ddclient/RCS/sample-etc_dhclient-exit-hooks,v 1.1 2002/11/03 20:20:16 root Exp $
+ ## $Header: /cvsroot/ddclient/ddclient/sample-etc_dhclient-exit-hooks,v 1.1.1.1 2004/08/13 22:29:17 wimpunk Exp $
  ######################################################################
 -# The /etc/dhclient-enter-hooks script is run by the ISC DHCP client's standard
 +# The /etc/dhclient-exit-hooks script is run by the ISC DHCP client's standard
@@ -26,19 +26,19 @@
  case "$new_ip_address" in
  10.*)   	;;
  172.1[6-9].* | 172.2[0-9].* | 172.3[0-1].*)	;;
---- sample-etc_dhcpc_dhcpcd-eth0.exe.orig	Sun Jun 15 03:39:16 2003
-+++ sample-etc_dhcpc_dhcpcd-eth0.exe	Thu Aug  7 14:33:00 2003
+--- sample-etc_dhcpc_dhcpcd-eth0.exe.orig	Sun Oct 24 03:52:38 2004
++++ sample-etc_dhcpc_dhcpcd-eth0.exe	Sun Oct 24 03:52:58 2004
 @@ -2,7 +2,7 @@
  ######################################################################
- ## $Header: /home/paul/src/ddclient/RCS/sample-etc_dhcpc_dhcpcd-eth0.exe,v 3.6 2002/11/03 20:20:16 root Exp $
+ ## $Header: /cvsroot/ddclient/ddclient/sample-etc_dhcpc_dhcpcd-eth0.exe,v 1.1 2004/10/07 19:19:37 wimpunk Exp $
  ######################################################################
 -PATH=/usr/sbin:${PATH}
 +PATH=%%PREFIX%%/sbin:${PATH}
  
  ## update the DNS server unless the IP address is a private address
  ## that may be used as a internal LAN address. This may be true if
---- sample-etc_ppp_ip-up.local.orig	Sun Jun 15 03:39:16 2003
-+++ sample-etc_ppp_ip-up.local	Thu Aug  7 14:33:32 2003
+--- sample-etc_ppp_ip-up.local.orig	Sun Oct 24 03:53:15 2004
++++ sample-etc_ppp_ip-up.local	Sun Oct 24 03:54:06 2004
 @@ -16,7 +16,7 @@
  ## in the environment as either PPP_LOCAL or IPLOCAL.
  ##

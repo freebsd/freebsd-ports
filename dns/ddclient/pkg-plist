@@ -1,5 +1,5 @@
 etc/ddclient.conf.sample
-etc/rc.d/ddclient.sh.sample
+etc/rc.d/ddclient.sh
 sbin/ddclient
 share/ddclient/COPYING
 share/ddclient/COPYRIGHT
