@@ -7,7 +7,7 @@
 #
 
 PORTNAME?=	vim
-PORTVERSION=	6.0ae
+PORTVERSION=	6.0aq
 PORTREVISION?=	0
 CATEGORIES?=	editors
 MASTER_SITES=	ftp://nuxi.ucdavis.edu/pub/vim/unreleased/unix/ \
@@ -19,7 +19,6 @@ MASTER_SITES=	ftp://nuxi.ucdavis.edu/pub/vim/unreleased/unix/ \
 		ftp://ftp.mirror.ac.uk/sites/ftp.vim.org/pub/vim/unreleased/unix/ \
 		ftp://ftp.progsoc.uts.edu.au/pub/vim/unreleased/unix/
 DISTNAME=	vim-${PORTVERSION}
-DISTFILES=	${DISTNAME}-src${EXTRACT_SUFX} ${DISTNAME}-rt${EXTRACT_SUFX}
 
 #PATCH_SITES=	${MASTER_SITES:S/unix/patches/}
 #.for p in 01
