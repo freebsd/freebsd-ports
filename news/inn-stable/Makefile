@@ -3,7 +3,7 @@
 # Date created:		20 Oct 1994 (1.4), 18 Dec 1996 (1.5.1)
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.28 1998/08/16 18:56:31 hoek Exp $
+# $Id: Makefile,v 1.31 1999/02/16 22:01:04 andreas Exp $
 #
 
 DISTNAME=	inn-STABLE_2_2-1999-02-14_03-02
@@ -82,5 +82,7 @@ post-install:
 	fi
 	${SED} <${FILESDIR}/innd.sh >${PREFIX}/etc/rc.d/innd.sh \
 		s+!!PREFIX!!+${PREFIX}+g && chmod +x ${PREFIX}/etc/rc.d/innd.sh
+	# make rnews work when using newsfeeds over uucp !
+	chmod 4555 ${PREFIX}/news/bin/rnews
 
 .include <bsd.port.mk>
