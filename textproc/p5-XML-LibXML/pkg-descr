@@ -3,7 +3,7 @@ parser support yet), and the DOM tree.  It also provides an
 XML::XPath-like findnodes() interface, providing access to the XPath API
 in libxml2.
 
-WWW: http://search.cpan.org/search?dist=XML-LibXML
+WWW: http://search.cpan.org/dist/XML-LibXML/
 
 -- Sergey Skvortsov
 skv@FreeBSD.org
