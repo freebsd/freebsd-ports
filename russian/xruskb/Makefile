@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xruskb
-PORTVERSION=	1.13.0
+PORTVERSION=	1.15.2
 CATEGORIES=	russian x11
 MASTER_SITES=	ftp://ftp.yars.free.net/pub/software/unix/X11/
 

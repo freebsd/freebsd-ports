@@ -3,6 +3,14 @@ bin/xrusmodmap
 lib/X11/app-defaults/Xrus
 share/xruskb/DocumentL.xpm
 share/xruskb/DocumentY.xpm
+share/xruskb/fr.xmm
+share/xruskb/hebrew-iso8.xmm
+share/xruskb/hebrew.xmm
+share/xruskb/jcuken-frru-cp1251.xmm
+share/xruskb/jcuken-frru-cp866.xmm
+share/xruskb/jcuken-frru-cyr.xmm
+share/xruskb/jcuken-frru-iso5.xmm
+share/xruskb/jcuken-frru-koi8.xmm
 share/xruskb/kbeng.tiff
 share/xruskb/kbeng.xpm
 share/xruskb/kbeng8.xpm
