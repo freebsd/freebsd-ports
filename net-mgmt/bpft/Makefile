@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	bpft
-PORTVERSION=	4.20030301
+PORTVERSION=	4.20030925
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://rusunix.org/pub/FreeBSD/distfiles/
@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=bpft4
 DISTNAME=	bpft4-latest
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	vampiro@rusunix.org
+MAINTAINER=	aquatique@rusunix.org
 COMMENT=	The BPF Traffic collector
 
 WRKSRC=		${WRKDIR}/bpft

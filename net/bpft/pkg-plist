@@ -8,8 +8,8 @@ bin/trafstat
 bin/trafstop
 etc/rc.d/trafd.sh
 etc/traflog.format
-share/doc/bpft/README
-share/doc/bpft/WhatsNew
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/WhatsNew
 @dirrm var/bpft
 @unexec rmdir %%PREFIX%%/var 2>/dev/null || true
-@dirrm share/doc/bpft
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
