@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Apache-Session-SharedMem
-PORTVERSION=	0.31
-PORTREVISION=	1
+PORTVERSION=	0.41
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Apache
@@ -26,8 +25,8 @@ MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Apache::Session::Store::SharedMem.3 \
 		Apache::Session::SharedMem.3
 
-post-patch:
-	@${CP} ${WRKSRC}/Apache/Session/SharedMem.pm \
-		${WRKSRC}/lib/Apache/Session
+#post-patch:
+#	@${CP} ${WRKSRC}/Apache/Session/SharedMem.pm \
+#		${WRKSRC}/lib/Apache/Session
 
 .include <bsd.port.mk>
