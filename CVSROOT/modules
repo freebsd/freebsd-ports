@@ -5118,6 +5118,7 @@ nvi-devel	ports/editors/nvi-devel
 nvi-m17n	ports/editors/nvi-m17n
 nvi-perl	ports/editors/nvi-perl
 nvidia-driver	ports/x11/nvidia-driver
+nvnet		ports/net/nvnet
 nwclient	ports/sysutils/nwclient
 nwclient602	ports/sysutils/nwclient602
 nwnusers	ports/games/nwnusers
