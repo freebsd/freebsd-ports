@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	newfile
-PORTVERSION=	1.0.9
+PORTVERSION=	1.0.11
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,6 +16,7 @@ COMMENT=	A tool for creating starter files in various languages
 
 BUILD_DEPENDS+=	dot:${PORTSDIR}/graphics/graphviz
 BUILD_DEPENDS+=	rdoc:${PORTSDIR}/textproc/ruby-rdoc
+BUILD_DEPENDS+= /usr/local/bin/perl:${PORTSDIR}/lang/perl5
 
 USE_RUBY=	yes
 USE_REINPLACE=	yes
