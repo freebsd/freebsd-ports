@@ -1,4 +1,4 @@
 bin/tr2latex
 man/man1/tr2latex.1.gz
-lib/texmf/tex/misc/troffman.sty
-lib/texmf/tex/misc/troffms.sty
+share/texmf/tex/latex/misc/troffman.sty
+share/texmf/tex/latex/misc/troffms.sty
