@@ -15,7 +15,7 @@ DISTNAME=		Mail-Cclient-${PORTVERSION}
 
 MAINTAINER=		kbyanc@posi.net
 
-LIB_DEPENDS=		c-client4.7:${PORTSDIR}/mail/cclient
+LIB_DEPENDS=		c-client4.8:${PORTSDIR}/mail/cclient
 
 PERL_CONFIGURE=		yes
 
