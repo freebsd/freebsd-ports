@@ -170,6 +170,7 @@
     SUBDIR += gnet2
     SUBDIR += gnewtellium
     SUBDIR += gnomba
+    SUBDIR += gnome-btdownload
     SUBDIR += gnome-jabber
     SUBDIR += gnome-mud
     SUBDIR += gnome-vnc

@@ -1,0 +1,10 @@
+bin/gnome-btdownload
+share/gnome/application-registry/gnome-btdownload.applications
+share/gnome/gnome-btdownload/glade/dlsession.glade
+share/gnome/gnome-btdownload/glade/errdiag.glade
+share/gnome/gnome-btdownload/pixmaps/download.png
+share/gnome/mime-info/gnome-btdownload.keys
+share/gnome/mime-info/gnome-btdownload.mime
+@dirrm share/gnome/gnome-btdownload/pixmaps
+@dirrm share/gnome/gnome-btdownload/glade
+@dirrm share/gnome/gnome-btdownload
