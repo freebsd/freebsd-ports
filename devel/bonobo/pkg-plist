@@ -19,9 +19,9 @@ bin/sample-control-container
 etc/bonoboConf.sh
 etc/bonoboxConf.sh
 etc/bonobox_printConf.sh
-include/bonobo.h
 include/efs.h
 include/efs_error.h
+include/gnome-1.0/bonobo.h
 include/gnome-1.0/bonobo/Bonobo.h
 include/gnome-1.0/bonobo/bonobo-arg.h
 include/gnome-1.0/bonobo/bonobo-async.h
