@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	multitail
-PORTVERSION=	0.1.6
-PORTREVISION=	2
+PORTVERSION=	0.2.2
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	http://gdesklets.gnomedesktop.org/files/
 PKGNAMEPREFIX=	gdesklets-
@@ -35,9 +34,7 @@ do-install:
 	@${MKDIR} ${DATADIR}/gdesklets/Sensors/${NAME}
 	@${MKDIR} ${DATADIR}/gdesklets/Displays/${NAME}/dark-theme/gfx
 	@${MKDIR} ${DATADIR}/gdesklets/Displays/${NAME}/light-theme/gfx
-	@${MKDIR} ${DATADIR}/gdesklets/Displays/${NAME}/trans-theme/gfx
-	${INSTALL_DATA} ${WRKSRC}/${NAME}/README \
-		${DATADIR}/gdesklets/Displays/${NAME}/
+	@${MKDIR} ${DATADIR}/gdesklets/Displays/${NAME}/trans-theme
 	${INSTALL_DATA} ${WRKSRC}/${NAME}/dark-theme/*.display \
 		${DATADIR}/gdesklets/Displays/${NAME}/dark-theme/
 	${INSTALL_DATA} ${WRKSRC}/${NAME}/dark-theme/gfx/*.png \
@@ -48,13 +45,9 @@ do-install:
 		${DATADIR}/gdesklets/Displays/${NAME}/light-theme/gfx/
 	${INSTALL_DATA} ${WRKSRC}/${NAME}/trans-theme/*.display \
 		${DATADIR}/gdesklets/Displays/${NAME}/trans-theme/
-	${INSTALL_DATA} ${WRKSRC}/${NAME}/trans-theme/gfx/*.png \
-		${DATADIR}/gdesklets/Displays/${NAME}/trans-theme/gfx/
 	${INSTALL_DATA} ${WRKSRC}/${NAME}/*.py \
 		${DATADIR}/gdesklets/Sensors/${NAME}/
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py \
-		${DATADIR}/gdesklets/Sensors/${NAME}/
-	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py \
 		${DATADIR}/gdesklets/Sensors/${NAME}/
 
 post-install:
