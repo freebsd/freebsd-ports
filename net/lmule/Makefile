@@ -32,7 +32,7 @@ CONFIGURE_ARGS=	--without-included-gettext \
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
-WX_CONFIG?=	"${X11BASE}/bin/wx-config"
+WX_CONFIG?=	${X11BASE}/bin/wx-config
 
 post-patch:
 # it works for FreeBSD as well
@@ -53,12 +53,12 @@ post-install:
 
 .if exists(${WX_CONFIG})
 # detect if wxgtk was linked against gtk1 or gtk2
-DECISION_GTK_1_OR_2!= ${WX_CONFIG} --cppflags
+DECISION_GTK_1_OR_2!=	${WX_CONFIG} --static --libs
 .else
 DECISION_GTK_1_OR_2=	""
 .endif
 
-.if (${DECISION_GTK_1_OR_2:Mgtk2} != "")
+.if ${DECISION_GTK_1_OR_2:M*glib-2.0} != ""
 USE_GNOME+=	gtk20
 .else
 USE_GNOME+=	gtk12
