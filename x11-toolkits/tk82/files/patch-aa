@@ -1,6 +1,6 @@
---- configure.orig	Wed Nov  3 21:38:44 1999
-+++ configure	Sun Nov 21 15:55:12 1999
-@@ -1756,7 +1756,7 @@
+--- configure.orig	Tue Dec 14 20:00:19 1999
++++ configure	Sun Dec  8 19:58:41 2002
+@@ -1757,7 +1757,7 @@
  	    LDFLAGS="-Wl,-Bexport"
  	    LD_SEARCH_FLAGS=""
  	    ;;
@@ -9,11 +9,13 @@
  	    # Not available on all versions:  check for include file.
  	    ac_safe=`echo "dlfcn.h" | sed 'y%./+-%__p_%'`
  echo $ac_n "checking for dlfcn.h""... $ac_c" 1>&6
-@@ -1788,14 +1788,19 @@
+@@ -1788,15 +1788,20 @@
+ if eval "test \"`echo '$ac_cv_header_'$ac_safe`\" = yes"; then
    echo "$ac_t""yes" 1>&6
    
- 		SHLIB_CFLAGS="-fpic"
+-		SHLIB_CFLAGS="-fpic"
 -		SHLIB_LD="ld -Bshareable -x"
++		SHLIB_CFLAGS="-fPIC"
  		SHLIB_LD_LIBS=""
  		SHLIB_SUFFIX=".so"
  		DL_OBJS="tclLoadDl.o"
@@ -31,7 +33,7 @@
  	    
  else
    echo "$ac_t""no" 1>&6
-@@ -2266,6 +2271,7 @@
+@@ -2267,6 +2272,7 @@
  	echo "$ac_t""no" 1>&6
      fi
  
