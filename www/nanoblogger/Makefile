@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	nanoblogger
-PORTVERSION=	2.8
+PORTVERSION=	2.9
 CATEGORIES=	www
 MASTER_SITES=	http://home.columbus.rr.com/n1xt3r/downloads/nanoblogger/
 
