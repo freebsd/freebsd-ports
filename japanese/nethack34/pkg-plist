@@ -2,9 +2,9 @@ bin/%%HACKNAME%%
 %%HACKDIR%%/%%HACKNAME%%
 @exec mkdir %D/%%HACKDIR%%/save
 @exec chmod -R 775 %D/%%HACKDIR%%
-@exec chmod 2755 %D/%%HACKDIR%%/nethack
+@exec chmod 2755 %D/%%HACKDIR%%/%%HACKNAME%%
 @exec chown games:games %D/%%HACKDIR%%/save
-@unexec rm -rf %D/%%HACKDIR%%/save
+@unexec rmdir %D/%%HACKDIR%%/save 2>/dev/null || true
 %%HACKDIR%%/Arc-fila.lev
 %%HACKDIR%%/Arc-filb.lev
 %%HACKDIR%%/Arc-goal.lev

@@ -1,2 +1,4 @@
-MD5 (nethack-341.tgz) = aefcbeb20210b2d64511c84bd03c3e4e
-MD5 (jnethack-3.4.1-0.4.diff.gz) = 14affaa217d4aac60098c7321018ad8a
+MD5 (nethack-343-src.tgz) = 21479c95990eefe7650df582426457f9
+SIZE (nethack-343-src.tgz) = 3497458
+MD5 (jnethack-3.4.3-0.1.diff.gz) = 785e75d3fde705a113b70c2b322eda6a
+SIZE (jnethack-3.4.3-0.1.diff.gz) = 922501

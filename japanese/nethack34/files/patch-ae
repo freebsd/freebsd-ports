@@ -1,5 +1,5 @@
---- sys/unix/Makefile.top.orig	Tue Aug 13 06:38:30 2002
-+++ sys/unix/Makefile.top	Tue Aug 13 06:40:41 2002
+--- sys/unix/Makefile.top.orig	Mon Feb  9 12:12:22 2004
++++ sys/unix/Makefile.top	Mon Feb  9 12:13:05 2004
 @@ -14,18 +14,17 @@
  # MAKE = make
  
@@ -37,8 +37,8 @@
  # per discussion in Install.X11 and Install.Qt
 -VARDATND = 
 +# VARDATND = 
- # VARDATND = x11tiles pet_mark.xbm
- # VARDATND = x11tiles pet_mark.xbm rip.xpm
+ # VARDATND = x11tiles NetHack.ad pet_mark.xbm
+ # VARDATND = x11tiles NetHack.ad pet_mark.xbm rip.xpm
  # for Atari/Gem
 @@ -48,7 +47,7 @@
  # for BeOS
