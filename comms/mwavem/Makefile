@@ -100,7 +100,7 @@ pre-fetch:
 .endif
 
 .if ${OSVERSION} < 410000
-BROKEN=		"Systems prior to 4.1 are not supported"
+IGNORE=		"Systems prior to 4.1 are not supported"
 .endif
 
 .include <bsd.port.post.mk>
