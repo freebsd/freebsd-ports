@@ -49,6 +49,9 @@ bin/linkchecker
 %%PYTHON_SITELIBDIR%%/linkcheck/checker/nntpurl.py
 %%PYTHON_SITELIBDIR%%/linkcheck/checker/nntpurl.pyc
 %%PYTHON_SITELIBDIR%%/linkcheck/checker/nntpurl.pyo
+%%PYTHON_SITELIBDIR%%/linkcheck/checker/pool.py
+%%PYTHON_SITELIBDIR%%/linkcheck/checker/pool.pyc
+%%PYTHON_SITELIBDIR%%/linkcheck/checker/pool.pyo
 %%PYTHON_SITELIBDIR%%/linkcheck/checker/proxysupport.py
 %%PYTHON_SITELIBDIR%%/linkcheck/checker/proxysupport.pyc
 %%PYTHON_SITELIBDIR%%/linkcheck/checker/proxysupport.pyo
@@ -277,6 +280,10 @@ bin/linkchecker
 %%PYTHON_SITELIBDIR%%/linkcheck/dns/zone.py
 %%PYTHON_SITELIBDIR%%/linkcheck/dns/zone.pyc
 %%PYTHON_SITELIBDIR%%/linkcheck/dns/zone.pyo
+%%PYTHON_SITELIBDIR%%/linkcheck/ftpparse/__init__.py
+%%PYTHON_SITELIBDIR%%/linkcheck/ftpparse/__init__.pyc
+%%PYTHON_SITELIBDIR%%/linkcheck/ftpparse/__init__.pyo
+%%PYTHON_SITELIBDIR%%/linkcheck/ftpparse/_ftpparse.so
 %%PYTHON_SITELIBDIR%%/linkcheck/fcgi.py
 %%PYTHON_SITELIBDIR%%/linkcheck/fcgi.pyc
 %%PYTHON_SITELIBDIR%%/linkcheck/fcgi.pyo
@@ -307,6 +314,9 @@ bin/linkchecker
 %%PYTHON_SITELIBDIR%%/linkcheck/logger/csvlog.py
 %%PYTHON_SITELIBDIR%%/linkcheck/logger/csvlog.pyc
 %%PYTHON_SITELIBDIR%%/linkcheck/logger/csvlog.pyo
+%%PYTHON_SITELIBDIR%%/linkcheck/logger/dot.py
+%%PYTHON_SITELIBDIR%%/linkcheck/logger/dot.pyc
+%%PYTHON_SITELIBDIR%%/linkcheck/logger/dot.pyo
 %%PYTHON_SITELIBDIR%%/linkcheck/logger/gml.py
 %%PYTHON_SITELIBDIR%%/linkcheck/logger/gml.pyc
 %%PYTHON_SITELIBDIR%%/linkcheck/logger/gml.pyo
@@ -357,11 +367,12 @@ share/locale/fr/LC_MESSAGES/linkchecker.mo
 share/locale/nl/LC_MESSAGES/linkchecker.mo
 @dirrm %%DATADIR%%
 @dirrm %%EXAMPLESDIR%%
-@dirrm %%PYTHON_SITELIBDIR%%/linkcheck/logger
+@dirrm %%PYTHON_SITELIBDIR%%/linkcheck/HtmlParser
 @dirrm %%PYTHON_SITELIBDIR%%/linkcheck/dns/rdtypes/IN
 @dirrm %%PYTHON_SITELIBDIR%%/linkcheck/dns/rdtypes/ANY
 @dirrm %%PYTHON_SITELIBDIR%%/linkcheck/dns/rdtypes
 @dirrm %%PYTHON_SITELIBDIR%%/linkcheck/dns
+@dirrm %%PYTHON_SITELIBDIR%%/linkcheck/ftpparse
+@dirrm %%PYTHON_SITELIBDIR%%/linkcheck/logger
 @dirrm %%PYTHON_SITELIBDIR%%/linkcheck/checker
-@dirrm %%PYTHON_SITELIBDIR%%/linkcheck/HtmlParser
 @dirrm %%PYTHON_SITELIBDIR%%/linkcheck
