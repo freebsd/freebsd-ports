@@ -329,6 +329,7 @@
     SUBDIR += wmtop
     SUBDIR += wmupmon
     SUBDIR += wmzazof
+    SUBDIR += worldtools
     SUBDIR += wots
     SUBDIR += wtail
     SUBDIR += x86info
