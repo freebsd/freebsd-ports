@@ -1,51 +1,20 @@
-bin/make_printerdef
-bin/make_smbcodepage
+bin/addtosmbpass
+bin/convert_smbpasswd
 bin/make_smbpasswd
-bin/make_unicodemap
 bin/nmblookup
+bin/pdbedit
 bin/rpcclient
 bin/smbcacls
 bin/smbclient
 bin/smbcontrol
+bin/smbgroupedit
 bin/smbpasswd
 bin/smbspool
 bin/smbstatus
 bin/smbtar
+bin/smbtree
 bin/testparm
 bin/testprns
-etc/codepages/codepage.1251
-etc/codepages/codepage.437
-etc/codepages/codepage.737
-etc/codepages/codepage.775
-etc/codepages/codepage.850
-etc/codepages/codepage.852
-etc/codepages/codepage.857
-etc/codepages/codepage.861
-etc/codepages/codepage.866
-etc/codepages/codepage.932
-etc/codepages/codepage.936
-etc/codepages/codepage.949
-etc/codepages/codepage.950
-etc/codepages/unicode_map.437
-etc/codepages/unicode_map.737
-etc/codepages/unicode_map.775
-etc/codepages/unicode_map.850
-etc/codepages/unicode_map.852
-etc/codepages/unicode_map.857
-etc/codepages/unicode_map.861
-etc/codepages/unicode_map.866
-etc/codepages/unicode_map.932
-etc/codepages/unicode_map.936
-etc/codepages/unicode_map.949
-etc/codepages/unicode_map.950
-etc/codepages/unicode_map.ISO8859-1
-etc/codepages/unicode_map.ISO8859-13
-etc/codepages/unicode_map.ISO8859-15
-etc/codepages/unicode_map.ISO8859-2
-etc/codepages/unicode_map.ISO8859-5
-etc/codepages/unicode_map.ISO8859-7
-etc/codepages/unicode_map.ISO8859-9
-etc/codepages/unicode_map.KOI8-R
 etc/rc.d/samba.sh.sample
 etc/smb.conf.default
 sbin/nmbd
@@ -111,8 +80,6 @@ sbin/swat
 %%PORTDOCS%%share/doc/samba/htmldocs/nmblookup.1.html
 %%PORTDOCS%%share/doc/samba/htmldocs/printer_driver2.html
 %%PORTDOCS%%share/doc/samba/htmldocs/rpcclient.1.html
-%%PORTDOCS%%share/doc/samba/htmldocs/samba-pdc-faq.html
-%%PORTDOCS%%share/doc/samba/htmldocs/samba-pdc-howto.html
 %%PORTDOCS%%share/doc/samba/htmldocs/samba.7.html
 %%PORTDOCS%%share/doc/samba/htmldocs/smb.conf.5.html
 %%PORTDOCS%%share/doc/samba/htmldocs/smbcacls.1.html
@@ -123,7 +90,6 @@ sbin/swat
 %%PORTDOCS%%share/doc/samba/htmldocs/smbmount.8.html
 %%PORTDOCS%%share/doc/samba/htmldocs/smbpasswd.5.html
 %%PORTDOCS%%share/doc/samba/htmldocs/smbpasswd.8.html
-%%PORTDOCS%%share/doc/samba/htmldocs/smbrun.1.html
 %%PORTDOCS%%share/doc/samba/htmldocs/smbsh.1.html
 %%PORTDOCS%%share/doc/samba/htmldocs/smbspool.8.html
 %%PORTDOCS%%share/doc/samba/htmldocs/smbstatus.1.html
@@ -136,6 +102,7 @@ sbin/swat
 %%PORTDOCS%%share/doc/samba/htmldocs/wfw_slip.htm
 %%PORTDOCS%%share/doc/samba/htmldocs/winbind.html
 %%PORTDOCS%%share/doc/samba/htmldocs/winbindd.8.html
+%%PORTDOCS%%share/doc/samba/textdocs/ADS-HOWTO.txt
 %%PORTDOCS%%share/doc/samba/textdocs/Application_Serving.txt
 %%PORTDOCS%%share/doc/samba/textdocs/BROWSING-Config.txt
 %%PORTDOCS%%share/doc/samba/textdocs/BROWSING.txt
@@ -145,6 +112,7 @@ sbin/swat
 %%PORTDOCS%%share/doc/samba/textdocs/DNIX.txt
 %%PORTDOCS%%share/doc/samba/textdocs/Faxing.txt
 %%PORTDOCS%%share/doc/samba/textdocs/GOTCHAS.txt
+%%PORTDOCS%%share/doc/samba/textdocs/GROUP-MAPPING-HOWTO.txt
 %%PORTDOCS%%share/doc/samba/textdocs/HINTS.txt
 %%PORTDOCS%%share/doc/samba/textdocs/INSTALL.sambatar
 %%PORTDOCS%%share/doc/samba/textdocs/Imprints.txt
@@ -154,6 +122,7 @@ sbin/swat
 %%PORTDOCS%%share/doc/samba/textdocs/Passwords.txt
 %%PORTDOCS%%share/doc/samba/textdocs/Printing.txt
 %%PORTDOCS%%share/doc/samba/textdocs/README.DCEDFS
+%%PORTDOCS%%share/doc/samba/textdocs/README.NOW
 %%PORTDOCS%%share/doc/samba/textdocs/README.jis
 %%PORTDOCS%%share/doc/samba/textdocs/README.sambatar
 %%PORTDOCS%%share/doc/samba/textdocs/Recent-FAQs.txt
@@ -173,14 +142,6 @@ sbin/swat
 %%PORTDOCS%%share/doc/samba/textdocs/kurs.tex
 %%PORTDOCS%%share/doc/samba/textdocs/logo.ps
 %%PORTDOCS%%share/doc/samba/textdocs/security_level.txt
-share/examples/samba/LDAP/README
-share/examples/samba/LDAP/export2_smbpasswd.pl
-share/examples/samba/LDAP/export_smbpasswd.pl
-share/examples/samba/LDAP/import2_smbpasswd.pl
-share/examples/samba/LDAP/import_smbpasswd.pl
-share/examples/samba/LDAP/ldapchpasswd
-share/examples/samba/LDAP/ldapsync.pl
-share/examples/samba/LDAP/samba.schema
 share/examples/samba/README
 share/examples/samba/VFS/.cvsignore
 share/examples/samba/VFS/Makefile
@@ -199,10 +160,11 @@ share/examples/samba/appliance/smb.conf-appliance
 share/examples/samba/autofs/auto.a
 share/examples/samba/dce-dfs/README
 share/examples/samba/dce-dfs/smb.conf
+share/examples/samba/libsmbclient/Makefile
+share/examples/samba/libsmbclient/README
 share/examples/samba/libsmbclient/testsmbc.c
 share/examples/samba/libsmbclient/tree.c
 share/examples/samba/misc/extra_smbstatus
-share/examples/samba/misc/modify_samba_config.pl
 share/examples/samba/misc/swat.pl
 share/examples/samba/misc/wall.perl
 share/examples/samba/printer-accounting/README
@@ -212,7 +174,6 @@ share/examples/samba/printer-accounting/hp5-redir
 share/examples/samba/printer-accounting/lp-acct
 share/examples/samba/printer-accounting/printcap
 share/examples/samba/printing/smbprint
-share/examples/samba/printing/smbprint.newer
 share/examples/samba/printing/smbprint.sysv
 share/examples/samba/simple/README
 share/examples/samba/simple/smb.conf
@@ -250,8 +211,6 @@ share/swat/help/nmbd.8.html
 share/swat/help/nmblookup.1.html
 share/swat/help/printer_driver2.html
 share/swat/help/rpcclient.1.html
-share/swat/help/samba-pdc-faq.html
-share/swat/help/samba-pdc-howto.html
 share/swat/help/samba.7.html
 share/swat/help/smb.conf.5.html
 share/swat/help/smbcacls.1.html
@@ -262,7 +221,6 @@ share/swat/help/smbmnt.8.html
 share/swat/help/smbmount.8.html
 share/swat/help/smbpasswd.5.html
 share/swat/help/smbpasswd.8.html
-share/swat/help/smbrun.1.html
 share/swat/help/smbsh.1.html
 share/swat/help/smbspool.8.html
 share/swat/help/smbstatus.1.html
@@ -285,6 +243,29 @@ share/swat/images/status.gif
 share/swat/images/viewconfig.gif
 share/swat/include/footer.html
 share/swat/include/header.html
+share/swat/lang/ja/help/welcome.html
+share/swat/lang/ja/images/globals.gif
+share/swat/lang/ja/images/home.gif
+share/swat/lang/ja/images/passwd.gif
+share/swat/lang/ja/images/printers.gif
+share/swat/lang/ja/images/samba.gif
+share/swat/lang/ja/images/shares.gif
+share/swat/lang/ja/images/status.gif
+share/swat/lang/ja/images/viewconfig.gif
+share/swat/lang/ja/include/footer.html
+share/swat/lang/ja/include/header.html
+share/swat/lang/ja/include/header.nocss.html
+share/swat/lang/ja/include/header_css.html
+share/swat/lang/tr/help/welcome.html
+share/swat/lang/tr/images/globals.gif
+share/swat/lang/tr/images/home.gif
+share/swat/lang/tr/images/passwd.gif
+share/swat/lang/tr/images/printers.gif
+share/swat/lang/tr/images/samba.gif
+share/swat/lang/tr/images/shares.gif
+share/swat/lang/tr/images/status.gif
+share/swat/lang/tr/images/viewconfig.gif
+share/swat/lang/tr/include/header.html
 share/swat/using_samba/appa_01.html
 share/swat/using_samba/appa_02.html
 share/swat/using_samba/appa_03.html
@@ -450,6 +431,15 @@ share/swat/using_samba/this_edition.html
 @dirrm share/swat/include
 @dirrm share/swat/images
 @dirrm share/swat/help
+@dirrm share/swat/lang/ja/include
+@dirrm share/swat/lang/ja/images
+@dirrm share/swat/lang/ja/help
+@dirrm share/swat/lang/ja
+@dirrm share/swat/lang/tr/include
+@dirrm share/swat/lang/tr/images
+@dirrm share/swat/lang/tr/help
+@dirrm share/swat/lang/tr
+@dirrm share/swat/lang
 @dirrm share/swat
 @dirrm share/examples/samba/validchars
 @dirrm share/examples/samba/tridge
@@ -463,7 +453,6 @@ share/swat/using_samba/this_edition.html
 @dirrm share/examples/samba/dce-dfs
 @dirrm share/examples/samba/autofs
 @dirrm share/examples/samba/appliance
-@dirrm share/examples/samba/LDAP
 @dirrm share/examples/samba/VFS/block
 @dirrm share/examples/samba/VFS
 @dirrm share/examples/samba
@@ -472,4 +461,3 @@ share/swat/using_samba/this_edition.html
 %%PORTDOCS%%@dirrm share/doc/samba/htmldocs
 %%PORTDOCS%%@dirrm share/doc/samba/faq
 %%PORTDOCS%%@dirrm share/doc/samba
-@dirrm etc/codepages
