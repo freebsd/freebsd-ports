@@ -2,7 +2,15 @@
 $FreeBSD$
 
 --- src/chemeq.cc.orig	Thu May 10 19:10:19 2001
-+++ src/chemeq.cc	Sat Mar  8 21:59:37 2003
++++ src/chemeq.cc	Sun Jan 25 20:56:21 2004
+@@ -1,6 +1,6 @@
+ #include "chemeq.h"
+ #include <math.h>
+-#include <strstream.h>
++#include <strstream>
+ atome lesatomes[] ={
+ {-1, "e"},
+ {1, "H"},
 @@ -150,7 +150,7 @@
    if (suiv) suiv->compte(c,mult);
  };
