@@ -20,6 +20,8 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
+DEPRECATED=	"no longer on CPAN"
+EXPIRATION_DATE=	2005-03-26
 MAN3=		Math::BigIntFast.3
 
 .include <bsd.port.mk>
