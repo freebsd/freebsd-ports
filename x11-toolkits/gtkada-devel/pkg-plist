@@ -6,11 +6,14 @@ bin/gdialog
 bin/gtkada-config
 bin/gate
 lib/libgtkada.a
+lib/libgtkada.so
 lib/libgtkada-1.2.so.10
 lib/libgtkada_gl.a
 lib/libgtkada_gl-1.2.so.10
 lib/libgtkada_art.a
+lib/libgtkada_art.so
 lib/libgtkada_art-1.2.so.10
+lib/libgtkada_gl.so
 include/gtkada/glib-enums.ads
 include/gtkada/glib-xml.adb
 include/gtkada/glib-gslist.adb

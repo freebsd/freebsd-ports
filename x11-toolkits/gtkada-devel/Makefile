@@ -7,22 +7,24 @@
 
 PORTNAME=	gtkada
 PORTVERSION=	1.2.10
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	http://gtkada.eu.org/
+MASTER_SITES=	http://gtkada.eu.org/ \
+		http://www.adapower.com/gtkada/
 DISTNAME=	GtkAda-${PORTVERSION}
 
 MAINTAINER=	sam@inf.enst.fr
 
-LIB_DEPENDS=	GLU.14:${PORTSDIR}/graphics/Mesa3
 BUILD_DEPENDS=	adagcc:${PORTSDIR}/lang/gnat \
 		gdk-pixbuf-config:${PORTSDIR}/graphics/gdk-pixbuf
 
+USE_MESA=	yes
 USE_AUTOCONF=	yes
 USE_X_PREFIX=	yes
 USE_GNOMELIBS=	yes
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
-MAN_MAN1=	dgate.1 gate.1 gtkada-config.1
+MAN1=	dgate.1 gate.1 gtkada-config.1
 
 post-install:
 	${INSTALL_DATA}	${WRKSRC}/docs/*.1 ${PREFIX}/man/man1/
