@@ -1,0 +1,35 @@
+--- sniffit.0.3.5.c.orig	Fri Apr 18 02:33:58 1997
++++ sniffit.0.3.5.c	Fri Apr  3 20:44:10 1998
+@@ -411,11 +411,22 @@
+ 	proto=unwrap_packet(sp, info); 
+ 	if(proto == NO_IP)	return DONT_EXAMINE; /* no use in trying */
+ 	if(proto == NO_IP_4)	return DONT_EXAMINE; /* no use in trying */
++	if(proto == CORRUPT_IP)
++	  {
++		printf("Suspicious Packet detected... (Split header)\n");
++		return DONT_EXAMINE;
++	  }
+ 
+         memcpy(&iphead,(sp+PROTO_HEAD),sizeof(struct IP_header));
+ 	so=(unsigned char *)&(iphead.source);
+        	dest=(unsigned char *)&(iphead.destination);
+ 
++	if(info->FRAG_nf!=0)
++	  {
++		printf("Fragment Skipped...\n"); 
++		return DONT_EXAMINE;
++	  }
++
+ 	if((proto==TCP)&&(PROTOCOLS&F_TCP)) 
+ 		{
+ #ifdef DEBUG_ONSCREEN
+@@ -1220,6 +1231,9 @@
+ 	proto=unwrap_packet(sp, info);
+ 	if(proto == NO_IP)	return DONT_EXAMINE; /* no use in trying */
+ 	if(proto == NO_IP_4)	return DONT_EXAMINE; /* no use in trying */
++	if(proto == CORRUPT_IP) return DONT_EXAMINE; /* no use in trying */
++
++	if(info->FRAG_nf!=0)	return DONT_EXAMINE;
+ 
+ 	(*IP_nr_of_packets)++;
+ 	if(proto==ICMP)  

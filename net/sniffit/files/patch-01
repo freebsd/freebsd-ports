@@ -1,0 +1,23 @@
+--- Makefile.in.orig	Fri Apr 18 02:33:57 1997
++++ Makefile.in	Fri Apr  3 20:50:47 1998
+@@ -11,9 +11,9 @@
+ DEFS	   = @DEFS@
+ OS_OPT     = @OS_OPT@
+ OBJ_FLAG   = -w -O2 -c
+-OBJ_OPT    = -I./libpcap-0.3 -L./libpcap-0.3
++#OBJ_OPT    = -I./libpcap-0.3 -L./libpcap-0.3
+ EXE_FLAG   = -w -O2 -o sniffit
+-EXE_OPT    = -I./libpcap-0.3 -L./libpcap-0.3 -lpcap
++EXE_OPT    = -lpcap
+ EXE_OBJ    = sn_packets.o sn_generation.o sn_interface.o sn_cfgfile.o \
+              sn_logfile.o
+ DEP_FILES  = sn_config.h pcap.h sn_data.h sn_defines.h sn_plugins.h \
+@@ -21,7 +21,7 @@
+              sn_generation.o sn_interface.o sn_cfgfile.o sn_logfile.o
+ 
+ sniffit: $(SNIFFIT) $(DEP_FILES)
+-	cd libpcap-0.3; make; cd ..
++	#cd libpcap-0.3; make; cd ..
+ 	$(CC) $(EXE_FLAG) $(SNIFFIT) $(EXE_OBJ) $(EXE_OPT) $(LIBS) $(DEFS) $(OS_OPT) 
+ 	strip sniffit
+ 
