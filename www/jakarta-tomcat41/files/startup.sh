@@ -13,15 +13,17 @@ MYSELF=`basename $0`
 
 case "$1" in
 	start)
+		echo -n ' '
 		truncate -s 0 %%PID_FILE%%
 		chown %%USER%%:%%GROUP%% %%PID_FILE%%
 		chmod 600 %%PID_FILE%%
-		su -f -m %%USER%% -c "exec %%CONTROL_SCRIPT%% start > /dev/null" && echo -n ' %%APP_SHORTNAME%%'
+		su -f -m %%USER%% -c "exec %%CONTROL_SCRIPT%% start" >/dev/null && echo -n '%%APP_SHORTNAME%%'
 		;;
 	stop)
+		echo -n ' '
 		chown %%USER%%:%%GROUP%% %%PID_FILE%%
 		chmod 600 %%PID_FILE%%
-		su -f -m %%USER%% -c "exec %%CONTROL_SCRIPT%% stop > /dev/null" && echo -n ' %%APP_SHORTNAME%%'
+		su -f -m %%USER%% -c "exec %%CONTROL_SCRIPT%% stop" >/dev/null 2>&1 ; echo -n '%%APP_SHORTNAME%%'
 		;;
 	*)
 		echo ""
