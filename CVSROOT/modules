@@ -7970,6 +7970,7 @@ sys_netccitt	src/sys/netccitt
 sys_netgraph	src/sys/netgraph
 sys_netinet	src/sys/netinet
 sys_netinet6	src/sys/netinet6
+sys_netipsec	src/sys/netipsec
 sys_netipx	src/sys/netipx
 sys_netiso	src/sys/netiso
 sys_netkey	src/sys/netkey
