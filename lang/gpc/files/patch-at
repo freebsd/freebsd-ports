@@ -1,0 +1,20 @@
+--- p/Make-lang.in.orig	Tue Jan 19 02:10:16 1999
++++ p/Make-lang.in	Mon Jan  1 07:30:02 2001
+@@ -42,7 +42,7 @@
+ HARDLINK=ln
+ 
+ # Where to install the demos (relative to the prefix)
+-DEMO_DIR=doc/gpc/demos
++DEMO_DIR=share/doc/gpc/demos
+ demodir=$(prefix)/$(DEMO_DIR)
+ 
+ # Analogous to objext
+@@ -281,7 +281,7 @@
+ p/doc/gpc.info: $(GPC_TEXI) p/doc/gpcpas.texi
+ 	if [ -d p/doc ]; then true; else mkdir p/doc; fi
+ 	src=`cd $(srcdir); pwd`; \
+-	cd p/doc; $(MAKEINFO) -I$${src}/p/doc -o gpc.info $${src}/p/doc/gpc.texi
++	cd p/doc; $(MAKEINFO) --no-split -I$${src}/p/doc -o gpc.info $${src}/p/doc/gpc.texi
+ 
+ p/doc/gpc.dvi: $(GPC_TEXI) p/doc/gpcpas.texi
+ 	if [ -d p/doc ]; then true; else mkdir p/doc; fi

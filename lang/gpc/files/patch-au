@@ -1,0 +1,13 @@
+--- p/doc/gpc.texi.orig	Tue Jul  7 00:21:41 1998
++++ p/doc/gpc.texi	Mon Jan  1 07:17:33 2001
+@@ -23,6 +23,10 @@
+ @c Header.
+ 
+ @setfilename gpc.info
++@dircategory Programming
++@direntry
++* GPC: (gpc).			The GNU Pascal Compiler.
++@end direntry
+ @c @setfilename usegpc.info
+ @c @setfilename hackgpc.info
+ @c To produce the full manual, use the "gpc.info" setfilename, and
