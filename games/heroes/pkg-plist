@@ -1,9 +1,9 @@
-bin/heroes
-@unexec install-info --delete %D/info/heroes.info %D/info/dir
-info/heroes.info
 @exec install-info --section="X11 Games" --entry="* heroes: (heroes).           Game of yore similar to the "Tron" and "Nibbles"" %D/info/heroes.info %D/info/dir
-share/locale/fr/LC_MESSAGES/heroes.mo
-share/locale/nl/LC_MESSAGES/heroes.mo
+@unexec install-info --delete %D/info/heroes.info %D/info/dir
+bin/heroes
+info/dir
+info/heroes.info
+lib/charset.alias
 share/heroes/etc/heroesrc
 share/heroes/levels/level.lst
 share/heroes/levels/niv010.lvl
@@ -206,6 +206,11 @@ share/heroes/tilesets/level09.pie
 share/heroes/tilesets/level10.glz
 share/heroes/tilesets/level10.pcx
 share/heroes/tilesets/level10.pie
+share/locale/de/LC_MESSAGES/heroes.mo
+share/locale/fr/LC_MESSAGES/heroes.mo
+share/locale/it/LC_MESSAGES/heroes.mo
+share/locale/locale.alias
+share/locale/nl/LC_MESSAGES/heroes.mo
 @dirrm share/heroes/tilesets
 @dirrm share/heroes/sfx
 @dirrm share/heroes/pics
