@@ -1,0 +1,12 @@
+--- ./Arena/Implementation/icon.c.org	Thu Mar 21 07:28:53 1996
++++ ./Arena/Implementation/icon.c	Tue Apr 30 00:22:54 1996
+@@ -46,7 +46,9 @@
+ #if defined __QNX__ || (defined(sco) && !defined(sco_os5))
+ #define index strchr
+ #else
++#if !defined(index)
+ extern char *index();
++#endif
+ #endif
+ 
+ static char basis_64[] =
