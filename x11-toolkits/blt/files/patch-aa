@@ -1,41 +1,44 @@
-*** configure.orig	Wed Dec 14 15:17:42 1994
---- configure	Wed Dec 14 15:22:42 1994
-***************
-*** 183,187 ****
-  # -----------------------------------------------------------------------
-  if test -z "$prefix" ; then
-!     prefix=/usr/local/blt
-  fi
+--- configure.orig	Sun Apr 21 07:47:32 1996
++++ configure	Sat Aug  3 18:59:02 1996
+@@ -1460,7 +1460,7 @@
+ 
+ if test "$prefix" = "NONE"; then 
+     if test -z "$PREFIX" ; then
+-	prefix=/usr/local/blt
++	prefix=/usr/local
+     else
+ 	prefix=$PREFIX
+     fi
+@@ -2192,9 +2192,8 @@
+     TCLLIBDIR="__Edit_${saveFile}__"
+     echo "$ac_t""no" 1>&6
+ fi
+-if test "$TCLLIBDIR" != "/usr/lib" ; then
+-    TCLLIBSW="-L$TCLLIBDIR -ltcl${TCL_VERSION}"
+-fi
++
++TCLLIBSW=$TCL_LIB_SPEC
+ 
+ 
+ 
+@@ -2312,10 +2311,7 @@
+     echo "$ac_t""no" 1>&6
+ fi
+ 
+-if test "$TKLIBDIR" != "/usr/lib" ; then
+-    TKLIBSW="-L$TKLIBDIR -ltk${TK_VERSION}"
+-fi
+-
++TKLIBSW=$TK_LIB_SPEC
+ 
   
---- 183,187 ----
-  # -----------------------------------------------------------------------
-  if test -z "$prefix" ; then
-!     prefix=/usr/local
-  fi
-  
-***************
-*** 1114,1117 ****
---- 1114,1123 ----
-          SHLIB_SUFFIX='.so.$(MAJOR_VERSION)'
-          ;;
-+       FreeBSD*)
-+ 	SHLIB_CCFLAGS="-fpic"
-+ 	SHLIB_LDFLAGS="-Bshareable"
-+ 	SHLIB_LOADER="ld"
-+ 	SHLIB_SUFFIX='.so.$(MAJOR_VERSION).$(MINOR_VERSION)'
-+ 	;;
-        *)
-  	echo "Don't know how to make shared libraries for $system"
-***************
-*** 1137,1141 ****
-  LIBDIR="$DESTDIR/lib"
-  MANDIR="$DESTDIR/man"
-! BLT_LIBRARY="$DESTDIR/library"
-  
-  
---- 1143,1147 ----
-  LIBDIR="$DESTDIR/lib"
-  MANDIR="$DESTDIR/man"
-! BLT_LIBRARY="$DESTDIR/lib/blt"
-  
-  
+ 
+@@ -2634,6 +2630,8 @@
+   *-freebsd*|*-386bsd*|*-netbsd*)
+     SHLIB_CCFLAGS="-fpic"
+     SHLIB_LDFLAGS="-Bshareable"
++    SHLIB_LOADER="ld"
++    SHLIB_SUFFIX=".so.${blt_cv_major_version}.${blt_cv_minor_version}"
+     ;;
+   *-linux*)
+     if eval "test \"`echo '$''{'blt_cv_sys_elf'+set}'`\" = set"; then
