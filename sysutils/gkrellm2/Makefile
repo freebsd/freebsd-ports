@@ -59,6 +59,8 @@ do-install:
 .for file in ${INCLUDES}
 	${INSTALL_DATA} ${WRKSRC}/src/${file} ${PREFIX}/include/gkrellm
 .endfor
+	@${MKDIR} ${PREFIX}/libexec/gkrellm/plugins
+	@${MKDIR} ${PREFIX}/share/gkrellm/themes
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/gkrellm
 .for file in ${DOCS}
