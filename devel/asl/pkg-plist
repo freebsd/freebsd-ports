@@ -2,6 +2,7 @@ bin/asl
 bin/plist
 bin/p2hex
 bin/p2bin
+share/asl/80c50x.inc
 share/asl/80c552.inc
 share/asl/bitfuncs.inc
 share/asl/ctype.inc
@@ -11,6 +12,7 @@ share/asl/reg251.inc
 share/asl/reg29k.inc
 share/asl/reg53x.inc
 share/asl/reg683xx.inc
+share/asl/reg7000.inc
 share/asl/reg78k0.inc
 share/asl/reg96.inc
 share/asl/regavr.inc
@@ -18,6 +20,7 @@ share/asl/regcop8.inc
 share/asl/reghc12.inc
 share/asl/regm16c.inc
 share/asl/regmsp.inc
+share/asl/regst9.inc
 share/asl/regz380.inc
 share/asl/stddef04.inc
 share/asl/stddef16.inc
@@ -39,6 +42,8 @@ share/asl/stddef90.inc
 share/asl/stddef96.inc
 share/asl/stddefxa.inc
 share/asl/stddefz8.inc
+share/doc/asl/Makefile
 share/doc/asl/as.doc
+share/doc/asl/as.tex
 @dirrm share/asl
 @dirrm share/doc/asl
