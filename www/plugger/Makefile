@@ -62,8 +62,7 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/mtvp:${PORTSDIR}/multimedia/mtv
 RUN_DEPENDS+=	${X11BASE}/bin/gnumeric:${PORTSDIR}/math/gnumeric2 \
 		${X11BASE}/bin/abiword:${PORTSDIR}/editors/AbiWord2
 .else
-RUN_DEPENDS+=	${X11BASE}/bin/gnumeric:${PORTSDIR}/math/gnumeric \
-		${X11BASE}/bin/abiword:${PORTSDIR}/editors/AbiWord
+RUN_DEPENDS+=	${X11BASE}/bin/gnumeric:${PORTSDIR}/math/gnumeric
 .endif
 
 pre-extract:
