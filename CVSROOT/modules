@@ -6187,6 +6187,7 @@ p4v		ports/devel/p4v
 p5-AI-DecisionTree	ports/math/p5-AI-DecisionTree
 p5-AI-NeuralNet-BackProp	ports/math/p5-AI-NeuralNet-BackProp
 p5-AI-NeuralNet-Mesh	ports/math/p5-AI-NeuralNet-Mesh
+p5-AI-Pathfinding-AStar	ports/devel/p5-AI-Pathfinding-AStar
 p5-AI-Perceptron	ports/math/p5-AI-Perceptron
 p5-AMF-Perl	ports/www/p5-AMF-Perl
 p5-AcePerl	ports/biology/p5-AcePerl
