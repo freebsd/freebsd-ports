@@ -1,0 +1,11 @@
+This module is designed to provide a bag of tricks for users of
+XML::Xerces DOM API. It provides some useful variables for looking up
+xerces-c enum values.
+
+It also provides functions that make dealing with, creating and printing
+DOM objects much easier.
+
+getTextContents() from 'Effective XML processing with DOM and XPath in
+Perl' by Parand Tony Darugar, IBM Developerworks Oct 1st 2001
+
+WWW: http://search.cpan.org/dist/XML-Xerces-BagOfTricks/
