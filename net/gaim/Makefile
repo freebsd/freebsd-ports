@@ -29,7 +29,8 @@ LIB_DEPENDS+=	gtkspell.0:${PORTSDIR}/textproc/gtkspell2
 .endif
 
 .ifndef(WITHOUT_AUDIO)
-LIB_DEPENDS+=	ao.3:${PORTSDIR}/audio/libao
+LIB_DEPENDS+=	ao.3:${PORTSDIR}/audio/libao \
+		audiofile.0:${PORTSDIR}/audio/libaudiofile
 .endif
 
 pre-everything::
