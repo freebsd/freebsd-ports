@@ -6816,6 +6816,7 @@ porttools	ports/devel/porttools
 portupgrade	ports/sysutils/portupgrade
 posadis		ports/dns/posadis
 pose		ports/palm/pose
+posixtestsuite	ports/misc/posixtestsuite
 poslib		ports/devel/poslib
 postal		ports/benchmarks/postal
 poster		ports/print/poster
