@@ -14,7 +14,7 @@ MASTER_SITES=	http://ab-initio.mit.edu/libctl/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Control Language Library
 
-LIB_DEPENDS=	guile.10:${PORTSDIR}/lang/guile
+LIB_DEPENDS=	guile.15:${PORTSDIR}/lang/guile
 
 GNU_CONFIGURE=	yes
 

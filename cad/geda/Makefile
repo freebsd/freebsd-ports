@@ -21,7 +21,7 @@ BUILD_DEPENDS=	gesym-config:${PORTSDIR}/cad/geda-symbols \
 		gmk_sym:${PORTSDIR}/cad/geda-utils \
 		gsymcheck:${PORTSDIR}/cad/geda-symcheck
 
-LIB_DEPENDS=	guile.10:${PORTSDIR}/lang/guile \
+LIB_DEPENDS=	guile.15:${PORTSDIR}/lang/guile \
 		geda.16:${PORTSDIR}/cad/libgeda
 
 NO_BUILD=	yes

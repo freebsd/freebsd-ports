@@ -16,7 +16,7 @@ MAINTAINER=	bruno@tinkerbox.org
 COMMENT=	gEDA tools base utility library
 
 LIB_DEPENDS=	gdgeda.4:${PORTSDIR}/graphics/libgdgeda \
-		guile.10:${PORTSDIR}/lang/guile
+		guile.15:${PORTSDIR}/lang/guile
 
 USE_LIBTOOL=		yes
 USE_AUTOCONF_VER=	253

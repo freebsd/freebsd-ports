@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR=	libs
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	GNUstep interface to the GUILE scheme interpreter
 
-LIB_DEPENDS+=	guile.10:${PORTSDIR}/lang/guile
+LIB_DEPENDS+=	guile.15:${PORTSDIR}/lang/guile
 
 PREFIX=		${LOCALBASE}/GNUstep
 NO_MTREE=	yes
@@ -45,6 +45,6 @@ USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
 .include "${PORTSDIR}/devel/gnustep/bsd.gnustep.mk"
 
-GUILE_VER!=	(cd ${PORTSDIR}/lang/guile && make -V PORTVERSION)
+GUILE_VER!=	(cd ${PORTSDIR}/lang/guile && make -V GUILE_VER)
 
 .include <bsd.port.post.mk>

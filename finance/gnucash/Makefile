@@ -7,6 +7,7 @@
 
 PORTNAME=	gnucash
 PORTVERSION=	1.8.2
+PORTREVISION=	1
 CATEGORIES=	finance gnome
 MASTER_SITES=	http://www.gnucash.org/pub/gnucash/sources/stable/ \
 		ftp://ftp.gnucash.org/pub/gnucash/sources/stable/ \
@@ -17,7 +18,7 @@ MASTER_SITE_SUBDIR=	gnucash
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Quicken-like money and finace manager
 
-LIB_DEPENDS=	guile.10:${PORTSDIR}/lang/guile \
+LIB_DEPENDS=	guile.15:${PORTSDIR}/lang/guile \
 		guppi.16:${PORTSDIR}/math/guppi \
 		popt.0:${PORTSDIR}/devel/popt \
 		ofx.0:${PORTSDIR}/finance/libofx \

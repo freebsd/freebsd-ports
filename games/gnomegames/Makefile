@@ -7,6 +7,7 @@
 
 PORTNAME=	gnomegames
 PORTVERSION=	1.4.0.4
+PORTREVISION=	1
 CATEGORIES=	games gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-games/1.4
@@ -16,7 +17,7 @@ DIST_SUBDIR=	gnome
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	The game applications package for the Gnome Desktop Environment
 
-LIB_DEPENDS=	guile.10:${PORTSDIR}/lang/guile
+LIB_DEPENDS=	guile.15:${PORTSDIR}/lang/guile
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
