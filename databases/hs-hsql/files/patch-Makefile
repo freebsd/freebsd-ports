@@ -1,6 +1,12 @@
---- Makefile.orig	Mon Feb  2 22:42:07 2004
-+++ Makefile	Tue Feb  3 12:53:54 2004
-@@ -143,7 +143,7 @@
+--- Makefile.orig	Sun Feb 15 11:54:27 2004
++++ Makefile	Sun Feb 22 17:11:53 2004
+@@ -138,12 +138,12 @@
+ 
+ docs : $(HS_PPS)
+ 	mkdir -p $(DOCDIR)
+-	$(HADDOCK) -h -o $(DOCDIR) $(HS_PPS) -ihttp://www.haskell.org/ghc/docs/latest/html/libraries/base,/usr/share/ghc-6.2/html/libraries/base/base.haddock 
++	$(HADDOCK) -h -o $(DOCDIR) $(HS_PPS)
+ 
  
  install: $(patsubst %, install-%, $(COMPILERS))
  
