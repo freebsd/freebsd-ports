@@ -3,7 +3,7 @@
 # Date created:		5 December 1996
 # Whom:			Bernd Rosauer <br@schiele-ct.de>
 #
-# $Id: Makefile,v 1.19 1997/07/13 18:49:29 max Exp $
+# $Id: Makefile,v 1.20 1997/08/05 06:56:41 tg Exp $
 #
 
 DISTNAME=	teTeX-src-0.4
@@ -37,6 +37,7 @@ WRKLIB=		${WRKDIR}/teTeX
 INSTALL_INFO=	/usr/bin/install-info
 
 pre-install:
+	@if [ -x ${PREFIX}/bin/mp ]; then ${MV} ${PREFIX}/bin/mp ${PREFIX}/bin/mp.save; fi
 	@${RM} -f ${PREFIX}/share/texmf/ls-R
 	@chown -R bin:bin ${WRKLIB}/info ${WRKLIB}/man
 	@${RM} -f ${WRKLIB}/info/dir ${WRKLIB}/info/localdir ${WRKLIB}/info/*.orig
@@ -51,6 +52,8 @@ post-install:
 	${INSTALL_INFO} ${PREFIX}/info/kpathsea.info ${PREFIX}/info/dir
 	${INSTALL_INFO} ${PREFIX}/info/dvips.info ${PREFIX}/info/dir
 	${INSTALL_INFO} ${PREFIX}/info/fontname.info ${PREFIX}/info/dir
+	@${MV} ${PREFIX}/bin/mp ${PREFIX}/bin/mpost
+	@if [ -x ${PREFIX}/bin/mp.save ]; then ${MV} ${PREFIX}/bin/mp.save ${PREFIX}/bin/mp; fi
 	@${SETENV} PREFIX=${PREFIX} ${SH} files/install-note
 
 .include <bsd.port.mk>
