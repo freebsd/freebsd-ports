@@ -145,6 +145,8 @@ CONFIGURE_ARGS+=	--enable-xft
 CONFIGURE_ARGS+=	--disable-xft
 .endif
 
+ESD_LIB=	libesd.so.2
+FREETYPE_LIB=	libfreetype.so.9
 PKGCONFIG_FILES=mozilla-gtkmozembed mozilla-js mozilla-xpcom \
 		mozilla-nspr mozilla-nss mozilla-plugin
 
@@ -154,16 +156,6 @@ JPI_LIST?=\
 	${LOCALBASE}/jdk1.4.1/jre/plugin/${ARCH}/ns610/libjavaplugin_oji.so \
 	${LOCALBASE}/diablo-jdk1.3.1/jre/plugin/${ARCH}/ns600/libjavaplugin_oji.so \
 	${LOCALBASE}/jdk1.3.1/jre/plugin/${ARCH}/ns600/libjavaplugin_oji.so
-
-OPTIONS=	XFT "Enable Xft font anti-aliasing" on \
-		CALENDAR "Enable the Calendar module" off \
-		MAILNEWS "Enable Mail and News modules" on \
-		COMPOSER "Enable the HTML Composer module" on \
-		LDAP "Enable LDAP support for Mailnews" on \
-		CHATZILLA "Enable the Chatzilla IRC module" on \
-		XMLTERM "Enable the XMLTerm module" on \
-		JAVASCRIPT_DEBUGGER "Enable the DTD and JavaScript debuggers" off \
-		OPTIMIZED_CFLAGS "Enable -O2 optimizations" off
 
 .include <bsd.port.pre.mk>
 
@@ -193,6 +185,18 @@ BROKEN="You must upgrade your freetype port to 1.3.1_2 or higher before installi
 .endif
 
 pre-everything::
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "Mozilla has the following tunable option(s):"
+	@${ECHO_MSG} "	WITHOUT_XFT=yes		Disables Xft anti-aliasing support"
+	@${ECHO_MSG} "	WITH_CALENDAR=yes	Enables the Calendar module (requires Mailnews and Composer modules)"
+	@${ECHO_MSG} "	WITHOUT_MAILNEWS=yes	Disables the Mail and News modules"
+	@${ECHO_MSG} "	WITHOUT_COMPOSER=yes	Disables the HTML Composer module"
+	@${ECHO_MSG} "	WITHOUT_LDAP=yes	Disables LDAP support within the Mailnews module"
+	@${ECHO_MSG} "	WITHOUT_CHATZILLA=yes	Disable the Chatzilla IRC module"
+	@${ECHO_MSG} "	WITHOUT_XMLTERM=yes	Disable the XMLTerm module"
+	@${ECHO_MSG} "	WITH_JAVASCRIPT_DEBUGGER=yes		Enable the DTD and JavaScript debuggers"
+	@${ECHO_MSG} "	WITH_OPTIMIZED_CFLAGS=yes	Enable -O2 optimization"
+	@${ECHO_MSG} ""
 .if defined(WITH_CALENDAR)
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "Calendar is still beta software."
@@ -227,7 +231,7 @@ post-patch:
 		${WRKSRC}/configure \
 		${WRKSRC}/intl/uconv/native/nsNativeUConvService.cpp \
 		${WRKSRC}/xpcom/io/nsNativeCharsetUtils.cpp
-	@${REINPLACE_CMD} -e 's|libfreetype.so.6|libfreetype.so.9|g' \
+	@${REINPLACE_CMD} -e 's|libfreetype.so.6|${FREETYPE_LIB}|g' \
 		${WRKSRC}/modules/libpref/src/init/all.js
 	@for pcfile in ${PKGCONFIG_FILES}; do \
 		${REINPLACE_CMD} -e 's|mozilla-xpcom|mozilla-xpcom${MOZ_SUFX}${PKGNAMESUFFIX}|g ; \
