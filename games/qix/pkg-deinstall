@@ -1,0 +1,18 @@
+#!/bin/sh
+
+if [ "$2" != "POST-DEINSTALL" ]; then
+    exit 0
+fi
+X11BASE=/usr/X11R6
+FONTDIR=$X11BASE/lib/X11/fonts/local
+ALIAS=$FONTDIR/fonts.alias
+
+sed -e /qix/d $ALIAS > $ALIAS.tmp
+mv $ALIAS.tmp $ALIAS
+if [ ! -s $ALIAS ]; then rm -f $ALIAS; fi
+
+$X11BASE/bin/mkfontdir $FONTDIR
+if [ `ls -l $FONTDIR/fonts.dir|awk '{print $5}'` = 2 ]; then 
+    rm $FONTDIR/fonts.dir
+fi
+exit 0

@@ -1,0 +1,5 @@
+The  purpose  of the game is to avoid being killed by enemies. Enemies are 
+the two fuses runing on the  boundary, and the qix moving inside the
+territory. You can leave the boundary and draw a line inside  the territory;
+then you return on the boundary, filling a rectangle. Once you have filled an
+area greater than 75% of the whole surface you reach the next level.
