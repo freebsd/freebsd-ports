@@ -60,8 +60,7 @@ class Vars:
 # Check if the supplied patch refers to a port's directory.
 #
 def isportdir(path, soft = False):
-	REQ_FILES = ('Makefile', 'pkg-descr', 'pkg-plist', \
-      'distinfo')
+	REQ_FILES = ('Makefile', 'pkg-descr', 'distinfo')
 	if not os.path.isdir(path) and soft != True:
 		raise IOError(errno.ENOENT, path)
 		# Not reached #
