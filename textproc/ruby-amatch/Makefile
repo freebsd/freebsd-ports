@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	amatch
-PORTVERSION=	0.1.1
+PORTVERSION=	0.1.3
 CATEGORIES=	textproc ruby
-MASTER_SITES=	http://www.ping.de/~flori/programs/ruby/amatch/
+MASTER_SITES=	http://rubyforge.org/frs/download.php/1566/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	ruby
@@ -20,7 +20,6 @@ USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
 RUBY_SETUP=	install.rb
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
 INSTALL_TARGET=	site-install
 
 DOCS=		CHANGES README.en amatch.txt.en
