@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ogle
-PORTVERSION=	0.8.4
+PORTVERSION=	0.8.5
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.dtek.chalmers.se/groups/dvd/dist/
 
@@ -15,6 +15,7 @@ MAINTAINER=	lioux@FreeBSD.org
 LIB_DEPENDS=	a52.0:${PORTSDIR}/audio/liba52 \
 		dvdread.2:${PORTSDIR}/graphics/libdvdread \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
+		mad.1:${PORTSDIR}/audio/mad \
 		xml2.5:${PORTSDIR}/textproc/libxml2
 
 USE_REINPLACE=	yes
@@ -25,6 +26,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include"
 CONFIGURE_ARGS=	--with-libjpeg=${LOCALBASE} \
 		--with-dvdread=${LOCALBASE} \
+		--with-libmad=${LOCALBASE} \
 		--with-liba52=${LOCALBASE}
 INSTALLS_SHLIB=	yes
 
@@ -43,9 +45,6 @@ post-patch:
 pre-configure:
 	@${TOUCH} `${FIND} -E ${WRKSRC} -regex ".*Makefile\.(am|in)"`
 	@${TOUCH} ${WRKSRC}/configure.in ${WRKSRC}/configure
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.pre.mk>
 
