@@ -280,8 +280,6 @@
     SUBDIR += ruby-tcltklib
     SUBDIR += ruby-tk
     SUBDIR += ruby-usersguide
-    SUBDIR += ruby14-tcltklib
-    SUBDIR += ruby14-tk
     SUBDIR += rxvt
     SUBDIR += ryaku-fpw
     SUBDIR += samba

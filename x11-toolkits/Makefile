@@ -90,7 +90,6 @@
     SUBDIR += ruby-qt2iconview
     SUBDIR += ruby-qt2table
     SUBDIR += ruby-tk
-    SUBDIR += ruby14-tk
     SUBDIR += scintilla
     SUBDIR += slingshot
     SUBDIR += thinice
