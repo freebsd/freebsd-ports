@@ -6,15 +6,18 @@
 #
 
 PORTNAME=	gwget
-PORTVERSION=	0.93
-PORTREVISION=	2
+PORTVERSION=	0.94
 CATEGORIES=	ftp www gnome
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	${MASTER_SITE_GNOME}
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION}
+DIST_SUBDIR=	gnome2
 
 MAINTAINER=	radek@raadradd.com
 COMMENT=	A download manager for GNOME, based on wget
 
+RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
+
+USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnomeprefix intlhack libgnomeui
 USE_LIBTOOL_VER=15
