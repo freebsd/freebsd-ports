@@ -1,5 +1,5 @@
---- session.c.orig	Thu Apr 20 18:05:07 2000
-+++ session.c	Thu Apr 20 18:12:07 2000
+--- session.c.orig	Wed May  3 14:03:07 2000
++++ session.c	Sat May 13 15:43:38 2000
 @@ -27,6 +27,18 @@
  #include "ssh2.h"
  #include "auth.h"
@@ -19,7 +19,21 @@
  /* types */
  
  #define TTYSZ 64
-@@ -497,6 +509,10 @@
+@@ -403,6 +415,13 @@
+ 		log_init(__progname, options.log_level, options.log_facility, log_stderr);
+ 
+ 		/*
++		 * Using login and executing a specific "command" are mutually
++		 * exclusive, so turn off use_login if there's a command.
++		 */
++		if (command != NULL)
++			options.use_login = 0;
++		
++		/*
+ 		 * Create a new session and process group since the 4.4BSD
+ 		 * setlogin() affects the entire process group.
+ 		 */
+@@ -504,6 +523,10 @@
  	struct sockaddr_storage from;
  	struct stat st;
  	time_t last_login_time;
@@ -30,7 +44,46 @@
  
  	if (s == NULL)
  		fatal("do_exec_pty: no session");
-@@ -567,6 +583,12 @@
+@@ -513,15 +536,6 @@
+ 	/* Get remote host name. */
+ 	hostname = get_canonical_hostname();
+ 
+-	/*
+-	 * Get the time when the user last logged in.  Buf will be set to
+-	 * contain the hostname the last login was from.
+-	 */
+-	if (!options.use_login) {
+-		last_login_time = get_last_login_time(pw->pw_uid, pw->pw_name,
+-						      buf, sizeof(buf));
+-	}
+-
+ 	/* Fork the child. */
+ 	if ((pid = fork()) == 0) {
+ 		pid = getpid();
+@@ -530,6 +544,22 @@
+ 		   changed. */
+ 		log_init(__progname, options.log_level, options.log_facility, log_stderr);
+ 
++		/*
++		 * Using login and executing a specific "command" are mutually
++		 * exclusive, so turn off use_login if there's a command.
++		 */
++		if (command != NULL)
++			options.use_login = 0;
++		
++		/*
++		 * Get the time when the user last logged in.  Buf will be set
++		 * to * contain the hostname the last login was from.
++		 */
++		if (!options.use_login) {
++			last_login_time = get_last_login_time(pw->pw_uid,
++			    pw->pw_name, buf, sizeof(buf));
++		}
++
+ 		/* Close the master side of the pseudo tty. */
+ 		close(ptyfd);
+ 
+@@ -573,6 +603,12 @@
  		/* Check if .hushlogin exists. */
  		snprintf(line, sizeof line, "%.200s/.hushlogin", pw->pw_dir);
  		quiet_login = stat(line, &st) >= 0;
@@ -43,7 +96,7 @@
  
  		/*
  		 * If the user has logged in before, display the time of last
-@@ -590,6 +612,20 @@
+@@ -596,6 +632,20 @@
  			else
  				printf("Last login: %s from %s\r\n", time_string, buf);
  		}
@@ -64,7 +117,7 @@
  		/*
  		 * Print /etc/motd unless a command was specified or printing
  		 * it was disabled in server options or login(1) will be
-@@ -599,7 +635,18 @@
+@@ -605,7 +655,18 @@
  		if (command == NULL && options.print_motd && !quiet_login &&
  		    !options.use_login) {
  			/* Print /etc/motd if it exists. */
@@ -83,7 +136,7 @@
  			if (f) {
  				while (fgets(line, sizeof(line), f))
  					fputs(line, stdout);
-@@ -737,9 +784,25 @@
+@@ -743,9 +804,25 @@
  	extern char **environ;
  	struct stat st;
  	char *argv[10];
@@ -109,7 +162,7 @@
  		/* /etc/nologin exists.  Print its contents and exit. */
  		while (fgets(buf, sizeof(buf), f))
  			fputs(buf, stderr);
-@@ -755,6 +818,13 @@
+@@ -761,6 +838,13 @@
  	/* Login(1) does this as well, and it needs uid 0 for the "-h"
  	   switch, so we let login(1) to this for us. */
  	if (!options.use_login) {
@@ -123,7 +176,7 @@
  		if (getuid() == 0 || geteuid() == 0) {
  			if (setgid(pw->pw_gid) < 0) {
  				perror("setgid");
-@@ -777,7 +847,14 @@
+@@ -783,7 +867,14 @@
  	 * Get the shell from the password data.  An empty shell field is
  	 * legal, and means /bin/sh.
  	 */
@@ -138,7 +191,7 @@
  
  #ifdef AFS
  	/* Try to get AFS tokens for the local cell. */
-@@ -801,7 +878,12 @@
+@@ -807,7 +898,12 @@
  		child_set_env(&env, &envsize, "USER", pw->pw_name);
  		child_set_env(&env, &envsize, "LOGNAME", pw->pw_name);
  		child_set_env(&env, &envsize, "HOME", pw->pw_dir);
@@ -151,7 +204,7 @@
  
  		snprintf(buf, sizeof buf, "%.200s/%.50s",
  			 _PATH_MAILDIR, pw->pw_name);
-@@ -890,6 +972,9 @@
+@@ -896,6 +992,9 @@
  	 * descriptors left by system functions.  They will be closed later.
  	 */
  	endpwent();
@@ -161,7 +214,7 @@
  
  	/*
  	 * Close any extra open file descriptors so that we don\'t have them
-@@ -897,7 +982,7 @@
+@@ -903,7 +1002,7 @@
  	 * initgroups, because at least on Solaris 2.3 it leaves file
  	 * descriptors open.
  	 */
@@ -170,7 +223,7 @@
  		close(i);
  
  	/* Change current directory to the user\'s home directory. */
-@@ -916,7 +1001,27 @@
+@@ -922,7 +1021,27 @@
  	 * in this order).
  	 */
  	if (!options.use_login) {
