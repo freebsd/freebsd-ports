@@ -1,0 +1,20 @@
+bin/mkcache
+bin/gmap2cache
+bin/check-files
+etc/gofish.conf
+etc/gofish-www.conf
+sbin/gofish
+@exec ln -sf %D/sbin/gofish %D/sbin/gopherd
+@unexec rm -f %D/sbin/gofish %D/sbin/gopherd
+gopher/Configure_GoFish
+gopher/.cache
+gopher/.gopher+
+gopher/icons/gofish.gif
+gopher/icons/gopher_binary.gif
+gopher/icons/gopher_html.gif
+gopher/icons/gopher_image.gif
+gopher/icons/gopher_menu.gif
+gopher/icons/gopher_text.gif
+gopher/icons/gopher_unknown.gif
+@dirrm gopher/icons
+@dirrm gopher
