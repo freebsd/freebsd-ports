@@ -16,6 +16,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	blackend@FreeBSD.org
 
 USE_REINPLACE=	yes
+USE_XLIB=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 post-patch:
