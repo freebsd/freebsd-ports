@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	3proxy
-PORTVERSION=	0.4.1b
+PORTVERSION=	0.4.3b
 CATEGORIES=	net
 MASTER_SITES=	http://www.security.nnov.ru/soft/3proxy/${PORTVERSION}/
 DISTNAME=	${PORTNAME}
@@ -16,13 +16,14 @@ MAINTAINER=	tim@relay.nnn.tstu.ru
 COMMENT=	Proxy servers set (support HTTP(S), FTP, SOCKS, POP3, TCP & UDP)
 
 NO_WRKSUBDIR=	yes
-MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}" \
-	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}"
-
-pre-build:
-	if [ ! -f ${WRKSRC}/Makefile ]; then \
-		${CP} ${WRKSRC}/Makefile.unix ${WRKSRC}/Makefile; \
-	fi
+USE_REINPLACE=	yes
+MAKEFILE=	Makefile.unix
+MAKE_ENV=	CC="${CC}" \
+		PTHREAD_LIBS="${PTHREAD_LIBS}" \
+		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}"
+post-patch:
+	${REINPLACE_CMD} -e "s|%%CFLAGS%%|${CFLAGS}|" \
+		${WRKDIR}/Makefile.unix
 
 do-install:
 .for i in 3proxy dighosts mycrypt pop3p proxy socks tcppm udppm
@@ -37,7 +38,7 @@ post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 .for i in License Readme Release.notes
-	${INSTALL_MAN} ${WRKSRC}/${i} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
 .endif
 
