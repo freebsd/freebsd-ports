@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	phylip
-PORTVERSION=	3.6.a3
+PORTVERSION=	3.6.b
 CATEGORIES=	biology
 MASTER_SITES=	ftp://evolution.genetics.washington.edu/pub/phylip/phylip36/
 DISTNAME=	${PORTNAME}
-EXTRACT_SUFX=	.tar.Z
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	dbader@eece.unm.edu
+MAINTAINER=	dbader@ece.unm.edu
 COMMENT=	A Phylogeny Inference Package
 
 USE_XLIB=	yes
