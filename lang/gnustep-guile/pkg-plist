@@ -1,3 +1,15 @@
+%%USEX11%%System/Applications/guile-gui.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/guile-gui
+%%USEX11%%System/Applications/guile-gui.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/library_paths.openapp
+%%USEX11%%System/Applications/guile-gui.app/Resources/Info-gnustep.plist
+%%USEX11%%System/Applications/guile-gui.app/Resources/guile-gui.desktop
+%%USEX11%%System/Applications/guile-gui.app/guile-gui
+%%USEX11%%System/Applications/guile-gui.app/stamp.make
+%%USEX11%%System/Applications/gui.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/gui
+%%USEX11%%System/Applications/gui.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/library_paths.openapp
+%%USEX11%%System/Applications/gui.app/Resources/Info-gnustep.plist
+%%USEX11%%System/Applications/gui.app/Resources/gui.desktop
+%%USEX11%%System/Applications/gui.app/gui
+%%USEX11%%System/Applications/gui.app/stamp.make
 System/Headers/ScriptKit/Guile.h
 System/Headers/ScriptKit/GuileInterpreter.h
 System/Headers/ScriptKit/GuileInvocation.h
@@ -16,6 +28,7 @@ System/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libScriptKit.so.1.0.0
 System/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libgg_base.so
 System/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libgg_base.so.%%VERSION%%
 System/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libgg_base.so.1
+%%USEX11%%System/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libgg_gui.so.%%VERSION%%
 System/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libgstep_guile.so
 System/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libgstep_guile.so.%%VERSION%%
 System/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libgstep_guile.so.1
@@ -29,6 +42,16 @@ lib/libgreg.a
 lib/libgreg.la
 lib/libgreg.so
 lib/libgreg.so.1
+%%USEX11%%@dirrm System/Applications/guile-gui.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+%%USEX11%%@dirrm System/Applications/guile-gui.app/%%GNU_ARCH%%/%%OPSYS%%
+%%USEX11%%@dirrm System/Applications/guile-gui.app/%%GNU_ARCH%%
+%%USEX11%%@dirrm System/Applications/guile-gui.app/Resources
+%%USEX11%%@dirrm System/Applications/guile-gui.app
+%%USEX11%%@dirrm System/Applications/gui.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+%%USEX11%%@dirrm System/Applications/gui.app/%%GNU_ARCH%%/%%OPSYS%%
+%%USEX11%%@dirrm System/Applications/gui.app/%%GNU_ARCH%%
+%%USEX11%%@dirrm System/Applications/gui.app/Resources
+%%USEX11%%@dirrm System/Applications/gui.app
 @dirrm System/Libraries/Guile/languages/gstep-guile
 @dirrm System/Libraries/Guile/languages
 @dirrm System/Libraries/Guile
@@ -39,3 +62,5 @@ lib/libgreg.so.1
 @dirrm info
 @dirrm man/man1
 @dirrm man
+@cwd %%LOCALBASE%%
+share/guile/%%GUILE_VER%%/ice-9/greg.scm
