@@ -14,11 +14,14 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	dom@happygiraffe.net
 
+BUILD_DEPENDS=	${PERL_ABASE}/XML/LibXML.pm:${PORTSDIR}/textproc/p5-XML-LibXML
+RUN_DEPENDS=	${PERL_ABASE}/XML/LibXML.pm:${PORTSDIR}/textproc/p5-XML-LibXML
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
 		xslt.1:${PORTSDIR}/textproc/libxslt
 
 PERL_CONFIGURE=	yes
 CONFIGURE_ARGS=	INC='-I${LOCALBASE}/include -I${LOCALBASE}/include/libxml2'
+PERL_ABASE=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}
 
 MAN3=		XML::LibXSLT.3
 
