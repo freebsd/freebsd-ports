@@ -9,7 +9,7 @@ PORTNAME=	scilab
 PORTVERSION=	2.7
 PORTREVISION=	1
 CATEGORIES=	math cad parallel
-MASTER_SITES=	ftp://ftp.inria.fr/INRIA/Projects/Meta2/Scilab/distributions/
+MASTER_SITES=	ftp://ftp.inria.fr/INRIA/Scilab/distributions/
 EXTRACT_SUFX=	.src.tar.gz
 
 MAINTAINER=	js@jeannot.org
