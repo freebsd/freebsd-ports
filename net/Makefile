@@ -577,7 +577,6 @@
     SUBDIR += vicq
     SUBDIR += vnc
     SUBDIR += vomit
-    SUBDIR += vrrp
     SUBDIR += vtun
     SUBDIR += wais
     SUBDIR += wakeonlan
