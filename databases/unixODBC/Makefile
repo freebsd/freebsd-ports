@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	unixODBC
-PORTVERSION=	2.2.9
-PORTREVISION=	1
+PORTVERSION=	2.2.10
 CATEGORIES=	databases
 MASTER_SITES=	http://www.unixodbc.org/
 
@@ -16,9 +15,9 @@ COMMENT=	ODBC library suite for Unix
 
 CONFLICTS=	libiodbc-*
 
-USE_GNOME=	gnomehack gnometarget lthack
+USE_GNOME=	gnomehack gnometarget
 USE_ICONV=	yes
-USE_INC_LIBTOOL_VER=	13
+USE_LIBTOOL_VER=	15
 CONFIGURE_ARGS=	--enable-static --enable-shared \
 		--with-libiconv-prefix=${LOCALBASE}
 INSTALLS_SHLIB=	yes
