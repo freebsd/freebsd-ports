@@ -1,0 +1,13 @@
+--- setbrightness/Makefile.am.orig	Wed Apr  4 11:20:07 2001
++++ setbrightness/Makefile.am	Sat Aug 17 20:38:56 2002
+@@ -2,7 +2,9 @@
+ 
+ bin_PROGRAMS = setbrightness
+  
+-setbrightness_SOURCES = setbrightness.c
++setbrightness_SOURCES = setbrightness.c 
++
++LDADD = ../src/sonypi.o ../src/pci_freebsd.o
+ 
+ MAINTAINERCLEANFILES = Makefile.in Makefile
+ 

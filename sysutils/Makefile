@@ -192,6 +192,7 @@
     SUBDIR += setcdboot
     SUBDIR += setquota
     SUBDIR += shlock
+    SUBDIR += sjog
     SUBDIR += skill
     SUBDIR += slay
     SUBDIR += slmon

@@ -1,0 +1,15 @@
+--- src/Makefile.am.orig	Fri Aug  3 08:29:27 2001
++++ src/Makefile.am	Sat Aug 17 20:43:55 2002
+@@ -28,7 +28,11 @@
+                 sjog_volume_callbacks.c \
+                 sjog_volume_callbacks.h \
+                 sjog_scroll.c \
+-                sjog_scroll.h
++                sjog_scroll.h \
++		sonypi.h \
++		sonypi.c \
++		pci_freebsd.c \
++		pci.h
+ 
+ sjog_LDADD = @GTK_LIBS@ @GLIB_LIBS@ @X_LIBS@
+ 
