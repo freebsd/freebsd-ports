@@ -173,10 +173,16 @@ header() {
   fi
 }
 
+footer() {
+  echo "</table>" >>$of
+  echo "</body>" >>$of
+  echo "</html>" >>$of
+}
+
 #
 # Create "default" output, sorted on portname
 #
-header "<th>Port</th><th>Aff.</th><th>Size</th><th>CVS</th><th>Maintainer</th><th>Reason</th><th>Date build</th>"
+header "<th>Port</th><th>Aff.</th><th>Size</th><th>CVS</th><th>Maintainer</th><th>Reason</th><th>Build date</th>"
 
 for i in `cat .logs | sort`; do
     set $(echo $i | tr \| " ")
@@ -184,7 +190,7 @@ for i in `cat .logs | sort`; do
     echo "<td><a href=\"$1\">$2</a></td>" >> $of
 
     affby=$3
-    test $affby = "0" && affby=""
+    test $affby = "0" -o $affby = "-1" && affby="&nbsp;"
     echo "<td align=\"right\">$affby</td><td align=\"right\">$4 Kb</td>" >> $of
     echo "<td><a href=\"http://www.FreeBSD.org/cgi/cvsweb.cgi/ports/$5\">$5</a></td>" >> $of
     echo "<td><a href=\"mailto:$6\">$6</a></td>" >> $of
@@ -200,13 +206,13 @@ for i in `cat .logs | sort`; do
 
     echo "</tr>" >> $of
 done
-echo "</table>" >> $of
+footer ""
 mv -f $of index.html
 
 #
 # Create output by category
 #
-header "<th>CVS</th><th>Aff.</th><th>Size</th><th>Port</th><th>Maintainer</th><th>Reason</th><th>Date build</th>"
+header "<th>CVS</th><th>Aff.</th><th>Size</th><th>Port</th><th>Maintainer</th><th>Reason</th><th>Build date</th>"
 
 for i in `cat .logs | sort -t \\| +4`; do
     set $(echo $i | tr \| " ")
@@ -214,7 +220,7 @@ for i in `cat .logs | sort -t \\| +4`; do
     echo "<td><a href=\"http://www.FreeBSD.org/cgi/cvsweb.cgi/ports/$5\">$5</a></td>" >> $of
 
     affby=$3
-    test $affby = "0" && affby=""
+    test $affby = "0" -o $affby = "-1" && affby="&nbsp;"
     echo "<td align=\"right\">$affby</td><td align=\"right\">$4 Kb</td>" >> $of
     echo "<td><a href=\"$1\">$2</a></td>" >> $of
     echo "<td><a href=\"mailto:$6\">$6</a></td>" >> $of
@@ -230,13 +236,13 @@ for i in `cat .logs | sort -t \\| +4`; do
 
     echo "</tr>" >> $of
 done
-echo "</table>" >> $of
+footer ""
 mv -f $of index-category.html
 
 #
 # Create output by maintainer
 #
-header "<th>Maintainer</th><th>Port</th><th>Aff.</th><th>Size</th><th>CVS</th><th>Reason</th><th>Date build</th>"
+header "<th>Maintainer</th><th>Port</th><th>Aff.</th><th>Size</th><th>CVS</th><th>Reason</th><th>Build date</th>"
 
 for i in `cat .logs | sort -t \\| +5`; do
     set $(echo $i | tr \| " ")
@@ -245,7 +251,7 @@ for i in `cat .logs | sort -t \\| +5`; do
     echo "<td><a href=\"$1\">$2</a></td>" >> $of
 
     affby=$3
-    test $affby = "0" && affby=""
+    test $affby = "0" -o $affby = "-1" && affby="&nbsp;"
     echo "<td align=\"right\">$affby</td><td align=\"right\">$4 Kb</td>" >> $of
     echo "<td><a href=\"http://www.FreeBSD.org/cgi/cvsweb.cgi/ports/$5\">$5</a></td>" >> $of
 
@@ -260,13 +266,13 @@ for i in `cat .logs | sort -t \\| +5`; do
 
     echo "</tr>" >> $of
 done
-echo "</table>" >> $of
+footer ""
 mv -f $of index-maintainer.html
 
 #
 # Create output by error
 #
-header "<th>Reason</th><th>Port</th><th>Aff.</th><th>Size</th><th>CVS</th><th>Maintainer</th><th>Date build</th>"
+header "<th>Reason</th><th>Port</th><th>Aff.</th><th>Size</th><th>CVS</th><th>Maintainer</th><th>Build date</th>"
 
 for i in `cat .logs | sort -t \\| +7`; do
     set $(echo $i | tr \| " ")
@@ -281,7 +287,7 @@ for i in `cat .logs | sort -t \\| +7`; do
     echo "<td><a href=\"$1\">$2</a></td>" >> $of
 
     affby=$3
-    test $affby = "0" && affby=""
+    test $affby = "0" -o $affby = "-1" && affby="&nbsp;"
     echo "<td align=\"right\">$affby</td><td align=\"right\">$4 Kb</td>" >> $of
     echo "<td><a href=\"http://www.FreeBSD.org/cgi/cvsweb.cgi/ports/$5\">$5</a></td>" >> $of
     echo "<td><a href=\"mailto:$6\">$6</a></td>" >> $of
@@ -291,13 +297,13 @@ for i in `cat .logs | sort -t \\| +7`; do
 
     echo "</tr>" >> $of
 done
-echo "</table>" >> $of
+footer ""
 mv -f $of index-reason.html
 
 #
 # Create output by builddate
 #
-header "<th>Date build</th><th>Port</th><th>Aff.</th><th>Size</th><th>CVS</th><th>Maintainer</th><th>Reason</th>"
+header "<th>Build date</th><th>Port</th><th>Aff.</th><th>Size</th><th>CVS</th><th>Maintainer</th><th>Reason</th>"
 
 for i in `cat .logs | sort -t \\| +9`; do
     set $(echo $i | tr \| " ")
@@ -309,7 +315,7 @@ for i in `cat .logs | sort -t \\| +9`; do
     echo "<td><a href=\"$1\">$2</a></td>" >> $of
 
     affby=$3
-    test $affby = "0" && affby=""
+    test $affby = "0" -o $affby = "-1" && affby="&nbsp;"
     echo "<td align=\"right\">$affby</td><td align=\"right\">$4 Kb</td>" >> $of
     echo "<td><a href=\"http://www.FreeBSD.org/cgi/cvsweb.cgi/ports/$5\">$5</a></td>" >> $of
     echo "<td><a href=\"mailto:$6\">$6</a></td>" >> $of
@@ -322,7 +328,7 @@ for i in `cat .logs | sort -t \\| +9`; do
 
     echo "</tr>" >> $of
 done
-echo "</table>" >> $of
+footer ""
 mv -f $of index-builddate.html
 
 #
