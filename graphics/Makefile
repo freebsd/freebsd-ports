@@ -1,6 +1,5 @@
 # $FreeBSD$
 #
-    SUBDIR += zphoto
 
     SUBDIR += 4va
     SUBDIR += Cgraph
@@ -428,7 +427,6 @@
     SUBDIR += xmandel
     SUBDIR += xmedcon
     SUBDIR += xmfract
-    SUBDIR += xmms-avi
     SUBDIR += xmms-blursk
     SUBDIR += xmms-finespectrum
     SUBDIR += xmms-fishmatic
@@ -462,5 +460,6 @@
     SUBDIR += xwpick
     SUBDIR += xzgv
     SUBDIR += zimg
+    SUBDIR += zphoto
 
 .include <bsd.port.subdir.mk>
