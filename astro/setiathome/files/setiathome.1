@@ -15,7 +15,7 @@ is the UNIX version of the
 client. It downloads radio telescope data from a network server, analyzes
 the data looking for signals of extraterrestrial origin, and uploads results
 to the server, repeating this cycle indefinitely. See
-http://setiahome.ssl.berkeley.edu for more information.
+http://setiahome.ssl.berkeley.edu/ for more information.
 .Pp
 The first time you run
 .Nm
@@ -45,7 +45,7 @@ that starts
 at system start-up. You can also use this script to set up a working
 directory
 .Pa ( /var/db/setiathome ) ,
-and lets you register with or log in to
+and register with or log in to
 .Tn SETI@home
 by calling it with the argument
 .Ar register .
@@ -74,7 +74,7 @@ to
 .Bd -ragged -offset indent
 .Li */10 * * * * cd 
 .Va working directory 
-.Li && Nm -email >/dev/null
+.Li && setiathome -email >/dev/null
 .Ed
 to the user's crontab.
 .Sh OPTIONS
@@ -93,6 +93,18 @@ Set "nice" priority to
 Send email (to login email address) on errors. Useful if you run in
 background directed to
 .Pa /dev/null .
+.It Fl proxy Ar host:port
+Use the HTTP proxy server
+.Ar host
+at port
+.Ar port
+to download work units and upload results. Alternatively, you can set the
+environment variable
+.Ev HTTP_PROXY .
+.It Fl stop_after_process
+Process the current work unit and exit before uploading the result.
+.It Fl stop_after_xfer
+Process the current work unit and upload the result, then exit.
 .El
 .Pp
 .Sh FILES
@@ -111,10 +123,7 @@ setiathome uses a lock file
 to prevent multiple instances from running in the same directory.
 .Sh AUTHORS
 .Tn SETI@home
-was developed by
-.An David Anderson , Jeff Cobb , Charlie Fenton , David Gedye ,
-.An Kyle Granger , Eric Korpela , Matt Lebofsky , Peter Leiser , 
-.An Brad Silen , Woody Sullivan , 
-and
-.An Dan Werthimer .
+was developed by David Anderson, Jeff Cobb, Charles Congdon, Charlie Fenton,
+David Gedye, Kyle Granger, Eric Korpela, Matt Lebofsky, Peter Leiser, Brad
+Silen, Woody Sullivan, and Dan Werthimer.
 .Pp
