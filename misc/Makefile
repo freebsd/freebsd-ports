@@ -54,7 +54,6 @@
     SUBDIR += diction
     SUBDIR += dirtree
     SUBDIR += display
-    SUBDIR += distribfold
     SUBDIR += dnetc
     SUBDIR += dog
     SUBDIR += dotfile
