@@ -3,6 +3,7 @@
 * This is suitable for use with xdm, but not with a startx script.     *
 * If you need to use a startx script, install the x11/wrapper package. *
 ************************************************************************
-* If XFree86-4 is not a basic part of your operating system, add the   *
-* following line to /etc/make.conf: XFREE86_VERSION=4                  *
+* FreeBSD 5.3 and later default to depending on X.Org ports. If you    *
+* want to use XFree86, see /usr/ports/UPDATING entry 20040723 and set  *
+* X_WINDOW_SYSTEM=xfree86-4 in /etc/make.conf                          *
 ************************************************************************
