@@ -1,0 +1,11 @@
+--- configure.orig	Wed Dec  5 19:43:10 2001
++++ configure	Fri Dec 21 01:20:00 2001
+@@ -1506,6 +1506,8 @@
+   ogle_pkglibdir=${exec_prefix}/lib/ogle
+ fi
+ 
++ogle_pkglibdir=%%LOCALBASE%%/lib/ogle
++
+ echo "$as_me:1509: checking for ogle helper dir" >&5
+ echo $ECHO_N "checking for ogle helper dir... $ECHO_C" >&6
+ if test ! -x ${ogle_pkglibdir}/ogle_ctrl; then
