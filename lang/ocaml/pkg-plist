@@ -611,7 +611,6 @@ lib/ocaml/ocamldoc/odoc_analyse.cmi
 lib/ocaml/ocamldoc/odoc.cmi
 lib/ocaml/ocamldoc/ocamldoc.hva
 lib/ocaml/ocamldoc/odoc_info.cma
-lib/ocaml/ocamldoc/odoc_args.mli
 lib/ocaml/ocamldoc/odoc_info.mli
 lib/ocaml/ocamldoc/odoc_info.cmxa
 lib/ocaml/ocamldoc/odoc_info.a
@@ -1096,8 +1095,8 @@ share/doc/ocaml/LICENSE
 %%PORTDOCS%%share/doc/ocaml/html/next_motif.gif
 %%PORTDOCS%%share/doc/ocaml/html/previous_motif.gif
 %%PORTDOCS%%share/doc/ocaml/html/libgraph.gif
-%%PORTDOCS%%share/doc/ocaml/ocaml-3.05-refman.ps.gz
-%%PORTDOCS%%share/doc/ocaml/ocaml-3.05-refman.pdf
+%%PORTDOCS%%share/doc/ocaml/ocaml-3.06-refman.ps.gz
+%%PORTDOCS%%share/doc/ocaml/ocaml-3.06-refman.pdf
 @dirrm lib/ocaml/stublibs
 @dirrm lib/ocaml/caml
 @dirrm lib/ocaml/threads

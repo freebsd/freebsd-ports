@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	ocaml
-PORTVERSION=	3.05
+PORTVERSION=	3.06
 CATEGORIES=	lang
-MASTER_SITES=	http://caml.inria.fr/distrib/ \
-		ftp://ftp.inria.fr/lang/caml-light/ \
-		ftp://ftp.kurims.kyoto-u.ac.jp/pub/lang/caml-light/
+MASTER_SITES=	http://caml.inria.fr/distrib/${DISTNAME}/ \
+		ftp://ftp.inria.fr/lang/caml-light/${DISTNAME}/ \
+		ftp://ftp.kurims.kyoto-u.ac.jp/pub/lang/caml-light/${DISTNAME}/
 PKGNAMESUFFIX=	${TKSFX}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DOCFILES}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} \
