@@ -5,6 +5,8 @@
 @exec ln -s /usr/local/newsspool /var/news
 @exec mkdir -p /usr/local/newsspool/in.coming/bad
 @exec cd /usr/local/newsspool; mkdir -p out.going out.master out.nntp
+lib/libcnews.a
+@exec ranlib %D/%F
 lib/news/active
 lib/news/active.times
 lib/news/batchparms
