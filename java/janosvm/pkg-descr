@@ -1,0 +1,11 @@
+The Janos Virtual Machine (JanosVM) is a virtual machine for executing Java
+bytecodes. Unlike any available virtual machine, the JanosVM supports multiple,
+separate processes (called "teams" in JanosVM) within a single VM. Based on
+KaffeOS (and thus Kaffe), the JanosVM supports per-team separate heaps, per-
+team garbage collection threads, inter-team thread migration, safe cross-team
+reference objects, and a spiffy tutorial. Designed to support asynchronous
+termination of uncooperative or malicious Java bytecode applications, the
+JanosVM provides robust and scalable multi-process support within a single
+virtual machine. 
+
+WWW: http://www.cs.utah.edu/flux/janos/janosvm.html
