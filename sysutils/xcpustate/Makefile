@@ -3,11 +3,10 @@
 # Date created:		31-Dec-1995
 # Whom:                 David O'Brien <obrien@cs.ucdavis.edu>
 #
-# $Id: Makefile,v 1.4 1996/12/08 06:16:15 obrien Exp $
+# $Id: Makefile,v 1.5 1996/12/10 05:58:15 asami Exp $
 #
 
-DISTNAME=	xcpustate-2.2beta
-PKGNAME=	xcpustate-2.2b
+DISTNAME=	xcpustate-2.4
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.cdf.toronto.edu/pub/xcpustate/  \
 		ftp://ftp.vector.co.za/pub/FAQS/FAQs/mirrors/ftp.cdf.toronto.edu/xcpustate/  \
