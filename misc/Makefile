@@ -289,6 +289,7 @@
     SUBDIR += wmpal
     SUBDIR += wmstock
     SUBDIR += wmweather
+    SUBDIR += wmwork
     SUBDIR += wmx10
     SUBDIR += xd
     SUBDIR += xdelta
