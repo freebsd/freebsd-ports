@@ -1,6 +1,6 @@
 This port has include files (e.g. wnn/commonhd.h) and a library file
 (e.g. libwnn.a) to build Wnn7 clients. The files are compiled from
-sources Wnn6-SDK-sources.tar.gz which you can get in
+sources Wnn7SDK.tgz which you can get in
 
 WWW: http://www.omronsoft.co.jp/
 
@@ -18,9 +18,9 @@ from Omron Software Co., Ltd.
 | FAX:     +81-44-246-6011                 |
 +------------------------------------------+
 
-Wnn7 is one of Japanese input methods. 'Wnn7 for Linux/BSD' is
-supported an only Japanese method. However, FreeWnn which is free is
-supported Chinese and Korean ones, too.
+Wnn7 is one of Japanese input methods. 'Wnn7 Personal' 
+supports Japanese method only. However, FreeWnn (which is free)
+supports Chinese and Korean ones, too.
 
 - S. Taoka
 taoka@FreeBSD.org

@@ -1,7 +1,6 @@
 include/wnn7/wnn/commonhd.h
 include/wnn7/wnn/config.h
 include/wnn7/wnn/copyright.h
-include/wnn7/wnn/cplib.h
 include/wnn7/wnn/demcom.h
 include/wnn7/wnn/dslib.h
 include/wnn7/wnn/fi_jdata.h
@@ -14,17 +13,14 @@ include/wnn7/wnn/jllib.h
 include/wnn7/wnn/jslib.h
 include/wnn7/wnn/msg.h
 include/wnn7/wnn/mt_jlib.h
-include/wnn7/wnn/mt_jserver.h
 include/wnn7/wnn/rk_spclval.h
-include/wnn7/wnn/serverdefs.h
 include/wnn7/wnn/wnn_os.h
 include/wnn7/wnn/wnn_string.h
 include/wnn7/wnn/wnnerror.h
 @dirrm include/wnn7/wnn
 @dirrm include/wnn7
-lib/libwnn6_for_wnn7_fromsrc.a
-lib/libwnn6_for_wnn7.a
-lib/libwnn6_for_wnn7.so
-lib/libwnn6_for_wnn7.so.1
+lib/libwnn7.a
+lib/libwnn7.so
+lib/libwnn7.so.1
 share/doc/ja-Wnn7-lib/README
 @dirrm share/doc/ja-Wnn7-lib
