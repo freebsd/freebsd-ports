@@ -162,6 +162,7 @@
     SUBDIR += sweep
     SUBDIR += tclmidi
     SUBDIR += teknap
+    SUBDIR += tempest_for_eliza
     SUBDIR += timidity
     SUBDIR += timidity++
     SUBDIR += timidity++-emacs

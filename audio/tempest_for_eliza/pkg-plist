@@ -1,0 +1,10 @@
+bin/tempest_for_eliza
+share/doc/tempest/README
+share/tempest/forelise
+share/tempest/fruehling
+share/tempest/jonny
+share/tempest/oldmacdonald
+share/tempest/saints
+share/tempest/ungarian
+@dirrm share/doc/tempest
+@dirrm share/tempest
