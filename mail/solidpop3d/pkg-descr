@@ -1,0 +1,22 @@
+The Solid POP3 Server is an implementation of a Post Office Protocol version 3
+server that has flexibility as its main goal. The server is easily configurable
+and has support for few features such as:
+
+- APOP authentication scheme
+- virtual hosting
+- maildir and mailbox handling
+- bulletins
+- expiration of messages
+
+Each user can specify his maildrop (its position and type). The format used in
+specification of maildrop's position should handle almost all widely-used
+system configurations. The server also seems to be fast, however no tests have
+been performed, so it's rather relative feeling. The design used is very
+similar to the design of Solar Designer's POPA3D server. This solution let's
+minimalize size of code working with root privileges. The code was also heavily
+checked for buffer overflow leaks and file races. None have been found as for
+now. All operations on files are done with user privileges. There is no SUID
+APOP secrets database management program (as in QPOP). Each user can specify
+his secret in his own home directory.
+
+WWW: http://solidpop3d.pld.org.pl/

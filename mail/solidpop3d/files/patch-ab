@@ -1,0 +1,25 @@
+--- src/Makefile.in.orig	Fri Jun  9 14:16:13 2000
++++ src/Makefile.in	Fri Jun  9 14:16:17 2000
+@@ -60,11 +60,11 @@
+ 
+ 
+ noinst_HEADERS = apop.h authenticate.h cmds.h configfile.h const.h fdfgets.h \
+-log.h mailbox.h maildir.h maildrop.h md5.h includes.h options.h response.h \
++log.h mailbox.h maildir.h maildrop.h includes.h options.h response.h \
+ userconfig.h mapping.h spipv6.h
+ 
+ 
+-spop3d_SOURCES = authenticate.c cmds.c log.c fdfgets.c maildrop.c main.c md5.c \
++spop3d_SOURCES = authenticate.c cmds.c log.c fdfgets.c maildrop.c main.c \
+ memops.c options.c response.c vsnprintf.c
+ 
+ 
+@@ -95,7 +95,7 @@
+ LIBS = @LIBS@
+ pop_auth_OBJECTS =  pop_auth.o fdfgets.o vsnprintf.o
+ spop3d_OBJECTS = authenticate.o cmds.o log.o fdfgets.o maildrop.o main.o \
+-md5.o memops.o options.o response.o vsnprintf.o
++memops.o options.o response.o vsnprintf.o
+ CFLAGS = @CFLAGS@
+ COMPILE = $(CC) $(DEFS) $(INCLUDES) $(CFLAGS)
+ CCLD = $(CC)
