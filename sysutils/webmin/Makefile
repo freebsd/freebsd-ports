@@ -66,27 +66,21 @@ post-patch:
 		usermin/config
 	@${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/${file}
 .endfor
+	@${FIND} ${WRKSRC} -name "*.orig" -print | ${XARGS} ${RM}
+# we may have 2 levels of empty directories which cause the plist generation
+# system to fail
+	@${FIND} ${WRKSRC} -type d -empty -print | ${XARGS} ${RMDIR}
+	@${FIND} ${WRKSRC} -type d -empty -print | ${XARGS} ${RMDIR}
 
 do-install:
 	@${MKDIR} ${PREFIX}/lib/webmin
 	@${CP} -r ${WRKSRC}/* ${PREFIX}/lib/webmin
-	@cd ${PREFIX}/lib/webmin && ${FIND} . -name "*.orig" -print \
-		| ${XARGS} ${RM}
-# we may have 2 levels of empty directories which cause the plist generation
-# system to fail
-	@cd ${PREFIX}/lib/webmin && ${FIND} . -type d -empty -print \
-		| ${XARGS} ${RMDIR}
-	@cd ${PREFIX}/lib/webmin && ${FIND} . -type d -empty -print \
-		| ${XARGS} ${RMDIR}
 	@${CP} ${WRKDIR}/webmin.sh ${PREFIX}/etc/rc.d/webmin.sh-dist
 	@${CHMOD} 554 ${PREFIX}/etc/rc.d/webmin.sh-dist
 
 post-install:
-	@cd ${PREFIX} ; ${FIND} lib/webmin -type f -o -type l | sort \
-		> ${WRKDIR}/PLIST.lib-webmin
-	@cd ${PREFIX} ; ${FIND} lib/webmin -type d | sort -r \
-		| ${SED} -e 's/^/@dirrm /g' \
-		>> ${WRKDIR}/PLIST.lib-webmin
+	@cd ${WRKSRC} ; ${FIND} * -type f -o -type l | sort | ${AWK} '{ print "lib/webmin/" $$1 }' > ${WRKDIR}/PLIST.lib-webmin
+	@cd ${WRKSRC} ; ${FIND} * -type d | sort -r | ${AWK} '{ print "lib/webmin/" $$1 }' | ${SED} -e 's/^/@dirrm /g' >> ${WRKDIR}/PLIST.lib-webmin
 
 	@${ECHO_CMD} "r ${TMPPLIST}"			> ${WRKDIR}/ex.script
 	@${ECHO_CMD} "/Insert PLIST.lib-webmin"		>> ${WRKDIR}/ex.script

@@ -4,6 +4,7 @@ etc/rc.d/webmin.sh-dist
 @comment Insert PLIST.lib-webmin here
 @comment -=[ begin PLIST.lib-webmin ]=-
 @comment -=[ end PLIST.lib-webmin ]=-
+@dirrm lib/webmin
 @comment upgrade configuration if etc/webmin exists
 @exec [ ! -d %D/etc/webmin ] || echo | nostart=Y %D/lib/webmin/setup.sh
 @comment run interactive setup if not in BATCH mode and no configuration exists
