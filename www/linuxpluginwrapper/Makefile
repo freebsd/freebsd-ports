@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	linuxpluginwrapper
-PORTVERSION=	20050119
-PORTREVISION=	1
+PORTVERSION=	20050319
+PORTREVISION=	0
 CATEGORIES=	www linux emulators
 MASTER_SITES=	http://people.FreeBSD.org/~nork/distfiles/ \
 		${MASTER_SITE_LOCAL}
@@ -22,7 +22,7 @@ COMMENT=	A wrapper allowing use of linux-plugins with native applications
 RUN_DEPENDS=	${LOCALBASE}/lib/linux-flashplugin6/libflashplayer.so:${PORTSDIR}/www/linux-flashplugin6
 RUN_DEPENDS+=	${LOCALBASE}/lib/linux-mozilla/plugins/nphelix.so:${PORTSDIR}/multimedia/linux-realplayer
 .if		${OSVERSION} >= 500000
-RUN_DEPENDS+=	${LOCALBASE}/Acrobat5/Browsers/intellinux/nppdf.so:${PORTSDIR}/print/acroread
+RUN_DEPENDS+=	${LINUXBASE}/usr/local/Adobe/Acrobat7.0/Browser/intellinux/nppdf.so:${PORTSDIR}/print/acroread
 .else
 USE_MOTIF=	yes
 .endif
@@ -34,6 +34,7 @@ MAKE_ENV=	EXAMPLESDIR=${EXAMPLESDIR} INSTALL_DATA="${INSTALL_DATA}"
 CONFLICTS=	flashpluginwrapper-*
 USE_XLIB=	yes
 USE_REINPLACE=	yes
+PLIST_SUB=	LINUXBASE=${LINUXBASE}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 .if		defined(WITHOUT_PLUGINS) || ${OSVERSION} < 500000
 PLIST=		${WRKDIR}/pkg-plist
@@ -94,7 +95,7 @@ pre-install:
 	@${MKDIR} ${X11BASE}/lib/browser_plugins
 .if		!defined(WITHOUT_PLUGINS)
 .if		${OSVERSION} >= 500000
-	@${LN} -sf ${LOCALBASE}/Acrobat5/Browsers/intellinux/nppdf.so \
+	@${LN} -sf ${LINUXBASE}/usr/local/Adobe/Acrobat7.0/Browser/intellinux/nppdf.so \
 		${X11BASE}/lib/browser_plugins/
 .endif
 	@${LN} -sf ${LOCALBASE}/lib/linux-flashplugin6/flashplayer.xpt \
