@@ -3530,7 +3530,6 @@ linbot		ports/www/linbot
 linc		ports/net/linc
 lincity		ports/games/lincity
 lincvs		ports/devel/lincvs
-linemode	ports/www/linemode
 linguist	ports/devel/linguist
 links		ports/www/links
 linpack		ports/math/linpack
