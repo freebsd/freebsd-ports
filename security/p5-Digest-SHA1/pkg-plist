@@ -1,0 +1,7 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Digest/SHA1.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Digest/SHA1/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Digest/SHA1/SHA1.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Digest/SHA1/SHA1.so
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Digest/SHA1
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Digest 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Digest 2>/dev/null || true
