@@ -729,7 +729,6 @@
     SUBDIR += zope-cmfphoto
     SUBDIR += zope-cmfphotoalbum
     SUBDIR += zope-cmfquickinstaller
-    SUBDIR += zope-cmftransforms
     SUBDIR += zope-coreblog
     SUBDIR += zope-epoz
     SUBDIR += zope-exuserfolder
