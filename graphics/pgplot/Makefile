@@ -3,7 +3,7 @@
 # Date created:		21 December 1996
 # Whom:			jmz
 #
-# $Id: Makefile,v 1.6 1998/10/12 03:19:03 jseger Exp $
+# $Id: Makefile,v 1.7 1998/11/11 05:37:21 asami Exp $
 #
 
 DISTNAME=       pgplot5.2
@@ -16,10 +16,6 @@ MAINTAINER=	jmz@FreeBSD.org
 WRKSRC=		${WRKDIR}/pgplot
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 300000
-BROKEN=         makehtml not found
-.endif
 
 .if ${PORTOBJFORMAT} == "elf"
 VERSION=	5

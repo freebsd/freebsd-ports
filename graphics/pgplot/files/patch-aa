@@ -1,0 +1,16 @@
+--- makehtml~	Wed Feb 26 22:54:09 1997
++++ makehtml	Mon Oct 12 22:52:01 1998
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/perl
++#!/usr/bin/perl
+ 
+ $, = ' ';		# set output field separator
+ $\ = "\n";		# set output record separator
+--- maketex~	Tue Apr 16 23:51:24 1996
++++ maketex	Mon Oct 12 22:52:14 1998
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/perl
++#!/usr/bin/perl
+ 
+ $, = ' ';		# set output field separator
+ $\ = "\n";		# set output record separator
