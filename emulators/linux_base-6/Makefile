@@ -23,7 +23,9 @@ PATCHFILES=		${UPDATES}
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=	The base set of packages needed in Linux mode
 
-DEPRECATED=	"obsolete and has a minor security bug:  see http://www.redhat.com/support/errata/archives/RHSA-2000-117.html"
+FORBIDDEN=		"RHSA-2004:383-01, RHSA-2000-115, RHSA-2000-117"
+DEPRECATED=		${FORBIDDEN}
+EXPIRATION_DATE=	2005-05-14
 
 BUILD_DEPENDS=		rpm:${PORTSDIR}/archivers/rpm
 
@@ -43,7 +45,7 @@ MD5_FILE=		${MASTERDIR}/distinfo.${ARCH}
 .include <bsd.port.pre.mk>
 
 .if (${ARCH} == "alpha")
-FORBIDDEN=	"see <URL:http://rhn.redhat.com/errata/RHSA-2003-089.html> or\
+FORBIDDEN+=	"see <URL:http://rhn.redhat.com/errata/RHSA-2003-089.html> or\
  <URL:http://www.cert.org/advisories/CA-2003-10.html>"
 .endif
 
