@@ -13,6 +13,7 @@ MASTER_SITES=	http://mirrors.darkelf.net/GXedit/ \
 DISTNAME=	GXedit${PORTVERSION}
 
 MAINTAINER=	dom@happygiraffe.net
+COMMENT=	A simple GTK+ editor
 
 USE_X_PREFIX=	yes
 USE_GNOMENG=	yes

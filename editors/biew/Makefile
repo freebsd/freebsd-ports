@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
 
 MAINTAINER=	ryan@sasknow.com
+COMMENT=	Binary vIEWer + editor for binary, hexadecimal and dis-asm modes
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes

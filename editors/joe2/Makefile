@@ -15,6 +15,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER?=	toasty@dragondata.com
+COMMENT?=	Joe's own editor
 
 WRKSRC=		${WRKDIR}/joe
 ALL_TARGET=	joe

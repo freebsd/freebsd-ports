@@ -11,6 +11,7 @@ CATEGORIES=	editors kde
 MASTER_SITES=	http://perso.club-internet.fr/pascal.brachet/kile/
 
 MAINTAINER=	stefan.jahn@nemesis-sektor.de
+COMMENT=	A LaTeX source editor for KDE
 
 RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX
 

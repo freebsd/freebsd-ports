@@ -11,6 +11,7 @@ CATEGORIES=	editors
 MASTER_SITES=	http://ledge.co.za/software/bitedit/
 
 MAINTAINER=	mich@freebsdcluster.org
+COMMENT=	Bitedit is a simple ncurses program for editing a file
 
 MAKE_ARGS=	CFLAGS="${CFLAGS} -DDISABLE_SETFONT"
 

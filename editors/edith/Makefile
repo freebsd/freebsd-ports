@@ -13,6 +13,7 @@ DISTFILES=	edith1.55.common.tar.gz \
 		edith1.58.linux-glibc.tar.gz
 
 MAINTAINER=	chris@unixpages.org
+COMMENT=	A X11 GUI editor for binary and plain text files
 
 USE_LINUX=	yes
 USE_X_PREFIX=	yes

@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://mugca.cc.monash.edu.au/pub/dougt/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	sjhports@tracking.amos.net
+COMMENT=	A simple text editor which uses many of the shortcuts used in MSDOS EDIT
 
 MAN1=		dte.1
 

@@ -13,6 +13,7 @@ DISTFILES=	TeXmacs-${PORTVERSION}-src.tar.gz \
 		TeXmacs-600dpi-fonts.tar.gz
 
 MAINTAINER=	mainland@apeiron.net
+COMMENT=	A free WYSIWYG scientific text editor
 
 BUILD_DEPENDS=	guile:${PORTSDIR}/lang/guile \
 		tex:${PORTSDIR}/print/teTeX

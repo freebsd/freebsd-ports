@@ -14,6 +14,7 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 MASTER_SITE_SUBDIR=	apps/editors/X/cooledit
 
 MAINTAINER=	brett@peloton.runet.edu
+COMMENT=	Suite of utilities, including a GUI editor
 
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext \
 		vga.1:${PORTSDIR}/graphics/svgalib

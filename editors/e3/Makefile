@@ -12,6 +12,7 @@ CATEGORIES=	editors
 MASTER_SITES=	http://www.sax.de/~adlibit/
 
 MAINTAINER=	joseph@randomnetworks.com
+COMMENT=	A full featured text editor written in assembler
 
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 

@@ -16,6 +16,7 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
 .endif
 
 MAINTAINER=	brett@peloton.runet.edu
+COMMENT=	Simple GTK-based text/HTML editor
 
 DOCVERSION=	1.2.0
 
