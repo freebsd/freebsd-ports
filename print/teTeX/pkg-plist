@@ -187,29 +187,6 @@ include/kpathsea/types.h
 include/kpathsea/variable.h
 include/kpathsea/xopendir.h
 include/kpathsea/xstat.h
-@unexec install-info --delete %D/info/dvips.info %D/info/dir
-@unexec install-info --delete %D/info/kpathsea.info %D/info/dir
-@unexec install-info --delete %D/info/latex.info %D/info/dir
-@unexec install-info --delete %D/info/web2c.info %D/info/dir
-info/dvips.info
-info/dvips.info-1
-info/dvips.info-2
-info/dvips.info-3
-info/dvips.info-4
-info/kpathsea.info
-info/latex.info
-info/latex.info-1
-info/latex.info-2
-info/latex.info-3
-info/web2c.info
-info/web2c.info-1
-info/web2c.info-2
-info/web2c.info-3
-info/web2c.info-4
-@exec install-info %D/info/dvips.info %D/info/dir
-@exec install-info %D/info/kpathsea.info %D/info/dir
-@exec install-info %D/info/latex.info %D/info/dir
-@exec install-info %D/info/web2c.info %D/info/dir
 lib/libkpathsea.a
 share/texmf/ChangeLog
 share/texmf/LICENSE.texmf
