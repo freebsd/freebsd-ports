@@ -5445,6 +5445,7 @@ p5-VCS-CVS	ports/devel/p5-VCS-CVS
 p5-WDDX		ports/textproc/p5-WDDX
 p5-WWW-Automate	ports/www/p5-WWW-Automate
 p5-WWW-Babelfish	ports/www/p5-WWW-Babelfish
+p5-WWW-IMDb	ports/www/p5-WWW-IMDb
 p5-WWW-Link	ports/www/p5-WWW-Link
 p5-WWW-Robot	ports/www/p5-WWW-Robot
 p5-WWW-Search	ports/www/p5-WWW-Search
