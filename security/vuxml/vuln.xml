@@ -32,6 +32,40 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="bfda39de-7467-11d9-9e1e-c296ac722cb3">
+    <topic>squid -- correct handling of oversized HTTP reply headers</topic>
+    <affects>
+      <package>
+        <name>squid</name>
+        <range><lt>2.5.7_12</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>The squid patches page notes:</p>
+        <blockquote cite="http://www.squid-cache.org/Versions/v2/2.5/bugs/squid-2.5.STABLE7-oversize_reply_headers.patch">
+          <p>This patch addresses a HTTP protocol mismatch related to oversized
+            reply headers. In addition it enhances the cache.log reporting on
+            reply header parsing failures to make it easier to track down which
+            sites are malfunctioning.</p>
+        </blockquote>
+	<p>It is believed that this bug may lead to cache pollution or
+	  allow access controls to be bypassed.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2005-0241</cvename>
+      <url>http://www.squid-cache.org/bugs/show_bug.cgi?id=1216</url>
+      <url>http://www.squid-cache.org/Versions/v2/2.5/bugs/squid-2.5.STABLE7-oversize_reply_headers.patch</url>
+      <freebsdpr>ports/76967</freebsdpr>
+      <certvu>823350</certvu>
+    </references>
+    <dates>
+      <discovery>2005-01-31</discovery>
+      <entry>2005-02-08</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6afa87d3-764b-11d9-b0e7-0000e249a0a2">
     <topic>python -- SimpleXMLRPCServer.py allows unrestricted traversal</topic>
     <affects>
