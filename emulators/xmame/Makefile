@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	xmame
-PORTVERSION?=	0.74.1
+PORTVERSION?=	0.76.1
 CATEGORIES=	emulators
 MASTER_SITES=	http://x.mame.net/download/:xmame \
 		http://www.sys2064.com/files/util/:history \
@@ -154,7 +154,7 @@ ASM_COMMENT=\#
 .if ${WITH_OPTIMIZATION:L} == "yes"
 CFLAGS+=	-O3 -Wall -Wno-unused -funroll-loops \
 		-fstrength-reduce -fomit-frame-pointer -ffast-math \
-		-malign-functions=4 -malign-jumps=4 -malign-loops=4
+		-falign-functions=4 -falign-jumps=4 -falign-loops=4
 .endif
 .endif
 

@@ -45,7 +45,6 @@ share/%%MAMEMESS%%/%%MAMEMESS%%rc
 %%PINMAMEONLY%%%%PORTDOCS%%share/doc/xpinmame/gamelist.txt
 %%PINMAMEONLY%%%%PORTDOCS%%share/doc/xpinmame/keys.txt
 %%PINMAMEONLY%%%%PORTDOCS%%share/doc/xpinmame/sounds.dat
-%%OPENGL%%%%PORTDOCS%%share/doc/%%MAMEMESS%%/changes.opengl
 %%PORTDOCS%%@dirrm share/doc/%%MAMEMESS%%/img
 %%PORTDOCS%%@dirrm share/doc/%%MAMEMESS%%
 %%OPENGL%%share/%%MAMEMESS%%/cab/glmame/cabfront.jpg
