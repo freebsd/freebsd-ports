@@ -219,6 +219,7 @@
     SUBDIR += mtxorbd
     SUBDIR += multitail
     SUBDIR += munin-main
+    SUBDIR += munin-node
     SUBDIR += muse
     SUBDIR += nagios-statd
     SUBDIR += nautilus-cd-burner
