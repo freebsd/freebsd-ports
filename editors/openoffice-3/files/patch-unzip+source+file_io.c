@@ -1,12 +1,11 @@
---- ../unzip/source/file_io.c.orig	Mon Apr 15 16:59:43 2002
-+++ ../unzip/source/file_io.c	Mon Apr 15 17:05:38 2002
-@@ -865,7 +865,9 @@
+--- ../unzip/source/file_io.c.orig	Sat Apr  6 12:13:38 2002
++++ ../unzip/source/file_io.c	Wed May  1 22:34:51 2002
+@@ -864,7 +864,7 @@
+ #ifndef __386BSD__
  	static struct timeb tbp;
  #endif /* !__386BSD__ */
- #else /* !BSD */
-+#if (!defined(FREEBSD) && !defined(NETSBD))
+-#elif !defined(NETBSD) /* !BSD */
++#elif (!defined(NETBSD) && !defined(FREEBSD))/* !BSD */
  	extern long timezone;
-+#endif
  #endif /* ?BSD */
  #endif /* ?AMIGA */
- 

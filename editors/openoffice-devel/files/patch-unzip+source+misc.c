@@ -1,13 +1,11 @@
---- ../unzip/source/misc.c.orig	Fri Feb 15 15:10:30 2002
-+++ ../unzip/source/misc.c	Wed Apr  3 01:19:16 2002
-@@ -301,8 +301,8 @@
+--- ../unzip/source/misc.c.orig	Sat Apr  6 12:13:38 2002
++++ ../unzip/source/misc.c	Wed May  1 22:36:32 2002
+@@ -300,7 +300,7 @@
+     static short yday[]={0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334};
      int yr, mo, dy, hh, mm, ss, leap;
      long m_time, days=0;
- #if (!defined(MACOS) && !defined(MSC) && !defined(__GO32__))
--#if (defined(BSD) || defined(MTS))
--#ifndef __386BSD__
-+#if (defined(BSD) || defined(MTS) || defined(FREEBSD))
-+#if !defined __386BSD__ && !defined FREEBSD
+-#if (!defined(MACOS) && !defined(MSC) && !defined(__GO32__) && !defined(NETBSD))
++#if (!defined(MACOS) && !defined(MSC) && !defined(__GO32__) && !defined(NETBSD) && !defined(FREEBSD))
+ #if (defined(BSD) || defined(MTS))
+ #ifndef __386BSD__
      static struct timeb tbp;
- #endif /* __386BSD__ */
- #else /* !(BSD || MTS) */
