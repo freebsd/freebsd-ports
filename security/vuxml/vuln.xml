@@ -32,6 +32,43 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="972697a7-9a42-11d9-a256-0001020eed82">
+    <topic>kdelibs -- local DCOP denial of service vulnerability</topic>
+    <affects>
+      <package>
+	<name>ja-kdelibs</name>
+	<name>kdelibs-nocups</name>
+	<name>kdelibs</name>
+	<range><lt>3.4.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A KDE Security Advisory reports:</p>
+	<blockquote cite="http://www.kde.org/info/security/advisory-20050316-1.txt">
+	  <p>Sebastian Krahmer of the SUSE LINUX Security Team
+	    reported a local denial of service vulnerability in KDE's
+	    Desktop Communication Protocol (DCOP) daemon better known
+	    as dcopserver.</p>
+	  <p>A local user can lock up the dcopserver of arbitrary
+	    other users on the same machine. This can cause a
+	    significant reduction in desktop functionality for the
+	    affected users including, but not limited to, the
+	    inability to browse the internet and the inability to
+	    start new applications.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2005-0396</cvename>
+      <url>http://www.kde.org/info/security/advisory-20050316-1.txt</url>
+    </references>
+    <dates>
+      <discovery>2005-03-16</discovery>
+      <entry>2005-03-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6192ae3d-9595-11d9-a9e0-0001020eed82">
     <topic>phpmyadmin -- increased privilege vulnerability</topic>
     <affects>
