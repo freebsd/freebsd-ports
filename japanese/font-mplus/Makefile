@@ -7,6 +7,7 @@
 
 PORTNAME=	mplusfonts
 PORTVERSION=	1.0.4
+PORTREVISION=	1
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	http://downloads.sourceforge.jp/mplus-fonts/2050/ \
 		http://wids.net/archive/mplusfonts/distfiles/
@@ -25,6 +26,7 @@ RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
 
 FONTNAME=	mplus_j12b mplus_j12b_iso8859 mplus_j12b_jisx0201 \
 		mplus_j12r mplus_j12r_iso8859 mplus_j12r_jisx0201
+DOCSDIR=	${PREFIX}/share/doc/ja/${PORTNAME}
 DOCS=		LICENSE README_J
 
 FONTSDIR=	${PREFIX}/lib/X11/fonts/local
