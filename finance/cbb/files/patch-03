@@ -1,0 +1,20 @@
+--- configure.orig	Sun Jan 23 01:41:45 2000
++++ configure	Sun Jan 23 01:42:10 2000
+@@ -798,7 +798,7 @@
+ fi
+ 
+ if test "x$with_wish" = "x" ; then
+-    with_wish=wish
++    with_wish=wish8.2
+ fi
+ 
+ # Check whether --with-wish or --without-wish was given.
+@@ -988,7 +988,7 @@
+     fi
+   done
+   IFS="$ac_save_ifs"
+-  test -z "$ac_cv_path_WISH" && ac_cv_path_WISH=""wish""
++  test -z "$ac_cv_path_WISH" && ac_cv_path_WISH=""wish8.2""
+   ;;
+ esac
+ fi

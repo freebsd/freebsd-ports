@@ -1,7 +1,12 @@
 bin/cbb
+bin/dialog4duplicate
+lib/cbb/languages/english.tcl
+lib/cbb/languages/french.tcl
+lib/cbb/languages/german.tcl
 lib/cbb/reports/reports.conf
 lib/cbb/reports/ave-by-cat.pl
 lib/cbb/reports/by-cat.pl
+lib/cbb/reports/by-payee.pl
 lib/cbb/reports/miss-check.pl
 lib/cbb/reports/shrt-by-cat.pl
 lib/cbb/reports/txn-list.pl
@@ -41,33 +46,37 @@ lib/cbb/contrib/txn.README
 lib/cbb/contrib/txn
 lib/cbb/contrib/upgrade-splits.pl
 lib/cbb/contrib/yearend.pl
-lib/cbb/docs/cbb-man/icons/00Contents
-lib/cbb/docs/cbb-man/icons/blank.pbm
-lib/cbb/docs/cbb-man/icons/change_begin.gif
-lib/cbb/docs/cbb-man/icons/change_delete.gif
-lib/cbb/docs/cbb-man/icons/change_end.gif
-lib/cbb/docs/cbb-man/icons/contents.xbm
-lib/cbb/docs/cbb-man/icons/contents_motif.gif
-lib/cbb/docs/cbb-man/icons/cross_ref_motif.gif
-lib/cbb/docs/cbb-man/icons/foot_motif.gif
-lib/cbb/docs/cbb-man/icons/icons.html
-lib/cbb/docs/cbb-man/icons/index_motif.gif
-lib/cbb/docs/cbb-man/icons/invis_anchor.xbm
-lib/cbb/docs/cbb-man/icons/next_group_motif.gif
-lib/cbb/docs/cbb-man/icons/next_group_motif_gr.gif
-lib/cbb/docs/cbb-man/icons/next_motif.gif
-lib/cbb/docs/cbb-man/icons/next_motif_gr.gif
-lib/cbb/docs/cbb-man/icons/previous_group_motif.gif
-lib/cbb/docs/cbb-man/icons/previous_group_motif_gr.gif
-lib/cbb/docs/cbb-man/icons/previous_motif.gif
-lib/cbb/docs/cbb-man/icons/previous_motif_gr.gif
-lib/cbb/docs/cbb-man/icons/up_motif.gif
-lib/cbb/docs/cbb-man/icons/up_motif_gr.gif
+lib/cbb/docs/cbb-man/icons.png/blueball.png
+lib/cbb/docs/cbb-man/icons.png/change_begin.png
+lib/cbb/docs/cbb-man/icons.png/change_delete.png
+lib/cbb/docs/cbb-man/icons.png/change_end.png
+lib/cbb/docs/cbb-man/icons.png/contents_motif.png
+lib/cbb/docs/cbb-man/icons.png/cross_ref_motif.png
+lib/cbb/docs/cbb-man/icons.png/foot_motif.png
+lib/cbb/docs/cbb-man/icons.png/greenball.png
+lib/cbb/docs/cbb-man/icons.png/image.png
+lib/cbb/docs/cbb-man/icons.png/index_motif.png
+lib/cbb/docs/cbb-man/icons.png/next_group_motif.png
+lib/cbb/docs/cbb-man/icons.png/next_group_motif_gr.png
+lib/cbb/docs/cbb-man/icons.png/next_motif.png
+lib/cbb/docs/cbb-man/icons.png/next_motif_gr.png
+lib/cbb/docs/cbb-man/icons.png/orangeball.png
+lib/cbb/docs/cbb-man/icons.png/pinkball.png
+lib/cbb/docs/cbb-man/icons.png/previous_group_motif.png
+lib/cbb/docs/cbb-man/icons.png/previous_group_motif_gr.png
+lib/cbb/docs/cbb-man/icons.png/previous_motif.png
+lib/cbb/docs/cbb-man/icons.png/previous_motif_gr.png
+lib/cbb/docs/cbb-man/icons.png/purpleball.png
+lib/cbb/docs/cbb-man/icons.png/redball.png
+lib/cbb/docs/cbb-man/icons.png/up_motif.png
+lib/cbb/docs/cbb-man/icons.png/up_motif_gr.png
+lib/cbb/docs/cbb-man/icons.png/whiteball.png
+lib/cbb/docs/cbb-man/icons.png/yellowball.png
 lib/cbb/docs/cbb-man/cbb-man.html
-lib/cbb/docs/cbb-man/img1.gif
-lib/cbb/docs/cbb-man/img2.gif
-lib/cbb/docs/cbb-man/img3.gif
-lib/cbb/docs/cbb-man/img4.gif
+lib/cbb/docs/cbb-man/index.html
+lib/cbb/docs/cbb-man/img1.png
+lib/cbb/docs/cbb-man/img2.png
+lib/cbb/docs/cbb-man/img3.png
 lib/cbb/docs/cbb-man.txt
 lib/cbb/wrapper.pl
 lib/cbb/categories.pl
@@ -97,10 +106,11 @@ lib/cbb/undo.tcl
 lib/cbb/default.cat
 lib/cbb/extern.conf
 @dirrm lib/cbb/contrib
-@dirrm lib/cbb/docs/cbb-man/icons
+@dirrm lib/cbb/docs/cbb-man/icons.png
 @dirrm lib/cbb/docs/cbb-man
 @dirrm lib/cbb/docs
 @dirrm lib/cbb/graphs
 @dirrm lib/cbb/images
+@dirrm lib/cbb/languages
 @dirrm lib/cbb/reports
 @dirrm lib/cbb
