@@ -14,7 +14,6 @@ MASTER_SITES=	ftp://ftp.rpm.org/pub/rpm/dist/rpm-3.0.x/ \
 
 MAINTAINER=	nakai@FreeBSD.org
 
-BUILD_DEPENDS=	msgfmt-old:${PORTSDIR}/devel/gettext-old
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext \
 		popt.0:${PORTSDIR}/devel/popt
 .if !exists(/usr/bin/bzip2)
@@ -26,10 +25,9 @@ USE_AUTOMAKE_VER=14
 USE_LIBTOOL=	yes
 CONFIGURE_ARGS=	--with-glob
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib -lintl -liconv" \
-		MSGFMT="${LOCALBASE}/bin/msgfmt-old" \
-		XGETTEXT="${LOCALBASE}/bin/xgettext-old"
+		LIBS="-L${LOCALBASE}/lib -lintl -liconv"
 INSTALLS_SHLIB=	yes
+MAKE_ENV=	OLD_PO_FILE_INPUT=1
 
 MAN1=		gendiff.1
 MAN8=		rpm.8 rpm2cpio.8
