@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	Tue Oct 13 19:12:49 1998
++++ src/Makefile.in	Tue Oct 13 19:13:55 1998
+@@ -121,7 +121,7 @@
+ rgrep: $(OBJDIR)/rgrep
+ 	@echo rgrep created in $(OBJDIR)
+ $(OBJDIR)/rgrep: $(OBJDIR)/vfile.o $(OBJDIR)/rgrep.o
+-	cd $(OBJDIR); $(CC) vfile.o rgrep.o -o rgrep $(LDFLAGS) -L$(SLANG_LIB_DIR) -lslang
++	cd $(OBJDIR); $(CC) vfile.o rgrep.o -o rgrep $(LDFLAGS) -L$(SLANG_LIB_DIR) -lslang $(TERMCAP_LIB)
+ #
+ getmail: $(OBJDIR)/getmail
+ 	@echo getmail created in $(OBJDIR)
