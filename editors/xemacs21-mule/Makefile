@@ -3,7 +3,7 @@
 # Date created:		5 Dec 1997
 # Whom:			Kazuyuki IENAGA <ienaga@jsys.co.jp>
 #
-# $Id: Makefile,v 1.9 1998/09/21 22:33:22 steve Exp $
+# $Id: Makefile,v 1.10 1998/10/10 15:27:50 kuriyama Exp $
 #
 
 DISTNAME=	xemacs-20.4
@@ -26,7 +26,7 @@ LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
 		png.2:${PORTSDIR}/graphics/png \
 		compface.1:${PORTSDIR}/mail/faces \
 		${LIB_INPUT_METHOD}
-RUN_DEPENDS=	${PREFIX}/lib/xemacs-mule-20.4/etc/BABYL:${PORTSDIR}/editors/xemacs-mule-common
+RUN_DEPENDS=	${PREFIX}/lib/xemacs-20.4/etc/BABYL:${PORTSDIR}/editors/xemacs-mule-common
 
 EXTRACT_ONLY=	xemacs-20.4.tar.gz xemacs-20.4-elc.tar.gz \
 		xemacs-20.4-info.tar.gz xemacs-20.4-mule.tar.gz 
