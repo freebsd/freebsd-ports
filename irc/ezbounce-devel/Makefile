@@ -6,33 +6,52 @@
 #
 
 PORTNAME=	ezbounce
-PORTVERSION=	0.99.12
+PORTVERSION=	1.0
 CATEGORIES=	irc
 MASTER_SITES=  	http://druglord.freelsd.org/ezbounce/
+DISTFILES=	${DISTNAME}-release${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 
 GNU_CONFIGURE= 	yes
 
+MAN1=		ezbounce.1
+
+.if !defined(WANT_MDIDENTD)
+ALL_TARGET=	ezbounce_src
+PLIST_SUB+=	MDIDENTD="@comment "
+.else
+PLIST_SUB+=	MDIDENTD=""
+.endif
+
 post-patch:
 	@${SED} -e "s:/path/to:${PREFIX}/sbin:" ${WRKSRC}/sample.conf > \
-		${WRKSRC}/ezbounce.conf.default
+		${WRKSRC}/ezb.conf.default
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ezbounce ${PREFIX}/sbin
+	${INSTALL_SCRIPT} ${WRKSRC}/ezb.conf.default ${PREFIX}/etc
+
+.if defined(WANT_MDIDENTD)
 	${INSTALL_PROGRAM} ${WRKSRC}/mdidentd/mdidentd ${PREFIX}/sbin
-	${INSTALL_SCRIPT} ${WRKSRC}/ezbounce.conf.default ${PREFIX}/etc
-.if !exists(${PREFIX}/etc/ezbounce.conf)
-	${INSTALL_SCRIPT} ${WRKSRC}/ezbounce.conf.default \
-		${PREFIX}/etc/ezbounce.conf
 .endif
+
+@if [ ! -f ${PREFIX}/etc/ezb.conf ] ${INSTALL_SCRIPT} \
+	${WRKSRC}/ezb.conf.default ${PREFIX}/etc/ezb.conf
+
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/ezbounce
 	${INSTALL_DATA} ${WRKSRC}/CHANGES ${PREFIX}/share/doc/ezbounce
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/ezbounce
 	${INSTALL_DATA} ${WRKSRC}/TODO ${PREFIX}/share/doc/ezbounce
+	${INSTALL_DATA} ${WRKSRC}/worklog ${PREFIX}/share/doc/ezbounce
+	${INSTALL_MAN}	${WRKSRC}/misc/ezbounce.1 ${PREFIX}/man/man1
+
+.if defined(WANT_MDIDENTD)
 	${INSTALL_DATA} ${WRKSRC}/mdidentd/README \
 		${PREFIX}/share/doc/ezbounce/mdidentd.README
+.endif
+
 .endif
 	@${SED} -e "s:/usr/local:${PREFIX}:g" ${PKGMESSAGE}
 
