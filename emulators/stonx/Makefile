@@ -15,7 +15,6 @@ MAINTAINER=	treif@mayn.de
 COMMENT=	AtariST emulator
 
 RESTRICTED=	"tos.img is copyrighted"
-NO_PACKAGE=	${RESTRICTED}
 
 TOSIMG=		tos.img
 USE_X_PREFIX=	yes
