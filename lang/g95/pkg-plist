@@ -1,0 +1,14 @@
+@comment $FreeBSD$
+bin/cpptree-ssa
+bin/g95
+bin/gccbugtree-ssa
+bin/gcctree-ssa
+bin/gcovtree-ssa
+bin/gfortran
+bin/gfortrantree-ssa
+bin/%%GNU_HOST%%-gcc-3.5-tree-ssa
+bin/%%GNU_HOST%%-gcctree-ssa
+include/mf-runtime.h
+@comment Insert PLIST.lib here
+@comment -=[ begin PLIST.lib ]=-
+@comment -=[ end PLIST.lib ]=-

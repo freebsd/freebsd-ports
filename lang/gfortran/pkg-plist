@@ -1,0 +1,14 @@
+@comment $FreeBSD: /tmp/pcvs/ports/lang/gfortran/Attic/pkg-plist,v 1.1 2004-02-01 23:20:22 maho Exp $
+bin/cpptree-ssa
+bin/g95
+bin/gccbugtree-ssa
+bin/gcctree-ssa
+bin/gcovtree-ssa
+bin/gfortran
+bin/gfortrantree-ssa
+bin/%%GNU_HOST%%-gcc-3.5-tree-ssa
+bin/%%GNU_HOST%%-gcctree-ssa
+include/mf-runtime.h
+@comment Insert PLIST.lib here
+@comment -=[ begin PLIST.lib ]=-
+@comment -=[ end PLIST.lib ]=-
