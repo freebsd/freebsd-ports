@@ -25,6 +25,7 @@
     SUBDIR += gtk-flat-theme
     SUBDIR += gtk12
     SUBDIR += gtk13
+    SUBDIR += gtkada
     SUBDIR += gtkbe
     SUBDIR += gtkextra
     SUBDIR += gtkextra--
