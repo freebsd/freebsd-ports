@@ -7,14 +7,14 @@
 #
 
 PORTNAME=	ncftp
-PORTVERSION=	3.1.3
+PORTVERSION=	3.1.4
 PORTREVISION=	0
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	ftp://ftp.ncftp.com/ncftp/
 DISTNAME=	ncftp-${PORTVERSION}-src
 
 PATCH_SITES=	ftp://ftp.kame.net/pub/kame/misc/
-PATCHFILES=	ncftp-313-v6-20020531.diff.gz
+#PATCHFILES=	ncftp-313-v6-20020627.diff.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	obrien@FreeBSD.org
@@ -25,28 +25,35 @@ WRKSRC=		${WRKDIR}/${DISTNAME:S/-src//}
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ncurses
-MAN1=		ncftp3.1 ncftpbatch.1 ncftpget.1 ncftpls.1 ncftpput.1
+MAN1=		ncftp3.1 ncftpbatch.1 ncftpget.1 ncftpls.1 ncftpput.1 \
+		ncftpspooler.1
 MAN3=		Strn.3
 
 LIBNCFTP=	libncftp.so.2
+LIBSIO=		libsio.so.5
 LIBSTRN=	libStrn.so.1
 
 pre-build:
 	cd ${WRKSRC}/Strn ; make so
 	cd ${WRKSRC}/libncftp ; make so
+	cd ${WRKSRC}/sio; make so
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/bin/ncftp ${PREFIX}/bin/ncftp3
 	@cd ${WRKSRC}/bin ; ${INSTALL_PROGRAM} \
 		ncftpbatch ncftpget ncftpls ncftpput ncftpbookmarks \
 		${PREFIX}/bin
+	@cd ${PREFIX}/bin && ${LN} ncftpbatch ncftpspooler
 	@${INSTALL_DATA} ${WRKSRC}/Strn/libStrn.so.1 ${PREFIX}/lib/${LIBSTRN}
 	@cd ${PREFIX}/lib && ${LN} -sf ${LIBSTRN} libStrn.so
-	@${INSTALL_DATA} ${WRKSRC}/libncftp/libncftp.so.2 ${PREFIX}/lib/${LIBNCFTP}
-	@cd ${PREFIX}/lib && ${LN} -sf ${LIBNCFTP} libncftp.so
+	@cd ${WRKSRC} && ${INSTALL_DATA} libncftp/${LIBNCFTP} sio/${LIBSIO} \
+		${PREFIX}/lib
+	@cd ${PREFIX}/lib \
+		&& ${LN} -sf ${LIBNCFTP} libncftp.so \
+		&& ${LN} -sf ${LIBSIO} libsio.so
 	@${INSTALL_MAN} ${WRKSRC}/doc/man/ncftp.1 ${PREFIX}/man/man1/ncftp3.1
 	@cd ${WRKSRC}/doc/man ; ${INSTALL_MAN} \
-		ncftpbatch.1 ncftpget.1 ncftpls.1 ncftpput.1 \
+		ncftpbatch.1 ncftpget.1 ncftpls.1 ncftpput.1 ncftpspooler.1 \
 		${PREFIX}/man/man1
 	@${INSTALL_MAN} ${WRKSRC}/Strn/Strn.3 ${PREFIX}/man/man3
 
