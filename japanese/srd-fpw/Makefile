@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	srd-fpw
-PORTVERSION=	1.1.4a
+PORTVERSION=	1.1.5
 CATEGORIES=	japanese
 MASTER_SITES=	http://openlab.ring.gr.jp/edict/fpw/dist/srd/
 DISTNAME=	srd-fpw${PORTVERSION}-src
@@ -14,7 +14,6 @@ DISTNAME=	srd-fpw${PORTVERSION}-src
 MAINTAINER=	taoka@FreeBSD.org
 
 BUILD_DEPENDS=	fpwmake:${PORTSDIR}/japanese/freepwing \
-		catdump:${PORTSDIR}/japanese/epwutil \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Jcode.pm:${PORTSDIR}/japanese/p5-Jcode
 
 IS_INTERACTIVE= YES
@@ -53,7 +52,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/img.dat ${PREFIX}/share/dict/srd-fpw
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/srd-fpw
-.for file in README.TXT README.PKG AUTHORS COPYING ChangeLog GAIJI.TXT TOBEDONE NEWS
+.for file in AUTHORS COPYING ChangeLog GAIJI.TXT NEWS README.PKG README.TXT TOBEDONE
 	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/srd-fpw
 .endfor
 .endif
