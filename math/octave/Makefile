@@ -7,6 +7,7 @@
 
 PORTNAME=	octave
 PORTVERSION=	2.1.49
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.octave.org/pub/octave/bleeding-edge/ \
 		ftp://ftp.eos.hokudai.ac.jp/pub/GNU/misc/octave/bleeding-edge/
@@ -35,8 +36,12 @@ PLIST_SUB=	OCTAVE_VERSION=${OCTAVE_VERSION} GNU_HOST=${GNU_HOST}
 BLAS_LIBS=	"-L${LOCALBASE}/lib -lf77blas -latlas"
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+INSTALLS_SHLIB=	yes
+LDCONFIG_DIRS=	%%PREFIX%%/lib/${PORTNAME}-${PORTVERSION}
+
 CONFIGURE_ARGS=	--host=${GNU_HOST} \
-		--with-fftw --with-blas=${BLAS_LIBS} --with-lpack
+		--with-fftw --with-blas=${BLAS_LIBS} --with-lpack \
+		--enable-shared
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" \
 		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include"

@@ -299,13 +299,97 @@ info/liboctave.info
 @exec install-info --entry='* Octave: (octave).    Interactive language for numerical computations.' %D/info/octave.info %D/info/dir
 @exec install-info --entry='* LibOctave: (liboctave).      C++ class library for Octave.' %D/info/liboctave.info %D/info/dir
 lib/octave-%%OCTAVE_VERSION%%/libcruft.a
+lib/octave-%%OCTAVE_VERSION%%/libcruft.so
+lib/octave-%%OCTAVE_VERSION%%/libcruft.so.%%OCTAVE_VERSION%%
 lib/octave-%%OCTAVE_VERSION%%/liboctave.a
+lib/octave-%%OCTAVE_VERSION%%/liboctave.so
+lib/octave-%%OCTAVE_VERSION%%/liboctave.so.%%OCTAVE_VERSION%%
 lib/octave-%%OCTAVE_VERSION%%/liboctinterp.a
+lib/octave-%%OCTAVE_VERSION%%/liboctinterp.so
+lib/octave-%%OCTAVE_VERSION%%/liboctinterp.so.%%OCTAVE_VERSION%%
 @unexec /bin/rm -f %D/lib/octave
 @exec /bin/ln -sf %D/lib/octave-%%OCTAVE_VERSION%% %D/lib/octave
 libexec/octave/%%OCTAVE_VERSION%%/exec/%%GNU_HOST%%/info-emacs-info
 libexec/octave/%%OCTAVE_VERSION%%/exec/%%GNU_HOST%%/info-emacs-octave-help
+libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/airy.oct
+libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/balance.oct
+libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/besselh.oct
+libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/besseli.oct
+libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/besselj.oct
+libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/besselk.oct
+libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/bessely.oct
+libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/betainc.oct
+libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/chol.oct
+libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/colloc.oct
+libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/daspk.oct
+libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/daspk_options.oct
+libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/dasrt.oct
+libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/dasrt_options.oct
+libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/dassl.oct
+libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/dassl_options.oct
+libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/det.oct
+libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/eig.oct
+libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/endgrent.oct
+libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/endpwent.oct
+libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/expm.oct
+libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/fft.oct
+libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/fft2.oct
+libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/filter.oct
+libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/find.oct
+libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/fsolve.oct
+libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/fsolve_options.oct
+libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/gammainc.oct
+libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/getgrent.oct
+libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/getgrgid.oct
+libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/getgrnam.oct
+libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/getpwent.oct
+libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/getpwnam.oct
+libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/getpwuid.oct
+libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/getrusage.oct
+libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/givens.oct
+libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/gmtime.oct
+libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/hess.oct
+libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/ifft.oct
+libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/ifft2.oct
+libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/inv.oct
+libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/inverse.oct
+libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/kron.oct
+libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/localtime.oct
+libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/lpsolve.oct
+libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/lpsolve_options.oct
+libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/lsode.oct
+libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/lsode_options.oct
+libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/lu.oct
+libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/max.oct
+libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/min.oct
+libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/minmax.oct
+libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/mktime.oct
+libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/odessa.oct
+libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/odessa_options.oct
+libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/pinv.oct
+libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/qr.oct
+libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/quad.oct
+libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/quad_options.oct
+libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/qz.oct
+libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/rand.oct
+libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/randn.oct
+libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/schur.oct
+libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/setgrent.oct
+libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/setpwent.oct
+libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/sort.oct
+libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/sqrtm.oct
+libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/strftime.oct
+libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/strptime.oct
+libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/svd.oct
+libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/syl.oct
+libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/time.oct
 libexec/octave/ls-R
+share/doc/octave/Octave-FAQ.ps
+share/doc/octave/liboctave.ps
+share/doc/octave/octave.ps
+share/doc/octave/refcard-a4.ps
+share/doc/octave/refcard-legal.ps
+share/doc/octave/refcard-letter.ps
 share/octave/%%OCTAVE_VERSION%%/imagelib/default.img
 share/octave/%%OCTAVE_VERSION%%/m/audio/lin2mu.m
 share/octave/%%OCTAVE_VERSION%%/m/audio/loadaudio.m
@@ -899,70 +983,61 @@ share/octave/%%OCTAVE_VERSION%%/m/time/clock.m
 share/octave/%%OCTAVE_VERSION%%/m/time/ctime.m
 share/octave/%%OCTAVE_VERSION%%/m/time/date.m
 share/octave/ls-R
-share/octave/site/m/sndfile_load.m
-share/octave/site/m/sndfile_play.m
-share/octave/site/m/sndfile_save.m
 share/octave/site/m/startup/octaverc
-@dirrm include/octave-%%OCTAVE_VERSION%%/octave
-@dirrm include/octave-%%OCTAVE_VERSION%%
-@dirrm lib/octave-%%OCTAVE_VERSION%%
-@dirrm libexec/octave/%%OCTAVE_VERSION%%/exec/%%GNU_HOST%%
-@dirrm libexec/octave/%%OCTAVE_VERSION%%/site/oct/%%GNU_HOST%%
-@dirrm libexec/octave/%%OCTAVE_VERSION%%/site/oct
-@dirrm libexec/octave/%%OCTAVE_VERSION%%/site
-@dirrm libexec/octave/%%OCTAVE_VERSION%%/exec
-@dirrm libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%
-@dirrm libexec/octave/%%OCTAVE_VERSION%%/oct
-@dirrm libexec/octave/%%OCTAVE_VERSION%%
-@dirrm libexec/octave/site/exec/%%GNU_HOST%%
-@dirrm libexec/octave/site/exec
-@dirrm libexec/octave/site/oct/%%GNU_HOST%%
-@dirrm libexec/octave/site/oct
-@dirrm libexec/octave/site
-@dirrm libexec/octave
-@dirrm share/octave/%%OCTAVE_VERSION%%/imagelib
-@dirrm share/octave/%%OCTAVE_VERSION%%/m/audio
-@dirrm share/octave/%%OCTAVE_VERSION%%/m/control/base
-@dirrm share/octave/%%OCTAVE_VERSION%%/m/control/hinf
-@dirrm share/octave/%%OCTAVE_VERSION%%/m/control/obsolete
-@dirrm share/octave/%%OCTAVE_VERSION%%/m/control/system
-@dirrm share/octave/%%OCTAVE_VERSION%%/m/control/util
-@dirrm share/octave/%%OCTAVE_VERSION%%/m/control
-@dirrm share/octave/%%OCTAVE_VERSION%%/m/deprecated
-@dirrm share/octave/%%OCTAVE_VERSION%%/m/elfun
-@dirrm share/octave/%%OCTAVE_VERSION%%/m/finance
-@dirrm share/octave/%%OCTAVE_VERSION%%/m/general
-@dirrm share/octave/%%OCTAVE_VERSION%%/m/image
-@dirrm share/octave/%%OCTAVE_VERSION%%/m/io
-@dirrm share/octave/%%OCTAVE_VERSION%%/m/linear-algebra
-@dirrm share/octave/%%OCTAVE_VERSION%%/m/miscellaneous
-@dirrm share/octave/%%OCTAVE_VERSION%%/m/plot
-@dirrm share/octave/%%OCTAVE_VERSION%%/m/polynomial
-@dirrm share/octave/%%OCTAVE_VERSION%%/m/quaternion
-@dirrm share/octave/%%OCTAVE_VERSION%%/m/set
-@dirrm share/octave/%%OCTAVE_VERSION%%/m/signal
-@dirrm share/octave/%%OCTAVE_VERSION%%/m/specfun
-@dirrm share/octave/%%OCTAVE_VERSION%%/m/special-matrix
-@dirrm share/octave/%%OCTAVE_VERSION%%/m/startup
-@dirrm share/octave/%%OCTAVE_VERSION%%/m/statistics/base
-@dirrm share/octave/%%OCTAVE_VERSION%%/m/statistics/distributions
-@dirrm share/octave/%%OCTAVE_VERSION%%/m/statistics/models
-@dirrm share/octave/%%OCTAVE_VERSION%%/m/statistics/tests
-@dirrm share/octave/%%OCTAVE_VERSION%%/m/statistics
-@dirrm share/octave/%%OCTAVE_VERSION%%/m/strings
-@dirrm share/octave/%%OCTAVE_VERSION%%/m/time
-@dirrm share/octave/%%OCTAVE_VERSION%%/m
-@dirrm share/octave/%%OCTAVE_VERSION%%/site/m
-@dirrm share/octave/%%OCTAVE_VERSION%%/site
-@dirrm share/octave/%%OCTAVE_VERSION%%
 @dirrm share/octave/site/m/startup
 @dirrm share/octave/site/m
 @dirrm share/octave/site
+@dirrm share/octave/%%OCTAVE_VERSION%%/site/m
+@dirrm share/octave/%%OCTAVE_VERSION%%/site
+@dirrm share/octave/%%OCTAVE_VERSION%%/m/time
+@dirrm share/octave/%%OCTAVE_VERSION%%/m/strings
+@dirrm share/octave/%%OCTAVE_VERSION%%/m/statistics/tests
+@dirrm share/octave/%%OCTAVE_VERSION%%/m/statistics/models
+@dirrm share/octave/%%OCTAVE_VERSION%%/m/statistics/distributions
+@dirrm share/octave/%%OCTAVE_VERSION%%/m/statistics/base
+@dirrm share/octave/%%OCTAVE_VERSION%%/m/statistics
+@dirrm share/octave/%%OCTAVE_VERSION%%/m/startup
+@dirrm share/octave/%%OCTAVE_VERSION%%/m/special-matrix
+@dirrm share/octave/%%OCTAVE_VERSION%%/m/specfun
+@dirrm share/octave/%%OCTAVE_VERSION%%/m/signal
+@dirrm share/octave/%%OCTAVE_VERSION%%/m/set
+@dirrm share/octave/%%OCTAVE_VERSION%%/m/quaternion
+@dirrm share/octave/%%OCTAVE_VERSION%%/m/polynomial
+@dirrm share/octave/%%OCTAVE_VERSION%%/m/plot
+@dirrm share/octave/%%OCTAVE_VERSION%%/m/miscellaneous
+@dirrm share/octave/%%OCTAVE_VERSION%%/m/linear-algebra
+@dirrm share/octave/%%OCTAVE_VERSION%%/m/io
+@dirrm share/octave/%%OCTAVE_VERSION%%/m/image
+@dirrm share/octave/%%OCTAVE_VERSION%%/m/general
+@dirrm share/octave/%%OCTAVE_VERSION%%/m/finance
+@dirrm share/octave/%%OCTAVE_VERSION%%/m/elfun
+@dirrm share/octave/%%OCTAVE_VERSION%%/m/deprecated
+@dirrm share/octave/%%OCTAVE_VERSION%%/m/control/util
+@dirrm share/octave/%%OCTAVE_VERSION%%/m/control/system
+@dirrm share/octave/%%OCTAVE_VERSION%%/m/control/obsolete
+@dirrm share/octave/%%OCTAVE_VERSION%%/m/control/hinf
+@dirrm share/octave/%%OCTAVE_VERSION%%/m/control/base
+@dirrm share/octave/%%OCTAVE_VERSION%%/m/control
+@dirrm share/octave/%%OCTAVE_VERSION%%/m/audio
+@dirrm share/octave/%%OCTAVE_VERSION%%/m
+@dirrm share/octave/%%OCTAVE_VERSION%%/imagelib
+@dirrm share/octave/%%OCTAVE_VERSION%%
 @dirrm share/octave
-%%PORTDOCS%%%%DOCSDIR%%/Octave-FAQ.ps
-%%PORTDOCS%%%%DOCSDIR%%/liboctave.ps
-%%PORTDOCS%%%%DOCSDIR%%/octave.ps
-%%PORTDOCS%%%%DOCSDIR%%/refcard-a4.ps
-%%PORTDOCS%%%%DOCSDIR%%/refcard-legal.ps
-%%PORTDOCS%%%%DOCSDIR%%/refcard-letter.ps
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm share/doc/octave
+@dirrm libexec/octave/site/oct/%%GNU_HOST%%
+@dirrm libexec/octave/site/oct
+@dirrm libexec/octave/site/exec/%%GNU_HOST%%
+@dirrm libexec/octave/site/exec
+@dirrm libexec/octave/site
+@dirrm libexec/octave/%%OCTAVE_VERSION%%/site/oct/%%GNU_HOST%%
+@dirrm libexec/octave/%%OCTAVE_VERSION%%/site/oct
+@dirrm libexec/octave/%%OCTAVE_VERSION%%/site
+@dirrm libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%
+@dirrm libexec/octave/%%OCTAVE_VERSION%%/oct
+@dirrm libexec/octave/%%OCTAVE_VERSION%%/exec/%%GNU_HOST%%
+@dirrm libexec/octave/%%OCTAVE_VERSION%%/exec
+@dirrm libexec/octave/%%OCTAVE_VERSION%%
+@dirrm libexec/octave
+@dirrm lib/octave-%%OCTAVE_VERSION%%
+@dirrm include/octave-%%OCTAVE_VERSION%%/octave
+@dirrm include/octave-%%OCTAVE_VERSION%%
