@@ -10,6 +10,7 @@ share/apps/krusader/icons/hicolor/16x16/actions/kr_arc_unpack.png
 share/apps/krusader/icons/hicolor/16x16/actions/kr_bookman.png
 share/apps/krusader/icons/hicolor/16x16/actions/kr_bookmark.png
 share/apps/krusader/icons/hicolor/16x16/actions/kr_calc.png
+share/apps/krusader/icons/hicolor/16x16/actions/kr_combine.png
 share/apps/krusader/icons/hicolor/16x16/actions/kr_compare.png
 share/apps/krusader/icons/hicolor/16x16/actions/kr_comparedirs.png
 share/apps/krusader/icons/hicolor/16x16/actions/kr_ftp_connect.png
@@ -22,6 +23,8 @@ share/apps/krusader/icons/hicolor/16x16/actions/kr_mountman.png
 share/apps/krusader/icons/hicolor/16x16/actions/kr_properties.png
 share/apps/krusader/icons/hicolor/16x16/actions/kr_select.png
 share/apps/krusader/icons/hicolor/16x16/actions/kr_selectall.png
+share/apps/krusader/icons/hicolor/16x16/actions/kr_split.png
+share/apps/krusader/icons/hicolor/16x16/actions/kr_syncdirs.png
 share/apps/krusader/icons/hicolor/16x16/actions/kr_terminal.png
 share/apps/krusader/icons/hicolor/16x16/actions/kr_treeview.png
 share/apps/krusader/icons/hicolor/16x16/actions/kr_unselect.png
@@ -33,6 +36,7 @@ share/apps/krusader/icons/hicolor/22x22/actions/kr_arc_unpack.png
 share/apps/krusader/icons/hicolor/22x22/actions/kr_bookman.png
 share/apps/krusader/icons/hicolor/22x22/actions/kr_bookmark.png
 share/apps/krusader/icons/hicolor/22x22/actions/kr_calc.png
+share/apps/krusader/icons/hicolor/22x22/actions/kr_combine.png
 share/apps/krusader/icons/hicolor/22x22/actions/kr_compare.png
 share/apps/krusader/icons/hicolor/22x22/actions/kr_comparedirs.png
 share/apps/krusader/icons/hicolor/22x22/actions/kr_ftp_connect.png
@@ -45,6 +49,8 @@ share/apps/krusader/icons/hicolor/22x22/actions/kr_mountman.png
 share/apps/krusader/icons/hicolor/22x22/actions/kr_properties.png
 share/apps/krusader/icons/hicolor/22x22/actions/kr_select.png
 share/apps/krusader/icons/hicolor/22x22/actions/kr_selectall.png
+share/apps/krusader/icons/hicolor/22x22/actions/kr_split.png
+share/apps/krusader/icons/hicolor/22x22/actions/kr_syncdirs.png
 share/apps/krusader/icons/hicolor/22x22/actions/kr_terminal.png
 share/apps/krusader/icons/hicolor/22x22/actions/kr_treeview.png
 share/apps/krusader/icons/hicolor/22x22/actions/kr_unselect.png
@@ -56,8 +62,10 @@ share/apps/krusader/icons/hicolor/32x32/actions/kr_arc_unpack.png
 share/apps/krusader/icons/hicolor/32x32/actions/kr_bookman.png
 share/apps/krusader/icons/hicolor/32x32/actions/kr_bookmark.png
 share/apps/krusader/icons/hicolor/32x32/actions/kr_calc.png
+share/apps/krusader/icons/hicolor/32x32/actions/kr_combine.png
 share/apps/krusader/icons/hicolor/32x32/actions/kr_compare.png
 share/apps/krusader/icons/hicolor/32x32/actions/kr_comparedirs.png
+share/apps/krusader/icons/hicolor/32x32/actions/kr_dependencies.png
 share/apps/krusader/icons/hicolor/32x32/actions/kr_ftp_connect.png
 share/apps/krusader/icons/hicolor/32x32/actions/kr_ftp_disconnect.png
 share/apps/krusader/icons/hicolor/32x32/actions/kr_ftp_new.png
@@ -68,6 +76,8 @@ share/apps/krusader/icons/hicolor/32x32/actions/kr_mountman.png
 share/apps/krusader/icons/hicolor/32x32/actions/kr_properties.png
 share/apps/krusader/icons/hicolor/32x32/actions/kr_select.png
 share/apps/krusader/icons/hicolor/32x32/actions/kr_selectall.png
+share/apps/krusader/icons/hicolor/32x32/actions/kr_split.png
+share/apps/krusader/icons/hicolor/32x32/actions/kr_syncdirs.png
 share/apps/krusader/icons/hicolor/32x32/actions/kr_terminal.png
 share/apps/krusader/icons/hicolor/32x32/actions/kr_treeview.png
 share/apps/krusader/icons/hicolor/32x32/actions/kr_unselect.png
@@ -105,9 +115,18 @@ share/doc/HTML/en/krusader/tabbed_browsing.png
 share/doc/HTML/en/krusader/terminalEmu.png
 share/doc/HTML/en/krusader/toolbar.png
 share/doc/HTML/en/krusader/using-krusader.sgml
+share/icons/hicolor/16x16/apps/krusader.png
+share/icons/hicolor/16x16/apps/krusader_red.png
+share/icons/hicolor/22x22/apps/krusader.png
+share/icons/hicolor/22x22/apps/krusader_red.png
 share/icons/hicolor/32x32/apps/krusader.png
-share/icons/hicolor/32x32/apps/krusader2.png
-share/icons/locolor/16x16/apps/krusader.png
+share/icons/hicolor/32x32/apps/krusader_red.png
+share/icons/hicolor/48x48/apps/krusader.png
+share/icons/hicolor/48x48/apps/krusader_red.png
+share/icons/hicolor/64x64/apps/krusader.png
+share/icons/hicolor/64x64/apps/krusader_red.png
+share/locale/bg/LC_MESSAGES/krusader.mo
+share/locale/ca/LC_MESSAGES/krusader.mo
 share/locale/cs/LC_MESSAGES/krusader.mo
 share/locale/de/LC_MESSAGES/krusader.mo
 share/locale/dk/LC_MESSAGES/krusader.mo
@@ -122,9 +141,7 @@ share/locale/pl/LC_MESSAGES/krusader.mo
 share/locale/ru/LC_MESSAGES/krusader.mo
 share/locale/sk/LC_MESSAGES/krusader.mo
 share/locale/sv/LC_MESSAGES/krusader.mo
-share/mimelnk/application/x-ace.desktop
-share/nls/POSIX
-share/nls/en_US.US-ASCII
+share/locale/zh_CN/LC_MESSAGES/krusader.mo
 share/services/krarc.protocol
 @dirrm share/doc/HTML/en/krusader
 @dirrm share/apps/krusader/icons/hicolor/32x32/actions
