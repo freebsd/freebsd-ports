@@ -263,6 +263,7 @@ airoflash	ports/misc/airoflash
 airport		ports/net-mgmt/airport
 aish		ports/converters/aish
 akpop3d		ports/mail/akpop3d
+akregator	ports/www/akregator
 ald		ports/devel/ald
 aldo		ports/comms/aldo
 ale		ports/graphics/ale
