@@ -1,0 +1,9 @@
+# FreeBSD config exception file
+
+MAKE		= /usr/bin/make
+INTERFACE_OPTS  = -DWANT_X11
+CC              = gcc
+CC_OPT          = -O2 -pipe -Dbsd 
+CC_OPT_SAFE     = -O2 -pipe -Dbsd
+LDFLAGS		= -L /usr/X11R6/lib -lm -ltermcap
+ASM_HACK	= < /dev/null

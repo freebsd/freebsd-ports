@@ -1,0 +1,17 @@
+bin/spice3
+bin/nutmeg
+bin/sconvert
+bin/help
+bin/proc2mod
+bin/multidec
+share/spice/helpdir/spice.txt
+share/spice/helpdir/spice.idx
+share/spice/scripts/setplot
+share/spice/scripts/spinit
+share/spice/mfbcap
+share/spice/news
+man/man5/mfbcap.5.gz
+man/man1/sconvert.1.gz
+man/man1/nutmeg.1.gz 
+man/man1/spice.1.gz
+man/man3/mfb.3.gz

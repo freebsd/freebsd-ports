@@ -1,0 +1,181 @@
+*** conf/defaults.orig	Thu Mar 28 21:25:24 1996
+--- conf/defaults	Sun Mar 31 11:04:30 1996
+***************
+*** 108,119 ****
+  #	file listed on the "build" command line.
+  
+  # SPICE_DIR	= $(TOP1)/$(SYSTEM)
+! SPICE_DIR	= $(DIST_DIR)
+! SPICE_LIB_DIR	= $(SPICE_DIR)/lib
+  SPICE_EXEC_DIR	= $(SPICE_DIR)/bin
+  
+  S_SPICE_DIR	= $(SPICE_DIR)
+! S_SPICE_LIB_DIR	= $(S_SPICE_DIR)/lib
+  S_SPICE_EXEC_DIR= $(S_SPICE_DIR)/bin
+  
+  #	INSTALL_DIRS lists the directories that need to be created before
+--- 108,119 ----
+  #	file listed on the "build" command line.
+  
+  # SPICE_DIR	= $(TOP1)/$(SYSTEM)
+! SPICE_DIR	= ${PREFIX}
+! SPICE_LIB_DIR	= $(SPICE_DIR)/share/spice
+  SPICE_EXEC_DIR	= $(SPICE_DIR)/bin
+  
+  S_SPICE_DIR	= $(SPICE_DIR)
+! S_SPICE_LIB_DIR	= $(S_SPICE_DIR)/share/spice
+  S_SPICE_EXEC_DIR= $(S_SPICE_DIR)/bin
+  
+  #	INSTALL_DIRS lists the directories that need to be created before
+***************
+*** 132,142 ****
+  #	an extra definition to work around the same strange bug.  See either
+  #	file "conf/vax" or "conf/gcc".
+  
+! CC		= cc
+  
+  #	CC_OPT: Default compile options (optimization/debug level, other)
+  
+! CC_OPT		= -g
+  
+  #	CC_OPT_SAFE: Special compile options to override CC_OPT for code
+  #	which typically causes problems for most compilers (bsim1 and bsim2).
+--- 132,142 ----
+  #	an extra definition to work around the same strange bug.  See either
+  #	file "conf/vax" or "conf/gcc".
+  
+! CC		= gcc
+  
+  #	CC_OPT: Default compile options (optimization/debug level, other)
+  
+! CC_OPT		=
+  
+  #	CC_OPT_SAFE: Special compile options to override CC_OPT for code
+  #	which typically causes problems for most compilers (bsim1 and bsim2).
+***************
+*** 206,212 ****
+  #	X_DIR indicates the top of the X11 lib/include hierarchy; it is only
+  #	a convenience that is used in the following definitions.
+  
+! X_DIR		= /usr
+  
+  #	INCX lists the X include directories.  This may be different between
+  #	MIT X11r5, X11r4, and your vendor's version of X11, though listing
+--- 206,212 ----
+  #	X_DIR indicates the top of the X11 lib/include hierarchy; it is only
+  #	a convenience that is used in the following definitions.
+  
+! X_DIR		= /usr/X11R6
+  
+  #	INCX lists the X include directories.  This may be different between
+  #	MIT X11r5, X11r4, and your vendor's version of X11, though listing
+***************
+*** 286,292 ****
+  #	code for either or both MFB (a terminal independent graphics
+  #	interface) or X11.
+  
+! INTERFACE_OPTS	= -DWANT_MFB -DWANT_X11
+  
+  #	BUGADDR is the e-mail address to send bug reports.  If left blank
+  #	the "bug" command in spice will not operate.
+--- 286,292 ----
+  #	code for either or both MFB (a terminal independent graphics
+  #	interface) or X11.
+  
+! INTERFACE_OPTS	= -DWANT_X11
+  
+  #	BUGADDR is the e-mail address to send bug reports.  If left blank
+  #	the "bug" command in spice will not operate.
+***************
+*** 296,302 ****
+  #	DEFAULT_EDITOR lists where the default editor used by the "edit"
+  #	command is located.
+  
+! DEFAULT_EDITOR	= jove
+  
+  #	ASCII_RAWFILE indicates that the default format of the spice3 raw data
+  #	file should be in human-readable format ( = 1 ) or in the smaller,
+--- 296,302 ----
+  #	DEFAULT_EDITOR lists where the default editor used by the "edit"
+  #	command is located.
+  
+! DEFAULT_EDITOR	= /usr/bin/vi
+  
+  #	ASCII_RAWFILE indicates that the default format of the spice3 raw data
+  #	file should be in human-readable format ( = 1 ) or in the smaller,
+*** util/build.orig	Sun Mar 31 10:56:09 1996
+--- util/build	Sun Mar 31 10:57:21 1996
+***************
+*** 96,102 ****
+  
+  TMP_LEADER="${TMP_DIR}/buildl$$"
+  TMP_TRAILER="${TMP_DIR}/buildt$$"
+! trap 'rm -f ${TMP_LEADER} ${TMP_TRAILER}; exit 1' 1 2 3 4 6 7 8 9 10 12 13 14 15
+  echo > "${TMP_TRAILER}"
+  BAD=false
+  DEBUG=
+--- 96,102 ----
+  
+  TMP_LEADER="${TMP_DIR}/buildl$$"
+  TMP_TRAILER="${TMP_DIR}/buildt$$"
+! trap 'rm -f ${TMP_LEADER} ${TMP_TRAILER}; exit 1' 1 2 3 4 6 7 8 10 12 13 14 15
+  echo > "${TMP_TRAILER}"
+  BAD=false
+  DEBUG=
+*** src/lib/fte/resource.c.orig	Sun Mar 31 10:59:57 1996
+--- src/lib/fte/resource.c	Sun Mar 31 11:00:57 1996
+***************
+*** 369,375 ****
+--- 369,377 ----
+  	long x;
+  	SIGNAL_TYPE	(*orig_signal)( );
+  
++ #ifndef __FreeBSD__
+  	if (getenv("SPICE_NO_DATASEG_CHECK"))
++ #endif
+  		return 0;
+  
+  	low = 0;
+*** src/include/misc.h.orig	Thu Dec  1 09:17:02 1994
+--- src/include/misc.h	Sun Mar 31 12:32:58 1996
+***************
+*** 86,92 ****
+--- 86,94 ----
+  extern char *realloc();
+  extern char *getenv();
+  extern int errno;
++ #ifndef __FreeBSD__
+  extern char *sys_errlist[];
++ #endif
+  extern char *getenv();
+  extern char *getwd();
+  extern int rand();
+*** src/lib/misc/math.c.orig	Sat Jun 19 06:13:39 1993
+--- src/lib/misc/math.c	Sun Mar 31 13:38:40 1996
+***************
+*** 11,17 ****
+  #include "misc.h"
+  #include "suffix.h"
+  
+! #ifdef HAS_NO_IEEE_LOGB
+  
+  /* changed all instances of logb to normslogb (NJ) */
+  double normslogb(x)
+--- 11,17 ----
+  #include "misc.h"
+  #include "suffix.h"
+  
+! #if (defined(HAS_NO_IEEE_LOGB) || defined(__FreeBSD__))
+  
+  /* changed all instances of logb to normslogb (NJ) */
+  double normslogb(x)
+***************
+*** 58,64 ****
+  
+  	return x * z;
+  }
+- 
+  #endif
+  
+  #ifdef HAS_NO_ERFC
+--- 58,63 ----
