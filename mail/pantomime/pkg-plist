@@ -1,11 +1,11 @@
 %%LOCALLIBRARY%%/Headers/Pantomime/Charset.h
-%%LOCALLIBRARY%%/Headers/Pantomime/Constants.h
 %%LOCALLIBRARY%%/Headers/Pantomime/Connection.h
+%%LOCALLIBRARY%%/Headers/Pantomime/Constants.h
+%%LOCALLIBRARY%%/Headers/Pantomime/Container.h
 %%LOCALLIBRARY%%/Headers/Pantomime/Flags.h
 %%LOCALLIBRARY%%/Headers/Pantomime/Folder.h
-%%LOCALLIBRARY%%/Headers/Pantomime/GSMD5.h
+%%LOCALLIBRARY%%/Headers/Pantomime/FolderInformation.h
 %%LOCALLIBRARY%%/Headers/Pantomime/IMAPCacheManager.h
-%%LOCALLIBRARY%%/Headers/Pantomime/IMAPCacheObject.h
 %%LOCALLIBRARY%%/Headers/Pantomime/IMAPFolder.h
 %%LOCALLIBRARY%%/Headers/Pantomime/IMAPMessage.h
 %%LOCALLIBRARY%%/Headers/Pantomime/IMAPStore.h
@@ -30,17 +30,19 @@
 %%LOCALLIBRARY%%/Headers/Pantomime/LocalFolderCacheManager.h
 %%LOCALLIBRARY%%/Headers/Pantomime/LocalMessage.h
 %%LOCALLIBRARY%%/Headers/Pantomime/LocalStore.h
+%%LOCALLIBRARY%%/Headers/Pantomime/MD5.h
 %%LOCALLIBRARY%%/Headers/Pantomime/Message.h
-%%LOCALLIBRARY%%/Headers/Pantomime/MimeBodyPart.h
 %%LOCALLIBRARY%%/Headers/Pantomime/MimeMultipart.h
 %%LOCALLIBRARY%%/Headers/Pantomime/MimeUtility.h
-%%LOCALLIBRARY%%/Headers/Pantomime/NSDataExtensions.h
-%%LOCALLIBRARY%%/Headers/Pantomime/NSStringExtensions.h
+%%LOCALLIBRARY%%/Headers/Pantomime/NSData+Extensions.h
+%%LOCALLIBRARY%%/Headers/Pantomime/NSRegEx.h
+%%LOCALLIBRARY%%/Headers/Pantomime/NSString+Extensions.h
 %%LOCALLIBRARY%%/Headers/Pantomime/POP3CacheManager.h
 %%LOCALLIBRARY%%/Headers/Pantomime/POP3CacheObject.h
 %%LOCALLIBRARY%%/Headers/Pantomime/POP3Folder.h
 %%LOCALLIBRARY%%/Headers/Pantomime/POP3Message.h
 %%LOCALLIBRARY%%/Headers/Pantomime/POP3Store.h
+%%LOCALLIBRARY%%/Headers/Pantomime/Pantomime.h
 %%LOCALLIBRARY%%/Headers/Pantomime/Parser.h
 %%LOCALLIBRARY%%/Headers/Pantomime/Part.h
 %%LOCALLIBRARY%%/Headers/Pantomime/SMTP.h
@@ -51,6 +53,7 @@
 %%LOCALLIBRARY%%/Headers/Pantomime/Transport.h
 %%LOCALLIBRARY%%/Headers/Pantomime/URLName.h
 %%LOCALLIBRARY%%/Headers/Pantomime/UTF8.h
+%%LOCALLIBRARY%%/Headers/Pantomime/UUFile.h
 %%LOCALLIBRARY%%/Headers/Pantomime/WINDOWS_1250.h
 %%LOCALLIBRARY%%/Headers/Pantomime/WINDOWS_1251.h
 %%LOCALLIBRARY%%/Headers/Pantomime/WINDOWS_1252.h
@@ -60,8 +63,8 @@
 %%LOCALLIBRARY%%/Headers/Pantomime/elm_lib.h
 %%LOCALLIBRARY%%/Headers/Pantomime/parseaddrs.h
 %%LOCALLIBRARY%%/Libraries/%%NOFLAT%%libPantomime.so
-%%LOCALLIBRARY%%/Libraries/%%NOFLAT%%libPantomime.so.1
-%%LOCALLIBRARY%%/Libraries/%%NOFLAT%%libPantomime.so.1.0.0
+%%LOCALLIBRARY%%/Libraries/%%NOFLAT%%libPantomime.so.%%MAJORVERSION%%
+%%LOCALLIBRARY%%/Libraries/%%NOFLAT%%libPantomime.so.%%VERSION%%
 %%GNUSTEP_STABLE%%@dirrm %%LOCALLIBRARY%%/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
 %%GNUSTEP_STABLE%%@dirrm %%LOCALLIBRARY%%/Libraries/%%GNU_ARCH%%/%%OPSYS%%
 %%GNUSTEP_STABLE%%@dirrm %%LOCALLIBRARY%%/Libraries/%%GNU_ARCH%%
