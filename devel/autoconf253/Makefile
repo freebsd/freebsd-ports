@@ -3,12 +3,12 @@
 # Date created:		7 October 1995
 # Whom:			torstenb@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.7 1996/04/01 05:09:13 asami Exp $
+# $Id: Makefile,v 1.8 1996/06/03 21:59:38 gpalmer Exp $
 #
 
 DISTNAME=       autoconf-2.10
 CATEGORIES=	devel
-MASTER_SITES=	ftp://prep.ai.mit.edu/pub/gnu/
+MASTER_SITES=	${MASTER_SITE_GNU}
 
 RUN_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 

@@ -3,13 +3,12 @@
 # Date created:		8 Apr 1996
 # Whom:			Brent J. Nordquist <nordquist@platinum.com>
 #
-# $Id: Makefile,v 1.1.1.1 1996/04/12 06:44:15 asami Exp $
+# $Id: Makefile,v 1.2 1996/11/17 03:18:20 obrien Exp $
 #
 
 DISTNAME=          gdbm-1.7.3
 CATEGORIES=        databases
-MASTER_SITES=      ftp://gatekeeper.dec.com/pub/GNU/ \
-                   ftp://prep.ai.mit.edu/pub/gnu/
+MASTER_SITES=      ${MASTER_SITE_GNU}
 
 MAINTAINER=        nordquist@platinum.com
 

@@ -3,12 +3,12 @@
 # Date created:		15 Jul 1995
 # Whom:			torstenb@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.7 1996/11/11 05:49:48 obrien Exp $
+# $Id: Makefile,v 1.8 1996/11/17 09:06:08 obrien Exp $
 #
 
 DISTNAME=	mc-3.2.1
 CATEGORIES=	misc
-MASTER_SITES=	ftp://prep.ai.mit.edu/pub/gnu/
+MASTER_SITES=	${MASTER_SITE_GNU}
 
 MAINTAINER=	torstenb@FreeBSD.ORG
 

@@ -3,13 +3,14 @@
 # Date created:		14 May 1996
 # Whom:			Mita Yoshio <mita@jp.FreeBSD.org>
 #
-# $Id: Makefile,v 1.4 1996/11/11 10:13:03 max Exp $
+# $Id: Makefile,v 1.5 1996/11/13 12:41:13 asami Exp $
 #
 
 DISTNAME=	ghostscript2.6.2
 PKGNAME=	jp-vfghostscript-2.6.2
 CATEGORIES=	japanese print
-MASTER_SITES=	ftp://ftp.iis.u-tokyo.ac.jp/GNU/ \
+MASTER_SITES=	${MASTER_SITE_GNU} \
+		ftp://ftp.iis.u-tokyo.ac.jp/GNU/ \
 		ftp://ftp.ae.keio.ac.jp/pub/msdos/gnu/ghostscript/ \
 		ftp://i1nws2.fukui-u.ac.jp/pub/TeX/dvipr/ \
 		ftp://ftp.mei.co.jp/free/gnu/util/ghostscript/drivers/

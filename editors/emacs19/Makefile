@@ -3,12 +3,12 @@
 # Date created:		29 October 1994
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.23 1996/11/11 05:07:06 obrien Exp $
+# $Id: Makefile,v 1.24 1996/11/17 07:01:27 obrien Exp $
 #
 
 DISTNAME=	emacs-19.34
 CATEGORIES=	editors
-MASTER_SITES=	ftp://prep.ai.mit.edu/pub/gnu/
+MASTER_SITES=	${MASTER_SITE_GNU}
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

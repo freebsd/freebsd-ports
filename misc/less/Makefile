@@ -3,12 +3,12 @@
 # Date created:         8 Nov 1994
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.12 1996/11/11 05:49:42 obrien Exp $
+# $Id: Makefile,v 1.13 1996/11/17 09:06:02 obrien Exp $
 #
 
 DISTNAME=       less-321
 CATEGORIES=	misc
-MASTER_SITES=   ftp://prep.ai.mit.edu/pub/gnu/ ftp://ftp.uu.net/systems/gnu/
+MASTER_SITES=   ${MASTER_SITE_GNU}
 
 MAINTAINER=	ache@FreeBSD.ORG
 
