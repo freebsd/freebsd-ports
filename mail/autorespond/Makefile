@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	autorespond
-PORTVERSION=	2.0.4
+PORTVERSION=	2.0.5
 CATEGORIES=	mail
 MASTER_SITES=	http://www.inter7.com/devel/
 
