@@ -1,0 +1,4 @@
+This is a C version of Ratfor, derived from a UofA Ratfor in Ratfor rather
+than the AT&T Ratfor source.  It closely corresponds to the pre-processor
+described in the "SOFTWARE TOOLS" book, and also produces FORTRAN77 code
+as well as FORTRAN 66.
