@@ -22,7 +22,7 @@ PKGMESSAGE=	${WRKSRC}/.MESSAGE
 .if ${OSVERSION} < 400006
 BROKEN=		"FreeBSD before 4.1 is not supported"
 .elif ${OSVERSION} > 500000
-BROKEN=		"FreeBSD 5.0 has DRM supplied by the kernel"
+IGNORE=		"FreeBSD 5.0 has DRM supplied by the kernel"
 .endif
 
 .if defined(WITH_SMP)
