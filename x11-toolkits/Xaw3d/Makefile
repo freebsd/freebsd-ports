@@ -7,6 +7,7 @@
 
 PORTNAME=	Xaw3d
 PORTVERSION=	1.5
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	widgets/Xaw3d/R6.3
@@ -18,6 +19,9 @@ WRKSRC=		${WRKDIR}/xc/lib/Xaw3d
 USE_IMAKE=	yes
 INSTALLS_SHLIB=	yes
 
+MSG_FILE=	${PKGDIR}/pkg-message
+PKGMESSAGE=	${WRKDIR}/pkg-message
+
 .include <bsd.port.pre.mk>
 .if ${X_WINDOW_SYSTEM:L} == xfree86-3
 PLIST_FILES=	lib/libXaw3d.so.6
@@ -26,6 +30,7 @@ PLIST_FILES=	lib/libXaw3d.so.6
 post-extract:
 	${MKDIR} ${WRKSRC}/X11/Xaw3d
 	cd ${WRKSRC}/X11/Xaw3d; ${LN} -sf ../../*.h .
+	${SED} 's|%%XAWVER%%|${XAWVER}|g' ${MSG_FILE} > ${PKGMESSAGE}
 
 # Workaround a bug in egcs on FreeBSD/Alpha.
 .if ${MACHINE_ARCH} == "alpha"
