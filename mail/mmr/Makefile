@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mmr
-PORTVERSION=	1.5.4
+PORTVERSION=	1.5.5
 CATEGORIES=	mail
 MASTER_SITES=	http://www.devolution.com/~slouken/projects/mmr/
 
