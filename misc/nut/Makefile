@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	nut
-PORTVERSION=	8.6
+PORTVERSION=	8.7
 CATEGORIES=	misc
 MASTER_SITES=	http://www.lafn.org/~av832/
 PKGNAMEPREFIX=	health-
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ponomarew@oberon.net
 COMMENT=	Nut is nutrition software to record what you eat
@@ -21,15 +20,29 @@ USE_GMAKE=	yes
 USE_REINPLACE=	yes
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e \
+	's|%%PREFIX%%|${PREFIX}|g' \
+		${WRKSRC}/Makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/nut ${PREFIX}/bin/
-	${MKDIR} ${PREFIX}/etc/nut
-	${INSTALL_DATA}	${WRKSRC}/raw.data/FOOD_DES.txt ${PREFIX}/etc/nut/
-	${INSTALL_DATA} ${WRKSRC}/raw.data/NUT_DATA.txt	${PREFIX}/etc/nut/
-	${INSTALL_DATA} ${WRKSRC}/raw.data/WEIGHT.txt	${PREFIX}/etc/nut/
-	${INSTALL_DATA} ${WRKSRC}/raw.data/sr15.nut	${PREFIX}/etc/nut/
-	${INSTALL_MAN} ${WRKSRC}/nut.1 ${PREFIX}/man/man1/
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	${MKDIR} ${PREFIX}/etc/${PORTNAME}
+	${INSTALL_DATA}	${WRKSRC}/raw.data/FOOD_DES.txt \
+		${PREFIX}/etc/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/raw.data/NUT_DATA.txt	\
+		${PREFIX}/etc/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/raw.data/WEIGHT.txt \
+		${PREFIX}/etc/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/raw.data/sr15.nut \
+		${PREFIX}/etc/${PORTNAME}
+	${INSTALL_MAN} ${WRKSRC}/nut.1 ${PREFIX}/man/man1
+
+post-install:
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+.for i in README sr15_doc.htm
+	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+.endfor
+.endif
 
 .include <bsd.port.mk>
