@@ -1,12 +1,12 @@
 # New ports collection makefile for:	lpe
-# Version required:	1.2.3
+# Version required:	1.2.4
 # Date created:		12 April 1999
 # Whom:			Chris Piazza <cpiazza@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=     	lpe-1.2.3
+DISTNAME=     	lpe-1.2.4
 CATEGORIES=	editors
 MASTER_SITES=	http://cdsmith.twu.net/lpe/
 
