@@ -16,6 +16,8 @@ COMMENT=	Apache module to wrap served pages with a header and/or footer
 USE_APACHE=	yes
 USE_REINPLACE=	yes
 
+CONFLICTS=	mod_layout-4.* apache-contrib-1.*
+
 CFLAGS+=	-fPIC
 
 post-patch:

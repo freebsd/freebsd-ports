@@ -17,6 +17,8 @@ COMMENT=	An Apache module that works as a Netscape Roaming Access server
 USE_APACHE=	yes
 DOCS=		CHANGES	INSTALL	LICENSE	README
 
+CONFLICTS=	apache-contrib-1.*
+
 do-build:
 	@cd ${WRKSRC} && \
 	${APXS} -c mod_roaming.c

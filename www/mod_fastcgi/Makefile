@@ -16,6 +16,8 @@ COMMENT=	A fast-cgi module for Apache
 
 BUILD_DEPENDS=	${APXS}:${PORTSDIR}/${APACHE_PORT}
 
+CONFLICTS=	apache-contrib-1.*
+
 .if defined(WITH_APACHE2)
 MAKEFILE=	Makefile.AP2
 USE_REINPLACE=	YES

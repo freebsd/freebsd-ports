@@ -18,6 +18,8 @@ USE_APACHE=	yes
 DOCDIR=		${PREFIX}/share/doc/${PORTNAME}
 DOCS=		AUTHENTICATORS CHANGES INSTALL README TODO
 
+CONFLICTS=	apache-contrib-1.*
+
 do-build:
 	@cd ${WRKSRC} && ${APXS} -c mod_auth_external.c
 
