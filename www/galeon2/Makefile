@@ -90,6 +90,7 @@ post-patch:
 		's|mkdir $$lang or|mkdir $$lang, 0777 or| ; \
 		 s|^push @INC, "/.*|push @INC, "${LOCALBASE}/share/intltool";|'
 	@${CP} ${FILESDIR}/mkinstalldirs ${WRKSRC}
+	@${CHMOD} a+x ${WRKSRC}/mkinstalldirs
 
 post-configure:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g ; \
