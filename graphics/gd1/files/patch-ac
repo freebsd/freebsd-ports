@@ -156,7 +156,7 @@
  	gd_io_ss.o gd_png.o gd_jpeg.o gdxpm.o gdfontt.o gdfonts.o gdfontmb.o gdfontl.o \
  	gdfontg.o gdtables.o gdft.o gdttf.o gdcache.o gdkanji.o wbmp.o \
 -	gd_wbmp.o gdhelpers.o gd.h gdfontt.h gdfonts.h gdfontmb.h gdfontl.h \
-+	gd_wbmp.o gdhelpers.o
++	gd_wbmp.o gdhelpers.o gd_gif_in.o
 +INCS= gd.h gdfontt.h gdfonts.h gdfontmb.h gdfontl.h \
  	gdfontg.h gdhelpers.h
 +

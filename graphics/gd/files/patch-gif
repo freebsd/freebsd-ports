@@ -1,0 +1,15 @@
+This  patch  together  with  the old  implementation  (from  gd-1.5)  of
+gd_gif_in.c restore GD's ability to read GIF images. The writing of such
+images is troubled because of Unisys' zeal in patent enforcement.
+
+--- gd.h	Tue Feb  6 14:44:01 2001
++++ gd.h	Fri Jul 27 16:10:38 2001
+@@ -95,2 +95,4 @@
+ gdImagePtr gdImageCreate(int sx, int sy);
++gdImagePtr gdImageCreateFromGif(FILE *fd);
++gdImagePtr gdImageCreateFromGifCtx(gdIOCtxPtr in);
+ gdImagePtr gdImageCreateFromPng(FILE *fd);
+--- gd_gif_in.c	Fri Jul 27 16:13:45 2001
++++ gd_gif_in.c	Fri Jul 27 16:14:46 2001
+@@ -6,1 +6,0 @@
+-#include "io.h"

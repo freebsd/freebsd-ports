@@ -7,19 +7,23 @@
 
 PORTNAME=	gd
 PORTVERSION=	1.8.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES+=	graphics
 MASTER_SITES=	http://www.boutell.com/gd/http/ \
 		ftp://ftp.boutell.com/pub/boutell/gd/ \
+		http://virtual-estates.net/~mi/port-stuff/ \
 		${MASTER_SITE_RINGSERVER}
 MASTER_SITE_SUBDIR=	graphics/gd
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} gd_gif_in.c.bz2
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER?=	billf@FreeBSD.org
 
-BUILD_DEPENDS=	freetype-config:${PORTSDIR}/print/freetype2	# XXX
+BUILD_DEPENDS=	freetype-config:${PORTSDIR}/print/freetype2 \
+		bzip2:${PORTSDIR}/archivers/bzip2
 LIB_DEPENDS=	png.4:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
-		freetype.7:${PORTSDIR}/print/freetype2
+		freetype:${PORTSDIR}/print/freetype2
 
 .if defined(WITH_X11)
 USE_XLIB=	yes
@@ -27,6 +31,9 @@ USE_XPM=	yes
 .endif
 
 INSTALLS_SHLIB=	yes
+
+post-extract:	
+	bzip2 -d < ${_DISTDIR}/gd_gif_in.c.bz2 > ${WRKSRC}/gd_gif_in.c
 
 pre-everything:
 .if !defined(WITH_X11)
