@@ -1,50 +1,44 @@
---- web2c/Makefile.in.orig	Sat Feb  8 03:39:35 1997
-+++ web2c/Makefile.in	Sun Sep 28 16:10:19 1997
+--- web2c/Makefile.in.orig	Sat Apr 11 00:08:02 1998
++++ web2c/Makefile.in	Mon Apr 27 19:21:09 1998
 @@ -5,7 +5,7 @@
  # install-fmts/install-bases/install-mems will install. plain.* is
  # created automatically (as a link).  See the Formats node in
  # doc/web2c.texi for details on the fmts.
--fmts = latex.fmt # amstex.fmt eplain.fmt texinfo.fmt
-+#fmts = latex.fmt # amstex.fmt eplain.fmt texinfo.fmt
- bases = # I do not recommend building cmmf.base.
- mems =  # mfplain.mem is probably not generally useful.
- 
-@@ -91,15 +91,17 @@
- # Prevent Make from deleting the intermediate forms.
- .PRECIOUS: %.p %.c
- 
--programs = bibtex dvicopy dvitomp dvitype gftodvi gftopk gftype mf \
--mft mpost patgen pktogf pktype pltotf pooltype tangle tex tftopl vftovp \
-+programs1 = bibtex dvicopy dvitomp dvitype gftodvi gftopk gftype mf \
-+mft mpost patgen pktogf pktype  pooltype tangle tex  vftovp \
- vptovf weave
+-@TEX@fmts = latex.fmt # amstex.fmt eplain.fmt texinfo.fmt
++#@TEX@fmts = latex.fmt # amstex.fmt eplain.fmt texinfo.fmt
+ @ETEX@efmts = elatex.efmt
+ @CTEX@cfmts = latex.efmt
+ @PTEX@pdffmts = pdflatex.fmt
+@@ -110,10 +110,12 @@
+ @OMEGA@ovf2ovp = ovf2ovp
+ @OMEGA@ovp2ovf = ovp2ovf
+ @OMEGA@otangle = otangle
+-programs = tie bibtex dvicopy dvitomp dvitype $(etex) gftodvi gftopk \
++programs1 = tie bibtex dvicopy dvitomp dvitype $(etex) gftodvi gftopk \
+ gftype mf mft mpost $(odvicopy) $(odvitype) $(ofm2opl) $(omega) \
+ $(opl2ofm) $(ovf2ovp) $(ovp2ovf) $(otangle) patgen $(pdftex) pktogf pktype \
+-pltotf pooltype tangle $(tex) tftopl vftovp vptovf weave
++pooltype tangle $(tex) vftovp vptovf weave
 +programs2 = pltotf tftopl
 +programs = $(programs1) $(programs2)
  
  mpware = mpware/dmp mpware/makempx mpware/mpto mpware/newer
  mpware_sources = mpware/dmp.c mpware/makempx.in mpware/mpto.c mpware/newer.c
+@@ -121,7 +123,7 @@
+ @OMEGA@otps_programs = otps/otp2ocp otps/outocp
  
  #  
--default all: programs formats doc/web2c.info
-+default all: programs doc/web2c.info
- programs: $(programs) $(mpware)
+-default all: programs formats manpages doc/web2c.info
++default all: programs manpages doc/web2c.info
+ programs: $(programs) $(mpware) $(otps_programs)
  
- # Rules to link each program. I wish we could use a suffix rule for
-@@ -326,7 +328,7 @@
- 	./tex -ini \&./tex eplain \\dump </dev/null
- 
- # 
--install: install-exec install-data
-+install: formats install-exec install-data
- install-exec:: install-links
- install-data:: install-formats
- 
-@@ -335,7 +337,7 @@
- 	$(SHELL) $(top_srcdir)/../mkdirchain $(bindir) $(texpooldir) \
+ # Makefile fragments:
+@@ -482,7 +484,7 @@
+ 	$(SHELL) $(top_srcdir)/../mkinstalldirs $(bindir) $(texpooldir) \
  	  $(mfpooldir) $(mppooldir)
  	cd mpware && $(MAKE) $(install_makeargs) install-exec
 -	for p in $(programs); do $(INSTALL_LIBTOOL_PROG) $(bindir) $$p; done
 +	for p in $(programs1); do $(INSTALL_LIBTOOL_PROG) $(bindir) $$p; done
+ @OMEGA@	cd otps && $(MAKE) $(install_makeargs) install-programs
  
- # The links to {mf,mp,tex} for each format and for {ini,vir}{mf,mp,tex}.
- install-links: install-programs
+ # The links to {mf,mp,tex} for each format and for {ini,vir}{mf,mp,tex},

@@ -1,16 +1,17 @@
 # New ports collection makefile for:	pTeX-jis
-# Version required:	2.1.5
+# Version required:	2.1.8
 # Date created:		05 Oct 1997
 # Whom:			max
 #
-# $Id: Makefile,v 1.3 1997/11/10 11:22:55 asami Exp $
+# $Id: Makefile,v 1.4 1997/11/22 01:38:54 asami Exp $
 #
 
-DISTNAME=	ptex215
-PKGNAME=	ja-ptex-jis-2.1.5
+DISTNAME=	ptex218
+PKGNAME=	ja-ptex-jis-2.1.8
 CATEGORIES=	japanese print
-MASTER_SITES=	ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/ptex215/
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} plib13-jis.tar.gz
+MASTER_SITES=	ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/ptex218/
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} plib-1.4-jis.tar.gz \
+		Makefile.in.patch.txt
 
 MAINTAINER=	max@FreeBSD.ORG
 
@@ -19,8 +20,9 @@ RUN_DEPENDS=	ptex-common:${PORTSDIR}/japanese/ptex-common
 MANUAL_PACKAGE_BUILD=	incompatible with other versions of ptex-*
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+DIST_SUBDIR=	ptex
 CONFIGURE_ARGS=	jis
-WRKSRC=		${.CURDIR}/../ptex-common/work/web2c-7.0/web2c/${DISTNAME}
+WRKSRC=		${.CURDIR}/../ptex-common/work/web2c-7.2/web2c/${DISTNAME}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 ALL_TARGET=	default
 
@@ -34,10 +36,14 @@ pre-extract:
 
 post-extract:
 	@${RM} -rf ${WRKSRC}
-	@${MV} ${WRKDIR}/${DISTNAME} ${.CURDIR}/../ptex-common/work/web2c-7.0/web2c
+	@${MV} ${WRKDIR}/${DISTNAME} ${.CURDIR}/../ptex-common/work/web2c-7.2/web2c
+
+pre-patch:
+	@/usr/bin/uudecode -p ${DISTDIR}/${DIST_SUBDIR}/Makefile.in.patch.txt | \
+	  ${PATCH} ${PATCH_DIST_ARGS}
 
 pre-install:
-	@${EXTRACT_CMD} -C ${PREFIX} -zxf ${DISTDIR}/plib13-jis.tar.gz
+	@${EXTRACT_CMD} -C ${PREFIX}/share -zxf ${DISTDIR}/${DIST_SUBDIR}/plib-1.4-jis.tar.gz
 
 post-install:
 .for bin in ${BINARIES}

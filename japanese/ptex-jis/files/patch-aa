@@ -1,11 +1,20 @@
---- Makefile.in.orig	Wed Aug 27 16:07:43 1997
-+++ Makefile.in	Sun Oct  5 00:05:12 1997
-@@ -225,7 +225,7 @@
- 	$(SHELL) $(top_srcdir)/mkdirchain \
- 		$(texpooldir) $(web2cdir) $(fontnamedir)
- 	$(INSTALL_DATA) ptex.pool $(texpooldir)/ptex.pool
--	$(SHELL) $(thisdir)/mkconf $(web2cdir)
-+#	$(SHELL) $(thisdir)/mkconf $(web2cdir)
- # tcx files are a bad idea
- #	cd $(srcdir)/share && for f in *.tcx; do \
- #	  $(INSTALL_DATA) $$f $(web2cdir)/$$f; done
+--- Makefile.in.orig	Wed Jun 24 07:02:38 1998
++++ Makefile.in	Wed Jun 24 07:03:31 1998
+@@ -3,7 +3,7 @@
+ 
+ kanjicode = @kanjicode@
+ 
+-default : programs formats
++default : programs #formats
+ 
+ programs=ptex tftopl pltotf pdvitype jbibtex
+ formats=ptex.fmt
+@@ -160,7 +160,7 @@
+ 
+ texmf.cnf: ../../kpathsea/texmf.cnf
+ 	cp ../../kpathsea/texmf.cnf texmf.cnf
+-	$(SHELL) $(thisdir)/mkconf $(thisdir)
++#	$(SHELL) $(thisdir)/mkconf $(thisdir)
+ 
+ dumpenv = TEXMFCNF=$(thisdir) TEXMF=$(texmf) 
+ 
