@@ -12,7 +12,7 @@ MASTER_SITES=	# ftp://jeuxlinux.com/bioware/Neverwinter_Nights/
 DISTNAME=	nwresources${PORTVERSION:S/.//}
 EXTRACT_ONLY=	# Don't extract anything
 
-MAINTAINER=	erikolson@olsonexpress.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Neverwinter Nights Data Files
 
 ONLY_FOR_ARCHS=	i386

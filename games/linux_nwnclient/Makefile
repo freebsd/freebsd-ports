@@ -12,7 +12,7 @@ MASTER_SITES=	http://nwdownloads.bioware.com/neverwinternights/linux/${PORTVERSI
 		http://nwdownloads.bioware.com/neverwinternights/linux/129/
 DISTFILES=	nwclient129.tar.gz linuxclientupdate129to${PORTVERSION:S/.//}.tar.gz
 
-MAINTAINER=	erikolson@olsonexpress.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Neverwinter Nights Linux (x86) Client
 
 RUN_DEPENDS=	/compat/linux/usr/games/nwn/nwm:${PORTSDIR}/games/linux_nwndata \
