@@ -8462,6 +8462,7 @@ totd		ports/net/totd
 totem		ports/graphics/totem
 touch		src/usr.bin/touch
 towitoko	ports/devel/towitoko
+tpasm		ports/devel/tpasm
 tpg		ports/devel/tpg
 tpop3d		ports/mail/tpop3d
 tptest		ports/net/tptest
