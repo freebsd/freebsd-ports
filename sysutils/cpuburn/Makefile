@@ -15,6 +15,8 @@ EXTRACT_SUFX=	_tar.gz
 MAINTAINER=	mark@kyne.com.au
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+ONLY_FOR_ARCHS=	i386
+
 do-build:
 	@(cd ${BUILD_WRKSRC}; \
 	for CPU in BX K6 MMX P5 P6; do \
