@@ -3,9 +3,9 @@ bin/cprn
 bin/cmt
 bin/psconv
 lib/prn/cmtdefs
-man/ja_JP.EUC/man1/prn.1.gz
-man/ja_JP.EUC/man1/cprn.1.gz
-man/ja_JP.EUC/man1/cmt.1.gz
-man/ja_JP.EUC/man1/psconv.1.gz
-man/ja_JP.EUC/man5/cmtdefs.5.gz
+man/ja/man1/prn.1.gz
+man/ja/man1/cprn.1.gz
+man/ja/man1/cmt.1.gz
+man/ja/man1/psconv.1.gz
+man/ja/man5/cmtdefs.5.gz
 @dirrm lib/prn

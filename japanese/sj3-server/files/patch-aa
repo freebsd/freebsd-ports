@@ -61,10 +61,10 @@ diff -arcN ../sj3-2.0.1.13.org/README ./README
 ! 	/usr/local/bin/sj3stat			Utility to show status of sj3serv
 ! 	/usr/local/include/sj3lib.h		Header file for sj3lib
 ! 	/usr/local/lib/libsj3lib.a		Kana-Kanji conversion library
-! 	/usr/local/man/ja_JP.EUC/man1/sj3.1		sj3's online manual(Japanese)
-! 	/usr/local/man/ja_JP.EUC/man1/sj3dic.1		sj3dic's online manual(Japanese)
-! 	/usr/local/man/ja_JP.EUC/man1/sj3mkdic.1	sj3mkdic's online manual(Japanese)
-! 	/usr/local/man/ja_JP.EUC/man1/sj3serv.1		sj3serv's online manual(Japanese)
+! 	/usr/local/man/ja/man1/sj3.1		sj3's online manual(Japanese)
+! 	/usr/local/man/ja/man1/sj3dic.1		sj3dic's online manual(Japanese)
+! 	/usr/local/man/ja/man1/sj3mkdic.1	sj3mkdic's online manual(Japanese)
+! 	/usr/local/man/ja/man1/sj3serv.1	sj3serv's online manual(Japanese)
 ! 	/usr/local/lib/sj3/serverrc		Configuration file for sj3serv
 ! 	/usr/local/lib/sj3/sjrc			Configuration file for sj3
 ! 	/usr/local/lib/sj3/sjrk			Roma-Kana conversion file for sj3
@@ -118,10 +118,10 @@ diff -arcN ../sj3-2.0.1.13.org/README.eucJP ./README.eucJP
 ! 	/usr/local/bin/sj3stat			sj3serv への接続状況表示ユーティリティ
 ! 	/usr/local/include/sj3lib.h		仮名漢字変換ライブラリのヘッダファイル
 ! 	/usr/local/lib/libsj3lib.a		仮名漢字変換ライブラリ
-! 	/usr/local/man/ja_JP.EUC/man1/sj3.1		sj3 のオンラインマニュアル
-! 	/usr/local/man/ja_JP.EUC/man1/sj3dic.1		sj3dic のオンラインマニュアル
-! 	/usr/local/man/ja_JP.EUC/man1/sj3mkdic.1	sj3mkdic のオンラインマニュアル
-! 	/usr/local/man/ja_JP.EUC/man1/sj3serv.1		sj3serv のオンラインマニュアル
+! 	/usr/local/man/ja/man1/sj3.1		sj3 のオンラインマニュアル
+! 	/usr/local/man/ja/man1/sj3dic.1		sj3dic のオンラインマニュアル
+! 	/usr/local/man/ja/man1/sj3mkdic.1	sj3mkdic のオンラインマニュアル
+! 	/usr/local/man/ja/man1/sj3serv.1	sj3serv のオンラインマニュアル
 ! 	/usr/local/lib/sj3/serverrc		sj3serv の設定ファイル
 ! 	/usr/local/lib/sj3/sjrc			sj3 の設定ファイル
 ! 	/usr/local/lib/sj3/sjrk			sj3 のローマ字仮名変換設定ファイル
@@ -542,7 +542,7 @@ diff -arcN ../sj3-2.0.1.13.org/doc/man/Imakefile ./doc/man/Imakefile
 +  */
 + 
 + #ifndef JapaneseManLocale
-+ #define JapaneseManLocale	ja_JP.EUC
++ #define JapaneseManLocale	ja
 + #endif
 + JMANLOCALE = JapaneseManLocale
 + 

@@ -17,7 +17,7 @@ lib/sj3/sj3lib.ms
 lib/sj3/sj3serv.ms
 lib/sj3/sjrc
 lib/sj3/sjrk
-man/ja_JP.EUC/man1/sj3.1.gz
-man/ja_JP.EUC/man1/sj3dic.1.gz
-man/ja_JP.EUC/man1/sj3mkdic.1.gz
-man/ja_JP.EUC/man1/sj3serv.1.gz
+man/ja/man1/sj3.1.gz
+man/ja/man1/sj3dic.1.gz
+man/ja/man1/sj3mkdic.1.gz
+man/ja/man1/sj3serv.1.gz

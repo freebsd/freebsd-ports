@@ -32,7 +32,7 @@ diff -arcN ../sjxa-1.5.11.org/CONFIG ./CONFIG
   #define UseXLC			YES
 ! #define UseSJX			NO
 ! #define JapaneseManLocale	eucJP
-! #define JapaneseManDir		/usr/X11R6/man/ja_JP.EUC/man1
+! #define JapaneseManDir		/usr/X11R6/man/ja/man1
 ! #define ManDir			/usr/X11R6/man/man1
 ! #define SjxaBinDir		/usr/X11R6/bin
 ! #define SjxaAppDir		/usr/X11R6/lib/X11
@@ -168,7 +168,7 @@ diff -arcN ../sjxa-1.5.11.org/man/Imakefile ./man/Imakefile
   #define JapaneseManLocale	eucJP
   #endif
   #ifndef JapaneseManDir
-! #define JapaneseManDir	/usr/X11R6/man/ja_JP.EUC/man1
+! #define JapaneseManDir	/usr/X11R6/man/ja/man1
   #endif
   #ifndef ManDir
 ! #define ManDir		/usr/X11R6/man/man1

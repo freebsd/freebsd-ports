@@ -21,7 +21,7 @@
 !           BINPATH = ${PREFIX}/bin
 !           LIBPATH = ${PREFIX}/lib/prn
 !           MANPATH = ${PREFIX}/man
-!           JMANDIR = ja_JP.EUC
+!           JMANDIR = ja
 !            CFLAGS = -O \
 ! 		-DKCCPATH=\"${PREFIX}/bin/kcc\" \
 ! 		-DCMTPATH=\"${PREFIX}/bin/cmt\" \

@@ -3,7 +3,7 @@
 # Date created:		27 Jun 1997
 # Whom:			Takayuki Ariga <a00821@cc.hc.keio.ac.jp>
 #
-# $Id: Makefile,v 1.1.1.1 1997/07/20 16:41:58 max Exp $
+# $Id: Makefile,v 1.2 1997/09/14 21:36:22 max Exp $
 #
 
 DISTNAME=	weblint-97-0.12
@@ -16,7 +16,7 @@ MASTER_SITES=	ftp://ftp.win.or.jp/pub/network/www/weblint/ \
 MAINTAINER=	a00821@cc.hc.keio.ac.jp
 
 WRKSRC=         ${WRKDIR}/weblint-97
-MANLANG=	ja_JP.EUC
+MANLANG=	ja
 MAN1=		jweblint.1
 MAKE_ENV+=      PERLLIBDIR="${PERLLIBDIR}"
 ALL_TARGET=	euc-jp

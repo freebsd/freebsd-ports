@@ -12,7 +12,7 @@
 +LIBDIR   = ${PERLLIBDIR}
  JPDIR    = ./l10n/ja-jp
 -JMANDIR  = /usr/local/man/ja/man1
-+JMANDIR  = ${PREFIX}/man/ja_JP.EUC/man1
++JMANDIR  = ${PREFIX}/man/ja/man1
  PROGRAM  = weblint
  JPROGRAM = jweblint
 +JPROGRAM_TMP = jweblint.tmp
