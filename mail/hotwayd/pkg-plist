@@ -1,5 +1,1 @@
 sbin/hotwayd
-include/hotwayd.h
-include/httpmail.h
-include/ghttp.h
-include/ghttp_constants.h
