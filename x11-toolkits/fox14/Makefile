@@ -32,6 +32,7 @@ PATCHVERSION=	${PORTVERSION}
 
 USE_MESA=	yes
 INSTALLS_SHLIB=	yes
+CONFIGURE_ENV+=	CXXFLAGS="${CXXFLAGS}"
 CONFIGURE_ARGS+=--with-opengl=mesa --with-x
 .if defined(NO_SHM)
 CONFIGURE_ARGS+=--with-shm=no
@@ -52,6 +53,9 @@ SHLIB_MIN=	0
 MAKE_ENV+=	LT_CURRENT="${SHLIB_MAJ}" LT_REVISION="${SHLIB_MIN}"
 PLIST_SUB+=	LIBVER="${SHLIB_MAJ}"
 MAN1=		reswrap.1
+
+# Uncomment this to turn the default optimization flags on.
+CXXFLAGS=	-O2 -Wuninitialized -ffast-math -finline-functions -fomit-frame-pointer -fexpensive-optimizations
 
 .if defined(WITH_XUNICODE)
 post-extract:
