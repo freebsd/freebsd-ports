@@ -6,13 +6,11 @@
 #
 
 PORTNAME=	jedit
-PORTVERSION=	4.1.0
-PORTREVISION=	1
+PORTVERSION=	4.2
 CATEGORIES=	editors java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-_DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}install
-DISTNAME=	${_DISTNAME:S/0install$/install/}
+DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}install
 EXTRACT_SUFX=	.jar
 EXTRACT_ONLY=
 
@@ -25,6 +23,8 @@ USE_XLIB=	yes
 NO_BUILD=	yes
 
 MAN1=		jedit.1
+# The complete PLIST is generated in post-install
+PLIST_FILES=	bin/jedit
 
 do-configure:
 	@${SED} "s|%%PREFIX%%|${PREFIX}|g ; s|%%LOCALBASE%%|${LOCALBASE}|g" \
@@ -39,5 +39,18 @@ do-install:
 .if defined(PARALLEL_PACKAGE_BUILD)
 IGNORE=	hang
 .endif
+
+post-install:
+	@${FIND} ${JAVASHAREDIR} ! -type d | \
+		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
+	@${FIND} ${JAVASHAREDIR} -type d | ${SORT} -r | \
+		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
+	@${ECHO_CMD} "******************************************************"
+	@${ECHO_CMD} ""
+	@${ECHO_CMD} "In order to use the optional SFTP plug-in for jEdit,"
+	@${ECHO_CMD} "you will need to have Java JDK version 1.4 or newer"
+	@${ECHO_CMD} "installed."
+	@${ECHO_CMD} ""
+	@${ECHO_CMD} "******************************************************"
 
 .include <bsd.port.mk>
