@@ -21,6 +21,6 @@ LIB_DEPENDS+=	ncurses.5:${PORTSDIR}/devel/ncurses
 
 GNU_CONFIGURE=	yes
 
-MAN1=		mp3blaster.1 nmixer.1
+MAN1=		mp3blaster.1 nmixer.1 splay.1
 
 .include <bsd.port.post.mk>
