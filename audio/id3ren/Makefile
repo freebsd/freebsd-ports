@@ -1,5 +1,4 @@
 # New ports collection makefile for: id3ren
-# URL: http://tscnet.com/pages/badcrc/apps/id3ren/
 # Version required:     0.97a
 # Date created:         28 February 1999
 # Whom:                 Joao Carlos Mendes Luis <jonny@jonny.eng.br>

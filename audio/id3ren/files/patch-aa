@@ -1,4 +1,4 @@
---- /lab/elepot/users/Others/jonny/tmp/tohome/mp3/util/id3ren/src/Makefile	Wed Mar 18 04:28:44 1998
+--- Makefile.old	Wed Mar 18 04:28:44 1998
 +++ Makefile	Sun Feb 28 16:04:16 1999
 @@ -1,16 +1,18 @@
 -CFLAGS = -O2 -s -Wall
