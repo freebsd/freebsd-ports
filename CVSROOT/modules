@@ -6319,6 +6319,7 @@ squidguard	ports/www/squidguard
 squidpurge	ports/www/squidpurge
 squidtimes	ports/www/squidtimes
 squirm		ports/www/squirm
+squirrelmail	ports/mail/squirrelmail
 squishdot	ports/www/squishdot
 sqwebmail	ports/mail/sqwebmail
 sr		ports/lang/sr
