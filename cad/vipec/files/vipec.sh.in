@@ -1,4 +1,0 @@
-#!/bin/sh
-VIPECHOME=@PREFIX@/share/vipec/
-export VIPECHOME
-exec "@PREFIX@/bin/vipec.exec" "$@"
