@@ -1,0 +1,21 @@
+COPYRIGHT ISSUES:
+
+	This version of 'libident' is hereby released into the
+	Public Domain. It may be distributed for a fee or without
+	a fee. We only ask you not to pretend you wrote it.
+
+If you make any changes, please send sources or a diff of it to
+us (pen@lysator.liu.se or pell@lysator.liu.se), so we can keep
+_one_ unified version of libident available...
+
+COMMENTS:
+
+This is the second stab at a small library to interface to the Ident
+protocol server. Maybe this will work correctly on some machines.. :-)
+ 
+The ident-tester.c file is a small daemon (to be started from Inetd)
+that does an ident lookup on you if you telnet into it. Can be used
+to verify that your Ident server is working correctly.
+ 
+I'm currently running this "ident-tester" on port 114 at lysator.liu.se
+(130.236.254.1) if you wish to test your server.
