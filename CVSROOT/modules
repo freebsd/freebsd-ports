@@ -3832,6 +3832,7 @@ jai		ports/java/jai
 jai-imageio	ports/java/jai-imageio
 jailadmin	ports/sysutils/jailadmin
 jailer		ports/sysutils/jailer
+jailuser	ports/sysutils/jailuser
 jailutils	ports/sysutils/jailutils
 jakarta-bcel	ports/java/jakarta-bcel
 jakarta-commons-beanutils	ports/java/jakarta-commons-beanutils
