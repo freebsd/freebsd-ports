@@ -1,11 +1,19 @@
---- ../original/setupwfc	Wed Sep  9 05:57:13 1998
-+++ setupwfc	Mon Sep 21 01:42:22 1998
-@@ -341,7 +341,7 @@
- 		PLATFORM=hp
- 		DISP_PLATFORM="Hewlett-Packard (HP-UX)"
- 		;;
--	Linux)
-+	Linux|FreeBSD)
- 		PLATFORM=linux
- 		DISP_PLATFORM="Linux"
- 		;;
+*** setupwfc.orig	Fri Jan 14 12:53:13 2000
+--- setupwfc	Fri Mar 10 13:03:43 2000
+***************
+*** 344,350 ****
+  		PLATFORM=hp
+  		DISP_PLATFORM="Hewlett-Packard (HP-UX)"
+  		;;
+! 	Linux)
+                 # We assume that an Intel-based linux system will have an x86
+                 # processor. We also assume that this is reported by uname -m
+                 # "ix86" where x is some number.
+--- 344,350 ----
+  		PLATFORM=hp
+  		DISP_PLATFORM="Hewlett-Packard (HP-UX)"
+  		;;
+! 	Linux|FreeBSD)
+                 # We assume that an Intel-based linux system will have an x86
+                 # processor. We also assume that this is reported by uname -m
+                 # "ix86" where x is some number.
