@@ -719,3 +719,16 @@
  	}
  	DEB(printf(__FUNCTION__ ": return %d\n", error));
  	return error;
+--- vmnet-only/vnet.h.orig	Wed Jul 23 23:43:38 2003
++++ vmnet-only/vnet.h	Tue Jul  6 07:55:44 2004
+@@ -10,8 +10,8 @@
+ #define INCLUDE_ALLOW_MODULE
+ #include "includeCheck.h"
+ 
+-#define SIOCSKEEP          0x89F0  // not used
+-#define SIOCGKEEP          0x89F1  // not used
++#define SIOCSKEEP          0x89F0  /* not used */
++#define SIOCGKEEP          0x89F1  /* not used */
+ #define SIOCSLADRF         0x89F2
+ #define SIOCPORT           0x89F3
+ #define SIOCBRIDGE         0x89F4

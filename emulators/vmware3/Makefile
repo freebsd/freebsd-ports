@@ -7,19 +7,19 @@
 
 PORTNAME=	vmware3
 PORTVERSION=	3.2.1.2242
-PORTREVISION=	7
+PORTREVISION=	8
 PORTEPOCH=	1
 CATEGORIES=	emulators linux
 MASTER_SITES=	http://www4.vmware.com/software/ \
 		${FREEBSD_MODULE_SITES} \
 		${VMWARE_MIRROR_SITES}
 DISTFILES=	VMware-workstation-${PORTVERSION:R}-${PORTVERSION:E}${EXTRACT_SUFX}:vmware \
-		vmmon-only-${PORTVERSION:R}-20031118${EXTRACT_SUFX}:patch \
-		vmnet-only-${PORTVERSION:R}-20030412${EXTRACT_SUFX}:patch
+		vmmon-only-${PORTVERSION:R}-20040705${EXTRACT_SUFX}:patch \
+		vmnet-only-${PORTVERSION:R}-20040705${EXTRACT_SUFX}:patch
 
 # Feel free to post your questions/reports/suggestions on this port to
 # freebsd-emulation mailing list with the following maintainer address CC'ed.
-MAINTAINER=	orlando.bassotto@ieo-research.it
+MAINTAINER=	orlando@break.net
 COMMENT=	A virtual machine emulator - a full PC in a window
 
 RUN_DEPENDS=	${PORTSDIR}/emulators/rtc
@@ -33,7 +33,7 @@ VMWARE_MIRROR_SITES=	\
 		http://vmware.wespe.de/software/:vmware \
 		ftp://vmware.wespe.de/pub/software:vmware
 FREEBSD_MODULE_SITES=	\
-		http://bag.ieo-research.it/~nextie/vmware3/:patch \
+		http://www.break.net/orlando/vmware3/:patch \
 
 USE_SUBMAKE=	yes
 USE_LINUX=	yes
@@ -107,7 +107,7 @@ pre-patch:
 	@${MKDIR} ${WRKSRC}/vmmon-only/freebsd
 	@${MKDIR} ${WRKSRC}/vmmon-only/netbsd
 	@cd ${WRKSRC}/vmmon-only && ${PATCH} -p1 < ${WRKDIR}/vmmon-only.diff
-	@cd ${WRKSRC} && ${PATCH} < ${WRKDIR}/vmnet-only.diff
+	@cd ${WRKSRC}/vmnet-only && ${PATCH} -p1 < ${WRKDIR}/vmnet-only.diff
 
 .if exists(/sys/compat/linux/linux_ioctl.h)
 	${PERL} -i -pe 's,i386(/linux/linux_ioctl\.h),compat$$1,' \
@@ -134,6 +134,8 @@ post-patch:
 
 setoptions:
 	${SED} 	-e 's;@@PREFIX@@;${PREFIX};' \
+		-e 's;@@BRIDGED@@;${VMNET_BRIDGED};' \
+		-e 's;@@BRIDGE_INTF@@;${VMNET_BRIDGED_INTERFACE};' \
 		-e 's;@@HOST_IP@@;${VMNET_HOST_IP};' \
 		-e 's;@@NETMASK@@;${VMNET_NETMASK};' \
 		${FILESDIR}/config > ${WRKDIR}/config
@@ -141,8 +143,7 @@ setoptions:
 	${SED} 	-e 's;@@PREFIX@@;${PREFIX};' \
 		-e 's;@@LINUXBASE@@;${LINUXBASE};' \
 		-e 's;@@NETWORKING@@;${VMNET_NETWORKING};' \
-		-e 's;@@BRIDGED@@;${VMNET_BRIDGED};' \
-		-e 's;@@BRIDGE_INTF@@;${VMNET_BRIDGED_INTERFACE};' \
+		-e 's;@@VMNET1_MINOR@@;${VMNET1_MINOR};' \
 		${FILESDIR}/001.vmware.sh > ${WRKDIR}/001.vmware.sh
 
 	${SED} 	-e 's;@@PREFIX@@;${PREFIX};' \
@@ -154,7 +155,11 @@ pre-install: setoptions
 	${MKDIR} ${VMDIR}/modules
 
 	${MKDIR} ${PREFIX}/etc/vmware
-	${INSTALL_DATA} ${WRKDIR}/config ${PREFIX}/etc/vmware
+.if exists(${PREFIX}/etc/vmware/config)
+		@echo "====> Preserving your previous configuration."
+.else
+		${INSTALL_DATA} ${WRKDIR}/config ${PREFIX}/etc/vmware
+.endif
 
 	${INSTALL_SCRIPT} ${WRKDIR}/001.vmware.sh ${PREFIX}/etc/rc.d
 
@@ -186,7 +191,7 @@ pre-install: setoptions
 
 	${MKDIR} ${VMDIR}/licenses/site
 	${MKDIR} ${VMDIR}/licenses/user
-	${INSTALL_DATA} -m 4555 ${WRKSRC}/lib/licenses/user/license.ws.3.0 \
+	${INSTALL_DATA} -m 644 ${WRKSRC}/lib/licenses/user/license.ws.3.0 \
 		${VMDIR}/licenses/user
 	${INSTALL_SCRIPT} -m 4555 ${WRKSRC}/bin/vmware ${VMDIR}/bin
 	${INSTALL_SCRIPT} ${WRKDIR}/vmware ${PREFIX}/bin
@@ -209,7 +214,7 @@ pre-install: setoptions
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/vmware
 	${INSTALL_DATA} ${WRKSRC}/doc/* ${PREFIX}/share/doc/vmware
-.for f in README.FreeBSD Hints.FreeBSD
+.for f in README.FreeBSD Hints.FreeBSD MultipleInstances.FreeBSD ChangeLog.FreeBSD
 	${INSTALL_DATA} ${FILESDIR}/${f} ${PREFIX}/share/doc/vmware
 .endfor
 .endif

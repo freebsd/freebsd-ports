@@ -1,6 +1,5 @@
 bin/vmware
 etc/rc.d/001.vmware.sh
-etc/vmware/config
 lib/vmware/modules/vmmon_smp.ko
 %%FREEBSD5%%lib/vmware/modules/linker.hints
 lib/vmware/modules/vmmon_up.ko
@@ -304,6 +303,8 @@ lib/vmware/smb/codepages/codepage.932
 lib/vmware/smb/codepages/codepage.936
 lib/vmware/smb/codepages/codepage.949
 lib/vmware/smb/codepages/codepage.950
+share/doc/vmware/ChangeLog.FreeBSD
+share/doc/vmware/MultipleInstances.FreeBSD
 share/doc/vmware/Hints.FreeBSD
 share/doc/vmware/README.FreeBSD
 share/doc/vmware/open_source_licenses.txt
@@ -318,7 +319,6 @@ share/doc/vmware/README
 @exec ln -sf %D/etc/vmware %%LINUXBASE%%/etc/
 @exec rm -f %%LINUXBASE%%/dev/vmmon %%LINUXBASE%%/dev/vmnet1 %%LINUXBASE%%/dev/null
 @unexec rm -f %%LINUXBASE%%/etc/vmware %%LINUXBASE%%/bin/df %%LINUXBASE%%/dev/tty[0-9]* %%LINUXBASE%%/dev/hd?
-@dirrm etc/vmware
 @dirrm lib/vmware/bin
 @dirrm lib/vmware/help
 @dirrm lib/vmware/modules
