@@ -27,8 +27,8 @@
  	chmod 644 ${DESTDIR}/${MANDIR}/skill.${MANSFX}
 -	ln ${DESTDIR}/${MANDIR}/skill.${MANSFX}\
 -		${DESTDIR}/${MANDIR}/snice.${MANSFX}
-+	#ln ${DESTDIR}/${MANDIR}/skill.${MANSFX}\
-+	#	${DESTDIR}/${MANDIR}/snice.${MANSFX}
++	@# ln ${DESTDIR}/${MANDIR}/skill.${MANSFX}\
++		${DESTDIR}/${MANDIR}/snice.${MANSFX}
  
  config Config: FRC
  	./Config
