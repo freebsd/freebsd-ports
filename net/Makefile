@@ -172,6 +172,7 @@
     SUBDIR += gnet2
     SUBDIR += gnetcat
     SUBDIR += gnewtellium
+    SUBDIR += gnoemoe
     SUBDIR += gnomba
     SUBDIR += gnome-btdownload
     SUBDIR += gnome-jabber

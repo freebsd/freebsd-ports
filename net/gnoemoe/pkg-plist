@@ -1,0 +1,50 @@
+bin/gnoemoe
+share/gnome/applications/gnoemoe.desktop
+share/gnome/gnoemoe/gnoemoe.glade
+share/gnome/gnoemoe/pixmaps/browser.png
+share/gnome/gnoemoe/pixmaps/close.xpm
+share/gnome/gnoemoe/pixmaps/editor.xpm
+share/gnome/gnoemoe/pixmaps/editor_text.xpm
+share/gnome/gnoemoe/pixmaps/editor_verb.xpm
+share/gnome/gnoemoe/pixmaps/gnoemoe_logo.svg
+share/gnome/gnoemoe/pixmaps/ice-userlist/avail+idle.svg
+share/gnome/gnoemoe/pixmaps/ice-userlist/away+idle.svg
+share/gnome/gnoemoe/pixmaps/ice-userlist/away.svg
+share/gnome/gnoemoe/pixmaps/ice-userlist/busy+idle.svg
+share/gnome/gnoemoe/pixmaps/ice-userlist/busy.svg
+share/gnome/gnoemoe/pixmaps/ice-userlist/inhabitant.svg
+share/gnome/gnoemoe/pixmaps/ice-userlist/programmer.svg
+share/gnome/gnoemoe/pixmaps/ice-userlist/wizard.svg
+share/gnome/gnoemoe/pixmaps/saveclose.xpm
+share/gnome/gnoemoe/pixmaps/terminal.png
+share/gnome/gnoemoe/pixmaps/tray/active.svg
+share/gnome/gnoemoe/pixmaps/tray/default.svg
+share/gnome/gnoemoe/pixmaps/userlist/away.svg
+share/gnome/gnoemoe/pixmaps/userlist/friend.svg
+share/gnome/gnoemoe/pixmaps/userlist/idle.svg
+share/gnome/gnoemoe/pixmaps/userlist/idleaway.svg
+share/gnome/gnoemoe/pixmaps/userlist/inhabitant.svg
+share/gnome/gnoemoe/pixmaps/userlist/inhabitantplus.svg
+share/gnome/gnoemoe/pixmaps/userlist/key.svg
+share/gnome/gnoemoe/pixmaps/userlist/newbie.svg
+share/gnome/gnoemoe/pixmaps/userlist/schooled.svg
+share/gnome/gnoemoe/pixmaps/userlist/star.svg
+share/gnome/gnoemoe/pixmaps/userlist/wizard.svg
+share/gnome/gnoemoe/pixmaps/world.png
+share/gnome/gnoemoe/pixmaps/world_inactive.png
+share/gnome/gnoemoe/scripts/editing.rb
+share/gnome/gnoemoe/scripts/misc.rb
+share/gnome/gnoemoe/scripts/music.rb
+share/gnome/gnoemoe/scripts/run.rb
+share/gnome/gtksourceview-1.0/language-specs/moo.lang
+share/gnome/pixmaps/gnoemoe-logo.svg
+share/locale/nl/LC_MESSAGES/gnoemoe.mo
+share/mime/packages/gnoemoe.xml
+@dirrm share/gnome/gnoemoe/scripts
+@dirrm share/gnome/gnoemoe/pixmaps/userlist
+@dirrm share/gnome/gnoemoe/pixmaps/tray
+@dirrm share/gnome/gnoemoe/pixmaps/ice-userlist
+@dirrm share/gnome/gnoemoe/pixmaps
+@dirrm share/gnome/gnoemoe
+@exec update-mime-database %D/share/mime
+@unexec update-mime-database %D/share/mime
