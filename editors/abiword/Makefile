@@ -7,6 +7,7 @@
 
 PORTNAME=	AbiWord2
 PORTVERSION=	1.1.4
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.abisource.com/downloads/Version-${PORTVERSION}/lf/
@@ -20,9 +21,8 @@ COMMENT=	An open-source, cross-platform WYSIWYG word processor
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		iconv.3:${PORTSDIR}/converters/libiconv \
-		glade-2.0.0:${PORTSDIR}/devel/libglade2 \
-		xml2.5:${PORTSDIR}/textproc/libxml2 \
 		fribidi.0:${PORTSDIR}/converters/fribidi \
+		popt.0:${PORTSDIR}/devel/popt \
 		aspell.15:${PORTSDIR}/textproc/aspell
 
 DIST_SUBDIR=	AbiWord
@@ -35,8 +35,8 @@ USE_AUTOMAKE_VER=14
 USE_AUTOCONF_VER=213
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
-USE_GNOMENG=	yes
-USE_GNOME=	gnomehier
+USE_GNOME=	gnomehier libglade2 libxml2
+WANT_GNOME=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib -liconv"
 CONFIGURE_ARGS=	--enable-xft
@@ -48,9 +48,7 @@ MAKEFILE=	GNUmakefile
 BROKEN=	"This port cannot be built when textproc/wv is installed because of a header conflict.  Please remove textproc/wv, and resume the build.  If textproc/wv is no longer installed, please remove ${LOCALBASE}/include/wv.h, and resume the AbiWord2 build"
 .endif
 
-.if defined(WITH_GNOME) || \
-	( exists(${X11BASE}/libdata/pkgconfig/libnautilus.pc) && \
-		exists(${X11BASE}/libdata/pkgconfig/gal-2.0.pc) )
+.if ${HAVE_GNOME:Mnautilus2}!="" && ${HAVE_GNOME:Mgal2}!=""
 LIB_DEPENDS+=		nautilus.2:${PORTSDIR}/x11-fm/nautilus2 \
 			gal-2.0.1:${PORTSDIR}/x11-toolkits/gal2
 CONFIGURE_ARGS+=	--enable-gnome
