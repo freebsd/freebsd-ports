@@ -1,5 +1,5 @@
---- configure.orig	Mon Aug  2 13:57:46 2004
-+++ configure	Mon Aug  2 21:14:08 2004
+--- configure.orig	Sun Sep  5 23:53:05 2004
++++ configure	Tue Sep  7 21:20:07 2004
 @@ -6891,6 +6891,7 @@
  
  # This can be used to rebuild libtool when needed
@@ -8,7 +8,7 @@
  
  # Always use our own libtool.
  LIBTOOL='$(SHELL) $(top_builddir)/libtool'
-@@ -7082,10 +7083,10 @@
+@@ -7126,10 +7127,10 @@
  
    case "${host}" in
      *-*-freebsd* )
@@ -23,7 +23,7 @@
        ;;
      *)
        THREAD_LIB="-lpthread"
-@@ -10280,7 +10281,7 @@
+@@ -10324,7 +10325,7 @@
        fi
      done
  
@@ -32,7 +32,7 @@
  
    fi
  
-@@ -10403,26 +10404,13 @@
+@@ -10447,26 +10448,13 @@
        fi
  
        gb_cv_header_sdl=$gb_inc_sdl
@@ -61,7 +61,7 @@
      if test "$gb_cv_header_sdl" = no; then
        have_inc_sdl="no"
        SDL_INC=""
-@@ -10525,16 +10513,7 @@
+@@ -10569,16 +10557,7 @@
      SDL_LIB=""
      SDL_PATH=""
  
@@ -74,12 +74,12 @@
 -      fi
 -    done
 -
--    SDL_LIB="$SDL_LIB $C_LIB $THREAD_LIB -lSDL -lSDL_mixer"
+-    SDL_LIB="$SDL_LIB $C_LIB $THREAD_LIB -lSDL -lSDL_mixer -lm"
 +    SDL_LIB="`$SDL_CONFIG --libs` -lSDL_mixer"
  
    fi
  
-@@ -11288,8 +11267,8 @@
+@@ -11332,8 +11311,8 @@
  fi
  
  
@@ -90,7 +90,7 @@
  
  if test "$gambas_prof" = "yes"; then
    CFLAGS="$CFLAGS -pg"
-@@ -11319,8 +11298,8 @@
+@@ -11363,8 +11342,8 @@
    CFLAGS="$CFLAGS -Os"
    CXXFLAGS="$CXXFLAGS -Os -fno-omit-frame-pointer"
  else

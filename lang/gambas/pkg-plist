@@ -74,9 +74,12 @@ lib/gambas/lib.gb.vb.component
 lib/gambas/lib.gb.vb.so
 lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%EXAMPLESDIR%%/Automation/KateBrowser/.gambas/FBROWSER
+%%PORTDOCS%%%%EXAMPLESDIR%%/Automation/KateBrowser/.icon/16.png
+%%PORTDOCS%%%%EXAMPLESDIR%%/Automation/KateBrowser/.icon/32.png
+%%PORTDOCS%%%%EXAMPLESDIR%%/Automation/KateBrowser/.icon/48.png
 %%PORTDOCS%%%%EXAMPLESDIR%%/Automation/KateBrowser/.kdbgrc.gbx
-%%PORTDOCS%%%%EXAMPLESDIR%%/Automation/KateBrowser/.lang/.pot
 %%PORTDOCS%%%%EXAMPLESDIR%%/Automation/KateBrowser/.project
+%%PORTDOCS%%%%EXAMPLESDIR%%/Automation/KateBrowser/CHANGELOG
 %%PORTDOCS%%%%EXAMPLESDIR%%/Automation/KateBrowser/FBrowser.class
 %%PORTDOCS%%%%EXAMPLESDIR%%/Automation/KateBrowser/FBrowser.form
 %%PORTDOCS%%%%EXAMPLESDIR%%/Automation/KateBrowser/KateBrowser
@@ -101,13 +104,25 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%EXAMPLESDIR%%/Basic/Blights/win1.form
 %%PORTDOCS%%%%EXAMPLESDIR%%/Basic/Collection/.gambas/CTHING
 %%PORTDOCS%%%%EXAMPLESDIR%%/Basic/Collection/.gambas/FSTART
-%%PORTDOCS%%%%EXAMPLESDIR%%/Basic/Collection/.lang/.pot
 %%PORTDOCS%%%%EXAMPLESDIR%%/Basic/Collection/.project
 %%PORTDOCS%%%%EXAMPLESDIR%%/Basic/Collection/CThing.class
 %%PORTDOCS%%%%EXAMPLESDIR%%/Basic/Collection/Collection
 %%PORTDOCS%%%%EXAMPLESDIR%%/Basic/Collection/FStart.class
 %%PORTDOCS%%%%EXAMPLESDIR%%/Basic/Collection/FStart.form
 %%PORTDOCS%%%%EXAMPLESDIR%%/Basic/Collection/collection.png
+%%PORTDOCS%%%%EXAMPLESDIR%%/Basic/DragNDrop/.gambas/FDRAGNDROP
+%%PORTDOCS%%%%EXAMPLESDIR%%/Basic/DragNDrop/.project
+%%PORTDOCS%%%%EXAMPLESDIR%%/Basic/DragNDrop/BulletHole.xpm
+%%PORTDOCS%%%%EXAMPLESDIR%%/Basic/DragNDrop/DragNDrop
+%%PORTDOCS%%%%EXAMPLESDIR%%/Basic/DragNDrop/FDragNDrop.class
+%%PORTDOCS%%%%EXAMPLESDIR%%/Basic/DragNDrop/FDragNDrop.form
+%%PORTDOCS%%%%EXAMPLESDIR%%/Basic/DragNDrop/bicycle.png
+%%PORTDOCS%%%%EXAMPLESDIR%%/Basic/DragNDrop/drop.png
+%%PORTDOCS%%%%EXAMPLESDIR%%/Basic/DragNDrop/eye.png
+%%PORTDOCS%%%%EXAMPLESDIR%%/Basic/DragNDrop/france.png
+%%PORTDOCS%%%%EXAMPLESDIR%%/Basic/DragNDrop/happy.png
+%%PORTDOCS%%%%EXAMPLESDIR%%/Basic/DragNDrop/loupe.png
+%%PORTDOCS%%%%EXAMPLESDIR%%/Basic/DragNDrop/pen.png
 %%PORTDOCS%%%%EXAMPLESDIR%%/Basic/Object/.gambas/CTHING
 %%PORTDOCS%%%%EXAMPLESDIR%%/Basic/Object/.gambas/FSTART
 %%PORTDOCS%%%%EXAMPLESDIR%%/Basic/Object/.project
@@ -187,7 +202,6 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%EXAMPLESDIR%%/Drawing/Clock/img/clock_bg_big4.png
 %%PORTDOCS%%%%EXAMPLESDIR%%/Drawing/ImageViewer/.gambas/FVIEWER
 %%PORTDOCS%%%%EXAMPLESDIR%%/Drawing/ImageViewer/.project
-%%PORTDOCS%%%%EXAMPLESDIR%%/Drawing/ImageViewer/.project~
 %%PORTDOCS%%%%EXAMPLESDIR%%/Drawing/ImageViewer/FViewer.class
 %%PORTDOCS%%%%EXAMPLESDIR%%/Drawing/ImageViewer/FViewer.form
 %%PORTDOCS%%%%EXAMPLESDIR%%/Drawing/ImageViewer/ImageViewer
@@ -200,7 +214,6 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%EXAMPLESDIR%%/Drawing/OnScreenDisplay/icon.png
 %%PORTDOCS%%%%EXAMPLESDIR%%/Exec/Console/.gambas/FCONSOLE
 %%PORTDOCS%%%%EXAMPLESDIR%%/Exec/Console/.kdbgrc.gbx
-%%PORTDOCS%%%%EXAMPLESDIR%%/Exec/Console/.lang/.pot
 %%PORTDOCS%%%%EXAMPLESDIR%%/Exec/Console/.lang/fr.po
 %%PORTDOCS%%%%EXAMPLESDIR%%/Exec/Console/.project
 %%PORTDOCS%%%%EXAMPLESDIR%%/Exec/Console/Console
@@ -261,7 +274,6 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%EXAMPLESDIR%%/Games/Solitaire/undo.png
 %%PORTDOCS%%%%EXAMPLESDIR%%/Miscellaneous/Evaluator/.gambas/FEVAL
 %%PORTDOCS%%%%EXAMPLESDIR%%/Miscellaneous/Evaluator/.kdbgrc.gbx
-%%PORTDOCS%%%%EXAMPLESDIR%%/Miscellaneous/Evaluator/.lang/.pot
 %%PORTDOCS%%%%EXAMPLESDIR%%/Miscellaneous/Evaluator/.project
 %%PORTDOCS%%%%EXAMPLESDIR%%/Miscellaneous/Evaluator/Evaluator
 %%PORTDOCS%%%%EXAMPLESDIR%%/Miscellaneous/Evaluator/FEval.class
@@ -279,7 +291,6 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%EXAMPLESDIR%%/Miscellaneous/Explorer/refresh.png
 %%PORTDOCS%%%%EXAMPLESDIR%%/Miscellaneous/Notepad/.gambas/FABOUT
 %%PORTDOCS%%%%EXAMPLESDIR%%/Miscellaneous/Notepad/.gambas/FNOTEPAD
-%%PORTDOCS%%%%EXAMPLESDIR%%/Miscellaneous/Notepad/.lang/.pot
 %%PORTDOCS%%%%EXAMPLESDIR%%/Miscellaneous/Notepad/.project
 %%PORTDOCS%%%%EXAMPLESDIR%%/Miscellaneous/Notepad/FAbout.class
 %%PORTDOCS%%%%EXAMPLESDIR%%/Miscellaneous/Notepad/FAbout.form
@@ -352,7 +363,6 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%EXAMPLESDIR%%/Sound/MusicPlayer/.icon/48.png
 %%PORTDOCS%%%%EXAMPLESDIR%%/Sound/MusicPlayer/.lang/.pot
 %%PORTDOCS%%%%EXAMPLESDIR%%/Sound/MusicPlayer/.project
-%%PORTDOCS%%%%EXAMPLESDIR%%/Sound/MusicPlayer/CHANGELOG
 %%PORTDOCS%%%%EXAMPLESDIR%%/Sound/MusicPlayer/FSoundPlayer.class
 %%PORTDOCS%%%%EXAMPLESDIR%%/Sound/MusicPlayer/FSoundPlayer.form
 %%PORTDOCS%%%%EXAMPLESDIR%%/Sound/MusicPlayer/MusicPlayer
@@ -3262,6 +3272,8 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Basic/Object/.lang
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Basic/Object/.gambas
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Basic/Object
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Basic/DragNDrop/.gambas
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Basic/DragNDrop
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Basic/Collection/.lang
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Basic/Collection/.gambas
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Basic/Collection
@@ -3273,6 +3285,7 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Automation/Scripting/.gambas
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Automation/Scripting
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Automation/KateBrowser/.lang
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Automation/KateBrowser/.icon
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Automation/KateBrowser/.gambas
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Automation/KateBrowser
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Automation
