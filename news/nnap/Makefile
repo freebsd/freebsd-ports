@@ -7,10 +7,10 @@
 #
 
 PORTNAME=	nnap
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	news
 MASTER_SITES=	http://www.freebsdcluster.org/~lasse/software/
-DISTNAME=	nnap
+DISTNAME=	nnap-1_1
 EXTRACT_SUFX=	.c
 
 MAINTAINER=	lasse@freebsdcluster.org
@@ -24,9 +24,9 @@ do-extract:
 	@${CP} ${DISTDIR}/${DISTFILES} ${WRKDIR}
 
 do-build:
-	(cd ${WRKSRC} && ${CC} ${CFLAGS} -o ${DISTNAME} ${DISTNAME}.c)
+	(cd ${WRKSRC} && ${CC} ${CFLAGS} -o ${PORTNAME} ${DISTNAME}.c)
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${DISTNAME} ${PREFIX}/sbin
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/sbin
 
 .include <bsd.port.mk>
