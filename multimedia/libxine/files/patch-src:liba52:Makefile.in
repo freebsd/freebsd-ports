@@ -1,0 +1,40 @@
+--- src/liba52/Makefile.in.orig	Sun Jan  5 18:47:47 2003
++++ src/liba52/Makefile.in	Sun Jan  5 18:47:56 2003
+@@ -208,25 +208,12 @@
+ 
+ lib_LTLIBRARIES = xineplug_decode_a52.la
+ 
+-xineplug_decode_a52_la_SOURCES = \
+-	bitstream.c \
+-	bit_allocate.c \
+-	downmix.c \
+-	imdct.c \
+-	parse.c \
+-	xine_decoder.c
++xineplug_decode_a52_la_SOURCES = xine_decoder.c
+ 
+ 
+-xineplug_decode_a52_la_LIBADD = $(XINE_LIB)
++xineplug_decode_a52_la_LIBADD = $(XINE_LIB) -la52 -ldjbfft
+ xineplug_decode_a52_la_LDFLAGS = -avoid-version -module @XINE_PLUGIN_MIN_SYMS@
+ 
+-noinst_HEADERS = \
+-	a52.h \
+-	a52_internal.h \
+-	bitstream.h \
+-	tables.h
+-
+-subdir = src/liba52
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = $(top_builddir)/config.h
+ CONFIG_CLEAN_FILES =
+@@ -234,8 +221,7 @@
+ 
+ xineplug_decode_a52_la_DEPENDENCIES = \
+ 	$(top_builddir)/src/xine-engine/libxine.la
+-am_xineplug_decode_a52_la_OBJECTS = bitstream.lo bit_allocate.lo \
+-	downmix.lo imdct.lo parse.lo xine_decoder.lo
++am_xineplug_decode_a52_la_OBJECTS = xine_decoder.lo
+ xineplug_decode_a52_la_OBJECTS = $(am_xineplug_decode_a52_la_OBJECTS)
+ 
+ DEFS = @DEFS@

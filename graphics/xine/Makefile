@@ -6,23 +6,21 @@
 #
 
 PORTNAME=	xine
-PORTVERSION=	0.9.13
+PORTVERSION=	0.9.18
 CATEGORIES=	graphics
-MASTER_SITES=	http://xine.sourceforge.net/files/ \
-		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-ui-${PORTVERSION}
 
 MAINTAINER=	nobutaka@FreeBSD.org
 
-LIB_DEPENDS=	xine.2:${PORTSDIR}/graphics/libxine \
+LIB_DEPENDS=	xine.3:${PORTSDIR}/graphics/libxine \
 		aa.1:${PORTSDIR}/graphics/aalib \
 		png.5:${PORTSDIR}/graphics/png \
 		intl.4:${PORTSDIR}/devel/gettext
 
 USE_X_PREFIX=	yes
 USE_GNOMENG=	yes
-USE_GNOME=	imlib
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
@@ -30,10 +28,10 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		THREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		THREAD_LIBS="${PTHREAD_LIBS}"
-CONFIGURE_ARGS=	--with-w32-path=${LOCALBASE}/lib/win32
+CONFIGURE_ARGS=	--program-transform-name=""
 
 MANLANG=	"" de es fr pl
-MAN1=		aaxine.1 xine.1 xine-bugreport.1 xine-check.1 xine-remote.1
+MAN1=		aaxine.1 xine-bugreport.1 xine-check.1 xine-remote.1 xine.1
 
 .include <bsd.port.pre.mk>
 
@@ -70,7 +68,7 @@ post-install:
 .for l in es fr pl
 	@${CP} ${PREFIX}/man/man1/xine-check.1 ${PREFIX}/man/${l}/man1/xine-check.1
 .endfor
-.for l in de es fr pl
+.for l in es fr
 	@${CP} ${PREFIX}/man/man1/xine-remote.1 ${PREFIX}/man/${l}/man1/xine-remote.1
 .endfor
 	@${CAT} ${PKGMESSAGE}

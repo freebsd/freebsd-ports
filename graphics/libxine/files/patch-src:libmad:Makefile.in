@@ -1,0 +1,47 @@
+--- src/libmad/Makefile.in.orig	Sun Jan  5 19:01:05 2003
++++ src/libmad/Makefile.in	Sun Jan  5 19:07:10 2003
+@@ -210,42 +210,12 @@
+ 
+ lib_LTLIBRARIES = xineplug_decode_mad.la
+ 
+-xineplug_decode_mad_la_SOURCES = \
+-	bit.c \
+-	fixed.c \
+-	frame.c \
+-	huffman.c \
+-	layer12.c \
+-	layer3.c \
+-	stream.c \
+-	synth.c \
+-	timer.c \
+-	version.c \
+-	xine_decoder.c
++xineplug_decode_mad_la_SOURCES = xine_decoder.c
+ 
+ 
+-xineplug_decode_mad_la_LIBADD = $(XINE_LIB)
++xineplug_decode_mad_la_LIBADD = $(XINE_LIB) -lmad
+ xineplug_decode_mad_la_LDFLAGS = -avoid-version -module @XINE_PLUGIN_MIN_SYMS@
+ 
+-noinst_HEADERS = \
+-	D.dat \
+-	imdct_s.dat \
+-	qc_table.dat \
+-	rq_table.dat \
+-	sf_table.dat \
+-	bit.h \
+-	fixed.h \
+-	frame.h \
+-	global.h \
+-	huffman.h \
+-	layer12.h \
+-	layer3.h \
+-	stream.h \
+-	synth.h \
+-	timer.h \
+-	version.h
+-
+-subdir = src/libmad
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = $(top_builddir)/config.h
+ CONFIG_CLEAN_FILES =

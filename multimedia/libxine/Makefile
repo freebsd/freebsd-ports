@@ -6,31 +6,31 @@
 #
 
 PORTNAME=	xine
-PORTVERSION=	0.9.13
+PORTVERSION=	1.0.b4
 CATEGORIES=	graphics
-MASTER_SITES=	http://xine.sourceforge.net/files/ \
-		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMEPREFIX=	lib
-DISTNAME=	${PORTNAME}-lib-${PORTVERSION}
+DISTNAME=	${PORTNAME}-lib-1-beta4
 
 MAINTAINER=	nobutaka@FreeBSD.org
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libavcodec.a:${PORTSDIR}/multimedia/ffmpeg \
-		${LOCALBASE}/lib/libdjbfft.a:${PORTSDIR}/math/djbfft
-LIB_DEPENDS=	a52.0:${PORTSDIR}/audio/liba52 \
+BUILD_DEPENDS=	${LOCALBASE}/lib/libdjbfft.a:${PORTSDIR}/math/djbfft
+LIB_DEPENDS=	avcodec.0:${PORTSDIR}/multimedia/ffmpeg \
+		a52.0:${PORTSDIR}/audio/liba52 \
+		mad.1:${PORTSDIR}/audio/mad \
 		aa.1:${PORTSDIR}/graphics/aalib \
-		SDL-1.1:${PORTSDIR}/devel/sdl12 \
 		intl.4:${PORTSDIR}/devel/gettext \
-		iconv.3:${PORTSDIR}/converters/libiconv
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-lib-${PORTVERSION}
+		iconv.3:${PORTSDIR}/converters/libiconv \
+		SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
+		vorbis.2:${PORTSDIR}/audio/libvorbis \
+		ogg.4:${PORTSDIR}/audio/libogg
 
 USE_X_PREFIX=	yes
+GNU_CONFIGURE=	yes
 USE_GNOMENG=	yes
-USE_GNOME=	imlib
+WANT_GNOME=	yes
 USE_GMAKE=	yes
-USE_AUTOMAKE=	yes
 USE_MESA=	yes
 USE_REINPLACE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
@@ -40,21 +40,10 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		THREAD_LIBS="${PTHREAD_LIBS}" \
 		X_EXTRA_LIBS="-lGL -lGLU -lXext -lX11 -lm"
 CONFIGURE_ARGS=	--with-w32-path=${LOCALBASE}/lib/win32 \
-		--disable-dxr3 --disable-vidix --disable-dha-kmod \
-		--disable-alsa
+		--program-transform-name="" --disable-vidix
 INSTALLS_SHLIB=	yes
 
 MAN1=		xine-config.1
-MAN3=		ao_driver_t.3 ao_functions_t.3 autoplay_group.3 \
-		audio_cap.3 audio_group.3 audio_prop.3 \
-		browse_group.3 build_info.3 cfg_data_t.3 config_group.3 \
-		config_values_s.3 config_values_t.3 demux_strategy.3 \
-		event_group.3 loadplugins_group.3 mrl_t.3 mrl_types.3 \
-		status_group.3 ui_callbacks.3 version_group.3 video_cap.3 \
-		video_group.3 video_prop.3 video_ratio.3 visual_types.3 \
-		vo_driver_s.3 vo_driver_t.3 vo_frame_t.3 vo_overlay_t.3 \
-		xine-lib.3 xine.h.3 xine_api.3 xine_init.3 xine_management.3 \
-		xine_t.3 xine_version.3
 
 .include <bsd.port.pre.mk>
 
@@ -64,27 +53,36 @@ PLIST_SUB=	HAVE_LIBXV=""
 PLIST_SUB=	HAVE_LIBXV="@comment "
 .endif
 
-.if exists(${LOCALBASE}/bin/artsc-config)
+.if exists(${LOCALBASE}/bin/artsc-config) || defined(WITH_ARTS)
+LIB_DEPENDS+=    artsc.0:${PORTSDIR}/audio/arts
 PLIST_SUB+=	HAVE_ARTS=""
 .else
 PLIST_SUB+=	HAVE_ARTS="@comment "
 .endif
 
-.if exists(${LOCALBASE}/include/vorbis/codec.h)
-LIB_DEPENDS+=	vorbis.2:${PORTSDIR}/audio/libvorbis
-
-PLIST_SUB+=	HAVE_VORBIS=""
+.if ${HAVE_GNOME:Mesound} != "" || defined(WITH_ESOUND)
+WANT_GNOME=	yes
+USE_GNOME+=	esound
+PLIST_SUB+=	HAVE_ESOUND=""
 .else
-PLIST_SUB+=	HAVE_VORBIS="@comment "
+PLIST_SUB+=	HAVE_ESOUND="@comment "
 .endif
 
-.if exists(${LOCALBASE}/include/ogg/ogg.h)
-LIB_DEPENDS+=	ogg.4:${PORTSDIR}/audio/libogg
-
-PLIST_SUB+=	HAVE_OGG=""
+pre-everything::
+	@${ECHO_MSG} "===>"
+	@${ECHO_MSG} "===> You can enable some features by defining following variables."
+	@${ECHO_MSG} "===>"
+.if !exists(${LOCALBASE}/bin/artsc-config) && !defined(WITH_ARTS)
+	@${ECHO_MSG} "===> WITH_ARTS   (arts support)"
 .else
-PLIST_SUB+=	HAVE_OGG="@comment "
+	@${ECHO_MSG} "===> WITH_ARTS   (arts support, enabled)"
 .endif
+.if !(${HAVE_GNOME:Mesound} != "") && !defined(WITH_ESOUND)
+	@${ECHO_MSG} "===> WITH_ESOUND (esound support)"
+.else
+	@${ECHO_MSG} "===> WITH_ESOUND (esound support, enabled)"
+.endif
+	@${ECHO_MSG} "===>"
 
 post-patch:
 	@${REINPLACE_CMD} -e \
@@ -93,17 +91,12 @@ post-patch:
 		 s|-L/usr/local/lib||g ; \
 		 s|-I/usr/local/include||g ; \
 		 s|-lgiconv|-liconv|g ; \
-		 s|-funroll-loops||g' ${WRKSRC}/configure.in
+		 s|-funroll-loops||g' ${WRKSRC}/configure
 .if ${OSVERSION} >= 500035
 	@${REINPLACE_CMD} -e \
 		 's|-malign-loops|-falign-loops|g ; \
 		  s|-malign-jumps|-falign-jumps|g ; \
-		  s|-malign-functions|-falign-functions|g' ${WRKSRC}/configure.in
+		  s|-malign-functions|-falign-functions|g' ${WRKSRC}/configure
 .endif
-	@${REINPLACE_CMD} -e \
-		's|aclocal,|${ACLOCAL},|g ; \
-		 s|autoconf,|${AUTOCONF},|g ; \
-		 s|automake,|${AUTOMAKE},|g ; \
-		 s|autoheader,|${AUTOHEADER},|g' ${WRKSRC}/aclocal.m4
 
 .include <bsd.port.post.mk>
