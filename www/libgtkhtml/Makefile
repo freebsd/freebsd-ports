@@ -7,6 +7,7 @@
 
 PORTNAME=	gtkhtml
 PORTVERSION=	0.9.2
+PORTREVISION=	1
 CATEGORIES=	www gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	unstable/sources/gtkhtml
@@ -15,11 +16,12 @@ MAINTAINER=	gnome@FreeBSD.org
 
 LIB_DEPENDS=	glibwww.1:${PORTSDIR}/www/glibwww \
 		pspell.4:${PORTSDIR}/textproc/pspell \
-		gal.7:${PORTSDIR}/x11-toolkits/gal
+		gal.7:${PORTSDIR}/x11-toolkits/gal \
+		ghttp.1:${PORTSDIR}/www/libghttp
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOME=	yes
+USE_GNOMECTRL=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
