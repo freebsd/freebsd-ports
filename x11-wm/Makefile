@@ -1,6 +1,8 @@
-# $Id: Makefile,v 1.7 1998/11/25 10:53:10 flathill Exp $
+# $Id: Makefile,v 1.8 1998/12/24 13:18:53 flathill Exp $
 #
 
+    SUBDIR += 9menu
+    SUBDIR += 9wm
     SUBDIR += afterstep
     SUBDIR += afterstep-devel
     SUBDIR += afterstep-i18n
