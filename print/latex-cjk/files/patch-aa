@@ -21,7 +21,7 @@
 +	(rm -fr $(CJK_DIR)); && \
 +	(mkdir -p $(CJK_DIR)); && \
 +	($(CP) -R texinput/* $(CJK_DIR)); && \
-+	($(CHOWN) -R $(SHAREOWN).$(SHAREGRP) $(CJK_DIR))
++	($(CHOWN) -R $(SHAREOWN):$(SHAREGRP) $(CJK_DIR))
 +
 +clean:
 +	$(MAKE) -C utils $@
