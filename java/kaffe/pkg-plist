@@ -23,57 +23,58 @@ include/kaffe/java_lang_Thread.h
 include/kaffe/java_lang_ThreadGroup.h
 include/kaffe/java_lang_Throwable.h
 include/kaffe/jmalloc.h
-include/kaffe/jni.h
 include/kaffe/jni_cpp.h
 include/kaffe/jsyscall.h
 include/kaffe/jtypes.h
 include/kaffe/native.h
-lib/kaffe/libawt-1.0.6.so
-lib/kaffe/libawt.la
-lib/kaffe/libawt.so
-lib/kaffe/libio-1.0.6.so
-lib/kaffe/libio.la
-lib/kaffe/libio.so
-lib/kaffe/libmanagement-1.0.6.so
-lib/kaffe/libmanagement.la
-lib/kaffe/libmanagement.so
-lib/kaffe/libmath-1.0.6.so
-lib/kaffe/libmath.la
-lib/kaffe/libmath.so
-lib/kaffe/libmicrosoft-1.0.6.so
-lib/kaffe/libmicrosoft.la
-lib/kaffe/libmicrosoft.so
-lib/kaffe/libnative-1.0.6.so
-lib/kaffe/libnative.la
-lib/kaffe/libnative.so
-lib/kaffe/libnet-1.0.6.so
-lib/kaffe/libnet.la
-lib/kaffe/libnet.so
-lib/kaffe/libsecurity-1.0.6.so
-lib/kaffe/libsecurity.la
-lib/kaffe/libsecurity.so
-lib/kaffe/libzip-1.0.6.so
-lib/kaffe/libzip.la
-lib/kaffe/libzip.so
-lib/kaffe/security/java.security
-lib/libkaffevm-1.0.6.so
-lib/libkaffevm.la
-lib/libkaffevm.so
-lib/libkaffexprof-1.0.6.so
-lib/libkaffexprof.la
-lib/libkaffexprof.so
-libexec/Kaffe
+include/jni.h
+jre/bin/kaffe-bin
+jre/bin/java
+jre/bin/kaffe
+jre/bin/rmiregistry
+jre/lib/%%ARCH%%/libawt-%%PORTVER%%.so
+jre/lib/%%ARCH%%/libawt.so
+jre/lib/%%ARCH%%/libawt.la
+jre/lib/%%ARCH%%/libio-%%PORTVER%%.so
+jre/lib/%%ARCH%%/libio.so
+jre/lib/%%ARCH%%/libio.la
+jre/lib/%%ARCH%%/libkaffevm-%%PORTVER%%.so
+jre/lib/%%ARCH%%/libkaffevm.so
+jre/lib/%%ARCH%%/libkaffevm.la
+jre/lib/%%ARCH%%/libmanagement-%%PORTVER%%.so
+jre/lib/%%ARCH%%/libmanagement.so
+jre/lib/%%ARCH%%/libmanagement.la
+jre/lib/%%ARCH%%/libmath-%%PORTVER%%.so
+jre/lib/%%ARCH%%/libmath.so
+jre/lib/%%ARCH%%/libmath.la
+jre/lib/%%ARCH%%/libmicrosoft-%%PORTVER%%.so
+jre/lib/%%ARCH%%/libmicrosoft.so
+jre/lib/%%ARCH%%/libmicrosoft.la
+jre/lib/%%ARCH%%/libnative-%%PORTVER%%.so
+jre/lib/%%ARCH%%/libnative.so
+jre/lib/%%ARCH%%/libnative.la
+jre/lib/%%ARCH%%/libnet-%%PORTVER%%.so
+jre/lib/%%ARCH%%/libnet.so
+jre/lib/%%ARCH%%/libnet.la
+jre/lib/%%ARCH%%/libsecurity-%%PORTVER%%.so
+jre/lib/%%ARCH%%/libsecurity.so
+jre/lib/%%ARCH%%/libsecurity.la
+jre/lib/%%ARCH%%/libzip-%%PORTVER%%.so
+jre/lib/%%ARCH%%/libzip.so
+jre/lib/%%ARCH%%/libzip.la
+jre/lib/security/java.security
+jre/lib/rt.jar
+jre/lib/comm.jar
+jre/lib/pjava.jar
+jre/lib/servlet.jar
+jre/lib/microsoft.jar
+jre/lib/rmi.jar
 share/kaffe/BUILD_ENVIRONMENT
-share/kaffe/Klasses.jar
-share/kaffe/comm.jar
-share/kaffe/kjc.jar
 share/kaffe/license.terms
-share/kaffe/microsoft.jar
-share/kaffe/pjava.jar
-share/kaffe/rmi.jar
-share/kaffe/servlet.jar
-share/kaffe/tools.jar
 @dirrm include/kaffe
-@dirrm lib/kaffe/security
-@dirrm lib/kaffe
+@dirrm jre/bin
+@dirrm jre/lib/%%ARCH%%
+@dirrm jre/lib/security
+@dirrm jre/lib
+@dirrm jre
 @dirrm share/kaffe
