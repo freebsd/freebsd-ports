@@ -1,7 +1,7 @@
 #!/bin/sh
 # usage sh customize.sh ${RESOLUTION} [BATCH]
 
-DEFAULT_FONT_PATH=.:/usr/local/lib/fonts/pk$1:/usr/local/share/tex/jfonts/jfms:/usr/local/lib/texmf/fonts/public/ptex/tfm
+DEFAULT_FONT_PATH=.:/usr/local/lib/fonts/pk$1:/usr/local/share/tex/jfonts/jfms:/usr/local/lib/texmf/fonts/public/ptex/tfm:/usr/local/share/texmf/fonts/tfm/ptex
 
 DONE=no
 if [ $# = 2 ] ; then
@@ -11,13 +11,13 @@ fi
 echo "Check directory for pkfonts (resolution:$1) and ASCII jTeX's tfm files."
 echo
 echo "Default is .:/usr/local/lib/fonts/pk$1:/usr/local/share/tex/jfonts/jfms:\\"
-echo "		:/usr/local/lib/texmf/fonts/public/ptex/tfm"
+echo "		:/usr/local/lib/texmf/fonts/public/ptex/tfm:/usr/local/share/texmf/fonts/tfm/ptex"
 echo "If you use jlatex of ports collection, it should be OK."
 echo
 
 while [ "$DONE" != "yes" ]
 do
-	lib "Is it OK (y/n)[y]?"
+	echo "Is it OK (y/n)[y]?"
 	read ans
 	case x"${ans}" in
 	xN*|xn*)
