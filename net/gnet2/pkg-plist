@@ -1,5 +1,6 @@
 bin/gnet-config
 include/gnet/gnet.h
+include/gnet/gnetconfig.h
 include/gnet/inetaddr.h
 include/gnet/mcast.h
 include/gnet/tcp.h

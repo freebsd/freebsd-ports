@@ -1,0 +1,11 @@
+--- Makefile.in	2000/11/25 13:34:07	1.1
++++ Makefile.in	2000/11/25 13:34:59
+@@ -99,7 +99,7 @@
+ m4datadir = $(datadir)/aclocal
+ m4data_DATA = gnet.m4
+ 
+-configincludedir = $(pkglibdir)/include
++configincludedir = $(pkgincludedir)
+ configinclude_DATA = gnetconfig.h
+ 
+ WEBPATH = $(HOME)/public_html/misc/gnet
