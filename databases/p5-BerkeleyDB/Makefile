@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	BerkeleyDB
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bill@twwells.com
+COMMENT=	Perl5 interface to the Berkeley DB package revision 3
 
 LIB_DEPENDS=	db3.3:${PORTSDIR}/databases/db3
 

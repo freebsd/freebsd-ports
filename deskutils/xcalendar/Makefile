@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://daemon.jp.FreeBSD.org/pub/FreeBSD-jp/ports-jp/LOCAL_PORTS/
 DISTNAME=	${PORTNAME}-4.0+i18n
 
 MAINTAINER=	mistral@imasy.or.jp
+COMMENT=	A calendar with a notebook for X11 (internationarized version)
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

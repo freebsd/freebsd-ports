@@ -15,6 +15,7 @@ MASTER_SITES=	ftp://ftp.nuug.no/pub/anders/distfiles/ \
 DISTNAME=	${PORTNAME}-1.1p8
 
 MAINTAINER=	shanee@augusta.de
+COMMENT=	A simple to-do list manager
 
 LIB_DEPENDS=	tk82.1:${PORTSDIR}/x11-toolkits/tk82
 

@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	libmcal
 
 MAINTAINER=	thierry@pompo.net
+COMMENT=	GMCAL is a GTK+ frontend for the libmcal package
 
 LIB_DEPENDS=	mcal.0:${PORTSDIR}/misc/libmcal
 RUN_DEPENDS=	${LOCALBASE}/mcal/mcal:${PORTSDIR}/deskutils/mcal

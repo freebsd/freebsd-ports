@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	MLDBM
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	erwin@lansing.dk
+COMMENT=	MLDBM::Sync - safe concurrent access to MLDBM databases
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/MLDBM.pm:${PORTSDIR}/databases/p5-MLDBM
 RUN_DEPENDS=	${BUILD_DEPENDS}

@@ -11,6 +11,7 @@ CATEGORIES=	databases tk82
 MASTER_SITES=	http://www.cuug.ab.ca/~macdonal/tkgnats/
 
 MAINTAINER=	jeremy@external.org
+COMMENT=	Graphical frontend for the free bug-tracking system
 
 BUILD_DEPENDS=	nedit-pr:${PORTSDIR}/databases/gnats
 LIB_DEPENDS=	tk82.1:${PORTSDIR}/x11-toolkits/tk82

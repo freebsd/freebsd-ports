@@ -15,6 +15,7 @@ DISTNAME=	fireprofile
 EXTRACT_SUFX=   -0.1.2.tar.gz
 
 MAINTAINER=     dean@odyssey.apana.org.au
+COMMENT=	Library to help profiling where programs are using MySQL
 
 BUILD_DEPENDS=	${LOCALBASE}/include/mysql/mysql.h:${PORTSDIR}/databases/mysql323-server
 

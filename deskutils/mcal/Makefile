@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	libmcal
 
 MAINTAINER=	thierry@pompo.net
+COMMENT=	A libmcal powered cal replacement
 
 LIB_DEPENDS=	mcal.0:${PORTSDIR}/misc/libmcal
 

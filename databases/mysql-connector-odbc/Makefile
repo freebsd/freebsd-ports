@@ -14,6 +14,7 @@ MASTER_SITES=	http://www.mysql.com/Downloads/MyODBC/ \
 DISTNAME=	MyODBC-${PORTVERSION}
 
 MAINTAINER=	ebakke@trolltech.com
+COMMENT=	ODBC driver for MySQL
 
 LIB_DEPENDS=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
 

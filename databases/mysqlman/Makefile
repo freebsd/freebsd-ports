@@ -11,6 +11,7 @@ MASTER_SITES=	http://www.gossamer-threads.com/scripts/source/
 DISTNAME=	mysqlman
 
 MAINTAINER=	janos.mohacsi@bsd.hu
+COMMENT=	MySQLMan is a web based MySQL database manager written in perl
 
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
 		${WWW_DIR}:${PORTSDIR}/www/apache13

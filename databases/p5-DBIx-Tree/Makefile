@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	DBIx
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	philip@p6m7g8.com
+COMMENT=	Perl module for generating a tree from a self-referential table
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
 

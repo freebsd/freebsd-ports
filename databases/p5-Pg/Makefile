@@ -15,6 +15,7 @@ DISTFILES=	pgperl-${PORTVERSION}${EXTRACT_SUFX}
 DIST_SUBDIR=	postgresql
 
 MAINTAINER=	girgen@pingpong.net
+COMMENT=	An interface for using perl5 to access PostgreSQL databases
 
 POSTGRESQL_PORT?=	databases/postgresql7
 LIB_DEPENDS=	pq.3:${PORTSDIR}/${POSTGRESQL_PORT}

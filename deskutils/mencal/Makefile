@@ -12,6 +12,7 @@ MASTER_SITES=	http://mencal.kyberdigi.cz/ \
 		http://unixpages.org/distfiles/
 
 MAINTAINER=	chris@unixpages.org
+COMMENT=	A variation of the unix command cal
 
 USE_PERL5=	yes
 NO_BUILD=	yes

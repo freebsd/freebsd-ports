@@ -14,6 +14,7 @@ DISTNAME=	psqlodbc-${PORTVERSION}
 DIST_SUBDIR=	postgresql
 
 MAINTAINER=	girgen@pingpong.net
+COMMENT=	PostgreSQL ODBC client support
 
 # PostgreSQL ODBC support needs an ODBC driver manager to be
 # installed, and it supports both iODBC and unixODBC.  The following

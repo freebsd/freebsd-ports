@@ -19,6 +19,7 @@ PATCHFILES=	patch.${PORTVERSION}.1
 PATCH_DIST_STRIP= -d ${WRKDIR}/${DISTNAME}
 
 MAINTAINER=	matthias.andree@gmx.de
+COMMENT=	The Berkeley DB package, revision 4.1
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/build_unix
 

@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.pgaccess.org/download/
 DIST_SUBDIR=	postgresql
 
 MAINTAINER=	girgen@pingpong.net
+COMMENT=	A powerful GUI PostgreSQL database administration tool and toolkit
 
 LIB_DEPENDS=	pgtcl:${PORTSDIR}/databases/postgresql-tcltk
 

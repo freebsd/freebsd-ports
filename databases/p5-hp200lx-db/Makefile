@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	HP200LX
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	g.gonter@ieee.org
+COMMENT=	Perl5 module to handle HP 200LX palmtop computer databases
 
 PERL_CONFIGURE=	yes
 

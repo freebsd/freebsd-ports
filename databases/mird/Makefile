@@ -15,6 +15,7 @@ MASTER_SITES=	ftp://ftp.oav.net/pkg_freebsd/distfiles/ \
 DISTNAME=	Mird-${PORTVERSION}
 
 MAINTAINER=	kiwi@oav.net
+COMMENT=	A free database library with transaction support
 
 BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf
 

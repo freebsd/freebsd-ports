@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.tamos.net/pub/dbMetrix/ \
 		ftp://linux.gmu.edu/archive/dbMetrix/
 
 MAINTAINER=	joseph@randomnetworks.com
+COMMENT=	Another GTK+ frontend for mysql
 
 LIB_DEPENDS=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
 
