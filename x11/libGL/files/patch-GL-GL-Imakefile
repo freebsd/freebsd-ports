@@ -1,0 +1,11 @@
+--- lib/GL/GL/Imakefile.orig	Sun May  9 16:07:28 2004
++++ lib/GL/GL/Imakefile	Sun May  9 16:08:51 2004
+@@ -204,7 +204,7 @@
+ #endif
+ 
+ #if BuildXF86DRI && BuildXF86VidModeExt
+-VMODEREQUIREDLIBS = $(LDPRELIBS) $(XXF86VMLIB)
++VMODEREQUIREDLIBS = $(LDPRELIBS) -L$(USRLIBDIR) $(XXF86VMLIB)
+ #endif
+ 
+ /*

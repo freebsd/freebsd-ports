@@ -1,0 +1,7 @@
+This package contains the OpenGL library, which can perform rendering over GLX
+or using the Direct Rendering Infrastructure.
+
+WWW: http://www.freedesktop.org/Software/xorg
+
+- Eric Anholt
+anholt@FreeBSD.org
