@@ -4,7 +4,7 @@
 
 if [ ! "X"${BATCH} = "X" ] ; then
 
-PRINTER_JAPAN=' epag.dev mjc180.dev mjc360.dev mjc720.dev mj500c.dev lips3.dev lips4.dev lips4c.dev rpdlA3.dev rpdlA4.dev rpdlB4.dev rpdlB5.dev bj10v.dev bj10vh.dev dmprt.dev npdl.dev alps.dev'
+PRINTER_JAPAN=' mjc180.dev mjc360.dev mjc720.dev mj500c.dev lips2p.dev lips3.dev lips4.dev lips4v.dev  bjc880j.dev lp2000.dev escpage.dev npdl.dev nx100f.dev nx100v.dev bj10v.dev bj10vh.dev dmprt.dev md2k.dev md5k.dev'
 
 sed -e "s;XINCLUDE=-I/usr/local/X/include;XINCLUDE=-I/usr/X11R6/include;" \
     -e "s;XLIBDIRS=-L/usr/X11/lib;XLIBDIRS=-L/usr/X11R6/lib;" \
@@ -74,7 +74,6 @@ Have fun with this new configuration style !     -andreas \n\n\
    "x11gray2" "X masquer. as device with 2-bit gray-scale device" ON \
    "x11gray4" "X masquer. as device with 4-bit gray-scale device" OFF \
    "x11mono"  "X masquer. as black-and-white device" ON \
-   "alps"     "ALPS MD5000 monochrome printer driver" ON \
    "appledmp" "Apple Dot Matrix Printer / Imagewriter" OFF \
    "iwhi"     "Apple Imagewriter, high-resolution mode" OFF \
    "iwlo"     "Apple Imagewriter, low-resolution mode" OFF \
@@ -88,14 +87,21 @@ Have fun with this new configuration style !     -andreas \n\n\
    "lbp8"     "Canon LBP-8II laser printer" OFF \
    "lips2p"   "Canon LIPS II+ laser printer " OFF \
    "lips3"    "Canon LIPS III laser printer " ON \
-   "lips4"    "Canon LIPSIV laser printer 600dpi, mono" ON \
-   "lips4c"   "Canon LIPSIV laser printer 600dpi,CMYK" ON \
+   "lips4"    "Canon LIPSIV laser printer, mono" ON \
+   "bjc880j"  "Canon Color BubbleJet BJC-680J/880J (LIPS IV)" ON \
+   "lips4v"   "Canon LIPSIV laser printer(Vector)" ON \
    "ccr"      "CalComp Raster format" OFF \
    "lj250"    "DEC LJ250 Companion color printer" OFF \
    "declj250" "alternate DEC LJ250 driver" OFF \
    "dmprt"    "Generic Printer" ON \
    "ap3250"   "Epson AP3250" OFF \
-   "epag"     "Epson ESC/Page laser printer 60-600dpi, mono" ON \
+   "escpage"  "Epson ESC/Page laser printer 60-600dpi, mono" ON \
+   "lp2000"   "Epson LP-2000/3000/7000/7000G, mono" ON \
+   "md2k"     "ALPS MD2000/2010/4000/1300/1500/5000 driver" ON \
+   "md5k"     "ALPS MD5000 driver" ON \
+   "md50Mono" "ALPS MD5000 monochrome driver" OFF \
+   "md50Eco"  "ALPS MD5000 monochrome driver, economy mode" OFF \
+   "md1xMono" "ALPS MD1300 MD5000 monochrome driver" OFF \
    "mjc180"   "Epson MachJet series  180dpi, CMYK" ON \
    "mjc360"   "Epson MachJet series  360dpi, CMYK" ON \
    "mjc720"   "Epson MachJet series  720dpi, CMYK" ON \
@@ -146,10 +152,8 @@ Have fun with this new configuration style !     -andreas \n\n\
    "oki182"   "Okidata MicroLine 182" OFF \
    "okiibm"   "Okidata MicroLine IBM-compatible printers" OFF \
    "r4081"    "Ricoh 4081 laser printer" OFF \
-   "rpdlA3"   "Ricoh Printer Description Language (RPDL) A3 600 dpi" ON \
-   "rpdlA4"   "Ricoh Printer Description Language (RPDL) A4 600 dpi" ON \
-   "rpdlB4"   "Ricoh Printer Description Language (RPDL) B4 600 dpi" ON \
-   "rpdlB5"   "Ricoh Printer Description Language (RPDL) B5 600 dpi" ON \
+   "nx100f"  "Ricoh Printer Description Language (RPDL) (fixed)" ON \
+   "nx100v"  "Ricoh Printer Description Language (RPDL) (variable)" ON \
    "nwp533"   "Sony Microsystems NWP533 laser printer" OFF \
    "sj48"     "StarJet 48 inkjet printer" OFF \
    "t4693d2"  "Tektronix 4693d color, 2 bits per R/G/B component" OFF \
