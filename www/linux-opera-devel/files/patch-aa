@@ -1,19 +1,43 @@
---- install.sh.orig	Fri Aug 10 14:29:05 2001
-+++ install.sh	Tue Aug 14 13:14:35 2001
-@@ -186,14 +186,9 @@
- 	mkdir $v -p $plugin_dir/
- 	chmod $vv 755 $plugin_dir
+--- install.sh.orig	Tue Nov 27 00:56:59 2001
++++ install.sh	Tue Nov 27 01:01:20 2001
+@@ -228,7 +228,16 @@
+ 	    mvv=''    # SunOS mv (no -v verbose option)
+ 	;;
  
--	cp $v -fdp plugins/* $plugin_dir
-+	(cd plugins && tar -cf - . | tar $v -xf - -C $plugin_dir)
-         chmod $vv 755 $plugin_dir/operamotifwrapper
--        chmod $vv 755 $plugin_dir/libnpp.so.0.1.0
--
--	icons
--	gnome
--	kde2
--	kde
-+        chmod $vv 755 $plugin_dir/libnpp.so.0.1.1
+-	i[3456]86:NetBSD)
++	i[3456]86:FreeBSD|i[3456]86:NetBSD)
++	    cpf='-f'
++	    if test "$verbose" -gt '1'; then
++		chmodv='-v'
++		mkdirv='-v'
++	    fi
++	    if test "$verbose" -gt '0'; then
++		mvv='-v'
++		cpv='-v'
++	    fi
+ 	;;
  
- # Add uninstallation here
- 
+ 	i[3456]86:Linux)
+@@ -491,18 +500,11 @@
+ for DIR in \\
+     \"\${HOME}/.opera/plugins\" \\
+     ${plugin_dir} \\
+-    /usr/lib/opera/plugins \\
+-    /usr/local/Acrobat4/Browsers/intellinux \\
++    %%PREFIX%%/lib/opera/plugins \\
++    %%PREFIX%%/Acrobat4/Browsers/intellinux \\
+-    /usr/java/jre1.3.1/plugin/i386/ns4 \\
+-    /usr/lib/RealPlayer8/Plugins \\
+-    /usr/lib/realplay/plugins \\
+-    /usr/lib/RealPlayer8 \\
+-    /usr/lib/realplay \\
++    %%PREFIX%%/java/linux-*jdk*/jre/plugin/i386/ns4 \\
+     \"\${HOME}/.netscape/plugins\" \\
+-    /opt/netscape/plugins \\
+-    /usr/lib/netscape/plugins \\
+-    /usr/local/netscape/plugins \\
+-    /usr/local/lib/netscape/plugins \\
++    %%PREFIX%%/lib/netscape-linux/plugins \\
+     ; do
+     if test -d \${DIR} ; then 
+ 	OPERA_PLUGIN_PATH=\"\${OPERA_PLUGIN_PATH}\":\"\${DIR}\"
