@@ -123,9 +123,9 @@ X11PORTS=	"@comment "
 # Post-patch
 #
 
-post-patch: patch-message
+post-patch: patch-pkgmessage
 
-patch-message:
+patch-pkgmessage:
 	@${SED} 's|%%PREFIX%%|${PREFIX}|g; \
 		 s|%%PREFX%%|${PKGNAMEPREFIX}|g; \
 		 s|%%SUFX%%|${PKGNAMESUFFIX}|g' \
