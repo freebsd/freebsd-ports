@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pclock
-PORTVERSION= 	0.13
+PORTVERSION= 	0.13.1
 CATEGORIES=	x11-clocks windowmaker afterstep
 MASTER_SITES=	ftp://ftp.kourakos.com/pub/pclock/
 EXTRACT_SUFX=	.tgz

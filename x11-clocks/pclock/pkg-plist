@@ -1,6 +1,7 @@
 bin/pclock
 share/pclock/pixmaps/glowclock.xpm
 share/pclock/pixmaps/green.xpm
+share/pclock/pixmaps/moonphase.xpm
 share/pclock/pixmaps/oclock.xpm
 share/pclock/pixmaps/radar.xpm
 share/pclock/pixmaps/rolex2.xpm
