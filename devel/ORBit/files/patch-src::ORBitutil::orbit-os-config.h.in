@@ -1,0 +1,12 @@
+
+$FreeBSD$
+
+--- src/ORBitutil/orbit-os-config.h.in	2001/10/27 12:25:39	1.1
++++ src/ORBitutil/orbit-os-config.h.in	2001/10/27 12:26:13
+@@ -2,5 +2,6 @@
+ #define OS_CONFIG_H 1
+ 
+ #define ORBIT_HAVE_ALLOCA_H @ORBIT_HAVE_ALLOCA_H@
++#define MAXIOV @MAXIOV@
+ 
+ #endif
