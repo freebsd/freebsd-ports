@@ -5,31 +5,25 @@
 # $FreeBSD$
 #
 
-PORTNAME=		biorythm
-PORTVERSION=		1.1.1
-CATEGORIES=		games
-MASTER_SITES=		${MASTER_SITE_SUNSITE} \
-			http://home.sol.no/~sverrehu/pub-unix/files/
-MASTER_SITE_SUBDIR=	games/amusements
+PORTNAME=	biorythm
+PORTVERSION=	1.1.1
+CATEGORIES=	games
+MASTER_SITES=	http://shh.thathost.com/pub-unix/files/
 
-MAINTAINER=		ports@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=		shhmsg.1:${PORTSDIR}/devel/libshhmsg \
-			shhopt.1:${PORTSDIR}/devel/libshhopt
+LIB_DEPENDS=	shhmsg.1:${PORTSDIR}/devel/libshhmsg \
+		shhopt.1:${PORTSDIR}/devel/libshhopt
 
-USE_GMAKE=		yes
+USE_GMAKE=	yes
 
-MAN6=			biorythm.6
-
-do-install:
-	@ ${INSTALL_PROGRAM} ${WRKSRC}/biorythm ${PREFIX}/bin
-	@ ${INSTALL_MAN} ${WRKSRC}/biorythm.6 ${PREFIX}/man/man6
+MAN6=		biorythm.6
 
 post-install:
-.if !defined (NOPORTDOCS)
-	@ ${MKDIR} ${PREFIX}/share/doc/biorythm
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${PREFIX}/share/doc/biorythm
 .for file in CREDITS ChangeLog README
-	@ ${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/biorythm
+	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/biorythm
 .endfor
 .endif
 

@@ -1,6 +1,18 @@
---- Makefile.orig	Sun Jul  5 03:30:26 1998
-+++ Makefile	Sun May 30 21:12:31 1999
-@@ -53,16 +53,16 @@
+--- Makefile.orig	Sun Jul  5 17:30:26 1998
++++ Makefile	Tue Jul  4 21:59:11 2000
+@@ -13,9 +13,8 @@
+ # Where are shhmsg, shhopt, xalloc, shhcards, Xpm and X11?
+ 
+ # GNU/Linux at home
+-INCDIR		= -I/usr/local/include -I/usr/X11R6/include \
+-		  -I/usr/local/include/X11
+-LIBDIR		= -L/usr/local/lib -L/usr/X11R6/lib -L/usr/local/lib/X11
++INCDIR		= -I${LOCALBASE}/include -I${X11BASE}/include
++LIBDIR		= -L${LOCALBASE}/lib -L${X11BASE}/lib
+ 
+ # Irix at Ifi
+ ifeq ($(HOSTTYPE),sgi)
+@@ -53,18 +52,18 @@
  endif
  
  # DEC Alpha at USIT
@@ -19,7 +31,26 @@
  
  # Where do you want to install the program and the highscore file?
 -INSTLIBDIR	= /var/local/lib/games
-+INSTLIBDIR	= /usr/X11R6/share/sol
- INSTBINDIR	= /usr/local/games
- INSTMANDIR	= /usr/local/man/man6
+-INSTBINDIR	= /usr/local/games
+-INSTMANDIR	= /usr/local/man/man6
++INSTLIBDIR	= ${PREFIX}/share/sol
++INSTBINDIR	= ${PREFIX}/bin
++INSTMANDIR	= ${PREFIX}/man/man6
  #INSTLIBDIR	= /hom/sverrehu/lib
+ #INSTBINDIR	= /hom/sverrehu/bin/$$HOSTTYPE
+ #INSTMANDIR	= /hom/sverrehu/man/man6
+@@ -84,11 +83,11 @@
+ 
+ ###########################################################################
+ 
+-CC		= gcc
++#CC		= gcc
+ 
+ OPTIM		= -s -O2
+-CCOPT		= -Wall $(OPTIM) $(INCDIR) $(DEFINES) $(CFLAGS)
+-LDOPT		= -s $(LIBDIR) $(LDFLAGS) $(EXTRA_LD_OPT)
++CCOPT		= $(INCDIR) $(DEFINES) $(CFLAGS)
++LDOPT		= $(LIBDIR) $(LDFLAGS) $(EXTRA_LD_OPT)
+ 
+ LIBS		= -lshhopt -lshhmsg -lxalloc -lshhcards \
+ 		  -lXaw -lXt -lXpm -lXext -lXmu -lX11 $(EXTRA_LIBS)
