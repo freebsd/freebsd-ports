@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.56 1995/10/03 07:04:34 asami Exp $
+# $Id: Makefile,v 1.57 1995/10/05 09:41:54 asami Exp $
 #
 
 RESTRICTED += Mosaic         # requires Motif, Mosaic itself isn't
@@ -27,6 +27,7 @@ RESTRICTED += ivs            # crypto, export controlled
     SUBDIR += pcnfsd
     SUBDIR += pmf
     SUBDIR += rdist6
+    SUBDIR += rmsg
     SUBDIR += samba
     SUBDIR += scotty
     SUBDIR += slirp
