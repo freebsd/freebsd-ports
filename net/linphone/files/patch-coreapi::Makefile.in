@@ -1,29 +1,13 @@
 
 $FreeBSD$
 
---- coreapi/Makefile.in	2003/02/28 01:08:22	1.1
-+++ coreapi/Makefile.in	2003/02/28 01:08:45
-@@ -171,9 +171,6 @@
- 	gnome-config.c gnome-config.h 
+--- coreapi/Makefile.in.orig	Wed Aug 20 17:46:46 2003
++++ coreapi/Makefile.in	Sat Aug 23 01:14:24 2003
+@@ -166,7 +166,6 @@
+ 	-I$(top_srcdir)/oRTP/src \
+ 	-I$(top_srcdir)/oRTP/ \
+ 	-I$(top_srcdir)/mediastreamer \
+-	-I$(top_srcdir)/speex/libspeex \
+ 	-I$(osip_prefix)/include/ 
  
  
--libcoreapignome_a_LIBADD = $(top_srcdir)/mediastreamer/audiostream.o 
--libcoreapi_a_LIBADD = $(top_srcdir)/mediastreamer/audiostream.o 
--
- DEFS = @DEFS@ @SOUNDDEFS@	-DENABLE_TRACE
- 
- CFLAGS = @CFLAGS@ $(GLIB_CFLAGS) -DG_LOG_DOMAIN=\"LinphoneCore\"
-@@ -184,13 +181,10 @@
- LIBRARIES = $(noinst_LIBRARIES)
- 
- libcoreapi_a_AR = $(AR) cru
--libcoreapi_a_DEPENDENCIES = $(top_srcdir)/mediastreamer/audiostream.o
- am_libcoreapi_a_OBJECTS = linphonecore.$(OBJEXT) osipuacb.$(OBJEXT) \
- 	misc.$(OBJEXT) gnome-config.$(OBJEXT)
- libcoreapi_a_OBJECTS = $(am_libcoreapi_a_OBJECTS)
- libcoreapignome_a_AR = $(AR) cru
--libcoreapignome_a_DEPENDENCIES = \
--	$(top_srcdir)/mediastreamer/audiostream.o
- am_libcoreapignome_a_OBJECTS = linphonecore.$(OBJEXT) osipuacb.$(OBJEXT) \
- 	misc.$(OBJEXT)
- libcoreapignome_a_OBJECTS = $(am_libcoreapignome_a_OBJECTS)
