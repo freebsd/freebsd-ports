@@ -16,6 +16,8 @@ DISTNAME=	libiberty-${PORTVERSION}
 MAINTAINER=	ports@vocito.com
 COMMENT=	A freely-redistributable libiberty clone
 
+CONFLICTS=	gnulibiberty-*
+
 INSTALLS_SHLIB=	yes
 
 do-install:
