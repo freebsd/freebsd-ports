@@ -23,6 +23,6 @@ MAKE_ENV+=	X11BASE="${X11BASE}" HACK_INSTALL_DIR="${INSTALL_DIR}"
 INSTALL_DIR=    ${INSTALL} -d -o ${BINOWN} -g ${BINGRP} -m 755
 
 pre-patch:
-	${SED} "s!PREFIX!${PREFIX}!g" ${FILESDIR}/patch-prefix > ${EXTRA_PATCHES}
+	${SED} "s!PREFIX!${PREFIX}!g" ${FILESDIR}/template-patch-prefix > ${EXTRA_PATCHES}
 
 .include <bsd.port.mk>
