@@ -6958,6 +6958,7 @@ p5-Email-Filter	ports/mail/p5-Email-Filter
 p5-Email-Find	ports/mail/p5-Email-Find
 p5-Email-Folder	ports/mail/p5-Email-Folder
 p5-Email-FolderType	ports/mail/p5-Email-FolderType
+p5-Email-FolderType-Net	ports/mail/p5-Email-FolderType-Net
 p5-Email-LocalDelivery	ports/mail/p5-Email-LocalDelivery
 p5-Email-LocalDelivery-Ezmlm	ports/mail/p5-Email-LocalDelivery-Ezmlm
 p5-Email-MIME	ports/mail/p5-Email-MIME
