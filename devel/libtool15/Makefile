@@ -1,12 +1,12 @@
 # New ports collection makefile for:	libtool
-# Version required:	1.3.3
+# Version required:	1.3.4
 # Date created:		6 May 1998
 # Whom:			Motoyuki Kasahara <m-kasahr@sra.co.jp>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	libtool-1.3.3
+DISTNAME=	libtool-1.3.4
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	libtool

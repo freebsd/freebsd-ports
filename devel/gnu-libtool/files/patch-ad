@@ -1,15 +1,15 @@
---- ltmain.sh.orig	Fri Jul  2 09:02:40 1999
-+++ ltmain.sh	Wed Sep 15 00:00:38 1999
+--- ltmain.sh.orig	Tue Dec  7 13:50:49 1999
++++ ltmain.sh	Mon Jan 17 16:33:06 2000
 @@ -54,7 +54,7 @@
  # Constants.
  PROGRAM=ltmain.sh
  PACKAGE=libtool
--VERSION=1.3.3
-+VERSION=1.3.3-freebsd-ports
- TIMESTAMP=" (1.385.2.181 1999/07/02 15:49:11)"
+-VERSION=1.3.4
++VERSION=1.3.4-freebsd-ports
+ TIMESTAMP=" (1.385.2.196 1999/12/07 21:47:57)"
  
  default_mode=
-@@ -946,7 +946,11 @@
+@@ -952,7 +952,11 @@
  	  continue
  	  ;;
  	release)
@@ -22,7 +22,7 @@
  	  prev=
  	  continue
  	  ;;
-@@ -999,6 +1003,7 @@
+@@ -1005,6 +1009,7 @@
  	;;
  
        -avoid-version)
@@ -30,7 +30,7 @@
  	avoid_version=yes
  	continue
  	;;
-@@ -1085,6 +1090,10 @@
+@@ -1091,6 +1096,10 @@
  	deplibs="$deplibs $arg"
  	;;
  
@@ -41,7 +41,7 @@
        -module)
  	module=yes
  	continue
-@@ -1162,7 +1171,7 @@
+@@ -1168,7 +1177,7 @@
  
        *.o | *.obj | *.a | *.lib)
  	# A standard object.
@@ -50,7 +50,20 @@
  	;;
  
        *.lo)
-@@ -1789,6 +1798,9 @@
+@@ -1603,12 +1612,6 @@
+ 	exit 1
+       fi
+ 
+-      # How the heck are we supposed to write a wrapper for a shared library?
+-      if test -n "$link_against_libtool_libs"; then
+-	 $echo "$modename: error: cannot link shared libraries into libtool libraries" 1>&2
+-	 exit 1
+-      fi
+-
+       if test -n "$dlfiles$dlprefiles" || test "$dlself" != no; then
+ 	$echo "$modename: warning: \`-dlopen' is ignored for libtool libraries" 1>&2
+       fi
+@@ -1795,6 +1798,9 @@
  	*-*-cygwin* | *-*-mingw* | *-*-os2* | *-*-beos*)
  	  # these systems don't actually have a c library (as such)!
  	  ;;
@@ -60,7 +73,7 @@
  	*)
  	  # Add libc to deplibs on all other systems.
  	  deplibs="$deplibs -lc"
-@@ -1796,6 +1808,94 @@
+@@ -1802,6 +1808,94 @@
  	esac
        fi
  
@@ -155,7 +168,7 @@
        # Create the output directory, or remove our outputs if we need to.
        if test -d $output_objdir; then
  	$show "${rm}r $output_objdir/$outputname $output_objdir/$libname.* $output_objdir/${libname}${release}.*"
-@@ -1811,7 +1911,11 @@
+@@ -1817,7 +1911,11 @@
  
        # Now set the variables for building old libraries.
        if test "$build_old_libs" = yes && test "$build_libtool_libs" != convenience ; then
@@ -168,7 +181,7 @@
  
  	# Transform .lo files to .o files.
  	oldobjs="$objs "`$echo "X$libobjs" | $SP2NL | $Xsed -e '/\.'${libext}'$/d' -e "$lo2o" | $NL2SP`
-@@ -2005,7 +2109,11 @@
+@@ -2011,7 +2109,11 @@
  	      echo "*** \`nm' from GNU binutils and a full rebuild may help."
  	    fi
  	    if test "$build_old_libs" = no; then
@@ -181,7 +194,7 @@
  	      build_libtool_libs=module
  	      build_old_libs=yes
  	    else
-@@ -3026,7 +3134,11 @@
+@@ -3059,7 +3161,11 @@
      case "$output" in
      *.la)
        old_library=
@@ -194,7 +207,7 @@
        $show "creating $output"
  
        if test -n "$xrpath"; then
-@@ -3315,10 +3427,12 @@
+@@ -3348,10 +3454,12 @@
  	fi
  
  	# Install the pseudo-library for information purposes.
@@ -211,7 +224,7 @@
  
  	# Maybe install the static library, too.
  	test -n "$old_library" && staticlibs="$staticlibs $dir/$old_library"
-@@ -3407,7 +3521,6 @@
+@@ -3440,7 +3548,6 @@
  	    fi
  	    libfile="$libdir/`$echo "X$lib" | $Xsed -e 's%^.*/%%g'`"
  	    if test -n "$libdir" && test ! -f "$libfile"; then

@@ -1,6 +1,6 @@
---- libltdl/Makefile.in.orig	Fri Jul  2 09:02:06 1999
-+++ libltdl/Makefile.in	Thu Sep  9 22:40:10 1999
-@@ -328,17 +328,16 @@
+--- libltdl/Makefile.in.orig	Tue Dec  7 13:03:38 1999
++++ libltdl/Makefile.in	Mon Jan 17 16:35:34 2000
+@@ -326,17 +326,16 @@
  distdir: $(DISTFILES)
  	-rm -rf $(distdir)
  	mkdir $(distdir)
@@ -9,7 +9,7 @@
  	@for file in $(DISTFILES); do \
  	  d=$(srcdir); \
  	  if test -d $$d/$$file; then \
--	    cp -pr $$/$$file $(distdir)/$$file; \
+-	    cp -pr $$d/$$file $(distdir)/$$file; \
 +	    echo no copy dir $$d/$$file; \
  	  else \
 -	    test -f $(distdir)/$$file \
