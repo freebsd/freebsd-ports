@@ -1,4 +1,6 @@
+bin/uim-helper-server
 bin/uim-xim
+include/uim/uim-helper.h
 include/uim/uim.h
 %%GNOME%%lib/bonobo/servers/GNOME_UimApplet.server
 %%GTK%%lib/gtk-2.0/2.2.0/immodules/im-uim.a
@@ -8,6 +10,7 @@ lib/libuim.a
 lib/libuim.la
 lib/libuim.so
 lib/libuim.so.0
+libexec/uim-helper-applet
 %%PORTDOCS%%%%DOCSDIR_JA%%/README.ja
 %%PORTDOCS%%%%DOCSDIR%%/README
 share/locale/ja/LC_MESSAGES/uim.mo
@@ -27,6 +30,7 @@ share/uim/key.scm
 share/uim/loader.scm
 share/uim/prime.scm
 share/uim/rk.scm
+share/uim/skk-editor.scm
 share/uim/skk.scm
 share/uim/tcode.scm
 share/uim/tutcode.scm
