@@ -10,7 +10,7 @@ PORTVERSION=	3.0.0
 CATEGORIES=	mail
 MASTER_SITES=	http://www.nuclearelephant.com/projects/dspam/sources/
 
-MAINTAINER=	rob@debank.tv
+MAINTAINER=	itetcu@people.tecnik93.com
 COMMENT=	A server-side bayesian spam filter
 
 ## debug / log options
