@@ -9,8 +9,8 @@ PORTNAME=	textbuf
 PORTVERSION=	0.3.8
 PORTREVISION=	1
 CATEGORIES=	devel ruby
-MASTER_SITES=	http://www.loveruby.net/archive/
-MASTER_SITE_SUBDIR=	knu
+MASTER_SITES=	http://www.loveruby.net/archive/%SUBDIR%/
+MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
