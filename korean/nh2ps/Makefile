@@ -3,21 +3,25 @@
 # Date created:         2 Apr 1997
 # Whom:                 Choi Jun Ho <junker@jazz.snu.ac.kr>
 #
-# $Id: Makefile,v 1.5 1998/08/09 00:14:53 steve Exp $
+# $Id: Makefile,v 1.6 1998/10/16 02:43:27 jseger Exp $
 #
 
-DISTNAME=	nh2ps-2.3
-PKGNAME=	ko-nh2ps-2.3
+DISTNAME=	nh2ps-2.3.1
+PKGNAME=	ko-nh2ps-2.3.1
 CATEGORIES=	korean print
 MASTER_SITES=	ftp://jazz.snu.ac.kr/pub/unix/util/nh2ps/
 
 MAINTAINER=	junker@jazz.snu.ac.kr
 
-BROKEN_ELF=	yes
-
 RUN_DEPENDS=    ${PREFIX}/share/ghostscript/5.10ft/hangul:${PORTSDIR}/korean/ftghostscript5
 
 MAN1=		nh2ps.1
+
+post-patch:
+	@(cd ${WRKSRC}; \
+	  ${SED} s@/usr/local/bin/perl@${PERL5}@ mkpsfontmap.pl > mk.pl; \
+	  ${MV} -f mk.pl mkpsfontmap.pl; \
+	  chmod +x mkpsfontmap.pl)
 
 pre-install:
 	@(cd ${WRKSRC}; make install.man)
