@@ -592,6 +592,7 @@
     SUBDIR += sdl_net
     SUBDIR += sendfile
     SUBDIR += sendip
+    SUBDIR += ser
     SUBDIR += serveez
     SUBDIR += sharity-light
     SUBDIR += silc-client
