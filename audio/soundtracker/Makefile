@@ -25,6 +25,10 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} > 500034
+CONFIGURE_ARGS+=	--disable-asm
+.endif
+
 .if ${HAVE_GNOME:Mgnomelibs}!=""
 PKGNAMESUFFIX=	-gnome
 USE_GNOME+=	gnomelibs gnomeprefix gnomehack
