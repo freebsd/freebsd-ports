@@ -38,12 +38,12 @@ WRKSRC=		${WRKDIR}/kawari-${PORTVERSION:S/.//g}
 CFLAGS+=	${PTHREAD_CFLAGS}
 
 do-build:
-	(cd ${WRKSRC}/build/src; ${GMAKE} -f gcc.mak PYTHONBASE=${PYTHONBASE} PYTHON_VERSION=${PYTHON_VERSION})
+	(cd ${WRKSRC}/build/src; ${GMAKE} -f gcc.mak PYTHONBASE=${PYTHONBASE} PYTHON_VERSION=${PYTHON_VERSION} PTHREAD_LIBS=${PTHREAD_LIBS})
 
 do-install:
 	${MKDIR} ${PREFIX}/share/kawari
-	${TAR} -cf - document license.txt readme.1st build/build.txt -C ${WRKSRC} | ${TAR} -xvpf - -C ${PREFIX}/share/kawari
-	${LN} ${WRKSRC}/build/mach/freebsd/libshiori.so ${WRKSRC}/build/mach/freebsd/_kawari8.so
+	(cd ${WRKSRC}; ${TAR} -cf - document license.txt readme.1st build/build.txt) | ${TAR} -xvpf - -C ${PREFIX}/share/kawari
+	${LN} -f ${WRKSRC}/build/mach/freebsd/libshiori.so ${WRKSRC}/build/mach/freebsd/_kawari8.so
 	${MKDIR} ${PREFIX}/libexec/ninix
 	${INSTALL_PROGRAM} ${WRKSRC}/build/mach/freebsd/_kawari8.so ${PREFIX}/libexec/ninix
 
