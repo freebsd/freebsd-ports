@@ -1,0 +1,20 @@
+A Free Implementation of the Unicode Bidirectional Algorithm.
+
+The library implements all of the algorithm as described in the "Unicode
+Standard Annex #9, The Bidirectional Algorithm,
+http://www.unicode.org/unicode/reports/tr9/". FriBidi is exhautively tested
+against Bidi Reference Code, and due to our best knowledge, does not contain
+any conformance bugs.
+
+In the API, we were inspired by the document "Bi-Di languages support - BiDi
+API proposal" by Franck Portaneri which he wrote as a proposal for adding BiDi
+support to Mozilla.
+
+Internally the library uses Unicode entirely. The character property function
+was automatically created from the Unicode property list data file,
+PropList.txt, available from the Unicode Online Data site. This means that
+every Unicode character will be treated in strict accordance with the Unicode
+specification. The same is true for the mirroring of characters, which also
+works for all the characters listed as mirrorable in the Unicode specification.
+
+WWW: http://fribidi.sourceforge.net/

@@ -8,6 +8,7 @@
     SUBDIR += dosunix
     SUBDIR += dumpasn1
     SUBDIR += fconv
+    SUBDIR += fribidi
     SUBDIR += gbase
     SUBDIR += i18ntools
     SUBDIR += iconv
