@@ -5109,6 +5109,7 @@ py-cxx		ports/devel/py-cxx
 py-distutils	ports/misc/py-distutils
 py-expat	ports/textproc/py-expat
 py-fchksum	ports/security/py-fchksum
+py-fileutils	ports/devel/py-fileutils
 py-freetype	ports/print/py-freetype
 py-game		ports/devel/py-game
 py-gato		ports/math/py-gato
