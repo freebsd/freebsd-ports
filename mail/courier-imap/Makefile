@@ -82,6 +82,11 @@ CONFIGURE_ARGS+=--with-trashquota
 
 .if defined(WITH_LDAP)
 USE_OPENLDAP=	yes
+CONFIGURE_ARGS+=--with-authldap
+PLIST_SUB+=	LDAPFLAG=""
+.else
+CONFIGURE_ARGS+=--without-authldap
+PLIST_SUB+=	LDAPFLAG="@comment "
 .endif
 
 .if !defined(WITH_MYSQL)
