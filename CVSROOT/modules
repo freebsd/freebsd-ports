@@ -111,6 +111,7 @@ SSLtelnet	ports/net/SSLtelnet
 STk		ports/lang/STk
 Sather		ports/lang/Sather
 SpecTcl		ports/devel/SpecTcl
+Tee		ports/sysutils/Tee
 TenDRA		ports/lang/TenDRA
 WebMagick	ports/www/WebMagick
 XFree86		ports/x11/XFree86
