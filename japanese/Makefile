@@ -212,6 +212,7 @@
     SUBDIR += mnews-im
     SUBDIR += monafonts
     SUBDIR += mozilla-jlp
+    SUBDIR += mozilla-jlp-devel
     SUBDIR += msdosfs
     SUBDIR += mtools
     SUBDIR += muggy
