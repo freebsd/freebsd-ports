@@ -3450,6 +3450,7 @@ klogoturtle	ports/lang/klogoturtle
 klondike	ports/games/klondike
 klone		ports/lang/klone
 kludge3d	ports/graphics/kludge3d
+kluje		ports/deskutils/kluje
 kmamerun	ports/emulators/kmamerun
 kmerlin		ports/net/kmerlin
 kmess		ports/net/kmess
