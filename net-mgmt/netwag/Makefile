@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	netwag
-PORTVERSION=	5.23.0
+PORTVERSION=	5.26.0
 CATEGORIES=	net-mgmt ipv6
 MASTER_SITES=	http://www.laurentconstantin.com/common/netw/${PORTNAME}/download/v5/ \
 		http://membres.lycos.fr/lauconstantin/common/netw/${PORTNAME}/download/v5/ \
@@ -17,10 +17,9 @@ MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	A graphical front end for netwox
 
 BUILD_DEPENDS=	netwox:${PORTSDIR}/net-mgmt/netwox \
-		wish8.4:${PORTSDIR}/x11-toolkits/tk84
+		wish8.4:${PORTSDIR}/x11-toolkits/tk84 \
+		xterm:${X_CLIENTS_PORT}
 RUN_DEPENDS=	${BUILD_DEPENDS}
-
-BROKEN=		"Missing dependency"
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-src/src
 USE_REINPLACE=	yes
