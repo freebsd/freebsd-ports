@@ -1,0 +1,20 @@
+--- pcal.html.orig	Thu Feb 10 01:06:23 2000
++++ pcal.html	Wed Dec 20 17:38:53 2000
+@@ -12,7 +12,7 @@
+ 
+ -->
+ <HEAD>
+-<TITLE>pcal v4.6</TITLE>
++<TITLE>pcal v4.7</TITLE>
+ </HEAD>
+ 
+ <BODY>
+@@ -21,7 +21,7 @@
+ 
+                        <!-- start of form -->
+ 
+-<FORM ACTION="http://yourpath/cgi-bin/pcal.cgi" METHOD=GET>
++<FORM ACTION="http://@@WWWSERVER@@/cgi-bin/pcal.cgi" METHOD=GET>
+ 
+ <!-- menu for starting month -->
+ 

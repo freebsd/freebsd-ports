@@ -1,0 +1,37 @@
+--- Makefile.orig	Thu Feb 10 01:06:23 2000
++++ Makefile	Thu Dec 21 09:40:35 2000
+@@ -21,8 +21,8 @@
+ 
+ # Set the configuration variables below to taste.
+ 
+-PCALINIT_CC = /bin/cc			# native compiler
+-CC	    = /bin/cc			# cross-compiler (if target != host)
++PCALINIT_CC = ${CC}			# native compiler
++CC	    = ${HOST_CC}		# cross-compiler (if target != host)
+ 
+ # Set COMPRESS to your preferred compression utility (compress, gzip, etc.),
+ # Z to the file suffix that it generates (.Z, .gz, etc.), and UUC to the file
+@@ -58,9 +58,9 @@
+ # PACK	= pack
+ 
+ # directories for installing executable and man page(s)
+-BINDIR	= /usr/local/bin
+-MANDIR	= /usr/man/man1
+-CATDIR	= /usr/man/cat1
++BINDIR	= ${PREFIX}/bin
++MANDIR	= ${PREFIX}/man/man1
++CATDIR	= ${PREFIX}/cat1
+ 
+ OBJECTS = pcal.o exprpars.o moonphas.o pcalutil.o readfile.o writefil.o
+ 
+@@ -112,6 +112,10 @@
+ 	$(D_TEXT) $(D_LINK) $(D_ALINK) $(D_VLINK) \
+ 	$(D_HOLIDAY_PRE) $(D_HOLIDAY_POST) $(D_BLANK_STYLE) \
+ 	$(D_SEARCH_PCAL_DIR)
++
++.if defined(PAPERSIZE) && $(PAPERSIZE) == A4 # default Letter (OK?)
++COPTS += -DA4PAPER
++.endif
+ 
+ $(PCAL):	$(OBJECTS)
+ 	$(CC) $(LDFLAGS) -o $(PCAL) $(OBJECTS) -lm

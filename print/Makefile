@@ -86,6 +86,7 @@
     SUBDIR += p5-Text-PDF
     SUBDIR += pnm2ppa
     SUBDIR += panda
+    SUBDIR += pcal
     SUBDIR += pclprint
     SUBDIR += pdflib3
     SUBDIR += pdq
