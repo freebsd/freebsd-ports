@@ -1,14 +1,40 @@
 lib/gtk-2.0/2.4.0/engines/libclearlooks.so
+share/gnome/themes/Clearlooks/metacity-1/metacity-theme-1.xml
 share/themes/Clearlooks-DeepSky/gtk-2.0/gtkrc
+share/themes/Clearlooks-DeepSky/gtk-2.0/iconrc
+share/themes/Clearlooks-DeepSky/gtk-2.0/stock_apply.png
+share/themes/Clearlooks-DeepSky/gtk-2.0/stock_bottom.png
+share/themes/Clearlooks-DeepSky/gtk-2.0/stock_cancel.png
+share/themes/Clearlooks-DeepSky/gtk-2.0/stock_down.png
+share/themes/Clearlooks-DeepSky/gtk-2.0/stock_first.png
+share/themes/Clearlooks-DeepSky/gtk-2.0/stock_last.png
+share/themes/Clearlooks-DeepSky/gtk-2.0/stock_left.png
+share/themes/Clearlooks-DeepSky/gtk-2.0/stock_ok.png
+share/themes/Clearlooks-DeepSky/gtk-2.0/stock_refresh.png
+share/themes/Clearlooks-DeepSky/gtk-2.0/stock_right.png
+share/themes/Clearlooks-DeepSky/gtk-2.0/stock_top.png
+share/themes/Clearlooks-DeepSky/gtk-2.0/stock_up.png
 share/themes/Clearlooks-Olive/gtk-2.0/gtkrc
 share/themes/Clearlooks/gtk-2.0/gtkrc
+share/themes/Clearlooks/gtk-2.0/iconrc
+share/themes/Clearlooks/gtk-2.0/stock_apply.png
+share/themes/Clearlooks/gtk-2.0/stock_bottom.png
+share/themes/Clearlooks/gtk-2.0/stock_cancel.png
+share/themes/Clearlooks/gtk-2.0/stock_down.png
+share/themes/Clearlooks/gtk-2.0/stock_first.png
+share/themes/Clearlooks/gtk-2.0/stock_last.png
+share/themes/Clearlooks/gtk-2.0/stock_left.png
+share/themes/Clearlooks/gtk-2.0/stock_ok.png
+share/themes/Clearlooks/gtk-2.0/stock_refresh.png
+share/themes/Clearlooks/gtk-2.0/stock_right.png
+share/themes/Clearlooks/gtk-2.0/stock_top.png
+share/themes/Clearlooks/gtk-2.0/stock_up.png
 share/themes/Clearlooks/index.theme
-share/gnome/themes/Clearlooks/metacity-1/metacity-theme-1.xml
-@dirrm share/gnome/themes/Clearlooks/metacity-1
-@dirrm share/gnome/themes/Clearlooks
 @dirrm share/themes/Clearlooks/gtk-2.0
 @dirrm share/themes/Clearlooks-Olive/gtk-2.0
 @dirrm share/themes/Clearlooks-Olive
 @dirrm share/themes/Clearlooks-DeepSky/gtk-2.0
 @dirrm share/themes/Clearlooks-DeepSky
 @dirrm share/themes/Clearlooks
+@dirrm share/gnome/themes/Clearlooks/metacity-1
+@dirrm share/gnome/themes/Clearlooks
