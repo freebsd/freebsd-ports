@@ -1,0 +1,9 @@
+bin/aguri
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%DATADIR%%/README
+%%DATADIR%%/agurify.pl
+%%DATADIR%%/density.pl
+%%DATADIR%%/makeplot.pl
+@dirrm %%DATADIR%%
