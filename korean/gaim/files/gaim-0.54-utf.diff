@@ -1,0 +1,436 @@
+--- gaim-0.54.orig/src/gaim.h
++++ src/gaim.h
+@@ -407,8 +407,8 @@
+ extern gchar *strdup_withhtml(const gchar *);
+ extern void away_on_login(char *);
+ extern void system_log(enum log_event, struct gaim_connection *, struct buddy *, int);
+-extern unsigned char *utf8_to_str(unsigned char *);
+-extern char *str_to_utf8(unsigned char *);
++extern char *utf8_to_str(const char *);
++extern char *str_to_utf8(const char *);
+ extern char *add_cr(char *);
+ extern void strip_linefeed(char *);
+ extern time_t get_time(int, int, int, int, int, int);
+--- gaim-0.54.orig/src/util.c
++++ src/util.c
+@@ -33,9 +33,15 @@
+ #include <sys/wait.h>
+ #include <ctype.h>
+ #include <math.h>
++#include <langinfo.h>
++#include <iconv.h>
++#include <limits.h>
+ #include "gaim.h"
+ #include "prpl.h"
+ 
++static int get_charset_internal (char **);
++static int get_charset (char **);
++
+ char *full_date()
+ {
+ 	char *date;
+@@ -1114,92 +1119,166 @@
+ 	fclose(fd);
+ }
+ 
+-unsigned char *utf8_to_str(unsigned char *in)
+-{
+-	int n = 0, i = 0;
+-	int inlen;
+-	unsigned char *result;
+-
+-	if (!in)
+-		return NULL;
+-
+-	inlen = strlen(in);
+-
+-	result = g_malloc(inlen + 1);
+-
+-	while (n <= inlen - 1) {
+-		long c = (long)in[n];
+-		if (c < 0x80)
+-			result[i++] = (char)c;
+-		else {
+-			if ((c & 0xC0) == 0xC0)
+-				result[i++] =
+-				    (char)(((c & 0x03) << 6) | (((unsigned char)in[++n]) & 0x3F));
+-			else if ((c & 0xE0) == 0xE0) {
+-				if (n + 2 <= inlen) {
+-					result[i] =
+-					    (char)(((c & 0xF) << 4) | (((unsigned char)in[++n]) & 0x3F));
+-					result[i] =
+-					    (char)(((unsigned char)result[i]) |
+-						   (((unsigned char)in[++n]) & 0x3F));
+-					i++;
+-				} else
+-					n += 2;
+-			} else if ((c & 0xF0) == 0xF0)
+-				n += 3;
+-			else if ((c & 0xF8) == 0xF8)
+-				n += 4;
+-			else if ((c & 0xFC) == 0xFC)
+-				n += 5;
+-		}
+-		n++;
+-	}
+-	result[i] = '\0';
++static int get_charset_internal (char **a) {
++    char *charset = getenv("CHARSET");
+ 
+-	return result;
+-}
+-
+-char *str_to_utf8(unsigned char *in)
+-{
+-	int n = 0, i = 0;
+-	int inlen;
+-	char *result = NULL;
+-
+-	if (!in)
+-		return NULL;
+-
+-	inlen = strlen(in);
+-
+-	result = g_malloc(inlen * 2 + 1);
+-
+-	while (n < inlen) {
+-		long c = (long)in[n];
+-		if (c == 27) {
+-			n += 2;
+-			if (in[n] == 'x')
+-				n++;
+-			if (in[n] == '3')
+-				n++;
+-			n += 2;
+-			continue;
+-		}
+-		/* why are we removing newlines and carriage returns?
+-		if ((c == 0x0D) || (c == 0x0A)) {
+-			n++;
+-			continue;
+-		}
+-		*/
+-		if (c < 128)
+-			result[i++] = (char)c;
+-		else {
+-			result[i++] = (char)((c >> 6) | 192);
+-			result[i++] = (char)((c & 63) | 128);
+-		}
+-		n++;
+-	}
+-	result[i] = '\0';
++    if (charset) {  
++        if (a && ! *a)
++            *a = charset;
++        if (strstr (charset, "UTF-8") == 0)
++            return 1;
++        else
++            return 0;
++    }
++#if defined (_NL_CTYPE_CODESET_NAME)
++    charset = nl_langinfo (_NL_CTYPE_CODESET_NAME);
++    if (charset) {
++        if (a && ! *a)
++            *a = charset;
++        if (strcmp (charset, "UTF-8") == 0)
++            return 1;
++        else
++            return 0;
++    }
++#elif defined (CODESET)
++    charset = nl_langinfo(CODESET);
++    if (charset) {
++        if (a && ! *a)
++            *a = charset;
++        if (strcmp (charset, "UTF-8") == 0)
++            return 1;
++        else
++            return 0;
++    }
++#endif  
++
++    if (a && ! *a) 
++        *a = "US-ASCII";
++        /* Assume this for compatibility at present.  */
++    return 0;
++}
++
++static int locale_cache = -1;
++static char *charset_cache = NULL;
++
++static int get_charset (char **charset) {
++    if (locale_cache != -1) {
++        if (charset)
++            *charset = charset_cache;
++        return locale_cache;
++    }
++    locale_cache = get_charset_internal(&charset_cache);
++    if (charset) 
++        *charset = charset_cache;
++    return locale_cache;
++}
++
++
++char *utf8_to_str(const char *from) {
++    char *charset, f[6 +1], t[MB_LEN_MAX +1], *to, *fp, *tp, *in, *out;
++    int l, tl, i;
++    size_t inleft, outleft;
++    iconv_t cd;
++
++    if (!from)
++        return NULL;
++
++    fp = (char *)from;
++    
++    if (get_charset(&charset) || !charset) {
++        return g_strdup(fp);
++    } else {
++        tp = to = malloc(strlen(from));
++
++        cd = iconv_open(charset, "UTF-8");
++        while (*fp) {
++            if ((*fp & 0xc0) == 0xc0)
++                for (l = 2; l <= 5 && (*fp << l) & 0x80; l++);
++            else
++                l = 1;
++
++            strncpy(f, fp, l); f[l] = '\0';
++
++            in = f;
++            out = t;
++            outleft = inleft = strlen(f);
++            if (!(*f & 0x80)) {
++                tl = 1;
++                *t = *f;
++                t[tl] = '\0';
++            } else if (iconv(cd, &in, &inleft, &out, &outleft) == -1) {
++                tl = 1; //unicode_string_width(utf8_tmp);
++                memset((void *)t, '?', tl);
++                t[tl] = '\0';
++            } else
++                tl = mblen(t, MB_CUR_MAX);
++            
++            strncpy(tp, t, tl);
++            tp[tl] = '\0';
++            
++            tp += tl;
++
++            for (++fp; (*fp & 0xc0) == 0x80; ++fp) ;
++            
++            //fp = unicode_next_utf8(fp);
++        }
++        iconv_close(cd);
++
++        return realloc(to, strlen(to) +1);
++    }
++}
++
++char *str_to_utf8(const char *from) {
++    char *charset, f[MB_LEN_MAX +1], t[6 +1], *to, *fp, *tp, *in, *out;
++    int l, tl, fl;
++    size_t inleft, outleft;
++    iconv_t cd;
++
++    if (!from)
++        return NULL;
++
++    fp = (char *)from;    
++    
++    if (get_charset(&charset) || !charset) {
++        return g_strdup(fp);
++    } else {
++        tp = to = malloc(strlen(fp)*6 +1);
++        
++        cd = iconv_open("UTF-8", charset);
++        while (*fp) {
++            fl = mblen(fp, MB_CUR_MAX);
++            if (fl == -1) {
++                fp++;
++                *tp++ = '?'; *tp = '\0';
++            } else {
++                strncpy(f, fp, fl);
++                f[fl] = '\0';
++                
++                in = f;
++                out = t;
++                inleft = fl;
++                outleft = 6;
++                if (iconv(cd, &in, &inleft, &out, &outleft) == -1) {
++                    fp++;
++                    *tp++ = '?'; *tp = '\0';
++                } else {
++                    if ((*t & 0xc0) == 0xc0)
++                        for (tl = 2; tl <= 5 && (*t << tl) & 0x80; tl++);
++                    else
++                        tl = 1;
++                     
++                    strncpy(tp, t, tl);
++                    tp[tl] = '\0';
++
++                    tp += tl;
++                }
++                fp += fl;
++            }
++        }
++        iconv_close(cd);
+ 
+-	return result;
++        return realloc(to, strlen(to) +1);
++    }
+ }
+ 
+ void strip_linefeed(gchar *text)
+--- gaim-0.54.orig/src/protocols/msn/msn.c
++++ src/protocols/msn/msn.c
+@@ -766,7 +766,7 @@
+ 	char sendbuf[MSN_BUF_LEN];
+ 
+ 	if (!g_strncasecmp(buf, "ADD", 3)) {
+-		char *list, *user, *friend, *tmp = buf;
++		char *list, *user, *friend, *str, *tmp = buf;
+ 		struct msn_add_permit *ap;
+ 		GSList *perm = gc->permit;
+ 		char msg[MSN_BUF_LEN];
+@@ -793,7 +793,9 @@
+ 
+ 		ap = g_new0(struct msn_add_permit, 1);
+ 		ap->user = g_strdup(user);
+-		ap->friend = g_strdup(url_decode(friend));
++		str = utf8_to_str(friend);
++		ap->friend = g_strdup(url_decode(str));
++		g_free(str);
+ 		ap->gc = gc;
+ 
+ 		g_snprintf(msg, sizeof(msg), "The user %s (%s) wants to add you to their buddy list.",
+@@ -1055,7 +1057,7 @@
+ 	} else if (!g_strncasecmp(buf, "QNG", 3)) {
+ 	} else if (!g_strncasecmp(buf, "QRY", 3)) {
+ 	} else if (!g_strncasecmp(buf, "REA", 3)) {
+-		char *friend, *tmp = buf;
++		char *friend, *str, *tmp = buf;
+ 
+ 		GET_NEXT(tmp);
+ 		GET_NEXT(tmp);
+@@ -1063,7 +1065,9 @@
+ 		GET_NEXT(tmp);
+ 		friend = url_decode(tmp);
+ 
+-		g_snprintf(gc->displayname, sizeof(gc->displayname), "%s", friend);
++		str = utf8_to_str(friend);
++		g_snprintf(gc->displayname, sizeof(gc->displayname), "%s", str);
++		g_free(str);
+ 	} else if (!g_strncasecmp(buf, "REM", 3)) {
+ 	} else if (!g_strncasecmp(buf, "RNG", 3)) {
+ 		struct msn_switchboard *ms;
+@@ -1351,7 +1355,9 @@
+ 
+ 		/* so here, we're either getting the challenge or the OK */
+ 		if (!g_strcasecmp(resp, "OK")) {
+-			g_snprintf(gc->displayname, sizeof(gc->displayname), "%s", friend);
++			char *str = utf8_to_str(friend);
++			g_snprintf(gc->displayname, sizeof(gc->displayname), "%s", str);
++			g_free(str);
+ 
+ 			g_snprintf(sendbuf, sizeof(sendbuf), "SYN %d 0\r\n", ++md->trId);
+ 			if (msn_write(md->fd, sendbuf, strlen(sendbuf)) < 0) {
+@@ -1780,10 +1786,13 @@
+ 
+ static void msn_reset_friend(struct gaim_connection *gc, char *who)
+ {
++	char *str;
+ 	struct buddy *b = find_buddy(gc, who);
+ 	if (!b || !b->proto_data)
+ 		return;
+-	g_snprintf(b->show, sizeof(b->show), "%s", (char *)b->proto_data);
++	str = utf8_to_str((char *)b->proto_data);
++	g_snprintf(b->show, sizeof(b->show), "%s", str);
++	g_free(str);
+ 	handle_buddy_rename(b, b->name);
+ }
+ 
+@@ -1850,7 +1859,9 @@
+ 	struct msn_data *md = gc->proto_data;
+ 	char buf[MSN_BUF_LEN];
+ 
+-	g_snprintf(buf, sizeof(buf), "REM %d FL %s\r\n", ++md->trId, who);
++	char *utf = str_to_utf8(who);
++	g_snprintf(buf, sizeof(buf), "REM %d FL %s\r\n", ++md->trId, utf);
++	g_free(utf);
+ 	if (msn_write(md->fd, buf, strlen(buf)) < 0) {
+ 		hide_login_progress(gc, "Write error");
+ 		signoff(gc);
+@@ -1880,7 +1891,9 @@
+ static void msn_do_action(struct gaim_connection *gc, char *act)
+ {
+ 	if (!strcmp(act, "Set Friendly Name")) {
+-		do_prompt_dialog("Set Friendly Name:", gc->displayname, gc, msn_act_id, NULL);
++		char *utf = str_to_utf8(gc->displayname);
++		do_prompt_dialog("Set Friendly Name:", utf, gc, msn_act_id, NULL);
++		g_free(utf);
+ 	} else if (!strcmp(act, "Reset All Friendly Names")) {
+ 		GSList *g = gc->groups;
+ 		while (g) {
+--- gaim-0.54.orig/src/protocols/oscar/oscar.c
++++ src/protocols/oscar/oscar.c
+@@ -37,6 +37,8 @@
+ #include <time.h>
+ #include <sys/socket.h>
+ #include <sys/stat.h>
++#include <iconv.h>
++#include <langinfo.h>
+ #include "multi.h"
+ #include "prpl.h"
+ #include "gaim.h"
+@@ -1359,6 +1361,7 @@
+ 	 */
+ 	if (args->icbmflags & AIM_IMFLAGS_UNICODE) {
+ 		int i;
++		iconv_t conv_desc = iconv_open(nl_langinfo(CODESET), "UTF-16");
+ 		
+ 		for (i = 0, tmp[0] = '\0'; i < args->msglen; i += 2) {
+ 			unsigned short uni;
+@@ -1369,10 +1372,26 @@
+ 				
+ 				g_snprintf(tmp+strlen(tmp), BUF_LONG-strlen(tmp), "%c", uni);
+ 				
+-			} else { /* something else, do UNICODE entity */
+-				g_snprintf(tmp+strlen(tmp), BUF_LONG-strlen(tmp), "&#%04x;", uni);
++			} else { 
++				char* utf = g_malloc(10);
++				char* str = g_malloc(10);
++				char* inbuf = (char*)&uni;
++				char* outbuf = str;
++				size_t inleft = 2, outleft = 2;
++				
++				if( conv_desc != (iconv_t)(0) ){
++					if(iconv(conv_desc, &inbuf, &inleft, &outbuf, &outleft))
++						g_snprintf(utf, strlen(utf), "?", uni);
++					else
++						g_snprintf(utf, strlen(utf), "%.2s", str);
++				}
++
++				g_snprintf(tmp+strlen(tmp), BUF_LONG-strlen(tmp), "%s", utf);
++				g_free(utf);
++				g_free(str);
+ 			}
+ 		}
++		iconv_close(conv_desc);
+ 	} else
+ 		g_snprintf(tmp, BUF_LONG, "%s", args->msg);
+ 
+@@ -2489,8 +2508,13 @@
+ 		}
+ 		
+ 		args.destsn = name;
+-		args.msg    = message;
+-		args.msglen = strlen(message);
++		if (odata->icq) {
++			args.msg    = message;
++			args.msglen = strlen(message);
++		} else {
++			args.msg    = message; /* 여기서 UTF-16으로 변환해야 함. */
++			args.msglen = strlen(message);
++		}
+ 		
+ 		ret = aim_send_im_ext(odata->sess, &args);
+ 		
