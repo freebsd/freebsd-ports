@@ -1,6 +1,9 @@
 bin/vile
 bin/vile-pager
 bin/vileget
+lib/vile/atr2ansi
+lib/vile/atr2html
+lib/vile/atr2text
 lib/vile/vile-crypt
 lib/vile/vile-manfilt
 @dirrm lib/vile

@@ -2,6 +2,9 @@ bin/vileget
 bin/xvile
 bin/xvile-pager
 bin/xshell.sh
+lib/xvile/atr2ansi
+lib/xvile/atr2html
+lib/xvile/atr2text
 lib/xvile/vile-as-filt
 lib/xvile/vile-asm-filt
 lib/xvile/vile-basic-filt
