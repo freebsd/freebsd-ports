@@ -6,19 +6,17 @@
 #
 
 PORTNAME=	knocker
-PORTVERSION=	0.3.0
+PORTVERSION=	0.4.0
 CATEGORIES=	security net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	pat@databits.net
 
-GNU_CONFIGURE=	yes
+USE_AUTOCONF=	yes
 
 MAN1=		${PORTNAME}.1
 
-pre-patch:
-	@${PERL} -pi.orig -e 's|-lpthread|${PTHREAD_LIBS}|' \
-		${WRKSRC}/configure
+CONFIGURE_ENV=	CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}"
 
 .include <bsd.port.mk>
