@@ -8,7 +8,7 @@
 #
 
 PORTNAME=	qlwm
-PORTVERSION=	2.6
+PORTVERSION=	3.0
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.netcologne.de/~nc-lindenal/qlwm/
 
@@ -19,15 +19,17 @@ DOCS=		CHANGES README
 LIBDIR=		lib/${PORTNAME}
 PLIST=		${WRKDIR}/pkg-plist
 MAN1=		qlwm.1
-USE_QT_VER=	2
+USE_QT_VER=	3
 USE_X_PREFIX=	yes
+USE_REINPLACE=	yes
+REINPLACE_ARGS=	-i'' -E
 
 MAKE_ENV=	DEST="${PREFIX}/${LIBDIR}" INCPATH="${QTCPPFLAGS}" \
-		LIBS="${QTCFGLIBS} -l${QTNAME}" LINK="${CXX}" MOC="${MOC}"
+		LIBS="${QTCFGLIBS} -lqt-mt -pthread" LINK="${CXX}" MOC="${MOC}"
 
 post-patch:
-	find ${WRKSRC} -name "Makefile" | xargs ${PERL} -pi -e \
-        	's|/usr/local/qlwm|${PREFIX}/${LIBDIR}|g ; \
+	find ${WRKSRC} -name "Makefile" | xargs ${REINPLACE_CMD} \
+		's|/usr/local/qlwm|${PREFIX}/${LIBDIR}|g ; \
 		 s|^CXX|#CXX|g ; \
 		 s|^INCPATH|#INCPATH|g ; \
 		 s|^LFLAGS|#LFLAGS|g ; \
