@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	samba
-PORTVERSION=	2.0.10
+PORTVERSION=	2.2.2
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.samba.org/pub/samba/%SUBDIR%/ \
-		ftp://ring.asahi-net.or.jp/pub/net/samba/%SUBDIR%/ \
 		ftp://samba.anu.edu.au/pub/samba/%SUBDIR%/ \
-		ftp://de.samba.org/samba.org/%SUBDIR%/ \
+		ftp://de.samba.org/pub/mirror/samba/%SUBDIR%/ \
 		ftp://se.samba.org/pub/samba/%SUBDIR%/ \
 		ftp://ftp.sunet.se/pub/unix/utilities/samba/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. old-versions old
@@ -20,6 +20,11 @@ MAINTAINER=	dwcjr@FreeBSD.org
 
 .if defined(WITH_CUPS)
 LIB_DEPENDS=	cups.2:${PORTSDIR}/print/cups
+.endif
+
+.if defined(WITH_RECYCLE)
+PATCH_SITES+=	http://www.amherst.edu/~bbstone/recycle_bin/2.2.2/
+PATCHFILES+=	proto.h.patch loadparm.c.patch reply.c.patch
 .endif
 
 # directories
@@ -36,26 +41,38 @@ USE_AUTOCONF=	yes
 CONFIGURE_ARGS=	--libdir=${SAMBA_CONFDIR} \
 		--localstatedir=${VARDIR} --with-swatdir=${PREFIX}/share/swat \
 		--with-sambabook=${PREFIX}/share/swat/using_samba \
-		--with-lockdir=${VARDIR}/spool/lock \
-		--with-privatedir=${SAMBA_PRIVATE}
+		--with-lockdir=${VARDIR}/lock --with-privatedir=${SAMBA_PRIVATE} \
+		--with-pam
+
+.include <bsd.port.pre.mk>
 
 .if defined(KRB5_HOME) && exists(${KRB5_HOME})
 CONFIGURE_ARGS+=	--with-krb5=${KRB5_HOME}
 .endif
 
 .if defined(WITH_CUPS)
+# This enables CUPS printing support in Samba.
 CONFIGURE_ARGS+=	--with-cups=${LOCALBASE}
+.endif
+
+.if defined(WITH_ACL_SUPPORT)
+.if ${OSVERSION} < 500018
+BROKEN=	"Requires a recent FreeBSD 5.0-CURRENT"
+.else
+CONFIGURE_ARGS+=	--with-acl-support
+.endif
 .endif
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/source
 
-MAN1=		nmblookup.1 smbstatus.1 smbclient.1 smbrun.1 smbtar.1 \
-		testparm.1 testprns.1 make_smbcodepage.1 smbsh.1 \
-		make_unicodemap.1
-MAN5=		smb.conf.5 smbpasswd.5 lmhosts.5
+MAN1=		findsmb.1 make_smbcodepage.1 rpcclient.1 make_unicodemap.1 \
+		nmblookup.1 smbcacls.1 smbclient.1 smbcontrol.1 smbrun.1 \
+		smbsh.1 smbstatus.1 smbtar.1 testparm.1 \
+		testprns.1 wbinfo.1
+MAN5=		lmhosts.5 smb.conf.5 smbpasswd.5
 MAN7=		samba.7
-MAN8=		smbd.8 nmbd.8 smbpasswd.8 swat.8 smbspool.8 \
-		smbmount.8 smbumount.8 smbmnt.8
+MAN8=		nmbd.8 smbd.8 smbmnt.8 smbmount.8 \
+		smbpasswd.8 smbspool.8 smbumount.8 swat.8 winbindd.8
 
 post-install:
 	${MKDIR} ${PREFIX}/share/examples/samba
@@ -90,33 +107,34 @@ post-install:
 	${ECHO} "private/smbpasswd" >> ${TMPPLIST}
 	${ECHO} "@dirrm private" >> ${TMPPLIST}
 .else
-	${ECHO} "@unexec echo \"Warning: If you will *NOT* use this package anymore, please remove %D/private/smbpasswd manually.\"" >> ${TMPPLIST}
+	${ECHO} "@unexec ${ECHO} \"Warning: If you will *NOT* use this package anymore, please remove %D/private/smbpasswd manually.\"" >> ${TMPPLIST}
 .endif
 
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${FILESDIR}/README.FreeBSD ${PREFIX}/share/doc/samba
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${FILESDIR}/README.FreeBSD ${DOCSDIR}
 	for i in ${WRKDIR}/${DISTNAME}/README				\
 			${WRKDIR}/${DISTNAME}/COPYING			\
 			${WRKDIR}/${DISTNAME}/Manifest			\
 			${WRKDIR}/${DISTNAME}/Read-Manifest-Now		\
 			${WRKDIR}/${DISTNAME}/Roadmap			\
 			${WRKDIR}/${DISTNAME}/WHATSNEW.txt		\
-			${WRKDIR}/${DISTNAME}/docs/*.reg		\
 			${WRKDIR}/${DISTNAME}/docs/THANKS		\
 			${WRKDIR}/${DISTNAME}/docs/announce		\
 			${WRKDIR}/${DISTNAME}/docs/history ; do		\
 		${INSTALL_DATA} $$i ${DOCSDIR} ;		\
 	done
-	for i in faq htmldocs textdocs yodldocs ; do			\
+	for i in faq htmldocs textdocs Registry ; do			\
 		${MKDIR} ${DOCSDIR}/$$i ;		\
 		for j in ${WRKDIR}/${DISTNAME}/docs/$$i/* ; do		\
 			if [ $$j != ${WRKDIR}/${DISTNAME}/docs/htmldocs/using_samba ] ; then \
-				${INSTALL_DATA} $$j ${DOCSDIR}/$$i ;\
+				if [ $$j != ${WRKDIR}/${DISTNAME}/docs/textdocs/outdated ] ; then \
+					${INSTALL_DATA} $$j ${DOCSDIR}/$$i ;\
+				fi; \
 			fi; \
 		done							\
 	done
-	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/swat/README ${DOCSDIR}/README.swat
+	@${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/swat/README ${DOCSDIR}/README.swat
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
