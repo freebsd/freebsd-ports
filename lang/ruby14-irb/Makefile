@@ -8,12 +8,8 @@
 PORTNAME=	irb
 PORTVERSION=	0.6.1
 CATEGORIES=	lang ruby
-MASTER_SITES=	ftp://ftp.netlab.co.jp/pub/lang/ruby/contrib/ \
-		ftp://ftp.TokyoNet.AD.JP/pub/misc/ruby/contrib/ \
-		ftp://ftp.iij.ad.jp/pub/lang/ruby/contrib/ \
-		ftp://blade.nagaokaut.ac.jp/pub/lang/ruby/contrib/ \
-		ftp://ftp.krnet.ne.jp/pub/ruby/contrib/ \
-		ftp://mirror.nucba.ac.jp/mirror/ruby/contrib/
+MASTER_SITES=	${MASTER_SITE_RUBY}
+MASTER_SITE_SUBDIR=	contrib
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	ruby
 

@@ -8,12 +8,8 @@
 PORTNAME=	rubytk
 PORTVERSION=	1.4.6
 CATEGORIES+=	x11-toolkits ruby
-MASTER_SITES=	ftp://ftp.netlab.co.jp/pub/lang/ruby/${BRANCH_NAME}/ \
-		ftp://ftp.TokyoNet.AD.JP/pub/misc/ruby/${BRANCH_NAME}/ \
-		ftp://ftp.iij.ad.jp/pub/lang/ruby/${BRANCH_NAME}/ \
-		ftp://blade.nagaokaut.ac.jp/pub/lang/ruby/${BRANCH_NAME}/ \
-		ftp://ftp.krnet.ne.jp/pub/ruby/${BRANCH_NAME}/ \
-		ftp://mirror.nucba.ac.jp/mirror/ruby/${BRANCH_NAME}/
+MASTER_SITES=	${MASTER_SITE_RUBY}
+MASTER_SITE_SUBDIR=	1.4
 DISTNAME=	ruby-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
@@ -33,8 +29,6 @@ CONFIGURE_ARGS=	--with-tcllib="${TCL_LIB}" --with-tklib="${TK_LIB}" \
 		--with-tk-include="${LOCALBASE}/include/${TK_DIR}" \
 		--with-X11-dir="${X11BASE}"
 PLIST_SUB+=	RUBY_VER="${RUBY_VER}" RUBY_ARCH="${RUBY_ARCH}"
-
-BRANCH_NAME=	1.4
 
 RUBY_VER?=	1.4
 RUBY_ARCH?=	${ARCH}-freebsd${OSREL}
