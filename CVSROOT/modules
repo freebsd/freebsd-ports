@@ -370,6 +370,7 @@ archie		ports/net/archie
 archie.el	ports/net/archie.el
 archivemail	ports/mail/archivemail
 archivers_rvm	ports/archivers/rvm
+archmbox	ports/mail/archmbox
 arena		ports/www/arena
 ares		ports/dns/ares
 argouml		ports/devel/argouml
