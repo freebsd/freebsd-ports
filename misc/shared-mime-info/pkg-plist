@@ -1,4 +1,13 @@
+@exec mkdir -p %%X11BASE%%/share/mime/application
+@exec mkdir -p %%X11BASE%%/share/mime/audio
+@exec mkdir -p %%X11BASE%%/share/mime/image
+@exec mkdir -p %%X11BASE%%/share/mime/inode
+@exec mkdir -p %%X11BASE%%/share/mime/message
+@exec mkdir -p %%X11BASE%%/share/mime/model
+@exec mkdir -p %%X11BASE%%/share/mime/multipart
 @exec mkdir -p %%X11BASE%%/share/mime/packages
+@exec mkdir -p %%X11BASE%%/share/mime/text
+@exec mkdir -p %%X11BASE%%/share/mime/video
 bin/update-mime-database
 libdata/pkgconfig/shared-mime-info.pc
 @unexec [ -f %D/share/mime/XMLnamespaces ] && rm -f %D/share/mime/XMLnamespaces || true
