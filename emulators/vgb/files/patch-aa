@@ -1,21 +1,23 @@
-*** Makefile.org	Thu Oct 31 03:00:44 1996
---- Makefile	Thu Oct 31 03:01:14 1996
+*** Makefile.orig	Wed Jul  3 20:29:30 1996
+--- Makefile	Sat Jan 15 00:00:00 2000
 ***************
-*** 27,34 ****
+*** 26,34 ****
+  # If you are getting linker errors about not found X11 functions,
   # change the -L/usr/X11R6/lib to the directory where X11
   # libraries libX11.* and libXext.* are located on your system.
-  CC	= gcc
+! CC	= gcc
 ! DEFINES	= -DUNIX -DLSB_FIRST -DDEBUG -DMITSHM
 ! CFLAGS	= -O2 -I/usr/X11/include  -L/usr/X11/lib/ ${DEFINES}
   OBJECTS	= VGB.o GB.o Z80.o Debug.o Unix.o
   
   # Make the standard distribution: VGB, DASM, and utilities.
---- 27,34 ----
+--- 26,34 ----
+  # If you are getting linker errors about not found X11 functions,
   # change the -L/usr/X11R6/lib to the directory where X11
   # libraries libX11.* and libXext.* are located on your system.
-  CC	= gcc
-! DEFINES	= -DUNIX -DLSB_FIRST -DDEBUG
-! CFLAGS	= -O2 -I/usr/X11R6/include  -L/usr/X11R6/lib/ ${DEFINES}
+! CC	?= gcc
+! DEFINES	= -DUNIX -DLSB_FIRST
+! CFLAGS	+= -I${X11BASE}/include -L${X11BASE}/lib ${DEFINES}
   OBJECTS	= VGB.o GB.o Z80.o Debug.o Unix.o
   
   # Make the standard distribution: VGB, DASM, and utilities.

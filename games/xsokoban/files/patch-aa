@@ -1,5 +1,5 @@
-*** Imakefile.org	Sun Nov 17 15:36:02 1996
---- Imakefile	Sun Nov 17 15:36:36 1996
+*** Imakefile.orig	Wed Aug 28 02:34:41 1996
+--- Imakefile	Sat Jan 15 00:00:00 2000
 ***************
 *** 1,7 ****
   DEFINES=	-DNDEBUG
@@ -9,12 +9,11 @@
   # -lXpm is only needed if you are using Xpm.
   
   SRCS=		display.c main.c resources.c play.c score.c screen.c \
---- 1,8 ----
+--- 1,7 ----
   DEFINES=	-DNDEBUG
-! EXTRA_INCLUDES= -I/usr/local/include -I/usr/X11R6/include/X11 \
-! 		-I/usr/X11R6/include
+! EXTRA_INCLUDES= -I$(INCDIR)/X11
   
-! SYS_LIBRARIES=	-L/usr/local/lib -L/usr/X11R6/lib -lXpm $(XLIB)
+! SYS_LIBRARIES=	-lXpm $(XLIB)
   # -lXpm is only needed if you are using Xpm.
   
   SRCS=		display.c main.c resources.c play.c score.c screen.c \

@@ -1,22 +1,20 @@
-# New ports collection makefile for:   xpuzzletama
-# Version required:    1.5
-# Date created:        18 January 1997
-# Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
+# New ports collection makefile for:	xpuzzletama
+# Version required:	1.5b
+# Date created:		18 January 1997
+# Whom:			Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	xpuzzletama
-PKGNAME=	xpuzzletama-1.5
+DISTNAME=	xpuzzletama-1.5b
 CATEGORIES=	games
-MASTER_SITES=	http://neo.yanagi.gifu-u.ac.jp/~c94056/
-DISTFILES=	PuzzleTama-ver1.5.tar.gz
+MASTER_SITES=	ftp://ftp.jaist.ac.jp/pub/os/linux/JG/JG-0.9.1/sources/
 
 MAINTAINER=	nakai@FreeBSD.org
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 
-CONFIGURE_ENV=	X11BASE=${X11BASE}
+WRKSRC=		${WRKDIR}/xpuzzletama
 USE_IMAKE=	yes
 NO_INSTALL_MANPAGES=	yes
 

@@ -13,7 +13,7 @@
   	    variable in the installed version, but you know best...
   */
   #ifndef ROOTDIR
-! #define ROOTDIR "/usr/X11R6/lib/X11/xsokoban"
+! #define ROOTDIR "%%PREFIX%%/lib/X11/xsokoban"
   #endif
   
   /*

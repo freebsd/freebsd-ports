@@ -1,7 +1,7 @@
-# New ports collection makefile for:   xshodo
-# Version required:    2.0
-# Date created:        11 October 1996
-# Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
+# New ports collection makefile for:	xshodo
+# Version required:	2.0
+# Date created:		11 October 1996
+# Whom:			Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
 # $FreeBSD$
 #
@@ -15,6 +15,5 @@ MAINTAINER=	nakai@FreeBSD.org
 
 USE_IMAKE=	yes
 MAN1=		xshodo.1
-MANCOMPRESSED=	yes
 
 .include <bsd.port.mk>

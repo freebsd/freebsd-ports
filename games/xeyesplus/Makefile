@@ -9,7 +9,8 @@
 DISTNAME=	xeyes+2.01
 PKGNAME=	xeyes+-2.01
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.eos.hokudai.ac.jp/pub/X11/contrib/misc/
+MASTER_SITES=	http://yindy1.aist-nara.ac.jp/~tetu-s/sofken/software/
+EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	nakai@FreeBSD.org
 

@@ -1,0 +1,13 @@
+--- Imakefile.orig	Sat Nov 25 04:07:57 1995
++++ Imakefile	Sat Jan 15 00:00:00 2000
+@@ -1,7 +1,7 @@
+-CC = gcc
+-CDEBUGFLAGS=\
++XCOMM CC = gcc
++XCOMM CDEBUGFLAGS=\
+ # -g
+-CCOPTIONS=\
++XCOMM CCOPTIONS=\
+ # -O2
+ 
+ #ifndef LocalLib

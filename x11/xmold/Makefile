@@ -1,7 +1,7 @@
-# New ports collection makefile for:   xmold
-# Version required:    1.0
-# Date created:        11 October 1996
-# Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
+# New ports collection makefile for:	xmold
+# Version required:	1.0
+# Date created:		11 October 1996
+# Whom:			Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
 # $FreeBSD$
 #
@@ -14,11 +14,9 @@ MASTER_SITES=	ftp://cclub.tutcc.tut.ac.jp/pub/xwin/
 MAINTAINER=	nakai@FreeBSD.org
 
 USE_IMAKE=	yes
+NO_INSTALL_MANPAGE=	yes
 
 do-install:
-	@${MKDIR} ${PREFIX}/bin
-	@install -c -s ${WRKSRC}/xmold ${PREFIX}/bin
-	@${CHMOD} 755 ${PREFIX}/bin/xmold
-	@${CHOWN} bin.bin ${PREFIX}/bin/xmold
+	${INSTALL_PROGRAM} ${WRKSRC}/xmold ${PREFIX}/bin
 
 .include <bsd.port.mk>

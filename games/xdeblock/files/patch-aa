@@ -1,5 +1,5 @@
-*** Imakefile.orig	Sat Jan 25 23:26:41 1997
---- Imakefile	Sat Jan 25 23:31:45 1997
+*** Imakefile.orig	Sat Nov 16 13:06:36 1996
+--- Imakefile	Thu Jan 15 00:00:00 2000
 ***************
 *** 10,16 ****
   XCOMM    Set xdeblock working directory.
@@ -13,7 +13,7 @@
   XCOMM    Set xdeblock working directory.
   XCOMM =====================================================================
   
-!     XDEBLO_DIR = /usr/X11R6/lib/X11/xdeblock
+!     XDEBLO_DIR = $(LIBDIR)/xdeblock
   
   XCOMM =====================================================================
   XCOMM    Set xpm.
@@ -31,8 +31,8 @@
   XCOMM         abc% find /usr -name xpm.h -print
   XCOMM =====================================================================
    
-!     XPM_INC 			= -I/usr/X11R6/include/X11
-!     XPMLIB_DIR 			= -L/usr/X11R6/lib
+!     XPM_INC 			= -I$(INCDIR)/X11
+!     XPMLIB_DIR 			= -L$(USRLIBDIR)
   
   XCOMM =====================================================================
   

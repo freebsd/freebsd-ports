@@ -1,5 +1,5 @@
 # New ports collection makefile for:	gqview
-# Version required:			0.6.1
+# Version required:			0.7.0
 # Date Created:				27 Oct 1998
 # Whom:					Vanilla Pooh Shu <vanilla@FreeBSD.org>
 #
@@ -11,7 +11,6 @@ PKGNAME=	gqview-0.7.0
 CATEGORIES=	graphics
 MASTER_SITES=	http://gqview.netpedia.net/ \
 		http://www.geocities.com/SiliconValley/Haven/5235/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	nakai@FreeBSD.org
 
@@ -24,12 +23,12 @@ USE_X_PREFIX=	yes
 
 WRKSRC=		${WRKDIR}/${PKGNAME}
 ALL_TARGET=	gqview
-CONFIGURE_ENV=	GTK_CONFIG="${GTK_CONFIG}"
+MAKE_ENV=	GTK_CONFIG="${GTK_CONFIG}"
 
-pre-install:
+post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/gqview
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/gqview/README
+	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/gqview
 .endif
 
 .include <bsd.port.mk>

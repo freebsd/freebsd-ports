@@ -1,27 +1,31 @@
-# New ports collection makefile for:   xdeblock
-# Version required:    v1.0
-# Date created:        28 December 1996
-# Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
+# New ports collection makefile for:	xdeblock
+# Version required:	1.0
+# Date created:		28 December 1996
+# Whom:			Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	xdeblo_v1.0
+DISTNAME=	xdeblock
 PKGNAME=	xdeblock-1.0
 CATEGORIES=	games
-MASTER_SITES=	ftp://www.vector.co.jp/pack/unix/game/action/block/
-DISTFILES=	xdeblock.tgz
+MASTER_SITES=	ftp://ftp.vector.co.jp/pack/unix/game/action/block/
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	nakai@FreeBSD.org
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 
+WRKSRC=		${WRKDIR}/xdeblo_v1.0
 USE_IMAKE=	yes
 NO_INSTALL_MANPAGES=	yes
 
+post-patch:
+	@${PERL} -pi -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/main.c
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xdeblo ${PREFIX}/bin
-	${MKDIR} ${PREFIX}/lib/X11/xdeblock/mapf
+	@${MKDIR} ${PREFIX}/lib/X11/xdeblock/mapf
 	${CHMOD} 777 ${PREFIX}/lib/X11/xdeblock/mapf
 	${INSTALL_DATA} ${WRKSRC}/mapf/*.txt ${PREFIX}/lib/X11/xdeblock/mapf
 

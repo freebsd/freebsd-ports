@@ -7,13 +7,5 @@ Virtual Game Boy is the Nintendo GameBoy(tm) emulator on X-Window.
   You buy the cartridges. GameBoy software is copyrighted and still sold. 
 Therefore, its distribution is an act of piracy. Nothing prohibits you 
 from backing up a cartridge you own and playing it on the emulator though.
-To back up a GameBoy cartridge, you can use either SmartCard copier (about
-$100 for a standalone version), or a self-built copier designed by Pascal 
-Felber, description of which is available at:
 
-           http://www.freeflight.com/fms/GameBoy/
-
-GameBoy-related archives with technical and other info are located at:
-
-                  http://www.freeflight.com/fms/GameBoy/
-                  ftp://ftp.komkon.org/pub/GameBoy/
+WWW: http://www.komkon.org/fms/
