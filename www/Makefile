@@ -137,6 +137,7 @@
     SUBDIR += p5-HTML-Summary
     SUBDIR += p5-HTML-TableLayout
     SUBDIR += p5-HTML-Tagset
+    SUBDIR += p5-HTML-Template
     SUBDIR += p5-HTML-Tree
     SUBDIR += p5-HTTPD-Tools
     SUBDIR += p5-ParallelUA
