@@ -1,0 +1,162 @@
+diff -Naur gaim-0.50/src/gtkimhtml.c gaim-0.50-ko/src/gtkimhtml.c
+--- src/gtkimhtml.c	Tue Dec 11 15:29:58 2001
++++ src/gtkimhtml.c	Sat Jan  5 20:08:45 2002
+@@ -1822,7 +1822,7 @@
+ gtk_imhtml_get_font_name (GdkFont *font)
+ {
+ #if GTK_CHECK_VERSION(1,3,0)
+-	return "--*-helvetica-medium-r-normal--10-*-*-*-*-*-*-*";
++	return "--*-helvetica-medium-r-normal--12-*-*-*-*-*-*-*";
+ #else
+ 	GdkFontPrivate *fontpriv = (GdkFontPrivate *) font;
+ 	return fontpriv->names->data;
+@@ -1833,7 +1833,7 @@
+ 			if (default_font->type == GDK_FONT_FONT) \
+ 				ret_font = gdk_font_load (tmp); \
+ 			else \
+-				ret_font = gdk_fontset_load (tmp); \
++				ret_font = gdk_fontset_load (g_strconcat (tmp, ",*-medium-*", NULL)); \
+ 			g_free (tmp); \
+ 			if (ret_font) { \
+ 				g_free (newvals); \
+diff -Naur gaim-0.50/src/protocols/msn/msn.c gaim-0.50-ko/src/protocols/msn/msn.c
+--- src/protocols/msn/msn.c	Tue Dec 11 05:10:03 2001
++++ src/protocols/msn/msn.c	Sat Jan  5 19:58:11 2002
+@@ -674,7 +674,7 @@
+ 	struct msn_data *md = map->gc->proto_data;
+ 	char buf[MSN_BUF_LEN];
+ 
+-	g_snprintf(buf, sizeof(buf), "ADD %d AL %s %s\r\n", ++md->trId, map->user, url_encode(map->friend));
++	g_snprintf(buf, sizeof(buf), "ADD %d AL %s %s\r\n", ++md->trId, map->user, url_encode(utf8_to_str(map->friend)));
+ 	if (msn_write(md->fd, buf, strlen(buf)) < 0) {
+ 		hide_login_progress(map->gc, "Write error");
+ 		signoff(map->gc);
+@@ -725,11 +725,11 @@
+ 
+ 		ap = g_new0(struct msn_add_permit, 1);
+ 		ap->user = g_strdup(user);
+-		ap->friend = g_strdup(url_decode(friend));
++		ap->friend = g_strdup(url_decode(utf8_to_str(friend)));
+ 		ap->gc = gc;
+ 
+ 		g_snprintf(msg, sizeof(msg), "The user %s (%s) wants to add you to their buddy list.",
+-				ap->user, url_decode(ap->friend));
++				ap->user, url_decode(utf8_to_str(ap->friend)));
+ 
+ 		do_ask_dialog(msg, ap, msn_accept_add, msn_cancel_add);
+ 	} else if (!g_strncasecmp(buf, "BLP", 3)) {
+@@ -960,7 +960,7 @@
+ 		GET_NEXT(tmp);
+ 		friend = url_decode(tmp);
+ 
+-		g_snprintf(gc->displayname, sizeof(gc->displayname), "%s", friend);
++		g_snprintf(gc->displayname, sizeof(gc->displayname), "%s", utf8_to_str(friend));
+ 	} else if (!g_strncasecmp(buf, "REM", 3)) {
+ 	} else if (!g_strncasecmp(buf, "RNG", 3)) {
+ 		struct msn_switchboard *ms;
+@@ -1248,7 +1248,7 @@
+ 
+ 		/* so here, we're either getting the challenge or the OK */
+ 		if (!g_strcasecmp(resp, "OK")) {
+-			g_snprintf(gc->displayname, sizeof(gc->displayname), "%s", friend);
++			g_snprintf(gc->displayname, sizeof(gc->displayname), "%s", utf8_to_str(friend));
+ 
+ 			g_snprintf(sendbuf, sizeof(sendbuf), "SYN %d 0\r\n", ++md->trId);
+ 			if (msn_write(md->fd, sendbuf, strlen(sendbuf)) < 0) {
+@@ -1662,7 +1662,7 @@
+ 	struct buddy *b = find_buddy(gc, who);
+ 	if (!b || !b->proto_data)
+ 		return;
+-	g_snprintf(b->show, sizeof(b->show), "%s", (char *)b->proto_data);
++	g_snprintf(b->show, sizeof(b->show), "%s", utf8_to_str((char *)b->proto_data));
+ 	handle_buddy_rename(b, b->name);
+ }
+ 
+@@ -1739,7 +1739,7 @@
+ 	struct msn_data *md = gc->proto_data;
+ 	char buf[MSN_BUF_LEN];
+ 
+-	g_snprintf(buf, sizeof(buf), "REA %d %s %s\r\n", ++md->trId, gc->username, url_encode(entry));
++	g_snprintf(buf, sizeof(buf), "REA %d %s %s\r\n", ++md->trId, gc->username, url_encode(str_to_utf8(entry)));
+ 	if (msn_write(md->fd, buf, strlen(buf)) < 0) {
+ 		hide_login_progress(gc, "Write error");
+ 		signoff(gc);
+diff -Naur gaim-0.50/src/util.c gaim-0.50-ko/src/util.c
+--- src/util.c	Sat Dec  1 10:48:26 2001
++++ src/util.c	Sat Jan  5 20:04:44 2002
+@@ -35,6 +35,7 @@
+ #include <math.h>
+ #include "gaim.h"
+ #include "prpl.h"
++#include <iconv.h>
+ 
+ char *full_date()
+ {
+@@ -1089,6 +1090,11 @@
+ 
+ unsigned char *utf8_to_str(unsigned char *in)
+ {
++	iconv_t conv_desc;
++	size_t inleft;
++	size_t outleft;
++	gchar * ptr_src_text ;
++	gchar * ptr_recoded_text;
+ 	int n = 0, i = 0;
+ 	int inlen;
+ 	unsigned char *result;
+@@ -1128,12 +1134,33 @@
+ 		n++;
+ 	}
+ 	result[i] = '\0';
++	ptr_recoded_text = result;
++	
++	conv_desc = iconv_open("EUC-KR","UTF-8");
++
++	if( conv_desc != (iconv_t)(-1) )
++	{
++		ptr_src_text = in;
++		inleft = strlen(in) + 1;
++		outleft = inleft;
++		if(iconv(conv_desc, &ptr_src_text, &inleft, &ptr_recoded_text, &outleft))
++			strncpy(result,in,inlen);
++	} else
++		strncpy(result, in, inlen);
++
++	iconv_close(conv_desc);
+ 
+ 	return result;
+ }
+ 
+ char *str_to_utf8(unsigned char *in)
+ {
++	iconv_t conv_desc;
++	gchar * ptr_src_text;
++	gchar * ptr_han_text;
++	gchar * ptr_recoded_text;
++	size_t inleft;
++	size_t outleft;
+ 	int n = 0, i = 0;
+ 	int inlen;
+ 	char *result = NULL;
+@@ -1171,6 +1198,21 @@
+ 		n++;
+ 	}
+ 	result[i] = '\0';
++	ptr_recoded_text = result;
++	
++        conv_desc = iconv_open("UTF-8","EUC-KR" );
++	
++	if( conv_desc != (iconv_t)(-1) )
++	{
++		ptr_src_text = in;
++		inleft = strlen(in) + 1;
++		outleft = inleft * 2;
++		if(iconv(conv_desc, &ptr_src_text, &inleft, &ptr_recoded_text, &outleft))
++			strncpy(result,in,inleft);
++	} else
++		strncpy(result, in, inleft);
++	
++	iconv_close(conv_desc);
+ 
+ 	return result;
+ }

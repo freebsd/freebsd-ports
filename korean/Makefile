@@ -14,6 +14,7 @@
     SUBDIR += engdic
     SUBDIR += eterm
     SUBDIR += ftghostscript5
+    SUBDIR += gaim
     SUBDIR += gau
     SUBDIR += ghostscript-gnu-cjk
     SUBDIR += ghostscript55httf
