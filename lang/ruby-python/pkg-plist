@@ -1,12 +1,12 @@
 lib/ruby/%%RUBY_VER%%/%%RUBY_ARCH%%/python.so
-share/doc/ruby/python/examples/Lib/BaseHTTPServer.rb
-share/doc/ruby/python/examples/Lib/README
-share/doc/ruby/python/examples/Lib/base64.rb
-share/doc/ruby/python/examples/Lib/rfc822.rb
-share/doc/ruby/python/examples/Lib/urllib.rb
-share/doc/ruby/python/examples/hello.rb
-share/doc/ruby/python/examples/html.py
-share/doc/ruby/python/examples/html.rb
+share/examples/ruby/python/Lib/BaseHTTPServer.rb
+share/examples/ruby/python/Lib/README
+share/examples/ruby/python/Lib/base64.rb
+share/examples/ruby/python/Lib/rfc822.rb
+share/examples/ruby/python/Lib/urllib.rb
+share/examples/ruby/python/hello.rb
+share/examples/ruby/python/html.py
+share/examples/ruby/python/html.rb
 share/doc/ruby/python/ja/README.ja
 share/doc/ruby/python/ja/Mapping.html
 share/doc/ruby/python/ja/Object.html
@@ -20,7 +20,7 @@ share/doc/ruby/python/Object.html
 share/doc/ruby/python/Py.html
 share/doc/ruby/python/Sequence.html
 share/doc/ruby/python/index.html
-@dirrm share/doc/ruby/python/examples/Lib
-@dirrm share/doc/ruby/python/examples
+@dirrm share/examples/ruby/python/Lib
+@dirrm share/examples/ruby/python
 @dirrm share/doc/ruby/python/ja
 @dirrm share/doc/ruby/python
