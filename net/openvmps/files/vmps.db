@@ -1,0 +1,49 @@
+! $FreeBSD$
+!
+! Sample VLAN database file for OpenVMPS server
+!
+!vmps domain <domain-name>
+! The VMPS domain must be defined.
+!vmps mode { open | secure }
+! The default mode is open.
+!vmps fallback <vlan-name>
+!vmps no-domain-req { allow | deny }
+!
+! The default value is allow.
+vmps domain CHANGE_THIS
+vmps mode open
+vmps fallback --NONE--
+vmps no-domain-req deny
+!
+!
+!MAC Addresses
+!
+!vmps-mac-addrs
+!
+! address <addr> vlan-name <vlan_name> 
+!
+! address 00a0.2460.c452 vlan-name ST	
+! address 10a0.2460.c452 vlan-name ST	
+! address 20a0.2460.c452 vlan-name ST	
+! address 30a0.2460.c452 vlan-name ST	
+! address 40a0.2460.c452 vlan-name ST	
+! address 0090.278c.59d5 vlan-name ST	
+!
+!Port Groups
+!
+!vmps-port-group <group-name>
+! device <device-id> { port <port-name> | all-ports }
+!
+!
+!
+!VLAN groups
+!
+!vmps-vlan-group <group-name>
+! vlan-name <vlan-name>
+!
+!
+!VLAN port Policies
+!
+!vmps-port-policies {vlan-name <vlan_name> | vlan-group <group-name> }
+! { port-group <group-name> | device <device-id> port <port-name> }
+!

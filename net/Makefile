@@ -400,6 +400,7 @@
     SUBDIR += openreg
     SUBDIR += openslp
     SUBDIR += openverse
+    SUBDIR += openvmps
     SUBDIR += oproute
     SUBDIR += osrtspproxy
     SUBDIR += ossp-sa
