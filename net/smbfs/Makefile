@@ -24,6 +24,10 @@ CONFIGURE_SCRIPT=configure
 BROKEN=		"OS versions prior to 400000 is not supported"
 .endif
 
+.if ${OSVERSION} > 440002 && ${OSVERSION} < 500000
+IGNORE=		"OS versions subsequent to 440002 include smbfs"
+.endif
+
 .if ${OSVERSION} < 500000
 PLIST_SUB=	KMODDIR=${KMODDIR}
 .else
