@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	courier-imap
-PORTVERSION=	1.2.2
+PORTVERSION=	1.3.0
 CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	courier
@@ -31,6 +31,8 @@ CFLAGS+=	-DNO_IDEA
 CONFIGURE_ARGS=	--without-authldap --with-authldaprc=filename \
 		--without-authpam --without-authshadow \
 		--without-authvchkpw --without-authcram \
+		--without-authmysql \
+		--sysconfdir=${PREFIX}/etc/courier-imap \
 		--with-userdb=${PREFIX}/etc/userdb \
 		--datadir=${PREFIX}/share/courier-imap \
 		--libexecdir=${PREFIX}/libexec/courier-imap \
@@ -58,12 +60,13 @@ EXTRA_DOCS=	README INSTALL AUTHORS imap/ChangeLog
 .include <bsd.port.pre.mk>
 
 post-patch:
-	@perl -i -pe 's@(\$$.sysconfdir./\$$\$$p)@\1.dist@' \
-		${WRKSRC}/Makefile.in \
-		${WRKSRC}/imap/Makefile.in
+	@perl -i.nbm -pe 'm#^sysconf_DATA = imapd.dist# && s@[ip][mo][ap][p3]d.cnf@@g;' \
+		${WRKSRC}/Makefile.in
 
 post-install:
 	@${MKDIR} ${PREFIX}/share/doc/courier-imap
+	@${INSTALL_DATA} ${WRKSRC}/imap/imapd.cnf ${PREFIX}/etc/courier-imap/imapd.cnf.dist
+	@${INSTALL_DATA} ${WRKSRC}/imap/pop3d.cnf ${PREFIX}/etc/courier-imap/pop3d.cnf.dist
 .for a in ${EXTRA_DOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${a} ${PREFIX}/share/doc/courier-imap/
 .endfor

@@ -2,12 +2,12 @@
 bin/imapd
 bin/maildirmake
 bin/pop3d
-etc/imapd-ssl.config.dist
-etc/imapd.cnf.dist
-etc/imapd.config.dist
-etc/pop3d-ssl.config.dist
-etc/pop3d.cnf.dist
-etc/pop3d.config.dist
+etc/courier-imap/imapd-ssl.dist
+etc/courier-imap/imapd.cnf.dist
+etc/courier-imap/imapd.dist
+etc/courier-imap/pop3d-ssl.dist
+etc/courier-imap/pop3d.cnf.dist
+etc/courier-imap/pop3d.dist
 libexec/courier-imap/authlib/authcustom
 libexec/courier-imap/authlib/authpwd
 libexec/courier-imap/authlib/authuserdb
@@ -42,3 +42,4 @@ share/doc/courier-imap/README
 @dirrm share/courier-imap
 @dirrm libexec/courier-imap/authlib
 @dirrm libexec/courier-imap
+@dirrm etc/courier-imap
