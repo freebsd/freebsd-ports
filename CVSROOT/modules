@@ -6229,7 +6229,6 @@ prototype	ports/devel/prototype
 proxy-suite	ports/net/proxy-suite
 proxyper	ports/misc/proxyper
 proxytunnel	ports/security/proxytunnel
-pruby		ports/www/pruby
 ps		src/bin/ps
 pscal		ports/print/pscal
 pscan		ports/security/pscan
@@ -6808,7 +6807,6 @@ ruby-dbd_pg	ports/databases/ruby-dbd_pg
 ruby-dbd_proxy	ports/databases/ruby-dbd_proxy
 ruby-dbd_sqlite	ports/databases/ruby-dbd_sqlite
 ruby-dbd_sqlrelay	ports/databases/ruby-dbd_sqlrelay
-ruby-dbd_sybase	ports/databases/ruby-dbd_sybase
 ruby-dbi	ports/databases/ruby-dbi
 ruby-devel	ports/lang/ruby-devel
 ruby-devel-logger	ports/sysutils/ruby-devel-logger
