@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	chasen
-PORTVERSION=	2.2.7
+PORTVERSION=	2.2.9
 CATEGORIES=	japanese
 MASTER_SITES=	http://chasen.aist-nara.ac.jp/stable/chasen/
 PKGNAMESUFFIX=	-base
@@ -19,9 +19,16 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	ports@FreeBSD.org
 
 GNU_CONFIGURE=	YES
-USE_LIBTOOL=	YES
+#USE_LIBTOOL=	YES
+
+post-build:
+	${RM} -f ${WRKDIR}/lib/.lib/lib*.la*
 
 post-install:
 	${MKDIR} ${PREFIX}/share/chasen/dic
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${PREFIX}/share/chasen/doc
+	${INSTALL_DATA} ${WRKSRC}/doc/manual* ${PREFIX}/share/chasen/doc/
+.endif
 
 .include <bsd.port.mk>
