@@ -22,10 +22,16 @@ USE_GMAKE=	yes
 USE_GNOME=	yes
 USE_LIBTOOL=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 500000
+BROKEN=		"Does not compile"
+.endif
+
 post-patch:
 	@${PERL} -pi -e 's|%%GTK_CONFIG%%|${GTK_CONFIG}|g' \
 		${WRKSRC}/src/glade--.cc
 	@${PERL} -pi -e 's|%%X11BASE%%|${X11BASE}|g' \
 		${WRKSRC}/src/Cxx.cc
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
