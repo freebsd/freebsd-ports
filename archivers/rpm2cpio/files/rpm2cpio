@@ -62,7 +62,7 @@ read $f, $rpm, 96 ;
 ($magic, $major, $minor) = unpack("NCC", $rpm);
 
 die "Not an RPM\n" if $magic != 0xedabeedb;
-die "Not a version 3 RPM\n" if $major != 3;
+die "Not a version 3 or 4 RPM\n" if $major != 3 && $major != 4;
 
 $filter="";
 
