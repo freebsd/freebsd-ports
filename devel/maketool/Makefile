@@ -26,12 +26,6 @@ USE_GETTEXT=	yes
 USE_GNOME=	atk glib20 gtk20 pango
 USE_X_PREFIX=	yes
 
-pre-everything::
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_CMD} 
-	@${ECHO_CMD} Waiting ten seconds--press control-C to cancel build.
-	@sleep 10
-
 pre-install:
 	${ECHO_CMD} bin/maketool > ${PLIST}
 .for ii in make maketool_client
