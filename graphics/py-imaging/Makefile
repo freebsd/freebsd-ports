@@ -1,27 +1,25 @@
 # New ports collection makefile for:    PIL
-# Version required:     0.3b2
+# Version required:     1.0
 # Date created:         02 November 1998
-# Whom:                 Thomas Gellekum <tg@FreeBSD.ORG>
+# Whom:                 Thomas Gellekum <tg@FreeBSD.org>
 #
-# $Id: Makefile,v 1.4 1999/02/02 08:04:14 asami Exp $
+# $Id: Makefile,v 1.5 1999/05/06 10:12:36 tg Exp $
 #
 
-DISTNAME=	Imaging-0.3b2
-PKGNAME=	py-imaging-0.3b2
+DISTNAME=	Imaging-1.0
+PKGNAME=	py-imaging-1.0
 CATEGORIES=	graphics python
 MASTER_SITES=	http://www.pythonware.com/downloads/ \
 		ftp://www.python.org/pub/python/src/ \
 		ftp://ftp.cwi.nl/pub/python/src/
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} py152.tgz
 
-MAINTAINER=	tg@FreeBSD.ORG
+MAINTAINER=	tg@FreeBSD.org
 
 BUILD_DEPENDS=	python:${PORTSDIR}/lang/python
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 RUN_DEPENDS=	python:${PORTSDIR}/lang/python
 
 DIST_SUBDIR=	python
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 WRKSRC=		${WRKDIR}/${DISTNAME}/libImaging
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-jpeg=${PREFIX}/lib
@@ -32,13 +30,8 @@ PILDIR=		${PYTHONSCRIPTDIR}/site-packages/PIL
 PILDOCDIR=	${PREFIX}/share/doc/PIL
 PILEXDIR=	${PREFIX}/share/examples/PIL
 PILINCDIR=	${PREFIX}/include/python1.5
-TKINTERORIG=	${PYTHONSCRIPTDIR}/lib-dynload/_tkinter.so
 
 post-extract:
-	@(cd ${WRKDIR}; ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
-	    ${_DISTDIR}/py152.tgz ${EXTRACT_AFTER_ARGS} \
-	    Python-1.5.2/Modules/_tkinter.c Python-1.5.2/Modules/tkappinit.c)
-	@${MV} ${WRKDIR}/Python-1.5.2/Modules/* ${WRKSRC}/..
 	@${CP} ${FILESDIR}/Setup ${WRKSRC}/..
 
 post-configure:
@@ -48,10 +41,6 @@ post-build:
 	@(cd ${WRKSRC}/..; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} sharedmods)
 
 do-install:
-	if test -f ${TKINTERORIG}; then \
-		${MV} ${TKINTERORIG} ${TKINTERORIG}.save; \
-	else true; \
-	fi
 	@(cd ${WRKSRC}/..; ${SETENV} ${MAKE_ENV} ${MAKE} install)
 	@${MKDIR} ${PILDIR}
 	${INSTALL_DATA} ${WRKSRC}/../PIL/* ${PILDIR}
