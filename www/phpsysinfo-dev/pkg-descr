@@ -2,6 +2,6 @@ PhpSysInfo is a PHP script that displays infromation about the host being
 accessed.  It will display things like Uptime, CPU, Memory, SCSI, IDE, PCI, 
 Ethernet, Floppy, and Video Infromation.  It can be customized.  
 
-WWW: http://sourceforge.projects/phpsysinfo/
+WWW: http://sourceforge.net/projects/phpsysinfo/
 
 	-Bob Bomar <bob@fly.homeunix.org>
