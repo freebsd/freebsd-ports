@@ -1,0 +1,8 @@
+share/dict/devil-fpw/devil/data/honmon
+share/dict/devil-fpw/catalogs
+@dirrm share/dict/devil-fpw/devil/data
+@dirrm share/dict/devil-fpw/devil
+@dirrm share/dict/devil-fpw
+share/doc/devil-fpw/readme.pkg
+share/doc/devil-fpw/readme.txt
+@dirrm share/doc/devil-fpw
