@@ -8,9 +8,7 @@
 PORTNAME=	ucl
 PORTVERSION=	1.01
 CATEGORIES=	archivers devel
-MASTER_SITES=	http://www.oberhumer.com/opensource/ucl/download/ \
-		${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR=	libs/compression
+MASTER_SITES=	http://www.oberhumer.com/opensource/ucl/download/
 
 MAINTAINER=	sobomax@FreeBSD.org
 
