@@ -15,6 +15,7 @@
     SUBDIR += linux_rar
     SUBDIR += lzo
     SUBDIR += lzop
+    SUBDIR += macutil
     SUBDIR += makeself
     SUBDIR += mscompress
     SUBDIR += nulib
