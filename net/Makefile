@@ -42,7 +42,6 @@
     SUBDIR += bind9-dlz
     SUBDIR += bing
     SUBDIR += binkd
-    SUBDIR += bittorrent
     SUBDIR += bmon
     SUBDIR += boclient
     SUBDIR += bounce
