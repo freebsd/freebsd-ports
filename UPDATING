@@ -6,6 +6,46 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20040618:
+  AFFECTS: users of japanese/ptex-tetex
+
+  The texmf.cnf file for pTeX is now installed in texmf/web2c-ptex.
+
+20040618:
+  AFFECTS: users of japanese/ptex-pkfonts*
+
+  The japanese/ptex-pkfonts* has been removed because pkfonts are
+  already included in the teTeX distribution.
+
+20040618:
+  AFFECTS: users of japanese/xdvik-vflib*
+
+  The japanese/xdvik-vflib no longer supports VFlib2, and now depends on
+  print/freetype2.  For the configuration details, see vfontmap file which
+  installed as texmf/xdvi/vfontmap.  japanese/kochi-ttfonts is used for
+  min and goth by default.
+
+  xdvik-vflib-pk* variants has been removed because pkfonts are already included
+  in the teTeX distribution.
+
+20040618:
+  AFFECTS: users of print/teTeX
+
+  The print/teTeX has been split into print/teTeX-base and print/teTeX-texmf,
+  and print/teTeX is now a meta-port for the two and print/dvipsk-tetex and
+  print/xdvik.  print/teTeX installs dvips and xdvi by default again (via
+  print/dvipsk-tetex and print/xdvik).   For people who want to use teTeX,
+  simply install print/teTeX with options set by default.
+
+  print/teTeX-base has additional options for adding xdvi and dvips included
+  in the teTeX distribution itself, but use of them are not recommended if
+  you do not understand what you are trying to do.  Especially, when the
+  options are set by yourself, do not install ports that match *xdvi* and
+  *dvips* because they break the installed print/teTeX-base's dviware
+  and such conflicts will not be detected.  In most cases, a combination
+  of print/teTeX-base + print/dvipsk-tetex + print/xdvik (which are
+  installed by print/teTeX by default) will be sufficient.
+
 20040615:
   AFFECTS: users of www/firefox
 
