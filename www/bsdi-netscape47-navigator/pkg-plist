@@ -70,7 +70,7 @@ bin/navigator-%%BROWSER_VER%%
 %%NSUBDIR%%/java/classes/resource.jar
 %%NSUBDIR%%/java/classes/scd10.jar
 %%NSUBDIR%%/mailcap
-%%NSUBDIR%%/navigator-4.6.bin
+%%NSUBDIR%%/navigator-4.61.bin
 %%NSUBDIR%%/nethelp/Back_dep.gif
 %%NSUBDIR%%/nethelp/Back_dis.gif
 %%NSUBDIR%%/nethelp/Back_sel.gif
