@@ -1,5 +1,5 @@
-*** Makefile.orig	Mon Jan  9 23:41:06 1995
---- Makefile	Tue Jan 10 00:05:59 1995
+*** Makefile.orig	Mon Jan 30 21:51:43 1995
+--- Makefile	Fri Feb 10 00:11:43 1995
 ***************
 *** 46,52 ****
   #REAL_DAEMON_DIR=/usr/sbin
@@ -9,7 +9,7 @@
   #
   # HP-UX SCO
   #REAL_DAEMON_DIR=/etc
---- 48,54 ----
+--- 46,52 ----
   #REAL_DAEMON_DIR=/usr/sbin
   #
   # BSD 4.4
@@ -18,7 +18,7 @@
   # HP-UX SCO
   #REAL_DAEMON_DIR=/etc
 ***************
-*** 315,321 ****
+*** 317,323 ****
   # the ones provided with this source distribution. The environ.c module
   # implements setenv(), getenv(), and putenv().
   
@@ -35,7 +35,7 @@
   #AUX_OBJ= environ.o strcasecmp.o
   
 ***************
-*** 372,378 ****
+*** 374,380 ****
   # host name aliases. Compile with -DSOLARIS_24_GETHOSTBYNAME_BUG to work
   # around this. The workaround does no harm on other Solaris versions.
   
@@ -52,7 +52,7 @@
   #BUGS = -DGETPEERNAME_BUG -DBROKEN_FGETS -DSOLARIS_24_GETHOSTBYNAME_BUG
   
 ***************
-*** 390,396 ****
+*** 392,398 ****
   # If your system supports vsyslog(), comment out the following definition.
   # If in doubt leave it in, it won't harm.
   
@@ -69,7 +69,7 @@
   # End of the system dependencies.
   #################################
 ***************
-*** 409,415 ****
+*** 411,417 ****
   # Uncomment the next definition to turn on the language extensions
   # (examples: allow, deny, banners, twist and spawn).
   # 
@@ -86,7 +86,7 @@
   ################################################################
   # Optional: Changing the default disposition of logfile records
 ***************
-*** 432,438 ****
+*** 434,440 ****
   #
   # The LOG_XXX names below are taken from the /usr/include/syslog.h file.
   
@@ -104,7 +104,7 @@
   # The syslog priority at which successful connections are logged.
   
 ***************
-*** 507,513 ****
+*** 509,515 ****
   # look for access control information. Watch out for the quotes and
   # backslashes when you make changes.
   
@@ -121,25 +121,25 @@
   ####################################################
   # Optional: dealing with host name/address conflicts
 ***************
-*** 524,530 ****
-  # requests. When paranoid mode is off and a host name double check fails,
-  # the client can be matched with the PARANOID access control pattern.
+*** 529,535 ****
+  # Paranoid mode implies hostname lookup. In order to disable hostname
+  # lookups altogether, see the next section.
   
 ! PARANOID= -DPARANOID
   
-  #############################################
-  # Optional: Turning on host ADDRESS checking
---- 527,533 ----
-  # requests. When paranoid mode is off and a host name double check fails,
-  # the client can be matched with the PARANOID access control pattern.
+  ########################################
+  # Optional: turning off hostname lookups
+--- 530,536 ----
+  # Paranoid mode implies hostname lookup. In order to disable hostname
+  # lookups altogether, see the next section.
   
 ! #PARANOID= -DPARANOID
   
-  #############################################
-  # Optional: Turning on host ADDRESS checking
+  ########################################
+  # Optional: turning off hostname lookups
 ***************
-*** 587,592 ****
---- 590,610 ----
+*** 605,610 ****
+--- 606,625 ----
   LIB	= libwrap.a
   
   all other: config-check tcpd tcpdmatch try-from safe_finger tcpdchk
@@ -156,7 +156,6 @@
 + 	install -c hosts_access.3 ${PREFIX}/man/man3/hosts_access.3
 + 	install -c hosts_access.5 ${PREFIX}/man/man5/hosts_access.5
 + 	install -c hosts_options.5 ${PREFIX}/man/man5/hosts_options.5
-+ 	
 + 
   
   # Invalidate all object files when the compiler options (CFLAGS) have changed.
