@@ -1,5 +1,5 @@
---- Makefile.in.orig	Sun Dec 21 07:40:34 1997
-+++ Makefile.in	Wed Feb 25 20:49:29 1998
+--- Makefile.in.orig	Sat Feb 19 14:15:49 2000
++++ Makefile.in	Sat Jul 13 01:15:12 2002
 @@ -23,26 +23,11 @@
  SHELL = /bin/sh
  
@@ -27,35 +27,3 @@
  
  .PHONY: copydirs
  copydirs:
-@@ -58,7 +43,7 @@
- 	done
- 	cp dotfile.1 $(mandir)
- 	-@RM@ $(bindir)/dotfile
--	-@LN@ -s $(bindir)/dotfile-$(version) $(bindir)/dotfile
-+	-@LN@ -s dotfile-$(version) $(bindir)/dotfile
- 	chmod 755 $(bindir)/dotfile
- 	chmod 755 $(bindir)/dotfile-$(version)
- 
-@@ -68,11 +53,11 @@
- #
- # Targets that requre X (the modules using the fonts widget)
- #
--.PHONY fvwm1 fvwm2:
-+.PHONY: fvwm1 fvwm2
- fvwm1 fvwm2:
- 	@echo "----------------------------------------------------------------------"
- 	@echo "                           Byte compiling $@"
--	@if wish testwish; then \
-+	@if $(WISH) testwish; then \
- 	@WISH@ $(libdir)/Generator/dotfile.tcl $(libdir)/Generator $(libdir)/$@ bytecompile; \
- 	else \
- 	echo "An error should be shown above!"; \
-@@ -83,7 +68,7 @@
- #
- # Targets that may bytecompile without X
- #
--.PHONY emacs tcsh rtin bash elm procmail ipfwadm:
-+.PHONY: emacs tcsh rtin bash elm procmail ipfwadm
- emacs tcsh rtin bash elm procmail ipfwadm:
- 	@echo "----------------------------------------------------------------------"
- 	@echo "                           Byte compiling $@"
