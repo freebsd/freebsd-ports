@@ -1,5 +1,5 @@
---- Makefile.in.orig	Tue Aug 18 22:28:09 1998
-+++ Makefile.in	Tue Aug 18 22:31:13 1998
+--- Makefile.in.orig	Tue Feb 10 16:37:20 1998
++++ Makefile.in	Sun Sep 27 20:24:53 1998
 @@ -14,7 +14,8 @@
  DEFINES = -DOS_@OS_TYPE@ -DARCH_@ARCH_TYPE@
  CFLAGS = @CFLAGS@ ${DEFINES} ${DEBUG} ${BACK}
@@ -10,3 +10,13 @@
  
  #
  # uncomment both of these if you want profiling support
+@@ -38,6 +39,9 @@
+ 	backs/backs.o
+ 	
+ LIBS = @QT_LDFLAGS@ -lm -lqt
++ifeq ($(PORTOBJFORMAT),elf)
++LIBS+= -Wl,-rpath,$(X11BASE)/lib
++endif
+ 
+ all: xamp
+ 
