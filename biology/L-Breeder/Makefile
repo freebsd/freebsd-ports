@@ -37,12 +37,6 @@ pre-everything::
 	@${ECHO_MSG} "by defining WITH_OPTIMIZED_CFLAGS"
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500000
-BROKEN=		"invalid C++"
-.endif
-
 post-patch:
 	@${FIND} ${WRKDIR} -type f -name Makefile | \
 		${XARGS} -n 10 ${REINPLACE_CMD} -E -e \
@@ -65,4 +59,4 @@ post-patch:
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/L-Breeder ${PREFIX}/bin
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
