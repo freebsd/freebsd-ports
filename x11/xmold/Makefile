@@ -8,7 +8,8 @@
 PORTNAME=	xmold
 PORTVERSION=	1.0
 CATEGORIES=	x11
-MASTER_SITES=	ftp://cclub.tutcc.tut.ac.jp/pub/xwin/
+MASTER_SITES=	ftp://cclub.tutcc.tut.ac.jp/pub/xwin/ \
+		ftp://ftp.opaopa.org/pub/archives/games/
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	nakai@FreeBSD.org
