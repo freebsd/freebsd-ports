@@ -7,20 +7,20 @@
 #
 
 PORTNAME=	ggz-txt-client
-PORTVERSION=	0.0.8
+PORTVERSION=	0.0.9
 CATEGORIES=	games
-MASTER_SITES=	http://ggzgamingzone.org/pub/ggz/%SUBDIR%/
+MASTER_SITES=	http://ftp.ggzgamingzone.org/pub/ggz/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The GGZ Gaming Zone - Console (Text) Frontend
 
-LIB_DEPENDS=	ggzcore.4:${PORTSDIR}/games/ggz-client-libs
+LIB_DEPENDS=	ggzcore.5:${PORTSDIR}/games/ggz-client-libs
 
 USE_GNOME=	gnometarget
 USE_GETOPT_LONG=	yes
 USE_GETTEXT=	yes
-GNU_CONFIGURE=	yes
+USE_LIBTOOL_VER=	15
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--disable-debug
 
