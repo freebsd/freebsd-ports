@@ -1,5 +1,5 @@
---- Makefile.orig	Sun Mar  4 20:33:11 2001
-+++ Makefile	Fri Mar  9 11:52:32 2001
+--- Makefile.orig	Sun Jun 24 19:18:49 2001
++++ Makefile	Mon Jun 25 23:08:29 2001
 @@ -38,7 +38,7 @@
  #	-O3   - optimize (it seems that -O3 also help to find out some errors);
  #	-g    - produce debugging information.
@@ -9,7 +9,7 @@
  
  #
  # DSTBINDIR - where to install binaries
-@@ -203,7 +203,7 @@
+@@ -204,7 +204,7 @@
  	@${ECHO}
  .else
  	@${ECHO} ">> Installing binaries, manual pages and miscellaneous files"
