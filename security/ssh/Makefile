@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 # Maximal ssh package requires YES values for
-# USE_PERL, USE_TCPWRAP, USE_INET6
+# USE_PERL, USE_TCPWRAP
 #
 
 DISTNAME=       ssh-1.2.27
@@ -138,7 +138,9 @@ LIB_DEPENDS+=   wrap.7:${PORTSDIR}/security/tcp_wrapper
 
 # Original IPv6 patches were obtained from ftp://ftp.kyoto.wide.ad.jp/IPv6/ssh/
 # ssh-1.2.27-IPv6-1.5-patch.gz
-.if defined(USE_INET6) && ${USE_INET6} == YES
+# We still use USE_INET6 here and try to support pre 4.0 machines with kame
+# IPv6 stack
+.if ${OSVERSION} >= 400014 || ( ${OSVERSION} < 400014 && defined(USE_INET6) )
 CONFIGURE_ARGS+=	--enable-ipv6
 .else
 CONFIGURE_ARGS+=	--disable-ipv6
