@@ -1,46 +1,35 @@
---- ../nmh-0.19.ORIG/acconfig.h	Mon Dec  1 07:52:31 1997
-+++ acconfig.h	Mon Jan  5 20:03:43 1998
-@@ -36,9 +36,9 @@
-  *  OpenBSD 2.x
-  *  BSD/OS 2.x
-  */
--/* #define BIND     1 */
--/* #define BSD42    1 */
--/* #define BSD44    1 */
-+#define BIND     1
-+#define BSD42    1
-+#define BSD44    1
- 
- /*
-  *  SCO 4.x
-@@ -58,7 +58,7 @@
-  * group and add the setgid bit to `inc' manually after
-  * installation.
-  */
--/* #define MAILGROUP  1 */
-+#define MAILGROUP  1
- 
- /*
-  * Turn on locale (setlocale) support
-@@ -71,10 +71,10 @@
-  * other programs which may modify your maildrops.
-  * Currently you can only use one type.
-  */
--#define DOT_LOCKING   1
-+/* #define DOT_LOCKING   1 */
- /* #define FCNTL_LOCKING 1 */
- /* #define LOCKF_LOCKING 1 */
--/* #define FLOCK_LOCKING 1 */
-+#define FLOCK_LOCKING 1
- 
- /*
-  * If you have defined DOT_LOCKING, then the default is to
-@@ -154,7 +154,7 @@
- /*
-  * The prefix to use when messages are "removed" by rmm.
+diff -ur ../../nmh-1.0.2-DIST/acconfig.h ./acconfig.h
+--- ../../nmh-1.0.2-DIST/acconfig.h	Thu Oct 21 11:58:09 1999
++++ ./acconfig.h	Sat Dec 11 11:54:28 1999
+@@ -104,7 +104,7 @@
+  * The prefix which is prepended to the name of messages when they
+  * are "removed" by rmm.  This should typically be `,' or `#'
   */
 -#define BACKUP_PREFIX ","
 +#define BACKUP_PREFIX "#"
  
  /*
   * Name of link to file to which you are replying.
+@@ -128,11 +128,11 @@
+ /* Defined for Solaris 2.x, Irix, OSF/1, HP-UX, AIX */
+ #undef SVR4
+ /* Defined for SunOS 4, FreeBSD, NetBSD, OpenBSD, BSD/OS, Mac OS X/Rhapsody */
+-#undef BSD44
++#define BSD44
+ 
+ /* Defined for SunOS 4, FreeBSD, NetBSD, OpenBSD, BSD/OS, Mac OS X/Rhapsody 
+  * -- does PicoBSD have uname? :) */
+-#undef BSD42
++#define BSD42
+ 
+ /* Defined for SCO5 */
+ #undef SCO_5_STDIO
+@@ -231,7 +231,7 @@
+  * not world writable.  There are no guarantees as to the safety of doing this,
+  * but this #define will add some extra security checks.
+  */
+-#undef MAILGROUP
++#define MAILGROUP
+ 
+ /* Define ruserpass as _ruserpass if your libraries have a bug *
+  * such that it can't find ruserpass, but can find _ruserpass. */
