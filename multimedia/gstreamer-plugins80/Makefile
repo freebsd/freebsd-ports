@@ -43,6 +43,11 @@ CONFIGURE_ENV=	PKG_CONFIG=${PKG_CONFIG} \
 		LDFLAGS="${LDFLAGS} -L${X11BASE}/lib -L${LOCALBASE}/lib ${EXTRA_LIBS} ${PTHREAD_LIBS}"
 
 .include <bsd.port.pre.mk>
+.include "${MASTERDIR}/Makefile.common"
+
+#.if !defined(WITH_CPUFLAGS)
+WITHOUT_CPU_CFLAGS=	yes
+#.endif
 
 .if ${GST_PLUGIN} == "base"
 GCONF_SCHEMAS=	gstreamer-0.8.schemas
@@ -60,6 +65,10 @@ MAN1=		gst-launch-ext-0.8.1 gst-visualise-0.8.1
 EXTRA_BUILD_DIR+=	sys/vcd
 # modplug
 EXTRA_BUILD_DIR+=	gst/modplug
+.else
+.for f in ${GST_PLUGIN_DIR}
+GST_PLUGIN_MAKEFILES+=	${f}/Makefile
+.endfor
 .endif
 
 # cdrom default device
@@ -82,6 +91,17 @@ DEFAULT_DVD_DEVICE=/dev/acd0c
 . else
 DEFAULT_DVD_DEVICE=/dev/acd0
 . endif
+.endif
+
+pre-everything::
+.if !defined(WITH_CPUFLAGS)
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "If you want to compile with CPUFLAGS"
+	@${ECHO_MSG} "hit Ctrl+C now and use make \"WITH_CPUFLAGS=yes\""
+	@${ECHO_MSG} "NOTE: This option may cause build, install, and/or"
+	@${ECHO_MSG} "runtime failures. If this option does not work for you"
+	@${ECHO_MSG} "please do not use it."
+	@${ECHO_MSG} ""
 .endif
 
 post-extract:
@@ -114,22 +134,10 @@ post-patch:
 	@${REINPLACE_CMD} -E \
 		-e 's|PFLAGS@|PFLAGS@ -I${LOCALBASE}/include/mjpegtools -I${LOCALBASE}/include/mjpegtools/mplex|' \
 		${WRKSRC}/ext/mplex/Makefile.in
-.if ${CXXFLAGS:M*=athlon-4} || ${CXXFLAGS:M*=athlon-mp} || ${CXXFLAGS:M*=athlon-xp}
-# Fix gst-register when using -O -march=athlon-xp
-	@${REINPLACE_CMD} -e 's|@CXXF|-fgcse @CXXF|g' \
-		${WRKSRC}/gst/modplug/Makefile.in \
-		${WRKSRC}/gst/modplug/libmodplug/Makefile.in
+.if ${GST_PLUGIN}!="base"
+	@${REINPLACE_CMD} -E -e 's|ac_config_files=\"*\"|ac_config_files="$$ac_config_files Makefile ${GST_PLUGIN_MAKEFILES}" #|' \
+		${WRKSRC}/configure
 .endif
-
-pre-build:
-# This port cannot be CFLAGS safe, when using p4 optimizations
-# because it breaks the mod plugin
-	@${REINPLACE_CMD} -E \
-		-e 's|(-march=pentiu)m4|\1m3|g' \
-		-e 's|(-mcpu=pentiu)m4|\1m3|g' \
-		-e 's|(-mtune=pentiu)m)4|\1m3|g' \
-		${WRKSRC}/gst/modplug/Makefile \
-		${WRKSRC}/gst/modplug/libmodplug/Makefile
 
 post-build:
 .ifdef(EXTRA_BUILD_DIR)
@@ -137,9 +145,6 @@ post-build:
 	@cd ${WRKSRC}/${dir}; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET}
 . endfor
 .endif
-#	@${ECHO_CMD} "@unexec ${PREFIX}/bin/gst-register-${GST_VERSION} \
-#		--gst-registry=${PREFIX}/share/gnome/cache/gstreamer-${GST_VERSION}/registry.xml \
-#		>> ${TMPPLIST}"
 
 post-install:
 .ifdef(EXTRA_BUILD_DIR)
@@ -151,5 +156,4 @@ post-install:
 	-@${X11BASE}/bin/gst-register-${GST_VERSION} \
 		--gst-registry=${PREFIX}/share/gnome/cache/gstreamer-${GST_VERSION}/registry.xml 2>/dev/null
 
-.include "${MASTERDIR}/Makefile.common"
 .include <bsd.port.post.mk>
