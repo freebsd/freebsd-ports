@@ -8,6 +8,11 @@ DB_DIR=${PKG_PREFIX}/pgsql
 
 backupwarning() {
 	echo "
+NOTICE: unlike most minor versions, this version does require
+some updates to the pg_* system tables.  Full instructions for
+how to do this are included in the full HISTORY file.
+DO NOT UPGRADE WITHOUT READING THESE INSTRUCTIONS.
+
   =========== BACKUP YOUR DATA! =============
   As always, backup your data before
   upgrading. If the upgrade leads to a higher
