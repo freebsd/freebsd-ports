@@ -1,0 +1,21 @@
+*** Makefile.orig	Wed Apr  5 23:23:25 1995
+--- Makefile	Wed Apr  5 23:23:51 1995
+***************
+*** 40,47 ****
+  
+  linux:
+  	@$(MAKE) "CFLAGS = $(CFLAGS) -D_LITTLE_ENDIAN_ -DLINUX -DDEBUG -O2 -g -Wstrict-prototypes" \
+!                 slurp
+! 		
+  
+  #
+  # OBJ's
+--- 40,47 ----
+  
+  linux:
+  	@$(MAKE) "CFLAGS = $(CFLAGS) -D_LITTLE_ENDIAN_ -DLINUX -DDEBUG -O2 -g -Wstrict-prototypes" \
+! 		slurp
+! 
+  
+  #
+  # OBJ's

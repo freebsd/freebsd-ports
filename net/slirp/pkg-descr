@@ -1,0 +1,4 @@
+SLuRP is a SLIP/CSLIP emulator which allows a normal user with a shell
+account on a UNIX system to act like a SLIP/CSLIP account (a-la TIA).
+SLuRP can be (loosly) thought of as a cross between TIA and term (it's a
+SLIP-emulator, but comes with source, can redirect ports, etc.)
