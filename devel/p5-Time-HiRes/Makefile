@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	Time-HiRes
-PORTVERSION=	1.35
+PORTVERSION=	1.36
 PORTEPOCH=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Time
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	tobez@FreeBSD.org
 
 PERL_CONFIGURE=	yes
 
@@ -21,6 +21,6 @@ MAN3=		Time::HiRes.3
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 post-patch:
-	${PERL} -pi -e '$$_ = "" if /MAN3PODS/' ${WRKSRC}/Makefile.PL
+	${PERL} -pi -e '$$_ = "" if /MAN3PODS|INSTALLDIRS/' ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>
