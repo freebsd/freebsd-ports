@@ -1,4 +1,5 @@
 bin/gnome-jabber
+share/gnome/gnome-jabber/contact.wav
 share/gnome/gnome-jabber/emote_biggrin.png
 share/gnome/gnome-jabber/emote_confused.png
 share/gnome/gnome-jabber/emote_cool.png
@@ -14,15 +15,12 @@ share/gnome/gnome-jabber/gnome-jabber.css
 share/gnome/gnome-jabber/gnome-jabber.glade
 share/gnome/gnome-jabber/groups.png
 share/gnome/gnome-jabber/jsf.png
-share/gnome/gnome-jabber/login_title.png
+share/gnome/gnome-jabber/message.wav
 share/gnome/gnome-jabber/message_chat.png
 share/gnome/gnome-jabber/message_error.png
 share/gnome/gnome-jabber/message_groupchat.png
 share/gnome/gnome-jabber/message_headline.png
-share/gnome/gnome-jabber/message_next.png
 share/gnome/gnome-jabber/message_normal.png
-share/gnome/gnome-jabber/message_reply.png
-share/gnome/gnome-jabber/message_url.png
 share/gnome/gnome-jabber/presence_away.png
 share/gnome/gnome-jabber/presence_chat.png
 share/gnome/gnome-jabber/presence_dnd.png
@@ -34,4 +32,9 @@ share/gnome/gnome-jabber/presence_subscribed.png
 share/gnome/gnome-jabber/presence_unsubscribe.png
 share/gnome/gnome-jabber/presence_unsubscribed.png
 share/gnome/gnome-jabber/presence_xa.png
+share/locale/de/LC_MESSAGES/gnome-jabber.mo
+share/locale/es/LC_MESSAGES/gnome-jabber.mo
+share/locale/lt/LC_MESSAGES/gnome-jabber.mo
+share/locale/nl/LC_MESSAGES/gnome-jabber.mo
+share/locale/ru/LC_MESSAGES/gnome-jabber.mo
 @dirrm share/gnome/gnome-jabber
