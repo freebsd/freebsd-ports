@@ -29,7 +29,7 @@ NO_CDROM=	Contains cryptography (can't redistribute)
 NO_PACKAGE=	Contains cryptography (can't place on server for distribution)
 RESTRICTED=	Contains cryptography (can't place on server for distribution)
 .if !exists(${DISTDIR}/${DIST_SUBDIR}/${DISTCRYPTO})
-IGNORE=	You must manually fetch the ${DISTCRYPTO} Plug-ins tarball from https://www.cyrusoft.com/cgi-bin/crypto and place it in ${DISTDIR}/${DIST_SUBDIR}/ and then run 'make -DWITH_CRYPTO install' again
+IGNORE=	You must manually fetch the Linux RedHat 6.x ${DISTCRYPTO} Plug-ins tarball from https://www.cyrusoft.com/cgi-bin/crypto and place it in ${DISTDIR}/${DIST_SUBDIR}/ and then run 'make -DWITH_CRYPTO install' again
 .endif
 RUN_DEPENDS+=	gpg:${PORTSDIR}/security/gnupg
 DISTFILES+=	${DISTCRYPTO}
