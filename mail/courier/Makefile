@@ -15,7 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Courier SMTP IMAP POP3 HTTP mail server suite
 
 RUN_DEPENDS=	${LOCALBASE}/share/sysconftool/sysconftool:${PORTSDIR}/devel/sysconftool \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Net/CIDR.pm:${PORTSDIR}/net/p5-Net-CIDR
+		${SITE_PERL}/Net/CIDR.pm:${PORTSDIR}/net/p5-Net-CIDR
 
 .if !defined(BATCH) && !defined(PACKAGE_BUILDING)
 IS_INTERACTIVE=	yes
@@ -123,12 +123,11 @@ SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
 pre-everything::
 	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure.${PORTNAME}
 
-pre-fetch:
 .if !defined(WITH_GHOSTSCRIPT_AFPL) || ${WITH_GHOSTSCRIPT_AFPL} != yes
-	@${ECHO} ""
-	@${ECHO} "      Define WITH_GHOSTSCRIPT_AFPL=yes to use"
-	@${ECHO} "      AFPL Postscript interpreter instead of GNU one"
-	@${ECHO} ""
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "      Define WITH_GHOSTSCRIPT_AFPL=yes to use"
+	@${ECHO_MSG} "      AFPL Postscript interpreter instead of GNU one"
+	@${ECHO_MSG} ""
 .endif
 
 post-patch:
@@ -203,9 +202,9 @@ post-install:
 	@${CHOWN} -Rh ${SHAREOWN}:${SHAREGRP} ${DATADIR}
 	@${CHMOD} -R a+r ${DATADIR}/courierwebadmin
 	@${CHMOD} -R a-w ${DATADIR}
-	@${ECHO} ""
+	@${ECHO_MSG} ""
 	@${CAT} ${PKGMESSAGE}
-	@${ECHO} ""
+	@${ECHO_MSG} ""
 
 post-clean:
 	@${RM} -f ${WRKDIRPREFIX}${.CURDIR}/Makefile.inc
