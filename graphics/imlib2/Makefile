@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	imlib2
-PORTVERSION=	1.0.6
-PORTREVISION=	1
+PORTVERSION=	1.1.0
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	enlightenment
@@ -15,20 +14,20 @@ MASTER_SITE_SUBDIR=	enlightenment
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The next generation graphic library for enlightenment package
 
-LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
-		ltdl.4:${PORTSDIR}/devel/libltdl \
+LIB_DEPENDS=	ltdl.4:${PORTSDIR}/devel/libltdl \
+		jpeg.9:${PORTSDIR}/graphics/jpeg \
+		ungif.5:${PORTSDIR}/graphics/libungif \
 		png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
-		ungif.5:${PORTSDIR}/graphics/libungif
+		freetype.9:${PORTSDIR}/print/freetype2
 
-USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
-USE_FREETYPE=	yes
-USE_LIBTOOL=	yes
+USE_GNOME=	gnomehack pkgconfig
+USE_REINPLACE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 INSTALLS_SHLIB=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/freetype1 \
-			  -I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.pre.mk>
 
