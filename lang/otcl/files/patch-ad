@@ -1,0 +1,20 @@
+--- conf/configure.in.tk.orig	Tue Feb 22 16:38:48 2000
++++ conf/configure.in.tk	Tue Feb 22 16:39:14 2000
+@@ -87,7 +87,7 @@
+                 /usr/local/lib/tk$TK_VERS \
+                 /usr/local/lib/tk$TK_ALT_VERS \
+                 /usr/local/lib/tk$TK_HI_VERS \
+-                /usr/local/include/tk$TK_VERS \
++                /usr/local/include/tk$TK_VERS/generic \
+                 /usr/local/include/tk$TK_ALT_VERS \
+                 /usr/local/include/tk$TK_HI_VERS \
+                 /usr/local/include \
+@@ -136,7 +136,7 @@
+                 /usr/lib"
+ 
+ NS_BEGIN_PACKAGE(tk)
+-NS_CHECK_HEADER_PATH(tk.h,$TK_H_PLACES,$d,$TK_H_PLACES_D,V_INCLUDE_TK,tk)
++NS_CHECK_HEADER_PATH(tkInt.h,$TK_H_PLACES,$d,$TK_H_PLACES_D,V_INCLUDE_TK,tk)
+ NS_CHECK_LIB_PATH(tk$TK_HI_VERS,$TK_LIB_PLACES,$d,$TK_LIB_PLACES_D,V_LIB_TK,tk)
+ NS_CHECK_ANY_PATH(tk.tcl,$TK_TCL_PLACES,$d,$TK_TCL_PLACES_D,V_LIBRARY_TK,tk)
+ NS_END_PACKAGE(tk,no)
