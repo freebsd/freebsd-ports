@@ -7,14 +7,13 @@
 
 PORTNAME=	staroffice
 PORTVERSION=	5.2
-CATEGORIES=	editors linux
+CATEGORIES=	portuguese editors linux
 MASTER_SITES=	http://ftp.ceat.net/pub/linux/text/office/star_office-5.2/ \
 		ftp://ftp.puc-rio.br/pub/StarOffice52/ \
 		http://ftp.linux.dct.ufms.br/software/office/staroffice/ \
 		http://projecto-oasis.cx/ftp/linux/openoffice/ \
 		ftp://sunsite.uio.no/pub/sun/sun-patches/ \
 		ftp://ftp.hu-berlin.de/pub/mirrors/sunsolve.sun.com/pub/patches/
-PKGNAMEPREFIX=	pt-
 DISTNAME=	so-5_2-ga-bin-linux-pt.bin
 DISTFILES=	109939-03.tar.Z
 .if !defined(WITH_CDROM)

@@ -6,6 +6,7 @@
 #
 
 PORTNAME=	frontpage
+CATEGORIES=	portuguese www
 PKGNAMEPREFIX=	pt_BR-
 
 MAINTAINER=	hetzels@westbend.net
@@ -16,6 +17,6 @@ FP_LANG=	ptb
 FP_LANGUAGE=	Brazilian
 FP_LCID=	1046
 
-MASTERDIR=	${.CURDIR}/../frontpage-ar
+MASTERDIR=	${.CURDIR}/../../www/frontpage-ar
 
 .include "${MASTERDIR}/Makefile"

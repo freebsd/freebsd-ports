@@ -7,12 +7,14 @@
 # $FreeBSD$
 #
 
-CATEGORIES=	editors
+CATEGORIES=	portuguese
 
 LANGPREFIX=	pt
 LANGSUFFIX=	PT
 LANGDIST+=	pt_PT.zip
-MASTERDIR=	${.CURDIR}/../ooodict-all
+MASTERDIR=	${.CURDIR}/../../editors/ooodict-all
 RDEP=		${PORTSDIR}/editors/openoffice-pt
 
 .include "${MASTERDIR}/Makefile"
+
+PKGNAMEPREFIX=	pt_PT-
