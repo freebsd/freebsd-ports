@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cgoban
-PORTVERSION=	2.5.3
+PORTVERSION=	2.5.5
 CATEGORIES=	games
 MASTER_SITES=	http://kgs.kiseido.com/
 DISTNAME=	${PORTNAME}-unix-${PORTVERSION}
