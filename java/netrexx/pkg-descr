@@ -1,0 +1,18 @@
+NetRexx is a new human-oriented programming language, designed to be a 
+simple, effective, and complete alternative to the Java language.  With
+NetRexx, you can create applications and applets for the Java environment
+faster and more easily than by programming in Java.
+
+Using Java classes is especially easy in NetRexx, as the different types
+of numbers and strings that Java expects are handled automatically by the
+language. NetRexx classes and Java classes are entirely equivalent --
+NetRexx can use any Java class (and vice versa).
+
+For formal details of the language, please see the NetRexx documentation
+at
+
+WWW: http://www2.hursley.ibm.com/
+
+Mike Cowlishaw <mfc@uk.ibm.com>
+___________________
+NOTE: Remember to add NetRexxC.zip to your Java CLASSPATH environment.
