@@ -1,4 +1,3 @@
-%%RUBY_SITELIBDIR%%/application.rb
 %%RUBY_SITELIBDIR%%/soap/XMLSchemaDatatypes.rb
 %%RUBY_SITELIBDIR%%/soap/XMLSchemaDatatypes1999.rb
 %%RUBY_SITELIBDIR%%/soap/baseData.rb
