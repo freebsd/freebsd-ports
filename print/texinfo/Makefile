@@ -16,8 +16,16 @@ DISTFILES=	texinfo.tex lcircle10.tfm
 
 MAINTAINER=	ports@geeksrus.net
 
-BUILD_DEPENDS=	tex:${PORTSDIR}/print/teTeX
-RUN_DEPENDS=	tex:${PORTSDIR}/print/teTeX
+.if !defined(WITH_TETEX)
+TEX_PORT=	tex:${PORTSDIR}/print/tex
+pre-everything::
+	@${ECHO_MSG} 'Use make-flag WITH_TETEX=yes if you want to install with teTeX'
+.else
+TEX_PORT=	tex:${PORTSDIR}/print/teTeX
+.endif
+
+BUILD_DEPENDS=	${TEX_PORT}
+RUN_DEPENDS=	${TEX_PORT}
 
 EXTRACT_ONLY=
 NO_WRKSUBDIR=	yes
