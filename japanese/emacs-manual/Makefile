@@ -3,7 +3,7 @@
 # Date created:         14 April 1999
 # Whom:                 OKAZAKI Tetsurou
 #
-# $Id: Makefile,v 1.1.1.1 1999/05/19 13:23:56 taoka Exp $
+# $Id: Makefile,v 1.2 1999/06/06 16:30:04 steve Exp $
 #
 
 DISTNAME=	emacs-20.3-man-jp
@@ -17,6 +17,7 @@ MAINTAINER=	okazaki@be.to
 BUILD_DEPENDS=	emacs-20.3:${PORTSDIR}/editors/emacs20 \
 		/nonexistent:${PORTSDIR}/editors/emacs20:fetch
 
+BROKEN=	"Depending emacs ports are already 20.4. Waiting for upgrade."
 # EMACS_ARC is fetched by BUILD_DEPENDS
 EMACS_DISTNAME= emacs-20.3
 EMACS_ARC=	${EMACS_DISTNAME}.tar.gz
