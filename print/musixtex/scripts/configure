@@ -1,0 +1,35 @@
+#!/bin/sh
+
+cd $WRKSRC || exit 1
+
+examples="adagio.tex avemario.tex avemarix.tex carillon.tex \
+carillox.tex gymnoman.tex  havemari.tex \
+havemaro.tex marcello.tex marcellx.tex traeumer.tex xavemari.tex"
+
+for i in $examples; do
+  mv $i $i.old
+  sed -e 's:\(^\\input\).*/\(.*\):\1 \2:' <$i.old >$i
+done
+
+cat > Makefile <<END
+
+all:
+	(cd systems/c-source; cc -O2 -o ../../musixflx musixflx.c)
+	(cd tex; export TEXFONTS=${WRKSRC}/tfm:; \
+		initex '&tex musixtex.ins \dump')
+
+install:
+	install -c -s -o bin -g bin musixflx $PREFIX/bin/
+	(cd $PREFIX/bin; ln -sf virtex musixtex)
+	install -c -o bin -g bin mf/*.mf $PREFIX/lib/texmf/mf/
+	install -c -o bin -g bin tfm/*.tfm $PREFIX/lib/texmf/fonts/tfm/
+	install -c -o bin -g bin tex/musixtex.fmt $PREFIX/lib/texmf/ini/
+	install -c -o bin -g bin tex/*.tex tex/*.sty $PREFIX/lib/texmf/tex/
+	install -c -o bin -g bin doc/musixdoc.tex  doc/musixdoc.sty \
+		$PREFIX/lib/texmf/documentation/
+	mkdir -p $PREFIX/lib/texmf/documentation/musixtex.examples
+	install -c -o bin -g bin  $examples \
+		$PREFIX/lib/texmf/documentation/musixtex.examples/
+END
+
+exit 0
