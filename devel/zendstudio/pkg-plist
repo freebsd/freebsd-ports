@@ -640,8 +640,8 @@ Zend/lib/php4/ZendDebuggerLocal.so
 Zend/lib/php5/ZendDebuggerLocal.so
 Zend/README
 Zend/UninstallerData/uninstaller.jar
-Zend/UninstallerData/Uninstall_Zend_Studio_3.5.1_Client
-Zend/UninstallerData/Uninstall_Zend_Studio_3.5.1_Client.lax
+Zend/UninstallerData/Uninstall_Zend_Studio_3.5.2_Client
+Zend/UninstallerData/Uninstall_Zend_Studio_3.5.2_Client.lax
 Zend/UninstallerData/InstallScript.iap_xml
 Zend/UninstallerData/.com.zerog.registry.xml
 Zend/UninstallerData/installvariables.properties
@@ -1106,7 +1106,7 @@ Zend/help/JavaHelpSearch/OFFSETS
 Zend/help/JavaHelpSearch/SCHEMA
 Zend/help/JavaHelpSearch/TMAP
 Zend/FullFeatureList.txt
-Zend/Zend_Studio_3.5.1_(Client)_InstallLog.xml
+Zend/Zend_Studio_3.5.2_(Client)_InstallLog.xml
 @dirrm Zend/jre/bin
 @dirrm Zend/jre/lib/applet
 @dirrm Zend/jre/lib/i386/native_threads

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ZendStudio
-PORTVERSION=	3.5.1
+PORTVERSION=	3.5.2
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/./_/g}
 MASTER_SITES=	http://www.zend.com/store/products/zend-studio.php
