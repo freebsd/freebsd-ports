@@ -19,6 +19,8 @@ LIB_DEPENDS=	tcl82.1:${PORTSDIR}/lang/tcl82
 MAKEFILE=	makefile
 USE_X_PREFIX=	yes
 
+NO_CDROM=	"Asks a question about reading the license on install"
+
 .if !defined(PACKAGE_BUILDING)
 IS_INTERACTIVE=	yes	# asks "ok?" about license
 
