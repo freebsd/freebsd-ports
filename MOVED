@@ -272,3 +272,40 @@ palm/prc-tools-binutils||2003-04-27|integrate into palm/prc-tools
 palm/prc-tools-gcc||2003-04-27|integrate into palm/prc-tools
 multimedia/gini|net/gini|2003-04-27|inappropriate primary CATEGORIES
 graphics/gimp-manual-ps||2003-04-29|new versions of the manual not available as PS
+archivers/pkzip||2003-05-05|port contained a security vulnerability with no sign of a fix
+audio/mxv||2003-05-05|port was broken with no sign of a fix
+audio/openag||2003-05-05|port was broken with no sign of a fix
+databases/libodbc++||2003-05-05|port was broken with no sign of a fix
+databases/p5-Msql||2003-05-05|port was broken with no sign of a fix
+databases/sixpack||2003-05-05|port was broken with no sign of a fix
+devel/arm-aout-gcc295||2003-05-05|port was broken with no sign of a fix
+devel/arm-elf-gcc31||2003-05-05|port was broken with no sign of a fix
+devel/codemedic||2003-05-05|port was broken with no sign of a fix
+devel/flux||2003-05-05|port was broken with no sign of a fix
+devel/gecc||2003-05-05|port was broken with no sign of a fix
+devel/glade--||2003-05-05|port was broken with no sign of a fix
+devel/ilu||2003-05-05|port was broken with no sign of a fix
+emulators/vmware||2003-05-05|port was broken with no sign of a fix
+graphics/ruby-gimp||2003-05-05|port was broken with no sign of a fix
+graphics/p5-Gimp||2003-05-05|port depended on the broken PDL port which was removed
+irc/kvirc||2003-05-05|port was broken with no sign of a fix
+japanese/ee||2003-05-05|port was broken with no sign of a fix
+japanese/kdevelop||2003-05-05|port was broken with no sign of a fix
+korean/byeoroo||2003-05-05|port was broken with no sign of a fix
+lang/gpc||2003-05-05|port was broken with no sign of a fix
+math/PDL||2003-05-05|port was broken with no sign of a fix
+misc/cassowary||2003-05-05|port was broken with no sign of a fix
+net/coda_client||2003-05-05|port was broken with no sign of a fix
+net/coda_server||2003-05-05|port was broken with no sign of a fix
+net/gtk+licq||2003-05-05|port was broken with no sign of a fix
+net/icukrell||2003-05-05|port was broken with no sign of a fix
+net/macipgw||2003-05-05|port was broken with no sign of a fix
+net/trafcount||2003-05-05|port was broken with no sign of a fix
+net/zephyr||2003-05-05|port was broken with no sign of a fix
+news/xvnews||2003-05-05|port was broken with no sign of a fix
+print/pdflib3||2003-05-05|port was broken with no sign of a fix
+textproc/xsl-docbook-modular||2003-05-05|port was broken with no sign of a fix
+www/eddie||2003-05-05|port was broken with no sign of a fix
+www/wn||2003-05-05|port contained a security vulnerability with no sign of a fix
+x11-fm/jafm||2003-05-05|port was broken with no sign of a fix
+x11-servers/Xatm||2003-05-05|port was broken with no sign of a fix
