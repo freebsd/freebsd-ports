@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	windowmaker
-PORTVERSION=	0.63.1
+PORTVERSION=	0.64.0
 CATEGORIES=	x11-wm windowmaker
 MASTER_SITES=	${MASTER_SITE_WINDOWMAKER} \
 		http://jgo.local.net/cool_downloads/wm/ \
@@ -19,14 +19,12 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 
 MAINTAINER=	sobomax@FreeBSD.org
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libfreetype.a:${PORTSDIR}/print/freetype2
 LIB_DEPENDS=	ungif.5:${PORTSDIR}/graphics/libungif \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.4:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		PropList.2:${PORTSDIR}/devel/libPropList \
-		intl.1:${PORTSDIR}/devel/gettext \
-		freetype.6:${PORTSDIR}/print/freetype2
+		intl.1:${PORTSDIR}/devel/gettext
 
 USE_BZIP2=	yes
 USE_PERL5=	yes
@@ -37,7 +35,7 @@ USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	X11BASE=${X11BASE} \
 		LIBS=-L${LOCALBASE}/lib \
-		CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2" \
+		CPPFLAGS="-I${LOCALBASE}/include" \
 		LINGUAS="${LINGUAS}"
 CONFIGURE_ARGS=	--with-pixmapdir=${PREFIX}/include/X11/pixmaps \
 		--with-nlsdir=${PREFIX}/share/locale \
