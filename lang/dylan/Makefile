@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dylan
-PORTVERSION=	2.2.0
+PORTVERSION=	2.3.4
 CATEGORIES=	lang
 MASTER_SITES=	ftp://berlin.ccc.de/pub/gd/src/                        \
 		ftp://berlin.ccc.de/pub/gd/FreeBSD/                    \
@@ -18,19 +18,27 @@ MASTER_SITES=	ftp://berlin.ccc.de/pub/gd/src/                        \
 		ftp://ftp.infodrom.north.de/pub/unix/language/dylan/gwydion/FreeBSD/ \
 		ftp://ftp.fu-berlin.de/pub/unix/languages/dylan/src/   \
 		ftp://ftp.fu-berlin.de/pub/unix/languages/dylan/FreeBSD/
-DISTNAME=	gd-2.2.0
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} d2c-2.2.0-FreeBSD.gz
+DISTNAME=	gd-${PORTVERSION}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} d2c-${PORTVERSION}-FreeBSD.gz
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER= 	housel@acm.org
 
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
-WRKSRC=		${WRKDIR}/gd/src
+RUN_DEPENDS=	libtool:${PORTSDIR}/devel/libtool
 
-GNU_CONFIGURE=  yes
-CONFIGURE_ARGS= --srcdir=$(WRKSRC)
-CONFIGURE_ENV=	D2C="$(WRKDIR)/d2c"
+WRKSRC=		${WRKDIR}/gd-${PORTVERSION}
 
 USE_GMAKE=	yes
+GNU_CONFIGURE=  yes
+CONFIGURE_ARGS= --srcdir=$(WRKSRC)
+CONFIGURE_ENV=	D2C="$(WRKDIR)/d2c -p$(WRKSRC)/d2c/compiler/platforms.descr"
+
+PLIST_SUB=	DYLANVER="${PORTVERSION}" DYLANARCH="x86-freebsd-elf-gcc"
+
+INSTALLS_SHLIB=	yes
+LDCONFIG_DIRS=	%%PREFIX%%/lib/dylan/%%DYLANVER%%/%%DYLANARCH%%
+USE_GMAKE=	yes
+USE_LIBTOOL=	yes
 MAKEFILE=	GNUmakefile
 ALL_TARGET=	default
 
@@ -39,7 +47,7 @@ MAN5=		platforms.descr.5
 MAN7=		dylan.7 gwydion.7
 
 post-extract:
-	$(GUNZIP_CMD) -c $(DISTDIR)/d2c-2.2.0-FreeBSD.gz > $(WRKDIR)/d2c
+	$(GUNZIP_CMD) -c $(DISTDIR)/d2c-$(PORTVERSION)-FreeBSD.gz >$(WRKDIR)/d2c
 	${CHMOD} ugo+x $(WRKDIR)/d2c
 
 .include <bsd.port.mk>
