@@ -6,10 +6,10 @@
 # $FreeBSD$
 #
 
-DISTNAME=	nt-1.05-BETA
-PKGNAME=	downloader-1.0b5
+DISTNAME=	nt-1.06
+PKGNAME=	downloader-1.06
 CATEGORIES=	ftp
-MASTER_SITES=	http://www.krasu.ru/soft/chuchelo/
+MASTER_SITES=	http://www.krasu.ru/soft/chuchelo/files/
 
 MAINTAINER=	ijliao@csie.nctu.edu.tw
 
