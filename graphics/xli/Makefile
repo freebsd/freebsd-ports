@@ -3,7 +3,7 @@
 # Date created:		24 November 1994
 # Whom:			asami
 #
-# $Id: Makefile,v 1.8 1998/10/05 03:13:39 steve Exp $
+# $Id: Makefile,v 1.9 1998/10/21 05:13:30 jkoshy Exp $
 #
 
 DISTNAME=	xli.1.16
@@ -13,6 +13,8 @@ MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	applications
 
 MAINTAINER=	jkoshy@FreeBSD.ORG
+
+BROKEN=		manpages
 
 USE_IMAKE=	yes
 MANN=		xli.n xlito.n
