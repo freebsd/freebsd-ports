@@ -471,6 +471,7 @@
     SUBDIR += p5-POE-Component-IKC
     SUBDIR += p5-POE-Component-IKC-ReallySimple
     SUBDIR += p5-POE-Component-JobQueue
+    SUBDIR += p5-POE-Component-Logger
     SUBDIR += p5-POE-Component-Pcap
     SUBDIR += p5-POE-Component-RSS
     SUBDIR += p5-PV
