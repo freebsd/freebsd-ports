@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	java
 MASTER_SITES=	http://www.shudo.net/jit/dist/
 
-MAINTAINER=	des@FreeBSD.org
+MAINTAINER=	java@FreeBSD.org
 COMMENT=	A Just In Time java bytecode compiler
 
 LIB_DEPENDS=	gdbm:${PORTSDIR}/databases/gdbm
