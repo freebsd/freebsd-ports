@@ -273,6 +273,7 @@
     SUBDIR += mod_v2h
     SUBDIR += mod_vdbh
     SUBDIR += mod_watch
+    SUBDIR += mod_watch4
     SUBDIR += mod_webapp
     SUBDIR += mod_zap
     SUBDIR += moinmoin
