@@ -1,24 +1,25 @@
 # New ports collection makefile for:   mlvwm
-# Version required:    0.8.6
+# Version required:    0.8.9
 # Date created:        19 Januruary 1997
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.10 1998/09/15 11:13:36 asami Exp $
+# $Id: Makefile,v 1.11 1998/09/17 00:32:58 asami Exp $
 #
 
-DISTNAME=	mlvwm-0.8.6
+DISTNAME=	mlvwm089
+PKGNAME=	mlvwm-0.8.9
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.bioele.nuee.nagoya-u.ac.jp/member/tak/mlvwm/ \
 		http://www.bioele.nuee.nagoya-u.ac.jp/member/tak/
-DISTFILES=	mlvwm-0.8.6.tar.gz mini-icons.tar.gz
+DISTFILES=	mlvwm089.tgz mini-icons.tar.gz
 
-MAINTAINER=	Nakai@Mlab.t.u-tokyo.ac.jp
+MAINTAINER=	Nakai@technologist.com
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 
-WRKSRC=		${WRKDIR}/mlvwm086
+WRKSRC=		${WRKDIR}/mlvwm089
 USE_IMAKE=	yes
-EXTRACT_ONLY=	mlvwm-0.8.6.tar.gz
+EXTRACT_ONLY=	mlvwm089.tgz
 MAN1=		mlvwm.1
 MANCOMPRESSED=	no
 
@@ -30,6 +31,8 @@ post-install:
 	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
 		${DISTDIR}/mini-icons.tar.gz \
 		-C ${PREFIX}/lib/X11/mlvwm/pixmap
+.if !defined(NOPORTDOCS)
 	${INSTALL_MAN} ${WRKSRC}/man/mlvwm.1 ${PREFIX}/man/man1
+.endif
 
 .include <bsd.port.mk>
