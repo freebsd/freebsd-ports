@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	asp
-PORTVERSION=	0.1.3
+PORTVERSION=	0.1.4
 CATEGORIES=	www ruby
 MASTER_SITES=	http://webtime-project.net/ruby-asp/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
