@@ -3423,7 +3423,6 @@ klist		src/eBones/klist
 klondike	ports/games/klondike
 klone		ports/lang/klone
 kludge3d	ports/graphics/kludge3d
-kmago		ports/ftp/kmago
 kmess		ports/net/kmess
 kmsn		ports/net/kmsn
 kmymoney2	ports/deskutils/kmymoney2
@@ -4783,7 +4782,6 @@ oaf		ports/devel/oaf
 oases		ports/science/oases
 objc		ports/lang/objc
 objformat	src/usr.bin/objformat
-objprelink	ports/devel/objprelink
 obliterate	ports/sysutils/obliterate
 obnc		ports/net/obnc
 ocaml		ports/lang/ocaml
