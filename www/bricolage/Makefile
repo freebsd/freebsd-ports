@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bricolage
-PORTVERSION=	1.8.2
+PORTVERSION=	1.8.3
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	bricolage
@@ -51,7 +51,7 @@ APXS?=		${LOCALBASE}/sbin/apxs
 MAKE_ENV+=	INSTALL_VERBOSITY="QUIET"
 
 # Used to determine which versions we can upgrade from
-PREVIOUS_VERSIONS=	1.8.0 1.8.1 ${PORTVERSION}
+PREVIOUS_VERSIONS=	1.8.0 1.8.1 1.8.2 ${PORTVERSION}
 
 USE_REINPLACE=	yes
 PERL_CONFIGURE=	yes
@@ -103,10 +103,9 @@ BUILD_DEPENDS+=	${SITE_PERL}/Net/SFTP.pm:${PORTSDIR}/net/p5-Net-SFTP
 BUILD_DEPENDS+=	${SITE_PERL}/HTTP/DAV.pm:${PORTSDIR}/www/p5-HTTP-DAV
 .endif
 
-# FIXME: Inclusion of the below results in the error "Unassociated shell command"
-#.if exists(${SITE_PERL}/${PERL_ARCH}/Crypt/SSLeay.pm)
-#BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Crypt/SSLeay.pm:${PORTSDIR}/security/p5-Crypt-SSLeay
-#.endif
+.if exists(${SITE_PERL}/${PERL_ARCH}/Crypt/SSLeay.pm)
+BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Crypt/SSLeay.pm:${PORTSDIR}/security/p5-Crypt-SSLeay
+.endif
 
 .if exists(${SITE_PERL}/${PERL_ARCH}/Imager.pm)
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Imager.pm:${PORTSDIR}/graphics/p5-Imager
@@ -128,7 +127,8 @@ MAN3=		Bric.3 Bric::Admin.3 Bric::AdvTemplates.3 Bric::Alert.3 \
 		Bric::App::AccessHandler.3 Bric::App::ApacheConfig.3 \
 		Bric::App::ApacheHandler.3 Bric::App::ApacheStartup.3 Bric::App::Auth.3 \
 		Bric::App::Authz.3 Bric::App::Cache.3 Bric::App::Callback.3 \
-		Bric::App::Callback::Profile.3 Bric::App::Callback::Util::Contact.3 \
+		Bric::App::Callback::Profile.3 Bric::App::Callback::Profile::Action.3 \
+		Bric::App::Callback::Util::Contact.3 \
 		Bric::App::CleanupHandler.3 \
 		Bric::App::Event.3 Bric::App::Handler.3 Bric::App::MediaFunc.3 \
 		Bric::App::PreviewHandler.3 Bric::App::Session.3 Bric::App::Util.3 \
