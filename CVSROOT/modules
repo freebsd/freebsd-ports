@@ -5592,6 +5592,7 @@ napshare	ports/net/napshare
 napster		ports/audio/napster
 narval		ports/deskutils/narval
 nas		ports/audio/nas
+nasawash	ports/comms/nasawash
 nasm		ports/devel/nasm
 nast		ports/net/nast
 nat		ports/net-mgmt/nat
