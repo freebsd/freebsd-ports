@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- plugins/text/Makefile.in	2001/07/24 10:42:10	1.1
++++ plugins/text/Makefile.in	2001/07/24 10:43:21
+@@ -159,7 +159,7 @@
+ 
+ DEFS = @DEFS@ -I. -I$(srcdir) -I../..
+ LIBS = @LIBS@
+-libgide_text_la_LDFLAGS = 
++libgide_text_la_LDFLAGS = -avoid-version
+ libgide_text_la_DEPENDENCIES = 
+ libgide_text_la_OBJECTS =  text-tool.lo text-delete.lo text-insert.lo \
+ text-replace.lo
