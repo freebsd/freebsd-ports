@@ -3,7 +3,7 @@
 # Date created:		Oct 27, 1994
 # Whom:			pst
 #
-# $Id: Makefile,v 1.13 1996/12/10 20:30:37 ache Exp $
+# $Id: Makefile,v 1.14 1996/12/30 21:33:28 max Exp $
 #
 
 DISTNAME=	cku192src
@@ -18,8 +18,12 @@ MAINTAINER=	pst@FreeBSD.org
 
 RESTRICTED=	"'No redistribution' copyright"
 NO_WRKSUBDIR=	yes
+MAN1=		kermit.1
+MANCOMPRESSED=	yes
 
 post-install:
+	@${MKDIR} ${PREFIX}/share/examples/kermit
+	${INSTALL_DATA} ${FILESDIR}/dot.kermrc ${PREFIX}/share/examples/kermit
 	@${CAT} ${PKGDIR}/DESCR
 
 .include <bsd.port.mk>
