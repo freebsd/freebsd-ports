@@ -1,0 +1,16 @@
+Vous devez maintenant créer un alias dans la configuration de apache
+(dans le fichier %%PREFIX%%/etc/httpd.conf) pour utiliser correctement
+SPIP. Faites pointer cet alias vers  %%PREFIX%%/www/SPIP.
+
+Par exemple, rajouter la ligne suivante :
+	Alias /spip/ "%%PREFIX%%/www/SPIP"
+
+Ensuite faites pointer votre browser vers cet alias, suivant l'exemple
+ précédent : 
+	http:://monsite/spip/ecrire/
+
+Et suivez les instructions a l'écran
+
+Plus d'informations sur SPIP à l'URL http://www.uzine.net/rubrique91.html
+
+S. (gioria@FreeBSD.ORG)

@@ -11,6 +11,7 @@
     SUBDIR += openoffice
     SUBDIR += php_doc
     SUBDIR += plgrenouille
+    SUBDIR += spip
     SUBDIR += staroffice52
     SUBDIR += xtel
 
