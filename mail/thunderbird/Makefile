@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	thunderbird
-PORTVERSION=	0.2
+PORTVERSION=	0.3
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	thunderbird/releases/${PORTVERSION}
@@ -33,15 +33,7 @@ USE_PERL5=	yes
 USE_REINPLACE=	yes
 HAS_CONFIGURE=	yes
 ALL_TARGET=	default
-
-.if defined(WITH_GTK2)
 USE_GNOME=	gtk20 libidl
-PKGNAMESUFFIX=	-gtk2
-PLIST=		${PKGDIR}/pkg-plist.gtk2
-.else
-USE_GNOME=	gtk12 orbit
-PLIST=		${PKGDIR}/pkg-plist.gtk1
-.endif
 
 NO_MTREE=		yes
 WRKSRC=			${WRKDIR}/mozilla
@@ -78,10 +70,6 @@ CONFIGURE_ENV+=	WITHOUT_XFT=yes
 .else
 LIB_DEPENDS+=	Xft.2:${PORTSDIR}/x11-fonts/Xft
 .endif # !defined(WITHOUT_XFT)
-
-.if defined(WITH_GTK2)
-CONFIGURE_ENV+=	WITH_GTK2=yes
-.endif # defined(WITH_GTK2)
 
 CPPFLAGS+=		-I${X11BASE}/include
 CFLAGS+=		${PTHREAD_CFLAGS}
