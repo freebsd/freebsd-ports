@@ -1,0 +1,54 @@
+*** mfs.c.orig	Wed Jun 22 16:24:51 1994
+--- mfs.c	Tue Jan 24 18:41:20 1995
+***************
+*** 319,325 ****
+--- 319,327 ----
+  #include <errno.h>
+  #include <sys/param.h>
+  #include <stdlib.h>
++ #if !__STDC__
+  #include <malloc.h>
++ #endif
+  
+  #ifdef SOLARIS
+  #include <fcntl.h>
+***************
+*** 327,335 ****
+  #endif
+  
+  #if defined(SGI) || defined(RS6000)
+! #include <sys/statfs.h>
+  #else
+! #include <sys/vfs.h>
+  #endif
+  
+  
+--- 329,342 ----
+  #endif
+  
+  #if defined(SGI) || defined(RS6000)
+! # include <sys/statfs.h>
+  #else
+! # include <sys/param.h>
+! # if BSD >= 199103
+! #  include <sys/mount.h>
+! # else
+! #  include <sys/vfs.h>
+! # endif /* new BSD */
+  #endif
+  
+  
+*** mfs.h.orig	Wed Jun 22 16:24:51 1994
+--- mfs.h	Tue Jan 24 18:37:18 1995
+***************
+*** 45,51 ****
+--- 45,53 ----
+  
+  #include "mfs_link.h"
+  
++ #if BSD < 199306		/* newer BSDs have it in <stdio.h> */
+  extern char *sys_errlist[];
++ #endif
+  
+  #if !defined(__hpux) && !defined(SOLARIS) && !defined(SGI) && !defined(RS6000)
+  #define strerror(x) sys_errlist[x]

@@ -1,0 +1,61 @@
+*** Makefile.orig	Mon Mar 27 21:27:28 1995
+--- Makefile	Mon Mar 27 22:52:07 1995
+***************
+*** 49,58 ****
+  # been known to crash the emulator when running on certain machines (80x86
+  # based PCs under Linux, and HPs running HPUX). 
+  
+  CC      = gcc
+! OPTIONS = -DBOOT720 -DBIG_ENDIAN -DALIGNED_ACCESS -DBIGCASE -DINLINE_FUNCTIONS 
+! XROOT   = /usr/local/X11R5
+! CFLAGS  = -I$(XROOT)/include -O2 #-fomit-frame-pointer
+  
+  # You may need to add -N to the LFLAGS if you get sporadic segmentation
+  # faults. So far I have only needed to do this when compiling under Linux
+--- 49,63 ----
+  # been known to crash the emulator when running on certain machines (80x86
+  # based PCs under Linux, and HPs running HPUX). 
+  
++ .include "Makefile.inc"
++ 
+  CC      = gcc
+! #OPTIONS = -DBOOT720 -DBIG_ENDIAN -DALIGNED_ACCESS -DBIGCASE -DINLINE_FUNCTIONS
+! OPTIONS = -DBOOT720 -DLITTLE_ENDIAN -DBIGCASE -DINLINE_FUNCTIONS \
+! 	-DBOOTFILE=\"${LOCALPREFIX}/lib/pcemu/DriveA\"
+! #XROOT   = /usr/local/X11R5
+! XROOT   = /usr/X11R6
+! CFLAGS  = -I$(XROOT)/include -O2 -pipe #-fomit-frame-pointer
+  
+  # You may need to add -N to the LFLAGS if you get sporadic segmentation
+  # faults. So far I have only needed to do this when compiling under Linux
+***************
+*** 86,88 ****
+--- 91,118 ----
+  
+  clean:
+  	rm $(PROGNAME) *.o
++ 
++ bootstrapper:
++ 	(cd bootstrap; make unpack)
++ 
++ #mode 0666 is required for DriveA, alas
++ install: pcemu bootstrapper
++ 	-mkdir ${LOCALPREFIX}/lib/pcemu \
++ 		${LOCALPREFIX}/lib/pcemu/doc \
++ 		${LOCALPREFIX}/lib/pcemu/font \
++ 		${LOCALPREFIX}/lib/pcemu/C \
++ 		${LOCALPREFIX}/bin
++ 	install -c -s -o bin -g bin pcemu ${LOCALPREFIX}/bin/
++ 	install -c -m 666 bootstrap/display.bin \
++ 		${LOCALPREFIX}/lib/pcemu/DriveA
++ 	install -c -m 644 BUGS CHANGES README TODO  bootstrap/README.FreeBSD \
++ 		programs/lredir.readme \
++ 		${LOCALPREFIX}/lib/pcemu/doc/
++ 	rm -f ${LOCALPREFIX}/lib/pcemu/doc/report.ps.gz
++ 	gzip --best < report.ps > ${LOCALPREFIX}/lib/pcemu/doc/report.ps.gz
++ 	rm -f ${LOCALPREFIX}/lib/pcemu/font/vga.pcf.Z
++ 	bdftopcf vga.bdf | compress > ${LOCALPREFIX}/lib/pcemu/font/vga.pcf.Z
++ 	mkfontdir ${LOCALPREFIX}/lib/pcemu/font
++ 	install -c -m 644 programs/vga50.com programs/config.sys \
++ 		programs/dumpdisk.exe programs/lredir.exe \
++ 		${LOCALPREFIX}/lib/pcemu/C
