@@ -7,7 +7,7 @@
 
 PORTNAME=	cyrus-sasl
 PORTVERSION=	2.1.9
-#PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	security ipv6
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/ \
 		ftp://ftp.westbend.net/pub/cyrus-mail/ \
@@ -63,6 +63,12 @@ CONFIGURE_ARGS+=	--disable-otp
 OTP=	"@comment "
 .endif
 
+.if defined(WITH_LDAP)
+LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap2
+LIB_DEPENDS+=	lber.2:${PORTSDIR}/net/openldap2
+CONFIGURE_ARGS+=	--with-ldap=${PREFIX}
+.endif
+
 .if defined(KRB5_HOME) && exists(${KRB5_HOME})
 CONFIGURE_ARGS+=	--enable-gssapi=${KRB5_HOME}
 .elif defined(HEIMDAL_HOME) && exists(${HEIMDAL_HOME})
@@ -91,6 +97,8 @@ DOC2=	ONEWS TODO draft-burdis-cat-srp-sasl-06.txt \
 	rfc2195.txt rfc2222.txt rfc2243.txt rfc2245.txt rfc2289.txt \
 	rfc2444.txt rfc2595.txt rfc2831.txt rfc2945.txt rfc3174.txt \
 	server-plugin-flow.fig testing.txt
+
+SASLAUTHD_DOCS=	AUTHORS COPYING ChangeLog INSTALL LDAP_SASLAUTHD NEWS README
 
 HTDOCS=	advanced appconvert gssapi index install macosx options \
 	plugprog programming readme sysadmin upgrading
@@ -143,6 +151,7 @@ post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${MKDIR} ${DOCSDIR}/html
+	@${MKDIR} ${DOCSDIR}/saslauthd
 .for file in ${DOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
@@ -151,6 +160,9 @@ post-install:
 .endfor
 .for file in ${HTDOCS}
 	@${INSTALL_DATA} ${WRKSRC}/doc/${file}.html ${DOCSDIR}/html
+.endfor
+.for file in ${SASLAUTHD_DOCS}
+	@${INSTALL_DATA} ${WRKSRC}/saslauthd/${file} ${DOCSDIR}/saslauthd
 .endfor
 	@${INSTALL_DATA} ${FILESDIR}/Sendmail.README ${DOCSDIR}
 .endif
