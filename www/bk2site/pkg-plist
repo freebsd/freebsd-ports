@@ -1,5 +1,4 @@
 bin/bk2site
-etc/bk2site/dot.bk2siterc
 etc/bk2site/searchbase.html
 etc/bk2site/otherbase.html
 etc/bk2site/newbase.html
