@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	clanbomber
-PORTVERSION=	1.02a
-PORTREVISION=	1
+PORTVERSION=	1.05
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -25,6 +24,12 @@ CONFIGURE_ENV=	LIBS="${PTHREAD_LIBS} -L${LOCALBASE}/lib" \
 		CPPFLAGS="-I${LOCALBASE}/include"
 CFLAGS+=	-fpermissive
 
+.include <bsd.port.pre.mk>
+
+.if !defined(DISPLAY)
+IGNORE=	needs an X-display to build (binary is used to create resource files)
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/share|${PREFIX}/share|g' \
 		${WRKSRC}/clanbomber/Resources.cpp
@@ -32,4 +37,4 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local/share|${PREFIX}/share|g' \
 		${WRKSRC}/clanbomber/ClanBomber.cpp
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
