@@ -641,7 +641,6 @@ bind84		ports/dns/bind84
 bind9		ports/dns/bind9
 bind9-dlz	ports/dns/bind9-dlz
 bind9-sdb-mysql	ports/dns/bind9-sdb-mysql
-bind93		ports/dns/bind93
 binder		ports/x11-fm/binder
 bing		ports/net/bing
 binkd		ports/net/binkd
