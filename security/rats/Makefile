@@ -7,7 +7,7 @@
 
 PORTNAME=	rats
 PORTVERSION=	1.1
-CATEGORIES=    	devel security
+CATEGORIES=	security devel
 MASTER_SITES=	http://www.securesw.com/rats/
 
 MAINTAINER=	kris@FreeBSD.org

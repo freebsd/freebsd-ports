@@ -7,7 +7,7 @@
 
 PORTNAME=	pscan
 PORTVERSION=	1.3
-CATEGORIES=	security
+CATEGORIES=	security devel
 MASTER_SITES=	http://www.striker.ottawa.on.ca/~aland/pscan/
 DISTNAME=	${PORTNAME}
 
