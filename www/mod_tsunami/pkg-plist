@@ -3,7 +3,6 @@ libexec/apache/mod_tsunami.so
 @unexec %D/sbin/apxs -e -A -n tsunami %D/%F
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/Changelog
-%%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%/mod_tsunami_files/index.gif
 %%PORTDOCS%%%%DOCSDIR%%/mod_tsunami_files/home.gif
