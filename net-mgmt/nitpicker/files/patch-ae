@@ -1,0 +1,9 @@
+--- Makefile.orig	Fri May 23 10:48:47 2003
++++ Makefile	Tue Sep 23 10:02:57 2003
+@@ -18,6 +18,2 @@
+ 
+ install:
+-	@cd tools/dumpit; make install;
+-#	@cd tools/parse_flowfile; make install;
+-	@cd src; make install;
+-

@@ -1,5 +1,5 @@
---- src/Makefile.orig	Sat Aug 23 10:37:21 2003
-+++ src/Makefile	Sat Aug 23 10:38:52 2003
+--- src/Makefile.orig	Sat Jul  5 02:56:12 2003
++++ src/Makefile	Tue Sep 23 09:48:56 2003
 @@ -1,8 +1,8 @@
  TARGET = nitpicker 
  
@@ -11,3 +11,10 @@
 +CFLAGS   += $(INCLUDES) -pthread 
  PREFIX   = /usr/local/
  INCDIR= ${.CURDIR}/../include
+@@ -31,5 +31,5 @@
+ install:
+ 	@echo "Your Binaries will be installed into  $(PREFIX)/sbin"
+-	mkdirhier $(PREFIX)/sbin
++	mkdir -p $(PREFIX)/sbin
+ 	cp nitpicker $(PREFIX)/sbin
+ 
