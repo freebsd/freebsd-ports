@@ -1,0 +1,16 @@
+--- m	Sun Apr 18 14:05:30 2004
++++ Makefile.PL	Sun Apr 18 14:05:39 2004
+@@ -11,10 +11,10 @@
+ xml_spellcheck|y|spellcheck XML files skipping tags
+ QUERIES
+     my ($program, $default, $description) = split /\|/, $_;
+-    if (prompt("Do you want to install '$program' ($description)?", 
+-               $default) =~ /^y/) {
++#    if (prompt("Do you want to install '$program' ($description)?", 
++#               $default) =~ /^y/) {
+ 	push(@programs, $program);
+-    }
++#    }
+ }
+ 
+ WriteMakefile(
