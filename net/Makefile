@@ -267,6 +267,7 @@
     SUBDIR += p5-Socks
     SUBDIR += p5-Tie-NetAddr-IP
     SUBDIR += p5-URI
+    SUBDIR += p5-XPC
     SUBDIR += p5-perl-ldap
     SUBDIR += pathchar
     SUBDIR += pchar
