@@ -17,6 +17,7 @@ LIB_DEPENDS=	glib12.3:${PORTSDIR}/devel/glib12 \
 BUILD_DEPENDS=	xmms-config:${PORTSDIR}/audio/xmms
 RUN_DEPENDS=	xmms:${PORTSDIR}/audio/xmms
 
+USE_X_PREFIX=	yes
 USE_AUTOCONF=	yes
 USE_GMAKE=	yes
 
