@@ -119,10 +119,10 @@ PATCH_SITES+=	http://home.woolridge.ca/mutt/patches/
 # this should be done automagically by aclocal but ....
 # for now, this will have to do
 pre-build:
-	@${REINPLACE_CMD} -E -e "s/^(ACLOCAL = ).+/\1${ACLOCAL}/" \
-			-e "s/^(AUTOCONF = ).+/\1${AUTOCONF}/" \
-			-e "s/^(AUTOMAKE = ).+/\1${AUTOMAKE}/" \
-			-e "s/^(AUTOHEADER = ).+/\1${AUTOHEADER}/" \
+	${REINPLACE_CMD} -E -e "s|^(ACLOCAL = ).+|\1${ACLOCAL}|" \
+			-e "s|^(AUTOCONF = ).+|\1${AUTOCONF}|" \
+			-e "s|^(AUTOMAKE = ).+|\1${AUTOMAKE}|" \
+			-e "s|^(AUTOHEADER = ).+|\1${AUTOHEADER}|" \
 		${BUILD_WRKSRC}/Makefile
 
 .if !defined(PATCH_VERSION)
