@@ -1,7 +1,7 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4
 #
-#	$Id: bsd.port.mk,v 1.307 1999/03/09 11:27:34 asami Exp $
+#	$Id: bsd.port.mk,v 1.308 1999/03/29 07:07:59 asami Exp $
 #	$NetBSD: $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
@@ -608,7 +608,9 @@ RUN_DEPENDS+=	perl${PERL_VERSION}:${PORTSDIR}/lang/perl5
 .endif
 .endif
 
-.if defined(USE_XLIB)
+# Don't try to build XFree86 even if ALWAYS_BUILD_DEPENDS is defined --
+# it's just too big....
+.if defined(USE_XLIB) && !defined(ALWAYS_BUILD_DEPENDS)
 LIB_DEPENDS+=	X11.6:${PORTSDIR}/x11/XFree86
 .endif
 
@@ -842,7 +844,7 @@ MASTER_SITE_TEX_CTAN+=  \
 	ftp://ftp.dante.de/tex-archive/%SUBDIR%/
 
 MASTER_SITE_SUNSITE+=	\
-	ftp://sunsite.unc.edu/pub/Linux/%SUBDIR%/ \
+	ftp://metalab.unc.edu/pub/Linux/%SUBDIR%/ \
 	ftp://ftp.infomagic.com/pub/mirrors/linux/sunsite/%SUBDIR%/ \
 	ftp://ftp.funet.fi/pub/mirrors/sunsite.unc.edu/pub/Linux/%SUBDIR%/
 
@@ -1162,9 +1164,14 @@ IGNORE=	": You have an old file \(${file}\) that could cause problems for some p
 .endfor
 .endif
 
+.if ${OSVERSION} >= 300000
 # You need an upgrade kit or make world newer than this
 BSDPORTMKVERSION=	19990327
+.if exists(/var/db/port.mkversion)
+VERSIONFILE=	/var/db/port.mkversion
+.else
 VERSIONFILE=	${PKG_DBDIR}/.mkversion
+.endif
 .if exists(${VERSIONFILE})
 SYSTEMVERSION!=	cat ${VERSIONFILE}
 .else
@@ -1172,6 +1179,7 @@ SYSTEMVERSION=	0
 .endif
 .if ${BSDPORTMKVERSION} > ${SYSTEMVERSION}
 IGNORE=	": Your system is too old to use this bsd.port.mk.  You need a fresh make world or an upgrade kit.  Please go to http://www.freebsd.org/ports/ or a mirror site and follow the instructions"
+.endif
 .endif
 
 .if defined(ONLY_FOR_ARCHS)
@@ -1988,6 +1996,12 @@ DEPENDS_TMP+=	${BUILD_DEPENDS}
 DEPENDS_TMP+=	${RUN_DEPENDS}
 .endif
 
+.if defined(ALWAYS_BUILD_DEPENDS)
+_DEPEND_ALWAYS=	1
+.else
+_DEPEND_ALWAYS=	0
+.endif
+
 _DEPENDS_USE:	.USE
 .if defined(DEPENDS_TMP)
 .if !defined(NO_DEPENDS)
@@ -2003,7 +2017,12 @@ _DEPENDS_USE:	.USE
 		if ${EXPR} "$$prog" : \\/ >/dev/null; then \
 			if [ -e "$$prog" ]; then \
 				${ECHO_MSG} "===>   ${PKGNAME} depends on file: $$prog - found"; \
-				notfound=0; \
+				if [ ${_DEPEND_ALWAYS} = 1 ]; then \
+					${ECHO_MSG} "       (but building it anyway)"; \
+					notfound=1; \
+				else \
+					notfound=0; \
+				fi; \
 			else \
 				${ECHO_MSG} "===>   ${PKGNAME} depends on file: $$prog - not found"; \
 				notfound=1; \
@@ -2011,7 +2030,12 @@ _DEPENDS_USE:	.USE
 		else \
 			if which "$$prog" > /dev/null 2>&1 ; then \
 				${ECHO_MSG} "===>   ${PKGNAME} depends on executable: $$prog - found"; \
-				notfound=0; \
+				if [ ${_DEPEND_ALWAYS} = 1 ]; then \
+					${ECHO_MSG} "       (but building it anyway)"; \
+					notfound=1; \
+				else \
+					notfound=0; \
+				fi; \
 			else \
 				${ECHO_MSG} "===>   ${PKGNAME} depends on executable: $$prog - not found"; \
 				notfound=1; \
@@ -2050,8 +2074,17 @@ lib-depends:
 		fi; \
 		if ${LDCONFIG} -r | ${GREP} -qwF -e "-l$$lib"; then \
 			${ECHO_MSG} "===>   ${PKGNAME} depends on shared library: $$lib - found"; \
+			if [ ${_DEPEND_ALWAYS} = 1 ]; then \
+				${ECHO_MSG} "       (but building it anyway)"; \
+				notfound=1; \
+			else \
+				notfound=0; \
+			fi; \
 		else \
 			${ECHO_MSG} "===>   ${PKGNAME} depends on shared library: $$lib - not found"; \
+			notfound=1; \
+		fi; \
+		if [ $$notfound != 0 ]; then \
 			${ECHO_MSG} "===>    Verifying $$target for $$lib in $$dir"; \
 			if [ ! -d "$$dir" ]; then \
 				${ECHO_MSG} "     >> No directory for $$lib.  Skipping.."; \
