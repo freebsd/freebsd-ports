@@ -3,7 +3,7 @@
 # Date created:				28 June 1998
 # Whom:					Matthew Hunt <mph@FreeBSD.org>
 #
-# $Id: Makefile,v 1.3 1998/07/02 00:41:19 asami Exp $
+# $Id: Makefile,v 1.4 1998/07/05 04:15:05 mph Exp $
 #
 
 DISTNAME=		xzip170
@@ -13,6 +13,8 @@ MASTER_SITES=   	ftp://ftp.gmd.de/if-archive/infocom/interpreters/zip/
 EXTRACT_SUFX=		.tar.Z
 
 MAINTAINER=		mph@freebsd.org
+
+BROKEN=			fetch
 
 WRKSRC=			${WRKDIR}/xzip
 ALL_TARGET=
