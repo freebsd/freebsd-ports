@@ -7912,6 +7912,7 @@ wmmail		ports/mail/wmmail
 wmmaiload	ports/mail/wmmaiload
 wmmand		ports/misc/wmmand
 wmmatrix	ports/x11/wmmatrix
+wmmemfree	ports/sysutils/wmmemfree
 wmmemload	ports/sysutils/wmmemload
 wmmemmon	ports/sysutils/wmmemmon
 wmmenu		ports/x11/wmmenu
