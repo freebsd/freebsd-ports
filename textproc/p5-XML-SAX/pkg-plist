@@ -16,6 +16,7 @@ lib/perl5/site_perl/%%PERL_VER%%/XML/SAX/PurePerl/Reader/Stream.pm
 lib/perl5/site_perl/%%PERL_VER%%/XML/SAX/PurePerl/Reader/String.pm
 lib/perl5/site_perl/%%PERL_VER%%/XML/SAX/PurePerl/Reader/URI.pm
 lib/perl5/site_perl/%%PERL_VER%%/XML/SAX/PurePerl/XMLDecl.pm
+lib/perl5/site_perl/%%PERL_VER%%/XML/SAX/placeholder.pl
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/XML/SAX/PurePerl/Reader
 @unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/XML/SAX/PurePerl 2>/dev/null || true
 @unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/XML/SAX 2>/dev/null || true
