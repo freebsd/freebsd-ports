@@ -1,0 +1,26 @@
+--- makefile.orig	Mon Mar  7 22:10:46 1994
++++ makefile	Fri Feb 19 08:58:24 1999
+@@ -1,6 +1,7 @@
+ CC	= gcc 
+-CFLAGS	= -Wall -O
+-BINDIR	= /usr/local/bin/
++CFLAGS+=	-I${PREFIX}/include
++LDFLAGS+=	-L${PREFIX}/lib -lX11
++BINDIR=		${PREFIX}/bin/
+ 
+ 
+ all	: xchadance 
+@@ -9,11 +10,11 @@
+ 	rm *.o *~ *.bak core.* a.out
+ 
+ install	:
+-	cp xchadance $(BINDIR)
++	install -s xchadance $(BINDIR)
+ 
+ 
+ xchadance	: xchadance.o chadata.o
+-	$(CC) xchadance.o chadata.o -o xchadance -lX11
++	$(CC) xchadance.o chadata.o -o xchadance ${LDFLAGS}
+ 
+ 
+ xchadance.o	: xchadance.c xchadance.h 
