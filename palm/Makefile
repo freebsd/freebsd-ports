@@ -27,8 +27,6 @@
     SUBDIR += pose
     SUBDIR += ppmtoTbmp
     SUBDIR += prc-tools
-    SUBDIR += prc-tools-binutils
-    SUBDIR += prc-tools-gcc
     SUBDIR += romeo
     SUBDIR += sitescooper
     SUBDIR += syncal
