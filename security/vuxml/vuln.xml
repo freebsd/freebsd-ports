@@ -30,8 +30,39 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="ccd698df-8e20-11d8-90d1-0020ed76ef5a">
+    <topic>racoon remote denial of service vulnerability
+      (ISAKMP header length field)</topic>
+    <affects>
+      <package>
+	<name>racoon</name>
+	<range><lt>20040408a</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>When racoon receives an ISAKMP header, it will attempt to
+          allocate sufficient memory for the entire ISAKMP message
+          according to the header's length field.  If an attacker
+          crafts an ISAKMP header with a ridiculously large value
+          in the length field, racoon may exceed operating system
+          resource limits and be terminated, resulting in a denial of
+          service.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0403</cvename>
+      <url>http://www.kame.net/dev/cvsweb2.cgi/kame/kame/kame/racoon/isakmp.c.diff?r1=1.180&amp;r2=1.181</url>
+    </references>
+    <dates>
+      <discovery>2004-03-31</discovery>
+      <entry>2004-04-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="40fcf20f-8891-11d8-90d1-0020ed76ef5a">
-    <topic>racoon remote denial of service vulnerability</topic>
+    <topic>racoon remote denial of service vulnerability (IKE Generic
+      Payload Header)</topic>
     <affects>
       <package>
 	<name>racoon</name>
@@ -52,7 +83,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <dates>
       <discovery>2003-12-03</discovery>
       <entry>2004-04-07</entry>
-      <modified>2004-04-13</modified>
+      <modified>2004-04-14</modified>
     </dates>
   </vuln>
 
@@ -552,6 +583,10 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	<name>tcpdump</name>
 	<range><lt>3.8.3</lt></range>
       </package>
+      <package>
+	<name>racoon</name>
+	<range><lt>20040408a</lt></range>
+      </package>
       <system>
 	<name>FreeBSD</name>
 	<range><ge>0</ge></range>
@@ -565,6 +600,9 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <p>These vulnerabilities may be used by an attacker to crash a
 	  running `tcpdump' process.  They can only be triggered if
 	  the `-v' command line option is being used.</p>
+	<p>NOTE: the racoon ISAKMP/IKE daemon incorporates the ISAKMP
+	  protocol handler from tcpdump, and so is also affected by
+	  this issue.</p>
       </body>
     </description>
     <references>
@@ -576,6 +614,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <dates>
       <discovery>2004-03-12</discovery>
       <entry>2004-03-31</entry>
+      <modified>2004-04-14</modified>
     </dates>
   </vuln>
 
