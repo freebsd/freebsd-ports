@@ -1,7 +1,5 @@
 bin/libxode-config
-include/expat.h
 include/libxode.h
 lib/libxode.a
-lib/libxode.la
 lib/libxode.so
 lib/libxode.so.2
