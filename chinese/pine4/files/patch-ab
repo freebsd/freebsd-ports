@@ -1,0 +1,15 @@
+*** pico/os_unix.c.orig	Wed Jun 12 15:47:21 1996
+--- pico/os_unix.c	Fri Jun 14 00:15:30 1996
+***************
+*** 1343,1347 ****
+      extern int  sys_nerr;
+  
+!     return((err >= 0 && err < sys_nerr) ? sys_errlist[err] : NULL);
+  }
+  
+--- 1343,1347 ----
+      extern int  sys_nerr;
+  
+!     return(((err >= 0) && (err < sys_nerr)) ? (char*)sys_errlist[err] : NULL);
+  }
+  

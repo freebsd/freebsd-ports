@@ -1,0 +1,69 @@
+*** pine/send.c.orig	Tue Feb 25 00:57:38 1997
+--- pine/send.c	Sun Jul 20 02:50:31 1997
+***************
+*** 5352,5364 ****
+  		body->subtype = cpystr("octet-stream");
+  	    }
+  
+  	    /*
+  	     * Apply maximal encoding regardless of previous
+  	     * setting.  This segment's either not text, or is 
+  	     * unlikely to be readable with > 30% of the
+  	     * text encoded anyway, so we might as well save space...
+  	     */
+! 	    new_encoding = ENCBINARY;   /*  > 30% 8 bit chars */
+  	}
+      }
+  
+--- 5352,5367 ----
+  		body->subtype = cpystr("octet-stream");
+  	    }
+  
++ 	    if(body->type == TYPETEXT)
++ 	      new_encoding = ENC8BIT;
++ 	    else
+  	    /*
+  	     * Apply maximal encoding regardless of previous
+  	     * setting.  This segment's either not text, or is 
+  	     * unlikely to be readable with > 30% of the
+  	     * text encoded anyway, so we might as well save space...
+  	     */
+! 	      new_encoding = ENCBINARY;   /*  > 30% 8 bit chars */
+  	}
+      }
+  
+***************
+*** 6113,6119 ****
+  
+  	switch (body->encoding) {	/* all else needs filtering */
+  	  case ENC8BIT:			/* encode 8BIT into QUOTED-PRINTABLE */
+! 	    gf_link_filter(gf_8bit_qp);
+  	    break;
+  
+  	  case ENCBINARY:		/* encode binary into BASE64 */
+--- 6116,6123 ----
+  
+  	switch (body->encoding) {	/* all else needs filtering */
+  	  case ENC8BIT:			/* encode 8BIT into QUOTED-PRINTABLE */
+! 	    if(F_OFF(F_ENABLE_8BIT, ps_global))
+! 		gf_link_filter(gf_8bit_qp);
+  	    break;
+  
+  	  case ENCBINARY:		/* encode binary into BASE64 */
+***************
+*** 6172,6178 ****
+        sprintf (*dst += strlen (*dst), "Content-Transfer-Encoding: %s\015\012",
+  	       body_encodings[(body->encoding == ENCBINARY)
+  				? ENCBASE64
+! 				: (body->encoding == ENC8BIT)
+  				    ? ENCQUOTEDPRINTABLE
+  				    : (body->encoding <= ENCMAX)
+  					? body->encoding : ENCOTHER]);
+--- 6176,6182 ----
+        sprintf (*dst += strlen (*dst), "Content-Transfer-Encoding: %s\015\012",
+  	       body_encodings[(body->encoding == ENCBINARY)
+  				? ENCBASE64
+! 				: (body->encoding == ENC8BIT && F_OFF(F_ENABLE_8BIT, ps_global))
+  				    ? ENCQUOTEDPRINTABLE
+  				    : (body->encoding <= ENCMAX)
+  					? body->encoding : ENCOTHER]);

@@ -1,0 +1,14 @@
+#! /bin/sh
+# ---------- pgpdecode ---------
+# 21.03.96 Roland Rosenfeld <roland@spinnaker.rhein.de>
+#
+# Sun Mar 24 12:01:21 MET 1996 Andreas Klemm <andreas@knobel.gun.de>
+# The tmp files in the original version were world readable for
+# the short time of unpacking, setting suitable umask prevents this
+#
+umask 077
+trap "rm -f /tmp/pgpdecode.???.$$; exit" 0 1 2 15
+(pgp -f > /tmp/pgpdecode.txt.$$) 2>&1 | tee /tmp/pgpdecode.pgp.$$ 1>&2
+sed -e 's/^/| /' /tmp/pgpdecode.pgp.$$
+echo " "
+cat /tmp/pgpdecode.txt.$$
