@@ -1,0 +1,42 @@
+*** playmidi.h-dist.bak	Sat Feb 24 17:00:00 1996
+--- playmidi.h-dist	Fri Nov 15 08:47:23 1996
+***************
+*** 35,44 ****
+  #define MAXTRKS		128
+  /* where to find fm patch libraries */
+  #define SEQUENCER_DEV	"/dev/sequencer"
+! #define O3MELODIC	"/etc/std.o3"
+! #define O3DRUMS		"/etc/drums.o3"
+! #define SBMELODIC	"/etc/std.sb"
+! #define SBDRUMS		"/etc/drums.sb"
+  #define ISPERC(x)	(perc & (1 << x))
+  #define ISGUS(x)	(play_gus & (1 << x))
+  #define ISFM(x)		(play_fm & (1 << x))
+--- 35,47 ----
+  #define MAXTRKS		128
+  /* where to find fm patch libraries */
+  #define SEQUENCER_DEV	"/dev/sequencer"
+! #ifndef PREFIX
+! #define PREFIX "/usr/local"
+! #endif
+! #define O3MELODIC       PREFIX "/lib/midi/std.o3"
+! #define O3DRUMS         PREFIX "/lib/midi/drums.o3"
+! #define SBMELODIC       PREFIX "/lib/midi/std.sb"
+! #define SBDRUMS         PREFIX "/lib/midi/drums.sb"
+  #define ISPERC(x)	(perc & (1 << x))
+  #define ISGUS(x)	(play_gus & (1 << x))
+  #define ISFM(x)		(play_fm & (1 << x))
+***************
+*** 49,55 ****
+--- 52,62 ----
+  #include <stdio.h>
+  #include <string.h>
+  #include <stdlib.h>
++ #ifdef __FreeBSD__
++ #include <machine/soundcard.h>
++ #else
+  #include <sys/soundcard.h>
++ #endif
+  #include <sys/ioctl.h>
+  
+  struct chanstate {

@@ -1,0 +1,19 @@
+*** Configure.bak	Sat Feb 24 17:00:00 1996
+--- Configure	Fri Nov 15 08:47:23 1996
+***************
+*** 8,14 ****
+  mididevno=-1
+  play=PLAY_MIDI
+  gus1=/dos/ultrasnd/midi
+! gus2=/usr/local/lib/Plib
+  ##########################################################
+  ### YOU MUST HAVE THE VOXWARE SOUND DRIVER INSTALLED   ###
+  ### FOR THIS SCRIPT TO FUNCTION PROPERLY. /dev/sndstat ###
+--- 8,14 ----
+  mididevno=-1
+  play=PLAY_MIDI
+  gus1=/dos/ultrasnd/midi
+! gus2=${PREFIX}/lib/Plib
+  ##########################################################
+  ### YOU MUST HAVE THE VOXWARE SOUND DRIVER INSTALLED   ###
+  ### FOR THIS SCRIPT TO FUNCTION PROPERLY. /dev/sndstat ###
