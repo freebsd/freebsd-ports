@@ -1,3 +1,5 @@
+include/mozlber.h
+include/mozldap.h
 mozilla/directory/etc/ldapfilter.conf
 mozilla/directory/etc/ldapsearchprefs.conf
 mozilla/directory/etc/ldapfriendly
