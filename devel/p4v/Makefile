@@ -64,6 +64,12 @@ P4V_IMGS=	p4v_file_add.png p4v_file_add_other.png p4v_file_delete.png \
 		p4v_file_txt.png p4v_file_ws.png p4v_filter.png \
 		p4v_merge_screenshot.png p4v_diff_screenshot.png
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500000
+LIB_DEPENDS+=	c.4:${PORTSDIR}/misc/compat4x
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/p4v ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
@@ -79,4 +85,4 @@ do-install:
 post-install:
 	${SED} -e 's!%%PREFIX%%!${PREFIX}!' ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -15,6 +15,10 @@ DIST_SUBDIR=	${PORTNAME}
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 500000
+LIB_DEPENDS+=	c.4:${PORTSDIR}/misc/compat4x
+.endif
+
 .if ${OSVERSION} >= 440000
 EXTRACT_SUFX=	.freebsd44
 .else

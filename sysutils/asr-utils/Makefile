@@ -23,6 +23,12 @@ NO_WRKSUBDIR=	yes
 USE_XLIB=	yes
 BINS=		dptcom dpteng dptscom dptsig raidutil dptmgr
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500000
+LIB_DEPENDS+=	c.4:${PORTSDIR}/misc/compat4x
+.endif
+
 do-build:
 	${SED} -e 's,%%PREFIX%%,${PREFIX},g' \
 	    ${FILESDIR}/dptmgr.sh.in > ${WRKDIR}/dptmgr.sh
@@ -41,4 +47,4 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/libXm.so.1 ${X11BASE}/lib
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
