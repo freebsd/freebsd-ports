@@ -1,1 +1,4 @@
-Simple Class for OLE document interface.
+The OLE::Storage_Lite perl module allows you to read and write an
+OLE structured file.
+
+WWW: http://search.cpan.org/search?dist=OLE-Storage_Lite
