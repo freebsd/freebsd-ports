@@ -10,7 +10,7 @@ PORTVERSION=	1.3.0
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.ossp.org/pkg/lib/mm/
 
-MAINTAINER=	rse@engelschall.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Shared memory allocation library for pre-forked process models
 
 INSTALLS_SHLIB=	yes

@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.ossp.org/pkg/tool/eperl/ \
 		${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=Parse
 
-MAINTAINER=	rse@engelschall.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Embedded Perl 5 Language
 
 # User-controlled variables list
