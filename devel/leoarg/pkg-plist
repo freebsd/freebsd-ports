@@ -1,0 +1,43 @@
+include/LeoArg.hh
+lib/libLeoArg.a
+lib/libLeoArg.la
+lib/libLeoArg.so
+lib/libLeoArg.so.2
+share/doc/LeoArg/example/Makefile
+share/doc/LeoArg/example/demo.sh
+share/doc/LeoArg/example/leoargdemo
+share/doc/LeoArg/example/leoargmain.cpp
+share/doc/LeoArg/html/LeoArg_cpp-source.html
+share/doc/LeoArg/html/LeoArg_cpp.html
+share/doc/LeoArg/html/LeoArg_hh-source.html
+share/doc/LeoArg/html/LeoArg_hh.html
+share/doc/LeoArg/html/StringUtils_cpp-source.html
+share/doc/LeoArg/html/StringUtils_cpp.html
+share/doc/LeoArg/html/StringUtils_hh-source.html
+share/doc/LeoArg/html/StringUtils_hh.html
+share/doc/LeoArg/html/annotated.html
+share/doc/LeoArg/html/class_LeoArg-members.html
+share/doc/LeoArg/html/class_LeoArg.html
+share/doc/LeoArg/html/class_LeoArg__InvalidOption-members.html
+share/doc/LeoArg/html/class_LeoArg__InvalidOption.html
+share/doc/LeoArg/html/class_LeoArg__InvalidSetting-members.html
+share/doc/LeoArg/html/class_LeoArg__InvalidSetting.html
+share/doc/LeoArg/html/class_LeoArg__Option-members.html
+share/doc/LeoArg/html/class_LeoArg__Option.html
+share/doc/LeoArg/html/class_LeoArg__Setting-members.html
+share/doc/LeoArg/html/class_LeoArg__Setting.html
+share/doc/LeoArg/html/doxygen.css
+share/doc/LeoArg/html/doxygen.gif
+share/doc/LeoArg/html/examples.html
+share/doc/LeoArg/html/files.html
+share/doc/LeoArg/html/functions.html
+share/doc/LeoArg/html/globals.html
+share/doc/LeoArg/html/index.html
+share/doc/LeoArg/html/leoargmain_cpp-example.html
+share/doc/LeoArg/html/namespace_StringUtils.html
+share/doc/LeoArg/html/namespacemembers.html
+share/doc/LeoArg/html/namespaces.html
+share/doc/LeoArg/html/null.gif
+@dirrm share/doc/LeoArg/example
+@dirrm share/doc/LeoArg/html
+@dirrm share/doc/LeoArg
