@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gorua
-PORTVERSION=	0.15.p
+PORTVERSION=	0.15
 CATEGORIES=	japanese
 MASTER_SITES=	http://www.unixuser.org/~haruyama/software/goRua/
 DISTNAME=	goRua-${PORTVERSION:S/.p/-pre/}
@@ -26,6 +26,7 @@ CONFIG_FILES=	board_info bookmarks config gtkrc
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/goRua.rb ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/goRua_bookmarks_translator.rb ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/goRua_cache_clean.rb ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/new_2ch_bbsmenu.rb ${PREFIX}/bin
 
