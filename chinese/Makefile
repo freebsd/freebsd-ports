@@ -58,6 +58,7 @@
     SUBDIR += tocps
     SUBDIR += ttfm
     SUBDIR += ve
+    SUBDIR += vflib
     SUBDIR += wangttf
     SUBDIR += xa+cv
     SUBDIR += xcin
