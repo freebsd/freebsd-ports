@@ -1,0 +1,19 @@
+The Free Software Foundation's "sh" utilities, including "basename",
+"chroot", "date", "dirname", "echo", "env", "expr", "false",
+"groups", "hostid", "hostname", "id", "logname", "nice", "nohup",
+"pathchk", "pinky", "printenv", "printf", "pwd", "sleep", "stty",
+"su", "tee", "test", "true", "tty", "uname", "users", "who",
+"whoami", and "yes".
+
+Similar utilities to most of these exist in the FreeBSD base system,
+but many of the GNU versions have added functionality that is
+useful.
+
+Note that this port will install these utilities with a `g' prefix,
+for example gdate, gexpr, or gtest, but the texinfo documentation
+will refer to them without the `g' prefix.
+
+GNU su does not support a wheel group.  This port installs it
+without the suid bit, unless you define WITH_SUID while building.
+
+Cyrille Lefevre <clefevre@citeweb.net>

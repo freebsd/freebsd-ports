@@ -123,6 +123,7 @@
     SUBDIR += screen
     SUBDIR += scriptkit
     SUBDIR += seizedesktop
+    SUBDIR += sh-utils
     SUBDIR += sls
     SUBDIR += sma
     SUBDIR += snowflake
