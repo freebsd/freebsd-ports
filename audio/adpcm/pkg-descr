@@ -1,0 +1,6 @@
+This is a library containing functions to convert between 16 bit linear PCM
+audio and 4 bit ADPCM. It uses the Intel/DVI ADPCM encoding which is
+recommended by the IMA Digital Audio Technical Working Group.
+
+- Andrew
+andrew@ugh.net.au

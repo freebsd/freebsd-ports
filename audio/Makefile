@@ -3,6 +3,7 @@
 
     SUBDIR += Maaate
     SUBDIR += ac3dec
+    SUBDIR += adpcm
     SUBDIR += afsp
     SUBDIR += agbrowser
     SUBDIR += agsatellite

@@ -1,0 +1,40 @@
+--- Makefile.orig	Wed Oct 17 16:47:29 2001
++++ Makefile	Wed Oct 17 20:47:22 2001
+@@ -1,14 +1,14 @@
+ #
+ # Makefile for adpcm and test programs
+ # -------------------
+-CFLAGS=-O
++CFLAGS?=-O
+ # May need this on a sun:
+ # CFLAGS=-O -I/usr/demo/SOUND
+ 
+ ALLSRC=README adpcm.2 Makefile adpcm.h libst.h adpcm.c timing.c rawcaudio.c \
+ 	rawdaudio.c suncaudio.c sgicaudio.c sgidaudio.c hello.adpcm.uu
+ 
+-all: adpcm.o rawcaudio rawdaudio timing
++all: libadpcm.a libadpcm.so.1
+ 
+ sgi: all sgicaudio sgidaudio
+ 
+@@ -39,3 +39,20 @@
+ 
+ adpcm.shar: $(ALLSRC)
+ 	shar $(ALLSRC) > adpcm.shar
++
++.SUFFIXES: .So .c
++
++.c.So:
++	${CC} -fpic -DPIC ${CFLAGS} -c ${.IMPSRC} -o ${.TARGET}
++	${LD} -o ${.TARGET}.tmp -x -r ${.TARGET}
++	mv ${.TARGET}.tmp ${.TARGET}
++
++libadpcm.a: adpcm.o
++	-rm -f ${.TARGET}
++	${AR} cq ${.TARGET} `lorder ${.ALLSRC} | tsort -q`
++	${RANLIB} ${.TARGET}
++
++libadpcm.so.1: adpcm.So
++	-rm -f ${.TARGET} ${.TARGET:R}
++	${CC} -shared -Wl,-x -o ${.TARGET} -Wl,-soname,${.TARGET} \
++		`lorder ${.ALLSRC} | tsort -q`
