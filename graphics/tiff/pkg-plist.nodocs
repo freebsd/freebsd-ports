@@ -1,16 +1,11 @@
-lib/libtiff.a
-lib/libtiff.so.4
-lib/libtiff.so
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %D/lib
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
-bin/fax2tiff
 bin/fax2ps
+bin/fax2tiff
 bin/gif2tiff
 bin/pal2rgb
 bin/ppm2tiff
+bin/ras2tiff
 bin/rgb2ycbcr
 bin/thumbnail
-bin/ras2tiff
 bin/tiff2bw
 bin/tiff2ps
 bin/tiffcmp
@@ -22,3 +17,8 @@ bin/tiffmedian
 bin/tiffsplit
 include/tiff.h
 include/tiffio.h
+lib/libtiff.a
+lib/libtiff.so
+lib/libtiff.so.4
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
