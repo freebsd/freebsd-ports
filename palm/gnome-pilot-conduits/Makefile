@@ -21,9 +21,9 @@ USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_GNOMECTRL=	yes
 USE_LIBTOOL=	yes
-CONFIGURE_ARGS=	--with-pisock=${LOCALBASE}/pilot
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/pilot/include" \
-		LIBS="-L${LOCALBASE}/lib -L${LOCALBASE}/pilot/lib"
+CONFIGURE_ARGS=	--with-pisock=${LOCALBASE}
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LIBS="-L${LOCALBASE}/lib"
 
 pre-patch:
 	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \

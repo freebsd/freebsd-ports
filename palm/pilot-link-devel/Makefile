@@ -7,9 +7,9 @@
 
 PORTNAME=	pilot-link
 PORTVERSION=	0.9.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	palm comms tk83
-MASTER_SITES=	http://www.gnu-designs.com/pilot-link/source/
+MASTER_SITES=	http://www.pilot-link.org/source/
 DISTNAME=	${PORTNAME}.${PORTVERSION}
 
 MAINTAINER=	dima@freebsd.org
@@ -28,6 +28,7 @@ MAN1=		dlpsh.1 ietf2datebook.1 install-datebook.1 \
 MAN7=		pilot-link.7
 
 CFLAGS+=	-I${LOCALBASE}/include
+CONFIGURE_ARGS=	--with-perl5=${PERL5} --with-libiconv=${LOCALBASE}
 
 post-patch:
 	# FreeBSD installs -lgiconv instead of -liconv. Patch configure.
@@ -47,8 +48,3 @@ post-install:
 	@${CHMOD} 750 ${PREFIX}/etc/rc.d/pilot-link.sh
 
 .include <bsd.port.mk>
-
-# Leave this here -- we need to override the default CONFIGURE_ARGS.
-CONFIGURE_ARGS=	--with-perl5=${PERL5} --with-libiconv=${LOCALBASE} \
-		--prefix=${PREFIX}/pilot ${CONFIGURE_TARGET} \
-		--mandir=${PREFIX}/man

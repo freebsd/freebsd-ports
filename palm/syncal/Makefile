@@ -18,19 +18,13 @@ RUN_DEPENDS=	ical:${PORTSDIR}/deskutils/ical
 
 NO_PACKAGE=	patches installed ical port
 
-PREFIX=		${LOCALBASE}/pilot
-
 MAN1=		syncal.1
 
 post-patch:
-	${MV} ${WRKSRC}/Makefile ${WRKSRC}/Makefile.patched
-	${SED} -e "s:@@PREFIX@@:${PREFIX}:g" ${WRKSRC}/Makefile.patched > ${WRKSRC}/Makefile
-	${MV} ${WRKSRC}/user.tcl ${WRKSRC}/user.tcl.patched
-	${SED} -e "s:@@PREFIX@@:${PREFIX}:g" ${WRKSRC}/user.tcl.patched > ${WRKSRC}/user.tcl
-	${MV} ${WRKSRC}/ical.patch ${WRKSRC}/ical.patch.patched
-	${SED} -e "s:@@PREFIX@@:${PREFIX}:g" ${WRKSRC}/ical.patch.patched > ${WRKSRC}/ical.patch
+.for file in Makefile user.tcl ical.patch
+	${PERL} -pi -e "s|\@\@PREFIX\@\@|${LOCALBASE}|g" ${WRKSRC}/${file}
+.endfor
 
-#
 # ical V2.2 needs a little patch, don't know how to do better
 # perhaps the patch should be included int ical port by default
 # Please have a look at this experts :-)
