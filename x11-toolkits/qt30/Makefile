@@ -1,4 +1,4 @@
-# New ports collection makefile for:   qt2
+# New ports collection makefile for:   qt201
 # Version required:	2.0.1
 # Date created:		17 Jul 1999
 # Whom:			imura@cs.titech.ac.jp
