@@ -3,7 +3,7 @@
 # Date created:		December 10, 1996
 # Whom:			1wardd@airmail.net
 #
-# $Id: Makefile,v 1.32 1999/06/29 02:50:48 cpiazza Exp $
+# $Id: Makefile,v 1.33 1999/07/14 03:58:27 cpiazza Exp $
 #
 
 DISTNAME=	lesstif-0.88.9
@@ -19,8 +19,8 @@ MANUAL_PACKAGE_BUILD=	do not want to install during interactive build
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=  yes
-CONFIGURE_ARGS+=  --enable-static --enable-shared --with-xdnd \
-	--enable-production --disable-debug
+CONFIGURE_ARGS+=--enable-static --enable-shared --with-xdnd \
+		--enable-production --disable-debug
 
 MAN1 =	lesstif.1 mwm.1 xmbind.1
 

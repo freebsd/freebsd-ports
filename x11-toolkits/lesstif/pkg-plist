@@ -1,39 +1,19 @@
-LessTif/Motif1.2/lib/libXm.so.1
-LessTif/Motif1.2/lib/libXm.so
-LessTif/Motif1.2/lib/libXm.la
-LessTif/Motif1.2/lib/libXm.a
-LessTif/Motif1.2/lib/libMrm.so.1
-LessTif/Motif1.2/lib/libMrm.so
-LessTif/Motif1.2/lib/libMrm.la
-LessTif/Motif1.2/lib/libMrm.a
-LessTif/Motif2.0/lib/libXm.so.2
-LessTif/Motif2.0/lib/libXm.so
-LessTif/Motif2.0/lib/libXm.la
-LessTif/Motif2.0/lib/libXm.a
-LessTif/Motif2.0/lib/libMrm.so.2
-LessTif/Motif2.0/lib/libMrm.so
-LessTif/Motif2.0/lib/libMrm.la
-LessTif/Motif2.0/lib/libMrm.a
-lib/X11/app-defaults/Mwm
-lib/X11/mwm/system.mwmrc
-lib/X11/mwm/alt.map
-lib/X11/mwm/README
-lib/lesstif/Imake.tmpl
-lib/lesstif/Motif.rules
-lib/lesstif/Motif.tmpl
-lib/libXm.so.1
-lib/libXm.la
-lib/libXm.so
-lib/libXm.a
-lib/libMrm.so.1
-lib/libMrm.la
-lib/libMrm.so
-lib/libMrm.a
-lib/libXm.so.2
-lib/libMrm.so.2
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
-LessTif/Motif1.2/include/Xm/Xm.h
+LessTif/AUTHORS
+LessTif/BUG-REPORTING
+LessTif/COPYING
+LessTif/COPYING.LIB
+LessTif/CREDITS
+LessTif/FAQ
+LessTif/INSTALL
+LessTif/KNOWN_BUGS
+LessTif/NEWS
+LessTif/README
+LessTif/RELEASE-POLICY
+LessTif/TODO
+LessTif/Motif1.2/include/Mrm/MrmAppl.h
+LessTif/Motif1.2/include/Mrm/MrmDecls.h
+LessTif/Motif1.2/include/Mrm/MrmPrivate.h
+LessTif/Motif1.2/include/Mrm/MrmPublic.h
 LessTif/Motif1.2/include/Xm/ArrowB.h
 LessTif/Motif1.2/include/Xm/ArrowBG.h
 LessTif/Motif1.2/include/Xm/ArrowBGP.h
@@ -108,8 +88,8 @@ LessTif/Motif1.2/include/Xm/PushBP.h
 LessTif/Motif1.2/include/Xm/RCUtilsP.h
 LessTif/Motif1.2/include/Xm/RepType.h
 LessTif/Motif1.2/include/Xm/RowColumn.h
-LessTif/Motif1.2/include/Xm/SashP.h
 LessTif/Motif1.2/include/Xm/RowColumnP.h
+LessTif/Motif1.2/include/Xm/SashP.h
 LessTif/Motif1.2/include/Xm/Scale.h
 LessTif/Motif1.2/include/Xm/ScaleP.h
 LessTif/Motif1.2/include/Xm/Screen.h
@@ -148,28 +128,45 @@ LessTif/Motif1.2/include/Xm/VendorSP.h
 LessTif/Motif1.2/include/Xm/VirtKeys.h
 LessTif/Motif1.2/include/Xm/VirtKeysP.h
 LessTif/Motif1.2/include/Xm/WorldP.h
+LessTif/Motif1.2/include/Xm/Xm.h
 LessTif/Motif1.2/include/Xm/XmAll.h
 LessTif/Motif1.2/include/Xm/XmP.h
 LessTif/Motif1.2/include/Xm/XmStrDefs.h
 LessTif/Motif1.2/include/Xm/XmosP.h
-LessTif/Motif1.2/include/Mrm/MrmAppl.h
-LessTif/Motif1.2/include/Mrm/MrmDecls.h
-LessTif/Motif1.2/include/Mrm/MrmPrivate.h
-LessTif/Motif1.2/include/Mrm/MrmPublic.h
-LessTif/Motif2.0/include/Xm/Xm.h
+LessTif/Motif1.2/lib/libMrm.a
+LessTif/Motif1.2/lib/libMrm.la
+LessTif/Motif1.2/lib/libMrm.so
+LessTif/Motif1.2/lib/libMrm.so.1
+LessTif/Motif1.2/lib/libXm.a
+LessTif/Motif1.2/lib/libXm.la
+LessTif/Motif1.2/lib/libXm.so
+LessTif/Motif1.2/lib/libXm.so.1
+LessTif/Motif2.0/include/Mrm/MrmAppl.h
+LessTif/Motif2.0/include/Mrm/MrmDecls.h
+LessTif/Motif2.0/include/Mrm/MrmPrivate.h
+LessTif/Motif2.0/include/Mrm/MrmPublic.h
+LessTif/Motif2.0/include/Xm/AccTextT.h
+LessTif/Motif2.0/include/Xm/ActivatableT.h
 LessTif/Motif2.0/include/Xm/ArrowB.h
 LessTif/Motif2.0/include/Xm/ArrowBG.h
+LessTif/Motif2.0/include/Xm/ArrowBGP.h
+LessTif/Motif2.0/include/Xm/ArrowBP.h
 LessTif/Motif2.0/include/Xm/AtomMgr.h
 LessTif/Motif2.0/include/Xm/BaseClassP.h
 LessTif/Motif2.0/include/Xm/BulletinB.h
 LessTif/Motif2.0/include/Xm/BulletinBP.h
+LessTif/Motif2.0/include/Xm/CSText.h
 LessTif/Motif2.0/include/Xm/CacheP.h
 LessTif/Motif2.0/include/Xm/CascadeB.h
 LessTif/Motif2.0/include/Xm/CascadeBG.h
 LessTif/Motif2.0/include/Xm/CascadeBGP.h
 LessTif/Motif2.0/include/Xm/CascadeBP.h
+LessTif/Motif2.0/include/Xm/ComboBox.h
+LessTif/Motif2.0/include/Xm/ComboBoxP.h
 LessTif/Motif2.0/include/Xm/Command.h
 LessTif/Motif2.0/include/Xm/CommandP.h
+LessTif/Motif2.0/include/Xm/Container.h
+LessTif/Motif2.0/include/Xm/ContainerT.h
 LessTif/Motif2.0/include/Xm/CutPaste.h
 LessTif/Motif2.0/include/Xm/CutPasteP.h
 LessTif/Motif2.0/include/Xm/DesktopP.h
@@ -185,7 +182,9 @@ LessTif/Motif2.0/include/Xm/DragIcon.h
 LessTif/Motif2.0/include/Xm/DragIconP.h
 LessTif/Motif2.0/include/Xm/DragOverS.h
 LessTif/Motif2.0/include/Xm/DragOverSP.h
+LessTif/Motif2.0/include/Xm/DrawP.h
 LessTif/Motif2.0/include/Xm/DrawingA.h
+LessTif/Motif2.0/include/Xm/DrawingAP.h
 LessTif/Motif2.0/include/Xm/DrawnB.h
 LessTif/Motif2.0/include/Xm/DrawnBP.h
 LessTif/Motif2.0/include/Xm/DropSMgr.h
@@ -199,20 +198,36 @@ LessTif/Motif2.0/include/Xm/Form.h
 LessTif/Motif2.0/include/Xm/FormP.h
 LessTif/Motif2.0/include/Xm/Frame.h
 LessTif/Motif2.0/include/Xm/FrameP.h
+LessTif/Motif2.0/include/Xm/Gadget.h
+LessTif/Motif2.0/include/Xm/GadgetP.h
+LessTif/Motif2.0/include/Xm/GrabShell.h
+LessTif/Motif2.0/include/Xm/GrabShellP.h
+LessTif/Motif2.0/include/Xm/IconG.h
+LessTif/Motif2.0/include/Xm/IconGP.h
 LessTif/Motif2.0/include/Xm/Label.h
 LessTif/Motif2.0/include/Xm/LabelG.h
 LessTif/Motif2.0/include/Xm/LabelGP.h
 LessTif/Motif2.0/include/Xm/LabelP.h
+LessTif/Motif2.0/include/Xm/LayoutT.h
 LessTif/Motif2.0/include/Xm/List.h
 LessTif/Motif2.0/include/Xm/ListP.h
 LessTif/Motif2.0/include/Xm/MainW.h
 LessTif/Motif2.0/include/Xm/MainWP.h
+LessTif/Motif2.0/include/Xm/Manager.h
+LessTif/Motif2.0/include/Xm/ManagerP.h
 LessTif/Motif2.0/include/Xm/MenuShell.h
+LessTif/Motif2.0/include/Xm/MenuShellP.h
 LessTif/Motif2.0/include/Xm/MenuUtilP.h
 LessTif/Motif2.0/include/Xm/MessageB.h
 LessTif/Motif2.0/include/Xm/MessageBP.h
 LessTif/Motif2.0/include/Xm/MwmUtil.h
+LessTif/Motif2.0/include/Xm/NavigatorT.h
+LessTif/Motif2.0/include/Xm/Notebook.h
+LessTif/Motif2.0/include/Xm/NotebookP.h
 LessTif/Motif2.0/include/Xm/PanedW.h
+LessTif/Motif2.0/include/Xm/PanedWP.h
+LessTif/Motif2.0/include/Xm/Primitive.h
+LessTif/Motif2.0/include/Xm/PrimitiveP.h
 LessTif/Motif2.0/include/Xm/Protocols.h
 LessTif/Motif2.0/include/Xm/ProtocolsP.h
 LessTif/Motif2.0/include/Xm/PushB.h
@@ -225,11 +240,14 @@ LessTif/Motif2.0/include/Xm/RowColumn.h
 LessTif/Motif2.0/include/Xm/RowColumnP.h
 LessTif/Motif2.0/include/Xm/SashP.h
 LessTif/Motif2.0/include/Xm/Scale.h
+LessTif/Motif2.0/include/Xm/ScaleP.h
 LessTif/Motif2.0/include/Xm/Screen.h
 LessTif/Motif2.0/include/Xm/ScreenP.h
 LessTif/Motif2.0/include/Xm/ScrollBar.h
 LessTif/Motif2.0/include/Xm/ScrollBarP.h
+LessTif/Motif2.0/include/Xm/ScrollFrameT.h
 LessTif/Motif2.0/include/Xm/ScrolledW.h
+LessTif/Motif2.0/include/Xm/ScrolledWP.h
 LessTif/Motif2.0/include/Xm/SelectioB.h
 LessTif/Motif2.0/include/Xm/SelectioBP.h
 LessTif/Motif2.0/include/Xm/SeparatoG.h
@@ -237,6 +255,8 @@ LessTif/Motif2.0/include/Xm/SeparatoGP.h
 LessTif/Motif2.0/include/Xm/Separator.h
 LessTif/Motif2.0/include/Xm/SeparatorP.h
 LessTif/Motif2.0/include/Xm/ShellEP.h
+LessTif/Motif2.0/include/Xm/SpinB.h
+LessTif/Motif2.0/include/Xm/SpinBP.h
 LessTif/Motif2.0/include/Xm/TearOffBP.h
 LessTif/Motif2.0/include/Xm/TearOffP.h
 LessTif/Motif2.0/include/Xm/Text.h
@@ -250,6 +270,12 @@ LessTif/Motif2.0/include/Xm/TextSelP.h
 LessTif/Motif2.0/include/Xm/TextStrSoP.h
 LessTif/Motif2.0/include/Xm/ToggleB.h
 LessTif/Motif2.0/include/Xm/ToggleBG.h
+LessTif/Motif2.0/include/Xm/ToggleBGP.h
+LessTif/Motif2.0/include/Xm/ToggleBP.h
+LessTif/Motif2.0/include/Xm/TraitP.h
+LessTif/Motif2.0/include/Xm/Transfer.h
+LessTif/Motif2.0/include/Xm/TransferP.h
+LessTif/Motif2.0/include/Xm/TransltnsP.h
 LessTif/Motif2.0/include/Xm/VaSimpleP.h
 LessTif/Motif2.0/include/Xm/VendorS.h
 LessTif/Motif2.0/include/Xm/VendorSEP.h
@@ -257,111 +283,79 @@ LessTif/Motif2.0/include/Xm/VendorSP.h
 LessTif/Motif2.0/include/Xm/VirtKeys.h
 LessTif/Motif2.0/include/Xm/VirtKeysP.h
 LessTif/Motif2.0/include/Xm/WorldP.h
-LessTif/Motif2.0/include/Xm/XmosP.h
-LessTif/Motif2.0/include/Xm/AccTextT.h
-LessTif/Motif2.0/include/Xm/ActivatableT.h
-LessTif/Motif2.0/include/Xm/ArrowBGP.h
-LessTif/Motif2.0/include/Xm/ArrowBP.h
-LessTif/Motif2.0/include/Xm/CSText.h
-LessTif/Motif2.0/include/Xm/ComboBox.h
-LessTif/Motif2.0/include/Xm/ComboBoxP.h
-LessTif/Motif2.0/include/Xm/Container.h
-LessTif/Motif2.0/include/Xm/ContainerT.h
-LessTif/Motif2.0/include/Xm/DrawP.h
-LessTif/Motif2.0/include/Xm/DrawingAP.h
-LessTif/Motif2.0/include/Xm/Gadget.h
-LessTif/Motif2.0/include/Xm/GadgetP.h
-LessTif/Motif2.0/include/Xm/GrabShell.h
-LessTif/Motif2.0/include/Xm/GrabShellP.h
-LessTif/Motif2.0/include/Xm/IconG.h
-LessTif/Motif2.0/include/Xm/IconGP.h
-LessTif/Motif2.0/include/Xm/LayoutT.h
-LessTif/Motif2.0/include/Xm/Manager.h
-LessTif/Motif2.0/include/Xm/ManagerP.h
-LessTif/Motif2.0/include/Xm/MenuShellP.h
-LessTif/Motif2.0/include/Xm/NavigatorT.h
-LessTif/Motif2.0/include/Xm/Notebook.h
-LessTif/Motif2.0/include/Xm/NotebookP.h
-LessTif/Motif2.0/include/Xm/PanedWP.h
-LessTif/Motif2.0/include/Xm/Primitive.h
-LessTif/Motif2.0/include/Xm/PrimitiveP.h
-LessTif/Motif2.0/include/Xm/ScaleP.h
-LessTif/Motif2.0/include/Xm/ScrolledWP.h
-LessTif/Motif2.0/include/Xm/ScrollFrameT.h
-LessTif/Motif2.0/include/Xm/SpinB.h
-LessTif/Motif2.0/include/Xm/SpinBP.h
-LessTif/Motif2.0/include/Xm/ToggleBGP.h
-LessTif/Motif2.0/include/Xm/ToggleBP.h
-LessTif/Motif2.0/include/Xm/TraitP.h
-LessTif/Motif2.0/include/Xm/Transfer.h
-LessTif/Motif2.0/include/Xm/TransferP.h
-LessTif/Motif2.0/include/Xm/TransltnsP.h
+LessTif/Motif2.0/include/Xm/Xm.h
+LessTif/Motif2.0/include/Xm/XmAll.h
 LessTif/Motif2.0/include/Xm/XmP.h
 LessTif/Motif2.0/include/Xm/XmStrDefs.h
-LessTif/Motif2.0/include/Xm/XmAll.h
-LessTif/Motif2.0/include/Mrm/MrmAppl.h
-LessTif/Motif2.0/include/Mrm/MrmDecls.h
-LessTif/Motif2.0/include/Mrm/MrmPrivate.h
-LessTif/Motif2.0/include/Mrm/MrmPublic.h
-LessTif/FAQ
-LessTif/doc/Lessdox
-bin/mxmkmf
-bin/mwm
-bin/xmbind
-bin/uil
-share/doc/LessTif/images/hungry.gif
-share/doc/LessTif/images/lesstif-realsmall.gif
-share/doc/LessTif/images/lesstif-small.gif
-share/doc/LessTif/images/lesstif.gif
-share/doc/LessTif/images/ltsunlogo.gif
-share/doc/LessTif/images/lesstif.jpg
-share/doc/LessTif/COPYING.LIB.html
-share/doc/LessTif/FAQ.html
-share/doc/LessTif/apps.html
-share/doc/LessTif/bug-reporting.html
-share/doc/LessTif/bugs.html
-share/doc/LessTif/button.html
-share/doc/LessTif/cdrom.html
-share/doc/LessTif/core.html
-share/doc/LessTif/current.html
-share/doc/LessTif/cvs.html
-share/doc/LessTif/download.html
-share/doc/LessTif/index.html
-share/doc/LessTif/links.html
-share/doc/LessTif/lists.html
-share/doc/LessTif/mirrors.html
-share/doc/LessTif/platforms.html
-share/doc/LessTif/release-policy.html
-share/doc/LessTif/test_policy.html
-share/doc/LessTif/test_summary.html
-share/doc/LessTif/testers.html
-share/doc/LessTif/versions.html
-share/doc/LessTif/web_button.html
-share/doc/LessTif/INSTALL.html
-share/doc/LessTif/AUTHORS
-share/doc/LessTif/BUG-REPORTING
-share/doc/LessTif/CREDITS
-share/doc/LessTif/INSTALL
-share/doc/LessTif/KNOWN_BUGS
-share/doc/LessTif/NEWS
-share/doc/LessTif/README
-share/doc/LessTif/RELEASE-POLICY
-share/doc/LessTif/TODO
-@dirrm LessTif/Motif1.2/include/Xm
+LessTif/Motif2.0/include/Xm/XmosP.h
+LessTif/Motif2.0/lib/libMrm.a
+LessTif/Motif2.0/lib/libMrm.la
+LessTif/Motif2.0/lib/libMrm.so
+LessTif/Motif2.0/lib/libMrm.so.2
+LessTif/Motif2.0/lib/libXm.a
+LessTif/Motif2.0/lib/libXm.la
+LessTif/Motif2.0/lib/libXm.so
+LessTif/Motif2.0/lib/libXm.so.2
+LessTif/doc/COPYING.LIB.html
+LessTif/doc/FAQ.html
+LessTif/doc/INSTALL.html
+LessTif/doc/apps.html
+LessTif/doc/bug-reporting.html
+LessTif/doc/bugs.html
+LessTif/doc/button.html
+LessTif/doc/cdrom.html
+LessTif/doc/core.html
+LessTif/doc/current.html
+LessTif/doc/cvs.html
+LessTif/doc/download.html
+LessTif/doc/index.html
+LessTif/doc/links.html
+LessTif/doc/lists.html
+LessTif/doc/mirrors.html
+LessTif/doc/platforms.html
+LessTif/doc/release-policy.html
+LessTif/doc/test_policy.html
+LessTif/doc/test_summary.html
+LessTif/doc/testers.html
+LessTif/doc/versions.html
+LessTif/doc/web_button.html
+LessTif/doc/images/hungry.gif
+LessTif/doc/images/lesstif-realsmall.gif
+LessTif/doc/images/lesstif-small.gif
+LessTif/doc/images/lesstif.gif
+LessTif/doc/images/ltsunlogo.gif
+LessTif/doc/imgs/lesstif.jpg
+LessTif/doc/imgs/ltsunlogo.gif
 @dirrm LessTif/Motif1.2/include/Mrm
-@dirrm LessTif/Motif1.2/lib
-@dirrm LessTif/Motif2.0/include/Xm
-@dirrm LessTif/Motif2.0/include/Mrm
-@dirrm LessTif/Motif2.0/lib
-@dirrm LessTif/Motif2.0/include
+@dirrm LessTif/Motif1.2/include/Xm
 @dirrm LessTif/Motif1.2/include
-@dirrm LessTif/Motif2.0
+@dirrm LessTif/Motif1.2/lib
 @dirrm LessTif/Motif1.2
+@dirrm LessTif/Motif2.0/include/Mrm
+@dirrm LessTif/Motif2.0/include/Xm
+@dirrm LessTif/Motif2.0/include
+@dirrm LessTif/Motif2.0/lib
+@dirrm LessTif/Motif2.0
+@dirrm LessTif/doc/html
+LessTif/doc/Lessdox
+@dirrm LessTif/doc/images
+@dirrm LessTif/doc/imgs
 @dirrm LessTif/doc
 @dirrm LessTif
-@dirrm lib/X11/mwm
-@dirrm lib/lesstif
-@dirrm share/doc/LessTif/images
-@dirrm share/doc/LessTif
-include/Xm
 include/Mrm
+include/Xm
+lib/libXm.a
+lib/libXm.so
+lib/libXm.so.1
+lib/libXm.la
+lib/libMrm.a
+lib/libMrm.so
+lib/libMrm.so.1
+lib/libMrm.la
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
+lib/X11/app-defaults/Mwm
+lib/X11/mwm/README
+lib/X11/mwm/alt.map
+lib/X11/mwm/system.mwmrc
+@dirrm lib/X11/mwm
