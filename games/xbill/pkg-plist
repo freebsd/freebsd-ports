@@ -1,6 +1,4 @@
 bin/xbill
-share/xbill/scores
-share/xbill/README
 share/xbill/pixmaps/about.xpm
 share/xbill/pixmaps/apple.xpm
 share/xbill/pixmaps/billA_0.xpm
@@ -24,10 +22,10 @@ share/xbill/pixmaps/billD_4.xpm
 share/xbill/pixmaps/billL_0.xpm
 share/xbill/pixmaps/billL_1.xpm
 share/xbill/pixmaps/billL_2.xpm
+share/xbill/pixmaps/bsd.xpm
 share/xbill/pixmaps/billR_0.xpm
 share/xbill/pixmaps/billR_1.xpm
 share/xbill/pixmaps/billR_2.xpm
-share/xbill/pixmaps/bsd.xpm
 share/xbill/pixmaps/bsdcpu.xpm
 share/xbill/pixmaps/bucket.xpm
 share/xbill/pixmaps/hurd.xpm
@@ -39,6 +37,8 @@ share/xbill/pixmaps/next.xpm
 share/xbill/pixmaps/nextcpu.xpm
 share/xbill/pixmaps/os2.xpm
 share/xbill/pixmaps/os2cpu.xpm
+share/xbill/pixmaps/palm.xpm
+share/xbill/pixmaps/palmcpu.xpm
 share/xbill/pixmaps/redhat.xpm
 share/xbill/pixmaps/sgi.xpm
 share/xbill/pixmaps/sgicpu.xpm
@@ -59,9 +59,13 @@ share/xbill/bitmaps/hurd.xbm
 share/xbill/bitmaps/linux.xbm
 share/xbill/bitmaps/next.xbm
 share/xbill/bitmaps/os2.xbm
+share/xbill/bitmaps/palm.xbm
 share/xbill/bitmaps/redhat.xbm
 share/xbill/bitmaps/sgi.xbm
 share/xbill/bitmaps/sun.xbm
-@dirrm share/xbill/bitmaps
+share/xbill/scores/xbill/scores
+@dirrm share/xbill/scores/xbill
+@dirrm share/xbill/scores
 @dirrm share/xbill/pixmaps
+@dirrm share/xbill/bitmaps
 @dirrm share/xbill

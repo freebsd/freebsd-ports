@@ -7,24 +7,22 @@
 #
 
 PORTNAME=	xbill
-PORTVERSION=	2.0
+PORTVERSION=	2.1
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_XCONTRIB}
-MASTER_SITE_SUBDIR=	games
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=	http://www.xbill.org/download/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Save your computers from the evil clutches of Bill
 
-USE_IMAKE=	yes
-USE_XPM=	yes
-MAN1=		xbill.1
+SCORES_DIR?=	${DATADIR}/scores
 
-post-install:
-	${CP} ${WRKSRC}/README ${PREFIX}/share/xbill
-	${CHOWN} root:games ${PREFIX}/bin/xbill
-	${CHMOD} 2755 ${PREFIX}/bin/xbill
-	${CHOWN} root:games ${PREFIX}/share/xbill/scores
-	${CHMOD} 664 ${PREFIX}/share/xbill/scores
+USE_X_PREFIX=	yes
+HAS_CONFIGURE=	yes
+USE_XPM=	yes
+USE_GTK=	yes
+CONFIGURE_ENV+=	PREFIX=${PREFIX}
+CONFIGURE_ARGS+=--localstatedir=${SCORES_DIR}
+
+MAN6=		xbill.6
 
 .include <bsd.port.mk>
