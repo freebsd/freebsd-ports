@@ -172,6 +172,7 @@ aalib		ports/graphics/aalib
 abacus		ports/deskutils/abacus
 abc2mtex	ports/print/abc2mtex
 abcache		ports/www/abcache
+abcde		ports/audio/abcde
 abck		ports/sysutils/abck
 abclock		ports/x11-clocks/abclock
 abook		ports/mail/abook
