@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- examples/Makefile.in.orig	Sat Jul 19 12:03:17 2003
++++ examples/Makefile.in	Sat Jul 19 12:04:25 2003
+@@ -10,7 +10,7 @@
+ 
+ INSTALL = @INSTALL@
+ 
+-IDIR = @prefix@/erlgtk-$(VSN)
++IDIR = @prefix@/lib/erlang/lib/erlgtk-$(VSN)
+ 
+ 
+ MODULES = \

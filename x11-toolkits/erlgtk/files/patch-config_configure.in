@@ -1,0 +1,17 @@
+
+$FreeBSD$
+
+--- config/configure.in.orig	Thu May  2 08:42:15 2002
++++ config/configure.in	Sat Jul 19 12:19:25 2003
+@@ -69,9 +69,10 @@
+ 
+ GTK_VERSION=`$GTK_CONFIG --version | awk -F. '{ print $1*65536+$2*256+$3 }'`
+ GTK_CFLAGS=`$GTK_CONFIG --cflags`
++GDK_PIXBUF_CFLAGS=`$GDK_PIXBUF_CONFIG --cflags`
+ GTK_LIBS=`$GTK_CONFIG --libs`
+ 
+-GTK_CFLAGS="-DGTK_VERSION=$GTK_VERSION $GTK_CFLAGS $GTK_XCFLAGS"
++GTK_CFLAGS="-DGTK_VERSION=$GTK_VERSION $GTK_CFLAGS $GDK_PIXBUF_CFLAGS $GTK_XCFLAGS"
+ 
+ 
+ if test "x$GNOME" != "xno"; then

@@ -1,0 +1,9 @@
+erlgtk is a GTK+ 1.2 binding for Erlang/OTP.
+
+Support for GTK+ 2.x and GNOME is included in
+the binding, but is not enabled in this port
+due to simplicity and stability concerns.  It
+may be included in this port at some future
+date.  Watch this space.
+
+WWW: http://erlgtk.sourceforge.net/

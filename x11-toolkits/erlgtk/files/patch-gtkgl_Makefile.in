@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- gtkgl/Makefile.in.orig	Sat Jul 19 12:03:17 2003
++++ gtkgl/Makefile.in	Sat Jul 19 12:04:07 2003
+@@ -10,7 +10,7 @@
+ 
+ MODULES = gdk_gl gtk_gl_area gl glu
+ 
+-IDIR        = @prefix@/erlgtk-$(VSN)
++IDIR        = @prefix@/lib/erlang/lib/erlgtk-$(VSN)
+ X           =
+ O           = .o
+ SO          = .so
