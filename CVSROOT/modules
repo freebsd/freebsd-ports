@@ -722,6 +722,7 @@ bogofilter-qdbm	ports/mail/bogofilter-qdbm
 bogofilter-tdb	ports/mail/bogofilter-tdb
 bogosort	ports/misc/bogosort
 boiling-egg	ports/editors/boiling-egg
+boinc-client	ports/net/boinc-client
 bomb		ports/games/bomb
 bomberclone	ports/games/bomberclone
 bomberinstinct	ports/games/bomberinstinct
