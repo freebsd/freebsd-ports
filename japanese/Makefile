@@ -44,6 +44,9 @@
     SUBDIR += epwutil
     SUBDIR += escpf
     SUBDIR += esecanna
+    SUBDIR += esecanna-module-vje25
+    SUBDIR += esecanna-module-vje30
+    SUBDIR += esecanna-module-wnn6
     SUBDIR += eterm
     SUBDIR += ewipe
     SUBDIR += exmh2
