@@ -242,7 +242,6 @@
     SUBDIR += treecc
     SUBDIR += visualworks
     SUBDIR += wamcc
-    SUBDIR += wxbasic
     SUBDIR += xsb
     SUBDIR += yabasic
     SUBDIR += yap
