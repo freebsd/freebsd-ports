@@ -8,7 +8,7 @@
 PORTNAME=	guilib
 PORTVERSION=	1.1.0
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.devolution.com/~slouken/SDL/projects/GUIlib/src/
+MASTER_SITES=	http://www.libsdl.org/projects/GUIlib/src/
 DISTNAME=	GUIlib-${PORTVERSION}
 
 MAINTAINER=	sobomax@FreeBSD.org
