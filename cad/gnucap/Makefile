@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gnucap
-PORTVERSION=	0.31
+PORTVERSION=	0.33
 CATEGORIES=	cad
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,18 +15,18 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Gnu Circuit Analysis Package
 
-BROKEN=		"Does not build"
-
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
+HAS_CONFIGURE=	yes
 MAKE_ENV=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
 
-CFLAGS+=	-DNEEDS_COPY_N
+CFLAGS+=	-DNEEDS_IS_INF -DNEEDS_IS_NAN
 
 post-patch:
-.for file in src/Make2.g++ src/Make.aux modelgen/Make.aux
-	@${REINPLACE_CMD} -e "s|g\+\+|\$$\{CXX\}|g" \
-		-e "s|-O2|\$$\{CXXFLAGS\}|g" ${WRKSRC}/${file}
+.for file in src/Make2.g++ src/Make.aux modelgen/Make2.g++ modelgen/Make.aux
+	@${REINPLACE_CMD} -e "s|-DHAS_READLINE||g ; \
+		 s|g\+\+|\$${CXX}|g ; \
+		 s|-O2|\$${CXXFLAGS}|g" ${WRKSRC}/${file}
 .endfor
 
 do-install:
