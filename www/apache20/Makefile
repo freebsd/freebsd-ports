@@ -75,7 +75,9 @@ WITH_MPM?=	prefork # or worker, perchild, threadpool
 
 WITH_HTTP_PORT?=	80
 
-.if !defined(WITH_IPV6_V6ONLY)
+.if defined(WITHOUT_IPV6)
+CONFIGURE_ARGS+=	--disable-ipv6
+.elif !defined(WITH_IPV6_V6ONLY)
 CONFIGURE_ARGS+=	--enable-v4-mapped
 .endif
 
