@@ -33,7 +33,9 @@ DOCS=		FAQ.html MANUAL.html MANUAL_lynx.html README \
 SED_CMD=	-e "s,%%PREFIX%%,${PREFIX},g" \
 		-e "s,%%LOCALBASE%%,${LOCALBASE},g"
 
-.if defined(USE_INET6)
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 400014
 SED_CMD+=	-e "s,undef INET6,define INET6,g"
 .endif
 
@@ -84,4 +86,4 @@ post-install:
 	@${INSTALL_MAN} ${WRKSRC}/doc-jp/w3m.1 ${PREFIX}/man/ja/man1
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
