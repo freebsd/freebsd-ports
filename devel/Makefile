@@ -1,6 +1,7 @@
-# $Id: Makefile,v 1.19 1996/03/25 08:09:24 asami Exp $
+# $Id: Makefile,v 1.20 1996/04/12 08:25:01 asami Exp $
 #
 
+    SUBDIR += SWIG
     SUBDIR += autoconf
     SUBDIR += bcc
     SUBDIR += bison
