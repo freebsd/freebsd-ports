@@ -24,6 +24,9 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 post-extract:
 	@${RM} -f ${WRKSRC}/gdbm.h
 
+post-patch:
+	@${PERL} -pi -e 's,<malloc.h>,<stdlib.h>,' ${WRKSRC}/udb_ochunk.c
+
 #
 # Distribution does not include an install target.  So here it is.
 do-install:
