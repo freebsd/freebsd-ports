@@ -3,12 +3,12 @@
 # Date created:         4 Jan 1995
 # Whom:                 swallace
 #
-# $Id: Makefile,v 1.3 1995/04/11 00:20:30 asami Exp $
+# $Id: Makefile,v 1.4 1995/05/13 11:10:21 asami Exp $
 #
 
 DISTNAME=       xchomp-pl1
 CATEGORIES+=	games
-MASTER_SITES=	ftp://romulus.ucs.uoknor.edu/mirrors/X/R5contrib/
+MASTER_SITES=	ftp://ftp.uoknor.edu/mirrors/X/R5contrib/
 #
 # Original sources in multi-part compressed shell archive
 #
