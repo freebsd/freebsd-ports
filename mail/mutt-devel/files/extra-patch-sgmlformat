@@ -5,7 +5,7 @@
  	README NEWS TODO README.SECURITY README.SSL 
  
 -all:
-+all: muttrc.man try-html try-txt try-latin1
++all: muttrc.man try-html try-txt try-latin1 try-ps
  
  try-html: ../makedoc
  	rm -f *.html && $(MAKE) manual.html || cp $(srcdir)/manual*.html ./

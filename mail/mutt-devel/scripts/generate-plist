@@ -117,6 +117,7 @@ echo "share/doc/mutt/ChangeLog.nntp" >> $tmp_first
 fi
 if [ "$MUTT_SGML" = "yes" ]; then
 echo "share/doc/mutt/manual.latin1" >> $tmp_first
+echo "share/doc/mutt/manual.ps" >> $tmp_first
 fi
 
 if [ "$MUTT_HTML" = "yes" ]; then

@@ -1,6 +1,6 @@
 --- doc/Makefile.in.orig	Thu Jan 24 22:53:25 2002
-+++ doc/Makefile.in	Mon Jun 24 21:29:01 2002
-@@ -61,13 +61,19 @@
++++ doc/Makefile.in	Fri Aug 30 11:26:16 2002
+@@ -61,13 +61,23 @@
  topsrcdir_DOCFILES = COPYRIGHT GPL INSTALL ChangeLog	\
  	README NEWS TODO README.SECURITY README.SSL 
  
@@ -20,10 +20,14 @@
 +try-latin1: 
 +	$(MAKE) manual.latin1 || cp $(srcdir)/manual.latin1 ./
 +	touch $@
++
++try-ps: 
++	$(MAKE) manual.ps || cp $(srcdir)/manual.ps ./
++	touch $@
  
  install: all instdoc
  	$(top_srcdir)/mkinstalldirs $(DESTDIR)$(mandir)/man1
-@@ -87,10 +93,6 @@
+@@ -87,10 +97,6 @@
  		$(INSTALL) -m 644 $(top_srcdir)/$$f $(DESTDIR)$(docdir) ; \
  	done
  	$(INSTALL) -m 644 manual.txt $(DESTDIR)$(docdir) || true
@@ -34,7 +38,7 @@
  
  uninstall:
  	-rm -f $(DESTDIR)$(mandir)/man1/mutt.1
-@@ -100,14 +102,17 @@
+@@ -100,17 +106,20 @@
  
  check:
  manual.txt: manual.sgml
@@ -55,4 +59,8 @@
 +	sgmlfmt -f latin1 manual  || true
  
  manual.ps: manual.sgml
- 	sgml2latex --output=ps manual || true
+-	sgml2latex --output=ps manual || true
++	sgmlfmt -f ps manual  || true
+ 
+ clean: 
+ 	rm -f *~ *.html *.orig *.rej  stamp-doc-sgml stamp-doc-man *.ps
