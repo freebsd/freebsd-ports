@@ -6,18 +6,19 @@
 #
 
 PORTNAME=	bcwipe
-PORTVERSION=	1.2.3
+PORTVERSION=	1.5.3
 CATEGORIES=	security
 MASTER_SITES=	http://www.jetico.com/linux/ \
-		http://www.underworld.hu/~crow/distfiles/
+		http://www.bsdberlin.org/~dako/distfiles/security/
 DISTNAME=	BCWipe-${PORTVERSION:S/./-/g:S/-/./}
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	BCWipe securely erase data from magnetic and solid-state memory
+MAINTAINER=	dako@bsdberlin.org
+COMMENT=	BCWipe securely erases data from magnetic and solid-state memory
 
 NO_CDROM=	yes
 USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
+CFLAGS+=	-DOS_FreeBSD
 
 MAN1=		bcwipe.1
 PLIST_FILES=	bin/bcwipe
@@ -25,6 +26,8 @@ PLIST_FILES=	bin/bcwipe
 post-patch:
 	@${REINPLACE_CMD} -e "s,^CFLAGS,#CFLAGS,g" ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e "s,fprintf(stderr\,string),fprintf(stderr\,\"%s\"\,string),g" ${WRKSRC}/wipe.c
+	@${REINPLACE_CMD} -e "s,if (NULL == mktemp(result)),if (mkstemp(result) == -1),g" ${WRKSRC}/wipe.c
+	@${REINPLACE_CMD} -e "s,mktemp,mkstemp,g" ${WRKSRC}/wipe.c
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/bcwipe ${PREFIX}/bin
