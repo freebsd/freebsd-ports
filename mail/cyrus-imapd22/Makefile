@@ -101,15 +101,15 @@ OPTIONS+=	PASS8BITHACK	"Add pass8bit option (not recommended)"	off
 BROKEN=		"You need to select one BDB version.  Run 'make config' again!"
 .endif
 .if ${USE_BDB_VER} == 3
-WITH_BDB_3=	yes
+WITH_BDB_3=	true
 .elif ${USE_BDB_VER} == 4
-WITH_BDB_4=	yes
+WITH_BDB_4=	true
 .elif ${USE_BDB_VER} == 41
-WITH_BDB_41=	yes
+WITH_BDB_41=	true
 .elif ${USE_BDB_VER} == 42
-WITH_BDB_42=	yes
+WITH_BDB_42=	true
 .elif ${USE_BDB_VER} == 43
-WITH_BDB_43=	yes
+WITH_BDB_43=	true
 .endif
 .endif
 .if (defined(WITH_BDB_3) && defined(WITH_BDB_4)) || \
@@ -125,21 +125,27 @@ WITH_BDB_43=	yes
 BROKEN=		"Multiple BDB versions selected.  Run 'make config' again!"
 .endif
 .if defined(WITH_BDB_3)
-LIB_DEPENDS+=	db3.3:${PORTSDIR}/databases/db3
-CONFIGURE_ARGS+=--with-bdb-incdir=${LOCALBASE}/include/db3 --with-bdb=db3
+BDB_VER=	3
+BDB_MAJOR=	3
 .elif defined(WITH_BDB_4)
-LIB_DEPENDS+=	db4.0:${PORTSDIR}/databases/db4
-CONFIGURE_ARGS+=--with-bdb-incdir=${LOCALBASE}/include/db4 --with-bdb=db4
+BDB_VER=	4
+BDB_MAJOR=	0
 .elif defined(WITH_BDB_41)
-LIB_DEPENDS+=	db41.1:${PORTSDIR}/databases/db41
-CONFIGURE_ARGS+=--with-bdb-incdir=${LOCALBASE}/include/db41 --with-bdb=db41
+BDB_VER=	41
+BDB_MAJOR=	1
 .elif defined(WITH_BDB_42)
-LIB_DEPENDS+=	db-4.2.2:${PORTSDIR}/databases/db42
-CONFIGURE_ARGS+=--with-bdb-incdir=${LOCALBASE}/include/db42 --with-bdb=db-4.2
+BDB_VER=	42
+BDB_SUFFIX=	-4.2
+BDB_MAJOR=	2
 .elif defined(WITH_BDB_43)
-LIB_DEPENDS+=	db-4.3.0:${PORTSDIR}/databases/db43
-CONFIGURE_ARGS+=--with-bdb-incdir=${LOCALBASE}/include/db43 --with-bdb=db-4.3
+BDB_VER=	43
+BDB_SUFFIX=	-4.3
+BDB_MAJOR=	0
 .endif
+BDB_SUFFIX?=	${BDB_VER}
+LIB_DEPENDS=	db${BDB_SUFFIX}.${BDB_MAJOR}:${PORTSDIR}/databases/db${BDB_VER}
+CONFIGURE_ARGS+=--with-bdb-incdir=${LOCALBASE}/include/db${BDB_VER} \
+		--with-bdb=db${BDB_SUFFIX}
 
 .if defined(WITH_NNTP)
 CONFIGURE_ARGS+=--enable-nntp
