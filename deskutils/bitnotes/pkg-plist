@@ -1,0 +1,8 @@
+bin/BitNotes
+etc/CORBA/servers/BitNotes.gnorba
+share/gnome/applets/Utility/BitNotes.desktop
+share/gnome/pixmaps/BitNotes/About_BitNotes.png
+share/gnome/pixmaps/BitNotes/BitNotes_icon.png
+share/gnome/pixmaps/BitNotes/BitNotes_icon.xpm
+share/gnome/pixmaps/BitNotes/BitNotes_small_icon.png
+@dirrm share/gnome/pixmaps/BitNotes
