@@ -1,4 +1,4 @@
---- lib/Makefile.in.orig	Wed Jan  6 03:54:31 1999
+-- lib/Makefile.in.orig	Wed Jan  6 03:54:31 1999
 +++ lib/Makefile.in	Thu Jan  7 21:47:02 1999
 @@ -129,7 +129,7 @@
  LT_CURRENT = @LT_CURRENT@
@@ -72,45 +72,6 @@
  LT_VERSION_INFO = @LT_VERSION_INFO@
  MAKEINFO = @MAKEINFO@
  MKINSTALLDIRS = @MKINSTALLDIRS@
---- Makefile.in.orig	Tue Jan  5 21:53:28 1999
-+++ Makefile.in	Wed Jan 20 00:33:09 1999
-@@ -172,8 +172,7 @@
- 
- @BUILD_GNOME_SUPPORT_TRUE@support = support
- 
--SUBDIRS = po intl $(support) macros misc include sysdeps lib src \
--	  $(examples_SUBDIRS)
-+SUBDIRS = po intl macros misc include sysdeps lib src
- 
- include_HEADERS = glibtop.h
- 
-@@ -182,7 +181,7 @@
- 	libgtop-sysdeps.m4 ANNOUNCE ANNOUNCE-0.25 README.LATEST \
- 	libgtop-mirror.sh
- 
--confexecdir	= $(libdir)
-+confexecdir	= $(sysconfdir)
- confexec_DATA	= $(top_builddir)/libgtopConf.sh \
- 		  $(top_builddir)/libgtop-features.def
- 
-@@ -511,7 +510,7 @@
- $(top_srcdir)/aclocal.m4: libgtop-sysdeps.m4
- 
- libgtopConf.sh: libgtopConf.sh.in Makefile
--	sed -e 's#\@LIBGTOP_LIBDIR\@#$(libdir)#g' \
-+	sed -e 's#\@LIBGTOP_LIBDIR\@#$(confexecdir)#g' \
- 	  -e 's#\@LIBGTOP_INCLUDEDIR\@#$(includedir)#g' \
- 	  -e 's#\@LIBGTOP_EXTRA_LIBS\@#$(LIBGTOP_EXTRA_LIBS)#g' \
- 	  -e 's#\@LIBGTOP_LIBS\@#$(LIBGTOP_LIBS)#g' \
-@@ -539,7 +538,7 @@
- 	  && mv libgtopConf.tmp libgtopConf.sh
- 
- libgtop-config: libgtop-config.in Makefile
--	sed -e 's#\@LIBGTOP_LIBDIR\@#$(libdir)#g' \
-+	sed -e 's#\@LIBGTOP_LIBDIR\@#$(confexecdir)#g' \
- 	      < $(srcdir)/libgtop-config.in > libgtop-config.tmp \
- 	  && mv libgtop-config.tmp libgtop-config && \
- 		chmod 755 libgtop-config
 --- po/Makefile.in.in.orig	Wed Jan  6 03:50:44 1999
 +++ po/Makefile.in.in	Thu Jan  7 21:47:02 1999
 @@ -18,7 +18,7 @@
@@ -122,3 +83,41 @@
  localedir = $(datadir)/locale
  gnulocaledir = $(prefix)/share/locale
  gettextsrcdir = $(prefix)/share/gettext/po
+--- Makefile.in.orig	Wed Feb 17 18:34:29 1999
++++ Makefile.in	Fri Feb 19 01:58:32 1999
+@@ -174,7 +174,7 @@
+ 
+ @BUILD_GNOME_SUPPORT_TRUE@support = support
+ 
+-SUBDIRS = po intl $(support) macros misc include sysdeps lib src 	  $(examples_SUBDIRS)
++SUBDIRS = po intl macros misc include sysdeps lib src
+ 
+ 
+ include_HEADERS = glibtop.h
+@@ -182,7 +182,7 @@
+ EXTRA_DIST = autogen.sh libgtop.spec.in copyright.txt libgtopConf.sh.in 	LIBGTOP-VERSION features.def libgtop-config.in RELNOTES-0.25 	RELNOTES-1.0 libgtop-sysdeps.m4 ANNOUNCE-0.25 ANNOUNCE-1.0 	README NEWS.old libgtop-mirror.sh
+ 
+ 
+-confexecdir = $(libdir)
++confexecdir = $(sysconfdir)
+ confexec_DATA = $(top_builddir)/libgtopConf.sh 		  $(top_builddir)/libgtop-features.def
+ 
+ 
+@@ -550,7 +550,7 @@
+ $(top_srcdir)/aclocal.m4: libgtop-sysdeps.m4
+ 
+ libgtopConf.sh: libgtopConf.sh.in Makefile
+-	sed -e 's#\@LIBGTOP_LIBDIR\@#$(libdir)#g' \
++	sed -e 's#\@LIBGTOP_LIBDIR\@#$(confexecdir)#g' \
+ 	  -e 's#\@LIBGTOP_INCLUDEDIR\@#$(includedir)#g' \
+ 	  -e 's#\@LIBGTOP_DATADIR\@#$(datadir)#g' \
+ 	  -e 's#\@LIBGTOP_EXTRA_LIBS\@#$(LIBGTOP_EXTRA_LIBS)#g' \
+@@ -579,7 +579,7 @@
+ 	  && mv libgtopConf.tmp libgtopConf.sh
+ 
+ libgtop-config: libgtop-config.in Makefile
+-	sed -e 's#\@LIBGTOP_LIBDIR\@#$(libdir)#g' \
++	sed -e 's#\@LIBGTOP_LIBDIR\@#$(confexecdir)#g' \
+ 	      < $(srcdir)/libgtop-config.in > libgtop-config.tmp \
+ 	  && mv libgtop-config.tmp libgtop-config && \
+ 		chmod 755 libgtop-config
