@@ -1,15 +1,24 @@
---- configure.orig	Tue Apr 27 14:23:58 1999
-+++ configure	Thu May  6 10:48:39 1999
-@@ -3335,7 +3335,7 @@
+--- configure.orig	Tue May 18 18:00:05 1999
++++ configure	Sat May 22 15:59:03 1999
+@@ -2860,7 +2860,7 @@
+ fi
+ if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
+   echo "$ac_t""yes" 1>&6
+-  PTHREAD_LIB="-lc_r"
++  PTHREAD_LIB=""
+ else
+   echo "$ac_t""no" 1>&6
+ echo $ac_n "checking for pthread_create""... $ac_c" 1>&6
+@@ -3405,7 +3405,7 @@
    echo $ac_n "(cached) $ac_c" 1>&6
  else
    ac_save_LIBS="$LIBS"
 -LIBS="-lxml `gnome-config --libs xml` $LIBS"
 +LIBS="`xml-config --libs` $LIBS"
  cat > conftest.$ac_ext <<EOF
- #line 3341 "configure"
+ #line 3411 "configure"
  #include "confdefs.h"
-@@ -3366,7 +3366,7 @@
+@@ -3436,7 +3436,7 @@
    
  		
  		
@@ -18,7 +27,7 @@
  	
  else
    echo "$ac_t""no" 1>&6
-@@ -5583,15 +5583,15 @@
+@@ -5657,15 +5657,15 @@
  fi
  
          
@@ -28,19 +37,17 @@
          INSTOBJEXT=.mo
          DATADIRNAME=share
 -	INTLDEPS='$(top_builddir)/intl/libintl.a'
--	INTLLIBS=$INTLDEPS
--	LIBS=`echo $LIBS | sed -e 's/-lintl//'`
++	INTLDEPS='-lintl'
+ 	INTLLIBS=$INTLDEPS
+ 	LIBS=`echo $LIBS | sed -e 's/-lintl//'`
 -        nls_cv_header_intl=intl/libintl.h
 -        nls_cv_header_libgt=intl/libgettext.h
-+#	INTLDEPS='$(top_builddir)/intl/libintl.a'
-+#	INTLLIBS=$INTLDEPS
-+#	LIBS=`echo $LIBS | sed -e 's/-lintl//'`
 +#        nls_cv_header_intl=intl/libintl.h
 +#        nls_cv_header_libgt=intl/libgettext.h
        fi
  
              if test "$XGETTEXT" != ":"; then
-@@ -6174,7 +6174,7 @@
+@@ -6249,7 +6249,7 @@
  test -n "$AWK" && break
  done
  
@@ -49,7 +56,7 @@
  
  cat >> confdefs.h <<\EOF
  #define ENABLE_GNOME 1
-@@ -6198,8 +6198,8 @@
+@@ -6273,8 +6273,8 @@
    LIBGLADE_FULLDIST_TRUE='#'
    LIBGLADE_FULLDIST_FALSE=
  fi
@@ -59,4 +66,4 @@
 +XML_CFLAGS=`xml-config --cflags`
  
  
- 
+ if false; then
