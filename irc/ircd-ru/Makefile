@@ -61,6 +61,12 @@ CONFIGURE_ARGS+=--enable-dnsbl
 CONFIGURE_ARGS+=--enable-select
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+BROKEN=		"Does not compile on amd64"
+.endif
+
 pre-build:
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "NOTE:"
@@ -79,4 +85,4 @@ post-install:
 	@${CHOWN} -R ircd:ircd /var/run/ircd-ru
 	@cat ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

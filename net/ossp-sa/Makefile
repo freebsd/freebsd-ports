@@ -22,4 +22,10 @@ USE_LIBTOOL_VER=13
 INSTALLS_SHLIB=	yes
 MAN3+=		sa.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+BROKEN=		"Does not compile on amd64"
+.endif
+
+.include <bsd.port.post.mk>
