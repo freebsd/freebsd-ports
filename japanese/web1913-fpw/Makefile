@@ -8,7 +8,7 @@
 PORTNAME=	web1913-fpw
 PORTVERSION=	${WEB_VER}.${WEBFPW_VER}
 CATEGORIES=	japanese
-MASTER_SITES=	ftp://ftp.sra.co.jp/pub/misc/freepwing/fpwbooks/web1913/ \
+MASTER_SITES=	http://openlab.ring.gr.jp/edict/fpw/dist/web1913/ \
 		ftp://ftp.dict.org/pub/dict/pre/
 DISTNAME=	web1913-fpw${WEBFPW_VER}-src
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
@@ -37,8 +37,9 @@ post-patch:
 
 do-build:
 		cd ${WRKSRC}; \
-		fpwmake > /dev/null; \
+		fpwmake ;\
 		fpwmake catalogs
+#		fpwmake > /dev/null; \
 
 do-install:
 	${MKDIR} ${PREFIX}/share/dict/web-fpw/web/data

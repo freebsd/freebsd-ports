@@ -8,7 +8,7 @@
 PORTNAME=	vera-fpw
 PORTVERSION=	${VERA_VER}.${VERAFPW_VER}
 CATEGORIES=	japanese
-MASTER_SITES=	ftp://ftp.sra.co.jp/pub/misc/freepwing/fpwbooks/vera/ \
+MASTER_SITES=	http://openlab.ring.gr.jp/edict/fpw/dist/vera/ \
 		${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	vera
 DISTNAME=	vera-${VERA_VER}-fpw${VERAFPW_VER}-src
