@@ -18,6 +18,9 @@ DISTFILES=	OOo_${PORTVERSION}_source.tar.bz2 gpc231.tar.Z \
 		oo_moz1.0RC2_i386_FreeBSD-4.tar.gz
 EXTRACT_ONLY=	OOo_${PORTVERSION}_source.tar.bz2
 
+BROKEN=		"Compiles and installs ok. Gcc bugs and a system rtld-elf bug make it coredumping." \
+		"We have to fix that first. Please be patient.";
+
 MAINTAINER=	mbr@FreeBSD.org
 BUILD_DEPENDS=	${LOCALBASE}/lib/libstlport_gcc.so:${PORTSDIR}/devel/stlport
 BUILD_DEPENDS+= zip:${PORTSDIR}/archivers/zip
