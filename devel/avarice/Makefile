@@ -20,4 +20,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}cvs
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}
 
+USE_PERL5_BUILD=	yes
+
 .include <bsd.port.mk>
