@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	cvsstat
-PORTVERSION=	2.20
+PORTVERSION=	2.23
 CATEGORIES=	devel
 MASTER_SITES=	http://cvs.sslug.dk/cvs2html/utils/
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	# empty
+DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 EXTRACT_ONLY=	# empty
 
 MAINTAINER=	petef@FreeBSD.org
@@ -20,7 +21,7 @@ NO_BUILD=	yes
 
 do-extract:
 	@${MKDIR} ${WRKSRC}
-	@${CP} -p ${DISTDIR}/${DISTNAME} ${WRKSRC}
+	@${CP} -p ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME} ${WRKSRC}
 
 post-patch:
 	@${PERL} -pi -e 's,^#!/usr/bin/perl,#!${PERL},' ${WRKSRC}/cvsstat
