@@ -37,10 +37,12 @@ LIB_DEPENDS+=	gnugetopt:${PORTSDIR}/devel/libgnugetopt
 USE_GNOME=	yes
 GRAPHICS=	GNOME_GRAPHICS
 .elif defined(WITH_QT_GRAPHICS)
+PORTREVISION=	1
 PKGNAMESUFFIX=	-qt
-USE_QT_VER=	2
-MAKE_ENV+=	QTCPPFLAGS="${QTCPPFLAGS}" QTCFGLIBS="${QTCFGLIBS}" \
-		MOC="${MOC}" LIBQT="-l${QTNAME}"
+USE_QT_VER=	3
+MAKE_ENV+=	QTCPPFLAGS="${QTCPPFLAGS} ${PTHREAD_CFLAGS}" \
+		QTCFGLIBS="${QTCFGLIBS} ${PTHREAD_LIBS}" \
+		MOC="${MOC}" LIBQT="-lqt-mt"
 GRAPHICS=	QT_GRAPHICS
 .elif defined(WITH_TTY_GRAPHICS) || defined(WITHOUT_X11)
 PKGNAMESUFFIX=	-nox11
@@ -76,6 +78,9 @@ post-patch:
 .endfor
 	${REINPLACE_CMD} -e 's|<regex.h>|<gnuregex.h>|g' ${WRKSRC}/src/sounds.c
 	${REINPLACE_CMD} -e 's|<malloc.h>|<stdlib.h>|g' ${WRKSRC}/win/Qt/qt_win.cpp
+.if defined(WITHOUT_SHELL)
+	@${REINPLACE_CMD} -e 's|#define SHELL|/* #define SHELL|' ${WRKSRC}/include/unixconf.h
+.endif
 
 pre-configure:
 	@cd ${WRKSRC}/sys/unix; ${SH} setup.sh
