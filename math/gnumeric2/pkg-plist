@@ -18,6 +18,7 @@ etc/gconf/gconf.xml.defaults/apps/gnumeric/core/sort/default/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/gnumeric/core/sort/dialog/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/gnumeric/core/workbook/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/gnumeric/core/xml/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/gnumeric/cut-and-paste/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/gnumeric/dialogs/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/gnumeric/dialogs/rs/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/gnumeric/file/%gconf.xml
@@ -46,6 +47,7 @@ etc/gconf/gconf.xml.defaults/schemas/apps/gnumeric/core/sort/default/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gnumeric/core/sort/dialog/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gnumeric/core/workbook/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gnumeric/core/xml/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/gnumeric/cut-and-paste/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gnumeric/dialogs/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gnumeric/dialogs/rs/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gnumeric/functionselector/%gconf.xml
@@ -184,13 +186,13 @@ share/gnome/gnumeric/%%VERSION%%/glade/dialog-stf-export.glade
 share/gnome/gnumeric/%%VERSION%%/glade/dialog-stf.glade
 share/gnome/gnumeric/%%VERSION%%/glade/dialog-zoom.glade
 share/gnome/gnumeric/%%VERSION%%/glade/exp-smoothing.glade
+share/gnome/gnumeric/%%VERSION%%/glade/fill-series.glade
 share/gnome/gnumeric/%%VERSION%%/glade/font-sel.glade
 share/gnome/gnumeric/%%VERSION%%/glade/formula-guru.glade
 share/gnome/gnumeric/%%VERSION%%/glade/fourier-analysis.glade
 share/gnome/gnumeric/%%VERSION%%/glade/function-select.glade
 share/gnome/gnumeric/%%VERSION%%/glade/goalseek.glade
 share/gnome/gnumeric/%%VERSION%%/glade/goto.glade
-share/gnome/gnumeric/%%VERSION%%/glade/graph-guru.glade
 share/gnome/gnumeric/%%VERSION%%/glade/hf-config.glade
 share/gnome/gnumeric/%%VERSION%%/glade/histogram.glade
 share/gnome/gnumeric/%%VERSION%%/glade/hyperlink.glade
@@ -208,9 +210,12 @@ share/gnome/gnumeric/%%VERSION%%/glade/rank.glade
 share/gnome/gnumeric/%%VERSION%%/glade/regression.glade
 share/gnome/gnumeric/%%VERSION%%/glade/row-height.glade
 share/gnome/gnumeric/%%VERSION%%/glade/sampling.glade
+share/gnome/gnumeric/%%VERSION%%/glade/scenario-add.glade
+share/gnome/gnumeric/%%VERSION%%/glade/scenario-manager.glade
 share/gnome/gnumeric/%%VERSION%%/glade/search-replace.glade
 share/gnome/gnumeric/%%VERSION%%/glade/search.glade
 share/gnome/gnumeric/%%VERSION%%/glade/sheet-order.glade
+share/gnome/gnumeric/%%VERSION%%/glade/shuffle.glade
 share/gnome/gnumeric/%%VERSION%%/glade/simulation.glade
 share/gnome/gnumeric/%%VERSION%%/glade/so-arrow.glade
 share/gnome/gnumeric/%%VERSION%%/glade/so-checkbox.glade
@@ -522,6 +527,7 @@ share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/figures/zoom-dialog.png
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/figures/zoom-toolbar.png
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/figures/zoom.png
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/files.xml
+share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/fill-series.xml
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/filter.xml
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/formulas.xml
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/func-footer.xml
@@ -536,13 +542,14 @@ share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/menus.xml
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/number-format.xml
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/preface.xml
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/printing.xml
+share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/scenarios.xml
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/selections.xml
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/simulation.xml
+share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/shuffling.xml
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/solver.xml
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/toolbars.xml
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/worksheet.xml
 share/gnome/gnumeric/%%VERSION%%/idl/GNOME_Gnumeric.idl
-share/gnome/gnumeric/%%VERSION%%/plot-types.xml
 share/gnome/gnumeric/%%VERSION%%/templates/invoice.gnumeric
 share/gnome/gnumeric/%%VERSION%%/templates/loan.gnumeric
 share/gnome/gnumeric/%%VERSION%%/templates/mileage.gnumeric
@@ -703,13 +710,14 @@ share/locale/fi/LC_MESSAGES/gnumeric.mo
 share/locale/fr/LC_MESSAGES/gnumeric.mo
 share/locale/ga/LC_MESSAGES/gnumeric.mo
 share/locale/gl/LC_MESSAGES/gnumeric.mo
+share/locale/hi/LC_MESSAGES/gnumeric.mo
 share/locale/hr/LC_MESSAGES/gnumeric.mo
 share/locale/hu/LC_MESSAGES/gnumeric.mo
 share/locale/it/LC_MESSAGES/gnumeric.mo
 share/locale/ja/LC_MESSAGES/gnumeric.mo
 share/locale/ko/LC_MESSAGES/gnumeric.mo
 share/locale/lv/LC_MESSAGES/gnumeric.mo
-share/locale/mr_IN/LC_MESSAGES/gnumeric.mo
+share/locale/ml/LC_MESSAGES/gnumeric.mo
 share/locale/ms/LC_MESSAGES/gnumeric.mo
 share/locale/nl/LC_MESSAGES/gnumeric.mo
 share/locale/nn/LC_MESSAGES/gnumeric.mo
@@ -787,6 +795,7 @@ share/locale/zh_TW/LC_MESSAGES/gnumeric.mo
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnumeric/plugins
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnumeric/functionselector
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnumeric/dialogs/rs
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnumeric/cut-and-paste
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnumeric/dialogs
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnumeric/core/xml
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnumeric/core/workbook
@@ -816,6 +825,7 @@ share/locale/zh_TW/LC_MESSAGES/gnumeric.mo
 @dirrm etc/gconf/gconf.xml.defaults/apps/gnumeric/file
 @dirrm etc/gconf/gconf.xml.defaults/apps/gnumeric/dialogs/rs
 @dirrm etc/gconf/gconf.xml.defaults/apps/gnumeric/dialogs
+@dirrm etc/gconf/gconf.xml.defaults/apps/gnumeric/cut-and-paste
 @dirrm etc/gconf/gconf.xml.defaults/apps/gnumeric/core/xml
 @dirrm etc/gconf/gconf.xml.defaults/apps/gnumeric/core/workbook
 @dirrm etc/gconf/gconf.xml.defaults/apps/gnumeric/core/sort/dialog
