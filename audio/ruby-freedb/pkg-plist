@@ -1,4 +1,5 @@
-%%RUBY_SITEARCHLIBDIR%%/Freedb.so
+%%RUBY_SITEARCHLIBDIR%%/freedb.so
+%%RUBY_SITELIBDIR%%/freedb_misc.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/freedb/test.rb
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/freedb
 %%PORTDOCS%%%%RUBY_DOCDIR%%/freedb/README
