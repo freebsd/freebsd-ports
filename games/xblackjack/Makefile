@@ -3,12 +3,13 @@
 # Date created:         
 # Whom:                 erich@FreeBSD.org
 #
-# $Id: Makefile,v 1.1.1.1 1996/08/16 13:28:47 erich Exp $
+# $Id: Makefile,v 1.2 1996/08/17 10:26:10 asami Exp $
 #
 
 DISTNAME=	xblackjack-2.2
-CATEGORIES+=	games
-MASTER_SITES=	ftp://ftp.x.org/contrib/games/
+CATEGORIES=	games
+MASTER_SITES=	${MASTER_SITE_XCONTRIB}
+MASTER_SITE_SUBDIR=	games
 
 MAINTAINER=	erich@FreeBSD.org
 

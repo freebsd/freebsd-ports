@@ -3,13 +3,14 @@
 # Date created:		13 September 1994
 # Whom:			jkh
 #
-# $Id$
+# $Id: Makefile,v 1.9 1995/04/11 02:32:57 asami Exp $
 #
 
 DISTNAME=	emu-1.31
 PKGNAME=	emu-1.3.1
-MASTER_SITES=	ftp://ftp.x.org/contrib/applications/
-CATEGORIES+=	x11
+CATEGORIES=	x11
+MASTER_SITES=	${MASTER_SITE_XCONTRIB}
+MASTER_SITE_SUBDIR=	applications
 
 MAINTAINER=	me@FreeBSD.org
 

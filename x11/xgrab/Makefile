@@ -3,13 +3,14 @@
 # Date created:         27 February 1995
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.6 1995/05/15 16:33:19 jmz Exp $
+# $Id: Makefile,v 1.7 1996/07/31 01:01:36 jmz Exp $
 #
 
 DISTNAME=	xgrabsc.2_41
 PKGNAME=	xgrab-2.41
-CATEGORIES+=	x11
-MASTER_SITES=	ftp://ftp.ibp.fr/pub/X11/contrib/applications/
+CATEGORIES=	x11
+MASTER_SITES=	${MASTER_SITE_XCONTRIB}
+MASTER_SITE_SUBDIR=	applications
 
 MAINTAINER=	jmz@FreeBSD.org
 

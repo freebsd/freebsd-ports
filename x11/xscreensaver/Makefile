@@ -3,13 +3,13 @@
 # Date created:         10 July 1995
 # Whom:                 asami
 #
-# $Id: Makefile,v 1.4 1995/04/12 20:31:54 asami Exp $
+# $Id: Makefile,v 1.1.1.1 1995/07/11 06:50:12 asami Exp $
 #
 
 DISTNAME=	xscreensaver-1.25
-CATEGORIES+=	x11
-MASTER_SITES=	ftp://ftp.x.org/contrib/applications/ \
-		ftp://crl.dec.com/pub/X11/contrib/applications/
+CATEGORIES=	x11
+MASTER_SITES=	${MASTER_SITE_XCONTRIB}
+MASTER_SITE_SUBDIR=	applications
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	asami@FreeBSD.ORG

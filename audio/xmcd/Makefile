@@ -3,13 +3,13 @@
 # Date created:		16 Februar 1995
 # Whom:			Gennady Sorokopud <gena@NetVision.net.il>
 #
-# $Id: Makefile,v 1.4 1996/04/11 08:46:50 asami Exp $
+# $Id: Makefile,v 1.5 1996/11/15 23:14:50 obrien Exp $
 #
 
 DISTNAME=	xmcd-2.0
 CATEGORIES=	audio
-MASTER_SITES=	ftp://ftp.x.org/contrib/applications/xmcd/ \
-		ftp://crl.dec.com/pub/X11/contrib/applications/xmcd/
+MASTER_SITES=	${MASTER_SITE_XCONTRIB}
+MASTER_SITE_SUBDIR=	applications/xmcd
 
 MAINTAINER=	deischen@iworks.InterWorks.org
 

@@ -3,13 +3,14 @@
 # Date created:         25 Now 1995
 # Whom:                 Donald Burr <d_burr@ix.netcom.com>
 #
-# $Id: Makefile,v 1.1.1.1 1995/11/26 12:47:05 asami Exp $
+# $Id: Makefile,v 1.2 1996/11/15 23:14:31 obrien Exp $
 #
 
 DISTNAME=       WorkMan-1.3
 PKGNAME=	workman-1.3
 CATEGORIES=	audio
-MASTER_SITES=	ftp://ftp.x.org/contrib/applications/WorkMan/
+MASTER_SITES=	${MASTER_SITE_XCONTRIB}
+MASTER_SITE_SUBDIR=	applications/WorkMan
 
 MAINTAINER=	d_burr@ix.netcom.com
 

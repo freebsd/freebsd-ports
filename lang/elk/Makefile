@@ -3,15 +3,15 @@
 # Date created:         08 March 1995
 # Whom:                 thomas@ghpc8.ihf.rwth-aachen.de
 #
-# $Id: Makefile,v 1.12 1996/11/12 02:18:06 obrien Exp $
+# $Id: Makefile,v 1.13 1996/11/17 06:12:31 obrien Exp $
 #
 
 DISTNAME=	elk-3.0
 PKGNAME=	elk-3.0.2
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.uni-bremen.de/pub/programming/languages/scheme/elk/ \
-		ftp://crl.dec.com/pub/X11/contrib/devel_tools/ \
-		ftp://ftp.th-darmstadt.de/pub/X11/contrib/devel_tools/
+		${MASTER_SITE_XCONTRIB}
+MASTER_SITE_SUBDIR=	devel_tools
 
 MAINTAINER=	tg@freebsd.org
 

@@ -3,11 +3,11 @@
 # Date created:		15 November 1994
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.8 1996/11/06 07:53:19 tg Exp $
+# $Id: Makefile,v 1.9 1996/11/15 16:04:24 tg Exp $
 #
 
 DISTNAME=	ImageMagick-3.7.7
-CATEGORIES+=	graphics
+CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	applications/ImageMagick
 

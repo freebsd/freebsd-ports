@@ -5,8 +5,9 @@
 #
 
 PKGNAME=	xevil-1.5
-CATEGORIES+=	games x11
-MASTER_SITES=	ftp://ftp.x.org/contrib/games/xevil1.5/
+CATEGORIES=	games
+MASTER_SITES=	${MASTER_SITE_XCONTRIB}
+MASTER_SITE_SUBDIR=	games/xevil1.5
 DISTFILES=	xevil1.5.tar.Z
 
 MAINTAINER=	jmz@FreeBSD.org

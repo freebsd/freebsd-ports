@@ -3,12 +3,13 @@
 # Date created:		27 August 1995
 # Whom:			asami
 #
-# $Id: Makefile,v 1.1.1.1 1995/08/28 07:43:37 asami Exp $
+# $Id: Makefile,v 1.2 1996/01/16 10:39:49 asami Exp $
 #
 
 DISTNAME=	xgalaga-1.6b
-CATEGORIES+=	games
-MASTER_SITES=	ftp://crl.dec.com/pub/X11/contrib/games/
+CATEGORIES=	games
+MASTER_SITES=	${MASTER_SITE_XCONTRIB}
+MASTER_SITE_SUBDIR=	games
 
 MAINTAINER=	asami@FreeBSD.ORG
 

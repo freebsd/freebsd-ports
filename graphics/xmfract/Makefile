@@ -3,13 +3,14 @@
 # Date created:         Thu Aug  1 09:10:22 CDT 1996
 # Whom:                 erich@FreeBSD.org
 #
-# $Id: Makefile,v 1.2 1996/08/01 20:38:11 erich Exp $
+# $Id: Makefile,v 1.3 1996/08/03 09:00:15 asami Exp $
 #
 
 DISTNAME=	xmfract_1.4
 PKGNAME=	xmfract-1.4
-CATEGORIES+=	graphics
-MASTER_SITES=	ftp://ftp.x.org/contrib/graphics/
+CATEGORIES=	graphics
+MASTER_SITES=	${MASTER_SITE_XCONTRIB}
+MASTER_SITE_SUBDIR=	graphics
 
 MAINTAINER=	erich@FreeBSD.org
 
