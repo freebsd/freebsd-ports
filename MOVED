@@ -1052,3 +1052,4 @@ irc/irchat-pj-xemacs-devel-mule|irc/irchat-pj-xemacs21-mule|2004-04-29|was for x
 devel/avrprog|devel/avrdude|2004-04-29|obsoleted by devel/avrdude
 math/R-project|math/R|2004-04-30|port renamed to match project name
 print/pfaedit|print/fontforge|2004-05-01|renamed by upgrading
+converters/cvs2svn|devel/cvs2svn|2004-05-01|corrected category

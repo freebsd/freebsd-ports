@@ -156,6 +156,7 @@
     SUBDIR += cvs2cl
     SUBDIR += cvs2html
     SUBDIR += cvs2p4
+    SUBDIR += cvs2svn
     SUBDIR += cvsadmin
     SUBDIR += cvsbook
     SUBDIR += cvsd
