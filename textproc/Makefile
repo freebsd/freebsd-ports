@@ -20,6 +20,7 @@
     SUBDIR += docbook-241
     SUBDIR += docbook-300
     SUBDIR += docbook-310
+    SUBDIR += docbook-400
     SUBDIR += docbook-xml
     SUBDIR += docproj
     SUBDIR += dsssl-docbook-modular
