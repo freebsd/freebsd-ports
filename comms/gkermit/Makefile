@@ -9,12 +9,10 @@ PORTNAME=	gkermit
 PORTVERSION=	1.0
 CATEGORIES=	comms
 MASTER_SITES=	ftp://kermit.columbia.edu/kermit/archives/
-DISTNAME=	${PORTNAME}
+DISTNAME=	gku100
 
 MAINTAINER=	dom@happygiraffe.net
 COMMENT=	File transfer utility using the kermit protocol
-
-BROKEN=		"Checksum mismatch"
 
 NO_WRKSUBDIR=	yes
 MAN1=		gkermit.1
