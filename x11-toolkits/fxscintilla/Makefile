@@ -15,8 +15,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	alecn2002@yandex.ru
 COMMENT=	A Fox toolkit reimplementation of Scintilla editing widget
 
-BROKEN=		"Does not build with current fox-devel version"
-
 GNU_CONFIGURE=	yes
 
 USE_LIBTOOL_VER=	15
@@ -32,6 +30,7 @@ OPTIONS=	FOX10 "FOX1.0 support (FOX1.2 by default)" off
 LIB_DEPENDS+=	FOX-1.0.0:${PORTSDIR}/x11-toolkits/fox
 CONFIGURE_ARGS=	--with-fox-1-0
 .else
+BROKEN=		"Does not build with current fox-devel version"
 LIB_DEPENDS+=	FOX-1.4:${PORTSDIR}/x11-toolkits/fox-devel
 .endif
 
