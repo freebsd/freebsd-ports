@@ -1,10 +1,11 @@
 #! /bin/sh
 #
-# $Id$
+# $Id: configure,v 1.1 1996/12/14 20:13:27 jdp Exp $
 
 cd ${WRKSRC}
 
 files_to_patch="\
+    Makefile \
     client/src/cvsup.1 \
     server/src/cvsupd.8 \
     suplib/src/SupMisc.i3 \
@@ -12,6 +13,6 @@ files_to_patch="\
 
 for i in ${files_to_patch}; do
     rm -f ${i}.new
-    sed -e "s|/usr/local/|${PREFIX}/|g" ${i} >${i}.new || exit 1
+    sed -e "s|/usr/local|${PREFIX}|g" ${i} >${i}.new || exit 1
     mv -f ${i}.new ${i} || exit 1
 done
