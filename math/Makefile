@@ -58,6 +58,7 @@
     SUBDIR += p5-Math-Logic
     SUBDIR += p5-MatrixReal
     SUBDIR += p5-Set-IntSpan
+    SUBDIR += p5-Set-Window
     SUBDIR += p5-Statistics-ChiSquare
     SUBDIR += p5-Statistics-Descriptive
     SUBDIR += p5-Statistics-Distributions
