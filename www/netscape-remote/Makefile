@@ -9,7 +9,7 @@ PORTNAME=	netscape-remote
 PORTVERSION=	1.0
 PORTREVISION=	1
 CATEGORIES=	www
-MASTER_SITES=	http://home.netscape.com/newsref/std/
+MASTER_SITES=	http://wp.netscape.com/newsref/std/
 DISTFILES=	remote.c vroot.h
 
 MAINTAINER=	ports@FreeBSD.org
