@@ -6,18 +6,18 @@
 #
 
 PORTNAME=	gurlchecker
-PORTVERSION=	0.6.3
-PORTREVISION=	3
+PORTVERSION=	0.8.0
 CATEGORIES=	www gnome
-MASTER_SITES=	${MASTER_SITE_SAVANNAH} \
-		http://labs.libre-entreprise.org/download.php/57/
-MASTER_SITE_SUBDIR=	${PORTNAME}/stable/0.6
+MASTER_SITES=	http://labs.libre-entreprise.org/download.php/${DOWNNUM}/
 
-MAINTAINER=	kwm@rainbow-runner.nl
+MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	A Gnome program to check a page/website for broken links
 
-USE_X_PREFIX=	yes
+LIB_DEPENDS=	gnutls.12:${PORTSDIR}/security/gnutls \
+		gnet-2.0.0:${PORTSDIR}/net/gnet2
 
+USE_X_PREFIX=	yes
+DOWNNUM=	335
 USE_GNOME=	gnomeprefix gnomehack libgnomeui
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

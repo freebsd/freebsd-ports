@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Thu Feb  3 22:52:24 2005
++++ Makefile.in	Thu Feb  3 22:54:28 2005
+@@ -201,7 +201,7 @@
+ sharedstatedir = @sharedstatedir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+-SUBDIRS = m4 src po doc ui man debian
++SUBDIRS = m4 src po ui debian
+ DESKTOP_FILES = gurlchecker.desktop
+ MMdir = $(datadir)/applications
+ MM_DATA = $(DESKTOP_FILES)
