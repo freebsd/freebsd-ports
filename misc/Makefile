@@ -126,7 +126,6 @@
     SUBDIR += jargon
     SUBDIR += jive
     SUBDIR += kcd
-    SUBDIR += kde2-i18n
     SUBDIR += kde3-i18n
     SUBDIR += kde3-i18n
     SUBDIR += kde3-i18n-af
@@ -175,7 +174,6 @@
     SUBDIR += kdeedu3
     SUBDIR += kdeutils3
     SUBDIR += kenny
-    SUBDIR += koffice-i18n
     SUBDIR += kp
     SUBDIR += kwatch
     SUBDIR += lc

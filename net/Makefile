@@ -219,7 +219,6 @@
     SUBDIR += jift
     SUBDIR += jumpgate
     SUBDIR += jwhois
-    SUBDIR += kdenetwork2
     SUBDIR += kdenetwork3
     SUBDIR += kdetelnet
     SUBDIR += kinkatta

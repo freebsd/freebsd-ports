@@ -10,9 +10,7 @@
     SUBDIR += ispell
     SUBDIR += ispell-alt
     SUBDIR += ispell-neu
-    SUBDIR += kde2-i18n
     SUBDIR += kde3-i18n
-    SUBDIR += koffice-i18n
     SUBDIR += linux-netscape6
     SUBDIR += manpages
     SUBDIR += ooodict-de_CH

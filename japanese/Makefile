@@ -147,13 +147,8 @@
     SUBDIR += kappa20
     SUBDIR += kbanner
     SUBDIR += kcc
-    SUBDIR += kde2
-    SUBDIR += kde2-i18n
     SUBDIR += kde3-i18n
     SUBDIR += kdeaddons
-    SUBDIR += kdebase2
-    SUBDIR += kdelibs2
-    SUBDIR += kdenetwork2
     SUBDIR += kdevelop
     SUBDIR += kdrill
     SUBDIR += kinput2-canna
@@ -172,7 +167,6 @@
     SUBDIR += kinput2-wnn6
     SUBDIR += kinput2-wnn7
     SUBDIR += kochi-ttfonts
-    SUBDIR += koffice-i18n
     SUBDIR += kon2-14dot
     SUBDIR += kon2-16dot
     SUBDIR += kpcal
