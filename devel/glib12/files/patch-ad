@@ -1,0 +1,19 @@
+--- configure.in.orig	Mon Dec 28 17:52:51 1998
++++ configure.in	Mon Dec 28 17:53:11 1998
+@@ -231,7 +231,6 @@
+ AC_CHECK_HEADERS(limits.h, AC_DEFINE(HAVE_LIMITS_H))
+ AC_CHECK_HEADERS(pwd.h, AC_DEFINE(HAVE_PWD_H))
+ AC_CHECK_HEADERS(sys/param.h, AC_DEFINE(HAVE_SYS_PARAM_H))
+-AC_CHECK_HEADERS(sys/poll.h, AC_DEFINE(HAVE_SYS_POLL_H))
+ AC_CHECK_HEADERS(sys/select.h, AC_DEFINE(HAVE_SYS_SELECT_H))
+ AC_CHECK_HEADERS(sys/time.h, AC_DEFINE(HAVE_SYS_TIME_H))
+ AC_CHECK_HEADERS(sys/times.h, AC_DEFINE(HAVE_SYS_TIMES_H))
+@@ -239,7 +238,7 @@
+ AC_CHECK_HEADERS(values.h, AC_DEFINE(HAVE_VALUES_H))
+ 
+ # Check for some functions
+-AC_CHECK_FUNCS(lstat strerror strsignal memmove vsnprintf strcasecmp strncasecmp poll)
++AC_CHECK_FUNCS(lstat strerror strsignal memmove vsnprintf strcasecmp strncasecmp )
+ 
+ # Check for sys_errlist
+ AC_MSG_CHECKING(for sys_errlist)
