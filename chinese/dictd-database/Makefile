@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	dictd-database
-PORTVERSION=	1.2.1
-PORTREVISION=	1
+PORTVERSION=	1.3
 CATEGORIES=	chinese textproc
 MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/statue/dictd-database/
 DISTNAME=	dict-zh-${PORTVERSION}
 
 MAINTAINER=	statue@freebsd.sinica.edu.tw
 
-BUILD_DEPENDS=  ${LOCALBASE}/bin/dictzip:${PORTSDIR}/net/dictd
+BUILD_DEPENDS=  ${LOCALBASE}/bin/dictzip:${PORTSDIR}/chinese/dictd
 
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
