@@ -617,6 +617,7 @@
     SUBDIR += str
     SUBDIR += strace
     SUBDIR += styx
+    SUBDIR += subversion
     SUBDIR += swarm
     SUBDIR += swigruby
     SUBDIR += t1lib
