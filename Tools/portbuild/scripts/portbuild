@@ -194,13 +194,20 @@ if [ -f ${chroot}/.notready ]; then
     mkdir -p ${chroot}/libexec
     mkdir -p ${chroot}/lib
     if [ "${arch}" = "i386" ]; then
-      cp -p /sbin/mount_linprocfs /sbin/mount /sbin/umount ${chroot}/sbin
+      cp -p /rescue/mount_linprocfs /rescue/mount /rescue/umount ${chroot}/sbin
       cp -p /lib/libufs.so.2 ${chroot}/lib
     fi
     cp -p /libexec/ld-elf.so.1 ${chroot}/libexec
-    cp -p /lib/libc.so.5 /lib/libkvm.so.2 /lib/libm.so.2 ${chroot}/lib
+    cp -p /lib/libkvm.so.2 /lib/libm.so.3 ${chroot}/lib
+    if [ -f /lib/libc.so.6 ]; then
+      cp -p /lib/libc.so.6 ${chroot}/lib
+    else
+      cp -p /lib/libc.so.5 ${chroot}/lib
+    fi
+  elif [ "${branch}" = "6" ]; then
+    cp -p /lib/libc.so.5 ${chroot}/lib
   fi
-  cp -p /bin/ps ${chroot}/bin
+  cp -p /rescue/ps ${chroot}/bin
   cp -p /usr/bin/killall ${chroot}/usr/bin
   rm ${chroot}/.notready
   touch ${chroot}/.ready
@@ -271,7 +278,7 @@ fi
 if [ ${arch} = "i386" ]; then
   # JDK ports need linprocfs :(
   mkdir -p ${chroot}/compat/linux/proc
-  chroot ${chroot} mount -t linprocfs linprocfs /compat/linux/proc
+  chroot ${chroot} mount_linprocfs linprocfs /compat/linux/proc
 fi
 
 _ldconfig_dirs="/lib /usr/lib /usr/lib/compat"
