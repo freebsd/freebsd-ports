@@ -26,10 +26,12 @@ RESTRICTED=	"Redistribution not allowed"
 NO_CDROM=	${RESTRICTED}
 #NO_PACKAGE=	${RESTRICTED}
 
+ONFIGURE_TARGET=
+CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
+
 post-install:
 		${INSTALL_DATA} ${WRKDIR}/usr/share/apps/ksocrat/* \
 			 ${PREFIX}/share/apps/ksocrat
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/x11/kde3/Makefile.kde"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
