@@ -79,7 +79,7 @@ MAN8=	sendmail.8 mailstats.8 makemap.8 praliases.8 smrsh.8 \
 pre-install:
 	@${CAT} ${PKGDIR}/pkg-plist >${PLIST}
 .if defined(SENDMAIL_WITH_MILTER)
-	@${CAT} ${FILESDIR}/pkg-milter >${PLIST}
+	@${CAT} ${FILESDIR}/pkg-milter >>${PLIST}
 .endif
 .if !defined(NOPORTDOCS)
 	@cd ${WRKSRC} && find cf -type f | \
