@@ -7,15 +7,18 @@
 
 PORTNAME=	ltxml
 PORTVERSION=	1.2.5
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp.cogsci.ed.ac.uk/pub/LTXML/
 
-MAINTAINER=	sam@inf.enst.fr
+MAINTAINER=	ports@FreeBSD.org
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/XML
+CONFIGURE_WRKSRC=	${WRKSRC}/XML
+BUILD_WRKSRC=	${CONFIGURE_WRKSRC}
+INSTALL_WRKSRC=	${CONFIGURE_WRKSRC}
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--with-zlib --enable-multi-byte
+CONFIGURE_ARGS+=	--with-zlib=/usr --enable-multi-byte
 USE_GMAKE=	yes
 
 post-install:
