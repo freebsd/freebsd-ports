@@ -8,22 +8,19 @@
 PORTNAME=	wmnetmon
 PORTVERSION=	0.2p5
 CATEGORIES=	net windowmaker
-# Master site is MIA for weeks now...
-#MASTER_SITES=	ftp://neubula.utad.pt/pub/wmnetmon/
-MASTER_SITES=	http://avdira.cc.duth.gr/~kkonstan/stuff/software/
-
+MASTER_SITES=	http://www.alvie.com/download/wmnetmon/
 
 MAINTAINER=	ports@FreeBSD.org
 
-USE_XPM=	YES
-USE_X_PREFIX=	YES
-GNU_CONFIGURE=	YES
+USE_X_PREFIX=	yes
+USE_XPM=	yes
+GNU_CONFIGURE=	yes
 
 BINMODE=        4755
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/wmnetmon ${PREFIX}/bin
-	@${MKDIR} ${PREFIX}/share/examples/wmnetmon
-	@${INSTALL_DATA} ${WRKSRC}/wmnetmonrc ${PREFIX}/share/examples/wmnetmon
+	${INSTALL_PROGRAM} ${WRKSRC}/wmnetmon ${PREFIX}/bin
+	@${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/wmnetmonrc ${EXAMPLESDIR}
 
 .include <bsd.port.mk>
