@@ -1,8 +1,6 @@
-/usr/local/bin/rioutil
-/usr/local/bin/riofck
-/usr/local/man/man1/rioutil.1.gz
-/usr/local/include/rio.h
-/usr/local/lib/librioutil.so.0
-/usr/local/lib/librioutil.so
-/usr/local/lib/librioutil.la
-/usr/local/lib/librioutil.a
+bin/riofck
+bin/rioutil
+include/rio.h
+lib/librioutil.a
+lib/librioutil.so
+lib/librioutil.so.0
