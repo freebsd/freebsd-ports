@@ -25,4 +25,10 @@ USE_GMAKE=	yes
 pre-configure:
 	@${RM} -f ${WRKSRC}/config.cache
 
+post-install:
+	${CHOWN} root:games ${PREFIX}/bin/gno3dtet
+	${CHMOD} 2555 ${PREFIX}/bin/gno3dtet
+	${CHOWN} root:games ${PREFIX}/var/games/gno3dtet.hof
+	${CHMOD} 664 ${PREFIX}/var/games/gno3dtet.hof
+
 .include <bsd.port.mk>

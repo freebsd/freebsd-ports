@@ -18,4 +18,9 @@ USE_IMAKE=	yes
 ALL_TARGET=	xkobo
 MAN1=		xkobo.1
 
+post-install:
+	${CHMOD} u-s,g+s ${PREFIX}/bin/xkobo
+	${CHOWN} root:games ${PREFIX}/bin/xkobo
+	${CHMOD} 775 ${PREFIX}/lib/X11/xkobo-scores
+
 .include <bsd.port.mk>
