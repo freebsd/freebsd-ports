@@ -3,12 +3,12 @@
 # Date created:		30 Mar 1996
 # Whom:			graphite@taurus.bekkoame.or.jp
 #
-# $Id: Makefile,v 1.9 1998/02/08 13:13:52 jseger Exp $
+# $Id: Makefile,v 1.10 1998/02/18 05:15:17 steve Exp $
 #
 
 DISTNAME=	suck-3.9.1
 CATEGORIES=	news
-MASTER_SITES=	http://www.pixi.com/~boby/
+MASTER_SITES=	http://home.att.net/~bobyetman/
 
 MAINTAINER=	jseger@FreeBSD.org
 
