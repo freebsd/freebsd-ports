@@ -18,7 +18,7 @@ COMMENT=	Free and Open-Source molecular modeling system
 BUILD_DEPENDS=	${PYNUMERIC}
 RUN_DEPENDS=	${PYNUMERIC} \
 		${PYTHON_SITELIBDIR}/Pmw:${PORTSDIR}/x11-toolkits/pmw
-LIB_DEPENDS=	glut.3:${PORTSDIR}/graphics/Mesa3 \
+LIB_DEPENDS=	glut.3:${PORTSDIR}/graphics/libglut \
 		png.5:${PORTSDIR}/graphics/png
 
 WRKSRC=		${WRKDIR}/pymol-${PORTVERSION}
