@@ -15,6 +15,9 @@ MASTER_SITE_SUBDIR=	automake
 MAINTAINER=	ade@FreeBSD.org
 COMMENT=	GNU Standards-compliant Makefile generator
 
+DEPRECATED=	Please use devel/automake18 instead
+EXPIRATION_DATE=31st December 2004
+
 LATEST_LINK=	automake
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	PERL=${PERL5}

@@ -16,6 +16,9 @@ DISTNAME=	automake-${PORTVERSION}
 MAINTAINER=	ade@FreeBSD.org
 COMMENT=	GNU Standards-compliant Makefile generator (version 1.7)
 
+DEPRECATED=	Please use devel/automake18 instead
+EXPIRATION_DATE=31st December 2004
+
 BUILD_DEPENDS=	autoconf257:${PORTSDIR}/devel/autoconf257
 RUN_DEPENDS=	autoconf257:${PORTSDIR}/devel/autoconf257
 
