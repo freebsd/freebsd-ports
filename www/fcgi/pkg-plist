@@ -1,0 +1,163 @@
+bin/cgi-fcgi
+fcgi-devkit/FastCGI.mak
+fcgi-devkit/FastCGI.mak.in
+fcgi-devkit/FastCGI.mb
+fcgi-devkit/LICENSE.TERMS
+fcgi-devkit/Makefile
+fcgi-devkit/Makefile.in
+fcgi-devkit/Perl/ChangeLog
+fcgi-devkit/Perl/FCGI.PL
+fcgi-devkit/Perl/FCGI.pm
+fcgi-devkit/Perl/Makefile.PL
+fcgi-devkit/Perl/README
+fcgi-devkit/Perl/configure
+fcgi-devkit/Perl/configure.in
+fcgi-devkit/Perl/configure.readme
+fcgi-devkit/Perl/echo.PL
+fcgi-devkit/Perl/typemap
+fcgi-devkit/README
+fcgi-devkit/README_NT.txt
+fcgi-devkit/acconfig.h
+fcgi-devkit/build.bat
+fcgi-devkit/build_no_shell.bat
+fcgi-devkit/cgi-fcgi/Makefile
+fcgi-devkit/cgi-fcgi/Makefile.in
+fcgi-devkit/cgi-fcgi/cgi-fcgi.c
+fcgi-devkit/cgi-fcgi/cgi-fcgi.mak
+fcgi-devkit/cgi-fcgi/cgi-fcgi.mak.in
+fcgi-devkit/cgi-fcgi/cgi-fcgi.mdp
+fcgi-devkit/cgi-fcgi/descrip.dfc
+fcgi-devkit/configure
+fcgi-devkit/configure.in
+fcgi-devkit/dependencies.in
+fcgi-devkit/descrip.dfc
+fcgi-devkit/doc/FCGI_Accept.3
+fcgi-devkit/doc/FCGI_Finish.3
+fcgi-devkit/doc/FCGI_SetExitStatus.3
+fcgi-devkit/doc/FCGI_StartFilterData.3
+fcgi-devkit/doc/Makefile
+fcgi-devkit/doc/cgi-fcgi.1
+fcgi-devkit/doc/fastcgi-prog-guide/ap_guida.htm
+fcgi-devkit/doc/fastcgi-prog-guide/ap_guide.htm
+fcgi-devkit/doc/fastcgi-prog-guide/apaman.htm
+fcgi-devkit/doc/fastcgi-prog-guide/ch1inta1.gif
+fcgi-devkit/doc/fastcgi-prog-guide/ch1intra.gif
+fcgi-devkit/doc/fastcgi-prog-guide/ch1intro.htm
+fcgi-devkit/doc/fastcgi-prog-guide/ch2c.htm
+fcgi-devkit/doc/fastcgi-prog-guide/ch3perl.htm
+fcgi-devkit/doc/fastcgi-prog-guide/ch4tcl.htm
+fcgi-devkit/doc/fastcgi-prog-guide/cover.htm
+fcgi-devkit/doc/fastcgi-prog-guide/covera.gif
+fcgi-devkit/doc/fastcgi-whitepaper/Makefile
+fcgi-devkit/doc/fastcgi-whitepaper/fastcgi.htm
+fcgi-devkit/doc/fastcgi-whitepaper/img00001.gif
+fcgi-devkit/doc/fastcgi-whitepaper/img00002.gif
+fcgi-devkit/doc/fastcgi-whitepaper/img00003.gif
+fcgi-devkit/doc/fcgi-devel-kit.htm
+fcgi-devkit/doc/fcgi-java.htm
+fcgi-devkit/doc/fcgi-perf.htm
+fcgi-devkit/doc/fcgi-perl.htm
+fcgi-devkit/doc/fcgi-spec.html
+fcgi-devkit/doc/fcgi-tcl.htm
+fcgi-devkit/doc/omi-logo.gif
+fcgi-devkit/doc/www5-api-workshop.html
+fcgi-devkit/examples/Makefile
+fcgi-devkit/examples/Makefile.in
+fcgi-devkit/examples/SampleStore/Images/cart-hd.gif
+fcgi-devkit/examples/SampleStore/Images/main-hd.gif
+fcgi-devkit/examples/SampleStore/Images/offer-hd.gif
+fcgi-devkit/examples/SampleStore/Images/purch-hd.gif
+fcgi-devkit/examples/SampleStore/Images/thank-hd.gif
+fcgi-devkit/examples/SampleStore/Protected/RMSTitanic.html
+fcgi-devkit/examples/SampleStore/Unprotected/Purchase.html
+fcgi-devkit/examples/SampleStore/Unprotected/ThankYou.html
+fcgi-devkit/examples/conf/om-httpd.config
+fcgi-devkit/examples/echo-perl
+fcgi-devkit/examples/echo-tcl
+fcgi-devkit/examples/echo.c
+fcgi-devkit/examples/echo.cgi
+fcgi-devkit/examples/echo.html
+fcgi-devkit/examples/echo.mak
+fcgi-devkit/examples/echo2.c
+fcgi-devkit/examples/echo2.html
+fcgi-devkit/examples/echo2.mak
+fcgi-devkit/examples/echo2_nt.fcgi
+fcgi-devkit/examples/echo_nt.fcgi
+fcgi-devkit/examples/log-dump.c
+fcgi-devkit/examples/sample-store.c
+fcgi-devkit/examples/tclHash.c
+fcgi-devkit/examples/tiny-authorizer.c
+fcgi-devkit/examples/tiny-cgi.c
+fcgi-devkit/examples/tiny-fcgi.c
+fcgi-devkit/examples/tiny-fcgi.cgi
+fcgi-devkit/examples/tiny-fcgi.mak
+fcgi-devkit/examples/tiny-fcgi2.c
+fcgi-devkit/examples/tiny-fcgi2.cgi
+fcgi-devkit/examples/tiny-fcgi2.mak
+fcgi-devkit/examples/tiny-fcgi2_nt.fcgi
+fcgi-devkit/examples/tiny-fcgi_nt.fcgi
+fcgi-devkit/examples/tiny-perl-fcgi
+fcgi-devkit/examples/tiny-tcl-fcgi
+fcgi-devkit/images/aplib-hd.gif
+fcgi-devkit/images/divider.gif
+fcgi-devkit/images/fcgi-hd.gif
+fcgi-devkit/images/mail-hd.gif
+fcgi-devkit/images/navbar.gif
+fcgi-devkit/images/serv-hd.gif
+fcgi-devkit/images/words-hd.gif
+fcgi-devkit/include/fastcgi.h
+fcgi-devkit/include/fcgi_config.h
+fcgi-devkit/include/fcgi_config.h.in
+fcgi-devkit/include/fcgi_config_x86.h
+fcgi-devkit/include/fcgi_stdio.h
+fcgi-devkit/include/fcgiapp.h
+fcgi-devkit/include/fcgiappmisc.h
+fcgi-devkit/include/fcgimisc.h
+fcgi-devkit/include/fcgios.h
+fcgi-devkit/include/tcl.h
+fcgi-devkit/include/tclInt.h
+fcgi-devkit/include/tclRegexp.h
+fcgi-devkit/index.html
+fcgi-devkit/install.sh
+fcgi-devkit/java/FCGIGlobalDefs.java
+fcgi-devkit/java/FCGIInputStream.java
+fcgi-devkit/java/FCGIInterface.java
+fcgi-devkit/java/FCGIMessage.java
+fcgi-devkit/java/FCGIOutputStream.java
+fcgi-devkit/java/FCGIRequest.java
+fcgi-devkit/libfcgi/Makefile
+fcgi-devkit/libfcgi/Makefile.in
+fcgi-devkit/libfcgi/descrip.dfc
+fcgi-devkit/libfcgi/fcgi_stdio.c
+fcgi-devkit/libfcgi/fcgiapp.c
+fcgi-devkit/libfcgi/libfcgi.mak
+fcgi-devkit/libfcgi/libfcgi.mak.in
+fcgi-devkit/libfcgi/os_unix.c
+fcgi-devkit/libfcgi/os_win32.c
+fcgi-devkit/libfcgi/strerror.c
+fcgi-devkit/tcl/common/tclAppInit.c
+fcgi-devkit/tcl/common/tclFCGI.c
+fcgi-devkit/tcl/tcl7.4/Makefile.in
+fcgi-devkit/tcl/tcl7.4/configure.in
+fcgi-devkit/version.conf
+fcgi-devkit/version.in
+lib/libfcgi.a
+@dirrm fcgi-devkit/Perl
+@dirrm fcgi-devkit/cgi-fcgi
+@dirrm fcgi-devkit/doc/fastcgi-prog-guide
+@dirrm fcgi-devkit/doc/fastcgi-whitepaper
+@dirrm fcgi-devkit/doc
+@dirrm fcgi-devkit/examples/SampleStore/Images
+@dirrm fcgi-devkit/examples/SampleStore/Protected
+@dirrm fcgi-devkit/examples/SampleStore/Unprotected
+@dirrm fcgi-devkit/examples/SampleStore
+@dirrm fcgi-devkit/examples/conf
+@dirrm fcgi-devkit/examples
+@dirrm fcgi-devkit/images
+@dirrm fcgi-devkit/include
+@dirrm fcgi-devkit/java
+@dirrm fcgi-devkit/libfcgi
+@dirrm fcgi-devkit/tcl/common
+@dirrm fcgi-devkit/tcl/tcl7.4
+@dirrm fcgi-devkit/tcl
+@dirrm fcgi-devkit

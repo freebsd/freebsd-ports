@@ -1,0 +1,103 @@
+*** libfcgi/os_unix.c.orig	Sat Feb  6 00:08:33 1999
+--- libfcgi/os_unix.c	Thu May 13 10:32:00 1999
+***************
+*** 412,420 ****
+   */
+  int OS_Read(int fd, char * buf, size_t len)
+  {
+!     return(read(fd, buf, len));
+  }
+! 
+  /*
+   *--------------------------------------------------------------
+   *
+--- 412,424 ----
+   */
+  int OS_Read(int fd, char * buf, size_t len)
+  {
+!     int result;
+!     do {
+! 	result = read(fd, buf, len);
+!     } while((result == -1) && (errno == EINTR));
+!     return(result);
+  }
+! 
+  /*
+   *--------------------------------------------------------------
+   *
+***************
+*** 433,442 ****
+   */
+  int OS_Write(int fd, char * buf, size_t len)
+  {
+!     return(write(fd, buf, len));
+  }
+  
+- 
+  /*
+   *----------------------------------------------------------------------
+   *
+--- 437,449 ----
+   */
+  int OS_Write(int fd, char * buf, size_t len)
+  {
+!     int result;
+!     do {
+! 	result = write(fd, buf, len);
+!     } while((result == -1) && (errno == EINTR));
+!     return(result);
+  }
+  
+  /*
+   *----------------------------------------------------------------------
+   *
+***************
+*** 761,768 ****
+       * any work to do.
+       */
+      if(numRdPosted == 0 && numWrPosted == 0) {
+!         selectStatus = select((maxFd+1), &readFdSetCpy, &writeFdSetCpy,
+!                               NULL, tmo);
+          if(selectStatus < 0) {
+              exit(errno);
+  	}
+--- 768,777 ----
+       * any work to do.
+       */
+      if(numRdPosted == 0 && numWrPosted == 0) {
+! 	do {
+!             selectStatus = select((maxFd+1), &readFdSetCpy, &writeFdSetCpy,
+!                                   NULL, tmo);
+! 	} while ((selectStatus == -1) && (errno == EINTR));
+          if(selectStatus < 0) {
+              exit(errno);
+  	}
+***************
+*** 1020,1030 ****
+  {
+      struct timeval tval = { READABLE_UNIX_FD_DROP_DEAD_TIMEVAL };
+      fd_set read_fds;
+  
+      FD_ZERO(&read_fds);
+      FD_SET(fd, &read_fds);
+      
+!     return select(fd + 1, &read_fds, NULL, NULL, &tval) >= 0 && FD_ISSET(fd, &read_fds);
+  }
+  
+  /*
+--- 1029,1043 ----
+  {
+      struct timeval tval = { READABLE_UNIX_FD_DROP_DEAD_TIMEVAL };
+      fd_set read_fds;
++     int result;
+  
+      FD_ZERO(&read_fds);
+      FD_SET(fd, &read_fds);
+      
+!     do {
+! 	result = select(fd + 1, &read_fds, NULL, NULL, &tval);
+!     } while((result == -1) && (errno == EINTR));
+!     return result >= 0 && FD_ISSET(fd, &read_fds);
+  }
+  
+  /*
