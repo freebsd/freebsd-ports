@@ -63,10 +63,6 @@ NOT_FOR_ARCHS=	ia64
 .include "${.CURDIR}/../../x11-servers/xorg-server/Makefile.inc"
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == i386 || ${ARCH} == alpha
-RUN_DEPENDS+=	${X11BASE}/lib/modules/dri/r200_dri.so:${PORTSDIR}/graphics/dri
-.endif
-
 .if ${ARCH} == ia64
 PLIST_SUB+=	IA64_NA="@comment "
 .else
