@@ -1,0 +1,18 @@
+****************************************************************
+vtiger is installed in ${PREFIX}/www/vtiger.
+
+You need to create an MySQL database called vtiger, and an user
+vtiger which is allowed to acces the database from localhost.
+
+Then, setup a virtual host in your webserver which has DocumentRoot
+to ${PREFIX}/www/vtiger. If your php.ini states that all errors
+should go to the users webbrowser, better turn that off now:
+    php_flag display_errors Off
+
+Connect to that virtual host with your webbrowser and run the
+installation script. After the creation of config.php, you can edit
+it and properly configure the db_name, db_user_name and db_password.
+
+The rest of the installation should go smoothly.
+
+****************************************************************
