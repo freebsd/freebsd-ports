@@ -248,18 +248,15 @@ sub change_summary_changed {
 	if ($rev ne '' && $rcsfile ne '') {
 	    open(RCS, "-|") || exec 'cvs', '-Qn', 'log', "-r$rev", $file;
 	    while (<RCS>) {
-		if (/^date:/) {
-		    chop;
-		    $delta = $_;
-		    $delta =~ s/^.*;//;
-		    $delta =~ s/^[\s]+lines://;
+		if (/^date:.*lines:\s(.*)$/) {
+		    $delta = $1;
 		    last;
 		}
 	    }
 	    close(RCS);
 	}
 
-	&append_line($out, sprintf("%-9s%-12s%s", $rev, $delta, $rcsfile));
+	&append_line($out, "$rev,$delta,$rcsfile");
     }
 }
 
@@ -355,6 +352,7 @@ sub mail_notification {
 	open(MAIL, "| /usr/local/bin/mailsend -H cvs-committers$dom cvs-all$dom");
     }
 
+
 # This is turned off since the To: lines go overboard.
 # - but keep it for the time being in case we do something like cvs-stable
 #    print(MAIL 'To: cvs-committers' . $dom . ", cvs-all" . $dom);
@@ -402,6 +400,48 @@ sub mail_notification {
 
     print(MAIL join("\n", @text));
     close(MAIL);
+}
+
+# Return the length of the longest value in the list.
+sub longest_value {
+    my @values = @_;
+
+    my @sorted = sort { $b <=> $a } map { length $_ } @values;
+    return $sorted[0];
+}
+
+sub format_summaries {
+    my @filenames = @_;
+
+    my @revs;
+    my @deltas;
+    my @files;
+
+    # Parse the summary file.
+    foreach my $filename (@filenames) {
+	open FILE, $filename or next;
+	while (<FILE>) {
+	    chomp;
+	    my ($r, $d, $f) = split /,/, $_;
+	    push @revs, $r;
+	    push @deltas, $d;
+	    push @files, $f;
+	}
+	close FILE;
+    }    
+
+    # Format the output
+    my $r_max = longest_value("Revision", @revs) + 2;
+    my $d_max = longest_value("Changes  ", @deltas) + 2;
+
+    my @text;
+    my $fmt = "%-" . $r_max . "s%-" . $d_max . "s%s";
+    push @text, sprintf $fmt, "Revision", "Changes", "Path";
+    foreach (0 .. $#revs) {
+	push @text, sprintf $fmt, $revs[$_], $deltas[$_], $files[$_];
+    }
+
+    return @text;
 }
 
 #############################################################
@@ -663,8 +703,7 @@ for ($i = 0; ; $i++) {
     if ($rcsidinfo == 2) {
 	if (-e "$SUMMARY_FILE.$i.$id") {
 	    push(@text, "  ");
-	    push(@text, "  Revision  Changes    Path");
-	    push(@text, &read_logfile("$SUMMARY_FILE.$i.$id", "  "));
+	    push @text, map {"  $_"} format_summaries("$SUMMARY_FILE.$i.$id");
 	}
     }
     push(@text, "", "");
@@ -678,19 +717,13 @@ for ($i = 0; ; $i++) {
 # Now generate the extra info for the mail message..
 #
 if ($rcsidinfo == 1) {
-    $revhdr = 0;
+    my @summary_files;
     for ($i = 0; ; $i++) {
-	last if (! -e "$LOG_FILE.$i.$id");
-	if (-e "$SUMMARY_FILE.$i.$id") {
-	    if (!$revhdr++) {
-		push(@text, "Revision  Changes    Path");
-	    }
-	    push(@text, &read_logfile("$SUMMARY_FILE.$i.$id", ""));
-	}
+	last unless -e "$LOG_FILE.$i.$id";
+	push @summary_files, "$SUMMARY_FILE.$i.$id";
     }
-    if ($revhdr) {
-	push(@text, "");	# consistancy...
-    }
+    push @text, format_summaries(@summary_files);
+    push @text, "";
 }
 
 #
