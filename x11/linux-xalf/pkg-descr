@@ -1,4 +1,4 @@
-lf is a small utility to provide feedback when starting X11 applications.
+Xalf is a small utility to provide feedback when starting X11 applications.
 Feedback can be given via four different indicators: an invisible window
 (to be used in conjunction with a task pager like GNOMEs tasklist_applet or
 KDEs Taskbar), an generic splashscreen, an hourglass attached to the mouse
