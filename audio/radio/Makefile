@@ -2,7 +2,9 @@
 # Version required:	2.0.4
 # Date created:		5 July 1995
 # Whom:			janek@gaja.ipan.lublin.pl
-# $Id: $
+#
+# $Id: Makefile,v 1.3 1996/10/18 07:47:10 max Exp $
+#
 
 DISTNAME=	radio2.0.4
 PKGNAME=	radio-2.0.4
