@@ -572,7 +572,6 @@
     SUBDIR += p5-libservlet
     SUBDIR += p5-libwww
     SUBDIR += peacock
-    SUBDIR += pear-APC
     SUBDIR += pear-HTTP
     SUBDIR += pear-HTTP_Client
     SUBDIR += pear-HTTP_Download
@@ -582,6 +581,7 @@
     SUBDIR += pear-HTTP_Session
     SUBDIR += pear-HTTP_Upload
     SUBDIR += pear-Text_Wiki
+    SUBDIR += pecl-APC
     SUBDIR += pgdriver
     SUBDIR += pglogd
     SUBDIR += photo_gallery

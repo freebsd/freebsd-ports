@@ -1,13 +1,15 @@
 ************************************************************************
-Do not forget to configure your /usr/local/etc/php.ini file:
-add the line:
+You may edit %%LOCALBASE%%/etc/php.ini to change this variables:
 
-extension="apc.so"
+apc.enabled="1"
+            ^^^ -> Default value
 
-in the section "Dynamic Extensions".
+apc.shm_size="30"
+             ^^^^ -> Default value
+
+* More information on %%DOCSDIR%%/INSTALL
 
 Then restart your web server and consult the output of phpinfo().
 If there is an informational section for APC, the installation was
 successful.
 ************************************************************************
-
