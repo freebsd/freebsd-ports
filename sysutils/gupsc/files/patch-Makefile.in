@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- Makefile.in	2002/05/13 12:37:29	1.1
++++ Makefile.in	2002/05/13 12:37:39
+@@ -109,7 +109,7 @@
+ 
+ SUBDIRS = intl po macros src
+ 
+-Applicationsdir = $(shell $(GNOME_CONFIG) --datadir)/gnome/apps/System
++Applicationsdir = $(shell $(GNOME_CONFIG) --datadir)/apps/System
+ Applications_DATA = gupsc.desktop
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
