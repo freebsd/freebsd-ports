@@ -1,4 +1,10 @@
 etc/fnrc
+lib/libFnlib.a
+lib/libFnlib.la
+lib/libFnlib.so
+lib/libFnlib.so.0.3
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 include/Fnlib.h
 include/Fnlib_types.h
 include/X11/fonts/fnlib_fonts/e/fontinfo
@@ -243,12 +249,6 @@ include/X11/fonts/fnlib_fonts/shinymetal/45/w.tif
 include/X11/fonts/fnlib_fonts/shinymetal/45/x.tif
 include/X11/fonts/fnlib_fonts/shinymetal/45/y.tif
 include/X11/fonts/fnlib_fonts/shinymetal/45/z.tif
-lib/libFnlib.a
-lib/libFnlib.la
-lib/libFnlib.so
-lib/libFnlib.so.0.3
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 @dirrm include/X11/fonts/fnlib_fonts/e/17
 @dirrm include/X11/fonts/fnlib_fonts/e
 @dirrm include/X11/fonts/fnlib_fonts/rock/90
