@@ -9150,6 +9150,7 @@ xosview		ports/sysutils/xosview
 xothello	ports/games/xothello
 xp		ports/textproc/xp
 xpacman		ports/games/xpacman
+xpad		ports/deskutils/xpad
 xpaint		ports/graphics/xpaint
 xpanex		ports/games/xpanex
 xparam		ports/devel/xparam
