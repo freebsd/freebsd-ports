@@ -9,11 +9,12 @@ PORTNAME=	quakeserver
 PORTVERSION=	1.0
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.idsoftware.com/idstuff/quakeworld/unix/old/ \
-		ftp://ftp.idsoftware.com/idstuff/quake/
+		ftp://ftp.idsoftware.com/idstuff/quake/ \
+		ftp://ftp.sunet.se/pub/pc/games/idgames2/planetquake/threewave/unix/
 DISTFILES=	unixded-${PORTVERSION}-i386-unknown-bsdi3.0.tar.gz \
 		quake106.zip
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	martin@raq.cx
 
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip \
 		lha:${PORTSDIR}/archivers/lha
