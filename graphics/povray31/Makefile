@@ -1,25 +1,22 @@
 # New ports collection makefile for:    POV-Ray
-# Version required:     3.1d
+# Version required:     3.1e
 # Date created:         3 Dec 1996
 # Whom:                 paulo@isr.uc.pt
 #
-# $Id: Makefile,v 1.1.1.1 1999/03/20 14:53:01 dburr Exp $
+# $Id: Makefile,v 1.2 1999/05/09 17:47:51 flathill Exp $
 #
 
-DISTNAME=	povray3
+DISTNAME=	povray31
 PKGNAME=	povray-3.1e
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://ftp.povray.org/pub/povray/Official/MS-Dos/ \
-		ftp://ftp.povray.org/pub/povray/Old-Versions/Official-3.0/Unix/ \
-		ftp://www.hensa.ac.uk/mirrors/povray/Official/MS-Dos/ \
+MASTER_SITES=	ftp://ftp.povray.org/pub/povray/Official/Unix/ \
 		ftp://www.hensa.ac.uk/mirrors/povray/Old-Versions/Official-3.0/Unix/ \
-		ftp://ftp.fh-aachen.de/pub/mirror/ftp.povray.org/povray/Official/MS-Dos/ \
 		ftp://ftp.fh-aachen.de/pub/mirror/ftp.povray.org/povray/Old-Versions/Official-3.0/Unix/
-DISTFILES=	povmsd_s.zip povuni_s.tgz povuni_d.tgz
+DISTFILES=	povuni_s.tgz povuni_d.tgz
 
 MAINTAINER=	olli@fromme.com
 
-BUILD_DEPENDS=  unzip:${PORTSDIR}/archivers/unzip
+#BUILD_DEPENDS=  unzip:${PORTSDIR}/archivers/unzip
 LIB_DEPENDS=	png.3:${PORTSDIR}/graphics/png
 
 #
@@ -33,27 +30,16 @@ LIB_DEPENDS=	png.3:${PORTSDIR}/graphics/png
 USE_XLIB=	yes
 MAN1=		povray.1
 
-POVLIB=		${PREFIX}/lib/povray3
-
-do-extract:
-	@${RM} -rf ${WRKDIR}
-	@${MKDIR} ${WRKDIR}
-	@( \
-		cd ${WRKDIR}; \
-		${GUNZIP_CMD} -dcq ${DISTDIR}/povuni_s.tgz | tar xf -; \
-		${GUNZIP_CMD} -dcq ${DISTDIR}/povuni_d.tgz | tar xf -; \
-		cd ${DISTNAME}; \
-		unzip -aqoL ${DISTDIR}/povmsd_s.zip \
-	)
+POVLIB=		${PREFIX}/lib/povray31
 
 do-build:
-	@(cd ${WRKSRC}/source/unix; make newxwin)
+	@(cd ${WRKSRC}/source/unix; ${SETENV} ${MAKE_ENV} ${MAKE} newxwin)
 
 do-install:
 	@${MKDIR} ${POVLIB}/allscene
 	@${TOUCH} ${POVLIB}/allscene/.bla
 	@${INSTALL_PROGRAM} ${WRKSRC}/source/unix/x-povray ${PREFIX}/bin/povray
-	@(cd ${WRKSRC}; tar cpf - pov3demo povscn docsdemo include texsamps) | \
+	@(cd ${WRKSRC}; tar cpf - include scenes) | \
 		(cd ${POVLIB}; tar xpf -)
 	@${INSTALL_DATA} ${WRKSRC}/*.ini ${POVLIB}/
 	@${INSTALL_DATA} ${WRKSRC}/*.doc ${POVLIB}/
@@ -62,5 +48,8 @@ do-install:
 	@${RM} -f ${PREFIX}/man/man1/povray.1*
 	@${INSTALL_MAN} ${WRKSRC}/povray.1 ${PREFIX}/man/man1
 	@chmod -R a+rX,og-w ${POVLIB}
+
+post-install:
+	@${SH} ${FILESDIR}/script
 
 .include <bsd.port.mk>

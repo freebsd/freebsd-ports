@@ -1,0 +1,6 @@
+#!/bin/sh
+for i in `find /usr/local/lib/povray31 \( -name '*.ini' -o -name '*.pov' -o -name '*.txt' -o -name '*.sh' -o -name '*.map' -o -name '*.inc' -o -name '*.par' -o -name '*.sph' -o -name '*.tri' -o -name '*.c*' \) -print`; do
+	sed -e 's/$//g' $i > /tmp/xfer	# ^M is Ctrl+M
+	rm $i
+	mv /tmp/xfer $i
+done
