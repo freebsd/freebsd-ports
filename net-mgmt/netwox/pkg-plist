@@ -230,6 +230,10 @@ bin/netwox
 %%PORTDOCS%%%%DOCSDIR%%/tools/207.html
 %%PORTDOCS%%%%DOCSDIR%%/tools/208.html
 %%PORTDOCS%%%%DOCSDIR%%/tools/209.html
+%%PORTDOCS%%%%DOCSDIR%%/tools/210.html
+%%PORTDOCS%%%%DOCSDIR%%/tools/211.html
+%%PORTDOCS%%%%DOCSDIR%%/tools/212.html
+%%PORTDOCS%%%%DOCSDIR%%/tools/213.html
 %%PORTDOCS%%%%DOCSDIR%%/tools/index.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/tools
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/txt
