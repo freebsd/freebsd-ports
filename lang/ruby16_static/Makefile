@@ -22,8 +22,7 @@ USE_AUTOCONF=	yes
 # Beware, because gdbm is under GPL, you must treat the whole binary
 # as GPL says.
 EXT_PORTS=	archivers/ruby-zlib \
-		devel/ruby-strscan \
-		sysutils/ruby-syslog
+		devel/ruby-strscan
 _PORTSDIR=	${.CURDIR}/../..
 _RUBY_PORTDIR=	${_PORTSDIR}/${RUBY_PORT}
 
