@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	openntpd
-PORTVERSION=	3.6p1
+PORTVERSION=	3.6.1p1
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.openbsd.org/pub/OpenBSD/OpenNTPD/ \
