@@ -1,0 +1,12 @@
+This module contains all functions needed for handling PKCS#7
+signatures.  It requires some parameters to be passed such as a
+reference to a OpenCA::OpenSSL instance.
+
+This module provides an interface to PKCS#7 structures, no specific
+crypto functions are performed (see the OpenCA::OpenSSL module for
+this).
+
+WWW: http://search.cpan.org/dist/OpenCA-PKCS7/
+
+-- Sergey Skvortsov
+skv@FreeBSD.org
