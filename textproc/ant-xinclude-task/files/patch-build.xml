@@ -1,0 +1,11 @@
+--- build.xml.orig	Thu Aug 12 12:17:41 2004
++++ build.xml	Thu Aug 12 12:20:10 2004
+@@ -144,8 +144,6 @@
+ 		windowtitle="${javadoc.title}"
+ 		doctitle="${javadoc.title}"
+ 		bottom="${javadoc.footer}">
+-			<link href="http://java.sun.com/j2se/${java.specification.version}/docs/api" />
+-			<link href="http://people.FreeBSD.org/~znerd/ant15-apidocs" />
+ 		</javadoc>
+ 	</target>
+ 
