@@ -4,3 +4,4 @@ lib/libmcrypt.a
 lib/libmcrypt.so
 lib/libmcrypt.so.8
 share/aclocal/libmcrypt.m4
+@dirrm lib/libmcrypt
