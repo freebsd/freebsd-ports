@@ -1,11 +1,17 @@
---- barcode-0.98/Makefile.in.bak	Tue Aug 27 12:23:41 2002
-+++ barcode-0.98/Makefile.in	Mon Jul  7 06:37:34 2003
-@@ -3,7 +3,7 @@
+--- barcode-0.98/Makefile.in.orig	Wed Dec 24 10:39:07 2003
++++ barcode-0.98/Makefile.in	Wed Dec 24 10:49:04 2003
+@@ -3,12 +3,12 @@
  #
  
  CC = @CC@
 -CFLAGS = @CFLAGS@ @DEFS@ @NO_GETOPT@ @NO_LIBPAPER@ @NO_STRERROR@
-+CFLAGS = @CPPFLAGS@ @CFLAGS@ @DEFS@ @NO_GETOPT@ @NO_LIBPAPER@ @NO_STRERROR@
++CFLAGS = @CFLAGS@ @DEFS@ @NO_GETOPT@ @NO_LIBPAPER@ @NO_STRERROR@ @CPPFLAGS@
  RANLIB = @RANLIB@
  
  INSTALL = @INSTALL@
+ 
+-LDFLAGS = -L. -l$(TARGET) @LIBPAPER@
++LDFLAGS = -L. -l$(TARGET) @LIBPAPER@ @LDFLAGS@
+ 
+ prefix = @prefix@
+ BINDIR = $(prefix)/bin
