@@ -11,7 +11,7 @@
 # you can generally build it cleanly from the source. - Doug
 
 PORTNAME=	bind
-PORTVERSION=	8.3.1
+PORTVERSION=	8.3.2
 CATEGORIES?=	net
 MASTER_SITES=	ftp://ftp.isc.org/isc/bind/src/${PORTVERSION}/ \
 		ftp://ftp.epix.net/pub/isc/bind/src/${PORTVERSION}/ \
@@ -23,7 +23,12 @@ DIST_SUBDIR=	bind-${PORTVERSION}
 
 MAINTAINER=	DougB@FreeBSD.org
 
+.if defined(REPLACE_SYSTEM_BIND)
+PREFIX=		/usr
+.endif
+
 WRKSRC=		${WRKDIR}/src
+MAKE_ENV+=	MANPREFIX=${MANPREFIX}
 
 MAN1=		dig.1 dnskeygen.1 dnsquery.1 host.1
 MAN3=		getaddrinfo.3 gethostbyname.3 getipnodebyname.3 getnetent.3 \
@@ -35,6 +40,15 @@ MAN8=		named-bootconf.8 named-xfer.8 named.8 ndc.8 nslookup.8 \
 
 PATCH_ARGS=	-s -d ${WRKDIR}
 PATCH_DIST_ARGS=	-s -d ${WRKDIR}
+
+post-patch:
+.if defined(REPLACE_SYSTEM_BIND)
+	@${SED} -e "s#\'DESTETC=.*#'DESTETC=/etc/namedb'#" \
+		${WRKSRC}/port/freebsd/Makefile.set > \
+		${WRKSRC}/port/freebsd/Makefile.set.sed
+	@${MV} ${WRKSRC}/port/freebsd/Makefile.set.sed \
+		${WRKSRC}/port/freebsd/Makefile.set
+.endif
 
 post-install:
 .if !defined(NOPORTDOCS)
