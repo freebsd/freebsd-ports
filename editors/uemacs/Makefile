@@ -3,18 +3,24 @@
 # Date created:         16 Jan 1995
 # Whom:                 thomas@ghpc8.ihf.rwth-aachen.de
 #
+# $Id:$
+#
 
 DISTNAME=	uemacs
-MASTER_SITES=	ftp://midas.mgmt.purdue.edu/pub/ue312/
+PKGNAME=	uemacs-3.12
 CATEGORIES+=	editors
-PATCH_STRIP=	-p1
+MASTER_SITES=	ftp://midas.mgmt.purdue.edu/pub/ue312/
 DISTFILES=	ue312dev.zip
+
 EXEC_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
+
+NO_WRKSUBDIR=	yes
+PATCH_STRIP=	-p1
 
 # one weakness of the ports scheme: it doesn't allow arguments
 # to ${EXTRACT_CMD} after the filename, which is required for unzip.
 
-NO_WRKSUBDIR=	yes
+# Satoshi: it does now, so please update it when you see this.... :)
 
 pre-extract: exec_depends
 	@echo "===>  Extracting for ${DISTNAME}"
