@@ -1,0 +1,18 @@
+--- configure.in.orig	Wed Jun 27 15:29:12 2001
++++ configure.in	Wed Jun 27 15:29:30 2001
+@@ -16,15 +16,10 @@
+ USE_GTK=
+ AM_PATH_GTK(1.2.0, USE_GTK=amycg, AC_MSG_WARN(AboutMyCache will not use GTK))
+ AC_SUBST(USE_GTK)
+-AC_CHECK_LIB(db1, dbopen,, AC_CHECK_LIB(db, dbopen,, AC_MSG_ERROR(AboutMyCache needs Berkeley DB 1.85)))
+ 
+ dnl Checks for header files.
+ AC_HEADER_STDC
+ AC_CHECK_HEADERS(fcntl.h limits.h malloc.h strings.h unistd.h)
+-AC_CHECK_HEADERS(db1/db.h, db1=true, db1=false)
+-if test "x$db1" = "xfalse"; then
+-    AC_CHECK_HEADERS(db_185.h,,AC_MSG_WARN(AboutMyCache needs Berkeley DB 1.85, but it can\'t fint it!!))
+-fi
+ 
+ dnl Checks for typedefs, structures, and compiler characteristics.
+ AC_C_CONST
