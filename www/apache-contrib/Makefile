@@ -9,21 +9,11 @@ PORTNAME=	apache-contrib
 PORTVERSION=	1.0.8
 CATEGORIES=	www
 MASTER_SITES=	http://www.apache.org/dist/%SUBDIR%/ \
-		ftp://ftp.ccs.neu.edu/net/mirrors/ftp.apache.org/apache/dist/%SUBDIR%/ \
 		ftp://ftp.rge.com/pub/infosystems/apache/dist/%SUBDIR%/ \
-		ftp://apache.compuex.com/pub/apache/dist/%SUBDIR%/ \
-		ftp://apache.arctic.org/pub/apache/dist/%SUBDIR%/ \
 		ftp://ftp.epix.net/pub/apache/dist/%SUBDIR%/ \
-		ftp://ftp.ameth.org/pub/mirrors/ftp.apache.org/apache/dist/%SUBDIR%/ \
-		ftp://ftp.connectnet.com/pub/www/apache/%SUBDIR%/ \
-		ftp://apache.technomancer.com/mirrors/apache/dist/%SUBDIR%/ \
-		ftp://ftp.raver.net/pub/ftp.apache.org/%SUBDIR%/ \
-		ftp://www3.service.digital.com/apache/dist/%SUBDIR%/ \
-		ftp://galileo.galilei.com/pub/apache/%SUBDIR%/ \
-		ftp://ftp.mtnranch.net/pub/apache/dist/%SUBDIR%/ \
 		ftp://ftp.iodynamics.com/pub/mirror/apache/dist/%SUBDIR%/ \
-		ftp://apache.nextpath.com/pub/apache/dist/%SUBDIR%/
-MASTER_SITE_SUBDIR=	contrib/modules/1.3
+		ftp://ftp.sunet.se/pub/www/servers/apache/dist/%SUBDIR%/
+MASTER_SITE_SUBDIR=	httpd/contrib/modules/1.3
 
 MAINTAINER=	anders@fix.no
 
