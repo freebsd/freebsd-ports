@@ -1,0 +1,9 @@
+Aileron is an email client written for the WindowMaker window manager.
+It is based on the WINGs widget library.  The philosophy behind Aileron
+is to be as similar to NeXTSTEP's Mail.app as possible, right down to
+the menu keybindings.  Aileron will play nice with pine, elm, or whatever
+other mbox mail reader you use.  There will be a few deviations from the
+original Mail.app, most of which the average WindowMaker user will
+appreciate.
+
+WWW: http://ucsu.colorado.edu/~nwanua/Aileron/

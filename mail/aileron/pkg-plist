@@ -1,0 +1,46 @@
+GNUstep/Apps/Aileron.app/AUTHORS.html
+GNUstep/Apps/Aileron.app/Aileron
+GNUstep/Apps/Aileron.app/images/filetypes/AUTHOR
+GNUstep/Apps/Aileron.app/images/filetypes/file-dot-jpg.tif
+GNUstep/Apps/Aileron.app/images/filetypes/file-dot-mov.tif
+GNUstep/Apps/Aileron.app/images/filetypes/file-generic-gnustep.tif
+GNUstep/Apps/Aileron.app/images/filetypes/generic-sound.tif
+GNUstep/Apps/Aileron.app/images/filetypes/generic-text.tif
+GNUstep/Apps/Aileron.app/images/icon/numbers.xpm
+GNUstep/Apps/Aileron.app/images/icon/mailboxes.xpm
+GNUstep/Apps/Aileron.app/images/icon/mailboxesfull.xpm
+GNUstep/Apps/Aileron.app/images/icon/mailboxesmask.xbm
+GNUstep/Apps/Aileron.app/images/icon/mailboxesmask.xpm
+GNUstep/Apps/Aileron.app/images/icon/newmail.xpm
+GNUstep/Apps/Aileron.app/images/icon/no_newmail.xpm
+GNUstep/Apps/Aileron.app/images/icon/Mail2.xpm
+GNUstep/Apps/Aileron.app/images/infopanel/info-image.tif
+GNUstep/Apps/Aileron.app/images/infopanel/info-title.tif
+GNUstep/Apps/Aileron.app/images/timestamp/date.xpm
+GNUstep/Apps/Aileron.app/images/timestamp/clk.xpm
+GNUstep/Apps/Aileron.app/images/timestamp/month.xpm
+GNUstep/Apps/Aileron.app/images/timestamp/led.xpm
+GNUstep/Apps/Aileron.app/images/timestamp/weekday.xpm
+GNUstep/Apps/Aileron.app/images/win/upbtn.xpm
+GNUstep/Apps/Aileron.app/images/win/answered-flag.tif
+GNUstep/Apps/Aileron.app/images/win/clip.tif
+GNUstep/Apps/Aileron.app/images/win/compose.tif
+GNUstep/Apps/Aileron.app/images/win/delete.tif
+GNUstep/Apps/Aileron.app/images/win/deliver.tif
+GNUstep/Apps/Aileron.app/images/win/downbtn.xpm
+GNUstep/Apps/Aileron.app/images/win/face.xpm
+GNUstep/Apps/Aileron.app/images/win/find.tif
+GNUstep/Apps/Aileron.app/images/win/forward.tif
+GNUstep/Apps/Aileron.app/images/win/mailboxes.tif
+GNUstep/Apps/Aileron.app/images/win/mime-flag.tif
+GNUstep/Apps/Aileron.app/images/win/new-flag.tif
+GNUstep/Apps/Aileron.app/images/win/newmail.tif
+GNUstep/Apps/Aileron.app/images/win/reply.tif
+GNUstep/Apps/Aileron.app/images/win/addresses.tif
+@dirrm GNUstep/Apps/Aileron.app/images/filetypes
+@dirrm GNUstep/Apps/Aileron.app/images/infopanel
+@dirrm GNUstep/Apps/Aileron.app/images/icon
+@dirrm GNUstep/Apps/Aileron.app/images/timestamp
+@dirrm GNUstep/Apps/Aileron.app/images/win
+@dirrm GNUstep/Apps/Aileron.app/images
+@dirrm GNUstep/Apps/Aileron.app

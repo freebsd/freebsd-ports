@@ -3,6 +3,7 @@
 
     SUBDIR += abook
     SUBDIR += adcomplain
+    SUBDIR += aileron
     SUBDIR += akpop3d
     SUBDIR += althea
     SUBDIR += anubis

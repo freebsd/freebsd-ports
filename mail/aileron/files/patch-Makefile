@@ -1,0 +1,64 @@
+--- Makefile.orig	Fri Nov 23 02:53:00 2001
++++ Makefile	Wed Aug 28 13:38:08 2002
+@@ -1,45 +1,35 @@
+-
+-
+-SHELL = /bin/sh
+-CC = gcc
+-INSTALL = /bin/cp -r
+-INSTALLDIR = $(DESTDIR)/usr/lib/GNUstep/Apps/Aileron.app
++CC ?= gcc
++INSTALL = /bin/cp
++INSTALLDIR = ${X11BASE}/GNUstep/Apps/Aileron.app
+ IMAGES = images
+ MISCFILES = AUTHORS.html
+ 
++TARGET = Aileron
+ 
+-TARGET=Aileron
+-
+-CFLAGS= `get-wings-flags --cflags` -I. -I/usr/include/c-client -Wall \
+-#-Wpointer-arith -Wcast-qual -Wcast-align -Wwrite-strings -Wconversion \
+-#-Werror
++CFLAGS += `get-wings-flags --cflags` -I. -I${LOCALBASE}/include/c-client -Wall
+ 
++LDFLAGS = `get-wings-flags --ldflags` -L${X11BASE}/lib
+ 
+-
+-LDFLAGS=`get-wings-flags --ldflags` -L/usr/X11R6/lib
+-
+-LIBS= `get-wings-flags --libs` -lWMaker -lc-client -lcrypt  
+-#-lefence
++LIBS= `get-wings-flags --libs` -lWMaker -lc-client4 -lcrypt
+ 
+ MODULES = Addresses.o Aileron.o Composer.o Find.o HTMLParser.o Info.o \
+ MailBox.o Mailboxes.o Menu.o Preferences.o TimeStamp.o  HTMLWriter.o
+ 
+-all: $(TARGET)
++all: ${TARGET}
+ 
+ install:
+-	strip $(TARGET)
+-	mkdir -p $(INSTALLDIR)
+-	$(INSTALL)  $(TARGET) $(MISCFILES) $(IMAGES) $(INSTALLDIR)
++	strip ${TARGET}
++	mkdir -p ${INSTALLDIR}
++	${INSTALL} -R ${TARGET} ${MISCFILES} ${IMAGES} ${INSTALLDIR}
+ 
+ clean:
+-	rm -f $(MODULES) $(TARGET) core  *~
++	rm -f ${MODULES} ${TARGET} core *~
+ 
+ distclean:
+-	rm -f $(MODULES) $(TARGET) core 
++	rm -f ${MODULES} ${TARGET} core
+ 
+-$(TARGET): $(MODULES) Aileron.h
+-	$(CC) -g -o $(TARGET) $(MODULES) $(LIBS) $(LDFLAGS)
++${TARGET}: ${MODULES} Aileron.h
++	${CC} -o ${TARGET} ${MODULES} ${LIBS} ${LDFLAGS}
+ 
+ .c.o:
+-	$(CC) $(CFLAGS) -g -c $< -o $@
+-
++	${CC} ${CFLAGS} -c $< -o $@
