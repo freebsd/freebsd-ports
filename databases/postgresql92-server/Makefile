@@ -1,14 +1,13 @@
 # New ports collection makefile for:	PostgreSQL
-# Version required:	6.1
+# Version required:	6.2.1
 # Date created:		April 2, 1997
 # Whom:			Marc G. Fournier <scrappy@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.18 1997/10/05 21:00:49 andreas Exp $
+# $Id: Makefile,v 1.19 1997/10/30 14:34:23 andreas Exp $
 
 DISTNAME=	postgresql-6.2.1
 CATEGORIES=	databases
 MASTER_SITES=	ftp://ftp.PostgreSQL.org/pub/ \
-		ftp://ftp.luga.or.at/pub/postgres95/ \
 		ftp://ftp.jaist.ac.jp/pub/dbms/postgres95/
 
 MAINTAINER=	andreas@FreeBSD.ORG
