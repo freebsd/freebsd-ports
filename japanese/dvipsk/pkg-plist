@@ -3,8 +3,8 @@ bin/afm2tfm
 bin/dvips
 bin/odvips
 bin/udvips
-bin/updmap-ptex
-%%TEXMF%%/web2c-ptex/updmap.cfg
+bin/updmap-sys-ptex
+%%TEXMFDIR%%/web2c/ptex/updmap.cfg
 %%DVIPSDIR%%/base/tex.pro
 %%DVIPSDIR%%/base/texps.pro
 %%DVIPSDIR%%/base/texc.pro
@@ -25,9 +25,10 @@ bin/updmap-ptex
 %%DVIPSDIR%%/base/psfonts.map
 %%DVIPSDIR%%/base/psfonts_pk.map
 %%DVIPSDIR%%/base/psfonts_t1.map
-%%DVIPSDIR%%/base/ptex-kanji.map
 %%DVIPSDIR%%/config/config.ps
-@exec %%MKTEXLSR%%
 @dirrm %%DVIPSDIR%%/base
 @dirrm %%DVIPSDIR%%/config
+%%FONTSMAPDIR%%/ptex/kanji.map
+@dirrm %%FONTSMAPDIR%%/ptex
+@exec %%MKTEXLSR%%
 @unexec %%MKTEXLSR%%
