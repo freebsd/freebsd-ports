@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	healthd
-PORTVERSION=	0.5.3
+PORTVERSION=	0.5.4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://healthd.thehousleys.net/
 
@@ -21,7 +21,7 @@ INSTALL_TARGET=	install-all
 post-install:
 	@if [ ! -f ${PREFIX}/etc/rc.d/healthd.sh ]; then \
 		${ECHO} "Installing ${PREFIX}/etc/rc.d/healthd.sh startup file."; \
-		${INSTALL_SCRIPT} -m 751 ${FILESDIR}/healthd.sh ${PREFIX}/etc/rc.d/healthd.sh; \
+		${INSTALL_SCRIPT} -m 751 ${WRKSRC}/healthd.sh ${PREFIX}/etc/rc.d/healthd.sh; \
 	fi
 	@if [ ! -f ${PREFIX}/etc/healthd.conf ]; then \
 		${ECHO} "Installing ${PREFIX}/etc/healthd.conf configuration file."; \
