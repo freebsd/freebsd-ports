@@ -1,0 +1,83 @@
+This is the parallelized package building system.  Many thanks to
+Steve Price for helping me put this together.
+
+                                                   - Satoshi
+
+In the following, ${branch} is either "2.2" or "3.0" depending on
+which packages you intend to build.
+
+Note that this system is still under development.  It will require a
+substantial amount of effort to set up initially, and the following is
+probably missing a lot of stuff.  Please let me know of any warts you
+find.
+
+ (1) One of the machines are to be designated as the "master".  It is
+     defined in the portbuild script.  There is also a "buildroot"
+     directory where everything should reside on the master machine.
+     It is defined in ports/Makefile and the portbuild script.  Copy
+     everything under this directory there and make necessary changes.
+
+ (2) On the master, check out the ports tree under
+     ${buildroot}/usr/ports, the appropriate source tree under
+     ${buildroot}/${branch}/src and the doc tree under
+     ${buildroot}/usr/opt/doc.  These directories have to be NFS
+     exported to the build machines.  (Hint: you should probably add
+     "-alldirs" to /etc/exports.)
+
+ (3) Setup ssh for root between the build machines and the master.  It 
+     has to work in both directions.
+
+ (4) Put the list of machines you have in "mlist".  There is a sample
+     provided in this directory.  Each line should have two entries,
+     "hostname" and "power".  The "hostname" is self-explanatory; the
+     "power" entry generally discribes how many compilations that
+     machine can run in parallel.  It is only relative, so designating
+     two machines 1 and 2 is the same as having them as 10 and 20
+     (modulo any rounding errors).
+
+     Note that you can put the master here as well, but our experience 
+     is that our NFS is likely to act up when the master is too busy.
+     Even with a two-processor P6-200, we had to refrain from running
+     any compilations on the master to get NFS to work reliably.
+
+ (5) Go to ${branch}/bindist and follow the instructions in the README
+     files there to create the bindist tarball.
+
+ (6) Generate an XFree86 tarball in ports/x11/XFree86.  Use
+     PLIST.stripped to create a smaller version.  (You can use it by
+     setting 'PLIST=${PKGDIR}/PLIST.stripped'.)  Put it in
+     ${branch}/tarballs.
+
+ (7) If you have Motif, generate a Motif tarball by using
+     ports/x11-toolkits/Motif-dummy.  Put it in ${branch}/tarballs.
+
+ (8) Copy ${branch}/tarballs and ${buildroot}/portbuild to same
+     directories on the build machines.  Create a directory
+     ${branch}/chroot on the build machines.
+
+ (9) Create the directory ${buildroot}/distfiles, ${branch}/logs and
+     ${branch}/packages/All on the master.  Copy the XFree86 and Motif
+     tarballs to the latter directory.
+
+(10) Run the "checkmachines" script on the master in the background.
+     This will check all the machines listed in "mlist" periodically
+     and print the list of least-loaded machines to "ulist".
+
+(11) Run the "makeduds" script at ${buildroot}/usr/ports.  The one
+     supplied is for building 2.2 packages on a 3.0 machines.  For
+     3.0, you can replace it with just two lines:
+
+     unset DISPLAY
+     PARALLEL_PACKAGE_BUILD=t make ignorelist ECHO_MSG=true > ../../3.0/duds
+
+(12) Run the "makeindex" script at ${buildroot}/usr/ports.  The one
+     supplied is for building 2.2 packages on a 3.0 machines.  For
+     3.0, you can replace it with just one line:
+
+     PORTSDIR=$(pwd) PARALLEL_PACKAGE_BUILD=t make index
+
+(13) Run "make parallel > ../../${branch}/Makefile" in
+     ${buildroot}/usr/ports to generate the Makefile.
+
+(14) Go to ${branch}/packages/All on the master and type "make -k
+     -j<whatever> -f ../../Makefile &".  Then wait. :)

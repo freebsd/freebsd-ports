@@ -1,0 +1,7 @@
+#!/bin/sh
+export PORTOBJFORMAT=aout
+export OSVERSION=228001
+unset DISPLAY
+export HAVE_MOTIF=t
+export PARALLEL_PACKAGE_BUILD=t
+make ignorelist ECHO_MSG=true > ../../2.2/duds

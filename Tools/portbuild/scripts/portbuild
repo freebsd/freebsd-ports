@@ -1,0 +1,119 @@
+#!/bin/sh
+
+# usage: $0 BRANCH PKGNAME.tar DIRNAME [DEPENDENCY.tar ...]
+
+master=bento
+
+export BATCH=t
+export NO_RESTRICTED=t
+export USA_RESIDENT=YES
+export FORCE_PKG_REGISTER=t
+#export FORCE_PACKAGE=t
+export PARALLEL_PACKAGE_BUILD=t
+export PACKAGE_BUILDING=t
+export WRKDIRPREFIX=/tmp
+#export PKG_NOCOMPRESS=t
+# to catch missing dependencies
+export DEPENDS_TARGET=/usr/bin/true
+# don't pass -j, -k etc. to sub-makes
+unset MAKEFLAGS
+
+# 15 minutes
+export FTP_TIMEOUT=900
+export HTTP_TIMEOUT=900
+
+# ssh -x doesn't work on some machines
+unset DISPLAY
+
+export PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/bin:/usr/X11R6/bin:.
+
+buildroot=/a/asami/portbuild
+
+branch=$1
+shift
+
+if [ ${branch} = "3.0" ]; then
+  export OSREL=3.0
+  export OSVERSION=300006
+  export PORTOBJFORMAT=elf
+else
+  export OSREL=2.2.8
+  export OSVERSION=228001
+  export PORTOBJFORMAT=aout
+fi
+
+args="$*"
+
+pkgname=$(basename $1 .tgz)
+dirname=$2
+shift 2
+
+echo "building $pkgname"
+
+chroot=${buildroot}/${branch}/chroot/${pkgname}
+bakdir=${buildroot}/${branch}/tarballs
+bindist=${bakdir}/bindist.tar
+packages=${buildroot}/${branch}/packages
+
+rm -rf ${chroot}
+mkdir -p ${chroot}
+tar -C ${chroot} -xf ${bindist}
+
+#cd ${chroot}/usr
+#portcheckout $pkgname | grep '^cvs co' | sh || exit 1
+
+mount -o -2 -r ${master}:${buildroot}/usr/ports ${chroot}/usr/ports
+mount -o -2 -r ${master}:${buildroot}/${branch}/src ${chroot}/usr/src
+mount -o -2 -r ${master}:${buildroot}/usr/opt/doc ${chroot}/usr/opt/doc
+
+mtree -deU -f ${chroot}/usr/src/etc/mtree/BSD.root.dist -p ${chroot} >/dev/null 2>&1
+mtree -deU -f ${chroot}/usr/src/etc/mtree/BSD.var.dist -p ${chroot}/var >/dev/null 2>&1
+mtree -deU -f ${chroot}/usr/src/etc/mtree/BSD.usr.dist -p ${chroot}/usr >/dev/null 2>&1
+
+while [ $# -gt 0 ]; do
+  if ssh -a ${master} [ -f ${packages}/All/$1 ]; then
+    if [ ! -f ${chroot}/tmp/depends/$1 ]; then
+      echo "copying package $1"
+      if [ -f ${bakdir}/$1 ]; then
+	cp -p ${bakdir}/$1 ${chroot}/tmp/depends
+      else
+	scp -p $master:${packages}/All/$1 ${chroot}/tmp/depends
+      fi
+    fi
+  fi
+  shift
+done
+
+scp -p ${master}:${buildroot}/buildscript ${chroot}
+
+#mount_procfs procfs ${chroot}/proc
+
+echo "${pkgname} built on $(hostname -s)" > ${chroot}/tmp/${pkgname}.log
+echo "with arguments: ${args}" >> ${chroot}/tmp/${pkgname}.log
+chroot ${chroot} /buildscript ${dirname} 2>&1 | tee -a ${chroot}/tmp/${pkgname}.log
+error=$(cat ${chroot}/tmp/status)
+
+if [ "${error}" = 0 ]; then
+  tar -C ${chroot}/tmp -cf - distfiles | \
+    ssh -a $master tar --unlink -C ${buildroot} -xvf -
+  tar -C ${chroot}/tmp -cf - packages | \
+    ssh -a $master tar --unlink -C ${buildroot}/${branch} -xvf -
+else
+  scp ${chroot}/tmp/${pkgname}.log ${master}:${buildroot}/${branch}/logs/${pkgname}.log
+fi
+
+#umount ${chroot}/proc
+
+umount -f ${chroot}/usr/ports
+umount -f ${chroot}/usr/opt/doc
+umount -f ${chroot}/usr/src
+
+if ! rm -rf ${chroot} >/dev/null 2>&1; then
+  chflags -R noschg ${chroot}
+  rm -rf ${chroot} >/dev/null 2>&1
+fi
+
+echo -n "$pkgname done on $(hostname -s) at "
+date
+
+exit $error
