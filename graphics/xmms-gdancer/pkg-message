@@ -1,0 +1,10 @@
++++++
+
+Now you HAVE to install some themes from http://www.figz.com/gdancer/themes.php
+into .xmms/gdancer_themes/<name_of_theme>. If it does not exist in your home
+directory, just create it.
+
+If you don't install a theme, you don't see a dancer and you will get
+some GTK errors.
+
++++++
