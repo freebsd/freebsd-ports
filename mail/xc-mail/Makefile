@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	xc-mail
-PORTVERSION=	20001001 # from CVS
+PORTVERSION=	20001016
 CATEGORIES=	mail
-MASTER_SITES=	http://people.freebsd.org/~trevor/
+MASTER_SITES=	ftp://trilug.fh-trier.de/pub/XCmail/cvs-snapshot/
+DISTNAME=	${PORTNAME}-1.3devel
 
 MAINTAINER=	trevor@FreeBSD.org
 
