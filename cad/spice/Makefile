@@ -13,14 +13,12 @@ MASTER_SITES=	ftp://ic.eecs.berkeley.edu/pub/Spice3/
 DISTNAME=	sp3f4.kit
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	kaveman@magna.com.au
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A general-purpose circuit simulation program
 
-# documentation in ftp://ic.eecs.berkeley.edu/pub/Spice3/um.3f3.ps
-
-#		These are included as patch-ab
-#PATCH_SITES=	ftp://ilpsoft.eecs.berkeley.edu/pub/SPICE3F5/
-#PATCHFILES=	grid.patch newcoms.patch spsmp.patch
+# documentation in ftp://ic.eecs.berkeley.edu/pub/Spice3/um.3f3.ps/
+#PATCH_SITES=	http://www.elec.mq.edu.au//cnerf/spice/
+#PATCHFILES=	patches.tar.Z
 
 USE_XLIB=	yes
 NO_WRKSUBDIR=	yes
