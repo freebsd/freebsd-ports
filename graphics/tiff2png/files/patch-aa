@@ -1,0 +1,40 @@
+--- Makefile	Sun Feb 13 15:39:40 2000
++++ Makefile.new	Tue Jul  4 02:51:02 2000
+@@ -2,9 +2,9 @@
+ # Copyright (C) 1996 Willem van Schaik
+ 
+ #CC=cc
+-CC=gcc
++CC?=gcc
+ OPTIMFLAGS = -O3 
+-DEBUGFLAGS = -g -Wall -W
++DEBUGFLAGS = -Wall -W
+ #COPY=cp
+ COPY=/bin/cp -p
+ DEL=/bin/rm -f
+@@ -49,21 +49,15 @@
+ #ZLIB=/usr/lib
+ ZLIB=/usr/local/lib
+ #ZLIB=../zlib
+-ZINC=/usr/local/include
++#ZINC=/usr/local/include
+ #ZINC=$(ZLIB)
+ 
+ INSTALL=/usr/local
+ 
+ # GRR 19990713:  FAXPECT is a custom conversion option for stretched faxes
+-CFLAGS=$(TIFF_VERSION) -DFAXPECT $(MIN_INVERT) $(OPTIMFLAGS) $(DEBUGFLAGS) \
+-	-I$(TIFFINC) \
+-	-I$(PNGINC) \
+-	-I$(ZINC)
+-LDFLAGS=-L. \
+-	-L$(LIBTIFF)/ \
+-	-L$(LIBPNG)/ \
+-	-L$(ZLIB)/ \
+-	-lpng -lz -ltiff -ljpeg -lm
++CFLAGS+=$(TIFF_VERSION) -DFAXPECT $(MIN_INVERT) $(OPTIMFLAGS) $(DEBUGFLAGS) \
++	-I$(INSTALL)/include
++LDFLAGS=-L. -L$(INSTALL)/lib -lpng -lz -ltiff -ljpeg -lm
+ SLDFLAGS=-L. \
+ 	$(LIBTIFF)/libtiff.a $(LIBJPEG)/libjpeg.a \
+ 	$(LIBPNG)/libpng.a \

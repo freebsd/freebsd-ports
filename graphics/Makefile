@@ -157,6 +157,7 @@
     SUBDIR += tgif
     SUBDIR += tgif-nls
     SUBDIR += tiff
+    SUBDIR += tiff2png
     SUBDIR += tifmerge
     SUBDIR += tkxanim
     SUBDIR += togl
