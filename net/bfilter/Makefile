@@ -7,6 +7,7 @@
 
 PORTNAME=	bfilter
 PORTVERSION=	0.9.4
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -22,6 +23,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+USE_RC_SUBR=	yes
 
 .if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=	--enable-debug
@@ -50,6 +52,10 @@ do-install:
 		${PREFIX}/etc/bfilter/rules.local.sample
 
 post-install:
+	${INSTALL_SCRIPT} ${FILESDIR}/bfilter.sh ${PREFIX}/etc/rc.d
+	@${ECHO_MSG} "-----------------------------------------------"
+	@${ECHO_MSG} "Add bfilter_enable=\"YES\" to /etc/rc.conf to"
+	@${ECHO_MSG} "enable bfilter."
 	@${ECHO_MSG} "-----------------------------------------------"
 	@${ECHO_MSG} "Sample configuration files placed in"
 	@${ECHO_MSG} "${PREFIX}/etc/bfilter/config.default"
