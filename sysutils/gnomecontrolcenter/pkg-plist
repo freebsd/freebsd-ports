@@ -1,5 +1,5 @@
 bin/background-properties-capplet
-bin/bell-properties
+bin/bell-properties-capplet
 bin/e-conf
 bin/gnomecc
 bin/keyboard-properties
@@ -90,8 +90,11 @@ share/gnome/control-center/.data/Xjack.desktop
 share/gnome/control-center/.data/Xlyap.desktop
 share/gnome/control-center/.data/Xroger.desktop
 share/gnome/control-center/.data/ant.png
+share/gnome/control-center/.data/bouboule.png
 share/gnome/control-center/.data/deco.png
+share/gnome/control-center/.data/laser.png
 share/gnome/control-center/.data/qix.png
+share/gnome/control-center/.data/starfish.png
 share/gnome/control-center/.directory
 share/gnome/control-center/Appearances/.directory
 share/gnome/control-center/Appearances/theme-selector.desktop
@@ -107,12 +110,7 @@ share/gnome/control-center/Multimedia/.directory
 share/gnome/control-center/Multimedia/sound-properties.desktop
 share/gnome/control-center/WindowManager/.directory
 share/gnome/control-center/Workspace/.directory
-share/gnome/control-center/Workspace/Enlightenment/.directory
-share/gnome/control-center/Workspace/Enlightenment/e-colors.desktop
-share/gnome/control-center/Workspace/Enlightenment/e-conf.desktop
-share/gnome/control-center/Workspace/Enlightenment/e-desks.desktop
-share/gnome/control-center/Workspace/Enlightenment/e-fonts.desktop
-share/gnome/control-center/Workspace/Enlightenment/e-sound.desktop
+share/gnome/control-center/Workspace/Enlightenment.desktop
 share/gnome/control-center/Workspace/background-properties.desktop
 share/gnome/control-center/Workspace/screensaver-properties.desktop
 share/gnome/control-center/Workspace/url-properties.desktop
@@ -141,6 +139,5 @@ share/locale/sv/LC_MESSAGES/control-center.mo
 @dirrm share/gnome/control-center/Inputdevs
 @dirrm share/gnome/control-center/Multimedia
 @dirrm share/gnome/control-center/WindowManager
-@dirrm share/gnome/control-center/Workspace/Enlightenment
 @dirrm share/gnome/control-center/Workspace
 @dirrm share/gnome/control-center
