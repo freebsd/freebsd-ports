@@ -6,6 +6,7 @@ include/torrent/entry.h
 include/torrent/http.h
 include/torrent/peer.h
 include/torrent/torrent.h
+include/torrent/tracker.h
 lib/libtorrent.so
 lib/libtorrent.so.2
 libdata/pkgconfig/libtorrent.pc
