@@ -32,6 +32,43 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="0bb7677d-52f3-11d9-a9e7-0001020eed82">
+    <topic>krb5 -- heap buffer overflow vulnerability in libkadm5srv</topic>
+    <affects>
+      <package>
+	<name>krb5</name>
+	<name>krb5-beta</name>
+	<range><lt>1.3.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A  MIT krb5 Security Advisory reports:</p>
+	<blockquote cite="http://web.mit.edu/kerberos/advisories/MITKRB5-SA-2004-004-pwhist.txt">
+	  <p>The MIT Kerberos 5 administration library (libkadm5srv)
+	    contains a heap buffer overflow in password history
+	    handling code which could be exploited to execute
+	    arbitrary code on a Key Distribution Center (KDC)
+	    host. The overflow occurs during a password change of a
+	    principal with a certain password history state. An
+	    administrator must have performed a certain password
+	    policy change in order to create the vulnerable state.</p>
+	  <p>An authenticated user, not necessarily one with
+	    administrative privileges, could execute arbitrary code on
+	    the KDC host, compromising an entire Kerberos realm.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-1189</cvename>
+      <url>http://web.mit.edu/kerberos/advisories/MITKRB5-SA-2004-004-pwhist.txt</url>
+    </references>
+    <dates>
+      <discovery>2004-12-06</discovery>
+      <entry>2004-12-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3b3676be-52e1-11d9-a9e7-0001020eed82">
     <topic>samba -- integer overflow vulnerability</topic>
     <affects>
