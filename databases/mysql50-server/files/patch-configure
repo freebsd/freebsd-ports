@@ -1,13 +1,5 @@
---- configure.orig	Mon Dec  1 13:55:34 2003
-+++ configure	Wed Dec 10 00:22:08 2003
-@@ -8127,6 +8127,7 @@
- 
- # This can be used to rebuild libtool when needed
- LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
-+$ac_aux_dir/ltconfig $LIBTOOL_DEPS
- 
- # Always use our own libtool.
- LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+--- configure.orig	Sun Dec 21 19:03:09 2003
++++ configure	Wed Dec 24 10:40:53 2003
 @@ -9069,7 +9070,7 @@
    ;;
  esac
@@ -49,7 +41,7 @@
 -    *cygwin*)
 -      FIND_PROC="$PS -e | grep mysqld | grep \" \$\$PID \" > /dev/null"
 -      ;;
--    *netware* | *modesto*)
+-    *netware*)
 -      FIND_PROC=
 -      ;;
 -    *)

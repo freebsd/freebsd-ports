@@ -1,9 +1,6 @@
 #!/bin/sh
 
 PATH=/bin:/usr/sbin
-if [ -z "${DB_DIR}" ]; then
-	DB_DIR=/var/db/mysql
-fi
 
 case $2 in
 POST-INSTALL)
@@ -11,6 +8,7 @@ POST-INSTALL)
 	GROUP=${USER}
 	UID=88
 	GID=${UID}
+	DB_DIR=%%DB_DIR%%
 
 	if pw group show "${GROUP}" 2>/dev/null; then
 		echo "You already have a group \"${GROUP}\", so I will use it."

@@ -6,32 +6,33 @@
 #
 
 PORTNAME?=	mysql
-PORTVERSION=	4.1.1
+PORTVERSION=	5.0.0
 PORTREVISION?=	0
 CATEGORIES=	databases
-MASTER_SITES=	ftp://planetmirror.com/pub/mysql/Downloads/MySQL-4.1/ \
-		http://www.softagency.co.jp/MySQL/Downloads/MySQL-4.1/ \
-		ftp://sunsite.dk/mirrors/mysql/Downloads/MySQL-4.1/ \
-		http://mysql.mediatraffic.fi/Downloads/MySQL-4.1/ \
-		ftp://filepile.tiscali.de/mirror/mysql/Downloads/MySQL-4.1/ \
-		http://mirrors.tilian.co.uk/mysql.com/Downloads/MySQL-4.1/ \
-		ftp://ftp.rtfm.no/pub/mysql/Downloads/MySQL-4.1/ \
-		http://www.mysql.cz/Downloads/MySQL-4.1/ \
-		ftp://ftp.u-paris10.fr/mysql.com/Downloads/MySQL-4.1/ \
-		http://mysql.oms-net.nl/Downloads/MySQL-4.1/ \
-		ftp://ftp.free.fr/pub/MySQL/Downloads/MySQL-4.1/
+MASTER_SITES=	ftp://planetmirror.com/pub/mysql/Downloads/MySQL-5.0/ \
+		http://www.softagency.co.jp/MySQL/Downloads/MySQL-5.0/ \
+		ftp://sunsite.dk/mirrors/mysql/Downloads/MySQL-5.0/ \
+		http://mysql.mediatraffic.fi/Downloads/MySQL-5.0/ \
+		ftp://filepile.tiscali.de/mirror/mysql/Downloads/MySQL-5.0/ \
+		http://mirrors.tilian.co.uk/mysql.com/Downloads/MySQL-5.0/ \
+		ftp://ftp.rtfm.no/pub/mysql/Downloads/MySQL-5.0/ \
+		http://www.mysql.cz/Downloads/MySQL-5.0/ \
+		ftp://ftp.u-paris10.fr/mysql.com/Downloads/MySQL-5.0/ \
+		http://mysql.oms-net.nl/Downloads/MySQL-5.0/ \
+		ftp://ftp.free.fr/pub/MySQL/Downloads/MySQL-5.0/
 PKGNAMESUFFIX?=	-server
 DISTNAME=	${PORTNAME}-${PORTVERSION}-alpha
 
-MAINTAINER=	sysadmin@alexdupre.com
+MAINTAINER=	ale@FreeBSD.org
 COMMENT?=	Multithreaded SQL database (server)
 
-SLAVEDIRS=	databases/mysql41-client
+SLAVEDIRS=	databases/mysql50-client
+PKGINSTALL?=	${WRKDIR}/pkg-install
 DB_DIR?=	/var/db/mysql
+USE_GNOME=	lthack
 USE_LIBTOOL=	yes
 USE_REINPLACE=	yes
 
-GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--localstatedir=${DB_DIR} \
 		--without-debug \
@@ -81,6 +82,9 @@ CONFIGURE_ARGS+=-L${LOCALBASE}/lib -llthread -llgcc_r -llstdc++ -llsupc++'
 LIB_DEPENDS+=	lthread.2:${PORTSDIR}/devel/linuxthreads
 CONFIGURE_ARGS+=-L${LOCALBASE}/lib -llthread -llgcc_r'
 .endif
+.else
+CONFIGURE_ARGS+=--with-named-thread-libs=${PTHREAD_LIBS}
+CFLAGS+=	${PTHREAD_CFLAGS}
 .endif
 
 .if ${OSVERSION} < 500000
@@ -101,11 +105,13 @@ CXXFLAGS+=	-fno-exceptions
 .if !defined(CLIENT_ONLY)
 USE_PERL5_RUN=	yes
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql41
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql50
 
-CONFLICTS=	mysql-server-3.* mysql-server-4.[02-9].* mysql-server-5.*
+LATEST_LINK=	mysql50-server
 
-ONLY_FOR_ARCHS=	i386 alpha sparc64
+CONFLICTS=	mysql-server-3.* mysql-server-4.*
+
+PLIST_SUB=	DB_DIR=${DB_DIR}
 
 DOCS=		manual.html manual.txt manual_toc.html
 
@@ -135,7 +141,9 @@ pre-fetch:
 post-patch:
 	@${REINPLACE_CMD} -e "s|SUBDIRS =|SUBDIRS = include @sql_server_dirs@ scripts support-files|g" ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e "s|install: install-am|install:|g" ${WRKSRC}/include/Makefile.in
-	@${FIND} ${WRKSRC} -name configure | ${XARGS} ${REINPLACE_CMD} "s|-pthread|${PTHREAD_LIBS}|g"
+
+post-build:
+	@${SED} "s|%%DB_DIR%%|${DB_DIR}|g" ${PKGDIR}/pkg-install > ${WRKDIR}/pkg-install
 
 .if defined(WITH_OPENSSL) && defined(BUILD_STATIC)
 pre-configure:
@@ -171,7 +179,9 @@ post-install:
 
 # MySQL-Client part
 .else
-CONFLICTS=	mysql-client-3.* mysql-client-4.[02-9].* mysql-client-5.*
+LATEST_LINK=	mysql50-client
+
+CONFLICTS=	mysql-client-3.* mysql-client-4.*
 
 MAN1=		isamchk.1 isamlog.1 mysql.1 mysql_zap.1 mysqlaccess.1  \
 		mysqladmin.1 mysqld.1 mysqld_multi.1 mysqld_safe.1 mysqldump.1 \
@@ -184,7 +194,6 @@ CONFIGURE_ARGS+=--without-server
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|SUBDIRS =|SUBDIRS = include @sql_client_dirs@ tests man|g" ${WRKSRC}/Makefile.in
-	@${FIND} ${WRKSRC} -name configure | ${XARGS} ${REINPLACE_CMD} "s|-pthread|${PTHREAD_LIBS}|g"
 
 post-install:
 	@${SED} "s|%%PREFIX%%|${PREFIX}|g" < ${FILESDIR}/mysql-client.sh > ${PREFIX}/etc/rc.d/000.mysql-client.sh
