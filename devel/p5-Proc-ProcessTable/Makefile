@@ -7,6 +7,7 @@
 
 PORTNAME=	Proc-ProcessTable
 PORTVERSION=	0.39
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Proc
@@ -21,5 +22,14 @@ MAN3=		Proc::ProcessTable::Process.3 \
 		Proc::Killall.3 \
 		Proc::ProcessTable.3 \
 		Proc::Killfam.3
+PORTDOCS=	README README.freebsd
+
+post-install:
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+.for i in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+.endfor
+.endif
 
 .include <bsd.port.mk>
