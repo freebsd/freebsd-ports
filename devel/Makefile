@@ -724,6 +724,7 @@
     SUBDIR += p5-String-RexxParse
     SUBDIR += p5-String-Similarity
     SUBDIR += p5-Sub-Uplevel
+    SUBDIR += p5-Sys-Mmap
     SUBDIR += p5-System2
     SUBDIR += p5-Term-ANSIColor
     SUBDIR += p5-Term-ANSIScreen

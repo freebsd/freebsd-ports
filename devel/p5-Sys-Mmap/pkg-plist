@@ -1,0 +1,7 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Mmap/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/Sys/Mmap.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Mmap/Mmap.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Mmap/Mmap.so
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Mmap
+@unexec rmdir %D/%%SITE_PERL%%/Sys 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys 2>/dev/null || true

@@ -1,0 +1,13 @@
+The Mmap module lets you use mmap to map in a file as a Perl variable
+rather than reading the file into dynamically allocated memory.
+
+The advantage of this is that several processes may share one copy of
+the file or string, saving memory, and concurrently making changes to
+portions of the file or string.  When not used with a file, it is an
+alternative to SysV shared memory that places no arbitrary size limits
+on the shared memory area, and efficiently handles sparse memory usage.
+
+WWW: http://search.cpan.org/dist/Sys-Mmap/
+
+-- Sergey Skvortsov
+skv@FreeBSD.org
