@@ -141,8 +141,9 @@ if [ X"${MACHINE}" != X"pc98" ]; then
 cat >> $F <<END
 #define XF86SvgaDrivers         nv et4000 et3000 pvga1 gvga ati sis tvga8900 \
                                 cirrus ncr77c22 compaq mga oak al2101 ali \
-                                cl64xx video7 ark mx realtek apm \
-                                s3v s3_svga chips generic
+                                cl64xx video7 ark mx realtek apm s3v \
+                                s3_svga neo chips cyrix rendition p9x00 \
+				spc8110 generic
 
 #define XF86Vga16Drivers	et4000 et3000 ncr77c22 ati sis tvga8900 oak \
 				cl64xx generic 
@@ -151,6 +152,10 @@ cat >> $F <<END
 				cirrus ncr77c22 oak cl64xx generic
 
 #define XF86MonoDrivers		hgc1280 sigma apollo hercules
+
+#define XF86S3Drivers		newmmio mmio_928 s3_generic
+
+#define XF86S3VDrivers		s3_virge
 
 #define XF86W32Drivers		et4000w32
 
