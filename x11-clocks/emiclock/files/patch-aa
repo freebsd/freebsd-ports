@@ -4,7 +4,7 @@
   *  サウンド関係の設定
   */
  
-+#ifdef __i386
++#ifdef __i386__
 +#define	USE_SOUND			/* サウンドを使う？ */
 +#else
  #undef	USE_SOUND			/* サウンドを使う？ */
