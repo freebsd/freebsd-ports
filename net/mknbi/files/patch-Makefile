@@ -1,0 +1,28 @@
+--- Makefile.orig	Tue Aug 17 04:47:29 2004
++++ Makefile	Thu Mar 17 21:33:37 2005
+@@ -18,7 +18,7 @@
+ FIRSTRELOCS=	0x92800 0x82800
+ OLDGAS:=	$(shell $(AS) --version | grep -q '2\.9\.1' && echo -DGAS291)
+ CFLAGS=		-I. -Os -ffreestanding -fstrength-reduce -fomit-frame-pointer \
+-		-mcpu=i386 \
++		-march=i386 \
+ 		-Wall -W -Wno-format -Wno-unused -DVERSION=\"$(VERSION)$(EXTRAVERSION)\"
+ LDBINARYFLAG=	--oformat binary
+ FIRST32SIZE=	6144
+@@ -38,13 +38,13 @@
+ # Must pick ANSIMODE=1 if ANSIESC is chosen
+ BOOTMENU_FLAGS=	-DCONSOLE_CRT -DANSIESC -DANSIMODE=1 -DMOTD -DUSRPARMS -DPASSWD -DPOWERSAVE -DCOMCONSOLE=0x3f8 -DCOMPRESERVE
+ 
+-PREFIX=		/usr/local
++PREFIX?=		/usr/local
+ INSTPREFIX=	$(BUILD_ROOT)$(PREFIX)
+ LIBDIR=		$(PREFIX)/lib/mknbi
+ INSTLIBDIR=	$(INSTPREFIX)/lib/mknbi
+ BINDIR=		$(INSTPREFIX)/bin
+-MANDIR=		$(INSTPREFIX)/share/man/man1
+-DOCDIR=		$(INSTPREFIX)/share/doc/packages/mknbi-$(RPMVERSION)
++MANDIR=		$(INSTPREFIX)/man/man1
++DOCDIR=		$(INSTPREFIX)/share/doc/mknbi
+ 
+ INSTALL=	install
+ 

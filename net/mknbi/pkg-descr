@@ -1,0 +1,7 @@
+mknbi is a program that makes network bootable images for various operating
+systems suitable for network loading by Etherboot or Netboot, which are ROM
+boot loaders. If you are looking to boot using PXE, look no further, mknbi is
+not what you want. You probably want something like PXELINUX which is part of
+the SYSLINUX package.
+
+WWW: http://www.etherboot.org/
