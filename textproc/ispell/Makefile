@@ -142,12 +142,14 @@ FIAFFIXFILE=	finnish.medium.aff.bz2
 EXTRA_DICT+=	${FIDICTFILE} ${FIAFFIXFILE}
 .endif
 .if defined(ISPELL_PL)
-MASTER_SITES+=	ftp://sunsite.icm.edu.pl/pub/unix/polish-ispell/ \
+MASTER_SITE_SUBDIR=	ispell-pl
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		${MASTER_SITE_LOCAL}
-PLDISTFILE=	ispell-pl-20011004.tar.gz
+PLDISTFILE=	ispell-pl-20021127.tar.gz
 MASKBITS?=	64
 EXTRA_DICT+=	${PLDISTFILE}
 EXTRACT_ONLY+=	${PLDISTFILE}
+BUILDHASH=	${WRKDIR}/${PLDISTFILE:S=.tar.gz==}/zbuduj.slownik.sh
 .endif
 
 DISTFILES+=	${EXTRA_DICT}
@@ -205,6 +207,9 @@ post-patch:
 .endif
 .if defined(ISPELL_AF)
 	@cd ${WRKDIR} && ${PATCH} < ${FILESDIR}/AF.patch 2>/dev/null
+.endif
+.if defined(ISPELL_PL)
+	@${REINPLACE_CMD} -e 's/bash/sh/' ${BUILDHASH}
 .endif
 
 post-configure:
@@ -268,7 +273,7 @@ post-build:
 		finnish.hash && ${MV} ${FIAFFIXFILE:S/.bz2//} finnish.aff
 .endif
 .if defined(ISPELL_PL)
-	@cd ${WRKDIR}/${PLDISTFILE:S=ispell-pl-==:S=.tar.gz==} && \
+	@cd ${WRKDIR}/${PLDISTFILE:S=.tar.gz==} && \
 		${CAT} A B C imiona-A imiona-B fachowe/* > polish.dic && \
 		${BUILDHASH} polish.dic polish.aff polish.hash
 .endif
