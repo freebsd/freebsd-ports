@@ -1,0 +1,38 @@
+--- Imakefile.orig	Thu Dec  5 18:00:58 1996
++++ Imakefile	Fri Jan 24 22:17:03 1997
+@@ -5,25 +5,28 @@
+ WAIT = 10000
+ USE_USLEEP = -DUSE_USLEEP
+ 
++# Installation prefix.
++PREFIX?=/usr/X11R6
++
+ # TOP10 DIR インストールしない場合は、「./」 などにしてください。
+ #	       IMAGE DIR,MAP DIR DOMO DIRも同じ
+-SCORE_DIR  = /usr/local/games/Xbat/Score
++SCORE_DIR  = ${PREFIX}/lib/X11/Xbat/Score
+ 
+ # IMAGE DIR 
+-IMAGE_DIR = /usr/local/games/Xbat/Image
++IMAGE_DIR = ${PREFIX}/lib/X11/Xbat/Image
+ 
+ # MAP DIR
+-MAP_DIR = /usr/local/games/Xbat/Map
++MAP_DIR = ${PREFIX}/lib/X11/Xbat/Map
+ 
+ # DOMO_DIR
+-DOMO_DIR = /usr/local/games/Xbat/Domo
++DOMO_DIR = ${PREFIX}/lib/X11/Xbat/Domo
+ 
+-# UNION 「インテル並びのCPUは１にしてね」、と彼女が言った
+-UNION = 0
++# UNION "Please set 1 if you have Intel CPU or so." She said.
++UNION = 1
+ 
+ 
+ #BIN DIR
+-BINDIR = /usr/local/bin
++BINDIR = ${PREFIX}/bin
+ 
+ #######################################################################
+ 
