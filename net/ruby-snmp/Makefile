@@ -17,7 +17,7 @@ DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
 
-LIB_DEPENDS=	snmp.5:${PORTSDIR}/net/net-snmp
+LIB_DEPENDS=	snmp.4:${PORTSDIR}/net/net-snmp4
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
