@@ -1,0 +1,25 @@
+include/bkpublic.h
+include/cspublic.h
+include/cstypes.h
+include/ctpublic.h
+include/dblib.h
+include/sqldb.h
+include/sqlfront.h
+include/sybdb.h
+include/syberror.h
+include/sybfront.h
+include/tds.h
+include/tdsutil.h
+include/tdsver.h
+interfaces
+lib/libct.a
+lib/libct.la
+lib/libct.so.0
+lib/libsybdb.a
+lib/libsybdb.la
+lib/libsybdb.so.0
+lib/libtds.a
+lib/libtds.la
+lib/libtds.so.0
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
