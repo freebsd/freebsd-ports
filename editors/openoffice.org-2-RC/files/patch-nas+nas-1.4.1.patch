@@ -161,3 +161,14 @@
 +-#define NasConfigSearchPath /etc/nas/
 ++#define NasConfigSearchPath $(PROJECTROOT)/etc/
 + #endif
++--- misc/build/nas-1.4.1/server/os/utils.c.orig	Tue Jul 23 23:48:23 2002
+++++ misc/build/nas-1.4.1/server/os/utils.c	Tue Jul 23 23:49:06 2002
++@@ -120,7 +120,7 @@
++ 
++ void ddxUseMsg(void);
++ 
++-#if !defined(SVR4) && !defined(hpux) && !defined(linux) && !defined(AMOEBA) && !defined(_MINIX)
+++#if !defined(SVR4) && !defined(hpux) && !defined(linux) && !defined(AMOEBA) && !defined(_MINIX) && !defined(__FreeBSD__)
++ extern char *sbrk();
++ #endif
++ 
