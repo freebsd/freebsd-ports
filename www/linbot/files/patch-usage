@@ -1,0 +1,21 @@
+This patch simply fixes a few typos. The author clearly did not care to
+run a spell-checker :)
+
+	-mi
+
+--- INSTALL	Thu Mar 11 23:56:00 1999
++++ INSTALL	Thu Jul 12 02:30:50 2001
+@@ -31 +31 @@
+-It is simple t run Linbot.
++It is simple to run Linbot.
+@@ -71 +71 @@
+-internal documents. An exampel would be a main server
++internal documents. An example would be a main server
+@@ -148,2 +148,2 @@
+- locationThis specifies the hosts pointed to that are to be considered
+-         internal. By default Linbot only consideres urls pointing to the
++ location This specifies the hosts pointed to that are to be considered
++         internal. By default Linbot only considers URLs pointing to the
+@@ -185 +185 @@
+-concering bug reports.
++concerning bug reports.

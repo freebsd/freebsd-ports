@@ -7,17 +7,15 @@
 
 PORTNAME=	linbot
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www python
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	apps/www/misc
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	billf@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
-RUN_DEPENDS=	python:${PORTSDIR}/lang/python
-
-NO_BUILD=	yeah
+RUN_DEPENDS=	python:${PORTSDIR}/lang/python15
 
 do-install:
 	${MKDIR} ${PREFIX}/share/linbot
@@ -28,5 +26,15 @@ do-install:
 	${CP} ${WRKSRC}/${d}/*.py ${PREFIX}/share/linbot/${d}
 .endfor
 	${LN} -sf ${PREFIX}/share/linbot/linbot.py ${PREFIX}/bin/linbot
+.ifndef NOPORTDOCS
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/USAGE ${DOCSDIR}
+
+do-build:
+	${AWK} '/^Running Linbot/ { output=1 } output' \
+		< ${WRKSRC}/INSTALL > ${WRKSRC}/USAGE
+.else
+NO_BUILD=	yeah
+.endif
 
 .include <bsd.port.mk>
