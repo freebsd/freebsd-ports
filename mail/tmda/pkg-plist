@@ -3,6 +3,7 @@ bin/tmda-check-address
 bin/tmda-filter
 bin/tmda-inject
 bin/tmda-keygen
+bin/tmda-ofmipd
 bin/tmda-pending
 bin/tmda-rfilter
 bin/tmda-sendmail
@@ -36,11 +37,9 @@ lib/%%PYTHON_VERSION%%/site-packages/TMDA/__init__.pyc
 %%PORTDOCS%%share/doc/tmda/THANKS
 %%PORTDOCS%%share/doc/tmda/UPGRADE
 %%PORTDOCS%%share/doc/tmda/contrib/ChangeLog
-%%PORTDOCS%%share/doc/tmda/contrib/README.RELAY
 %%PORTDOCS%%share/doc/tmda/contrib/collectaddys
 %%PORTDOCS%%share/doc/tmda/contrib/printcdb
 %%PORTDOCS%%share/doc/tmda/contrib/printdbm
-%%PORTDOCS%%share/doc/tmda/contrib/qmail-smtpd_auth.patch
 %%PORTDOCS%%share/doc/tmda/contrib/sample.tmdarc
 %%PORTDOCS%%share/doc/tmda/contrib/tmda.spec
 %%PORTDOCS%%share/doc/tmda/htdocs/bugs.html
@@ -50,15 +49,16 @@ lib/%%PYTHON_VERSION%%/site-packages/TMDA/__init__.pyc
 %%PORTDOCS%%share/doc/tmda/htdocs/config-server.html
 %%PORTDOCS%%share/doc/tmda/htdocs/config.html
 %%PORTDOCS%%share/doc/tmda/htdocs/download.html
-%%PORTDOCS%%share/doc/tmda/htdocs/faq.html
 %%PORTDOCS%%share/doc/tmda/htdocs/features.html
 %%PORTDOCS%%share/doc/tmda/htdocs/history.html
+%%PORTDOCS%%share/doc/tmda/htdocs/howtos.html
 %%PORTDOCS%%share/doc/tmda/htdocs/index.html
 %%PORTDOCS%%share/doc/tmda/htdocs/install.html
 %%PORTDOCS%%share/doc/tmda/htdocs/inuse.html
 %%PORTDOCS%%share/doc/tmda/htdocs/requirements.html
 %%PORTDOCS%%share/doc/tmda/htdocs/resources.html
 %%PORTDOCS%%share/doc/tmda/htdocs/results.html
+%%PORTDOCS%%share/doc/tmda/htdocs/tmda-ofmipd.html
 %%PORTDOCS%%share/doc/tmda/htdocs/trouble.html
 share/tmda/bounce.txt
 share/tmda/confirm_accept.txt
