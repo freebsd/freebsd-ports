@@ -13,5 +13,7 @@ From the README:
 	user-space.  Also, complexity is lower because you don't have to worry
 	about locking access to shared state.
 
+WWW: http://www.egroups.com/group/python-coro
+
   -Kelly
    kbyanc@posi.net
