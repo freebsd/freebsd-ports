@@ -2,6 +2,8 @@
 
 LANG=%%LOCALENAME%%; export LANG
 %%LIBXPG4%%
+#XMODIFIERS=@im=kinput2; export XMODIFIERS
+#LD_PRELOAD=%%LOCALBASE%%/lib/libflashplayer.so.1; export LD_PRELOAD
 
 MOZILLA_DIR="%%PREFIX%%/lib/%%MOZILLA%%"
 MOZILLA_EXEC="mozilla"

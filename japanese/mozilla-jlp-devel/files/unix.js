@@ -44,8 +44,6 @@ pref("network.hosts.pop_server", "pop");
 pref("mail.check_new_mail", true);
 pref("browser.display.screen_resolution", 0); // System setting
 pref("browser.startup.license_accepted", "");
-pref("browser.cache.memory.capacity", 4096);
-pref("browser.cache.disk.capacity", 50000);
 pref("browser.drag_out_of_frame_style", 1);
 pref("mail.signature_file", "~/.signature");
 pref("mail.default_fcc", "~/nsmail/Sent");
@@ -72,6 +70,9 @@ pref("browser.urlbar.clickSelectsAll", false);
 // Leave this at the default, 7, to match mozilla1.0-era user expectations.
 // pref("accessibility.tabfocus", 1);
 
+// Beep instead of playing sound in Linux, at least until nsISound is fixed:
+pref("accessibility.typeaheadfind.soundURL", "beep");
+
 // override double-click word selection behavior.
 pref("layout.word_select.stop_at_punctuation", false);
 
@@ -86,7 +87,6 @@ pref("browser.prefWindowModal", false);
 pref("slider.snapMultiplier", 0);
 
 // Unix only
-pref("mail.use_movemail", true);
 pref("mail.use_builtin_movemail", true);
 pref("mail.movemail_program", "");
 pref("mail.movemail_warn", false);
@@ -105,7 +105,7 @@ pref("applications.rlogin_with_user", "xterm -e rlogin %h -l %u");
 pref("applications.tmp_dir", "/tmp");
 // On Solaris/IRIX, this should be "lp"
 pref("print.print_command", "lpr ${MOZ_PRINTER_NAME:+'-P'}${MOZ_PRINTER_NAME}");
-pref("print.printer_list", ""); // list of printers, seperated by spaces
+pref("print.printer_list", ""); // list of printers, separated by spaces
 pref("print.print_reversed", false);
 pref("print.print_color", true);
 pref("print.print_landscape", false);
@@ -240,9 +240,10 @@ pref("font.embedded_bitmaps.max", 1000000);
 pref("font.scale.tt_bitmap.dark_text.min", 64);
 pref("font.scale.tt_bitmap.dark_text.gain", "0.8");
 // sample prefs for TrueType font dirs
-//pref("font.directory.truetype.1", "/u/sam/tt_font");
+//pref("font.directory.truetype.1", "/u/sam/tt_font1");
 //pref("font.directory.truetype.2", "/u/sam/tt_font2");
 //pref("font.directory.truetype.3", "/u/sam/tt_font3");
+pref("font.FreeType2.printing", true);
 
 // below a certian pixel size anti-aliased bitmat scaled fonts 
 // produce poor results
