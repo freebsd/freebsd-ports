@@ -1,0 +1,6 @@
+This is a port of JUnit, a simple testing framework for Java developed
+by Erich Gamma and Kent Beck. Using JUnit you can build a test suite
+that will help you measure your progress, spot unintended side
+effects, and focus your development efforts.
+
+WWW: http://www.junit.org/

@@ -21,6 +21,7 @@
     SUBDIR += jlex
     SUBDIR += jre
     SUBDIR += jsdk
+    SUBDIR += junit
     SUBDIR += kaffe
     SUBDIR += linux-jdk
     SUBDIR += netrexx
