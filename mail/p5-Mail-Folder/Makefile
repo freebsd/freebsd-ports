@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	Mail
 PKGNAMEPREFIX=	p5-
 DISTNAME=	MailFolder-${PORTVERSION}
 
-MAINTAINER=	jfitz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Mail/Internet.pm:${PORTSDIR}/mail/p5-Mail-Tools \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Date/Format.pm:${PORTSDIR}/devel/p5-TimeDate \

@@ -11,7 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.idsoftware.com/idstuff/source/
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=	jfitz@freebsd.org
+MAINTAINER=	ports@freebsd.org
 
 WRKSRC=		${WRKDIR}/send
 MAKEFILE=	makefile

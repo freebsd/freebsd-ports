@@ -11,7 +11,7 @@ CATEGORIES=	net tk82
 MASTER_SITES=	ftp://ftp.isi.edu/ra/RAToolSet/
 DISTNAME=	RAToolSet-3.5.8
 
-MAINTAINER=	jfitz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	tk82.1:${PORTSDIR}/x11-toolkits/tk82
 

@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.forth.org/pub/PalmOS/ \
 DISTNAME=	makedoc7
 EXTRACT_SUFX=	.cpp
 
-MAINTAINER=	jfitz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 NO_WRKSUBDIR=	YES
 ALL_TARGET=	pilot_makedoc

@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	C
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	jfitz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS= 	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Data/Flow.pm:${PORTSDIR}/devel/p5-Data-Flow
 

@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Tcl
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	jfitz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS= 	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/i386-freebsd/Tcl.pm:${PORTSDIR}/lang/p5-Tcl
 LIB_DEPENDS=	tk82.1:${PORTSDIR}/x11-toolkits/tk82
