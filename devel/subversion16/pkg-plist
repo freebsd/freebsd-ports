@@ -41,47 +41,36 @@ include/subversion-1/svn_wc.h
 include/subversion-1/svn_xml.h
 @dirrm include/subversion-1
 lib/libsvn_client-1.a
-lib/libsvn_client-1.la
 lib/libsvn_client-1.so
 lib/libsvn_client-1.so.0
 lib/libsvn_delta-1.a
-lib/libsvn_delta-1.la
 lib/libsvn_delta-1.so
 lib/libsvn_delta-1.so.0
 lib/libsvn_diff-1.a
-lib/libsvn_diff-1.la
 lib/libsvn_diff-1.so
 lib/libsvn_diff-1.so.0
 lib/libsvn_fs-1.a
-lib/libsvn_fs-1.la
 lib/libsvn_fs-1.so
 lib/libsvn_fs-1.so.0
 lib/libsvn_ra-1.a
-lib/libsvn_ra-1.la
 lib/libsvn_ra-1.so
 lib/libsvn_ra-1.so.0
 %%WITHOUT_NEON%%lib/libsvn_ra_dav-1.a
-%%WITHOUT_NEON%%lib/libsvn_ra_dav-1.la
 %%WITHOUT_NEON%%lib/libsvn_ra_dav-1.so
 %%WITHOUT_NEON%%lib/libsvn_ra_dav-1.so.0
 lib/libsvn_ra_local-1.a
-lib/libsvn_ra_local-1.la
 lib/libsvn_ra_local-1.so
 lib/libsvn_ra_local-1.so.0
 lib/libsvn_ra_svn-1.a
-lib/libsvn_ra_svn-1.la
 lib/libsvn_ra_svn-1.so
 lib/libsvn_ra_svn-1.so.0
 lib/libsvn_repos-1.a
-lib/libsvn_repos-1.la
 lib/libsvn_repos-1.so
 lib/libsvn_repos-1.so.0
 lib/libsvn_subr-1.a
-lib/libsvn_subr-1.la
 lib/libsvn_subr-1.so
 lib/libsvn_subr-1.so.0
 lib/libsvn_wc-1.a
-lib/libsvn_wc-1.la
 lib/libsvn_wc-1.so
 lib/libsvn_wc-1.so.0
 %%MOD_DAV_SVN%%libexec/apache2/mod_dav_svn.so
@@ -89,7 +78,6 @@ lib/libsvn_wc-1.so.0
 %%MOD_DAV_SVN%%@exec %D/sbin/apxs -e -S LIBEXECDIR=%D/libexec/apache2 -a -n dav libexec/apache2/mod_dav.so
 %%MOD_DAV_SVN%%@exec %D/sbin/apxs -e -S LIBEXECDIR=%D/libexec/apache2 -a -n dav_svn libexec/apache2/mod_dav_svn.so
 %%WITH_PERL%%lib/libsvn_swig_perl-1.a
-%%WITH_PERL%%lib/libsvn_swig_perl-1.la
 %%WITH_PERL%%lib/libsvn_swig_perl-1.so
 %%WITH_PERL%%lib/libsvn_swig_perl-1.so.0
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/SVN/Base.pm
@@ -125,31 +113,16 @@ lib/libsvn_wc-1.so.0
 %%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN
 %%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/SVN
 %%WITH_PYTHON%%lib/libsvn_swig_py-1.a
-%%WITH_PYTHON%%lib/libsvn_swig_py-1.la
 %%WITH_PYTHON%%lib/libsvn_swig_py-1.so
 %%WITH_PYTHON%%lib/libsvn_swig_py-1.so.0
 %%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/libsvn/__init__.py
 %%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/libsvn/__init__.pyc
-%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/libsvn/_client.a
-%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/libsvn/_client.la
 %%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/libsvn/_client.so
-%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/libsvn/_core.a
-%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/libsvn/_core.la
 %%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/libsvn/_core.so
-%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/libsvn/_delta.a
-%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/libsvn/_delta.la
 %%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/libsvn/_delta.so
-%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/libsvn/_fs.a
-%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/libsvn/_fs.la
 %%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/libsvn/_fs.so
-%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/libsvn/_ra.a
-%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/libsvn/_ra.la
 %%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/libsvn/_ra.so
-%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/libsvn/_repos.a
-%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/libsvn/_repos.la
 %%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/libsvn/_repos.so
-%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/libsvn/_wc.a
-%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/libsvn/_wc.la
 %%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/libsvn/_wc.so
 %%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/libsvn/client.py
 %%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/libsvn/client.pyc

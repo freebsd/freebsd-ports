@@ -6,7 +6,7 @@
 
 PORTNAME=	subversion
 PORTVERSION=	1.0.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://subversion.tigris.org/tarballs/
 
@@ -19,10 +19,10 @@ INSTALLS_SHLIB=	yes
 
 USE_SIZE=	yes
 USE_BZIP2=	yes
-GNU_CONFIGURE=	yes
+USE_LIBTOOL_VER=15
 USE_REINPLACE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=		--with-ssl --with-neon=${LOCALBASE}
+CONFIGURE_ARGS=		--with-ssl
 
 MAN1=		svn.1 svnadmin.1 svnlook.1 svndumpfilter.1 svnversion.1
 MAN5=		svnserve.conf.5
@@ -45,7 +45,7 @@ CFLAGS+=	-g
 .endif
 
 .if !defined(WITHOUT_NEON)
-LIB_DEPENDS+=	neon.24:${PORTSDIR}/www/neon \
+LIB_DEPENDS+=	neon.24:${PORTSDIR}/www/neon
 CONFIGURE_ARGS+=	--with-neon=${LOCALBASE}
 PLIST_SUB+=		WITHOUT_NEON=""
 .else
@@ -223,6 +223,7 @@ post-patch:
 .endif
 	@${REINPLACE_CMD} "s#^swig_pydir =.*#swig_pydir = ${PYTHON_SITELIBDIR}/libsvn#" ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} "s#^swig_pydir_extra =.*#swig_pydir_extra = ${PYTHON_SITELIBDIR}/svn#" ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} "s#^LIBTOOL =.*#LIBTOOL = ${LIBTOOL}#" ${WRKSRC}/Makefile.in
 
 pre-configure:
 	@if [ ! -x ${APR_APU_DIR}/apr-config -o ! -x ${APR_APU_DIR}/apu-config ] ; then \
