@@ -3,7 +3,7 @@
 # Date created:				October 20th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.7 1997/04/20 21:25:30 jfitz Exp $
+#   $Id: Makefile,v 1.8 1997/05/24 13:16:58 jfitz Exp $
 #
 
 DISTNAME=	Compress-Zlib-0.50
@@ -14,8 +14,7 @@ MASTER_SITE_SUBDIR=	Compress
 
 MAINTAINER=	jfitz@FreeBSD.ORG
 
-BUILD_DEPENDS= 	perl5.004:${PORTSDIR}/lang/perl5
-RUN_DEPENDS=	perl5.004:${PORTSDIR}/lang/perl5
+USE_PERL5=	YES
 
 MAN3=		Compress::Zlib.3
 MANPREFIX=	${PREFIX}/lib/perl5

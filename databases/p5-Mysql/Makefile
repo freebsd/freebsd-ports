@@ -3,7 +3,7 @@
 # Date created:				June 17th 1997
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id$
+#   $Id: Makefile,v 1.1.1.1 1997/06/18 19:39:25 jfitz Exp $
 #
 
 DISTNAME=	Mysqlperl-1.17
@@ -14,9 +14,9 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	jfitz@FreeBSD.ORG
 
-BUILD_DEPENDS=	perl5.004:${PORTSDIR}/lang/perl5 \
-		${PREFIX}/lib/mysql/libmysqlclient.a:${PORTSDIR}/databases/mysql
-RUN_DEPENDS=	perl5.004:${PORTSDIR}/lang/perl5
+BUILD_DEPENDS=	${PREFIX}/lib/mysql/libmysqlclient.a:${PORTSDIR}/databases/mysql
+
+USE_PERL5=	YES
 
 MAN3=		Mysql.3
 MANPREFIX=	${PREFIX}/lib/perl5

@@ -3,7 +3,7 @@
 # Date created:				October 20th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.6 1997/04/20 13:51:52 wosch Exp $
+#   $Id: Makefile,v 1.7 1997/05/24 13:17:00 jfitz Exp $
 #
 
 DISTNAME=	C-Scan-0.3
@@ -14,9 +14,9 @@ MASTER_SITE_SUBDIR=	C
 
 MAINTAINER=	jfitz@FreeBSD.ORG
 
-BUILD_DEPENDS= 	perl5.004:${PORTSDIR}/lang/perl5 \
-		${PREFIX}/lib/perl5/site_perl/Data/Flow.pm:${PORTSDIR}/devel/p5-Data-Flow
-RUN_DEPENDS=	perl5.004:${PORTSDIR}/lang/perl5
+BUILD_DEPENDS= 	${PREFIX}/lib/perl5/site_perl/Data/Flow.pm:${PORTSDIR}/devel/p5-Data-Flow
+
+USE_PERL5=	YES
 
 MAN3=		C::Scan.3
 MANPREFIX=	${PREFIX}/lib/perl5

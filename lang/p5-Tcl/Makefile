@@ -3,7 +3,7 @@
 # Date created:				June 15th 1997
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.1.1.1 1997/06/16 03:03:55 jfitz Exp $
+#   $Id: Makefile,v 1.2 1997/06/17 06:24:58 asami Exp $
 #
 
 DISTNAME=	Tcl-b1
@@ -14,8 +14,7 @@ MASTER_SITE_SUBDIR=	Tcl
 
 MAINTAINER=	jfitz@FreeBSD.ORG
 
-BUILD_DEPENDS= 	perl5.004:${PORTSDIR}/lang/perl5
-RUN_DEPENDS=	perl5.004:${PORTSDIR}/lang/perl5
+USE_PERL5=	YES
 
 WRKSRC=		${WRKDIR}/Tcl
 

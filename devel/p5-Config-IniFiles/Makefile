@@ -3,7 +3,7 @@
 # Date created:				October 21st 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.4 1997/04/20 13:52:15 wosch Exp $
+#   $Id: Makefile,v 1.5 1997/05/24 13:17:03 jfitz Exp $
 #
 
 DISTNAME=	IniConf.pm-0.91
@@ -14,8 +14,7 @@ MASTER_SITE_SUBDIR=	IniConf
 
 MAINTAINER=	jfitz@FreeBSD.ORG
 
-BUILD_DEPENDS= 	perl5.004:${PORTSDIR}/lang/perl5
-RUN_DEPENDS=	perl5.004:${PORTSDIR}/lang/perl5
+USE_PERL5=	YES
 
 MAN3=		IniConf.pm.3
 MANPREFIX=	${PREFIX}/lib/perl5

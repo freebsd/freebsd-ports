@@ -3,7 +3,7 @@
 # Date created:				October 20th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.5 1997/04/20 13:53:19 wosch Exp $
+#   $Id: Makefile,v 1.6 1997/05/24 13:17:16 jfitz Exp $
 #
 
 DISTNAME=	HTML-Stream-1.38
@@ -14,8 +14,7 @@ MASTER_SITE_SUBDIR=	HTML
 
 MAINTAINER=	jfitz@FreeBSD.ORG
 
-BUILD_DEPENDS= 	perl5.004:${PORTSDIR}/lang/perl5
-RUN_DEPENDS=	perl5.004:${PORTSDIR}/lang/perl5
+USE_PERL5=	YES
 
 MAN3=		HTML::Stream.3
 MANPREFIX=	${PREFIX}/lib/perl5

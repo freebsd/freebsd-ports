@@ -3,7 +3,7 @@
 # Date created:				June 15th 1997
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id$
+#   $Id: Makefile,v 1.1.1.1 1997/06/16 02:47:24 jfitz Exp $
 #
 
 DISTNAME=	Devel-Peek-0.82
@@ -14,8 +14,7 @@ MASTER_SITE_SUBDIR=	Devel
 
 MAINTAINER=	jfitz@FreeBSD.ORG
 
-BUILD_DEPENDS= 	perl5.004:${PORTSDIR}/lang/perl5
-RUN_DEPENDS=	perl5.004:${PORTSDIR}/lang/perl5
+USE_PERL5=	YES
 
 MANPREFIX=	${PREFIX}/lib/perl5
 MAN3=		Devel::Peek.3
