@@ -41,6 +41,12 @@ MAN5=	aecattr.5 aecstate.5 aedir.5 aefstate.5 aegis.5 aegstate.5 \
 DOCS=		lib/en/*.txt lib/en/*.ps*
 DOCS_DE=	lib/de/*.txt lib/de/*.ps*
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "alpha"
+BROKEN=		"Does not compile on alpha"
+.endif
+
 .if !defined(NOPORTDOCS)
 post-install:
 	@${MKDIR} ${DOCSDIR}/de
@@ -49,4 +55,4 @@ post-install:
 		${INSTALL_DATA} ${DOCS_DE} ${DOCSDIR}/de
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
