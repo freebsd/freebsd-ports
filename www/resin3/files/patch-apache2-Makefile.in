@@ -1,5 +1,5 @@
---- src/c/plugin/apache2/Makefile.in.orig	Tue Sep 23 00:54:34 2003
-+++ src/c/plugin/apache2/Makefile.in	Mon Nov 17 11:33:19 2003
+--- src/c/plugin/apache2/Makefile.in.orig	Thu Mar 25 01:29:07 2004
++++ src/c/plugin/apache2/Makefile.in	Sun Mar 28 12:52:01 2004
 @@ -30,8 +30,7 @@
  	$(CC) -c $(INCLUDES) $(CFLAGS) $<
  
