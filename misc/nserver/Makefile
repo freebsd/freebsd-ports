@@ -25,6 +25,12 @@ PLIST_FILES+=	share/doc/nserver/README
 PLIST_DIRS=	share/doc/nserver
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502126
+BROKEN=		"Does not compile on FreeBSD >= 5.x"
+.endif
+
 do-patch:
 	@${REINPLACE_CMD} -e "s|-O2|${CFLAGS}|g; \
 		s|ttyS3|cuaa0|g; \
@@ -39,4 +45,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

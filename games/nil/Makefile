@@ -22,6 +22,12 @@ GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 USE_SDL=	mixer sdl
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502126
+BROKEN=		"Does not compile on FreeBSD >= 5.x"
+.endif
+
 pre-patch:
 	@${FIND} ${WRKSRC} \( -name "*.[ch]" -or -name "*.cpp" \) | \
 		${XARGS} ${REINPLACE_CMD} -e 's|"SDL/|"|g ; s|<SDL/|<|g'
@@ -40,4 +46,4 @@ post-install:
 	@${ECHO_MSG} "See ${PREFIX}/share/nil/README for usage instructions."
 	@${ECHO_MSG} ""
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
