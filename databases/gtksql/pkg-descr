@@ -1,4 +1,4 @@
-GtkSQL is a graphical query tool for PostgreSQL.  You can work on
+GtkSQL is a graphical query tool for PostgreSQL/MySQL.  You can work on
 multiple queries simultaneously:
 
  * send the current query to the database
