@@ -6,20 +6,21 @@
 #
 
 PORTNAME=	bluej
-PORTVERSION=	1.3.5
+PORTVERSION=	2.0.2
 CATEGORIES=	java editors
-MASTER_SITES=	http://www.bluej.org/download/files/
+MASTER_SITES=	http://www.bluej.org/download/files/ \
+		ftp://ftp.bluej.org/pub/bluej/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
 EXTRACT_SUFX=	.jar
 EXTRACT_ONLY=
 
 MAINTAINER=	kij@imada.sdu.dk
-COMMENT=	BlueJ is a Java environment designed for introductory teaching
+COMMENT=	BlueJ is an integrated Java environment designed for introductory teaching
 
 IS_INTERACTIVE=	yes
 NO_BUILD=	yes
 
-USE_JAVA=	1.3+
+USE_JAVA=	1.4+
 
 do-install:
 	@${ECHO} Starting BlueJ graphical installer...  Please install to default path of
