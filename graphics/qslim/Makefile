@@ -18,6 +18,8 @@ LIB_DEPENDS=	xforms:${PORTSDIR}/x11-toolkits/xforms \
 		tiff:${PORTSDIR}/graphics/tiff \
 		png:${PORTSDIR}/graphics/png
 
+BROKEN=		"Does not find libforms.a to link against"
+
 USE_MESA=	yes
 USE_XLIB=	yes
 CONFIGURE_WRKSRC=	${WRKSRC}/mixkit/build
