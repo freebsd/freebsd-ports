@@ -1,0 +1,7 @@
+--- magick/xwindow.h	Thu Sep  5 15:50:03 2002
++++ magick/xwindow.h	Wed Oct 16 11:08:11 2002
+@@ -43,4 +43,2 @@
+ #if defined(HasSharedMemory)
+-#include <sys/ipc.h>
+-#include <sys/shm.h>
+ #include <X11/extensions/XShm.h>

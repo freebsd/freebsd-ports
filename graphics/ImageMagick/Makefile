@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	ImageMagick
-PORTVERSION=	5.5.7.10
-PORTREVISION=   0
+PORTVERSION=	5.5.6
+PORTREVISION=   3
 CATEGORIES=	graphics perl5
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://imagemagick.sourceforge.net/http/ \
@@ -26,12 +26,9 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.fifi.org/pub/%SUBDIR%/ \
 		ftp://ftp.simplesystems.org/pub/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTNAME:L} ${PORTNAME}
-DISTNAME=	${PORTNAME}-${PORTVERSION:R}-${PORTVERSION:E}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Image processing tools (interactive optional--misc/display conflict)
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 
 USE_PERL5=	yes
 USE_BZIP2=	yes
@@ -73,11 +70,6 @@ CONFIGURE_ARGS+=	--without-threads
 # Faster, but poor quality
 .if defined(WITHOUT_IMAGEMAGICK_16BIT_PIXEL)
 CONFIGURE_ARGS+=	--with-quantum-depth=8
-PLIST_SUB+=		Q8=''
-PLIST_SUB+=		Q16='@comment '
-.else
-PLIST_SUB+=		Q8='@comment '
-PLIST_SUB+=		Q16=''
 .endif
 
 # Produce standard (small) GIFs
