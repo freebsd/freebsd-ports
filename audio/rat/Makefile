@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	rat
-PORTVERSION=	4.2.9
-PORTREVISION=	1
+PORTVERSION=	4.2.13
+
+PORTREVISION=	0
 CATEGORIES=	mbone audio ipv6
-MASTER_SITES=	http://www-mice.cs.ucl.ac.uk/multimedia/software/rat/4.2.9/ \
+MASTER_SITES=	http://www-mice.cs.ucl.ac.uk/multimedia/software/rat/4.2.13/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	cpiazza
 
