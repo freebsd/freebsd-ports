@@ -25,27 +25,27 @@ include/ncurses/termcap.h
 include/ncurses/unctrl.h
 lib/libform.a
 lib/libform.so
-lib/libform.so.4.2
+lib/libform.so.4
 lib/libform_g.a
 lib/libform_p.a
 lib/libmenu.a
 lib/libmenu.so
-lib/libmenu.so.4.2
+lib/libmenu.so.4
 lib/libmenu_g.a
 lib/libmenu_p.a
 lib/libncurses++.a
 lib/libncurses.a
 lib/libncurses.so
-lib/libncurses.so.4.2
+lib/libncurses.so.4
 lib/libncurses_g.a
 lib/libncurses_p.a
 lib/libpanel.a
 lib/libpanel.so
-lib/libpanel.so.4.2
+lib/libpanel.so.4
 lib/libpanel_g.a
 lib/libpanel_p.a
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %D/lib
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
+@exec /usr/bin/env /sbin/ldconfig -m %D/lib
+@unexec /usr/bin/env /sbin/ldconfig -R
 share/doc/ncurses/ANNOUNCE
 share/doc/ncurses/INSTALL
 share/doc/ncurses/NEWS
