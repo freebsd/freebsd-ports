@@ -308,6 +308,7 @@
     SUBDIR += p5-Date-DayOfWeek
     SUBDIR += p5-Date-Leapyear
     SUBDIR += p5-Date-Manip
+    SUBDIR += p5-Date-Pcalc
     SUBDIR += p5-DateConvert
     SUBDIR += p5-Devel-DProf
     SUBDIR += p5-Devel-Modlist
