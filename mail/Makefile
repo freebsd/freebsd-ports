@@ -222,7 +222,6 @@
     SUBDIR += mutt_vc_query
     SUBDIR += muttzilla
     SUBDIR += nail
-    SUBDIR += namg
     SUBDIR += nbsmtp
     SUBDIR += newmail
     SUBDIR += nmh
