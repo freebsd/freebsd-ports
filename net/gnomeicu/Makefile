@@ -3,7 +3,7 @@
 # Date created:			Oct 15 1998
 # Whom:				Vanilla Pooh Shu <vanilla@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.4 1998/12/11 12:05:49 jkh Exp $
+# $Id: Makefile,v 1.5 1999/01/12 16:50:45 vanilla Exp $
 #
 
 DISTNAME=	gtkicq-0.56
@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.bse.bg/pub/Unix/icq/ \
 
 MAINTAINER=	nacai@iname.com
 
-LIB_DEPENDS=	gnome.0:${PORTSDIR}/x11/gnomelibs \
+LIB_DEPENDS=	gnome.1:${PORTSDIR}/x11/gnomelibs \
 		panel_applet.0:${PORTSDIR}/x11/gnomecore
 
 BROKEN=		"gtkicq 0.58 is out"
