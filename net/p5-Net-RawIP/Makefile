@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net-RawIP
-PORTVERSION=	0.09d
+PORTVERSION=	0.1
 CATEGORIES=	net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN} \
 		http://quake.skif.net/RawIP/files/ \
@@ -15,6 +15,7 @@ MASTER_SITE_SUBDIR=	Net
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	demon@FreeBSD.org
+COMMENT=	A perl module to manipulate raw IP packets
 
 PERL_CONFIGURE=	yes
 MAN3=		Net::RawIP.3 Net::RawIP::libpcap.3
