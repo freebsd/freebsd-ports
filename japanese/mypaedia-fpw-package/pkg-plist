@@ -1,0 +1,6 @@
+share/dict/lookup-package/mypaedia-fpw.el
+share/dict/lookup-package/mypaedia-fpw.pl
+share/doc/%%PKGNAME%%/ChangeLog
+share/doc/%%PKGNAME%%/README.TXT
+@dirrm share/dict/lookup-package
+@dirrm share/doc/%%PKGNAME%%
