@@ -1,5 +1,6 @@
 bin/bzip2
 bin/bunzip2
+bin/bzcat
 bin/bzip2recover
 lib/libbz2.a
 share/doc/bzip2/manual.ps
