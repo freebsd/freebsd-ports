@@ -4,7 +4,6 @@
 #
 # $FreeBSD$
 #
-BROKEN=		Gtk+-1.2.9 does not allow setuid program
 
 PORTNAME=	nethack
 PORTVERSION=	1.1.5

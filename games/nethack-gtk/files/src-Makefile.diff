@@ -6,8 +6,8 @@
  
 -CFLAGS = -O -I../include -I/usr/X11R6/include `gtk-config --cflags`
 -LFLAGS = -O -L/usr/X11R6/lib `gtk-config --libs`
-+CFLAGS = -O -I../include -I/usr/X11R6/include `${GTK_CONFIG} --cflags`
-+LFLAGS = -O -L/usr/X11R6/lib `${GTK_CONFIG} --libs`
++CFLAGS += -I../include -I${X11BASE}/include `${GTK_CONFIG} --cflags`
++LFLAGS = -L${X11BASE}/lib `${GTK_CONFIG} --libs`
  
  # Set the WINSRC, WINOBJ, and WINLIB lines to correspond to your desired
  # combination of windowing systems.  Also set windowing systems in config.h.
