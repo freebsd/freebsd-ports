@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- python/Makefile.in	2002/02/26 18:02:33	1.1
++++ python/Makefile.in	2002/02/26 18:02:50
+@@ -139,7 +139,7 @@
+ 	-I$(top_srcdir)/include
+ 
+ 
+-DOCS_DIR = $(prefix)/share/doc/libxml2-python-$(LIBXML_VERSION)
++DOCS_DIR = $(prefix)/share/doc/libxml2-python
+ DOCS = TODO libxml2class.txt
+ 
+ EXTRA_DIST = \

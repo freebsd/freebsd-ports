@@ -34,8 +34,29 @@ include/libxml2/libxml/xpointer.h
 lib/libxml2.a
 lib/libxml2.so
 lib/libxml2.so.5
+%%PYTHON:%%lib/%%PYTHON_VERSION%%/site-packages/libxml2.py
+%%PYTHON:%%lib/%%PYTHON_VERSION%%/site-packages/libxml2mod.so
 libdata/pkgconfig/libxml-2.0.pc
 share/aclocal/libxml.m4
+%%PYTHON:%%share/doc/libxml2-python/TODO
+%%PYTHON:%%share/doc/libxml2-python/examples/build.py
+%%PYTHON:%%share/doc/libxml2-python/examples/error.py
+%%PYTHON:%%share/doc/libxml2-python/examples/invalid.xml
+%%PYTHON:%%share/doc/libxml2-python/examples/push.py
+%%PYTHON:%%share/doc/libxml2-python/examples/pushSAX.py
+%%PYTHON:%%share/doc/libxml2-python/examples/tst.py
+%%PYTHON:%%share/doc/libxml2-python/examples/tst.xml
+%%PYTHON:%%share/doc/libxml2-python/examples/tstxpath.py
+%%PYTHON:%%share/doc/libxml2-python/examples/valid.xml
+%%PYTHON:%%share/doc/libxml2-python/examples/validate.py
+%%PYTHON:%%share/doc/libxml2-python/examples/xpath.py
+%%PYTHON:%%share/doc/libxml2-python/examples/xpathext.py
+%%PYTHON:%%share/doc/libxml2-python/libxml2class.txt
+share/doc/libxml2/Copyright
+share/doc/libxml2/examples/testHTML.c
+share/doc/libxml2/examples/testSAX.c
+share/doc/libxml2/examples/testXPath.c
+share/doc/libxml2/examples/xmllint.c
 share/doc/libxml2/html/DOM.gif
 share/doc/libxml2/html/FAQ.html
 share/doc/libxml2/html/book1.html
@@ -71,6 +92,9 @@ share/doc/libxml2/html/libxml-xpointer.html
 share/doc/libxml2/html/structure.gif
 share/doc/libxml2/html/xml.html
 @dirrm share/doc/libxml2/html
+%%PYTHON:%%@dirrm share/doc/libxml2-python/examples
+%%PYTHON:%%@dirrm share/doc/libxml2-python
+@dirrm share/doc/libxml2/examples
 @dirrm share/doc/libxml2
 @dirrm include/libxml2/libxml
 @dirrm include/libxml2

@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- python/tests/Makefile.in	2002/02/26 18:09:00	1.1
++++ python/tests/Makefile.in	2002/02/26 18:09:12
+@@ -128,7 +128,7 @@
+ Z_CFLAGS = @Z_CFLAGS@
+ Z_LIBS = @Z_LIBS@
+ 
+-EXAMPLE_DIR = $(prefix)/share/doc/libxml2-python-$(LIBXML_VERSION)/examples
++EXAMPLE_DIR = $(prefix)/share/doc/libxml2-python/examples
+ 
+ PYTESTS = \
+     build.py	\
