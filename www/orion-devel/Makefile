@@ -1,13 +1,12 @@
-# New ports collection makefile for:   orion
-# Date created:        22 December 2000
+# New ports collection makefile for:   orion-devel
+# Date created:        14 August 2002
 # Whom:                Ernst de Haan <znerd@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	orion
-PORTVERSION=	1.5.4
-PORTREVISION=	3
+PORTVERSION=	1.6.0
 CATEGORIES=	www java
 MASTER_SITES=	http://www.orionserver.com/distributions/ \
 		http://www.atlassian.com/software/orion/downloads/ \
@@ -37,8 +36,8 @@ STARTUP_SCRIPT=	${PREFIX}/etc/rc.d/${STARTUP_ORDER}.${STARTUP_SCRIPT_NAME}
 USER=		www
 GROUP=		www
 PW?=		/usr/sbin/pw
-HTTP_PORT?=	8090
-RMI_PORT?=	23791
+HTTP_PORT?=	8095
+RMI_PORT?=	23795
 STDOUT_LOG=	${LOG_DIR}/stdout.log
 STDERR_LOG=	${LOG_DIR}/stderr.log
 AUTO_START?=	NO
