@@ -1,5 +1,5 @@
 # Creator:  Jordan Hubbard
-# $Id: LEGAL,v 1.137 1999/04/30 18:19:39 taoka Exp $
+# $Id: LEGAL,v 1.138 1999/05/07 07:05:36 taoka Exp $
 
 Some of the ports in this directory have restrictive copyrights prohibiting
 their actual redistribution on mass media.  When creating compilations
@@ -131,6 +131,8 @@ su2-1.3.tar.gz		ports/sysutils/su2	Don't sell for profit.
 timidity-*		ports/audio/timidity	Uses copyrighted patches.
 tkman-1.7.3.tar.Z	ports/misc/tkman	Restrictive copyright
 tkman-2.*		ports/misc/tkman	Don't sell for profit.
+tuc-*			ports/converters/tuc	Author does not allow
+						CD-ROM distribution
 upsmon*			ports/sysutils/upsmon	Redistribute only with
 						original source code.
 uzap.tar.gz             ports/editors/uzap      Restrictive copyright
