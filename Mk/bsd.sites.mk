@@ -213,7 +213,8 @@ MASTER_SITE_RUBY+= \
 	ftp://ftp.easynet.be/ruby/ruby/%SUBDIR%/
 
 MASTER_SITE_SOURCEWARE+= \
-	http://mirrors.rcn.net/pub/sourceware/%SUBDIR%/ \
+	http://mirrors.rcn.net/mirrors/sources.redhat.com/%SUBDIR%/ \
+	ftp://mirrors.rcn.net/mirrors/sources.redhat.com/%SUBDIR%/ \
 	ftp://ftp.funet.fi/pub/mirrors/sourceware.cygnus.com/pub/%SUBDIR%/ \
 	ftp://ftp.pvv.ntnu.no/pub/cygnus/sourceware.cygnus.com/%SUBDIR%/ \
 	ftp://ftp1.sinica.edu.tw/pub3/CYGNUS/%SUBDIR%/ \
@@ -223,7 +224,6 @@ MASTER_SITE_SOURCEWARE+= \
 	ftp://ftp.sdn.co.za/mirrors/sourceware.cygnus.com/pub/%SUBDIR%/ \
 	http://sunsite.org.uk/Mirrors/sourceware.cygnus.com/pub/%SUBDIR%/ \
 	ftp://unix.hensa.ac.uk/mirrors/sourceware.cygnus.com/pub/%SUBDIR%/ \
-	ftp://mirrors.rcn.net/pub/sourceware/%SUBDIR%/ \
 	ftp://sunsite.org.uk/Mirrors/sourceware.cygnus.com/pub/%SUBDIR%/
 
 MASTER_SITE_SOURCEFORGE+= \
