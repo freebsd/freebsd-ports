@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gkrellm
-PORTVERSION=	1.2.8
+PORTVERSION=	1.2.9
 CATEGORIES=	sysutils ipv6
 MASTER_SITES=	http://web.wt.net/~billw/gkrellm/ \
 		${MASTER_SITE_LOCAL}
@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	ume
 
 MAINTAINER=	ume@FreeBSD.org
 
+USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_IMLIB=	yes
 USE_GMAKE=	yes
