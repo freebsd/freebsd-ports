@@ -89,195 +89,193 @@
 %%PORTDOCS%%%%CONTRIB%%share/doc/bugzilla/contrib/README.Mailif
 %%PORTDOCS%%%%CONTRIB%%share/doc/bugzilla/contrib/bugmail_help.html
 %%PORTDOCS%%%%CONTRIB%%share/doc/bugzilla/contrib/bugzilla.procmailrc
-%%CONTRIB%%www/data.default/bugzilla/contrib/BugzillaEmail.pm
-%%CONTRIB%%www/data.default/bugzilla/contrib/bug_email.pl
-%%CONTRIB%%www/data.default/bugzilla/contrib/bugzilla_email_append.pl
-%%CONTRIB%%www/data.default/bugzilla/contrib/cvs-update.sh
-%%CONTRIB%%www/data.default/bugzilla/contrib/gnats2bz.pl
-%%CONTRIB%%www/data.default/bugzilla/contrib/jb2bz.py
-%%CONTRIB%%www/data.default/bugzilla/contrib/mysqld-watcher.pl
-%%CONTRIB%%www/data.default/bugzilla/contrib/yp_nomail.sh
-%%CONTRIB%%www/data.default/bugzilla/contrib/cmdline/buglist
-%%CONTRIB%%www/data.default/bugzilla/contrib/cmdline/bugs
-%%CONTRIB%%www/data.default/bugzilla/contrib/cmdline/query.conf
-www/data.default/bugzilla/buglist.cgi
-www/data.default/bugzilla/1x1.gif
-www/data.default/bugzilla/ant.jpg
-www/data.default/bugzilla/attachment.cgi
-www/data.default/bugzilla/Attachment.pm
-www/data.default/bugzilla/Bug.pm
-www/data.default/bugzilla/bug_form.pl
-www/data.default/bugzilla/bug_status.html
-www/data.default/bugzilla/bugwritinghelp.html
-www/data.default/bugzilla/bugzilla.dtd
-www/data.default/bugzilla/CGI.pl
-www/data.default/bugzilla/changepassword.cgi
-www/data.default/bugzilla/checksetup.pl
-www/data.default/bugzilla/colchange.cgi
-www/data.default/bugzilla/collectstats.pl
-www/data.default/bugzilla/confirmhelp.html
-www/data.default/bugzilla/createaccount.cgi
-www/data.default/bugzilla/defparams.pl
-www/data.default/bugzilla/describecomponents.cgi
-www/data.default/bugzilla/describekeywords.cgi
-www/data.default/bugzilla/move.pl
-www/data.default/bugzilla/doeditparams.cgi
-www/data.default/bugzilla/duplicates.cgi
-www/data.default/bugzilla/editattachstatuses.cgi
-www/data.default/bugzilla/editcomponents.cgi
-www/data.default/bugzilla/editgroups.cgi
-www/data.default/bugzilla/editkeywords.cgi
-www/data.default/bugzilla/editmilestones.cgi
-www/data.default/bugzilla/editparams.cgi
-www/data.default/bugzilla/editproducts.cgi
-www/data.default/bugzilla/editusers.cgi
-www/data.default/bugzilla/editversions.cgi
-www/data.default/bugzilla/enter_bug.cgi
-www/data.default/bugzilla/globals.pl
-www/data.default/bugzilla/help.html
-www/data.default/bugzilla/helpemailquery.html
-www/data.default/bugzilla/how_to_mail.html
-www/data.default/bugzilla/importxml.pl
-www/data.default/bugzilla/index.cgi
-www/data.default/bugzilla/localconfig.js
-www/data.default/bugzilla/long_list.cgi
-www/data.default/bugzilla/notargetmilestone.html
-www/data.default/bugzilla/post_bug.cgi
-www/data.default/bugzilla/process_bug.cgi
-www/data.default/bugzilla/processmail
-www/data.default/bugzilla/queryhelp.cgi
-www/data.default/bugzilla/quicksearch.html
-www/data.default/bugzilla/quicksearch.js
-www/data.default/bugzilla/quicksearchhack.html
-www/data.default/bugzilla/quips.cgi
-www/data.default/bugzilla/README
-www/data.default/bugzilla/RelationSet.pm
-www/data.default/bugzilla/relogin.cgi
-www/data.default/bugzilla/reports.cgi
-www/data.default/bugzilla/robots.txt
-www/data.default/bugzilla/runtests.pl
-www/data.default/bugzilla/runtests.sh
-www/data.default/bugzilla/sanitycheck.cgi
-www/data.default/bugzilla/show_activity.cgi
-www/data.default/bugzilla/show_bug.cgi
-www/data.default/bugzilla/showattachment.cgi
-www/data.default/bugzilla/showdependencygraph.cgi
-www/data.default/bugzilla/sidebar.cgi
-www/data.default/bugzilla/showdependencytree.cgi
-www/data.default/bugzilla/syncshadowdb
-www/data.default/bugzilla/token.cgi
-www/data.default/bugzilla/Token.pm
-www/data.default/bugzilla/userprefs.cgi
-www/data.default/bugzilla/votehelp.html
-www/data.default/bugzilla/votes.cgi
-www/data.default/bugzilla/whineatnews.pl
-www/data.default/bugzilla/xml.cgi
-www/data.default/bugzilla/query.cgi
-www/data.default/bugzilla/template/en/default/account/cancel-token.txt.tmpl
-www/data.default/bugzilla/template/en/default/account/create.html.tmpl
-www/data.default/bugzilla/template/en/default/account/created.html.tmpl
-www/data.default/bugzilla/template/en/default/account/email/change-new.txt.tmpl
-www/data.default/bugzilla/template/en/default/account/email/change-old.txt.tmpl
-www/data.default/bugzilla/template/en/default/account/email/confirm.html.tmpl
-www/data.default/bugzilla/template/en/default/account/exists.html.tmpl
-www/data.default/bugzilla/template/en/default/account/password/forgotten-password.txt.tmpl
-www/data.default/bugzilla/template/en/default/account/password/set-forgotten-password.html.tmpl
-www/data.default/bugzilla/template/en/default/account/prefs/account.html.tmpl
-www/data.default/bugzilla/template/en/default/account/prefs/email.html.tmpl
-www/data.default/bugzilla/template/en/default/account/prefs/footer.html.tmpl
-www/data.default/bugzilla/template/en/default/account/prefs/permissions.html.tmpl
-www/data.default/bugzilla/template/en/default/account/prefs/prefs.html.tmpl
-www/data.default/bugzilla/template/en/default/admin/attachstatus/create.html.tmpl
-www/data.default/bugzilla/template/en/default/admin/attachstatus/delete.html.tmpl
-www/data.default/bugzilla/template/en/default/admin/attachstatus/edit.html.tmpl
-www/data.default/bugzilla/template/en/default/admin/attachstatus/list.html.tmpl
-www/data.default/bugzilla/template/en/default/attachment/content-types.html.tmpl
-www/data.default/bugzilla/template/en/default/attachment/create.html.tmpl
-www/data.default/bugzilla/template/en/default/attachment/created.html.tmpl
-www/data.default/bugzilla/template/en/default/attachment/edit.html.tmpl
-www/data.default/bugzilla/template/en/default/attachment/list.html.tmpl
-www/data.default/bugzilla/template/en/default/attachment/show-multiple.html.tmpl
-www/data.default/bugzilla/template/en/default/attachment/updated.html.tmpl
-www/data.default/bugzilla/template/en/default/bug/activity/show.html.tmpl
-www/data.default/bugzilla/template/en/default/bug/activity/table.html.tmpl
-www/data.default/bugzilla/template/en/default/bug/choose-xml.html.tmpl
-www/data.default/bugzilla/template/en/default/bug/choose.html.tmpl
-www/data.default/bugzilla/template/en/default/bug/comments.html.tmpl
-www/data.default/bugzilla/template/en/default/bug/create/comment.txt.tmpl
-www/data.default/bugzilla/template/en/default/bug/create/create.html.tmpl
-www/data.default/bugzilla/template/en/default/bug/create/created.html.tmpl
-www/data.default/bugzilla/template/en/default/bug/create/make-template.html.tmpl
-www/data.default/bugzilla/template/en/default/bug/create/user-message.html.tmpl
-www/data.default/bugzilla/template/en/default/bug/dependency-graph.html.tmpl
-www/data.default/bugzilla/template/en/default/bug/dependency-tree.html.tmpl
-www/data.default/bugzilla/template/en/default/bug/edit.html.tmpl
-www/data.default/bugzilla/template/en/default/bug/navigate.html.tmpl
-www/data.default/bugzilla/template/en/default/bug/process/confirm-duplicate.html.tmpl
-www/data.default/bugzilla/template/en/default/bug/process/midair.html.tmpl
-www/data.default/bugzilla/template/en/default/bug/process/next.html.tmpl
-www/data.default/bugzilla/template/en/default/bug/process/results.html.tmpl
-www/data.default/bugzilla/template/en/default/bug/process/verify-new-product.html.tmpl
-www/data.default/bugzilla/template/en/default/bug/show-multiple.html.tmpl
-www/data.default/bugzilla/template/en/default/bug/votes/delete-all.html.tmpl
-www/data.default/bugzilla/template/en/default/bug/votes/list-for-bug.html.tmpl
-www/data.default/bugzilla/template/en/default/bug/votes/list-for-user.html.tmpl
-www/data.default/bugzilla/template/en/default/filterexceptions.pl
-www/data.default/bugzilla/template/en/default/global/banner.html.tmpl
-www/data.default/bugzilla/template/en/default/global/choose-product.html.tmpl
-www/data.default/bugzilla/template/en/default/global/code-error.html.tmpl
-www/data.default/bugzilla/template/en/default/global/footer.html.tmpl
-www/data.default/bugzilla/template/en/default/global/header.html.tmpl
-www/data.default/bugzilla/template/en/default/global/hidden-fields.html.tmpl
-www/data.default/bugzilla/template/en/default/global/message.html.tmpl
-www/data.default/bugzilla/template/en/default/global/select-menu.html.tmpl
-www/data.default/bugzilla/template/en/default/global/useful-links.html.tmpl
-www/data.default/bugzilla/template/en/default/global/user-error.html.tmpl
-www/data.default/bugzilla/template/en/default/index.html.tmpl
-www/data.default/bugzilla/template/en/default/list/change-columns.html.tmpl
-www/data.default/bugzilla/template/en/default/list/edit-multiple.html.tmpl
-www/data.default/bugzilla/template/en/default/list/list-rdf.rdf.tmpl
-www/data.default/bugzilla/template/en/default/list/list-simple.html.tmpl
-www/data.default/bugzilla/template/en/default/list/list.html.tmpl
-www/data.default/bugzilla/template/en/default/list/quips.html.tmpl
-www/data.default/bugzilla/template/en/default/list/server-push.html.tmpl
-www/data.default/bugzilla/template/en/default/list/table.html.tmpl
-www/data.default/bugzilla/template/en/default/reports/components.html.tmpl
-www/data.default/bugzilla/template/en/default/reports/duplicates-simple.html.tmpl
-www/data.default/bugzilla/template/en/default/reports/duplicates-table.html.tmpl
-www/data.default/bugzilla/template/en/default/reports/duplicates.html.tmpl
-www/data.default/bugzilla/template/en/default/reports/keywords.html.tmpl
-www/data.default/bugzilla/template/en/default/search/boolean-charts.html.tmpl
-www/data.default/bugzilla/template/en/default/search/form.html.tmpl
-www/data.default/bugzilla/template/en/default/search/knob.html.tmpl
-www/data.default/bugzilla/template/en/default/search/search.html.tmpl
-www/data.default/bugzilla/template/en/default/sidebar.xul.tmpl
-www/data.default/bugzilla/css/buglist.css
-www/data.default/bugzilla/css/panel.css
-%%CONTRIB%%@dirrm www/data.default/bugzilla/contrib/cmdline
-%%CONTRIB%%@dirrm www/data.default/bugzilla/contrib
-@dirrm www/data.default/bugzilla/template/en/default/account/email
-@dirrm www/data.default/bugzilla/template/en/default/account/password
-@dirrm www/data.default/bugzilla/template/en/default/account/prefs
-@dirrm www/data.default/bugzilla/template/en/default/account
-@dirrm www/data.default/bugzilla/template/en/default/admin/attachstatus
-@dirrm www/data.default/bugzilla/template/en/default/admin
-@dirrm www/data.default/bugzilla/template/en/default/attachment
-@dirrm www/data.default/bugzilla/template/en/default/bug/activity
-@dirrm www/data.default/bugzilla/template/en/default/bug/create
-@dirrm www/data.default/bugzilla/template/en/default/bug/process
-@dirrm www/data.default/bugzilla/template/en/default/bug/votes
-@dirrm www/data.default/bugzilla/template/en/default/bug
-@dirrm www/data.default/bugzilla/template/en/default/global
-@dirrm www/data.default/bugzilla/template/en/default/list
-@dirrm www/data.default/bugzilla/template/en/default/reports
-@dirrm www/data.default/bugzilla/template/en/default/search
-@dirrm www/data.default/bugzilla/template/en/default
-@dirrm www/data.default/bugzilla/template/en
-@dirrm www/data.default/bugzilla/template
-@dirrm www/data.default/bugzilla/css
-@dirrm www/data.default/bugzilla
-@unexec rmdir %D/www/data.default 2>/dev/null || true
-@unexec rmdir %D/www 2>/dev/null || true
+%%CONTRIB%%%%BUGZILLADIR%%/contrib/BugzillaEmail.pm
+%%CONTRIB%%%%BUGZILLADIR%%/contrib/bug_email.pl
+%%CONTRIB%%%%BUGZILLADIR%%/contrib/bugzilla_email_append.pl
+%%CONTRIB%%%%BUGZILLADIR%%/contrib/cvs-update.sh
+%%CONTRIB%%%%BUGZILLADIR%%/contrib/gnats2bz.pl
+%%CONTRIB%%%%BUGZILLADIR%%/contrib/jb2bz.py
+%%CONTRIB%%%%BUGZILLADIR%%/contrib/mysqld-watcher.pl
+%%CONTRIB%%%%BUGZILLADIR%%/contrib/yp_nomail.sh
+%%CONTRIB%%%%BUGZILLADIR%%/contrib/cmdline/buglist
+%%CONTRIB%%%%BUGZILLADIR%%/contrib/cmdline/bugs
+%%CONTRIB%%%%BUGZILLADIR%%/contrib/cmdline/query.conf
+%%BUGZILLADIR%%/buglist.cgi
+%%BUGZILLADIR%%/1x1.gif
+%%BUGZILLADIR%%/ant.jpg
+%%BUGZILLADIR%%/attachment.cgi
+%%BUGZILLADIR%%/Attachment.pm
+%%BUGZILLADIR%%/Bug.pm
+%%BUGZILLADIR%%/bug_form.pl
+%%BUGZILLADIR%%/bug_status.html
+%%BUGZILLADIR%%/bugwritinghelp.html
+%%BUGZILLADIR%%/bugzilla.dtd
+%%BUGZILLADIR%%/CGI.pl
+%%BUGZILLADIR%%/changepassword.cgi
+%%BUGZILLADIR%%/checksetup.pl
+%%BUGZILLADIR%%/colchange.cgi
+%%BUGZILLADIR%%/collectstats.pl
+%%BUGZILLADIR%%/confirmhelp.html
+%%BUGZILLADIR%%/createaccount.cgi
+%%BUGZILLADIR%%/defparams.pl
+%%BUGZILLADIR%%/describecomponents.cgi
+%%BUGZILLADIR%%/describekeywords.cgi
+%%BUGZILLADIR%%/move.pl
+%%BUGZILLADIR%%/doeditparams.cgi
+%%BUGZILLADIR%%/duplicates.cgi
+%%BUGZILLADIR%%/editattachstatuses.cgi
+%%BUGZILLADIR%%/editcomponents.cgi
+%%BUGZILLADIR%%/editgroups.cgi
+%%BUGZILLADIR%%/editkeywords.cgi
+%%BUGZILLADIR%%/editmilestones.cgi
+%%BUGZILLADIR%%/editparams.cgi
+%%BUGZILLADIR%%/editproducts.cgi
+%%BUGZILLADIR%%/editusers.cgi
+%%BUGZILLADIR%%/editversions.cgi
+%%BUGZILLADIR%%/enter_bug.cgi
+%%BUGZILLADIR%%/globals.pl
+%%BUGZILLADIR%%/help.html
+%%BUGZILLADIR%%/helpemailquery.html
+%%BUGZILLADIR%%/how_to_mail.html
+%%BUGZILLADIR%%/importxml.pl
+%%BUGZILLADIR%%/index.cgi
+%%BUGZILLADIR%%/localconfig.js
+%%BUGZILLADIR%%/long_list.cgi
+%%BUGZILLADIR%%/notargetmilestone.html
+%%BUGZILLADIR%%/post_bug.cgi
+%%BUGZILLADIR%%/process_bug.cgi
+%%BUGZILLADIR%%/processmail
+%%BUGZILLADIR%%/queryhelp.cgi
+%%BUGZILLADIR%%/quicksearch.html
+%%BUGZILLADIR%%/quicksearch.js
+%%BUGZILLADIR%%/quicksearchhack.html
+%%BUGZILLADIR%%/quips.cgi
+%%BUGZILLADIR%%/README
+%%BUGZILLADIR%%/RelationSet.pm
+%%BUGZILLADIR%%/relogin.cgi
+%%BUGZILLADIR%%/reports.cgi
+%%BUGZILLADIR%%/robots.txt
+%%BUGZILLADIR%%/runtests.pl
+%%BUGZILLADIR%%/runtests.sh
+%%BUGZILLADIR%%/sanitycheck.cgi
+%%BUGZILLADIR%%/show_activity.cgi
+%%BUGZILLADIR%%/show_bug.cgi
+%%BUGZILLADIR%%/showattachment.cgi
+%%BUGZILLADIR%%/showdependencygraph.cgi
+%%BUGZILLADIR%%/sidebar.cgi
+%%BUGZILLADIR%%/showdependencytree.cgi
+%%BUGZILLADIR%%/syncshadowdb
+%%BUGZILLADIR%%/token.cgi
+%%BUGZILLADIR%%/Token.pm
+%%BUGZILLADIR%%/userprefs.cgi
+%%BUGZILLADIR%%/votehelp.html
+%%BUGZILLADIR%%/votes.cgi
+%%BUGZILLADIR%%/whineatnews.pl
+%%BUGZILLADIR%%/xml.cgi
+%%BUGZILLADIR%%/query.cgi
+%%BUGZILLADIR%%/template/en/default/account/cancel-token.txt.tmpl
+%%BUGZILLADIR%%/template/en/default/account/create.html.tmpl
+%%BUGZILLADIR%%/template/en/default/account/created.html.tmpl
+%%BUGZILLADIR%%/template/en/default/account/email/change-new.txt.tmpl
+%%BUGZILLADIR%%/template/en/default/account/email/change-old.txt.tmpl
+%%BUGZILLADIR%%/template/en/default/account/email/confirm.html.tmpl
+%%BUGZILLADIR%%/template/en/default/account/exists.html.tmpl
+%%BUGZILLADIR%%/template/en/default/account/password/forgotten-password.txt.tmpl
+%%BUGZILLADIR%%/template/en/default/account/password/set-forgotten-password.html.tmpl
+%%BUGZILLADIR%%/template/en/default/account/prefs/account.html.tmpl
+%%BUGZILLADIR%%/template/en/default/account/prefs/email.html.tmpl
+%%BUGZILLADIR%%/template/en/default/account/prefs/footer.html.tmpl
+%%BUGZILLADIR%%/template/en/default/account/prefs/permissions.html.tmpl
+%%BUGZILLADIR%%/template/en/default/account/prefs/prefs.html.tmpl
+%%BUGZILLADIR%%/template/en/default/admin/attachstatus/create.html.tmpl
+%%BUGZILLADIR%%/template/en/default/admin/attachstatus/delete.html.tmpl
+%%BUGZILLADIR%%/template/en/default/admin/attachstatus/edit.html.tmpl
+%%BUGZILLADIR%%/template/en/default/admin/attachstatus/list.html.tmpl
+%%BUGZILLADIR%%/template/en/default/attachment/content-types.html.tmpl
+%%BUGZILLADIR%%/template/en/default/attachment/create.html.tmpl
+%%BUGZILLADIR%%/template/en/default/attachment/created.html.tmpl
+%%BUGZILLADIR%%/template/en/default/attachment/edit.html.tmpl
+%%BUGZILLADIR%%/template/en/default/attachment/list.html.tmpl
+%%BUGZILLADIR%%/template/en/default/attachment/show-multiple.html.tmpl
+%%BUGZILLADIR%%/template/en/default/attachment/updated.html.tmpl
+%%BUGZILLADIR%%/template/en/default/bug/activity/show.html.tmpl
+%%BUGZILLADIR%%/template/en/default/bug/activity/table.html.tmpl
+%%BUGZILLADIR%%/template/en/default/bug/choose-xml.html.tmpl
+%%BUGZILLADIR%%/template/en/default/bug/choose.html.tmpl
+%%BUGZILLADIR%%/template/en/default/bug/comments.html.tmpl
+%%BUGZILLADIR%%/template/en/default/bug/create/comment.txt.tmpl
+%%BUGZILLADIR%%/template/en/default/bug/create/create.html.tmpl
+%%BUGZILLADIR%%/template/en/default/bug/create/created.html.tmpl
+%%BUGZILLADIR%%/template/en/default/bug/create/make-template.html.tmpl
+%%BUGZILLADIR%%/template/en/default/bug/create/user-message.html.tmpl
+%%BUGZILLADIR%%/template/en/default/bug/dependency-graph.html.tmpl
+%%BUGZILLADIR%%/template/en/default/bug/dependency-tree.html.tmpl
+%%BUGZILLADIR%%/template/en/default/bug/edit.html.tmpl
+%%BUGZILLADIR%%/template/en/default/bug/navigate.html.tmpl
+%%BUGZILLADIR%%/template/en/default/bug/process/confirm-duplicate.html.tmpl
+%%BUGZILLADIR%%/template/en/default/bug/process/midair.html.tmpl
+%%BUGZILLADIR%%/template/en/default/bug/process/next.html.tmpl
+%%BUGZILLADIR%%/template/en/default/bug/process/results.html.tmpl
+%%BUGZILLADIR%%/template/en/default/bug/process/verify-new-product.html.tmpl
+%%BUGZILLADIR%%/template/en/default/bug/show-multiple.html.tmpl
+%%BUGZILLADIR%%/template/en/default/bug/votes/delete-all.html.tmpl
+%%BUGZILLADIR%%/template/en/default/bug/votes/list-for-bug.html.tmpl
+%%BUGZILLADIR%%/template/en/default/bug/votes/list-for-user.html.tmpl
+%%BUGZILLADIR%%/template/en/default/filterexceptions.pl
+%%BUGZILLADIR%%/template/en/default/global/banner.html.tmpl
+%%BUGZILLADIR%%/template/en/default/global/choose-product.html.tmpl
+%%BUGZILLADIR%%/template/en/default/global/code-error.html.tmpl
+%%BUGZILLADIR%%/template/en/default/global/footer.html.tmpl
+%%BUGZILLADIR%%/template/en/default/global/header.html.tmpl
+%%BUGZILLADIR%%/template/en/default/global/hidden-fields.html.tmpl
+%%BUGZILLADIR%%/template/en/default/global/message.html.tmpl
+%%BUGZILLADIR%%/template/en/default/global/select-menu.html.tmpl
+%%BUGZILLADIR%%/template/en/default/global/useful-links.html.tmpl
+%%BUGZILLADIR%%/template/en/default/global/user-error.html.tmpl
+%%BUGZILLADIR%%/template/en/default/index.html.tmpl
+%%BUGZILLADIR%%/template/en/default/list/change-columns.html.tmpl
+%%BUGZILLADIR%%/template/en/default/list/edit-multiple.html.tmpl
+%%BUGZILLADIR%%/template/en/default/list/list-rdf.rdf.tmpl
+%%BUGZILLADIR%%/template/en/default/list/list-simple.html.tmpl
+%%BUGZILLADIR%%/template/en/default/list/list.html.tmpl
+%%BUGZILLADIR%%/template/en/default/list/quips.html.tmpl
+%%BUGZILLADIR%%/template/en/default/list/server-push.html.tmpl
+%%BUGZILLADIR%%/template/en/default/list/table.html.tmpl
+%%BUGZILLADIR%%/template/en/default/reports/components.html.tmpl
+%%BUGZILLADIR%%/template/en/default/reports/duplicates-simple.html.tmpl
+%%BUGZILLADIR%%/template/en/default/reports/duplicates-table.html.tmpl
+%%BUGZILLADIR%%/template/en/default/reports/duplicates.html.tmpl
+%%BUGZILLADIR%%/template/en/default/reports/keywords.html.tmpl
+%%BUGZILLADIR%%/template/en/default/search/boolean-charts.html.tmpl
+%%BUGZILLADIR%%/template/en/default/search/form.html.tmpl
+%%BUGZILLADIR%%/template/en/default/search/knob.html.tmpl
+%%BUGZILLADIR%%/template/en/default/search/search.html.tmpl
+%%BUGZILLADIR%%/template/en/default/sidebar.xul.tmpl
+%%BUGZILLADIR%%/css/buglist.css
+%%BUGZILLADIR%%/css/panel.css
+%%CONTRIB%%@dirrm %%BUGZILLADIR%%/contrib/cmdline
+%%CONTRIB%%@dirrm %%BUGZILLADIR%%/contrib
+@dirrm %%BUGZILLADIR%%/template/en/default/account/email
+@dirrm %%BUGZILLADIR%%/template/en/default/account/password
+@dirrm %%BUGZILLADIR%%/template/en/default/account/prefs
+@dirrm %%BUGZILLADIR%%/template/en/default/account
+@dirrm %%BUGZILLADIR%%/template/en/default/admin/attachstatus
+@dirrm %%BUGZILLADIR%%/template/en/default/admin
+@dirrm %%BUGZILLADIR%%/template/en/default/attachment
+@dirrm %%BUGZILLADIR%%/template/en/default/bug/activity
+@dirrm %%BUGZILLADIR%%/template/en/default/bug/create
+@dirrm %%BUGZILLADIR%%/template/en/default/bug/process
+@dirrm %%BUGZILLADIR%%/template/en/default/bug/votes
+@dirrm %%BUGZILLADIR%%/template/en/default/bug
+@dirrm %%BUGZILLADIR%%/template/en/default/global
+@dirrm %%BUGZILLADIR%%/template/en/default/list
+@dirrm %%BUGZILLADIR%%/template/en/default/reports
+@dirrm %%BUGZILLADIR%%/template/en/default/search
+@dirrm %%BUGZILLADIR%%/template/en/default
+@dirrm %%BUGZILLADIR%%/template/en
+@dirrm %%BUGZILLADIR%%/template
+@dirrm %%BUGZILLADIR%%/css
+@dirrm %%BUGZILLADIR%%
 %%PORTDOCS%%%%CONTRIB%%@dirrm share/doc/bugzilla/contrib
 %%PORTDOCS%%@dirrm share/doc/bugzilla/xml
 %%PORTDOCS%%@dirrm share/doc/bugzilla/txt

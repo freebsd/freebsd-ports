@@ -7,6 +7,7 @@
 
 PORTNAME=	bugzilla
 PORTVERSION=	2.16.3
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://ftp.mozilla.org/pub/${MASTER_SITE_SUBDIR}/ \
 		${MASTER_SITE_MOZILLA}
@@ -49,10 +50,12 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 
 PERL_SITEDIR=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
 
-BUGZILLADIR=	${PREFIX}/www/data.default/bugzilla
+BUGZILLADIR?=	www/data/bugzilla
 BUGZILLADOCS=	html images txt rel_notes.txt
 BONSAIPERLWC=	*.cgi *.pl *.pm processmail syncshadowdb contrib/*.pl
 SENDMAILWC=	*.pl *.pm processmail contrib/*.pl
+
+PLIST_SUB+=	BUGZILLADIR=${BUGZILLADIR}
 
 pre-everything::
 	@${ECHO_MSG} ""
@@ -69,7 +72,7 @@ pre-everything::
 	@${ECHO_MSG} "                               other bugzilla installations"
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "  WITH_CONTRIB                 to install various user-contributed scripts,"
-	@${ECHO_MSG} "                               e.g. to import bugs from other databases, to
+	@${ECHO_MSG} "                               e.g. to import bugs from other databases, to"
 	@${ECHO_MSG} "                               allow follow-ups/submissions by e-mail etc."
 	@${ECHO_MSG} ""
 
@@ -95,21 +98,21 @@ pre-install:
 	@find ${WRKSRC}/docs -type f -exec ${CHOWN} root:wheel {} \;
 
 do-install:
-	${MKDIR} ${BUGZILLADIR}
+	${MKDIR} ${PREFIX}/${BUGZILLADIR}
 	find ${WRKSRC} \! -type d -maxdepth 1 \! -name UPGRADING* -exec \
-		${INSTALL_SCRIPT} {} ${BUGZILLADIR} \;
-	${TAR} -C ${WRKSRC} -cf - template css | ${TAR} --unlink -C ${BUGZILLADIR} -xf -
+		${INSTALL_SCRIPT} {} ${PREFIX}/${BUGZILLADIR} \;
+	${TAR} -C ${WRKSRC} -cf - template css | ${TAR} --unlink -C ${PREFIX}/${BUGZILLADIR} -xf -
 .if !defined(NOPORTSDOCS)
 	${MKDIR} ${DOCSDIR}
 	${TAR} -C ${WRKSRC}/docs -cf - . | ${TAR} --unlink -C ${DOCSDIR} -xf -
 .endif
 .if defined(WITH_CONTRIB)
-	${MKDIR} ${BUGZILLADIR}/contrib ${BUGZILLADIR}/contrib/cmdline
+	${MKDIR} ${PREFIX}/${BUGZILLADIR}/contrib ${PREFIX}/${BUGZILLADIR}/contrib/cmdline
 	cd ${WRKSRC}/contrib; ${INSTALL_SCRIPT} BugzillaEmail.pm bug_email.pl \
 		bugzilla_email_append.pl cvs-update.sh gnats2bz.pl jb2bz.py \
-		mysqld-watcher.pl yp_nomail.sh ${BUGZILLADIR}/contrib
+		mysqld-watcher.pl yp_nomail.sh ${PREFIX}/${BUGZILLADIR}/contrib
 	cd ${WRKSRC}/contrib/cmdline; ${INSTALL_SCRIPT} buglist bugs \
-		query.conf ${BUGZILLADIR}/contrib/cmdline
+		query.conf ${PREFIX}/${BUGZILLADIR}/contrib/cmdline
 .if !defined(NOPORTSDOCS)
 	${MKDIR} ${DOCSDIR}/contrib
 	cd ${WRKSRC}/contrib; ${INSTALL_DATA} README README.Mailif \
