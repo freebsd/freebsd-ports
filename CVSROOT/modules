@@ -8386,6 +8386,7 @@ xmms-audiofile	ports/audio/xmms-audiofile
 xmms-avi	ports/multimedia/xmms-avi
 xmms-blursk	ports/graphics/xmms-blursk
 xmms-bonk	ports/audio/xmms-bonk
+xmms-cdparanoia	ports/audio/xmms-cdparanoia
 xmms-cdread	ports/audio/xmms-cdread
 xmms-crossfade	ports/audio/xmms-crossfade
 xmms-crystality	ports/audio/xmms-crystality
