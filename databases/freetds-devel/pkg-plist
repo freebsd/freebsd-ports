@@ -1,11 +1,10 @@
 bin/freebcp
 bin/tdspool
 bin/tsql
-@unexec if cmp -s %D/etc/freetds.conf.dist %D/etc/freetds.conf; then rm -f %D/etc/freetds.conf; fi
 etc/freetds.conf.dist
-etc/freetds/interfaces
-etc/locales.conf
-etc/pool.conf
+etc/freetds/interfaces.dist
+etc/locales.conf.dist
+etc/pool.conf.dist
 include/bkpublic.h
 include/cspublic.h
 include/cstypes.h
