@@ -17,10 +17,10 @@ COMMENT=	A 3-D Athena Widget set that looks like Motif
 WRKSRC=		${WRKDIR}/xc/lib/Xaw3d
 USE_IMAKE=	yes
 INSTALLS_SHLIB=	yes
-.if exists(${X11BASE}/bin/XFree86)
-PLIST_SUB=	XAWLINK=""
-.else
-PLIST_SUB=	XAWLINK="@comment "
+
+.include <bsd.port.pre.mk>
+.if ${X_WINDOW_SYSTEM:L} == xfree86-3
+PLIST_FILES=	lib/libXaw3d.so.6
 .endif
 
 post-extract:
@@ -37,9 +37,9 @@ post-configure:
 post-install:
 	${MKDIR} ${PREFIX}/share/doc/Xaw3d
 	${CP} ${WRKSRC}/README.XAW3D ${PREFIX}/share/doc/Xaw3d
-.if exists(${X11BASE}/bin/XFree86)
+.if ${X_WINDOW_SYSTEM:L} == xfree86-3
 	${LN} -sf libXaw3d.so.${XAWVER} ${X11BASE}/lib/libXaw3d.so.6
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
