@@ -1,96 +1,53 @@
-*** configure.orig	Thu Feb 10 12:18:18 2000
---- configure	Tue Feb 29 13:56:21 2000
+*** configure.orig	Tue Apr  4 11:11:36 2000
+--- configure	Tue Apr  4 11:11:40 2000
 ***************
-*** 1051,1064 ****
-    echo "$ac_t""no" 1>&6
-  fi
+*** 935,941 ****
   
-! echo $ac_n "checking for pthread_create in -lpthread""... $ac_c" 1>&6
-! echo "configure:1056: checking for pthread_create in -lpthread" >&5
-! ac_lib_var=`echo pthread'_'pthread_create | sed 'y%./+-%__p_%'`
-  if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
-    echo $ac_n "(cached) $ac_c" 1>&6
-  else
-    ac_save_LIBS="$LIBS"
-! LIBS="-lpthread  $LIBS"
-  cat > conftest.$ac_ext <<EOF
-  #line 1064 "configure"
-  #include "confdefs.h"
---- 1051,1064 ----
-    echo "$ac_t""no" 1>&6
-  fi
   
-! echo $ac_n "checking for pthread_create in -lc_r""... $ac_c" 1>&6
-! echo "configure:1056: checking for pthread_create in -lc_r" >&5
-! ac_lib_var=`echo c_r'_'pthread_create | sed 'y%./+-%__p_%'`
-  if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
-    echo $ac_n "(cached) $ac_c" 1>&6
-  else
-    ac_save_LIBS="$LIBS"
-! LIBS="-pthread  $LIBS"
-  cat > conftest.$ac_ext <<EOF
-  #line 1064 "configure"
-  #include "confdefs.h"
+  checkssldir() { :
+!     if test -d "$1/certs"; then
+          if test -f "$1/include/openssl/ssl.h"; then
+              cat >> confdefs.h <<\EOF
+  #define HAVE_OPENSSL 1
+--- 935,941 ----
+  
+  
+  checkssldir() { :
+! #    if test -d "$1/certs"; then
+          if test -f "$1/include/openssl/ssl.h"; then
+              cat >> confdefs.h <<\EOF
+  #define HAVE_OPENSSL 1
 ***************
-*** 1086,1098 ****
-  fi
-  if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
-    echo "$ac_t""yes" 1>&6
-!     ac_tr_lib=HAVE_LIB`echo pthread | sed -e 's/[^a-zA-Z0-9_]/_/g' \
-      -e 'y/abcdefghijklmnopqrstuvwxyz/ABCDEFGHIJKLMNOPQRSTUVWXYZ/'`
-    cat >> confdefs.h <<EOF
-  #define $ac_tr_lib 1
-  EOF
+*** 948,954 ****
+              ssldir="$1"
+              return 0
+          fi
+!     fi
+      return 1
+  }
   
-!   LIBS="-lpthread $LIBS"
+--- 948,954 ----
+              ssldir="$1"
+              return 0
+          fi
+! #    fi
+      return 1
+  }
   
-  else
-    echo "$ac_t""no" 1>&6
---- 1086,1098 ----
-  fi
-  if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
-    echo "$ac_t""yes" 1>&6
-!     ac_tr_lib=HAVE_LIB`echo c_r | sed -e 's/[^a-zA-Z0-9_]/_/g' \
-      -e 'y/abcdefghijklmnopqrstuvwxyz/ABCDEFGHIJKLMNOPQRSTUVWXYZ/'`
-    cat >> confdefs.h <<EOF
-  #define $ac_tr_lib 1
-  EOF
-  
-!   LIBS="-pthread $LIBS"
-  
-  else
-    echo "$ac_t""no" 1>&6
 ***************
-*** 1174,1180 ****
-  
-  echo $ac_n "checking for SSL directory""... $ac_c" 1>&6
-  echo "configure:1177: checking for SSL directory" >&5
-! for dir in ${prefix} /usr/local/ssl /usr/lib/ssl /usr/ssl /usr/pkg /usr/local /usr; do
-      ssldir="$dir"
-      if test -f "$dir/include/openssl/ssl.h"; then
-          cat >> confdefs.h <<\EOF
---- 1174,1180 ----
-  
-  echo $ac_n "checking for SSL directory""... $ac_c" 1>&6
-  echo "configure:1177: checking for SSL directory" >&5
-! for dir in /usr ${prefix} /usr/local/ssl /usr/lib/ssl /usr/ssl /usr/pkg /usr/local; do
-      ssldir="$dir"
-      if test -f "$dir/include/openssl/ssl.h"; then
-          cat >> confdefs.h <<\EOF
-***************
-*** 1199,1205 ****
+*** 1260,1266 ****
   echo $ac_n "checking for RSAref library""... $ac_c" 1>&6
-  echo "configure:1201: checking for RSAref library" >&5
+  echo "configure:1262: checking for RSAref library" >&5
   saved_LIBS="$LIBS"
 ! LIBS="$saved_LIBS -lRSAglue -lrsaref"
   cat > conftest.$ac_ext <<EOF
-  #line 1205 "configure"
+  #line 1266 "configure"
   #include "confdefs.h"
---- 1199,1205 ----
+--- 1260,1266 ----
   echo $ac_n "checking for RSAref library""... $ac_c" 1>&6
-  echo "configure:1201: checking for RSAref library" >&5
+  echo "configure:1262: checking for RSAref library" >&5
   saved_LIBS="$LIBS"
 ! LIBS="$saved_LIBS -lRSAglue -L${prefix}/lib -lrsaref"
   cat > conftest.$ac_ext <<EOF
-  #line 1205 "configure"
+  #line 1266 "configure"
   #include "confdefs.h"

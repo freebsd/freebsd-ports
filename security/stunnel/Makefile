@@ -6,13 +6,11 @@
 #
 
 PORTNAME=	stunnel
-PORTVERSION=	3.7
+PORTVERSION=	3.8
 CATEGORIES=	security
-MASTER_SITES=	http://opensores.thebunker.net/pub/mirrors/stunnel/ \
+MASTER_SITES=	ftp://opensores.thebunker.net/pub/mirrors/stunnel/ \
 		http://mike.daewoo.com.pl/computer/stunnel/ \
-		ftp://ftp.fu-berlin.de/unix/security/stunnel/ \
-		ftp://ftp.uni-freiburg.de/pub/net/stunnel/ \
-		ftp://ftp.all.de/pub2/unix/security/stunnel/
+		ftp://ftp.cryptoarchive.net/pub/cryptoarchive/mirrors/opensores.thebunker.net/pub/mirrors/stunnel/
 
 MAINTAINER=	martti.kuparinen@ericsson.com
 
