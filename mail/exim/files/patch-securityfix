@@ -1,0 +1,123 @@
+--- src/lookups/dnsdb.c.orig	Wed Jan  5 03:56:48 2005
++++ src/lookups/dnsdb.c	Wed Jan  5 03:57:53 2005
+@@ -125,7 +125,7 @@
+ /* If the type is PTR, we have to construct the relevant magic lookup
+ key. This code is now in a separate function. */
+ 
+-if (type == T_PTR)
++if (type == T_PTR && string_is_ip_address(keystring, NULL))
+   {
+   dns_build_reverse(keystring, buffer);
+   keystring = buffer;
+--- src/host.c.orig	Wed Jan  5 03:56:59 2005
++++ src/host.c	Wed Jan  5 03:57:53 2005
+@@ -710,12 +710,18 @@
+ 
+   if (*p == ':') p++;
+ 
+-  /* Split the address into components separated by colons. */
++  /* Split the address into components separated by colons. The input address 
++  is supposed to be checked for syntax. There was a case where this was 
++  overlooked; to guard against that happening again, check here and crash if 
++  there is a violation. */
+ 
+   while (*p != 0)
+     {
+     int len = Ustrcspn(p, ":");
+     if (len == 0) nulloffset = ci;
++    if (ci > 7) log_write(0, LOG_MAIN|LOG_PANIC_DIE, 
++      "Internal error: invalid IPv6 address \"%s\" passed to host_aton()",
++      address);  
+     component[ci++] = p;
+     p += len;
+     if (*p == ':') p++;
+--- src/auths/auth-spa.c.orig	Wed Jan  5 03:57:15 2005
++++ src/auths/auth-spa.c	Wed Jan  5 03:57:53 2005
+@@ -404,8 +404,11 @@
+   *out = '\0';
+ }
+ 
++
++/* The outlength parameter was added by PH, December 2004 */
++
+ int
+-spa_base64_to_bits (char *out, const char *in)
++spa_base64_to_bits (char *out, int outlength, const char *in)
+ /* base 64 to raw bytes in quasi-big-endian order, returning count of bytes */
+ {
+   int len = 0;
+@@ -418,6 +421,8 @@
+ 
+   do
+     {
++      if (len >= outlength)                   /* Added by PH */
++        return (-1);                          /* Added by PH */
+       digit1 = in[0];
+       if (DECODE64 (digit1) == BAD)
+        return (-1);
+@@ -435,11 +440,15 @@
+       ++len;
+       if (digit3 != '=')
+        {
++         if (len >= outlength)                   /* Added by PH */
++           return (-1);                          /* Added by PH */
+          *out++ =
+            ((DECODE64 (digit2) << 4) & 0xf0) | (DECODE64 (digit3) >> 2);
+          ++len;
+          if (digit4 != '=')
+            {
++             if (len >= outlength)                   /* Added by PH */
++               return (-1);                          /* Added by PH */
+              *out++ = ((DECODE64 (digit3) << 6) & 0xc0) | DECODE64 (digit4);
+              ++len;
+            }
+--- src/auths/auth-spa.h.orig	Wed Jan  5 03:57:27 2005
++++ src/auths/auth-spa.h	Wed Jan  5 03:57:53 2005
+@@ -9,6 +9,9 @@
+  * All the code used here was torn by Marc Prud'hommeaux out of the
+  * Samba project (by Andrew Tridgell, Jeremy Allison, and others).
+  */
++ 
++/* December 2004: The spa_base64_to_bits() function has no length checking in 
++it. I have added a check. PH */ 
+ 
+ /* It seems that some systems have existing but different definitions of some
+ of the following types. I received a complaint about "int16" causing
+@@ -75,7 +78,7 @@
+ #define spa_request_length(ptr) (((ptr)->buffer - (uint8x*)(ptr)) + (ptr)->bufIndex)
+ 
+ void spa_bits_to_base64 (unsigned char *, const unsigned char *, int);
+-int spa_base64_to_bits(char *, const char *);
++int spa_base64_to_bits(char *, int, const char *);
+ void spa_build_auth_response (SPAAuthChallenge *challenge,
+        SPAAuthResponse *response, char *user, char *password);
+ void spa_build_auth_request (SPAAuthRequest *request, char *user,
+--- src/auths/spa.c.orig	Wed Jan  5 03:57:38 2005
++++ src/auths/spa.c	Wed Jan  5 03:57:53 2005
+@@ -133,7 +133,7 @@
+   return FAIL;
+   }
+ 
+-if (spa_base64_to_bits((char *)(&request), (const char *)(data)) < 0)
++if (spa_base64_to_bits((char *)(&request), sizeof(request), (const char *)(data)) < 0)
+   {
+   DEBUG(D_auth) debug_printf("auth_spa_server(): bad base64 data in "
+   "request: %s\n", data);
+@@ -153,7 +153,7 @@
+   }
+ 
+ /* dump client response */
+-if (spa_base64_to_bits((char *)(&response), (const char *)(data)) < 0)
++if (spa_base64_to_bits((char *)(&response), sizeof(response), (const char *)(data)) < 0)
+   {
+   DEBUG(D_auth) debug_printf("auth_spa_server(): bad base64 data in "
+   "response: %s\n", data);
+@@ -319,7 +319,7 @@
+        /* convert the challenge into the challenge struct */
+        DSPA("\n\n%s authenticator: challenge (%s)\n\n",
+                ablock->name, buffer + 4);
+-       spa_base64_to_bits ((char *)(&challenge), (const char *)(buffer + 4));
++       spa_base64_to_bits ((char *)(&challenge), sizeof(challenge), (const char *)(buffer + 4));
+ 
+        spa_build_auth_response (&challenge, &response,
+                CS username, CS password);
