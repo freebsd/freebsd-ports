@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gnunet
-PORTVERSION=	0.4.2
+PORTVERSION=	0.4.3
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -27,7 +27,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 MAN1=		gnunet-download.1 gnunet-gtk.1 gnunet-insert-multi.1 \
-		gnunet-insert.1 gnunet-search.1 gnunetd.1
+		gnunet-insert.1 gnunet-search.1 gnunetd.1 gnunet-check.1
 MAN5=		gnunet.conf.5
 
 post-patch:
