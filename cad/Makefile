@@ -2,6 +2,7 @@
 #
     SUBDIR += ziarc
 
+    SUBDIR += astk-serveur
     SUBDIR += atlc
     SUBDIR += calculix
     SUBDIR += cascade

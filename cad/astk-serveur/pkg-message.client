@@ -1,0 +1,29 @@
+Des fichiers de configuration standards ont été préparés dans le répertoire
+%%inst_dir%%/ASTK_CLIENT/lib/ASTK/astkrc/.
+Veuillez les vérifier, et n'oubliez pas d'installer la partie serveur
+sur la machine où Code_Aster a été installé.
+
+Pour lancer ASTK, entrez :
+%%tools_dir%%/astk
+une fois Code_Aster installé sur cette machine, sinon :
+%%inst_dir%%/ASTK_CLIENT/bin/astk
+
+ASTK utilise le protocole rcp/rsh, il faut donc l'activer (/etc/inetd.conf
+et ~/.rhosts) ; le paramètre --check passé à astk permet de vérifier votre
+configuration.
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+Standard configuration files have been initialized in the directory
+%%inst_dir%%/ASTK_CLIENT/lib/ASTK/astkrc/.
+Please check them, and do not forget to install the server side on the
+machine running Code_Aster.
+
+To run ASTK, type:
+%%tools_dir%%/astk
+once Code_Aster has been installed on this machine, else:
+%%inst_dir%%/ASTK_CLIENT/bin/astk
+
+ASTK uses the rcp/rsh protocol: it must be configured (check /etc/inetd.conf
+and ~/.rhosts); if you launch astk with the parameter --check, it will check
+your configuration.
