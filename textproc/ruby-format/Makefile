@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	format
-PORTVERSION=	1.04
+PORTVERSION=	1.05
 CATEGORIES=	textproc ruby
 MASTER_SITES=	http://www.crhc.uiuc.edu/~rubel/FormatR/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
