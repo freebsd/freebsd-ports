@@ -1,19 +1,10 @@
---- src/conf.h.orig	Mon Oct  5 23:51:13 1998
-+++ src/conf.h	Fri Oct 23 13:32:58 1998
+--- src/conf.h.orig	Thu Mar 30 10:24:59 2000
++++ src/conf.h	Wed May  3 18:37:57 2000
 @@ -1,6 +1,6 @@
  /* Default Database File Names */
  
 -#define RADIUS_DIR		"/etc/raddb"
 +#define RADIUS_DIR		PREFIX "/etc/raddb"
- #define RADACCT_DIR		"/var/log/radacct"
  #define RADLOG_DIR		"/var/log"
  
-@@ -14,7 +14,7 @@
- #define RADIUS_HUNTGROUPS	"huntgroups"
- #define RADIUS_REALMS		"realms"
- 
--#define RADUTMP			"/var/log/radutmp"
-+#define RADUTMP			"/var/run/radutmp"
- #define RADWTMP			"/var/log/radwtmp"
- 
- #define RADIUS_PID		"/var/run/radiusd.pid"
+ #ifdef aix

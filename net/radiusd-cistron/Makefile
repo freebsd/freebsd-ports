@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	radiusd-cistron
-PORTVERSION=	1.6.2
+PORTVERSION=	1.6.3
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.cistron.nl/pub/people/miquels/radius/
-DISTNAME=	radiusd-cistron-1.6.2-stable
+MASTER_SITES=	ftp://ftp.cistron.nl/pub/people/miquels/radius/ \
+		ftp://ftp.freeradius.org/pub/radius/
+DISTNAME=	radiusd-cistron-1.6.3-stable
 
 MAINTAINER=	john@nlc.net.au
 
@@ -24,24 +25,7 @@ do-build:
 
 do-install:
 	cd ${WRKSRC}/src && ${SETENV} ${MAKE_ENV} ${MAKE} -f ${MAKEFILE} install
-	@${MKDIR} -m 700 ${PREFIX}/etc/raddb
 	@${MKDIR} -m 700 /var/log/radacct
-	${INSTALL_DATA} ${WRKSRC}/raddb/clients ${PREFIX}/etc/raddb/clients.sample
-	${INSTALL_DATA} ${WRKSRC}/raddb/dictionary ${PREFIX}/etc/raddb/dictionary.sample
-	${INSTALL_DATA} ${WRKSRC}/raddb/dictionary.ascend ${PREFIX}/etc/raddb
-	${INSTALL_DATA} ${WRKSRC}/raddb/dictionary.cisco ${PREFIX}/etc/raddb
-	${INSTALL_DATA} ${WRKSRC}/raddb/dictionary.compat ${PREFIX}/etc/raddb
-	${INSTALL_DATA} ${WRKSRC}/raddb/dictionary.livingston ${PREFIX}/etc/raddb
-	${INSTALL_DATA} ${WRKSRC}/raddb/dictionary.shiva ${PREFIX}/etc/raddb
-	${INSTALL_DATA} ${WRKSRC}/raddb/dictionary.tunnel ${PREFIX}/etc/raddb
-	${INSTALL_DATA} ${WRKSRC}/raddb/dictionary.usr ${PREFIX}/etc/raddb
-	${INSTALL_DATA} ${WRKSRC}/raddb/dictionary.versanet ${PREFIX}/etc/raddb
-	${INSTALL_DATA} ${WRKSRC}/raddb/hints ${PREFIX}/etc/raddb/hints.sample
-	${INSTALL_DATA} ${WRKSRC}/raddb/huntgroups ${PREFIX}/etc/raddb/huntgroups.sample
-	${INSTALL_DATA} ${WRKSRC}/raddb/naslist ${PREFIX}/etc/raddb/naslist.sample
-	${INSTALL_DATA} ${WRKSRC}/raddb/naspasswd ${PREFIX}/etc/raddb/naspasswd.sample
-	${INSTALL_DATA} ${WRKSRC}/raddb/realms ${PREFIX}/etc/raddb/realms.sample
-	${INSTALL_DATA} ${WRKSRC}/raddb/users ${PREFIX}/etc/raddb/users.sample
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/radiusd-cistron
 	${INSTALL_DATA} ${WRKSRC}/COPYRIGHT.Cistron ${PREFIX}/share/doc/radiusd-cistron
