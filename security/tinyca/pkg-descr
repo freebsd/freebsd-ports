@@ -1,7 +1,5 @@
 TinyCA is a simple graphical userinterface written in Perl/Tk to manage a 
 small CA (Certification Authority).
-Features:
-
 Currently TinyCA supports the following features:
 
     * unlimited number of CAs

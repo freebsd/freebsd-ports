@@ -11,6 +11,7 @@ bin/tinyca
 %%SITE_PERL%%/tinyca/GUI/HELPERS.pm
 %%SITE_PERL%%/tinyca/GUI/TCONFIG.pm
 %%SITE_PERL%%/tinyca/GUI/WORDS.pm
+%%SITE_PERL%%/tinyca/GUI/X509_browser.pm
 %%SITE_PERL%%/tinyca/GUI/X509_infobox.pm
 @dirrm %%SITE_PERL%%/tinyca/GUI
 @dirrm %%SITE_PERL%%/tinyca/
