@@ -1,4 +1,5 @@
 bin/asc
+bin/asc_bin2text
 bin/asc_demount
 bin/asc_gfx2pcx
 bin/asc_makegfx
@@ -8,5 +9,6 @@ bin/asc_mntgraph
 bin/asc_mount
 bin/asc_tank2pcx
 bin/asc_viewid
+bin/asc_weaponguide
 share/asc/main.con
 @dirrm share/asc
