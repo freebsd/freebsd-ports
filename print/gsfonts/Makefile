@@ -34,8 +34,8 @@ GSDIR=	${PREFIX}/share/ghostscript
 
 do-install:
 	@${MKDIR} ${GSDIR}
-	${TAR} -xzf ${DISTDIR}/${GS_FONTS_OTHER} -C ${GSDIR}
-	${TAR} -xzf ${DISTDIR}/${GS_FONTS_STD} -C ${GSDIR}
+	${TAR} -xzf ${DISTDIR}/${DIST_SUBDIR}/${GS_FONTS_OTHER} -C ${GSDIR}
+	${TAR} -xzf ${DISTDIR}/${DIST_SUBDIR}/${GS_FONTS_STD} -C ${GSDIR}
 	(cd ${GSDIR}/fonts; ${LOCALBASE}/bin/type1inst -nox -nolog -q)
 
 .include <bsd.port.post.mk>
