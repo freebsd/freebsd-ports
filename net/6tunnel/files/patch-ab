@@ -1,0 +1,49 @@
+--- 6tunnel.c.orig	Fri Oct 19 16:24:52 2001
++++ 6tunnel.c	Thu Jul 17 20:12:05 2003
+@@ -429,26 +429,26 @@
+ 
+ void usage(char *a0)
+ {
+-  fprintf(stderr, "\
+-usage: %s [-146dqvh] [-s sourcehost] [-l localhost] [-i pass]
+-           [-I pass] [-m mapfile] [-L limit] [-A filename]
+-	   localport remotehost [remoteport]
+-	   
+-  -1  allow only one connection and quit
+-  -4  preffer IPv4 endpoints
+-  -6  bind to IPv6 address
+-  -v  be verbose
+-  -d  don't detach
+-  -f  force tunneling (even if remotehost isn't resolvable)
+-  -s  connect using specified address
+-  -l  bind to specified address
+-  -i  act like irc proxy and ask for password
+-  -I  send specified password to the irc server
+-  -h  print hex dump of packets
+-  -m  map specified IPv4 addresses to different IPv6 addresses (see manpage)
+-  -L  limit simultanous connections
+-  -A  create apache-like log file
+-
++  fprintf(stderr, "\n\
++usage: %s [-146dqvh] [-s sourcehost] [-l localhost] [-i pass]\n\
++           [-I pass] [-m mapfile] [-L limit] [-A filename]\n\
++	   localport remotehost [remoteport]\n\
++	  \n\
++  -1  allow only one connection and quit\n\
++  -4  preffer IPv4 endpoints\n\
++  -6  bind to IPv6 address\n\
++  -v  be verbose\n\
++  -d  don't detach\n\
++  -f  force tunneling (even if remotehost isn't resolvable)\n\
++  -s  connect using specified address\n\
++  -l  bind to specified address\n\
++  -i  act like irc proxy and ask for password\n\
++  -I  send specified password to the irc server\n\
++  -h  print hex dump of packets\n\
++  -m  map specified IPv4 addresses to different IPv6 addresses (see manpage)\n\
++  -L  limit simultanous connections\n\
++  -A  create apache-like log file\n\
++\
+ ", a0);
+ 
+ }
