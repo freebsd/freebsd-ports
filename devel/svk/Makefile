@@ -33,6 +33,10 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/SVN/Core.pm:${PORTSDIR}/devel/subversio
 		${SITE_PERL}/YAML.pm:${PORTSDIR}/textproc/p5-YAML
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+OPTIONS=	PPERL "Run svk with PPerl" off
+
+USE_REINPLACE=	yes
+
 PERL_CONFIGURE=	yes
 
 MAN1=		svk.1
@@ -88,5 +92,13 @@ MAN3=		SVK.3 \
 .if ${PERL_LEVEL} < 500800
 IGNORE=		This program only support perl 5.8.0 or above
 .endif
+
+.if defined(WITH_PPERL)
+RUN_DEPENDS+=	pperl:${PORTSDIR}/devel/p5-PPerl
+PERL=		${LOCALBASE}/bin/pperl
+.endif
+
+post-patch:
+	@${REINPLACE_CMD} -e "s,%%PERL%%,${PERL}," ${WRKSRC}/bin/svk
 
 .include <bsd.port.post.mk>
