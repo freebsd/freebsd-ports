@@ -18,7 +18,9 @@ PKGNAMEPREFIX=	ossp-
 MAINTAINER=	alane@FreeBSD.org
 
 USE_GMAKE=	yes
-GNU_CONFIGURE=  yes
+GNU_CONFIGURE=	yes
+USE_LIBTOOL=	yes
+INSTALLS_SHLIB= yes
 
 .include <bsd.port.pre.mk>
 .include "${FILESDIR}/manpages.mk"
