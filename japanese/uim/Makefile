@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	uim
-PORTVERSION=	0.3.3
+PORTVERSION=	0.3.4.2
 CATEGORIES=	japanese x11
 MASTER_SITES=	http://freedesktop.org/Software/UimDownload/
 
@@ -20,7 +20,7 @@ USE_X_PREFIX=	yes
 USE_PERL5_BUILD=yes
 INSTALLS_SHLIB=	yes
 WANT_GNOME=	yes
-USE_GNOME=	gnometarget glib20
+USE_GNOME=	lthack gnometarget glib20
 USE_GMAKE=	yes
 USE_ICONV=	yes
 USE_LIBTOOL_VER=13
