@@ -1,0 +1,11 @@
+--- cccc_ast.h.orig	Thu Mar 30 12:12:38 2000
++++ cccc_ast.h	Thu Mar 30 12:13:01 2000
+@@ -72,7 +72,7 @@
+   int nEndLine();
+   
+   // access function for counts accumulated from tokens included in the AST
+-  getCount(TokenCount tc);
++  int getCount(TokenCount tc);
+   
+   char *filename, *classname, *membername;
+ 
