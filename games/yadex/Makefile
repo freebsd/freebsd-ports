@@ -21,7 +21,13 @@ PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
 MAN6=		yadex.6 ybsp.6
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "alpha" || ${ARCH} == "amd64"
+BROKEN=		"Does not compile on alpha or amd64"
+.endif
+
 post-install:
 	${CHMOD} 644 ${PREFIX}/etc/yadex/${PORTVERSION}/yadex.cfg
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
