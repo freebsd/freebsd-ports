@@ -1,0 +1,8 @@
+libexec/loadd
+etc/loadd.conf.sample
+etc/rc.d/010.loadd.sh
+%%PORTDOCS%%share/doc/loadd/TODO
+%%PORTDOCS%%share/doc/loadd/README
+%%PORTDOCS%%share/doc/loadd/INSTALL
+%%PORTDOCS%%share/doc/loadd/LICENSE
+%%PORTDOCS%%@dirrm share/doc/loadd

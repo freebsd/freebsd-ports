@@ -1,0 +1,29 @@
+--- Makefile.orig	Mon Nov 26 07:44:48 2001
++++ Makefile	Tue May 14 14:55:55 2002
+@@ -3,18 +3,21 @@
+ 
+ SRCS=main.c socket.c icmp.c conf.c threads.c network.c aliasing.c tri.c
+ OBJS=${SRCS:.c=.o}
+-OPTS=-pthread -pipe -Wall -ansi -O2 -march=pentiumpro -fomit-frame-pointer -ffast-math
++OPTS=${CFLAGS} ${CPPFLAGS} -Wall -ansi
+ #DEBUG=-DDEBUG -DDEBUGALIAS #-DDEBUGHASHTABLE
+ #DEBUG=-DDEBUGMONITOR
+-DEFINE=-D_THREAD_SAFE -D_REENTRANT
+-LIBS=-L/usr/local/lib `glib12-config --libs`
++DEFINE=${PTHREAD_CFLAGS}
++LIBS=-L${PREFIX}/lib `glib12-config --libs` ${PTHREAD_LIBS}
+ INCLUDE=`glib12-config --cflags`
++CC?=cc
++
++all:	loadd
+ 
+ loadd: ${OBJS}
+-	gcc ${INCLUDE} ${DEFINE} ${DEBUG} ${OPTS} ${OBJS} -o loadd ${LIBS}
++	${CC} ${INCLUDE} ${DEFINE} ${DEBUG} ${OPTS} ${OBJS} -o loadd ${LIBS}
+ 
+ .c.o: ${SRCS}
+-	gcc ${INCLUDE} ${DEFINE} ${DEBUG} ${OPTS} -c $<
++	${CC} ${INCLUDE} ${DEFINE} ${DEBUG} ${OPTS} -c $<
+ 
+ clean:
+ 	rm -rf ${OBJS} loadd *.core *~

@@ -1,0 +1,12 @@
+lmd is a daemon that monitors the server load and communicates
+with loadd for Intellingence Load Sharing (Balancing with
+realtime load).
+
+Supported modules:
+
+* http
+
+WWW: http://www.bsdshell.net/hut_loadd.html
+
+- Alex Dupre
+sysadmin@alexdupre.com

@@ -1,0 +1,14 @@
+#######################################################################
+  Please modify the configuration file %%PREFIX%%/etc/loadd.conf
+  before launching %%PREFIX%%/libexec/loadd
+  don't forget to recompile your kernel with DIVERT and
+  IPFIREWALL options. Don't forget to specify a rule in the ipfw
+  firewall like natd: ipfw add divert 8670 tcp from any to any
+  8670 is the default port, you can choose a different port by
+  running loadd with -p option like
+  %%PREFIX%%/libexec/loadd -p 8671
+  ipfw add divert 8671 tcp from any to any
+  !! IMPORTANT !! There is no support for UDP at this time.
+  You cannot use loadsharing method (broken) use intlloadsharing
+  insteed and don't forget to launch lmd on server(s) to load balance
+#######################################################################

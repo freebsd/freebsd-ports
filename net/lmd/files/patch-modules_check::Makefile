@@ -1,0 +1,22 @@
+--- modules_check/Makefile.orig	Mon Nov 26 07:31:09 2001
++++ modules_check/Makefile	Tue May 14 14:16:16 2002
+@@ -1,14 +1,15 @@
+ # If you want to debug lmd comment out this line and recompile it
+ # Launch lmd with -v option to see debug messages
+ #DEBUG=-DDEBUG
+-OPTS=-Wall -fomit-frame-pointer -O2 -pipe -ansi
++OPTS=${CFLAGS} ${CPPFLAGS} -ansi
++CC?=cc
+ 
+ all: socket.o
+-	gcc ${DEBUG} ${OPTS} -c ldd_http_module.c
+-	gcc ${DEBUG} -shared ldd_http_module.o socket.o -o ldd_http_module.so
++	${CC} ${DEBUG} ${OPTS} -c ldd_http_module.c
++	${CC} ${DEBUG} -shared ldd_http_module.o socket.o -o ldd_http_module.so
+ 
+ socket.o:
+-	gcc -c ../socket.c -o socket.o
++	${CC} -c ../socket.c -o socket.o
+ 
+ clean:
+ 	rm *.so *.o

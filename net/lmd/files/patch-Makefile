@@ -1,0 +1,29 @@
+--- Makefile.orig	Mon Nov 26 07:30:14 2001
++++ Makefile	Tue May 14 14:18:21 2002
+@@ -1,18 +1,21 @@
+ SRCS=main.c socket.c chkmodules.c conf.c
+ OBJS=${SRCS:.c=.o}
+ DYNLIB=modules_check/ldd_http_module.so
+-OPTS=-O3 -fomit-frame-pointer -pipe -Wall -ansi
++OPTS=${CFLAGS} ${CPPFLAGS} -Wall -ansi
+ #DEBUG=-DDEBUG -g
+-LIBS=-L/usr/local/lib -lm
++LIBS=-L${PREFIX}/lib -lm
++CC?=cc
++
++all: lmd modules_check/ldd_http_module.so
+ 
+ lmd: ${OBJS} ${DYNLIB}
+-	gcc ${DEBUG} ${OPTS} ${OBJS} -o lmd ${LIBS}
++	${CC} ${DEBUG} ${OPTS} ${OBJS} -o lmd ${LIBS}
+ 
+ .c.o: ${SRCS}
+-	gcc ${DEBUG} ${OPTS} -c $<
++	${CC} ${DEBUG} ${OPTS} -c $<
+ 
+ modules_check/ldd_http_module.so:
+-	cd ./modules_check && make && cd ..
++	cd ./modules_check && make 'CC=${CC}' 'CFLAGS=${CFLAGS}' 'CPPFLAGS=${CPPFLAGS}' && cd ..
+ 
+ clean:
+ 	rm -rf ${OBJS} lmd *.core *~ modules_check/*.so
