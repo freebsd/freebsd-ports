@@ -7,7 +7,7 @@
 
 PORTNAME=		webjob
 PORTVERSION=		1.3.0
-CATEGORIES=		security sysutils
+CATEGORIES=		sysutils security
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	webjob
 EXTRACT_SUFX=		.tgz
