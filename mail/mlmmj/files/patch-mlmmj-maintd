@@ -1,0 +1,45 @@
+--- src/mlmmj-maintd.c	Thu Jun 10 18:11:55 2004
++++ src/mlmmj-maintd.c	Fri Jun 11 12:26:58 2004
+@@ -293,6 +293,8 @@
+ 		return 1;
+ 	}
+ 
++	free(dirname);
++	
+ 	while((dp = readdir(queuedir)) != NULL) {
+ 		if((strcmp(dp->d_name, "..") == 0) ||
+ 			(strcmp(dp->d_name, ".") == 0))
+@@ -634,7 +636,7 @@
+ {
+ 	int opt, daemonize = 1;
+ 	char *bindir, *listdir = NULL, *mlmmjsend, *mlmmjbounce, *mlmmjunsub;
+-	char *logstr, *logname, *random = random_str();
++	char *logstr, *logname, *random;
+ 	char uidstr[16];
+ 	struct stat st;
+ 
+@@ -697,10 +699,13 @@
+ 	}
+ 
+ 	for(;;) {
++		random = random_str();
+ 		logname = concatstr(3, listdir, "maintdlog-", random);
++		free(random);
+ 		maintdlogfd = open(logname, O_WRONLY|O_EXCL|O_CREAT,
+ 					S_IRUSR|S_IWUSR);
+ 		if(maintdlogfd < 0) {
++			free(logname);
+ 			log_error(LOG_ARGS, "Could not open maintenance logfile");
+ 			exit(EXIT_FAILURE);
+ 		}
+@@ -744,6 +749,10 @@
+ 		else
+ 			sleep(MAINTD_SLEEP);
+ 	}
++
++	free(mlmmjbounce);
++	free(mlmmjsend);
++	free(mlmmjunsub);
+ 		
+ 	exit(EXIT_SUCCESS);
+ }
