@@ -189,7 +189,6 @@ info/web2c.info-1
 info/web2c.info-2
 info/web2c.info-3
 info/web2c.info-4
-@exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
 @exec install-info %D/info/dvips.info %D/info/dir
 @exec install-info %D/info/kpathsea.info %D/info/dir
 @exec install-info %D/info/latex.info %D/info/dir

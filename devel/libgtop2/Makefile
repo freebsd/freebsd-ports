@@ -28,9 +28,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 
 post-install:
-	if [ ! -f ${PREFIX}/info/dir ]; then \
-	${SED} -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
-	fi
 	install-info --section="Programming \& development tools" \
 	--entry="* libgtop: (libgtop).	libgtop programming manual" \
 	${PREFIX}/info/libgtop.info ${PREFIX}/info/dir

@@ -1,5 +1,4 @@
 bin/gindent
 @unexec install-info --delete %D/info/indent.info %D/info/dir
 info/indent.info
-@exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
 @exec install-info %D/info/indent.info %D/info/dir
