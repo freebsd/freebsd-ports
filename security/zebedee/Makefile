@@ -13,10 +13,9 @@ MASTER_SITES=	http://www.winton.org.uk/zebedee/ \
 
 MAINTAINER=	greg@hewgill.com
 
-BUILD_DEPENDS=	${LOCALBASE}/include/openssl/blowfish.h:${PORTSDIR}/security/openssl \
-		${LOCALBASE}/lib/libcrypto.a:${PORTSDIR}/security/openssl \
-		${LOCALBASE}/lib/libbz2.a:${PORTSDIR}/archivers/bzip2
+BUILD_DEPENDS=	${LOCALBASE}/lib/libbz2.a:${PORTSDIR}/archivers/bzip2
 
+USE_OPENSSL=	NORSA
 USE_PERL5=	yes
 
 MAN1=		zebedee.1 ftpgw.tcl.1
