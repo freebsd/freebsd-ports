@@ -1,0 +1,50 @@
+--- src/Makefile.orig	Tue Dec 28 21:23:40 2004
++++ src/Makefile	Fri Jan 28 23:34:43 2005
+@@ -1,9 +1,9 @@
+-# $Id: Makefile,v 1.4 2004/12/28 12:23:40 ozawa Exp $
++# $Id: Makefile,v 1.5 2005/01/28 14:38:52 ozawa Exp $
+ #
+ # Copyright 2003- ONGS Inc. All rights reserved.
+ #
+ # author: Masanori OZAWA (ozawa@ongs.co.jp)
+-# version: $Revision: 1.4 $
++# version: $Revision: 1.5 $
+ # 
+ # Redistribution and use in source and binary forms, with or without 
+ # modification, are permitted provided that the following conditions
+@@ -35,8 +35,8 @@
+ 
+ LIB_DEPS= gtkmm-2.4 gthread-2.0 libxml-2.0
+ 
+-CPP	= g++
+-CPPOPT	= -Wall -pipe
++CXX	?= g++
++CXXOPT	= -Wall -pipe
+ CFLAGS	= `pkg-config --cflags ${LIB_DEPS}` \
+ 	  -I/usr/local/include -I. -I./include
+ LIBS	= `pkg-config --libs ${LIB_DEPS}` -lintl
+@@ -46,9 +46,9 @@
+ OBJ	= ${SRC:.cpp=.o}
+ 
+ .ifndef DEBUG
+-CPPOPT	+= -O2
++CXXOPT	+= -O2
+ .else
+-CPPOPT	+= -g
++CXXOPT	+= -g
+ .endif
+ 
+ .ifndef WITHOUT_NLS
+@@ -71,10 +71,10 @@
+ all: build
+ 
+ build: ${OBJ}
+-	${CPP} ${CPPOPT} ${LIBS} -o ${TARGET} ${OBJ}
++	${CXX} ${CXXOPT} ${LIBS} -o ${TARGET} ${OBJ}
+ 
+ .cpp.o:
+-	${CPP} ${CPPOPT} ${CFLAGS} -o ${<:.cpp=.o} -c $<
++	${CXX} ${CXXOPT} ${CFLAGS} -o ${<:.cpp=.o} -c $<
+ 
+ install:
+ 	install -c -m 755 ${TARGET} ${PREFIX}/bin/
