@@ -21,7 +21,6 @@ bin/netwox
 %%PORTDOCS%%%%DOCSDIR%%/txt/problemusageunix.txt
 %%PORTDOCS%%%%DOCSDIR%%/txt/problemusagewindows.txt
 %%PORTDOCS%%%%DOCSDIR%%/txt/unimplemented.txt
-%%PORTDOCS%%%%DOCSDIR%%/tools/179.html
 %%PORTDOCS%%%%DOCSDIR%%/tools/1.html
 %%PORTDOCS%%%%DOCSDIR%%/tools/2.html
 %%PORTDOCS%%%%DOCSDIR%%/tools/3.html
@@ -200,6 +199,18 @@ bin/netwox
 %%PORTDOCS%%%%DOCSDIR%%/tools/176.html
 %%PORTDOCS%%%%DOCSDIR%%/tools/177.html
 %%PORTDOCS%%%%DOCSDIR%%/tools/178.html
+%%PORTDOCS%%%%DOCSDIR%%/tools/179.html
+%%PORTDOCS%%%%DOCSDIR%%/tools/180.html
+%%PORTDOCS%%%%DOCSDIR%%/tools/181.html
+%%PORTDOCS%%%%DOCSDIR%%/tools/182.html
+%%PORTDOCS%%%%DOCSDIR%%/tools/183.html
+%%PORTDOCS%%%%DOCSDIR%%/tools/184.html
+%%PORTDOCS%%%%DOCSDIR%%/tools/185.html
+%%PORTDOCS%%%%DOCSDIR%%/tools/186.html
+%%PORTDOCS%%%%DOCSDIR%%/tools/187.html
+%%PORTDOCS%%%%DOCSDIR%%/tools/188.html
+%%PORTDOCS%%%%DOCSDIR%%/tools/189.html
+%%PORTDOCS%%%%DOCSDIR%%/tools/190.html
 %%PORTDOCS%%%%DOCSDIR%%/tools/index.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/tools
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/txt
