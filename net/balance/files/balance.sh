@@ -12,7 +12,7 @@
 #
 #balance_enable="YES"
 #balance_hosts="host1"
-#balance_host1_adress="host1.external.example"
+#balance_host1_address="host1.external.example"
 #balance_host1_ports="http 8180"
 #balance_host1_targets="host1.internal.example"
 #
@@ -34,10 +34,10 @@ start_cmd()
 	if [ -x "${command}" ]; then
 		for host in ${balance_hosts}; do
 			eval ports=\"\${balance_${host}_ports}\"
-			eval adress=\"\${balance_${host}_adress}\"
+			eval address=\"\${balance_${host}_address}\"
 			eval targets=\"\${balance_${host}_targets}\"
 			for port in ${ports}; do
-				"${command}" -b ${adress} ${port} ${targets}
+				"${command}" -b ${address} ${port} ${targets}
 			done
 		done
 	fi
@@ -48,10 +48,10 @@ stop_cmd()
 	if [ -x "${command}" ]; then
 		for host in ${balance_hosts}; do
 			eval ports=\"\${balance_${host}_ports}\"
-			eval adress=\"\${balance_${host}_adress}\"
+			eval address=\"\${balance_${host}_address}\"
 			for port in ${ports}; do
-				echo "balance at ${adress}:${port}"
-				"${command}" -b ${adress} -c kill ${port}
+				echo "balance at ${address}:${port}"
+				"${command}" -b ${address} -c kill ${port}
 			done
 		done
 	fi
@@ -62,10 +62,10 @@ status_cmd()
 	if [ -x "${command}" ]; then
 		for host in ${balance_hosts}; do
 			eval ports=\"\${balance_${host}_ports}\"
-			eval adress=\"\${balance_${host}_adress}\"
+			eval address=\"\${balance_${host}_address}\"
 			for port in ${ports}; do
-				echo "balance at ${adress}:${port}"
-				"${command}" -b ${adress} -c show ${port}
+				echo "balance at ${address}:${port}"
+				"${command}" -b ${address} -c show ${port}
 			done
 		done
 	fi
