@@ -1,14 +1,6 @@
 bin/sawfish
 bin/sawfish-client
 bin/sawfish-ui
-@unexec install-info --delete %D/info/sawfish.info %D/info/dir
-info/sawfish.info
-info/sawfish.info-1
-info/sawfish.info-2
-info/sawfish.info-3
-info/sawfish.info-4
-info/sawfish.info-5
-@exec install-info --section="X11 window manager" --entry="* sawfish: (sawfish).           sawfish programming manual" %D/info/sawfish.info %D/info/dir
 libexec/rep/%%GNUHOST%%/sawfish/client.la
 libexec/rep/%%GNUHOST%%/sawfish/client.so
 libexec/sawfish/%%VERSION%%/%%GNUHOST%%/DOC
