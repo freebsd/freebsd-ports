@@ -29,17 +29,16 @@ PHP_BASE!=	${LOCALBASE}/bin/php-config --prefix
 LPHP_LIB=	lib/php
 PEARDIR=	${PHP_BASE}/${LPHP_LIB}
 PLIST_SUB=	PEARDIR=${LPHP_LIB}
+MANIFEST=	OS PEAR PEAR.php System.php package.dtd scripts template.spec
+TOBACKUP=	OS PEAR PEAR.php System.php
 
 do-install:
-	@${MV} ${PEARDIR}/PEAR ${PEARDIR}/PEAR.dist
-	@${MV} ${PEARDIR}/PEAR.php ${PEARDIR}/PEAR.php.dist
-	@${MV} ${PEARDIR}/System.php ${PEARDIR}/System.php.dist
+.for FILE in ${TOBACKUP}
+	@${MV} ${PEARDIR}/${FILE} ${PEARDIR}/${FILE}.dist
+.endfor
 	@${CP} -Rp ${WRKSRC}/* ${PEARDIR}
-	@${CHOWN} -R root:wheel ${PEARDIR}/OS
-	@${CHOWN} -R root:wheel ${PEARDIR}/PEAR*
-	@${CHOWN} -R root:wheel ${PEARDIR}/System.php
-	@${CHOWN} -R root:wheel ${PEARDIR}/package.dtd
-	@${CHOWN} -R root:wheel ${PEARDIR}/scripts
-	@${CHOWN} -R root:wheel ${PEARDIR}/template.spec
+.for FILE in ${MANIFEST}
+	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PEARDIR}/${FILE}
+.endfor
 
 .include <bsd.port.post.mk>

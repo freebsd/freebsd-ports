@@ -1,3 +1,4 @@
+@exec mv %D/lib/php/OS %D/lib/php/OS.dist
 @exec mv %D/lib/php/PEAR %D/lib/php/PEAR.dist
 @exec mv %D/lib/php/PEAR.php %D/lib/php/PEAR.php.dist
 @exec mv %D/lib/php/System.php %D/lib/php/System.php.dist
@@ -32,6 +33,7 @@
 @dirrm %%PEARDIR%%/PEAR/Frontend
 @dirrm %%PEARDIR%%/PEAR
 @dirrm %%PEARDIR%%/scripts
+@unexec mv %D/lib/php/OS.dist %D/lib/php/OS || true
 @unexec mv %D/lib/php/PEAR.dist %D/lib/php/PEAR || true
 @unexec mv %D/lib/php/PEAR.php.dist %D/lib/php/PEAR.php || true
 @unexec mv %D/lib/php/System.php.dist %D/lib/php/System.php || true
