@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	postgis
-PORTVERSION=	0.8.2
-PORTREVISION=	1
+PORTVERSION=	0.9.0
 CATEGORIES=	databases
 MASTER_SITES=	http://postgis.refractions.net/
 DISTNAME=	postgis-${PORTVERSION}
