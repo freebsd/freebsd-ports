@@ -1,0 +1,12 @@
+--- Makefile.orig	Sun Mar 27 14:57:32 2005
++++ Makefile	Sun Mar 27 14:57:58 2005
+@@ -1,6 +1,6 @@
+-CC=gcc
+-CLIBS=
+-CFLAGS=-Wall
++CC?=gcc
++CLIBS=${LDFLAGS}
++CFLAGS+=-Wall
+ 
+ all: debug
+ 	$(CC) $(CLIBS) $(CFLAGS) debug.o cpige.c -o cpige
