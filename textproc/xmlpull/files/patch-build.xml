@@ -1,0 +1,16 @@
+$FreeBSD$
+
+--- build.xml.orig	Wed Feb  9 22:07:59 2005
++++ build.xml	Wed Feb  9 22:08:01 2005
+@@ -319,8 +319,9 @@
+              windowtitle="${name} ${version} API"
+              doctitle="${name}"
+              bottom="${copyright}"
+-             stylesheetfile="${doc}/javadoc_stylesheet.css"
+-    />
++             stylesheetfile="${doc}/javadoc_stylesheet.css">
++             <link offline="true" packagelistLoc="${jdk.api}" href="${jdk.api}"/>
++    </javadoc>
+   </target>
+ 
+   <!-- =================================================================== -->
