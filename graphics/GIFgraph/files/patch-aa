@@ -1,0 +1,42 @@
+--- GIFgraph./axestype.pm	Wed Aug 26 03:37:14 1998
++++ GIFgraph/axestype.pm	Tue Jan 23 19:21:04 2001
+@@ -116,7 +116,7 @@
+ 		$self->draw_data($self->{graph}, $data);
+ 		$self->draw_legend($self->{graph});
+ 
+-		return $self->{graph}->gif
++		return $self->{graph}->png
+ 	}
+ 
+ 	sub set_x_label_font($) # (fontname)
+--- GIFgraph./pie.pm	Wed Aug 26 03:28:51 1998
++++ GIFgraph/pie.pm	Tue Jan 23 19:23:09 2001
+@@ -53,7 +53,7 @@
+ 		$self->draw_pie($self->{graph});
+ 		$self->draw_data($data, $self->{graph});
+ 
+-		return $self->{graph}->gif;
++		return $self->{graph}->png;
+ 	}
+  
+ 	sub set_label_font($) # (fontname)
+--- GIFgraph.pm.	Wed Aug 26 03:28:48 1998
++++ GIFgraph.pm	Tue Jan 23 19:31:49 2001
+@@ -373,7 +373,7 @@
+ 
+         open(GIFLOGO, $self->{logo}) || return;
+ 		binmode(GIFLOGO) if ($GIFgraph::needs_binmode);
+-        unless ( $glogo = newFromGif GD::Image(\*GIFLOGO) ) 
++        unless ( $glogo = newFromPng GD::Image(\*GIFLOGO) ) 
+ 		{
+             warn "Problems reading $self->{logo}"; 
+ 			close(GIFLOGO); 
+@@ -465,7 +465,7 @@
+ 	{
+         my $s = shift;
+ 
+-        return $s->{graph}->gif;
++        return $s->{graph}->png;
+     }
+ 
+ } # End of package GIFgraph
