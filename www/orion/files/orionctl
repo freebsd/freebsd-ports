@@ -1,9 +1,10 @@
 #!/bin/sh
 
-# Set some more variables
+# Set some variables
 NAME=%%PORTNAME%%
 VERSION=%%PORTVERSION%%
 ORION_HOME=%%ORION_HOME%%
+USER_NAME=%%USER_NAME%%
 LOG=${ORION_HOME}/log/${NAME}.log
 PID_FILE=/var/run/${NAME}.pid
 JAR_FILE=${ORION_HOME}/${NAME}.jar
@@ -64,13 +65,16 @@ case "$1" in
 		# Create the process ID file
 		rm -f ${PID_FILE}
 		touch ${PID_FILE}
-		chown root:wheel ${PID_FILE}
+		chown ${USER_NAME} ${PID_FILE}
 		chmod 600 ${PID_FILE}
 
 		if [ "${AS_RC_SCRIPT}" = "yes" ]; then
 			echo -n " ${NAME}"
 		fi
-		( cd ${ORION_HOME} && ${JAVA_CMD} -jar orion.jar & echo $! > ${PID_FILE} ) > ${LOG} 2>&1
+		touch ${PID_FILE}
+		chown ${USER_NAME} ${PID_FILE}
+		chmod 600 ${PID_FILE}
+		su - ${USER_NAME} -c "(cd ${ORION_HOME} && ${JAVA_CMD} -jar orion.jar & echo \$! > ${PID_FILE}) > ${LOG} 2>&1"
 		;;
 	stop)
 		if [ ! -e ${PID_FILE} ]; then
