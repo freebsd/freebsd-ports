@@ -43,8 +43,6 @@
 #       gui capabilities.
 #       The GTK2 patches are not official ones, so they should be considered as
 #       experimental.
-# Note: GTK2 patches are not included at the moment. So defining this knob has
-#       no effect until new working patches are available
 #
 # WITHOUT_GUI
 # default: undefined
@@ -135,6 +133,13 @@
 # 	because of conflicting glib versions, so it it is disabled if
 # 	mplayer is built with gtk1 graphical user interface
 #
+# WITHOUT_ARTS
+# default: undefined
+# By setting this option you can explicitly override WITH_ARTS or
+# autodetection if arts is found. Some configurations experienced
+# problems with arts, so this knob is provided to manually exclude
+# it from build.
+#
 # WITH_FRIBIDI
 # default: autodetect
 #
@@ -159,6 +164,13 @@
 #
 # WITH_ESOUND
 # default: autodetect
+#
+# WITHOUT_ESOUND
+# default: undefined
+# By setting this option you can explicitly override WITH_ESOUND or
+# autodetection if esound is found. Some configurations experienced
+# problems with esound, so this knob is provided to manually exclude
+# it from build.
 #
 # WITH_VORBIS
 # default: autodetect
@@ -207,6 +219,7 @@
 
 PORTNAME=	mplayer
 PORTVERSION=	0.99.5
+PORTREVISION=	1
 CATEGORIES=	multimedia audio ipv6
 MASTER_SITES=	http://www1.mplayerhq.hu/MPlayer/releases/ \
 		http://www2.mplayerhq.hu/MPlayer/releases/ \
@@ -222,6 +235,9 @@ DISTNAME=	MPlayer-1.0pre5
 
 MAINTAINER=	riggs@rrr.de
 COMMENT=	High performance media player/encoder supporting many formats
+
+PATCH_SITES=	http://homepages.ius.edu/CJEZELL/patches/
+PATCH_DIST_STRIP=	-p1
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
@@ -281,7 +297,7 @@ PLIST_SUB+=	VIDIX="@comment "
 WITH_FRIBIDI=	yes
 .endif
 
-.if exists(${LOCALBASE}/lib/libartsc.so.0)
+.if !defined(WITHOUT_ARTS) && exists(${LOCALBASE}/lib/libartsc.so.0)
 WITH_ARTS=	yes
 .endif
 
@@ -314,7 +330,7 @@ WITH_SDL=	yes
 WITH_AALIB=	yes
 .endif
 
-.if ${HAVE_GNOME:Mesound}!=""
+.if !defined(WITHOUT_ESOUND) && ${HAVE_GNOME:Mesound}!=""
 WITH_ESOUND=	yes
 .endif
 
@@ -366,30 +382,36 @@ CONFIGURE_ARGS+=	--enable-debug
 CFLAGS+=	-O3 -ffast-math -fomit-frame-pointer
 .endif
 
-.if ${HAVE_GNOME:Mgtk12}!="" && !defined(WITHOUT_GUI)
+.if ${HAVE_GNOME:Mgtk12}!="" && !defined(WITH_GTK2) && !defined(WITHOUT_GUI)
 WITH_GTK1=	yes
 .endif
 
 .if !defined(WITHOUT_GUI)
 PLIST_SUB+=	GMPLAYER=""
+RUN_DEPENDS+=	${LOCALBASE}/share/mplayer/Skin:${PORTSDIR}/multimedia/mplayer-skins
 .else
 PLIST_SUB+=	GMPLAYER="@comment "
 .endif
 
-#.if defined(WITH_GTK2) && !defined(WITHOUT_GUI)
-#USE_GNOME+=	gtk20
-#RUN_DEPENDS+=	${LOCALBASE}/share/mplayer/Skin:${PORTSDIR}/multimedia/mplayer-skins
-#.if defined(PKGNAMESUFFIX)
-#PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-gtk2
-#.else
-#PKGNAMESUFFIX=	-gtk2
-#.endif
-#CONFIGURE_ARGS+=	--enable-gui
-#.endif
+.if defined(WITH_GTK2) && !defined(WITH_GTK1) && !defined(WITHOUT_GUI)
+.if ( ${OSVERSION} < 500000 )
+USE_GCC=	3.3
+.endif
+USE_GNOME+=	gtk20
+PATCHFILES+=	mplayer1.0pre5-gtk2-20040730.patch.bz2
+.if defined(PKGNAMESUFFIX)
+PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-gtk2
+.else
+PKGNAMESUFFIX=	-gtk2
+.endif
+CONFIGURE_ARGS+=	--enable-gui
+.if defined(WITH_LANG)
+WITH_LANG=	""
+.endif
+.endif
 
-.if defined(WITH_GTK1) && !defined(WITHOUT_GUI)
+.if defined(WITH_GTK1) && !defined(WITH_GTK2) && !defined(WITHOUT_GUI)
 USE_GNOME+=	gtk12
-RUN_DEPENDS+=	${LOCALBASE}/share/mplayer/Skin:${PORTSDIR}/multimedia/mplayer-skins
 .if defined(PKGNAMESUFFIX)
 PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-gtk
 .else
@@ -420,7 +442,7 @@ CONFIGURE_ARGS+=	--disable-mencoder
 PLIST_SUB+=	MENCODER="@comment "
 .endif
 
-.if defined(WITH_ARTS) && (!defined(WITH_GTK1) || defined(WITHOUT_GUI))
+.if defined(WITH_ARTS) && !defined(WITHOUT_ARTS) && defined(WITHOUT_GUI)
 LIB_DEPENDS+=	artsc.0:${PORTSDIR}/audio/arts
 
 CONFIGURE_ARGS+=	--enable-arts
@@ -485,13 +507,15 @@ LIB_DEPENDS+=	aa.1:${PORTSDIR}/graphics/aalib
 USE_SDL=	sdl
 .endif
 
-.if defined(WITH_ESOUND)
+.if defined(WITH_ESOUND) && !defined(WITHOUT_ESOUND)
 USE_GNOME+=	esound
 .if defined(PKGNAMESUFFIX)
 PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-esound
 .else
 PKGNAMESUFFIX=	-esound
 .endif
+.else
+CONFIGURE_ARGS+=	--disable-esd
 .endif
 
 .if defined(WITH_VORBIS)
@@ -623,10 +647,6 @@ pre-everything::
 	@${ECHO_MSG} "make WITH_GTK1
 	@${ECHO_MSG} "builds MPlayer with GTK1-GUI support."
 
-.if defined(WITH_GTK2) && !defined(WITHOUT_GUI)
-	@${ECHO_MSG} "GTK2 plugin is not available at the moment."
-	@${ECHO_MSG} "Falling back to use GTK1 if installed on the system."
-.endif
 .if !defined(WITHOUT_GUI)
 	@${ECHO_MSG} "If you want to use the GUI, you can either install"
 	@${ECHO_MSG} "${PORTSDIR}/multimedia/mplayer-skins"
@@ -634,10 +654,18 @@ pre-everything::
 	@${ECHO_MSG} "http://www.mplayerhq.hu/homepage/dload.html"
 .endif
 
+.if defined(WITH_GTK2) && !defined(WITHOUT_GUI)
+	@${ECHO_MSG} "=====================> <Caution> <======================"
+	@${ECHO_MSG} "GTK2 and UTF8 language options cannot peacefully coexist"
+	@${ECHO_MSG} "If you have defined WITH_LANG=<something> and WITH_GTK2"
+	@${ECHO_MSG} "your language options are ignored."
+	@${ECHO_MSG} "====================> </Caution> <======================"
+.endif
+
 post-patch:
-#.if defined(WITH_GTK2) && !defined(WITHOUT_GUI)
-#	@cd ${WRKSRC} && ${PATCH} < ${PATCHDIR}/extra-patch-gtk2
-#.endif
+.if ${OSVERSION} > 502125
+	@cd ${WRKSRC} && ${PATCH} < ${PATCHDIR}/extra-patch-gcc34
+.endif
 	@${REINPLACE_CMD} -e \
 		's|libxmms.so.1|libxmms.so|' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
