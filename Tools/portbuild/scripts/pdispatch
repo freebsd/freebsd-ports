@@ -1,0 +1,28 @@
+#!/bin/sh
+command=$1
+shift
+
+if pwd | grep -qF 2.2; then
+  branch=2.2
+else
+  branch=3.0
+fi
+
+# ssh -x doesn't work on some machines
+unset DISPLAY
+
+pkgname=$(basename $1 .tgz)
+buildroot=$(dirname $0)
+
+if grep -qxF $pkgname ${buildroot}/${branch}/duds; then
+  echo "skipping $pkgname"
+  exit 1
+fi
+
+args=${1+"$@"}
+mach=$(cat ${buildroot}/ulist)
+num=$(echo $(echo $mach | wc -w))
+set $mach
+shift $(echo "$$ $num" | awk '{srand($1); print(int(rand()*$2))}')
+echo "dispatching: ssh -a $1 ${branch} ${command} $args"
+ssh -a $1 ${command} ${branch} $args

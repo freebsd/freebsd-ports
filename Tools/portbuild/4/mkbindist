@@ -1,0 +1,28 @@
+#!/bin/sh
+ftp=0
+here=$(pwd)
+tmpdir=${here}/tmp
+rm -rf ${tmpdir}
+mkdir -p ${tmpdir}
+if [ "${ftp}" != 0 ]; then
+  cd bindist/ftp
+  /usr/bin/ftp -a 'ftp://ftp.freebsd.org/pub/FreeBSD/3.0-RELEASE/bin/bin.??'
+  /usr/bin/ftp -a 'ftp://ftp.freebsd.org/pub/FreeBSD/3.0-RELEASE/dict/dict.??'
+  #ssh -n ftp.freebsd.org cat 'w/3.0-RELEASE/bin/bin.??' | tar -xzpf -
+  cd ${here}
+fi
+cd ${tmpdir}
+cat ${here}/bindist/ftp/bin.?? | tar -xzpf -
+cat ${here}/bindist/ftp/dict.?? | tar -xzpf -
+rm -rf $(cat ${here}/bindist/delete)
+mkdir -p $(cat ${here}/bindist/dirlist)
+tar -C ${here}/bindist/files -cf - . | tar -xpf -
+mv kernel.GENERIC kernel
+rm -f /usr/lib/aout/lib*_p.a
+chroot $(pwd) /sbin/ldconfig /usr/lib
+chroot $(pwd) /sbin/ldconfig -aout /usr/lib/aout
+mkdir -p ${here}/tarballs
+tar cf ${here}/tarballs/bindist.tar.new .
+mv -f ${here}/tarballs/bindist.tar.new ${here}/tarballs/bindist.tar
+cd ${here}
+rm -rf ${tmpdir}

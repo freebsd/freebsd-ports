@@ -1,0 +1,7 @@
+#!/bin/sh
+export OSREL=2.2.8
+export OSVERSION=228001
+export PORTOBJFORMAT=aout
+export PORTSDIR=$(pwd)
+export PARALLEL_PACKAGE_BUILD=t
+make index

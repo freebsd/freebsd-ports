@@ -1,0 +1,19 @@
+(1) Copy the following files to under the "files" subdirectory:
+
+    Copy the following files from a running 3.0 system:
+
+    /dev/{kmem,lkm,mem,null,stderr,stdin,stdout,tty,zero}
+    /etc/resolv.conf
+
+    Copy the following files from a very recent 3.0 system:
+
+    /usr/sbin/pkg_{add,create,delete,info}
+
+    Copy the following files from a very recent 3.0 system or source tree:
+
+    /usr/share/info/dir
+    /usr/share/mk/bsd.port*.mk
+
+(2) Run "sh mkbindist".  Note the first time you should set "ftp=1".
+
+(3) Copy "tarballs/bindist.tar" to the same directory in all the build machines.

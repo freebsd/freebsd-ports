@@ -1,0 +1,21 @@
+#!/bin/sh
+
+# usage: $0 DIRNAME
+
+dir=$1
+
+cd /tmp/depends
+if [ "$(echo $(/bin/ls | wc -c))" != 0 ]; then
+  for i in *.tgz; do
+    pkg_add -f $i >/dev/null 2>&1 || exit 1
+  done
+fi
+
+cd $dir || exit 1
+if make package; then
+  echo "0" > /tmp/status
+else
+  echo "1" > /tmp/status
+fi
+
+exit 0

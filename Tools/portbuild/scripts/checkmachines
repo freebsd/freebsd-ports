@@ -1,0 +1,25 @@
+#!/bin/sh
+
+buildroot=/a/asami/portbuild
+mlist=${buildroot}/mlist
+
+unset DISPLAY
+
+while true; do
+  min=99
+  set $(cat $mlist)
+  while [ $# -gt 1 ]; do
+    m=$1
+    l=$2
+    num=$((($(echo $(ssh -n $m ls -1 ${buildroot}/*/chroot | wc -l)) - 3) * 10 / $l))
+    if [ $num -lt $min ]; then
+      mach=$m
+      min=$num
+    elif [ $num = $min ]; then
+      mach="$mach $m"
+    fi
+    shift 2
+  done
+  echo "$mach" > ${buildroot}/ulist
+  sleep 5
+done

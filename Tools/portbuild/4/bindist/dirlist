@@ -1,0 +1,8 @@
+tmp/depends
+tmp/distfiles
+tmp/packages
+usr/X11R6
+usr/local
+usr/opt/doc
+usr/opt/www
+usr/ports

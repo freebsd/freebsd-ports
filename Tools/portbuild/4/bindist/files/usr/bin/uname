@@ -1,0 +1,67 @@
+#!/bin/sh
+
+# "sed -e 's/\(.\)/ -\1/g'" can be used to convert "abc" to "-a -b -c"
+
+a=0
+m=0
+n=0
+r=0
+s=0
+v=0
+
+if [ $# = 0 ]; then
+  s=1
+else
+  set $(printf "%s\n" "$*" | sed -e 's/-//g' -e 's/\([a-z]\)/ \1/g')
+  while [ $# -gt 0 ]; do
+    eval $1=1
+    shift
+  done
+fi
+
+if [ "$a" = 1 ]; then
+  m=1
+  n=1
+  r=1
+  s=1
+  v=1
+fi
+
+printed=0
+
+if [ "$s" = 1 ]; then
+  echo -n "FreeBSD"
+  printed=1
+fi
+
+printsp () {
+  if [ $1 = 1 ]; then
+    echo -n " "
+  fi
+}
+
+if [ "$n" = 1 ]; then
+  printsp $printed
+  echo -n $(hostname)
+  printed=1
+fi
+
+if [ "$r" = 1 ]; then
+  printsp $printed
+  echo -n "3.0-CURRENT"
+  printed=1
+fi
+
+if [ "$v" = 1 ]; then
+  printsp $printed
+  echo -n "FreeBSD 3.0-CURRENT #0: Sun Dec 13 03:47:56 PST 1998 asami@bento.freebsd.org:/usr/src/sys/compile/BENTO"
+  printed=1
+fi
+
+if [ "$m" = 1 ]; then
+  printsp $printed
+  echo -n "i386"
+  printed=1
+fi
+
+echo
