@@ -4,5 +4,9 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/DBD/InterBase.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/DBD/InterBase/FAQ.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/DBD/InterBase/InterBase.bs
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/DBD/InterBase/InterBase.so
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Bundle/DBD 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Bundle 2>/dev/null || true
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/DBD/InterBase
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/DBD 2>/dev/null || true
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/DBD/InterBase
 @unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/DBD 2>/dev/null || true
