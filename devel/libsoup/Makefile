@@ -19,7 +19,7 @@ COMMENT=	A SOAP (Simple Object Access Protocol) implementation in C
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 
 USE_BZIP2=	yes
-USE_GNOME=	gnomehack glib20
+USE_GNOME=	gnomehack lthack glib20
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL_VER=	13
 USE_OPENSSL=	yes

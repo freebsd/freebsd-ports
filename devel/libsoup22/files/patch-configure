@@ -1,10 +1,11 @@
---- configure.orig	Thu Jan  2 14:06:13 2003
-+++ configure	Fri Feb  7 22:54:07 2003
-@@ -7366,6 +7366,7 @@
+--- configure.orig	Tue Apr  6 17:08:05 2004
++++ configure	Tue Apr  6 17:10:47 2004
+@@ -9520,7 +9521,7 @@
+ 	save_CPPFLAGS=$CPPFLAGS
+ 	CPPFLAGS="$CPPFLAGS $gnutls_inc_prefix"
  
- # This can be used to rebuild libtool when needed
- LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
-+$ac_aux_dir/ltconfig $LIBTOOL_DEPS
- 
- # Always use our own libtool.
- LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+-for ac_header in gnutls/gnutls.h
++for ac_header in gnutls/xxxgnutls.h
+ do
+ as_ac_Header=`echo "ac_cv_header_$ac_header" | $as_tr_sh`
+ if eval "test \"\${$as_ac_Header+set}\" = set"; then
