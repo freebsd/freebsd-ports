@@ -257,6 +257,7 @@ HEADERS_SUFX=
 .if ${OSVERSION} < 500000 && defined(WITH_MOZILLA_PLUGIN)
 .if ${WITH_MOZILLA}=="mozilla-devel"
 USE_GCC=	3.4
+WITHOUT_LIVEMEDIA=	yes
 .endif
 .endif
 
