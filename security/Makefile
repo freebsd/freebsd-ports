@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.39 1999/01/06 22:55:47 sada Exp $
+# $Id: Makefile,v 1.40 1999/01/10 11:23:41 dirk Exp $
 #
 
     SUBDIR += SSLeay
@@ -14,6 +14,7 @@
     SUBDIR += gnupg
     SUBDIR += john
     SUBDIR += krb5
+    SUBDIR += l0pht-watch
     SUBDIR += libident
     SUBDIR += nbaudit
     SUBDIR += nmap
