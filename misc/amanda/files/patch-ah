@@ -1,0 +1,11 @@
+--- common-src/amanda.h.orig	Fri Nov 24 11:33:22 2000
++++ common-src/amanda.h	Fri Nov 24 11:33:33 2000
+@@ -421,7 +421,7 @@
+ #endif
+ 
+ #ifndef HAVE_INITGROUPS_DECL
+-extern int initgroups P((const char *name, gid_t basegid));
++/* extern int initgroups P((const char *name, gid_t basegid)); */
+ #endif
+ 
+ #ifndef HAVE_LISTEN_DECL

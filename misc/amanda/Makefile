@@ -6,45 +6,42 @@
 #
 
 PORTNAME=	amanda
-PORTVERSION=	2.3.0
+PORTVERSION=	2.3.0.4
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.cs.umd.edu/pub/amanda/old-versions/
 
 MAINTAINER=	ports@FreeBSD.org
 
+GNU_CONFIGURE=yes
+CONFIGURE_ARGS+=--with-dbdir=/var/log/amanda --with-logdir=/var/log/amanda \
+		--libexecdir=${PREFIX}/libexec/amanda --with-mmap \
+		--with-user=operator --with-group=operator
+
 MAN8=		amadmin.8 amanda.8 amcheck.8 amcleanup.8 amdump.8 amflush.8 \
-		amlabel.8 amrestore.8 amtape.8
+		amlabel.8 amplot.8 amrecover.8 amrestore.8 amrmtape.8 amtape.8 \
+		amtoc.8
 
-LIBEXEC_BIN=	amandad calcsize driver dumper getconf planner reporter \
-		runtar selfcheck sendbackup-dump sendbackup-gnutar sendsize \
-		taper
-SBIN_BIN=	amadmin amcheck amflush amlabel amrestore amtape
+LIBEXEC_BIN=	amandad amcat.awk amgetidx amidxtaped amindexd amplot.awk \
+		amplot.g amplot.gp amtrmidx calcsize chg-generic \
+		createindex-dump createindex-gnutar driver dumper getconf \
+		hp-changer no-changer patch-system planner reporter \
+		rth-changer rundump runtar selfcheck sendbackup-dump \
+		sendbackup-gnutar sendindex sendsize taper versionsuffix
 
-post-patch:
-	@${LN} -sf config.h-freebsd2 ${WRKSRC}/config/config.h
-	@${SED} -e 's:%%CC%%:${CC}:g' \
-		-e 's:%%CFLAGS%%:${CFLAGS}:g' \
-	        -e 's:%%INSTALL%%:${INSTALL}:g' \
-	        -e 's:%%PREFIX%%:${PREFIX}:g' \
-		${WRKSRC}/config/options.h-vanilla > ${WRKSRC}/config/options.h
-.for file in amanda.8 amcleanup.8 amflush.8 amlabel.8
-	@cd ${WRKSRC}/man/; ${MV} ${file} ${file}.in; \
-		${SED} -e 's:%%PREFIX%%:${PREFIX}:g' ${file}.in > ${file}
-.endfor
+BIN_BIN=	amadmin amcheck amcheckdb amcleanup amdump amflush amlabel \
+		amoverview amplot amrecover amrestore amrmtape amtape amtoc \
+		amverify
+
+INSTALL_DATA=	amanda.conf chg-generic.conf disklist
 
 post-install:
-.for file in ${LIBEXEC_BIN}
-	@if [ -f ${PREFIX}/libexec/amanda/${file} ]; then \
-		strip ${PREFIX}/libexec/amanda/${file}; \
-	fi
-.endfor
-.for file in ${SBIN_BIN}
-	@if [ -f ${PREFIX}/sbin/${file} ]; then \
-		strip ${PREFIX}/sbin/${file}; \
-	fi
-.endfor
 	@${MKDIR} ${PREFIX}/share/examples/amanda
-	${INSTALL_DATA} ${WRKSRC}/example/* ${PREFIX}/share/examples/amanda
+	${INSTALL_DATA} ${WRKSRC}/example/amanda.conf ${PREFIX}/share/examples/amanda
+	${INSTALL_DATA} ${WRKSRC}/example/chg-generic.conf ${PREFIX}/share/examples/amanda
+	${INSTALL_DATA} ${WRKSRC}/example/disklist ${PREFIX}/share/examples/amanda
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	@${MKDIR} ${PREFIX}/etc/amanda
+	@${MKDIR} /var/log/amanda
+	@${TOUCH} /var/log/amanda/curinfo
 
 .include <bsd.port.mk>
