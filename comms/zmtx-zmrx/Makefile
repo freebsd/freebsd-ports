@@ -23,7 +23,6 @@ EXTRACT_BEFORE_ARGS=
 EXTRACT_AFTER_ARGS=	|sh
 NO_WRKSUBDIR=	yes
 MAKEFILE=	makefile
-PKG_CMD=	/usr/sbin/pkg_create -D ${PKGDIR}/licence
 MAN1=		zmrx.1 zmtx.1
 
 do-install:
@@ -34,7 +33,7 @@ do-install:
 
 post-install:
 	@${ECHO} ""
-	@/usr/bin/more ${PKGDIR}/licence
+	@/usr/bin/more ${PKGMESSAGE}
 	@${ECHO} ""
 
 .include <bsd.port.mk>
