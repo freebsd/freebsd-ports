@@ -98,13 +98,14 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/${SCRIPT} ${PREFIX}/bin
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/include/*.h ${PREFIX}/include/qt2
+.if !defined(WANT_STATIC)
 	${INSTALL_PROGRAM} ${WRKSRC}/lib/libqt2.so.4 ${PREFIX}/lib
 	${INSTALL_PROGRAM} ${WRKSRC}/lib/libqt2-mt.so.4 ${PREFIX}/lib
 	${INSTALL_PROGRAM} ${WRKSRC}/lib/libqutil.so.1 ${PREFIX}/lib
 	${LN} -sf ${PREFIX}/lib/libqt2-mt.so.4 ${PREFIX}/lib//libqt2-mt.so
 	${LN} -sf ${PREFIX}/lib/libqt2.so.4 ${PREFIX}/lib/libqt2.so
 	${LN} -sf ${PREFIX}/lib/libqutil.so.1 ${PREFIX}/lib/libqutil.so
-.if defined(WANT_STATIC)
+.else
 .for LIB in qt2 qutil
 	${INSTALL_DATA} ${WRKSRC}/lib/lib${LIB}.a ${PREFIX}/lib
 .endfor
@@ -128,7 +129,7 @@ do-install:
 .if defined(WANT_STATIC)
 post-install:
 	${CP} ${TMPPLIST} ${TMPPLIST}.new
-	${SED} -e "s/libqt2\/.so/libqt2\.a/" -e "s/.*libqt2\.a\.\d\n//" -e "s/libqutil\.so/libqutil.a" \
+	${SED} -e "s/libqt2\/.so/libqt2\.a/" -e "s/.*libqt2\.a\.\d\n//" -e "s/libqutil\.so/libqutil.a/" \
 		-e "s/.*libqutil\.a\.\d\n//" ${TMPPLIST}.new > ${TMPPLIST}
 .endif
 
