@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ltris
-PORTVERSION=	1.0.6
-PORTREVISION=	2
+PORTVERSION=	1.0.7
 PORTEPOCH=	1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -33,7 +32,7 @@ post-patch:
 post-install:
 	${CHOWN} root:games ${PREFIX}/bin/${PORTNAME}
 	${CHMOD} 2755 ${PREFIX}/bin/${PORTNAME}
-	${CHMOD} 664 /var/games/${PORTNAME}/ltris.hscr
-	${CHOWN} root:games /var/games/${PORTNAME}/ltris.hscr
+	${CHMOD} 664 ${PREFIX}/var/ltris.hscr
+	${CHOWN} root:games ${PREFIX}/var/ltris.hscr
 
 .include <bsd.port.post.mk>

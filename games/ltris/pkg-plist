@@ -24,9 +24,7 @@ bin/ltris
 %%DATADIR%%/sounds/motion.wav
 %%DATADIR%%/sounds/nextlevel.wav
 %%DATADIR%%/sounds/stop.wav
+var/ltris.hscr
 @dirrm %%DATADIR%%/sounds
 @dirrm %%DATADIR%%/gfx
 @dirrm %%DATADIR%%
-@cwd /var/games
-ltris/ltris.hscr
-@dirrm ltris
