@@ -20,10 +20,8 @@ COMMENT=	The official distributed.net v2 personal proxy
 
 ONLY_FOR_ARCHS=	i386
 
-.if ${OSVERSION} < 220000
-BROKEN=		"No version is built for your system."
-.elif ${OSVERSION} < 300000
-BROKEN=		"No version is currently available for your system.  Please try again later."
+.if ${OSVERSION} < 300000
+IGNORE=		"This port requires FreeBSD 3.X or greater."
 .endif
 
 NO_BUILD=	yes
