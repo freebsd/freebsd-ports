@@ -69,6 +69,9 @@ SITE+=	${FILESDIR}/site.config.m4.sasl
 .if defined(SENDMAIL_WITH_LDAP)
 SITE+=	${FILESDIR}/site.config.m4.ldap
 .endif
+.if defined(SENDMAIL_WITH_MILTER)
+SITE+=	${FILESDIR}/site.config.m4.milter
+.endif
 .if exists(${FILESDIR}/site.config.m4.local)
 SITE+=	${FILESDIR}/site.config.m4.local
 .endif
@@ -89,12 +92,16 @@ do-configure:
 	${SED} -e "s=%%PREFIX%%=${PREFIX}=" -e "s=%%LOCALBASE%%=${LOCALBASE}=" \
 		${SITE} > ${WCONF}/site.config.m4
 
+.if defined(SENDMAIL_WITH_MILTER)
 post-build:
 	( cd ${WRKSRC}/libmilter && ${MAKE} )
+.endif
 
 pre-install:
 	@${CAT} ${PKGDIR}/pkg-plist >${PLIST}
+.if defined(SENDMAIL_WITH_MILTER)
 	@${CAT} ${FILESDIR}/pkg-milter >>${PLIST}
+.endif
 	if ! pw groupshow smmsp; then pw groupadd smmsp -g 90; fi
 	if ! pw usershow smmsp; then pw useradd smmsp -g smmsp -u 90 \
 		-h - -d /nonexistent -s /nonexistent -c "Sendmail Queue"; fi
@@ -116,6 +123,7 @@ pre-install:
 post-install:
 	( cd ${WRKSRC}/mail.local && ${MAKE} force-install )
 	( cd ${WRKSRC}/rmail && ${MAKE} force-install )
+.if defined(SENDMAIL_WITH_MILTER)
 	${MKDIR} ${PREFIX}/include/libmilter
 	${INSTALL_DATA} ${WRKSRC}/include/libmilter/mfapi.h \
 		${PREFIX}/include/libmilter/
@@ -125,6 +133,7 @@ post-install:
 	${INSTALL_DATA} \
 	 ${WRKSRC}/obj.`${WRKSRC}/devtools/bin/Build -A`/libsmutil/libsmutil.a \
 	 ${PREFIX}/lib/
+.endif
 	${INSTALL_DATA} ${WRKSRC}/sm-client.sh \
 		${PREFIX}/etc/rc.d/sm-client.sh.sample
 	${CHOWN} smmsp:smmsp /var/spool/clientmqueue
@@ -154,8 +163,10 @@ post-install:
 		${PREFIX}/share/doc/sendmail/MAIL.LOCAL
 	${INSTALL_DATA} ${WRKSRC}/smrsh/README \
 		${PREFIX}/share/doc/sendmail/SMRSH
+.if defined(SENDMAIL_WITH_MILTER)
 	${INSTALL_DATA} ${WRKSRC}/libmilter/README \
 		${PREFIX}/share/doc/sendmail/MILTER
+.endif
 .endif
 .if exists(${DESTDIR}/etc/mail/mailer.conf)
 	@${SED} s!%%PREFIX%%!${PREFIX}!g ${PKGMESSAGE}
