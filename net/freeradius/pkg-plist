@@ -395,10 +395,12 @@ sbin/rc.radiusd
 %%DATADIR%%/dictionary.foundry
 %%DATADIR%%/dictionary.freeradius
 %%DATADIR%%/dictionary.gandalf
+%%DATADIR%%/dictionary.garderos
 %%DATADIR%%/dictionary.itk
 %%DATADIR%%/dictionary.juniper
 %%DATADIR%%/dictionary.karlnet
 %%DATADIR%%/dictionary.livingston
+%%DATADIR%%/dictionary.localweb
 %%DATADIR%%/dictionary.merit
 %%DATADIR%%/dictionary.microsoft
 %%DATADIR%%/dictionary.mikrotik

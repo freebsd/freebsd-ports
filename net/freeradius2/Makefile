@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	freeradius
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.freeradius.org/pub/radius/ \
 		ftp://ftp.Awfulhak.org/pub/radius/
@@ -115,14 +115,14 @@ DICTS=		dictionary.3com dictionary.3gpp dictionary.3gpp2 dictionary.acc \
 		dictionary.cisco.vpn3000 dictionary.cisco.vpn5000 \
 		dictionary.colubris dictionary.columbia_university \
 	       	dictionary.compat dictionary.erx dictionary.foundry \
-	       	dictionary.freeradius dictionary.gandalf dictionary.juniper \
-	       	dictionary.karlnet dictionary.livingston dictionary.merit \
-		dictionary.microsoft dictionary.mikrotik dictionary.navini \
-	       	dictionary.nomadix dictionary.propel dictionary.quintum \
-		dictionary.redback dictionary.shasta dictionary.shiva \
-		dictionary.sonicwall dictionary.trapeze dictionary.tunnel \
-	       	dictionary.unix dictionary.usr dictionary.valemount \
-		dictionary.versanet
+	       	dictionary.freeradius dictionary.gandalf dictionary.garderos \
+		dictionary.juniper dictionary.karlnet dictionary.livingston \
+		dictionary.localweb dictionary.merit dictionary.microsoft \
+		dictionary.mikrotik dictionary.navini dictionary.nomadix \
+		dictionary.propel dictionary.quintum dictionary.redback \
+		dictionary.shasta dictionary.shiva dictionary.sonicwall \
+		dictionary.trapeze dictionary.tunnel dictionary.unix \
+		dictionary.usr dictionary.valemount dictionary.versanet
 
 post-patch:
 	@${SED} -e "s|%%PREFIX%%|${PREFIX}|g" -e "s|%%RC_SUBR%%|${RC_SUBR}|g" \
