@@ -4,4 +4,4 @@ This library gives you access to low level information on mp3 files
 Note that this library does not fetch ID3 tag.
 
 Author:	Guillaume Pierronnet <moumar@netcourrier.com>
-WWW:	http://davedd.free.fr/ruby-mp3info/
+WWW:	http://rubyforge.org/projects/ruby-mp3info

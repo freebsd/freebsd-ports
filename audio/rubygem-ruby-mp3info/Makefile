@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	mp3info
-PORTVERSION=	0.1
+PORTVERSION=	0.2.1
 CATEGORIES=	audio ruby
-MASTER_SITES=	http://davedd.free.fr/%SUBDIR%/download/
-MASTER_SITE_SUBDIR=	ruby-${PORTNAME}
+MASTER_SITES=	http://rubyforge.org/download.php/91/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
@@ -21,7 +20,7 @@ USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
 RUBY_SETUP=	install.rb
 
-DOCS=		CHANGELOG	README	doc
+DOCS=		README	doc
 #EXAMPLES=	test.rb
 
 post-install:
