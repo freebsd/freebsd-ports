@@ -1,6 +1,6 @@
 bin/pyuic
 bin/eric
-lib/%%PYTHON_VERSION%%/site-packages/libqtcmodule-2.4.so
+lib/%%PYTHON_VERSION%%/site-packages/libqtcmodule-2.5.so
 lib/%%PYTHON_VERSION%%/site-packages/libqtcmodule.so
 lib/%%PYTHON_VERSION%%/site-packages/libqtcmodule.la
 lib/%%PYTHON_VERSION%%/site-packages/libqtcmodule.a
