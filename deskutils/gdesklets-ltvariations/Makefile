@@ -7,7 +7,7 @@
 
 PORTNAME=	ltvariations
 PORTVERSION=	0.26
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://gdesklets.gnomedesktop.org/files/
 PKGNAMEPREFIX=	gdesklets-
@@ -35,6 +35,7 @@ do-build:
 	@${WRKSRC}/Sensors/Install_${ii}_Sensor.bin --nomsg ${WRKSRC}
 .endfor
 	@${PATCH} ${WRKSRC}/LTVUptime/__init__.py < ${FILESDIR}/LTVUptime::__init__.py
+	@${PATCH} ${WRKSRC}/LTVClock/__init__.py < ${FILESDIR}/LTVClock::__init__.py
 	@${CAT} pkg-message | ${SED} -e 's|%%PREFIX%%|${PREFIX}|g ; s|%%DISPLAY%%|${DISPLAY}|g' > ${PKGMESSAGE}
 
 do-install:
