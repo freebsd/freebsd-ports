@@ -10,13 +10,12 @@ include/rexxsaa.h
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %D/lib
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 share/doc/rexx-imc/README
-share/doc/rexx-imc/README.avail
 share/doc/rexx-imc/README.bugreport
 share/doc/rexx-imc/README.docs
 share/doc/rexx-imc/README.files
 share/doc/rexx-imc/README.make
 share/doc/rexx-imc/README.news
-share/doc/rexx-imc/README.versions
+share/doc/rexx-imc/README.platforms
 share/doc/rexx-imc/rexx.info
 share/doc/rexx-imc/rexx.ref
 share/doc/rexx-imc/rexx.summary

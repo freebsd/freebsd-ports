@@ -1,12 +1,12 @@
-# Makefile for REXX/imc
+# Makefile for REXX/imc-1.6?
 #
 # Based upon the original by the author
 # Heavily hacked by jfitz@FreeBSD.ORG
 #
 
-CC=		gcc
+CC?=		gcc
 PIC=		-fPIC
-CCFLAGS=	-DHAS_TTYCOM -D_REQUIRED -c ${PIC}
+CCFLAGS=	-DHAS_TTYCOM -D_REQUIRED -DRENAME_UNDELETE -c ${PIC}
 
 OPTFLAGS=	-O2
 
@@ -16,8 +16,8 @@ RXMONTH=	8
 RXYEAR=		96
 DATE=		-DDAY=${RXDAY} -DMONTH=${RXMONTH} -DYEAR=${RXYEAR}
 
-REXXDOCS=	README README.avail README.bugreport README.docs \
-		README.files README.make README.news README.versions \
+REXXDOCS=	README README.bugreport README.docs \
+		README.files README.make README.news README.platforms \
 		rexx.info rexx.ref rexx.summary rexx.tech
 
 # Shared Library Version
@@ -38,7 +38,7 @@ FILEDEFS=	-DREXXIMC=\"${REXXIMC}\"
 LIBFILES=	rexx.o rxfn.o calc.o util.o shell.o interface.o globals.o
 HFILES=		const.h globals.h functions.h rexxsaa.h
 
-all:		rexx rxque rxstack ${MATH}
+all:		rexx rxque rxstack ${MATH} rexx.1
 
 interface.o:	interface.c ${HFILES}
 		${CC} ${OPTFLAGS} ${CCFLAGS} -c ${DATE} ${FILEDEFS} -o $@ interface.c
@@ -67,6 +67,9 @@ rxmathfn.rxfn:	rxmathfn.o ${HFILES}
 interface.o:	interface.c ${HFILES}
 		${CC} ${OPTFLAGS} ${CCFLAGS} -o interface.o ${FILEDEFS} interface.c
 
+rexx.1: rexx.1.in
+		sed -e "s|@REXXLIBDIR@|${PREFIX}/bin|" rexx.1.in > rexx.1
+
 install:
 		@strip ${SHAREDLIBS} rxmathfn.rxfn
 .for f in rexx rxque rxstack
@@ -84,6 +87,7 @@ install:
 .for f in ${REXXDOCS}
 		${BSD_INSTALL_DATA} ${f} ${PREFIX}/share/doc/rexx-imc/
 .endfor
+		${BSD_INSTALL_DATA} rexx.1 ${PREFIX}/man/man1
 .endif
 
 .c.o:

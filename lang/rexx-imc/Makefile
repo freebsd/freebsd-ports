@@ -6,32 +6,24 @@
 # $FreeBSD$
 #
 
-DISTNAME=	rexx-imc-1.6d
+DISTNAME=	rexx-imc-1.7
 CATEGORIES=	lang
-MASTER_SITES=	http://www.comlab.ox.ac.uk/oucl/users/ian.collier/distribution/
+MASTER_SITES=	http://ruby.comlab.ox.ac.uk/imc/distribution/           \
+		ftp://ftp.sai.msu.su/pub/unix/rexx/                     \
+		ftp://crydee.sai.msu.ru/zeus/unix/rexx/
+PATCH_SITES=	${MASTER_SITES}
+PATCHFILES=	${DISTNAME}-19990331.patch
+PATCH_DIST_STRIP= -p1
 
 MAINTAINER=	jfitz@FreeBSD.org
 
-NO_WRKSUBDIR=	YES
-
 MAKE_ENV=	MKDIR="${MKDIR}"
-
-# we must patch these files until the author correct misuse of 
-# errno in struct fileinfo
-UGLY_PATCH=	rexx.c rxfn.c util.c
+MAN1=		rexx.1
 
 .include <bsd.port.pre.mk>
 
-post-patch:
-.for c in ${UGLY_PATCH}
-	@${ECHO_MSG} "Changing struct fileinfo member errno to ferrno in ${c}"
-	@${MV} ${WRKSRC}/${c} ${WRKSRC}/${c}.old
-	@${SED} 's/->errno/->ferrno/g;' ${WRKSRC}/${c}.old > ${WRKSRC}/${c}
-	@${RM} ${WRKSRC}/${c}.old
-.endfor
-
 pre-build:
-		@ ${CP} ${FILESDIR}/Makefile ${WRKDIR}
+		@ ${CP} ${FILESDIR}/Makefile ${WRKSRC}
 
 post-install:
 .if ${PORTOBJFORMAT} == "aout"
