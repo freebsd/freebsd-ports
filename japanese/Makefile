@@ -261,7 +261,6 @@
     SUBDIR += xemacs-canna
     SUBDIR += xemacs-canna+wnn4
     SUBDIR += xemacs-canna+wnn6
-    SUBDIR += xemacs-sumo
     SUBDIR += xemacs-sumo-canna
     SUBDIR += xemacs-sumo-canna+wnn4
     SUBDIR += xemacs-sumo-canna+wnn6
