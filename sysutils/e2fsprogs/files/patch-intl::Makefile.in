@@ -1,4 +1,4 @@
-$FreeBSD$
+$FreeBSD: /tmp/pcvs/ports/sysutils/e2fsprogs/files/Attic/patch-intl::Makefile.in,v 1.1 2004-02-18 11:07:12 eik Exp $
 
 --- intl/Makefile.in.orig	Sun Feb 24 13:03:59 2002
 +++ intl/Makefile.in	Sun Aug 31 02:58:10 2003
