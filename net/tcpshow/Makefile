@@ -9,7 +9,7 @@
 
 DISTNAME=	tcpshow-1.74
 CATEGORIES=	net security
-MASTER_SITES=	http://www.freebsd.org/~obrien/
+MASTER_SITES=	http://www.freebsd.org/~obrien/Distfiles/
 #		http://www.cs.berkeley.edu/~daw/mike/
 DISTFILES=	tcpshow.c tcpshow.1
 
