@@ -31,6 +31,7 @@
     SUBDIR += battalion
     SUBDIR += battleball
     SUBDIR += biorythm
+    SUBDIR += blackjack
     SUBDIR += block
     SUBDIR += blockade
     SUBDIR += blue
@@ -212,6 +213,7 @@
     SUBDIR += pipenightdreams
     SUBDIR += pmars
     SUBDIR += powerpak
+    SUBDIR += pp
     SUBDIR += prboom
     SUBDIR += ptkei
     SUBDIR += pyching
@@ -353,6 +355,7 @@
     SUBDIR += xlaby
     SUBDIR += xlife
     SUBDIR += xlifegame
+    SUBDIR += xlines
     SUBDIR += xmahjongg
     SUBDIR += xmastermind
     SUBDIR += xmball

@@ -1,0 +1,23 @@
+
+   This is an X windows based game of the casino game blackjack.
+The program is currently written to use the Qt toolkit from Troll Tech.
+For more information on Qt see "http://www.troll.no/".
+
+   I have always enjoyed the game of blackjack.  When I first played in
+a casino I lost all the money I had brought.  After reading some books 
+on blackjack and the FAQ for rec.gambling.blackjack, I now know that there
+is a basic strategy to follow.  The strategy is based on the odds of each
+hand and the dealers up card.  I wrote this program so I could practice
+the basic strategy of blackjack.  The basic strategy is in the program
+and a help level can be set to help the user learn to play by these rules.
+My blackjack game has improved greatly.
+
+   I first wrote this program in tcl/tk.  It was OK, but I have trouble 
+remembering all the syntax and parsing rules.  The tcl/tk version was also
+noticably slow on my 386 running Linux.  Qt has been very good as a C++ 
+GUI library and is not slow at all on my 386. 
+
+Tom Daley
+tdaley@vsys.com
+
+WWW: http://members.surfbest.net/daley/blackjack/blackjack.html

@@ -1,0 +1,6 @@
+bin/xlines
+%%PORTDOCS%%share/doc/xlines/readme.qt
+%%PORTDOCS%%share/doc/xlines/readme.lines
+share/xlines/trolltech.gif
+%%PORTDOCS%%@dirrm share/doc/xlines
+@dirrm share/xlines

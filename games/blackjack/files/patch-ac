@@ -1,0 +1,29 @@
+--- bet_option.cpp.orig	Sat Jan  8 23:58:15 2000
++++ bet_option.cpp	Sat Jan  8 23:56:09 2000
+@@ -221,7 +221,7 @@
+ 
+ //*****************************************************************************
+ 
+-BetOption::
++int BetOption::
+ minBetPressed(int id) {
+    int i;
+    QButton *qb;
+@@ -256,7 +256,7 @@
+ 
+ //*****************************************************************************
+ 
+-BetOption::
++int BetOption::
+ maxBetPressed(int id) {
+    QButton *rb;
+  
+@@ -271,7 +271,7 @@
+ 
+ //*****************************************************************************
+ 
+-BetOption::
++int BetOption::
+ betIncPressed(int id) {
+    _bet_inc = *_bet_inc_list.at(id);   
+ }

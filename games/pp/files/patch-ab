@@ -1,0 +1,11 @@
+--- leiste.h	Thu Apr  3 14:44:12 1997
++++ leiste.h.new	Sat Jan 29 04:47:18 2000
+@@ -38,7 +38,7 @@
+ 
+ class leiste : public QWidget {
+ 
+-const int buttonHoehe=104, buttonBreite=140;
++const int buttonHoehe, buttonBreite;
+ //const QString picPfad2="./pic";
+ 
+ Q_OBJECT
