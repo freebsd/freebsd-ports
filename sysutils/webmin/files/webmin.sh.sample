@@ -7,14 +7,14 @@ case $1 in
 	start)
 		if [ -x !!PREFIX!!/etc/webmin/start ]; then
 			!!PREFIX!!/etc/webmin/start >/dev/null
-      	  	echo -n ' webmin'
+			echo -n ' webmin'
 		fi
 		;;
 
 	stop)
 		if [ -x !!PREFIX!!/etc/webmin/stop ]; then
 			!!PREFIX!!/etc/webmin/stop >/dev/null
-        		echo -n ' webmin'
+			echo -n ' webmin'
 		fi
 		;;
 
