@@ -1,0 +1,12 @@
+--- bt.h.orig   Thu Sep  5 10:21:18 2002
++++ bt.h        Thu Sep  5 10:22:45 2002
+@@ -47,7 +47,9 @@
+ #define LD_ERROR 98
+  
+ extern char * strdup();
++#if !defined(__FreeBSD__) || defined(__OpenBSD__) || defined(__NetBSD__) || defined(_bsdi__)
+ extern char * realloc();
++#endif
+ #define set_str(x, new)\
+ 	if (x) free(x); \
+ 	 if (new) x = strdup(new); \
