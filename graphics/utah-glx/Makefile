@@ -8,19 +8,24 @@
 PORTNAME=	utah-glx
 PORTVERSION=	0.9.20001128
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITES=	${MASTER_SITE_LOCAL} \
+		${MASTER_SITE_SOURCEFORGE:S/%SUBDIR%/mesa3d/g}
 MASTER_SITE_SUBDIR=	sobomax
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+		MesaLib-${MESA_VER}${EXTRACT_SUFX} \
+		MesaDemos-${MESA_VER}${EXTRACT_SUFX}
 
 MAINTAINER=	3d@FreeBSD.org
 
 BUILD_DEPENDS=	tclsh8.3:${PORTSDIR}/lang/tcl83 \
-		autoconf:${PORTSDIR}/devel/autoconf \
-		nonexistent:${PORTSDIR}/graphics/Mesa3:patch
+		autoconf:${PORTSDIR}/devel/autoconf
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
+
+MESA_VER=	3.2.1
 
 GLVER?=		14
 GLUTVER?=	3
@@ -30,7 +35,7 @@ AGP_DEVICE=	/dev/agpgart
 CFLAGS+=	-DAGP_DEVICE=\\\"${AGP_DEVICE}\\\"
 CONFIGURE_SCRIPT=autogen.sh
 CONFIGURE_ARGS=	--enable-extra \
-		--with-mesa=${WRKDIRPREFIX}${.CURDIR}/../../graphics/Mesa3/work/Mesa-3.2.1 \
+		--with-mesa=${WRKDIR}/Mesa-${MESA_VER} \
 		--sysconfdir=${PREFIX}/etc \
 		--with-moduledir=${PREFIX}/lib/modules
 CONFIGURE_ENV=	TCLSH="tclsh8.3"
