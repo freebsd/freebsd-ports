@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.mit.edu/~ibaran/
 
 MAINTAINER=	kcwu@ck.tp.edu.tw
 
+USE_GCC=	2.95
 USE_QT_VER=	2
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
