@@ -17,13 +17,16 @@ MAINTAINER=	dirk.meyer@dinoex.sub.org
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libmilter.a:${PORTSDIR}/mail/sendmail
 
-NO_PACKAGE=	"only with sendmail from the ports"
-
 CTARGETS+=	vbsfilter-1.3
 CFLAGS+=	-Wall -I$(LOCALBASE)/include ${PTHREAD_CFLAGS}
 FLAGS+=		${PTHREAD_LIBS}
 LDFLAGS+=	-L$(LOCALBASE)/lib
 LIBS+=		-lmilter -lsmutil
+
+.if defined(BATCH)
+SENDMAIL_WITH_MILTER=	yes
+.endif
+
 .if defined(SENDMAIL_WITH_SFIO)
 LIBS+=		-lsfio
 .endif

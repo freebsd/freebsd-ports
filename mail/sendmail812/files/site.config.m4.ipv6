@@ -1,0 +1,2 @@
+APPENDDEF(`conf_sendmail_ENVDEF', `-DNETINET6')
+APPENDDEF(`conf_libmilter_ENVDEF', `-DNETINET6')
