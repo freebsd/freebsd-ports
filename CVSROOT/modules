@@ -573,6 +573,7 @@ bsdi-netscape47-communicator	ports/www/bsdi-netscape47-communicator
 bsdi-netscape47-navigator	ports/www/bsdi-netscape47-navigator
 bsdproxy	ports/net/bsdproxy
 bsdsar		ports/sysutils/bsdsar
+bsh		ports/java/bsh
 bsmtp		ports/mail/bsmtp
 bsvc		ports/emulators/bsvc
 btc		ports/audio/btc
