@@ -193,8 +193,7 @@ fi
 
 yesno "Build the servers with Extended input devices?"
 if [ $answ = NO ]; then
-  echo "#undef BuildXInputExt" >> $F
-  echo "#define BuildXInputExt		NO" >> $F
+  echo "#define XInputDrivers mouse"  >> $F
 else
   echo "#define XInputDrivers mouse dynapro elo2300 elographics magellan microtouch \
         mutouch spaceorb wacom"  >> $F
