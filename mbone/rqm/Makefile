@@ -1,0 +1,32 @@
+# New ports collection makefile for:	rqm
+# Version required:	1.0.0
+# Date created:		30 January 2000
+# Whom:			fenner
+#
+# $FreeBSD$
+#
+
+DISTNAME=	rqm-1.0.0
+CATEGORIES=	mbone
+MASTER_SITES=	http://www-mice.cs.ucl.ac.uk/multimedia/software/rqm/1.0.0/
+
+MAINTAINER=	fenner@FreeBSD.Org
+
+LIB_DEPENDS=	tk82.1:${PORTSDIR}/x11-toolkits/tk82
+BUILD_DEPENDS=	${LOCALBASE}/lib/libuclmmbase.a:${PORTSDIR}/devel/uclmmbase
+
+WRKSRC=		${WRKDIR}/rqm/
+
+HAS_CONFIGURE=	yes
+CONFIGURE_ENV=	PREFIX=${PREFIX} X11BASE=${X11BASE}
+
+ALL_TARGET=	rqm
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/rqm ${PREFIX}/bin
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${PREFIX}/share/doc/rqm
+	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/rqm
+.endif
+
+.include <bsd.port.mk>

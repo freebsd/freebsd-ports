@@ -1,0 +1,7 @@
+The Real-time Transport Protocol, RTP [1], provides quality of service
+feedback with reception reports sent alongside the media stream. If the
+media is sent via IP multicast it is possible for a third party to snoop 
+on these reception reports, displaying reception quality for all members
+of a group. The RQM application performs such snooping.
+
+WWW: http://www-mice.cs.ucl.ac.uk/multimedia/software/rqm/
