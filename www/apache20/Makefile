@@ -25,6 +25,9 @@ MASTER_SITES=   http://www.apache.org/dist/ \
 		ftp://ftp.iodynamics.com/pub/mirror/apache/dist/ \
 		ftp://apache.nextpath.com/pub/apache/dist/
 
+PATCH_SITES=    http://www.apache.org/info/css-security/
+PATCHFILES=     apache_1.3.11_css_patch.txt
+
 MAINTAINER=     ache@freebsd.org
 
 Y2K=		http://www.apache.org/docs/misc/FAQ.html#year2000
