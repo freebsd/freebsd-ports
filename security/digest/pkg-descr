@@ -1,0 +1,6 @@
+This is a utility which calculates MD5 (RFC 1321), SHA-1, and
+RIPEMD-160 (RMD160) hashes (also known as message digests, checksums,
+or "fingerprints").
+
+Trevor Johnson
+trevor@FreeBSD.org

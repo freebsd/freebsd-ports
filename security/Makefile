@@ -23,6 +23,7 @@
     SUBDIR += cryptopp
     SUBDIR += cyrus-sasl
     SUBDIR += ddos_scan
+    SUBDIR += digest
     SUBDIR += donkey
     SUBDIR += dsniff
     SUBDIR += fakebo
