@@ -21,6 +21,7 @@ USE_REINPLACE=	yes
 USE_BISON=	yes
 USE_GNOMENG=	yes
 USE_GNOME=	gnomehack
+INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--program-transform-name=\'\'
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
