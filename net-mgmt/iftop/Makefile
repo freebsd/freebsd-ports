@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	iftop
-PORTVERSION=	0.12
+PORTVERSION=	0.13
 CATEGORIES=	net
 MASTER_SITES=	http://www.ex-parrot.com/~pdw/iftop/download/
 
@@ -25,12 +25,15 @@ DOC_FILES=	README \
 .include <bsd.port.pre.mk>
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' \
+	@${REINPLACE_CMD} \
+		-e 's|-lpthread|${PTHREAD_LIBS}|g' \
 		 ${WRKSRC}/configure
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.8 ${PREFIX}/man/man8/
+	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} \
+		${PREFIX}/bin
+	@${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.8 \
+		${PREFIX}/man/man8
 
 post-install:
 .ifndef (NOPORTDOCS)
