@@ -3986,6 +3986,7 @@ ksetiwatch	ports/astro/ksetiwatch
 ksh93		ports/shells/ksh93
 kshowmail	ports/mail/kshowmail
 ksig		ports/mail/ksig
+kslide		ports/games/kslide
 ksmp3play	ports/audio/ksmp3play
 kssh		ports/security/kssh
 ksubeditor	ports/multimedia/ksubeditor
