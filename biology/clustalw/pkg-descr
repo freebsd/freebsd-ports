@@ -1,0 +1,24 @@
+               CLUSTAL W Multiple Sequence Alignment Program
+
+ClustalW was written by Des Higgins (now at University College, Cork,
+Ireland) (des@chah.ucc.ie), Julie Thompson (julie@IGBMC.u-strasbg.fr),
+Toby Gibson, (Gibson@EMBL-Heidelberg.DE), and Franc'ois Jeanmougin
+(pingouin@igbmc.u-strasbg.fr). It is a complete rewrite and upgrade of
+the Clustal and ClustalV packages. which were developed by Des
+Higgins. New features include the ability to detect read different
+input formats (NBRF/PIR, Fasta, EMBL/Swissprot); align old alignments;
+produce phylogenetic trees after alignment (Neighbor Joining trees
+with a bootstrap option); write different alignment formats (Clustal,
+NBRF/PIR, GCG, PHYLIP); full command line interface. It is described
+in the following papers:
+
+    Thompson, J.D., D. G. Higgins and T. J. Gibson. 1994. CLUSTAL W:
+improving the sensitivity of progressive multiple sequence alignment
+through sequence weighting, positions-specific gap penalties and
+weight matrix choice. Nucleic Acids Research 22: 4673-4680.
+    
+    Higgins, D. G., J. D. Thompson, and T. J. Gibson. 1996. Using
+CLUSTAL for multiple sequence alignments. Methods in Enzymology 266:
+383-402.
+
+  See URL: www-igbmc.u-strasbg.fr/BioInfo/ClustalX/Top.html

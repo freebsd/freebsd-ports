@@ -1,0 +1,3 @@
+bin/clustalw
+share/clustalw/clustalw_help
+@dirrm share/clustalw
