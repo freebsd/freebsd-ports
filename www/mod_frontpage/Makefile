@@ -5,13 +5,14 @@
 # $FreeBSD$
 
 PORTNAME=	mod_frontpage
-PORTVERSION=	1.6.1
-PORTREVISION=	1
+PORTVERSION=	1.6.2
 CATEGORIES=	www
-MASTER_SITES=	http://people.freebsd.org/~mbr/distfiles/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/%SUBDIR%/mirfak/g}
+DISTFILES=	${PORTNAME}_mirfak-${PORTVERSION}.tar.gz
 
 MAINTAINER=	mbr@FreeBSD.org
 
+WRKSRC=		${WRKDIR}/${PORTNAME}_mirfak-${PORTVERSION}
 AP_PORT?=	apache13
 
 BUILD_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/${AP_PORT}
