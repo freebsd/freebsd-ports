@@ -7,9 +7,9 @@
 #
 
 PORTNAME=	logtool
-PORTVERSION=	1.0.6
+PORTVERSION=	1.0.7
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.xjack.org/logtool/logtool/
+MASTER_SITES=	http://xjack.org/logtool/logtool/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Parse syslog logfile into a palatable format
@@ -36,8 +36,8 @@ post-install:
 	@${CP} ${WRKSRC}/conf/yellow ${PREFIX}/etc/logtool/yellow.dist
 .if !defined(NOPORTDOCS)
 	@${ECHO_MSG} "===>   Installing logtool docs in ${PREFIX}/share/doc/logtool"
-	@${MKDIR} ${PREFIX}/share/doc/logtool && ${CHMOD} a+rx ${PREFIX}/share/doc/logtool
-	@${CP} -R ${WRKSRC}/doc/examples ${WRKSRC}/doc/logtool.txt ${PREFIX}/share/doc/logtool
+	@${MKDIR} ${DOCSDIR}
+	@${CP} -Rvf ${WRKSRC}/scripts ${WRKSRC}/doc/logtool.txt ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
