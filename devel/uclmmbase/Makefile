@@ -6,32 +6,38 @@
 #
 
 PORTNAME=	uclmmbase
-PORTVERSION=	1.2.8
+PORTVERSION=	1.2.16
 CATEGORIES=	devel ipv6
 MASTER_SITES=	http://www-mice.cs.ucl.ac.uk/multimedia/software/common/
 DISTNAME=	common-${PORTVERSION}
 
-MAINTAINER=	fenner@FreeBSD.org
+MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Common subroutines for UCL mbone applications
 
 WRKSRC=		${WRKDIR}/common
 GNU_CONFIGURE=	yes
+USE_OPENSSL=	yes
+
+post-configure:
+	@for f in ${FILESDIR}/*.bsd ; do \
+		${LN} -sf $$f ${WRKSRC}/src/`${BASENAME} $$f .bsd` ; \
+	done
+
+# Run the test, and fail if we hit an error. Don't fail in case of
+# the networking-error, which may be due IPv6 (or IPv4) being unavailable
+# or some network (mis)configuration:
+post-build test:
+	${WRKSRC}/tests/test-libcommon | ${AWK} '	\
+		/fail/ && $$2 != "networking" { code=1 }	\
+		{ print } END { exit code }'
+
+do-install:
+	cd ${WRKSRC}/src && ${MAKE_ENV} ${MAKE} install
 
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 400014
 CONFIGURE_ARGS+=	--enable-ipv6
 .endif
-
-INSTALL_HDRS=	base64.h config_win32.h config_unix.h crypt_random.h \
-		debug.h hmac.h mbus.h md5.h memory.h net_udp.h qfDES.h \
-		rtp.h uclconf.h util.h version.h
-
-do-install:
-	${INSTALL_DATA} ${WRKSRC}/src/libuclmmbase.a ${PREFIX}/lib
-	@${MKDIR} ${PREFIX}/include/uclmmbase
-.for file in ${INSTALL_HDRS}
-	${INSTALL_DATA} ${WRKSRC}/src/${file} ${PREFIX}/include/uclmmbase
-.endfor
 
 .include <bsd.port.post.mk>

@@ -5,6 +5,7 @@ include/uclmmbase/crypt_random.h
 include/uclmmbase/debug.h
 include/uclmmbase/hmac.h
 include/uclmmbase/mbus.h
+include/uclmmbase/mbus_parser.h
 include/uclmmbase/md5.h
 include/uclmmbase/memory.h
 include/uclmmbase/net_udp.h
@@ -14,4 +15,6 @@ include/uclmmbase/uclconf.h
 include/uclmmbase/util.h
 include/uclmmbase/version.h
 lib/libuclmmbase.a
+lib/libuclmmbase.so
+lib/libuclmmbase.so.12
 @dirrm include/uclmmbase

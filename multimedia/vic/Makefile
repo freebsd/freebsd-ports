@@ -6,22 +6,18 @@
 #
 
 PORTNAME=	vic
-PORTVERSION=	2.8.1.1.3
-PORTREVISION=	1
-CATEGORIES=	mbone tk83 ipv6
-MASTER_SITES=	http://www-mice.cs.ucl.ac.uk/multimedia/software/vic/2.8ucl-1.1.3/
-DISTNAME=	${PORTNAME}-2.8ucl-1.1.3
+PORTVERSION=	2.8.1.1.6
+CATEGORIES=	mbone tk84 ipv6
+MASTER_SITES=	http://www-mice.cs.ucl.ac.uk/multimedia/software/vic/2.8ucl1.1.6/
+DISTNAME=	${PORTNAME}-2.8ucl1.1.6
 
-MAINTAINER=	fenner@FreeBSD.org
+MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	MBONE video tool
 
-LIB_DEPENDS=	tk83.1:${PORTSDIR}/x11-toolkits/tk83
-BUILD_DEPENDS=  ${LOCALBASE}/lib/libuclmmbase.a:${PORTSDIR}/devel/uclmmbase
-
-WRKSRC=		${WRKDIR}/vic-2.8ucl-1.1.3/vic
+LIB_DEPENDS=	tk84.1:${PORTSDIR}/x11-toolkits/tk84 \
+		uclmmbase:${PORTSDIR}/devel/uclmmbase
 
 USE_AUTOCONF_VER=	213
-USE_PERL5_BUILD=yes
 USE_X_PREFIX=	yes
 CONFIGURE_ARGS= -x-libraries=${PREFIX}/lib \
 		-x-includes=${PREFIX}/include \
@@ -32,18 +28,8 @@ CONFIGURE_ARGS= -x-libraries=${PREFIX}/lib \
 		-enable-ipv6
 MAN1=		vic.1
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
-.endif
-
-pre-patch:
-	@${FIND} ${WRKSRC} -name "*.[c,h]" | ${XARGS} ${PERL} -pi -e \
-		's|malloc.h|stdlib.h|'
-
 post-install:
 	${STRIP_CMD} ${PREFIX}/bin/vic
 	${STRIP_CMD} ${PREFIX}/bin/histtolut
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

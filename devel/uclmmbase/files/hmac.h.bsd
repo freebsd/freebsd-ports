@@ -1,0 +1,4 @@
+#include <openssl/hmac.h>
+
+#define	hmac_md5(data, datalen, key, keylen, digest) \
+	HMAC(EVP_md5(), key, keylen, data, datalen, digest, NULL)

@@ -1,15 +1,30 @@
---- Makefile.in.orig	Thu Feb 17 21:59:08 2000
-+++ Makefile.in	Tue May  8 09:06:28 2001
-@@ -85,7 +85,7 @@
+--- Makefile.in	Wed Apr 30 07:50:17 2003
++++ Makefile.in	Thu Sep 23 18:42:54 2004
+@@ -58,7 +58,7 @@
+ INCLUDE_TK = @V_INCLUDE_TK@
+ INCLUDE_TCL = @V_INCLUDE_TCL@
+ INCLUDE_X11 = @V_INCLUDE_X11@
+-INCLUDE_MISC = @V_INCLUDE@ -I. -Icodec/tmndec -Icodec/tmn-x -Icodec/h263 -Irtp -Irender -Inet -Ivideo -Icodec -I../common/src
++INCLUDE_MISC = @V_INCLUDE@ -I. -Icodec/tmndec -Icodec/tmn-x -Icodec/h263 -Irtp -Irender -Inet -Ivideo -Icodec -I@prefix@/include/uclmmbase
+ 
+ STATIC = @V_STATIC@
+ MKDEP = ./mkdep
+@@ -89,12 +89,12 @@
  OBJ_XIL = @V_OBJ_XIL@
  OBJ_CRYPT = @V_OBJ_CRYPT@
  LIB = $(LIB_GRABBER) @V_LIB_TK@ @V_LIB_TCL@ @V_LIB_X11@ @V_LIB@ \
--	codec/tmndec/libh263.a codec/tmn-x/libh263coder.a ../common/libuclmmbase.a -lm
-+	codec/tmndec/libh263.a codec/tmn-x/libh263coder.a /usr/local/lib/libuclmmbase.a -lm
+-	codec/tmndec/libh263.a codec/tmn-x/libh263coder.a ../common/src/libuclmmbase.a -lm
++	codec/tmndec/libh263.a codec/tmn-x/libh263coder.a -L@prefix@/lib -luclmmbase -lm
  INCLUDE = $(INCLUDE_MISC) $(INCLUDE_GRABBER) $(INCLUDE_TK) $(INCLUDE_TCL) \
  	$(INCLUDE_X11) $(MD_INC) -Icodec/jpeg -Icodec/p64 -I.
  DEFINE = @V_DEFINE@ -DED_YBITS=$(ED_YBITS) -DSIGRET=@V_SIGRET@ -DNLAYER=8
-@@ -329,7 +329,7 @@
+ BFLAGS = $(DEFINE) $(INCLUDE)
+-CFLAGS = $(CCOPT) $(BFLAGS)
++CFLAGS += $(BFLAGS)
+ 
+ #
+ # Remember to add a dependency if you add any tcl sources here.
+@@ -333,7 +333,7 @@
  	 chown bin @prefix@/bin/vic
  	 chgrp bin @prefix@/bin/vic
  	 chmod 555 @prefix@/bin/vic
@@ -18,3 +33,13 @@
  	 cp histtolut @prefix@/bin/histtolut
  	 chown bin @prefix@/bin/histtolut
  	 chgrp bin @prefix@/bin/histtolut
+@@ -410,7 +410,7 @@
+ 
+ 
+ codec/tmn-x/libh263coder.a:
+-	(cd codec/tmn-x; $(MAKE) CC=$(CC) CCOPT="$(CCOPT)" )
++	(cd codec/tmn-x; $(MAKE) CC=$(CC) CCOPT="$(CFLAGS)" )
+ 
+ codec/tmndec/libh263.a:
+-	(cd codec/tmndec; $(MAKE) CC=$(CC) CCOPT="$(CCOPT)" -f Makefile.lib)
++	(cd codec/tmndec; $(MAKE) CC=$(CC) CCOPT="$(CFLAGS)" -f Makefile.lib)
