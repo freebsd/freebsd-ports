@@ -1,0 +1,22 @@
+--- Makefile.orig	Wed Aug 30 22:27:11 2000
++++ Makefile	Wed Sep 13 13:57:45 2000
+@@ -2,8 +2,8 @@
+ # Copyright (C) 2000 Cameron Edwards
+ 
+ # Change these to the default location of the pixmaps/wav files:
+-XPMSPATH = /usr/share/pixmaps/sonicmail
+-WAVSPATH = /usr/share/sound/sonicmail
++XPMSPATH = /usr/X11R6/share/pixmaps/sonicmail
++WAVSPATH = /usr/X11R6/share/sound/sonicmail
+ 
+ # Change to 1 to activate debug mode:
+ SONICMAIL_DEBUG = 0
+@@ -43,7 +43,7 @@
+ # Common compile options/link options here:
+ CFLAGS = -Wall $($(OSTYPE)_Flags) -O2 `gnome-config --cflags applets` $(DEFINES)
+ 
+-LFLAGS = `gnome-config --libs applets` `gtk-config --libs gthread` -lpthread
++LFLAGS = `gnome-config --libs applets` `gtk12-config --libs gthread`
+ 
+ # Define platform specific flags/libraries below:
+ Linux_Flags = -DLINUX

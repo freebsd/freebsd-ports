@@ -1,0 +1,18 @@
+bin/sonicmail
+etc/CORBA/servers/sonicmail.gnorba
+share/gnome/applets/Network/sonicmail.desktop
+share/pixmaps/sonicmail/Mail.xpm
+share/pixmaps/sonicmail/MailboxEmpty.xpm
+share/pixmaps/sonicmail/MailboxFull.xpm
+share/pixmaps/sonicmail/MailboxUnknown.xpm
+share/pixmaps/sonicmail/netscape-mailfull.xpm
+share/pixmaps/sonicmail/netscape-nomail.xpm
+share/pixmaps/sonicmail/ultrafina-back.xpm
+share/pixmaps/sonicmail/ultrafina-newmail.xpm
+share/pixmaps/sonicmail/ultrafina-nomail.xpm
+share/pixmaps/sonicmail/ultrafina-offline.xpm
+share/sound/sonicmail/Wooeep.wav
+share/sound/sonicmail/buzz.wav
+share/sound/sonicmail/default.wav
+@dirrm share/pixmaps/sonicmail
+@dirrm share/sound/sonicmail
