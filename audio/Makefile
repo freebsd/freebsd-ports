@@ -117,6 +117,7 @@
     SUBDIR += midimountain
     SUBDIR += mikmod
     SUBDIR += mixer.app
+    SUBDIR += mp32ogg
     SUBDIR += mp3_check
     SUBDIR += mp3asm
     SUBDIR += mp3blaster
