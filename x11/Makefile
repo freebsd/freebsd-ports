@@ -127,6 +127,7 @@
     SUBDIR += lupe
     SUBDIR += mgapdesk
     SUBDIR += mlterm
+    SUBDIR += mrxvt
     SUBDIR += multi-aterm
     SUBDIR += multi-gnome-terminal
     SUBDIR += mxico
