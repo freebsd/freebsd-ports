@@ -6,7 +6,8 @@
 #
 
 PORTNAME=	CDDB_get
-PORTVERSION=	2.11
+PORTVERSION=	2.2
+PORTEPOCH=	1
 CATEGORIES=	audio perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=../by-authors/id/F/FO/FONKIE
@@ -18,6 +19,5 @@ COMMENT=	A high-level interface to the Compact Disc Database
 PERL_CONFIGURE=	yes
 
 MAN3=		CDDB_get.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>
