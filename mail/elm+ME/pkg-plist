@@ -3,6 +3,7 @@ bin/answer
 bin/checkalias
 bin/elm
 bin/elmalias
+bin/elmstringconvert
 bin/fastmail
 bin/frm
 @exec ln -f %B/%f %B/nfrm
@@ -31,19 +32,6 @@ etc/rc.d/00elm.sh
 %%LIB_SUBDIR%%/elm.map.txt/8859-7.TXT
 %%LIB_SUBDIR%%/elm.map.txt/8859-8.TXT
 %%LIB_SUBDIR%%/elm.map.txt/8859-9.TXT
-@unexec if cmp -s %D/%%LIB_SUBDIR%%/elm.mimecharsets %D/%%LIB_SUBDIR%%/elm.mimecharsets-dist; then rm -f %D/%%LIB_SUBDIR%%/elm.mimecharsets; fi
-%%LIB_SUBDIR%%/elm.mimecharsets-dist
-@exec [ -f %B/elm.mimecharsets ] || cp %B/%f %B/elm.mimecharsets
-@unexec if cmp -s %D/%%LIB_SUBDIR%%/elm.mimetypes %D/%%LIB_SUBDIR%%/elm.mimetypes-dist; then rm -f %D/%%LIB_SUBDIR%%/elm.mimetypes; fi
-%%LIB_SUBDIR%%/elm.mimetypes-dist
-@exec [ -f %B/elm.mimetypes ] || cp %B/%f %B/elm.mimetypes
-@unexec if cmp -s %D/%%LIB_SUBDIR%%/elm.rc %D/%%LIB_SUBDIR%%/elm.rc-dist; then rm -f %D/%%LIB_SUBDIR%%/elm.rc; fi
-%%LIB_SUBDIR%%/elm.rc-dist
-@exec if [ -f %B/elm.rc ]; then %D/%%LIB_SUBDIR%%/elmrc-write -G -I; fi
-@exec [ -f %B/elm.rc ] || cp %B/%f %B/elm.rc
-@unexec if cmp -s %D/%%LIB_SUBDIR%%/elm.terminalinfo %D/%%LIB_SUBDIR%%/elm.terminalinfo-dist; then rm -f %D/%%LIB_SUBDIR%%/elm.terminalinfo; fi
-%%LIB_SUBDIR%%/elm.terminalinfo-dist
-@exec [ -f %B/elm.terminalinfo ] || cp %B/%f %B/elm.terminalinfo
 %%LIB_SUBDIR%%/elmcharset
 %%LIB_SUBDIR%%/elmrc-info
 %%LIB_SUBDIR%%/elmrc-write
@@ -65,6 +53,19 @@ etc/rc.d/00elm.sh
 %%PORTDOCS%%%%DOC_SUBDIR%%/Ref.fmtd.gz
 %%PORTDOCS%%%%DOC_SUBDIR%%/Users.fmtd.gz
 share/nls/C/elm2.4me+.cat
+@unexec if cmp -s %D/%%LIB_SUBDIR%%/elm.mimecharsets %D/%%LIB_SUBDIR%%/elm.mimecharsets-dist; then rm -f %D/%%LIB_SUBDIR%%/elm.mimecharsets; fi
+%%LIB_SUBDIR%%/elm.mimecharsets-dist
+@exec [ -f %B/elm.mimecharsets ] || cp %B/%f %B/elm.mimecharsets
+@unexec if cmp -s %D/%%LIB_SUBDIR%%/elm.mimetypes %D/%%LIB_SUBDIR%%/elm.mimetypes-dist; then rm -f %D/%%LIB_SUBDIR%%/elm.mimetypes; fi
+%%LIB_SUBDIR%%/elm.mimetypes-dist
+@exec [ -f %B/elm.mimetypes ] || cp %B/%f %B/elm.mimetypes
+@unexec if cmp -s %D/%%LIB_SUBDIR%%/elm.rc %D/%%LIB_SUBDIR%%/elm.rc-dist; then rm -f %D/%%LIB_SUBDIR%%/elm.rc; fi
+%%LIB_SUBDIR%%/elm.rc-dist
+@exec if [ -f %B/elm.rc ]; then %D/%%LIB_SUBDIR%%/elmrc-write -G -I; fi
+@exec [ -f %B/elm.rc ] || cp %B/%f %B/elm.rc
+@unexec if cmp -s %D/%%LIB_SUBDIR%%/elm.terminalinfo %D/%%LIB_SUBDIR%%/elm.terminalinfo-dist; then rm -f %D/%%LIB_SUBDIR%%/elm.terminalinfo; fi
+%%LIB_SUBDIR%%/elm.terminalinfo-dist
+@exec [ -f %B/elm.terminalinfo ] || cp %B/%f %B/elm.terminalinfo
 %%PORTDOCS%%@dirrm %%DOC_SUBDIR%%
 @dirrm %%SHLIB_SUBDIR%%
 @dirrm %%LIB_SUBDIR%%/elm.map.txt
