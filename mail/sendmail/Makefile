@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	sendmail
-PORTVERSION=	8.11.6
-PORTREVISION=	1
+PORTVERSION=	8.12.1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.sendmail.org/pub/sendmail/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/mail/sendmail/&,}
@@ -20,18 +19,17 @@ WCONF=		${WRKSRC}/devtools/Site
 SITE=		${FILESDIR}/site.config.m4.pre4
 PLIST=		${WRKDIR}/.PLIST.more
 DOCS=		KNOWNBUGS LICENSE PGPKEYS README RELEASE_NOTES \
-		sendmail/TRACEFLAGS
+		sendmail/TRACEFLAGS sendmail/SECURITY sendmail/TUNING
 MAN1=		mailq.1 newaliases.1 vacation.1
 MAN5=		aliases.5
 MAN8=		sendmail.8 mailstats.8 makemap.8 praliases.8 smrsh.8 \
-		mail.local.8 rmail.8
+		mail.local.8 rmail.8 editmap.8
 
 # Options to define Features:
 # SENDMAIL_WITHOUT_IPV6=yes
 # SENDMAIL_WITH_MILTER=yes
 # SENDMAIL_WITH_TLS=yes
 # SENDMAIL_WITH_SASL=yes
-# SENDMAIL_WITH_SFIO=yes
 # SENDMAIL_WITH_LDAP=yes
 .if defined(BATCH)
 # all on for package build
@@ -51,10 +49,6 @@ PKGNAMESUFFIX?=	-sasl
 PKGNAMESUFFIX?=	-tls
 USE_OPENSSL=	yes
 .endif
-.if defined(SENDMAIL_WITH_SFIO)
-PKGNAMESUFFIX?=	-sfio
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libsfio.a:${PORTSDIR}/devel/sfio
-.endif
 
 # Build site.config.m4
 .if exists(${DESTDIR}/etc/mail/mailer.conf)
@@ -62,9 +56,6 @@ SITE+=	${FILESDIR}/site.config.m4
 .if ! defined(SENDMAIL_WITHOUT_IPV6)
 SITE+=	${FILESDIR}/site.config.m4.ipv6
 .endif
-.endif
-.if defined(SENDMAIL_WITH_SFIO)
-SITE+=	${FILESDIR}/site.config.m4.sfio
 .endif
 .if defined(SENDMAIL_WITH_TLS) || defined(WITH_TLS)
 .if ! exists(${DESTDIR}/etc/mail/mailer.conf)
@@ -78,9 +69,6 @@ SITE+=	${FILESDIR}/site.config.m4.sasl
 .if defined(SENDMAIL_WITH_LDAP)
 SITE+=	${FILESDIR}/site.config.m4.ldap
 .endif
-.if defined(SENDMAIL_WITH_MILTER)
-SITE+=	${FILESDIR}/site.config.m4.milter
-.endif
 .if exists(${FILESDIR}/site.config.m4.local)
 SITE+=	${FILESDIR}/site.config.m4.local
 .endif
@@ -93,20 +81,23 @@ MANPREFIX?=	${DESTDIR}/usr/share
 PLIST_SUB+=	PREFIX=${PREFIX:S=${PREFIX}/==}
 SENDMAIL=	${PREFIX}/sbin/sendmail
 
+post-extract:
+	@${SED} -e "s=%%PREFIX%%=${PREFIX}=" ${FILESDIR}/sm-client.sh \
+		> ${WRKSRC}/sm-client.sh
+
 do-configure:
 	${SED} -e "s=%%PREFIX%%=${PREFIX}=" -e "s=%%LOCALBASE%%=${LOCALBASE}=" \
 		${SITE} > ${WCONF}/site.config.m4
 
-.if defined(SENDMAIL_WITH_MILTER)
 post-build:
 	( cd ${WRKSRC}/libmilter && ${MAKE} )
-.endif
 
 pre-install:
 	@${CAT} ${PKGDIR}/pkg-plist >${PLIST}
-.if defined(SENDMAIL_WITH_MILTER)
 	@${CAT} ${FILESDIR}/pkg-milter >>${PLIST}
-.endif
+	if ! pw groupshow smmsp; then pw groupadd smmsp -g 501; fi
+	if ! pw usershow smmsp; then pw useradd smmsp -g smmsp -u 501 \
+		-h - -d /nonexistent -s /nonexistent -c "Sendmail Queue"; fi
 .if !defined(NOPORTDOCS)
 	@cd ${WRKSRC} && find cf -type f | \
 	${AWK} '{print "share/sendmail/" $$1}' >>${PLIST}
@@ -125,7 +116,6 @@ pre-install:
 post-install:
 	( cd ${WRKSRC}/mail.local && ${MAKE} force-install )
 	( cd ${WRKSRC}/rmail && ${MAKE} force-install )
-.if defined(SENDMAIL_WITH_MILTER)
 	${MKDIR} ${PREFIX}/include/libmilter
 	${INSTALL_DATA} ${WRKSRC}/include/libmilter/mfapi.h \
 		${PREFIX}/include/libmilter/
@@ -135,7 +125,10 @@ post-install:
 	${INSTALL_DATA} \
 	 ${WRKSRC}/obj.`${WRKSRC}/devtools/bin/Build -A`/libsmutil/libsmutil.a \
 	 ${PREFIX}/lib/
-.endif
+	${INSTALL_DATA} ${WRKSRC}/sm-client.sh \
+		${PREFIX}/etc/rc.d/sm-client.sh.sample
+	${CHOWN} smmsp:smmsp /var/spool/clientmqueue
+	${CHMOD} 770 /var/spool/clientmqueue
 .for i in ${MAN8}
 	@${RM} -f ${MANPREFIX}/man/cat8/${i} ${MANPREFIX}/man/cat8/${i}.gz
 	${INSTALL_MAN} ${WRKSRC}/*/${i} ${MANPREFIX}/man/man8
@@ -161,10 +154,8 @@ post-install:
 		${PREFIX}/share/doc/sendmail/MAIL.LOCAL
 	${INSTALL_DATA} ${WRKSRC}/smrsh/README \
 		${PREFIX}/share/doc/sendmail/SMRSH
-.if defined(SENDMAIL_WITH_MILTER)
 	${INSTALL_DATA} ${WRKSRC}/libmilter/README \
 		${PREFIX}/share/doc/sendmail/MILTER
-.endif
 .endif
 .if exists(${DESTDIR}/etc/mail/mailer.conf)
 	@${SED} s!%%PREFIX%%!${PREFIX}!g ${PKGMESSAGE}
@@ -179,5 +170,12 @@ mailer.conf:
 	${MV} ${DESTDIR}/etc/mail/mailer.conf.new \
 		${DESTDIR}/etc/mail/mailer.conf
 .endif
+
+submit.cf:
+	${INSTALL_DATA} ${PREFIX}/share/sendmail/cf/cf/submit.mc \
+		${DESTDIR}/etc/mail/submit.mc
+	@( cd ${DESTDIR}/etc/mail && ${MAKE} \
+		SENDMAIL_CF_DIR=${PREFIX}/share/sendmail/cf \
+		SENDMAIL_MC=submit )
 
 .include <bsd.port.mk>
