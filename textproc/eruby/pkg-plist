@@ -1,4 +1,8 @@
 bin/eruby
+include/eruby.h
+lib/liberuby.so.1
+lib/liberuby.so
+lib/liberuby.a
 %%RUBY_DOCDIR%%/eruby/ChangeLog
 %%RUBY_DOCDIR%%/eruby/README.en
 %%RUBY_DOCDIR%%/eruby/ja/README.ja
