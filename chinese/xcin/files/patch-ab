@@ -1,5 +1,5 @@
---- Makefile.orig	Sun Feb 27 02:29:47 2000
-+++ Makefile	Sun Feb 27 02:30:56 2000
+--- script/Makefile.in.orig	Sun Apr  2 10:53:27 2000
++++ script/Makefile.in	Sun Apr  2 10:53:50 2000
 @@ -16,16 +16,16 @@
  
  
@@ -21,8 +21,8 @@
  
  install_doc:
  	(cd doc; make install)
---- input_tab/Makefile.in.orig	Sun Feb 27 02:31:40 2000
-+++ input_tab/Makefile.in	Sun Feb 27 02:31:55 2000
+--- input_tab/Makefile.in.orig	Sun Apr  2 10:53:57 2000
++++ input_tab/Makefile.in	Sun Apr  2 10:54:05 2000
 @@ -12,7 +12,7 @@
  
  
