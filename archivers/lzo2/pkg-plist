@@ -19,3 +19,4 @@ share/doc/lzo/LZO.FAQ
 share/doc/lzo/LZO.TXT
 share/doc/lzo/LZOAPI.TXT
 share/doc/lzo/LTEST.TXT
+@dirrm share/doc/lzo
