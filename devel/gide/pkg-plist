@@ -1,40 +1,32 @@
 bin/gdbio
 bin/gide
-include/gtkeditor.h
-include/gtkhint.h
-include/gtksctext.h
-lib/gide/plugins/%%VERSION%%/libgide_asciitable.a
 lib/gide/plugins/%%VERSION%%/libgide_asciitable.so
-lib/gide/plugins/%%VERSION%%/libgide_asciitable.so.0
-lib/gide/plugins/%%VERSION%%/libgide_calculator.a
+lib/gide/plugins/%%VERSION%%/libgide_browser.so
 lib/gide/plugins/%%VERSION%%/libgide_calculator.so
-lib/gide/plugins/%%VERSION%%/libgide_calculator.so.0
-lib/gide/plugins/%%VERSION%%/libgide_docstat.a
 lib/gide/plugins/%%VERSION%%/libgide_docstat.so
-lib/gide/plugins/%%VERSION%%/libgide_docstat.so.0
-lib/gide/plugins/%%VERSION%%/libgide_sample.a
 lib/gide/plugins/%%VERSION%%/libgide_sample.so
-lib/gide/plugins/%%VERSION%%/libgide_sample.so.0
-lib/gide/plugins/%%VERSION%%/libgide_text.a
 lib/gide/plugins/%%VERSION%%/libgide_text.so
-lib/gide/plugins/%%VERSION%%/libgide_text.so.0
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
-share/gIDE/extra/README
-share/gIDE/extra/compile_sets
-share/gIDE/extra/functions.highlight
-share/gIDE/extra/functions.ignore
-share/gIDE/extra/gide.conf
-share/gIDE/extra/gide.scm
-share/gIDE/extra/glob
-share/gIDE/extra/glob.scm
-share/gIDE/extra/patterns
-share/gIDE/extra/patterns.scm
 share/gnome/apps/Development/gIDE.desktop
-share/locale/fr/LC_MESSAGES/gIDE.mo
+share/gnome/gide/extra/README
+share/gnome/gide/extra/compile_sets
+share/gnome/gide/extra/functions.highlight
+share/gnome/gide/extra/functions.ignore
+share/gnome/gide/extra/gide.conf
+share/gnome/gide/extra/gide.scm
+share/gnome/gide/extra/glob
+share/gnome/gide/extra/glob.scm
+share/gnome/gide/extra/patterns
+share/gnome/gide/extra/patterns.scm
+share/gnome/gide/glade/file-search-replace.glade
+share/gnome/gide/glade/plugin-manager.glade
+share/gnome/gide/glade/search-replace.glade
+share/gnome/pixmaps/gide.png
+share/locale/fr/LC_MESSAGES/gide.mo
+share/locale/ja/LC_MESSAGES/gide.mo
+@dirrm share/gnome/gide/glade
+@dirrm share/gnome/gide/extra
+@dirrm share/gnome/gide
 @unexec rmdir %D/share/gnome/apps/Development 2>/dev/null || true
-@dirrm share/gIDE/extra
-@dirrm share/gIDE
 @dirrm lib/gide/plugins/%%VERSION%%
 @dirrm lib/gide/plugins
 @dirrm lib/gide
