@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_AFTERSTEP}
 MASTER_SITE_SUBDIR=	apps/ASFiles
 DISTNAME=	ASFiles-${PORTVERSION}
 
-MAINTAINER=	lukin@okbmei.msk.su
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X11 file manager. Dockable in WindowMaker
 
 LIB_DEPENDS=	Dnd.1:${PORTSDIR}/x11/libdnd
@@ -20,6 +20,7 @@ LIB_DEPENDS=	Dnd.1:${PORTSDIR}/x11/libdnd
 GNU_CONFIGURE=	yes
 USE_X_PREFIX=	yes
 USE_XPM=	yes
+USE_PERL5_BUILD=yes
 MAN1=	files.1
 MAN3=	regexp.3
 
