@@ -16,7 +16,7 @@ DISTFILES=	xchada01.lzh
 MAINTAINER=	motoyuki@FreeBSD.org
 COMMENT=	Display a dancing girl "ChaCha."
 
-BUILD_DEPENDS=	lha:${PORTSDIR}/archivers/lha
+EXTRACT_DEPENDS=lha:${PORTSDIR}/archivers/lha
 
 MAKEFILE=	makefile
 USE_X_PREFIX=	yes
