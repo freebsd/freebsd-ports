@@ -27,9 +27,9 @@ MANDIR=		${PREFIX}/man/man
 LIBDIR=		${PREFIX}/lib
 
 do-install:
-		${INSTALL_PROGRAM} ${WRKSRC}/c4 ${PREFIX}/bin/connect4
+		${INSTALL_PROGRAM} -m 2755 -o root -g games ${WRKSRC}/c4 ${PREFIX}/bin/connect4
 		${MKDIR} ${LIBDIR}/connect4
-		${INSTALL_DATA} -m 666 /dev/null ${LIBDIR}/connect4/scores
+		${INSTALL_DATA} -m 664 -o root -g games /dev/null ${LIBDIR}/connect4/scores
 		${INSTALL_MAN} ${FILESDIR}/connect4.6 ${MANDIR}6/
 
 .include <bsd.port.mk>
