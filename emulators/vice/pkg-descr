@@ -1,18 +1,15 @@
 Versatile Commodore 8-bit Emulator
-This is version 0.14.1 of VICE, the multi-platform PET/VIC20/C64 emulator.
+VICE, the multi-platform C64, C128, VIC20, PET and CBM-II emulator.
 
 The following programs are included:
   - x64, a C64 emulator;
+  - x128, a C128 emulator;
   - xvic, a VIC20 emulator;
   - xpet, a PET emulator;
+  - xcbm2, a CBM=II emulator;
   - c1541, a stand-alone disk image maintenance utility;
   - petcat, a CBM BASIC de-tokenizer;
-  - recomment, an iterative database driven reassembler;
 
-WWW: http://www.tu-chemnitz.de/~fachat/vice/vice.html
+WWW: http://www.cs.cmu.edu/~dsladic/vice/vice.html
 
-VICE is Copyright (c) 1993-1998 Ettore Perazzoli, Teemu Rantanen,
-André Fachat, Jouko Valta, Jarkko Sonninen and Daniel Sladic.
-
-The ROM files in the `C64', `PET' and `VIC20' directories are
-Copyright (c) by Commodore Business Machines.
+The ROM files are Copyright by Commodore Business Machines.
