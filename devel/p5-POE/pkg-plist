@@ -18,6 +18,7 @@ lib/perl5/site_perl/%%PERL_VER%%/POE/Filter/Stream.pm
 lib/perl5/site_perl/%%PERL_VER%%/POE/Kernel.pm
 lib/perl5/site_perl/%%PERL_VER%%/POE/Kernel/Event.pm
 lib/perl5/site_perl/%%PERL_VER%%/POE/Kernel/Gtk.pm
+lib/perl5/site_perl/%%PERL_VER%%/POE/Kernel/Poll.pm
 lib/perl5/site_perl/%%PERL_VER%%/POE/Kernel/Select.pm
 lib/perl5/site_perl/%%PERL_VER%%/POE/Kernel/Tk.pm
 lib/perl5/site_perl/%%PERL_VER%%/POE/NFA.pm
