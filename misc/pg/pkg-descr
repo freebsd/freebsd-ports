@@ -1,0 +1,8 @@
+The pg command originates from System V and is a text file browser,
+like more. It lets the user scroll forward and backward even if input
+comes from a pipe. This free clone is intended to comply to the SVID 4
+and SUSv2 specifications of this utility; it can handle large files as
+well as files that contain multibyte characters.
+
+- George Reid
+greid@ukug.uk.freebsd.org

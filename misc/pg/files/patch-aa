@@ -1,0 +1,15 @@
+--- makefile.orig	Wed Jan  3 05:06:51 2001
++++ makefile	Wed Jan  3 13:37:36 2001
+@@ -3,11 +3,10 @@
+ # CONFIGURATION
+ 
+ #WARN	= -Wall -Wno-parentheses -Wno-implicit-int -Wshadow
+-PREFIX	= /usr/local
+ BINDIR	= $(PREFIX)/bin
+ MANDIR	= $(PREFIX)/man
+ MANSECT	= $(MANDIR)/man1
+-INSTALL	= /usr/ucb/install
++INSTALL	= /usr/bin/install
+ # For Linux, enable both of the following flags.
+ # For Solaris 8, disable SUSF (other versions untested).
+ SUSF	= -D_XOPEN_SOURCE=500L

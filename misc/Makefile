@@ -115,6 +115,7 @@
     SUBDIR += p5-Locale-Codes
     SUBDIR += peq
     SUBDIR += pdmenu
+    SUBDIR += pg
     SUBDIR += pinfo
     SUBDIR += pkg_tarup
     SUBDIR += porteasy

@@ -1,0 +1,84 @@
+--- pg.c.orig	Wed Jan  3 13:29:40 2001
++++ pg.c	Wed Jan  3 13:34:48 2001
+@@ -59,8 +59,6 @@
+ #include <signal.h>
+ #include <setjmp.h>
+ #include <locale.h>
+-#include <wctype.h>
+-#include <wchar.h>
+ #ifndef	sun
+ #include <curses.h>
+ #include <term.h>
+@@ -786,7 +784,7 @@
+ 		if ((wl = xmbstowcs(wbuf, t, sizeof wbuf)) == -1)
+ 			return;
+ 		while (wl--) {
+-			if (!iswprint(*wp) && *wp != L'\n' && *wp != L'\r'
++			if (!isprint(*wp) && *wp != L'\n' && *wp != L'\r'
+ 					&& *wp != L'\b' && *wp != L'\t')
+ 				*wp = L'?';
+ 			wp++;
+@@ -988,7 +986,6 @@
+ 					 * We got a signal.
+ 					 */
+ 					canjump = 0;
+-					sigrelse(sig);
+ 					fseeko(fbuf, pos, SEEK_SET);
+ 					*b = '\0';
+ 					dline = pagelen;
+@@ -1086,7 +1083,6 @@
+ 				 * We got a signal.
+ 				 */
+ 				canjump = 0;
+-				sigrelse(sig);
+ 				dline = pagelen;
+ 			} else {
+ 				p = endline(ttycols, b);
+@@ -1386,8 +1382,8 @@
+ 					write(STDOUT_FILENO, cmd.cmdline,
+ 							strlen(cmd.cmdline));
+ 					write(STDOUT_FILENO, "\n", 1);
+-					sigset(SIGINT, SIG_IGN);
+-					sigset(SIGQUIT, SIG_IGN);
++					signal(SIGINT, SIG_IGN);
++					signal(SIGQUIT, SIG_IGN);
+ 					switch (cpid = fork()) {
+ 					case 0:
+ 						p = getenv("SHELL");
+@@ -1402,9 +1398,9 @@
+ 						} else {
+ 							fclose(f);
+ 						}
+-						sigset(SIGINT, oldint);
+-						sigset(SIGQUIT, oldquit);
+-						sigset(SIGTERM, oldterm);
++						signal(SIGINT, oldint);
++						signal(SIGQUIT, oldquit);
++						signal(SIGTERM, oldterm);
+ 						execl(p, p, "-c",
+ 							cmd.cmdline + 1, NULL);
+ 						eof = errno;
+@@ -1420,8 +1416,8 @@
+ 					default:
+ 						while (wait(NULL) != cpid);
+ 					}
+-					sigset(SIGINT, sighandler);
+-					sigset(SIGQUIT, sighandler);
++					signal(SIGINT, sighandler);
++					signal(SIGQUIT, sighandler);
+ 					mesg("!\n");
+ 				}
+ 				goto newcmd;
+@@ -1504,9 +1500,9 @@
+ 	progname = argv[0];
+ 	if (tcgetattr(STDOUT_FILENO, &otio) == 0) {
+ 		ontty = 1;
+-		oldint = sigset(SIGINT, sighandler);
+-		oldquit = sigset(SIGQUIT, sighandler);
+-		oldterm = sigset(SIGTERM, sighandler);
++		oldint = signal(SIGINT, sighandler);
++		oldquit = signal(SIGQUIT, sighandler);
++		oldterm = signal(SIGTERM, sighandler);
+ 		setlocale(LC_CTYPE, "");
+ 		setlocale(LC_COLLATE, "");
+ 		tty = ttyname(STDOUT_FILENO);
