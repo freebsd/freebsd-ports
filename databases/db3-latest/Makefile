@@ -7,10 +7,17 @@
 
 PORTNAME=	db3
 PORTVERSION=	3.3.11
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://www.sleepycat.com/update/${PORTVERSION}/
 DISTNAME=	db-${PORTVERSION}
 DIST_SUBDIR=	bdb
+
+PATCH_SITES=	${MASTER_SITES}
+.for p in 1 2
+PATCHFILES+=	patch.${PORTVERSION}.${p}
+.endfor
+PATCH_DIST_STRIP=	-d ${WRKDIR}/${DISTNAME}
 
 MAINTAINER=	ozz@FreeBSD.org.ru
 
