@@ -1,4 +1,4 @@
 libexec/sredird
-share/doc/sredird/README
-share/doc/sredird/COPYING
-@dirrm share/doc/sredird
+%%PORTDOCS%%share/doc/sredird/README
+%%PORTDOCS%%share/doc/sredird/COPYING
+%%PORTDOCS%%@dirrm share/doc/sredird
