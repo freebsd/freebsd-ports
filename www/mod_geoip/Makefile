@@ -21,10 +21,6 @@ LIB_DEPENDS=	GeoIP.3:${PORTSDIR}/net/GeoIP
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile"
-.endif
-
 APXS?=		${LOCALBASE}/sbin/apxs
 APACHE_PORT?=	${PORTSDIR}/www/apache13
 
