@@ -15,6 +15,8 @@ DISTNAME=	${PORTNAME}2
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An STL Container Initialization Library
 
+BROKEN=		"Does not fetch (size mismatch)"
+
 USE_ZIP=	yes
 USE_REINPLACE=	yes
 NO_BUILD=	yes
