@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tmail
-PORTVERSION=	0.10.4
+PORTVERSION=	0.10.5
 CATEGORIES=	mail ruby
 MASTER_SITES=	http://www.loveruby.net/archive/%SUBDIR%/ \
 		http://www.ruby-lang.org/~knu/backup/
