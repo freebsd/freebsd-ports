@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	alex
-PORTVERSION=	1.1
+PORTVERSION=	2.0
 CATEGORIES=	devel haskell
 MASTER_SITES=	http://www.syntaxpolice.org/~ijones/alex/
 DISTNAME=	${PORTNAME}
@@ -13,7 +13,7 @@ DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
 PKGNAMEPREFIX=	hs-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	obraun@FreeBSD.org
 COMMENT=	Alex is a Lex-like package for generating Haskell scanners
 
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
