@@ -14,6 +14,8 @@ DISTNAME=	jm-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
+LIB_DEPENDS=	gnet.0:${PORTSDIR}/net/gnet
+
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	yes
