@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	mozilla
-PORTVERSION=	1.4b
+PORTVERSION=	1.5a
 PORTREVISION?=	0
 PORTEPOCH?=	1
 CATEGORIES?=	www
@@ -28,7 +28,6 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		freetype.9:${PORTSDIR}/print/freetype2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-IGNORE=		"www/mozilla has been updated to 1.4"
 
 MOZILLA?=	mozilla-devel
 MOZ_SUFX=	-devel
