@@ -171,6 +171,7 @@
     SUBDIR += timidity++-xskin
     SUBDIR += tosha
     SUBDIR += tracker
+    SUBDIR += umix
     SUBDIR += vorbis
     SUBDIR += vorbis-tools
     SUBDIR += waveplay

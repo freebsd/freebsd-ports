@@ -1,0 +1,6 @@
+Umix is an advanced tool for adjusting soundcard mixers. You can
+adjust your mixer either from the command line or from a fullscreen
+curses user interface. It was designed as a replacement for Aumix.
+
+- George Reid
+greid@ukug.uk.freebsd.org
