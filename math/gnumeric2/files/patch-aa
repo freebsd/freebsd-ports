@@ -1,5 +1,5 @@
---- configure.orig	Fri Nov 19 15:59:10 1999
-+++ configure	Sat Nov 27 14:06:34 1999
+--- configure.orig	Thu Dec 30 18:02:16 1999
++++ configure	Fri Dec 31 12:29:33 1999
 @@ -2790,7 +2790,7 @@
  fi
  if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
@@ -27,7 +27,7 @@
  	
  else
    echo "$ac_t""no" 1>&6
-@@ -5602,15 +5602,15 @@
+@@ -5602,15 +5602,16 @@
  fi
  
          
@@ -37,7 +37,8 @@
          INSTOBJEXT=.mo
          DATADIRNAME=share
 -	INTLDEPS='$(top_builddir)/intl/libintl.a'
-+	INTLDEPS='-lintl'
++#	INTLDEPS='$(top_builddir)/intl/libintl.a'
++	INTLDEPS="-lintl"
  	INTLLIBS=$INTLDEPS
  	LIBS=`echo $LIBS | sed -e 's/-lintl//'`
 -        nls_cv_header_intl=intl/libintl.h
@@ -47,30 +48,34 @@
        fi
  
              if test "$XGETTEXT" != ":"; then
-@@ -6110,7 +6110,7 @@
+@@ -6110,7 +6111,7 @@
  echo "configure:6111: checking for GnomePrint libraries" >&5
  if gnome-config --libs print > /dev/null 2>&1; then 
      echo "$ac_t""found" 1>&6
 -    . `gnome-config --libdir`/printConf.sh
-+    . `gnome-config --sysconfdir`/printConf.sh
++    . `$GNOME_CONFIG --sysconfdir`/printConf.sh
      echo $ac_n "checking for GnomePrint >= 0.8""... $ac_c" 1>&6
  echo "configure:6116: checking for GnomePrint >= 0.8" >&5
      case x$MODULE_VERSION in
-@@ -6125,14 +6125,14 @@
+@@ -6125,8 +6126,8 @@
  
- echo $ac_n "checking for Glade libraries""... $ac_c" 1>&6
- echo "configure:6128: checking for Glade libraries" >&5
+ echo $ac_n "checking for Glade libraries >= 0.11""... $ac_c" 1>&6
+ echo "configure:6128: checking for Glade libraries >= 0.11" >&5
 -if gnome-config --libs libglade > /dev/null 2>&1; then 
+-	vers=`gnome-config --modversion libglade`
 +if libglade-config --libs > /dev/null 2>&1; then 
-     echo "$ac_t""found" 1>&6
- else
++	vers=`libglade-config --version | sed -e 's/ /-/'`
+ 	case $vers
+ 	in
+ 	    libglade-0.1[123456789]) echo "$ac_t""found" 1>&6 ;;
+@@ -6136,8 +6137,8 @@
      { echo "configure: error: Did not find libGlade installed" 1>&2; exit 1; }
  fi
  
 -EXTRA_GNOME_LIBS=`gnome-config --libs gnomeui print libglade $bonobo $gb`
 -EXTRA_GNOME_CFLAGS=`gnome-config --cflags gnomeui print libglade $bonobo $gb`
-+EXTRA_GNOME_LIBS="`gnome-config --libs gnomeui print $bonobo $gb` `libglade-config --libs gnome`"
-+EXTRA_GNOME_CFLAGS="`gnome-config --cflags gnomeui print $bonobo $gb` `libglade-config --cflags gnome`"
++EXTRA_GNOME_LIBS="`$GNOME_CONFIG --libs gnomeui print $bonobo $gb` `libglade-config --libs gnome`"
++EXTRA_GNOME_CFLAGS="`$GNOME_CONFIG --cflags gnomeui print $bonobo $gb` `libglade-config --cflags gnome`"
  
  
  

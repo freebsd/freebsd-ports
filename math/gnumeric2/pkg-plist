@@ -15,19 +15,20 @@ share/gnome/gnumeric/glade/print.glade
 share/gnome/gnumeric/glade/row-height.glade
 share/gnome/gnumeric/glade/sheet-rename.glade
 share/gnome/gnumeric/glade/summary.glade
+share/gnome/gnumeric/guile/functions.scm
 share/gnome/gnumeric/guile/gnumeric_startup.scm
-share/gnome/gnumeric/plugins/libcsv.so
-share/gnome/gnumeric/plugins/libdif.so
-share/gnome/gnumeric/plugins/libgnumguile.so
-share/gnome/gnumeric/plugins/libhtml.so
-share/gnome/gnumeric/plugins/liblotus.so
-share/gnome/gnumeric/plugins/liboleo.so
-share/gnome/gnumeric/plugins/libpython.so
-share/gnome/gnumeric/plugins/libsc.so
-share/gnome/gnumeric/plugins/libstat.so
-share/gnome/gnumeric/plugins/libsylk.so
-share/gnome/gnumeric/plugins/libtext.so
-share/gnome/gnumeric/plugins/libxbase.so
+share/gnome/gnumeric/plugins/%%GNUMERIC_REV%%/libgnum_csv.so
+share/gnome/gnumeric/plugins/%%GNUMERIC_REV%%/libgnum_dif.so
+share/gnome/gnumeric/plugins/%%GNUMERIC_REV%%/libgnum_guile.so
+share/gnome/gnumeric/plugins/%%GNUMERIC_REV%%/libgnum_html.so
+share/gnome/gnumeric/plugins/%%GNUMERIC_REV%%/libgnum_lotus.so
+share/gnome/gnumeric/plugins/%%GNUMERIC_REV%%/libgnum_oleo.so
+share/gnome/gnumeric/plugins/%%GNUMERIC_REV%%/libgnum_python.so
+share/gnome/gnumeric/plugins/%%GNUMERIC_REV%%/libgnum_sc.so
+share/gnome/gnumeric/plugins/%%GNUMERIC_REV%%/libgnum_stat.so
+share/gnome/gnumeric/plugins/%%GNUMERIC_REV%%/libgnum_sylk.so
+share/gnome/gnumeric/plugins/%%GNUMERIC_REV%%/libgnum_text.so
+share/gnome/gnumeric/plugins/%%GNUMERIC_REV%%/libgnum_xbase.so
 share/gnome/gnumeric/python/gnumeric_startup.py
 share/gnome/idl/Gnumeric.idl
 share/gnome/idl/Gnumeric-value.idl
@@ -183,9 +184,11 @@ share/locale/pt_BR/LC_MESSAGES/gnumeric.mo
 share/locale/ru/LC_MESSAGES/gnumeric.mo
 share/locale/sk/LC_MESSAGES/gnumeric.mo
 share/locale/sv/LC_MESSAGES/gnumeric.mo
+share/locale/uk/LC_MESSAGES/gnumeric.mo
 share/locale/zh_TW.Big5/LC_MESSAGES/gnumeric.mo
 @dirrm share/gnome/gnumeric/guile
 @dirrm share/gnome/gnumeric/glade
+@dirrm share/gnome/gnumeric/plugins/%%GNUMERIC_REV%%/
 @dirrm share/gnome/gnumeric/plugins
 @dirrm share/gnome/gnumeric/python
 @dirrm share/gnome/gnumeric
