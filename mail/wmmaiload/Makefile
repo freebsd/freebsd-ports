@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	wmmaiload
-PORTVERSION=	0.10.0
-PORTREVISION=	1
+PORTVERSION=	1.0.2
 CATEGORIES=	mail windowmaker
 MASTER_SITES=	http://tnemeth.free.fr/projets/programmes/
 
@@ -21,15 +20,11 @@ USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-prefix=""
 
-MAN1=		${PORTNAME}.1
-PLIST_FILES=	bin/wmmaiload
+MAN1=		${PORTNAME}.1 ${PORTNAME}-config.1
+PLIST_FILES=	bin/wmmaiload bin/wmmaiload-config
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|gtk-config|${GTK_CONFIG}|g' \
 		${WRKSRC}/wmmaiload-config/Makefile.in
-
-do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/src/wmmaiload ${PREFIX}/bin
-	@${INSTALL_MAN} ${WRKSRC}/doc/wmmaiload.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>
