@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnutls
-PORTVERSION=	1.0.20
+PORTVERSION=	1.0.21
 CATEGORIES=	security net
 MASTER_SITES=	${MASTER_SITE_GNUPG} \
 	http://www.mirrors.wiretapped.net/security/network-security/gnutls/ \
@@ -18,17 +18,23 @@ MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	GNU Transport Layer Security library
 
 LIB_DEPENDS=	gcrypt.12:${PORTSDIR}/security/libgcrypt \
-		gpg-error.1:${PORTSDIR}/security/libgpg-error \
-		opencdk.8:${PORTSDIR}/security/opencdk \
-		tasn1.2:${PORTSDIR}/security/libtasn1
+		gpg-error.1:${PORTSDIR}/security/libgpg-error
 
-CONFLICTS=	gnutls-devel-*
+.if defined(WITH_OPENCDK) || exists(${LOCALBASE}/lib/libopencdk.so.8)
+LIB_DEPENDS+=	opencdk.8:${PORTSDIR}/security/opencdk
+.endif
+
+.if defined(WITH_LIBTASN1) || exists(${LOCALBASE}/lib/libtasn1.so.2)
+LIB_DEPENDS+=	tasn1.2:${PORTSDIR}/security/libtasn1
+.endif
+
+CONFLICTS=	gnutls-devel-[0-9]*
 
 USE_GPG?=	yes
-SIG_SUFFIX=	.sig.asc
+SIG_SUFFIX=	.sig
 USE_ICONV=	yes
 USE_GETTEXT=	yes
-USE_INC_LIBTOOL_VER=15
+USE_INC_LIBTOOL_VER=	15
 INSTALLS_SHLIB=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
