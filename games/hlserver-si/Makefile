@@ -11,7 +11,6 @@ MASTER_SITES=	http://ftp2.gamespy.com/pub/cdrom/planethalflife/si/ \
 		ftp://208.186.102.207/planethalflife/si/ \
 		ftp://fileplanet.ngi.it/fileplanet2/planethalflife/si/
 DISTNAME=	${PORTNAME}${PORTVERSION}-linux
-CATEGORIES=	games linux
 
 MAINTAINER=	lioux@FreeBSD.org
 
