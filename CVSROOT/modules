@@ -214,7 +214,6 @@ acroread5-commfont	ports/print/acroread5-commfont
 acs		ports/cad/acs
 act		ports/biology/act
 actx		ports/games/actx
-adabroker	ports/devel/adabroker
 adacurses	ports/devel/adacurses
 adamem		ports/emulators/adamem
 adasockets	ports/net/adasockets

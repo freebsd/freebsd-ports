@@ -10,7 +10,6 @@
     SUBDIR += aap
     SUBDIR += ac-archive
     SUBDIR += acpicatools
-    SUBDIR += adabroker
     SUBDIR += adacurses
     SUBDIR += agenda-headers
     SUBDIR += agenda-libs
