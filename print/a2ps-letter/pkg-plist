@@ -1,3 +1,4 @@
+share/a2ps/README
 share/a2ps/ps/base.ps
 share/a2ps/ps/bw.pro
 share/a2ps/ps/gray.pro
@@ -99,18 +100,24 @@ share/a2ps/sheets/a2psrc.ssh
 share/a2ps/sheets/ada.ssh
 share/a2ps/sheets/cpp.ssh
 share/a2ps/sheets/c.ssh
+share/a2ps/sheets/csh.ssh
 share/a2ps/sheets/caml.ssh
 share/a2ps/sheets/chlog.ssh
 share/a2ps/sheets/claire.ssh
 share/a2ps/sheets/clisp.ssh
 share/a2ps/sheets/coqv.ssh
 share/a2ps/sheets/eiffel.ssh
+share/a2ps/sheets/elisp.ssh
+share/a2ps/sheets/eps.ssh
+share/a2ps/sheets/gnuc.ssh
 share/a2ps/sheets/fortran.ssh
 share/a2ps/sheets/initora.ssh
 share/a2ps/sheets/java.ssh
 share/a2ps/sheets/lace.ssh
 share/a2ps/sheets/lex.ssh
+share/a2ps/sheets/make.ssh
 share/a2ps/sheets/mail.ssh
+share/a2ps/sheets/modula2.ssh
 share/a2ps/sheets/modula3.ssh
 share/a2ps/sheets/o2c.ssh
 share/a2ps/sheets/oberon.ssh
@@ -120,6 +127,7 @@ share/a2ps/sheets/oracle.ssh
 share/a2ps/sheets/pascal.ssh
 share/a2ps/sheets/perl.ssh
 share/a2ps/sheets/plsql.ssh
+share/a2ps/sheets/ppd.ssh
 share/a2ps/sheets/ps.ssh
 share/a2ps/sheets/pre.ssh
 share/a2ps/sheets/prolog.ssh
@@ -132,6 +140,7 @@ share/a2ps/sheets/sh.ssh
 share/a2ps/sheets/sql.ssh
 share/a2ps/sheets/sql92.ssh
 share/a2ps/sheets/ssh.ssh
+share/a2ps/sheets/texinfo.ssh
 share/a2ps/sheets/tcl.ssh
 share/a2ps/sheets/tex.ssh
 share/a2ps/sheets/tk.ssh
@@ -155,23 +164,39 @@ share/a2ps/encoding/latin4.edf
 share/a2ps/encoding/latin5.edf
 share/a2ps/encoding/latin6.edf
 share/a2ps/encoding/mac.edf
-share/emacs/site-lisp/make-regexp.el
-share/emacs/site-lisp/a2ps.el
-lib/liba2ps.so.0.2
+share/a2ps/printers/README
+share/a2ps/printers/level1.ppd
+share/a2ps/printers/level2.ppd
+share/a2ps/printers/printers.map
+lib/liba2ps.so.0.3
 @exec /sbin/ldconfig -m %B
 lib/liba2ps.a
 etc/a2ps.cfg
 bin/ogonkify
 bin/a2ps
 bin/composite
+@unexec install-info --delete %D/info/a2ps.info %D/info/dir
+@unexec install-info --delete %D/info/ogonkify.info %D/info/dir
+@unexec install-info --delete %D/info/regex.info %D/info/dir
 info/a2ps.info
 info/ogonkify.info
 info/a2ps.info-1
 info/a2ps.info-2
 info/a2ps.info-3
+info/a2ps.info-4
 info/regex.info
 info/regex.info-1
 info/regex.info-2
 info/regex.info-3
+@exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
+@exec install-info %D/info/a2ps.info %D/info/dir
+@exec install-info %D/info/ogonkify.info %D/info/dir
+@exec install-info %D/info/regex.info %D/info/dir
 man/man1/a2ps.1.gz
 man/man1/ogonkify.1.gz
+@dirrm share/a2ps/afm
+@dirrm share/a2ps/encoding
+@dirrm share/a2ps/printers
+@dirrm share/a2ps/ps
+@dirrm share/a2ps/sheets
+@dirrm share/a2ps
