@@ -7,6 +7,7 @@
 
 PORTNAME=	netustad
 PORTVERSION=	0.3.1
+PORTREVISION=	1
 CATEGORIES=	net-mgmt security
 MASTER_SITES=	http://www.enderunix.org/netustad/
 
@@ -21,7 +22,15 @@ USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 OPTIONS=	SSL "Use netUstad with SSL support" on
 
-.if defined(WITH_SSL)
+PORT_DBDIR?=	/var/db/ports
+LATEST_LINK=    ${PORTNAME}${PKGNAMESUFFIX}
+OPTIONSFILE?=   ${PORT_DBDIR}/${LATEST_LINK}/options
+
+.if exists(${OPTIONSFILE})
+.include "${OPTIONSFILE}"
+.endif
+
+.if !defined(WITHOUT_SSL)
 USE_OPENSSL=	yes
 .else
 CONFIGURE_ARGS+=	--without-ssl
