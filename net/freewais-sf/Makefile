@@ -3,13 +3,15 @@
 # Date created:		19 November 1996
 # Whom:			Pedro Giffuni
 #
-# $Id: Makefile,v 1.5 1998/02/20 18:39:56 steve Exp $
+# $Id: Makefile,v 1.6 1998/11/28 05:39:01 asami Exp $
 #
 
 DISTNAME=	freeWAIS-sf-2.1.2
 PKGNAME=	freewais-sf-2.1.2
 CATEGORIES=	net databases
-MASTER_SITES=   ftp://ftp.wsct.wsc.com/pub/freeWAIS-sf/freeWAIS-sf-2.1/
+MASTER_SITES=   ftp://ftp.wsct.wsc.com/pub/freeWAIS-sf/freeWAIS-sf-2.1/ \
+		ftp://ftp.u-aizu.ac.jp/pub/net/wais/ \
+		ftp://ftp.bio.indiana.edu/util/wais/
 
 MAINTAINER=	giffunip@asme.org
 
