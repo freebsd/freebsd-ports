@@ -1,0 +1,70 @@
+*** sound.c.orig	Sun Apr 13 08:24:24 1997
+--- sound.c	Mon May 26 17:11:53 1997
+***************
+*** 49,54 ****
+--- 49,103 ----
+  }
+  
+  #else
++ #ifdef __FreeBSD__
++ #include <sys/param.h>
++ #include <sys/stat.h>
++ #include <err.h>
++ #include <sys/types.h>
++ #include <sys/dir.h>
++ #include <sys/file.h>
++ #include <machine/soundcard.h>
++ #include <stdlib.h>
++ #include <string.h>
++ #include <unistd.h>
++ #include "typist.h"
++ 
++ #define	AUDIO_DEVICE		"/dev/audio"
++ char fullName[MAXNAMLEN + 1];
++ 
++ void sndbeep_init(dir)
++ 	char *dir;
++ {
++     strcpy(fullName, dir);
++     strcat(fullName, "/");
++     strcat(fullName, CLICKSND);
++ }
++ 
++ 
++ void sndbeep() /* FreeBSD */
++ {
++     register int sfile, sdev, nr;
++     static int bsize;
++     static char *buf;
++     struct stat sbuf;
++ 
++     if ((sfile = open(fullName, O_RDONLY)) < 0)
++ 	return;
++     if ((sdev = open(AUDIO_DEVICE, O_RDWR)) < 0) {
++ 	return;
++     }
++     ioctl(sdev, SNDCTL_DSP_RESET, 0);
++     fstat(sfile, &sbuf);
++     bsize = MAX(sbuf.st_blksize, 1024);
++     buf = malloc((u_int)bsize);
++     if ( (nr = read(sfile, buf, bsize)) > 0)
++ 	write(sdev, buf, nr);
++     ioctl(sdev, SNDCTL_DSP_SYNC, 0);
++     free(buf);
++     close(sdev); 
++     close(sfile);
++ }
++ #else /* FreeBSD */
+  
+  void sndbeep_init()
+  {
+***************
+*** 59,64 ****
+--- 108,114 ----
+      putchar('\007');
+      fflush(stdout);
+  }
++ #endif
+  #endif /* NeXT */
+  
+  #endif /* SILENT */

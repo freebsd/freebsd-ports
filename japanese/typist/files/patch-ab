@@ -1,0 +1,65 @@
+Return-Path: taoka@infonets.hiroshima-u.ac.jp 
+Return-Path: taoka@infonets.hiroshima-u.ac.jp
+Received: from shonan.sfc.wide.ad.jp (shonan.sfc.wide.ad.jp [203.178.140.7]) by bourbon.sfc.wide.ad.jp (8.8.5/3.5Wpl104/21/97) with ESMTP id LAA28293 for <max@bourbon.sfc.wide.ad.jp>; Tue, 24 Jun 1997 11:21:48 +0900 (JST)
+Received: from sh.wide.ad.jp (sh.wide.ad.jp [133.4.11.11]) by shonan.sfc.wide.ad.jp (8.8.5+2.7Wbeta5/3.3Wb4-shonan) with ESMTP id LAA01566 for <max@sfc.wide.ad.jp>; Tue, 24 Jun 1997 11:24:06 +0900 (JST)
+Received: from diana.infonets.hiroshima-u.ac.jp (diana.infonets.hiroshima-u.ac.jp [133.41.33.53]) by sh.wide.ad.jp (8.8.5+2.7Wbeta5/6.0) with ESMTP id LAA14491 for <max@wide.ad.jp>; Tue, 24 Jun 1997 11:24:05 +0900 (JST)
+Received: from cal.infonets.hiroshima-u.ac.jp (cal.infonets.hiroshima-u.ac.jp [133.41.33.61]) by diana.infonets.hiroshima-u.ac.jp (8.8.5/3.5Wpl5) with ESMTP id LAA23813 for <max@wide.ad.jp>; Tue, 24 Jun 1997 11:24:04 +0900 (JST)
+Received: from cal.infonets.hiroshima-u.ac.jp (localhost.infonets.hiroshima-u.ac.jp [127.0.0.1]) by cal.infonets.hiroshima-u.ac.jp (8.8.5/3.5Wpl5) with ESMTP id LAA05923 for <max@wide.ad.jp>; Tue, 24 Jun 1997 11:24:03 +0900 (JST)
+Message-Id: <199706240224.LAA05923@cal.infonets.hiroshima-u.ac.jp>
+To: max@wide.ad.jp
+Subject: Re: typist copyright
+From: Satoshi Taoka <taoka@infonets.hiroshima-u.ac.jp>
+In-Reply-To: Your message of "Tue, 24 Jun 1997 09:41:37 +0900"
+References: <199706240041.JAA27882@bourbon.sfc.wide.ad.jp>
+X-Mailer: Mew version 1.70 on Emacs 20.3 "Moscow" XEmacs Lucid (beta6)
+Mime-Version: 1.0
+Content-Type: Text/Plain; charset=iso-2022-jp
+Content-Transfer-Encoding: 7bit
+Date: Tue, 24 Jun 1997 11:24:03 +0900
+Sender: taoka@infonets.hiroshima-u.ac.jp
+X-Filter: mailagent [version 3.0 PL56] for max@bourbon.sfc.wide.ad.jp
+
+
+田岡です．
+
+> 
+> 　あ、一つ気になった点ですが、僕の端末の設定 (シリアル端末で使っていま
+> す) のせいなのかもしれないんですが、オープニングのスクリーンの所で改行
+> キーを押しても終了してくれませんでした。 
+
+原因が分かりました．私のミスです．patches/patch-abを入れ換えてみてくださ
+い．もともとtypistではgetsを使っているのですが，
+
+warning: this program uses gets(), which is unsafe.
+
+がでるのでfgetsを使うように変更していたのですが，getsは'\n'を削るが，
+fgetsは'\n'はそのまま代入していることを知りませんでした．多分，これって
+有名な話でしょうね．
+
+ 田岡 智志    広島大学工学部第二類回路システム工学     Tel: 0824-24-7666 
+              〒739 東広島市鏡山一丁目4-1              Fax: 0824-22-7028 
+             taoka@infonets.hiroshima-u.ac.jp                            
+
+
+*** lesson.c.orig	Sun May 18 14:54:37 1997
+--- lesson.c	Tue Jun 24 11:11:21 1997
+***************
+*** 72,78 ****
+--- 72,84 ----
+  
+      nocbreak();
+  
++ #ifdef __FreeBSD__
++     (void)fgets(response,STR_SIZE + 1,stdin);
++     for (lp = response; *lp != '\n'; lp++) ;
++     *lp='\0';
++ #else
+      (void)gets(response);
++ #endif
+  
+      cbreak();
+      for (lp = response; *lp == ' ' || *lp == '\t'; lp++) ;
+
+
+
+
