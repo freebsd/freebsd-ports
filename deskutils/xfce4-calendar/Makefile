@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	xfce4-calendar
-PORTVERSION=	0.1.9
-PORTREVISION=	2
+PORTVERSION=	4.2.0
+PORTREVISION=	0
 CATEGORIES=	deskutils xfce
-MASTER_SITES=	ftp://ftp.berlios.de/pub/xfce-goodies/4.0.6/ \
-		http://hannelore.f1.fhtw-berlin.de/mirrors/xfce4/xfce-4.0.6/src/
+MASTER_SITES=	http://www.us.xfce.org/archive/xfce-${PORTVERSION}/src/ \
+		http://spuriousinterrupt.org/projects/xfce4/files/mirror/xfce-${PORTVERSION}/src/ \
+		http://public.fh-wolfenbuettel.de/~luedickj/xfce4/xfce-${PORTVERSION}/
 DISTNAME=	xfcalendar-${PORTVERSION}
 DIST_SUBDIR=	xfce4
 
@@ -25,7 +26,7 @@ LIB_DEPENDS=	xfce4util.1:${PORTSDIR}/x11/libxfce4util \
 USE_GNOME=	gtk20 libxml2
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
-USE_INC_LIBTOOL_VER=	15
+USE_LIBTOOL_VER=15
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CFLAGS=-I${LOCALBASE}/include \
 		CPPFLAGS=-I${LOCALBASE}/include \
