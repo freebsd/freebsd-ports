@@ -1,29 +1,11 @@
---- ../unix/Makefile.in.orig	Wed Oct 24 06:42:00 2001
-+++ ../unix/Makefile.in	Wed Oct 24 06:59:29 2001
-@@ -39,7 +39,7 @@
- CXX = @CXX@
- INSTALL = @LIBTOOL@ @INSTALL@
- INSTALL_DATA = @INSTALL_DATA@
--INSTALL_PROGRAM = @INSTALL_PROGRAM@
-+INSTALL_PROGRAM = $(LIBTOOL) --mode=install @INSTALL_PROGRAM@
- LIBTOOL = @LIBTOOL@
- VERSION = @VERSION@
- TCL_BIN_DIR = /usr/local/lib
-@@ -61,7 +61,7 @@
- 				-I$(includedir)/python1.5 \
- 				-I/usr/include/python1.5
- CXX_SWITCHES_LUA  = $(CXXFLAGS) -I$(srcdir)/../include
--CXX_SWITCHES_TEST = -I$(srcdir)/../include
-+CXX_SWITCHES_TEST = $(CXXFLAGS) -I$(srcdir)/../include
+--- ../unix/Makefile.in.orig	Thu Dec 13 12:13:47 2001
++++ ../unix/Makefile.in	Thu Dec 13 12:22:12 2001
+@@ -46,7 +46,7 @@
+ INSTALL = @INSTALL@
+ INSTALL_DATA = $(LIBTOOL) --mode=install @INSTALL_DATA@
+ INSTALL_PROGRAM = $(LIBTOOL) --mode=install @INSTALL_PROGRAM@
+-TCL_INCLUDE_DIR = @TCL_INCLUDE_DIR@
++TCL_INCLUDE_DIR = @TCL_INCLUDE_DIR@  -I@TCL_INCLUDE_DIR@/generic
  
- #---------- The targets normally specified when calling "make"
- 
-@@ -79,7 +79,7 @@
- 	diff $(srcdir)/../tests/ok tests
- 
- test-tcl: tcl
--	cd $(srcdir)/../tcl/test && tclsh all.tcl
-+	cd $(srcdir)/../tcl/test && tclsh8.3 all.tcl
- 
- install: @MK_INSTALL@
+ #---------- Do not change, shorthand only
  
