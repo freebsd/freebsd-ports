@@ -1,0 +1,25 @@
+bin/tgd
+share/doc/tgd/README
+share/doc/tgd/arc.gif
+share/doc/tgd/cap.gif
+share/doc/tgd/char.gif
+share/doc/tgd/fill.gif
+share/doc/tgd/fontdemo
+share/doc/tgd/fontdemo.gif
+share/doc/tgd/gd.html
+share/doc/tgd/gifcap.pl
+share/doc/tgd/helloworld.gif
+share/doc/tgd/helloworld.pl
+share/doc/tgd/keygifcap.gif
+share/doc/tgd/keypad.gif
+share/doc/tgd/keypad.html
+share/doc/tgd/keypad.inp
+share/doc/tgd/keypad.map
+share/doc/tgd/keypad.pl
+share/doc/tgd/poly.gif
+share/doc/tgd/polydemo
+share/doc/tgd/rainbow.gif
+share/doc/tgd/rainbow.pl
+share/doc/tgd/tgd.gif
+share/doc/tgd/tgd.html
+@dirrm share/doc/tgd
