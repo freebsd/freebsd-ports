@@ -2,6 +2,7 @@ bin/bzip2
 bin/bunzip2
 bin/bzcat
 bin/bzip2recover
+include/bzlib.h
 lib/libbz2.a
 share/doc/bzip2/manual.ps
 share/doc/bzip2/manual.texi
