@@ -8,11 +8,13 @@
 PORTNAME=	binder
 PORTVERSION=	1.3
 CATEGORIES+=	${CATEGORY_LIST}
-MASTER_SITES=	http://www.aaa-int.or.jp/~jfactory/JDE/dist/
+MASTER_SITES=	http://www.aaa-int.or.jp/~jfactory/JDE/dist/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	. kiri
 DISTNAME=	Binder-${PORTVERSION}
 EXTRACT_ONLY=	# extracted directly in install target
 
-MAINTAINER=	kiri@pis.toba-cmt.ac.jp
+MAINTAINER=	kiri@FreeBSD.org
 COMMENT=	A file manager on X window with TkStep
 
 RUN_DEPENDS=	${RUN_DEP_LIST}
@@ -21,7 +23,9 @@ LIB_DEPENDS=	${LIB_DEP_LIST}
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 USE_X_PREFIX=	yes
-SCRIPTS_ENV=	LANG=C LN=${LN} PERL=${PERL} LANGUAGE=${LANGUAGE} VERSION=${TKSTEPVERSION}
+USE_REINPLACE=	yes
+SCRIPTS_ENV=	LANG=C LN=${LN} REINPLACE_CMD="${REINPLACE_CMD}" \
+		LANGUAGE=${LANGUAGE} VERSION=${TKSTEPVERSION}
 PLIST_SUB=	PIXMAP_PATH=${PIXMAPPATH:S@^${PREFIX}/@@}
 
 # This port is for both x11-fm/binder and japanese/binder.
