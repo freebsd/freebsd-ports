@@ -6,10 +6,10 @@
 #
 
 PORTNAME=		poptop
-PORTVERSION=		1.1.2
+PORTVERSION=		1.1.3
 CATEGORIES=		net
-MASTER_SITES=		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	nsayer
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	poptop
 DISTNAME=		pptpd-${PORTVERSION}
 
 MAINTAINER=		nsayer@freebsd.org
@@ -19,6 +19,10 @@ CONFIGURE_ARGS=		--with-bsdppp
 
 MAN5=			pptpd.conf.5
 MAN8=			pptpd.8 pptpctrl.8
+
+pre-patch:
+	${RM} ${WRKSRC}/config.cache
+	${CP} ${WRKSRC}/our_getopt.h ${WRKSRC}/getopt.h
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/samples/pptpd.conf \

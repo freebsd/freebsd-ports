@@ -1,0 +1,21 @@
+--- pptpmanager.c.orig	Sun Sep  8 10:35:53 2002
++++ pptpmanager.c	Sun Sep  8 10:36:05 2002
+@@ -72,15 +72,15 @@
+ 	char pppLocal[16];
+ };
+ 
+-/* option for timeout on starting ctrl connection */
+-int pptp_stimeout = STIMEOUT_DEFAULT;
+-
+ /* global for signal handler */
+ static struct callArray clientArray[MAX_CONNECTIONS];
+ 
+ /* from IP parser */
+ extern int maxConnections;
+ #endif
++
++/* option for timeout on starting ctrl connection */
++int pptp_stimeout = STIMEOUT_DEFAULT;
+ 
+ /* local function prototypes */
+ static void connectCall(int clientSocket, int clientNumber);
