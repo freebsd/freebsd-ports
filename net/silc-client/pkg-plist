@@ -1,6 +1,6 @@
 bin/silc
 etc/silc/silc.conf.sample
-lib/libsilc-1.0.so.2
+lib/libsilc-1.0.so.3
 lib/libsilc.la
 lib/libsilc.so
 lib/libsilcclient-1.0.so.2
@@ -12,7 +12,6 @@ lib/silcsim/client/cast.sim.so
 lib/silcsim/client/md5.sim.so
 lib/silcsim/client/none.sim.so
 lib/silcsim/client/rc5.sim.so
-lib/silcsim/client/rc6.sim.so
 lib/silcsim/client/rsa.sim.so
 lib/silcsim/client/sha1.sim.so
 lib/silcsim/client/twofish.sim.so
@@ -59,6 +58,7 @@ share/silc/help/lastlog
 share/silc/help/layout
 share/silc/help/levels
 share/silc/help/list
+share/silc/help/listkeys
 share/silc/help/load
 share/silc/help/log
 share/silc/help/me
