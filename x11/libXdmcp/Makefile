@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libXdmcp
-PORTVERSION=	0.1.1
-PORTREVISION=	1
+PORTVERSION=	0.1.3
 CATEGORIES=	x11
 MASTER_SITES=	http://pdx.freedesktop.org/~xlibs/release/:fdo \
 		${MASTER_SITE_LOCAL:S/$/:local/}
@@ -18,7 +17,9 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:fdo \
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X Display Manager Control Protocol library
 
-BUILD_DEPENDS=	${X11BASE}/libdata/pkgconfig/xproto.pc:${PORTSDIR}/x11/xproto
+LIB_PC_DEPENDS=	${X11BASE}/libdata/pkgconfig/xproto.pc:${PORTSDIR}/x11/xproto
+BUILD_DEPENDS=	${LIB_PC_DEPENDS}
+RUN_DEPENDS=	${LIB_PC_DEPENDS}
 
 CONFLICTS=	XFree86-libraries-*
 
