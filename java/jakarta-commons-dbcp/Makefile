@@ -18,6 +18,7 @@ MAINTAINER=	toha@toha.org.ua
 COMMENT=	The DBCP Component
 
 BUILD_DEPENDS=	${ANT}:${PORTSDIR}/devel/apache-ant \
+		${JAVAJARDIR}/commons-collections.jar:${PORTSDIR}/java/jakarta-commons-collections \
 		${JAVAJARDIR}/commons-pool.jar:${PORTSDIR}/java/jakarta-commons-pool
 
 USE_JAVA=	yes
