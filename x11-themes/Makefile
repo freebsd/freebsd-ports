@@ -1,5 +1,6 @@
 # $FreeBSD$
 #
+    SUBDIR += gnome-icons
     SUBDIR += gnome-icons-aqua-fusion
     SUBDIR += gnome-icons-cool-gorilla
     SUBDIR += gnome-icons-crystal
