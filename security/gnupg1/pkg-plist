@@ -1,0 +1,20 @@
+bin/gpg
+bin/gpgm
+@exec mkdir %D/lib/gnupg
+@dirrm lib/gnupg
+share/gnupg/options.skel
+@dirrm share/gnupg
+share/locale/de/LC_MESSAGES/gnupg.mo
+share/locale/en/LC_MESSAGES/gnupg.mo
+@dirrm share/locale/en/LC_MESSAGES
+@dirrm share/locale/en
+share/locale/es_ES/LC_MESSAGES/gnupg.mo
+@dirrm share/locale/es_ES/LC_MESSAGES
+@dirrm share/locale/es_ES
+share/locale/fr/LC_MESSAGES/gnupg.mo
+share/locale/it/LC_MESSAGES/gnupg.mo
+@dirrm share/locale/it/LC_MESSAGES
+@dirrm share/locale/it
+share/locale/ru/LC_MESSAGES/gnupg.mo
+@dirrm share/locale/ru/LC_MESSAGES
+@dirrm share/locale/ru
