@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	Thu Jul 29 09:01:30 2004
++++ src/Makefile.in	Thu Jul 29 09:01:40 2004
+@@ -141,7 +141,7 @@
+ mergeant_LDADD =  	$(MERGEANT_LIBS) 	$(top_builddir)/lib/libmergeant.la 	query-fields/libqueryfields.a
+ 
+ 
+-mergeant_LDFLAGS = -export-dynamic -dlopen
++mergeant_LDFLAGS = -export-dynamic
+ mergeant_DEPENDENCIES = query-fields/libqueryfields.a
+ 
+ DTD_FILES = mergeant.dtd
