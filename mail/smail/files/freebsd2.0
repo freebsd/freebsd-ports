@@ -63,12 +63,12 @@ REWRITE_FILE=rewrite
 REWRITE_TYPE=lsearch
 
 # CPPFLAGS - interesting flags for the cpp, and cc commands
-CPPFLAGS="-I!!PREFIX!!/include"
+CPPFLAGS="-I. -I.. -I../src -I/usr/local/include -I!!PREFIX!!/include"
 
 CFLAGS="$CFLAGS -I!!PREFIX!!/include"
 
 # LDFLAGS - flags to pass to the loader
-LDFLAGS="-L!!PREFIX!!/lib"
+LDFLAGS="-L/usr/local/lib -L!!PREFIX!!/lib"
 
 # LIBS - libraries to include in binaries
 LIBS="-lident -lwrap"
