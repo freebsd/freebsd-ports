@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	Apache-ASP
-PORTVERSION=	2.49
+PORTVERSION=	2.51
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Apache
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	erwin@lansing.dk
+COMMENT=	Active Server Pages for Apache with mod_perl
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Apache/Filter.pm:${PORTSDIR}/www/p5-Apache-Filter \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Apache/SSI.pm:${PORTSDIR}/www/p5-Apache-SSI \
