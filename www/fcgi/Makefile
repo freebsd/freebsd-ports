@@ -3,14 +3,14 @@
 # Date created:        13 May 1999
 # Whom:                kbyanc
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/06/09 01:43:04 steve Exp $
 #
 
 DISTNAME=	fcgi-devkit-2.1
 CATEGORIES=	www
 MASTER_SITES=	http://fastcgi.idle.com/dist/
 
-MAINTAINER=	kbyanc@alcnet.com
+MAINTAINER=	kbyanc@posi.net
 
 MAN1=		cgi-fcgi.1
 MAN3=		FCGI_Accept.3 FCGI_Finish.3 FCGI_SetExitStatus.3 FCGI_StartFilterData.3
