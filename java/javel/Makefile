@@ -18,15 +18,10 @@ COMMENT=	Java disassembler
 NO_WRKSUBDIR=	yes
 USE_REINPLACE=	yes
 MAKEFILE=	makefile
+USE_GCC=	2.95
 
 MAN1=		javel.1
 PLIST_FILES=	bin/javel
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500035
-BROKEN=		"Does not compile on 5.0"
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e "s,^CC,#CC,g ; s,^CFLAGS,#CFLAGS,g ; \
@@ -36,4 +31,4 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/javel ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/javel.1 ${MAN1PREFIX}/man/man1
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
