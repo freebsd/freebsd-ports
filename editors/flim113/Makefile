@@ -56,6 +56,10 @@ MAKE_ARGS+=	PREFIX="${LOCALBASE}" \
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "ia64"
+BROKEN=		"Does not build on ia64"
+.endif
+
 .if defined(EMACS_PORT_NAME)
 # depends on apel (case of xemacs-21.x or later)
 .if defined(EMACS_PACKAGESDIR)
