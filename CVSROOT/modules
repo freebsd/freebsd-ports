@@ -6223,6 +6223,7 @@ soltaire	ports/math/solitaire
 songprint	ports/audio/songprint
 sonice		ports/audio/sonice
 sonicmail	ports/mail/sonicmail
+soribada	ports/audio/soribada
 sort		src/gnu/usr.bin/sort
 soundtracker	ports/audio/soundtracker
 soup		ports/devel/soup
