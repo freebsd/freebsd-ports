@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tmda
-PORTVERSION=	0.62
+PORTVERSION=	0.63
 CATEGORIES=	mail python
 MASTER_SITES=	http://tmda.net/releases/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. old
@@ -23,15 +23,17 @@ pre-install:
 	@${SH} ${PKGREQ} INSTALL
 
 do-install:
-	${MKDIR} ${PYTHON_SITELIBDIR}/TMDA
+	${MKDIR} ${PYTHON_SITELIBDIR}/TMDA/pythonlib/email
 	${INSTALL_SCRIPT} ${WRKSRC}/TMDA/*.py* ${PYTHON_SITELIBDIR}/TMDA
+	${INSTALL_SCRIPT} ${WRKSRC}/TMDA/pythonlib/email/*.py* \
+		${PYTHON_SITELIBDIR}/TMDA/pythonlib/email
 	${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/templates/*.txt ${DATADIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/tmda-* ${PREFIX}/bin
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR} ${DOCSDIR}/contrib ${DOCSDIR}/htdocs
+	${MKDIR} ${DOCSDIR}/contrib ${DOCSDIR}/htdocs
 .for f in COPYING CRYPTO ChangeLog INSTALL README THANKS UPGRADE
 	@${INSTALL_DATA} ${WRKSRC}/$f ${DOCSDIR}
 .endfor

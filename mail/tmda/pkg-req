@@ -4,7 +4,7 @@ PATH=$PATH:/usr/local/bin
 
 if [ "x$1" = "xINSTALL" -o "x$2" = "xINSTALL" ]; then
   PYTHON_GT=`python -c 'import string, sys; \
-                        print string.split(sys.version)[0] >= "2.0"'`
+                        print string.split(sys.version)[0] >= "2.1"'`
   if [ "x${PYTHON_GT}" = "x1" ]; then
     exit 0
   else
