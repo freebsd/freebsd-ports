@@ -1,18 +1,18 @@
 # New ports collection makefile for:	linux-nwserver
 # Date created:		22 July 2002
-# Whom:			Igor Pokrovsky <tiamat@telegraph.spb.ru>
+# Whom:			Igor Pokrovsky <tiamat@comset.net>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	nwserver
-PORTVERSION=	1.30
+PORTVERSION=	1.31
 CATEGORIES=	games linux
 MASTER_SITES=	http://nwdownloads.bioware.com/neverwinternights/linux/${PORTVERSION:S/.//}/
 PKGNAMEPREFIX=	linux-
 DISTNAME=	linuxserver${PORTVERSION:S/.//}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	tiamat@comset.net
 COMMENT=	Neverwinter Nights Linux (x86) Dedicated Server
 
 USE_LINUX=	yes
@@ -39,7 +39,7 @@ post-install:
 	@${ECHO} "Consult ${DOCSDIR}/readme.linuxserver.txt"
 	@${ECHO} "for more information about required data directories."
 	@${ECHO} "From directory, where you will have installed game data you can run:"
-	@${ECHO} "${PREFIX}/bin/fixinstall - to check installation (FAILED nwserver is ok)"
+	@${ECHO} "${PREFIX}/bin/fixinstall - to check installation"
 	@${ECHO} "and ${PREFIX}/bin/nwserver - to start server"
 	@${ECHO} "*******************************************************************************"
 
