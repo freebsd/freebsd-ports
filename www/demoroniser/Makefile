@@ -9,7 +9,8 @@ PORTNAME=	demoroniser
 PORTVERSION= 	1.0
 CATEGORIES=	www
 MASTER_SITES=	http://www.fourmilab.ch/webtools/demoroniser/ \
-		ftp://ftp.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/jedgar/
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=jedgar
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	jedgar@FreeBSD.org
