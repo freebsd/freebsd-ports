@@ -9,5 +9,5 @@ main(int argc, char *argv[], char *envp[])
 {
 	char *margv[] = { PYTHON_PATH, SCRIPT_PATH, NULL };
 
-	return exect(PYTHON_PATH, margv, envp);
+	return execve(PYTHON_PATH, margv, envp);
 }
