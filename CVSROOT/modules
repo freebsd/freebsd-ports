@@ -5237,7 +5237,6 @@ m68k-rtems-g77	ports/devel/m68k-rtems-g77
 m68k-rtems-gcc	ports/devel/m68k-rtems-gcc
 m68k-rtems-gdb	ports/devel/m68k-rtems-gdb
 m68k-rtems-objc	ports/devel/m68k-rtems-objc
-mBox		ports/audio/mBox
 mDNSResponder	ports/net/mDNSResponder
 mac		ports/audio/mac
 mac-robber	ports/security/mac-robber
