@@ -1,0 +1,48 @@
+diff -ru Makefile seahaven-1.04/Makefile
+--- Makefile	Tue Dec 22 11:07:19 1998
++++ seahaven-1.04/Makefile	Wed Dec 23 14:00:23 1998
+@@ -13,6 +13,8 @@
+ 
+ OBJECTS = $(CXXFILES:.C=.o)
+ 
++all:	$(PROGRAM)
++
+ $(PROGRAM) : $(OBJECTS)
+ 	$(CXX) $(CXXFLAGS) -o $(PROGRAM) $(OBJECTS) $(LIBS) $(LDLIBS)
+ 
+@@ -39,11 +41,11 @@
+ 
+ install: $(PROGRAM)
+ 	$(INSTALL) -s $(PROGRAM) $(bindir)/$(PROGRAM)
+-	$(INSTALL) $(PROGRAM).$(MANPAGE) /usr/man/man$(MANPAGE)/$(PROGRAM).$(MANPAGE)
++	$(INSTALL) $(PROGRAM).$(MANPAGE) $(mandir)/man$(MANPAGE)/$(PROGRAM).$(MANPAGE)
+ 
+ uninstall:
+ 	-@ rm -f $(bindir)/$(PROGRAM)
+-	-@ rm -f /usr/man/man$(MANPAGE)/$(PROGRAM).$(MANPAGE)
++	-@ rm -f $(mandir)/man$(MANPAGE)/$(PROGRAM).$(MANPAGE)
+ 
+ dist:
+ 	cat /dev/null > makedepend
+diff -ru makeinclude.in seahaven-1.04/makeinclude.in
+--- makeinclude.in	Wed Nov 18 12:11:30 1998
++++ seahaven-1.04/makeinclude.in	Wed Dec 23 13:59:49 1998
+@@ -3,6 +3,7 @@
+ prefix		=@prefix@
+ exec_prefix	=@exec_prefix@
+ bindir		=@bindir@
++mandir		=@mandir@
+ includedir	=@includedir@
+ libdir		=@libdir@
+ srcdir		=@srcdir@
+diff -ru stack.C seahaven-1.04/stack.C
+--- stack.C	Thu Nov 19 23:59:27 1998
++++ seahaven-1.04/stack.C	Wed Dec 23 13:58:55 1998
+@@ -10,7 +10,6 @@
+ 
+ #include <sys/time.h>		// For time()
+ #include <math.h>		// For random()
+-#include <malloc.h>
+ #include <stdlib.h>
+ #include <X11/cursorfont.h>
+ 

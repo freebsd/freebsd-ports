@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.175 1998/12/14 21:44:03 jseger Exp $
+# $Id: Makefile,v 1.176 1998/12/17 14:36:06 flathill Exp $
 #
 
     SUBDIR += 3dc
@@ -69,6 +69,7 @@
     SUBDIR += qstat
     SUBDIR += quakeserver
     SUBDIR += seabattle
+    SUBDIR += seahaven
     SUBDIR += sokoban
     SUBDIR += spellcast
     SUBDIR += spider
