@@ -1,0 +1,45 @@
+
+$FreeBSD$
+
+--- gnome/Makefile.in.orig	Fri Feb 28 02:49:43 2003
++++ gnome/Makefile.in	Fri Feb 28 03:01:56 2003
+@@ -173,8 +173,10 @@
+ @BUILD_GNOME_TRUE@				$(LIBGNOME_LIBS) \
+ @BUILD_GNOME_TRUE@				$(top_srcdir)/coreapi/libcoreapignome.a \
+ @BUILD_GNOME_TRUE@				$(top_srcdir)/osipua/src/libosipua.la \
++@BUILD_GNOME_TRUE@				$(top_srcdir)/mediastreamer/audiostream.o \
+ @BUILD_GNOME_TRUE@				$(top_srcdir)/mediastreamer/libmediastreamer.la \
+-@BUILD_GNOME_TRUE@				$(top_srcdir)/mediastreamer/libmsspeex.la 							
++@BUILD_GNOME_TRUE@				$(top_srcdir)/mediastreamer/.libs/libmsspeex.so \
++@BUILD_GNOME_TRUE@				$(top_srcdir)/speex/libspeex/libspeex.la
+ 
+ 
+ CFLAGS = @CFLAGS@ $(LIBGNOMEUI_CFLAGS) $(LIBGNOME_CFLAGS) $(GNOME_APPLETS_CFLAGS)		
+@@ -199,8 +201,10 @@
+ @BUILD_GNOME_APPLET_TRUE@				$(GNOME_APPLETS_LIBS) \
+ @BUILD_GNOME_APPLET_TRUE@				$(top_srcdir)/coreapi/libcoreapignome.a \
+ @BUILD_GNOME_APPLET_TRUE@				$(top_srcdir)/osipua/src/libosipua.la \
++@BUILD_GNOME_APPLET_TRUE@				$(top_srcdir)/mediastreamer/audiostream.o \
+ @BUILD_GNOME_APPLET_TRUE@				$(top_srcdir)/mediastreamer/libmediastreamer.la \
+-@BUILD_GNOME_APPLET_TRUE@				$(top_srcdir)/mediastreamer/libmsspeex.la 
++@BUILD_GNOME_APPLET_TRUE@				$(top_srcdir)/mediastreamer/.libs/libmsspeex.so \
++@BUILD_GNOME_APPLET_TRUE@				$(top_srcdir)/speex/libspeex/libspeex.la
+ 
+ 
+ 
+@@ -237,6 +241,7 @@
+ @BUILD_GNOME_TRUE@linphone_DEPENDENCIES = \
+ @BUILD_GNOME_TRUE@	$(top_srcdir)/coreapi/libcoreapignome.a \
+ @BUILD_GNOME_TRUE@	$(top_srcdir)/osipua/src/libosipua.la \
++@BUILD_GNOME_TRUE@	$(top_srcdir)/mediastreamer/audiostream.o \
+ @BUILD_GNOME_TRUE@	$(top_srcdir)/mediastreamer/libmediastreamer.la \
+ @BUILD_GNOME_TRUE@	$(top_srcdir)/mediastreamer/libmsspeex.la
+ @BUILD_GNOME_FALSE@linphone_DEPENDENCIES =
+@@ -255,6 +260,7 @@
+ @BUILD_GNOME_APPLET_TRUE@linphone_applet_DEPENDENCIES = \
+ @BUILD_GNOME_APPLET_TRUE@	$(top_srcdir)/coreapi/libcoreapignome.a \
+ @BUILD_GNOME_APPLET_TRUE@	$(top_srcdir)/osipua/src/libosipua.la \
++@BUILD_GNOME_APPLET_TRUE@	$(top_srcdir)/mediastreamer/audiostream.o \
+ @BUILD_GNOME_APPLET_TRUE@	$(top_srcdir)/mediastreamer/libmediastreamer.la \
+ @BUILD_GNOME_APPLET_TRUE@	$(top_srcdir)/mediastreamer/libmsspeex.la
+ @BUILD_GNOME_APPLET_FALSE@linphone_applet_DEPENDENCIES =

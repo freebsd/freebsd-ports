@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- config.h.in	2003/02/27 23:47:19	1.1
++++ config.h.in	2003/02/27 23:47:35
+@@ -122,8 +122,5 @@
+    first (like Motorola and SPARC, unlike Intel and VAX). */
+ #undef WORDS_BIGENDIAN
+ 
+-/* Defined if we are compiling for FreeBSD */
+-#undef __FreeBSD__
+-
+ /* Defined if we are compiling for linux */
+ #undef __LINUX__
