@@ -287,6 +287,7 @@
     SUBDIR += p5-XML-Generator-DBI
     SUBDIR += p5-XML-Generator-PerlData
     SUBDIR += p5-XML-Grove
+    SUBDIR += p5-XML-Hadler-HTMLWriter
     SUBDIR += p5-XML-Handler-Trees
     SUBDIR += p5-XML-Handler-YAWriter
     SUBDIR += p5-XML-LibRSVG
