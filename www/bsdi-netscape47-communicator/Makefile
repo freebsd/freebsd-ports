@@ -8,6 +8,8 @@
 PORTNAME=	netscape-${BROWSER_ARC}
 PORTVERSION=	${BROWSER_VER}
 
+BROKEN=		"Null PKGNAME is set and will destroy all /var/db/pkg"
+
 .if !defined(PRE_MK_INCLUDED)
 .include <bsd.port.pre.mk>
 .endif
