@@ -29,10 +29,10 @@ USE_LIBTOOL_VER=15
 USE_GNOME=	gnomehack libxml2 gtk20
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc \
-		--disable-gtk-doc
+		--disable-gtk-doc \
+		--with-xml-catalog=${LOCALBASE}/share/xml/catalog.ports
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
-		XMLCATALOG="$(LOCALBASE)/share/xml/catalog.ports"
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 PLIST_SUB=	XMLCATALOG="${LOCALBASE}/bin/xmlcatalog" \
 		CATALOG_PORTS_XML="${LOCALBASE}/share/xml/catalog.ports"
