@@ -166,7 +166,6 @@
     SUBDIR += mpegedit
     SUBDIR += mpgtx
     SUBDIR += mplayer
-    SUBDIR += mplayer-codecs
     SUBDIR += mplayer-fonts
     SUBDIR += mplex
     SUBDIR += mtv
