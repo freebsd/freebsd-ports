@@ -10,14 +10,14 @@ PORTVERSION=	1.18.248
 CATEGORIES=	irc tk83
 MASTER_SITES=	ftp://catless.ncl.ac.uk/pub/
 
-MAINTAINER=	jseger@FreeBSD.org
+MAINTAINER=	dirk.meyer@dinoex.sub.org
 
 RUN_DEPENDS=	wish8.3:${PORTSDIR}/x11-toolkits/tk83
 
-IS_INTERACTIVE=	yes
 NO_BUILD=	yes
 
 do-install:
-	(cd ${WRKSRC} && ./installZircon)
+	${ECHO} "set go {Yes}" >>${WRKSRC}/install.in
+	(cd ${WRKSRC} && ./installZircon NoGui)
 
 .include <bsd.port.mk>
