@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	radmind
-PORTVERSION=	1.3.2
+PORTVERSION=	1.4.0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://rsug.itd.umich.edu/software/radmind/files/
 EXTRACT_SUFX=	.tgz
