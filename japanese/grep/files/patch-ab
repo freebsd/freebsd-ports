@@ -1,0 +1,25 @@
+--- grep-2.0/Makefile.in.orig	Tue Apr  4 02:25:58 1995
++++ grep-2.0/Makefile.in	Tue Apr  4 02:27:57 1995
+@@ -74,7 +74,7 @@
+ manext=1
+ 
+ # How to make a hard link.
+-LN=ln
++LN=ln -s
+ 
+ #### End of system configuration section. ####
+ 
+@@ -97,10 +97,11 @@
+ install: all
+ 	$(INSTALL_PROGRAM) grep $(bindir)/$(binprefix)grep
+ 	rm -f $(bindir)/$(binprefix)egrep
+-	$(LN) $(bindir)/$(binprefix)grep $(bindir)/$(binprefix)egrep
++	cd $(bindir); $(LN) $(binprefix)grep $(binprefix)egrep
+ 	rm -f $(bindir)/$(binprefix)fgrep
+-	$(LN) $(bindir)/$(binprefix)grep $(bindir)/$(binprefix)fgrep	
++	cd $(bindir); $(LN) $(binprefix)grep $(binprefix)fgrep	
+ 	$(INSTALL_DATA) $(srcdir)/grep.man $(mandir)/grep.$(manext)
++	gzip -9n $(mandir)/grep.$(manext)
+ 
+ check:
+ 	AWK=$(AWK) sh $(srcdir)/tests/check.sh $(srcdir)/tests
