@@ -7,7 +7,7 @@
 
 PORTNAME=	xmms
 PORTVERSION=	2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio gnome
 MASTER_SITES=	http://gdesklets.gnomedesktop.org/files/
 PKGNAMEPREFIX=	gdesklets-
@@ -34,6 +34,7 @@ post-patch:
 do-build:
 	@${WRKSRC}/Install_${NAME}_Sensor.bin --nomsg ${WRKSRC}
 	@${CAT} pkg-message | ${SED} -e 's|%%PREFIX%%|${PREFIX}|g ; s|%%NAME%%|${NAME}|g' > ${PKGMESSAGE}
+	@${REINPLACE_CMD} -e 's|/tmp|/var/tmp|' ${WRKSRC}/XMMS/xmmsint.py
 
 do-install:
 	@${MKDIR} ${DATADIR}/gdesklets/Displays/${NAME}/gfx
