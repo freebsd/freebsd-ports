@@ -5,23 +5,23 @@
 # $FreeBSD$
 #
 
-PORTNAME=		maelstrom
-PORTVERSION=		3.0.1
-CATEGORIES=		games
-MASTER_SITES=		http://www.devolution.com/~slouken/projects/Maelstrom/src/
-DISTNAME=		Maelstrom-${PORTVERSION}
+PORTNAME=	maelstrom
+PORTVERSION=	3.0.1
+CATEGORIES=	games
+MASTER_SITES=	http://www.devolution.com/~slouken/projects/Maelstrom/src/
+DISTNAME=	Maelstrom-${PORTVERSION}
 
-MAINTAINER=		sobomax@FreeBSD.org
+MAINTAINER=	sobomax@FreeBSD.org
 
-LIB_DEPENDS=		SDL-1.0.2:${PORTSDIR}/devel/sdl
+LIB_DEPENDS=	SDL-1.0.2:${PORTSDIR}/devel/sdl
 
-USE_X_PREFIX=		yes
-USE_XPM=		yes
-USE_NEWGCC=		yes
-GNU_CONFIGURE=		yes
+USE_X_PREFIX=	yes
+USE_XPM=	yes
+USE_NEWGCC=	yes
+GNU_CONFIGURE=	yes
 
 .if !defined(NOPORTDOCS)
-INSTALL_TARGET=		install install_gamedocs
+INSTALL_TARGET=	install install_gamedocs
 .endif
 
 post-install:
