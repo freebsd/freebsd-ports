@@ -18,7 +18,7 @@ MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Provide View and Controller counterparts to GStreamer's Model
 
 BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
-LIB_DEPENDS=	gstreamer-0.6.1:${PORTSDIR}/multimedia/gstreamer \
+LIB_DEPENDS=	gstreamer-0.8.1:${PORTSDIR}/multimedia/gstreamer \
 		popt.0:${PORTSDIR}/devel/popt
 RUN_DEPENDS=	gst-visualise:${PORTSDIR}/multimedia/gstreamer-plugins
 
@@ -40,5 +40,7 @@ INSTALLS_SHLIB=	yes
 MAN1=		gst-editor.1 gst-inspect-gui.1 gst-launch-gui.1
 
 PKG_CONFIG?="${LOCALBASE}/bin/pkg-config"
+
+BROKEN=	"Needs update for gstreamer-0.8"
 
 .include <bsd.port.mk>
