@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	bsdtar
-PORTVERSION=	1.01.011
+PORTVERSION=	1.01.015
 PORTEPOCH=	1
 CATEGORIES=	archivers
 MASTER_SITES=	http://people.freebsd.org/~kientzle/libarchive/src/
