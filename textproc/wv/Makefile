@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wv
-PORTVERSION=	0.7.0
+PORTVERSION=	0.7.1
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	wvware
@@ -19,7 +19,7 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-libwmf=${LOCALBASE} --with-libiconv=${LOCALBASE} \
-		--with-png=${LOCALBASE} --with-exporter
+		--with-png=${LOCALBASE} --with-exporter --without-glib
 
 MAN1=	wvAbw.1 wvCleanLatex.1 wvDVI.1 wvHtml.1 wvLatex.1 wvMime.1 wvPDF.1 \
 	wvPS.1 wvRTF.1 wvSummary.1 wvText.1 wvVersion.1 wvWare.1 wvWml.1
