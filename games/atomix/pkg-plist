@@ -50,6 +50,7 @@ share/gnome/atomix/themes/katomic/wall-2.png
 share/gnome/atomix/themes/katomic/wall-3.png
 share/gnome/atomix/themes/katomic/wall-4.png
 share/gnome/games/atomix.scores
+@exec mkdir -p %D/share/gnome/pixmaps/atomix
 @dirrm share/gnome/atomix/levels
 @dirrm share/gnome/atomix/themes/fabian
 @dirrm share/gnome/atomix/themes/katomic

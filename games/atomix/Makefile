@@ -13,6 +13,9 @@ MASTER_SITES=	http://www.informatik.uni-oldenburg.de/~pearl/download/
 
 MAINTAINER=	nakai@FreeBSD.org
 
+LIB_DEPENDS=	gnome.3:${PORTSDIR}/x11/gnomelibs \
+		xml.5:${PORTSDIR}/textproc/libxml
+
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 
 USE_X_PREFIX=	yes
