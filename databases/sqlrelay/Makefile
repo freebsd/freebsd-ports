@@ -108,7 +108,8 @@ IF_FREETDS=	"@comment "
 .endif
 
 .if defined(WITH_GTK) && ${WITH_GTK:L} != no
-USE_GTK=		yes
+USE_GNOMENG=		yes
+USE_GNOME=		gtk12
 CONFIGURE_ARGS+=	--with-gtk-prefix="${X11BASE}"
 IF_GTK=		""
 .else

@@ -17,7 +17,8 @@ MAINTAINER=	ebakke@trolltech.com
 
 USE_LIBTOOL=	yes
 USE_GMAKE=	yes
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 INSTALLS_SHLIB=	yes
 INIDIR=		${PREFIX}/etc/${PORTNAME}
 CONFIGURE_ARGS=	--with-iodbc-inidir=${INIDIR}
