@@ -1,0 +1,11 @@
+--- vrrp_define.h.orig	Wed Sep  4 19:56:56 2002
++++ vrrp_define.h	Wed Sep  4 19:57:07 2002
+@@ -54,8 +54,3 @@
+ #define VRRP_CONF_FILE_NAME "/usr/local/etc/freevrrpd.conf"
+ #define IPPROTO_VRRP 112
+ #define MAX_IP_ALIAS 255
+-
+-/* In FreeBSD < 4.3 in_addr_t doesn't exist */
+-#ifndef in_addr_t
+-#define in_addr_t u_int32_t
+-#endif
