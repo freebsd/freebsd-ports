@@ -12,9 +12,7 @@ options		SYSVSHM
 options		SYSVSEM
 options		SYSVMSG
 
-Wine relies on the configuration file /usr/local/etc/wine.conf to
-contain valid assignments of Unix directories to DOS drive letters,
-and for certain other options (see "man wine" for details).
-You will most probably have to edit it, after the install...
-
 WWW: http://www.winehq.com/
+
+- Gerald Pfeifer
+pfeifer@dbai.tuwien.ac.at
