@@ -1,0 +1,6 @@
+To complete the installation of ProxyIndex:
+
+    - Restart Zope.  This may be done from the Zope Control Panel.
+
+    - Verify that the ProxyIndex product is loaded properly by 
+      examining them in Control_Panel/Products.

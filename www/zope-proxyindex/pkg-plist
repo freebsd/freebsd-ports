@@ -1,0 +1,24 @@
+%%ZOPEBASEDIR%%/lib/python/Products/ProxyIndex/CREDITS.txt
+%%ZOPEBASEDIR%%/lib/python/Products/ProxyIndex/Expression.py
+%%ZOPEBASEDIR%%/lib/python/Products/ProxyIndex/Expression.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/ProxyIndex/HISTORY.txt
+%%ZOPEBASEDIR%%/lib/python/Products/ProxyIndex/INSTALL.txt
+%%ZOPEBASEDIR%%/lib/python/Products/ProxyIndex/LICENSE.txt
+%%ZOPEBASEDIR%%/lib/python/Products/ProxyIndex/ProxyIndex.py
+%%ZOPEBASEDIR%%/lib/python/Products/ProxyIndex/ProxyIndex.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/ProxyIndex/README.txt
+%%ZOPEBASEDIR%%/lib/python/Products/ProxyIndex/__init__.py
+%%ZOPEBASEDIR%%/lib/python/Products/ProxyIndex/__init__.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/ProxyIndex/homepage.html
+%%ZOPEBASEDIR%%/lib/python/Products/ProxyIndex/tests/__init__.py
+%%ZOPEBASEDIR%%/lib/python/Products/ProxyIndex/tests/__init__.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/ProxyIndex/tests/testProxyIndex.py
+%%ZOPEBASEDIR%%/lib/python/Products/ProxyIndex/tests/testProxyIndex.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/ProxyIndex/ui/ProxyIndexAddForm.dtml
+%%ZOPEBASEDIR%%/lib/python/Products/ProxyIndex/ui/ProxyIndexView.dtml
+%%ZOPEBASEDIR%%/lib/python/Products/ProxyIndex/version.txt
+%%ZOPEBASEDIR%%/lib/python/Products/ProxyIndex/www/index.gif
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/ProxyIndex/www
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/ProxyIndex/ui
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/ProxyIndex/tests
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/ProxyIndex/

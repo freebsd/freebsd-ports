@@ -1,0 +1,5 @@
+ProxyIndex is a plugin catalog index. It uses a TALES expression instead 
+of an attribute lookup/call to retrieve the value to index from an object. 
+The value retrieved can then be indexed by any available plugin index.
+
+WWW: http://www.zope.org/Members/infrae/ProxyIndex
