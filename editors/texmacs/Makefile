@@ -14,6 +14,8 @@ DISTFILES=	TeXmacs-${PORTVERSION}-src.tar.gz \
 
 MAINTAINER=	mainland@apeiron.net
 
+BROKEN=		"Does not fetch"
+
 BUILD_DEPENDS=	guile:${PORTSDIR}/lang/guile \
 		latex:${PORTSDIR}/print/latex
 RUN_DEPENDS=	latex:${PORTSDIR}/print/latex
