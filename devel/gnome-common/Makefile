@@ -14,13 +14,12 @@ DISTNAME=	gnome-common-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	Common automake macros for GNOME and GOME 2.0
+COMMENT=	Common automake macros for GNOME and GNOME 2
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOME=	pkgconfig
+USE_GNOME=	pkgconfig gnometarget
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 .include <bsd.port.mk>
