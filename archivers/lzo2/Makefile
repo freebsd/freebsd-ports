@@ -8,7 +8,7 @@
 PORTNAME=	lzo
 PORTVERSION=	1.07
 CATEGORIES=	archivers devel
-MASTER_SITES=	http://wildsau.idv.uni-linz.ac.at/mfx/download/lzo/ \
+MASTER_SITES=	http://www.oberhumer.com/opensource/lzo/download/ \
 		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	libs/compression
 
@@ -20,8 +20,8 @@ INSTALLS_SHLIB=	yes
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/lzo
-	${INSTALL_DATA}	${WRKSRC}/doc/* ${PREFIX}/share/doc/lzo
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA}	${WRKSRC}/doc/* ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
