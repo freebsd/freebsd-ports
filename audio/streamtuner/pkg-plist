@@ -13,12 +13,11 @@ include/streamtuner/st-stream-api.h
 include/streamtuner/st-transfer-api.h
 include/streamtuner/st-version-api.h
 include/streamtuner/streamtuner.h
-lib/streamtuner/plugins/shoutcast.a
-lib/streamtuner/plugins/shoutcast.la
 lib/streamtuner/plugins/shoutcast.so
 libdata/pkgconfig/streamtuner.pc
-share/applications/streamtuner.desktop
-share/pixmaps/streamtuner.png
+share/gnome/applications/streamtuner.desktop
+share/gnome/pixmaps/streamtuner.png
+share/locale/fr/LC_MESSAGES/streamtuner.mo
 @dirrm include/streamtuner
 @dirrm lib/streamtuner/plugins
 @dirrm lib/streamtuner
