@@ -2,14 +2,14 @@ Local/Applications/Calculator.app/Calculator
 Local/Applications/Calculator.app/Resources/Calculator.app.tiff
 Local/Applications/Calculator.app/Resources/Calculator.desktop
 Local/Applications/Calculator.app/Resources/Info-gnustep.plist
-Local/Applications/Calculator.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/Calculator
-Local/Applications/Calculator.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/library_paths.openapp
+%%GNUSTEP_STABLE%%Local/Applications/Calculator.app/%%NOFLAT%%Calculator
+Local/Applications/Calculator.app/%%NOFLAT%%library_paths.openapp
 Local/Applications/Calculator.app/stamp.make
 Local/Applications/CurrencyConverter.app/CurrencyConverter
 Local/Applications/CurrencyConverter.app/Resources/CurrencyConverter.desktop
 Local/Applications/CurrencyConverter.app/Resources/Info-gnustep.plist
-Local/Applications/CurrencyConverter.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/CurrencyConverter
-Local/Applications/CurrencyConverter.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/library_paths.openapp
+%%GNUSTEP_STABLE%%Local/Applications/CurrencyConverter.app/%%NOFLAT%%CurrencyConverter
+Local/Applications/CurrencyConverter.app/%%NOFLAT%%library_paths.openapp
 Local/Applications/CurrencyConverter.app/stamp.make
 Local/Applications/Finger.app/Finger
 Local/Applications/Finger.app/Resources/Finger.desktop
@@ -24,26 +24,26 @@ Local/Applications/Finger.app/Resources/traceroute.tiff
 Local/Applications/Finger.app/Resources/traceroute32.tiff
 Local/Applications/Finger.app/Resources/whois.tiff
 Local/Applications/Finger.app/Resources/whois32.tiff
-Local/Applications/Finger.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/Finger
-Local/Applications/Finger.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/library_paths.openapp
+%%GNUSTEP_STABLE%%Local/Applications/Finger.app/%%NOFLAT%%Finger
+Local/Applications/Finger.app/%%NOFLAT%%library_paths.openapp
 Local/Applications/Finger.app/stamp.make
 Local/Applications/GFractal.app/GFractal
 Local/Applications/GFractal.app/Resources/GFractal.desktop
 Local/Applications/GFractal.app/Resources/Info-gnustep.plist
-Local/Applications/GFractal.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/GFractal
-Local/Applications/GFractal.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/library_paths.openapp
+%%GNUSTEP_STABLE%%Local/Applications/GFractal.app/%%NOFLAT%%GFractal
+Local/Applications/GFractal.app/%%NOFLAT%%library_paths.openapp
 Local/Applications/GFractal.app/stamp.make
 Local/Applications/GSTest.app/GSTest
 Local/Applications/GSTest.app/Resources/GSTest.desktop
 Local/Applications/GSTest.app/Resources/Info-gnustep.plist
-Local/Applications/GSTest.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/GSTest
-Local/Applications/GSTest.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/library_paths.openapp
+%%GNUSTEP_STABLE%%Local/Applications/GSTest.app/%%NOFLAT%%GSTest
+Local/Applications/GSTest.app/%%NOFLAT%%library_paths.openapp
 Local/Applications/GSTest.app/stamp.make
 Local/Applications/HostAddress.app/HostAddress
 Local/Applications/HostAddress.app/Resources/HostAddress.desktop
 Local/Applications/HostAddress.app/Resources/Info-gnustep.plist
-Local/Applications/HostAddress.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/HostAddress
-Local/Applications/HostAddress.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/library_paths.openapp
+%%GNUSTEP_STABLE%%Local/Applications/HostAddress.app/%%NOFLAT%%HostAddress
+Local/Applications/HostAddress.app/%%NOFLAT%%library_paths.openapp
 Local/Applications/HostAddress.app/stamp.make
 Local/Applications/Ink.app/Ink
 Local/Applications/Ink.app/Resources/Info-gnustep.plist
@@ -51,234 +51,234 @@ Local/Applications/Ink.app/Resources/Ink.desktop
 Local/Applications/Ink.app/Resources/Ink_app.tiff
 Local/Applications/Ink.app/Resources/Ink_app_Tile.jpg
 Local/Applications/Ink.app/Resources/Readme.rtf
-Local/Applications/Ink.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/Ink
-Local/Applications/Ink.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/library_paths.openapp
+%%GNUSTEP_STABLE%%Local/Applications/Ink.app/%%NOFLAT%%Ink
+Local/Applications/Ink.app/%%NOFLAT%%library_paths.openapp
 Local/Applications/Ink.app/stamp.make
 Local/Applications/NSBrowserTest.app/NSBrowserTest
 Local/Applications/NSBrowserTest.app/Resources/Info-gnustep.plist
 Local/Applications/NSBrowserTest.app/Resources/NSBrowserTest.desktop
-Local/Applications/NSBrowserTest.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/NSBrowserTest
-Local/Applications/NSBrowserTest.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/library_paths.openapp
+%%GNUSTEP_STABLE%%Local/Applications/NSBrowserTest.app/%%NOFLAT%%NSBrowserTest
+Local/Applications/NSBrowserTest.app/%%NOFLAT%%library_paths.openapp
 Local/Applications/NSBrowserTest.app/stamp.make
 Local/Applications/NSScreenTest.app/NSScreenTest
 Local/Applications/NSScreenTest.app/Resources/Info-gnustep.plist
 Local/Applications/NSScreenTest.app/Resources/NSScreenTest.desktop
-Local/Applications/NSScreenTest.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/NSScreenTest
-Local/Applications/NSScreenTest.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/library_paths.openapp
+%%GNUSTEP_STABLE%%Local/Applications/NSScreenTest.app/%%NOFLAT%%NSScreenTest
+Local/Applications/NSScreenTest.app/%%NOFLAT%%library_paths.openapp
 Local/Applications/NSScreenTest.app/stamp.make
 Local/Library/Bundles/Composite-test.bundle/Resources/Info-gnustep.plist
-Local/Library/Bundles/Composite-test.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/Composite-test
+Local/Library/Bundles/Composite-test.bundle/%%NOFLAT%%Composite-test
 Local/Library/Bundles/Composite-test.bundle/stamp.make
 Local/Library/Bundles/CoordinateCheck-test.bundle/Resources/Info-gnustep.plist
-Local/Library/Bundles/CoordinateCheck-test.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/CoordinateCheck-test
+Local/Library/Bundles/CoordinateCheck-test.bundle/%%NOFLAT%%CoordinateCheck-test
 Local/Library/Bundles/CoordinateCheck-test.bundle/stamp.make
 Local/Library/Bundles/GSHbox-test.bundle/Resources/Info-gnustep.plist
-Local/Library/Bundles/GSHbox-test.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/GSHbox-test
+Local/Library/Bundles/GSHbox-test.bundle/%%NOFLAT%%GSHbox-test
 Local/Library/Bundles/GSHbox-test.bundle/stamp.make
 Local/Library/Bundles/KeyboardInput-test.bundle/Resources/Info-gnustep.plist
-Local/Library/Bundles/KeyboardInput-test.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/KeyboardInput-test
+Local/Library/Bundles/KeyboardInput-test.bundle/%%NOFLAT%%KeyboardInput-test
 Local/Library/Bundles/KeyboardInput-test.bundle/stamp.make
 Local/Library/Bundles/NSBox-test.bundle/Resources/Info-gnustep.plist
-Local/Library/Bundles/NSBox-test.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/NSBox-test
+Local/Library/Bundles/NSBox-test.bundle/%%NOFLAT%%NSBox-test
 Local/Library/Bundles/NSBox-test.bundle/stamp.make
 Local/Library/Bundles/NSColorList-test.bundle/Resources/Info-gnustep.plist
-Local/Library/Bundles/NSColorList-test.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/NSColorList-test
+Local/Library/Bundles/NSColorList-test.bundle/%%NOFLAT%%NSColorList-test
 Local/Library/Bundles/NSColorList-test.bundle/stamp.make
 Local/Library/Bundles/NSColorWell-test.bundle/Resources/Info-gnustep.plist
-Local/Library/Bundles/NSColorWell-test.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/NSColorWell-test
+Local/Library/Bundles/NSColorWell-test.bundle/%%NOFLAT%%NSColorWell-test
 Local/Library/Bundles/NSColorWell-test.bundle/stamp.make
 Local/Library/Bundles/NSForm-test.bundle/Resources/Info-gnustep.plist
-Local/Library/Bundles/NSForm-test.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/NSForm-test
+Local/Library/Bundles/NSForm-test.bundle/%%NOFLAT%%NSForm-test
 Local/Library/Bundles/NSForm-test.bundle/stamp.make
 Local/Library/Bundles/NSOutlineView-test.bundle/Resources/Info-gnustep.plist
-Local/Library/Bundles/NSOutlineView-test.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/NSOutlineView-test
+Local/Library/Bundles/NSOutlineView-test.bundle/%%NOFLAT%%NSOutlineView-test
 Local/Library/Bundles/NSOutlineView-test.bundle/stamp.make
 Local/Library/Bundles/NSSavePanel-test.bundle/Resources/Info-gnustep.plist
-Local/Library/Bundles/NSSavePanel-test.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/NSSavePanel-test
+Local/Library/Bundles/NSSavePanel-test.bundle/%%NOFLAT%%NSSavePanel-test
 Local/Library/Bundles/NSSavePanel-test.bundle/stamp.make
 Local/Library/Bundles/NSScrollView-test.bundle/Resources/Info-gnustep.plist
-Local/Library/Bundles/NSScrollView-test.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/NSScrollView-test
+Local/Library/Bundles/NSScrollView-test.bundle/%%NOFLAT%%NSScrollView-test
 Local/Library/Bundles/NSScrollView-test.bundle/stamp.make
 Local/Library/Bundles/NSSecureTextField-test.bundle/Resources/Info-gnustep.plist
-Local/Library/Bundles/NSSecureTextField-test.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/NSSecureTextField-test
+Local/Library/Bundles/NSSecureTextField-test.bundle/%%NOFLAT%%NSSecureTextField-test
 Local/Library/Bundles/NSSecureTextField-test.bundle/stamp.make
 Local/Library/Bundles/NSSlider-test.bundle/Resources/Info-gnustep.plist
-Local/Library/Bundles/NSSlider-test.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/NSSlider-test
+Local/Library/Bundles/NSSlider-test.bundle/%%NOFLAT%%NSSlider-test
 Local/Library/Bundles/NSSlider-test.bundle/stamp.make
 Local/Library/Bundles/NSSplitView-test.bundle/Resources/Info-gnustep.plist
-Local/Library/Bundles/NSSplitView-test.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/NSSplitView-test
+Local/Library/Bundles/NSSplitView-test.bundle/%%NOFLAT%%NSSplitView-test
 Local/Library/Bundles/NSSplitView-test.bundle/stamp.make
 Local/Library/Bundles/NSTableView-test.bundle/Resources/Info-gnustep.plist
-Local/Library/Bundles/NSTableView-test.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/NSTableView-test
+Local/Library/Bundles/NSTableView-test.bundle/%%NOFLAT%%NSTableView-test
 Local/Library/Bundles/NSTableView-test.bundle/stamp.make
 Local/Library/Bundles/NSTextView-test.bundle/Resources/Info-gnustep.plist
-Local/Library/Bundles/NSTextView-test.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/NSTextView-test
+Local/Library/Bundles/NSTextView-test.bundle/%%NOFLAT%%NSTextView-test
 Local/Library/Bundles/NSTextView-test.bundle/stamp.make
 Local/Library/Bundles/NSWindowStyleMask-test.bundle/Resources/Info-gnustep.plist
-Local/Library/Bundles/NSWindowStyleMask-test.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/NSWindowStyleMask-test
+Local/Library/Bundles/NSWindowStyleMask-test.bundle/%%NOFLAT%%NSWindowStyleMask-test
 Local/Library/Bundles/NSWindowStyleMask-test.bundle/stamp.make
 Local/Library/Bundles/StringDrawing-test.bundle/Resources/Info-gnustep.plist
-Local/Library/Bundles/StringDrawing-test.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/StringDrawing-test
+Local/Library/Bundles/StringDrawing-test.bundle/%%NOFLAT%%StringDrawing-test
 Local/Library/Bundles/StringDrawing-test.bundle/stamp.make
 System/Applications/GPuzzle.app/GPuzzle
 System/Applications/GPuzzle.app/Resources/GPuzzle.desktop
 System/Applications/GPuzzle.app/Resources/Info-gnustep.plist
-System/Applications/GPuzzle.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/GPuzzle
-System/Applications/GPuzzle.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/library_paths.openapp
+%%GNUSTEP_STABLE%%System/Applications/GPuzzle.app/%%NOFLAT%%GPuzzle
+System/Applications/GPuzzle.app/%%NOFLAT%%library_paths.openapp
 System/Applications/GPuzzle.app/stamp.make
 System/Applications/NSPanelTest.app/NSPanelTest
 System/Applications/NSPanelTest.app/Resources/Info-gnustep.plist
 System/Applications/NSPanelTest.app/Resources/NSPanelTest.desktop
 System/Applications/NSPanelTest.app/Resources/Test.strings
 System/Applications/NSPanelTest.app/Resources/icon.tiff
-System/Applications/NSPanelTest.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/NSPanelTest
-System/Applications/NSPanelTest.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/library_paths.openapp
+%%GNUSTEP_STABLE%%System/Applications/NSPanelTest.app/%%NOFLAT%%NSPanelTest
+System/Applications/NSPanelTest.app/%%NOFLAT%%library_paths.openapp
 System/Applications/NSPanelTest.app/stamp.make
-@dirrm System/Applications/NSPanelTest.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-@dirrm System/Applications/NSPanelTest.app/%%GNU_ARCH%%/%%OPSYS%%
-@dirrm System/Applications/NSPanelTest.app/%%GNU_ARCH%%
+%%GNUSTEP_STABLE%%@dirrm System/Applications/NSPanelTest.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+%%GNUSTEP_STABLE%%@dirrm System/Applications/NSPanelTest.app/%%GNU_ARCH%%/%%OPSYS%%
+%%GNUSTEP_STABLE%%@dirrm System/Applications/NSPanelTest.app/%%GNU_ARCH%%
 @dirrm System/Applications/NSPanelTest.app/Resources
 @dirrm System/Applications/NSPanelTest.app
-@dirrm System/Applications/GPuzzle.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-@dirrm System/Applications/GPuzzle.app/%%GNU_ARCH%%/%%OPSYS%%
-@dirrm System/Applications/GPuzzle.app/%%GNU_ARCH%%
+%%GNUSTEP_STABLE%%@dirrm System/Applications/GPuzzle.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+%%GNUSTEP_STABLE%%@dirrm System/Applications/GPuzzle.app/%%GNU_ARCH%%/%%OPSYS%%
+%%GNUSTEP_STABLE%%@dirrm System/Applications/GPuzzle.app/%%GNU_ARCH%%
 @dirrm System/Applications/GPuzzle.app/Resources
 @dirrm System/Applications/GPuzzle.app
-@dirrm Local/Library/Bundles/StringDrawing-test.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-@dirrm Local/Library/Bundles/StringDrawing-test.bundle/%%GNU_ARCH%%/%%OPSYS%%
-@dirrm Local/Library/Bundles/StringDrawing-test.bundle/%%GNU_ARCH%%
+%%GNUSTEP_STABLE%%@dirrm Local/Library/Bundles/StringDrawing-test.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+%%GNUSTEP_STABLE%%@dirrm Local/Library/Bundles/StringDrawing-test.bundle/%%GNU_ARCH%%/%%OPSYS%%
+%%GNUSTEP_STABLE%%@dirrm Local/Library/Bundles/StringDrawing-test.bundle/%%GNU_ARCH%%
 @dirrm Local/Library/Bundles/StringDrawing-test.bundle/Resources
 @dirrm Local/Library/Bundles/StringDrawing-test.bundle
-@dirrm Local/Library/Bundles/NSWindowStyleMask-test.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-@dirrm Local/Library/Bundles/NSWindowStyleMask-test.bundle/%%GNU_ARCH%%/%%OPSYS%%
-@dirrm Local/Library/Bundles/NSWindowStyleMask-test.bundle/%%GNU_ARCH%%
+%%GNUSTEP_STABLE%%@dirrm Local/Library/Bundles/NSWindowStyleMask-test.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+%%GNUSTEP_STABLE%%@dirrm Local/Library/Bundles/NSWindowStyleMask-test.bundle/%%GNU_ARCH%%/%%OPSYS%%
+%%GNUSTEP_STABLE%%@dirrm Local/Library/Bundles/NSWindowStyleMask-test.bundle/%%GNU_ARCH%%
 @dirrm Local/Library/Bundles/NSWindowStyleMask-test.bundle/Resources
 @dirrm Local/Library/Bundles/NSWindowStyleMask-test.bundle
-@dirrm Local/Library/Bundles/NSTextView-test.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-@dirrm Local/Library/Bundles/NSTextView-test.bundle/%%GNU_ARCH%%/%%OPSYS%%
-@dirrm Local/Library/Bundles/NSTextView-test.bundle/%%GNU_ARCH%%
+%%GNUSTEP_STABLE%%@dirrm Local/Library/Bundles/NSTextView-test.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+%%GNUSTEP_STABLE%%@dirrm Local/Library/Bundles/NSTextView-test.bundle/%%GNU_ARCH%%/%%OPSYS%%
+%%GNUSTEP_STABLE%%@dirrm Local/Library/Bundles/NSTextView-test.bundle/%%GNU_ARCH%%
 @dirrm Local/Library/Bundles/NSTextView-test.bundle/Resources
 @dirrm Local/Library/Bundles/NSTextView-test.bundle
-@dirrm Local/Library/Bundles/NSTableView-test.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-@dirrm Local/Library/Bundles/NSTableView-test.bundle/%%GNU_ARCH%%/%%OPSYS%%
-@dirrm Local/Library/Bundles/NSTableView-test.bundle/%%GNU_ARCH%%
+%%GNUSTEP_STABLE%%@dirrm Local/Library/Bundles/NSTableView-test.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+%%GNUSTEP_STABLE%%@dirrm Local/Library/Bundles/NSTableView-test.bundle/%%GNU_ARCH%%/%%OPSYS%%
+%%GNUSTEP_STABLE%%@dirrm Local/Library/Bundles/NSTableView-test.bundle/%%GNU_ARCH%%
 @dirrm Local/Library/Bundles/NSTableView-test.bundle/Resources
 @dirrm Local/Library/Bundles/NSTableView-test.bundle
-@dirrm Local/Library/Bundles/NSSplitView-test.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-@dirrm Local/Library/Bundles/NSSplitView-test.bundle/%%GNU_ARCH%%/%%OPSYS%%
-@dirrm Local/Library/Bundles/NSSplitView-test.bundle/%%GNU_ARCH%%
+%%GNUSTEP_STABLE%%@dirrm Local/Library/Bundles/NSSplitView-test.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+%%GNUSTEP_STABLE%%@dirrm Local/Library/Bundles/NSSplitView-test.bundle/%%GNU_ARCH%%/%%OPSYS%%
+%%GNUSTEP_STABLE%%@dirrm Local/Library/Bundles/NSSplitView-test.bundle/%%GNU_ARCH%%
 @dirrm Local/Library/Bundles/NSSplitView-test.bundle/Resources
 @dirrm Local/Library/Bundles/NSSplitView-test.bundle
-@dirrm Local/Library/Bundles/NSSlider-test.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-@dirrm Local/Library/Bundles/NSSlider-test.bundle/%%GNU_ARCH%%/%%OPSYS%%
-@dirrm Local/Library/Bundles/NSSlider-test.bundle/%%GNU_ARCH%%
+%%GNUSTEP_STABLE%%@dirrm Local/Library/Bundles/NSSlider-test.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+%%GNUSTEP_STABLE%%@dirrm Local/Library/Bundles/NSSlider-test.bundle/%%GNU_ARCH%%/%%OPSYS%%
+%%GNUSTEP_STABLE%%@dirrm Local/Library/Bundles/NSSlider-test.bundle/%%GNU_ARCH%%
 @dirrm Local/Library/Bundles/NSSlider-test.bundle/Resources
 @dirrm Local/Library/Bundles/NSSlider-test.bundle
-@dirrm Local/Library/Bundles/NSSecureTextField-test.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-@dirrm Local/Library/Bundles/NSSecureTextField-test.bundle/%%GNU_ARCH%%/%%OPSYS%%
-@dirrm Local/Library/Bundles/NSSecureTextField-test.bundle/%%GNU_ARCH%%
+%%GNUSTEP_STABLE%%@dirrm Local/Library/Bundles/NSSecureTextField-test.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+%%GNUSTEP_STABLE%%@dirrm Local/Library/Bundles/NSSecureTextField-test.bundle/%%GNU_ARCH%%/%%OPSYS%%
+%%GNUSTEP_STABLE%%@dirrm Local/Library/Bundles/NSSecureTextField-test.bundle/%%GNU_ARCH%%
 @dirrm Local/Library/Bundles/NSSecureTextField-test.bundle/Resources
 @dirrm Local/Library/Bundles/NSSecureTextField-test.bundle
-@dirrm Local/Library/Bundles/NSScrollView-test.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-@dirrm Local/Library/Bundles/NSScrollView-test.bundle/%%GNU_ARCH%%/%%OPSYS%%
-@dirrm Local/Library/Bundles/NSScrollView-test.bundle/%%GNU_ARCH%%
+%%GNUSTEP_STABLE%%@dirrm Local/Library/Bundles/NSScrollView-test.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+%%GNUSTEP_STABLE%%@dirrm Local/Library/Bundles/NSScrollView-test.bundle/%%GNU_ARCH%%/%%OPSYS%%
+%%GNUSTEP_STABLE%%@dirrm Local/Library/Bundles/NSScrollView-test.bundle/%%GNU_ARCH%%
 @dirrm Local/Library/Bundles/NSScrollView-test.bundle/Resources
 @dirrm Local/Library/Bundles/NSScrollView-test.bundle
-@dirrm Local/Library/Bundles/NSSavePanel-test.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-@dirrm Local/Library/Bundles/NSSavePanel-test.bundle/%%GNU_ARCH%%/%%OPSYS%%
-@dirrm Local/Library/Bundles/NSSavePanel-test.bundle/%%GNU_ARCH%%
+%%GNUSTEP_STABLE%%@dirrm Local/Library/Bundles/NSSavePanel-test.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+%%GNUSTEP_STABLE%%@dirrm Local/Library/Bundles/NSSavePanel-test.bundle/%%GNU_ARCH%%/%%OPSYS%%
+%%GNUSTEP_STABLE%%@dirrm Local/Library/Bundles/NSSavePanel-test.bundle/%%GNU_ARCH%%
 @dirrm Local/Library/Bundles/NSSavePanel-test.bundle/Resources
 @dirrm Local/Library/Bundles/NSSavePanel-test.bundle
-@dirrm Local/Library/Bundles/NSOutlineView-test.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-@dirrm Local/Library/Bundles/NSOutlineView-test.bundle/%%GNU_ARCH%%/%%OPSYS%%
-@dirrm Local/Library/Bundles/NSOutlineView-test.bundle/%%GNU_ARCH%%
+%%GNUSTEP_STABLE%%@dirrm Local/Library/Bundles/NSOutlineView-test.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+%%GNUSTEP_STABLE%%@dirrm Local/Library/Bundles/NSOutlineView-test.bundle/%%GNU_ARCH%%/%%OPSYS%%
+%%GNUSTEP_STABLE%%@dirrm Local/Library/Bundles/NSOutlineView-test.bundle/%%GNU_ARCH%%
 @dirrm Local/Library/Bundles/NSOutlineView-test.bundle/Resources
 @dirrm Local/Library/Bundles/NSOutlineView-test.bundle
-@dirrm Local/Library/Bundles/NSForm-test.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-@dirrm Local/Library/Bundles/NSForm-test.bundle/%%GNU_ARCH%%/%%OPSYS%%
-@dirrm Local/Library/Bundles/NSForm-test.bundle/%%GNU_ARCH%%
+%%GNUSTEP_STABLE%%@dirrm Local/Library/Bundles/NSForm-test.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+%%GNUSTEP_STABLE%%@dirrm Local/Library/Bundles/NSForm-test.bundle/%%GNU_ARCH%%/%%OPSYS%%
+%%GNUSTEP_STABLE%%@dirrm Local/Library/Bundles/NSForm-test.bundle/%%GNU_ARCH%%
 @dirrm Local/Library/Bundles/NSForm-test.bundle/Resources
 @dirrm Local/Library/Bundles/NSForm-test.bundle
-@dirrm Local/Library/Bundles/NSColorWell-test.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-@dirrm Local/Library/Bundles/NSColorWell-test.bundle/%%GNU_ARCH%%/%%OPSYS%%
-@dirrm Local/Library/Bundles/NSColorWell-test.bundle/%%GNU_ARCH%%
+%%GNUSTEP_STABLE%%@dirrm Local/Library/Bundles/NSColorWell-test.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+%%GNUSTEP_STABLE%%@dirrm Local/Library/Bundles/NSColorWell-test.bundle/%%GNU_ARCH%%/%%OPSYS%%
+%%GNUSTEP_STABLE%%@dirrm Local/Library/Bundles/NSColorWell-test.bundle/%%GNU_ARCH%%
 @dirrm Local/Library/Bundles/NSColorWell-test.bundle/Resources
 @dirrm Local/Library/Bundles/NSColorWell-test.bundle
-@dirrm Local/Library/Bundles/NSColorList-test.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-@dirrm Local/Library/Bundles/NSColorList-test.bundle/%%GNU_ARCH%%/%%OPSYS%%
-@dirrm Local/Library/Bundles/NSColorList-test.bundle/%%GNU_ARCH%%
+%%GNUSTEP_STABLE%%@dirrm Local/Library/Bundles/NSColorList-test.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+%%GNUSTEP_STABLE%%@dirrm Local/Library/Bundles/NSColorList-test.bundle/%%GNU_ARCH%%/%%OPSYS%%
+%%GNUSTEP_STABLE%%@dirrm Local/Library/Bundles/NSColorList-test.bundle/%%GNU_ARCH%%
 @dirrm Local/Library/Bundles/NSColorList-test.bundle/Resources
 @dirrm Local/Library/Bundles/NSColorList-test.bundle
-@dirrm Local/Library/Bundles/NSBox-test.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-@dirrm Local/Library/Bundles/NSBox-test.bundle/%%GNU_ARCH%%/%%OPSYS%%
-@dirrm Local/Library/Bundles/NSBox-test.bundle/%%GNU_ARCH%%
+%%GNUSTEP_STABLE%%@dirrm Local/Library/Bundles/NSBox-test.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+%%GNUSTEP_STABLE%%@dirrm Local/Library/Bundles/NSBox-test.bundle/%%GNU_ARCH%%/%%OPSYS%%
+%%GNUSTEP_STABLE%%@dirrm Local/Library/Bundles/NSBox-test.bundle/%%GNU_ARCH%%
 @dirrm Local/Library/Bundles/NSBox-test.bundle/Resources
 @dirrm Local/Library/Bundles/NSBox-test.bundle
-@dirrm Local/Library/Bundles/KeyboardInput-test.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-@dirrm Local/Library/Bundles/KeyboardInput-test.bundle/%%GNU_ARCH%%/%%OPSYS%%
-@dirrm Local/Library/Bundles/KeyboardInput-test.bundle/%%GNU_ARCH%%
+%%GNUSTEP_STABLE%%@dirrm Local/Library/Bundles/KeyboardInput-test.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+%%GNUSTEP_STABLE%%@dirrm Local/Library/Bundles/KeyboardInput-test.bundle/%%GNU_ARCH%%/%%OPSYS%%
+%%GNUSTEP_STABLE%%@dirrm Local/Library/Bundles/KeyboardInput-test.bundle/%%GNU_ARCH%%
 @dirrm Local/Library/Bundles/KeyboardInput-test.bundle/Resources
 @dirrm Local/Library/Bundles/KeyboardInput-test.bundle
-@dirrm Local/Library/Bundles/GSHbox-test.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-@dirrm Local/Library/Bundles/GSHbox-test.bundle/%%GNU_ARCH%%/%%OPSYS%%
-@dirrm Local/Library/Bundles/GSHbox-test.bundle/%%GNU_ARCH%%
+%%GNUSTEP_STABLE%%@dirrm Local/Library/Bundles/GSHbox-test.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+%%GNUSTEP_STABLE%%@dirrm Local/Library/Bundles/GSHbox-test.bundle/%%GNU_ARCH%%/%%OPSYS%%
+%%GNUSTEP_STABLE%%@dirrm Local/Library/Bundles/GSHbox-test.bundle/%%GNU_ARCH%%
 @dirrm Local/Library/Bundles/GSHbox-test.bundle/Resources
 @dirrm Local/Library/Bundles/GSHbox-test.bundle
-@dirrm Local/Library/Bundles/CoordinateCheck-test.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-@dirrm Local/Library/Bundles/CoordinateCheck-test.bundle/%%GNU_ARCH%%/%%OPSYS%%
-@dirrm Local/Library/Bundles/CoordinateCheck-test.bundle/%%GNU_ARCH%%
+%%GNUSTEP_STABLE%%@dirrm Local/Library/Bundles/CoordinateCheck-test.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+%%GNUSTEP_STABLE%%@dirrm Local/Library/Bundles/CoordinateCheck-test.bundle/%%GNU_ARCH%%/%%OPSYS%%
+%%GNUSTEP_STABLE%%@dirrm Local/Library/Bundles/CoordinateCheck-test.bundle/%%GNU_ARCH%%
 @dirrm Local/Library/Bundles/CoordinateCheck-test.bundle/Resources
 @dirrm Local/Library/Bundles/CoordinateCheck-test.bundle
 @dirrm Local/Library/Bundles/Composite-test.bundle/Resources
-@dirrm Local/Library/Bundles/Composite-test.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-@dirrm Local/Library/Bundles/Composite-test.bundle/%%GNU_ARCH%%/%%OPSYS%%
-@dirrm Local/Library/Bundles/Composite-test.bundle/%%GNU_ARCH%%
+%%GNUSTEP_STABLE%%@dirrm Local/Library/Bundles/Composite-test.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+%%GNUSTEP_STABLE%%@dirrm Local/Library/Bundles/Composite-test.bundle/%%GNU_ARCH%%/%%OPSYS%%
+%%GNUSTEP_STABLE%%@dirrm Local/Library/Bundles/Composite-test.bundle/%%GNU_ARCH%%
 @dirrm Local/Library/Bundles/Composite-test.bundle
 @dirrm Local/Library/Bundles
 @dirrm Local/Library
-@dirrm Local/Applications/NSScreenTest.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-@dirrm Local/Applications/NSScreenTest.app/%%GNU_ARCH%%/%%OPSYS%%
-@dirrm Local/Applications/NSScreenTest.app/%%GNU_ARCH%%
+%%GNUSTEP_STABLE%%@dirrm Local/Applications/NSScreenTest.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+%%GNUSTEP_STABLE%%@dirrm Local/Applications/NSScreenTest.app/%%GNU_ARCH%%/%%OPSYS%%
+%%GNUSTEP_STABLE%%@dirrm Local/Applications/NSScreenTest.app/%%GNU_ARCH%%
 @dirrm Local/Applications/NSScreenTest.app/Resources
 @dirrm Local/Applications/NSScreenTest.app
-@dirrm Local/Applications/NSBrowserTest.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-@dirrm Local/Applications/NSBrowserTest.app/%%GNU_ARCH%%/%%OPSYS%%
-@dirrm Local/Applications/NSBrowserTest.app/%%GNU_ARCH%%
+%%GNUSTEP_STABLE%%@dirrm Local/Applications/NSBrowserTest.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+%%GNUSTEP_STABLE%%@dirrm Local/Applications/NSBrowserTest.app/%%GNU_ARCH%%/%%OPSYS%%
+%%GNUSTEP_STABLE%%@dirrm Local/Applications/NSBrowserTest.app/%%GNU_ARCH%%
 @dirrm Local/Applications/NSBrowserTest.app/Resources
 @dirrm Local/Applications/NSBrowserTest.app
-@dirrm Local/Applications/Ink.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-@dirrm Local/Applications/Ink.app/%%GNU_ARCH%%/%%OPSYS%%
-@dirrm Local/Applications/Ink.app/%%GNU_ARCH%%
+%%GNUSTEP_STABLE%%@dirrm Local/Applications/Ink.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+%%GNUSTEP_STABLE%%@dirrm Local/Applications/Ink.app/%%GNU_ARCH%%/%%OPSYS%%
+%%GNUSTEP_STABLE%%@dirrm Local/Applications/Ink.app/%%GNU_ARCH%%
 @dirrm Local/Applications/Ink.app/Resources
 @dirrm Local/Applications/Ink.app
-@dirrm Local/Applications/HostAddress.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-@dirrm Local/Applications/HostAddress.app/%%GNU_ARCH%%/%%OPSYS%%
-@dirrm Local/Applications/HostAddress.app/%%GNU_ARCH%%
+%%GNUSTEP_STABLE%%@dirrm Local/Applications/HostAddress.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+%%GNUSTEP_STABLE%%@dirrm Local/Applications/HostAddress.app/%%GNU_ARCH%%/%%OPSYS%%
+%%GNUSTEP_STABLE%%@dirrm Local/Applications/HostAddress.app/%%GNU_ARCH%%
 @dirrm Local/Applications/HostAddress.app/Resources
 @dirrm Local/Applications/HostAddress.app
-@dirrm Local/Applications/GSTest.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-@dirrm Local/Applications/GSTest.app/%%GNU_ARCH%%/%%OPSYS%%
-@dirrm Local/Applications/GSTest.app/%%GNU_ARCH%%
+%%GNUSTEP_STABLE%%@dirrm Local/Applications/GSTest.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+%%GNUSTEP_STABLE%%@dirrm Local/Applications/GSTest.app/%%GNU_ARCH%%/%%OPSYS%%
+%%GNUSTEP_STABLE%%@dirrm Local/Applications/GSTest.app/%%GNU_ARCH%%
 @dirrm Local/Applications/GSTest.app/Resources
 @dirrm Local/Applications/GSTest.app
-@dirrm Local/Applications/GFractal.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-@dirrm Local/Applications/GFractal.app/%%GNU_ARCH%%/%%OPSYS%%
-@dirrm Local/Applications/GFractal.app/%%GNU_ARCH%%
+%%GNUSTEP_STABLE%%@dirrm Local/Applications/GFractal.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+%%GNUSTEP_STABLE%%@dirrm Local/Applications/GFractal.app/%%GNU_ARCH%%/%%OPSYS%%
+%%GNUSTEP_STABLE%%@dirrm Local/Applications/GFractal.app/%%GNU_ARCH%%
 @dirrm Local/Applications/GFractal.app/Resources
 @dirrm Local/Applications/GFractal.app
-@dirrm Local/Applications/Finger.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-@dirrm Local/Applications/Finger.app/%%GNU_ARCH%%/%%OPSYS%%
-@dirrm Local/Applications/Finger.app/%%GNU_ARCH%%
+%%GNUSTEP_STABLE%%@dirrm Local/Applications/Finger.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+%%GNUSTEP_STABLE%%@dirrm Local/Applications/Finger.app/%%GNU_ARCH%%/%%OPSYS%%
+%%GNUSTEP_STABLE%%@dirrm Local/Applications/Finger.app/%%GNU_ARCH%%
 @dirrm Local/Applications/Finger.app/Resources
 @dirrm Local/Applications/Finger.app
-@dirrm Local/Applications/CurrencyConverter.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-@dirrm Local/Applications/CurrencyConverter.app/%%GNU_ARCH%%/%%OPSYS%%
-@dirrm Local/Applications/CurrencyConverter.app/%%GNU_ARCH%%
+%%GNUSTEP_STABLE%%@dirrm Local/Applications/CurrencyConverter.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+%%GNUSTEP_STABLE%%@dirrm Local/Applications/CurrencyConverter.app/%%GNU_ARCH%%/%%OPSYS%%
+%%GNUSTEP_STABLE%%@dirrm Local/Applications/CurrencyConverter.app/%%GNU_ARCH%%
 @dirrm Local/Applications/CurrencyConverter.app/Resources
 @dirrm Local/Applications/CurrencyConverter.app
-@dirrm Local/Applications/Calculator.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-@dirrm Local/Applications/Calculator.app/%%GNU_ARCH%%/%%OPSYS%%
-@dirrm Local/Applications/Calculator.app/%%GNU_ARCH%%
+%%GNUSTEP_STABLE%%@dirrm Local/Applications/Calculator.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+%%GNUSTEP_STABLE%%@dirrm Local/Applications/Calculator.app/%%GNU_ARCH%%/%%OPSYS%%
+%%GNUSTEP_STABLE%%@dirrm Local/Applications/Calculator.app/%%GNU_ARCH%%
 @dirrm Local/Applications/Calculator.app/Resources
 @dirrm Local/Applications/Calculator.app
 @dirrm Local/Applications

@@ -5,12 +5,12 @@ Local/Applications/GSCommander.app/Resources/GSCommander.tiff
 Local/Applications/GSCommander.app/Resources/GSCommanderInfo.plist
 Local/Applications/GSCommander.app/Resources/Info-gnustep.plist
 Local/Applications/GSCommander.app/Resources/README
-Local/Applications/GSCommander.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/GSCommander
-Local/Applications/GSCommander.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/library_paths.openapp
+%%GNUSTEP_STABLE%%Local/Applications/GSCommander.app/%%NOFLAT%%GSCommander
+Local/Applications/GSCommander.app/%%NOFLAT%%library_paths.openapp
 Local/Applications/GSCommander.app/stamp.make
-@dirrm Local/Applications/GSCommander.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-@dirrm Local/Applications/GSCommander.app/%%GNU_ARCH%%/%%OPSYS%%
-@dirrm Local/Applications/GSCommander.app/%%GNU_ARCH%%
+%%GNUSTEP_STABLE%%@dirrm Local/Applications/GSCommander.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+%%GNUSTEP_STABLE%%@dirrm Local/Applications/GSCommander.app/%%GNU_ARCH%%/%%OPSYS%%
+%%GNUSTEP_STABLE%%@dirrm Local/Applications/GSCommander.app/%%GNU_ARCH%%
 @dirrm Local/Applications/GSCommander.app/Resources
 @dirrm Local/Applications/GSCommander.app
 @dirrm Local/Applications

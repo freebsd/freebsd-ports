@@ -1,7 +1,7 @@
 System/Applications/GWorkspace.app/GWorkspace
 System/Applications/GWorkspace.app/Resources/AppViewer.inspector/Resources/Info-gnustep.plist
 System/Applications/GWorkspace.app/Resources/AppViewer.inspector/Resources/InspectorInfo.plist
-System/Applications/GWorkspace.app/Resources/AppViewer.inspector/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/AppViewer
+System/Applications/GWorkspace.app/Resources/AppViewer.inspector/%%NOFLAT%%AppViewer
 System/Applications/GWorkspace.app/Resources/AppViewer.inspector/stamp.make
 System/Applications/GWorkspace.app/Resources/BrowserViewer.viewer/Resources/CVS/Entries
 System/Applications/GWorkspace.app/Resources/BrowserViewer.viewer/Resources/CVS/Repository
@@ -53,7 +53,7 @@ System/Applications/GWorkspace.app/Resources/BrowserViewer.viewer/Resources/Span
 System/Applications/GWorkspace.app/Resources/BrowserViewer.viewer/Resources/Spanish.lproj/CVS/Repository
 System/Applications/GWorkspace.app/Resources/BrowserViewer.viewer/Resources/Spanish.lproj/CVS/Root
 System/Applications/GWorkspace.app/Resources/BrowserViewer.viewer/Resources/miniwindow.tiff
-System/Applications/GWorkspace.app/Resources/BrowserViewer.viewer/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/BrowserViewer
+System/Applications/GWorkspace.app/Resources/BrowserViewer.viewer/%%NOFLAT%%BrowserViewer
 System/Applications/GWorkspace.app/Resources/BrowserViewer.viewer/stamp.make
 System/Applications/GWorkspace.app/Resources/CVS/Entries
 System/Applications/GWorkspace.app/Resources/CVS/Repository
@@ -288,7 +288,7 @@ System/Applications/GWorkspace.app/Resources/FileIcon_Directory_Open_alt.tiff
 System/Applications/GWorkspace.app/Resources/FileManager.tiff
 System/Applications/GWorkspace.app/Resources/FolderViewer.inspector/Resources/Info-gnustep.plist
 System/Applications/GWorkspace.app/Resources/FolderViewer.inspector/Resources/InspectorInfo.plist
-System/Applications/GWorkspace.app/Resources/FolderViewer.inspector/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/FolderViewer
+System/Applications/GWorkspace.app/Resources/FolderViewer.inspector/%%NOFLAT%%FolderViewer
 System/Applications/GWorkspace.app/Resources/FolderViewer.inspector/stamp.make
 System/Applications/GWorkspace.app/Resources/French.lproj/CVS/Entries
 System/Applications/GWorkspace.app/Resources/French.lproj/CVS/Repository
@@ -376,16 +376,16 @@ System/Applications/GWorkspace.app/Resources/IconsViewer.viewer/Resources/Spanis
 System/Applications/GWorkspace.app/Resources/IconsViewer.viewer/Resources/Spanish.lproj/CVS/Repository
 System/Applications/GWorkspace.app/Resources/IconsViewer.viewer/Resources/Spanish.lproj/CVS/Root
 System/Applications/GWorkspace.app/Resources/IconsViewer.viewer/Resources/miniwindow.tiff
-System/Applications/GWorkspace.app/Resources/IconsViewer.viewer/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/IconsViewer
+System/Applications/GWorkspace.app/Resources/IconsViewer.viewer/%%NOFLAT%%IconsViewer
 System/Applications/GWorkspace.app/Resources/IconsViewer.viewer/stamp.make
 System/Applications/GWorkspace.app/Resources/ImageViewer.inspector/Resources/Info-gnustep.plist
 System/Applications/GWorkspace.app/Resources/ImageViewer.inspector/Resources/InspectorInfo.plist
-System/Applications/GWorkspace.app/Resources/ImageViewer.inspector/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/ImageViewer
+System/Applications/GWorkspace.app/Resources/ImageViewer.inspector/%%NOFLAT%%ImageViewer
 System/Applications/GWorkspace.app/Resources/ImageViewer.inspector/stamp.make
 System/Applications/GWorkspace.app/Resources/Info-gnustep.plist
 System/Applications/GWorkspace.app/Resources/InspectorViewer.inspector/Resources/Info-gnustep.plist
 System/Applications/GWorkspace.app/Resources/InspectorViewer.inspector/Resources/InspectorInfo.plist
-System/Applications/GWorkspace.app/Resources/InspectorViewer.inspector/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/InspectorViewer
+System/Applications/GWorkspace.app/Resources/InspectorViewer.inspector/%%NOFLAT%%InspectorViewer
 System/Applications/GWorkspace.app/Resources/InspectorViewer.inspector/stamp.make
 System/Applications/GWorkspace.app/Resources/Italian.lproj/CVS/Entries
 System/Applications/GWorkspace.app/Resources/Italian.lproj/CVS/Repository
@@ -452,11 +452,11 @@ System/Applications/GWorkspace.app/Resources/MultipleSelection.tiff
 %%PDFVIEW%%System/Applications/GWorkspace.app/Resources/PdfViewer.inspector/Resources/play.tiff
 %%PDFVIEW%%System/Applications/GWorkspace.app/Resources/PdfViewer.inspector/Resources/right.tiff
 %%PDFVIEW%%System/Applications/GWorkspace.app/Resources/PdfViewer.inspector/Resources/stop.tiff
-%%PDFVIEW%%System/Applications/GWorkspace.app/Resources/PdfViewer.inspector/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/PdfViewer
+%%PDFVIEW%%System/Applications/GWorkspace.app/Resources/PdfViewer.inspector/%%NOFLAT%%PdfViewer
 %%PDFVIEW%%System/Applications/GWorkspace.app/Resources/PdfViewer.inspector/stamp.make
 System/Applications/GWorkspace.app/Resources/PlistViewer.inspector/Resources/Info-gnustep.plist
 System/Applications/GWorkspace.app/Resources/PlistViewer.inspector/Resources/InspectorInfo.plist
-System/Applications/GWorkspace.app/Resources/PlistViewer.inspector/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/PlistViewer
+System/Applications/GWorkspace.app/Resources/PlistViewer.inspector/%%NOFLAT%%PlistViewer
 System/Applications/GWorkspace.app/Resources/PlistViewer.inspector/stamp.make
 System/Applications/GWorkspace.app/Resources/Portuguese.lproj/CVS/Entries
 System/Applications/GWorkspace.app/Resources/Portuguese.lproj/CVS/Repository
@@ -756,7 +756,7 @@ System/Applications/GWorkspace.app/Resources/Romanian.lproj/Localizable.strings
 System/Applications/GWorkspace.app/Resources/Romanian.lproj/MainMenu-OSX.gsmarkup
 System/Applications/GWorkspace.app/Resources/RtfViewer.inspector/Resources/Info-gnustep.plist
 System/Applications/GWorkspace.app/Resources/RtfViewer.inspector/Resources/InspectorInfo.plist
-System/Applications/GWorkspace.app/Resources/RtfViewer.inspector/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/RtfViewer
+System/Applications/GWorkspace.app/Resources/RtfViewer.inspector/%%NOFLAT%%RtfViewer
 System/Applications/GWorkspace.app/Resources/RtfViewer.inspector/stamp.make
 System/Applications/GWorkspace.app/Resources/SlideMask.tiff
 System/Applications/GWorkspace.app/Resources/SmallCellHighlight.tiff
@@ -766,7 +766,7 @@ System/Applications/GWorkspace.app/Resources/SmallIconsViewer.viewer/Resources/C
 System/Applications/GWorkspace.app/Resources/SmallIconsViewer.viewer/Resources/CVS/Root
 System/Applications/GWorkspace.app/Resources/SmallIconsViewer.viewer/Resources/Info-gnustep.plist
 System/Applications/GWorkspace.app/Resources/SmallIconsViewer.viewer/Resources/miniwindow.tiff
-System/Applications/GWorkspace.app/Resources/SmallIconsViewer.viewer/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/SmallIconsViewer
+System/Applications/GWorkspace.app/Resources/SmallIconsViewer.viewer/%%NOFLAT%%SmallIconsViewer
 System/Applications/GWorkspace.app/Resources/SmallIconsViewer.viewer/stamp.make
 System/Applications/GWorkspace.app/Resources/SoundViewer.inspector/Resources/CVS/Entries
 System/Applications/GWorkspace.app/Resources/SoundViewer.inspector/Resources/CVS/Repository
@@ -776,7 +776,7 @@ System/Applications/GWorkspace.app/Resources/SoundViewer.inspector/Resources/Ins
 System/Applications/GWorkspace.app/Resources/SoundViewer.inspector/Resources/pause.tiff
 System/Applications/GWorkspace.app/Resources/SoundViewer.inspector/Resources/play.tiff
 System/Applications/GWorkspace.app/Resources/SoundViewer.inspector/Resources/stop.tiff
-System/Applications/GWorkspace.app/Resources/SoundViewer.inspector/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/SoundViewer
+System/Applications/GWorkspace.app/Resources/SoundViewer.inspector/%%NOFLAT%%SoundViewer
 System/Applications/GWorkspace.app/Resources/SoundViewer.inspector/stamp.make
 System/Applications/GWorkspace.app/Resources/Spanish.lproj/CVS/Entries
 System/Applications/GWorkspace.app/Resources/Spanish.lproj/CVS/Repository
@@ -796,7 +796,7 @@ System/Applications/GWorkspace.app/Resources/Spanish.lproj/Localizable.strings
 System/Applications/GWorkspace.app/Resources/Spanish.lproj/MainMenu-OSX.gsmarkup
 System/Applications/GWorkspace.app/Resources/StringsViewer.inspector/Resources/Info-gnustep.plist
 System/Applications/GWorkspace.app/Resources/StringsViewer.inspector/Resources/InspectorInfo.plist
-System/Applications/GWorkspace.app/Resources/StringsViewer.inspector/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/StringsViewer
+System/Applications/GWorkspace.app/Resources/StringsViewer.inspector/%%NOFLAT%%StringsViewer
 System/Applications/GWorkspace.app/Resources/StringsViewer.inspector/stamp.make
 System/Applications/GWorkspace.app/Resources/TileHighlight.tiff
 System/Applications/GWorkspace.app/Resources/Weekday-0.tiff
@@ -820,12 +820,12 @@ System/Applications/GWorkspace.app/Resources/stop_48.tiff
 System/Applications/GWorkspace.app/Resources/switchMultiple.tiff
 System/Applications/GWorkspace.app/Resources/switchOff.tiff
 System/Applications/GWorkspace.app/Resources/switchOn.tiff
-System/Applications/GWorkspace.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/GWorkspace
-System/Applications/GWorkspace.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/library_paths.openapp
+%%GNUSTEP_STABLE%%System/Applications/GWorkspace.app/%%NOFLAT%%GWorkspace
+System/Applications/GWorkspace.app/%%NOFLAT%%library_paths.openapp
 System/Applications/GWorkspace.app/stamp.make
 System/Library/Bundles/AppViewer.inspector/Resources/Info-gnustep.plist
 System/Library/Bundles/AppViewer.inspector/Resources/InspectorInfo.plist
-System/Library/Bundles/AppViewer.inspector/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/AppViewer
+System/Library/Bundles/AppViewer.inspector/%%NOFLAT%%AppViewer
 System/Library/Bundles/AppViewer.inspector/stamp.make
 System/Library/Bundles/BrowserViewer.viewer/Resources/CVS/Entries
 System/Library/Bundles/BrowserViewer.viewer/Resources/CVS/Repository
@@ -877,11 +877,11 @@ System/Library/Bundles/BrowserViewer.viewer/Resources/Spanish.lproj/CVS/Entries
 System/Library/Bundles/BrowserViewer.viewer/Resources/Spanish.lproj/CVS/Repository
 System/Library/Bundles/BrowserViewer.viewer/Resources/Spanish.lproj/CVS/Root
 System/Library/Bundles/BrowserViewer.viewer/Resources/miniwindow.tiff
-System/Library/Bundles/BrowserViewer.viewer/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/BrowserViewer
+System/Library/Bundles/BrowserViewer.viewer/%%NOFLAT%%BrowserViewer
 System/Library/Bundles/BrowserViewer.viewer/stamp.make
 System/Library/Bundles/FolderViewer.inspector/Resources/Info-gnustep.plist
 System/Library/Bundles/FolderViewer.inspector/Resources/InspectorInfo.plist
-System/Library/Bundles/FolderViewer.inspector/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/FolderViewer
+System/Library/Bundles/FolderViewer.inspector/%%NOFLAT%%FolderViewer
 System/Library/Bundles/FolderViewer.inspector/stamp.make
 System/Library/Bundles/IconsViewer.viewer/Resources/CVS/Entries
 System/Library/Bundles/IconsViewer.viewer/Resources/CVS/Repository
@@ -936,18 +936,18 @@ System/Library/Bundles/IconsViewer.viewer/Resources/Spanish.lproj/CVS/Entries
 System/Library/Bundles/IconsViewer.viewer/Resources/Spanish.lproj/CVS/Repository
 System/Library/Bundles/IconsViewer.viewer/Resources/Spanish.lproj/CVS/Root
 System/Library/Bundles/IconsViewer.viewer/Resources/miniwindow.tiff
-System/Library/Bundles/IconsViewer.viewer/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/IconsViewer
+System/Library/Bundles/IconsViewer.viewer/%%NOFLAT%%IconsViewer
 System/Library/Bundles/IconsViewer.viewer/stamp.make
-System/Library/Bundles/ImageThumbnailer.thumb/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/ImageThumbnailer
+System/Library/Bundles/ImageThumbnailer.thumb/%%NOFLAT%%ImageThumbnailer
 System/Library/Bundles/ImageThumbnailer.thumb/Resources/Info-gnustep.plist
 System/Library/Bundles/ImageThumbnailer.thumb/stamp.make
 System/Library/Bundles/ImageViewer.inspector/Resources/Info-gnustep.plist
 System/Library/Bundles/ImageViewer.inspector/Resources/InspectorInfo.plist
-System/Library/Bundles/ImageViewer.inspector/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/ImageViewer
+System/Library/Bundles/ImageViewer.inspector/%%NOFLAT%%ImageViewer
 System/Library/Bundles/ImageViewer.inspector/stamp.make
 System/Library/Bundles/InspectorViewer.inspector/Resources/Info-gnustep.plist
 System/Library/Bundles/InspectorViewer.inspector/Resources/InspectorInfo.plist
-System/Library/Bundles/InspectorViewer.inspector/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/InspectorViewer
+System/Library/Bundles/InspectorViewer.inspector/%%NOFLAT%%InspectorViewer
 System/Library/Bundles/InspectorViewer.inspector/stamp.make
 %%PDFVIEW%%System/Library/Bundles/PdfViewer.inspector/Resources/CVS/Entries
 %%PDFVIEW%%System/Library/Bundles/PdfViewer.inspector/Resources/CVS/Repository
@@ -961,22 +961,22 @@ System/Library/Bundles/InspectorViewer.inspector/stamp.make
 %%PDFVIEW%%System/Library/Bundles/PdfViewer.inspector/Resources/play.tiff
 %%PDFVIEW%%System/Library/Bundles/PdfViewer.inspector/Resources/right.tiff
 %%PDFVIEW%%System/Library/Bundles/PdfViewer.inspector/Resources/stop.tiff
-%%PDFVIEW%%System/Library/Bundles/PdfViewer.inspector/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/PdfViewer
+%%PDFVIEW%%System/Library/Bundles/PdfViewer.inspector/%%NOFLAT%%PdfViewer
 %%PDFVIEW%%System/Library/Bundles/PdfViewer.inspector/stamp.make
 System/Library/Bundles/PlistViewer.inspector/Resources/Info-gnustep.plist
 System/Library/Bundles/PlistViewer.inspector/Resources/InspectorInfo.plist
-System/Library/Bundles/PlistViewer.inspector/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/PlistViewer
+System/Library/Bundles/PlistViewer.inspector/%%NOFLAT%%PlistViewer
 System/Library/Bundles/PlistViewer.inspector/stamp.make
 System/Library/Bundles/RtfViewer.inspector/Resources/Info-gnustep.plist
 System/Library/Bundles/RtfViewer.inspector/Resources/InspectorInfo.plist
-System/Library/Bundles/RtfViewer.inspector/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/RtfViewer
+System/Library/Bundles/RtfViewer.inspector/%%NOFLAT%%RtfViewer
 System/Library/Bundles/RtfViewer.inspector/stamp.make
 System/Library/Bundles/SmallIconsViewer.viewer/Resources/CVS/Entries
 System/Library/Bundles/SmallIconsViewer.viewer/Resources/CVS/Repository
 System/Library/Bundles/SmallIconsViewer.viewer/Resources/CVS/Root
 System/Library/Bundles/SmallIconsViewer.viewer/Resources/Info-gnustep.plist
 System/Library/Bundles/SmallIconsViewer.viewer/Resources/miniwindow.tiff
-System/Library/Bundles/SmallIconsViewer.viewer/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/SmallIconsViewer
+System/Library/Bundles/SmallIconsViewer.viewer/%%NOFLAT%%SmallIconsViewer
 System/Library/Bundles/SmallIconsViewer.viewer/stamp.make
 System/Library/Bundles/SoundViewer.inspector/Resources/CVS/Entries
 System/Library/Bundles/SoundViewer.inspector/Resources/CVS/Repository
@@ -986,11 +986,11 @@ System/Library/Bundles/SoundViewer.inspector/Resources/InspectorInfo.plist
 System/Library/Bundles/SoundViewer.inspector/Resources/pause.tiff
 System/Library/Bundles/SoundViewer.inspector/Resources/play.tiff
 System/Library/Bundles/SoundViewer.inspector/Resources/stop.tiff
-System/Library/Bundles/SoundViewer.inspector/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/SoundViewer
+System/Library/Bundles/SoundViewer.inspector/%%NOFLAT%%SoundViewer
 System/Library/Bundles/SoundViewer.inspector/stamp.make
 System/Library/Bundles/StringsViewer.inspector/Resources/Info-gnustep.plist
 System/Library/Bundles/StringsViewer.inspector/Resources/InspectorInfo.plist
-System/Library/Bundles/StringsViewer.inspector/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/StringsViewer
+System/Library/Bundles/StringsViewer.inspector/%%NOFLAT%%StringsViewer
 System/Library/Bundles/StringsViewer.inspector/stamp.make
 %%SYSTEMLIBRARY%%/Headers/GWorkspace/BNameEditor.h
 %%SYSTEMLIBRARY%%/Headers/GWorkspace/Browser2.h
@@ -1003,78 +1003,78 @@ System/Library/Bundles/StringsViewer.inspector/stamp.make
 %%SYSTEMLIBRARY%%/Headers/GWorkspace/InspectorsProtocol.h
 %%SYSTEMLIBRARY%%/Headers/GWorkspace/PreferencesProtocol.h
 %%SYSTEMLIBRARY%%/Headers/GWorkspace/ViewersProtocol.h
-%%SYSTEMLIBRARY%%/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libGWorkspace.so
-%%SYSTEMLIBRARY%%/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libGWorkspace.so.1
-%%SYSTEMLIBRARY%%/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libGWorkspace.so.1.0.0
-System/Library/Services/thumbnailer.service/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/thumbnailer
+%%SYSTEMLIBRARY%%/Libraries/%%NOFLAT%%libGWorkspace.so
+%%SYSTEMLIBRARY%%/Libraries/%%NOFLAT%%libGWorkspace.so.1
+%%SYSTEMLIBRARY%%/Libraries/%%NOFLAT%%libGWorkspace.so.1.0.0
+System/Library/Services/thumbnailer.service/%%NOFLAT%%thumbnailer
 System/Library/Services/thumbnailer.service/Resources/ImageThumbnailer.thumb/Resources/Info-gnustep.plist
-System/Library/Services/thumbnailer.service/Resources/ImageThumbnailer.thumb/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/ImageThumbnailer
+System/Library/Services/thumbnailer.service/Resources/ImageThumbnailer.thumb/%%NOFLAT%%ImageThumbnailer
 System/Library/Services/thumbnailer.service/Resources/ImageThumbnailer.thumb/stamp.make
 System/Library/Services/thumbnailer.service/Resources/Info-gnustep.plist
-System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/findfile
-System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/wopen
-@dirrm System/Library/Services/thumbnailer.service/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-@dirrm System/Library/Services/thumbnailer.service/%%GNU_ARCH%%/%%OPSYS%%
-@dirrm System/Library/Services/thumbnailer.service/%%GNU_ARCH%%
-@dirrm System/Library/Services/thumbnailer.service/Resources/ImageThumbnailer.thumb/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-@dirrm System/Library/Services/thumbnailer.service/Resources/ImageThumbnailer.thumb/%%GNU_ARCH%%/%%OPSYS%%
-@dirrm System/Library/Services/thumbnailer.service/Resources/ImageThumbnailer.thumb/%%GNU_ARCH%%
+System/Tools/%%NOFLAT%%findfile
+System/Tools/%%NOFLAT%%wopen
+%%GNUSTEP_STABLE%%@dirrm System/Library/Services/thumbnailer.service/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+%%GNUSTEP_STABLE%%@dirrm System/Library/Services/thumbnailer.service/%%GNU_ARCH%%/%%OPSYS%%
+%%GNUSTEP_STABLE%%@dirrm System/Library/Services/thumbnailer.service/%%GNU_ARCH%%
+%%GNUSTEP_STABLE%%@dirrm System/Library/Services/thumbnailer.service/Resources/ImageThumbnailer.thumb/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+%%GNUSTEP_STABLE%%@dirrm System/Library/Services/thumbnailer.service/Resources/ImageThumbnailer.thumb/%%GNU_ARCH%%/%%OPSYS%%
+%%GNUSTEP_STABLE%%@dirrm System/Library/Services/thumbnailer.service/Resources/ImageThumbnailer.thumb/%%GNU_ARCH%%
 @dirrm System/Library/Services/thumbnailer.service/Resources/ImageThumbnailer.thumb/Resources
 @dirrm System/Library/Services/thumbnailer.service/Resources/ImageThumbnailer.thumb
 @dirrm System/Library/Services/thumbnailer.service/Resources
 @dirrm System/Library/Services/thumbnailer.service
 @dirrm %%SYSTEMLIBRARY%%/Headers/GWorkspace
-@dirrm System/Library/Bundles/StringsViewer.inspector/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-@dirrm System/Library/Bundles/StringsViewer.inspector/%%GNU_ARCH%%/%%OPSYS%%
-@dirrm System/Library/Bundles/StringsViewer.inspector/%%GNU_ARCH%%
+%%GNUSTEP_STABLE%%@dirrm System/Library/Bundles/StringsViewer.inspector/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+%%GNUSTEP_STABLE%%@dirrm System/Library/Bundles/StringsViewer.inspector/%%GNU_ARCH%%/%%OPSYS%%
+%%GNUSTEP_STABLE%%@dirrm System/Library/Bundles/StringsViewer.inspector/%%GNU_ARCH%%
 @dirrm System/Library/Bundles/StringsViewer.inspector/Resources
 @dirrm System/Library/Bundles/StringsViewer.inspector
-@dirrm System/Library/Bundles/SoundViewer.inspector/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-@dirrm System/Library/Bundles/SoundViewer.inspector/%%GNU_ARCH%%/%%OPSYS%%
-@dirrm System/Library/Bundles/SoundViewer.inspector/%%GNU_ARCH%%
+%%GNUSTEP_STABLE%%@dirrm System/Library/Bundles/SoundViewer.inspector/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+%%GNUSTEP_STABLE%%@dirrm System/Library/Bundles/SoundViewer.inspector/%%GNU_ARCH%%/%%OPSYS%%
+%%GNUSTEP_STABLE%%@dirrm System/Library/Bundles/SoundViewer.inspector/%%GNU_ARCH%%
 @dirrm System/Library/Bundles/SoundViewer.inspector/Resources/CVS
 @dirrm System/Library/Bundles/SoundViewer.inspector/Resources
 @dirrm System/Library/Bundles/SoundViewer.inspector
-@dirrm System/Library/Bundles/SmallIconsViewer.viewer/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-@dirrm System/Library/Bundles/SmallIconsViewer.viewer/%%GNU_ARCH%%/%%OPSYS%%
-@dirrm System/Library/Bundles/SmallIconsViewer.viewer/%%GNU_ARCH%%
+%%GNUSTEP_STABLE%%@dirrm System/Library/Bundles/SmallIconsViewer.viewer/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+%%GNUSTEP_STABLE%%@dirrm System/Library/Bundles/SmallIconsViewer.viewer/%%GNU_ARCH%%/%%OPSYS%%
+%%GNUSTEP_STABLE%%@dirrm System/Library/Bundles/SmallIconsViewer.viewer/%%GNU_ARCH%%
 @dirrm System/Library/Bundles/SmallIconsViewer.viewer/Resources/CVS
 @dirrm System/Library/Bundles/SmallIconsViewer.viewer/Resources
 @dirrm System/Library/Bundles/SmallIconsViewer.viewer
-@dirrm System/Library/Bundles/RtfViewer.inspector/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-@dirrm System/Library/Bundles/RtfViewer.inspector/%%GNU_ARCH%%/%%OPSYS%%
-@dirrm System/Library/Bundles/RtfViewer.inspector/%%GNU_ARCH%%
+%%GNUSTEP_STABLE%%@dirrm System/Library/Bundles/RtfViewer.inspector/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+%%GNUSTEP_STABLE%%@dirrm System/Library/Bundles/RtfViewer.inspector/%%GNU_ARCH%%/%%OPSYS%%
+%%GNUSTEP_STABLE%%@dirrm System/Library/Bundles/RtfViewer.inspector/%%GNU_ARCH%%
 @dirrm System/Library/Bundles/RtfViewer.inspector/Resources
 @dirrm System/Library/Bundles/RtfViewer.inspector
-@dirrm System/Library/Bundles/PlistViewer.inspector/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-@dirrm System/Library/Bundles/PlistViewer.inspector/%%GNU_ARCH%%/%%OPSYS%%
-@dirrm System/Library/Bundles/PlistViewer.inspector/%%GNU_ARCH%%
+%%GNUSTEP_STABLE%%@dirrm System/Library/Bundles/PlistViewer.inspector/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+%%GNUSTEP_STABLE%%@dirrm System/Library/Bundles/PlistViewer.inspector/%%GNU_ARCH%%/%%OPSYS%%
+%%GNUSTEP_STABLE%%@dirrm System/Library/Bundles/PlistViewer.inspector/%%GNU_ARCH%%
 @dirrm System/Library/Bundles/PlistViewer.inspector/Resources
 @dirrm System/Library/Bundles/PlistViewer.inspector
-@dirrm System/Library/Bundles/PdfViewer.inspector/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-@dirrm System/Library/Bundles/PdfViewer.inspector/%%GNU_ARCH%%/%%OPSYS%%
-@dirrm System/Library/Bundles/PdfViewer.inspector/%%GNU_ARCH%%
+%%GNUSTEP_STABLE%%@dirrm System/Library/Bundles/PdfViewer.inspector/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+%%GNUSTEP_STABLE%%@dirrm System/Library/Bundles/PdfViewer.inspector/%%GNU_ARCH%%/%%OPSYS%%
+%%GNUSTEP_STABLE%%@dirrm System/Library/Bundles/PdfViewer.inspector/%%GNU_ARCH%%
 @dirrm System/Library/Bundles/PdfViewer.inspector/Resources/CVS
 @dirrm System/Library/Bundles/PdfViewer.inspector/Resources
 @dirrm System/Library/Bundles/PdfViewer.inspector
-@dirrm System/Library/Bundles/InspectorViewer.inspector/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-@dirrm System/Library/Bundles/InspectorViewer.inspector/%%GNU_ARCH%%/%%OPSYS%%
-@dirrm System/Library/Bundles/InspectorViewer.inspector/%%GNU_ARCH%%
+%%GNUSTEP_STABLE%%@dirrm System/Library/Bundles/InspectorViewer.inspector/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+%%GNUSTEP_STABLE%%@dirrm System/Library/Bundles/InspectorViewer.inspector/%%GNU_ARCH%%/%%OPSYS%%
+%%GNUSTEP_STABLE%%@dirrm System/Library/Bundles/InspectorViewer.inspector/%%GNU_ARCH%%
 @dirrm System/Library/Bundles/InspectorViewer.inspector/Resources
 @dirrm System/Library/Bundles/InspectorViewer.inspector
-@dirrm System/Library/Bundles/ImageViewer.inspector/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-@dirrm System/Library/Bundles/ImageViewer.inspector/%%GNU_ARCH%%/%%OPSYS%%
-@dirrm System/Library/Bundles/ImageViewer.inspector/%%GNU_ARCH%%
+%%GNUSTEP_STABLE%%@dirrm System/Library/Bundles/ImageViewer.inspector/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+%%GNUSTEP_STABLE%%@dirrm System/Library/Bundles/ImageViewer.inspector/%%GNU_ARCH%%/%%OPSYS%%
+%%GNUSTEP_STABLE%%@dirrm System/Library/Bundles/ImageViewer.inspector/%%GNU_ARCH%%
 @dirrm System/Library/Bundles/ImageViewer.inspector/Resources
 @dirrm System/Library/Bundles/ImageViewer.inspector
-@dirrm System/Library/Bundles/ImageThumbnailer.thumb/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-@dirrm System/Library/Bundles/ImageThumbnailer.thumb/%%GNU_ARCH%%/%%OPSYS%%
-@dirrm System/Library/Bundles/ImageThumbnailer.thumb/%%GNU_ARCH%%
+%%GNUSTEP_STABLE%%@dirrm System/Library/Bundles/ImageThumbnailer.thumb/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+%%GNUSTEP_STABLE%%@dirrm System/Library/Bundles/ImageThumbnailer.thumb/%%GNU_ARCH%%/%%OPSYS%%
+%%GNUSTEP_STABLE%%@dirrm System/Library/Bundles/ImageThumbnailer.thumb/%%GNU_ARCH%%
 @dirrm System/Library/Bundles/ImageThumbnailer.thumb/Resources
 @dirrm System/Library/Bundles/ImageThumbnailer.thumb
-@dirrm System/Library/Bundles/IconsViewer.viewer/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-@dirrm System/Library/Bundles/IconsViewer.viewer/%%GNU_ARCH%%/%%OPSYS%%
-@dirrm System/Library/Bundles/IconsViewer.viewer/%%GNU_ARCH%%
+%%GNUSTEP_STABLE%%@dirrm System/Library/Bundles/IconsViewer.viewer/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+%%GNUSTEP_STABLE%%@dirrm System/Library/Bundles/IconsViewer.viewer/%%GNU_ARCH%%/%%OPSYS%%
+%%GNUSTEP_STABLE%%@dirrm System/Library/Bundles/IconsViewer.viewer/%%GNU_ARCH%%
 @dirrm System/Library/Bundles/IconsViewer.viewer/Resources/Spanish.lproj/CVS
 @dirrm System/Library/Bundles/IconsViewer.viewer/Resources/Spanish.lproj
 @dirrm System/Library/Bundles/IconsViewer.viewer/Resources/Romanian.lproj/CVS
@@ -1113,14 +1113,14 @@ System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/wopen
 @dirrm System/Library/Bundles/IconsViewer.viewer/Resources/CVS
 @dirrm System/Library/Bundles/IconsViewer.viewer/Resources
 @dirrm System/Library/Bundles/IconsViewer.viewer
-@dirrm System/Library/Bundles/FolderViewer.inspector/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-@dirrm System/Library/Bundles/FolderViewer.inspector/%%GNU_ARCH%%/%%OPSYS%%
-@dirrm System/Library/Bundles/FolderViewer.inspector/%%GNU_ARCH%%
+%%GNUSTEP_STABLE%%@dirrm System/Library/Bundles/FolderViewer.inspector/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+%%GNUSTEP_STABLE%%@dirrm System/Library/Bundles/FolderViewer.inspector/%%GNU_ARCH%%/%%OPSYS%%
+%%GNUSTEP_STABLE%%@dirrm System/Library/Bundles/FolderViewer.inspector/%%GNU_ARCH%%
 @dirrm System/Library/Bundles/FolderViewer.inspector/Resources
 @dirrm System/Library/Bundles/FolderViewer.inspector
-@dirrm System/Library/Bundles/BrowserViewer.viewer/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-@dirrm System/Library/Bundles/BrowserViewer.viewer/%%GNU_ARCH%%/%%OPSYS%%
-@dirrm System/Library/Bundles/BrowserViewer.viewer/%%GNU_ARCH%%
+%%GNUSTEP_STABLE%%@dirrm System/Library/Bundles/BrowserViewer.viewer/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+%%GNUSTEP_STABLE%%@dirrm System/Library/Bundles/BrowserViewer.viewer/%%GNU_ARCH%%/%%OPSYS%%
+%%GNUSTEP_STABLE%%@dirrm System/Library/Bundles/BrowserViewer.viewer/%%GNU_ARCH%%
 @dirrm System/Library/Bundles/BrowserViewer.viewer/Resources/Spanish.lproj/CVS
 @dirrm System/Library/Bundles/BrowserViewer.viewer/Resources/Spanish.lproj
 @dirrm System/Library/Bundles/BrowserViewer.viewer/Resources/Romanian.lproj/CVS
@@ -1157,17 +1157,17 @@ System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/wopen
 @dirrm System/Library/Bundles/BrowserViewer.viewer/Resources/CVS
 @dirrm System/Library/Bundles/BrowserViewer.viewer/Resources
 @dirrm System/Library/Bundles/BrowserViewer.viewer
-@dirrm System/Library/Bundles/AppViewer.inspector/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-@dirrm System/Library/Bundles/AppViewer.inspector/%%GNU_ARCH%%/%%OPSYS%%
-@dirrm System/Library/Bundles/AppViewer.inspector/%%GNU_ARCH%%
+%%GNUSTEP_STABLE%%@dirrm System/Library/Bundles/AppViewer.inspector/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+%%GNUSTEP_STABLE%%@dirrm System/Library/Bundles/AppViewer.inspector/%%GNU_ARCH%%/%%OPSYS%%
+%%GNUSTEP_STABLE%%@dirrm System/Library/Bundles/AppViewer.inspector/%%GNU_ARCH%%
 @dirrm System/Library/Bundles/AppViewer.inspector/Resources
 @dirrm System/Library/Bundles/AppViewer.inspector
-@dirrm System/Applications/GWorkspace.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-@dirrm System/Applications/GWorkspace.app/%%GNU_ARCH%%/%%OPSYS%%
-@dirrm System/Applications/GWorkspace.app/%%GNU_ARCH%%
-@dirrm System/Applications/GWorkspace.app/Resources/StringsViewer.inspector/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-@dirrm System/Applications/GWorkspace.app/Resources/StringsViewer.inspector/%%GNU_ARCH%%/%%OPSYS%%
-@dirrm System/Applications/GWorkspace.app/Resources/StringsViewer.inspector/%%GNU_ARCH%%
+%%GNUSTEP_STABLE%%@dirrm System/Applications/GWorkspace.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+%%GNUSTEP_STABLE%%@dirrm System/Applications/GWorkspace.app/%%GNU_ARCH%%/%%OPSYS%%
+%%GNUSTEP_STABLE%%@dirrm System/Applications/GWorkspace.app/%%GNU_ARCH%%
+%%GNUSTEP_STABLE%%@dirrm System/Applications/GWorkspace.app/Resources/StringsViewer.inspector/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+%%GNUSTEP_STABLE%%@dirrm System/Applications/GWorkspace.app/Resources/StringsViewer.inspector/%%GNU_ARCH%%/%%OPSYS%%
+%%GNUSTEP_STABLE%%@dirrm System/Applications/GWorkspace.app/Resources/StringsViewer.inspector/%%GNU_ARCH%%
 @dirrm System/Applications/GWorkspace.app/Resources/StringsViewer.inspector/Resources
 @dirrm System/Applications/GWorkspace.app/Resources/StringsViewer.inspector
 @dirrm System/Applications/GWorkspace.app/Resources/Spanish.lproj/Finder.nib/CVS
@@ -1176,21 +1176,21 @@ System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/wopen
 @dirrm System/Applications/GWorkspace.app/Resources/Spanish.lproj/Finder.gorm
 @dirrm System/Applications/GWorkspace.app/Resources/Spanish.lproj/CVS
 @dirrm System/Applications/GWorkspace.app/Resources/Spanish.lproj
-@dirrm System/Applications/GWorkspace.app/Resources/SoundViewer.inspector/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-@dirrm System/Applications/GWorkspace.app/Resources/SoundViewer.inspector/%%GNU_ARCH%%/%%OPSYS%%
-@dirrm System/Applications/GWorkspace.app/Resources/SoundViewer.inspector/%%GNU_ARCH%%
+%%GNUSTEP_STABLE%%@dirrm System/Applications/GWorkspace.app/Resources/SoundViewer.inspector/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+%%GNUSTEP_STABLE%%@dirrm System/Applications/GWorkspace.app/Resources/SoundViewer.inspector/%%GNU_ARCH%%/%%OPSYS%%
+%%GNUSTEP_STABLE%%@dirrm System/Applications/GWorkspace.app/Resources/SoundViewer.inspector/%%GNU_ARCH%%
 @dirrm System/Applications/GWorkspace.app/Resources/SoundViewer.inspector/Resources/CVS
 @dirrm System/Applications/GWorkspace.app/Resources/SoundViewer.inspector/Resources
 @dirrm System/Applications/GWorkspace.app/Resources/SoundViewer.inspector
-@dirrm System/Applications/GWorkspace.app/Resources/SmallIconsViewer.viewer/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-@dirrm System/Applications/GWorkspace.app/Resources/SmallIconsViewer.viewer/%%GNU_ARCH%%/%%OPSYS%%
-@dirrm System/Applications/GWorkspace.app/Resources/SmallIconsViewer.viewer/%%GNU_ARCH%%
+%%GNUSTEP_STABLE%%@dirrm System/Applications/GWorkspace.app/Resources/SmallIconsViewer.viewer/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+%%GNUSTEP_STABLE%%@dirrm System/Applications/GWorkspace.app/Resources/SmallIconsViewer.viewer/%%GNU_ARCH%%/%%OPSYS%%
+%%GNUSTEP_STABLE%%@dirrm System/Applications/GWorkspace.app/Resources/SmallIconsViewer.viewer/%%GNU_ARCH%%
 @dirrm System/Applications/GWorkspace.app/Resources/SmallIconsViewer.viewer/Resources/CVS
 @dirrm System/Applications/GWorkspace.app/Resources/SmallIconsViewer.viewer/Resources
 @dirrm System/Applications/GWorkspace.app/Resources/SmallIconsViewer.viewer
-@dirrm System/Applications/GWorkspace.app/Resources/RtfViewer.inspector/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-@dirrm System/Applications/GWorkspace.app/Resources/RtfViewer.inspector/%%GNU_ARCH%%/%%OPSYS%%
-@dirrm System/Applications/GWorkspace.app/Resources/RtfViewer.inspector/%%GNU_ARCH%%
+%%GNUSTEP_STABLE%%@dirrm System/Applications/GWorkspace.app/Resources/RtfViewer.inspector/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+%%GNUSTEP_STABLE%%@dirrm System/Applications/GWorkspace.app/Resources/RtfViewer.inspector/%%GNU_ARCH%%/%%OPSYS%%
+%%GNUSTEP_STABLE%%@dirrm System/Applications/GWorkspace.app/Resources/RtfViewer.inspector/%%GNU_ARCH%%
 @dirrm System/Applications/GWorkspace.app/Resources/RtfViewer.inspector/Resources
 @dirrm System/Applications/GWorkspace.app/Resources/RtfViewer.inspector
 @dirrm System/Applications/GWorkspace.app/Resources/Romanian.lproj/Finder.nib/CVS
@@ -1314,14 +1314,14 @@ System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/wopen
 @dirrm System/Applications/GWorkspace.app/Resources/Portuguese.lproj/Finder.gorm
 @dirrm System/Applications/GWorkspace.app/Resources/Portuguese.lproj/CVS
 @dirrm System/Applications/GWorkspace.app/Resources/Portuguese.lproj
-@dirrm System/Applications/GWorkspace.app/Resources/PlistViewer.inspector/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-@dirrm System/Applications/GWorkspace.app/Resources/PlistViewer.inspector/%%GNU_ARCH%%/%%OPSYS%%
-@dirrm System/Applications/GWorkspace.app/Resources/PlistViewer.inspector/%%GNU_ARCH%%
+%%GNUSTEP_STABLE%%@dirrm System/Applications/GWorkspace.app/Resources/PlistViewer.inspector/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+%%GNUSTEP_STABLE%%@dirrm System/Applications/GWorkspace.app/Resources/PlistViewer.inspector/%%GNU_ARCH%%/%%OPSYS%%
+%%GNUSTEP_STABLE%%@dirrm System/Applications/GWorkspace.app/Resources/PlistViewer.inspector/%%GNU_ARCH%%
 @dirrm System/Applications/GWorkspace.app/Resources/PlistViewer.inspector/Resources
 @dirrm System/Applications/GWorkspace.app/Resources/PlistViewer.inspector
-@dirrm System/Applications/GWorkspace.app/Resources/PdfViewer.inspector/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-@dirrm System/Applications/GWorkspace.app/Resources/PdfViewer.inspector/%%GNU_ARCH%%/%%OPSYS%%
-@dirrm System/Applications/GWorkspace.app/Resources/PdfViewer.inspector/%%GNU_ARCH%%
+%%GNUSTEP_STABLE%%@dirrm System/Applications/GWorkspace.app/Resources/PdfViewer.inspector/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+%%GNUSTEP_STABLE%%@dirrm System/Applications/GWorkspace.app/Resources/PdfViewer.inspector/%%GNU_ARCH%%/%%OPSYS%%
+%%GNUSTEP_STABLE%%@dirrm System/Applications/GWorkspace.app/Resources/PdfViewer.inspector/%%GNU_ARCH%%
 @dirrm System/Applications/GWorkspace.app/Resources/PdfViewer.inspector/Resources/CVS
 @dirrm System/Applications/GWorkspace.app/Resources/PdfViewer.inspector/Resources
 @dirrm System/Applications/GWorkspace.app/Resources/PdfViewer.inspector
@@ -1331,19 +1331,19 @@ System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/wopen
 @dirrm System/Applications/GWorkspace.app/Resources/Italian.lproj/Finder.gorm
 @dirrm System/Applications/GWorkspace.app/Resources/Italian.lproj/CVS
 @dirrm System/Applications/GWorkspace.app/Resources/Italian.lproj
-@dirrm System/Applications/GWorkspace.app/Resources/InspectorViewer.inspector/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-@dirrm System/Applications/GWorkspace.app/Resources/InspectorViewer.inspector/%%GNU_ARCH%%/%%OPSYS%%
-@dirrm System/Applications/GWorkspace.app/Resources/InspectorViewer.inspector/%%GNU_ARCH%%
+%%GNUSTEP_STABLE%%@dirrm System/Applications/GWorkspace.app/Resources/InspectorViewer.inspector/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+%%GNUSTEP_STABLE%%@dirrm System/Applications/GWorkspace.app/Resources/InspectorViewer.inspector/%%GNU_ARCH%%/%%OPSYS%%
+%%GNUSTEP_STABLE%%@dirrm System/Applications/GWorkspace.app/Resources/InspectorViewer.inspector/%%GNU_ARCH%%
 @dirrm System/Applications/GWorkspace.app/Resources/InspectorViewer.inspector/Resources
 @dirrm System/Applications/GWorkspace.app/Resources/InspectorViewer.inspector
-@dirrm System/Applications/GWorkspace.app/Resources/ImageViewer.inspector/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-@dirrm System/Applications/GWorkspace.app/Resources/ImageViewer.inspector/%%GNU_ARCH%%/%%OPSYS%%
-@dirrm System/Applications/GWorkspace.app/Resources/ImageViewer.inspector/%%GNU_ARCH%%
+%%GNUSTEP_STABLE%%@dirrm System/Applications/GWorkspace.app/Resources/ImageViewer.inspector/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+%%GNUSTEP_STABLE%%@dirrm System/Applications/GWorkspace.app/Resources/ImageViewer.inspector/%%GNU_ARCH%%/%%OPSYS%%
+%%GNUSTEP_STABLE%%@dirrm System/Applications/GWorkspace.app/Resources/ImageViewer.inspector/%%GNU_ARCH%%
 @dirrm System/Applications/GWorkspace.app/Resources/ImageViewer.inspector/Resources
 @dirrm System/Applications/GWorkspace.app/Resources/ImageViewer.inspector
-@dirrm System/Applications/GWorkspace.app/Resources/IconsViewer.viewer/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-@dirrm System/Applications/GWorkspace.app/Resources/IconsViewer.viewer/%%GNU_ARCH%%/%%OPSYS%%
-@dirrm System/Applications/GWorkspace.app/Resources/IconsViewer.viewer/%%GNU_ARCH%%
+%%GNUSTEP_STABLE%%@dirrm System/Applications/GWorkspace.app/Resources/IconsViewer.viewer/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+%%GNUSTEP_STABLE%%@dirrm System/Applications/GWorkspace.app/Resources/IconsViewer.viewer/%%GNU_ARCH%%/%%OPSYS%%
+%%GNUSTEP_STABLE%%@dirrm System/Applications/GWorkspace.app/Resources/IconsViewer.viewer/%%GNU_ARCH%%
 @dirrm System/Applications/GWorkspace.app/Resources/IconsViewer.viewer/Resources/Spanish.lproj/CVS
 @dirrm System/Applications/GWorkspace.app/Resources/IconsViewer.viewer/Resources/Spanish.lproj
 @dirrm System/Applications/GWorkspace.app/Resources/IconsViewer.viewer/Resources/Romanian.lproj/CVS
@@ -1394,9 +1394,9 @@ System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/wopen
 @dirrm System/Applications/GWorkspace.app/Resources/French.lproj/Finder.gorm
 @dirrm System/Applications/GWorkspace.app/Resources/French.lproj/CVS
 @dirrm System/Applications/GWorkspace.app/Resources/French.lproj
-@dirrm System/Applications/GWorkspace.app/Resources/FolderViewer.inspector/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-@dirrm System/Applications/GWorkspace.app/Resources/FolderViewer.inspector/%%GNU_ARCH%%/%%OPSYS%%
-@dirrm System/Applications/GWorkspace.app/Resources/FolderViewer.inspector/%%GNU_ARCH%%
+%%GNUSTEP_STABLE%%@dirrm System/Applications/GWorkspace.app/Resources/FolderViewer.inspector/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+%%GNUSTEP_STABLE%%@dirrm System/Applications/GWorkspace.app/Resources/FolderViewer.inspector/%%GNU_ARCH%%/%%OPSYS%%
+%%GNUSTEP_STABLE%%@dirrm System/Applications/GWorkspace.app/Resources/FolderViewer.inspector/%%GNU_ARCH%%
 @dirrm System/Applications/GWorkspace.app/Resources/FolderViewer.inspector/Resources
 @dirrm System/Applications/GWorkspace.app/Resources/FolderViewer.inspector
 @dirrm System/Applications/GWorkspace.app/Resources/English.lproj/XTermPref.nib/CVS
@@ -1476,9 +1476,9 @@ System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/wopen
 @dirrm System/Applications/GWorkspace.app/Resources/Dutch.lproj/CVS
 @dirrm System/Applications/GWorkspace.app/Resources/Dutch.lproj
 @dirrm System/Applications/GWorkspace.app/Resources/CVS
-@dirrm System/Applications/GWorkspace.app/Resources/BrowserViewer.viewer/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-@dirrm System/Applications/GWorkspace.app/Resources/BrowserViewer.viewer/%%GNU_ARCH%%/%%OPSYS%%
-@dirrm System/Applications/GWorkspace.app/Resources/BrowserViewer.viewer/%%GNU_ARCH%%
+%%GNUSTEP_STABLE%%@dirrm System/Applications/GWorkspace.app/Resources/BrowserViewer.viewer/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+%%GNUSTEP_STABLE%%@dirrm System/Applications/GWorkspace.app/Resources/BrowserViewer.viewer/%%GNU_ARCH%%/%%OPSYS%%
+%%GNUSTEP_STABLE%%@dirrm System/Applications/GWorkspace.app/Resources/BrowserViewer.viewer/%%GNU_ARCH%%
 @dirrm System/Applications/GWorkspace.app/Resources/BrowserViewer.viewer/Resources/Spanish.lproj/CVS
 @dirrm System/Applications/GWorkspace.app/Resources/BrowserViewer.viewer/Resources/Spanish.lproj
 @dirrm System/Applications/GWorkspace.app/Resources/BrowserViewer.viewer/Resources/Romanian.lproj/CVS
@@ -1515,9 +1515,9 @@ System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/wopen
 @dirrm System/Applications/GWorkspace.app/Resources/BrowserViewer.viewer/Resources/CVS
 @dirrm System/Applications/GWorkspace.app/Resources/BrowserViewer.viewer/Resources
 @dirrm System/Applications/GWorkspace.app/Resources/BrowserViewer.viewer
-@dirrm System/Applications/GWorkspace.app/Resources/AppViewer.inspector/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-@dirrm System/Applications/GWorkspace.app/Resources/AppViewer.inspector/%%GNU_ARCH%%/%%OPSYS%%
-@dirrm System/Applications/GWorkspace.app/Resources/AppViewer.inspector/%%GNU_ARCH%%
+%%GNUSTEP_STABLE%%@dirrm System/Applications/GWorkspace.app/Resources/AppViewer.inspector/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+%%GNUSTEP_STABLE%%@dirrm System/Applications/GWorkspace.app/Resources/AppViewer.inspector/%%GNU_ARCH%%/%%OPSYS%%
+%%GNUSTEP_STABLE%%@dirrm System/Applications/GWorkspace.app/Resources/AppViewer.inspector/%%GNU_ARCH%%
 @dirrm System/Applications/GWorkspace.app/Resources/AppViewer.inspector/Resources
 @dirrm System/Applications/GWorkspace.app/Resources/AppViewer.inspector
 @dirrm System/Applications/GWorkspace.app/Resources
