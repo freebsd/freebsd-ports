@@ -15,7 +15,7 @@ DISTNAME=	pl-${PORTVERSION}
 MAINTAINER=	g.gonter@ieee.org
 COMMENT=	Edinburgh-style Prolog compiler
 
-CONFLICTS=	ploticus-[0-9]* slffea-[0-9]* TenDRA-[0-9]*
+CONFLICTS=	slffea-[0-9]* TenDRA-[0-9]*
 NOPRECIOUSMAKEVARS=yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
