@@ -1,6 +1,12 @@
---- Imakefile.orig	Tue Jun 25 02:42:14 1996
-+++ Imakefile	Mon Apr 27 00:58:16 1998
-@@ -24,6 +24,8 @@
+--- Imakefile.orig	Tue Jun 25 01:42:14 1996
++++ Imakefile	Sun Jun 20 19:18:26 1999
+@@ -19,11 +19,13 @@
+ #if defined(SunArchitecture)
+ #endif
+ 
+-#if defined(AlphaArchitecture)
++#if defined(AlphaArchitecture) && !defined(FreeBSDArchitecture)
+ OS_LIB_FLAGS = -lbsd
  #endif
  
  #if defined(FreeBSDArchitecture)
