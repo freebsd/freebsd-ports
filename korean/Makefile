@@ -1,9 +1,10 @@
-# $Id: Makefile,v 1.21 1998/05/09 14:19:58 kuriyama Exp $
+# $Id: Makefile,v 1.22 1998/05/17 22:26:59 kuriyama Exp $
 #
 
     SUBDIR += Wnn
     SUBDIR += afterstep
     SUBDIR += elm
+    SUBDIR += ftghostscript5
     SUBDIR += fvwm95
     SUBDIR += h2ps
     SUBDIR += han
