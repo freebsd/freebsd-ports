@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	blender
-PORTVERSION=	2.04
-CATEGORIES=	graphics
+PORTVERSION=	2.11
+CATEGORIES=	graphics games
 MASTER_SITES=	ftp://ftp.blender.nl/pub/
-DISTNAME=	blender${PORTVERSION}-freebsd-3.4-i386-static
+DISTNAME=	blender${PORTVERSION}-freebsd-4.2-i386
+DIST_SUBDIR=	blender
 
 MAINTAINER=	freebsd-admin@blender.nl
 
@@ -17,6 +18,14 @@ USE_X_PREFIX=	YES
 NO_CDROM=	"Commercial distribution prohibited"
 NO_BUILD=	YES
 ONLY_FOR_ARCHS=	i386
+USE_MESA=	YES
+
+pre-fetch:
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "If you encounter versioning problems with GL,"
+	@${ECHO_MSG} "you can get a statically linked version on"
+	@${ECHO_MSG} "${MASTER_SITES}"
+	@${ECHO_MSG} ""
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/blender ${PREFIX}/bin
@@ -31,10 +40,8 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/plugins/texture/${TEXT} \
 		${PREFIX}/lib/blender/plugins/texture
 .endfor
-.if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/blender
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/blender
 	${INSTALL_DATA} ${WRKSRC}/copyright.txt ${PREFIX}/share/doc/blender
-.endif
 
 .include <bsd.port.mk>
