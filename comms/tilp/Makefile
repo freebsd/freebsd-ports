@@ -37,12 +37,12 @@ MAN1=	tilp.1
 LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg
 .else
 pre-everything::
-        @${ECHO_MSG}
-        @${ECHO_MSG} "======================================================="
-        @${ECHO_MSG} "If you want to compile with JPEG support, hit Ctrl-C"
-        @${ECHO_MSG} "right now and use \"make WITH_JPEG=yes\""
-        @${ECHO_MSG} "======================================================="
-        @${ECHO_MSG}
+	@${ECHO_MSG}
+	@${ECHO_MSG} "======================================================="
+	@${ECHO_MSG} "If you want to compile with JPEG support, hit Ctrl-C"
+	@${ECHO_MSG} "right now and use \"make WITH_JPEG=yes\""
+	@${ECHO_MSG} "======================================================="
+	@${ECHO_MSG}
 .endif #WITH_JPEG
 
 post-install:
