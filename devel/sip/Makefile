@@ -6,18 +6,29 @@
 #
 
 PORTNAME=	sip
-PORTVERSION=	2.5
+PORTVERSION=	3.4
 CATEGORIES=	devel python
-MASTER_SITES=	ftp://ftp.rygannon.com/pub/sip/
+MASTER_SITES=	http://www.river-bank.demon.co.uk/download/sip/
+DISTNAME=	sip-x11-gpl-${PORTVERSION}
 
-MAINTAINER=	adsharma@sharmas.dhs.org
+MAINTAINER=	nbm@FreeBSD.org
 
 USE_PYTHON=	yes
-USE_LIBTOOL=	yes
-USE_GMAKE=	yes
-USE_QT_VER=	2
+USE_QT_VER=	3
 INSTALLS_SHLIB=	yes
-CONFIGURE_ARGS=	--enable-qt
-CONFIGURE_ENV=	LDFLAGS=-lgcc
+NO_FILTER_SHLIBS=	yes
+
+ALL_TARGET=	all install
+
+do-configure:
+	@${MKDIR} ${WRKDIR}/headers ${WRKDIR}/binaries ${WRKDIR}/modules
+	@( cd ${WRKSRC} && ${PYTHON_CMD} build.py -q ${X11BASE} \
+		-e ${WRKDIR}/headers -b ${WRKDIR}/binaries -d ${WRKDIR}/modules )
+
+do-install:
+	${CP} ${WRKDIR}/modules/* ${PREFIX}/lib/
+	${MKDIR} ${PREFIX}/include/sip
+	${CP} ${WRKDIR}/headers/* ${PREFIX}/include/sip/
+	${CP} ${WRKDIR}/binaries/* ${PREFIX}/bin/
 
 .include <bsd.port.mk>
