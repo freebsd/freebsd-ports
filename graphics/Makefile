@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.115 1999/03/19 22:23:22 asami Exp $
+# $Id: Makefile,v 1.116 1999/03/20 14:54:00 dburr Exp $
 #
 
     SUBDIR += 4va
@@ -88,6 +88,7 @@
     SUBDIR += rayshade
     SUBDIR += sane
     SUBDIR += sced
+    SUBDIR += scwm-icons
     SUBDIR += sketch
     SUBDIR += spigot
     SUBDIR += splitmpg
