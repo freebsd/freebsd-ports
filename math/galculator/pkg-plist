@@ -7,5 +7,6 @@ share/galculator/glade/font.glade
 share/galculator/glade/main.glade
 share/galculator/glade/prefs.glade
 share/locale/de/LC_MESSAGES/galculator.mo
+share/locale/fr/LC_MESSAGES/galculator.mo
 @dirrm share/galculator/glade
 @dirrm share/galculator
