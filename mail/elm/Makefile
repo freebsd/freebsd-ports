@@ -3,11 +3,12 @@
 # Date created:         26 June 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.7 1995/10/20 07:35:26 asami Exp $
+# $Id: Makefile,v 1.8 1995/11/19 21:11:30 ache Exp $
 #
 
 DISTNAME=       elm-2.4pl24me8
-PKGNAME=        elm-2.4m8b
+VERSION=        2.4m8b          # allows to not edit elm+* Makefiles
+PKGNAME=        elm-${VERSION}
 PATCHFILES=     elm-2.4pl24me8a.diffs.Z elm-2.4pl24me8b.diffs.Z
 PATCH_DIST_STRIP= -p1
 CATEGORIES+=	mail
