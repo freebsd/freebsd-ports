@@ -1,0 +1,10 @@
+'tconfpy' is an advanced configuration file parser and validator for
+Python programs.  By using 'tconfpy', Python programmers can provide
+their users with an external configuration file for setting program
+options, defining defaults, and so on.  'tconfpy' offloads the
+responsibility for parsing and validating a configuration file from
+the main application. The Python programmer need only deal
+with the results and any errors or warnings generated during the
+parsing process.
+
+WWW: http://www.tundraware.com/Software/tconfpy/
