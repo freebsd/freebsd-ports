@@ -1,0 +1,17 @@
+bin/netwalker
+%%DATADIR%%/help_connect.asc
+%%DATADIR%%/help_ctcp.asc
+%%DATADIR%%/help_disconnect.asc
+%%DATADIR%%/help_help.asc
+%%DATADIR%%/help_join.asc
+%%DATADIR%%/help_me.asc
+%%DATADIR%%/help_msg.asc
+%%DATADIR%%/help_nick.asc
+%%DATADIR%%/help_part.asc
+%%DATADIR%%/help_quit.asc
+%%DATADIR%%/help_reconnect.asc
+%%DATADIR%%/help_screen.asc
+%%DATADIR%%/help_topic.asc
+%%DATADIR%%/help_who.asc
+%%DATADIR%%/helpindex.asc
+@dirrm %%DATADIR%%

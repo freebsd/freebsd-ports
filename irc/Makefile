@@ -53,6 +53,7 @@
     SUBDIR += miau
     SUBDIR += muh
     SUBDIR += nethirc
+    SUBDIR += netwalker-ircc
     SUBDIR += ngircd
     SUBDIR += ninja
     SUBDIR += olirc
