@@ -1,13 +1,13 @@
 # New ports collection makefile for: gIDE
-# Version required:    0.0.6
+# Version required:    0.0.7
 # Date created:        29 Jul 1998
 # Whom:                rom
 #
-# $Id: Makefile,v 1.3 1998/08/07 23:56:15 asami Exp $
+# $Id: Makefile,v 1.4 1998/08/25 01:53:21 vanilla Exp $
 #
 
-DISTNAME= 	gIDE-0.0.6
-PKGNAME= 	gide-0.0.6
+DISTNAME= 	gIDE-0.0.7
+PKGNAME= 	gide-0.0.7
 CATEGORIES=     devel
 MASTER_SITES=   http://gide.pn.org/
 
