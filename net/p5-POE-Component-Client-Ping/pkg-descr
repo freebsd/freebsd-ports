@@ -3,6 +3,3 @@ It lets several other sessions ping through it in parallel, and it
 lets them continue doing other things while they wait for responses.
 
 WWW: http://search.cpan.org/dist/POE-Component-Client-Ping/
-
--- Sergey Skvortsov
-skv@FreeBSD.org
