@@ -7,4 +7,11 @@ ex:
   in bash:
 	export SWARMHOME=%%PREFIX%%
 
-Swarm samples can be found at ftp://ftp.swarm.org/pub/swarm/src/apps/objc/swarmapps-2.1.1.tar.gz
+and use gmake to build swarm examples.
+
+Swarm examples can be found at:
+   ftp://ftp.swarm.org/pub/swarm/apps/objc/sdg/swarmapps-2.1.1.tar.gz
+   ( Objective-C examples )
+   and
+   ftp://ftp.swarm.org/pub/swarm/apps/java/sdg/jheatbugs-2.1.tar.gz
+   ( java example )
