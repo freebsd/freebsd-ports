@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	nagios-plugins
-PORTVERSION=	1.3.b1
-PORTREVISION=	0
+PORTVERSION=	1.3.0.b2
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	nagiosplug
-DISTNAME=	nagiosplug-1.3-beta1
+DISTNAME=	nagios-plugins-1.3.0-beta2
 
 MAINTAINER=	blaz@si.FreeBSD.org
 
@@ -21,7 +20,8 @@ CONFIGURE_ARGS=	--sbindir=${PREFIX}/share/nagios/sbin \
 		--libexecdir=${PREFIX}/libexec/nagios \
 		--datadir=${PREFIX}/share/nagios \
 		--sysconfdir=${PREFIX}/etc/nagios \
-		--localstatedir=${PREFIX}/var/nagios
+		--localstatedir=${PREFIX}/var/nagios \
+		--with-df-command="/bin/df -Pkt noprocfs"
 CONFIGURE_ENV=	LOCALBASE=${LOCALBASE}
 SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
 		MKDIR="${MKDIR}"
