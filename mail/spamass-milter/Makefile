@@ -8,7 +8,7 @@
 PORTNAME=	spamass-milter
 PORTVERSION=	0.1.2
 CATEGORIES=	mail
-MASTER_SITES=	http://freesoftware.fsf.org/download/spamass-milt/
+MASTER_SITES=	http://savannah.nongnu.org/download/spamass-milt/
 
 MAINTAINER=	ab@astralblue.net
 
