@@ -1,0 +1,20 @@
+--- tools/texfix.c.orig	Fri Sep 25 12:35:18 1992
++++ tools/texfix.c	Sat Feb 15 01:00:24 2003
+@@ -35,7 +35,7 @@
+ char	line[BUFSIZ], line2[BUFSIZ];
+ char	tmpstr[] = "/tmp/tfXXXXXX";
+ char	*tmpfn;
+-int	cleanup();
++void	cleanup();
+ 
+ main()
+ {
+@@ -111,7 +111,7 @@
+     return 1;
+ }
+ 
+-cleanup()
++void	cleanup()
+ {
+     unlink(tmpfn);
+     exit(0);

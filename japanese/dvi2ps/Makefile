@@ -21,17 +21,13 @@ MANLANG=	"" ja
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} > 500000
-BROKEN=		"Does not compile"
-.endif
-
 post-patch:
 	@(cd ${WRKSRC}; make newlib)
 
 post-build:
 	@(cd ${WRKSRC}/tools; \
 	cc -O -o nup nup.c; \
-	cc -O -traditional -o texfix texfix.c\
+	cc -O -o texfix texfix.c\
 		)
 post-install:
 	@(cd  ${WRKSRC}; \
