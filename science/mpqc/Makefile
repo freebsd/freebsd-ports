@@ -18,21 +18,39 @@ DISTFILES+=	mpqc-man-${PORTVERSION}.tar.gz mpqc-html-${PORTVERSION}.tar.gz
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	The massively parallel quantum computing library and program
 
+.if defined(USE_ICC)
+BUILD_DEPENDS+=  ${LOCALBASE}/intel_cc_80/bin/icc:${PORTSDIR}/lang/icc
+.endif
+
 LIB_DEPENDS=	atlas:${PORTSDIR}/math/atlas
 
 USE_BISON=	yes
 GNU_CONFIGURE=	yes
 USE_AUTOCONF_VER=259
 
+.if defined(USE_ICC)
+CC=		${LOCALBASE}/intel_cc_80/bin/icc
+CXX=		${LOCALBASE}/intel_cc_80/bin/icpc
+CFLAGS=		-O3 -tpp7 -xMKW -Vaxlib
+CXXFLAGS=	-O3 -tpp7 -xMKW -Vaxlib
+.endif
+BLAS=		-lf77blas -latlas
+LAPACK=		-lalapack -lcblas
+
 CONFIGURE_ARGS=	--with-cc=${CC} \
 		--with-cxx=${CXX} \
 		--with-f77=${FC} \
 		--with-libdirs=-L${LOCALBASE}/lib \
-		--with-blas="-lf77blas -latlas" \
-		--with-lapack="-lalapack -lcblas" \
+		--with-blas="${BLAS}" \
+		--with-lapack="${LAPACK}" \
 		--with-coptflags="${CFLAGS}" \
 		--with-cxxoptflags="${CXXFLAGS}" \
-		--with-f77optflags="${FFLAGS}"
+		--with-f77optflags="${FFLAGS}" \
+		--with-include="-I${WRKDIR}"
+.if defined(USE_ICC)
+CONFIGURE_ARGS+=--with-libs="-lsvml"
+.endif
+
 USE_PERL5=	yes
 USE_GMAKE=	yes
 ALL_TARGET=	# empty
@@ -53,7 +71,7 @@ CXXFLAGS+=	-mfancy-math-387
 
 pre-configure:
 	@${ECHO} "You can optimize by setting WITH_OPTIMIZED_FLAGS=yes."
-
+	@${CP} ${FILESDIR}/FlexLexer.h ${WRKDIR}
 do-install:
 	@cd ${WRKSRC} ; ${GMAKE} install
 	@cd ${WRKSRC} ; ${GMAKE} install_devel
