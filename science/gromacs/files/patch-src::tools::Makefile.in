@@ -1,0 +1,15 @@
+--- src/tools/Makefile.in.orig	Mon Mar  1 20:49:06 2004
++++ src/tools/Makefile.in	Thu Dec  9 19:35:43 2004
+@@ -744,10 +744,10 @@
+ @AMDEP_TRUE@	./$(DEPDIR)/xpm2ps.Po
+ COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
+ 	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+-LTCOMPILE = $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) \
++LTCOMPILE = $(LIBTOOL) --mode=compile --tag=CC $(CC) $(DEFS) $(DEFAULT_INCLUDES) \
+ 	$(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+ CCLD = $(CC)
+-LINK = $(LIBTOOL) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
++LINK = $(LIBTOOL) --mode=link --tag=CC $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
+ 	$(AM_LDFLAGS) $(LDFLAGS) -o $@
+ DIST_SOURCES = $(libgmxana@LIBSUFFIX@_la_SOURCES) $(anadock_SOURCES) \
+ 	average.c $(cdist_SOURCES) $(disco_SOURCES) do_dssp.c \

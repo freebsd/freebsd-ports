@@ -7,6 +7,7 @@
 
 PORTNAME=	gromacs
 PORTVERSION=	3.2.1
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	ftp://ftp.gromacs.org/pub/gromacs/
 
@@ -17,14 +18,13 @@ COMMENT=	Compute molecular dynamics
 LIB_DEPENDS=	fftw:${PORTSDIR}/math/fftw:install
 .endif
 .ifdef WITH_MPI
-BUILD_DEPENDS=	${LOCALPREFIX}/mpich/bin/mpicc:${PORTSDIR}/net/mpich:install
-RUN_DEPENDS=	${LOCALPREFIX}/mpich/bin/mpicc:${PORTSDIR}/net/mpich:install
+BUILD_DEPENDS=	${LOCALBASE}/mpich/bin/mpicc:${PORTSDIR}/net/mpich
+RUN_DEPENDS=	${LOCALBASE}/mpich/bin/mpicc:${PORTSDIR}/net/mpich
 .endif
 
-BROKEN=		Broken pkg-plist
-
 USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
+USE_LIBTOOL_VER=	15
+INSTALLS_SHLIB=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS=-I${LOCALBASE}/include LDFLAGS=-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--exec-prefix=${PREFIX}
@@ -33,9 +33,9 @@ PLIST_SUB=	BUILD=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 .ifndef WITHOUT_FFTW
 .ifdef WITH_FLOAT
-IGNORE= 	Cannot currently build with fftw and single precision floating point
+IGNORE=		Cannot currently build with fftw and single precision floating point
 .elifdef WITH_MPI
-IGNORE= 	Cannot currently build with fftw and mpi support
+IGNORE=		Cannot currently build with fftw and mpi support
 .endif
 .endif
 
@@ -48,20 +48,23 @@ CONFIGURE_ARGS+=	--with-x
 USE_XLIB=	yes
 .endif
 
-.ifdef WITHOUT_FFTW
-CONFIGURE_ARGS+=	--without-fftw
+.ifndef WITH_FLOAT
+CONFIGURE_ARGS+=	--disable-float --program-suffix=
+PLIST_SUB+=	SUFFIX_D=_d SUFFIX_DOUBLE=_double
+.else
+PLIST_SUB+=	SUFFIX_D= SUFFIX_DOUBLE=
 .endif
 
-.ifndef WITHOUT_FLOAT
-CONFIGURE_ARGS+=	--disable-float
+.ifdef WITHOUT_FFTW
+CONFIGURE_ARGS+=	--without-fftw
 .endif
 
 .ifdef WITH_MPI
 CONFIGURE_ARGS+=	--enable-mpi
 CONFIGURE_ENV+=	MPICC=${PREFIX}/mpich/bin/mpicc
-PLIST_SUB+=	WITH_MPI= _MPI=_mpi
+PLIST_SUB+=	WITH_MPI= SUFFIX_MPI=_mpi WITHOUT_MPI="@comment "
 .else
-PLIST_SUB+=	WITH_MPI="@comment " SUFFIX_MPI=
+PLIST_SUB+=	WITH_MPI="@comment " SUFFIX_MPI= WITHOUT_MPI=
 .endif
 
 MAN1=	anadock.1 \

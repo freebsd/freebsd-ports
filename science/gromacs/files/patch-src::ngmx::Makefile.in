@@ -1,0 +1,15 @@
+--- src/ngmx/Makefile.in.orig	Mon Mar  1 20:49:04 2004
++++ src/ngmx/Makefile.in	Thu Dec  9 19:53:57 2004
+@@ -272,10 +272,10 @@
+ @AMDEP_TRUE@	./$(DEPDIR)/xrama.Po ./$(DEPDIR)/xutil.Po
+ COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
+ 	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+-LTCOMPILE = $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) \
++LTCOMPILE = $(LIBTOOL) --mode=compile --tag=CC $(CC) $(DEFS) $(DEFAULT_INCLUDES) \
+ 	$(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+ CCLD = $(CC)
+-LINK = $(LIBTOOL) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
++LINK = $(LIBTOOL) --mode=link --tag=CC $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
+ 	$(AM_LDFLAGS) $(LDFLAGS) -o $@
+ DIST_SOURCES = $(dlg_SOURCES) $(gmxlogo_SOURCES) $(highway_SOURCES) \
+ 	$(ngmx_SOURCES) $(scrollw_SOURCES) $(showcol_SOURCES) \
