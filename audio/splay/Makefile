@@ -3,13 +3,11 @@
 # Date created:         Mar 20 1997
 # Whom:                 junker@jazz.snu.ac.kr
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/03/26 02:10:32 jfitz Exp $
 #
 
 DISTNAME=       splay-0.2
-PKGNAME=	splay-0.2
 CATEGORIES=	audio
-
 MASTER_SITES=   ${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR = apps/sound
 
