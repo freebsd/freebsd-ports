@@ -1,5 +1,5 @@
---- Makefile.in.orig	Sun Feb  3 17:33:38 2002
-+++ Makefile.in	Sun Feb  3 17:35:12 2002
+--- Makefile.in.orig	Fri May  3 13:05:28 2002
++++ Makefile.in	Fri May  3 13:06:35 2002
 @@ -151,9 +151,9 @@
  
  AUTOMAKE_OPTIONS = 1.0 no-dependencies foreign
@@ -24,17 +24,19 @@
  
  generate-server-key:
  	-@if test '!' -f $(etcdir)/silcd.pub ; then \
-@@ -565,17 +562,12 @@
+@@ -565,19 +562,12 @@
  	$(INSTALL_DATA) $(srcdir)/doc/examples/cell* $(docdir)/examples/
  
  etc-install:
 -	-@if test '!' -f $(etcdir)/silcd.conf ; then \
 -	  $(INSTALL_DATA) $(srcdir)/doc/example_silcd.conf \
--	  $(etcdir)/silcd.conf; \
+-		$(etcdir)/silcd.conf; \
+-	  $(INSTALL_DATA) $(srcdir)/doc/silcalgs.conf \
+-		$(etcdir)/silcalgs.conf; \
 -          chmod go= $(etcdir)/silcd.conf; \
 -	fi
  	-@if test '!' -f $(etcdir)/silc.conf ; then \
- 	  $(INSTALL_DATA) $(srcdir)/doc/example_silc.conf \
+ 	  $(INSTALL_DATA) $(srcdir)/irssi/silc.conf \
 -	  $(etcdir)/silc.conf; \
 +	  $(etcdir)/silc.conf.sample; \
  	fi

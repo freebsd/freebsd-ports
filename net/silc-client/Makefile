@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	silc
-PORTVERSION=	0.7.6.1
+PORTVERSION=	0.8.6
 CATEGORIES=	net ipv6 security
 MASTER_SITES=	http://www.silcnet.org/download/client/sources/ \
 		ftp://ftp.silcnet.org/silc/client/sources/ \
@@ -26,6 +26,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/doc/silc/CREDITS:${.CURDIR}/../silc-doc
 .endif
 
 USE_BZIP2=	yes
+USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 USE_GLIB=	yes
 CONFIGURE_ARGS=	--with-etcdir=${PREFIX}/etc/${PORTNAME} \
@@ -42,6 +43,9 @@ CONFIGURE_ENV+=	CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS} ${PTHREAD_LIBS}"
 .endif
 
 pre-everything::
+.ifndef(WITHOUT_IPV6)
+	@${ECHO_MSG} '===> Define WITHOUT_IPV6 to disable IPv6 support'
+.endif
 .ifndef(WITHOUT_OPTIMIZED_ASM)
 	@${ECHO_MSG} '===> Define WITHOUT_OPTIMIZED_ASM to disable assembler optimizations'
 .endif
@@ -58,6 +62,15 @@ post-patch:
 .ifndef(WITH_OPTIMIZED_CFLAGS)
 	@${PERL} -pi -e 's/-O2//' ${WRKSRC}/${CONFIGURE_SCRIPT}
 .endif
+	@${PERL} -pi -e 's/-D_THREAD_SAFE//' ${WRKSRC}/${CONFIGURE_SCRIPT}
+	@${PERL} -pi -e 's/example_silcd.conf \\\n//' ${WRKSRC}/doc/Makefile.in
+	@${PERL} -pi -e 's/^(install-data-am:) install-docDATA$$/\1/' \
+		${WRKSRC}/irssi/docs/Makefile.in
+	@${PERL} -pi -e 's/^(install-data-am:) install-moduleLTLIBRARIES$$/\1/' \
+		${WRKSRC}/irssi/src/perl/Makefile.in
+	@${PERL} -pi -e 's/^(install-data-am: )install-confDATA /\1/' \
+		${WRKSRC}/irssi/Makefile.in
+	@${PERL} -pi -e 's/silcsim//' ${WRKSRC}/lib/Makefile.in
 
 post-install:
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} \
@@ -69,7 +82,7 @@ post-install:
 WITHOUT_OPTIMIZED_ASM=	yes
 .endif
 
-.if ${OSVERSION} >= 400014
+.if ${OSVERSION} >= 400014 && !defined(WITHOUT_IPV6)
 CONFIGURE_ARGS+=	--enable-ipv6
 .endif
 
