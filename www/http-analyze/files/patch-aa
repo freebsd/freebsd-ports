@@ -1,5 +1,5 @@
---- Makefile.orig	Thu Apr  2 15:53:41 1998
-+++ Makefile	Sat Apr 18 11:37:54 1998
+--- Makefile.orig	Sun May 31 06:06:53 1998
++++ Makefile	Fri Sep  6 20:00:06 2002
 @@ -28,9 +28,9 @@
  #	SVR4	/usr/share/man/cat1	-		1
  #	Linux	/usr/local/man/man1	-		man
@@ -59,11 +59,13 @@
  LDFLAGS	=  
  LINT	= lint -Dunix -Xa -u
  LIBS	= -lm
-@@ -213,13 +217,14 @@
+@@ -212,14 +216,15 @@
+ 	cp http-analyze.$(EXTENSION) $(LOCALMAN)/http-analyze.1
  	chmod 755 $(LOCALBIN)/http-analyze $(LOCALBIN)/ha-setup
  	chmod 444 $(LOCALMAN)/http-analyze.1
- 	chown bin.bin $(LOCALBIN)/http-analyze $(LOCALBIN)/ha-setup
+-	chown bin.bin $(LOCALBIN)/http-analyze $(LOCALBIN)/ha-setup
 -	$(COMPRESS) $(LOCALMAN)/http-analyze.1
++	chown bin:bin $(LOCALBIN)/http-analyze $(LOCALBIN)/ha-setup
 +	-mkdir -p $(PREFIX)/share/doc/http-analyze
 +	cp http-analyze.pdf http-analyze.ps $(PREFIX)/share/doc/http-analyze
  	-mkdir -p $(LOCALLIB)/http-analyze/btn
