@@ -16,6 +16,8 @@ COMMENT=	Java library for accessing and manipulating XML documents
 
 RUN_DEPENDS=	${LOCAL_JAVAJARDIR}/jaxen-jdom.jar:${PORTSDIR}/java/jaxen
 
+BROKEN=		Unfetchable
+
 USE_JAVA=	yes
 JAVA_VERSION=	1.2+
 USE_ANT=	yes
