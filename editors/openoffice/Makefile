@@ -30,7 +30,7 @@ PKGNAMEPREFIX=	${LANG_PKGNAME}-
 #
 # LANG_CONFIGURE_ARG is missing for the german port
 #
-.if defined(LANG_EXT) && LANG_EXT!=49
+.if defined(LANG_EXT) && ${LANG_EXT}!=49
 CONFIGURE_ARGS+=	--with-lang=${LANG_CONFIGURE_ARG}
 .endif
 
