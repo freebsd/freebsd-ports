@@ -19,10 +19,11 @@ COMMENT=	Mexican Spanish female voice for Festival
 
 RESTRICTED=	no-commercial-use
 
-RUN_DEPENDS=	festival:${.CURDIR}/../festival \
-		${LOCALBASE}/share/festival/lib/dicts/wsj.wp39.poslexR:${.CURDIR}/../festlex-poslex \
-		${LOCALBASE}/share/festival/lib/dicts/ogi_lex.out:${.CURDIR}/../festlex-ogi \
-		${LOCALBASE}/share/festival/lib/ogi_spanish/ogi_span_mx_lts.scm:${.CURDIR}/../festogi-spanish
+RUN_DEPENDS=	\
+${PREFIX}/share/festival/lib/ogi_token.scm:${PORTSDIR}/audio/festival+OGI \
+		${LOCALBASE}/share/festival/lib/dicts/wsj.wp39.poslexR:${PORTSDIR}/audio/festlex-poslex \
+		${LOCALBASE}/share/festival/lib/dicts/ogi_lex.out:${PORTSDIR}/audio/festlex-ogi \
+		${LOCALBASE}/share/festival/lib/ogi_spanish/ogi_span_mx_lts.scm:${PORTSDIR}/audio/festogi-spanish
 
 WRKSRC=		${WRKDIR}/festival
 
