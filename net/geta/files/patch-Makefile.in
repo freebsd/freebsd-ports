@@ -4,7 +4,7 @@
  CC = cc
 -CFLAGS = -O -L/usr/local/v6/lib -Wall
 -LIBS = -linet6
-+CFLAGS += -O -Wall
++CFLAGS += -Wall
 +#LIBS = -linet6
  
  INSTALL = @INSTALL@
