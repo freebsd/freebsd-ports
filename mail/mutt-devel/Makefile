@@ -41,6 +41,9 @@
 #  WITH_MUTT_QUOTE_PATCH
 #  This is a default knob and can be disabled by WITHOUT_MUTT_QUOTE_PATCH
 #
+# If you want to have the IMAP header cache define:
+#  WITH_MUTT_IMAP_HEADER_CACHE
+#
 # If you want to make SMIME outlook compatible define:
 #  WITH_MUTT_SMIME_OUTLOOK_COMPAT
 #  This is a default knob and can be disabled by
@@ -72,6 +75,7 @@
 
 PORTNAME=	mutt-devel
 PORTVERSION=	1.5.5.1
+PORTREVISION=	1
 CATEGORIES+=	mail ipv6
 .if defined(WITH_MUTT_NNTP)
 CATEGORIES+=	news
@@ -86,7 +90,7 @@ PATCH_SITES+=	http://www.mutt.org.ua/download/mutt-${VVV_PATCH_VERSION}/:vvv \
 		http://www2.mutt.org.ua/download/mutt-${VVV_PATCH_VERSION}/:vvv \
 		ftp://ftp.mutt.org.ua/pub/mutt/mutt-${VVV_PATCH_VERSION}/:vvv \
 		ftp://ftp2.mutt.org.ua/pub/mutt/mutt-${VVV_PATCH_VERSION}/:vvv \
-		http://cedricduval.free.fr/download/mutt/:cd \
+		http://cedricduval.free.fr/mutt/patches/download/:cd \
 		http://home.woolridge.ca/mutt/patches/:dw
 
 MAINTAINER?=	udo.schweigert@siemens.com
@@ -117,8 +121,8 @@ SCRIPTS_ENV=	WRKDIR="${WRKDIR}"
 
 .include <bsd.port.pre.mk>
 
-CD_PATCH_VERSION=	1.5.4
-DW_PATCH_VERSION=	1.5.x
+CD_IFDEF_PATCH_VERSION=	1.5.4
+DW_PATCH_VERSION=	1.5.5
 DW_MBOX_PATCH_VERSION=	1.5.4
 .if !defined(VVV_PATCH_VERSION)
 VVV_PATCH_VERSION=	${PORTVERSION}
@@ -126,11 +130,14 @@ VVV_PATCH_VERSION=	${PORTVERSION}
 .if !defined(CD_PATCH_VERSION)
 CD_PATCH_VERSION=	${PORTVERSION}
 .endif
+.if !defined(CD_IFDEF_PATCH_VERSION)
+CD_IFDEF_PATCH_VERSION=	${CD_PATCH_VERSION}
+.endif
 .if !defined(DW_PATCH_VERSION)
 DW_PATCH_VERSION=	${PORTVERSION}
 .endif
 .if !defined(DW_MBOX_PATCH_VERSION)
-DW_MBOX_PATCH_VERSION=	${PORTVERSION}
+DW_MBOX_PATCH_VERSION=	${DW_PATCH_VERSION}
 .endif
 
 # XXX
@@ -187,6 +194,10 @@ LIB_DEPENDS+=	sasl.8:${PORTSDIR}/security/cyrus-sasl
 pre-configure::
 	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-smime-outlook
 .endif
+.if defined(WITH_MUTT_IMAP_HEADER_CACHE)
+pre-configure::
+	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-imap-header-cache
+.endif
 
 .if ! defined(WITHOUT_MUTT_PGP_PATCH)
 SGML_NEEDED=	yes
@@ -215,6 +226,7 @@ SGML_NEEDED=	yes
 .endif
 .if defined(WITH_MUTT_NNTP)
 PATCHFILES+=	patch-${VVV_PATCH_VERSION}.vvv.nntp.gz:vvv
+PATCHFILES+=	patch-${VVV_PATCH_VERSION}.vvv.compose.gz:vvv
 CONFIGURE_ARGS+=	--enable-nntp
 SGML_NEEDED=	yes
 .endif
@@ -233,7 +245,7 @@ PATCHFILES+=	patch-${CD_PATCH_VERSION}.cd.signatures_menu.2.1:cd
 SGML_NEEDED=	yes
 .endif
 .if defined(WITH_MUTT_IFDEF_PATCH)
-PATCHFILES+=	patch-${CD_PATCH_VERSION}.cd.ifdef.1:cd
+PATCHFILES+=	patch-${CD_IFDEF_PATCH_VERSION}.cd.ifdef.1:cd
 SGML_NEEDED=	yes
 .endif
 .if defined(WITH_MUTT_MBOX_HOOK_PATCH)
@@ -261,6 +273,9 @@ SCRIPTS_ENV+=	MUTT_COMPRESSED_FOLDERS="yes"
 .endif
 .if ! defined(WITHOUT_MUTT_QUOTE_PATCH)
 SCRIPTS_ENV+=	MUTT_QUOTE_PATCH="yes"
+.endif
+.if defined(WITH_MUTT_IMAP_HEADER_CACHE)
+SCRIPTS_ENV+=	MUTT_IMAP_HEADER_CACHE="yes"
 .endif
 .if defined(WITH_MUTT_EDIT_THREADS)
 SCRIPTS_ENV+=	MUTT_EDIT_THREADS="yes"
@@ -336,6 +351,14 @@ post-install:
 	@${ECHO} "This may work for a color terminal only when defining" >> ${PKGMESSAGE}
 	@${ECHO} "COLORTERM=yes and COLORFGBG=color,color in your" >> ${PKGMESSAGE}
 	@${ECHO} "environment." >> ${PKGMESSAGE}
+	@${ECHO} "====================================================" >> ${PKGMESSAGE}
+.endif
+.if defined(WITH_MUTT_IMAP_HEADER_CACHE)
+	@${ECHO} "====================================================" >> ${PKGMESSAGE}
+	@${ECHO} "You have installed ${PORTNAME} with the IMAP header cache enabled." >> ${PKGMESSAGE}
+	@${ECHO} "Please be aware that this - at the moment - could result in" >> ${PKGMESSAGE}
+	@${ECHO} "incorrect display of message flags if there is another client" >> ${PKGMESSAGE}
+	@${ECHO} "simultaneously using the same mailbox." >> ${PKGMESSAGE}
 	@${ECHO} "====================================================" >> ${PKGMESSAGE}
 .endif
 .if !defined(BATCH)
