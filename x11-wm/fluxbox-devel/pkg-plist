@@ -1,73 +1,77 @@
-bin/fbrun
-bin/fluxbox
-bin/fluxbox-generate_menu
-share/fluxbox/init
-share/fluxbox/keys
-share/fluxbox/menu
-share/fluxbox/nls/C/fluxbox.cat
-share/fluxbox/nls/bg_BG/fluxbox.cat
-share/fluxbox/nls/da_DK/fluxbox.cat
-share/fluxbox/nls/es_ES/fluxbox.cat
-share/fluxbox/nls/et_EE/fluxbox.cat
-share/fluxbox/nls/fr_FR/fluxbox.cat
-share/fluxbox/nls/it_IT/fluxbox.cat
-share/fluxbox/nls/ja_JP/fluxbox.cat
-share/fluxbox/nls/lv_LV/fluxbox.cat
-share/fluxbox/nls/pt_BR/fluxbox.cat
-share/fluxbox/nls/pt_PT/fluxbox.cat
-share/fluxbox/nls/ru_RU/fluxbox.cat
-share/fluxbox/nls/sv_SE/fluxbox.cat
-share/fluxbox/nls/tr_TR/fluxbox.cat
-share/fluxbox/styles/Artwiz
-share/fluxbox/styles/Blue
-share/fluxbox/styles/BlueNight
-share/fluxbox/styles/Carbondioxide
-share/fluxbox/styles/Clean
-share/fluxbox/styles/CleanColor
-share/fluxbox/styles/Cthulhain
-share/fluxbox/styles/Flux
-share/fluxbox/styles/LemonSpace
-share/fluxbox/styles/Makro
-share/fluxbox/styles/MerleyKay
-share/fluxbox/styles/Minimal
-share/fluxbox/styles/Nyz
-share/fluxbox/styles/Operation
-share/fluxbox/styles/Outcomes
-share/fluxbox/styles/Rampage
-share/fluxbox/styles/Rancor
-share/fluxbox/styles/Results
-share/fluxbox/styles/Shade
-share/fluxbox/styles/Spiff
-share/fluxbox/styles/Twice
-share/fluxbox/styles/qnx-photon
-@unexec rm %D/share/fluxbox/nls/lv
-@unexec rm %D/share/fluxbox/nls/fr
-@unexec rm %D/share/fluxbox/nls/es
-@unexec rm %D/share/fluxbox/nls/en_US
-@unexec rm %D/share/fluxbox/nls/en
-@unexec rm %D/share/fluxbox/nls/US_ASCII
-@unexec rm %D/share/fluxbox/nls/POSIX
-@exec ln -s lv_LV %D/share/fluxbox/nls/lv
-@exec ln -s fr_FR %D/share/fluxbox/nls/fr
-@exec ln -s es_ES %D/share/fluxbox/nls/es
-@exec ln -s C %D/share/fluxbox/nls/en_US
-@exec ln -s C %D/share/fluxbox/nls/en
-@exec ln -s C %D/share/fluxbox/nls/US_ASCII
-@exec ln -s C %D/share/fluxbox/nls/POSIX
-@dirrm share/fluxbox/styles
-@dirrm share/fluxbox/nls/tr_TR
-@dirrm share/fluxbox/nls/sv_SE
-@dirrm share/fluxbox/nls/ru_RU
-@dirrm share/fluxbox/nls/pt_PT
-@dirrm share/fluxbox/nls/pt_BR
-@dirrm share/fluxbox/nls/lv_LV
-@dirrm share/fluxbox/nls/ja_JP
-@dirrm share/fluxbox/nls/it_IT
-@dirrm share/fluxbox/nls/fr_FR
-@dirrm share/fluxbox/nls/et_EE
-@dirrm share/fluxbox/nls/es_ES
-@dirrm share/fluxbox/nls/da_DK
-@dirrm share/fluxbox/nls/bg_BG
-@dirrm share/fluxbox/nls/C
-@dirrm share/fluxbox/nls
-@dirrm share/fluxbox
+bin/fbrun-devel
+bin/fluxbox-devel
+bin/fbsetbg-devel
+bin/fluxbox-generate_menu-devel
+share/fluxbox-devel/init
+share/fluxbox-devel/keys
+share/fluxbox-devel/menu
+share/fluxbox-devel/nls/C/fluxbox.cat
+share/fluxbox-devel/nls/bg_BG/fluxbox.cat
+share/fluxbox-devel/nls/da_DK/fluxbox.cat
+share/fluxbox-devel/nls/de_DE/fluxbox.cat
+share/fluxbox-devel/nls/es_ES/fluxbox.cat
+share/fluxbox-devel/nls/et_EE/fluxbox.cat
+share/fluxbox-devel/nls/fr_FR/fluxbox.cat
+share/fluxbox-devel/nls/it_IT/fluxbox.cat
+share/fluxbox-devel/nls/ja_JP/fluxbox.cat
+share/fluxbox-devel/nls/lv_LV/fluxbox.cat
+share/fluxbox-devel/nls/pt_BR/fluxbox.cat
+share/fluxbox-devel/nls/pt_PT/fluxbox.cat
+share/fluxbox-devel/nls/ru_RU/fluxbox.cat
+share/fluxbox-devel/nls/sv_SE/fluxbox.cat
+share/fluxbox-devel/nls/tr_TR/fluxbox.cat
+share/fluxbox-devel/styles/Artwiz
+share/fluxbox-devel/styles/Blue
+share/fluxbox-devel/styles/BlueNight
+share/fluxbox-devel/styles/Carbondioxide
+share/fluxbox-devel/styles/Clean
+share/fluxbox-devel/styles/CleanColor
+share/fluxbox-devel/styles/Cthulhain
+share/fluxbox-devel/styles/Flux
+share/fluxbox-devel/styles/LemonSpace
+share/fluxbox-devel/styles/Makro
+share/fluxbox-devel/styles/MerleyKay
+share/fluxbox-devel/styles/Meta
+share/fluxbox-devel/styles/Minimal
+share/fluxbox-devel/styles/Nyz
+share/fluxbox-devel/styles/Operation
+share/fluxbox-devel/styles/Outcomes
+share/fluxbox-devel/styles/Rampage
+share/fluxbox-devel/styles/Rancor
+share/fluxbox-devel/styles/Results
+share/fluxbox-devel/styles/Shade
+share/fluxbox-devel/styles/Spiff
+share/fluxbox-devel/styles/Twice
+share/fluxbox-devel/styles/qnx-photon
+@unexec rm %D/share/fluxbox-devel/nls/lv
+@unexec rm %D/share/fluxbox-devel/nls/fr
+@unexec rm %D/share/fluxbox-devel/nls/es
+@unexec rm %D/share/fluxbox-devel/nls/en_US
+@unexec rm %D/share/fluxbox-devel/nls/en
+@unexec rm %D/share/fluxbox-devel/nls/US_ASCII
+@unexec rm %D/share/fluxbox-devel/nls/POSIX
+@exec ln -s lv_LV %D/share/fluxbox-devel/nls/lv
+@exec ln -s fr_FR %D/share/fluxbox-devel/nls/fr
+@exec ln -s es_ES %D/share/fluxbox-devel/nls/es
+@exec ln -s C %D/share/fluxbox-devel/nls/en_US
+@exec ln -s C %D/share/fluxbox-devel/nls/en
+@exec ln -s C %D/share/fluxbox-devel/nls/US_ASCII
+@exec ln -s C %D/share/fluxbox-devel/nls/POSIX
+@dirrm share/fluxbox-devel/styles
+@dirrm share/fluxbox-devel/nls/tr_TR
+@dirrm share/fluxbox-devel/nls/sv_SE
+@dirrm share/fluxbox-devel/nls/ru_RU
+@dirrm share/fluxbox-devel/nls/pt_PT
+@dirrm share/fluxbox-devel/nls/pt_BR
+@dirrm share/fluxbox-devel/nls/lv_LV
+@dirrm share/fluxbox-devel/nls/ja_JP
+@dirrm share/fluxbox-devel/nls/it_IT
+@dirrm share/fluxbox-devel/nls/fr_FR
+@dirrm share/fluxbox-devel/nls/et_EE
+@dirrm share/fluxbox-devel/nls/es_ES
+@dirrm share/fluxbox-devel/nls/de_DE
+@dirrm share/fluxbox-devel/nls/da_DK
+@dirrm share/fluxbox-devel/nls/bg_BG
+@dirrm share/fluxbox-devel/nls/C
+@dirrm share/fluxbox-devel/nls
+@dirrm share/fluxbox-devel

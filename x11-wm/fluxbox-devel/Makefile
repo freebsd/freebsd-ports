@@ -1,22 +1,17 @@
-# New ports collection makefile for:	fluxbox
-# Date created:				29 November 2001
-# Whom:					spn
+# New ports collection makefile for:	fluxbox-devel
+# Date created:				21 May 2003
+# Whom:					hendrik@scholz.net
 #
 # $FreeBSD$
 #
 
 PORTNAME=	fluxbox
-PORTVERSION=	0.1.14
-PORTREVISION=   2
+PORTVERSION=	0.9.2
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
-
-.if defined(WITH_REMEMBER)
-PATCH_SITES=    http://www.bugfactory.org/~gav/fluxbox/
-PATCH_DIST_STRIP=   -p1
-PATCHFILES=	remember-0.1.14-7.gz
-.endif
+MASTER_SITE_SUBDIR=	fluxbox
+PKGNAMESUFFIX=	-devel
+DISTNAME=	fluxbox-${PORTVERSION}
 
 MAINTAINER=	hendrik@scholz.net
 COMMENT=	A small and fast window manager based on BlackBox
@@ -25,18 +20,12 @@ LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/Xft
 RUN_DEPENDS=	bsetbg:${PORTSDIR}/x11-wm/boxtools \
 		xterm:${PORTSDIR}/x11/XFree86-4-clients
 BUILD_DEPENDS=	xterm:${PORTSDIR}/x11/XFree86-4-clients
-.if defined(WITH_REMEMBER)
-BUILD_DEPENDS+=	automake14:${PORTSDIR}/devel/automake14
-.endif
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 WANT_GNOME=	yes
-.if defined(WITH_REMEMBER)
-USE_GMAKE=	yes
-CONFIGURE_ENV=	AUTOMAKE=automake14
-.endif
-CONFIGURE_ARGS=	--disable-newwmspec
+USE_REINPLACE=	yes
+CONFIGURE_ARGS=		--enable-nls --program-suffix=-devel
 .if defined(WITH_KDE) || defined(PACKAGE_BUILDING)
 CONFIGURE_ARGS+=	--enable-kde
 .endif
@@ -46,21 +35,15 @@ CONFIGURE_ARGS+=	--enable-xinerama
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 500000
-.undef WITH_WINSNAP
-.endif
-
-.if defined(WITH_WINSNAP)
-PATCH_SITES+=   http://www.raisdorf.net/files/FreeBSD/
-PATCH_DIST_STRIP=   -p1
-PATCHFILES+=    winsnap-0.1.14.patch
-.endif
-
-MAN1=		fluxbox.1
+MAN1=		fluxbox-devel.1
 
 .if ${HAVE_GNOME:Mgnomelibs}!="" || defined(PACKAGE_BUILDING)
 CONFIGURE_ARGS+=	--enable-gnome
 .endif
+
+NLSMAKEFILES=	nls nls/C nls/da_DK nls/es_ES nls/et_EE nls/fr_FR nls/pt_BR \
+				nls/ru_RU nls/sv_SE nls/tr_TR nls/pt_PT nls/bg_BG nls/ja_JP \
+				nls/lv_LV nls/it_IT nls/de_DE
 
 pre-everything::
 	@${ECHO_CMD} ""
@@ -72,27 +55,16 @@ pre-everything::
 .if !defined(WITH_KDE)
 	@${ECHO_CMD} "WITH_KDE	- Enable KDE slit support"
 .endif
-.if !defined(WITH_REMEMBER)
-	@${ECHO_CMD} "WITH_REMEMBER	- Enable the unofficial remember patch"
-.endif
-.if !defined(WITH_WINSNAP)
-	@${ECHO_CMD} "WITH_WINSNAP	- Enable the unofficial window snapping patch"
-	@${ECHO_CMD} "            	  (does not work on -current)"
-.endif
-	@${ECHO_CMD} ""
 
-post-install:
-.if defined(WITH_WINSNAP)
-	@${ECHO_CMD} ""
-	@${ECHO_CMD} "The window snapping patch from Shawn Singh requires some"
-	@${ECHO_CMD} "changes to your ~/.fluxbox/init file:"
-	@${ECHO_CMD} ""
-	@${ECHO_CMD} "    session.screen0.edgeSnapThreshold: 10"
-	@${ECHO_CMD} "    session.screen0.edgeResistThreshold: 10"
-	@${ECHO_CMD} ""
-	@${ECHO_CMD} "The values can be changed to mimic the behavior of Enlightenment:"
-	@${ECHO_CMD} "snap: 3, resist: 15"
-	@${ECHO_CMD} ""
-.endif
+post-patch::
+	@${REINPLACE_CMD} -e 's|PACKAGE=fluxbox|PACKAGE=fluxbox-devel|' \
+		${WRKSRC}/configure
+
+post-configure::
+.for i in ${NLSMAKEFILES}
+	@${REINPLACE_CMD} -e 's|@NLS@|-DNLS|' ${WRKSRC}/${i}/Makefile
+.endfor
+post-install::
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
