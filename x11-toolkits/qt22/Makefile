@@ -6,8 +6,8 @@
 # $FreeBSD$
 #
 
-DISTNAME=	qt-x11-2.1.0-beta2
-PKGNAME=	qt-2.1.0b2
+DISTNAME=	qt-x11-2.1.0-beta3
+PKGNAME=	qt-2.1.0b3
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.troll.no/qt/source/
 
@@ -27,7 +27,7 @@ CONFIGURE_ARGS=	-system-zlib -system-libpng -system-jpeg \
 CONFIGURE_ENV=	QTDIR=${WRKSRC}
 MAKE_ENV=	QTDIR=${WRKSRC}
 
-WRKSRC=		${WRKDIR}/qt-2.1.0-beta2
+WRKSRC=		${WRKDIR}/qt-2.1.0-beta3
 CONFIG=		${WRKSRC}/configs/freebsd-g++-shared
 
 .if defined(QT_GIF_AVAILABLE)
@@ -58,8 +58,7 @@ do-install:
 	${INSTALL_SCRIPT} bin/qt20fix ${PREFIX}/bin ; \
 	${INSTALL_SCRIPT} bin/qtrename140 ${PREFIX}/bin ; \
 	${INSTALL_DATA} include/*.h ${PREFIX}/include/qt2 ; \
-	${INSTALL_DATA} lib/libqgl.a ${PREFIX}/lib ; \
-	${INSTALL_DATA} lib/libqt2.so.3 ${PREFIX}/lib )
+	${INSTALL_DATA} lib/* ${PREFIX}/lib )
 	${LN} -sf libqt2.so.3 ${PREFIX}/lib/libqt2.so
 	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 .if !defined(NOPORTDOCS)
