@@ -3,4 +3,4 @@ The visualization is highly customizable, using 14 arguments. 5
 example customizations are provided as shell scripts, named
 wmtunlo.example1 through wmtunlo.example5.
 
-- Adam Weinberger adam@vectors.cx
+- Adam Weinberger <adamw@FreeBSD.org>

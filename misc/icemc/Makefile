@@ -15,7 +15,7 @@ PATCH_SITES=	${MASTER_SITES}
 PATCHFILES=	icemc-0.2.2.patch.tar.gz
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	adam@vectors.cx
+MAINTAINER=	adamw@FreeBSD.org
 
 USE_X_PREFIX=	yes
 USE_QT_VER=	3

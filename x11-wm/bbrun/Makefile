@@ -10,7 +10,7 @@ PORTVERSION=	1.4
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.dwave.net/~jking/bbrun/
 
-MAINTAINER=	adam@vectors.cx
+MAINTAINER=	adamw@FreeBSD.org
 
 LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 

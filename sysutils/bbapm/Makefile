@@ -14,7 +14,7 @@ PATCH_SITES=	${MASTER_SITES}
 PATCHFILES=	bbapm-0.0.1-freebsd-patch-2.diff
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	adam@vectors.cx
+MAINTAINER=	adamw@FreeBSD.org
 
 USE_X_PREFIX=	yes
 USE_GNOMENG=	yes

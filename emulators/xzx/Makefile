@@ -11,7 +11,7 @@ CATEGORIES=	emulators
 MASTER_SITES=	http://www.philosys.de/~kunze/xzx.purespace.de/xzx/
 DISTNAME=	${PORTNAME}-pro-${PORTVERSION}-eval
 
-MAINTAINER=	adam@vectors.cx
+MAINTAINER=	adamw@FreeBSD.org
 
 # xmkmf is used in configure script
 BUILD_DEPENDS=	xmkmf:${PORTSDIR}/devel/imake-4
