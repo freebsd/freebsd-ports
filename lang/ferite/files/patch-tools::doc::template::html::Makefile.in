@@ -1,0 +1,27 @@
+--- tools/doc/template/html/Makefile.in.orig	Thu Jan  9 04:49:51 2003
++++ tools/doc/template/html/Makefile.in	Tue Jan 14 09:40:05 2003
+@@ -124,7 +124,7 @@
+ xml_LIBS = @xml_LIBS@
+ template_DATA = namespace.png class.png empty.png back.png var.png function.png style.css
+ 
+-templatedir = @prefix@/share/ferite/doc/template/html
++templatedir = @prefix@/share/doc/ferite/template/html
+ 
+ EXTRA_DIST = $(template_DATA)
+ subdir = tools/doc/template/html
+@@ -155,6 +155,7 @@
+ uninstall-info-am:
+ templateDATA_INSTALL = $(INSTALL_DATA)
+ install-templateDATA: $(template_DATA)
++ifndef NOPORTDOCS
+ 	@$(NORMAL_INSTALL)
+ 	$(mkinstalldirs) $(DESTDIR)$(templatedir)
+ 	@list='$(template_DATA)'; for p in $$list; do \
+@@ -163,6 +164,7 @@
+ 	  echo " $(templateDATA_INSTALL) $$d$$p $(DESTDIR)$(templatedir)/$$f"; \
+ 	  $(templateDATA_INSTALL) $$d$$p $(DESTDIR)$(templatedir)/$$f; \
+ 	done
++endif
+ 
+ uninstall-templateDATA:
+ 	@$(NORMAL_UNINSTALL)

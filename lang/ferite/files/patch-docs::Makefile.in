@@ -1,14 +1,18 @@
-
-$FreeBSD$
-
---- docs/Makefile.in.orig	Wed Jan  9 08:47:07 2002
-+++ docs/Makefile.in	Wed Jan  9 12:11:41 2002
-@@ -117,7 +117,7 @@
- manual.pdf
+--- docs/Makefile.in.orig	Thu Jan  9 04:49:26 2003
++++ docs/Makefile.in	Tue Jan 14 09:43:14 2003
+@@ -212,6 +212,7 @@
+ 	done
+ docsDATA_INSTALL = $(INSTALL_DATA)
+ install-docsDATA: $(docs_DATA)
++ifndef NOPORTDOCS
+ 	@$(NORMAL_INSTALL)
+ 	$(mkinstalldirs) $(DESTDIR)$(docsdir)
+ 	@list='$(docs_DATA)'; for p in $$list; do \
+@@ -220,6 +221,7 @@
+ 	  echo " $(docsDATA_INSTALL) $$d$$p $(DESTDIR)$(docsdir)/$$f"; \
+ 	  $(docsDATA_INSTALL) $$d$$p $(DESTDIR)$(docsdir)/$$f; \
+ 	done
++endif
  
- 
--docsdir = $(prefix)/share/ferite/docs
-+docsdir = $(prefix)/share/doc/ferite
- 
- EXTRA_DIST = $(docs_DATA)
- 
+ uninstall-docsDATA:
+ 	@$(NORMAL_UNINSTALL)
