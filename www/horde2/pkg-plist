@@ -107,6 +107,7 @@
 %%HORDEDIR%%/lib/MIME/Viewer.php
 %%HORDEDIR%%/lib/MIME/Viewer/deb.php
 %%HORDEDIR%%/lib/MIME/Viewer/default.php
+%%HORDEDIR%%/lib/MIME/Viewer/enriched.php
 %%HORDEDIR%%/lib/MIME/Viewer/enscript.php
 %%HORDEDIR%%/lib/MIME/Viewer/msexcel.php
 %%HORDEDIR%%/lib/MIME/Viewer/mspowerpoint.php
@@ -158,6 +159,7 @@
 %%HORDEDIR%%/locale/ru_RU/LC_MESSAGES/horde.mo
 %%HORDEDIR%%/locale/ru_RU.KOI8-R/LC_MESSAGES/horde.mo
 %%HORDEDIR%%/locale/sk_SK/LC_MESSAGES/horde.mo
+%%HORDEDIR%%/locale/sl_SI/LC_MESSAGES/horde.mo
 %%HORDEDIR%%/locale/sv_SE/LC_MESSAGES/horde.mo
 %%HORDEDIR%%/locale/uk_UA/LC_MESSAGES/horde.mo
 %%HORDEDIR%%/locale/zh_CN/LC_MESSAGES/horde.mo
@@ -190,11 +192,13 @@
 %%HORDEDIR%%/po/ru_RU.KOI8-R.po
 %%HORDEDIR%%/po/shtool
 %%HORDEDIR%%/po/sk_SK.po
+%%HORDEDIR%%/po/sl_SI.po
 %%HORDEDIR%%/po/sv_SE.po
 %%HORDEDIR%%/po/uk_UA.po
 %%HORDEDIR%%/po/xgettext.sh
 %%HORDEDIR%%/po/zh_CN.po
 %%HORDEDIR%%/po/zh_TW.po
+%%HORDEDIR%%/prefs.php
 %%HORDEDIR%%/problem.php
 %%HORDEDIR%%/scripts/.htaccess
 %%HORDEDIR%%/scripts/SCRIPTS
@@ -208,12 +212,7 @@
 %%HORDEDIR%%/scripts/db/pgsql_drop.sql
 %%HORDEDIR%%/scripts/db/prefs.sql
 %%HORDEDIR%%/scripts/horde-rsync.sh
-%%HORDEDIR%%/scripts/ldap/gollem.schema
 %%HORDEDIR%%/scripts/ldap/horde.schema
-%%HORDEDIR%%/scripts/ldap/imp.schema
-%%HORDEDIR%%/scripts/ldap/kronolith.schema
-%%HORDEDIR%%/scripts/ldap/nag.schema
-%%HORDEDIR%%/scripts/ldap/turba.schema
 %%HORDEDIR%%/scripts/mime_mapping/Makefile
 %%HORDEDIR%%/scripts/mime_mapping/convert.pl
 %%HORDEDIR%%/scripts/mime_mapping/mime.types
@@ -330,6 +329,8 @@ etc/horde/httpd.conf.horde
 @dirrm %%HORDEDIR%%/locale/ru_RU.KOI8-R
 @dirrm %%HORDEDIR%%/locale/sk_SK/LC_MESSAGES
 @dirrm %%HORDEDIR%%/locale/sk_SK
+@dirrm %%HORDEDIR%%/locale/sl_SI/LC_MESSAGES
+@dirrm %%HORDEDIR%%/locale/sl_SI
 @dirrm %%HORDEDIR%%/locale/sv_SE/LC_MESSAGES
 @dirrm %%HORDEDIR%%/locale/sv_SE
 @dirrm %%HORDEDIR%%/locale/uk_UA/LC_MESSAGES
