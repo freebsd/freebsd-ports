@@ -42,6 +42,7 @@ share/java/jedit/macros/Search/Next_Char.bsh
 share/java/jedit/macros/Search/Return_From_Find.bsh
 share/java/jedit/macros/Search/Write_HyperSearch_Results.bsh
 share/java/jedit/macros/Text/Add_Prefix_and_Suffix.bsh
+share/java/jedit/macros/Text/Color_Picker.bsh
 share/java/jedit/macros/Text/Duplicate_Line.bsh
 share/java/jedit/macros/Text/Insert_Date.bsh
 share/java/jedit/macros/Text/Insert_Tag.bsh
@@ -82,6 +83,7 @@ share/java/jedit/modes/lisp.xml
 share/java/jedit/modes/makefile.xml
 share/java/jedit/modes/ml.xml
 share/java/jedit/modes/netrexx.xml
+share/java/jedit/modes/objective-c.xml
 share/java/jedit/modes/occam.xml
 share/java/jedit/modes/omnimark.xml
 share/java/jedit/modes/pascal.xml
@@ -120,6 +122,12 @@ share/java/jedit/swingall.jar
 @dirrm share/java/jedit/properties
 @dirrm share/java/jedit/modes
 @dirrm share/java/jedit/macros/Text
+@dirrm share/java/jedit/macros/Search
+@dirrm share/java/jedit/macros/Misc/Properties
 @dirrm share/java/jedit/macros/Misc
+@dirrm share/java/jedit/macros/Java
 @dirrm share/java/jedit/macros/Files
+@dirrm share/java/jedit/macros
+@dirrm share/java/jedit/jars
+@dirrm share/java/jedit/doc
 @dirrm share/java/jedit
