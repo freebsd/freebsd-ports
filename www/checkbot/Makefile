@@ -1,12 +1,12 @@
 # New ports collection makefile for:	checkbot
-# Version required:			1.51
+# Version required:			1.57
 # Date created:				2. Feb 1998
 # Whom:	      				wosch@FreeBSD.org
 #
 # $FreeBSD$
 #
 
-DISTNAME=	checkbot-1.54
+DISTNAME=	checkbot-1.57
 CATEGORIES=	www perl5
 MASTER_SITES=	http://www.xs4all.nl/~graaff/checkbot/ \
 		http://www.de.freebsd.org/~wosch/src/
@@ -18,6 +18,8 @@ BUILD_DEPENDS=  \
 		${site_perl}/${PERL_ARCH}/Net/FTP.pm:${PORTSDIR}/net/p5-Net \
 		${site_perl}/Mail/Send.pm:${PORTSDIR}/mail/p5-Mail-Tools \
 		${site_perl}/LWP.pm:${PORTSDIR}/www/p5-libwww
+
+FETCH_BEFORE_ARGS=	-b
 
 MAN1=		checkbot.1
 USE_PERL5=	YES
