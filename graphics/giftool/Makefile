@@ -17,17 +17,14 @@ NO_CDROM=	"Shareware"
 NO_WRKSUBDIR=	yes
 ALL_TARGET=	giftool
 
-pre-clean:
-	@${RM} -f ${PATCHDIR}/patch-a[bc]
-
 pre-patch:
 .if defined(RETVALUE)
 	@${ECHO_MSG} "Return value patch enabled....."
-	@${CP} ${FILESDIR}/patch-aa ${PATCHDIR}
+EXTRA_PATCHES=	${FILESDIR}/patch-aa
 .endif
 .if defined(MALLOCSIZE)
 	@${ECHO_MSG} "Malloc size improve parch enabled....."
-	@${CP} ${FILESDIR}/patch-ab ${PATCHDIR}
+EXTRA_PATCHES=	${FILESDIR}/patch-ab
 .endif
 
 do-install:
