@@ -7,6 +7,7 @@
 
 PORTNAME=	bsdsar
 PORTVERSION=	1.10
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.googlebit.com/bsdsar/
 
@@ -19,6 +20,10 @@ do-install:
 .for file in bsdsar bsdsar_gather
 	${INSTALL_SCRIPT} ${WRKSRC}/${file} ${PREFIX}/bin
 .endfor
+	${INSTALL_DATA} ${WRKSRC}/bsdsar.conf ${PREFIX}/etc/bsdsar.conf.sample
+.if !exists(${PREFIX}/etc/bsdsar.conf)
+	${CP} ${PREFIX}/etc/bsdsar.conf.sample ${PREFIX}/etc/bsdsar.conf
+.endif
 	${SETENV} PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
