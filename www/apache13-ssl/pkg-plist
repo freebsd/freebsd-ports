@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 bin/checkgid
 bin/dbmmanage
 bin/htdigest
@@ -630,7 +631,8 @@ www/icons/world1.png
 www/icons/world2.gif
 www/icons/world2.png
 @exec mkdir -p %D/www/proxy
-@dirrm etc/apache
+@unexec rm -f %D/etc/apache2/httpd.conf.bak 2> /dev/null || true
+@unexec rmdir %D/etc/apache 2> /dev/null || true
 @dirrm include/apache/xml
 @dirrm include/apache
 @dirrm libexec/apache
