@@ -4,7 +4,7 @@
 # Date created:         Fri Dec 01, 1995
 # Whom:                 obrien@cs.ucdavis.edu
 #
-# $Id: Makefile,v 1.8 1997/03/28 01:36:50 obrien Exp $
+# $Id: Makefile,v 1.9 1997/04/04 15:57:32 obrien Exp $
 #
 
 DISTNAME=	minicom-1.75
@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 		ftp://ftp.cistron.nl/pub/people/miquels/software/
 MASTER_SITE_SUBDIR= apps/serialcomm/dialout
 
-MAINTAINER=     obrien@cs.ucdavis.edu
+MAINTAINER=     obrien@FreeBSD.org
 
 RUN_DEPENDS=	lrz:${PORTSDIR}/comms/lrzsz \
 		lsz:${PORTSDIR}/comms/lrzsz \
