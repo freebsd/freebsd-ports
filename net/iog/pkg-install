@@ -1,0 +1,24 @@
+#!/bin/sh
+# $FreeBSD$ 
+#
+
+if [ "$2" != "PRE-INSTALL" ]; then
+	exit 0
+fi
+
+USER=iog
+# group selected to be www since the webserver has to be able to serve it
+GROUP=www 
+
+if ! pw usershow "${USER}" 2>/dev/null 1>&2; then
+	if pw useradd ${USER} -g ${GROUP} -h - \
+		-s "/sbin/nologin" -d "${PREFIX}/iog" \
+		-c "iog Monitoring Owner"; \
+	then
+		echo "Added user \"${USER}\"."
+	else
+		echo "Adding user \"${USER}\" failed..."
+		exit 1
+	fi
+fi
+exit 0
