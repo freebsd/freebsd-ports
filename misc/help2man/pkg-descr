@@ -1,0 +1,11 @@
+help2man is a tool for automatically generating simple manual pages from
+program output.
+
+It is intended to provide an easy way for software authors to include a
+manual page in their distribution without having to maintain that document.
+
+Given a program which produces resonably standard --help and --version
+outputs, help2man will attempt to re-arrange that output into something
+which resembles a manual page.
+
+WWW: http://www.tw.gnu.org/software/help2man/
