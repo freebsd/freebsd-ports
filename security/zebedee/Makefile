@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zebedee
-PORTVERSION=	1.3.0
+PORTVERSION=	2.0.1
 CATEGORIES=	security
 MASTER_SITES=	http://www.winton.org.uk/zebedee/ \
 		http://www.hewgill.com/zebedee/
@@ -31,6 +31,9 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/vncserver.zbd ${PREFIX}/share/examples/zebedee
 	${INSTALL_DATA} ${WRKSRC}/server.key ${PREFIX}/share/examples/zebedee
 	${INSTALL_DATA} ${WRKSRC}/server.id ${PREFIX}/share/examples/zebedee
+	${INSTALL_DATA} ${WRKSRC}/client1.key ${PREFIX}/share/examples/zebedee
+	${INSTALL_DATA} ${WRKSRC}/client2.key ${PREFIX}/share/examples/zebedee
+	${INSTALL_DATA} ${WRKSRC}/clients.id ${PREFIX}/share/examples/zebedee
 	${MKDIR} ${PREFIX}/share/doc/zebedee
 	${INSTALL_DATA} ${WRKSRC}/README.txt ${PREFIX}/share/doc/zebedee
 	${INSTALL_DATA} ${WRKSRC}/LICENCE.txt ${PREFIX}/share/doc/zebedee
