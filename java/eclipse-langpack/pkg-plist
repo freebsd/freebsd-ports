@@ -1,0 +1,441 @@
+eclipse/plugins/org.eclipse.debug.ui.nl1_2.1.1.1/fragment.xml
+eclipse/plugins/org.eclipse.debug.ui.nl1_2.1.1.1/nl1.jar
+eclipse/plugins/org.eclipse.jdt.debug.nl1_2.1.1.1/fragment.xml
+eclipse/plugins/org.eclipse.jdt.debug.nl1_2.1.1.1/nl1.jar
+eclipse/plugins/org.eclipse.jdt.debug.ui.nl1_2.1.1.1/fragment.xml
+eclipse/plugins/org.eclipse.jdt.debug.ui.nl1_2.1.1.1/nl1.jar
+eclipse/plugins/org.eclipse.jdt.doc.isv.nl1_2.1.1.1/fragment.xml
+eclipse/plugins/org.eclipse.jdt.doc.isv.nl1_2.1.1.1/nl/de/doc.zip
+eclipse/plugins/org.eclipse.jdt.doc.isv.nl1_2.1.1.1/nl/de/toc.xml
+eclipse/plugins/org.eclipse.jdt.doc.isv.nl1_2.1.1.1/nl/de/topics_Guide.xml
+eclipse/plugins/org.eclipse.jdt.doc.isv.nl1_2.1.1.1/nl/de/topics_Questions.xml
+eclipse/plugins/org.eclipse.jdt.doc.isv.nl1_2.1.1.1/nl/de/topics_Reference.xml
+eclipse/plugins/org.eclipse.jdt.doc.isv.nl1_2.1.1.1/nl/de/topics_Samples.xml
+eclipse/plugins/org.eclipse.jdt.doc.isv.nl1_2.1.1.1/nl/es/doc.zip
+eclipse/plugins/org.eclipse.jdt.doc.isv.nl1_2.1.1.1/nl/es/toc.xml
+eclipse/plugins/org.eclipse.jdt.doc.isv.nl1_2.1.1.1/nl/es/topics_Guide.xml
+eclipse/plugins/org.eclipse.jdt.doc.isv.nl1_2.1.1.1/nl/es/topics_Questions.xml
+eclipse/plugins/org.eclipse.jdt.doc.isv.nl1_2.1.1.1/nl/es/topics_Reference.xml
+eclipse/plugins/org.eclipse.jdt.doc.isv.nl1_2.1.1.1/nl/es/topics_Samples.xml
+eclipse/plugins/org.eclipse.jdt.doc.isv.nl1_2.1.1.1/nl/fr/doc.zip
+eclipse/plugins/org.eclipse.jdt.doc.isv.nl1_2.1.1.1/nl/fr/toc.xml
+eclipse/plugins/org.eclipse.jdt.doc.isv.nl1_2.1.1.1/nl/fr/topics_Guide.xml
+eclipse/plugins/org.eclipse.jdt.doc.isv.nl1_2.1.1.1/nl/fr/topics_Questions.xml
+eclipse/plugins/org.eclipse.jdt.doc.isv.nl1_2.1.1.1/nl/fr/topics_Reference.xml
+eclipse/plugins/org.eclipse.jdt.doc.isv.nl1_2.1.1.1/nl/fr/topics_Samples.xml
+eclipse/plugins/org.eclipse.jdt.doc.isv.nl1_2.1.1.1/nl/it/doc.zip
+eclipse/plugins/org.eclipse.jdt.doc.isv.nl1_2.1.1.1/nl/it/toc.xml
+eclipse/plugins/org.eclipse.jdt.doc.isv.nl1_2.1.1.1/nl/it/topics_Guide.xml
+eclipse/plugins/org.eclipse.jdt.doc.isv.nl1_2.1.1.1/nl/it/topics_Questions.xml
+eclipse/plugins/org.eclipse.jdt.doc.isv.nl1_2.1.1.1/nl/it/topics_Reference.xml
+eclipse/plugins/org.eclipse.jdt.doc.isv.nl1_2.1.1.1/nl/it/topics_Samples.xml
+eclipse/plugins/org.eclipse.jdt.doc.isv.nl1_2.1.1.1/nl/ja/doc.zip
+eclipse/plugins/org.eclipse.jdt.doc.isv.nl1_2.1.1.1/nl/ja/toc.xml
+eclipse/plugins/org.eclipse.jdt.doc.isv.nl1_2.1.1.1/nl/ja/topics_Guide.xml
+eclipse/plugins/org.eclipse.jdt.doc.isv.nl1_2.1.1.1/nl/ja/topics_Questions.xml
+eclipse/plugins/org.eclipse.jdt.doc.isv.nl1_2.1.1.1/nl/ja/topics_Reference.xml
+eclipse/plugins/org.eclipse.jdt.doc.isv.nl1_2.1.1.1/nl/ja/topics_Samples.xml
+eclipse/plugins/org.eclipse.jdt.doc.isv.nl1_2.1.1.1/nl/ko/doc.zip
+eclipse/plugins/org.eclipse.jdt.doc.isv.nl1_2.1.1.1/nl/ko/toc.xml
+eclipse/plugins/org.eclipse.jdt.doc.isv.nl1_2.1.1.1/nl/ko/topics_Guide.xml
+eclipse/plugins/org.eclipse.jdt.doc.isv.nl1_2.1.1.1/nl/ko/topics_Questions.xml
+eclipse/plugins/org.eclipse.jdt.doc.isv.nl1_2.1.1.1/nl/ko/topics_Reference.xml
+eclipse/plugins/org.eclipse.jdt.doc.isv.nl1_2.1.1.1/nl/ko/topics_Samples.xml
+eclipse/plugins/org.eclipse.jdt.doc.isv.nl1_2.1.1.1/nl/pt/BR/doc.zip
+eclipse/plugins/org.eclipse.jdt.doc.isv.nl1_2.1.1.1/nl/pt/BR/toc.xml
+eclipse/plugins/org.eclipse.jdt.doc.isv.nl1_2.1.1.1/nl/pt/BR/topics_Guide.xml
+eclipse/plugins/org.eclipse.jdt.doc.isv.nl1_2.1.1.1/nl/pt/BR/topics_Questions.xml
+eclipse/plugins/org.eclipse.jdt.doc.isv.nl1_2.1.1.1/nl/pt/BR/topics_Reference.xml
+eclipse/plugins/org.eclipse.jdt.doc.isv.nl1_2.1.1.1/nl/pt/BR/topics_Samples.xml
+eclipse/plugins/org.eclipse.jdt.doc.isv.nl1_2.1.1.1/nl/zh/CN/doc.zip
+eclipse/plugins/org.eclipse.jdt.doc.isv.nl1_2.1.1.1/nl/zh/CN/toc.xml
+eclipse/plugins/org.eclipse.jdt.doc.isv.nl1_2.1.1.1/nl/zh/CN/topics_Guide.xml
+eclipse/plugins/org.eclipse.jdt.doc.isv.nl1_2.1.1.1/nl/zh/CN/topics_Questions.xml
+eclipse/plugins/org.eclipse.jdt.doc.isv.nl1_2.1.1.1/nl/zh/CN/topics_Reference.xml
+eclipse/plugins/org.eclipse.jdt.doc.isv.nl1_2.1.1.1/nl/zh/CN/topics_Samples.xml
+eclipse/plugins/org.eclipse.jdt.doc.isv.nl1_2.1.1.1/nl/zh/TW/doc.zip
+eclipse/plugins/org.eclipse.jdt.doc.isv.nl1_2.1.1.1/nl/zh/TW/toc.xml
+eclipse/plugins/org.eclipse.jdt.doc.isv.nl1_2.1.1.1/nl/zh/TW/topics_Guide.xml
+eclipse/plugins/org.eclipse.jdt.doc.isv.nl1_2.1.1.1/nl/zh/TW/topics_Questions.xml
+eclipse/plugins/org.eclipse.jdt.doc.isv.nl1_2.1.1.1/nl/zh/TW/topics_Reference.xml
+eclipse/plugins/org.eclipse.jdt.doc.isv.nl1_2.1.1.1/nl/zh/TW/topics_Samples.xml
+eclipse/plugins/org.eclipse.jdt.doc.isv.nl1_2.1.1.1/nl1.jar
+eclipse/plugins/org.eclipse.jdt.doc.user.nl1_2.1.1.1/fragment.xml
+eclipse/plugins/org.eclipse.jdt.doc.user.nl1_2.1.1.1/nl/de/contexts_Debugger.xml
+eclipse/plugins/org.eclipse.jdt.doc.user.nl1_2.1.1.1/nl/de/contexts_JDT.xml
+eclipse/plugins/org.eclipse.jdt.doc.user.nl1_2.1.1.1/nl/de/contexts_JDT_Debugger.xml
+eclipse/plugins/org.eclipse.jdt.doc.user.nl1_2.1.1.1/nl/de/contexts_JDT_JUnit.xml
+eclipse/plugins/org.eclipse.jdt.doc.user.nl1_2.1.1.1/nl/de/doc.zip
+eclipse/plugins/org.eclipse.jdt.doc.user.nl1_2.1.1.1/nl/de/toc.xml
+eclipse/plugins/org.eclipse.jdt.doc.user.nl1_2.1.1.1/nl/de/topics_Concepts.xml
+eclipse/plugins/org.eclipse.jdt.doc.user.nl1_2.1.1.1/nl/de/topics_GettingStarted.xml
+eclipse/plugins/org.eclipse.jdt.doc.user.nl1_2.1.1.1/nl/de/topics_Reference.xml
+eclipse/plugins/org.eclipse.jdt.doc.user.nl1_2.1.1.1/nl/de/topics_Tasks.xml
+eclipse/plugins/org.eclipse.jdt.doc.user.nl1_2.1.1.1/nl/es/contexts_Debugger.xml
+eclipse/plugins/org.eclipse.jdt.doc.user.nl1_2.1.1.1/nl/es/contexts_JDT.xml
+eclipse/plugins/org.eclipse.jdt.doc.user.nl1_2.1.1.1/nl/es/contexts_JDT_Debugger.xml
+eclipse/plugins/org.eclipse.jdt.doc.user.nl1_2.1.1.1/nl/es/contexts_JDT_JUnit.xml
+eclipse/plugins/org.eclipse.jdt.doc.user.nl1_2.1.1.1/nl/es/doc.zip
+eclipse/plugins/org.eclipse.jdt.doc.user.nl1_2.1.1.1/nl/es/toc.xml
+eclipse/plugins/org.eclipse.jdt.doc.user.nl1_2.1.1.1/nl/es/topics_Concepts.xml
+eclipse/plugins/org.eclipse.jdt.doc.user.nl1_2.1.1.1/nl/es/topics_GettingStarted.xml
+eclipse/plugins/org.eclipse.jdt.doc.user.nl1_2.1.1.1/nl/es/topics_Reference.xml
+eclipse/plugins/org.eclipse.jdt.doc.user.nl1_2.1.1.1/nl/es/topics_Tasks.xml
+eclipse/plugins/org.eclipse.jdt.doc.user.nl1_2.1.1.1/nl/fr/contexts_Debugger.xml
+eclipse/plugins/org.eclipse.jdt.doc.user.nl1_2.1.1.1/nl/fr/contexts_JDT.xml
+eclipse/plugins/org.eclipse.jdt.doc.user.nl1_2.1.1.1/nl/fr/contexts_JDT_Debugger.xml
+eclipse/plugins/org.eclipse.jdt.doc.user.nl1_2.1.1.1/nl/fr/contexts_JDT_JUnit.xml
+eclipse/plugins/org.eclipse.jdt.doc.user.nl1_2.1.1.1/nl/fr/doc.zip
+eclipse/plugins/org.eclipse.jdt.doc.user.nl1_2.1.1.1/nl/fr/toc.xml
+eclipse/plugins/org.eclipse.jdt.doc.user.nl1_2.1.1.1/nl/fr/topics_Concepts.xml
+eclipse/plugins/org.eclipse.jdt.doc.user.nl1_2.1.1.1/nl/fr/topics_GettingStarted.xml
+eclipse/plugins/org.eclipse.jdt.doc.user.nl1_2.1.1.1/nl/fr/topics_Reference.xml
+eclipse/plugins/org.eclipse.jdt.doc.user.nl1_2.1.1.1/nl/fr/topics_Tasks.xml
+eclipse/plugins/org.eclipse.jdt.doc.user.nl1_2.1.1.1/nl/it/contexts_Debugger.xml
+eclipse/plugins/org.eclipse.jdt.doc.user.nl1_2.1.1.1/nl/it/contexts_JDT.xml
+eclipse/plugins/org.eclipse.jdt.doc.user.nl1_2.1.1.1/nl/it/contexts_JDT_Debugger.xml
+eclipse/plugins/org.eclipse.jdt.doc.user.nl1_2.1.1.1/nl/it/contexts_JDT_JUnit.xml
+eclipse/plugins/org.eclipse.jdt.doc.user.nl1_2.1.1.1/nl/it/doc.zip
+eclipse/plugins/org.eclipse.jdt.doc.user.nl1_2.1.1.1/nl/it/toc.xml
+eclipse/plugins/org.eclipse.jdt.doc.user.nl1_2.1.1.1/nl/it/topics_Concepts.xml
+eclipse/plugins/org.eclipse.jdt.doc.user.nl1_2.1.1.1/nl/it/topics_GettingStarted.xml
+eclipse/plugins/org.eclipse.jdt.doc.user.nl1_2.1.1.1/nl/it/topics_Reference.xml
+eclipse/plugins/org.eclipse.jdt.doc.user.nl1_2.1.1.1/nl/it/topics_Tasks.xml
+eclipse/plugins/org.eclipse.jdt.doc.user.nl1_2.1.1.1/nl/ja/contexts_Debugger.xml
+eclipse/plugins/org.eclipse.jdt.doc.user.nl1_2.1.1.1/nl/ja/contexts_JDT.xml
+eclipse/plugins/org.eclipse.jdt.doc.user.nl1_2.1.1.1/nl/ja/contexts_JDT_Debugger.xml
+eclipse/plugins/org.eclipse.jdt.doc.user.nl1_2.1.1.1/nl/ja/contexts_JDT_JUnit.xml
+eclipse/plugins/org.eclipse.jdt.doc.user.nl1_2.1.1.1/nl/ja/doc.zip
+eclipse/plugins/org.eclipse.jdt.doc.user.nl1_2.1.1.1/nl/ja/toc.xml
+eclipse/plugins/org.eclipse.jdt.doc.user.nl1_2.1.1.1/nl/ja/topics_Concepts.xml
+eclipse/plugins/org.eclipse.jdt.doc.user.nl1_2.1.1.1/nl/ja/topics_GettingStarted.xml
+eclipse/plugins/org.eclipse.jdt.doc.user.nl1_2.1.1.1/nl/ja/topics_Reference.xml
+eclipse/plugins/org.eclipse.jdt.doc.user.nl1_2.1.1.1/nl/ja/topics_Tasks.xml
+eclipse/plugins/org.eclipse.jdt.doc.user.nl1_2.1.1.1/nl/ko/contexts_Debugger.xml
+eclipse/plugins/org.eclipse.jdt.doc.user.nl1_2.1.1.1/nl/ko/contexts_JDT.xml
+eclipse/plugins/org.eclipse.jdt.doc.user.nl1_2.1.1.1/nl/ko/contexts_JDT_Debugger.xml
+eclipse/plugins/org.eclipse.jdt.doc.user.nl1_2.1.1.1/nl/ko/contexts_JDT_JUnit.xml
+eclipse/plugins/org.eclipse.jdt.doc.user.nl1_2.1.1.1/nl/ko/doc.zip
+eclipse/plugins/org.eclipse.jdt.doc.user.nl1_2.1.1.1/nl/ko/toc.xml
+eclipse/plugins/org.eclipse.jdt.doc.user.nl1_2.1.1.1/nl/ko/topics_Concepts.xml
+eclipse/plugins/org.eclipse.jdt.doc.user.nl1_2.1.1.1/nl/ko/topics_GettingStarted.xml
+eclipse/plugins/org.eclipse.jdt.doc.user.nl1_2.1.1.1/nl/ko/topics_Reference.xml
+eclipse/plugins/org.eclipse.jdt.doc.user.nl1_2.1.1.1/nl/ko/topics_Tasks.xml
+eclipse/plugins/org.eclipse.jdt.doc.user.nl1_2.1.1.1/nl/pt/BR/contexts_Debugger.xml
+eclipse/plugins/org.eclipse.jdt.doc.user.nl1_2.1.1.1/nl/pt/BR/contexts_JDT.xml
+eclipse/plugins/org.eclipse.jdt.doc.user.nl1_2.1.1.1/nl/pt/BR/contexts_JDT_Debugger.xml
+eclipse/plugins/org.eclipse.jdt.doc.user.nl1_2.1.1.1/nl/pt/BR/contexts_JDT_JUnit.xml
+eclipse/plugins/org.eclipse.jdt.doc.user.nl1_2.1.1.1/nl/pt/BR/doc.zip
+eclipse/plugins/org.eclipse.jdt.doc.user.nl1_2.1.1.1/nl/pt/BR/toc.xml
+eclipse/plugins/org.eclipse.jdt.doc.user.nl1_2.1.1.1/nl/pt/BR/topics_Concepts.xml
+eclipse/plugins/org.eclipse.jdt.doc.user.nl1_2.1.1.1/nl/pt/BR/topics_GettingStarted.xml
+eclipse/plugins/org.eclipse.jdt.doc.user.nl1_2.1.1.1/nl/pt/BR/topics_Reference.xml
+eclipse/plugins/org.eclipse.jdt.doc.user.nl1_2.1.1.1/nl/pt/BR/topics_Tasks.xml
+eclipse/plugins/org.eclipse.jdt.doc.user.nl1_2.1.1.1/nl/zh/CN/contexts_Debugger.xml
+eclipse/plugins/org.eclipse.jdt.doc.user.nl1_2.1.1.1/nl/zh/CN/contexts_JDT.xml
+eclipse/plugins/org.eclipse.jdt.doc.user.nl1_2.1.1.1/nl/zh/CN/contexts_JDT_Debugger.xml
+eclipse/plugins/org.eclipse.jdt.doc.user.nl1_2.1.1.1/nl/zh/CN/contexts_JDT_JUnit.xml
+eclipse/plugins/org.eclipse.jdt.doc.user.nl1_2.1.1.1/nl/zh/CN/doc.zip
+eclipse/plugins/org.eclipse.jdt.doc.user.nl1_2.1.1.1/nl/zh/CN/toc.xml
+eclipse/plugins/org.eclipse.jdt.doc.user.nl1_2.1.1.1/nl/zh/CN/topics_Concepts.xml
+eclipse/plugins/org.eclipse.jdt.doc.user.nl1_2.1.1.1/nl/zh/CN/topics_GettingStarted.xml
+eclipse/plugins/org.eclipse.jdt.doc.user.nl1_2.1.1.1/nl/zh/CN/topics_Reference.xml
+eclipse/plugins/org.eclipse.jdt.doc.user.nl1_2.1.1.1/nl/zh/CN/topics_Tasks.xml
+eclipse/plugins/org.eclipse.jdt.doc.user.nl1_2.1.1.1/nl/zh/TW/contexts_Debugger.xml
+eclipse/plugins/org.eclipse.jdt.doc.user.nl1_2.1.1.1/nl/zh/TW/contexts_JDT.xml
+eclipse/plugins/org.eclipse.jdt.doc.user.nl1_2.1.1.1/nl/zh/TW/contexts_JDT_Debugger.xml
+eclipse/plugins/org.eclipse.jdt.doc.user.nl1_2.1.1.1/nl/zh/TW/contexts_JDT_JUnit.xml
+eclipse/plugins/org.eclipse.jdt.doc.user.nl1_2.1.1.1/nl/zh/TW/doc.zip
+eclipse/plugins/org.eclipse.jdt.doc.user.nl1_2.1.1.1/nl/zh/TW/toc.xml
+eclipse/plugins/org.eclipse.jdt.doc.user.nl1_2.1.1.1/nl/zh/TW/topics_Concepts.xml
+eclipse/plugins/org.eclipse.jdt.doc.user.nl1_2.1.1.1/nl/zh/TW/topics_GettingStarted.xml
+eclipse/plugins/org.eclipse.jdt.doc.user.nl1_2.1.1.1/nl/zh/TW/topics_Reference.xml
+eclipse/plugins/org.eclipse.jdt.doc.user.nl1_2.1.1.1/nl/zh/TW/topics_Tasks.xml
+eclipse/plugins/org.eclipse.jdt.doc.user.nl1_2.1.1.1/nl1.jar
+eclipse/plugins/org.eclipse.pde.doc.user.nl1_2.1.1.1/fragment.xml
+eclipse/plugins/org.eclipse.pde.doc.user.nl1_2.1.1.1/nl/de/contexts_PDE.xml
+eclipse/plugins/org.eclipse.pde.doc.user.nl1_2.1.1.1/nl/de/doc.zip
+eclipse/plugins/org.eclipse.pde.doc.user.nl1_2.1.1.1/nl/de/toc.xml
+eclipse/plugins/org.eclipse.pde.doc.user.nl1_2.1.1.1/nl/es/contexts_PDE.xml
+eclipse/plugins/org.eclipse.pde.doc.user.nl1_2.1.1.1/nl/es/doc.zip
+eclipse/plugins/org.eclipse.pde.doc.user.nl1_2.1.1.1/nl/es/toc.xml
+eclipse/plugins/org.eclipse.pde.doc.user.nl1_2.1.1.1/nl/fr/contexts_PDE.xml
+eclipse/plugins/org.eclipse.pde.doc.user.nl1_2.1.1.1/nl/fr/doc.zip
+eclipse/plugins/org.eclipse.pde.doc.user.nl1_2.1.1.1/nl/fr/toc.xml
+eclipse/plugins/org.eclipse.pde.doc.user.nl1_2.1.1.1/nl/it/contexts_PDE.xml
+eclipse/plugins/org.eclipse.pde.doc.user.nl1_2.1.1.1/nl/it/doc.zip
+eclipse/plugins/org.eclipse.pde.doc.user.nl1_2.1.1.1/nl/it/toc.xml
+eclipse/plugins/org.eclipse.pde.doc.user.nl1_2.1.1.1/nl/ja/contexts_PDE.xml
+eclipse/plugins/org.eclipse.pde.doc.user.nl1_2.1.1.1/nl/ja/doc.zip
+eclipse/plugins/org.eclipse.pde.doc.user.nl1_2.1.1.1/nl/ja/toc.xml
+eclipse/plugins/org.eclipse.pde.doc.user.nl1_2.1.1.1/nl/ko/contexts_PDE.xml
+eclipse/plugins/org.eclipse.pde.doc.user.nl1_2.1.1.1/nl/ko/doc.zip
+eclipse/plugins/org.eclipse.pde.doc.user.nl1_2.1.1.1/nl/ko/toc.xml
+eclipse/plugins/org.eclipse.pde.doc.user.nl1_2.1.1.1/nl/pt/BR/contexts_PDE.xml
+eclipse/plugins/org.eclipse.pde.doc.user.nl1_2.1.1.1/nl/pt/BR/doc.zip
+eclipse/plugins/org.eclipse.pde.doc.user.nl1_2.1.1.1/nl/pt/BR/toc.xml
+eclipse/plugins/org.eclipse.pde.doc.user.nl1_2.1.1.1/nl/zh/CN/contexts_PDE.xml
+eclipse/plugins/org.eclipse.pde.doc.user.nl1_2.1.1.1/nl/zh/CN/doc.zip
+eclipse/plugins/org.eclipse.pde.doc.user.nl1_2.1.1.1/nl/zh/CN/toc.xml
+eclipse/plugins/org.eclipse.pde.doc.user.nl1_2.1.1.1/nl/zh/TW/contexts_PDE.xml
+eclipse/plugins/org.eclipse.pde.doc.user.nl1_2.1.1.1/nl/zh/TW/doc.zip
+eclipse/plugins/org.eclipse.pde.doc.user.nl1_2.1.1.1/nl/zh/TW/toc.xml
+eclipse/plugins/org.eclipse.pde.doc.user.nl1_2.1.1.1/nl1.jar
+eclipse/plugins/org.eclipse.platform.doc.isv.nl1_2.1.1.1/fragment.xml
+eclipse/plugins/org.eclipse.platform.doc.isv.nl1_2.1.1.1/nl/de/doc.zip
+eclipse/plugins/org.eclipse.platform.doc.isv.nl1_2.1.1.1/nl/de/toc.xml
+eclipse/plugins/org.eclipse.platform.doc.isv.nl1_2.1.1.1/nl/de/topics_Guide.xml
+eclipse/plugins/org.eclipse.platform.doc.isv.nl1_2.1.1.1/nl/de/topics_Questions.xml
+eclipse/plugins/org.eclipse.platform.doc.isv.nl1_2.1.1.1/nl/de/topics_Reference.xml
+eclipse/plugins/org.eclipse.platform.doc.isv.nl1_2.1.1.1/nl/de/topics_Samples.xml
+eclipse/plugins/org.eclipse.platform.doc.isv.nl1_2.1.1.1/nl/es/doc.zip
+eclipse/plugins/org.eclipse.platform.doc.isv.nl1_2.1.1.1/nl/es/toc.xml
+eclipse/plugins/org.eclipse.platform.doc.isv.nl1_2.1.1.1/nl/es/topics_Guide.xml
+eclipse/plugins/org.eclipse.platform.doc.isv.nl1_2.1.1.1/nl/es/topics_Questions.xml
+eclipse/plugins/org.eclipse.platform.doc.isv.nl1_2.1.1.1/nl/es/topics_Reference.xml
+eclipse/plugins/org.eclipse.platform.doc.isv.nl1_2.1.1.1/nl/es/topics_Samples.xml
+eclipse/plugins/org.eclipse.platform.doc.isv.nl1_2.1.1.1/nl/fr/doc.zip
+eclipse/plugins/org.eclipse.platform.doc.isv.nl1_2.1.1.1/nl/fr/toc.xml
+eclipse/plugins/org.eclipse.platform.doc.isv.nl1_2.1.1.1/nl/fr/topics_Guide.xml
+eclipse/plugins/org.eclipse.platform.doc.isv.nl1_2.1.1.1/nl/fr/topics_Questions.xml
+eclipse/plugins/org.eclipse.platform.doc.isv.nl1_2.1.1.1/nl/fr/topics_Reference.xml
+eclipse/plugins/org.eclipse.platform.doc.isv.nl1_2.1.1.1/nl/fr/topics_Samples.xml
+eclipse/plugins/org.eclipse.platform.doc.isv.nl1_2.1.1.1/nl/it/doc.zip
+eclipse/plugins/org.eclipse.platform.doc.isv.nl1_2.1.1.1/nl/it/toc.xml
+eclipse/plugins/org.eclipse.platform.doc.isv.nl1_2.1.1.1/nl/it/topics_Guide.xml
+eclipse/plugins/org.eclipse.platform.doc.isv.nl1_2.1.1.1/nl/it/topics_Questions.xml
+eclipse/plugins/org.eclipse.platform.doc.isv.nl1_2.1.1.1/nl/it/topics_Reference.xml
+eclipse/plugins/org.eclipse.platform.doc.isv.nl1_2.1.1.1/nl/it/topics_Samples.xml
+eclipse/plugins/org.eclipse.platform.doc.isv.nl1_2.1.1.1/nl/ja/doc.zip
+eclipse/plugins/org.eclipse.platform.doc.isv.nl1_2.1.1.1/nl/ja/toc.xml
+eclipse/plugins/org.eclipse.platform.doc.isv.nl1_2.1.1.1/nl/ja/topics_Guide.xml
+eclipse/plugins/org.eclipse.platform.doc.isv.nl1_2.1.1.1/nl/ja/topics_Questions.xml
+eclipse/plugins/org.eclipse.platform.doc.isv.nl1_2.1.1.1/nl/ja/topics_Reference.xml
+eclipse/plugins/org.eclipse.platform.doc.isv.nl1_2.1.1.1/nl/ja/topics_Samples.xml
+eclipse/plugins/org.eclipse.platform.doc.isv.nl1_2.1.1.1/nl/ko/doc.zip
+eclipse/plugins/org.eclipse.platform.doc.isv.nl1_2.1.1.1/nl/ko/toc.xml
+eclipse/plugins/org.eclipse.platform.doc.isv.nl1_2.1.1.1/nl/ko/topics_Guide.xml
+eclipse/plugins/org.eclipse.platform.doc.isv.nl1_2.1.1.1/nl/ko/topics_Questions.xml
+eclipse/plugins/org.eclipse.platform.doc.isv.nl1_2.1.1.1/nl/ko/topics_Reference.xml
+eclipse/plugins/org.eclipse.platform.doc.isv.nl1_2.1.1.1/nl/ko/topics_Samples.xml
+eclipse/plugins/org.eclipse.platform.doc.isv.nl1_2.1.1.1/nl/pt/BR/doc.zip
+eclipse/plugins/org.eclipse.platform.doc.isv.nl1_2.1.1.1/nl/pt/BR/toc.xml
+eclipse/plugins/org.eclipse.platform.doc.isv.nl1_2.1.1.1/nl/pt/BR/topics_Guide.xml
+eclipse/plugins/org.eclipse.platform.doc.isv.nl1_2.1.1.1/nl/pt/BR/topics_Questions.xml
+eclipse/plugins/org.eclipse.platform.doc.isv.nl1_2.1.1.1/nl/pt/BR/topics_Reference.xml
+eclipse/plugins/org.eclipse.platform.doc.isv.nl1_2.1.1.1/nl/pt/BR/topics_Samples.xml
+eclipse/plugins/org.eclipse.platform.doc.isv.nl1_2.1.1.1/nl/zh/CN/doc.zip
+eclipse/plugins/org.eclipse.platform.doc.isv.nl1_2.1.1.1/nl/zh/CN/toc.xml
+eclipse/plugins/org.eclipse.platform.doc.isv.nl1_2.1.1.1/nl/zh/CN/topics_Guide.xml
+eclipse/plugins/org.eclipse.platform.doc.isv.nl1_2.1.1.1/nl/zh/CN/topics_Questions.xml
+eclipse/plugins/org.eclipse.platform.doc.isv.nl1_2.1.1.1/nl/zh/CN/topics_Reference.xml
+eclipse/plugins/org.eclipse.platform.doc.isv.nl1_2.1.1.1/nl/zh/CN/topics_Samples.xml
+eclipse/plugins/org.eclipse.platform.doc.isv.nl1_2.1.1.1/nl/zh/TW/doc.zip
+eclipse/plugins/org.eclipse.platform.doc.isv.nl1_2.1.1.1/nl/zh/TW/toc.xml
+eclipse/plugins/org.eclipse.platform.doc.isv.nl1_2.1.1.1/nl/zh/TW/topics_Guide.xml
+eclipse/plugins/org.eclipse.platform.doc.isv.nl1_2.1.1.1/nl/zh/TW/topics_Questions.xml
+eclipse/plugins/org.eclipse.platform.doc.isv.nl1_2.1.1.1/nl/zh/TW/topics_Reference.xml
+eclipse/plugins/org.eclipse.platform.doc.isv.nl1_2.1.1.1/nl/zh/TW/topics_Samples.xml
+eclipse/plugins/org.eclipse.platform.doc.isv.nl1_2.1.1.1/nl1.jar
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/fragment.xml
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/de/contexts_Compare.xml
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/de/contexts_ExternalTools.xml
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/de/contexts_Search.xml
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/de/contexts_Team.xml
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/de/contexts_Team_CVS.xml
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/de/contexts_Update.xml
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/de/contexts_Workbench.xml
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/de/doc.zip
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/de/no_help_exists.htm
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/de/toc.xml
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/de/topics_Concepts.xml
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/de/topics_GettingStarted.xml
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/de/topics_Reference.xml
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/de/topics_Tasks.xml
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/es/contexts_Compare.xml
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/es/contexts_ExternalTools.xml
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/es/contexts_Search.xml
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/es/contexts_Team.xml
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/es/contexts_Team_CVS.xml
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/es/contexts_Update.xml
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/es/contexts_Workbench.xml
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/es/doc.zip
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/es/no_help_exists.htm
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/es/toc.xml
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/es/topics_Concepts.xml
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/es/topics_GettingStarted.xml
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/es/topics_Reference.xml
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/es/topics_Tasks.xml
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/fr/contexts_Compare.xml
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/fr/contexts_ExternalTools.xml
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/fr/contexts_Search.xml
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/fr/contexts_Team.xml
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/fr/contexts_Team_CVS.xml
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/fr/contexts_Update.xml
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/fr/contexts_Workbench.xml
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/fr/doc.zip
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/fr/no_help_exists.htm
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/fr/toc.xml
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/fr/topics_Concepts.xml
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/fr/topics_GettingStarted.xml
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/fr/topics_Reference.xml
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/fr/topics_Tasks.xml
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/it/contexts_Compare.xml
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/it/contexts_ExternalTools.xml
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/it/contexts_Search.xml
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/it/contexts_Team.xml
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/it/contexts_Team_CVS.xml
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/it/contexts_Update.xml
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/it/contexts_Workbench.xml
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/it/doc.zip
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/it/no_help_exists.htm
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/it/toc.xml
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/it/topics_Concepts.xml
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/it/topics_GettingStarted.xml
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/it/topics_Reference.xml
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/it/topics_Tasks.xml
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/ja/contexts_Compare.xml
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/ja/contexts_ExternalTools.xml
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/ja/contexts_Search.xml
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/ja/contexts_Team.xml
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/ja/contexts_Team_CVS.xml
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/ja/contexts_Update.xml
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/ja/contexts_Workbench.xml
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/ja/doc.zip
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/ja/no_help_exists.htm
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/ja/toc.xml
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/ja/topics_Concepts.xml
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/ja/topics_GettingStarted.xml
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/ja/topics_Reference.xml
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/ja/topics_Tasks.xml
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/ko/contexts_Compare.xml
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/ko/contexts_ExternalTools.xml
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/ko/contexts_Search.xml
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/ko/contexts_Team.xml
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/ko/contexts_Team_CVS.xml
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/ko/contexts_Update.xml
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/ko/contexts_Workbench.xml
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/ko/doc.zip
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/ko/no_help_exists.htm
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/ko/toc.xml
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/ko/topics_Concepts.xml
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/ko/topics_GettingStarted.xml
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/ko/topics_Reference.xml
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/ko/topics_Tasks.xml
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/pt/BR/contexts_Compare.xml
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/pt/BR/contexts_ExternalTools.xml
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/pt/BR/contexts_Search.xml
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/pt/BR/contexts_Team.xml
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/pt/BR/contexts_Team_CVS.xml
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/pt/BR/contexts_Update.xml
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/pt/BR/contexts_Workbench.xml
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/pt/BR/doc.zip
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/pt/BR/no_help_exists.htm
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/pt/BR/toc.xml
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/pt/BR/topics_Concepts.xml
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/pt/BR/topics_GettingStarted.xml
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/pt/BR/topics_Reference.xml
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/pt/BR/topics_Tasks.xml
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/zh/CN/contexts_Compare.xml
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/zh/CN/contexts_ExternalTools.xml
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/zh/CN/contexts_Search.xml
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/zh/CN/contexts_Team.xml
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/zh/CN/contexts_Team_CVS.xml
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/zh/CN/contexts_Update.xml
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/zh/CN/contexts_Workbench.xml
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/zh/CN/doc.zip
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/zh/CN/no_help_exists.htm
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/zh/CN/toc.xml
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/zh/CN/topics_Concepts.xml
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/zh/CN/topics_GettingStarted.xml
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/zh/CN/topics_Reference.xml
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/zh/CN/topics_Tasks.xml
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/zh/TW/contexts_Compare.xml
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/zh/TW/contexts_ExternalTools.xml
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/zh/TW/contexts_Search.xml
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/zh/TW/contexts_Team.xml
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/zh/TW/contexts_Team_CVS.xml
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/zh/TW/contexts_Update.xml
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/zh/TW/contexts_Workbench.xml
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/zh/TW/doc.zip
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/zh/TW/no_help_exists.htm
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/zh/TW/toc.xml
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/zh/TW/topics_Concepts.xml
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/zh/TW/topics_GettingStarted.xml
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/zh/TW/topics_Reference.xml
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/zh/TW/topics_Tasks.xml
+eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl1.jar
+eclipse/plugins/org.eclipse.ui.externaltools.nl1_2.1.1.1/fragment.xml
+eclipse/plugins/org.eclipse.ui.externaltools.nl1_2.1.1.1/nl1.jar
+eclipse/plugins/org.eclipse.ui.views.nl1_2.1.1.1/fragment.xml
+eclipse/plugins/org.eclipse.ui.views.nl1_2.1.1.1/nl1.jar
+@dirrm eclipse/plugins/org.eclipse.ui.views.nl1_2.1.1.1
+@dirrm eclipse/plugins/org.eclipse.ui.externaltools.nl1_2.1.1.1
+@dirrm eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/zh/TW
+@dirrm eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/zh/CN
+@dirrm eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/zh
+@dirrm eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/pt/BR
+@dirrm eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/pt
+@dirrm eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/ko
+@dirrm eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/ja
+@dirrm eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/it
+@dirrm eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/fr
+@dirrm eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/es
+@dirrm eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/de
+@dirrm eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl
+@dirrm eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1
+@dirrm eclipse/plugins/org.eclipse.platform.doc.isv.nl1_2.1.1.1/nl/zh/TW
+@dirrm eclipse/plugins/org.eclipse.platform.doc.isv.nl1_2.1.1.1/nl/zh/CN
+@dirrm eclipse/plugins/org.eclipse.platform.doc.isv.nl1_2.1.1.1/nl/zh
+@dirrm eclipse/plugins/org.eclipse.platform.doc.isv.nl1_2.1.1.1/nl/pt/BR
+@dirrm eclipse/plugins/org.eclipse.platform.doc.isv.nl1_2.1.1.1/nl/pt
+@dirrm eclipse/plugins/org.eclipse.platform.doc.isv.nl1_2.1.1.1/nl/ko
+@dirrm eclipse/plugins/org.eclipse.platform.doc.isv.nl1_2.1.1.1/nl/ja
+@dirrm eclipse/plugins/org.eclipse.platform.doc.isv.nl1_2.1.1.1/nl/it
+@dirrm eclipse/plugins/org.eclipse.platform.doc.isv.nl1_2.1.1.1/nl/fr
+@dirrm eclipse/plugins/org.eclipse.platform.doc.isv.nl1_2.1.1.1/nl/es
+@dirrm eclipse/plugins/org.eclipse.platform.doc.isv.nl1_2.1.1.1/nl/de
+@dirrm eclipse/plugins/org.eclipse.platform.doc.isv.nl1_2.1.1.1/nl
+@dirrm eclipse/plugins/org.eclipse.platform.doc.isv.nl1_2.1.1.1
+@dirrm eclipse/plugins/org.eclipse.pde.doc.user.nl1_2.1.1.1/nl/zh/TW
+@dirrm eclipse/plugins/org.eclipse.pde.doc.user.nl1_2.1.1.1/nl/zh/CN
+@dirrm eclipse/plugins/org.eclipse.pde.doc.user.nl1_2.1.1.1/nl/zh
+@dirrm eclipse/plugins/org.eclipse.pde.doc.user.nl1_2.1.1.1/nl/pt/BR
+@dirrm eclipse/plugins/org.eclipse.pde.doc.user.nl1_2.1.1.1/nl/pt
+@dirrm eclipse/plugins/org.eclipse.pde.doc.user.nl1_2.1.1.1/nl/ko
+@dirrm eclipse/plugins/org.eclipse.pde.doc.user.nl1_2.1.1.1/nl/ja
+@dirrm eclipse/plugins/org.eclipse.pde.doc.user.nl1_2.1.1.1/nl/it
+@dirrm eclipse/plugins/org.eclipse.pde.doc.user.nl1_2.1.1.1/nl/fr
+@dirrm eclipse/plugins/org.eclipse.pde.doc.user.nl1_2.1.1.1/nl/es
+@dirrm eclipse/plugins/org.eclipse.pde.doc.user.nl1_2.1.1.1/nl/de
+@dirrm eclipse/plugins/org.eclipse.pde.doc.user.nl1_2.1.1.1/nl
+@dirrm eclipse/plugins/org.eclipse.pde.doc.user.nl1_2.1.1.1
+@dirrm eclipse/plugins/org.eclipse.jdt.doc.user.nl1_2.1.1.1/nl/zh/TW
+@dirrm eclipse/plugins/org.eclipse.jdt.doc.user.nl1_2.1.1.1/nl/zh/CN
+@dirrm eclipse/plugins/org.eclipse.jdt.doc.user.nl1_2.1.1.1/nl/zh
+@dirrm eclipse/plugins/org.eclipse.jdt.doc.user.nl1_2.1.1.1/nl/pt/BR
+@dirrm eclipse/plugins/org.eclipse.jdt.doc.user.nl1_2.1.1.1/nl/pt
+@dirrm eclipse/plugins/org.eclipse.jdt.doc.user.nl1_2.1.1.1/nl/ko
+@dirrm eclipse/plugins/org.eclipse.jdt.doc.user.nl1_2.1.1.1/nl/ja
+@dirrm eclipse/plugins/org.eclipse.jdt.doc.user.nl1_2.1.1.1/nl/it
+@dirrm eclipse/plugins/org.eclipse.jdt.doc.user.nl1_2.1.1.1/nl/fr
+@dirrm eclipse/plugins/org.eclipse.jdt.doc.user.nl1_2.1.1.1/nl/es
+@dirrm eclipse/plugins/org.eclipse.jdt.doc.user.nl1_2.1.1.1/nl/de
+@dirrm eclipse/plugins/org.eclipse.jdt.doc.user.nl1_2.1.1.1/nl
+@dirrm eclipse/plugins/org.eclipse.jdt.doc.user.nl1_2.1.1.1
+@dirrm eclipse/plugins/org.eclipse.jdt.doc.isv.nl1_2.1.1.1/nl/zh/TW
+@dirrm eclipse/plugins/org.eclipse.jdt.doc.isv.nl1_2.1.1.1/nl/zh/CN
+@dirrm eclipse/plugins/org.eclipse.jdt.doc.isv.nl1_2.1.1.1/nl/zh
+@dirrm eclipse/plugins/org.eclipse.jdt.doc.isv.nl1_2.1.1.1/nl/pt/BR
+@dirrm eclipse/plugins/org.eclipse.jdt.doc.isv.nl1_2.1.1.1/nl/pt
+@dirrm eclipse/plugins/org.eclipse.jdt.doc.isv.nl1_2.1.1.1/nl/ko
+@dirrm eclipse/plugins/org.eclipse.jdt.doc.isv.nl1_2.1.1.1/nl/ja
+@dirrm eclipse/plugins/org.eclipse.jdt.doc.isv.nl1_2.1.1.1/nl/it
+@dirrm eclipse/plugins/org.eclipse.jdt.doc.isv.nl1_2.1.1.1/nl/fr
+@dirrm eclipse/plugins/org.eclipse.jdt.doc.isv.nl1_2.1.1.1/nl/es
+@dirrm eclipse/plugins/org.eclipse.jdt.doc.isv.nl1_2.1.1.1/nl/de
+@dirrm eclipse/plugins/org.eclipse.jdt.doc.isv.nl1_2.1.1.1/nl
+@dirrm eclipse/plugins/org.eclipse.jdt.doc.isv.nl1_2.1.1.1
+@dirrm eclipse/plugins/org.eclipse.jdt.debug.ui.nl1_2.1.1.1
+@dirrm eclipse/plugins/org.eclipse.jdt.debug.nl1_2.1.1.1
+@dirrm eclipse/plugins/org.eclipse.debug.ui.nl1_2.1.1.1
