@@ -12,11 +12,12 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	clement@FreeBSD.org
+MAINTAINER=	webmaster@lightningfire.net
 COMMENT=	Free real-time logfile analyzer to get advanced web statistics
 
 NO_BUILD=	yes
 USE_PERL5_RUN=	yes
+RUN_DEPENDS+=	${SITE_PERL}/Net/XWhois.pm:${PORTDIRS}/p5-Net-XWhois
 
 do-install:
 	@${MKDIR} ${PREFIX}/www/cgi-bin/lang
