@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnumeric2
-PORTVERSION=	1.2.1
-PORTREVISION=	1
+PORTVERSION=	1.2.2
 CATEGORIES=	math gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/1.2
@@ -24,7 +23,8 @@ USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_PERL5=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack gnomehier libgnomeprintui gal2 libgnomedb libgsf
+USE_GNOME=	gnomeprefix gnomehack gnomehier libgnomeprintui libgnomedb \
+		libgsf
 USE_PYTHON=	yes
 USE_REINPLACE=	yes
 USE_LIBTOOL=	yes
@@ -35,6 +35,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		python_prog=${PYTHON_VERSION}
 
 PLIST_SUB=	VERSION=${PORTVERSION}-bonobo
+
+MAN1=		gnumeric.1 ssconvert.1
 
 post-patch:
 	@${FIND} ${WRKSRC}/plugins -name "plugin.xml.in" | ${XARGS} \
