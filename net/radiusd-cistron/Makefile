@@ -15,6 +15,7 @@ MASTER_SITES=	ftp://ftp.cistron.nl/pub/people/miquels/radius/ \
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	A RADIUS-compliant remote authentication and accouting server
 
+CONFLICTS?=	freeradius-0.* gnu-radius-1.* openradius-0.*
 MAKEFILE=	Makefile.BSD
 RADIUS_DIR=	${PREFIX}/etc/raddb
 MAKE_ENV+=	RADIUS_DIR="${RADIUS_DIR}"
@@ -23,6 +24,10 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 MAN1=		radclient.1 radlast.1 radtest.1 radwho.1 radzap.1
 MAN5=		clients.5rad naslist.5rad
 MAN8=		radiusd.8 radrelay.8 radwatch.8
+
+DOCFILES=	COPYRIGHT INSTALL doc/ChangeLog doc/README doc/README.Y2K \
+		doc/README.cisco doc/README.pam doc/README.proxy \
+		doc/README.simul doc/README.usersfile
 
 do-build:
 	cd ${WRKSRC}/src && ${SETENV} ${MAKE_ENV} ${MAKE} -f ${MAKEFILE}
@@ -44,17 +49,10 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/radiusd.8 ${MANPREFIX}/man/man8
 	${INSTALL_MAN} ${WRKSRC}/doc/radwatch.8 ${MANPREFIX}/man/man8
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/radiusd-cistron
-	${INSTALL_DATA} ${WRKSRC}/COPYRIGHT ${PREFIX}/share/doc/radiusd-cistron
-	${INSTALL_DATA} ${WRKSRC}/doc/ChangeLog ${PREFIX}/share/doc/radiusd-cistron
-	${INSTALL_DATA} ${WRKSRC}/INSTALL ${PREFIX}/share/doc/radiusd-cistron
-	${INSTALL_DATA} ${WRKSRC}/doc/README ${PREFIX}/share/doc/radiusd-cistron
-	${INSTALL_DATA} ${WRKSRC}/doc/README.Y2K ${PREFIX}/share/doc/radiusd-cistron
-	${INSTALL_DATA} ${WRKSRC}/doc/README.cisco ${PREFIX}/share/doc/radiusd-cistron
-	${INSTALL_DATA} ${WRKSRC}/doc/README.pam ${PREFIX}/share/doc/radiusd-cistron
-	${INSTALL_DATA} ${WRKSRC}/doc/README.proxy ${PREFIX}/share/doc/radiusd-cistron
-	${INSTALL_DATA} ${WRKSRC}/doc/README.simul ${PREFIX}/share/doc/radiusd-cistron
-	${INSTALL_DATA} ${WRKSRC}/doc/README.usersfile ${PREFIX}/share/doc/radiusd-cistron
+	${MKDIR} ${DOCSDIR}
+.for i in ${DOCFILES}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}/
+.endfor
 .endif
 
 .include <bsd.port.mk>
