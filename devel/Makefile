@@ -899,6 +899,7 @@
     SUBDIR += tcllib
     SUBDIR += tclreadline
     SUBDIR += tcltls
+    SUBDIR += tclxml
     SUBDIR += tdl
     SUBDIR += templ
     SUBDIR += terminality

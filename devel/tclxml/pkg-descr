@@ -1,0 +1,11 @@
+TclXML is an API for parsing XML documents using the Tcl scripting
+language. It is also a package with several parser implementations.
+The goal of the TclXML package is to provide an API for Tcl scripts
+that allows "Plug-and-Play" parser implementations; ie. an application
+will be able to use different parser implementations without change
+to the application code.
+
+WWW: http://tclxml.sourceforge.net/
+
+- David
+dyeske@yahoo.com
