@@ -1246,6 +1246,7 @@
     SUBDIR += ups-debug
     SUBDIR += ustl
     SUBDIR += valgrind
+    SUBDIR += valgrind-snapshot
     SUBDIR += varconf
     SUBDIR += vb2c
     SUBDIR += viewcvs
