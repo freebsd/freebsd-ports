@@ -1,6 +1,8 @@
 bin/gcombust
 share/doc/gcombust/README
 share/doc/gcombust/NEWS
+share/gnome/apps/Applications/gcombust.desktop
+share/locale/da/LC_MESSAGES/gcombust.mo
 share/locale/de/LC_MESSAGES/gcombust.mo
 share/locale/es/LC_MESSAGES/gcombust.mo
 share/locale/fr/LC_MESSAGES/gcombust.mo
@@ -11,4 +13,6 @@ share/locale/ko/LC_MESSAGES/gcombust.mo
 share/locale/no/LC_MESSAGES/gcombust.mo
 share/locale/ru/LC_MESSAGES/gcombust.mo
 share/locale/sv/LC_MESSAGES/gcombust.mo
+share/pixmaps/gcombust.xpm
+@dirrm share/pixmaps
 @dirrm share/doc/gcombust
