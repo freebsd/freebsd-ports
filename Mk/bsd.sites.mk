@@ -365,14 +365,10 @@ MASTER_SITE_SUNSITE+=	\
 
 MASTER_SITE_TCLTK+= \
 	ftp://ftp.scriptics.com/pub/tcl/%SUBDIR%/ \
-	ftp://mirror.neosoft.com/pub/tcl/mirror/ftp.scriptics.com/%SUBDIR%/ \
 	ftp://sunsite.utk.edu/pub/tcl/%SUBDIR%/ \
 	ftp://ftp.funet.fi/pub/languages/tcl/tcl/%SUBDIR%/ \
-	ftp://ftp.uu.net/languages/tcl/%SUBDIR%/ \
 	ftp://ftp.kddlabs.co.jp/lang/tcl/ftp.scriptics.com/%SUBDIR%/ \
-	ftp://ftp.cs.tu-berlin.de/pub/tcl/distrib/%SUBDIR%/ \
 	ftp://ftp.srcc.msu.su/mirror/ftp.scriptics.com/pub/tcl/%SUBDIR%/ \
-	ftp://ftp.lip6.fr/pub/tcl/distrib/%SUBDIR%/ \
 	ftp://ftp.mirror.ac.uk/sites/ftp.scriptics.com/pub/tcl/%SUBDIR%/ \
 	ftp://sunsite.org.uk/Mirrors/ftp.scriptics.com/pub/tcl/%SUBDIR%/
 
