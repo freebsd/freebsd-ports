@@ -1,6 +1,20 @@
---- webmagickrc.in.old	Sat Dec  1 03:18:37 2001
-+++ webmagickrc.in	Fri Jul 18 01:32:01 2003
-@@ -104,6 +104,8 @@
+Index: webmagickrc.in
+===================================================================
+RCS file: /cvsroot/webmagick/WebMagick/webmagickrc.in,v
+retrieving revision 1.16
+retrieving revision 1.19
+diff -u -r1.16 -r1.19
+--- webmagickrc.in	4 Dec 2001 19:36:57 -0000	1.16
++++ webmagickrc.in	19 Jan 2004 22:12:20 -0000	1.19
+@@ -83,6 +83,7 @@
+ # $opt_ignore		= 0;	# Do not webmagick this directory
+ 				#    but still recurse into sub-directories
+ # $opt_ignorefp		= 1;	# Ignore /_[a-z] directories (FrontPage)
++# $opt_indexinfo        = 1;    # Put "Index of files"
+ # $opt_srcdir		= '.';	# Source directory path (current directory)
+ # $opt_verbose		= 0;	# Verbose flag (default off)
+ # $opt_forcecache		= 0;	# Force update of cached thumbnails
+@@ -104,8 +105,11 @@
  # $opt_date               = 1;    # Output updates date
  
  # $opt_pichtml            = 0;    # Write separate HTML for each picture
@@ -8,8 +22,21 @@
 +# $opt_pichtmlaltstart    = '';   # Some words to prepend to ALT
  # $opt_pichtmlbottom      = '</CENTER>';
  # $opt_pichtmlext         = '.html'; # Use .shtml for SSI
++# $opt_pichtmllink        = '';   # Where to link pic
  # $opt_pichtmlnav         = 0;    # Write navigation into pic's HTML
-@@ -200,7 +202,7 @@
+ # $opt_pichtmlputtitle    = 1;    # Write picture title above it
+ # $opt_pichtmltarget      = '';
+@@ -114,6 +118,9 @@
+ # $opt_pichtmltop         = '<CENTER>';
+ 
+ # $opt_tables             = 0;  # use HTML tables instead of image maps
++# $opt_tables_bottom      = '';   # HTML after table contents
++# $opt_tables_params      = 'WIDTH="90%"';   # table HTML parameters
++# $opt_tables_top         = '';   # HTML before table contents
+ # $opt_allowconfig	 = 0; # allow user to configure table and framestyle
+ 
+ #				
+@@ -200,7 +207,7 @@
  # $opt_framemarginwidth	= 1;		# Pixels allocated to frame margin in horizontal direction
  # $opt_framemarginheight	= 1;		# Pixels allocated to frame margin in vertical direction
  # $opt_framebordersize	= 3 ;		# Pixels allocated to frame border
