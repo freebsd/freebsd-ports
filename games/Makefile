@@ -97,6 +97,7 @@
     SUBDIR += gnomekiss
     SUBDIR += gnomememoryblocks
     SUBDIR += gnomermind
+    SUBDIR += gnomoku
     SUBDIR += gnuchess
     SUBDIR += gnugo
     SUBDIR += gnurobots
