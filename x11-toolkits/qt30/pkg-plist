@@ -46,7 +46,6 @@ include/qt2/qconfig-dist.h
 include/qt2/qconfig-large.h
 include/qt2/qconfig-medium.h
 include/qt2/qconfig-minimal.h
-include/qt2/qconfig-qpe.h
 include/qt2/qconfig-small.h
 include/qt2/qconfig.h
 include/qt2/qconnect.h
@@ -268,6 +267,7 @@ include/qt2/qvariant.h
 include/qt2/qvbox.h
 include/qt2/qvbuttongroup.h
 include/qt2/qvector.h
+include/qt2/qvfbhdr.h
 include/qt2/qvgroupbox.h
 include/qt2/qwhatsthis.h
 include/qt2/qwidcoll.h
@@ -516,6 +516,7 @@ share/doc/qt2/html/functions.html
 share/doc/qt2/html/geomanagement.html
 share/doc/qt2/html/geometry.html
 share/doc/qt2/html/geometry.png
+share/doc/qt2/html/gpl.html
 share/doc/qt2/html/graph.g1n
 share/doc/qt2/html/grapher-grapher-cpp.html
 share/doc/qt2/html/gridlayout.png
@@ -824,6 +825,7 @@ share/doc/qt2/html/qdropevent.html
 share/doc/qt2/html/qdropsite-h.html
 share/doc/qt2/html/qdropsite-members.html
 share/doc/qt2/html/qdropsite.html
+share/doc/qt2/html/qembed.html
 share/doc/qt2/html/qeucjpcodec-h.html
 share/doc/qt2/html/qeucjpcodec-members.html
 share/doc/qt2/html/qeucjpcodec.html
@@ -1515,8 +1517,6 @@ share/doc/qt2/html/qwmatrix.html
 share/doc/qt2/html/qworkspace-h.html
 share/doc/qt2/html/qworkspace-members.html
 share/doc/qt2/html/qworkspace.html
-share/doc/qt2/html/qwsdecoration-members.html
-share/doc/qt2/html/qwsdecoration.html
 share/doc/qt2/html/qwsdisplay_qws-h.html
 share/doc/qt2/html/qwsmanager_qws-h.html
 share/doc/qt2/html/qxml-h.html
