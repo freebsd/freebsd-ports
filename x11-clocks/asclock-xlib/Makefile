@@ -8,7 +8,9 @@
 PORTNAME=	asclock-xlib
 PORTVERSION= 	2.0.11
 CATEGORIES=	x11-clocks afterstep windowmaker
-MASTER_SITES=	http://www.asclock.org/tar/
+MASTER_SITES=	http://www.asclock.org/tar/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	kuriyama
 
 MAINTAINER=	kuriyama@FreeBSD.org
 
