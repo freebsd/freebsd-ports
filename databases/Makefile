@@ -26,6 +26,7 @@
     SUBDIR += interbase4
     SUBDIR += java-sqlrelay
     SUBDIR += jdbc-oracle816
+    SUBDIR += libdbi
     SUBDIR += libgda
     SUBDIR += libiodbc
     SUBDIR += libodbc++

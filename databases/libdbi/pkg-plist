@@ -1,0 +1,42 @@
+include/dbi/dbd.h
+include/dbi/dbi-dev.h
+include/dbi/dbi.h
+lib/libdbi.a
+lib/libdbi.so
+lib/libdbi.so.0
+%%WITH_PQ%%lib/dbd/libpgsql.so
+%%WITH_MY%%lib/dbd/libmysql.so
+share/doc/libdbi-0.6.2/plugin-guide/contact.html
+share/doc/libdbi-0.6.2/plugin-guide/copying-fdl.html
+share/doc/libdbi-0.6.2/plugin-guide/description.html
+share/doc/libdbi-0.6.2/plugin-guide/gnugpl.html
+share/doc/libdbi-0.6.2/plugin-guide/helperfuncs.html
+share/doc/libdbi-0.6.2/plugin-guide/index.html
+share/doc/libdbi-0.6.2/plugin-guide/intro.html
+share/doc/libdbi-0.6.2/plugin-guide/pluginfuncs-dbquery.html
+share/doc/libdbi-0.6.2/plugin-guide/pluginfuncs-infrastructure.html
+share/doc/libdbi-0.6.2/plugin-guide/pluginfuncs.html
+share/doc/libdbi-0.6.2/plugin-guide/terminology.html
+share/doc/libdbi-0.6.2/plugin-guide.pdf
+share/doc/libdbi-0.6.2/programmers-guide/contact.html
+share/doc/libdbi-0.6.2/programmers-guide/copying-fdl.html
+share/doc/libdbi-0.6.2/programmers-guide/description.html
+share/doc/libdbi-0.6.2/programmers-guide/gnugpl.html
+share/doc/libdbi-0.6.2/programmers-guide/index.html
+share/doc/libdbi-0.6.2/programmers-guide/intro.html
+share/doc/libdbi-0.6.2/programmers-guide/quickstart-code.html
+share/doc/libdbi-0.6.2/programmers-guide/quickstart-debriefing.html
+share/doc/libdbi-0.6.2/programmers-guide/quickstart.html
+share/doc/libdbi-0.6.2/programmers-guide/reference-core.html
+share/doc/libdbi-0.6.2/programmers-guide/reference-database.html
+share/doc/libdbi-0.6.2/programmers-guide/reference-driver.html
+share/doc/libdbi-0.6.2/programmers-guide/reference-field.html
+share/doc/libdbi-0.6.2/programmers-guide/reference-plugin.html
+share/doc/libdbi-0.6.2/programmers-guide/reference.html
+share/doc/libdbi-0.6.2/programmers-guide/terminology.html
+share/doc/libdbi-0.6.2/programmers-guide.pdf
+@dirrm include/dbi
+@dirrm lib/dbd
+@dirrm share/doc/libdbi-%%VERSION%%/plugin-guide
+@dirrm share/doc/libdbi-%%VERSION%%/programmers-guide
+@dirrm share/doc/libdbi-%%VERSION%%
