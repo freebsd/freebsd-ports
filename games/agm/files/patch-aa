@@ -1,27 +1,11 @@
-*** Makefile	Mon Feb 24 23:42:28 1997
---- /home/andy/tmp/wrk/Makefile	Fri Jul  4 23:45:17 1997
-***************
-*** 32,42 ****
-  #MANDIR=../../man
-  MANDIR=/usr/local/man
-  # Name of the default wordfile
-! WORDFILE=-DWORDFILE=\"/usr/dict/words\"
-  # C compiler
-  CC=cc
-  # Optimization or other flags for C compiler
-! CCFLAGS=-O
-  #CCFLAGS=-g
-  # Alter this if you have problems compiling the CPU limit code or the
-  # timer code
---- 32,42 ----
-  #MANDIR=../../man
-  MANDIR=/usr/local/man
-  # Name of the default wordfile
-! WORDFILE=-DWORDFILE=\"/usr/share/dict/words\"
-  # C compiler
-  CC=cc
-  # Optimization or other flags for C compiler
-! CCFLAGS=${CFLAGS}
-  #CCFLAGS=-g
-  # Alter this if you have problems compiling the CPU limit code or the
-  # timer code
+--- Makefile	Wed Mar 18 01:02:29 1998
++++ /home/andy/tmp/wrk/Makefile	Sun Mar 22 11:00:29 1998
+@@ -45,7 +45,7 @@
+ #MANDIR=../../man
+ MANDIR=/usr/local/man
+ # Location of the word file
+-WORDDIR=/usr/local/lib
++WORDDIR=/usr/share/dict
+ # Name of the default wordfile
+ WORDFILE=-DWORDFILE=\"$(WORDDIR)/words\"
+ # C compiler
