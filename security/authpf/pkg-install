@@ -68,7 +68,7 @@ check_group() {
 	fi
     fi
     echo ""
-    echo "I was not able to add group 'proxy:*:71:' as pw reported:"
+    echo "I was not able to add group 'authpf:*:63:' as pw reported:"
     pw groupadd -g $id -n $name -N
     echo "Please correct this and try again!"
     echo ""
@@ -78,7 +78,7 @@ check_group() {
 case $2 in
 PRE-INSTALL)
 
-    if ! check_group authpf 72 ; then 
+    if ! check_group authpf 63 ; then 
 	exit 1
     fi
     ;;
