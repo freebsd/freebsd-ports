@@ -1,8 +1,9 @@
-# $Id: Makefile,v 1.44 1999/03/22 01:17:24 obrien Exp $
+# $Id: Makefile,v 1.45 1999/03/28 14:17:34 kuriyama Exp $
 #
 
     SUBDIR += agrep
     SUBDIR += aspell
+    SUBDIR += br-ispell
     SUBDIR += c2html
     SUBDIR += catdoc
     SUBDIR += dict
