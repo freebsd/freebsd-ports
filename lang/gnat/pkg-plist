@@ -1112,7 +1112,6 @@ lib/gcc-lib/%%GNUHOST%%/%%GCC_VERSION%%/include/README
 lib/gcc-lib/%%GNUHOST%%/%%GCC_VERSION%%/include/exception
 lib/gcc-lib/%%GNUHOST%%/%%GCC_VERSION%%/include/float.h
 lib/gcc-lib/%%GNUHOST%%/%%GCC_VERSION%%/include/limits.h
-lib/gcc-lib/%%GNUHOST%%/%%GCC_VERSION%%/include/math.h
 lib/gcc-lib/%%GNUHOST%%/%%GCC_VERSION%%/include/new
 lib/gcc-lib/%%GNUHOST%%/%%GCC_VERSION%%/include/new.h
 lib/gcc-lib/%%GNUHOST%%/%%GCC_VERSION%%/include/syslimits.h
