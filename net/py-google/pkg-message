@@ -1,0 +1,10 @@
+==================================================================
+ You need a Google-provided license key to use these services.
+ Go http://www.google.com/apis/ to get one. This module will look
+ in several places (in this order) for the license key:
+
+  - the module-level LICENSE_KEY variable
+  - an environment variable called GOOGLE_LICENSE_KEY
+  - a file called ".googlekey" in the current directory
+  - a file called ".googlekey" in your home directory
+==================================================================

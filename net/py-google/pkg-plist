@@ -1,0 +1,10 @@
+lib/%%PYTHON_VERSION%%/site-packages/SOAPgoogle.py
+lib/%%PYTHON_VERSION%%/site-packages/SOAPgoogle.pyc
+lib/%%PYTHON_VERSION%%/site-packages/SOAPgoogle.pyo
+lib/%%PYTHON_VERSION%%/site-packages/google.py
+lib/%%PYTHON_VERSION%%/site-packages/google.pyc
+lib/%%PYTHON_VERSION%%/site-packages/google.pyo
+%%PORTDOCS%%share/examples/py-google/googletest.py
+%%PORTDOCS%%share/examples/py-google/testclient.py
+%%PORTDOCS%%share/examples/py-google/testserver.py
+%%PORTDOCS%%@dirrm share/examples/py-google
