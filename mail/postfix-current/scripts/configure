@@ -2,7 +2,7 @@
 #
 # $FreeBSD$
 
-for f in `grep -r "\!\!PREFIX\!\!" ${WRKSRC} | cut -f 1 -d ':' | uniq` ; do \
+for f in `find ${WRKSRC} | xargs grep -l '\!\!PREFIX\!\!' ` ; do \
 	mv $f $f.orig && sed s+!!PREFIX!!+$PREFIX+g < $f.orig > $f && \
 		rm $f.orig
 done
