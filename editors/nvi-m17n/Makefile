@@ -7,6 +7,7 @@
 
 PORTNAME=	nvi
 PORTVERSION=	1.79.20111024
+PORTREVISION=	1
 CATEGORIES?=	editors
 MASTER_SITES=	ftp://sleepy.vwh.net/pub/ \
 		ftp://ftp.foretune.co.jp/pub/tools/nvi-m17n/
