@@ -130,4 +130,3 @@ share/aclocal/cherokee.m4
 @dirrm etc/cherokee/mods-available
 @dirrm etc/cherokee
 @unexec rmdir %%LOCALBASE%%/www/data 2>/dev/null || true
-@unexec rmdir %%LOCALBASE%%/www 2>/dev/null || true
