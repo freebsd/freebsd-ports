@@ -1,6 +1,14 @@
---- hints/freebsd.sh.orig	Thu Apr 24 01:01:37 1997
-+++ hints/freebsd.sh	Fri May 23 21:06:35 1997
-@@ -76,12 +76,18 @@
+--- hints/freebsd.sh.orig	Wed Apr 23 16:01:37 1997
++++ hints/freebsd.sh	Tue Jun  3 14:29:50 1997
+@@ -63,6 +63,7 @@
+ 	d_setreuid='define'
+ 	d_setegid='undef'
+ 	d_seteuid='undef'
++	d_dosuid='define'
+ 	test -r ./broken-db.msg && . ./broken-db.msg
+ 	;;
+ #
+@@ -76,12 +77,18 @@
  	d_setreuid='define'
  	d_setegid='undef'
  	d_seteuid='undef'
