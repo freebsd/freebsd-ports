@@ -7,10 +7,9 @@
 #
 
 PORTNAME=	dxf2fig
-PORTVERSION=	2.07
+PORTVERSION=	2.09
 CATEGORIES=	cad
 MASTER_SITES=	http://ta.twi.tudelft.nl/ftp/dv/lemmens/
-DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DXF to FIG converter
