@@ -24,6 +24,8 @@ COMMENT=	Improved version of the ezmlm mailing list manager
 
 RUN_DEPENDS=	${QMAIL_DIR}/bin/qmail-send:${PORTSDIR}/mail/qmail
 
+CONFLICTS=	ezmlm-0.*
+
 # QMAIL_DIR is the directory where qmail is installed
 QMAIL_DIR?=	/var/qmail
 
