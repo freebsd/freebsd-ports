@@ -409,3 +409,4 @@ graphics/eog||2003-07-15|removed as part of GNOME 1.4 desktop phase out
 print/ggv||2003-07-15|removed as part of GNOME 1.4 desktop phase out
 x11-wm/spager||2003-07-15|removed as it depends on sawfish
 mail/gtkgrepmail||2003-07-15|removed as it depends on gnomecore
+x11-toolkits/eazel-themes||2003-07-15|removed as it depends on sawfish
