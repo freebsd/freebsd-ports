@@ -77,10 +77,6 @@ CONFIGURE_ENV+=		CPPFLAGS=-I${LOCALBASE}/include \
 			LDFLAGS=-L${LOCALBASE}/lib
 .endif
 
-pre-configure:
-	@${ECHO} ${CONFIGURE_ENV}
-	@${ECHO} ${CONFIGURE_ARGS}
-
 post-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/script/samba-init.d ${SAMBA_CONFDIR}/rc.d/samba-tng.sh.sample
 
