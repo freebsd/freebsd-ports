@@ -1,0 +1,19 @@
+*** xgal.sndsrv.freebsd.c~	Thu May 18 00:44:28 1995
+--- xgal.sndsrv.freebsd.c	Wed Oct 25 23:32:15 1995
+***************
+*** 82,88 ****
+    int dsp, frag, value;
+    int mixer;
+  
+!   dsp = open(dspdev, O_RDWR);
+    if (dsp < 1)
+    {
+      fprintf (stderr, "xgal.sndsrv: Couldn't open DSP %s\n",dspdev);
+--- 82,88 ----
+    int dsp, frag, value;
+    int mixer;
+  
+!   dsp = open(dspdev, O_WRONLY);
+    if (dsp < 1)
+    {
+      fprintf (stderr, "xgal.sndsrv: Couldn't open DSP %s\n",dspdev);
