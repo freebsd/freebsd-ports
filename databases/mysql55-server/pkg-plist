@@ -11,7 +11,6 @@ bin/mysql_install_db
 bin/mysql_tzinfo_to_sql
 bin/mysql_waitpid
 bin/mysqld_safe
-%%NDB%%bin/ndb_cpcd
 %%NDB%%bin/ndb_delete_all
 %%NDB%%bin/ndb_desc
 %%NDB%%bin/ndb_drop_index
@@ -21,6 +20,7 @@ bin/mysqld_safe
 %%NDB%%bin/ndb_select_all
 %%NDB%%bin/ndb_select_count
 %%NDB%%bin/ndb_show_tables
+%%NDB%%bin/ndb_test_platform
 %%NDB%%bin/ndb_waiter
 bin/pack_isam
 bin/perror
@@ -29,6 +29,8 @@ bin/resolve_stack_dump
 bin/resolveip
 etc/rc.d/mysql-server.sh
 %%NDB%%include/mysql/ndb/mgmapi/mgmapi.h
+%%NDB%%include/mysql/ndb/mgmapi/mgmapi_config_parameters.h
+%%NDB%%include/mysql/ndb/mgmapi/mgmapi_config_parameters_debug.h
 %%NDB%%include/mysql/ndb/mgmapi/mgmapi_debug.h
 %%NDB%%include/mysql/ndb/ndb_types.h
 %%NDB%%include/mysql/ndb/ndb_version.h
@@ -41,6 +43,7 @@ etc/rc.d/mysql-server.sh
 %%NDB%%include/mysql/ndb/ndbapi/NdbError.hpp
 %%NDB%%include/mysql/ndb/ndbapi/NdbEventOperation.hpp
 %%NDB%%include/mysql/ndb/ndbapi/NdbIndexOperation.hpp
+%%NDB%%include/mysql/ndb/ndbapi/NdbIndexScanOperation.hpp
 %%NDB%%include/mysql/ndb/ndbapi/NdbOperation.hpp
 %%NDB%%include/mysql/ndb/ndbapi/NdbPool.hpp
 %%NDB%%include/mysql/ndb/ndbapi/NdbRecAttr.hpp
@@ -49,6 +52,7 @@ etc/rc.d/mysql-server.sh
 %%NDB%%include/mysql/ndb/ndbapi/NdbScanFilter.hpp
 %%NDB%%include/mysql/ndb/ndbapi/NdbScanOperation.hpp
 %%NDB%%include/mysql/ndb/ndbapi/ndbapi_limits.h
+%%NDB%%include/mysql/ndb/ndbapi/ndb_cluster_connection.hpp
 %%NDB%%include/mysql/ndb/ndbapi/ndberror.h
 lib/mysql/libdbug.a
 lib/mysql/libheap.a
@@ -63,6 +67,7 @@ lib/mysql/libmysys.a
 lib/mysql/libnisam.a
 lib/mysql/libvio.a
 libexec/mysqld
+%%NDB%%libexec/ndb_cpcd
 %%NDB%%libexec/ndb_mgmd
 %%NDB%%libexec/ndbd
 %%DATADIR%%/Description.plist
