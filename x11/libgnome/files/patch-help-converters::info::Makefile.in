@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- help-converters/info/Makefile.in	2002/02/20 18:09:43	1.1
++++ help-converters/info/Makefile.in	2002/02/20 18:10:02
+@@ -134,7 +134,7 @@
+ cxxflags_set = @cxxflags_set@
+ gnomelocaledir = @gnomelocaledir@
+ 
+-INCLUDES = $(LIBGNOME_CFLAGS)
++INCLUDES = -DPREFIX="\"$(PREFIX)\"" -DLOCALBASE="\"$(LOCALBASE)\"" -DX11BASE="\"$(X11BASE)\"" $(LIBGNOME_CFLAGS)
+ 
+ bin_PROGRAMS = gnome2-info2html
+ 

@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- libgnome/Makefile.in	2002/02/20 17:59:50	1.1
++++ libgnome/Makefile.in	2002/02/20 18:00:10
+@@ -147,7 +147,7 @@
+ 
+ libgnomeincludedir = $(includedir)/libgnome-2.0/libgnome
+ 
+-INCLUDES =  	-I..								-I$(srcdir)/..							$(WARN_CFLAGS)							$(LIBGNOME_CFLAGS)						-DG_DISABLE_DEPRECATED						-DLIBGNOME_PREFIX=\""$(prefix)"\"				-DLIBGNOME_LIBDIR=\""$(libdir)"\"				-DLIBGNOME_DATADIR=\""$(datadir)"\"				-DLIBGNOME_BINDIR=\""$(bindir)"\"				-DLIBGNOME_LOCALSTATEDIR=\""$(localstatedir)"\"			-DLIBGNOME_LOCALEDIR=\""$(gnomelocaledir)"\"			-DLIBGNOME_SYSCONFDIR=\""$(sysconfdir)"\"			-DVERSION=\""$(VERSION)"\"					-DGNOMEVFSVERSION=\"$(GNOME_VFS_VERSION)\"			-DG_LOG_DOMAIN=\"Gnome\"
++INCLUDES =  	-DPREFIX="\"$(PREFIX)\"" -DLOCALBASE="\"$(LOCALBASE)\"" -DX11BASE="\"$(X11BASE)\"" -I..								-I$(srcdir)/..							$(WARN_CFLAGS)							$(LIBGNOME_CFLAGS)						-DG_DISABLE_DEPRECATED						-DLIBGNOME_PREFIX=\""$(prefix)"\"				-DLIBGNOME_LIBDIR=\""$(libdir)"\"				-DLIBGNOME_DATADIR=\""$(datadir)"\"				-DLIBGNOME_BINDIR=\""$(bindir)"\"				-DLIBGNOME_LOCALSTATEDIR=\""$(localstatedir)"\"			-DLIBGNOME_LOCALEDIR=\""$(gnomelocaledir)"\"			-DLIBGNOME_SYSCONFDIR=\""$(sysconfdir)"\"			-DVERSION=\""$(VERSION)"\"					-DGNOMEVFSVERSION=\"$(GNOME_VFS_VERSION)\"			-DG_LOG_DOMAIN=\"Gnome\"
+ 
+ 
+ libgnome_2_la_SOURCES =  	libgnometypebuiltins.h		libgnometypebuiltins.c		gnome-config.c			gnome-sound.c			gnome-triggers.c		gnome-triggersP.h		gnome-program.c			gnome-help.c			gnome-exec.c			gnome-gconf.c			gnome-gconfP.h			gnome-i18n.c			gnome-i18nP.h			gnome-url.c			gnome-util.c			gnome-score.c			gnome-init.c
