@@ -1,5 +1,6 @@
 bin/drgeo
 share/gnome/applications/drgeo.desktop
+share/gnome/drgeo/encode/latin1.ps
 share/gnome/drgeo/examples/figures/accel.fgeo
 share/gnome/drgeo/examples/figures/angle-inscrit.fgeo
 share/gnome/drgeo/examples/figures/cercle-inscrit.fgeo
@@ -69,9 +70,9 @@ share/gnome/drgeo/glade/cross.xpm
 share/gnome/drgeo/glade/dashline.xpm
 share/gnome/drgeo/glade/distance.png
 share/gnome/drgeo/glade/distance.xpm
-share/gnome/drgeo/glade/drgenius.png
 share/gnome/drgeo/glade/drgenius2.glade
 share/gnome/drgeo/glade/drgenius_new_figure.xpm
+share/gnome/drgeo/glade/drgeo.png
 share/gnome/drgeo/glade/drgeo2.glade
 share/gnome/drgeo/glade/drgeoMDI.glade
 share/gnome/drgeo/glade/eraser.png
@@ -149,9 +150,8 @@ share/gnome/drgeo/scm/drgeo_scm_interface_constant_es.scm
 share/gnome/drgeo/scm/drgeo_scm_interface_constant_fr.scm
 share/gnome/drgeo/scm/drgeo_scm_interface_constant_sr.scm
 share/gnome/drgeo/scm/preferences.scm
-share/gnome/pixmaps/drgenius.png
-share/gnome/pixmaps/gnome-drgenius-geo.png
-share/gnome/pixmaps/gnome-drgenius.png
+share/gnome/pixmaps/drgeo-book.png
+share/gnome/pixmaps/drgeo-file.png
 share/gnome/pixmaps/ofset-logo.png
 share/gnome/texmacs/TeXmacs/plugins/drgeo/progs/init-drgeo.scm
 share/locale/az/LC_MESSAGES/drgeo.mo
@@ -196,4 +196,5 @@ share/locale/zh_TW/LC_MESSAGES/drgeo.mo
 @dirrm share/gnome/drgeo/examples/macros
 @dirrm share/gnome/drgeo/examples/figures
 @dirrm share/gnome/drgeo/examples
+@dirrm share/gnome/drgeo/encode
 @dirrm share/gnome/drgeo
