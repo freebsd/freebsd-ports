@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	pilot-link
-PORTVERSION=	0.11.3
-PORTREVISION=	1
+PORTVERSION=	0.11.4
 CATEGORIES=	palm comms tk83
 MASTER_SITES=	http://www.pilot-link.org/source/
 
 MAINTAINER=	dima@FreeBSD.org
 
-LIB_DEPENDS=	tk83:${PORTSDIR}/x11-toolkits/tk83 \
+LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt \
+		tk83:${PORTSDIR}/x11-toolkits/tk83 \
 		iconv.3:${PORTSDIR}/converters/libiconv
 
 USE_BZIP2=	yes
@@ -26,16 +26,10 @@ MAN1=		dlpsh.1 ietf2datebook.1 install-datebook.1 \
 		pilot-addresses.1 pilot-xfer.1 read-ical.1
 MAN7=		pilot-link.7
 
-CFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/tcl8.3
+CFLAGS+=		-I${LOCALBASE}/include -I${LOCALBASE}/include/tcl8.3
+HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-perl5=${PERL5} --with-libiconv=${LOCALBASE}
+CONFIGURE_ENV=	LIBS="-lgnugetopt" LDFLAGS="-L${LOCALBASE}/lib"
 MAKE_ARGS=	LIBTOOL=libtool
-
-post-patch:
-	# Remove the FORCE tag, which forced recompiling/relinking
-	# of the otherwise up-to-date files.
-	${PERL} -pi -e 's/: FORCE/:/;' -e 's/getopt.h//;' ${WRKSRC}/Makefile.in
-	# When the day comes, and pilot-link starts using longopt,
-	# we'll start using -lgnugetopt. No need for this files:
-	${RM} -f ${WRKSRC}/getopt*
 
 .include <bsd.port.mk>
