@@ -7,6 +7,7 @@
 
     Copy the following files from a very recent 3.0 system:
 
+    /usr/libexec/elf/ld
     /usr/sbin/pkg_{add,create,delete,info}
 
     Copy the following files from a very recent 3.0 system or source tree:
