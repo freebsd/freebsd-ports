@@ -23,7 +23,8 @@ PLIST=		${WRKDIR}/pkg-plist
 USE_GMAKE=	yes
 USE_MESA=	yes
 USE_X_PREFIX=	yes
-WANT_GTK=	yes
+USE_GNOMELIBS=	yes
+USE_GTK=	yes
 
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--includedir="${LOCALBASE}/include" \
@@ -97,12 +98,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/textures/medres/*.??? \
 		${DATADIR}/textures/medres/
 
-.include <bsd.port.pre.mk>
-
-.if defined(HAVE_GTK)
-USE_GTK=	yes
-.else
-CONFIGURE_ARGS+=--without-gtk
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
