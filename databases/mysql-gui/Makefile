@@ -7,7 +7,7 @@
 
 PORTNAME=	mysql-gui
 PORTVERSION=	1.7.5
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	databases
 MASTER_SITES=	http://mysql.ftp.cvut.cz/Downloads/%SUBDIR%/ \
 		http://sunsite.informatik.rwth-aachen.de/mysql/Downloads/%SUBDIR%/ \
@@ -18,19 +18,24 @@ DISTNAME=	${PORTNAME:S/-//}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A graphical SQL client for MySQL
 
-LIB_DEPENDS=	sqlplus.1:${PORTSDIR}/databases/mysql++ \
+LIB_DEPENDS=	mysqlpp.2:${PORTSDIR}/databases/mysql++ \
  		glut.3:${PORTSDIR}/graphics/libglut \
  		jpeg.9:${PORTSDIR}/graphics/jpeg \
  		fleditor.1:${PORTSDIR}/x11-toolkits/fl_editor \
 		flvw.1:${PORTSDIR}/x11-toolkits/flvw
 PATCH_DEPENDS=	${X11BASE}/include/FL/Fl_Editor.H:${PORTSDIR}/x11-toolkits/fl_editor
 
+BROKEN=		Does not build with new mysql++, use mysql-administrator \(GNOME\) or mysql-navigator \(KDE\) instead
+
+USE_GCC=	3.3
 USE_GETTEXT=	yes
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-/-src-/}
 MAKE_ARGS=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
+
+CFLAGS+=	-I${LOCALBASE}/include/mysql++
 
 # Local Variables
 #
@@ -40,12 +45,6 @@ OLD_FILES=	Fl_Editor.h Fl_FancyEditor.h Fl_ProgressBox.h \
 		Flv_Table.H Flve_Check_Button.H Flve_Combo.H Flve_Input.H \
 		editor.h math.h strings.h vartypes.h wstrings.h
 NEW_FILES=	Fl_Editor.H editengine.h
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500000 || ${ARCH} == "alpha"
-BROKEN=		Does not build except on i386 4.x, use mysql-administrator \(GNOME\) or mysql-navigator \(KDE\) instead
-.endif
 
 # Post-extract
 #
@@ -69,4 +68,4 @@ copy-inc:
 	@${CP} ${X11BASE}/include/FL/${file} ${WRKSRC}/FL/
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
