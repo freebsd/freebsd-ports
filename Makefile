@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.36 1997/10/04 15:54:31 jkh Exp $
+# $Id: Makefile,v 1.37 1997/12/13 05:55:08 asami Exp $
 #
 
 SUBDIR += archivers
@@ -11,6 +11,7 @@ SUBDIR += chinese
 SUBDIR += comms
 SUBDIR += converters
 SUBDIR += databases
+SUBDIR += deskutils
 SUBDIR += devel
 SUBDIR += editors
 SUBDIR += emulators
@@ -36,6 +37,11 @@ SUBDIR += textproc
 SUBDIR += vietnamese
 SUBDIR += www
 SUBDIR += x11
+SUBDIR += x11-clocks
+SUBDIR += x11-fm
+SUBDIR += x11-fonts
+SUBDIR += x11-toolkits
+SUBDIR += x11-wm
 
 PORTSTOP=	yes
 
