@@ -8,7 +8,7 @@
 PORTNAME=	Cgraph
 PORTVERSION=	2.04
 CATEGORIES=	graphics
-MASTER_SITES=	http://totoro.berkeley.edu/software/
+MASTER_SITES=	http://www.tobez.org/download/port-mirrors/graphics/Cgraph/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	tobez@FreeBSD.org
