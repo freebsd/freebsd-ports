@@ -19,62 +19,52 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/TODO
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Address.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Address.src/M000094.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Address.src/M000095.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Address.src/M000096.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Address.src/M000097.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Address.src/M000098.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Address.src/M000099.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Address.src/M000100.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Address.src/M000101.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Address.src/M000102.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Address.src/M000103.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Address.src/M000104.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Address.src/M000105.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Address.src/M000106.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Address.src/M000107.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Address.src/M000108.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Address.src/M000109.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Address.src/M000110.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Address.src/M000111.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Address.src/M000112.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Address.src/M000113.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Address.src/M000114.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Address.src/M000115.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Address.src/M000116.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Address.src/M000117.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Address.src/M000118.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Address.src/M000120.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Address/List.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Address/List.src/M000113.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Address/List.src/M000114.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Address/List.src/M000115.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Address/List.src/M000116.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Address/List.src/M000117.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Address/List.src/M000118.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Address/List.src/M000123.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Address/List.src/M000124.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Address/List.src/M000125.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Address/List.src/M000126.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Address/List.src/M000127.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Address/List.src/M000128.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Address/Parser.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Address/Parser.src/M000111.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Address/Parser.src/M000112.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Address/Parser.src/M000121.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Address/Parser.src/M000122.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Header.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Header.src/M000030.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Header.src/M000031.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Header.src/M000032.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Header.src/M000033.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Header.src/M000034.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Header.src/M000035.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Header.src/M000036.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Header.src/M000038.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Header.src/M000039.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Header.src/M000040.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Header.src/M000041.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Header.src/M000042.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Header.src/M000043.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Header.src/M000044.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Header.src/M000045.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Header.src/M000046.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Header.src/M000047.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Header.src/M000048.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Header.src/M000049.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Header.src/M000050.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Header.src/M000052.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Header.src/M000053.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Header.src/M000054.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Header.src/M000055.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Header.src/M000056.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Header.src/M000057.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Header.src/M000058.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Header.src/M000059.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Header.src/M000060.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Header.src/M000061.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Header.src/M000062.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Header.src/M000063.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Header.src/M000064.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Header.src/M000065.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Header.src/M000066.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Header.src/M000067.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Header.src/M000068.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Header.src/M000069.html
@@ -102,6 +92,16 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Header.src/M000091.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Header.src/M000092.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Header.src/M000093.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Header.src/M000094.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Header.src/M000095.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Header.src/M000096.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Header.src/M000097.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Header.src/M000098.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Header.src/M000099.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Header.src/M000100.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Header.src/M000101.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Header.src/M000102.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Header.src/M000103.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Mailbox.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Mailbox.src/M000001.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Mailbox/MBoxReader.html
@@ -123,17 +123,29 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Message.src/M000019.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Message.src/M000020.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Message.src/M000021.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Message.src/M000022.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Message.src/M000023.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Parser.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Parser.src/M000023.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Parser.src/M000024.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Parser.src/M000025.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Parser.src/M000026.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Parser/Error.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Serialize.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Serialize.src/M000027.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Serialize.src/M000028.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Serialize.src/M000029.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Serialize.src/M000037.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Serialize.src/M000038.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Serialize.src/M000039.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/StreamHandler.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/StreamHandler.src/M000026.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/StreamHandler.src/M000027.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/StreamHandler.src/M000028.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/StreamHandler.src/M000029.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/StreamHandler.src/M000030.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/StreamHandler.src/M000031.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/StreamHandler.src/M000032.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/StreamHandler.src/M000033.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/StreamHandler.src/M000034.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/StreamHandler.src/M000035.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/StreamHandler.src/M000036.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/StreamParser.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/StreamParser.src/M000022.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Utils.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Utils.src/M000007.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/RMail/Utils.src/M000008.html
@@ -147,7 +159,6 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/files/guide/MIME_txt.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/files/guide/TableOfContents_txt.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/files/lib/rmail/address_rb.html
-
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/files/lib/rmail/header_rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/files/lib/rmail/mailbox/mboxreader_rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/files/lib/rmail/mailbox_rb.html
@@ -170,6 +181,8 @@
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/files/guide
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/files
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/RMail/Utils.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/RMail/StreamParser.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/RMail/StreamHandler.src
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/RMail/Serialize.src
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/RMail/Parser.src
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/RMail/Parser
@@ -186,3 +199,4 @@
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%
+
