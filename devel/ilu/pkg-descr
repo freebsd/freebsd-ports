@@ -1,32 +1,33 @@
-The Inter-Language Unification system (ILU) is a multi-language object
-interface system.  The object interfaces provided by ILU hide
-implementation distinctions between different languages, between
-different address spaces, and between operating system types.  ILU can
-be used to build multi-lingual object-oriented libraries ("class
-libraries") with well-specified language-independent interfaces.  It
-can also be used to implement distributed systems.  It can also be
-used to define and document interfaces between the modules of
-non-distributed programs.  ILU interfaces can be specified in either
-the OMG's IDL language, or in ILU's Interface Specification Language,
-which allows extensions to the CORBA spec.  Programming languages
-supported in 2.0alpha12 are ANSI C, Common Lisp, Java, and Python;
-rough Guile Scheme and C++ support is also present.  Additional ILU
-support for Perl is freely available from outside sources.  Operating
-systems supported in 2.0alpha12 are all Windows platforms with Win32
-and WinSock, and all UNIX platforms with BSD sockets and minimal POSIX
-compliance.  2.0alpha12 supports interoperability with ONC RPC
-services, OMG CORBA services, World Wide Web HTTP services, and XNS
-Courier services.  ``Plug-in'' extensibility is provided for RPC
-message formats, message transport schemes, URL schemes, accounting
-and authorization identity types, threading and event loop processing,
-and various other things.  ILU is provided free for unrestricted use.
+ILU is a CORBA-compatible multi-language Object Request Broker. 
+
+You define class interfaces in a language-independent way and
+implement them in a language of your choice. Currently supported
+languages are C, Java (See Makefile how to enable Java Support on
+FreeBSD), Common Lisp (Allegro CL 4.x in Linux emulation mode may work
+on FreeBSD) and Python. Rough support for C++ (the old C++ support is
+built by default on FreeBSD) and Guile Scheme (built if you have Guile
++ slib installed) is also present. perl support is available from the
+net. ILU also runs on Win32 which means Unix and Win32 objects can
+freely talk to each other.
+
+2.0alpha13 supports interoperability with ONC RPC services, OMG CORBA
+services, World Wide Web HTTP services, and W3C HTTP-NG services.
+``Plug-in'' extensibility is provided for RPC message formats, message
+transport schemes, URL schemes, accounting and authorization identity
+types, threading and event loop processing, and various other things.
+An implementation of the IETF's Common Authentication Technology
+working group's Generic Security Service (GSS) is provided, and can be
+used to wrap client-server connections in a security context.  An XML
+parser is provided.  ILU is provided free for unrestricted use.
 
 FreeBSD port notes:
-- I enabled http protocol support by default.
+- I enabled support for the http protocol support.
+- The FreeBSD port has its own scheme to build and use shared
+  libraries. The official support is incomplete.
 - Official ILU patches are not fetched from PARC, but I hold a proven
-  snapshot at one of my own sites.
+  snapshot that doesn't conflict with my patches at one of my own sites.
 - configure --bindir/--mandir doesn't work with current ILU version.
   I make symbolic links to ${PREFIX}/{bin,man}.
-- The FreeBSD port builds shareds libs for C libraries.
-- jdk-1.1 for FreeBSD works, but is disabled by default because the
-  FreeBSD jdk is still in aout object format.
+- I don't use shared library version numbers on ELF systems for now.
+- Shared library versioning scheme history for aout:
+  *.so.1: ilu-2.0a12, *.so.2: ilu-2.0a13
