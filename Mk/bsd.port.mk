@@ -3154,6 +3154,7 @@ PACKAGE-DEPENDS-LIST= \
 			if (${ECHO} $$checked | ${GREP} -qwv "$$dir"); then \
 				childout=$$(cd $$dir; ${MAKE} CHILD_DEPENDS=yes PARENT_CHECKED="$$checked" package-depends-list); \
 				set -- $$childout; \
+				childname=""; childdir=""; \
 				while [ $$\# != 0 ]; do \
 					childname="$$childname $$1"; \
 					childdir="$$childdir $$2"; \
