@@ -18,7 +18,7 @@ export LDFLAGS="@LDFLAGS@"
 export CONFIG_SH=/bin/sh
 export XP_UNIX=1
 mk_add_options XP_UNIX=1
-export PERL=/usr/local/bin/perl
+export PERL="@PERL@"
 mk_add_options PERL=$PERL
 # Configure options for installation
 ac_add_options --prefix=@PREFIX@
