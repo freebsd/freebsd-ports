@@ -27,7 +27,7 @@ open(OUT, "> $tmpfile") ||
 
 # Read the log file in, stripping 'CVS:' lines and removing trailing
 # white spaces.
-my @log_in = map { s/^(.*)\s*$/$1/; $1 } grep { !/^CVS:/ } <IN>;
+my @log_in = map { s/^(.*?)\s*$/$1/; $_ } grep { !/^CVS:/ } <IN>;
 
 # Remove leading, trailing and duplicate blank lines.
 my $i = 0;
