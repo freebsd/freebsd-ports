@@ -3,7 +3,7 @@
 # Date created:         18 Jul 1995
 # Whom:                 jkh
 #
-# $Id: Makefile,v 1.11 1998/03/26 12:13:35 tg Exp $
+# $Id: Makefile,v 1.12 1998/09/28 02:25:01 steve Exp $
 #
 
 DISTNAME=       xkobo-1.11
@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_XCONTRIB}  \
 		ftp://ftp.uoknor.edu/mirrors/X/contrib/games/
 MASTER_SITE_SUBDIR=	games
 
-MAINTAINER=	ports@FreeBSD.ORG
+MAINTAINER=	andrews@technologist.com
 
 USE_IMAKE=	yes
 ALL_TARGET=	xkobo
