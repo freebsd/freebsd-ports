@@ -18,6 +18,6 @@ echo " ${*} " | grep " \-createdironly " ||
 {
 	cd ${DIRNAME} &&
 	echo Running under ${DIRNAME} &&
-	exec ./${PROGRAM##*/} ${*} ||
+	exec ./${PROGRAM##*/} "${@}" ||
 	echo PROBLEM. Cannot create directory ${DIRNAME}, make sure you have the proper permissions to create it and try again
 }
