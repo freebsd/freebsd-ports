@@ -1284,6 +1284,7 @@ dumpasn1	ports/converters/dumpasn1
 dumpmpeg	ports/multimedia/dumpmpeg
 dungeon		ports/games/dungeon
 dungeoncrawl	ports/games/dungeoncrawl
+duplicity	ports/sysutils/duplicity
 durep		ports/sysutils/durep
 dv2jpg		ports/multimedia/dv2jpg
 dvd+rw-tools	ports/sysutils/dvd+rw-tools
