@@ -15,10 +15,12 @@ MAINTAINER=	ports@freebsd.org
 
 RUN_DEPENDS=	wish8.3:${PORTSDIR}/x11-toolkits/tk83
 
+USE_REINPLACE=	yes
 NO_BUILD=	yes
+REINPLACE_ARGS=	-i.bak -E
 
 post-patch:
-	@${PERL} -pi \
+	@${REINPLACE_CMD} \
 		-e 's,docs\s+"([^"]+)",docs	"file:${PREFIX}/share/doc/tkcon/index.html\\n\1",' ${WRKSRC}/tkcon.tcl
 
 do-install:

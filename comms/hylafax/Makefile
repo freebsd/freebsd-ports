@@ -34,6 +34,7 @@ CONFIGURE_ARGS+=--nointeractive
 .endif
 MAKE_ARGS+=	OPTIMIZER="" -EOPTIMIZER
 
+USE_REINPLACE=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	ENVOPTS="${CFLAGS}"
 
@@ -73,7 +74,7 @@ post-install:
 
 .if ${LOCALBASE} != /usr/local
 post-patch:
-	${PERL} -pi -e 's^/usr/local^${LOCALBASE}^g' \
+	${REINPLACE_CMD} -e 's^/usr/local^${LOCALBASE}^g' \
 		`find work/hylafax-4.1 -type f -print0 | \
 			xargs -0 fgrep -l --mmap /usr/local`
 .endif

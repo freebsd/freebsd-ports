@@ -18,6 +18,7 @@ LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 
 USE_X_PREFIX=	yes
 USE_GTK=	yes
+USE_REINPLACE=	yes
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
@@ -40,18 +41,18 @@ CONFIGURE_ARGS+=	--without-gnome
 .endif
 
 post-patch:
-	@${PERL} -pi -e 's|gtk-config --prefix|\$$GTK_CONFIG --prefix|g ; \
+	@${REINPLACE_CMD} -e 's|gtk-config --prefix|\$$GTK_CONFIG --prefix|g ; \
 		 s|libgdk.la|libgdk12.so|g ; \
 		 s|libgdk.so|libgdk12.so|g ; \
 		 s|GDK_DLOPEN_NAME=.*$$|GDK_DLOPEN_NAME="libgdk12.so"|g' \
 			${WRKSRC}/configure
-	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
+	@find ${WRKSRC} -name "Makefile.in" | xargs ${REINPLACE_CMD} -e \
 		's|src capplet|src \@BUILD_CAPPLET_TRUE\@capplet|g ; \
-		 s|DESTDIR\)\$$\(datadir|DESTDIR\)\$$\(pkgdatadir|g ; \
+		 s|DESTDIR)\$$(datadir|DESTDIR\)\$$\(pkgdatadir|g ; \
 		 s|/gnome/apps/|/apps/|g ; \
 		 s|la_LDFLAGS =.*$$|la_LDFLAGS = -module -avoid-version|g'
 .for file in gdkxft_sysinstall.in gdkxft.c generate.pl
-	@${PERL} -pi -e 's|<regex.h>|<gnuregex.h>|g ; \
+	@${REINPLACE_CMD} -e 's|<regex.h>|<gnuregex.h>|g ; \
 		 s|gtk-config |${GTK_CONFIG:T} |g' ${WRKSRC}/src/${file}
 .endfor
 
