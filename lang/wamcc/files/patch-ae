@@ -1,0 +1,14 @@
+--- src/machine.c.orig	Sun Dec 18 12:15:59 1994
++++ src/machine.c	Tue Sep 14 04:16:29 1999
+@@ -52,7 +52,11 @@
+ 
+ #endif
+ 
++#if !defined(M_i386_freebsd) && !defined(M_alpha_freebsd)
++
+ extern char *sys_errlist[];
++
++#endif
+ 
+ 
+ 

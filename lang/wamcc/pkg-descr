@@ -1,0 +1,18 @@
+wamcc is a Prolog Compiler which translates Prolog to C via the WAM
+(Warren Abstract Machine).  wamcc has a syntax which conforms to the
+proposed ISO standard.
+
+wamcc offers the most usual built-in predicates, a top-level, a Prolog
+debugger and a WAM debugger, dynamic and compiled code, modules, 
+global variables, global arrays...).  wamcc is designed to be easily
+extended (e.g. clp(FD) is a constraint logic language over Finite
+Domains designed on wamcc). 
+
+wamcc tries tries to be conform to the (future) ISO standard Prolog.
+The draft ISO standard for Prolog is available by anonymous ftp from
+ai.uga.edu:/pub/prolog.standard/ [128.192.12.9]. An unofficial summary
+of the draft ISO Prolog standard is available from the same location
+as isoprolog.tex or isoprolog.ps.Z.
+
+The directory /usr/local/share/doc/wamcc contains a user's manual as
+a LaTeX file.  Examples are installed in /usr/local/share/examples/wamcc.

@@ -1,0 +1,68 @@
+--- Makefile.orig	Tue Mar  7 03:21:05 1995
++++ Makefile	Sun Oct 31 13:03:29 1999
+@@ -5,12 +5,16 @@
+ # /* Makefile                                                              */
+ # /*-----------------------------------------------------------------------*/
+ 
+-# you can change the following paths
++PREFIX?=	/usr/local
++INCPATH=	$(PREFIX)/include/wamcc
++LIBPATH=	$(PREFIX)/lib/wamcc
++BINPATH=	$(PREFIX)/bin
++DOCPATH=	$(PREFIX)/share/doc/wamcc
++EXAMPLEPATH=	$(PREFIX)/share/examples/wamcc
++
++PROGRAMS=	src/$(COMPILER) src/$(BMF) src/hex2pl src/pl2hex
++SCRIPTS=	src/$(WCC)
+ 
+-ROOTPATH= $(HOME)/$(COMPILER)
+-INCPATH = $(ROOTPATH)/include
+-LIBPATH = $(ROOTPATH)/lib
+-BINPATH = $(ROOTPATH)/bin
+ 
+ # you can specify the name of the C compiler
+ 
+@@ -25,24 +29,28 @@
+ 
+ EXECS   = $(WCC) $(COMPILER) $(BMF) hex2pl pl2hex
+ 
+-install:
+-	cd src; echo $(ROOTPATH);\
++all:
++	(cd src; \
+ 	make $(WCC) COMPILER=$(COMPILER) INCPATH=$(INCPATH) \
+-                    LIBPATH=$(LIBPATH) CC=$(CC) WCC=$(WCC)
+-	cd Builtin; \
+-	make COMPILER=$(COMPILER) CC=$(CC) WCC=../src/$(WCC)
+-	cd src; \
++                    LIBPATH=$(LIBPATH) CC=$(CC) WCC=$(WCC))
++	(cd Builtin; \
++	make COMPILER=$(COMPILER) CC=$(CC) WCC=../src/$(WCC))
++	(cd src; \
+ 	make COMPILER=$(COMPILER) INCPATH=$(INCPATH) \
+-             LIBPATH=$(LIBPATH) CC=$(CC) WCC=$(WCC)
+-	-mkdir -p $(INCPATH)
+-	-mkdir -p $(LIBPATH)
+-	-mkdir -p $(BINPATH)
+-	cp src/*.h $(INCPATH)
+-	rm $(INCPATH)/wamcc*.h
+-	cp src/*.a $(LIBPATH)
+-	ranlib $(LIBPATH)/*.a
+-	cp src/$(WCC) src/$(COMPILER) src/$(BMF) src/hex2pl src/pl2hex $(BINPATH)
++             LIBPATH=$(LIBPATH) CC=$(CC) WCC=$(WCC))
+ 
++install:
++	$(INSTALL) -d $(INCPATH)
++	$(INSTALL) -c -m 444 src/*.h $(INCPATH)
++	$(INSTALL) -d $(LIBPATH)
++	$(INSTALL) -c -m 444 src/*.a $(LIBPATH)
++	$(INSTALL) -d $(DOCPATH)
++	$(INSTALL) -c -m 444 doc/* $(DOCPATH)
++	$(INSTALL) -d $(EXAMPLEPATH)
++	$(INSTALL) -c -m 444 Examples/* $(EXAMPLEPATH)
++	$(INSTALL) -d $(BINPATH)
++	$(INSTALL) -c -m 555 $(SCRIPTS) $(BINPATH)
++	$(INSTALL) -c -s -m 555 $(PROGRAMS) $(BINPATH)
+ 
+ clean:
+ 	cd src;     make clean
