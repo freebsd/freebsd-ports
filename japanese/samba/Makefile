@@ -96,15 +96,23 @@ CONFIGURE_ARGS=	--with-i18n-swat \
 		--with-included-popt
 
 .if defined(WITH_AUDIT)
+.if ${ARCH} == "i386"
 AUDIT=		""
 LIBSAMBA=	""
 BUILD_VFS=	""
+.else
+BROKEN=		"VFS related feature is available for i386 only"
+.endif
 .endif
 
 .if defined(WITH_RECYCLE)
+.if ${ARCH} == "i386"
 RECYCLE=	""
 LIBSAMBA=	""
 BUILD_VFS=	""
+.else
+BROKEN=		"VFS related feature is available for i386 only"
+.endif
 .endif
 
 .if defined(WITH_SYSLOG)
