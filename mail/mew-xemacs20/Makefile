@@ -6,14 +6,8 @@
 # $FreeBSD$
 #
 
-PKGNAME=	mew-xemacs20-1.93
+EMACS_PORT_NAME=	xemacs20
 
-EMACS_NAME=	XEmacs-20.4
-DIRSECTION=	Local Packages:
-DIRENTRY=	"* Mew::		Messaging in the Emacs World."
-INFOFILE=	mew.info
+MASTERDIR=		${.CURDIR}/../../mail/mew
 
-MASTERDIR=	${.CURDIR}/../../mail/mew-common
-PKGDIR=		${.CURDIR}/pkg
-
-.include	"${MASTERDIR}/Makefile"
+.include "${MASTERDIR}/Makefile"

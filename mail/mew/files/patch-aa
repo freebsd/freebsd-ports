@@ -1,0 +1,79 @@
+--- Makefile.orig	Fri Aug 27 12:23:59 1999
++++ Makefile	Mon Aug 30 23:09:10 1999
+@@ -88,12 +88,28 @@
+ 	mew-temacs.el   mew-xemacs.el  mew-addrbook.el \
+ 	mew.el
+ 
++PIXMAPS=Mew.img	Mew.png	Mew.xbm	\
++	Mew.xpm	mew-Audio.xpm	mew-Blank.xpm	\
++	mew-External.xpm	mew-Folder.xpm	mew-Image.xpm	\
++	mew-Octet-Stream.xpm	mew-Postscript.xpm	mew-Rfc822.xpm	\
++	mew-Text.xpm	mew-Unknown.xpm	mew-Video.xpm	\
++	mew-attach.xpm	mew-cite.xpm	mew-comp.xpm	\
++	mew-forward.xpm	mew-inc.xpm	mew-next.xpm	\
++	mew-pgp-enc.xpm	mew-pgp-sigenc.xpm	mew-pgp-sign.xpm	\
++	mew-prev.xpm	mew-refile.xpm	mew-reply.xpm	\
++	mew-send.xpm	mew-sep.xpm	mew-show.xpm	\
++	mew-write.xpm	mew-yank.xpm
++PIXMAPSETC=etc/COLOR	etc/mew-Plain.xpm	\
++	etc/mew-curr.xpm	etc/mew-folder.xpm	etc/mew-inc2.xpm	\
++	etc/mew-kill.xpm
++
+ TEMPFILE = temp.el
+ 
+ CP = cp
+ RM = rm -f
+ MKDIR = mkdir -p
+ BIN = bin
++ETC=	etc
+ 
+ all: $(OBJS)
+ 	@echo 'Compiling EL files of Mew ... '
+@@ -111,8 +127,8 @@
+ 	@echo ')))' >> $(TEMPFILE)
+ 
+ install: $(OBJS)
+-	$(CP) $(SRCS) $(ELISPDIR)
+-	$(CP) $(OBJS) $(ELISPDIR)
++	${BSD_INSTALL_DATA} $(SRCS) $(ELISPDIR)
++	${BSD_INSTALL_DATA} $(OBJS) $(ELISPDIR)
+ 	cd $(BIN); $(MAKE) install CFLAGS="$(CFLAGS)" CC="$(CC)" BINDIR="$(BINDIR)"
+ 
+ clean:
+@@ -123,19 +139,32 @@
+ 	cd info; $(MAKE) info EMACS=$(EMACS)
+ 
+ install-info:
+-	cd info; $(MAKE) install-info INFODIR=$(INFODIR)
++	cd info; $(MAKE) install-info INFODIR=$(INFODIR) XEMACS_VER_OVER20=${XEMACS_VER_OVER20}
+ 
+ jinfo::
+ 	cd info; $(MAKE) jinfo EMACS=$(EMACS)
+ 
+ install-jinfo:
+-	cd info; $(MAKE) install-jinfo INFODIR=$(INFODIR)
++	cd info; $(MAKE) install-jinfo INFODIR=$(INFODIR) XEMACS_VER_OVER20=${XEMACS_VER_OVER20}
++
++install-man:
++	cd info; $(MAKE) install-man MANDIR=$(MANDIR)
+ 
+ install-etc:
+ 	-@if [ ! -d $(ETCDIR) ]; then \
+-		$(MKDIR) $(ETCDIR); \
++		$(MKDIR) $(ETCDIR)/etc; \
+ 	fi; \
+-	cd etc; $(CP) -r * $(ETCDIR)/
++	cd etc; \
++	${BSD_INSTALL_DATA} ${PIXMAPS} ${ETCDIR}; \
++	${BSD_INSTALL_DATA} ${PIXMAPSETC} ${ETCDIR}/etc
++
++
++install-package: install install-info install-man install-etc
++	${MKDIR} ${EMACSPKGDIR} ${PKG_PKGINFODIR}
++	${ECHO} "pkginfo/MANIFEST.mew" > ${PKG_PKGINFODIR}/MANIFEST.mew
++	find ${EMACSPKGDIR} -type f | sed -e "s,^${EMACSPKGDIR}/,," | \
++		grep '^etc/mew/\|^info/mew\.\|^lisp/mew/\|^man/mew/' | \
++		grep -v "pkginfo/MANIFEST.mew" >> ${PKG_PKGINFODIR}/MANIFEST.mew
+ 
+ ##
+ ## End of Makefile

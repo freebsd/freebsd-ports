@@ -1,0 +1,40 @@
+--- info/Makefile.orig	Wed Aug 25 17:56:29 1999
++++ info/Makefile	Mon Aug 30 23:14:43 1999
+@@ -32,6 +32,7 @@
+ 
+ INFO  = mew.info mew.info-1 mew.info-2 mew.info-3
+ JINFO = mew.jis.info mew.jis.info-1 mew.jis.info-2
++MANUALS= 00readme mew.texi
+ 
+ info::
+ 	sed -e 's/@setfilename mew.jis.info/@setfilename mew.info/' \
+@@ -52,20 +53,25 @@
+ 		-f batch-texinfo-format mew.texi
+ 
+ install-info:
+-	cp $(INFO) $(INFODIR)
+-	-@if [ -x "$(INSTALLINFO)" ]; then \
++	${BSD_INSTALL_DATA} $(INFO) $(INFODIR)
++	-@if [ -x "$(INSTALLINFO)" -a -z "${XEMACS_VER_OVER20}" ]; then \
+ 		$(INSTALLINFO) mew.info $(INFODIR)/dir; \
+ 	else \
+ 		echo "Don't forget to edit $(INFODIR)/dir for Mew."; \
+ 	fi
+ 
+ install-jinfo:
+-	cp $(JINFO) $(INFODIR)
+-	-@if [ -x "$(INSTALLINFO)" ]; then \
++	${BSD_INSTALL_DATA} $(JINFO) $(INFODIR)
++	-@if [ -x "$(INSTALLINFO)" -a -z "${XEMACS_VER_OVER20}" ]; then \
+ 		$(INSTALLINFO) mew.jis.info $(INFODIR)/dir; \
+ 	else \
+ 		echo "Don't forget to edit $(INFODIR)/dir for Mew."; \
+ 	fi
++
++install-man:
++	${MKDIR} ${MANDIR}
++	${BSD_INSTALL_DATA} ${MANUALS} ${MANDIR}
++
+ ##
+ ## End of Makefile
+ ##

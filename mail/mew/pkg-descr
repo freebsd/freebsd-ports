@@ -9,13 +9,34 @@ and to make it easy to view and compose them. With Mew you can send a
 picture of a birthday cake with the song "Happy Birthday to you" to your
 friend, which is encrypted by strong cryptograph.
 
-Info path and elisp load path would be set as follows :
+This port is for a commonly installed files in every other mew ports
+and DO NOT BUILD IN THIS PORT. Mew ports family consists of 7 ports
+corresponding to each "emacs" ports. Followings are those whose
+"emacs" is shown in a manner "category_name/emacs_port_name :
+emacs_pkgname" and corresponding Mew elisp site-lisp directory(elisp
+load path) and info path as well. 
 
-    Info path - ${PREFIX}/share/emacs/19.34/site-lisp/mew   
-    load path - ${PREFIX}/share/emacs/19.34/info
+editors/emacs : emacs-19.34b
+    ${PREFIX}/share/emacs/site-lisp/mew          -> mail/mew         (mew-emacs-1.94)
+    ${PREFIX}/share/emacs/info (info path)
+editors/emacs20 : emacs-20.3
+    ${PREFIX}/share/emacs/site-lisp/mew          -> mail/mew-emacs20(mew-emacs20-1.94)
+    ${PREFIX}/share/emacs/info (info path)
+editors/mule,mule-common;japanese/mule-*;korean/mule-wnn4;chinese/mule-wnn4 : mule-2.3
+    ${PREFIX}/share/mule/site-lisp/mew           -> mail/mew-mule      (mew-mule-1.94)
+    ${PREFIX}/share/mule/info (info path)
+editors/xemacs : xemacs-19.16
+    ${PREFIX}/lib/xemacs/site-lisp/mew           -> mail/mew-xemacs   (mew-xemacs-1.94)
+    ${PREFIX}/lib/xemacs/info (info path)
+editors/xemacs20 : xemacs-20.4
+    ${PREFIX}/lib/xemacs/site-lisp/mew           -> mail/mew-xemacs20
+    ${PREFIX}/lib/xemacs/info (info path)                           (mew-xemacs20-1.94)
+editors/xemacs21 : xemacs-21.1.4
+    ${PREFIX}/lib/xemacs/site-packages/lisp/mew  -> mail/mew-xemacs21
+    ${PREFIX}/lib/xemacs/site-packages/info (info path)          (mew-xemacs21-1.94)
+editors/xemacs-mule,xemacs-mule-common;japanese/xemacs-*, : xemacs-mule-21.1.6
+    ${PREFIX}/lib/xemacs/site-packages/lisp/mew  -> mail/mew-xemacs-mule 
+    ${PREFIX}/lib/xemacs/site-packages/info (info path)          (mew-xemacs-mule-1.94)
 
-Before build this port, You must be prepared Mew-common-port
-(mail/mew-common). 
-
-- Kiriyama Kazuhiko
+- KIRIYAMA Kazuhiko
 kiri@kiri.toba-cmt.ac.jp

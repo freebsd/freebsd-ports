@@ -1,0 +1,374 @@
+#!/bin/sh
+
+PREFIX=%%PREFIX%%
+EMACSDIR=%%EMACSDIR%%
+ELISPDIR=%%ELISPDIR%%
+SAMPLEDIR=%%SAMPLEDIR%%
+
+AWK=%%AWK%%
+CAT=%%CAT%%
+CP=%%CP%%
+ECHO=%%ECHO%%
+MKDIR="%%MKDIR%%"
+RM=%%RM%%
+SED=%%SED%%
+TOUCH=%%TOUCH%%
+DIALOG=/usr/bin/dialog
+
+select()
+{
+	local Language key
+	Language="\
+Choose a language when you write mails.\n\
+    (Now is \"${language}\" selected.)"
+	${DIALOG} --title "Choose the Language" \
+	--hline "Select Items and Quit when finished" \
+	--menu "${Language}" -1 -1 2 \
+	English		"English" \
+	Japanese	"japanese" \
+		2>	/tmp/menu.$$
+	retval=$?
+	key=`${CAT} /tmp/menu.$$|${SED} -e 's/\"//g'`
+	${RM} -f /tmp/menu.$$
+	case $retval in
+		0) if [ -z ${key} ]; then return; fi ;;
+		1) return ;;
+		255) return ;;
+	esac
+	language=${key}
+#	echo citation:key=${key},dot_emacs=${dot_emacs}>>/tmp/temp
+}
+
+input_data()
+# argument No.1 ($1) : Key words (string)
+# argument No.2 ($2) : Variable for the Key words (string)
+# argument No.3 ($3) : unit for the variable (string)
+{
+	local key
+#	echo '$1='$1
+#	echo '$2='$2
+#	echo '$3='$3
+#	exit 1
+#	echo '${nameserver}='${mail_address}
+#	eval echo '${'$2'}'
+	eval key='${'$2'}'
+#	echo key=${key}
+#	exit 1
+	if [ ! -z ${key} ]; then
+		${DIALOG} --title "Confirm $1" \
+		--hline "Press Yes/No" \
+		--yesno "$1 $3 has set \"${key}\". Is this OK?" -1 -1
+		retval=$?
+		if [ X"${retval}" = "X0" -o X"${retval}" = "X255" ]; then  return; fi
+	fi
+	${DIALOG} --title "Set $1 $3" \
+	--hline "Write $1 $3" \
+	--inputbox "Specify $1 $3" -1 -1 \
+		2>  /tmp/input.$$
+	eval $2=`${CAT} /tmp/input.$$`
+	${RM} -f /tmp/input.$$
+}
+
+options()
+{
+	local Options keys del_keys
+	Options="\
+Please select Mew functions that you want to. To select a function, \n\
+use the arrow keys to move to it and press [SPACE]. To de-select it, \n\
+press [SPACE] again.  Select OK or Cancel to leave this menu."
+	del_keys="Highlight Citation Cite_Change Sign_Change"
+	${DIALOG} --title "Select Mew functions" \
+	--hline "" \
+	--checklist "${Options}" -1 -1 4 \
+	Highlight	"highlight body for Mew(Japanese)" ${options_Highlight} \
+	Citation	"Citation with the mail." ${options_Citation} \
+	Cite_Change	"Change citation English <--> Japanese." ${options_Cite_Change} \
+	Sign_Change	"Change signature English <--> Japanese." ${options_Sign_Change} \
+		2> /tmp/checklist.$$
+	retval=$?
+	keys=`${CAT} /tmp/checklist.$$|${SED} -e 's/\"//g'`
+	${RM} -f /tmp/checklist.$$
+	case $retval in
+		1)   return ;;
+		255) return ;;
+	esac
+	dot_emacs=""
+#	echo keys=$keys
+	for k in ${keys}; do
+		del_keys=`${ECHO} ${del_keys}|${SED} -e "s/ *${k}//g"`
+#		echo del_keys=${del_keys}
+#		echo k=$k
+		case ${k} in
+		Highlight)
+			dot_emacs="${dot_emacs} dot.emacs-highlight-body.el"
+			options_Highlight=ON
+			;;
+		Citation)
+			citation
+#			echo options:key=${k},dot_emacs=${dot_emacs}>>/tmp/temp
+			options_Citation=ON
+			;;
+		Cite_Change)
+			dot_emacs="${dot_emacs} dot.emacs-cite-change.el"
+			options_Cite_Change=ON
+			;;
+		Sign_Change)
+			dot_emacs="${dot_emacs} dot.emacs-signature-change.el"
+			options_Sign_Change=ON
+			;;
+		esac
+	done
+#	exit 1
+	for k in ${del_keys}; do
+#		echo k=$k
+		case ${k} in
+		Highlight)
+			dot_emacs=`${ECHO} ${dot_emacs}|${SED} -e "s/ *dot\.emacs-highlight-body\.el//"`
+			options_Highlight=OFF
+			;;
+		Citation)
+			options_Citation=OFF
+			;;
+		Cite_Change)
+			dot_emacs=`${ECHO} ${dot_emacs}|${SED} -e "s/ *dot\.emacs-cite-change\.el//"`
+			options_Cite_Change=OFF
+			;;
+		Sign_Change)
+			dot_emacs=`${ECHO} ${dot_emacs}|${SED} -e "s/ *dot\.emacs-signature-change\.el//"`
+			options_Sign_Change=OFF
+			;;
+		esac
+	done
+#	echo dot_emacs=${dot_emacs}
+#	echo del_keys=${del_keys}
+#	exit 1
+}
+
+citation()
+{
+	dot_emacs=`${ECHO} ${dot_emacs}|${SED} -e "s/ *dot\.emacs-cite.[a-z]*//g"`
+	case ${language} in
+	English)
+		dot_emacs="${dot_emacs} dot.emacs-cite.el"
+		;;
+	Japanese)
+		dot_emacs="${dot_emacs} dot.emacs-cite.ja.el"
+		;;
+	esac
+#	echo citation:key=${key},dot_emacs=${dot_emacs}>>/tmp/temp
+}
+
+case ${TERM} in
+emacs)
+	${ECHO} "Here is \"Emacs\" shell. Try on other terminal."
+	exit 1
+	;;
+esac
+
+version="%%VERSION%%"
+#version="1.92"
+
+SEDCMD='${SED}
+	-e "s,%%prefix%%,${PREFIX},g"
+	-e "s,%%emacsdir%%,${EMACSDIR},g"
+	-e "s,%%elispdir%%,${ELISPDIR},g"
+	-e "s,%%version%%,${version},g"
+	-e "s,%%nameserver%%,${nameserver},g"
+	-e "s,%%mail_address%%,${mail_address},g"
+	-e "s,%%domain_name%%,${domain_name},g"
+	-e "s,%%default_domain_name%%,${default_domain_name},g"
+	-e "s,%%signature%%,${signature},g"'
+
+###
+# Check ~/.backup directory exist.
+#
+${MKDIR} ${HOME}/.backup
+
+###
+# Backup all files.
+#
+${CP} ${HOME}/${dot_emacs_file} ${HOME}/.backup/${dot_emacs_file}.$$
+${CP} ${HOME}/.im/Config ${HOME}/.backup/Config.$$
+
+###
+# Check ~/.im/Config file exist.
+#
+if [ ! -f ${HOME}/.im/Config ]; then
+	${ECHO} "${HOME}/.im/Config: Not found. Do imsetup first."
+	exit 1
+else
+	mail_address=`${AWK} '/^Address=/{sub(/^Address=/,"");print}' ${HOME}/.im/Config`
+	domain_name=`${AWK} '/^FromDomain=/{sub(/^FromDomain=/,"");print}' ${HOME}/.im/Config`
+	default_domain_name=`${AWK} '/^ToDomain=/{sub(/^ToDomain=/,"");print}' ${HOME}/.im/Config`
+	if [ X"${mail_address}" = "X%%mail_address%%" ]; then
+		mail_address=""
+	else
+		${CP} ${HOME}/.im/Config ${HOME}/.backup/Config
+		${SED} -e 's/^\(Address=\).*$/\1%%mail_address%%/' \
+			< ${HOME}/.backup/Config > ${HOME}/.im/Config
+	fi
+	if [ X"${domain_name}" = "X%%domain_name%%" ]; then
+		domain_name=""
+	else
+		${CP} ${HOME}/.im/Config ${HOME}/.backup/Config
+		${SED} -e 's/^\(FromDomain=\).*$/\1%%domain_name%%/' \
+			< ${HOME}/.backup/Config > ${HOME}/.im/Config
+	fi
+	if [ X"${default_domain_name}" = "X%%default_domain_name%%" ]; then
+		default_domain_name=""
+	else
+		${CP} ${HOME}/.im/Config ${HOME}/.backup/Config
+		${SED} -e 's/^\(ToDomain=\).*$/\1%%default_domain_name%%/' \
+			< ${HOME}/.backup/Config > ${HOME}/.im/Config
+	fi
+fi
+
+###
+# Copy "aliases" if none
+#
+if [ ! -f ${HOME}/.im/Aliases ]; then	
+	${CP} ${SAMPLEDIR}/Aliases ${HOME}/.im
+fi
+
+###
+# Set user environment : nameserver, signature
+#
+options_Highlight=OFF
+options_Citation=OFF
+options_Cite_Change=OFF
+options_Sign_Change=OFF
+language=English
+dot_emacs_file=.emacs
+
+PreSet="\
+This is the main menu of the Mew configuration pre-settings. Please \n\
+select one of the options below by using the arrow keys or typing the \n\
+first character of the option name you intend to set. Invoke an option \n\
+by pressing [ENTER] or [TAB-ENTER] to exit the settings."
+
+answer=None
+while [ ! X"${answer}" = "XQuit" ]; do
+	${DIALOG} --title "Pre-set Mew configurations" \
+	--hline "To select an item press [Enter] on the item" \
+	--menu "${PreSet}" -1 -1 3 \
+	Language	"Determine language in use on Mew" \
+	DotEmacs	"Choose dot.emacs files being to use" \
+	Quit		"Quit this menu" \
+		2>	/tmp/menu.$$
+	retval=$?
+	answer=`${CAT} /tmp/menu.$$|${SED} -e 's/\"//g'`
+	${RM} -f /tmp/menu.$$
+	case $retval in
+		0) if [ -z ${answer} ]; then ${ECHO} "Nothing selected"; contiue; fi ;;
+		1) break ;;
+		255) break ;;
+	esac
+	case ${answer} in
+		Language)
+			select
+			;;
+		DotEmacs)
+			input_data "Emacs dot.emacs file name" "dot_emacs_file" ""
+			;;
+		Quit)
+			answer=Quit
+			;;
+	esac
+done
+
+#echo language=${language}
+#echo dot_emacs_file=${dot_emacs_file}
+#exit 1
+
+MainMenu="\
+This is the main menu of the Mew configuration settings. Please select \n\
+one of the options below by using the arrow keys or typing the first \n\
+character of the option name you intend to set. Invoke an option by \n\
+pressing [ENTER] or [TAB-ENTER] to exit the settings."
+
+answer=None
+while [ ! X"${answer}" = "XQuit" ]; do
+	${DIALOG} --title "Set Mew configurations" \
+	--hline "Select Items and Quit when finished" \
+	--menu "${MainMenu}" -1 -1 6 \
+	NameServer	"Name server Domain name" \
+	MailAddress	"Your mail address (with FQDN)" \
+	DomainName	"Your domain name" \
+	DefaultDomain	"Default domain name in abbrivation" \
+	Options		"Various options on using Mew" \
+	Quit		"Quit this menu" \
+		2>	/tmp/menu.$$
+	retval=$?
+	answer=`${CAT} /tmp/menu.$$`
+	${RM} -f /tmp/menu.$$
+	case $retval in
+		0)	if [ -z ${answer} ]; then
+				${ECHO} "Nothing selected"
+				exit 1
+			fi
+			;;
+		1)	${ECHO} "Cancel pressed."
+			exit 1
+			;;
+		255)	${ECHO} "ESC pressed."
+			exit 1
+			;;
+	esac
+	case ${answer} in
+		NameServer)
+			input_data "Name Server" "nameserver" ""
+			;;
+		MailAddress)
+			input_data "Mail Address" "mail_address" ""
+			;;
+		DomainName)
+			input_data "Domain Name" "domain_name" ""
+			;;
+		DefaultDomain)
+			input_data "Default Domain Name" "default_domain_name" ""
+			;;
+		Options)
+#			options
+			;;
+		Quit)
+			answer=Quit
+			;;
+	esac
+done
+
+#echo 'nameserver='${nameserver}
+#echo 'mail_address='${mail_address}
+#echo 'domain_name='${domain_name}
+#echo 'defaut_domain_name='${default_domain_name}
+
+#exit 1
+
+###
+# Custumize startup files with selected options.
+#
+dot_emacs="dot.emacs.el ${dot_emacs}"
+eval ${SEDCMD} < ${HOME}/.im/Config > ${HOME}/.backup/Config
+
+###
+# Add Mew startup setting to ~/.emacs
+#
+if [ -f ${dot_emacs_file} ]; then
+    ${SED} -e '/^;;;* Mew ;*$/,/^;;; *Mew end$/d' < ${HOME}/${dot_emacs_file} \
+	> ${HOME}/.backup/${dot_emacs_file}
+else
+    ${ECHO} "Create new \"dot.emacs\" file: ${dot_emacs_file}"
+fi
+
+#echo 'dot_emacs='${dot_emacs}
+for f in ${dot_emacs}; do
+	${CAT} ${SAMPLEDIR}/dot.emacs/${f} |\
+		eval ${SEDCMD} >> ${HOME}/.backup/${dot_emacs_file}
+done
+${ECHO} ";;;                                                       Mew end" \
+	>> ${HOME}/.backup/${dot_emacs_file}
+${CP} ${HOME}/.backup/${dot_emacs_file} ${HOME}/${dot_emacs_file}
+
+###
+# Copy im Config file  to ~/.im
+#
+${CP} ${HOME}/.backup/Config ${HOME}/.im/Config

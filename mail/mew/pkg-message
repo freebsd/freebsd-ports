@@ -1,0 +1,10 @@
+*************************************************************************
+* You must set at least following elisp to your own dot.emacs file:     *
+*                                                                       *
+*       (autoload 'mew "mew" nil t)                                     *
+*       (autoload 'mew-send "mew" nil t)                                *
+*       (setq mew-mail-domain-list '("Name_Server_Domain_Name"))        *
+*                                                                       *
+* Most easy way for setting dot.emacs is to use "user-install" script   *
+* in "/usr/local/share/examples/mew.                                    *
+*************************************************************************
