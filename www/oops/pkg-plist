@@ -30,3 +30,4 @@ libexec/oops/transparent.so
 libexec/oops/vary_header.so
 @dirrm libexec/oops
 @dirrm etc/oops/tables
+@dirrm etc/oops
