@@ -295,6 +295,7 @@
     SUBDIR += xmms-sid
     SUBDIR += xmms-sndfile
     SUBDIR += xmms-sndstretch
+    SUBDIR += xmms-speex
     SUBDIR += xmms-tfmx
     SUBDIR += xmms-volnorm
     SUBDIR += xmp
