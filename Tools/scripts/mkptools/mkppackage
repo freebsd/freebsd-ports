@@ -32,6 +32,7 @@ eval {
 	$path_tmp = &_PATH_TMP;
 };
 
+
 sub testdir (@) {
 	my $d;			# currently tested dir
 
@@ -54,15 +55,17 @@ $tmpdir = "$tmpbase/$user.$portname";
 $wdpdir = "$tmpdir/wdp";
 $predir = "$tmpdir/prefix";
 
-$hmake = "env WRKDIRPREFIX=$wdpdir PREFIX=$predir NO_PKG_REGISTER=1 ";
+$hmake = "env WRKDIRPREFIX=$wdpdir EXTRA_PKG_ARGS='-s $predir' NO_PKG_REGISTER=1 ";
 foreach (qw"SHARE MAN LIB BIN") {
 	$hmake .= $_ . "OWN=$user ";
 	$hmake .= $_ . "GRP=$group ";
 }
-$hmake .= "PREFIX=$predir NO_PKG_REGISTER=1 make";
+$hmake .= "NO_PKG_REGISTER=1 make";
 
-open(BUILD, "$hmake |");
-while(<BUILD>) {
+open(INSTALL, "$hmake repackage |");
+while(<INSTALL>) {
 	print;
 }
-close(BUILD);
+close(INSTALL);
+die "abnormal program completion ($?): $!" if $?;
+
