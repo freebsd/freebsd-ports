@@ -1,5 +1,5 @@
 # New ports collection makefile for:	yabasic
-# Version required:	2.61
+# Version required:	2.62
 # Date created:		11 Nov 1999
 # Whom:			Frank Gruender
 #
@@ -14,6 +14,7 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	elwood@mc5sys.in-berlin.de
 
+USE_BISON=	yes
 USE_XLIB=	yes
 GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/${PKGNAME}
