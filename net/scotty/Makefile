@@ -1,5 +1,5 @@
 #
-# $Id: Makefile,v 1.30 1998/09/25 10:05:12 asami Exp $
+# $Id: Makefile,v 1.31 1998/12/18 23:22:54 phk Exp $
 #
 
 DISTNAME=	scotty-2.1.9
@@ -9,6 +9,8 @@ MASTER_SITES=	ftp://ftp.ibr.cs.tu-bs.de/pub/local/tkined/
 MAINTAINER=	phk@freebsd.org
 
 LIB_DEPENDS=	tk80.1:${PORTSDIR}/x11-toolkits/tk80
+
+BROKEN_ELF='Error in startup script: couldn't load file "/usr/local/lib/tkined1.4.9.so": /usr/local/lib/tkined1.4.9.so: Undefined symbol "Tk_CanvasTagsParseProc"'
 
 GNU_CONFIGURE=  yes
 CONFIGURE_ARGS= --with-tcl-config=/usr/local/lib/tcl8.0 \
