@@ -13,6 +13,7 @@ MASTER_SITES=	http://area23.org/QuickPics/
 DISTNAME=	QuickPics-${PORTVERSION}
 
 MAINTAINER=	bifrost@kizmiaz.dis.org
+COMMENT=	A really handy tool for large image collections and digital cameras
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 

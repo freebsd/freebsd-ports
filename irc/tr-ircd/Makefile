@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME:S/-//}-release-${PORTVERSION}-r
 
 MAINTAINER=	sysadmin@alexdupre.com
+COMMENT=	An irc daeemon based on Bahamut and hybrid-7
 
 USE_GMAKE=	yes
 

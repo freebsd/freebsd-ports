@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	jamie@hermans.ca
+COMMENT=	Exif Jpeg camera setting parser and thumbnail remover
 
 MAKEFILE=	${FILESDIR}/Makefile
 

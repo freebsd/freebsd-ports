@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gruftistats
 
 MAINTAINER=	mwest@uct.ac.za
+COMMENT=	Produces a web page of statistics and quotes from IRC channel logs
 
 GNU_CONFIGURE=	YES
 USE_GMAKE=	YES

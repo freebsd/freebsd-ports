@@ -14,6 +14,7 @@ MASTER_SITES=	ftp://ftp.uni-koeln.de/graph/mpeg/ \
 DISTNAME=	MPEGv${PORTVERSION}
 
 MAINTAINER=	treif@mayn.de
+COMMENT=	PVRG's MPEG video stream encoder
 
 WRKSRC=		${WRKDIR}/mpegdir
 MAN1=		mpeg.1

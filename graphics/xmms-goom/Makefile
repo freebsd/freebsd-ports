@@ -15,6 +15,7 @@ DISTNAME=	xmms-goom_${PORTVERSION:S/.p/pre/}-2
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	dyeske@yahoo.com
+COMMENT=	A cool XMMS visualization
 
 BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms \
 		nasm:${PORTSDIR}/devel/nasm

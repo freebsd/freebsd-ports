@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.qubesoft.com/QDraw/download/
 DISTNAME=	${PKGNAME}
 
 MAINTAINER=	dfr@qubesoft.com
+COMMENT=	Library for hardware accelerated 3D graphics
 
 LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
 		GL:${PORTSDIR}/graphics/Mesa3

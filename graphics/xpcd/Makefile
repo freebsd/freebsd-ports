@@ -12,6 +12,7 @@ CATEGORIES+=	graphics
 MASTER_SITES=	http://bytesex.org/misc/
 
 MAINTAINER?=	jylitalo@iki.fi
+COMMENT?=	PhotoCD tool collection
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff

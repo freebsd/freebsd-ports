@@ -11,6 +11,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://hoshina.denpa.org/
 
 MAINTAINER=	kaoru@kaisei.org
+COMMENT=	Graphic file cutter for LEAF/AQUAPLUS PAK format archives
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

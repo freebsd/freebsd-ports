@@ -11,6 +11,7 @@ CATEGORIES=		graphics kde
 MASTER_SITES=		http://www.witchspace.com/files/
 
 MAINTAINER=		jon@witchspace.com
+COMMENT=	A program for generating and rendering landscapes
 
 USE_MESA=		yes
 USE_KDELIBS_VER=	3

@@ -14,6 +14,7 @@ DISTNAME=	korzetszam.2002.06.22
 EXTRACT_SUFX=	.gz
 
 MAINTAINER=	janos.mohacsi@bsd.hu
+COMMENT=	Phone codes in Hungary / Magyarorszagi korzetszamok
 
 NO_WRKSUBDIR=	YES
 EXTRACT_CMD=	${GZCAT}

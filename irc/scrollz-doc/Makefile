@@ -11,6 +11,7 @@ CATEGORIES=	irc
 MASTER_SITES=	http://www.gwi.net/~jcoombs/
 
 MAINTAINER=	kurlon@hotmail.com
+COMMENT=	The docs for the scrollz irc client
 
 pre-install:
 	${MKDIR} ${PREFIX}/share/doc/scrollz

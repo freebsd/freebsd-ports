@@ -14,6 +14,7 @@ DISTNAME=	iranyitoszamok.2002.06.22
 EXTRACT_SUFX=	.gz
 
 MAINTAINER=	janos.mohacsi@bsd.hu
+COMMENT=	Postal codes in Hungary / Magyarorszagi iranyitoszamok
 
 NO_WRKSUBDIR=	yes
 EXTRACT_CMD=	${GZCAT}

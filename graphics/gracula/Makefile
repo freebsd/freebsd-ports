@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.whizkidtech.net/cgi/gcl/ \
 		http://www.whizkidtech.net/gcl/
 
 MAINTAINER=	adam@whizkidtech.net
+COMMENT=	A Graphic Counter Language compiler/interpreter
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gracula ${PREFIX}/bin

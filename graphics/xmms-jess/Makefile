@@ -12,6 +12,7 @@ MASTER_SITES=	http://arquier.free.fr/
 DISTNAME=	JESS-${PORTVERSION}
 
 MAINTAINER=	dyeske@yahoo.com
+COMMENT=	A XMMS visualization plugin that uses SDL
 
 BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms
 LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12

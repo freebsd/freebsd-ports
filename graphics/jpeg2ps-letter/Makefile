@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.pdflib.com/jpeg2ps/
 PKGNAMESUFFIX=	-${PAPERSIZE}
 
 MAINTAINER=	Lars.Koeller@Uni-Bielefeld.de
+COMMENT=	Converter for JPEG compressed images to PostScript Level 2
 
 PAPERSIZE?=	letter
 

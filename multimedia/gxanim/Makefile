@@ -13,6 +13,7 @@ DISTNAME=	GXAnim-${PORTVERSION}
 EXTRACT_SUFX=	.tar.bz2
 
 MAINTAINER=	rbt@zort.ca
+COMMENT=	Graphical front end to Xanim
 
 RUN_DEPENDS=	xanim:${PORTSDIR}/graphics/xanim
 

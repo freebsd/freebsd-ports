@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.mesa3d.org/mesa/misc/ \
 DISTNAME=	Togl-${PORTVERSION}
 
 MAINTAINER=	aa8vb@ipass.net
+COMMENT=	A Tk OpenGL widget
 
 LIB_DEPENDS=	tk83.1:${PORTSDIR}/x11-toolkits/tk83 \
 		tcl83.1:${PORTSDIR}/lang/tcl83

@@ -12,6 +12,7 @@ MASTER_SITES=	http://enfle.fennel.org/files/stable/ \
 		ftp://ftp.goldmoon.org/pub/FreeBSD/ports/distfiles/
 
 MAINTAINER=	samy@goldmoon.org
+COMMENT=	Simple plugin-based graphics viewer
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \

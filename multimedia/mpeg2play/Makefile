@@ -11,6 +11,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.funet.fi/pub/graphics/packages/mpeg/mpeg2play/
 
 MAINTAINER=	charnier@lirmm.fr
+COMMENT=	A program to play mpeg-2 movies on X displays
 
 USE_IMAKE=	yes
 USE_MOTIF=	yes

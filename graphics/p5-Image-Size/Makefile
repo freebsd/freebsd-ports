@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Image
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	tolid@plab.ku.dk
+COMMENT=	Perl5 module to determine the size of images in several common formats
 
 PERL_CONFIGURE=	YES
 CONFIGURE_ARGS=	PREFIX=${PREFIX}

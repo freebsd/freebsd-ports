@@ -11,6 +11,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.coin3d.org/pub/coin/src/
 
 MAINTAINER=	jesse@cs.uni-magdeburg.de
+COMMENT=	Library with image format loaders and front-ends
 
 BUILD_DEPENDS=	guile:${PORTSDIR}/lang/guile
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \

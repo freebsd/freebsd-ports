@@ -11,6 +11,7 @@ CATEGORIES=	graphics kde
 MASTER_SITES=	http://www.uni-ulm.de/~s_azehen/
 
 MAINTAINER=	stefan.jahn@nemesis-sektor.de
+COMMENT=	A KDE editor/modeler for POV-RayTM scenes
 
 RUN_DEPENDS=    povray:${PORTSDIR}/graphics/povray31
 

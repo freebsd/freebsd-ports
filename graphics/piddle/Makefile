@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTFILES=	${DISTNAME}-5.tgz
 
 MAINTAINER=	dom@happygiraffe.net
+COMMENT=	Graphical Drawing library for Python
 
 USE_PYTHON=	yes
 NO_BUILD=	yes

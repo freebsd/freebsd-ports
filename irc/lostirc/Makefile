@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	rael@vectorstar.net
+COMMENT=	LostIRC is a simple and minimal IRC client for X
 
 LIB_DEPENDS=	gtkmm-2.0.2:${PORTSDIR}/x11-toolkits/gtk--2 \
 		intl.4:${PORTSDIR}/devel/gettext

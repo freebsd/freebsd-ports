@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.edwinh.org/imageindex/release/ \
 		http://www.reynoldsnet.org/imageindex/release/
 
 MAINTAINER=	johnjen@reynoldsnet.org
+COMMENT=	A digital photo gallery tool
 
 RUN_DEPENDS=	\
 	${LOCALBASE}/bin/Magick-config:${PORTSDIR}/graphics/ImageMagick \

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Image
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	shell@shellhung.org
+COMMENT=	Perl module for getting image information
 
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/IO/String.pm:${PORTSDIR}/devel/p5-IO-String \

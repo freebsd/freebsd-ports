@@ -11,6 +11,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://www.lcdf.org/gifsicle/
 
 MAINTAINER=	bradh@uunet.co.za
+COMMENT=	Manipulates GIF images and animations
 
 GNU_CONFIGURE=	yes
 

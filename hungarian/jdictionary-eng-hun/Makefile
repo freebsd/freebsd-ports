@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=jdictionary
 DISTFILES=	SmartEngHun-1_4.jar
 
 MAINTAINER=	janos.mohacsi@bsd.hu
+COMMENT=	JDictionary-hun-eng - jDictionary plugin: Hungarian-English
 
 RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper \
 		${LOCALBASE}/etc/javavms:${PORTSDIR}/java/jdk13 \

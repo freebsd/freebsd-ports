@@ -12,6 +12,7 @@ MASTER_SITES=	http://haskell.cs.yale.edu/HOpenGL/releases/
 PKGNAMEPREFIX=	hs-
 
 MAINTAINER=	jan.rochel@epost.de
+COMMENT=	Binding for OpenGL and GLUT for the lazy functional language Haskell
 
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc \
 		green-card:${PORTSDIR}/devel/hs-green-card

@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.virtualartisans.com/kde/andras/kallery/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=		metrol@metrol.net
+COMMENT=	An image gallery generator for KDE
 
 LIB_DEPENDS=	Magick.5:${PORTSDIR}/graphics/ImageMagick
 

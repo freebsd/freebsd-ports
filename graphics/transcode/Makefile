@@ -11,6 +11,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://www.theorie.physik.uni-goettingen.de/~ostreich/transcode/pre/
 
 MAINTAINER=	hendrik@scholz.net
+COMMENT=	A text-console utility for video stream processing
 
 LIB_DEPENDS=	dvdread.2:${PORTSDIR}/multimedia/libdvdread \
 		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt \

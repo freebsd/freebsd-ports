@@ -17,6 +17,7 @@ MASTER_SITES=	http://193.111.113.194/ \
 DISTNAME=	psyBNC${PORTVERSION}
 
 MAINTAINER=	webmaster@topfx.com
+COMMENT=	PsyBNC is an extremely powerful IRC bouncer
 
 WRKSRC=		${WRKDIR}/psybnc
 PSYBASE=	${PREFIX}/psybnc

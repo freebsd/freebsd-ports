@@ -14,6 +14,7 @@ MASTER_SITES=	http://www.geocities.com/majormms/ \
 DISTNAME=	mms_client-${PORTVERSION}
 
 MAINTAINER=	danfe@regency.nsu.ru
+COMMENT=	Download Microsoft Media streams
 
 GNU_CONFIGURE=	yes
 MAN1=		mmsclient.1

@@ -14,6 +14,7 @@ DISTNAME=	capture
 EXTRACT_SUFX=  .tgz
 
 MAINTAINER=	alan@clegg.com
+COMMENT=	SONY VAIO camera capture utility
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_GNOMENG=	yes

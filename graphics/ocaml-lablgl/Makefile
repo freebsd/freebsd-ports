@@ -13,6 +13,7 @@ MASTER_SITES=	http://wwwfun.kurims.kyoto-u.ac.jp/soft/olabl/dist/ \
 PKGNAMEPREFIX=	ocaml-
 
 MAINTAINER=	rk@ronald.org
+COMMENT=	OpenGL interface for Objective Caml
 
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
 RUN_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml

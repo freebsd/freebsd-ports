@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.xsane.org/download/ \
 		ftp://ftp.mostang.com/pub/sane/xsane/
 
 MAINTAINER=	domi@saargate.de
+COMMENT=	Gtk-based X11 frontend for SANE (Scanner Access Now Easy)
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \

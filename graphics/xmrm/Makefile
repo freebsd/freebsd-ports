@@ -15,6 +15,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}_sources
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	treif@mayn.de
+COMMENT=	An image morphing/warping program
 
 RUN_DEPENDS=	mpeg:${PORTSDIR}/graphics/mpeg \
 		mpeg_play:${PORTSDIR}/graphics/mpeg_play

@@ -18,6 +18,7 @@ DISTNAME=	povray31
 DISTFILES=	povuni_s.tgz povuni_d.tgz
 
 MAINTAINER=	olli@fromme.com
+COMMENT=	Persistence of Vision Ray Tracer
 
 #BUILD_DEPENDS=  unzip:${PORTSDIR}/archivers/unzip
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png

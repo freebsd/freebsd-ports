@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.vocito.com/downloads/software/party/ \
 		ftp://ftp.vocito.com/pub/vocito.com/software/party/
 
 MAINTAINER=	ports@vocito.com
+COMMENT=	Simple multi-user chat system
 
 MAN1=	party.1
 

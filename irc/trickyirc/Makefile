@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.leb.net/~troll/
 DISTNAME=	TrickyIRC-${PORTVERSION}
 
 MAINTAINER=	troll@digitalspark.net
+COMMENT=	Allows client independent detaching and reattaching of IRC sessions
 
 MAKEFILE=	GNUmakefile
 WRKSRC=		${WRKDIR}/trickyirc

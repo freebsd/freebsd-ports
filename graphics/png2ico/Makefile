@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.winterdrache.de/freeware/png2ico/data/
 DISTNAME=	${PORTNAME}-src-${PORTVERSION:S/./-/g}
 
 MAINTAINER=	klammer@webonaut.com
+COMMENT=	Converts PNG files to Windows icon resource files
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 

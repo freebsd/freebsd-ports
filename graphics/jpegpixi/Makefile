@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	jpegpixi
 
 MAINTAINER=	verm@drunkmonk.net
+COMMENT=	Useful to correct images from digtal camera with CCD defects
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 

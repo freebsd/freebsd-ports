@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.funet.fi/pub/unix/irc/sic/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	sec@42.org
+COMMENT=	Another 'Internet Relay Chat' Client
 
 GNU_CONFIGURE=	yes
 

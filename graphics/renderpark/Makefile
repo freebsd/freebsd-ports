@@ -16,6 +16,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} Scenes${EXTRACT_SUFX}
 DIST_SUBDIR=	${DISTNAME}
 
 MAINTAINER=	tiamat@telegraph.spb.ru
+COMMENT=	System for physically based photo-realistic image synthesis
 
 .ifdef (WITH_XRML)
 LIB_DEPENDS=	xrml.0:${PORTSDIR}/graphics/xrml

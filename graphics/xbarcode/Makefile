@@ -11,6 +11,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://www.nodetree.net/distfiles/
 
 MAINTAINER=	brett@nodetree.net
+COMMENT=	Generates bar codes in a variety of formats
 
 LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview
 RUN_DEPENDS=	pnmfile:${PORTSDIR}/graphics/netpbm

@@ -14,6 +14,7 @@ PKGNAMEPREFIX=	hs-
 DISTNAME=	graphics-${PORTVERSION}.src
 
 MAINTAINER=	octaphial@yahoo.com
+COMMENT=	Graphics library for Hugs98, an implementation of Haskell 98
 
 RUN_DEPENDS=	hugs:${PORTSDIR}/lang/hugs
 

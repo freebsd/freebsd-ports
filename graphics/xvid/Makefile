@@ -14,6 +14,7 @@ MASTER_SITES=	http://files.xvid.org/downloads/
 DISTNAME=	xvidcore-${PORTVERSION}
 
 MAINTAINER=	michaelnottebrock@gmx.net
+COMMENT=	An opensource MPEG-4 codec, based on OpenDivx
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/nasm:${PORTSDIR}/devel/nasm
 

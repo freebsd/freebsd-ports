@@ -15,6 +15,7 @@ DISTNAME=	Gauche-${PORTNAME}-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	fuyuki@hadaly.org
+COMMENT=	OpenGL binding for Gauche
 
 BUILD_DEPENDS=	gosh:${PORTSDIR}/lang/gauche
 RUN_DEPENDS=	${BUILD_DEPENDS}

@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.jibble.org/files/ \
 		http://www.i-scream.org.uk/downloads/other/
 
 MAINTAINER=	tim@bishnet.net
+COMMENT=	PircBot Java IRC Bot Framework
 
 USE_ZIP=	yes
 NO_BUILD=	yes

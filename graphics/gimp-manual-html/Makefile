@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://manual.gimp.org/pub/manual/ \
 PKGNAMESUFFIX=	-${DOCFORMAT}
 
 MAINTAINER=	brett@peloton.runet.edu
+COMMENT=	The user manual for the GNU Image Manipulation Program (GIMP)
 
 .if !defined(DOCFORMAT)
 DOCFORMAT=HTML

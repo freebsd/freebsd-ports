@@ -13,6 +13,7 @@ PKGNAMESUFFIX=	-gui
 DISTNAME=	quat-${PORTVERSION:S/.p/pre/}
 
 MAINTAINER=	dyeske@yahoo.com
+COMMENT=	A Three-dimensional fractal creator (X11 GUI)
 
 LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
 

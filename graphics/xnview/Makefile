@@ -14,6 +14,7 @@ DISTNAME=       XnView-x86-unknown-FreeBSD4.x-static
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	petr@petrovich.kiev.ua
+COMMENT=	An easy graphics viewer / converter
 
 ONLY_FOR_ARCHS=	i386
 NO_BUILD=	yes

@@ -12,6 +12,7 @@ MASTER_SITES=	http://stukach.com/hosted/
 DISTNAME=	fishmatic
 
 MAINTAINER=	dyeske@yahoo.com
+COMMENT=	An XMMS non-static OpenGL stereogram visualization plugin
 
 BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms
 RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
