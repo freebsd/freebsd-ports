@@ -61,13 +61,16 @@ share/locale/eu/LC_MESSAGES/gtksourceview-1.0.mo
 share/locale/fi/LC_MESSAGES/gtksourceview-1.0.mo
 share/locale/fr/LC_MESSAGES/gtksourceview-1.0.mo
 share/locale/he/LC_MESSAGES/gtksourceview-1.0.mo
+share/locale/id/LC_MESSAGES/gtksourceview-1.0.mo
 share/locale/it/LC_MESSAGES/gtksourceview-1.0.mo
 share/locale/ja/LC_MESSAGES/gtksourceview-1.0.mo
 share/locale/hi/LC_MESSAGES/gtksourceview-1.0.mo
 share/locale/hu/LC_MESSAGES/gtksourceview-1.0.mo
 share/locale/ko/LC_MESSAGES/gtksourceview-1.0.mo
+share/locale/lt/LC_MESSAGES/gtksourceview-1.0.mo
 share/locale/mk/LC_MESSAGES/gtksourceview-1.0.mo
 share/locale/ml/LC_MESSAGES/gtksourceview-1.0.mo
+share/locale/mn/LC_MESSAGES/gtksourceview-1.0.mo
 share/locale/ms/LC_MESSAGES/gtksourceview-1.0.mo
 share/locale/nl/LC_MESSAGES/gtksourceview-1.0.mo
 share/locale/no/LC_MESSAGES/gtksourceview-1.0.mo
@@ -82,6 +85,7 @@ share/locale/sq/LC_MESSAGES/gtksourceview-1.0.mo
 share/locale/sv/LC_MESSAGES/gtksourceview-1.0.mo
 share/locale/ta/LC_MESSAGES/gtksourceview-1.0.mo
 share/locale/tr/LC_MESSAGES/gtksourceview-1.0.mo
+share/locale/uk/LC_MESSAGES/gtksourceview-1.0.mo
 share/locale/vi/LC_MESSAGES/gtksourceview-1.0.mo
 share/locale/zh_CN/LC_MESSAGES/gtksourceview-1.0.mo
 share/locale/zh_TW/LC_MESSAGES/gtksourceview-1.0.mo
