@@ -15,7 +15,7 @@ DISTNAME=	FOTAQ_Talkie
 MAINTAINER=	alexander@trull.com
 COMMENT=	Flight of the Amazon Queen: a classic graphical adventure
 
-RUN_DEPENDS=	scummvm:${PORTSDIR}/emulators/scummvm
+RUN_DEPENDS=	scummvm:${PORTSDIR}/games/scummvm
 
 USE_ZIP=	yes
 NO_BUILD=	yes
