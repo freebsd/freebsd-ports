@@ -1,0 +1,2 @@
+@exec %%LOCALBASE%%/bin/gosh -uslib -E"require 'new-catalog" -Eexit
+@unexec rm -f %%LOCALBASE%%/share/gauche/%%VERSION%%/lib/slibcat
