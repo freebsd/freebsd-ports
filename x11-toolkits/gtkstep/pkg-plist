@@ -4,5 +4,3 @@ share/themes/Step/gtk/gtkrc
 lib/gtk/themes/engines/libstep.so
 @dirrm share/themes/Step/gtk
 @dirrm share/themes/Step
-@unexec rmdir %D/lib/gtk/themes/engines 2>/dev/null || true
-@unexec rmdir %D/lib/gtk/themes 2>/dev/null || true
