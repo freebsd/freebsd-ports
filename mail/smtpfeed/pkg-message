@@ -1,0 +1,18 @@
+**************************************************************
+smtpfeed is installed into /usr/local/libexec/smtpfeed.
+You'll need to perform 3 steps, (a) to (c), to make smtpfeed
+work:
+	(a) replace /etc/sendmail.cf
+	(b) replace sendmail with the patched sendmail
+	(c) setting up /etc/syslog.conf
+
+(a) depends on what kind of configuration tool you are using
+with sendmail.cf.  Read through documentation in
+/usr/local/share/doc/smtpfeed for details.
+(b) can be done by performing "make install-sendmail" in the
+port directory.
+WARNING: Existing sendmail will be overwritten right away!
+Backup by yourself for safety.
+(c) is the easiest of the three items; see file named INSTALL
+in /usr/local/share/doc/smtpfeed.
+**************************************************************

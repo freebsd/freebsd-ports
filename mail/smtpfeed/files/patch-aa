@@ -1,0 +1,10 @@
+--- Makefile.in.orig	Sun Jan 18 23:02:21 1998
++++ Makefile.in	Sun Jan 18 23:02:34 1998
+@@ -70,7 +70,6 @@
+ 	${RM} -f ${OBJS} ${OBJADDS} ${TARGET} res_send.c
+ 
+ install:
+-	-mv -f ${DEST}/${TARGET} ${DEST}/${TARGET}.old
+ 	${INSTALL} ${TARGET} ${DEST}
+ 
+ gcc2-lint:
