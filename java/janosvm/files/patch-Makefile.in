@@ -1,0 +1,11 @@
+--- Makefile.in.orig    Thu Apr  4 17:27:44 2002
++++ Makefile.in Thu Apr  4 17:28:00 2002
+@@ -140,7 +140,7 @@
+
+ AUTOMAKE_OPTIONS = foreign 1.3e
+
+-SUBDIRS = . config include libltdl doc libraries kaffe test
++SUBDIRS = . config include libltdl libraries kaffe test
+
+ EXTRA_DIST = \
+        ChangeLog.1 \
