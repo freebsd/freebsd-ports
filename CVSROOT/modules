@@ -5890,6 +5890,7 @@ p5-libvorbis	ports/audio/p5-libvorbis
 p5-libwww	ports/www/p5-libwww
 p5-libxml	ports/textproc/p5-libxml
 p5-ming		ports/graphics/p5-ming
+p5-mixin	ports/devel/p5-mixin
 p5-perl-ldap	ports/net/p5-perl-ldap
 p5-podlators	ports/textproc/p5-podlators
 p5-postgresql-plperl	ports/databases/p5-postgresql-plperl
