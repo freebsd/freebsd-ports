@@ -1,0 +1,11 @@
+-----------------------------------------------------------------
+You have installed cgiwrap, a wrapper to securely execute user
+CGI programs.  cgiwrap is reported to work with most web servers
+that support CGI, so no one specific server has been included as
+a depend.  If you are unsure of which webserver to use, it is
+recommended to try the Apache web server package.
+
+The cgiwrap scripts have been installed in:
+    ${PREFIX}/www/cgi-bin
+...the default location for Apache's cgi-bin directory.
+-----------------------------------------------------------------
