@@ -1,82 +1,61 @@
-*** Imakefile.orig	Mon Jan 27 01:22:08 1997
---- Imakefile	Tue Jun 10 07:12:07 1997
-***************
-*** 91,103 ****
-  XCOMM --    Indeo 3.x  IV32	indeo.readme
-  XCOMM --    Creative   CYUV	creative.readme
-  XCOMM 
-! XCOMM XA_IV32_DEF = -DXA_INDEO 
-! XCOMM XA_CVID_DEF = -DXA_CINEPAK
-! XCOMM XA_CYUV_DEF = -DXA_CYUV
-! XCOMM
-! XA_IV32_LIB = 
-! XA_CVID_LIB = 
-! XA_CYUV_LIB = 
-  XCOMM
-  XCOMM -- NOTE: SGI Machines only: if you see an error like
-  XCOMM --               "merge_ext returns nil during relocation" or similiar
---- 91,103 ----
-  XCOMM --    Indeo 3.x  IV32	indeo.readme
-  XCOMM --    Creative   CYUV	creative.readme
-  XCOMM 
-! XA_IV32_DEF = -DXA_INDEO
-! XA_CVID_DEF = -DXA_CINEPAK
-! XA_CYUV_DEF = -DXA_CYUV
-! XCOMM
-! XA_IV32_LIB = xa2.0_cvid_netbsd386.o
-! XA_CVID_LIB = xa2.0_iv32_netbsd386.o
-! XA_CYUV_LIB = xa1.0_cyuv_netbsd386.o
-  XCOMM
-  XCOMM -- NOTE: SGI Machines only: if you see an error like
-  XCOMM --               "merge_ext returns nil during relocation" or similiar
-***************
-*** 154,160 ****
-  XCOMM XA_AUDIO_DEFS =
-  XCOMM
-  XCOMM -- Sun Sparcs -----------------------------------------------------------
-! XA_AUDIO_DEFS = -DXA_SPARC_AUDIO
-  XCOMM
-  XCOMM NOTE: Imakefile should add the -DSVR4 to Sun Solaris machines, if not
-  XCOMM       use the following:
---- 154,160 ----
-  XCOMM XA_AUDIO_DEFS =
-  XCOMM
-  XCOMM -- Sun Sparcs -----------------------------------------------------------
-! XCOMM XA_AUDIO_DEFS = -DXA_SPARC_AUDIO
-  XCOMM
-  XCOMM NOTE: Imakefile should add the -DSVR4 to Sun Solaris machines, if not
-  XCOMM       use the following:
-***************
-*** 199,205 ****
-  XCOMM XA_MACH_LIBS = -lc
-  XCOMM 
-  XCOMM -- Also FreeBSD, and BSDI with SBlast-BSD-1.5 (development stages)-------
-! XCOMM XA_AUDIO_DEFS = -DXA_LINUX_AUDIO -DXA_LINUX_NEWER_SND
-  XCOMM XA_AUDIO_LIBS = -lc
-  XCOMM
-  XCOMM -- SGI Indigo -----------------------------------------------------------
---- 199,205 ----
-  XCOMM XA_MACH_LIBS = -lc
-  XCOMM 
-  XCOMM -- Also FreeBSD, and BSDI with SBlast-BSD-1.5 (development stages)-------
-! XA_AUDIO_DEFS = -DXA_LINUX_AUDIO -DXA_LINUX_NEWER_SND
-  XCOMM XA_AUDIO_LIBS = -lc
-  XCOMM
-  XCOMM -- SGI Indigo -----------------------------------------------------------
-***************
-*** 334,340 ****
+--- Imakefile.old	Tue Apr 28 02:39:31 1998
++++ Imakefile	Tue Apr 28 02:45:12 1998
+@@ -91,13 +91,13 @@
+ XCOMM --    Indeo 3.x  IV32	indeo.readme
+ XCOMM --    Creative   CYUV	creative.readme
+ XCOMM 
+-XCOMM XA_IV32_DEF = -DXA_INDEO 
+-XCOMM XA_CVID_DEF = -DXA_CINEPAK
+-XCOMM XA_CYUV_DEF = -DXA_CYUV
+-XCOMM
+-XA_IV32_LIB = 
+-XA_CVID_LIB = 
+-XA_CYUV_LIB = 
++XA_IV32_DEF = -DXA_INDEO 
++XA_CVID_DEF = -DXA_CINEPAK
++XA_CYUV_DEF = -DXA_CYUV
++XCOMM
++XA_IV32_LIB = xa2.0_cvid_netbsd386.o
++XA_CVID_LIB = xa2.0_iv32_netbsd386.o
++XA_CYUV_LIB = xa1.0_cyuv_netbsd386.o
+ XCOMM
+ XCOMM NOTE: SGI Machines Only:
+ XCOMM    if your linker core dumps then you'll need to uncomment the following
+@@ -165,7 +165,7 @@
+ XCOMM XA_AUDIO_DEFS =
+ XCOMM
+ XCOMM -- Sun Sparcs -----------------------------------------------------------
+-XA_AUDIO_DEFS = -DXA_SPARC_AUDIO
++XCOMM XA_AUDIO_DEFS = -DXA_SPARC_AUDIO
+ XCOMM
+ XCOMM NOTE: Imakefile should add the -DSVR4 to Sun Solaris machines, if not
+ XCOMM       use the following:
+@@ -210,8 +210,8 @@
+ XCOMM XA_MACH_LIBS = -lc
+ XCOMM 
+ XCOMM -- Also FreeBSD, and BSDI with SBlast-BSD-1.5 (development stages)-------
+-XCOMM XA_AUDIO_DEFS = -DXA_LINUX_AUDIO -DXA_LINUX_NEWER_SND
+-XCOMM XA_AUDIO_LIBS = -lc
++XA_AUDIO_DEFS = -DXA_LINUX_AUDIO -DXA_LINUX_NEWER_SND
++XA_AUDIO_LIBS = -lc
+ XCOMM
+ XCOMM -- SGI Indigo -----------------------------------------------------------
+ XCOMM XA_AUDIO_DEFS = -DXA_SGI_AUDIO
+@@ -325,7 +325,7 @@
+ XCOMM   -- following symbols(XmbufDisplayBuffers, XmbufQueryExtension,
+ XCOMM   --  XmbufCreateBuffers).
+ XCOMM   -- NOTE_7: HP-UX machines need to comment this out.
+-XCOMM XA_MULTIBUF = -DXMBUF
++XA_MULTIBUF = -DXMBUF
+ XCOMM
+ XCOMM ********************
   
-  PROGRAMS = xanim
-  
-! INCLUDES = -I$(INCDIR) $(XA_INCS)
-  
-  
-     LIBS1 = $(XA_LIBS) $(EXTENSIONLIB) $(XTOOLLIB) $(XLIB) -lm
---- 334,340 ----
-  
-  PROGRAMS = xanim
-  
-! INCLUDES = -I$(INCDIR)/X11 $(XA_INCS)
-  
-  
-     LIBS1 = $(XA_LIBS) $(EXTENSIONLIB) $(XTOOLLIB) $(XLIB) -lm
+@@ -345,7 +345,7 @@
+ 
+ PROGRAMS = xanim
+ 
+-INCLUDES = -I$(INCDIR) $(XA_INCS)
++INCLUDES = -I$(INCDIR)/X11 $(XA_INCS)
+ 
+ 
+    LIBS1 = $(XA_LIBS) $(EXTENSIONLIB) $(XTOOLLIB) $(XLIB) -lm
