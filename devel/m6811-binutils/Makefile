@@ -19,6 +19,7 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The binutils-2.9.1 cross-toolchain for the 6811
 
+NOT_FOR_ARCHS=	amd64
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} --target=m6811-elf	\
