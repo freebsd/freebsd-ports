@@ -1,0 +1,9 @@
+This desklet (sensor/display) shows the current temperature, humidity, sky,
+windchill temperature and a forecast of the next 4 days on your desktop.
+
+The data is retrieved from Weather XML Data Feed project at weather.com.
+
+The desklet is a hack based on the code of the original weather desklet, the
+Liquid Weather++ module for Karamba and some very nice artwork.
+
+WWW: http://people.roqe.org/kr/
