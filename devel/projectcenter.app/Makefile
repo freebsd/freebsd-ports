@@ -8,8 +8,10 @@
 PORTNAME=	projectcenter.app
 PORTVERSION=	0.3.2
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.gnustep.org/pub/gnustep/dev-apps/
+MASTER_SITES=	${MASTER_SITE_GNUSTEP} \
+		ftp://ftp.gnustep.org/pub/gnustep/%SUBDIR%/
 DISTNAME=	ProjectCenter-${PORTVERSION}
+MASTER_SITE_SUBDIR=	dev-apps
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	A development environment for GNUstep
