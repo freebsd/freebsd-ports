@@ -530,6 +530,7 @@ bbmail		ports/mail/bbmail
 bbpager		ports/x11-wm/bbpager
 bbrb		ports/graphics/bbrb
 bbrun		ports/x11/bbrun
+bbsmount	ports/sysutils/bbsmount
 bbsnet		ports/net/bbsnet
 bcc		ports/devel/bcc
 bchunk		ports/sysutils/bchunk
