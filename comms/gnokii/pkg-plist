@@ -21,7 +21,7 @@ include/gnokii/virtmodem.h
 lib/libgnokii.a
 lib/libgnokii.la
 lib/libgnokii.so
-lib/libgnokii.so.1
+lib/libgnokii.so.2
 libdata/pkgconfig/gnokii.pc
 sbin/gnokiid
 sbin/mgnokiidev
@@ -36,12 +36,14 @@ sbin/mgnokiidev
 %%PORTDOCS%%%%DOCSDIR%%/README-6510
 %%PORTDOCS%%%%DOCSDIR%%/README-7110
 %%PORTDOCS%%%%DOCSDIR%%/README-MacOSX
+%%PORTDOCS%%%%DOCSDIR%%/README-Symbian
 %%PORTDOCS%%%%DOCSDIR%%/README-WIN32
 %%PORTDOCS%%%%DOCSDIR%%/README-dancall
 %%PORTDOCS%%%%DOCSDIR%%/README-ericsson
 %%PORTDOCS%%%%DOCSDIR%%/README-siemens
 %%PORTDOCS%%%%DOCSDIR%%/README.libsms
 %%PORTDOCS%%%%DOCSDIR%%/gettext-howto
+%%PORTDOCS%%%%DOCSDIR%%/gnapplet.sis
 %%PORTDOCS%%%%DOCSDIR%%/gnokii-IrDA-Linux
 %%PORTDOCS%%%%DOCSDIR%%/gnokii-hackers-howto
 %%PORTDOCS%%%%DOCSDIR%%/gnokii-ir-howto
