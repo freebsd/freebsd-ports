@@ -8,7 +8,8 @@
 PORTNAME=	openh323proxy
 PORTVERSION=	0.9.9
 CATEGORIES=	net
-MASTER_SITES=	http://download.sourceforge.net/openh323proxy/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	roger@FreeBSD.org
 
