@@ -22,6 +22,9 @@ MAKE_ARGS=	PREFIX="${PREFIX}" DATADIR="${EXAMPLESDIR}"
 post-patch:
 	${REINPLACE_CMD} -e "s|cp -p|${CP}|g" ${WRKSRC}/Makefile
 
+pre-install:
+	${MKDIR} `gauche-config --sitelibdir`
+
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
