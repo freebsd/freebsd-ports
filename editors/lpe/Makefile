@@ -6,14 +6,12 @@
 #
 
 PORTNAME=	lpe
-PORTVERSION=	1.2.5
-PORTREVISION=	2
+PORTVERSION=	1.2.6
 CATEGORIES=	editors
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-		http://cdsmith.twu.net/opensource/lpe/
+MASTER_SITES=	ftp://ftp.twu.net/users/cdsmith/lpe/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	calle.madestrand@norrgarden.se
+MAINTAINER=	ryan@sasknow.com
 
 LIB_DEPENDS=	slang.1:${PORTSDIR}/devel/libslang \
 		intl.1:${PORTSDIR}/devel/gettext
@@ -26,6 +24,6 @@ CONFIGURE_ENV=	LDFLAGS="-L${PREFIX}/lib -L${LOCALBASE}/lib" \
 CONFIGURE_ARGS=	--includedir=${LOCALBASE}/include
 
 MAN1=		lpe.1
-MANLANG=	bg cz de es fr pl ru
+MANLANG=	bg cs de es fr pl ru
 
 .include <bsd.port.mk>
