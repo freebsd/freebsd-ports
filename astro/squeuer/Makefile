@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	squeuer
-PORTVERSION=	2.0.1
+PORTVERSION=	2.0.2
 CATEGORIES=	astro net
 MASTER_SITES=	http://www.eyesbeyond.com/squeuer/
 
