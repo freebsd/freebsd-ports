@@ -59,4 +59,9 @@ post-install:
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/${LICQ_PORT}/Makefile.inc"
+
+.if ${OSVERSION} >= 502122
+BROKEN=		new gcc: cast to non-reference type
+.endif
+
 .include <bsd.port.post.mk>
