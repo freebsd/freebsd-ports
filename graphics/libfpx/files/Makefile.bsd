@@ -1,0 +1,35 @@
+LIB	=	fpx
+INCS	=	fpxlib.h
+SHLIB_MAJOR=	1
+SHLIB_MINOR=	2
+
+LIBDIR	=	${LOCALBASE}/lib
+INCDIR	=	${LOCALBASE}/include
+
+NOPROFILE=	Don't want it
+
+CPPS	!=	find ${.CURDIR} -name \*.cpp -print
+# Some of the .cxx files are #include-ed into others, so can't use `find' here:
+OLESS	:=	ascii.cxx cdocfile.cxx chinst.cxx dffuncs.cxx dfiter.cxx \
+		dfstream difat.cxx dir.cxx dirp.cxx docfile.cxx entry.cxx \
+		expdf.cxx expiter expst.cxx fat.cxx funcs.cxx header.cxx \
+		iter.cxx mem.cxx msf msfiter.cxx mstream.cxx page.cxx \
+		refilb.cxx rexpdf.cxx sstream.cxx storage.cxx time.cxx \
+		vect.cxx wchar.c
+JPGS	!=	find ${.CURDIR}/jpeg -name \*.c
+
+CPPS	+=	${OLESS:S/^/${.CURDIR}\/oless\//} ${JPGS}
+
+SRCS	=	${CPPS:T}
+
+CXXFLAGS+=	-I${LOCALBASE}/include -D_UNIX
+CXXFLAGS+=	-fno-rtti -fno-exceptions
+LDADD	+=	-L${LOCALBASE}/lib -ljpeg
+
+.PATH: ${CPPS:H}
+
+.for d in oless/h jpeg ole basics ri_image oless fpx
+CXXFLAGS+=	-I${.CURDIR}/$d
+.endfor
+
+.include <bsd.lib.mk>

@@ -1,0 +1,4 @@
+lib/libfpx.so.1.2
+lib/libfpx.so
+lib/libfpx.a
+include/fpxlib.h
