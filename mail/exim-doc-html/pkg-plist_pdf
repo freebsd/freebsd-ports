@@ -1,3 +1,0 @@
-%%PORTDOCS%%%%DOCSDIR%%/filter.pdf
-%%PORTDOCS%%%%DOCSDIR%%/spec.pdf
-@unexec rmdir %D/%%DOCSDIR%% 2>/dev/null || true
