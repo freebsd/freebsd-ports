@@ -35,7 +35,6 @@ info/sc
 info/vip
 info/viper
 info/widget
-@exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
 @exec install-info %D/info/ccmode %D/info/dir
 @exec install-info %D/info/cl %D/info/dir
 @exec install-info %D/info/customize %D/info/dir

@@ -17,4 +17,3 @@ info/cssc.info
 info/cssc.info-1
 info/cssc.info-2
 info/cssc.info-3
-@exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir

@@ -133,7 +133,6 @@ info/mule-jp-2
 info/mule-jp-3
 info/quail
 info/terminology
-@exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
 @exec install-info %D/info/emacs %D/info/dir
 @exec install-info %D/info/vip %D/info/dir
 @exec install-info %D/info/forms %D/info/dir

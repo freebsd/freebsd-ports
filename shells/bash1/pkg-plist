@@ -4,5 +4,4 @@ bin/bash
 bin/bashbug
 @unexec install-info --delete %D/info/bash.info %D/info/dir
 info/bash.info
-@exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
 @exec install-info %D/info/bash.info %D/info/dir

@@ -3,7 +3,7 @@
 # Date created:			4 Aug 1998
 # Whom:				Motoyuki Kasahara <m-kasahr@sra.co.jp>
 #
-# $Id: Makefile,v 1.6 1999/01/26 03:06:43 steve Exp $
+# $Id: Makefile,v 1.7 1999/03/15 13:00:35 taoka Exp $
 #
 
 DISTNAME=	ndtpd-2.2.2
@@ -28,9 +28,6 @@ IS_INTERACTIVE=	Maybe_interactive_at_install_stage
 .endif
 
 post-install:
-	if [ ! -f ${PREFIX}/info/dir ]; then \
-	    ${SED} -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
-	fi
 .for info in ndtpd ndtpd-ja
 	install-info ${PREFIX}/info/${info}.info ${PREFIX}/info/dir
 .endfor

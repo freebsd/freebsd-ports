@@ -48,6 +48,5 @@ bin/xcopy
 bin/mcomp
 @unexec install-info --delete %D/info/mtools.info %D/info/dir
 info/mtools.info
-@exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
 @exec install-info %D/info/mtools.info %D/info/dir
 etc/mtools.conf

@@ -3,7 +3,7 @@
 # Date created:				24 February 1996
 # Whom:					Joseph Koshy <koshy@india.hp.com>
 #
-# $Id: Makefile,v 1.9 1998/11/29 12:43:08 asami Exp $
+# $Id: Makefile,v 1.10 1999/01/23 07:05:31 vanilla Exp $
 #
 
 DISTNAME=	XaoS-3.0
@@ -33,9 +33,6 @@ MAN6=		xaos.6
 
 post-install:
 	strip ${PREFIX}/bin/xaos
-	if [ ! -f ${PREFIX}/info/dir ]; then \
-		${SED} -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
-	fi
 	install-info ${PREFIX}/info/xaos.info ${PREFIX}/info/dir
 
 .include <bsd.port.mk>

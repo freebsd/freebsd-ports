@@ -38,7 +38,6 @@ info/ebfont-ja.info
 info/ebinfo-ja.info
 info/ebrefile-ja.info
 info/ebzip-ja.info
-@exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
 @exec install-info %D/info/eb.info %D/info/dir
 @exec install-info %D/info/ebfont.info %D/info/dir
 @exec install-info %D/info/ebinfo.info %D/info/dir

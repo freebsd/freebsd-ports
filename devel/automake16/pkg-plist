@@ -2,7 +2,6 @@ bin/aclocal
 bin/automake
 @unexec install-info --delete %D/info/automake.info %D/info/dir
 info/automake.info
-@exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
 @exec install-info %D/info/automake.info %D/info/dir
 share/aclocal/ccstdc.m4
 share/aclocal/cond.m4

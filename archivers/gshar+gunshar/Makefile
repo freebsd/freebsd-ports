@@ -3,7 +3,7 @@
 # Date created:         28 Dec 1994
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.12 1998/01/23 00:43:26 jseger Exp $
+# $Id: Makefile,v 1.13 1999/01/27 07:41:03 fenner Exp $
 #
 
 DISTNAME=       sharutils-4.2
@@ -25,9 +25,6 @@ post-install:
 .for file in gshar gunshar
 	strip ${PREFIX}/bin/${file}
 .endfor
-	if [ ! -f ${PREFIX}/info/dir ]; then \
-	  ${SED} -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
-	fi
 .for info in remsync.info sharutils.info
 	install-info ${PREFIX}/info/${info} ${PREFIX}/info/dir
 .endfor

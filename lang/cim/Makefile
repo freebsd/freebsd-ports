@@ -3,7 +3,7 @@
 # Date created:			21 Sept 1996
 # Whom:				giffunip
 #
-# $Id: Makefile,v 1.7 1998/10/13 23:51:41 jseger Exp $
+# $Id: Makefile,v 1.8 1999/03/15 01:22:57 steve Exp $
 #
 
 DISTNAME=	cim-3.29
@@ -17,10 +17,5 @@ MAINTAINER=	ports@FreeBSD.ORG
 
 GNU_CONFIGURE= 	yes
 MAN1=		cim.1
-
-pre-install:
-	if [ ! -f ${PREFIX}/info/dir ]; then \
-		${SED} -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
-	fi
 
 .include <bsd.port.mk>

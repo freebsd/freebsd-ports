@@ -3,7 +3,7 @@
 # Date created:		12 Mar 1998
 # Whom:			CHOI Junho <junker@jazz.snu.ac.kr>
 #
-# $Id: Makefile,v 1.3 1999/01/18 03:21:43 steve Exp $
+# $Id: Makefile,v 1.4 1999/03/08 07:28:27 asami Exp $
 #
 
 DISTNAME=	hanemacs-19.34b-1
@@ -36,9 +36,6 @@ post-install:
 .for file in hanemacs-19.34 emacsclient etags ctags b2m
 	strip ${PREFIX}/bin/${file}
 .endfor
-	if [ ! -f ${PREFIX}/info/dir ]; then \
-	  ${SED} -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
-	fi
 .for info in emacs vip viper forms gnus mh-e cl sc dired-x ediff ccmode message
 	install-info ${PREFIX}/info/${info} ${PREFIX}/info/dir
 .endfor

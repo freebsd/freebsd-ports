@@ -101,7 +101,6 @@ info/viper-1
 info/viper-2
 info/viper-3
 info/viper-4
-@exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
 @exec install-info %D/info/emacs %D/info/dir
 @exec install-info %D/info/vip %D/info/dir
 @exec install-info %D/info/viper %D/info/dir

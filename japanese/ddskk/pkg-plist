@@ -45,5 +45,4 @@ info/skk.info-3
 info/skk.info-4
 info/skk.info-5
 info/skk.info-6
-@exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
 @exec install-info %D/info/skk.info %D/info/dir

@@ -21,7 +21,6 @@ include/now.h
 info/nana.info
 info/nana.info-1
 info/nana.info-2
-@exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
 @exec install-info %D/info/nana.info %D/info/dir
 lib/libnana.a
 libexec/nana-trace.gdb

@@ -8,6 +8,5 @@ etc/ndtpd.sample
 @unexec install-info --delete %D/info/ndtpd-ja.info %D/info/dir
 info/ndtpd.info
 info/ndtpd-ja.info
-@exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
 @exec install-info %D/info/ndtpd.info %D/info/dir
 @exec install-info %D/info/ndtpd-ja.info %D/info/dir

@@ -171,7 +171,6 @@ info/xconq.info-2
 info/xconq.info-3
 info/xconq.info-4
 info/xconq.info-5
-@exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
 @exec install-info %D/info/xcdesign.info %D/info/dir
 @exec install-info %D/info/xconq.info %D/info/dir
 @dirrm lib/xconqdir/lib

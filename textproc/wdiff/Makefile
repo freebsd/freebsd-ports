@@ -3,7 +3,7 @@
 # Date created:		Sep 15, 1997
 # Whom:			Yoshiro MIHIRA <sanpei@yy.cs.keio.ac.jp>
 #
-# $Id: Makefile,v 1.1.1.1 1997/10/01 07:05:08 max Exp $
+# $Id: Makefile,v 1.2 1999/01/27 07:41:28 fenner Exp $
 #
 
 DISTNAME=	wdiff-0.5
@@ -18,9 +18,6 @@ GNU_CONFIGURE=	yes
 MAN1=		wdiff.1
 
 post-install:
-	@if [ ! -f ${PREFIX}/info/dir ]; then \
-	  ${SED} -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
-	 fi
 	@install-info ${PREFIX}/info/wdiff.info ${PREFIX}/info/dir
 
 .include <bsd.port.mk>

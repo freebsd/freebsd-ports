@@ -1,4 +1,3 @@
 @unexec install-info --delete %D/info/emacs-lisp-intro.info %D/info/dir
 info/emacs-lisp-intro.info
-@exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
 @exec install-info %D/info/emacs-lisp-intro.info %D/info/dir

@@ -1,7 +1,6 @@
 bin/cftp
 @unexec install-info --delete %D/info/cftp.info %D/info/dir
 info/cftp.info
-@exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
 @exec install-info %D/info/cftp.info %D/info/dir
 share/doc/cftp/AUTHORS
 share/doc/cftp/ChangeLog

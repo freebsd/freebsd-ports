@@ -1,4 +1,4 @@
-@comment $Id: PLIST,v 1.19 1998/09/26 18:17:13 obrien Exp $
+@comment $Id: PLIST,v 1.22 1999/04/21 07:48:59 obrien Exp $
 bin/chill
 bin/eg++filt
 bin/eg++
@@ -212,7 +212,6 @@ info/gcc.info-6
 info/gcc.info-7
 info/gcc.info-8
 info/gcc.info-9
-@exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
 @exec install-info %D/info/chill.info %D/info/dir
 @exec install-info %D/info/cpp.info %D/info/dir
 @exec install-info %D/info/g77.info %D/info/dir

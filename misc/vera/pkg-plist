@@ -11,5 +11,4 @@ info/vera.info-8
 info/vera.info-9
 info/vera.info-10
 info/vera.info-11
-@exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
 @exec install-info %D/info/vera.info %D/info/dir

@@ -3,7 +3,7 @@
 # Date created:				26 Jan 1998
 # Whom:					Josh Tiefenbach <josh@ican.net>
 #
-# $Id: Makefile,v 1.51 1999/05/25 06:47:33 peter Exp $
+# $Id: Makefile,v 1.52 1999/06/05 19:00:17 mharo Exp $
 #
 
 DISTNAME=	mysql-3.22.22
@@ -90,9 +90,6 @@ post-install:
 .for doc in manual.html manual.ps manual_toc.html manual.txt manual.texi include.texi
 	${INSTALL_DATA} ${WRKSRC}/Docs/${doc} ${PREFIX}/share/doc/mysql
 .endfor
-	@if [ ! -f ${PREFIX}/info/dir -a -f /usr/share/info/dir ]; then \
-		${SED} -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
-	fi
 	${INSTALL_DATA} ${WRKSRC}/Docs/mysql.info ${PREFIX}/info
 	@install-info ${PREFIX}/info/mysql.info ${PREFIX}/info/dir
 .endif

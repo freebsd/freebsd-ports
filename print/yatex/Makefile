@@ -3,7 +3,7 @@
 # Date created:		98/11/17
 # Whom:			Satoshi Taoka <taoka@FreeBSD.org>
 #
-# $Id: Makefile,v 1.8 1999/03/17 06:57:36 taoka Exp $
+# $Id: Makefile,v 1.9 1999/05/01 04:03:29 taoka Exp $
 #
 
 DISTNAME=	yatex1.66
@@ -116,9 +116,6 @@ do-install:
 .endif
 
 post-install:
-	if [ ! -f ${INFODIR}/dir ]; then \
-		${SED} -ne '1,/Menu:/p' /usr/share/info/dir > ${INFODIR}/dir; \
-	fi
 	@${SETENV} TOUCH=${TOUCH} INFODIR=${INFODIR} \
 		ELISPDIR=${ELISPDIR} DIRSECTION="${DIRSECTION}" \
 		INFOFILES="${INFOFILES}" \

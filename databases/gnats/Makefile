@@ -3,7 +3,7 @@
 # Date created:		10 November 1995
 # Whom:			pst
 #
-# $Id: Makefile,v 1.20 1999/04/09 05:42:36 pst Exp $
+# $Id: Makefile,v 1.21 1999/04/14 00:02:46 scrappy Exp $
 #
 
 DISTNAME=	gnats-3.110
@@ -45,9 +45,6 @@ pre-install:
 post-install:
 	(cd ${WRKSRC}/gnats;   ${MAKE} install-info)
 	(cd ${WRKSRC}/send-pr; ${MAKE} install-info)
-	if [ ! -f ${PREFIX}/info/dir ]; then \
-	  sed -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
-	fi
 	install-info ${PREFIX}/info/gnats.info   ${PREFIX}/info/dir
 	install-info ${PREFIX}/info/send-pr.info ${PREFIX}/info/dir
 

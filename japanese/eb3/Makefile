@@ -3,7 +3,7 @@
 # Date created:			20 Jan 1999
 # Whom:				Motoyuki Kasahara <m-kasahr@sra.co.jp>
 #
-# $Id: Makefile,v 1.1.1.1 1999/01/26 03:03:44 steve Exp $
+# $Id: Makefile,v 1.2 1999/03/13 07:35:40 taoka Exp $
 #
 
 DISTNAME=	eb-2.2.2
@@ -57,9 +57,6 @@ post-install:
 	    (cd ${APPENDIXDIR} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
 		${DISTDIR}/${DIST_SUBDIR}/$$i ${EXTRACT_AFTER_ARGS}); \
 	done
-	if [ ! -f ${PREFIX}/info/dir ]; then \
-	    ${SED} -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
-	fi
 	${INSTALL_DATA} ${FILESDIR}/LIST ${APPENDIXDIR}/LIST
 	${INSTALL_DATA} ${FILESDIR}/LIST-ja ${APPENDIXDIR}/LIST-ja
 .for info in eb ebinfo ebfont ebrefile ebzip
