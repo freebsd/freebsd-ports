@@ -1,0 +1,5 @@
+bin/clamscan
+bin/freshclam
+bin/sigtool
+share/clamav/viruses.db
+@dirrm share/clamav

@@ -32,6 +32,7 @@
     SUBDIR += chkrootkit
     SUBDIR += chrootuid
     SUBDIR += cksfv
+    SUBDIR += clamav
     SUBDIR += cops
     SUBDIR += cp2fwb
     SUBDIR += crack
