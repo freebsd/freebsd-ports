@@ -453,6 +453,7 @@ lib/phoenix/lib/pkgconfig/mozilla-js.pc
 lib/phoenix/lib/pkgconfig/mozilla-nspr.pc
 lib/phoenix/lib/pkgconfig/mozilla-nss.pc
 lib/phoenix/lib/pkgconfig/mozilla-xpcom.pc
+lib/phoenix/share/aclocal/nspr.m4
 @comment ====create empty dirs
 @exec /bin/mkdir -p %D/lib/phoenix/lib/mozilla-1.2b/chrome/US/locale/US/browser-region
 @exec /bin/mkdir -p %D/lib/phoenix/lib/mozilla-1.2b/chrome/US/locale/US/communicator-region/wallet
@@ -607,13 +608,7 @@ lib/phoenix/lib/pkgconfig/mozilla-xpcom.pc
 @exec /bin/mkdir -p %D/lib/phoenix/lib/mozilla-1.2b/chrome/toolkit/content/global-region
 @exec /bin/mkdir -p %D/lib/phoenix/lib/mozilla-1.2b/chrome/toolkit/content/global/bindings
 @exec /bin/mkdir -p %D/lib/phoenix/lib/mozilla-1.2b/chrome/toolkit/content/global/widgets
-@exec /bin/mkdir -p %D/lib/phoenix/lib/mozilla-1.2b/chrome/venkman/content/venkman/tests
-@exec /bin/mkdir -p %D/lib/phoenix/lib/mozilla-1.2b/chrome/venkman/locale/en-US/venkman
-@exec /bin/mkdir -p %D/lib/phoenix/lib/mozilla-1.2b/chrome/venkman/skin/modern/venkman/images
 @comment ====remove empty dirs?
-@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/venkman/skin/modern/venkman/images || true
-@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/venkman/locale/en-US/venkman || true
-@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/venkman/content/venkman/tests || true
 @unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/toolkit/content/global/widgets || true
 @unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/toolkit/content/global/bindings || true
 @unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/toolkit/content/global-region || true
@@ -768,6 +763,8 @@ lib/phoenix/lib/pkgconfig/mozilla-xpcom.pc
 @unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/US/locale/US/communicator-region/wallet || true
 @unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/US/locale/US/browser-region || true
 @comment ====remove non-empty dirs
+@dirrm lib/phoenix/share/aclocal
+@dirrm lib/phoenix/share
 @dirrm lib/phoenix/lib/pkgconfig
 @dirrm lib/phoenix/lib/mozilla-1.2b/searchplugins
 @dirrm lib/phoenix/lib/mozilla-1.2b/res/throbber
@@ -793,14 +790,6 @@ lib/phoenix/lib/pkgconfig/mozilla-xpcom.pc
 @dirrm lib/phoenix/lib/mozilla-1.2b/defaults/autoconfig
 @dirrm lib/phoenix/lib/mozilla-1.2b/defaults
 @dirrm lib/phoenix/lib/mozilla-1.2b/components
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/venkman/skin/modern/venkman
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/venkman/skin/modern
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/venkman/skin
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/venkman/locale/en-US
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/venkman/locale
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/venkman/content/venkman
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/venkman/content
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/venkman
 @dirrm lib/phoenix/lib/mozilla-1.2b/chrome/toolkit/content/global
 @dirrm lib/phoenix/lib/mozilla-1.2b/chrome/toolkit/content
 @dirrm lib/phoenix/lib/mozilla-1.2b/chrome/toolkit

@@ -1,8 +1,6 @@
 ======================================================================
-As of version 0.4_4, this port appears to be stable. It will work with
-either of the port versions of perl, provided you do "use.perl port".
-It may work with the base system version of perl; I (AlanE) have not
-tested this.
+As of version 0.4_7, this port appears to be stable *again*. It will work
+with either of the port versions of perl, provided you do "use.perl port".
 
 NOTE: if you use the lang/perl5.8 port, please remove the File::Spec
 package with the command "pkg_deinstall -f p5-File-Spec". If you are
@@ -15,16 +13,16 @@ bug reports to any other addresses.
 
 Please include the following information with any bug report:
 
-1. Date/time stamp from www/phoenix/Makefile.
-2. Perl version used (/usr/bin/perl --version).
-3. If a port, did you do "use.perl port"? If no, why didn't you
-   follow the instructions provided?
-4. If perl 5.8, did you remove the p5-File-Spec port? If no, why
-   didn't you follow the instructions provided?
-5. Where/when did the problem occur: configuring, building, or
-   running phoenix?
-6. Can you reproduce the problem? If so, how? If not, why do you
-   think we can fix it?
+* Output from 'uname -a'.
+* Date/time stamp from www/phoenix/Makefile.
+* Perl version used (/usr/bin/perl --version or 
+	/usr/local/bin/perl --version for -current).
+* If perl 5.8, did you remove the p5-File-Spec port? If no, why
+	didn't you follow the instructions provided?
+* Where/when did the problem occur: configuring, building, or
+	running phoenix?
+* Can you reproduce the problem? If so, how? If not, why do you
+	think we can fix it?
 
 Thank you for your help in testing and reporting bugs, and we hope you
 enjoy using Phoenix.

@@ -11,15 +11,14 @@ ac_add_options --disable-mailnews
 ac_add_options --disable-composer
 ######################################################################
 # FBSD specific
-export CPPFLAGS="-I@X11BASE@/include -I@LOCALBASE@/include"
+export CPPFLAGS="@CPPFLAGS@"
 export CFLAGS="@CFLAGS@"
 export LIBS="@LIBS@"
-export LDFLAGS="-L@X11BASE@/lib -L@LOCALBASE@/lib"
-export DSOFLAGS="${LDFLAGS}"
+export LDFLAGS="@LDFLAGS@"
 export CONFIG_SH=/bin/sh
 export XP_UNIX=1
-test -x /usr/bin/perl && export PERL=/usr/bin/perl \
-    || export PERL=/usr/local/bin/perl
+mk_add_options XP_UNIX=1
+export PERL=/usr/local/bin/perl
 mk_add_options PERL=$PERL
 export GTK_CONFIG=@X11BASE@/bin/gtk12-config
 mk_add_options GTK_CONFIG=$GTK_CONFIG
@@ -49,4 +48,5 @@ ac_add_options --disable-dtd-debug
 ac_add_options --disable-auto-deps
 ac_add_options --disable-pedantic
 ac_add_options --disable-jsd
+ac_add_options --disable-bidi
 ######################################################################
