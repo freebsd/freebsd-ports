@@ -1,0 +1,9 @@
+--- setup.ins	Tue Aug 22 23:31:42 2000
++++ setup.ins	Tue Aug 22 23:33:35 2000
+@@ -1,5 +1,5 @@
+ Installation gid_Installation
+-	DefaultDestPath = "office52";
++	DefaultDestPath = "/usr/local/office52";
+ 	ScriptVersion = 100;
+ 	Bitmap		 = "so52.bmp";
+ 	DefaultLanguage = "49";
