@@ -67,6 +67,7 @@
     SUBDIR += piewm
     SUBDIR += plwm
     SUBDIR += pwm
+    SUBDIR += qinx
     SUBDIR += qlwm
     SUBDIR += qnxstyle
     SUBDIR += qvwm
