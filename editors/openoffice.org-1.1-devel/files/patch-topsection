@@ -4,7 +4,7 @@
  	bool bStartAttr = pPlcxMan->Get(&aRes); // hole Attribut-Pos
  	aRes.nAktCp = rTxtPos;				// Akt. Cp-Pos
  
--	if (aRes.nFlags & MAN_MASK_NEW_SEP)	// neue Section
+-	if ((aRes.nFlags & MAN_MASK_NEW_SEP) && !bIgnoreText)	// neue Section
 +	if ((aRes.nFlags & MAN_MASK_NEW_SEP) || maSectionManager.empty())	// neue Section
      {
          ASSERT(pPaM->GetNode()->GetTxtNode(), "Missing txtnode");
