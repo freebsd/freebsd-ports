@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	xpilot
-PORTVERSION=	4.2.1
+PORTVERSION=	4.3.1
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.xpilot.org/pub/xpilot/ \
+		ftp://ftp.xpilot.org/pub/xpilot/old/ \
 		${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	games/multiplayer
 
