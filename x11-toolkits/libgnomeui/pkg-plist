@@ -117,12 +117,12 @@ share/doc/libgnomeui/libgnomeui-gnomepixmapentry.html
 share/doc/libgnomeui/libgnomeui-gnomepropertybox.html
 share/doc/libgnomeui/libgnomeui-gnomescores.html
 share/doc/libgnomeui/libgnomeui-gnometypebuiltins.html
-share/gnome2/pixmaps/gnome-about-logo.png
-share/gnome2/pixmaps/gnome-default-dlg.png
-share/gnome2/pixmaps/gnome-error.png
-share/gnome2/pixmaps/gnome-info.png
-share/gnome2/pixmaps/gnome-question.png
-share/gnome2/pixmaps/gnome-warning.png
+share/gnome/pixmaps/gnome-about-logo.png
+share/gnome/pixmaps/gnome-default-dlg.png
+share/gnome/pixmaps/gnome-error.png
+share/gnome/pixmaps/gnome-info.png
+share/gnome/pixmaps/gnome-question.png
+share/gnome/pixmaps/gnome-warning.png
 share/locale/az/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/de/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/en_GB/LC_MESSAGES/libgnomeui-2.0.mo
@@ -152,7 +152,7 @@ share/locale/vi/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/wa/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/zh_CN/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/zh_TW/LC_MESSAGES/libgnomeui-2.0.mo
-@dirrm share/gnome2/pixmaps
+@dirrm share/gnome/pixmaps
 @dirrm share/doc/libgnomeui
 @dirrm include/libgnomeui-2.0/libgnomeui
 @dirrm include/libgnomeui-2.0

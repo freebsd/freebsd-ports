@@ -7,6 +7,7 @@
 
 PORTNAME=	libgnomeui
 PORTVERSION=	1.115.0
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	pre-gnome2/releases/gnome-2.0-desktop-beta4
@@ -23,8 +24,8 @@ USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL=	yes
 USE_BISON=	yes
-CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share/gnome2 \
-		--datadir=${PREFIX}/share/gnome2 \
+CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share/gnome \
+		--datadir=${PREFIX}/share/gnome \
 		--with-html-dir=${PREFIX}/share/doc \
 		--disable-gtk-doc
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

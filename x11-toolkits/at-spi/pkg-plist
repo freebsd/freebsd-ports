@@ -68,29 +68,29 @@ share/doc/at-spi-cspi/spi-accessible.html
 share/doc/at-spi-cspi/spi-application.html
 share/doc/at-spi-cspi/spi-component.html
 share/doc/at-spi-cspi/spi-main.html
-share/gnome2/idl/Magnifier.idl
-share/gnome2/idl/at-spi-1.0/Accessibility.idl
-share/gnome2/idl/at-spi-1.0/Accessibility_Accessible.idl
-share/gnome2/idl/at-spi-1.0/Accessibility_Action.idl
-share/gnome2/idl/at-spi-1.0/Accessibility_Application.idl
-share/gnome2/idl/at-spi-1.0/Accessibility_Component.idl
-share/gnome2/idl/at-spi-1.0/Accessibility_Desktop.idl
-share/gnome2/idl/at-spi-1.0/Accessibility_EditableText.idl
-share/gnome2/idl/at-spi-1.0/Accessibility_Event.idl
-share/gnome2/idl/at-spi-1.0/Accessibility_Hyperlink.idl
-share/gnome2/idl/at-spi-1.0/Accessibility_Hypertext.idl
-share/gnome2/idl/at-spi-1.0/Accessibility_Image.idl
-share/gnome2/idl/at-spi-1.0/Accessibility_Registry.idl
-share/gnome2/idl/at-spi-1.0/Accessibility_Relation.idl
-share/gnome2/idl/at-spi-1.0/Accessibility_Role.idl
-share/gnome2/idl/at-spi-1.0/Accessibility_Selection.idl
-share/gnome2/idl/at-spi-1.0/Accessibility_State.idl
-share/gnome2/idl/at-spi-1.0/Accessibility_StreamableContent.idl
-share/gnome2/idl/at-spi-1.0/Accessibility_Table.idl
-share/gnome2/idl/at-spi-1.0/Accessibility_Text.idl
-share/gnome2/idl/at-spi-1.0/Accessibility_Value.idl
-@dirrm share/gnome2/idl/at-spi-1.0
-@dirrm share/gnome2/idl
+share/gnome/idl/Magnifier.idl
+share/gnome/idl/at-spi-1.0/Accessibility.idl
+share/gnome/idl/at-spi-1.0/Accessibility_Accessible.idl
+share/gnome/idl/at-spi-1.0/Accessibility_Action.idl
+share/gnome/idl/at-spi-1.0/Accessibility_Application.idl
+share/gnome/idl/at-spi-1.0/Accessibility_Component.idl
+share/gnome/idl/at-spi-1.0/Accessibility_Desktop.idl
+share/gnome/idl/at-spi-1.0/Accessibility_EditableText.idl
+share/gnome/idl/at-spi-1.0/Accessibility_Event.idl
+share/gnome/idl/at-spi-1.0/Accessibility_Hyperlink.idl
+share/gnome/idl/at-spi-1.0/Accessibility_Hypertext.idl
+share/gnome/idl/at-spi-1.0/Accessibility_Image.idl
+share/gnome/idl/at-spi-1.0/Accessibility_Registry.idl
+share/gnome/idl/at-spi-1.0/Accessibility_Relation.idl
+share/gnome/idl/at-spi-1.0/Accessibility_Role.idl
+share/gnome/idl/at-spi-1.0/Accessibility_Selection.idl
+share/gnome/idl/at-spi-1.0/Accessibility_State.idl
+share/gnome/idl/at-spi-1.0/Accessibility_StreamableContent.idl
+share/gnome/idl/at-spi-1.0/Accessibility_Table.idl
+share/gnome/idl/at-spi-1.0/Accessibility_Text.idl
+share/gnome/idl/at-spi-1.0/Accessibility_Value.idl
+@dirrm share/gnome/idl/at-spi-1.0
+@dirrm share/gnome/idl
 @dirrm share/doc/at-spi-cspi
 @dirrm lib/orbit-2.0
 @dirrm include/at-spi-1.0/libspi
