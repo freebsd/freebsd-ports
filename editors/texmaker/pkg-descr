@@ -1,0 +1,20 @@
+Texmaker is a program, that integrates many tools needed to develop documents
+with LaTeX, in just one application.
+
+Features :
+    * an editor to write your LaTeX source files
+    * the principal LaTex tags can be inserted directly
+    * 370 mathematical symbols can be inserted in just one click
+    * wizards to generate code
+    * LaTeX-related programs can be launched via the "Tools" menu
+    * the standard Bibtex entry types can be inserted in the ".bib" file
+    * a "structure view" of the document for easier navigation of a document
+    * extensive LaTeX documentation
+    * in the "Messages / Log File" frame, you can see information about
+      processes and the logfile after a LaTeX compilation
+    * the "Next Latex Error" and "Previous Latex Error" commands let you reach
+      the LaTeX errors detected by Kile in the log file
+    * by clicking on the number of a line in the log file, the cursor jumps to
+      the corresponding line in the editor
+
+WWW: http://perso.club-internet.fr/pascal.brachet/texmaker/
