@@ -25,4 +25,8 @@ INSTALLS_SHLIB=	yes
 USE_GCC=	3.3
 .endif
 
+.if ${ARCH} == "sparc64"
+BROKEN=		"Does not build"
+.endif
+
 .include <bsd.port.post.mk>
