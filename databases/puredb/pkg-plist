@@ -1,0 +1,17 @@
+bin/example_read
+bin/example_write
+include/puredb_read.h
+include/puredb_write.h
+lib/libpuredb_read.so.0
+lib/libpuredb_read.so
+lib/libpuredb_read.la
+lib/libpuredb_read.a
+lib/libpuredb_write.so.0
+lib/libpuredb_write.so
+lib/libpuredb_write.la
+lib/libpuredb_write.a
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/FORMAT_DESCR
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
