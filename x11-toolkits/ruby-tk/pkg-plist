@@ -82,6 +82,7 @@
 %%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/ICONS.rb
 %%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/ICONS/icons.rb
 %%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/ICONS/setup.rb
+%%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/SUPPORT_STATUS
 %%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/bwidget.rb
 %%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/bwidget/arrowbutton.rb
 %%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/bwidget/bitmap.rb
@@ -184,6 +185,7 @@
 %%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/tcllib/ctext.rb
 %%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/tcllib/cursor.rb
 %%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/tcllib/datefield.rb
+%%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/tcllib/ico.rb
 %%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/tcllib/ip_entry.rb
 %%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/tcllib/plotchart.rb
 %%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/tcllib/setup.rb
@@ -274,6 +276,8 @@
 %%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/bindtag_sample.rb
 %%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/binstr_usage.rb
 %%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/btn_with_frame.rb
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/cmd_res_test.rb
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/cmd_resource
 %%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/demos-en/ChangeLog
 %%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/demos-en/ChangeLog.prev
 %%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/demos-en/README
@@ -466,6 +470,8 @@
 %%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/msgs_tk/nl.msg
 %%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/msgs_tk/pl.msg
 %%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/msgs_tk/ru.msg
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/multi-ip_sample.rb
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/multi-ip_sample2.rb
 %%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/optobj_sample.rb
 %%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/propagate.rb
 %%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/remote-ip_sample.rb
