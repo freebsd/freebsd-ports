@@ -154,6 +154,45 @@ share/oroborus/themes/e017/top-left-active.xpm
 share/oroborus/themes/e017/top-left-inactive.xpm
 share/oroborus/themes/e017/top-right-active.xpm
 share/oroborus/themes/e017/top-right-inactive.xpm
+share/oroborus/themes/gorillaworm/bottom-active.xpm
+share/oroborus/themes/gorillaworm/bottom-active.xpm.xpm
+share/oroborus/themes/gorillaworm/bottom-inactive.xpm
+share/oroborus/themes/gorillaworm/bottom-inactive.xpm.xpm
+share/oroborus/themes/gorillaworm/bottom-left-active.xpm
+share/oroborus/themes/gorillaworm/bottom-left-inactive.xpm
+share/oroborus/themes/gorillaworm/bottom-right-active.xpm
+share/oroborus/themes/gorillaworm/bottom-right-inactive.xpm
+share/oroborus/themes/gorillaworm/close-active.xpm
+share/oroborus/themes/gorillaworm/close-inactive.xpm
+share/oroborus/themes/gorillaworm/close-pressed.xpm
+share/oroborus/themes/gorillaworm/hide-active.xpm
+share/oroborus/themes/gorillaworm/hide-inactive.xpm
+share/oroborus/themes/gorillaworm/hide-pressed.xpm
+share/oroborus/themes/gorillaworm/left-active.xpm
+share/oroborus/themes/gorillaworm/left-inactive.xpm
+share/oroborus/themes/gorillaworm/maximize-active.xpm
+share/oroborus/themes/gorillaworm/maximize-inactive.xpm
+share/oroborus/themes/gorillaworm/maximize-pressed.xpm
+share/oroborus/themes/gorillaworm/right-active.xpm
+share/oroborus/themes/gorillaworm/right-inactive.xpm
+share/oroborus/themes/gorillaworm/shade-active.xpm
+share/oroborus/themes/gorillaworm/shade-inactive.xpm
+share/oroborus/themes/gorillaworm/shade-pressed.xpm
+share/oroborus/themes/gorillaworm/themerc
+share/oroborus/themes/gorillaworm/title-1-active.xpm
+share/oroborus/themes/gorillaworm/title-1-inactive.xpm
+share/oroborus/themes/gorillaworm/title-2-active.xpm
+share/oroborus/themes/gorillaworm/title-2-inactive.xpm
+share/oroborus/themes/gorillaworm/title-3-active.xpm
+share/oroborus/themes/gorillaworm/title-3-inactive.xpm
+share/oroborus/themes/gorillaworm/title-4-active.xpm
+share/oroborus/themes/gorillaworm/title-4-inactive.xpm
+share/oroborus/themes/gorillaworm/title-5-active.xpm
+share/oroborus/themes/gorillaworm/title-5-inactive.xpm
+share/oroborus/themes/gorillaworm/top-left-active.xpm
+share/oroborus/themes/gorillaworm/top-left-inactive.xpm
+share/oroborus/themes/gorillaworm/top-right-active.xpm
+share/oroborus/themes/gorillaworm/top-right-inactive.xpm
 share/oroborus/themes/next/bottom-active.xpm
 share/oroborus/themes/next/bottom-inactive.xpm
 share/oroborus/themes/next/bottom-left-active.xpm
@@ -382,6 +421,7 @@ share/oroborus/themes/windows/top-right-inactive.xpm
 @dirrm share/oroborus/themes/pillage
 @dirrm share/oroborus/themes/oroborus
 @dirrm share/oroborus/themes/next
+@dirrm share/oroborus/themes/gorillaworm
 @dirrm share/oroborus/themes/e017
 @dirrm share/oroborus/themes/cruxish
 @dirrm share/oroborus/themes/agua

@@ -6,12 +6,15 @@
 #
 
 PORTNAME=	oroborus
-PORTVERSION=	2.0.9
+PORTVERSION=	2.0.11
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://www.dreamind.de/debian/dists/sid/main/source/x11/
-DISTFILES=	${PORTNAME}_${PORTVERSION}-1.tar.gz
+MASTER_SITES=	http://www.dreamind.de/debian/dists/sid/main/source/x11/ \
+		http://matt.peterson.org/FreeBSD/ports/
+DISTNAME=	${PORTNAME}_${PORTVERSION}-1
 
 MAINTAINER=	olgeni@FreeBSD.org
+
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_XPM=	yes
 USE_X_PREFIX=	yes
