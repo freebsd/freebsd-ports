@@ -169,7 +169,7 @@ pre-install:
 .endif
 
 post-build:
-	@${RM} ${PKGMESSAGE}
+	@${RM} -f ${PKGMESSAGE}
 .if ${BuildXF86DRM} == "YES"
 	@${CAT} ${.CURDIR}/pkg-message-drm > ${PKGMESSAGE}
 .endif
