@@ -104,6 +104,8 @@ Python_Include_MAINTAINER=	tg@FreeBSD.org
 # distribution will be built through the dependency processing.
 .if defined(PYTHON_CMD)
 _PYTHON_VERSION!=	${PYTHON_CMD} -c 'import sys; print sys.version[:3]'
+.elif defined(USE_ZOPE)
+_PYTHON_VERSION=	2.1
 .else
 _PYTHON_VERSION!=	(python -c 'import sys; print sys.version[:3]') 2> /dev/null \
 					|| echo 2.2
@@ -222,6 +224,16 @@ PYSETUP?=				setup.py
 PYDISTUTILS_BUILDARGS?=
 PYDISTUTILS_INSTALLARGS?=	-c -O1 --prefix=${PREFIX}
 
+# Zope specific variables
+.if defined(USE_ZOPE)
+# You can change this in the environment if you like
+SZOPEBASEDIR?=			www/Zope
+# Don't change these. You'll probably want to define ZOPEPRODUCTNAME,
+# too, but that is port-specific.
+ZOPEBASEDIR=			${PREFIX}/${SZOPEBASEDIR}
+ZOPEPRODUCTDIR=			lib/python/Products
+.endif
+
 # dependencies
 PYTHON_NO_DEPENDS?=		NO
 
@@ -233,6 +245,10 @@ RUN_DEPENDS+=	${PYTHON_CMD}:${PYTHON_PORTSDIR}
 BUILD_DEPENDS+=	${PYDISTUTILS}
 .endif
 .endif		# ${PYTHON_NO_DEPENDS} == "NO"
+
+.if defined(USE_ZOPE)
+RUN_DEPENDS+=	${PYTHONBASE}/${SZOPEBASEDIR}/z2.py:${PORTSDIR}/www/zope
+.endif
 
 # set $PREFIX as Python's one
 .if defined(USE_PYTHON_PREFIX)
@@ -247,6 +263,11 @@ PLIST_SUB+=		PYTHON_INCLUDEDIR=${PYTHONPREFIX_INCLUDEDIR:S;${PREFIX}/;;} \
 				PYTHON_PLATFORM=${PYTHON_PLATFORM} \
 				PYTHON_SITELIBDIR=${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;} \
 				PYTHON_VERSION=${PYTHON_VERSION}
+
+# Zope specific substitutions
+.if defined(USE_ZOPE)
+PLIST_SUB+=		ZOPEBASEDIR=${SZOPEBASEDIR}
+.endif
 
 # XXX Hm, should I export some of the variables above to *_ENV?
 
