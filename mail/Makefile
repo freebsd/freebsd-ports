@@ -130,6 +130,7 @@
     SUBDIR += liboe
     SUBDIR += libpst
     SUBDIR += librfc822
+    SUBDIR += libspf
     SUBDIR += listmanager
     SUBDIR += lmtp2nntp
     SUBDIR += lmtpd
