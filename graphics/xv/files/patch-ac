@@ -16,8 +16,8 @@
 -/* #define GS_PATH "/usr/local/bin/gs" */
 -/* #define GS_LIB  "."                 */
 -/* #define GS_DEV  "ppmraw"            */
-+#define GS_PATH "${LOCALBASE}/bin/gs"
-+#define GS_LIB  "${LOCALBASE}/lib/ghostscript"
++#define GS_PATH "%%LOCALBASE%%/bin/gs"
++#define GS_LIB  "%%LOCALBASE%%/lib/ghostscript"
 +#define GS_DEV  "ppmraw"
  
  

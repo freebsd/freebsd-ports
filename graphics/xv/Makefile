@@ -48,6 +48,9 @@ post-patch:
 	@${PATCH} ${PATCH_ARGS} -p1 < ${XVDIST}/xv-png-1.2d.patch
 	@${PATCH} ${PATCH_ARGS} -p1 < ${XVDIST}/png-1.2d-fix.patch
 	@${PATCH} ${PATCH_ARGS} -p1 < ${XVDIST}/jp-ext-bzip2.patch
+	@${MV} ${WRKSRC}/config.h ${WRKSRC}/config.h.in
+	@${CAT} ${WRKSRC}/config.h.in | \
+		${SED} -e "s@%%LOCALBASE%%@${LOCALBASE}@" > ${WRKSRC}/config.h
 
 post-install:
 .if !defined(NOPORTDOCS)
