@@ -25,6 +25,7 @@
     SUBDIR += icewm
     SUBDIR += icewm-i18n
     SUBDIR += libdockapp
+    SUBDIR += libepplet
     SUBDIR += lwm
     SUBDIR += mlvwm
     SUBDIR += olvwm
