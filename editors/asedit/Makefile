@@ -4,12 +4,12 @@
 #
 # Whom:	Andreas Kohout <shanee@rabbit.augusta.de>
 #
-# $Id: Makefile,v 1.3 1996/08/09 00:38:43 asami Exp $
+# $Id: Makefile,v 1.4 1996/11/18 11:23:54 asami Exp $
 #
 
 DISTNAME=	asedit-1.3.2
 CATEGORIES=	editors
-MASTER_SITES=	${MASTER_SITE_CONTRIB}
+MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	editors
 EXTRACT_SUFX=	.tar.Z
 
