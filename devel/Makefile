@@ -114,6 +114,7 @@
     SUBDIR += cvsadmin
     SUBDIR += cvsbook
     SUBDIR += cvsd
+    SUBDIR += cvsdelta
     SUBDIR += cvsgraph
     SUBDIR += cvslines
     SUBDIR += cvsmapfs
