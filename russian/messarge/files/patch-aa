@@ -1,0 +1,19 @@
+--- Makefile	Sun May 28 19:56:00 2000
++++ Makefile.new	Fri Jun  9 18:59:37 2000
+@@ -20,7 +20,7 @@
+ 
+ PREFIX	?= /usr/local
+ BINDIR	?= ${PREFIX}/bin
+-MAN1DIR	?= ${PREFIX}/man/man1
++MAN1DIR	?= ${PREFIX}/man/ru.KOI8-R/man1
+ EXDIR	?= ${PREFIX}/share/examples/messarge
+ 
+ MESRDBC	= \"mesdbc\"
+@@ -89,6 +89,7 @@
+ .endfor
+ 
+ installman: ${MANG}
++	${MKDIR} ${MAN1DIR}
+ .for I in messarge ${PROG}
+ 	${INSTALL_MAN} ${I}.1.gz ${MAN1DIR}/${I}.1.gz
+ .endfor

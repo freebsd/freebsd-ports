@@ -14,6 +14,7 @@ MASTER_SITES=	ftp://ftp.kiarchive.ru/pub/unix/mail/ \
 MAINTAINER=	.@babolo.ru
 
 MAN1=		messarge.1 mesraw.1 mesdbc.1 mesarc.1 mestun.1
+MANLANG=	ru.KOI8-R
 MANCOMPRESSED=	yes
 
 .include <bsd.port.mk>
