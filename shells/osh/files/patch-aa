@@ -1,0 +1,21 @@
+--- makefile.orig	Mon Nov 27 19:32:14 2000
++++ makefile		Fri Dec 29 15:31:35 2000
+@@ -7,11 +7,10 @@
+ #CPPFLAGS   =
+ #LDFLAGS    =
+ #LIBS       = -lefence
+-PREFIX     = /usr/local
+ BINDIR     = $(PREFIX)/bin
+ MANDIR     = $(PREFIX)/man
+ MANSECT    = $(MANDIR)/man1
+-INSTALL	   = /usr/ucb/install
++INSTALL	   = /usr/bin/install
+ 
+ # CONFIGURATION ENDS
+ 
+@@ -41,4 +40,4 @@
+ install:
+ 	$(MAKE)
+ 	$(INSTALL) -c -s $(EXE) $(BINDIR)
+-	$(INSTALL) -c -m 644 $(MAN) $(MANSECT)
++	$(INSTALL) -c -m 444 $(MAN) $(MANSECT)
