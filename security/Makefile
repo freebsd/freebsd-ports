@@ -401,7 +401,6 @@
     SUBDIR += vncrypt
     SUBDIR += vpnd
     SUBDIR += vscan
-    SUBDIR += whisker
     SUBDIR += xinetd
     SUBDIR += xmlsec
     SUBDIR += xmlsec1
