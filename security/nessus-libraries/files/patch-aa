@@ -1,0 +1,11 @@
+--- nessus-config.pre.in.orig	Fri Nov 17 20:46:14 2000
++++ nessus-config.pre.in	Wed Nov 14 12:01:46 2001
+@@ -45,7 +45,7 @@
+ 		;;
+ 	--libs)
+ 	
+-		echo $Xn "-L$LIBDIR -lnessus -lhosts_gatherer @pcap_flag@ $CIPHER $EXTRA $Xc"
++		echo $Xn "-lc -L$LIBDIR -lnessus -lhosts_gatherer @pcap_flag@ $CIPHER $EXTRA $Xc"
+ 		;;
+ 	--cflags)
+ 		echo $Xn "-I$INCLUDEDIR $DEFS -I$INCLUDEDIR/nessus $CIPHER_CFLAGS $Xc"

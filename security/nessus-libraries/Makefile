@@ -7,6 +7,7 @@
 
 PORTNAME=	nessus-libraries
 PORTVERSION=	1.0.9
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.cis.fed.gov/pub/nessus/nessus-${PORTVERSION}/src/ \
 		ftp://ftp.nessus.org/pub/nessus/nessus-${PORTVERSION}/src/ \
