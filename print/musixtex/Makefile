@@ -6,10 +6,10 @@
 # $FreeBSD$
 #
 
-DISTNAME=       musixtex-T97
+DISTNAME=       musixtex-T98
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.tex.ac.uk/tex-archive/macros/musixtex/taupin/
-DISTFILES=      musixtex-T97.tar.gz musixexa-T90.tar.gz
+DISTFILES=      musixtex-T98.tar.gz musixexa-T90.tar.gz
 
 MAINTAINER=	jmz@FreeBSD.org
 
