@@ -1,5 +1,5 @@
---- rnews.c	2002-05-18 20:21:26.000000000 +0100
-+++ rnews.c	2002-09-08 12:50:41.000000000 +0100
+--- rnews.c.orig	Sat May 18 22:21:26 2002
++++ rnews.c	Wed Aug  4 03:43:51 2004
 @@ -2,6 +2,8 @@
   *  S-News version 0.1.9 - A Simple News Server
   *  Copyright (C) 1998 Christopher John Purnell
@@ -119,7 +119,7 @@
  	if (!queue) return (0);
  
  	execl(QNEWSPATH,QNEWSARG0,article,0);
-@@ -301,11 +344,79 @@
+@@ -301,11 +344,78 @@
  			{
  				approved=1;
  			}
@@ -191,15 +191,14 @@
  
 +	if (vsender[0])
 +	{
-+		int ires=isolate_addr(vsender);
 +		DEBLOG((stderr,"vsender address = %s (result %d)\n",
-+					vsender,ires));
++					vsender,isolate_addr(vsender)));
 +	}
 +	
  	return (*msgid?ret:0);
  }
  
-@@ -597,7 +708,10 @@
+@@ -597,7 +707,10 @@
  	int ret;
  
  	if (!(dbf = open_history(CONFDIR"/history",GDBM_READER)))
@@ -210,7 +209,7 @@
  
  	key.dsize = strlen(key.dptr = id) + 1;
  
-@@ -605,6 +719,7 @@
+@@ -605,6 +718,7 @@
  
  	gdbm_close(dbf);
  
@@ -218,7 +217,7 @@
  	return (ret);
  }
  
-@@ -642,3 +757,232 @@
+@@ -642,3 +756,232 @@
  	}
  	return (dbf);
  }
