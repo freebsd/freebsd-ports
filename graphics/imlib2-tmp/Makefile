@@ -3,18 +3,21 @@
 # Date created:        10 June 1997
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.9 1997/11/16 09:59:11 fenner Exp $
+# $Id: Makefile,v 1.10 1997/11/26 22:38:57 vanilla Exp $
 #
 
 DISTNAME=	imlib_DR-0.11
 PKGNAME=	imlib-0.11
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://cthulhu.mandrake.net/pub/imlib/ \
+MASTER_SITES=	ftp://ftp.mandrake.net/pub/imlib/ \
 		http://www.rasterman.com/ftp/
 
 MAINTAINER=	vanilla@MinJe.com.TW
 
-LIB_DEPENDS=	png\\.0\\.:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png\\.0\\.:${PORTSDIR}/graphics/png \
+		jpeg\\.7\\.:${PORTSDIR}/graphics/jpeg \
+		tiff34\\.1\\.:${PORTSDIR}/graphics/tiff34
+
 RUN_DEPENDS=	djpeg:${PORTSDIR}/graphics/jpeg \
 		tgatoppm:${PORTSDIR}/graphics/netpbm \
 		convert:${PORTSDIR}/graphics/ImageMagick
