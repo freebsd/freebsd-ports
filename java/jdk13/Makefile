@@ -195,7 +195,7 @@ pre-patch:
 		${PATCH} -p0 -E < ${WRKDIR}/jdk131.patches
 
 post-patch:
-	@-${FIND} ${WRKDIR} -name SCCS -exec ${RM} -rf {} \;
+	@${FIND} -d ${WRKDIR} -name SCCS -exec ${RM} -rf {} \;
 	@for file in ${LD_LIBRARY_PATH_FILES}; do \
 		${REINPLACE_CMD} -e "s:%%LOCALBASE%%:${LOCALBASE}:" \
 			${WRKSRC}/$${file}; \
