@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Sun Aug 12 16:44:46 2001
++++ Makefile.in	Sun Aug 12 16:45:18 2001
+@@ -169,7 +169,7 @@
+ 
+ # This is set by the configure script to the list of directories which
+ # should be built using the target tools.
+-TARGET_CONFIGDIRS = libiberty libgloss $(SPECIAL_LIBS) newlib librx winsup opcodes bsp libstub cygmon libf2c libchill libobjc
++TARGET_CONFIGDIRS = libgloss $(SPECIAL_LIBS) newlib librx winsup opcodes bsp libstub cygmon libf2c libchill libobjc
+ 
+ # Target libraries are put under this directory:
+ # Changed by configure to $(target_alias) if cross.
