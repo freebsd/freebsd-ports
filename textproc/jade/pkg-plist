@@ -157,6 +157,7 @@ share/doc/jade/generic.htm
 share/doc/jade/ideas.htm
 share/doc/jade/index.htm
 share/doc/jade/jade.htm
+share/doc/jade/mif.htm
 share/doc/jade/new.htm
 share/doc/jade/nsgmls.htm
 share/doc/jade/sgmldecl.htm
@@ -169,12 +170,17 @@ share/doc/jade/sysdecl.htm
 share/doc/jade/sysid.htm
 share/doc/jade/transform.htm
 share/doc/jade/xml.htm
+share/sgml/jade/Makefile.jadetex
 share/sgml/jade/catalog
 share/sgml/jade/demo.dsl
 share/sgml/jade/demo.sgm
 share/sgml/jade/dsssl.dtd
 share/sgml/jade/fot.dtd
 share/sgml/jade/style-sheet.dtd
+share/sgml/jade/jadetex.dtx
+share/sgml/jade/jadetex.ini
+share/sgml/jade/jadetex.ins
+share/sgml/jade/pdfjadetex.ini
 @comment @exec /sbin/ldconfig -m %D/lib
 @dirrm include/sp
 @dirrm share/doc/jade
