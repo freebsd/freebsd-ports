@@ -7,10 +7,11 @@
 
 PORTNAME=	linux-realplayer
 PORTVERSION=	8.cs2
+PORTREVISION=	1
 CATEGORIES=	multimedia audio linux
-MASTER_SITES=	# fetch manually
-DISTNAME=	rp${PORTVERSION:R}_linux20_libc6_i386_${PORTVERSION:E}
-EXTRACT_SUFX=	_rpm
+MASTER_SITES=	http://docs.real.com/docs/playerpatch/unix/:update
+DISTFILES=	${MAINDIST} ${UPDATEDIST:S/$/:update/}
+EXTRACT_ONLY=	${UPDATEDIST}
 
 MAINTAINER=	vns@delta.odessa.ua
 COMMENT=	Linux RealPlayer 8.0 from RealNetworks
@@ -18,9 +19,9 @@ COMMENT=	Linux RealPlayer 8.0 from RealNetworks
 RUN_DEPENDS=	/compat/linux/lib/libc.so.6:${PORTSDIR}/emulators/linux_base
 BUILD_DEPENDS=	rpm2cpio:${PORTSDIR}/archivers/rpm2cpio
 
-EXTRACT_CMD=	rpm2cpio
-EXTRACT_BEFORE_ARGS=
-EXTRACT_AFTER_ARGS=	| cpio -id --quiet
+MAINDIST=	rp${PORTVERSION:R}_linux20_libc6_i386_${PORTVERSION:E}_rpm
+UPDATEDIST=	rv9_libc6_i386_cs2.tgz
+
 RADIR=		${PREFIX}/lib/RealPlayer${PORTVERSION:R}
 WRKSRC=		${WRKDIR}/usr/lib/RealPlayer${PORTVERSION:R}
 PLUGINSDIR=	${PREFIX}/lib/netscape-linux/plugins
@@ -32,7 +33,7 @@ STRIP=
 
 .include <bsd.port.pre.mk>
 
-.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
+.if !exists(${DISTDIR}/${MAINDIST})
 IGNORE=		may not be automatically fetched due to licensing\
 		restrictions.  You MUST manually fetch the Linux RPM version after\
 		reading and agreeing to the license at:\
@@ -44,6 +45,9 @@ IGNORE=		may not be automatically fetched due to licensing\
 ONLY_FOR_ARCHS=	i386
 NO_CDROM=	"Redistribution not allowed"
 NO_BUILD=	yes
+
+post-extract:
+	cd ${WRKDIR}; rpm2cpio ${DISTDIR}/${MAINDIST} | cpio -id --quiet
 
 do-install:
 	${MKDIR} ${RADIR}
@@ -64,6 +68,8 @@ do-install:
 .endfor
 	${MKDIR} ${RADIR}/Plugins/ExtResources
 	${INSTALL_PROGRAM} ${WRKSRC}/Plugins/ExtResources/* ${RADIR}/Plugins/ExtResources/
+	${INSTALL_PROGRAM} ${WRKDIR}/rv9/codecs/*.so* ${RADIR}/Codecs/
+	${INSTALL_PROGRAM} ${WRKDIR}/rv9/plugins/*.so* ${RADIR}/Plugins/
 
 	${LN} -sf ${RADIR}/realplay ${RABINDIR}
 
