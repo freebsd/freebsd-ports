@@ -26,7 +26,8 @@ USE_GMAKE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e "s,^CXXFLAGS =,CXXFLAGS+=,g ; \
-		s,^LBLIBS =,LBLIBS = -L${LOCALBASE}/lib,g" ${WRKSRC}/Makefile
+		s,^LBLIBS =,LBLIBS = -pthread -L${LOCALBASE}/lib,g" \
+		${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e "s,crypto/,cryptopp/,g" ${WRKSRC}/src/main.cpp
 
 do-install:
