@@ -496,6 +496,7 @@
     SUBDIR += spell
     SUBDIR += spellutils
     SUBDIR += srilm
+    SUBDIR += stardict2
     SUBDIR += sv-aspell
     SUBDIR += tclExpat
     SUBDIR += tdtd.el
