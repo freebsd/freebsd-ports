@@ -18,12 +18,6 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Maryland Routing Simulator
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 501000
-BROKEN=		"Does not compile on FreeBSD ${OSVERSION}"
-.endif
-
 NO_WRKSUBDIR=	yes
 FETCH_ENV=	"FTP_PASSIVE_MODE=no"
 .if defined(WITHOUT_X11)
@@ -34,6 +28,12 @@ MAKEFILE=	Makefile.XMotif
 .endif
 ALL_TARGET=	depend mars
 MAN1=		mars.1
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 501000
+BROKEN=		"Does not compile on FreeBSD ${OSVERSION}"
+.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mars ${PREFIX}/bin
