@@ -72,15 +72,16 @@ System/Headers/Foundation/NSValue.h
 System/Headers/Foundation/NSZone.h
 System/Headers/Foundation/objc-load.h
 System/Headers/gnustep/base/DistributedObjects.h
+System/Headers/gnustep/base/GSCategories.h
 System/Headers/gnustep/base/GCObject.h
 System/Headers/gnustep/base/GSFileHandle.h
 System/Headers/gnustep/base/GSIArray.h
 System/Headers/gnustep/base/GSIMap.h
 System/Headers/gnustep/base/GSLocale.h
+System/Headers/gnustep/base/GSObjCRuntime.h
 System/Headers/gnustep/base/GSUnion.h
 System/Headers/gnustep/base/Unicode.h
 System/Headers/gnustep/base/behavior.h
-System/Headers/gnustep/base/numbers.h
 System/Headers/gnustep/base/objc-gnu2next.h
 System/Headers/gnustep/base/preface.h
 System/Headers/gnustep/unicode/caseconv.h
@@ -700,6 +701,7 @@ System/Libraries/Resources/NSTimeZones/zones/WET
 System/Libraries/Resources/NSTimeZones/zones/Zulu
 System/Library/Bundles/SSL.bundle/Resources/Info-gnustep.plist
 System/Library/Bundles/SSL.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/SSL
+System/Library/Bundles/SSL.bundle/stamp.make
 System/Makefiles/Additional/base.make
 System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gdomap
 System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/HTMLLinker
@@ -707,7 +709,6 @@ System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/autogsdoc
 System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/cvtenc
 System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/defaults
 System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/gdnc
-System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/gsdoc
 System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/make_strings
 System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/pl2link
 System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/pldes

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnustep-make
-PORTVERSION=	1.5.1
+PORTVERSION=	1.5.2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNUSTEP} \
 		ftp://ftp.gnustep.org/pub/gnustep/%SUBDIR%/ \
@@ -16,6 +16,8 @@ MASTER_SITE_SUBDIR=	core
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	GNUstep makefile package
+
+USE_GCC=	3.2
 
 .include <bsd.port.pre.mk>
 
