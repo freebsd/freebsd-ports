@@ -1,14 +1,16 @@
---- sql/mysqld.cc.orig	Fri Feb 18 23:06:34 2000
-+++ sql/mysqld.cc	Fri Feb 18 23:07:46 2000
-@@ -63,7 +63,11 @@
+--- sql/mysqld.cc.orig	Sun Feb 13 02:40:18 2000
++++ sql/mysqld.cc	Mon Feb 21 21:24:51 2000
+@@ -63,8 +63,11 @@
  inline void reset_floating_point_exceptions()
  {
    /* Don't fall for overflow, underflow,divide-by-zero or loss of precision */
+-  fpsetmask(~(FP_X_INV | FP_X_DNML | FP_X_OFL | FP_X_UFL |
+-	      FP_X_DZ | FP_X_IMP));
 +#if defined(__i386__)
-   fpsetmask(~(FP_X_INV | FP_X_DNML | FP_X_OFL | FP_X_UFL |
++  fpsetmask(~(FP_X_INV | FP_X_DNML | FP_X_OFL | FP_X_UFL | FP_X_DZ | FP_X_IMP));
 +#else
-+  fpsetmask(~(FP_X_INV | FP_X_OFL | FP_X_UFL |
++  fpsetmask(~(FP_X_INV |             FP_X_OFL | FP_X_UFL | FP_X_DZ | FP_X_IMP));
 +#endif
- 	      FP_X_DZ | FP_X_IMP));
  }
  #else
+ #define reset_floating_point_exceptions()
