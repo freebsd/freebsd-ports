@@ -14,10 +14,7 @@ MASTER_SITES=	http://plasmahh.hopto.org/
 MAINTAINER=	hubert@frbsd.org
 COMMENT=	An SMTP software identifier
 
-.if !exists(/usr/include/getopt.h)
-MAKE_ENV=	LIBS="${LDFLAGS}" INC="${CPPFLAGS}"
-.endif
-
+MAKE_ENV=	LDFLAGS="${LDFLAGS}" CPPFLAGS="${CPPFLAGS}"
 USE_GETOPT_LONG=yes
 USE_BZIP2=	yes
 USE_REINPLACE=	yes
@@ -25,16 +22,7 @@ USE_GMAKE=	yes
 USE_GCC=	2.95
 MAKEFILE=	makefile
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
-.endif
-
 post-patch:
-	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
-		-e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
-		-e 's|g++|${CXX}|g' ${WRKSRC}/makefile.conf
 	@${REINPLACE_CMD} -e 's|-j 5||g' ${WRKSRC}/makefile
 
 do-install:
@@ -44,4 +32,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/share/${file} ${DATADIR}
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
