@@ -122,7 +122,7 @@ oaf_CONFIGURE_ENV=	OAF_CONFIG="${OAF_CONFIG}"
 oaf_MAKE_ENV=		OAF_CONFIG="${OAF_CONFIG}"
 oaf_PKGNAMESUFFIX=	-oaf
 oaf_DETECT=		${OAF_CONFIG}
-oaf_USE_GNOME_IMPL=	gnomelibs
+oaf_USE_GNOME_IMPL=	gtk12 orbit libxml
 
 gnomemimedata_RUN_DEPENDS=${X11BASE}/libdata/pkgconfig/gnome-mime-data-2.0.pc:${PORTSDIR}/misc/gnomemimedata
 gnomemimedata_PKGNAMESUFFIX=-gnomemimedata
