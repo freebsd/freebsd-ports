@@ -1,0 +1,60 @@
+--- Makefile.orig	Sat Feb 12 02:38:25 1994
++++ Makefile	Fri Jan 24 18:01:12 1997
+@@ -35,16 +35,19 @@
+   name		= ss
+   NAME		= SS
+ 
++# Installation prefix.
++  PREFIX	?=/usr/local
++
+ # This is where the install step puts the executables.
+-  EXDIR		= /usr/local/bin
++  EXDIR		= $(PREFIX)/bin
+ 
+ # This is where the man page goes, also what the extention and permissions are.
+-  MANDIR	= /usr/local/man/man1
++  MANDIR	= $(PREFIX)/man/man1
+   MANEXT	= 1
+   MANMODE	= 644
+ 
+ # This is where the library file (tutorial) goes.
+-  LIBDIR	= /usr/local/lib/$(name)
++  LIBDIR	= $(PREFIX)/lib/$(name)
+ 
+ #       Variables which are NOT commonly changed.  
+ #---------------------------------------------------------------------------
+@@ -56,9 +59,9 @@
+ # some other yacc. Some systems don't allow you to
+ # increase the number of terminals (mostly AT&T), SCO's does though.
+ # NOTE: Do not use with bison 1.16! Get a new version...
+-# YACC		=yacc
++  YACC		=yacc
+ # YACC		=bison -y -d
+-  YACC		=bison -y
++# YACC		=bison -y
+ 
+ # MS-DOS needs y_tab instead of the normal y.tab
+ # YTAB	    	=y_tab
+@@ -75,8 +78,8 @@
+ # of the general case is in the next section: "SYSTEM DEFINES"
+ 
+   CC		= gcc 			# Default compiler
+-  LIB		= -lm -lcurses 		# Default needed libraries
+-  CFLAGS	= -O 			# Default cc flags
++  LIB		= -lm -lcurses -ltermcap -lcompat
++  CFLAGS	+= -O -DBSD43 		# Default cc flags
+   LDFLAGS	= 			# Default ld flags
+ 
+   # *** SPECIAL NOTES ***
+@@ -214,9 +217,9 @@
+ # CFLAGS	= -O -DSYSV3 
+ 
+ ### Using gcc 2.*
+-  CFLAGS	= -O -DSYSV3  -I/usr/5include
++#  CFLAGS	= -O -DSYSV3  -I/usr/5include
+ ##CFLAGS	= -g -DSYSV3  -I/usr/5include
+-  LDFLAGS	= -L/usr/5lib
++#  LDFLAGS	= -L/usr/5lib
+ 
+ # Ultrix Systems (preliminary - Ultrix V4.2a, Rev. 47)
+ #- - - - - - - - - - - - - - - - - - - -

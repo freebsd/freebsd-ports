@@ -1,0 +1,20 @@
+SS is a spreadsheet program.  It is based upon the well known(?) public 
+domain spreadsheet program sc 6.19.
+This is an ASCII spreadsheet program.  This is not Lotus 1-2-3.  It is 
+not Microsoft Excel. It does not do graphs or charts.  It does not do 
+drawings.  It does not use a mouse.
+It _does_ do a fine job of manipulating rows and columns of numbers. Want 
+a simple way of managing your students' grades, calculating class 
+averages, etc?  No problem.  Want to figure out how much money you can 
+borrow from the bank for a mortgage?  We can do that.
+
+  Jan 24, 1994
+  Art Mulder  (email: art@cs.ualberta.ca)
+  Department of Computing Science
+  University of Alberta, Edmonton, Canada
+
+----------------------------------------------------------------------
+Note: For all purposes and means this project is suspended, but many 
+people do prefer SS over Oleo.
+
+- pgiffuni@FPS.biblos.unal.edu.co

@@ -1,0 +1,11 @@
+--- curs_sup.h.orig	Sat Feb 19 02:37:51 1994
++++ curs_sup.h	Fri Jan 24 17:57:20 1997
+@@ -44,7 +44,7 @@
+  *	Or HP/Apollo. (16Feb94, Thomas Dickey, dickey@software.org)
+  *	Or DOS w/djgpp. (16Feb94, Thomas Dickey, dickey@software.org)
+  */
+-#if defined (__bsdi__) || defined (__NeXT__) || defined(apollo) || defined(__GO32__)
++#if defined (__bsdi__) || defined (__FreeBSD__) || defined (__NeXT__) || defined(apollo) || defined(__GO32__) 
+ # define STANDOUT_START	standout()
+ # define STANDOUT_END	standend()
+ #else
