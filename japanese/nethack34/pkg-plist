@@ -90,7 +90,6 @@ bin/%%HACKNAME%%
 %%HACKDIR%%/jhelp
 %%HACKDIR%%/jhh
 %%HACKDIR%%/jhistory
-%%HACKDIR%%/jjj
 %%HACKDIR%%/jopthelp
 %%HACKDIR%%/joracles
 %%HACKDIR%%/jrumors
@@ -117,6 +116,7 @@ bin/%%HACKNAME%%
 %%HACKDIR%%/orcus.lev
 %%HACKDIR%%/pet_mark.xbm
 %%HACKDIR%%/quest.dat
+%%HACKDIR%%/recover
 %%HACKDIR%%/rip.xpm
 %%HACKDIR%%/sanctum.lev
 %%HACKDIR%%/soko1-1.lev

@@ -1,5 +1,5 @@
---- sys/unix/Makefile.src.orig	Tue Aug 13 06:38:30 2002
-+++ sys/unix/Makefile.src	Tue Aug 13 06:39:58 2002
+--- sys/unix/Makefile.src.orig	Fri Jun 20 21:14:30 2003
++++ sys/unix/Makefile.src	Fri Jun 20 21:18:33 2003
 @@ -147,19 +147,28 @@
  # directories.  The ones given below is the usual spot for linux systems.
  # The paths are for glibconfig.h and gnomesupport.h respectively.
@@ -9,6 +9,8 @@
  
  # flags for debugging:
  # CFLAGS = -g -I../include
+ 
+-CFLAGS = -W -g -O -I../include
 +CFLAGS += -I../include
 +ifeq ("$(GRAPHICS)","X11_GRAPHICS")
 +CFLAGS += -DX11_GRAPHICS -I${X11BASE}/include
@@ -17,10 +19,8 @@
 +CFLAGS += -DQT_GRAPHICS
 +endif
 +ifeq ("$(GRAPHICS)","GNOME_GRAPHICS")
-+CFLAGS += -DGNOME_GRAPHICS
++CFLAGS += -DGNOME_GRAPHICS ${CPPFLAGS}
 +endif
- 
--CFLAGS = -W -g -O -I../include
  LFLAGS =
  
  # The Qt and Be window systems are written in C++, while the rest of
@@ -33,7 +33,7 @@
  #LD=g++
  
  # flags for IPv6 support
-@@ -222,7 +231,26 @@
+@@ -223,7 +232,26 @@
  #
  #
  WINSRC = $(WINTTYSRC)
@@ -60,7 +60,7 @@
  
  # on some systems the termcap library is in -ltermcap or -lcurses
  # on 386 Xenix, the -ltermlib tputs() seems not to work; use -lcurses instead
-@@ -242,19 +270,19 @@
+@@ -243,19 +271,19 @@
  #
  # libraries for X11
  # If USE_XPM is defined in config.h, you will also need -lXpm here.
@@ -79,11 +79,11 @@
  #
  # libraries for Gnome
 -WINGNOMELIB = -lgnomeui -lgnome -lart_lgpl -lgtk -lgdk -lpopt
-+WINGNOMELIB = $(shell ${GNOME_CONFIG} --libs gnomeui) -lgnugetopt
++WINGNOMELIB = $(shell ${GNOME_CONFIG} --libs gnomeui) ${LDFLAGS}
  #
  # libraries for Gem port
  WINGEMLIB = -le_gem -lgem
-@@ -263,6 +291,15 @@
+@@ -264,6 +292,15 @@
  WINBELIB = -lbe
  
  WINLIB = $(WINTTYLIB)
@@ -99,7 +99,7 @@
  
  # any other strange libraries your system needs (for Sysunix only -- the more
  # specialized targets should already be right)
-@@ -296,7 +333,7 @@
+@@ -297,7 +334,7 @@
  
  # make NetHack
  #JP by issei(96/5/27)
@@ -108,20 +108,20 @@
  # GAME     = nethack.prg
  
  # if you defined RANDOM in unixconf.h/tosconf.h since your system did not come
-@@ -472,13 +509,13 @@
+@@ -473,13 +510,13 @@
  
  # Qt windowport meta-object-compiler output
  qt_kde0.moc: ../include/qt_kde0.h
--	$(QTDIR)/bin/moc ../include/qt_kde0.h > qt_kde0.moc
-+	${MOC} ../include/qt_kde0.h > qt_kde0.moc
+-	$(QTDIR)/bin/moc -o qt_kde0.moc ../include/qt_kde0.h
++	${MOC} -o qt_kde0.moc ../include/qt_kde0.h
  
  qt_win.moc: ../include/qt_win.h
--	$(QTDIR)/bin/moc ../include/qt_win.h > qt_win.moc
-+	${MOC} ../include/qt_win.h > qt_win.moc
+-	$(QTDIR)/bin/moc -o qt_win.moc ../include/qt_win.h
++	${MOC} -o qt_win.moc ../include/qt_win.h
  
  qttableview.moc: ../include/qttableview.h
--	$(QTDIR)/bin/moc ../include/qttableview.h > qttableview.moc
-+	${MOC} ../include/qttableview.h > qttableview.moc
+-	$(QTDIR)/bin/moc -o qttableview.moc ../include/qttableview.h
++	${MOC} -o qttableview.moc ../include/qttableview.h
  
  $(MAKEDEFS): ../util/makedefs.c  $(CONFIG_H) ../include/permonst.h \
  		../include/objclass.h ../include/monsym.h \
