@@ -1,0 +1,7 @@
+--- OpenEXR.pc.in.orig	Fri Mar 21 17:36:37 2003
++++ OpenEXR.pc.in	Mon Apr 14 10:34:27 2003
+@@ -9,4 +9,3 @@
+ Version: @OPENEXR_VERSION@
+ Libs: -L${libdir} -lIlmImf -lImath -lHalf -lIex -lz
+ Cflags: -I${OpenEXR_includedir}
+-Cxxflags: -I${OpenEXR_includedir}
