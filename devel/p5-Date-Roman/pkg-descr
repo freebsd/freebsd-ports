@@ -1,0 +1,5 @@
+This Perl module deals with Roman dates.  Very useful for generating custom
+headers for e-mail messages, or just to dazzle and confuse friends, relatives
+and complete strangers.
+
+WWW: http://search.cpan.org/author/HOBBIT/Date-Roman-1.05/lib/Date/Roman.pm
