@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.28 1996/08/16 13:45:53 erich Exp $
+# $Id: Makefile,v 1.29 1996/11/15 15:21:31 erich Exp $
 #
 
     SUBDIR += cam
@@ -14,6 +14,7 @@
     SUBDIR += rsynth
     SUBDIR += s3mod
     SUBDIR += sox
+    SUBDIR += timidity
     SUBDIR += tracker
     SUBDIR += workman
     SUBDIR += xcd
