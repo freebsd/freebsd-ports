@@ -604,7 +604,6 @@
     SUBDIR += ruby-nis
     SUBDIR += ruby-pcap
     SUBDIR += ruby-radius
-    SUBDIR += ruby-romp
     SUBDIR += ruby-snmp
     SUBDIR += ruby-soap
     SUBDIR += ruby-spread
