@@ -35,11 +35,17 @@ HAVE_EMACS!=	which emacs || echo nope
 PLIST=		${PKGDIR}/pkg-plist.emacs
 .endif
 
-.if ${MACHINE_ARCH:L} == "amd64"
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
 CFLAGS+=	-fPIC
+.endif
+
+.if ${ARCH} == "sparc64"
+BROKEN=		"Does not compile on sparc64"
 .endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O3|"${CFLAGS}"|' ${WRKSRC}/${CONFIGURE_SCRIPT}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
