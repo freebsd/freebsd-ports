@@ -153,18 +153,23 @@ sub read_line {
 
 # Return the contents of a file as a list of strings,
 # with trailing line feeds removed.
+# Return an empty list of the file couldn't be opened for some reason.
 sub read_logfile {
-    local(@text) = ();
-    local($filename, $leader) = @_;
-    open(FILE, "<$filename") and do {
-	while (<FILE>) {
-	    chop;
-	    push(@text, $leader.$_);
+	my $filename = shift;	# The file to read from.
+
+	my @text = ();		# The contents of the file.
+
+	if (open FILE, "<$filename") {
+		while (<FILE>) {
+			chomp;
+			push @text, $_;
+		}
+		close FILE;
 	}
-	close(FILE);
-    };
-    @text;
+
+	return @text;
 }
+
 
 sub write_logfile {
     local($filename, @lines) = @_;
@@ -368,7 +373,7 @@ sub do_changes_file {
     local(%unique);
 
     %unique = ();
-    @mailaddrs = &read_logfile("$MAIL_FILE.$PID", "");
+    @mailaddrs = &read_logfile("$MAIL_FILE.$PID");
     foreach $category (@mailaddrs) {
 	next if ($unique{$category});
 	$unique{$category} = 1;
@@ -394,7 +399,7 @@ sub mail_notification {
 
     print "Mailing the commit message...\n";
 
-    @mailaddrs = &read_logfile("$MAIL_FILE.$PID", "");
+    @mailaddrs = &read_logfile("$MAIL_FILE.$PID");
     open MAIL, "| $MAILCMD $MAILADDRS" or die 'Please check $MAILCMD.';
 
 
@@ -410,7 +415,7 @@ sub mail_notification {
 #    print(MAIL "\n");
 
     $subject = 'Subject: cvs commit:';
-    @subj = &read_logfile("$SUBJ_FILE.$PID", "");
+    @subj = &read_logfile("$SUBJ_FILE.$PID");
     $subjlines = 0;
     $subjwords = 0;	# minimum of two "words" per line
     LINE: foreach $line (@subj) {
@@ -438,7 +443,7 @@ sub mail_notification {
 
     # Add a header to the mail msg showing which branches
     # were modified during the commit.
-    %tags = map { $_ => 1 } &read_logfile("$TAGS_FILE.$PID", "");
+    %tags = map { $_ => 1 } &read_logfile("$TAGS_FILE.$PID");
     print (MAIL "$X_BRANCH_HDR ", join(",", sort keys %tags), "\n");
 
     print (MAIL "\n");
@@ -628,7 +633,7 @@ for ($l = $#log_lines; $l > 0; $l--) {
 #
 for ($i = 0; ; $i++) {
     last if (! -e "$LOG_FILE.$i.$PID");
-    @text = &read_logfile("$LOG_FILE.$i.$PID", "");
+    @text = &read_logfile("$LOG_FILE.$i.$PID");
     last if ($#text == -1);
     last if (join(" ", @log_lines) eq join(" ", @text));
 }
@@ -690,23 +695,23 @@ if (-e "$LAST_FILE.$PID") {
 @text = &build_header();
 for ($i = 0; ; $i++) {
     last if (! -e "$LOG_FILE.$i.$PID");
-    @lines = &read_logfile("$CHANGED_FILE.$i.$PID", "");
+    @lines = &read_logfile("$CHANGED_FILE.$i.$PID");
     if ($#lines >= 0) {
 	push(@text, &format_lists("Modified", @lines));
     }
-    @lines = &read_logfile("$ADDED_FILE.$i.$PID", "");
+    @lines = &read_logfile("$ADDED_FILE.$i.$PID");
     if ($#lines >= 0) {
 	push(@text, &format_lists("Added", @lines));
     }
-    @lines = &read_logfile("$REMOVED_FILE.$i.$PID", "");
+    @lines = &read_logfile("$REMOVED_FILE.$i.$PID");
     if ($#lines >= 0) {
 	push(@text, &format_lists("Removed", @lines));
     }
 
-    @lines = &read_logfile("$LOG_FILE.$i.$PID", "  ");
+    @lines = &read_logfile("$LOG_FILE.$i.$PID");
     if ($#lines >= 0) {
         push(@text, "  Log:");
-	push(@text, @lines);
+	push(@text, map { "  $_" } @lines);
     }
     if ($RCSIDINFO == 2) {
 	if (-e "$SUMMARY_FILE.$i.$PID") {
