@@ -4,6 +4,9 @@
 http://qa.openoffice.org/issues/show_bug.cgi?id=28398
 http://qa.openoffice.org/issues/show_bug.cgi?id=11424
 
+disable freetype2 support since build broken and
+this functionality is not used at all.
+
 --- moz/extractfiles.mk.org	Sat Oct 30 22:01:49 2004
 +++ moz/extractfiles.mk	Sat Oct 30 22:00:21 2004
 @@ -269,8 +269,8 @@
@@ -17,3 +20,24 @@ http://qa.openoffice.org/issues/show_bug.cgi?id=11424
  .ENDIF
  
  .IF "$(GUI)"=="UNX"
+
+--- moz/mozilla-source-1.0.patch.org	Tue Feb 10 19:44:34 2004
++++ moz/mozilla-source-1.0.patch	Sat Mar 19 12:51:35 2005
+@@ -4471,14 +4471,15 @@
+      return NS_OK;
+  }
+ 
+---- miss/build/mozilla/.mozconfig	Tue Jul 22 21:52:27 2003
++--- misc/build/mozilla/.mozconfig	Tue Jul 22 21:52:27 2003
+ +++ misc/build/mozilla/.mozconfig	Mon Jul 28 15:07:20 2003
+-@@ -0,0 +1,8 @@
++@@ -0,0 +1,9 @@
+ +ac_add_options --disable-tests
+ +ac_add_options --disable-xprint
+ +ac_add_options --without-system-zlib
+ +ac_add_options --enable-ldap
+ +ac_add_options --disable-debug
+++ac_add_options --disable-freetype2
+ +ac_add_options --enable-optimize
+ +ac_add_options --enable-crypto
+ +ac_add_options --enable-strip
