@@ -100,6 +100,7 @@
     SUBDIR += nawk
     SUBDIR += nhc98
     SUBDIR += nickle
+    SUBDIR += njs
     SUBDIR += nml
     SUBDIR += nqc
     SUBDIR += o2c
