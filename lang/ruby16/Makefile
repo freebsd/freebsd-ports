@@ -155,6 +155,7 @@ post-install:
 	${MKDIR} ${RUBY_EXAMPLESDIR}/pty
 	${INSTALL_DATA} ${WRKSRC}/ext/pty/expect_sample.rb ${WRKSRC}/ext/pty/script.rb ${WRKSRC}/ext/pty/shl.rb ${RUBY_EXAMPLESDIR}/pty
 	${INSTALL_DATA} ${WRKSRC}/COPYING* ${RUBY_DOCDIR}
+	${INSTALL_DATA} ${WRKSRC}/ChangeLog ${RUBY_DOCDIR}
 	${INSTALL_DATA} ${WRKSRC}/LEGAL ${RUBY_DOCDIR}
 	${INSTALL_DATA} ${WRKSRC}/README* ${RUBY_DOCDIR}
 	${MKDIR} ${RUBY_DOCDIR}/digest
