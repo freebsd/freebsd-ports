@@ -32,6 +32,31 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="12c7b7ae-ec90-11d8-b913-000c41e2cdad">
+    <topic>popfile file disclosure</topic>
+    <affects>
+      <package>
+	<name>popfile</name>
+	<range><le>0.21.1_2</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>John Graham-Cumming reports that certain configurations of
+	  POPFile may allow the retrieval of any files with the
+	  extensions .gif, .png, .ico, .css, as well as some files with
+	  the extension .html.</p>
+      </body>
+    </description>
+    <references>
+      <mlist>http://sourceforge.net/mailarchive/forum.php?thread_id=5248725&amp;forum_id=12356</mlist>
+    </references>
+    <dates>
+      <discovery>2004-08-02</discovery>
+      <entry>2004-08-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="2de14f7a-dad9-11d8-b59a-00061bc2ad93">
     <topic>Multiple Potential Buffer Overruns in Samba</topic>
     <affects>
