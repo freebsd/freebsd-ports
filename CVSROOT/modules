@@ -5282,6 +5282,7 @@ msp430-libc		ports/devel/msp430-libc
 msql		ports/databases/msql
 msrc0		ports/devel/msrc0
 msyslog		ports/sysutils/msyslog
+mt-aspell	ports/textproc/mt-aspell
 mt_dolphin_ia	ports/games/mt_dolphin_ia
 mt_gtk_client	ports/games/mt_gtk_client
 mtf		ports/archivers/mtf
