@@ -21,6 +21,7 @@ RUN_DEPENDS=	python1.5:${PORTSDIR}/lang/python
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
 USE_GMAKE=	YES
+USE_NEWGCC=	YES
 MAKE_ENV=	"LN_S=${LN} -s" "INSTALL_DATA=${INSTALL_DATA}"
 ALL_TARGET=	default
 INSTALL_TARGET=	install-freebsd
@@ -33,6 +34,7 @@ do-configure:
 		-e "s:%LFLAGS%:`gtk12-config --libs` -L${WRKSRC}:"   \
 		-e "s:%TARGETDIR%:${TARGETDIR}:"		     \
 		-e "s:%HELPERLIBDIR%:${HELPERLIBDIR}:"		     \
+		-e "s:%CXX%:${CXX}:"                                 \
 		${FILESDIR}/build.local > ${WRKSRC}/build.local
 	cd ${WRKSRC} && ../distrib/build.py
 
