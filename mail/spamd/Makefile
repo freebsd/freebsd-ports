@@ -7,37 +7,35 @@
 
 PORTNAME=	spamd
 PORTVERSION=	3.5
+PORTREVISION=	1
 CATEGORIES=	mail
-MASTER_SITES=	http://pf4freebsd.love2party.net/
+MASTER_SITES=	http://resources.delphij.net/pf/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	mlaier@freebsd.org
+MAINTAINER=	delphij@FreeBSD.org.cn
 COMMENT=	Traps spammers with a very slow smtp-login and return 4xx error
+
+USE_BZIP2=	yes
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 502117
+IGNORE=		"OpenBSD 3.5 pf/pfctl is necessary for this port to function properly."
+.else
+LOCAL_PFCTL=	/sbin/pfctl
+.endif
+
+USE_REINPLACE=	yes
 
 .if !defined(BATCH) && !defined(PACKAGE_BUILDING)
 IS_INTERACTIVE=	yes
 .endif
-
-USE_REINPLACE=	yes
 
 MAN5=		spamd.conf.5
 MAN8=		spamd.8 spamd-setup.8 spamdb.8 spamlogd.8
 
 SAMPLE_SPAMD_CONF=	${PREFIX}/etc/spamd.conf.sample
 SAMPLE_SPAMD_RC=	${PREFIX}/etc/rc.d/spamd.sh
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-IGNORE=		"Only for 5.0 and above"
-.endif
-
-.if ${OSVERSION} < 502106
-RUN_DEPENDS=	${LOCALBASE}/sbin/pfctl:${PORTSDIR}/security/pf
-LOCAL_PFCTL=	${PREFIX}/sbin/pfctl
-.else
-LOCAL_PFCTL=	/sbin/pfctl
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCAL_PFCTL%%|${LOCAL_PFCTL}|;	\
