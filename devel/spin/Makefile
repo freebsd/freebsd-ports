@@ -15,6 +15,7 @@ DISTNAME=	spin${PORTVERSION:S/.//g}
 MAINTAINER=	jhanna@shaw.ca
 COMMENT=	An on-the-fly verification system for asynchronous concurrent systems
 
+BROKEN=		checksum mismatch
 .if !defined(WITHOUT_XSPIN)
 RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
 PLIST_SUB+=	XSPIN=""
