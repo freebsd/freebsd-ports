@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	omniorb
-PORTVERSION= 	1.3
+PORTVERSION= 	1.4
 CATEGORIES=	devel python
 MASTER_SITES=	ftp://ftp.uk.research.att.com/pub/omniORB/omniORBpy/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	omniORBpy_${PORTVERSION:S/./_/g}
 
-MAINTAINER=	wjv@FreeBSD.org
+MAINTAINER=	ak03@gte.com
 
 LIB_DEPENDS=	omniORB3.0:${PORTSDIR}/devel/omniORB
 RUN_DEPENDS=	omniidl:${PORTSDIR}/devel/omniORB
