@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	IPA
-PORTVERSION=	1.00
+PORTVERSION=	1.01
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.prima.eu.org/IPA/
 
@@ -18,14 +18,14 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Prima.pm:${PORTSDIR}/x11-toolkits/p5-Pr
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
+USE_REINPLACE=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "amd64"
-BROKEN=		"Does not compile on amd64 (shared libraries need to be compiled with -fPIC)"
-.endif
+MAN1=		iterm.1
+MAN3=		IPA.3
+MANCOMPRESSED=	yes
 
 do-configure:
 	@(cd ${WRKSRC} ; ${PERL} ./${CONFIGURE_SCRIPT})
+	@(cd ${WRKSRC} ; ${REINPLACE_CMD} -e 's,-o,-fPIC &, ; s|perl/man|man|' Makefile)
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
