@@ -15,7 +15,9 @@ bin/djvused
 bin/djvuserve
 bin/djvutxt
 lib/libdjvulibre3.so.5.4
-%%X11%%lib/netscape/plugins/nsdejavu.so
+%%X11%%lib/mozilla/plugins/nsdejavu.so
+%%X11%%@unexec rmdir %D/lib/mozilla/plugins 2>/dev/null || true
+%%X11%%@unexec rmdir %D/lib/mozilla 2>/dev/null || true
 share/djvu/osi/Chinese_PRC/libdjvu++.xml
 share/djvu/osi/Chinese_PRC/messages.xml
 @dirrm share/djvu/osi/Chinese_PRC
@@ -39,4 +41,5 @@ share/djvu/languages.xml
 @dirrm share/djvu
 %%PORTDOCS%%share/doc/djvulibre/djvu2spec.djvu
 %%PORTDOCS%%share/doc/djvulibre/djvu3changes.txt
+%%PORTDOCS%%share/doc/djvulibre/lizard2002.djvu
 %%PORTDOCS%%@dirrm share/doc/djvulibre

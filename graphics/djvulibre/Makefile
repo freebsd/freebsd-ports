@@ -6,40 +6,34 @@
 #
 
 PORTNAME=	djvulibre
-PORTVERSION=	3.5.4
-PORTREVISION=	1
+PORTVERSION=	3.5.8
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	djvu
 
-MAINTAINER=	john_m_cooper@yahoo.com
-
-BROKEN=		"Does not compile"
+MAINTAINER=	coop9211@uidaho.edu
 
 LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
 		iconv.3:${PORTSDIR}/converters/libiconv
 .ifndef WITHOUT_X11
-USE_QT_VER=	2
-#LIB_DEPENDS+=	qt2:${PORTSDIR}/x11-toolkits/qt23
+USE_X_PREFIX= yes
+USE_QT_VER=   3
 .else
 PKGNAMESUFFIX=	-nox11
 .endif
 
+USE_PERL5=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	JPEG_CFLAGS=-I"${LOCALBASE}/include" \
 		JPEG_LIBS="-L${LOCALBASE}/lib -ljpeg"
-CONFIGURE_ARGS=	--enable-threads=posix --enable-shared # --enable-rpo
+CONFIGURE_ARGS=	--enable-threads=posix --enable-shared --prefix="${PREFIX}"
 
 .ifndef WITHOUT_X11
 CONFIGURE_ENV+=	CXX=${CXX} PTHREAD_CFLAGS=-pthread PTHREAD_LIBS=-pthread \
-		MOC=${LOCALBASE}/bin/moc2 UIC=${LOCALBASE}/bin/uic \
-		QT_CFLAGS=-I"${LOCALBASE}/include/qt2" \
-		QT_LIBS="-L${LOCALBASE}/lib -lqt2"
+		QTLIBS="-L${X11BASE}/lib -lqt-mt"
 .else
 CONFIGURE_ARGS+=--disable-djview
 .endif
-
-MAKE_ARGS+=	-j2
 
 .if defined(LOCALBASE) && ${LOCALBASE} != "/usr/local"
 pre-configure:
