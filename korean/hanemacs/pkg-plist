@@ -1058,3 +1058,4 @@ share/hanemacs/19.34/lisp/yow.elc
 @dirrm share/hanemacs/19.34/etc/e
 @dirrm share/hanemacs/19.34/etc
 @dirrm share/hanemacs/19.34
+@dirrm share/hanemacs
