@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	dovecot
-PORTVERSION=	0.99.10.5
+PORTVERSION=	0.99.10.6
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://www.dovecot.org/
 
@@ -32,12 +32,13 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 DOCS=		auth.txt configuration.txt design.txt \
 		index.txt mail-storages.txt mkcert.sh multiaccess.txt \
 		nfs.txt dovecot-ldap.conf dovecot-pgsql.conf \
-		dovecot-openssl.cnf securecoding.txt
+		dovecot-mysql.conf dovecot-openssl.cnf securecoding.txt
 
 OPTIONS=	SASL2		"SASL2 support"		off \
 		VPOPMAIL	"VPopMail support"	off \
 		LDAP		"OpenLDAP support"	off \
-		PGSQL		"PostgreSQL support"	off
+		PGSQL		"PostgreSQL support"	off \
+		MYSQL		"MySQL support"		off
 
 .include <bsd.port.pre.mk>
 
@@ -83,6 +84,16 @@ CONFIGURE_ARGS+=	--with-ldap
 .if defined(WITH_PGSQL)
 LIB_DEPENDS+=		pq.3:${PORTSDIR}/databases/postgresql7
 CONFIGURE_ARGS+=	--with-pgsql
+.endif
+
+## MySQL Support
+#
+# MySQL is another SQL database that can be
+# used to store user tables.
+#
+.if defined(WITH_MYSQL)
+USE_MYSQL=		yes
+CONFIGURED_ARGS+=	--with-mysql
 .endif
 
 pre-build:
