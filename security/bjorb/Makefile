@@ -3,7 +3,7 @@
 # Date created:		May 16, 1998
 # Whom:			issei@jp.FreeBSD.ORG
 #
-# $Id: Makefile,v 1.1.1.1 1998/07/20 02:39:04 steve Exp $
+# $Id: Makefile,v 1.2 1998/08/30 15:35:03 steve Exp $
 #
 
 DISTNAME=	bjorb-0.5.4p4
@@ -21,7 +21,7 @@ pre-fetch:
 	@${FALSE}
 .elif defined(USA_RESIDENT)
 .if ${USA_RESIDENT} == YES
-LIB_DEPENDS=		rsaref\\.2\\.:${PORTSDIR}/security/rsaref
+LIB_DEPENDS=		rsaref.2:${PORTSDIR}/security/rsaref
 .endif
 .endif
 BUILD_DEPENDS=	ssleay:${PORTSDIR}/security/SSLeay
