@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tmda
-PORTVERSION=	1.0
+PORTVERSION=	1.0.2
 CATEGORIES=	mail python
 MASTER_SITES=	http://www.tmda.net/releases/%SUBDIR%/ \
 		http://www.us.tmda.net/releases/%SUBDIR%/ \
@@ -15,7 +15,7 @@ MASTER_SITES=	http://www.tmda.net/releases/%SUBDIR%/ \
 		http://www.de.tmda.net/releases/%SUBDIR%/ \
 		http://www.pl.tmda.net/releases/%SUBDIR%/ \
 		http://www.au.tmda.net/releases/%SUBDIR%/
-MASTER_SITE_SUBDIR=	. old
+MASTER_SITE_SUBDIR=	stable
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	sergei@FreeBSD.org
@@ -29,7 +29,7 @@ USE_PYTHON=	2.1+
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-DOCS=		CODENAMES CRYPTO README THANKS UPGRADE htdocs/*.html 
+DOCS=		CODENAMES CRYPTO README THANKS UPGRADE htdocs/*.html
 DOCS2=		htdocs/img/*.png
 SAMPLES=	sample.config tmda.el tofmipd.sysconfig vtmdarc
 SCRIPTS=	collectaddys def2html printcdb printdbm sendit.sh \

@@ -92,7 +92,6 @@ bin/tmda-sendmail
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/THANKS
 %%PORTDOCS%%%%DOCSDIR%%/UPGRADE
-%%PORTDOCS%%%%DOCSDIR%%/bugs.html
 %%PORTDOCS%%%%DOCSDIR%%/challengeresponse.html
 %%PORTDOCS%%%%DOCSDIR%%/config-client.html
 %%PORTDOCS%%%%DOCSDIR%%/config-filter.html
@@ -106,7 +105,6 @@ bin/tmda-sendmail
 %%PORTDOCS%%%%DOCSDIR%%/filter-sources.html
 %%PORTDOCS%%%%DOCSDIR%%/history.html
 %%PORTDOCS%%%%DOCSDIR%%/howto-template.html
-%%PORTDOCS%%%%DOCSDIR%%/howtos.html
 %%PORTDOCS%%%%DOCSDIR%%/img/tmda-186x253.png
 %%PORTDOCS%%%%DOCSDIR%%/img/tmda-47x64.png
 %%PORTDOCS%%%%DOCSDIR%%/img/tmda-562x765.png
@@ -116,14 +114,8 @@ bin/tmda-sendmail
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/img
 %%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%/install.html
-%%PORTDOCS%%%%DOCSDIR%%/inuse.html
 %%PORTDOCS%%%%DOCSDIR%%/logos.html
-%%PORTDOCS%%%%DOCSDIR%%/mirrors.html
-%%PORTDOCS%%%%DOCSDIR%%/press.html
 %%PORTDOCS%%%%DOCSDIR%%/requirements.html
-%%PORTDOCS%%%%DOCSDIR%%/resources.html
-%%PORTDOCS%%%%DOCSDIR%%/results.html
-%%PORTDOCS%%%%DOCSDIR%%/support-commercial.html
 %%PORTDOCS%%%%DOCSDIR%%/tmda-ofmipd.html
 %%PORTDOCS%%%%DOCSDIR%%/tmda-vdomains.html
 %%PORTDOCS%%%%DOCSDIR%%/trouble.html
