@@ -39,6 +39,7 @@
     SUBDIR += donkey
     SUBDIR += drweb
     SUBDIR += drweb-sendmail
+    SUBDIR += drwebd
     SUBDIR += dsniff
     SUBDIR += fakebo
     SUBDIR += find-zlib
