@@ -1,44 +1,36 @@
 bin/xplanet
-bin/xplanetbg
-bin/tkxplanet
-bin/tzcoord.pl
-share/xplanet/satellites/science
-share/xplanet/satellites/iss
-share/xplanet/satellites/science.tle
-share/xplanet/satellites/iss.tle
-share/xplanet/markers/locale/ru_RU/earth
-share/xplanet/markers/locale/el_GR/earth
-share/xplanet/markers/locale/ja_JP/earth
-share/xplanet/markers/locale/ko_KR/earth
-share/xplanet/markers/locale/zh_CN/earth
-share/xplanet/markers/locale/zh_TW/earth
-share/xplanet/markers/earth
-share/xplanet/markers/moon
-share/xplanet/markers/mars
-share/xplanet/markers/freebsd.committers.markers
-share/xplanet/markers/freebsd.ftp.markers
-share/xplanet/images/night.jpg
-share/xplanet/images/iss.png
-share/xplanet/images/smile.png
-share/xplanet/images/hubble.png
-share/xplanet/images/shuttle.png
-share/xplanet/images/sublunar.png
-share/xplanet/images/subsolar.png
-share/xplanet/images/earth.jpg
-share/xplanet/images/README
-share/xplanet/fonts/helr____.ttf
-share/xplanet/fonts/README
-share/xplanet/rgb.txt
-@dirrm share/xplanet/satellites
-@dirrm share/xplanet/markers/locale/ru_RU
-@dirrm share/xplanet/markers/locale/el_GR
-@dirrm share/xplanet/markers/locale/ja_JP
-@dirrm share/xplanet/markers/locale/ko_KR
-@dirrm share/xplanet/markers/locale/zh_CN
-@dirrm share/xplanet/markers/locale/zh_TW
-@dirrm share/xplanet/markers/locale
-@dirrm share/xplanet/markers
-@dirrm share/xplanet/images
-@dirrm share/xplanet/fonts
-@dirrm share/xplanet/arcs
-@dirrm share/xplanet
+%%DATADIR%%/arcs/README
+%%DATADIR%%/config/default
+%%DATADIR%%/config/earth_markers
+%%DATADIR%%/config/moon_orbit
+%%DATADIR%%/config/overlay_clouds
+%%DATADIR%%/fonts/FreeSans.ttf
+%%DATADIR%%/fonts/README
+%%DATADIR%%/images/README
+%%DATADIR%%/images/earth.jpg
+%%DATADIR%%/images/hubble.png
+%%DATADIR%%/images/iss.png
+%%DATADIR%%/images/night.jpg
+%%DATADIR%%/images/shuttle.png
+%%DATADIR%%/images/smile.png
+%%DATADIR%%/images/sublunar.png
+%%DATADIR%%/images/subsolar.png
+%%DATADIR%%/markers/earth
+%%DATADIR%%/markers/freebsd.committers.markers
+%%DATADIR%%/markers/freebsd.ftp.markers
+%%DATADIR%%/origin/README
+%%DATADIR%%/origin/cassini
+%%DATADIR%%/origin/galileo
+%%DATADIR%%/rgb.txt
+%%DATADIR%%/satellites/iss
+%%DATADIR%%/satellites/iss.tle
+%%DATADIR%%/stars/BSC
+@dirrm %%DATADIR%%/arcs
+@dirrm %%DATADIR%%/config
+@dirrm %%DATADIR%%/fonts
+@dirrm %%DATADIR%%/images
+@dirrm %%DATADIR%%/markers
+@dirrm %%DATADIR%%/origin
+@dirrm %%DATADIR%%/satellites
+@dirrm %%DATADIR%%/stars
+@dirrm %%DATADIR%%
