@@ -10,6 +10,7 @@ bin/xscreensaver-hacks/ant
 bin/xscreensaver-hacks/apollonian
 bin/xscreensaver-hacks/atlantis
 bin/xscreensaver-hacks/attraction
+bin/xscreensaver-hacks/barcode
 bin/xscreensaver-hacks/blaster
 bin/xscreensaver-hacks/blitspin
 bin/xscreensaver-hacks/bouboule
@@ -39,6 +40,7 @@ bin/xscreensaver-hacks/drift
 bin/xscreensaver-hacks/endgame
 bin/xscreensaver-hacks/engine
 bin/xscreensaver-hacks/epicycle
+bin/xscreensaver-hacks/eruption
 bin/xscreensaver-hacks/euler2d
 bin/xscreensaver-hacks/extrusion
 bin/xscreensaver-hacks/fadeplot
@@ -47,6 +49,7 @@ bin/xscreensaver-hacks/flame
 bin/xscreensaver-hacks/flipscreen3d
 bin/xscreensaver-hacks/flow
 bin/xscreensaver-hacks/fluidballs
+bin/xscreensaver-hacks/flurry
 bin/xscreensaver-hacks/forest
 bin/xscreensaver-hacks/galaxy
 bin/xscreensaver-hacks/gears
@@ -83,6 +86,7 @@ bin/xscreensaver-hacks/lmorph
 bin/xscreensaver-hacks/loop
 bin/xscreensaver-hacks/maze
 bin/xscreensaver-hacks/menger
+bin/xscreensaver-hacks/metaballs
 bin/xscreensaver-hacks/moebius
 bin/xscreensaver-hacks/moire
 bin/xscreensaver-hacks/moire2
@@ -99,6 +103,7 @@ bin/xscreensaver-hacks/petri
 bin/xscreensaver-hacks/phosphor
 bin/xscreensaver-hacks/pipes
 bin/xscreensaver-hacks/polyominoes
+bin/xscreensaver-hacks/popsquares
 bin/xscreensaver-hacks/pulsar
 bin/xscreensaver-hacks/pyro
 bin/xscreensaver-hacks/qix
@@ -168,6 +173,7 @@ share/xscreensaver/config/ant.xml
 share/xscreensaver/config/apollonian.xml
 share/xscreensaver/config/atlantis.xml
 share/xscreensaver/config/attraction.xml
+share/xscreensaver/config/barcode.xml
 share/xscreensaver/config/blaster.xml
 share/xscreensaver/config/blitspin.xml
 share/xscreensaver/config/bouboule.xml
@@ -199,6 +205,7 @@ share/xscreensaver/config/electricsheep.xml
 share/xscreensaver/config/endgame.xml
 share/xscreensaver/config/engine.xml
 share/xscreensaver/config/epicycle.xml
+share/xscreensaver/config/eruption.xml
 share/xscreensaver/config/euler2d.xml
 share/xscreensaver/config/extrusion.xml
 share/xscreensaver/config/fadeplot.xml
@@ -207,6 +214,7 @@ share/xscreensaver/config/flame.xml
 share/xscreensaver/config/flipscreen3d.xml
 share/xscreensaver/config/flow.xml
 share/xscreensaver/config/fluidballs.xml
+share/xscreensaver/config/flurry.xml
 share/xscreensaver/config/forest.xml
 share/xscreensaver/config/galaxy.xml
 share/xscreensaver/config/gears.xml
@@ -244,6 +252,7 @@ share/xscreensaver/config/lmorph.xml
 share/xscreensaver/config/loop.xml
 share/xscreensaver/config/maze.xml
 share/xscreensaver/config/menger.xml
+share/xscreensaver/config/metaballs.xml
 share/xscreensaver/config/moebius.xml
 share/xscreensaver/config/moire.xml
 share/xscreensaver/config/moire2.xml
@@ -260,6 +269,7 @@ share/xscreensaver/config/petri.xml
 share/xscreensaver/config/phosphor.xml
 share/xscreensaver/config/pipes.xml
 share/xscreensaver/config/polyominoes.xml
+share/xscreensaver/config/popsquares.xml
 share/xscreensaver/config/pulsar.xml
 share/xscreensaver/config/pyro.xml
 share/xscreensaver/config/qix.xml
