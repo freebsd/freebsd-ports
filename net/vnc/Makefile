@@ -16,6 +16,7 @@ MAINTAINER=	mchopra@engmail.uwaterloo.ca
 GNU_CONFIGURE=	yes
 USE_PERL5_RUN=	yes
 USE_REINPLACE=	yes
+USE_XLIB=	yes
 
 MAN1=		Xvnc.1 \
 		vncviewer.1 \
