@@ -38,6 +38,7 @@ PLIST_SUB+=	DIAHELP="help/dia" \
 MAKE_ENV=	HAVE_GNOME="yes"
 .else
 CONFIGURE_ARGS=	--disable-gnome
+LIB_DEPENDS+=	unicode.0:${PORTSDIR}/devel/libunicode
 PLIST_SUB+=	DIAHELP="dia/help" \
 		GNOME:="@comment "
 .endif
