@@ -1,0 +1,10 @@
+bin/gperiodic
+share/locale/de/LC_MESSAGES/gperiodic.mo
+share/locale/es/LC_MESSAGES/gperiodic.mo
+share/locale/fr/LC_MESSAGES/gperiodic.mo
+share/locale/pt/LC_MESSAGES/gperiodic.mo
+share/doc/gperiodic/AUTHORS
+share/doc/gperiodic/COPYING
+share/doc/gperiodic/Changes
+share/doc/gperiodic/README
+@dirrm share/doc/gperiodic

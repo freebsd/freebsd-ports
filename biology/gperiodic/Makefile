@@ -1,0 +1,41 @@
+# New ports collection makefile for:	gperiodic
+# Version required:			1.2.1
+# Date created:				16 July 1999
+# Whom:					Andrey Zakhvatov
+#
+# $FreeBSD$
+#
+
+DISTNAME=	gperiodic-1.2.1
+CATEGORIES=	biology
+MASTER_SITES=	ftp://ftp.seul.org/pub/gperiodic/
+
+MAINTAINER=	andy@icc.surw.chel.su
+
+LIB_DEPENDS=	gdk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
+		glib12.2:${PORTSDIR}/devel/glib12 \
+		gmodule12.2:${PORTSDIR}/devel/glib12 \
+		gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
+		intl.1:${PORTSDIR}/devel/gettext
+
+USE_GMAKE=	yes
+WRKSRC=		${WRKDIR}/gperiodic
+
+MAN1=		gperiodic.1
+
+USE_X_PREFIX=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
+		GLIB_CONFIG="${LOCALBASE}/bin/glib12-config" \
+		GTK_CONFIG="${X11BASE}/bin/gtk12-config"
+
+post-install:
+	@ ${INSTALL_MAN} ${WRKSRC}/man/gperiodic.1 ${PREFIX}/man/man1
+.if !defined(NOPORTDOCS)
+	@ ${MKDIR} ${PREFIX}/share/doc/gperiodic
+.for file in AUTHORS COPYING Changes README
+	@ ${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/gperiodic
+.endfor
+.endif
+
+.include <bsd.port.mk>
