@@ -1,11 +1,11 @@
---- calc/Makefile	Thu Nov  6 00:30:09 1997
-+++ /home/andy/tmp/wrk/calc/Makefile	Tue Aug 18 15:32:43 1998
-@@ -58,7 +58,7 @@
- 	$(LEX) -i -t scan.l > scan.c
+--- tcl_interf/Makefile	Sun Oct 25 23:39:45 1998
++++ /home/andy/tmp/wrk/tcl_interf/Makefile	Tue Jan  5 17:05:51 1999
+@@ -14,7 +14,7 @@
+ OTHERSOURCES = 
+ SOURCES = $(CSOURCES) $(OTHERSOURCES)
+ XXL_LIBS = $(LIBDIR)/libcalc.a $(LIBDIR)/libio.a $(LIBDIR)/libcanvas.a
+-LIBS =  -ltk8.0 -ltcl8.0 -lX11 -ldl -lm 
++LIBS =  -ltk80 -ltcl80 -lX11 -lm 
  
- gram.o: gram.cc
--	$(CCC) $(IFLAGS) -g gram.cc -o gram.o -c
-+	$(CCC) $(CCFLAGS) $(IFLAGS) -g gram.cc -o gram.o -c
+ include ../Makefile.options
  
- gram.cc: gram.y scan.c
- 	$(YACC) -d gram.y 
