@@ -23,7 +23,7 @@ USE_GNOME=	gnomehack lthack gtk20
 USE_GMAKE=	yes
 USE_LIBTOOL_VER=13
 INSTALLS_SHLIB=	yes
-CONFIGURE_ARGS=	CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>
