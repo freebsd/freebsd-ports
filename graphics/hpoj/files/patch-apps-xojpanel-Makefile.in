@@ -6,7 +6,7 @@
  
 -LFLAGS = @LIBRARY_CMDLINE@ @LIBQT_CMDLINE@ -lptal
 -CFLAGS = -O -Wall -g -I/usr/X11R6/include @INCLUDE_CMDLINE@
-+LFLAGS += @LDFLAGS@ @LIBRARY_CMDLINE@ @LIBQT_CMDLINE@ -lptal
++LFLAGS += @LDFLAGS@ @LIBRARY_CMDLINE@ @LIBQT_CMDLINE@ @LIBSNMP_CMDLINE@ -lptal
 +CFLAGS += @CFLAGS@ -Wall -g @INCLUDE_CMDLINE@
  
  PIXMAPS = hpojlcd.xpm hpoj_lcdmon.xpm hpoj_mini.xpm
