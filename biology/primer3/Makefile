@@ -8,7 +8,7 @@
 PORTNAME=	primer3
 PORTVERSION=	0.9
 CATEGORIES=	biology
-MASTER_SITES=	http://www-genome.wi.mit.edu/ftp/distribution/software/
+MASTER_SITES=	http://www.broad.mit.edu/ftp/distribution/software/
 DISTNAME=	${PORTNAME}_${PORTVERSION:S/./_/}_test
 
 MAINTAINER=	tonym@biolateral.com.au
