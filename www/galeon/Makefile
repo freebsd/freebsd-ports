@@ -52,7 +52,6 @@ USE_LIBTOOL=	yes
 USE_REINPLACE=	yes
 CONFIGURE_ARGS=	--with-mozilla-includes="${X11BASE}/include/mozilla${HEADERS_SUFX}" \
 		--with-mozilla-libs="${X11BASE}/lib/${MOZILLA}" \
-		--enable-nautilus-view \
 		${MOZ_CONFIGURE_ARGS}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include -D_REENTRANT ${PTHREAD_CFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
@@ -61,6 +60,15 @@ CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 MAN1=		galeon.1
 
 .include <bsd.port.pre.mk>
+
+.if exists(${X11BASE}/lib/libnautilus.so.0)
+WITH_NAUTILUS=	yes
+.endif
+
+.if defined(WITH_NAUTILUS)
+LIB_DEPENDS+=	nautilus.0:${PORTSDIR}/x11-fm/nautilus
+CONFIGURE_ARGS+=	--enable-nautilus-view
+.endif
 
 .if ${OSVERSION} > 500000
 # Galeon does not build correctly in -CURRENT if -Werror is passed
