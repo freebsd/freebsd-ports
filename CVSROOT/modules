@@ -6106,6 +6106,7 @@ openssl-beta	ports/security/openssl-beta
 openthreads	ports/devel/openthreads
 opentop		ports/devel/opentop
 openuniverse	ports/astro/openuniverse
+openupsd	ports/sysutils/openupsd
 openverse	ports/net/openverse
 openvmps	ports/net-mgmt/openvmps
 openvpn		ports/security/openvpn
