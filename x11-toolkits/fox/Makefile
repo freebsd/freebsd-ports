@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	fox
-PORTVERSION?=	1.0.46
-PORTREVISION?=	1
+PORTVERSION=	1.0.47
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://www.fox-toolkit.org/ftp/ \
 		ftp://ftp.fox-toolkit.org/pub/ \
@@ -15,7 +14,7 @@ MASTER_SITES=	http://www.fox-toolkit.org/ftp/ \
 		ftp://SunSITE.Informatik.RWTH-Aachen.DE/pub/Linux/fox/
 
 MAINTAINER?=	ports@FreeBSD.org
-COMMENT?=	Fast and extensive C++ GUI toolkit
+COMMENT=	Fast and extensive C++ GUI toolkit
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
@@ -61,10 +60,12 @@ MAN1+=	PathFinder.1 adie.1 calculator.1
 .else
 PLIST_SUB+=	APPS="@comment "
 .endif
+
+SPECFLAGS=	-ffast-math -finline-functions -fomit-frame-pointer -fexpensive-optimizations
 #
 .if defined(WITH_OPTIMIZED_CXXFLAGS)
 # turn distribution-recommended optimization flags back on
-CXXFLAGS+=	-Wuninitialized -ffast-math -finline-functions -fomit-frame-pointer -fexpensive-optimizations
+CXXFLAGS+=	-Wuninitialized ${SPECFLAGS}
 .endif
 #
 .if defined(WITH_PROFILING)
@@ -78,6 +79,10 @@ MAKE_ARGS+=	DOC=doc
 .endif
 
 post-patch:
+# Remove additional flags
+	@${REINPLACE_CMD} -E -e \
+		's|${SPECFLAGS}||g' \
+		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 # CXXFLAGS safeness
 .if !defined(WITH_OPTIMIZED_CXXFLAGS)
 	@${REINPLACE_CMD} -E -e \
@@ -125,7 +130,7 @@ pre-everything::
 .endif
 .if !defined(WITH_FOX_APPLICATIONS)
 	@${ECHO_MSG}
-	@${ECHO_MSG} 'You can install FOX sample applications by defining WITH_FOX_APPLICATIONS"
+	@${ECHO_MSG} 'You can install FOX sample applications by defining WITH_FOX_APPLICATIONS'
 .endif
 .if !defined(WITH_PROFILING)
 	@${ECHO_MSG}
