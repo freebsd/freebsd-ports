@@ -3,11 +3,11 @@
 # Date created:		13 April 1999
 # Whom:			Chris Piazza <cpiazza@home.net>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/04/14 05:27:27 mharo Exp $
 #
 
 DISTNAME=     	greed
-PKGNAME=	greed-0.652
+PKGNAME=	greed-0.665
 CATEGORIES=	net
 MASTER_SITES=	http://www.public.asu.edu/~arturner/
 
