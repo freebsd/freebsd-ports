@@ -1,5 +1,8 @@
 bin/scheme48
+bin/scheme-r5rs
+bin/scheme-srfi-7
 include/scheme48.h
+include/scheme48write-barrier.h
 lib/scheme48/big/array.scm
 lib/scheme48/big/big-util.scm
 lib/scheme48/big/callback.scm
@@ -137,6 +140,7 @@ lib/scheme48/srfi/srfi-27.scm
 lib/scheme48/srfi/srfi-28.scm
 lib/scheme48/srfi/srfi-37.scm
 lib/scheme48/srfi/srfi-42.scm
+lib/scheme48/srfi/srfi-45.scm
 lib/scheme48/srfi/srfi-5.scm
 lib/scheme48/srfi/srfi-7.scm
 @dirrm lib/scheme48/srfi
