@@ -1,0 +1,17 @@
+This is the shared library which allows change IP-address from which
+will be performing TCP-connection of network applications. This is 
+extremely useful when you need to control this but programs you are
+using have no configuration options specifying to which IP-address they
+should bind.
+
+To use this library you need only to set up environment variable CONN_ADDR
+to the IP-address to bind and then use LD_PRELOAD to pre-load this library
+for the application.
+
+Does not work with statically linked programs (there are not too much of
+them hopefully).
+
+FTP: ftp://ftp.lexa.ru/pub/domestic/snar/
+     ftp://ftp.lucky.net/pub/unix/local/
+
+Maintains: Alex Semenyaka (alexs@snark.rinet.ru)

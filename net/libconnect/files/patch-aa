@@ -1,0 +1,11 @@
+--- connect.c.old	Mon May 22 21:29:23 2000
++++ connect.c	Fri Mar 28 22:32:33 2003
+@@ -32,7 +32,7 @@
+ static struct sockaddr_in tobi;
+ 
+ int
+-connect(int s, const struct sockaddr* re, int namelen)
++connect __P((int s, const struct sockaddr *re, socklen_t namelen))
+ { 
+ 	struct sockaddr_in nm,*remo=(struct sockaddr_in*)re;
+ 	int nml;
