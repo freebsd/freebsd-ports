@@ -7,6 +7,7 @@
     SUBDIR += afterstep-devel
     SUBDIR += afterstep-i18n
     SUBDIR += afterstep-stable
+    SUBDIR += amaterus
     SUBDIR += amiwm
     SUBDIR += blackbox
     SUBDIR += ctwm
