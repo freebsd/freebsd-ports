@@ -1,0 +1,91 @@
+share/java/classes/activation.jar
+share/java/jaf-1.0.1/RELNOTES.txt
+share/java/jaf-1.0.1/README.txt
+share/java/jaf-1.0.1/LICENSE.txt
+share/java/jaf-1.0.1/demo/TextInternalizer.java
+share/java/jaf-1.0.1/demo/DCHTest.java
+share/java/jaf-1.0.1/demo/DCHTest2.java
+share/java/jaf-1.0.1/demo/DHURL.java
+share/java/jaf-1.0.1/demo/FileView.java
+share/java/jaf-1.0.1/demo/JAFApp.java
+share/java/jaf-1.0.1/demo/MCTest.java
+share/java/jaf-1.0.1/demo/ODCHTest.java
+share/java/jaf-1.0.1/demo/PlainDCH.java
+share/java/jaf-1.0.1/demo/PrefTest.java
+share/java/jaf-1.0.1/demo/SimpleDCF.java
+share/java/jaf-1.0.1/demo/CompViewer.java
+share/java/jaf-1.0.1/docs/javadocs/index-files/index-16.html
+share/java/jaf-1.0.1/docs/javadocs/index-files/index-2.html
+share/java/jaf-1.0.1/docs/javadocs/index-files/index-3.html
+share/java/jaf-1.0.1/docs/javadocs/index-files/index-4.html
+share/java/jaf-1.0.1/docs/javadocs/index-files/index-5.html
+share/java/jaf-1.0.1/docs/javadocs/index-files/index-6.html
+share/java/jaf-1.0.1/docs/javadocs/index-files/index-7.html
+share/java/jaf-1.0.1/docs/javadocs/index-files/index-8.html
+share/java/jaf-1.0.1/docs/javadocs/index-files/index-9.html
+share/java/jaf-1.0.1/docs/javadocs/index-files/index-10.html
+share/java/jaf-1.0.1/docs/javadocs/index-files/index-11.html
+share/java/jaf-1.0.1/docs/javadocs/index-files/index-12.html
+share/java/jaf-1.0.1/docs/javadocs/index-files/index-13.html
+share/java/jaf-1.0.1/docs/javadocs/index-files/index-14.html
+share/java/jaf-1.0.1/docs/javadocs/index-files/index-15.html
+share/java/jaf-1.0.1/docs/javadocs/index-files/index-1.html
+share/java/jaf-1.0.1/docs/javadocs/javax/activation/class-use/CommandObject.html
+share/java/jaf-1.0.1/docs/javadocs/javax/activation/class-use/DataContentHandler.html
+share/java/jaf-1.0.1/docs/javadocs/javax/activation/class-use/ActivationDataFlavor.html
+share/java/jaf-1.0.1/docs/javadocs/javax/activation/class-use/FileDataSource.html
+share/java/jaf-1.0.1/docs/javadocs/javax/activation/class-use/UnsupportedDataTypeException.html
+share/java/jaf-1.0.1/docs/javadocs/javax/activation/class-use/CommandMap.html
+share/java/jaf-1.0.1/docs/javadocs/javax/activation/class-use/MailcapCommandMap.html
+share/java/jaf-1.0.1/docs/javadocs/javax/activation/class-use/MimeTypeParameterList.html
+share/java/jaf-1.0.1/docs/javadocs/javax/activation/class-use/DataSource.html
+share/java/jaf-1.0.1/docs/javadocs/javax/activation/class-use/FileTypeMap.html
+share/java/jaf-1.0.1/docs/javadocs/javax/activation/class-use/DataHandler.html
+share/java/jaf-1.0.1/docs/javadocs/javax/activation/class-use/MimeType.html
+share/java/jaf-1.0.1/docs/javadocs/javax/activation/class-use/MimetypesFileTypeMap.html
+share/java/jaf-1.0.1/docs/javadocs/javax/activation/class-use/DataContentHandlerFactory.html
+share/java/jaf-1.0.1/docs/javadocs/javax/activation/class-use/URLDataSource.html
+share/java/jaf-1.0.1/docs/javadocs/javax/activation/class-use/CommandInfo.html
+share/java/jaf-1.0.1/docs/javadocs/javax/activation/class-use/MimeTypeParseException.html
+share/java/jaf-1.0.1/docs/javadocs/javax/activation/package-use.html
+share/java/jaf-1.0.1/docs/javadocs/javax/activation/package-summary.html
+share/java/jaf-1.0.1/docs/javadocs/javax/activation/package-tree.html
+share/java/jaf-1.0.1/docs/javadocs/javax/activation/package-frame.html
+share/java/jaf-1.0.1/docs/javadocs/javax/activation/CommandObject.html
+share/java/jaf-1.0.1/docs/javadocs/javax/activation/DataContentHandler.html
+share/java/jaf-1.0.1/docs/javadocs/javax/activation/DataContentHandlerFactory.html
+share/java/jaf-1.0.1/docs/javadocs/javax/activation/DataSource.html
+share/java/jaf-1.0.1/docs/javadocs/javax/activation/ActivationDataFlavor.html
+share/java/jaf-1.0.1/docs/javadocs/javax/activation/CommandInfo.html
+share/java/jaf-1.0.1/docs/javadocs/javax/activation/CommandMap.html
+share/java/jaf-1.0.1/docs/javadocs/javax/activation/DataHandler.html
+share/java/jaf-1.0.1/docs/javadocs/javax/activation/FileDataSource.html
+share/java/jaf-1.0.1/docs/javadocs/javax/activation/FileTypeMap.html
+share/java/jaf-1.0.1/docs/javadocs/javax/activation/MailcapCommandMap.html
+share/java/jaf-1.0.1/docs/javadocs/javax/activation/MimeType.html
+share/java/jaf-1.0.1/docs/javadocs/javax/activation/MimeTypeParameterList.html
+share/java/jaf-1.0.1/docs/javadocs/javax/activation/MimetypesFileTypeMap.html
+share/java/jaf-1.0.1/docs/javadocs/javax/activation/URLDataSource.html
+share/java/jaf-1.0.1/docs/javadocs/javax/activation/MimeTypeParseException.html
+share/java/jaf-1.0.1/docs/javadocs/javax/activation/UnsupportedDataTypeException.html
+share/java/jaf-1.0.1/docs/javadocs/deprecated-list.html
+share/java/jaf-1.0.1/docs/javadocs/allclasses-frame.html
+share/java/jaf-1.0.1/docs/javadocs/index.html
+share/java/jaf-1.0.1/docs/javadocs/packages.html
+share/java/jaf-1.0.1/docs/javadocs/serialized-form.html
+share/java/jaf-1.0.1/docs/javadocs/package-list
+share/java/jaf-1.0.1/docs/javadocs/help-doc.html
+share/java/jaf-1.0.1/docs/javadocs/stylesheet.css
+share/java/jaf-1.0.1/docs/javadocs/overview-tree.html
+share/java/jaf-1.0.1/docs/JAF-1.0.pdf
+share/java/jaf-1.0.1/docs/JAF-1.0.ps
+@dirrm share/java/jaf-1.0.1/demo
+@dirrm share/java/jaf-1.0.1/docs/javadocs/index-files
+@dirrm share/java/jaf-1.0.1/docs/javadocs/javax/activation/class-use
+@dirrm share/java/jaf-1.0.1/docs/javadocs/javax/activation
+@dirrm share/java/jaf-1.0.1/docs/javadocs/javax
+@dirrm share/java/jaf-1.0.1/docs/javadocs
+@dirrm share/java/jaf-1.0.1/docs
+@dirrm share/java/jaf-1.0.1/
+@unexec rmdir %D/share/java/classes || true
+@unexec rmdir %D/share/java || true
