@@ -15,8 +15,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	fjoe@freebsd.org
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
-LIB_DEPENDS=	pq.2:${PORTSDIR}/databases/postgresql7
+LIB_DEPENDS=	pq.3:${PORTSDIR}/${POSTGRESQL_PORT}
 RUN_DEPENDS=	${BUILD_DEPENDS}
+
+POSTGRESQL_PORT?=	databases/postgresql7
 
 PERL_CONFIGURE=	yes
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}

@@ -19,7 +19,8 @@ MAINTAINER=	anders@FreeBSD.org
 LIB_DEPENDS+=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
 .endif
 .if defined(WITH_PGSQL)
-LIB_DEPENDS+=	pq.2:${PORTSDIR}/databases/postgresql7
+POSTGRESQL_PORT?=	databases/postgresql7
+LIB_DEPENDS+=	pq.3:${PORTSDIR}/${POSTGRESQL_PORT}
 .endif
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-v${PORTVERSION}beta

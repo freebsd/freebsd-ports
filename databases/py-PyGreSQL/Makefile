@@ -16,7 +16,9 @@ POSTGRESQL_SUBPORT=	YES
 
 BUILD_DEPENDS=	${DATETIME_DEP}:${PORTSDIR}/lang/py-mx-base
 RUN_DEPENDS=	${DATETIME_DEP}:${PORTSDIR}/lang/py-mx-base
-LIB_DEPENDS=	pq.2:${PORTSDIR}/databases/postgresql7
+LIB_DEPENDS=	pq.3:${PORTSDIR}/${POSTGRESQL_PORT}
+
+POSTGRESQL_PORT?=	databases/postgresql7
 
 USE_PYTHON=	yes
 CONFIGURE_ARGS=	--with-python --prefix=${PREFIX}

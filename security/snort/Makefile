@@ -35,7 +35,8 @@ LDFLAGS+=	${PTHREAD_LIBS}
 .endif
 
 .if defined(WITH_POSTGRES)
-LIB_DEPENDS+=	pq.2:${PORTSDIR}/databases/postgresql7
+POSTGRESQL_PORT?=	databases/postgresql7
+LIB_DEPENDS+=	pq.3:${PORTSDIR}/${POSTGRESQL_PORT}
 CONFIGURE_ARGS+=--with-postgresql=${LOCALBASE}/pgsql
 .if exists(/usr/lib/libssl.a) && exists(/usr/lib/libcrypto.a)
 LDFLAGS+=	-lssl -lcrypto

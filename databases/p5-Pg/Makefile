@@ -13,9 +13,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	girgen@partitur.se
 
 POSTGRESQL_SUBPORT=YES
-.include <${.CURDIR}/../postgresql7/Makefile>
-
-LIB_DEPENDS=	pq.2:${PORTSDIR}/databases/postgresql7
+POSTGRESQL_PORT?=	databases/postgresql7
+.include <${.CURDIR}/../../${POSTGRESQL_PORT}/Makefile>
+LIB_DEPENDS=	pq.3:${PORTSDIR}/${POSTGRESQL_PORT}
 
 USE_PERL5=	yes
 

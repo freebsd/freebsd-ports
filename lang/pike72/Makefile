@@ -140,7 +140,7 @@ CONFIGURE_ARGS+= --without-mysql
 .endif
 
 .if defined(WITH_POSTGRES)
-LIB_DEPENDS+=	pq.2:${PORTSDIR}/databases/postgresql7
+LIB_DEPENDS+=	pq.3:${PORTSDIR}/databases/postgresql7
 CONFIGURE_ARGS+= --with-pgsql=${PREFIX}
 .else
 CONFIGURE_ARGS+= --without-pgsql
