@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Log-Log4perl
-PORTVERSION=	0.29
+PORTVERSION=	0.30
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Log
@@ -35,6 +35,11 @@ MAN3=		Log::Log4perl.3 \
 		Log::Log4perl::Appender::TestBuffer.3 \
 		Log::Log4perl::DateFormat.3 \
 		Log::Log4perl::FAQ.3 \
+		Log::Log4perl::Filter.3 \
+		Log::Log4perl::Filter::Boolean.3 \
+		Log::Log4perl::Filter::LevelMatch.3 \
+		Log::Log4perl::Filter::LevelRange.3 \
+		Log::Log4perl::Filter::StringMatch.3 \
 		Log::Log4perl::JavaMap.3 \
 		Log::Log4perl::JavaMap::ConsoleAppender.3 \
 		Log::Log4perl::JavaMap::FileAppender.3 \
