@@ -1,17 +1,17 @@
 # New ports collection makefile for:	xchat
-# Version required:		1.1.6
+# Version required:		1.1.7
 # Date created:			17 Nov 1998
-# Whom:				Jim Mock <jim@blues.ghis.net>
+# Whom:				Jim Mock <jim@FreeBSD.org>
 #
-# $Id: Makefile,v 1.19 1999/07/21 05:24:44 cpiazza Exp $
+# $Id: Makefile,v 1.20 1999/08/01 00:54:48 cpiazza Exp $
 #
 
-DISTNAME=	xchat-1.1.6
+DISTNAME=	xchat-1.1.7
 CATEGORIES=	irc
 MASTER_SITES=	http://xchat.org/files/beta/ \
 		http://xchat.linuxpower.org/files/beta/
 
-MAINTAINER=	jim@blues.ghis.net
+MAINTAINER=	jim@FreeBSD.org
 
 LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
 
@@ -40,9 +40,7 @@ CONFIGURE_ENV=	GTK_CONFIG="${GTK_CONFIG}"
 post-install:
 	@strip ${PREFIX}/bin/xchat
 .if !defined(NOPORTDOCS)
-	@${ECHO} "--------------------------------------------------------"
-	@${ECHO} "===> Installing xchat docs in ${PREFIX}/share/doc/xchat"
-	@${ECHO} "--------------------------------------------------------"
+	@${ECHO} "===>   Installing xchat docs in ${PREFIX}/share/doc/xchat"
 	@${MKDIR} ${PREFIX}/share/doc/xchat && chmod a+rx ${PREFIX}/share/doc/xchat
 	@${INSTALL_DATA} ${WRKSRC}/doc/*.* ${PREFIX}/share/doc/xchat
 	@${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/xchat
