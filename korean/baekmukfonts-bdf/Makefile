@@ -7,14 +7,15 @@
 
 PORTNAME=	baekmukfonts
 PORTVERSION=	2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	korean x11-fonts
 MASTER_SITES=	ftp://ftp.mizi.com/pub/baekmuk/ \
 		http://zinc.skku.ac.kr/~wkpark/baekmuk/
 PKGNAMESUFFIX=	-bdf
 DISTNAME=       baekmuk-${PORTVERSION}
 DISTFILES=	baekmuk-${PORTVERSION}${EXTRACT_SUFX} \
-		gulim10.bdf.gz gulim10b.bdf.gz
+		batang10.bdf.gz batang10b.bdf.gz \
+		gulim10.bdf.gz gulim10b.bdf.gz 
 EXTRACT_ONLY=	baekmuk-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	cjh@freebsd.org
@@ -36,7 +37,7 @@ FONTLIST=	batang10 batang10b batang12 batang12b batang14 batang14b \
 		gulim16b gulim18 gulim18b gulim20 gulim20b gulim24 gulim24b \
 		hline10 hline12 hline14 hline16 hline18 hline20 hline24
 
-FONTLIST_MANUAL =	gulim10 gulim10b
+FONTLIST_MANUAL =	batang10 batang10b gulim10 gulim10b
 
 BDFTOPCF=	${PREFIX}/bin/bdftopcf
 MKFONTDIR=	${PREFIX}/bin/mkfontdir
