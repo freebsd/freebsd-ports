@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cvsmail
-PORTVERSION=	1.4
+PORTVERSION=	1.5
 CATEGORIES=	mail
 MASTER_SITES=	http://www.scientia.demon.co.uk/users/ben/software/mail/dists/
 DISTNAME=	mailutils-${PORTVERSION}
@@ -14,9 +14,11 @@ DISTNAME=	mailutils-${PORTVERSION}
 MAINTAINER=	ben@FreeBSD.org
 
 ALL_TARGET=	cvsmail
+MANCOMPRESSED=	no
+MAN1=		cvsmail.1
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/cvsmail ${PREFIX}/bin
-	@${CAT} ${PKGMESSAGE}
+	${INSTALL_MAN} ${WRKSRC}/cvsmail.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>
