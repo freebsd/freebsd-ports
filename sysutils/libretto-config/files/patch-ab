@@ -1,5 +1,8 @@
---- libapm.c.orig	Thu Jun 18 17:28:23 1998
-+++ libapm.c	Wed Oct 15 06:51:53 2003
+
+$FreeBSD$
+
+--- libapm.c.orig	Fri Jun 19 02:28:23 1998
++++ libapm.c	Sun Aug 22 23:31:55 2004
 @@ -8,12 +8,19 @@
  /*                                                         */
  /***********************************************************/
@@ -49,6 +52,15 @@
        switch (c) {
          case 'h':
            usage();
+@@ -189,7 +202,7 @@
+         case '?':
+           usage();
+           break;
+-        default:
++        default: break;
+       }
+     }
+ #ifdef DEBUG
 @@ -215,29 +228,60 @@
  void usage(void)
  {
@@ -95,7 +107,7 @@
 +              [-S {disable,enable}		: PanelSwitch]\n\
 +              [-A {disable,<time>}		: AlarmOn]\n\
 +              [-L {0,1,2,3}			: LcdPower]\n\
-           \n");
++          \n");
 +# endif /* HAVE_GETOPT_LONG */
 +
 +#else /* not CMOS_ACCESS */
@@ -112,7 +124,7 @@
 +              [-L --LcdPower {0,1,2,3}]\n\
 +              [-V --Volume {0,1,2,3}]\n\
 +              [-O --Off {suspend|hibernation}  Use Only >= Libretto100]\n\
-+          \n");
+           \n");
 +# else /* not HAVE_GETOPT_LONG */
 +    printf("\
 +usage: libretto-config [-v			: Version]\n\
