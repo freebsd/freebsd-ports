@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mod_jk
-PORTVERSION=	1.2.3
+PORTVERSION=	1.2.4
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_APACHE_JAKARTA}
@@ -14,14 +14,31 @@ MASTER_SITE_SUBDIR=	jakarta-tomcat-connectors/jk/release/v${PORTVERSION}/src
 DISTNAME=	jakarta-tomcat-connectors-jk-${PORTVERSION}-src
 
 MAINTAINER=	girgen@pingpong.net
-COMMENT=	Apache JK module for Tomcat
+COMMENT=	Apache JK module for connecting to Tomcat using AJP1X
 
-PATCH_DEPENDS=	${AUTOMAKE}:${PORTSDIR}/devel/automake
+.include <bsd.port.pre.mk>
+
+.if exists(${LOCALBASE}/include/apache2/apr.h)
+APACHE_PORT?=	${PORTSDIR}/www/apache2
+.else
+APACHE_PORT?=	${PORTSDIR}/www/apache13
+.endif
+
+.if ${APACHE_PORT:S/${PORTSDIR}\///} == "www/apache2"
+APACHE_VER=	2.0
+APACHE2=	2
+PLIST_SUB=	APACHE2=2
+PKGNAMESUFFIX=	-apache2
+.else
+APACHE_VER=	1.3
+APACHE2=
+PLIST_SUB=	APACHE2=
+.endif
+
 BUILD_DEPENDS=	${APXS}:${APACHE_PORT}
 RUN_DEPENDS=	${APXS}:${APACHE_PORT}
 
 APXS=		${LOCALBASE}/sbin/apxs
-APACHE_PORT?=	${PORTSDIR}/www/apache13
 APACHE_CONF=	${LOCALBASE}/etc/apache${APACHE2}
 WRKSRC=		${WRKDIR}/jakarta-tomcat-connectors-jk-${PORTVERSION}-src/jk/native
 
@@ -32,9 +49,8 @@ USE_AUTOMAKE_VER=	15
 AUTOMAKE_ARGS=	--add-missing
 GNU_CONFIGURE=	YES
 CONFIGURE_ARGS+=	--with-apxs=${APXS}
-APACHE2?=
-APACHE_VER?=	1.3
-PLIST_SUB=	APACHE2=${APACHE2}
+
+pre-patch:	build-depends
 
 post-patch:
 	cd ${WRKSRC}; ${ACLOCAL}; ${LIBTOOLIZE}
@@ -48,4 +64,4 @@ do-install:
 post-install:
 	${CAT} ${PKGMESSAGE} | ${SED} "s|/usr/local|${PREFIX}|g"
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
