@@ -18,6 +18,7 @@ COMMENT=	Electronic Book Viewer
 LIB_DEPENDS=	eb.7:${PORTSDIR}/japanese/eb
 
 USE_GNOME=	imlib
+USE_GETOPT_LONG=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_AUTOMAKE_VER=	14
@@ -26,13 +27,8 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
 		AUTOHEADER="${TRUE}"
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-
-.if !exists(/usr/include/getopt.h)
-LIB_DEPENDS+=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
-LDFLAGS+=	-lgnugetopt
-.endif
+CPPFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib
 
 post-install:
 .if !defined(NOPORTDOCS)
