@@ -1,0 +1,12 @@
+This is a Ruby module which provides file locking mechanism.
+
+The module FileLock implements two classes: LockFile and LockedFile;
+the class LockFile deals with so-called lockfiles, and the class
+LockedFile offer a high-level interface to deal with both regular
+files and lockfiles at the same time.
+
+To be portable, a small C extension is used to minimize the time
+between existence check of a lockfile and its creation.
+
+Author:	Clemens Hintze <c.hintze@gmx.net>
+WWW:	http://www.ruby-lang.org/en/raa-list.rhtml?name=filelock
