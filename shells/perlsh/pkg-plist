@@ -1,0 +1,10 @@
+bin/psh
+share/perlsh/CHANGES
+share/perlsh/MANIFEST
+share/perlsh/README
+share/perlsh/TODO
+share/perlsh/psh.NEWS
+share/perlsh/pshrc
+share/perlsh/test.pl
+share/perlsh/psh.pod
+@dirrm share/perlsh
