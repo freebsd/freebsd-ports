@@ -60,8 +60,7 @@ pre-fetch:
 pre-extract:
 .if !defined(DISPLAY) || ${DISPLAY} == ""
 	@ ${ECHO}
-	@ ${ECHO} Can\'t open display:
-	@ ${ECHO} Please check your DISPLAY variable.
+	@ ${ECHO} Cannot open display; please check your DISPLAY variable.
 	@ ${ECHO}
 	@ ${FALSE}
 .endif
