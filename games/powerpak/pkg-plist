@@ -11,8 +11,6 @@ include/PowerPak/sprites.h
 include/PowerPak/truetype.h
 lib/libPP.a
 lib/libPP.so
-@exec /sbin/ldconfig -m %B
-@unexec /sbin/ldconfig -R
 share/examples/PowerPak/PowerDraw/Makefile
 share/examples/PowerPak/PowerDraw/ex1.c
 share/examples/PowerPak/PowerDraw/ex2.c

@@ -21,13 +21,12 @@ PATCHFILES=     libpng-1.0.6-patch-a.txt.gz \
 
 MAINTAINER=     ache@FreeBSD.org
 
+INSTALL_SHLIBS=	yes
+
 MAN3=           libpng.3 libpngpf.3
 MAN5=           png.5
 
 do-configure:
 	cd ${WRKSRC} && ${CP} scripts/makefile.std Makefile
-
-post-install:
-	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>

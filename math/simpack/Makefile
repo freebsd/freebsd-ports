@@ -14,6 +14,7 @@ DISTFILES=	SimPack3.tar.Z
 MAINTAINER=	rssh@cki.ipri.kiev.ua
 
 USE_XLIB=	yes
+INSTALL_SHLIBS=	yes
 
 WRKSRC=		${WRKDIR}/simpack
 
@@ -31,7 +32,6 @@ do-install: do-install-bin do-install-include do-install-lib do-install-doc
 
 post-install:
 	@${SH} ${PKGDIR}/REQ
-	@${LDCONFIG} -m ${PREFIX}/lib
 
 do-install-bin:
 	@for i in `${CAT} ${FILESDIR}/FILES-BIN` ; do \

@@ -17,6 +17,7 @@ Y2K=            http://www.scriptics.com/Y2K.html
 
 NO_LATEST_LINK=	yes
 WRKSRC=		${WRKDIR}/tcl8.0.5/unix
+INSTALL_SHLIBS=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared
 CONFIGURE_ENV=  PORTSDIR=${PORTSDIR}
@@ -50,7 +51,6 @@ pre-build:
 
 post-install:
 	${LN} -sf ${TCL_LIB_FILE} ${PREFIX}/lib/${TCL_LIB}
-	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 .if exists(${PKGINSTALL})
 	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL}
 .endif

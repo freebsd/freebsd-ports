@@ -29,8 +29,6 @@ lib/libSDL.a
 lib/libSDL.la
 lib/libSDL.so
 lib/libSDLmain.a
-@exec /sbin/ldconfig -m %B
-@unexec /sbin/ldconfig -R
 share/aclocal/sdl.m4
 share/doc/SDL/BUGS
 share/doc/SDL/COPYING

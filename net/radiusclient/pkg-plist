@@ -10,8 +10,6 @@ include/radiusclient.h
 lib/libradiusclient.a
 lib/libradiusclient.so
 lib/libradiusclient.so.0.3
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 sbin/radlogin
 sbin/radstatus
 sbin/radacct

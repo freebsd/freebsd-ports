@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.trolltech.com/qt/source/
 MAINTAINER=	will@FreeBSD.org
 
 USE_GMAKE=	yes
+INSTALL_SHLIBS=	yes
 USE_X_PREFIX=	yes
 USE_NEWGCC=	yes
 MAKE_ENV+=	QTDIR=${WRKSRC} CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" CC="${CC}"
@@ -38,7 +39,6 @@ do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/bin/moc $(PREFIX)/bin
 	@${INSTALL_DATA} ${WRKSRC}/lib/libqt.so.${VERSION} $(PREFIX)/lib
 	@${LN} -sf $(PREFIX)/lib/libqt.so.$(VERSION) $(PREFIX)/lib/libqt.so
-	@${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m $(PREFIX)/lib
 	@${MKDIR} $(PREFIX)/include/X11/qt
 	@${INSTALL_DATA} ${WRKSRC}/include/* $(PREFIX)/include/X11/qt
 	@${INSTALL_MAN} ${WRKSRC}/man/man1/* $(PREFIX)/man/man1

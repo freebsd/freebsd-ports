@@ -19,6 +19,7 @@ LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview
 
 WRKSRC=		${WRKDIR}/sspkg2.1
 USE_X_PREFIX=	yes
+INSTALL_SHLIBS=	yes
 USE_GMAKE=	yes
 MAKE_ENV=       OPENWINHOME=${X11BASE}
 
@@ -26,7 +27,6 @@ pre-patch:
 	${CP} ${WRKSRC}/config.sunos4x ${WRKSRC}/config.fbsd
 
 post-install:
-	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/SlingShot
 	${INSTALL_DATA} ${WRKSRC}/README  ${PREFIX}/share/doc/SlingShot

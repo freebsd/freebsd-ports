@@ -102,8 +102,6 @@ share/sphinx2/model/lm/turtle/demo.token
 share/sphinx2/model/lm/turtle/demo.vocab
 share/sphinx2/model/lm/turtle/goforward.16k
 share/sphinx2/model/lm/turtle/test.ctl
-@exec /sbin/ldconfig -m %B
-@unexec /sbin/ldconfig -R
 @dirrm share/sphinx2/model/lm/turtle
 @dirrm share/sphinx2/model/lm
 @dirrm share/sphinx2/model/hmm/6k

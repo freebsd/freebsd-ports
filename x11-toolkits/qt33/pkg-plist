@@ -265,8 +265,6 @@ lib/libqgl.a
 lib/libqt2.so
 lib/libqt2.so.3
 lib/libqxt.a
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 share/doc/qt2/ANNOUNCE
 share/doc/qt2/FAQ
 share/doc/qt2/LICENSE.QPL

@@ -7,8 +7,6 @@ include/rexxsaa.h
 lib/librexx.a
 lib/librexx.so
 lib/librexx.so.2
-@exec /sbin/ldconfig -m %B
-@unexec /sbin/ldconfig -R
 share/doc/rexx-imc/README
 share/doc/rexx-imc/README.bugreport
 share/doc/rexx-imc/README.docs

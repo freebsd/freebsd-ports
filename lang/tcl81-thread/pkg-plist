@@ -13,8 +13,6 @@ include/tcl8.1/generic/tclRegexp.h
 include/tcl8.1/unix/tclUnixPort.h
 lib/libtcl81_r.a
 lib/libtcl81_r.so.1
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 lib/tcl8.1/auto.tcl
 lib/tcl8.1/encoding/ascii.enc
 lib/tcl8.1/encoding/big5.enc

@@ -19,13 +19,11 @@ LIB_DEPENDS=	ffi.2:${PORTSDIR}/devel/libffi \
 
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
+INSTALL_SHLIBS=	yes
 CONFIGURE_ARGS=	--with-defaultdir=${PREFIX} \
 		--with-tclincludedir=${PREFIX}/include/tcl8.2 \
 		--with-tkincludedir=${PREFIX}/include/tk8.2 \
 		--with-tclscriptdir=${PREFIX}/lib/tcl8.2 \
 		--with-tkscriptdir=${PREFIX}/lib/tk8.2
-
-post-install:
-	@${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>

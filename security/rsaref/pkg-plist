@@ -7,8 +7,6 @@ include/rsaref.h
 lib/librsaref.a
 lib/librsaref.so
 lib/librsaref.so.2
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 share/doc/rsaref/info.txt
 share/doc/rsaref/rsaref.txt
 @dirrm share/doc/rsaref

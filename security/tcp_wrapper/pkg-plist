@@ -7,6 +7,4 @@ bin/try-from
 lib/libwrap.a
 lib/libwrap.so.7.6
 lib/libwrap.so
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 etc/inetd.conf.wrapped.sample

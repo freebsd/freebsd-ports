@@ -56,8 +56,6 @@ lib/libplotter.a
 lib/libxmi.so
 lib/libxmi.so.1
 lib/libxmi.a
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 include/plot.h
 include/plotcompat.h
 include/plotter.h

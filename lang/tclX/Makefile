@@ -16,6 +16,7 @@ MAINTAINER=	jseger@FreeBSD.org
 LIB_DEPENDS=	tk80.1:${PORTSDIR}/x11-toolkits/tk80
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/unix
+INSTALL_SHLIBS=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS= --enable-shared --with-tk
 PLIST_SUB=	TCLX_LONG_VER=8.0.4 TCLX_SHORT_VER=804
@@ -41,6 +42,5 @@ post-install:
 	$(INSTALL_MAN) $(WRKSRC)/../doc/TclXInit.3 $(PREFIX)/man/man3
 	$(INSTALL_MAN) $(WRKSRC)/../doc/Memory.n $(PREFIX)/man/mann
 	$(INSTALL_MAN) $(WRKSRC)/../doc/TclX.n $(PREFIX)/man/mann
-	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.post.mk>

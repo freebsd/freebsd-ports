@@ -15,6 +15,7 @@ MAINTAINER=	chuckr@FreeBSD.org
 
 USE_XLIB=	yes
 USE_LIBTOOL=	yes
+INSTALL_SHLIBS=	yes
 USE_NEWGCC=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-libplotter --enable-libxmi
@@ -26,8 +27,5 @@ CONFIGURE_ENV=	MOTIFLIB="${MOTIFLIB}"
 # to ensure dependency info is generated properly
 REQUIRES_MOTIF=	yes
 .endif
-
-post-install:
-	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>

@@ -18,6 +18,8 @@ LIB_DEPENDS=	SDL-1.0.2:${PORTSDIR}/devel/sdl \
 
 MAKEFILE=	Makefile.FreeBSD
 
+INSTALL_SHLIBS=	yes
+
 post-extract:
 	@ /usr/bin/find ${WRKSRC} -type f | xargs ${PERL} -pi -e 's/\r//g'
 
@@ -41,8 +43,5 @@ do-install:
 .for file in ex1.c ex2.c ex3.c ex4.c ex5.c sprite.pcx
 	@ ${INSTALL_DATA} ${WRKSRC}/PowerInput/examples/${file} ${PREFIX}/share/examples/PowerPak/PowerInput
 .endfor
-
-post-install:
-	@ ${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>

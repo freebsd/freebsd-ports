@@ -23,8 +23,6 @@ lib/libtcl%%SHORT_TCL_VER%%.a
 lib/libtcl%%SHORT_TCL_VER%%.so
 lib/libtcl%%SHORT_TCL_VER%%.so.1
 lib/libtclstub%%SHORT_TCL_VER%%.a
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 lib/tcl%%TCL_VER%%/auto.tcl
 lib/tcl%%TCL_VER%%/encoding/ascii.enc
 lib/tcl%%TCL_VER%%/encoding/big5.enc

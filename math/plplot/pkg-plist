@@ -12,8 +12,6 @@ include/plplot/plxwd.h
 lib/libplplotdX.a
 lib/libplplotdX.so
 lib/libplplotdX.so.4
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 libdata/plplot/cglobe.map
 libdata/plplot/globe.map
 libdata/plplot/plstnd5.fnt

@@ -72,8 +72,6 @@ lib/libpicc.a
 lib/libpisock.a
 lib/libpisock.so
 lib/libpisock.so.3.1
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %D/lib
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 lib/pix/b1.gif
 lib/pix/b2.gif
 lib/pix/b3.gif

@@ -18,6 +18,7 @@ MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 
+INSTALL_SHLIBS=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ZIP --with-JPEG \
 		--with-DIR_BIN=${PREFIX}/bin \
@@ -106,8 +107,5 @@ MLINKS=	TIFFError.3t        TIFFSetErrorHandler.3t \
 	TIFFtile.3t         TIFFTileRowSize.3t \
 	TIFFtile.3t         TIFFTileSize.3t \
 	TIFFtile.3t         TIFFVTileSize.3t
-
-post-install:
-	${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>

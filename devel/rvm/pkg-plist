@@ -17,8 +17,6 @@ lib/librvmlwp.so.1
 lib/libseg.a
 lib/libseg.so
 lib/libseg.so.1
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 sbin/rdsinit
 sbin/rvmutl
 @dirrm include/rvm

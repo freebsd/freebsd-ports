@@ -232,8 +232,6 @@ lib/libtclobjc.so.1
 lib/libtkobjc.a
 lib/libtkobjc.so
 lib/libtkobjc.so.4
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 @dirrm etc/swarm
 @dirrm include/activity
 @dirrm include/analysis

@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	pth
 
 MAINTAINER=	rse@engelschall.com
 
+INSTALL_SHLIBS=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--enable-pthread \
@@ -29,8 +30,5 @@ post-build:
 
 test:
 	@cd ${WRKSRC} && ${MAKE} test
-
-post-install:
-	@${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>

@@ -22,8 +22,6 @@ include/tiffio.h
 lib/libtiff.a
 lib/libtiff.so
 lib/libtiff.so.4
-@exec /sbin/ldconfig -m %B
-@unexec /sbin/ldconfig -R
 share/doc/tiff/bugs.html
 share/doc/tiff/build.html
 share/doc/tiff/contrib.html

@@ -40,5 +40,3 @@ lib/siod/parser_pratt.so
 lib/libsiod.so
 include/siod.h
 @dirrm lib/siod
-@exec /sbin/ldconfig -m %D/lib
-@unexec /sbin/ldconfig -R

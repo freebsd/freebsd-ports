@@ -15,6 +15,7 @@ MAINTAINER=	adam@whizkidtech.net
 
 BUILD_DEPENDS=	tuc:${PORTSDIR}/converters/tuc
 
+INSTALL_SHLIBS=	yes
 USE_ZIP=	yes
 DIST_SUBDIR=	tifmerge
 MAN3=		tifmerge.3
@@ -33,8 +34,5 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/libtifmerge.a ${PREFIX}/lib
 	${INSTALL_DATA} ${WRKSRC}/tifmerge.h ${PREFIX}/include
 	${INSTALL_DATA} ${WRKSRC}/tifmerge.3 ${PREFIX}/man/man3
-
-post-install:
-	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>

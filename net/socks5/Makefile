@@ -25,6 +25,7 @@ RESTRICTED=	"no commercial use"
 #		--with-passwd
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
+INSTALL_SHLIBS=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libconffile=${PREFIX}/etc/libsocks5.conf \
 		--with-srvconffile=${PREFIX}/etc/socks5.conf \

@@ -18,6 +18,7 @@ MASTER_SITES=	ftp://ftp.netlab.co.jp/pub/lang/ruby/${BRANCH_NAME}/ \
 MAINTAINER=	yasuf@bsdclub.org
 
 GNU_CONFIGURE=	yes
+INSTALL_SHLIBS=	yes
 CONFIGURE_ARGS=	--enable-shared
 MAN1=		ruby.1
 PLIST_SUB=	RUBY_VER="${RUBY_VER}" RUBY_ARCH="${RUBY_ARCH}"
@@ -63,7 +64,6 @@ post-install:
 	${MKDIR} ${DOCDIR}/readline
 	${INSTALL_DATA} ${WRKSRC}/ext/readline/README ${DOCDIR}/readline
 .endif
-	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 	@${CAT} ${PKGMESSAGE}
 
 test:

@@ -17,13 +17,12 @@ PATCH_DIST_STRIP= -p1
 
 MAINTAINER=	jfitz@FreeBSD.org
 
+INSTALL_SHLIBS=	yes
+
 MAKE_ENV=	MKDIR="${MKDIR}" OPTFLAGS="${CFLAGS}"
 MAN1=		rexx.1
 
 post-extract:
 	@${CP} ${FILESDIR}/Makefile ${WRKSRC}
-
-post-install:
-	@${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
