@@ -7,6 +7,7 @@
 
 PORTNAME=	linux-netscape
 PORTVERSION=	6.2.1
+PORTREVISION=	1
 CATEGORIES=	www linux
 MASTER_SITES=	ftp://ftp.netscape.com/pub/netscape6/english/${PORTVERSION}/unix/linux22/xpi/ \
 		ftp://ftp.bu.edu/pub/mirrors/ftp.netscape.com/pub/netscape6/english/${PORTVERSION}/unix/linux22/xpi/ \
@@ -71,7 +72,7 @@ STARTUP_CMD=	netscape6
 .include <bsd.port.pre.mk>
 
 pre-everything::
-	${MKDIR} ${WRKSRC}/bin/plugins/java2 ${WRKSRC}/bin/chrome \
+	${MKDIR} ${WRKSRC}/bin/plugins ${WRKSRC}/bin/chrome \
 		${WRKSRC}/plugins
 	${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure
 DISTFILES!=${CAT} ${.CURDIR}/work/${WRKSRC}/components.conf; ${TRUE}
