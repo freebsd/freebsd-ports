@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://lame.sourceforge.net/pub/
-MASTER_SITE_SUBDIR=	lame/src
+MASTER_SITE_SUBDIR=	lame
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	yoshiaki@kt.rim.or.jp
