@@ -1,0 +1,17 @@
+SMTP feed -- SMTP Fast Exploding External Deliverer for Sendmail
+
+Smtpfeed is a SMTP delivery agent which is called by sendmail, and it
+improves required time to complete delivery of copies of a message to
+recipients of huge number.
+
+This delay of delivery by sendmail causes by the fact that implementation
+of SMTP delivery routine in sendmail processes all delivery in a series.
+By this reason,  when it takes long time for delivery to one recipient
+which is in a huge list, delivery to following recipients is greatly
+influenced.
+
+To avoid such a problem, delivery agents should be implemented so that
+a delivery is not influenced by preceding delivery: DNS query and
+SMTP delivery par destination should be processed in parallel.
+Smtpfeed is the SMTP delivery agent for sendmail implemented with this
+idea.
