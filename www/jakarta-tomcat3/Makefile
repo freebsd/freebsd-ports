@@ -15,6 +15,8 @@ MASTER_SITE_SUBDIR=	tomcat-3/v${PORTVERSION}/bin
 MAINTAINER=	liukang@bjut.edu.cn
 COMMENT=	Open-source Java web server by Apache, stable 3.x branch
 
+PATCH_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/www/jakarta-tomcat4:pre-everything
+
 .if !defined(NOPORTDOCS)
 MAN1=	${CONTROL_SCRIPT_NAME}.1
 .endif
@@ -25,7 +27,6 @@ NO_BUILD=	YES
 LATEST_LINK=	${APP_SHORTNAME}
 
 MAJOR_VER=	${PORTVERSION:R:R}
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 APP_HOME?=	${PREFIX}/${PKGBASE}${PORTVERSION:R}
 LOG_DIR=	${APP_HOME}/logs
 PLIST_SUB+=	T=${APP_HOME:S/^${PREFIX}\///} WWWOWN=${USER} WWWGRP=${GROUP}
@@ -49,7 +50,7 @@ PID_FILE=	/var/run/${APP_SHORTNAME}.pid
 REPLACE_FILES=	${PORTSDIR}/www/jakarta-tomcat4/files/daemonctl.c \
 		${PORTSDIR}/www/jakarta-tomcat4/files/daemonctl.1 \
 		${PORTSDIR}/www/jakarta-tomcat4/files/startup.sh \
-		${WRKSRC}/conf/server.xml
+		conf/server.xml
 JAR_FILE=	lib/tomcat.jar
 CONF_EXT=	sample
 PLIST_SUB+=	CONF_EXT=${CONF_EXT}
@@ -77,7 +78,7 @@ post-patch:
 
 .for f in ${REPLACE_FILES}
 	@${ECHO_MSG} -n ">> Customizing `basename $f`..."
-	@${SED} \
+	@(cd ${WRKSRC} && ${SED} \
 	-e "/%%APP_HOME%%/s//${APP_HOME:S/\//\\\//g}/g" \
 	-e "/%%APP_SHORTNAME%%/s//${APP_SHORTNAME}/g" \
 	-e "/%%APP_TITLE%%/s//${APP_TITLE}/g" \
@@ -100,7 +101,7 @@ post-patch:
 	-e "/%%STDOUT_LOG%%/s//${STDOUT_LOG:S/\//\\\//g}/g" \
 	-e "/%%STOP_TIMEOUT%%/s//${STOP_TIMEOUT}/g" \
 	-e "/%%USER%%/s//${USER}/g" \
-	$f > ${WRKDIR}/`basename $f`
+	$f > ${WRKDIR}/`basename $f`)
 	@${ECHO_MSG} " [ DONE ]"
 .endfor
 
