@@ -2,8 +2,8 @@ bin/sylpheed-claws
 bin/sylpheed-switcher
 bin/sylprint.pl
 etc/sylprint.rc.example
-lib/sylpheed-claws/plugins/spamassassin.so
-lib/sylpheed-claws/plugins/spamassassin_gtk.so
+%%SA_PLUG%%lib/sylpheed-claws/plugins/spamassassin.so
+%%SA_PLUG%%lib/sylpheed-claws/plugins/spamassassin_gtk.so
 %%PORTDOCS%%share/doc/sylpheed-claws/NEWS
 %%PORTDOCS%%share/doc/sylpheed-claws/README
 %%PORTDOCS%%share/doc/sylpheed-claws/README.claws
@@ -773,5 +773,5 @@ share/sylpheed-claws/uudec
 %%PORTDOCS%%@dirrm share/doc/sylpheed-claws/faq/de
 %%PORTDOCS%%@dirrm share/doc/sylpheed-claws/faq
 %%PORTDOCS%%@dirrm share/doc/sylpheed-claws
-@dirrm lib/sylpheed-claws/plugins
-@dirrm lib/sylpheed-claws
+%%SA_PLUG%%@dirrm lib/sylpheed-claws/plugins
+%%SA_PLUG%%@dirrm lib/sylpheed-claws
