@@ -1,0 +1,31 @@
+--- etc/Makefile.in.orig	Sat Jan 26 16:35:45 2002
++++ etc/Makefile.in	Tue Oct 15 06:18:35 2002
+@@ -46,7 +46,7 @@
+ #### Host, target, and site specific Makefile fragments come in here.
+ ###
+ 
+-INFOFILES = standards.info configure.info
++INFOFILES =
+ DVIFILES = standards.dvi configure.dvi
+ 
+ all:
+@@ -68,19 +68,6 @@
+ 	done
+ 
+ install-info: info
+-	$(SHELL) $(srcdir)/../mkinstalldirs $(infodir)
+-	if test ! -f standards.info; then cd $(srcdir); fi; \
+-	if test -f standards.info; then \
+-	  for i in standards.info*; do \
+-	    $(INSTALL_DATA) $$i $(infodir)/$$i; \
+-	  done; \
+-	fi
+-	if test ! -f configure.info; then cd $(srcdir); fi; \
+-	if test -f configure.info; then \
+-	  for i in configure.info*; do \
+-	    $(INSTALL_DATA) $$i $(infodir)/$$i; \
+-	  done; \
+-	fi
+ 
+ dvi:
+ 	for f in $(DVIFILES); do \
