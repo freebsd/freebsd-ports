@@ -20,6 +20,8 @@ PLIST_FILES=	bin/fbdesk
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 
+PORTDOCS=	COPYING ChangeLog INSTALL README
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 500000
@@ -27,6 +29,14 @@ USE_REINPLACE=	yes
 post-patch:
 	${REINPLACE_CMD} -e "s/inttypes\.h/stdint\.h/" \
 		${WRKSRC}/src/FbTk/Timer.hh
+.endif
+
+post-install:
+.ifndef (NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for i in ${PORTDOCS}
+	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+.endfor
 .endif
 
 .include <bsd.port.post.mk>
