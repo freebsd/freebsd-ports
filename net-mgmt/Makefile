@@ -147,6 +147,7 @@
     SUBDIR += sipcalc
     SUBDIR += slate
     SUBDIR += snmptt
+    SUBDIR += softflowd
     SUBDIR += sting
     SUBDIR += subcalc
     SUBDIR += sysmon
