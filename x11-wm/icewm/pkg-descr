@@ -9,4 +9,7 @@ When you want gnome option,
 When you want i18n option,
  % make -DI18N install
 
+When you want to compile with xlocale option,
+ % make -DXLOCALE install
+
 'bsd-daemon.xpm' is from Steve Farrell.
