@@ -1,9 +1,9 @@
---- plugindir/Makefile.in.orig	Sun Feb 16 01:24:20 2003
-+++ plugindir/Makefile.in	Sun Feb 16 01:24:28 2003
+--- plugindir/Makefile.in.orig	Tue May 13 17:31:52 2003
++++ plugindir/Makefile.in	Tue May 13 22:29:02 2003
 @@ -26,7 +26,7 @@
  
  UADEDEPS = uade.h defaults.h gui.h ../decrunch/decrunch.h
- INCLUDEFLAGS = -I. -I../osdep -I../src/include $(GLIBFLAGS) $(GTKFLAGS) $(XMMSFLAGS) $(INCLUDEFLAG)
+ INCLUDEFLAGS = -I. -I../osdep -I../effects -I../src/include $(GLIBFLAGS) $(GTKFLAGS) $(XMMSFLAGS) $(INCLUDEFLAG)
 -CFLAGS = -O2 -DHAVE_CONFIG_H -D_REENTRANT -DVERSION=\"$(VERSION)\" -W -Wall
 +CFLAGS += -O2 -DHAVE_CONFIG_H -D_REENTRANT -DVERSION=\"$(VERSION)\" -W -Wall
  LDFLAGS = $(LIBFLAG) $(GLIBLIBS) $(XMMSLIBS)

@@ -1,11 +1,11 @@
---- src/Makefile.in.orig	Sun Feb 16 01:15:38 2003
-+++ src/Makefile.in	Sun Feb 16 01:15:48 2003
-@@ -3,7 +3,7 @@
- ARCHFLAGS = 
+--- src/Makefile.in.orig	Tue May 13 17:31:53 2003
++++ src/Makefile.in	Tue May 13 22:59:48 2003
+@@ -2,7 +2,7 @@
  
- CTFLAGS	= -fomit-frame-pointer  -Wall -Wno-unused -Wno-format -W -Wmissing-prototypes -Wstrict-prototypes -DGCCCONSTFUNC="__attribute__((const))" -D_REENTRANT -fno-exceptions -fno-strength-reduce -DREGPARAM= -D__inline__=inline $(ARCHFLAGS)
--CFLAGS	= -O2 $(CTFLAGS)
-+CFLAGS	+= -O2 $(CTFLAGS)
+ ARCHFLAGS = {ARCHFLAGS}
  
- SDLLIBS= 
- SDLFLAGS= 
+-CFLAGS	= -fomit-frame-pointer  -Wall -Wno-unused -Wno-format -W -Wmissing-prototypes -Wstrict-prototypes -DGCCCONSTFUNC="__attribute__((const))" -D_REENTRANT -fno-exceptions -fno-strength-reduce -DREGPARAM= -D__inline__=inline $(ARCHFLAGS) -O2
++CFLAGS	+= -fomit-frame-pointer  -Wall -Wno-unused -Wno-format -W -Wmissing-prototypes -Wstrict-prototypes -DGCCCONSTFUNC="__attribute__((const))" -D_REENTRANT -fno-exceptions -fno-strength-reduce -DREGPARAM= -D__inline__=inline $(ARCHFLAGS) -O2
+ 
+ SDLLIBS= {SDLLIBS}
+ SDLFLAGS= {SDLFLAGS}
