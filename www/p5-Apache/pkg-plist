@@ -77,3 +77,4 @@ share/doc/mod_perl/post-install-notes
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/Constants
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache
 @dirrm share/doc/mod_perl
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Bundle 2>/dev/null || true
