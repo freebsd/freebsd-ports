@@ -630,6 +630,7 @@ libdata/pkgconfig/sigc++-%%API_VERSION%%.pc
 %%PORTDOCS%%share/doc/libsigc-%%API_VERSION%%/docs/reference/html/inherit__graph__250.png
 %%PORTDOCS%%share/doc/libsigc-%%API_VERSION%%/docs/reference/html/inherit__graph__251.png
 %%PORTDOCS%%share/doc/libsigc-%%API_VERSION%%/docs/reference/html/inherit__graph__252.png
+%%PORTDOCS%%share/doc/libsigc-%%API_VERSION%%/docs/reference/html/inherit__graph__253.png
 %%PORTDOCS%%share/doc/libsigc-%%API_VERSION%%/docs/reference/html/inherit__graph__26.png
 %%PORTDOCS%%share/doc/libsigc-%%API_VERSION%%/docs/reference/html/inherit__graph__27.png
 %%PORTDOCS%%share/doc/libsigc-%%API_VERSION%%/docs/reference/html/inherit__graph__28.png
@@ -979,6 +980,8 @@ libdata/pkgconfig/sigc++-%%API_VERSION%%.pc
 %%PORTDOCS%%share/doc/libsigc-%%API_VERSION%%/docs/reference/html/structsigc_1_1internal_1_1slot__rep-members.html
 %%PORTDOCS%%share/doc/libsigc-%%API_VERSION%%/docs/reference/html/structsigc_1_1internal_1_1slot__rep.html
 %%PORTDOCS%%share/doc/libsigc-%%API_VERSION%%/docs/reference/html/structsigc_1_1internal_1_1slot__rep__inherit__graph.png
+%%PORTDOCS%%share/doc/libsigc-%%API_VERSION%%/docs/reference/html/structsigc_1_1internal_1_1temp__slot__list-members.html
+%%PORTDOCS%%share/doc/libsigc-%%API_VERSION%%/docs/reference/html/structsigc_1_1internal_1_1temp__slot__list.html
 %%PORTDOCS%%share/doc/libsigc-%%API_VERSION%%/docs/reference/html/structsigc_1_1internal_1_1trackable__callback-members.html
 %%PORTDOCS%%share/doc/libsigc-%%API_VERSION%%/docs/reference/html/structsigc_1_1internal_1_1trackable__callback.html
 %%PORTDOCS%%share/doc/libsigc-%%API_VERSION%%/docs/reference/html/structsigc_1_1internal_1_1trackable__callback__list-members.html
