@@ -1,16 +1,16 @@
-DESCRIPTION       
+DESCRIPTION
 
 This module implements an Object-Oriented interface to a POP3 server.  It is
 based on RFC1081.
 
-USAGE       
+USAGE
 
 Here is a simple example to list out the headers in your remote mailbox:
 
-#!/usr/local/bin/perl         
+#!/usr/bin/perl
 
-use Mail::POP3Client;         
+use Mail::POP3Client;
 $pop = new Mail::POP3Client("me", "mypassword", "pop3.do.main");
-for ($i = 1; $i <= $pop->Count; $i++) {               
+for ($i = 1; $i <= $pop->Count; $i++) {
 	print $pop->Head($i), "\n";
-}                                                                       
+}
