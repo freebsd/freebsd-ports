@@ -5629,6 +5629,7 @@ rtems-gcc	ports/devel/rtems-gcc
 rtf2htm		ports/textproc/rtf2htm
 rtf2latex	ports/print/rtf2latex
 rtfm		ports/misc/rtfm
+rtfreader	ports/textproc/rtfreader
 rtld-aout	src/libexec/rtld-aout
 rtld-elf	src/libexec/rtld-elf
 rtpmon		ports/mbone/rtpmon
