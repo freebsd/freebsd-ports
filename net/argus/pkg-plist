@@ -43,6 +43,7 @@ share/examples/argus-2.0/System/crontab
 share/examples/argus-2.0/System/magic
 share/examples/argus-2.0/Xml/ArgusRecord.biz
 share/examples/argus-2.0/Xml/ArgusRecord.dtd
+share/examples/argus-2.0/Xml/ArgusRecord.sox
 share/examples/argus-2.0/Xml/ArgusRecord.xdr
 share/examples/argus-2.0/Xml/ArgusRecord.xsd
 share/examples/argus-2.0/Xml/ArgusRecordSample.xml
