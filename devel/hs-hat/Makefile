@@ -21,9 +21,7 @@ HAS_CONFIGURE=	yes
 USE_REINPLACE=	yes
 USE_GNOME=	glib12
 
-BROKEN=		"Does not compile"
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2004-04-19
+OPTIONS=	NHC98 "Build with nhc98" off
 
 .include <bsd.port.pre.mk>
 
@@ -34,10 +32,12 @@ BROKEN=	"does not build with nhc98 on this platform"
 .if defined(WITH_NHC98)
 BUILD_DEPENDS=	nhc98:${PORTSDIR}/lang/nhc98
 RUN_DEPENDS=	nhc98:${PORTSDIR}/lang/nhc98
+PKGNAMESUFFIX=	-nhc98
 .else
 BUILD_DEPENDS=	hmake:${PORTSDIR}/devel/hs-hmake \
 		ghc-5.04.3:${PORTSDIR}/lang/ghc5
 RUN_DEPENDS+=	ghc-5.04.3:${PORTSDIR}/lang/ghc5
+PKGNAMESUFFIX=	-ghc5
 .endif
 
 ALL_TARGET=	hat
@@ -83,6 +83,12 @@ pre-everything::
 post-patch:
 	@${REINPLACE_CMD} -e "s|glib-config|${GLIB_CONFIG}|" \
 		${WRKSRC}/configure ${WRKSRC}/src/hattools/Makefile
+.if !(defined(WITH_NHC98))
+.for f in hattrans/Makefile hatlib/Makefile
+	@${REINPLACE_CMD} -e "s/package lang/package lang -package haskell98/" ${WRKSRC}/src/${f}
+.endfor
+	@${REINPLACE_CMD} -e "s/package lang/package lang -package base -package haskell98/" ${WRKSRC}/src/hattools/Makefile
+.endif
 
 post-install:
 .if !defined(WITH_NHC98)
