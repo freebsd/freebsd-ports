@@ -134,7 +134,7 @@
 -//     'x-extension/xls');
 -// $mime_drivers['horde']['msexcel']['icons'] = array(
 -//     'default' => 'msexcel.gif');
-+//UNCOMMENTIFXL $mime_drivers['horde']['msexcel']['location'] = '%%LOCALBASE%%/bin/xlHtml';
++//UNCOMMENTIFXL $mime_drivers['horde']['msexcel']['location'] = '%%LOCALBASE%%/bin/xlhtml';
 +//UNCOMMENTIFXL $mime_drivers['horde']['msexcel']['inline'] = false;
 +//UNCOMMENTIFXL $mime_drivers['horde']['msexcel']['handles'] = array(
 +//UNCOMMENTIFXL     'application/vnd.ms-excel',
@@ -157,7 +157,7 @@
 -//     'x-extension/ppt');
 -// $mime_drivers['horde']['mspowerpoint']['icons'] = array(
 -//     'default' => 'mspowerpoint.gif');
-+//UNCOMMENTIFXL $mime_drivers['horde']['mspowerpoint']['location'] = '%%LOCALBASE%%/bin/pptHtml';
++//UNCOMMENTIFXL $mime_drivers['horde']['mspowerpoint']['location'] = '%%LOCALBASE%%/bin/ppthtml';
 +//UNCOMMENTIFXL $mime_drivers['horde']['mspowerpoint']['inline'] = false;
 +//UNCOMMENTIFXL $mime_drivers['horde']['mspowerpoint']['handles'] = array(
 +//UNCOMMENTIFXL     'application/vnd.ms-powerpoint',
