@@ -1,0 +1,15 @@
+--- courier/configure.orig	Sat Nov 15 15:13:43 2003
++++ courier/configure	Wed Jan  7 03:22:36 2004
+@@ -21208,9 +21208,9 @@
+ 
+ if test "$testmode" = "0"
+ then
+-	INSTALL_PROGRAM='${INSTALL} -m 700'
+-	INSTALL_SCRIPT='${INSTALL} -m 700'
+-	INSTALL_DATA='${INSTALL} -m 600'
++	INSTALL_PROGRAM='${BSD_INSTALL_PROGRAM}'
++	INSTALL_SCRIPT='${BSD_INSTALL_SCRIPT}'
++	INSTALL_DATA='${BSD_INSTALL_DATA}'
+ fi
+ 
+ ac_ext=cc
