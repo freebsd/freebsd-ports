@@ -9,9 +9,10 @@
 PORTNAME=	cmucl
 PORTVERSION=	18e
 CATEGORIES=	lang
-MASTER_SITES=	http://www2.cons.org/freebsd-distfiles/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	cracauer
+MASTER_SITES=	http://www.pmsf.de/pub/cmucl/release/18e/ \
+		ftp://ftp.averillpark.net/cmucl/release/18e/ \
+		ftp://ftp.linux.org.uk/pub/lisp/cmucl/release/18e/ \
+		ftp://ftp.cn.freebsd.org/pub/cmucl/release/18e/
 DISTNAME=	cmucl-18e-x86-freebsd
 
 MAINTAINER=	cracauer@cons.org
