@@ -12,6 +12,12 @@ CATEGORIES=	sysutils net
 MASTER_SITES=	http://cr.yp.to/ucspi-tcp/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
+.if defined(WITH_RSS_DIFF)
+PATCH_SITES=	http://www.qmail.org/
+PATCHFILES=	ucspi-rss.diff
+PATCH_DIST_STRIP=	-p1
+.endif
+
 MAINTAINER=	dom@happygiraffe.net
 COMMENT=	Command-line tools for building TCP client-server applications
 
@@ -31,6 +37,8 @@ ALL_TARGET=	prog install instcheck
 SCRIPTS_ENV=	BINOWN="${BINOWN}" BINGRP="${BINGRP}" BINMODE="${BINMODE}" \
 		MANMODE="${MANMODE}" CFLAGS="${CFLAGS}"
 
+.include <bsd.port.pre.mk>
+
 post-configure:
 	@${ECHO_CMD} ${PREFIX} > ${WRKSRC}/conf-home
 	@${ECHO_CMD} ${CC} ${CFLAGS} > ${WRKSRC}/conf-cc
@@ -47,4 +55,4 @@ do-install:
 	@cd ${WRKSRC}-man; ${INSTALL_MAN} ${MAN1} ${PREFIX}/man/man1/
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
