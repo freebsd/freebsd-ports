@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	encompass
-PORTVERSION=	0.3.0
+PORTVERSION=	0.3.3
 CATEGORIES=	www gnome
-MASTER_SITES=	ftp://ftp.one.net/pub/users/dobez/
+MASTER_SITES=	http://zephyr.webhop.net/encompass/ \
+		ftp://ftp.one.net/pub/users/dobez/
 
 MAINTAINER=	sobomax@FreeBSD.org
 

@@ -9,6 +9,8 @@ share/gnome/pixmaps/encompass/url.png
 share/gnome/sounds/encompass/clicked.wav
 share/gnome/sounds/encompass/urldone.wav
 share/locale/de/LC_MESSAGES/encompass.mo
+share/locale/fr/LC_MESSAGES/encompass.mo
+share/locale/no/LC_MESSAGES/encompass.mo
 share/locale/ru/LC_MESSAGES/encompass.mo
 @dirrm share/gnome/sounds/encompass
 @dirrm share/gnome/pixmaps/encompass
