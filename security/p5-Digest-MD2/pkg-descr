@@ -1,0 +1,12 @@
+The Digest::MD2 module allows you to use the RSA Data Security
+Inc. MD2 Message Digest algorithm from within Perl programs.  The
+algorithm takes as input a message of arbitrary length and produces as
+output a 128-bit "fingerprint" or "message digest" of the input.
+
+The Digest::MD2 programming interface is identical to the interface
+of Digest::MD5.  MD2 is described in RFC 1115.
+
+WWW: http://search.cpan.org/search?dist=Digest-MD2
+
+- Pete
+petef@databits.net
