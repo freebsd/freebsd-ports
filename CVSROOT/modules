@@ -7205,6 +7205,7 @@ pear-Date	ports/devel/pear-Date
 pear-File	ports/sysutils/pear-File
 pear-File_Find	ports/sysutils/pear-File_Find
 pear-HTML_Common	ports/devel/pear-HTML_Common
+pear-HTML_QuickForm	ports/devel/pear-HTML_QuickForm
 pear-HTML_Select_Common	ports/devel/pear-HTML_Select_Common
 pear-HTML_Template_IT	ports/devel/pear-HTML_Template_IT
 pear-HTML_Template_PHPLIB	ports/devel/pear-HTML_Template_PHPLIB
