@@ -3,7 +3,7 @@
 # Date created:                5 December 1996
 # Whom:                        pgiffuni@FPS.biblos.unal.edu.co
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/01/13 07:43:50 tg Exp $
 #
 
 DISTNAME=	libsx
@@ -18,15 +18,15 @@ USE_X11=	yes
 ALL_TARGET=	src
 
 do-install:
-	cp ${WRKSRC}/src/libsx.a  ${PREFIX}/lib
-	mkdir -p ${PREFIX}/include/X11
-	cp ${WRKSRC}/src/libsx.h  ${PREFIX}/include/X11
+	${INSTALL_DATA} ${WRKSRC}/src/libsx.a  ${PREFIX}/lib
+	${MKDIR} ${PREFIX}/include/X11
+	${INSTALL_DATA} ${WRKSRC}/src/libsx.h  ${PREFIX}/include/X11
 
 post-install:
 .if !defined(NOPORTDOCS)
-	mkdir -p ${PREFIX}/share/doc/libsx
-	cp ${WRKSRC}/docs/* ${PREFIX}/share/doc/libsx
-	gzip -9nf  ${PREFIX}/share/doc/libsx/*.doc
+	${MKDIR} ${PREFIX}/share/doc/libsx
+	${INSTALL_MAN} ${WRKSRC}/docs/* ${PREFIX}/share/doc/libsx
+	${GZIP_CMD} ${PREFIX}/share/doc/libsx/*.doc
 .endif
 
 .include <bsd.port.mk>
