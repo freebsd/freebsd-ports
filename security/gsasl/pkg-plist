@@ -26,12 +26,15 @@ libdata/pkgconfig/libgsasl.pc
 %%PORTDOCS%%%%DOCSDIR%%/reference/style.css
 %%PORTDOCS%%%%DOCSDIR%%/reference/up.png
 %%NLS%%share/locale/de/LC_MESSAGES/gsasl.mo
+%%NLS%%share/locale/en@boldquot/LC_MESSAGES/gsasl.mo
 %%NLS%%share/locale/en@boldquot/LC_MESSAGES/libgsasl.mo
+%%NLS%%share/locale/en@quot/LC_MESSAGES/gsasl.mo
 %%NLS%%share/locale/en@quot/LC_MESSAGES/libgsasl.mo
 %%NLS%%share/locale/eu/LC_MESSAGES/gsasl.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/gsasl.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/libgsasl.mo
 %%NLS%%share/locale/ga/LC_MESSAGES/gsasl.mo
+%%NLS%%share/locale/ga/LC_MESSAGES/libgsasl.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/gsasl.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/libgsasl.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/gsasl.mo
