@@ -6,15 +6,20 @@
 #
 
 PORTNAME=	xemacs-mule-packages
-PORTVERSION=	1.3
+PORTVERSION=	2.3
 CATEGORIES=	editors elisp
 MASTER_SITES=	${MASTER_SITE_XEMACS} \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	packages kiri
 DISTFILES=	\
 		edict-1.12-pkg.tar.gz \
+		egg-its-1.26-pkg.tar.gz \
 		leim-1.17-pkg.tar.gz \
-		lookup-1.08-pkg.tar.gz
+		locale-1.18-pkg.tar.gz \
+		lookup-1.08-pkg.tar.gz \
+		mule-base-1.39-pkg.tar.gz \
+		mule-ucs-1.00-pkg.tar.gz \
+		skk-1.19-pkg.tar.gz
 DIST_SUBDIR=	xemacs
 
 MAINTAINER=	kiri@FreeBSD.org
@@ -43,12 +48,13 @@ post-install:
 	@${ECHO} '@unexec rmdir %D/lib/xemacs/${PACKAGES_SUBDIR}/* 2>/dev/null || true' >> ${TMPPLIST}
 	@${ECHO} '@unexec rmdir %D/lib/xemacs/${PACKAGES_SUBDIR} 2>/dev/null || true' >> ${TMPPLIST}
 	@${ECHO} '@unexec rmdir %D/lib/xemacs 2>/dev/null || true' >> ${TMPPLIST}
-	@${ECHO_MSG} "    This is the set of the packages for xemacs with the mule category. You can"
-	@${ECHO_MSG} "install other packages provided by XEmacs.org with editors/xemacs-*-packages"
-	@${ECHO_MSG} "ports. These ports are prepared for corresponding XEmacs packages except for"
-	@${ECHO_MSG} "xemacs-packages, xemacs-basic-packages and xemacs-additional-packages. Where"
-	@${ECHO_MSG} "xemacs-additional-packages is a meta ports for packages out of xemacs, xemacs"
-	@${ECHO_MSG} "mule-basic and xemacs mule category packages."
+	@${ECHO_MSG} "    This is the set of the packages for xemacs with the mule-packages category."
+	@${ECHO_MSG} "You might be enough with this package installing xemacs-packages altogether for"
+	@${ECHO_MSG} "working at XEmacs but if you think it insufficient,you can install other"
+	@${ECHO_MSG} "packages of editors/xemacs-*-packages ports. These ports are prepared for the"
+	@${ECHO_MSG} "rack of corresponding XEmacs packages except for"
+	@${ECHO_MSG} "xemacs-packages,xemacs-mule-packages and xemacs-additional-packages by which all"
+	@${ECHO_MSG} "the additional packages those above will be installed at once."
 	@${ECHO_MSG} "    You can also install with running it as root and using the 'Manage Packages'"
 	@${ECHO_MSG} "menu within the 'Options' menu of the menubar. But using this xemacs package"
 	@${ECHO_MSG} "managing, you could not control under ports managing ;-)"
