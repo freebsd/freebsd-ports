@@ -3,7 +3,7 @@
 # Date created:				2/22/1999
 # Whom:					nectar@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.11 1999/02/23 00:28:15 nectar Exp $
+# $Id: Makefile,v 1.12 1999/03/12 15:16:59 scrappy Exp $
 #
 
 DISTNAME=		PyGreSQL-2.3
@@ -14,12 +14,11 @@ EXTRACT_SUFX=		.tgz
 
 MAINTAINER=		nectar@FreeBSD.ORG
 
-WWW_SITE=		http://www.druid.net/pygresql
-
 BUILD_DEPENDS=		python:${PORTSDIR}/lang/python
 RUN_DEPENDS=		python:${PORTSDIR}/lang/python
 LIB_DEPENDS=		pq.2:${PORTSDIR}/databases/postgresql
 
+WWW_SITE=		http://www.druid.net/pygresql
 MAKE_ENV=		PYTHON=${PREFIX}/bin/python \
 			LN="${LN}" SETENV="${SETENV}" MKDIR="${MKDIR}"
 
