@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	sim
-PORTVERSION=	2.9.9
+PORTVERSION=	2.9.11
 CATEGORIES=	emulators
 MASTER_SITES=	http://simh.trailing-edge.com/sources/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=jedgar
-DISTNAME=	${PORTNAME}hv29-9
+DISTNAME=	${PORTNAME}hv29-11
 
 MAINTAINER=	jedgar@FreeBSD.org
 
