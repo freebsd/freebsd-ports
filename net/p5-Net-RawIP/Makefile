@@ -3,11 +3,11 @@
 # Date created:				18 February 1999
 # Whom:                			Dima Sivachenko <dima@chg.ru>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/03/06 18:18:19 billf Exp $
 #
 
-DISTNAME=	Net-RawIP-0.06
-PKGNAME=	p5-Net-RawIP-0.06
+DISTNAME=	Net-RawIP-0.06b
+PKGNAME=	p5-Net-RawIP-0.06b
 CATEGORIES=	net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN} \
 		http://quake.skif.net/RawIP/files/ \
@@ -17,7 +17,7 @@ MASTER_SITE_SUBDIR=	Net
 MAINTAINER=	dima@chg.ru
 
 USE_PERL5=	yes
-MAN3=		Net::RawIP.3
+MAN3=		Net::RawIP.3 Net::RawIP::libpcap.3
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 do-configure:
