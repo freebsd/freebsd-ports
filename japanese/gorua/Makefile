@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gorua
-PORTVERSION=	0.13b
+PORTVERSION=	0.13d
 CATEGORIES=	japanese
 MASTER_SITES=	http://www.unixuser.org/~haruyama/software/goRua/
 DISTNAME=	goRua-${PORTVERSION}
@@ -24,17 +24,14 @@ NO_BUILD=	yes
 
 CONFIG_FILES=	board_info bookmarks config gtkrc
 
-do-configure:
-	${SED} -e "s,%%RUBY_WITHOUT_SUFFIX%%,${RUBY_WITHOUT_SUFFIX}," < ${WRKSRC}/new_2ch_bbsmenu.rb > ${WRKSRC}/new_2ch_bbsmenu.rb.tmp
-	${SED} -e "s,%%RUBY_WITHOUT_SUFFIX%%,${RUBY_WITHOUT_SUFFIX}," < ${WRKSRC}/goRua.rb > ${WRKSRC}/goRua.rb.tmp
-	${MV} ${WRKSRC}/new_2ch_bbsmenu.rb.tmp ${WRKSRC}/new_2ch_bbsmenu.rb
-	${MV} ${WRKSRC}/goRua.rb.tmp ${WRKSRC}/goRua.rb
-
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/goRua.rb ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/goRua_cache_clean.rb ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/new_2ch_bbsmenu.rb ${PREFIX}/bin
+
 	${INSTALL_DATA} ${WRKSRC}/color_table.rb ${RUBY_SITELIBDIR}
 	${INSTALL_DATA} ${WRKSRC}/connect2ch.rb ${RUBY_SITELIBDIR}
+
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/ja/goRua
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/ja/goRua
