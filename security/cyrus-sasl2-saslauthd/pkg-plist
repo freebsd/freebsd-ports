@@ -11,8 +11,8 @@ sbin/saslauthd
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/saslauthd
 @mode ug=rwx,o=
 @exec mkdir -p /var/state/saslauthd
-@exec chown -R cyrus:cyrus /var/state
-@exec chmod -R o= /var/state
+@exec chown -R cyrus:mail /var/state/saslauthd
+@exec chmod -R ug=rwx,o= /var/state/saslauthd
 @comment This file gets created by the state/saslauthd program
 @unexec rm -fr /var/state/saslauthd
 @unexec rmdir /var/state
