@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	insub
-PORTVERSION=	9.1
+PORTVERSION=	9.3
 PORTREVISION=	0
 CATEGORIES=	irc
 MASTER_SITES=	http://gruntle.org/projects/irssi/insub/
@@ -38,7 +38,6 @@ do-install:
 		${LOCALBASE}/share/irssi/scripts/${SCRIPT}
 	for i in ${WRKSRC}/cows/* ; do \
 		case `basename $$i` in \
-			box.cow|jkh.cow|tux-stab.cow) ;; \
 			*) ${INSTALL_DATA} $$i ${LOCALBASE}/share/cows; \
 		esac \
 	done
