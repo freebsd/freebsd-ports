@@ -1,11 +1,11 @@
---- sources/handlers.c.orig	Thu Oct 23 12:43:05 2003
-+++ sources/handlers.c	Fri Apr 23 16:19:52 2004
+--- sources/handlers.c.orig	Fri May 21 16:58:26 2004
++++ sources/handlers.c	Wed Sep 15 14:47:49 2004
 @@ -24,6 +24,7 @@
  #endif
  
- extern char cgiRoot[MAX_PATH_LEN+1]; /* root for CGI scripts exec */
-+extern char homePath[MAX_PATH_LEN+1]; /* root for PHP scripts exec */
- extern int port;                     /* server port */
+ extern char cgiRoot[MAX_PATH_LEN+1];         /* root for CGI scripts exec */
++extern char homePath[MAX_PATH_LEN+1];        /* root for PHP scripts exec */
+ extern int  port;                            /* server port */
  extern char defaultFileName[MAX_PATH_LEN+1]; /* default name for index, default or similar file */
  
 @@ -263,6 +264,14 @@
@@ -35,12 +35,10 @@
          newEnvp[i] = NULL;
          
          /* we change the current working directory to the scripts one */
-@@ -317,7 +331,251 @@
+@@ -317,8 +331,252 @@
      return 0;
  }
  
--int dumpHeader(sock, filePath, mimeType, req)
-+
 +#ifdef PHP
 +int phpHandler(port, sock, phpFileName, completedPath, req, postStr)
 +int port;
@@ -116,7 +114,7 @@
 +        howMany = 1;
 +        while (howMany > 0 && !fatal)
 +        {
-+            howMany = read(outStdPipe[READ], &pipeReadBuf, PIPE_READ_BUF);
++            howMany = read(outStdPipe[READ], pipeReadBuf, PIPE_READ_BUF);
 +            if (howMany < 0)
 +                printf("Error during script pipe read.\n");
 +            else if (!howMany)
@@ -154,13 +152,13 @@
 +    } else
 +    { /* this is the child process */
 +        /* now we do some environment setup work */
-+        newArgv = calloc(MAX_ARGV_LEN + 1, sizeof(char*));
++        newArgv = (char **)calloc(MAX_ARGV_LEN + 1, sizeof(char*));
 +        for (i = 0; i < MAX_ARGV_LEN + 1; i++)
 +        {
-+            newArgv[i] = calloc(MAX_PATH_LEN, sizeof(char));
++            newArgv[i] = (char *)calloc(MAX_PATH_LEN, sizeof(char));
 +        }
 +
-+        newEnvp = calloc(MAX_ENVP_LEN + 1, sizeof(char*));
++        newEnvp = (char **)calloc(MAX_ENVP_LEN + 1, sizeof(char*));
 +        for (i = 0; i < MAX_ENVP_LEN + 1; i++)
 +        {
 +            newEnvp[i] = calloc(MAX_PATH_LEN, sizeof(char));
@@ -283,6 +281,9 @@
 +}
 +#endif
 +
++
+ /* generate a full header for a given file */
+-int dumpHeader(sock, filePath, mimeType, req)
 +int dumpHeader(port, sock, filePath, mimeType, req)
 +int port;
  int sock;
