@@ -1,0 +1,4 @@
+scheme configurable window manager
+
+For I18N users,
+do make install -DI18N instead of only make install.

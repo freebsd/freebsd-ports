@@ -1,0 +1,48 @@
+bin/scwm
+bin/scwmexec
+bin/scwmrepl
+include/scwmexec.h
+@unexec install-info --delete %D/info/scwm.info %D/info/dir
+info/scwm.info
+@exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
+@exec install-info %D/info/scwm.info %D/info/dir
+lib/X11/scwm/decor.scwmrc
+lib/X11/scwm/gjb.scwmrc
+lib/X11/scwm/juhp.scwmrc
+lib/X11/scwm/robbe.scwmrc
+lib/X11/scwm/sds.scwmrc
+lib/X11/scwm/system.scwmrc
+lib/libscwmexec.a
+lib/libscwmexec.la
+lib/libscwmexec.so
+lib/libscwmexec.so.0
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
+share/scwm-modules/app/scwm/auto-raise.scm
+share/scwm-modules/app/scwm/base.scm
+share/scwm-modules/app/scwm/bincomm.scm
+share/scwm-modules/app/scwm/decor.scm
+share/scwm-modules/app/scwm/doc.scm
+share/scwm-modules/app/scwm/face.scm
+share/scwm-modules/app/scwm/flux.scm
+share/scwm-modules/app/scwm/fvwm-compat.scm
+share/scwm-modules/app/scwm/fvwm-eval.scm
+share/scwm-modules/app/scwm/fvwm-module.scm
+share/scwm-modules/app/scwm/image-loaders.scm
+share/scwm-modules/app/scwm/module-types.scm
+share/scwm-modules/app/scwm/optargs.scm
+share/scwm-modules/app/scwm/prefs-menu.scm
+share/scwm-modules/app/scwm/std-menus.scm
+share/scwm-modules/app/scwm/style-options.scm
+share/scwm-modules/app/scwm/style.scm
+share/scwm-modules/app/scwm/wininfo.scm
+share/scwm-modules/app/scwm/winlist.scm
+share/scwm-modules/app/scwm/winops.scm
+share/scwm-modules/app/scwm/wmconfig-menu.scm
+share/scwm/scwm-procedures.txt
+share/scwm/scwm.sgml
+@dirrm lib/X11/scwm
+@dirrm share/scwm-modules/app/scwm
+@dirrm share/scwm-modules/app
+@dirrm share/scwm-modules
+@dirrm share/scwm
