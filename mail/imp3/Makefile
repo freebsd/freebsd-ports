@@ -7,7 +7,7 @@
 
 PORTNAME=	imp
 PORTVERSION=	3.2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail www
 MASTER_SITES=	ftp://ftp.horde.org/pub/imp/				\
 		ftp://ftp.au.horde.org/pub/horde/imp/			\
@@ -23,7 +23,6 @@ COMMENT=	A webmail system which accesses mail over IMAP
 # You may define these options:
 #
 # - WITHOUT_LDAP	: if you do not need OpenLDAP;
-# - WITH_LDAP1		: if you prefer OpenLDAP1.
 #
 # - WITHOUT_SUPPORTED_DB: if you run a database not in the ports tree;
 #
@@ -66,12 +65,10 @@ LIB_DEPENDS=	c-client4.8:${PORTSDIR}/mail/cclient
 
 .if defined(WITHOUT_TURBA)
 .if !defined(WITHOUT_LDAP)
-.if defined(WITH_LDAP1)
-LIB_DEPENDS+=	ldap.1:${PORTSDIR}/net/openldap12 \
-		lber.1:${PORTSDIR}/net/openldap12
+.if exists(${LOCALBASE}/lib/libldap.so.1)
+LIB_DEPENDS+=	ldap.1:${PORTSDIR}/net/openldap12
 .else
-LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap20 \
-		lber.2:${PORTSDIR}/net/openldap20
+LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap21
 .endif
 .endif
 RUN_DEPENDS+=	${LOCALBASE}/www/horde/index.php:${PORTSDIR}/www/horde2
@@ -197,7 +194,7 @@ pre-install:
 .endif
 .endif
 .if !defined(WITHOUT_LDAP)
-.if defined(WITH_LDAP1)
+.if exists(${LOCALBASE}/lib/libldap.so.1)
 	@if ! ${LDD} ${PHPSO} | ${GREP} -q -e "libldap.so.1"; then \
 	    ${ECHO_MSG} "" ; \
 	    ${ECHO_MSG} "Please configure PHP with OpenLDAP support." ; \
