@@ -1,0 +1,4 @@
+bin/log_analysis
+share/examples/log_analysis/sample-new.conf
+share/examples/log_analysis/sample-qpopper.conf
+@dirrm share/examples/log_analysis
