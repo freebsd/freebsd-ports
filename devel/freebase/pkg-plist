@@ -1,4 +1,3 @@
-%%RUBY_SITELIBDIR%%/freebase/yaml.rb
 %%RUBY_SITELIBDIR%%/freebase/readers.rb
 %%RUBY_SITELIBDIR%%/freebase/properties.rb
 %%RUBY_SITELIBDIR%%/freebase/plugin.rb
