@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	kdbg
-PORTVERSION=	1.1.5
+PORTVERSION=	1.2.0
 CATEGORIES=	devel kde
-MASTER_SITES=	http://download.sourceforge.net/kdbg/ \
-		${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=unstable/apps/ide/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR= kdbg/
 
 MAINTAINER=	jedgar@FreeBSD.org
 
