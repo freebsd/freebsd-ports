@@ -15,11 +15,15 @@ version comes out.
 
 --- tkrat/compose.tcl	Tue Feb 13 00:59:37 2001
 +++ tkrat/compose.tcl	Tue Jun 26 14:29:18 2001
-@@ -49,4 +48,6 @@
+@@ -49,4 +49,10 @@
      }
      set handler [$msg reply $to]
 +    global $handler
-+    array set $handler [list charset [[$msg body] parameter charset]]
++    set charset [[$msg body] parameter charset]
++    if {"" == $charset} {
++	set charset auto	;# or US-ASCII?
++    }
++    array set $handler [list charset $charset]
      return [DoCompose $handler \
  		[expr {($option(reply_bottom)) ? "1" : "-1"}] \
 @@ -377,6 +378,4 @@
@@ -48,7 +52,7 @@ version comes out.
 +	    ConfigureEncoding $fh [SaneCharset $charset]
  	    set mh(data) [read $fh]
  	    close $fh
-@@ -1024,4 +1017,32 @@
+@@ -1024,4 +1017,31 @@
  }
  
 +# Cache the known charsets for subsequent SaneCharset invocations:
@@ -56,7 +60,6 @@ version comes out.
 +
 +proc SaneCharset args {
 +	global charsetMapping KnownCharsets
-+	puts "SaneCharset: going through ``$args''"
 +	foreach charset $args {
 +		if {[info exists charsetMapping($charset)]} {
 +			set charset $charsetMapping($charset)
