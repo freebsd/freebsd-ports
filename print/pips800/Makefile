@@ -23,11 +23,14 @@ NO_WRKSUBDIR=	yes
 PLIST_SUB=	BASE_NAME=${BASE_NAME} PRTYPE=${PRTYPE} LIB_DIR_FILE=usr/lib/${LIB_FILE} LIB_README=${LIB_NAME}
 MD5_FILE=	${.CURDIR}/distinfo
 .if (${PORTVERSION} == 1.2)
+PORTREVISION=   1
 LIB_FILE=	libPrt${PRTYPE}.so
 LIB_NAME=	"@comment Readme of the Lib for only 1.3 or later"
+FILTER=		${FILESDIR}/filter.rev_1.2
 .else
 LIB_FILE=	libpm${PRTYPE}c.so
 LIB_NAME=	share/doc/${BASE_NAME}/libpm${PRTYPE}c.readme
+FILTER=		${FILESDIR}/filter.rev
 .endif
 BASE_NAME=	pips${PRTYPE}
 PAPERSIZE?=	a4
@@ -47,7 +50,7 @@ do-build:
 	${SED}	-e 's,/usr/local/EPKowa/PM800C/gsconfig800,${PREFIX}/libexec/pips${PRTYPE}/gsconfig${PRTYPE},' \
 		-e 's,/usr/local/bin/pips800,${PREFIX}/bin/pips${PRTYPE},' \
 		-e 's,:/usr/local/bin$$,:${PREFIX}/bin,' \
-		${FILESDIR}/filter.rev > ${WRKDIR}/filter${PRTYPE}.rev
+		${FILTER} > ${WRKDIR}/filter${PRTYPE}.rev
 
 do-install:
 	${MKDIR} ${PREFIX}/libexec/${BASE_NAME}
