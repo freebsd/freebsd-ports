@@ -1,6 +1,6 @@
---- configure.orig	Sun Mar  9 20:41:48 2003
-+++ configure	Tue Mar 11 01:29:14 2003
-@@ -3535,10 +3535,10 @@
+--- configure.orig	Sun Sep 21 16:06:57 2003
++++ configure	Sun Sep 21 16:07:24 2003
+@@ -3860,10 +3860,10 @@
  #include "confdefs.h"
  #include <libintl.h>
  extern int _nl_msg_cat_cntr;
@@ -12,44 +12,8 @@
 +return (int) gettext ("") + _nl_msg_cat_cntr + *libintl_nl_domain_bindings
  ; return 0; }
  EOF
- if { (eval echo configure:3545: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
-@@ -3924,7 +3924,7 @@
- #include "confdefs.h"
- #include <libintl.h>
- extern int _nl_msg_cat_cntr;
--extern int *_nl_domain_bindings;
-+extern int *libintl_nl_domain_bindings;
- extern
- #ifdef __cplusplus
- "C"
-@@ -3932,7 +3932,7 @@
- const char *_nl_expand_alias ();
- int main() {
- bindtextdomain ("", "");
--return (int) gettext ("") + _nl_msg_cat_cntr + *_nl_domain_bindings + *_nl_expand_alias (0)
-+return (int) gettext ("") + _nl_msg_cat_cntr + *libintl_nl_domain_bindings + *_nl_expand_alias (0)
- ; return 0; }
- EOF
- if { (eval echo configure:3939: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
-@@ -3952,7 +3952,7 @@
- #include "confdefs.h"
- #include <libintl.h>
- extern int _nl_msg_cat_cntr;
--extern int *_nl_domain_bindings;
-+extern int *libintl_nl_domain_bindings;
- extern
- #ifdef __cplusplus
- "C"
-@@ -3960,7 +3960,7 @@
- const char *_nl_expand_alias ();
- int main() {
- bindtextdomain ("", "");
--return (int) gettext ("") + _nl_msg_cat_cntr + *_nl_domain_bindings + *_nl_expand_alias (0)
-+return (int) gettext ("") + _nl_msg_cat_cntr + *libintl_nl_domain_bindings + *_nl_expand_alias (0)
- ; return 0; }
- EOF
- if { (eval echo configure:3967: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
-@@ -11352,7 +11352,7 @@
+ if { (eval echo configure:3870: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
+@@ -11776,7 +11776,7 @@
    withval="$with_help_prefix"
    GNC_HELPDIR="$with_help_prefix/gnome/help/gnucash"
  else
@@ -58,12 +22,12 @@
  fi
  
  
-@@ -13149,7 +13149,7 @@
-   done
-   GTKHTML_CFLAGS=$GIVEN_CFLAGS
- 
--    if test "x$GTKHTML_LIBS" != x; then
-+    if test "x$GTKHTML_LIBS" = "xNO"; then
- 	# check for gtkhtml and enable it via HAVE_LIBGTKHTML
- 	# if found
- 	echo $ac_n "checking for gtk_html_new in -lgtkhtml""... $ac_c" 1>&6
+@@ -13665,7 +13665,7 @@
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-lgtkhtml $GTKHTML_LIBS $LIBS"
++LIBS="-lgtkhtml-1.1 $GTKHTML_LIBS $LIBS"
+ cat > conftest.$ac_ext <<EOF
+ #line 13671 "configure"
+ #include "confdefs.h"

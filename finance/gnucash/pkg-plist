@@ -428,6 +428,7 @@ share/gnome/gnucash/doc/guile-hackers.txt
 share/gnome/gnucash/doc/html/Account_8h.html
 share/gnome/gnucash/doc/html/SchedXaction_8h.html
 share/gnome/gnucash/doc/html/Transaction_8h.html
+share/gnome/gnucash/doc/html/TransLog_8h.html
 share/gnome/gnucash/doc/html/annotated.html
 share/gnome/gnucash/doc/html/classes.html
 share/gnome/gnucash/doc/html/date_8h.html
