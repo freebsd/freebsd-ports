@@ -25,6 +25,9 @@
 
 require 5.003;	# to be sure.  log_accum needs perl5
 
+use lib $ENV{CVSROOT};
+use CVSROOT::cfg;
+
 ############################################################
 #
 # Configurable options
@@ -46,7 +49,6 @@ $record_directory = 1;
 # Constants
 #
 ############################################################
-$LAST_FILE     = "/tmp/#cvs.files.lastdir";
 $ENTRIES       = "CVS/Entries";
 $HEADER        = 'FreeBSD';	# Our RCS header is '$ FreeBSD $', 
 				# (without the spaces.)
@@ -236,7 +238,7 @@ if ($check_id != 0) {
     }
     if ($failed) {
 	print "\n";
-	unlink("$LAST_FILE.$id");
+	unlink("$cfg::LAST_FILE.$id");
 	exit(1);
     }
 }
@@ -247,6 +249,6 @@ if ($check_id != 0) {
 # the final directory of a multi-directory commit.
 #
 if ($record_directory != 0) {
-    &write_line("$LAST_FILE.$id", $directory);
+    &write_line("$cfg::LAST_FILE.$id", $directory);
 }
 exit(0);

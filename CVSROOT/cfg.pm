@@ -11,7 +11,8 @@
 package cfg;
 use strict;
 use vars qw($DEBUG $FILE_PREFIX $MAILADDRS $MAILBANNER $MAILCMD
-	    $MAIL_ON_DIR_CREATION $TMPDIR %TEMPLATE_HEADERS);
+	    $MAIL_ON_DIR_CREATION $TMPDIR %TEMPLATE_HEADERS
+	    $LAST_FILE);
 
 
 ######################
@@ -29,6 +30,9 @@ $TMPDIR = "/tmp/";
 # The filename prefix used for temporary files.
 $FILE_PREFIX = "#cvs.files";
 
+# The file used to store the name of the last directory examined
+# when processing a multi-directory commit.
+$LAST_FILE = "$TMPDIR/$FILE_PREFIX.lastdir";                                         
 
 ################
 ### logcheck ###

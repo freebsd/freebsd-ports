@@ -39,7 +39,7 @@ my $STATE_REMOVED = 3;
 my $STATE_LOG     = 4;
 
 my $BASE_FN       = "$cfg::TMPDIR/$cfg::FILE_PREFIX";
-my $LAST_FILE     = "$BASE_FN.lastdir";
+my $LAST_FILE     = $cfg::LAST_FILE;
 my $CHANGED_FILE  = "$BASE_FN.changed";
 my $ADDED_FILE    = "$BASE_FN.added";
 my $REMOVED_FILE  = "$BASE_FN.removed";
