@@ -1,0 +1,8 @@
+--- ./Imakefile.org	Sat Sep  5 15:11:33 1998
++++ ./Imakefile	Fri Sep 29 13:40:13 2000
+@@ -10,4 +10,4 @@
+ SRCS = wmmixer.cc
+ OBJS = wmmixer.o
+ 
+-ComplexProgramTarget(wmmixer)
++ComplexProgramTargetNoMan(wmmixer)
