@@ -120,6 +120,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/manual/language.syntax.attributes.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/language.syntax.functions.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/language.syntax.quotes.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/language.syntax.variables.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/language.variables.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/language.variables.smarty.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/plugins.block.functions.html
