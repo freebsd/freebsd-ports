@@ -82,6 +82,7 @@
     SUBDIR += multi-gnome-terminal
     SUBDIR += offix-clipboard
     SUBDIR += offix-execute
+    SUBDIR += oooqs
     SUBDIR += p5-X11-Protocol
     SUBDIR += portoseguro
     SUBDIR += powershell
