@@ -42,7 +42,6 @@ RUN_DEPENDS+=	${LOCALBASE}/sbin/fping:${PORTSDIR}/net/fping
 IGNORE=		You should configure to use either a MySQL or PostgreSQL backend
 .endif
 .endif
-.endif
 
 .ifdef(WITH_PGSQL)
 CONFIGURE_ARGS+=--with-pgsql
@@ -53,6 +52,8 @@ USE_MYSQL=	yes
 CONFIGURE_ARGS=	--with-mysql
 .endif
 CONFIGURE_ARGS+=--with-net-snmp
+.endif # ZABBIX_AGENT_ONLY
+
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 USE_REINPLACE=	yes

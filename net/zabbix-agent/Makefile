@@ -14,6 +14,4 @@ COMMENT=	Very advanced network monitoring system (agent only)
 ZABBIX_AGENT_ONLY=yes
 MASTERDIR=	${.CURDIR}/../../net-mgmt/zabbix
 
-BROKEN=		"Configure fails"
-
 .include "${MASTERDIR}/Makefile"
