@@ -6884,6 +6884,7 @@ postgresql-plruby	ports/databases/postgresql-plruby
 postgresql-pltcl	ports/databases/postgresql-pltcl
 postgresql-tcltk	ports/databases/postgresql-tcltk
 postgresql7	ports/databases/postgresql7
+postgresql7-client	ports/databases/postgresql7-client
 postgresql72	ports/databases/postgresql72
 postgresql_autodoc	ports/databases/postgresql_autodoc
 postilion	ports/mail/postilion
