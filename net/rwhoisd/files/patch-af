@@ -1,0 +1,10 @@
+--- common/misc.c.orig	Tue Oct 13 23:12:30 1998
++++ common/misc.c	Tue Oct 13 23:12:58 1998
+@@ -380,7 +380,6 @@
+   char *program;
+   char *param;
+ {
+-  int           errno = 0;
+   extern char   **environ;
+   char          *myenviron[MAX_SET];
+   char          *argv[MAX_SET];
