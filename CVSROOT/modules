@@ -5819,6 +5819,7 @@ nettest		ports/net/nettest
 nettle		ports/security/nettle
 nettoe		ports/games/nettoe
 netustad	ports/net-mgmt/netustad
+netwag		ports/net-mgmt/netwag
 netwib		ports/net/netwib
 netwox		ports/net-mgmt/netwox
 neverball	ports/games/neverball
