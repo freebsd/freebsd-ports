@@ -13,3 +13,7 @@ avail||www
 unavail||src/sys/nfsclient
 unavail||src/sys/nfsserver
 avail|peter|src/sys
+unavail||src/contrib/gcc
+unavail||src/contrib/libio
+unavail||src/contrib/libstdc++
+unavail||src/contrib/libobjc
