@@ -1,11 +1,11 @@
---- makefile.unx~	Wed Aug  7 18:57:54 2002
-+++ makefile.unx	Wed Aug  7 18:58:35 2002
-@@ -63,7 +63,7 @@
- #
- doc:
- 	(cd docs && \
--	 $(MAKE) $(VIEW_ONLY) -f makefile.unx irit.tex irit.doc)
-+	 $(MAKE) $(VIEW_ONLY) -f makefile.unx man all)
+--- makefile.unx.orig	Mon Feb  2 17:15:56 2004
++++ makefile.unx	Mon Feb  2 17:16:27 2004
+@@ -23,7 +23,7 @@
  
- clean:
- 	-rm -f .~* .\#*			# Emacs backup files.
+ SHELL = /bin/sh
+ 
+-all: 	binaries doc init
++all: 	binaries doc
+ 
+ #
+ # Print info regarding initialization.
