@@ -1,5 +1,5 @@
---- logtool/Makefile.orig	Wed Jan 10 04:13:50 2001
-+++ logtool/Makefile	Wed Jan 10 04:16:20 2001
+--- logtool/Makefile.orig	Sat Jan 13 14:56:21 2001
++++ logtool/Makefile	Sat Jan 13 14:58:01 2001
 @@ -9,8 +9,8 @@
  	 csv.o html.o raw.o logtool.o main.o
  SRC = logtool.c
@@ -24,18 +24,9 @@
 @@ -28,7 +29,7 @@
  
  ### The main build stuff
- logtool: logtool.o $(LIB)
--	$(CC) -o $(PROG) logtool.o $(LIB) $(ADDCFLAGS)
-+	$(CC) -o $(PROG) logtool.o $(LIB) $(ADDCFLAGS) ${LIBS}
+ logtool: logtool.o $(OBJS)
+-	$(CC) $(ADDCFLAGS) -o $(PROG) $(OBJS) 
++	$(CC) $(ADDCFLAGS) -o $(PROG) $(OBJS) ${LIBS}
  	@echo "strip $(PROG)"	
  	@strip $(PROG)
  
-@@ -62,7 +63,7 @@
- 
- ### How to install this puppy
- install: logtool
--	mkdir -p /etc/logtool
-+	mkdir -p ${ETCDIR}
- 	$(INSTALL) -c -m 0644 -o root ../conf/logtool.conf $(ETCDIR)/logtool.conf
- 	$(INSTALL) -c -m 0644 -o root ../conf/green $(ETCDIR)/green
- 	$(INSTALL) -c -m 0644 -o root ../conf/yellow $(ETCDIR)/yellow
