@@ -1,5 +1,5 @@
 Glade is a RAD tool to enable quick & easy development of user interfaces
-for the GTK+ toolkit. It also contains built-in support for generating the
+for GTK+/GNOME. It also contains built-in support for generating the
 C source code needed to recreate the interfaces.
 
 WWW: http://glade.pn.org/
