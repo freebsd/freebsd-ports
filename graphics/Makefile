@@ -331,6 +331,7 @@
     SUBDIR += qvplay
     SUBDIR += ray++
     SUBDIR += rayshade
+    SUBDIR += reallyslick
     SUBDIR += recmpeg
     SUBDIR += ruby-evas
     SUBDIR += ruby-gd
