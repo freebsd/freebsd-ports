@@ -7,14 +7,14 @@
 
 PORTNAME=	muine
 PORTVERSION=	0.6.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio gnome
 MASTER_SITES=	http://muine.gooeylinux.org/
 
 MAINTAINER=	tmclaugh@sdf.lonestar.org
 COMMENT=	Mono based Gnome audio player
 
-LIB_DEPENDS=	FLAC.5:${PORTSDIR}/audio/flac \
+LIB_DEPENDS=	FLAC.7:${PORTSDIR}/audio/flac \
 		id3tag.2:${PORTSDIR}/audio/libid3tag \
 		gdbm:${PORTSDIR}/databases/gdbm
 BUILD_DEPENDS=	gapi-fixup:${PORTSDIR}/x11-toolkits/gtk-sharp

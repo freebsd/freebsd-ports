@@ -8,6 +8,7 @@
 
 PORTNAME=	easytag
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,7 +18,7 @@ COMMENT=	Tag editor for MP3 and OGG files
 
 LIB_DEPENDS=	id3-3.8.3:${PORTSDIR}/audio/id3lib \
 		vorbis.3:${PORTSDIR}/audio/libvorbis \
-		FLAC.5:${PORTSDIR}/audio/flac
+		FLAC.7:${PORTSDIR}/audio/flac
 
 MAN1=		easytag.1
 CONFLICTS=	easytag-devel-[0-9]*

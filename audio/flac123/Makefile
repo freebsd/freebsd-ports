@@ -7,6 +7,7 @@
 
 PORTNAME=	flac123
 PORTVERSION=	0.0.8
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	flac-tools
@@ -14,7 +15,7 @@ MASTER_SITE_SUBDIR=	flac-tools
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command-line player for flac audio files
 
-LIB_DEPENDS=	FLAC.5:${PORTSDIR}/audio/flac \
+LIB_DEPENDS=	FLAC.7:${PORTSDIR}/audio/flac \
 		ao.3:${PORTSDIR}/audio/libao \
 		popt.0:${PORTSDIR}/devel/popt
 

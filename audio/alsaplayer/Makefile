@@ -95,7 +95,7 @@ PLIST_SUB+=		ESD=""
 CONFIGURE_ARGS+=	--disable-flac
 PLIST_SUB+=		FLAC="@comment "
 .else
-LIB_DEPENDS+=		FLAC.5:${PORTSDIR}/audio/flac
+LIB_DEPENDS+=		FLAC.7:${PORTSDIR}/audio/flac
 CONFIGURE_ARGS+=	--enable-flac
 PLIST_SUB+=		FLAC=""
 .endif

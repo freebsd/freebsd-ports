@@ -7,7 +7,7 @@
 
 PORTNAME=	mkvtoolnix
 PORTVERSION=	1.4.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://www.bunkus.org/videotools/mkvtoolnix/sources/ \
 		http://www.bunkus.org/videotools/mkvtoolnix/sources/old/
@@ -17,7 +17,7 @@ COMMENT=	Tools to extract from/get info about/create Matroska media streams
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libmatroska.a:${PORTSDIR}/multimedia/libmatroska \
 		${LOCALBASE}/lib/libebml.a:${PORTSDIR}/textproc/libebml
-LIB_DEPENDS=	FLAC.5:${PORTSDIR}/audio/flac \
+LIB_DEPENDS=	FLAC.7:${PORTSDIR}/audio/flac \
 		expat.5:${PORTSDIR}/textproc/expat2 \
 		vorbis.3:${PORTSDIR}/audio/libvorbis
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	xmcd
 PORTVERSION=	3.3.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://www.ibiblio.org/tkan/download/xmcd/3.3.2/src/
 
@@ -15,7 +15,7 @@ MAINTAINER=	eischen@vigrid.com
 COMMENT=	Motif CD player
 
 LIB_DEPENDS+=	vorbis.3:${PORTSDIR}/audio/libvorbis \
-		FLAC:${PORTSDIR}/audio/flac
+		FLAC.7:${PORTSDIR}/audio/flac
 RUN_DEPENDS+=	lame:${PORTSDIR}/audio/lame
 
 USE_REINPLACE=	yes
