@@ -16,7 +16,6 @@ MAINTAINER=	marcus@freebsd.org
 COMMENT=	Audio player for the Gnome 2 desktop environment
 
 LIB_DEPENDS=	musicbrainz.2:${PORTSDIR}/audio/libmusicbrainz \
-		gstplay-0.6.1:${PORTSDIR}/multimedia/gstreamer-plugins \
 		FLAC.5:${PORTSDIR}/audio/flac \
 		mad.1:${PORTSDIR}/audio/mad
 
@@ -40,10 +39,22 @@ LIB_DEPENDS+=		vorbis.2:${PORTSDIR}/audio/libvorbis
 CONFIGURE_ARGS+=	--disable-vorbistest
 .endif
 
+.ifdef (WITH_XINE)
+LIB_DEPENDS+=		xine.7:${PORTSDIR}/multimedia/libxine
+CONFIGURE_ARGS+=	--enable-xine
+.else
+LIB_DEPENDS+=		gstplay-0.6.1:${PORTSDIR}/multimedia/gstreamer-plugins
+.endif
+
 pre-everything::
 .if !defined(WITH_VORBIS)
 	@${ECHO_MSG}
 	@${ECHO_MSG} "Define WITH_VORBIS to enable Vorbis support"
+	@${ECHO_MSG}
+.endif
+.if !defined(WITH_XINE)
+	@${ECHO_MSG}
+	@${ECHO_MSG} "Define WITH_XINE to use xine backend instead of gstreamer"
 	@${ECHO_MSG}
 .endif
 
