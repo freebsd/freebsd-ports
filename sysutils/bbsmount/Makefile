@@ -23,7 +23,7 @@ USE_GCC=	2.95
 PORTDOCS=	README BUGS NEWS AUTHORS ChangeLog
 
 post-patch:   
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' \   
+	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' \
 		${WRKSRC}/${CONFIGURE_SCRIPT}
 
 post-install:
