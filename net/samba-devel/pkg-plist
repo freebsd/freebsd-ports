@@ -1,4 +1,3 @@
-bin/convert_smbpasswd
 bin/make_printerdef
 bin/make_smbcodepage
 bin/make_smbpasswd
@@ -92,16 +91,20 @@ sbin/swat
 %%PORTDOCS%%share/doc/samba/faq/sambafaq.sgml
 %%PORTDOCS%%share/doc/samba/faq/sambafaq.txt
 %%PORTDOCS%%share/doc/samba/history
+%%PORTDOCS%%share/doc/samba/htmldocs/CVS-Access.html
 %%PORTDOCS%%share/doc/samba/htmldocs/DOMAIN_MEMBER.html
 %%PORTDOCS%%share/doc/samba/htmldocs/ENCRYPTION.html
+%%PORTDOCS%%share/doc/samba/htmldocs/Integrating-with-Windows.html
 %%PORTDOCS%%share/doc/samba/htmldocs/NT_Security.html
 %%PORTDOCS%%share/doc/samba/htmldocs/OS2-Client-HOWTO.html
+%%PORTDOCS%%share/doc/samba/htmldocs/PAM-Authentication-And-Samba.html
 %%PORTDOCS%%share/doc/samba/htmldocs/Samba-HOWTO-Collection.html
 %%PORTDOCS%%share/doc/samba/htmldocs/Samba-PDC-HOWTO.html
 %%PORTDOCS%%share/doc/samba/htmldocs/UNIX_INSTALL.html
 %%PORTDOCS%%share/doc/samba/htmldocs/findsmb.1.html
 %%PORTDOCS%%share/doc/samba/htmldocs/lmhosts.5.html
 %%PORTDOCS%%share/doc/samba/htmldocs/make_smbcodepage.1.html
+%%PORTDOCS%%share/doc/samba/htmldocs/make_unicodemap.1.html
 %%PORTDOCS%%share/doc/samba/htmldocs/msdfs_setup.html
 %%PORTDOCS%%share/doc/samba/htmldocs/nmbd.8.html
 %%PORTDOCS%%share/doc/samba/htmldocs/nmblookup.1.html
@@ -136,23 +139,17 @@ sbin/swat
 %%PORTDOCS%%share/doc/samba/textdocs/BROWSING-Config.txt
 %%PORTDOCS%%share/doc/samba/textdocs/BROWSING.txt
 %%PORTDOCS%%share/doc/samba/textdocs/BUGS.txt
-%%PORTDOCS%%share/doc/samba/textdocs/CVS_ACCESS.txt
 %%PORTDOCS%%share/doc/samba/textdocs/DHCP-Server-Configuration.txt
 %%PORTDOCS%%share/doc/samba/textdocs/DIAGNOSIS.txt
 %%PORTDOCS%%share/doc/samba/textdocs/DNIX.txt
-%%PORTDOCS%%share/doc/samba/textdocs/DOMAIN.txt
 %%PORTDOCS%%share/doc/samba/textdocs/Faxing.txt
 %%PORTDOCS%%share/doc/samba/textdocs/GOTCHAS.txt
 %%PORTDOCS%%share/doc/samba/textdocs/HINTS.txt
 %%PORTDOCS%%share/doc/samba/textdocs/INSTALL.sambatar
 %%PORTDOCS%%share/doc/samba/textdocs/Imprints.txt
-%%PORTDOCS%%share/doc/samba/textdocs/MIRRORS.txt
 %%PORTDOCS%%share/doc/samba/textdocs/Macintosh_Clients.txt
-%%PORTDOCS%%share/doc/samba/textdocs/NTDOMAIN.txt
 %%PORTDOCS%%share/doc/samba/textdocs/NetBIOS.txt
-%%PORTDOCS%%share/doc/samba/textdocs/PRINTER_DRIVER.txt
 %%PORTDOCS%%share/doc/samba/textdocs/PROFILES.txt
-%%PORTDOCS%%share/doc/samba/textdocs/PROJECTS
 %%PORTDOCS%%share/doc/samba/textdocs/Passwords.txt
 %%PORTDOCS%%share/doc/samba/textdocs/Printing.txt
 %%PORTDOCS%%share/doc/samba/textdocs/README.DCEDFS
@@ -165,7 +162,6 @@ sbin/swat
 %%PORTDOCS%%share/doc/samba/textdocs/SSLeay.txt
 %%PORTDOCS%%share/doc/samba/textdocs/Speed.txt
 %%PORTDOCS%%share/doc/samba/textdocs/Speed2.txt
-%%PORTDOCS%%share/doc/samba/textdocs/Support.txt
 %%PORTDOCS%%share/doc/samba/textdocs/Tracing.txt
 %%PORTDOCS%%share/doc/samba/textdocs/UNIX-SMB.txt
 %%PORTDOCS%%share/doc/samba/textdocs/UNIX_SECURITY.txt
@@ -175,13 +171,16 @@ sbin/swat
 %%PORTDOCS%%share/doc/samba/textdocs/kurs.pdf
 %%PORTDOCS%%share/doc/samba/textdocs/kurs.tex
 %%PORTDOCS%%share/doc/samba/textdocs/logo.ps
-%%PORTDOCS%%share/doc/samba/textdocs/samba-pdc-faq.txt
-%%PORTDOCS%%share/doc/samba/textdocs/samba-pdc-howto.txt
 %%PORTDOCS%%share/doc/samba/textdocs/security_level.txt
+share/examples/samba/LDAP
 share/examples/samba/README
 share/examples/samba/VFS/.cvsignore
 share/examples/samba/VFS/Makefile
 share/examples/samba/VFS/README
+share/examples/samba/VFS/block/Makefile
+share/examples/samba/VFS/block/block.c
+share/examples/samba/VFS/block/samba-block.conf
+share/examples/samba/VFS/block/smb.conf
 share/examples/samba/VFS/audit.c
 share/examples/samba/VFS/skel.c
 share/examples/samba/appliance/Makefile
@@ -192,7 +191,9 @@ share/examples/samba/appliance/smb.conf-appliance
 share/examples/samba/autofs/auto.a
 share/examples/samba/dce-dfs/README
 share/examples/samba/dce-dfs/smb.conf
+share/examples/samba/libsmbclient
 share/examples/samba/misc/extra_smbstatus
+share/examples/samba/misc/modify_samba_config.pl
 share/examples/samba/misc/swat.pl
 share/examples/samba/misc/wall.perl
 share/examples/samba/printer-accounting/README
@@ -221,16 +222,20 @@ share/examples/samba/validchars/nwdos70.out
 share/examples/samba/validchars/readme
 share/examples/samba/validchars/validchr.c
 share/examples/samba/validchars/validchr.com
+share/swat/help/CVS-Access.html
 share/swat/help/DOMAIN_MEMBER.html
 share/swat/help/ENCRYPTION.html
+share/swat/help/Integrating-with-Windows.html
 share/swat/help/NT_Security.html
 share/swat/help/OS2-Client-HOWTO.html
+share/swat/help/PAM-Authentication-And-Samba.html
 share/swat/help/Samba-HOWTO-Collection.html
 share/swat/help/Samba-PDC-HOWTO.html
 share/swat/help/UNIX_INSTALL.html
 share/swat/help/findsmb.1.html
 share/swat/help/lmhosts.5.html
 share/swat/help/make_smbcodepage.1.html
+share/swat/help/make_unicodemap.1.html
 share/swat/help/msdfs_setup.html
 share/swat/help/nmbd.8.html
 share/swat/help/nmblookup.1.html
@@ -448,6 +453,7 @@ share/swat/using_samba/this_edition.html
 @dirrm share/examples/samba/dce-dfs
 @dirrm share/examples/samba/autofs
 @dirrm share/examples/samba/appliance
+@dirrm share/examples/samba/VFS/block
 @dirrm share/examples/samba/VFS
 @dirrm share/examples/samba
 %%PORTDOCS%%@dirrm share/doc/samba/textdocs
