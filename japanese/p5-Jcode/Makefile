@@ -18,6 +18,7 @@ RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/MIME/Base
 
 USE_PERL5=	YES
 USE_ZIP=	YES
+MAKE_ENV=	CC="${CC}" CCFLAGS="${CFLAGS}"
 
 MAN3=		Jcode.3 Jcode::Unicode.3 Jcode::Unicode::Constants.3 \
 		Jcode::Unicode::NoXS.3
