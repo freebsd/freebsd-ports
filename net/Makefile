@@ -585,6 +585,7 @@
     SUBDIR += tac_plus4
     SUBDIR += tas
     SUBDIR += tcpcat
+    SUBDIR += tcpdstat
     SUBDIR += tcpflow
     SUBDIR += tcpillust
     SUBDIR += tcpmssd
