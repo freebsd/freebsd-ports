@@ -1,6 +1,7 @@
 share/doc/wanderlust/00README
 share/doc/wanderlust/00README.ja
 share/doc/wanderlust/ChangeLog
+share/doc/wanderlust/ChangeLog.ja
 share/doc/wanderlust/wl-ja.texi
 %%EMACS_LIBDIR%%/site-lisp/wanderlust/bbdb-wl.el
 %%EMACS_LIBDIR%%/site-lisp/wanderlust/elmo-archive.elc

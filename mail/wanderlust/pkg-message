@@ -4,8 +4,6 @@
 *                                                             *
 * (require 'wanderlust-startup)                               *
 * (load "mime-setup")                                         *
-* (autoload 'wl "wl" "Wanderlust" t)                          *
-* (autoload 'wl-draft "wl" "Write draft with Wanderlust." t)  *
 *                                                             *
 * And if you use APOP authentication, Wanderlust requires     *
 * md5.el. md5.el is contained in Emacs/W3 package. Please get *
