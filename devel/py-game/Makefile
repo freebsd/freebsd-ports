@@ -43,5 +43,13 @@ do-build:
 
 do-install:
 	@${SETUP_CMD} setup.py install
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${PREFIX}/share/examples/py-game
+	${TAR} -C ${WRKSRC}/examples -cf - . | \
+		${TAR} --unlink -C ${PREFIX}/share/examples/py-game -xf -
+	${MKDIR} ${PREFIX}/share/doc/py-game
+	${TAR} -C ${WRKSRC}/docs -cf - . | \
+		${TAR} --unlink -C ${PREFIX}/share/doc/py-game -xf -
+.endif
 
 .include <bsd.port.post.mk>
