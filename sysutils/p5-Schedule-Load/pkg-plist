@@ -1,0 +1,28 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Schedule/Load/.packlist
+bin/rschedule
+bin/slchoosed
+bin/slpolice
+bin/slreportd
+bin/slrsh
+%%SITE_PERL%%/Schedule/Load.pm
+%%SITE_PERL%%/Schedule/Load/Chooser.pm
+%%SITE_PERL%%/Schedule/Load/FakeReporter.pm
+%%SITE_PERL%%/Schedule/Load/Hold.pm
+%%SITE_PERL%%/Schedule/Load/Hosts.pm
+%%SITE_PERL%%/Schedule/Load/Hosts/Host.pm
+%%SITE_PERL%%/Schedule/Load/Hosts/Proc.pm
+%%SITE_PERL%%/Schedule/Load/Reporter.pm
+%%SITE_PERL%%/Schedule/Load/ResourceReq.pm
+%%SITE_PERL%%/Schedule/Load/Schedule.pm
+%%SITE_PERL%%/auto/Schedule/Load/Hosts/Host/autosplit.ix
+%%SITE_PERL%%/auto/Schedule/Load/Hosts/Proc/autosplit.ix
+@dirrm %%SITE_PERL%%/Schedule/Load/Hosts
+@dirrm %%SITE_PERL%%/Schedule/Load
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Schedule/Load
+@dirrm lib/rschedule
+@unexec rmdir %D/%%SITE_PERL%%/Schedule 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Schedule 2>/dev/null || true
+%%PORTDOCS%%%%EXAMPLESDIR%%/init.d/slchoosed
+%%PORTDOCS%%%%EXAMPLESDIR%%/init.d/slreportd
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/init.d
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
