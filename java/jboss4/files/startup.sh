@@ -4,32 +4,43 @@
 #
 # %%APP_TITLE%% startup script.
 #
-# $FreeBSD: /tmp/pcvs/ports/java/jboss4/files/Attic/startup.sh,v 1.1 2004-06-21 16:42:59 vanilla Exp $
+# $FreeBSD: /tmp/pcvs/ports/java/jboss4/files/Attic/startup.sh,v 1.2 2004-12-18 02:11:35 hq Exp $
 #
 
+# PROVIDE: %%APP_SHORTNAME%%
+# REQUIRE: NETWORKING SERVERS
 
-# Set some variables
-MYSELF=`basename $0`
-JAVA_OPTS="%%JAVA_OPTS%%"
+# Add the following lines to /etc/rc.conf to enable %%APP_SHORTNAME%%:
+# %%APP_SHORTNAME%%_enable (bool):		Set to "NO" by default.
+#				Set it to "YES" to enable %%APP_SHORTNAME%%
+# %%APP_SHORTNAME%%_flags (str):		Set to "-server" by default.
+#				Extra JVM flags.
+#
+. %%RC_SUBR%%
 
-case "$1" in
-	start)
-		echo -n ' '
-		truncate -s 0 %%PID_FILE%%
-		chown %%USER%%:%%GROUP%% %%PID_FILE%%
-		chmod 600 %%PID_FILE%%
-		su -f -m %%USER%% -c "exec %%CONTROL_SCRIPT%% ${JAVA_OPTS} start" >/dev/null && echo -n '%%APP_SHORTNAME%%'
-		;;
-	stop)
-		echo -n ' '
-		chown %%USER%%:%%GROUP%% %%PID_FILE%%
-		chmod 600 %%PID_FILE%%
-		su -f -m %%USER%% -c "exec %%CONTROL_SCRIPT%% stop" >/dev/null 2>&1 ; echo -n '%%APP_SHORTNAME%%'
-		;;
-	*)
-		echo ""
-		echo "Usage: ${MYSELF} { start | stop }"
-		echo ""
-		exit 64
-		;;
-esac
+name="%%APP_SHORTNAME%%"
+rcvar=`set_rcvar`
+
+start_cmd="%%APP_SHORTNAME%%_start"
+restart_cmd="%%APP_SHORTNAME%%_restart"
+pidfile="%%PID_FILE%%"
+procname="%%JAVA%%"
+
+[ -z "$%%APP_SHORTNAME%%_enable" ]	&& %%APP_SHORTNAME%%_enable="NO"
+[ -z "$%%APP_SHORTNAME%%_flags" ]	&& %%APP_SHORTNAME%%_flags="-server"
+
+%%APP_SHORTNAME%%_start ()
+{
+	checkyesno %%APP_SHORTNAME%%_enable &&
+		%%CONTROL_SCRIPT%% -q ${%%APP_SHORTNAME%%_flags} start &&
+		echo -n " %%APP_SHORTNAME%%"
+}
+
+%%APP_SHORTNAME%%_restart ()
+{
+	checkyesno %%APP_SHORTNAME%%_enable &&
+		%%CONTROL_SCRIPT%% -q ${%%APP_SHORTNAME%%_flags} restart
+}
+
+load_rc_config $name
+run_rc_command "$1"
