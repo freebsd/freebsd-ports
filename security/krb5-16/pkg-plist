@@ -8,6 +8,7 @@ bin/kdestroy
 bin/kinit
 bin/klist
 bin/kpasswd
+bin/krb5-config
 bin/krb524init
 bin/ksu
 bin/kvno
