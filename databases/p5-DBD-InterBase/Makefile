@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	DBD-InterBase
-PORTVERSION=	0.30
-PORTREVISION=	1
+PORTVERSION=	0.40
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	DBD
@@ -24,7 +23,6 @@ PERL_CONFIGURE=	yes
 post-patch:
 		@${PERL} -pi -e 's,%%IB_BASE%%,${PREFIX}/firebird,g' \
 			${WRKSRC}/Makefile.PL
-		@${PERL} -pi -e 's|6|7| if $$.==399' ${WRKSRC}/dbdimp.c
 
 MAN3=		Bundle::DBD::InterBase.3 DBD::InterBase.3 DBD::InterBase::FAQ.3
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
