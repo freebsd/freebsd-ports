@@ -3,16 +3,16 @@
 # Date created:		6 Mar 1997
 # Whom:			Jun-ichiro itojun Itoh <itojun@itojun.org>
 #
-# $Id: Makefile,v 1.1.1.1 1997/03/06 08:38:44 asami Exp $
+# $Id: Makefile,v 1.2 1997/03/15 11:55:58 asami Exp $
 #
 
 DISTNAME=	nvi-1.79
-PKGNAME=	nvi-m17n-1.79-970306
+PKGNAME=	nvi-m17n-1.79-970403
 CATEGORIES=	japanese editors
 MASTER_SITES=	ftp://ftp.cs.berkeley.edu/ucb/4bsd/\
 		ftp://ftp.foretune.co.jp/pub/tools/nvi-m17n/
 
-PATCHFILES=	nvi-1.79.m17n-970306.diff.gz
+PATCHFILES=	nvi-1.79.m17n-970403-1000.diff.gz
 PATCH_SITES=	ftp://ftp.foretune.co.jp/pub/tools/nvi-m17n/
 
 MAINTAINER=	itojun@itojun.org
