@@ -116,9 +116,9 @@
     SUBDIR += ooodict-nl_NL
     SUBDIR += ooodict-sk_SK
     SUBDIR += ooodict-sv_SE
-    SUBDIR += openoffice
+    SUBDIR += openoffice-1.0
+    SUBDIR += openoffice-1.1
     SUBDIR += openoffice-ar
-    SUBDIR += openoffice-devel
     SUBDIR += openoffice-dk
     SUBDIR += openoffice-es
     SUBDIR += openoffice-gr
