@@ -1,0 +1,19 @@
+--- Makefile.in.orig	Tue Jun  8 02:31:34 1999
++++ Makefile.in	Tue Jun  8 02:32:10 1999
+@@ -1,6 +1,6 @@
+ 
+ # Which compiler to use
+-CC = mpicc
++CC = ${PREFIX}/mpich/bin/mpicc
+ 
+ 
+ # What optimization level to use
+@@ -13,7 +13,7 @@
+ COPTIONS = 
+ 
+ # Which loader to use
+-LD = mpicc
++LD = ${PREFIX}/mpich/bin/mpicc
+ 
+ # In which directories to look for any additional libraries
+ LIBDIR = 

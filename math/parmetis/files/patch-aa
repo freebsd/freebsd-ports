@@ -1,0 +1,10 @@
+--- ParMETISLib/parmetis.h.orig	Wed May 19 17:32:56 1999
++++ ParMETISLib/parmetis.h	Wed May 19 17:33:05 1999
+@@ -14,7 +14,6 @@
+ 
+ #include <stdio.h>
+ #include <stdlib.h>
+-#include <malloc.h>
+ #include <strings.h>
+ #include <string.h>
+ #include <ctype.h>
