@@ -1,0 +1,16 @@
+
+Before you can use this, you will have to create an update configuration
+file specifying the server to fetch updates from and the trusted public
+key fingerprint.
+
+A sample configuration file has been installed in
+
+       %%PREFIX%%/etc/freebsd-update.conf.sample
+
+which will fetch updates built by the author.  If you trust the author
+to securely build binary updates for you to blindly install on this
+machine, copy that file to
+
+       %%PREFIX%%/etc/freebsd-update.conf
+
+otherwise, create that file as appropriate.

@@ -1,14 +1,23 @@
 #!/bin/sh
 
+if [ ! -r %%PREFIX%%/etc/freebsd-update.conf ] ; then
+	echo "%%PREFIX%%/etc/freebsd-update.conf not found"
+	exit 1
+fi
+
 case "$1" in
 fetch)
-	cd %%PREFIX%%/freebsd-update && make fetch-update;;
+	cd %%PREFIX%%/freebsd-update && make 				\
+		CONFFILE=%%PREFIX%%/etc/freebsd-update.conf fetch-update;;
 install)
-	cd %%PREFIX%%/freebsd-update && make install-update;;
+	cd %%PREFIX%%/freebsd-update && make 				\
+		CONFFILE=%%PREFIX%%/etc/freebsd-update.conf install-update;;
 rollback)
-	cd %%PREFIX%%/freebsd-update && make rollback-update;;
+	cd %%PREFIX%%/freebsd-update && make 				\
+		CONFFILE=%%PREFIX%%/etc/freebsd-update.conf rollback-update;;
 cron)
-	cd %%PREFIX%%/freebsd-update && make MAILTO=root QUIET=YES daily;;
+	cd %%PREFIX%%/freebsd-update && make MAILTO=root QUIET=YES 	\
+		CONFFILE=%%PREFIX%%/etc/freebsd-update.conf daily;;
 *)
 	echo "Usage: freebsd-update {fetch|install|rollback|cron}" >&2
 	echo "  freebsd-update fetch:    Fetches updates" >&2
