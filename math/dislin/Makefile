@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	linux-
 EXTRACT_SUFX=	.linux.tar.gz
 DIST_SUBDIR=	${MACHINE_ARCH}
 
-MAINTAINER=	des@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A scientific data plotting package
 
 RUN_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libXrender.so.1:${PORTSDIR}/x11/linux-XFree86-libs
