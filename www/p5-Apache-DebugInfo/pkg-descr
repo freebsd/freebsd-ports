@@ -1,0 +1,20 @@
+Apache::DebugInfo gives the programmer the ability to monitor various
+bits of per-request data.
+
+You can enable Apache::DebugInfo as a PerlInitHandler, in which case it
+chooses what request phase to display the appropriate data.  The output
+of data can be controlled by setting various variables to On:
+
+  DebugInfo          - enable Apache::DebugInfo handler
+  DebugPID           - dumps apache child pid during request init
+  DebugHeadersIn     - dumps request headers_in during request init
+  DebugDirConfig     - dumps PerlSetVar and PerlAddVar during request init
+  DebugGetHandlers   - dumps enabled request handlers during init
+  DebugHeadersOut    - dumps request headers_out during request cleanup
+  DebugNotes         - dumps request notes during request cleanup
+  DebugPNotes        - dumps request pnotes during request cleanup
+  DebugTimestamp     - prints localtime at the start of each request
+  DebugMarkPhases    - prints the name of the request phase when the
+                       phase is entered, prior to any other handlers
+
+WWW: http://search.cpan.org/dist/Apache-DebugInfo/

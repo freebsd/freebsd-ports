@@ -342,6 +342,7 @@
     SUBDIR += p5-Apache-Compress
     SUBDIR += p5-Apache-ConfigFile
     SUBDIR += p5-Apache-DBI
+    SUBDIR += p5-Apache-DebugInfo
     SUBDIR += p5-Apache-DumpHeaders
     SUBDIR += p5-Apache-Filter
     SUBDIR += p5-Apache-Gallery
