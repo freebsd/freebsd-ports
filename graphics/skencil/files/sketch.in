@@ -1,4 +1,4 @@
 #!/bin/sh
 
 cd @PREFIX@/share/sketch
-exec @PREFIX@/bin/python sketch.py
+exec @PREFIX@/bin/python sketch.py $@
