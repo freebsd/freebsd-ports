@@ -8,9 +8,10 @@
 
 DISTNAME=	fnlib-0.4
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://www.rasterman.com/pub/enlightenment/enlightenment/ \
-		ftp://ftp.enlightenment.org/pub/enlightenment/enlightenment/ \
-		ftp://ftp.labs.redhat.com/pub/imlib/TAR/
+MASTER_SITES=	http://mirror.nucba.ac.jp/mirror/enlightenment/enlightenment/ \
+		ftp://ftp.leirianet.pt/pub/X11/enlightenment/enlightenment/ \
+		ftp://ftp.dti.ad.jp/pub/X/enlightenment/enlightenment/ \
+		ftp://mirror.nucba.ac.jp/mirror/enlightenment/enlightenment/
 
 MAINTAINER=	vanilla@FreeBSD.org
 
