@@ -1,0 +1,8 @@
+--- share/bin/xmupad~	Thu Nov 25 18:21:36 1999
++++ share/bin/xmupad	Sun Feb 25 19:03:21 2001
+@@ -81,4 +81,4 @@
+ 
+ # This ensures that MuPAD and Xxmupad will find all of its modules.
+  
+-$MuPAD_BIN/Xxmupad -r $MuPAD_BIN/mupad -m $MuPAD_LIB -l $MuPAD_LIB -d $MuPAD_DYNMOD -h $MuPAD_HELP -H $MuPAD_BIN/hypage -M $MuPAD_HHELP -f $MuPAD_BIN/vcam -D $MuPAD_ROOT_PATH/share/bin/mdx -L english $* & 2> /dev/null &
++$MuPAD_BIN/Xxmupad -r $MuPAD_BIN/mupad -m $MuPAD_LIB -l $MuPAD_LIB -d $MuPAD_DYNMOD -h $MuPAD_HELP -H $MuPAD_BIN/hypage -M $MuPAD_HHELP -f $MuPAD_BIN/vcam -D $MuPAD_ROOT_PATH/share/bin/mdx -L english $* & 2> /dev/null

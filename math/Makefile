@@ -42,6 +42,7 @@
     SUBDIR += matrix
     SUBDIR += metis
     SUBDIR += mtrxmath
+    SUBDIR += mupad
     SUBDIR += netcdf
     SUBDIR += ngraph
     SUBDIR += ntl
