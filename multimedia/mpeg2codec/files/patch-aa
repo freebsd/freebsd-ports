@@ -1,0 +1,41 @@
+--- Makefile	1996/06/18 18:44:04	1.1
++++ Makefile	1996/06/18 19:46:05
+@@ -30,23 +30,23 @@
+ # uncomment the following two lines if you want to include X11 support
+ # (mpeg2decode)
+ 
+-#USE_DISP = -DDISPLAY
+-#LIBS = -lX11
++USE_DISP = -DDISPLAY
++LIBS = -lX11
+ 
+ # uncomment the following two lines if you want to use shared memory
+ # (faster display if server and client run on the same machine)
+ # (mpeg2decode)
+ 
+-#USE_SHMEM = -DSH_MEM
+-#LIBS = -lXext -lX11
++USE_SHMEM = -DSH_MEM
++LIBS = -lXext -lX11
+ 
+ # if your X11 include files / libraries are in a non standard location:
+ # set INCLUDEDIR to -I followed by the appropriate include file path and
+ # set LIBRARYDIR to -L followed by the appropriate library path
+ # (mpeg2decode)
+ 
+-#INCLUDEDIR = -I/usr/openwin/include
+-#LIBRARYDIR = -L/usr/openwin/lib
++INCLUDEDIR = -I${X11BASE}/include
++LIBRARYDIR = -L${X11BASE}/lib
+ 
+ # select one of the following CC CFLAGS settings
+ 
+@@ -54,7 +54,7 @@
+ # GNU gcc
+ #
+ CC = gcc
+-CFLAGS = -O2
++CFLAGS = -O2 -m486
+ 
+ #
+ # SPARCworks acc

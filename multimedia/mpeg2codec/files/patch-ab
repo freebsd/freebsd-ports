@@ -1,0 +1,19 @@
+--- src/mpeg2enc/mpeg2enc.c	1996/06/20 19:58:58	1.1
++++ src/mpeg2enc/mpeg2enc.c	1996/06/20 19:36:25
+@@ -29,6 +29,7 @@
+ 
+ #include <stdio.h>
+ #include <stdlib.h>
++#include <floatingpoint.h>
+ 
+ #define GLOBAL /* used by global.h */
+ #include "config.h"
+@@ -50,6 +51,8 @@
+     printf("Usage: mpeg2encode in.par out.m2v\n");
+     exit(0);
+   }
++
++  fpsetmask(0);
+ 
+   /* read parameter file */
+   readparmfile(argv[1]);
