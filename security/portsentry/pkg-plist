@@ -4,4 +4,5 @@ etc/portsentry.conf.default
 etc/portsentry.ignore
 share/doc/portsentry/README.install
 share/doc/portsentry/README.methods
+share/doc/portsentry/README.stealth
 @dirrm share/doc/portsentry
