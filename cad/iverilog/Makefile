@@ -21,10 +21,4 @@ GNU_CONFIGURE=	yes
 
 MAN1=		iverilog-vpi.1 iverilog.1 vvp.1 iverilog-fpga.1
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} <= 500000
-BROKEN=		"Does not install on FreeBSD ${OSVERSION}"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
