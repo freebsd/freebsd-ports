@@ -3,7 +3,7 @@
 # Date created:         16 May 1996
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.10 1997/11/29 16:10:33 ache Exp $
+# $Id: Makefile,v 1.11 1998/06/07 11:10:15 ache Exp $
 #
 
 # WWW site: http://www.fccc.edu/users/muquit/Count.html
@@ -19,6 +19,7 @@ MAINTAINER=     ports@FreeBSD.ORG
 
 GNU_CONFIGURE=  yes
 IS_INTERACTIVE= yes
+USE_GMAKE=      yes
 MAN1=		mkstrip.1
 
 pre-configure:
