@@ -1,0 +1,13 @@
+--- roverpingd/Makefile.in.orig	Sun Aug  1 20:51:19 2004
++++ roverpingd/Makefile.in	Sun Aug  1 20:51:29 2004
+@@ -6,8 +6,8 @@
+ SRCS = pingd.c read_list.c send.c receive.c sock.c packet.c write_stats.c
+ OBJS = pingd.o read_list.o send.o receive.o sock.o packet.o write_stats.o
+ 
+-CC = @CC@
+-CFLAGS = @CFLAGS@
++CC ?= @CC@
++CFLAGS ?= @CFLAGS@
+ LDFLAGS = @LDFLAGS@
+ #DEFINES = -D__DEBUG_DATA_POINTS__
+ DEFINES = 

@@ -1,0 +1,9 @@
+NRG is a system for maintaining and visualizing network data and
+other resource utilization data. It automates the maintenance of
+RRDtool databases and graph web pages (that look like MRTG web
+pages.) NRG is primarily configured using very terse meta-
+configuration strings. These strings tell NRG to autodiscover
+network devices and verify that their current NRG configuration
+is correct.
+
+WWW: http://nrg.hep.wisc.edu/

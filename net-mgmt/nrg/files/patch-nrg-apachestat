@@ -1,0 +1,50 @@
+--- ./collectors/nrg-apachestat.in.orig	Sun Jul 20 20:51:09 2003
++++ ./collectors/nrg-apachestat.in	Fri Mar  5 18:08:03 2004
+@@ -11,7 +11,7 @@
+ $mode = "requests";
+ $server = "localhost";
+ $port = "80";
+-$url = "server-status";
++$url = "server-status?auto";
+ $stamp = 0;
+ $stat = 0;
+ 
+@@ -88,15 +88,24 @@
+   # parse the stats...
+ 
+   while(<SOCK>) {
++  if ( $_ =~ /Uptime: (\d+)/ ) {
++	$uptime = $1;
++	last;
++  }
+   if ( $_ =~ /Server uptime:/ ) {
+     if ( $_ =~ /(\d+) hour/ ) { $uptime += $1*60*60; }
+     if ( $_ =~ /(\d+) minute/ ) { $uptime += $1*60; }
+     if ( $_ =~ /(\d+) second/ ) { $uptime += $1; }
+   }
+-  if ( $mode eq 'requests' && $_ =~ /Total accesses: (\d+)/ ) {
++  if ( $mode eq 'requests' && $_ =~ /Total accesses: (\d+)/i ) {
+     $stat = $1;
+     &debug("$stat accesses\n");
+-    last;
++	last if $url !~ /auto$/;
++  }
++  if ( $mode eq 'bytes' && $_ =~ /Total kBytes: (\d+)/ ) {
++    $stat = $1*1024;
++    &debug("$stat bytes\n");
++	last if $url !~ /auto$/;
+   }
+   if ( $mode eq 'bytes' && $_ =~ /Total Traffic: (\d+) kB/ ) {
+     $stat = $1*1024;
+@@ -105,6 +114,11 @@
+   }
+   if ( $mode eq 'bytes' && $_ =~ /Total Traffic: (\d+)\.(\d) MB/ ) {
+     $stat = ($1*1024*1024) + (($2/10)*1024*1024);
++    &debug("$stat bytes\n");
++    last;
++  }
++  if ( $mode eq 'bytes' && $_ =~ /Total Traffic: (\d+)\.(\d) GB/ ) {
++    $stat = ($1*1024*1024*1024) + (($2/10)*1024*1024*1024);
+     &debug("$stat bytes\n");
+     last;
+   }

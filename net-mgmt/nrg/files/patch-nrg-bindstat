@@ -1,0 +1,11 @@
+--- ./collectors/nrg-bindstat.in.orig	Sun Jul 20 20:51:09 2003
++++ ./collectors/nrg-bindstat.in	Fri Mar  5 18:08:03 2004
+@@ -24,7 +24,7 @@
+ $version = "4.9.6";
+ $mode = "queries";
+ $server = "localhost";
+-$port = "88888";
++$port = "28888";
+ $stamp = 0;
+ $stat = 0;
+ 

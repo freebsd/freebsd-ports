@@ -1,0 +1,15 @@
+--- src/nrg-rrdkeeper.in.orig	Fri Mar  5 18:04:41 2004
++++ src/nrg-rrdkeeper.in	Fri Mar  5 18:05:19 2004
+@@ -631,6 +631,12 @@
+ 
+   }
+ 
++  $dir = $path;
++  $dir =~ s/[^\/]+.rrd//;
++  if (! -d $dir) {
++    system("mkdir -p $dir");
++  }
++
+   #print "RRDs::create @create_options \n";
+   RRDs::create @create_options;
+ 

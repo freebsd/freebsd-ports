@@ -1,0 +1,13 @@
+--- ./examples/Makefile.ops.in.orig	Sun Jul 20 20:51:10 2003
++++ ./examples/Makefile.ops.in	Fri Mar  5 18:08:03 2004
+@@ -4,8 +4,8 @@
+ # $Id: Makefile.ops.in,v 1.41 2003/07/20 15:16:04 rader Exp $
+ #
+ 
+-WEB_PREFIX = /usr/local/web/html
+-NRG_WEB_TITLE = "Somesite's NRG Home Page"
++WEB_PREFIX = /usr/local/www/data
++NRG_WEB_TITLE = "FreeBSD NRG Homepage"
+ MCONF_FILES = NRG.mconf Site.mconf
+ NRG_WEB_DIR = nrg
+ 
