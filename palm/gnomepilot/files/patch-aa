@@ -1,0 +1,42 @@
+--- configure.orig	Tue Dec  7 17:50:25 1999
++++ configure	Thu Dec 23 13:54:26 1999
+@@ -2123,8 +2123,8 @@
+   
+ 		gnome_cv_gnorba_found=no
+ 		if test x$gnome_cv_orbit_found = xyes; then
+-			GNORBA_CFLAGS="`gnome-config --cflags gnorba gnomeui`"
+-			GNORBA_LIBS="`gnome-config --libs gnorba gnomeui`"
++			GNORBA_CFLAGS="`$GNOME_CONFIG --cflags gnorba gnomeui`"
++			GNORBA_LIBS="`$GNOME_CONFIG --libs gnorba gnomeui`"
+ 			if test -n "$GNORBA_LIBS"; then
+ 				gnome_cv_gnorba_found=yes
+ 			fi
+@@ -2144,8 +2144,8 @@
+ fi
+ 	if test x$gnome_cv_orbit_found = xyes; then
+ 		
+-		GNORBA_CFLAGS="`gnome-config --cflags gnorba gnomeui`"
+-		GNORBA_LIBS="`gnome-config --libs gnorba gnomeui`"
++		GNORBA_CFLAGS="`$GNOME_CONFIG --cflags gnorba gnomeui`"
++		GNORBA_LIBS="`$GNOME_CONFIG --libs gnorba gnomeui`"
+ 		
+ 		
+ 	else
+@@ -2956,7 +2956,7 @@
+ fi
+ if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
+   echo "$ac_t""yes" 1>&6
+-  PTHREAD_LIB="-lc_r"
++  PTHREAD_LIB=""
+ else
+   echo "$ac_t""no" 1>&6
+ echo $ac_n "checking for pthread_create""... $ac_c" 1>&6
+@@ -4806,7 +4806,7 @@
+   cat conftest.$ac_ext >&5
+   rm -rf conftest*
+   CATOBJEXT=.mo
+-		   DATADIRNAME=lib
++		   DATADIRNAME=share
+ fi
+ rm -f conftest*
+ 		INSTOBJEXT=.mo
