@@ -94,10 +94,10 @@ MAN5= 			XF86Config.5
 # Set following as NO. or type make ExtendefInputDevices=NO
 ExtendedInputDevices?=	YES
 
-.if !defined(BATCH) && !defined(PACKAGE_BUILDING)
-pre-everything:
+#.if !defined(BATCH) && !defined(PACKAGE_BUILDING)
+#pre-everything:
 #	${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
-.endif
+#.endif
 
 do-configure:
 	cd ${.CURDIR} && ${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure
