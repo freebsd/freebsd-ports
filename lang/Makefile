@@ -1,10 +1,9 @@
-# $Id: Makefile,v 1.30 1995/05/13 07:55:10 asami Exp $
+# $Id: Makefile,v 1.31 1995/05/14 03:29:39 asami Exp $
 #
 # BROKEN: expect (no package file yet)
-# BROKEN: gnat (needs gnat1 somewhere on system)
 #
 
-SUBDIR=	Gofer STk Sather elk forth g77 gcl guile-ii \
+SUBDIR=	Gofer STk Sather elk forth g77 gcl gnat guile-ii \
 	icon itcl logo mit-scheme nTk p2c perl5 \
 	scheme48 schemetoc scm smalltalk tcl tclX
 
