@@ -8,8 +8,10 @@
 PORTNAME=	gtkextra
 PORTVERSION= 	0.99.12
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	http://gtkextra.sourceforge.net/src/ \
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+		http://gtkextra.sourceforge.net/src/ \
 		http://magnet.fsu.edu/~feiguin/gtk/src/
+MASTER_SITE_SUBDIR=	scigraphica
 DISTNAME=	${PORTNAME:S/gtk/gtk+/}-${PORTVERSION}
 
 MAINTAINER=	sobomax@FreeBSD.org
