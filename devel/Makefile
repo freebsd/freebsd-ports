@@ -322,6 +322,7 @@
     SUBDIR += p5-Cdk
     SUBDIR += p5-Class-Accessor
     SUBDIR += p5-Class-Contract
+    SUBDIR += p5-Class-Data-Inheritable
     SUBDIR += p5-Class-Date
     SUBDIR += p5-Class-Delegation
     SUBDIR += p5-Class-Loader
