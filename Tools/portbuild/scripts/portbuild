@@ -194,7 +194,7 @@ if [ -f ${chroot}/.notready ]; then
     mkdir -p ${chroot}/libexec
     mkdir -p ${chroot}/lib
     if [ "${arch}" = "i386" ]; then
-      cp -p /rescue/mount_linprocfs /rescue/mount /rescue/umount ${chroot}/sbin
+      cp -p /sbin/mount_linprocfs /sbin/mount /sbin/umount ${chroot}/sbin
       cp -p /lib/libufs.so.2 ${chroot}/lib
     fi
     cp -p /libexec/ld-elf.so.1 ${chroot}/libexec
@@ -267,6 +267,7 @@ mtree -deU -f ${chroot}/usr/src/etc/mtree/BSD.usr.dist -p ${chroot}/usr \
 mtree -deU -f ${chroot}/usr/src/etc/mtree/BSD.local.dist -p ${chroot}/usr/local \
   >/dev/null 2>&1
 
+mkdir ${chroot}/usr/X11R6
 if [ $X_WINDOW_SYSTEM = "xfree86-3" ]; then
   mtree -deU -f ${chroot}/usr/src/etc/mtree/BSD.x11.dist -p ${chroot}/usr/X11R6 \
     >/dev/null 2>&1
