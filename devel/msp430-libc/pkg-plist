@@ -62,6 +62,8 @@
 %%LIBC_TARG%%/lib/crt430x1111.o
 %%LIBC_TARG%%/lib/crt430x112.o
 %%LIBC_TARG%%/lib/crt430x1121.o
+%%LIBC_TARG%%/lib/crt430x1122.o
+%%LIBC_TARG%%/lib/crt430x1132.o
 %%LIBC_TARG%%/lib/crt430x122.o
 %%LIBC_TARG%%/lib/crt430x1222.o
 %%LIBC_TARG%%/lib/crt430x123.o
