@@ -12,8 +12,7 @@ MASTER_SITES=	http://www.cs.uml.edu/~jhawkins/wmx10/
 
 MAINTAINER=	eric@FreeBSD.org
 
-LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
-		Xext.6:${PORTSDIR}/x11/XFree86-aoutlibs
+LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 
 WRKSRC=		${WRKDIR}/wmx10.app/wmx10
 
