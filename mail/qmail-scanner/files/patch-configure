@@ -1,29 +1,29 @@
---- configure.orig	Wed Nov  5 03:04:26 2003
-+++ configure	Sun Jan  4 16:20:01 2004
-@@ -48,6 +48,12 @@
+--- configure.orig	Mon Apr 12 12:29:06 2004
++++ configure	Sun May 30 02:11:14 2004
+@@ -51,6 +51,12 @@
+     #reset all English to en_GB
      QSLANG="en_GB"
  fi
- 
++ 
 +QSLANG=`echo $QSLANG|sed 's/\..*//'`
 +if [ "$QSLANG" = "ja_JP" ]; then
-+    #reset all Japanese to jp_JP.EUC
-+    QSLANG="jp_JP.EUC"
++    #reset all Japanese to ja_JP.EUC
++    QSLANG="ja_JP.EUC"
 +fi
-+
+ 
  if [ ! -d "./locale/$QSLANG" ]; then
      echo "
- 
-@@ -81,7 +87,8 @@
- FORCE_UNZIP="0"
+@@ -87,7 +93,8 @@
+ QUARANTINE_PASSWORD_PROTECTED="0"
  DESCRIPTIVE_HEADERS="0"
- NOTIFY_ADDRESSES="sender,admin"
+ NOTIFY_ADDRESSES="psender,nmlvadm"
 -USERNAME="$USER"
 +ADMIN_MAIL="$USER"
 +ADMIN_REALNAME="System Anti-Virus Administrator"
  MANUAL_INSTALL="0"
  INSTALLIT="0"
  DONOTCONFIRM="0"
-@@ -98,8 +105,10 @@
+@@ -104,8 +111,10 @@
          --spooldir) if [ "$2" != "" ] ; then  shift ; fi ; AS_QQ="$1" ;;
  	--qmaildir) if [ "$2" != "" ]; then shift ; fi ; QMAILDIR="$1" ;;
  	--bindir) if [ "$2" != "" ] ; then  shift ; fi ; BINDIR="$1" ;;
@@ -36,7 +36,7 @@
  	--notify) if [ "$2" != "" ]; then shift ; fi ; NOTIFY_ADDRESSES="$1" ;;
  	--batch) DONOTCONFIRM="1" ; if [ "$2" != "" -a "`echo $2|grep '\-'`" = "" ] ; then  shift ; fi ;;
  	--silent-viruses) if [ "$2" != "" ]; then shift ; fi ; FIND_SILENT_VIRUSES="$1" ;;
-@@ -128,9 +137,17 @@
+@@ -136,9 +145,17 @@
    --spooldir <spooldir> defaults to $AS_QQ/
    --bindir <installdir> where to install qmail-scanner-queue.pl
                          Defaults to /var/qmail/bin/
@@ -57,17 +57,13 @@
    --scanners <list of installed content scanners>
  				    Defaults to "auto" - will use
  				    whatever scanners are found on system.
-@@ -909,12 +926,16 @@
- if [ "$UNAME" ] ; then FQDN="$UNAME" ; fi
- if [ "$HOST" ] ; then FQDN="$HOST" ; fi
+@@ -946,9 +963,14 @@
  
--MAILDOMAIN=${MAILDOMAIN:-$FQDN}
--LOCAL_DOMAINS_ARRAY=${LOCAL_DOMAINS_ARRAY:-$MAILDOMAIN}
--CMDLINE="$0 --spooldir $AS_QQ --qmaildir $QMAILDIR --bindir $BINDIR --qmail-queue-binary $QMAILQUEUE_BIN  --admin $USERNAME --domain $MAILDOMAIN --notify $NOTIFY_ADDRESSES --local-domains $LOCAL_DOMAINS_ARRAY --silent-viruses $SILENT_VIRUSES --lang $QSLANG --debug $DEBUG_LEVEL --unzip $FORCE_UNZIP --add-dscr-hdrs $DESCRIPTIVE_HEADERS --archive $ARCHIVEIT --redundant $REDUNDANT --log-details $LOG_DETAILS --log-crypto $LOG_CRYPTO --fix-mime $FIX_MIME  --scanners \"$SCANNERS\""
+ MAILDOMAIN=${MAILDOMAIN:-$FQDN}
+ LOCAL_DOMAINS_ARRAY=${LOCAL_DOMAINS_ARRAY:-$MAILDOMAIN}
+-CMDLINE="$0 --spooldir $AS_QQ --qmaildir $QMAILDIR --bindir $BINDIR --qmail-queue-binary $QMAILQUEUE_BIN  --admin $USERNAME --domain $MAILDOMAIN --notify $NOTIFY_ADDRESSES --local-domains $LOCAL_DOMAINS_ARRAY --silent-viruses $SILENT_VIRUSES --lang $QSLANG --debug $DEBUG_LEVEL --unzip $FORCE_UNZIP --block-password-protected $QUARANTINE_PASSWORD_PROTECTED --add-dscr-hdrs $DESCRIPTIVE_HEADERS --archive $ARCHIVEIT --redundant $REDUNDANT --log-details $LOG_DETAILS --log-crypto $LOG_CRYPTO --fix-mime $FIX_MIME  --ignore-eol-check $DISABLE_EOL_CHECK --scanners \"$SCANNERS\""
 -
-+LOCAL_DOMAINS_ARRAY=${LOCAL_DOMAINS_ARRAY:-$FQDN}
-+CMDLINE="$0 --spooldir $AS_QQ --qmaildir $QMAILDIR --bindir $BINDIR --qmail-queue-binary $QMAILQUEUE_BIN  --admin $ADMIN_MAIL --admin-realname \"$ADMIN_REALNAME\" --notify $NOTIFY_ADDRESSES --local-domains $LOCAL_DOMAINS_ARRAY --silent-viruses $SILENT_VIRUSES --lang $QSLANG --debug $DEBUG_LEVEL --unzip $FORCE_UNZIP --add-dscr-hdrs $DESCRIPTIVE_HEADERS --archive $ARCHIVEIT --redundant $REDUNDANT --log-details $LOG_DETAILS --log-crypto $LOG_CRYPTO --fix-mime $FIX_MIME  --scanners \"$SCANNERS\""
- 
++CMDLINE="$0 --spooldir $AS_QQ --qmaildir $QMAILDIR --bindir $BINDIR --qmail-queue-binary $QMAILQUEUE_BIN  --admin $ADMIN_MAIL --admin-realname \"$ADMIN_REALNAME\" --domain $MAILDOMAIN --notify $NOTIFY_ADDRESSES --local-domains $LOCAL_DOMAINS_ARRAY --silent-viruses $SILENT_VIRUSES --lang $QSLANG --debug $DEBUG_LEVEL --unzip $FORCE_UNZIP --block-password-protected $QUARANTINE_PASSWORD_PROTECTED --add-dscr-hdrs $DESCRIPTIVE_HEADERS --archive $ARCHIVEIT --redundant $REDUNDANT --log-details $LOG_DETAILS --log-crypto $LOG_CRYPTO --fix-mime $FIX_MIME  --ignore-eol-check $DISABLE_EOL_CHECK --scanners \"$SCANNERS\""
  
 +if [ -n "$SPAMS_REDIRECT" ]; then
 +    CMDLINE="$CMDLINE --spams-redirect $SPAMS_REDIRECT"
@@ -78,7 +74,7 @@
  if [ "$MANUAL_INSTALL" = "1" ]; then
      CMDLINE="$CMDLINE --no-QQ-check $MANUAL_INSTALL"
  fi
-@@ -1284,7 +1305,7 @@
+@@ -1312,7 +1334,7 @@
      fi
  fi
  
@@ -87,7 +83,7 @@
  
  SCANNER_ARRAY=`echo $SCANNER_ARRAY|sed 's/^,//g'`
  
-@@ -1358,7 +1379,13 @@
+@@ -1389,7 +1411,13 @@
      fi
      echo "archiving $ASTRING into $AS_QQ/$ARCHIVEDIR/"
  fi
@@ -102,7 +98,7 @@
  echo "local-domains=$LOCAL_DOMAINS_ARRAY"
  echo "silent-viruses=$FIND_SILENT_VIRUSES_ARRAY"
  echo "scanners=$SCANNER_ARRAY"
-@@ -1504,10 +1531,12 @@
+@@ -1545,10 +1573,12 @@
  s?SPAMC_BINARY?$SPAMC_BINARY?g;
  s?SPAMC_OPTIONS?$SPAMC_OPTIONS?g;
  s?SPAMC_SUBJECT?$SPAMC_SUBJECT?g;

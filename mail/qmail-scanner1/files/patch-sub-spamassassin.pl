@@ -1,10 +1,10 @@
---- sub-spamassassin.pl.orig	Mon Sep 29 04:17:22 2003
-+++ sub-spamassassin.pl	Sun Jan  4 16:17:55 2004
-@@ -57,6 +57,7 @@
+--- sub-spamassassin.pl.orig	Thu Dec  4 22:17:55 2003
++++ sub-spamassassin.pl	Mon Mar 15 01:27:28 2004
+@@ -61,6 +61,7 @@
      $tag_score .= "SA:1($sa_score/$sa_max):";
-     $sa_comment = "Yes, hits=$sa_score required=$sa_max" if ($spamc_options =~ /\-c/);
+     $sa_comment = "Yes, hits=$sa_score required=$sa_max" if ($sa_fast);
      &debug("SA: yup, this smells like SPAM");
 +    $spam_event = 1;
    }	
-   $stop_spamassassin_time=[gettimeofday];
-   $spamassassin_time = tv_interval ($start_spamassassin_time, $stop_spamassassin_time);
+   if ($sa_score > 0) {
+     $sa_score=int($sa_score);

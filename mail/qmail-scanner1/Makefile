@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	qmail-scanner
-PORTVERSION=	1.20
-PORTREVISION=	2
+PORTVERSION=	1.22
 CATEGORIES=	mail security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -39,15 +38,26 @@ QMAILSCAN_ADMIN?=	root
 .if defined(QMAILSCAN_ADMINREALNAME)
 CONFIGURE_ARGS+=	--admin-realname "${QMAILSCAN_ADMINREALNAME}"
 .endif
-QMAILSCAN_NOTIFY?=	sender,recips
+.if defined(QMAILSCAN_ARCHIVE)
+CONFIGURE_ARGS+=	--archive yes
+.endif
+QMAILSCAN_NOTIFY?=	psender,recips
 .if defined(QMAILSCAN_LOCALDOMAINS)
 CONFIGURE_ARGS+=	--local-domains "${QMAILSCAN_LOCALDOMAINS}"
+.endif
+.if defined(QMAILSCAN_LOGCRYPTO)
+CONFIGURE_ARGS+=	--log-crypto yes
+.endif
+.if !defined(QMAILSCAN_NOTBLKZIPPW)
+BUILD_DEPENDS+=		unzip:${PORTSDIR}/archivers/unzip
+CONFIGURE_ARGS+=	--block-password-protected
 .endif
 .if defined(QMAILSCAN_SCANNERS)
 CONFIGURE_ARGS+=	--scanners "${QMAILSCAN_SCANNERS}"
 .else
 CONFIGURE_ARGS+=	--scanners auto
 .endif
+QMAILSCAN_SILENTVIRUSES?=	auto
 .if defined(QMAILSCAN_SPAMSREDIRECT)
 CONFIGURE_ARGS+=	--spams-redirect "${QMAILSCAN_SPAMSREDIRECT}"
 .endif
@@ -63,10 +73,9 @@ CONFIGURE_ARGS+=	\
 		--qmaildir ${QMAIL_DIR} --spooldir ${SPOOLDIR} \
 		--bindir ${PREFIX}/bin --qmail-queue-binary ${QMAIL_QUEUE} \
 		--admin "${QMAILSCAN_ADMIN}" --notify "${QMAILSCAN_NOTIFY}" \
-		--silent-viruses auto \
+		--silent-viruses "${QMAILSCAN_SILENTVIRUSES}" \
 		--redundant yes --unzip yes \
 		--add-dscr-hdrs yes \
-		--fix-mime yes \
 		--log-details syslog --debug no \
 		--batch
 
@@ -80,8 +89,17 @@ pre-configure:
 	@${ECHO_MSG} "                         (do not use spaces but underscores here)"
 	@${ECHO_MSG} "QMAILSCAN_LOCALDOMAINS   domains classified as local domains preventing alerts"
 	@${ECHO_MSG} "                         of externals users (and mailing-lists...)"
+	@${ECHO_MSG} "QMAILSCAN_LOGCRYPTO      simply notes in the log record if the message"
+	@${ECHO_MSG} "                         contained any form of digital signing or encryption"
+	@${ECHO_MSG} "                         (S/MIME, PGP and password protected files)"
+	@${ECHO_MSG} "                         default is disabled"
+	@${ECHO_MSG} "QMAILSCAN_NOTBLKZIPPW    zip password protected are blocked by default"
+	@${ECHO_MSG} "                         setting this variable to disable this function"
+	@${ECHO_MSG} "QMAILSCAN_NOTIFY         who has to be notify of viruses/spams"
+	@${ECHO_MSG} "                         defaults to 'psender,recips'"
 	@${ECHO_MSG} "QMAILSCAN_SCANNERS       list of installed content scanner"
 	@${ECHO_MSG} "                         default is automatic, so you do not need to set this"
+	@${ECHO_MSG} "QMAILSCAN_SILENTVIRUSES  viruses that qs shoud not notify about"
 	@${ECHO_MSG} "QMAILSCAN_SPAMSREDIRECT* set this if you want to redirect all spams to a"
 	@${ECHO_MSG} "                         specific email address"
 	@${ECHO_MSG} "QMAILSCAN_SPAMSTOSUFFIX* suffix to alter spams recipients with"
@@ -100,6 +118,9 @@ pre-configure:
 		exit 1; \
 	fi
 
+post-configure:
+	${TEST} -f ${WRKSRC}/qmail-scanner-queue.pl
+
 do-install:
 	-${TEST} -f ${PREFIX}/bin/qmail-scanner-queue.pl && \
 		${MV} ${PREFIX}/bin/qmail-scanner-queue.pl \
@@ -110,6 +131,8 @@ do-install:
 		${SPOOLDIR}/quarantine-attachments.sample
 	${TEST} -f ${SPOOLDIR}/quarantine-attachments.txt || \
 		${INSTALL_DATA} ${WRKSRC}/quarantine-attachments.txt ${SPOOLDIR}
+	${INSTALL_DATA} ${WRKSRC}/contrib/mrtg-qmail-scanner.cfg \
+		${PREFIX}/share/examples/qs2mrtg
 	@PKG_PREFIX=${PREFIX} ${SH} ${PKGDIR}/pkg-install ${PKGNAME} POST-INSTALL
 	@${CAT} ${PKGMESSAGE}
 
