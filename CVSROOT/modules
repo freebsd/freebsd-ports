@@ -3561,6 +3561,7 @@ kdiff3		ports/textproc/kdiff3
 kdirstat	ports/sysutils/kdirstat
 kenny		ports/misc/kenny
 kermit		ports/comms/kermit
+kexchange	ports/finance/kexchange
 keychain	ports/security/keychain
 keylaunch	ports/x11/keylaunch
 keynote		ports/security/keynote
