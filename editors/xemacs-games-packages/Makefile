@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xemacs-packages
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 CATEGORIES=	editors elisp
 MASTER_SITES=	\
 		ftp://ftp.xemacs.org/pub/xemacs/packages/ \
@@ -15,20 +15,34 @@ MASTER_SITES=	\
 		ftp://ftp.lab.kdd.co.jp/xemacs/packages/ \
 		ftp://ftp.th-darmstadt.de/pub/editors/xemacs/packages/
 DISTFILES=	\
-		xemacs-base-1.37-pkg.tar.gz xemacs-devel-1.25-pkg.tar.gz \
-		c-support-1.14-pkg.tar.gz   os-utils-1.19-pkg.tar.gz \
-		cc-mode-1.17-pkg.tar.gz     prog-modes-1.23-pkg.tar.gz \
-		debug-1.11-pkg.tar.gz       psgml-1.15-pkg.tar.gz \
-		dired-1.07-pkg.tar.gz       sgml-1.06-pkg.tar.gz \
-		edit-utils-1.45-pkg.tar.gz  text-modes-1.22-pkg.tar.gz \
-		efs-1.16-pkg.tar.gz         time-1.09-pkg.tar.gz \
-		fsf-compat-1.07-pkg.tar.gz  viper-1.18-pkg.tar.gz \
-		mail-lib-1.28-pkg.tar.gz    net-utils-1.13-pkg.tar.gz \
-		mailcrypt-2.04-pkg.tar.gz   vc-1.22-pkg.tar.gz \
-		sh-script-1.11-pkg.tar.gz   auctex-1.19-pkg.tar.gz \
-		ispell-1.18-pkg.tar.gz      pcl-cvs-1.41-pkg.tar.gz \
-		w3-1.15-pkg.tar.gz          texinfo-1.18-pkg.tar.gz \
-		hm--html-menus-1.14-pkg.tar.gz
+		auctex-1.19-pkg.tar.gz \
+		c-support-1.14-pkg.tar.gz \
+		cc-mode-1.17-pkg.tar.gz  \
+		debug-1.11-pkg.tar.gz  \
+		dired-1.07-pkg.tar.gz  \
+		edit-utils-1.45-pkg.tar.gz  \
+		efs-1.16-pkg.tar.gz   \
+		fsf-compat-1.07-pkg.tar.gz \
+		hm--html-menus-1.14-pkg.tar.gz \
+		ispell-1.18-pkg.tar.gz \
+		mail-lib-1.28-pkg.tar.gz \
+		mailcrypt-2.04-pkg.tar.gz \
+		net-utils-1.13-pkg.tar.gz \
+		os-utils-1.19-pkg.tar.gz \
+		pcl-cvs-1.41-pkg.tar.gz \
+		prog-modes-1.23-pkg.tar.gz \
+		ps-print-nomule-1.03-pkg.tar.gz \
+		psgml-1.15-pkg.tar.gz \
+		sgml-1.06-pkg.tar.gz \
+		sh-script-1.11-pkg.tar.gz \
+		texinfo-1.18-pkg.tar.gz \
+		text-modes-1.22-pkg.tar.gz \
+		time-1.09-pkg.tar.gz \
+		vc-1.22-pkg.tar.gz \
+		viper-1.18-pkg.tar.gz \
+		w3-1.15-pkg.tar.gz \
+		xemacs-base-1.37-pkg.tar.gz \
+		xemacs-devel-1.25-pkg.tar.gz
 
 MAINTAINER=	gj@FreeBSD.org
 

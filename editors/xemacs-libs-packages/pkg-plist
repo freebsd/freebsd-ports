@@ -966,6 +966,16 @@ lib/xemacs/xemacs-packages/lisp/psgml/custom-load.el
 lib/xemacs/xemacs-packages/lisp/psgml/custom-load.elc
 lib/xemacs/xemacs-packages/lisp/psgml/iso-sgml.el
 lib/xemacs/xemacs-packages/lisp/psgml/iso-sgml.elc
+lib/xemacs/xemacs-packages/lisp/ps-print-nomule/ChangeLog
+lib/xemacs/xemacs-packages/lisp/ps-print-nomule/_pkg.el
+lib/xemacs/xemacs-packages/lisp/ps-print-nomule/auto-autoloads.el
+lib/xemacs/xemacs-packages/lisp/ps-print-nomule/auto-autoloads.elc
+lib/xemacs/xemacs-packages/lisp/ps-print-nomule/custom-load.el
+lib/xemacs/xemacs-packages/lisp/ps-print-nomule/custom-load.elc
+lib/xemacs/xemacs-packages/lisp/ps-print-nomule/ps-print.el
+lib/xemacs/xemacs-packages/lisp/ps-print-nomule/ps-print.elc
+lib/xemacs/xemacs-packages/lisp/ps-print-nomule/ps-swapper.el
+lib/xemacs/xemacs-packages/lisp/ps-print-nomule/ps-swapper.elc
 lib/xemacs/xemacs-packages/lisp/psgml/psgml-api.el
 lib/xemacs/xemacs-packages/lisp/psgml/psgml-api.elc
 lib/xemacs/xemacs-packages/lisp/psgml/psgml-charent.el
@@ -1403,6 +1413,7 @@ lib/xemacs/xemacs-packages/pkginfo/MANIFEST.net-utils
 lib/xemacs/xemacs-packages/pkginfo/MANIFEST.os-utils
 lib/xemacs/xemacs-packages/pkginfo/MANIFEST.pcl-cvs
 lib/xemacs/xemacs-packages/pkginfo/MANIFEST.prog-modes
+lib/xemacs/xemacs-packages/pkginfo/MANIFEST.ps-print-nomule
 lib/xemacs/xemacs-packages/pkginfo/MANIFEST.psgml
 lib/xemacs/xemacs-packages/pkginfo/MANIFEST.sgml
 lib/xemacs/xemacs-packages/pkginfo/MANIFEST.sh-script
@@ -1436,6 +1447,7 @@ lib/xemacs/xemacs-packages/pkginfo/MANIFEST.xemacs-devel
 @dirrm lib/xemacs/xemacs-packages/lisp/texinfo
 @dirrm lib/xemacs/xemacs-packages/lisp/sh-script
 @dirrm lib/xemacs/xemacs-packages/lisp/sgml
+@dirrm lib/xemacs/xemacs-packages/lisp/ps-print-nomule
 @dirrm lib/xemacs/xemacs-packages/lisp/psgml
 @dirrm lib/xemacs/xemacs-packages/lisp/prog-modes
 @dirrm lib/xemacs/xemacs-packages/lisp/pcl-cvs
@@ -1468,3 +1480,4 @@ lib/xemacs/xemacs-packages/pkginfo/MANIFEST.xemacs-devel
 @dirrm lib/xemacs/xemacs-packages/etc/auctex
 @unexec rmdir %D/lib/xemacs/xemacs-packages/etc 2>/dev/null || true
 @unexec rmdir %D/lib/xemacs/xemacs-packages 2>/dev/null || true
+@unexec rmdir %D/lib/xemacs 2>/dev/null || true
