@@ -42,6 +42,7 @@
     SUBDIR += edict-fpw
     SUBDIR += edict-sdic
     SUBDIR += ee
+    SUBDIR += eijiro-fpw
     SUBDIR += elisa10x8
     SUBDIR += elisa8x8
     SUBDIR += elisp-manual
