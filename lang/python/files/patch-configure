@@ -1,0 +1,15 @@
+--- configure.orig	Sun Jul 13 18:46:13 2003
++++ configure	Sat Jul 19 15:21:09 2003
+@@ -3288,6 +3288,12 @@
+ 	  RUNSHARED=LD_LIBRARY_PATH=`pwd`:$LD_LIBRARY_PATH
+ 	  INSTSONAME="$LDLIBRARY".$SOVERSION
+ 	  ;;
++    FreeBSD*)
++	  LDLIBRARY='libpython$(VERSION).so'
++	  BLDLIBRARY='-L. -lpython$(VERSION)'
++	  RUNSHARED=LD_LIBRARY_PATH=`pwd`:$LD_LIBRARY_PATH
++	  INSTSONAME="$LDLIBRARY"
++	  ;;
+     hp*|HP*)
+ 	  LDLIBRARY='libpython$(VERSION).sl'
+ 	  BLDLIBRARY='-Wl,+b,$(LIBDIR) -L. -lpython$(VERSION)'

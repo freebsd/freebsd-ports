@@ -108,47 +108,43 @@ _PYTHON_VERSION!=	${PYTHON_CMD} -c 'import sys; print sys.version[:3]'
 _PYTHON_VERSION=	2.1
 .else
 _PYTHON_VERSION!=	(${LOCALBASE}/bin/python -c 'import sys; print sys.version[:3]') 2> /dev/null \
-					|| echo 2.2
+					|| echo 2.3
 .endif
 PYTHON_VERSION?=	python${_PYTHON_VERSION}
-_PYTHON_PORTVERSION=	2.2.3
+_PYTHON_PORTVERSION=	2.3
 PYTHON_CMD?=		${PYTHONBASE}/bin/${PYTHON_VERSION}
+PYTHONBASE!=		(${PYTHON_CMD} -c 'import sys; print sys.prefix') \
+						2> /dev/null || echo ${LOCALBASE}
 PYTHON_PORTVERSION!=	(${PYTHON_CMD} -c 'import string, sys; \
 								print string.split(sys.version)[0]') 2> /dev/null \
 					|| echo ${_PYTHON_PORTVERSION}
-PYTHONBASE!=		(${PYTHON_CMD} -c 'import sys; print sys.prefix') \
-						2> /dev/null || echo ${LOCALBASE}
+
+# Python-2.4
+.if ${PYTHON_VERSION} == "python2.4"
+PYTHON_DISTFILE=	Python-2.4a0-20030801.tgz
+PYTHON_PORTSDIR=	${PORTSDIR}/lang/python-devel
+PYTHON_REL=			240
+PYTHON_SUFFIX=		24
+PYTHON_WRKSRC=		${WRKDIR}/Python-2.4a0-20030801
 
 # Python-2.3
-.if ${PYTHON_VERSION} == "python2.3"
-PYDISTUTILS=	${PYTHON_LIBDIR}/distutils/core.py:${PYTHON_PORTSDIR}
-PYNUMERIC=		${PYTHON_SITELIBDIR}/Numeric/Numeric.py:${PORTSDIR}/math/py-numeric
-PYXML=			${PYTHON_SITELIBDIR}/_xmlplus/__init__.py:${PORTSDIR}/textproc/py-xml
-
-PYTHON_DISTFILE=	Python-2.3c1.tgz
-PYTHON_PORTSDIR=	${PORTSDIR}/lang/python-devel
+.elif ${PYTHON_VERSION} == "python2.3"
+PYTHON_DISTFILE=	Python-${_PYTHON_PORTVERSION}.tgz
+PYTHON_PORTSDIR=	${PORTSDIR}/lang/python
 PYTHON_REL=			230
 PYTHON_SUFFIX=		23
-PYTHON_WRKSRC=		${WRKDIR}/Python-2.3c1
+PYTHON_WRKSRC=		${WRKDIR}/Python-${_PYTHON_PORTVERSION}
 
 # Python-2.2
 .elif ${PYTHON_VERSION} == "python2.2"
-PYDISTUTILS=	${PYTHON_LIBDIR}/distutils/core.py:${PYTHON_PORTSDIR}
-PYNUMERIC=		${PYTHON_SITELIBDIR}/Numeric/Numeric.py:${PORTSDIR}/math/py-numeric
-PYXML=			${PYTHON_SITELIBDIR}/_xmlplus/__init__.py:${PORTSDIR}/textproc/py-xml
-
-PYTHON_DISTFILE=	Python-${_PYTHON_PORTVERSION}.tgz
-PYTHON_PORTSDIR=	${PORTSDIR}/lang/python
+PYTHON_DISTFILE=	Python-2.2.3.tgz
+PYTHON_PORTSDIR=	${PORTSDIR}/lang/python22
 PYTHON_REL=			223
 PYTHON_SUFFIX=		22
-PYTHON_WRKSRC=		${WRKDIR}/Python-${_PYTHON_PORTVERSION}
+PYTHON_WRKSRC=		${WRKDIR}/Python-2.2.3
 
 # Python-2.1
 .elif ${PYTHON_VERSION} == "python2.1"
-PYDISTUTILS=	${PYTHON_LIBDIR}/distutils/core.py:${PYTHON_PORTSDIR}
-PYNUMERIC=		${PYTHON_SITELIBDIR}/Numeric/Numeric.py:${PORTSDIR}/math/py-numeric
-PYXML=			${PYTHON_SITELIBDIR}/_xmlplus/__init__.py:${PORTSDIR}/textproc/py-xml
-
 PYTHON_DISTFILE=	Python-2.1.3.tgz
 PYTHON_PORTSDIR=	${PORTSDIR}/lang/python21
 PYTHON_REL=			213
@@ -157,10 +153,6 @@ PYTHON_WRKSRC=		${WRKDIR}/Python-2.1.3
 
 # Python-2.0
 .elif ${PYTHON_VERSION} == "python2.0"
-PYDISTUTILS=	${PYTHON_LIBDIR}/distutils/core.py:${PYTHON_PORTSDIR}
-PYNUMERIC=		${PYTHON_SITELIBDIR}/Numeric/Numeric.py:${PORTSDIR}/math/py-numeric
-PYXML=			${PYTHON_SITELIBDIR}/_xmlplus/__init__.py:${PORTSDIR}/textproc/py-xml
-
 PYTHON_DISTFILE=	Python-2.0.1.tgz
 PYTHON_PORTSDIR=	${PORTSDIR}/lang/python20
 PYTHON_REL=			201
@@ -173,10 +165,6 @@ PYTHON_WRKSRC=		${WRKDIR}/Python-2.0.1
 # latest version in ${PORTSDIR}/lang/python. The definitions here
 # are for those who still have 1.6 as their default version.
 .elif ${PYTHON_VERSION} == "python1.6"
-PYDISTUTILS=	${PYTHON_LIBDIR}/site-packages/distutils/core.py:${PORTSDIR}/misc/py-distutils
-PYNUMERIC=		${PYTHON_SITELIBDIR}/Numeric/Numeric.py:${PORTSDIR}/math/py-numeric17
-PYXML=			${PYTHON_SITELIBDIR}/xml/__init__.py:${PORTSDIR}/textproc/py-xml
-
 PYTHON_DISTFILE=	Python-1.6.tar.gz
 PYTHON_PORTSDIR=	# empty
 PYTHON_REL=			160
@@ -185,10 +173,6 @@ PYTHON_WRKSRC=		${WRKDIR}/Python-1.6
 
 # Python-1.5
 .elif ${PYTHON_VERSION} == "python1.5"
-PYDISTUTILS=	${PYTHON_LIBDIR}/site-packages/distutils/core.py:${PORTSDIR}/misc/py-distutils
-PYNUMERIC=		${PYTHON_SITELIBDIR}/Numeric/Numeric.py:${PORTSDIR}/math/py-numeric17
-PYXML=			${PYTHON_SITELIBDIR}/xml/__init__.py:${PORTSDIR}/textproc/py-xml
-
 PYTHON_DISTFILE=	py152.tgz
 PYTHON_PORTSDIR=	${PORTSDIR}/lang/python15
 PYTHON_REL=			152
@@ -197,10 +181,6 @@ PYTHON_WRKSRC=		${WRKDIR}/Python-1.5.2
 
 # Python versions in development
 .elif defined(FORCE_PYTHON_VERSION)
-PYDISTUTILS=	${PYTHON_LIBDIR}/distutils/core.py:${PYTHON_PORTSDIR}
-PYNUMERIC=		${PYTHON_SITELIBDIR}/Numeric/Numeric.py:${PORTSDIR}/math/py-numeric
-PYXML=			${PYTHON_SITELIBDIR}/_xmlplus/__init__.py:${PORTSDIR}/textproc/py-xml
-
 PYTHON_DISTFILE=	# empty
 PYTHON_PORTSDIR=	# empty
 PYTHON_NO_DEPENDS=	YES
@@ -218,8 +198,9 @@ PYTHON_WRKSRC=		${WRKDIR}/Python-${_PYTHON_PORTVERSION}
 	@${ECHO} "  python1.6"
 	@${ECHO} "  python2.0"
 	@${ECHO} "  python2.1"
-	@${ECHO} "  python2.2 (default)"
-	@${ECHO} "  python2.3"
+	@${ECHO} "  python2.2"
+	@${ECHO} "  python2.3 (default)"
+	@${ECHO} "  python2.4"
 	@${FALSE}
 .endif
 
@@ -245,6 +226,16 @@ SZOPEBASEDIR?=			www/Zope
 # too, but that is port-specific.
 ZOPEBASEDIR=			${PREFIX}/${SZOPEBASEDIR}
 ZOPEPRODUCTDIR=			lib/python/Products
+.endif
+
+.if defined(PYTHON_REL) && ${PYTHON_REL} < 200
+PYDISTUTILS=	${PYTHON_LIBDIR}/site-packages/distutils/core.py:${PORTSDIR}/misc/py-distutils
+PYNUMERIC=		${PYTHON_SITELIBDIR}/Numeric/Numeric.py:${PORTSDIR}/math/py-numeric17
+PYXML=			${PYTHON_SITELIBDIR}/xml/__init__.py:${PORTSDIR}/textproc/py-xml
+.else
+PYDISTUTILS=	${PYTHON_LIBDIR}/distutils/core.py:${PYTHON_PORTSDIR}
+PYNUMERIC=		${PYTHON_SITELIBDIR}/Numeric/Numeric.py:${PORTSDIR}/math/py-numeric
+PYXML=			${PYTHON_SITELIBDIR}/_xmlplus/__init__.py:${PORTSDIR}/textproc/py-xml
 .endif
 
 # dependencies

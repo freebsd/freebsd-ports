@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	python
-PORTVERSION=	2.2.3
-PORTREVISION=	2
+PORTVERSION=	2.3
 CATEGORIES=	lang python ipv6
 MASTER_SITES=	${MASTER_SITE_PYTHON}
 MASTER_SITE_SUBDIR=	ftp/python/${PORTVERSION}
@@ -25,8 +24,9 @@ INSTALL_TARGET=	install
 MAN1=		python.1
 
 USE_PYTHON=	yes
-PYTHON_VERSION=	python2.2
+PYTHON_VERSION=	python2.3
 PYTHON_NO_DEPENDS=	yes
+USE_REINPLACE=	yes
 
 #
 # If you don't want to use Python's thread module, you need to set
@@ -39,7 +39,7 @@ CFLAGS+=		${PTHREAD_CFLAGS}
 CFLAGS+=		-DTHREAD_STACK_SIZE=0x20000
 .else
 CFLAGS+=		-DTHREAD_STACK_SIZE=0x100000
-.endif
+.endif # !defined(WANT_HUGE_STACK_SIZE)
 CONFIGURE_ENV+=		LDFLAGS="${PTHREAD_LIBS} ${LDFLAGS}"
 .else
 CONFIGURE_ARGS+=	--without-threads
@@ -48,9 +48,28 @@ CONFIGURE_ENV+=		LDFLAGS="${LDFLAGS}"
 .endif # defined(LDFLAGS)
 .endif # !defined(WITHOUT_THREADS)
 
+.if !defined(WITH_UCS2)
+CONFIGURE_ARGS+=	--enable-unicode=ucs4
+.endif
+
+.if !defined(BUILD_STATIC)
+CONFIGURE_ARGS+=	--enable-shared
+INSTALLS_SHLIB=		yes
+PLIST_SUB+=		SHARED_ONLY=""
+.else
+PLIST_SUB+=		SHARED_ONLY="@comment "
+.endif
+
 DEMODIR=	${PREFIX}/share/examples/${PYTHON_VERSION}
+TOOLSDIR=	${PREFIX}/share/${PYTHON_VERSION}
 
 .include <bsd.port.pre.mk>
+
+.if ${ARCH} == i386
+PLIST_SUB+=	X86_ONLY=""
+.else
+PLIST_SUB+=	X86_ONLY="@comment "
+.endif
 
 .if ${OSVERSION} < 400000
 LIB_DEPENDS+=	ncurses.5:${PORTSDIR}/devel/ncurses
@@ -81,6 +100,17 @@ PLATFORMS=plat-freebsd2 plat-freebsd4 plat-freebsd5
 PLATFORMS=plat-freebsd3 plat-freebsd4 plat-freebsd5
 .endif
 
+post-extract:
+	${SED} -e '1s,^.*$$,#!${PREFIX}/bin/${PYTHON_VERSION},' \
+		${WRKSRC}/Tools/scripts/pydoc > ${WRKDIR}/pydoc2.3
+	${SED} -e '1s,^.*$$,#!${PREFIX}/bin/${PYTHON_VERSION},' \
+		${WRKSRC}/Tools/scripts/idle > ${WRKDIR}/idle2.3
+
+post-patch:
+	${REINPLACE_CMD} -e \
+		's,/usr/doc/python-docs-,${PREFIX}/share/doc/python,g' \
+		${WRKSRC}/Lib/pydoc.py
+
 pre-install:
 .for platform in ${PLATFORMS}
 	${MKDIR} ${PYTHONPREFIX_LIBDIR}/${platform}
@@ -90,27 +120,19 @@ pre-install:
 .endfor
 .endfor
 
-post-extract:
-	${SED} -e '1s,^.*$$,#!${PREFIX}/bin/${PYTHON_VERSION},' \
-		${WRKSRC}/Tools/scripts/pydoc > ${WRKDIR}/pydoc2.2
-
 post-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/pydoc2.2 ${PREFIX}/bin/
 	${INSTALL_DATA} ${WRKSRC}/Misc/python-mode.el \
 		${PREFIX}/share/emacs/site-lisp
-	@${MKDIR} ${PYTHONPREFIX_SITELIBDIR}
+	${INSTALL_SCRIPT} ${WRKDIR}/pydoc2.3 ${WRKDIR}/idle2.3 \
+		${PREFIX}/bin
+
 .if !defined(NOPORTDOCS)
+	@${MKDIR} ${TOOLSDIR}
 	@cd ${WRKSRC}; tar -c --exclude='*CVS*' -f - Tools | \
-		(cd ${PYTHONPREFIX_LIBDIR}; tar xf -)
+		(cd ${TOOLSDIR}; tar xf -)
 	@${MKDIR} ${DEMODIR}
 	@cd ${WRKSRC}/Demo; tar -c --exclude='*CVS*' -f - * | \
 		(cd ${DEMODIR}; tar xf -)
-.endif
-
-.if ${ARCH} == i386
-PLIST_SUB+=	X86_ONLY=""
-.else
-PLIST_SUB+=	X86_ONLY="@comment "
 .endif
 
 .include <bsd.port.post.mk>
