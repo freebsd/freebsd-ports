@@ -3,7 +3,7 @@
 # Date created:        10 June 1997
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.22 1998/08/07 23:56:53 asami Exp $
+# $Id: Makefile,v 1.23 1998/08/20 08:22:35 asami Exp $
 #
 
 DISTNAME=	enlightenment-0.14
@@ -15,7 +15,6 @@ MASTER_SITES=	ftp://ftp.enlightenment.org/pub/enlightenment/enlightenment/ \
 MAINTAINER=	vanilla@FreeBSD.ORG
 
 BUILD_DEPENDS=  ${LOCALBASE}/lib/perl5/site_perl/5.005/i386-freebsd/Gtk.pm:${PORTSDIR}/x11-toolkits/p5-Gtk
-
 LIB_DEPENDS=	esd\\.0\\.0:${PORTSDIR}/audio/esound \
 		Fnlib\\.0\\.3:${PORTSDIR}/graphics/fnlib \
 		gif\\.3\\.:${PORTSDIR}/graphics/giflib \
@@ -28,5 +27,9 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS=-L${LOCALBASE}/lib
 
 WRKSRC=		${WRKDIR}/e
+
+post-install:
+		strip ${PREFIX}/bin/enlightenment
+		strip ${PREFIX}/bin/dox
 
 .include <bsd.port.mk>
