@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xhippo
-PORTVERSION=	2.6
+PORTVERSION=	2.7
 CATEGORIES=	audio
 MASTER_SITES=	http://zenchaos.netpedia.net/software/ \
 		http://www.us-lot.org/~azz/xhippo/

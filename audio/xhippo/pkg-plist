@@ -1,3 +1,4 @@
 bin/xhippo
+@unexec if cmp -s %D/etc/xhippo.config %D/etc/xhippo.config.default; then rm -f %D/etc/xhippo.config; fi
 etc/xhippo.config.default
-@exec if [ ! -f %D/etc/xhippo.config ] ; then cp -p %D/%F %B/xhippo.config; fi
+@exec test -f %B/xhippo.config || cp %B/%f %B/xhippo.config
