@@ -11,13 +11,13 @@ bin/muttprint
 %%PORTDOCS%%share/doc/muttprint/manual-de/x15.html
 %%PORTDOCS%%share/doc/muttprint/manual-de/x23.html
 %%PORTDOCS%%share/doc/muttprint/manual-de/x196.html
-%%PORTDOCS%%share/doc/muttprint/manual-de/x697.html
+%%PORTDOCS%%share/doc/muttprint/manual-de/x703.html
 %%PORTDOCS%%share/doc/muttprint/manual-de.pdf
 %%PORTDOCS%%share/doc/muttprint/manual-en/muttprint.html
 %%PORTDOCS%%share/doc/muttprint/manual-en/x15.html
 %%PORTDOCS%%share/doc/muttprint/manual-en/x23.html
 %%PORTDOCS%%share/doc/muttprint/manual-en/x195.html
-%%PORTDOCS%%share/doc/muttprint/manual-en/x700.html
+%%PORTDOCS%%share/doc/muttprint/manual-en/x706.html
 %%PORTDOCS%%share/doc/muttprint/manual-en.pdf
 %%PORTDOCS%%share/doc/muttprint/manual-es/muttprint.html
 %%PORTDOCS%%share/doc/muttprint/manual-es/x15.html
@@ -48,6 +48,8 @@ share/muttprint/BabyTuX_color.eps
 share/muttprint/Beastie.eps
 share/muttprint/Debian.eps
 share/muttprint/Debian_color.eps
+share/muttprint/Gentoo.eps
+share/muttprint/Gentoo_color.eps
 share/muttprint/README.pics
 share/muttprint/penguin.eps
 share/muttprint/translations/translation-cs.pl
