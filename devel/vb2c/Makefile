@@ -1,6 +1,6 @@
 # New ports collection makefile for:	vb2c
 # Date created:		27 December 2001
-# Whom:			Bruce M Simpson <bms@spc.org>
+# Whom:			Bruce M Simpson <bms@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://home.i1.net/~naken/vb2c/
 DISTNAME=	vb2c-March-1999
 
-MAINTAINER=	bms@spc.org
+MAINTAINER=	bms@FreeBSD.org
 COMMENT=	Convert Visual Basic forms to GTK C code
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

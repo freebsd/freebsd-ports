@@ -1,6 +1,6 @@
 # New ports collection makefile for:	wmymail
 # Date created:		27 August 2002
-# Whom:			Bruce M Simpson <bms@spc.org>
+# Whom:			Bruce M Simpson <bms@FreeBSD.org>
 #
 # $FreeBSD$
 
@@ -11,7 +11,7 @@ CATEGORIES=	mail x11
 MASTER_SITES=	http://yath.mine.nu/wmymail/ \
 		http://dockapps.org/files/65/96/
 
-MAINTAINER=	bms@spc.org
+MAINTAINER=	bms@FreeBSD.org
 COMMENT=	Check inbox using a WindowMaker DockApp
 
 LIB_DEPENDS=	dockapp.1:${PORTSDIR}/x11-wm/libdockapp

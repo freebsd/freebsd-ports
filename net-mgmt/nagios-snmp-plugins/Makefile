@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://ftp.hometree.net/pub/${PORTNAME}/
 
-MAINTAINER=	bms@spc.org
+MAINTAINER=	bms@FreeBSD.org
 COMMENT=	Additional SNMP plugins for Nagios
 
 LIB_DEPENDS=    netsnmp.7:${PORTSDIR}/net-mgmt/net-snmp

@@ -1,6 +1,6 @@
 # New ports collection makefile for:	s3switch
 # Date created:				March 16, 2003
-# Whom:					Bruce M Simpson <bms@spc.org>
+# Whom:					Bruce M Simpson <bms@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://www.probo.com/timr/
 DISTNAME=	s3ssrc
 
-MAINTAINER=	bms@spc.org
+MAINTAINER=	bms@FreeBSD.org
 COMMENT=	Enable TV-out on S3 graphics cards
 
 USE_ZIP=	yes

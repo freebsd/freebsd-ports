@@ -1,6 +1,6 @@
 # New ports collection makefile for:	wmxss
 # Date created:		27 August 2002
-# Whom:			Bruce M Simpson <bms@spc.org>
+# Whom:			Bruce M Simpson <bms@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -10,7 +10,7 @@ PORTVERSION=	0.1
 CATEGORIES=	x11
 MASTER_SITES=	http://nis-www.lanl.gov/~mgh/WindowMaker/
 
-MAINTAINER=	bms@spc.org
+MAINTAINER=	bms@FreeBSD.org
 COMMENT=	Run xscreensaver modules inside a WindowMaker dock
 
 PLIST_FILES=	bin/wmxss

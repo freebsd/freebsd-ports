@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	devel security
 MASTER_SITES=	http://www.linuxnet.com/drivers/readers/files/
 
-MAINTAINER=	bms@spc.org
+MAINTAINER=	bms@FreeBSD.org
 COMMENT=	IFD Test Suite for PC/SC Lite
 
 LIB_DEPENDS=    pcsclite.0:${PORTSDIR}/devel/pcsc-lite
