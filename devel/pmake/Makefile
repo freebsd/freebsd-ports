@@ -32,7 +32,7 @@ do-install::
 	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} install)
 
 .if defined(WANT_CUSTOMS)
-PLIST=		${PKGDIR}/PLIST.customs
+PLIST=		${PKGDIR}/pkg-plist.customs
 MAN1+=		export.1 reginfo.1 rexport.1
 MAN8=		cctrl.8 customs.8 importquota.8 logd.8
 
