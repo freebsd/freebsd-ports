@@ -1,32 +1,35 @@
-# New ports collection makefile for:	xchat2
-# Date created:			17 Aug 2002
-# Whom:				Joe Marcus Clarke <marcus@FreeBSD.org>
+# New ports collection makefile for:	xchat-gnome
+# Date created:			04 May 2004
+# Whom:				Koop Mast <kwm@rainbow-runner.nl>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	xchat2
-PORTVERSION=	2.0.8
-PORTREVISION=	2
+PORTNAME=	xchat
+PORTVERSION=	0.1
 CATEGORIES=	irc gnome ipv6
-MASTER_SITES=	http://xchat.org/files/source/2.0/
-DISTNAME=	xchat-${PORTVERSION}
+MASTER_SITES=	http://navi.cx/releases/
+PKGNAMESUFFIX=	-gnome
+DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 
-MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	An X11 IRC client using the GTK+ 2 toolkit
+MAINTAINER=	kwm@rainbow-runner.nl
+COMMENT=	An IRC client for GNOME 2 (development version)
 
 USE_X_PREFIX=	yes
-USE_BZIP2=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}-${XCHAT_VER}
+XCHAT_VER=	2.0.8
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack gtk20
+USE_LIBTOOL=	yes
+USE_GNOME=	gnomeprefix gnomehack lthack libgnomeui
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 CONFIGURE_ARGS=	--enable-nls \
-		--enable-ipv6
+		--enable-ipv6 \
+		--enable-gnomefe
 
-CONFLICTS=	xchat-1*
+CONFLICTS=	xchat-1* xchat2-2*
 
 .if defined(WITH_SOCKS)
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libsocks5.a:${PORTSDIR}/net/socks5
