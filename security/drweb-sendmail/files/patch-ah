@@ -1,0 +1,63 @@
+--- etc/sendmail/etc/drweb/templates/ru/sendmail/error-admin.msg.bak	Fri Apr 12 20:31:53 2002
++++ etc/sendmail/etc/drweb/templates/ru/sendmail/error-admin.msg	Fri May 10 13:44:52 2002
+@@ -1,5 +1,5 @@
+ From: DrWeb-DAEMON
+-Subject: Сбой антивирусного фильтра
++Subject: =?koi8-r?B?88LPyiDBztTJ18nS1dPOz8fPIMbJ?= =?koi8-r?B?zNjU0sE=?=
+ Content-Type: text/plain; charset=koi8-r
+ 
+ Уважаемый Администратор,
+--- etc/sendmail/etc/drweb/templates/ru/sendmail/mailbomb-admin.msg.bak	Fri Apr 12 20:32:10 2002
++++ etc/sendmail/etc/drweb/templates/ru/sendmail/mailbomb-admin.msg	Fri May 10 13:44:13 2002
+@@ -1,5 +1,5 @@
+ From: DrWeb-DAEMON
+-Subject: Найден подозрительный объект
++Subject: =?koi8-r?B?7sHKxMXOINDPxM/a0snUxczYztnK?= =?koi8-r?B?IM/C38XL1A==?=
+ Content-Type: text/plain; charset=koi8-r
+ 
+ Уважаемый Администратор,
+--- etc/sendmail/etc/drweb/templates/ru/sendmail/mailbomb-sender.msg.bak	Fri Apr 12 20:41:18 2002
++++ etc/sendmail/etc/drweb/templates/ru/sendmail/mailbomb-sender.msg	Fri May 10 13:45:00 2002
+@@ -1,5 +1,5 @@
+ From: $FILTER_MAIL$
+-Subject: Недоставленное сообщение: $SUBJECT$
++Subject: =?koi8-r?B?7sXEz9PUwdfMxc7Oz8Ug08/Pwt3F?= =?koi8-r?B?zsnFOg==?= $SUBJECT$
+ Content-Type: text/plain; charset=koi8-r
+ 
+ Уважаемый Отправитель,
+--- etc/sendmail/etc/drweb/templates/ru/sendmail/skipobj-sender.msg.bak	Fri Apr 12 20:41:14 2002
++++ etc/sendmail/etc/drweb/templates/ru/sendmail/skipobj-sender.msg	Fri May 10 13:45:00 2002
+@@ -1,5 +1,5 @@
+ From: $FITLER_MAIL$
+-Subject: Недоставленное сообщение: $SUBJECT$
++Subject: =?koi8-r?B?7sXEz9PUwdfMxc7Oz8Ug08/Pwt3F?= =?koi8-r?B?zsnFOg==?= $SUBJECT$
+ Content-Type: text/plain; charset=koi8-r
+ 
+ Уважаемый Отправитель,
+--- etc/sendmail/etc/drweb/templates/ru/sendmail/virus-admin.msg.bak	Fri Apr 12 20:33:29 2002
++++ etc/sendmail/etc/drweb/templates/ru/sendmail/virus-admin.msg	Fri May 10 13:45:00 2002
+@@ -1,5 +1,5 @@
+ From: DrWeb-DAEMON
+-Subject: Найдем вирус !
++Subject: =?koi8-r?B?7sHKxMXOINfJ0tXTIQ==?=
+ Content-Type: text/plain; charset=koi8-r
+ 
+ Уважаемый Администратор,
+--- etc/sendmail/etc/drweb/templates/ru/sendmail/virus-rcpts.msg.bak	Fri Apr 12 20:41:08 2002
++++ etc/sendmail/etc/drweb/templates/ru/sendmail/virus-rcpts.msg	Fri May 10 13:45:00 2002
+@@ -1,5 +1,5 @@
+ From: $FILTER_MAIL$
+-Subject: Недоставленное сообщение: $SUBJECT$
++Subject: =?koi8-r?B?7sXEz9PUwdfMxc7Oz8Ug08/Pwt3F?= =?koi8-r?B?zsnFOg==?= $SUBJECT$
+ Content-Type: text/plain; charset=koi8-r
+ 
+ Уважаемый Получатель,
+--- etc/sendmail/etc/drweb/templates/ru/sendmail/virus-sender.msg.bak	Fri Apr 12 20:41:05 2002
++++ etc/sendmail/etc/drweb/templates/ru/sendmail/virus-sender.msg	Fri May 10 13:45:00 2002
+@@ -1,5 +1,5 @@
+ From: $FILTER_MAIL$
+-Subject: Недоставленное сообщение: $SUBJECT$
++Subject: =?koi8-r?B?7sXEz9PUwdfMxc7Oz8Ug08/Pwt3F?= =?koi8-r?B?zsnFOg==?= $SUBJECT$
+ Content-Type: text/plain; charset=koi8-r
+ 
+ Уважаемый Отправитель,
