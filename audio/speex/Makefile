@@ -8,6 +8,7 @@
 
 PORTNAME=	speex
 PORTVERSION=	0.5.2
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,11 +16,13 @@ DISTNAME=	Speex-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	ogg:${PORTSDIR}/audio/libogg \
-		gnugetopt:${PORTSDIR}/devel/libgnugetopt
+LIB_DEPENDS=	ogg.4:${PORTSDIR}/audio/libogg \
+		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 
 USE_LIBTOOL=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
+LIBTOOLFLAGS=	--disable-ltlibs --release-ignore
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -lgnugetopt"
+INSTALLS_SHLIB=	yes
 
 .include <bsd.port.mk>
