@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xine
-PORTVERSION=	0.9.7
+PORTVERSION=	0.9.8
 CATEGORIES=	graphics
 MASTER_SITES=	http://xine.sourceforge.net/files/ \
 		${MASTER_SITE_SOURCEFORGE}

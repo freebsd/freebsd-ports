@@ -1,11 +1,13 @@
 bin/aaxine
 bin/xine
-share/doc/xine-ui/FAQ
+bin/xine-bugreport
+bin/xine-check
+share/doc/xine-ui/FAQ_en
 share/doc/xine-ui/FAQ_es
 share/doc/xine-ui/FAQ_fr
 share/doc/xine-ui/FAQ_it
 share/doc/xine-ui/FAQ_pl
-share/doc/xine-ui/README
+share/doc/xine-ui/README.config_en
 share/doc/xine-ui/README.corba
 share/doc/xine-ui/README.divx4
 share/doc/xine-ui/README.dxr3
@@ -15,7 +17,7 @@ share/doc/xine-ui/README.irix
 share/doc/xine-ui/README.mrl
 share/doc/xine-ui/README.solaris
 share/doc/xine-ui/README.syncfb
-share/doc/xine-ui/README.xinerc
+share/doc/xine-ui/README_en
 share/doc/xine-ui/README_es
 share/doc/xine-ui/README_it
 share/doc/xine-ui/README_pl
@@ -25,6 +27,8 @@ share/locale/es/LC_MESSAGES/xine-ui.mo
 share/locale/es/LC_MESSAGES/xitk.mo
 share/locale/fr/LC_MESSAGES/xine-ui.mo
 share/locale/fr/LC_MESSAGES/xitk.mo
+share/locale/pt_BR/LC_MESSAGES/xine-ui.mo
+share/locale/pt_BR/LC_MESSAGES/xitk.mo
 share/xine/desktop/xine.desktop
 share/xine/desktop/xine.wmconfig
 share/xine/desktop/xine.xpm
@@ -32,7 +36,60 @@ share/xine/desktop/xine_16x16.png
 share/xine/desktop/xine_22x22.png
 share/xine/desktop/xine_32x32.png
 share/xine/desktop/xine_48x48.png
-share/xine/scripts/xineshot
+share/xine/skins/cloudy/ComBox.png
+share/xine/skins/cloudy/ComDismiss.png
+share/xine/skins/cloudy/ComLetters.png
+share/xine/skins/cloudy/ComScrollArrowDown.png
+share/xine/skins/cloudy/ComScrollArrowUp.png
+share/xine/skins/cloudy/ComScrollBg.png
+share/xine/skins/cloudy/ComScrollPad.png
+share/xine/skins/cloudy/CtlBg.png
+share/xine/skins/cloudy/CtlSkinItem.png
+share/xine/skins/cloudy/CtlSkinScrollBg.png
+share/xine/skins/cloudy/CtlSliderBg.png
+share/xine/skins/cloudy/CtlSliderPad.png
+share/xine/skins/cloudy/MainAutoButton.png
+share/xine/skins/cloudy/MainBg.png
+share/xine/skins/cloudy/MainClose.png
+share/xine/skins/cloudy/MainCtlBtn.png
+share/xine/skins/cloudy/MainEject.png
+share/xine/skins/cloudy/MainFullScreen.png
+share/xine/skins/cloudy/MainMrlBtn.png
+share/xine/skins/cloudy/MainMute.png
+share/xine/skins/cloudy/MainNext.png
+share/xine/skins/cloudy/MainPause.png
+share/xine/skins/cloudy/MainPlBtn.png
+share/xine/skins/cloudy/MainPlay.png
+share/xine/skins/cloudy/MainPlayFast.png
+share/xine/skins/cloudy/MainPlaySlow.png
+share/xine/skins/cloudy/MainPower.png
+share/xine/skins/cloudy/MainPrev.png
+share/xine/skins/cloudy/MainSetup.png
+share/xine/skins/cloudy/MainSliderBg.png
+share/xine/skins/cloudy/MainSliderPad.png
+share/xine/skins/cloudy/MainSmallArrowDown.png
+share/xine/skins/cloudy/MainSmallArrowUp.png
+share/xine/skins/cloudy/MainSnapshot.png
+share/xine/skins/cloudy/MainStop.png
+share/xine/skins/cloudy/MainVolumeBg.png
+share/xine/skins/cloudy/MainVolumePad.png
+share/xine/skins/cloudy/MrlBg.png
+share/xine/skins/cloudy/MrlItem.png
+share/xine/skins/cloudy/MrlPlay.png
+share/xine/skins/cloudy/MrlSelect.png
+share/xine/skins/cloudy/PlAdd.png
+share/xine/skins/cloudy/PlBg.png
+share/xine/skins/cloudy/PlDelete.png
+share/xine/skins/cloudy/PlDeleteAll.png
+share/xine/skins/cloudy/PlInputText.png
+share/xine/skins/cloudy/PlItem.png
+share/xine/skins/cloudy/PlMoveDown.png
+share/xine/skins/cloudy/PlMoveUp.png
+share/xine/skins/cloudy/PlPlay.png
+share/xine/skins/cloudy/fat.pcf.gz
+share/xine/skins/cloudy/fonts.dir
+share/xine/skins/cloudy/skinconfig
+share/xine/skins/cloudy/smooth.pcf.gz
 share/xine/skins/lcd/arrowdn.png
 share/xine/skins/lcd/arrowup.png
 share/xine/skins/lcd/bg.png
@@ -82,6 +139,55 @@ share/xine/skins/lcd/stop.png
 share/xine/skins/lcd/tool.png
 share/xine/skins/lcd/volumebg.png
 share/xine/skins/lcd/volumepad.png
+share/xine/skins/mp2k/autoplay_btn.png
+share/xine/skins/mp2k/bg.png
+share/xine/skins/mp2k/cam_btn.png
+share/xine/skins/mp2k/close_btn.png
+share/xine/skins/mp2k/control.png
+share/xine/skins/mp2k/ctl_sk_item.png
+share/xine/skins/mp2k/ctl_sk_slidbg.png
+share/xine/skins/mp2k/ctl_slidbg.png
+share/xine/skins/mp2k/ctl_slidpad.png
+share/xine/skins/mp2k/ctrl_btn.png
+share/xine/skins/mp2k/eject_btn.png
+share/xine/skins/mp2k/enlarge_btn.png
+share/xine/skins/mp2k/fast_btn.png
+share/xine/skins/mp2k/letters.png
+share/xine/skins/mp2k/letters2.png
+share/xine/skins/mp2k/letters3.png
+share/xine/skins/mp2k/letters4.png
+share/xine/skins/mp2k/menu_btn.png
+share/xine/skins/mp2k/mrl_btn.png
+share/xine/skins/mp2k/mrlbrowser.png
+share/xine/skins/mp2k/mute_btn.png
+share/xine/skins/mp2k/next_btn.png
+share/xine/skins/mp2k/pause_btn.png
+share/xine/skins/mp2k/pl_btn.png
+share/xine/skins/mp2k/pl_btn2.png
+share/xine/skins/mp2k/pl_erasemany.png
+share/xine/skins/mp2k/pl_eraseone.png
+share/xine/skins/mp2k/pl_input.png
+share/xine/skins/mp2k/pl_item_btn.png
+share/xine/skins/mp2k/pl_movedn.png
+share/xine/skins/mp2k/pl_moveup.png
+share/xine/skins/mp2k/pl_slidbg.png
+share/xine/skins/mp2k/pl_sliddn.png
+share/xine/skins/mp2k/pl_slidpad.png
+share/xine/skins/mp2k/pl_slidup.png
+share/xine/skins/mp2k/play_btn.png
+share/xine/skins/mp2k/playlist.png
+share/xine/skins/mp2k/point_btn.png
+share/xine/skins/mp2k/prev_btn.png
+share/xine/skins/mp2k/reduce_btn.png
+share/xine/skins/mp2k/select_btn.png
+share/xine/skins/mp2k/setup_btn.png
+share/xine/skins/mp2k/skinconfig
+share/xine/skins/mp2k/slider_bg.png
+share/xine/skins/mp2k/slider_pad.png
+share/xine/skins/mp2k/slow_btn.png
+share/xine/skins/mp2k/stop_btn.png
+share/xine/skins/mp2k/volumebg.png
+share/xine/skins/mp2k/volumepad.png
 share/xine/skins/pitt/arrowdn.png
 share/xine/skins/pitt/arrowup.png
 share/xine/skins/pitt/bg.png
@@ -192,10 +298,11 @@ share/xine/skins/xinetic/skinconfig
 @dirrm man/fr
 @dirrm man/pl/man1
 @dirrm man/pl
+@dirrm share/xine/skins/cloudy
 @dirrm share/xine/skins/lcd
+@dirrm share/xine/skins/mp2k
 @dirrm share/xine/skins/pitt
 @dirrm share/xine/skins/xinetic
-@dirrm share/xine/scripts
 @dirrm share/xine/desktop
 @unexec rmdir %D/share/idl 2>/dev/null || true
 @unexec rmdir %D/share/xine/skins 2>/dev/null || true

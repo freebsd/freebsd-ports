@@ -1,12 +1,12 @@
---- src/xine-engine/Makefile.am.orig	Sun Oct 21 09:06:25 2001
-+++ src/xine-engine/Makefile.am	Sun Oct 21 09:07:43 2001
-@@ -18,8 +18,7 @@
- 	-lm 
+--- src/xine-engine/Makefile.am.orig	Sat Dec 29 02:31:25 2001
++++ src/xine-engine/Makefile.am	Thu Jan 24 13:42:50 2002
+@@ -15,8 +15,7 @@
+ libxine_la_LIBADD = $(THREAD_LIBS) $(DYNAMIC_LD_LIBS) @INTLLIBS@ -lm -lz
  
  libxine_la_LDFLAGS =  \
 -	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE) \
--	-release $(LT_RELEASE)
+-	-release $(LT_RELEASE) 
 +	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
  
  include_HEADERS  = buffer.h metronom.h configfile.h \
- 	monitor.h cpu_accel.h attributes.h utils.h \
+         audio_out.h resample.h video_out.h xine_internal.h spu_decoder.h \

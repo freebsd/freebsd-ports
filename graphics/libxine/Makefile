@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xine
-PORTVERSION=	0.9.7
-PORTREVISION=	1
+PORTVERSION=	0.9.8
 CATEGORIES=	graphics
 MASTER_SITES=	http://xine.sourceforge.net/files/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -19,10 +18,13 @@ MAINTAINER=	nobutaka@FreeBSD.org
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libavcodec.a:${PORTSDIR}/graphics/ffmpeg
 LIB_DEPENDS=	a52.0:${PORTSDIR}/audio/liba52 \
-		aa.1:${PORTSDIR}/graphics/aalib
+		aa.1:${PORTSDIR}/graphics/aalib \
+		intl.1:${PORTSDIR}/devel/gettext
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-lib-${PORTVERSION}
 CONFIGURE_ARGS=	--with-w32-path=${LOCALBASE}/lib/win32
+CONFIGURE_ENV=	CPPFLAGS=-I${LOCALBASE}/include LIBS=-L${LOCALBASE}/lib
+
 USE_AUTOMAKE=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
@@ -72,41 +74,9 @@ PLIST_SUB+=	HAVE_OGG=""
 PLIST_SUB+=	HAVE_OGG="@comment "
 .endif
 
-# DVD input plugin for xine-0.9.7 is not available yet.
-.if 0
-.if defined(WITH_CSS)
-# http://members.home.nl/mphm.janssen/linuxvideo/linuxvideo.html
-MASTER_SITES+=	http://members.home.nl/mphm.janssen/files/
-DISTFILES+=	${PLUGIN_CSS}${EXTRACT_SUFX}
-
-LIB_DEPENDS+=	dvdcss.0:${PORTSDIR}/graphics/libdvdcss
-
-PLUGIN_CSS=	dvd-plugin-${PLUGIN_CSS_VERSION}
-PLUGIN_CSS_VERSION=	0.4
-.endif
-.endif
-
-pre-everything::
-.if 0
-.if !defined(WITH_CSS)
-	@${ECHO_MSG} "====>"
-	@${ECHO_MSG} "====> To enable css support, define WITH_CSS"
-	@${ECHO_MSG} "====>"
-.endif
-.endif
-
 # XXX: To avoid internal error in gcc.
 post-configure:
 	@${SED} -e "s/-funroll-loops//" < ${WRKSRC}/src/libw32dll/wine/Makefile > ${WRKSRC}/src/libw32dll/wine/Makefile.tmp
 	@${MV} ${WRKSRC}/src/libw32dll/wine/Makefile.tmp ${WRKSRC}/src/libw32dll/wine/Makefile
-
-post-patch:
-.if 0
-.if defined(WITH_CSS)
-	@${PERL} -pi.orig -e 's/(xineplug_inp_dvd_la_LDFLAGS = -avoid-version -module)/\1 -ldvdcss/' \
-		${WRKSRC}/src/input/Makefile.am
-	@${CP} -f ${WRKDIR}/${PLUGIN_CSS}/*.[ch] ${WRKSRC}/src/input
-.endif
-.endif
 
 .include <bsd.port.post.mk>

@@ -6,7 +6,6 @@ include/xine/buffer.h
 include/xine/configfile.h
 include/xine/demux.h
 include/xine/dxr3_video_out.h
-include/xine/dxr3_vo_encoder.h
 include/xine/events.h
 include/xine/input_plugin.h
 include/xine/lrb.h
@@ -20,6 +19,7 @@ include/xine/video_out.h
 include/xine/video_out_x11.h
 include/xine/video_overlay.h
 include/xine/xine_internal.h
+include/xine/xineintl.h
 include/xine/xineutils.h
 include/xine.h
 lib/libxine.la
@@ -52,6 +52,8 @@ lib/xine/plugins/xineplug_decode_mpeg2.la
 lib/xine/plugins/xineplug_decode_mpeg2.so
 lib/xine/plugins/xineplug_decode_spu.la
 lib/xine/plugins/xineplug_decode_spu.so
+lib/xine/plugins/xineplug_decode_spucc.la
+lib/xine/plugins/xineplug_decode_spucc.so
 lib/xine/plugins/xineplug_decode_sputext.la
 lib/xine/plugins/xineplug_decode_sputext.so
 %%HAVE_VORBIS%%lib/xine/plugins/xineplug_decode_vorbis.la
@@ -147,6 +149,15 @@ share/doc/xine/xine-lib-API/html/structxine__t.html
 share/doc/xine/xine-lib-API/html/xine_8h-source.html
 share/doc/xine/xine-lib-API/html/xine_8h.html
 share/doc/xine/xine-lib-API/html/xine_logo.png
+share/locale/fr/LC_MESSAGES/xine-lib.mo
+share/xine/fonts/cc-16.xinefont.gz
+share/xine/fonts/cc-20.xinefont.gz
+share/xine/fonts/cc-24.xinefont.gz
+share/xine/fonts/cc-32.xinefont.gz
+share/xine/fonts/cci-16.xinefont.gz
+share/xine/fonts/cci-20.xinefont.gz
+share/xine/fonts/cci-24.xinefont.gz
+share/xine/fonts/cci-32.xinefont.gz
 share/xine/fonts/cetus-16.xinefont.gz
 share/xine/fonts/cetus-20.xinefont.gz
 share/xine/fonts/cetus-24.xinefont.gz
