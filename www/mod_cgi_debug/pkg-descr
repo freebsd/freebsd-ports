@@ -1,0 +1,14 @@
+The idea is that we all write CGI and just about every CGI
+writer or Java Servlet writer, or PHP... or even ModPerl..
+or...) ends up printing certain standard pieces of info to
+the screen to see just what sort of data that they are receiving. 
+So... we write a loop and print out our variables. 
+
+Either have ModCGIDebug tack on the info to your CGI while it
+is running or use the handy dandy .env virtual page to see all
+that there is to seeor at least what we have found the need to
+print out so far).
+
+Some assembly required, batteries not included. 
+
+WWW: http://www.tangent.org/mod_cgi_debug/
