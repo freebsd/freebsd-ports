@@ -6,34 +6,32 @@
 #
 
 PORTNAME=	tuxcards
-PORTVERSION=	0.8
-PORTREVISION=	1
+PORTVERSION=	1.0.b2.1
 CATEGORIES=	deskutils
-MASTER_SITES=	http://www.arved.de/bsd/src/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-ohneCactus
+MASTER_SITES=	http://www.stud.uni-karlsruhe.de/~ut3c/
+DISTNAME=	${PORTNAME}-${PORTVERSION:R:S/.b/beta/}_${PORTVERSION:E}
 
 MAINTAINER=	ports@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-USE_GMAKE=	yes
-USE_QT_VER=	2
-HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX}
+QTDIR?=		${X11BASE}
+USE_QT_VER=	3
 USE_REINPLACE=	yes
+MAKE_ENV=	QTDIR="${QTDIR}"
 
-.include <bsd.port.pre.mk>
+post-patch:
+	@${REINPLACE_CMD} -e 's|warn_on|warn_on thread|g' ${WRKSRC}/tuxcards.pro
 
-.if ${OSVERSION} > 500038
-BROKEN=		"Does not build with gcc 3.1"
+do-configure:
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} qmake \
+		-spec ${X11BASE}/mkspecs/freebsd-g++ tuxcards.pro
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/en/*.* ${DOCSDIR}
 .endif
+	${CAT} pkg-message
 
-pre-patch:
-	@${REINPLACE_CMD} -e 's|[$$](prefix)/doc|\$$\(prefix\)/share/doc|' \
-		${WRKSRC}/tuxcards/docs/en/Makefile.in
-	@${REINPLACE_CMD} -e 's|-O2||' ${WRKSRC}/configure
-.ifdef(NOPORTDOCS)
-	@${REINPLACE_CMD} -e 's|install-data-am\: install-data-local||' \
-		${WRKSRC}/tuxcards/docs/en/Makefile.in
-.endif #NOPORTDOCS
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

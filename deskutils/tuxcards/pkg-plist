@@ -1,4 +1,8 @@
 bin/tuxcards
+%%PORTDOCS%%share/doc/tuxcards/TuxCardsBunt.gif
+%%PORTDOCS%%share/doc/tuxcards/addKnoten.gif
+%%PORTDOCS%%share/doc/tuxcards/changeProberty.gif
+%%PORTDOCS%%share/doc/tuxcards/deleteKnoten.gif
 %%PORTDOCS%%share/doc/tuxcards/index-1.html
 %%PORTDOCS%%share/doc/tuxcards/index-2.html
 %%PORTDOCS%%share/doc/tuxcards/index-3.html
@@ -6,4 +10,12 @@ bin/tuxcards
 %%PORTDOCS%%share/doc/tuxcards/index-5.html
 %%PORTDOCS%%share/doc/tuxcards/index-6.html
 %%PORTDOCS%%share/doc/tuxcards/index.html
+%%PORTDOCS%%share/doc/tuxcards/index.nif
+%%PORTDOCS%%share/doc/tuxcards/index.sgml
+%%PORTDOCS%%share/doc/tuxcards/logotp3.png
+%%PORTDOCS%%share/doc/tuxcards/new.gif
+%%PORTDOCS%%share/doc/tuxcards/open.gif
+%%PORTDOCS%%share/doc/tuxcards/save.gif
+%%PORTDOCS%%share/doc/tuxcards/search.gif
+%%PORTDOCS%%share/doc/tuxcards/whatis.gif
 %%PORTDOCS%%@dirrm share/doc/tuxcards
