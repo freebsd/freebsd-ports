@@ -101,6 +101,7 @@
 %%IMPDIR%%/lib/js/open_compose_win.js
 %%IMPDIR%%/lib/js/open_contacts.js
 %%IMPDIR%%/lib/mimetypes.lib
+%%IMPDIR%%/lib/mimetypes.lib.orig
 %%IMPDIR%%/lib/postconf.php3
 %%IMPDIR%%/lib/version.php
 %%IMPDIR%%/locale/ca/compose.help

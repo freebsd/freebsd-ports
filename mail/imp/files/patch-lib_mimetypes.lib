@@ -1,0 +1,11 @@
+--- lib/mimetypes.lib.orig	Wed Jul 18 16:23:58 2001
++++ lib/mimetypes.lib	Sun Mar 10 16:26:33 2002
+@@ -449,7 +449,7 @@
+     fwrite( $fh, imap_base64($contents));
+     fclose( $fh );
+     
+-    $pipe = popen("$default->path_to_mswordview $word_name 2>&1","r");
++    $pipe = popen("$default->path_to_mswordview $word_name - 2>&1","r");
+     $data = "<b><u>MS Word Viewer</u></b><br><table><tr><td align=left>";
+     while( ($rc=fgets($pipe,8192)) )
+       $data.=$rc;

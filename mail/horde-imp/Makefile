@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	imp
-PORTVERSION=	2.2.7
+PORTVERSION=	2.2.8
 CATEGORIES=	mail www
 MASTER_SITES=	ftp://ftp.horde.org/pub/imp/tarballs/
 
@@ -177,7 +177,7 @@ do-install:
 			${IMPDIR}/config/defaults.php3.dist
 	${PERL} -pi -e "s:/usr/bin/wvHtml:${LOCALBASE}/bin/wvHtml:g" \
 			${IMPDIR}/config/defaults.php3.dist
-	${PERL} -pi -e "s:/usr/bin/xlHtml:${LOCALBASE}/bin/xlHtml:g" \
+	${PERL} -pi -e "s:/usr/bin/xlHtml:${LOCALBASE}/bin/xlhtml:g" \
 			${IMPDIR}/config/defaults.php3.dist
 	${PERL} -pi -e "s:/bin/tar:/usr/bin/tar:g" ${IMPDIR}/config/defaults.php3.dist
 	${PERL} -pi -e "s:/usr/bin/zipinfo:${LOCALBASE}/bin/zipinfo:g" \
