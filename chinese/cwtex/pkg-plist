@@ -10386,6 +10386,26 @@ share/texmf/tex/latex/fontinst/inputs/tex/trig.sty
 share/texmf/tex/latex/fontinst/inputs/tex/xfntinst.sty
 share/texmf/tex/latex/geometry/geometry.cfg
 share/texmf/tex/latex/geometry/geometry.sty
+share/texmf/tex/latex/hyperref/backref.sty
+share/texmf/tex/latex/hyperref/hdvipdfm.def
+share/texmf/tex/latex/hyperref/hdvips.def
+share/texmf/tex/latex/hyperref/hdvipson.def
+share/texmf/tex/latex/hyperref/hdviwind.def
+share/texmf/tex/latex/hyperref/hpdftex.def
+share/texmf/tex/latex/hyperref/htex4ht.cfg
+share/texmf/tex/latex/hyperref/htex4ht.def
+share/texmf/tex/latex/hyperref/htexture.def
+share/texmf/tex/latex/hyperref/hvtex.def
+share/texmf/tex/latex/hyperref/hvtexhtm.def
+share/texmf/tex/latex/hyperref/hyperref.sty
+share/texmf/tex/latex/hyperref/hypertex.def
+share/texmf/tex/latex/hyperref/minitoc-hyper.sty
+share/texmf/tex/latex/hyperref/nameref.sty
+share/texmf/tex/latex/hyperref/ntheorem-hyper.sty
+share/texmf/tex/latex/hyperref/pd1enc.def
+share/texmf/tex/latex/hyperref/pdfmark.def
+share/texmf/tex/latex/hyperref/puenc.def
+share/texmf/tex/latex/hyperref/xr-hyper.sty
 share/texmf/tex/latex/iop
 share/texmf/tex/latex/mathptmx/mathptmx.sty
 share/texmf/tex/latex/mathptmx/omlztmcm.fd
@@ -10393,31 +10413,89 @@ share/texmf/tex/latex/mathptmx/omsztmcm.fd
 share/texmf/tex/latex/mathptmx/omxztmcm.fd
 share/texmf/tex/latex/mathptmx/ot1ztmcm.fd
 share/texmf/tex/latex/minitoc/00contents
+share/texmf/tex/latex/minitoc/afrikaan.mld
+share/texmf/tex/latex/minitoc/arab.mld
+share/texmf/tex/latex/minitoc/armenian.mld
+share/texmf/tex/latex/minitoc/bahasa.mld
+share/texmf/tex/latex/minitoc/bicig.mld
+share/texmf/tex/latex/minitoc/brazil.mld
+share/texmf/tex/latex/minitoc/breton.mld
+share/texmf/tex/latex/minitoc/buryat.mld
+share/texmf/tex/latex/minitoc/catalan.mld
 share/texmf/tex/latex/minitoc/catalog
+share/texmf/tex/latex/minitoc/croatian.mld
+share/texmf/tex/latex/minitoc/czech.mld
+share/texmf/tex/latex/minitoc/danish.mld
+share/texmf/tex/latex/minitoc/dutch.mld
+share/texmf/tex/latex/minitoc/english.mld
+share/texmf/tex/latex/minitoc/esperant.mld
+share/texmf/tex/latex/minitoc/estonian.mld
+share/texmf/tex/latex/minitoc/ethiopia.mld
+share/texmf/tex/latex/minitoc/finnish.mld
+share/texmf/tex/latex/minitoc/french.mld
+share/texmf/tex/latex/minitoc/galician.mld
+share/texmf/tex/latex/minitoc/german.mld
+share/texmf/tex/latex/minitoc/germanb.mld
+share/texmf/tex/latex/minitoc/greek.mld
+share/texmf/tex/latex/minitoc/irish.mld
+share/texmf/tex/latex/minitoc/italian.mld
+share/texmf/tex/latex/minitoc/lithuanian.mld
+share/texmf/tex/latex/minitoc/lsorbian.mld
+share/texmf/tex/latex/minitoc/magyar.mld
 share/texmf/tex/latex/minitoc/mini-art.tex
 share/texmf/tex/latex/minitoc/minitoc-ex.tex
 share/texmf/tex/latex/minitoc/minitoc.bug
 share/texmf/tex/latex/minitoc/minitoc.l
+share/texmf/tex/latex/minitoc/minitoc.sty
 share/texmf/tex/latex/minitoc/minitoc.sum
 share/texmf/tex/latex/minitoc/minitoc.tex
+share/texmf/tex/latex/minitoc/mongol.mld
+share/texmf/tex/latex/minitoc/mtcoff.sty
+share/texmf/tex/latex/minitoc/norsk.mld
+share/texmf/tex/latex/minitoc/nynorsk.mld
+share/texmf/tex/latex/minitoc/polish.mld
+share/texmf/tex/latex/minitoc/portuges.mld
 share/texmf/tex/latex/minitoc/readme
+share/texmf/tex/latex/minitoc/romanian.mld
+share/texmf/tex/latex/minitoc/russian.mld
+share/texmf/tex/latex/minitoc/russianb.mld
+share/texmf/tex/latex/minitoc/russianc.mld
+share/texmf/tex/latex/minitoc/scottish.mld
+share/texmf/tex/latex/minitoc/slovak.mld
+share/texmf/tex/latex/minitoc/slovene.mld
+share/texmf/tex/latex/minitoc/spanish.mld
+share/texmf/tex/latex/minitoc/swedish.mld
+share/texmf/tex/latex/minitoc/turkish.mld
+share/texmf/tex/latex/minitoc/usorbian.mld
+share/texmf/tex/latex/minitoc/vietnam.mld
 share/texmf/tex/latex/misc/answers.sty
+share/texmf/tex/latex/misc/booktabs.sty
 share/texmf/tex/latex/misc/caption2.sty
 share/texmf/tex/latex/misc/colortbl.sty
+share/texmf/tex/latex/misc/comment.sty
 share/texmf/tex/latex/misc/crop.cfg
+share/texmf/tex/latex/misc/crop.sty
 share/texmf/tex/latex/misc/cwtex.sty
+share/texmf/tex/latex/misc/endnotes.sty
 share/texmf/tex/latex/misc/equation.sty
 share/texmf/tex/latex/misc/fancyhdr.sty
 share/texmf/tex/latex/misc/fancyvrb.sty
+share/texmf/tex/latex/misc/float.sty
 share/texmf/tex/latex/misc/hbaw.sty
 share/texmf/tex/latex/misc/hcolor.sty
 share/texmf/tex/latex/misc/listbib.sty
 share/texmf/tex/latex/misc/multirow.sty
 share/texmf/tex/latex/misc/pagetrans.tex
 share/texmf/tex/latex/misc/pause.sty
+share/texmf/tex/latex/misc/psfrag.sty
 share/texmf/tex/latex/misc/texpause.sty
 share/texmf/tex/latex/misc/textmerg.sty
+share/texmf/tex/latex/misc/threeparttable.sty
+share/texmf/tex/latex/misc/type1cm.sty
 share/texmf/tex/latex/misc/type1cm.txt
+share/texmf/tex/latex/misc/url.sty
+share/texmf/tex/latex/misc/wrapfig.sty
+share/texmf/tex/latex/natbib/natbib.sty
 share/texmf/tex/latex/package/answers.sty
 share/texmf/tex/latex/package/booktabs.sty
 share/texmf/tex/latex/package/caption2.sty
@@ -10617,8 +10695,19 @@ share/texmf/tex/latex/seminar/src/xc-make.tex
 share/texmf/tex/latex/seminar/src/xcomment.doc
 share/texmf/tex/latex/seminar/src/xcomment.tex
 share/texmf/tex/latex/titlesec/00contents
+share/texmf/tex/latex/titlesec/block.tss
+share/texmf/tex/latex/titlesec/drop.tss
+share/texmf/tex/latex/titlesec/frame.tss
+share/texmf/tex/latex/titlesec/leftmargin.tss
+share/texmf/tex/latex/titlesec/margin.tss
 share/texmf/tex/latex/titlesec/readme
+share/texmf/tex/latex/titlesec/rightmargin.tss
+share/texmf/tex/latex/titlesec/titlesec.sty
 share/texmf/tex/latex/titlesec/titlesec.tex
+share/texmf/tex/latex/titlesec/titletoc.sty
+share/texmf/tex/latex/titlesec/ttlkeys.def
+share/texmf/tex/latex/titlesec/ttlps.def
+share/texmf/tex/latex/titlesec/wrap.tss
 share/texmf/tex/latex/utopia/8rput.fd
 share/texmf/tex/latex/utopia/omlput.fd
 share/texmf/tex/latex/utopia/omsput.fd
@@ -10626,66 +10715,77 @@ share/texmf/tex/latex/utopia/ot1put.fd
 share/texmf/tex/latex/utopia/t1put.fd
 share/texmf/tex/latex/utopia/ts1put.fd
 share/texmf/tex/latex/utopia/utopia.sty
-@dirrm share/texmf/tex/latex/utopia/
-@dirrm share/texmf/tex/latex/seminar/src/
-@dirrm share/texmf/tex/latex/seminar/inputs/
-@dirrm share/texmf/tex/latex/seminar/doc/
-@dirrm share/texmf/tex/latex/pstricks/origdoc/
-@dirrm share/texmf/tex/latex/pstricks/latex/
-@dirrm share/texmf/tex/latex/pstricks/generic/
-@dirrm share/texmf/tex/latex/pstricks/contrib/pst-slpe/
-@dirrm share/texmf/tex/latex/pstricks/contrib/pst-poly/
-@dirrm share/texmf/tex/latex/pstricks/contrib/pst-gr3d/
-@dirrm share/texmf/tex/latex/pstricks/contrib/pst-ghsb/
-@dirrm share/texmf/tex/latex/pstricks/contrib/pst-blur/
-@dirrm share/texmf/tex/latex/pstricks/contrib/piechart/
-@dirrm share/texmf/tex/latex/pstricks/contrib/palette/
-@dirrm share/texmf/tex/latex/pstricks/contrib/misc/
-@dirrm share/texmf/tex/latex/pstricks/contrib/
-@dirrm share/texmf/tex/latex/pdfscreen/
-@dirrm share/texmf/tex/latex/package/
-@dirrm share/texmf/tex/latex/mathptmx/
-@dirrm share/texmf/tex/latex/geometry/
-@dirrm share/texmf/tex/latex/fontinst/inputs/tex/
-@dirrm share/texmf/tex/latex/fontinst/inputs/mtx/
-@dirrm share/texmf/tex/latex/fontinst/inputs/etx/
-@dirrm share/texmf/tex/latex/fontinst/inputs/
-@dirrm share/texmf/tex/latex/fontinst/doc/
-@dirrm share/texmf/tex/latex/fontinst/
-@dirrm share/texmf/tex/latex/foiltex/
-@dirrm share/texmf/tex/latex/cwfont/
-@dirrm share/texmf/tex/latex/charter/
-@dirrm share/texmf/tex/bibtex/
-@dirrm share/texmf/pdftex/base/
-@dirrm share/texmf/fonts/vf/utopia/
-@dirrm share/texmf/fonts/vf/mathptmx/
-@dirrm share/texmf/fonts/vf/charter/
-@dirrm share/texmf/fonts/type1/utopia/
-@dirrm share/texmf/fonts/type1/mathptmx/
-@dirrm share/texmf/fonts/type1/cwtex/
-@dirrm share/texmf/fonts/type1/charter/
-@dirrm share/texmf/fonts/type1/adobe/
-@dirrm share/texmf/fonts/tfm/utopia/
-@dirrm share/texmf/fonts/tfm/mathptmx/
-@dirrm share/texmf/fonts/tfm/cwtex/
-@dirrm share/texmf/fonts/tfm/charter/
-@dirrm share/texmf/fonts/afm/utopia/
-@dirrm share/texmf/fonts/afm/mathptmx/
-@dirrm share/texmf/fonts/afm/cwtex/
-@dirrm share/texmf/fonts/afm/charter/
-@dirrm share/texmf/dvips/utopia/
-@dirrm share/texmf/dvips/cwtex/
-@dirrm share/texmf/dvips/charter/
-@dirrm share/texmf/cwtex/utils/cwttf/
-@dirrm share/texmf/cwtex/utils/cwpt1/
-@dirrm share/texmf/cwtex/utils/
-@dirrm share/texmf/cwtex/help/
-@dirrm share/texmf/cwtex/examples/thesis/
-@dirrm share/texmf/cwtex/examples/pp4/
-@dirrm share/texmf/cwtex/examples/bookex/
-@dirrm share/texmf/cwtex/examples/bibtest/
-@dirrm share/texmf/cwtex/examples/
-@dirrm share/texmf/cwtex/doc/
-@dirrm share/texmf/cwtex/
+@dirrm share/texmf/tex/latex/utopia
+@dirrm share/texmf/tex/latex/titlesec
+@dirrm share/texmf/tex/latex/seminar/src
+@dirrm share/texmf/tex/latex/seminar/inputs
+@dirrm share/texmf/tex/latex/seminar/doc
+@dirrm share/texmf/tex/latex/seminar
+@dirrm share/texmf/tex/latex/pstricks/origdoc
+@dirrm share/texmf/tex/latex/pstricks/latex
+@dirrm share/texmf/tex/latex/pstricks/generic
+@dirrm share/texmf/tex/latex/pstricks/contrib/pst-slpe
+@dirrm share/texmf/tex/latex/pstricks/contrib/pst-poly
+@dirrm share/texmf/tex/latex/pstricks/contrib/pst-gr3d
+@dirrm share/texmf/tex/latex/pstricks/contrib/pst-ghsb
+@dirrm share/texmf/tex/latex/pstricks/contrib/pst-blur
+@dirrm share/texmf/tex/latex/pstricks/contrib/piechart
+@dirrm share/texmf/tex/latex/pstricks/contrib/palette
+@dirrm share/texmf/tex/latex/pstricks/contrib/misc
+@dirrm share/texmf/tex/latex/pstricks/contrib
+@dirrm share/texmf/tex/latex/pstricks
+@dirrm share/texmf/tex/latex/pdfscreen
+@dirrm share/texmf/tex/latex/package
+@dirrm share/texmf/tex/latex/natbib
+@dirrm share/texmf/tex/latex/misc
+@dirrm share/texmf/tex/latex/minitoc
+@dirrm share/texmf/tex/latex/mathptmx
+@dirrm share/texmf/tex/latex/hyperref
+@dirrm share/texmf/tex/latex/geometry
+@dirrm share/texmf/tex/latex/fontinst/inputs/tex
+@dirrm share/texmf/tex/latex/fontinst/inputs/mtx
+@dirrm share/texmf/tex/latex/fontinst/inputs/etx
+@dirrm share/texmf/tex/latex/fontinst/inputs
+@dirrm share/texmf/tex/latex/fontinst/doc
+@dirrm share/texmf/tex/latex/fontinst
+@dirrm share/texmf/tex/latex/foiltex
+@dirrm share/texmf/tex/latex/cwfont
+@dirrm share/texmf/tex/latex/charter
+@dirrm share/texmf/tex/bibtex
+@dirrm share/texmf/pdftex/config
+@dirrm share/texmf/pdftex/base
+@dirrm share/texmf/pdftex
+@dirrm share/texmf/fonts/vf/utopia
+@dirrm share/texmf/fonts/vf/mathptmx
+@dirrm share/texmf/fonts/vf/charter
+@dirrm share/texmf/fonts/type1/utopia
+@dirrm share/texmf/fonts/type1/mathptmx
+@dirrm share/texmf/fonts/type1/cwtex
+@dirrm share/texmf/fonts/type1/charter
+@dirrm share/texmf/fonts/type1/adobe
+@dirrm share/texmf/fonts/tfm/utopia
+@dirrm share/texmf/fonts/tfm/mathptmx
+@dirrm share/texmf/fonts/tfm/cwtex
+@dirrm share/texmf/fonts/tfm/charter
+@dirrm share/texmf/fonts/afm/utopia
+@dirrm share/texmf/fonts/afm/mathptmx
+@dirrm share/texmf/fonts/afm/cwtex
+@dirrm share/texmf/fonts/afm/charter
+@dirrm share/texmf/dvips/utopia
+@dirrm share/texmf/dvips/psnfss
+@dirrm share/texmf/dvips/cwtex
+@dirrm share/texmf/dvips/charter
+@dirrm share/texmf/cwtex/utils/cwttf
+@dirrm share/texmf/cwtex/utils/cwpt1
+@dirrm share/texmf/cwtex/utils
+@dirrm share/texmf/cwtex/help
+@dirrm share/texmf/cwtex/examples/thesis
+@dirrm share/texmf/cwtex/examples/pp4
+@dirrm share/texmf/cwtex/examples/bookex
+@dirrm share/texmf/cwtex/examples/bibtest
+@dirrm share/texmf/cwtex/examples
+@dirrm share/texmf/cwtex/doc
+@dirrm share/texmf/cwtex
+@dirrm share/texmf/bibtex/bst/base
 @exec %D/bin/mktexlsr
 @unexec %D/bin/mktexlsr
