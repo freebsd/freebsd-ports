@@ -1,36 +1,84 @@
---- Makefile.orig	Sun Sep 22 15:59:18 1996
-+++ Makefile	Fri Jul 11 06:31:20 1997
-@@ -16,8 +16,8 @@
- #COMPRESS = compress
+--- Makefile.orig	Thu Apr  2 15:53:41 1998
++++ Makefile	Fri Apr 10 20:39:26 1998
+@@ -28,9 +28,9 @@
+ #	SVR4	/usr/share/man/cat1	-		1
+ #	Linux	/usr/local/man/man1	-		man
+ #
+-LOCALLIB = /usr/local/lib
+-LOCALBIN = /usr/local/bin
+-LOCALMAN = /usr/local/man/cat1
++LOCALLIB = $(PREFIX)/lib/http-analyze
++LOCALBIN = $(PREFIX)/bin
++LOCALMAN = $(PREFIX)/man/man1
  
- # where your gd library and include files reside
+ # Program to use for compressing the manpage.
+ # If set to 'true', no compression is applied.
+@@ -41,12 +41,12 @@
+ # Extension of the source to be installed as manpage.
+ # if it is set to '1', the pre-formatted format is used,
+ # if it is set to 'man', the source format is used.
+-#EXTENSION = man
+-EXTENSION = 1
++EXTENSION = man
++#EXTENSION = 1
+ 
+ # Location of the GD library and include files.
 -GDLIB	= /usr/local/lib/libgd.a
--GDINC	= /usr/local/include/gd
-+GDLIB	= ${PREFIX}/lib/libgd.a
-+GDINC	= ${PREFIX}/include/gd
+-GDINC	= /usr/local/include
++GDLIB	= $(PREFIX)/lib/libgd.a
++GDINC	= $(PREFIX)/include/gd
  
- # Customization
  #
-@@ -62,7 +62,8 @@
+ # Platform selection
+@@ -76,7 +76,7 @@
  #
+ #CC = cc
+ #OPTIM = -O2
+-OPTIM = -g
++#OPTIM = -g
  
- #DEFINES = -DCOUNT_EXTRA_BYTES -DUSER_AGENT -DUSE_GETHOSTNAME -DUSE_FGETS
--DEFINES	= -DUSE_GETHOSTNAME
-+DEFINES	= -DNS_FASTTRACK -DCOUNT_EXTRA_BYTES -DUSER_AGENT -DUSE_GETHOSTNAME \
-+	  -DTIME_STATS
+ # Remove NDEBUG to include various assertion checks in the program.
+ #COMDEFS = -DTIME_STATS -DNDEBUG
+@@ -108,6 +108,10 @@
+ #PLATFORM = -ansi -Dunix
+ #CC = gcc
  
- VERSION	= -DVERSION=\"1.9e\"
++# FreeBSD
++DEFINES = -DBSD -DHA_LIBDIR="$(LOCALLIB)"
++PLATFORM =
++
+ # HP/UX
+ #
+ # Lacks definition of the 'unix' macro in it's compiler, so we
+@@ -139,7 +143,7 @@
+ #DEFINES = -DNETWARE $(COMDEFS)
+ #PLATFORM = 
  
-@@ -71,10 +72,10 @@
- TARGETS	= http-analyze http-analyze.1
- 
- # Compiler flags
--CC	= cc
-+#CC	= cc
- #CFLAGS	= -O -xansi -fullwarn -wlint,-pui -woff 827,828 $(DEFINES) $(VERSION)
- #CFLAGS	= -O $(DEFINES) $(VERSION) -DTIME_STATS
--CFLAGS	= -O $(DEFINES) $(VERSION) 
-+CFLAGS	+= $(DEFINES) $(VERSION) 
- LDFLAGS	= 
- LINT	= lint -u
+-CFLAGS  = $(OPTIM) $(PLATFORM) $(DEFINES)
++CFLAGS  += $(PLATFORM) $(DEFINES)
+ LDFLAGS	=  
+ LINT	= lint -Dunix -Xa -u
  LIBS	= -lm
+@@ -213,13 +217,14 @@
+ 	chmod 755 $(LOCALBIN)/http-analyze $(LOCALBIN)/ha-setup
+ 	chmod 444 $(LOCALMAN)/http-analyze.1
+ 	chown bin.bin $(LOCALBIN)/http-analyze $(LOCALBIN)/ha-setup
+-	$(COMPRESS) $(LOCALMAN)/http-analyze.1
++	-mkdir -p $(PREFIX)/share/doc/http-analyze
++	cp http-analyze.pdf http-analyze.ps $(PREFIX)/share/doc/http-analyze
+ 	-mkdir -p $(LOCALLIB)/http-analyze/btn
+-	cp files/3D* files/TLD files/bugreport.html sample.conf $(LOCALLIB)/http-analyze/
++	cp files/3D* files/TLD files/bugreport.html rotate-httpd sample.conf \
++		$(LOCALLIB)/http-analyze/
+ 	cp files/btn/* $(LOCALLIB)/http-analyze/btn/
+ 	@echo "\nNow run 'ha-setup' to configure http-analyze for your server (Unix only).\n"
+ 
+-
+ clean:
+ 	-rm -f $(HA_OBJ) $(3D_OBJ) lint.out
+ 
+@@ -228,4 +233,3 @@
+ 
+ clobber::	realclean
+ 	-rm -f index.html stats*.html stats*.hist sites*.html files*.html agents*.html *.gif
+-
