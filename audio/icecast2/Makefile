@@ -16,7 +16,8 @@ MAINTAINER=	michaelnottebrock@gmx.net
 
 LIB_DEPENDS=	ogg.4:${PORTSDIR}/audio/libogg \
 		shout.3:${PORTSDIR}/audio/libshout2 \
-		vorbis.2:${PORTSDIR}/audio/libvorbis
+		vorbis.2:${PORTSDIR}/audio/libvorbis \
+		xslt.1:${PORTSDIR}/textproc/libxslt
 
 AUTOMAKE_ARGS=	--add-missing
 AUTOMAKE_ENV=	CFLAGS="${PTHREAD_CFLAGS} -I${LOCALBASE}/include" \
