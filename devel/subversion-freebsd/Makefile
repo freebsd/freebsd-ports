@@ -12,7 +12,7 @@ MASTER_SITES=	http://subversion.tigris.org/files/documents/15/196/
 MAINTAINER=	rooneg@electricjellyfish.net
 
 LIB_DEPENDS=	db4:${PORTSDIR}/databases/db4 \
-		neon.19:${PORTSDIR}/www/neon \
+		neon.21:${PORTSDIR}/www/neon \
 		expat.2:${PORTSDIR}/textproc/expat2 \
 		apr:${PORTSDIR}/devel/apr-devel
 RUN_DEPENDS=	gdiff3:${PORTSDIR}/textproc/diffutils
