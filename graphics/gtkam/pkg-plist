@@ -1,0 +1,34 @@
+bin/gtkam
+%%GIMP%%libexec/gimp/1.2/plug-ins/gtkam-gimp
+%%PORTDOCS%%share/doc/gtkam/AUTHORS
+%%PORTDOCS%%share/doc/gtkam/MANUAL
+share/gtkam/images/gtkam-audio.png
+share/gtkam/images/gtkam-camera.png
+share/gtkam/images/gtkam-folder-camera.png
+share/gtkam/images/gtkam-folder.png
+share/gtkam/images/gtkam-lock.png
+share/gtkam/images/gtkam-new.png
+share/gtkam/pixmaps/camera.xpm
+share/gtkam/pixmaps/configure.xpm
+share/gtkam/pixmaps/delete_images.xpm
+share/gtkam/pixmaps/exit.xpm
+share/gtkam/pixmaps/folder.xpm
+share/gtkam/pixmaps/save_current_image.xpm
+share/locale/da/LC_MESSAGES/gtkam.mo
+share/locale/de/LC_MESSAGES/gtkam.mo
+share/locale/es/LC_MESSAGES/gtkam.mo
+share/locale/fr/LC_MESSAGES/gtkam.mo
+share/locale/hu/LC_MESSAGES/gtkam.mo
+share/locale/it/LC_MESSAGES/gtkam.mo
+share/locale/ja/LC_MESSAGES/gtkam.mo
+share/locale/no/LC_MESSAGES/gtkam.mo
+share/locale/pt_BR/LC_MESSAGES/gtkam.mo
+share/locale/pt_PT/LC_MESSAGES/gtkam.mo
+share/locale/ru/LC_MESSAGES/gtkam.mo
+share/locale/sl/LC_MESSAGES/gtkam.mo
+share/locale/sv/LC_MESSAGES/gtkam.mo
+share/locale/uk/LC_MESSAGES/gtkam.mo
+@dirrm share/gtkam/pixmaps
+@dirrm share/gtkam/images
+@dirrm share/gtkam
+%%PORTDOCS%%@dirrm share/doc/gtkam

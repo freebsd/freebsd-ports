@@ -127,6 +127,7 @@
     SUBDIR += gsubedit
     SUBDIR += gthumb
     SUBDIR += gthumb2
+    SUBDIR += gtkam
     SUBDIR += gtkdps
     SUBDIR += gtkfig
     SUBDIR += gtkgraph
