@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	portmon
-PORTVERSION=	1.8
+PORTVERSION=	1.9
 CATEGORIES=	net
 MASTER_SITES=	http://www.aboleo.net/software/portmon/downloads/
 
@@ -14,8 +14,14 @@ MAINTAINER=	ponomarew@oberon.net
 COMMENT=	Daemon that monitor network services
 
 GNU_CONFIGURE=	yes
+USE_REINPLACE=	yes
 
 MAN8=		portmon.8
+
+post-patch:
+	@${REINPLACE_CMD} -e \
+	 's|/etc|${PREFIX}/etc|g' \
+		 ${WRKSRC}/extras/${PORTNAME}.8
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} \
@@ -24,6 +30,10 @@ do-install:
 		${PREFIX}/man/man8
 	${INSTALL_DATA} ${WRKSRC}/extras/portmon.hosts.sample \
 		${PREFIX}/etc
+	@${ECHO} "------------------------------------------------------------"
+	@${ECHO} "Sample of configuration file placed at"
+	@${ECHO} "${PREFIX}/etc/portmon.hosts.sample"
+	@${ECHO} "------------------------------------------------------------
 
 post-install:
 .if !defined(NOPORTDOCS)
