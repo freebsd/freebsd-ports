@@ -7,11 +7,14 @@
 
 PORTNAME=	privman
 PORTVERSION=	0.9.2
+PORTREVISION=	1
 CATEGORIES=	devel security
 MASTER_SITES=	http://opensource.nailabs.com/privman/downloads/
 
 MAINTAINER=	ponomarew@oberon.net
 COMMENT=	Library that makes it easy for programs to use privilege separation
+
+FORBIDDEN=	"tempnam() can cause race condition, should be fixed by the author soon"
 
 GNU_CONFIGURE=	yes
 USE_LIBTOOL=	yes
