@@ -6,33 +6,34 @@
 #
 
 PORTNAME?=	mysql
-PORTVERSION=	5.0.0
-PORTREVISION?=	2
+PORTVERSION=	5.0.1
+PORTREVISION?=	0
 CATEGORIES=	databases
-MASTER_SITES=	ftp://planetmirror.com/pub/mysql/Downloads/MySQL-5.0/ \
-		http://www.softagency.co.jp/MySQL/Downloads/MySQL-5.0/ \
-		ftp://sunsite.dk/mirrors/mysql/Downloads/MySQL-5.0/ \
-		http://mysql.mediatraffic.fi/Downloads/MySQL-5.0/ \
-		ftp://filepile.tiscali.de/mirror/mysql/Downloads/MySQL-5.0/ \
-		http://mirrors.tilian.co.uk/mysql.com/Downloads/MySQL-5.0/ \
-		ftp://ftp.rtfm.no/pub/mysql/Downloads/MySQL-5.0/ \
-		http://www.mysql.cz/Downloads/MySQL-5.0/ \
-		ftp://ftp.u-paris10.fr/mysql.com/Downloads/MySQL-5.0/ \
-		http://mysql.proserve.nl/Downloads/MySQL-5.0/ \
-		ftp://ftp.free.fr/pub/MySQL/Downloads/MySQL-5.0/
+MASTER_SITES=	ftp://planetmirror.com/pub/mysql/Downloads/%SUBDIR%/ \
+		http://www.softagency.co.jp/MySQL/Downloads/%SUBDIR%/ \
+		ftp://sunsite.dk/mirrors/mysql/Downloads/%SUBDIR%/ \
+		http://mysql.mediatraffic.fi/Downloads/%SUBDIR%/ \
+		ftp://filepile.tiscali.de/mirror/mysql/Downloads/%SUBDIR%/ \
+		http://mirrors.tilian.co.uk/mysql.com/Downloads/%SUBDIR%/ \
+		ftp://ftp.rtfm.no/pub/mysql/Downloads/%SUBDIR%/ \
+		http://www.mysql.cz/Downloads/%SUBDIR%/ \
+		ftp://ftp.u-paris10.fr/mysql.com/Downloads/%SUBDIR%/ \
+		http://mysql.proserve.nl/Downloads/%SUBDIR%/ \
+		ftp://ftp.free.fr/pub/MySQL/Downloads/%SUBDIR%/
+MASTER_SITE_SUBDIR=	MySQL-5.0.1-snapshot
 PKGNAMESUFFIX?=	-server
-DISTNAME=	${PORTNAME}-${PORTVERSION}-alpha
-
-FORBIDDEN=	"http://vuxml.freebsd.org/e5e2883d-ceb9-11d8-8898-000d6111a684.html (security)"
+DISTNAME=	${PORTNAME}-${PORTVERSION}-alpha-snapshot
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT?=	Multithreaded SQL database (server)
 
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-alpha
 SLAVEDIRS=	databases/mysql50-client
 PKGINSTALL?=	${WRKDIR}/pkg-install
 DB_DIR?=	/var/db/mysql
 USE_LIBTOOL_VER=15
 USE_REINPLACE=	yes
+USE_RC_SUBR=	yes
 
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--localstatedir=${DB_DIR} \
@@ -45,6 +46,7 @@ CONFIGURE_ARGS=	--localstatedir=${DB_DIR} \
 		--with-mysqlfs \
 		--with-vio \
 		--with-low-memory \
+		--with-ndbcluster \
 		--with-comment='FreeBSD port: ${PKGNAME}' \
 		--enable-thread-safe-client
 
@@ -111,7 +113,8 @@ LATEST_LINK=	mysql50-server
 
 CONFLICTS=	mysql-server-3.* mysql-server-4.*
 
-PLIST_SUB=	DB_DIR=${DB_DIR}
+PLIST_SUB=	DB_DIR=${DB_DIR} \
+		VER=${PORTVERSION}-alpha
 
 MAN1=		isamchk.1 isamlog.1 mysqld.1 \
 		mysqld_safe.1 perror.1 replace.1
@@ -130,6 +133,8 @@ pre-fetch:
 	@${ECHO} "	DB_DIR=directory	Set alternate directory for database files"
 	@${ECHO} "				(default is /var/db/mysql)."
 	@${ECHO} "	WITH_LINUXTHREADS=yes	Use the linuxthreads pthread library."
+	@${ECHO} "	WITH_PROC_SCOPE_PTH=yes	Use process scope threads"
+	@${ECHO} "				(try it if you use libpthread)."
 	@${ECHO} "	OVERWRITE_DB=yes	Re-initialize default databases."
 	@${ECHO} "	BUILD_OPTIMIZED=yes	Enable compiler optimizations"
 	@${ECHO} "				(use it if you need speed)."
@@ -139,10 +144,14 @@ pre-fetch:
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|SUBDIRS =|SUBDIRS = include @docs_dirs@ @sql_server_dirs@ scripts man support-files|g" ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e "s|all: config.h|all: config.h all-local|g" ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e "s|bin_SCRIPTS =|bin_SCRIPTS = @server_scripts@ mysql_create_system_tables|g" ${WRKSRC}/scripts/Makefile.in
 	@${REINPLACE_CMD} -e "s|dist_pkgdata_DATA =|dist_pkgdata_DATA = fill_help_tables.sql|g" ${WRKSRC}/scripts/Makefile.in
 	@${REINPLACE_CMD} -e "s|man_MANS =|man_MANS = ${MAN1}|g" ${WRKSRC}/man/Makefile.in
-	@${REINPLACE_CMD} -e "s|install: install-am|install:|g" ${WRKSRC}/include/Makefile.in
+	@${REINPLACE_CMD} -e "s|install-data-am: install-pkgincludeHEADERS|install-data-am:|g" ${WRKSRC}/include/Makefile.in
+.if defined(WITH_PROC_SCOPE_PTH)
+	@${REINPLACE_CMD} -e "s|PTHREAD_SCOPE_SYSTEM|PTHREAD_SCOPE_PROCESS|g" ${WRKSRC}/sql/mysqld.cc
+.endif
 
 post-build:
 	@${SED} "s|%%DB_DIR%%|${DB_DIR}|g" ${PKGDIR}/pkg-install > ${WRKDIR}/pkg-install
@@ -163,7 +172,8 @@ post-install:
 .endif
 	@${SETENV} DB_DIR=${DB_DIR} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 .endif
-	@${SED} "s|%%PREFIX%%|${PREFIX}|g; s|%%DB_DIR%%|${DB_DIR}|g" < ${FILESDIR}/mysql-server.sh > ${PREFIX}/etc/rc.d/mysql-server.sh
+	@${SED} "s|%%RC_SUBR%%|${RC_SUBR}|g;s|%%PREFIX%%|${PREFIX}|g;s|%%DB_DIR%%|${DB_DIR}|g" < \
+		${FILESDIR}/mysql-server.sh > ${PREFIX}/etc/rc.d/mysql-server.sh
 	@${CHMOD} 750 ${PREFIX}/etc/rc.d/mysql-server.sh
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}/Flags
@@ -189,9 +199,13 @@ CONFIGURE_ARGS+=--without-server
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|SUBDIRS =|SUBDIRS = include @sql_client_dirs@ tests scripts man|g" ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e "s|all: config.h|all: config.h all-local|g" ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e "s|bin_SCRIPTS =|bin_SCRIPTS = mysql_config mysql_fix_privilege_tables mysqlbug|g" ${WRKSRC}/scripts/Makefile.in
 	@${REINPLACE_CMD} -e "s|dist_pkgdata_DATA =|dist_pkgdata_DATA = mysql_fix_privilege_tables.sql|g" ${WRKSRC}/scripts/Makefile.in
 	@${REINPLACE_CMD} -e "s|man_MANS =|man_MANS = ${MAN1}|g" ${WRKSRC}/man/Makefile.in
+.if defined(WITH_PROC_SCOPE_PTH)
+	@${REINPLACE_CMD} -e "s|PTHREAD_SCOPE_SYSTEM|PTHREAD_SCOPE_PROCESS|g" ${WRKSRC}/tools/mysqlmanager.c
+.endif
 
 post-install:
 	@${SED} "s|%%PREFIX%%|${PREFIX}|g" < ${FILESDIR}/mysql-client.sh > ${PREFIX}/etc/rc.d/000.mysql-client.sh
