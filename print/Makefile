@@ -186,6 +186,7 @@
     SUBDIR += pips900
     SUBDIR += pips940
     SUBDIR += pips970
+    SUBDIR += pips970-cups
     SUBDIR += pips980
     SUBDIR += pipsv500
     SUBDIR += pipsv600
