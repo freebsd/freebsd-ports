@@ -9,7 +9,7 @@ PORTREVISION=		0
 PORTEPOCH=		0
 PKGNAMESUFFIX=		-libsmbclient
 
-MAINTAINER=		kwm@rainbow-runner.nl
+MAINTAINER=		timur@gnu.org
 COMMENT=		The shared lib from the samba packages
 
 CONFLICTS=
