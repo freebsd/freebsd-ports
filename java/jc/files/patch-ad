@@ -1,0 +1,22 @@
+--- jc-1.0.1/jsrc/Makefile.am.orig	Sun Mar 28 15:34:08 2004
++++ jc-1.0.1/jsrc/Makefile.am	Sun Mar 28 15:34:20 2004
+@@ -14,7 +14,7 @@
+ ##
+ ## GCC flags for compiling ELF objects
+ ##
+-HOSTGCC_FLAGS=	-O2 -g -pipe -fno-common -w -Wall -Waggregate-return -Wcast-align -Wcast-qual -Wchar-subscripts -Wcomment -Wformat -Wimplicit -Wmissing-declarations -Wmissing-prototypes -Wnested-externs -Wno-long-long -Wparentheses -Wpointer-arith -Wreturn-type -Wshadow -Wstrict-prototypes -Wswitch -Wtrigraphs -Wuninitialized -Wunused -Wwrite-strings -Werror -Wa,-W
++HOSTGCC_FLAGS=	-O2 -g -pipe -fno-common -w -Wall -Waggregate-return -Wcast-align -Wcast-qual -Wchar-subscripts -Wcomment -Wformat -Wimplicit -Wmissing-declarations -Wmissing-prototypes -Wnested-externs -Wno-long-long -Wparentheses -Wpointer-arith -Wreturn-type -Wshadow -Wstrict-prototypes -Wswitch -Wtrigraphs -Wuninitialized -Wunused -Wwrite-strings -Wa,-W
+ 
+ ##
+ ## Install pre-built source files and compile them
+--- jc-1.0.1/jsrc/Makefile.in.orig	Sun Mar 28 15:34:12 2004
++++ jc-1.0.1/jsrc/Makefile.in	Sun Mar 28 15:34:22 2004
+@@ -110,7 +110,7 @@
+ 
+ EXTRA_DIST = jsrc.tgz patterns
+ 
+-HOSTGCC_FLAGS = -O2 -g -pipe -fno-common -w -Wall -Waggregate-return -Wcast-align -Wcast-qual -Wchar-subscripts -Wcomment -Wformat -Wimplicit -Wmissing-declarations -Wmissing-prototypes -Wnested-externs -Wno-long-long -Wparentheses -Wpointer-arith -Wreturn-type -Wshadow -Wstrict-prototypes -Wswitch -Wtrigraphs -Wuninitialized -Wunused -Wwrite-strings -Werror -Wa,-W
++HOSTGCC_FLAGS = -O2 -g -pipe -fno-common -w -Wall -Waggregate-return -Wcast-align -Wcast-qual -Wchar-subscripts -Wcomment -Wformat -Wimplicit -Wmissing-declarations -Wmissing-prototypes -Wnested-externs -Wno-long-long -Wparentheses -Wpointer-arith -Wreturn-type -Wshadow -Wstrict-prototypes -Wswitch -Wtrigraphs -Wuninitialized -Wunused -Wwrite-strings -Wa,-W
+ 
+ CLEANFILES = sources objects patterns
+ subdir = jsrc
