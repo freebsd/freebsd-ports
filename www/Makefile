@@ -21,7 +21,6 @@
     SUBDIR += apache-jserv
     SUBDIR += apache13
     SUBDIR += apache13+ipv6
-    SUBDIR += apache13-fp
     SUBDIR += apache13-modperl
     SUBDIR += apache13-modssl
     SUBDIR += apache13-modssl+ipv6

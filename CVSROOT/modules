@@ -340,7 +340,6 @@ apache-jserv	ports/www/apache-jserv
 apache-soap	ports/net/apache-soap
 apache13	ports/www/apache13
 apache13+ipv6	ports/www/apache13+ipv6
-apache13-fp	ports/www/apache13-fp
 apache13-modperl	ports/www/apache13-modperl
 apache13-modssl	ports/www/apache13-modssl
 apache13-modssl+ipv6	ports/www/apache13-modssl+ipv6
