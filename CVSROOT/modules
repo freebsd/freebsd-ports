@@ -9051,6 +9051,7 @@ xcept		ports/comms/xcept
 xchadance	ports/games/xchadance
 xchain		ports/games/xchain
 xchat		ports/irc/xchat
+xchat-systray-plugin	ports/irc/xchat-systray-plugin
 xchat2		ports/irc/xchat2
 xcheckers	ports/games/xcheckers
 xchm		ports/deskutils/xchm
