@@ -1,3 +1,4 @@
+/* $FreeBSD$ */
 /*
  * Copyright (C) 1990 Regents of the University of California.
  *
@@ -21,6 +22,9 @@ static int c;
 # include <sys/param.h>
 # include <sys/stat.h>
 # include <string.h>
+# if __FreeBSD_version >= 500003
+# include <sys/bio.h>
+# endif
 # include <sys/buf.h>
 # include <sys/time.h>
 
@@ -30,16 +34,18 @@ static int c;
 
 # include "debug.h"
 # include "cdrom_freebsd.h"
+# include "app.h"
 
-extern char	*device;
-static char     cdrom[] =       "/dev/rcd0c";
-static char     cdrom1[] =      "/dev/rmcd0c";
+static char     cdrom[] =       "/dev/cd0c";
+static char     cdrom1[] =      "/dev/mcd0c";
 
 cdrom_info	cdi;
 char		info_filename[256];
 FILE		*disc_info = NULL;
 
 static int	cdrom_fd = -1;
+
+extern AppData app_data;
 
 get_stored_info()
 {
@@ -60,8 +66,8 @@ get_stored_info()
 	n = n / cdi.maxtrack;
 
         disc_title = NULL;
-	if (cdInfoDir != NULL)
-	    sprintf(info_filename, "%s/cd.%d", cdInfoDir, n);
+	if (app_data.cdInfoDir != NULL)
+	    sprintf(info_filename, "%s/cd.%d", app_data.cdInfoDir, n);
 	else
 	    sprintf(info_filename, "cd.%d", n);
 
@@ -94,9 +100,9 @@ cdrom_open() {
 	if (cdrom_fd != -1)
 		return(cdi.curtrack);
 
-	if (device != NULL) {
-		if ((cdrom_fd = open(device, O_RDONLY)) == -1) {
-			perror(device);
+	if (app_data.device != NULL) {
+		if ((cdrom_fd = open(app_data.device, O_RDONLY)) == -1) {
+			perror(app_data.device);
 			return(-1);
 		}
 	} else {

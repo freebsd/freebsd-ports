@@ -1,0 +1,92 @@
+
+$FreeBSD$
+
+--- XCdplayer.ad.orig	Tue Jan 12 19:59:41 1993
++++ XCdplayer.ad	Mon Aug 25 00:38:35 2003
+@@ -19,11 +19,10 @@
+ 
+ XCdplayer*logoLabel.foreground:		Gold
+ XCdplayer*logoLabel.background:		Black
+-XCdplayer*icon*foreground:	Gold
+ 
+ XCdplayer*versionLabel.Font:		 -misc-fixed-medium-r-normal--8-*
+ XCdplayer*versionLabel.foreground:	Black
+-XCdplayer*versionLabel.width:		130
++XCdplayer*versionLabel.width:		110
+ XCdplayer*versionLabel.fromHoriz:	logoLabel
+ 
+ ! replayThreshold is the number of seconds that must be played before the
+@@ -33,16 +32,16 @@
+ 
+ ! scanSkipInterval is the number of seconds skipped at each fast-forward or
+ ! reverse.
+-XCdplayer*scanSkipInterval:		3
++XCdplayer*scanSkipInterval:		5
+ ! pauseSkipInterval is the number of seconds skipped at each fast-forward or
+ ! reverse if the CD is paused.
+-XCdplayer*pauseSkipInterval:		15
++XCdplayer*pauseSkipInterval:		20
+ 
+ ! scanPauseInterval is the number of seconds between each fast_forward or
+ ! reverse while holding down the buttons. (Sun CDs have a dreadfully long
+ ! start-up time for the audio to actually become audible, so "hearing the
+ ! track" while scanning isn't very feasible.)
+-XCdplayer*scanPauseInterval:		0.062
++XCdplayer*scanPauseInterval:		0.25
+ ! pausePauseInterval does the same thing when the disc is paused.
+ XCdplayer*pausePauseInterval:		0.5
+ 
+@@ -56,7 +55,7 @@
+ XCdplayer*Viewport.allowHoriz:		True
+ XCdplayer*Viewport.useBottom:		True
+ XCdplayer*Viewport.forceBars:		False
+-XCdplayer*Viewport.width:		188
++XCdplayer*Viewport.width:		160
+ XCdplayer*Viewport.height:		30
+ XCdplayer*Viewport*thickness:		8
+ XCdplayer*Viewport.resizable:		False
+@@ -88,11 +87,11 @@
+ XCdplayer*Toggle.right:			ChainLeft
+ XCdplayer*Toggle.background:		Ivory
+ 
+-XCdplayer*ledsLabel.horizDistance:	20
++XCdplayer*ledsLabel.horizDistance:	4
+ XCdplayer*ledsLabel.fromVert:		versionLabel
+ XCdplayer*ledsLabel.fromHoriz:		logoLabel
+ 
+-XCdplayer*trackButton.horizDistance:	8
++XCdplayer*trackButton.horizDistance:	4
+ XCdplayer*trackButton.fromVert:		versionLabel
+ XCdplayer*trackButton.fromHoriz:	ledsLabel
+ XCdplayer*trackButton.borderWidth:	2
+@@ -108,27 +107,22 @@
+ XCdplayer*timerButton.left:		ChainRight
+ XCdplayer*timerButton.right:		ChainRight
+ 
+-XCdplayer*volumeScrollbar.horizDistance:8
++XCdplayer*volumeScrollbar.horizDistance:4
+ XCdplayer*volumeScrollbar.fromHoriz:	logoLabel
+ XCdplayer*volumeScrollbar.fromVert:	trackButton
+ XCdplayer*volumeScrollbar.orientation:	horizontal
+-XCdplayer*volumeScrollbar.length:	120
++XCdplayer*volumeScrollbar.length:	93
+ XCdplayer*volumeScrollbar.right:	ChainRight
+ XCdplayer*volumeScrollbar.left:		ChainRight
+ XCdplayer*volumeScrollbar.background:	green
+ XCdplayer*volumeScrollbar.foreground:	white
+-XCdplayer*volumeScrollbar.thumb:	black
++XCdplayer*volumeScrollbar.thumb:        black
+ 
+ XCdplayer*titleBarViewport.fromVert:	volumeScrollbar
+-XCdplayer*titleBarViewport.forceBars:	true
+ XCdplayer*titleBar.borderwidth:		0
+ XCdplayer*titleBar.highlightThickness:	1
+ XCdplayer*titleBar.foreground:		Red
+ XCdplayer*titleBar.background:		Ivory
+-
+-XCdplayer*titleDialog.Text.translations:#override\
+-	<Key>Return:	done()
+-
+ XCdplayer*buttonsForm.fromVert:		logoForm
+ XCdplayer*buttonsForm.borderWidth:	1
+ 
