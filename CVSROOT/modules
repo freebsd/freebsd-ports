@@ -237,6 +237,7 @@ affenspiel	ports/games/affenspiel
 afio		ports/sysutils/afio
 afm		ports/print/afm
 afsp		ports/audio/afsp
+aft		ports/textproc/aft
 afterstep	ports/x11-wm/afterstep
 afterstep-i18n	ports/x11-wm/afterstep-i18n
 afterstep-stable	ports/x11-wm/afterstep-stable
