@@ -1,0 +1,68 @@
+--- src/wnb/stubs.c	Fri Nov 14 17:01:44 1997
++++ src/wnb/stubs.c	Sat Feb 26 20:09:19 2000
+@@ -24,3 +24,2 @@
+ #include <tcl.h>
+-#include <tk.h>
+ #include <wn.h>
+@@ -37,5 +36,4 @@
+ int wn_findvalidsearches (ClientData clientData, Tcl_Interp *interp, 
+-   int argc, char *argv[]) {
++   int argc, Tcl_Obj *objv[]) {
+    unsigned int bitfield;
+-   char bitfieldstr[32];
+    char *morph;
+@@ -43,9 +41,10 @@
+    if (argc != 3) {
+-      interp -> result = 
+-         "usage: findvalidsearches searchword partofspeechnum";
++      Tcl_WrongNumArgs(interp, 1, objv,
++         "findvalidsearches searchword partofspeechnum");
+       return TCL_ERROR;
+    }
+-   pos = atoi (argv[2]);
+-   bitfield = is_defined (argv[1], pos);
+-   if ((morph = morphstr (argv[1], pos)) != NULL) {
++   if (Tcl_GetIntFromObj(interp, objv[2], &pos) != TCL_OK)
++      return TCL_ERROR;
++   bitfield = is_defined (Tcl_GetString(objv[1]), pos);
++   if ((morph = morphstr (Tcl_GetString(objv[1]), pos)) != NULL) {
+       do {
+@@ -54,4 +53,3 @@
+    }
+-   sprintf (bitfieldstr, "%u", bitfield);
+-   interp -> result = bitfieldstr;
++   Tcl_SetObjResult(interp, Tcl_NewIntObj(bitfield));
+    return TCL_OK;
+@@ -67,14 +65,11 @@
+ int wn_bit (ClientData clientData, Tcl_Interp *interp,
+-   int argc, char *argv[]) {
+-   unsigned int bitfield;
+-   char bitfieldstr[32];
++   int argc, Tcl_Obj *objv[]) {
+    int whichbit;
+    if (argc != 2) {
+-      interp -> result = "usage: bit bitnum";
++      Tcl_WrongNumArgs(interp, 1, objv, "bitnum");
+       return TCL_ERROR;
+    }
+-   whichbit = atoi (argv[1]);
+-   bitfield = bit (whichbit);
+-   sprintf (bitfieldstr, "%u", bitfield);
+-   interp -> result = bitfieldstr;
++   if (Tcl_GetIntFromObj(interp, objv[1], &whichbit) != TCL_OK)
++	return TCL_ERROR;
++   Tcl_SetObjResult(interp, Tcl_NewIntObj(bit(whichbit)));
+    return TCL_OK;
+@@ -275,5 +270,5 @@
+    wninit ();
+-   Tcl_CreateCommand (interp, "findvalidsearches", (void *) 
++   Tcl_CreateObjCommand (interp, "findvalidsearches", (void *) 
+       wn_findvalidsearches, (ClientData) NULL, (Tcl_CmdDeleteProc *) NULL);
+-   Tcl_CreateCommand (interp, "bit", (void *) wn_bit, (ClientData) NULL, 
++   Tcl_CreateObjCommand (interp, "bit", (void *) wn_bit, (ClientData) NULL, 
+       (Tcl_CmdDeleteProc *) NULL);
+@@ -295,3 +290,3 @@
+       (ClientData) NULL, (Tcl_CmdDeleteProc *) NULL);
+-   return TCL_OK;
++   return Tcl_PkgProvide(interp, "Wordnet", "1.6");
+ }

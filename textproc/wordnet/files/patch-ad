@@ -1,0 +1,9 @@
+--- src/wnb/wnb	Sun Feb 22 12:49:56 1998
++++ src/wnb/wnb	Sat Feb 26 19:52:42 2000
+@@ -629,2 +626,6 @@
+          -text "Based upon an earlier X Window version by\nBrian Gustafson."] \
++      [label .aboutbox.top.right.textmi \
++         -anchor w \
++         -justify left \
++         -text "Tuned for Tcl8.x and ported to FreeBSD by\nMikhail Teterin."] \
+       [label .aboutbox.top.right.text5 \
