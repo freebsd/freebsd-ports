@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	logjam2
-PORTVERSION=	4.2.4
-PORTREVISION=	2
+PORTVERSION=	4.3.1
 CATEGORIES=	deskutils
 MASTER_SITES=	http://logjam.danga.com/download/
 DISTNAME=	logjam-${PORTVERSION}
@@ -19,6 +18,7 @@ LIB_DEPENDS=	curl.2:${PORTSDIR}/ftp/curl
 
 MAN1=		logjam.1
 
+USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes

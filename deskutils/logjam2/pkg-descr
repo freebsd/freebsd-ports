@@ -6,4 +6,7 @@ and offers preview capabilities using gtkhtml3.  It will interface with any
 site running LiveJournal, not just www.livejournal.com, and can create
 offline copies of your journal.
 
+(If you want a GTK version, see deskutils/logjam, but that
+version receives no bugfixes.)
+
 WWW: http://logjam.danga.com/

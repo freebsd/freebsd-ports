@@ -1,7 +1,6 @@
 bin/logjam
+share/gnome/applications/logjam.desktop
 share/gnome/pixmaps/logjam_goat.png
-share/gnome/pixmaps/logjam_ljcomm.png
-share/gnome/pixmaps/logjam_ljuser.png
 share/gnome/pixmaps/logjam_pencil.png
 share/locale/de/LC_MESSAGES/logjam.mo
 share/locale/en_GB/LC_MESSAGES/logjam.mo
