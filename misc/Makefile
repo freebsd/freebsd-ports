@@ -61,6 +61,7 @@
     SUBDIR += dotfile
     SUBDIR += edonkey-tool-hash
     SUBDIR += edonkey-tool-list
+    SUBDIR += edonkey-tool-slist
     SUBDIR += emma
     SUBDIR += estic
     SUBDIR += ewipe
