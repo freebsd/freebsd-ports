@@ -4660,6 +4660,7 @@ mwavem		ports/comms/mwavem
 mydns		ports/dns/mydns
 mymoon		ports/astro/mymoon
 myodbc		ports/databases/myodbc
+myphpmoney	ports/finance/myphpmoney
 mysql++		ports/databases/mysql++
 mysql-editor	ports/databases/mysql-editor
 mysql-gui	ports/databases/mysql-gui
