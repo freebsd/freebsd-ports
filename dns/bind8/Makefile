@@ -24,7 +24,11 @@ DIST_SUBDIR=	bind-${PORTVERSION}
 MAINTAINER=	DougB@FreeBSD.org
 
 .if defined(PORT_REPLACES_BASE_BIND8)
+PKGNAMESUFFIX=	-base
 PREFIX=		/usr
+BIND_DESTETC=	/etc/namedb
+.else
+BIND_DESTETC=	${PREFIX}/etc
 .endif
 
 WRKSRC=		${WRKDIR}/src
@@ -42,18 +46,22 @@ PATCH_ARGS=	-s -d ${WRKDIR}
 PATCH_DIST_ARGS=	-s -d ${WRKDIR}
 
 post-patch:
-.if defined(PORT_REPLACES_BASE_BIND8)
-	@${SED} -e "s#\'DESTETC=.*#'DESTETC=/etc/namedb'#" \
+	@${SED} -e "s#\'DESTETC=.*#'DESTETC=${BIND_DESTETC}'#" \
+		-e "s#-O2 -g#${CFLAGS}#" \
 		${WRKSRC}/port/freebsd/Makefile.set > \
 		${WRKSRC}/port/freebsd/Makefile.set.sed
 	@${MV} ${WRKSRC}/port/freebsd/Makefile.set.sed \
 		${WRKSRC}/port/freebsd/Makefile.set
-.endif
+.for file in named.conf.5 named.8
+	@${SED} -e "s#/etc/named.conf#${BIND_DESTETC}/named.conf#g" \
+		${WRKDIR}/doc/man/${file} > ${WRKDIR}/doc/man/${file}.sed
+	@${MV} ${WRKDIR}/doc/man/${file}.sed ${WRKDIR}/doc/man/${file}
+.endfor
 
 post-install:
+	cd ${WRKDIR}/doc/man && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} \
+		${MAKEFILE} clean all ${INSTALL_TARGET}
 .if !defined(NOPORTDOCS)
-	@(cd ${WRKDIR}/doc/man && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} \
-		${MAKEFILE} clean all ${INSTALL_TARGET})
 	@${MKDIR} ${PREFIX}/share/doc/bind8/html
 	${INSTALL_DATA} ${WRKDIR}/doc/html/*.html ${PREFIX}/share/doc/bind8/html
 	${CP} -Rp ${WRKDIR}/src/conf ${PREFIX}/share/doc/bind8/
