@@ -1,7 +1,16 @@
-DISTFILES=	unzip512.tar.Z
+# New ports collection makefile for:    unzip
+# Version required:     5.12
+# Date created:         17 October 1994
+# Whom:                 jmz
+#
+# $Id$
+#
+
 DISTNAME=	unzip-5.12
-MASTER_SITES=	ftp://garbo.uwasa.fi/unix/arcers/
 CATEGORIES+=	archivers
+MASTER_SITES=	ftp://garbo.uwasa.fi/unix/arcers/
+DISTFILES=	unzip512.tar.Z
+
 MAKEFILE=       unix/Makefile
 ALL_TARGET=     bsd
 MAKE_FLAGS=     LOCAL_UNZIP="-O2 -DCHECK_EOF" \
