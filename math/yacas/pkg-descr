@@ -4,7 +4,7 @@ grammar parser. The distribution contains a small library of mathematical
 functions, but its real strength is in the language in which you can easily
 write your own symbolic manipulation algorithms. The core engine supports
 arbitrary precision arithmetic (although it can optionally be linked with
-the library "libgmp2") and is able to execute symbolic manipulations on
+the library "libgmp3") and is able to execute symbolic manipulations on
 various mathematical objects by following user-defined rules.
 
 WWW: http://yacas.sourceforge.net/
