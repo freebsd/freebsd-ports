@@ -3,7 +3,7 @@
 # Date created:		04 Aug 1996
 # Whom:			shanee
 #
-# $Id: Makefile,v 1.1.1.1 1996/08/06 17:37:34 chuckr Exp $
+# $Id: Makefile,v 1.2 1996/08/08 00:22:40 chuckr Exp $
 #
 
 DISTNAME=	rosegarden
@@ -17,6 +17,6 @@ MAINTAINER=	shanee@rabbit.augusta.de
 LIB_DEPENDS=	Xaw3d\\.6\\.:$(PORTSDIR)/x11/Xaw3d
 RUN_DEPENDS=	playmidi:${PORTSDIR}/audio/playmidi
 
-ALL_TARGET=	all ROSEGARDEN=$(WRKSRC) SYSLIBS="\"-lXaw3d -lXext -lXmu -lXt -lX11\""
+ALL_TARGET=	all ROSEGARDEN=$(WRKSRC) SYSLIBS="\"-lXaw3d -lXext -lXmu -lXt -lX11\"" SYSEXTRALIBS=""
 
 .include <bsd.port.mk>
