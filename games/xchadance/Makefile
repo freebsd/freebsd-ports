@@ -3,13 +3,13 @@
 # Date created:		21 August 1998
 # Whom:			issei <issei@jp.FreeBSD.ORG>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/02/20 00:48:21 flathill Exp $
 #
 
 DISTNAME=	xchada01
 PKGNAME=	xchadance-1.0
 CATEGORIES=	games
-MASTER_SITES=	http://www.jp.FreeBSD.ORG/~issei/LOCAL_PORTS/
+MASTER_SITES=	http://home.jp.FreeBSD.ORG/~issei/LOCAL_PORTS/
 EXTRACT_SUFX=	.lzh
 
 MAINTAINER=	issei@jp.FreeBSD.ORG
