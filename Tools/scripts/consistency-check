@@ -1,0 +1,143 @@
+#!/usr/bin/perl
+#
+# Copyright (c) 1999 Neil Blakey-Milner
+# All rights reserved.
+#
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions
+# are met:
+# 1. Redistributions of source code must retain the above copyright
+#    notice, this list of conditions and the following disclaimer.
+# 2. Redistributions in binary form must reproduce the above copyright
+#    notice, this list of conditions and the following disclaimer in the
+#    documentation and/or other materials provided with the distribution.
+#
+# THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS ``AS IS'' AND
+# ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+# IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+# ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE
+# FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+# DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+# OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+# HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+# LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+# OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+# SUCH DAMAGE.
+#
+# $FreeBSD$
+#
+
+#my($path) = "/var/qmail";
+my($path) = "/usr/local/bin";
+my($pkgdir) = "/var/db/pkg";
+
+$do_md5 = 1;
+$do_fs = 1;
+
+my(@fsfiles);
+my(%files);
+my(%fsmd5);
+my(%pkgmd5);
+my(%pkgname);
+
+if ($do_fs) {
+	@fsfiles = `find $path ! -type d`;
+	foreach (@fsfiles) {
+		chomp;
+		s#\Q$path\E/?##;
+		$files{$_} = 1;
+		chomp($fsmd5{$_} = `md5 -q $path/$_ 2> /dev/null`) if $do_md5 == 1;
+	}
+}
+
+require "find.pl";
+&find('/var/db/pkg');
+# Traverse desired filesystems
+
+foreach (sort keys %files) {
+	$file = $_;
+	$pkgname{$_} =~ s/,$//;
+	$files{$_} == 1 && do {
+		print "Only on filesystem - $_\n";
+		next;
+	};
+	$files{$_} == 2 && do {
+		if ($do_fs == 1) {
+			printf "Not on filesystem - $_ from %s\n", $pkgname{$_};
+			next;
+		}
+	};
+	if ($do_fs != 1) {
+		if (-e "$path/$_") {
+			chomp($fsmd5{$_} = `md5 -q $path/$_ 2> /dev/null`) if $do_md5 == 1;
+		} else {
+			printf "Not on filesystem - $_ from %s\n", $pkgname{$_};
+		}
+	}
+	$files{$_} > 3 && do {
+		printf "File $_ owned by multiple packages %s\n", $pkgname{$_};
+	};
+
+	if ($do_md5) {
+		$pkgmd5tmp = $pkgmd5{$_};
+		$fsmd5tmp = $fsmd5{$_};
+		if ($fsmd5tmp =~ /^ *$/) {
+			$msg = "";
+			$msg = ", but it exists" if (-e "$path/$_");
+			printf "No filesystem md5 available for $_%s\n", $msg;
+			next;
+		}
+		if ($pkgmd5tmp =~ /^ *$/) {
+			print "No package md5 available for $_\n";
+			next;
+		}
+		foreach (split /,/, $pkgmd5tmp) {
+			#print "Comparing: $fsmd5tmp $_\n";
+			if ($fsmd5tmp !~ /\Q$_\E/) {
+				print "For $file, package md5 $_ is " .
+					"DIFFERENT from fs md5 of $fsmd5tmp!\n";
+			}
+		}
+	} 
+}
+
+exit;
+
+sub wanted {
+    my($dev, $ino, $mode, $nlink, $uid, $gid);
+    my($cwd, $tmp);
+    (($dev,$ino,$mode,$nlink,$uid,$gid) = lstat($_)) &&
+    -f _ &&
+    /^\+CONTENTS$/ || return;
+    open(CNT, "$name");
+    chomp($pkg = `dirname $name`);
+    chomp($pkg = `basename $pkg`);
+    $cwd = "";
+    $lastfile = "";
+    while(<CNT>) {
+	chomp;
+        /^\@cwd (.*)$/ && do {
+		$cwd = $1;
+		next;
+	};
+	s#^\@comment MD5:## && do {
+		return if $cwd =~ /^\.?$/;
+		$tmp = "$cwd/$lastfile";
+		if ($tmp =~ s#^\Q$path\E/?##) {
+			$pkgmd5{$tmp} .= "$_,";
+		}
+		next;
+	};
+        /^[^@]/ && do {
+		$lastfile = $_;
+		return if $cwd =~ /^\.?$/;
+		$tmp = "$cwd/$_";
+		if ($tmp =~ s#^\Q$path\E/?##) {
+			$files{$tmp} += 2;
+			$pkgname{$tmp} .= "$pkg,";
+		}
+	};
+    }
+    close(CNT);
+}
+
