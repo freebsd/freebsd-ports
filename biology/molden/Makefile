@@ -53,7 +53,6 @@ pre-install:
 .endif
 
 do-install:
-	strip  ${WRKSRC}/molden
 	${INSTALL_SCRIPT} ${WRKSRC}/molden ${PREFIX}/bin/
 .if !defined(NOPORTDOCS)
 	${INSTALL_DATA} ${WRKSRC}/doc/* ${PREFIX}/share/doc/molden/doc
