@@ -851,6 +851,9 @@ etc/rc.d/020.jakarta-tomcat50.sh
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/ssi/SSIServletRequestUtil.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/ssi/SSISet.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/ssi/SSIStopProcessingException.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/ssi/ExpressionParseTree.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/ssi/ExpressionTokenizer.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/ssi/SSIConditional.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/ssi/package-frame.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/ssi/package-summary.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/ssi/package-tree.html
