@@ -5911,6 +5911,7 @@ p5-DBD-XBase	ports/databases/p5-DBD-XBase
 p5-DBD-mysql	ports/databases/p5-DBD-mysql
 p5-DBD-mysql40	ports/databases/p5-DBD-mysql40
 p5-DBD-mysql41	ports/databases/p5-DBD-mysql41
+p5-DBD-mysql50	ports/databases/p5-DBD-mysql50
 p5-DBI		ports/databases/p5-DBI
 p5-DBI-137	ports/databases/p5-DBI-137
 p5-DBI-Shell	ports/databases/p5-DBI-Shell
