@@ -1,0 +1,61 @@
+--- configure.orig	Thu Jan 10 10:45:20 2002
++++ configure	Thu Jan 10 10:55:39 2002
+@@ -11066,6 +11066,58 @@
+ 
+ fi
+ 
++for ac_header in sys/types.h login_cap.h
++do
++as_ac_Header=`echo "ac_cv_header_$ac_header" | $as_tr_sh`
++echo "$as_me:11072: checking for $ac_header" >&5
++echo $ECHO_N "checking for $ac_header... $ECHO_C" >&6
++if eval "test \"\${$as_ac_Header+set}\" = set"; then
++	echo $ECHO_N "(cached) $ECHO_C" >&6
++else
++	cat >conftest.$ac_ext <<_ACEOF
++#line 11078 "configure"
++#include "confdefs.h"
++#include <$ac_header>
++_ACEOF
++if { (eval echo "$as_me:11082: \"$ac_cpp conftest.$ac_ext\"") >&5
++	(eval $ac_cpp conftest.$ac_ext) 2>conftest.er1
++	ac_status=$?
++	egrep -v '^ *\+' conftest.er1 >conftest.err
++	rm -f conftest.er1
++	cat conftest.err >&5
++	echo "$as_me:11088: \$? = $ac_status" >&5
++	(exit $ac_status); } >/dev/null; then
++	if test -s conftest.err; then
++		ac_cpp_err=$ac_c_preproc_warn_flag
++	else
++		ac_cpp_err=
++	fi
++else
++	ac_cpp_err=yes
++fi
++if test -z "$ac_cpp_err"; then
++	eval "$as_ac_Header=yes"
++else
++	echo "$as_me: failed program was:" >&5
++	cat conftest.$ac_ext >&5
++	eval "$as_ac_Header=no"
++fi
++rm -f conftest.err conftest.$ac_ext
++fi
++echo "$as_me:11107: result: `eval echo '${'$as_ac_Header'}'`" >&5
++echo "${ECHO_T}`eval echo '${'$as_ac_Header'}'`" >&6
++if test `eval echo '${'$as_ac_Header'}'` = yes; then
++	 cat >>confdefs.h <<EOF
++#define `echo "HAVE_$ac_header" | $as_tr_cpp` 1
++EOF
++
++			LIBS="$LIBS -lutil"
++		cat >>confdefs.h <<\EOF
++#define HAVE_LOGINCAP 1
++EOF
++fi
++done
++
+ if test x$enable_authentication_scheme = xpam -a x$have_pam = xno ; then
+ 	{ { echo "$as_me:11070: error: PAM support requested but not available" >&5
+ echo "$as_me: error: PAM support requested but not available" >&2;}
