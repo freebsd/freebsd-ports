@@ -1,0 +1,11 @@
+--- Makefile.in	Fri Feb  7 13:53:28 2003
++++ Makefile.in.new	Sat Feb 15 14:02:38 2003
+@@ -179,7 +179,7 @@
+ 		@STRIP@ $(SCIDIR)/bin/scilex; \
+ 		(cd tests; make distclean); \
+ 		(cd examples; make distclean); \
+-		(cd .. ; tar cf - $(BINDISTFILES) @PVMINST@ | (cd ${LIBPREFIX}; tar xf -)); \
++		(cd .. ; for file in $(BINDISTFILES) @PVMINST@; do tar cf - $${file}  | (cd ${LIBPREFIX}; tar xf -); done); \
+ 		(cd ${LIBPREFIX}/$(SCIBASE); make); \
+ 		$(RM) .binary; \
+ 	fi

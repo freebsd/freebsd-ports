@@ -4,22 +4,12 @@
  
  /* #include "wf_fig.h" */ /** for sys_errlist **/
  #ifndef linux 
--#if !defined(__bsdi__) && !defined(__NetBSD__)
-+#if !defined(__bsdi__) && !defined(__NetBSD__) && !defined(__FreeBSD__)
+-#if !defined(__bsdi__) && !defined(__NetBSD__) && !defined(__APPLE__)
++#if !defined(__bsdi__) && !defined(__NetBSD__) && !defined(__APPLE__) && !defined(__FreeBSD__)
  extern int	errno;
  extern int	sys_nerr;
--#if (! (defined(BSD) && (BSD >= 199306))) && !defined(freebsd)
-+#if (! (defined(BSD) && (BSD >= 199306))) && !defined(__FreeBSD__)
+-#if (! (defined(BSD) && (BSD >= 199306))) && !defined(freebsd)  && !defined(__APPLE__)
++#if (! (defined(BSD) && (BSD >= 199306))) && !defined(__FreeBSD__)  && !defined(__APPLE__)
  extern char    *sys_errlist[];
  #endif
  #endif
-@@ -523,7 +523,9 @@
- char *SysErrorMsg(n)
-   int n;
- {
-+#ifndef __FreeBSD__
-   extern int sys_nerr;
-+#endif /* !__FreeBSD__ */
-   return ((n >= 0 && n < sys_nerr) ? sys_errlist[n] : UE );
- }
-
