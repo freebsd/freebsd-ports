@@ -7,17 +7,21 @@
 #
 
 PORTNAME=	beecrypt
-PORTVERSION=	2.1.0
+PORTVERSION=	3.0.0
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.virtualunlimited.com/download/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ijliao@FreeBSD.org
+MAINTAINER=	ponomarew@oberon.net
 COMMENT=	BeeCrypt is an open source cryptography library
 
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
-
+USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
+
+post-patch:
+	@${REINPLACE_CMD} -e "s|-pthread|${PTHREAD_LIBS}|g" ${WRKSRC}/configure
 
 .include <bsd.port.mk>
