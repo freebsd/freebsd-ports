@@ -641,6 +641,7 @@
     SUBDIR += p5-Class-NamedParms
     SUBDIR += p5-Class-ObjectTemplate
     SUBDIR += p5-Class-ObjectTemplate-DB
+    SUBDIR += p5-Class-Observable
     SUBDIR += p5-Class-ParmList
     SUBDIR += p5-Class-ReturnValue
     SUBDIR += p5-Class-Roles
