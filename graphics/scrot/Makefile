@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	scrot
-PORTVERSION=	0.5
+PORTVERSION=	0.6
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.linuxbrit.co.uk/downloads/
 
