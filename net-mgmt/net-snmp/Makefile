@@ -10,7 +10,7 @@ PORTVERSION=	5.0.9
 PORTREVISION=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR= net-snmp
+MASTER_SITE_SUBDIR=	net-snmp
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	An extendable SNMP implementation
@@ -26,13 +26,14 @@ NO_LATEST_LINK=	yes
 USE_PERL5=	yes
 .endif
 
-CONFIGURE_ARGS+= --enable-shared --with-mib-modules="host ucd-snmp/diskio" \
-		 --with-default-snmp-version="${DEFAULT_SNMP_VERSION}" \
-		 --with-sys-contact="${NET_SNMP_SYS_CONTACT}" \
-		 --with-sys-location="${NET_SNMP_SYS_LOCATION}" \
-		 --with-logfile="${NET_SNMP_LOGFILE}" \
-		 --with-persistent-directory="${NET_SNMP_PERSISTENTDIR}" \
-		 --with-gnu-ld --with-libwrap --with-libs="-lkvm -ldevstat"
+CONFIGURE_ARGS+=--enable-shared --with-mib-modules="host ucd-snmp/diskio" \
+		--with-default-snmp-version="${DEFAULT_SNMP_VERSION}" \
+		--with-sys-contact="${NET_SNMP_SYS_CONTACT}" \
+		--with-sys-location="${NET_SNMP_SYS_LOCATION}" \
+		--with-logfile="${NET_SNMP_LOGFILE}" \
+		--with-persistent-directory="${NET_SNMP_PERSISTENTDIR}" \
+		--with-gnu-ld --with-libwrap --with-libs="-lkvm -ldevstat" \
+		--with-defaults
 .if defined(WITHOUT_PERL)
 PLIST_SUB+=	WITHPERL="@comment "
 .else
@@ -40,16 +41,16 @@ CONFIGURE_ARGS+=	--with-perl-modules
 PLIST_SUB+=	WITHPERL=""
 .endif
 .if defined(BATCH)
-CONFIGURE_ARGS+= --with-defaults
+CONFIGURE_ARGS+=--with-defaults
 .else
-IS_INTERACTIVE= yes
+IS_INTERACTIVE=	yes
 .endif
 _CONFIGURE_ENV=	AUTOCONF=${LOCALBASE}/bin/autoconf213 \
 	AUTOHEADER=${LOCALBASE}/bin/autoheader213
 
 DEFAULT_SNMP_VERSION?=	3
 NET_SNMP_SYS_CONTACT?=	nobody@no.where
-NET_SNMP_SYS_LOCATION?=	
+NET_SNMP_SYS_LOCATION?=
 NET_SNMP_LOGFILE?=	/var/log/snmpd.log
 NET_SNMP_PERSISTENTDIR?=/var/net-snmp
 
@@ -89,7 +90,7 @@ MAN3PERL=	NetSNMP::default_store.3 NetSNMP::ASN.3 NetSNMP::OID.3 \
 		NetSNMP::netsnmp_request_infoPtr.3 \
 		NetSNMP::agent.3 SNMP.3
 MAN3PERLPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
-_MANPAGES+=     ${MAN3PERL:S%^%${MAN3PERLPREFIX}/man/man3/%}
+_MANPAGES+=	${MAN3PERL:S%^%${MAN3PERLPREFIX}/man/man3/%}
 .endif
 MAN5=		snmp.conf.5 snmp_config.5 snmpd.conf.5 \
 		snmptrapd.conf.5 variables.5
@@ -103,7 +104,7 @@ STARTUP_FILE=	${PREFIX}/etc/rc.d/snmpd.sh
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 400014
-CONFIGURE_ARGS+= --enable-ipv6 \
+CONFIGURE_ARGS+=--enable-ipv6 \
 		--with-transports="UDP UDPIPv6 TCP TCPIPv6 Unix"
 .endif
 
