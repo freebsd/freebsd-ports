@@ -7,6 +7,7 @@
     SUBDIR += clustalw
     SUBDIR += deft
     SUBDIR += emboss
+    SUBDIR += fastdnaml
     SUBDIR += gperiodic
     SUBDIR += hmmer
     SUBDIR += kinemage
