@@ -6,17 +6,21 @@
 #
 
 PORTNAME=	qix
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	jmz
 
 MAINTAINER=	jmz@FreeBSD.org
 
-USE_X_PREFIX=	yes
-
+.if defined(NO_X)
+MAKE_ARGS=	NO_X11=yes
 .include <bsd.port.pre.mk>
-
+.else
+USE_X_PREFIX=	yes
+.include <bsd.port.pre.mk>
+PLIST=		pkg-plist.x11
+.endif
 .if ${XFREE86_VERSION} == 4
 BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11/XFree86-4-clients
 RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
@@ -29,7 +33,7 @@ PLIST_SUB=	FONTSDIR=${FONTSDIR}
 
 do-configure:
 	@${CP} ${WRKSRC}/Makefile ${WRKSRC}/Makefile~
-	@${SED} -e s:/usr/local:${PREFIX}: -e s:/usr/X11R6:${PREFIX}: \
+	${SED} -e s:/usr/local:${PREFIX}: -e s:/usr/X11R6:${PREFIX}: \
 	  < ${WRKSRC}/Makefile~ > ${WRKSRC}/Makefile
 
 .include <bsd.port.post.mk>
