@@ -1,0 +1,32 @@
+
+$FreeBSD$
+
+--- configure.orig	Sat Feb 24 13:04:23 2001
++++ configure	Sat Feb 24 22:40:31 2001
+@@ -9699,7 +9699,7 @@
+         CFLAGS="$CFLAGS -ggdb3"
+       else
+         if test "${ac_cv_prog_cc_g}" = yes; then
+-          CFLAGS="$CFLAGS -g"
++#          CFLAGS="$CFLAGS -g"
+         fi
+       fi
+       ;;
+@@ -9707,7 +9707,7 @@
+       ;;
+     *)
+       if test "${ac_cv_prog_cc_g}" = yes; then
+-        CFLAGS="$CFLAGS -g"
++#        CFLAGS="$CFLAGS -g"
+       fi
+       ;;
+   esac
+@@ -9727,7 +9727,7 @@
+ int main(int argc, char *argv[]) { return argv[argc-1] == 0; }
+ EOF
+     cf_save_CFLAGS="$CFLAGS"
+-  ac_cv_prog_gcc_opt_flags="-O3"
++#  ac_cv_prog_gcc_opt_flags="-O3"
+   for cf_opt in \
+     ffast-math \
+     fstrict-aliasing \
