@@ -25,9 +25,17 @@ HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
 ALL_TARGET=	# empty
 
+PLIST_FILES=	lib/libustl.a
+
 post-patch:
 	@${REINPLACE_CMD} -e "s,/bin/bash,${LOCALBASE}/bin/bash," ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e "s|SIZE_MAX|UINT_MAX|" ${WRKSRC}/memblock.h
-	@${REINPLACE_CMD} -e "s|-Werror||" ${WRKSRC}/Common.mk.in
+	@${REINPLACE_CMD} -e "s|-Werror||;s|-O3||" ${WRKSRC}/Common.mk.in
+
+post-install:
+	@${FIND} ${PREFIX}/include/ustl* ! -type d | \
+		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
+	@${FIND} ${PREFIX}/include/ustl* -type d | ${SORT} -r | \
+		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
 
 .include <bsd.port.mk>
