@@ -1,25 +1,23 @@
---- Docs/Makefile.orig	Thu Aug  8 23:07:58 2002
-+++ Docs/Makefile	Thu Aug  8 23:08:44 2002
-@@ -32,19 +32,20 @@
+--- Docs/Makefile.orig	Tue May 20 20:53:33 2003
++++ Docs/Makefile	Tue May 20 20:54:25 2003
+@@ -62,6 +62,7 @@
  	@echo
  
  install:
 +ifndef NOPORTDOCS
- 	$(INSTALL) -d $(DESTDIR)/$(docdir)
- 	@for xxx in $(INSTALL_DOCS); do \
- 	    if [ -e $$xxx ]; then \
- 		$(INSTALL) -m 0444 $$xxx $(DESTDIR)/$(docdir)/$$xxx; \
- 	    fi; \
- 	done
-+endif
- 	$(INSTALL) -d $(DESTDIR)/$(man1dir)
- 	$(INSTALL) -d $(DESTDIR)/$(man8dir)
- 	$(INSTALL) $(GNOKII1_MAN) $(DESTDIR)/$(man1dir)
- 	$(INSTALL) $(GNOKII8_MAN) $(DESTDIR)/$(man8dir)
+ 	$(INSTALL) -d $(DESTDIR)$(docdir)
+ 	$(INSTALL) -d $(DESTDIR)$(docdir)/sample/logo
+ 	$(INSTALL) -d $(DESTDIR)$(docdir)/sample/ringtone
+@@ -78,10 +79,10 @@
+ 	$(INSTALL) $(GNOKII1_MAN) $(DESTDIR)$(man1dir)
+ 	$(INSTALL) $(GNOKII8_MAN) $(DESTDIR)$(man8dir)
  	if [ "x$(HAVE_XGNOKII)" = "xyes" ]; then \
--		$(INSTALL) -d $(DESTDIR)/$(xmandir); \
--		$(INSTALL) $(XGNOKII_MAN) $(DESTDIR)/$(xmandir); \
+-		$(INSTALL) -d $(DESTDIR)$(xmandir); \
+-		$(INSTALL) $(XGNOKII_MAN) $(DESTDIR)$(xmandir); \
 +		$(INSTALL) $(XGNOKII_MAN) $(DESTDIR)/$(xmandir)/xgnokii.1; \
  	fi
  	@echo "done"
++endif
  
+ clean:
+ 	$(RM) *~

@@ -1,22 +1,78 @@
 bin/gnokii
+bin/ppm2nokia
+bin/sendsms
 bin/todologo
 %%X11%%bin/xgnokii
 etc/gnokiirc.sample
+include/gnokii.h
+include/gnokii/bitmaps.h
+include/gnokii/call.h
+include/gnokii/common.h
+include/gnokii/data.h
+include/gnokii/encoding.h
+include/gnokii/error.h
+include/gnokii/networks.h
+include/gnokii/ringtones.h
+include/gnokii/rlp-common.h
+include/gnokii/sms.h
+include/gnokii/statemachine.h
+include/gnokii/virtmodem.h
+@dirrm include/gnokii
+lib/libgnokii.a
 lib/libgnokii.so
-lib/libgnokii.so.0
+lib/libgnokii.so.1
+lib/pkgconfig/gnokii.pc
 sbin/gnokiid
 sbin/mgnokiidev
+%%PORTDOCS%%share/doc/gnokii/Bugs
 %%PORTDOCS%%share/doc/gnokii/CREDITS
 %%PORTDOCS%%share/doc/gnokii/DataCalls-QuickStart
 %%PORTDOCS%%share/doc/gnokii/README
+%%PORTDOCS%%share/doc/gnokii/README-2110
 %%PORTDOCS%%share/doc/gnokii/README-3810
 %%PORTDOCS%%share/doc/gnokii/README-6110
+%%PORTDOCS%%share/doc/gnokii/README-6510
+%%PORTDOCS%%share/doc/gnokii/README-7110
+%%PORTDOCS%%share/doc/gnokii/README-MacOSX
 %%PORTDOCS%%share/doc/gnokii/README-WIN32
+%%PORTDOCS%%share/doc/gnokii/README-dancall
+%%PORTDOCS%%share/doc/gnokii/README-ericsson
+%%PORTDOCS%%share/doc/gnokii/README-siemens
+%%PORTDOCS%%share/doc/gnokii/README.libsms
 %%PORTDOCS%%share/doc/gnokii/gettext-howto
+%%PORTDOCS%%share/doc/gnokii/gnokii-IrDA-Linux
+%%PORTDOCS%%share/doc/gnokii/gnokii-hackers-howto
 %%PORTDOCS%%share/doc/gnokii/gnokii-ir-howto
-%%PORTDOCS%%share/doc/gnokii/gnokii.nol
+%%PORTDOCS%%share/doc/gnokii/logos.txt
 %%PORTDOCS%%share/doc/gnokii/packaging-howto
+%%PORTDOCS%%share/doc/gnokii/ringtones.txt
+%%PORTDOCS%%share/doc/gnokii/sample/gnokiirc
+%%PORTDOCS%%share/doc/gnokii/sample/logo/bronto.xpm
+%%PORTDOCS%%share/doc/gnokii/sample/logo/gnokii.xpm
+%%PORTDOCS%%share/doc/gnokii/sample/logo/gnokiiop.xpm
+%%PORTDOCS%%share/doc/gnokii/sample/logo/horse.xpm
+%%PORTDOCS%%share/doc/gnokii/sample/logo/horse2.xpm
+%%PORTDOCS%%share/doc/gnokii/sample/logo/pacman.xpm
+%%PORTDOCS%%share/doc/gnokii/sample/magic
+%%PORTDOCS%%share/doc/gnokii/sample/ppp/cimd-connect
+%%PORTDOCS%%share/doc/gnokii/sample/ppp/options
+%%PORTDOCS%%share/doc/gnokii/sample/ppp/pap-secrets
+%%PORTDOCS%%share/doc/gnokii/sample/ppp/ppp-6210-modem
+%%PORTDOCS%%share/doc/gnokii/sample/ppp/ppp-FILES
+%%PORTDOCS%%share/doc/gnokii/sample/ppp/ppp-gnokii
+%%PORTDOCS%%share/doc/gnokii/sample/ppp/ppp-hscsd
+%%PORTDOCS%%share/doc/gnokii/sample/ppp/ppp-on
+%%PORTDOCS%%share/doc/gnokii/sample/ringtone/star.imelody
+%%PORTDOCS%%share/doc/gnokii/sample/ringtone/star.rtttl
+%%PORTDOCS%%share/doc/gnokii/sample/vCalendar/test.vcs
+%%PORTDOCS%%@dirrm share/doc/gnokii/sample/logo
+%%PORTDOCS%%@dirrm share/doc/gnokii/sample/ringtone
+%%PORTDOCS%%@dirrm share/doc/gnokii/sample/vCalendar
+%%PORTDOCS%%@dirrm share/doc/gnokii/sample/vCard
+%%PORTDOCS%%@dirrm share/doc/gnokii/sample/ppp
+%%PORTDOCS%%@dirrm share/doc/gnokii/sample
 %%PORTDOCS%%@dirrm share/doc/gnokii
+%%PORTDOCS%%@exec mkdir -m 755 %D/share/doc/gnokii/sample/vCard
 share/locale/cs/LC_MESSAGES/gnokii.mo
 share/locale/de/LC_MESSAGES/gnokii.mo
 share/locale/et/LC_MESSAGES/gnokii.mo
@@ -142,3 +198,11 @@ share/locale/sl/LC_MESSAGES/gnokii.mo
 %%X11%%@dirrm share/xgnokii/help
 %%X11%%@dirrm share/xgnokii/xpm
 %%X11%%@dirrm share/xgnokii
+%%X11%%@exec mkdir -m 755 %D/share/xgnokii/help/en_US/calendar
+%%X11%%@exec mkdir -m 755 %D/share/xgnokii/help/en_US/contacts
+%%X11%%@exec mkdir -m 755 %D/share/xgnokii/help/en_US/dtmf
+%%X11%%@exec mkdir -m 755 %D/share/xgnokii/help/en_US/main
+%%X11%%@exec mkdir -m 755 %D/share/xgnokii/help/en_US/netmon/gsm
+%%X11%%@exec mkdir -m 755 %D/share/xgnokii/help/en_US/sms
+%%X11%%@exec mkdir -m 755 %D/share/xgnokii/help/en_US/speeddial
+%%X11%%@exec mkdir -m 755 %D/share/xgnokii/help/en_US/xkeyb
