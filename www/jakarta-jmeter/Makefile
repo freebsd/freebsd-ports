@@ -7,7 +7,7 @@
 
 PORTNAME=	jmeter
 PORTVERSION=	1.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www benchmarks java
 MASTER_SITES=	http://jakarta.apache.org/builds/jakarta-jmeter/release/v${PORTVERSION}/ \
 		http://www.metaverse.nl/~ernst/ \
@@ -20,7 +20,7 @@ MAINTAINER=	znerd@FreeBSD.org
 
 USE_JAVA=	1.2+
 NO_BUILD=	yes
-APP_HOME=	${PREFIX}/${PKGNAMEPREFIX}${PORTNAME}${PORTVERSION}
+APP_HOME=	${PREFIX}/${PKGNAMEPREFIX}${PORTNAME}
 PLIST_SUB+=	T=${APP_HOME:S/^${PREFIX}\///}
 WRKDIR?=	${WRKDIRPREFIX}${.CURDIR}/work
 WRKSRC=		${WRKDIR}/${PKGNAMEPREFIX}${PORTNAME}
