@@ -1,13 +1,13 @@
 # New ports collection Makefile for: esecanna for VJE-Delta 3.0
-# Version required:	0.1.6
+# Version required:	0.2.2
 # Date created:		29 January 2000
 # Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	esecanna-vje30_DR-0.1.6
-PKGNAME=	ja-esecanna-vje30-0.1.6
+DISTNAME=	esecanna-vje30_DR-0.2.2
+PKGNAME=	ja-esecanna-vje30-0.2.2
 CATEGORIES=	japanese
 MASTER_SITES=	http://www.idaemons.org/ports/distfiles/ \
 		http://plaza.harmonix.ne.jp/~redstar/
@@ -25,7 +25,12 @@ post-extract:
 	@perl -pe "s,!!PREFIX!!,${PREFIX},g" ${FILESDIR}/${STARTER} > ${WRKSRC}/${STARTER}
 
 do-configure:
-	@cd ${WRKSRC} && perl -i -pe "s,/etc/esecannarc,${PREFIX}/etc/esecannarc,g; s,/usr/lib/vje30,${PREFIX}/vje30,g; s,/usr/sbin/vjed,${PREFIX}/vje30/bin/vjed,g;" \
+	@cd ${WRKSRC} && perl -i -pe " \
+		s,/etc/esecannarc,${PREFIX}/etc/esecannarc,g; \
+		s,/etc/vje30,${PREFIX}/etc/vje30,g; \
+		s,/usr/lib/vje30,${PREFIX}/vje30,g; \
+		s,/usr/sbin/vjed,${PREFIX}/vje30/bin/vjed,g; \
+		" \
 		4DEVELOPERS.jp \
 		esecannarc \
 		imewrapper.c \
