@@ -329,8 +329,6 @@ share/aclocal/glibmm_check_perl.m4
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/classGlib_1_1ValueBase__String.html
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/classGlib_1_1ValueBase__String__inherit__graph.png
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/classGlib_1_1ValueBase__inherit__graph.png
-%%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/classGlib_1_1Value_3_01Glib_1_1RefPtr_3_01T_01_4_01_4-members.html
-%%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/classGlib_1_1Value_3_01Glib_1_1RefPtr_3_01T_01_4_01_4.html
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/classGlib_1_1Value_3_01Glib_1_1ustring_01_4-members.html
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/classGlib_1_1Value_3_01Glib_1_1ustring_01_4.html
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/classGlib_1_1Value_3_01Glib_1_1ustring_01_4__inherit__graph.png
@@ -422,9 +420,6 @@ share/aclocal/glibmm_check_perl.m4
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/functions_vars.html
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/globals.html
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/globals_defs.html
-%%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/globals_enum.html
-%%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/globals_eval.html
-%%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/globals_func.html
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/globals_type.html
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/graph_legend.dot
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/graph_legend.html
