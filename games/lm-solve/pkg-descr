@@ -1,0 +1,5 @@
+This program is a front end for the LM-Solve Perl modules that can be
+used to solve any of the number of Logic Mazes present on the Logic
+Mazes site (http://www.logicmazes.com/) and similar sites.
+
+WWW: http://vipe.technion.ac.il/~shlomif/lm-solve/
