@@ -15,4 +15,4 @@ XSLint looks for:
 * fo: elements that aren't part of the XSL 1.0 PR;
 * fo: element properties that aren't part of the XSL 1.0 PR.
 
-WWW: http://nwalsh.com/xsl/xslint/
+WWW: http://nwalsh.com/xml/xslint/
