@@ -1,0 +1,14 @@
+--- examples/VFS/Makefile.orig	Tue May  7 11:17:58 2002
++++ examples/VFS/Makefile	Tue May  7 11:19:31 2002
+@@ -10,9 +10,10 @@
+ 
+ SAMBA_SRC = ../../source
+ SAMBA_INCL = ../../source/include
++POPT_INCL = ../../source/popt
+ UBIQX_SRC = ../../source/ubiqx
+ SMBWR_SRC = ../../source/smbwrapper
+-CFLAGS = -I$(SAMBA_SRC) -I$(SAMBA_INCL) -I$(UBIQX_SRC) -I$(SMBWR_SRC) -Wall -g
++CFLAGS = -I$(SAMBA_SRC) -I$(SAMBA_INCL) -I$(UBIQX_SRC) -I$(SMBWR_SRC) -I${POPT_INCL} -Wall -g
+ VFS_OBJS = audit.so skel.so recycle.so
+ 
+ # Default target
