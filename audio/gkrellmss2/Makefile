@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://web.wt.net/~billw/gkrellmss/
 
-MAINTAINER=	lars.eggert@gmx.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A plugin for GKrellM with a VU meter showing left/right channel audio
 
 BUILD_DEPENDS=	${X11BASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkrellm2
@@ -26,7 +26,8 @@ USE_GNOMENG=	yes
 USE_GNOME=	esound imlib
 USE_XPM=	yes
 
-DOC_FILES=	Changelog README Themes
+PORTDOCS=	Changelog README Themes
+PLIST_FILES=	libexec/gkrellm2/plugins/gkrellmss.so
 
 MAKE_ENV+=	PLUGIN_INSTALLDIR=${PREFIX}/libexec/gkrellm2/plugins \
 		INSTALLDIR=${PREFIX}/libexec/gkrellm2/plugins \
@@ -37,7 +38,7 @@ MAKE_ENV+=	PLUGIN_INSTALLDIR=${PREFIX}/libexec/gkrellm2/plugins \
 post-install:
 .ifndef(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for doc in ${DOC_FILES}
+.for doc in ${PORTDOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
 .endfor
 .endif
