@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mkbold-mkitalic
-PORTVERSION=	0.07
-PORTREVISION=	0
+PORTVERSION=	0.09
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://hp.vector.co.jp/authors/VA013651/lib/
 

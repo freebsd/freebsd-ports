@@ -11,7 +11,7 @@
 +CC      ?= gcc
 +CFLAGS	+= -g -Wall -pedantic $(DEFS)
 +LDFLAGS	+= -g -Wall -pedantic
- DEFS    = -DSTDC_HEADERS -DHAVE_STRDUP
+ DEFS    = -DSTDC_HEADERS -DHAVE_STRDUP #-DDEBUG
 -RM	= rm -f
 +RM	?= rm -f
  INSTALL	= install
