@@ -1,0 +1,3 @@
+#!/bin/sh
+rm -f ${PKG_PREFIX}/usr/bin/acroread7
+rm -f ${PKG_PREFIX}/usr/bin/acroread
