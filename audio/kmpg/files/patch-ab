@@ -1,0 +1,22 @@
+--- lib/mpg123.c.orig	Thu May 14 18:26:41 1998
++++ lib/mpg123.c	Thu May 14 18:27:28 1998
+@@ -1176,7 +1176,7 @@
+ /*       return 1; */
+    }
+ 
+-   while (frameNum < frame) // seek forward
++   while (frameNum < frame) /* seek forward */
+    {
+       if(fr.lay == 3)
+ 	 set_pointer(512);
+@@ -1263,8 +1263,8 @@
+       
+       MPEGclose();
+       usebuffer = _prefs->buffersize;
+-      MPEGplayfile(name); // this calls MPEGinit();
+-      MPEGseek( pos );// find old frame and keep on playing
++      MPEGplayfile(name); /* this calls MPEGinit(); */
++      MPEGseek( pos );/* find old frame and keep on playing */
+    }
+ }
+ 

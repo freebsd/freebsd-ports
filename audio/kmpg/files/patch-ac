@@ -1,0 +1,11 @@
+--- lib/Makefile.orig	Thu May 14 18:29:32 1998
++++ lib/Makefile	Thu May 14 18:29:48 1998
+@@ -208,7 +208,7 @@
+ mpg123.a: player.o mpg123_2.o common.o $(OBJECTS) decode_2to1.o decode_4to1.o \
+ 		tabinit.o audio.o layer1.o layer2.o layer3.o buffer.o \
+ 		getlopt.o httpget.o xfermem.o equalizer.o Makefile
+-	ar -rs mpg123.a player.o mpg123_2.o tabinit.o common.o layer1.o \
++	ar -r mpg123.a player.o mpg123_2.o tabinit.o common.o layer1.o \
+ 		layer2.o layer3.o audio.o buffer.o decode_2to1.o equalizer.o \
+ 		decode_4to1.o getlopt.o httpget.o xfermem.o $(OBJECTS)
+ 

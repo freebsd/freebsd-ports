@@ -1,0 +1,38 @@
+--- Makefile.orig	Wed May  6 23:35:22 1998
++++ Makefile	Sat May 23 17:02:25 1998
+@@ -1,18 +1,18 @@
+ ####### Kmpg Makefile
+ 
+-INCDIR	=	-I$(QTDIR)/include -I$(KDEDIR)/include
++INCDIR	=	-I$(X11BASE)/include/X11/qt -I$(X11BASE)/include -I$(LOCALBASE)/include
+ CFLAGS	=	-O6
+-LFLAGS	=	-L$(QTDIR)/lib -lqt -L/usr/X11R6/lib -L$(KDEDIR)/lib -lXext -lX11 -lkdecore -lkdeui -lm -lg++
++LFLAGS	=	-L$(X11BASE)/lib -L$(LOCALBASE)/lib -lqt -lXext -lX11 -lkdecore -lkdeui -lm -lg++ -lcompat
+ CC	=	g++
+-MOC	=	$(QTDIR)/bin/moc
++MOC	=	$(X11BASE)/bin/moc
+ 
+ ############# Install ##############
+ 
+-INSTALL = install -m 0755 -s
+-INSTALL_SHELL = install -m 0755
+-INSTALL_DATA = install -m 0644
+-INSTALL_DIR = install -d -m 0755
+-INSTALL_DIR_PRIVATE = install -d -m 0700
++INSTALL = install -c -m 0555 -s -o bin -g bin
++INSTALL_SHELL = install -c -m 0555 -o bin -g bin
++INSTALL_DATA = install -c -m 0444 -o bin -g bin
++INSTALL_DIR = install -c -d -m 0755 -o root -g wheel
++INSTALL_DIR_PRIVATE = install -c -d -m 0700 -o root -g wheel
+ 
+ prefix = $(KDEDIR)
+ BINDIR = $(prefix)/bin
+@@ -52,7 +52,7 @@
+ 	$(CC) $(OBJECTS) $(OBJMETA) -o $(TARGET) $(LFLAGS)
+ 
+ library: 
+-	cd lib; make linux; cd ..
++	cd lib; make freebsd; cd ..
+ 
+ depend:
+ 	@makedepend $(INCDIR) $(SOURCES) 2> /dev/null

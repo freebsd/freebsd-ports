@@ -1,0 +1,15 @@
+--- playlist.h.orig	Thu May 14 19:22:14 1998
++++ playlist.h	Thu May 14 19:22:24 1998
+@@ -10,10 +10,10 @@
+ #include <signal.h>
+ #include <sys/utsname.h>
+ #include <unistd.h>
+-#if defined(_FreeBSD__) || defined(__NetBSD__)
++#if defined(__FreeBSD__) || defined(__NetBSD__)
+ #else
+ #include <mntent.h>
+-#include <sys/soundcard.h>
++#include <machine/soundcard.h>
+ #endif
+ #include <sys/types.h>
+ #include <sys/stat.h>
