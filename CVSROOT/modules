@@ -991,6 +991,7 @@ crossgo32-djgpp2	ports/devel/crossgo32-djgpp2
 crossgo32-djgpp2-pdcurses	ports/devel/crossgo32-djgpp2-pdcurses
 crossgo32-f77	ports/lang/crossgo32-f77
 crosspad	ports/misc/crosspad
+crossword	ports/games/crossword
 crt0		-a csu
 crunch		src/usr.sbin/crunch
 crux		ports/x11-toolkits/crux
