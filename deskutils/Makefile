@@ -23,6 +23,7 @@
     SUBDIR += kdepim
     SUBDIR += korganizer
     SUBDIR += kproject
+    SUBDIR += logjam
     SUBDIR += loserjabber
     SUBDIR += mhc-emacs20
     SUBDIR += mhc-xemacs21-mule
