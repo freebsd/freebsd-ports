@@ -1,0 +1,7 @@
+Bombermaze is Bomberman clone for GNOME. It is a multiplayer action game in
+which players run around in a square-grid maze while dropping bombs and
+collecting power-ups. The bombs exlode after a short time delay, taking out any
+nearby bricks and players. For maximum effect, bombs can be arranged so as to
+cause a chain reaction of explosions. The last player left is the winner.
+
+WWW: http://bombermaze.sourceforge.net/

@@ -25,6 +25,7 @@
     SUBDIR += blue
     SUBDIR += bnetd
     SUBDIR += bogged
+    SUBDIR += bombermaze
     SUBDIR += bs
     SUBDIR += bugsx
     SUBDIR += CaribbeanStud
