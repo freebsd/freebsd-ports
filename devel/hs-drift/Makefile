@@ -5,34 +5,36 @@
 # $FreeBSD$
 
 PORTNAME=	drift
-PORTVERSION=	2.0.r4
+PORTVERSION=	2.0.1
 CATEGORIES=	devel haskell
 MASTER_SITES=	http://repetae.net/john/computer/haskell/DrIFT/drop/
 PKGNAMEPREFIX=	hs-
-DISTNAME=	DrIFT-${PORTVERSION:S/.r/rc/}
+DISTNAME=	DrIFT-${PORTVERSION}
 
 MAINTAINER=	obraun@FreeBSD.org
 COMMENT=	A type sensitive preprocessor for Haskell
 
-.if !defined(WITH_GHC)
-BUILD_DEPENDS=	nhc98:${PORTSDIR}/lang/nhc98
-.else
+.if !defined(WITH_NHC98)
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
+.else
+BUILD_DEPENDS=	nhc98:${PORTSDIR}/lang/nhc98
 .endif
 
 HAS_CONFIGURE=	yes
 
-.if !defined(WITH_GHC)
-CONFIGURE_ARGS+=	--with-hc=nhc98
-.else
+INFO=	drift
+
+.if !defined(WITH_NHC98)
 CONFIGURE_ARGS+=	--with-hc=ghc
+.else
+CONFIGURE_ARGS+=	--with-hc=nhc98
 .endif
 
 .if !defined(WITH_GHC)
 pre-everything::
 	@${ECHO} ""
-	@${ECHO} " DrIFT will be build with nhc98."
-	@${ECHO} " Define WITH_GHC to build with ghc."
+	@${ECHO} " DrIFT will be build with ghc"
+	@${ECHO} " Define WITH_NHC98 to build with nhc98."
 	@${ECHO} ""
 .endif
 
