@@ -70,6 +70,7 @@
     SUBDIR += drweb-sendmail
     SUBDIR += drwebd
     SUBDIR += dsniff
+    SUBDIR += f-prot
     SUBDIR += fakebo
     SUBDIR += fakeident
     SUBDIR += find-zlib
