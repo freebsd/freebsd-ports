@@ -76,23 +76,6 @@ do-install:
 	${SGMLCAT_ADD}
 
 validate:
-.if defined(WITH_XMLLINT)
-	${SETENV} SGML_CATALOG_FILES="${CATALOG_PORTS_XML}" \
-	xmllint --catalogs --valid --noout "${VUXML_FILE}"
-.elif defined(WITH_NSGMLS)
-	${SETENV} SP_CHARSET_FIXED=YES SP_ENCODING=XML \
-	nsgmls -wxml -s "${VUXML_FILE}"
-.elif defined(WITH_RXP)
-	${SETENV} XML_CATALOG_FILES="${CATALOG_PORTS_XML}" \
-	rxp -EVNxs "${VUXML_FILE}"
-.else
-	@${ECHO} "Define one of the following to validate:"
-	@${ECHO} "  WITH_XMLLINT          Use xmllint from libxml2"
-	@${ECHO} "  WITH_NSGMLS           Use nsgmls from jade"
-# RXP 1.4 works great, but the ports system is stuck at 1.2.5
-#	@${ECHO} "  WITH_RXP              Use rxp"
-	@${ECHO}
-	@${FALSE}
-.endif
+	@${SH} ${FILESDIR}/validate.sh "${VUXML_FILE}"
 
 .include <bsd.port.mk>
