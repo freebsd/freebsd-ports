@@ -10,7 +10,7 @@ PORTNAME=	gcc30
 PORTVERSION=	3.0.4
 PORTREVISION=	0
 CATEGORIES=	lang java
-MASTER_SITES=	ftp://egcs.cygnus.com/pub/egcs/releases/gcc-${GCC_REV}/  \
+MASTER_SITES=	ftp://gcc.gnu.org/pub/%SUBDIR%/ \
 		${MASTER_SITE_SOURCEWARE}
 MASTER_SITE_SUBDIR=	gcc/releases/gcc-${GCC_REV}
 DISTFILES=	gcc-core-${GCC_REV}${EXTRACT_SUFX} \

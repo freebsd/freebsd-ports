@@ -9,7 +9,7 @@
 PORTNAME=	gcc
 PORTVERSION=	2.95.3
 CATEGORIES=	lang java
-MASTER_SITES=	ftp://egcs.cygnus.com/pub/egcs/releases/%SUBDIR%/  \
+MASTER_SITES=	ftp://gcc.gnu.org/pub/%SUBDIR%/  \
 		${MASTER_SITE_SOURCEWARE}
 MASTER_SITE_SUBDIR=	gcc/releases/${PKGNAME}
 DISTFILES=	gcc-core-${GCC_REV}${EXTRACT_SUFX} \
