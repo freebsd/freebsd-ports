@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tool for processing trees (i.e. terms)
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
-ALL_TARGET=	# empty
+ALL_TARGET=
 
 MAN1=		kc.1
 PLIST_FILES=	bin/kc
