@@ -5,4 +5,4 @@ This supports several japanese kanji code such as 7-bit JIS, MS-kanji
 
 And this also supports `samba cap'ed japanese filename.
 
---- shige <shige@FreeBSD.org>
+Ported by shige@FreeBSD.org
