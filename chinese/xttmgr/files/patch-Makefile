@@ -1,0 +1,33 @@
+--- Makefile.orig	Thu May  8 08:41:13 2003
++++ Makefile	Mon Jun 23 22:44:18 2003
+@@ -1,16 +1,16 @@
+-FREETYPE_BASE=/usr
+-FREETYPE_INCL=$(FREETYPE_BASE)/include/freetype2
++FREETYPE_BASE=/usr/local
++FREETYPE_INCL=-I$(FREETYPE_BASE)/include/freetype2 -I$(FREETYPE_BASE)/include
+ FREETYPE_LIB=$(FREETYPE_BASE)/lib
+-prefix=/usr
++prefix=/usr/local
+ 
+ CC=gcc
+-CFLAGS=$(RPM_OPT_FLAGS) -Wall -pedantic -I$(FREETYPE_INCL)
++CFLAGS=$(RPM_OPT_FLAGS) -Wall -pedantic $(FREETYPE_INCL)
+ LDFALGS=-L$(FREETYPE_LIB) -lfreetype -lz
+ 
+ all: xttmgr
+ 
+ xttmgr: xttmgr.o
+-	$(CC) -o $@ $< $(LDFALGS)
++	$(CC) -o $@ xttmgr.o $(LDFALGS)
+ 
+ xttmgr.o: xttmgr.c
+ 
+@@ -18,7 +18,7 @@
+ 	-rm -f *.o core xttmgr
+ 
+ install:
+-	-install -s -m 755 xttmgr $(DESTDIR)$(prefix)/sbin/xttmgr
++	-install -s -m 755 xttmgr $(DESTDIR)$(prefix)/bin/xttmgr
+ 
+ uninstall:
+ 	-rm -f /usr/sbin/xttmgr

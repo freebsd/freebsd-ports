@@ -108,6 +108,7 @@
     SUBDIR += xmms
     SUBDIR += xpdf
     SUBDIR += xsim
+    SUBDIR += xttmgr
     SUBDIR += zhcon
 
 .include <bsd.port.subdir.mk>
