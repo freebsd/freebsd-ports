@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	opengk
-PORTVERSION=	1.2.3
+PORTVERSION=	1.3.3
 CATEGORIES=	net
 MASTER_SITES=	http://www.openh323.org/bin/ \
 		http://www.de.openh323.org/bin/ \
