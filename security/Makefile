@@ -145,6 +145,7 @@
     SUBDIR += ifd-slb_rf60
     SUBDIR += ike-scan
     SUBDIR += integrit
+    SUBDIR += ipfilter2dshield
     SUBDIR += ipfmeta
     SUBDIR += ipfw2dshield
     SUBDIR += isakmpd

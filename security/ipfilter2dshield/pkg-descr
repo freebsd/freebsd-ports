@@ -1,0 +1,17 @@
+This perl script is an official DShield client who's purpose is to 
+read your FreeBSD ipfilter firewall ipmon log file and convert the
+log records to the standard DShield reporting record format, and 
+imbed the converted log records into the body of an email that gets 
+sent to DShield for automatic addition to their database and abuse 
+reporting to the offenders ISP if you are an subscribed DShield member.
+
+Script contains user customable defaults which can be overridden with
+command line flags. (visit http://www.dshield.org for details).
+
+Script is installed into /usr/local/sbin where you can edit the
+defaults to meet your requirements. Issue rehash command to enable.
+
+WWW: http://www.dshield.org/linux_clients.php#freebsd
+
+Joe Barbish
+fbsd_user@a1poweruser.com

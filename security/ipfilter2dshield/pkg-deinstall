@@ -1,0 +1,15 @@
+#!/bin/sh
+
+PREFIX=%%PREFIX%%
+PORTNAME=%%PORTNAME%%
+DISTNAME=%%DISTNAME%%
+
+# Restore the original script to undo any customization and thus 
+# to allow clean deinstallation. 
+# 
+if [ -f ${PREFIX}/etc/${PORTNAME}/${DISTNAME}.dist ]; then
+    install -o root -g wheel -m 760 \
+	${PREFIX}/etc/${PORTNAME}/${DISTNAME}.dist ${PREFIX}/sbin/${DISTNAME}
+fi
+
+exit 0

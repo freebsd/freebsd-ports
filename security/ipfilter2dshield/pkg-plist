@@ -1,0 +1,3 @@
+etc/ipfilter2dshield/dshield-freebsd.pl.dist
+sbin/dshield-freebsd.pl
+@dirrm etc/ipfilter2dshield
