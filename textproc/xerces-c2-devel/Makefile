@@ -55,9 +55,11 @@ MAKE_ENV+=		XERCESCROOT=${WRKSRC}
 GNU_CONFIGURE=		yes
 CONFIGURE_ENV+=		XERCESCROOT=${WRKSRC} TRANSCODER=${TRANSCODER}
 CONFIGURE_SCRIPT=	runConfigure
-CONFIGURE_ARGS?=	-p freebsd -c ${CC} -x ${CXX} -n socket -P ${PREFIX}
+CONFIGURE_ARGS+=	-p freebsd -c ${CC} -x ${CXX} -n socket -P ${PREFIX}
 
 CONFIGURE_ARGS+=	-t ${TRANSCODER}
+
+.include <bsd.port.pre.mk>
 
 .if defined(NO_THREADS)
 CONFIGURE_ARGS+=	-r none
@@ -73,7 +75,7 @@ PLIST_SUB+=	NO_SAMPLES=""
 ALL_TARGET?=	all samples
 XERCES_BINS?=	CreateDOMDocument DOMCount DOMPrint EnumVal MemParse PParse \
 	Redirect SAX2Count SAX2Print SAXCount SAXPrint SEnumVal StdInParse
-SAMPLES_CONFIG_ARGS?=	-p freebsd -x g++
+SAMPLES_CONFIG_ARGS+=	-p freebsd -c ${CC} -x ${CXX}
 .if defined(NO_THREADS)
 SAMPLES_CONFIG_ARGS+=	-r none
 .endif
@@ -143,4 +145,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -1,0 +1,14 @@
+# Date created:		26 December 2002
+# Whom:			"Bjoern A. Zeeb" (bzeeb+freebsdports@zabbadoz.net)
+#
+# $FreeBSD$
+#
+
+# When there are no probs with libc_r / pthreads on sparc64-freebsd we
+# should remove this files or make it conditional on OSVERSION
+NO_THREADS=	yes
+
+# set bitsToBuild to 64
+CONFIGURE_ARGS+=	-b 64
+SAMPLES_CONFIG_ARGS+=	-b 64
+

@@ -1,0 +1,12 @@
+--- src/xercesc/util/Transcoders/IconvFBSD/IconvFBSDTransService.cpp.orig	Tue Aug 27 09:24:38 2002
++++ src/xercesc/util/Transcoders/IconvFBSD/IconvFBSDTransService.cpp	Sun Jan 12 01:44:04 2003
+@@ -1091,7 +1091,8 @@
+ 	// perform conversion
+ 	wLent *= uChSize();
+ 	char	*ptr = retVal;
+-	size_t	rc = iconvTo(wideCharBuf, &wLent, &ptr, neededLen);
++	size_t	tmpwLent = wLent;
++	size_t	rc = iconvTo(wideCharBuf, &tmpwLent, &ptr, neededLen);
+ 	if (rc == (size_t)-1) {
+ 	    if (wBufPtr)
+ 		delete [] wBufPtr;
