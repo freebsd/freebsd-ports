@@ -92,7 +92,7 @@ LIBWWW_PREFIX?=	${LOCALBASE}
 LIBT1_PREFIX?=	${LOCALBASE}
 TEXMF_TREE=	${PREFIX}/share/texmf
 .if defined(WITH_DVIPSK)
-EXCLUDE_DVIPSK=	
+EXCLUDE_DVIPSK=	# none
 .else
 EXCLUDE_DVIPSK=	--exclude 'dvips/base/*'
 .endif
