@@ -17,7 +17,7 @@ COMMENT=	Media player for KDE
 LIB_DEPENDS=	artsgui:${PORTSDIR}/multimedia/kdemultimedia3
 
 .if defined(WITH_GSTREAMER)
-LIB_DEPENDS+=	gstplay-0.6.1:${PORTSDIR}/multimedia/gstreamer-plugins
+LIB_DEPENDS+=	gstplay-0.8.1:${PORTSDIR}/multimedia/gstreamer-plugins
 .else
 CONFIGURE_ARGS=	--without-gstreamer
 .endif
