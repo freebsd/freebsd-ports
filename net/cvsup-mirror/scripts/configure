@@ -92,7 +92,7 @@ else
     domestic=no
 fi
 
-host=$(ask "Master site for your non-crypto updates" freefall.freebsd.org)
+host=$(ask "Master site for your non-crypto updates" cvsup-master.freebsd.org)
 if [ ${domestic} = yes ]; then
     dflt_host_crypto=${host}
 else
