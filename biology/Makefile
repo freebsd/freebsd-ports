@@ -4,7 +4,6 @@
     COMMENT = Biology
 
     SUBDIR += L-Breeder
-    SUBDIR += act
     SUBDIR += ariadne
     SUBDIR += artemis
     SUBDIR += avida
