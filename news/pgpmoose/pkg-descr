@@ -1,0 +1,27 @@
+PGP Moose
+=========
+by Greg Rose <ggr@usenix.org>
+
+The aim of this software is to monitor the news
+postings of moderators of USENET newsgroups, and to
+automatically cancel forged messages purporting to
+be approved.  This can be extended to the approvals
+of individual users to automatically cancel messages
+that appear without having been authorised by the
+user. This has (obviously) been prompted by the
+recent spammings and other events.
+
+This software and protocol is designed around
+cryptographic signatures.  The protocol is designed
+to allow the use of different signature techniques.
+This implemention assumes the use of PGP signatures,
+but can be easily modified to use others, such as
+the Digital Signature Standard.  PGP was chosen for
+its widespread availability around the world.
+
+PGP, the crux of the cryptographic software, was
+written by Phil Zimmermann <prz@acm.org>, who
+otherwise has nothing to do with this. The
+cryptographic framework was written by Greg Rose
+<ggr@usenix.org>, as were the INN news system
+hooks.
