@@ -16,7 +16,7 @@ EXTRACT_ONLY=	${PORTNAME}-${GV_VERSION}.tgz
 
 MAINTAINER=	perky@FreeBSD.org
 
-BUILD_DEPENDS=	${SWIG_CMD}:${PORTSDIR}/devel/SWIG
+BUILD_DEPENDS=	${SWIG_CMD}:${PORTSDIR}/devel/swig13
 
 NO_CDROM=	"Can't be included in a commercial product"
 
@@ -26,7 +26,7 @@ GV_VERSION?=	1.7.7
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-SWIG_CMD=	${LOCALBASE}/bin/swig
+SWIG_CMD=	${LOCALBASE}/bin/swig1.3
 PLIST_SUB=	PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR:S,^${LOCALBASE}/,,g}
 
 post-patch:

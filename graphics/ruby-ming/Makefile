@@ -14,7 +14,7 @@ DISTFILES=	# none
 
 MAINTAINER=	knu@FreeBSD.org
 
-BUILD_DEPENDS=	swig1.3:${PORTSDIR}/devel/SWIG-devel \
+BUILD_DEPENDS=	${SWIG}:${PORTSDIR}/devel/swig13 \
 		${NONEXISTENT}:${PORTSDIR}/graphics/ming:patch
 LIB_DEPENDS=	ming.3:${PORTSDIR}/graphics/ming
 
@@ -25,7 +25,7 @@ MD5_FILE=	${.CURDIR}/../ming/distinfo
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/rb_ext
 CONFIGURE_ARGS=	--with-ming-include="${LOCALBASE}/include/ming"
-MAKE_ARGS=	 SWIG="${SWIG}"
+MAKE_ARGS=	SWIG="${SWIG}"
 INSTALL_TARGET=	site-install
 
 SWIG=		swig1.3
