@@ -8,7 +8,7 @@
 PORTNAME=	mod_cgi_debug
 PORTVERSION=	0.7
 CATEGORIES=	www
-MASTER_SITES=	http://www.tangent.org/mod_cgi_debug/
+MASTER_SITES=	http://software.tangent.org/download/
 
 MAINTAINER=	ports@FreeBSD.org
 
