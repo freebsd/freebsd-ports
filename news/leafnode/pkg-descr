@@ -1,5 +1,4 @@
 Leafnode v1.4 is a simple NNTP server designed for small sites.
-It does NOT have NOV support.
 
 It "learns" which newsgroups should be downloaded based on what's
 accessed.

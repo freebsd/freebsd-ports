@@ -1,10 +1,9 @@
-share/doc/leafnode/COPYING
-share/doc/leafnode/INSTALL
-share/doc/leafnode/README
+bin/newsq
 lib/leafnode/config.example
-sbin/fetch-news
 sbin/leafnode
+sbin/fetch
+sbin/fetch-news
 sbin/texpire
 sbin/checkgroups
-@dirrm share/doc/leafnode
-@unexec rm -rf /var/run/news
+sbin/applyfilter
+@dirrm lib/leafnode
