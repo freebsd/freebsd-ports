@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gave
-PORTVERSION=	1.1.4
-PORTREVISION=	1
+PORTVERSION=	1.2.1
 CATEGORIES=	science graphics ruby
 MASTER_SITES=	http://ruby.gfd-dennou.org/products/gave/
 DIST_SUBDIR=	ruby
@@ -41,9 +40,9 @@ DOCS=		ChangeLog README
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/gave
+	${MKDIR} ${DOCSDIR}
 .for f in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/share/doc/gave
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
 .endif
 

@@ -1,13 +1,15 @@
 bin/gave
 %%RUBY_SITELIBDIR%%/numru/gave/draw.rb
+%%RUBY_SITELIBDIR%%/numru/gave/draw_dcl.rb
+%%RUBY_SITELIBDIR%%/numru/gave/draw_vtk.rb
 %%RUBY_SITELIBDIR%%/numru/gave/fileselection.rb
 %%RUBY_SITELIBDIR%%/numru/gave/gave_config.rb
 @dirrm %%RUBY_SITELIBDIR%%/numru/gave
 @unexec rmdir %B 2>/dev/null || true
-share/gave/glade/fileselection.glade
-@dirrm share/gave/glade
-@dirrm share/gave
+%%DATADIR%%/glade/fileselection.glade
+@dirrm %%DATADIR%%/glade
+@dirrm %%DATADIR%%
 share/locale/ja/LC_MESSAGES/gave.mo
-%%PORTDOCS%%share/doc/gave/ChangeLog
-%%PORTDOCS%%share/doc/gave/README
-%%PORTDOCS%%@dirrm share/doc/gave
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
