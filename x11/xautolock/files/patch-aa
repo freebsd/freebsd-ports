@@ -1,6 +1,9 @@
---- xautolock.c.orig	Thu Oct 30 19:41:58 1997
-+++ xautolock.c	Thu Mar 12 10:52:02 1998
-@@ -248,6 +248,8 @@
+
+$FreeBSD$
+
+--- xautolock.c.orig	Thu Mar 11 23:43:25 1999
++++ xautolock.c	Sun Aug 22 17:45:10 2004
+@@ -297,6 +297,8 @@
   *  with vroot.h, because it needs to know the real root window.
   */
  
@@ -9,7 +12,7 @@
  #if defined(hpux) || defined (__hpux)
  #ifndef _HPUX_SOURCE
  #define _HPUX_SOURCE
-@@ -308,7 +310,9 @@
+@@ -368,7 +370,9 @@
  #endif /* !NOSTDHDRS */
  
  #if !defined (apollo) && !defined (VMS)
@@ -19,7 +22,17 @@
  #include <unistd.h>
  #endif /* !apollo && !VMS */
  
-@@ -1842,7 +1846,9 @@
+@@ -1970,7 +1974,8 @@
+ #ifdef __GNUC__
+ 	default: /* Makes gcc -Wall shut up. */
+ #endif /* __GNUC__ */
+-      }
++      break;
++	}
+     }
+   }
+   else
+@@ -2028,7 +2033,9 @@
  #else /* VMS */
    if (locker_pid)
    {
