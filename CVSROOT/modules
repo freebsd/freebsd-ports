@@ -5529,6 +5529,7 @@ meshviewer	ports/graphics/meshviewer
 mess822		ports/mail/mess822
 messagewall	ports/mail/messagewall
 meta-cvs	ports/devel/meta-cvs
+metabar		ports/deskutils/metabar
 metacity	ports/x11-wm/metacity
 metacity-aluminumalloy-cryogenic-theme	ports/x11-themes/metacity-aluminumalloy-cryogenic-theme
 metacity-aluminumalloy-smog-theme	ports/x11-themes/metacity-aluminumalloy-smog-theme
