@@ -1,0 +1,11 @@
+--- lcx11.cxx.orig	Thu Feb 25 20:17:54 1999
++++ lcx11.cxx	Sat Sep 25 17:47:12 1999
+@@ -715,7 +715,7 @@
+ #ifdef USE_IMAGES
+   Fgl_putbox_low (display.win, 0, 0,
+ 		  x1, y1, x2 - x1, y2 - y1,
+-		  pixmap, (640 + BORDERX),
++		  (unsigned char*)pixmap, (640 + BORDERX),
+ 		  x1, y1);
+ #else
+   int x, y;

@@ -1,0 +1,8 @@
+--- main.cxx.orig	Thu Feb 25 20:17:54 1999
++++ main.cxx	Sat Sep 25 17:56:44 1999
+@@ -780,5 +780,4 @@
+   if ((dp = opendir (dir)) == NULL)
+     {
+-      closedir (dp);
+       return 0;
+     }
