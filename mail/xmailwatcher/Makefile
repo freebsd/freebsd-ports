@@ -18,6 +18,6 @@ MAN1=			xmailwatcher.1
 USE_IMAKE=		yes
 
 post-install:
-	strip ${PREFIX}/bin/xmailwatcher
+	${STRIP_CMD} ${PREFIX}/bin/xmailwatcher
 
 .include <bsd.port.mk>

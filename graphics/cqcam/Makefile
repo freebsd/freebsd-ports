@@ -40,7 +40,7 @@ BROKEN=         "Does not compile"
 
 post-install:
 .for file in cqcam gtkcam webcam xcqcam
-	@strip ${PREFIX}/bin/${file}
+	@${STRIP_CMD} ${PREFIX}/bin/${file}
 .endfor
 	${INSTALL_MAN} ${WRKSRC}/docs/cqcam.1 ${MANPREFIX}/man/man1
 	@${MKDIR} ${PREFIX}/share/examples/cqcam

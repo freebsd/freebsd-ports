@@ -77,7 +77,7 @@ post-install:
 	${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${EGCS_REV}/cpp \
 	${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${EGCS_REV}/collect2 \
 	${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${EGCS_REV}/f771 ; \
-		do strip $$prog ; \
+		do ${STRIP_CMD} $$prog ; \
 		done)
 	${LN} -f ${PREFIX}/bin/gcc ${PREFIX}/bin/egcc
 	${LN} -f ${PREFIX}/bin/g++ ${PREFIX}/bin/eg++

@@ -124,7 +124,7 @@ post-install:
 			${PREFIX}/sbin/nqsmkdirs	${PREFIX}/sbin/nqsmkfile \
 			${PREFIX}/sbin/nqsmktrans	${PREFIX}/sbin/nqssetargv \
 			${PREFIX}/sbin/pipeclient	${PREFIX}/sbin/shlexefai; \
-	strip	${PREFIX}/bin/nmapmgr		${PREFIX}/bin/qacct \
+	${STRIP_CMD}	${PREFIX}/bin/nmapmgr		${PREFIX}/bin/qacct \
 			${PREFIX}/bin/qalter		${PREFIX}/bin/qcat \
 			${PREFIX}/bin/qdel			${PREFIX}/bin/qdev \
 			${PREFIX}/bin/qhold			${PREFIX}/bin/qlimit \

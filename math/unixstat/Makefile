@@ -43,7 +43,7 @@ do-build:
 	@(cd ${WRKSRC}/src; ${SETENV} ${MAKE_ENV} make ${MAKE_ARGS})
 
 do-install:
-	@strip ${WRKSRC}/bin/*
+	@${STRIP_CMD} ${WRKSRC}/bin/*
 	@${INSTALL_PROGRAM} ${WRKSRC}/bin/* ${PREFIX}/bin
 	@${INSTALL_MAN} ${WRKSRC}/man/*.1 ${PREFIX}/man/man1
 

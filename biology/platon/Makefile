@@ -46,7 +46,7 @@ pre-patch:
 	(cd ${WRKDIR}/${DISTNAME} && ${GUNZIP_CMD} xdrvr.c.gz)
 
 pre-install:
-	strip ${WRKDIR}/${DISTNAME}/platon
+	${STRIP_CMD} ${WRKDIR}/${DISTNAME}/platon
 	${RM} -f ${PREFIX}/bin/pluton
 	${RM} -rf ${PREFIX}/share/doc/platon
 	${MKDIR} ${PREFIX}/share/doc/platon

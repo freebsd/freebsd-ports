@@ -32,7 +32,7 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/ngetlite.1 ${PREFIX}/man/man1
 
 post-install:
-	strip ${PREFIX}/bin/nget
-	strip ${PREFIX}/bin/ngetlite
+	${STRIP_CMD} ${PREFIX}/bin/nget
+	${STRIP_CMD} ${PREFIX}/bin/ngetlite
 
 .include <bsd.port.post.mk>

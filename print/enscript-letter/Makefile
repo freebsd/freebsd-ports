@@ -47,7 +47,7 @@ A4_PAPERSIZE=0
 
 post-install:
 .for file in enscript mkafmmap states
-	strip ${PREFIX}/bin/${file}
+	${STRIP_CMD} ${PREFIX}/bin/${file}
 .endfor
 
 .include <bsd.port.mk>

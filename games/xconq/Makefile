@@ -35,7 +35,7 @@ PLIST_SUB=	SCOREDIR=${SCOREDIR}
 
 post-install:
 .for file in xconq imf2x x2imf ximfapp
-	strip ${PREFIX}/bin/${file}
+	${STRIP_CMD} ${PREFIX}/bin/${file}
 .endfor
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/xconq/doc

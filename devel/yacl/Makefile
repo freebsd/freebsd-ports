@@ -54,7 +54,7 @@ do-install:
 	@${ECHO} "variable to ${PREFIX}/share/yacl!"
 
 post-install:
-	@strip ${PREFIX}/share/yacl/apps/bmpview
-	@strip ${PREFIX}/share/yacl/apps/dlged
+	@${STRIP_CMD} ${PREFIX}/share/yacl/apps/bmpview
+	@${STRIP_CMD} ${PREFIX}/share/yacl/apps/dlged
 
 .include <bsd.port.post.mk>

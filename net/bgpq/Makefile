@@ -17,6 +17,6 @@ MAN8=		bgpq.8
 HAS_CONFIGURE=	yes
 
 post-install:
-	strip ${PREFIX}/bin/bgpq
+	${STRIP_CMD} ${PREFIX}/bin/bgpq
 
 .include <bsd.port.mk>

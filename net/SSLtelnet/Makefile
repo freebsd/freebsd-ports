@@ -28,7 +28,7 @@ pre-install:
 	${MKDIR} ${OPENSSLDIR}/certs
 
 post-install:
-	strip $(PREFIX)/bin/telnet
-	strip $(PREFIX)/libexec/telnetd
+	${STRIP_CMD} $(PREFIX)/bin/telnet
+	${STRIP_CMD} $(PREFIX)/libexec/telnetd
 
 .include <bsd.port.mk>

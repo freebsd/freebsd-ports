@@ -49,7 +49,7 @@ do-build:
 post-install:
 	@for i in kpsewhich dmp bibtex dvicopy dvitomp dvitype gftodvi gftopk \
 	  gftype mf mft patgen pktogf pktype pltotf pooltype tangle tex tftopl \
-	  vftovp vptovf weave; do strip ${PREFIX}/bin/$$i; done
+	  vftovp vptovf weave; do ${STRIP_CMD} ${PREFIX}/bin/$$i; done
 	@${RM} -f ${PREFIX}/bin/mpostf ${PREFIX}/bin/inimpost ${PREFIX}/bin/virmpost  ${PREFIX}/bin/latex \
 	  ${PREFIX}/share/texmf/web2c/mpost.mem ${PREFIX}/share/texmf/web2c/plain.mem \
 	  ${PREFIX}/share/texmf/web2c/mp.pool ${PREFIX}/bin/mpost ${PREFIX}/bin/mpto

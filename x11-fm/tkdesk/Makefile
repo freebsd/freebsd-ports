@@ -32,7 +32,7 @@ pre-install:
 	@find ${WRKSRC} -type f -name '*.orig' -exec ${RM} -f {} ';'
 
 post-install:
-	strip ${PREFIX}/bin/tkdesksh
-	strip ${PREFIX}/bin/tkdeskclient
+	${STRIP_CMD} ${PREFIX}/bin/tkdesksh
+	${STRIP_CMD} ${PREFIX}/bin/tkdeskclient
 
 .include <bsd.port.mk>

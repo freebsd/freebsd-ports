@@ -21,6 +21,6 @@ HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}
 
 post-install:
-	strip ${PREFIX}/bin/smssend
+	${STRIP_CMD} ${PREFIX}/bin/smssend
 
 .include <bsd.port.mk>

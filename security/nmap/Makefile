@@ -36,7 +36,7 @@ INSTALL_TARGET?=	install-nmap
 
 .if !target(post-install) && (${PORTNAME} == "nmap")
 post-install:
-	@strip ${PREFIX}/bin/nmap
+	@${STRIP_CMD} ${PREFIX}/bin/nmap
 .endif
 
 .include <bsd.port.post.mk>

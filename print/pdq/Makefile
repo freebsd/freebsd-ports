@@ -23,7 +23,7 @@ MAN5=		printrc.5
 
 post-install:
 .for file in lpd_cancel lpd_print lpd_status pdq xpdq
-	@strip ${PREFIX}/bin/${file}
+	@${STRIP_CMD} ${PREFIX}/bin/${file}
 .endfor
 	@${SED} 's|%%PREFIX%%|${PREFIX}|g' ${PKGMESSAGE}
 

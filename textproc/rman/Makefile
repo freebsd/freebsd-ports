@@ -17,6 +17,6 @@ COMMENT=	Reverse compile man pages from formatted form
 MAN1=		rman.1
 
 post-install:
-	@strip ${PREFIX}/bin/rman
+	@${STRIP_CMD} ${PREFIX}/bin/rman
 
 .include <bsd.port.mk>

@@ -30,7 +30,7 @@ post-patch:
 	    ${WRKSRC}/fping.c
 
 post-install:
-	@strip ${PREFIX}/sbin/fping
+	@${STRIP_CMD} ${PREFIX}/sbin/fping
 	@${CHMOD} 4555 ${PREFIX}/sbin/fping
 
 .include <bsd.port.mk>

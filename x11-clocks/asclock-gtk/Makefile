@@ -30,6 +30,6 @@ do-configure:
 .endif
 
 post-install:
-	@strip ${PREFIX}/bin/asclock
+	@${STRIP_CMD} ${PREFIX}/bin/asclock
 
 .include <bsd.port.mk>

@@ -26,6 +26,6 @@ pre-configure:
 			s@automake\)@${AUTOMAKE})@g" ${WRKSRC}/aclocal.m4
 
 post-install:
-	strip ${PREFIX}/bin/gnatdist
+	${STRIP_CMD} ${PREFIX}/bin/gnatdist
 
 .include <bsd.port.mk>

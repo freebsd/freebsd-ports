@@ -22,6 +22,6 @@ USE_X_PREFIX=	yes
 CONFIGURE_ARGS+=	--with-lzo-lib=${LOCALBASE}
 
 post-install:
-	strip ${PREFIX}/bin/dxpc
+	${STRIP_CMD} ${PREFIX}/bin/dxpc
 
 .include <bsd.port.mk>

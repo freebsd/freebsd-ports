@@ -25,6 +25,6 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/coolmail.man ${PREFIX}/man/man1/coolmail.1
 
 post-install:
-	strip ${PREFIX}/bin/coolmail
+	${STRIP_CMD} ${PREFIX}/bin/coolmail
 
 .include <bsd.port.mk>

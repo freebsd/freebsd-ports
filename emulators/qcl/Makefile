@@ -24,6 +24,6 @@ BROKEN=		"Does not compile (bad C++ code)"
 .endif
 
 post-install:
-	strip ${PREFIX}/bin/qcl
+	${STRIP_CMD} ${PREFIX}/bin/qcl
 
 .include <bsd.port.post.mk>

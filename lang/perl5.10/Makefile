@@ -202,7 +202,7 @@ post-patch:
 		> ${WRKDIR}/use.perl
 
 post-install:
-	@strip ${PREFIX}/bin/perl ${PREFIX}/bin/suidperl
+	@${STRIP_CMD} ${PREFIX}/bin/perl ${PREFIX}/bin/suidperl
 	@${LN} -sf ${PREFIX}/bin/perl ${PREFIX}/bin/perl5
 	@${LN} -sf ${PREFIX}/bin/perl ${PREFIX}/bin/perl${PERL_VER}
 	${INSTALL_SCRIPT} ${WRKDIR}/use.perl ${PREFIX}/bin/use.perl

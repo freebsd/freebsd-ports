@@ -21,6 +21,6 @@ MAN5=		ipfm.conf.5
 MAN8=		ipfm.8
 
 post-install:
-	@strip ${PREFIX}/sbin/ipfm
+	@${STRIP_CMD} ${PREFIX}/sbin/ipfm
 
 .include <bsd.port.mk>

@@ -32,6 +32,6 @@ INSTALL_TARGET=	install install-man
 MAN1=		vat.1
 
 post-install:
-	strip ${PREFIX}/bin/vat
+	${STRIP_CMD} ${PREFIX}/bin/vat
 
 .include <bsd.port.mk>

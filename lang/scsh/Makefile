@@ -28,7 +28,7 @@ MAN1=		scsh.1
 STRIP=
 
 post-install:
-	@strip ${PREFIX}/bin/scsh
+	@${STRIP_CMD} ${PREFIX}/bin/scsh
 .if !defined(NOPORTDOCS)
 	@(cd ${WRKSRC} && \
 	 ${INSTALL_DATA} README RELEASE COPYING ${PREFIX}/lib/scsh/doc)

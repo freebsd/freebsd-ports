@@ -37,10 +37,10 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/../webstone  ${PREFIX}/webstone-ssl
 	@${MKDIR} ${WRKSRC}/../bin/runs
 .for file in webclient webmaster genrand
-	strip ${PREFIX}/webstone-ssl/bin/${file}
+	${STRIP_CMD} ${PREFIX}/webstone-ssl/bin/${file}
 .endfor
 .for file in ws20_cgi ws25_cgi
-	strip ${PREFIX}/webstone-ssl/lgm/${file}
+	${STRIP_CMD} ${PREFIX}/webstone-ssl/lgm/${file}
 .endfor
 
 post-install:

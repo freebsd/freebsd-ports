@@ -29,6 +29,6 @@ post-patch:
 	${REINPLACE_CMD} -e "s@wish -f@wish8.2 -f@g" ${WRKSRC}/accessx
 
 post-install:
-	strip ${PREFIX}/bin/ax
+	${STRIP_CMD} ${PREFIX}/bin/ax
 
 .include <bsd.port.mk>

@@ -9,7 +9,7 @@ install:
 	chmod a+rx ${PREFIX}/bin/spice3 ${PREFIX}/bin/nutmeg \
 	  ${PREFIX}/bin/sconvert ${PREFIX}/bin/help	\
 	  ${PREFIX}/bin/proc2mod ${PREFIX}/bin/multidec
-	strip ${PREFIX}/bin/spice3 ${PREFIX}/bin/nutmeg	\
+	${STRIP_CMD} ${PREFIX}/bin/spice3 ${PREFIX}/bin/nutmeg	\
 	  ${PREFIX}/bin/sconvert ${PREFIX}/bin/help \
 	  ${PREFIX}/bin/proc2mod ${PREFIX}/bin/multidec
 	chmod -R a+rX ${PREFIX}/share/spice

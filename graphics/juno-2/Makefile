@@ -82,7 +82,7 @@ do-install:
 	    (cd ${WRKSRC}/$${i} && ${PREFIX}/bin/m3build && \
 		${PREFIX}/bin/m3ship) \
 	done
-	@for i in ${PROGS}; do strip ${PREFIX}/$$i; done
+	@for i in ${PROGS}; do ${STRIP_CMD} ${PREFIX}/$$i; done
 	@${ECHO_MSG} "Installing examples into ${PREFIX}/share/examples/Juno"
 	@${MKDIR} ${PREFIX}/share/examples/Juno
 	@${CP} -R ${WRKSRC}/juno-app/juno-src/* ${PREFIX}/share/examples/Juno

@@ -112,12 +112,12 @@ post-install:
 #	cd ${WRKSRC}/src; make install-pinger
 .for file in client squid
 	if [ -f ${PREFIX}/sbin/${file} ] ; then \
-		strip ${PREFIX}/sbin/${file} ; \
+		${STRIP_CMD} ${PREFIX}/sbin/${file} ; \
 	fi
 .endfor
 .for file in cachemgr.cgi dnsserver pinger unlinkd
 	if [ -f ${PREFIX}/libexec/${file} ] ; then \
-		strip ${PREFIX}/libexec/${file} ; \
+		${STRIP_CMD} ${PREFIX}/libexec/${file} ; \
 	fi
 .endfor
 	@if [ ! -d ${PREFIX}/squid/logs ]; then			\

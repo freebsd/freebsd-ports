@@ -84,7 +84,7 @@ post-install:
 		${TARGLIB}/cpp0 \
 		${TARGLIB}/collect2 \
 	; do \
-		strip $$prog ; \
+		${STRIP_CMD} $$prog ; \
 	done)
 	${MV} ${PREFIX}/bin/gcc ${PREFIX}/bin/gcc295
 	${MV} ${PREFIX}/bin/g++ ${PREFIX}/bin/g++295

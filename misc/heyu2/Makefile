@@ -31,7 +31,7 @@ pre-patch:
 	(cd ${WRKSRC} && ./Configure)
 
 post-install:
-	strip ${PREFIX}/bin/heyu
+	${STRIP_CMD} ${PREFIX}/bin/heyu
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/examples/heyu
 	${INSTALL_DATA} ${WRKSRC}/x10config ${PREFIX}/share/examples/heyu/x10config.sample

@@ -51,10 +51,10 @@ post-build:
 .endif
 
 post-install:
-	@strip ${LIBBINDIR}/cda
-	@strip ${LIBBINDIR}/gobrowser
-	@strip ${LIBBINDIR}/has_alsa
-	@strip ${LIBBINDIR}/xmcd
+	@${STRIP_CMD} ${LIBBINDIR}/cda
+	@${STRIP_CMD} ${LIBBINDIR}/gobrowser
+	@${STRIP_CMD} ${LIBBINDIR}/has_alsa
+	@${STRIP_CMD} ${LIBBINDIR}/xmcd
 	@${CAT} ${PKGMESSAGE}
 	@${CP} ${WRKSRC}/xmcd_d/XMcd.ad ${PREFIX}/lib/X11/app-defaults/XMcd
 .if ${XFREE86_VERSION} == 4

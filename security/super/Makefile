@@ -26,7 +26,7 @@ MAN1=		super.1 setuid.1
 MAN5=		super.5
 
 post-install:
-	@strip ${PREFIX}/bin/super ${PREFIX}/bin/setuid
+	@${STRIP_CMD} ${PREFIX}/bin/super ${PREFIX}/bin/setuid
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR} ${EXAMPLESDIR}
 	@${INSTALL_DATA} ${FILESDIR}/sample.tab ${FILESDIR}/sample.cdmount \

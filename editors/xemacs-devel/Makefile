@@ -109,7 +109,7 @@ pre-configure::
 
 post-install::
 .for file in b2m ctags ellcc etags gnuclient ootags xemacs-${XEMACS_REL}-b11
-	strip ${PREFIX}/bin/${file}
+	${STRIP_CMD} ${PREFIX}/bin/${file}
 .endfor
 	${RM} -f ${PREFIX}/bin/send-pr
 #.if defined(WANT_GTK)

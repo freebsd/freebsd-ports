@@ -116,7 +116,7 @@ post-install::
 .if !defined(MULE_COMMON)
 	${LN} -sf xemacs-${XEMACS_VER} ${PREFIX}/bin/xemacs21${BINNAMEEXT}
 .for file in b2m ctags etags gnuclient xemacs-${XEMACS_VER}
-	strip ${PREFIX}/bin/${file}
+	${STRIP_CMD} ${PREFIX}/bin/${file}
 .endfor
 .endif
 .if !defined(MULE_SLAVE)

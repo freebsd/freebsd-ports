@@ -66,7 +66,7 @@ post-install:
 	${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/2.8.1/cc1obj \
 	${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/2.8.1/cc1plus \
 	${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/2.8.1/cpp ; \
-		do strip $$prog ; \
+		do ${STRIP_CMD} $$prog ; \
 		done)
 	${LN} -f ${PREFIX}/bin/gcc ${PREFIX}/bin/gcc28
 	${LN} -f ${PREFIX}/bin/g++ ${PREFIX}/bin/g++28

@@ -48,7 +48,7 @@ HEADERFILES=		3way.h adler32.h aes.h algebra.h algparam.h arc4.h \
 			xormac.h xtr.h xtrcrypt.h zdeflate.h zinflate.h zlib.h
 
 pre-install:
-	strip ${WRKSRC}/cryptest
+	${STRIP_CMD} ${WRKSRC}/cryptest
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/cryptest ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/libcryptopp.a ${PREFIX}/lib

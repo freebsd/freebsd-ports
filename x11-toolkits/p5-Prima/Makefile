@@ -31,6 +31,6 @@ test: build
 	cd ${WRKSRC} && make test
 
 post-install:
-	strip ${PREFIX}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/auto/Prima/Prima.so
+	${STRIP_CMD} ${PREFIX}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/auto/Prima/Prima.so
 
 .include <bsd.port.mk>

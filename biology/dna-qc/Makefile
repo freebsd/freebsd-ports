@@ -32,7 +32,7 @@ post-patch:
 do-install:
 .for file in ${PROGRAMS}
 	${INSTALL_PROGRAM} ${WRKSRC}/${file} ${PREFIX}/bin
-	strip ${PREFIX}/bin/${file}
+	${STRIP_CMD} ${PREFIX}/bin/${file}
 .endfor
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}

@@ -39,7 +39,7 @@ post-install:
 	${CP} -R ${WRKSRC}/doc ${PREFIX}/${DISTNAME}
 .endif
 	${CP} -R ${WRKSRC}/include ${PREFIX}/${DISTNAME}
-	strip ${PREFIX}/${DISTNAME}/bchat \
+	${STRIP_CMD} ${PREFIX}/${DISTNAME}/bchat \
 		${PREFIX}/${DISTNAME}/bcrypt \
 		${PREFIX}/${DISTNAME}/bhide \
 		${PREFIX}/${DISTNAME}/bkey \

@@ -23,7 +23,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's:__PREFIX__:${PREFIX}:g' ${WRKSRC}/*.c ${WRKSRC}/*.1
 
 post-install:
-	strip ${PREFIX}/bin/tirc
+	${STRIP_CMD} ${PREFIX}/bin/tirc
 	${MKDIR} ${PREFIX}/share/tirc
 	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/dot.tircrc ${PREFIX}/share/tirc/tircrc
 

@@ -23,6 +23,6 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/balance.1 ${PREFIX}/man/man1
 
 post-install:
-	@strip ${PREFIX}/bin/balance
+	@${STRIP_CMD} ${PREFIX}/bin/balance
 
 .include <bsd.port.mk>

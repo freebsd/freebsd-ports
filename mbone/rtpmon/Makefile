@@ -25,6 +25,6 @@ pre-configure:
 	@cd ${WRKSRC}; ${CHMOD} +w configure; autoconf
 
 post-install:
-	strip ${PREFIX}/bin/rtpmon
+	${STRIP_CMD} ${PREFIX}/bin/rtpmon
 
 .include <bsd.port.mk>

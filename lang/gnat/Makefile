@@ -245,7 +245,7 @@ post-install:
 	    ${PREFIX}/lib/gcc-lib/${GNUHOST}/${GCC_VERSION}/gnat1 \
 	    ${PREFIX}/lib/gcc-lib/${GNUHOST}/${GCC_VERSION}/cpp ; do \
 	    if [ -x $$prog ]; then \
-		strip $$prog ; \
+		${STRIP_CMD} $$prog ; \
 	    fi \
 	done)
 	@(${TOUCH} ${TOUCH_FLAGS} ${PREFIX}/lib/gcc-lib/${GNUHOST}/${GCC_VERSION}/include/float.h)

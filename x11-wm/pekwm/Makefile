@@ -26,6 +26,6 @@ CONFIGURE_ARGS+=	--enable-shape --disable-xft --disable-xinerama \
 MAN1=		pekwm.1
 
 post-install:
-	@strip ${PREFIX}/bin/pekwm
+	@${STRIP_CMD} ${PREFIX}/bin/pekwm
 
 .include <bsd.port.mk>

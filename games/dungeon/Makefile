@@ -54,7 +54,7 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/dungeon.6 ${PREFIX}/man/man6
 
 post-install:
-	strip ${PREFIX}/bin/dungeon
+	${STRIP_CMD} ${PREFIX}/bin/dungeon
 .if !defined(NOPORTDOCS)
 	${INSTALL_DATA} ${WRKSRC}/history ${PREFIX}/share/dungeon
 	${INSTALL_DATA} ${WRKSRC}/manifest ${PREFIX}/share/dungeon

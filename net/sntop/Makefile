@@ -21,7 +21,7 @@ GNU_CONFIGURE=	yes
 MAN1=		sntop.1
 
 post-install:
-	@strip ${PREFIX}/bin/sntop
+	@${STRIP_CMD} ${PREFIX}/bin/sntop
 	@cat ${PKGMESSAGE}
 
 .include <bsd.port.mk>

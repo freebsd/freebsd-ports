@@ -23,6 +23,6 @@ USE_X_PREFIX=	yes
 MANCOMPRESSED=	no
 
 post-install:
-	strip ${PREFIX}/bin/xtermset
+	${STRIP_CMD} ${PREFIX}/bin/xtermset
 
 .include <bsd.port.mk>

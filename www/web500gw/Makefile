@@ -36,7 +36,7 @@ MAN8=		web500gw.8
 WEB500GWDIR=	${PREFIX}/etc/web500gw
 
 post-install:
-	strip ${INSTDIR}/web500gw
+	${STRIP_CMD} ${INSTDIR}/web500gw
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

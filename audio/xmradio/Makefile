@@ -22,6 +22,6 @@ USE_XPM=	yes
 USE_MOTIF=	yes
 
 #post-install:
-#              strip ${PREFIX}/bin/xmradio
+#              ${STRIP_CMD} ${PREFIX}/bin/xmradio
 
 .include <bsd.port.mk>

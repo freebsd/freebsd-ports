@@ -162,7 +162,7 @@ pre-install:
 	 fi
 
 post-install:
-	strip ${PREFIX}/bin/${EMACS_EXECUTABLE}-${EMACS_VERSION}
+	${STRIP_CMD} ${PREFIX}/bin/${EMACS_EXECUTABLE}-${EMACS_VERSION}
 # for freewnn+sj3 or wnn6+sj3
 	@if [ -e ${PKGINSTALL} ]; then \
 		${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL; \

@@ -20,6 +20,6 @@ WRKSRC=		${WRKDIR}/bo
 GNU_CONFIGURE=	yes
 
 post-install:
-		strip ${PREFIX}/bin/bounix
+		${STRIP_CMD} ${PREFIX}/bin/bounix
 
 .include <bsd.port.mk>

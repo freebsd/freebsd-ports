@@ -43,10 +43,10 @@ CONFIGURE_ARGS+=	--without-ipv6
 
 post-install:
 .for BIN in lsh lsh-keygen lsh-writekey sexp-conv srp-gen lsh-decode-key
-	strip ${PREFIX}/bin/${BIN}
+	${STRIP_CMD} ${PREFIX}/bin/${BIN}
 .endfor
 .for SBIN in lshd
-	strip ${PREFIX}/sbin/${SBIN}
+	${STRIP_CMD} ${PREFIX}/sbin/${SBIN}
 .endfor
 	install-info ${PREFIX}/info/lsh.info ${PREFIX}/info/dir
 	install-info ${PREFIX}/info/nettle.info ${PREFIX}/info/dir

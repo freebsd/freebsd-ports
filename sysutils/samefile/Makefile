@@ -25,6 +25,6 @@ post-build:
 	cd ${WRKSRC}; ${MAKE} test
 
 post-install:
-	strip ${PREFIX}/bin/samefile
+	${STRIP_CMD} ${PREFIX}/bin/samefile
 
 .include <bsd.port.mk>
