@@ -7,16 +7,16 @@
 
 PORTNAME=	FlightGear
 PORTVERSION=	0.9.2
-BASEVERSION=	${PORTVERSION}
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.flightgear.org/pub/fgfs/Source/ \
 		ftp://ftp.flightgear.org/pub/fgfs/Shared/
-BASEFILE=	fgfs-base-${BASEVERSION}${EXTRACT_SUFX}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${BASEFILE}
 
 MAINTAINER=	des@FreeBSD.org
 COMMENT=	The FlightGear flight simulator
 
+BASEVERSION=	${PORTVERSION}
+BASEFILE=	fgfs-base-${BASEVERSION}${EXTRACT_SUFX}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${BASEFILE}
 BUILD_DEPENDS=	${X11BASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib \
 		${LOCALBASE}/lib/libmk4.a:${PORTSDIR}/databases/metakit \
 		${X11BASE}/include/simgear/threads/SGThread.hxx:${PORTSDIR}/devel/simgear \
@@ -26,6 +26,7 @@ RUN_DEPENDS=	${X11BASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib \
 		${X11BASE}/include/simgear/threads/SGThread.hxx:${PORTSDIR}/devel/simgear \
 		${X11BASE}/lib/libsgmisc.a:${PORTSDIR}/devel/simgear
 
+USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 # Force configure to look in /usr/local/{include,lib}
