@@ -1,0 +1,93 @@
+*** Makefile.orig	Sun Mar  6 21:32:46 1994
+--- Makefile	Fri Aug 11 16:00:41 1995
+***************
+*** 16,23 ****
+  #ADDON=addon.o
+  
+  # Use an ANSI compiler (or at least one that groks prototypes and void *):
+! CC=gcc -g -O
+! CFLAGS=
+  LDFLAGS=
+  
+  # You may substitute "bison -y" for yacc. (You want to choose the one that
+--- 16,23 ----
+  #ADDON=addon.o
+  
+  # Use an ANSI compiler (or at least one that groks prototypes and void *):
+! CC=gcc
+! CFLAGS= -O2
+  LDFLAGS=
+  
+  # You may substitute "bison -y" for yacc. (You want to choose the one that
+***************
+*** 29,34 ****
+--- 29,47 ----
+  	nalloc.o open.o print.o redir.o sigmsgs.o signal.o status.o tree.o \
+  	utils.o var.o version.o wait.o walk.o which.o y.tab.o
+  
++ all: rc history
++ 
++ install:
++ 	$(INSTALL) -c rc $(PREFIX)/bin
++ 	$(INSTALL) -c history/history $(PREFIX)/bin
++ 	for i in - -- -p --p; do rm -f $(PREFIX)/bin/$$i; ln $(PREFIX)/bin/history $(PREFIX)/bin/$$i; done
++ 	$(INSTALL) -c rc.1 $(PREFIX)/man/man1
++ 	$(INSTALL) -c history/history.1 $(PREFIX)/man/man1
++ 	strip $(PREFIX)/bin/rc
++ 	strip $(PREFIX)/bin/history
++ 	gzip -9nf $(PREFIX)/man/man1/rc.1
++ 	gzip -9nf $(PREFIX)/man/man1/history.1
++ 
+  # If rc is compiled with READLINE defined, you must supply the correct
+  # arguments to ld on this line. Typically this would be something like:
+  #
+*** builtins.c.orig	Sun Mar  6 21:32:49 1994
+--- builtins.c	Mon Jul 31 12:27:12 1995
+***************
+*** 466,477 ****
+  
+  #ifndef SYSVR4
+  extern int getrlimit(int, struct rlimit *);
+  extern int setrlimit(int, struct rlimit *);
+  #endif
+  
+  static void printlimit(const Limit *limit, bool hard) {
+  	struct rlimit rlim;
+! 	long lim;
+  	getrlimit(limit->flag, &rlim);
+  	if (hard)
+  		lim = rlim.rlim_max;
+--- 466,481 ----
+  
+  #ifndef SYSVR4
+  extern int getrlimit(int, struct rlimit *);
++ 
++ #ifndef __FreeBSD__
+  extern int setrlimit(int, struct rlimit *);
+  #endif
+  
++ #endif
++ 
+  static void printlimit(const Limit *limit, bool hard) {
+  	struct rlimit rlim;
+! 	u_quad_t lim;
+  	getrlimit(limit->flag, &rlim);
+  	if (hard)
+  		lim = rlim.rlim_max;
+***************
+*** 490,496 ****
+  	}
+  }
+  
+! static long parselimit(const Limit *limit, char *s) {
+  	char *t;
+  	int len = strlen(s);
+  	long lim = 1;
+--- 494,500 ----
+  	}
+  }
+  
+! static u_quad_t parselimit(const Limit *limit, char *s) {
+  	char *t;
+  	int len = strlen(s);
+  	long lim = 1;

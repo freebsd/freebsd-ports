@@ -1,0 +1,88 @@
+*** Makefile.orig	Tue May 30 06:14:14 1995
+--- Makefile	Fri Aug 11 16:02:11 1995
+***************
+*** 33,40 ****
+  SHELL	= /bin/sh
+  CC	= cc
+  #CC	= gcc
+! CFLAGS	= -g
+! #CFLAGS	= -g -O -Wall
+  LDFLAGS	=
+  LIBS	=
+  
+--- 33,40 ----
+  SHELL	= /bin/sh
+  CC	= cc
+  #CC	= gcc
+! #CFLAGS	= -g
+! CFLAGS	= -O2
+  LDFLAGS	=
+  LIBS	=
+  
+***************
+*** 52,57 ****
+--- 52,66 ----
+  	  tree.o util.o var.o vec.o version.o y.tab.o
+  OTHER	= Makefile parse.y mksignal
+  GEN	= esdump y.tab.c y.tab.h y.output token.h sigmsgs.c initial.c
++ 
++ all: es
++ 
++ install:
++ 	$(INSTALL) -c es $(PREFIX)/bin
++ 	$(INSTALL) -c esdebug $(PREFIX)/bin/esdebug
++ 	$(INSTALL) -c es.1 $(PREFIX)/man/man1
++ 	strip $(PREFIX)/bin/es
++ 	gzip -9nf $(PREFIX)/man/man1/es.1
+  
+  es	: ${OFILES} initial.o
+  	${CC} -o es ${LDFLAGS} ${OFILES} initial.o ${LIBS}
+*** esdebug~	Mon Jul 31 13:54:29 1995
+--- esdebug	Mon Jul 31 13:54:45 1995
+***************
+*** 1,4 ****
+! #! /bin/es -p
+  # esdebug: a debugger for es scripts ($Revision: 1.4 $)
+  
+  # TODO
+--- 1,4 ----
+! #!/usr/local/bin/es -p
+  # esdebug: a debugger for es scripts ($Revision: 1.4 $)
+  
+  # TODO
+*** prim-sys.c~	Mon Jul 31 16:20:31 1995
+--- prim-sys.c	Mon Jul 31 16:21:25 1995
+***************
+*** 194,200 ****
+  
+  static void printlimit(const Limit *limit, Boolean hard) {
+  	struct rlimit rlim;
+! 	long lim;
+  	getrlimit(limit->flag, &rlim);
+  	if (hard)
+  		lim = rlim.rlim_max;
+--- 194,200 ----
+  
+  static void printlimit(const Limit *limit, Boolean hard) {
+  	struct rlimit rlim;
+! 	u_quad_t lim;
+  	getrlimit(limit->flag, &rlim);
+  	if (hard)
+  		lim = rlim.rlim_max;
+***************
+*** 213,219 ****
+  	}
+  }
+  
+! static long parselimit(const Limit *limit, char *s) {
+  	long lim;
+  	char *t;
+  	const Suffix *suf = limit->suffix;
+--- 213,219 ----
+  	}
+  }
+  
+! static u_quad_t parselimit(const Limit *limit, char *s) {
+  	long lim;
+  	char *t;
+  	const Suffix *suf = limit->suffix;

@@ -1,0 +1,13 @@
+Es is an extensible shell.  The language was derived from the Plan 9
+shell, rc, and was influenced by functional programming languages,
+such as Scheme, and the Tcl embeddable programming language.  This
+implementation is derived from Byron Rakitzis's public domain
+implementation of rc.
+
+Es is in the public domain.  We hold no copyrights or patents on
+the source code, and do not place any restrictions on its distribution.
+We would appreciate it if any distributions do credit the authors.
+
+Enjoy!
+
+-- Paul Haahr & Byron Rakitzis

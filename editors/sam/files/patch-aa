@@ -1,0 +1,62 @@
+*** libXg/Makefile.orig	Fri Jul 28 14:02:17 1995
+--- libXg/Makefile	Fri Jul 21 15:03:43 1995
+***************
+*** 1,24 ****
+  #	Copyright (c) 1992 AT&T - All rights reserved.
+  #
+! #	Prototype Makefile for libXg
+  #
+- #	define operating system.  ONE of:
+- #		-DIRIX -DSUNOS -DUMIPS -DSYSVR3 -DAIX -DOSF1
+- #		-DHPUX -DAPOLLO -DCONVEX -DDYNIX
+- #	
+  #	Additionally, -D_POSIX_SOURCE (or its equivalent) may be specified
+  #	if your compiler supports posix-compatible compilation
+! OS=-DIRIX -ansiposix
+  
+  #	add -Iincludedir for any include directories that need to be searched
+! INCS=-I../include
+  
+  #	set this if your X libraries are in different locations
+  #	or if you need extra libraries to load with X11 applications
+! XLIBS=/usr/local/X11R5/lib/libXt.a /usr/local/X11R5/lib/libX11.a
+  
+  #	add name of library orderer - use ":" if none
+! RANLIB=:
+  
+  #	add name of librarian
+  AR=ar
+--- 1,23 ----
+  #	Copyright (c) 1992 AT&T - All rights reserved.
+  #
+! #	Prototype BSDi Makefile for libXg
+! #	Courtesy of Boyd Roberts
+! #
+! #	Define operating system type: -DBSDi
+  #
+  #	Additionally, -D_POSIX_SOURCE (or its equivalent) may be specified
+  #	if your compiler supports posix-compatible compilation
+! OS=-O2 -DBSDi
+  
+  #	add -Iincludedir for any include directories that need to be searched
+! INCS=-I../include -I/usr/X11R6/include
+  
+  #	set this if your X libraries are in different locations
+  #	or if you need extra libraries to load with X11 applications
+! XLIBS=/usr/X11/lib/libXt.a /usr/X11/lib/libX11.a
+  
+  #	add name of library orderer - use ":" if none
+! RANLIB=ranlib
+  
+  #	add name of librarian
+  AR=ar
+***************
+*** 50,56 ****
+  $(LIB):	$(OBJS)
+  	$(AR) rv $(LIB) $(OBJS)
+  	$(RANLIB) $(LIB)
+- 
+- $(LIB)(%.o): %.o
+  
+  $(OBJS):	../include/libg.h libgint.h ../include/libc.h
+--- 49,53 ----

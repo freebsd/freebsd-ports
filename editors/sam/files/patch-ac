@@ -1,0 +1,71 @@
+*** samterm/Makefile.orig	Fri Jul 28 14:09:32 1995
+--- samterm/Makefile	Fri Jul 21 15:30:09 1995
+***************
+*** 1,31 ****
+  #	Copyright (c) 1992 AT&T - All rights reserved.
+  #
+! #	Prototype Makefile for samterm
+  #
+- #	define operating system.  ONE of:
+- #		-DIRIX -DSUNOS -DUMIPS -DSYSVR3 -DAIX -DOSF1
+- #		-DHPUX -DAPOLLO -DCONVEX -DDYNIX
+- #	
+  #	Additionally, -D_POSIX_SOURCE (or its equivalent) may be specified
+  #	if your compiler supports posix-compatible compilation
+! OS=-DIRIX -ansiposix
+  
+  #	add -Iincludedir for any include directories that need to be searched
+  #	for posix header files (for UMIPS, add -I/usr/include/posix)
+! INCS=-I../include
+  
+  #	SAMTERM contains the name of the file containing the samterm
+  #	executable.  SAMTERMDIR is the directory where it is installed.
+  SAMTERM=samterm
+! SAMTERMDIR=/v/bin
+  
+  #	set this if your X libraries are in different locations
+  #	or if you need extra libraries to load with X11 applications
+! XLIBS=/usr/local/X11R5/lib/libXt.a /usr/local/X11R5/lib/libX11.a
+  
+  CFLAGS=$(OS) $(INCS) -D_LIBXG_EXTENSION
+  
+! LIBS=../libframe/libframe.a ../libXg/libXg.a
+  CC=cc
+  
+  OBJ=main.o flayer.o icons.o io.o menu.o mesg.o rasp.o scroll.o unix.o
+--- 1,35 ----
+  #	Copyright (c) 1992 AT&T - All rights reserved.
+  #
+! #	Prototype BSDi Makefile for samterm
+! #	Courtesy of Boyd Roberts
+! #
+! #	Define operating system type: -DBSDi
+  #
+  #	Additionally, -D_POSIX_SOURCE (or its equivalent) may be specified
+  #	if your compiler supports posix-compatible compilation
+! OS=-DBSDi -O2
+  
+  #	add -Iincludedir for any include directories that need to be searched
+  #	for posix header files (for UMIPS, add -I/usr/include/posix)
+! INCS=-I../include -I/usr/include/posix
+  
+  #	SAMTERM contains the name of the file containing the samterm
+  #	executable.  SAMTERMDIR is the directory where it is installed.
+  SAMTERM=samterm
+! SAMTERMDIR=$(PREFIX)/bin
+  
+  #	set this if your X libraries are in different locations
+  #	or if you need extra libraries to load with X11 applications
+! #XLIBS= /usr/X11R6/lib/libXt.a \
+! #      /usr/X11R6/lib/libSM.a \
+! #      /usr/X11R6/lib/libICE.a \
+! #      /usr/X11R6/lib/libX11.a
+! 
+! XLIBS=-L/usr/X11R6/lib -lXt -lSM -lICE -lX11
+  
+  CFLAGS=$(OS) $(INCS) -D_LIBXG_EXTENSION
+  
+! LIBS=../libframe/libframe.a ../libXg/libXg.a 
+  CC=cc
+  
+  OBJ=main.o flayer.o icons.o io.o menu.o mesg.o rasp.o scroll.o unix.o

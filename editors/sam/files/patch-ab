@@ -1,0 +1,46 @@
+*** libframe/Makefile.orig	Fri Jul 28 14:08:32 1995
+--- libframe/Makefile	Fri Jul 21 15:02:32 1995
+***************
+*** 1,21 ****
+  #	Copyright (c) 1992 AT&T - All rights reserved.
+  #
+! #	Prototype Makefile for libframe
+  #
+- #	define operating system.  ONE of:
+- #		-DIRIX -DSUNOS -DUMIPS -DSYSVR3 -DAIX -DOSF1
+- #		-DHPUX -DAPOLLO -DCONVEX -DDYNIX
+- #	
+  #	Additionally, -D_POSIX_SOURCE (or its equivalent) may be specified
+  #	if your compiler supports posix-compatible compilation
+! OS=-DIRIX -ansiposix
+  
+  #	add -Iincludedir for any include directories that need to be searched
+  #	for posix header files (for UMIPS, add -I/usr/include/posix)
+! INCS=-I../include
+  
+  #	add name of library orderer - use ":" if none exists
+! RANLIB=:
+  
+  #	add name of library
+  AR=ar
+--- 1,20 ----
+  #	Copyright (c) 1992 AT&T - All rights reserved.
+  #
+! #	Prototype BSDi Makefile for libframe
+! #	Courtesy of Boyd Roberts
+! #
+! #	Define operating system type: -DBSDi
+  #
+  #	Additionally, -D_POSIX_SOURCE (or its equivalent) may be specified
+  #	if your compiler supports posix-compatible compilation
+! OS=-DBSDi -O2
+  
+  #	add -Iincludedir for any include directories that need to be searched
+  #	for posix header files (for UMIPS, add -I/usr/include/posix)
+! INCS=-I../include -I/usr/include/posix
+  
+  #	add name of library orderer - use ":" if none exists
+! RANLIB=ranlib
+  
+  #	add name of library
+  AR=ar
