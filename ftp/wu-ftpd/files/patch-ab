@@ -1,5 +1,5 @@
 *** Makefile.orig	Fri Apr  1 11:03:58 1994
---- Makefile	Wed Jan 25 14:58:44 1995
+--- Makefile	Sun Aug  6 21:35:01 1995
 ***************
 *** 1,25 ****
 ! BINDIR=		/usr/local/bin
@@ -27,8 +27,9 @@
 ! 	install -o bin -g bin -m 755 doc/ftphosts.5 ${MANDIR}/man5/ftphosts.5
 ! 	install -o bin -g bin -m 755 doc/ftpconversions.5 ${MANDIR}/man5/ftpconversions.5
 ! 	install -o bin -g bin -m 755 doc/xferlog.5 ${MANDIR}/man5/xferlog.5
---- 1,35 ----
+--- 1,36 ----
 ! BINDIR=		${PREFIX}/bin
+! LIBEXECDIR=	${PREFIX}/libexec
 ! ETCDIR=		${PREFIX}/etc
 ! MANDIR=		${PREFIX}/man
   MANEXT=		8
@@ -41,7 +42,7 @@
   install: bin/ftpd bin/ftpcount bin/ftpshut
   	-mv -f ${ETCDIR}/ftpd ${ETCDIR}/ftpd-old
   	@echo Installing binaries.
-! 	install -c -o bin -g bin -m 755 bin/ftpd ${ETCDIR}/ftpd
+! 	install -c -o bin -g bin -m 755 bin/ftpd ${LIBEXECDIR}/ftpd
 ! 	install -c -o bin -g bin -m 755 bin/ftpshut ${BINDIR}/ftpshut
 ! 	install -c -o bin -g bin -m 755 bin/ftpcount ${BINDIR}/ftpcount
 ! 	install -c -o bin -g bin -m 755 bin/ftpwho ${BINDIR}/ftpwho
