@@ -7,6 +7,7 @@
 
 PORTNAME=	happystats
 PORTVERSION=	0.5.0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.happystats.org/srcs/
 EXTRACT_SUFX=	.tgz
@@ -14,10 +15,13 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	kiwi@oav.net
 COMMENT=	Universal log converter into graph
 
+BUILD_DEPENDS=	imake:${PORTSDIR}/devel/imake-4
+
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre \
 		xml2.5:${PORTSDIR}/textproc/libxml2 \
-		rrd.0:${PORTSDIR}/net/rrdtool \
-		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
+		rrd.0:${PORTSDIR}/net/rrdtool
+
+USE_GETOPT_LONG=	yes
 
 MAN1=		happystats.1
 MANCOMPRESSED=	yes
