@@ -5938,7 +5938,8 @@ split		src/usr.bin/split
 splitmpg	ports/graphics/splitmpg
 splitvt		ports/misc/splitvt
 spppcontrol	src/sbin/spppcontrol
-spray		src/usr.sbin/spray
+spray           src/usr.sbin/spray
+spread		ports/net/spread
 spruce		ports/mail/spruce
 sqlite		ports/databases/sqlite
 sqlrelay	ports/databases/sqlrelay
