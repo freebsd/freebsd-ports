@@ -19,6 +19,8 @@ HAS_CONFIGURE=	yes
 
 MAN1=		mscompress.1 msexpand.1
 
+PLIST_FILES=	bin/mscompress bin/msexpand
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mscompress ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/msexpand ${PREFIX}/bin
