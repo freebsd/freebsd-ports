@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	arpwatch
-PORTVERSION=	2.1.a11
-PORTREVISION=	4
+PORTVERSION=	2.1.a13
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.Awfulhak.org/arpwatch/ \
 		ftp://ftp.ee.lbl.gov/
-DISTNAME=	arpwatch-2.1a11
+DISTNAME=	arpwatch-2.1a13
 
 MAINTAINER=	krion@FreeBSD.org
 COMMENT=	Monitor arp & rarp requests
