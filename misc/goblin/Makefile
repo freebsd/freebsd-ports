@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	goblin
-PORTVERSION=	2.6.3
+PORTVERSION=	2.6.4
 CATEGORIES=	misc
 MASTER_SITES=	http://www.math.uni-augsburg.de/opt/goblin.docs/
 DISTNAME=	${PORTNAME}.${PORTVERSION}

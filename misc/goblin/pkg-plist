@@ -17,7 +17,7 @@ bin/goblin.%%VERSION%%/browserOptions.tk
 bin/goblin.%%VERSION%%/browserTraceOpt.tk
 bin/goblin.%%VERSION%%/camera.gif
 bin/goblin.%%VERSION%%/composeRandom.tk
-bin/goblin.%%VERSION%%/delbutton.gif
+bin/goblin.%%VERSION%%/delButton.gif
 bin/goblin.%%VERSION%%/editArcLabels.tk
 bin/goblin.%%VERSION%%/editColours.gif
 bin/goblin.%%VERSION%%/editConstants.tk
@@ -35,6 +35,7 @@ bin/goblin.%%VERSION%%/editPred.gif
 bin/goblin.%%VERSION%%/editRedirect.gif
 bin/goblin.%%VERSION%%/editRow.tk
 bin/goblin.%%VERSION%%/editVar.tk
+bin/goblin.%%VERSION%%/eraseButton.gif
 bin/goblin.%%VERSION%%/fileChanges.tk
 bin/goblin.%%VERSION%%/fileExport.tk
 bin/goblin.%%VERSION%%/fileImport.tk
@@ -61,6 +62,7 @@ bin/goblin.%%VERSION%%/layoutNodes.tk
 bin/goblin.%%VERSION%%/lightsGreen.gif
 bin/goblin.%%VERSION%%/lightsRed.gif
 bin/goblin.%%VERSION%%/lightsYellow.gif
+bin/goblin.%%VERSION%%/linkButton.gif
 bin/goblin.%%VERSION%%/logFirst.gif
 bin/goblin.%%VERSION%%/logLast.gif
 bin/goblin.%%VERSION%%/logNext.gif
@@ -83,6 +85,8 @@ bin/goblin.%%VERSION%%/menuLayout.tk
 bin/goblin.%%VERSION%%/menuOptimize.tk
 bin/goblin.%%VERSION%%/msgStop.gif
 bin/goblin.%%VERSION%%/msgWarn.gif
+bin/goblin.%%VERSION%%/newButton.gif
+bin/goblin.%%VERSION%%/okButton.gif
 bin/goblin.%%VERSION%%/optimizeDataStruct.tk
 bin/goblin.%%VERSION%%/optimizeLevel.tk
 bin/goblin.%%VERSION%%/optimizeMethods.tk
@@ -110,7 +114,6 @@ bin/goblin.%%VERSION%%/samples/colour3.gob
 bin/goblin.%%VERSION%%/samples/colour4.gob
 bin/goblin.%%VERSION%%/samples/colour5.gob
 bin/goblin.%%VERSION%%/samples/colour6.gob
-bin/goblin.%%VERSION%%/samples/colour7.gob
 bin/goblin.%%VERSION%%/samples/colour8.gob
 bin/goblin.%%VERSION%%/samples/connect1.gob
 bin/goblin.%%VERSION%%/samples/connect3.gob
@@ -142,7 +145,11 @@ bin/goblin.%%VERSION%%/samples/goblet.gob
 bin/goblin.%%VERSION%%/samples/gsearch1.gob
 bin/goblin.%%VERSION%%/samples/hamilton57.gob
 bin/goblin.%%VERSION%%/samples/icosa.gob
+bin/goblin.%%VERSION%%/samples/lp1.gob
+bin/goblin.%%VERSION%%/samples/lp2.gob
+bin/goblin.%%VERSION%%/samples/lp3.gob
 bin/goblin.%%VERSION%%/samples/lp3a.gob
+bin/goblin.%%VERSION%%/samples/lp4.gob
 bin/goblin.%%VERSION%%/samples/maxbflow1.gob
 bin/goblin.%%VERSION%%/samples/maxbflow2.gob
 bin/goblin.%%VERSION%%/samples/maxbflow3.gob
@@ -178,7 +185,6 @@ bin/goblin.%%VERSION%%/samples/optcirc1.gob
 bin/goblin.%%VERSION%%/samples/optcirc2.gob
 bin/goblin.%%VERSION%%/samples/optcirc3.gob
 bin/goblin.%%VERSION%%/samples/optcirc4.gob
-bin/goblin.%%VERSION%%/samples/optcirc4_2.gob
 bin/goblin.%%VERSION%%/samples/optcirc5.gob
 bin/goblin.%%VERSION%%/samples/optcirc6.gob
 bin/goblin.%%VERSION%%/samples/optcirc7.gob
@@ -195,13 +201,17 @@ bin/goblin.%%VERSION%%/samples/optmatch11.gob
 bin/goblin.%%VERSION%%/samples/optmatch12.gob
 bin/goblin.%%VERSION%%/samples/optmatch2.gob
 bin/goblin.%%VERSION%%/samples/optmatch3.gob
-bin/goblin.%%VERSION%%/samples/optmatch4.1.gob
 bin/goblin.%%VERSION%%/samples/optmatch4.gob
 bin/goblin.%%VERSION%%/samples/optmatch5.gob
 bin/goblin.%%VERSION%%/samples/optmatch6.gob
 bin/goblin.%%VERSION%%/samples/optmatch7.gob
 bin/goblin.%%VERSION%%/samples/optmatch8.gob
 bin/goblin.%%VERSION%%/samples/optmatch9.gob
+bin/goblin.%%VERSION%%/samples/outer1.gob
+bin/goblin.%%VERSION%%/samples/outer2.gob
+bin/goblin.%%VERSION%%/samples/outer3.gob
+bin/goblin.%%VERSION%%/samples/outer4.gob
+bin/goblin.%%VERSION%%/samples/outer5.gob
 bin/goblin.%%VERSION%%/samples/petersen.gob
 bin/goblin.%%VERSION%%/samples/planar1.gob
 bin/goblin.%%VERSION%%/samples/planar2.gob
@@ -211,7 +221,6 @@ bin/goblin.%%VERSION%%/samples/postman2.gob
 bin/goblin.%%VERSION%%/samples/postman3.gob
 bin/goblin.%%VERSION%%/samples/regular3.gob
 bin/goblin.%%VERSION%%/samples/share2b.gob
-bin/goblin.%%VERSION%%/samples/small1.gob
 bin/goblin.%%VERSION%%/samples/spring1.gob
 bin/goblin.%%VERSION%%/samples/spring2.gob
 bin/goblin.%%VERSION%%/samples/spring3.gob
@@ -239,6 +248,11 @@ bin/goblin.%%VERSION%%/samples/tjoin2.gob
 bin/goblin.%%VERSION%%/samples/tjoin3.gob
 bin/goblin.%%VERSION%%/samples/tjoin4.gob
 bin/goblin.%%VERSION%%/samples/triang4.gob
+bin/goblin.%%VERSION%%/samples/triplanar1.gob
+bin/goblin.%%VERSION%%/samples/triplanar2.gob
+bin/goblin.%%VERSION%%/samples/triplanar3.gob
+bin/goblin.%%VERSION%%/samples/triplanar4.gob
+bin/goblin.%%VERSION%%/samples/triplanar5.gob
 bin/goblin.%%VERSION%%/samples/tsp23.gob
 bin/goblin.%%VERSION%%/samples/tsp4.gob
 bin/goblin.%%VERSION%%/samples/tsp41.gob
@@ -309,12 +323,13 @@ include/goblin.%%VERSION%%/goblin.h
 include/goblin.%%VERSION%%/gosh.h
 include/goblin.%%VERSION%%/gra2bal.h
 include/goblin.%%VERSION%%/hashtbl.h
-include/goblin.%%VERSION%%/ilpWrap.h
+include/goblin.%%VERSION%%/ilpWrapper.h
 include/goblin.%%VERSION%%/import.h
 include/goblin.%%VERSION%%/iterator.h
 include/goblin.%%VERSION%%/lpSolve.h
 include/goblin.%%VERSION%%/matrix.h
 include/goblin.%%VERSION%%/messenger.h
+include/goblin.%%VERSION%%/networkSimplex.h
 include/goblin.%%VERSION%%/queue.h
 include/goblin.%%VERSION%%/segment.h
 include/goblin.%%VERSION%%/setfam.h
