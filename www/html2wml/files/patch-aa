@@ -1,19 +1,20 @@
---- Makefile.orig	Mon May 14 01:07:59 2001
-+++ Makefile	Sat May 19 20:07:36 2001
+--- Makefile.orig	Sun Oct 26 16:23:22 2003
++++ Makefile	Thu Nov 20 01:44:55 2003
 @@ -1,7 +1,7 @@
  # =========================================================================== #
  # Configuration 
- 
 -PREFIX=/usr/local
+-CGIDIR=/home/httpd/cgi-bin
 +PREFIX?=/usr/local
- CGIDIR=/home/httpd/cgi-bin
++CGIDIR=${LOCALBASE}/www/cgi-bin
  
  # =========================================================================== #
-@@ -13,7 +13,7 @@
+ # Do not edit the following unless you know what are you are doing
+@@ -12,7 +12,7 @@
  # Standard subdirectories locations
  BINDIR=$(PREFIX)/bin
  MANDIR=$(PREFIX)/man
--DOCDIR=$(PREFIX)/doc/html2wml-$(VERSION)
+-DOCDIR=$(PREFIX)/doc/html2wml
 +DOCDIR=$(PREFIX)/share/doc/html2wml
  
  MAN1DIR=$(MANDIR)/man1
@@ -23,9 +24,9 @@
  # Installaton targets
  install: check-config directories
 -	install -m 555 html2wml.cgi $(BINDIR)/html2wml
--	install -m 444 doc/html2wml.man $(MAN1DIR)/html2wml.1
--	install -m 444 ARTISTIC COPYING INSTALL NEWS NOTES README TODO ChangeLog $(DOCDIR)
--	make -C t/ install DOCDIR=$(DOCDIR)
+-	install -m 444 doc/html2wml.man $(MAN1DIR)/html2wml.1 
+-	install -m 444 COPYING INSTALL NEWS NOTES README TODO ChangeLog $(DOCDIR) 
+-	make -C t/ install DOCDIR=$(DOCDIR) 
 -	make -C doc/ install DOCDIR=$(DOCDIR)
 +	${BSD_INSTALL_SCRIPT} html2wml.cgi $(BINDIR)/html2wml
 +	${BSD_INSTALL_MAN} doc/html2wml.man $(MAN1DIR)/html2wml.1
