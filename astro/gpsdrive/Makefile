@@ -6,17 +6,12 @@
 #
 
 PORTNAME=	gpsdrive
-PORTVERSION=	2.07.r7
-PORTREVISION=	2
+PORTVERSION=	2.09
 CATEGORIES=	astro
-MASTER_SITES=	http://gpsdrive.kraftvoll.at/     \
-		http://www.gpsdrive.cc/           \
-		http://www.kraftvoll.at/          \
-		http://www.ganter.at/             \
-		http://www.gpsdrive.de/           \
+MASTER_SITES=	http://www.gpsdrive.cc/           \
+		http://www.gpsdrive.oc512.us/     \
 		http://gpsdrive.teachlinux.com/   \
 		http://gpsdrive.flugfunk.de/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/pre/}
 
 MAINTAINER=	molter@gufi.org
 COMMENT=	A GPS navigation system
@@ -33,21 +28,13 @@ USE_LIBTOOL_VER=	13
 
 CONFIGURE_ENV=	CPPFLAGS=-I${LOCALBASE}/include \
 		LDFLAGS=-L${LOCALBASE}/lib
-CONFIGURE_ARGS=	--disable-garmin --disable-mysql
+CONFIGURE_ARGS=	--disable-garmin
 INSTALLS_SHLIB=	yes
 
 MAN1=		gpsdrive.1
 MANLANG=	"" de es
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 501103 && ${OSVERSION} >= 500000
-USE_GCC=3.2
-.else
-USE_GCC=3.3
-.endif
-
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
