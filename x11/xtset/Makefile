@@ -10,7 +10,7 @@ PORTVERSION=	1.0
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.lemis.com/pub/
 
-MAINTAINER=	grog
+MAINTAINER=	grog@FreeBSD.Org
 
 NO_WRKSUBDIR=	YES
 
