@@ -526,6 +526,7 @@
     SUBDIR += pfinger
     SUBDIR += phex
     SUBDIR += php4-ldap
+    SUBDIR += php4-rrdtool
     SUBDIR += php4-sockets
     SUBDIR += php4-xmlrpc
     SUBDIR += php4-yp
