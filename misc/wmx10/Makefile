@@ -14,12 +14,11 @@ MASTER_SITES=	http://www.cs.uml.edu/~jhawkins/wmx10/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Remote control for X10 devices
 
-LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
-
 PLIST_FILES=	bin/wmx10
 WRKSRC=		${WRKDIR}/wmx10.app/wmx10
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
+USE_XPM=	yes
 
 .include <bsd.port.mk>

@@ -14,14 +14,14 @@ MASTER_SITE_SUBDIR=	fenner
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	WindowMaker dockable hardware monitor for FreeBSD
 
-LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
-
 WRKSRC=		${WRKDIR}/wmhm/wmhm
 
 GNU_CONFIGURE=	yes
 MAN8=		wmhm.8
 MANCOMPRESSED=	yes
 PLIST_FILES=	bin/wmhm
+USE_X_PREFIX=	yes
+USE_XPM=	yes
 
 .include <bsd.port.pre.mk>
 
