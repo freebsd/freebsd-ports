@@ -8,8 +8,8 @@
 PORTNAME=	tkinter
 PORTVERSION=	${PYTHON_PORTVERSION}
 CATEGORIES=	x11-toolkits python
-MASTER_SITES=	ftp://www.python.org/pub/python/src/ \
-		ftp://ftp.cwi.nl/pub/python/src/
+MASTER_SITES=	http://www.python.org/ftp/python/${PORTVERSION}/ \
+		http://SunSITE.Informatik.RWTH-Aachen.DE/python/ftp/python/${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTFILES=	${PYTHON_DISTFILE}
 
