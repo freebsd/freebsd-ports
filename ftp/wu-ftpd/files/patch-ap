@@ -1,6 +1,20 @@
---- src/glob.c.old	Sat Jul  1 22:17:39 2000
-+++ src/glob.c	Wed Nov 28 13:42:26 2001
-@@ -112,7 +118,7 @@
+--- src/glob.c.old	Thu Nov 29 20:01:38 2001
++++ src/glob.c	Thu Jun 10 06:13:51 2004
+@@ -45,10 +45,12 @@
+ 
+ #include "proto.h"
+ 
++#define ARGSIZ		(524288)
++
+ #define	QUOTE 0200
+ #define	TRIM 0177
+ #define	eq(a,b)		(strcmp(a, b)==0)
+-#define	GAVSIZ		(NCARGS/6)
++#define	GAVSIZ		(ARGSIZ/6)
+ #define	isdir(d)	((d.st_mode & S_IFMT) == S_IFDIR)
+ 
+ static char **gargv;		/* Pointer to the (stack) arglist */
+@@ -112,7 +114,7 @@
  
      fixpath(v);
      if (v[0] == '\0')
@@ -9,3 +23,12 @@
      else if ((strlen(v) > 1) && (v[strlen(v) - 1] == '/'))
  	v[strlen(v) - 1] = '\0';
  
+@@ -149,7 +151,7 @@
+     gargv = agargv;
+     sortbas = agargv;
+     gargc = 0;
+-    gnleft = NCARGS - 4;
++    gnleft = ARGSIZ - 4;
+ }
+ 
+ static void collect(register char *as)
