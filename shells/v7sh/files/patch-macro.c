@@ -78,8 +78,7 @@ diff -u -x CVS -x work -x core -x *.core -x #* -x *~ -x *.orig -x *.rej -I $Id.*
 +			BOOL		nulflg;
 +#endif
  			CHAR		idb[2];
--			STRING		id=idb;
-+			CSTRING		id=idb;
+ 			STRING		id=idb;
  
 -			IF bra=(c==BRACE) THEN c=readc() FI
 +			IF (bra=c==BRACE)!=0 THEN c=readc() FI	/* GCC */
