@@ -1,0 +1,21 @@
+--- agent/Makefile.in.old	Tue May 16 19:58:54 2000
++++ agent/Makefile.in	Tue May 16 20:00:26 2000
+@@ -51,10 +51,18 @@
+ 
+ libucdagent.$(SHLIB_EXTENSION)$(SHLIB_VERSION):    ${LIBAGENTOBJS} libucdmibs.$(SHLIB_EXTENSION)$(SHLIB_VERSION)
+ 	$(SHLIB_LD_CMD) libucdagent.$(SHLIB_EXTENSION)$(SHLIB_VERSION) ${LIBAGENTOBJS}  $(SHLIB_LD_LIBS)
++	ld -Bshareable -soname libucdagent.$(SHLIB_EXTENSION)$(SHLIB_VERSION) \
++		-o libucdagent.$(SHLIB_EXTENSION) ${LIBAGENTOBJS}
++	ln -f libucdagent.$(SHLIB_EXTENSION) \
++	libucdagent.$(SHLIB_EXTENSION)$(SHLIB_VERSION)
+ 	$(RANLIB) libucdagent.$(SHLIB_EXTENSION)$(SHLIB_VERSION)
+ 
+ libucdmibs.$(SHLIB_EXTENSION)$(SHLIB_VERSION):    ${MIBOBJS}
+ 	$(SHLIB_LD_CMD) libucdmibs.$(SHLIB_EXTENSION)$(SHLIB_VERSION) ${MIBOBJS}  $(SHLIB_LD_LIBS)
++	ld -Bshareable -soname libucdmibs.$(SHLIB_EXTENSION)$(SHLIB_VERSION) \
++		-o libucdmibs.$(SHLIB_EXTENSION) ${MIBOBJS}
++	ln -f libucdmibs.$(SHLIB_EXTENSION) \
++	libucdmibs.$(SHLIB_EXTENSION)$(SHLIB_VERSION)
+ 	$(RANLIB) libucdmibs.$(SHLIB_EXTENSION)$(SHLIB_VERSION)
+ 
+ clean:
