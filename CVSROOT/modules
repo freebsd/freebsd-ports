@@ -2997,7 +2997,6 @@ koncd		ports/sysutils/koncd
 konverse	ports/net/konverse
 koog		ports/audio/koog
 korelib		ports/devel/korelib
-korganizer	ports/deskutils/korganizer
 kp		ports/misc/kp
 kpasswdd	src/libexec/kpasswdd
 kpilot		ports/palm/kpilot
