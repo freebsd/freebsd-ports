@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Tue Sep  4 13:00:00 2001
++++ Makefile.in	Wed Sep  5 15:01:12 2001
+@@ -6,7 +6,7 @@
+ 
+ # Spool directory. Also hard-coded into the executable.
+ # See ftpq.h.
+-SPOOLDIR = /tmp/ftpq/
++SPOOLDIR = %%SPOOLDIR%%
+ 
+ # Program name
+ PROG = ftpq
