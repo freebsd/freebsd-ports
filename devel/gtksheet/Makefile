@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-DISTNAME=	gtksheet-7.10
+DISTNAME=	gtksheet-8.0
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ripley.ifir.edu.ar/pub/gtk/gtksheet/
 
