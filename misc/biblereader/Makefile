@@ -23,7 +23,8 @@ DISTFILES+=	easton.tar.gz strongs.tar.gz torrey.tar.gz
 MAINTAINER=	patseal@hyperhost.net
 
 USE_X_PREFIX=	yes
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 PLIST=		${WRKDIR}/PLIST
 
 DATAFILES=	${WRKDIR}/kjv/kjv

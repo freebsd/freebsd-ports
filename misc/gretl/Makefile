@@ -23,7 +23,7 @@ RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
 
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
-USE_GTK=	yes
+USE_GNOMENG=	yes
 WANT_GNOME=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
@@ -37,8 +37,9 @@ MAN1=	gretl.1 gretl-config.1
 
 .include <bsd.port.pre.mk>
 
-.if defined(HAVE_GNOME)
-USE_GNOME=	yes
+.if ${HAVE_GNOME:Mgtk12}!=""
+USE_GNOME+=	gtk12
+PKGNAMESUFFIX=	gtk
 .else
 CONFIGURE_ARGS+=	--without-gnome
 .endif

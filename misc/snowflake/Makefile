@@ -14,7 +14,8 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	nakai@FreeBSD.org
 
 USE_X_PREFIX=	yes
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 
 do-install:
 		${INSTALL_PROGRAM} ${WRKSRC}/snowflake ${PREFIX}/bin
