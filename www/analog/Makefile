@@ -7,6 +7,7 @@
 
 PORTNAME=	analog
 PORTVERSION=	4.16
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.analog.cx/ \
 		http://www.monash.edu.au/mirror/analog/ \
@@ -23,10 +24,10 @@ ALL_TARGET=	analog
 
 do-install:
 	${MKDIR} ${PREFIX}/share/doc/analog
-	${MKDIR} ${PREFIX}/lib/analog/lang
+	${MKDIR} ${PREFIX}/share/analog/lang
 	${MKDIR} ${PREFIX}/www/data/images
 	${INSTALL_DATA} ${WRKSRC}/images/* ${PREFIX}/www/data/images
-	${INSTALL_DATA} ${WRKSRC}/lang/* ${PREFIX}/lib/analog/lang
+	${INSTALL_DATA} ${WRKSRC}/lang/* ${PREFIX}/share/analog/lang
 	${INSTALL_PROGRAM} ${WRKSRC}/analog ${PREFIX}/bin
 .if !exists(${PREFIX}/etc/analog.cfg)
 	${INSTALL_DATA} ${WRKSRC}/analog.cfg ${PREFIX}/etc

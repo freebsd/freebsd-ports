@@ -1,6 +1,14 @@
---- Makefile.orig	Thu Feb  1 08:58:17 2001
-+++ Makefile	Sun Feb 11 16:06:14 2001
-@@ -7,7 +7,7 @@
+--- Makefile.orig	Tue Feb 13 07:09:08 2001
++++ Makefile	Wed Apr 11 17:28:09 2001
+@@ -1,13 +1,13 @@
+ # Makefile for analog 4.16
+ # Please read docs/Readme.html, or http://www.analog.cx/
+-CC = gcc           # which compiler to use: eg cc, acc, gcc. NB Different
++CC ?= gcc           # which compiler to use: eg cc, acc, gcc. NB Different
+ #                    compilers need different CFLAGS, e.g., -O instead of -O2.
+-CEXTRAFLAGS = -O2  # options, e.g. for optimisation or ANSI compilation.
++#CEXTRAFLAGS = -O2  # options, e.g. for optimisation or ANSI compilation.
+ #                    HP/UX cc requires CEXTRAFLAGS = -Aa (HP/UX 9) or ...
  #                    -Ae (HP/UX 10);       BS2000/OSD requires -XLLML -XLLMK;
  #                    NeXTSTEP apparently needs...
  #                    CEXTRAFLAGS = -O2 -pipe -no-precomp 
@@ -13,14 +21,14 @@
  #                    DYNIX/ptx reportedly needs -D_SOCKET_VERSION=11
  #                    MPE/iX needs -D_POSIX_SOURCE -D_SOCKET_SOURCE
  #                    All the options are explained at the bottom of this file.
-+DEFS =  -DANALOGDIR=\"$(PREFIX)/lib/analog/\" \
++DEFS =  -DANALOGDIR=\"$(PREFIX)/share/analog/\" \
 +	-DLOGFILE=\"/var/log/httpd-access.log\" \
 +	-DIMAGEDIR=\"/images/\" \
 +	-DDEFAULTCONFIGFILE=\"$(PREFIX)/etc/analog.cfg\"
  OS = UNIX          # Operating system: UNIX, DOS, WIN32, MAC, OS2, OSX, VMS,
  #                    RISCOS, BEOS, NEXTSTEP, MPEIX, BS2000, AS400
  LIBS =       # extra libraries needed; Solaris 2 (SunOS 5) needs
-@@ -33,7 +37,7 @@
+@@ -33,12 +37,12 @@
  	input.o macinput.o macstuff.o output.o output2.o pcre.o process.o \
  	settings.o sort.o tree.o utils.o win32.o
  HEADERS = anlghead.h anlghea2.h anlghea3.h anlghea4.h macdir.h pcre.h
@@ -29,3 +37,9 @@
  
  $(PROGRAM): $(OBJS) $(HEADERS) Makefile
  	$(CC) $(CEXTRAFLAGS) -o $(PROGRAM) $(OBJS) $(LIBS)
+ 	@echo '***'
+-	@echo '***IMPORTANT: You must read the licence before using analog'
++	@echo '***IMPORTANT: You must read the license before using analog'
+ 	@echo '***'
+ 
+ # There doesn't seem to be a good way to write all these rules in a generic
