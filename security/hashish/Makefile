@@ -25,6 +25,8 @@ LIB_DEPENDS=	wx_gtk-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk
 LIB_DEPENDS=	wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk2
 .endif
 
+BROKEN=		"Does not compile"
+
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
@@ -35,10 +37,4 @@ CONFIGURE_ENV+=	WX_CONFIG="${X11BASE}/bin/wxgtk2-2.4-config"
 USE_GMAKE=	yes
 PLIST_FILES=	bin/hashish
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
