@@ -1,0 +1,97 @@
+Index: uriloader/base/nsDocLoader.cpp
+===================================================================
+RCS file: /cvsroot/mozilla/uriloader/base/nsDocLoader.cpp,v
+retrieving revision 3.251
+diff -u -r3.251 nsDocLoader.cpp
+--- uriloader/base/nsDocLoader.cpp	17 Apr 2002 03:48:37 -0000	3.251
++++ uriloader/base/nsDocLoader.cpp	30 Apr 2002 19:02:19 -0000
+@@ -1263,6 +1263,7 @@
+     rv = aNewChannel->GetURI(getter_AddRefs(newURI));
+     if (NS_FAILED(rv)) return rv;
+ 
++#ifdef HTTP_DOESNT_CALL_CHECKLOADURI
+     // verify that this is a legal redirect
+     nsCOMPtr<nsIScriptSecurityManager> securityManager = 
+              do_GetService(NS_SCRIPTSECURITYMANAGER_CONTRACTID, &rv);
+@@ -1270,6 +1271,7 @@
+     rv = securityManager->CheckLoadURI(oldURI, newURI,
+                                        nsIScriptSecurityManager::DISALLOW_FROM_MAIL);
+     if (NS_FAILED(rv)) return rv;
++#endif
+ 
+     nsLoadFlags loadFlags = 0;
+     PRInt32 stateFlags = nsIWebProgressListener::STATE_REDIRECTING |
+Index: netwerk/protocol/http/src/Makefile.in
+===================================================================
+RCS file: /cvsroot/mozilla/netwerk/protocol/http/src/Makefile.in,v
+retrieving revision 1.56
+diff -u -r1.56 Makefile.in
+--- netwerk/protocol/http/src/Makefile.in	19 Apr 2002 22:25:18 -0000	1.56
++++ netwerk/protocol/http/src/Makefile.in	30 Apr 2002 19:02:19 -0000
+@@ -36,6 +36,8 @@
+ 		  intl \
+ 		  exthandler \
+ 		  caps \
++		  xpconnect \
++		  js \
+ 		  $(NULL)
+ 
+ CPPSRCS		= \
+Index: netwerk/protocol/http/src/nsHttpChannel.cpp
+===================================================================
+RCS file: /cvsroot/mozilla/netwerk/protocol/http/src/nsHttpChannel.cpp,v
+retrieving revision 1.114
+diff -u -r1.114 nsHttpChannel.cpp
+--- netwerk/protocol/http/src/nsHttpChannel.cpp	26 Apr 2002 22:50:50 -0000	1.114
++++ netwerk/protocol/http/src/nsHttpChannel.cpp	30 Apr 2002 19:02:19 -0000
+@@ -34,6 +34,7 @@
+ #include "nsISupportsPrimitives.h"
+ #include "nsIURL.h"
+ #include "nsIMIMEService.h"
++#include "nsIScriptSecurityManager.h"
+ #include "nsCExternalHandlerService.h"
+ #include "nsMimeTypes.h"
+ #include "nsNetUtil.h"
+@@ -1465,6 +1466,15 @@
+         rv = ioService->NewURI(nsDependentCString(location), nsnull, mURI,
+                                getter_AddRefs(newURI));
+         if (NS_FAILED(rv)) return rv;
++
++        // verify that this is a legal redirect
++        nsCOMPtr<nsIScriptSecurityManager> securityManager = 
++                 do_GetService(NS_SCRIPTSECURITYMANAGER_CONTRACTID);
++        if (securityManager) {
++            rv = securityManager->CheckLoadURI(mURI, newURI,
++                                               nsIScriptSecurityManager::DISALLOW_FROM_MAIL);
++            if (NS_FAILED(rv)) return rv;
++        }
+ 
+         // Kill the current cache entry if we are redirecting
+         // back to ourself.
+--- htmlparser/src/CNavDTD.cpp.orig	Sat May  4 00:32:17 2002
++++ htmlparser/src/CNavDTD.cpp	Sat May  4 01:14:59 2002
+@@ -473,14 +473,14 @@
+ 
+   nsresult result = NS_OK;
+ 
+-  if (aTokenizer && mSink && aParser) {
++  if (aTokenizer && aParser) {
+     nsITokenizer*  oldTokenizer = mTokenizer;
+ 
+     mTokenizer      = aTokenizer;
+     mParser         = (nsParser*)aParser;
+     mTokenAllocator = mTokenizer->GetTokenAllocator();
+     
+-
++    if (mSink) {
+     if (mBodyContext->GetCount() == 0) {
+       CStartToken* theToken=nsnull;
+       if(ePlainText==mDocType) {
+@@ -537,6 +537,7 @@
+       }
+     }//while
+     mTokenizer = oldTokenizer;
++    }
+   }
+ 
+   return result;
