@@ -32,6 +32,40 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="a413ed94-836e-11d9-a9e7-0001020eed82">
+    <topic>putty -- pscp/psftp heap corruption vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>putty</name>
+	<range><lt>0.57</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Simon Tatham reports:</p>
+	<blockquote cite="http://lists.tartarus.org/pipermail/putty-announce/2005/000012.html">
+	  <p>This version fixes a security hole in previous versions
+            of PuTTY, which can allow a malicious SFTP server to
+            attack your client. If you use either PSCP or PSFTP, you
+            should upgrade. Users of the main PuTTY program are not
+            affected. (However, note that the server must have passed
+            host key verification before this attack can be launched,
+            so a man-in-the-middle shouldn't be able to attack you if
+            you're careful.)</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <mlist msgid="E1D2taM-0005R1-00@ixion.tartarus.org">http://lists.tartarus.org/pipermail/putty-announce/2005/000012.html</mlist>
+      <url>http://www.chiark.greenend.org.uk/~sgtatham/putty/wishlist/vuln-sftp-readdir.html</url>
+      <url>http://www.chiark.greenend.org.uk/~sgtatham/putty/wishlist/vuln-sftp-string.html</url>
+    </references>
+    <dates>
+      <discovery>2005-02-20</discovery>
+      <entry>2005-02-20</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="29dd0065-81fa-11d9-a9e7-0001020eed82">
     <topic>kdelibs -- insecure temporary file creation</topic>
     <affects>
