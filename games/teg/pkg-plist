@@ -100,6 +100,7 @@ share/gnome/pixmaps/teg_pix/uruguay.png
 share/gnome/pixmaps/teg_pix/yukon.png
 share/gnome/pixmaps/teg_pix/zaire.png
 share/locale/es/LC_MESSAGES/teg.mo
+share/locale/fr/LC_MESSAGES/teg.mo
 @dirrm share/gnome/pixmaps/teg_pix
 @dirrm share/gnome/help/teg/C/stylesheet-images
 @dirrm share/gnome/help/teg/C
