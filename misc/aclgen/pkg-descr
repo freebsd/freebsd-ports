@@ -1,0 +1,18 @@
+From README:
+
+Aclgen is a tool to create minimal length ip access lists
+and aggregated routing tables primarily for Cisco routers.
+
+Aclgen is fast. It takes only 15 seconds to create a 17000 line
+long access list for some 44000 entries of my routing table.
+
+Aclgen is flexible. It accepts various input formats and
+you can specify any output format by a printf like format-string.
+
+Aclgen is intended to use in large scripts creating router
+configuration from different databases.
+
+Any contribution is welcome. Send me your script using aclgen.
+I'll bundle it with the program.
+
+Gabor Kiss <kissg@sztaki.hu>

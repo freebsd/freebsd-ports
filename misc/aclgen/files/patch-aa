@@ -1,0 +1,10 @@
+--- aclgen.c.orig	Thu Jul  3 11:35:57 1997
++++ aclgen.c	Fri Sep 17 18:08:28 1999
+@@ -15,7 +15,6 @@
+ #include	<stdio.h>
+ #include	<string.h>
+ #include	<ctype.h>
+-#include	<malloc.h>
+ #include	<stdlib.h>
+ 
+ /*#define P(x) ()*/
