@@ -34,6 +34,7 @@
     SUBDIR += gnome-themes
     SUBDIR += gnustep-back
     SUBDIR += gnustep-gui
+    SUBDIR += gnustep-xdps
     SUBDIR += gob
     SUBDIR += gtk--
     SUBDIR += gtk--2
