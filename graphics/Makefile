@@ -250,6 +250,7 @@
     SUBDIR += ocaml-lablgl
     SUBDIR += ogle
     SUBDIR += ogle-gui
+    SUBDIR += ogmtools
     SUBDIR += okle
     SUBDIR += opendis
     SUBDIR += opendx
