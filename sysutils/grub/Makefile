@@ -7,10 +7,11 @@
 
 PORTNAME=	grub
 PORTVERSION=	0.91
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://alpha.gnu.org/gnu/grub/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jedgar@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
