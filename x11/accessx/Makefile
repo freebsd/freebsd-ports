@@ -20,8 +20,11 @@ WRKSRC=		${WRKDIR}/accessx
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 
-pre-build:
-	${REINPLACE_CMD} -e "s@g\+\+@${CXX} ${CXXFLAGS} -I${X11BASE}/include@g" ${WRKSRC}/Makefile
+post-patch:
+	${REINPLACE_CMD} \
+		-e "s@/usr/local@${PREFIX}@" \
+		-e "s@g\+\+@${CXX} ${CXXFLAGS} -I${X11BASE}/include@g" \
+		${WRKSRC}/Makefile
 	${REINPLACE_CMD} -e "s@wish -f@wish8.2 -f@g" ${WRKSRC}/accessx
 
 post-install:
