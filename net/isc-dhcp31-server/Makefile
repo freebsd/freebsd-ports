@@ -1,13 +1,13 @@
 # Ports collection makefile for:    dhcp
-# Version required:     2.0b1pl18
+# Version required:     2.0b1pl27
 # Date created:         7 Mar 1996
 # Whom:                 se
 #
-# $Id: Makefile,v 1.25 1999/02/28 21:38:19 asami Exp $
+# $Id: Makefile,v 1.26 1999/03/07 13:01:15 jseger Exp $
 #
 
-DISTNAME=       dhcp-2.0b1pl18
-PKGNAME=	isc-dhcp-2.b1.18
+DISTNAME=       dhcp-2.0b1pl27
+PKGNAME=	isc-dhcp-2.b1.27
 CATEGORIES=	net
 MASTER_SITES=   ftp://ftp.isc.org/isc/dhcp/
 

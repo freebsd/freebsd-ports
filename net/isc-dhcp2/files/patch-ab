@@ -1,15 +1,15 @@
---- Makefile.conf.orig	Wed Feb 24 10:28:51 1999
-+++ Makefile.conf	Fri Feb 26 23:20:40 1999
-@@ -42,7 +42,7 @@
- MANINSTALL = install -c -m 444
+--- Makefile.conf.orig	Mon Apr 12 18:35:36 1999
++++ Makefile.conf	Sun May  2 07:14:10 1999
+@@ -43,7 +43,7 @@
  CHMOD = chmod
  CATMANPAGES =
+ MANCAT = cat
 -ETC = /etc
-+ETC = /usr/local/etc
++ETC = ${PREFIX}/etc
  VARRUN = /var/run
  VARDB = /var/db
  
-@@ -143,6 +143,13 @@
+@@ -155,6 +155,13 @@
  ##--freebsd--
  #CF = cf/freebsd.h
  #SCRIPT=freebsd
