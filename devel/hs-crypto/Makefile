@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	crypto
-PORTVERSION=	0.3.3
+PORTVERSION=	1.0.1
 CATEGORIES=	devel haskell
-MASTER_SITES=	http://haskell.cs.yale.edu/packages/downloads/
+MASTER_SITES=	http://www.haskell.org/crypto/downloads/
 PKGNAMEPREFIX=	hs-
 EXTRACT_SUFX=	.tar
 
