@@ -3,7 +3,7 @@
 # Date created:		11 March 1997
 # Whom:			taguchi@tohoku.iij.ad.jp
 #
-# $Id: Makefile,v 1.5 1998/07/03 23:06:30 steve Exp $
+# $Id: Makefile,v 1.6 1998/09/26 12:45:10 kuriyama Exp $
 #
 
 DISTNAME=	tcl7.6p2
@@ -45,6 +45,9 @@ pre-install:
 
 post-install:
 	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
+	if [ "${PORTOBJFORMAT}" = "aout" ]; then \
+		${LN} -sf libtcl76jp.so.1.0 ${PREFIX}/lib/libtcl76jp.so; \
+	fi
 
 test:
 	cd ${WRKSRC} && ${SETENV} PORTOBJFORMAT=${PORTOBJFORMAT} ${MAKE} test
