@@ -1,0 +1,7 @@
+--- file-modules/xml/mrproject-0.6.dtd.orig	Thu Oct 30 01:42:09 2003
++++ file-modules/xml/mrproject-0.6.dtd	Thu Oct 30 01:42:25 2003
+@@ -1,4 +1,3 @@
+-<?xml version ="1.0" ?>
+ 
+ <!ELEMENT project (properties*,phases?,calendars?,tasks?,resource-groups?,resources?,allocations?)>
+ <!ATTLIST project mrproject-version CDATA #REQUIRED
