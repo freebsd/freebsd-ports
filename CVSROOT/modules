@@ -4707,6 +4707,7 @@ liedentd	ports/security/liedentd
 lifelines	ports/misc/lifelines
 liferea		ports/net/liferea
 lightning	ports/devel/lightning
+lighttpd	ports/www/lighttpd
 lile		ports/misc/lile
 lilypond	ports/print/lilypond
 lilypond-devel	ports/print/lilypond-devel
