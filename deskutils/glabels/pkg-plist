@@ -4,7 +4,6 @@ share/gnome/apps/Applications/glabels.desktop
 share/gnome/glabels/predefined-labels.template
 share/gnome/glabels/ui/glabels-ui.xml
 share/gnome/help/glabels/C/index.html
-share/gnome/help/glabels/C/ln7.html
 share/gnome/help/glabels/C/topic.dat
 share/gnome/pixmaps/glabels/glabels-about-logo.png
 share/gnome/pixmaps/glabels/glabels-icon.png
