@@ -7,7 +7,7 @@
 
 PORTNAME=	search-namazu
 PORTVERSION=	0.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	databases ruby
 MASTER_SITES=	ftp://ftp.tietew.jp/pub/ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -16,7 +16,7 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	Ruby library which wraps libnmz of Namazu
 
-LIB_DEPENDS=	nmz.6:${PORTSDIR}/japanese/namazu2
+LIB_DEPENDS=	nmz.7:${PORTSDIR}/japanese/namazu2
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
@@ -28,10 +28,6 @@ DOCS_EN=	${RUBY_RD_FILES:M*.en.rd} \
 		${RUBY_RD_HTML_FILES:M*.en.html}
 DOCS_JA=	${RUBY_RD_FILES:M*.ja.rd} \
 		${RUBY_RD_HTML_FILES:M*.ja.html}
-
-BROKEN=		"Does not install (cannot open Makefile)"
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2004-04-21
 
 post-install: doc-install
 
