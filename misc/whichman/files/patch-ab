@@ -1,0 +1,40 @@
+--- Makefile.orig	Tue Apr 11 23:04:09 2000
++++ Makefile	Tue Jun  6 16:57:24 2000
+@@ -1,9 +1,9 @@
+ # written by Guido Socher
+-PREFIX=/usr
++#PREFIX=/usr/local
+ INSTALL=install
+ MANP=man1/whichman.1 man1/ftff.1 man1/ftwhich.1
+-CC=gcc
+-CFLAGS= -Wall -O2
++CC?=gcc
++CFLAGS?= -Wall -O2
+ #sun c/c++-compiler:
+ #CC=CC
+ #CFLAGS= -O
+@@ -29,17 +29,17 @@
+ 	$(CC) $(CFLAGS) -c levdist.c
+ 
+ install: whichman ftff ftwhich $(MANP)
+-	strip whichman
+-	strip ftwhich
+-	strip ftff
++#	strip whichman
++#	strip ftwhich
++#	strip ftff
+ 	[ -d "$(PREFIX)/bin" ] || $(INSTALL) -d $(PREFIX)/bin
+ 	[ -d "$(PREFIX)/man/man1" ] || $(INSTALL) -d $(PREFIX)/man/man1
+-	$(INSTALL) -m 755 whichman $(PREFIX)/bin
+-	$(INSTALL) -m 755 ftwhich $(PREFIX)/bin
+-	$(INSTALL) -m 755 ftff $(PREFIX)/bin
++	$(BSD_INSTALL_PROGRAM) whichman $(PREFIX)/bin
++	$(BSD_INSTALL_PROGRAM) ftwhich $(PREFIX)/bin
++	$(BSD_INSTALL_PROGRAM) ftff $(PREFIX)/bin
+ 	for p in $(MANP) ; do \
+ 		echo "installing $$p in $(PREFIX)/man/man1"; \
+-		$(INSTALL) -m 644 $$p $(PREFIX)/man/man1 ;\
++		$(BSD_INSTALL_MAN) $$p $(PREFIX)/man/man1 ;\
+ 	done
+ 
+ install_with_cp: whichman ftff ftwhich $(MANP)

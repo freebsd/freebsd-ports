@@ -1,0 +1,13 @@
+--- whichman.c.orig	Tue Jun  6 15:16:51 2000
++++ whichman.c	Tue Jun  6 15:17:09 2000
+@@ -399,8 +399,8 @@
+ 
+ 	mpath = (char *) getenv("MANPATH");
+ 	if (mpath == NULL || *mpath == '\0') {
+-		fprintf(stderr,"Warning: MANPATH not defined, using /usr/man\n");
+-                mpath="/usr/man";
++		fprintf(stderr,"Warning: MANPATH not defined, using /usr/share/man\n");
++                mpath="/usr/share/man";
+ 	}
+         /* make a copy that is static */
+         cmpath = (char *)malloc(sizeof(char)*(strlen(mpath) + 2));

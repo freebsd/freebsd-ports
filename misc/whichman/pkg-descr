@@ -1,0 +1,20 @@
+Approximate matching searching utilities to search for manpages and files.
+
+This package holds THREE little search utilities:
+
+* whichman -- search utility for man pages and it works
+  much like the well known unix command "where".
+
+* ftff -- a fault tolerant file finder
+
+  ftff works like the whichman above but searches the directory
+  tree. This is a case in-sensitive and fault tolerant way of
+  'find . -name xxxx -print'
+
+* ftwhich -- a fault tolerant "which" command
+
+  ftwhich finds files (programs) which are in one of the directories in
+  your PATH and uses a fault tolerant search algorithem.
+
+--
+Guido Socher <guido.s@writeme.com>
