@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	wvengen@stack.nl
 COMMENT=	A powerful Bible study application for KDE3
 
+BROKEN=		"Does not compile"
+
 LIB_DEPENDS=	sword.1:${PORTSDIR}/misc/sword
 .if !defined(NOPORTDOCS)
 RUN_DEPENDS=	${LOCALBASE}/share/doc/HTML/en/bibletime:${PORTSDIR}/misc/bibletime-doc
