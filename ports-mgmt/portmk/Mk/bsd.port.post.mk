@@ -12,6 +12,24 @@ check-makefile::
 
 _POSTMKINCLUDED=	yes
 
+OPTIONS_DBDIR?=	/var/db/options
+OPTIONS_FILE?=	${OPTIONS_DBDIR}/${UNIQUENAME}
+
+.if defined(_OPTIONSNG_READ) && exists(${OPTIONS_FILE})
+.if ${_OPTIONSNG_READ} == "default"
+_ONG_REEXEC=	yes
+check-makefile::
+	@${ECHO_MSG} "===>  Configuration error, \`make rmconfig' to remove custom options."
+	@${FALSE}
+.else
+.undef _ONG_REEXEC
+.endif
+_ONG_MAKEFLAGS=	-f '${OPTIONS_FILE}' -f Makefile
+.else
+.undef _ONG_REEXEC
+_ONG_MAKEFLAGS=	-f Makefile
+.endif
+
 WRKDIR?=		${WRKDIRPREFIX}${.CURDIR}/work
 .if defined(NO_WRKSUBDIR)
 WRKSRC?=		${WRKDIR}
@@ -23,6 +41,18 @@ PATCH_WRKSRC?=	${WRKSRC}
 CONFIGURE_WRKSRC?=	${WRKSRC}
 BUILD_WRKSRC?=	${WRKSRC}
 INSTALL_WRKSRC?=${WRKSRC}
+
+WRKINST?=		${WRKDIR}/.inst
+
+.if defined(DESTDIR)
+check-makefile::
+	@${ECHO_CMD} "${PKGNAME}: DESTDIR is not a user settable variable"
+	@${FALSE}
+.endif
+
+.if defined(CLEANROOM_INSTALL)
+DESTDIR=		${WRKINST}
+.endif
 
 PLIST_SUB+=	OSREL=${OSREL} PREFIX=%D LOCALBASE=${LOCALBASE} X11BASE=${X11BASE}
 
@@ -308,7 +338,7 @@ MYSQL_VER=	${DEFAULT_MYSQL_VER}
 .if defined(BROKEN_WITH_MYSQL)
 .	for VER in ${BROKEN_WITH_MYSQL}
 .		if (${MYSQL_VER} == "${VER}")
-BROKEN=		"Doesn't work with MySQL version : ${MYSQL_VER} (Doesn't support MySQL ${BROKEN_WITH_MYSQL})"
+IGNORE=		"Doesn't work with MySQL version : ${MYSQL_VER} (Doesn't support MySQL ${BROKEN_WITH_MYSQL})"
 .		endif
 .	endfor
 .endif # BROKEN_WITH_MYSQL
@@ -399,12 +429,9 @@ REINPLACE_CMD?=	${SED} ${REINPLACE_ARGS}
 .endif
 
 # Names of cookies used to skip already completed stages
-EXTRACT_COOKIE?=	${WRKDIR}/.extract_done.${PKGNAME}.${PREFIX:S/\//_/g}
-CONFIGURE_COOKIE?=	${WRKDIR}/.configure_done.${PKGNAME}.${PREFIX:S/\//_/g}
-INSTALL_COOKIE?=	${WRKDIR}/.install_done.${PKGNAME}.${PREFIX:S/\//_/g}
-BUILD_COOKIE?=		${WRKDIR}/.build_done.${PKGNAME}.${PREFIX:S/\//_/g}
-PATCH_COOKIE?=		${WRKDIR}/.patch_done.${PKGNAME}.${PREFIX:S/\//_/g}
-PACKAGE_COOKIE?=	${WRKDIR}/.package_done.${PKGNAME}.${PREFIX:S/\//_/g}
+.for target in extract patch configure build install package
+${target:U}_COOKIE?=${WRKDIR}/.${target}_done.${PKGNAME}.${PREFIX:S/\//_/g}
+.endfor
 
 # How to do nothing.  Override if you, for some strange reason, would rather
 # do something.
@@ -430,7 +457,7 @@ MD5_FILE?=		${MASTERDIR}/distinfo
 
 MAKE_FLAGS?=	-f
 MAKEFILE?=		Makefile
-MAKE_ENV+=		PREFIX=${PREFIX} LOCALBASE=${LOCALBASE} X11BASE=${X11BASE} MOTIFLIB="${MOTIFLIB}" LIBDIR="${LIBDIR}" CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}" MANPREFIX="${MANPREFIX}"
+MAKE_ENV+=		PREFIX=${PREFIX} LOCALBASE=${LOCALBASE} X11BASE=${X11BASE} DESTDIR=${DESTDIR} MOTIFLIB="${MOTIFLIB}" LIBDIR="${LIBDIR}" CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}" MANPREFIX="${MANPREFIX}"
 
 .if ${OSVERSION} < 500016
 PTHREAD_CFLAGS?=	-D_THREAD_SAFE
@@ -526,9 +553,6 @@ MTREE_CMD?=	/usr/sbin/mtree
 MTREE_ARGS?=	-U ${MTREE_FOLLOWS_SYMLINKS} -f ${MTREE_FILE} -d -e -p
 
 # Determine whether or not we can use rootly owner/group functions.
-.if !defined(UID)
-UID!=	${ID} -u
-.endif
 .if ${UID} == 0
 _BINOWNGRP=	-o ${BINOWN} -g ${BINGRP}
 _SHROWNGRP=	-o ${SHAREOWN} -g ${SHAREGRP}
@@ -611,7 +635,7 @@ PKGINSTALLVER!= ${PKG_INFO} -P 2>/dev/null | ${SED} -e 's/.*: //'
 DISABLE_CONFLICTS=	YES
 .endif
 .if !defined(PKG_ARGS)
-PKG_ARGS=		-v -c -${COMMENT:Q} -d ${DESCR} -f ${TMPPLIST} -p ${PREFIX} -P "`cd ${.CURDIR} && ${MAKE} package-depends | ${GREP} -v -E ${PKG_IGNORE_DEPENDS} | ${SORT} -u`" ${EXTRA_PKG_ARGS} $${_LATE_PKG_ARGS}
+PKG_ARGS=		-v -c -${COMMENT:Q} -d ${DESCR} -f ${TMPPLIST} -p ${PREFIX} -P "`cd ${.CURDIR} && ${MAKE} ${_ONG_MAKEFLAGS} package-depends | ${GREP} -v -E ${PKG_IGNORE_DEPENDS} | ${SORT} -u`" ${EXTRA_PKG_ARGS} $${_LATE_PKG_ARGS}
 .if !defined(NO_MTREE)
 PKG_ARGS+=		-m ${MTREE_FILE}
 .endif
@@ -620,6 +644,9 @@ PKG_ARGS+=		-o ${PKGORIGIN}
 .endif
 .if defined(CONFLICTS) && !defined(DISABLE_CONFLICTS)
 PKG_ARGS+=		-C "${CONFLICTS}"
+.endif
+.if defined(DESTDIR)
+PKG_ARGS+=		-S "${DESTDIR}"
 .endif
 .endif
 .if defined(PKG_NOCOMPRESS)
@@ -633,6 +660,7 @@ PKG_SUFX?=		.tgz
 .endif
 # where pkg_add records its dirty deeds.
 PKG_DBDIR?=		/var/db/pkg
+_PKG_DBDIR?=	${DESTDIR}${PKG_DBDIR}
 
 MOTIFLIB?=	-L${X11BASE}/lib -lXm -lXp
 
@@ -825,7 +853,8 @@ SCRIPTS_ENV+=	CURDIR=${MASTERDIR} DISTDIR=${DISTDIR} \
 		  WRKDIR=${WRKDIR} WRKSRC=${WRKSRC} PATCHDIR=${PATCHDIR} \
 		  SCRIPTDIR=${SCRIPTDIR} FILESDIR=${FILESDIR} \
 		  PORTSDIR=${PORTSDIR} DEPENDS="${DEPENDS}" \
-		  PREFIX=${PREFIX} LOCALBASE=${LOCALBASE} X11BASE=${X11BASE}
+		  PREFIX=${PREFIX} LOCALBASE=${LOCALBASE} X11BASE=${X11BASE} \
+		  DESTDIR=${DESTDIR}
 
 .if defined(BATCH)
 SCRIPTS_ENV+=	BATCH=yes
@@ -1091,6 +1120,7 @@ all:
 	  DISTDIR=${DISTDIR} WRKDIR=${WRKDIR} WRKSRC=${WRKSRC} \
 	  PATCHDIR=${PATCHDIR} SCRIPTDIR=${SCRIPTDIR} \
 	  FILESDIR=${FILESDIR} PORTSDIR=${PORTSDIR} PREFIX=${PREFIX} \
+	  DESTDIR=${DESTDIR} \
 	  DEPENDS="${DEPENDS}" BUILD_DEPENDS="${BUILD_DEPENDS}" \
 	  RUN_DEPENDS="${RUN_DEPENDS}" X11BASE=${X11BASE} \
 	  CONFLICTS="${CONFLICTS}" \
@@ -1125,7 +1155,7 @@ DEPENDS_ARGS+=	FORCE_PKG_REGISTER=yes
 # target or not.
 #
 ################################################################
-.if (!defined(OPTIONS) || defined(CONFIG_DONE) || \
+.if (defined(_OPTIONSNG_READ) || !defined(OPTIONS) || defined(CONFIG_DONE) || \
 	defined(PACKAGE_BUILDING) || defined(BATCH) || \
 	exists(${_OPTIONSFILE}) || exists(${_OPTIONSFILE}.local))
 _OPTIONS_OK=yes
@@ -1204,13 +1234,18 @@ options-message:
 .else
 	@${DO_NADA}
 .endif
-.if defined(_OPTIONS_READ)
+.if defined(_OPTIONSNG_READ)
+.if ${_OPTIONSNG_READ} == "default"
+	@${ECHO_MSG} "===>  Building with default configuration, \`make config' to customize."
+.else
+	@${ECHO_MSG} "===>  Building with saved configuration for ${_OPTIONSNG_READ}, \`make config' to change."
+.endif
+.elif defined(_OPTIONS_READ)
 	@${ECHO_MSG} "===>  Found saved configuration for ${_OPTIONS_READ}"
 .if ${OPTIONSFILE} != ${_OPTIONSFILE}
 	@${ECHO_MSG} "===>  *** CAUTION *** Using wrong configuration file ${_OPTIONSFILE}"
 .endif
 .endif
-
 
 # Warn user about deprecated packages.  Advisory only.
 
@@ -1259,7 +1294,7 @@ update-auditfile:
 		if [ ! -w "${AUDITFILE:H}" -a `${ID} -u` != 0 ]; then \
 			if [ -z "${INSTALL_AS_USER}" ]; then \
 				${ECHO_MSG} "===>  Switching to root credentials to fetch the vulnerability database."; \
-				${SU_CMD} "cd ${.CURDIR} && ${MAKE} ${.TARGET}"; \
+				${SU_CMD} "cd ${.CURDIR} && ${MAKE} ${_ONG_MAKEFLAGS} ${.TARGET}"; \
 				${ECHO_MSG} "===>  Returning to user credentials"; \
 			else \
 				${ECHO_MSG} "===>  Can't fetch the vulnerability database."; \
@@ -1310,6 +1345,112 @@ check-vulnerable: update-auditfile
 	@${ECHO_MSG} "===>  Vulnerability check disabled."
 .endif
 
+
+# Next generation options handling
+
+.if exists(${PERL5})
+OPTIONS_CMD?=	${PERL} -w ${PORTSDIR}/devel/portmk/scripts/options.pl
+.else
+OPTIONS_CMD?=	eval ${ECHO_CMD} ">> ${PKGNAME}: ${PERL5} requried, please install ${PERL_PORT}."; exit 1
+.endif
+
+OPTIONS_SH?=	${PORTSDIR}/devel/portmk/scripts/options.sh
+
+_OPTIONS_ENV= \
+	CURDIR='${.CURDIR}' \
+	OBJDIR='${.OBJDIR}' \
+	MASTERDIR='${MASTERDIR}' \
+	PKGNAME='${PKGNAME}' \
+	PKGNAMESUFFIX='${PKGNAMESUFFIX}' \
+	OPTIONS_MASTER='${OPTIONS_MASTER}' \
+	OPTIONS_OVERRIDE='${OPTIONS_OVERRIDE}' \
+	OPTIONS_FILE='${OPTIONS_FILE}' \
+	OPTIONS_CMD='${OPTIONS_CMD}'
+
+.PHONY: config
+.PHONY: showconfig
+.PHONY: rmconfig
+.PHONY: menuconfig
+
+.if defined(_OPTIONSNG_READ)
+
+.if !target(config)
+config:
+	@${_OPTIONS_ENV}; \
+	set -- -e; \
+	. '${OPTIONS_SH}'
+.endif
+
+.if !target(menuconfig)
+menuconfig:
+	@${ECHO_MSG} "===>  ${PKGNAME}: menuconfig is a reserved target."
+	@${FALSE}
+	@${_OPTIONS_ENV}; \
+	set -- -g; \
+	. '${OPTIONS_SH}'
+.endif
+
+.if !target(rmconfig)
+rmconfig:
+	@${ECHO_MSG} "===>  ${PKGNAME}: Reverting to default configuration."
+	@${_OPTIONS_ENV}; \
+	set -- -d; \
+	. '${OPTIONS_SH}'
+.endif
+
+.if !target(showconfig)
+showconfig:
+	@${ECHO_MSG} "===>  ${PKGNAME}: menuconfig is a reserved target."
+	@${FALSE}
+	@${_OPTIONS_ENV}; \
+	set -- -l; \
+	. '${OPTIONS_SH}'
+.endif
+
+.elif !defined(OPTIONS)
+
+.if !target(config)
+config:
+	@${ECHO_MSG} "===>  ${PKGNAME} has no configurable options."
+.endif
+
+.if !target(menuconfig)
+menuconfig:
+	@${ECHO_MSG} "===>  ${PKGNAME} has no configurable options."
+.endif
+
+.if !target(rmconfig)
+rmconfig:
+	@${ECHO_MSG} "===>  ${PKGNAME} has no configurable options."
+.endif
+
+.if !target(showconfig)
+showconfig:
+	@${ECHO_MSG} "===>  ${PKGNAME} has no configurable options."
+.endif
+
+.else
+
+menuconfig: config
+	@${DO_NADA}
+
+.endif
+
+.PHONY: makeconfig
+.if !target(makeconfig)
+makeconfig:
+	@${_OPTIONS_ENV}; \
+	set -- -c; \
+	. '${OPTIONS_SH}'
+.endif
+
+.PHONY: config-recursive
+.if !target(config-recursive)
+config-recursive:
+	@${ECHO_MSG} "===>  ${PKGNAME}: config-recursive is a reserved target."
+	@${FALSE}
+.endif
+
 # New style distfile handling
 
 DISTFILES_SH?=			${PORTSDIR}/devel/portmk/scripts/distfiles.sh
@@ -1321,12 +1462,12 @@ MK_FILE?=				${MASTERDIR}/Makefile
 
 .if !defined(DISTFILES_KEEP_QUOTING)
 _FETCHDISTFILES_ENV=	\
-	DISTFILES='${DISTFILES:C/\\\\(.)/\1/g}'; \
-	PATCHFILES='${PATCHFILES:C/\\\\(.)/\1/g}'
+	DISTFILES=${DISTFILES:C/\\\\(.)/\1/g:Q}; \
+	PATCHFILES=${PATCHFILES:C/\\\\(.)/\1/g:Q}
 .else
 _FETCHDISTFILES_ENV=	\
-	DISTFILES='${DISTFILES}'; \
-	PATCHFILES='${PATCHFILES}'
+	DISTFILES=${DISTFILES:Q}; \
+	PATCHFILES=${PATCHFILES:Q}
 .endif
 .for env in \
 	MASTER_SITES MASTER_SITE_SUBDIR PATCH_SITES PATCH_SITE_SUBDIR \
@@ -1338,9 +1479,11 @@ _FETCHDISTFILES_ENV=	\
 	MK_FILE NO_CHECKSUM NO_SIZE OSVERSION PERL5 VALID_ALGORITHMS
 _FETCHDISTFILES_ENV+=	; ${env}='${${env}}'
 .endfor
+.if ${OSVERSION} >= 460000 # XXX This does not work with older make(1)s
 .for env in ${VALID_ALGORITHMS} SIZE
 _FETCHDISTFILES_ENV+=	; DISTINFO_${env}='${DISTINFO${DISTINFO_LABEL:C/^./_&/}_${env}}'
 .endfor
+.endif
 
 .PHONY: do-fetch
 .if !target(do-fetch)
@@ -1360,7 +1503,7 @@ checksum: fetch
 .if !target(makesum)
 makesum:
 .if !defined(FETCH_ALL)
-	@cd ${.CURDIR} && ${MAKE} FETCH_ALL=yes ${__softMAKEFLAGS} ${.TARGET}
+	@cd ${.CURDIR} && ${MAKE} ${_ONG_MAKEFLAGS} FETCH_ALL=yes ${__softMAKEFLAGS} ${.TARGET}
 .else
 	@${_FETCHDISTFILES_ENV}; \
 	set -- -m; \
@@ -1420,7 +1563,7 @@ migratesum2:
 .if !target(checkdistsites)
 checkdistsites:
 .if !defined(FETCH_ALL)
-	@cd ${.CURDIR} && ${MAKE} FETCH_ALL=yes ${__softMAKEFLAGS} ${.TARGET}
+	@cd ${.CURDIR} && ${MAKE} ${_ONG_MAKEFLAGS} FETCH_ALL=yes ${__softMAKEFLAGS} ${.TARGET}
 .else
 	@${_FETCHDISTFILES_ENV}; \
 	set -- -F; \
@@ -1431,9 +1574,13 @@ checkdistsites:
 .PHONY: checkdistfiles-recursive
 .if !target(checkdistfiles-recursive)
 checkdistfiles-recursive:
+.if defined(_ONG_REEXEC)
+	@cd ${.CURDIR} && ${MAKE} ${_ONG_MAKEFLAGS} ${__softMAKEFLAGS} ${.TARGET}
+.else
 	@for dir in ${.CURDIR} $$(${ALL-DEPENDS-LIST}); do \
-		(cd $$dir; ${MAKE}  ${__softMAKEFLAGS} checkdistfiles); \
+		(cd $$dir; ${MAKE} ${__softMAKEFLAGS} checkdistfiles); \
 	done
+.endif
 .endif
 
 # Prints out the total size of files missing in ${DISTDIR}
@@ -1461,23 +1608,27 @@ _MISSING_SIZE_SUMMARY=	\
 .PHONY: missing-size
 .if !target(missing-size)
 missing-size:
-	@cd ${.CURDIR} && ${MAKE} print-missing-files \
+	@cd ${.CURDIR} && ${MAKE} ${_ONG_MAKEFLAGS} print-missing-files \
 	| ${SETENV} MISSING_MSG="To install ${PKGNAME}, you have to fetch " ${_MISSING_SIZE_SUMMARY}
 .endif
 
 .PHONY: missing-recursive-size
 .if !target(missing-recursive-size)
 missing-recursive-size:
-	@cd ${.CURDIR} && ${MAKE} print-missing-recursive-files \
+	@cd ${.CURDIR} && ${MAKE} ${_ONG_MAKEFLAGS} print-missing-recursive-files \
 	| ${SETENV} MISSING_MSG="To install ${PKGNAME} and its dependencies, you have to fetch " ${_MISSING_SIZE_SUMMARY}
 .endif
 
 .PHONY: print-missing-recursive-files
 .if !target(print-missing-recursive-files)
 print-missing-recursive-files:
+.if defined(_ONG_REEXEC)
+	@cd ${.CURDIR} && ${MAKE} ${_ONG_MAKEFLAGS} ${__softMAKEFLAGS} ${.TARGET}
+.else
 	@for dir in ${.CURDIR} $$(${ALL-DEPENDS-LIST}); do \
 		(cd $$dir; ${MAKE} print-missing-files); \
 	done | ${SORT} -u +1;
+.endif
 .endif
 
 .PHONY: print-missing-files
@@ -1612,6 +1763,10 @@ do-configure:
 .if !defined(PERL_MODBUILD)
 	@cd ${CONFIGURE_WRKSRC} && \
 		${PERL5} -pi -e 's/ doc_(perl|site|\$$\(INSTALLDIRS\))_install$$//' Makefile
+.if ${PERL_LEVEL} <= 500503
+	@cd ${CONFIGURE_WRKSRC} && \
+		${PERL5} -pi -e 's/^(INSTALLSITELIB|INSTALLSITEARCH|SITELIBEXP|SITEARCHEXP|INSTALLMAN1DIR|INSTALLMAN3DIR) = \/usr\/local/$$1 = \$$(PREFIX)/' Makefile
+.endif
 .endif
 .endif
 .if defined(USE_IMAKE)
@@ -1641,11 +1796,11 @@ do-build:
 .if !target(check-conflicts)
 check-conflicts:
 .if defined(CONFLICTS) && !defined(DISABLE_CONFLICTS)
-	@found=`${PKG_INFO} -I ${CONFLICTS:C/.+/'&'/} 2>/dev/null | ${AWK} '{print $$1}'`; \
+	@found=`${SETENV} PKG_DBDIR=${_PKG_DBDIR} ${PKG_INFO} -I ${CONFLICTS:C/.+/'&'/} 2>/dev/null | ${AWK} '{print $$1}'`; \
 	conflicts_with=; \
 	for entry in $${found}; do \
-		prfx=`${PKG_INFO} -q -p "$${entry}" 2> /dev/null | ${SED} -ne '1s/^@cwd //p'`; \
-		orgn=`${PKG_INFO} -q -o "$${entry}" 2> /dev/null`; \
+		prfx=`${SETENV} PKG_DBDIR=${_PKG_DBDIR} ${PKG_INFO} -q -p "$${entry}" 2> /dev/null | ${SED} -ne '1s/^@cwd //p'`; \
+		orgn=`${SETENV} PKG_DBDIR=${_PKG_DBDIR} ${PKG_INFO} -q -o "$${entry}" 2> /dev/null`; \
 		if [ "/${PREFIX}" = "/$${prfx}" -a "/${PKGORIGIN}" != "/$${orgn}" ]; then \
 			conflicts_with="$${conflicts_with} $${entry}"; \
 		fi; \
@@ -1694,6 +1849,12 @@ do-install:
 
 # Package
 
+.if defined(DESTDIR) && ${PKGINSTALLVER} < 20040426
+check-makefile::
+	@${ECHO_CMD} "${PKGNAME}: Makefile error: please upgrade pkg_install to use DESTDIR"
+	@${FALSE}
+.endif
+
 .PHONY: do-package
 .if !target(do-package)
 do-package: ${TMPPLIST}
@@ -1721,10 +1882,10 @@ do-package: ${TMPPLIST}
 	fi; \
 	if ${PKG_CMD} ${PKG_ARGS} ${PKGFILE}; then \
 		if [ -d ${PACKAGES} ]; then \
-			cd ${.CURDIR} && eval ${MAKE} $${__softMAKEFLAGS} package-links; \
+			cd ${.CURDIR} && eval ${MAKE} ${_ONG_MAKEFLAGS} $${__softMAKEFLAGS} package-links; \
 		fi; \
 	else \
-		cd ${.CURDIR} && eval ${MAKE} $${__softMAKEFLAGS} delete-package; \
+		cd ${.CURDIR} && eval ${MAKE} ${_ONG_MAKEFLAGS} $${__softMAKEFLAGS} delete-package; \
 		exit 1; \
 	fi
 .endif
@@ -1795,22 +1956,19 @@ delete-package-list: delete-package-links-list
 check-already-installed:
 .if !defined(NO_PKG_REGISTER) && !defined(FORCE_PKG_REGISTER)
 		@${ECHO_MSG} "===>  Checking if ${PKGORIGIN} already installed"
-		@${MKDIR} ${PKG_DBDIR}
-		@already_installed=`${PKG_INFO} -q -O ${PKGORIGIN}`; \
+		@${MKDIR} ${_PKG_DBDIR}
+		@already_installed=`${SETENV} PKG_DBDIR=${_PKG_DBDIR} ${PKG_INFO} -q -O ${PKGORIGIN}`; \
 		if [ -n "$${already_installed}" ]; then \
 				for p in $${already_installed}; do \
-						prfx=`${PKG_INFO} -q -p $${p} 2> /dev/null | ${SED} -ne '1s|^@cwd ||p'`; \
+						prfx=`${SETENV} PKG_DBDIR=${_PKG_DBDIR} ${PKG_INFO} -q -p $${p} 2> /dev/null | ${SED} -ne '1s|^@cwd ||p'`; \
 						if [ "x${PREFIX}" = "x$${prfx}" ]; then \
-								df=`${PKG_INFO} -q -f $${p} 2> /dev/null | ${GREP} -v "^@" | ${COMM} -12 - ${TMPPLIST}`; \
-								if [ -n "$${df}" ]; then \
-										found_package=$${p}; \
-										break; \
-								fi; \
+								found_package=$${p}; \
+								break; \
 						fi; \
 				done; \
 		fi; \
-		if [ -d ${PKG_DBDIR}/${PKGNAME} -o -n "$${found_package}" ]; then \
-				if [ -d ${PKG_DBDIR}/${PKGNAME} ]; then \
+		if [ -n "$${found_package}" ]; then \
+				if [ "${PKGNAME}" = "$${found_package}" ]; then \
 						${ECHO_CMD} "===>   ${PKGNAME} is already installed"; \
 				else \
 						${ECHO_CMD} "===>   An older version of ${PKGORIGIN} is already installed ($${found_package})"; \
@@ -1840,12 +1998,12 @@ check-umask:
 .PHONY: install-mtree
 .if !target(install-mtree)
 install-mtree:
-	@${MKDIR} ${PREFIX}
+	@${MKDIR} ${DESTDIR}${PREFIX}
 	@if [ `${ID} -u` != 0 ]; then \
-		if [ -w ${PREFIX}/ ]; then \
+		if [ -w ${DESTDIR}${PREFIX}/ ]; then \
 			${ECHO_MSG} "Warning: not superuser, you may get some errors during installation."; \
 		else \
-			${ECHO_MSG} "Error: ${PREFIX}/ not writable."; \
+			${ECHO_MSG} "Error: ${DESTDIR}${PREFIX}/ not writable."; \
 			${FALSE}; \
 		fi; \
 	fi
@@ -1856,9 +2014,9 @@ install-mtree:
 			${ECHO_CMD} "Copy it from a suitable location (e.g., /usr/src/etc/mtree) and try again."; \
 			exit 1; \
 		else \
-			${MTREE_CMD} ${MTREE_ARGS} ${PREFIX}/ >/dev/null; \
+			${MTREE_CMD} ${MTREE_ARGS} ${DESTDIR}${PREFIX}/ >/dev/null; \
 			if [ ${MTREE_FILE} = "/etc/mtree/BSD.local.dist" ]; then \
-				cd ${PREFIX}/share/nls; \
+				cd ${DESTDIR}${PREFIX}/share/nls; \
 				${LN} -shf C POSIX; \
 				${LN} -shf C en_US.US-ASCII; \
 			fi; \
@@ -1914,7 +2072,7 @@ security-check:
 		! ${AWK} -v audit="$${PORTS_AUDIT}" -f ${PORTSDIR}/Tools/scripts/security-check.awk \
 		  ${WRKDIR}/.PLIST.flattened ${WRKDIR}/.PLIST.objdump ${WRKDIR}/.PLIST.setuid ${WRKDIR}/.PLIST.writable; \
 	then \
-		www_site=$$(cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} www-site); \
+		www_site=$$(cd ${.CURDIR} && ${MAKE} ${_ONG_MAKEFLAGS} ${__softMAKEFLAGS} www-site); \
 	    if [ ! -z "$${www_site}" ]; then \
 			${ECHO_MSG}; \
 			${ECHO_MSG} "      For more information, and contact details about the security"; \
@@ -1968,7 +2126,7 @@ _INSTALL_SUSEQ= check-umask install-mtree pre-su-install \
 				compress-man run-ldconfig fake-pkg security-check
 _PACKAGE_DEP=	install
 _PACKAGE_SEQ=	package-message pre-package pre-package-script \
-				do-package post-package-script
+				do-package post-package post-package-script
 
 .PHONY: bootstrap
 .if !target(bootstrap)
@@ -1976,13 +2134,19 @@ bootstrap: ${_BOOTSTRAP_SEQ}
 .endif
 
 .PHONY: check-sanity
-.if !target(check-sanity)
+.if !target(check-sanity) && defined(_ONG_REEXEC)
+check-sanity:
+	@cd ${.CURDIR} && ${MAKE} ${_ONG_MAKEFLAGS} ${__softMAKEFLAGS} ${.TARGET}
+.elif !target(check-sanity)
 check-sanity: ${_SANITY_DEP} ${_SANITY_SEQ}
 .endif
 
 # XXX MCL might need to move in loop below?
 .PHONY: fetch
-.if !target(fetch)
+.if !target(fetch) && defined(_ONG_REEXEC)
+fetch:
+	@cd ${.CURDIR} && ${MAKE} ${_ONG_MAKEFLAGS} ${__softMAKEFLAGS} ${.TARGET}
+.elif !target(${target})
 fetch: ${_FETCH_DEP} ${_FETCH_SEQ}
 .endif
 
@@ -1992,32 +2156,34 @@ fetch: ${_FETCH_DEP} ${_FETCH_SEQ}
 .for target in extract patch configure build install package
 
 .PHONY: ${target}
-.if !target(${target}) && defined(_OPTIONS_OK)
+.if !target(${target}) && defined(_ONG_REEXEC)
+${target}:
+	@cd ${.CURDIR} && ${MAKE} ${_ONG_MAKEFLAGS} ${__softMAKEFLAGS} ${.TARGET}
+.elif !target(${target}) && defined(_OPTIONS_OK)
 ${target}: ${${target:U}_COOKIE}
 .elif !target(${target})
 ${target}: config
 	@cd ${.CURDIR} && ${MAKE} CONFIG_DONE=1 ${__softMAKEFLAGS} ${${target:U}_COOKIE}
-.elif target(${target}) && defined(IGNORE)
 .endif
 
 .if !exists(${${target:U}_COOKIE})
 
 .if ${UID} != 0 && defined(_${target:U}_SUSEQ) && !defined(INSTALL_AS_USER)
-.if defined(USE_SUBMAKE)
+.if defined(USE_SUBMAKE) || defined(_ONG_REEXEC)
 ${${target:U}_COOKIE}: ${_${target:U}_DEP}
-	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} ${_${target:U}_SEQ}
+	@cd ${.CURDIR} && ${MAKE} ${_ONG_MAKEFLAGS} ${__softMAKEFLAGS} ${_${target:U}_SEQ}
 .else
 ${${target:U}_COOKIE}: ${_${target:U}_DEP} ${_${target:U}_SEQ}
 .endif
 	@${ECHO_MSG} "===>  Switching to root credentials for '${target}' target"
 	@cd ${.CURDIR} && \
-		${SU_CMD} "${MAKE} ${__softMAKEFLAGS} ${_${target:U}_SUSEQ}"
+		${SU_CMD} "${MAKE} ${_ONG_MAKEFLAGS} ${__softMAKEFLAGS} ${_${target:U}_SUSEQ}"
 	@${ECHO_MSG} "===>  Returning to user credentials"
 	@${TOUCH} ${TOUCH_FLAGS} ${.TARGET}
-.elif defined(USE_SUBMAKE)
+.elif defined(USE_SUBMAKE) || defined(_ONG_REEXEC)
 ${${target:U}_COOKIE}: ${_${target:U}_DEP}
 	@cd ${.CURDIR} && \
-		${MAKE} ${__softMAKEFLAGS} ${_${target:U}_SEQ} ${_${target:U}_SUSEQ}
+		${MAKE} ${_ONG_MAKEFLAGS} ${__softMAKEFLAGS} ${_${target:U}_SEQ} ${_${target:U}_SUSEQ}
 	@${TOUCH} ${TOUCH_FLAGS} ${.TARGET}
 .else
 ${${target:U}_COOKIE}: ${_${target:U}_DEP} ${_${target:U}_SEQ} ${_${target:U}_SUSEQ}
@@ -2029,7 +2195,7 @@ ${${target:U}_COOKIE}::
 	@if [ -e ${.TARGET} ]; then \
 		${DO_NADA}; \
 	else \
-		cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} ${.TARGET}; \
+		cd ${.CURDIR} && ${MAKE} ${_ONG_MAKEFLAGS} ${__softMAKEFLAGS} ${.TARGET}; \
 	fi
 .endif
 
@@ -2101,7 +2267,7 @@ pre-su-install-script:
 .PHONY: pretty-print-www-site
 .if !target(pretty-print-www-site)
 pretty-print-www-site:
-	@www_site=$$(cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} www-site); \
+	@www_site=$$(cd ${.CURDIR} && ${MAKE} ${_ONG_MAKEFLAGS} ${__softMAKEFLAGS} www-site); \
 	if [ -n "$${www_site}" ]; then \
 		${ECHO_CMD} -n " and/or visit the "; \
 		${ECHO_CMD} -n "<a href=\"$${www_site}\">web site</a>"; \
@@ -2120,7 +2286,7 @@ pretty-print-www-site:
 .PHONY: checkpatch
 .if !target(checkpatch)
 checkpatch:
-	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} PATCH_CHECK_ONLY=yes ${_PATCH_DEP} ${_PATCH_SEQ}
+	@cd ${.CURDIR} && ${MAKE} ${_ONG_MAKEFLAGS} ${__softMAKEFLAGS} PATCH_CHECK_ONLY=yes ${_PATCH_DEP} ${_PATCH_SEQ}
 .endif
 
 # Reinstall
@@ -2131,7 +2297,7 @@ checkpatch:
 .if !target(reinstall)
 reinstall:
 	@${RM} -f ${INSTALL_COOKIE} ${PACKAGE_COOKIE}
-	@cd ${.CURDIR} && DEPENDS_TARGET="${DEPENDS_TARGET}" ${MAKE} install
+	@cd ${.CURDIR} && DEPENDS_TARGET="${DEPENDS_TARGET}" DESTDIR=${DESTDIR} ${MAKE} ${_ONG_MAKEFLAGS} install
 .endif
 
 # Deinstall
@@ -2141,21 +2307,25 @@ reinstall:
 .PHONY: deinstall
 .if !target(deinstall)
 deinstall:
+	@if [ -n "${DESTDIR}" ]; then \
+		${ECHO_MSG} "===>   Can't deinstall from DESTDIR: ${DESTDIR}"; \
+		${FALSE}; \
+	fi
 .if ${UID} != 0 && !defined(INSTALL_AS_USER)
 	@${ECHO_MSG} "===>  Switching to root credentials for '${.TARGET}' target"
 	@cd ${.CURDIR} && \
-		${SU_CMD} "${MAKE} ${__softMAKEFLAGS} ${.TARGET}"
+		${SU_CMD} "${MAKE} ${_ONG_MAKEFLAGS} ${__softMAKEFLAGS} ${.TARGET}"
 	@${ECHO_MSG} "===>  Returning to user credentials"
 .else
 	@${ECHO_MSG} "===>  Deinstalling for ${PKGORIGIN}"
-	@found_names=`${PKG_INFO} -q -O ${PKGORIGIN}`; \
+	@found_names=`${SETENV} PKG_DBDIR=${_PKG_DBDIR} ${PKG_INFO} -q -O ${PKGORIGIN}`; \
 	for p in $${found_names}; do \
 			check_name=`${ECHO_CMD} $${p} | ${SED} -e 's/-[^-]*$$//'`; \
 			if [ "$${check_name}" = "${PKGBASE}" ]; then \
-					prfx=`${PKG_INFO} -q -p $${p} 2> /dev/null | ${SED} -ne '1s|^@cwd ||p'`; \
+					prfx=`${SETENV} PKG_DBDIR=${_PKG_DBDIR} ${PKG_INFO} -q -p $${p} 2> /dev/null | ${SED} -ne '1s|^@cwd ||p'`; \
 					if [ "x${PREFIX}" = "x$${prfx}" ]; then \
 							${ECHO_MSG} "===>   Deinstalling $${p}"; \
-							${PKG_DELETE} -f $${p}; \
+							${SETENV} PKG_DBDIR=${_PKG_DBDIR} ${PKG_DELETE} -f $${p}; \
 					else \
 							${ECHO_MSG} "===>   $${p} has a different PREFIX: $${prfx}, skipping"; \
 					fi; \
@@ -2175,18 +2345,22 @@ deinstall:
 .PHONY: deinstall-all
 .if !target(deinstall-all)
 deinstall-all:
+	@if [ -n "${DESTDIR}" ]; then \
+		${ECHO_MSG} "===>   Can't deinstall from DESTDIR: ${DESTDIR}"; \
+		${FALSE}; \
+	fi
 .if ${UID} != 0 && !defined(INSTALL_AS_USER)
 	@${ECHO_MSG} "===>  Switching to root credentials for '${.TARGET}' target"
 	@cd ${.CURDIR} && \
-		${SU_CMD} "${MAKE} ${__softMAKEFLAGS} ${.TARGET}"
+		${SU_CMD} "${MAKE} ${_ONG_MAKEFLAGS} ${__softMAKEFLAGS} ${.TARGET}"
 	@${ECHO_MSG} "===>  Returning to user credentials"
 .else
 	@${ECHO_MSG} "===>  Deinstalling for ${PKGORIGIN}"
-	@deinstall_names=`${PKG_INFO} -q -O ${PKGORIGIN}`; \
+	@deinstall_names=`${SETENV} PKG_DBDIR=${_PKG_DBDIR} ${PKG_INFO} -q -O ${PKGORIGIN}`; \
 	if [ -n "$${deinstall_names}" ]; then \
 		for d in $${deinstall_names}; do \
 			${ECHO_MSG} "===>   Deinstalling $${d}"; \
-			${PKG_DELETE} -f $${d}; \
+			${SETENV} PKG_DBDIR=${_PKG_DBDIR} ${PKG_DELETE} -f $${d}; \
 		done; \
 	else \
 		${ECHO_MSG} "===>   ${PKGORIGIN} not installed, skipping"; \
@@ -2213,15 +2387,15 @@ do-clean:
 .if !target(clean)
 clean:
 .if !defined(NOCLEANDEPENDS)
-	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} clean-depends
+	@cd ${.CURDIR} && ${MAKE} ${_ONG_MAKEFLAGS} ${__softMAKEFLAGS} clean-depends
 .endif
 	@${ECHO_MSG} "===>  Cleaning for ${PKGNAME}"
 .if target(pre-clean)
-	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} pre-clean
+	@cd ${.CURDIR} && ${MAKE} ${_ONG_MAKEFLAGS} ${__softMAKEFLAGS} pre-clean
 .endif
-	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} do-clean
+	@cd ${.CURDIR} && ${MAKE} ${_ONG_MAKEFLAGS} ${__softMAKEFLAGS} do-clean
 .if target(post-clean)
-	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} post-clean
+	@cd ${.CURDIR} && ${MAKE} ${_ONG_MAKEFLAGS} ${__softMAKEFLAGS} post-clean
 .endif
 .endif
 
@@ -2234,7 +2408,7 @@ pre-distclean:
 .PHONY: distclean
 .if !target(distclean)
 distclean: pre-distclean clean
-	@cd ${.CURDIR} && ${MAKE} delete-distfiles RESTRICTED_FILES="${_DISTFILES} ${_PATCHFILES}"
+	@cd ${.CURDIR} && ${MAKE} ${_ONG_MAKEFLAGS} delete-distfiles RESTRICTED_FILES='$${_DISTFILES} $${_PATCHFILES}'
 .endif
 
 .PHONY: delete-distfiles
@@ -2325,8 +2499,8 @@ pre-repackage:
 .if !target(package-noinstall)
 package-noinstall:
 	@${MKDIR} ${WRKDIR}
-	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} pre-package \
-		pre-package-script do-package post-package-script
+	@cd ${.CURDIR} && ${MAKE} ${_ONG_MAKEFLAGS} ${__softMAKEFLAGS} pre-package \
+		pre-package-script do-package post-package post-package-script
 	@${RM} -f ${TMPPLIST}
 	-@${RMDIR} ${WRKDIR}
 .endif
@@ -2352,6 +2526,7 @@ bootstrap-depends:
 
 .for deptype in BOOTSTRAP FETCH EXTRACT PATCH BUILD RUN
 .PHONY: ${deptype:L}-depends
+.if !target(${deptype:L}-depends)
 ${deptype:L}-depends:
 .if defined(${deptype}_DEPENDS)
 .if !defined(NO_DEPENDS)
@@ -2426,9 +2601,11 @@ ${deptype:L}-depends:
 .else
 	@${DO_NADA}
 .endif
+.endif
 .endfor
 
 .PHONY: lib-depends
+.if !target(lib-depends)
 lib-depends:
 .if defined(LIB_DEPENDS) && !defined(NO_DEPENDS)
 	@for i in ${LIB_DEPENDS}; do \
@@ -2484,8 +2661,10 @@ lib-depends:
 		fi; \
 	done
 .endif
+.endif
 
 .PHONY: misc-depends
+.if !target(misc-depends)
 misc-depends:
 .if defined(DEPENDS)
 .if !defined(NO_DEPENDS)
@@ -2510,6 +2689,7 @@ misc-depends:
 .else
 	@${DO_NADA}
 .endif
+.endif
 
 .endif
 
@@ -2517,10 +2697,18 @@ misc-depends:
 
 .PHONY: all-depends-list
 all-depends-list:
-.if defined(EXTRACT_DEPENDS) || defined(PATCH_DEPENDS) || defined(FETCH_DEPENDS) || defined(BUILD_DEPENDS) || defined(LIB_DEPENDS) || defined(RUN_DEPENDS) || defined(DEPENDS)
+.if defined(_ONG_REEXEC)
+	@cd ${.CURDIR} && ${MAKE} ${_ONG_MAKEFLAGS} ${__softMAKEFLAGS} ${.TARGET}
+.elif defined(EXTRACT_DEPENDS) || defined(PATCH_DEPENDS) || defined(FETCH_DEPENDS) || defined(BUILD_DEPENDS) || defined(LIB_DEPENDS) || defined(RUN_DEPENDS) || defined(DEPENDS)
 	@${ALL-DEPENDS-LIST}
+.else
+	@${DO_NADA}
 .endif
 
+.if defined(_ONG_REEXEC)
+ALL-DEPENDS-LIST= \
+	${ECHO_MSG} "${PKGNAME}: configuration error." >&2; ${FALSE}
+.else
 ALL-DEPENDS-LIST= \
 	checked="${PARENT_CHECKED}"; \
 	for dir in $$(${ECHO_CMD} "${EXTRACT_DEPENDS} ${PATCH_DEPENDS} ${FETCH_DEPENDS} ${BUILD_DEPENDS} ${LIB_DEPENDS} ${RUN_DEPENDS}" | ${SED} -e 'y/ /\n/' | ${CUT} -f 2 -d ':') $$(${ECHO_CMD} ${DEPENDS} | ${SED} -e 'y/ /\n/' | ${CUT} -f 1 -d ':'); do \
@@ -2535,38 +2723,55 @@ ALL-DEPENDS-LIST= \
 			${ECHO_MSG} "${PKGNAME}: \"$$dir\" non-existent -- dependency list incomplete" >&2; \
 		fi; \
 	done | ${SORT} -u
+.endif
 
 .PHONY: clean-depends
 .if !target(clean-depends)
 clean-depends:
+.if defined(_ONG_REEXEC)
+	@cd ${.CURDIR} && ${MAKE} ${_ONG_MAKEFLAGS} ${__softMAKEFLAGS} ${.TARGET}
+.else
 	@for dir in $$(${ALL-DEPENDS-LIST}); do \
 		(cd $$dir; ${MAKE} NOCLEANDEPENDS=yes clean); \
 	done
+.endif
 .endif
 
 .PHONY: deinstall-depends
 .if !target(deinstall-depends)
 deinstall-depends:
+.if defined(_ONG_REEXEC)
+	@cd ${.CURDIR} && ${MAKE} ${_ONG_MAKEFLAGS} ${__softMAKEFLAGS} ${.TARGET}
+.else
 	@for dir in $$(${ALL-DEPENDS-LIST}); do \
 		(cd $$dir; ${MAKE} deinstall); \
 	done
+.endif
 .endif
 
 .PHONY: fetch-recursive
 .if !target(fetch-recursive)
 fetch-recursive:
+.if defined(_ONG_REEXEC)
+	@cd ${.CURDIR} && ${MAKE} ${_ONG_MAKEFLAGS} ${__softMAKEFLAGS} ${.TARGET}
+.else
 	@${ECHO_MSG} "===> Fetching all distfiles for ${PKGNAME} and dependencies"
 	@for dir in ${.CURDIR} $$(${ALL-DEPENDS-LIST}); do \
 		(cd $$dir; ${MAKE} fetch); \
 	done
 .endif
+.endif
 
 .PHONY: fetch-recursive-list
 .if !target(fetch-recursive-list)
 fetch-recursive-list:
+.if defined(_ONG_REEXEC)
+	@cd ${.CURDIR} && ${MAKE} ${_ONG_MAKEFLAGS} ${__softMAKEFLAGS} ${.TARGET}
+.else
 	@for dir in ${.CURDIR} $$(${ALL-DEPENDS-LIST}); do \
 		(cd $$dir; ${MAKE} fetch-list); \
 	done
+.endif
 .endif
 
 .PHONY: fetch-required
@@ -2588,8 +2793,7 @@ fetch-required: fetch
 			fi; \
 		else \
 			(cd $$dir; \
-			tmp=`${MAKE} -V PKGNAME`; \
-			if [ ! -d ${PKG_DBDIR}/$${tmp} ]; then \
+			if ! ${PKG_INFO} -e `${MAKE} -V PKGNAME`; then \
 				${MAKE} fetch; \
 			fi );  \
 		fi; \
@@ -2617,8 +2821,7 @@ fetch-required-list: fetch-list
 			fi; \
 		else \
 			(cd $$dir; \
-			tmp=`${MAKE} -V PKGNAME`; \
-			if [ ! -d ${PKG_DBDIR}/$${tmp} ]; then \
+			if ! ${PKG_INFO} -e `${MAKE} -V PKGNAME`; then \
 				${MAKE} fetch-list; \
 			fi );  \
 		fi; \
@@ -2631,10 +2834,14 @@ fetch-required-list: fetch-list
 .PHONY: checksum-recursive
 .if !target(checksum-recursive)
 checksum-recursive:
+.if defined(_ONG_REEXEC)
+	@cd ${.CURDIR} && ${MAKE} ${_ONG_MAKEFLAGS} ${__softMAKEFLAGS} ${.TARGET}
+.else
 	@${ECHO_MSG} "===> Fetching and checking checksums for ${PKGNAME} and dependencies"
 	@for dir in ${.CURDIR} $$(${ALL-DEPENDS-LIST}); do \
 		(cd $$dir; ${MAKE} checksum); \
 	done
+.endif
 .endif
 
 # Dependency lists: build and runtime.  Print out directory names.
@@ -2726,9 +2933,13 @@ package-depends:
 
 .PHONY: package-recursive
 package-recursive: package
+.if defined(_ONG_REEXEC)
+	@cd ${.CURDIR} && ${MAKE} ${_ONG_MAKEFLAGS} ${__softMAKEFLAGS} ${.TARGET}
+.else
 	@for dir in $$(${ALL-DEPENDS-LIST}); do \
 		(cd $$dir; ${MAKE} package-noinstall); \
 	done
+.endif
 
 ################################################################
 # Everything after here are internal targets and really
@@ -2744,26 +2955,30 @@ package-recursive: package
 .PHONY: describe
 .if !target(describe)
 describe:
+.if defined(_ONG_REEXEC)
+	@cd ${.CURDIR} && ${MAKE} ${_ONG_MAKEFLAGS}  ${.TARGET}
+.else
 	@${ECHO_CMD} -n "${PKGNAME}|${.CURDIR}|${PREFIX}|"
 .if defined(COMMENT)
 	@${ECHO_CMD} -n ${COMMENT:Q}
 .else
 	@${ECHO_CMD} -n '** No Description'
 .endif
-	@perl -e ' \
+	@${PERL5} -e ' \
 		if ( -f q{${DESCR}} ) { \
 			print q{|${DESCR}}; \
 		} else { \
 			print q{|/dev/null}; \
 		} \
 		print q{|${MAINTAINER}|${CATEGORIES}|}; \
-		@bdirs = map((split /:/)[1], split(q{ }, q{${EXTRACT_DEPENDS} ${PATCH_DEPENDS} ${FETCH_DEPENDS} ${BUILD_DEPENDS}})); \
+		@edirs = map((split /:/)[1], split(q{ }, q{${EXTRACT_DEPENDS}})); \
+		@pdirs = map((split /:/)[1], split(q{ }, q{${PATCH_DEPENDS}})); \
+		@fdirs = map((split /:/)[1], split(q{ }, q{${FETCH_DEPENDS}})); \
+		@bdirs = map((split /:/)[1], split(q{ }, q{${BUILD_DEPENDS}})); \
 		@rdirs = map((split /:/)[1], split(q{ }, q{${RUN_DEPENDS}})); \
-		@mdirs = ( \
-			map((split /:/)[0], split(q{ }, q{${DEPENDS}})), \
-			map((split /:/)[1], split(q{ }, q{${LIB_DEPENDS}})) \
-		); \
-		for my $$i (\@bdirs, \@rdirs, \@mdirs) { \
+		@ddirs = map((split /:/)[0], split(q{ }, q{${DEPENDS}})); \
+		@ldirs = map((split /:/)[1], split(q{ }, q{${LIB_DEPENDS}})); \
+		for my $$i (\@edirs, \@pdirs, \@fdirs, \@bdirs, \@rdirs, \@ddirs, \@ldirs) { \
 			my @dirs = @$$i; \
 			@$$i = (); \
 			for (@dirs) { \
@@ -2775,14 +2990,26 @@ describe:
 				} \
 			} \
 		} \
-		for (@bdirs, @mdirs) { \
-			$$x{$$_} = 1; \
+		for (@edirs, @ddirs) { \
+			$$xe{$$_} = 1; \
 		} \
-		print join(q{ }, sort keys %x), q{|}; \
-		for (@rdirs, @mdirs) { \
-			$$y{$$_} = 1; \
+		print join(q{ }, sort keys %xe), q{|}; \
+		for (@pdirs, @ddirs) { \
+			$$xp{$$_} = 1; \
 		} \
-		print join(q{ }, sort keys %y), q{|}; \
+		print join(q{ }, sort keys %xp), q{|}; \
+		for (@fdirs, @ddirs) { \
+			$$xf{$$_} = 1; \
+		} \
+		print join(q{ }, sort keys %xf), q{|}; \
+		for (@bdirs, @ddirs, @ldirs) { \
+			$$xb{$$_} = 1; \
+		} \
+		print join(q{ }, sort keys %xb), q{|}; \
+		for (@rdirs, @ddirs, @ldirs) { \
+			$$xr{$$_} = 1; \
+		} \
+		print join(q{ }, sort keys %xr), q{|}; \
 		if (open(DESCR, q{${DESCR}})) { \
 			while (<DESCR>) { \
 				if (/^WWW:\s+(\S+)/) { \
@@ -2792,6 +3019,7 @@ describe:
 			} \
 		} \
 		print qq{\n};'
+.endif
 .endif
 
 .PHONY: www-site
@@ -2813,7 +3041,7 @@ readmes:	readme
 .if !target(readme)
 readme:
 	@${RM} -f ${.CURDIR}/README.html
-	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} ${.CURDIR}/README.html
+	@cd ${.CURDIR} && ${MAKE} ${_ONG_MAKEFLAGS} ${__softMAKEFLAGS} ${.CURDIR}/README.html
 .endif
 
 ${.CURDIR}/README.html:
@@ -2829,11 +3057,11 @@ ${.CURDIR}/README.html:
 			-e 's|%%EMAIL%%|'"$$(${ECHO_CMD} "${MAINTAINER}" | \
 								 ${SED} -e 's/([^)]*)//;s/.*<//;s/>.*//')"'|g' \
 			-e 's|%%MAINTAINER%%|${MAINTAINER}|g' \
-			-e 's|%%WEBSITE%%|'"$$(cd ${.CURDIR} && eval ${MAKE} \
+			-e 's|%%WEBSITE%%|'"$$(cd ${.CURDIR} && eval ${MAKE} ${_ONG_MAKEFLAGS} \
 					$${__softMAKEFLAGS} pretty-print-www-site)"'|' \
-			-e 's|%%BUILD_DEPENDS%%|'"$$(cd ${.CURDIR} && eval ${MAKE} \
+			-e 's|%%BUILD_DEPENDS%%|'"$$(cd ${.CURDIR} && eval ${MAKE} ${_ONG_MAKEFLAGS} \
 					$${__softMAKEFLAGS} pretty-print-build-depends-list)"'|' \
-			-e 's|%%RUN_DEPENDS%%|'"$$(cd ${.CURDIR} && eval ${MAKE} \
+			-e 's|%%RUN_DEPENDS%%|'"$$(cd ${.CURDIR} && eval ${MAKE} ${_ONG_MAKEFLAGS} \
 					$${__softMAKEFLAGS} pretty-print-run-depends-list)"'|' \
 			-e 's|%%TOP%%|'"$$(${ECHO_CMD} ${CATEGORIES} | \
 							   ${SED} -e 's| .*||' -e 's|[^/]*|..|g')"'/..|' \
@@ -2935,7 +3163,7 @@ generate-plist:
 .endif
 
 ${TMPPLIST}:
-	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} generate-plist
+	@cd ${.CURDIR} && ${MAKE} ${_ONG_MAKEFLAGS} ${__softMAKEFLAGS} generate-plist
 
 .PHONY: add-plist-docs
 .if !target(add-plist-docs)
@@ -2945,11 +3173,11 @@ add-plist-docs:
 		[ "`${SED} -En -e '/^@cw?d[ 	]*/s,,,p' ${TMPPLIST} | ${TAIL} -n 1`" != "${PREFIX}" ]; then \
 		${ECHO_CMD} "@cwd ${PREFIX}" >> ${TMPPLIST}; \
 	fi
-	@${FIND} -P ${PORTDOCS:S/^/${DOCSDIR}\//} ! -type d 2>/dev/null | \
-		${SED} -ne 's,^${PREFIX}/,,p' >> ${TMPPLIST}
-	@${FIND} -P -d ${PORTDOCS:S/^/${DOCSDIR}\//} -type d 2>/dev/null | \
-		${SED} -ne 's,^${PREFIX}/,@dirrm ,p' >> ${TMPPLIST}
-	@if [ -d "${DOCSDIR}" ]; then \
+	@${FIND} -P ${PORTDOCS:S/^/${DESTDIR}${DOCSDIR}\//} ! -type d 2>/dev/null | \
+		${SED} -ne 's,^${DESTDIR}${PREFIX}/,,p' >> ${TMPPLIST}
+	@${FIND} -P -d ${PORTDOCS:S/^/${DESTDIR}${DOCSDIR}\//} -type d 2>/dev/null | \
+		${SED} -ne 's,^${DESTDIR}${PREFIX}/,@dirrm ,p' >> ${TMPPLIST}
+	@if [ -d "${DESTDIR}${DOCSDIR}" ]; then \
 		${ECHO_CMD} "@unexec rmdir %D/${DOCSDIR:S,^${PREFIX}/,,} 2>/dev/null || true" >> ${TMPPLIST}; \
 	fi
 .else
@@ -2964,7 +3192,7 @@ add-plist-info:
 .for i in ${INFO}
 	@${ECHO_CMD} "@unexec install-info --delete %D/${INFO_PATH}/$i.info %D/${INFO_PATH}/dir" \
 		>> ${TMPPLIST}
-	@${LS} ${PREFIX}/${INFO_PATH}/$i.info* | ${SED} -e s:${PREFIX}/::g >> ${TMPPLIST}
+	@${LS} ${DESTDIR}${PREFIX}/${INFO_PATH}/$i.info* | ${SED} -e s:${DESTDIR}${PREFIX}/::g >> ${TMPPLIST}
 	@${ECHO_CMD} "@exec install-info %D/${INFO_PATH}/$i.info %D/${INFO_PATH}/dir" \
 		>> ${TMPPLIST}
 .endfor
@@ -2982,21 +3210,21 @@ compress-man:
 .if defined(_MANPAGES) || defined(_MLINKS)
 .if ${MANCOMPRESSED} == yes && defined(NOMANCOMPRESS)
 	@${ECHO_MSG} "===>   Uncompressing manual pages for ${PKGNAME}"
-	@_manpages='${_MANPAGES:S/'/'\''/g}' && [ "$${_manpages}" != "" ] && ( eval ${GUNZIP_CMD} $${_manpages} ) || ${TRUE}
+	@_manpages='${_MANPAGES:S/^/${DESTDIR}/:S/'/'\''/g}' && [ "$${_manpages}" != "" ] && ( eval ${GUNZIP_CMD} $${_manpages} ) || ${TRUE}
 .elif ${MANCOMPRESSED} == no && !defined(NOMANCOMPRESS)
 	@${ECHO_MSG} "===>   Compressing manual pages for ${PKGNAME}"
-	@_manpages='${_MANPAGES:S/'/'\''/g}' && [ "$${_manpages}" != "" ] && ( eval ${GZIP_CMD} $${_manpages} ) || ${TRUE}
+	@_manpages='${_MANPAGES:S/^/${DESTDIR}/:S/'/'\''/g}' && [ "$${_manpages}" != "" ] && ( eval ${GZIP_CMD} $${_manpages} ) || ${TRUE}
 .endif
 .if defined(_MLINKS)
 	@set ${_MLINKS}; \
 	while :; do \
 		[ $$# -eq 0 ] && break || ${TRUE}; \
-		${RM} -f $${2%.gz}; ${RM} -f $$2.gz; \
+		${RM} -f ${DESTDIR}$${2%.gz}; ${RM} -f ${DESTDIR}$$2.gz; \
 		${LN} -fs `${ECHO_CMD} $$1 $$2 | ${AWK} '{ \
 					z=split($$1, a, /\//); x=split($$2, b, /\//); \
 					while (a[i] == b[i]) i++; \
 					for (q=i; q<x; q++) printf "../"; \
-					for (; i<z; i++) printf a[i] "/"; printf a[z]; }'` $$2; \
+					for (; i<z; i++) printf a[i] "/"; printf a[z]; }'` ${DESTDIR}$$2; \
 		shift; shift; \
 	done
 .endif
@@ -3013,48 +3241,48 @@ compress-man:
 .if !target(fake-pkg)
 fake-pkg:
 .if !defined(NO_PKG_REGISTER)
-	@if [ ! -d ${PKG_DBDIR} ]; then ${RM} -f ${PKG_DBDIR}; ${MKDIR} ${PKG_DBDIR}; fi
+	@if [ ! -d ${_PKG_DBDIR} ]; then ${RM} -f ${_PKG_DBDIR}; ${MKDIR} ${_PKG_DBDIR}; fi
 	@${RM} -f /tmp/${PKGNAME}-required-by
 .if defined(FORCE_PKG_REGISTER)
-	@if [ -e ${PKG_DBDIR}/${PKGNAME}/+REQUIRED_BY ]; then \
-		${CP} ${PKG_DBDIR}/${PKGNAME}/+REQUIRED_BY /tmp/${PKGNAME}-required-by; \
+	@if [ -e ${_PKG_DBDIR}/${PKGNAME}/+REQUIRED_BY ]; then \
+		${CP} ${_PKG_DBDIR}/${PKGNAME}/+REQUIRED_BY /tmp/${PKGNAME}-required-by; \
 	fi
-	@${RM} -rf ${PKG_DBDIR}/${PKGNAME}
+	@${RM} -rf ${_PKG_DBDIR}/${PKGNAME}
 .endif
-	@if [ ! -d ${PKG_DBDIR}/${PKGNAME} ]; then \
+	@if [ ! -d ${_PKG_DBDIR}/${PKGNAME} ]; then \
 		${ECHO_MSG} "===>   Registering installation for ${PKGNAME}"; \
-		${MKDIR} ${PKG_DBDIR}/${PKGNAME}; \
-		${PKG_CMD} ${PKG_ARGS} -O ${PKGFILE} > ${PKG_DBDIR}/${PKGNAME}/+CONTENTS; \
-		${CP} ${DESCR} ${PKG_DBDIR}/${PKGNAME}/+DESC; \
-		${ECHO_CMD} ${COMMENT:Q} > ${PKG_DBDIR}/${PKGNAME}/+COMMENT; \
+		${MKDIR} ${_PKG_DBDIR}/${PKGNAME}; \
+		${PKG_CMD} ${PKG_ARGS} -O ${PKGFILE} > ${_PKG_DBDIR}/${PKGNAME}/+CONTENTS; \
+		${CP} ${DESCR} ${_PKG_DBDIR}/${PKGNAME}/+DESC; \
+		${ECHO_CMD} ${COMMENT:Q} > ${_PKG_DBDIR}/${PKGNAME}/+COMMENT; \
 		if [ -f ${PKGINSTALL} ]; then \
-			${CP} ${PKGINSTALL} ${PKG_DBDIR}/${PKGNAME}/+INSTALL; \
+			${CP} ${PKGINSTALL} ${_PKG_DBDIR}/${PKGNAME}/+INSTALL; \
 		fi; \
 		if [ -f ${PKGDEINSTALL} ]; then \
-			${CP} ${PKGDEINSTALL} ${PKG_DBDIR}/${PKGNAME}/+DEINSTALL; \
+			${CP} ${PKGDEINSTALL} ${_PKG_DBDIR}/${PKGNAME}/+DEINSTALL; \
 		fi; \
 		if [ -f ${PKGREQ} ]; then \
-			${CP} ${PKGREQ} ${PKG_DBDIR}/${PKGNAME}/+REQUIRE; \
+			${CP} ${PKGREQ} ${_PKG_DBDIR}/${PKGNAME}/+REQUIRE; \
 		fi; \
 		if [ -f ${PKGMESSAGE} ]; then \
-			${CP} ${PKGMESSAGE} ${PKG_DBDIR}/${PKGNAME}/+DISPLAY; \
+			${CP} ${PKGMESSAGE} ${_PKG_DBDIR}/${PKGNAME}/+DISPLAY; \
 		fi; \
-		for dep in `${PKG_INFO} -qf ${PKGNAME} | ${GREP} -w ^@pkgdep | ${AWK} '{print $$2}' | ${SORT} -u`; do \
-			if [ -d ${PKG_DBDIR}/$$dep -a -z `${ECHO_CMD} $$dep | ${GREP} -E ${PKG_IGNORE_DEPENDS}` ]; then \
-				if ! ${GREP} ^${PKGNAME}$$ ${PKG_DBDIR}/$$dep/+REQUIRED_BY \
+		for dep in `${SETENV} PKG_DBDIR=${_PKG_DBDIR} ${PKG_INFO} -qf ${PKGNAME} | ${GREP} -w ^@pkgdep | ${AWK} '{print $$2}' | ${SORT} -u`; do \
+			if [ -d ${_PKG_DBDIR}/$$dep -a -z `${ECHO_CMD} $$dep | ${GREP} -E ${PKG_IGNORE_DEPENDS}` ]; then \
+				if ! ${GREP} ^${PKGNAME}$$ ${_PKG_DBDIR}/$$dep/+REQUIRED_BY \
 					>/dev/null 2>&1; then \
-					${ECHO_CMD} ${PKGNAME} >> ${PKG_DBDIR}/$$dep/+REQUIRED_BY; \
+					${ECHO_CMD} ${PKGNAME} >> ${_PKG_DBDIR}/$$dep/+REQUIRED_BY; \
 				fi; \
 			fi; \
 		done; \
 	fi
 .if !defined(NO_MTREE)
 	@if [ -f ${MTREE_FILE} ]; then \
-		${CP} ${MTREE_FILE} ${PKG_DBDIR}/${PKGNAME}/+MTREE_DIRS; \
+		${CP} ${MTREE_FILE} ${_PKG_DBDIR}/${PKGNAME}/+MTREE_DIRS; \
 	fi
 .endif
 	@if [ -e /tmp/${PKGNAME}-required-by ]; then \
-		${CAT} /tmp/${PKGNAME}-required-by >> ${PKG_DBDIR}/${PKGNAME}/+REQUIRED_BY; \
+		${CAT} /tmp/${PKGNAME}-required-by >> ${_PKG_DBDIR}/${PKGNAME}/+REQUIRED_BY; \
 		${RM} -f /tmp/${PKGNAME}-required-by; \
 	fi
 .else
@@ -3093,7 +3321,6 @@ __softMAKEFLAGS+=      '${softvar}+=${${softvar}:S/'/'\''/g}'
 	SYSTEMVERSION="${SYSTEMVERSION:S/"/"'"'"/g:S/\$/\$\$/g:S/\\/\\\\/g}"
 .endif
 
-.PHONY: config
 .if !target(config)
 config:
 .if !defined(OPTIONS)
@@ -3173,7 +3400,6 @@ config:
 .endif
 .endif
 
-.PHONY: showconfig
 .if !target(showconfig)
 showconfig:
 .if defined(OPTIONS) && exists(${_OPTIONSFILE})
@@ -3206,7 +3432,6 @@ showconfig:
 .endif
 .endif
 
-.PHONY: rmconfig
 .if !target(rmconfig)
 rmconfig:
 .if defined(OPTIONS) && exists(${_OPTIONSFILE})
