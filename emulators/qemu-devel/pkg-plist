@@ -2,6 +2,7 @@ bin/qemu
 bin/qemu-img
 bin/qemu-system-ppc
 bin/qemu-system-sparc
+bin/qemu-system-x86_64
 %%PORTDOCS%%%%DOCSDIR%%/qemu-doc.html
 %%PORTDOCS%%%%DOCSDIR%%/qemu-tech.html
 share/qemu/bios.bin
