@@ -7,6 +7,7 @@
 
 PORTNAME=	goggles
 PORTVERSION=	0.7.10
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.fifthplanet.net/files/
 
