@@ -78,8 +78,8 @@ BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
 		epm:${PORTSDIR}/devel/epm \
 		gpatch:${PORTSDIR}/devel/patch \
 		${X11BASE}/lib/libXft.so:${PORTSDIR}/x11-fonts/libXft \
-		${SITE_PERL}/Archive/Zip.pm:${PORTSDIR}/archivers/p5-Archive-Zip \
-		bison-devel:${PORTSDIR}/devel/bison-devel
+		${SITE_PERL}/Archive/Zip.pm:${PORTSDIR}/archivers/p5-Archive-Zip
+#		bison-devel:${PORTSDIR}/devel/bison-devel
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		mng.1:${PORTSDIR}/graphics/libmng \
