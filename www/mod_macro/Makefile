@@ -14,16 +14,18 @@ MASTER_SITES=	http://www.cri.ensmp.fr/~coelho/mod_macro/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Apache module for use macros in config files
 
-USE_APACHE=	yes
+WANT_APACHE=	13
+AP_FAST_BUILD=	YES
+AP_GENPLIST=	YES
+PORTDOCS=	${PORTNAME}.html
 
-do-build:
-	@cd ${WRKSRC} && ${APXS} -c ${PORTNAME}.c
+.include <bsd.port.pre.mk>
+.include "${PORTSDIR}/www/apache2/Makefile.modules.3rd"
 
-do-install:
-	${APXS} -i -A -n ${PORTNAME} ${WRKSRC}/${PORTNAME}.so
+post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.html ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
