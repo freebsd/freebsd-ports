@@ -1,0 +1,73 @@
+written by Nicolas Rachinsky <nr@rachinsky.de>
+http://www.rachinsky.de
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published
+by the Free Software Foundation;  version 2 of the License.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+General Public License for more details.
+
+--- mutt-1.3.28.ori/mutt.h	Thu Mar 14 19:22:25 2002
++++ mutt.h	Fri Mar 15 00:22:41 2002
+@@ -198,6 +198,7 @@
+   M_LIMIT,
+   M_EXPIRED,
+   M_SUPERSEDED,
++  M_THREADCOMPLETE,
+ 
+   /* actions for mutt_pattern_comp/mutt_pattern_exec */
+   M_AND,
+--- mutt-1.3.28.ori/pattern.c	Thu Mar 14 19:22:26 2002
++++ pattern.c	Fri Mar 15 00:23:52 2002
+@@ -50,6 +50,7 @@
+ }
+ Flags[] =
+ {
++  { 'a', M_THREADCOMPLETE,	0,		NULL },
+   { 'A', M_ALL,			0,		NULL },
+   { 'b', M_BODY,		M_FULL_MSG,	eat_regexp },
+   { 'B', M_WHOLE_MSG,		M_FULL_MSG,	eat_regexp },
+@@ -957,6 +958,27 @@
+   return alladdr;
+ }
+ 
++static int match_threadcomplete(int flag,THREAD *t,int left,int up,int right,int down)
++{
++	int a=0;
++	HEADER *h=NULL;
++
++	if(! t)return 0;
++	h=t->message;
++	if(! flag && h && h->tagged)return 1;
++	if(flag && h && ! h->tagged) return 1;
++
++	if(up)a=match_threadcomplete(flag,t->parent,1,1,1,0);
++	if(a)return a;
++	if(right && t->parent)a=match_threadcomplete(flag,t->next,0,0,1,1);
++	if(a)return a;
++	if(left && t->parent)a=match_threadcomplete(flag,t->prev,1,0,0,1);
++	if(a)return a;
++	if(down)a=match_threadcomplete(flag,t->child,1,0,1,1);
++	if(a)return a;
++	return 0;
++}
++
+ /* flags
+    	M_MATCH_FULL_ADDRESS	match both personal and machine address */
+ int
+@@ -1053,6 +1075,8 @@
+       return (pat->not ^ (h->env->x_label && regexec (pat->rx, h->env->x_label, 0, NULL, 0) == 0));
+     case M_DUPLICATED:
+       return (pat->not ^ (h->thread && h->thread->duplicate_thread));
++    case M_THREADCOMPLETE:
++      return ((h->thread && match_threadcomplete(pat->not,h->thread,1,1,1,1)));
+   }
+   mutt_error (_("error: unknown op %d (report this error)."), pat->op);
+   return (-1);
+--- PATCHES~    Tue Nov  6 19:59:33 2001
++++ PATCHES     Tue Nov  6 19:59:42 2001
+@@ -1,0 +1 @@
++1.3.28.nr.threadcomplete
