@@ -1,0 +1,11 @@
+--- Makefile.prog.in.orig	Mon Jun  5 00:26:11 2000
++++ Makefile.prog.in	Mon Jun  5 00:26:37 2000
+@@ -21,7 +21,7 @@
+ install: $(PROG)
+ 	-test -d $(bindir) || (mkdir $(bindir); chmod 755 $(bindir))
+ 	-rm -f $(bindir)/$(PROG)
+-	$(LIBTOOL) --mode=install $(INSTALL) $(PROG) $(bindir)
++	$(LIBTOOL) --mode=install $(INSTALL_PROGRAM) $(PROG) $(bindir)
+ 
+ depend: depend_src
+ depend.temp: $(GENSRCS)
