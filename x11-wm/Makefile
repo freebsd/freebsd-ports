@@ -28,6 +28,7 @@
     SUBDIR += olvwm
     SUBDIR += piewm
     SUBDIR += qvwm
+    SUBDIR += sapphire
     SUBDIR += sawmill
     SUBDIR += scwm
     SUBDIR += toolbox
