@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sing
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	net security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,10 +15,15 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	roman@xpert.com
 
+BUILD_DEPENDS=	${LOCALBASE}/lib/libnet.a:${PORTSDIR}/net/libnet \
+
+CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS+=	--with-libnet-prefix=${LOCALBASE} --with-libpcap-prefix=/usr
 GNU_CONFIGURE=	yes
 MAN8=		sing.8
 
 post-extract:
-	@${RM} -rf ${WRKSRC}/libpcap*
+	@${RM} -rf ${WRKSRC}/libpcap-* ;\
+	${RM} -rf ${WRKSRC}/Libnet-*
 
 .include <bsd.port.mk>
