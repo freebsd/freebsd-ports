@@ -15,9 +15,9 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Web Based Email Client and Scheduler
 
 .if !defined(WITH_PHP3)
-RUN_DEPENDS+=	${LOCALBASE}/libexec/apache/libphp4.so:${PORTSDIR}/www/mod_php4
+RUN_DEPENDS+=	${LOCALBASE}/libexec/apache/libphp4.so:${PORTSDIR}/${PHP4_PORT}
 .else
-RUN_DEPENDS+=	${LOCALBASE}/libexec/apache/libphp3.so:${PORTSDIR}/www/mod_php3
+RUN_DEPENDS+=	${LOCALBASE}/libexec/apache/libphp3.so:${PORTSDIR}/${PHP3_PORT}
 .endif
 .if !defined(WITH_MYSQL)
 LIB_DEPENDS=	pq.3:${PORTSDIR}/databases/postgresql7
@@ -25,6 +25,8 @@ LIB_DEPENDS=	pq.3:${PORTSDIR}/databases/postgresql7
 .endif
 
 NO_BUILD=	YES
+PHP4_PORT?=	www/mod_php4
+PHP3_PORT?=	www/mod_php3
 NO_PACKAGE=	need a matching version of mod_php
 TWIG?=		www/data-dist/twig
 PLIST_SUB+=	TWIG=${TWIG}
