@@ -1,3 +1,4 @@
+etc/rc.d/hk_classes.sh
 bin/hk_actionquery
 bin/hk_exportcsv
 bin/hk_exporthtml
@@ -45,6 +46,7 @@ include/hk_classes/hk_reportutils.h
 include/hk_classes/hk_storagecolumn.h
 include/hk_classes/hk_storagedatasource.h
 include/hk_classes/hk_string.h
+include/hk_classes/hk_subform.h
 include/hk_classes/hk_visible.h
 %%MYSQL%%lib/hk_classes/drivers/libhk_mysqldriver.la
 %%MYSQL%%lib/hk_classes/drivers/libhk_mysqldriver.so
@@ -55,6 +57,9 @@ include/hk_classes/hk_visible.h
 %%POSTGRESQL%%lib/hk_classes/drivers/libhk_postgresdriver.la
 %%POSTGRESQL%%lib/hk_classes/drivers/libhk_postgresdriver.so
 %%POSTGRESQL%%lib/hk_classes/drivers/libhk_postgresdriver.so.0
+%%SQLITE%%lib/hk_classes/drivers/libhk_sqlite2driver.la
+%%SQLITE%%lib/hk_classes/drivers/libhk_sqlite2driver.so
+%%SQLITE%%lib/hk_classes/drivers/libhk_sqlite2driver.so.0
 %%PYTHON_SITELIBDIR%%/_hk_classes.so
 %%PYTHON_SITELIBDIR%%/hk_classes.py
 %%PYTHON_SITELIBDIR%%/hk_classes.pyc
