@@ -4,6 +4,7 @@
 
     SUBDIR += LPRng
     SUBDIR += afio
+    SUBDIR += anteater
     SUBDIR += asapm
     SUBDIR += ascpu
     SUBDIR += asfsm
