@@ -6,14 +6,14 @@
 #
 
 PORTNAME=		dvipdfm
-PORTVERSION=		0.13.1b
+PORTVERSION=		0.13.2b
 CATEGORIES=		print
 MASTER_SITES=		http://gaspra.kettering.edu/dvipdfm/
 
 MAINTAINER=		stephen@math.missouri.edu
 
-BUILD_DEPENDS=		${LOCALBASE}/lib/libkpathsea.a:${PORTSDIR}/print/teTeX \
-			${LOCALBASE}/lib/libpng.a:${PORTSDIR}/graphics/png
+BUILD_DEPENDS=		${LOCALBASE}/lib/libkpathsea.a:${PORTSDIR}/print/teTeX
+LIB_DEPENDS=		png:${PORTSDIR}/graphics/png
 RUN_DEPENDS=		kpsewhich:${PORTSDIR}/print/teTeX
 
 WRKSRC=			${WRKDIR}/dvipdfm
