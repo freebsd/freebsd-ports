@@ -1,0 +1,37 @@
+# New ports collection makefile for:	Psi88
+# Version required:	88-1.0
+# Date created:		1998-11-11
+# Whom:			Ryo MIYAMOTO
+#
+# $Id: Makefile,v 1.1.1.1 1999/04/01 08:09:45 taoka Exp $
+#
+
+DISTNAME=	psi88
+PKGNAME=	psi88-1.0
+CATEGORIES=	misc biology
+MASTER_SITES=	ftp://ccl.osc.edu/pub/chemistry/software/SOURCES/FORTRAN/psi88/
+EXTRACT_SUFX=	.tar.Z
+
+MAINTAINER=	rmiya@cc.hirosaki-u.ac.jp
+
+pre-patch:
+	${MV} ${WRKSRC}/src/makefile ${WRKSRC}/src/Makefile
+
+pre-build:
+	${CP} ${FILESDIR}/Makefile.top ${WRKSRC}/Makefile
+
+post-install:
+	ln -s ${PREFIX}/bin/PSI2PS ${PREFIX}/bin/PSI2
+	${INSTALL_SCRIPT} ${WRKDIR}/${DISTNAME}/unix/preplot ${PREFIX}/bin/
+	${INSTALL_SCRIPT} ${WRKDIR}/${DISTNAME}/unix/rpsi1 ${PREFIX}/bin/
+	${INSTALL_SCRIPT} ${WRKDIR}/${DISTNAME}/unix/rpsi2 ${PREFIX}/bin/
+	${INSTALL_SCRIPT} ${WRKDIR}/${DISTNAME}/unix/rpsicon ${PREFIX}/bin/
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${PREFIX}/share/doc/psi88
+	${MKDIR} ${PREFIX}/share/doc/psi88/examples
+	${INSTALL_MAN} ${WRKDIR}/${DISTNAME}/README ${PREFIX}/share/doc/psi88
+	${INSTALL_MAN} ${WRKDIR}/${DISTNAME}/psi88.doc ${PREFIX}/share/doc/psi88
+	${INSTALL_MAN} ${WRKDIR}/${DISTNAME}/examples/* ${PREFIX}/share/doc/psi88/examples
+.endif
+
+.include <bsd.port.mk>
