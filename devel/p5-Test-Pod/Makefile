@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Test-Pod
-PORTVERSION=	1.12
+PORTVERSION=	1.14
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Test
@@ -25,4 +25,11 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Test::Pod.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+post-patch:
+	@${PERL} -pi -e 's/(my )?\$$dh/DH/g' ${WRKSRC}/Pod.pm
+.endif
+
+.include <bsd.port.post.mk>
