@@ -3,7 +3,7 @@
 # Date created:		16 May 1999
 # Whom:			jake@checker.org
 #
-# $Id: Makefile,v 1.3 1999/06/28 18:34:12 billf Exp $
+# $Id: Makefile,v 1.4 1999/06/29 23:14:36 steve Exp $
 #
 
 DISTNAME=	tya13v2
@@ -14,13 +14,14 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	jake@checker.org
 
-BUILD_DEPENDS=	${PREFIX}/jdk1.1.8/bin/java:${PORTSDIR}/java/jdk
+BUILD_DEPENDS=	${LOCALBASE}/${JAVADIR}/bin/java:${PORTSDIR}/java/jdk
 
 WRKSRC=		${WRKDIR}/tya1.3v2
 
 ONLY_FOR_ARCHS=	i386
 
 HAS_CONFIGURE=	yes
+CONFIGURE_ARGS+=	--with-jdk=${LOCALBASE}/${JAVADIR}
 
 JAVADIR=	jdk1.1.8
 JAVALIBDIR=	${PREFIX}/${JAVADIR}/lib/i386/green_threads/
