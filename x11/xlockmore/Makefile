@@ -42,7 +42,7 @@ USE_MESA=	yes
 CONFIGURE_ARGS+=	--without-mesagl
 .endif
 
-XFREE86VERSION!= /usr/bin/awk '/\#define XFree86Version/ {print $$3}' \
+XFREE86VERSION!= /usr/bin/awk '/\#.*define XFree86Version/ {print $$NF}' \
 				${X11BASE}/lib/X11/config/xfree86.cf
 
 .if ${XFREE86VERSION} >= 4000
