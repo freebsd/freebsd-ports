@@ -41,7 +41,6 @@ PLIST_SUB=	PERL="@comment "
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|\(PDFLIB_LTCURRENT\)=4|\1=6|g" ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e "s|SWIG_LIB|LIBNAME|g" ${WRKSRC}/bind/pdflib/perl/Makefile
 
 post-install:
 	${MKDIR} ${DATADIR}/fonts
