@@ -49,6 +49,12 @@ CONFIGURE_ARGS+=--enable-video-opengl
 LIB_DEPENDS+=	vga.1:${PORTSDIR}/graphics/svgalib
 CONFIGURE_ARGS+=--enable-video-svga
 .endif
+.if exists(/usr/include/libusbhid.h)
+CONFIGURE_ENV+=	USB_LIBS=-lusbhid
+CFLAGS+=	-DHAVE_LIBUSBHID_H
+.else
+CONFIGURE_ENV+=	USB_LIBS=-lusb
+.endif
 
 .include <bsd.port.pre.mk>
 

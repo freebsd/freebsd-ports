@@ -39,7 +39,7 @@ $FreeBSD$
          if test x$enable_joystick = xyes; then
              JOYSTICK_SUBDIRS="$JOYSTICK_SUBDIRS bsd"
              JOYSTICK_DRIVERS="$JOYSTICK_DRIVERS bsd/libjoystick_bsd.la"
-+            SYSTEM_LIBS="$SYSTEM_LIBS -lusb"
++            SYSTEM_LIBS="$SYSTEM_LIBS $USB_LIBS"
          fi
          # Set up files for the cdrom library
          if test x$enable_cdrom = xyes; then
