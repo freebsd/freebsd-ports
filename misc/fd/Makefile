@@ -7,10 +7,10 @@
 
 PORTNAME=	fd
 PORTVERSION=	1.03u
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://hp.vector.co.jp/authors/VA012337/soft/fd/ \
 		ftp://ftp.vector.co.jp/pack/unix/util/file/filer/fd/
-MASTER_SITE_SUBDIR=	steve
 DISTNAME=	FD-${PORTVERSION}
 
 MAINTAINER=	nobu@psrc.isac.co.jp
