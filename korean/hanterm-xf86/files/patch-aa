@@ -1,0 +1,42 @@
+*** configure.orig	Sat Aug  1 10:14:54 1998
+--- configure	Sat Jan  2 00:45:20 1999
+***************
+*** 2289,2295 ****
+  
+    # It would also be nice to do this for all -L options, not just this one.
+    if test -n "$x_libraries"; then
+!     X_LIBS="$X_LIBS -L$x_libraries"
+      # For Solaris; some versions of Sun CC require a space after -R and
+      # others require no space.  Words are not sufficient . . . .
+      case "`(uname -sr) 2>/dev/null`" in
+--- 2289,2298 ----
+  
+    # It would also be nice to do this for all -L options, not just this one.
+    if test -n "$x_libraries"; then
+!     case "${PORTOBJFORMAT}" in
+!       elf) X_LIBS="$X_LIBS -L$x_libraries -rpath $x_libraries" ;;
+!       *) X_LIBS="$X_LIBS -L$x_libraries" ;;
+!     esac
+      # For Solaris; some versions of Sun CC require a space after -R and
+      # others require no space.  Words are not sufficient . . . .
+      case "`(uname -sr) 2>/dev/null`" in
+***************
+*** 2824,2830 ****
+  
+    # Check for libraries that X11R6 Xt/Xaw programs need.
+    ac_save_LDFLAGS="$LDFLAGS"
+!   test -n "$x_libraries" && LDFLAGS="$LDFLAGS -L$x_libraries"
+    # SM needs ICE to (dynamically) link under SunOS 4.x (so we have to
+    # check for ICE first), but we must link in the order -lSM -lICE or
+    # we get undefined symbols.  So assume we have SM if we have ICE.
+--- 2827,2836 ----
+  
+    # Check for libraries that X11R6 Xt/Xaw programs need.
+    ac_save_LDFLAGS="$LDFLAGS"
+!   test -n "$x_libraries" && case "${PORTOBJFORMAT}" in
+!     elf) LDFLAGS="$LDFLAGS -L$x_libraries -rpath $x_libraries" ;;
+!     *) LDFLAGS="$LDFLAGS -L$x_libraries" ;;
+!   esac
+    # SM needs ICE to (dynamically) link under SunOS 4.x (so we have to
+    # check for ICE first), but we must link in the order -lSM -lICE or
+    # we get undefined symbols.  So assume we have SM if we have ICE.
