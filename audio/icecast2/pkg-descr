@@ -1,7 +1,7 @@
-Icecast provides nearly all the functionality of the Shoutcast
-server.  It will accept encoding streams from either iceplay or WinAmp.
-It can also add itself to a directory server such as our own
-icecast.linuxpower.org or Nullsoft's yp.shoutcast.com.  It does not yet 
-support redirection of streams from other icecast servers, but soon will.
+This is a port for icecast. Icecast is a streaming mp3 audio server.
+Icecast provides nearly all the functionality of the Shoutcast server.
+It will accept encoding streams from either iceplay or WinAmp. It can
+also add itself to a directory server such as our own
+icecast.linuxpower.org or Nullsoft's yp.shoutcast.com.
 
 WWW: http://www.icecast.org/

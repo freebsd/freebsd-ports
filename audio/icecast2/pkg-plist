@@ -1,53 +1,26 @@
-bin/mkpasswd
-bin/listen
-bin/shout
-bin/calibrate
-bin/stresstest
-bin/liveice
-bin/iceplay
 sbin/icecast
-share/doc/icecast/AUTHORS
-share/doc/icecast/BUGS
-share/doc/icecast/CHANGES
-share/doc/icecast/COPYING
-share/doc/icecast/FAQ
-share/doc/icecast/INSTALL
-share/doc/icecast/README
-share/doc/icecast/TESTED
-share/doc/icecast/TODO
+etc/icecast/conf/groups.aut.dist
+etc/icecast/conf/icecast.conf.dist
+etc/icecast/conf/mounts.aut.dist
+etc/icecast/conf/users.aut.dist
+etc/icecast/templates/306.html
+etc/icecast/templates/400.html
+etc/icecast/templates/403.html
+etc/icecast/templates/404.html
+etc/icecast/templates/504.html
+etc/icecast/templates/bodytag.html
+etc/icecast/templates/info.html
+etc/icecast/templates/list_directory.html
+etc/icecast/templates/mountlist.html
+etc/icecast/templates/statistics.html
+etc/icecast/templates/admin_describe.html
+etc/icecast/templates/admin.html
+etc/icecast/templates/alias_add.html
+etc/icecast/templates/manual.html
+etc/icecast/templates/alias_del.html
 share/doc/icecast/manual.html
-share/doc/icecast/README.liveice
-share/doc/icecast/README.xingmp3enc
-share/doc/icecast/README_new_mixer.txt
-share/examples/icecast/icecast.conf
-share/examples/icecast/liveice.cfg
-share/examples/icecast/shoutrc.example
-share/examples/icecast/playlist.example
-share/examples/icecast/icedir/addsrv
-share/examples/icecast/icedir/byserver.php3
-share/examples/icecast/icedir/bystream.php3
-share/examples/icecast/icedir/db_mysql.inc
-share/examples/icecast/icedir/example.html
-share/examples/icecast/icedir/example.phtml
-share/examples/icecast/icedir/functions.phps
-share/examples/icecast/icedir/gen-playlist
-share/examples/icecast/icedir/gen-playlist.pls
-share/examples/icecast/icedir/icedir_cleanup.pl
-share/examples/icecast/icedir/remsrv
-share/examples/icecast/icedir/servers.sql
-share/examples/icecast/icedir/sources.sql
-share/examples/icecast/icedir/tchsrv
-share/examples/icecast/icedir/touch
-share/examples/icecast/icedir/yp.inc
-share/examples/icecast/radio.tcl.example
-share/examples/icecast/templates/bodytag.html
-share/examples/icecast/templates/info.html
-share/examples/icecast/templates/list_directory.html
-share/examples/icecast/templates/mountlist.html
-share/examples/icecast/templates/statistics.html
-share/examples/icecast/frontend.tcl
-share/examples/icecast/liveiceconfigure.tk
+
+@dirrm etc/icecast/conf
+@dirrm etc/icecast/templates
+@dirrm etc/icecast
 @dirrm share/doc/icecast
-@dirrm share/examples/icecast/icedir
-@dirrm share/examples/icecast/templates
-@dirrm share/examples/icecast
