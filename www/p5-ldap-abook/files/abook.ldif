@@ -1,0 +1,4 @@
+dn:	ou=abook, dc=your_domain
+objectClass:	top
+objectClass:	organizationalUnit
+ou:	abook

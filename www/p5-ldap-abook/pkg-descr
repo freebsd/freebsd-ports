@@ -1,0 +1,10 @@
+ldap-abook provides a web interface for adding, removing and modifying
+LDAP addressbook records.  These addressbook records can be used with
+mail clients such as Sylpheed, Microsoft Outlook and probably Netscape
+and Mozilla.
+
+Attributes such as address details, date of birth and phonelist membership
+are also possible, allowing other applications to feed off the same
+database.
+
+WWW: http://ldap-abook.sourceforge.net/

@@ -1,0 +1,22 @@
+========== Installing ldap-abook for the first time ==========
+Tell the openldap server about the abook schema with the
+following line in $PREFIX/etc/openldap/slapd.conf:
+
+include $PREFIX/www/ldap-abook/examples/default/abookperson.schema
+
+Create the initial ``abook'' ou using the following command:
+
+    cd $PREFIX/www/ldap-abook/examples/default
+    ldapadd -h host -W -D 'dc=your_domain' -f abook.ldif
+
+replacing host and your_domain as appropriate (abook.ldif must
+have "your_domain" changed too).
+
+Modify "your_domain" and "secret" (and possibly "Manager") in
+$PREFIX/etc/AddressBook.conf too.
+
+Link to abook.cgi from your web server's CGI directory:
+
+    cd /usr/local/www/cgi-bin
+    ln -s $PREFIX/www/ldap-abook/cgi-bin/abook.cgi
+==============================================================
