@@ -96,7 +96,7 @@ while [ "$1" ]; do
 		\"pdflib\")
 			echo "LIB_DEPENDS+=	pdf.3:\${PORTSDIR}/print/pdflib3"
 			echo "LIB_DEPENDS+=	jpeg.9:\${PORTSDIR}/graphics/jpeg"
-			echo "LIB_DEPENDS+=	png.4:\${PORTSDIR}/graphics/png"
+			echo "LIB_DEPENDS+=	png.5:\${PORTSDIR}/graphics/png"
 			echo "LIB_DEPENDS+=	tiff.4:\${PORTSDIR}/graphics/tiff"
 			echo "CONFIGURE_ARGS+=--with-pdflib=\${PREFIX} \\"
 			echo "		--with-zlib-dir=/usr \\"
