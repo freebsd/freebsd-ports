@@ -1,0 +1,39 @@
+--- acinclude.m4.orig	Mon Nov  9 09:34:11 1998
++++ acinclude.m4	Tue Jan 23 21:44:18 2001
+@@ -944,36 +944,6 @@
+ LIBS="$ac_libs_safe"
+ ])
+ 
+-AC_DEFUN(AC_FIND_GIF,
+-   [AC_MSG_CHECKING([for giflib])
+-AC_CACHE_VAL(ac_cv_lib_gif,
+-[ac_save_LIBS="$LIBS"
+-LIBS="$all_libraries -lgif -lX11 $LIBSOCKET"
+-AC_TRY_LINK(dnl
+-[
+-#ifdef __cplusplus
+-extern "C" {
+-#endif
+-int GifLastError(void);
+-#ifdef __cplusplus
+-}
+-#endif
+-/* We use char because int might match the return type of a gcc2
+-    builtin and then its argument prototype would still apply.  */
+-],
+-            [return GifLastError();],
+-            eval "ac_cv_lib_gif=yes",
+-            eval "ac_cv_lib_gif=no")
+-LIBS="$ac_save_LIBS"
+-])dnl
+-if eval "test \"`echo $ac_cv_lib_gif`\" = yes"; then
+-  AC_MSG_RESULT(yes)
+-  AC_DEFINE_UNQUOTED(HAVE_LIBGIF)
+-else
+-  AC_MSG_ERROR(You need giflib23. Please install the kdesupport package)
+-fi
+-])
+-
+ AC_DEFUN(AC_FIND_JPEG,
+    [AC_MSG_CHECKING([for jpeglib])
+ AC_CACHE_VAL(ac_cv_lib_jpeg,

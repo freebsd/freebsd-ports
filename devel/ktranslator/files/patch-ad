@@ -1,0 +1,29 @@
+--- ktranslator/TranslData.cpp.orig	Thu Dec 30 20:41:01 1999
++++ ktranslator/TranslData.cpp	Sat Jan 27 03:29:09 2001
+@@ -916,7 +916,7 @@
+ int TranslData::msgListTranslation(QString s,int fla=0)
+ {
+  static QFile *mlf=0;
+- static open=false;
++ static bool open=false;
+  if(open) return -2;
+  open=true;
+   stopSearch=false;
+@@ -1886,7 +1886,7 @@
+    } while(n>0); 
+ //     s.simplifyWhiteSpace();
+ //     warning(s);
+-     spell->check(s);
++     spell->check(s.data());
+ }
+ 
+ void TranslData::spellready(KSpell *)
+@@ -1912,7 +1912,7 @@
+ 		 this, SLOT (spelldone(char *)));
+ 	
+ 	spell->setProgressResolution (2);
+-	//spell->check (text().data());
++	//spell->check (text().ascii());
+          spellnext();	
+       }
+     else
