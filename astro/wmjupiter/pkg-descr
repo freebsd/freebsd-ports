@@ -1,0 +1,11 @@
+[from website]
+This dockapp shows you the actual distance of Jupiter in astronomical
+units (AE) and when the red spot crosses (which is a weather feature
+on jupiter).  The four Gallileo Moons are displayed too but only
+when they are near the planet (Io, Europa, Ganymede, and Calisto).
+The position of the red spot changes on the surface so you need to
+change that value within few months or so. The current position can
+be found on the internet. It was 80 deg. as of 11th Jan 2002.
+
+WWW: http://www.inxsoft.net/wmjupiter/
+Author: Thomas Kuiper <tkuiper@inxsoft.net>

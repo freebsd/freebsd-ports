@@ -1,0 +1,22 @@
+--- Makefile.orig	Wed Jan  9 11:31:34 2002
++++ Makefile	Tue Jan 15 17:40:12 2002
+@@ -1,8 +1,6 @@
+-CC     = gcc
+-CFLAGS = -O2 -Wall
+-INCDIR = -I/usr/X11R6/include/X11 -I/usr/X11R6/include
++INCDIR = -I${X11BASE}/include
+ DESTDIR= /usr/X11R6
+-LIBDIR = -L/usr/X11R6/lib
++LIBDIR = -L${X11BASE}/lib
+ # for linux
+ LIBS   = -lXpm -lX11 -lXext -lm
+ # for Solaris
+@@ -12,7 +10,7 @@
+ 
+ 
+ .c.o:
+-	$(CC) $(CFLAGS) -D$(shell echo `uname -s`) -c $< -o $*.o $(INCDIR)
++	$(CC) $(CFLAGS) -c $< -o $*.o $(INCDIR)
+ 
+ 
+ all:	wmJupiter.o wmJupiter
