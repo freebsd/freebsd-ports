@@ -7,6 +7,7 @@
 
 PORTNAME=	eruby
 PORTVERSION=	0.1.1
+PORTREVISION=	1
 CATEGORIES=	textproc www ruby
 MASTER_SITES=	http://www.ruby-lang.org/~shugo/eruby/
 DIST_SUBDIR=	ruby
@@ -17,6 +18,8 @@ USE_RUBY=	yes
 
 CONFIGURE_ARGS=	--enable-shared --default-charset="${DEFAULT_CHARSET}"
 INSTALLS_SHLIB=	yes
+
+MAN1=		eruby.1
 
 DEFAULT_CHARSET?=	US-ASCII
 
