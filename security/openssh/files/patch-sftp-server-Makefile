@@ -1,6 +1,6 @@
---- sftp-server/Makefile.orig	Sun Mar  4 00:59:36 2001
-+++ sftp-server/Makefile	Sat May 26 15:47:57 2001
-@@ -7,8 +7,8 @@
+--- sftp-server/Makefile.orig	Sun Mar  4 08:59:36 2001
++++ sftp-server/Makefile	Thu Jul 12 19:19:06 2001
+@@ -7,12 +7,12 @@
  
  BINMODE?=555
  
@@ -11,3 +11,8 @@
  
  SRCS=	sftp-server.c sftp-common.c
  
+ .include <bsd.prog.mk>
+ 
+-LDADD+=	-lcrypto
++LDADD+=	${CRYPTOLIBS}
+ DPADD+=	${LIBCRYPTO}
