@@ -1,0 +1,23 @@
+bin/dd2
+@unexec if cmp -s %D/etc/dd2.cfg %D/etc/dd2.cfg.sample; then rm -f %D/etc/dd2.cfg; fi
+etc/dd2.cfg.sample
+@exec if test ! -f %D/etc/dd2.cfg; then cp -p %D/etc/dd2.cfg.sample %D/etc/dd2.cfg; fi
+share/dd2/bgm1.xm
+share/dd2/bgm2.xm
+share/dd2/efx1.wav
+share/dd2/efx2.wav
+share/dd2/efx3.wav
+share/dd2/efx4.wav
+share/dd2/efx5.wav
+share/dd2/efx6.wav
+share/dd2/efx7.wav
+share/dd2/efx8.wav
+share/dd2/game.act
+share/dd2/gfx.bmp
+%%PORTDOCS%%share/doc/dd2/AUTHORS
+%%PORTDOCS%%share/doc/dd2/ChangeLog
+%%PORTDOCS%%share/doc/dd2/NEWS
+%%PORTDOCS%%share/doc/dd2/README
+%%PORTDOCS%%share/doc/dd2/TODO
+@dirrm share/dd2
+%%PORTDOCS%%@dirrm share/doc/dd2
