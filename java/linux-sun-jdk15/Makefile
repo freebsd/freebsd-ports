@@ -6,18 +6,18 @@
 #
 
 PORTNAME=	jdk
-PORTVERSION=	1.5.0.b1
-PORTEPOCH=	1
+PORTVERSION=	1.5.0
+PORTEPOCH=	2
 CATEGORIES=	java devel
 MASTER_SITES=	#
 PKGNAMEPREFIX=	linux-sun-
-DISTNAME=	j2sdk-1_5_0-beta-linux-i586
+DISTNAME=	jdk-1_5_0-linux-i586
 EXTRACT_SUFX=	.bin
 
 MAINTAINER=	znerd@FreeBSD.org
 COMMENT=	Sun Java Development Kit 1.5 for Linux
 
-EXTRACT_DEPENDS=	${LINUXBASE}/lib/libc.so.6:${PORTSDIR}/emulators/linux_base
+EXTRACT_DEPENDS=${LINUXBASE}/lib/libc.so.6:${PORTSDIR}/emulators/linux_base
 BUILD_DEPENDS=  ${LINUXBASE}/lib/libc.so.6:${PORTSDIR}/emulators/linux_base
 RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper
 
@@ -25,21 +25,20 @@ NO_CDROM=	"License does not allow distribution with fee"
 RESTRICTED=	"Redistribution of repackaged binaries not permitted"
 LATEST_LINK=	linux-sun-jdk15
 
-WRKSRC=		${WRKDIR}/j2sdk${JDK_VERSION}
+WRKSRC=		${WRKDIR}/jdk${JDK_VERSION}
 PLIST_SUB+=	T=${APP_HOME:S/^${PREFIX}\///} PORTVERSION=${PORTVERSION}
 PKGINSTALL=	${WRKDIR}/pkg-install
 
 NO_BUILD=	yes
 USE_LINUX=	yes
 JDK_VERSION=	1.5.0
-JDK_BETA_LEVEL=	1
-DL_JDK_VERSION=	"${JDK_VERSION} beta ${JDK_BETA_LEVEL}"
+DL_JDK_VERSION=	"${JDK_VERSION}"
 ONLY_FOR_ARCHS=	i386
-DOWNLOAD_URL?=	http://jsecom16.sun.com/ECom/EComActionServlet?StoreId=22&PartDetailId=j2sdk-1.5.0-beta-oth-JPR&TransactionId=noreg
+DOWNLOAD_URL?=	http://java.sun.com/j2se/1.5.0/download.jsp
 PORTTITLE=	Java 2 Development Kit ${DL_JDK_VERSION} for Linux
 APP_HOME=	${PREFIX}/${PKGNAMEPREFIX}${PORTNAME}${JDK_VERSION}
 PACKED_JARS=	lib/tools.jar jre/lib/rt.jar jre/lib/jsse.jar jre/lib/charsets.jar jre/lib/ext/localedata.jar jre/lib/plugin.jar jre/javaws/javaws.jar
-UNPACK_CMD=	${APP_HOME}/lib/unpack
+UNPACK_CMD=	${APP_HOME}/bin/unpack200
 
 .include <bsd.port.pre.mk>
 
@@ -53,7 +52,7 @@ pre-everything::
 do-extract:
 	@${MKDIR} ${WRKDIR}
 	@cd ${WRKDIR} \
-	&& ${TAIL} -n +579 ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} > ${WRKDIR}/install.sfx \
+	&& ${TAIL} -n +673 ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} > ${WRKDIR}/install.sfx \
 	&& ${CHMOD} +x ${WRKDIR}/install.sfx \
 	&& ${WRKDIR}/install.sfx > /dev/null
 
