@@ -2116,6 +2116,7 @@ gcc32		ports/lang/gcc32
 gcc33		ports/lang/gcc33
 gcc34		ports/lang/gcc34
 gccxml		ports/devel/gccxml
+gcdmaster	ports/sysutils/gcdmaster
 gchempaint	ports/science/gchempaint
 gchemutils	ports/science/gchemutils
 gcipher		ports/security/gcipher
