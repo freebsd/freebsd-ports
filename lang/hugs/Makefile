@@ -3,11 +3,11 @@
 # Date created:		22 September 1997
 # Whom:			Torsten Teg Grust (Torsten.Grust@uni-konstanz.de)
 #
-# $Id: Makefile,v 1.1.1.1 1997/11/24 00:10:18 fenner Exp $
+# $Id: Makefile,v 1.2 1998/02/12 10:04:36 tg Exp $
 #
 
 DISTNAME=	hugs-January1998-source
-PKGNAME=	hugs-1.4-01-1998
+PKGNAME=	hugs-1.4.01.1998
 CATEGORIES=	lang
 MASTER_SITES=	ftp://haskell.org/pub/haskell/hugs/January1998/
 EXTRACT_SUFX=	.tgz
