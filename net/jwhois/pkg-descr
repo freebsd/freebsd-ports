@@ -1,0 +1,6 @@
+Jwhois is a WHOIS client, with a feature of selecting servers to
+query based on a configulation file. Query results are cached to local
+databases. If you make a same query later, the results are extracted
+from databases; you can get your answer quickly.
+
+WWW: http://www.gnu.org/software/jwhois
