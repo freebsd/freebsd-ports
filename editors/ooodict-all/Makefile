@@ -12,9 +12,7 @@ MASTER_SITES+=	http://dict.progbits.com/
 DISTFILES+=	${LANGDIST}
 
 MAINTAINER=     openoffice@FreeBSD.org
-.if !definded(COMMENT)
-COMMENT=	MySpell dictionaries for OpenOffice.org
-.endif
+COMMENT?=	MySpell dictionaries for OpenOffice.org
 
 EXTRACT_ONLY=
 
