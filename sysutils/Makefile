@@ -221,6 +221,7 @@
     SUBDIR += portupgrade
     SUBDIR += prips
     SUBDIR += procmap
+    SUBDIR += prune
     SUBDIR += pslist
     SUBDIR += psmisc
     SUBDIR += pstack

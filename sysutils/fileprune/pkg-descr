@@ -1,0 +1,24 @@
+Prune will delete files from the specified set targeting a given
+distribution of the files within time as well as size, number, and
+age constraints.  Its main purpose is to keep a set of daily-created
+backup files in manageable size, while still providing reasonable
+access to older versions.  Specifying a size, file number, or age
+constraint will simply remove files starting from the oldest, until
+the constraint is met.  The distribution specification (exponential,
+Gaussian (normal), or Fibonacci) provides finer control of the files
+to delete, allowing the retention of recent copies and the increasingly
+aggressive pruning of the older files.  The retention schedule
+specifies the age intervals for which files will be retained.  As
+an example, an exponential retention schedule for 10 files with a
+base of 2 will be
+
+1 2 4 8 16 32 64 128 256 512 1024
+
+The above schedule specifies that for the interval of 65 to 128
+days there should be (at least) one retained file (unless constraints
+and options override this setting).
+
+
+WWW: http://www.spinellis.gr/sw/unix/prune
+
+- Diomidis Spinellis dds@aueb.gr
