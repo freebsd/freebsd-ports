@@ -1,0 +1,7 @@
+lib/perl5/site_perl/%%PERL_VER%%/Array/IntSpan.pm
+lib/perl5/site_perl/%%PERL_VER%%/Array/IntSpan/IP.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Array/IntSpan/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Array/IntSpan
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Array 2>/dev/null || true
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Array/IntSpan
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Array 2>/dev/null || true
