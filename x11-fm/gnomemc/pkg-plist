@@ -1,5 +1,5 @@
-bin/corba-gmc
 bin/gmc
+bin/plain-gmc
 etc/CORBA/servers/gmc.gnorba
 share/gnome/idl/FileManager.idl
 share/gnome/idl/Makefile.in
@@ -14,7 +14,9 @@ share/gnome/mc/extfs/lslR
 share/gnome/mc/extfs/mailfs
 share/gnome/mc/extfs/patchfs
 share/gnome/mc/extfs/rpm
+share/gnome/mc/extfs/rpms
 share/gnome/mc/extfs/sfs.ini
+share/gnome/mc/extfs/trpm
 share/gnome/mc/extfs/uar
 share/gnome/mc/extfs/ucpio
 share/gnome/mc/extfs/ulha
@@ -27,14 +29,16 @@ share/gnome/mc/mc.ext
 share/gnome/mc/mc.hint
 share/gnome/mc/mc.lib
 share/gnome/mc/mc.menu
-share/gnome/mc/templates/application.x-gnumeric.desktop
-share/gnome/mc/templates/gimp.image.desktop
+share/gnome/mc/templates/GIMP.desktop
 share/gnome/mime-info/mc.keys
 share/gnome/pixmaps/mc/c.xpm
 share/gnome/pixmaps/mc/calendar.xpm
 share/gnome/pixmaps/mc/cc.xpm
 share/gnome/pixmaps/mc/compressed.xpm
 share/gnome/pixmaps/mc/directory.xpm
+share/gnome/pixmaps/mc/gnome-application-x-c-header.png
+share/gnome/pixmaps/mc/gnome-application-x-c-source.png
+share/gnome/pixmaps/mc/gnome-application-x-cc-source.png
 share/gnome/pixmaps/mc/gnome-http-url.png
 share/gnome/pixmaps/mc/gnome-image-bmp.png
 share/gnome/pixmaps/mc/gnome-image-generic.png
