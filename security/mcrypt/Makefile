@@ -36,7 +36,7 @@ USE_LIBTOOL=		yes
 pre-install:
 	${ECHO} bin/${PORTNAME} > ${PLIST}
 	${ECHO} bin/mdecrypt >> ${PLIST}
-.for i in cz el pl
+.for i in cs el pl
 	${ECHO} share/locale/${i}/LC_MESSAGES/mcrypt.mo >> ${PLIST}
 .endfor
 .if !defined(NOPORTDOCS)
