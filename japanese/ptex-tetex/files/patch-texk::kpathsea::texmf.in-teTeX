@@ -1,6 +1,6 @@
---- texk/kpathsea/texmf.in-teTeX.orig	Sun Jan 30 08:09:42 2005
-+++ texk/kpathsea/texmf.in-teTeX	Sun Feb  6 06:22:57 2005
-@@ -167,11 +167,18 @@
+--- texk/kpathsea/texmf.in-teTeX.orig	Sun Feb  6 09:04:35 2005
++++ texk/kpathsea/texmf.in-teTeX	Sat Feb 12 20:27:12 2005
+@@ -177,11 +177,18 @@
  % latex209, useful for macros that were written for 2.09 and do not
  % mention 2e at all, but can be used with 2e.
  TEXINPUTS.cslatex = .;$TEXMF/tex/{cslatex,csplain,latex,generic,}//
@@ -20,7 +20,7 @@
  % Fontinst needs to read afm files.
  TEXINPUTS.fontinst = .;$TEXMF/{tex,fonts/afm}//
  
-@@ -232,12 +239,12 @@
+@@ -246,12 +253,12 @@
  % and string pools (.pool) for ini{tex,mf,mp}.  It is silly that we have six
  % paths and directories here (they all resolve to a single place by default),
  % but historically ...
@@ -39,7 +39,16 @@
  
  % Device-independent font metric files.
  VFFONTS = .;$TEXMF/fonts/vf//
-@@ -277,8 +284,8 @@
+@@ -274,7 +281,7 @@
+ MISCFONTS = .;$TEXMF/fonts/misc//
+ 
+ % font name map files.
+-TEXFONTMAPS = .;$TEXMF/fonts/map//
++TEXFONTMAPS = .;$TEXMF/fonts/map{/ptex,}//
+ 
+ % support non"k"-xdvi:
+ PKFONTS.XDvi    = .:$TEXMF/%s:$VARTEXFONTS/pk/{%m,modeless}//
+@@ -291,8 +298,8 @@
  
  % PostScript headers and prologues (.pro); unfortunately, some programs
  % also use this for acessing font files (enc, type1, truetype)
@@ -50,7 +59,7 @@
  
  % PostScript Type 1 outline fonts.
  T1FONTS = .;$TEXMF/fonts/type1//
-@@ -296,10 +303,10 @@
+@@ -310,10 +317,10 @@
  LIGFONTS =  .;$TEXMF/fonts/lig//
  
  % Dvips' config.* files (this name should not start with `TEX'!).
@@ -63,7 +72,7 @@
  
  % Font encoding files (.enc).
  ENCFONTS = .;$TEXMF/fonts/enc//
-@@ -352,6 +359,10 @@
+@@ -366,6 +373,10 @@
  % search formats, you'll want to add their variables here as well.
  T4HTINPUTS   = .;$TEXMF/tex4ht//
  
@@ -74,7 +83,7 @@
  % Architecture independent executables
  TEXMFSCRIPTS = $TEXMF/scripts//
  
-@@ -368,7 +379,7 @@
+@@ -382,7 +393,7 @@
  %
  % For security reasons, it is better not to have . part of the path.
  % 
@@ -83,7 +92,7 @@
  
  # $progname: kpathsea v. 3.5.3 or later overwrites this at runtime. To
  # avoid empty expansions from binaries linked against an earlier
-@@ -542,3 +553,8 @@
+@@ -556,3 +567,8 @@
  error_line = 79
  half_error_line = 50
  max_print_line = 79

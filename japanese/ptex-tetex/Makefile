@@ -6,7 +6,7 @@
 
 PORTNAME=	ptex-tetex
 PORTVERSION=	3.1.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese print
 MASTER_SITES=	${MASTER_SITE_TEX_CTAN} \
 		ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/tetex/:1 \
@@ -47,7 +47,9 @@ ALL_TARGET=	default
 PLIST_SUB=	MKTEXLSR=${MKTEXLSR} \
 		TEXMFDISTDIR=${TEXMFDISTDIR} \
 		TEXMFCONFIGDIR=${TEXMFCONFIGDIR} \
-		TEXMFDIR=${TEXMFDIR}
+		TEXMFVARDIR=${TEXMFVARDIR} \
+		TEXMFDIR=${TEXMFDIR} \
+		UPDMAP_SYS_PTEX=${UPDMAP_SYS_PTEX}
 CONFLICTS=	ja-ptex-base-[0-9]*
 .if !make(do-patch)
 WRKSRC=		${WRKDIR}/${TETEX_SRC}/texk/web2c/ptex-${VER_PTEX}
@@ -66,11 +68,22 @@ TEXMFDIR?=	share/texmf
 TEXMFDISTDIR?=	share/texmf-dist
 TEXMFCONFIGDIR?=share/texmf-config
 TEXMFLOCALDIR?=	share/texmf-local
+TEXMFVARDIR?=	share/texmf-var
 TEXMFLOCAL_LSR?=${LOCALBASE}/${TEXMFLOCALDIR}/ls-R
 MKTEXLSR?=	${LOCALBASE}/bin/mktexlsr
 LIBPNG_PREFIX?=	${LOCALBASE}
 LIBWWW_PREFIX?=	${LOCALBASE}
 LIBT1_PREFIX?=	${LOCALBASE}
+FONTSMAPDIR=	${TEXMFDIR}/fonts/map/ptex
+FONTSMAPVARDIR=	${TEXMFVARDIR}/fonts/map/ptex
+
+UPDMAP_SYS_PTEX=${PREFIX}/bin/updmap-sys-ptex
+UPDMAP_SUB=	PREFIX=${PREFIX} \
+		TEXMFDIR=${TEXMFDIR} \
+		DVIPSDIR=${DVIPSDIR} \
+		TEXMFVARDIR=${TEXMFVARDIR} \
+		FONTSMAPDIR=${FONTSMAPDIR} \
+		FONTSMAPVARDIR=${FONTSMAPVARDIR}
 
 INSTDIRS=	doc fonts jbibtex ptex
 DOC_FILES=	COPYRIGHT COPYRIGHT.jis Changes.txt README.txt
@@ -159,6 +172,12 @@ pre-configure:
 			--without-etex && \
 		${SETENV} ${MAKE_ENV} ${MAKE} ${ALL_TARGET}
 
+pre-install:
+	${SED} ${UPDMAP_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
+		${FILESDIR}/updmap-ptex.in > ${WRKDIR}/updmap-ptex
+	${SED} ${UPDMAP_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
+		${FILESDIR}/updmap-sys-ptex.in > ${WRKDIR}/updmap-sys-ptex
+
 post-install:
 	cd ${WRKDIR}/texmf-tmp && \
 		${TAR} cf - ${INSTDIRS} | \
@@ -170,8 +189,19 @@ post-install:
 	cd ${WRKDIR} && ${INSTALL_DATA} ${${D}FILES} ${${D}DIR}
 .endfor
 	${MKDIR} ${PREFIX}/${TEXMFCONFIGDIR}/texconfig
-	${CP} ${FILESDIR}/tcfmgr.map ${PREFIX}/${TEXMFCONFIGDIR}/texconfig
+	${INSTALL_DATA} ${FILESDIR}/tcfmgr.map \
+		${PREFIX}/${TEXMFCONFIGDIR}/texconfig
+	${INSTALL_DATA} ${LOCALBASE}/${TEXMFDISTDIR}/web2c/updmap.cfg \
+		${PREFIX}/${TEXMFDIR}/web2c/ptex/updmap.cfg
+	${MKDIR} ${PREFIX}/${TEXMFCONFIGDIR}/dvips/ptex
+.for F in dvips dvipdfm pdftex
+	${MKDIR} ${PREFIX}/${FONTSMAPDIR}/${F}/updmap
+	${MKDIR} ${PREFIX}/${FONTSMAPVARDIR}/${F}/updmap
+.endfor
+	${INSTALL_SCRIPT} ${WRKDIR}/updmap-ptex ${PREFIX}/bin/updmap-ptex
+	${INSTALL_SCRIPT} ${WRKDIR}/updmap-sys-ptex ${PREFIX}/bin/updmap-sys-ptex
 	${MKTEXLSR}
+	${SH} ${UPDMAP_SYS_PTEX}
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
