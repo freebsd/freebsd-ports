@@ -1,0 +1,17 @@
+ITS Status report (includes architecture info) from 1972
+ftp://publications.ai.mit.edu/ai-publications/0-499/AIM-238.ps
+
+ITS reference manual from 1969:
+ftp://publications.ai.mit.edu/ai-publications/0-499/AIM-161A.ps
+
+Midas macro assembler documentation from 1965:
+ftp://publications.ai.mit.edu/ai-publications/0-499/AIM-090.ps
+
+DDT debugger ("system apex procedure" i.e. "shell") from 1968
+ftp://publications.ai.mit.edu/ai-publications/0-499/AIM-147.ps
+
+Emacs text editor (original ITS version)
+ftp://publications.ai.mit.edu/ai-publications/500-999/AIM-519A.ps
+
+These files may be converted to PDF or gzipped to save space:
+$ ps2pdf13 AIM-238.ps AIM-238.pdf

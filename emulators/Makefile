@@ -29,6 +29,7 @@
     SUBDIR += hfsutils
     SUBDIR += ia64sim
     SUBDIR += ines
+    SUBDIR += its
     SUBDIR += klh10
     SUBDIR += kmamerun
     SUBDIR += libvm68k
