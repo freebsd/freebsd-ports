@@ -1,3 +1,6 @@
 bin/mg
-share/mastergear/MG.html
-@dirrm share/mastergear
+%%DATADIR%%/CART.ROM
+%%DATADIR%%/SF7000.ROM
+%%PORTDOCS%%%%DOCSDIR%%/MG.html
+@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

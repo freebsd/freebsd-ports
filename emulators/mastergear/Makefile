@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	mastergear
-PORTVERSION=	1.5
+PORTVERSION=	2.0
 CATEGORIES=	emulators
 MASTER_SITES=	http://fms.komkon.org/MG/
-DISTNAME=	MG15-FreeBSD-80x86-bin
+DISTNAME=	MG20-FreeBSD-80x86-bin
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
@@ -24,9 +24,19 @@ USE_X_PREFIX=	yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mg ${PREFIX}/bin
+	@${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/CART.ROM ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/SF7000.ROM ${DATADIR}
 .if(!defined(NOPORTDOCS))
-	@${MKDIR} ${PREFIX}/share/mastergear
-	${INSTALL_DATA} ${WRKSRC}/MG.html ${PREFIX}/share/mastergear
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/MG.html ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000 || ${OSVERSION} > 600000
+IGNORE=	Does not run, wants libc.so.5
+.endif
+
+
+.include <bsd.port.post.mk>
