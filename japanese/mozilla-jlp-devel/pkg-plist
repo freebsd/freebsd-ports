@@ -1,6 +1,4 @@
 @exec mv %D/bin/mozilla %D/bin/mozilla.orig
-@exec mv %D/lib/mozilla/chrome/comm/content/communicator/profile/selectLang.js %D/lib/mozilla/chrome/comm/content/communicator/profile/selectLang.js.orig
-@exec mv %D/lib/mozilla/chrome/toolkit/content/global/strres.js %D/lib/mozilla/chrome/toolkit/content/global/strres.js.orig
 @exec mv %D/lib/mozilla/chrome/all-locales.rdf %D/lib/mozilla/chrome/all-locales.rdf.orig
 @exec mv %D/lib/mozilla/chrome/all-packages.rdf %D/lib/mozilla/chrome/all-packages.rdf.orig
 @exec mv %D/lib/mozilla/chrome/all-skins.rdf %D/lib/mozilla/chrome/all-skins.rdf.orig
@@ -9,6 +7,11 @@
 @exec mv %D/lib/mozilla/chrome/installed-chrome.txt %D/lib/mozilla/chrome/installed-chrome.txt.orig
 @exec mv %D/lib/mozilla/defaults/pref/all.js %D/lib/mozilla/defaults/pref/all.js.orig
 @exec mv %D/lib/mozilla/defaults/pref/unix.js %D/lib/mozilla/defaults/pref/unix.js.orig
+@exec mv %D/lib/mozilla/defaults/profile/bookmarks.html %D/lib/mozilla/defaults/profile/bookmarks.html.orig
+@exec mv %D/lib/mozilla/defaults/profile/localstore.rdf %D/lib/mozilla/defaults/profile/localstore.rdf.orig
+@exec mv %D/lib/mozilla/defaults/profile/mimeTypes.rdf %D/lib/mozilla/defaults/profile/mimeTypes.rdf.orig
+@exec mv %D/lib/mozilla/defaults/profile/panels.rdf %D/lib/mozilla/defaults/profile/panels.rdf.orig
+@exec mv %D/lib/mozilla/defaults/profile/search.rdf %D/lib/mozilla/defaults/profile/search.rdf.orig
 @exec mv %D/lib/mozilla/searchplugins/google.gif %D/lib/mozilla/searchplugins/google.gif.orig
 @exec mv %D/lib/mozilla/searchplugins/google.src %D/lib/mozilla/searchplugins/google.src.orig
 bin/mozilla
@@ -16,8 +19,6 @@ lib/mozilla/chrome/JP.jar
 lib/mozilla/chrome/all-locales.rdf
 lib/mozilla/chrome/all-packages.rdf
 lib/mozilla/chrome/all-skins.rdf
-lib/mozilla/chrome/comm/content/communicator/profile/selectLang.js
-lib/mozilla/chrome/toolkit/content/global/strres.js
 lib/mozilla/chrome/installed-chrome.txt
 lib/mozilla/chrome/ja-JP.jar
 lib/mozilla/chrome/ja-mac.jar
@@ -27,11 +28,18 @@ lib/mozilla/chrome/user-locales.rdf
 lib/mozilla/chrome/user-skins.rdf
 lib/mozilla/defaults/pref/all.js
 lib/mozilla/defaults/pref/unix.js
+lib/mozilla/defaults/profile/JP/chrome/userChrome.css
+lib/mozilla/defaults/profile/JP/chrome/userContent.css
 lib/mozilla/defaults/profile/JP/bookmarks.html
 lib/mozilla/defaults/profile/JP/localstore.rdf
 lib/mozilla/defaults/profile/JP/mimeTypes.rdf
 lib/mozilla/defaults/profile/JP/panels.rdf
 lib/mozilla/defaults/profile/JP/search.rdf
+lib/mozilla/defaults/profile/bookmarks.html
+lib/mozilla/defaults/profile/localstore.rdf
+lib/mozilla/defaults/profile/mimeTypes.rdf
+lib/mozilla/defaults/profile/panels.rdf
+lib/mozilla/defaults/profile/search.rdf
 lib/mozilla/searchplugins/AllAboutJapan.png
 lib/mozilla/searchplugins/AllAboutJapan.src
 lib/mozilla/searchplugins/BiglobeSearch.png
@@ -50,8 +58,6 @@ lib/mozilla/searchplugins/Fresheye_Japan.gif
 lib/mozilla/searchplugins/Fresheye_Japan.src
 lib/mozilla/searchplugins/GooNeJp.png
 lib/mozilla/searchplugins/GooNeJp.src
-lib/mozilla/searchplugins/GoogleJapan.png
-lib/mozilla/searchplugins/GoogleJapan.src
 lib/mozilla/searchplugins/ImpressWatchJp.png
 lib/mozilla/searchplugins/ImpressWatchJp.src
 lib/mozilla/searchplugins/InfoseekJapan.png
@@ -82,6 +88,8 @@ lib/mozilla/searchplugins/ascii_ghelp.png
 lib/mozilla/searchplugins/ascii_ghelp.src
 lib/mozilla/searchplugins/atmarkIT.png
 lib/mozilla/searchplugins/atmarkIT.src
+lib/mozilla/searchplugins/google.gif
+lib/mozilla/searchplugins/google.src
 lib/mozilla/searchplugins/jpnic_rfc.png
 lib/mozilla/searchplugins/jpnic_rfc.src
 lib/mozilla/searchplugins/linux_24.png
@@ -97,13 +105,17 @@ lib/mozilla/searchplugins/w3c.src
 @unexec mv %D/lib/mozilla/chrome/all-locales.rdf.orig %D/lib/mozilla/chrome/all-locales.rdf
 @unexec mv %D/lib/mozilla/chrome/all-packages.rdf.orig %D/lib/mozilla/chrome/all-packages.rdf
 @unexec mv %D/lib/mozilla/chrome/all-skins.rdf.orig %D/lib/mozilla/chrome/all-skins.rdf
-@unexec mv %D/lib/mozilla/chrome/comm/content/communicator/profile/selectLang.js.orig %D/lib/mozilla/chrome/comm/content/communicator/profile/selectLang.js
-@unexec mv %D/lib/mozilla/chrome/toolkit/content/global/strres.js.orig %D/lib/mozilla/chrome/toolkit/content/global/strres.js
 @unexec mv %D/lib/mozilla/chrome/user-locales.rdf.orig %D/lib/mozilla/chrome/user-locales.rdf
 @unexec mv %D/lib/mozilla/chrome/user-skins.rdf.orig %D/lib/mozilla/chrome/user-skins.rdf
 @unexec mv %D/lib/mozilla/chrome/installed-chrome.txt.orig %D/lib/mozilla/chrome/installed-chrome.txt
 @unexec mv %D/lib/mozilla/defaults/pref/all.js.orig %D/lib/mozilla/defaults/pref/all.js
 @unexec mv %D/lib/mozilla/defaults/pref/unix.js.orig %D/lib/mozilla/defaults/pref/unix.js
+@unexec mv %D/lib/mozilla/defaults/profile/bookmarks.html.orig %D/lib/mozilla/defaults/profile/bookmarks.html
+@unexec mv %D/lib/mozilla/defaults/profile/localstore.rdf.orig %D/lib/mozilla/defaults/profile/localstore.rdf
+@unexec mv %D/lib/mozilla/defaults/profile/mimeTypes.rdf.orig %D/lib/mozilla/defaults/profile/mimeTypes.rdf
+@unexec mv %D/lib/mozilla/defaults/profile/panels.rdf.orig %D/lib/mozilla/defaults/profile/panels.rdf
+@unexec mv %D/lib/mozilla/defaults/profile/search.rdf.orig %D/lib/mozilla/defaults/profile/search.rdf
 @unexec mv %D/lib/mozilla/searchplugins/google.gif.orig %D/lib/mozilla/searchplugins/google.gif
 @unexec mv %D/lib/mozilla/searchplugins/google.src.orig %D/lib/mozilla/searchplugins/google.src
+@dirrm lib/mozilla/defaults/profile/JP/chrome
 @dirrm lib/mozilla/defaults/profile/JP
