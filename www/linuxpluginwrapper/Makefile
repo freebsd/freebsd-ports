@@ -24,6 +24,7 @@ RUN_DEPENDS=	${LOCALBASE}/Acrobat5/Browsers/intellinux/nppdf.so:${PORTSDIR}/prin
 ONLY_FOR_ARCHS=	i386
 
 USE_XLIB=	yes
+USE_MOTIF=	yes
 USE_REINPLACE=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
 CONFLICTS=	flashpluginwrapper-*
