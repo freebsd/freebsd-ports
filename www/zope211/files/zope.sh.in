@@ -8,7 +8,8 @@ start)
 	       -f %%ZOPE_FTP_PORT%% \
 	       -m %%ZOPE_MONITOR_PORT%% \
 	       -u %%ZOPE_USER%% \
-	       -p %%CGIBINDIR%%/Zope.cgi >> %%ZOPEBASEDIR%%/var/zope-output &
+	       -p %%CGIBINDIR%%/Zope.cgi \
+	    >> %%ZOPEBASEDIR%%/var/zope-output 2>&1 &
 	echo -n " Zope"
 	;;
 stop)
