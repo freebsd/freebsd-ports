@@ -162,6 +162,7 @@
     SUBDIR += pib
     SUBDIR += pkg_remove
     SUBDIR += pkg_tree
+    SUBDIR += pmap
     SUBDIR += portupgrade
     SUBDIR += prips
     SUBDIR += procmap

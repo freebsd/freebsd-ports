@@ -1,0 +1,3 @@
+bin/pmap
+@cwd /
+%%KMODDIR%%/pmap_helper.ko
