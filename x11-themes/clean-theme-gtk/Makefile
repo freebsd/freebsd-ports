@@ -6,9 +6,11 @@
 #
 
 PORTNAME=	clean-theme-gtk
-PORTVERSION= 	0.4
+PORTVERSION= 	200011101109
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	http://progen.dynodns.net/dengen/cleantheme/
+MASTER_SITES=	${MASTER_SITE_THEMES}
+MASTER_SITE_SUBDIR=	gtk
+DISTNAME=	clean-1.2.x-${PORTVERSION}
 
 MAINTAINER=	sobomax@FreeBSD.org
 
