@@ -2,14 +2,12 @@ bin/gpg
 bin/gpgv
 info/gpg.info
 info/gpgv.info
-lib/charset.alias
 lib/gnupg/rndegd
 lib/gnupg/rndunix
 lib/gnupg/tiger
 share/gnupg/FAQ
 share/gnupg/faq.html
 share/gnupg/options.skel
-share/locale/locale.alias
 share/locale/da/LC_MESSAGES/gnupg.mo
 share/locale/de/LC_MESSAGES/gnupg.mo
 share/locale/eo/LC_MESSAGES/gnupg.mo
