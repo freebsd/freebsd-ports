@@ -22,7 +22,7 @@ MAN1=		bbbike.1
 
 MYDESTDIR=	${PREFIX}/BBBike
 
-.if !defined(PERL_VERSION) || ${PERL_VERSION} <= 5.00503
+.if !defined(PERL_VER) || ${PERL_VER} == 5.005
 PLIST=		${PKGDIR}/pkg-plist.5005
 .endif
 
