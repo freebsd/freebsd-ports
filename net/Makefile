@@ -280,7 +280,6 @@
     SUBDIR += lft
     SUBDIR += libconnect
     SUBDIR += libdnet
-    SUBDIR += libdjbdns
     SUBDIR += liberator
     SUBDIR += libfreenet
     SUBDIR += libicq
