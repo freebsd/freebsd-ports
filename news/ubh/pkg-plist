@@ -2,5 +2,5 @@ bin/ubh
 share/ubh/ubhrc
 share/ubh/newsrc
 @dirrm share/ubh
-share/doc/ubh/ubh.html
-@dirrm share/doc/ubh
+%%PORTDOCS%%share/doc/ubh/ubh.html
+%%PORTDOCS%%@dirrm share/doc/ubh
