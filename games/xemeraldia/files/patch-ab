@@ -1,0 +1,15 @@
+--- XEmeraldia.ad.orig	Thu Dec  9 19:16:35 1999
++++ XEmeraldia.ad	Thu Dec  9 19:23:20 1999
+@@ -32,9 +32,9 @@
+ XEmeraldia*useScoreFile: True
+ 
+ !!!!! fonts !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+-XEmeraldia*nextBox*Font: -adobe-courier-bold-r-normal-*-20-*-*-*-*-*-*-*
+-XEmeraldia*buttonBox*Font: -adobe-courier-bold-r-normal-*-20-*-*-*-*-*-*-*
+-XEmeraldia*dispBox*Font: -adobe-courier-bold-r-normal-*-20-*-*-*-*-*-*-*
++XEmeraldia*nextBox*Font: -adobe-courier-bold-r-normal-*-18-*-*-*-*-*-*-*
++XEmeraldia*buttonBox*Font: -adobe-courier-bold-r-normal-*-18-*-*-*-*-*-*-*
++XEmeraldia*dispBox*Font: -adobe-courier-bold-r-normal-*-18-*-*-*-*-*-*-*
+ 
+ !!!!! controls !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ XEmeraldia*bigBox.baseTranslations:	#override \
