@@ -12,7 +12,6 @@ bin/replace
 bin/resolve_stack_dump
 bin/resolveip
 bin/safe_mysqld
-etc/rc.d/mysql-server.sh
 lib/mysql/libdbug.a
 lib/mysql/libheap.a
 lib/mysql/libmerge.a
@@ -22,156 +21,107 @@ lib/mysql/libmystrings.a
 lib/mysql/libmysys.a
 lib/mysql/libnisam.a
 libexec/mysqld
-%%PORTDOCS%%%%DOCSDIR%%/Flags/argentina.gif
-%%PORTDOCS%%%%DOCSDIR%%/Flags/australia.gif
-%%PORTDOCS%%%%DOCSDIR%%/Flags/austria.gif
-%%PORTDOCS%%%%DOCSDIR%%/Flags/brazil.gif
-%%PORTDOCS%%%%DOCSDIR%%/Flags/bulgaria.gif
-%%PORTDOCS%%%%DOCSDIR%%/Flags/canada.gif
-%%PORTDOCS%%%%DOCSDIR%%/Flags/chile.gif
-%%PORTDOCS%%%%DOCSDIR%%/Flags/china.gif
-%%PORTDOCS%%%%DOCSDIR%%/Flags/croatia.gif
-%%PORTDOCS%%%%DOCSDIR%%/Flags/czech-republic.gif
-%%PORTDOCS%%%%DOCSDIR%%/Flags/denmark.gif
-%%PORTDOCS%%%%DOCSDIR%%/Flags/estonia.gif
-%%PORTDOCS%%%%DOCSDIR%%/Flags/finland.gif
-%%PORTDOCS%%%%DOCSDIR%%/Flags/france.gif
-%%PORTDOCS%%%%DOCSDIR%%/Flags/germany.gif
-%%PORTDOCS%%%%DOCSDIR%%/Flags/great-britain.gif
-%%PORTDOCS%%%%DOCSDIR%%/Flags/greece.gif
-%%PORTDOCS%%%%DOCSDIR%%/Flags/hungary.gif
-%%PORTDOCS%%%%DOCSDIR%%/Flags/iceland.gif
-%%PORTDOCS%%%%DOCSDIR%%/Flags/indonesia.gif
-%%PORTDOCS%%%%DOCSDIR%%/Flags/ireland.gif
-%%PORTDOCS%%%%DOCSDIR%%/Flags/island.gif
-%%PORTDOCS%%%%DOCSDIR%%/Flags/israel.gif
-%%PORTDOCS%%%%DOCSDIR%%/Flags/italy.gif
-%%PORTDOCS%%%%DOCSDIR%%/Flags/japan.gif
-%%PORTDOCS%%%%DOCSDIR%%/Flags/kroatia.gif
-%%PORTDOCS%%%%DOCSDIR%%/Flags/latvia.gif
-%%PORTDOCS%%%%DOCSDIR%%/Flags/netherlands.gif
-%%PORTDOCS%%%%DOCSDIR%%/Flags/poland.gif
-%%PORTDOCS%%%%DOCSDIR%%/Flags/portugal.gif
-%%PORTDOCS%%%%DOCSDIR%%/Flags/romania.gif
-%%PORTDOCS%%%%DOCSDIR%%/Flags/russia.gif
-%%PORTDOCS%%%%DOCSDIR%%/Flags/singapore.gif
-%%PORTDOCS%%%%DOCSDIR%%/Flags/south-africa.gif
-%%PORTDOCS%%%%DOCSDIR%%/Flags/south-africa1.gif
-%%PORTDOCS%%%%DOCSDIR%%/Flags/south-korea.gif
-%%PORTDOCS%%%%DOCSDIR%%/Flags/spain.gif
-%%PORTDOCS%%%%DOCSDIR%%/Flags/sweden.gif
-%%PORTDOCS%%%%DOCSDIR%%/Flags/switzerland.gif
-%%PORTDOCS%%%%DOCSDIR%%/Flags/taiwan.gif
-%%PORTDOCS%%%%DOCSDIR%%/Flags/ukraine.gif
-%%PORTDOCS%%%%DOCSDIR%%/Flags/usa.gif
-%%PORTDOCS%%%%DOCSDIR%%/Flags/yugoslavia.gif
-%%PORTDOCS%%%%DOCSDIR%%/manual.html
-%%PORTDOCS%%%%DOCSDIR%%/manual.txt
-%%PORTDOCS%%%%DOCSDIR%%/manual_toc.html
-share/mysql/binary-configure
-share/mysql/charsets/Index
-share/mysql/charsets/README
-share/mysql/charsets/cp1251.conf
-share/mysql/charsets/cp1257.conf
-share/mysql/charsets/croat.conf
-share/mysql/charsets/danish.conf
-share/mysql/charsets/dec8.conf
-share/mysql/charsets/dos.conf
-share/mysql/charsets/estonia.conf
-share/mysql/charsets/german1.conf
-share/mysql/charsets/greek.conf
-share/mysql/charsets/hebrew.conf
-share/mysql/charsets/hp8.conf
-share/mysql/charsets/hungarian.conf
-share/mysql/charsets/koi8_ru.conf
-share/mysql/charsets/koi8_ukr.conf
-share/mysql/charsets/latin1.conf
-share/mysql/charsets/latin2.conf
-share/mysql/charsets/latin5.conf
-share/mysql/charsets/swe7.conf
-share/mysql/charsets/usa7.conf
-share/mysql/charsets/win1250.conf
-share/mysql/charsets/win1251.conf
-share/mysql/charsets/win1251ukr.conf
-share/mysql/czech/errmsg.sys
-share/mysql/czech/errmsg.txt
-share/mysql/danish/errmsg.sys
-share/mysql/danish/errmsg.txt
-share/mysql/dutch/errmsg.sys
-share/mysql/dutch/errmsg.txt
-share/mysql/english/errmsg.sys
-share/mysql/english/errmsg.txt
-share/mysql/estonian/errmsg.sys
-share/mysql/estonian/errmsg.txt
-share/mysql/french/errmsg.sys
-share/mysql/french/errmsg.txt
-share/mysql/german/errmsg.sys
-share/mysql/german/errmsg.txt
-share/mysql/greek/errmsg.sys
-share/mysql/greek/errmsg.txt
-share/mysql/hungarian/errmsg.sys
-share/mysql/hungarian/errmsg.txt
-share/mysql/italian/errmsg.sys
-share/mysql/italian/errmsg.txt
-share/mysql/japanese/errmsg.sys
-share/mysql/japanese/errmsg.txt
-share/mysql/korean/errmsg.sys
-share/mysql/korean/errmsg.txt
-share/mysql/mi_test_all
-share/mysql/mi_test_all.res
-share/mysql/my-huge.cnf
-share/mysql/my-large.cnf
-share/mysql/my-medium.cnf
-share/mysql/my-small.cnf
-share/mysql/mysql-%%MYSQL_VERSION%%.spec
-share/mysql/mysql-log-rotate
-share/mysql/mysql.server
-share/mysql/norwegian-ny/errmsg.sys
-share/mysql/norwegian-ny/errmsg.txt
-share/mysql/norwegian/errmsg.sys
-share/mysql/norwegian/errmsg.txt
-share/mysql/polish/errmsg.sys
-share/mysql/polish/errmsg.txt
-share/mysql/portuguese/errmsg.sys
-share/mysql/portuguese/errmsg.txt
-share/mysql/romanian/errmsg.sys
-share/mysql/romanian/errmsg.txt
-share/mysql/russian/errmsg.sys
-share/mysql/russian/errmsg.txt
-share/mysql/slovak/errmsg.sys
-share/mysql/slovak/errmsg.txt
-share/mysql/spanish/errmsg.sys
-share/mysql/spanish/errmsg.txt
-share/mysql/swedish/errmsg.sys
-share/mysql/swedish/errmsg.txt
-share/mysql/ukrainian/errmsg.sys
-share/mysql/ukrainian/errmsg.txt
+%%DATADIR%%/binary-configure
+%%DATADIR%%/charsets/Index
+%%DATADIR%%/charsets/README
+%%DATADIR%%/charsets/cp1251.conf
+%%DATADIR%%/charsets/cp1257.conf
+%%DATADIR%%/charsets/croat.conf
+%%DATADIR%%/charsets/danish.conf
+%%DATADIR%%/charsets/dec8.conf
+%%DATADIR%%/charsets/dos.conf
+%%DATADIR%%/charsets/estonia.conf
+%%DATADIR%%/charsets/german1.conf
+%%DATADIR%%/charsets/greek.conf
+%%DATADIR%%/charsets/hebrew.conf
+%%DATADIR%%/charsets/hp8.conf
+%%DATADIR%%/charsets/hungarian.conf
+%%DATADIR%%/charsets/koi8_ru.conf
+%%DATADIR%%/charsets/koi8_ukr.conf
+%%DATADIR%%/charsets/latin1.conf
+%%DATADIR%%/charsets/latin2.conf
+%%DATADIR%%/charsets/latin5.conf
+%%DATADIR%%/charsets/swe7.conf
+%%DATADIR%%/charsets/usa7.conf
+%%DATADIR%%/charsets/win1250.conf
+%%DATADIR%%/charsets/win1251.conf
+%%DATADIR%%/charsets/win1251ukr.conf
+%%DATADIR%%/czech/errmsg.sys
+%%DATADIR%%/czech/errmsg.txt
+%%DATADIR%%/danish/errmsg.sys
+%%DATADIR%%/danish/errmsg.txt
+%%DATADIR%%/dutch/errmsg.sys
+%%DATADIR%%/dutch/errmsg.txt
+%%DATADIR%%/english/errmsg.sys
+%%DATADIR%%/english/errmsg.txt
+%%DATADIR%%/estonian/errmsg.sys
+%%DATADIR%%/estonian/errmsg.txt
+%%DATADIR%%/french/errmsg.sys
+%%DATADIR%%/french/errmsg.txt
+%%DATADIR%%/german/errmsg.sys
+%%DATADIR%%/german/errmsg.txt
+%%DATADIR%%/greek/errmsg.sys
+%%DATADIR%%/greek/errmsg.txt
+%%DATADIR%%/hungarian/errmsg.sys
+%%DATADIR%%/hungarian/errmsg.txt
+%%DATADIR%%/italian/errmsg.sys
+%%DATADIR%%/italian/errmsg.txt
+%%DATADIR%%/japanese/errmsg.sys
+%%DATADIR%%/japanese/errmsg.txt
+%%DATADIR%%/korean/errmsg.sys
+%%DATADIR%%/korean/errmsg.txt
+%%DATADIR%%/mi_test_all
+%%DATADIR%%/mi_test_all.res
+%%DATADIR%%/my-huge.cnf
+%%DATADIR%%/my-large.cnf
+%%DATADIR%%/my-medium.cnf
+%%DATADIR%%/my-small.cnf
+%%DATADIR%%/mysql-%%VER%%.spec
+%%DATADIR%%/mysql-log-rotate
+%%DATADIR%%/mysql.server
+%%DATADIR%%/norwegian-ny/errmsg.sys
+%%DATADIR%%/norwegian-ny/errmsg.txt
+%%DATADIR%%/norwegian/errmsg.sys
+%%DATADIR%%/norwegian/errmsg.txt
+%%DATADIR%%/polish/errmsg.sys
+%%DATADIR%%/polish/errmsg.txt
+%%DATADIR%%/portuguese/errmsg.sys
+%%DATADIR%%/portuguese/errmsg.txt
+%%DATADIR%%/romanian/errmsg.sys
+%%DATADIR%%/romanian/errmsg.txt
+%%DATADIR%%/russian/errmsg.sys
+%%DATADIR%%/russian/errmsg.txt
+%%DATADIR%%/slovak/errmsg.sys
+%%DATADIR%%/slovak/errmsg.txt
+%%DATADIR%%/spanish/errmsg.sys
+%%DATADIR%%/spanish/errmsg.txt
+%%DATADIR%%/swedish/errmsg.sys
+%%DATADIR%%/swedish/errmsg.txt
+%%DATADIR%%/ukrainian/errmsg.sys
+%%DATADIR%%/ukrainian/errmsg.txt
 @unexec rmdir %D/lib/mysql 2> /dev/null || true
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/Flags
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm share/mysql/charsets
-@dirrm share/mysql/czech
-@dirrm share/mysql/danish
-@dirrm share/mysql/dutch
-@dirrm share/mysql/english
-@dirrm share/mysql/estonian
-@dirrm share/mysql/french
-@dirrm share/mysql/german
-@dirrm share/mysql/greek
-@dirrm share/mysql/hungarian
-@dirrm share/mysql/italian
-@dirrm share/mysql/japanese
-@dirrm share/mysql/korean
-@dirrm share/mysql/norwegian
-@dirrm share/mysql/norwegian-ny
-@dirrm share/mysql/polish
-@dirrm share/mysql/portuguese
-@dirrm share/mysql/romanian
-@dirrm share/mysql/russian
-@dirrm share/mysql/slovak
-@dirrm share/mysql/spanish
-@dirrm share/mysql/swedish
-@dirrm share/mysql/ukrainian
-@dirrm share/mysql
-@exec [ -d %%DB_DIR%% ] || %D/bin/mysql_install_db --ldata=%%DB_DIR%%
+@dirrm %%DATADIR%%/charsets
+@dirrm %%DATADIR%%/czech
+@dirrm %%DATADIR%%/danish
+@dirrm %%DATADIR%%/dutch
+@dirrm %%DATADIR%%/english
+@dirrm %%DATADIR%%/estonian
+@dirrm %%DATADIR%%/french
+@dirrm %%DATADIR%%/german
+@dirrm %%DATADIR%%/greek
+@dirrm %%DATADIR%%/hungarian
+@dirrm %%DATADIR%%/italian
+@dirrm %%DATADIR%%/japanese
+@dirrm %%DATADIR%%/korean
+@dirrm %%DATADIR%%/norwegian
+@dirrm %%DATADIR%%/norwegian-ny
+@dirrm %%DATADIR%%/polish
+@dirrm %%DATADIR%%/portuguese
+@dirrm %%DATADIR%%/romanian
+@dirrm %%DATADIR%%/russian
+@dirrm %%DATADIR%%/slovak
+@dirrm %%DATADIR%%/spanish
+@dirrm %%DATADIR%%/swedish
+@dirrm %%DATADIR%%/ukrainian
+@dirrm %%DATADIR%%
 @unexec /usr/bin/killall mysqld > /dev/null 2>&1 || true

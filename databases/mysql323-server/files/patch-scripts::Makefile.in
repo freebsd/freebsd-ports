@@ -1,9 +1,9 @@
---- scripts/Makefile.in.orig	Thu Sep 11 13:49:32 2003
-+++ scripts/Makefile.in	Sun Feb 29 12:11:38 2004
-@@ -187,19 +187,7 @@
+--- scripts/Makefile.in.orig	Tue Mar  1 05:31:27 2005
++++ scripts/Makefile.in	Tue Mar 15 12:58:38 2005
+@@ -268,20 +268,7 @@
+ target_vendor = @target_vendor@
  thread_dirs = @thread_dirs@
  uname_prog = @uname_prog@
- 
 -bin_SCRIPTS = @server_scripts@ \
 -			msql2mysql \
 -			mysql_config \
@@ -16,12 +16,13 @@
 -			mysql_find_rows \
 -			mysqlhotcopy \
 -			mysqldumpslow \
--			mysqld_multi
+-			mysqld_multi \
+-			make_win_src_distribution
 +bin_SCRIPTS =
  
- 
  EXTRA_SCRIPTS = make_binary_distribution.sh \
-@@ -353,7 +341,7 @@
+ 			make_win_src_distribution.sh \
+@@ -451,7 +438,7 @@
  uninstall: uninstall-am
  
  install-am: all-am

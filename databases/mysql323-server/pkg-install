@@ -8,7 +8,6 @@ POST-INSTALL)
 	GROUP=${USER}
 	UID=88
 	GID=${UID}
-	DB_DIR=%%DB_DIR%%
 
 	if pw group show "${GROUP}" 2>/dev/null; then
 		echo "You already have a group \"${GROUP}\", so I will use it."
@@ -23,16 +22,9 @@ POST-INSTALL)
 
 	if pw user show "${USER}" 2>/dev/null; then
 		echo "You already have a user \"${USER}\", so I will use it."
-		if pw usermod ${USER} -d ${DB_DIR}
-		then
-			echo "Changed home directory of \"${USER}\" to \"${DB_DIR}\""
-		else
-			echo "Changing home directory of \"${USER}\" to \"${DB_DIR}\" failed..."
-			exit 1
-		fi
 	else
 		if pw useradd ${USER} -u ${UID} -g ${GROUP} -h - \
-			-d ${DB_DIR} -s /sbin/nologin -c "MySQL Daemon"
+			-d /nonexistent -s /sbin/nologin -c "MySQL Daemon"
 		then
 			echo "Added user \"${USER}\"."
 		else
@@ -40,7 +32,5 @@ POST-INSTALL)
 			exit 1
 		fi
 	fi
-
-	chown -R ${USER}:${GROUP} ${DB_DIR}
 	;;
 esac
