@@ -225,6 +225,7 @@ ${DESTDIR}/etc/mail/submit.cf:	${DESTDIR}/etc/mail/submit.mc
 root-sasldb:
 	@${ECHO_CMD} "# Links:"
 	@${ECHO_CMD} "#"
+	@${ECHO_CMD} "# http://www.sendmail.org/~gshapiro/
 	@${ECHO_CMD} "# http://www.sendmail.org/~ca/email/auth.html"
 	@${ECHO_CMD} "# http://www.asp.ogi.edu/people/paja/linux/sendmail/"
 	@${ECHO_CMD} "# http://blue-labs.org/clue/sendmail.php"
