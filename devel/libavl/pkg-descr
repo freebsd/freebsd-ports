@@ -1,0 +1,7 @@
+GNU libavl, a library for balanced binary trees. Balanced binary trees
+provide guaranteed O(lg n) performance for list insertion, deletion, and
+search operations. libavl is the most complete free balanced binary tree
+library on the net today, supporting AVL trees in plain, threaded, and
+right-threaded forms as well as plain red-black trees.
+
+WWW: http://www.msu.edu/user/pfaffben/avl/
