@@ -82,8 +82,11 @@ ESD_CONFIG?=	${LOCALBASE}/bin/esd-config
 .if exists(${ESD_CONFIG})
 HAVE_ESOUND=	yes
 .else
-GNOME_OPTION_MSG+= "" "If you want to compile with ESound support," \
-			 "hit Ctrl-C right now and use \"make WITH_ESOUND=yes\"" ""
+pre-everything::
+	@${ECHO_MSG}
+	@${ECHO_MSG} "If you want to compile with ESound support,"
+	@${ECHO_MSG} "hit Ctrl-C right now and use \"make WITH_ESOUND=yes\""
+	@${ECHO_MSG}
 .endif
 .endif
 .endif
@@ -99,8 +102,11 @@ GLIB_CONFIG?=	${LOCALBASE}/bin/glib12-config
 .if exists(${GLIB_CONFIG})
 HAVE_GLIB=	yes
 .else
-GNOME_OPTION_MSG+= "" "If you want to compile with GLib support," \
-			 "hit Ctrl-C right now and use \"make WITH_GLIB=yes\"" ""
+pre-everything::
+	@${ECHO_MSG}
+	@${ECHO_MSG} "If you want to compile with GLib support,"
+	@${ECHO_MSG} "hit Ctrl-C right now and use \"make WITH_GLIB=yes\""
+	@${ECHO_MSG}
 .endif
 .endif
 .endif
@@ -116,8 +122,11 @@ GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 .if exists(${GTK_CONFIG})
 HAVE_GTK=	yes
 .else
-GNOME_OPTION_MSG+= "" "If you want to compile with GTK+ support," \
-			 "hit Ctrl-C right now and use \"make WITH_GTK=yes\"" ""
+pre-everything::
+	@${ECHO_MSG}
+	@${ECHO_MSG} "If you want to compile with GTK+ support,"
+	@${ECHO_MSG} "hit Ctrl-C right now and use \"make WITH_GTK=yes\""
+	@${ECHO_MSG}
 .endif
 .endif
 .endif
@@ -133,8 +142,11 @@ IMLIB_CONFIG?=	${X11BASE}/bin/imlib-config
 .if exists(${IMLIB_CONFIG})
 HAVE_IMLIB=	yes
 .else
-GNOME_OPTION_MSG+= "" "If you want to compile with Imlib support," \
-			 "hit Ctrl-C right now and use \"make WITH_IMLIB=yes\"" ""
+pre-everything::
+	@${ECHO_MSG}
+	@${ECHO_MSG} "If you want to compile with Imlib support,"
+	@${ECHO_MSG} "hit Ctrl-C right now and use \"make WITH_IMLIB=yes\""
+	@${ECHO_MSG}
 .endif
 .endif
 .endif
@@ -150,8 +162,11 @@ GNOME_CONFIG?=	${X11BASE}/bin/gnome-config
 .if exists(${GNOME_CONFIG})
 HAVE_GNOME=	yes
 .else
-GNOME_OPTION_MSG+= "" "If you want to compile with GNOME support," \
-			 "hit Ctrl-C right now and use \"make WITH_GNOME=yes\"" ""
+pre-everything::
+	@${ECHO_MSG}
+	@${ECHO_MSG} "If you want to compile with GNOME support,"
+	@${ECHO_MSG} "hit Ctrl-C right now and use \"make WITH_GNOME=yes\""
+	@${ECHO_MSG}
 .endif
 .endif
 .endif
