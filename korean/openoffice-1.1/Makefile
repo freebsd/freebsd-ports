@@ -1,4 +1,4 @@
-# New ports collection makefile for:	OpenOffice 1.1 for Korean language
+# New ports collection makefile for:	OpenOffice.org for Korean language
 # Date created:		Nov 9 08:32:00 UTC 2003
 # Whom:		Martin Blapp <mbr@FreeBSD.org>, Mario Ferreira <lioux@FreeBSD.org> and NAKATA Maho <maho@FreeBSD.org>
 #

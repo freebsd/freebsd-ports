@@ -1,4 +1,4 @@
-# New ports collection makefile for:	OpenOffice 1.1 for Italian language
+# New ports collection makefile for:	OpenOffice.org for Italian language
 # Date created:		Sun Nov 9 08:53:08 JST 2003
 # Whom:		Martin Blapp <mbr@FreeBSD.org>, Mario Ferreira <lioux@FreeBSD.org> and NAKATA Maho <maho@FreeBSD.org>
 #

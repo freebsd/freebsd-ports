@@ -1,4 +1,4 @@
-# New ports collection makefile for: OpenOffice
+# New ports collection makefile for: OpenOffice.org
 # Date created:		28 Februar 2002
 # Whom:                 Martin Blapp
 #
@@ -10,7 +10,7 @@ PORTVERSION=	1.1.0
 PORTREVISION=	1
 CATEGORIES+=	editors
 MASTER_SITES+=	ftp://openofficeorg.secsup.org/pub/software/openoffice/stable/%SUBDIR%/ \
-		ftp://sunsite.cnlab-switch.ch/mirror/OpenOffice/stable/%SUBDIR%/ \
+		ftp://sunsite.cnlab-switch.ch/mirror/OpenOffice.org/stable/%SUBDIR%/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,misc/openoffice/stable/&,} \
 		http://www.binarycode.org/openoffice/stable/%SUBDIR%/ \
 		http://ftp.gwdg.de/pub/misc/openoffice/stable/%SUBDIR%/ \

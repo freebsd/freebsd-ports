@@ -1,4 +1,4 @@
-# New ports collection makefile for:	OpenOffice 1.1 for Greek language
+# New ports collection makefile for:	OpenOffice.org for Greek language
 # Date created:		Sun Nov 9 08:57:32 JST 2003
 # Whom:		Martin Blapp <mbr@FreeBSD.org>, Mario Ferreira <lioux@FreeBSD.org> and NAKATA Maho <maho@FreeBSD.org>
 #

@@ -1,4 +1,4 @@
-# New ports collection makefile for:	OpenOffice for Czech language
+# New ports collection makefile for:	OpenOffice.org for Czech language
 # Date created:		Sun Nov  9 09:29:41 JST 2003
 # Whom:			NAKATA Maho <maho@FreeBSD.org>
 #

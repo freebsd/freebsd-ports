@@ -1,4 +1,4 @@
-# New ports collection makefile for: OpenOffice Spell Checking Dictionaries
+# New ports collection makefile for: OpenOffice.org Spell Checking Dictionaries
 # Date created:         Tue Aug 10 24:00:00 UTC 2002
 # Whom:         Martin Blapp <mbr@FreeBSD.org>
 #

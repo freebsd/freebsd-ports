@@ -14,7 +14,7 @@ DISTNAME=	impress_templates
 DIST_SUBDIR?=	openoffice1.1
 
 MAINTAINER=	openoffice@FreeBSD.org
-COMMENT=	OpenOffice 1.1.0 Impress Templates
+COMMENT=	OpenOffice.org 1.1.0 Impress Templates
 PLIST=		${WRKDIR}/pkg-plist
 
 RUN_DEPENDS=	${PREFIX}/${OPENOFFICE}/program/soffice:${PORTSDIR}/japanese/openoffice-1.1

@@ -1,5 +1,5 @@
 # New ports collection makefile for:
-# OpenOffice Spell Checking Dictionary
+# OpenOffice.org Spell Checking Dictionary
 # for Ukrainian.
 # Date created:		Mon Mar 10 17:53:11 EET 2003
 # Whom:			Alexandr Kovalenko <never@nevermind.kiev.ua>

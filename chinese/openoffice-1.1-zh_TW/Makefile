@@ -1,4 +1,4 @@
-# New ports collection makefile for:	OpenOffice for Traditional Chinese
+# New ports collection makefile for:	OpenOffice.org for Traditional Chinese
 # Date created:		Nov 9 08:30:32 JST 2003
 # Whom:			chshen <statue@freebsd.sinica.edu.tw> and NAKATA Maho <maho@FreeBSD.org>
 #

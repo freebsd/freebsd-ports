@@ -1,4 +1,4 @@
-# New ports collection makefile for: OpenOffice
+# New ports collection makefile for: OpenOffice.org
 # Date created:		28 Februar 2002
 # Whom:                 Martin Blapp
 #
@@ -13,7 +13,7 @@ MASTER_SITES+=	http://openofficeorg.secsup.org/%SUBDIR%/ \
 		http://mirrors.sunsite.dk/openoffice/%SUBDIR%/ \
 		http://ftp.gwdg.de/pub/misc/openoffice/%SUBDIR%/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,misc/openoffice/&,} \
-		ftp://ftp.chg.ru/pub/OpenOffice/%SUBDIR%/ \
+		ftp://ftp.chg.ru/pub/OpenOffice.org/%SUBDIR%/ \
 		ftp://ftp.cs.man.ac.uk/pub/toby/gpc/:gpc \
 		ftp://ftp.services.openoffice.org/pub/OpenOffice.org/contrib/helpcontent-1.0/:help \
 		http://people.freebsd.org/~mbr/ooo/:moz
