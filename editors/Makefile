@@ -61,6 +61,7 @@
     SUBDIR += le
     SUBDIR += leim20
     SUBDIR += lpe
+    SUBDIR += moleskine
     SUBDIR += muggy
     SUBDIR += mule
     SUBDIR += mule-common

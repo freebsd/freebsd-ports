@@ -1,0 +1,27 @@
+bin/moleskine
+etc/gnome/config/Moleskine/LanguageModes
+share/gnome/Moleskine/Moleskine/Document.py
+share/gnome/Moleskine/Moleskine/Document.pyc
+share/gnome/Moleskine/Moleskine/LanguageMode.py
+share/gnome/Moleskine/Moleskine/LanguageMode.pyc
+share/gnome/Moleskine/Moleskine/LanguageSettings.py
+share/gnome/Moleskine/Moleskine/LanguageSettings.pyc
+share/gnome/Moleskine/Moleskine/MoleskineApp.py
+share/gnome/Moleskine/Moleskine/MoleskineApp.pyc
+share/gnome/Moleskine/Moleskine/__init__.py
+share/gnome/Moleskine/Moleskine/__init__.pyc
+share/gnome/Moleskine/Moleskine/menu.py
+share/gnome/Moleskine/Moleskine/menu.pyc
+share/gnome/Moleskine/Moleskine/toolbar.py
+share/gnome/Moleskine/Moleskine/toolbar.pyc
+share/gnome/Moleskine/Moleskine/utils.py
+share/gnome/Moleskine/Moleskine/utils.pyc
+share/gnome/Moleskine/dialogs/about_dialog.glade
+share/gnome/Moleskine/dialogs/language_settings.glade
+share/gnome/Moleskine/moleskine
+@dirrm share/gnome/Moleskine/dialogs
+@dirrm share/gnome/Moleskine/Moleskine
+@dirrm share/gnome/Moleskine
+@dirrm etc/gnome/config/Moleskine
+@dirrm etc/gnome/config
+@dirrm etc/gnome
