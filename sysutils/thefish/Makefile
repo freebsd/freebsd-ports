@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	thefish
-PORTVERSION=	0.6.4
+PORTVERSION=	0.6.5
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.energyhq.es.eu.org/files/
 
@@ -37,7 +37,7 @@ NO_GUI=		yes
 MAKE_ENV+=	NO_GUI=yes
 .endif
 
-.if defined(WITH_GTK)
+.if defined(WITH_GTK) || !defined(WITHOUT_GTK)
 USE_GNOME=	gtk20
 MAKE_ENV+=	WITH_GTK=yes
 .endif
