@@ -76,7 +76,9 @@ pre-install:
 		${CPIO} -id
 .endfor
 	cd ${WRKSRC}/tmp; ${FIND} * -type f -o -type l > ${PLIST}; \
-		${FIND} -d * -type d | ${SED} -e 's:^:@dirrm :'>> ${PLIST}
+		${FIND} -d * -type d | \
+		${GREP} -vwE "(bin$$|X11R6/include$$|lib$$|man$$|src$$)" | \
+		${SED} -e 's:^:@dirrm :'>> ${PLIST}
 	${RM} -rf ${WRKSRC}/tmp
 
 do-install:
