@@ -4,7 +4,7 @@
 #
 # Format:
 #disc_name	packages_OK	distfiles_OK	available_space
-disc1		1		0		410000000
+disc1		1		0		435000000
 disc2		1		0		0
 disc3		1		0		650000000
 disc4		1		0		0
