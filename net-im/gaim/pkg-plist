@@ -251,6 +251,7 @@ share/gnome/pixmaps/gaim/status/default/napster.png
 share/gnome/pixmaps/gaim/status/default/notauthorized.png
 share/gnome/pixmaps/gaim/status/default/occupied.png
 share/gnome/pixmaps/gaim/status/default/offline.png
+share/gnome/pixmaps/gaim/status/default/secure.png
 share/gnome/pixmaps/gaim/status/default/trepia.png
 share/gnome/pixmaps/gaim/status/default/wireless.png
 share/gnome/pixmaps/gaim/status/default/yahoo.png
@@ -283,8 +284,8 @@ share/locale/ko/LC_MESSAGES/gaim.mo
 share/locale/nl/LC_MESSAGES/gaim.mo
 share/locale/no/LC_MESSAGES/gaim.mo
 share/locale/pl/LC_MESSAGES/gaim.mo
+share/locale/pt/LC_MESSAGES/gaim.mo
 share/locale/pt_BR/LC_MESSAGES/gaim.mo
-share/locale/pt_PT/LC_MESSAGES/gaim.mo
 share/locale/ro/LC_MESSAGES/gaim.mo
 share/locale/ru/LC_MESSAGES/gaim.mo
 share/locale/sk/LC_MESSAGES/gaim.mo
