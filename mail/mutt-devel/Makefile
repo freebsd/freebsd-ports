@@ -89,6 +89,9 @@ pre-configure::
 	${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-inews
 .endif
 .endif
+.if defined(WITH_MUTT_CYRUS_SASL)
+LIB_DEPENDS+=	sasl.8:${PORTSDIR}/security/cyrus-sasl
+.endif
 
 .if defined(WITH_MUTT_LOCALES_FIX)
 CONFIGURE_ARGS+=	--enable-locales-fix
@@ -106,6 +109,11 @@ CONFIGURE_ARGS+=	--enable-pop
 .endif
 .if defined(WITH_MUTT_IMAP)
 CONFIGURE_ARGS+=	--enable-imap
+.endif
+.if defined(WITH_MUTT_CYRUS_SASL)
+CONFIGURE_ARGS+=	--enable-imap \
+			--with-sasl=${LOCALBASE}
+WITH_MUTT_IMAP=                yes
 .endif
 .if defined(WITH_MUTT_POP_IMAP)
 CONFIGURE_ARGS+=	--enable-pop --enable-imap
