@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kochi-ttfonts
-PORTVERSION=	20011227
+PORTVERSION=	20020108
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	http://www.on.cs.keio.ac.jp/~yasu/linux/fonts/
 DISTFILES=	kochi-mincho-0.1.${PORTVERSION}.tar.bz2 \
@@ -45,6 +45,14 @@ do-install:
 			${WRKDIR}/kochi-mincho/examples/fonts.dir.kochi \
 			${FILESDIR}/fonts.alias.kochi \
 			${PREFIX}/${FONTSDIR}
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${PREFIX}/share/doc/ja/kochi-ttfonts/mincho
+	${INSTALL_DATA} ${WRKDIR}/kochi-mincho/README \
+		${PREFIX}/share/doc/ja/kochi-ttfonts/mincho
+	${MKDIR} ${PREFIX}/share/doc/ja/kochi-ttfonts/gothic
+	${INSTALL_DATA} ${WRKDIR}/kochi-gothic/README \
+		${PREFIX}/share/doc/ja/kochi-ttfonts/gothic
+.endif
 	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.post.mk>
