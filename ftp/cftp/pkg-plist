@@ -2,10 +2,9 @@ bin/cftp
 @unexec install-info --delete %D/info/cftp.info %D/info/dir
 info/cftp.info
 @exec install-info %D/info/cftp.info %D/info/dir
-share/doc/cftp/AUTHORS
-share/doc/cftp/ChangeLog
-share/doc/cftp/NEWS
-share/doc/cftp/README
-share/doc/cftp/THANKS
-share/doc/cftp/TODO
-@dirrm share/doc/cftp
+%%PORTDOCS%%share/doc/cftp/AUTHORS
+%%PORTDOCS%%share/doc/cftp/ChangeLog
+%%PORTDOCS%%share/doc/cftp/NEWS
+%%PORTDOCS%%share/doc/cftp/README
+%%PORTDOCS%%share/doc/cftp/THANKS
+%%PORTDOCS%%share/doc/cftp/TODO

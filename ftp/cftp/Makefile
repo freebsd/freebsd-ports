@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cftp
-PORTVERSION=	0.10
+PORTVERSION=	0.11
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	ftp://ftp.giga.or.at/pub/nih/cftp/ \
 		ftp://sunsite.univie.ac.at/pub/nih/cftp/
@@ -19,7 +19,7 @@ post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/cftp
 .for file in AUTHORS ChangeLog NEWS README THANKS TODO
-	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/cftp
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
 
