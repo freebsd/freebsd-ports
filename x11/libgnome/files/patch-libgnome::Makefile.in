@@ -1,11 +1,11 @@
---- libgnome/Makefile.in.orig	Tue Nov  5 00:56:43 2002
-+++ libgnome/Makefile.in	Tue Nov  5 00:58:40 2002
-@@ -149,6 +149,8 @@
+--- libgnome/Makefile.in.orig	Sun May 25 01:18:04 2003
++++ libgnome/Makefile.in	Sun May 25 01:19:56 2003
+@@ -157,7 +157,7 @@
+ 
  libgnomeincludedir = $(includedir)/libgnome-2.0/libgnome
  
- INCLUDES = \
-+	-DPREFIX="\"$(PREFIX)"\" -DLOCALBASE="\"$(LOCALBASE)\"" \
-+	-DX11BASE="\"$(X11BASE)"\"				\
- 	-I..							\
- 	-I$(srcdir)/..						\
- 	$(WARN_CFLAGS)						\
+-INCLUDES =  	-I..								-I$(srcdir)/..							$(WARN_CFLAGS)							$(LIBGNOME_CFLAGS)						-DG_DISABLE_DEPRECATED						-DLIBGNOME_PREFIX=\""$(prefix)"\"				-DLIBGNOME_LIBDIR=\""$(libdir)"\"				-DLIBGNOME_DATADIR=\""$(datadir)"\"				-DLIBGNOME_BINDIR=\""$(bindir)"\"				-DLIBGNOME_LOCALSTATEDIR=\""$(localstatedir)"\"			-DLIBGNOME_LOCALEDIR=\""$(gnomelocaledir)"\"			-DLIBGNOME_SYSCONFDIR=\""$(sysconfdir)"\"			-DVERSION=\""$(VERSION)"\"					-DGNOMEVFSVERSION=\"$(GNOME_VFS_VERSION)\"			-DG_LOG_DOMAIN=\"Gnome\"
++INCLUDES =  -DPREFIX="\"$(PREFIX)"\" -DLOCALBASE="\"$(LOCALBASE)\"" -DX11BASE="\"$(X11BASE)"\"	-I..								-I$(srcdir)/..							$(WARN_CFLAGS)							$(LIBGNOME_CFLAGS)						-DG_DISABLE_DEPRECATED						-DLIBGNOME_PREFIX=\""$(prefix)"\"				-DLIBGNOME_LIBDIR=\""$(libdir)"\"				-DLIBGNOME_DATADIR=\""$(datadir)"\"				-DLIBGNOME_BINDIR=\""$(bindir)"\"				-DLIBGNOME_LOCALSTATEDIR=\""$(localstatedir)"\"			-DLIBGNOME_LOCALEDIR=\""$(gnomelocaledir)"\"			-DLIBGNOME_SYSCONFDIR=\""$(sysconfdir)"\"			-DVERSION=\""$(VERSION)"\"					-DGNOMEVFSVERSION=\"$(GNOME_VFS_VERSION)\"			-DG_LOG_DOMAIN=\"Gnome\"
+ 
+ 
+ libgnome_2_la_SOURCES =  	libgnometypebuiltins.h		libgnometypebuiltins.c		gnome-config.c			gnome-sound.c			gnome-triggers.c		gnome-triggersP.h		gnome-program.c			gnome-help.c			gnome-exec.c			gnome-gconf.c			gnome-gconfP.h			gnome-i18n.c			gnome-i18nP.h			gnome-url.c			gnome-util.c			gnome-score.c			gnome-init.c
