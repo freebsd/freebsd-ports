@@ -16,7 +16,7 @@ MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	A TCL interface to the Thomas Boutell's Gd library
 
 LIB_DEPENDS=	tcl${TCL_DVER}.1:${PORTSDIR}/lang/tcl${TCL_DVER} \
-		gd:${PORTSDIR}/graphics/gd2
+		gd:${PORTSDIR}/graphics/gd
 
 TCL_VER=	8.3
 TCL_DVER=	${TCL_VER:S/.//}

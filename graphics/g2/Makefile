@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	libs/graphics
 MAINTAINER=	billf@FreeBSD.org
 COMMENT=	An easy to use, portable and powerful 2D graphics library
 
-LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd2
+LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
 
 USE_XLIB=	yes
 GNU_CONFIGURE=	yes
