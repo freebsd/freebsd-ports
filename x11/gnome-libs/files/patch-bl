@@ -1,0 +1,35 @@
+--- libgnomeui/gnome-init.c.orig	Sat May  6 10:30:31 2000
++++ libgnomeui/gnome-init.c	Tue Sep 12 11:34:20 2000
+@@ -200,32 +200,8 @@
+ 	switch(reason) {
+ 	case POPT_CALLBACK_REASON_PRE:
+                 {
+-                        char *ctype, *old_ctype = NULL;
+-                        gboolean ctype_set;
+-
+                         gnome_segv_setup (FALSE);
+-                        ctype = setlocale (LC_CTYPE, NULL);
+-
+-                        if (!strcmp(ctype, "C")) {
+-                                old_ctype = g_strdup (getenv ("LC_CTYPE"));
+-                                putenv ("LC_CTYPE=en_US");
+-                                ctype_set = TRUE;
+-                        } else
+-                                ctype_set = FALSE;
+-
+                         gtk_set_locale ();
+-
+-                        if (ctype_set) {
+-                                char *setme;
+-
+-                                if (old_ctype) {
+-                                        setme = g_strconcat ("LC_CTYPE=", old_ctype, NULL);
+-                                        g_free(old_ctype);
+-                                } else
+-                                        setme = "LC_CTYPE";
+-
+-                                putenv (setme);
+-                        }
+                         client = gnome_master_client();
+                 }
+ 		break;
