@@ -1,4 +1,23 @@
 bin/spacearyarya
+share/SpaceAryarya/bmp/back1.bmp
+share/SpaceAryarya/bmp/back2.bmp
+share/SpaceAryarya/bmp/bomb.bmp
+share/SpaceAryarya/bmp/boss1_b.bmp
+share/SpaceAryarya/bmp/boss1_do.bmp
+share/SpaceAryarya/bmp/boss1_f.bmp
+share/SpaceAryarya/bmp/boss2_b.bmp
+share/SpaceAryarya/bmp/boss2_do.bmp
+share/SpaceAryarya/bmp/boss2_f.bmp
+share/SpaceAryarya/bmp/enemy1.bmp
+share/SpaceAryarya/bmp/enemy2.bmp
+share/SpaceAryarya/bmp/eshot.bmp
+share/SpaceAryarya/bmp/kage.bmp
+share/SpaceAryarya/bmp/my.bmp
+share/SpaceAryarya/bmp/shot.bmp
+share/SpaceAryarya/bmp/sky1.bmp
+share/SpaceAryarya/bmp/sky2.bmp
+share/SpaceAryarya/bmp/wall.bmp
+share/SpaceAryarya/bmp/wall2.bmp
 share/SpaceAryarya/data/.score
 share/SpaceAryarya/data/stage1.dat
 share/SpaceAryarya/data/stage2.dat
@@ -8,26 +27,7 @@ share/SpaceAryarya/wav/boss.wav
 share/SpaceAryarya/wav/die.wav
 share/SpaceAryarya/wav/fire.wav
 share/SpaceAryarya/wav/hit.wav
-share/SpaceAryarya/xpm/back1.xpm
-share/SpaceAryarya/xpm/back2.xpm
-share/SpaceAryarya/xpm/bomb.xpm
-share/SpaceAryarya/xpm/boss1_b.xpm
-share/SpaceAryarya/xpm/boss1_do.xpm
-share/SpaceAryarya/xpm/boss1_f.xpm
-share/SpaceAryarya/xpm/boss2_b.xpm
-share/SpaceAryarya/xpm/boss2_do.xpm
-share/SpaceAryarya/xpm/boss2_f.xpm
-share/SpaceAryarya/xpm/enemy1.xpm
-share/SpaceAryarya/xpm/enemy2.xpm
-share/SpaceAryarya/xpm/eshot.xpm
-share/SpaceAryarya/xpm/kage.xpm
-share/SpaceAryarya/xpm/my.xpm
-share/SpaceAryarya/xpm/shot.xpm
-share/SpaceAryarya/xpm/sky1.xpm
-share/SpaceAryarya/xpm/sky2.xpm
-share/SpaceAryarya/xpm/wall.xpm
-share/SpaceAryarya/xpm/wall2.xpm
+@dirrm share/SpaceAryarya/bmp
 @dirrm share/SpaceAryarya/data
 @dirrm share/SpaceAryarya/wav
-@dirrm share/SpaceAryarya/xpm
 @dirrm share/SpaceAryarya
