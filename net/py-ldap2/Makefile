@@ -34,9 +34,9 @@ do-configure:
 	@${PERL5} -pi -e "s=lber ldap resolv=lber ldap=" ${WRKSRC}/setup.cfg
 
 do-build:
-	cd ${WRKSRC} && python setup.py build
+	cd ${WRKSRC} && ${PYTHON_CMD} setup.py build
 
 do-install:
-	cd ${WRKSRC} && python setup.py install
+	cd ${WRKSRC} && ${PYTHON_CMD} setup.py install
 
 .include <bsd.port.mk>
