@@ -1,0 +1,14 @@
+--- Makefile.in.orig	Sun Apr 22 03:09:12 2001
++++ Makefile.in	Wed Dec 19 20:38:06 2001
+@@ -24,7 +24,11 @@
+ 
+ targets = $(LTLIBRARY_NAME) $(PHP_PROGRAM)
+ 
++.if defined(STANDALONE)
++install_targets = install-sapi
++.else
+ install_targets = install-sapi install-modules
++.endif
+ 
+ include $(top_srcdir)/build/rules.mk
+ include $(top_srcdir)/build/library.mk

@@ -6,8 +6,8 @@
 #
 
 PORTNAME?=	mod_php4
-PORTVERSION=	4.0.6
-PORTREVISION?=	5
+PORTVERSION=	4.1.0
+PORTREVISION?=	0
 CATEGORIES?=	www
 MASTER_SITES=	http://us.php.net/${PHP_DISTDIR}/ \
 		http://php.he.net/${PHP_DISTDIR}/ \
@@ -32,7 +32,7 @@ PHP_DISTDIR=	distributions
 SLAVEDIRS=	lang/php4
 
 USE_AUTOCONF=	yes
-USE_LIBTOOL=	yes
+GNU_CONFIGURE=	yes
 
 .if !defined(BATCH) && !defined(PACKAGE_BUILDING)
 IS_INTERACTIVE=	yes
@@ -43,6 +43,8 @@ CONFIGURE_ARGS=	--with-config-file-path=${PREFIX}/etc/php.standalone \
 		--disable-pear \
 		--enable-discard-path \
 		--with-readline=/usr
+
+MAKE_ENV=	STANDALONE="${STANDALONE}"
 .else
 CONFIGURE_ARGS=	--with-apxs=${PREFIX}/sbin/apxs \
 		--with-config-file-path=${PREFIX}/etc

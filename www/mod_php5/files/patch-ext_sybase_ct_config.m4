@@ -1,20 +1,21 @@
---- ext/sybase_ct/config.m4.orig	Wed Mar 28 05:34:43 2001
-+++ ext/sybase_ct/config.m4	Fri Oct 26 21:35:50 2001
-@@ -20,16 +20,12 @@
-     fi
- 	PHP_ADD_INCLUDE($SYBASE_CT_INCDIR)
- 	PHP_ADD_LIBPATH($SYBASE_CT_LIBDIR)
--	PHP_ADD_LIBRARY(cs)
- 	PHP_ADD_LIBRARY(ct)
--	PHP_ADD_LIBRARY(comn)
--	PHP_ADD_LIBRARY(intl)
--	SYBASE_CT_LIBS="-lcs -lct -lcomn -lintl"
-+	SYBASE_CT_LIBS="-lct"
-     old_LDFLAGS=$LDFLAGS
-     LDFLAGS="$LDFLAGS -L$SYBASE_CT_LIBDIR"
-     AC_CHECK_LIB(tcl, netg_errstr,
-               [ PHP_ADD_LIBRARY(tcl) ],
--              [ PHP_ADD_LIBRARY(sybtcl) ],
-               [ $SYBASE_CT_LIBS ])
-     AC_CHECK_LIB(insck, insck__getVdate,
-               [ PHP_ADD_LIBRARY(insck) ])
+--- ext/sybase_ct/config.m4.orig	Wed Dec 19 19:36:23 2001
++++ ext/sybase_ct/config.m4	Wed Dec 19 19:38:08 2001
+@@ -19,17 +19,12 @@
+ 
+   PHP_ADD_INCLUDE($SYBASE_CT_INCDIR)
+   PHP_ADD_LIBPATH($SYBASE_CT_LIBDIR, SYBASE_CT_SHARED_LIBADD)
+-  PHP_ADD_LIBRARY(cs,, SYBASE_CT_SHARED_LIBADD)
+   PHP_ADD_LIBRARY(ct,, SYBASE_CT_SHARED_LIBADD)
+-  PHP_ADD_LIBRARY(comn,, SYBASE_CT_SHARED_LIBADD)
+-  PHP_ADD_LIBRARY(intl,, SYBASE_CT_SHARED_LIBADD)
+ 
+-  SYBASE_CT_LIBS="-L$SYBASE_CT_LIBDIR -lcs -lct -lcomn -lintl"
++  SYBASE_CT_LIBS="-L$SYBASE_CT_LIBDIR -lct"
+ 
+   AC_CHECK_LIB(tcl, netg_errstr, [
+     PHP_ADD_LIBRARY(tcl,,SYBASE_CT_SHARED_LIBADD)
+-  ],[ 
+-    PHP_ADD_LIBRARY(sybtcl,,SYBASE_CT_SHARED_LIBADD)
+   ],[ 
+     $SYBASE_CT_LIBS 
+   ])
