@@ -5,10 +5,12 @@
 # $FreeBSD$
 
 PORTNAME=	riece
-PORTVERSION=	1.0.5
+PORTVERSION=	1.0.6
 PORTEPOCH=	1
 CATEGORIES=	irc elisp
-MASTER_SITES=	http://wiliki.designflaw.org/riece/
+MASTER_SITES=	http://wiliki.designflaw.org/riece/ \
+		${MASTER_SITE_SAVANNAH}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
 MAINTAINER=	yasu@utahime.org
