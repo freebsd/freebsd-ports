@@ -9,7 +9,7 @@ PORTNAME=	Net_Sieve
 PORTVERSION=	1.0.1
 CATEGORIES=	net www pear
 
-MAINTAINER=	martin@tradex.sk
+MAINTAINER=	martin@matuska.org
 COMMENT=	PEAR class to handle talking to timsieved
 
 BUILD_DEPENDS=	${PEARDIR}/Net/Socket.php:${PORTSDIR}/net/pear-Net_Socket

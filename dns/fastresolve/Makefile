@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	dns
 MASTER_SITES=	http://www.djmnet.org/sw/dist/
 
-MAINTAINER=	martin@tradex.sk
+MAINTAINER=	martin@matuska.org
 COMMENT=	Programs that process web logs to get DNS and domain ownership info
 
 LIB_DEPENDS=	adns.1:${PORTSDIR}/dns/adns

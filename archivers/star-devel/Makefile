@@ -1,6 +1,6 @@
 # New ports collection makefile for:	star-devel
 # Date created:				19.06.2004 22:27:00 CEST
-# Whom:					Martin Matuska <martin@tradex.sk>
+# Whom:					Martin Matuska <martin@matuska.org>
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ CATEGORIES=	archivers
 MASTER_SITES=	ftp://ftp.berlios.de/pub/star/alpha/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.a./a/}
 
-MAINTAINER=	martin@tradex.sk
+MAINTAINER=	martin@matuska.org
 COMMENT=	Unique standard tape archiver with many enhancements
 
 CONFLICTS=	star-1.4*

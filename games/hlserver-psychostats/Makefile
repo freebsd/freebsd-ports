@@ -1,6 +1,6 @@
 # New ports collection makefile for:	Half Life Psychostats
 # Date created:				Sun Oct 14 14:34:20 CEST 2001
-# Whom:					martin@tradex.sk
+# Whom:					martin@matuska.org
 #
 # $FreeBSD$
 #
@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://ftp.thaiguy.net/ \
 		http://mirrors.voyager.net/games/halflife/stats/psychostats/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	martin@tradex.sk
+MAINTAINER=	martin@matuska.org
 COMMENT=	Popular player statistics generator for Half-Life (cs/dod)
 
 USE_PERL5_BUILD=yes
