@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rmail
-PORTVERSION=	0.16
+PORTVERSION=	0.17
 CATEGORIES=	mail ruby
 MASTER_SITES=	http://www.lickey.com/rubymail/download/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
