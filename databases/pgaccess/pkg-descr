@@ -1,7 +1,7 @@
 Please note: you have to compile and install the postgresql port with
 the following commands, so that you can use pgaccess as database frontend:
 
-	make USE_TCL all install
+	make USE_TCL=yes all install
 
 More infos:
 
