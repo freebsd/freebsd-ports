@@ -41,6 +41,7 @@
     SUBDIR += drweb-sendmail
     SUBDIR += dsniff
     SUBDIR += fakebo
+    SUBDIR += find-zlib
     SUBDIR += find_ddos
     SUBDIR += firewalk
     SUBDIR += flawfinder
