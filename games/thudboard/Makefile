@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	thudboard
-PORTVERSION=	0.9.8
+PORTVERSION=	0.9.9
 CATEGORIES=	games
 MASTER_SITES=	http://www.million.nl/file/
 
