@@ -1,5 +1,4 @@
 bin/xchat
-bin/xchat-text
 lib/xchat/plugins/perl.so
 %%PYTHON%%lib/xchat/plugins/python.so
 %%TCL%%lib/xchat/plugins/tcl.so

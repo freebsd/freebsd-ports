@@ -1,6 +1,6 @@
---- Makefile.in.orig	Sun Dec  8 23:16:00 2002
-+++ Makefile.in	Sun Dec  8 23:16:41 2002
-@@ -145,7 +145,7 @@
+--- Makefile.in.old	Thu Jul 31 05:24:26 2003
++++ Makefile.in	Thu Jul 31 19:03:06 2003
+@@ -211,7 +211,7 @@
  icondir = $(datadir)/pixmaps
  
  util_DATA = xchat.desktop

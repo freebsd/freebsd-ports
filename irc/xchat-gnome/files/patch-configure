@@ -1,6 +1,6 @@
---- configure.orig	Sun Jun 29 18:53:35 2003
-+++ configure	Sun Jun 29 19:01:02 2003
-@@ -10816,12 +10816,12 @@
+--- configure.old	Thu Jul 31 05:24:30 2003
++++ configure	Thu Jul 31 19:03:06 2003
+@@ -21482,12 +21482,12 @@
  /* end confdefs.h.  */
  #include <libintl.h>
  extern int _nl_msg_cat_cntr;
