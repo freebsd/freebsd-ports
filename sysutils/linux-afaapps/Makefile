@@ -24,7 +24,7 @@ RESTRICTED=		"binary redistribution license needs clarification"
 NO_BUILD=		yes
 NO_WRKSUBDIR=		yes
 
-USE_LINUX_PREFIX=	yes
+PREFIX?=		${LINUXBASE}
 LDCONFIG_LINUX=		${LINUXBASE}/sbin/ldconfig
 
 ONLY_FOR_ARCHS=		i386
