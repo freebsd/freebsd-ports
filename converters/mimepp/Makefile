@@ -3,7 +3,7 @@
 # Date created:				3 July 1997
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.1.1.1 1997/07/08 10:08:49 tg Exp $
+# $Id: Makefile,v 1.2 1997/07/08 10:52:39 asami Exp $
 #
 
 DISTNAME=		mimepp-0.8.0
@@ -29,6 +29,6 @@ do-install:
 .for file in exampl01.cc exampl02.cc exampl03.cc exampl04.cc exampl05.cc attach.cc basicmsg.cc multipar.cc attach.h basicmsg.h multipar.h test01.txt test02.txt test03.txt test04.txt test05.txt
 	@ ${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/examples/mimepp/${file}
 .endfor
-	@ ${INSTALL_DATA} files/Makefile ${PREFIX}/share/examples/mimepp
+	@ ${INSTALL_DATA} ${FILESDIR}/Makefile ${PREFIX}/share/examples/mimepp
 
 .include <bsd.port.mk>
