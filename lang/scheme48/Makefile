@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	scheme48
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://s48.org/${PORTVERSION}/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	The Scheme Underground's implementation of R4RS
+COMMENT=	The Scheme Underground's implementation of R5RS
 
 CONFLICTS=	scsh-*
 
