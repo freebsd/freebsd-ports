@@ -1,6 +1,6 @@
 bin/phone
 man/man1/phone.1.gz
-libexec/in.phoned
+libexec/phoned
 libexec/convd
 share/okphone/NOTE
 share/okphone/READ_ME
