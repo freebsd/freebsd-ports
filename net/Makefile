@@ -4,6 +4,7 @@
     SUBDIR += 44bsd-rdist
     SUBDIR += 6tunnel
     SUBDIR += 6to4
+    SUBDIR += DarwinStreamingServer
     SUBDIR += GeoIP
     SUBDIR += NeTraMet
     SUBDIR += SSLtelnet

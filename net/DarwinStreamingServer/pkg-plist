@@ -1,0 +1,158 @@
+bin/qtpasswd
+bin/MP3Broadcaster
+bin/PlaylistBroadcaster
+sbin/DarwinStreamingServer
+sbin/streamingadminserver.pl
+share/DarwinStreamingServer/3rdPartyAcknowledgements.rtf
+share/DarwinStreamingServer/AdminHtml/MapUTF.pl
+share/DarwinStreamingServer/AdminHtml/access_log.html
+share/DarwinStreamingServer/AdminHtml/adminprotocol-lib.pl
+share/DarwinStreamingServer/AdminHtml/broadcaster_lib.pl
+share/DarwinStreamingServer/AdminHtml/broadcaster_settings.html
+share/DarwinStreamingServer/AdminHtml/cgi-lib.pl
+share/DarwinStreamingServer/AdminHtml/change_broadcast_password.html
+share/DarwinStreamingServer/AdminHtml/change_mp3_password.html
+share/DarwinStreamingServer/AdminHtml/change_password.html
+share/DarwinStreamingServer/AdminHtml/change_password_redirect.html
+share/DarwinStreamingServer/AdminHtml/confirm.html
+share/DarwinStreamingServer/AdminHtml/connected.html
+share/DarwinStreamingServer/AdminHtml/error_log.html
+share/DarwinStreamingServer/AdminHtml/format.html
+share/DarwinStreamingServer/AdminHtml/frameset.html
+share/DarwinStreamingServer/AdminHtml/general_settings.html
+share/DarwinStreamingServer/AdminHtml/html_de/genres
+share/DarwinStreamingServer/AdminHtml/html_de/messages
+share/DarwinStreamingServer/AdminHtml/html_en/genres
+share/DarwinStreamingServer/AdminHtml/html_en/messages
+share/DarwinStreamingServer/AdminHtml/html_fr/genres
+share/DarwinStreamingServer/AdminHtml/html_fr/messages
+share/DarwinStreamingServer/AdminHtml/html_ja/genres
+share/DarwinStreamingServer/AdminHtml/html_ja/messages
+share/DarwinStreamingServer/AdminHtml/images/LB_arrow_dn.gif
+share/DarwinStreamingServer/AdminHtml/images/LB_arrow_up.gif
+share/DarwinStreamingServer/AdminHtml/images/apple_logo.gif
+share/DarwinStreamingServer/AdminHtml/images/arrow_down.gif
+share/DarwinStreamingServer/AdminHtml/images/back.gif
+share/DarwinStreamingServer/AdminHtml/images/blackpixel.gif
+share/DarwinStreamingServer/AdminHtml/images/clearpixel.gif
+share/DarwinStreamingServer/AdminHtml/images/dialog_alert.gif
+share/DarwinStreamingServer/AdminHtml/images/dialog_bottom.gif
+share/DarwinStreamingServer/AdminHtml/images/dialog_bottom_sm.gif
+share/DarwinStreamingServer/AdminHtml/images/dialog_middle.gif
+share/DarwinStreamingServer/AdminHtml/images/dialog_middle_sm.gif
+share/DarwinStreamingServer/AdminHtml/images/dialog_qtss.gif
+share/DarwinStreamingServer/AdminHtml/images/dialog_side.gif
+share/DarwinStreamingServer/AdminHtml/images/dialog_top.gif
+share/DarwinStreamingServer/AdminHtml/images/dialog_top_sm.gif
+share/DarwinStreamingServer/AdminHtml/images/divider.gif
+share/DarwinStreamingServer/AdminHtml/images/divider_vert.gif
+share/DarwinStreamingServer/AdminHtml/images/dot.gif
+share/DarwinStreamingServer/AdminHtml/images/folder.gif
+share/DarwinStreamingServer/AdminHtml/images/greypixel.gif
+share/DarwinStreamingServer/AdminHtml/images/headerpixel.gif
+share/DarwinStreamingServer/AdminHtml/images/help.gif
+share/DarwinStreamingServer/AdminHtml/images/highlight.gif
+share/DarwinStreamingServer/AdminHtml/images/horz_line.gif
+share/DarwinStreamingServer/AdminHtml/images/icon_alert.gif
+share/DarwinStreamingServer/AdminHtml/images/icon_doc.gif
+share/DarwinStreamingServer/AdminHtml/images/icon_error.gif
+share/DarwinStreamingServer/AdminHtml/images/icon_folder.gif
+share/DarwinStreamingServer/AdminHtml/images/icon_generic.gif
+share/DarwinStreamingServer/AdminHtml/images/icon_movie.gif
+share/DarwinStreamingServer/AdminHtml/images/icon_movie_off.gif
+share/DarwinStreamingServer/AdminHtml/images/icon_playlist.gif
+share/DarwinStreamingServer/AdminHtml/images/icon_playlist_off.gif
+share/DarwinStreamingServer/AdminHtml/images/icon_start_playlist.gif
+share/DarwinStreamingServer/AdminHtml/images/icon_stop_playlist.gif
+share/DarwinStreamingServer/AdminHtml/images/line.gif
+share/DarwinStreamingServer/AdminHtml/images/link.gif
+share/DarwinStreamingServer/AdminHtml/images/link_disabled.gif
+share/DarwinStreamingServer/AdminHtml/images/mp3_file.gif
+share/DarwinStreamingServer/AdminHtml/images/nav_help.gif
+share/DarwinStreamingServer/AdminHtml/images/nav_logo.gif
+share/DarwinStreamingServer/AdminHtml/images/pixel.gif
+share/DarwinStreamingServer/AdminHtml/images/scroll_arrow_down.gif
+share/DarwinStreamingServer/AdminHtml/images/scroll_arrow_up.gif
+share/DarwinStreamingServer/AdminHtml/images/scroll_bg.gif
+share/DarwinStreamingServer/AdminHtml/images/scroll_bg_inactive.gif
+share/DarwinStreamingServer/AdminHtml/images/scroll_thumb.gif
+share/DarwinStreamingServer/AdminHtml/images/sort_arrow.gif
+share/DarwinStreamingServer/AdminHtml/images/sort_arrow_desc.gif
+share/DarwinStreamingServer/AdminHtml/images/spacer.gif
+share/DarwinStreamingServer/AdminHtml/images/stripes_gray.gif
+share/DarwinStreamingServer/AdminHtml/images/stripes_gray_dark.gif
+share/DarwinStreamingServer/AdminHtml/images/trashcan.gif
+share/DarwinStreamingServer/AdminHtml/images/vert_line.gif
+share/DarwinStreamingServer/AdminHtml/images/weight_up_arrow.gif
+share/DarwinStreamingServer/AdminHtml/images/whitepixel.gif
+share/DarwinStreamingServer/AdminHtml/images/wieght_down_arrow.gif
+share/DarwinStreamingServer/AdminHtml/includes/draglib.js
+share/DarwinStreamingServer/AdminHtml/includes/encode_unicode.js
+share/DarwinStreamingServer/AdminHtml/includes/standardNav.js
+share/DarwinStreamingServer/AdminHtml/index.html
+share/DarwinStreamingServer/AdminHtml/log_settings.html
+share/DarwinStreamingServer/AdminHtml/login.html
+share/DarwinStreamingServer/AdminHtml/nav.html
+share/DarwinStreamingServer/AdminHtml/parse_xml.cgi
+share/DarwinStreamingServer/AdminHtml/password-utils.pl
+share/DarwinStreamingServer/AdminHtml/playlist-lib.pl
+share/DarwinStreamingServer/AdminHtml/playlist_detail.html
+share/DarwinStreamingServer/AdminHtml/playlist_error_log.html
+share/DarwinStreamingServer/AdminHtml/playlists.html
+share/DarwinStreamingServer/AdminHtml/ports.html
+share/DarwinStreamingServer/AdminHtml/relay.html
+share/DarwinStreamingServer/AdminHtml/relay_details.html
+share/DarwinStreamingServer/AdminHtml/relay_details_default.html
+share/DarwinStreamingServer/AdminHtml/relay_status.html
+share/DarwinStreamingServer/AdminHtml/relay_targets.html
+share/DarwinStreamingServer/AdminHtml/relayxmlparser.pl
+share/DarwinStreamingServer/AdminHtml/restart_broadcaster.html
+share/DarwinStreamingServer/AdminHtml/setup_assistant.html
+share/DarwinStreamingServer/AdminHtml/setup_assistant2.html
+share/DarwinStreamingServer/AdminHtml/setup_assistant3.html
+share/DarwinStreamingServer/AdminHtml/setup_assistant4.html
+share/DarwinStreamingServer/AdminHtml/setup_assistant5.html
+share/DarwinStreamingServer/AdminHtml/start_broadcaster.html
+share/DarwinStreamingServer/AdminHtml/start_server.html
+share/DarwinStreamingServer/AdminHtml/startplaylists.pl
+share/DarwinStreamingServer/AdminHtml/tag_formats.pl
+share/DarwinStreamingServer/AdminHtml/tag_types.pl
+share/DarwinStreamingServer/AdminHtml/tag_vals.pl
+share/DarwinStreamingServer/AdminHtml/template.html
+share/DarwinStreamingServer/AdminHtml/template_blank.html
+share/DarwinStreamingServer/AdminHtml/top.html
+share/DarwinStreamingServer/AdminHtml/view_broadcast.cgi
+share/DarwinStreamingServer/AdminHtml/welcome.html
+share/DarwinStreamingServer/movies/sample.mp3
+share/DarwinStreamingServer/movies/sample_100kbit.mov
+share/DarwinStreamingServer/movies/sample_100kbit.mp4
+share/DarwinStreamingServer/movies/sample_300kbit.mov
+share/DarwinStreamingServer/movies/sample_300kbit.mp4
+share/DarwinStreamingServer/readme.pdf
+etc/rc.d/streamingadminserver.sh
+etc/rc.d/darwin_streaming_server.sh
+etc/streaming/qtusers-dist
+etc/streaming/qtgroups-dist
+etc/streaming/relayconfig.xml-Sample
+@unexec if cmp -s %D/etc/streaming/streamingserver.xml %D/etc/streaming/streamingserver.xml-sample; then rm -f %D/etc/streaming/streamingserver.xml; fi
+etc/streaming/streamingserver.xml-sample
+@exec [ ! -f %B/streamingserver.xml ] && cp %B/%f %B/streamingserver.xml
+@comment @unexec if cmp -s %D/etc/streaming/streamingloadtool.conf %D/etc/streaming/streamingloadtool.conf-dist; then rm -f %D/etc/streaming/streamingloadtool.conf; fi
+@comment etc/streaming/streamingloadtool.conf-dist
+@comment @exec [ ! -f %B/streamingloadtool.conf ] && cp %B/%f %B/streamingloadtool.conf
+@comment @dirrm share/DarwinStreamingServer/AdminHtml
+@dirrm share/DarwinStreamingServer/AdminHtml/includes/
+@dirrm share/DarwinStreamingServer/AdminHtml/images/
+@dirrm share/DarwinStreamingServer/AdminHtml/html_ja/
+@dirrm share/DarwinStreamingServer/AdminHtml/html_fr/
+@dirrm share/DarwinStreamingServer/AdminHtml/html_en/
+@dirrm share/DarwinStreamingServer/AdminHtml/html_de/
+@dirrm share/DarwinStreamingServer/AdminHtml
+@dirrm share/DarwinStreamingServer/movies
+@dirrm share/DarwinStreamingServer
+@dirrm libexec/StreamingServerModules
+@unexec rmdir %D/etc/streaming               2>/dev/null || true
+@unexec rmdir /var/spool/streaming.playlists 2>/dev/null || true
+@exec   mkdir /var/spool/streaming.playlists 2>/dev/null || true
+@unexec rmdir /var/log/streaming             2>/dev/null || true
+@exec   mkdir /var/log/streaming             2>/dev/null || true
