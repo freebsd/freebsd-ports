@@ -19,7 +19,7 @@ USE_GNOME=	gnomeprefix gnomehack bonobo gnomedb
 USE_LIBTOOL=	yes
 CONFIGURE_ARGS=	--with-bonobo --enable-gnome-db
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/libs"
+		LIBS="-L${LOCALBASE}/lib"
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 post-patch:
