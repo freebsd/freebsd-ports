@@ -1,0 +1,9 @@
+--- cadubi.orig	Thu Jan 27 03:54:51 2000
++++ cadubi	Sun Jul 29 01:10:59 2001
+@@ -32,5 +32,5 @@ use FindBin qw($Bin); use lib "$Bin/../l
+ my $CADUBI_Arguments = undef;
+ $CADUBI_Arguments .= ' --mute' unless $AUDIBLE;
+ $CADUBI_Arguments .= ' '.$ADD_OPS if $ADD_OPS;
+-exec ('perl '.$Bin.'/CADUBI.pl'.$CADUBI_Arguments.' '.join(' ',@ARGV));
++exec ('perl '.$Bin.'/../libexec/CADUBI.pl'.$CADUBI_Arguments.' '.join(' ',@ARGV));
+ 

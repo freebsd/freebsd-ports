@@ -1,0 +1,32 @@
+--- CADUBI.pl.orig	Thu Jan 27 03:54:45 2000
++++ CADUBI.pl	Sun Jul 29 01:10:28 2001
+@@ -59,6 +59,7 @@ $AUDIBLE = 1;			# beep unless -m, --mute
+ $status_changed = 1;	# used with &status so we don't constantly redraw.
+ $current_filename = undef;	# name of file we're working with
+ $cadubi_done = 0;		# main loop var
++$Helpfile = $Bin . "/../share/doc/cadubi";
+ 
+ # runtime statements
+ &initKeys(); 		# setup %controlkeys and %keymap
+@@ -716,10 +717,10 @@ sub HandleKeystroke {
+ 	
+ 	# help
+ 	if (ord($key) == $keymap{'^h'}) { #Help
+-		if (-e $Bin.'/CADUBI.help') {
++		if (-e $Helpfile.'/CADUBI.help') {
+ 			my @oldmap = @charmap;
+ 			my @oldpos = @pos;
+-			&readfile($Bin.'/CADUBI.help');
++			&readfile($Helpfile.'/CADUBI.help');
+ 			&status('Press a key to continue...', 1);
+ 			my $temp = ReadKey(0);
+ 			@charmap = @oldmap;
+@@ -729,7 +730,7 @@ sub HandleKeystroke {
+ 			&status;
+ 		} else {
+ 			&beep;
+-			&status("'".$Bin."/CADUBI.help' not available");
++			&status("'".$Helpfile."/CADUBI.help' not available");
+ 		}
+ 		return 0;
+ 	}

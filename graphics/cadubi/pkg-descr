@@ -1,0 +1,9 @@
+CADUBI is an application written in Perl that allows you to
+draw text-based images that are viewable on typical unix-based
+consoles.  Usually the applications that emulate these
+consoles support various text modes, such as background and
+foreground colors, bold, and inverse.  This text art, commonly
+called "ASCII art," is used in various places such as online
+BBSes, email and login prompts.
+
+WWW: http://www.logicallemon.com/cadubi/
