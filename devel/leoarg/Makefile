@@ -20,6 +20,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 INSTALLS_SHLIB=	yes
 
+BROKEN=		"Configure fails"
+
 MAN3=	LeoArg.3 LeoArg__InvalidOption.3 LeoArg__InvalidSetting.3 \
 	LeoArg__Option.3 LeoArg__Setting.3 LeoArg_cpp.3 LeoArg_hh.3 \
 	StringUtils_cpp.3 StringUtils_hh.3 namespace_StringUtils.3
