@@ -22,6 +22,7 @@ LIB_DEPENDS+=	gsl.5:${PORTSDIR}/math/gsl
 
 CONFLICTS?=	bogofilter-tdb*
 
+USE_REINPLACE=	yes
 USE_PERL5_RUN=	yes
 GNU_CONFIGURE=	yes
 PATCH_STRIP=	-p1
@@ -31,6 +32,9 @@ CONFIGURE_ENV?=	CPPFLAGS="-I${LOCALBASE}/include/db4" \
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 MAN1=		bogofilter.1 bogoutil.1 bogoupgrade.1 bogolexer.1 \
 		bogol.1 bogotune.1
+
+post-patch:
+	${REINPLACE_CMD} -e 's/^@ENABLE_XMLTO_TRUE@//' ${WRKSRC}/doc/Makefile.in
 
 post-build::
 	cd ${WRKSRC} && make check SHELL=${SH}
