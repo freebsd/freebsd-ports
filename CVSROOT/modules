@@ -6188,6 +6188,7 @@ p5-Apache-Clean	ports/www/p5-Apache-Clean
 p5-Apache-Compress	ports/www/p5-Apache-Compress
 p5-Apache-CompressClientFixup	ports/www/p5-Apache-CompressClientFixup
 p5-Apache-ConfigFile	ports/www/p5-Apache-ConfigFile
+p5-Apache-DB	ports/www/p5-Apache-DB
 p5-Apache-DBI	ports/www/p5-Apache-DBI
 p5-Apache-DebugInfo	ports/www/p5-Apache-DebugInfo
 p5-Apache-DumpHeaders	ports/www/p5-Apache-DumpHeaders
