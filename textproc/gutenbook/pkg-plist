@@ -1,0 +1,11 @@
+bin/gutenbook
+lib/perl5/site_perl/%%PERL_VER%%/PGB.pm
+lib/perl5/site_perl/%%PERL_VER%%/PGB/Etext.pm
+lib/perl5/site_perl/%%PERL_VER%%/PGB/File.pm
+lib/perl5/site_perl/%%PERL_VER%%/PGB/Index.pm
+lib/perl5/site_perl/%%PERL_VER%%/PGB/Network.pm
+lib/perl5/site_perl/%%PERL_VER%%/PGB/PropList.pm
+share/doc/gutenbook/MANUAL
+share/doc/gutenbook/gutenbook.spec
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/PGB
+@dirrm share/doc/gutenbook

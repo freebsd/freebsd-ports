@@ -1,0 +1,16 @@
+Gutenbook is a graphical interface for browsing, downloading and reading
+Project Gutenberg Etexts.
+
+It has the following features:
+
+Book-like pagination  Etexts downloaded via HTTP as well as FTP
+Index caching and local Etext storing
+Browse-able, search-able, sort-able index
+Reads plaintext or zip'd Etexts
+User preferences interface
+Object-oriented design combining Perl and GTK+
+100% home-grown Free Software protected by the GNU GPL
+
+Project Gutenberg: http://promo.net/pg/index.html
+
+WWW: http://www.gutenbook.org
