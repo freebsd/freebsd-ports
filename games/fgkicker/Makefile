@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	fgkicker
-PORTVERSION=	0.8
+PORTVERSION=	0.9
 CATEGORIES=	games
-MASTER_SITES=	http://users.pandora.be/ceppe/linux/
+MASTER_SITES=	http://users.pandora.be/ceppe/projects/files/fgkicker/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	erik@smluc.org
