@@ -18,5 +18,5 @@ This release contains graphical interfaces for NeWS, SunView, X11 and XView.
 
 Faces is based on the AT&T v8 face server called vismon, but is not derived
 from vismon sources. With the previous version came vismon compatibility.
-Note that that resulted in a few changes from the way faces v1.1 worked.
+Note that resulted in a few changes from the way faces v1.1 worked.
 See the manual pages for more details.

@@ -1,6 +1,6 @@
        The Locale::Country module provides access to the ISO two-
        letter codes for identifying countries, as defined in ISO
-       3166. You can either access the codes via the the section
+       3166. You can either access the codes via the section
        on conversion routines (described below), or with the two
        functions which return lists of all country codes or all
        country names.

@@ -5,7 +5,7 @@ really, but you only need to use one of them) which may be used in a
 The idea is simple: try to prevent users from choosing passwords that
 could be guessed by "Crack" by filtering them out, at source.
 
-CrackLib is an offshoot of the the version 5 "Crack" software, and
+CrackLib is an offshoot of the version 5 "Crack" software, and
 contains a considerable number of ideas nicked from the new software.
 
 

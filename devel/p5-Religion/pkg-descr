@@ -1,7 +1,7 @@
 This is a second go at a module to simplify installing die() and warn()
 handlers, and to make such handlers easier to write and control.
 
-For most people, this just means that if use use Religion; then you'll get
+For most people, this just means that if use Religion; then you'll get
 noticably better error reporting from warn() and die(). This is especially
 useful if you are using eval().
 

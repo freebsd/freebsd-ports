@@ -8,7 +8,7 @@ global variables, global arrays...).  wamcc is designed to be easily
 extended (e.g. clp(FD) is a constraint logic language over Finite
 Domains designed on wamcc). 
 
-wamcc tries tries to be conform to the (future) ISO standard Prolog.
+wamcc tries to be conform to the (future) ISO standard Prolog.
 The draft ISO standard for Prolog is available by anonymous ftp from
 ai.uga.edu:/pub/prolog.standard/ [128.192.12.9]. An unofficial summary
 of the draft ISO Prolog standard is available from the same location

@@ -1,4 +1,4 @@
-    IPC::Shareable allows you to tie a a variable to shared memory making
+    IPC::Shareable allows you to tie a variable to shared memory making
     it easy to share the contents of that variable with other Perl
     processes. Currently either scalars or hashes can be tied; tying of
     arrays remains a work in progress. However, the variable being tied may
