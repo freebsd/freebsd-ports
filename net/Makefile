@@ -374,6 +374,7 @@
     SUBDIR += traceroute
     SUBDIR += trafd
     SUBDIR += trafshow
+    SUBDIR += tridiavnc
     SUBDIR += ttcp
     SUBDIR += ttt
     SUBDIR += tund
