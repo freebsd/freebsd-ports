@@ -1,5 +1,14 @@
---- pim6sd/mld6_proto.c	Wed Oct 30 17:53:17 2002
-+++ pim6sd/mld6_proto.c	Sun Nov 17 00:39:36 2002
+--- pim6sd/mld6_proto.c	Tue Nov 19 03:15:12 2002
++++ pim6sd/mld6_proto.c	Wed Oct 30 09:53:17 2002
+@@ -120,7 +120,7 @@
+ 
+ #include "mld6_proto.h"
+ 
+-extern struct in6_addr in6addr_any;
++//extern struct in6_addr in6addr_any;
+ 
+ 
+ /*
 @@ -316,12 +316,14 @@
  		    inet6_fmt(group), v->uv_name);
  		return;
@@ -15,7 +24,7 @@
  
  	IF_DEBUG(DEBUG_MLD)
  		log(LOG_DEBUG, 0,
-@@ -517,6 +519,7 @@
+@@ -519,6 +517,7 @@
  				  v->uv_ifindex,
  				  MLD6_LAST_LISTENER_QUERY_INTERVAL, 0, 1);
  			break;
@@ -23,7 +32,7 @@
  		case MLDv2:
  		default:
  			send_mld6v2(MLD_LISTENER_QUERY, 0,
-@@ -526,6 +529,7 @@
+@@ -529,6 +526,7 @@
  				    MLD6_QUERY_RESPONSE_INTERVAL,
  				    0, TRUE, SFLAGNO, v->uv_mld_robustness,
  				    v->uv_mld_query_interval);
