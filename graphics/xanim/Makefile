@@ -6,15 +6,12 @@
 #
 
 PORTNAME=	xanim
-PORTVERSION=	2.80.2
+PORTVERSION=	2.92.0
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://xanim.va.pubnix.com/ \
+MASTER_SITES=	ftp://xanim.va.pubnix.com/:main \
 		ftp://xanim.va.pubnix.com/dlls/
-DISTNAME=	xanim2801
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${EXTRA_FILES}
-
-PATCH_SITES=	http://virtual-estates.net/port-stuff/
-PATCHFILES=	xanim-2801-to-2802-patch.gz
+DISTNAME=	xanim2920
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:main ${EXTRA_FILES}
 
 MAINTAINER=	dinoex@FreeBSD.org
 

@@ -1,11 +1,32 @@
---- Imakefile.orig	Sun Mar 21 17:36:26 1999
-+++ Imakefile	Thu Aug  2 14:48:37 2001
-@@ -116,12 +116,12 @@
+--- Imakefile.orig	Sun Apr 21 01:25:06 2002
++++ Imakefile	Thu Jan  2 07:53:41 2003
+@@ -96,7 +96,7 @@
+ XCOMM   to link against symbols inside xanim.
+ XCOMM 
+ XCOMM ## Linux
+-XCOMM LD_FLAGS = -rdynamic
++LD_FLAGS = -rdynamic
+ XCOMM
+ XCOMM ## SunOS/Solaris use:
+ XCOMM LD_FLAGS =
+@@ -112,7 +112,7 @@
+ XCOMM NOTE: not all machines need the XA_DLL_LIB define.
+ XCOMM #########################################################################
+ XCOMM 
+-XCOMM XA_DLL_DEF = -DXA_DLL -DXA_PRINT
++XA_DLL_DEF = -DXA_DLL -DXA_PRINT
+ XCOMM ### Use this only if the above doesn't work
  XCOMM XA_DLL_DEF = -DXA_DLL
  XCOMM
- XCOMM ### You may need this library.
--XA_DLL_LIB = -ldl
-+XCOMM XA_DLL_LIB = -ldl
+@@ -120,14 +120,14 @@
+ XCOMM XA_DLL_LIB = -ldl
+ XCOMM
+ XCOMM HP/UX should use the following:
+-XA_DLL_DEF = -DXA_HPDLL
+-XA_DLL_LIB = -Wl,-E -ldld
++XCOMM XA_DLL_DEF = -DXA_HPDLL
++XCOMM XA_DLL_LIB = -Wl,-E -ldld
+ XCOMM
  XCOMM
  XCOMM If you'd like to change the default directory that XAnim searches while
  XCOMM looking for dlls, then change the directory below.
@@ -14,28 +35,8 @@
 +XA_DLL_PATH = $(LIBDIR)/xanim
  
  
- 
-@@ -190,7 +190,7 @@
- XCOMM XA_CVID_DEF = -DXA_CVID
- XCOMM XA_CYUV_DEF = -DXA_CYUV
- XCOMM 
--XCOMM XA_IV32_LIB = mods/xa2.1_iv32_linuxELF.o
-+XCOMM XA_IV32_LIB = mods/xa2.0_iv32_linuxELF.o
- XCOMM XA_CVID_LIB = mods/xa2.0_cvid_linuxELF.o
- XCOMM XA_CYUV_LIB = mods/xa1.0_cyuv_linuxELF.o
- XCOMM 
-@@ -267,8 +267,8 @@
- XCOMM  XA_AUDIO_DEFS =
- XCOMM 
- XCOMM ## -- Linux PCs ---------------------------------------------------------
--XA_AUDIO_DEFS = -DXA_LINUX_AUDIO
--XA_AUDIO_LIBS = -lc
-+XCOMM XA_AUDIO_DEFS = -DXA_LINUX_AUDIO
-+XCOMM XA_AUDIO_LIBS = -lc
- XCOMM 
- XCOMM  -- Linux PC's with OLD Rev sound drivers -------------------------------
- XCOMM  XA_AUDIO_DEFS = -DXA_LINUX_AUDIO -DXA_LINUX_OLDER_SND
-@@ -314,8 +314,8 @@
+ XCOMM #########################################################################
+@@ -319,8 +319,8 @@
  XCOMM  XA_AUDIO_LIBS = -lc
  XCOMM  
  XCOMM  -- Also FreeBSD, and BSDI with SBlast-BSD-1.5 (development stages)------
@@ -46,7 +47,20 @@
  XCOMM 
  XCOMM  -- TOWNS Linux 16 bit PCM ----------------------------------------------
  XCOMM  XA_AUDIO_DEFS = -DXA_TOWNS_AUDIO
-@@ -442,7 +442,7 @@
+@@ -351,9 +351,9 @@
+ XCOMM  XA_AUDIO_LIBS = -lAlib
+ XCOMM  --
+ XCOMM  -- HP/UX 10.x AServer
+-XA_AUDIO_DEFS = -DXA_HP_AUDIO -DXA_HP10
+-XA_AUDIO_LIBS = -L/opt/audio/lib -lAlib
+-XA_AUDIO_INCS = -I/opt/audio/include
++XCOMM  XA_AUDIO_DEFS = -DXA_HP_AUDIO -DXA_HP10
++XCOMM  XA_AUDIO_LIBS = -L/opt/audio/lib -lAlib
++XCOMM  XA_AUDIO_INCS = -I/opt/audio/include
+ XCOMM 
+ XCOMM  ------ AF (AudioFile) Support ------------------------------------------
+ XCOMM  -- You need to indicate where the AF libraries libAFUtil.a and libAF.a
+@@ -447,7 +447,7 @@
  XCOMM    -- following symbols(XmbufDisplayBuffers, XmbufQueryExtension,
  XCOMM    --  XmbufCreateBuffers).
  XCOMM    -- NOTE_8: HP-UX machines need to comment this out.
@@ -55,7 +69,7 @@
  XCOMM 
  XCOMM ###########
  XCOMM 
-@@ -465,7 +465,7 @@
+@@ -470,7 +470,7 @@
  
  PROGRAMS = $(XANIM)
  
