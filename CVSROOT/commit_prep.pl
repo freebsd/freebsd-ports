@@ -49,7 +49,7 @@ my $cvsroot= $ENV{'CVSROOT'} || "/home/ncvs";
 #
 ############################################################
 my $NoId = "
-%s - Does not contain a line with the keyword \"\$$HEADER:\".\n";
+%s - Needs to contain a line with the keyword \"\$$HEADER\$\".\n";
 
 # Protect string from substitution by RCS.
 my $NoName = "
