@@ -14,6 +14,7 @@
     SUBDIR += acidwarp
     SUBDIR += aoi
     SUBDIR += autotrace
+    SUBDIR += avidemux
     SUBDIR += aview
     SUBDIR += avifile
     SUBDIR += backfract
