@@ -1,0 +1,21 @@
+bin/rexx
+bin/rxque
+bin/rxstack
+bin/rxmathfn.rxfn
+bin/rxmathfn.rxlib
+lib/librexx.a
+lib/librexx.so.1.6.4
+@exec ldconfig -m %B
+share/doc/rexx-imc/README
+share/doc/rexx-imc/README.avail
+share/doc/rexx-imc/README.bugreport
+share/doc/rexx-imc/README.docs
+share/doc/rexx-imc/README.files
+share/doc/rexx-imc/README.make
+share/doc/rexx-imc/README.news
+share/doc/rexx-imc/README.versions
+share/doc/rexx-imc/rexx.info
+share/doc/rexx-imc/rexx.ref
+share/doc/rexx-imc/rexx.summary
+share/doc/rexx-imc/rexx.tech
+@dirrm share/doc/rexx-imc/
