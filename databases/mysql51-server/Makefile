@@ -8,10 +8,9 @@
 PORTNAME?=	${MASTERPORTNAME}
 PORTVERSION=	3.23.26
 CATEGORIES=	databases
-MASTER_SITES=	http://download.sourceforge.net/mysql/ \
-		http://www.fh-wolfenbuettel.de/ftp/pub/database/mysql/Downloads/MySQL-3.23/ \
-		ftp://ftp.digex.net/pub/packages/database/mysql/Downloads/MySQL-3.23/ \
-		ftp://ftp.plig.net/pub/mysql/Downloads/MySQL-3.23/ \
+MASTER_SITES=	http://www.wipol.uni-bonn.de/MySQL/Downloads/MySQL-3.23/ \
+		http://www.mysql.net/Downloads/MySQL-3.23/ \
+		http://mysql.he.net/Downloads/MySQL-3.23/ \
 		ftp://ftp.sunet.se/pub/unix/databases/relational/mysql/Downloads/MySQL-3.23/
 DISTNAME=	mysql-${PORTVERSION}-beta
 
