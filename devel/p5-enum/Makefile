@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	enum
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	mcsi@agava.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	This perl module defines a set of symbolic constants with ordered numeric values ala C enum types.
 
 PERL_CONFIGURE=	yes
