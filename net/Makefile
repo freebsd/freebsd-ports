@@ -181,6 +181,7 @@
     SUBDIR += gutenfetch
     SUBDIR += gyach
     SUBDIR += hagelslag
+    SUBDIR += happystats
     SUBDIR += haproxy
     SUBDIR += hawk
     SUBDIR += hf6to4
