@@ -1,89 +1,78 @@
-*** a2ps.c.orig	Tue Feb 15 01:14:59 1994
---- a2ps.c	Tue Feb 21 16:56:19 1995
-***************
-*** 166,175 ****
---- 166,177 ----
-   */
-  #ifndef WIDTH
-  #define	WIDTH	8.27
-+ #define USA_WIDTH 8.5
-  #endif
-  
-  #ifndef HEIGHT
-  #define	HEIGHT	11.64
-+ #define USA_HEIGHT 11.0
-  #endif
-  
-  #ifndef MARGIN
-***************
-*** 362,367 ****
---- 364,371 ----
-  /*
-   * Sheet dimensions
-   */
-+ double paper_height = HEIGHT;	/* Paper height */
-+ double paper_width = WIDTH;	/* Paper width */
-  double page_height = HEIGHT;	/* Paper height */
-  double page_width = WIDTH;	/* Paper width */
-  
-***************
-*** 382,387 ****
---- 386,392 ----
-      fprintf(stderr,"pos.   =  -#num\t\tnumber of copies to print\n");
-      fprintf(stderr,"          -1\t\tone page per sheet\n");
-      fprintf(stderr,"          -2\t\tTWIN PAGES per sheet\n");
-+     fprintf(stderr,"          -a\t\tUse USA paper size (8.5 x 11)\n");
-      fprintf(stderr,"          -d\t-nd\tprint (DON'T PRINT) current date at the bottom\n");
-      fprintf(stderr,"          -Fnum\t\tfont size, num is a float number\n");
-      fprintf(stderr,"          -Hstr\t\tuse str like header title for subsequent files\n");
-***************
-*** 464,469 ****
---- 469,478 ----
-  	    usage(EXIT_FAILURE);
-  	interpret = TRUE;
-  	break;
-+     case 'a':			/* American paper sizes */
-+ 	paper_height = USA_HEIGHT;
-+ 	paper_width = USA_WIDTH;
-+ 	break;
-      case 'n':
-  	if (arg[2] == NUL)
-  	    return;
-***************
-*** 1471,1478 ****
-      printf("\n%% Initialize page description variables.\n");
-      printf("/x0 0 def\n");
-      printf("/y0 0 def\n");
-!     printf("/sh %g inch def\n", (double)HEIGHT);
-!     printf("/sw %g inch def\n", (double)WIDTH);
-      printf("/margin %g inch def\n", (double)MARGIN);
-      printf("/rm margin 3 div def\n");
-      printf("/lm margin 2 mul 3 div def\n");
---- 1480,1487 ----
-      printf("\n%% Initialize page description variables.\n");
-      printf("/x0 0 def\n");
-      printf("/y0 0 def\n");
-!     printf("/sh %g inch def\n", (double)paper_height);
-!     printf("/sw %g inch def\n", (double)paper_width);
-      printf("/margin %g inch def\n", (double)MARGIN);
-      printf("/rm margin 3 div def\n");
-      printf("/lm margin 2 mul 3 div def\n");
-***************
-*** 1794,1801 ****
-      /* Initialize variables not depending of positional options */
-      landscape = twinpages = -1;	/* To force format switching */
-      fontsize = -1.0;			/* To force fontsize switching */
-!     page_height = (double)(HEIGHT - MARGIN) * PIXELS_INCH;
-!     page_width = (double)(WIDTH - MARGIN) * PIXELS_INCH;
-      
-      /* Postcript prologue printing */
-      print_prologue();
---- 1803,1810 ----
-      /* Initialize variables not depending of positional options */
-      landscape = twinpages = -1;	/* To force format switching */
-      fontsize = -1.0;			/* To force fontsize switching */
-!     page_height = (double)(paper_height - MARGIN) * PIXELS_INCH;
-!     page_width = (double)(paper_width - MARGIN) * PIXELS_INCH;
-      
-      /* Postcript prologue printing */
-      print_prologue();
+--- a2ps.c.orig	Tue Feb 15 01:14:59 1994
++++ a2ps.c	Thu May 16 19:04:15 1996
+@@ -164,12 +164,17 @@
+ /*
+  * Default page dimensions
+  */
++#define USA_WIDTH	8.5
++#define USA_HEIGHT	11.0
++#define	A4_WIDTH	8.27
++#define	A4_HEIGHT	11.64
++
+ #ifndef WIDTH
+-#define	WIDTH	8.27
++#define	WIDTH	A4_WIDTH
+ #endif
+ 
+ #ifndef HEIGHT
+-#define	HEIGHT	11.64
++#define	HEIGHT	A4_HEIGHT
+ #endif
+ 
+ #ifndef MARGIN
+@@ -362,6 +367,8 @@
+ /*
+  * Sheet dimensions
+  */
++double paper_height = HEIGHT;	/* Paper height */
++double paper_width = WIDTH;	/* Paper width */
+ double page_height = HEIGHT;	/* Paper height */
+ double page_width = WIDTH;	/* Paper width */
+ 
+@@ -382,6 +389,11 @@
+     fprintf(stderr,"pos.   =  -#num\t\tnumber of copies to print\n");
+     fprintf(stderr,"          -1\t\tone page per sheet\n");
+     fprintf(stderr,"          -2\t\tTWIN PAGES per sheet\n");
++#if A4_PAPERSIZE == 1
++    fprintf(stderr,"          -a\t\tUse USA paper size (8.5\" x 11\")\n");
++#else
++    fprintf(stderr,"          -a\t\tUse A4 paper size (21cm x 29.56cm (8.27\" x 11.64\"))\n");
++#endif
+     fprintf(stderr,"          -d\t-nd\tprint (DON'T PRINT) current date at the bottom\n");
+     fprintf(stderr,"          -Fnum\t\tfont size, num is a float number\n");
+     fprintf(stderr,"          -Hstr\t\tuse str like header title for subsequent files\n");
+@@ -464,6 +476,12 @@
+ 	    usage(EXIT_FAILURE);
+ 	interpret = TRUE;
+ 	break;
++    case 'a':			/* American paper sizes */
++#if 	defined(USA_HEIGHT) && defined(USA_WIDTH)
++	paper_height = USA_HEIGHT;
++	paper_width = USA_WIDTH;
++#	endif
++	break;
+     case 'n':
+ 	if (arg[2] == NUL)
+ 	    return;
+@@ -1471,8 +1489,8 @@
+     printf("\n%% Initialize page description variables.\n");
+     printf("/x0 0 def\n");
+     printf("/y0 0 def\n");
+-    printf("/sh %g inch def\n", (double)HEIGHT);
+-    printf("/sw %g inch def\n", (double)WIDTH);
++    printf("/sh %g inch def\n", (double)paper_height);
++    printf("/sw %g inch def\n", (double)paper_width);
+     printf("/margin %g inch def\n", (double)MARGIN);
+     printf("/rm margin 3 div def\n");
+     printf("/lm margin 2 mul 3 div def\n");
+@@ -1794,8 +1812,8 @@
+     /* Initialize variables not depending of positional options */
+     landscape = twinpages = -1;	/* To force format switching */
+     fontsize = -1.0;			/* To force fontsize switching */
+-    page_height = (double)(HEIGHT - MARGIN) * PIXELS_INCH;
+-    page_width = (double)(WIDTH - MARGIN) * PIXELS_INCH;
++    page_height = (double)(paper_height - MARGIN) * PIXELS_INCH;
++    page_width = (double)(paper_width - MARGIN) * PIXELS_INCH;
+     
+     /* Postcript prologue printing */
+     print_prologue();

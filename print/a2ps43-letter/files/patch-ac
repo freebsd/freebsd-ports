@@ -1,0 +1,12 @@
+--- a2ps.1.orig	Tue Feb 15 01:15:16 1994
++++ a2ps.1	Fri Apr  5 00:00:01 1996
+@@ -155,6 +155,9 @@
+ is the number of copies desired of each file named. By default, you get
+ only one copy.
+ .TP 0.6i
++.B -a
++Use the American paper size (8.5" x 11") as the basis for all calculations.
++.TP 0.6i
+ .B -d
+ Print the current date and time at the bottom of the page. This option
+ is affected by the no surrounding border and the no header options.
