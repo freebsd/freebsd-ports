@@ -32,6 +32,30 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="05dcf751-0733-11d9-b45d-000c41e2cdad">
+    <topic>cups --- print queue browser denial-of-service</topic>
+    <affects>
+      <package>
+	<name>cups-base</name>
+	<range><lt>1.1.21</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>If the CUPS server (cupsd) receives a zero-length UDP
+	  message, it will disable its print queue browser service.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0558</cvename>
+      <url>http://www.cups.org/str.php?L863</url>
+    </references>
+    <dates>
+      <discovery>2004-08-23</discovery>
+      <entry>2004-09-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="762d1c6d-0722-11d9-b45d-000c41e2cdad">
     <topic>apache --- apr_uri_parse IPv6 address handling vulnerability</topic>
     <affects>
