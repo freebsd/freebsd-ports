@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	rt3
-PORTVERSION?=	3.0.9
+PORTVERSION?=	3.0.11.rc1
 CATEGORIES=	www
-MASTER_SITES?=	http://www.fsck.com/pub/rt/release/ \
-		http://www.fsck.com/pub/rt/devel/ \
+MASTER_SITES?=	http://download.bestpractical.com/pub/rt/release/ \
+		http://download.bestpractical.com/pub/rt/devel/ \
 		ftp://ftp.eu.uu.net/pub/unix/ticketing/rt/release/ \
 		ftp://ftp.eu.uu.net/pub/unix/ticketing/rt/devel/
-DISTFILES?=	rt-${PORTVERSION:S/./-/g}.tar.gz
+DISTNAME?=	rt-${PORTVERSION:S/.rc/rc/g}
 
 MAINTAINER=	autrijus@autrijus.org
 COMMENT?=	RT is an industrial-grade ticketing system written in Perl
@@ -53,7 +53,7 @@ BUILD_DEPENDS+=	${APXS}:${PORTSDIR}/${APACHE_PORT} \
 		${SITE_PERL}/WWW/Mechanize.pm:${PORTSDIR}/www/p5-WWW-Mechanize
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-WRKSRC?=	${WRKDIR}/rt-${PORTVERSION:S/./-/g}
+WRKSRC?=	${WRKDIR}/rt-${PORTVERSION:S/.rc/rc/g}
 HAS_CONFIGURE=	yes
 NO_BUILD=	yes
 NO_PACKAGE=	Executes scripts in post-install phase
@@ -76,14 +76,12 @@ BUILD_DEPENDS+=	${LOCALBASE}/libexec/apache/mod_fastcgi.so:${PORTSDIR}/www/mod_f
 .endif
 BUILD_DEPENDS+=		${SITE_PERL}/${PERL_ARCH}/FCGI.pm:${PORTSDIR}/www/p5-FastCGI
 DEPENDS_ARGS+=	WITHOUT_MODPERL=yes
-DEPENDS_ARGS+=	BATCH=yes
 .else
 BUILD_DEPENDS+=	${SITE_PERL}/Apache/DBI.pm:${PORTSDIR}/www/p5-Apache-DBI
 .if defined(WITH_APACHE2)
 BUILD_DEPENDS+=	${LOCALBASE}/libexec/apache2/mod_perl.so:${PORTSDIR}/www/mod_perl2
 DEPENDS_ARGS+=	WITHOUT_MODPERL=yes
 DEPENDS_ARGS+=	WITH_MODPERL2=yes
-DEPENDS_ARGS+=	BATCH=yes
 .else
 BUILD_DEPENDS+=	${LOCALBASE}/libexec/apache/libperl.so:${PORTSDIR}/www/mod_perl
 .endif
