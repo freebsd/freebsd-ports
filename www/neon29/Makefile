@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	neon
-PORTVERSION=	0.19.3
+PORTVERSION=	0.19.4
 CATEGORIES=	www
 MASTER_SITES=	http://www.webdav.org/neon/
 
 MAINTAINER=	rooneg@electricjellyfish.net
 
-LIB_DEPENDS=	xml.5:${PORTSDIR}/textproc/libxml
+LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat
 
 .ifndef WITHOUT_OPENSSL
 USE_OPENSSL=	yes
@@ -22,7 +22,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ssl=${OPENSSLBASE} \
 		--enable-xml \
 		--enable-shared \
-		--with-libxml1
+		--with-expat=${PREFIX}
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 MAN1=	neon-config.1
