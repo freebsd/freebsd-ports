@@ -3,7 +3,7 @@
 # Date created:		2 May 1995
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.8 1995/04/09 10:05:08 asami Exp $
+# $Id: Makefile,v 1.1.1.1 1995/05/03 05:39:09 asami Exp $
 #
 
 DISTNAME=	xxgdb-1.11
@@ -14,5 +14,15 @@ MASTER_SITES=   ftp://ftp.x.org/contrib/utilities/ \
 MAINTAINER=	asami@FreeBSD.ORG
 
 USE_IMAKE=	yes
+
+# This isn't included in the original Imakefile for some reason.
+#  Yes, I know this will recompile the program every time, but
+#  we have the cookie anyway and it's much easier this way
+#  than modifying the Imakefile.
+post-build:
+	cd ${WRKSRC}; gcc -o xxgdbiowin -m486 -O2 xxgdbiowin.c
+
+post-install:
+	install -c -s ${WRKSRC}/xxgdbiowin ${PREFIX}/bin
 
 .include <bsd.port.mk>
