@@ -2238,6 +2238,7 @@ ipnat		src/usr.sbin/ipnat
 ipresend	src/usr.sbin/ipresend
 ipsc		ports/sysutils/ipsc
 ipsend		src/usr.sbin/ipsend
+ipsorc		ports/net/ipsorc
 iptest		src/usr.sbin/iptest
 ipw		ports/net/ipw
 irc		ports/irc/irc
