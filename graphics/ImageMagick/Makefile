@@ -3,7 +3,7 @@
 # Date created:		15 November 1994
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.41 1998/07/27 00:49:00 steve Exp $
+# $Id: Makefile,v 1.42 1998/08/13 03:08:54 ache Exp $
 #
 
 DISTNAME=	ImageMagick-4.0.7
@@ -34,7 +34,7 @@ MAN4=	miff.4
 MAN5=	quantize.5
 GNU_CONFIGURE=	YES
 CONFIGURE_ARGS=	--enable-lzw --enable-shared
-CONFIGURE_ENV=  LDFLAGS="$(LDFLAGS) -Lmagick/.libs"
+CONFIGURE_ENV=  LDFLAGS="$(LDFLAGS) -L${WRKSRC}/magick/.libs"
 
 post-install:
 	${LDCONFIG} -m ${PREFIX}/lib
