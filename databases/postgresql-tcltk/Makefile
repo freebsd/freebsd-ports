@@ -26,13 +26,19 @@ CONFIGURE_ARGS=	--with-tcl \
 TCL_INCDIR=	${LOCALBASE}/include/tcl${TCLVERSION}
 TCLCONFIG=	${LOCALBASE}/lib/tcl${TCLVERSION}
 MAKE_ENV+=	TCL_INCDIR=${TCL_INCDIR}
+CONFIGURE_ENV+=	LIBS="-lm -L${LOCALBASE}/lib -ltcl${TCLVERSION:S/.//}" \
+		CFLAGS=-DPGTCL_USE_TCLOBJ
+
+.if defined(WITHOUT_X11)
+WITHOUT_TK=	yes
+.endif
 
 .if defined(WITHOUT_TK)
-CONFIGURE_ARGS+= --without-tk
+CONFIGURE_ARGS+=	--without-tk
 INCDIRS=	${TCL_INCDIR}
 PLIST_SUB+=	TK="@comment "
 .else
-CONFIGURE_ARGS+= --with-tkconfig="${TKCONFIG}"
+CONFIGURE_ARGS+=	--with-tkconfig="${TKCONFIG}"
 TK_INCDIR=	${LOCALBASE}/include/tk${TCLVERSION}
 CONFIGURE_ENV+=	WISH=${LOCALBASE}/bin/wish${TCLVERSION}
 LIB_DEPENDS+=	tk${TCLVERSION:S/.//}:${PORTSDIR}/x11-toolkits/tk${TCLVERSION:S/.//}
