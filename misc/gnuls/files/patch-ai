@@ -1,0 +1,12 @@
+--- lib/error.c.orig	Fri Mar 27 12:22:34 1998
++++ lib/error.c	Thu Jan 31 08:49:18 2002
+@@ -152,7 +152,8 @@
+     {
+ #if defined HAVE_STRERROR_R || defined _LIBC
+       char errbuf[1024];
+-      fprintf (stderr, ": %s", __strerror_r (errnum, errbuf, sizeof errbuf));
++      __strerror_r (errnum, errbuf, sizeof errbuf);
++      fprintf (stderr, ": %s", errbuf);
+ #else
+       fprintf (stderr, ": %s", strerror (errnum));
+ #endif
