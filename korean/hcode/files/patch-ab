@@ -1,0 +1,11 @@
+--- mail.c~	Wed Mar 11 19:02:22 1998
++++ mail.c	Wed Feb 16 23:58:20 2000
+@@ -163,7 +163,7 @@
+     unsigned char *iptr, *optr, *tptr;
+     unsigned long int outwc;
+ 
+-    char *charset[] = {"EUC-KR", "ISO-2022-KR", NULL};
++    char *charset[] = {"EUC-KR", "ISO-2022-KR", "KS_C_5601-1987", NULL};
+     char encode_prefix[20];
+     int isbqheader;
+ 
