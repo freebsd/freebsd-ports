@@ -1,0 +1,3 @@
+@cwd /usr/X11R6
+bin/xearth
+man/man1/xearth.1x

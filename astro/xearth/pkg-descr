@@ -1,0 +1,7 @@
+Xearth sets the X root window to an image of the Earth, as
+seen from your favorite vantage point in space,  correctly
+shaded  for  the  current position of the Sun. By default,
+xearth updates the displayed image every five minutes. The
+time between updates can be changed with the -wait option.
+Xearth  can  also  render  directly into PPM and GIF files
+instead of drawing in the root window.
