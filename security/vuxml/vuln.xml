@@ -154,7 +154,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       <package>
 	<name>mozilla</name>
 	<range><lt>1.7.2,2</lt></range>
-	<range><ge>1.8.a</ge></range>
+	<range><ge>1.8.a,2</ge></range>
       </package>
       <package>
 	<name>mozilla-gtk1</name>
