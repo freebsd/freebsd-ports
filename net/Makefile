@@ -517,7 +517,6 @@
     SUBDIR += p5-XPC
     SUBDIR += p5-pdonkey
     SUBDIR += p5-perl-ldap
-    SUBDIR += partysip
     SUBDIR += passlogd
     SUBDIR += pathchar
     SUBDIR += pbnc
