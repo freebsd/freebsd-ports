@@ -1,0 +1,8 @@
+DBConnect (Database Connect) API is an easy to use C++ object API to allow
+applications to connect to databases. Your DB applications can now become
+cross platform and cross databased. 
+
+The API currently implements MySQL, Oracle8 and PostGreSQL drivers in the
+Unix environments and MySQL, Oracle8 and ODBC in the Windows environment. 
+
+WWW: http://dbconnect.sourceforge.net/
