@@ -17,14 +17,58 @@ PHP_BASE!=	${LOCALBASE}/bin/php-config --prefix
 PHP_BASE=	${LOCALBASE}
 .endif
 LPEARDIR=	share/pear
-PEARDIR=	${PHP_BASE}/${LPEARDIR}
 LPKGREGDIR=	${LPEARDIR}/packages/${PKGNAME}
+LDOCSDIR=	share/doc/pear/${PORTNAME}
+LEXAMPLESDIR=	share/examples/pear/${PORTNAME}
+LTESTSDIR=	${LPEARDIR}/tests/${PORTNAME}
+PEARDIR=	${PHP_BASE}/${LPEARDIR}
 PKGREGDIR=	${PHP_BASE}/${LPKGREGDIR}
-PLIST_SUB=	PEARDIR=${LPEARDIR} PKGREGDIR=${LPKGREGDIR}
+DOCSDIR=	${PHP_BASE}/${LDOCSDIR}
+EXAMPLESDIR=	${PHP_BASE}/${LEXAMPLESDIR}
+TESTSDIR=	${PHP_BASE}/${LTESTSDIR}
+.if defined(CATEGORY) && !empty(CATEGORY)
+LINSTDIR=	${LPEARDIR}/${CATEGORY}
+.else
+LINSTDIR=	${LPEARDIR}
+.endif
+INSTDIR=	${PHP_BASE}/${LINSTDIR}
+
+.if !defined(USE_PHPIZE) && !exists(${.CURDIR}/pkg-plist)
+PLIST=		${WRKDIR}/PLIST
+.endif
+PLIST_SUB=	PEARDIR=${LPEARDIR} PKGREGDIR=${LPKGREGDIR} \
+		TESTSDIR=${LTESTSDIR} EXAMPLESDIR=${LEXAMPLESDIR} \
+		INSTDIR=${LINSTDIR}
+
 PKGINSTALL=	${PORTSDIR}/devel/pear-PEAR/pkg-install
 PKGDEINSTALL=	${PORTSDIR}/devel/pear-PEAR/pkg-deinstall
 
-DOCSDIR=	${PEARDIR}/docs/${PORTNAME}
+FILES?=
+DOCS?=
+TESTS?=
+EXAMPLES?=
+_TESTSDIR?=	tests
+_DOCSDIR?=	docs
+_EXAMPLESDIR?=	examples
+
+# this is an easy way to eliminate duplicate entries in a variable :)
+# if someone knows how to achieve the result without this terrible
+# hack, please tell me!
+.for v in FILES DOCS TESTS EXAMPLES
+X${v}DIRS=	${${v}:M*/*:C;/[^/]+$;;}
+. for XD in ${X${v}DIRS}
+ALREADYTHERE=	0
+.  for D in ${${v}DIRS}
+DD=	${D}
+.   if ${DD} == ${XD}
+ALREADYTHERE=	1
+.   endif
+.  endfor
+.  if ${ALREADYTHERE} == 0
+${v}DIRS+=		${XD}
+.  endif
+. endfor
+.endfor
 
 pre-install:
 .if exists(${LOCALBASE}/lib/php.DIST_PHP)	\
@@ -36,6 +80,94 @@ pre-install:
 	@${ECHO_MSG} "	Please deinstall your installed pear- ports."
 	@${ECHO_MSG} ""
 	@${FALSE}
+.endif
+
+DIRFILTER=	${SED} -En '\:^.*/[^/]*$$:s:^(.+)/[^/]*$$:\1:p' | ${SORT} -ru
+SORT?=		/usr/bin/sort
+
+.if !defined(USE_PHPIZE)
+do-generate-plist:
+. if !exists(${.CURDIR}/pkg-plist)
+	@${ECHO_MSG} "===>   Generating packing list"; \
+	(for file in ${FILES}; do echo "${LINSTDIR}/$${file}"; done; \
+	for file in ${TESTS}; do echo "${LTESTSDIR}/$${file}"; done; \
+	for file in ${DOCS}; do echo "%%PORTDOCS%%${LDOCSDIR}/$${file}"; done; \
+	for file in ${EXAMPLES}; do echo "%%PORTDOCS%%${LEXAMPLESDIR}/$${file}"; done; \
+	echo "${LPKGREGDIR}/package.xml"; \
+	for d in ${FILES}; do echo $${d}; done | ${DIRFILTER} | \
+	    while read dir; do echo "@dirrm ${LINSTDIR}/$${dir}"; done; \
+	for d in ${TESTS}; do echo $${d}; done | ${DIRFILTER} | \
+	    while read dir; do echo "@dirrm ${LTESTSDIR}/$${dir}"; done; \
+	for d in ${DOCS}; do echo $${d}; done | ${DIRFILTER} | \
+	    while read dir; do echo "%%PORTDOCS%%@dirrm ${LDOCSDIR}/$${dir}"; done; \
+	for d in ${EXAMPLES}; do echo $${d}; done | ${DIRFILTER} | \
+	    while read dir; do echo "%%PORTDOCS%%@dirrm ${LEXAMPLESDIR}/$${dir}"; done; \
+	if [ -n "${TESTS}" ]; then echo "@dirrm ${LTESTSDIR}"; fi; \
+	if [ -n "${DOCS}" ]; then echo "%%PORTDOCS%%@dirrm ${LDOCSDIR}"; fi; \
+	if [ -n "${EXAMPLES}" ]; then echo "%%PORTDOCS%%@dirrm ${LEXAMPLESDIR}"; fi; \
+	echo "@dirrm ${LPKGREGDIR}"; \
+	echo "@unexec rmdir %D/${LINSTDIR} 2> /dev/null || true"; \
+	echo "@unexec rmdir %D/${LPEARDIR}/.registry 2> /dev/null || true"; \
+	echo "@unexec rmdir %D/${LPEARDIR}/packages 2> /dev/null || true"; \
+	echo "@unexec rmdir %D/${LPEARDIR} 2> /dev/null || true"; \
+	echo "@unexec rmdir %D/${LDOCSDIR:H} 2> /dev/null || true"; \
+	echo "@unexec rmdir %D/${LEXAMPLESDIR:H} 2> /dev/null || true"; \
+	echo "@unexec rmdir %D/${LTESTSDIR:H} 2> /dev/null || true") > ${PLIST}
+. endif
+
+. for t in files docs tests examples
+.  if !target(do-install-${t}-msg)
+do-install-${t}-msg: .USE
+.  endif
+. endfor
+
+pre-install: do-generate-plist
+do-install: do-install-files do-install-docs do-install-tests do-install-examples
+
+do-install-files: do-install-files-msg
+	@${MKDIR} ${INSTDIR}
+. for dir in ${FILESDIRS}
+	@${MKDIR} ${INSTDIR}/${dir}
+. endfor
+. for file in ${FILES}
+	@${INSTALL_DATA} ${WRKSRC}/${file} ${INSTDIR}/${file}
+. endfor
+
+do-install-docs: do-install-docs-msg
+. if !defined(NOPORTDOCS) && !empty(DOCS)
+	@${ECHO_MSG} "===> Installing documentation in ${DOCSDIR}."
+	@${MKDIR} ${DOCSDIR}
+. for dir in ${DOCSDIRS}
+	@${MKDIR} ${DOCSDIR}/${dir}
+. endfor
+.  for file in ${DOCS}
+	@${INSTALL_DATA} ${WRKSRC}/${_DOCSDIR}/${file} ${DOCSDIR}/${file}
+.  endfor
+. endif
+
+do-install-tests: do-install-tests-msg
+. if !empty(TESTS)
+	@${ECHO_MSG} "===> Installing tests in ${TESTSDIR}."
+	@${MKDIR} ${TESTSDIR}
+. for dir in ${TESTSDIRS}
+	@${MKDIR} ${TESTSDIR}/${dir}
+. endfor
+.  for file in ${TESTS}
+	@${INSTALL_DATA} ${WRKSRC}/${_TESTSDIR}/${file} ${TESTSDIR}/${file}
+.  endfor
+. endif
+
+do-install-examples: do-install-examples-msg
+. if !defined(NOPORTDOCS) && !empty(EXAMPLES)
+	@${ECHO_MSG} "===> Installing examples in ${EXAMPLESDIR}."
+	@${MKDIR} ${EXAMPLESDIR}
+. for dir in ${EXAMPLESDIRS}
+	@${MKDIR} ${EXAMPLESDIR}/${dir}
+. endfor
+.  for file in ${EXAMPLES}
+	@${INSTALL_DATA} ${WRKSRC}/${_EXAMPLESDIR}/${file} ${EXAMPLESDIR}/${file}
+.  endfor
+. endif
 .endif
 
 post-install:
