@@ -1,0 +1,7 @@
+lib/leafnode/config.example
+man/man8/fetch.8.gz
+man/man8/leafnode.8.gz
+man/man8/texpire.8.gz
+sbin/fetch
+sbin/leafnode
+sbin/texpire
