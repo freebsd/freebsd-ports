@@ -1,3 +1,5 @@
 bin/bible
-lib/bible.data
-lib/bible.data.conc
+share/brs/bible.data
+share/brs/bible.data.conc
+
+@dirrm share/brs
