@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	doscan
-PORTVERSION=	0.1.6
+PORTVERSION=	0.2.3
 CATEGORIES=	security net
 MASTER_SITES=	http://static.enyo.de/fw/releases/doscan/
 
@@ -17,6 +17,7 @@ LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_GCC=	3.3
 DOC_FILES=	README
 MAN1=		doscan.1
 
