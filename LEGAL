@@ -1,5 +1,5 @@
 # Creator:  Jordan Hubbard
-# $Id: LEGAL,v 1.75 1997/06/14 11:04:43 jkh Exp $
+# $Id: LEGAL,v 1.76 1997/06/18 12:18:47 tg Exp $
 
 Some of the ports in this directory have restrictive copyrights prohibiting
 their actual redistribution on mass media.  When creating compilations
@@ -60,6 +60,7 @@ glimpse-*		ports/misc/glimpse	Don't sell for profit
 giftool-*		ports/graphics/giftool	Don't redistribute for profit
 ivs3.4-src.tar.gz	ports/net/ivs		Crypto; export-controlled
 john-1.4		ports/security/john	crypt(); export-controlled
+kaffe-0.9.1		ports/lang/kaffe	Restrictive copyright
 maxima-5.0-beta		ports/math/maxima	License required
 mew-1.54.tar.gz		ports/mail/mew	ITAR export-controlled (hooks to pgp)
 mmv/*			ports/misc/mmv		Restrictive/unclear copyright
