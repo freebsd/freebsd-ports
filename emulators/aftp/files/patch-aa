@@ -30,7 +30,7 @@
 ! 	${CC} -o aftp $(OBJS)
   
   .c.o:
-! 	${CC} -c $<
+! 	${CC} -c ${CFLAGS} $<
 ! 
 ! install: all
 ! 	${INSTALL_BIN} aftp ${PREFIX}/bin/
