@@ -1,0 +1,11 @@
+--- sysspec.h.orig	Fri Dec 12 05:54:46 1997
++++ sysspec.h	Tue Jul 25 02:30:29 2000
+@@ -33,7 +33,7 @@
+ 
+ #include "nmglobal.h"
+ 
+-#ifndef MAC
++#if !defined(MAC) && !defined(__STDC__)
+ #include <malloc.h>
+ #endif
+ 

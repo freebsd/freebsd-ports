@@ -1,0 +1,15 @@
+--- Makefile.orig	Fri Dec 12 05:54:46 1997
++++ Makefile	Tue Jul 25 02:27:40 2000
+@@ -22,10 +22,10 @@
+ # you should leave -static in the CFLAGS so that your sysinfo can be
+ # compiled into the executable
+ 
+-CC = gcc
++CC ?= gcc
+ 
+ # generic options for gcc
+-CFLAGS = -s -static -Wall -O3
++CFLAGS += -static -DDATADIR=\"${PREFIX}/share/nbench/\"
+ 
+ # if your gcc lets you do it, then try this one
+ #CFLAGS = -s -static -Wall -O3 -fomit-frame-pointer -funroll-loops
