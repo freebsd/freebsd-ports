@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	etherboot
-PORTVERSION=	5.0.3
+PORTVERSION=	5.0.4
 CATEGORIES=	net
 #MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 #MASTER_SITE_SUBDIR=	${PORTNAME}
 #use development sources for now instead of standard ftp site.
 MASTER_SITES=	http://etherboot.sourceforge.net/
-CATEGORIES=	net
 
 MAINTAINER=	ambrisko@ambrisko.com
 
