@@ -13,6 +13,8 @@ DISTFILES=	xsw1.23.tgz stimages1.3.tgz
 
 MAINTAINER=	troll@digitalspark.net
 
+LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
+
 WRKSRC=		${WRKDIR}/xsw1.23/client
 USE_XLIB=	YES
 USE_GMAKE=	YES
