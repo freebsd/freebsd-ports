@@ -14,6 +14,8 @@ DISTNAME=	DNS-Balance-${PORTVERSION}
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	A dynamic load-balancing DNS server
 
+BROKEN=		Unfetchable
+
 USE_RUBY=	yes
 USE_RC_SUBR=	yes
 
