@@ -16,6 +16,8 @@ MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	${LCDEF_CMD}:${PORTSDIR}/emulators/linux_base
 
+IGNORE=		"ja-linux_locale is not needed for linux_base7"
+
 USE_LINUX_PREFIX=	yes
 WRKSRC=		${WRKDIR}/locale-ja-${VERSION}
 PLIST_SUB=	VER=${VERSION} LINUXBASE=${LINUXBASE}
