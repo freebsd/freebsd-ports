@@ -1,5 +1,5 @@
 # New ports collection makefile for:	wmMatrix
-# Version required:     0.2
+# Version required:	0.2
 # Date created:		13 October 1999
 # Whom:			Brian Handy <handy@physics.montana.edu>
 #
@@ -17,5 +17,8 @@ LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 ALL_TARGET=	clean all
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/wmMatrix ${PREFIX}/bin/wmmatrix
 
 .include <bsd.port.mk>
