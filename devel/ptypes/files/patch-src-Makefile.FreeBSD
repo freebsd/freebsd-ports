@@ -1,14 +1,17 @@
---- src/Makefile.FreeBSD.orig	Wed Jan  8 03:14:56 2003
-+++ src/Makefile.FreeBSD	Wed Jan  8 03:14:59 2003
-@@ -15,9 +15,9 @@
+--- Makefile.FreeBSD.orig	Tue Jun 24 13:49:22 2003
++++ src/Makefile.FreeBSD	Wed Jun 25 02:36:53 2003
+@@ -15,11 +15,11 @@
  
  CXX = g++
  
--CXXOPTS = -pthread
-+CXXOPTS =
- 
--LDLIBS = -lc_r
-+LDLIBS =
+-OS_CXXOPTS = -pthread
+-OS_LDLIBS = -lc_r
++OS_CXXOPTS = $(PTHREAD_CFLAGS)
++OS_LDLIBS = $(PTHREAD_LIBS)
  
  SOEXT = so
+-LIBTOOL = $(CXX) -shared -pthread
++LIBTOOL = $(CXX) -shared $(PTHREAD_CFLAGS)
+ SOSTRIP = strip
  
+ include Makefile.common
