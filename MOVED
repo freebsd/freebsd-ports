@@ -731,3 +731,4 @@ deskutils/xfce4-notes|deskutils/xfce4-notes-plugin|2003-12-20|renamed
 devel/sip||2003-12-27|Integrated into py-sip
 java/orion||2003-12-29|Duplicate of www/orion
 www/p5-HTML-MagicTemplate|textproc/p5-Text-MagicTemplate|2003-12-30|Integrated into Text::MagicTemplate
+games/steam|games/linux-steam|2004-01-02|Port renamed
