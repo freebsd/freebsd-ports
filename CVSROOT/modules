@@ -378,6 +378,7 @@ arm-rtems-gcc	ports/devel/arm-rtems-gcc
 arm-rtems-gdb	ports/devel/arm-rtems-gdb
 arm-rtems-objc	ports/devel/arm-rtems-objc
 arpack		ports/math/arpack
+arpack++	ports/math/arpack++
 arpd		ports/net/arpd
 arping		ports/net/arping
 arprelease	ports/net/arprelease
