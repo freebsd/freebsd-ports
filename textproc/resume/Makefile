@@ -16,10 +16,14 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XML Resume library
 
+USE_JAVA=	yes
 USE_REINPLACE=	yes
 NO_BUILD=	yes
-JAVAJARDIR=	${PREFIX}/share/java/classes
 PKGMESSAGE=	${WRKDIR}/pkg-message
+
+.if !defined(NOPORTDOCS)
+PORTDOCS=	*
+.endif
 
 post-patch:
 	${REINPLACE_CMD} -e 's|\.\./\.\./css|css|' ${WRKSRC}/xsl/params.xsl
@@ -34,9 +38,9 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/java/*.jar ${JAVAJARDIR}
 
 post-install:
+.if !defined(NOPORTDOCS)
 	${MKDIR} ${EXAMPLESDIR}
 	${CP} -R ${WRKSRC}/examples/* ${EXAMPLESDIR}
-.if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${CP} -R ${WRKSRC}/doc/* ${DOCSDIR}
 .endif
