@@ -16,4 +16,4 @@
 +install::
 +	mkdir -p ${PREFIX}/lib/X11/xephem
 +	tar -cf - auxil edb tools work |(cd ${PREFIX}/lib/X11/xephem; tar -xf -)
-+	cp XEphem.ad ${PREFIX}/lib/X11/app-defaults/XEphem
++	sed s,@PREFIX@,${PREFIX}, XEphem.ad > ${PREFIX}/lib/X11/app-defaults/XEphem

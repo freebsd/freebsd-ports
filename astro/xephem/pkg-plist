@@ -44,6 +44,8 @@ lib/X11/xephem/work/ephem.plt
 @dirrm lib/X11/xephem/auxil/gsccache
 @dirrm lib/X11/xephem/auxil
 @dirrm lib/X11/xephem/edb
+@dirrm lib/X11/xephem/gscdbd/cache
+@dirrm lib/X11/xephem/gscdbd
 @dirrm lib/X11/xephem/tools/gsc
 @dirrm lib/X11/xephem/tools
 @dirrm lib/X11/xephem/work
