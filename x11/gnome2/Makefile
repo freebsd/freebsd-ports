@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnome2
-PORTVERSION=	2.0.3
-PORTREVISION=	1
+PORTVERSION=	2.2.0
 CATEGORIES=	x11 gnome
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -17,7 +16,7 @@ MAINTAINER=	gnome@FreeBSD.org
 
 RUN_DEPENDS=	${X11BASE}/libexec/cdplayer_applet2:${PORTSDIR}/x11/gnomeapplets2 \
 		gnome-cd:${PORTSDIR}/audio/gnomemedia2 \
-	 	archive-generator:${PORTSDIR}/misc/gnomeutils2 \
+	 	gnome-calculator:${PORTSDIR}/misc/gnomeutils2 \
 		eog:${PORTSDIR}/graphics/eog2 \
 		gnome-control-center:${PORTSDIR}/sysutils/gnomecontrolcenter2 \
 		gconf-editor:${PORTSDIR}/sysutils/gconf-editor \
@@ -25,18 +24,26 @@ RUN_DEPENDS=	${X11BASE}/libexec/cdplayer_applet2:${PORTSDIR}/x11/gnomeapplets2 \
 		gedit:${PORTSDIR}/editors/gedit2 \
 		gnome-terminal:${PORTSDIR}/x11/gnometerminal \
 		gnome-session:${PORTSDIR}/x11/gnomesession \
-		sawfish:${PORTSDIR}/x11-wm/sawfish2 \
+		metacity:${PORTSDIR}/x11-wm/metacity \
+		metacity-setup:${PORTSDIR}/x11-wm/metacity-setup \
 		bug-buddy:${PORTSDIR}/devel/bugbuddy2 \
 		gnome-system-monitor:${PORTSDIR}/sysutils/gnomesystemmonitor \
+		nautilus:${PORTSDIR}/x11-fm/nautilus2 \
 		yelp:${PORTSDIR}/x11/yelp \
 		gdm:${PORTSDIR}/x11/gdm2 \
 		${X11BASE}/share/themes/Metal/gtk-2.0/gtkrc:${PORTSDIR}/x11-toolkits/gtk-engines2 \
-		nautilus:${PORTSDIR}/x11-fm/nautilus2 \
 		screensaver-properties-capplet:${PORTSDIR}/x11/xscreensaver-gnome \
-		${X11BASE}/libdata/pkgconfig/libgail-gnome.pc:${PORTSDIR}/x11-toolkits/libgail-gnome \
 		${X11BASE}/share/gnome/help/user-guide/C/user-guide.xml:${PORTSDIR}/misc/gnomeuserdocs2 \
 		${X11BASE}/share/gnome/sounds/login.wav:${PORTSDIR}/audio/gnomeaudio \
-		gnome-pkgview:${PORTSDIR}/sysutils/gnome-pkgview
+		${X11BASE}/libdata/pkgconfig/libgail-gnome.pc:${PORTSDIR}/x11-toolkits/libgail-gnome \
+		${X11BASE}/libdata/pkgconfig/vte.pc:${PORTSDIR}/x11-toolkits/vte \
+		${X11BASE}/libdata/pkgconfig/libzvt-2.0.pc:${PORTSDIR}/x11-toolkits/libzvt \
+		file-roller:${PORTSDIR}/archivers/fileroller \
+		${X11BASE}/share/themes/HighContrast/gtk-2.0/gtkrc:${PORTSDIR}/x11-toolkits/gnome-themes \
+		ggv:${PORTSDIR}/print/ggv2 \
+		gnome-pkgview:${PORTSDIR}/sysutils/gnome-pkgview \
+		acme:${PORTSDIR}/multimedia/acme \
+		gst-thumbnail:${PORTSDIR}/multimedia/nautilus-media
 
 NO_BUILD=	yes
 
