@@ -44,7 +44,6 @@ RUN_DEPENDS+=	c2hs:${PORTSDIR}/devel/hs-c2hs
 RUN_DEPENDS+=	ports-config:${PORTSDIR}/devel/hs-hpl
 .endif
 
-USE_SIZE=	yes
 USE_REINPLACE=	yes
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes

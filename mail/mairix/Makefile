@@ -13,7 +13,6 @@ MASTER_SITES=	http://www.rpcurnow.force9.co.uk/mairix/
 MAINTAINER=	obraun@FreeBSD.org
 COMMENT=	Indexing and searching in Maildir or MH folders
 
-USE_SIZE=	yes
 HAS_CONFIGURE=	yes
 USE_REINPLACE=	yes
 

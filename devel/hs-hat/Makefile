@@ -15,7 +15,6 @@ PKGNAMEPREFIX=	hs-
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	A source-level tracer for Haskell 98
 
-USE_SIZE=	yes
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
 USE_REINPLACE=	yes
