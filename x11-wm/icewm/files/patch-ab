@@ -1,33 +1,33 @@
---- src/Makefile.orig	Mon Apr  6 20:30:21 1998
-+++ src/Makefile	Fri May  1 08:34:15 1998
-@@ -3,9 +3,9 @@
- # Linux
- CXX         = g++
- LD          = gcc
+--- src/Makefile.orig	Wed Jun 24 22:03:37 1998
++++ src/Makefile	Wed Jun 24 22:05:27 1998
+@@ -7,9 +7,9 @@
+ # alternative (link with g++)
+ #CXX         = g++
+ #LD          = g++
 -CXXOPTS     = -pipe $(WARN)
 -INCSDIR     = -I/usr/X11R6/include
 -LIBSDIR     = -L/usr/X11R6/lib
-+CXXOPTS     = $(CFLAGS) $(WARN)
-+INCSDIR     = -I$(PREFIX)/include
-+LIBSDIR     = -L$(PREFIX)/lib
++CXXOPTS     = ${CFLAGS} $(WARN)
++INCSDIR     = -I${PREFIX}/include
++LIBSDIR     = -L${PREFIX}/lib
  
  #XPMINCDIR   = -I../../include
  #XPMLIBDIR   = -L../../lib
-@@ -34,7 +34,7 @@
- SHAPEDEF    = -DSHAPE
- SHAPELIB    = -lXext
+@@ -46,7 +46,7 @@
+ #if you use linux you need to define X_LOCALE.
+ #I18N       = -DI18N -DX_LOCALE
  
--DEBUG       = -DDEBUG
-+#DEBUG       = -DDEBUG
+-DEBUG       = -DDEBUG -DAVOID_GRAB
++#DEBUG       = -DDEBUG -DAVOID_GRAB
  
  # executable extenstion
  EXEEXT=
-@@ -48,7 +48,7 @@
- #OPTIMIZE   = -g
+@@ -62,7 +62,7 @@
  #OPTIMIZE   = -O -g
  #OPTIMIZE   = -O -g -pg
--OPTIMIZE   = -O
-+#OPTIMIZE   = -O
- #OPTIMIZE   = -O2
+ #OPTIMIZE   = -O
+-OPTIMIZE   = -O2
++#OPTIMIZE   = -O2
  #OPTIMIZE   = -O -s
  #OPTIMIZE   = -O2 -s
+ 
