@@ -16,7 +16,7 @@ MAINTAINER=	nra@FreeBSD.org
 
 LIB_DEPENDS=	tcl83.1:${PORTSDIR}/lang/tcl83 \
 		tvision.0:${PORTSDIR}/devel/tvision
-BUILD_DEPENDS= 	${X11BASE}/lib/libqt2.a:${PORTSDIR}/x11-toolkits/qt22-static
+BUILD_DEPENDS= 	${X11BASE}/lib/libqt2.a:${PORTSDIR}/x11-toolkits/qt2-static
 
 USE_QT2=yes
 IS_INTERACTIVE=yes
