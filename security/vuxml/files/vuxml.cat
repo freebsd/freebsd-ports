@@ -1,4 +1,0 @@
-OVERRIDE YES
-
-PUBLIC "-//vuxml.org//DTD VuXML 1.0//EN" "vuxml-10.dtd"
-PUBLIC "-//vuxml.org//ELEMENTS VuXML 1.0 Document Model//EN" "vuxml-model-10.mod"

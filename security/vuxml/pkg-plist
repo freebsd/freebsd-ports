@@ -1,4 +1,6 @@
+share/xml/dtd/vuxml/catalog
 share/xml/dtd/vuxml/catalog.xml
 share/xml/dtd/vuxml/vuxml-10.dtd
+share/xml/dtd/vuxml/vuxml-11.dtd
 share/xml/dtd/vuxml/vuxml-model-10.mod
-share/xml/dtd/vuxml/vuxml.cat
+share/xml/dtd/vuxml/vuxml-model-11.mod
