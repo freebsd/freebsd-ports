@@ -1,3 +1,4 @@
+usr/bin/fetch
 usr/bin/install-info
 usr/bin/makeinfo
 usr/libexec/elf/ld

@@ -3,10 +3,10 @@
 # Date created:		18 Apr 1997
 # Whom:			asami
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/12/17 23:42:19 asami Exp $
 #
 
-DISTNAME=	222upgrade-1998.12.17
+DISTNAME=	222upgrade-1998.03.08
 CATEGORIES=	misc
 DISTFILES=	# empty
 
@@ -15,7 +15,7 @@ MAINTAINER=	asami@Freebsd.ORG
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 300000
-BROKEN=		this needs to be built on a 2.2-stable system
+IGNORE=		this needs to be built on a 2.2-stable system
 .endif
 NO_MTREE=	yes
 PREFIX=		/
