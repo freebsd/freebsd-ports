@@ -48,6 +48,7 @@
     SUBDIR += oroborus
     SUBDIR += phluid
     SUBDIR += piewm
+    SUBDIR += plwm
     SUBDIR += pwm
     SUBDIR += qlwm
     SUBDIR += qvwm

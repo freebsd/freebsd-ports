@@ -1,0 +1,6 @@
+PLWM is a set of python base classes for a window manager, a
+collection of mixins that can be used to configure the behavior of the
+window manager, and some example window managers that show the flexibility
+of the system.
+
+WWW: http://sourceforge.net/projects/plwm
