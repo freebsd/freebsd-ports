@@ -1,6 +1,14 @@
 --- configure.orig	Wed Dec 10 23:43:42 2003
-+++ configure	Sun Jan 25 20:31:22 2004
-@@ -25221,7 +25221,7 @@
++++ configure	Wed Feb  4 02:44:05 2004
+@@ -19209,6 +19209,7 @@
+ 
+ # This can be used to rebuild libtool when needed
+ LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
++$ac_aux_dir/ltconfig $LIBTOOL_DEPS
+ 
+ # Always use our own libtool.
+ LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+@@ -25221,7 +25222,7 @@
  rm -f conftest.err conftest.$ac_objext \
        conftest$ac_exeext conftest.$ac_ext
  if test "$ac_cv_search_SSL_CTX_new" = no; then
@@ -9,7 +17,7 @@
      LIBS="-l$ac_lib  $ac_func_search_save_LIBS"
      cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
-@@ -27699,7 +27699,7 @@
+@@ -27699,7 +27700,7 @@
  #define LOCKSERVER_SUPPORT
  _ACEOF
  
