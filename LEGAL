@@ -555,7 +555,12 @@ Tripwire-*-1.tar.gz	security/tripwire-131	Cannot be redistributed
 tripwire-*.tar.gz	security/tripwire12	Cannot be redistributed for
 						more than the cost of
 						duplication
-ttf30.exe		japanese/epson-ttfonts	Cannot be redistributed
+ttf30.exe		japanese/epson-ttfonts	Cannot be redistributed, 
+						cannot fetch outside from
+						Japan, user must have
+						Japanese version of Windows
+						and EPSON printer specified
+						by EULA	
 tuc-*			converters/tuc		Author does not allow
 						CD-ROM distribution
 tutorial.zip		java/java-tutorial	This software is under license
