@@ -145,18 +145,18 @@ pre-build:
 	     -L "/compat/linux/$${WRKDIRPREFIX}" -a \
 	     x`ls -ld "/compat/linux/$${WRKDIRPREFIX}" 2>/dev/null | awk '/->/{print $$NF;exit 0}END{exit 1}'` = x"$${WRKDIRPREFIX}" ]; \
 	then \
-		echo "Please set WRKDIRPREFIX to something which doesn't"; \
-		echo "have a matching symbolic link in /compat/linux."; \
-		echo "This is known to cause problems during bootstrapping."; \
+		${ECHO_MSG} "Please set WRKDIRPREFIX to something which doesn't"; \
+		${ECHO_MSG} "have a matching symbolic link in /compat/linux."; \
+		${ECHO_MSG} "This is known to cause problems during bootstrapping."; \
 		exit 1; \
 	fi
 	@if [ `sysctl -n compat.linux.osname` != "Linux" ]; \
 	then \
-		echo "Please set the value of the sysctl compat.linux.osname"; \
-		echo "to 'Linux' with the command:"; \
-		echo "	sysctl compat.linux.osname=Linux"; \
-		echo "Having it set to other values, such as 'FreeBSD',"; \
-		echo "is known to cause problems during bootstrapping."; \
+		${ECHO_MSG} "Please set the value of the sysctl compat.linux.osname"; \
+		${ECHO_MSG} "to 'Linux' with the command:"; \
+		${ECHO_MSG} "	sysctl compat.linux.osname=Linux"; \
+		${ECHO_MSG} "Having it set to other values, such as 'FreeBSD',"; \
+		${ECHO_MSG} "is known to cause problems during bootstrapping."; \
 		exit 1; \
 	fi
 .endif
