@@ -10,7 +10,7 @@ CATEGORIES=	news
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		ftp://ftp.isc.org/isc/inn/snapshots/
 MASTER_SITE_SUBDIR=	andreas
-DISTNAME=	inn-STABLE_2_2-2000-02-25_03-09
+DISTNAME=	inn-STABLE-20000709
 
 MAINTAINER=	andreas@FreeBSD.org
 
