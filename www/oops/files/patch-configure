@@ -1,0 +1,43 @@
+--- configure.orig	Fri Feb  1 15:40:28 2002
++++ configure	Mon Feb  4 13:02:11 2002
+@@ -3021,9 +3021,9 @@
+     LIBDB_PATH="$pwd"
+ elif test -r "/usr/local/lib/libdb.a"; then
+     LIBDB_PATH="/usr/local"
+-elif test -r "/usr/lib/libdb2.a"; then
+-    LIBDB_PATH="/usr"
+-    LIBDB_NAME=-ldb2
++elif test -r "/usr/local/lib/libdb4.a"; then
++    LIBDB_PATH="/usr/local"
++    LIBDB_NAME=-ldb4
+ elif test -r "/usr/lib/libdb.a"; then
+     LIBDB_PATH="/usr"
+ elif test -r "/usr/local/lib/libdb2.a"; then
+@@ -3062,8 +3062,8 @@
+ fi
+ 
+ if test "$LIBDB_PATH" = "/usr/local"; then
+-    if test "$LIBDB_NAME" = "-ldb2"; then
+-	LIBDB_INCL="-I/usr/local/include/db2"
++    if test "$LIBDB_NAME" = "-ldb4"; then
++	LIBDB_INCL="-I/usr/local/include/db4 -I/usr/local/include"
+     else
+ 	LIBDB_INCL="-I/usr/local/include"
+     fi
+@@ -4227,13 +4227,13 @@
+ esac
+ 
+ if test "X$MYSQL_PATH" != "X" ; then
+-    LIBS="-L$MYSQL_PATH/lib -lmysqlclient $LIBS"
++    LIBS="-L$MYSQL_PATH/lib/mysql -lmysqlclient $LIBS"
+     cat >>confdefs.h <<\EOF
+ #define HAVE_MYSQL 1
+ EOF
+ 
+-    CFLAGS="$CFLAGS -I$MYSQL_PATH/include"
+-    MYSQL_LIB="-L$MYSQL_PATH/lib -lmysqlclient"
++    CFLAGS="$CFLAGS -I$MYSQL_PATH/include/mysql"
++    MYSQL_LIB="-L$MYSQL_PATH/lib/mysql -lmysqlclient"
+ fi
+ 
+ if test "X$PGSQL_PATH" != "X" ; then
