@@ -1,9 +1,12 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/BGP/.packlist
 %%SITE_PERL%%/Net/BGP.pm
+%%SITE_PERL%%/Net/BGP/ASPath.pm
+%%SITE_PERL%%/Net/BGP/NLRI.pm
 %%SITE_PERL%%/Net/BGP/Notification.pm
 %%SITE_PERL%%/Net/BGP/Peer.pm
 %%SITE_PERL%%/Net/BGP/Process.pm
-%%SITE_PERL%%/Net/BGP/RIB.pm
+%%SITE_PERL%%/Net/BGP/Refresh.pm
+%%SITE_PERL%%/Net/BGP/Transport.pm
 %%SITE_PERL%%/Net/BGP/Update.pm
 @dirrm %%SITE_PERL%%/Net/BGP
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/BGP
