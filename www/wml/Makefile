@@ -6,17 +6,19 @@
 #
 
 PORTNAME=	wml
-PORTVERSION=	2.0.8
+PORTVERSION=	2.0.9
 CATEGORIES=	www lang
 MASTER_SITES=	http://thewml.org/distrib/ \
 		ftp://thewml.org/distrib/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	delta@lackas.net
 COMMENT=	Website META Language, webdesign toolkit for HTML generation
 
 USE_PERL5=	yes
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-perl=${PERL5}
+PLIST_SUB+=	ARCH=${ARCH}-freebsd
 
 CAT1=	wml_aux_txt2html.1 wml_aux_tidy.1 wml_p4_gm4.1
 
@@ -49,12 +51,6 @@ CAT7=	wml_barebone.7 \
 
 MAN7=	wml_intro.7 wml_macros.7 wml_tutorial.7 wml_faq.7 wml_tags.7
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} >= 500800
-BROKEN=		"Does not compile with perl >=5.8"
-.endif
-
 #   catpages are usually not installed, so they are not compressed.
 #   But they are really needed as docs, so we compress manually...
 .if !defined(NOMANCOMPRESS)
@@ -73,4 +69,4 @@ post-build:
 test:
 	@cd ${WRKSRC} && ${MAKE} test
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
