@@ -271,6 +271,7 @@
     SUBDIR += mango
     SUBDIR += matrix-kmod
     SUBDIR += mc
+    SUBDIR += mc-light
     SUBDIR += menushki
     SUBDIR += mgp-mode.el
     SUBDIR += mime-support

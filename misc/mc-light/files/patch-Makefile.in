@@ -1,0 +1,23 @@
+
+$FreeBSD$
+
+--- Makefile.in.orig	Tue Aug 31 16:11:30 2004
++++ Makefile.in	Tue Aug 31 16:13:20 2004
+@@ -43,7 +43,7 @@
+ install: installdirs @vcs@
+ 	@for I in $(unixdirs); do cd $$I; $(MAKE) DESTDIR=$(DESTDIR) $@ || exit 1; cd ..; done
+ 	$(INSTALL_DATA) $(srcdir)/FAQ $(DESTDIR)$(libdir)/FAQ
+-	$(INSTALL_PROGRAM) mcfn_install $(DESTDIR)$(suppbindir)/mcfn_install
++	$(INSTALL_DATA) mcfn_install $(DESTDIR)$(suppbindir)/mcfn_install
+ 	chmod +x $(DESTDIR)$(suppbindir)/mcfn_install
+ 	@cp -r PowerPack/syntax $(DESTDIR)$(libdir)/
+ 	@cp -r PowerPack/codepages $(DESTDIR)$(libdir)/
+@@ -51,7 +51,7 @@
+ 	@echo "set in the mc.ext file in $(libdir)"
+ 
+ install.create_vcs:
+-	$(INSTALL_PROGRAM) $(srcdir)/create_vcs $(DESTDIR)$(suppbindir)/create_vcs
++	$(INSTALL_DATA) $(srcdir)/create_vcs $(DESTDIR)$(suppbindir)/create_vcs
+ 	if test x$(DESTDIR) = x; then $(SHELL) $(srcdir)/create_vcs; fi
+ 
+ installdirs:
