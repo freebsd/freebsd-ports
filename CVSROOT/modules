@@ -7185,6 +7185,7 @@ png2ico		ports/graphics/png2ico
 pngcheck	ports/graphics/pngcheck
 pngcrush	ports/graphics/pngcrush
 pngquant	ports/graphics/pngquant
+pngrewrite	ports/graphics/pngrewrite
 pngwriter	ports/graphics/pngwriter
 pnm2ppa		ports/print/pnm2ppa
 poc		ports/security/poc
