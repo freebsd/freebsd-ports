@@ -1,0 +1,23 @@
+bin/corewars
+share/corewars/backwalker.cw
+share/corewars/capture.cw
+share/corewars/copy.cw
+share/corewars/dwarf.cw
+share/corewars/erase.cw
+share/corewars/erase2.cw
+share/corewars/erase3.cw
+share/corewars/first.cw
+share/corewars/forkbomb.cw
+share/corewars/forker.cw
+share/corewars/gemini.cw
+share/corewars/harmless.cw
+share/corewars/jumpup.cw
+share/corewars/killmover.cw
+share/corewars/killmover2.cw
+share/corewars/mover.cw
+share/corewars/random.cw
+share/corewars/runaway.cw
+share/corewars/walker.cw
+share/doc/corewars/README
+@dirrm share/corewars
+@dirrm share/doc/corewars
