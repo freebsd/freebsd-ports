@@ -9,13 +9,14 @@
 # And just download and install there.
 
 PORTNAME=	mozilla
-PORTVERSION=	1.0.0rc2
+PORTVERSION=	1.0.0rc3
+LANGPACKDATE=	0524
 CATEGORIES=	chinese www
-MASTER_SITES=	http://www.csie.ntu.edu.tw/~b7506051/mozilla/langpack/
+MASTER_SITES=	http://www.csie.ntu.edu.tw/~b7506051/mozilla/langpack/distfiles/
 PKGNAMESUFFIX=	-tclp
 # Same as ftp://ftp.mozilla.org/pub/mozilla/l10n/lang/$MOZVER/langzhtw.xpi.
 # Use this to avoid checksum problems.
-DISTNAME=	langzhtw-1.0.0rc2-0516
+DISTNAME=	${PORTNAME}-langzhtw-${PORTVERSION}-${LANGPACKDATE}
 EXTRACT_SUFX=	.xpi
 
 MAINTAINER=	piaip@csie.ntu.edu.tw
