@@ -1,6 +1,6 @@
---- Makefile.in.orig	Sun Jun  8 21:28:31 2003
-+++ Makefile.in	Sun Jul 27 13:11:15 2003
-@@ -13,9 +13,9 @@
+--- Makefile.in.orig	Sat May  1 22:20:14 2004
++++ Makefile.in	Mon May 24 22:14:19 2004
+@@ -18,9 +18,9 @@
  
  DEFS=-DHAVE_CONFIG_H -Wall @HOSTDEF@
  
@@ -12,7 +12,7 @@
  XLIB=-lXaw -lXmu
  EXTENSIONLIB=-lXext
  INCLUDES=-I$(INCDIR)
-@@ -24,9 +24,9 @@
+@@ -29,9 +29,9 @@
  LIBS=-L$(LIBDIR) -lXaw $(XLIB) -lXt $(EXTENSIONLIB) -lX11 -lm
  
  #CC=/compat/linux/usr/bin/gcc
@@ -25,35 +25,40 @@
  LDFLAGS=-s
  
  LINT=lint
-@@ -35,16 +35,22 @@
+@@ -40,19 +40,25 @@
  RM=rm -f
  INSTALL=install
  
 -INST_DIR=/usr/local/bin
+-INST_MANDIR=/usr/local/man/man1
 -INST_XDIR=/usr/X11R6/bin
+-INST_MANXDIR=/usr/X11R6/man/man1
 -INST_XRDIR=/usr/X11R6/lib/X11/app-defaults
 +INST_DIR=$(PREFIX)/bin
-+INST_XDIR=$(PREFIX)/bin
++INST_MANDIR=$(PREFIX)/man/man1
++INST_XDIR=$(X11BASE)/bin
++INST_MANXDIR=$(X11BASE)/man/man1
 +INST_XRDIR=$(X11BASE)/lib/X11/app-defaults
   
  .c.o:
  	$(CC) -c $(CFLAGS) $*.c
  
+ MANPAGE = mbmon.1 xmbmon.1x
 -PROGRAM = mbmon xmbmon
 -
 +PROGRAM = mbmon
  TESTPROG = testpci testsmb testhwm testfan
-+DOCS=	00README.txt 00READMEj.txt 00READMEtech.txt
++DOCS= ReadMe ReadMe.jp ReadMe.tech
 +.if !defined(WITHOUT_X11)
 +DOCS+=	xmbmon.resources
 +PROGRAM+= xmbmon
 +.endif
-+  
++
 +all: $(PROGRAM) $(TESTPROG)
  
  MB_OBJ  = getMB-via.o getMB-smb.o getMB-isa.o
  SMB_OBJ = smbuses.o smbus_piix4.o smbus_amd.o smbus_ali.o smbus_amd8.o
-@@ -124,8 +130,14 @@
+@@ -136,12 +142,18 @@
  	$(RM) Makefile config.cache config.log config.h config.status
  
  install: $(PROGRAM)
@@ -63,10 +68,15 @@
 +		$(INSTALL) -o root -g wheel -m 4555 -c -p $$i $(INST_DIR); \
 +	done
  
- lint:
- 	$(LINT) $(INCLUDES) $(DEFS) $(FONTDEFINES) $(SRCS) -lm
+ install-man: $(MANPAGE)
+ 	$(INSTALL) -o root -g wheel -m 444 -c -p mbmon.1 $(INST_MANDIR)
+-	$(INSTALL) -o root -g wheel -m 444 -c -p xmbmon.1x $(INST_MANXDIR)
 +
 +install-doc:
 +	@for f in $(DOCS); do \
 +		$(INSTALL_DATA) $$f $(DOCSDIR)/; \
 +	done
++	$(INSTALL) -o root -g wheel -m 444 -c -p xmbmon.1x $(INST_MANDIR)
+ 
+ lint:
+ 	$(LINT) $(INCLUDES) $(DEFS) $(FONTDEFINES) $(SRCS) -lm

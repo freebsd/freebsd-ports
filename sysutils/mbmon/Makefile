@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xmbmon
-PORTVERSION=	203
-PORTREVISION=	1
+PORTVERSION=	204
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.nt.phys.kyushu-u.ac.jp/shimizu/download/
 .if defined(WITHOUT_X11)
@@ -26,7 +25,9 @@ USE_XLIB=	yes
 PLIST_SUB=	X11_ONLY=""
 .endif
 
-MAKE_ARGS+=	DOCSDIR='${DOCSDIR}' INSTALL_DATA='${INSTALL_DATA}'
+MAKE_ARGS+=	DOCSDIR='${DOCSDIR}' INSTALL_DATA='${INSTALL_DATA}' PREFIX='${PREFIX}'
+
+MAN1=		xmbmon.1x
 
 .include <bsd.port.pre.mk>
 
