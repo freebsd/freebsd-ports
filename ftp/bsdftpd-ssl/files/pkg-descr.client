@@ -1,0 +1,7 @@
+BSDftpd-ssl is a TLS/SSL-enhanced FTP server. This package contains
+command-line FTP client utility (ftps). The TLS/SSL enhancement allows RFC2228
+"FTP Security Extensions"-compliant TLS/SSL support for both control and data
+connections; with standard FTP servers this software operates as the standard
+FTP client.
+
+WWW: http://bsdftpd-ssl.sc.ru
