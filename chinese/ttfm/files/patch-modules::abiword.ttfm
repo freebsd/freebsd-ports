@@ -1,0 +1,681 @@
+--- modules/abiword.ttfm.orig	Sun Jun  2 14:22:27 2002
++++ modules/abiword.ttfm	Sun Jun  2 14:22:57 2002
+@@ -1,82 +1,56 @@
+ #!/bin/sh
+-#
+-# TTFM's module for AbiWord 0.7.12.
+-#
+-# This script is distributed under the revised BSD license.
+-#
+-# For any problem reports or suggestions, please contact
+-# Jing-Tang Keith Jang <keith@FreeBSD.org>.
+-#
+-
+-#
+-# AbiWord searches the following subdirectories under fonts/ for fonts.dir:
+-# $country, $country-$region, $encoding, $country-$region.$encoding.  For
+-# example, fonts/{zh, zh-TW, Big5, zh-TW.Big5} are all valid directories.
+-# However, this module will only generate fonts/$encoding/fonts.dir for the
+-# sake of simplicity.
+-#
+-# Here are the sample lines of a font in AbiWord's fonts.dir:
+-#
+-# Kai-Medium, -default-kai-medium-r-normal--0-0-0-0-c-0-big5-0, 880, 120, 1000
+-# Kai-Medium, -default-kai-bold-r-normal--0-0-0-0-c-0-big5-0, 880, 120, 1000
+-# Kai-Medium, -default-kai-medium-i-normal--0-0-0-0-c-0-big5-0, 880, 120, 1000
+-# Kai-Medium, -default-kai-bold-i-normal--0-0-0-0-c-0-big5-0, 880, 120, 1000
+-#
+-# AbiWord uses the first field for printing, second field for displaying.
+-# The last three fields are font's ascent, descent, and width, used when
+-# printing.
+-#
+-# Because AbiWord follows normal X convention, there's no need that the font
+-# must be TTF.  But we'll only accept TTF here, since it's better in scaling.
+-# CID fonts may be supported in the future, depending on the demanding.
+-#
+-
+-# Name & version
+-export NAME; NAME="AbiWord Font Manager"
+-export VERSION; VERSION=0.9.3
++#/*
++# * Copyrighy (c) 2001 CLE Project. All rights reserved.
++# * Copyright (c) 2001 Chung-Yen Chang. All rights reserved.
++# *    with Big5-HKSCS font support added by Anthony Fok
++# *    thanks to ThizLinux Laboratory Ltd., Thiz Technology Group
++# *
++# * Redistribution and use in source and binary forms, with or without
++# * modification, are permitted provided that the following conditions
++# * are met:
++# * 1. Redistributions of source code must retain the above copyright
++# *    notice, this list of conditions and the following disclaimer.
++# * 2. Redistributions in binary form must reproduce the above copyright
++# *    notice, this list of conditions and the following disclaimer in the
++# *    documentation and/or other materials provided with the distribution.
++# * 3. All advertising materials mentioning features or use of this software
++# *    must display the following acknowledgement:
++# *      This product includes software developed by
++# *      Chih-Wei Huang and contributors for CLE Project
++# * 4. Neither the name of the Author nor the names of contributors
++# *    may be used to endorse or promote products derived from this software
++# *    without specific prior written permission.
++# *
++# *
++# * THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS ``AS IS'' AND
++# * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
++# * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
++# * ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE
++# * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
++# * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
++# * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
++# * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
++# * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
++# * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
++# * SUCH DAMAGE.
++# */
+ 
+ # Global constants
++export TWABIFONTPATH; TWABIFONTPATH="/usr/X11R6/share/AbiSuite/fonts/zh-TW"
++export CNABIFONTPATH; CNABIFONTPATH="/usr/X11R6/share/AbiSuite/fonts/zh-CN"
++export HKABIFONTPATH; HKABIFONTPATH="/usr/X11R6/share/AbiSuite/fonts/zh-HK"
++export TEMPFILE; TEMPFILE="`mktemp /tmp/ttfm.tmpXXXXXX`"
++export DEFAULTPATH; DEFAULTPATH="/usr/local/share/fonts/TrueType"
++
++for i in $TWABIFONTPATH $CNABIFONTPATH $CNABIFONTPATH.GBK $HKABIFONTPATH; do
++    test -d $i || mkdir $i
++    test -f $i/fonts.dir || mkfontdir $i
++    touch $i/.already-in-fp
++done
+ 
+-export PREFIX; PREFIX=/usr/local
+-export X11BASE; X11BASE=/usr/X11R6
+-export PATH; PATH=/bin:/sbin:/usr/bin:/usr/sbin:$PREFIX/bin:$PREFIX/sbin:$X11BASE/bin
+-export TEMPFILE; TEMPFILE="`mktemp /tmp/ttfm.tmpXXX`"
+-export ABIFontPath; ABIFontPath=$PREFIX/AbiSuite/fonts
+-export DefaultFontPath; DefaultFontPath=$PREFIX/share/fonts/TrueType
+-export TTFM; TTFM=$PREFIX/bin/ttfm.sh
+-export XTTFFONTPATH; XTTFFONTPATH="$X11BASE/lib/X11/fonts/TrueType"
+-export GSMODULE; GSMODULE="ghostscript6"
+-export XMODULE; XMODULE="xttfm"
+-export TTFINFOPATH; TTFINFOPATH="$PREFIX/bin/ttfinfo"
+-export DEFAULTMING_NAME; DEFAULTMING_NAME="default_ming"
+-export DEFAULTKAI_NAME; DEFAULTKAI_NAME="default_kai"
+-export PRINTPARAM; PRINTPARAM="880, 120, 1000"
+-
+-
+-#
+-# Encoding/Directory table, used to convert the XLFD of a font to AbiWord's
+-# charset directories, and vice versa.  Used by add_fonts().
+-#
+-export ed_table; ed_table=\
+-"Big5,big5-0\n
+-GB2312,gb2312.1980-0\n
+-KSC5601,ksc5601.1987-0\n
+-JISX0208,jisx0208.1983-0\n
+-JISX0212,jisx0212.1990-0\n"
+-
+-
+-#
+-# Encoding/Postscript name table, used to convert a font's XLFD encoding
+-# to its frequently used Postscript name.  I'm not sure if the entries
+-# are correct, except Big5.
+-#
+-export ep_table; ep_table=\
+-"big5-0,B5pc-H\n
+-gb2312.1980-0,GBpc-EUC-H\n
+-ksc5601.1987-0,KSCpc-EUC-H\n
+-jisx0208.1983-0,EUC-H\n
+-jisx0212.1990-0,Hojo-EUC-H\n"
+-
++# Name & version
++export NAME; NAME="AbiWord 1.0.1 TrueType Font Manager"
++export VERSION; VERSION=1.0
+ 
+ # Who am I?
+ print_name()
+@@ -84,7 +58,6 @@
+     echo "$NAME $VERSION"
+ }
+ 
+-
+ # Usage
+ Usage()
+ {
+@@ -96,204 +69,275 @@
+     echo "       --add <file>...    install ttf font"
+     echo "       --remove <file>... remove ttf font from the system"
+     echo "       --list             list all ttf fonts on the system"
+-    echo "       --setdefault <file> "
+-    echo "                          set default font to file"
+-    echo "       --setdefault_kai <file> "
+-    echo "                          set default \kai font to file"
+-    echo "       --setdefault_ming <file> "
+-    echo "                          set default \ming font to file"
+     echo "       --help             show this info"
+     echo
+ }
+ 
+ 
+-check_abiword()
+-{
+-	 if [ ! -d $ABIFontPath ]; then
+-		  mkdir -p $ABIFontPath
+-	 fi
+-	 fontsdirlist=`find $ABIFontPath -name fonts.dir`
+-}
+-
+-
+-#
+-# List all fonts installed under $AbiFontPath
+-#
+-# I'm not sure if font filenames should also be displayed, since the XLFD
+-# may be provided from xfs.
+-#
++# List all ttf fonts installed in $ABIFONTPATH
+ list_fonts()
+ {
+-    if [ "X$fontsdirlist" = "X" ]; then
+-        echo "No fonts installed."
++    if [ -f ${TWABIFONTPATH}/fonts.dir -o -f ${CNABIFONTPATH}/fonts.dir \
++	 -o -f ${HKABIFONTPATH}/fonts.dir ]; then
++        echo "Installed TTF fonts:"
++	if [ -f ${TWABIFONTPATH}/fonts.dir ]; then
++          awk -F, 'FNR>1 {print $1,$2}' ${TWABIFONTPATH}/fonts.dir
++	fi
++	if [ -f ${CNABIFONTPATH}/fonts.dir ]; then
++          awk -F, 'FNR>1 {print $1,$2}' ${CNABIFONTPATH}/fonts.dir
++	fi
++	if [ -f ${CNABIFONTPATH}.GBK/fonts.dir ]; then
++          awk -F, 'FNR>1 {print $1,$2}' ${CNABIFONTPATH}.GBK/fonts.dir
++	fi
++	if [ -f ${HKABIFONTPATH}/fonts.dir ]; then
++          awk -F, 'FNR>1 {print $1,$2}' ${HKABIFONTPATH}/fonts.dir
++	fi
++        echo
+     else
+-        for f in $fontsdirlist; do
+-            echo "In `dirname $f`:"
+-            sed -e '1d' $f |cut -d ',' -f 1 |sort |uniq
+-				echo
+-        done
++        echo "No TTF fonts installed!"
+     fi
+ }
+ 
++# Get ttfinfo
++get_ttfinfo()
++{
++    TTFINFO="/usr/local/bin/ttfinfo"
++    if [ "z$TTFINFO" = "z" ]; then
++        echo "ttfinfo not found, aborted!"
++        exit 3
++    fi
++    eval `$TTFINFO $1`
++}
+ 
+-#
+-# Remove ttf fonts.  It accepts PS or TTF arguments, eg.
+-# remove_fonts DefaultMingB5-Regular(series), or
+-# remove_fonts /usr/local/share/fonts/TrueType/bsmi00lp.ttf.
+-#
+-# We won't delete font files, since the AbiWord module solely
+-# depends on other modules like xttfm or ghostscript6, font
+-# files should be managed by them, not here.
+-#
+-remove_fonts()
++# Get Unicode fontmap
++get_unicode_fontmap()
+ {
+-    for f in $@; do
+-		  case $f in
+-		  *.[Tt][Tt][CcFf])
+-				i=`basename $f`
+-				psnamelist=`$TTFM --list $GSMODULE |grep $i |cut -d '(' -f 1`
+-				if [ -z "$psnamelist" ]; then
+-					 echo "$f is not installed"
+-					 continue
+-				else
+-				for psname in $psnamelist; do
+-					 for fontsdir in $fontsdirlist; do
+-						  sed -e "/^$psname/d" $fontsdir > $TEMPFILE
+-						  num=`cat $TEMPFILE |wc -l`
+-						  num=`expr $num - 1`
+-						  sed -e "1s/.*/$num/g" $TEMPFILE > $fontsdir
+-					 done
+-				done
+-				fi
+-		  ;;
+-		  *)
+-				for fontsdir in $fontsdirlist; do
+-					 sed -e "/$f/d" $fontsdir > $TEMPFILE
+-					 num=`cat $TEMPFILE |wc -l`
+-					 num=`expr $num - 1`
+-					 sed -e "1s/.*/$num/g" $TEMPFILE > $fontsdir
+-				done
+-		  ;;
+-		  esac
++    j=1; n=0
++    while [ $j -le $TTFINFO_MAPNUM ]; do
++        eval "fontmap=\$TTFINFO_FONTMAP$j"
++        if (echo $fontmap | grep -q big5); then
++            eval "NAMEEXT$n=_big5; TBL$n=UBig5"; n=$(($n+1))
++        elif (echo $fontmap | grep -q gb); then
++            eval "NAMEEXT$n=_gb; TBL$n=UGB"; n=$(($n+1))
++        elif (echo $fontmap | grep -q jisx0208); then
++            eval "NAMEEXT$n=_jis; TBL$n=UJIS"; n=$(($n+1))
++        elif (echo $fontmap | grep -q ksc5601); then
++            eval "NAMEEXT$n=_ksc; TBL$n=UKS"; n=$(($n+1))
++        fi
++        j=$(($j+1))
++    done
++  # do not append ext if only one fontmap found
++    [ $n -eq 1 ] && NAMEEXT0=""
++
++    j=0
++    while [ $j -lt $n ]; do
++        eval "NAME$j=$font\$NAMEEXT$j"
++        j=$(($j+1))
+     done
+ }
+ 
+ 
+-#
+ # Add ttf fonts
+-#
+-# This script won't do the low-level work for both X Window or Ghostscript,
+-# such as adding fonts.dir or ps font entries.  It just calls $TTFM with
+-# appropriate modules.  All file handlings will be managed by those modules.
+-#
+ add_fonts()
+ {
+-	 for addfile in $@; do
+-		  # Some sanity checking
+-		  if [ ! -r "$addfile" ]; then
+-				echo "$addfile does not exist, skipped."
+-				continue
+-		  fi
+-		  if [ -z "`echo $addfile |grep -i -e ".*tt[cf]$"`" ]; then
+-				echo "$addfile is not a TTF, skipped."
+-				continue
+-		  fi
+-		  # Those modules will manage if fonts are already installed.
+-		  $TTFM --add $XMODULE $addfile
+-		  $TTFM --add $GSMODULE $addfile
+-
+-		  f="`basename "$addfile"`"
+-		  xlfd="`$TTFM --list $XMODULE |grep $f |sed -e "/iso/d" -e "s/$f //g" |sort |uniq`"
+-		  encoding=`echo $xlfd |cut -d '-' -f 14-15`
+-		  subdir="`printf "$ed_table" |awk -F "," -v i=$encoding '{dir[$2]=$1} END {print dir[i]}'`"
+-		  cidname="`$TTFM --list $GSMODULE |grep $f |cut -d '(' -f 1 |sed -e "/^Default/d"`"
+-		  psname="$cidname"-"`printf "$ep_table" |awk -F "," -v i=$encoding '{ps[$1]=$2} END {print ps[i]}'`"
+-
+-		  if [ ! -d $ABIFontPath/$subdir ]; then
+-				mkdir -p $ABIFontPath/$subdir
+-		  fi
+-		  touch $ABIFontPath/$subdir/.already-in-fp
+-		  if [ ! -r $ABIFontPath/$subdir/fonts.dir ]; then
+-				echo 0 > $ABIFontPath/$subdir/fonts.dir
+-		  fi
+-		  num=`head -1 $ABIFontPath/$subdir/fonts.dir`
+-		  cp $ABIFontPath/$subdir/fonts.dir $TEMPFILE
+-		  # There may be spaces in $xlfd, quote it.
+-		  abifont="$psname, $xlfd, $PRINTPARAM"
+-		  echo $abifont >> $TEMPFILE
+-		  echo $abifont |sed -e "s/-medium-r-/-bold-r-/g" >> $TEMPFILE
+-		  echo $abifont |sed -e "s/-medium-r-/-medium-i-/g" >> $TEMPFILE
+-		  echo $abifont |sed -e "s/-medium-r-/-bold-i-/g" >> $TEMPFILE
+-		  num=`cat $TEMPFILE |wc -l`
+-		  num=`expr $num - 1`
+-		  sed -e "1s/.*/$num/g" $TEMPFILE > $ABIFontPath/$subdir/fonts.dir
++    error=0
++    for f in "$@"; do
++        if [ ! -e "$f" ]; then
++            if [ -e "$DEFAULTPATH/$f" ]; then
++                f="$DEFAULTPATH/$f"
++            else
++                echo "Cannot find font $f, ignored!"
++                error=$(($error+1))
++                continue
++            fi
++        fi
++
++        fontfile=`basename $f`
++        eval `echo $fontfile | awk -F. '{ printf "font=%s;ext=%s",\$1,\$2 }'`
++
++        get_ttfinfo $f
++        i=1
++        while [ $i -le $TTFINFO_MAPNUM ]; do
++          eval I1=\$TTFINFO_FONTMAP${i}
++	  I2=`echo $I1|sed -e s/medium-r/bold-r/`
++	  I3=`echo $I1|sed -e s/medium-r/medium-i/`
++	  I4=`echo $I1|sed -e s/medium-r/bold-i/`
++	  J1=`echo $I1|cut -c2-`
++	  J2=`echo $I2|cut -c2-`
++	  J3=`echo $I3|cut -c2-`
++	  J4=`echo $I4|cut -c2-`
++	  MYENC=`echo $I1 | awk -F- '{print $14}'`
++	  case $MYENC in
++	    big5)
++	      # zh-TW
++              grep -v "$J1" $TWABIFONTPATH/fonts.dir |grep -v "$J2" |grep -v "$J3" |grep -v "$J4" |sed -e "1d" > $TEMPFILE.1
++	      echo "${TTFINFO_FONT_PSNAME}-ETen-B5-H, $I1, 880, 120, 1000" > $TEMPFILE.2
++	      echo "${TTFINFO_FONT_PSNAME}-Bold-ETen-B5-H, $I2, 880, 120, 1000" >> $TEMPFILE.2
++	      echo "${TTFINFO_FONT_PSNAME}-Italic-ETen-B5-H, $I3, 880, 120, 1000" >> $TEMPFILE.2
++	      echo "${TTFINFO_FONT_PSNAME}-BoldItalic-ETen-B5-H, $I4, 880, 120, 1000" >> $TEMPFILE.2
++	      if [ "$TTFINFO_FONT_PSNAME" = "ShanHeiSun-Light" ]; then
++		cat $TEMPFILE.2 $TEMPFILE.1 > $TEMPFILE
++	      else
++		cat $TEMPFILE.1 $TEMPFILE.2 > $TEMPFILE
++	      fi
++	      LINE=`wc -l < $TEMPFILE`
++              echo $LINE > $TWABIFONTPATH/fonts.dir
++	      cat $TEMPFILE >> $TWABIFONTPATH/fonts.dir
++	      # zh-HK
++	      I1=`echo $I1 | sed -e 's/-big5-0$/-big5hkscs-0/'`
++	      I2=`echo $I2 | sed -e 's/-big5-0$/-big5hkscs-0/'`
++	      I3=`echo $I3 | sed -e 's/-big5-0$/-big5hkscs-0/'`
++	      I4=`echo $I4 | sed -e 's/-big5-0$/-big5hkscs-0/'`
++	      J1=`echo $I1|cut -c2-`
++	      J2=`echo $I2|cut -c2-`
++	      J3=`echo $I3|cut -c2-`
++	      J4=`echo $I4|cut -c2-`
++              grep -v "$J1" $HKABIFONTPATH/fonts.dir |grep -v "$J2" |grep -v "$J3" |grep -v "$J4" |sed -e "1d" > $TEMPFILE
++	      grep -i '[[:space:]]\+-[^-]\+-[^-]\+HKSCS-' $TEMPFILE > $TEMPFILE.1
++	      grep -vi '[[:space:]]\+-[^-]\+-[^-]\+HKSCS-' $TEMPFILE > $TEMPFILE.2
++	      echo "${TTFINFO_FONT_PSNAME}-HKscs-B5-H, $I1, 880, 120, 1000" > $TEMPFILE.3
++	      echo "${TTFINFO_FONT_PSNAME}-Bold-HKscs-B5-H, $I2, 880, 120, 1000" >> $TEMPFILE.3
++	      echo "${TTFINFO_FONT_PSNAME}-Italic-HKscs-B5-H, $I3, 880, 120, 1000" >> $TEMPFILE.3
++	      echo "${TTFINFO_FONT_PSNAME}-BoldItalic-HKscs-B5-H, $I4, 880, 120, 1000" >> $TEMPFILE.3
++	      if ( echo $I1 | grep -qi '^-[^-]\+-[^-]*HKSCS-' ); then
++		if [ "$TTFINFO_FONT_PSNAME" = "InnMing-Light" ]; then
++		  cat $TEMPFILE.3 $TEMPFILE.1 $TEMPFILE.2 > $TEMPFILE
++		else
++		  cat $TEMPFILE.1 $TEMPFILE.3 $TEMPFILE.2 > $TEMPFILE
++		fi
++	      elif [ "$TTFINFO_FONT_PSNAME" = "ShanHeiSun-Light" ]; then
++		cat $TEMPFILE.1 $TEMPFILE.3 $TEMPFILE.2 > $TEMPFILE
++	      else
++		cat $TEMPFILE.1 $TEMPFILE.2 $TEMPFILE.3 > $TEMPFILE
++	      fi
++	      LINE=`wc -l < $TEMPFILE`
++              echo $LINE > $HKABIFONTPATH/fonts.dir
++	      cat $TEMPFILE >> $HKABIFONTPATH/fonts.dir
++	    ;;
++	    gb2312.1980)
++	      # zh-CN
++              grep -v "$J1" $CNABIFONTPATH/fonts.dir|grep -v "$J2"|grep -v "$J3"|grep -v "$J4"|sed -e "1d" > $TEMPFILE
++	      echo "${TTFINFO_FONT_PSNAME}-GB-EUC-H, $I1, 880, 120, 1000" >> $TEMPFILE
++	      echo "${TTFINFO_FONT_PSNAME}-Bold-GB-EUC-H, $I2, 880, 120, 1000" >> $TEMPFILE
++	      echo "${TTFINFO_FONT_PSNAME}-Italic-GB-EUC-H, $I3, 880, 120, 1000" >> $TEMPFILE
++	      echo "${TTFINFO_FONT_PSNAME}-BoldItalic-GB-EUC-H, $I4, 880, 120, 1000" >> $TEMPFILE
++	      LINE=`wc -l < $TEMPFILE`
++              echo $LINE > $CNABIFONTPATH/fonts.dir
++	      cat $TEMPFILE >> $CNABIFONTPATH/fonts.dir
++	      # zh-CN.GBK
++	      I1=`echo $I1 | sed -e 's/-gb2312.1980-0$/-gbk-0/'`
++	      I2=`echo $I2 | sed -e 's/-gb2312.1980-0$/-gbk-0/'`
++	      I3=`echo $I3 | sed -e 's/-gb2312.1980-0$/-gbk-0/'`
++	      I4=`echo $I4 | sed -e 's/-gb2312.1980-0$/-gbk-0/'`
++	      J1=`echo $I1|cut -c2-`
++	      J2=`echo $I2|cut -c2-`
++	      J3=`echo $I3|cut -c2-`
++	      J4=`echo $I4|cut -c2-`
++              grep -v "$J1" $CNABIFONTPATH.GBK/fonts.dir |grep -v "$J2" |grep -v "$J3" |grep -v "$J4" |sed -e "1d" > $TEMPFILE
++	      echo "${TTFINFO_FONT_PSNAME}-GBK-EUC-H, $I1, 880, 120, 1000" >> $TEMPFILE
++	      echo "${TTFINFO_FONT_PSNAME}-Bold-GBK-EUC-H, $I2, 880, 120, 1000" >> $TEMPFILE
++	      echo "${TTFINFO_FONT_PSNAME}-Italic-GBK-EUC-H, $I3, 880, 120, 1000" >> $TEMPFILE
++	      echo "${TTFINFO_FONT_PSNAME}-BoldItalic-GBK-EUC-H, $I4, 880, 120, 1000" >> $TEMPFILE
++	      LINE=`wc -l < $TEMPFILE`
++              echo $LINE > $CNABIFONTPATH.GBK/fonts.dir
++	      cat $TEMPFILE >> $CNABIFONTPATH.GBK/fonts.dir
++            ;;
++#	    ksc5601.1987)
++#	      echo
++#	    ;;
++#	    jisx0208.1983|jisx0201.1976)
++#	      echoC "todo"
++#	    ;;
++	  esac
++          i=$(($i+1))     # Linux should use bash...:)
++        done
+     done
++    return $error
+ }
+ 
+ 
+-#
+-# Set default font, accept kai or ming(default) only, all others will be
+-# treated as ming, eg.
+-# "setdefault kai /usr/local/share/fonts/TrueType/bkai00mp.ttf".
+-#
+-# setdefault() causes chain effects, ie. setdefault() in AbiWord WILL
+-# make that font default both in X Window or Ghostscript.  While we can
+-# make AbiWord's default font an ordinary TTF in X Window, it's hard
+-# to do so do so with Ghostscript.
+-#
+-# One implication of this behaviour is that the default fonts of Abiword,
+-# Ghostscript, and X Window have to be the same.  If they're not in sync,
+-# strange problems may arise.
+-#
+-setdefault()
++# Remove ttf fonts
++remove_fonts()
+ {
+-	 face=$1
+-	 addfile=$2
+-	 # Some sanity checking
+-	 if [ ! -r "$addfile" ]; then
+-		  echo "$addfile does not exist, skipped."
+-		  continue
+-	 fi
+-	 if [ -z "`echo $addfile |grep -i -e ".*tt[cf]$"`" ]; then
+-		  echo "$addfile is not a TTF, skipped."
+-		  continue
+-	 fi
+-	 # Those modules will manage if fonts are already installed.
+-	 $TTFM --add $XMODULE $addfile
+-	 $TTFM --add $GSMODULE $addfile
+-	 if [ "$face" = "kai" ]; then
+-		  $TTFM --setdefault_kai $XMODULE $addfile
+-		  $TTFM --setdefault_kai $GSMODULE $addfile
+-	 else
+-		  $TTFM --setdefault $XMODULE $addfile
+-		  $TTFM --setdefault $GSMODULE $addfile
+-	 fi
+-
+-	 f="`basename "$addfile"`"
+-	 # We know it's default, but which encoding is unknown.
+-	 xlfd="`$TTFM --list $XMODULE |grep $f |sed -e "/iso/d" -e "s/$f //g" |sort |uniq`"
+-	 encoding=`echo $xlfd |cut -d '-' -f 14-15`
+-	 subdir="`printf "$ed_table" |awk -F "," -v i=$encoding '{dir[$2]=$1} END {print dir[i]}'`"
+-	 cidname="`$TTFM --list $GSMODULE |grep -e "^Default.*$f" |cut -d '(' -f 1`"
+-	 psname="$cidname"-"`printf "$ep_table" |awk -F "," -v i=$encoding '{ps[$1]=$2} END {print ps[i]}'`"
+-
+-	 if [ ! -d $ABIFontPath/$subdir ]; then
+-		  mkdir -p $ABIFontPath/$subdir
+-	 fi
+-	 touch $ABIFontPath/$subdir/.already-in-fp
+-	 if [ ! -r $ABIFontPath/$subdir/fonts.dir ]; then
+-		  echo 0 > $ABIFontPath/$subdir/fonts.dir
+-	 fi
+-	 cp $ABIFontPath/$subdir/fonts.dir $TEMPFILE
+-	 # There may be spaces in $xlfd, quote it.
+-	 abifont="$psname, $xlfd, $PRINTPARAM"
+-	 echo $abifont >> $TEMPFILE
+-	 echo $abifont |sed -e "s/-medium-r-/-bold-r-/g" >> $TEMPFILE
+-	 echo $abifont |sed -e "s/-medium-r-/-medium-i-/g" >> $TEMPFILE
+-	 echo $abifont |sed -e "s/-medium-r-/-bold-i-/g" >> $TEMPFILE
+-	 num=`cat $TEMPFILE |wc -l`
+-	 num=`expr $num - 1`
+-	 sed -e "1s/.*/$num/g" $TEMPFILE > $ABIFontPath/$subdir/fonts.dir
++    error=0
++    for f in "$@"; do
++        if [ ! -e "$f" ]; then
++            if [ -e "$DEFAULTPATH/$f" ]; then
++                f="$DEFAULTPATH/$f"
++            else
++                echo "Cannot find font $f, ignored!"
++                error=$(($error+1))
++                continue
++            fi
++        fi
++
++        fontfile=`basename $f`
++        eval `echo $fontfile | awk -F. '{ printf "font=%s;ext=%s",\$1,\$2 }'`
++
++        get_ttfinfo $f
++        i=1
++        while [ $i -le $TTFINFO_MAPNUM ]; do
++          eval I1=\$TTFINFO_FONTMAP${i}
++	  I2=`echo $I1|sed -e s/medium-r/bold-r/`
++	  I3=`echo $I1|sed -e s/medium-r/medium-i/`
++	  I4=`echo $I1|sed -e s/medium-r/bold-i/`
++	  J1=`echo $I1|cut -c2-`
++	  J2=`echo $I2|cut -c2-`
++	  J3=`echo $I3|cut -c2-`
++	  J4=`echo $I4|cut -c2-`
++	  MYENC=`echo $I1 | awk -F- '{print $14}'`
++	  case $MYENC in
++	    big5)
++	      # zh-TW
++              grep -v "$J1" $TWABIFONTPATH/fonts.dir |grep -v "$J2" |grep -v "$J3" |grep -v "$J4" |sed -e "1d" > $TEMPFILE
++	      LINE=`wc -l < $TEMPFILE`
++              echo $LINE > $TWABIFONTPATH/fonts.dir
++	      cat $TEMPFILE >> $TWABIFONTPATH/fonts.dir
++	      # zh-HK
++	      I1=`echo $I1 | sed -e 's/-big5-0$/-big5hkscs-0/'`
++	      I2=`echo $I2 | sed -e 's/-big5-0$/-big5hkscs-0/'`
++	      I3=`echo $I3 | sed -e 's/-big5-0$/-big5hkscs-0/'`
++	      I4=`echo $I4 | sed -e 's/-big5-0$/-big5hkscs-0/'`
++	      J1=`echo $I1|cut -c2-`
++	      J2=`echo $I2|cut -c2-`
++	      J3=`echo $I3|cut -c2-`
++	      J4=`echo $I4|cut -c2-`
++              grep -v "$J1" $HKABIFONTPATH/fonts.dir |grep -v "$J2" |grep -v "$J3" |grep -v "$J4" |sed -e "1d" > $TEMPFILE
++	      LINE=`wc -l < $TEMPFILE`
++              echo $LINE > $HKABIFONTPATH/fonts.dir
++	      cat $TEMPFILE >> $HKABIFONTPATH/fonts.dir
++	    ;;
++	    gb2312.1980)
++	      # zh-CN
++              grep -v "$J1" $CNABIFONTPATH/fonts.dir|grep -v "$J2"|grep -v "$J3"|grep -v "$J4"|sed -e "1d" > $TEMPFILE
++	      LINE=`wc -l < $TEMPFILE`
++              echo $LINE > $CNABIFONTPATH/fonts.dir
++	      cat $TEMPFILE >> $CNABIFONTPATH/fonts.dir
++	      # zh-CN.GBK
++	      I1=`echo $I1 | sed -e 's/-gb2312.1980-0$/-gbk-0/'`
++	      I2=`echo $I2 | sed -e 's/-gb2312.1980-0$/-gbk-0/'`
++	      I3=`echo $I3 | sed -e 's/-gb2312.1980-0$/-gbk-0/'`
++	      I4=`echo $I4 | sed -e 's/-gb2312.1980-0$/-gbk-0/'`
++	      J1=`echo $I1|cut -c2-`
++	      J2=`echo $I2|cut -c2-`
++	      J3=`echo $I3|cut -c2-`
++	      J4=`echo $I4|cut -c2-`
++              grep -v "$J1" $CNABIFONTPATH.GBK/fonts.dir |grep -v "$J2" |grep -v "$J3" |grep -v "$J4" |sed -e "1d" > $TEMPFILE
++	      LINE=`wc -l < $TEMPFILE`
++              echo $LINE > $CNABIFONTPATH.GBK/fonts.dir
++	      cat $TEMPFILE >> $CNABIFONTPATH.GBK/fonts.dir
++            ;;
++#	    ksc5601.1987)
++#	      echo
++#	    ;;
++#	    jisx0208.1983|jisx0201.1976)
++#	      echoC "todo"
++#	    ;;
++	  esac
++          i=$(($i+1))     # Linux should use bash...:)
++        done
++    done
++    return $error
+ }
+ 
+ 
+@@ -306,8 +350,6 @@
+     exit 1
+ fi
+ 
+-check_abiword
+-
+ ARG=$1
+ shift 1
+ 
+@@ -316,52 +358,36 @@
+     Usage
+     ;;
+ --name)
++    echo
+     echo "$NAME $VERSION"
++    echo
+     ;;
+ --list)
+     list_fonts
+     ;;
+ --add)
+     if [ $# -lt 1 ]; then
+-        echo "Missing font filename argument."
++        echo "Missing font filename argument!"
+         Usage
+         exit 1
+     fi
+     add_fonts $@
+-    echo "Adding $@."
++    echo "Done!"
+     ;;
+ --remove)
+     if [ $# -lt 1 ]; then
+-        echo "Missing font filename argument."
++        echo "Missing font filename argument!"
+         Usage
+         exit 1
+     fi
+     remove_fonts $@
+-    echo "Removing $@."
++    echo "Done!"
+     ;;
+ --setdefault|--setdefault_ming)
+-    if [ $# -lt 1 ]; then
+-        echo "Missing font filename arguments."
+-        Usage
+-        exit 1
+-    elif [ $# -gt 1 ]; then
+-        echo "Only need one font filename."
+-        Usage
+-        exit 1
+-    fi
+-    setdefault ming $1
++    echo "No need to set default fonts"
+     ;;
+ --setdefault_kai)
+-    if [ $# -lt 1 ]; then
+-        echo "Missing font filename arguments."
+-        Usage
+-        exit 1
+-    elif [ $# -gt 1 ]; then
+-        echo "Only need one font filename."
+-        Usage
+-        exit 1
+-    fi
+-    setdefault kai $1
++    echo "No need to set default fonts"
+     ;;
+ *)
+     Usage
+@@ -369,7 +395,18 @@
+     ;;
+ esac
+ 
+-rm -f $TEMPFILE
++rm -f $TEMPFILE $TEMPFILE.1 $TEMPFILE.2 $TEMPFILE.3
+ exit 0
+ 
+ 
++# ChangeLog
++#
++# * Fri Jan  12 2001 Chung-Yen Chang <candyz@cle.linux.org.tw>
++# - first release
++#
++# * Tue Sep  4 2001 Anthony Fok <anthony@thizlinux.com>
++# - Added Big5-HKSCS font support thanks to ThizLinux Laboratory Ltd., Thiz
++#   Technology Group.  Also added preliminary GBK support
++# - Use the _real_ PostScript font names, and with Bold, Italic and BoldItalic
++# - List InnMing-Light / HKSCS (zh_HK) or ShanHeiSun-Light (zh_TW) first
++#
