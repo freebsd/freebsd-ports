@@ -110,7 +110,6 @@
     SUBDIR += pgp4pine
     SUBDIR += pgpsendmail
     SUBDIR += pine4
-    SUBDIR += pine4-ssl
     SUBDIR += pmail
     SUBDIR += pop3gwd
     SUBDIR += pop3lite
