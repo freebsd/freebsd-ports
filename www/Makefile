@@ -37,6 +37,7 @@
     SUBDIR += fxhtml
     SUBDIR += g-gcl
     SUBDIR += gn
+    SUBDIR += gnuinfo
     SUBDIR += grail
     SUBDIR += harvest
     SUBDIR += hotjava
@@ -58,7 +59,9 @@
     SUBDIR += lynx-ssl
     SUBDIR += mapedit
     SUBDIR += marc-search
+    SUBDIR += mathopd
     SUBDIR += mhonarc
+    SUBDIR += mod_dav
     SUBDIR += mod_perl
     SUBDIR += momspider
     SUBDIR += mozilla
@@ -78,6 +81,7 @@
     SUBDIR += p5-Apache-Radius
     SUBDIR += p5-CGI
     SUBDIR += p5-CGI_Lite
+    SUBDIR += p5-FastCGI
     SUBDIR += p5-HTML
     SUBDIR += p5-HTML-Parser
     SUBDIR += p5-HTML-QuickCheck
@@ -117,6 +121,7 @@
     SUBDIR += webalizer
     SUBDIR += webcopy
     SUBDIR += webcrawl
+    SUBDIR += webfs
     SUBDIR += webglimpse
     SUBDIR += weblint
     SUBDIR += webstone
