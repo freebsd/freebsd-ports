@@ -180,7 +180,6 @@
     SUBDIR += xfce4-print
     SUBDIR += xmbibtex
     SUBDIR += xmltex
-    SUBDIR += xpp
     SUBDIR += xtem
     SUBDIR += xtexsh
     SUBDIR += yatex
