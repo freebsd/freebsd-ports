@@ -8,7 +8,7 @@
 PORTNAME=	ircd-hybrid
 PORTVERSION=	5.3p8
 CATEGORIES=	irc
-MASTER_SITES=	ftp://ftp.blackened.com/pub/irc/hybrid/
+MASTER_SITES=	ftp://ftp.blackened.com/pub/irc/hybrid/ ftp://ftp.blackened.com/pub/irc/hybrid/old/
 
 MAINTAINER=	desmo@bandwidth.org
 
