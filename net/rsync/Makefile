@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	rsync
-PORTVERSION=	2.5.7
+PORTVERSION=	2.6.0
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://samba.anu.edu.au/pub/rsync/  \
 		ftp://sunsite.auc.dk/pub/unix/rsync/  \
@@ -52,8 +52,8 @@ SED_SCRIPT+=	-e 's,%%PREFIX%%,${PREFIX},g' \
 WITHOUT_SSH?=	yes
 .endif
 
-.if !defined(WITHOUT_SSH)
-CONFIGURE_ARGS+=	--with-rsh=ssh
+.if defined(WITHOUT_SSH)
+CONFIGURE_ARGS+=	--with-rsh=rsh
 .endif
 
 .if ${OSVERSION} >= 400014
