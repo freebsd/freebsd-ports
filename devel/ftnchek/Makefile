@@ -5,14 +5,14 @@
 # $FreeBSD$
 
 PORTNAME=	ftnchek
-PORTVERSION=	2.12.2
+PORTVERSION=	3.0.0
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.netlib.org/fortran/
 DISTFILES=	${PORTNAME}.tgz
 
 MAINTAINER=     kargl@apl.washington.edu
 
-MAN1=		dcl2inc.1 ftnchek.1 ftnpp.1
+MAN1=		dcl2inc.1 ftnchek.1
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_dir_lispdir=${PREFIX}/share/emacs/site-lisp
