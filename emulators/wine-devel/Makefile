@@ -1,14 +1,14 @@
 # New ports collection makefile for:    wine
-# Version required:     960611
-# Date created:         Tue Jun 11 23:16:31 MET DST 1996
+# Version required:     960705
+# Date created:         Sat Jul  6 01:04:35 MET DST 1996
 # Whom:			se
 #
-# $Id: Makefile,v 1.25 1996/05/18 13:05:12 se Exp $
+# $Id: Makefile,v 1.26 1996/06/12 22:24:44 se Exp $
 #
 
-DATE=		960611
+DATE=		960705
 DISTNAME=	Wine-${DATE}
-PKGNAME=	wine-96.06.11
+PKGNAME=	wine-96.07.05
 CATEGORIES+=	emulators x11
 MASTER_SITES=	ftp://sunsite.unc.edu/pub/Linux/ALPHA/wine/development/ \
 		ftp://aris.com/pub/linux/ALPHA/Wine/development/ \
