@@ -764,6 +764,7 @@
     SUBDIR += xitami
     SUBDIR += xpath2rss
     SUBDIR += yaws
+    SUBDIR += zerowait-httpd
     SUBDIR += znavigator
     SUBDIR += zope
     SUBDIR += zope-FileSystemSite

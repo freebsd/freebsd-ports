@@ -1,0 +1,30 @@
+--- Makefile.orig	Wed Oct  6 21:21:53 2004
++++ Makefile	Sun Mar 20 17:31:49 2005
+@@ -2,6 +2,6 @@
+ 
+-ROOT=/var/0W
+-PRIV=nobody:nobody
++ROOT=/var/0W
++PRIV=www:www
+ 
+ SUBDIRS=common httpd
+ 
+@@ -14,7 +14,14 @@
+ 
+ install:
+ 	set -e; for i in $(SUBDIRS); do $(MAKE) -C $$i install; done
+-	test -d $(ROOT) || (mkdir $(ROOT) && cp -R ../bin ../conf ../data ../logs $(ROOT))
+-	test ../bin/0W-httpd -ef $(ROOT)/bin/0W-httpd || cp ../bin/0W-httpd $(ROOT)/bin/0W-httpd
+-	chown -R $(PRIV) $(ROOT)/bin/0W-httpd $(ROOT)/logs $(ROOT)/data
+-	chmod +s $(ROOT)/bin/0W-httpd
++	test -d $(ROOT)/0W-httpd || (mkdir $(ROOT)/0W-httpd)
++	cp -R ../data ../logs $(ROOT)/0W-httpd
++	test ../bin/0W-httpd -ef $(ROOT)/sbin/0W-httpd || cp ../bin/0W-httpd $(ROOT)/sbin/0W-httpd
++	test -d $(ROOT)/etc/0W-httpd || (mkdir $(ROOT)/etc/0W-httpd && cd ../conf/ && \
++									cp countries $(ROOT)/etc/0W-httpd/countries.sample &&	\
++									cp crontab $(ROOT)/etc/0W-httpd/crontab.sample 	&&	\
++									cp httpd.conf $(ROOT)/etc/0W-httpd/httpd.conf.sample &&	\
++									cp httpd.txt $(ROOT)/etc/0W-httpd/httpd.txt.sample &&	\
++									cp ip2country $(ROOT)/etc/0W-httpd/ip2country.sample )
++	chown -R $(PRIV) $(ROOT)/sbin/0W-httpd $(ROOT)/0W-httpd/logs $(ROOT)/0W-httpd/data
++	chmod +s $(ROOT)/sbin/0W-httpd
