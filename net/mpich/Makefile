@@ -3,7 +3,7 @@
 # Date created:		2 May 1998
 # Whom:                 dbader@eece.unm.edu
 #
-# $Id: Makefile,v 1.3 1998/07/27 00:25:29 steve Exp $
+# $Id: Makefile,v 1.4 1998/10/13 23:15:30 jseger Exp $
 #
 
 DISTNAME=	mpich-1.1.1
@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.mcs.anl.gov/pub/mpi/
 
 MAINTAINER=	dbader@eece.unm.edu
 
-SVERSION!=     sysctl -n kern.osreldate
+OSVERSION!=     sysctl -n kern.osreldate
 .if ${OSVERSION} >= 300000
 BROKEN=         MOUNT_NFS undeclared
 .endif
