@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR=	ade/gnu
 DISTNAME=	libtool-${PORTVERSION}
 
 MAINTAINER=	ade@FreeBSD.org
-COMMENT?=	Generic shared library support script
+COMMENT?=	Generic shared library support script (version 1.4)
 
 BUILD_VERSION=	14
 LATEST_LINK?=	libtool${BUILD_VERSION}
