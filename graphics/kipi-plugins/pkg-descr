@@ -1,20 +1,38 @@
-This is a set of plugins that extend the functionality of graphics/digikam.
+Kipi (KDE Image Plugin Interface) is an effort to develop a common plugin 
+structure for Digikam, KimDaBa, Showimg and Gwenview. Its aim is to share 
+image plugins among graphic applications. 
+
+This is a set of plugins using Kipi.
 
 These plugins are included:
  
-RAW CONVERTER PLUGIN : Raw files converter.
-SLIDESHOW PLUGIN : Slide show an album.
-MPEG ENCODER PLUGIN : MPEG images encoder.
-ALBUM HTML EXPORT PLUGIN : Web Albums page creation.
-ALBUM COMMENTS EDITOR PLUGIN : batch images comments editor.
-PRINT WIZARD PLUGIN : Multiples images printing. 
-JPEGLOSSLESS PLUGIN : Batch operations images with JPEG loss less.
-CD ARCHIVING PLUGIN : CD/DVD albums archiving.
-SCANIMAGES PLUGIN : Images acquisitions with a scanner.
-SENDIMAGES PLUGIN : Send images by mail.
-MISCSOPERATIONS PLUGIN : Adding some miscs options in Digikam.
+RawConverter: A raw image converter for digital cameras. 
+SlideShow: Slideshow with effects ripped out from kslideshow and 3D effects 
+  using OpenGL. 
+MpegEncoder: Create an MPEG slideshow from your images. 
+ImagesGallery: An HTML gallery generator. 
+PrintWizard: A wizard to print images in various format. 
+JpegLossLess: Batch process your JPEG images without losing meta information 
+  and compression. 
+CdArchiving: Archive your albums on CD or DVD using K3b. 
+ScanImages: Scanner management using Kooka. 
+ScreenshotImages: Snap screen based on KSnapshot and adapted to Kipi. 
+Calendar: A plugin to create calendars. 
+SendImages: A plugin to send images by email, allowing resizing and 
+  recompressing before sending. 
+RenameImages: Batch image renamer. 
+ConvertImages: Batch image converter. 
+BorderImages: Add border to your images in batch. 
+FilterImages: Batch image enhancer using digital filters. 
+ColorImages: Batch image color enhancer. 
+EffectImages: Batch image transformation effects. 
+ResizeImages: Batch image resizer. 
+RecompressImages: Batch image recompressor. 
+FindDuplicateImages: Find duplicate images in albums. 
+WallPaper: Set your image as wallpaper. 
+TimeAdjust: Adjust image file time and date. 
 
-WWW: http://digikam.sourceforge.net/
+WWW: http://extragear.kde.org/apps/kipi.php
 
 - Arjan
 avleeuwen@piwebs.com
