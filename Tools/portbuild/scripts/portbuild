@@ -25,8 +25,8 @@ export WRKDIRPREFIX=/tmp
 # don't pass -j, -k etc. to sub-makes
 unset MAKEFLAGS
 unset PORTSDIR
-# wait 1800 seconds before killing build with no output
-export TIMEOUT=1800
+# wait 3600 seconds before killing build with no output
+export TIMEOUT=3600
 # to prevent runaway processes -- 256 meg file size limit, one hour CPU limit
 ulimit -f 524288
 ulimit -t 3600
@@ -78,12 +78,12 @@ fi
 case ${branch} in
   5*)
 #    export OSREL=5.0
-    export OSVERSION=500011
+    export OSVERSION=500017
     # export PORTOBJFORMAT=elf
     ;;
   4*)
-    # export OSREL=4.1
-    # export OSVERSION=410002
+    # export OSREL=4.2
+    # export OSVERSION=420001
     # export PORTOBJFORMAT=elf
     ;;
   3*)
@@ -136,7 +136,7 @@ if [ ${found} != 1 ]; then
 
   mkdir -p ${chroot}/used
   touch ${chroot}/used/${pkgname}
-  tar -C ${chroot} -xf ${bindist}
+  tar -C ${chroot} -xpf ${bindist}
 
   # to be able to run ps and killall inside chroot area
   cp -p /bin/ps ${chroot}/bin
