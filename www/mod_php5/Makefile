@@ -31,8 +31,7 @@ PHP_DISTDIR=	distributions
 
 SLAVEDIRS=	lang/php4
 
-USE_AUTOCONF=	yes
-GNU_CONFIGURE=	yes
+USE_AUTOCONF_VER=213
 
 .if !defined(BATCH) && !defined(PACKAGE_BUILDING)
 IS_INTERACTIVE=	yes

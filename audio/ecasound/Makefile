@@ -15,9 +15,7 @@ MASTER_SITE_SUBDIR=	ecasound
 MAINTAINER=	anarcat@anarcat.dyndns.org
 
 USE_GMAKE=	yes
-USE_AUTOMAKE=	yes
-USE_AUTOCONF=	yes
-
+USE_AUTOMAKE_VER=14
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 

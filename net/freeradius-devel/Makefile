@@ -17,7 +17,7 @@ MAINTAINER=	wollman@lcs.mit.edu
 
 WRKSRC=		${WRKDIR}/freeradius-alpha-snapshot-${PORTVERSION}
 
-USE_AUTOCONF=	YES
+USE_AUTOCONF_VER=213
 USE_LIBTOOL=	YES
 USE_GMAKE=	YES
 

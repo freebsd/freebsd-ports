@@ -16,7 +16,7 @@ MAINTAINER=	makoto@pinpott.spnet.ne.jp
 
 USE_XLIB=	yes
 USE_GMAKE=	yes
-USE_AUTOMAKE=	yes
+USE_AUTOMAKE_VER=14
 CONFIGURE_ARGS=	--datadir=${PREFIX}/lib \
 		--with-setgid=${SHAREGRP}
 

@@ -20,10 +20,9 @@ BUILD_DEPENDS=	xmkmf:${PORTSDIR}/devel/imake-4
 VFLIB_VERSION=	2.25.2
 PLIST_SUB=	VFLIB_VERSION=${VFLIB_VERSION}
 
-GNU_CONFIGURE=	yes
 USE_FREETYPE=	yes
 USE_XLIB=	yes
-USE_AUTOCONF=	yes
+USE_AUTOCONF_VER=213
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--with-freetype \
 		--with-freetype-includedir=${PREFIX}/include/freetype \

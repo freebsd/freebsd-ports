@@ -55,8 +55,8 @@ pre-configure:
 .if !defined(WITH_GLX)
 	@${ECHO_MSG} "Define WITH_GLX to use GLX (otherwise it is explicitly disabled!)"
 .endif
-	@cd ${WRKSRC} ; aclocal
-	@cd ${WRKSRC} ; autoheader213
+	@cd ${WRKSRC} ; ${ACLOCAL}
+	@cd ${WRKSRC} ; ${AUTOHEADER}
 
 do-install:
 	@${CP} ${PKGDIR}/pkg-plist ${PLIST}

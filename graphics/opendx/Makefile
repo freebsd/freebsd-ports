@@ -20,14 +20,13 @@ LIB_DEPENDS=	Magick.5:${PORTSDIR}/graphics/ImageMagick \
 		netcdf.1:${PORTSDIR}/math/netcdf \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
-USE_AUTOMAKE=	yes
 USE_BISON=	yes
 USE_GMAKE=	yes
 USE_MESA=	yes
 USE_MOTIF=	yes
 USE_NEWGCC=	yes
 USE_XLIB=	yes
-AUTOMAKE_ARGS=	-a -i
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-magick
 CONFIGURE_ENV=	ARCH="" \
 		CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS} -I${PREFIX}/include" \
@@ -39,9 +38,6 @@ PLIST_SUB=	ARCH=${OPSYS:L}
 
 post-patch:
 	@${RM} -f ${WRKSRC}/include/stamp-h.in
-
-pre-configure:
-	@cd ${WRKSRC} && ${ACLOCAL} && ${SETENV} ${CONFIGURE_ENV} ${AUTOHEADER}
 
 post-configure:
 	${PERL} -pi -e "s;flex ;flex -l ;g" ${WRKSRC}/src/uipp/dxuilib/Makefile

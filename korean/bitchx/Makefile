@@ -21,7 +21,7 @@ MAINTAINER=	hollywar@mail.holywar.net
 
 WRKSRC=		${WRKDIR}/BitchX
 
-USE_AUTOCONF=	yes
+USE_AUTOCONF_VER=213
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	--with-plugins \
 		--exec-prefix="${PREFIX}/share"	\
