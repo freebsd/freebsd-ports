@@ -283,7 +283,6 @@ rtc_poll(dev_t dev, int events, struct proc *p)
 	if (events) {
 		DLog(Linfo, "Delay for %d usec", delay);
 		if (sc->var.woken) {
-			sc->var.woken = 0;
 			revents = events;
 		} else {
 			selrecord(p, &sc->var.sip);
@@ -296,7 +295,7 @@ int
 rtc_read(dev_t dev, struct uio *uio, int flags __unused)
 {
 	struct rtc_softc *sc = (struct rtc_softc *) dev->si_drv1;
-	int error;
+	int error = 0;
 	
 	if (!sc->var.flags.enabled) 
 		return 0;
@@ -305,9 +304,18 @@ rtc_read(dev_t dev, struct uio *uio, int flags __unused)
 		return EAGAIN;
 
 	DLog(Linfo, "Delay for %d usec", delay);
-	error = tsleep(&sc->var.rtc_ident, PCATCH, "rtc rd", hz * 10);
+	if (sc->var.woken == 0)
+		tsleep(&sc->var.rtc_ident, PCATCH, "rtc rd", hz * 10);
+#if 0
+	if (sc->var.woken > 1)
+		printf("woken: %d\n", sc->var.woken);
+#endif
+
+	if (uio->uio_resid == sizeof(int)) {
+		error = uiomove(&sc->var.woken, sizeof(int), uio);
+	}
 	sc->var.woken = 0;
-	return 0;
+	return error;
 }
 
 /* -=-=-=-=-=-=-=-=-= module load/unload stuff -=-=-=-=-=-=-=-=-= */
@@ -380,7 +388,7 @@ rtc_callback(void *xtp)
 	if (callout_pending(&sc->var.rtc_handle) || !callout_active(&sc->var.rtc_handle))
 		return;
 	/* Wakeup sleepers */
-	sc->var.woken = 1;
+	sc->var.woken++;
 	selwakeup(&sc->var.sip);
 	wakeup(&sc->var.rtc_ident);
 
