@@ -1,0 +1,40 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+PATH=/bin:/usr/bin:/usr/sbin
+
+case $2 in
+
+PRE-INSTALL)
+  echo "---> Starting pre-install script:"
+
+  if pw showgroup "%%GROUP%%" 2>/dev/null; then
+    echo "---> Using existing group \"%%GROUP%%\""
+  else
+    echo "---> Adding group \"%%GROUP%%\""
+    pw addgroup %%GROUP%% -h - || exit 1
+  fi
+
+  # Create user if required
+  if pw showuser "%%USER%%" 2>/dev/null; then
+    echo "---> Using existing user \"%%USER%%\""
+  else
+    echo "---> Adding user \"%%USER%%\""
+    pw adduser %%USER%% -g %%GROUP%% -h - \
+      -d "%%LOGDIR%%" -s "/sbin/nologin" -c "daapd User" || exit 1
+  fi
+
+  ;;
+
+POST-INSTALL)
+  echo "---> Starting post-install script:"
+
+  echo "---> Creating directory \"%%LOGDIR%%\""
+  mkdir %%LOGDIR%%
+  chown %%USER%% %%LOGDIR%%
+
+  ;;
+
+esac
