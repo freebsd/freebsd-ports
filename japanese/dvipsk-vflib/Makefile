@@ -7,13 +7,14 @@
 
 PORTNAME=	dvipsk
 PORTVERSION=	5.78a
-PKGNAMESUFFIX=	-vflib
+PORTREVISION=	1
 CATEGORIES=	japanese print
 MASTER_SITES=	ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/dvips/ \
 		ftp://ftp.center.osaka-u.ac.jp/CTAN/dviware/dvipsk/ \
 		ftp://ftp.riken.go.jp/pub/CTAN/dviware/dvipsk/ \
 		ftp://ftp.u-aizu.ac.jp/pub/tex/CTAN/dviware/dvipsk/ \
 		http://math.shinshu-u.ac.jp/~nakayama/howto/tex/
+PKGNAMESUFFIX=	-vflib
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		dvipsk-jpatch-p1.4d.tar.gz \
 		${PORTNAME}${PKGNAMESUFFIX}-1.1alpha.patch.tgz
