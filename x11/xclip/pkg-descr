@@ -1,0 +1,18 @@
+xclip is a command line utility that is designed to run on any system with an
+X11 implementation. It provides an interface to X selections ("the clipboard")
+from the command line. It can read data from standard in or a file and place it
+in an X selection for pasting into other X applications. xclip can also print
+an X selection to standard out, which can then be redirected to a file or
+another program.
+
+FEATURES
+========
+
+* Reads data piped to standard in or files given as arguments
+* Prints contents of selection to standard out
+* Accesses the XA_PRIMARY, XA_SECONDARY or XA_CLIPBOARD selection
+* Supports the INCR mechanism for large transfers
+* Connects to the X display in $DISPLAY, or specified with -display host:0 
+* Waits for selection requests in the background
+
+WWW: http://people.debian.org/~kims/xclip/
