@@ -7,6 +7,7 @@
 
 PORTNAME=	grip
 PORTVERSION=	2.96
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.nostatic.org/grip/
 EXTRACT_SUFX=	.tgz
@@ -14,6 +15,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 
 USE_GMAKE=	yes
+USE_X_PREFIX=	yes
 USE_GTK=	yes
 ALL_TARGET=	gripnopar gcd
 MAN1=		grip.1
