@@ -1,6 +1,8 @@
 bin/tin
 @exec ln -fs %f %B/rtin
 @unexec rm -f %B/rtin
+@unexec if cmp -s %D/etc/tin.defaults %D/etc/tin.defaults.dist; then rm -f %D/etc/tin.defaults; fi
 etc/tin.defaults.dist
+@exec [ -f %B/tin.defaults ] || cp %B/%f %B/tin.defaults
 share/locale/de/LC_MESSAGES/tin.mo
 share/locale/et/LC_MESSAGES/tin.mo
