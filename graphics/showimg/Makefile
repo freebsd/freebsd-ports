@@ -7,25 +7,29 @@
 #
 
 PORTNAME=	showimg
-PORTVERSION=	0.8.20030305
+PORTVERSION=	0.8.0
+PORTEPOCH=	1
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.jalix.org/projects/showimg/download/0.8-Beta2/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.20/-20/}
+MASTER_SITES=	http://www.jalix.org/projects/showimg/download/${PORTVERSION}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A picture viewer designed to run under KDE 3.x
 
-LIB_DEPENDS=	png:${PORTSDIR}/graphics/png \
-		jpeg:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
+		png.5:${PORTSDIR}/graphics/png
 
-USE_KDEBASE_VER=3
-USE_REINPLACE=	yes
-GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 USE_BZIP2=	yes
-CONFIGURE_ARGS+=	--program-prefix=''
+USE_KDEBASE_VER=	3
+USE_REINPLACE=	yes
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ARGS=	--with-xinerama
 
-#post-patch:
-#	@${REINPLACE_CMD} -e "s,-lpthread,${PTHREAD_LIBS},g" ${WRKSRC}/showimg/Makefile.in
+MAN1=		showimg.1
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|-pedantic||g ; \
+		 s|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>

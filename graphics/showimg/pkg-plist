@@ -111,49 +111,15 @@ share/icons/hicolor/32x32/actions/viewmag_w.png
 share/icons/hicolor/32x32/apps/showimg.png
 share/icons/hicolor/48x48/apps/showimg.png
 share/icons/hicolor/64x64/apps/showimg.png
+share/locale/cs/LC_MESSAGES/showimg.mo
 share/locale/de/LC_MESSAGES/showimg.mo
 share/locale/es/LC_MESSAGES/showimg.mo
 share/locale/fr/LC_MESSAGES/showimg.mo
 share/locale/it/LC_MESSAGES/showimg.mo
 share/locale/ja/LC_MESSAGES/showimg.mo
 share/locale/nl/LC_MESSAGES/showimg.mo
+share/locale/sk/LC_MESSAGES/showimg.mo
 share/locale/sv/LC_MESSAGES/showimg.mo
 @dirrm share/doc/HTML/en/showimg
-@dirrm share/doc/HTML/en
 @dirrm share/doc/HTML/de/showimg
-@dirrm share/doc/HTML/de
-@dirrm share/doc/HTML
-@dirrm share/icons/hicolor/16x16/actions
-@dirrm share/icons/hicolor/16x16
-@dirrm share/icons/hicolor/22x22/actions
-@dirrm share/icons/hicolor/22x22
-@dirrm share/icons/hicolor/32x32/actions
-@dirrm share/icons/hicolor/32x32/apps
-@dirrm share/icons/hicolor/32x32
-@dirrm share/icons/hicolor/48x48/apps
-@dirrm share/icons/hicolor/48x48
-@dirrm share/icons/hicolor/64x64/apps
-@dirrm share/icons/hicolor/64x64
-@dirrm share/icons/hicolor
-@dirrm share/icons
 @dirrm share/apps/showimg
-@dirrm share/apps/konqueror/servicemenus
-@dirrm share/apps/konqueror
-@dirrm share/apps
-@dirrm share/applnk/Graphics
-@dirrm share/applnk
-@dirrm share/locale/de/LC_MESSAGES
-@dirrm share/locale/de
-@dirrm share/locale/fr/LC_MESSAGES
-@dirrm share/locale/fr
-@dirrm share/locale/it/LC_MESSAGES
-@dirrm share/locale/it
-@dirrm share/locale/es/LC_MESSAGES
-@dirrm share/locale/es
-@dirrm share/locale/ja/LC_MESSAGES
-@dirrm share/locale/ja
-@dirrm share/locale/nl/LC_MESSAGES
-@dirrm share/locale/nl
-@dirrm share/locale/sv/LC_MESSAGES
-@dirrm share/locale/sv
-@dirrm share/locale
