@@ -14,6 +14,8 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
 
+RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
+
 USE_PERL5=	yes
 USE_XLIB=	yes
 NO_BUILD=	yes
