@@ -440,6 +440,8 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  ${LOCALBASE} and %%X11BASE%% for ${X11BASE}.
 # DOCSDIR		- Name of the directory to install the packages docs in
 #				  (default: ${PREFIX}/share/doc/${PORTNAME}).
+# EXAMPLESDIR		- Name of the directory to install the packages examples in
+#				  (default: ${PREFIX}/share/examples/${PORTNAME}).
 # DATADIR		- Name of the directory to install the packages shared data
 #				  in (default: ${PREFIX}/share/${PORTNAME}).
 # 
@@ -1397,6 +1399,7 @@ LDCONFIG_RUNLIST!=	${ECHO} ${LDCONFIG_PLIST} | ${SED} -e "s!%D!${PREFIX}!g"
 .endif
 
 DOCSDIR?=	${PREFIX}/share/doc/${PORTNAME}
+EXAMPLESDIR?=	${PREFIX}/share/examples/${PORTNAME}
 DATADIR?=	${PREFIX}/share/${PORTNAME}
 
 .MAIN: all
