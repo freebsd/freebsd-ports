@@ -4,17 +4,16 @@
 # In case you don't know the exact coordinates, you might find it at 
 # http://www.heavens-above.com/
 #
-# Style (sorted from east to west):
+# Style (sorted from east to west): sort -n -r -k 2
 # Lat,		Long,		"name"	opt			# location
 
- 48.90,		2.283,		"mich"				# Levallois-Perret, France
 -34.05,		151.15,		"edwin"				# Cronulla, Australia
 -33.55,		151.1,		"bde"				# Sydney, Australia.
 -37.7,		144.9,		"jb,danny,thepish,benno"	# Melbourne, Vic Australia
  35.16,		139.67,		"            ,tanimura"		# Yokosuka, Kanagawa, Japan
  35.7,		139.6,		"     knu"			# Tokyo, Japan
  35.54,		139.53,		"        ,ume"			# Yokohama, Kanagawa, Japan
- 35.36,		139.31,		"                     ,daichi"		# Kawasaki, Kanagawa, Japan
+ 35.36,		139.31,		"                     ,daichi"	# Kawasaki, Kanagawa, Japan
 -34.14,		138.77,		"grog"				# (CORE) Echunga, SA Australia
 -34.53,		138.35,		"newton, markp"	align=left	# Adelaide, SA Australia
  35.02,		137.07,		"sada   " align=left		# Toyota, Aichi, Japan
@@ -42,7 +41,6 @@
  43.71,		10.40,		"luigi"				# Pisa, Italy
  56.150,	10.217,		"erwin"				# Aarhus, Denmark
  57.2,		10.2,		"sos"				# Klokkerholm, Denmark
- 51.27615,	1.0071,		"jesper"			# Reading, United Kingdom
  53.56,		10.02,		"cracauer"			# Hamburg, Germany
  53.64,		9.84,		"hm"		align=left	# Rellingen, Germany
  53.33,		9.59,		"stb"				# Hamburg, Germany
@@ -61,32 +59,34 @@
  51.25,		5.30,		"guido"		align=left	# Eindhoven, the Netherlands
  48.36,		2.99,		"charnier"	align=left	# Cannes Ecluse, France
  48.87,		2.33,		"roberto"	align=left	# Paris, France
+ 48.90,		2.283,		"mich"				# Levallois-Perret, France
+ 51.27615,	1.0071,		"jesper"			# Reading, United Kingdom
  50.84121667,	0.128383333,	"joe"				# Brighton, East Sussex, UK
  52.2035,	0.1200,		"fanf"				# Cambridge, UK
  51.5,		0.0,		" dfr"				# London, UK
  51.0,		0.0,		"greid"		align=left	# Farnborough, Hampshire, UK
  51.53,		-0.18,		"n_hibma"	align=above	# London, UK
  51.50,		-0.48,		"nik"		align=left	# West Drayton, Middx., UK
- 51.67,		-0.61,		"brian"		align=left	# Amersham, Bucks, UK
  51.67,		-0.61,		"markm"		align=left	# (CORE) Amersham, Bucks, UK
+ 51.67,		-0.61,		"brian"		align=left	# Amersham, Bucks, UK
+ 52.01,		-0.75,		"tom"		align=left	# Milton Keynes, UK
  53.22,		-1.29,		"ben"				# Sheffield, Yorkshire, UK
  51.44,		-2.06,		"marko"		align=left	# Chippenham, Wiltshire, UK
  51.29,		-3.10,		"ceri"				# Cardiff, UK
  55.87,		-4.26,		"roger"				# Glasgow, UK
  56.0,		-4.5,		"gary"		align=left	# Glasgow, UK
- 52.01,		-0.75,		"tom"		align=left	# Milton Keynes, UK
  53.20,		-6.15,		"dwmalone"	align=left	# Dublin, Ireland
--15.8,		-47.9,		"dcs"				# Brasilia, DF, Brazil
 -15.8,		-47.9,		"lioux"				# Brasilia, DF, Brazil
+-15.8,		-47.9,		"dcs"				# Brasilia, DF, Brazil
  42.1411,	-70.8453,	"jeh"				# Hanover, MA, USA
  42.34,		-71.19,		"wollman"			# Brighton, MA, USA
  42.727,	-73.676,	"dec,jon,gad"			# RPI @ Troy, NY, USA
  40.087174,	-75.150324,	"pat"				# Wyncote, PA, USA
  45.3991,	-75.6942,	"jake"				# Ottawa, ON, Canada
- 39.128555,	-77.203029,	"   ,green"			# Gaithersburg, MD, USA
  39.00,		-76.88,		"         ,chuckr"		# Greenbelt, MD, USA
  39.2,		-77.0,		"jmb,gpalmer"			# Silver Spring, MD, USA
  38.981024,	-77.119791,	"rwatson"			# (CORE) Bethesda, MD, USA
+ 39.128555,	-77.203029,	"   ,green"			# Gaithersburg, MD, USA
  43.09,		-77.68,		"jseger"			# Rochester, NY, USA
  35.73,		-78.91,		"bsd"				# Apex, NC, USA
  43.37,		-79.79,		"hoek"				# Burlington, ON, Canada
@@ -96,8 +96,8 @@
  42.425,	-86.928,	"will"				# West Lafayette, IN, USA
  43.19,		-89.38,		"jlemon"			# Madison, WI, USA
  35.09,		-89.48,		"petef"				# Memphis, TN, USA
- 44.99,		-93.25,		"mpp,mks"			# Minneapolis, MN, USA
  44.59556,	-93.15372,	"       ,nectar"		# Minneapolis, MN, USA
+ 44.99,		-93.25,		"mpp,mks"			# Minneapolis, MN, USA
  42.02,		-93.67,		"ghelmer"			# Ames, IA, USA
  29.834,	-95.00,		"     ,chris"			# Houston, TX, USA
  29.7,		-95.4,		"rich        ,dwcjr"		# Houston, TX, USA
@@ -108,14 +108,14 @@
  40.55,		-111.90,	"wes"				# (CORE) South Jordan, UT, USA
  46.59,		-112.04,	"nate"				# Helena, MT, USA
  51.09,		-114.12,	"cpiazza"			# Calgary, AB, Canada
- 34.13637,	-118.12704,	"mph"				# Pasadena, CA, USA
  33.66,		-117.80,	"dd"				# Irvine, CA, USA
+ 34.13637,	-118.12704,	"mph"				# Pasadena, CA, USA
  33.83,		-118.22,	"             ,trevor"		# Dominguez, CA, USA
  34.11,		-118.29,	"       ,kris"			# Los Angeles, CA, USA
  39.25,		-121.02,	"truckman"			# Nevada City, CA, USA
  38.54,		-121.76,	"obrien,mharo"			# Davis, CA, USA
- 37.32,		-121.94,	"jmg"				# San Jose, CA, USA
  37.40,		-121.94,	"alfred"			# Santa Clara, CA, USA
+ 37.32,		-121.94,	"jmg"				# San Jose, CA, USA
  37.75573,	-121.947116,	"peter"				# (CORE) San Ramon, CA, USA
  37.4014,	-121.9544,	"cjc"				# Santa Clara, CA, USA
  37.329278,	-121.962306,	"nsayer"			# Santa Clara, CA, USA
@@ -123,10 +123,10 @@
  37.68,		-122.03,	"bmah"				# Castro Valley, CA, USA
  37.39,		-122.06,	"marcel"			# Mountain View, CA, USA
  37.422,	-122.133,	"seanc"				# Palo Alto, CA, USA
- 37.55,		-122.26,	"terry"				# Foster City, CA, USA
  37.774031,	-122.191359,	"adamw"				# Oakland, CA, USA
- 37.843858,	-122.294535,	"gshapiro"			# Emeryville, CA, USA
+ 37.55,		-122.26,	"terry"				# Foster City, CA, USA
  37.887398,	-122.264896,	"gsutter"			# Berkeley, CA, USA
+ 37.843858,	-122.294535,	"gshapiro"			# Emeryville, CA, USA
  37.51,		-122.30,	"kbyanc"			# Belmont, CA, USA
  47.70,		-122.34,	"brooks"			# Seattle, WA, USA
  37.781,	-122.398,	"billf"				# SOMA, San Francisco, CA, USA
