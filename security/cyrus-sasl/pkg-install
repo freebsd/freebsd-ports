@@ -67,9 +67,12 @@ create_user() {
 		fi
 		echo "*** Updated user \`${USER}'."
 	fi
-	if ! ${PW} group mod ${USER} -m daemon; then
-		echo "*** can't add user \`${USER}' to group \`${GROUP}'"
-	fi
+# Don't know why we need the daemon user in the cyrus group
+# hopefully this doesn't affect anyone. It's a leftover from
+# the pre-SASL cyrus-imapd server.
+#	if ! ${PW} group mod ${GROUP} -m daemon; then
+#		echo "*** can't add user \`daemon' to group \`${GROUP}'"
+#	fi
 }
 
 create_sasldb() {
