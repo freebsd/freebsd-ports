@@ -35,7 +35,7 @@ USE_LINUX=	yes
 JDK_VERSION=	1.4.2
 JDK_VER_SUFFIX=	-01
 DOWNLOAD_DIR=	${PORTNAME:U}-${JDK_VERSION}/${ARCH}/01
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64
 
 NO_CDROM=	"License doesn\'t allow distribution with fee"
 NO_PACKAGE=	"License doesn\'t allow binary distributions"
