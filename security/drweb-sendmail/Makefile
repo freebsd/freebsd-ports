@@ -5,8 +5,6 @@
 # $FreeBSD$
 #
 
-# WARNING: viruses in mail not detected with evaluation key!
-
 PORTNAME=	drweb_sendmail
 PORTVERSION=	4.25
 CATEGORIES=	security mail
