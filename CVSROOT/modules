@@ -10579,6 +10579,7 @@ zope-btreefolder2	ports/www/zope-btreefolder2
 zope-cmf	ports/www/zope-cmf
 zope-cmf13	ports/www/zope-cmf13
 zope-cmfactionicons	ports/www/zope-cmfactionicons
+zope-cmfformcontroller	ports/www/zope-cmfformcontroller
 zope-cmfforum	ports/www/zope-cmfforum
 zope-cmfphoto	ports/www/zope-cmfphoto
 zope-cmfphotoalbum	ports/www/zope-cmfphotoalbum
