@@ -15,7 +15,7 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ijliao@FreeBSD.org
 
-LIB_DEPENDS=	gd.1:${PORTSDIR}/graphics/gd \
+LIB_DEPENDS=	gd.2:${PORTSDIR}/graphics/gd \
 		png.4:${PORTSDIR}/graphics/png
 
 USE_GMAKE=	yes
