@@ -2358,6 +2358,7 @@ gtk-engines-collection	ports/x11-toolkits/gtk-engines-collection
 gtk-engines2	ports/x11-toolkits/gtk-engines2
 gtk-flat-theme	ports/x11-toolkits/gtk-flat-theme
 gtk-gnutella	ports/net/gtk-gnutella
+gtk-imonc	ports/sysutils/gtk-imonc
 gtk-knocker	ports/security/gtk-knocker
 gtk-qn-x11-theme	ports/x11-toolkits/gtk-qn-x11-theme
 gtk-theme-switch ports/x11/gtk-theme-switch
