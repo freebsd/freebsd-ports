@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.77 1999/01/01 22:20:14 sada Exp $
+# $Id: Makefile,v 1.78 1999/01/04 03:36:21 steve Exp $
 #
 
     SUBDIR += a2ps-a4
@@ -26,8 +26,6 @@
     SUBDIR += enscriptfonts
     SUBDIR += freetype
     SUBDIR += ggv
-    SUBDIR += ghostscript
-    SUBDIR += ghostscript4
     SUBDIR += ghostscript5
     SUBDIR += ghostscript55
     SUBDIR += ghostview
