@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Console_Getopt
-PORTVERSION=	1.0
-PORTREVISION=	2
+PORTVERSION=	1.2
 CATEGORIES=	devel www pear
 
 MAINTAINER=	ports@FreeBSD.org
