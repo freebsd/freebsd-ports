@@ -1,0 +1,12 @@
+ClibPDF is a library of ANSI C functions, distributed as source code,
+for creating PDF (Acrobat) files directly via C language programs
+without relying on any Adobe Acrobat tools and related products.  It
+is free for private, non-profit use, but a commercial license is
+required for for-profit applications (Please see FastIO ClibPDF
+License included in this package for details).
+
+Licence summaries:
+	http://www.fastio.com/licensePlain.html  (in English)
+	http://www.fastio.com/licensePlainJ.html (in Japanese)
+
+WWW:	http://www.fastio.com/
