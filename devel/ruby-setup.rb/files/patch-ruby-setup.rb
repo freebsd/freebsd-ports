@@ -1,11 +1,11 @@
---- ruby-setup.rb.orig	Tue Feb 25 15:33:48 2003
-+++ ruby-setup.rb	Tue Feb 25 15:34:25 2003
-@@ -857,7 +857,7 @@
- class ToplevelInstaller < Installer
+--- ruby-setup.rb.orig	Wed Aug 27 13:03:01 2003
++++ ruby-setup.rb	Thu Aug 28 01:16:03 2003
+@@ -908,7 +908,7 @@
+   @singleton = nil
  
-   def self.invoke
--    new(File.dirname($0)).invoke
-+    new(Dir.pwd).invoke
+   def ToplevelInstaller.instance
+-    @singleton = new(File.dirname($0)) unless defined?(@singleton)
++    @singleton = new(File.pwd) unless defined?(@singleton)
+     @singleton
    end
- 
  
