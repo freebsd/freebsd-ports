@@ -42,6 +42,7 @@
     SUBDIR += bombermaze
     SUBDIR += braincurses
     SUBDIR += bs
+    SUBDIR += bsdtris
     SUBDIR += bsp
     SUBDIR += bugsx
     SUBDIR += burgerspace

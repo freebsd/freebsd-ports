@@ -1,0 +1,2 @@
+@comment $FreeBSD: /tmp/pcvs/ports/games/bsdtris/pkg-plist,v 1.1 2003-04-02 13:02:40 edwin Exp $
+bin/bsdtris

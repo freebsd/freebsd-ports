@@ -1,0 +1,28 @@
+# Ports collection makefile for:  bsdtris
+# Date created:	                  01 Apr 2003
+# Whom:                           Yonatan <Yonatan@xpert.com>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	bsdtris
+PORTVERSION=	1
+CATEGORIES=	games
+MASTER_SITES=	http://www.mavetju.org/download/adopted/
+DISTNAME=	${PORTNAME}-01042003
+
+MAINTAINER=	yonatan@xpert.com
+COMMENT=	BSD version of Text-based tetris game
+
+NO_WRKSUBDIR=	yes
+USE_REINPLACE=	yes
+
+MAN6=		bsdtris.6
+
+post-patch:
+	${REINPLACE_CMD} -E "s|%%PREFIX%%|${PREFIX}|" ${WRKSRC}/pathnames.h
+
+post-install:
+	${INSTALL_MAN} ${WRKSRC}/tetris.6 ${PREFIX}/man/man6/bsdtris.6
+
+.include <bsd.port.mk>
