@@ -37,6 +37,7 @@
     SUBDIR += gdm
     SUBDIR += gdm2
     SUBDIR += gmessage
+    SUBDIR += gmrun
     SUBDIR += gnoclip
     SUBDIR += gnome
     SUBDIR += gnome2
