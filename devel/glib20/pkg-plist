@@ -87,6 +87,7 @@ share/aclocal/glib-gettext.m4
 share/glib-2.0/gettext/po/Makefile.in.in
 share/locale/ar/LC_MESSAGES/glib20.mo
 share/locale/az/LC_MESSAGES/glib20.mo
+share/locale/bg/LC_MESSAGES/glib20.mo
 share/locale/ca/LC_MESSAGES/glib20.mo
 share/locale/cs/LC_MESSAGES/glib20.mo
 share/locale/de/LC_MESSAGES/glib20.mo
@@ -111,6 +112,7 @@ share/locale/sv/LC_MESSAGES/glib20.mo
 share/locale/ta/LC_MESSAGES/glib20.mo
 share/locale/tr/LC_MESSAGES/glib20.mo
 share/locale/uk/LC_MESSAGES/glib20.mo
+share/locale/vi/LC_MESSAGES/glib20.mo
 share/locale/zh_CN/LC_MESSAGES/glib20.mo
 share/locale/zh_TW/LC_MESSAGES/glib20.mo
 @dirrm share/glib-2.0/gettext/po
