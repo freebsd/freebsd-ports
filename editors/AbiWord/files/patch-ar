@@ -1,0 +1,11 @@
+--- pkg/common/unix/scripts/install.sh	Tue Feb 29 13:37:57 2000
++++ pkg/common/unix/scripts/install.sh.new	Sun May 14 18:11:15 2000
+@@ -80,7 +80,7 @@
+ 
+ echo "Installing program binaries to [$LIBEXECDIR]..."
+ # Setup bins 
+-(cd $SRCDIR/bin; tar cf - Abi*) | (cd $LIBEXECDIR; tar xf -)
++(cd $SRCDIR/bin; cp Abi* $LIBEXECDIR)
+ 
+ ########################################################################
+ # If we're on Solaris, run makepsres on the font path

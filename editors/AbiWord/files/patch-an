@@ -1,0 +1,43 @@
+--- Makefile	Tue Feb 29 07:34:29 2000
++++ Makefile.new	Sun May 14 21:58:09 2000
+@@ -42,6 +42,7 @@
+ 
+ ## Set the following to a list of pathnames to be copied to $(CANONDIR)
+ CANON_TOPLEVELFILES=	$(ABI_ROOT)/COPYING $(ABI_ROOT)/user/wp/readme.txt
++CANON_TLF_NOTDIR=	$(notdir $(CANON_TOPLEVELFILES))
+ 
+ ## Set the following to a list of directories (probably a subset of DIRS)
+ ## that have work to do.
+@@ -52,6 +53,9 @@
+ 	@for k in $(CANON_TOPLEVELFILES); do			\
+ 		$(ABICOPY) $$k $(CANONDIR);			\
+ 	done
++	@for k in $(CANON_TLF_NOTDIR); do			\
++		$(ABICHMOD) ugo=r $(CANONDIR)/$$k;		\
++	done
+ 	@for k in $(CANON_SubDirs); do				\
+ 		$(MAKE) ABI_ROOT=$(ABI_ROOT) -C $$k canonical;	\
+ 	done
+@@ -63,6 +67,7 @@
+ 			unzip -o $$k;				\
+ 			rm $$k;					\
+ 		done)
++	@(cd $(CANONDIR)/dictionary; $(ABICHMOD) ugo=r *)
+ #	(cd $(ABI_ROOT)/../abidistfiles; tar cf - dictionary/*.hash) | (cd $(CANONDIR); tar xf -)
+ ifeq ($(ABI_NATIVE),unix)
+ # each Unix installer requires both unixfonts and abidistfiles, 
+@@ -92,10 +97,12 @@
+ 	fi
+ # icons for X window manager use
+ 	@$(subst xxxx,$(CANONDIR)/icons,$(VERIFY_DIRECTORY))
+-	(cd $(ABI_ROOT)/../abidistfiles/icons; cp *_48* $(CANONDIR)/icons)
++	(cd $(ABI_ROOT)/../abidistfiles/icons; $(ABICOPY) *_48* $(CANONDIR)/icons)
++	@(cd $(CANONDIR)/icons; $(ABICHMOD) ugo=r *_48*)
+ # font stuff for installation
+ 	@$(subst xxxx,$(CANONDIR)/fonts,$(VERIFY_DIRECTORY))
+-	(cd $(ABI_ROOT)/../unixfonts/fonts ; cp *.* $(CANONDIR)/fonts)
++	(cd $(ABI_ROOT)/../unixfonts/fonts ; $(ABICOPY) *.* $(CANONDIR)/fonts)
++	@(cd $(CANONDIR)/fonts; $(ABICHMOD) ugo=r *.*)
+ endif
+ 
+ ##################################################################
