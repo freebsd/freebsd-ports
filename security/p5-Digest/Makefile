@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Digest
-PORTVERSION=	1.08
+PORTVERSION=	1.10
 CATEGORIES=	security perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Digest
@@ -21,6 +21,6 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 PERL_CONFIGURE=	yes
 CONFIGURE_ARGS+=	INSTALLDIRS="site"
 
-MAN3=		Digest.3 Digest::base.3
+MAN3=		Digest.3 Digest::base.3 Digest::file.3
 
 .include <bsd.port.mk>
