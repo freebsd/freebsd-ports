@@ -8,7 +8,7 @@
 PORTNAME=	Text-Template
 PORTVERSION=	1.43
 CATEGORIES=	textproc perl5
-MASTER_SITES=	http://www.plover.com/~mjd/perl/Template/ \
+MASTER_SITES=	http://perl.plover.com/Template/ \
 		${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Text
 PKGNAMEPREFIX=	p5-
