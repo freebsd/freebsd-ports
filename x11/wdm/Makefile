@@ -1,11 +1,11 @@
 # New ports collection makefile for:	wdm
-# Version required:	0.11
+# Version required:	0.90
 # Date created:		August 31, 1998
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.1.1.1 1998/09/04 07:17:26 tg Exp $
+# $Id: Makefile,v 1.2 1998/09/07 06:57:08 tg Exp $
 
-DISTNAME=	wdm-0.11
+DISTNAME=	wdm-0.90
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.windowmaker.org/pub/contrib/srcs/utils/ \
 		ftp://ftp.io.com/pub/mirror/windowmaker/contrib/srcs/utils/ \
@@ -15,6 +15,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DAEMONPIC}
 MAINTAINER=	ports@FreeBSD.ORG
 
 LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm \
+		gif\\.3\\.:${PORTSDIR}/graphics/giflib \
 		jpeg\\.9\\.:${PORTSDIR}/graphics/jpeg \
 		png\\.2\\.:${PORTSDIR}/graphics/png \
 		tiff34\\.1:${PORTSDIR}/graphics/tiff34 \
@@ -25,12 +26,13 @@ DIST_SUBDIR=	wdm
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	X11BASE=${X11BASE} CPPFLAGS=-I${PREFIX}/include
-CONFIGURE_ARGS=	--with-gfx-libs="-L${PREFIX}/lib -L${LOCALBASE}/lib" \
+CONFIGURE_ARGS=	--with-gfx-libs="-L${PREFIX}/lib -L${LOCALBASE}/lib -lgif" \
 	--with-gfx-incs="-I${LOCALBASE}/include/tiff34 -I${LOCALBASE}/include" \
 	--with-logdir=/var/log --with-runlockdir=/var/run \
-	--with-WDMDIR=${PREFIX}/lib/X11/wdm \
-	--with-DEFUSERPATH=/bin:/usr/bin:/sbin:/usr/sbin:${X11BASE}/bin:${LOCALBASE}/bin \
-	--with-DEFSYSTEMPATH=/bin:/usr/bin:/sbin:/usr/sbin:${X11BASE}/bin
+	--with-wdmdir=${PREFIX}/lib/X11/wdm --with-Logo=Earth200x130.xpm \
+	--with-defuserpath=/bin:/usr/bin:/sbin:/usr/sbin:${X11BASE}/bin:${LOCALBASE}/bin \
+	--with-defsystempath=/bin:/usr/bin:/sbin:/usr/sbin:${X11BASE}/bin \
+	--with-wmlist=wmaker:afterstep:ctwm:enlightenment:fvwm:fvwm2:fvwm95:olvwm:qvwm:tvtwm
 
 MAN1=	wdm.1 wdmLogin.1
 
