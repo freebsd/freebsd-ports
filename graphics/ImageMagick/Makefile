@@ -3,7 +3,7 @@
 # Date created:		15 November 1994
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.32 1998/03/02 22:08:36 jseger Exp $
+# $Id: Makefile,v 1.33 1998/03/03 22:24:47 jseger Exp $
 #
 
 DISTNAME=	ImageMagick-4.0.2
@@ -22,7 +22,7 @@ MAINTAINER=	jseger@FreeBSD.org
 LIB_DEPENDS=    jpeg\\.7\\.:${PORTSDIR}/graphics/jpeg \
 		mpeg\\.1\\.[2-9]:${PORTSDIR}/graphics/mpeg-lib \
 		tiff34\\.1\\.:${PORTSDIR}/graphics/tiff34 \
-		png\\.0\\.99:${PORTSDIR}/graphics/png \
+		png\\.2\\.:${PORTSDIR}/graphics/png \
 		jbig\\.0\\.9:${PORTSDIR}/graphics/jbigkit \
 		ttf\\.1\\.:${PORTSDIR}/print/freetype
 BUILD_DEPENDS=	fig2dev:${PORTSDIR}/print/transfig \
