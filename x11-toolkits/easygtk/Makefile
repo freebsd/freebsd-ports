@@ -8,8 +8,10 @@
 PORTNAME=	easygtk
 PORTVERSION=	1.2
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	http://www.linsupport.com/sw/ \
+MASTER_SITES=	${MASTER_SITE_LOCAL} \
+		http://www.linsupport.com/sw/ \
 		http://www.linuxbox.com/~drow/EasyGTK/
+MASTER_SITE_SUBDIR=	sobomax
 EXTRACT_SUFX=	.tar
 
 MAINTAINER=	sobomax@FreeBSD.org
