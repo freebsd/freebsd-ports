@@ -7,6 +7,7 @@
 
 PORTNAME=	zhcon
 PORTVERSION=	0.14f
+PORTREVISION=	1
 CATEGORIES=	chinese
 MASTER_SITES=	http://freebsd.sinica.edu.tw/~statue/ \
 		ftp://ftp.gnuchina.org/pub/linux/chinese/inputmethod/console/zhcon/BSDPort/
