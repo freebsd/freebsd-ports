@@ -12,14 +12,15 @@ MASTER_SITES=	http://www.yabasic.de/download/
 
 MAINTAINER=	ports@FreeBSD.org
 
+USE_REINPLACE=	yes
 USE_BISON=	yes
 USE_XLIB=	yes
 GNU_CONFIGURE=	yes
 MAN1=		yabasic.1
 
 post-patch:
-	@${PERL} -pi -e "s|-DUNIX|\@X_CFLAGS\@ -DUNIX|g" ${WRKSRC}/Makefile.in
-	@${PERL} -pi -e "s|<malloc.h>|<stdlib.h>|g" ${WRKSRC}/bison.c
+	@${REINPLACE_CMD} -e "s|-DUNIX|\@X_CFLAGS\@ -DUNIX|g" ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e "s|<malloc.h>|<stdlib.h>|g" ${WRKSRC}/bison.c
 
 post-install:
 .if !defined(NOPORTDOCS)

@@ -17,6 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+USE_REINPLACE=	yes
 USE_ZIP=	yes
 USE_GMAKE=	yes
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
@@ -36,8 +37,8 @@ post-extract:
 	@${CP} ${FILESDIR}/require.scm.in ${WRKDIR}/require.scm
 
 post-patch:
-	@${PERL} -pi -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKDIR}/require.scm
-	@${PERL} -pi -e 's|%%CC%%|${CC}|g ; \
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKDIR}/require.scm
+	@${REINPLACE_CMD} -e 's|%%CC%%|${CC}|g ; \
 		 s|%%CFLAGS%%|${CFLAGS}|g' ${WRKSRC}/build.scm
 
 post-build:

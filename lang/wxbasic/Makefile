@@ -19,6 +19,7 @@ LIB_DEPENDS=	wx_gtk.2:${PORTSDIR}/x11-toolkits/wxgtk-devel
 
 NO_WRKSUBDIR=	yes
 
+USE_REINPLACE=	yes
 USE_BISON=	yes
 USE_GMAKE=	yes
 MAKEFILE=	makefile.unx
@@ -27,7 +28,7 @@ LIBS+=		-lglut -lGL -lGLU -lwx_gtk_gl ${PTHREAD_LIBS}
 MAKE_ENV=	CXXFLAGS="${CXXFLAGS}" LIBS="${LIBS}"
 
 post-patch:
-	@${PERL} -pi -e "s/malloc.h/stdlib.h/g" ${WRKSRC}/core.c
+	@${REINPLACE_CMD} -e "s/malloc.h/stdlib.h/g" ${WRKSRC}/core.c
 
 pre-build:
 	@(cd ${WRKSRC} ; \

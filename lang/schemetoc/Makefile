@@ -14,6 +14,7 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
 
+USE_REINPLACE=	yes
 USE_XLIB=	yes
 INSTALLS_SHLIB=	yes
 NO_WRKSUBDIR=	yes
@@ -30,7 +31,7 @@ post-extract:
 .endfor
 
 post-patch:
-	@${PERL} -pi -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/scsc/*.sc
-	@${PERL} -pi -e 's|%%X11BASE%%|${X11BASE}|g' ${WRKSRC}/scsc/*.sc
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/scsc/*.sc
+	@${REINPLACE_CMD} -e 's|%%X11BASE%%|${X11BASE}|g' ${WRKSRC}/scsc/*.sc
 
 .include <bsd.port.mk>
