@@ -172,6 +172,7 @@
     SUBDIR += ispell
     SUBDIR += it-aspell
     SUBDIR += jade
+    SUBDIR += jakarta-commons-digester
     SUBDIR += java2html
     SUBDIR += javacc
     SUBDIR += jaxup
