@@ -16,6 +16,8 @@ EXTRACT_SUFX=  .tgz
 MAINTAINER=	freebsd-ports@FreeBSD.org
 COMMENT=	SONY VAIO camera capture utility
 
+ONLY_FOR_ARCHS=	i386
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_GNOME=	imlib
 
