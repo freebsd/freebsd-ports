@@ -1,0 +1,11 @@
+UrlGfe is a download manager.
+
+List of features:
+- user can classify URLs before downloading
+- every category has independent of configuration that can be inherited by
+  download
+- batch mode can generate URLs
+- supports import URLs from .html files
+- supports export URLs ( for wget -i )
+
+WWW: http://urlget.sourceforge.net/
