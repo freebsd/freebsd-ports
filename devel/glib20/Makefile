@@ -42,7 +42,7 @@ pre-everything::
 	@${ECHO_CMD} '******************************************'
 	@${ECHO_CMD}
 	@${ECHO_CMD} If you have not updated your GNOME ports in the manner outlined in
-	@${ECHO_CMD} 	http://www.FreeBSD.org/gnome/docs/develfaq.html
+	@${ECHO_CMD}   http://www.FreeBSD.org/gnome/docs/faq26.html
 	@${ECHO_CMD} then you should abort this build immediately and follow the directions
 	@${ECHO_CMD} outlined in that document.
 	@${ECHO_CMD}
