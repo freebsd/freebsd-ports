@@ -8,6 +8,7 @@ bin/servlink
 bin/viconf
 bin/viklines
 bin/vimotd
+etc/rc.d/ircd-hybrid.sh
 include/ircd-hybrid-7
 share/ircd-hybrid-7.0/help/opers/accept
 share/ircd-hybrid-7.0/help/opers/admin
