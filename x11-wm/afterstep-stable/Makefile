@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	afterstep
-PORTVERSION= 	1.8.4
+PORTVERSION= 	1.8.8
 CATEGORIES=	x11-wm afterstep
 MASTER_SITES=	${MASTER_SITE_AFTERSTEP}
 MASTER_SITE_SUBDIR=	stable
@@ -15,13 +15,14 @@ DISTNAME=	AfterStep-${PORTVERSION}
 MAINTAINER=	demon@FreeBSD.org
 
 LIB_DEPENDS=	png.4:${PORTSDIR}/graphics/png \
-		jpeg.9:${PORTSDIR}/graphics/jpeg
+		jpeg.9:${PORTSDIR}/graphics/jpeg \
+		rplay.1:${PORTSDIR}/audio/rplay
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	X_EXTRA_LIBS="-lxpg4"
+CONFIGURE_ENV=	X_EXTRA_LIBS="-lxpg4" CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-png-includes="${LOCALBASE}/include" \
 		--with-png-libs="${LOCALBASE}/lib" \
 		--with-jpeg-includes="${LOCALBASE}/include" \
