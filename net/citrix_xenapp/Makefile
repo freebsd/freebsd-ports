@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	citrix_ica
-PORTVERSION=	7.00
+PORTVERSION=	8.00
 PORTREVISION=	1
 CATEGORIES=	net comms linux
 MASTER_SITES=
@@ -34,6 +34,8 @@ NSCP=	/usr/local/libexec/netscape \
 	/usr/local/lib/netscape \
 	/usr/local/lib/netscape-linux \
 	${MOZILLA_HOME}
+
+PLIST_SUB=	MOZILLA_HOME=${MOZILLA_HOME}
 
 .include <bsd.port.pre.mk>
 
@@ -71,13 +73,13 @@ do-install:
 		${FALSE} ; \
 	fi
 
-	@${ECHO_CMD} -e "1\n${CDIR}\ny\ny\ny\ny${HAVE_KDE}\n3" > ${WRKSRC}/response ;
+	@${ECHO_CMD} -e "1\n${CDIR}\ny\n1\ny${HAVE_KDE}\n3" > ${WRKSRC}/response ;
 	@for dir in ${NSCP}; do \
 		if [ -e $${dir}/plugins/libnullplugin.so ]; then \
-			BIN=`${FILE} $${dir}/plugins/libnullplugin.so | ${AWK} '{print $$11}'` ; \
+			BIN=`${FILE} ${dir}/plugins/libnullplugin.so | ${AWK} '{print $11}'` ; \
 			case $${BIN} in \
 			\(SYSV\),) \
-				${ECHO_CMD} -e "1\n${CDIR}\ny\ny\ny${HAVE_KDE}\n3" > ${WRKSRC}/response ; \
+				${ECHO_CMD} -e "1\n${CDIR}\ny\n1\ny${HAVE_KDE}\n3" > ${WRKSRC}/response ; \
 			esac \
 		fi \
 	done
