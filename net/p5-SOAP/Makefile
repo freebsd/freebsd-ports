@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser \
-		${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww perl5
+		${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 SITE_PERL=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
