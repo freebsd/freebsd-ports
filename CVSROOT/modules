@@ -1552,6 +1552,7 @@ fwbuilder	ports/security/fwbuilder
 fwlogwatch	ports/security/fwlogwatch
 fwtk		ports/security/fwtk
 fxhtml		ports/www/fxhtml
+fxt		ports/math/fxt
 fxtv		ports/graphics/fxtv
 g-gcl		ports/www/g-gcl
 g-wrap		ports/devel/g-wrap
