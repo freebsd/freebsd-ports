@@ -3,7 +3,7 @@
 # Date created:      11/12/96
 # Whom:              oly@world.std.com
 #
-# $Id: Makefile,v 1.11 1998/08/07 23:56:39 asami Exp $
+# $Id: Makefile,v 1.12 1998/09/25 10:05:12 asami Exp $
 #
 
 DISTNAME=	dotfile-2.2
@@ -19,6 +19,10 @@ GNU_CONFIGURE=	yes
 MAN1=		dotfile.1
 
 NO_BUILD=	yes
+
+.if !defined(DISPLAY)
+BROKEN=		requires X display
+.endif
 
 post-configure:
 	@(cd ${WRKSRC}/Modules/procmail && CC="${CC}" ac_cv_path_CC="${CC}" CFLAGS="${CFLAGS}" \
