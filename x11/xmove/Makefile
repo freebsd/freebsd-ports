@@ -3,7 +3,7 @@
 # Date created:        16 Jan 1997
 # Whom:                Stefan Zehl <sec@42.org>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/04/19 06:02:25 mph Exp $
 #
 
 DISTNAME=	xmove.2.0beta2
@@ -15,13 +15,14 @@ MAINTAINER=	sec@42.org
 
 WRKSRC=		${WRKDIR}/xmove
 USE_X11=	yes
+MAN1=		xmove.1 xmovectrl.1
 
 post-extract:
 	${CP} ${FILESDIR}/Makefile ${WRKSRC}
 
 post-install:
-	${CP} ${WRKSRC}/man/man1/xmove.1 ${WRKSRC}/man/man1/xmovectrl.1 ${X11BASE}/man/man1
-
-MAN1=		xmove.1 xmovectrl.1
+.for man in ${MAN1}
+	${INSTALL_MAN} ${WRKSRC}/man/man1/${man} ${X11BASE}/man/man1
+.endfor
 
 .include <bsd.port.mk>
