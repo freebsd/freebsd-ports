@@ -6,8 +6,8 @@
 # $FreeBSD$
 #
 
-DISTNAME=       apache_1.3.11
-PKGNAME=        apache-1.3.11
+DISTNAME=       apache_1.3.12
+PKGNAME=        apache-1.3.12
 CATEGORIES=	www
 MASTER_SITES=   http://www.apache.org/dist/ \
 		ftp://ftp.ccs.neu.edu/net/mirrors/ftp.apache.org/apache/dist/ \
@@ -24,9 +24,6 @@ MASTER_SITES=   http://www.apache.org/dist/ \
 		ftp://ftp.mtnranch.net/pub/apache/dist/ \
 		ftp://ftp.iodynamics.com/pub/mirror/apache/dist/ \
 		ftp://apache.nextpath.com/pub/apache/dist/
-
-PATCH_SITES=    http://www.apache.org/info/css-security/
-PATCHFILES=     apache_1.3.11_css_patch.txt
 
 MAINTAINER=     ache@freebsd.org
 
