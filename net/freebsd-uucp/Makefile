@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	freebsd-uucp
-PORTVERSION=	1.06.1.1
+PORTVERSION=	1.06.1.2
 CATEGORIES=	net comms
 MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=kris
+MASTER_SITE_SUBDIR=dinoex
 
 MAINTAINER=	lyndon@atg.aciworldwide.com
 
