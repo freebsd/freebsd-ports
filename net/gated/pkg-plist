@@ -1,9 +1,0 @@
-@cwd /usr/local
-man/man8/gated.8
-man/man8/ripquery.8
-man/man8/ospf_monitor.8
-man/man8/gdc.8
-sbin/gated
-bin/ripquery
-bin/ospf_monitor
-bin/gdc

@@ -1,9 +1,0 @@
-@srcdir .
-@cwd /usr/local
-dgd/Copyright
-dgd/Credits
-dgd/README
-dgd/README.FreeBSD
-dgd/README.sites
-dgd/bin
-dgd/doc
