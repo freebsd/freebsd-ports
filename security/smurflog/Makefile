@@ -3,21 +3,20 @@
 # Date created:				7/06/1998
 # Whom:					nectar@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.1 1998/07/27 07:25:36 nectar Exp $
+# $Id: Makefile,v 1.3 1998/11/29 03:20:10 nectar Exp $
 #
 
-DISTNAME=	smurflog-1.0
+DISTNAME=	smurflog-2.1
 CATEGORIES=	net security
-MASTER_SITES=	http://www.sy.net/security/
+MASTER_SITES=	http://www.sy.net/security/ \
+		http://www.bitchx.com/~humble/files/
 
 MAINTAINER=	nectar@FreeBSD.ORG
 
-WRKSRC=		${WRKDIR}/SmurfLog-1.0
+GNU_CONFIGURE=	YES
 
-pre-build:
-	${CP} ${FILESDIR}/Makefile ${WRKSRC}
-
-post-install:
+do-install:
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/README.smurflog
+	${INSTALL_PROGRAM} ${WRKSRC}/smurflog ${PREFIX}/bin/smurflog
 
 .include <bsd.port.mk>
