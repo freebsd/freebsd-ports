@@ -1,25 +1,25 @@
 # New ports collection makefile for:    POV-Ray
-# Version required:     3.3
+# Version required:     3.0.1
 # Date created:         3 Dec 1996
 # Whom:                 paulo@isr.uc.pt
 #
-# $Id: Makefile,v 1.10 1998/09/15 11:57:42 asami Exp $
+# $Id: Makefile,v 1.11 1998/09/17 00:50:48 asami Exp $
 #
 
-DISTNAME=       povray3
-PKGNAME=	povray-3.0
+DISTNAME=	povray3
+PKGNAME=	povray-3.0.1
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://povray.cdrom.com/pub/povray/Official-3.0/Unix/ \
-	 	ftp://www.hensa.ac.uk/mirrors/povray/povray/Official-3.0/Unix/\
-		ftp://ftp.univ-lille1.fr/pub/povray/Official-3.0/Unix/
-DISTFILES=      povuni_s.tgz povuni_d.tgz
+MASTER_SITES=	ftp://ftp.povray.org/pub/povray/Old-Versions/Official-3.0/Unix/ \
+		ftp://www.hensa.ac.uk/mirrors/povray/Old-Versions/Official-3.0/Unix/\
+		ftp://ftp.fh-aachen.de/pub/Graphics/mirror/ftp.povray.org/povray/Old-Versions/Official-3.0/Unix/ \
+		ftp://ftp.kappa.ro/pub/Linux/Graphics/Editors/povray/
+DISTFILES=	povuni_s.tgz povuni_d.tgz
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	kkennawa@physics.adelaide.edu.au
 
-LIB_DEPENDS=    png.2:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png.2:${PORTSDIR}/graphics/png
 
-BROKEN=		checksum
-
+USE_XLIB=	yes
 MAN1=		povray.1
 
 POVLIB=		${PREFIX}/lib/povray3
