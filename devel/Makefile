@@ -720,6 +720,7 @@
     SUBDIR += tkp4
     SUBDIR += tkref
     SUBDIR += tmake
+    SUBDIR += towitoko
     SUBDIR += tpg
     SUBDIR += trio
     SUBDIR += tvision
