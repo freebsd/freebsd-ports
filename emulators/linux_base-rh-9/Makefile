@@ -3,7 +3,7 @@
 # Date created:         
 # Whom:                 erich@FreeBSD.org
 #
-# $Id: Makefile,v 1.16 1997/04/30 03:17:59 asami Exp $
+# $Id: Makefile,v 1.17 1997/07/10 03:41:38 asami Exp $
 #
 
 DISTNAME=	linux_lib-2.4
@@ -26,5 +26,7 @@ do-install:
 
 post-install:
 	-/compat/linux/sbin/ldconfig
+	${MKDIR} ${PREFIX}/usr/lib/zoneinfo
+	ln -s /etc/localtime /${PREFIX}/usr/lib/zoneinfo/localtime
 
 .include <bsd.port.mk>
