@@ -7,7 +7,7 @@
 
 PORTNAME=	libzvbi
 PORTVERSION=	0.2.8
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	zapping
@@ -20,17 +20,13 @@ LIB_DEPENDS+=	png.5:${PORTSDIR}/graphics/png \
 		unicode.0:${PORTSDIR}/devel/libunicode
 
 USE_GETTEXT=	yes
-USE_X_PREFIX=	yes
 USE_BZIP2=	yes
 USE_REINPLACE=	yes
-USE_LIBTOOL_VER=	13
+USE_LIBTOOL_VER=	15
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 
-CONFIGURE_ARGS=	--with-libiconv-prefix=${LOCALBASE}/include \
-		--with-libintl-prefix=${LOCALBASE}/include
-
-CONFIGURE_ENV=	CC="${CC} -I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib -L/usr/lib"
+CONFIGURE_ENV= CFLAGS="${CFLAGS} -I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib -L/usr/lib"
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
