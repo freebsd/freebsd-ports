@@ -20,7 +20,7 @@ COMMENT=	A system for Finite Element Analysis
 LIB_DEPENDS=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d
 
 USE_X_PREFIX=	yes
-USE_MESA=	yes
+USE_GL=		yes
 USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/FElt-${PORTVERSION}
 GNU_CONFIGURE=	yes
