@@ -32,6 +32,62 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="1489df94-6bcb-11d9-a21e-000a95bc6fae">
+    <topic>opera -- multiple vulnerabilities in Java implementation</topic>
+    <affects>
+      <package>
+	<name>opera</name>
+	<name>opera-devel</name>
+	<name>linux-opera</name>
+	<range><lt>7.60.20041203</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Marc Schoenefeld reports:</p>
+	<blockquote cite="http://marc.theaimsgroup.com/?l=bugtraq&amp;m=110088923127820">
+	  <p>Opera 7.54 is vulnerable to leakage of the java sandbox,
+            allowing malicious applets to gain unacceptable
+            privileges. This allows them to be used for information
+            gathering (spying) of local identity information and
+            system configurations as well as causing annoying crash
+            effects.</p>
+	  <p>Opera 754 <em>[sic]</em> which was released Aug 5,2004 is
+            vulnerable to the XSLT processor covert channel attack,
+            which was corrected with JRE 1.4.2_05 [released in July
+            04], but in disadvantage to the users the opera packaging
+            guys chose to bundle the JRE 1.4.2_04 <em>[...]</em></p>
+	  <p>Internal pointer DoS exploitation: Opera.jar contains the
+            opera replacement of the java plugin. It therefore handles
+            communication between javascript and the Java VM via the
+            liveconnect protocol. The public class EcmaScriptObject
+            exposes a system memory pointer to the java address space,
+            by constructing a special variant of this type an internal
+            cache table can be polluted by false entries that infer
+            proper function of the JSObject class and in the following
+            proof-of-concept crash the browser.</p>
+	  <p>Exposure of location of local java installation Sniffing
+            the URL classpath allows to retrieve the URLs of the
+            bootstrap class path and therefore the JDK installation
+            directory.</p>
+	  <p>Exposure of local user name to an untrusted applet An
+            attacker could use the sun.security.krb5.Credentials class
+            to retrieve the name of the currently logged in user and
+            parse his home directory from the information which is
+            provided by the thrown
+            java.security.AccessControlException.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <mlist msgid="Pine.A41.4.58.0411191800510.57436@zivunix.uni-muenster.de">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=110088923127820</mlist>
+    </references>
+    <dates>
+      <discovery>2004-11-19</discovery>
+      <entry>2005-01-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="045944a0-6bca-11d9-aaa6-000a95bc6fae">
     <topic>sudo -- environmental variable CDPATH is not cleared</topic>
     <affects>
