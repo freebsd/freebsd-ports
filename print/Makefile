@@ -42,6 +42,7 @@
     SUBDIR += html2latex
     SUBDIR += html2ps-a4
     SUBDIR += html2ps-letter
+    SUBDIR += hyperlatex
     SUBDIR += ifhp
     SUBDIR += jadetex
     SUBDIR += klyx
@@ -57,6 +58,7 @@
     SUBDIR += mp-letter
     SUBDIR += mpage
     SUBDIR += musixtex
+    SUBDIR += nenscript
     SUBDIR += offix-printer
     SUBDIR += pbm2ppa
     SUBDIR += pclprint
