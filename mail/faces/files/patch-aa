@@ -280,8 +280,8 @@ diff -c -N ../faces/Makefile ./Makefile
 + #  library files are not in a standard place, then the following
 + #  two lines should be uncommented, and set appropriately.
 + #
-+ X11INCDIR         = -I$(OPENWINHOME)/include
-+ X11LIBDIR         = -L$(OPENWINHOME)/lib
++ X11INCDIR         = -I$(X11BASE)/include
++ X11LIBDIR         = -L$(X11BASE)/lib
 + #------------------------------------------------------------------------
 + #  If you are compiling the XView version, then the following two lines
 + #  should be uncommented, and set appropriately.
