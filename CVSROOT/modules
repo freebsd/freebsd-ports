@@ -849,6 +849,7 @@ cl-lml		ports/www/cl-lml
 cl-lml-clisp	ports/www/cl-lml-clisp
 cl-meta		ports/textproc/cl-meta
 cl-meta-cmucl	ports/textproc/cl-meta-cmucl
+cl-meta-sbcl	ports/textproc/cl-meta-sbcl
 cl-port		ports/devel/cl-port
 cl-ppcre	ports/textproc/cl-ppcre
 cl-split-sequence	ports/devel/cl-split-sequence
