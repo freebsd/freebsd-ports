@@ -31,6 +31,7 @@ share/jargon/graphics/76-07-18.png
 share/jargon/graphics/LAYOUT
 share/jargon/graphics/ansi-c.png
 share/jargon/graphics/blivet.png
+share/jargon/graphics/bugpic-color.jpg
 share/jargon/graphics/bugpic.png
 share/jargon/graphics/cobol.png
 share/jargon/graphics/cover.png
@@ -329,6 +330,7 @@ share/jargon/html/B/break-even-point.html
 share/jargon/html/B/break.html
 share/jargon/html/B/breath-of-life-packet.html
 share/jargon/html/B/breedle.html
+share/jargon/html/B/brick.html
 share/jargon/html/B/bricktext.html
 share/jargon/html/B/bring-X-to-its-knees.html
 share/jargon/html/B/brittle.html
@@ -914,6 +916,7 @@ share/jargon/html/G/GNUMACS.html
 share/jargon/html/G/GOSMACS.html
 share/jargon/html/G/GPL.html
 share/jargon/html/G/GPV.html
+share/jargon/html/G/GWF.html
 share/jargon/html/G/GandhiCon.html
 share/jargon/html/G/Gang-of-Four.html
 share/jargon/html/G/Gatess-Law.html
@@ -1141,6 +1144,7 @@ share/jargon/html/I/Internet-Exploder.html
 share/jargon/html/I/Internet-Exploiter.html
 share/jargon/html/I/Internet.html
 share/jargon/html/I/Iron-Age.html
+share/jargon/html/I/Itanic.html
 share/jargon/html/I/ice.html
 share/jargon/html/I/idempotent.html
 share/jargon/html/I/idiot.html
@@ -1647,6 +1651,7 @@ share/jargon/html/P/plug-and-pray.html
 share/jargon/html/P/plugh.html
 share/jargon/html/P/plumbing.html
 share/jargon/html/P/point-and-drool-interface.html
+share/jargon/html/P/point-release.html
 share/jargon/html/P/pointy-haired.html
 share/jargon/html/P/pointy-hat.html
 share/jargon/html/P/poke.html
@@ -2474,6 +2479,7 @@ share/jargon/html/graphics/76-07-18.png
 share/jargon/html/graphics/LAYOUT
 share/jargon/html/graphics/ansi-c.png
 share/jargon/html/graphics/blivet.png
+share/jargon/html/graphics/bugpic-color.jpg
 share/jargon/html/graphics/bugpic.png
 share/jargon/html/graphics/cobol.png
 share/jargon/html/graphics/cover.png
