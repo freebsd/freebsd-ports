@@ -1,209 +1,145 @@
-@comment PLIST by Julian Stacey	<JHS@FreeBSD.Org>
-
-@name hylafax
-
-@pkgdep		ghostscript
-@comment	Ghostscript versions since 3.12 have had a working tiffg32d
-
-@cwd		/usr/local
-@dirrm		/var/spool/fax
-@dirrm		/usr/local/lib/fax
-
-@comment	theres no example of good @mtree syntax in ports yet
-@comment	when such example appears, it will be worth converting this
-@comment	so that mtree can do the mkdir work:
-@comment		@cwd
-@comment		@owner	bin 
-@comment		@group	bin 
-@comment		@mode	755 
-@comment		/usr/local/bin 
-@comment		/usr/local/lib/fax 
-@comment		/usr/local/sbin
-@comment		@owner	uucp 
-@comment		@group	dialer 
-@comment		@mode	755 
-@comment		/var/spool/fax
-@comment		/var/spool/fax/bin 
-@comment		/var/spool/fax/config 
-@comment		/var/spool/fax/etc 
-@comment		/var/spool/fax/recvq 
-@comment		/var/spool/fax/info 	(No pkg file here, but need dir
-@comment		/var/spool/fax/log 	(No pkg file here, but need dir
-@comment		/var/spool/fax/status	(No pkg file here, but need dir
-@comment		@owner	uucp 
-@comment		@group	dialer 
-@comment		@mode	700 
-@comment		/var/spool/fax/sendq 
-@comment		/var/spool/fax/docq 
-@comment		/var/spool/fax/tmp
-
-@cwd		/var/spool/fax
-@mode		600
-@comment	fifo
+@cd /usr/local
+sbin/textfmt
+sbin/faxmsg
+sbin/faxabort
+sbin/faxanswer
+sbin/faxquit
+sbin/faxinfo
+sbin/dialtest
+sbin/typetest
+sbin/xferstats
+sbin/recvstats
+sbin/faxcron
+sbin/faxq
+sbin/faxgetty
+sbin/faxsend
+sbin/pagesend
+sbin/tsitest
+sbin/tagtest
+sbin/faxd.recv
+sbin/faxaddmodem
+sbin/probemodem
+sbin/lockname
+sbin/ondelay
+lib/fax/pagesizes
+lib/fax/typerules
+lib/fax/faxcover.ps
+bin/fax2ps
+bin/faxalter
+bin/faxcover
+bin/faxmail
+bin/faxrm
+bin/faxstat
+bin/sendfax
+bin/sendpage
+man/man1/fax2ps.1.gz
+man/man1/faxalter.1.gz
+man/man1/faxcover.1.gz
+man/man1/faxmail.1.gz
+man/man1/faxrm.1.gz
+man/man1/faxstat.1.gz
+man/man1/hylafax.1.gz
+man/man1/sendfax.1.gz
+man/man1/sendpage.1.gz
+man/man1/sgi2fax.1.gz
+man/man1/textfmt.1.gz
+man/man5/pagesizes.5f.gz
+man/man5/typerules.5f.gz
+man/man5/cid.5f.gz
+man/man5/config.5f.gz
+man/man5/destctrls.5f.gz
+man/man5/dialrules.5f.gz
+man/man5/hosts.5f.gz
+man/man5/hylafax.5f.gz
+man/man5/info.5f.gz
+man/man5/log.5f.gz
+man/man5/recvq.5f.gz
+man/man5/sendq.5f.gz
+man/man5/status.5f.gz
+man/man5/tsi.5f.gz
+man/man5/xferlog.5f.gz
+man/man8/dialtest.8c.gz
+man/man8/faxabort.8c.gz
+man/man8/faxaddmodem.8c.gz
+man/man8/faxanswer.8c.gz
+man/man8/faxcron.8c.gz
+man/man8/faxd.recv.8c.gz
+man/man8/faxgetty.8c.gz
+man/man8/faxq.8c.gz
+man/man8/faxquit.8c.gz
+man/man8/faxrcvd.8c.gz
+man/man8/faxsend.8c.gz
+man/man8/mkcover.8c.gz
+man/man8/notify.8c.gz
+man/man8/pagesend.8c.gz
+man/man8/pollrcvd.8c.gz
+man/man8/ps2fax.8c.gz
+man/man8/recvstats.8c.gz
+man/man8/tagtest.8c.gz
+man/man8/transcript.8c.gz
+man/man8/tsitest.8c.gz
+man/man8/xferstats.8c.gz
+@cd /var/spool/fax
+bin/ps2fax.gs
+bin/ps2fax.dps
+bin/notify
+bin/notify.awk
+bin/faxrcvd
+bin/pollrcvd
+bin/mkcover
+bin/transcript
+bin/ps2fax
+etc/dpsprinter.ps
+etc/cover.templ
+etc/hosts
+etc/xferlog
+etc/dialrules
+etc/dialrules.sf-ba
+etc/dialrules.europe
+etc/lutRS18.pcf
+config/class1
+config/class2
+config/class2.0
+config/skel
+config/att-dataport-2
+config/att-dataport-2.0
+config/att-dataport
+config/cirrus
+config/dsi-scout+
+config/e-tech
+config/everex-2496d
+config/exar
+config/gvc-288
+config/gvc-288-2
+config/intel-400e
+config/moto-288
+config/mt-1432
+config/nuvo-voyager
+config/ppi-pm14400fxmt
+config/ppi-pm14400fxsa
+config/rc144ac
+config/rc144ac-1
+config/rc288dpi
+config/rc288dpi-1
+config/rc32acl
+config/rc32acl-1
+config/telebit-t3000
+config/telebit-qblazer
+config/telebit-wb
+config/tricom2842
+config/uds-fastalk
+config/usr-2.0
+config/usr-rts
+config/usr-xon
+config/zyxel-1496e
+config/zyxel-1496e-1
+config/zyxel-1496e-2.0
+recvq
+info
+log
+status
+sendq
+docq
+tmp
 FIFO
-@mode		444
 COPYRIGHT
-
-@cwd		/var/spool/fax/bin
-notify
-@mode		444
-ps2fax.gs
-ps2fax.dps
-ps2fax
-notify.awk
-@mode		555
-faxrcvd
-pollrcvd
-mkcover
-transcript
-
-@cwd		/var/spool/fax/config
-@mode		444
-class1
-class2
-class2.0
-skel
-att-dataport-2
-att-dataport-2.0
-att-dataport
-cirrus
-dsi-scout+
-e-tech
-everex-2496d
-exar
-gvc-288
-gvc-288-2
-intel-400e
-moto-288
-mt-1432
-nuvo-voyager
-ppi-pm14400fxmt
-ppi-pm14400fxsa
-rc144ac
-rc144ac-1
-rc288dpi
-rc288dpi-1
-rc32acl
-rc32acl-1
-telebit-t3000
-telebit-qblazer
-telebit-wb
-tricom2842
-uds-fastalk
-usr-2.0
-usr-rts
-usr-xon
-zyxel-1496e
-zyxel-1496e-1
-zyxel-1496e-2.0
-
-@cwd		/var/spool/fax/etc
-@mode		444
-dpsprinter.ps
-cover.templ
-dialrules
-dialrules.sf-ba
-dialrules.europe
-@mode		644
-lutRS18.pcf
-hosts
-xferlog
-
-@cwd		/usr/local/bin
-@mode		555
-sendpage
-fax2ps
-faxalter
-faxcover
-
-@cwd		/usr/local/sbin
-@owner		uucp
-@group		dialer
-@mode		6555
-faxq
-faxgetty
-@owner		uucp
-@group		dialer
-
-@mode		555
-textfmt
-faxmsg
-faxabort
-faxanswer
-faxquit
-faxinfo
-dialtest
-typetest
-xferstats
-recvstats
-faxcron
-faxsend
-pagesend
-tsitest
-tagtest
-lockname
-ondelay
-faxaddmodem
-probemodem
-
-@cwd		/usr/local/lib/fax
-@mode		444
-pagesizes
-typerules
-faxcover.ps
-
-@cwd		/usr/local/man/man1
-@mode		444
-fax2ps.1
-faxalter.1
-faxcover.1
-faxmail.1
-faxrm.1
-faxstat.1
-hylafax.1
-sendfax.1
-sendpage.1
-sgi2fax.1
-textfmt.1
-
-@cwd		/usr/local/man/man5
-pagesizes.5f
-typerules.5f
-cid.5f
-config.5f
-destctrls.5f
-dialrules.5f
-hosts.5f
-hylafax.5f
-info.5f
-log.5f
-recvq.5f
-sendq.5f
-status.5f
-tsi.5f
-xferlog.5f
-
-@cwd		/usr/local/man/man8
-dialtest.8c
-faxabort.8c
-faxaddmodem.8c
-faxanswer.8c
-faxcron.8c
-faxd.recv.8c
-faxgetty.8c
-faxq.8c
-faxquit.8c
-faxrcvd.8c
-faxsend.8c
-mkcover.8c
-notify.8c
-pagesend.8c
-pollrcvd.8c
-ps2fax.8c
-recvstats.8c
-tagtest.8c
-transcript.8c
-tsitest.8c
-xferstats.8c
-
-@comment	end
