@@ -1,0 +1,4 @@
+Felis sends one or more files to stdin. Unlike cat, felis will place all
+of its output to a single line.
+
+adam@whizkidtech.net
