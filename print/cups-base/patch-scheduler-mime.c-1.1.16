@@ -1,0 +1,52 @@
+Index: mime.c
+===================================================================
+RCS file: /home/anoncvs/cups/scheduler/mime.c,v
+retrieving revision 1.12
+retrieving revision 1.14
+diff -u -3 -r1.12 -r1.14
+--- mime.c	2002/05/16 13:45:02	1.12
++++ mime.c	2002/08/23 01:33:46	1.14
+@@ -1,5 +1,5 @@
+ /*
+- * "$Id: mime.c,v 1.12 2002/05/16 13:45:02 mike Exp $"
++ * "$Id: mime.c,v 1.14 2002/08/23 01:33:46 mike Exp $"
+  *
+  *   MIME database file routines for the Common UNIX Printing System (CUPS).
+  *
+@@ -502,17 +502,20 @@
+     filter = lineptr;
+ 
+ #ifndef WIN32
+-   /*
+-    * Verify that the filter exists and is executable...
+-    */
++    if (strcmp(filter, "-") != 0)
++    {
++     /*
++      * Verify that the filter exists and is executable...
++      */
+ 
+-    if (filter[0] == '/')
+-      strlcpy(filterprog, filter, sizeof(filterprog));
+-    else
+-      snprintf(filterprog, sizeof(filterprog), "%s/%s", filterpath, filter);
++      if (filter[0] == '/')
++	strlcpy(filterprog, filter, sizeof(filterprog));
++      else
++	snprintf(filterprog, sizeof(filterprog), "%s/%s", filterpath, filter);
+ 
+-    if (access(filterprog, X_OK))
+-      continue;
++      if (access(filterprog, X_OK))
++	continue;
++    }
+ #endif /* !WIN32 */
+ 
+    /*
+@@ -593,5 +596,5 @@
+ 
+ 
+ /*
+- * End of "$Id: mime.c,v 1.12 2002/05/16 13:45:02 mike Exp $".
++ * End of "$Id: mime.c,v 1.14 2002/08/23 01:33:46 mike Exp $".
+  */
