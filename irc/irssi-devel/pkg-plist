@@ -1,10 +1,6 @@
-bin/botti
 bin/irssi
 etc/irssi.conf
 etc/irssi.conf.sample
-lib/irssi/modules/libirc_bot.a
-lib/irssi/modules/libirc_bot.la
-lib/irssi/modules/libirc_bot.so
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Irssi.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Irssi/Irc.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Irssi/TextUI.pm
@@ -23,6 +19,7 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Irssi/UI/UI.bs
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Irssi/UI/UI.so
 share/doc/irssi/botnet.txt
 share/doc/irssi/design.txt
+share/doc/irssi/faq.html
 share/doc/irssi/faq.txt
 share/doc/irssi/formats.txt
 share/doc/irssi/manual.txt
@@ -94,7 +91,6 @@ share/irssi/help/notify
 share/irssi/help/op
 share/irssi/help/oper
 share/irssi/help/part
-share/irssi/help/perlflush
 share/irssi/help/ping
 share/irssi/help/query
 share/irssi/help/quit
@@ -107,7 +103,6 @@ share/irssi/help/restart
 share/irssi/help/rmreconns
 share/irssi/help/rmrejoins
 share/irssi/help/rping
-share/irssi/help/run
 share/irssi/help/save
 share/irssi/help/say
 share/irssi/help/sconnect
@@ -151,11 +146,17 @@ share/irssi/help/wjoin
 share/irssi/help/wquery
 share/irssi/scripts/autoop.pl
 share/irssi/scripts/autorejoin.pl
-share/irssi/scripts/clones.pl
-share/irssi/scripts/hello.pl
-share/irssi/scripts/privmsg.pl
+share/irssi/scripts/buf.pl
+share/irssi/scripts/command.pl
+share/irssi/scripts/dns.pl
+share/irssi/scripts/kills.pl
+share/irssi/scripts/mail.pl
+share/irssi/scripts/mlock.pl
+share/irssi/scripts/msg-event.pl
 share/irssi/scripts/quitmsg.pl
-share/irssi/scripts/realname.pl
+share/irssi/scripts/redirect.pl
+share/irssi/scripts/splitlong.pl
+share/irssi/scripts/usercount.pl
 share/irssi/themes/colorless.theme
 share/irssi/themes/default.theme
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Irssi/UI

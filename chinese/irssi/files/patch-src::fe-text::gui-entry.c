@@ -1,16 +1,6 @@
---- src/fe-text/gui-entry.c.orig	Sat Feb 16 19:10:11 2002
-+++ src/fe-text/gui-entry.c	Sat Mar  9 00:38:18 2002
-@@ -37,7 +37,8 @@
- 		return;
- 
- 	entry->text_alloc = nearest_power(entry->text_alloc+grow_size);
--	entry->text = g_realloc(entry->text, entry->text_alloc);
-+	entry->text = g_realloc(entry->text, 
-+				sizeof(unichar) * entry->text_alloc);
- }
- 
- GUI_ENTRY_REC *gui_entry_create(int xpos, int ypos, int width, int utf8)
-@@ -67,6 +68,27 @@
+--- src/fe-text/gui-entry.c.orig	Tue Feb 26 02:10:10 2002
++++ src/fe-text/gui-entry.c	Wed Mar 13 19:48:56 2002
+@@ -68,6 +68,27 @@
          g_free(entry);
  }
  
@@ -38,7 +28,7 @@
  /* Fixes the cursor position in screen */
  static void gui_entry_fix_cursor(GUI_ENTRY_REC *entry)
  {
-@@ -84,6 +106,8 @@
+@@ -85,6 +106,8 @@
  		entry->scrstart = entry->pos - entry->scrpos;
  	}
  
@@ -47,7 +37,7 @@
  	if (old_scrstart != entry->scrstart)
                  entry->redraw_needed_from = 0;
  }
-@@ -195,7 +219,7 @@
+@@ -196,7 +219,7 @@
  	}
  }
  
@@ -56,7 +46,7 @@
  {
  	int oldlen;
  
-@@ -231,7 +255,7 @@
+@@ -232,7 +255,7 @@
          entry->utf8 = utf8;
  }
  
@@ -65,7 +55,7 @@
  {
  	g_return_if_fail(entry != NULL);
  	g_return_if_fail(str != NULL);
-@@ -260,7 +284,7 @@
+@@ -261,7 +284,7 @@
  	return buf;
  }
  
@@ -74,9 +64,9 @@
  {
          unichar chr;
  	int i, len;
-@@ -335,11 +359,18 @@
+@@ -339,11 +362,18 @@
  
- void gui_entry_erase(GUI_ENTRY_REC *entry, int size)
+ void gui_entry_erase(GUI_ENTRY_REC *entry, int size, int update_cutbuffer)
  {
 +	int newpos;
 +
@@ -90,10 +80,10 @@
 +		newpos = _fix_big5_pos(entry->text, newpos-1, -1);
 +	size = entry->pos - newpos;
 +
-         /* put erased text to cutbuffer */
- 	if (entry->cutbuffer == NULL || entry->cutbuffer_len < size) {
- 		g_free(entry->cutbuffer);
-@@ -461,10 +492,24 @@
+ 	if (update_cutbuffer) {
+ 		/* put erased text to cutbuffer */
+ 		if (entry->cutbuffer == NULL || entry->cutbuffer_len < size) {
+@@ -467,10 +497,24 @@
  
  void gui_entry_move_pos(GUI_ENTRY_REC *entry, int pos)
  {
