@@ -3,11 +3,11 @@
 # Date created:		10 Aug 1996
 # Whom:			Hidekazu Kuroki <hidekazu@cs.titech.ac.jp>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1996/08/19 11:50:33 asami Exp $
 #
 
 DISTNAME=	skk8.6
-PKGNAME=	skk-8.6
+PKGNAME=	jp-skk-8.6
 CATEGORIES+=	japanese
 MASTER_SITES=	ftp://ftp.cs.keio.ac.jp/pub/misc/skk/ \
 		ftp://ftp.tohoku.ac.jp/mirror/skk/8.6/

@@ -3,10 +3,11 @@
 # Date created:		18 November 1994
 # Whom:			asami
 #
-# $Id: Makefile,v 1.8 1995/04/07 05:48:06 asami Exp $
+# $Id: Makefile,v 1.9 1996/06/03 02:17:23 asami Exp $
 #
 
 DISTNAME=	kterm-6.1.0
+PKGNAME=	jp-kterm-6.1.0
 CATEGORIES+=	japanese x11
 MASTER_SITES=	ftp://freefall.freebsd.org/pub/FreeBSD/LOCAL_PORTS/
 
