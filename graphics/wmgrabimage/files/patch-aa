@@ -1,20 +1,18 @@
---- Makefile.orig	Tue Feb  2 06:55:30 1999
-+++ Makefile	Thu Aug 10 22:05:20 2000
-@@ -1,8 +1,8 @@
+--- Makefile.orig	Sun May 27 16:02:18 2001
++++ Makefile	Fri Jul 27 17:06:11 2001
+@@ -1,8 +1,6 @@
 -CC     = gcc
 -CFLAGS = -O2 -Wall
 -INCDIR = -I/usr/X11R6/include/X11
 -DESTDIR= /usr/X11R6
 -LIBDIR = -L/usr/X11R6/lib
-+CC     ?= gcc
-+CFLAGS ?= -O2
 +INCDIR = -I${X11BASE}/include
 +DESTDIR= ${PREFIX}
 +LIBDIR = -L${X11BASE}/lib
  # for linux
  LIBS   = -lXpm -lX11 -lXext
  # for Solaris
-@@ -12,14 +12,14 @@
+@@ -12,14 +10,14 @@
  
  
  .c.o:
@@ -31,7 +29,7 @@
  
  clean:
  	for i in $(OBJS) ; do \
-@@ -28,7 +28,7 @@
+@@ -28,7 +26,7 @@
  	rm -f wmGrabImage
  
  install:: wmGrabImage
