@@ -1,4 +1,5 @@
 bin/zebraidx
+bin/zebrash
 bin/zebrasrv
 share/doc/zebra-server/zebra.html
 share/doc/zebra-server/zebra.pdf
