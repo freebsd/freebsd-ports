@@ -7,6 +7,7 @@
 
 PORTNAME=	libebml
 PORTVERSION=	0.6.4
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://dl.matroska.org/downloads/libebml/
 
@@ -36,7 +37,12 @@ do-configure:
 
 .if ${OSVERSION} < 500000
 # this is gcc 2.x
-CFLAGS+=	-DNO_WSTRING
+CFLAGS+= -DNO_WSTRING
+# use gcc 3.2
+USE_GCC=3.2
+.else
+# default for 5.x series
+USE_GCC=3.3
 .endif
 
 .include <bsd.port.post.mk>
