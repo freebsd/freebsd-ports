@@ -26,6 +26,7 @@ include/libgimp/gimpmodule.h
 include/libgimp/gimppatheditor.h
 include/libgimp/gimppixmap.h
 include/libgimp/gimpquerybox.h
+include/libgimp/gimpsignal.h
 include/libgimp/gimpsizeentry.h
 include/libgimp/gimpui.h
 include/libgimp/gimputils.h
@@ -40,15 +41,15 @@ include/libgimp/parasiteio.h
 lib/libgck.a
 lib/libgck.la
 lib/libgck.so
-lib/libgck.so.19
+lib/libgck.so.20
 lib/libgimp.a
 lib/libgimp.la
 lib/libgimp.so
-lib/libgimp.so.19
+lib/libgimp.so.20
 lib/libgimpui.a
 lib/libgimpui.la
 lib/libgimpui.so
-lib/libgimpui.so.19
+lib/libgimpui.so.20
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 libexec/gimp/1.1/modules/libcdisplay_gamma.la
@@ -1106,7 +1107,6 @@ share/gimp/scripts/chrome-logo.scm
 share/gimp/scripts/circuit.scm
 share/gimp/scripts/clothify.scm
 share/gimp/scripts/coffee.scm
-share/gimp/scripts/color-cycling.scm
 share/gimp/scripts/comic-logo.scm
 share/gimp/scripts/coolmetal-logo.scm
 share/gimp/scripts/copy-visible.scm
