@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cvs
-PORTVERSION=	1.11.15
+PORTVERSION=	1.11.16
 CATEGORIES=	devel ipv6
 MASTER_SITES=	http://ftp.cvshome.org/%SUBDIR%/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,misc/cvs/&,}
@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	release/stable/${DISTNAME}
 PKGNAMESUFFIX=	+ipv6
 
 PATCH_SITES=	ftp://ftp.kame.net/pub/kame/misc/
-PATCHFILES=	${DISTNAME}-v6-20040416.diff.gz
+PATCHFILES=	${DISTNAME}-v6-20040521.diff.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	sumikawa@FreeBSD.org
