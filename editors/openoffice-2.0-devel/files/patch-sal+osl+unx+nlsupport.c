@@ -68,33 +68,6 @@
  
  /*
   * This implementation of osl_getTextEncodingFromLocale maps 
-@@ -829,7 +833,7 @@
-             snprintf(env_buf, sizeof(env_buf), "LC_ALL=%s", locale_buf);
-             env_buf[sizeof(env_buf)] = '\0';
-             putenv(env_buf);
--#elif defined( FREEBSD ) || defined( NETBSD )
-+#elif defined( FREEBSD ) 
-             setenv( "LC_ALL", locale_buf, 1);
- #else
-             setenv( "LC_ALL", locale_buf );
-@@ -841,7 +845,7 @@
-             snprintf(env_buf, sizeof(env_buf), "LC_CTYPE=%s", locale_buf);
-             env_buf[sizeof(env_buf)] = '\0';
-             putenv(env_buf);
--#elif defined( FREEBAD ) || defined( NETBSD )
-+#elif defined( FREEBSD ) 
-             setenv("LC_CTYPE", locale_buf, 1 );
- #else
-             setenv( "LC_CTYPE", locale_buf );
-@@ -853,7 +857,7 @@
-             snprintf(env_buf, sizeof(env_buf), "LANG=%s", locale_buf);
-             env_buf[sizeof(env_buf)] = '\0';
-             putenv(env_buf);
--#elif defined( FREEBAD ) || defined( NETBSD )
-+#elif defined( FREEBSD ) 
-             setenv("LC_CTYPE", locale_buf, 1 );
- #else
-             setenv( "LANG", locale_buf );
 @@ -864,6 +868,6 @@
      return 0;
  }
