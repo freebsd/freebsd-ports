@@ -1,0 +1,63 @@
+--- install.sh.orig	Thu Feb  8 14:43:35 2001
++++ install.sh	Mon Mar  5 17:37:06 2001
+@@ -138,17 +138,17 @@
+ {
+     # Executable
+         chmod $vv 755 opera
+-	cp $v -fup opera $exec_dir/
++	cp $v -fp opera $exec_dir/
+ 
+     # Documentation
+ 	mkdir $v -p $doc_dir/
+ 	chmod $vv 755 $doc_dir
+-	cp $v -fup LICENSE $doc_dir
++	cp $v -fp LICENSE $doc_dir
+ 
+     # Shared files
+ 	mkdir $v -p $share_dir/buttons/
+ 	chmod $vv 755 $share_dir/buttons
+-	cp $v -Rfup buttons/* $share_dir/buttons/
++	cp $v -Rfp buttons/* $share_dir/buttons/
+ 
+ 	# fix for windows button sets
+         cd $share_dir/buttons
+@@ -158,18 +158,18 @@
+ 
+ 	mkdir $v -p $share_dir/help/
+ 	chmod $vv 755 $share_dir/help
+-	cp $v -Rfup help/* $share_dir/help/
++	cp $v -Rfp help/* $share_dir/help/
+ 	    
+ 	mkdir $v -p $share_dir/images/
+ 	chmod $vv 755 $share_dir/images
+-	cp $v -Rfup images/* $share_dir/images/
++	cp $v -Rfp images/* $share_dir/images/
+ 	
+ 	mkdir $v -p  $share_dir/styles/
+ 	chmod $vv 755 $share_dir/styles
+-	cp $v -Rfup styles/* $share_dir/styles/
++	cp $v -Rfp styles/* $share_dir/styles/
+ 
+-	cp $v -fup opera.xpm opera.wmconfig opera.desktop opera_*.png $share_dir/
+-	cp $v -iup opera.adr $share_dir/
++	cp $v -fp opera.xpm opera.wmconfig opera.desktop opera_*.png $share_dir/
++	cp $v -ip opera.adr $share_dir/
+ 	
+ 
+ 	icons
+@@ -193,11 +193,11 @@
+ 
+ icons()
+ {
+-    if test ! -d /usr/share/icons; then install $v -m 755 -o 0 -g 0 -d /usr/share/icons/; fi
+-    install $v -m 644 -o 0 -g 0 $share_dir/opera.xpm /usr/share/icons/opera.xpm
++    if test ! -d $share_dir/icons; then install $v -m 755 -o 0 -g 0 -d $share_dir/icons/; fi
++    install $v -C -m 644 -o 0 -g 0 $share_dir/opera.xpm $share_dir/icons/opera.xpm
+   
+-    if test ! -d /usr/share/pixmaps; then install $v -m 755 -o 0 -g 0 -d /usr/share/pixmaps/; fi   
+-    install $v -m 644 -o 0 -g 0 $share_dir/opera.xpm /usr/share/pixmaps/opera.xpm
++    if test ! -d $share_dir/pixmaps; then install $v -m 755 -o 0 -g 0 -d $share_dir/pixmaps/; fi   
++    install $v -C -m 644 -o 0 -g 0 $share_dir/opera.xpm $share_dir/pixmaps/opera.xpm
+   
+     if test -d /etc/X11/wmconfig/; then install $v -m 644 -o 0 -g 0 $share_dir/opera.wmconfig /etc/X11/wmconfig/opera; fi
+     
