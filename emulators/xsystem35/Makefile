@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.aist-nara.ac.jp/~masaki-c/private/unitbase/xsys35/down/
 
 MAINTAINER=	sf@FreeBSD.org
 
+USE_REINPLACE=	yes
 USE_AUTOCONF=	yes
 USE_GMAKE=	yes
 USE_GNOMENG=	yes
@@ -100,7 +101,7 @@ post-extract:
 post-patch:
 	${FIND} ${WRKSRC}/src -type f |\
 	${XARGS} ${GREP} -l '<SDL/SDL' /dev/null |\
-	${PERL} -pi.orig -e 's,<SDL/,<,'; \
+	${XARGS} ${REINPLACE_CMD} -e 's,<SDL/,<,'; \
 	done
 
 pre-configure:
