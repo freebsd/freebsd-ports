@@ -2285,6 +2285,7 @@ gnupg		ports/security/gnupg
 gnupg-idea	ports/security/gnupg-idea
 gnuplot		ports/math/gnuplot
 gnuplot+	ports/math/gnuplot+
+gnupod		ports/audio/gnupod
 gnurobots	ports/games/gnurobots
 gnus-emacs20	ports/news/gnus-emacs20
 gnuserv		ports/editors/gnuserv
