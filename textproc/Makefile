@@ -199,6 +199,7 @@
     SUBDIR += mguesser
     SUBDIR += mi-aspell
     SUBDIR += mifluz
+    SUBDIR += mini-xml
     SUBDIR += minidom
     SUBDIR += mkcatalog
     SUBDIR += modlogan

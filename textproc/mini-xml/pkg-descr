@@ -1,0 +1,22 @@
+Mini-XML is a small XML parsing library that you can use to read XML and
+XML-like data files in your application without requiring large non-standard
+libraries.  Mini-XML only requires an ANSI C compatible compiler (GCC works,
+as do most vendors' ANSI C compilers) and a "make" program.
+
+Mini-XML provides the following functionality:
+
+- Reading of UTF-8 and UTF-16 and writing of UTF-8 encoded XML files and
+  strings.
+- Data is stored in a linked-list tree structure, preserving the XML data
+  hierarchy.
+- Supports arbitrary element names, attributes, and attribute values with no
+  preset limits, just available memory.
+- Supports integer, real, opaque ("cdata"), and text data types in "leaf"
+  nodes.
+- Functions for creating and managing trees of data.
+- "Find" and "walk" functions for easily locating and navigating trees of data.
+
+WWW: http://www.easysw.com/~mike/mxml
+
+- Michael Sweet
+mxml@easysw.com
