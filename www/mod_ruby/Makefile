@@ -23,7 +23,7 @@ RUBY_REQUIRE=	160 <= Ruby
 .include <bsd.port.pre.mk>
 
 .if defined(RUBY_PROVIDED)
-VERSION=	0.2.1
+VERSION=	0.2.2
 .else
 VERSION=	0.2.0
 .endif
