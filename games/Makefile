@@ -162,6 +162,7 @@
     SUBDIR += gracer
     SUBDIR += grande
     SUBDIR += greed
+    SUBDIR += gretools
     SUBDIR += grhino
     SUBDIR += groundhog
     SUBDIR += gru
