@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xpaint
-PORTVERSION=	2.5.7
+PORTVERSION=	2.6.1
 CATEGORIES=	graphics
 MASTER_SITES=	http://home.worldonline.dk/~torsten/xpaint/ \
 		ftp://ftp.win.ne.jp/pub/graphics/
@@ -16,7 +16,7 @@ MAINTAINER=	jseger@FreeBSD.org
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 		png.4:${PORTSDIR}/graphics/png
 
-WRKSRC=		${WRKDIR}/xpaint
+WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_IMAKE=	yes
 USE_XPM=	yes
 MAN1=		xpaint.1
