@@ -12,11 +12,12 @@ CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.ex-parrot.com/~chris/driftnet/ \
 		http://www.vanheusden.com/mirrors/
 
-MAINTAINER=	corecode@corecode.ath.cx
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Tool to grab images out of (your) TCP connections
 
 LIB_DEPENDS=	ungif.5:${PORTSDIR}/graphics/libungif \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
+BUILD_DEPENDS=	makedepend:${X_IMAKE_PORT}
 
 USE_GNOME=	gtk12
 USE_X_PREFIX=	yes
