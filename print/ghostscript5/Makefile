@@ -3,7 +3,7 @@
 # Date created:		11 December 1998
 # Whom:			giffunip
 #
-# $Id$
+# $Id: Makefile,v 1.28 1999/01/04 03:34:01 steve Exp $
 #
 
 DISTNAME=	ghostscript-5.10
@@ -39,7 +39,7 @@ DECRYPT_PDF=	pdf_sec.ps
 
 post-extract:
 	${LN} -s ${WRKDIRPREFIX}${PORTSDIR}/graphics/jpeg/work/jpeg-6b ${WRKSRC}/jpeg
-	${LN} -s ${WRKDIRPREFIX}${PORTSDIR}/graphics/png/work/libpng-1.0.2 ${WRKSRC}/libpng
+	${LN} -s ${WRKDIRPREFIX}${PORTSDIR}/graphics/png/work/libpng-1.0.3 ${WRKSRC}/libpng
 	# additional PCL3  driver
 	$(EXTRACT_CMD) -xvf ${WRKDIR}/hpdj-2.5/hpdj.tar -C $(WRKSRC)
 	${PATCH} --directory=${WRKSRC} <${WRKSRC}/devs.mak-5.10.diff
