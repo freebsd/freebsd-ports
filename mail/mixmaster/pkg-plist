@@ -1,0 +1,27 @@
+bin/mixmaster
+bin/mixmaster-update.pl
+%%EXAMPLESDIR%%/README
+%%EXAMPLESDIR%%/abuse.txt.in
+%%EXAMPLESDIR%%/adminkey.txt
+%%EXAMPLESDIR%%/allpingers.txt
+%%EXAMPLESDIR%%/blocked.txt.in
+%%EXAMPLESDIR%%/dest.alw
+%%EXAMPLESDIR%%/dest.blk
+%%EXAMPLESDIR%%/end.hlp
+%%EXAMPLESDIR%%/header.blk
+%%EXAMPLESDIR%%/intro.hlp
+%%EXAMPLESDIR%%/mix.cfg
+%%EXAMPLESDIR%%/mix.cfg.ex
+%%EXAMPLESDIR%%/mix.hlp
+%%EXAMPLESDIR%%/mlist.txt
+%%EXAMPLESDIR%%/news.hlp
+%%EXAMPLESDIR%%/pgp.hlp
+%%EXAMPLESDIR%%/pgponly.hlp
+%%EXAMPLESDIR%%/pubring.asc
+%%EXAMPLESDIR%%/pubring.mix
+%%EXAMPLESDIR%%/rab.blk
+%%EXAMPLESDIR%%/reply.txt.in
+%%EXAMPLESDIR%%/rlist.txt
+%%EXAMPLESDIR%%/type1.hlp
+%%EXAMPLESDIR%%/usage.txt.in
+@dirrm share/examples/mixmaster

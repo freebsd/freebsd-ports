@@ -188,6 +188,7 @@
     SUBDIR += mini_sendmail
     SUBDIR += minimalist
     SUBDIR += missey
+    SUBDIR += mixmaster
     SUBDIR += mixminion
     SUBDIR += ml
     SUBDIR += mls

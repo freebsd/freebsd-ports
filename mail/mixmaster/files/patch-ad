@@ -1,0 +1,8 @@
+--- ../conf/mix.cfg.orig	Wed Oct 31 09:19:55 2001
++++ ../conf/mix.cfg	Mon Oct 28 13:17:39 2002
+@@ -1,3 +1,5 @@
++SENDMAIL        /usr/sbin/sendmail -t
++POOL            /var/spool/mixmaster
+ ######################## Client configuration: ##########################
+ REMAIL          n
+ 
