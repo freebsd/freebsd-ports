@@ -8,10 +8,13 @@
 
 PORTNAME=	spegla
 PORTVERSION=	1.1p4
-PORTREVISION=	1
-CATEGORIES=	ftp
+PORTREVISION=	2
+CATEGORIES=	ftp ipv6
 MASTER_SITES=	ftp://ftp.luth.se/pub/unix/mirror/ \
 		ftp://subzero.campus.luth.se/pub/spegla/
+
+PATCH_SITES=	http://www.imasy.or.jp/~ume/ipv6/
+PATCHFILES=	${DISTNAME}-ipv6-20020129-3.diff.gz
 
 MAINTAINER=	jkh@FreeBSD.org
 
