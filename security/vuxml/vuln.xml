@@ -32,6 +32,183 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+   <vuln vid="01c231cd-4393-11d9-8bb9-00065be4b5b6">
+     <topic>mysql -- GRANT access restriction problem</topic>
+     <affects>
+       <package>
+         <name>mysql-server</name>
+         <range><lt>3.23.59</lt></range>
+         <range><ge>4.*</ge><lt>4.0.21</lt></range>
+       </package>
+     </affects>
+     <description>
+       <body xmlns="http://www.w3.org/1999/xhtml">
+         <p>When a user is granted access to a database with a name containing an
+         underscore and the underscore is not escaped then that user might
+         also be able to access other, similarly named, databases on the
+         affected system. </p>
+        <p>The problem is that the underscore is seen as a wildcard by MySQL
+        and therefore it is possible that an admin might accidently GRANT
+        a user access to multiple databases.</p>
+       </body>
+     </description>
+     <references>
+        <cvename>CAN-2004-0957</cvename>
+        <bid>11435</bid>
+        <url>http://bugs.mysql.com/bug.php?id=3933</url>
+        <url>http://rhn.redhat.com/errata/RHSA-2004-611.html</url>
+        <url>http://www.openpkg.org/security/OpenPKG-SA-2004.045-mysql.html</url>
+     </references>
+     <dates>
+       <discovery>2004-03-29</discovery>
+       <entry>2004-12-16</entry>
+     </dates>
+   </vuln>
+
+   <vuln vid="06a6b2cf-484b-11d9-813c-00065be4b5b6">
+     <topic>mysql -- ALTER MERGE denial of service vulnerability</topic>
+     <affects>
+       <package>
+         <name>mysql-server</name>
+         <range><lt>3.23.59</lt></range>
+         <range><ge>4.*</ge><lt>4.0.21</lt></range>
+         <range><ge>4.1.*</ge><lt>4.1.1</lt></range>
+       </package>
+     </affects>
+     <description>
+       <body xmlns="http://www.w3.org/1999/xhtml">
+         <p>Dean Ellis reported a denial of service vulnerability in the MySQL server:</p>
+        <blockquote cite="http://bugs.mysql.com/bug.php?id=4017">
+                <p>
+                Multiple threads ALTERing the same (or different) MERGE tables to change the
+                UNION eventually crash the server or hang the individual threads.
+                </p>
+        </blockquote>
+        <p>Note that a script demonstrating the problem is included in the
+        MySQL bug report. Attackers that have control of a MySQL account
+        can easily use a modified version of that script during an attack. </p>
+       </body>
+     </description>      
+     <references>
+        <cvename>CAN-2004-0837</cvename>
+        <bid>11357</bid>
+        <url>http://bugs.mysql.com/bug.php?id=2408</url>
+        <url>http://rhn.redhat.com/errata/RHSA-2004-611.html</url>
+     </references>
+     <dates>
+       <discovery>2004-01-15</discovery>
+       <entry>2004-12-16</entry>
+     </dates>
+   </vuln>
+
+   <vuln vid="29edd807-438d-11d9-8bb9-00065be4b5b6">
+     <topic>mysql -- FTS request denial of service vulnerability</topic>
+     <affects>
+       <package>
+         <name>mysql-server</name>
+         <range><ge>4.*</ge><lt>4.0.21</lt></range>
+       </package>
+     </affects>
+     <description>
+       <body xmlns="http://www.w3.org/1999/xhtml">
+         <p>A special crafted MySQL FTS request can cause the server to crash.
+         Malicious MySQL users can abuse this bug in a denial of service
+         attack against systems running an affected MySQL daemon. </p>
+         <p>Note that because this bug is related to the parsing of requests,
+         it may happen that this bug is triggered accidently by a user when he
+         or she makes a typo. </p>
+       </body>
+     </description>
+     <references>
+       <url>http://bugs.mysql.com/bug.php?id=3870</url>
+       <cvename>CAN-2004-0956</cvename>
+       <bid>11432</bid>
+     </references>
+     <dates>
+       <discovery>2004-03-23</discovery>
+       <entry>2004-12-16</entry>
+     </dates>
+   </vuln>
+
+   <vuln vid="835256b8-46ed-11d9-8ce0-00065be4b5b6">
+     <topic>mysql -- mysql_real_connect buffer overflow vulnerability</topic>
+     <affects>
+       <package>
+         <name>mysql-server</name>
+         <range><lt>3.23.59</lt></range>
+         <range><ge>4.*</ge><lt>4.0.21</lt></range>
+       </package>
+       <package>
+         <name>mysql-client</name>
+         <range><lt>3.23.59</lt></range>
+         <range><ge>4.*</ge><lt>4.0.21</lt></range>
+       </package>
+     </affects>
+     <description>
+       <body xmlns="http://www.w3.org/1999/xhtml">
+         <p>The mysql_real_connect function doesn't properly handle DNS replies
+         by copying the IP address into a buffer without any length checking.
+         A specially crafted DNS reply may therefore be used to cause a
+         buffer overflow on affected systems.</p>
+         <p>Note that whether this issue can be exploitable depends on the system library responsible for
+         the gethostbyname function. The bug finder, Lukasz Wojtow, explaines this with the following words:</p>
+         <blockquote cite="http://bugs.mysql.com/bug.php?id=4017">
+                <p>In glibc there is a limitation for an IP address to have only 4
+                bytes (obviously), but generally speaking the length of the address
+                comes with a response for dns query (i know it sounds funny but
+                read rfc1035 if you don't believe). This bug can occur on libraries
+                where gethostbyname function takes length from dns's response</p>
+         </blockquote>
+       </body>
+     </description>
+     <references>
+        <cvename>CAN-2004-0836</cvename>
+        <bid>10981</bid>
+        <url>http://bugs.mysql.com/bug.php?id=4017</url>
+        <url>http://lists.mysql.com/internals/14726</url>
+        <url>http://rhn.redhat.com/errata/RHSA-2004-611.html</url>
+        <url>http://www.osvdb.org/displayvuln.php?osvdb_id=10658</url>
+     </references>
+     <dates>
+       <discovery>2004-06-04</discovery>
+       <entry>2004-12-16</entry>
+     </dates>
+   </vuln>
+
+   <vuln vid="035d17b2-484a-11d9-813c-00065be4b5b6">
+     <topic>mysql -- erroneous access restrictions applied to table renames</topic>
+     <affects>
+       <package>
+         <name>mysql-server</name>
+         <range><lt>3.23.59</lt></range>
+         <range><ge>4.*</ge><lt>4.0.21</lt></range>
+       </package>
+     </affects>
+     <description>
+       <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>A Red Hat advisory reports:</p>
+        <blockquote cite="http://rhn.redhat.com/errata/RHSA-2004-611.html">
+                <p>Oleksandr Byelkin discovered that "ALTER TABLE ... RENAME"
+                checked the CREATE/INSERT rights of the old table instead of the new one.</p>
+                <p>Table access restrictions, on the affected MySQL servers,
+                may accidently or intentially be bypassed due to this
+                bug.</p>
+        </blockquote>
+       </body>
+     </description>
+     <references>
+        <cvename>CAN-2004-0835</cvename>
+        <bid>11357</bid>
+        <url>http://bugs.mysql.com/bug.php?id=3270</url>
+        <url>http://rhn.redhat.com/errata/RHSA-2004-611.html</url>
+        <url>http://xforce.iss.net/xforce/xfdb/17666</url>
+     </references>
+     <dates>
+       <discovery>2004-03-23</discovery>
+       <entry>2004-12-16</entry>        
+     </dates>
+   </vuln>
+
   <vuln vid="0ff0e9a6-4ee0-11d9-a9e7-0001020eed82">
     <topic>phpmyadmin -- command execution vulnerability</topic>
     <affects>
