@@ -1,5 +1,5 @@
-# $Id: Makefile,v 1.15 1994/11/08 03:37:23 ache Exp $
+# $Id: Makefile,v 1.16 1994/11/20 17:06:55 torstenb Exp $
 #
-SUBDIR= calc iozone ispell less mshell mtools netpbm top unzip zoo screen
+SUBDIR= calc hfs iozone ispell less mshell mtools netpbm top unzip zoo screen
 
 .include <bsd.port.subdir.mk>
