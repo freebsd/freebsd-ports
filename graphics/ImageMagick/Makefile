@@ -1,10 +1,9 @@
-PATCH_STRIP=	-p0 -b
 # New ports collection makefile for:	ImageMagick
 # Version required:	4.0
 # Date created:		15 November 1994
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.25 1998/01/29 16:04:19 jseger Exp $
+# $Id: Makefile,v 1.26 1998/01/29 16:44:00 fenner Exp $
 #
 
 DISTNAME=	ImageMagick-4.0
