@@ -1,48 +1,66 @@
-bin/mlmmj-send
-bin/mlmmj-recieve
-bin/mlmmj-process
-bin/mlmmj-sub
-bin/mlmmj-unsub
 bin/mlmmj-bounce
 bin/mlmmj-maintd
 bin/mlmmj-make-ml.sh
-share/mlmmj/listtexts/access
-share/mlmmj/listtexts/bounce-probe
-share/mlmmj/listtexts/listhelp
-share/mlmmj/listtexts/moderation
-share/mlmmj/listtexts/notifysub
-share/mlmmj/listtexts/notifyunsub
-share/mlmmj/listtexts/notintocc
-share/mlmmj/listtexts/sub-confirm
-share/mlmmj/listtexts/sub-ok
-share/mlmmj/listtexts/subonlypost
-share/mlmmj/listtexts/unsub-confirm
-share/mlmmj/listtexts/unsub-ok
+bin/mlmmj-process
+bin/mlmmj-recieve
+bin/mlmmj-send
+bin/mlmmj-sub
+bin/mlmmj-unsub
+%%DATADIR%%/listtexts/access
+%%DATADIR%%/listtexts/bounce-probe
+%%DATADIR%%/listtexts/listhelp
+%%DATADIR%%/listtexts/moderation
+%%DATADIR%%/listtexts/notifysub
+%%DATADIR%%/listtexts/notifyunsub
+%%DATADIR%%/listtexts/notintocc
+%%DATADIR%%/listtexts/sub-confirm
+%%DATADIR%%/listtexts/sub-ok
+%%DATADIR%%/listtexts/subonlypost
+%%DATADIR%%/listtexts/unsub-confirm
+%%DATADIR%%/listtexts/unsub-ok
+%%PERLWEB%%www/mlmmj/perl-admin/README
+%%PERLWEB%%www/mlmmj/perl-admin/conf/config.pl
+%%PERLWEB%%www/mlmmj/perl-admin/conf/tunables.pl
+%%PERLWEB%%www/mlmmj/perl-admin/htdocs/dot.htaccess
 %%PERLWEB%%www/mlmmj/perl-admin/htdocs/edit.cgi
 %%PERLWEB%%www/mlmmj/perl-admin/htdocs/index.cgi
 %%PERLWEB%%www/mlmmj/perl-admin/htdocs/save.cgi
-%%PERLWEB%%www/mlmmj/perl-admin/htdocs/dot.htaccess
-%%PERLWEB%%www/mlmmj/perl-admin/templates/index.html
-%%PERLWEB%%www/mlmmj/perl-admin/templates/edit_boolean.html
 %%PERLWEB%%www/mlmmj/perl-admin/templates/edit.html
+%%PERLWEB%%www/mlmmj/perl-admin/templates/edit_boolean.html
 %%PERLWEB%%www/mlmmj/perl-admin/templates/edit_list.html
-%%PERLWEB%%www/mlmmj/perl-admin/templates/save.html
 %%PERLWEB%%www/mlmmj/perl-admin/templates/edit_string.html
-%%PERLWEB%%www/mlmmj/perl-admin/conf/config.pl
-%%PERLWEB%%www/mlmmj/perl-admin/conf/tunables.pl
-%%PERLWEB%%www/mlmmj/perl-admin/README
+%%PERLWEB%%www/mlmmj/perl-admin/templates/index.html
+%%PERLWEB%%www/mlmmj/perl-admin/templates/save.html
 %%PERLWEB%%www/mlmmj/perl-user/config.pl
 %%PERLWEB%%www/mlmmj/perl-user/example.html
 %%PERLWEB%%www/mlmmj/perl-user/mlmmj.cgi
+%%PHPWEB%%www/mlmmj/php-admin/README
+%%PHPWEB%%www/mlmmj/php-admin/conf/config.php
+%%PHPWEB%%www/mlmmj/php-admin/conf/tunables.php
+%%PHPWEB%%www/mlmmj/php-admin/htdocs/class.FastTemplate.php
+%%PHPWEB%%www/mlmmj/php-admin/htdocs/dot.htaccess
+%%PHPWEB%%www/mlmmj/php-admin/htdocs/edit.php
+%%PHPWEB%%www/mlmmj/php-admin/htdocs/index.php
+%%PHPWEB%%www/mlmmj/php-admin/htdocs/save.php
+%%PHPWEB%%www/mlmmj/php-admin/templates/edit.html
+%%PHPWEB%%www/mlmmj/php-admin/templates/edit_boolean.html
+%%PHPWEB%%www/mlmmj/php-admin/templates/edit_list.html
+%%PHPWEB%%www/mlmmj/php-admin/templates/edit_string.html
+%%PHPWEB%%www/mlmmj/php-admin/templates/index.html
+%%PHPWEB%%www/mlmmj/php-admin/templates/save.html
 %%PHPWEB%%www/mlmmj/php-user/README
 %%PHPWEB%%www/mlmmj/php-user/example.html
 %%PHPWEB%%www/mlmmj/php-user/mlmmj.php
-@dirrm share/mlmmj/listtexts
-@dirrm share/mlmmj
-%%PERLWEB%%@dirrm www/mlmmj/perl-admin/htdocs
+%%PHPWEB%%@dirrm www/mlmmj/php-user
+%%PHPWEB%%@dirrm www/mlmmj/php-admin/templates
+%%PHPWEB%%@dirrm www/mlmmj/php-admin/htdocs
+%%PHPWEB%%@dirrm www/mlmmj/php-admin/conf
+%%PHPWEB%%@dirrm www/mlmmj/php-admin
+%%PERLWEB%%@dirrm www/mlmmj/perl-user
 %%PERLWEB%%@dirrm www/mlmmj/perl-admin/templates
+%%PERLWEB%%@dirrm www/mlmmj/perl-admin/htdocs
 %%PERLWEB%%@dirrm www/mlmmj/perl-admin/conf
 %%PERLWEB%%@dirrm www/mlmmj/perl-admin
-%%PERLWEB%%@dirrm www/mlmmj/perl-user
-%%PHPWEB%%@dirrm www/mlmmj/php-user
 %%WEB%%@dirrm www/mlmmj
+@dirrm %%DATADIR%%/listtexts
+@dirrm %%DATADIR%%
