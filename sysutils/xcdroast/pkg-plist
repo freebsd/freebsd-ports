@@ -1,5 +1,4 @@
 bin/xcdroast
-lib/charset.alias
 lib/xcdroast-0.98/bin/cddbtool
 lib/xcdroast-0.98/bin/rmtool
 lib/xcdroast-0.98/bin/vrfytool
@@ -32,7 +31,6 @@ share/locale/hu/LC_MESSAGES/xcdroast.mo
 share/locale/id/LC_MESSAGES/xcdroast.mo
 share/locale/it/LC_MESSAGES/xcdroast.mo
 share/locale/ja/LC_MESSAGES/xcdroast.mo
-share/locale/locale.alias
 share/locale/nl/LC_MESSAGES/xcdroast.mo
 share/locale/no/LC_MESSAGES/xcdroast.mo
 share/locale/pl/LC_MESSAGES/xcdroast.mo
