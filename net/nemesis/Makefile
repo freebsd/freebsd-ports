@@ -15,7 +15,7 @@ MASTER_SITES=	http://celerity.bartoli.org/nemesis/  \
 
 MAINTAINER=     obrien@FreeBSD.org
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libnet.a::net/libnet
+BUILD_DEPENDS=	${LOCALBASE}/lib/libnet.a:${PORTSDIR}/net/libnet
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 GNU_CONFIGURE=	yes
