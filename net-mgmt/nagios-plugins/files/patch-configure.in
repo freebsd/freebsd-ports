@@ -1,5 +1,5 @@
 --- configure.in.orig	Fri Jul 11 08:12:23 2003
-+++ configure.in	Sun Jul 13 13:13:37 2003
++++ configure.in	Sun Apr  4 01:03:13 2004
 @@ -12,7 +12,7 @@
  AM_INIT_AUTOMAKE(nagios-plugins,${PACKAGE_VERSION})
  AM_CONFIG_HEADER(plugins/config.h plugins/common.h plugins/version.h plugins/netutils.h plugins/utils.h plugins/popen.h)
@@ -79,7 +79,33 @@
  LIBS="$_SAVEDLIBS"
  
  dnl Check for OpenSSL location
-@@ -841,6 +852,8 @@
+@@ -418,9 +429,24 @@
+ fi
+ 
+ AC_PATH_PROG(PATH_TO_PS,ps)
++dnl For FreeBSD
++dnl  STAT UCOMM              VSZ   RSS USER      PPID COMMAND
++if ps -axwo 'stat ucomm vsz rss user uid ppid command' 2>/dev/null | egrep -i ["^ *STAT +UCOMM +VSZ +RSS +USER +UID +PPID +COMMAND"] > /dev/null
++then
++	AC_DEFINE(USE_PS_VARS,1,[Define if 'ps' will be parsed with sscanf])
++	AC_DEFINE_UNQUOTED(PS_VARLIST,[procstat,&procuid,&procppid,procprog,&pos],[Variable list for sscanf of 'ps' output])
++	AC_DEFINE_UNQUOTED(PS_RAW_COMMAND,"$PATH_TO_PS -axwo 'stat uid ppid command'",[Verbatim command to execute for ps in check_netsaint])
++	EXTRAS="$EXTRAS check_nagios"
++	AC_DEFINE_UNQUOTED(PS_COMMAND,"$PATH_TO_PS -axwo 'stat uid ppid ucomm command'",[Verbatim command to execute for ps in check_procs])
++	AC_DEFINE_UNQUOTED(PS_FORMAT,"%s %d %d %s %n",[Format string for scanning ps output in check_procs])
++	AC_DEFINE_UNQUOTED(VSZ_COMMAND,"$PATH_TO_PS -axwo 'vsz ucomm'",[Verbatim command to execute for ps in check_vsz])
++	AC_DEFINE_UNQUOTED(VSZ_FORMAT,"%d %s",[Format string for scanning ps output in check_vsz])
++	AC_DEFINE_UNQUOTED(RSS_COMMAND,"$PATH_TO_PS -axwo 'rss ucomm'",[Verbatim command to execute for ps in check_rss])
++	AC_DEFINE_UNQUOTED(RSS_FORMAT,"%d %s",[Format string for scanning ps output in check_rss])
++  echo "      ps syntax... $PATH_TO_PS -axwo 'stat uid ppid ucomm command'"
+ dnl For OpenBSD 3.2 & 3.3. Must come before ps -weo
+ dnl  STAT UCOMM              VSZ   RSS USER      PPID COMMAND
+-if ps -axwo 'stat comm vsz rss user uid ppid args' 2>/dev/null | egrep -i ["^ *STAT +UCOMM +VSZ +RSS +USER +UID +PPID +COMMAND"] > /dev/null
++elif ps -axwo 'stat comm vsz rss user uid ppid args' 2>/dev/null | egrep -i ["^ *STAT +UCOMM +VSZ +RSS +USER +UID +PPID +COMMAND"] > /dev/null
+ then
+ 	AC_DEFINE(USE_PS_VARS,1,[Define if 'ps' will be parsed with sscanf])
+ 	AC_DEFINE_UNQUOTED(PS_VARLIST,[procstat,&procuid,&procppid,procprog,&pos],[Variable list for sscanf of 'ps' output])
+@@ -841,6 +867,8 @@
  	AC_DEFINE_UNQUOTED(WHO_COMMAND,"$PATH_TO_WHO",[path and arguments for invoking 'who'])
  fi
  
@@ -88,7 +114,7 @@
  AC_PATH_PROG(PATH_TO_SNMPGET,snmpget)
  if test -x "$PATH_TO_SNMPGET"
  then
-@@ -863,7 +876,10 @@
+@@ -863,7 +891,10 @@
  	echo "** Tried $PERL - install Net::SNMP perl module if you want to"
  	echo "        use the perl snmp plugins"
  fi
@@ -99,7 +125,7 @@
  AC_PATH_PROG(PATH_TO_QUAKESTAT,quakestat)
  AC_PATH_PROG(PATH_TO_QSTAT,qstat)
  if test -x "$PATH_TO_QUAKESTAT"
-@@ -877,7 +893,10 @@
+@@ -877,7 +908,10 @@
  else
  	echo "** Get qstat from http://www.activesw.com/people/steve/qstat.html in order to make check_game plugin"
  fi
@@ -110,7 +136,7 @@
  AC_PATH_PROG(PATH_TO_FPING,fping)
  if test -x "$PATH_TO_FPING"
  then
-@@ -885,6 +904,7 @@
+@@ -885,6 +919,7 @@
  	EXTRAS="$EXTRAS check_fping"
  else
  	echo "** Get fping from http://www.fping.com in order to make check_fping plugin"

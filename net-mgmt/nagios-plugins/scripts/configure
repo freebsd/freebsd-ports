@@ -7,24 +7,31 @@ fi
 
 tempfile=`mktemp -t checklist`
 
-if [ "${BATCH}" = "yes" ]; then
-else
-	/usr/bin/dialog --title "NetSaint plugins configuration options" --clear \
+if [ "${NAGIOS_PLUGINS_OPTIONS}" ]; then
+	set ${NAGIOS_PLUGINS_OPTIONS}
+fi
+
+for i; do
+	eval status_$i=ON
+done
+	
+if [ -z "${BATCH}" ]; then
+	/usr/bin/dialog --title "Nagios plugins configuration options" --clear \
 			--checklist "\n\
 Please select desired options:" -1 -1 16 \
-QStat	"Game server query support" OFF \
-FPing	"Support for non-flooding fast ping" OFF \
-NetSNMP	"SNMP support" OFF \
-Radiusclient	"Radius support" OFF \
-MySQL	"MySQL support" OFF \
-PostgreSQL	"PostgreSQL support" OFF \
-OpenLDAP	"OpenLDAP support" OFF \
+QStat	"Game server query support" "$status_QStat" \
+FPing	"Support for non-flooding fast ping" "$status_FPing" \
+NetSNMP	"SNMP support" "$status_NetSNMP" \
+Radius	"Radius support" "$status_Radius" \
+MySQL	"MySQL support" "$status_MySQL" \
+PgSQL	"PostgreSQL support" "$status_PgSQL" \
+OpenLDAP	"OpenLDAP support" "$status_OpenLDAP" \
 2> $tempfile
 
 	retval=$?
 
 	if [ -s $tempfile ]; then
-		set `cat $tempfile`
+		set `sed 's/"//g' $tempfile`
 	fi
 	rm -f $tempfile
 
@@ -42,6 +49,8 @@ fi
 ${MKDIR} ${WRKDIRPREFIX}${CURDIR}
 exec > ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
 
+echo "PREFIX=   ${PREFIX}"
+
 SUB_QSTAT="@comment "
 SUB_FPING="@comment "
 SUB_SNMP="@comment "
@@ -52,19 +61,19 @@ SUB_LDAP="@comment "
 
 while [ "$1" ]; do
 	case $1 in
-		\"QStat\")
+		QStat)
 			echo "BUILD_DEPENDS+=	qstat:\${PORTSDIR}/games/qstat"
 			echo "RUN_DEPENDS+=	qstat:\${PORTSDIR}/games/qstat"
 			echo "CONFIGURE_ARGS+=	--enable-qstat"
 			SUB_QSTAT=""
 			;;
-		\"FPing\")
+		FPing)
 			echo "BUILD_DEPENDS+=	fping:\${PORTSDIR}/net/fping"
 			echo "RUN_DEPENDS+=	fping:\${PORTSDIR}/net/fping"
 			echo "CONFIGURE_ARGS+=	--enable-fping"
 			SUB_FPING=""
 			;;
-		\"NetSNMP\")
+		NetSNMP)
 			echo "BUILD_DEPENDS+=	snmpcheck:\${PORTSDIR}/net-mgmt/net-snmp"
 			echo "RUN_DEPENDS+=	snmpcheck:\${PORTSDIR}/net-mgmt/net-snmp"
 			echo "BUILD_DEPENDS+=	\${LOCALBASE}/lib/perl5/site_perl/\${PERL_VER}/Net/SNMP.pm:\${PORTSDIR}/net-mgmt/p5-Net-SNMP"
@@ -72,12 +81,12 @@ while [ "$1" ]; do
 			echo "CONFIGURE_ARGS+=	--enable-snmp"
 			SUB_SNMP=""
 			;;
-		\"Radiusclient\")
+		Radius)
 			echo "LIB_DEPENDS+=	radiusclient.0:\${PORTSDIR}/net/radiusclient"
 			echo "CONFIGURE_ARGS+=	--enable-radius"
 			SUB_RADIUS=""
 			;;
-		\"MySQL\")
+		MySQL)
 			echo ".if exists(${LOCALBASE}/lib/mysql/libmysqlclient.so.12)"
 			echo "LIB_DEPENDS+=	mysqlclient.12:${PORTSDIR}/databases/mysql40-client"
 			echo ".else"
@@ -90,19 +99,19 @@ while [ "$1" ]; do
 			echo "CONFIGURE_ARGS+=	--with-mysql=\${LOCALBASE}"
 			SUB_MYSQL=""
 			;;
-		\"PostgreSQL\")
+		PgSQL)
 			echo "POSTGRESQL_PORT?=	databases/postgresql7"
 			echo "LIB_DEPENDS+=	pq.3:\${PORTSDIR}/\${POSTGRESQL_PORT}"
 			echo "CONFIGURE_ARGS+=	--with-pgsql=\${LOCALBASE}"
 			SUB_PGSQL=""
 			;;
-		\"OpenLDAP\")
+		OpenLDAP)
 			echo "LIB_DEPENDS+=	ldap.2:\${PORTSDIR}/net/openldap20-client"
 			echo "CONFIGURE_ARGS+=	--enable-ldap"
 			SUB_LDAP=""
 			;;
 		*)
-			echo "Invalid option(s): $*" > /dev/stderr
+			echo "Unknown option(s): $*" > /dev/stderr
 			rm -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
 			exit 1
 			;;
