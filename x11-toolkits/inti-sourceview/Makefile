@@ -22,10 +22,6 @@ WRKSRC=		${WRKDIR}/lib${PKGNAME}
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 
-PLIST_FILES=	lib/libinti-sourceview-1.0.so lib/libinti-sourceview-1.0.so.0 \
-		lib/inti-1.0/include/inti-sourceview-config.h \
-		libdata/pkgconfig/inti-sourceview-1.0.pc
-
 .if !defined(NOPORTDOCS)
 PORTDOCS=	*
 .endif
@@ -33,15 +29,10 @@ PORTDOCS=	*
 post-configure:
 	@${TOUCH} ${WRKSRC}/inti-sourceview-config.h.in
 
-post-install:
 .if !defined(NOPORTDOCS)
+post-install:
 	@${MKDIR} ${DOCSDIR}
 	@${CP} -R ${WRKSRC}/docs/ ${DOCSDIR}
 .endif
-	@${ECHO_CMD} "include/inti-1.0/inti/inti-sourceview.h" >> ${TMPPLIST}
-	@${FIND} ${PREFIX}/include/inti-1.0/inti/gtk-sourceview -type f | \
-		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
-	@${ECHO_CMD} "@dirrm include/inti-1.0/inti/gtk-sourceview/private" >> ${TMPPLIST}
-	@${ECHO_CMD} "@dirrm include/inti-1.0/inti/gtk-sourceview" >> ${TMPPLIST}
 
 .include <bsd.port.mk>
