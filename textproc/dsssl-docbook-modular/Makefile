@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	dsssl-docbook-modular
-PORTVERSION=	1.78
-PORTREVISION=	6
+PORTVERSION=	1.79
+PORTREVISION=	0
 PORTEPOCH=	1
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -31,19 +31,18 @@ PLIST_SUB=	XMLCATMGR=${XMLCATMGR} DTDDIR=${RELDIR} \
 		CATALOG_PORTS_SGML=${CATALOG_PORTS_SGML}
 
 do-build:
-	@${RM} -Rf ${WRKSRC}/docsrc
+	${RM} -Rf ${WRKSRC}/docsrc
 
 pre-install:
-	@[ -d ${INSTDIR} ] || ${MKDIR} ${INSTDIR}
-	@${FIND} ${WRKDIR} -name '*~' -exec ${RM} {} \;
-	@${FIND} ${WRKDIR} -name '*.orig' -exec ${RM} {} \;
+	${MKDIR} ${INSTDIR}
+	${FIND} ${WRKDIR} -name '*.orig' -exec ${RM} {} \;
+	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${WRKSRC}
 
 do-install:
-	@${CP} -Rp ${WRKSRC}/* ${INSTDIR}
-	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${INSTDIR}
+	@cd ${WRKSRC} && ${TAR} cpf - . | (cd ${INSTDIR} && ${TAR} xpf -)
 
 post-install:
 	-${XMLCATMGR} -sc ${CATALOG_PORTS_SGML} add CATALOG ${RELDIR}/catalog
-	@${CAT} ${FILESDIR}/install-note
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
