@@ -1,11 +1,11 @@
---- src/Makefile.in.orig	Sat Mar  6 00:07:03 2004
-+++ src/Makefile.in	Sat Mar  6 00:10:34 2004
-@@ -133,7 +133,7 @@
+--- src/Makefile.in.orig	Sun Dec  5 18:19:25 2004
++++ src/Makefile.in	Sun Dec  5 18:20:13 2004
+@@ -142,7 +142,7 @@
  
  SUBDIRS = recent-files stock cursors
  
--INCLUDES =  	-I$(top_srcdir)/recent-files				-DG_LOG_DOMAIN=\"GGV\"					-DGNOMELOCALEDIR=\""${prefix}/${DATADIRNAME}/locale"\"		-DGNOMEICONDIR=\""${prefix}/${DATADIRNAME}/pixmaps"\"			-DDATADIR=\""$(datadir)"\"				$(GGV_CFLAGS)						$(GGV_DEPRECATED_CFLAGS)				-I$(includedir)
-+INCLUDES =  	-I$(top_srcdir)/recent-files				-DG_LOG_DOMAIN=\"GGV\"					-DGNOMELOCALEDIR=\""${prefix}/${DATADIRNAME}/locale"\"		-DGNOMEICONDIR=\""${datadir}/pixmaps"\"			-DDATADIR=\""$(datadir)"\"				$(GGV_CFLAGS)						$(GGV_DEPRECATED_CFLAGS)				-I$(includedir)
+-INCLUDES =  	-I$(top_srcdir)/recent-files				-DG_LOG_DOMAIN=\"GGV\"					-DGNOMELOCALEDIR=\""${prefix}/${DATADIRNAME}/locale"\"		-DGNOMEICONDIR=\""${prefix}/${DATADIRNAME}/pixmaps"\"			-DDATADIR=\""$(datadir)"\"				$(GGV_CFLAGS)						$(GGV_DEPRECATED_CFLAGS)
++INCLUDES =  	-I$(top_srcdir)/recent-files				-DG_LOG_DOMAIN=\"GGV\"					-DGNOMELOCALEDIR=\""${prefix}/${DATADIRNAME}/locale"\"		-DGNOMEICONDIR=\""${datadir}/pixmaps"\"			-DDATADIR=\""$(datadir)"\"				$(GGV_CFLAGS)						$(GGV_DEPRECATED_CFLAGS)
  
  
  bin_PROGRAMS = ggv
