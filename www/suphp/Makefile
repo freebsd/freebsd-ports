@@ -18,15 +18,14 @@ GNU_CONFIGURE=	yes
 USE_PHP=	yes
 USE_APACHE=	yes
 WANT_PHP_CGI=	yes
-CONFLICTS=	mod_php4-4* php-4.*
+CONFLICTS=	mod_php4-4* php-4.* mod_php5-5* php-5.*
 
 WITH_LOGFILE?=	/var/log/suphp.log
 PHP_PATH?=	${LOCALBASE}/bin/php
 MIN_UID?=	80
 MIN_GID?=	80
 WITH_SETID_MODE?=	owner
-MYPORTDOCS=	apache/CONFIG apache/INSTALL apache/README apache/LICENSE \
-		LICENSE	INSTALL README
+MYPORTDOCS=	apache/CONFIG apache/INSTALL apache/README apache/LICENSE LICENSE INSTALL README
 LANG=		en de
 
 CONFIGURE_ARGS+=	--with-php=${PHP_PATH} \
