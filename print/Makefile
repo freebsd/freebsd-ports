@@ -108,6 +108,7 @@
     SUBDIR += pkfonts400
     SUBDIR += pkfonts600
     SUBDIR += poster
+    SUBDIR += pscal
     SUBDIR += pstotext
     SUBDIR += psutils-a4
     SUBDIR += psutils-letter
