@@ -8,7 +8,7 @@
 PORTNAME=	backfract
 PORTVERSION=	1.1.2
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.inetarena.com/~wms/comp/backfract/
+MASTER_SITES=	http://www.igoweb.org/~wms/comp/backfract/
 
 MAINTAINER=	patrick@FreeBSD.org
 COMMENT=	Fractal image animated wallpaper program
