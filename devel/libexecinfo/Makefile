@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	libexecinfo
-PORTVERSION=	1.0
-PORTREVISION=	2
+PORTVERSION=	1.1
 CATEGORIES=	devel
-MASTER_SITES=	https://demo.portaone.com/~sobomax/freestuff/
+MASTER_SITES=	http://www.portaone.com/~sobomax/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A library for inspecting program's backtrace
