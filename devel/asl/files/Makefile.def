@@ -2,7 +2,7 @@
 # choose your compiler (must be ANSI-compliant!) and linker command, plus
 # any additionally needed flags
 
-LD = cc
+LD = ${CC}
 LDFLAGS = -s
 
 # -------------------------------------------------------------------------
