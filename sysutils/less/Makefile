@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.greenwoodsoftware.com/%SUBDIR%/ \
 		${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	less
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jharris@widomaker.com
 
 .include <bsd.port.pre.mk>
 
