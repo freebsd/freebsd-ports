@@ -1,9 +1,6 @@
-
-$FreeBSD$
-
---- Makefile.orig	Thu Mar 12 06:11:26 1998
-+++ Makefile	Tue Aug 14 12:52:23 2001
-@@ -58,26 +58,30 @@
+--- Makefile.orig	Wed May  7 09:50:13 2003
++++ Makefile	Tue Apr  6 17:00:50 2004
+@@ -7,7 +7,7 @@
  
  
  # The C compiler:
@@ -11,55 +8,103 @@ $FreeBSD$
 +CC ?= cc
  
  # Compiler options:
--COPTS = -c -O
-+COPTS = -c -w
+ # for DEC
+@@ -17,7 +17,7 @@
+ # for IBM
+ #COPTS = -c -g -qchars=signed -DIBM
+ # for PC_LINUX
+-COPTS = -c -g -fPIC -mcpu=i586 -DPC_LINUX -DDEBUG -DUSE_TCL_STUBS -DUSE_TK_STUBS -DUSE_LOCAL_TK_H
++COPTS = -c -fPIC -DPC_LINUX -DDEBUG -DUSE_TCL_STUBS -DUSE_TK_STUBS -DUSE_LOCAL_TK_H
+ # for SGI
+ #COPTS = -c -g -n32 -signed -DSGI
+ # for SUN
+@@ -25,17 +25,20 @@
+ 
  
  # Shared library linker command:
--SHLINK = cc -G
+-SHLINK = cc -shared
 +SHLINK = ${CC} -shared
  
- # Name for the shared lib:
--#SH_LIB = libtogl.so.1.3
--SH_LIB = 
-+SH_LIB = libtogl.so.1.3
-+#SH_LIB = 
  
--# Where to find tcl.h, tk.h, OpenGL/Mesa headers, etc:
--INCLUDES = -I/usr/local/include -I/usr/include/tcl
-+# Where to find tc.hl, tk.h, OpenGL/Mesa headers, etc:
-+INCLUDES = -I${LOCALBASE}/include/tcl8.4 \
-+           -I${LOCALBASE}/include/tk8.4 \
-+           -I${LOCALBASE}/include/tk8.4/generic \
-+           -I${X11BASE}/include
+ # Where to find tcl.h, tk.h, OpenGL/Mesa headers, etc:
  
+-TCL_PREFIX = /usr
++TCL_PREFIX = ${PREFIX}
++TK_PREFIX = ${PREFIX}
+ #TCL_VER = 8.3
+-TCL_VER = 
++TCL_VER = 8.4
++TK_VER = 8.4
+ 
+ # uncomment exactly one
+-TCL_INCLUDE = -I$(TCL_PREFIX)/include
++TCL_INCLUDE = -I$(TCL_PREFIX)/include/tcl${TCL_VER}
++TK_INCLUDE = -I${TK_PREFIX}/include/tk${TK_VER}
+ #TCL_INCLUDE = -I/pkg/tcl-tk/8.3.0/include
+ # for DEC
+ #INCLUDES = $(TCL_INCLUDE)
+@@ -44,7 +47,7 @@
+ # for IBM
+ #INCLUDES = -I/usr/lpp/OpenGL/include $(TCL_INCLUDE)
+ # for PC_LINUX
+-INCLUDES = -I/usr/X11R6/include $(TCL_INCLUDE)
++INCLUDES = -I${X11BASE}/include $(TCL_INCLUDE) ${TK_INCLUDE}
+ # for SGI
+ #INCLUDES = $(TCL_INCLUDE)
+ # for SUN
+@@ -54,6 +57,7 @@
  # Where to find libtcl.a, libtk.a, OpenGL/Mesa libraries:
--LIBDIRS = -L/usr/local/lib
-+LIBDIRS = -L${LOCALBASE}/lib \
-+          -L${X11BASE}/lib
+ # uncomment exactly one
+ TCL_LIB = -L$(TCL_PREFIX)/lib
++TK_LIB = -L$(TK_PREFIX)/lib
+ # for DEC
+ #LIBDIRS =  $(TCL_LIB)
+ # for HP
+@@ -61,19 +65,21 @@
+ # for IBM
+ #LIBDIRS = -L/usr/lpp/OpenGL/lib $(TCL_LIB)
+ # for PC_LINUX
+-LIBDIRS = $(TCL_LIB) -L/usr/X11R6/lib -Xlinker -rpath -Xlinker $(TCL_PREFIX)/lib
++LIBDIRS = $(TCL_LIB) ${TK_LIB} -L${X11BASE}/lib -Xlinker -rpath -Xlinker
+ # for SGI
+ #LIBDIRS = $(TCL_LIB)
+ # for SUN
+ #LIBDIRS = -L/usr/openwin/lib $(TCL_LIB)
+ 
+-TCL_LIBS = -ltcl$(TCL_VER) -ltk$(TCL_VER)
+-TCL_STUB_LIBS = -ltclstub$(TCL_VER) -ltkstub$(TCL_VER)
++TCL_LIBS = -ltcl84
++TK_LIBS = -ltk84
++TCL_STUB_LIBS = -ltclstub84
++TK_STUB_LIBS = -ltkstub84
  
  # Libraries to link with (-ldl for Linux only?):
--LIBS = -ltk -ltcl -lGLU -lGL -L/usr/X11/lib -lX11 -lXmu -lXext -lXt -lm -ldl
-+LIBS = -ltk84 -ltcl84 -lGLU -lGL -lX11 -lXmu -lXext -lXt -lm $(PTHREAD_LIBS)
+ # NOTE: use -ltcl8.1 -ltk8.1 for Tcl/Tk version 8.1
+-LIBS = $(TCL_LIBS) -lGLU -lGL -L/usr/X11/lib -lX11 -lXmu -lXext -lXt -lm -ldl
+-STUB_LIBS = $(TCL_STUB_LIBS) -lGLU -lGL -L/usr/X11/lib -lX11 -lXmu -lXext -lXt -lm -ldl
++LIBS = $(TCL_LIBS) ${TK_LIBS} -lGLU -lGL -L/usr/X11/lib -lX11 -lXmu -lXext -lXt -lm
++STUB_LIBS = $(TCL_STUB_LIBS) ${TK_STUB_LIBS} -lGLU -lGL -L/usr/X11/lib -lX11 -lXmu -lXext -lXt -lm
  
  TK_FLAGS =
  
-@@ -85,7 +89,7 @@
+@@ -81,9 +87,9 @@
  #### Shouldn't have to change anything beyond this point ####
  
  
 -CFLAGS = $(COPTS) $(INCLUDES) $(TK_FLAGS)
-+CFLAGS += $(COPTS) $(INCLUDES) $(TK_FLAGS) $(PTHREAD_CFLAGS)
++CFLAGS += $(COPTS) $(INCLUDES) $(TK_FLAGS) ${PTHREAD_FLAGS}
  
- LFLAGS = $(LIBDIRS)
- 
-@@ -144,8 +148,8 @@
- 	$(CC) $(CFLAGS) togl.c
+-LFLAGS = $(LIBDIRS)
++LFLAGS = $(LIBDIRS) ${PTHREAD_LIBS}
  
  
--#$(SH_LIB): togl.o
--#	$(SHLINK) $(LFLAGS) togl.o $(LIBS) -o $@ 
-+$(SH_LIB): togl.o
-+	$(SHLINK) $(LFLAGS) togl.o $(LIBS) -o $@ 
+ all: togl.so double.so texture.so index.so overlay.so gears.so pkgIndex
+@@ -162,7 +168,7 @@
+ 	$(TOGL)/ben.rgb
  
+ pkgIndex:
+-	echo 'puts [pkg::create -name Togl -version $(TOGL_VERSION) -load togl[info sharedlibextension]]' | tclsh > pkgIndex.tcl 
++	echo 'puts [pkg::create -name Togl -version $(TOGL_VERSION) -load togl[info sharedlibextension]]' | tclsh${TCL_VER} > pkgIndex.tcl 
  
- 
+ tar:
+ 	cd .. ; \

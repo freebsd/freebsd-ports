@@ -1,5 +1,9 @@
-lib/tk8.4/Togl-1.5/Togl.so
-lib/tk8.4/Togl-1.5/pkgIndex.tcl
-lib/tk8.4/Togl-1.5/togl.h
-lib/tk8.4/Togl-1.5/togl.o
-@dirrm lib/tk8.4/Togl-1.5
+%%TOGL_INSTDIR%%/double.so
+%%TOGL_INSTDIR%%/gears.so
+%%TOGL_INSTDIR%%/index.so
+%%TOGL_INSTDIR%%/overlay.so
+%%TOGL_INSTDIR%%/texture.so
+%%TOGL_INSTDIR%%/togl.so
+%%TOGL_INSTDIR%%/togl.h
+%%TOGL_INSTDIR%%/pkgIndex.tcl
+@dirrm %%TOGL_INSTDIR%%
