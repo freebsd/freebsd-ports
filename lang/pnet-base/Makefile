@@ -22,7 +22,7 @@ BUILD_DEPENDS=	treecc:${PORTSDIR}/lang/treecc
 USE_XLIB=	yes
 .endif
 
-USE_LIBTOOL_VER=13
+USE_LIBTOOL_VER=15
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 
