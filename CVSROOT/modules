@@ -2263,6 +2263,7 @@ genius		ports/deskutils/genius
 genmenu		ports/x11-wm/genmenu
 genpak		ports/biology/genpak
 gensig		ports/mail/gensig
+gentium		ports/x11-fonts/gentium
 gentoo		ports/x11-fm/gentoo
 geomview	ports/graphics/geomview
 geos		ports/graphics/geos
