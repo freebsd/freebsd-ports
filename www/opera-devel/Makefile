@@ -6,26 +6,24 @@
 #
 
 PORTNAME=	opera
-PORTVERSION=	7.23.20031119
+PORTVERSION=	${OPERA_VER}.${OPERA_DATE}
 CATEGORIES=	www
-MASTER_SITES=	ftp://ftp.sunet.se/pub/www/clients/Opera/unix/freebsd/723/final/en/ \
-		ftp://sunsite.cnlab-switch.ch/mirror/opera/unix/freebsd/723/final/en/ \
-		ftp://ftp.tiscali.nl/pub/mirrors/opera/unix/freebsd/723/final/en/ \
-		ftp://ftp.ntua.gr/pub/www/Opera/unix/freebsd/723/final/en/ \
-		http://mirrors.pmmf.hu/mirror/opera/unix/freebsd/723/final/en/ \
-		ftp://ftp.task.gda.pl/pub/opera/unix/freebsd/723/final/en/ \
-		ftp://ftp.planetmirror.com/pub/opera/unix/freebsd/723/final/en/ \
-		http://gd.tuwien.ac.at/infosys/browsers/opera/unix/freebsd/723/final/en/ \
-		ftp://ftp.opera.com/pub/opera/unix/freebsd/723/final/en/
-
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/3./3-/}.1-static-qt.i386.freebsd-en
+MASTER_SITES=	http://snapshot.opera.com/unix/${OPERA_VER}-Preview-1/intel-freebsd/en/
+PKGNAMESUFFIX=	-devel
+DISTNAME=	${PORTNAME}-${OPERA_VER}-${OPERA_DATE}.1-static-qt.i386.freebsd-en
 
 MAINTAINER=	avleeuwen@piwebs.com
 COMMENT=	A blazingly fast, full-featured, standards-compliant browser
 
-CONFLICTS=	linux-opera-*
-
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
+
+OPERA_VER=	7.50
+OPERA_DATE=	20031219
+
+CONFLICTS=	linux-opera-devel-*
+
+DATADIR=	${PREFIX}/share/${PORTNAME}${PKGNAMESUFFIX}
+DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes

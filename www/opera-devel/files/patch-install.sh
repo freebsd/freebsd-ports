@@ -1,8 +1,22 @@
---- install.sh.orig	Mon Oct  6 15:01:39 2003
-+++ install.sh	Wed Oct  8 22:36:31 2003
-@@ -760,9 +760,7 @@
+--- install.sh.orig	Fri Dec 19 14:45:42 2003
++++ install.sh	Wed Dec 31 14:59:00 2003
+@@ -108,8 +108,8 @@
  
-     wrapper_opera_plugin_paths="    \"\${HOME}/.opera/plugins\" \\
+     if test ${os} = 'FreeBSD' -o ${os} = 'OpenBSD'; then
+         wrapper_dir="${prefix}/bin"
+-        doc_dir="${prefix}/share/doc/opera"
+-        share_dir="${prefix}/share/opera"
++        doc_dir="${prefix}/share/doc/opera-devel"
++        share_dir="${prefix}/share/opera-devel"
+         exec_dir="${share_dir}/bin"
+         plugin_dir="${share_dir}/plugins"
+     else
+@@ -758,11 +758,9 @@
+ 
+     debug_msg 0 "in generate_wrapper()"
+ 
+-    wrapper_opera_plugin_paths="    \"\${HOME}/.opera/plugins\" \\
++    wrapper_opera_plugin_paths="    \"\${HOME}/.opera-devel/plugins\" \\
      ${str_localdirplugin} \\
 -    /usr/lib/opera/plugins \\
 -    /usr/local/lib/opera/plugins \\
@@ -11,7 +25,7 @@
  
      case "${machine}:${os}" in
  	i[3456]86:Linux|i[3456]86:FreeBSD|i[3456]86:NetBSD|i[3456]86:OpenBSD)
-@@ -817,15 +815,10 @@
+@@ -817,17 +815,12 @@
  	;;
      esac
      wrapper_netscape_plugin_paths="
@@ -28,9 +42,27 @@
 -    /usr/local/lib/netscape/plugins \\"
 +    /usr/local/lib/netscape-linux/plugins \\"
  
-     wrapper_file="${wrapper_dir}/opera"
+-    wrapper_file="${wrapper_dir}/opera"
++    wrapper_file="${wrapper_dir}/opera-devel"
      
-@@ -981,11 +974,8 @@
+     wrapper_contain="#!/bin/sh
+ 
+@@ -871,9 +864,12 @@
+ OPERA_LD_PRELOAD=\"\${LD_PRELOAD}\"
+ export OPERA_LD_PRELOAD
+ 
++OPERA_PERSONALDIR=\${HOME}/.opera-devel
++export OPERA_PERSONALDIR
++
+ # Native Java enviroment
+-if test -f \"\${HOME}/.opera/javapath.txt\"; then
+-    INIJAVA=\`cat \${HOME}/.opera/javapath.txt\`
++if test -f \"\${HOME}/.opera-devel/javapath.txt\"; then
++    INIJAVA=\`cat \${HOME}/.opera-devel/javapath.txt\`
+     if test -f \"\${INIJAVA}/libjava.so\"; then OPERA_JAVA_DIR=\"\${INIJAVA}\"; fi
+ fi
+ 
+@@ -983,11 +979,8 @@
  
  # Acrobat Reader
  for BINDIR in \\
@@ -44,7 +76,16 @@
      ; do
      if test -d \${BINDIR} ; then PATH=\${PATH}:\${BINDIR}; fi
  done
-@@ -1243,29 +1233,6 @@
+@@ -1115,7 +1108,7 @@
+ 
+ 	#cp $cpv $cpf wrapper.sh $wrapper_dir/opera
+ 	generate_wrapper
+-        chmod $chmodv 755 $wrapper_dir/opera
++        chmod $chmodv 755 $wrapper_file
+ 
+     # Documentation
+ 	debug_msg 1 "Documentation"
+@@ -1248,29 +1241,6 @@
  
  	if test -z "${OPERADESTDIR}"; then
  
@@ -74,7 +115,7 @@
       # Shorcuts and Icons
  	icons
  	gnome
-@@ -1356,22 +1323,22 @@
+@@ -1361,22 +1331,22 @@
  
      debug_msg 0 "in icons()"
  
@@ -109,7 +150,7 @@
      fi
    
      if test ! -d /etc/X11/wmconfig/; then
-@@ -1437,33 +1404,33 @@
+@@ -1442,33 +1412,33 @@
        fi
        # end /opt/gnome share
  
@@ -164,7 +205,7 @@
            fi
  	fi
  	# end /usr/share/gnome link
-@@ -1503,12 +1470,12 @@
+@@ -1508,12 +1478,12 @@
  
      fi  
      
@@ -182,7 +223,7 @@
      fi
  }
  
-@@ -1532,8 +1499,8 @@
+@@ -1537,8 +1507,8 @@
        fi
        if test -w /opt/kde/share/applnk/Internet; then generate_desktop /opt/kde/share/applnk/Internet; fi
  
