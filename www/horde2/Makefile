@@ -59,10 +59,16 @@ HORDEDIR=	${PREFIX}/${LHORDEDIR}
 HORDESBIN=	${PREFIX}/${LHORDESBIN}
 CONFDIR=	${HORDEDIR}/config
 
-APACHE_CNFDIR?=	${LOCALBASE}/etc/apache
 APACHE_CONF=	${APACHE_CNFDIR}/httpd.conf
 PHP_LIB?=	${LOCALBASE}/lib/php
-PHPSO?=		${LOCALBASE}/libexec/apache/libphp4.so
+.if defined(WITH_APACHE2)
+APACHE_CNFDIR=	${LOCALBASE}/etc/apache2
+MOD_DIR=	libexec/apache2
+.else
+APACHE_CNFDIR=	${LOCALBASE}/etc/apache
+MOD_DIR=	libexec/apache
+.endif
+PHPSO=		${LOCALBASE}/${MOD_DIR}/libphp4.so
 HORDE_INC=	${PREFIX}/etc/horde
 LOG_FILE?=	/var/log/horde.log
 
@@ -153,10 +159,8 @@ do-install:
 		${ECHO_CMD} "# Horde's include directory" >> ${APACHE_CONF} ; \
 		${ECHO_CMD} "Include ${HORDE_INC}" >> ${APACHE_CONF} ; \
 	fi)
-	@${CHOWN} -R www:www ${HORDEDIR}
+	@${CHOWN} -R edwin ${HORDEDIR}
 	@${CHMOD} -R o-rwx ${CONFDIR}
-	@${TOUCH} ${LOG_FILE}
-	@${CHOWN} www:www ${LOG_FILE}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for FILE in ${DOCS}
