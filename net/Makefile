@@ -611,6 +611,7 @@
     SUBDIR += tn3270
     SUBDIR += tn5250
     SUBDIR += totd
+    SUBDIR += tptest
     SUBDIR += traceroute
     SUBDIR += trafcount
     SUBDIR += trafd

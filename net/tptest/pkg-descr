@@ -1,0 +1,19 @@
+The purpose with TPTEST is to allow users to measure the speed of
+their Internet connection in a simple way. TPTEST measures the
+throughput speed to and from various reference servers on the
+Internet. The use of TPTEST may help increase the consumer/end user
+knowledge of how Internet services work.
+
+TPTEST was originally developed by the Swedish ICT-commission, then
+later by the Foundation for Internet Infrastructure (iis.se), the
+Swedish Consumer Agency (konsumentverket.se), and the Swedish National
+Post- and Telecom Agency (pts.se). The latest development has been to
+separate the platform-independent test method software (the test
+engine) from the platform-dependent user interface software in order
+to make it easier for anyone to write a test client or server that
+uses the TPTEST testing method. The test engine code is to be regarded
+as a library module and is released under the LGPL license while the
+reference client/server applications is released under the GPL
+license.
+
+WWW: http://tptest.sourceforge.net/
