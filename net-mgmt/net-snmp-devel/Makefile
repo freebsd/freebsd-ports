@@ -27,6 +27,7 @@ COMMENT=	An extendable SNMP implementation
 .if defined(WITH_TKMIB)
 RUN_DEPEND=	${SITE_PERL}/${PERL_ARCH}/Tk.pm:${PORTSDIR}/x11-toolkits/p5-Tk
 .endif
+PATCH_DEPENDS=	${LIBTOOL_DEPENDS}
 
 USE_REINPLACE=	yes
 USE_AUTOCONF_VER=259
