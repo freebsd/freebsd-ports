@@ -2725,6 +2725,7 @@ gno3dtet	ports/games/gno3dtet
 gnocatan	ports/games/gnocatan
 gnochm		ports/deskutils/gnochm
 gnocl		ports/x11-toolkits/gnocl
+gnoemoe		ports/net/gnoemoe
 gnofin		ports/finance/gnofin
 gnofract4d	ports/graphics/gnofract4d
 gnokii		ports/comms/gnokii
