@@ -14,6 +14,8 @@ DISTNAME=	make-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
+LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
+
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-prefix=g \
