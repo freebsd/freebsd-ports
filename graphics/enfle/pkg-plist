@@ -1,7 +1,4 @@
 bin/enfle
-lib/enfle/plugins/archiver/archiver_bz2.la
-lib/enfle/plugins/archiver/archiver_bz2.so
-lib/enfle/plugins/archiver/archiver_bz2.so.1
 lib/enfle/plugins/archiver/archiver_dri.la
 lib/enfle/plugins/archiver/archiver_dri.so
 lib/enfle/plugins/archiver/archiver_dri.so.1
