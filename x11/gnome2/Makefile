@@ -28,7 +28,7 @@ LIB_DEPENDS=	glib12.3:${PORTSDIR}/devel/glib12 \
 		gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf \
 		capplet.4:${PORTSDIR}/sysutils/gnomecontrolcenter \
 		panel_applet.4:${PORTSDIR}/x11/gnomecore \
-		gnomeprint.9:${PORTSDIR}/print/gnomeprint
+		gnomeprint.12:${PORTSDIR}/print/gnomeprint
 
 RUN_DEPENDS=	${X11BASE}/share/themes/Metal/ICON.png:${PORTSDIR}/x11-toolkits/gtk-engines \
 		another_clock_applet:${PORTSDIR}/x11/gnomeapplets \
