@@ -1,3 +1,5 @@
-MD5 (webmin-0.85.tar.gz) = 33f6029493a142650c4941ba4b967a90
+MD5 (webmin-0.85.tar.gz) = c8ae7172cc00fdb6d1ffc627402c5d70
 MD5 (net-0.85-1.wbm.gz) = 1f2f5887c66ee016c0f92be83b32f53d
 MD5 (apache-0.85-1.wbm.gz) = 06f872fe27a3abf8668b12b85fd4c3f7
+MD5 (quota-0.85-1.wbm.gz) = c05fc28340b522f4f0502e554f354934
+MD5 (bind8-0.85-1.wbm.gz) = 0324060cfb648a365851f485148be4df
