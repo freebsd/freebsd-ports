@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gcin
-PORTVERSION=	0.3.1
+PORTVERSION=	0.4.5
 CATEGORIES=	chinese
 MASTER_SITES=	http://www.csie.nctu.edu.tw/~cp76/gcin/download/
 
@@ -15,6 +15,7 @@ COMMENT=	A triditional chinese input utility in X
 
 USE_BZIP2=	YES
 HAS_CONFIGURE=	YES
+CONFIGURE_ARGS=	--prefix=${PREFIX}
 USE_GNOME=	gtk20
 USE_GMAKE=	YES
 
