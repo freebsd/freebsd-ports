@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qicosi
-PORTVERSION=	0.54
+PORTVERSION=	0.54.1
 CATEGORIES=	comms
 MASTER_SITES=	http://santinel.bas-net.by/files/
 DISTNAME=	qico-${PORTVERSION}si
