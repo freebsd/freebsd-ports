@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pine
-PORTVERSION=	4.44
+PORTVERSION=	4.50
 PORTREVISION=	0
 CATEGORIES=	chinese mail news
 MASTER_SITES=	ftp://ftp.cac.washington.edu/pine/
@@ -16,6 +16,15 @@ PATCH_SITES=	ftp://freebsd.ntu.edu.tw/OS/FreeBSD/taiwan/users/benedick/patch/pin
 PATCHFILES=	${PORTNAME}${PORTVERSION}.patch.gz
 
 MAINTAINER=	avatar@mmlab.cse.yzu.edu.tw
+
+USE_BZIP2=	yes
+
+.if defined(WITH_SSL)
+USE_OPENSSL=	yes
+EXTRA_OPTS=	SSLDIR=${OPENSSLBASE}
+.else
+EXTRA_OPTS=	NOSSL SSLTYPE=none
+.endif
 
 NO_LATEST_LINK=	yes
 
@@ -46,7 +55,7 @@ post-patch:
 	done
 
 do-build:
-	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ./build bsf)
+	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ./build bsf ${EXTRA_OPTS})
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/pico ${PREFIX}/bin/pico
