@@ -3,7 +3,7 @@
 # Date created:         Fri Aug 25 16:42:36 CDT 1995
 # Whom:                 erich@rrnet.com
 #
-# $Id: Makefile,v 1.22 1996/11/18 11:40:33 asami Exp $
+# $Id: Makefile,v 1.23 1996/12/11 19:09:59 ache Exp $
 #
 
 DISTNAME=       apache_1.2b2
@@ -34,6 +34,8 @@ post-patch:
 
 .if defined(SECURE_SERVER)
 
+BROKEN=		"SSLeay has changed, and the patches for apache need more work"
+MAINTAINER=	markm@freebsd.org
 PKGNAME=        apache_SSL-1.1.1
 MAIN_SRC=	${DISTNAME}${EXTRACT_SUFX}
 SSL_EXTRAS=	${DISTNAME}+1.3.ssl${EXTRACT_SUFX}
