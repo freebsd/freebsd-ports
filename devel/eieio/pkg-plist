@@ -22,6 +22,8 @@ info/eieio.info
 %%EMACS_VERSION_SITE_LISPDIR%%/eieio/eieio-tests.el
 %%EMACS_VERSION_SITE_LISPDIR%%/eieio/eieio.el
 %%EMACS_VERSION_SITE_LISPDIR%%/eieio/eieio.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/eieio/linemark.el
+%%EMACS_VERSION_SITE_LISPDIR%%/eieio/linemark.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/eieio/tree.el
 %%EMACS_VERSION_SITE_LISPDIR%%/eieio/tree.elc
 @dirrm %%EMACS_VERSION_SITE_LISPDIR%%/eieio
