@@ -1,0 +1,41 @@
+--- Makefile.in.orig	Tue Aug 28 05:43:05 2001
++++ Makefile.in	Tue Sep  4 02:18:09 2001
+@@ -12,9 +12,10 @@
+ 
+ DEFS=-DHAVE_CONFIG_H
+ 
+-LIBDIR=/usr/X11R6/lib
++X11BASE?=/usr/X11R6
++LIBDIR=$(X11BASE)/lib
+ INCDIR=.
+-XINCDIR=/usr/X11R6/include
++XINCDIR=$(X11BASE)/include
+ XLIB=-lXaw -lXmu
+ EXTENSIONLIB=-lXext
+ INCLUDES=-I$(INCDIR)
+@@ -22,9 +23,9 @@
+ LIBS=-L$(LIBDIR) -lXaw $(XLIB) -lXt $(EXTENSIONLIB) -lX11 -lm
+ 
+ #CC=/compat/linux/usr/bin/gcc
+-CC=gcc
+-CFLAGS=-O3 $(INCLUDES) $(DEFS)
+-CFLAGSX=-O3 $(XINCLUDES) $(DEFS)
++CC?=gcc
++CFLAGS+= $(INCLUDES) $(DEFS)
++CFLAGSX= $(XINCLUDES) $(CFLAGS)
+ LDFLAGS=-s
+ 
+ LINT=lint
+@@ -33,9 +34,9 @@
+ RM=rm -f
+ INSTALL=install
+ 
+-INST_DIR=/usr/local/bin
+-INST_XDIR=/usr/X11R6/bin
+-INST_XRDIR=/usr/X11R6/lib/X11/app-defaults
++INST_DIR=$(X11BASE)/bin
++INST_XDIR=$(X11BASE)/bin
++INST_XRDIR=$(X11BASE)/lib/X11/app-defaults
+  
+ .c.o:
+ 	$(CC) -c $(CFLAGS) $*.c
