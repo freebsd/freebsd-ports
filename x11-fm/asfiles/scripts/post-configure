@@ -1,0 +1,7 @@
+#!/bin/sh
+
+dirs=". src src/bitmaps src/pixmaps src/external src/regexp pixmaps bitmaps"
+
+for d in ${dirs}; do
+    perl -pi -e 's@^(prefix[ \t]*=).*$@$1\${PREFIX}@' ${WRKSRC}/${d}/Makefile
+done

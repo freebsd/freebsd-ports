@@ -220,6 +220,8 @@ include/pixmaps/WWW.xpm
 include/pixmaps/Workshop.xpm
 include/pixmaps/interface.xpm
 include/pixmaps/PDFOmni.xpm
+lib/X11/app-defaults/Files.ad
+@unexec rm -rf %B/Files
 share/OffiX/FilesMagic
 share/OffiX/Filesrc
 @dirrm share/OffiX
