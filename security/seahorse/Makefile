@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	seahorse
-PORTVERSION=	0.4.0
+PORTVERSION=	0.4.5
 CATEGORIES=	security
-MASTER_SITES=	http://www.mu.org/~dave/
+MASTER_SITES=	http://seahorse.sourceforge.net/ \
+		http://www.mu.org/~dave/
 
 MAINTAINER=	dave@mu.org
 
