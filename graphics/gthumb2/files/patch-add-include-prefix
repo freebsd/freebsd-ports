@@ -1,0 +1,5 @@
+--- add-include-prefix.orig	Mon Oct 13 23:16:42 2003
++++ add-include-prefix	Tue Oct 14 23:29:49 2003
+@@ -1 +1 @@
+-sed -e 's/^/ /' -e 's/ \+$//' -e 's/ \+/ -I /g' -e 's/^ \+//'
++sed -e 's/^/ /' -e 's/ \+$//' -e 's/ / -I /g' -e 's/^ \+//'
