@@ -18,9 +18,14 @@ USE_GMAKE=	yes
 USE_LIBTOOL_VER=13
 INSTALLS_SHLIB=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV+=	CFLAGS="${PTHREAD_CFLAGS}" LDFLAGS="${PTHREAD_LIBS}"
+USE_REINPLACE=	yes
 
 MAN8=		mDNSResponder.8
 
 PLIST_SUB=	VERSION="${PORTVERSION}"
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|-pthread||g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
