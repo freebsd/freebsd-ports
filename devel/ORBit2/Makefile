@@ -6,17 +6,15 @@
 #
 
 PORTNAME=	ORBit2
-PORTVERSION=	2.3.103
-PORTREVISION=	1
+PORTVERSION=	2.3.105
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	pre-gnome2/releases/gnome-2.0-desktop-alpha2
+MASTER_SITE_SUBDIR=	pre-gnome2/releases/gnome-2.0-desktop-beta
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 
-LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext \
-		IDL-2.0:${PORTSDIR}/devel/libIDL \
+LIB_DEPENDS=	IDL-2.0:${PORTSDIR}/devel/libIDL \
 		popt.0:${PORTSDIR}/devel/popt \
 		linc.1:${PORTSDIR}/net/linc
 

@@ -10,6 +10,7 @@ lib/libglade-2.0.so.0
 libdata/pkgconfig/libglade-2.0.pc
 share/doc/libglade/gladexml.html
 share/doc/libglade/libglade-dtd.html
+share/doc/libglade/libglade-dtd-exceptions.html
 share/doc/libglade/libglade-embedding.html
 share/doc/libglade/libglade-extending.html
 share/doc/libglade/libglade-gnome.html
@@ -18,6 +19,7 @@ share/doc/libglade/libglade-lib.html
 share/doc/libglade/libglade-libglade-build.html
 share/doc/libglade/libglade-libglade-initialisation.html
 share/doc/libglade/libglade-libglade-sax-parser.html
+share/doc/libglade/libglade-modules.html
 share/doc/libglade/libglade-notes.html
 share/doc/libglade/libglade.html
 @dirrm share/doc/libglade

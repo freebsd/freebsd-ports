@@ -6,18 +6,15 @@
 #
 
 PORTNAME=	libbonobo
-PORTVERSION=	1.110.0
+PORTVERSION=	1.112.0
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	pre-gnome2/releases/gnome-2.0-desktop-alpha2
+MASTER_SITE_SUBDIR=	pre-gnome2/releases/gnome-2.0-desktop-beta
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 
-BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
-LIB_DEPENDS=	glib-1.3.13:${PORTSDIR}/devel/glib13 \
-		bonobo-activation.3:${PORTSDIR}/devel/bonobo-activation
-RUN_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
+LIB_DEPENDS=	bonobo-activation.4:${PORTSDIR}/devel/bonobo-activation
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
