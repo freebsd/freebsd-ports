@@ -25,6 +25,12 @@ INSTALL_TARGET=	site-install
 
 DOCS=		Changes README THANKS TODO
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		"Does not compile on 4.x"
+.endif
+
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODDOCDIR}
@@ -35,4 +41,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/examples/* ${RUBY_MODEXAMPLESDIR}/
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
