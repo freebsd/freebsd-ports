@@ -1,0 +1,151 @@
+--- Makefile.in.orig	Wed Aug 12 06:01:40 1998
++++ Makefile.in	Mon Apr  5 18:23:56 1999
+@@ -55,7 +55,8 @@
+ BIN_INSTALL_DIR =	$(INSTALL_ROOT)$(exec_prefix)/bin
+ 
+ # Directory in which to install the include file itk.h:
+-INCLUDE_INSTALL_DIR =	$(INSTALL_ROOT)$(prefix)/include
++INCLUDE_INSTALL_DIR =	$(INSTALL_ROOT)$(prefix)/include/itk$(VERSION)
++GENERIC_INCLUDE_INSTALL_DIR = $(INSTALL_ROOT)$(prefix)/include/itk$(VERSION)/generic
+ 
+ # Top-level directory for manual entries:
+ MAN_INSTALL_DIR =	$(INSTALL_ROOT)$(prefix)/man
+@@ -75,6 +76,9 @@
+ # for this version of [incr Tk]:
+ TCL_SRC_DIR =		@TCL_SRC_DIR@
+ 
++# Tcl include dir
++TCL_INC_DIR =		@TCL_INC_DIR@
++
+ # The directory containing the Tcl library archive file appropriate
+ # for this version of [incr Tk]:
+ TCL_LIB_DIR =		@TCL_LIB_DIR@
+@@ -89,6 +93,9 @@
+ # for this version of [incr Tk]:
+ TK_SRC_DIR =		@TK_SRC_DIR@
+ 
++# Tk include dir
++TK_INC_DIR =		@TK_INC_DIR@
++
+ # The directory containing the Tk library archive file appropriate
+ # for this version of [incr Tk]:
+ TK_LIB_DIR =		@TK_LIB_DIR@
+@@ -100,6 +107,9 @@
+ # for this version of [incr Tk]:
+ ITCL_SRC_DIR =		@ITCL_SRC_DIR@
+ 
++# ITcl include dir
++ITCL_INC_DIR =		@ITCL_INC_DIR@
++
+ # The directory containing the [incr Tcl] library archive file appropriate
+ # for this version of [incr Tk]:
+ ITCL_LIB_DIR =		@ITCL_LIB_DIR@
+@@ -155,7 +165,7 @@
+ # "install" around;  better to use the install-sh script that comes
+ # with the distribution, which is slower but guaranteed to work.
+ 
+-INSTALL = $(TOP_DIR)/../config/install-sh -c
++INSTALL = 		install -c
+ INSTALL_PROGRAM =	${INSTALL}
+ INSTALL_DATA =		${INSTALL} -m 644
+ MKINSTALLDIRS =		$(TOP_DIR)/../config/mkinstalldirs
+@@ -199,8 +209,8 @@
+ 
+ CC = @CC@
+ CC_SWITCHES = $(CFLAGS) $(SHLIB_CFLAGS) -I$(UNIX_DIR) -I$(GENERIC_DIR) \
+--I$(TCL_SRC_DIR)/generic -I$(ITCL_SRC_DIR)/generic \
+--I$(TK_SRC_DIR)/generic $(X11_INCLUDES) \
++-I$(TCL_INC_DIR)/generic -I$(ITCL_INC_DIR)/generic \
++-I$(TK_INC_DIR)/generic $(X11_INCLUDES) \
+ $(AC_FLAGS) $(PROTO_FLAGS) $(MEM_DEBUG_FLAGS) $(KEYSYM_FLAGS) \
+ -DITK_LIBRARY=\"$(ITK_LIBRARY)\"
+ 
+@@ -209,7 +219,7 @@
+ SRCS = $(GENERIC_DIR)/itk_cmds.c $(GENERIC_DIR)/itk_option.c \
+ 	$(GENERIC_DIR)/itk_archetype.c $(GENERIC_DIR)/itk_util.c
+ 
+-all: itkwish
++all: $(ITK_LIB_FILE) libitk30.a itkwish
+ 
+ # The following target is configured by autoconf to generate either
+ # a shared library or non-shared library for [incr Tk].
+@@ -217,8 +227,14 @@
+ @ITK_LIB_FILE@: ${OBJS}
+ 	rm -f $(ITK_LIB_FILE)
+ 	@MAKE_LIB@
++	ln -sf $(ITK_LIB_FILE) libitk30.so
+ 	$(RANLIB) $(ITK_LIB_FILE)
+ 
++libitk30.a: $(OBJS)
++	rm -f libitk30.a
++	ar cr libitk30.a $(OBJS)
++	ranlib libitk30.a
++
+ itkwish: tkAppInit.o $(ITK_LIB_FILE)
+ 	$(CC) @LD_FLAGS@ tkAppInit.o @ITK_BUILD_LIB_SPEC@ \
+ 		$(LIBS) $(LD_SEARCH_FLAGS) -o itkwish
+@@ -239,21 +255,27 @@
+ 
+ install: install-binaries install-libraries install-man
+ 
+-install-binaries: $(ITK_LIB_FILE) itkwish
++install-binaries: $(ITK_LIB_FILE) libitk30.a itkwish
+ 	@$(MKINSTALLDIRS) $(LIB_INSTALL_DIR) $(BIN_INSTALL_DIR)
+ 	@echo "Installing $(ITK_LIB_FILE)"
+ 	@$(INSTALL_DATA) $(ITK_LIB_FILE) $(LIB_INSTALL_DIR)
+ 	@(cd $(LIB_INSTALL_DIR); $(RANLIB) $(ITK_LIB_FILE))
+ 	@chmod 555 $(LIB_INSTALL_DIR)/$(ITK_LIB_FILE)
++	@echo "Installing libitk30.a"
++	@$(INSTALL_DATA) libitk30.a $(LIB_INSTALL_DIR)/libitk30.a
++	@(cd $(LIB_INSTALL_DIR); $(RANLIB) libitk30.a)
++	chmod 555 $(LIB_INSTALL_DIR)/libitk30.a
+ 	@echo "Installing itkwish"
+ 	$(INSTALL_PROGRAM) itkwish $(BIN_INSTALL_DIR)/itkwish$(VERSION)
+ 	@echo "Installing itkConfig.sh"
+-	@$(INSTALL_DATA) itkConfig.sh $(LIB_INSTALL_DIR)/itkConfig.sh
++	@mkdir -p $(SCRIPT_INSTALL_DIR)
++	@$(INSTALL_DATA) itkConfig.sh $(SCRIPT_INSTALL_DIR)/itkConfig.sh
+ 
+ install-libraries:
+-	@$(MKINSTALLDIRS) $(INCLUDE_INSTALL_DIR) $(SCRIPT_INSTALL_DIR)
++	@$(MKINSTALLDIRS) $(INCLUDE_INSTALL_DIR) $(GENERIC_INCLUDE_INSTALL_DIR) $(SCRIPT_INSTALL_DIR)
+ 	@echo "Installing itk.h"
+-	@$(INSTALL_DATA) $(GENERIC_DIR)/itk.h $(INCLUDE_INSTALL_DIR)
++	@$(INSTALL_DATA) $(GENERIC_DIR)/itk.h $(GENERIC_INCLUDE_INSTALL_DIR)
++	@ln -sf $(GENERIC_INCLUDE_INSTALL_DIR)/itk.h $(INCLUDE_INSTALL_DIR)/itk.h
+ 	@for i in $(TOP_DIR)/library/*.* $(TOP_DIR)/library/tclIndex $(UNIX_DIR)/tkAppInit.c; \
+ 	    do \
+ 	    echo "Installing $$i"; \
+@@ -267,19 +289,26 @@
+ 	@cd $(TOP_DIR)/doc; for i in *.1; \
+ 	    do \
+ 	    echo "Installing doc/$$i"; \
+-	    rm -f $(MAN1_INSTALL_DIR)/$$i; \
++	    rm -f $(MAN1_INSTALL_DIR)/$$i $(MAN1_INSTALL_DIR)/$$i.gz; \
+ 	    sed -e '/man\.macros/r man.macros' -e '/man\.macros/d' \
+-		    $$i > $(MAN1_INSTALL_DIR)/$$i; \
+-	    chmod 444 $(MAN1_INSTALL_DIR)/$$i; \
++		    $$i | gzip -c > $(MAN1_INSTALL_DIR)/$$i.gz; \
++	    chmod 444 $(MAN1_INSTALL_DIR)/$$i.gz; \
+ 	    done;
+ 	@cd $(TOP_DIR)/doc; for i in *.n; \
+ 	    do \
+ 	    echo "Installing doc/$$i"; \
+-	    rm -f $(MANN_INSTALL_DIR)/$$i; \
++	    rm -f $(MANN_INSTALL_DIR)/$$i $(MANN_INSTALL_DIR)/$$i.gz; \
+ 	    sed -e '/man\.macros/r man.macros' -e '/man\.macros/d' \
+-		    $$i > $(MANN_INSTALL_DIR)/$$i; \
+-	    chmod 444 $(MANN_INSTALL_DIR)/$$i; \
++		    $$i | gzip -c > $(MANN_INSTALL_DIR)/$$i.gz; \
++	    chmod 444 $(MANN_INSTALL_DIR)/$$i.gz; \
+ 	    done;
++	@echo "**********"
++	@echo "IMPORTANT:"
++	@echo "**********"
++	@echo "itkConfig.sh in $(SCRIPT_INSTALL_DIR)/itkConfig.sh"
++	@echo "itk.h        in $(INCLUDE_INSTALL_DIR)/itk.h"
++	@echo "There are NOT default place, but good place to avoid"
++	@echo "conflicting with another version of [incr] Tcl/Tks."
+ 
+ Makefile: $(UNIX_DIR)/Makefile.in
+ 	$(SHELL) config.status
