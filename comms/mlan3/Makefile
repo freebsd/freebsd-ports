@@ -21,8 +21,4 @@ USE_ZIP=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 500113
-BROKEN=		"Does not install (Makefiles need rework)"
-.endif
-
 .include <bsd.port.post.mk>
