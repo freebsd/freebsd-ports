@@ -308,17 +308,6 @@ sbin/saned
 %%PORTDOCS%%share/doc/sane/umax/umax.CHANGES
 %%PORTDOCS%%share/doc/sane/umax/umax.FAQ
 %%PORTDOCS%%share/doc/sane/umax/umax.TODO
-%%PORTDOCS%%@dirrm share/doc/sane/umax
-%%PORTDOCS%%@dirrm share/doc/sane/teco
-%%PORTDOCS%%@dirrm share/doc/sane/sceptre
-%%PORTDOCS%%@dirrm share/doc/sane/plustek
-%%PORTDOCS%%@dirrm share/doc/sane/mustek_usb
-%%PORTDOCS%%@dirrm share/doc/sane/mustek
-%%PORTDOCS%%@dirrm share/doc/sane/matsushita
-%%PORTDOCS%%@dirrm share/doc/sane/leo
-%%PORTDOCS%%@dirrm share/doc/sane/gt68xx
-%%PORTDOCS%%@dirrm share/doc/sane/canon
-%%PORTDOCS%%@dirrm share/doc/sane
 share/locale/bg/LC_MESSAGES/sane-backends.mo
 share/locale/cs/LC_MESSAGES/sane-backends.mo
 share/locale/de/LC_MESSAGES/sane-backends.mo
@@ -330,8 +319,21 @@ share/locale/no/LC_MESSAGES/sane-backends.mo
 share/locale/pt/LC_MESSAGES/sane-backends.mo
 share/locale/ru/LC_MESSAGES/sane-backends.mo
 share/locale/sv/LC_MESSAGES/sane-backends.mo
+@exec mkdir %D/share/sane
+@exec mkdir %D/share/sane/gt68xx
+@unexec rmdir %D/share/sane/gt68xx 2>/dev/null || true
+@unexec rmdir %D/share/sane 2>/dev/null || true
+%%PORTDOCS%%@dirrm share/doc/sane/umax
+%%PORTDOCS%%@dirrm share/doc/sane/teco
+%%PORTDOCS%%@dirrm share/doc/sane/sceptre
+%%PORTDOCS%%@dirrm share/doc/sane/plustek
+%%PORTDOCS%%@dirrm share/doc/sane/mustek_usb
+%%PORTDOCS%%@dirrm share/doc/sane/mustek
+%%PORTDOCS%%@dirrm share/doc/sane/matsushita
+%%PORTDOCS%%@dirrm share/doc/sane/leo
+%%PORTDOCS%%@dirrm share/doc/sane/gt68xx
+%%PORTDOCS%%@dirrm share/doc/sane/canon
+%%PORTDOCS%%@dirrm share/doc/sane
 @dirrm lib/sane
 @dirrm include/sane
 @dirrm etc/sane.d
-@dirrm share/sane/gt68xx
-@dirrm share/sane
