@@ -21,6 +21,7 @@ share/locale/no/LC_MESSAGES/xchat.mo
 share/locale/pt/LC_MESSAGES/xchat.mo
 share/locale/sk/LC_MESSAGES/xchat.mo
 share/locale/sl/LC_MESSAGES/xchat.mo
+share/locale/sr/LC_MESSAGES/xchat.mo
 share/locale/sv/LC_MESSAGES/xchat.mo
 share/locale/zh_CN/LC_MESSAGES/xchat.mo
 @dirrm lib/xchat/plugins
