@@ -9,27 +9,3 @@
        /* Address of filename.  */
        ASM_GENERATE_INTERNAL_LABEL (name, "LPBX", 1);
        assemble_integer (gen_rtx_SYMBOL_REF (Pmode, name), pointer_bytes,
-@@ -1524,6 +1526,11 @@
-     leaf_renumber_regs (first);
- #endif
- 
-+/*
-+  if (profile_block_flag)
-+    add_bb (file);
-+*/
-+
-   /* The Sun386i and perhaps other machines don't work right
-      if the profiling code comes after the prologue.  */
- #ifdef PROFILE_BEFORE_PROLOGUE
-@@ -1668,6 +1675,11 @@
-   /* Finally, output the function epilogue:
-      code to restore the stack frame and return to the caller.  */
-   (*targetm.asm_out.function_epilogue) (asm_out_file, get_frame_size ());
-+
-+/*
-+  if (profile_block_flag)
-+    add_bb (asm_out_file);
-+*/
- 
-   /* And debug output.  */
-   (*debug_hooks->end_epilogue) ();
