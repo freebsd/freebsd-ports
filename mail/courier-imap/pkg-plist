@@ -4,32 +4,35 @@ bin/deliverquota
 bin/imapd
 bin/maildirmake
 bin/pop3d
-etc/courier-imap/authdaemonrc.dist
-%%LDAPFLAG%%etc/courier-imap/authldaprc.dist
-%%MYSQLFLAG%%etc/courier-imap/authmysqlrc.dist
-%%PGSQLFLAG%%etc/courier-imap/authpgsqlrc.dist
-etc/courier-imap/imapd-ssl.dist
-etc/courier-imap/imapd.cnf.dist
-etc/courier-imap/imapd.dist
-etc/courier-imap/pop3d-ssl.dist
-etc/courier-imap/pop3d.cnf.dist
-etc/courier-imap/pop3d.dist
-etc/courier-imap/quotawarnmsg.example
-etc/rc.d/courier-imap-imapd.sh.sample
-etc/rc.d/courier-imap-pop3d.sh.sample
-libexec/courier-imap/authlib/authdaemon
-libexec/courier-imap/authlib/authdaemond
-%%LDAPFLAG%%libexec/courier-imap/authlib/authdaemond.ldap
-%%MYSQLFLAG%%libexec/courier-imap/authlib/authdaemond.mysql
-%%PGSQLFLAG%%libexec/courier-imap/authlib/authdaemond.pgsql
-libexec/courier-imap/authlib/authdaemond.plain
-libexec/courier-imap/courierlogger
-libexec/courier-imap/couriertcpd
-libexec/courier-imap/imapd-ssl.rc
-libexec/courier-imap/imapd.rc
-libexec/courier-imap/makedatprog
-libexec/courier-imap/pop3d-ssl.rc
-libexec/courier-imap/pop3d.rc
+%%CONFDIR%%/authdaemonrc.dist
+%%LDAPFLAG%%%%CONFDIR%%/authldaprc.dist
+%%MYSQLFLAG%%%%CONFDIR%%/authmysqlrc.dist
+%%PGSQLFLAG%%%%CONFDIR%%/authpgsqlrc.dist
+%%CONFDIR%%/imapd-ssl.dist
+%%CONFDIR%%/imapd.cnf.dist
+%%CONFDIR%%/imapd.dist
+%%CONFDIR%%/pop3d-ssl.dist
+%%CONFDIR%%/pop3d.cnf.dist
+%%CONFDIR%%/pop3d.dist
+%%CONFDIR%%/quotawarnmsg.example
+%%RCDIR%%/courier-imap-imapd.sh.sample
+%%RCDIR%%/courier-imap-imapd-ssl.sh.sample
+%%RCDIR%%/courier-imap-pop3d.sh.sample
+%%RCDIR%%/courier-imap-pop3d-ssl.sh.sample
+%%LIBEXECDIR%%/authlib/authdaemon
+%%LIBEXECDIR%%/authlib/authdaemond
+%%LDAPFLAG%%%%LIBEXECDIR%%/authlib/authdaemond.ldap
+%%MYSQLFLAG%%%%LIBEXECDIR%%/authlib/authdaemond.mysql
+%%PGSQLFLAG%%%%LIBEXECDIR%%/authlib/authdaemond.pgsql
+%%LIBEXECDIR%%/authlib/authdaemond.plain
+%%LIBEXECDIR%%/authlib/authuserdb
+%%LIBEXECDIR%%/courierlogger
+%%LIBEXECDIR%%/couriertcpd
+%%LIBEXECDIR%%/imapd-ssl.rc
+%%LIBEXECDIR%%/imapd.rc
+%%LIBEXECDIR%%/makedatprog
+%%LIBEXECDIR%%/pop3d-ssl.rc
+%%LIBEXECDIR%%/pop3d.rc
 sbin/imaplogin
 sbin/makeuserdb
 sbin/mkimapdcert
@@ -45,14 +48,14 @@ share/courier-imap/mkpop3dcert
 share/courier-imap/pw2userdb
 share/courier-imap/userdb
 share/courier-imap/vchkpw2userdb
-share/doc/courier-imap/AUTHORS
-share/doc/courier-imap/ChangeLog
-share/doc/courier-imap/INSTALL
-share/doc/courier-imap/README
+%%DOCSDIR%%/AUTHORS
+%%DOCSDIR%%/ChangeLog
+%%DOCSDIR%%/INSTALL
+%%DOCSDIR%%/README
 @dirrm var/authdaemon
 @dirrm var
-@dirrm share/doc/courier-imap
+@dirrm %%DOCSDIR%%
 @dirrm share/courier-imap
-@dirrm libexec/courier-imap/authlib
-@dirrm libexec/courier-imap
-@dirrm etc/courier-imap
+@dirrm %%LIBEXECDIR%%/authlib
+@dirrm %%LIBEXECDIR%%
+@dirrm %%CONFDIR%%
