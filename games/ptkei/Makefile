@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	ptkei
-PORTVERSION=	1.16.0
+PORTVERSION=	1.18.1
 CATEGORIES=	games
 MASTER_SITES=	http://www.lfmm.org/ptkei/
 
-MAINTAINER=	pgfb@imp.ch
+MAINTAINER=	marcolz@stack.nl
 COMMENT=	A Python/Tk graphical client for Wolfpack Empire servers
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter \

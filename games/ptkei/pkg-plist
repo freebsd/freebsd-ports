@@ -73,6 +73,8 @@ share/ptkei/src/empText.py
 share/ptkei/src/empText.pyc
 share/ptkei/src/empTk.py
 share/ptkei/src/empTk.pyc
+share/ptkei/src/MyText.py
+share/ptkei/src/MyText.pyc
 @dirrm share/ptkei/src
 @dirrm share/ptkei/scripts
 @dirrm share/ptkei/doc/pics
