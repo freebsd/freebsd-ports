@@ -1,0 +1,10 @@
+@cwd /usr/local
+bin/irsim
+bin/ifsim
+bin/h2a
+bin/inet2sim
+man/man1/irsim.1
+man/man3/irsim-analyzer.3
+man/man5/netchange.5
+lib/scmos1_6um.prm
+lib/scmos2um.prm
