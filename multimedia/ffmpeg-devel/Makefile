@@ -55,6 +55,10 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-bktr-patch-libavformat::Makefile
 .if exists(${LOCALBASE}/lib/libSDL-1.1.so)
 #WITH_SDL=yes
 .endif
+## freetype2
+.if exists(${LOCALBASE}/lib/libfreetype.so)
+WITH_FREETYPE2=yes
+.endif
 ## imlib2
 .if exists(${X11BASE}/lib/libImlib2.so)
 WITH_IMLIB2=yes
@@ -79,6 +83,14 @@ CONFIGURE_ARGS+=	--enable-a52 \
 .else
 CONFIGURE_ARGS+=	--enable-a52 \
 			--disable-a52bin
+.endif
+## enable freetype2
+.if defined(WITH_FREETYPE2)
+LIB_DEPENDS+=	freetype.9:${PORTSDIR}/print/freetype2
+
+PLIST_SUB+=	DRAWTEXT=""
+.else
+PLIST_SUB+=	DRAWTEXT="@comment "
 .endif
 ## enable imlib2
 .if !defined(WITHOUT_VHOOK) && defined(WITH_IMLIB2)
@@ -129,6 +141,10 @@ CONFIGURE_ARGS+=	--enable-vorbis
 .endif
 
 pre-everything::
+.ifndef(WITH_FREETYPE2)
+	@${ECHO_MSG} 'Define WITH_FREETYPE2 to enable drawtext FREETYPE2 codec'
+	@${ECHO_MSG}
+.endif
 .ifndef(WITHOUT_LIBA52)
 	@${ECHO_MSG} "You can disable liba52 support by defining WITHOUT_LIBA52"
 	@${ECHO_MSG}

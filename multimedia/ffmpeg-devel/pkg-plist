@@ -14,7 +14,7 @@ lib/libavcodec.a
 lib/libavcodec.so
 lib/libavcodec.so.%%SHLIB_VERSION%%
 lib/libavformat.a
-%%VHOOK%%lib/vhook/drawtext.so
+%%VHOOK%%%%DRAWTEXT%%lib/vhook/drawtext.so
 %%VHOOK%%lib/vhook/fish.so
 %%VHOOK%%%%IMLIB2%%lib/vhook/imlib2.so
 %%VHOOK%%lib/vhook/null.so
