@@ -7,7 +7,7 @@
 
 PORTNAME=	drweb_sendmail
 PORTVERSION=    4.26
-PORTREVISION=   7
+PORTREVISION=   8
 CATEGORIES=	security mail
 MASTER_SITES=	http://www.drweb.ru/ftp/web_pub/
 DISTNAME=	drwebd-${PORTVERSION}-freebsd4
@@ -109,7 +109,7 @@ pre-install:
 do-install:
 	${MKDIR} ${DOC_DIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/drweb-smf ${PREFIX}/sbin/
-	${INSTALL_PROGRAM} ${WRKSRC}/drwebdc ${PREFIX}/drweb/
+	${INSTALL_PROGRAM} ${WRKSRC}/drwebdc ${PREFIX}/sbin/
 	cd ${WRKSRC}/../sendmail; \
 		${INSTALL_DATA} example* readme.* sendmail.*.addon ${DOC_DIR}
 	cd ${WRKSRC}/../sendmail; \
