@@ -64,7 +64,7 @@
  #ifndef SharedLibraryLoadFlags
  #if UseElfFormat
 -#define SharedLibraryLoadFlags	-shared -rpath $(USRLIBDIRPATH)
-+#define SharedLibraryLoadFlags	-shared -Wl,-rpath$(USRLIBDIRPATH)
++#define SharedLibraryLoadFlags	-shared -Wl,-rpath,$(USRLIBDIRPATH)
  #else
  #define SharedLibraryLoadFlags	-Bshareable -R $(USRLIBDIRPATH)
  #endif
