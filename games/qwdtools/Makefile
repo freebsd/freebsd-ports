@@ -6,25 +6,10 @@
 #
 
 PORTNAME=	qwdtools
-PORTVERSION=	0.02
 CATEGORIES=	games converters
-MASTER_SITES=	http://www.helsinki.fi/~sandvik/qwdlinux/ \
-		http://freebsd.nsu.ru/distfiles/
-DISTNAME=	${PORTNAME}-unix-source-${PORTVERSION}
-
-MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Converts QuakeWorld demos from QWD format to MVD format
+DESCR=		${.CURDIR}/pkg-descr
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-unix
-ALL_TARGET=	${PORTNAME}
+MASTERDIR=	${.CURDIR}/../mvdsv
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-. for file in INSTALL README NEWS
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
-. endfor
-.endif
-
-.include <bsd.port.mk>
+.include "${MASTERDIR}/Makefile"
