@@ -1,10 +1,11 @@
---- src/help.cpp.orig	Sat Jul  3 20:44:17 2004
-+++ src/help.cpp	Sat Jul  3 20:44:25 2004
-@@ -27,7 +27,6 @@
+--- src/help.cpp.orig	Tue Oct  5 23:47:06 2004
++++ src/help.cpp	Tue Oct  5 23:47:19 2004
+@@ -29,7 +29,7 @@
  #include <cassert>
  #include <algorithm>
  #include <iostream>
 -#include <locale>
++#include <locale.h>
  #include <queue>
  #include <set>
  #include <stack>

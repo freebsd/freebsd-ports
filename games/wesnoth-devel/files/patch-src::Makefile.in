@@ -1,0 +1,12 @@
+--- src/Makefile.in.orig	Tue Oct  5 23:45:33 2004
++++ src/Makefile.in	Tue Oct  5 23:45:59 2004
+@@ -660,8 +660,7 @@
+ 			 wesconfig.h
+ 
+ AM_CXXFLAGS = @SDL_CFLAGS@ -DWESNOTH_PATH=\"$(pkgdatadir)\" \
+-	-DLOCALEDIR=\"$(LOCALEDIR)\" -DHAS_RELATIVE_LOCALEDIR=$(HAS_RELATIVE_LOCALEDIR) \
+-	-I../intl -I$(top_srcdir)/intl
++	-DLOCALEDIR=\"$(LOCALEDIR)\" -DHAS_RELATIVE_LOCALEDIR=$(HAS_RELATIVE_LOCALEDIR)
+ 
+ CXXLD = $(LDPREFIX) $(CXX)
+ all: all-recursive

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wesnoth
-PORTVERSION=	0.8
+PORTVERSION=	0.8.5
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	wesnoth
@@ -18,12 +18,21 @@ DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 MAINTAINER=	mezz@FreeBSD.org
 COMMENT=	A fantasy turn-based strategy game
 
+USE_GCC=	3.4
 USE_SDL=	image mixer net ttf
 USE_GNOME=	gnometarget
+USE_GMAKE=	yes
 WANT_GNOME=	yes
+USE_GETTEXT=	yes
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-sdltest \
+		--with-libiconv-prefix=${LOCALBASE} \
+		--with-libintl-prefix=${LOCALBASE} \
+		--with-localedir=${PREFIX}/share/locale
+CONFIGURE_ENV=	CPPFLAGS="-ftemplate-depth-45" \
+		LDFLAGS="-L${LOCALBASE}/lib -lintl"
 
 MAN6=		wesnoth.6 wesnoth_editor.6 wesnothd.6
 
@@ -32,6 +41,13 @@ CONFIGURE_ARGS+=	--enable-lite
 PLIST_SUB+=		LITE:="@comment "
 .else
 PLIST_SUB+=		LITE:=""
+.endif
+
+.if defined(WITH_CAMPAIGN) || defined(PACKAGE_BUILDING)
+CONFIGURE_ARGS+=	--enable-campaign-server
+PLIST_SUB+=		CAMPAIGN:=""
+.else
+PLIST_SUB+=		CAMPAIGN:="@comment "
 .endif
 
 .if defined(WITH_DEBUG)
@@ -62,38 +78,41 @@ PLIST_SUB+=		TOOLS:="@comment "
 .include <bsd.port.pre.mk>
 
 .if ${HAVE_GNOME:Mgnomehier}!=""
-CONFIGURE_ARGS+=	--enable-gnome
+CONFIGURE_ARGS+=	--with-gnome
 PLIST_SUB+=		GNOME:=""
 .else
 PLIST_SUB+=		GNOME:="@comment "
 .endif
 
 .if exists(${LOCALBASE}/bin/kde-config)
-CONFIGURE_ARGS+=	--enable-kde
+CONFIGURE_ARGS+=	--with-kde
 PLIST_SUB+=		KDE:=""
 .else
 PLIST_SUB+=		KDE:="@comment "
 .endif
 
 pre-everything::
-.if !defined(LITE) || !defined(WITH_DEBUG) || !defined(WITH_EDITOR) || !defined(WITH_SERVER) || !defined(WITH_TOOLS)
+.if !defined(LITE) || !defined(WITH_CAMPAIGN) || !defined(WITH_DEBUG) || !defined(WITH_EDITOR) || !defined(WITH_SERVER) || !defined(WITH_TOOLS)
 	@${ECHO_MSG} "You may specify the following on the command line:"
 	@${ECHO_MSG} " "
 .endif
 .if !defined(LITE)
 	@${ECHO_MSG} "LITE=yes for lite version of Wesnoth (without music)."
 .endif
+.if !defined(WITH_CAMPAIGN)
+	@${ECHO_MSG} "WITH_CAMPAIGN=yes to enable compilation of campaign server."
+.endif
 .if !defined(WITH_DEBUG)
 	@${ECHO_MSG} "WITH_DEBUG=yes to enable debugging in Wesnoth."
 .endif
 .if !defined(WITH_EDITOR)
-	@${ECHO_MSG} "WITH_EDITOR=yes for enable compilation editor."
+	@${ECHO_MSG} "WITH_EDITOR=yes to enable compilation of map editor."
 .endif
 .if !defined(WITH_SERVER)
-	@${ECHO_MSG} "WITH_SERVER=yes for enable compilation of server."
+	@${ECHO_MSG} "WITH_SERVER=yes to enable compilation of server."
 .endif
 .if !defined(WITH_TOOLS)
-	@${ECHO_MSG} "WITH_TOOLS=yes for enable compilation of translation tools."
+	@${ECHO_MSG} "WITH_TOOLS=yes to enable compilation of tools for translators and artists."
 .endif
 
 post-patch:
