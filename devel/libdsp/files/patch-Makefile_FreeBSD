@@ -1,18 +1,17 @@
---- Makefile.FreeBSD.orig	Fri Feb 23 13:06:10 2001
-+++ Makefile.FreeBSD	Fri Feb 23 13:08:45 2001
-@@ -18,12 +18,12 @@
+--- Makefile.FreeBSD.orig	Thu Jan 11 05:42:13 2001
++++ Makefile.FreeBSD	Sat Mar 17 00:34:20 2001
+@@ -18,12 +18,11 @@
  #
  
  CXX = g++
 -CXXFLAGS = -mcpu=k6 -march=k6 -O6 -fomit-frame-pointer -ffast-math -funroll-loops -malign-loops=3 -malign-jumps=3 -malign-functions=3 -mpreferred-stack-boundary=3 -mfancy-math-387 -Wall
-+CXXFLAGS = -O6 -fomit-frame-pointer -ffast-math -funroll-loops -malign-loops=3 -malign-jumps=3 -malign-functions=3 -mpreferred-stack-boundary=3 -mfancy-math-387 -Wall
++CXXFLAGS += -O6 -fomit-frame-pointer -ffast-math -funroll-loops -malign-loops=3 -malign-jumps=3 -malign-functions=3 -mpreferred-stack-boundary=3 -mfancy-math-387 -Wall
  DEFS = -D_REENTRANT -D_THREAD_SAFE -DFREEBSD
 -INCS = -I.
 +INCS = -I. -I../Inlines-%%INLINE_VER%%
  LIBS = -lm #-ldrfftw -ldfftw
  LIBTOOL = libtool
 -PREFIX = /usr/local
-+PREFIX = %%PREFIX%%
  
  VERSION = 0:5:0
  

@@ -8,6 +8,5 @@ include/dsp/Transform8.hh
 include/dsp/TransformS.hh
 @dirrm include/dsp
 lib/libdsp.a
-lib/libdsp.la
 lib/libdsp.so
 lib/libdsp.so.0
