@@ -215,8 +215,11 @@
     SUBDIR += mozilla-devel
     SUBDIR += mozilla-embedded
     SUBDIR += mozilla-embedded-devel
+    SUBDIR += mozilla-embedded-vendor
     SUBDIR += mozilla-headers
     SUBDIR += mozilla-headers-devel
+    SUBDIR += mozilla-headers-vendor
+    SUBDIR += mozilla-vendor
     SUBDIR += nautilus-gtkhtml
     SUBDIR += nd
     SUBDIR += neon
