@@ -3,13 +3,13 @@
 # Date created:		14 April 1998
 # Whom:			Donald J. Maddox <dmaddox@conterra.com>
 #
-# $Id: Makefile,v 1.7 1999/02/12 08:25:16 flathill Exp $
+# $Id: Makefile,v 1.8 1999/03/08 20:55:35 steve Exp $
 #
 
 DISTNAME=       X-Files-1.43
 PKGNAME=	x-files-1.43
 CATEGORIES=	x11-fm tk80
-MASTER_SITES=   http://java.inf.tu-dresden.de/X-Files/data/
+MASTER_SITES=   http://www.hut.fi/~mkivinie/X-Files/data/
 
 MAINTAINER=     dmaddox@conterra.com
 
