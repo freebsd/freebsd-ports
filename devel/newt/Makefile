@@ -8,9 +8,8 @@
 PORTNAME=	newt
 PORTVERSION=	0.50.8.2
 CATEGORIES=	devel
-MASTER_SITES=	\
-	ftp://ftp.redhat.com/pub/redhat/redhat-6.2/SRPMS/SRPMS/ \
-	ftp://ftp.infomagic.com/pub/mirrors/linux/RedHat/redhat-6.2/SRPMS/SRPMS/
+MASTER_SITES=	ftp://ftp.redhat.com/pub/redhat/redhat-6.2-en/os/i386/SRPMS/
+
 DISTNAME=	${PORTNAME}-0.50.8-2
 EXTRACT_SUFX=	.src.rpm
 
