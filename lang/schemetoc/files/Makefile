@@ -35,5 +35,3 @@ install:
 	chmod 444 ${LIB_DIR}/libsc.so.1.0 ${LIB_DIR}/libscxl.so.1.0
 	chown -R bin:bin ${SCHEME_DIR}
 	strip ${BIN_DIR}/sccomp ${BIN_DIR}/sci ${BIN_DIR}/scixl
-
-	
