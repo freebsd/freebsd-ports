@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	rlpr
-PORTVERSION=	2.04
-PORTREVISION=	1
+PORTVERSION=	2.05
 CATEGORIES=	print net
 MASTER_SITES=	ftp://www.truffula.com/pub/
 
