@@ -1,0 +1,15 @@
+bin/maketeidtd
+%%PORTDOCS%%share/doc/maketeidtd/index.html
+%%PORTDOCS%%share/doc/maketeidtd/index.xml
+%%PORTDOCS%%share/doc/maketeidtd/index.xsl
+%%PORTDOCS%%share/examples/maketeidtd/equation.dtd
+%%PORTDOCS%%share/examples/maketeidtd/iso-lat1.ent
+%%PORTDOCS%%share/examples/maketeidtd/iso-lat2.ent
+%%PORTDOCS%%share/examples/maketeidtd/iso-num.ent
+%%PORTDOCS%%share/examples/maketeidtd/iso-pub.ent
+%%PORTDOCS%%share/examples/maketeidtd/tei-equation.dtd
+%%PORTDOCS%%share/examples/maketeidtd/tei-equation.ent
+%%PORTDOCS%%share/examples/maketeidtd/teilitex.dtd
+%%PORTDOCS%%share/examples/maketeidtd/teilitex.ent
+%%PORTDOCS%%@dirrm share/doc/maketeidtd
+%%PORTDOCS%%@dirrm share/examples/maketeidtd
