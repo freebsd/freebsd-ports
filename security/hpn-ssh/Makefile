@@ -48,7 +48,7 @@ CONFIGURE_ARGS+=	--mandir=${MANPREFIX}/man \
 EXTRA_PATCHES+=		${FILESDIR}/batch.patch
 .endif
 
-.if defined(KRB5_HOME) && exists(KRB5_HOME)
+.if defined(KRB5_HOME) && exists(${KRB5_HOME})
 BROKEN=		Need updated patches from Simon Wilkinson
 MASTER_SITES+=	${PATCH_SITES}
 DISTFILES=	${EXTRACT_ONLY} ${PORTNAME}-${PORTVERSION}-gssapi.patch
