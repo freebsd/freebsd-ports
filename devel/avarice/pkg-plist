@@ -1,0 +1,7 @@
+bin/avarice
+bin/start-avarice
+bin/kill-avarice
+bin/ice-gdb
+bin/ice-insight
+share/avarice/gdb-avarice-script
+@dirrm share/avarice
