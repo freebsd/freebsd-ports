@@ -29,8 +29,8 @@ INSTALL_DATA_DIR = ${PORTPREFIX}/share/bzflag/data
 # tools
 #
 AR	= /usr/bin/ar cru
-CC	= /usr/bin/gcc
-CXX	= /usr/bin/g++
+#CC	= /usr/bin/gcc
+#CXX	= /usr/bin/g++
 CD	= cd
 CP	= /bin/cp
 LD	= /usr/bin/ld
@@ -44,10 +44,8 @@ ECHO	= echo
 #
 # compiler definitions
 #
-PCDEFS   = -D_BSD_SOURCE -DHALF_RATE_AUDIO \
-	   $(XF86VIDMODE_DEF)
-PCXXDEFS = -D_BSD_SOURCE -DHALF_RATE_AUDIO \
-	   $(XF86VIDMODE_DEF)
+PCDEFS   = -D_BSD_SOURCE $(XF86VIDMODE_DEF)
+PCXXDEFS = -D_BSD_SOURCE $(XF86VIDMODE_DEF)
 
 #
 # compiler options
