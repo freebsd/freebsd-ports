@@ -1,4 +1,11 @@
 bin/conglomerate
+etc/gconf/gconf.xml.defaults/apps/conglomerate/plugins/templates/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/conglomerate/plugins/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/conglomerate/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/conglomerate/plugins/templates/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/conglomerate/plugins/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/conglomerate/%gconf.xml
+etc/gconf/schemas/conglomerate.schemas
 share/doc/conglomerate/ch01.html
 share/doc/conglomerate/ch02.html
 share/doc/conglomerate/ch03.html
@@ -38,6 +45,7 @@ share/gnome/conglomerate/glade/docbook-common-properties.glade
 share/gnome/conglomerate/glade/docbook-orderedlist-properties.glade
 share/gnome/conglomerate/glade/docbook-ulink-properties.glade
 share/gnome/conglomerate/glade/string_selection_dialog.glade
+share/gnome/conglomerate/help/conglomerate
 share/gnome/conglomerate/pixmaps/conglomerate-icon-32.png
 share/gnome/conglomerate/pixmaps/cong-address-16.png
 share/gnome/conglomerate/pixmaps/cong-answer-16.png
@@ -72,6 +80,7 @@ share/gnome/conglomerate/pixmaps/cong-tip-48.png
 share/gnome/conglomerate/pixmaps/cong-title-16.png
 share/gnome/conglomerate/pixmaps/cong-warning-48.png
 share/gnome/conglomerate/pixmaps/cong-wrapper-16.png
+share/gnome/conglomerate/stylesheets/selection-to-text.xsl
 share/gnome/conglomerate/templates/dispspec.xml
 share/gnome/conglomerate/templates/html.xml
 share/gnome/help/conglomerate/C/conglomerate.xml
@@ -112,6 +121,14 @@ share/locale/sv/LC_MESSAGES/conglomerate.mo
 @dirrm share/gnome/conglomerate/dtd
 @dirrm share/gnome/conglomerate/examples
 @dirrm share/gnome/conglomerate/glade
+@dirrm share/gnome/conglomerate/help
 @dirrm share/gnome/conglomerate/pixmaps
+@dirrm share/gnome/conglomerate/stylesheets
 @dirrm share/gnome/conglomerate/templates
 @dirrm share/gnome/conglomerate
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/conglomerate/plugins/templates
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/conglomerate/plugins
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/conglomerate
+@dirrm etc/gconf/gconf.xml.defaults/apps/conglomerate/plugins/templates
+@dirrm etc/gconf/gconf.xml.defaults/apps/conglomerate/plugins
+@dirrm etc/gconf/gconf.xml.defaults/apps/conglomerate
