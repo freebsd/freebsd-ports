@@ -7,8 +7,12 @@
 
 PORTNAME=	quagga
 PORTVERSION=	0.96.4
+PORTREVISION=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://quagga.net/download/
+
+PATCH_SITES=	http://quagga.net/
+PATCHFILES=	quagga-bgp_route-wspace.diff
 
 MAINTAINER=	boris@tagnet.ru
 COMMENT=	Free RIPv1, RIPv2, OSPFv2, BGP4 route software (server/reflector)
