@@ -6,14 +6,12 @@
 #
 
 PORTNAME=	osh
-PORTVERSION=	020214
+PORTVERSION=	031014
 CATEGORIES=	shells
-MASTER_SITES=	http://omnibus.ruf.uni-freiburg.de/~gritter/archive/
+MASTER_SITES=	http://jneitzel.sdf1.org/osh/src/
 
 MAINTAINER=	greid@ukug.uk.freebsd.org
 COMMENT=	An implementation of the UNIX 6th Edition shell.
-
-MAKEFILE=	makefile
 
 MAN1=		goto.1 if.1 osh.1
 
