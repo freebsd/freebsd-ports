@@ -8,7 +8,7 @@
 PORTNAME=	db
 PORTVERSION=	2.7.7
 CATEGORIES=	databases
-MASTER_SITES=	http://www.sleepycat.com/update/${PORTVERSION}/
+MASTER_SITES=	http://www.sleepycat.com/update/snapshot/
 
 MAINTAINER=	josh@ican.net
 
