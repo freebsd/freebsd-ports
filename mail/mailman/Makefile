@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mailman
-PORTVERSION=	2.0.13
+PORTVERSION=	2.1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.list.org/ \
 		${MASTER_SITE_GNU} \
@@ -16,10 +16,13 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	wjv@FreeBSD.org
 
-.if defined(WITH_APACHE2)
-RUN_DEPENDS=	${LOCALBASE}/sbin/httpd:${PORTSDIR}/www/apache2
-.else
+.if defined(WITH_APACHE13)
 RUN_DEPENDS=	${LOCALBASE}/sbin/httpd:${PORTSDIR}/www/apache13
+.else
+RUN_DEPENDS=	${LOCALBASE}/sbin/httpd:${PORTSDIR}/www/apache2
+.endif
+.if defined(WITH_CHINESE)
+RUN_DEPENDS+=	${PYTHONPREFIX_LIBDIR}/encodings/chinesecn/__init__.py:${PORTSDIR}/chinese/pycodec
 .endif
 
 HAS_CONFIGURE=	yes
@@ -55,7 +58,7 @@ MAILMANDIR=	${PREFIX}/${MM_DIR}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
-PLIST_SUB=	MMDIR=${MM_DIR} MMGRP=${MM_GROUPNAME} IMGDIR=${IMGDIR}
+PLIST_SUB+=	MMDIR=${MM_DIR} IMGDIR=${IMGDIR}
 
 options:
 	@ ${ECHO_MSG} "===>  Build options for ${PKGNAME}:"
@@ -80,14 +83,15 @@ pre-configure:
 	@ ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-configure:
-	@ ${SED} -e 's#%%USER%%#${MM_USERNAME}#g' \
-	  -e 's#%%GROUP%%#${MM_GROUPNAME}#g' \
-	  -e 's#%%MAILMANDIR%%#${MAILMANDIR}#g' pkg-deinstall > \
-	  ${PKGDEINSTALL}
+	@ ${SED} \
+	  -e 's#%%USER%%#${MM_USERNAME}#g' -e 's#%%GROUP%%#${MM_GROUPNAME}#g' \
+	  -e 's#%%PREFIX%%#${PREFIX}#g' -e 's#%%MAILMANDIR%%#${MAILMANDIR}#g' \
+	  pkg-deinstall > ${PKGDEINSTALL}
 	@ ${SED} -e 's#%%MAILMANDIR%%#${MAILMANDIR}#g' \
 	  -e 's#%%DOCSDIR%%#${DOCSDIR}#g' pkg-message > ${PKGMESSAGE}
 
 pre-install:
+	@ ${SH} ${PKGREQ} INSTALL
 	@ ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
@@ -108,6 +112,8 @@ post-install:
 .endfor
 .endif
 	@ ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	@ ${INSTALL_SCRIPT} ${WRKSRC}/misc/mailman \
+	  ${PREFIX}/etc/rc.d/mailman.sh
 .if !defined(BATCH)
 	@ ${CAT} ${PKGMESSAGE}
 .endif
