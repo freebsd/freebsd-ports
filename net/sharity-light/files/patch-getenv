@@ -1,0 +1,74 @@
+--- rumba.c.orig	Tue Jun 11 11:27:59 2002
++++ rumba.c	Tue Jun 11 13:32:39 2002
+@@ -24,6 +24,8 @@
+ 
+ /* ------------------------------------------------------------------------- */
+ 
++#define	NAMESIZE 64
++
+ int		debug_mode = 0;
+ char	fake_dot_in_root = 1;
+ char	fake_dotdot_in_root = 1;
+@@ -260,7 +262,7 @@
+ int				got_password, upcase_password;
+ int				port = -1, max_xmit = -1;
+ char			server_name[17], client_name[17];
+-char			username[64], password[64], run_as_daemon;
++char			username[NAMESIZE], password[NAMESIZE], run_as_daemon;
+ char			*mount_point, *server, *share, *root, *user_dummy, *p;
+ static fh_t		root_fh[32/sizeof(fh_t)] = {0};
+ unsigned		ipAddr;
+@@ -320,12 +322,17 @@
+ 			strcpy(server_name, hostName);
+ 		}
+ 	}
++
+ 	if(getenv("USER")){
+-		strcpy(username, getenv("USER"));
++		if (strlcpy(username, getenv("USER"), NAMESIZE) >= NAMESIZE)
++			eprintf("$USER too long, truncated to \"%s\"\n",
++			    username);
+ 		str_upper(username);
+ 	}
+-	if(username[0] == 0 && getenv("LOGNAME")){
+-		strcpy(username,getenv("LOGNAME"));
++	else if(getenv("LOGNAME")){
++		if (strlcpy(username, getenv("LOGNAME"), NAMESIZE) >= NAMESIZE);
++			eprintf("$LOGNAME too long, truncated to \"%s\"\n",
++			    username);
+ 		str_upper(username);
+ 	}
+ 
+@@ -415,7 +422,7 @@
+ 			got_password = 1;
+ 			break;
+ 		case 'i':
+-			if(fgets(password, sizeof(password), stdin) != NULL){
++			if(fgets(password, NAMESIZE, stdin) != NULL){
+ 				if((p = strrchr(password, '\n')) != NULL)
+ 					*p = 0;
+ 				got_password = 1;
+@@ -462,13 +469,18 @@
+ 		conf_dirmode = conf_filemode;
+ 		conf_dirmode |= (conf_dirmode & 0444) >> 2;
+ 	}
++
+ 	if(!got_password){
+-		char *pw;
+-		if((pw = getenv("PASSWD")))
+-			strcpy(password, pw);
+-		else
+-			strcpy(password, getpass("Password: "));
++		char *pw, *src = "$PASSWD";
++		if ((pw = getenv("PASSWD")) == NULL) {
++			src = "User entered password";
++			pw = getpass("Password: ");
++		}
++		if (strlcpy(password, pw, NAMESIZE) >= NAMESIZE)
++			eprintf("%s too long, truncated to \"%s\"\n",
++			    src, password);
+ 	}
++
+ 	if(upcase_password){
+ 		str_upper(password);
+ 	}
