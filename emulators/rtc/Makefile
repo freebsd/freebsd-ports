@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rtc
-PORTVERSION=	2000.09.22
+PORTVERSION=	2001.09.16
 CATEGORIES=	emulators linux
 MASTER_SITES=	# none
 DISTFILES=	# none
@@ -46,17 +46,6 @@ do-extract:
 	@${SED}	-e 's,@@PREFIX@@,${PREFIX},' \
 		${FILESDIR}/${STARTUP} > ${WRKDIR}/${STARTUP}
 	@cd ${FILESDIR} && ${CP} Makefile *.[ch] ${WRKSRC}/
-
-post-patch:
-.if !exists(${SRC_BASE}/sys/compat/linux/linux_ioctl.h)
-	${PERL} -i -pe 's,compat(/linux/linux_ioctl\.h),i386$$1,' \
-		${WRKSRC}/rtc_linux.c
-.endif
-	@if ! grep -w dev2unit ${SRC_BASE}/sys/kern/kern_conf.c >/dev/null; \
-	then \
-		${ECHO} "dev2unit() not found in sys/kern/kern_conf.c.  Using lminor() instead."; \
-		${PERL} -i -pe 's,dev2unit,lminor,' ${WRKSRC}/rtc.c; \
-	fi
 
 pre-install:
 	${MKDIR} ${KMODDIR}

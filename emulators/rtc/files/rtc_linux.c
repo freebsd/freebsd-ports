@@ -33,7 +33,11 @@
 
 #include <i386/linux/linux.h>
 #include <i386/linux/linux_proto.h>
+#if __FreeBSD_version >= 500012 || __FreeBSD_version >= 430000
 #include <compat/linux/linux_ioctl.h>
+#else
+#include <i386/linux/linux_ioctl.h>
+#endif
 
 #include "rtc.h"
 
@@ -56,7 +60,11 @@ SYSUNINIT(n##unregister, SI_SUB_KLD, SI_ORDER_MIDDLE, linux_ioctl_unregister_han
 LINUX_IOCTL_SET(rtc, 0x7000, 0x70ff);
 
 static int
+#if __FreeBSD_version >= 500023
+linux_ioctl_rtc(struct thread *p, struct linux_ioctl_args *args)
+#else
 linux_ioctl_rtc(struct proc *p, struct linux_ioctl_args *args)
+#endif
 {
 	switch (args->cmd & 0xffff) {
 	case LINUX_RTC_PIE_ON:
