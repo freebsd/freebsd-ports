@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	saoimage
-PORTVERSION=	1.32.1
+PORTVERSION=	1.33.2
 CATEGORIES=	astro
 MASTER_SITES=	http://tdc-www.harvard.edu/software/saoimage/
 
