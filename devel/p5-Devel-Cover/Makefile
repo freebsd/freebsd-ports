@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Devel-Cover
-PORTVERSION=	0.47
+PORTVERSION=	0.49
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Devel
@@ -23,6 +23,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 PERL_CONFIGURE=	yes
 
 MAN3=		Devel::Cover.3 \
+		Devel::Cover::Annotation::Random.3 \
 		Devel::Cover::Branch.3 \
 		Devel::Cover::Condition.3 \
 		Devel::Cover::Condition_and_3.3 \
@@ -39,6 +40,7 @@ MAN3=		Devel::Cover.3 \
 		Devel::Cover::Report::Html_basic.3 \
 		Devel::Cover::Report::Html_minimal.3 \
 		Devel::Cover::Report::Html_subtle.3 \
+		Devel::Cover::Report::Sort.3 \
 		Devel::Cover::Report::Text.3 \
 		Devel::Cover::Report::Text2.3 \
 		Devel::Cover::Statement.3 \

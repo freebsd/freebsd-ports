@@ -1,6 +1,7 @@
 bin/cover
 bin/gcov2perl
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/Annotation/Random.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/Branch.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/Condition.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/Condition_and_3.pm
@@ -18,6 +19,7 @@ bin/gcov2perl
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/Report/Html_basic.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/Report/Html_minimal.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/Report/Html_subtle.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/Report/Sort.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/Report/Text.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/Report/Text2.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/Statement.pm
@@ -33,5 +35,6 @@ bin/gcov2perl
 @unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel 2>/dev/null || true
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/Report
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/DB
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/Annotation
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover
 @unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Devel 2>/dev/null || true
