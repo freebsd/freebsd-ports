@@ -1,3 +1,6 @@
 bin/cuecat
-lib/%%PYTHON_VERSION%%/site-packages/cuecat.py
 lib/%%PYTHON_VERSION%%/site-packages/barcode.py
+lib/%%PYTHON_VERSION%%/site-packages/barcode.pyo
+lib/%%PYTHON_VERSION%%/site-packages/cuecat.py
+lib/%%PYTHON_VERSION%%/site-packages/cuecat.pyo
+@unexec rmdir %D/lib/%%PYTHON_VERSION%%/site-packages 2>/dev/null || true
