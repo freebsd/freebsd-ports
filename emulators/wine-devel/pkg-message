@@ -1,6 +1,5 @@
-In order to use Wine on FreeBSD 4.x, you need a kernel with option USER_LDT
-enabled.  You also need options SYSVSHM, SYSVSEM, and SYSVMSG; these are
-default on FreeBSD 4.x and above.
+Wine should build on FreeBSD 4.x and FreeBSD 5.x, but versions before
+FreeBSD 5.3 will generally not work properly.
 
 Wine requires a configuration file .wine/config in the home directory of
 every user, where assignments of Unix directories to DOS drive letters and
