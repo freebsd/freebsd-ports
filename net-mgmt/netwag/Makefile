@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	netwag
-PORTVERSION=	5.26.0
+PORTVERSION=	5.28.0
 CATEGORIES=	net-mgmt ipv6
 MASTER_SITES=	http://www.laurentconstantin.com/common/netw/${PORTNAME}/download/v5/ \
 		http://membres.lycos.fr/lauconstantin/common/netw/${PORTNAME}/download/v5/ \
