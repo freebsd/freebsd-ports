@@ -3,7 +3,7 @@
 # Date created:         Mon Aug 28 13:35:31 CDT 1995
 # Whom:                 erich@rrnet.com
 #
-# $Id: Makefile,v 1.11 1997/10/08 06:29:16 obrien Exp $
+# $Id: Makefile,v 1.12 1997/11/22 01:11:31 asami Exp $
 #
 
 DISTNAME=	ical-2.1b2
@@ -13,8 +13,6 @@ MASTER_SITES=	http://www.research.digital.com/SRC/personal/Sanjay_Ghemawat/ical/
 MAINTAINER=	erich@FreeBSD.org
 
 LIB_DEPENDS=    tk42\\.1:${PORTSDIR}/x11/tk42
-
-BROKEN=		tclsh
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-tclsh=${PREFIX}/bin/tclsh7.6 \
