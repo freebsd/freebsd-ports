@@ -1188,3 +1188,4 @@ korean/mkisofs|sysutils/cdrtools-cjk|2004-07-02|superseded
 net/kopete|net/kdenetwork3|2004-07-02|kopete was integrated into the kdenetwork3 port
 www/p5-Flash-FLAP|www/p5-AMF-Perl|2004-07-04|renamed
 net/gnomenetwork|net/gnomenettool|2004-07-05|gnomenettool replaces the unmaintained gnomenetwork
+misc/cfe||2004-07-06|no longer exists
