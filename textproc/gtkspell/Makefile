@@ -7,7 +7,7 @@
 
 PORTNAME=	gtkspell2
 PORTVERSION=	2.0.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc gnome
 MASTER_SITES=	http://gtkspell.sourceforge.net/download/
 DISTNAME=	${PORTNAME:S/2$//}-${PORTVERSION}
@@ -15,7 +15,7 @@ DISTNAME=	${PORTNAME:S/2$//}-${PORTVERSION}
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A GTK+ 2 spell checking component
 
-LIB_DEPENDS=	pspell.15:${PORTSDIR}/textproc/aspell
+LIB_DEPENDS=	pspell.16:${PORTSDIR}/textproc/aspell
 
 USE_X_PREFIX=	yes
 USE_PERL5=	yes
