@@ -1753,7 +1753,6 @@ fbsd-icons	ports/x11/fbsd-icons
 fc++		ports/devel/fc++
 fceu		ports/emulators/fceu
 fcgi		ports/www/fcgi
-fcitx		ports/chinese/fcitx
 fconv		ports/converters/fconv
 fcplay		ports/audio/fcplay
 fcptools	ports/net/fcptools
@@ -10365,6 +10364,7 @@ zh-dictd-database	ports/chinese/dictd-database
 zh-emacs20	ports/chinese/emacs20
 zh-enscript	ports/chinese/enscript
 zh-eterm	ports/chinese/eterm
+zh-fcitx	ports/chinese/fcitx
 zh-firebird	ports/chinese/firebird
 zh-fortunetw	ports/chinese/fortunetw
 zh-gb2jis	ports/chinese/gb2jis
