@@ -1,0 +1,3 @@
+bin/XF98_GA968.xtt
+@exec /bin/ln -fs %D/%F %B/X
+@unexec ([ -x %B/XF98_GA968 ] && /bin/ln -fs %B/XF98_GA968 %B/X) || /usr/bin/true
