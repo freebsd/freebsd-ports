@@ -6,18 +6,24 @@
 #
 
 PORTNAME=	galeon
-PORTVERSION=	0.7.1
+PORTVERSION=	0.7.2
 CATEGORIES=	www gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	sobomax@FreeBSD.org
 
-BUILD_DEPENDS=	/nonexistent:${PORTSDIR}/www/mozilla:build
+BUILD_DEPENDS=	/nonexistent:${PORTSDIR}/www/${MOZILLA}:build
 LIB_DEPENDS=	gnome.4:${PORTSDIR}/x11/gnomelibs \
 		glade.4:${PORTSDIR}/devel/libglade
 RUN_DEPENDS=	panel:${PORTSDIR}/x11/gnomecore \
-		mozilla:${PORTSDIR}/www/mozilla
+		${X11BASE}/lib/${MOZILLA}:${PORTSDIR}/www/${MOZILLA}
+
+.if !defined(WITH_FULL_MOZILLA)
+MOZILLA=	mozilla-embedded
+.else
+MOZILLA=	mozilla
+.endif
 
 USE_X_PREFIX=	yes
 USE_NEWGCC=	yes
@@ -36,6 +42,15 @@ CONFIGURE_ENV=	GLIB_CONFIG="${GLIB_CONFIG}" \
 		CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
+.if !defined(WITH_FULL_MOZILLA)
+post-extract:
+	@${ECHO_MSG}
+	@${ECHO_MSG} " By default the port uses mozilla-embedded for html rendering, but if you are"
+	@${ECHO_MSG} " planning to use both Mozilla and Galeon you can instruct it to use mozilla by"
+	@${ECHO_MSG} " defining \"WITH_FULL_MOZILLA\"."
+	@${ECHO_MSG}
+.endif
+
 pre-patch:
 	@${PERL} -pi -e 's|-lpthread|-pthread|g ; \
 		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
@@ -44,9 +59,10 @@ pre-patch:
 		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g ; \
 		 s|-lpthread|-pthread|g'
 
-post-patch:
+post-configure:
 	@${PERL} -pi -e 's|%%PREFIX%%|${PREFIX}|g ; \
 			 s|%%LOCALBASE%%|${LOCALBASE}|g ; \
-			 s|%%X11BASE%%|${X11BASE}|g' ${WRKSRC}/src/galeon
+			 s|%%X11BASE%%|${X11BASE}|g ; \
+			 s|%%MOZILLA%%|${MOZILLA}|g' ${WRKSRC}/src/galeon
 
 .include <bsd.port.mk>
