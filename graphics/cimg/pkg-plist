@@ -122,8 +122,8 @@ include/CImg.h
 %%PORTDOCS%%%%EXAMPLESDIR%%/Makefile
 %%PORTDOCS%%%%EXAMPLESDIR%%/fade_images.cpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/greycstoration.cpp
-%%PORTDOCS%%%%EXAMPLESDIR%%/greycstoration_old.cpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/hough_transform.cpp
+%%PORTDOCS%%%%EXAMPLESDIR%%/image2ascii.cpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/image_registration.cpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/img/background.jpg
 %%PORTDOCS%%%%EXAMPLESDIR%%/img/brain.png
