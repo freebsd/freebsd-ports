@@ -1,4 +1,4 @@
-This port is for a printer filter of EPSON Stylus Color980. The filter
+This port is for a printer filter of EPSON Stylus Color 980. The filter
 is called Photo Image Print System for Linux and there exist the
 filters for other EPSON bubble jet printers. By using this driver you
 can print out as high quality as you use the Windows driver. It
@@ -7,27 +7,20 @@ the below URL:
 
 WWW: http://www.epkowa.co.jp/
 
-And then this port has a modified filter "filter-sc980.rev" which is
-useful to print out more than one page. If you use it, you add the
-next entries into /etc/printcap.
+This port has a modified filter "filter-sc980.rev" which is useful to
+print out more than one page. Then you execute the next command:
 
-sc980|EPSON Stylus Color980:\
-        :lp=/dev/lpt0:\
-        :sh:\
-        :if=/usr/local/libexec/sc980/filter-sc980.rev:\
-        :sd=/var/spool/lpd/sc980:\
-        :mx#0:\
-        :lf=/var/log/lpd-errs
+/usr/local/libexec/pips-sc980/setup
 
-*************************************************************
-To run with Japanese/French/Germany/Spanish
-/Italian/Dutch/Portugue/Korean messages, you should execute as follows:
-  env LANG=ja_JP pips-sc980
-  env LANG=fr pips-sc980
-  env LANG=de pips-sc980
-  env LANG=es pips-sc980
-  env LANG=it pips-sc980
-  env LANG=nl pips-sc980
-  env LANG=pt pips-sc980
-  env LANG=ko pips-sc980
-*************************************************************
+to setup /etc/printcap, make a spool in /var/spool/lpd/ and so on.
+
+To run with Japanese/French/Germany/Spanish/Italian/Dutch/
+Portugue/Korean messages, you should execute as follows:
+  env LANG=ja_JP pips-sc980          env LANG=fr pips-sc980	  
+  env LANG=de pips-sc980             env LANG=es pips-sc980	  
+  env LANG=it pips-sc980             env LANG=nl pips-sc980
+  env LANG=pt pips-sc980             env LANG=ko pips-sc980 (*)
+  env LANG=zh_CN pips-sc980 (*)(**)  env LANG=zh_TW.Big5 pips-sc980 (**)
+
+(*) These do not work well.
+(**) See more informations in /usr/local/share/doc/pips800/readme_for_zh

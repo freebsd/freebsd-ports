@@ -6,14 +6,12 @@ URL:
 
 WWW: http://www.epkowa.co.jp/
 
-And then this port has a modified filter "filter3300.rev" which is
-useful to print out more than one page. If you use it, you add the
-next entries into /etc/printcap.
+This port has a modified filter "filter3300.rev" which is useful to
+print out more than one page. Then you execute the next command:
 
-pm3300c|EPSON PM-3300C:\
-        :lp=/dev/lpt0:\
-        :sh:\
-        :if=/usr/local/libexec/pips3300/filter3300.rev:\
-        :sd=/var/spool/lpd/pm3300c:\
-        :mx#0:\
-        :lf=/var/log/lpd-errs
+/usr/local/libexec/pips3300/setup
+
+to setup /etc/printcap, make a spool in /var/spool/lpd/ and so on.
+
+To run with Japanese messages, you have to execute as follows:
+ env LANG=ja_JP pips3300 -la JP

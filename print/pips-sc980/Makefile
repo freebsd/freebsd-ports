@@ -5,7 +5,10 @@
 # $FreeBSD$
 #
 
-MASTERDIR=	${.CURDIR}/../pips-sc880
+PORTVERSION=	1.0
+MASTERDIR=	${.CURDIR}/../pips800
 PRTYPE=		-sc980
+
+INTERNATIONAL_PRODUCTS=yes
 
 .include "${MASTERDIR}/Makefile"

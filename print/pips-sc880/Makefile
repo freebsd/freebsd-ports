@@ -6,7 +6,6 @@
 #
 
 PORTVERSION=	1.0
-MASTER_SITES?=	http://www.epkowa.on.arena.ne.jp/pips/data/${PRTYPE:S/^-//}/
 MASTERDIR=	${.CURDIR}/../pips800
 PRTYPE?=	-sc880
 
