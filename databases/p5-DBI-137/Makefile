@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DBI
-PORTVERSION=	1.28
+PORTVERSION=	1.32
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	DBI
@@ -32,6 +32,9 @@ MAN3=		Bundle::DBI.3 \
 		DBI::FAQ.3 \
 		DBI::Format.3 \
 		DBI::Profile.3 \
+		DBI::ProfileData.3 \
+		DBI::ProfileDumper.3 \
+		DBI::ProfileDumper::Apache.3 \
 		DBI::ProxyServer.3 \
 		DBI::PurePerl.3 \
 		DBI::Shell.3 \
