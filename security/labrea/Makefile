@@ -6,29 +6,26 @@
 ##
 
 PORTNAME=	LaBrea
-PORTVERSION=	2.3
+PORTVERSION=	2.4
 CATEGORIES=	security
 MASTER_SITES=	http://freebsd.rogness.net/ports/labrea/
-DISTNAME=	LaBrea${PORTVERSION:S/./_/g}
+DISTNAME=	${PORTNAME}${PORTVERSION:S/./_/g}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	nick@rogness.net
-COMMENT=	Defense mechanism against CodeRed
+COMMENT=	Security tarpit defense tool
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libnet.a:${PORTSDIR}/net/libnet
 
-WRKSRC=		${WRKDIR}/LaBrea
-USE_REINPLACE=	yes
-
-MAKE_ARGS=	CC="${CC}" OPTFLAGS="${CFLAGS}"
+ALL_TARGET=	${PORTNAME}
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/LaBrea
-	${INSTALL_MAN} ${WRKSRC}/LaBrea.README ${PREFIX}/share/doc/LaBrea
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/LaBrea.README ${DOCSDIR}
 	@echo "******************************************"
 	@echo "You will need to read the LaBrea.README in"
-	@echo "${PREFIX}/share/doc/LaBrea"
+	@echo "${DOCSDIR}"
 	@echo "Before your run this!!"
 	@echo "******************************************"
 	@echo .
