@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	blackbox
-PORTVERSION= 	0.60.3
+PORTVERSION= 	0.61.0
 CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://portal.alug.org/pub/blackbox/0.6x.x/
 
@@ -15,6 +15,5 @@ MAINTAINER=	patseal@hyperhost.net
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
-CONFIGURE_ARGS= --disable-styled-frames
 
 .include <bsd.port.mk>
