@@ -14,18 +14,19 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	lioux@FreeBSD.org
 
 BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
-LIB_DEPENDS=	gnomeui-2.0:${PORTSDIR}/x11-toolkits/libgnomeui \
-		popt.0:${PORTSDIR}/devel/popt
+LIB_DEPENDS=	glib-2.0.0:${PORTSDIR}/devel/glib20 \
+		popt.0:${PORTSDIR}/devel/popt \
+		xml2.5:${PORTSDIR}/textproc/libxml2
 
-IGNORE=		Needs help fixing scheduling code under FreeBSD
-
+USE_X_PREFIX=	yes
 USE_BISON=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 USE_REINPLACE=	yes
 USE_GNOMENG=	yes
-USE_GNOME=	gnomehack
+USE_GNOME=	gnomehack \
+		gnomeprefix
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS= --disable-tests \
 		--disable-failing-tests
