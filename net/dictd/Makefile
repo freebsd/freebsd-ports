@@ -9,7 +9,7 @@
 PORTNAME=	dictd
 PORTVERSION=	1.7.1
 PORTREVISION=	1
-CATEGORIES=	net textproc
+CATEGORIES+=	net textproc
 MASTER_SITES=	ftp://ftp.dict.org/pub/dict/ \
 		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=		dict
