@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	hpoj
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	stolz@i2.informatik.rwth-aachen.de
 COMMENT=	"HP OfficeJet Linux driver; printing, scanning, and photo-card access"
 
 LIB_DEPENDS=	sane.1:${PORTSDIR}/graphics/sane-backends \
@@ -26,6 +26,14 @@ USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_PERL5=	yes
 
+.ifndef(WITHOUT_X11)
+USE_QT_VER=	3
+USE_XLIB=	yes
+PLIST_SUB+=	X11=""
+.else
+PLIST_SUB+=	X11="@comment "
+.endif
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "i386" && ${OSVERSION} > 500000
@@ -33,17 +41,9 @@ BROKEN=	"ffs() clash, see i386/41930"
 .endif
 
 .if ${ARCH} == "alpha"
-EXTRA_PATCHES=	files/extra-patch-mlcd-Makefile.in \
-		files/extra-patch-mlcd-ParPort.cpp \
-		files/extra-patch-mlcd-ParPort.h
-.endif
-
-.ifndef(WITHOUT_X11)
-USE_QT_VER=	3
-USE_XLIB=	yes
-PLIST_SUB+=	X11=""
-.else
-PLIST_SUB+=	X11="@comment "
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-mlcd-Makefile.in \
+		${FILESDIR}/extra-patch-mlcd-ParPort.cpp \
+		${FILESDIR}/extra-patch-mlcd-ParPort.h
 .endif
 
 GNU_CONFIGURE=	yes
