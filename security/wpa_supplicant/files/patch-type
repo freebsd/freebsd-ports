@@ -1,6 +1,5 @@
-diff -ru work/wpa_supplicant-0.3.0/eapol_sm.c work.sav/wpa_supplicant-0.3.0/eapol_sm.c
---- work/wpa_supplicant-0.3.0/eapol_sm.c	Sun Dec  5 16:28:25 2004
-+++ work.sav/wpa_supplicant-0.3.0/eapol_sm.c	Sun Dec 12 15:53:17 2004
+--- eapol_sm.c	Sun Dec  5 16:28:25 2004
++++ eapol_sm.c	Sun Dec 12 15:53:17 2004
 @@ -1371,7 +1371,7 @@
  }
  

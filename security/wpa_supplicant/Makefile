@@ -5,23 +5,40 @@
 # $FreeBSD$
 #
 
-PORTNAME=	wpa_suplicant
+PORTNAME=	wpa_supplicant
 PORTVERSION=	0.3.0
-CATEGORIES=	security
+PORTREVISION=	1
+CATEGORIES=	security net
 MASTER_SITES=	http://hostap.epitest.fi/releases/
-DISTNAME=	wpa_supplicant-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Supplicant (client) for WPA/802.1x protocols
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libdnet.a:${PORTSDIR}/net/libdnet
 
+PLIST_FILES=	bin/wpa_supplicant \
+		bin/wpa_passphrase \
+		bin/wpa_cli
+
+.if !defined(NOPORTDOCS)
+DOCFILES=	README \
+		ChangeLog \
+		wpa_supplicant.conf
+PLIST_FILES+=	${DOCFILES:S,^,%%DOCSDIR%%/,}
+PLIST_DIRS+=	%%DOCSDIR%%
+.endif
+
 WRKSRC=		${WRKDIR}/${DISTNAME}
 USE_GMAKE=	yes
-PATCH_ARGS=	-p0
 
 post-extract:
 	@${CP} ${FILESDIR}/config.bsd ${WRKSRC}/.config
+
+post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${DOCFILES:S|^|${WRKSRC}/|} ${DOCSDIR}
+.endif
 
 .include <bsd.port.pre.mk>
 
