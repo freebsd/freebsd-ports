@@ -11,7 +11,7 @@ CATEGORIES=	palm emulators
 MASTER_SITES=	http://www.palmos.com/dev/tech/tools/emulator/
 DISTNAME=	emulator_src_30a6
 
-MAINTAINER=	dirk@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
 
