@@ -1,0 +1,3 @@
+bin/XF98_NEC480.xtt
+@exec /bin/ln -fs %D/%F %B/X
+@unexec ([ -x %B/XF98_NEC480 ] && /bin/ln -fs %B/XF98_NEC480 %B/X) || /usr/bin/true
