@@ -1,0 +1,12 @@
+--- makefile.orig	Sat Jun 24 19:14:14 2000
++++ makefile	Sat Jun 24 19:14:30 2000
+@@ -1,8 +1,6 @@
+ 
+ # If you don't have gcc, try cc instead, if it is an ANSI compiler.
+ 
+-CC=gcc
+-
+ wordplay : wordplay.c
+-	$(CC) -O -o wordplay wordplay.c
++	$(CC) ${CFLAGS} -o wordplay wordplay.c
+ 
