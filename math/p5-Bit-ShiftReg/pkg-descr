@@ -1,0 +1,11 @@
+Bit::ShiftReg is a perl module that implements rotate left, rotate
+right, arithmetic shift left, and logical shift right operations with
+carry flag for all C integer types.  The results depend on the
+number of bits with that the integer types unsigned char, unsigned
+short, unsigned int, and unsigned long have on your machine.  The
+module automatically determines the number of bits of each integer
+type and adjusts its internal constants accordingly.
+
+Author: Steffen Beyer <sb@sdm.de>
+
+--will
