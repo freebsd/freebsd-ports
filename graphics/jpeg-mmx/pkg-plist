@@ -5,7 +5,9 @@ bin/rdjpgcom
 bin/wrjpgcom
 include/jconfig.h
 include/jerror.h
+include/jinclude.h
 include/jmorecfg.h
+include/jpegint.h
 include/jpeglib.h
 lib/libjpeg.a
 lib/libjpeg.so
