@@ -47,7 +47,7 @@ post-patch:
 .endif
 
 post-configure:
-	@${PERL} -i -pe 's/^(CC = ).*/$$1 ${CC}/;' \
-		-e 's/^(CCFLAGS = ).*/$$1 ${CFLAGS}/' ${WRKSRC}/Expat/Makefile
+	@${PERL} -i -pe 's|^(CC = ).*|$$1 ${CC}|;' \
+		-e 's|^(CCFLAGS = ).*|$$1 ${CFLAGS}|' ${WRKSRC}/Expat/Makefile
 
 .include <bsd.port.mk>

@@ -24,6 +24,6 @@ INSTALLS_SHLIB=	yes
 MAN1=	twin.1
 
 post-patch:
-	@${REINPLACE_CMD} -e "s/-lpthread/${PTHREAD_LIBS}/g" ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e "s|-lpthread|${PTHREAD_LIBS}|g" ${WRKSRC}/configure
 
 .include <bsd.port.mk>

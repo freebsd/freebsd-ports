@@ -29,6 +29,6 @@ post-extract:
 
 post-patch:
 	${MV}	${WRKSRC}/Makefile ${WRKSRC}/Makefile.prev
-	${SED}	"s/-O3/${CFLAGS}/g" ${WRKSRC}/Makefile.prev >  ${WRKSRC}/Makefile
+	${SED}	"s|-O3|${CFLAGS}|g" ${WRKSRC}/Makefile.prev >  ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>

@@ -18,7 +18,7 @@ MAN1=		"smiley.1"
 
 post-patch:
 	${CP} ${WRKSRC}/Makefile ${WRKSRC}/Makefile.input
-	${SED} "s/%CFLAGS%/${CFLAGS}/" ${WRKSRC}/Makefile.input > ${WRKSRC}/Makefile
+	${SED} "s|%CFLAGS%|${CFLAGS}|" ${WRKSRC}/Makefile.input > ${WRKSRC}/Makefile
 	${RM} -f ${WRKSRC}/Makefile.input
 
 do-install:

@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.morphine.com/src/
 MAINTAINER=	petef@FreeBSD.org
 
 post-patch:
-	${PERL} -pi -e "s/.\(CXX\)/${CC} ${CFLAGS}/g" ${WRKSRC}/Makefile
+	${PERL} -pi -e "s|.\(CXX\)|${CC} ${CFLAGS}|g" ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/passlogd ${PREFIX}/sbin

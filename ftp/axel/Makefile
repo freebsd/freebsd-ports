@@ -24,7 +24,7 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} --mandir=${PREFIX}/man --i18n=1
 MAN1=		axel.1
 
 post-configure:
-	@${REINPLACE_CMD} -e 's,-O3,${CFLAGS},; s/gcc/${CC}/; \
-		s/-pthread/${PTHREAD_LIBS}/' ${WRKSRC}/Makefile.settings
+	@${REINPLACE_CMD} -e 's,-O3,${CFLAGS},; s|gcc|${CC}|; \
+		s|-pthread|${PTHREAD_LIBS}|' ${WRKSRC}/Makefile.settings
 
 .include <bsd.port.mk>

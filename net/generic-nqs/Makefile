@@ -98,12 +98,12 @@ MAN1=		nmapmgr.1 nqs.1 nqsconfig.1 nqsgs.1 nqsrn.1\
 post-patch:
 	@${MV} ${WRKSRC}/SETUPDir/GSetup-Scripts/GPort-Scripts/1020-Is-gcc.sh \
 	${WRKSRC}/SETUPDir/GSetup-Scripts/GPort-Scripts/1020-Is-gcc.sh.orig ; \
-	${SED} -e 's/-O6 -fno-strength-reduce/${CFLAGS}/' \
+	${SED} -e 's|-O6 -fno-strength-reduce|${CFLAGS}|' \
 	${WRKSRC}/SETUPDir/GSetup-Scripts/GPort-Scripts/1020-Is-gcc.sh.orig \
 	> ${WRKSRC}/SETUPDir/GSetup-Scripts/GPort-Scripts/1020-Is-gcc.sh
 
 pre-configure:
-	@ ${SED} -e 's/XX_CFLAGS_XX/${CFLAGS}/' ${FILESDIR}/${TEMPLATE} > ${PLATFORMDIR}/${PLATFORM}; \
+	@ ${SED} -e 's|XX_CFLAGS_XX|${CFLAGS}|' ${FILESDIR}/${TEMPLATE} > ${PLATFORMDIR}/${PLATFORM}; \
 	${CP}   ${FILESDIR}/${DUMMYMAKE} ${WRKSRC}; \
 	${CHMOD} 555 ${WRKSRC}/Source-Tree/SETUP/all-systems/*
 	${RM} -f ${MANDIR}/*.man ; \

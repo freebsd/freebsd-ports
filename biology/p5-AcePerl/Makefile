@@ -38,7 +38,7 @@ MAN3=		Ace.3 Ace::Browser::AceSubs.3 Ace::Browser::SearchSubs.3 \
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 post-patch:
-	@ ${SED} -e 's/XX__CC__XX/${CC}/' < ${FILESDIR}/FREEBSD_DEF \
+	@ ${SED} -e 's|XX__CC__XX|${CC}|' < ${FILESDIR}/FREEBSD_DEF \
 	  > ${WRKSRC}/ace/wmake/FREEBSD_DEF
 
 .include <bsd.port.mk>

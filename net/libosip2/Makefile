@@ -20,6 +20,6 @@ INSTALLS_SHLIB=	yes
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 post-patch:
-	@${REINPLACE_CMD} -e "s/-lpthread/${PTHREAD_LIBS}/g" ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e "s|-lpthread|${PTHREAD_LIBS}|g" ${WRKSRC}/configure
 
 .include <bsd.port.mk>

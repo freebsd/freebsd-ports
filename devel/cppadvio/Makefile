@@ -20,7 +20,7 @@ USE_GMAKE=	yes
 
 post-patch:
 	@( cd ${WRKSRC}; ${MV} c++ c++.orig; \
-	${SED} -e 's/^ *gcc/${CXX} ${CXXFLAGS}/' c++.orig > c++; ${CHMOD} +x c++ )
+	${SED} -e 's|^ *gcc|${CXX} ${CXXFLAGS}|' c++.orig > c++; ${CHMOD} +x c++ )
 
 do-install:
 	$(INSTALL_DATA) ${WRKSRC}/libcppadvio.a ${PREFIX}/lib

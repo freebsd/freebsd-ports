@@ -31,7 +31,7 @@ DOCS=		COPYING		ChangeLog	FAQ		NEWS \
 		WISHLIST	doc/manual.ps.gz
 
 post-patch:
-	${PERL} -i -pe 's/-O[2-6]/${CFLAGS}/g' \
+	${PERL} -i -pe 's|-O[2-6]|${CFLAGS}|g' \
 		${WRKSRC}/Util/Makefile.in \
 		${WRKSRC}/Util/configure \
 		${WRKSRC}/libaltsys/utils/configure
