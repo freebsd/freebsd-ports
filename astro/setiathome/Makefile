@@ -16,6 +16,8 @@ EXTRACT_SUFX=	.tar
 MAINTAINER?=	cyrille.lefevre@laposte.net
 COMMENT?=	Donate idle cycles to the search for space aliens
 
+FORBIDDEN=	'Exploitable buffer overflow. http://spoor12.edup.tudelft.nl/'
+
 .include <bsd.port.pre.mk>
 
 # Global variables
