@@ -27,6 +27,10 @@ PLIST_FILES=	bin/cel
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} != "i386"
+BROKEN=		"Does not compile on !i386"
+.endif
+
 post-patch:
 	${REINPLACE_CMD} -e "s,-fno-omit-frame-pointer,${CFLAGS}," \
 		${WRKSRC}/hash/Makefile ${WRKSRC}/kits/Makefile.unix \
