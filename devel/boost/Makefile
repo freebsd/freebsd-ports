@@ -14,7 +14,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=${PORTNAME}
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	pmarquis@pobox.com
+MAINTAINER=	barner@gmx.de
 COMMENT=	Free peer-reviewed portable C++ source libraries
 
 MAKE_ENV=	BOOST_ROOT=${WRKSRC} BUILD="debug release"
