@@ -56,7 +56,7 @@ $SUMMARY_FILE  = "/tmp/#cvs.files.summary";
 $MAIL_FILE     = "/tmp/#cvs.files.mail";
 $SUBJ_FILE     = "/tmp/#cvs.files.subj";
 
-$CVSROOT       = "$ENV{'CVSROOT'}";
+$CVSROOT       = $ENV{'CVSROOT'} || "/home/ncvs";
 
 ############################################################
 #
@@ -230,7 +230,7 @@ sub change_summary_changed {
 		@revline = split(' ', $_);
 		$rev = $revline[2];
 		$rcsfile = $revline[3];
-		$rcsfile =~ s,^$CVSROOT/,,;
+		$rcsfile =~ s,^$CVSROOT[/]+,,;
 		$rcsfile =~ s/,v$//;
 	    }
 	}
