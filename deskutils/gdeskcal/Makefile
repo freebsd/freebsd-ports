@@ -7,6 +7,7 @@
 
 PORTNAME=	gdeskcal
 PORTVERSION=	0.52
+PORTREVISION=	1
 CATEGORIES=	deskutils python gnome
 MASTER_SITES=	http://www.pycage.de/download/
 DISTNAME=	gDeskCal-${PORTVERSION:S/./_/}
@@ -21,9 +22,14 @@ WRKSRC=		${WRKDIR}/gDeskCal-${PORTVERSION}
 USE_PYTHON=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehier
+USE_REINPLACE=	yes
 NO_BUILD=	yes
 
 DATA_DIRS=	code data skins
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|"locale"|"${PREFIX}/share/locale"|g' \
+		${WRKSRC}/code/values.py
 
 do-install:
 	${MKDIR} ${PREFIX}/share/gnome/gdeskcal
