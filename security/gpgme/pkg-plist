@@ -3,5 +3,5 @@ include/gpgme.h
 lib/libgpgme.a
 lib/libgpgme.la
 lib/libgpgme.so
-lib/libgpgme.so.4
+lib/libgpgme.so.5
 share/aclocal/gpgme.m4
