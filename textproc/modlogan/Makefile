@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	modlogan
-PORTVERSION=	0.7.12
-PORTREVISION=	1
+PORTVERSION=	0.7.13
 CATEGORIES=	textproc www
 MASTER_SITES=	http://jan.kneschke.de/projects/modlogan/download/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -35,6 +34,7 @@ LIB_DEPENDS+=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
 #USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 #LIBTOOLFLAGS=	--disable-ltlibs --release-suffix
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--enable-ltdl-install=no --with-gd=${LOCALBASE}/include
 .if defined(WITH_MYSQL)
@@ -47,7 +47,7 @@ DOC1=		faq.txt glosar manual.txt translations.txt \
 		using-plugins.txt writing-plugins.txt
 
 post-patch:
-	@${PERL} -pi -e 's:\@config_path\@:${PREFIX}/etc/modlogan:g' ${WRKSRC}/doc/modlogan.conf-dist.in
+	@${REINPLACE_CMD} -e 's:\@config_path\@:${PREFIX}/etc/modlogan:g' ${WRKSRC}/doc/modlogan.conf-dist.in
 
 post-configure:
 	${TOUCH} ${WRKSRC}/libltdl/config.status
