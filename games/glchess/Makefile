@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	glchess
-PORTVERSION=	0.3.3
+PORTVERSION=	0.3.4
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -28,8 +28,8 @@ MAN6=		${PORTNAME}.6
 MANCOMPRESSED=	yes
 
 pre-patch:
-	@${PERL} -pi.orig -e 's!${LOCALBASE}/share/games/glchess!${DATADIR}!' \
-		${WRKSRC}/glchessrc.installed
+	@${PERL} -pi.orig -e 's!/usr/local/share/games/glchess!${DATADIR}!' \
+		${WRKSRC}/glchessrc
 	@${PERL} -pi.orig -e 's!/etc!${PREFIX}/etc!' \
 		${WRKSRC}/src/config.c
 
@@ -38,8 +38,8 @@ do-install:
 	@${MKDIR} ${DATADIR}/textures
 	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} \
 		${PREFIX}/bin
-	@${INSTALL_DATA} ${WRKSRC}/glchessrc.installed \
-		${PREFIX}/etc/glchessrc
+	@${INSTALL_DATA} ${WRKSRC}/glchessrc \
+		${PREFIX}/etc
 	@${INSTALL_MAN} ${WRKSRC}/man/glchess.6.gz \
 		${PREFIX}/man/man6
 	@${INSTALL_DATA} ${WRKSRC}/textures/* \
