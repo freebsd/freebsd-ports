@@ -1,0 +1,7 @@
+Align is a general-purpose text filter tool that helps vertically align
+columns in string-separated tables of input text. With whitespace-separated
+columns, you can often use it without arguments and it'll guess the right
+thing to do. Otherwise, you can specify arguments to direct how the columns
+are separated on input and rejoined in the aligned output.
+
+WWW: http://www.cs.indiana.edu/~kinzler/align/

@@ -2,6 +2,7 @@
 #
 
     SUBDIR += agrep
+    SUBDIR += align
     SUBDIR += antiword
     SUBDIR += ascii2pdf
     SUBDIR += aspell
