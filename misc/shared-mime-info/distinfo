@@ -1,2 +1,4 @@
 MD5 (shared-mime-info-0.15.tar.gz) = 51793b041edc68717c3f87e26a4bc087
 SIZE (shared-mime-info-0.15.tar.gz) = 422311
+MD5 (patch-0159-freedesktop.org.xml) = 99d3a5f1ac16042717fe0fbe80abb7cc
+SIZE (patch-0159-freedesktop.org.xml) = 722446

@@ -6,11 +6,17 @@
 
 PORTNAME=	shared-mime-info
 PORTVERSION=	0.15
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	misc gnome
 MASTER_SITES=	http://www.marcuscom.com/downloads/ \
 		http://www.freedesktop.org/software/shared-mime-info/
 DISTNAME=	shared-mime-info-${PORTVERSION}
+
+PATCH_SITES=	http://www.marcuscom.com/downloads/ \
+		http://people.FreeBSD.org/~marcus/ \
+		${MASTER_SITE_LOCAL}
+PATCH_SITE_SUBDIR=	marcus
+PATCHFILES=	patch-0159-freedesktop.org.xml
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A MIME type database from the FreeDesktop project

@@ -12,8 +12,11 @@ bin/update-mime-database
 libdata/pkgconfig/shared-mime-info.pc
 @unexec [ -f %D/share/mime/XMLnamespaces ] && rm -f %D/share/mime/XMLnamespaces || true
 share/mime/application/andrew-inset.xml
+share/mime/application/dicom.xml
 share/mime/application/illustrator.xml
 share/mime/application/mac-binhex40.xml
+share/mime/application/mathematica.xml
+share/mime/application/msword.xml
 share/mime/application/octet-stream.xml
 share/mime/application/oda.xml
 share/mime/application/ogg.xml
@@ -27,13 +30,28 @@ share/mime/application/pkcs7-signature.xml
 share/mime/application/postscript.xml
 share/mime/application/rtf.xml
 share/mime/application/smil.xml
+share/mime/application/stuffit.xml
 share/mime/application/vnd.corel-draw.xml
 share/mime/application/vnd.hp-hpgl.xml
 share/mime/application/vnd.hp-pcl.xml
 share/mime/application/vnd.lotus-1-2-3.xml
+share/mime/application/vnd.mozilla.xul+xml.xml
 share/mime/application/vnd.ms-excel.xml
 share/mime/application/vnd.ms-powerpoint.xml
-share/mime/application/vnd.ms-word.xml
+share/mime/application/vnd.oasis.opendocument.chart.xml
+share/mime/application/vnd.oasis.opendocument.database.xml
+share/mime/application/vnd.oasis.opendocument.formula.xml
+share/mime/application/vnd.oasis.opendocument.graphics-template.xml
+share/mime/application/vnd.oasis.opendocument.graphics.xml
+share/mime/application/vnd.oasis.opendocument.image.xml
+share/mime/application/vnd.oasis.opendocument.presentation-template.xml
+share/mime/application/vnd.oasis.opendocument.presentation.xml
+share/mime/application/vnd.oasis.opendocument.spreadsheet-template.xml
+share/mime/application/vnd.oasis.opendocument.spreadsheet.xml
+share/mime/application/vnd.oasis.opendocument.text-master.xml
+share/mime/application/vnd.oasis.opendocument.text-template.xml
+share/mime/application/vnd.oasis.opendocument.text-web.xml
+share/mime/application/vnd.oasis.opendocument.text.xml
 share/mime/application/vnd.palm.xml
 share/mime/application/vnd.rn-realmedia.xml
 share/mime/application/vnd.stardivision.calc.xml
@@ -71,6 +89,7 @@ share/mime/application/x-bzip.xml
 share/mime/application/x-cd-image.xml
 share/mime/application/x-cgi.xml
 share/mime/application/x-chess-pgn.xml
+share/mime/application/x-chm.xml
 share/mime/application/x-class-file.xml
 share/mime/application/x-compress.xml
 share/mime/application/x-compressed-tar.xml
@@ -121,6 +140,7 @@ share/mime/application/x-gzpostscript.xml
 share/mime/application/x-hdf.xml
 share/mime/application/x-ipod-firmware.xml
 share/mime/application/x-jar.xml
+share/mime/application/x-java-jnlp-file.xml
 share/mime/application/x-java.xml
 share/mime/application/x-javascript.xml
 share/mime/application/x-jbuilder-project.xml
@@ -162,6 +182,7 @@ share/mime/application/x-object.xml
 share/mime/application/x-ole-storage.xml
 share/mime/application/x-oleo.xml
 share/mime/application/x-palm-database.xml
+share/mime/application/x-par2.xml
 share/mime/application/x-pef-executable.xml
 share/mime/application/x-perl.xml
 share/mime/application/x-php.xml
@@ -169,7 +190,6 @@ share/mime/application/x-pkcs12.xml
 share/mime/application/x-profile.xml
 share/mime/application/x-pw.xml
 share/mime/application/x-python-bytecode.xml
-share/mime/application/x-python.xml
 share/mime/application/x-quattropro.xml
 share/mime/application/x-qw.xml
 share/mime/application/x-rar.xml
@@ -212,6 +232,7 @@ share/mime/application/zip.xml
 share/mime/audio/ac3.xml
 share/mime/audio/basic.xml
 share/mime/audio/midi.xml
+share/mime/audio/mpeg.xml
 share/mime/audio/prs.sid.xml
 share/mime/audio/x-adpcm.xml
 share/mime/audio/x-aifc.xml
@@ -219,9 +240,9 @@ share/mime/audio/x-aiff.xml
 share/mime/audio/x-aiffc.xml
 share/mime/audio/x-flac.xml
 share/mime/audio/x-it.xml
+share/mime/audio/x-m4a.xml
 share/mime/audio/x-mod.xml
 share/mime/audio/x-mp3-playlist.xml
-share/mime/audio/x-mp3.xml
 share/mime/audio/x-mpeg.xml
 share/mime/audio/x-mpegurl.xml
 share/mime/audio/x-ms-asx.xml
@@ -255,7 +276,6 @@ share/mime/image/x-3ds.xml
 share/mime/image/x-applix-graphics.xml
 share/mime/image/x-cmu-raster.xml
 share/mime/image/x-compressed-xcf.xml
-share/mime/image/x-dcm.xml
 share/mime/image/x-dib.xml
 share/mime/image/x-eps.xml
 share/mime/image/x-fits.xml
@@ -296,6 +316,8 @@ share/mime/inode/mount-point.xml
 share/mime/inode/socket.xml
 share/mime/inode/symlink.xml
 @unexec [ -f %D/share/mime/magic ] && rm -f %D/share/mime/magic || true
+@unexec [ -f %D/share/mime/aliases ] && rm -f %D/share/mime/aliases || true
+@unexec [ -f %D/share/mime/subclasses ] && rm -f %D/share/mime/subclasses || true
 share/mime/message/delivery-status.xml
 share/mime/message/disposition-notification.xml
 share/mime/message/external-body.xml
@@ -343,6 +365,7 @@ share/mime/text/x-csharp.xml
 share/mime/text/x-csrc.xml
 share/mime/text/x-dcl.xml
 share/mime/text/x-dsl.xml
+share/mime/text/x-dsrc.xml
 share/mime/text/x-dtd.xml
 share/mime/text/x-emacs-lisp.xml
 share/mime/text/x-fortran.xml
@@ -353,7 +376,6 @@ share/mime/text/x-haskell.xml
 share/mime/text/x-idl.xml
 share/mime/text/x-install.xml
 share/mime/text/x-java.xml
-share/mime/text/x-ksh.xml
 share/mime/text/x-ksysv-log.xml
 share/mime/text/x-literate-haskell.xml
 share/mime/text/x-log.xml
@@ -363,6 +385,7 @@ share/mime/text/x-moc.xml
 share/mime/text/x-objcsrc.xml
 share/mime/text/x-pascal.xml
 share/mime/text/x-patch.xml
+share/mime/text/x-python.xml
 share/mime/text/x-readme.xml
 share/mime/text/x-scheme.xml
 share/mime/text/x-setext.xml
@@ -376,8 +399,6 @@ share/mime/text/x-troff-mm.xml
 share/mime/text/x-troff-ms.xml
 share/mime/text/x-uil.xml
 share/mime/text/x-uri.xml
-share/mime/text/x-vcalendar.xml
-share/mime/text/x-vcard.xml
 share/mime/text/x-xslfo.xml
 share/mime/text/x-xslt.xml
 share/mime/text/xmcd.xml
@@ -411,6 +432,8 @@ share/mime/video/x-sgi-movie.xml
 @unexec [ -f %%X11BASE%%/share/mime/XMLnamespaces ] && rm -f %%X11BASE%%/share/mime/XMLnamespaces || true
 @unexec [ -f %%X11BASE%%/share/mime/globs ] && rm -f %%X11BASE%%/share/mime/globs || true
 @unexec [ -f %%X11BASE%%/share/mime/magic ] && rm -f %%X11BASE%%/share/mime/magic || true
+@unexec [ -f %%X11BASE%%/share/mime/aliases ] && rm -f %%X11BASE%%/share/mime/aliases || true
+@unexec [ -f %%X11BASE%%/share/mime/subclasses ] && rm -f %%X11BASE%%/share/mime/subclasses || true
 @unexec rmdir %%X11BASE%%/share/mime/video 2>/dev/null || true
 @unexec rmdir %%X11BASE%%/share/mime/text 2>/dev/null || true
 @unexec rmdir %%X11BASE%%/share/mime/packages 2>/dev/null || true
