@@ -1,0 +1,19 @@
+
+$FreeBSD$
+
+--- Makefile.orig	Thu Aug  2 05:39:29 2001
++++ Makefile	Tue Aug 13 15:05:36 2002
+@@ -1,9 +1,9 @@
+ # Modify INCLUDE to point to gkrellm.h (if it's not in /usr/local/include)
+-INCLUDE	= /usr/local/include
++INCLUDE	= ${X11BASE}/include/gkrellm
+ 
+-CC	= gcc
+-CFLAGS	= -Wall -O2 -fPIC -I$(INCLUDE) 			\
+-	  `gtk-config --cflags` `imlib-config --cflags-gdk`
++#CC	= gcc
++CFLAGS+= -fPIC -I$(INCLUDE) \
++	  `gtk12-config --cflags` `imlib-config --cflags-gdk`
+ LDFLAGS	=
+ TARGET	= gkrellmwho
+ 
