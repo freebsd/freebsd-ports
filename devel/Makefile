@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.165 1999/03/31 05:35:36 jkoshy Exp $
+# $Id: Makefile,v 1.166 1999/04/03 01:16:08 steve Exp $
 #
 
     SUBDIR += ElectricFence
@@ -59,6 +59,7 @@
     SUBDIR += libgtop
     SUBDIR += libicq
     SUBDIR += libmalloc
+    SUBDIR += libshhmsg
     SUBDIR += libshhopt
     SUBDIR += libslang
     SUBDIR += libtool
