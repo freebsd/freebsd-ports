@@ -1,9 +1,9 @@
---- ./src/common/Logger.cpp.orig	Tue Jul 13 23:02:56 2004
-+++ ./src/common/Logger.cpp	Tue Jan 25 19:34:22 2005
+--- src/common/Logger.cpp.orig	Thu Feb 24 09:44:06 2005
++++ src/common/Logger.cpp	Thu Feb 24 09:44:25 2005
 @@ -21,7 +21,7 @@
  #include <common/Defines.h>
  #include <common/Logger.h>
- #include <tank/TankContainer.h>
+ #include <GLEXT/GLTexture.h>
 -#include <SDL/SDL.h>
 +#include <SDL11/SDL.h>
  #include <time.h>

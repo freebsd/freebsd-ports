@@ -6,7 +6,7 @@
 # $FreeBSD$
 
 PORTNAME=		scorched3d
-PORTVERSION=		0.${SCORCH_VERSION}
+PORTVERSION=		0.${SCORCH_VERSION}${SCORCH_REVISION}
 CATEGORIES=		games
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	scorched3d
@@ -17,7 +17,8 @@ COMMENT=		Scorched is a game based loosely on the classic DOS game
 
 LIB_DEPENDS=		wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk2
 
-SCORCH_VERSION=		38
+SCORCH_VERSION=		38.1
+SCORCH_REVISION=	b
 
 .if defined(WITH_MYSQL)
 USE_MYSQL=		yes
