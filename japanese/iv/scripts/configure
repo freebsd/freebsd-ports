@@ -1,0 +1,16 @@
+#! /bin/sh
+
+cd ${WRKSRC}
+
+localconfig=src/config/InterViews/local.def
+
+sed	-e "s:/usr/local/interviews:${PREFIX}/interviews:" \
+	-e "s:/usr/X11R6:${X11BASE}:" \
+	${localconfig} > ${localconfig}.new
+mv -f ${localconfig}.new ${localconfig}
+
+CPU=`make CPU`; export CPU
+make Makefile XCONFIGDIR=${X11BASE}/lib/X11/config
+make Makefiles
+make depend
+

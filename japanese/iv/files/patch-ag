@@ -1,0 +1,13 @@
+*** src/lib/IV-X11/kinput.c.orig	Wed Jan 17 10:36:10 1996
+--- src/lib/IV-X11/kinput.c	Wed Jan 17 18:50:42 1996
+***************
+*** 29,34 ****
+--- 29,36 ----
+  
+  #include <stdio.h>
+  
++ #include <InterViews/display.h>
++ 
+  #include <IV-X11/Xlib.h>
+  #include <IV-X11/xdisplay.h>
+  

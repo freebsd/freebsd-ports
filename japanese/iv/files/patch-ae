@@ -1,0 +1,16 @@
+*** src/lib/IV/Imakefile.orig	Tue Jan 16 19:11:42 1996
+--- src/lib/IV/Imakefile	Wed Jan 17 10:09:20 1996
+***************
+*** 18,28 ****
+      $(DISPATCH)/iohandler.$(CCSUFFIX)
+  #endif
+  
+- #ifdef SharedCCFlags
+- #undef SharedCCFlags
+- #define SharedCCFlags -PIC
+- #endif
+- 
+  INTERVIEWS = $(SRC)/../InterViews
+  IV_2_6	   = $(SRC)/../IV-2_6
+  IV_X11	   = $(SRC)/../IV-X11
+--- 18,23 ----
