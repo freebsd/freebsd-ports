@@ -11,7 +11,7 @@ CATEGORIES=	net kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	lioux@uol.com.br
+MAINTAINER=	lioux@linf.unb.br
 
 LIB_DEPENDS=	icq.1:${PORTSDIR}/net/icqlib \
 		kdecore.3:${PORTSDIR}/x11/kdelibs11
