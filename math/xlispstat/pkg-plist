@@ -1,41 +1,42 @@
 bin/xlispstat
-lib/xlispstat/Autoload/_autoidx.lsp
-lib/xlispstat/Autoload/bayes.fsl
-lib/xlispstat/Autoload/glim.fsl
-lib/xlispstat/Autoload/maximize.fsl
-lib/xlispstat/Autoload/nonlin.fsl
-lib/xlispstat/Autoload/oneway.fsl
-lib/xlispstat/Autoload/stepper.fsl
-lib/xlispstat/Data/absorbtion.lsp
-lib/xlispstat/Data/aircraft.lsp
-lib/xlispstat/Data/book.lsp
-lib/xlispstat/Data/car-prices.lsp
-lib/xlispstat/Data/diabetes.lsp
-lib/xlispstat/Data/heating.lsp
-lib/xlispstat/Data/iris.lsp
-lib/xlispstat/Data/leukemia.lsp
-lib/xlispstat/Data/metabolism.lsp
-lib/xlispstat/Data/oxygen.lsp
-lib/xlispstat/Data/puromycin.lsp
-lib/xlispstat/Data/randu.lsp
-lib/xlispstat/Data/stackloss.lsp
-lib/xlispstat/Data/tutorial.lsp
-lib/xlispstat/Examples/abrasiondemo.lsp
-lib/xlispstat/Examples/addbox.lsp
-lib/xlispstat/Examples/addhandrotate.lsp
-lib/xlispstat/Examples/bcdemo.lsp
-lib/xlispstat/Examples/dataprotos.lsp
-lib/xlispstat/Examples/fstat.lsp
-lib/xlispstat/Examples/inspect.lsp
-lib/xlispstat/Examples/plotcontrols.lsp
-lib/xlispstat/Examples/regdemo.lsp
-lib/xlispstat/Examples/rotatedemo.lsp
-lib/xlispstat/Examples/tour.lsp
-lib/xlispstat/Examples/tourdemo.lsp
-lib/xlispstat/xlisp
-lib/xlispstat/xlisp.hlp
-lib/xlispstat/xlisp.wks
-@dirrm lib/xlispstat/Autoload
-@dirrm lib/xlispstat/Data
-@dirrm lib/xlispstat/Examples
-@dirrm lib/xlispstat
+libexec/xlispstat/xlisp
+libexec/xlispstat/xlisp.wks
+share/xlispstat/Autoload/_autoidx.lsp
+share/xlispstat/Autoload/bayes.fsl
+share/xlispstat/Autoload/glim.fsl
+share/xlispstat/Autoload/maximize.fsl
+share/xlispstat/Autoload/nonlin.fsl
+share/xlispstat/Autoload/oneway.fsl
+share/xlispstat/Autoload/stepper.fsl
+share/xlispstat/Data/absorbtion.lsp
+share/xlispstat/Data/aircraft.lsp
+share/xlispstat/Data/book.lsp
+share/xlispstat/Data/car-prices.lsp
+share/xlispstat/Data/diabetes.lsp
+share/xlispstat/Data/heating.lsp
+share/xlispstat/Data/iris.lsp
+share/xlispstat/Data/leukemia.lsp
+share/xlispstat/Data/metabolism.lsp
+share/xlispstat/Data/oxygen.lsp
+share/xlispstat/Data/puromycin.lsp
+share/xlispstat/Data/randu.lsp
+share/xlispstat/Data/stackloss.lsp
+share/xlispstat/Data/tutorial.lsp
+share/xlispstat/Examples/abrasiondemo.lsp
+share/xlispstat/Examples/addbox.lsp
+share/xlispstat/Examples/addhandrotate.lsp
+share/xlispstat/Examples/bcdemo.lsp
+share/xlispstat/Examples/dataprotos.lsp
+share/xlispstat/Examples/fstat.lsp
+share/xlispstat/Examples/inspect.lsp
+share/xlispstat/Examples/plotcontrols.lsp
+share/xlispstat/Examples/regdemo.lsp
+share/xlispstat/Examples/rotatedemo.lsp
+share/xlispstat/Examples/tour.lsp
+share/xlispstat/Examples/tourdemo.lsp
+share/xlispstat/xlisp.hlp
+@dirrm share/xlispstat/Examples
+@dirrm share/xlispstat/Data
+@dirrm share/xlispstat/Autoload
+@dirrm share/xlispstat
+@dirrm libexec/xlispstat

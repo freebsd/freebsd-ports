@@ -1,0 +1,75 @@
+--- Makefile.in.orig	Wed Feb  2 08:22:53 2000
++++ Makefile.in	Wed May  3 09:00:00 2000
+@@ -6,7 +6,8 @@
+ ##############################################################################
+ ##############################################################################
+ #
+-# XLSLIB -- directory for xlisp executable, startup, example, and help files
++# XLSLIB -- directory for xlisp example and help files
++# XLSLIBEXEC -- directory for xlisp executable and startup
+ # BINDIR -- directory for xlispstat shell script
+ #
+ # For the remaining parameters, if your machine has a subdirectory in the 
+@@ -34,7 +35,8 @@
+ prefix = @prefix@
+ exec_prefix = @exec_prefix@
+ 
+-XLSLIB=${prefix}/lib/xlispstat
++XLSLIB=${prefix}/share/xlispstat
++XLSLIBEXEC=${prefix}/libexec/xlispstat
+ BINDIR=${exec_prefix}/bin
+ 
+ GRAPHSYS = @GRAPHSYS@
+@@ -67,11 +69,11 @@
+ .lsp.fsl:
+ 	echo "(compile-file \"$<\") (exit)" | ./xlisp
+ 
+-CFLAGS = -D${GRAPHSYS} ${UCFLAGS} ${X11INCDIR_FLAG}
++CFLAGS = -D${GRAPHSYS} ${UCFLAGS} ${X11INCDIR_FLAG} -Dunix
+ 
+ LIBS = ${EXTRALIBS} -lm
+ 
+-LDFLAGS = ${ULDFLAGS}
++LDFLAGS+= ${ULDFLAGS}
+ 
+ OSOBJS = xsdynload.o xssystem.o unixprim.o
+ 
+@@ -118,7 +120,7 @@
+ 	compiler/assemble.fsl compiler/cmpfront.fsl
+ 
+ xlispstat: setup.shell xlisp.wks
+-	./setup.shell xlispstat ${XLSLIB}
++	./setup.shell xlispstat ${XLSLIB} ${XLSLIBEXEC}
+ 	chmod a+x xlispstat
+ 
+ xlisp.wks: xlisp ${CMPFSLFILES} ${FSLFILES} ${AUTOFSLFILES}
+@@ -141,20 +143,21 @@
+ install: installexecs installlsp
+ 
+ installexecs: xlispstat xlisp installdirs
+-	-cp xlispstat ${BINDIR}/xlispstat
+-	-cp xlisp ${XLSLIB}
++	${BSD_INSTALL_SCRIPT} xlispstat ${BINDIR}/xlispstat
++	${BSD_INSTALL_PROGRAM} xlisp ${XLSLIBEXEC}
+ 
+ installlsp: xlisp.wks xlisp.hlp ${AUTOFSLFILES} ${CMPFSLFILES} installdirs
+-	-cp xlisp.wks ${XLSLIB}
+-	-cp xlisp.hlp ${XLSLIB}
+-	-cp Autoload/_autoidx.lsp Autoload/*.fsl ${XLSLIB}/Autoload
+-	-cp Data/*.lsp ${XLSLIB}/Data
+-	-cp Examples/*.lsp ${XLSLIB}/Examples
+-#	-cp ${CMPFSLFILES} ${XLSLIB}/compiler
++	${BSD_INSTALL_SCRIPT} xlisp.wks ${XLSLIBEXEC}
++	${BSD_INSTALL_DATA} xlisp.hlp ${XLSLIB}
++	${BSD_INSTALL_DATA} Autoload/_autoidx.lsp Autoload/*.fsl ${XLSLIB}/Autoload
++	${BSD_INSTALL_DATA} Data/*.lsp ${XLSLIB}/Data
++	${BSD_INSTALL_DATA} Examples/*.lsp ${XLSLIB}/Examples
++#	${BSD_INSTALL_DATA} ${CMPFSLFILES} ${XLSLIB}/compiler
+ 
+ installdirs:
+ 	-mkdir -p ${BINDIR}
+ 	-mkdir -p ${XLSLIB}
++	-mkdir -p ${XLSLIBEXEC}
+ 	-mkdir ${XLSLIB}/Data
+ 	-mkdir ${XLSLIB}/Examples
+ 	-mkdir ${XLSLIB}/Autoload

@@ -6,19 +6,19 @@
 #
 
 PORTNAME=	xlispstat
-PORTVERSION=	3.52.9
+PORTVERSION=	3.52.18
 CATEGORIES=	math lang
 MASTER_SITES=	ftp://ftp.stat.umn.edu/pub/xlispstat/current/   \
 		http://lib.stat.cmu.edu/xlispstat/Src/current/  \
 		ftp://ftp.stat.unipg.it/pub/stat/xlispstat/current/     \
 		ftp://srsuna.shlrc.mq.edu.au/pub/xlispstat/current/     \
 		ftp://statlab.uni-heidelberg.de/pub/mirrors/umn/xlispstat/current/
-DISTNAME=	xlispstat-3-52-9
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/./-/g}
 
 MAINTAINER=	ports@FreeBSD.org
 
 USE_XLIB=	yes
-HAS_CONFIGURE=	yes
-ALL_TARGET=
+GNU_CONFIGURE=	yes
+ALL_TARGET=	${PORTNAME}
 
 .include <bsd.port.mk>

@@ -1,0 +1,17 @@
+--- setup.shell.orig	Wed Sep  7 23:34:36 1994
++++ setup.shell	Wed May  3 09:00:00 2000
+@@ -2,11 +2,12 @@
+ cat > $1 <<+++
+ #!/bin/sh
+ XLISPLIB=$2 export XLISPLIB
++XLSLIBEXEC=$3 export XLSLIBEXEC
+ if test -f xlisp.wks; then WKS="xlisp.wks";
+-else WKS="\${XLISPLIB}/xlisp.wks";
++else WKS="\${XLSLIBEXEC}/xlisp.wks";
+ fi
+ if test -f xlisp; then XLISP=xlisp;
+-else XLISP="\${XLISPLIB}/xlisp"
++else XLISP="\${XLSLIBEXEC}/xlisp"
+ fi
+ exec \${XLISP} -w\${WKS} \$*
+ +++

@@ -1,20 +1,7 @@
-This is XLISP-STAT 3.44 Release 3 for generic bsd systems (with simple
-tektronix graphics from the gnuplot system), or X11.
-
 XLISP-STAT is a statistical environment based on a dialect of the Lisp
 language called XLISP.  To facilitate statistical computations, standard Lisp
 functions for addition, logarithms, etc., have been modified to operate on
 lists and arrays of numbers, and a number of basic statistical functions have
 been added.
 
-Updates to this system will be posted periodically in the anonymous
-ftp directory of umnstat.stat.umn.edu (128.101.51.1).
-
-A tutorial introduction to the system is available. It is written
-primarily for the Macintosh version, but the differences to the UNIX
-version are minor; see below. The tutorial is available as a set of
-LaTeX files in xlispstat.doc.tar.Z at the ftp address above.
-
-For further information contact
-
-                luke@umnstat.stat.umn.edu
+WWW: http://www.stat.umn.edu/~luke/xls/xlsinfo/xlsinfo.html
