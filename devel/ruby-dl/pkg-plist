@@ -6,6 +6,5 @@ bin/h2rb
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/dl
 %%PORTDOCS%%%%RUBY_DOCDIR%%/dl/Changes
 %%PORTDOCS%%%%RUBY_DOCDIR%%/dl/README
-%%PORTDOCS%%%%RUBY_DOCDIR%%/dl/ja/README.ja
-%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/dl/ja
+%%PORTDOCS%%%%RUBY_DOCDIR%%/dl/README.html
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/dl
