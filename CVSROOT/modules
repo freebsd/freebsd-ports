@@ -4987,6 +4987,7 @@ manued.el	ports/textproc/manued.el
 mapagi		ports/print/mapagi
 mapedit		ports/www/mapedit
 maplay		ports/audio/maplay
+mapserver	ports/graphics/mapserver
 maradns		ports/dns/maradns
 marathon-evil	ports/games/marathon-evil
 marbles		ports/games/marbles
