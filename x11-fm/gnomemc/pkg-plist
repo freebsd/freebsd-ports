@@ -37,8 +37,8 @@ share/gnome/mc/mc.ext
 share/gnome/mc/mc.hint
 share/gnome/mc/mc.hint.es
 share/gnome/mc/mc.lib
-share/gnome/mc/mc.sh
 share/gnome/mc/mc.menu
+share/gnome/mc/mc.sh
 share/gnome/mc/syntax/ada95.syntax
 share/gnome/mc/syntax/c.syntax
 share/gnome/mc/syntax/changelog.syntax
@@ -154,7 +154,7 @@ share/locale/ru/LC_MESSAGES/mc.mo
 share/locale/sv/LC_MESSAGES/mc.mo
 share/locale/wa/LC_MESSAGES/mc.mo
 share/locale/zh_TW.Big5/LC_MESSAGES/mc.mo
-@dirrm share/gnome/pixmaps/mc
-@dirrm share/gnome/mc/syntax
-@dirrm share/gnome/mc/extfs
 @dirrm share/gnome/mc/desktop-scripts
+@dirrm share/gnome/mc/extfs
+@dirrm share/gnome/mc/syntax
+@dirrm share/gnome/pixmaps/mc
