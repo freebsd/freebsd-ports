@@ -19,7 +19,7 @@ lib/X11/xcin25/doc/Usage
 lib/X11/xcin25/doc/UserGuide
 lib/X11/xcin25/doc/internal/IMdkit
 lib/X11/xcin25/doc/internal/gen_inp
-lib/X11/xcin25/doc/internal/gui_request
+lib/X11/xcin25/doc/internal/greq_menusel
 lib/X11/xcin25/doc/internal/module
 lib/X11/xcin25/doc/internal/structer
 lib/X11/xcin25/doc/modules/bimsphone

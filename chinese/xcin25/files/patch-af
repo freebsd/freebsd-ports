@@ -1,0 +1,367 @@
+--- src/include/gui.h.orig	Wed Feb 23 09:47:57 2000
++++ src/include/gui.h	Thu Feb 24 01:55:36 2000
+@@ -30,6 +30,7 @@
+  */
+ #define WIN_CHANGE_IM_CONTENT   0x0001
+ #define WIN_CHANGE_IM           0x00ff
++#define WIN_CHANGE_FOCUS	0x0100
+ 
+ /*
+  *  Window Identifier.
+--- src/include/xcin_core.h.orig	Wed Feb 23 09:47:57 2000
++++ src/include/xcin_core.h	Thu Feb 24 01:55:36 2000
+@@ -88,7 +88,7 @@
+ 
+     /* XIM &amp; Input Method configuration. */
+     XIMS ims;
+-    IC *ic;
++    IC *ic, *icp;
+     xmode_t xcin_mode;
+     inp_state_t default_im;
+     inp_state_t default_im_sinmd;
+--- src/gui.c.orig	Wed Feb 23 09:47:57 2000
++++ src/gui.c	Thu Feb 24 01:55:36 2000
+@@ -191,31 +191,19 @@
+ 	return;
+ 
+     if (state) {
+-	if (! win-&gt;winmap) {
++	if (win-&gt;winmap == (ubyte_t)0) {
+ 	    XMapWindow(gui-&gt;display, win-&gt;window);
+ 	    win-&gt;winmap = (byte_t)1;
+ 	}
+     }
+     else {
+-	if (win-&gt;winmap) {
++	if (win-&gt;winmap == (ubyte_t)1) {
+ 	    XUnmapWindow(gui-&gt;display, win-&gt;window);
+ 	    win-&gt;winmap = (byte_t)0;
+ 	}
+     }
+ }
+ 
+-void 
+-gui_greq_winmap_change(gui_t *gui, greq_win_t *greqw, int state)
+-{
+-    winlist_t *w;
+-    int i;
+-
+-    for (i=0; i&lt;greqw-&gt;n_greq; i++) {
+-	w = (winlist_t *)(greqw-&gt;win[i]);
+-	gui_winmap_change(gui, w, state);
+-    }
+-}
+-
+ void
+ gui_greq_win_destroy(greq_win_t *greqw)
+ {
+@@ -229,22 +217,6 @@
+ }
+ 
+ void
+-gui_overspot_winmap_change(gui_t *gui, int imid, int state)
+-{
+-    winlist_t *w = xccore-&gt;win;
+-
+-    while (w) {
+-	if (w-&gt;imid == imid &amp;&amp; w-&gt;wid == WID_OVERSPOT) {
+-	    gui_winmap_change(gui, w, state);
+-	    if (state == 1)
+-		XRaiseWindow(gui-&gt;display, w-&gt;window);
+-	    break;
+-	}
+-	w = w-&gt;next;
+-    }
+-}
+-
+-void
+ gui_overspot_destroy(int imid)
+ {
+     winlist_t *w = xccore-&gt;win;
+@@ -351,6 +323,20 @@
+     return win;
+ }
+ 
++static void 
++gui_greq_windraw(gui_t *gui, greq_win_t *greqw, int state)
++{
++    winlist_t *w;
++    int i;
++
++    for (i=0; i&lt;greqw-&gt;n_greq; i++) {
++	w = (winlist_t *)(greqw-&gt;win[i]);
++	gui_winmap_change(gui, w, state);
++	if (state)
++	    w-&gt;win_draw_func(&amp;(xccore-&gt;gui), w);
++    }
++}
++
+ static void
+ update_gui_request(void)
+ {
+@@ -360,6 +346,13 @@
+     greq_win_t gw_handling;
+     int i, j;
+ 
++    if ((xccore-&gt;gui.winchange &amp; WIN_CHANGE_FOCUS) &amp;&amp; xccore-&gt;icp) {
++	greq_win_t *greqw = &amp;(xccore-&gt;icp-&gt;imc-&gt;gwin);
++	for (i=0; i&lt;greqw-&gt;n_greq; i++) {
++	    win = (winlist_t *)(greqw-&gt;win[i]);
++	    gui_winmap_change(&amp;(xccore-&gt;gui), win, 0);
++	}
++    }
+     if (! greqd &amp;&amp; imc-&gt;gwin.n_greq == 0)
+ 	return;
+     
+@@ -384,14 +377,11 @@
+ 	    gw_handling.win[gw_handling.n_greq] = imc-&gt;gwin.win[i];
+ 	    (gw_handling.n_greq) ++;
+ 
+-	    if ((win = search_winlist(xccore-&gt;win, WID_GUIREQ, 
+-				imc-&gt;id, greqd-&gt;reqid)))
+-		win-&gt;win_draw_func(&amp;(xccore-&gt;gui), win);
+-	    else {
+-		if ((win=gui_request_init(imc, greqd))) {
+-		    xccore-&gt;win_end-&gt;next = win;
+-		    xccore-&gt;win_end = win;
+-		}
++	    if (! search_winlist(xccore-&gt;win, 
++			WID_GUIREQ, imc-&gt;id, greqd-&gt;reqid) &amp;&amp;
++		(win=gui_request_init(imc, greqd))) {
++		xccore-&gt;win_end-&gt;next = win;
++		xccore-&gt;win_end = win;
+ 	    }
+ 	}
+ 	greqd = greqd-&gt;next;
+@@ -407,15 +397,13 @@
+     }
+     memcpy(&amp;(imc-&gt;gwin), &amp;(gw_handling), sizeof(greq_win_t));
+ 
+-    if ((xccore-&gt;xcin_mode &amp; XCIN_SINGLE_IMC)) {
++//    if ((xccore-&gt;xcin_mode &amp; XCIN_SINGLE_IMC)) {
+ 	if (! xccore-&gt;ic || !(xccore-&gt;ic-&gt;imc-&gt;inp_state &amp; IM_CINPUT) ||
+-			    !(xccore-&gt;ic-&gt;imc-&gt;inp_state &amp; IM_XIMFOCUS)) {
+-	    gui_greq_winmap_change(&amp;(xccore-&gt;gui), &amp;(imc-&gt;gwin), 0);
+-	    return;
+-	}
++			    !(xccore-&gt;ic-&gt;imc-&gt;inp_state &amp; IM_XIMFOCUS))
++	    gui_greq_windraw(&amp;(xccore-&gt;gui), &amp;(imc-&gt;gwin), 0);
+ 	else
+-	    gui_greq_winmap_change(&amp;(xccore-&gt;gui), &amp;(imc-&gt;gwin), 1);
+-    }
++	    gui_greq_windraw(&amp;(xccore-&gt;gui), &amp;(imc-&gt;gwin), 1);
++//    }
+ }
+ 
+ /*--------------------------------------------------------------------------*/
+@@ -425,16 +413,17 @@
+ update_gui_overspot(void)
+ {
+     winlist_t *win;
+-    IC *ic = xccore-&gt;ic;
++    IC *ic = xccore-&gt;ic, *icp = xccore-&gt;icp;
+ 
+-    if (ic-&gt;imc-&gt;pre_attr == NULL)
+-	ic-&gt;imc-&gt;pre_attr = &amp;(ic-&gt;pre_attr);
+-    if (ic-&gt;imc-&gt;sts_attr == NULL)
+-	ic-&gt;imc-&gt;sts_attr = &amp;(ic-&gt;sts_attr);
++    if ((xccore-&gt;gui.winchange &amp; WIN_CHANGE_FOCUS) &amp;&amp; icp &amp;&amp;
++	(win = search_winlist(xccore-&gt;win, WID_OVERSPOT, icp-&gt;imc-&gt;id, 0)))
++	gui_winmap_change(&amp;(xccore-&gt;gui), win, 0);
+ 
+     if ((win = search_winlist(xccore-&gt;win, WID_OVERSPOT, ic-&gt;imc-&gt;id, 0)))
+ 	win-&gt;win_draw_func(&amp;(xccore-&gt;gui), win);
+     else {
++	ic-&gt;imc-&gt;pre_attr = &amp;(ic-&gt;pre_attr);
++	ic-&gt;imc-&gt;sts_attr = &amp;(ic-&gt;sts_attr);
+ 	win = gui_overspot_init(&amp;(xccore-&gt;gui), xccore-&gt;main_win, ic-&gt;imc);
+ 	xccore-&gt;win_end-&gt;next = win;
+ 	xccore-&gt;win_end = win;
+--- src/gui_menusel.c.orig	Wed Feb 23 09:47:57 2000
++++ src/gui_menusel.c	Thu Feb 24 01:55:36 2000
+@@ -246,18 +246,21 @@
+     XSetWMProtocols(gui-&gt;display, win-&gt;window, &amp;(gui-&gt;wm_del_win), 1);
+ 
+ /*  Setup GC  */
+-    msw.gc = XCreateGC(gui-&gt;display, win-&gt;window, 0, NULL);
+-    XSetForeground(gui-&gt;display, msw.gc, gui-&gt;fg_color);
+-    XSetBackground(gui-&gt;display, msw.gc, gui-&gt;bg_color);
+-
+-    msw.gcm = XCreateGC(gui-&gt;display, win-&gt;window, 0, NULL);
+-    XSetForeground(gui-&gt;display, msw.gcm, gui-&gt;fg_color);
+-    XSetBackground(gui-&gt;display, msw.gcm, gui-&gt;mbg_color);
+-
+-    msw.gcline = XCreateGC(gui-&gt;display, win-&gt;window, 0, NULL);
+-    XSetForeground(gui-&gt;display, msw.gcline, gui-&gt;grid_color);
+-    XSetBackground(gui-&gt;display, msw.gcline, gui-&gt;bg_color);
+-
++    if (msw.gc == (GC)0) {
++	msw.gc = XCreateGC(gui-&gt;display, win-&gt;window, 0, NULL);
++	XSetForeground(gui-&gt;display, msw.gc, gui-&gt;fg_color);
++	XSetBackground(gui-&gt;display, msw.gc, gui-&gt;bg_color);
++    }
++    if (msw.gcm == (GC)0) {
++	msw.gcm = XCreateGC(gui-&gt;display, win-&gt;window, 0, NULL);
++	XSetForeground(gui-&gt;display, msw.gcm, gui-&gt;fg_color);
++	XSetBackground(gui-&gt;display, msw.gcm, gui-&gt;mbg_color);
++    }
++    if (msw.gcline == (GC)0) {
++	msw.gcline = XCreateGC(gui-&gt;display, win-&gt;window, 0, NULL);
++	XSetForeground(gui-&gt;display, msw.gcline, gui-&gt;grid_color);
++	XSetBackground(gui-&gt;display, msw.gcline, gui-&gt;bg_color);
++    }
+     gui_winmap_change(gui, win, 1);
+     gui_menusel_draw(gui, win);
+     return win;
+--- src/gui_overspot.c.orig	Wed Feb 23 09:47:57 2000
++++ src/gui_overspot.c	Thu Feb 24 01:55:36 2000
+@@ -175,8 +175,7 @@
+     if ((imc-&gt;inp_state &amp; IM_XIMFOCUS) &amp;&amp; (imc-&gt;inp_state &amp; IM_CINPUT) &amp;&amp; 
+ 	(imc-&gt;inpinfo.n_mcch &gt; 0 || 
+ 	 (imc-&gt;inpinfo.s_keystroke &amp;&amp; imc-&gt;inpinfo.s_keystroke[0].wch))) {
+-	if (! win-&gt;winmap)
+-	    XRaiseWindow(gui-&gt;display, win-&gt;window);
++	XRaiseWindow(gui-&gt;display, win-&gt;window);
+ 	overspot_win_location(gui, win, imc);
+ 	gui_winmap_change(gui, win, 1);
+ 	overspot_win_draw(gui, win, imc);
+@@ -225,18 +224,21 @@
+     XSelectInput(gui-&gt;display, win-&gt;window, (ExposureMask|StructureNotifyMask));
+ 
+ /*  Setup GC  */
+-    osw.gc = XCreateGC(gui-&gt;display, win-&gt;window, 0, NULL);
+-    XSetForeground(gui-&gt;display, osw.gc, gui-&gt;fg_color);
+-    XSetBackground(gui-&gt;display, osw.gc, gui-&gt;bg_color);
+-
+-    osw.gcs = XCreateGC(gui-&gt;display, win-&gt;window, 0, NULL);
+-    XSetForeground(gui-&gt;display, osw.gcs, gui-&gt;fg_color);
+-    XSetBackground(gui-&gt;display, osw.gcs, gui-&gt;mbg_color);
+-
+-    osw.gcm = XCreateGC(gui-&gt;display, win-&gt;window, 0, NULL);
+-    XSetForeground(gui-&gt;display, osw.gcm, gui-&gt;mfg_color);
+-    XSetBackground(gui-&gt;display, osw.gcm, gui-&gt;mbg_color);
+-
++    if (osw.gc == (GC)0) {
++	osw.gc = XCreateGC(gui-&gt;display, win-&gt;window, 0, NULL);
++	XSetForeground(gui-&gt;display, osw.gc, gui-&gt;fg_color);
++	XSetBackground(gui-&gt;display, osw.gc, gui-&gt;bg_color);
++    }
++    if (osw.gcs == (GC)0) {
++	osw.gcs = XCreateGC(gui-&gt;display, win-&gt;window, 0, NULL);
++	XSetForeground(gui-&gt;display, osw.gcs, gui-&gt;fg_color);
++	XSetBackground(gui-&gt;display, osw.gcs, gui-&gt;mbg_color);
++    }
++    if (osw.gcm == (GC)0) {
++	osw.gcm = XCreateGC(gui-&gt;display, win-&gt;window, 0, NULL);
++	XSetForeground(gui-&gt;display, osw.gcm, gui-&gt;mfg_color);
++	XSetBackground(gui-&gt;display, osw.gcm, gui-&gt;mbg_color);
++    }
+     gui_overspot_draw(gui, win);
+     return win;
+ }
+--- src/xim.c.orig	Wed Feb 23 09:47:57 2000
++++ src/xim.c	Thu Feb 24 01:55:36 2000
+@@ -165,12 +165,11 @@
+ 
+     if (imc-&gt;icid != ic-&gt;id)
+ 	return;
+-    xccore-&gt;ic = ic;
+     if ((imc-&gt;inp_state &amp; IM_CINPUT)) {
+ 	imc-&gt;inp_state |= IM_XIMFOCUS;
+ 	xccore-&gt;gui.winchange |= WIN_CHANGE_IM;
+     }
+-    else if (imc-&gt;inp_state &amp; IM_2BYTES)
++    else if ((imc-&gt;inp_state &amp; IM_2BYTES))
+ 	xccore-&gt;gui.winchange |= WIN_CHANGE_IM;
+ }
+ 
+@@ -460,6 +459,7 @@
+     ic-&gt;imc-&gt;icid = ic-&gt;id;
+     call_switch_in(ic);
+     ic-&gt;ic_state |= IC_FOCUS;
++    xccore-&gt;ic = ic;
+ 
+     if ((ic-&gt;ic_state &amp; IC_NEWIC)) {
+ 	if ((xccore-&gt;xcin_mode &amp; XCIN_RUN_IM_FOCUS) ||
+@@ -484,23 +484,8 @@
+ 	    ic-&gt;imc-&gt;sts_attr = &amp;(ic-&gt;sts_attr);
+ 	}
+     }
+-    else {
+-/*
+- *  For XCIN_SINGLE_IMC off, we should change the GUI-request windows' mapping
+- *  state everytime when changing the IC focus, since the focus status in this
+- *  mode is definite, and each IC is completely independent to the others, so
+- *  we should handle them independently.
+- *
+- *  But for XCIN_SINGLE_IMC mode, the focus state of IMC might be ambiguous,
+- *  as described on the above, so we will change the GUI-request windows'
+- *  mapping state after all the focus status are determined, i.e., in the
+- *  update_gui_request() in gui.c. This way can also improve the graphical
+- *  performance.
+- */
+-	gui_greq_winmap_change(&amp;(xccore-&gt;gui), &amp;(ic-&gt;imc-&gt;gwin), 1);
+-	if (ic-&gt;input_style == XIMSTY_OverSpot)
+-	    gui_overspot_winmap_change(&amp;(xccore-&gt;gui), ic-&gt;imc-&gt;id, 1);
+-    }
++    else
++	xccore-&gt;gui.winchange |= WIN_CHANGE_FOCUS;
+     return True;
+ }
+ 
+@@ -517,12 +502,10 @@
+ 	return False;
+ 
+     call_switch_out(ic);
++    xccore-&gt;icp = ic;
+     ic-&gt;ic_state &amp;= ~(IC_FOCUS);
+-    if (! (xccore-&gt;xcin_mode &amp; XCIN_SINGLE_IMC)) {
+-	gui_greq_winmap_change(&amp;(xccore-&gt;gui), &amp;(ic-&gt;imc-&gt;gwin), 0);
+-	if (ic-&gt;input_style == XIMSTY_OverSpot)
+-	    gui_overspot_winmap_change(&amp;(xccore-&gt;gui), ic-&gt;imc-&gt;id, 0);
+-    }
++    if (! (xccore-&gt;xcin_mode &amp; XCIN_SINGLE_IMC))
++	xccore-&gt;gui.winchange |= WIN_CHANGE_FOCUS;
+     return True;
+ }
+ 
+@@ -962,12 +945,15 @@
+ {
+     IMSyncXlibStruct pass_data;
+ 
+-    xim_disconnect(xccore-&gt;ic);
+     xccore-&gt;xcin_mode |= (XCIN_RUN_EXIT | XCIN_ICCHECK_OFF);
+-
+-    pass_data.major_code = XIM_SYNC;
+-    pass_data.minor_code = 0;
+-    pass_data.connect_id = xccore-&gt;ic-&gt;connect_id;
+-    pass_data.icid = xccore-&gt;ic-&gt;id;
+-    IMSyncXlib(xccore-&gt;ims, (XPointer)&amp;pass_data);
++    if (xccore-&gt;ic) {
++	xim_disconnect(xccore-&gt;ic);
++	pass_data.major_code = XIM_SYNC;
++	pass_data.minor_code = 0;
++	pass_data.connect_id = xccore-&gt;ic-&gt;connect_id;
++	pass_data.icid = xccore-&gt;ic-&gt;id;
++	IMSyncXlib(xccore-&gt;ims, (XPointer)&amp;pass_data);
++    }
++    else
++	exit(0);
+ }
+--- doc/Changes.orig	Wed Feb 23 09:47:57 2000
++++ doc/Changes	Thu Feb 24 01:55:36 2000
+@@ -1,3 +1,14 @@
++xcin-2.5.2-pre3:  2000/03/
++------------------------------
++1. Fix the bug of multiply creating GC in gui_overspot &amp; gui_menusel.
++   Thanks to Peter Hung &lt;peter@phantom.wahoo.com.tw&gt;
++
++2. Fix bugs when xcin is going to exit and xccore-&gt;ic = NULL case;
++
++3. Change the mechanism of IMC windows' map change during IC focus changes.
++   Add a gui-&gt;winchange flag: WIN_CHANGE_FOCUS.
++
++
+ xcin-2.5.2-pre2:  2000/02/23
+ ------------------------------
+ 1. Register a WM protocol into testprog such that it can be terminated by WM.
