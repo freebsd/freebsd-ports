@@ -42,7 +42,7 @@ fi
 if ! grep -q ${USER} /etc/crontab; then
   if ! crontab -l -u ${BINOWN} | grep -q ${USER}; then
       echo "You may also add this crontab entry to /etc/crontab"
-      echo "0 12 * * * ${BINOWN} ${PKG_PREFIX}/drweb/update/update.pl ${PKG_PREFIX}/drweb"
+      echo "0 12 * * * ${BINOWN} ${PKG_PREFIX}/drweb/update/update.pl"
       echo ""
   fi
 fi
