@@ -1,10 +1,22 @@
 bin/imcom
-%%PORTDOCS%%share/doc/imcom/CONTRIBUTORS
-%%PORTDOCS%%share/doc/imcom/LICENSE
-%%PORTDOCS%%share/doc/imcom/README
-%%PORTDOCS%%share/doc/imcom/README.autostatus
-%%PORTDOCS%%share/doc/imcom/TODO
-%%PORTDOCS%%share/doc/imcom/WHATSNEW
+share/imcom/modules/__init__.py
+share/imcom/modules/awaylogmodule.py
+share/imcom/modules/conferencecolorsmodule.py
+share/imcom/modules/examplemodule.py
+share/imcom/modules/testmodule.py
+share/imcom/AccountCreator.py
+share/imcom/AutoStatus.py
+share/imcom/CICommands.py
+share/imcom/CLI.py
+share/imcom/Colors.py
+share/imcom/IHTTPServer.py
+share/imcom/IMCom.py
+share/imcom/JabberHandler.py
+share/imcom/JabberTags.py
+share/imcom/LogHandler.py
+share/imcom/Preferences.py
+share/imcom/SocketWrapper.py
+share/imcom/VCardTags.py
 %%PORTDOCS%%share/doc/imcom/advanced.html
 %%PORTDOCS%%share/doc/imcom/commands.html
 %%PORTDOCS%%share/doc/imcom/download.html
@@ -12,25 +24,12 @@ bin/imcom
 %%PORTDOCS%%share/doc/imcom/news.html
 %%PORTDOCS%%share/doc/imcom/template.html
 %%PORTDOCS%%share/doc/imcom/whatis.html
-share/imcom/AccountCreator.py
-share/imcom/SocketWrapper.py
-share/imcom/Preferences.py
-share/imcom/LogHandler.py
-share/imcom/JabberTags.py
-share/imcom/JabberHandler.py
-share/imcom/IMCom.py
-share/imcom/IHTTPServer.py
-share/imcom/Colors.py
-share/imcom/CLI.py
-share/imcom/CICommands.py
-share/imcom/AutoStatus.py
-share/imcom/VCardTags.py
-share/imcom/DTCPSocketManager.py
-share/imcom/GUI.py
-share/imcom/GUI2.py
-share/imcom/GUIbackend.py
-share/imcom/JIDLink.py
-share/imcom/test.py
-share/imcom/testuni.py
-@dirrm share/doc/imcom
+%%PORTDOCS%%share/doc/imcom/CONTRIBUTORS
+%%PORTDOCS%%share/doc/imcom/LICENSE
+%%PORTDOCS%%share/doc/imcom/README
+%%PORTDOCS%%share/doc/imcom/README.autostatus
+%%PORTDOCS%%share/doc/imcom/TODO
+%%PORTDOCS%%share/doc/imcom/WHATSNEW
+@dirrm share/imcom/modules
 @dirrm share/imcom
+%%PORTDOCS%%@dirrm share/doc/imcom
