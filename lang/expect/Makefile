@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	expect
-PORTVERSION=	5.31
+PORTVERSION=	5.31.5
 CATEGORIES=	lang tcl82 tk82
 MASTER_SITES=	http://expect.nist.gov/
 DISTNAME=	expect
@@ -14,7 +14,7 @@ MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS?=	tk82.1:${PORTSDIR}/x11-toolkits/tk82
 
-WRKSRC=		${WRKDIR}/${PKGNAME}
+WRKSRC=		${WRKDIR}/expect-5.31
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS?= --enable-shared \
 		--with-tclconfig=${PREFIX}/lib/tcl8.2 \
