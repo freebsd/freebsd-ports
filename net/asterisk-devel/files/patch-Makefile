@@ -1,9 +1,25 @@
 
 $FreeBSD$
 
---- Makefile.orig	Tue Sep 28 20:11:30 2004
-+++ Makefile	Thu Oct 14 19:48:30 2004
-@@ -62,10 +62,10 @@
+--- Makefile.orig
++++ Makefile
+@@ -44,6 +44,15 @@
+ PROC=$(shell uname -m)
+ endif
+ 
++ifeq (${OSARCH},FreeBSD)
++ifeq ($(PROC),sparc64)
++PROC=ultrasparc
++OPTIONS+=$(shell if $(CC) -mtune=$(PROC) -S -o /dev/null -xc /dev/null >/dev/null 2>&1; then echo "-mtune=$(PROC)"; fi)
++OPTIONS+=$(shell if $(CC) -mcpu=v9 -S -o /dev/null -xc /dev/null >/dev/null 2>&1; then echo "-mcpu=v9"; fi)
++OPTIONS+=-fomit-frame-pointerendif
++endif
++endif
++
+ # Pentium Pro Optimize
+ #PROC=i686
+ 
+@@ -62,10 +71,10 @@
  #K6OPT  = -DK6OPT
  
  #Tell gcc to optimize the asterisk's code
@@ -16,7 +32,7 @@ $FreeBSD$
  
  # If you are running a radio application, define RADIO_RELAX so that the DTMF
  # will be received more reliably
-@@ -90,7 +90,7 @@
+@@ -90,7 +99,7 @@
  
  # Where to install asterisk after compiling
  # Default -> leave empty
@@ -25,7 +41,7 @@ $FreeBSD$
  
  # Staging directory
  # Files are copied here temporarily during the install process
-@@ -110,23 +110,23 @@
+@@ -110,23 +119,23 @@
  # Don't use together with -DBUSYDETECT_TONEONLY
  BUSYDETECT+= #-DBUSYDETECT_COMPARE_TONE_AND_SILENCE
  
@@ -59,7 +75,7 @@ $FreeBSD$
  CFLAGS+=$(OPTIMIZE)
  
  ifneq ($(PROC),ultrasparc)
-@@ -137,11 +137,8 @@
+@@ -137,11 +146,8 @@
  CFLAGS+=$(shell if [ -f /usr/include/osp/osp.h ]; then echo "-DOSP_SUPPORT -I/usr/include/osp" ; fi)
  
  ifeq (${OSARCH},FreeBSD)
@@ -73,16 +89,19 @@ $FreeBSD$
  endif # FreeBSD
  
  ifeq (${OSARCH},NetBSD)
-@@ -157,7 +154,7 @@
+@@ -157,7 +163,10 @@
  #CFLAGS+=-DOLD_DSP_ROUTINES
  
  CFLAGS+=$(shell if [ -f /usr/include/linux/zaptel.h ]; then echo "-DZAPTEL_OPTIMIZATIONS"; fi)
 -CFLAGS+=$(shell if [ -f /usr/local/include/zaptel.h ]; then echo "-DZAPTEL_OPTIMIZATIONS"; fi)
-+CFLAGS+=-I$(LOCALBASE)/include -DZAPTEL_OPTIMIZATIONS
++CFLAGS+=-I$(LOCALBASE)/include
++ifndef WITHOUT_ZAPTEL
++CFLAGS+=-DZAPTEL_OPTIMIZATIONS
++endif
  
  LIBEDIT=editline/libedit.a
  
-@@ -219,7 +216,7 @@
+@@ -219,7 +228,7 @@
  SOLINK=-shared -Xlinker -x
  endif
  
@@ -91,7 +110,7 @@ $FreeBSD$
  INSTALL=install
  
  _all: all
-@@ -231,7 +228,7 @@
+@@ -231,7 +240,7 @@
  	@echo " +               $(MAKE) install                +"  
  	@echo " +-------------------------------------------+"  
  
@@ -100,7 +119,7 @@ $FreeBSD$
  
  editline/config.h:
  	cd editline && unset CFLAGS LIBS && ./configure ; \
-@@ -240,13 +237,13 @@
+@@ -240,13 +249,13 @@
  	cd editline && unset CFLAGS LIBS && test -f config.h || ./configure
  	$(MAKE) -C editline libedit.a
  
@@ -121,7 +140,7 @@ $FreeBSD$
  
  ifneq ($(wildcard .depend),)
  include .depend
-@@ -268,13 +265,10 @@
+@@ -268,13 +277,10 @@
  
  asterisk.o: asterisk.c build.h
  
@@ -138,7 +157,7 @@ $FreeBSD$
  
  ifneq ($(strip $(ASTERISKVERSION)),)
  build.h: .version
-@@ -292,8 +286,8 @@
+@@ -292,8 +298,8 @@
  		exit 1; \
  	fi
  
@@ -149,7 +168,7 @@ $FreeBSD$
  
  muted: muted.o
  	$(CC) -o muted muted.o
-@@ -312,28 +306,28 @@
+@@ -312,28 +318,28 @@
  	$(MAKE) -C stdtime clean
  
  datafiles: all
@@ -184,7 +203,7 @@ $FreeBSD$
  		else \
  			echo "No description for $$x"; \
  			exit 1; \
-@@ -341,18 +335,18 @@
+@@ -341,18 +347,18 @@
  	done
  	for x in sounds/vm-* sounds/transfer* sounds/pbx-* sounds/ss-* sounds/beep* sounds/dir-* sounds/conf-* sounds/agent-* sounds/invalid* sounds/tt-* sounds/auth-* sounds/privacy-* sounds/queue-*; do \
  		if grep -q "^%`basename $$x`%" sounds.txt; then \
@@ -208,7 +227,7 @@ $FreeBSD$
  
  update: 
  	@if [ -d CVS ]; then \
-@@ -364,111 +358,86 @@
+@@ -364,111 +370,86 @@
  	fi
  
  bininstall: all
@@ -369,7 +388,7 @@ $FreeBSD$
  	:> $(DESTDIR)$(ASTSPOOLDIR)/voicemail/default/1234/unavail.gsm
  	for x in vm-theperson digits/1 digits/2 digits/3 digits/4 vm-isunavail; do \
  		cat $(DESTDIR)$(ASTVARLIBDIR)/sounds/$$x.gsm >> $(DESTDIR)$(ASTSPOOLDIR)/voicemail/default/1234/unavail.gsm ; \
-@@ -483,7 +452,7 @@
+@@ -483,7 +464,7 @@
  	@[ -d $(DESTDIR)$(HTTPDIR)/html ] || ( echo "No http directory" && exit 1 )
  	@[ -d $(DESTDIR)$(HTTPDIR)/cgi-bin ] || ( echo "No cgi-bin directory" && exit 1 )
  	install -m 4755 -o root -g root contrib/scripts/vmail.cgi $(DESTDIR)$(HTTPDIR)/cgi-bin/vmail.cgi
@@ -378,7 +397,7 @@ $FreeBSD$
  	for x in images/*.gif; do \
  		install -m 644 $$x $(DESTDIR)$(HTTPDIR)/html/_asterisk/; \
  	done
-@@ -503,10 +472,10 @@
+@@ -503,10 +484,10 @@
  
  __rpm: _version
  	rm -rf /tmp/asterisk ; \

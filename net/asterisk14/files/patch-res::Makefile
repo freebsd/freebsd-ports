@@ -1,18 +1,21 @@
 
 $FreeBSD$
 
---- res/Makefile.orig	Sat Jul 17 23:58:01 2004
-+++ res/Makefile	Thu Oct 14 19:15:00 2004
-@@ -21,7 +21,7 @@
+--- res/Makefile.orig
++++ res/Makefile
+@@ -21,7 +21,10 @@
  
  CFLAGS+=
  CFLAGS+=$(shell [ -f /usr/include/linux/zaptel.h ] && echo " -DZAPATA_MOH")
 -CFLAGS+=$(shell [ -f /usr/local/include/zaptel.h ] && echo " -DZAPATA_MOH")
-+CFLAGS+=-DZAPATA_MOH -I$(LOCALBASE)/include
++CFLAGS+=-I$(LOCALBASE)/include
++ifndef WITHOUT_ZAPTEL
++CFLAGS+=-DZAPATA_MOH
++endif
  #
  # Work around buggy RedHat 9.0
  #
-@@ -34,7 +34,7 @@
+@@ -34,7 +37,7 @@
  	rm -f $(DESTDIR)$(ASTHEADERDIR)/parking.h
  	rm -f $(DESTDIR)$(MODULES_DIR)/app_agi.so 
  	rm -f $(DESTDIR)$(MODULES_DIR)/res_parking.so
