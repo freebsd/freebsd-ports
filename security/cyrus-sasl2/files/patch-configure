@@ -1,7 +1,16 @@
 Index: configure
 diff -u configure.orig configure
 --- configure.orig	Thu Mar 11 00:56:10 2004
-+++ configure	Thu Mar 25 04:11:41 2004
++++ configure	Fri May 28 18:13:50 2004
+@@ -309,7 +309,7 @@
+ #endif"
+ 
+ ac_subdirs_all="$ac_subdirs_all saslauthd"
+-ac_subst_vars='SHELL PATH_SEPARATOR PACKAGE_NAME PACKAGE_TARNAME PACKAGE_VERSION PACKAGE_STRING PACKAGE_BUGREPORT exec_prefix prefix program_transform_name bindir sbindir libexecdir datadir sysconfdir sharedstatedir localstatedir libdir includedir oldincludedir infodir mandir build_alias host_alias target_alias DEFS ECHO_C ECHO_N ECHO_T LIBS build build_cpu build_vendor build_os host host_cpu host_vendor host_os target target_cpu target_vendor target_os INSTALL_PROGRAM INSTALL_SCRIPT INSTALL_DATA CYGPATH_W PACKAGE VERSION ACLOCAL AUTOCONF AUTOMAKE AUTOHEADER MAKEINFO AMTAR install_sh STRIP ac_ct_STRIP INSTALL_STRIP_PROGRAM AWK SET_MAKE CC CFLAGS LDFLAGS CPPFLAGS ac_ct_CC EXEEXT OBJEXT DEPDIR am__include am__quote AMDEP_TRUE AMDEP_FALSE AMDEPBACKSLASH CCDEPMODE am__fastdepCC_TRUE am__fastdepCC_FALSE CPP LN_S RANLIB ac_ct_RANLIB LIBTOOL PURECOV PURIFY JAVAC JAVAH JAVADOC JAVA_TRUE JAVA_FALSE JAVA_INCLUDES JAVAROOT SAMPLE_TRUE SAMPLE_FALSE LIB_SOCKET EGREP SASL_DB_UTILS SASL_DB_MANS SASL_DB_BACKEND SASL_DB_BACKEND_STATIC SASL_DB_INC SASL_DB_LIB NO_SASL_DB_MANS_TRUE NO_SASL_DB_MANS_FALSE SASL_DL_LIB NM SASLAUTHD_TRUE SASLAUTHD_FALSE PWCHECKMETH PWCHECK_TRUE PWCHECK_FALSE IPCTYPE LIB_DES OTP_LIBS SRP_LIBS SASL_KRB_LIB LIB_CRYPT GSSAPI_LIBS GSSAPIBASE_LIBS PLAIN_LIBS NTLM_LIBS LIB_MYSQL LIB_PGSQL SASL_MECHS SASL_STATIC_OBJS SASL_STATIC_LIBS plugindir MACOSX_TRUE MACOSX_FALSE DMALLOC_LIBS SFIO_INC_FLAGS SFIO_LIB_FLAGS SMTPTEST_PROGRAM SASL_UTIL_LIBS_EXTRA SASL_UTIL_HEADERS_EXTRA LIBOBJS GETSUBOPT SNPRINTFOBJS LTSNPRINTFOBJS GETADDRINFOOBJS LTGETADDRINFOOBJS GETNAMEINFOOBJS LTGETNAMEINFOOBJS LTLIBOBJS DIRS subdirs'
++ac_subst_vars='SHELL PATH_SEPARATOR PACKAGE_NAME PACKAGE_TARNAME PACKAGE_VERSION PACKAGE_STRING PACKAGE_BUGREPORT exec_prefix prefix program_transform_name bindir sbindir libexecdir datadir sysconfdir sharedstatedir localstatedir libdir includedir oldincludedir infodir mandir build_alias host_alias target_alias DEFS ECHO_C ECHO_N ECHO_T LIBS build build_cpu build_vendor build_os host host_cpu host_vendor host_os target target_cpu target_vendor target_os INSTALL_PROGRAM INSTALL_SCRIPT INSTALL_DATA CYGPATH_W PACKAGE VERSION ACLOCAL AUTOCONF AUTOMAKE AUTOHEADER MAKEINFO AMTAR install_sh STRIP ac_ct_STRIP INSTALL_STRIP_PROGRAM AWK SET_MAKE CC CFLAGS LDFLAGS CPPFLAGS ac_ct_CC EXEEXT OBJEXT DEPDIR am__include am__quote AMDEP_TRUE AMDEP_FALSE AMDEPBACKSLASH CCDEPMODE am__fastdepCC_TRUE am__fastdepCC_FALSE CPP LN_S RANLIB ac_ct_RANLIB LIBTOOL PURECOV PURIFY JAVAC JAVAH JAVADOC JAVA_TRUE JAVA_FALSE JAVA_INCLUDES JAVAROOT SAMPLE_TRUE SAMPLE_FALSE LIB_SOCKET EGREP SASL_DB_UTILS SASL_DB_MANS SASL_DB_BACKEND SASL_DB_BACKEND_STATIC SASL_DB_INC SASL_DB_LIB NO_SASL_DB_MANS_TRUE NO_SASL_DB_MANS_FALSE SASL_DL_LIB NM SASLAUTHD_TRUE SASLAUTHD_FALSE PWCHECKMETH PWCHECK_TRUE PWCHECK_FALSE IPCTYPE LIB_DES OTP_LIBS SRP_LIBS SASL_KRB_LIB LIB_CRYPT GSSAPI_LIBS GSSAPIBASE_LIBS PLAIN_LIBS NTLM_LIBS LIB_MYSQL LIB_PGSQL LIB_SQLITE SASL_MECHS SASL_STATIC_OBJS SASL_STATIC_LIBS plugindir MACOSX_TRUE MACOSX_FALSE DMALLOC_LIBS SFIO_INC_FLAGS SFIO_LIB_FLAGS SMTPTEST_PROGRAM SASL_UTIL_LIBS_EXTRA SASL_UTIL_HEADERS_EXTRA LIBOBJS GETSUBOPT SNPRINTFOBJS LTSNPRINTFOBJS GETADDRINFOOBJS LTGETADDRINFOOBJS GETNAMEINFOOBJS LTGETNAMEINFOOBJS LTLIBOBJS DIRS subdirs'
+ ac_subst_files=''
+ 
+ # Initialize some variables set by options.
 @@ -1576,6 +1576,7 @@
  fi
  echo "$as_me:$LINENO: result: yes" >&5
@@ -92,3 +101,35 @@ diff -u configure.orig configure
  cat >conftest.$ac_ext <<_ACEOF
  #line $LINENO "configure"
  /* confdefs.h.  */
+@@ -11288,7 +11291,22 @@
+ esac
+ 
+ 
+-if test "$sql" = yes -a "$with_pgsql" = no -a "$with_mysql" = no; then
++LIB_SQLITE=""
++
++case "$with_sqlite" in
++    no) true;;
++    *)
++     LIB_SQLITE="-L${with_sqlite}/lib -R${with_sqlite}/lib -lsqlite"
++     CPPFLAGS="${CPPFLAGS} -I${with_sqlite}/include"
++
++     cat >>confdefs.h <<\_ACEOF
++#define HAVE_SQLITE
++_ACEOF
++    ;;
++esac
++
++
++if test "$sql" = yes -a "$with_pgsql" = no -a "$with_mysql" = no -a "$with_sqlite" = no; then
+     { { echo "$as_me:$LINENO: error: --enable-sql chosen but neither Postgres nor MySQL found" >&5
+ echo "$as_me: error: --enable-sql chosen but neither Postgres nor MySQL found" >&2;}
+    { (exit 1); exit 1; }; }
+@@ -15021,6 +15039,7 @@
+ s,@NTLM_LIBS@,$NTLM_LIBS,;t t
+ s,@LIB_MYSQL@,$LIB_MYSQL,;t t
+ s,@LIB_PGSQL@,$LIB_PGSQL,;t t
++s,@LIB_SQLITE@,$LIB_SQLITE,;t t
+ s,@SASL_MECHS@,$SASL_MECHS,;t t
+ s,@SASL_STATIC_OBJS@,$SASL_STATIC_OBJS,;t t
+ s,@SASL_STATIC_LIBS@,$SASL_STATIC_LIBS,;t t
