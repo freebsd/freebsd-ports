@@ -7,4 +7,3 @@
 %%PORTDOCS%%share/doc/ja/kochi-ttfonts/gothic/README
 @dirrm share/doc/ja/kochi-ttfonts/gothic
 @dirrm share/doc/ja/kochi-ttfonts
-@unexec rmdir %D/share/doc/ja 2>/dev/null || true
