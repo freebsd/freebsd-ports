@@ -20,6 +20,9 @@ LIB_DEPENDS=	gd.2:${PORTSDIR}/graphics/gd
 MAKEFILE=	makefile
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
+post-patch:
+	${PERL} -i -pe 's/^#ifdef HAVE_JPEG/#ifndef NO_JPEG/' ${WRKSRC}/*.[ch]
+
 do-install:
 	${INSTALL_DATA}	${WRKSRC}/libgdchart.a ${PREFIX}/lib
 	${INSTALL_DATA}	${WRKSRC}/gdchart.h ${PREFIX}/include
