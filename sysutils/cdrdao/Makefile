@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cdrdao
-PORTVERSION=	1.1.4
+PORTVERSION=	1.1.5
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	cdrdao
@@ -42,14 +42,16 @@ pre-fetch:
 	@${ECHO_MSG} "set WITHOUT_SCGLIB=yes."
 	@${ECHO_MSG} "If you want to use pthreads, set WITH_PTHREADS=yes."
 
-.if ${MACHINE_ARCH} == "alpha"
 post-extract:
+.if ${MACHINE_ARCH} == "alpha"
 	@(cd ${WRKSRC}/scsilib/RULES; \
 	  ${LN} -sf i386-freebsd-cc.rul alpha-freebsd-cc.rul)
 .endif
+	@${CP} ${FILESDIR}/getopt.h ${WRKSRC}/utils
 
 post-install:
 	strip ${PREFIX}/bin/cdrdao
+	@${INSTALL_PROGRAM} -s ${WRKSRC}/utils/toc2cue ${PREFIX}/bin
 	@${MKDIR} ${PREFIX}/share/doc/cdrdao
 .for i in COPYING CREDITS INSTALL README README.FreeBSD README.PlexDAE \
 	Release-1.1.0 Release-1.1.2 Release-1.1.3 Release-1.1.4

@@ -1,4 +1,5 @@
 bin/cdrdao
+bin/toc2cue
 share/cdrdao/drivers
 share/doc/cdrdao/COPYING 
 share/doc/cdrdao/CREDITS
