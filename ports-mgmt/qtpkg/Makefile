@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qtpkg
-PORTVERSION= 	1.0
+PORTVERSION=	1.0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://gauss.cord.edu/homepages/twschulz/demo/
 DISTNAME=	qtpkg
