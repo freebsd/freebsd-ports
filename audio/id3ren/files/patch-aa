@@ -1,26 +1,27 @@
---- Makefile.old	Wed Mar 18 04:28:44 1998
-+++ Makefile	Sun Feb 28 16:04:16 1999
-@@ -1,16 +1,17 @@
--CFLAGS = -O2 -s -Wall
-+CFLAGS += -s -Wall
+--- src/Makefile.orig	Fri Jan  7 10:08:02 2005
++++ src/Makefile	Fri Jan  7 10:08:30 2005
+@@ -1,9 +1,10 @@
+ CFLAGSDEBUG = -g -O2 -Wall -DDEBUG
+-CFLAGS = -s -O2 -Wall
 -CC = gcc
- RM = rm -f
+-RM = rm -f
 -INSTALL = install -s -m 755
--INSTALL_DIR = ..
-+INSTALL = install -cs -m 755 -o root -g wheel
+-INSTALL_DIR = /usr/bin
++CFLAGS ?= -O2 -Wall
++STRIP ?= -s
++CC ?= gcc
++RM ?= rm -f
++INSTALL = ${BSD_INSTALL_PROGRAM}
 +INSTALL_DIR = ${PREFIX}/bin
  INSTALL_NAME = id3ren
  
- SOURCES = id3ren.c id3tag.c file.c misc.c
+ SOURCES = id3ren.c id3tag.c id3file.c id3misc.c
+@@ -12,7 +13,7 @@
+ all:	${INSTALL_NAME}
  
--all:
-+all:	${INSTALL_NAME}
-+
-+${INSTALL_NAME}:
- 	${CC} ${CFLAGS} -o ${INSTALL_NAME} ${SOURCES}
+ ${INSTALL_NAME}: ${SOURCES} ${INCLUDES}
+-	${CC} ${CFLAGS} -o ${INSTALL_NAME} ${SOURCES}
++	${CC} ${CFLAGS} ${STRIP} -o ${INSTALL_NAME} ${SOURCES}
  
--install: all
-+install: ${INSTALL_NAME}
- 	${INSTALL} ${INSTALL_NAME} ${INSTALL_DIR}/${INSTALL_NAME}
- 
- clean:
+ debug:
+ 	${CC} ${CFLAGSDEBUG} -o ${INSTALL_NAME} ${SOURCES}

@@ -1,0 +1,18 @@
+--- Makefile.orig	Tue Mar  6 02:59:34 2001
++++ Makefile	Fri Jan  7 09:56:53 2005
+@@ -1,12 +1,12 @@
+ all:
+-	make -C src all
++	cd src && ${MAKE} all
+ 
+ debug:
+ 	make -C src debug
+ 
+ install: 
+-	make -C src install
+-	make -C man install
++	cd src && ${MAKE} install
++	cd man && ${MAKE} install
+ 
+ clean:
+ 	make -C src clean
