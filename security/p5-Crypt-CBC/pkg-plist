@@ -1,2 +1,3 @@
 lib/perl5/site_perl/%%PERL_VER%%/Crypt/CBC.pm
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Crypt
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/CBC.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/CBC
