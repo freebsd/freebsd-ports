@@ -1,6 +1,7 @@
-# $Id: Makefile,v 1.17 1999/01/09 03:19:25 asami Exp $
+# $Id: Makefile,v 1.18 1999/03/29 11:43:15 obrien Exp $
 #
 
+    SUBDIR += bash1
     SUBDIR += bash2
     SUBDIR += es
     SUBDIR += pdksh
