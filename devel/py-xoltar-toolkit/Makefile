@@ -5,31 +5,32 @@
 # $FreeBSD$
 #
 
-PORTNAME=		functional
-PORTVERSION=		0.5
-CATEGORIES=		devel python
-# The functional.py distfile disappeared.
-# I'm storing it on MASTER_SITE_LOCAL until I get around to
-# making a port of the xoltar-toolkit.
-#MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
-#MASTER_SITE_SUBDIR=	xoltar-toolkit
-PKGNAMEPREFIX=		py-
-DISTNAME=		functional.py
-EXTRACT_SUFX=		.gz
+PORTNAME=	xoltar-toolkit
+PORTVERSION=	2001.06.01
+CATEGORIES=	devel python
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	${PORTNAME}-01jun01
 
-MAINTAINER=		nectar@FreeBSD.org
+MAINTAINER=	nectar@FreeBSD.org
 
-EXTRACT_AFTER_ARGS=	> ${DISTNAME}
-USE_PYTHON=		yes
-NO_WRKSUBDIR=		yes
+USE_PYTHON=	yes
+NO_WRKSUBDIR=	yes
+INSTALLDIR=	${PREFIX}/lib/${PYTHON_VERSION}/site-packages
 
 do-build:
-	@cd ${WRKSRC} && ${PYTHON_CMD} -c 'import functional'
-	@cd ${WRKSRC} && ${PYTHON_CMD} -O -c 'import functional'
+	@ ${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
+	@ ${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
 
 do-install:
-.for f in functional.py functional.pyc functional.pyo
-	${INSTALL_DATA} ${WRKSRC}/${f} ${PYTHON_SITELIBDIR}/${f}
-.endfor
+	@ ${MKDIR} ${INSTALLDIR}
+	@ ${INSTALL_DATA} ${WRKSRC}/*.py* ${INSTALLDIR}
+
+post-install:
+.if !defined(NOPORTDOCS)
+	@ ${MKDIR} ${DOCSDIR}
+	@ ${INSTALL_DATA} ${WRKSRC}/*.txt ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>

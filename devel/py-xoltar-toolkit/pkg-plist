@@ -1,3 +1,13 @@
+%%PORTDOCS%%share/doc/xoltar-toolkit/functional_changes.txt
+%%PORTDOCS%%share/doc/xoltar-toolkit/lazy_changes.txt
+%%PORTDOCS%%share/doc/xoltar-toolkit/threadpool_changes.txt
 lib/%%PYTHON_VERSION%%/site-packages/functional.py
 lib/%%PYTHON_VERSION%%/site-packages/functional.pyc
 lib/%%PYTHON_VERSION%%/site-packages/functional.pyo
+lib/%%PYTHON_VERSION%%/site-packages/lazy.py
+lib/%%PYTHON_VERSION%%/site-packages/lazy.pyc
+lib/%%PYTHON_VERSION%%/site-packages/lazy.pyo
+lib/%%PYTHON_VERSION%%/site-packages/threadpool.py
+lib/%%PYTHON_VERSION%%/site-packages/threadpool.pyc
+lib/%%PYTHON_VERSION%%/site-packages/threadpool.pyo
+%%PORTDOCS%%@dirrm share/doc/xoltar-toolkit
