@@ -1,0 +1,6 @@
+An ocaml wrapper for the Expat XML parsing library.
+
+WWW: http://www.xs4all.nl/~mmzeeman/ocaml
+
+- Marwan Burelle
+  <marwan.burelle@lri.fr>
