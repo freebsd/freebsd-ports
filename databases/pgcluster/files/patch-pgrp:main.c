@@ -1,6 +1,6 @@
---- src/pgcluster/pgrp/main.c.orig	Fri Feb 20 11:38:40 2004
-+++ src/pgcluster/pgrp/main.c	Mon Feb 23 12:45:51 2004
-@@ -148,7 +148,7 @@
+--- src/pgcluster/pgrp/main.c	16 Apr 2004 10:17:45 -0000	1.1.1.9
++++ src/pgcluster/pgrp/main.c	16 Apr 2004 10:21:06 -0000	1.6
+@@ -156,7 +156,7 @@
  	char * query;
  
  	/* set function name */
@@ -9,7 +9,7 @@
  
  	if (header == NULL)
  	{
-@@ -171,7 +171,7 @@
+@@ -179,7 +179,7 @@
  		}
  		if (r == 0)
  		{
@@ -18,48 +18,49 @@
  			return NULL;
  		}
  		read_size += r;
-@@ -258,18 +258,18 @@
+@@ -311,18 +311,18 @@
  	/* set function name */
  	set_function("replicate_packet_send");
  
 -	show_debug("cmdSts=%c\n",header->cmdSts);
 -	show_debug("cmdType=%c\n",header->cmdType);
--	show_debug("port=%d\n",header->port);
--	show_debug("pid=%d\n",header->pid);
+-	show_debug("port=%d\n",ntohs(header->port));
+-	show_debug("pid=%d\n",ntohs(header->pid));
 -	show_debug("except_host=%s\n",header->except_host);
 -	show_debug("from_host=%s\n",header->from_host);
 -	show_debug("dbName=%s\n",header->dbName);
 -	show_debug("userName=%s\n",header->userName);
--	show_debug("recieve sec=%u\n",header->tv.tv_sec);
--	show_debug("recieve usec=%u\n",header->tv.tv_usec);
--	show_debug("query_size=%d\n",header->query_size);
+-	show_debug("recieve sec=%u\n",ntohl(header->tv.tv_sec));
+-	show_debug("recieve usec=%u\n",ntohl(header->tv.tv_usec));
+-	show_debug("query_size=%d\n",ntohl(header->query_size));
 -	show_debug("query=%s\n",query);
 +	show_debug("cmdSts=%c",header->cmdSts);
 +	show_debug("cmdType=%c",header->cmdType);
-+	show_debug("port=%d",header->port);
-+	show_debug("pid=%d",header->pid);
++	show_debug("port=%d",ntohs(header->port));
++	show_debug("pid=%d",ntohs(header->pid));
 +	show_debug("except_host=%s",header->except_host);
 +	show_debug("from_host=%s",header->from_host);
 +	show_debug("dbName=%s",header->dbName);
 +	show_debug("userName=%s",header->userName);
-+	show_debug("recieve sec=%u",header->tv.tv_sec);
-+	show_debug("recieve usec=%u",header->tv.tv_usec);
-+	show_debug("query_size=%d",header->query_size);
++	show_debug("recieve sec=%u",ntohl(header->tv.tv_sec));
++	show_debug("recieve usec=%u",ntohl(header->tv.tv_usec));
++	show_debug("query_size=%d",ntohl(header->query_size));
 +	show_debug("query=%s",query);
  
  	/*
  	 * loop while registrated cluster DB exist 
-@@ -277,7 +277,9 @@
- 	ptr = Host_Tbl_Begin;
+@@ -333,8 +333,10 @@
+ 	show_debug("useFlag[%d]",ptr->useFlag);
  	while(ptr->useFlag != DB_TBL_END)
  	{
 +		set_function("replicate_packet_send");
+ 		same_host = false;
  		sem_num = ptr->hostNum;
-+		show_debug("loop: cnt=%d, hostNum=%d, hostName=%s, port=%d, recoveryPort=%d, useFlag=%d", cnt, ptr->hostNum, ptr->hostName, ptr->port, ptr->recoveryPort, ptr->useFlag);
++		show_debug("loop: cnt=%d, hostNum=%d, hostName=%s, port=%d, recoveryPort=%d, useFlag=%d", loop_cnt++, ptr->hostNum, ptr->hostName, ptr->port, ptr->recoveryPort, ptr->useFlag);
  		/*
  		 * check the status of the cluster DB
  		 */
-@@ -291,7 +293,7 @@
+@@ -348,7 +350,7 @@
  		 */
  		if (PGRis_master_in_recovery(ptr->hostName, ptr->port) == true)
  		{
@@ -68,48 +69,47 @@
  			ptr ++;
  			continue;
  		}
-@@ -368,6 +370,8 @@
- 		if (sem_num > 0)
- 			PGRsem_lock(SemID,sem_num);
- 		rtn = replicate_packet_send_each_server( ptr, cnt,header, query, dest);
-+		set_function("replicate_packet_send");
-+		show_debug("replicate_packet_send_each_server returns %d (useFlag=%d", rtn, ptr->useFlag);
- 		show_debug("sem_unlock[%d]",sem_num);
- 		if (sem_num > 0)
- 			PGRsem_unlock(SemID,sem_num);
-@@ -382,7 +386,8 @@
- 			cnt ++;
- 		}
+@@ -371,6 +373,8 @@
+ 			{
+ 				snprintf(PGR_Result,PGR_MESSAGE_BUFSIZE,"%d,%u,%u", PGR_SET_CURRENT_TIME_FUNC_NO,(unsigned int)ntohl(header->tv.tv_sec),(unsigned int)ntohl(header->tv.tv_usec));
+ 			}
++			set_function("replicate_packet_send");
++			show_debug("replicate_packet_send_each_server returns %d (useFlag=%d", rtn, ptr->useFlag);
+ 			show_debug("sem_lock[%d]",sem_num);
+ 			if (sem_num > 0)
+ 				PGRsem_lock(SemID,sem_num);
+@@ -483,7 +487,7 @@
+ 
  		ptr ++;
+ 		PGR_Response_Inf->current_cluster ++;
 -	}	
 +	}
-+	show_debug("replicate_packet_send() end");
- 	return STATUS_OK;
- }
- 
-@@ -412,10 +417,10 @@
+ 	show_debug("replicate_packet_send end");
+ 	if (status == STATUS_ABORTED)
+ 	{
+@@ -525,10 +529,10 @@
  	set_function("replicate_packet_send_each_server");
  
  	host = ptr->hostName;
 -	show_debug("except:%d@%s host:%d@%s\n",
 +	show_debug("except:%d@%s host:%d@%s",
- 		header->port,header->except_host,
+ 		ntohs(header->port),header->except_host,
  		ptr->port,ptr->hostName);
 -	show_debug("send replicate to:%s\n",host);
 +	show_debug("send replicate to:%s",host);
  	/*
  	 * send query to cluster DB
  	 */
-@@ -427,6 +432,8 @@
- 	memset(PGR_Result,0,PGR_MESSAGE_BUFSIZE);
+@@ -539,6 +543,8 @@
+ 	}
  
  	rtn = PGRsend_replicate_packet_to_server( ptr, header,query,PGR_Result);
 +	set_function("replicate_packet_send_each_server");
 +	show_debug("PGRsend_replicate_packet_to_server() returns %d", rtn);
+ 	/*
  	if ((header->cmdSts == CMD_STS_QUERY ) &&
  		((header->cmdType == CMD_TYPE_INSERT) || 
- 		(header->cmdType == CMD_TYPE_UPDATE)))
-@@ -476,7 +483,7 @@
+@@ -597,7 +603,7 @@
  	}
  	send_ptr = PGR_Result;
  	buf_size = PGR_MESSAGE_BUFSIZE;
@@ -118,7 +118,7 @@
  	if (buf_size < 1)
  		buf_size = 1;
  
-@@ -491,7 +498,7 @@
+@@ -612,7 +618,7 @@
  	rtn = select(dest+1, (fd_set *)NULL, &wmask, (fd_set *)NULL, &timeout);
  	if (rtn && FD_ISSET(dest, &wmask))
  	{
@@ -127,25 +127,25 @@
  		for (;;)
  		{
  			s = send(dest,send_ptr + send_size,buf_size - send_size ,0);
-@@ -513,7 +520,7 @@
+@@ -634,7 +640,7 @@
  			send_size += s;
  			if (send_size == buf_size)
  			{
 -				show_debug("%d send",send_size);
-+				show_debug("%d bytes sent", send_size);
++				show_debug("%d bytes sent",send_size);
  				status = STATUS_OK;
  				if (wait == PGR_WAIT_ANSWER)
  				{
-@@ -560,7 +567,7 @@
+@@ -682,7 +688,7 @@
  		rtn = select(dest+1, &rmask, (fd_set *)NULL, (fd_set *)NULL, &timeout);
  		if (rtn && FD_ISSET(dest, &rmask))
  		{
--			show_debug("read_answer selected\n");
+-			show_debug("read_answer selected");
 +			show_debug("read_answer selected (dest=%d)", dest);
  			answer = NULL;
  			answer = read_packet(dest,&header);
- 			show_debug("answer[%s]",answer);
-@@ -630,6 +637,43 @@
+ 			if (answer == NULL)
+@@ -773,6 +779,43 @@
  	return NULL;
  }
  
@@ -189,7 +189,7 @@
  /*--------------------------------------------------------------------
   * SYMBOL
   *    replicate_loop()
-@@ -665,11 +709,11 @@
+@@ -811,11 +854,11 @@
  	}
  	if (pid == 0)
  	{
@@ -206,7 +206,7 @@
  		setpgid(0,pgid);
  
  		/* child loop */
-@@ -687,14 +731,21 @@
+@@ -833,20 +876,27 @@
  			FD_ZERO(&rmask);
  			FD_SET(sock,&rmask);
  			rtn = select(sock+1, &rmask, (fd_set *)NULL, (fd_set *)NULL, &timeout);
@@ -222,25 +222,31 @@
 -				if (query == NULL)
 +				if (query == NULL && errno != 0)
  				{
--					show_error("read_packet failed");
+-					show_error("session closed");
 +					show_error("read_packet failed (errno=%d)", errno);
-+					break;
-+				}
-+				if (header.cmdType == 'o') {
-+					dump_status(sock);
+ 					if (PGR_Cascade == true)
+ 					{
+ 						PGRupper_session_closed();
+ 					}
  					break;
  				}
- 				if (header.cmdSts == 0)
-@@ -708,7 +759,7 @@
- 					}
- 				}
- 				gettimeofday(&(header.tv),NULL);
++				if (header.cmdType == 'o') {
++					dump_status(sock);
++					break;
++				}
+ 				if (header.cmdSys == CMD_SYS_CASCADE )
+ 				{
+ 					PGR_Cascade = true;
+@@ -869,7 +919,7 @@
+ 				gettimeofday(&tv,NULL);
+ 				header.tv.tv_sec = htonl(tv.tv_sec);
+ 				header.tv.tv_usec = htonl(tv.tv_usec);
 -				show_debug("query :: %s\n",query);
 +				show_debug("query :: %s",query);
  
  				RecoveryStatus = PGRget_recovery_status();
  				PGRcheck_recovered_host();
-@@ -781,7 +832,7 @@
+@@ -965,7 +1015,7 @@
  		show_error("fopen failed: (%s)",strerror(errno));
  		return STATUS_ERROR;
  	}
@@ -249,35 +255,25 @@
  
  	/*
  	 * read configuration file
-@@ -915,10 +966,10 @@
- 	/* set load balance table */
- 	for ( i = 0 ; i <= lb_cnt ; i ++)
- 	{
-+		memset((LoadBalanceTbl + i),0,sizeof(RecoveryTbl));
+@@ -1130,7 +1180,7 @@
  		(LoadBalanceTbl + i)->port = -1;
  		(LoadBalanceTbl + i)->sock = -1;
  	}
 -	memset((LoadBalanceTbl + i),0,sizeof(RecoveryTbl));
++	memset((LoadBalanceTbl + i),0,sizeof(RecoveryTbl)); /* kuriyama: needed? */
  	PGR_Free_Conf_Data();
  
  	/* allocate result buffer of query */
-@@ -954,13 +1005,13 @@
- 	/* set function name */
- 	set_function("replicate_main");
- 
--	show_debug("replicate mail %d port bind\n",Port_Number);
-+	show_debug("replicate mail %d port bind",Port_Number);
- 	status = PGR_Create_Socket_Bind(&fd, "", Port_Number);
- 	if (status != STATUS_OK)
+@@ -1219,7 +1269,7 @@
  	{
  		PGRreplicate_exit(0);
  	}
--	show_debug("replicate mail %d port bind OK \n",Port_Number);
-+	show_debug("replicate mail %d port bind OK",Port_Number);
+-	show_debug("replicate main %d port bind OK \n",Port_Number);
++	show_debug("replicate main %d port bind OK",Port_Number);
  	
- 	for (;;)
- 	{
-@@ -976,11 +1027,14 @@
+ 	start_up_replication_server();
+ 
+@@ -1237,11 +1287,14 @@
  		 */
  		FD_ZERO(&rmask);
  		FD_SET(fd,&rmask);
@@ -294,9 +290,9 @@
  			/*
  			 * get recovery status.
  			 */
-@@ -1315,12 +1369,12 @@
+@@ -1597,12 +1650,12 @@
  
- 	if (init_server_tbl(path) != STATUS_OK)
+ 	if (init_server_tbl(PGR_Data_Path) != STATUS_OK)
  	{
 -		show_debug("init_server_tbl error\n");
 +		show_debug("init_server_tbl error");
@@ -309,7 +305,7 @@
  		PGRreplicate_exit(0);
  	}
  	pgid = getpgid(0);
-@@ -1332,10 +1386,10 @@
+@@ -1614,10 +1667,10 @@
  	}
  	if (pid == 0)
  	{
