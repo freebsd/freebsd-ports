@@ -28,11 +28,11 @@ SHLIB_MINOR=	5
 MAKEFILE=	makefile
 TCL_LIB=	libtcl80.so
 
+.include <bsd.port.pre.mk>
+
 .include "${FILESDIR}/manpages"
 
 MANCOMPRESSED=	yes
-
-.include <bsd.port.pre.mk>
 
 .if ${PORTOBJFORMAT} == "elf"
 TCL_LIB_FILE=	${TCL_LIB}.${SHLIB_MAJOR}
