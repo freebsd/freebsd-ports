@@ -1,2 +1,4 @@
-MD5 (postfix/postfix-2.2-20040919.tar.gz) = 4611a1087f346c3d1ddcc0c1ec9466ab
-SIZE (postfix/postfix-2.2-20040919.tar.gz) = 2077140
+MD5 (postfix/postfix-2.2-20041030.tar.gz) = f179f5d50d387d2eb82351bdb03dac9e
+SIZE (postfix/postfix-2.2-20041030.tar.gz) = 2106328
+MD5 (postfix/pfixtls-0.8.19-2.2-20040919-0.9.7d.tar.gz) = 2f5df0781abd0390611158b4a5fb63c4
+SIZE (postfix/pfixtls-0.8.19-2.2-20040919-0.9.7d.tar.gz) = 239159
