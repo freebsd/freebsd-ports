@@ -1,6 +1,15 @@
---- configure.orig	Sat Jul 31 17:06:43 2004
-+++ configure	Wed Aug  4 22:48:38 2004
-@@ -9795,13 +9795,6 @@
+--- configure.orig	Mon Aug 23 03:22:42 2004
++++ configure	Mon Oct 18 14:05:59 2004
+@@ -2902,7 +2902,7 @@
+ fi
+ 
+ 
+-if test "$GXX" = "yes" && expr "$CXXFLAGS" : '.*-O' > /dev/null
++if test "$GXX" = "yes" && expr -- "$CXXFLAGS" : '.*-O' > /dev/null
+ then
+   CXXFLAGS="$CXXFLAGS -fno-exceptions"
+ fi
+@@ -9825,13 +9825,6 @@
  	;;
      esac
  
@@ -14,7 +23,7 @@
      # Update the list of available tags.
      if test -n "$tagname"; then
        echo appending configuration tag \"$tagname\" to $ofile
-@@ -19301,6 +19294,10 @@
+@@ -19379,6 +19372,10 @@
  
  # This can be used to rebuild libtool when needed
  LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
@@ -25,7 +34,7 @@
  
  # Always use our own libtool.
  LIBTOOL='$(SHELL) $(top_builddir)/libtool'
-@@ -21191,16 +21188,16 @@
+@@ -21274,16 +21271,16 @@
  /* end confdefs.h.  */
  #include <libintl.h>
  extern int _nl_msg_cat_cntr;
