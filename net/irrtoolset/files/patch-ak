@@ -1,6 +1,6 @@
---- src/aoe/TclLabel.cc.orig	Sat Nov 27 18:45:09 1999
-+++ src/aoe/TclLabel.cc	Sat Nov 27 18:45:24 1999
-@@ -47,7 +47,7 @@
+--- src/aoe/TclLabel.cc.orig	Thu Apr 23 21:52:07 1998
++++ src/aoe/TclLabel.cc	Mon Nov 29 09:15:11 1999
+@@ -45,7 +45,7 @@
  #include "TclLabel.hh"
  #include "TclApp.hh"
  
