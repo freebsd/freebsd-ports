@@ -1,0 +1,219 @@
+*** Makefile.orig	Mon Aug 12 15:52:16 1996
+--- Makefile	Fri Oct 25 17:50:11 1996
+***************
+*** 11,18 ****
+  #LFLAGS = -laudio -lcurses -lm
+  
+  # SunOS 4.1.x
+! CC = cc -fsingle -DOLDCC
+! LFLAGS = -lcurses -ltermcap -lm
+  
+  # Solaris 2.x courtesy of Hans Werner Strube (strube@physik3.gwdg.de)
+  # (-fsingle is needed for pre-4.0 compilers and is ignored by 4.0 in 
+--- 11,18 ----
+  #LFLAGS = -laudio -lcurses -lm
+  
+  # SunOS 4.1.x
+! #CC = cc -fsingle -DOLDCC
+! #LFLAGS = -lcurses -ltermcap -lm
+  
+  # Solaris 2.x courtesy of Hans Werner Strube (strube@physik3.gwdg.de)
+  # (-fsingle is needed for pre-4.0 compilers and is ignored by 4.0 in 
+***************
+*** 35,42 ****
+  #    Depending on how your driver handles non-blocking I/O,
+  #    you may also have to add -DAUDIO_BLOCKING to the
+  #    CCFLAGS line.
+! #CCFLAGS = -DM_LITTLE_ENDIAN
+! #LFLAGS = -lcurses -ltermcap -lcompat -lm
+  
+  # Linux 1.x, courtesy of KeyJ Phade (phade@powerweb.de)
+  #
+--- 35,42 ----
+  #    Depending on how your driver handles non-blocking I/O,
+  #    you may also have to add -DAUDIO_BLOCKING to the
+  #    CCFLAGS line.
+! CCFLAGS = -DM_LITTLE_ENDIAN
+! LFLAGS = -lcurses -ltermcap -lcompat -lm
+  
+  # Linux 1.x, courtesy of KeyJ Phade (phade@powerweb.de)
+  #
+***************
+*** 62,73 ****
+  #CCFLAGS = -DHEWLETT_PACKARD -DOLDCC
+  #LFLAGS = -lAlib -lcurses -ltermcap -lm
+  
+  # Where Perl is located on your system.  This is used to make
+  # a directly-executable version of sfvod.
+! PERL = /usr/local/bin/perl
+  
+  # If your audio hardware is half duplex, uncomment the next line
+! #DUPLEX = -DHALF_DUPLEX
+  
+  # If your getdomainname() does not return the DNS domainname, define:
+  #DOMAIN=-DMYDOMAIN=\"somedomain.net\"
+--- 62,75 ----
+  #CCFLAGS = -DHEWLETT_PACKARD -DOLDCC
+  #LFLAGS = -lAlib -lcurses -ltermcap -lm
+  
++ PREFIX=/usr/local
++ 
+  # Where Perl is located on your system.  This is used to make
+  # a directly-executable version of sfvod.
+! PERL = /usr/bin/perl
+  
+  # If your audio hardware is half duplex, uncomment the next line
+! DUPLEX = -DHALF_DUPLEX
+  
+  # If your getdomainname() does not return the DNS domainname, define:
+  #DOMAIN=-DMYDOMAIN=\"somedomain.net\"
+***************
+*** 96,106 ****
+  CARGS = -DInternet_Port=$(INTERNET_PORT)
+  
+  #DEBUG = -g -DHEXDUMP
+! DEBUG = -O
+  
+  #   Compiler flags
+  
+! CFLAGS = $(DEBUG) -Iadpcm -Ilpc -Igsm/inc -Imd5 -Iidea -Ilibdes $(CARGS) -DRelno=$(REL) $(DUPLEX) $(CCFLAGS) $(DOMAIN)
+  
+  PROGRAMS = sfspeaker sfmike sflwld sflwl sfecho sfvod
+  
+--- 98,116 ----
+  CARGS = -DInternet_Port=$(INTERNET_PORT)
+  
+  #DEBUG = -g -DHEXDUMP
+! DEBUG =
+! 
+! .if exists(/usr/lib/libdes.a)
+! LDES=-ldes
+! IDES=
+! .else
+! LDES=libdes/libdes.a
+! IDES=-Ilibdes
+! .endif
+  
+  #   Compiler flags
+  
+! CFLAGS += $(DEBUG) -Iadpcm -Ilpc -Iidea $(IDES) -I/usr/include -I${PREFIX}/include $(CARGS) -DRelno=$(REL) $(DUPLEX) $(CCFLAGS) $(DOMAIN)
+  
+  PROGRAMS = sfspeaker sfmike sflwld sflwl sfecho sfvod
+  
+***************
+*** 108,120 ****
+  
+  SPKROBJS = speaker.o codecs.o deskey.o g711.o rate.o rtpacket.o soundbyte.o ulaw.o usleep.o vatpkt.o vox.o hp_audio.o
+  
+! sfspeaker: $(SPKROBJS) adpcmlib.o lpclib.o lpc10lib.o gsmlib.o deslib.o md5lib.o idealib.o libdes.o xdsub.o
+! 	$(CC) $(SPKROBJS) adpcm/adpcm-u.o des/des.o md5/md5.o idea/idea.o lpc10/liblpc10.a gsm/lib/libgsm.a lpc/lpc.o xdsub.o libdes/libdes.a $(LFLAGS) -o sfspeaker
+  
+  MIKEOBJS = mike.o codecs.o deskey.o g711.o rate.o rtpacket.o soundbyte.o ulaw.o usleep.o vatpkt.o xdsub.o hp_audio.o
+  
+! sfmike: $(MIKEOBJS) adpcmlib.o lpclib.o lpc10lib.o gsmlib.o deslib.o md5lib.o idealib.o libdes.o
+! 	$(CC) $(MIKEOBJS) adpcm/adpcm-u.o des/des.o md5/md5.o idea/idea.o -lm lpc10/liblpc10.a gsm/lib/libgsm.a lpc/lpc.o libdes/libdes.a $(LFLAGS) -o sfmike
+  
+  LWLDOBJS = lwld.o xdsub.o
+  
+--- 118,130 ----
+  
+  SPKROBJS = speaker.o codecs.o deskey.o g711.o rate.o rtpacket.o soundbyte.o ulaw.o usleep.o vatpkt.o vox.o hp_audio.o
+  
+! sfspeaker: $(SPKROBJS) adpcmlib.o lpclib.o lpc10lib.o deslib.o idealib.o libdes.o xdsub.o
+! 	$(CC) $(SPKROBJS) adpcm/adpcm-u.o des/des.o idea/idea.o lpc10/liblpc10.a -L${PREFIX}/lib -lgsm lpc/lpc.o xdsub.o -lmd $(LDES) $(LFLAGS) -o sfspeaker
+  
+  MIKEOBJS = mike.o codecs.o deskey.o g711.o rate.o rtpacket.o soundbyte.o ulaw.o usleep.o vatpkt.o xdsub.o hp_audio.o
+  
+! sfmike: $(MIKEOBJS) adpcmlib.o lpclib.o lpc10lib.o deslib.o idealib.o libdes.o
+! 	$(CC) $(MIKEOBJS) adpcm/adpcm-u.o des/des.o idea/idea.o lpc10/liblpc10.a -lm -L${PREFIX}/lib -lgsm lpc/lpc.o -lmd $(LDES) $(LFLAGS) -o sfmike
+  
+  LWLDOBJS = lwld.o xdsub.o
+  
+***************
+*** 128,135 ****
+  
+  ECHOOBJS = echo.o codecs.o g711.o rtpacket.o ulaw.o xdsub.o
+  
+! sfecho: $(ECHOOBJS) md5lib.o
+! 	$(CC) $(ECHOOBJS) md5/md5.o adpcm/adpcm-u.o lpc/lpc.o $(LFLAGS) -o sfecho
+  
+  sfvod:	sfvod.pl
+  	echo \#\! $(PERL) >sfvod
+--- 138,145 ----
+  
+  ECHOOBJS = echo.o codecs.o g711.o rtpacket.o ulaw.o xdsub.o
+  
+! sfecho: $(ECHOOBJS)
+! 	$(CC) $(ECHOOBJS) adpcm/adpcm-u.o lpc/lpc.o -lmd $(LFLAGS) -o sfecho
+  
+  sfvod:	sfvod.pl
+  	echo \#\! $(PERL) >sfvod
+***************
+*** 145,155 ****
+  	chmod 755 sfvod
+  
+  adpcmlib.o:
+! 	( echo "Building ADPCM library."; cd adpcm ; make CC="$(CC)" )
+  	echo "ADPCM" >adpcmlib.o
+  
+  libdes.o:
+  	( echo "Building LIBDES library."; cd libdes ; make -f Makefile.sf CC="$(CC) $(CCFLAGS) $(DEBUG)" )
+  	echo "LIBDES" >libdes.o
+  
+  lpclib.o:
+--- 155,167 ----
+  	chmod 755 sfvod
+  
+  adpcmlib.o:
+! 	( echo "Building ADPCM library."; cd adpcm ; make CC="$(CC) $(CCFLAGS)" )
+  	echo "ADPCM" >adpcmlib.o
+  
+  libdes.o:
++ .if !exists(/usr/lib/libdes.a)
+  	( echo "Building LIBDES library."; cd libdes ; make -f Makefile.sf CC="$(CC) $(CCFLAGS) $(DEBUG)" )
++ .endif
+  	echo "LIBDES" >libdes.o
+  
+  lpclib.o:
+***************
+*** 161,167 ****
+  	echo "LPC" >lpc10lib.o
+  
+  gsmlib.o:
+! 	( echo "Building GSM library."; cd gsm ; make CC="$(CC)" )
+  	echo "GSM" >gsmlib.o
+  
+  deslib.o:
+--- 173,179 ----
+  	echo "LPC" >lpc10lib.o
+  
+  gsmlib.o:
+! 	( echo "Building GSM library."; cd gsm ; make CC="$(CC) $(CCFLAGS)" )
+  	echo "GSM" >gsmlib.o
+  
+  deslib.o:
+***************
+*** 169,179 ****
+  	echo "DES" >deslib.o
+  
+  md5lib.o:
+! 	( echo "Building MD5 library."; cd md5 ; make CC="$(CC)" )
+  	echo "MD5" >md5lib.o
+  
+  idealib.o:
+! 	( echo "Building IDEA library."; cd idea ; make CC="$(CC)" )
+  	echo "IDEA" >idealib.o
+  
+  codecs.o:   codecs.c speakfree.h
+--- 181,191 ----
+  	echo "DES" >deslib.o
+  
+  md5lib.o:
+! 	( echo "Building MD5 library."; cd md5 ; make CC="$(CC) $(CCFLAGS)" )
+  	echo "MD5" >md5lib.o
+  
+  idealib.o:
+! 	( echo "Building IDEA library."; cd idea ; make CC="$(CC) $(CCFLAGS)" )
+  	echo "IDEA" >idealib.o
+  
+  codecs.o:   codecs.c speakfree.h

@@ -1,0 +1,74 @@
+*** adpcm/Makefile.bak	Fri Sep  1 14:58:19 1995
+--- adpcm/Makefile	Fri Oct 25 18:55:46 1996
+***************
+*** 1,7 ****
+  #
+  # Makefile for adpcm and test programs
+  # -------------------
+! CFLAGS=-O -I..
+  # May need this on a sun:
+  #CFLAGS=-O -I/usr/demo/SOUND
+  
+--- 1,7 ----
+  #
+  # Makefile for adpcm and test programs
+  # -------------------
+! CFLAGS+=-I..
+  # May need this on a sun:
+  #CFLAGS=-O -I/usr/demo/SOUND
+  
+*** des/Makefile.bak	Thu Nov  2 22:38:58 1995
+--- des/Makefile	Fri Oct 25 18:55:46 1996
+***************
+*** 1,4 ****
+! CFLAGS=-O
+  
+  all:	des.o
+  
+--- 1,4 ----
+! #CFLAGS=-O
+  
+  all:	des.o
+  
+*** idea/Makefile.bak	Wed Aug  2 22:39:19 1995
+--- idea/Makefile	Fri Oct 25 18:55:46 1996
+***************
+*** 6,13 ****
+  
+  #   Compiler flags
+  
+! CC = cc
+! CFLAGS = -O
+  
+  all:	idea.o
+  
+--- 6,13 ----
+  
+  #   Compiler flags
+  
+! #CC = cc
+! #CFLAGS = -O
+  
+  all:	idea.o
+  
+*** libdes/Makefile.bak	Wed Apr 17 23:49:33 1996
+--- libdes/Makefile	Fri Oct 25 18:55:46 1996
+***************
+*** 30,37 ****
+  
+  OPTS= $(OPTS0) $(OPTS1) $(OPTS2)
+  
+! CC=cc
+! CFLAGS= -O $(OPTS) $(CFLAG)
+  
+  #CC=gcc
+  #CFLAGS= -O3 -fomit-frame-pointer $(OPTS) $(CFLAG)
+--- 30,37 ----
+  
+  OPTS= $(OPTS0) $(OPTS1) $(OPTS2)
+  
+! #CC=cc
+! CFLAGS+= $(OPTS) $(CFLAG)
+  
+  #CC=gcc
+  #CFLAGS= -O3 -fomit-frame-pointer $(OPTS) $(CFLAG)

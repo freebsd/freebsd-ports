@@ -1,0 +1,13 @@
+bin/sfspeaker
+bin/sfmike
+bin/sflwl
+sbin/sfecho
+sbin/sflwld
+sbin/sfvod
+lib/speak_freely/ring.au
+man/man1/sfspeaker.1.gz
+man/man1/sfmike.1.gz
+man/man1/sflwl.1.gz
+man/man1/sfecho.1.gz
+man/man1/sflwld.1.gz
+man/man1/sfvod.1.gz

@@ -1,0 +1,101 @@
+*** soundbyte.c.orig	Mon Apr  8 17:39:41 1996
+--- soundbyte.c	Fri Oct 25 20:36:06 1996
+***************
+*** 96,101 ****
+--- 96,106 ----
+  }
+  #endif
+  
++ #ifndef sun
++ #ifdef  HALF_DUPLEX
++ static int oldvol = -1;
++ #endif
++ #endif
+  
+  /*  SOUNDINIT  --  Open the sound peripheral and initialise for
+  		   access.  Return TRUE if successful, FALSE
+***************
+*** 145,150 ****
+--- 150,170 ----
+  	    }
+  	    ioctl(Audio_fd, AUDIO_SETINFO, &Audio_info);
+  #endif
++ #ifndef sun
++ #ifdef  HALF_DUPLEX
++ 	    if (iomode == O_RDONLY) {
++ 		if (oldvol == -1)
++ 		    oldvol = soundgetvol();
++ 		soundplayvol(0);
++ 	    } else if (   iomode == O_WRONLY
++ 		       && oldvol != -1
++ 		      ) {
++ 		if (soundgetvol() == 0)
++ 		    soundplayvol(oldvol);
++ 		oldvol = -1;
++ 	    }
++ #endif
++ #endif
+  	    return TRUE;
+  	}
+  	if (errno != EINTR) {
+***************
+*** 160,165 ****
+--- 180,194 ----
+  void soundterm()
+  {
+  	if (audiof >= 0) {
++ #ifndef sun
++ #ifdef  HALF_DUPLEX
++ 	    if (oldvol != -1) {
++ 		if (soundgetvol() == 0)
++ 		    soundplayvol(oldvol);
++ 		oldvol = -1;
++ 	    }
++ #endif
++ #endif
+  	    if (close(audiof) < 0) {
+                  perror("closing audio device");
+  	    }
+***************
+*** 210,219 ****
+  
+     arg	 = (value << 8) | value;
+  
+!    if (ioctl(Audio_fd, MIXER_WRITE(SOUND_MIXER_PCM), &arg) < 0)
+!         perror("SOUND_MIXER_PCM");
+  #endif
+  }
+  
+  /*  SOUNDRECGAIN  --  Set recording gain from 0 (minimum) to 100 (maximum).  */
+  
+--- 239,268 ----
+  
+     arg	 = (value << 8) | value;
+  
+!    if (ioctl(Audio_fd, SOUND_MIXER_WRITE_PCM, &arg) < 0)
+! 	perror("SOUND_MIXER_WRITE_PCM");
+  #endif
+  }
++ 
++ #ifndef sun
++ #ifdef  HALF_DUPLEX
++ 
++ /*  SOUNDGETVOL -- Get current playback volume. */
++ 
++ int soundgetvol()
++ {
++    int arg, v1, v2;
++ 
++    if (ioctl(Audio_fd, SOUND_MIXER_READ_PCM, &arg) < 0) {
++ 	perror("SOUND_MIXER_READ_PCM");
++ 	return -1;
++    }
++    v1 = arg & 0xFF;
++    v2 = (arg >> 8) & 0xFF;
++    return (v1 > v2) ? v1 : v2;
++ }
++ #endif
++ #endif
+  
+  /*  SOUNDRECGAIN  --  Set recording gain from 0 (minimum) to 100 (maximum).  */
+  
