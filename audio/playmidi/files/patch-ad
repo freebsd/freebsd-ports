@@ -1,42 +1,29 @@
-*** playmidi.h-dist.orig	Mon May 12 06:26:36 1997
---- playmidi.h-dist	Wed Jan  5 06:33:52 2000
-***************
-*** 35,44 ****
-  #define MAXTRKS		128
-  /* where to find fm patch libraries */
-  #define SEQUENCER_DEV	"/dev/sequencer"
-! #define O3MELODIC	"/etc/std.o3"
-! #define O3DRUMS		"/etc/drums.o3"
-! #define SBMELODIC	"/etc/std.sb"
-! #define SBDRUMS		"/etc/drums.sb"
-  #define ISPERC(x)	(perc & (1 << x))
-  #define ISGUS(x)	(play_gus & (1 << x))
-  #define ISFM(x)		(play_fm & (1 << x))
---- 35,47 ----
-  #define MAXTRKS		128
-  /* where to find fm patch libraries */
-  #define SEQUENCER_DEV	"/dev/sequencer"
-! #ifndef PREFIX
-! #define PREFIX	"/usr/local"
-! #endif
-! #define O3MELODIC	PREFIX "/libdata/midi/std.o3"
-! #define O3DRUMS		PREFIX "/libdata/midi/drums.o3"
-! #define SBMELODIC	PREFIX "/libdata/midi/std.sb"
-! #define SBDRUMS		PREFIX "/libdata/midi/drums.sb"
-  #define ISPERC(x)	(perc & (1 << x))
-  #define ISGUS(x)	(play_gus & (1 << x))
-  #define ISFM(x)		(play_fm & (1 << x))
-***************
-*** 50,56 ****
---- 53,63 ----
-  #include <stdio.h>
-  #include <string.h>
-  #include <stdlib.h>
-+ #ifdef __FreeBSD__
-+ #include <machine/soundcard.h>
-+ #else
-  #include <sys/soundcard.h>
-+ #endif
-  #include <sys/ioctl.h>
-  #ifdef linux
-  #include <linux/awe_voice.h>
+--- playmidi.h-dist.orig	Mon May 12 06:26:36 1997
++++ playmidi.h-dist	Tue Aug 15 23:02:27 2000
+@@ -35,10 +35,10 @@
+ #define MAXTRKS		128
+ /* where to find fm patch libraries */
+ #define SEQUENCER_DEV	"/dev/sequencer"
+-#define O3MELODIC	"/etc/std.o3"
+-#define O3DRUMS		"/etc/drums.o3"
+-#define SBMELODIC	"/etc/std.sb"
+-#define SBDRUMS		"/etc/drums.sb"
++#define O3MELODIC	MIDI "/std.o3"
++#define O3DRUMS		MIDI "/drums.o3"
++#define SBMELODIC	MIDI "/std.sb"
++#define SBDRUMS		MIDI "/drums.sb"
+ #define ISPERC(x)	(perc & (1 << x))
+ #define ISGUS(x)	(play_gus & (1 << x))
+ #define ISFM(x)		(play_fm & (1 << x))
+@@ -50,7 +50,11 @@
+ #include <stdio.h>
+ #include <string.h>
+ #include <stdlib.h>
++#ifdef __FreeBSD__
++#include <machine/soundcard.h>
++#else
+ #include <sys/soundcard.h>
++#endif
+ #include <sys/ioctl.h>
+ #ifdef linux
+ #include <linux/awe_voice.h>
