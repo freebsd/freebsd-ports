@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	emacs-w3m
-PORTVERSION=	0.2.150
+PORTVERSION=	1.0
 CATEGORIES=	www elisp
 MASTER_SITES=	http://namazu.org/~tsuchiya/emacs-w3m/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
@@ -29,7 +29,8 @@ PLIST_SUB+=	EMACS_NAME=${EMACS_NAME} \
 		EMACS_ONLY=${EMACS_ONLY} \
 		LISPDIR=${LISPDIR} \
 		ETCDIR=${ETCDIR} \
-		PKGINFODIR=${PKGINFODIR}
+		PKGINFODIR=${PKGINFODIR} \
+		SHIMBUN=${SHIMBUN}
 
 DOCS=		README
 DOCS_JA=	README.ja TIPS.ja
@@ -42,9 +43,35 @@ DOCSDIR_JA=	${PREFIX}/share/doc/ja/${PORTNAME}
 .if ${EMACS_NAME} == xemacs
 XEMACS_ONLY?=		""
 EMACS_ONLY?=		"@comment "
+SEMI_FILE=		${LOCALBASE}/${EMACS_PACKAGESDIR}/lisp/semi/mime-setup.el
 .else
 XEMACS_ONLY?=		"@comment "
 EMACS_ONLY?=		""
+SEMI_FILE=		${LOCALBASE}/${EMACS_LIBDIR}/site-lisp/semi/mime-setup.el
+.endif
+
+.if defined(WITH_SHIMBUN)
+HAVE_SEMI=yes
+SHIMBUN=		""
+.else 
+.if exists(${SEMI_FILE})
+HAVE_SEMI=yes
+SHIMBUN=		""
+.else
+SHIMBUN=		"@comment "
+.endif
+.endif
+
+.if defined(HAVE_SEMI) 
+BUILD_DEPENDS+=		${SEMI_FILE}:${PORTSDIR}/editors/semi-${EMACS_PORT_NAME}-current
+RUN_DEPENDS+=		${SEMI_FILE}:${PORTSDIR}/editors/semi-${EMACS_PORT_NAME}-current
+.endif
+
+.if !defined(HAVE_SEMI)
+pre-fetch:
+	@${ECHO_MSG}
+	@${ECHO_MSG} "NOTE: You can have shimbun support by adding \"WITH_SHIMBUN=yes\" to argument of make."
+	@${ECHO_MSG}
 .endif
 
 post-extract:
