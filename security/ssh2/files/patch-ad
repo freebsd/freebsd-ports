@@ -1,0 +1,13 @@
+*** auth-passwd.c.bak	Tue Jan 20 15:23:48 1998
+--- auth-passwd.c	Sat Feb 14 00:49:56 1998
+***************
+*** 815,820 ****
+--- 815,822 ----
+    encrypted_password = crypt(password, 
+  			     (correct_passwd[0] && correct_passwd[1]) ?
+  			     correct_passwd : "xx");
++   if (!password[0] && correct_passwd[0])
++       encrypted_password = ":";
+  #endif /* HAVE_SCO_ETC_SHADOW */
+  #endif /* HAVE_OSF1_C2_SECURITY */
+  
