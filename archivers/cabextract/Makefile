@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cabextract
-PORTVERSION=	0.3
+PORTVERSION=	0.4
 CATEGORIES=	archivers
 MASTER_SITES=	http://www.kyz.uklinux.net/downloads/
 
