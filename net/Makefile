@@ -51,6 +51,7 @@
     SUBDIR += ccmsn
     SUBDIR += cdonkey
     SUBDIR += centericq
+    SUBDIR += cicquin
     SUBDIR += citadel
     SUBDIR += citrix_ica
     SUBDIR += click

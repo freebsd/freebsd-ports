@@ -1,0 +1,6 @@
+The cicquin script trawls through the CenterICQ data directory, looking for
+UIN's with the specified nickname.  It should work with any reasonable Bourne
+shell and any standard awk implementation.
+
+WWW:		http://devel.ringlet.net/misc/cicquin/
+Author:		Peter Pentchev <roam@ringlet.net>
