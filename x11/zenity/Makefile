@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	zenity
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION}
+DIST_SUBDIR=    gnome2
 
 MAINTAINER=	klammer@webonaut.com
 COMMENT=	Display GNOME dialogs from the command line
