@@ -9,7 +9,8 @@
 PORTNAME=	parrot
 PORTVERSION=	0.2.6
 CATEGORIES=	devel
-MASTER_SITES=	http://www.comuno.freeserve.co.uk/oss/parrot/
+# mastersite disappeared in October 2002
+MASTER_SITES=	# http://www.comuno.freeserve.co.uk/oss/parrot/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
