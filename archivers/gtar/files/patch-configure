@@ -1,0 +1,86 @@
+--- configure.orig	Wed Aug 29 23:44:29 2001
++++ configure	Sat Sep  8 07:57:39 2001
+@@ -3734,9 +3734,9 @@
+       fi
+ 
+ test $jm_cv_func_decl_free != yes
+-
++ac_status=$?
+ cat >>confdefs.h <<EOF
+-#define HAVE_DECL_FREE $?
++#define HAVE_DECL_FREE $ac_status
+ EOF
+ 
+   echo "$as_me:3742: checking whether getgrgid is declared" >&5
+@@ -3791,9 +3791,9 @@
+       fi
+ 
+ test $jm_cv_func_decl_getgrgid != yes
+-
++ac_status=$?
+ cat >>confdefs.h <<EOF
+-#define HAVE_DECL_GETGRGID $?
++#define HAVE_DECL_GETGRGID $ac_status
+ EOF
+ 
+   echo "$as_me:3799: checking whether getpwuid is declared" >&5
+@@ -3848,9 +3848,9 @@
+       fi
+ 
+ test $jm_cv_func_decl_getpwuid != yes
+-
++ac_status=$?
+ cat >>confdefs.h <<EOF
+-#define HAVE_DECL_GETPWUID $?
++#define HAVE_DECL_GETPWUID $ac_status
+ EOF
+ 
+   echo "$as_me:3856: checking whether getenv is declared" >&5
+@@ -3905,9 +3905,9 @@
+       fi
+ 
+ test $jm_cv_func_decl_getenv != yes
+-
++ac_status=$?
+ cat >>confdefs.h <<EOF
+-#define HAVE_DECL_GETENV $?
++#define HAVE_DECL_GETENV $ac_status
+ EOF
+ 
+   echo "$as_me:3913: checking whether malloc is declared" >&5
+@@ -3962,9 +3962,9 @@
+       fi
+ 
+ test $jm_cv_func_decl_malloc != yes
+-
++ac_status=$?
+ cat >>confdefs.h <<EOF
+-#define HAVE_DECL_MALLOC $?
++#define HAVE_DECL_MALLOC $ac_status
+ EOF
+ 
+   echo "$as_me:3970: checking whether strtoul is declared" >&5
+@@ -4019,9 +4019,9 @@
+       fi
+ 
+ test $jm_cv_func_decl_strtoul != yes
+-
++ac_status=$?
+ cat >>confdefs.h <<EOF
+-#define HAVE_DECL_STRTOUL $?
++#define HAVE_DECL_STRTOUL $ac_status
+ EOF
+ 
+   echo "$as_me:4027: checking whether strtoull is declared" >&5
+@@ -4076,9 +4076,9 @@
+       fi
+ 
+ test $jm_cv_func_decl_strtoull != yes
+-
++ac_status=$?
+ cat >>confdefs.h <<EOF
+-#define HAVE_DECL_STRTOULL $?
++#define HAVE_DECL_STRTOULL $ac_status
+ EOF
+ 
+ echo "$as_me:4084: checking which ioctl field to test for reversed bytes" >&5
