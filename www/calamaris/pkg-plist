@@ -1,1 +1,4 @@
 bin/calamaris
+%%PORTDOCS%%share/doc/calamaris/EXAMPLES
+%%PORTDOCS%%share/doc/calamaris/README
+%%PORTDOCS%%@dirrm share/doc/calamaris
