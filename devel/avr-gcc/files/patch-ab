@@ -1,6 +1,6 @@
---- Makefile.in.orig	Tue Oct  1 21:56:45 2002
-+++ Makefile.in	Wed Oct  2 13:19:05 2002
-@@ -753,74 +753,19 @@
+--- Makefile.in.orig	Wed Jan  8 21:17:05 2003
++++ Makefile.in	Wed Jan  8 23:13:49 2003
+@@ -745,79 +745,19 @@
  
  # This is a list of the targets for all of the modules which are compiled
  # using $(TARGET_FLAGS_TO_PASS).
@@ -19,7 +19,8 @@
 -	all-target-libjava \
 -	all-target-zlib \
 -	all-target-boehm-gc \
--	all-target-qthreads 
+-	all-target-qthreads \
+-	all-target-rda
 +ALL_TARGET_MODULES =
  
  # This is a list of the configure targets for all of the modules which
@@ -39,7 +40,8 @@
 -	configure-target-libjava \
 -	configure-target-zlib \
 -	configure-target-boehm-gc \
--	configure-target-qthreads 
+-	configure-target-qthreads \
+-	configure-target-rda
 +CONFIGURE_TARGET_MODULES =
  
  # This is a list of the check targets for all of the modules which are
@@ -56,7 +58,8 @@
 -	check-target-libjava \
 -	check-target-zlib \
 -	check-target-boehm-gc \
--	check-target-qthreads 
+-	check-target-qthreads \
+-	check-target-rda
 +CHECK_TARGET_MODULES =
  
  # This is a list of the install targets for all of the modules which are
@@ -71,11 +74,37 @@
 -	install-target-libgloss \
 -	install-target-libiberty \
 -	install-target-gperf \
+-	install-target-libffi \
 -	install-target-libjava \
 -	install-target-zlib \
 -	install-target-boehm-gc \
--	install-target-qthreads 
+-	install-target-qthreads \
+-	install-target-rda
 +INSTALL_TARGET_MODULES =
  
  # This is a list of the targets for which we can do a clean-{target}.
  CLEAN_MODULES = \
+@@ -883,22 +823,7 @@
+ 	clean-zlib
+ 
+ # All of the target modules that can be cleaned
+-CLEAN_TARGET_MODULES = \
+-	clean-target-libstdc++-v3 \
+-	clean-target-newlib \
+-	clean-target-libf2c \
+-	clean-target-libobjc \
+-	clean-target-winsup \
+-	clean-target-libgloss \
+-	clean-target-libiberty \
+-	clean-target-gperf \
+-	clean-target-examples \
+-	clean-target-libffi \
+-	clean-target-libjava \
+-	clean-target-zlib \
+-	clean-target-boehm-gc \
+-	clean-target-qthreads \
+-	clean-target-rda
++CLEAN_TARGET_MODULES =
+ 
+ # All of the x11 modules that can be cleaned
+ CLEAN_X11_MODULES = \
