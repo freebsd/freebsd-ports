@@ -1,0 +1,6 @@
+bin/var-config
+include/var.h
+lib/libvar.a
+lib/libvar.la
+lib/libvar.so
+lib/libvar.so.9
