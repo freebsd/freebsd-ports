@@ -251,6 +251,7 @@
     SUBDIR += g2c
     SUBDIR += gaa
     SUBDIR += gaphor
+    SUBDIR += gauche-gaunit
     SUBDIR += gauche-readline
     SUBDIR += gauche-sdl
     SUBDIR += gaul
