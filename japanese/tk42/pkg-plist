@@ -30,6 +30,7 @@ lib/tk4.2jp/demos/images/letters.bmp
 lib/tk4.2jp/demos/images/noletter.bmp
 lib/tk4.2jp/demos/images/pattern.bmp
 lib/tk4.2jp/demos/images/teapot.ppm
+lib/tk4.2jp/demos/images/tcllogo.gif
 lib/tk4.2jp/demos/README
 lib/tk4.2jp/demos/arrow.tcl
 lib/tk4.2jp/demos/bind.tcl
@@ -37,6 +38,7 @@ lib/tk4.2jp/demos/bitmap.tcl
 lib/tk4.2jp/demos/browse
 lib/tk4.2jp/demos/button.tcl
 lib/tk4.2jp/demos/check.tcl
+lib/tk4.2jp/demos/clrpick.tcl
 lib/tk4.2jp/demos/colors.tcl
 lib/tk4.2jp/demos/cscroll.tcl
 lib/tk4.2jp/demos/ctext.tcl
@@ -44,6 +46,7 @@ lib/tk4.2jp/demos/dialog1.tcl
 lib/tk4.2jp/demos/dialog2.tcl
 lib/tk4.2jp/demos/entry1.tcl
 lib/tk4.2jp/demos/entry2.tcl
+lib/tk4.2jp/demos/filebox.tcl
 lib/tk4.2jp/demos/floor.tcl
 lib/tk4.2jp/demos/form.tcl
 lib/tk4.2jp/demos/hello
@@ -56,6 +59,7 @@ lib/tk4.2jp/demos/ixset
 lib/tk4.2jp/demos/label.tcl
 lib/tk4.2jp/demos/license.terms
 lib/tk4.2jp/demos/menu.tcl
+lib/tk4.2jp/demos/msgbox.tcl
 lib/tk4.2jp/demos/plot.tcl
 lib/tk4.2jp/demos/puzzle.tcl
 lib/tk4.2jp/demos/radio.tcl
@@ -76,12 +80,17 @@ lib/tk4.2jp/demos/vscale.tcl
 lib/tk4.2jp/demos/widget
 lib/tk4.2jp/bgerror.tcl
 lib/tk4.2jp/button.tcl
+lib/tk4.2jp/clrpick.tcl
+lib/tk4.2jp/comdlg.tcl
 lib/tk4.2jp/console.tcl
 lib/tk4.2jp/dialog.tcl
 lib/tk4.2jp/entry.tcl
 lib/tk4.2jp/focus.tcl
+lib/tk4.2jp/folder.gif
+lib/tk4.2jp/kinput.tcl
 lib/tk4.2jp/listbox.tcl
 lib/tk4.2jp/menu.tcl
+lib/tk4.2jp/msgbox.tcl
 lib/tk4.2jp/obsolete.tcl
 lib/tk4.2jp/optMenu.tcl
 lib/tk4.2jp/palette.tcl
@@ -89,7 +98,11 @@ lib/tk4.2jp/scale.tcl
 lib/tk4.2jp/scrlbar.tcl
 lib/tk4.2jp/tearoff.tcl
 lib/tk4.2jp/text.tcl
+lib/tk4.2jp/textfile.gif
 lib/tk4.2jp/tk.tcl
+lib/tk4.2jp/tkfbox.tcl
+lib/tk4.2jp/updir.xbm
+lib/tk4.2jp/xmfbox.tcl
 lib/tk4.2jp/tclIndex
 lib/tk4.2jp/prolog.ps
 lib/tk4.2jp/tkAppInit.c
