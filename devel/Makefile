@@ -1,9 +1,10 @@
-# $Id: Makefile,v 1.86 1997/11/24 09:12:13 pst Exp $
+# $Id: Makefile,v 1.87 1997/11/26 07:50:39 msmith Exp $
 #
 
     SUBDIR += ElectricFence
     SUBDIR += SWIG
     SUBDIR += SpecTcl
+    SUBDIR += aalib
     SUBDIR += asl
     SUBDIR += autoconf
     SUBDIR += automake
