@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 
 USE_REINPLACE=	yes
 USE_GNOMENG=	yes
-USE_GNOME=	gtk12 gnomehack
+USE_GNOME=	gtk12 gnomehack libxml
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
