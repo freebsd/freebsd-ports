@@ -6,21 +6,21 @@
 #
 
 PORTNAME=		evilwm
-PORTVERSION=		0.99.4.1
+PORTVERSION=		0.99.14
 CATEGORIES=		x11-wm
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=		${PORTNAME}_${PORTVERSION:R}-${PORTVERSION:E}
+DISTNAME=		${PORTNAME}_${PORTVERSION}.orig
 
 MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	Minimalist window manager based on 9wm
 
 DOCDIR=		share/doc/${PORTNAME}
-DOCS=		ChangeLog README README.multihead TODO
+DOCS=		ChangeLog README README.vdesk TODO
 MAN1=		evilwm.1
 PLIST=		${WRKDIR}/pkg-plist
 USE_X_PREFIX=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}.orig
 
 do-build:
 	cd ${WRKSRC} && ${CC} ${CFLAGS} -I${X11BASE}/include \
@@ -39,7 +39,7 @@ pre-install:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/evilwm ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/evilwm.1 ${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/evilwm.1 ${MANPREFIX}/man/man1
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 .for i in ${DOCS}
