@@ -1,6 +1,6 @@
 # ports collection makefile for:	Berkeley DB v3
 # Date created:				16 August 2000
-# Whom:					Sergey Osokin aka oZZ <ozz@FreeBSD.org.ru>
+# Whom:					Sergey Osokin aka oZZ <osa@FreeBSD.org.ru>
 #
 # $FreeBSD$
 #
@@ -18,7 +18,7 @@ PATCH_SITES=	http://www.sleepycat.com/update/${PORTVERSION}/
 PATCHFILES=	patch.${PORTVERSION}.1 patch.${PORTVERSION}.2
 PATCH_DIST_STRIP= -d ${WRKDIR}/${DISTNAME}
 
-MAINTAINER=	ozz@FreeBSD.org.ru
+MAINTAINER=	osa@FreeBSD.org.ru
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/build_unix
 

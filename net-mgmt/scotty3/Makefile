@@ -1,6 +1,6 @@
 # New ports collection makefile for:	scotty-current
 # Date created:			06 June 2000
-# Whom:				Sergey Osokin aka oZZ <ozz@FreeBSD.ORG.ru>
+# Whom:				Sergey Osokin aka oZZ <osa@FreeBSD.ORG.ru>
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.ibr.cs.tu-bs.de/pub/local/tkined/devel/
 DISTNAME=	${PORTNAME}-00-02-21
 
-MAINTAINER=	ozz@FreeBSD.org.ru
+MAINTAINER=	osa@FreeBSD.org.ru
 
 .ifdef (WITHOUT_X11)
 PKGNAMESUFFIX=	-nox11
