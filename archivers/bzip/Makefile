@@ -3,7 +3,7 @@
 # Date created:         Fr  27 Sep 1996 11:47:35 MET DST
 # Whom:                 Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.6 1996/11/12 02:17:18 obrien Exp $
+# $Id: Makefile,v 1.7 1996/11/18 11:15:27 asami Exp $
 #
 
 DISTNAME=       bzip-0.21
@@ -19,9 +19,9 @@ pre-install:
 	@${CAT} ${FILESDIR}/COPYRIGHT
 
 do-install:
-	rm -f ${PREFIX}/bin/bzip ${PREFIX}/bin/bunzip
+	${RM} -f ${PREFIX}/bin/bzip ${PREFIX}/bin/bunzip
 	${INSTALL_PROGRAM} ${WRKSRC}/bzip ${PREFIX}/bin/bzip
-	ln -s ${PREFIX}/bin/bzip ${PREFIX}/bin/bunzip
+	ln -fs ${PREFIX}/bin/bzip ${PREFIX}/bin/bunzip
 	${INSTALL_MAN} ${WRKSRC}/bzip.1 ${PREFIX}/man/man1/bzip.1
 	${INSTALL_MAN} ${WRKSRC}/bzip.1 ${PREFIX}/man/man1/bunzip.1
 
