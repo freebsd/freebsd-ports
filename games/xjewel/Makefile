@@ -3,7 +3,7 @@
 # Date created:         22 November 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.4 1995/04/11 02:00:37 jmz Exp $
+# $Id: Makefile,v 1.5 1995/04/20 18:21:08 asami Exp $
 #
 
 DISTNAME=	xjewel-1.6
@@ -29,5 +29,6 @@ do-install:
 	  echo "xset +fp ${PREFIX}/lib/xjewel.font" >>${PREFIX}/bin/xjewel; \
 	  echo "xjewel_" >>${PREFIX}/bin/xjewel; \
 	  chmod ugo+x ${PREFIX}/bin/xjewel)
+	@${MAKE} ${.MAKEFLAGS} fake-pkg
 
 .include <bsd.port.mk>
