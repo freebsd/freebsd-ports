@@ -37,7 +37,7 @@ portaudit_confs()
 	portaudit_filename=${portaudit_filename:-"auditfile.tbz"}
 
 	portaudit_fetch_env=${portaudit_fetch_env:-}
-	portaudit_fetch_cmd=${portaudit_fetch_cmd:-"fetch -1amp"}
+	portaudit_fetch_cmd=${portaudit_fetch_cmd:-"fetch -1mp"}
 
 	portaudit_sites=${portaudit_sites:-"http://www.FreeBSD.org/ports/"}
 
