@@ -12,11 +12,12 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Class
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	skv@protey.ru
+MAINTAINER=	skv@FreeBSD.org
 
 BUILD_DEPENDS=	dos2unix:${PORTSDIR}/converters/unix2dos
 
 PERL_CONFIGURE=	yes
+PLIST_SUB+=	EXAMPLESDIR="share/examples/${PORTNAME}"
 
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Class::Contract.3 Class::Contract::Production.3
@@ -30,6 +31,7 @@ pre-configure:
 
 post-install:
 .ifndef(NOPORTDOCS)
+	@${ECHO_MSG} "===>   Installing examples for ${PKGNAME}"
 	@${MKDIR} ${PREFIX}/share/examples/${PORTNAME}
 	${INSTALL_SCRIPT} ${WRKSRC}/examples/* \
 		${PREFIX}/share/examples/${PORTNAME}

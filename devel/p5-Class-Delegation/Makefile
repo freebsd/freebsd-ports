@@ -12,18 +12,19 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Class
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	skv@protey.ru
+MAINTAINER=	skv@FreeBSD.org
 
 PERL_CONFIGURE=	yes
+PLIST_SUB+=	EXAMPLESDIR="share/examples/${PORTNAME}"
 
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Class::Delegation.3
 
 post-install:
 .ifndef(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/examples/${PORTNAME}
-	${INSTALL_SCRIPT} ${WRKSRC}/demo/* \
-		${PREFIX}/share/examples/${PORTNAME}
+	@${ECHO_MSG} "===>   Installing examples for ${PKGNAME}"
+	@${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/demo/* ${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>
