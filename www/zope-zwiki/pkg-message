@@ -3,9 +3,3 @@
   may be done from the Zope Control Panel in the Zope management interface.
 
   You will now be able to create a "ZWiki Web" object.
-
-  Note:  The page header image in a ZWiki Web will be broken if your Zope
-  server interfaces with Apache via PCGI (as the FreeBSD Zope port does by
-  default).  To work around this, place a ZWikiPage_icon.gif in your ZWiki
-  Web's Zope folder, and edit the standard_wiki_header DTML Method to point
-  to this image instead.
