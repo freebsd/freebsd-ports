@@ -1,7 +1,7 @@
---- Makefile.in.orig	Tue Aug 21 04:21:23 2001
-+++ Makefile.in	Sat Aug 25 19:40:04 2001
-@@ -105,7 +105,7 @@
- MAINTAINERCLEANFILES = INSTALL Makefile.in aclocal.m4 config.guess 		       config.h.in config.sub configure install-sh 		       ltconfig ltmain.sh missing mkinstalldirs 		       stamp-h.in
+--- Makefile.in.orig	Sun Nov 11 11:47:00 2001
++++ Makefile.in	Sun Nov 11 21:43:41 2001
+@@ -116,7 +116,7 @@
+ 		       stamp-h.in
  
  
 -SUBDIRS = libs src builder test include modules docs scripts

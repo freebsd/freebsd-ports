@@ -1,11 +1,11 @@
---- docs/images/Makefile.in.orig	Tue Aug 21 04:21:49 2001
-+++ docs/images/Makefile.in	Sat Aug 25 19:43:23 2001
-@@ -102,7 +102,7 @@
- images_DATA = ferite_logo_colour_blue.png 	    ferite_logo_black.png 	    ferite_logo_black_600x300.png 	    ferite_logo_colour.png 	    ferite_logo.xcf
+--- docs/images/Makefile.in.orig	Sun Nov 11 11:47:01 2001
++++ docs/images/Makefile.in	Sun Nov 11 21:43:41 2001
+@@ -114,7 +114,7 @@
+ 	    ferite_logo.xcf
  
  
 -imagesdir = $(prefix)/share/ferite/images
 +imagesdir = $(prefix)/share/doc/ferite/images
  
  EXTRA_DIST = $(images_DATA)
- mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ subdir = docs/images
