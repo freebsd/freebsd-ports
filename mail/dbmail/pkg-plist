@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 bin/dbmail-smtp
 bin/dbmail-pop3d
 bin/dbmail-imapd
@@ -23,6 +24,7 @@ etc/dbmail.conf-dist
 %%MYSQL%%%%DATADIR%%/sql/update_mysql_tmptables.mysql
 %%MYSQL%%%%DATADIR%%/sql/update_ownerid_aliases.mysql
 %%PGSQL%%%%DATADIR%%/sql/add-constraints.pgsql
+%%PGSQL%%%%DATADIR%%/sql/add-indexes-fkeys-to-1.2.pgsql
 %%PGSQL%%%%DATADIR%%/sql/add-lastlogin.postgresql
 %%PGSQL%%%%DATADIR%%/sql/add_auto_notification.pgsql
 %%PGSQL%%%%DATADIR%%/sql/add_auto_reply.pgsql
@@ -35,6 +37,6 @@ etc/dbmail.conf-dist
 %%PGSQL%%%%DATADIR%%/sql/pop_before_smtp.pgsql
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%/sql
 @dirrm %%DATADIR%%
-@dirrm %%DOCSDIR%%

@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	dbmail
-PORTVERSION=	1.2
-PORTREVISION=	1
+PORTVERSION=	1.2.1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.dbmail.org/tgz/
 PKGNAMESUFFIX=	-${DATABASE}
@@ -63,9 +62,7 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/sql/${DATABASE}/* ${DATADIR}/sql
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for docs in ${DOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${docs} ${DOCSDIR}
-.endfor
+	@cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
