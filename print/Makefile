@@ -126,6 +126,7 @@
     SUBDIR += latex-xcolor
     SUBDIR += latex2rtf
     SUBDIR += latex2slides
+    SUBDIR += latexmk
     SUBDIR += lgrind
     SUBDIR += libgnomecups
     SUBDIR += libgnomeprint
