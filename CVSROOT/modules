@@ -3393,6 +3393,7 @@ kbear		ports/ftp/kbear
 kbedic		ports/textproc/kbedic
 kbiff		ports/mail/kbiff
 kcd		ports/misc/kcd
+kcpuload	ports/sysutils/kcpuload
 kdb		src/eBones/kdb
 kdb_destroy	src/eBones/kdb_destroy
 kdb_edit	src/eBones/kdb_edit
