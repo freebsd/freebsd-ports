@@ -17,7 +17,7 @@ DISTNAME=	hanemacs-19.34b-1
 MAINTAINER=	cjh@FreeBSD.org
 COMMENT=	Korean version of GNU editing macros
 
-NOT_FOR_ARCHS=	alpha
+ONLY_FOR_ARCHS=	i386
 
 WRKSRC=		${WRKDIR}/hanemacs-19.34
 GNU_CONFIGURE=	yes
