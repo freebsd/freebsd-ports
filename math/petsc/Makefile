@@ -203,12 +203,13 @@ pre-everything::
 	@${ECHO_MSG}
 
 pre-configure:
-	@${REINPLACE_CMD} -e "s|AMD/Include|include/AMD|"			\
-			-e "s|AMD/Lib|${LOCALBASE}/lib|"			\
+	@${RM} ${WRKSRC}/bmake/common/rules.shared.basic.orig	\
+		${WRKSRC}/bmake/common/variables.orig
+	@${REINPLACE_CMD} -e "s|AMD/Include|include/AMD|"	\
+			-e "s|AMD/Lib|${LOCALBASE}/lib|"	\
 		${WRKSRC}/python/PETSc/packages/Umfpack.py
 
 post-install:
-	@${RM} ${PREFIX}/${PFX}/bmake/common/variables.orig
 	${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${PREFIX}/${PFX}/bin
 	${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${PREFIX}/${PFX}/bin
 	${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${PREFIX}/${PFX}/bmake
