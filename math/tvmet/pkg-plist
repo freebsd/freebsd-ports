@@ -55,5 +55,23 @@ share/aclocal/tvmet.m4
 %%PORTDOCS%%share/doc/tvmet/tvmet.css
 %%PORTDOCS%%share/doc/tvmet/usage.doc
 %%PORTDOCS%%share/doc/tvmet/works.doc
+share/examples/tvmet/cmm.cc
+share/examples/tvmet/cmv.cc
+share/examples/tvmet/matrix_col.cc
+share/examples/tvmet/mm.cc
+share/examples/tvmet/mv.cc
+share/examples/tvmet/ray.cc
+share/examples/tvmet/xpr_print_m1.cc
+share/examples/tvmet/xpr_print_m2.cc
+share/examples/tvmet/xpr_print_m3.cc
+share/examples/tvmet/xpr_print_m4.cc
+share/examples/tvmet/xpr_print_mv1.cc
+share/examples/tvmet/xpr_print_mv2.cc
+share/examples/tvmet/xpr_print_v1.cc
+share/examples/tvmet/xpr_print_v2.cc
+share/examples/tvmet/xpr_print_v3.cc
+share/examples/tvmet/xpr_print_v4.cc
 @dirrm include/tvmet/config
 @dirrm include/tvmet
+@dirrm share/examples/tvmet
+%%PORTDOCS%%@dirrm share/doc/tvmet
