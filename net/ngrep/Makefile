@@ -26,7 +26,7 @@ PORTDOCS=	BUGS CHANGES README README.pcre USAGE
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} > 500000
+.if ${OSVERSION} > 501110
 EXTRA_PATCHES=	${PATCHDIR}/patch5-configure ${PATCHDIR}/patch5-ngrep
 .endif
 
