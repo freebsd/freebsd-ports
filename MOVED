@@ -17,3 +17,33 @@
 #
 # Port|Moved to|Date|Why
 net/ratoolset|net/irrtoolset|2002-11-16|software was renamed
+chinese/linux-netscape47-communicator||2002-11-17|security vulnerability
+chinese/linux-netscape47-navigator||2002-11-17|security vulnerability
+chinese/netscape47-communicator||2002-11-17|security vulnerability
+chinese/netscape47-navigator||2002-11-17|security vulnerability
+japanese/linux-netscape47-communicator||2002-11-17|security vulnerability
+japanese/linux-netscape47-navigator||2002-11-17|security vulnerability
+japanese/netscape-fonts||2002-11-17|security vulnerability
+japanese/netscape3.language||2002-11-17|security vulnerability
+japanese/netscape4-communicator||2002-11-17|security vulnerability
+japanese/netscape4-navigator||2002-11-17|security vulnerability
+japanese/netscape47-communicator||2002-11-17|security vulnerability
+japanese/netscape47-navigator||2002-11-17|security vulnerability
+korean/linux-netscape47-communicator||2002-11-17|security vulnerability
+korean/linux-netscape47-navigator||2002-11-17|security vulnerability
+korean/netscape3||2002-11-17|security vulnerability
+korean/netscape4-communicator||2002-11-17|security vulnerability
+korean/netscape4-navigator||2002-11-17|security vulnerability
+korean/netscape47-communicator||2002-11-17|security vulnerability
+korean/netscape47-navigator||2002-11-17|security vulnerability
+russian/netscape4.language||2002-11-17|security vulnerability
+www/linux-netscape4||2002-11-17|security vulnerability
+www/linux-netscape47-communicator||2002-11-17|security vulnerability
+www/linux-netscape47-navigator||2002-11-17|security vulnerability
+www/netscape3||2002-11-17|security vulnerability
+www/netscape3-gold||2002-11-17|security vulnerability
+www/netscape4-communicator||2002-11-17|security vulnerability
+www/netscape4-communicator.us||2002-11-17|security vulnerability
+www/netscape4-navigator||2002-11-17|security vulnerability
+www/netscape47-communicator||2002-11-17|security vulnerability
+www/netscape47-navigator||2002-11-17|security vulnerability
