@@ -1,6 +1,7 @@
 bin/dump-mixers
 bin/motv
 bin/ntsc-cc
+bin/pia
 bin/propwatch
 bin/record
 bin/rootv
@@ -14,8 +15,11 @@ bin/xawtv
 bin/xawtv-remote
 lib/xawtv/conv-mjpeg.so
 lib/xawtv/drv0-bsd.so
+lib/xawtv/flt-disor.so
 lib/xawtv/flt-gamma.so
 lib/xawtv/flt-invert.so
+lib/xawtv/flt-smooth.so
+lib/xawtv/read-avi.so
 lib/xawtv/snd-oss.so
 lib/xawtv/write-avi.so
 @dirrm lib/xawtv
@@ -41,7 +45,7 @@ man/fr/man1/xawtv.1
 lib/X11/app-defaults/MoTV
 lib/X11/de/app-defaults/MoTV
 lib/X11/it/app-defaults/MoTV
-@dirrm lib/X11/it/app-defaults     
+@dirrm lib/X11/it/app-defaults
 @dirrm lib/X11/it
 @dirrm lib/X11/de/app-defaults
 @dirrm lib/X11/de
