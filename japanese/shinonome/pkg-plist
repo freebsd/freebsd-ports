@@ -22,6 +22,14 @@
 %%FONTSDIR%%/shnm8x16rb.pcf.gz
 %%FONTSDIR%%/shnm8x16rbi.pcf.gz
 %%FONTSDIR%%/shnm8x16ri.pcf.gz
+%%FONTSDIR%%/shnm9x18a.pcf.gz
+%%FONTSDIR%%/shnm9x18ab.pcf.gz
+%%FONTSDIR%%/shnm9x18abi.pcf.gz
+%%FONTSDIR%%/shnm9x18ai.pcf.gz
+%%FONTSDIR%%/shnm9x18r.pcf.gz
+%%FONTSDIR%%/shnm9x18rb.pcf.gz
+%%FONTSDIR%%/shnm9x18rbi.pcf.gz
+%%FONTSDIR%%/shnm9x18ri.pcf.gz
 %%FONTSDIR%%/shnmk12.pcf.gz
 %%FONTSDIR%%/shnmk12b.pcf.gz
 %%FONTSDIR%%/shnmk12bi.pcf.gz
@@ -64,6 +72,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/DESIGN.16
 %%PORTDOCS%%%%DOCSDIR%%/DESIGN.18
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/THANKS
 %%PORTDOCS%%%%DOCSDIR%%/TODO
