@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libwpd
-PORTVERSION=	0.4.0
-PORTREVISION=	1
+PORTVERSION=	0.7.1
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	libwpd
@@ -16,7 +15,8 @@ MAINTAINER=	reed@pugetsoundtechnology.com
 COMMENT=	Tools for importing and exporting WordPerfect(tm) documents
 
 USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
+USE_LIBTOOL=	yes
 USE_GNOME=	libgsf
+INSTALLS_SHLIB=	yes
 
 .include <bsd.port.mk>
