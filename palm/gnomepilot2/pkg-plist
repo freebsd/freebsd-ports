@@ -45,15 +45,21 @@ lib/libgpilotdconduit.so
 lib/libgpilotdconduit.so.0
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
+share/gnome/apps/Settings/Peripherals/Conduits/.directory
+share/gnome/apps/Settings/Peripherals/Conduits/backup-conduit-control-applet.desktop
+share/gnome/apps/Settings/Peripherals/Conduits/email-conduit-control-applet.desktop
+share/gnome/apps/Settings/Peripherals/Conduits/expense-conduit-control-applet.desktop
+share/gnome/apps/Settings/Peripherals/Conduits/file-conduit-control-applet.desktop
+share/gnome/apps/Settings/Peripherals/Conduits/memo_file_capplet.desktop
+share/gnome/apps/Settings/Peripherals/gpilotd-control-applet.desktop
 share/gnome/applets/Utility/pilot_applet.desktop
-share/gnome/control-center/Peripherals/PalmPilot/.directory
-share/gnome/control-center/Peripherals/PalmPilot/Conduits/.directory
-share/gnome/control-center/Peripherals/PalmPilot/Conduits/backup-conduit-control-applet.desktop
-share/gnome/control-center/Peripherals/PalmPilot/Conduits/email-conduit-control-applet.desktop
-share/gnome/control-center/Peripherals/PalmPilot/Conduits/expense-conduit-control-applet.desktop
-share/gnome/control-center/Peripherals/PalmPilot/Conduits/file-conduit-control-applet.desktop
-share/gnome/control-center/Peripherals/PalmPilot/Conduits/memo_file_capplet.desktop
-share/gnome/control-center/Peripherals/PalmPilot/gpilotd-control-applet.desktop
+share/gnome/control-center/Peripherals/Conduits/.directory
+share/gnome/control-center/Peripherals/Conduits/backup-conduit-control-applet.desktop
+share/gnome/control-center/Peripherals/Conduits/email-conduit-control-applet.desktop
+share/gnome/control-center/Peripherals/Conduits/expense-conduit-control-applet.desktop
+share/gnome/control-center/Peripherals/Conduits/file-conduit-control-applet.desktop
+share/gnome/control-center/Peripherals/Conduits/memo_file_capplet.desktop
+share/gnome/control-center/Peripherals/gpilotd-control-applet.desktop
 share/gnome/gnome-pilot/conduits/backup.conduit
 share/gnome/gnome-pilot/conduits/expense.conduit
 share/gnome/gnome-pilot/conduits/file.conduit
@@ -88,8 +94,8 @@ share/locale/uk/LC_MESSAGES/gnome-pilot.mo
 @dirrm share/gnome/gnome-pilot/glade
 @dirrm share/gnome/gnome-pilot/conduits
 @dirrm share/gnome/gnome-pilot
-@dirrm share/gnome/control-center/Peripherals/PalmPilot/Conduits
-@dirrm share/gnome/control-center/Peripherals/PalmPilot
+@dirrm share/gnome/control-center/Peripherals/Conduits
+@dirrm share/gnome/apps/Settings/Peripherals/Conduits
 @dirrm lib/gnome-pilot/conduits
 @dirrm lib/gnome-pilot
 @dirrm include/libgpilotdCM
