@@ -1,0 +1,26 @@
+--- Makefile.orig	Wed Feb  9 07:18:28 2000
++++ Makefile	Thu Mar  2 00:35:42 2000
+@@ -2,11 +2,12 @@
+ ## Customizable Shit #######################################
+ ############################################################
+ 
+-CC = gcc
++CC ?= gcc
+ OUTNAME = ppptraf
+ 
+ #XCFLAGS = -DDEBUG
+-XCFLAGS = -O3 -pedantic -fomit-frame-pointer
++CFLAGS ?= -O3 -fomit-frame-pointer
++CFLAGS += -pedantic
+ #XCFLAGS = -g
+ #XLIBS = -ldl ? -lpthread ?
+ 
+@@ -21,7 +22,7 @@
+ #LIBS = -lpthread -lncurses
+ 
+ # FreeBSD
+-CFLAGS =
++#CFLAGS =
+ LIBS = -pthread -lncurses
+ 
+ # Solaris
