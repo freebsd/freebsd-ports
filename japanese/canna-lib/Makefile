@@ -11,7 +11,7 @@ PORTVERSION=	3.5b2
 PORTREVISION=	2
 CATEGORIES=	japanese
 MASTER_SITES=	ftp://ftp.tokyonet.ad.jp/pub/misc/Canna/Canna35/ \
-		ftp://ftp.meshnet.or.jp/pub/tool/Canna/Canna35/ \
+		ftp://ftp.biglobe.ne.jp/pub/tool/Canna/Canna35/ \
 		ftp://ftp.sra.co.jp/pub/misc/canna/ \
 		ftp://ftp.habi.or.jp/pub/Tools/Canna/Canna35/ \
 		ftp://ftp.hans.or.jp/pub/Tools/Canna/Canna35/
