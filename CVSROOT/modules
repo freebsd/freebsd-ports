@@ -4786,6 +4786,7 @@ mpg321		ports/audio/mpg321
 mpgtx		ports/multimedia/mpgtx
 mpich		ports/net/mpich
 mpio-driver	ports/audio/mpio-driver
+mpiosh		ports/audio/mpiosh
 mplayer		ports/multimedia/mplayer
 mplayer-fonts	ports/multimedia/mplayer-fonts
 mplayer-plugin	ports/www/mplayer-plugin
