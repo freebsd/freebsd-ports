@@ -15,11 +15,12 @@ SENDMAIL_WITH_TLS=	yes
 SENDMAIL_WITH_SASL=	yes
 SENDMAIL_WITH_SFIO=	yes
 SENDMAIL_WITH_MILTER=	yes
-MASTERDIR?=	${.CURDIR}/../sendmail-old
+SENDMAIL_PORT?=		sendmail-old
 .else
 SENDMAIL_WITH_SASL2=	yes
-MASTERDIR?=	${.CURDIR}/../sendmail
+SENDMAIL_PORT?=		sendmail
 .endif
+MASTERDIR?=	${.CURDIR}/../${SENDMAIL_PORT}
 
 .if exists(${.CURDIR}/Makefile.local)
 .include "${.CURDIR}/Makefile.local"
