@@ -1,0 +1,10 @@
+--- Makefile.am.orig	Sun Aug  3 20:12:01 2003
++++ Makefile.am	Sun Aug  3 20:11:43 2003
+@@ -1,6 +1,6 @@
+ ## Process with automake to produce Makefile.in
+ 
+-pkgdir = $(prefix)/@PACKAGE@
++pkgdir = $(prefix)/games/@PACKAGE@
+ 
+ SUBDIRS = src
+ 

@@ -5,34 +5,45 @@
 #
 # $FreeBSD$
 
-PORTNAME=	scorched3d
-PORTVERSION=	0.32.0
-CATEGORIES=	games
-MASTER_SITES=	http://users.pandora.be/redzebra/
-PKGNAMESUFFIX=	devel
-DISTNAME=	scorched3d-${PORTVERSION}
+PORTNAME=		scorched3d
+PORTVERSION=		0.${SCORCH_VERSION}
+CATEGORIES=		games
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	scorched3d
+DISTNAME=		Scorched3D-${SCORCH_VERSION}-src
 
-PATCH_SITES=	ftp://ftp.jurai.net/users/winter/patches/
-PATCHFILES=	scorched3d-0.32.0-FreeBSD.patch.0.gz
+MAINTAINER=		mdodd@FreeBSD.org
+COMMENT=		Scorched is a game based loosely on the classic DOS game
 
-MAINTAINER=	mdodd@FreeBSD.org
-COMMENT=	Scorched is a game based loosely on the classic DOS game
+LIB_DEPENDS=		SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
+			SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer \
+			SDL_net.0:${PORTSDIR}/net/sdl_net \
+			wx_gtk.2:${PORTSDIR}/x11-toolkits/wxgtk-devel
 
-LIB_DEPENDS=	SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer \
-		SDL_image.10:${PORTSDIR}/graphics/sdl_image
+SCORCH_VERSION=		35
+WRKSRC=			${WRKDIR}/scorched
+SDL_CONFIG?=		${LOCALBASE}/bin/sdl11-config
+GNU_CONFIGURE= 		yes
+USE_MESA=		yes
+USE_GMAKE=		yes
+USE_AUTOMAKE_VER=	15
+USE_AUTOCONF_VER=	253
 
-SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
-
-USE_MESA=	yes
-HAS_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=		--prefix=${PREFIX}/games
+AUTOMAKE_ARGS=		--foreign
+CONFIGURE_ARGS=		--with-wx-config=${X11BASE}/bin/wx-config
 CONFIGURE_ENV=		CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
 			SDL_CONFIG="${LOCALBASE}/bin/sdl11-config"
 MAKE_ENV=		SDL_CONFIG="${LOCALBASE}/bin/sdl11-config"
+MAKE_ARGS=		ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" \
+			AUTOMAKE="${TRUE}" AUTOHEADER="${TRUE}"
+
+pre-configure:
+	@cd ${WRKSRC}/scripts && ${PERL} createAMMakefile.pl
+	@cd ${WRKSRC} && aclocal
 
 pre-install:
-	@mkdir -p ${PREFIX}/games
+	@mkdir -p ${PREFIX}/games/scorched3d
+
 post-install:
 	@ln -fs ${PREFIX}/games/scorched3d/scorched3d ${PREFIX}/bin/scorched3d
 

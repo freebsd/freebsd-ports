@@ -12,11 +12,6 @@ to recreate the simple yet addictive game play of the original game,
 adding amongst other new features a 3D island environment and LAN and
 internet play.
 
-NOTE:
-
-	This is a work in progress port of the Win32 game by
-	Gavin C. <gcamp@cisco.com>.  The port is done by
-	red.zebra@pandora.be for Linux.  Network play does
-	not work yet.
+You must run X11 in 16bpp mode in order for the game to run.
 
 WWW: http://www.scorched3d.co.uk/
