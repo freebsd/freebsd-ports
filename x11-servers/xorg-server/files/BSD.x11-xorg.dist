@@ -1,4 +1,4 @@
-# $FreeBSD: /tmp/pcvs/ports/x11-servers/xorg-server/files/Attic/BSD.x11-xorg.dist,v 1.1 2005-03-17 23:22:12 lesi Exp $
+# $FreeBSD: /tmp/pcvs/ports/x11-servers/xorg-server/files/Attic/BSD.x11-xorg.dist,v 1.2 2005-03-25 07:03:04 lesi Exp $
 #
 # Please see the file src/etc/mtree/README before making changes to this file.
 #
@@ -380,6 +380,10 @@
                 ..
             ..
             ms
+                LC_MESSAGES
+                ..
+            ..
+            mt
                 LC_MESSAGES
                 ..
             ..
