@@ -10,19 +10,25 @@ bin/wmaker.inst
 bin/wmsetbg
 bin/wxcopy
 bin/wxpaste
+lib/libPropList.a
+@exec ranlib %D/%F
+lib/libPropList.so.0.7
+@exec /sbin/ldconfig -m %D
+@unexec /sbin/ldconfig -m %D
 lib/libwraster.a
 @exec ranlib %D/%F
 lib/libWMaker.a
 @exec ranlib %D/%F
 lib/libWINGs.a
 @exec ranlib %D/%F
+include/proplist.h
 include/wraster.h
 include/WINGs.h
 include/WMaker.h
+include/WUtil.h
 share/WINGs/Images.tiff
 share/WINGs/Images.xpm
 share/WindowMaker/Backgrounds/BlueImage.jpeg
-share/WindowMaker/Copyright
 share/WindowMaker/Defaults/WMRootMenu
 share/WindowMaker/Defaults/WMState
 share/WindowMaker/Defaults/WMWindowAttributes
@@ -38,6 +44,8 @@ share/WindowMaker/Pixmaps/clip.tiff
 share/WindowMaker/Pixmaps/clip.xpm
 share/WindowMaker/Pixmaps/defaultAppIcon.tiff
 share/WindowMaker/Pixmaps/defaultAppIcon.xpm
+share/WindowMaker/Pixmaps/tile.tiff
+share/WindowMaker/Pixmaps/tile.xpm
 share/WindowMaker/README
 share/WindowMaker/Styles/Black
 share/WindowMaker/Styles/Blue
@@ -76,6 +84,7 @@ share/WindowMaker/menu.nl
 share/WindowMaker/menu.no
 share/WindowMaker/menu.pt
 share/WindowMaker/menu.ru
+share/WindowMaker/menu.tr
 share/WindowMaker/wmmacros
 @dirrm share/WindowMaker/Themes
 @dirrm share/WindowMaker/Styles
