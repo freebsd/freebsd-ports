@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	libXfont
-PORTVERSION=	1.4.1.p1
+PORTVERSION=	1.4.1
 CATEGORIES=	x11
-MASTER_SITES=	http://pdx.freedesktop.org/~anholt/dist/
+MASTER_SITES=	http://pdx.freedesktop.org/~xlibs/release/
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X font libary
@@ -20,10 +20,10 @@ LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
 USE_BZIP2=	yes
 PREFIX?=	${X11BASE}
 GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	--enable-freetype
-WRKSRC=		${WRKDIR}/${PORTNAME}-1.4.1
-
 INSTALLS_SHLIB=	yes
+USE_GNOME=	gnomehack pkgconfig
 
 .include <bsd.port.mk>
