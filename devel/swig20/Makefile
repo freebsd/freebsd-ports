@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	swig
-PORTVERSION=	1.3.14
+PORTVERSION=	1.3.16
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-		ftp://ftp.rge.com/pub/languages/swig/ \
-		ftp://ftp.mcc.ac.uk/pub/mvc/swig/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	knu@FreeBSD.org

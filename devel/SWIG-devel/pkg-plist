@@ -78,11 +78,10 @@ lib/swig%%VER%%/php4/std_string.i
 lib/swig%%VER%%/php4/std_vector.i
 lib/swig%%VER%%/php4/stl.i
 lib/swig%%VER%%/php4/typemaps.i
+lib/swig%%VER%%/php4/utils.i
 lib/swig%%VER%%/pointer.i
 lib/swig%%VER%%/python/defarg.swg
 lib/swig%%VER%%/python/embed.i
-lib/swig%%VER%%/python/embed13.i
-lib/swig%%VER%%/python/embed14.i
 lib/swig%%VER%%/python/embed15.i
 lib/swig%%VER%%/python/pyrun.swg
 lib/swig%%VER%%/python/python.swg
@@ -119,14 +118,21 @@ lib/swig%%VER%%/tcl/tcl8.swg
 lib/swig%%VER%%/tcl/tclsh.i
 lib/swig%%VER%%/tcl/typemaps.i
 lib/swig%%VER%%/tcl/wish.i
+lib/swig%%VER%%/ocaml/cstring.i
+lib/swig%%VER%%/ocaml/libswigocaml.h
+lib/swig%%VER%%/ocaml/libswigocaml.swg
 lib/swig%%VER%%/ocaml/ocaml.i
+lib/swig%%VER%%/ocaml/ocaml.swg
+lib/swig%%VER%%/ocaml/ocamldec.swg
+lib/swig%%VER%%/ocaml/std_common.i
+lib/swig%%VER%%/ocaml/std_complex.i
+lib/swig%%VER%%/ocaml/std_deque.i
+lib/swig%%VER%%/ocaml/std_list.i
 lib/swig%%VER%%/ocaml/std_string.i
 lib/swig%%VER%%/ocaml/std_vector.i
 lib/swig%%VER%%/ocaml/stl.i
+lib/swig%%VER%%/ocaml/typecheck.i
 lib/swig%%VER%%/ocaml/typemaps.i
-lib/swig%%VER%%/ocaml/libswigocaml.swg
-lib/swig%%VER%%/ocaml/ocaml.swg
-lib/swig%%VER%%/ocaml/ocamldec.swg
 @dirrm lib/swig%%VER%%/guile
 @dirrm lib/swig%%VER%%/java
 @dirrm lib/swig%%VER%%/mzscheme
