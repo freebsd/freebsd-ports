@@ -7,12 +7,12 @@
 #
 
 PORTNAME=	ija
-PORTVERSION=	0.4.3
+PORTVERSION=	0.4.11
 CATEGORIES=	news
 MASTER_SITES=	http://wildspark.com/asher/ija/
 EXTRACT_SUFX=	.gz
 
-MAINTAINER=	ijliao@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/URI/Escape.pm:${PORTSDIR}/net/p5-URI \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww
