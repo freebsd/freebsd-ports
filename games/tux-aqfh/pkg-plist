@@ -240,6 +240,7 @@ share/tux_aqfh/penguin/Penguin_orig.rgb
 share/tux_aqfh/penguin/Robin_body.rgb
 share/tux_aqfh/penguin/Scorpion_body.rgb
 share/tux_aqfh/penguin/SuperTux.rgb
+share/tux_aqfh/penguin/bakiny_tux.rgb
 share/tux_aqfh/penguin/blue_neon.rgb
 share/tux_aqfh/penguin/bow.ac
 share/tux_aqfh/penguin/bow.rgb
@@ -279,6 +280,7 @@ share/tux_aqfh/penguin/penguin_slide.ac
 share/tux_aqfh/penguin/red_ripple.rgb
 share/tux_aqfh/penguin/supergown_body.ac
 share/tux_aqfh/penguin/superpenguin_body.ac
+share/tux_aqfh/penguin/tux.ac
 share/tux_aqfh/running.html
 share/tux_aqfh/slam.html
 share/tux_aqfh/snap2tb.png

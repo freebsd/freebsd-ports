@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tux_aqfh
-PORTVERSION=	1.0.13
+PORTVERSION=	1.0.14
 CATEGORIES=	games
 MASTER_SITES=	http://tuxaqfh.sourceforge.net/dist/
 
@@ -28,7 +28,7 @@ post-patch:
 		 s|-lpthread|${PTHREAD_LIBS}|g ; \
 		 s|datadir/games|datadir|g' ${WRKSRC}/configure
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
-		's|\$$(prefix)/games|\@bindir\@|g ; \
-		 s|\$$(datadir)/games|\$$(datadir)|g'
+		's|[\$$][(]prefix[)]/games|\@bindir\@|g ; \
+		 s|[\$$][(]datadir[)]/games|\$$(datadir)|g'
 
 .include <bsd.port.mk>
