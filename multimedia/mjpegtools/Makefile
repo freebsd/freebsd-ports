@@ -179,7 +179,7 @@ post-patch:
 		${WRKSRC}/lavtools/Makefile.in
 
 post-configure:
-	@${CP} -f ${LOCALBASE}/bin/${LIBTOOL} ${WRKSRC}
+	@${CP} -f ${LIBTOOL} ${WRKSRC}
 
 pre-build:
 .ifdef(WITH_QUICKTIME)
