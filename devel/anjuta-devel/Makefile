@@ -18,7 +18,7 @@ LIB_DEPENDS=	scintilla.1:${PORTSDIR}/x11-toolkits/scintilla
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOMENG=	yes
-USE_GNOME=	gnomeprefix gnomehack gnomevfs gnomeprint
+USE_GNOME=	gnomeprefix gnomehack gnomevfs gnomeprint gdkpixbuf
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
