@@ -16,8 +16,8 @@ include/osip/thread.h
 include/osip/urls.h
 lib/libfsmtl.a
 lib/libfsmtl.so
-lib/libfsmtl.so.0
+lib/libfsmtl.so.9
 lib/libosip.a
 lib/libosip.so
-lib/libosip.so.0
+lib/libosip.so.9
 @dirrm include/osip
