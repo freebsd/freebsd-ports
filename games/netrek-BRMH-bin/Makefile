@@ -9,7 +9,8 @@ PORTNAME=	netrek-BRMH
 PORTVERSION=	2.2.2
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.solace.mh.se/pub/netrek/clients/bsd/
-DISTFILES=	BRMH-2.2p2.freebsd.bin.gz
+DISTNAME=	BRMH-2.2p2.freebsd.bin
+EXTRACT_SUFX=	.gz
 
 MAINTAINER=	dburr@FreeBSD.org
 
