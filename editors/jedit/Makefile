@@ -15,25 +15,28 @@ EXTRACT_SUFX=	.jar
 EXTRACT_ONLY=
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Powerful programmer's text editor written in Java
+COMMENT=	Powerful programmer\'s text editor written in Java
 
-USE_JAVA=	1.3+
+RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
+
+USE_JAVA=	yes
+JAVA_VERSION=	1.3+
 
 USE_XLIB=	yes
 NO_BUILD=	yes
+
+DATADIR=	${JAVASHAREDIR}/${PORTNAME}
+
+SUB_FILES=	jedit.sh
 
 MAN1=		jedit.1
 # The complete PLIST is generated in post-install
 PLIST_FILES=	bin/jedit
 
-do-configure:
-	@${SED} "s|%%PREFIX%%|${PREFIX}|g ; s|%%LOCALBASE%%|${LOCALBASE}|g" \
-		${FILESDIR}/jedit.sh > ${WRKDIR}/jedit.sh
-
 do-install:
-	@${SED} "s|%%PREFIX%%|${PREFIX}| ; s|%%WRKDIR%%|${WRKDIR}|" ${FILESDIR}/instscript | \
+	@${SED} "s|%%PREFIX%%|${PREFIX}| ; s|%%DATADIR%%|${DATADIR}| ; s|%%WRKDIR%%|${WRKDIR}|" ${FILESDIR}/instscript | \
 		${SETENV} CLASSPATH=${DISTDIR}/${DISTNAME}.jar \
-		${LOCALBASE}/bin/javavm installer.Install text
+		${JAVA} installer.Install text
 	@${INSTALL_SCRIPT} ${WRKDIR}/jedit.sh ${PREFIX}/bin/jedit
 
 .if defined(PARALLEL_PACKAGE_BUILD)
@@ -41,16 +44,10 @@ IGNORE=	hang
 .endif
 
 post-install:
-	@${FIND} ${JAVASHAREDIR} ! -type d | \
+	@${FIND} ${DATADIR} ! -type d | \
 		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
-	@${FIND} ${JAVASHAREDIR} -type d | ${SORT} -r | \
+	@${FIND} ${DATADIR} -type d | ${SORT} -r | \
 		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
-	@${ECHO_CMD} "******************************************************"
-	@${ECHO_CMD} ""
-	@${ECHO_CMD} "In order to use the optional SFTP plug-in for jEdit,"
-	@${ECHO_CMD} "you will need to have Java JDK version 1.4 or newer"
-	@${ECHO_CMD} "installed."
-	@${ECHO_CMD} ""
-	@${ECHO_CMD} "******************************************************"
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
