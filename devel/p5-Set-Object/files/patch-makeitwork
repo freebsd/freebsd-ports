@@ -1,0 +1,28 @@
+diff -ruN Set-Object-1.05/Makefile.PL ../Set-Object-1.05/Makefile.PL
+--- Makefile.PL	Tue May 20 15:12:29 2003
++++ Makefile.PL	Mon Apr 19 15:26:49 2004
+@@ -5,6 +5,6 @@
+     'NAME'	=> 'Set::Object',
+     'VERSION_FROM' => 'Object.pm', # finds $VERSION
+     'LIBS'	=> [''],   # e.g., '-lm' 
+-    'DEFINE'	=> '',     # e.g., '-DHAVE_SOMETHING' 
++    'DEFINE'	=> $] < 5.006 ? '-DaTHX_=""' : '',     # e.g., '-DHAVE_SOMETHING' 
+     'INC'	=> '',     # e.g., '-I/usr/include/other' 
+ );
+diff -ruN Set-Object-1.05/Object.xs ../Set-Object-1.05/Object.xs
+--- Object.xs	Wed Sep  3 01:16:28 2003
++++ Object.xs	Mon Apr 19 15:38:49 2004
+@@ -522,7 +522,7 @@
+       // (less "Use of uninitialised value..." messages)
+ 
+       // XSRETURN_UNDEF;
+-	RETVAL = PTR2UV(SvRV(sv));
++	RETVAL = (UV)(SvRV(sv));
+     }
+ }
+ OUTPUT:
+diff -ruN Set-Object-1.05/typemap ../Set-Object-1.05/typemap
+--- typemap	Thu Jan  1 01:00:00 1970
++++ typemap	Mon Apr 19 15:36:03 2004
+@@ -0,0 +1 @@
++UV	T_IV
