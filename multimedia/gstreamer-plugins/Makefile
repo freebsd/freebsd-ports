@@ -742,6 +742,10 @@ pre-everything::
 	@${ECHO_MSG} '===>'
 	@${ECHO_MSG} '===> Define WITH_SDL to enable SDL Video plugin'
 .endif
+.ifndef(WITH_SWFDEC)
+	@${ECHO_MSG} '===>'
+	@${ECHO_MSG} '===> Define WITH_SWFDEC to enable Flash Video plugin'
+.endif
 .ifndef(WITH_VORBIS)
 	@${ECHO_MSG} '===>'
 	@${ECHO_MSG} '===> Define WITH_VORBIS to enable vorbis Audio plugin'
