@@ -47,3 +47,4 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/perl-ldap/.packlist
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/Bundle/Net
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/Bundle
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/perl-ldap
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Net 2>/dev/null || true

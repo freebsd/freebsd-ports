@@ -184,3 +184,7 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Unicode/Map8/Map8.bs
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Unicode/Map8/Map8.so
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Unicode/Map8/.packlist
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Unicode/Map8
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Map8/maps
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Map8
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Unicode 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode 2>/dev/null || true

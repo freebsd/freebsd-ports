@@ -1,3 +1,4 @@
+bin/countmail
 lib/perl5/site_perl/%%PERL_VER%%/Mail/Stats.pm
 lib/perl5/site_perl/%%PERL_VER%%/Mail/Stats/Config.pm
 lib/perl5/site_perl/%%PERL_VER%%/Mail/Stats/Parser.pm
