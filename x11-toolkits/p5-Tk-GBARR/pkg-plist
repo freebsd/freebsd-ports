@@ -1,0 +1,9 @@
+lib/perl5/site_perl/%%PERL_VER%%/Tk/Cloth.pm
+lib/perl5/site_perl/%%PERL_VER%%/Tk/FireButton.pm
+lib/perl5/site_perl/%%PERL_VER%%/Tk/NumEntry.pm
+lib/perl5/site_perl/%%PERL_VER%%/Tk/NumEntryPlain.pm
+lib/perl5/site_perl/%%PERL_VER%%/Tk/TFrame.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/GBARR/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/GBARR
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Tk 2>/dev/null || true
