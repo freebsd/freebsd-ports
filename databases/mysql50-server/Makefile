@@ -7,7 +7,7 @@
 
 PORTNAME?=	mysql
 PORTVERSION=	4.1.0
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	databases
 MASTER_SITES=	ftp://mysql.secsup.org/pub/software/mysql/Downloads/MySQL-4.1/ \
 		http://mysql.tzone.it/Downloads/MySQL-4.1/ \
