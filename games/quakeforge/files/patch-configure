@@ -1,29 +1,6 @@
---- configure.orig	Sun Jul 27 13:19:51 2003
-+++ configure	Sun Jul 27 13:41:57 2003
-@@ -2042,10 +2042,10 @@
- ac_compiler_gnu=$ac_cv_c_compiler_gnu
- 
- 
--if test ${CFLAGS-unset} = unset; then
-+if test "${CFLAGS-unset}" = unset; then
- 	CFLAGS=""
- fi
--if test ${AR-unset} = unset; then
-+if test "${AR-unset}" = unset; then
- 	AR="ar"
- fi
- export AR
-@@ -8333,6 +8333,9 @@
- else
- 	CPP_NAME="cpp %d -o %o %i"
- 	case "$target_os" in
-+		*freebsd*)
-+			CPP_NAME="cpp %d %i %o"
-+			;;
- 		*bsd*)
- 			touch conftest.c
- 			CPP_NAME="`(f=\`$CC -v -E -Dfoo conftest.c -o conftest.i 2>&1 | grep -e -Dfoo\`; set $f; echo "$1")` %d %i %o"
-@@ -10726,7 +10729,7 @@
+--- configure.orig	Fri Aug 20 12:01:33 2004
++++ configure	Fri Aug 20 12:02:10 2004
+@@ -22733,7 +22733,7 @@
  int
  main ()
  {
