@@ -7,6 +7,7 @@
 
 PORTNAME=	gmat
 PORTVERSION= 	0.2.4b
+PORTREVISION=	1
 WRKSRC=		${WRKDIR}/${PORTNAME}-0.2.4
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp.ora.com/pub/gmat/
