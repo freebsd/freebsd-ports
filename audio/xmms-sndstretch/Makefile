@@ -14,7 +14,7 @@ DISTNAME=	sndstretch_xmms-${PORTVERSION}
 
 MAINTAINER=	ports@edwinm.ik.nu
 
-LIB_DEPENDS=	xmms.2:${PORTSDIR}/audio/xmms
+LIB_DEPENDS=	xmms.3:${PORTSDIR}/audio/xmms
 
 WRKSRC=		${WRKDIR}/sndstretch_xmms
 

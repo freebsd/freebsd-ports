@@ -14,7 +14,7 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	jan@jungnickel.com
 
-LIB_DEPENDS=	xmms.2:${PORTSDIR}/audio/xmms
+LIB_DEPENDS=	xmms.3:${PORTSDIR}/audio/xmms
 
 USE_KDELIBS_VER=2
 

@@ -14,7 +14,7 @@ DISTNAME=	xmms_sndfile-${PORTVERSION:S/.p/pre/}
 MAINTAINER=	dyeske@yahoo.com
 
 LIB_DEPENDS=	sndfile.0:${PORTSDIR}/audio/libsndfile \
-		xmms.2:${PORTSDIR}/audio/xmms
+		xmms.3:${PORTSDIR}/audio/xmms
 
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 

@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	xmms-
 
 MAINTAINER=	pat@FreeBSD.org
 
-LIB_DEPENDS=	xmms.2:${PORTSDIR}/audio/xmms
+LIB_DEPENDS=	xmms.3:${PORTSDIR}/audio/xmms
 
 USE_X_PREFIX=	yes
 USE_GTK=	yes
