@@ -11,9 +11,12 @@
 
 	2)	Install the ogo database scheme for PostgreSQL.
 
-	3)	manually add a line into your httpd.conf
+	3)	manually add one line into your httpd.conf
 
 	For a complete and detailed walkthrough refer to
 	the INSTALL.fbsd in:
 
 	/compat/linux/opt/opengroupware.org
+
+	Enjoy using OpenGroupware.org!
+

@@ -7,7 +7,7 @@ OGO_USER='ogo'
 OGO_GROUP='skyrix'
 NHSD_BIN='/compat/linux/opt/opengroupware.org/Tools/ix86/linux-gnu/gnu-fd-nil/nhsd'
 OGO_DIR='/compat/linux/opt/opengroupware.org'
-LOG='/var/log/opengroupware/xmlrpcd.log'
+LOG='/var/log/opengroupware/nhsd.log'
 
 
 case $1 in

@@ -29,8 +29,8 @@ FETCH_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache2 \
 
 #BEGINSET1
 
-SET1=		opengroupware-core-4.2-ogo014.i386.rpm:ogo \
-		opengroupware-core-tools-4.2-ogo014.i386.rpm:ogo \
+SET1=		opengroupware-core-4.2-ogo015.i386.rpm:ogo \
+		opengroupware-core-tools-4.2-ogo015.i386.rpm:ogo \
 		opengroupware-database-1.0-ogo011.i386.rpm:ogo \
 		opengroupware-docapi-1.0-ogo026.i386.rpm:ogo \
 		opengroupware-env-1.0-ogo007.i386.rpm:ogo \
@@ -38,7 +38,7 @@ SET1=		opengroupware-core-4.2-ogo014.i386.rpm:ogo \
 		opengroupware-gstep-db-postgresql72-4.2-ogo013.i386.rpm:ogo \
 		opengroupware-gstep-make-4.2-ogo008.i386.rpm:ogo \
 		opengroupware-gstep-objc-2.95.3-ogo008.i386.rpm:ogo \
-		opengroupware-js-1.5-ogo008.i386.rpm:ogo \
+		opengroupware-js-1.5-ogo009.i386.rpm:ogo \
 		opengroupware-libfoundation-1.0.12-ogo014.i386.rpm:ogo \
 		opengroupware-libical-0.23.0-ogo006.i386.rpm:ogo \
 		opengroupware-libxml2-2.5.3-ogo007.i386.rpm:ogo \
@@ -70,17 +70,17 @@ SET1=		opengroupware-core-4.2-ogo014.i386.rpm:ogo \
 		opengroupware-webui-news-1.0-ogo008.i386.rpm:ogo \
 		opengroupware-webui-prefs-1.0-ogo008.i386.rpm:ogo \
 		opengroupware-webui-project-1.0-ogo023.i386.rpm:ogo \
-		opengroupware-webui-resource-de-1.0-ogo030.i386.rpm:ogo \
-		opengroupware-webui-resource-dk-1.0-ogo030.i386.rpm:ogo \
-		opengroupware-webui-resource-en-1.0-ogo030.i386.rpm:ogo \
-		opengroupware-webui-resource-es-1.0-ogo030.i386.rpm:ogo \
-		opengroupware-webui-resource-fr-1.0-ogo030.i386.rpm:ogo \
-		opengroupware-webui-resource-it-1.0-ogo030.i386.rpm:ogo \
-		opengroupware-webui-resource-pt_BR-1.0-ogo030.i386.rpm:ogo \
+		opengroupware-webui-resource-de-1.0-ogo032.i386.rpm:ogo \
+		opengroupware-webui-resource-dk-1.0-ogo032.i386.rpm:ogo \
+		opengroupware-webui-resource-en-1.0-ogo032.i386.rpm:ogo \
+		opengroupware-webui-resource-es-1.0-ogo032.i386.rpm:ogo \
+		opengroupware-webui-resource-fr-1.0-ogo032.i386.rpm:ogo \
+		opengroupware-webui-resource-it-1.0-ogo032.i386.rpm:ogo \
+		opengroupware-webui-resource-pt_BR-1.0-ogo032.i386.rpm:ogo \
 		opengroupware-webui-scheduler-1.0-ogo018.i386.rpm:ogo \
-		opengroupware-xml-4.2-ogo014.i386.rpm:ogo \
-		opengroupware-xml-icalsaxdriver-4.2-ogo014.i386.rpm:ogo \
-		opengroupware-xml-libxmlsaxdriver-4.2-ogo014.i386.rpm:ogo \
+		opengroupware-xml-4.2-ogo015.i386.rpm:ogo \
+		opengroupware-xml-icalsaxdriver-4.2-ogo015.i386.rpm:ogo \
+		opengroupware-xml-libxmlsaxdriver-4.2-ogo015.i386.rpm:ogo \
 		opengroupware-xmlrpcd-1.0-ogo013.i386.rpm:ogo \
 		opengroupware-zidestore-1.0-ogo026.i386.rpm:ogo
 #ENDSET1

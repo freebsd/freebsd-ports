@@ -1,5 +1,5 @@
-#$Id: INSTALL.fbsd,v 1.2 2003/09/13 14:59:49 frank Exp $
 GENERAL NOTE:
+=============
 
 	You're welcome to ask questions about OpenGroupware
 	at
@@ -7,7 +7,11 @@ GENERAL NOTE:
 		http://www.opengroupware.org
 
 	too. :p Don't hesitate.
+	Beside the FAQ are several mailinglists and ofcourse
+	our mailinglist archive as first aid kit.
 
+INSTALLATION WALKTHROUGH:
+=========================
 
 1)	First of all - you must have linux compat mode
 	activated.
@@ -38,7 +42,7 @@ GENERAL NOTE:
 
 		linproc                 /compat/linux/proc      linprocfs rw 0 0
 
-	(If you don't have linproc mounted - OGo will coredump :P - so check twice)
+	(If you don't have linproc mounted - OGo will teach you and coredump :P - so check twice)
 
 
 2)	Make sure, that your PostgreSQL Installation
@@ -51,7 +55,7 @@ GENERAL NOTE:
 	should show you if it is.
 	The output might look like:
 
-		[root@minax]/usr/local/pgsql/data: netstat -an -p tcp|grep -i 5432
+		[frank@minax]/usr/local/pgsql/data: netstat -an -p tcp|grep -i 5432
 		tcp4       0      0  *.5432                 *.*                    LISTEN
 
 	(Hoping that it is really PostgreSQL showing up there :))
@@ -60,7 +64,7 @@ GENERAL NOTE:
 
 	should give you better results since it gives an output like this:
 
-		[root@minax]/usr/local/pgsql/data: lsof -Pni|grep -i 5432
+		[frank@minax]/usr/local/pgsql/data: lsof -Pni|grep -i 5432
 		postgres  411 pgsql    3u  IPv4 0xc428cca8      0t0  TCP *:5432 (LISTEN)
 
 	If there's no output at all (ie. nothing similiar to what you've just seen)
@@ -69,7 +73,7 @@ GENERAL NOTE:
 
 		'/usr/local/pgsql/data/postgresql.conf'
 
-	and make sure that there's the following line active:
+	and make sure that there's the following line activated:
 
 		tcpip_socket = true
 
@@ -109,17 +113,22 @@ GENERAL NOTE:
 
 		`psql ogo ogo`
 		
-		a shell like environment appears know.... type there:
+		a shell like environment appears know... type there:
 
 		\i /compat/linux/opt/opengroupware.org/Database/PostgreSQL/pg-build-schema.psql
 
-		...and the database scheme gets installed.
+		...and the basic database scheme gets installed.
+		There's also a scheme with constraints in the same directory.
+		It's safe to add this one too:
+
+		\i /compat/linux/opt/opengroupware.org/Database/PostgreSQL/pg-build-schema.psql.constraints
+		
 
 		Leave this shell with
 
 		\q
 
-		and CTRL-D back to your `root` account.
+		and CTRL-D back into your `root` account.
 
 5)	Restart PostgreSQL again.
 
@@ -128,14 +137,23 @@ GENERAL NOTE:
 
 		`/usr/local/etc/rc.d/ogo.sh.sample start`
 
+7)	There are some other startscripts in /usr/local/etc/rc.d too:
+
+	nhsd.sh.sample		-	Network Hotsync (tm) Daemon
+							useful if you want to use PALM [tm] Sync
+
+	xmlrpcd.sh.sample	-	XML-RPC Daemon
+							as the name says - an XMLRPC daemon
+
+	zidestore.sh.sample	-	the famous ZideStore daemon
+							necessary if you want to use thirdparty
+							applications in conjunction with OGo.
+							(Evolution, Mozilla, Apple iCal.app,
+							KOrganizer, generic WebDAV clients ...)
+
 
 NOW POINT YOUR BROWSER TO:
 
 	http://<host.where.you.installed.tld>/OpenGroupware/
 
 and enjoy! :)
-
-
--- 
-
-	Frank Reppin
