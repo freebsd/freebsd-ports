@@ -12,6 +12,7 @@ MASTER_SITES=   ftp://lynx.isc.org/current/
 DISTNAME=	lynx2.8.3rel.1
 
 USE_OPENSSL=	YES
+USE_BZIP2=	YES
 
 .include <bsd.port.pre.mk>
 
