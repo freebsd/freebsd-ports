@@ -1,3 +1,0 @@
-lib/perl5/site_perl/%%PERL_VER%%/GPG.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/GPG/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/GPG
