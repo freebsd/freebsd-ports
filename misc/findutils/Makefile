@@ -11,7 +11,7 @@ CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR= findutils
 
-MAINTAINER=	Cyrille Lefevre <clefevre@citeweb.net>
+MAINTAINER=	clefevre@citeweb.net
 
 GNU_CONFIGURE=	yes
 
