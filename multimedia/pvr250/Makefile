@@ -8,6 +8,7 @@
 
 PORTNAME=	pvr250
 PORTVERSION=	20041230
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.mavetju.org/download/adopted/
 DISTFILES=	${CXMSHAR} hcwPVRP2.sys ${PVRTOOLS}.tar.gz
@@ -30,6 +31,7 @@ NO_CDROM=	${RESTRICTED}
 OPTIONS=	USBROADCAST	"US Broadcast"	Off \
 		USCABLE		"US Cable" Off \
 		BGBROADCAST	"B/G Broadcast" Off \
+		BGCABLE		"B/G Cable" Off \
 		BGAUSTRALIA	"B/G Australia" Off \
 		IBROADCAST	"I Broadcast" Off \
 		LBROADCAST	"L Broadcast" Off
@@ -52,6 +54,9 @@ EXTRA_PATCHES=	${FILESDIR}/patchtuner-uscable
 .endif
 .if defined(WITH_BGBROADCAST)
 EXTRA_PATCHES=	${FILESDIR}/patchtuner-bgbroadcast
+.endif
+.if defined(WITH_BGCABLE)
+EXTRA_PATCHES=	${FILESDIR}/patchtuner-bgcable
 .endif
 .if defined(WITH_BGAUSTRALIA)
 EXTRA_PATCHES=	${FILESDIR}/patchtuner-bgaustralia
