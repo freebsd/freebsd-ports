@@ -17,6 +17,8 @@ DISTFILES=	bootkit-RC2.tar.gz \
 MAINTAINER=	chris@aims.com.au
 COMMENT=	The open-source InterBase(tm) 6.0 spin-off (Classic version)
 
+FORBIDDEN=	Local Stack Overflow, see http://packetstormsecurity.nl/0305-exploits/dsr-adv001.txt
+
 WRKSRC=		${WRKDIR}/interbase
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS=	%%PREFIX%%/firebird/lib
