@@ -191,6 +191,7 @@
     SUBDIR += poster
     SUBDIR += preview-latex
     SUBDIR += pscal
+    SUBDIR += pslib
     SUBDIR += psmark
     SUBDIR += pstotext
     SUBDIR += psutils-a4
