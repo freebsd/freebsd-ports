@@ -23,6 +23,7 @@
     SUBDIR += ghemical
     SUBDIR += glens
     SUBDIR += gramps
+    SUBDIR += gromacs
     SUBDIR += hdf
     SUBDIR += hdf5
     SUBDIR += kmovisto
