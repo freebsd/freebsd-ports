@@ -18,4 +18,6 @@ PERL_CONFIGURE=	yes
 MAN3PREFIX=	${LOCALBASE}/lib/perl5/${PERL_VERSION}
 MAN3=		Tk::FileDialog.3
 
+PLIST_SUB=	PERL_VERSION=${PERL_VERSION}
+
 .include <bsd.port.mk>
