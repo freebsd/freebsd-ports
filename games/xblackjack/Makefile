@@ -14,6 +14,8 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
 
+BROKEN=		"Broken by open-motif upgrade"
+
 USE_MOTIF=	yes
 USE_IMAKE=	yes
 MAN1=		xblackjack.1
