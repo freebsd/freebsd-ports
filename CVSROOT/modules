@@ -4895,6 +4895,7 @@ moonshine	ports/devel/moonshine
 mopac		ports/biology/mopac
 mopd		ports/net/mopd
 morebalance	ports/net/morebalance
+moregroupware	ports/deskutils/moregroupware
 moria		ports/games/moria
 morpheus	ports/graphics/morpheus
 mosaic		ports/www/Mosaic
