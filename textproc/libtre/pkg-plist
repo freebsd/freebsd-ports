@@ -4,7 +4,7 @@ include/tre/regex.h
 include/tre/tre-config.h
 lib/libtre.a
 lib/libtre.so
-lib/libtre.so.3
+lib/libtre.so.4
 libdata/pkgconfig/tre.pc
 share/locale/fi/LC_MESSAGES/tre.mo
 @dirrm include/tre

@@ -11,4 +11,4 @@ of the text. The used space is also quadratic on the length of the regex, but
 does not depend on the searched string. This quadratic behaviour occurs only
 on pathological cases which are probably very rare in practice.
 
-WWW: http://kouli.iki.fi/~vlaurika/tre/
+WWW: http://laurikari.net/tre/
