@@ -1,0 +1,19 @@
+*** sysmatsp.cc.orig	Wed Jul  9 14:07:24 1997
+--- sysmatsp.cc	Wed Jul  9 14:11:23 1997
+***************
+*** 171,177 ****
+  void SparseMatrix:: printMatLabFormat() const
+  {
+      char s[10];
+!     printf ("\n---  print A ?  <No> ");  gets(s);
+      strToLower(s);
+      if (!strchr(s,'y'))  return;
+  
+--- 171,177 ----
+  void SparseMatrix:: printMatLabFormat() const
+  {
+      char s[10];
+!     printf ("\n---  print A ?  <No> ");  fgets(s,256,stdin);
+      strToLower(s);
+      if (!strchr(s,'y'))  return;
+  

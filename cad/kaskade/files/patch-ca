@@ -1,0 +1,86 @@
+	This patch is for ZGUI and it's not used because it requires an
+		outdated version of Tcl/Tk.
+*** zgui/Makefile.orig	Tue Feb  6 04:30:35 1996
+--- zgui/Makefile	Sat Jul 19 21:58:03 1997
+***************
+*** 1,22 ****
+! OS = SUNOS
+  CC = gcc
+  FORTRAN = f77
+  RANLIB = ranlib
+  
+! CFLAGS = -g -O -W -Wall
+  FFLAGS =  -O -xl
+! FTNLIB = -L/opt/SUNWspro/SC3.0/lib -lF77 -lM77
+! LFLAGS = -g
+  
+  OBJS = $(OBJDIR)/ParLists.o $(OBJDIR)/FtnParLists.o $(OBJDIR)/tclHash.o
+  GUIOBJS = $(OBJDIR)/ParLists.o $(OBJDIR)/TclParLists.o $(OBJDIR)/zgui.o\
+            $(OBJDIR)/AppStart.o
+  
+! TCLLIB =     /zib5/Tk_Tcl/tcl7.4/lib       # path for TCL libs, depends on your installation
+! TCLINCLUDE = /zib5/Tk_Tcl/tcl7.4/include   # path for TCL include files
+  
+! TKLIB =      /zib5/Tk_Tcl/tk4.0/lib        # path for tk libs, depends on your installation
+! TKINCLUDE =  /zib5/Tk_Tcl/tk4.0/include    # path for tk include files
+  
+  LIBDIR = lib-$(OS)
+  OBJDIR = obj-$(OS)
+--- 1,22 ----
+! OS = FreeBSD
+  CC = gcc
+  FORTRAN = f77
+  RANLIB = ranlib
+  
+! CFLAGS = -O -W -I/usr/X11R6/include
+  FFLAGS =  -O -xl
+! FTNLIB = -lF77
+! LFLAGS = -g -L/usr/X11R6/lib
+  
+  OBJS = $(OBJDIR)/ParLists.o $(OBJDIR)/FtnParLists.o $(OBJDIR)/tclHash.o
+  GUIOBJS = $(OBJDIR)/ParLists.o $(OBJDIR)/TclParLists.o $(OBJDIR)/zgui.o\
+            $(OBJDIR)/AppStart.o
+  
+! TCLLIB =     /usr/local/lib       # path for TCL libs, depends on your installation
+! TCLINCLUDE = /usr/local/include   # path for TCL include files
+  
+! TKLIB =      /usr/local/lib        # path for tk libs, depends on your installation
+! TKINCLUDE =  /usr/local/include    # path for tk include files
+  
+  LIBDIR = lib-$(OS)
+  OBJDIR = obj-$(OS)
+***************
+*** 61,76 ****
+  
+  partest: $(LIBDIR)/zplib.a $(OBJDIR)/partest.o
+  	$(CC) $(OBJDIR)/partest.o -o partest $(LFLAGS) $(LIBDIR)/zplib.a \
+! 	       -L$(TCLLIB) -ltcl7.4 -lm
+  
+  ftnpartest: $(LIBDIR)/zplib.a $(OBJDIR)/ftnpartest.o
+  	$(FORTRAN) $(OBJDIR)/ftnpartest.o -o ftnpartest $(LFLAGS) \
+! 	        $(FTNLIB) $(LIBDIR)/zplib.a -L$(TCLLIB) -ltcl7.4 -lm
+  
+  
+  zgui: $(LIBDIR)/zguilib.a
+  	$(CC) -o zgui $(LFLAGS) $(LIBDIR)/zguilib.a \
+! 	       -L$(TKLIB) -ltk4.0 -L$(TCLLIB) -ltcl7.4 -lXpm -lm -lX11 -lsocket -lnsl
+  
+  clean:
+  	rm -rf $(OBJDIR)/* $(LIBDIR)/* partest ftnpartest
+--- 61,76 ----
+  
+  partest: $(LIBDIR)/zplib.a $(OBJDIR)/partest.o
+  	$(CC) $(OBJDIR)/partest.o -o partest $(LFLAGS) $(LIBDIR)/zplib.a \
+! 	       -L$(TCLLIB) -ltcl74 -lm
+  
+  ftnpartest: $(LIBDIR)/zplib.a $(OBJDIR)/ftnpartest.o
+  	$(FORTRAN) $(OBJDIR)/ftnpartest.o -o ftnpartest $(LFLAGS) \
+! 	        $(FTNLIB) $(LIBDIR)/zplib.a -L$(TCLLIB) -ltcl74 -lm
+  
+  
+  zgui: $(LIBDIR)/zguilib.a
+  	$(CC) -o zgui $(LFLAGS) $(LIBDIR)/zguilib.a \
+! 	       -L$(TKLIB) -ltk40 -L$(TCLLIB) -ltcl74 -lXpm -lm -lX11
+  
+  clean:
+  	rm -rf $(OBJDIR)/* $(LIBDIR)/* partest ftnpartest
