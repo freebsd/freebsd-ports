@@ -29,6 +29,8 @@ DDIR=		${PREFIX}/lib/tcl${TCL_VER}/Trf
 MAKE_ENV+=	TCL_VER=${TCL_VER} MKDIR="${MKDIR}" \
 		INSTALL_DATA="${INSTALL_DATA}"
 
+USE_REINPLACE=	yes
+REINPLACE_ARGS=	-i ""
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-tcl=${LOCALBASE}/lib/tcl${TCL_VER} \
 		--with-tclinclude=${LOCALBASE}/include/tcl${TCL_VER} \
@@ -40,10 +42,10 @@ post-extract:
 
 post-patch:
 	# Make direct calls to -lbz2
-	${PERL} -pi -e 's,bz\.([^(]+),BZ2_bz\u\1,g' \
+	${REINPLACE_CMD} -e 's,bz\.([^(]+),BZ2_bz\u\1,g' \
 		${WRKSRC}/generic/bz2.c
 	# Make direct calls to -lz
-	${PERL} -pi -e 's,zf\.([^(]+),\1,g' ${WRKSRC}/generic/adler.c \
+	${REINPLACE_CMD} -e 's,zf\.([^(]+),\1,g' ${WRKSRC}/generic/adler.c \
 		${WRKSRC}/generic/crc_zlib.c ${WRKSRC}/generic/zip.c
 
 post-install:
