@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	gawk
 MAINTAINER=	dd@FreeBSD.org
 COMMENT=	The GNU version of Awk
 
+INFO=		gawk gawkinet
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 500039
@@ -26,6 +28,13 @@ CONFIGURE_ARGS=	--with-libiconv-prefix=${LOCALBASE} \
 MAN1=		gawk.1 igawk.1
 
 PLIST_SUB=	VERSION=${PORTVERSION}
+
+.if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.else
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.endif
 
 .include <bsd.port.post.mk>
