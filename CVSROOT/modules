@@ -3352,6 +3352,7 @@ hyperlatex	ports/print/hyperlatex
 hypermail	ports/www/hypermail
 hypersrc	ports/devel/hypersrc
 i18ntools	ports/converters/i18ntools
+i2p		ports/net/i2p
 i386-rtems-binutils	ports/devel/i386-rtems-binutils
 i386-rtems-g77	ports/devel/i386-rtems-g77
 i386-rtems-gcc	ports/devel/i386-rtems-gcc
