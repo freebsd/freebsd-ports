@@ -1,5 +1,5 @@
 --- ricochet.orig	Thu Feb  8 22:23:19 2001
-+++ ricochet	Wed Jun 18 15:19:43 2003
++++ ricochet	Tue Jun 24 18:14:09 2003
 @@ -128,7 +128,10 @@
  										 ## List of receipients at ORIG_DOMAN 
                                           ## besides the CONTACTS.
@@ -119,6 +119,15 @@
      }
      
      $self->debug (2, "+ Seems Authentic.\n"); 
+@@ -464,7 +497,7 @@
+         my $email = $header->get ($_); chomp $email; 
+         $email = _email ($email); 
+         my $host = _host ($email); 
+-        $self->{CONTACTS}->add ($email) if $email;
++	$self->{CONTACTS}->add ($email) if ($email && $host);
+     } @{$self->{EXTRA_EMAIL_HEADERS}};
+ }
+ 
 @@ -574,7 +607,8 @@
  
  sub initialize { 
@@ -129,18 +138,55 @@
      Carp::croak "** Ricochet configuration file $rc doesn't exist. Aborting.\n" unless -e $rc; 
      open (RC, $rc); 
      grep { 
-@@ -758,8 +792,8 @@
+@@ -639,7 +673,6 @@
+     my ($cinfo, $list, @mails, %mailhash, $add); 
+     
+     $domainname = _domain ($domainname); 
+-    $domainname =~ y/A-Z/a-z/;
  
+     $level = 0 unless $level; 
+     
+@@ -756,10 +789,37 @@
+ ##      FUNCTION  Returns the domain part of the host. 
+ ## ---------------------------------------------------------------------------
+ 
++my @geo_rusu = (
++'adygeya','altai','amur','amursk','arkhangelsk','astrakhan','baikal',
++'bashkiria','belgorod','bir','bryansk','buryatia','cbg','chel','chelyabinsk',
++'chita','chukotka','chuvashia','cmw','dagestan','dudinka','e-burg','fareast',
++'grozny','irkutsk','ivanovo','izhevsk','jamal','jar','joshkar-ola','k-uralsk',
++'kalmykia','kaluga','kamchatka','karelia','kazan','kchr','kemerovo',
++'khabarovsk','khakassia','khv','kirov','kms','koenig','komi','kostroma',
++'krasnoyarsk','kuban','kurgan','kursk','kustanai','kuzbass','lipetsk',
++'magadan','magnitka','mari-el','mari','marine','mordovia','mosreg','msk',
++'murmansk','mytis','nakhodka','nalchik','nkz','nnov','norilsk','nov',
++'novosibirsk','nsk','omsk','orenburg','oryol','oskol','palana','penza','perm',
++'pskov','ptz','pyatigorsk','rnd','rubtsovsk','ryazan','sakhalin','samara',
++'saratov','simbirsk','smolensk','snz','spb','stavropol','stv','surgut',
++'syzran','tambov','tatarstan','tom','tomsk','tsaritsyn','tsk','tula','tuva',
++'tver','tyumen','udm','udmurtia','ulan-ude','vdonsk','vladikavkaz','vladimir',
++'vladivostok','volgograd','vologda','voronezh','vrn','vyatka','yakutia',
++'yamal','yaroslavl','yekaterinburg','yuzhno-sakhalinsk','zgrad'
++);
++
  sub _domain { 
      my $host = shift; $host =~ y/A-Z/a-z/; my $domain = ''; 
 -    ($domain) = $host =~ /([\da-z\-]+\.[a-z]{2,3}\.[a-z]{2})$/;
 -    ($domain) = $host =~ /([\da-z\-]+\.[a-z]{2,3})$/ unless $domain;  
-+    ($domain) = $host =~ /([\da-z\-]+\.(edu?|com?|net?|org?|gov?|int|ac|pp)\.[a-z]{2})$/;
++    return undef if ($host =~ /\.in-addr\.arpa$/);
++    ($domain) = $host =~ /([\da-z\-]+\.(kiev|kharkiv|dp|zp)\.ua)$/;
++    ($domain) = $host =~ /([\da-z\-]+\.(edu?|com?|net?|org?|gov?|int|ac|pp)\.[a-z]{2})$/ unless $domain;
++    if (!$domain && $host =~ /\.[rs]u$/) {
++	for (@geo_rusu) {
++		($domain) = $host =~ /([\da-z\-]+\.$_\.[rs]u)$/;
++		last if ($domain);
++	}
++    }
 +    ($domain) = $host =~ /([\da-z\-]+\.[a-z]{2,4})$/ unless $domain;
      return $domain ? $domain : undef; 
  }
  
-@@ -769,7 +803,7 @@
+@@ -769,10 +829,11 @@
  ## ---------------------------------------------------------------------------
  
  sub _host { 
@@ -148,4 +194,9 @@
 +    my $hostre = '[\dA-Za-z\-\.]+\.[A-Za-z]{2,4}(?=[^A-Za-z\-\d]|$)';
      my $data = shift; 
      my ($host) = $data =~ /($hostre)/; 
-     return $host if $host ne ''; 
+-    return $host if $host ne ''; 
++    return undef if ($host =~ /\.in-addr\.arpa$/);
++    return $host ? $host : undef;
+ }
+ 
+ ## -- SUBROUTINE  _email () -------------------------------------- INTERNAL --
