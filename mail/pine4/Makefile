@@ -46,10 +46,19 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/pico ${PREFIX}/bin/pico
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/pilot ${PREFIX}/bin/pilot
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/pine ${PREFIX}/bin/pine
-	${INSTALL_SCRIPT} ${FILESDIR}/pgpencrypt ${PREFIX}/bin/pgpencrypt
-	${INSTALL_SCRIPT} ${FILESDIR}/pgpdecode ${PREFIX}/bin/pgpdecode
-	${INSTALL_SCRIPT} ${FILESDIR}/pgpsign ${PREFIX}/bin/pgpsign
-	${INSTALL_DATA} ${FILESDIR}/dot.pinerc.pgp.sample \
+	${SED} -e 's,@@PREFIX@@,${PREFIX},g' \
+		< ${FILESDIR}/pgpdecode > ${WRKSRC}/bin/pgpdecode
+	${SED} -e 's,@@PREFIX@@,${PREFIX},g' \
+		< ${FILESDIR}/pgpencrypt > ${WRKSRC}/bin/pgpencrypt
+	${SED} -e 's,@@PREFIX@@,${PREFIX},g' \
+		< ${FILESDIR}/pgpsign > ${WRKSRC}/bin/pgpsign
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/pgpencrypt ${PREFIX}/bin/pgpencrypt
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/pgpdecode ${PREFIX}/bin/pgpdecode
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/pgpsign ${PREFIX}/bin/pgpsign
+	${SED} -e 's,@@PREFIX@@,${PREFIX},g' \
+		< ${FILESDIR}/dot.pinerc.pgp.sample \
+		> ${WRKSRC}/dot.pinerc.pgp.sample
+	${INSTALL_DATA} ${WRKSRC}/dot.pinerc.pgp.sample \
 			${PREFIX}/etc/dot.pinerc.pgp.sample
 	${INSTALL_MAN} ${WRKSRC}/doc/pico.1 ${PREFIX}/man/man1/pico.1
 	${INSTALL_MAN} ${WRKSRC}/doc/pilot.1 ${PREFIX}/man/man1/pilot.1
