@@ -11,7 +11,7 @@ CATEGORIES=	java
 MASTER_SITES=	#
 DISTNAME=	jdk-${JDK_VERSION:S/./_/g}-doc
 
-MAINTAINER=	ernst@jollem.com
+MAINTAINER=	znerd@FreeBSD.org
 
 NO_CDROM=	"License does not allow distribution with fee."
 RESTRICTED=	"This software is under license and export control."
