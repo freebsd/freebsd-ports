@@ -1,8 +1,8 @@
 ================================================================================
 Copy %%PREFIX%%/etc/ldap.conf.dist to %%PREFIX%%/etc/ldap.conf, then edit
 %%PREFIX%%/etc/ldap.conf in order to use this module.  Add a line similar to
-the following to /etc/pam.conf on -STABLE, or create an /etc/pam.d/ldap
-on -CURRENT with a line similar to the following:
+the following to /etc/pam.conf on 4.X, or create an /etc/pam.d/ldap
+on 5.X with a line similar to the following:
 
 login	auth	sufficient	%%PREFIX%%/lib/pam_ldap.so
 ================================================================================
