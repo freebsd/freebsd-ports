@@ -14,7 +14,7 @@ CATEGORIES=		www
 MASTER_SITES=		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	trevor
 
-MAINTAINER=		alane@freebsd.org # and trevor@freebsd.org
+MAINTAINER=		phoenix@geeksrus.net # alane@fbsd and trevor@fbsd
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
@@ -23,7 +23,8 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 #Xft2.2:${PORTSDIR}/x11-fonts/Xft
 
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
-		freetype-config:${PORTSDIR}/print/freetype2
+		freetype-config:${PORTSDIR}/print/freetype2 \
+		perl5.8.0:${PORTSDIR}/lang/perl5.7
 
 PREFIX=		${X11BASE}/lib/${PORTNAME}
 
@@ -38,7 +39,10 @@ WRKSRC=			${WRKDIR}/mozilla
 .include <bsd.port.pre.mk>
 
 .if !defined(PERL_VER) || ${PERL_VER} != "5.8.0"
-BROKEN=	This port requires Perl 5.8.0 because of File::Spec issues.
+.undef NO_IGNORE
+BROKEN=	This port requires Perl 5.8.0 because of File::Spec issues. \
+	Make sure to run 'use.perl port' after installing it or you \
+	will still get this message.
 .endif # !defined(PERL_VER) || ${PERL_VER} != "5.8.0"
 
 post-extract:
