@@ -14,7 +14,7 @@ EXTRACT_SUFX=	-src.tar.gz
 
 MAINTAINER=	andreas@FreeBSD.org
 
-BUILD_DEPENDS=	${PREFIX}/lib/libgd.a:${PORTSDIR}/graphics/gd
+LIB_DEPENDS=	gd.0:${PORTSDIR}/graphics/gd
 
 BROKEN=		gd upgrade
 

@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://probe.nalusda.gov/pub/treegenes/ \
 
 MAINTAINER=	mharo@FreeBSD.org
 
-BUILD_DEPENDS=	${PREFIX}/lib/libgd.a:${PORTSDIR}/graphics/gd
+LIB_DEPENDS=	gd.0:${PORTSDIR}/graphics/gd
 
 BROKEN=	gd changes
 FORBIDDEN=	author hadn\'t had time to update for gd changes
