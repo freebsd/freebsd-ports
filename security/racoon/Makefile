@@ -7,6 +7,7 @@
 
 PORTNAME=	racoon
 PORTVERSION=	20030826a
+PORTREVISION=	1
 CATEGORIES=	security net
 MASTER_SITES=	ftp://ftp.kame.net/pub/kame/misc/
 
@@ -17,6 +18,7 @@ COMMENT=	KAME racoon IKE daemon
 BROKEN=		"You must upgrade the OS"
 .endif
 
+USE_RC_SUBR=	YES
 USE_OPENSSL=	YES
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/racoon
@@ -31,6 +33,9 @@ CONFIGURE_ARGS+=--with-pkgversion=freebsd-${PORTVERSION}
 MAN5=		racoon.conf.5
 MAN8=		racoon.8
 
+RC_SCRIPTS_SUB=	PREFIX=${PREFIX} \
+		RC_SUBR=${RC_SUBR}
+
 pre-patch:
 	${MV} ${WRKSRC}/racoon.8 ${WRKSRC}/racoon.8.in
 
@@ -38,7 +43,8 @@ pre-configure:
 	(cd ${WRKSRC}/../libipsec; make)
 
 post-install:
-	@${SED} 's@%PREFIX%@${LOCALBASE}@g' ${FILESDIR}/racoon.sh > ${PREFIX}/etc/rc.d/racoon.sh
+	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
+		${FILESDIR}/racoon.sh > ${PREFIX}/etc/rc.d/racoon.sh
 	@${CHMOD} +x ${PREFIX}/etc/rc.d/racoon.sh
 	@if [ -z `/sbin/sysctl -a | ${GREP} -q ipsec && echo ipsec` ]; then \
 	    ${ECHO_MSG} "WARNING: IPsec feature is disabled on this host"; \
