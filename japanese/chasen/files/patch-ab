@@ -1,13 +1,11 @@
---- dic/Makefile.orig	Sat Dec  4 02:41:42 1999
-+++ dic/Makefile	Fri Dec 17 20:45:04 1999
-@@ -46,8 +46,8 @@
- 	else exit 0; fi
+--- chasen/Makefile~	Fri Dec 17 02:53:09 1999
++++ chasen/Makefile	Sun Feb 27 00:11:55 2000
+@@ -5,7 +5,7 @@
  
- table.cha matrix.cha: $(CONNECT_VCHA)
--	@if [ -f $< ]; then set -x; \
--	  $(CP) $< $(CONNTMP2_VCHA); \
-+	@if [ -f ${.ALLSRC} ]; then set -x; \
-+	  $(CP) ${.ALLSRC} $(CONNTMP2_VCHA); \
- 	  $(CC) -E $(CONNTMP2_VCHA) > $(CONNTMP_VCHA); \
- 	  $(RM) $(CONNTMP2_VCHA); \
- 	  $(MKDICDIR)/makemat; \
+ CP      = cp
+ SHELL   = /bin/sh
+-BINDIR  = /usr/local/bin
++BINDIR  = $(PREFIX)/bin
+ RM      = rm -f
+ 
+ LIBDIR = ../lib

@@ -1,0 +1,11 @@
+--- dic/Makefile~	Wed Dec 29 11:19:41 1999
++++ dic/Makefile	Sun Feb 27 00:12:25 2000
+@@ -16,7 +16,7 @@
+ TABLE         = table.cha
+ MATRIX        = matrix.cha
+ SHELL         = /bin/sh
+-LIBDIR        = /usr/local/lib/chasen
++LIBDIR        = $(PREFIX)/share/chasen
+ DICDIR        = $(LIBDIR)/dic
+ MAKEINT       = makeint
+ MAKE          = make

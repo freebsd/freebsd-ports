@@ -1,12 +1,24 @@
-$NetBSD: patch-aa,v 1.2 1999/06/07 09:54:39 sakamoto Exp $
---- ./Makefile.orig	Thu Apr 22 17:08:15 1999
-+++ ./Makefile	Mon Jun  7 18:09:47 1999
-@@ -17,6 +17,6 @@
+--- Makefile~	Wed Dec 29 01:12:01 1999
++++ Makefile	Sun Feb 27 00:10:30 2000
+@@ -9,8 +9,8 @@
+ #
  
- # --- install directories
+ # --- commands & flags
+-CC	 = gcc
+-CFLAGS	 = -O2
++#CC	 = gcc
++#CFLAGS	 = -O2
+ CCOUT    = 
+ LDFLAGS  =
+ RM       = rm -f
+@@ -19,8 +19,8 @@
+ 
+ # --- installation files and directories
+ CHASEN = chasen
 -BINDIR = /usr/local/bin
 -LIBDIR = /usr/local/lib/chasen
 +BINDIR = $(PREFIX)/bin
 +LIBDIR = $(PREFIX)/share/chasen
  MKDICDIR = $(LIBDIR)/mkchadic
  DICDIR = $(LIBDIR)/dic
+ 
