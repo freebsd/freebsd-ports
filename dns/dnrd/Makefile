@@ -16,6 +16,7 @@ COMMENT=		A proxy DNS daemon
 
 USE_GMAKE=		yes
 USE_REINPLACE=		yes
+USE_RC_SUBR=		yes
 GNU_CONFIGURE=		yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=		PTHREAD_CFLAGS=${PTHREAD_CFLAGS} PTHREAD_LIBS=${PTHREAD_LIBS}
@@ -26,8 +27,10 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/etc/dnrd|${PREFIX}/etc/dnrd|g' ${WRKSRC}/doc/dnrd.8 \
 		${WRKSRC}/doc/master.sample ${WRKSRC}/doc/README-master ${WRKSRC}/src/common.h \
 		${WRKSRC}/src/master.c ${WRKSRC}/src/main.c
+	@${SED} -e 's|%%RC_SUBR%%|${RC_SUBR}|g' -e 's|%%PREFIX%%|${PREFIX}|' \
+		${FILESDIR}/dnrd.sh > ${WRKDIR}/dnrd.sh
 
 post-install:
-	${INSTALL_SCRIPT} ${FILESDIR}/dnrd.sh ${PREFIX}/etc/rc.d/dnrd.sh
+	${INSTALL_SCRIPT} ${WRKDIR}/dnrd.sh ${PREFIX}/etc/rc.d/dnrd.sh
 
 .include <bsd.port.mk>
