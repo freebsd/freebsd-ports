@@ -8,9 +8,9 @@
 PORTNAME=	bmsync
 PORTVERSION=	0.2.0
 CATEGORIES=	www
-MASTER_SITES=	http://www-2.cs.cmu.edu/~dpelleg/sw/
+MASTER_SITES=	http://web.cs.cmu.edu/~dpelleg/sw/
 
-MAINTAINER=	dpelleg+bmsync@cs.cmu.edu
+MAINTAINER=	daniel+bmsync@pelleg.org
 
 USE_PERL5=	yes
 WRKSRC=		${WRKDIR}/${PKGNAME}
