@@ -3,7 +3,7 @@
 # Date created:        11 May 1998
 # Whom:                Yukihiro Nakai <Nakai@technologist.com>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/08/31 22:01:46 kuriyama Exp $
 #
 
 DISTNAME=	Gtk---0.9.14
@@ -20,7 +20,7 @@ BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 #GNU_CONFIGURE=	yes
 USE_AUTOCONF=	yes
 # for the future GNOME support
-#CONFIGURE_ARGS+=	--with-gnome=${X11BASE}
+#CONFIGURE_ARGS=	--with-gnome=${X11BASE}
 USE_GMAKE=	yes
 
 post-install:
