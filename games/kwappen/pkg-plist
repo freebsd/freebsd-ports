@@ -1,0 +1,48 @@
+bin/kwappen
+share/applnk/Applications/kwappen.desktop
+share/apps/kwappen/pictures/background.jpg
+share/apps/kwappen/pictures/baden_wuerttemberg.jpg
+share/apps/kwappen/pictures/bayern.jpg
+share/apps/kwappen/pictures/berlin.jpg
+share/apps/kwappen/pictures/brandenburg.jpg
+share/apps/kwappen/pictures/bremen.jpg
+share/apps/kwappen/pictures/hamburg.jpg
+share/apps/kwappen/pictures/hessen.jpg
+share/apps/kwappen/pictures/mecklenburg_vorpommern.jpg
+share/apps/kwappen/pictures/niedersachsen.jpg
+share/apps/kwappen/pictures/nordrhein_westfalen.jpg
+share/apps/kwappen/pictures/rheinland_pfalz.jpg
+share/apps/kwappen/pictures/saarland.jpg
+share/apps/kwappen/pictures/sachsen.jpg
+share/apps/kwappen/pictures/sachsen_anhalt.jpg
+share/apps/kwappen/pictures/schleswig_holstein.jpg
+share/apps/kwappen/pictures/thueringen.jpg
+share/apps/kwappen/pictures/wappen.png
+share/doc/HTML/de/kwappen/index.docbook
+share/doc/HTML/de/kwappen/index.cache.bz2
+share/doc/HTML/de/kwappen/common
+share/doc/HTML/en/kwappen/index.docbook
+share/doc/HTML/en/kwappen/index.cache.bz2
+share/doc/HTML/en/kwappen/common
+share/doc/HTML/pt/kwappen/index.docbook
+share/doc/HTML/pt/kwappen/index.cache.bz2
+share/doc/HTML/pt/kwappen/common
+share/doc/HTML/pt_BR/kwappen/index.docbook
+share/doc/HTML/pt_BR/kwappen/index.cache.bz2
+share/doc/HTML/pt_BR/kwappen/common
+share/icons/locolor/32x32/apps/kwappen.png
+share/icons/locolor/16x16/apps/kwappen.png
+share/icons/hicolor/16x16/apps/kwappen.png
+share/icons/hicolor/22x22/apps/kwappen.png
+share/icons/hicolor/32x32/apps/kwappen.png
+share/icons/hicolor/48x48/apps/kwappen.png
+share/icons/hicolor/64x64/apps/kwappen.png
+share/locale/de/LC_MESSAGES/kwappen.mo
+share/locale/pt/LC_MESSAGES/kwappen.mo
+share/locale/pt_BR/LC_MESSAGES/kwappen.mo
+@dirrm share/doc/HTML/de/kwappen
+@dirrm share/doc/HTML/en/kwappen
+@dirrm share/doc/HTML/pt/kwappen
+@dirrm share/doc/HTML/pt_BR/kwappen
+@dirrm share/apps/kwappen/pictures
+@dirrm share/apps/kwappen

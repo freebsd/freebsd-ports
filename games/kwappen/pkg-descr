@@ -1,0 +1,17 @@
+Kwappen is a KDE board game
+
+The goal is the reduction of the 4 columns of stones in minimal time. 
+The rules of the game are very simple. 
+You can move symbols (stones) on top of a column or rotate columns. 
+
+2 or more equal stones upon the other will be removed 
+4 equal card symbols in a row (e.g. 4 spades) will be removed 
+
+The computer has his own symbol stack in the upper right corner. 
+This computer symbol will be put on the top of a column after your move. 
+The computer selects a column by random. 
+
+You win, if all columns have only 1 stone or empty. You lose, if one column 
+has 10 or more stones after the column shrink.
+
+WWW:	http://www.lcs-chemie.de/kwappen_eng.htm
