@@ -22,6 +22,30 @@ while (<IN>) {
 	}
 }
 for (split(/\n/, <<"END"))
+-alias-fixed-medium-r-normal--24-234-75-75-c-120-iso8859-1 -sony-fixed-medium-r-normal--24-230-75-75-c-120-iso8859-1
+-alias-fixed-medium-r-normal--20-190-75-75-c-200-iso8859-1 -kappa-fixed-medium-r-normal--20-190-75-75-c-100-iso8859-1
+-alias-fixed-medium-i-normal--20-190-75-75-c-200-iso8859-1 -kappa-fixed-medium-i-normal--20-190-75-75-c-100-iso8859-1
+-alias-fixed-bold-r-normal--20-190-75-75-c-200-iso8859-1 -kappa-fixed-bold-r-normal--20-190-75-75-c-100-iso8859-1
+-alias-fixed-bold-i-normal--20-190-75-75-c-200-iso8859-1 -kappa-fixed-bold-i-normal--20-190-75-75-c-100-iso8859-1
+-alias-fixed-medium-r-normal--18-170-75-75-c-180-iso8859-1 -misc-fixed-medium-r-normal--18-173-75-75-c-180-iso8859-1
+-alias-fixed-medium-i-normal--18-170-75-75-c-180-iso8859-1 -misc-fixed-medium-i-normal--18-173-75-75-c-180-iso8859-1
+-alias-fixed-medium-r-normal--16-150-75-75-c-80-iso8859-1 -shinonome-gothic-medium-r-normal--16-150-75-75-c-80-iso8859-1
+-alias-fixed-medium-i-normal--16-150-75-75-c-80-iso8859-1 -shinonome-gothic-medium-i-normal--16-150-75-75-c-80-iso8859-1
+-alias-fixed-bold-r-normal--16-150-75-75-c-80-iso8859-1 -shinonome-gothic-bold-r-normal--16-150-75-75-c-80-iso8859-1
+-alias-fixed-bold-i-normal--16-150-75-75-c-80-iso8859-1 -shinonome-gothic-bold-i-normal--16-150-75-75-c-80-iso8859-1
+-alias-fixed-medium-r-normal--14-130-75-75-c-70-iso8859-1 -shinonome-gothic-medium-r-normal--14-130-75-75-c-70-iso8859-1
+-alias-fixed-medium-i-normal--14-130-75-75-c-70-iso8859-1 -shinonome-gothic-medium-i-normal--14-130-75-75-c-70-iso8859-1
+-alias-fixed-bold-r-normal--14-130-75-75-c-70-iso8859-1 -shinonome-gothic-bold-r-normal--14-130-75-75-c-70-iso8859-1
+-alias-fixed-bold-i-normal--14-130-75-75-c-70-iso8859-1 -shinonome-gothic-bold-i-normal--14-130-75-75-c-70-iso8859-1
+-alias-fixed-medium-r-normal--12-110-75-75-c-60-iso8859-1 -shinonome-gothic-medium-r-normal--12-110-75-75-c-60-iso8859-1
+-alias-fixed-medium-i-normal--12-110-75-75-c-60-iso8859-1 -shinonome-gothic-medium-i-normal--12-110-75-75-c-60-iso8859-1
+-alias-fixed-bold-r-normal--12-110-75-75-c-60-iso8859-1 -shinonome-gothic-bold-r-normal--12-110-75-75-c-60-iso8859-1
+-alias-fixed-bold-i-normal--12-110-75-75-c-60-iso8859-1 -shinonome-gothic-bold-i-normal--12-110-75-75-c-60-iso8859-1
+-alias-fixed-medium-r-normal--10-90-75-75-c-50-iso8859-1 -misc-fixed-medium-r-normal--10-90-75-75-c-50-iso8859-1
+-alias-fixed-medium-i-normal--10-90-75-75-c-50-iso8859-1 -misc-fixed-medium-i-normal--10-90-75-75-c-50-iso8859-1
+-alias-fixed-bold-r-normal--10-90-75-75-c-50-iso8859-1 -misc-fixed-bold-r-normal--10-90-75-75-c-50-iso8859-1
+-alias-fixed-bold-i-normal--10-90-75-75-c-50-iso8859-1 -misc-fixed-bold-i-normal--10-90-75-75-c-50-iso8859-1
+-alias-fixed-medium-r-normal--8-70-75-75-c-40-iso8859-1 -hiro-fixed-medium-r-normal--8-70-75-75-c-40-iso8859-1
 -alias-fixed-medium-r-normal--24-234-75-75-c-120-jisx0201.1976-0 -sony-fixed-medium-r-normal--24-170-100-100-c-120-jisx0201.1976-0
 -alias-fixed-medium-r-normal--20-190-75-75-c-200-jisx0201.1976-0 -kappa-fixed-medium-r-normal--20-190-75-75-c-100-jisx0201.1976-0
 -alias-fixed-bold-r-normal--20-190-75-75-c-200-jisx0201.1976-0 -kappa-fixed-bold-r-normal--20-190-75-75-c-100-jisx0201.1976-0
