@@ -1,0 +1,67 @@
+diff -ruN add.orig/add.h add/add.h
+--- add.orig/add.h	Thu Apr 15 15:23:52 2004
++++ add/add.h	Thu Apr 15 15:34:35 2004
+@@ -34,6 +34,7 @@
+ extern char	*Group;
+ extern char	*Directory;
+ extern char	*PkgName;
++extern char	*PkgAddCmd;
+ extern char	FirstPen[];
+ extern add_mode_t AddMode;
+ 
+diff -ruN add.orig/main.c add/main.c
+--- add.orig/main.c	Thu Apr 15 15:23:52 2004
++++ add/main.c	Thu Apr 15 15:44:17 2004
+@@ -39,6 +39,7 @@
+ char	*Owner		= NULL;
+ char	*Group		= NULL;
+ char	*PkgName	= NULL;
++char	*PkgAddCmd	= NULL;
+ char	*Directory	= NULL;
+ char	FirstPen[FILENAME_MAX];
+ add_mode_t AddMode	= NORMAL;
+@@ -84,7 +85,9 @@
+     char **start;
+     char *cp, *packagesite = NULL, *remotepkg = NULL, *ptr;
+     static char temppackageroot[MAXPATHLEN];
++    static char pkgaddpath[MAXPATHLEN];
+ 
++    PkgAddCmd = realpath(argv[0], pkgaddpath);
+     start = argv;
+     while ((ch = getopt(argc, argv, Options)) != -1) {
+ 	switch(ch) {
+diff -ruN add.orig/perform.c add/perform.c
+--- add.orig/perform.c	Thu Apr 15 15:23:52 2004
++++ add/perform.c	Thu Apr 15 15:32:10 2004
+@@ -92,7 +92,7 @@
+ 	fgets(playpen, FILENAME_MAX, stdin);
+ 	playpen[strlen(playpen) - 1] = '\0'; /* pesky newline! */
+ 	if (chdir(playpen) == FAIL) {
+-	    warnx("pkg_add in SLAVE mode can't chdir to %s", playpen);
++	    warnx("%s in SLAVE mode can't chdir to %s", PkgAddCmd, playpen);
+ 	    return 1;
+ 	}
+ 	read_plist(&Plist, stdin);
+@@ -310,7 +310,7 @@
+ 		    if (cp) {
+ 			if (Verbose)
+ 			    printf("Loading it from %s.\n", cp);
+-			if (vsystem("pkg_add %s'%s'", Verbose ? "-v " : "", cp)) {
++			if (vsystem("%s %s'%s'", PkgAddCmd, Verbose ? "-v " : "", cp)) {
+ 			    warnx("autoload of dependency '%s' failed%s",
+ 				cp, Force ? " (proceeding anyway)" : "!");
+ 			    if (!Force)
+@@ -333,9 +333,10 @@
+ 			if (!Force)
+ 			    ++code;
+ 		    }
+-		    else if (vsystem("(pwd; cat +CONTENTS) | pkg_add %s-S", Verbose ? "-v " : "")) {
+-			warnx("pkg_add of dependency '%s' failed%s",
+-				p->name, Force ? " (proceeding anyway)" : "!");
++		    else if (vsystem("(pwd; cat +CONTENTS) | %s %s-S", PkgAddCmd, Verbose ? "-v " : "")) {
++			warnx("%s of dependency '%s' failed%s",
++				PkgAddCmd, p->name,
++				Force ? " (proceeding anyway)" : "!");
+ 			if (!Force)
+ 			    ++code;
+ 		    }
