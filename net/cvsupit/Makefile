@@ -12,7 +12,9 @@ DISTFILES=	#empty
 
 MAINTAINER=	jkh@FreeBSD.org
 
+.if !defined(PACKAGE_BUILDING)
 IS_INTERACTIVE= 'Must configure cvsup server information'
+.endif
 
 RUN_DEPENDS=	cvsup:${PORTSDIR}/net/cvsup-bin
 
