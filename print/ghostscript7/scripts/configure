@@ -83,7 +83,7 @@ Have fun with this new configuration style !     -andreas \n\n\
   "bmpmono"  "BMP Monochrome" OFF \
   "bmp16"    "BMP 4-bit EGA/VGA" OFF \
   "bmp256"   "BMP 8-bit 256-color" OFF \
-  "bmp16m"   "BMP 24-bit" OFF \
+  "bmp16m"   "BMP 24-bit" ON \
   "ccr"      "CalComp Raster format" OFF \
   "cgmmono"  "CGM Monochrome -- LOW LEVEL OUTPUT ONLY" OFF \
   "cgm8"     "CGM 8-bit 256-color -- DITTO" OFF \
