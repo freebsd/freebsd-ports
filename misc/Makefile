@@ -325,6 +325,7 @@
     SUBDIR += php5-calendar
     SUBDIR += phraze
     SUBDIR += pinfo
+    SUBDIR += pipe
     SUBDIR += pointless
     SUBDIR += porteasy
     SUBDIR += portell
