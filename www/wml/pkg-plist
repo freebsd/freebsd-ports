@@ -11,55 +11,47 @@ bin/wml_p9_slice
 bin/wml_aux_linklint
 bin/wml_aux_txt2html
 bin/wml_aux_wwwtable
-bin/wml_aux_gfont
 bin/wml_aux_htmlinfo
 bin/wml_aux_map2html
 bin/wml_aux_weblint
-lib/wml/aux/gfont/mkgdf
-lib/wml/aux/gfont/pktopx
-lib/wml/aux/gfont/pxtogdf
-lib/wml/aux/gfont/Fontmap
 lib/wml/aux/txt2html.dict
 lib/wml/aux/weblintrc
 lib/wml/include/all.wml
-lib/wml/include/app/all.wml
-lib/wml/include/app/javascript.wml
-lib/wml/include/app/navbar.wml
-lib/wml/include/app/toc.wml
 lib/wml/include/des/all.wml
-lib/wml/include/des/box.wml
 lib/wml/include/des/gfont.wml
-lib/wml/include/des/grid.wml
 lib/wml/include/des/imgdot.wml
-lib/wml/include/des/imgsize.wml
+lib/wml/include/des/navbar.wml
 lib/wml/include/des/rollover.wml
 lib/wml/include/des/space.wml
 lib/wml/include/des/typography.wml
 lib/wml/include/fmt/all.wml
 lib/wml/include/fmt/isolatin.wml
+lib/wml/include/fmt/pod.wml
+lib/wml/include/fmt/sdf.wml
+lib/wml/include/fmt/text.wml
+lib/wml/include/fmt/url.wml
 lib/wml/include/fmt/verbatim.wml
+lib/wml/include/fmt/xtable.wml
 lib/wml/include/imp/all.wml
 lib/wml/include/imp/csmap.wml
+lib/wml/include/imp/fsview.wml
 lib/wml/include/imp/generic.wml
-lib/wml/include/imp/pod.wml
-lib/wml/include/imp/remote.wml
-lib/wml/include/imp/sdf.wml
-lib/wml/include/imp/text.wml
-lib/wml/include/imp/view.wml
-lib/wml/include/imp/wwwtable.wml
-lib/wml/include/msc/all.wml
-lib/wml/include/msc/hextriple.wml
-lib/wml/include/msc/m4.wml
-lib/wml/include/msc/path.wml
 lib/wml/include/std/all.wml
-lib/wml/include/std/divert.wml
-lib/wml/include/std/fileinfo.wml
-lib/wml/include/std/headfoot.wml
-lib/wml/include/std/stack.wml
-lib/wml/include/std/symbol.wml
+lib/wml/include/std/box.wml
+lib/wml/include/std/grid.wml
+lib/wml/include/std/href.wml
+lib/wml/include/std/info.wml
+lib/wml/include/std/page.wml
 lib/wml/include/std/tags.wml
-lib/wml/include/std/url.wml
+lib/wml/include/std/toc.wml
+lib/wml/include/sup/all.wml
+lib/wml/include/sup/hextriple.wml
+lib/wml/include/sup/relpath.wml
+lib/wml/include/sup/stack.wml
+lib/wml/include/sys/all.wml
 lib/wml/include/sys/boot.wml
+lib/wml/include/usr/all.wml
+lib/wml/include/usr/rse.wml
 lib/wml/perl/lib/site_perl/i386-freebsd/auto/Getopt/Long/.packlist
 lib/wml/perl/lib/site_perl/i386-freebsd/auto/Bit/Vector/Vector.so
 lib/wml/perl/lib/site_perl/i386-freebsd/auto/Bit/Vector/Vector.bs
@@ -105,61 +97,55 @@ man/man1/wml_p9_slice.1.gz
 man/cat1/wml_aux_linklint.1.gz
 man/cat1/wml_aux_txt2html.1.gz
 man/cat1/wml_aux_wwwtable.1.gz
-man/man1/wml_aux_gfont.1.gz
 man/man1/wml_aux_htmlinfo.1.gz
 man/man1/wml_aux_map2html.1.gz
 man/man1/wml_aux_weblint.1.gz
 man/man3/wml::all.3.gz
-man/man3/wml::app::all.3.gz
-man/man3/wml::app::javascript.3.gz
-man/man3/wml::app::navbar.3.gz
-man/man3/wml::app::toc.3.gz
 man/man3/wml::des::all.3.gz
-man/man3/wml::des::box.3.gz
 man/man3/wml::des::gfont.3.gz
-man/man3/wml::des::grid.3.gz
 man/man3/wml::des::imgdot.3.gz
-man/man3/wml::des::imgsize.3.gz
+man/man3/wml::des::navbar.3.gz
 man/man3/wml::des::rollover.3.gz
 man/man3/wml::des::space.3.gz
 man/man3/wml::des::typography.3.gz
 man/man3/wml::fmt::all.3.gz
 man/man3/wml::fmt::isolatin.3.gz
+man/man3/wml::fmt::pod.3.gz
+man/man3/wml::fmt::sdf.3.gz
+man/man3/wml::fmt::text.3.gz
+man/man3/wml::fmt::url.3.gz
 man/man3/wml::fmt::verbatim.3.gz
+man/man3/wml::fmt::xtable.3.gz
 man/man3/wml::imp::all.3.gz
 man/man3/wml::imp::csmap.3.gz
+man/man3/wml::imp::fsview.3.gz
 man/man3/wml::imp::generic.3.gz
-man/man3/wml::imp::pod.3.gz
-man/man3/wml::imp::remote.3.gz
-man/man3/wml::imp::sdf.3.gz
-man/man3/wml::imp::text.3.gz
-man/man3/wml::imp::view.3.gz
-man/man3/wml::imp::wwwtable.3.gz
-man/man3/wml::msc::all.3.gz
-man/man3/wml::msc::hextriple.3.gz
-man/man3/wml::msc::m4.3.gz
-man/man3/wml::msc::path.3.gz
 man/man3/wml::std::all.3.gz
-man/man3/wml::std::divert.3.gz
-man/man3/wml::std::fileinfo.3.gz
-man/man3/wml::std::headfoot.3.gz
-man/man3/wml::std::stack.3.gz
-man/man3/wml::std::symbol.3.gz
+man/man3/wml::std::box.3.gz
+man/man3/wml::std::grid.3.gz
+man/man3/wml::std::href.3.gz
+man/man3/wml::std::info.3.gz
+man/man3/wml::std::page.3.gz
 man/man3/wml::std::tags.3.gz
-man/man3/wml::std::url.3.gz
+man/man3/wml::std::toc.3.gz
+man/man3/wml::sup::all.3.gz
+man/man3/wml::sup::hextriple.3.gz
+man/man3/wml::sup::relpath.3.gz
+man/man3/wml::sup::stack.3.gz
+man/man3/wml::sys::all.3.gz
 man/man3/wml::sys::boot.3.gz
-@comment PREFIX/lib/wml/gdf is a empty directory
-@exec mkdir %D/lib/wml/gdf
-@dirrm lib/wml/gdf
-@dirrm lib/wml/aux/gfont
+man/man3/wml::usr::all.3.gz
+man/man3/wml::usr::rse.3.gz
+man/man7/wml_intro.7.gz
+man/man7/wml_tutorial.7.gz
 @dirrm lib/wml/aux
-@dirrm lib/wml/include/app
 @dirrm lib/wml/include/des
 @dirrm lib/wml/include/fmt
 @dirrm lib/wml/include/imp
-@dirrm lib/wml/include/msc
 @dirrm lib/wml/include/std
+@dirrm lib/wml/include/sup
 @dirrm lib/wml/include/sys
+@dirrm lib/wml/include/usr
 @dirrm lib/wml/include
 @dirrm lib/wml/perl/lib/site_perl/i386-freebsd/auto/Getopt/Long
 @dirrm lib/wml/perl/lib/site_perl/i386-freebsd/auto/Getopt
