@@ -3,7 +3,7 @@
 # Date created:				19 Aug 1998
 # Whom:					ichiro@ichiro.org
 #
-# $Id: Makefile,v 1.4 1998/11/14 09:43:14 asami Exp $
+# $Id: Makefile,v 1.5 1999/05/10 12:23:58 sada Exp $
 #
 
 DISTNAME=	gd1.3
@@ -19,8 +19,6 @@ PATCH_DIST_STRIP=	# empty
 MAINTAINER=	ichiro@ichiro.org
 
 BUILD_DEPENDS=	${PREFIX}/lib/libVFlib2.so:${PORTSDIR}/japanese/vflib
-
-#BROKEN_ELF=	linker command line
 
 FETCH_BEFORE_ARGS=	-b
 
