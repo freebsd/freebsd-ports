@@ -1,0 +1,12 @@
+diff -u ../rinetd.orig/rinetd.c ./rinetd.c
+--- ../rinetd.orig/rinetd.c	Mon Mar  1 13:43:35 1999
++++ rinetd.c	Fri Jun 11 19:40:05 1999
+@@ -214,7 +214,7 @@
+ };
+ 
+ RinetdOptions options = {
+-	"/etc/rinetd.conf"
++	"/usr/local/etc/rinetd.conf"
+ };
+ 
+ int readArgs (int argc,
