@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-DISTNAME=	xemacs-21.1.2
+DISTNAME=	xemacs-21.1.6
 PKGNAME=	xemacs-21.1
 CATEGORIES=	editors
 MASTER_SITES=	\
@@ -24,7 +24,7 @@ LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.3:${PORTSDIR}/graphics/png
 
-XEMACS_VER=	21.1-p2
+XEMACS_VER=	21.1.6
 DIST_SUBDIR=	xemacs
 
 USE_GMAKE=	yes
@@ -38,18 +38,16 @@ CONFIGURE_ARGS=	${XEMACS_ARCH} --prefix=${PREFIX} \
 		--site-includes=${PREFIX}/include \
 		--site-libraries=${PREFIX}/lib \
 		--with-session=yes \
-		${WITH_XFACE} ${WITH_MULE} ${WITH_DIALOGS} ${WITH_OFFIX}
+		--with-png=yes \
+		${WITH_XFACE} ${WITH_DIALOGS} ${WITH_OFFIX}
 MAN1=		ctags.1 etags.1 gnuattach.1 gnuclient.1 gnudoit.1 \
 		gnuserv.1 xemacs.1
 ALL_TARGET=	all dist
 
 PLIST_SUB=	XEMACS_VER=${XEMACS_VER} XEMACS_ARCH=${XEMACS_ARCH}
 
-# Have
 pre-fetch:
-.if !defined(USE_MULE)
-	@${ECHO_MSG} "To compile in the MULE features, set the environment variable USE_MULE"
-.endif
+	@${ECHO_MSG} "If you want the MULE features, please use the xemacs-mule port"
 .if defined(HAVE_MOTIF)
 .if !defined(MOTIF_STATIC)
 	@${ECHO_MSG} ""
@@ -58,12 +56,6 @@ pre-fetch:
 	@${ECHO_MSG} "In this case, set the environment variable MOTIF_STATIC and recompile, "
 	@${ECHO_MSG} "which will force the use of athena widgets for dialogs."
 .endif
-.endif
-
-.if defined(USE_MULE)
-WITH_MULE=	--with-mule
-# MULEDISTFILE=	${DISTNAME}-mule.tar.gz
-# PLIST=		${PKGDIR}/PLIST.mule
 .endif
 
 # hack to avoid shipping binaries linked with Motif
@@ -85,7 +77,6 @@ post-install:
 .endfor
 # ``make install'' does not set the permissions like pkg_add does.
 	${CHMOD} 1777 /var/run/emacs/lock
-#	${MKDIR} ${PREFIX}/lib/xemacs
 	${RM} -f ${PREFIX}/bin/send-pr
 # install xemacs21.sh into ${PREFIX}/etc/rc.d
 	@if [ ! -d ${PREFIX}/etc/rc.d ]; then ${MKDIR} ${PREFIX}/etc/rc.d; fi
