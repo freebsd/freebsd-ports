@@ -1,6 +1,6 @@
 # New ports collection makefile for:	krename
-# Date created:		11 May 2003
-# Whom:			Kirill Ponomarew <ponomarew@oberon.net>
+# Date created:				11 May 2003
+# Whom:					Kirill Ponomarew <ponomarew@oberon.net>
 #
 # $FreeBSD$
 #
