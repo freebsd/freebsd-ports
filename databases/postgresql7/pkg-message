@@ -34,5 +34,5 @@ You can then start PostgreSQL by running:
 
   /usr/local/etc/rc.d/010.pgsql.sh start
 
-For postmaster settings, see ~pgsql/data/postmaster.conf
+For postmaster settings, see ~pgsql/data/postgresql.conf
 ======================================================================
