@@ -1,13 +1,12 @@
 # New ports collection makefile for:   Meta port of XEmacs mule with sumo package
-# Version required:	21.1
 # Date created:        19 August 1999
 # Whom:                KIRIYAMA Kazuhiko <kiri@pis.toba-cmt.ac.jp>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	xemacs-${NAMEPREFIX}sumo${NAMEEXT}-${XEMACS_REL}
-PKGNAME=	${LANGPREFIX}${DISTNAME}
+PORTNAME=	xemacs-${NAMEPREFIX}sumo
+PORTVERSION=	${XEMACS_REL}
 CATEGORIES=	editors
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -26,7 +25,7 @@ XEMACS_REL=		21.1
 XEMACS_VER=		21.1.8
 XEMACS_ARCH=		${MACHINE_ARCH}--freebsd
 
-.if defined(LANGPREFIX) && (${LANGPREFIX} == "ja-")
+.if defined(PKGNAMEPREFIX) && (${PKGNAMEPREFIX} == "ja-")
 RUN_DEP_LIST=		${PREFIX}/lib/xemacs-${XEMACS_VER}/${XEMACS_ARCH}/config.values:${PORTSDIR}/japanese/xemacs${XEMACS_MAJOR_VER}${NAMEEXT}
 .else
 RUN_DEP_LIST=		${PREFIX}/lib/xemacs-${XEMACS_VER}/${XEMACS_ARCH}/config.values:${PORTSDIR}/editors/xemacs${XEMACS_MAJOR_VER}-mule

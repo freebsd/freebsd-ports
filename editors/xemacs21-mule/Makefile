@@ -1,5 +1,4 @@
 # New ports collection makefile for:	XEmacs with Mule
-# Version required:	21.1
 # Date created:		8 Dec 1999
 # Whom:			KIRIYAMA Kazuhiko<kiri@pis.toba-cmt.ac.jp>
 #
@@ -75,7 +74,7 @@ PLIST?=		${PKGLDIR}/PLIST
 
 XEMACS_MAJOR_VER?=	21
 MULE_PORT=		yes
-PKGNAMEEXT?=		-mule
+PKGNAMESUFFIX?=		-mule
 DESCR_TMPL?=		${.CURDIR}/../xemacs${XEMACS_MAJOR_VER}-mule/files/DESCR.tmpl
 COMMENT_TEXT?=		XEmacs(version ${XEMACS_MAJOR_VER}) text editor with mule(Only the executables)
 .if defined(MULE_SLAVE)
@@ -109,7 +108,7 @@ post-package:
 #pre-arrange::
 #	@${MKDIR} ${PKGDIR}
 #	@${ECHO} "${COMMENT_TEXT}" > ${COMMENT}
-#.if (${PKGNAMEEXT} == "-canna") || (${PKGNAMEEXT} == "-mule") || (${PKGNAMEEXT} == "-mule-common")
+#.if (${PKGNAMESUFFIX} == "-canna") || (${PKGNAMESUFFIX} == "-mule") || (${PKGNAMESUFFIX} == "-mule-common")
 #	@${SED} -e "s/%%XEMACS_VER%%/${XEMACS_VER}/g" \
 #		-e "s/%%XEMACS_REL%%/${XEMACS_REL}/g" \
 #		-e "s/%%XEMACS_MAJOR_VER%%/${XEMACS_MAJOR_VER}/g" \
@@ -119,13 +118,13 @@ post-package:
 #
 ## for make PLIST (only maintainer use)
 #arrange::
-#.if (${PKGNAMEEXT} == "-mule")||(${PKGNAMEEXT} == "-mule-common")
+#.if (${PKGNAMESUFFIX} == "-mule")||(${PKGNAMESUFFIX} == "-mule-common")
 #	${RM} -f ${PLIST}
-#.if (${PKGNAMEEXT} == "-mule")
+#.if (${PKGNAMESUFFIX} == "-mule")
 #	${MAKE} DIRRM2RMDIRS="lib/xemacs/mule-packages/etc lib/xemacs/mule-packages lib/xemacs/mule-packages/etc/app-defaults" \
 #		DIRRMDEPTH=2 plist
 #.endif
-#.if (${PKGNAMEEXT} == "-mule-common")
+#.if (${PKGNAMESUFFIX} == "-mule-common")
 #	${MAKE} DIRRM2RMDIRS="lib/xemacs-${XEMACS_VER} etc/rc.d" DIRRMDEPTH=1 plist
 #.for dirp in site mule xemacs
 #.for dir in etc info man pkginfo
@@ -140,7 +139,7 @@ post-package:
 #.endif
 #.endif
 #
-#.if (${PKGNAMEEXT} != "-mule-common")
+#.if (${PKGNAMESUFFIX} != "-mule-common")
 #pre-plist:
 #	@${ECHO} "===> pre-plist of ${PKGNAME}"
 #	${MKDIR} ${PREFIX}/lib/xemacs/mule-packages/etc/app-defaults
