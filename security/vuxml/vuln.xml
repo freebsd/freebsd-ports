@@ -122,7 +122,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <affects>
       <package>
 	<name>png</name>
-	<range><ge>0</ge></range>
+	<range><lt>1.2.5_4</lt></range>
       </package>
     </affects>
     <description>
@@ -141,6 +141,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <dates>
       <discovery>2004-04-29</discovery>
       <entry>2004-05-02</entry>
+      <modified>2004-05-03</modified>
     </dates>
   </vuln>
 
