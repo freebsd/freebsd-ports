@@ -1736,6 +1736,7 @@ fakeident	ports/security/fakeident
 falconseye	ports/games/falconseye
 fam		ports/devel/fam
 fampp		ports/devel/fampp
+fandango	ports/cad/fandango
 farblazer	ports/games/farblazer
 fargoal		ports/games/fargoal
 fasta		ports/biology/fasta
