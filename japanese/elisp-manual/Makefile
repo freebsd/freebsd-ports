@@ -16,7 +16,7 @@ PATCH_SITES=	ftp://ftp.ascii.co.jp/pub/GNU/elisp-manual-20/
 PATCHFILES=	elisp-manual-20-2.5-jp.ERRATA.000422.jis \
 		elisp-manual-20-2.5-jp.ERRATA.000508.jis
 
-MAINTAINER=	okazaki@be.to
+MAINTAINER=	okazaki@FreeBSD.org
 
 EMACS_PORT_NAME=	emacs20
 EMACS_NO_RUN_DEPENDS=	YES
