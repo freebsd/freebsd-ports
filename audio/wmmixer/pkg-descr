@@ -1,0 +1,15 @@
+This is an audio mixer that can run within the WindowMaker
+window manager "Dock". Some more information can be found at:
+
+	http://www.geocities.com/SiliconValley/Vista/2471/linux.htm#xapps
+
+To run it, type:
+
+	wmmixer -w &
+
+Drag the application to the dock. Once it's part of the dock, right-click
+to bring up the properties and select "Autolaunch". Oh yeah, you'll need
+a sound card. :-)
+
+- Rich
+  rneswold@mcs.net
