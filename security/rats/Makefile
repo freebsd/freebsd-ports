@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	rats
-PORTVERSION=	1.5
-PORTREVISION=	1
+PORTVERSION=	2.0
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.securesoftware.com/rats/
 
