@@ -32,6 +32,7 @@ lib/libgreg.so.1
 @dirrm System/Libraries/Guile/languages/gstep-guile
 @dirrm System/Libraries/Guile/languages
 @dirrm System/Libraries/Guile
+@dirrm System/Headers/gnustep/guile
 @dirrm System/Headers/ScriptKit
 @dirrm bin
 @dirrm lib
