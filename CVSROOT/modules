@@ -206,6 +206,7 @@ acfax		ports/comms/acfax
 achievo		ports/misc/achievo
 acid		ports/security/acid
 acidlaunch	ports/sysutils/acidlaunch
+acidrip		ports/multimedia/acidrip
 acidwarp	ports/graphics/acidwarp
 aclgen		ports/misc/aclgen
 acm		ports/games/acm
