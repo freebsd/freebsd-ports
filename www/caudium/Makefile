@@ -14,13 +14,13 @@ DISTNAME=	caudium-${PORTVERSION}
 
 MAINTAINER=	kiwi@oav.net
 
-BUILD_DEPENDS=	pike:${PORTSDIR}/lang/pike70cvs/
+BUILD_DEPENDS=	pike:${PORTSDIR}/lang/pike/
 LIB_DEPENDS=	sablot.69:${PORTSDIR}/textproc/sablotron/
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/
 
 GNU_CONFIGURE=  yes
-CONFIGURE_ARGS+= --without-debug --with-PiXSL
+CONFIGURE_ARGS+= --without-debug --with-PiXSL --prefix=${PREFIX}
 
 USE_GMAKE=	yes
 USE_BZIP2=	yes
