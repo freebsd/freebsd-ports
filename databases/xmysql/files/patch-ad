@@ -1,0 +1,14 @@
+--- Xmysql.h.orig	Wed Feb 11 01:47:52 1998
++++ Xmysql.h	Mon Jul 24 12:53:30 2000
+@@ -201,4 +201,11 @@
+ 
+ extern FD_Xmysql_add_record * create_form_Xmysql_add_record(void);
+ 
++#ifndef TRUE
++#define TRUE 1
++#endif
++#ifndef FALSE
++#define FALSE 0
++#endif
++
+ #endif /* FD_Xmysql_main_h_ */
