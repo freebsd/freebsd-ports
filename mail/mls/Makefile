@@ -9,7 +9,8 @@ PORTNAME=	mls
 PORTVERSION=	1.3
 PORTREVISION=	1
 CATEGORIES=	mail
-MASTER_SITES=	http://marki.host.sk/MLS/
+MASTER_SITES=	http://www.marki-online.net/MLS/ \
+		http://marki.host.sk/MLS/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	anarcat@anarcat.ath.cx
