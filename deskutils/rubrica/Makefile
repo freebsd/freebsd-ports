@@ -6,32 +6,36 @@
 #
 
 PORTNAME=	rubrica
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.5
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://digilander.libero.it/nfragale/download/rubrica/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.c1$/cr1/}
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An addressbook for the gnome2 desktop
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/.c1$/cr1/}
 USE_BZIP2=	yes
-USE_GNOME=	gnomehack gnomeprefix libgnomeui
 USE_X_PREFIX=	yes
+USE_GNOME=	gnomehack gnomeprefix gnometarget libgnomeui
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
-		LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
-DOC_FILES=	AUTHORS COPYING CREDITS ChangeLog INSTALL NEWS README TODO
+post-patch:
+	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
+		's|^CFLAGS.*$$|CFLAGS = @CFLAGS@|g ; \
+		 s|^rubricadocdir.*$$|rubricadocdir =|g ; \
+		 s|$$(rubricadoc_DATA)||g'
 
 post-install:
-.ifndef(NOPORTDOCS)
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for file in ${DOC_FILES}
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.for file in AUTHORS ChangeLog INSTALL NEWS README TODO
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
-	@${INSTALL_DATA} ${WRKSRC}/doc/examples.rub ${DOCSDIR}
+.for file in CREDITS examples.rub
+	${INSTALL_DATA} ${WRKSRC}/doc/${file} ${DOCSDIR}
+.endfor
 .endif
 
 .include <bsd.port.mk>
