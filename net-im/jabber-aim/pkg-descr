@@ -1,5 +1,6 @@
 The Jabber server (jabberd) is a daemon for Jabber clients to connect
-and communicate with.  JUD is allows clients to search for other users.
+and communicate with.  The AIM Transport module allows clients to
+communicate with user's of AOL Instant Messenger.
 
 You can learn more about Jabber at:
 WWW: http://server.jabber.org/
