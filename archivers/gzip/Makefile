@@ -6,15 +6,8 @@
 #
 
 PORTNAME=	gzip
-PORTVERSION=	1.3.3
+PORTVERSION=	1.3.5
 CATEGORIES=	archivers
-MASTER_SITES=	${MASTER_SITE_GNU_ALPHA}
-MASTER_SITE_SUBDIR=	${PORTNAME}
-# EXTRACT_SUFX=	.tar
-
-MAINTAINER=	cyrille.lefevre@laposte.net
-COMMENT=	A compression utility designed to be a replacement for compress
-
 MASTER_SITES=	ftp://ftp.digex.net/pub/linux/slackware/slackware-8.1/source/a/gzip/ \
 		ftp://sunfreeware.risq.qc.ca/SOURCES/ \
 		ftp://ftp.muug.mb.ca/mirror/slackware/slackware/slackware-8.1/source/a/gzip/ \
@@ -26,6 +19,10 @@ MASTER_SITES=	ftp://ftp.digex.net/pub/linux/slackware/slackware-8.1/source/a/gzi
 		ftp://ftp.carrier.kiev.ua/pub/Linux/slackware/source/a/gzip/ \
 		ftp://ftp.is.co.za/linux/distributions/slackware/slackware-8.1/source/a/gzip/ \
 		ftp://ftp.monash.edu.au/pub/disk10/slackware/slackware-8.1/source/a/gzip/
+EXTRACT_SUFX=	.tar.Z
+
+MAINTAINER=	cyrille.lefevre@laposte.net
+COMMENT=	A compression utility designed to be a replacement for compress
 
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
@@ -33,7 +30,18 @@ GNU_CONFIGURE=	yes
 MAN1=	gunzip.1 gzexe.1 gzip.1 zcat.1 zcmp.1 zdiff.1 zforce.1 \
 	zgrep.1 zless.1 zmore.1 znew.1
 
+DOC_FILES=	AUTHORS COPYING INSTALL NEWS README README-alpha \
+		THANKS TODO
+
 post-configure:
 	@${REINPLACE_CMD} -e 's|^SHELL =.*|SHELL=/bin/sh|' ${WRKSRC}/Makefile
+
+post-install:
+.if !defined(NOPORTSDOC)
+	@${MKDIR} ${DOCSDIR}
+.for file in ${DOC_FILES}
+	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.endfor
+.endif
 
 .include <bsd.port.mk>
