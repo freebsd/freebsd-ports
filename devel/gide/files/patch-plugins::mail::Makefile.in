@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- plugins/mail/Makefile.in	2001/07/24 10:42:10	1.1
++++ plugins/mail/Makefile.in	2001/07/24 10:43:10
+@@ -159,7 +159,7 @@
+ 
+ DEFS = @DEFS@ -I. -I$(srcdir) -I../..
+ LIBS = @LIBS@
+-libgide_mail_la_LDFLAGS = 
++libgide_mail_la_LDFLAGS = -avoid-version
+ libgide_mail_la_DEPENDENCIES = 
+ libgide_mail_la_OBJECTS =  mail-tool.lo
+ COMPILE = $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)

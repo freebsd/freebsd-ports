@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- plugins/functions/Makefile.in	2001/07/24 10:42:10	1.1
++++ plugins/functions/Makefile.in	2001/07/24 10:43:05
+@@ -159,7 +159,7 @@
+ 
+ DEFS = @DEFS@ -I. -I$(srcdir) -I../..
+ LIBS = @LIBS@
+-libgide_functions_la_LDFLAGS = 
++libgide_functions_la_LDFLAGS = -avoid-version
+ libgide_functions_la_DEPENDENCIES = 
+ libgide_functions_la_OBJECTS =  functions-tool.lo functions.lo parser.lo \
+ protogen.lo tree.lo

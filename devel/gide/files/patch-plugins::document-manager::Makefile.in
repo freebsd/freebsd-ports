@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- plugins/document-manager/Makefile.in	2001/07/24 10:42:10	1.1
++++ plugins/document-manager/Makefile.in	2001/07/24 10:42:55
+@@ -163,7 +163,7 @@
+ 
+ DEFS = @DEFS@ -I. -I$(srcdir) -I../..
+ LIBS = @LIBS@
+-libgide_docman_la_LDFLAGS = 
++libgide_docman_la_LDFLAGS = -avoid-version
+ libgide_docman_la_DEPENDENCIES = 
+ libgide_docman_la_OBJECTS =  document-manager-tool.lo file-ops.lo \
+ gide-document.lo gide-document-obj.lo gide-document-manager.lo \

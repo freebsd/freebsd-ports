@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- plugins/project-manager/Makefile.in	2001/07/24 10:42:10	1.1
++++ plugins/project-manager/Makefile.in	2001/07/24 10:43:13
+@@ -165,7 +165,7 @@
+ 
+ DEFS = @DEFS@ -I. -I$(srcdir) -I../..
+ LIBS = @LIBS@
+-libgide_project_la_LDFLAGS = 
++libgide_project_la_LDFLAGS = -avoid-version
+ libgide_project_la_DEPENDENCIES = 
+ libgide_project_la_OBJECTS =  project-tool.lo
+ COMPILE = $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)

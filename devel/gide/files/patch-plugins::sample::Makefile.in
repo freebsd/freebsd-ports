@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- plugins/sample/Makefile.in	2001/07/24 10:42:10	1.1
++++ plugins/sample/Makefile.in	2001/07/24 10:43:15
+@@ -162,7 +162,7 @@
+ 
+ DEFS = @DEFS@ -I. -I$(srcdir) -I../..
+ LIBS = @LIBS@
+-libgide_sample_la_LDFLAGS = 
++libgide_sample_la_LDFLAGS = -avoid-version
+ libgide_sample_la_DEPENDENCIES = 
+ libgide_sample_la_OBJECTS =  sample-tool.lo
+ COMPILE = $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
