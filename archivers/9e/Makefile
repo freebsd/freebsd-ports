@@ -11,7 +11,7 @@ CATEGORIES=	archivers
 MASTER_SITES=	http://www.eecs.harvard.edu/~wkj/Software/9e/
 DISTNAME=	9e
 
-MAINTAINER=	gehicks@cisco.com
+MAINTAINER=	ports@FreeBSD.Org
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/9e ${PREFIX}/bin
