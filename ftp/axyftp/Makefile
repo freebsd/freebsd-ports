@@ -3,14 +3,16 @@
 # Date created: 		22 October 1998
 # Whom: 			Antti Kaipila <anttik@iki.fi>
 #
-# $Id: Makefile,v 1.3 1999/01/22 22:18:10 nectar Exp $
+# $Id: Makefile,v 1.4 1999/03/17 12:55:31 kris Exp $
 #
 
 DISTNAME=	wxftp-0.4.4.src
 PKGNAME=	wxftp-0.4.4
 CATEGORIES=	net
-MASTER_SITES=	${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR= 	system/network/file-transfer
+MASTER_SITES=	ftp://ftp.wxftp.seul.org/pub/wxftp/0.4.4/ \
+		ftp://ftp.c-com.net/pub/.10/LinuxBerg/files/x11/network/ \
+		ftp://ftp.sunsite.auc.dk/disk2/linuxberg.com/files/x11/network/ \
+		ftp://ftp.bitcon.no/.10/linux/linuxberg/files/x11/network/
 
 MAINTAINER=	kris@FreeBSD.ORG
 
