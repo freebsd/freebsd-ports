@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Pod-Coverage
-PORTVERSION=	0.16
+PORTVERSION=	0.17
 CATEGORIES=	devel textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Pod
@@ -25,5 +25,18 @@ MAN3=		Pod::Coverage.3 \
 		Pod::Coverage::CountParents.3 \
 		Pod::Coverage::ExportOnly.3 \
 		Pod::Coverage::Overloader.3
+
+.if !defined(NOPORTDOCS)
+PORTDOCS=	Changes README
+EXAMPLES=	examples/check_installed examples/script-covered
+
+post-install:
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
+	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
+	@${MKDIR} ${EXAMPLESDIR}
+	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${EXAMPLESDIR}
+	@${ECHO_MSG} "===> Examples installed in ${EXAMPLESDIR}."
+.endif
 
 .include <bsd.port.mk>
