@@ -1,0 +1,45 @@
+--- Makefile.in.orig	Sat Oct 18 01:29:16 2003
++++ Makefile.in	Sun Nov 16 18:18:58 2003
+@@ -4,13 +4,14 @@
+ 
+ DISTNAME = ocrad-0.5
+ 
+-CXX = g++
+-INSTALL = install
+-INSTALL_PROGRAM = $(INSTALL)
+-INSTALL_DATA = $(INSTALL) -m 644
+-SHELL = /bin/sh
+-CXXFLAGS = -Wall -W -O2
+-LDFLAGS =
++CXX?= g++
++INSTALL?= install
++INSTALL_PROGRAM?= $(INSTALL)
++INSTALL_DATA?= $(INSTALL) -m 644
++SHELL?= /bin/sh
++CXXFLAGS?= -Wall -W -O2
++CPPFLAGS?=
++LDFLAGS?=
+ 
+ objs = common.o rectangle.o iso_8859_1.o bitmap.o block.o blockmap.o \
+        profile.o feats.o character.o recognize1.o \
+@@ -22,10 +23,10 @@
+ all : ocrad
+ 
+ ocrad : $(objs)
+-	$(CXX) $(LDFLAGS) $(CXXFLAGS) -o ocrad $(objs)
++	$(CXX) $(LDFLAGS) $(CXXFLAGS) $(CPPFLAGS) -o ocrad $(objs)
+ 
+ ocradp : $(objs)
+-	$(CXX) $(LDFLAGS) $(CXXFLAGS) -pg -o ocradp $(objs)
++	$(CXX) $(LDFLAGS) $(CXXFLAGS) $(CPPFLAGS) -pg -o ocradp $(objs)
+ 
+ %.o : %.cc
+ 	$(CXX) $(CXXFLAGS) -c -o $@ $<
+@@ -42,6 +43,7 @@
+ textline.o   : block.h character.h iso_8859_1.h textline.h
+ textblock.o  : block.h character.h textline.h textblock.h
+ main.o       : block.h blockmap.h bitmap.h character.h textline.h textblock.h
++	$(CXX) $(CXXFLAGS) $(CPPFLAGS) -c main.cc
+ 
+ 
+ install : all install-info
