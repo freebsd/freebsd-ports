@@ -6,8 +6,7 @@
 #
 
 PORTNAME=		dhisd
-PORTVERSION=		4.0
-PORTREVISION=		1
+PORTVERSION=		4.0.3
 CATEGORIES=		net
 MASTER_SITES=		http://bsltwr.dhis.org/ftp/pub/dhis/ \
 			ftp://ftp.dhis.org/pub/dhis/
