@@ -1,66 +1,14 @@
 bin/gnumeric
 bin/ssconvert
-etc/gconf/gconf.xml.defaults/apps/gnome-settings/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gnome-settings/gnumeric/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gnumeric/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gnumeric/autocorrect/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gnumeric/autoformat/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gnumeric/core/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gnumeric/core/defaultfont/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gnumeric/core/file/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gnumeric/core/file/history/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gnumeric/core/file/save/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gnumeric/core/gui/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gnumeric/core/gui/editing/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gnumeric/core/gui/screen/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gnumeric/core/gui/window/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gnumeric/core/sort/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gnumeric/core/sort/default/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gnumeric/core/sort/dialog/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gnumeric/core/workbook/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gnumeric/core/xml/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gnumeric/cut-and-paste/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gnumeric/dialogs/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gnumeric/dialogs/rs/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gnumeric/file/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gnumeric/file/history/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gnumeric/functionselector/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gnumeric/plugin/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gnumeric/plugin/latex/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gnumeric/plugins/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gnumeric/printsetup/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gnumeric/undo/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gnome-settings/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gnome-settings/gnumeric/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gnumeric/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gnumeric/autocorrect/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gnumeric/autoformat/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gnumeric/core/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gnumeric/core/defaultfont/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gnumeric/core/file/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gnumeric/core/file/history/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gnumeric/core/file/save/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gnumeric/core/gui/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gnumeric/core/gui/editing/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gnumeric/core/gui/screen/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gnumeric/core/gui/window/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gnumeric/core/sort/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gnumeric/core/sort/default/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gnumeric/core/sort/dialog/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gnumeric/core/workbook/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gnumeric/core/xml/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gnumeric/cut-and-paste/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gnumeric/dialogs/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gnumeric/dialogs/rs/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gnumeric/functionselector/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gnumeric/plugin/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gnumeric/plugin/latex/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gnumeric/plugins/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gnumeric/printsetup/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gnumeric/undo/%gconf.xml
+@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/gnumeric-dialogs.schemas > /dev/null || /usr/bin/true
 etc/gconf/schemas/gnumeric-dialogs.schemas
+@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/gnumeric-dialogs.schemas > /dev/null || /usr/bin/true
+@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/gnumeric-general.schemas > /dev/null || /usr/bin/true
 etc/gconf/schemas/gnumeric-general.schemas
+@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/gnumeric-general.schemas > /dev/null || /usr/bin/true
+@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/gnumeric-plugins.schemas > /dev/null || /usr/bin/true
 etc/gconf/schemas/gnumeric-plugins.schemas
+@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/gnumeric-plugins.schemas > /dev/null || /usr/bin/true
 lib/gnumeric/%%VERSION%%/plugins/applix/applix.so
 lib/gnumeric/%%VERSION%%/plugins/applix/plugin.xml
 lib/gnumeric/%%VERSION%%/plugins/corba/corba.so
@@ -797,62 +745,4 @@ share/locale/zh_TW/LC_MESSAGES/gnumeric.mo
 @dirrm lib/gnumeric/%%VERSION%%/plugins
 @dirrm lib/gnumeric/%%VERSION%%
 @dirrm lib/gnumeric
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnumeric/undo
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnumeric/printsetup
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnumeric/plugins
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnumeric/plugin/latex
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnumeric/plugin
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnumeric/functionselector
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnumeric/dialogs/rs
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnumeric/dialogs
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnumeric/cut-and-paste
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnumeric/core/xml
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnumeric/core/workbook
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnumeric/core/sort/dialog
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnumeric/core/sort/default
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnumeric/core/sort
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnumeric/core/gui/window
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnumeric/core/gui/screen
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnumeric/core/gui/editing
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnumeric/core/gui
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnumeric/core/file/save
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnumeric/core/file/history
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnumeric/core/file
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnumeric/core/defaultfont
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnumeric/core
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnumeric/autoformat
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnumeric/autocorrect
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnumeric
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnome-settings/gnumeric
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnome-settings
-@dirrm etc/gconf/gconf.xml.defaults/apps/gnumeric/undo
-@dirrm etc/gconf/gconf.xml.defaults/apps/gnumeric/printsetup
-@dirrm etc/gconf/gconf.xml.defaults/apps/gnumeric/plugins
-@dirrm etc/gconf/gconf.xml.defaults/apps/gnumeric/plugin/latex
-@dirrm etc/gconf/gconf.xml.defaults/apps/gnumeric/plugin
-@dirrm etc/gconf/gconf.xml.defaults/apps/gnumeric/functionselector
-@dirrm etc/gconf/gconf.xml.defaults/apps/gnumeric/file/history
-@dirrm etc/gconf/gconf.xml.defaults/apps/gnumeric/file
-@dirrm etc/gconf/gconf.xml.defaults/apps/gnumeric/dialogs/rs
-@dirrm etc/gconf/gconf.xml.defaults/apps/gnumeric/dialogs
-@dirrm etc/gconf/gconf.xml.defaults/apps/gnumeric/cut-and-paste
-@dirrm etc/gconf/gconf.xml.defaults/apps/gnumeric/core/xml
-@dirrm etc/gconf/gconf.xml.defaults/apps/gnumeric/core/workbook
-@dirrm etc/gconf/gconf.xml.defaults/apps/gnumeric/core/sort/dialog
-@dirrm etc/gconf/gconf.xml.defaults/apps/gnumeric/core/sort/default
-@dirrm etc/gconf/gconf.xml.defaults/apps/gnumeric/core/sort
-@dirrm etc/gconf/gconf.xml.defaults/apps/gnumeric/core/gui/window
-@dirrm etc/gconf/gconf.xml.defaults/apps/gnumeric/core/gui/screen
-@dirrm etc/gconf/gconf.xml.defaults/apps/gnumeric/core/gui/editing
-@dirrm etc/gconf/gconf.xml.defaults/apps/gnumeric/core/gui
-@dirrm etc/gconf/gconf.xml.defaults/apps/gnumeric/core/file/save
-@dirrm etc/gconf/gconf.xml.defaults/apps/gnumeric/core/file/history
-@dirrm etc/gconf/gconf.xml.defaults/apps/gnumeric/core/file
-@dirrm etc/gconf/gconf.xml.defaults/apps/gnumeric/core/defaultfont
-@dirrm etc/gconf/gconf.xml.defaults/apps/gnumeric/core
-@dirrm etc/gconf/gconf.xml.defaults/apps/gnumeric/autoformat
-@dirrm etc/gconf/gconf.xml.defaults/apps/gnumeric/autocorrect
-@dirrm etc/gconf/gconf.xml.defaults/apps/gnumeric
-@dirrm etc/gconf/gconf.xml.defaults/apps/gnome-settings/gnumeric
-@dirrm etc/gconf/gconf.xml.defaults/apps/gnome-settings
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnumeric/gnumeric-C.omf 2>/dev/null || /usr/bin/true
