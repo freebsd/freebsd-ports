@@ -1,0 +1,5 @@
+This is Happy version 1.9, a parser generator for Haskell 98.
+
+WWW:	http://www.haskell.org/happy/
+
+-- Simon Marlow <simonmar@microsoft.com>
