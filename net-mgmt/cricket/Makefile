@@ -8,7 +8,9 @@
 PORTNAME=	cricket
 PORTVERSION=	0.72
 CATEGORIES=	net
-MASTER_SITES=	http://www.munitions.com/~jra/cricket/dists/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+		http://www.munitions.com/~jra/cricket/dists/
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	torstenb@FreeBSD.org
 
