@@ -1,0 +1,2 @@
+lib/bmp/General/libbmp_scrobbler.so
+@unexec rmdir %D/lib/bmp/General 2> /dev/null || true

@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	bmp-scrobbler
-PORTVERSION=	0.3.7
+PORTVERSION=	0.3.8
 CATEGORIES=	audio
 MASTER_SITES=	http://static.audioscrobbler.com/plugins/ \
 		http://www.pipian.com/stuffforchat/
@@ -25,10 +25,12 @@ USE_LIBTOOL_VER=15
 USE_GMAKE=	yes
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 
+.if defined(WITH_DEBUG)
+CONFIGURE_ARGS+=	--enable-debug
+.endif
+
 .if defined(WITH_APE)
 CONFIGURE_ARGS+=	--enable-prefer-ape
 .endif
-
-PLIST_FILES=	lib/bmp/General/libbmp_scrobbler.so
 
 .include <bsd.port.mk>
