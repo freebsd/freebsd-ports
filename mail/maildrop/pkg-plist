@@ -1,24 +1,18 @@
 @comment $FreeBSD$
-%%MAILDIRQUOTA%%bin/deliverquota
+bin/deliverquota
 bin/lockmail
 bin/mailbot
 bin/maildirmake
 bin/maildrop
-%%USERDB%%bin/makedat
-%%USERDB%%bin/makedatprog
 bin/makemime
-%%USERDB%%bin/makeuserdb
-%%USERDB%%bin/pw2userdb
 bin/reformail
 bin/reformime
-%%USERDB%%bin/userdb
-%%USERDB%%bin/userdbpw
-%%USERDB%%bin/vchkpw2userdb
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL.html
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/README.html
+%%PORTDOCS%%%%DOCSDIR%%/README.imapkeywords.html
 %%PORTDOCS%%%%DOCSDIR%%/README.maildirfilter.html
 %%PORTDOCS%%%%DOCSDIR%%/README.maildirquota.html
 %%PORTDOCS%%%%DOCSDIR%%/README.maildirquota.txt
@@ -27,14 +21,12 @@ bin/reformime
 %%PORTDOCS%%%%DOCSDIR%%/README.sharedfolders.txt
 %%PORTDOCS%%%%DOCSDIR%%/UPGRADE
 %%PORTDOCS%%%%DOCSDIR%%/UPGRADE.html
-%%MAILDIRQUOTA%%%%PORTDOCS%%%%DOCSDIR%%/deliverquota.html
+%%PORTDOCS%%%%DOCSDIR%%/deliverquota.html
 %%PORTDOCS%%%%DOCSDIR%%/lockmail.html
-%%USERDB%%%%PORTDOCS%%%%DOCSDIR%%/makedat.html
-%%USERDB%%%%PORTDOCS%%%%DOCSDIR%%/makeuserdb.html
 %%PORTDOCS%%%%DOCSDIR%%/mailbot.html
 %%PORTDOCS%%%%DOCSDIR%%/maildir.html
 %%PORTDOCS%%%%DOCSDIR%%/maildirmake.html
-%%MAILDIRQUOTA%%%%PORTDOCS%%%%DOCSDIR%%/maildirquota.html
+%%PORTDOCS%%%%DOCSDIR%%/maildirquota.html
 %%PORTDOCS%%%%DOCSDIR%%/maildrop.html
 %%PORTDOCS%%%%DOCSDIR%%/maildropex.html
 %%PORTDOCS%%%%DOCSDIR%%/maildropfilter.html
@@ -46,6 +38,4 @@ bin/reformime
 %%PORTDOCS%%%%DOCSDIR%%/reformime.html
 %%PORTDOCS%%%%DOCSDIR%%/rfc2045.html
 %%PORTDOCS%%%%DOCSDIR%%/rfc822.html
-%%USERDB%%%%PORTDOCS%%%%DOCSDIR%%/userdb.html
-%%USERDB%%%%PORTDOCS%%%%DOCSDIR%%/userdbpw.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

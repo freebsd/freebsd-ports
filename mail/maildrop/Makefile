@@ -7,11 +7,6 @@
 
 # The following compile-time options are available:
 # WITH_GDBM=yes		Enable database extensions using GDBM (default: off)
-# WITH_USERDB=yes	Enable optional userdb authentication
-# WITH_MAILDIRQUOTA=yes Enable optional support for maildir quotas
-# WITH_TRASHQUOTA=yes   Include deleted messages, and the Trash folder,
-#                       in the estimated quota usage for maildirs.
-#			Requires WITH_MAILDIRQUOTA.
 # MAILDROP_SUID=<uid>,
 # MAILDROP_SGID=<gid>	Maildrop will be installed with suid permissions for
 #			MAILDROP_SUID, and sgid permissions for MAILDROP_SGID.
@@ -20,12 +15,10 @@
 # MAILDROP_TRUSTED_USERS=<user> Specify users allowed to use the -d option
 # NO_MAILWRAPPER=yes	If defined, let configure guess which sendmail binary
 #			to use
-# WITH_LDAP=yes		Enable experimental virtual user LDAP support
-# WITH_MYSQL=yes	Enable experimental virtual user MySQL support
+# WITH_AUTHLIB=yes	Enable optional support for Courier Auth Library
 
 PORTNAME=	maildrop
-PORTVERSION=	1.6.3
-PORTREVISION=	1
+PORTVERSION=	1.8.0
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	courier
@@ -38,10 +31,11 @@ USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--enable-syslog=1 \
-		--enable-use-flock \
+		--enable-use-flock=1 \
 		--with-etcdir="${PREFIX}/etc" \
 		--enable-maildrop-uid="${MAILDROP_SUID}" \
-		--enable-maildrop-gid="${MAILDROP_SGID}"
+		--enable-maildrop-gid="${MAILDROP_SGID}" \
+		--enable-maildirquota
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -53,29 +47,6 @@ LIB_DEPENDS+=		gdbm.3:${PORTSDIR}/databases/gdbm
 CONFIGURE_ARGS+=	--with-db=gdbm
 .else
 CONFIGURE_ARGS+=	--without-db
-.endif
-
-.if defined(WITH_USERDB)
-CONFIGURE_ARGS+=	--enable-userdb
-MAN1=		makedat.1
-MAN8=		makeuserdb.8 userdb.8 userdbpw.8
-MLINKS+=	makeuserdb.8 pw2userdb.8 \
-		makeuserdb.8 vchkpw2userdb.8
-EXTRA_TARGET+=	install-userdb install-makedat
-PLIST_SUB+=	USERDB=""
-.else
-PLIST_SUB+=	USERDB="@comment "
-.endif
-
-.if defined(WITH_MAILDIRQUOTA)
-CONFIGURE_ARGS+=	--enable-maildirquota
-.if defined(WITH_TRASHQUOTA)
-CONFIGURE_ARGS+=	--with-trashquota
-.endif
-EXTRA_TARGET+=	install-deliverquota
-PLIST_SUB+=	MAILDIRQUOTA=""
-.else
-PLIST_SUB+=	MAILDIRQUOTA="@comment "
 .endif
 
 .if !defined(NO_MAILWRAPPER)
@@ -90,17 +61,12 @@ LIB_DEPENDS+=	fam.0:${PORTSDIR}/devel/fam
 CONFIGURE_ARGS+=	--enable-trusted-users="${MAILDROP_TRUSTED_USERS}"
 .endif
 
-.if defined(WITH_LDAP)
-USE_OPENLDAP=	yes
-CONFIGURE_ARGS+=	--enable-maildropldap \
-			--with-ldapconfig=${PREFIX}/etc/maildropldap.config
-.endif
-
-.if defined(WITH_MYSQL)
-USE_MYSQL=	yes
-CONFIGURE_ARGS+=	--enable-maildropmysql \
-			--with-mysqlconfig=${PREFIX}/etc/maildropmysql.config
-LDFLAGS+=		-L${LOCALBASE}/lib/mysql
+.if defined(WITH_AUTHLIB)
+BUILD_DEPENDS=	${LOCALBASE}/bin/courierauthconfig:${PORTSDIR}/mail/courier-authlib
+RUN_DEPENDS=	${LOCALBASE}/bin/courierauthconfig:${PORTSDIR}/mail/courier-authlib
+LDFLAGS+=	-L${LOCALBASE}/lib/courier-authlib -rpath ${LOCALBASE}/lib/courier-authlib
+.else
+CONFIGURE_ARGS+=	--disable-authlib
 .endif
 
 MAILDROP_SUID?=	root
@@ -108,15 +74,15 @@ MAILDROP_SGID?=	mail
 
 .if defined(NOPORTDOCS)
 # Just install the binary and man pages, no extra documentation
-INSTALL_TARGET=	install-maildrop install-man ${EXTRA_TARGET}
+INSTALL_TARGET=	install-maildrop install-deliverquota install-man
 .else
 INSTALL_TARGET=	install-strip
 .endif
 
 MAN1+=	lockmail.1 mailbot.1 maildirmake.1 maildrop.1 makemime.1 \
 	reformail.1 reformime.1
-MAN5=	maildir.5 maildropex.5 maildropfilter.5 maildropgdbm.5
-MAN7=	maildirquota.7
+MAN5=	maildir.5
+MAN7=	maildirquota.7 maildropex.7 maildropfilter.7 maildropgdbm.7
 MAN8+=	deliverquota.8
 DOCS=	AUTHORS INSTALL INSTALL.html README README.html README.postfix \
 	UPGRADE UPGRADE.html maildroptips.txt maildir/README.*
