@@ -20,6 +20,7 @@ lib/perl5/site_perl/WWW/Search/AltaVista/AdvancedNews.pm
 lib/perl5/site_perl/WWW/Search/AltaVista/AdvancedWeb.pm
 lib/perl5/site_perl/WWW/Search/AltaVista/News.pm
 lib/perl5/site_perl/WWW/Search/AltaVista/Web.pm
+lib/perl5/site_perl/WWW/Search/Infoseek/Companies.pm
 lib/perl5/site_perl/WWW/Search/Infoseek/Email.pm
 lib/perl5/site_perl/WWW/Search/Infoseek/News.pm
 lib/perl5/site_perl/WWW/Search/Infoseek/Web.pm
@@ -32,8 +33,10 @@ lib/perl5/man/man3/WWW::Search::AltaVista::News.3.gz
 lib/perl5/man/man3/WWW::Search::AltaVista::Web.3.gz
 lib/perl5/man/man3/WWW::Search::Dejanews.3.gz
 lib/perl5/man/man3/WWW::Search::Excite.3.gz
+lib/perl5/man/man3/WWW::Search::Gopher.3.gz
 lib/perl5/man/man3/WWW::Search::HotBot.3.gz
 lib/perl5/man/man3/WWW::Search::Infoseek.3.gz
+lib/perl5/man/man3/WWW::Search::Infoseek::Companies.3.gz
 lib/perl5/man/man3/WWW::Search::Infoseek::Email.3.gz
 lib/perl5/man/man3/WWW::Search::Infoseek::News.3.gz
 lib/perl5/man/man3/WWW::Search::Infoseek::Web.3.gz
@@ -41,6 +44,8 @@ lib/perl5/man/man3/WWW::Search::Lycos.3.gz
 lib/perl5/man/man3/WWW::Search::Magellan.3.gz
 lib/perl5/man/man3/WWW::Search::PLweb.3.gz
 lib/perl5/man/man3/WWW::Search::SFgate.3.gz
+lib/perl5/man/man3/WWW::Search::Simple.3.gz
+lib/perl5/man/man3/WWW::Search::Verity.3.gz
 lib/perl5/man/man3/WWW::Search::WebCrawler.3.gz
 lib/perl5/man/man3/WWW::Search::Yahoo.3.gz
 lib/perl5/man/man3/WWW::SearchResult.3.gz
