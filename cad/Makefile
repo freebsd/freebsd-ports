@@ -13,6 +13,7 @@
     SUBDIR += chipmunk
     SUBDIR += chipvault
     SUBDIR += cider
+    SUBDIR += dinotrace
     SUBDIR += electric
     SUBDIR += fandango
     SUBDIR += geda
