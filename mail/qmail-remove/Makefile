@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	qmail-remove
-PORTVERSION=	0.94
+PORTVERSION=	0.95
 CATEGORIES=	mail
 MASTER_SITES=	http://www.linuxmagic.com/opensource/qmail/qmail-remove/
 
 MAINTAINER=	clement@FreeBSD.org
 COMMENT=	Removes messages from your qmail queue based on a particular string
 
-PLIST_FILES=	sbin/qmail-remove
+PLIST_FILES=	sbin/qmail-remove bin/populate.pl
 PORTDOCS=	INSTALL LICENSE README
 
 do-build:
@@ -24,6 +24,7 @@ do-build:
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/sbin
+	@${INSTALL_SCRIPT} ${WRKSRC}/populate.pl ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for f in ${PORTDOCS}
