@@ -71,6 +71,7 @@ share/gnome/help/grip/C/topic.dat
 share/gnome/help/grip/C/trkedit.png
 share/gnome/help/grip/C/volume.png
 share/gnome/help/grip/C/x135.html
+share/gnome/pixmaps/gripicon.png
 share/locale/ca/LC_MESSAGES/grip.mo
 share/locale/de/LC_MESSAGES/grip.mo
 share/locale/es/LC_MESSAGES/grip.mo
@@ -81,34 +82,5 @@ share/locale/ru/LC_MESSAGES/grip.mo
 share/locale/zh_CN/LC_MESSAGES/grip.mo
 share/locale/zh_HK/LC_MESSAGES/grip.mo
 share/locale/zh_TW/LC_MESSAGES/grip.mo
-share/pixmaps/gripicon.png
-@exec /bin/mkdir -p %D/share/gnome/help/grip/C/images
-@unexec /bin/rmdir %D/share/gnome/help/grip/C/images || true
-@dirrm share/pixmaps
-@dirrm share/locale/zh_TW/LC_MESSAGES
-@dirrm share/locale/zh_TW
-@dirrm share/locale/zh_HK/LC_MESSAGES
-@dirrm share/locale/zh_HK
-@dirrm share/locale/zh_CN/LC_MESSAGES
-@dirrm share/locale/zh_CN
-@dirrm share/locale/ru/LC_MESSAGES
-@dirrm share/locale/ru
-@dirrm share/locale/pt_BR/LC_MESSAGES
-@dirrm share/locale/pt_BR
-@dirrm share/locale/ja/LC_MESSAGES
-@dirrm share/locale/ja
-@dirrm share/locale/fr/LC_MESSAGES
-@dirrm share/locale/fr
-@dirrm share/locale/es/LC_MESSAGES
-@dirrm share/locale/es
-@dirrm share/locale/de/LC_MESSAGES
-@dirrm share/locale/de
-@dirrm share/locale/ca/LC_MESSAGES
-@dirrm share/locale/ca
-@dirrm share/locale
 @dirrm share/gnome/help/grip/C
 @dirrm share/gnome/help/grip
-@dirrm share/gnome/help
-@dirrm share/gnome/apps/Multimedia
-@dirrm share/gnome/apps
-@dirrm share/gnome
