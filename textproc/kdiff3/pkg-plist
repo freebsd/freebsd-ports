@@ -3,10 +3,16 @@ share/doc/HTML/en/kdiff3/index.html
 share/doc/HTML/en/kdiff3/triple_diff.png
 share/doc/HTML/en/kdiff3/screenshot_diff.png
 share/doc/HTML/en/kdiff3/screenshot_merge.png
-share/doc/HTML/en/kdiff3/background.png
 share/doc/HTML/en/kdiff3/white_space.png
 share/doc/HTML/en/kdiff3/letter_by_letter.png
 share/doc/HTML/en/kdiff3/open_dialog.png
+share/doc/HTML/en/kdiff3/dirmergebig.png
+share/doc/HTML/en/kdiff3/dirmergedocs.html
+share/doc/HTML/en/kdiff3/bigscreenshot.html
+share/doc/HTML/en/kdiff3/dirbrowser.png
+share/doc/HTML/en/kdiff3/iteminfo.png
+share/doc/HTML/en/kdiff3/new.png
+share/doc/HTML/en/kdiff3/merge_current.png
 share/applnk/Applications/kdiff3.desktop
 share/icons/locolor/32x32/apps/kdiff3.png
 share/icons/locolor/16x16/apps/kdiff3.png
