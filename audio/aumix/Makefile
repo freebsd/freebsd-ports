@@ -31,11 +31,26 @@ MAN1=		aumix.1 xaumix.1
 
 .include <bsd.port.pre.mk>
 
-.if ${HAVE_GNOME:Mgtk12}!=""
+pre-extract:
+.if !defined(WITH_GTK2) && !defined(WITHOUT_ALL)
+	@${ECHO_CMD}
+	@${ECHO_CMD} "****** To enable use of GTK+ 2.0, interrupt the   ******"
+	@${ECHO_CMD} "****** build now, set WITH_GTK2, and start again. ******"
+	@${ECHO_CMD}
+	@sleep 3
+.endif
+
+.if (${HAVE_GNOME:Mgtk12}!="") && !defined(WITHOUT_ALL) && \
+	!defined(WITHOUT_GTK)&& !defined(WITH_GTK2)
 USE_GNOME=	gtk12
 PKGNAMESUFFIX=	-gtk
-.else
 CONFIGURE_ARGS+=--without-gtk
+.elif defined(WITH_GTK2)
+PKGNAMESUFFIX=	-gtk
+LIB_DEPENDS+=	gtk-x11-2.0.0:${PORTSDIR}/x11-toolkits/gtk20
+CONFIGURE_ARGS+=--without-gtk1
+.else
+CONFIGURE_ARGS+=--without-gtk --without-gtk1
 .endif
 
 .include <bsd.port.post.mk>
