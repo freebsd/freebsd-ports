@@ -7,6 +7,7 @@
 
 PORTNAME=	inkscape
 PORTVERSION=	0.36
+PORTREVISION=	1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -21,7 +22,8 @@ USE_X_PREFIX=	yes
 USE_GNOME=	gnomeprefix gnomehack libglade2 libartlgpl2 libgnomeprintui
 USE_REINPLACE=	yes
 USE_LIBTOOL=	yes
-CONFIGURE_ARGS=	--with-popt
+CONFIGURE_ARGS=	--with-popt \
+		--with-gnome-print
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2 -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
