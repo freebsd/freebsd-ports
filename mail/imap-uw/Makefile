@@ -3,7 +3,7 @@
 # Date created:		9 Jan 1997
 # Whom:			pst
 #
-# $Id: Makefile,v 1.1.1.1 1997/01/10 02:38:35 pst Exp $
+# $Id: Makefile,v 1.2 1997/01/10 05:18:07 asami Exp $
 #
 
 DISTNAME=	imap-4.1.BETA
@@ -18,15 +18,16 @@ ALL_TARGET=	fbd
 MAN8=		ipopd.8 imapd.8
 
 do-install:
-	${INSTALL} -c -m ${BINMODE} -o ${BINOWN} -g ${BINGRP} \
-		${WRKSRC}/imapd/imapd ${PREFIX}/libexec/imapd
-	${INSTALL} -c -m ${BINMODE} -o ${BINOWN} -g ${BINGRP} \
-		${WRKSRC}/ipopd/ipop2d ${PREFIX}/libexec/ipop2d
-	${INSTALL} -c -m ${BINMODE} -o ${BINOWN} -g ${BINGRP} \
-		${WRKSRC}/ipopd/ipop3d ${PREFIX}/libexec/ipop3d
-	${INSTALL} -c -m ${MANMODE} -o ${MANOWN} -g ${MANGRP} \
+	${INSTALL_DATA} ${WRKSRC}/c-client/libc-client.so.2.0 ${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/c-client/c-client.a ${PREFIX}/lib/libc-client.a
+	/sbin/ldconfig -m ${PREFIX}/lib
+	${INSTALL_PROGRAM} ${WRKSRC}/imapd/imapd ${PREFIX}/libexec
+	${INSTALL_PROGRAM} ${WRKSRC}/ipopd/ipop2d ${PREFIX}/libexec
+	${INSTALL_PROGRAM} ${WRKSRC}/ipopd/ipop3d ${PREFIX}/libexec
+	${INSTALL_PROGRAM} ${WRKSRC}/mtest/mtest ${PREFIX}/bin/mboxtest
+	${INSTALL_MAN} \
 		${WRKSRC}/src/imapd/imapd.8c ${PREFIX}/man/man8/imapd.8
-	${INSTALL} -c -m ${MANMODE} -o ${MANOWN} -g ${MANGRP} \
+	${INSTALL_MAN} \
 		${WRKSRC}/src/ipopd/ipopd.8c ${PREFIX}/man/man8/ipopd.8
 	
 .include <bsd.port.mk>
