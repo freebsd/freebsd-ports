@@ -1,12 +1,13 @@
 --- pam_krb5.h.orig	Tue Jan  4 19:08:51 2000
-+++ pam_krb5.h	Mon Nov  6 13:42:22 2000
++++ pam_krb5.h	Wed Jan 24 13:37:28 2001
 @@ -5,7 +5,18 @@
   */
  
  int get_user_info(pam_handle_t *, char *, int, char **);
 -krb5_error_code pam_prompter(krb5_context, void *, const char *,
 -			     const char *, int, krb5_prompt[]);
- int verify_krb_v5_tgt(krb5_context, krb5_ccache, int);
+-int verify_krb_v5_tgt(krb5_context, krb5_ccache, int);
++int verify_krb_v5_tgt(krb5_context, krb5_ccache, char *, int);
  void cleanup_cache(pam_handle_t *, void *, int);
 +
 +krb5_prompter_fct pam_prompter;
