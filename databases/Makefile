@@ -119,6 +119,7 @@
     SUBDIR += postgresql-docs
     SUBDIR += postgresql-jdbc
     SUBDIR += postgresql-libpq++
+    SUBDIR += postgresql-libpqxx
     SUBDIR += postgresql-odbc
     SUBDIR += postgresql-plruby
     SUBDIR += postgresql-pltcl

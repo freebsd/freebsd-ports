@@ -1,0 +1,20 @@
+include/pqxx/compiler.h
+include/pqxx/config.h
+include/pqxx/connection.h
+include/pqxx/cursor.h
+include/pqxx/nontransaction.h
+include/pqxx/result.h
+include/pqxx/robusttransaction.h
+include/pqxx/tablereader.h
+include/pqxx/tablestream.h
+include/pqxx/tablewriter.h
+include/pqxx/transaction.h
+include/pqxx/transactionitf.h
+include/pqxx/transactor.h
+include/pqxx/trigger.h
+include/pqxx/util.h
+lib/libpqxx.a
+lib/libpqxx.la
+lib/libpqxx.so
+lib/libpqxx.so.0
+@dirrm include/pqxx
