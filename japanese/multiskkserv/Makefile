@@ -11,7 +11,7 @@ CATEGORIES=	japanese
 MASTER_SITES=	http://www3.big.or.jp/~sian/linux/products/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/0.//g}
 
-MAINTAINER=	morishita@skywing.org
+MAINTAINER=	freebsd@next-generation.org
 COMMENT=	Multiple dictionary server for the SKK
 
 EXTRACT_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/databases/cdb:build

@@ -11,7 +11,7 @@ PATCH_SITES=		http://www.cc.rim.or.jp/~yaz/:jp_patch
 PATCHFILES=		gaim-0.76_jp.patch.gz:jp_patch
 PATCH_DIST_STRIP=	-p1:jp_patch
 
-MAINTAINER=	morishita@skywing.org
+MAINTAINER=	freebsd@next-generation.org
 
 MASTERDIR=	${.CURDIR}/../../net/gaim
 MD5_FILE=	${.CURDIR}/distinfo
