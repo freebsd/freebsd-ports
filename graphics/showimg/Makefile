@@ -12,7 +12,7 @@ PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.jalix.org/projects/showimg/download/${PORTVERSION}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	shelton@sentry.granch.ru
 COMMENT=	A picture viewer designed to run under KDE 3.x
 
 USE_BZIP2=	yes
