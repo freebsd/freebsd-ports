@@ -1,7 +1,11 @@
 bin/pmk
+bin/pmkinstall
+bin/pmkpc
 bin/pmkscan
 sbin/pmksetup
-share/pmk/pmkfile.sample
 share/pmk/pmk.conf.sample
+share/pmk/pmkcfgtool.dat
+share/pmk/pmkcomp.dat
+share/pmk/pmkfile.sample
 share/pmk/pmkscan.dat
 @dirrm share/pmk

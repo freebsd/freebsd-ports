@@ -6,22 +6,19 @@
 #
 
 PORTNAME=	pmk
-PORTVERSION=	0.7
+PORTVERSION=	0.8.1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	premk
+MASTER_SITE_SUBDIR=	pmk
 
 MAINTAINER=	seanc@FreeBSD.org
 COMMENT=	Pre Make Kit, a sane replacement for autoconf
 
-MAN1=	pmk.1 pmkscan.1
+MAN1=	pmk.1 pmkscan.1 pmkinstall.1
 MAN5=	pmk.conf.5 pmkfile.5
 MAN8=	pmksetup.8
 
-post-extract:
-	cd ${WRKSRC}; ${MAKE} clean
-
 do-configure:
-	cd ${WRKSRC}; ${MAKE} cfgrm
+	cd ${WRKSRC}; SYSCONFDIR=${PREFIX}/etc ./pmkcfg.sh
 
 .include <bsd.port.mk>
