@@ -1,5 +1,6 @@
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/SNPP/.packlist
 lib/perl5/site_perl/%%PERL_VER%%/Net/SNPP.pm
+lib/perl5/site_perl/%%PERL_VER%%/Net/SNPP/Server.pm
 lib/perl5/site_perl/%%PERL_VER%%/Net/SNPP/HylaFAX.pm
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/SNPP
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/Net/SNPP
