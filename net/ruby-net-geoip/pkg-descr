@@ -1,0 +1,5 @@
+Net::GeoIP lets you look up the country of a given IP address or
+hostname.
+
+Author: Sean Chittenden <sean@chittenden.org>
+WWW:	http://www.rubynet.org/modules/net/geoip/

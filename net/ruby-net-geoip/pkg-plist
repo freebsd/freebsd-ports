@@ -1,0 +1,4 @@
+%%RUBY_SITEARCHLIBDIR%%/net/geoip.so
+@unexec rmdir %B 2>/dev/null || true
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%
