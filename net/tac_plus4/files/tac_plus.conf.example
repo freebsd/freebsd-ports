@@ -1,5 +1,9 @@
 # /usr/local/etc/tac_plus.conf
 
+    # This is example from old version of tac_plus. It will work
+    # but config file have new features. I recomend to read
+    # /usr/local/share/doc/tac_plus/users_guide
+
 user=fred {
     name = "Fred Flintstone"
     login = des mEX027bHtzTlQ

@@ -1,5 +1,16 @@
-tacacs+ services network requests for authentication
-and authorization, verifies identities, grants or denies
-authorizations, and logs accounting records. 
+tacacs+ s program that allow authorization and authentication via net on
+remote access servers. Authnticate users, authorize commands and log 
+accounting information.
 
-WWW: http://www.cisco.com/warp/public/146/187.html
+This new version 4 has improved features and bugfixes over the older 2.x
+version, which is still available, since this source is still marked ALPHA.
+
+Improved features among others and bugfixes: Microsoft CHAP support.
+To enable MSCHAP you need to optain a key from Microsoft, see the FAQ
+section in the users guide. Therefore this isn't enabled by default.
+
+Details are described at:
+http://www.cisco.com/warp/public/146/187.html
+
+-- Taras
+tasic@lucky.net

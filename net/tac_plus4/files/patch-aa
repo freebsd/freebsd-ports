@@ -1,18 +1,24 @@
---- Makefile.orig	Sat Jul 29 00:49:20 1995
-+++ Makefile	Thu Oct 14 22:12:44 1999
-@@ -22,9 +22,9 @@
- # OSLIBS=-lsocket -lnsl
+--- Makefile.orig	Sat Apr  3 08:03:48 1999
++++ Makefile	Tue Nov  9 21:48:01 1999
+@@ -31,13 +31,13 @@
+ # OS=-DMIPS
+ 
+ # For Solaris (SUNOS 5.3, 5.4, 5.5, 5.6) uncomment the following two lines
+-OS=-DSOLARIS
+-OSLIBS=-lsocket -lnsl
++# OS=-DSOLARIS
++# OSLIBS=-lsocket -lnsl
  
  # For FreeBSD
 -# OS=-DFREEBSD
 +OS=-DFREEBSD
- # You may also need to add
+ # You may also need to add:
 -# OSLIBS=-lcrypt
 +OSLIBS=-lcrypt
- 
- # For LINUX
- # OS=-DLINUX
-@@ -40,23 +40,23 @@
+ # NOTE: If you want your password encryption to be compatible with
+ # e.g. SunOS, you may need to instead use:
+ # OSLIBS=-ldescrypt
+@@ -62,12 +62,12 @@
  # FLAGS   = -DTAC_PLUS_USERID=$(USERID) -DTAC_PLUS_GROUPID=$(GROUPID)
  
  # Definitions for SKEY functionality
@@ -22,10 +28,13 @@
 +LIBS = -lskey -lmd
  # INCLUDES = -I../crimelab/skey/src
  
+ # Debugging flags
 -DEBUG = -g
-+#DEBUG = -g
++# DEBUG = -g
  
- # On startup, tac_plus creates the file /etc/tac_plus.pid (if
+ # Enforce a limit on maximum sessions per user. See the user's guide
+ # for more information.
+@@ -83,13 +83,13 @@
  # possible), containing its process id. Uncomment and modify the
  # following line to change this filename
  
@@ -36,8 +45,19 @@
  # End of customisable section of Makefile
  #
  
--CFLAGS = $(DEBUG) $(DEFINES) $(INCLUDES) $(FLAGS) $(OS) $(PIDFILE)
-+CFLAGS += $(DEBUG) $(DEFINES) $(INCLUDES) $(FLAGS) $(OS) $(PIDFILE)
+-CFLAGS = $(DEBUG) $(DEFINES) $(INCLUDES) $(FLAGS) $(OS) $(PIDFILE) $(MAXSESS)
++CFLAGS += $(DEBUG) $(DEFINES) $(INCLUDES) $(FLAGS) $(OS) $(PIDFILE) $(MAXSESS)
  
- SRCS =	acct.c authen.c author.c choose_authen.c config.c do_acct.c \
- 	do_author.c dump.c encrypt.c expire.c md5.c \
+ HFILES = expire.h parse.h regmagic.h md5.h regexp.h tac_plus.h 
+ 
+@@ -128,8 +128,8 @@
+ 	-rm -f *.o *~ *.BAK tac_plus generate_passwd
+ 
+ install:
+-	cp tac_plus /usr/local/bin
+-	cp tac_plus.1 /usr/man/manl/tac_plus.1
++	cp tac_plus $(PREFIX)/sbin
++	cp tac_plus.1 $(PREFIX)/man1/tac_plus.1
+ 
+ depend:
+ 	makedepend $(CFLAGS) $(SRCS)
