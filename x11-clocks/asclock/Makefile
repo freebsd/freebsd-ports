@@ -3,12 +3,12 @@
 # Date created:        20 June 1997
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.5 1998/11/29 12:43:11 asami Exp $
+# $Id: Makefile,v 1.6 1999/01/12 16:50:21 vanilla Exp $
 #
 
 DISTNAME=	asclock
 PKGNAME=	asclock-1.0
-CATEGORIES=	x11-clocks
+CATEGORIES=	x11-clocks afterstep
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=		applications
 EXTRACT_SUFX=	.tgz

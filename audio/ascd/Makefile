@@ -3,11 +3,11 @@
 # Date created:                29 November 1998
 # Whom:                        Jim Mock <jim@phrantic.phear.net>
 #
-# $Id: Makefile,v 1.1.1.1 1998/12/05 10:02:02 flathill Exp $
+# $Id: Makefile,v 1.2 1998/12/22 05:43:34 asami Exp $
 #
 
 DISTNAME=	ascd-0.7
-CATEGORIES=	audio
+CATEGORIES=	audio afterstep
 MASTER_SITES=	http://slashdot.org/linux/dl/
 
 MAINTAINER=	jim@phrantic.phear.net

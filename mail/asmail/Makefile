@@ -3,11 +3,11 @@
 # Date created:		15 August 1997
 # Whom:			brett@peloton.physics.montana.edu
 #
-# $Id: Makefile,v 1.4 1998/10/02 01:59:06 steve Exp $
+# $Id: Makefile,v 1.5 1998/11/21 07:27:38 steve Exp $
 #
 
 DISTNAME=	asmail-0.50
-CATEGORIES=	mail
+CATEGORIES=	mail afterstep
 MASTER_SITES=	ftp://afterstep.foo.net/pub/AfterStep/apps/asmail/ \
 		ftp://ftp.cs.tu-berlin.de/pub/X/afterstep/apps/asmail/
 
