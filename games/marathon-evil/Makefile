@@ -13,6 +13,7 @@ MASTER_SITES=	http://archives2.bungie.org/a1sdl/ \
 DISTNAME=	MarathonEvil-3
 
 MAINTAINER=	bmah@freebsd.org
+COMMENT=	Marathon-Evil scenario for use with AlephOne
 
 RUN_DEPENDS=	alephone:${PORTSDIR}/games/alephone
 
