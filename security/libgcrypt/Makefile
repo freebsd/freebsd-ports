@@ -15,6 +15,7 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	"General purpose crypto library based on code used in GnuPG"
 
+CONFLICTS=	libgcrypt-1.1.9*
 USE_REINPLACE=	yes
 USE_PERL5=	yes
 USE_LIBTOOL=	yes
