@@ -1,12 +1,12 @@
 # New ports collection makefile for:   ethereal
-# Version required:    0.4.1
+# Version required:    0.5.0
 # Date created:        10 August 1998
 # Whom:                Bill Fumerola <billf@chc-chimes.com>
 #
-# $Id: Makefile,v 1.5 1998/10/20 18:10:47 vanilla Exp $
+# $Id: Makefile,v 1.6 1998/11/11 21:47:04 billf Exp $
 #
 
-DISTNAME=	ethereal-0.4.1
+DISTNAME=	ethereal-0.5.0
 CATEGORIES=	net
 MASTER_SITES=	http://ethereal.zing.org/distribution/ \
 		http://ethereal.boehm.org/distribution/
