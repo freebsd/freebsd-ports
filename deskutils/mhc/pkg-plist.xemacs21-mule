@@ -70,11 +70,11 @@
 %%EMACS_LIBDIR%%/site-packages/etc/mhc/Party.xpm
 %%EMACS_LIBDIR%%/site-packages/etc/mhc/Private.xpm
 %%EMACS_LIBDIR%%/site-packages/etc/mhc/Vacation.xpm
-share/doc/mhc/DOT.schedule.sample.jp
-share/doc/mhc/00copyright
-share/doc/mhc/00readme
-share/doc/mhc/00readme.jis
-share/doc/mhc/00usage.jis
 @dirrm %%EMACS_LIBDIR%%/site-packages/lisp/mhc
 @dirrm %%EMACS_LIBDIR%%/site-packages/etc/mhc
-@dirrm share/doc/mhc
+%%PORTDOCS%%share/doc/mhc/DOT.schedule.sample.jp
+%%PORTDOCS%%share/doc/mhc/00copyright
+%%PORTDOCS%%share/doc/mhc/00readme
+%%PORTDOCS%%share/doc/mhc/00readme.jis
+%%PORTDOCS%%share/doc/mhc/00usage.jis
+%%PORTDOCS%%@dirrm share/doc/mhc

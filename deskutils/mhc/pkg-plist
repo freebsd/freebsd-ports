@@ -66,11 +66,11 @@
 %%EMACS_LIBDIR%%/site-lisp/mhc/icons/Party.xbm
 %%EMACS_LIBDIR%%/site-lisp/mhc/icons/Private.xbm
 %%EMACS_LIBDIR%%/site-lisp/mhc/icons/Vacation.xbm
-share/doc/mhc/DOT.schedule.sample.jp
-share/doc/mhc/00copyright
-share/doc/mhc/00readme
-share/doc/mhc/00readme.jis
-share/doc/mhc/00usage.jis
 @dirrm %%EMACS_LIBDIR%%/site-lisp/mhc/icons
 @dirrm %%EMACS_LIBDIR%%/site-lisp/mhc
-@dirrm share/doc/mhc
+%%PORTDOCS%%share/doc/mhc/DOT.schedule.sample.jp
+%%PORTDOCS%%share/doc/mhc/00copyright
+%%PORTDOCS%%share/doc/mhc/00readme
+%%PORTDOCS%%share/doc/mhc/00readme.jis
+%%PORTDOCS%%share/doc/mhc/00usage.jis
+%%PORTDOCS%%@dirrm share/doc/mhc
