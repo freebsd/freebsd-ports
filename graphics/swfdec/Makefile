@@ -7,33 +7,30 @@
 #
 
 PORTNAME=	swfdec
-PORTVERSION=	0.2.2
-PORTREVISION=	6
+PORTVERSION=	0.3.2
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	http://www.schleef.org/swfdec/download/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	Flash Rendering Library
 
-LIB_DEPENDS=	mad.2:${PORTSDIR}/audio/libmad
+LIB_DEPENDS=	mad.2:${PORTSDIR}/audio/libmad \
+		oil-0.2.0:${PORTSDIR}/devel/liboil
 
+USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_SDL=	sdl
 USE_GNOME=	gnomehack gtk20 libartlgpl2
 USE_GETOPT_LONG=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 INSTALLS_SHLIB=	yes
 
-CPPFLAGS=	-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib
-
-.include <bsd.port.pre.mk>
+PLIST_SUB=	VERSION=${PORTVERSION:R}
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|sdl-config|${SDL_CONFIG:T}|g" ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e "s|malloc\.h|stdlib.h|g" ${WRKSRC}/libswfdec/jpeg/sl_types.h
+	@${REINPLACE_CMD} -e "s,int16_t,__int16_t," ${WRKSRC}/libswfdec/swfdec_shape.c
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

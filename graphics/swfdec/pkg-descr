@@ -3,4 +3,4 @@ originally designed as a basis library for creating Flash plugins for
 GStreamer, but it is a fully standalone library which only use the
 libart library for drawing.
 
-WWW: http://swfdec.sourceforge.net/
+WWW: http://www.schleef.org/swfdec/
