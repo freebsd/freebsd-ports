@@ -73,3 +73,13 @@ lib/libmh.so.3.2
 @dirrm lib/mh
 @exec /sbin/ldconfig -m %D/lib
 @unexec /sbin/ldconfig -R
+%%PORTDOCS%%share/doc/ja-mh/00.READ.ME.1ST
+%%PORTDOCS%%share/doc/ja-mh/CHANGES.JP
+%%PORTDOCS%%share/doc/ja-mh/COMMANDS.JP
+%%PORTDOCS%%share/doc/ja-mh/FAQ.JP
+%%PORTDOCS%%share/doc/ja-mh/FEATURES.JP
+%%PORTDOCS%%share/doc/ja-mh/INSTALL.JP
+%%PORTDOCS%%share/doc/ja-mh/OPTIONS.JP
+%%PORTDOCS%%share/doc/ja-mh/READ-ME.JP
+%%PORTDOCS%%share/doc/ja-mh/TODO.JP
+%%PORTDOCS%%@dirrm share/doc/ja/mh
