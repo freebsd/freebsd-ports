@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ssh2
-PORTVERSION=	3.2.2
+PORTVERSION=	3.2.3
 CATEGORIES=	security ipv6
 MASTER_SITES=	ftp://ftp.ssh.com/pub/ssh/ \
 		ftp://sunsite.unc.edu/pub/packages/security/ssh/ \
@@ -69,9 +69,9 @@ PLIST_SUB=	WITH_X11:="@comment "
 .endif
 
 MAN1=		ssh2.1 ssh-keygen2.1 ssh-add2.1 ssh-agent2.1 scp2.1 sftp2.1 \
-		sshregex.1 ssh-probe2.1 ssh-dummy-shell.1 ssh-pubkeymgr.1 \
-		ssh-chrootmgr.1
-MAN5=		ssh2_config.5 sshd-check-conf.5 sshd2_config.5
+		sshregex.1 ssh-probe2.1 ssh-dummy-shell.1
+MAN5=		ssh2_config.5 sshd-check-conf.5 sshd2_config.5 \
+		sshd2_subconfig.5
 MAN8=		sshd2.8
 MLINKS=		ssh2.1 ssh.1 ssh-add2.1 ssh-add.1 ssh-agent2.1 ssh-agent.1 \
 		ssh-keygen2.1 ssh-keygen.1 scp2.1 scp.1 sftp2.1 sftp.1 \
@@ -81,7 +81,7 @@ MANCOMPRESSED=	no
 PORTDOCS=	CHANGES FAQ INSTALL LICENSE MANIFEST NEWS README \
 		REGEX-SYNTAX SSH2.QUICKSTART
 
-post-install: install-config-files
+post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 .for i in ${PORTDOCS}
@@ -100,13 +100,5 @@ post-install: install-config-files
 		${CHMOD} 751 ${SSH2_RCD}/sshd.sh; \
 	    fi; \
 	fi
-
-install-config-files:
-.for file in ${CONFIG_FILES}
-	${INSTALL_DATA} ${WRKSRC}/apps/ssh/${file} ${SSH2_ETC}/${file}.sample
-.if !exists(${SSH2_ETC}/${file})
-	${INSTALL_DATA} ${WRKSRC}/apps/ssh/${file} ${SSH2_ETC}
-.endif
-.endfor
 
 .include <bsd.port.post.mk>
