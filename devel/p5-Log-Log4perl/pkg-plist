@@ -36,6 +36,7 @@
 %%SITE_PERL%%/Log/Log4perl/Logger.pm
 %%SITE_PERL%%/Log/Log4perl/MDC.pm
 %%SITE_PERL%%/Log/Log4perl/NDC.pm
+%%SITE_PERL%%/Log/Log4perl/Util.pm
 @dirrm %%SITE_PERL%%/Log/Log4perl/Appender
 @dirrm %%SITE_PERL%%/Log/Log4perl/Config
 @dirrm %%SITE_PERL%%/Log/Log4perl/Filter
