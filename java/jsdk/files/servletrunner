@@ -1,0 +1,5 @@
+#!/bin/sh
+#
+# $FreeBSD$
+
+exec %%LOCALBASE%%/bin/java -classpath "%%JAVAJARDIR%%/jsdk.jar:%%JAVA_CLASSES%%:${CLASSPATH}" sun.servlet.http.HttpServer "$@"
