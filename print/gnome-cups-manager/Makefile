@@ -17,6 +17,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Admistration tool for cups
 
 LIB_DEPENDS=	gnomecups-1.0.1:${PORTSDIR}/print/libgnomecups
+RUN_DEPENDS=	gnomesu:${PORTSDIR}/sysutils/gnomesu
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
@@ -26,7 +27,7 @@ USE_GNOME=	gnomeprefix gnomehack intlhack libgnomeprintui libgnomeui \
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL_VER=15
 USE_REINPLACE=	yes
-CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 post-patch:
