@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bogofilter
-PORTVERSION=	0.14.5.2
+PORTVERSION=	0.14.5.4
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,6 +17,8 @@ COMMENT=	"Fast, teachable, learning spam detector"
 # There is a sibling port, bogofilter-tdb, which presets different
 # values for some of our variables
 LIB_DEPENDS?=	db4.0:${PORTSDIR}/databases/db4
+
+CONFLICTS?=	bogofilter-tdb*
 
 USE_PERL5_RUN=	yes
 GNU_CONFIGURE=	yes
