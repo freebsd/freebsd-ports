@@ -224,6 +224,7 @@
     SUBDIR += hlserver-wasteland
     SUBDIR += hlserver-wizwars
     SUBDIR += hlstats
+    SUBDIR += hohlin
     SUBDIR += icbm3d
     SUBDIR += icebreaker
     SUBDIR += ifm
