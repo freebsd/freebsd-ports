@@ -1,2 +1,2 @@
 #! /bin/sh
-exec /usr/bin/env python %%DATADIR%%/updatereadmes.py
+exec /usr/bin/env python %%DATADIR%%/updatereadmes.py $*
