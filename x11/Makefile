@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.228 1998/08/07 23:08:30 asami Exp $
+# $Id: Makefile,v 1.229 1998/08/11 15:08:57 kuriyama Exp $
 #
 
     SUBDIR += XFree86
@@ -38,7 +38,6 @@
     SUBDIR += offix-clipboard
     SUBDIR += offix-execute
     SUBDIR += props
-    SUBDIR += pythonqt
     SUBDIR += rxvt
     SUBDIR += sxpc
     SUBDIR += tkgoodstuff
