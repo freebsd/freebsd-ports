@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sox
-PORTVERSION=	12.17.6
+PORTVERSION=	12.17.7
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sox
@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	sox
 MAINTAINER=	dnelson@allantgroup.com
 COMMENT=	SOund eXchange - universal sound sample translator
 
-CONFLICTS=	play-*
+CONFLICTS=	play-[0-9]*
 
 MAN1=			sox.1 play.1 soxexam.1
 MLINKS=			play.1 rec.1 sox.1 soxmix.1
