@@ -1,5 +1,5 @@
 --- guile-gnome/gtkhtml/gtkhtml-glue.c.orig	Mon Feb  5 22:46:22 2001
-+++ guile-gnome/gtkhtml/gtkhtml-glue.c	Sat Aug 31 14:03:17 2002
++++ guile-gnome/gtkhtml/gtkhtml-glue.c	Mon Nov 11 22:52:04 2002
 @@ -110,7 +110,7 @@
  extern sgtk_boxed_info sgtk_gtimer_info;
  
@@ -56,7 +56,16 @@
    ;
    ;
 -  cr_ret = gtk_html_request_paste (c_html, c_type, c_time);
-+  cr_ret = gtk_html_request_paste (c_html, c_selection, c_type, c_time);
++  cr_ret = gtk_html_request_paste (c_html, c_selection, c_type, c_time, 0);
    SCM_ALLOW_INTS;
  
    return scm_long2num (cr_ret);
+@@ -693,7 +698,7 @@
+ 
+   SCM_DEFER_INTS;
+   c_html = (GtkHTML*)sgtk_get_gtkobj (p_html);
+-  gtk_html_paste (c_html);
++  gtk_html_paste (c_html, 0);
+   SCM_ALLOW_INTS;
+ 
+   return SCM_UNSPECIFIED;
