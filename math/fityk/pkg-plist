@@ -1,0 +1,5 @@
+bin/cfityk
+bin/fityk
+%%DATADIR%%/fityk_tips.txt
+%%DATADIR%%/fitykhelp.htb
+@dirrm %%DATADIR%%

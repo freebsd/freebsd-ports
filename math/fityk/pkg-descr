@@ -1,0 +1,22 @@
+Fityk is a general-purpose nonlinear curve fitting and data analysis software.
+
+Although it is being developed to analyze powder diffraction patterns, it can
+be used to fit analytical functions to any kind of data: crystallographic
+module is an independent part of the program. Apart from crystallography fityk
+is reported to be used also in chromatography, photoluminescence, infrared and
+Raman spectroscopy, and in other fields.
+
+At present fityk knows only about common peak-shaped functions (Gaussian,
+Lorentzian, Voigt, Pearson VII etc.) and polynomial. User-defined functions
+will be implemented in 2005.
+
+In terms of powder diffraction fityk will fit the data with a set of position-
+correlated peaks to give the refined lattice parameters, zero-shift, sample
+displacement and wavelength.
+
+Fityk offers everything a decent refinement program should offer but first of
+all intuitive graphical interface. Apart from the standard Marquardt least-
+square algorithm one may choose a genetic algorithm or Nelder-Mead simplex
+method for complex or unstable cases.
+
+WWW: http://fityk.sourceforge.net/
