@@ -1,5 +1,5 @@
---- cups-samba.install.old	Tue Feb 10 14:52:51 2004
-+++ cups-samba.install	Tue Feb 10 16:56:05 2004
+--- cups-samba.install.orig	Sat Jan  3 19:49:11 2004
++++ cups-samba.install	Fri Jul  2 22:45:16 2004
 @@ -1,4 +1,4 @@
 -#!/bin/sh
 +#!%%LOCALBASE%%/bin/bash
@@ -17,7 +17,22 @@
  case "`uname`" in
  	Darwin*)
  	case "`id -un`" in
-@@ -91,9 +91,9 @@
+@@ -44,13 +44,7 @@
+ 	ac_c='\c'
+ fi
+ # Determine correct extract options for the tar command...
+-if test `uname` = Darwin; then
+-	ac_tar="tar -xpPf"
+-else if test "`tar --help 2>&1 | grep GNU`" = ""; then
+-	ac_tar="tar -xpf"
+-else
+-	ac_tar="tar -xpPf"
+-fi fi
++ac_tar="tar -xpPf"
+ if test "$*" = "now"; then
+ 	echo Software license silently accepted via command-line option.
+ else
+@@ -91,9 +85,9 @@
  		esac
  	done
  fi
@@ -29,7 +44,7 @@
  fi
  case `uname` in
  	AIX)
-@@ -134,7 +134,7 @@
+@@ -134,7 +128,7 @@
  
  	*)
  	dfroot=`df -k / | tr '\n' ' '`
@@ -38,7 +53,7 @@
  	fsroot=`echo $dfroot | awk '{print $13}'`
  	sproot=`echo $dfroot | awk '{print $11}'`
  	fsusr=`echo $dfusr | awk '{print $13}'`
-@@ -167,44 +167,45 @@
+@@ -167,44 +161,45 @@
  
  		if test $spss -gt $spusr; then
  			echo Not enough free disk space for software:
