@@ -7,21 +7,27 @@
 
 PORTNAME=	hostsentry
 PORTVERSION=	0.02
+PORTREVISION=	1
 CATEGORIES=	security
-MASTER_SITES=	ftp://ftp.netsys.com/len/
+MASTER_SITES=	ftp://ftp.netsys.com/len/ \
+		${MASTER_SITE_PACKETSTORM}
+MASTER_SITE_SUBDIR=	UNIX/IDS
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mranner@inode.at
 COMMENT=	A Login Anomaly Detector
 
-RUN_DEPENDS=	${LOCALBASE}/bin/python:${PORTSDIR}/lang/python
+RUN_DEPENDS=	${PYTHONPREFIX_SITELIBDIR}/gdbm.so:${PORTSDIR}/databases/py-gdbm
 
-IGNORE=		is missing runtime dependencies; see ports/62516
-EXPIRATION_DATE=2004-08-20
-DEPRECATED=	${IGNORE}
+USE_PYTHON=	yes
+
+PKGMESSAGE=	${WRKDIR}/pkg-message
+
+post-patch:
+	@${SED} 's|%%PREFIX%%|${PREFIX}|' ${.CURDIR}/pkg-message > ${PKGMESSAGE}
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/hostsentry
+	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.BUGS \
 	${WRKSRC}/README.credits \
 	${WRKSRC}/README.install \
@@ -31,12 +37,8 @@ post-install:
 	${WRKSRC}/README.technical \
 	${WRKSRC}/README.why_python \
 	${WRKSRC}/README.wtmp \
-	${PREFIX}/share/doc/hostsentry
+	${DOCSDIR}
 .endif
-
-	${INSTALL_DATA} ${WRKSRC}/hostsentry.conf \
-	${PREFIX}/etc/hostsentry.conf
-
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

@@ -1,34 +1,39 @@
-abacus/hostsentry/hostSentryConfig.py
-abacus/hostsentry/hostSentryCore.py
-abacus/hostsentry/hostSentryDB.py
-abacus/hostsentry/hostSentryLog.py
-abacus/hostsentry/hostSentryStat.py
-abacus/hostsentry/hostSentryTTY.py
-abacus/hostsentry/hostSentryTTYDB.py
-abacus/hostsentry/hostSentryUser.py
-abacus/hostsentry/hostSentryUtmp.py
-abacus/hostsentry/hostsentry.py
-abacus/hostsentry/modules/moduleExample.py
-abacus/hostsentry/modules/moduleFirstLogin.py
-abacus/hostsentry/modules/moduleForeignDomain.allow
-abacus/hostsentry/modules/moduleForeignDomain.py
-abacus/hostsentry/modules/moduleHistorySuspicious.py
-abacus/hostsentry/modules/moduleHistoryTruncated.py
-abacus/hostsentry/modules/moduleLoginLogout.py
-abacus/hostsentry/modules/moduleMultipleLogins.allow
-abacus/hostsentry/modules/moduleMultipleLogins.py
-abacus/hostsentry/modules/moduleOddDirnames.py
-abacus/hostsentry/modules/moduleRhostsCheck.py
-@dirrm abacus/hostsentry/modules
-@unexec rmdir %D/abacus/hostsentry 2>/dev/null || true
-@unexec rmdir %D/abacus 2>/dev/null || echo "If you are permanently removing this port, you should do a "rm -rf ${PKG_PREFIX}/abacus" to remove any binary, configuration and log files left." | fmt
-%%PORTDOCS%%share/doc/hostsentry/README.BUGS
-%%PORTDOCS%%share/doc/hostsentry/README.credits
-%%PORTDOCS%%share/doc/hostsentry/README.install
-%%PORTDOCS%%share/doc/hostsentry/README.intro
-%%PORTDOCS%%share/doc/hostsentry/README.modules
-%%PORTDOCS%%share/doc/hostsentry/README.paper
-%%PORTDOCS%%share/doc/hostsentry/README.technical
-%%PORTDOCS%%share/doc/hostsentry/README.why_python
-%%PORTDOCS%%share/doc/hostsentry/README.wtmp
-%%PORTDOCS%%@dirrm share/doc/hostsentry
+etc/hostsentry/hostsentry.action-dist
+etc/hostsentry/hostsentry.conf-dist
+etc/hostsentry/hostsentry.ignore-dist
+etc/hostsentry/hostsentry.modules-dist
+lib/hostsentry/hostSentryConfig.py
+lib/hostsentry/hostSentryCore.py
+lib/hostsentry/hostSentryDB.py
+lib/hostsentry/hostSentryLog.py
+lib/hostsentry/hostSentryStat.py
+lib/hostsentry/hostSentryTTY.py
+lib/hostsentry/hostSentryTTYDB.py
+lib/hostsentry/hostSentryUser.py
+lib/hostsentry/hostSentryUtmp.py
+lib/hostsentry/hostsentry.py
+lib/hostsentry/modules/moduleExample.py
+lib/hostsentry/modules/moduleFirstLogin.py
+lib/hostsentry/modules/moduleForeignDomain.allow
+lib/hostsentry/modules/moduleForeignDomain.py
+lib/hostsentry/modules/moduleHistorySuspicious.py
+lib/hostsentry/modules/moduleHistoryTruncated.py
+lib/hostsentry/modules/moduleLoginLogout.py
+lib/hostsentry/modules/moduleMultipleLogins.allow
+lib/hostsentry/modules/moduleMultipleLogins.py
+lib/hostsentry/modules/moduleOddDirnames.py
+lib/hostsentry/modules/moduleRhostsCheck.py
+@dirrm lib/hostsentry/modules
+@unexec rm %D/lib/hostsentry/*.pyc || true
+@dirrm lib/hostsentry
+@unexec rmdir %D/etc/hostsentry 2>/dev/null || echo "If you are permanently removing this port, you should do a "rm -rf ${PKG_PREFIX}/etc/hostsentry" to remove any binary, configuration and log files left." | fmt
+%%PORTDOCS%%%%DOCSDIR%%/README.BUGS
+%%PORTDOCS%%%%DOCSDIR%%/README.credits
+%%PORTDOCS%%%%DOCSDIR%%/README.install
+%%PORTDOCS%%%%DOCSDIR%%/README.intro
+%%PORTDOCS%%%%DOCSDIR%%/README.modules
+%%PORTDOCS%%%%DOCSDIR%%/README.paper
+%%PORTDOCS%%%%DOCSDIR%%/README.technical
+%%PORTDOCS%%%%DOCSDIR%%/README.why_python
+%%PORTDOCS%%%%DOCSDIR%%/README.wtmp
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

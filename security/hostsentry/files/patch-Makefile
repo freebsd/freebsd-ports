@@ -1,0 +1,27 @@
+--- Makefile.orig	Thu Mar 25 23:06:01 1999
++++ Makefile	Sat Jul  3 22:03:13 2004
+@@ -4,7 +4,8 @@
+ #
+ # $Id: Makefile,v 1.4 1999/03/22 05:32:24 crowland Exp crowland $
+ 
+-INSTALLDIR = /usr/local/abacus/hostsentry
++INSTALLDIR = /usr/local/lib/hostsentry
++CONFIGDIR = /usr/local/etc/hostsentry
+ 
+ 
+ all:
+@@ -20,8 +21,13 @@
+ 		@echo "Installing HostSentry in: $(INSTALLDIR)"
+ 		install  -d -g 0 -o root -m 0700 $(INSTALLDIR)
+ 		install  -d -g 0 -o root -m 0700 $(INSTALLDIR)/modules
+-		install  -g 0 -o root -m 0700 host* $(INSTALLDIR)
++		install  -g 0 -o root -m 0700 host*.py $(INSTALLDIR)
+ 		install  -g 0 -o root -m 0700 module* $(INSTALLDIR)/modules
++		install  -d -g 0 -o root -m 0700 $(CONFIGDIR)
++		install  -g 0 -o root -m 0600 hostsentry.action $(CONFIGDIR)/hostsentry.action-dist
++		install  -g 0 -o root -m 0600 hostsentry.conf $(CONFIGDIR)/hostsentry.conf-dist
++		install  -g 0 -o root -m 0600 hostsentry.ignore $(CONFIGDIR)/hostsentry.ignore-dist
++		install  -g 0 -o root -m 0600 hostsentry.modules $(CONFIGDIR)/hostsentry.modules-dist
+ 		@echo ""
+ 		@echo ""
+ 

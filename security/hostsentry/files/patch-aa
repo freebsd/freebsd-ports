@@ -5,7 +5,7 @@
  # This is the default config file. I'll make this more
  # accessible in the future.
 -CONFIG='/usr/local/abacus/hostsentry/hostsentry.conf'
-+CONFIG='/usr/local/etc/hostsentry.conf'
++CONFIG='/usr/local/etc/hostsentry/hostsentry.conf'
  
  class hostSentryConfig(hostSentryCore):
                  
