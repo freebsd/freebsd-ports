@@ -1,0 +1,19 @@
+#!/bin/sh
+
+# fill in $PREFIX
+sedpgm=`eval echo \'s,@PREFIX@,$PREFIX,g\'`
+sed -e "$sedpgm" <${WRKSRC}/src/md_unix.h >/tmp/sed$$
+cp /tmp/sed$$ ${WRKSRC}/src/md_unix.h
+rm /tmp/sed$$
+
+# write a simple Makefile to $WRKSRC
+cat >${WRKSRC}/Makefile <<EOF
+all:
+	(cd src; make freebsd)
+
+install:
+	@mkdir -p ${PREFIX}/share/misc
+	(cd src/FreeBSD; install -c -s -m 755 -g bin -o bin acs ${PREFIX}/bin)
+	(cd doc; install -c -m 644 -g bin -o bin acs.hlp ${PREFIX}/share/misc)
+
+EOF
