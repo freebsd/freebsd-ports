@@ -1,0 +1,14 @@
+It's *really* ment to be use from inside mutt... but to use it from a command
+line you can do it like this:
+mail2procmail < some.mail.letter
+
+The needed lines to your muttrc is something like:
+macro pager \Cf "|~/path/to/mail2procmail\n"
+macro pager \Cf ":set pipe_decode\n|~/path/to/mail2procmail\n"
+
+This will binds <ctrl>-f to execute mail2procmail... mail2procmail will
+exec generateproc.pl to generate a file called ~/.procmail/m2proc.rc.
+in your .procmailrc you should have something like
+"INCLUDERC=~/.procmail/m2proc.rc" and everything should work.
+
+WWW: http://www.ghettohack.net/timball/

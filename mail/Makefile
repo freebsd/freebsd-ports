@@ -80,6 +80,7 @@
     SUBDIR += listmanager
     SUBDIR += lmtp2nntp
     SUBDIR += mahogany
+    SUBDIR += mail2procmailrc
     SUBDIR += mailagent
     SUBDIR += mailcrypt
     SUBDIR += maildrop
