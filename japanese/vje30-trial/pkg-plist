@@ -1,0 +1,41 @@
+bin/vadd
+bin/vdel
+bin/vdispd
+bin/vje
+bin/vjekill
+bin/vmaked
+bin/vpen
+bin/vpr
+bin/vprc
+bin/vpu
+libexec/vjed
+vje/dic/vjed95m.dic
+@exec /bin/chmod a+w %D/%F
+vje/dic/vjed95u.dic
+@exec /bin/chmod a+w %D/%F
+@dirrm vje/dic
+@dirrm vje
+share/doc/ja-vje-2.5t/FAQ
+share/doc/ja-vje-2.5t/delta
+share/doc/ja-vje-2.5t/deltabug
+share/doc/ja-vje-2.5t/dictools
+share/doc/ja-vje-2.5t/pen
+share/doc/ja-vje-2.5t/penbug
+share/doc/ja-vje-2.5t/readme
+share/doc/ja-vje-2.5t/readme.freebsd
+share/doc/ja-vje-2.5t/sample
+@dirrm share/doc/ja-vje-2.5t
+share/examples/ja-vje-2.5t/atok-ux.env
+share/examples/ja-vje-2.5t/atok-ux.rom
+share/examples/ja-vje-2.5t/canna.env
+share/examples/ja-vje-2.5t/canna.rom
+share/examples/ja-vje-2.5t/vje-ux.env
+share/examples/ja-vje-2.5t/vje-ux.rom
+share/examples/ja-vje-2.5t/vje.conf
+@exec /bin/chmod a+w %D/%F
+share/examples/ja-vje-2.5t/vje.rom
+@exec /bin/chmod a+w %D/%F
+share/examples/ja-vje-2.5t/wnn.env
+share/examples/ja-vje-2.5t/wnn.rom
+@dirrm share/examples/ja-vje-2.5t
+etc/rc.d/vjed.sh
