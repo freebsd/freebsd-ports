@@ -5,7 +5,7 @@
  	stamp-h.in
  
 -pkgconfigdir = $(libdir)/pkgconfig
-+pkgconfigdir = $(libdir)/libdata/pkgconfig
++pkgconfigdir = $(prefix)/libdata/pkgconfig
  pkgconfig_DATA = libpqxx.pc
  bin_SCRIPTS = pqxx-config
  all: all-recursive
