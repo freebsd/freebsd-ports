@@ -2486,22 +2486,28 @@ security-check:
 
 _FETCH_SEQ=		pre-everything fetch-depends pre-fetch pre-fetch-script \
 				do-fetch post-fetch post-fetch-script
-_EXTRACT_SEQ=	fetch extract-message checksum build-depends lib-depends \
+_EXTRACT_DEP=	fetch
+_EXTRACT_SEQ=	extract-message checksum build-depends lib-depends \
 				misc-depends pre-extract pre-extract-script do-extract \
 				post-extract post-extract-script
-_PATCH_SEQ=		extract patch-message pre-patch pre-patch-script do-patch \
+_PATCH_DEP=		extract
+_PATCH_SEQ=		patch-message pre-patch pre-patch-script do-patch \
 				post-patch post-patch-script
-_CONFIGURE_SEQ=	patch configure-message patch-libtool pre-configure \
+_CONFIGURE_DEP=	patch
+_CONFIGURE_SEQ=	configure-message patch-libtool pre-configure \
 				pre-configure-script do-configure post-configure \
 				post-configure-script
-_BUILD_SEQ=		configure build-message pre-build pre-build-script do-build \
+_BUILD_DEP=		configure
+_BUILD_SEQ=		build-message pre-build pre-build-script do-build \
 				post-build post-build-script
-_INSTALL_SEQ=	build install-message check-categories check-already-installed \
+_INSTALL_DEP=	build
+_INSTALL_SEQ=	install-message check-categories check-already-installed \
 				check-umask run-depends lib-depends install-mtree pre-install \
 				pre-install-script do-install generate-plist post-install \
 				post-install-script compress-man run-ldconfig fake-pkg \
 				security-check
-_PACKAGE_SEQ=	install package-message pre-package pre-package-script \
+_PACKAGE_DEP=	install
+_PACKAGE_SEQ=	package-message pre-package pre-package-script \
 				do-package post-package-script
 
 .if !target(fetch)
@@ -2514,17 +2520,20 @@ fetch: ${_FETCH_SEQ}
 .for target in extract patch configure build install package
 
 .if !target(${target})
-.if !defined(USE_SUBMAKE)
 ${target}: ${${target:U}_COOKIE}
-.else
-${target}:
-	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} ${${target:U}_COOKIE}
-.endif
 .endif
 
 .if !exists(${${target:U}_COOKIE})
-${${target:U}_COOKIE}: ${_${target:U}_SEQ}
+
+.if !defined(USE_SUBMAKE)
+${${target:U}_COOKIE}: ${_${target:U}_DEP} ${_${target:U}_SEQ}
 	@${TOUCH} ${TOUCH_FLAGS} ${.TARGET}
+.else
+${${target:U}_COOKIE}: ${_${target:U}_DEP}
+	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} ${_${target:U}_SEQ}
+	@${TOUCH} ${TOUCH_FLAGS} ${.TARGET}
+.endif
+
 .else
 ${${target:U}_COOKIE}::
 	@if [ -e ${.TARGET} ]; then \
@@ -2539,12 +2548,12 @@ ${${target:U}_COOKIE}::
 # Enforce order for -jN builds
 
 .ORDER: ${_FETCH_SEQ}
-.ORDER: ${_EXTRACT_SEQ}
-.ORDER: ${_PATCH_SEQ}
-.ORDER: ${_CONFIGURE_SEQ}
-.ORDER: ${_BUILD_SEQ}
-.ORDER: ${_INSTALL_SEQ}
-.ORDER: ${_PACKAGE_SEQ}
+.ORDER: ${_EXTRACT_DEP} ${_EXTRACT_SEQ}
+.ORDER: ${_PATCH_DEP} ${_PATCH_SEQ}
+.ORDER: ${_CONFIGURE_DEP} ${_CONFIGURE_SEQ}
+.ORDER: ${_BUILD_DEP} ${_BUILD_SEQ}
+.ORDER: ${_INSTALL_DEP} ${_INSTALL_SEQ}
+.ORDER: ${_PACKAGE_DEP} ${_PACKAGE_SEQ}
 
 extract-message:
 	@${ECHO_MSG} "===>  Extracting for ${PKGNAME}"
@@ -2633,7 +2642,7 @@ patch-libtool:
 
 .if !target(checkpatch)
 checkpatch:
-	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} PATCH_CHECK_ONLY=yes ${_PATCH_SEQ}
+	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} PATCH_CHECK_ONLY=yes ${_PATCH_DEP} ${_PATCH_SEQ}
 .endif
 
 # Reinstall
