@@ -1,16 +1,15 @@
 sbin/userneu.pl
 sbin/userquick.pl
-%%DOCSDIR%%/BUGS
-%%DOCSDIR%%/CHANGES
-%%DOCSDIR%%/COPYING
-%%DOCSDIR%%/REQUIREMENTS
-%%DOCSDIR%%/TODO
-%%DOCSDIR%%/README
-%%DOCSDIR%%/INSTALL
-%%DOCSDIR%%/CREDITS
-%%DOCSDIR%%/userneu.pod
-%%DOCSDIR%%/userquick.pod
+sbin/smbrepair.pl
+%%PORTDOCS%%%%DOCSDIR%%/BUGS
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/REQUIREMENTS
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/CREDITS
+%%PORTDOCS%%%%DOCSDIR%%/userneu.pod
+%%PORTDOCS%%%%DOCSDIR%%/userquick.pod
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%EXAMPLESDIR%%/list-sample
-@dirrm %%DOCSDIR%%
 @dirrm %%EXAMPLESDIR%%
-@dirrm userneu
