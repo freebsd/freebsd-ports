@@ -1,0 +1,19 @@
+bin/flink
+etc/CORBA/servers/flink.gnorba
+%%PORTDOCS%%share/doc/flink/README
+%%PORTDOCS%%share/doc/flink/NEWS
+%%PORTDOCS%%share/doc/flink/INSTALL
+%%PORTDOCS%%share/doc/flink/ChangeLog
+%%PORTDOCS%%share/doc/flink/COPYING
+%%PORTDOCS%%share/doc/flink/AUTHORS
+share/gnome/applets/Network/flink.desktop
+share/gnome/pixmaps/flink/mail_yes2.xpm
+share/gnome/pixmaps/flink/mail_yes.xpm
+share/gnome/pixmaps/flink/mail_no2.xpm
+share/gnome/pixmaps/flink/mail_no.xpm
+share/gnome/pixmaps/flink/logo_big.xpm
+share/gnome/pixmaps/flink/logo64.xpm
+share/gnome/pixmaps/flink/flink.xpm
+share/gnome/pixmaps/flink/flink.png
+share/locale/sv/LC_MESSAGES/flink.mo
+%%PORTDOCS%%@dirrm share/doc/flink

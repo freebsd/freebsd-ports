@@ -1,0 +1,12 @@
+The Flink mailchecker is a small panelapplet that supports multiple 
+accounts, so that you will not need to have several applets for 
+checking different accounts, Flink is capable to have (almost) an 
+infinite amount of accounts configured.
+Flink supports POP3, IMAPv4 and mbox right now. Support for other 
+types of mailaccounts will be added in time, or if you bug me 
+enough about it.
+Flink is released under the GPL license.
+
+WWW: http://flink.leyman.nu/
+
+marcus@leyman.nu
