@@ -13,6 +13,8 @@ MASTER_SITES=	ftp://ftp.pangeia.com.br/pub/seg/pac/
 MAINTAINER=	cordeiro@nic.br
 COMMENT=	A tool to locally check for signs of a rootkit
 
+IGNORE=		is reporting false positives on FreeBSD 4.10 and 5.x. Next release in few weeks
+
 USE_REINPLACE=	yes
 
 ALL_TARGET=	chkrootkit chklastlog chkwtmp chkproc chkdirs ifpromisc check_wtmpx strings
