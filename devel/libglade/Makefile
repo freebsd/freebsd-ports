@@ -14,12 +14,11 @@ MASTER_SITE_SUBDIR=	stable/sources/libglade
 
 MAINTAINER=	gnome@FreeBSD.org
 
-LIB_DEPENDS=	gnomedb.0:${PORTSDIR}/databases/gnomedb
-
 USE_X_PREFIX=	yes
 USE_PERL5=	yes
 USE_GMAKE=	yes
-USE_GNOMECTRL=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gnomehack gnomeprefix gnomehier gnomedb
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--enable-bonobo --enable-gnomedb

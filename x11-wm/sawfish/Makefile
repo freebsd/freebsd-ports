@@ -28,11 +28,11 @@ USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_IMLIB=	yes
 USE_REINPLACE=	yes
+USE_GNOMENG=	yes
 WANT_GNOME=	yes
+USE_GNOME=	gnomehack gnomehier gtk12 imlib esound
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-readline \
-		--localstatedir=${PREFIX}/share \
-		--datadir=${PREFIX}/share
+CONFIGURE_ARGS=	--with-readline
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 CONFIGURE_TARGET=	${ARCH}-pc-freebsd${OSREL:C/\..*//}
@@ -45,8 +45,9 @@ WITH_GNOME=	yes
 
 .include <bsd.port.pre.mk>
 
-.if defined(HAVE_GNOME)
-USE_GNOME=	yes
+.if ${HAVE_GNOME:Mlibcapplet}!="" && ${HAVE_GNOME:Mgdkpixbuf}!=""
+USE_GNOME+=	libcapplet gdkpixbuf
+PKGNAMESUFFIX=	-gnome
 CONFIGURE_ARGS+=--enable-capplet
 .else
 CONFIGURE_ARGS+=--disable-capplet \
@@ -54,15 +55,11 @@ CONFIGURE_ARGS+=--disable-capplet \
 		--without-gdk-pixbuf
 .endif
 
-pre-patch:
+post-patch:
 	@${REINPLACE_CMD} -e 's^-l(pthread|c_r)^${PTHREAD_LIBS}^g ; \
 		 s|DATADIRNAME=lib|DATADIRNAME=share|g ; \
 		 s|USE_INCLUDED_LIBINTL=yes|#USE_INCLUDED_LIBINTL=yes|g ; \
 		 s|[(]top_builddir[)]/intl/libintl.a|-lintl|g' ${WRKSRC}/configure
-	@find ${WRKSRC} -name "Makefile.in" | xargs ${REINPLACE_CMD} -e \
-		's|[(]datadir[)]/gnome/|(datadir)/|g ; \
-		 s|[(]datadir[)]/aclocal|(prefix)/share/aclocal|g ; \
-		 s|[(]datadir[)]/locale|(prefix)/share/locale|g'
 
 post-install:
 	install-info --section="X11 window manager" \

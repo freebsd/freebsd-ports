@@ -15,12 +15,12 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 
-LIB_DEPENDS=	gdbm.2:${PORTSDIR}/databases/gdbm \
-		bonobo.2:${PORTSDIR}/devel/bonobo
+LIB_DEPENDS=	gdbm.2:${PORTSDIR}/databases/gdbm
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
-USE_GNOMECTRL=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gnomehack gnomeprefix gnomehier gconf bonobo
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL=	yes
@@ -30,12 +30,10 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 PLIST_SUB=	VERSION=${PORTVERSION}
 
-pre-patch:
-	@${PERL} -pi -e 's|-lpthread|-pthread|g ; \
+post-patch:
+	@${REINPLACE_CMD} -e 's|-lpthread|-pthread|g ; \
 		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
-	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
-		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g ; \
-		 s|share/idl|share/gnome/idl|g ; \
-		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g'
+	@find ${WRKSRC} -name "Makefile.in" | xargs ${REINPLACE_CMD} -e \
+		's|share/idl|share/gnome/idl|g'
 
 .include <bsd.port.mk>

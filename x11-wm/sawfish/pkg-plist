@@ -69,7 +69,7 @@ share/gnome/pixmaps/sawfish-logo.png
 %%GNOME:%%share/gnome/pixmaps/sawfish-shortcuts.png
 %%GNOME:%%share/gnome/pixmaps/sawfish-tooltips.png
 %%GNOME:%%share/gnome/pixmaps/sawfish-workspaces.png
-%%GNOME:%%share/gnome/wm-properties/Sawfish.desktop
+share/gnome/wm-properties/Sawfish.desktop
 share/locale/az/LC_MESSAGES/sawfish.mo
 share/locale/bg/LC_MESSAGES/sawfish.mo
 share/locale/ca/LC_MESSAGES/sawfish.mo
@@ -657,8 +657,6 @@ share/sawfish/%%VERSION%%/themes/smaker/close_inv.png
 share/sawfish/%%VERSION%%/themes/smaker/min.png
 share/sawfish/%%VERSION%%/themes/smaker/min_inv.png
 share/sawfish/%%VERSION%%/themes/smaker/theme.jl
-@dirrm share/sawfish/themes
-@dirrm share/sawfish/sounds
 @dirrm share/sawfish/%%VERSION%%/themes/smaker
 @dirrm share/sawfish/%%VERSION%%/themes/simple
 @dirrm share/sawfish/%%VERSION%%/themes/mono
@@ -688,15 +686,11 @@ share/sawfish/%%VERSION%%/themes/smaker/theme.jl
 @dirrm share/sawfish/%%VERSION%%/lisp/sawfish
 @dirrm share/sawfish/%%VERSION%%/lisp
 @dirrm share/sawfish/%%VERSION%%
-@dirrm share/sawfish
-%%NOGNOME:%%@dirrm share/gnome/pixmaps
 %%GNOME:%%@dirrm share/gnome/control-center/Sawfish
 %%GNOME:%%@dirrm share/gnome/apps/Settings/Sawfish
-%%NOGNOME:%%@dirrm share/gnome
 @dirrm libexec/sawfish/%%VERSION%%/%%GNUHOST%%/sawfish/wm/util
 @dirrm libexec/sawfish/%%VERSION%%/%%GNUHOST%%/sawfish/wm
 @dirrm libexec/sawfish/%%VERSION%%/%%GNUHOST%%/sawfish
 @dirrm libexec/sawfish/%%VERSION%%/%%GNUHOST%%
 @dirrm libexec/sawfish/%%VERSION%%
-@dirrm libexec/sawfish
 @dirrm libexec/rep/%%GNUHOST%%/sawfish

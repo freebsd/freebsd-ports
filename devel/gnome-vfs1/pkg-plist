@@ -111,10 +111,6 @@ share/locale/tr/LC_MESSAGES/gnome-vfs.mo
 share/locale/uk/LC_MESSAGES/gnome-vfs.mo
 share/locale/wa/LC_MESSAGES/gnome-vfs.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-vfs.mo
-@dirrm lib/vfs/modules
 @dirrm lib/vfs/extfs
 @dirrm include/gnome-vfs-1.0/libgnomevfs
 @dirrm include/gnome-vfs-1.0
-@dirrm etc/vfs/modules
-@dirrm etc/vfs
-@unexec /bin/rmdir %D/lib/vfs 2>/dev/null || /usr/bin/true

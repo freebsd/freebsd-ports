@@ -1,8 +1,8 @@
 
 $FreeBSD$
 
---- libart_lgpl/Makefile.in.orig	Mon Jan 14 12:04:21 2002
-+++ libart_lgpl/Makefile.in	Mon Jan 14 12:05:37 2002
+--- libart_lgpl/Makefile.in.orig	Sun Jun 23 11:41:23 2002
++++ libart_lgpl/Makefile.in	Sun Jun 23 11:42:23 2002
 @@ -145,7 +145,7 @@
  	libart-features.c
  
@@ -12,12 +12,8 @@ $FreeBSD$
  libart_lgpl_la_LIBADD = -lm
  
  libart_lgplincdir = $(includedir)/gnome-1.0/libart_lgpl
-@@ -204,10 +204,10 @@
- testuta_DEPENDENCIES = $(DEPS)
- testuta_LDADD = $(LDADDS) -lm
- 
--m4datadir = $(datadir)/aclocal
-+m4datadir = $(prefix)/share/aclocal
+@@ -207,7 +207,7 @@
+ m4datadir = $(prefix)/share/aclocal
  m4data_DATA = libart.m4
  
 -confexecdir = $(libdir)

@@ -17,6 +17,7 @@ etc/gconf/gconf.xml.defaults/schemas/apps/eog
 etc/gconf/gconf.xml.defaults/schemas/apps/eog/full_screen
 etc/gconf/gconf.xml.defaults/schemas/apps/eog/view
 etc/gconf/gconf.xml.defaults/schemas/apps/eog/window
+etc/gconf/gconf.xml.mandatory
 etc/gconf/schemas
 etc/gdm
 etc/gdm/Init
@@ -24,6 +25,7 @@ etc/gdm/PostSession
 etc/gdm/PreSession
 etc/gdm/Sessions
 etc/gnome
+etc/gnome/config
 etc/gnome-vfs-2.0
 etc/gnome-vfs-2.0/modules
 etc/sound
@@ -31,8 +33,6 @@ etc/sound/events
 etc/vfs
 etc/vfs/modules
 include/gconf
-include/gdk-pixbuf-1.0
-include/gdk-pixbuf-1.0/gdk-pixbuf
 include/gdkcardimage
 include/gnome-1.0
 include/libnautilus
@@ -51,7 +51,6 @@ lib/vfs
 lib/vfs/modules
 libdata/bonobo
 libdata/bonobo/servers
-libexec/rep
 libexec/sawfish
 share/doc/libgda
 share/gnome
@@ -243,3 +242,5 @@ share/gnome/xbill/cursors
 share/gnome/xbill/pixmaps
 share/gnome/xmodmap
 share/sawfish
+share/sawfish/sounds
+share/sawfish/themes

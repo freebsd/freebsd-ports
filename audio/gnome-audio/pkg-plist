@@ -15,4 +15,3 @@ share/gnome/sounds/startup3.wav
 share/gnome/sounds/warning.wav
 @dirrm share/gnome/sounds/gtk-events
 @dirrm share/gnome/sounds/panel
-@dirrm share/gnome/sounds

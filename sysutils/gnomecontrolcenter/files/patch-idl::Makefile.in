@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- idl/Makefile.in	2002/07/10 13:49:41	1.1
++++ idl/Makefile.in	2002/07/10 13:50:18
+@@ -251,7 +251,7 @@
+ install-exec-am:
+ install-exec: install-exec-am
+ 
+-install-data-am: install-gnomeccgnorbaDATA install-idlDATA
++install-data-am: install-gnomeccgnorbaDATA
+ install-data: install-data-am
+ 
+ install-am: all-am

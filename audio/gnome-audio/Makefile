@@ -15,7 +15,8 @@ DISTNAME=	gnome-audio-${PORTVERSION}
 MAINTAINER=	gnome@FreeBSD.org
 
 USE_X_PREFIX=	yes
-USE_GNOMELIBS=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gnomehack gnomeprefix gnomehier
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/sounds
 

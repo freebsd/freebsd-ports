@@ -35,9 +35,10 @@ USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_XPM=	yes
 USE_PERL5=	yes
-USE_GNOME=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gnomeprefix gnomehack gnomeprint libglade gtkhtml libghttp
 USE_REINPLACE=	yes
-GNU_CONFIGURE=	yes
+USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--with-glib-config=${GLIB_CONFIG}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
@@ -45,12 +46,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 
 MAN1=		gnc-prices.1 gnucash.1
 
-pre-patch:
+post-patch:
 	@${REINPLACE_CMD} -e 's^-l(pthread|c_r)^${PTHREAD_LIBS}^g ; \
 		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
-	@find ${WRKSRC} -name "Makefile.in" | xargs ${REINPLACE_CMD} -e \
-		's|[{]datadir[}]/gnome/|(datadir)/|g ; \
-		 s|[{]datadir[}]/aclocal|(prefix)/share/aclocal|g ; \
-		 s|[{]datadir[}]/locale|(prefix)/share/locale|g'
 
 .include <bsd.port.mk>

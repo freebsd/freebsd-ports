@@ -18,7 +18,7 @@ BUILD_DEPENDS=	freetype-config:${PORTSDIR}/print/freetype2
 LIB_DEPENDS=	medusa.0:${PORTSDIR}/sysutils/medusa \
 		freetype.9:${PORTSDIR}/print/freetype2 \
 		eel.0:${PORTSDIR}/x11-toolkits/eel
-RUN_DEPENDS=	${X11BASE}/share/gnome/ui/nautilus-galeon-view-ui.xml:${PORTSDIR}/www/galeon
+#RUN_DEPENDS=	${X11BASE}/share/gnome/ui/nautilus-galeon-view-ui.xml:${PORTSDIR}/www/galeon
 
 .if defined(WITH_FAM) || exists(${LOCALBASE}/lib/libfam.so.0)
 LIB_DEPENDS+=	fam.0:${PORTSDIR}/devel/fam
@@ -39,7 +39,8 @@ RUN_DEPENDS=	${X11BASE}/lib/${MOZILLA}/libgtkembedmoz.so:${PORTSDIR}/www/${MOZIL
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
-USE_GNOME=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gnomehack gnomeprefix gnomehier gnomecore
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -fno-rtti -fno-exceptions" \
@@ -73,11 +74,8 @@ pre-extract:
 	@${ECHO_MSG} "You can remove embedded mozilla support by defining WITHOUT_MOZILLA."
 .endif
 
-pre-patch:
-	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
+post-patch:
+	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
 		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
-	@find ${WRKSRC} -name "Makefile.in*" | xargs ${PERL} -pi -e \
-		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g ; \
-		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g'
 
 .include <bsd.port.mk>

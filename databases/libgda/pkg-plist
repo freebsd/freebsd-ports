@@ -206,7 +206,6 @@ share/locale/uk/LC_MESSAGES/libgda.mo
 @dirrm share/gnome/help/libgda
 @dirrm share/gnome/gda/templates
 @dirrm share/gnome/gda
-@dirrm share/doc/libgda
 @dirrm include/libgda-%%VERSION%%/gda++
 @dirrm include/libgda-%%VERSION%%/gda
 @dirrm include/libgda-%%VERSION%%

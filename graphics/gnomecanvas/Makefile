@@ -8,15 +8,14 @@
 PORTNAME=	gnomecanvas
 CATEGORIES=	graphics gnome
 
-LIB_DEPENDS=	gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf
-
 MASTERDIR=	${.CURDIR}/../gdk-pixbuf
 
 COMMENT=	${.CURDIR}/pkg-comment
 DESCR=		${.CURDIR}/pkg-descr
 PLIST=		${.CURDIR}/pkg-plist
 
-USE_GNOMELIBS=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gdkpixbuf gnomelibs
 
 BUILD_CANVAS=	yes
 

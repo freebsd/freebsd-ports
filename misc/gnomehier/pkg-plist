@@ -17,6 +17,7 @@ etc/gconf/gconf.xml.defaults/schemas/apps/eog/.keep_me
 etc/gconf/gconf.xml.defaults/schemas/apps/eog/full_screen/.keep_me
 etc/gconf/gconf.xml.defaults/schemas/apps/eog/view/.keep_me
 etc/gconf/gconf.xml.defaults/schemas/apps/eog/window/.keep_me
+etc/gconf/gconf.xml.mandatory/.keep_me
 etc/gconf/schemas/.keep_me
 etc/gdm/.keep_me
 etc/gdm/Init/.keep_me
@@ -26,13 +27,12 @@ etc/gdm/Sessions/.keep_me
 etc/gnome-vfs-2.0/.keep_me
 etc/gnome-vfs-2.0/modules/.keep_me
 etc/gnome/.keep_me
+etc/gnome/config/.keep_me
 etc/sound/.keep_me
 etc/sound/events/.keep_me
 etc/vfs/.keep_me
 etc/vfs/modules/.keep_me
 include/gconf/.keep_me
-include/gdk-pixbuf-1.0/.keep_me
-include/gdk-pixbuf-1.0/gdk-pixbuf/.keep_me
 include/gdkcardimage/.keep_me
 include/gnome-1.0/.keep_me
 include/libnautilus/.keep_me
@@ -51,7 +51,6 @@ lib/vfs/.keep_me
 lib/vfs/modules/.keep_me
 libdata/bonobo/.keep_me
 libdata/bonobo/servers/.keep_me
-libexec/rep/.keep_me
 libexec/sawfish/.keep_me
 share/doc/libgda/.keep_me
 share/gnome/.keep_me
@@ -243,14 +242,10 @@ share/gnome/xbill/cursors/.keep_me
 share/gnome/xbill/pixmaps/.keep_me
 share/gnome/xmodmap/.keep_me
 share/sawfish/.keep_me
-share/themes/.keep_me
-share/themes/Default/.keep_me
-share/themes/Metal/.keep_me
-share/themes/Redmond95/.keep_me
-@dirrm share/themes/Redmond95
-@dirrm share/themes/Metal
-@dirrm share/themes/Default
-@dirrm share/themes
+share/sawfish/sounds/.keep_me
+share/sawfish/themes/.keep_me
+@dirrm share/sawfish/themes
+@dirrm share/sawfish/sounds
 @dirrm share/sawfish
 @dirrm share/gnome/xmodmap
 @dirrm share/gnome/xbill/pixmaps
@@ -442,7 +437,6 @@ share/themes/Redmond95/.keep_me
 @dirrm share/gnome
 @dirrm share/doc/libgda
 @dirrm libexec/sawfish
-@dirrm libexec/rep
 @dirrm libdata/bonobo/servers
 @dirrm libdata/bonobo
 @dirrm lib/vfs/modules
@@ -461,8 +455,6 @@ share/themes/Redmond95/.keep_me
 @dirrm include/libnautilus
 @dirrm include/gnome-1.0
 @dirrm include/gdkcardimage
-@dirrm include/gdk-pixbuf-1.0/gdk-pixbuf
-@dirrm include/gdk-pixbuf-1.0
 @dirrm include/gconf
 @dirrm etc/vfs/modules
 @dirrm etc/vfs
@@ -470,6 +462,7 @@ share/themes/Redmond95/.keep_me
 @dirrm etc/sound
 @dirrm etc/gnome-vfs-2.0/modules
 @dirrm etc/gnome-vfs-2.0
+@dirrm etc/gnome/config
 @dirrm etc/gnome
 @dirrm etc/gdm/Sessions
 @dirrm etc/gdm/PreSession
@@ -477,6 +470,7 @@ share/themes/Redmond95/.keep_me
 @dirrm etc/gdm/Init
 @dirrm etc/gdm
 @dirrm etc/gconf/schemas
+@dirrm etc/gconf/gconf.xml.mandatory
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/eog/window
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/eog/view
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/eog/full_screen
