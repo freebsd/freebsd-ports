@@ -7,3 +7,4 @@ distributed.net/proxy/proxyper.sh.bak
 @exec ln -sf %D/distributed.net/proxy/proxyper.sh %D/etc/rc.d/proxyper.sh
 @unexec rm %D/etc/rc.d/proxyper.sh
 @dirrm distributed.net/proxy
+@dirrm distributed.net
