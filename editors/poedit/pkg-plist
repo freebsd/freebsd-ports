@@ -1,7 +1,7 @@
 bin/poedit
-share/gnome/apps/Development/poedit.desktop
-share/gnome/mime-info/poedit.keys
-share/gnome/mime-info/poedit.mime
-share/gnome/pixmaps/poedit.xpm
+%%GNOME:%%share/gnome/apps/Development/poedit.desktop
+%%GNOME:%%share/gnome/mime-info/poedit.keys
+%%GNOME:%%share/gnome/mime-info/poedit.mime
+%%GNOME:%%share/gnome/pixmaps/poedit.xpm
 share/poedit/poedit_help.htb
 @dirrm share/poedit
