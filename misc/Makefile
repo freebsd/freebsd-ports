@@ -61,6 +61,7 @@
     SUBDIR += gnuls
     SUBDIR += gone
     SUBDIR += gplbp
+    SUBDIR += granulate
     SUBDIR += grdb
     SUBDIR += grun
     SUBDIR += gtkfind
