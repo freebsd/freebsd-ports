@@ -4220,6 +4220,7 @@ mod_log_mysql	ports/www/mod_log_mysql
 mod_mp3		ports/www/mod_mp3
 mod_mylo	ports/www/mod_mylo
 mod_mysqluserdir	ports/www/mod_mysqluserdir
+mod_pcgi2	ports/www/mod_pcgi2
 mod_perl	ports/www/mod_perl
 mod_php3	ports/www/mod_php3
 mod_php4	ports/www/mod_php4
