@@ -1,0 +1,25 @@
+--- Makefile.orig	Fri Jun  7 00:37:19 2002
++++ Makefile	Fri Jun  7 00:37:41 2002
+@@ -8,7 +8,7 @@
+ FREEBSD=0
+ 
+ # explicit pcap include dir is for redhat which is fux0red
+-CFLAGS=-g -I/usr/local/include -L/usr/local/lib -DUSE_NETIF=$(USE_NETIF) -DOPENBSD=$(OPENBSD) -DLINUX=$(LINUX) -DSOLARIS=$(SOLARIS) -DFREEBSD=$(FREEBSD) -I/usr/include/pcap
++CFLAGS+=-g -I/usr/local/include -L/usr/local/lib -DUSE_NETIF=$(USE_NETIF) -DOPENBSD=$(OPENBSD) -DLINUX=$(LINUX) -DSOLARIS=$(SOLARIS) -DFREEBSD=$(FREEBSD) -I/usr/include/pcap
+ 
+ usage:
+ 	@echo
+@@ -41,11 +41,11 @@
+ all: $(TARGETS)
+ 
+ arping.o: arping.c
+-	gcc -Wall $(CFLAGS) -c `libnet-config --defines` `libnet-config --cflags` arping.c
++	${CC} -Wall $(CFLAGS) -c `libnet-config --defines` `libnet-config --cflags` arping.c
+ 
+ O_arping=arping.o
+ arping: $(O_arping)
+-	gcc $(CFLAGS) -g -o $@ $(O_arping) `libnet-config --libs` -lpcap
++	${CC} $(CFLAGS) -g -o $@ $(O_arping) `libnet-config --libs` -lpcap
+ 
+ clean:
+ 	rm -f *.o $(TARGETS)
