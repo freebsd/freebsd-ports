@@ -3,7 +3,7 @@
 # Date created:		5 June 1998
 # Whom:			Brett Taylor
 #
-# $Id: Makefile,v 1.2 1998/06/16 11:29:35 asami Exp $
+# $Id: Makefile,v 1.3 1998/08/05 09:31:09 asami Exp $
 #
 
 DISTNAME=	GimpUserManual-1.0.0
@@ -13,8 +13,8 @@ MASTER_SITES=	ftp://manual.gimp.org/pub/manual/
 
 MAINTAINER=	brett@peloton.physics.montana.edu
 
-MANUAL_PACKAGE_BUILD=\
-		"User must choose which version of the manual to install."
+LOOP_VAR=	DOCFORMAT
+LOOP_OPTIONS=	HTML PDF PS
 
 .if !defined(DOCFORMAT)
 DOCFORMAT=HTML
@@ -25,17 +25,19 @@ DOCFORMAT_INVALID=YES
 .endif
 .endif
 
+PLIST=		${PKGDIR}/PLIST_${DOCFORMAT}
+
 pre-fetch:
 	@${ECHO} "This manual is available in three formats: HTML, PDF, and"
-	@${ECHO} "PS (PostScript).  To choose the one you want, type:"
-	@${ECHO} "     make DOCFORMAT={HTML,PDF,PS} [install]"
-	@${ECHO} "Also please note that the manual is pretty darn big."
+	@${ECHO} "PS (PostScript).  Note that the manual is pretty darn big."
 	@${ECHO} "The gzip'ed PS version is 44 MB (unpacks to 173 MB),"
 	@${ECHO} "the PDF version is 14 MB and the HTML tar-bzip'ed"
 	@${ECHO} "version is 16 MB (unpacks to 18.7 MB)."
 
 .if defined(DOCFORMAT_UNSPECIFIED)
 	@${ECHO} "(DOCFORMAT not specified: defaulting to HTML format.)"
+	@${ECHO} "To choose the one you want, type:"
+	@${ECHO} "     make DOCFORMAT={HTML,PDF,PS} [install]"
 .elif defined(DOCFORMAT_INVALID)
 	@echo "ERROR: invalid value for DOCFORMAT: \"${DOCFORMAT}\""
 	@echo "Possible values are:  HTML (default), PDF, PS."
@@ -49,11 +51,7 @@ WRKSRC=		${WRKDIR}/GimpUserManaul_v1.0.0
 BUILD_DEPENDS=	bzip2:${PORTSDIR}/archivers/bzip2
 
 USE_X_PREFIX=	yes
-
 NO_BUILD=	yes
-
-pre-extract:
-	@${CP} ${PKGDIR}/PLIST_${DOCFORMAT} ${PKGDIR}/PLIST
 
 EXTRACT_CMD=	bzip2
 EXTRACT_BEFORE_ARGS= -cd
@@ -69,14 +67,10 @@ DISTFILES=	GimpUserManual-1.0.0-pdf
 
 EXTRACT_ONLY=	#empty
 NO_BUILD=	yes
-
 USE_X_PREFIX=	yes
 
 post-fetch:
 	@${MKDIR} ${WRKDIR}
-
-pre-install:
-	@${CP} ${PKGDIR}/PLIST_PDF ${PKGDIR}/PLIST
 
 do-install:
 	@${MKDIR} ${PREFIX}/share/doc/gimp
@@ -91,11 +85,7 @@ EXTRACT_BEFORE_ARGS= -cd
 EXTRACT_AFTER_ARGS= > ${DISTNAME}
 
 NO_BUILD=	yes
-
 USE_X_PREFIX=	yes
-
-pre-extract:
-	@${CP} ${PKGDIR}/PLIST_PS ${PKGDIR}/PLIST
 
 do-install:
 	@${MKDIR} ${PREFIX}/share/doc/gimp
