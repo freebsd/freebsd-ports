@@ -32,7 +32,7 @@ PERL_CONFIGURE=	yes
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Apache::Gallery.3
 
-TEMPLATES=	directory.tpl error.tpl index.tpl info.tpl layout.tpl \
+TEMPLATEFILES=	directory.tpl error.tpl index.tpl info.tpl layout.tpl \
 		movie.tpl navpicture.tpl orig.tpl picture.tpl scale.tpl \
 		showpicture.tpl
 ICONS=		folder.png video-avi.png video-asf.png video-mov.png \
@@ -44,7 +44,7 @@ post-configure:
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/Apache-Gallery/templates
-.for f in ${TEMPLATES}
+.for f in ${TEMPLATEFILES}
 	${INSTALL_DATA} ${WRKSRC}/templates/${f} \
 		${PREFIX}/share/Apache-Gallery/templates/
 .endfor
