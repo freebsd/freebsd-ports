@@ -404,6 +404,7 @@
     SUBDIR += xemacs-devel-canna
     SUBDIR += xemacs-devel-canna+freewnn
     SUBDIR += xemacs-devel-canna+wnn6
+    SUBDIR += xemacs-devel-freewnn
     SUBDIR += xemacs21-canna
     SUBDIR += xemacs21-canna+freewnn
     SUBDIR += xemacs21-canna+wnn6
