@@ -1,0 +1,52 @@
+Super is a setuid-root program that offers
+
+    o  restricted setuid-root access to executables, adjustable
+	on a per-program and per-user basis;
+
+    o  a relatively secure environment for scripts, so that well-written
+	scripts can be run as root (or some other uid/gid), without
+	unduly compromising security.
+
+Sample uses:
+    -  to call a script that allows users to use mount(8) on
+	cdrom's or floppy disks, but not other devices.
+
+    -  to restrict which users, on which hosts, may execute a
+	setuid-root program.
+
+    -  to allow groups of trusted users (e.g. an "operator" group) complete
+	root access to sets of selected commands such as, say, line-printer
+	control commands, without giving away access to other commands,
+	and with full logging of all commands used.
+
+
+Super and sudo
+--------------
+Sudo --
+    Sudo allows a permitted user to execute a command as the superuser.
+    Its central design philosophy is that each user can be
+    trusted when executing certain commands.  This is implemented
+    by allowing each user to execute the restricted commands for
+    which s/he is trusted, without giving access to other restricted commands.
+
+Super --
+    The design philosophy behind super is two-fold:
+    (a) some users can be trusted when executing certain commands;
+    (b) there are some commands, such as a script to mount CDROM's,
+	which you'd like to be safely executable even by users who
+	are NOT trusted.  Although setuid-root scripts are insecure,
+	a good setuid-root wrapper around a sensible non-setuid script
+	can be hard to break, and super provides that wrapper so that
+	even a non-trusted user can use the scripts.
+
+In the author's view, the main differences to the administrator are:
+
+    (1) the files that specify valid user/command combinations have
+	a different look and feel.
+
+    (2) super provides a safe wrapper for scripts, so that a
+	well-written script can be run safely by ordinary
+	users without having to actually trust them.
+
+
+-- David	(obrien@FreeBSD.org)

@@ -1,0 +1,8 @@
+bin/super
+bin/setuid
+man/man1/super.1.gz
+man/man1/setuid.1.gz
+man/man5/super.5.gz
+share/examples/sample.tab
+share/examples/sample.cdmount
+share/doc/super/README
