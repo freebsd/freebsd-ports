@@ -27,7 +27,7 @@
 .\"
 .\"	$FreeBSD$
 .\"
-.Dd May 10, 2004
+.Dd May 24, 2004
 .Dt PORTEASY 8
 .Os
 .Sh NAME
@@ -153,12 +153,22 @@ This section describes the operations performed by
 .Nm
 and the order in which they are performed.
 .Bl -tag -width indent
-.It Update index
+.It Update ports tree infrastructure
 If the
 .Fl u
-option was specified and some unqualified port names were listed on
-the command line, the index file is updated using
+option was specified, the root of the ports tree and important
+subdirectories
+.Po
+.Pa Mk ,
+.Pa Templates
+and
+.Pa Tools
+.Pc
+are updated using
 .Xr cvs 1 .
+If possible, an up-to-date index is retrieved from the
+.Fx
+website; otherwise, the version obtained from CVS will be used.
 .It Select ports
 The selection list is initialized with the ports listed on the command
 line (and, if the
@@ -172,7 +182,8 @@ If a certain match is not found,
 prints a list of possible matches and exits.
 .Pp
 All direct and indirect dependencies (except, if the
-.Fl e option was specified,
+.Fl e
+option was specified,
 those that are already installed) are also selected and marked as
 dependencies.
 .It Update ports tree and discover dependencies
