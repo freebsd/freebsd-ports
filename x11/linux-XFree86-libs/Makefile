@@ -25,10 +25,10 @@ BUILD_DEPENDS=	rpm:${PORTSDIR}/archivers/rpm
 RUN_DEPENDS=${LINUXBASE}/lib/libc-2.3.2.so:${PORTSDIR}/emulators/linux_base-8
 
 CONFLICTS=	linux_base-6* linux_base-7* linux_base-deb* linux_base-gentoo*
-MD5_FILE=	${MASTERDIR}/distinfo.${MACHINE_ARCH}
+MD5_FILE=	${MASTERDIR}/distinfo.i386
 NO_BUILD=	yes
 NO_FILTER_SHLIBS=	yes
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	amd64 i386
 PLIST=		${WRKDIR}/plist
 PLIST_DIRS=	usr/X11R6/lib/X11
 PREFIX=		${LINUXBASE}
