@@ -1,6 +1,6 @@
 # New ports collection makefile for:	python-doc-pdf-a4
 # Date created:		02 June 1999
-# Whom:			Thomas Gellekum <alane@FreeBSD.org>
+# Whom:			Thomas Gellekum <tg@FreeBSD.org>
 #
 # $FreeBSD$
 #

@@ -1,6 +1,6 @@
 # New ports collection makefile for:    python-doc
 # Date created:         12 May 1999
-# Whom:                 Thomas Gellekum <alane@FreeBSD.org>
+# Whom:                 Thomas Gellekum <tg@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -34,6 +34,14 @@ DOCFORMAT?=	html
 	@${FALSE}
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} < 220
+PLIST_SUB+=	PYTHON22_ONLY="@comment "
+.else
+PLIST_SUB+=	PYTHON22_ONLY=""
+.endif
+
 do-extract:
 	@${RM} -rf ${WRKDIR}
 	@${MKDIR} ${WRKDIR}
@@ -50,4 +58,4 @@ do-install:
 	@(cd ${DOCDIR} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/${DISTFILES} ${EXTRACT_AFTER_ARGS})
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
