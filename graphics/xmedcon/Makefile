@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		xmedcon
-PORTVERSION=		0.9.6
+PORTVERSION=		0.9.7.1
 CATEGORIES=		graphics
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -36,7 +36,7 @@ WANT_GNOME=	yes
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITH_X11)
+.if defined(WITHOUT_X11)
 CONFIGURE_ARGS=	--disable-gui
 PLIST_SUB+=	X11="@comment "
 .else
@@ -47,47 +47,47 @@ PLIST_SUB+=	X11=""
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-.if !defined(WITH_GLIB)
+.if defined(WITHOUT_GLIB)
 CONFIGURE_ARGS+=	--disable-glib
 .endif
 
-.if !defined(WITH_ACR_NEMA) && !defined(WITH_DICOM)
+.if defined(WITHOUT_ACR_NEMA) || defined(WITHOUT_DICOM)
 CONFIGURE_ARGS+=	--disable-acr
 .endif
 
-.if !defined(WITH_GIF)
+.if defined(WITHOUT_GIF)
 CONFIGURE_ARGS+=	--disable-gif
 .endif
 
-.if !defined(WITH_INW)
+.if defined(WITHOUT_INW)
 CONFIGURE_ARGS+=	--disable-inw
 .endif
 
-.if !defined(WITH_ANALYZE)
+.if defined(WITHOUT_ANALYZE)
 CONFIGURE_ARGS+=	--disable-anlz
 .endif
 
-.if !defined(WITH_CONCORDE)
+.if defined(WITHOUT_CONCORDE)
 CONFIGURE_ARGS+=	--disable-conc
 .endif
 
-.if !defined(WITH_ECAT)
+.if defined(WITHOUT_ECAT)
 CONFIGURE_ARGS+=	--disable-ecat
 .endif
 
-.if !defined(WITH_INTERFILE)
+.if defined(WITHOUT_INTERFILE)
 CONFIGURE_ARGS+=	--disable-intf
 .endif
 
-.if !defined(WITH_DICOM) && !defined(WITH_DICOM_LJPEG)
+.if defined(WITHOUT_DICOM) || defined(WITHOUT_DICOM_LJPEG)
 CONFIGURE_ARGS+=	--disable-dicom
 .endif
 
-.if !defined(WITH_DICOM_LJPEG)
+.if defined(WITHOUT_DICOM_LJPEG)
 CONFIGURE_ARGS+=	--disable-ljpg
 .endif
 
-.if !defined(WITH_PNG)
+.if defined(WITHOUT_PNG)
 CONFIGURE_ARGS+=	--disable-png
 .else
 LIB_DEPENDS+=		png.5:${PORTSDIR}/graphics/png
@@ -96,7 +96,7 @@ LIB_DEPENDS+=		png.5:${PORTSDIR}/graphics/png
 CONFIGURE_ARGS+=	--includedir=${PREFIX}/include/xmedcon
 
 MAN1=	medcon.1 xmedcon-config.1
-.if defined(WITH_X11)
+.if !defined(WITHOUT_X11)
 MAN1+=	xmedcon.1
 .endif
 
