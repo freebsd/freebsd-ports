@@ -14,6 +14,8 @@ MASTER_SITES=	http://www.kernel.org/pub/linux/utils/fs/zisofs/
 MAINTAINER=	chip-set@mail.ru
 COMMENT=	User utilities for zisofs
 
+PORTDOCS=	README CHANGES INSTALL
+
 USE_AUTOCONF_VER=	253
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -22,11 +24,13 @@ GNU_CONFIGURE=	yes
 
 MAN1=		mkzftree.1
 
+PLIST_FILES=	bin/mkzftree
+
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for file in CHANGES README INSTALL
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.for f in ${PORTDOCS}
+	@${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
 .endif
 
