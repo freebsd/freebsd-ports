@@ -29,5 +29,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 post-extract:
 		@${RM} -f ${WRKSRC}/config.cache
+		@${CHMOD} 750 ${WRKSRC}/missing
 
 .include <bsd.port.post.mk>
