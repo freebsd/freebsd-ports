@@ -34,6 +34,7 @@
     SUBDIR += urwfonts
     SUBDIR += webfonts
     SUBDIR += xfed
+    SUBDIR += xfontselector
     SUBDIR += xmbdfed
 
 .include <bsd.port.subdir.mk>
