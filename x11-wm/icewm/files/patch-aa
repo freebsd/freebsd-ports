@@ -1,31 +1,12 @@
---- Makefile.orig	Mon Jul 20 01:34:31 1998
-+++ Makefile	Fri Jul 24 20:28:53 1998
-@@ -1,13 +1,13 @@
- include ./VERSION
+--- Makefile.orig	Sun Oct  4 21:40:46 1998
++++ Makefile	Wed Oct  7 16:36:55 1998
+@@ -9,8 +9,7 @@
+               aesthetech aesthetech-big
  
--PREFIX      = /usr/local
-+PREFIX      = $(X11BASE)
- BINDIR      = $(PREFIX)/bin
- LIBDIR      = $(PREFIX)/lib/X11/icewm
--ETCDIR      = /etc/X11/icewm
-+ETCDIR      = $(LIBDIR)
+ all:
+-	cd src ; $(MAKE) LIBDIR=$(LIBDIR) ETCDIR=$(ETCDIR)
+-	cd doc ; $(MAKE)
++	cd src ; $(MAKE) LIBDIR=$(LIBDIR) ETCDIR=$(ETCDIR) PREFIX=$(PREFIX)
  
--INSTALL     = install
--INSTALLDIR  = $(INSTALL) -m 755 -d
--INSTALLBIN  = $(INSTALL) -m 555
-+INSTALL     = install -c
-+INSTALLDIR  = mkdir -p
-+INSTALLBIN  = $(INSTALL) $(STRIP) -m 555
- INSTALLLIB  = $(INSTALL) -m 444
- #INSTALLETC  = $(INSTALL) -m 644
- 
-@@ -19,8 +19,7 @@
-               metal-big blueice monte-carlo jaywalk
- 
- all:	config
--	(cd src ; make LIBDIR=$(LIBDIR) ETCDIR=$(ETCDIR))
--	(cd doc ; make)
-+	(cd src ; make LIBDIR=$(LIBDIR) ETCDIR=$(ETCDIR) PREFIX=$(PREFIX))
- 
- config:
- 	(cd src ; ln -sf MakeConfig.`uname` MakeConfig)
+ doc:
+ 	cd doc ; $(MAKE)
