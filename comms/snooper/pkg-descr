@@ -1,10 +1,8 @@
-snooper - serial line snooping tool
-	The tool is for snooping communication between two devices
-	that communicate with RS232C serial line.
+The snooper is a serial line snooping tool used for snooping communication
+between two devices that communicate with an RS232C serial line.
 
-Machine configuration
-	There are 3 machines/modems to take part in the configuration.
-	We will denote those machines as follows:
+An typical machine configuration involving three computers is:
+
 		partyA		a computer 
 		partyB		computer/modem/digi-cam/whatever
 		console		The computer you are using to snoop
