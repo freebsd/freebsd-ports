@@ -76,7 +76,7 @@ while [ "$1" ]; do
 			echo "mcrypt support doesn't compile at the moment. Ignoring." > /dev/stderr
 			;;
 		\"nothing\")
-			echo "LIB_DEPENDS+=	mcrypt.5:\${PORTSDIR}/security/libmcrypt"
+			echo "LIB_DEPENDS+=	mcrypt.6:\${PORTSDIR}/security/libmcrypt"
 			echo "CONFIGURE_ARGS+=--with-mcrypt=\${PREFIX}"
 			;;
 		\"mhash\")
