@@ -1,5 +1,4 @@
 bin/gnumeric
-bin/gnumeric-component
 etc/gconf/gconf.xml.defaults/apps/gnumeric/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/gnumeric/autocorrect/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/gnumeric/autoformat/%gconf.xml
@@ -86,8 +85,6 @@ lib/gnumeric/%%VERSION%%/plugins/fn-stat/plugin.so
 lib/gnumeric/%%VERSION%%/plugins/fn-stat/plugin.xml
 lib/gnumeric/%%VERSION%%/plugins/fn-string/plugin.so
 lib/gnumeric/%%VERSION%%/plugins/fn-string/plugin.xml
-lib/gnumeric/%%VERSION%%/plugins/gdaif/gdaif.so
-lib/gnumeric/%%VERSION%%/plugins/gdaif/plugin.xml
 lib/gnumeric/%%VERSION%%/plugins/gnome-glossary/glossary-po-header
 lib/gnumeric/%%VERSION%%/plugins/gnome-glossary/gnome_glossary.py
 lib/gnumeric/%%VERSION%%/plugins/gnome-glossary/gnome_glossary.pyc
@@ -127,8 +124,8 @@ lib/gnumeric/%%VERSION%%/plugins/xbase/plugin.xml
 lib/gnumeric/%%VERSION%%/plugins/xbase/xbase.so
 lib/gnumeric/%%VERSION%%/plugins/xml_sax/plugin.xml
 lib/gnumeric/%%VERSION%%/plugins/xml_sax/xml_sax.so
-lib/libfoocanvas.a
 libdata/bonobo/servers/GNOME_Gnumeric.server
+libexec/gnumeric-component
 share/gnome/applications/gnumeric.desktop
 share/gnome/gnumeric/%%VERSION%%/autoformat-templates/3D/.category
 share/gnome/gnumeric/%%VERSION%%/autoformat-templates/3D/autoformat.3D.button.xml
@@ -163,6 +160,8 @@ share/gnome/gnumeric/%%VERSION%%/glade/advanced-filter.glade
 share/gnome/gnumeric/%%VERSION%%/glade/anova-one.glade
 share/gnome/gnumeric/%%VERSION%%/glade/anova-two.glade
 share/gnome/gnumeric/%%VERSION%%/glade/autocorrect.glade
+share/gnome/gnumeric/%%VERSION%%/glade/autofilter-expression.glade
+share/gnome/gnumeric/%%VERSION%%/glade/autofilter-top10.glade
 share/gnome/gnumeric/%%VERSION%%/glade/autoformat.glade
 share/gnome/gnumeric/%%VERSION%%/glade/autosave.glade
 share/gnome/gnumeric/%%VERSION%%/glade/cell-comment.glade
@@ -194,6 +193,7 @@ share/gnome/gnumeric/%%VERSION%%/glade/mean-tests.glade
 share/gnome/gnumeric/%%VERSION%%/glade/merge.glade
 share/gnome/gnumeric/%%VERSION%%/glade/moving-averages.glade
 share/gnome/gnumeric/%%VERSION%%/glade/names.glade
+share/gnome/gnumeric/%%VERSION%%/glade/pivottable.glade
 share/gnome/gnumeric/%%VERSION%%/glade/plugin-manager.glade
 share/gnome/gnumeric/%%VERSION%%/glade/preferences.glade
 share/gnome/gnumeric/%%VERSION%%/glade/print.glade
@@ -622,6 +622,7 @@ share/gnome/pixmaps/gnumeric/gnome-application-x-generic-spreadsheet.png
 share/gnome/pixmaps/gnumeric/gnome-application-x-gnumeric.png
 share/gnome/pixmaps/gnumeric/gnome-application-x-xls.png
 share/gnome/pixmaps/gnumeric/gnome-gnumeric.png
+share/gnome/pixmaps/gnumeric/gnumeric_splash.jpg
 share/gnome/pixmaps/gnumeric/gp_125grey
 share/gnome/pixmaps/gnumeric/gp_25grey
 share/gnome/pixmaps/gnumeric/gp_50grey
@@ -678,6 +679,7 @@ share/gnome/pixmaps/gnumeric/stf-druid.png
 share/gnome/pixmaps/gnumeric/stock.xpm
 share/gnome/pixmaps/gnumeric/surface.xpm
 share/gnome/pixmaps/gnumeric/top_border
+share/gnome/pixmaps/gnumeric_splash.jpg
 share/locale/bg/LC_MESSAGES/gnumeric.mo
 share/locale/ca/LC_MESSAGES/gnumeric.mo
 share/locale/cs/LC_MESSAGES/gnumeric.mo
@@ -699,6 +701,7 @@ share/locale/it/LC_MESSAGES/gnumeric.mo
 share/locale/ja/LC_MESSAGES/gnumeric.mo
 share/locale/ko/LC_MESSAGES/gnumeric.mo
 share/locale/lv/LC_MESSAGES/gnumeric.mo
+share/locale/mr_IN/LC_MESSAGES/gnumeric.mo
 share/locale/ms/LC_MESSAGES/gnumeric.mo
 share/locale/nl/LC_MESSAGES/gnumeric.mo
 share/locale/nn/LC_MESSAGES/gnumeric.mo
@@ -752,7 +755,6 @@ share/locale/zh_TW/LC_MESSAGES/gnumeric.mo
 @dirrm lib/gnumeric/%%VERSION%%/plugins/lotus
 @dirrm lib/gnumeric/%%VERSION%%/plugins/html
 @dirrm lib/gnumeric/%%VERSION%%/plugins/gnome-glossary
-@dirrm lib/gnumeric/%%VERSION%%/plugins/gdaif
 @dirrm lib/gnumeric/%%VERSION%%/plugins/fn-string
 @dirrm lib/gnumeric/%%VERSION%%/plugins/fn-stat
 @dirrm lib/gnumeric/%%VERSION%%/plugins/fn-random
