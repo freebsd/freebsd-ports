@@ -137,7 +137,7 @@ do-install:
 	cd ${WRKSRC}/dist/bin && ${FIND} . | \
 		cpio -pdm -L -R ${LIBOWN}:${LIBGRP} ${PREFIX}/lib/mozilla
 	${INSTALL_SCRIPT} ${WRKSRC}/mozilla ${PREFIX}/bin
-	${TEST} -d ${PREFIX}/lib/browser_plugins && \
+	${TEST} ! -d ${PREFIX}/lib/browser_plugins && \
 	${MKDIR} ${PREFIX}/lib/browser_plugins
 	${TEST} ! -L ${PREFIX}/lib/browser_plugins/libjavaplugin_oji.so && \
 	${LN} -sf ${LOCALBASE}/jdk1.3.1/jre/plugin/i386/ns600/libjavaplugin_oji.so \
