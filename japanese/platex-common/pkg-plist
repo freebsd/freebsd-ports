@@ -1,3 +1,4 @@
+bin/latex
 bin/platex-common
 share/texmf/fonts/source/public/ams/READ.ME
 share/texmf/fonts/source/public/ams/cyrillic/cyrcsc.mf
@@ -1128,6 +1129,7 @@ share/texmf/tex/latex/base/testpage.tex
 share/texmf/tex/latex/base/tex2.txt
 share/texmf/tex/latex/base/texpert.txt
 share/texmf/tex/latex/base/texsys.aux
+share/texmf/tex/latex/base/texsys.cfg
 share/texmf/tex/latex/base/textures.txt
 share/texmf/tex/latex/base/tracefnt.sty
 share/texmf/tex/latex/base/truetex.txt
