@@ -7,7 +7,7 @@
 
 PORTNAME=	s10sh
 PORTVERSION=	0.2.0
-PORTREVISION=   1
+PORTREVISION=   2
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.kyuzz.org/antirez/s10sh-src/
 
@@ -21,7 +21,7 @@ MAKEFILE=	${FILESDIR}/Makefile.bsd
 .if defined(NOUSB) || defined(WITHOUT_USB)
 MAKE_ENV+=	WITHOUT_USB=YES
 .else
-LIB_DEPENDS=	usb-0.1.4:${PORTSDIR}/devel/libusb
+LIB_DEPENDS=	usb-0.1.5:${PORTSDIR}/devel/libusb
 .endif
 
 .if !defined(NOPORTDOCS)
