@@ -10,8 +10,11 @@ include/gal/e-table/e-cell.h
 include/gal/e-table/e-table-click-to-add.h
 include/gal/e-table/e-table-col-dnd.h
 include/gal/e-table/e-table-col.h
+include/gal/e-table/e-table-column-specification.h
+include/gal/e-table/e-table-config-field.h
 include/gal/e-table/e-table-config.h
 include/gal/e-table/e-table-defines.h
+include/gal/e-table/e-table-extras.h
 include/gal/e-table/e-table-field-chooser-dialog.h
 include/gal/e-table/e-table-field-chooser-item.h
 include/gal/e-table/e-table-field-chooser.h
@@ -30,6 +33,8 @@ include/gal/e-table/e-table-sort-info.h
 include/gal/e-table/e-table-sorted-variable.h
 include/gal/e-table/e-table-sorted.h
 include/gal/e-table/e-table-sorter.h
+include/gal/e-table/e-table-specification.h
+include/gal/e-table/e-table-state.h
 include/gal/e-table/e-table-subset-variable.h
 include/gal/e-table/e-table-subset.h
 include/gal/e-table/e-table-text-model.h
@@ -54,12 +59,14 @@ include/gal/widgets/e-colors.h
 include/gal/widgets/e-cursors.h
 include/gal/widgets/e-font.h
 include/gal/widgets/e-gui-utils.h
+include/gal/widgets/e-hscrollbar.h
 include/gal/widgets/e-popup-menu.h
 include/gal/widgets/e-printable.h
 include/gal/widgets/e-reflow-sorted.h
 include/gal/widgets/e-reflow.h
 include/gal/widgets/e-scroll-frame.h
 include/gal/widgets/e-unicode.h
+include/gal/widgets/e-vscrollbar.h
 include/gal/widgets/gtk-combo-box.h
 include/gal/widgets/gtk-combo-stack.h
 include/gal/widgets/gtk-combo-text.h
@@ -67,11 +74,12 @@ include/gal/widgets/widget-color-combo.h
 include/gal/widgets/widget-pixmap-combo.h
 lib/libgal.a
 lib/libgal.so
-lib/libgal.so.0
-share/gnome/etable/glade/e-table-config.glade
-share/gnome/etable/glade/e-table-field-chooser.glade
-share/gnome/etable/glade/e-table-group.glade
-@dirrm share/gnome/etable/glade
+lib/libgal.so.1
+share/gnome/etable/%%VERSION%%/glade/e-table-config.glade
+share/gnome/etable/%%VERSION%%/glade/e-table-field-chooser.glade
+share/gnome/etable/%%VERSION%%/glade/e-table-group.glade
+@dirrm share/gnome/etable/%%VERSION%%/glade
+@dirrm share/gnome/etable/%%VERSION%%
 @dirrm share/gnome/etable
 @dirrm include/gal/widgets
 @dirrm include/gal/util
