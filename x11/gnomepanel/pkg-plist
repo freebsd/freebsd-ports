@@ -194,6 +194,9 @@ share/locale/zh_TW/LC_MESSAGES/gnome-panel-2.0.mo
 @dirrm share/gnome/help/window-list/C/figures
 @dirrm share/gnome/help/window-list/C
 @dirrm share/gnome/help/window-list
+@dirrm share/gnome/help/notification-area/C/figures
+@dirrm share/gnome/help/notification-area/C
+@dirrm share/gnome/help/notification-area
 @dirrm share/gnome/help/mailcheck/C/figures
 @dirrm share/gnome/help/mailcheck/C
 @dirrm share/gnome/help/mailcheck
