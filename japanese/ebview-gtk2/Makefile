@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ebview
-PORTVERSION=	0.3.3
-PORTREVISION=	1
+PORTVERSION=	0.3.4
 CATEGORIES=	japanese
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -30,6 +29,12 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|-pthread|${PTHREAD_LIBS:S/"//g}|g' ${WRKSRC}/configure
+
+pre-build:
+.for file in src/grep.c
+	cd ${WRKSRC} && ${MV} ${file} ${file}.pre_iconv \
+		&& iconv -c -t ascii ${file}.pre_iconv > ${file} || ${TRUE}
+.endfor
 
 post-install:
 .if !defined(NOPORTDOCS)

@@ -6,12 +6,12 @@ bin/ebview
 %%DATADIR%%/endinglist-ja.xml
 %%DATADIR%%/endinglist.xml
 %%DATADIR%%/filter.xml
-%%DATADIR%%/help/en/index.html
 %%DATADIR%%/help/en/body.html
 %%DATADIR%%/help/en/menu.html
-%%DATADIR%%/help/ja/index.html
+%%DATADIR%%/help/en/index.html
 %%DATADIR%%/help/ja/body.html
 %%DATADIR%%/help/ja/menu.html
+%%DATADIR%%/help/ja/index.html
 %%DATADIR%%/searchengines.xml
 %%DATADIR%%/shortcut.xml
 share/locale/ja/LC_MESSAGES/ebview.mo
