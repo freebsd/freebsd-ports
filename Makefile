@@ -1,6 +1,7 @@
 # $FreeBSD$
 #
 
+SUBDIR += accessibility
 SUBDIR += arabic
 SUBDIR += archivers
 SUBDIR += astro
