@@ -1,15 +1,15 @@
---- src/stats-bsd.c.orig	Wed Dec 18 01:01:17 2002
-+++ src/stats-bsd.c	Mon Feb  3 20:20:12 2003
-@@ -64,6 +64,8 @@
+--- src/stats-bsd.c.orig	Tue May 27 09:03:43 2003
++++ src/stats-bsd.c	Wed Jun 11 23:48:40 2003
+@@ -73,6 +73,8 @@
  
  #include "locale.h"     /* gettext */
  
 +void logcalc(char *, char *);
 +
  /**
-  * @desc    Verbose level 2 logging of calulations
+  * @desc    Verbose level 3 logging of calulations
   */
-@@ -81,12 +83,13 @@
+@@ -90,12 +92,13 @@
  void
  initCPU(char *cpu)
  {
@@ -26,23 +26,7 @@
          initialized = 1;
  
          mib[0] = CTL_HW;
-@@ -98,7 +101,6 @@
- 
-         if (sysctl(mib, 2, buf, &size, NULL, 0) == -1) {
-             uplog(LOG_WARNING, "sysctl: hw.model");
--           /* warn("sysctl: hw.model"); */
-         }
-         strlcpy(cpu, buf, CPU_SIZE);
-         logcalc(_("CPU"), cpu);
-@@ -154,7 +156,6 @@
-             err(1, "sysctl: kern.boottime");
-         }
-         boottimesecs = boottime.tv_sec;
--       /* logcalc(_("boot time"), boottimesecs); */
- #if defined DEBUG
-         uplog(LOG_DEBUG, "initBoottime() initialized %d", boottimesecs);
- #endif /* DEBUG */
-@@ -173,19 +174,18 @@
+@@ -180,19 +183,18 @@
                _("%s %s not implemented for this operating system %s"),
                _("WARNING:"), _("Load-average"), strerror(errno));
          cfg_SendUsage = 0;
@@ -67,7 +51,7 @@
  }
  
  #if !defined __MACH__   /* Mach kernel stuff is in stats-mach.c */
-@@ -259,6 +259,10 @@
+@@ -266,6 +268,10 @@
             /* store values for next calculation interval */
              for (state = 0; state < CPUSTATES; state++)
                  stime[state] = ctime[state];
@@ -78,7 +62,7 @@
          }
      }
      else {
-@@ -269,17 +273,13 @@
+@@ -276,17 +282,13 @@
          cfg_SendUsage = 0;
          cfg_SendIdle = 0;
      }
@@ -97,7 +81,7 @@
  
      boottimesecs = initBoottime();
  
-@@ -294,7 +294,7 @@
+@@ -301,7 +303,7 @@
  #endif /* DEBUG */
      }
      else {
@@ -106,7 +90,7 @@
                "getUptime() boottime.tv_sec");
      }
  }
-@@ -307,19 +307,18 @@
+@@ -314,21 +316,20 @@
           double *IdlePercent, char *osname, char *osversion, char *cpu,
           double *loadavg)
  {
@@ -123,12 +107,14 @@
  
      if (cfg_sendcpu)
 -        initCPU(&*cpu);
--
--   /* if (cfg_sendloadavg) */
--    getLoadavg(&*loadavg);
 +        initCPU(cpu);
  
-+    if (cfg_sendloadavg)
+    /* WARNING: loadavg is not implemented on Wonko server! */
+    /* cfg_SendUsage is implemented instead. (i.e. only CPU usage % a la `top`) */
+-   /* if (cfg_sendloadavg) */
+-    getLoadavg(&*loadavg);
+-
++   if (cfg_sendloadavg)
 +	getLoadavg(loadavg);
  }
  #endif /* PLATFORM_BSD */
