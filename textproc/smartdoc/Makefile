@@ -8,9 +8,7 @@
 PORTNAME=	smartdoc
 PORTVERSION=	0.7
 CATEGORIES=	textproc java
-MASTER_SITES=	http://www.asahi-net.or.jp/~dp8t-asm/java/tools/SmartDoc/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	kiri
+MASTER_SITES=	http://www.asahi-net.or.jp/~dp8t-asm/java/tools/SmartDoc/
 DISTNAME=	setup${PORTVERSION:S/.//g}
 EXTRACT_SUFX=	.zip
 DIST_SUBDIR=	${PORTNAME}
