@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	spegla
-PORTVERSION=	1.04p1
+PORTVERSION=	1.1p4
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.luth.se/pub/unix/mirror/ \
 		ftp://subzero.campus.luth.se/pub/spegla/
