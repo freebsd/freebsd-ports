@@ -20,7 +20,7 @@ GNU_CONFIGURE=	yes
 
 # Doesn't configure on bento because of this
 .if !exists(/usr/bin/lpr) || !exists(/usr/bin/lp)
-IGNORE=		"missing /usr/bin/lp or /usr/bin/lpr (hi bento)"
+IGNORE=		missing /usr/bin/lp or /usr/bin/lpr (hi bento)
 .endif
 
 MAN1=		trueprint.1
