@@ -6,6 +6,9 @@
 @@ -1961 +1961 @@
 -for ac_prog in 'bison -y' byacc
 +for ac_prog in byacc
+@@ -6168 +6168 @@
+-#include <iostream.h>
++#include <fstream.h>
 @@ -13358 +13358 @@
 -  egrep "${ice_re_word}ioctl *\(" >/dev/null 2>&1; then
 +  egrep "${ice_re_word}\(?ioctl\)? *\(" >/dev/null 2>&1; then

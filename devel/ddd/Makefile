@@ -25,6 +25,8 @@ PLIST_SUB=	VERSION=${PORTVERSION}
 
 MAN1=		ddd.1
 
+CFLAGS+= -Wno-deprecated
+
 .if defined(MOTIFLIB)
 .if defined(MOTIF_STATIC)
 LIBXMDIR!=	${ECHO_CMD} ${MOTIFLIB} | ${SED} -e 's/\/libXm\.a//g' | ${AWK} '{print $$1}'
