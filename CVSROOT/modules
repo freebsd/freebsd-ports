@@ -6747,7 +6747,6 @@ panorama	ports/graphics/panorama
 pantomime	ports/mail/pantomime
 pantomime-ssl	ports/mail/pantomime-ssl
 papaya		ports/net/papaya
-papaya-plugins	ports/net/papaya-plugins
 papercut	ports/news/papercut
 par		ports/textproc/par
 par2cmdline	ports/archivers/par2cmdline
