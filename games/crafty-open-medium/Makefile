@@ -21,6 +21,12 @@ DIST_SUBDIR=		crafty
 USE_ZIP=		yes
 NO_WRKSUBDIR=		yes
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+BROKEN=		"Coredump during build"
+.endif
+
 do-build:
 	@${ECHO_MSG} '================================================================'
 	@${ECHO_MSG} 'Ignore warnings about illegal moves.  These warnings are normal.'
@@ -31,4 +37,4 @@ do-install:
 	${MKDIR} ${PREFIX}/lib/crafty
 	${INSTALL_DATA} ${WRKDIR}/book.bin ${PREFIX}/lib/crafty/medium-book.bin
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
