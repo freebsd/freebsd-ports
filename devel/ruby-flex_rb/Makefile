@@ -16,6 +16,8 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	Ruby flex regular expression matching extension
 
+BROKEN=		Does not compile
+
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 
