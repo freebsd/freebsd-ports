@@ -1,0 +1,11 @@
+--- windows/Makefile.in.orig	Sun Jun 13 06:20:02 1999
++++ windows/Makefile.in	Tue Dec 28 18:13:18 1999
+@@ -69,7 +69,7 @@
+ BIN32_C_SRCS_1  = Strings32.c Profile32.c vsprintf32.c lib32.c
+ BIN32_C_SRCS    = $(BIN32_C_SRCS_$(TWIN_BIN32))
+ BIN32_s_SRCS_0  =
+-BIN32_s_SRCS_1  = if32.s
++BIN32_s_SRCS_1  = if32.S
+ BIN32_s_SRCS    = $(BIN32_s_SRCS_$(TWIN_BIN32))
+ 
+ #

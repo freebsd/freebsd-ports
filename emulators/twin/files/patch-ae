@@ -1,0 +1,11 @@
+--- configure.orig	Tue Dec 28 18:11:31 1999
++++ configure	Tue Dec 28 18:11:55 1999
+@@ -2544,7 +2544,7 @@
+ 	TARGET=sco
+ 	;;
+ 
+-   i*86-unknown-freebsd*)
++   i*86-*-freebsd*)
+ 	TARGET=freebsd
+ 	;;
+ 

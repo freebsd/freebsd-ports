@@ -1,0 +1,11 @@
+--- windows/Execfreebsd.c.orig	Tue Dec 28 19:25:11 1999
++++ windows/Execfreebsd.c	Tue Dec 28 19:30:39 1999
+@@ -171,7 +171,7 @@
+ 	int rc;
+     sact.sa_handler  = TWIN_GPFSigHandler;
+     sact.sa_flags    = SA_RESTART;
+-    sact.sa_mask     = 0;
++    sigemptyset(&sact.sa_mask);
+     rc =  sigaction(sig, &sact, NULL);
+     return rc;
+ }
