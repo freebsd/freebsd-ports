@@ -38,4 +38,3 @@ share/locale/tr/LC_MESSAGES/gcc.mo
 @dirrm lib/gcc-lib/%%GCC_TARG%%/%%GCC_REV%%
 @dirrm lib/gcc-lib/%%GCC_TARG%%
 @dirrm lib/gcc-lib
-
