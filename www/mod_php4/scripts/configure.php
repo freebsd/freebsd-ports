@@ -149,7 +149,6 @@ while [ "$1" ]; do
 		\"Interbase\")
 			echo "LIB_DEPENDS+=	gds.1:\${PORTSDIR}/databases/firebird"
 			echo "CONFIGURE_ARGS+=--with-interbase=\${PREFIX}/firebird"
-			LIBS="${LIBS} -L\${PREFIX}/firebird/lib"
 			;;
 		\"dBase\")
 			echo "CONFIGURE_ARGS+=--with-dbase"
