@@ -7,7 +7,7 @@
 
 PORTNAME?=	qt
 PORTVERSION?=	3.0.5
-PORTREVISION?=  2
+PORTREVISION?=  3
 CATEGORIES?=	x11-toolkits
 MASTER_SITES=	ftp://ftp.trolltech.com/qt/source/ \
 		ftp://ftp.chg.ru/pub/X11/qt/source/
@@ -108,9 +108,22 @@ post-patch:
 	@${REINPLACE_CMD} -e  's,release,release thread,' \
 		${WRKSRC}/mkspecs/freebsd-g++/qmake.conf
 
+post-build:
+	cd ${WRKSRC}/tools/makeqpf/; ${SETENV} ${MAKE_ENV} ${MAKE}
+	cd ${WRKSRC}/tools/mergetr/; ${SETENV} ${MAKE_ENV} ${MAKE}
+	cd ${WRKSRC}/tools/msg2qm/; ${SETENV} ${MAKE_ENV} ${MAKE}
+	cd ${WRKSRC}/tools/qembed/; ${SETENV} ${MAKE_ENV} ${MAKE}
+	cd ${WRKSRC}/tools/qvfb/; ${SETENV} ${MAKE_ENV} ${MAKE}
+
 # Work around qmake generated dependencies
 pre-install:
 	@${INSTALL_DATA} ${WRKSRC}/lib/*.prl ${PREFIX}/lib
+	${INSTALL_PROGRAM} ${WRKSRC}/tools/makeqpf/makeqpf ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/tools/mergetr/mergetr ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/tools/msg2qm/msg2qm ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/tools/qembed/qembed ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/tools/qvfb/qvfb ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/findtr ${PREFIX}/bin
 
 .if exists(${PKGMESSAGE})
 # Display another GL advisory. This one goes in the package, too.
