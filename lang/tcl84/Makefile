@@ -6,15 +6,11 @@
 #
 
 PORTNAME=	tcl
-PORTVERSION=	8.3.1
+PORTVERSION=	8.3.2
 CATEGORIES=	lang tcl83
 MASTER_SITES=	${MASTER_SITE_TCLTK}
 MASTER_SITE_SUBDIR=	tcl8_3
 DISTNAME=	${PORTNAME}${PORTVERSION}
-
-PATCH_SITES=	ftp://ftp.neosoft.com/pub/tcl/sorted/packages-8.0/devel/ \
-		http://www.neosoft.com/tcl/ftparchive/sorted/packages-8.0/devel/
-PATCHFILES=	${PORTNAME}${PORTVERSION}plus.patch.gz
 
 MAINTAINER=	jseger@FreeBSD.org
 
@@ -37,14 +33,15 @@ MAN3=	Access.3 AddErrInfo.3 Alloc.3 AllowExc.3 AppInit.3 AssocData.3 \
 	ChnlStack.3 CmdCmplt.3 Concat.3 CrtChannel.3 CrtChnlHdlr.3 \
 	CrtCloseHdlr.3 	CrtCommand.3 CrtFileHdlr.3 CrtInterp.3 CrtMathFnc.3 \
 	CrtObjCmd.3 CrtSlave.3 CrtTimerHdlr.3 CrtTrace.3 DString.3 \
-	DetachPids.3 DoOneEvent.3 DoWhenIdle.3 DoubleObj.3 Encoding.3 Eval.3 \
-	Exit.3 ExprLong.3 ExprLongObj.3 FindExec.3 GetCwd.3 GetHostName.3 \
-	GetIndex.3 GetInt.3 GetOpnFl.3 GetStdChan.3 GetVersion.3 Hash.3 \
-	InitStubs.3 IntObj.3 Interp.3 LinkVar.3 ListObj.3 MainLoop.3 Notifier.3\
-	Object.3 ObjectType.3 OpenFileChnl.3 OpenTcp.3 ParseCmd.3 PkgRequire.3 \
-	Preserve.3 PrintDbl.3 RecEvalObj.3 RecordEval.3 RegExp.3 SaveResult.3 \
-	SetErrno.3 SetRecLmt.3 SetResult.3 SetVar.3 Sleep.3 SourceRCFile.3 \
-	SplitList.3 SplitPath.3 StaticPkg.3 StrMatch.3 StringObj.3 Tcl_Main.3 \
+	DetachPids.3 DoOneEvent.3 DoWhenIdle.3 DoubleObj.3 DumpActiveMemory.3 \
+	Encoding.3 Eval.3 Exit.3 ExprLong.3 ExprLongObj.3 FindExec.3 GetCwd.3 \
+	GetHostName.3 GetIndex.3 GetInt.3 GetOpnFl.3 GetStdChan.3 \
+	GetVersion.3 Hash.3 Init.3 InitStubs.3 IntObj.3 Interp.3 LinkVar.3 \
+	ListObj.3 Notifier.3 Object.3 ObjectType.3 OpenFileChnl.3 OpenTcp.3 \
+	ParseCmd.3 PkgRequire.3 Preserve.3 PrintDbl.3 RecEvalObj.3 \
+	RecordEval.3 RegExp.3 SaveResult.3 SetErrno.3 SetRecLmt.3 \
+	SetResult.3 SetVar.3 Sleep.3 SourceRCFile.3 SplitList.3 SplitPath.3 \
+	StaticPkg.3 StrMatch.3 StringObj.3 TCL_MEM_DEBUG.3 Tcl_Main.3 \
 	Thread.3 ToUpper.3 TraceVar.3 Translate.3 UpVar.3 Utf.3 WrongNumArgs.3
 
 MANN=	Tcl.n after.n append.n array.n bgerror.n binary.n break.n case.n \
@@ -159,6 +156,9 @@ MLINKS=	Access.3 Tcl_Access.3 \
 	DoubleObj.3 Tcl_NewDoubleObj.3 \
 	DoubleObj.3 Tcl_SetDoubleObj.3 \
 	DoubleObj.3 Tcl_GetDoubleFromObj.3 \
+	DumpActiveMemory.3 Tcl_DumpActiveMemory.3 \
+	DumpActiveMemory.3 Tcl_InitMemory.3 \
+	DumpActiveMemory.3 Tcl_ValidateAllMemory.3 \
 	Encoding.3 Tcl_GetEncoding.3 \
 	Encoding.3 Tcl_FreeEncoding.3 \
 	Encoding.3 Tcl_ExternalToUtfDString.3 \
