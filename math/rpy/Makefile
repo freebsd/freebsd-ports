@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python interface to the R Programming Language
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/Numeric.pth:${PORTSDIR}/math/py-numeric \
-		R:${PORTSDIR}/math/R-letter
+		R:${PORTSDIR}/math/R-project
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_PYTHON=	yes

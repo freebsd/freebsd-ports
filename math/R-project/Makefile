@@ -72,7 +72,7 @@ pre-fetch:
 	@${ECHO} "        # make PAPERSIZE=letter install clean"
 	@${ECHO}
 .else
-CONFIGURE_ENV+=	R_PAPERSIZE=${PAPERSIZE} 
+CONFIGURE_ENV+=	R_PAPERSIZE=${PAPERSIZE}
 .endif
 
 # Build the four documentation formats sequentially (instead of simultaneously)
