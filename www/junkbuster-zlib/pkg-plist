@@ -1,5 +1,4 @@
 bin/junkbuster
-man/man1/junkbuster.1.gz
 etc/junkbuster/aclfile.sample
 etc/junkbuster/blockfile.sample
 etc/junkbuster/cookiefile.sample

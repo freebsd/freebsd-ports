@@ -51,15 +51,6 @@ libexec/apache/mod_speling.so
 libexec/apache/mod_status.so
 libexec/apache/mod_unique_id.so
 libexec/apache/mod_usertrack.so
-man/man1/ab.1.gz
-man/man1/apachectl.1.gz
-man/man1/dbmmanage.1.gz
-man/man1/htdigest.1.gz
-man/man1/htpasswd.1.gz
-man/man8/apxs.8.gz
-man/man8/httpd.8.gz
-man/man8/logresolve.8.gz
-man/man8/rotatelogs.8.gz
 sbin/ab
 sbin/apachectl
 sbin/apxs

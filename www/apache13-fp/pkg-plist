@@ -6,8 +6,6 @@ etc/apache/access.conf-dist
 etc/apache/mime.types-dist
 sbin/httpd
 sbin/suexec
-man/man1/htpasswd.1.gz
-man/man8/httpd.8.gz
 share/doc/apache/ABOUT_APACHE
 share/doc/apache/LICENSE
 share/doc/apache/README

@@ -43,7 +43,6 @@ lib/http-analyze/btn/year_on.gif
 lib/http-analyze/bugreport.html
 lib/http-analyze/rotate-httpd
 lib/http-analyze/sample.conf
-man/man1/http-analyze.1.gz
 share/doc/http-analyze/http-analyze.pdf
 share/doc/http-analyze/http-analyze.ps
 @dirrm lib/http-analyze/btn

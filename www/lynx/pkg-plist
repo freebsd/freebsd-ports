@@ -39,7 +39,6 @@ lib/lynx_help/test/iso88592.html
 lib/lynx_help/test/sgml.html
 lib/lynx_help/test/tabtest.html
 lib/lynx_help/test/unicode.html
-man/man1/lynx.1.gz
 @dirrm lib/lynx_help/test
 @dirrm lib/lynx_help/samples
 @dirrm lib/lynx_help/keystrokes
