@@ -8,7 +8,7 @@
 
 PORTNAME=	minicom
 PORTVERSION=	1.83.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	comms
 MASTER_SITES=	${MASTER_SITE_SUNSITE}  \
 		http://www.pp.clinet.fi/~walker/mc-dev/  \
