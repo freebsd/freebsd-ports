@@ -7,7 +7,6 @@ etc/apache/magic.default
 etc/apache/mime.types.default
 etc/apache/srm.conf.default
 etc/rc.d/apache.sh
-etc/rc.d/apache.sh.tmpl
 include/apache/alloc.h
 include/apache/ap.h
 include/apache/ap_compat.h
