@@ -1,5 +1,5 @@
 *** Count-install.orig	Fri May  3 06:20:31 1996
---- Count-install	Thu May 16 22:34:39 1996
+--- Count-install	Fri Sep  6 18:05:28 1996
 ***************
 *** 193,199 ****
   
@@ -85,7 +85,7 @@
      until [ $answer != "x" ]
      do
 ***************
-*** 298,304 ****
+*** 298,318 ****
   # enter groud id -ends
   ##
   echo "installing Count.cgi->$CGIBIN_DIR"
@@ -93,7 +93,21 @@
   echo "installing $CONFIG_FILE->$CONFIG_DIR"
   $INSTALL_PROG -c -o $UserId -g $GroupId -m 664 $CONFIG_FILE $CONFIG_DIR/$CONFIG_FILE
   echo "installing sample datafile $SAMPLE_DAT->$DATA_DIR"
---- 298,304 ----
+  $INSTALL_PROG -c -o $UserId -g $GroupId -m 664 $SAMPLE_DAT $DATA_DIR/sample.dat
+  chmod 775 $DATA_DIR
+  
+! echo "installing rgb.txt->$BASE_DIR"
+! $INSTALL_PROG -c -o $UserId -g $GroupId -m 644 $Rgbfile $BASE_DIR/rgb.txt
+  
+! echo "creating Log directory $LOG_DIR"
+! ./mkdirhier $LOG_DIR
+! chown $UserId $LOG_DIR
+! chgrp $GroupId $LOG_DIR
+! chmod 775 $LOG_DIR
+  
+  echo "installing image strip for digit style A->$DIGIT_DIR/A"
+  $INSTALL_PROG -c -o $UserId -g $GroupId -m 644 $DigitA/strip.gif\
+--- 298,317 ----
   # enter groud id -ends
   ##
   echo "installing Count.cgi->$CGIBIN_DIR"
@@ -101,8 +115,32 @@
   echo "installing $CONFIG_FILE->$CONFIG_DIR"
   $INSTALL_PROG -c -o $UserId -g $GroupId -m 664 $CONFIG_FILE $CONFIG_DIR/$CONFIG_FILE
   echo "installing sample datafile $SAMPLE_DAT->$DATA_DIR"
+  $INSTALL_PROG -c -o $UserId -g $GroupId -m 664 $SAMPLE_DAT $DATA_DIR/sample.dat
+  chmod 775 $DATA_DIR
+  
+! echo "installing rgb.txt->$RGB_DIR"
+! $INSTALL_PROG -c -o $UserId -g $GroupId -m 644 $Rgbfile $RGB_DIR/rgb.txt
+  
+! echo "installing $LOG_FILE->$LOG_DIR"
+! touch $LOG_DIR/$LOG_FILE
+! chmod 644 $LOG_DIR/$LOG_FILE
+! chown $UserId.$GroupId $LOG_DIR/$LOG_FILE
+  
+  echo "installing image strip for digit style A->$DIGIT_DIR/A"
+  $INSTALL_PROG -c -o $UserId -g $GroupId -m 644 $DigitA/strip.gif\
 ***************
-*** 358,364 ****
+*** 344,349 ****
+--- 343,350 ----
+  #chown -R $UserId.$GroupId $BASE_DIR
+  find $BASE_DIR -exec chown $UserId {} \;
+  find $BASE_DIR -exec chgrp $GroupId {} \;
++ find $LIB_DIR -exec chown $UserId {} \;
++ find $LIB_DIR -exec chgrp $GroupId {} \;
+  #            echo "UserId=$UserId"
+  #            echo "GroupId=$GroupId"
+          ;;
+***************
+*** 358,374 ****
   
   EOM
   echo "installing Count.cgi->$CGIBIN_DIR"
@@ -110,7 +148,17 @@
   echo "installing $CONFIG_FILE->$CONFIG_DIR"
   $INSTALL_PROG -c $CONFIG_FILE $CONFIG_DIR/$CONFIG_FILE
   echo "installing sample datafile $SAMPLE_DAT->$DATA_DIR"
---- 358,364 ----
+  $INSTALL_PROG -c $SAMPLE_DAT $DATA_DIR/sample.dat
+  
+! echo "installing rgb.txt->$BASE_DIR"
+! $INSTALL_PROG -c $Rgbfile $BASE_DIR/rgb.txt
+  
+! echo "creating Log directory $LOG_DIR"
+! ./mkdirhier $LOG_DIR
+  
+  echo "installing image strip for digit style A->$DIGIT_DIR/A"
+  $INSTALL_PROG -c $DigitA/strip.gif $DIGIT_DIR/A/strip.gif
+--- 359,376 ----
   
   EOM
   echo "installing Count.cgi->$CGIBIN_DIR"
@@ -118,3 +166,14 @@
   echo "installing $CONFIG_FILE->$CONFIG_DIR"
   $INSTALL_PROG -c $CONFIG_FILE $CONFIG_DIR/$CONFIG_FILE
   echo "installing sample datafile $SAMPLE_DAT->$DATA_DIR"
+  $INSTALL_PROG -c $SAMPLE_DAT $DATA_DIR/sample.dat
+  
+! echo "installing rgb.txt->$RGB_DIR"
+! $INSTALL_PROG -c $Rgbfile $RGB_DIR/rgb.txt
+  
+! echo "installing $LOG_FILE->$LOG_DIR"
+! touch $LOG_DIR/$LOG_FILE
+! chmod 644 $LOG_DIR/$LOG_FILE
+  
+  echo "installing image strip for digit style A->$DIGIT_DIR/A"
+  $INSTALL_PROG -c $DigitA/strip.gif $DIGIT_DIR/A/strip.gif

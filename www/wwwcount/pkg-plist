@@ -6,22 +6,25 @@ etc/Counter/conf
 etc/Counter/conf/count.cfg
 etc/Counter/data
 etc/Counter/data/sample.dat
-etc/Counter/Log
-etc/Counter/rgb.txt
-etc/Counter/digits
-etc/Counter/digits/A
-etc/Counter/digits/A/strip.gif
-etc/Counter/digits/B
-etc/Counter/digits/B/strip.gif
-etc/Counter/digits/C
-etc/Counter/digits/C/strip.gif
-etc/Counter/digits/D
-etc/Counter/digits/D/strip.gif
-etc/Counter/digits/D/lenna.gif
-etc/Counter/digits/E
-etc/Counter/digits/E/strip.gif
+lib/Counter/rgb.txt
+lib/Counter/digits
+lib/Counter/digits/A
+lib/Counter/digits/A/strip.gif
+lib/Counter/digits/B
+lib/Counter/digits/B/strip.gif
+lib/Counter/digits/C
+lib/Counter/digits/C/strip.gif
+lib/Counter/digits/D
+lib/Counter/digits/D/strip.gif
+lib/Counter/digits/D/lenna.gif
+lib/Counter/digits/E
+lib/Counter/digits/E/strip.gif
 @owner bin
 @group bin
-etc/Counter/digits/mkstrip.sh
+lib/Counter/digits/mkstrip.sh
 bin/mkstrip
 man/man1/mkstrip.1
+@exec touch /var/log/Counter.log
+@exec chown nobody.nobody /var/log/Counter.log
+@exec chmod 644 /var/log/Counter.log
+@unexec rm /var/log/Counter.log
