@@ -67,6 +67,14 @@ pre-fetch:
 	@${ECHO} "	WITH_XCHARSET=list	define other built-in charsets (may be 'all');"
 	@${ECHO} "	DB_DIR=directory	Set alternate directory for database files."
 	@${ECHO} "	WITH_LINUXTHREADS=yes	Use the linuxthreads pthread library."
+	@${ECHO} "	SKIP_INSTALL_DB=yes	Skip mysql_install_db"
+	@${ECHO} "				(i. e. leave ${DB_DIR} alone)."
+	@${ECHO} "				This is useful for upgrades."
+	@${ECHO} "				Be sure to know what you are doing!"
+	@${ECHO} "	INSTALL_DB_FORCE=yes	don't run resolveip to do some additional"
+	@${ECHO} "				DNS checks before inserting local hostname to"
+	@${ECHO} "				mysql database."
+	@${ECHO} "				Use if your machine has no offical DNS entry."
 	@${ECHO} ""
 
 # MySQL-Server part
@@ -79,8 +87,8 @@ post-patch:
 	${MV} ${WRKSRC}/strings/strings-x86.s ${WRKSRC}/strings/strings-x86.S
 	${MV} ${WRKSRC}/strings/longlong2str-x86.s ${WRKSRC}/strings/longlong2str-x86.S
 
+.if exists(${DB_DIR}) && !defined(PACKAGE_BUILDING) && !defined(OVERWRITE_DB) && !defined(SKIP_INSTALL_DB)
 pre-install:
-.if !defined(PACKAGE_BUILDING) && exists(${DB_DIR}) && !defined(OVERWRITE_DB)
 	@${ECHO} "You appear to already have a mysql database directory in ${DB_DIR}."
 	@${ECHO} ""
 	@${ECHO} "In order to preserve your existing data, you should:"
@@ -99,7 +107,13 @@ pre-install:
 
 post-install:
 .if !defined(PACKAGE_BUILDING)
+.if !defined(SKIP_INSTALL_DB)
+.if defined(INSTALL_DB_FORCE)
+	${PREFIX}/bin/mysql_install_db --force
+.else
 	${PREFIX}/bin/mysql_install_db
+.endif
+.endif
 	@${SETENV} DB_DIR=${DB_DIR} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 .endif
 	@${SED} "s|%%PREFIX%%|${PREFIX}|g" < ${FILESDIR}/mysql-server.sh > ${PREFIX}/etc/rc.d/mysql-server.sh
