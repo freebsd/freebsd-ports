@@ -8,7 +8,6 @@
     SUBDIR += ac3dec
     SUBDIR += adpcm
     SUBDIR += afsp
-    SUBDIR += agbrowser
     SUBDIR += agsatellite
     SUBDIR += amp
     SUBDIR += ample

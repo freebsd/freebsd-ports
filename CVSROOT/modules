@@ -247,7 +247,6 @@ afterstep	ports/x11-wm/afterstep
 afterstep-i18n	ports/x11-wm/afterstep-i18n
 afterstep-stable	ports/x11-wm/afterstep-stable
 aftp		ports/emulators/aftp
-agbrowser	ports/audio/agbrowser
 agenda-headers	ports/devel/agenda-headers
 agenda-libs	ports/devel/agenda-libs
 agenda-snow-libs	ports/devel/agenda-snow-libs
