@@ -8,7 +8,7 @@
 PORTNAME=	gnomepim
 PORTVERSION=	1.4.9
 CATEGORIES=	deskutils gnome
-MASTER_SITES=	http://me.in-berlin.de/~jroger/gnome-pim/ \
+MASTER_SITES=	http://www.jroger.in-berlin.de/gnome-pim/ \
 		${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-pim/1.4
 DISTNAME=	gnome-pim-${PORTVERSION}
