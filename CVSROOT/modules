@@ -9318,6 +9318,7 @@ vnc2swf		ports/net/vnc2swf
 vncrypt		ports/security/vncrypt
 vobcopy		ports/sysutils/vobcopy
 vodmr		ports/mail/vodmr
+voltcraft304	ports/misc/voltcraft304
 vomit		ports/net/vomit
 vorbis-tools	ports/audio/vorbis-tools
 vorbisgain	ports/audio/vorbisgain
