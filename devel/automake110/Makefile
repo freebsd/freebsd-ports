@@ -40,7 +40,7 @@ pre-configure:
 	${PERL} -pi -e "s^%%X11BASE%%^${X11BASE}^" ${WRKSRC}/aclocal.in
 
 post-install:
-	@install-info ${DESTDIR}${PREFIX}/info/automake.info \
-		${DESTDIR}${PREFIX}/info/dir
+	@install-info ${PREFIX}/info/automake.info \
+		${PREFIX}/info/dir
 
 .include <bsd.port.mk>
