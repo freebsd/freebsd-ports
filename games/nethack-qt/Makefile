@@ -3,7 +3,7 @@
 # Date created:		So   6 Apr 1997 04:25:57 MET DST
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/04/06 02:45:29 andreas Exp $
 #
 
 DISTNAME=	nethack-3.2.2
@@ -19,6 +19,7 @@ DISTFILES=	nethack-3.2.2.tar.gz ${QT_PATCH} ${QT_SOUND}
 
 MAINTAINER=	andreas@FreeBSD.ORG
 
+LIB_DEPENDS=	qt\\.1\\.:${PORTSDIR}/x11/qt
 LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
 RUN_DEPENDS=	auplay:${PORTSDIR}/audio/nas
 
@@ -28,6 +29,12 @@ SHELL=		/bin/sh
 MAN6=		dgn_comp.6 dlb.6 lev_comp.6 nethack.6 recover.6
 
 pre-configure:
+	@echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+	@echo "!!! You cannot install nethack and nethack-qt in parallel !!!"
+	@echo "!!! But nethack-qt might read your prior nethack scores   !!!"
+	@echo "!!! Don't forget to backup your nethack libdir if it's    !!!"
+	@echo "!!! important for you                                     !!!"
+	@echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
 	@cd ${WRKSRC}/win; tar xvzf ${DISTDIR}/${QT_PATCH}
 	@cd ${WRKSRC}; patch < win/Qt/nhqt.patch
 	@cd ${WRKSRC}/sys/unix; ${SHELL} setup.sh
