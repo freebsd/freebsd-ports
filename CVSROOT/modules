@@ -8031,6 +8031,7 @@ txt2html	ports/textproc/txt2html
 txt2man		ports/textproc/txt2man
 txt2pdbdoc	ports/palm/txt2pdbdoc
 txt2regex	ports/misc/txt2regex
+txt2tags	ports/textproc/txt2tags
 txtbdf2ps	ports/print/txtbdf2ps
 txtmerge	ports/graphics/txtmerge
 tya		ports/java/tya
