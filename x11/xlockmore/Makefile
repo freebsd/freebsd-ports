@@ -3,7 +3,7 @@
 # Date created:		9 November 1994
 # Whom:			smace
 #
-# $Id: Makefile,v 1.41 1998/09/30 07:52:45 tg Exp $
+# $Id: Makefile,v 1.42 1998/10/01 02:17:49 jseger Exp $
 #
 
 DISTNAME=       xlockmore-4.12
@@ -31,11 +31,7 @@ OSVERSION!=     sysctl -n kern.osreldate
 CONFIGURE_ARGS+= --with-libraries=/usr/lib/aout
 .endif
 
-#
-# MesaGL has a security hole. Don't use it in setuid binaries.
-# Override this with WITH_MESAGL=yes in your environment.
-#
-WITH_MESAGL?=	no
+WITH_MESAGL?=	yes
 .if ${WITH_MESAGL} == yes
 CONFIGURE_ARGS+=	--with-mesagl
 LIB_DEPENDS+=		GL.14:${PORTSDIR}/graphics/Mesa3
