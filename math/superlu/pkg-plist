@@ -10,7 +10,7 @@ include/superlu/util.h
 include/superlu/zsp_defs.h
 lib/libsuperlu.a
 @dirrm include/superlu
-%%PORTDOCS%%share/doc/superlu/SLU_general.ps.gz
-%%PORTDOCS%%share/doc/superlu/simax95.ps.gz
-%%PORTDOCS%%share/doc/superlu/superlu_ug.ps.gz
-%%PORTDOCS%%@dirrm share/doc/superlu
+%%PORTDOCS%%%%DOCSDIR%%/SLU_general.ps.gz
+%%PORTDOCS%%%%DOCSDIR%%/simax95.ps.gz
+%%PORTDOCS%%%%DOCSDIR%%/superlu_ug.ps.gz
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
