@@ -26,8 +26,14 @@ MAN8=	portfwd.8
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
+USE_GCC=	3.3
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e "s|-Wall -ggdb -O3|${CFLAGS}|g" \
+		${WRKSRC}/src/Makefile.in
+	@${REINPLACE_CMD} -e "s|-Wall -g -O3|${CFLAGS}|g" \
+		${WRKSRC}/tools/Makefile.in
 
 .if defined(NOPORTDOCS)
 post-configure:
