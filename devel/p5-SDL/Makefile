@@ -4,15 +4,13 @@
 # $FreeBSD$
 
 PORTNAME=	sdl
-PORTVERSION=	1.18.7
-PORTREVISION=	2
+PORTVERSION=	1.20.3
 CATEGORIES=	devel
-MASTER_SITES=	http://www.sdlperl.org/downloads/ \
-		ftp://sdlperl.org/SDL_perl/old/
+MASTER_SITES=	http://bloodgate.com/perl/sdl/pub/
 PKGNAMEPREFIX=	p5-
 DISTNAME=	SDL_perl-${PORTVERSION}
 
-MAINTAINER=	klaus.goger@reflex.at
+MAINTAINER=	philip@paeps.cx
 COMMENT=	Perl Bindings for SDL
 
 LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
@@ -41,14 +39,41 @@ LIB_DEPENDS+=	SDL_image.10:${PORTSDIR}/graphics/sdl_image
 LIB_DEPENDS+=	SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer
 .endif
 
+.if ${PERL_LEVEL} < 500600
+IGNORE=		This port requires perl 5.6 or newer
+.endif
+
+.if ${PERL_LEVEL} < 500800
+BUILD_DEPENDS+=	${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
+RUN_DEPENDS+=	${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
+.endif
+
 USE_PERL5=	yes
 INSTALLS_SHLIB=	yes
 
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
-MAN3=		SDL::Cursor.3 SDL::Rect.3 SDL::Color.3 SDL::TTFont.3 \
-		SDL::App.3 SDL::Timer.3 SDL::Event.3 SDL::Console.3 \
-		SDL::Mixer.3 SDL::Cdrom.3 SDL::Font.3 SDL::Surface.3 \
-		SDL.3
+MAN3=		SDL.3		\
+		SDL::App.3	\
+		SDL::Cdrom.3	\
+		SDL::Color.3	\
+		SDL::Console.3	\
+		SDL::Cursor.3	\
+		SDL::Event.3	\
+		SDL::Font.3	\
+		SDL::Mixer.3	\
+		SDL::Music.3	\
+		SDL::OpenGL.3	\
+		SDL::OpenGL::Cube.3	\
+		SDL::OpenGL::Model.3	\
+		SDL::Palette.3	\
+		SDL::Rect.3	\
+		SDL::Shell.3	\
+		SDL::Sound.3	\
+		SDL::Surface.3	\
+		SDL::TTFont.3	\
+		SDL::Timer.3	\
+		SDL::Tool::Font.3	\
+		SDL::Tool::Graphic.3
 
 pre-extract:
 .if !defined(WITHOUT_SDL_GFX)
