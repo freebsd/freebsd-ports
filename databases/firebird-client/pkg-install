@@ -10,16 +10,6 @@ if [ -d $PKG_PREFIX/firebird ]; then
 	mv $PKG_PREFIX/firebird $PKG_PREFIX/firebird.old
 fi
 
-if [ -L /usr/interbase ]; then
-	rm -f /usr/interbase
-fi
-
-if [ -d /usr/interbase ]; then
-	mv /usr/interbase /usr/interbase.old
-fi
-
-ln -fs $PKG_PREFIX/firebird /usr/interbase
-
 if [ `id -u` -ne 0 ]; then
 	echo; echo "You must be root to run this step!"; echo; echo
   exit 1
@@ -140,7 +130,7 @@ cat >>/etc/services <<EOF
 gds_db		 3050/tcp  #InterBase Database Remote Protocol
 EOF
 cat >>/etc/inetd.conf <<EOF
-gds_db	stream	tcp	nowait	firebird	/usr/interbase/bin/gds_inet_server  gds_inet_server
+gds_db	stream	tcp	nowait	firebird	$PKG_PREFIX/firebird/bin/gds_inet_server  gds_inet_server
 EOF
 if [ -f /var/run/inetd.pid ]; then
 	kill -HUP `cat /var/run/inetd.pid`
