@@ -819,7 +819,7 @@ lib/ghc-%%GHC_VERSION%%/libHStext_cbits.a
 lib/ghc-%%GHC_VERSION%%/libHSutil.a
 lib/ghc-%%GHC_VERSION%%/libHSutil_cbits.a
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/libHSutil_p.a
-lib/ghc-%%GHC_VERSION%%/libgmp.a
+%%GMP%%lib/ghc-%%GHC_VERSION%%/libgmp.a
 lib/ghc-%%GHC_VERSION%%/package.conf
 lib/ghc-%%GHC_VERSION%%/parse-gcstats.prl
 lib/ghc-%%GHC_VERSION%%/process-gcstats.prl

@@ -6,6 +6,7 @@
 
 PORTNAME=	ghc
 PORTVERSION=	5.04.3
+PORTREVISION=	1
 CATEGORIES=	lang haskell
 MASTER_SITES=	http://www.haskell.org/ghc/dist/${PORTVERSION}/:source \
 		http://www.haskell.org/ghc/dist/${PORTVERSION}/FreeBSD/:boot
@@ -25,12 +26,19 @@ DISTFILES=	${SRC_DIST}
 DISTFILES+=	${BOOT_DIST}
 .else
 DISTFILES+=	${BOOT_DIST5}
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-ghc-compiler-nativeGen-MachMisc.lhs \
+		${FILESDIR}/extra-patch-ghc-compiler-nativeGen-RegAllocInfo.lhs \
+		${FILESDIR}/extra-patch-ghc-rts-RtsFlags.c \
+		${FILESDIR}/extra-patch-ghc-rts-rts.conf.in \
+		${FILESDIR}/extra-patch-ghc-utils-prof-cgprof-cgprof.c
+LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4
 .endif
 
 MAINTAINER=	simonmar@microsoft.com
 COMMENT=	A Compiler for the functional language Haskell
 
 USE_PERL5=	yes
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
@@ -49,6 +57,13 @@ BOOT_GHC=	${BOOT_DIR}/bin/i386-unknown-freebsd/ghc-${PORTVERSION}
 CONFIGURE_ARGS= --with-ghc=${BOOT_GHC}
 # specifying CONFIGURE_TARGET doesn't work for some reason.
 CONFIGURE_TARGET=
+# libgmp:
+.if ${OSVERSION} >= 500000
+CONFIGURE_ENV+=	CFLAGS=-I${LOCALBASE}/include LDFLAGS=-L${LOCALBASE}/lib
+PLIST_SUB+=	GMP="@comment "
+.else
+PLIST_SUB+=	GMP=""
+.endif
 
 # override TMPDIR because /tmp often doesn't have enough space
 # to build some of the larger libraries.
@@ -64,9 +79,12 @@ pre-everything::
 	@${ECHO_CMD} "Building GHC without profiling libraries."
 .endif
 
-.if defined(WITHOUT_PROFILE)
 post-extract:
+.if defined(WITHOUT_PROFILE)
 	@${ECHO} >>${WRKSRC}/mk/build.mk GhcLibWays=
+.endif
+.if ${OSVERSION} >= 500000
+	@${ECHO} >>${WRKSRC}/mk/build.mk SplitObjs=NO
 .endif
 
 post-patch:
@@ -77,6 +95,7 @@ post-patch:
 			${WRKSRC}/hslibs/tools/DrIFT/Makefile \
 			${WRKSRC}/hslibs/tools/DtdToHaskell/Makefile \
 			${WRKSRC}/hslibs/tools/Xtract/Makefile
+	@${REINPLACE_CMD} s+%%LOCALBASE%%+${LOCALBASE}+ ${WRKSRC}/ghc/rts/rts.conf.in
 
 pre-configure:
 	@(cd ${BOOT_DIR} && ${CONFIGURE_ENV} ./${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS})
