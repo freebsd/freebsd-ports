@@ -1,0 +1,51 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Data/Serializer/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/Data/Serializer.pm
+lib/perl5/site_perl/%%PERL_VER%%/Data/Serializer/Data/Denter.pm
+lib/perl5/site_perl/%%PERL_VER%%/Data/Serializer/Data/Dumper.pm
+lib/perl5/site_perl/%%PERL_VER%%/Data/Serializer/FreezeThaw.pm
+lib/perl5/site_perl/%%PERL_VER%%/Data/Serializer/Storable.pm
+lib/perl5/site_perl/%%PERL_VER%%/auto/Data/Serializer/Data/Denter/autosplit.ix
+lib/perl5/site_perl/%%PERL_VER%%/auto/Data/Serializer/Data/Denter/deserialize.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Data/Serializer/Data/Denter/serialize.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Data/Serializer/Data/Dumper/autosplit.ix
+lib/perl5/site_perl/%%PERL_VER%%/auto/Data/Serializer/Data/Dumper/deserialize.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Data/Serializer/Data/Dumper/serialize.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Data/Serializer/FreezeThaw/autosplit.ix
+lib/perl5/site_perl/%%PERL_VER%%/auto/Data/Serializer/FreezeThaw/deserialize.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Data/Serializer/FreezeThaw/serialize.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Data/Serializer/Storable/DumpMeth.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Data/Serializer/Storable/autosplit.ix
+lib/perl5/site_perl/%%PERL_VER%%/auto/Data/Serializer/Storable/deserialize.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Data/Serializer/Storable/serialize.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Data/Serializer/_compress.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Data/Serializer/_create_token.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Data/Serializer/_decompress.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Data/Serializer/_decrypt.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Data/Serializer/_dedigest.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Data/Serializer/_dehex.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Data/Serializer/_deserialize.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Data/Serializer/_encrypt.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Data/Serializer/_endigest.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Data/Serializer/_enhex.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Data/Serializer/_extract_token.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Data/Serializer/_get_digest.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Data/Serializer/_get_token.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Data/Serializer/_remove_token.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Data/Serializer/_serialize.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Data/Serializer/autosplit.ix
+lib/perl5/site_perl/%%PERL_VER%%/auto/Data/Serializer/deserialize.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Data/Serializer/freeze.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Data/Serializer/serialize.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Data/Serializer/thaw.al
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Data/Serializer/Data
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Data/Serializer
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/Data/Serializer/Data/Denter
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/Data/Serializer/Data/Dumper
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/Data/Serializer/Data
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/Data/Serializer/FreezeThaw
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/Data/Serializer/Storable
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/Data/Serializer
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Data/Serializer
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Data 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/auto/Data 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Data 2>/dev/null || true
