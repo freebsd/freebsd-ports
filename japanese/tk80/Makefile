@@ -3,7 +3,7 @@
 # Date created:		26 Dec 1997
 # Whom:			taguchi@tohoku.iij.ad.jp
 #
-# $Id: Makefile,v 1.11 1999/04/02 02:38:04 taoka Exp $
+# $Id: Makefile,v 1.12 1999/04/06 01:15:03 taoka Exp $
 #
 
 DISTNAME=	tk8.0.5
@@ -57,7 +57,7 @@ post-install:
 	@${CAT}	${PKGDIR}/MESSAGE
 
 test:
-	cd ${WRKSRC} && PORTOBJFORMAT=${PORTOBJFORMAT} ${MAKE} test
+	cd ${WRKSRC} && ${SETENV} PORTOBJFORMAT=${PORTOBJFORMAT} ${MAKE} test
 
 install-man:
 	cd ${WRKSRC} && ${SETENV} PORTOBJFORMAT=${PORTOBJFORMAT} ${MAKE} install-man
