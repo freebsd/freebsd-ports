@@ -15,15 +15,15 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SKK-like Kana-to-Kanji FrontEnd Processor
 
+RUN_DEPENDS=	${LOCALBASE}/sbin/skkserv:${PORTSDIR}/japanese/skk
+
+WRKSRC=		${WRKDIR}/${PORTNAME}
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 501000
 BROKEN=		"Does not compile on FreeBSD ${OSVERSION}"
 .endif
-
-RUN_DEPENDS=	${LOCALBASE}/sbin/skkserv:${PORTSDIR}/japanese/skk
-
-WRKSRC=		${WRKDIR}/${PORTNAME}
 
 MAN1=		skkfep.1
 
