@@ -8,7 +8,7 @@
 
 PORTNAME=	emcws
 PORTVERSION=	20.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese editors ipv6
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	emacs
@@ -16,7 +16,7 @@ DISTNAME=	emacs-${PORTVERSION}
 
 PATCH_SITES=	ftp://ftp.ki.nu/pub/emcws/ \
 		ftp://ftp.jpl.org/pub/misc/
-PATCHFILES=	emcws-${EMACS_VER}-20011002.gz
+PATCHFILES=	emcws-${EMACS_VER}-20020208.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	nakaji@jp.freebsd.org
@@ -134,6 +134,7 @@ pre-build:
 	@(cd ${WRKSRC}/src; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} emacs)
 	@(cd ${WRKSRC}/src/../lisp; \
 	${WRKSRC}/src/emacs -batch -q -f batch-byte-compile \
+	egg.el wnn-egg.el \
 	ange-ftp.el help.el international/ccl.el international/mule-cmds.el \
 	international/mule.el international/titdic-cnv.el)
 	${RM} -f ${WRKSRC}/src/emacs ${WRKSRC}/src/emacs-${EMACS_VER}.1
@@ -159,6 +160,8 @@ do-install:
 		${INSTALL_DATA} ${WRKSRC}/lisp/$$i \
 		${PREFIX}/share/emacs/${EMACS_VER}-emcws/lisp/$$i; \
 	done
+	@test -d ${PREFIX}/libexec/emacs/${EMACS_VER}/${CONFIGURE_TARGET} || \
+		${MKDIR} ${PREFIX}/libexec/emacs/${EMACS_VER}/${CONFIGURE_TARGET}
 	@${INSTALL_DATA} ${WRKSRC}/lib-src/fns-emcws-${EMACS_VER}.1.el \
 		${PREFIX}/libexec/emacs/${EMACS_VER}/${CONFIGURE_TARGET}/fns-emcws-${EMACS_VER}.1.el
 	@test -d ${PREFIX}/share/emacs/${EMACS_VER}-emcws/site-lisp || \
