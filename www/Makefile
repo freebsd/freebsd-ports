@@ -32,6 +32,7 @@
     SUBDIR += bluefish
     SUBDIR += bmsync
     SUBDIR += boa
+    SUBDIR += bozohttpd
     SUBDIR += cadaver
     SUBDIR += calamaris
     SUBDIR += cgi-lib
