@@ -11,6 +11,7 @@
     SUBDIR += gnetlist
     SUBDIR += gnucap
     SUBDIR += gschem
+    SUBDIR += gtkwave
     SUBDIR += irsim
     SUBDIR += iverilog
     SUBDIR += kaskade

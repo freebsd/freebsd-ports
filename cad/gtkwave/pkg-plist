@@ -1,0 +1,47 @@
+bin/gtkwave
+bin/mvl2lxt
+bin/mvl2vcd
+bin/tex2vcd
+bin/vcd2lxt
+share/gtkwave/pixmaps/add_signals.xpm
+share/gtkwave/pixmaps/larrow.xpm
+share/gtkwave/pixmaps/rarrow.xpm
+share/gtkwave/pixmaps/zoom_begin.xpm
+share/gtkwave/pixmaps/zoom_end.xpm
+share/gtkwave/pixmaps/zoom_fit.xpm
+share/gtkwave/pixmaps/zoom_in.xpm
+share/gtkwave/pixmaps/zoom_out.xpm
+share/gtkwave/pixmaps/zoom_redo.xpm
+share/gtkwave/pixmaps/zoom_undo.xpm
+@dirrm share/gtkwave/pixmaps
+%%PORTDOCS%%share/doc/gtkwave/data_format.png
+%%PORTDOCS%%share/doc/gtkwave/edit_menu.png
+%%PORTDOCS%%share/doc/gtkwave/file_menu.png
+%%PORTDOCS%%share/doc/gtkwave/gtkwave.html
+%%PORTDOCS%%share/doc/gtkwave/help_menu.png
+%%PORTDOCS%%share/doc/gtkwave/hierarchy.png
+%%PORTDOCS%%share/doc/gtkwave/markers_menu.png
+%%PORTDOCS%%share/doc/gtkwave/search_menu.png
+%%PORTDOCS%%share/doc/gtkwave/time_menu.png
+%%PORTDOCS%%share/doc/gtkwave/view_menu.png
+%%PORTDOCS%%share/doc/gtkwave/w.ps
+%%PORTDOCS%%share/doc/gtkwave/w1.png
+%%PORTDOCS%%share/doc/gtkwave/w10.png
+%%PORTDOCS%%share/doc/gtkwave/w11.png
+%%PORTDOCS%%share/doc/gtkwave/w12.png
+%%PORTDOCS%%share/doc/gtkwave/w13.png
+%%PORTDOCS%%share/doc/gtkwave/w3.png
+%%PORTDOCS%%share/doc/gtkwave/w4.png
+%%PORTDOCS%%share/doc/gtkwave/w5.png
+%%PORTDOCS%%share/doc/gtkwave/w6.png
+%%PORTDOCS%%share/doc/gtkwave/w7.png
+%%PORTDOCS%%share/doc/gtkwave/w8.png
+%%PORTDOCS%%share/doc/gtkwave/w9.png
+%%PORTDOCS%%share/doc/gtkwave/wps.png
+%%PORTDOCS%%share/doc/gtkwave/zoom_submenu.png
+%%PORTDOCS%%@dirrm share/doc/gtkwave
+%%PORTDOCS%%share/examples/gtkwave/agonynan_bccom.evcd.gz
+%%PORTDOCS%%share/examples/gtkwave/pci.vcd.gz
+%%PORTDOCS%%share/examples/gtkwave/simple.vcd
+%%PORTDOCS%%share/examples/gtkwave/sram.vcd.gz
+%%PORTDOCS%%@dirrm share/examples/gtkwave
