@@ -1,14 +1,21 @@
-lib/gcc-lib/sparc-rtems/2.95.3/include/objc/hash.h
-lib/gcc-lib/sparc-rtems/2.95.3/include/objc/objc-list.h
-lib/gcc-lib/sparc-rtems/2.95.3/include/objc/sarray.h
-lib/gcc-lib/sparc-rtems/2.95.3/include/objc/objc.h
-lib/gcc-lib/sparc-rtems/2.95.3/include/objc/objc-api.h
-lib/gcc-lib/sparc-rtems/2.95.3/include/objc/NXConstStr.h
-lib/gcc-lib/sparc-rtems/2.95.3/include/objc/Object.h
-lib/gcc-lib/sparc-rtems/2.95.3/include/objc/Protocol.h
-lib/gcc-lib/sparc-rtems/2.95.3/include/objc/encoding.h
-lib/gcc-lib/sparc-rtems/2.95.3/include/objc/typedstream.h
-lib/gcc-lib/sparc-rtems/2.95.3/include/objc/thr.h
-lib/gcc-lib/sparc-rtems/2.95.3/cc1obj
-lib/gcc-lib/sparc-rtems/2.95.3/libobjc.a
-@dirrm lib/gcc-lib/sparc-rtems/2.95.3/include/objc
+lib/gcc-lib/sparc-rtems/3.2.1/include/objc/hash.h
+lib/gcc-lib/sparc-rtems/3.2.1/include/objc/objc-list.h
+lib/gcc-lib/sparc-rtems/3.2.1/include/objc/sarray.h
+lib/gcc-lib/sparc-rtems/3.2.1/include/objc/objc.h
+lib/gcc-lib/sparc-rtems/3.2.1/include/objc/objc-api.h
+lib/gcc-lib/sparc-rtems/3.2.1/include/objc/NXConstStr.h
+lib/gcc-lib/sparc-rtems/3.2.1/include/objc/Object.h
+lib/gcc-lib/sparc-rtems/3.2.1/include/objc/Protocol.h
+lib/gcc-lib/sparc-rtems/3.2.1/include/objc/encoding.h
+lib/gcc-lib/sparc-rtems/3.2.1/include/objc/typedstream.h
+lib/gcc-lib/sparc-rtems/3.2.1/include/objc/thr.h
+lib/gcc-lib/sparc-rtems/3.2.1/cc1obj
+sparc-rtems/lib/soft/v8/libobjc.la
+sparc-rtems/lib/soft/v8/libobjc.a
+sparc-rtems/lib/soft/libobjc.la
+sparc-rtems/lib/soft/libobjc.a
+sparc-rtems/lib/v8/libobjc.la   
+sparc-rtems/lib/v8/libobjc.a
+sparc-rtems/lib/libobjc.la    
+sparc-rtems/lib/libobjc.a  
+@dirrm lib/gcc-lib/sparc-rtems/3.2.1/include/objc
