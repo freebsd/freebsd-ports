@@ -10,7 +10,7 @@ PORTVERSION=	1.23
 PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	http://www.cyberspace.org/~elfguy00/
-DISTNAME=	GXedit${PORTVERSION}
+DISTNAME=	GXedit-${PORTVERSION}
 
 MAINTAINER=	dom@happygiraffe.net
 COMMENT=	A simple GTK+ editor
@@ -18,6 +18,7 @@ COMMENT=	A simple GTK+ editor
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
 USE_GNOME=	gtk12
+WRKSRC=		${WRKDIR}/GXedit${PORTVERSION}
 
 ALL_TARGET=	gxedit
 
