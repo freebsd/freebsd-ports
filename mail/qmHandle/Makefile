@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	qmHandle
-PORTVERSION=	0.5.1
+PORTVERSION=	1.0.0
 CATEGORIES=	mail
-MASTER_SITES=	http://www.io.com/~mick/soft/
+MASTER_SITES=	http://www.italpro.net/mb/soft/
 
 MAINTAINER=	petef@FreeBSD.org
 
@@ -16,6 +16,7 @@ RUN_DEPENDS=	${QMAIL_DIR}/bin/qmail-qstat:${PORTSDIR}/mail/qmail
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
+USE_BZIP2=	yes
 
 .if exists(${LOCALBASE}/qmail/bin/qmail-qstat)
 QMAIL_DIR?=	${LOCALBASE}/qmail
