@@ -1,5 +1,5 @@
 bin/pybench
-share/doc/pybench/README
+%%DOCSDIR%%/README
 share/pybench/Arithmetic.py
 share/pybench/Arithmetic.pyc
 share/pybench/Arithmetic.pyo
@@ -59,4 +59,4 @@ share/pybench/pybench.pyc
 share/pybench/pybench.pyo
 @dirrm share/pybench/package
 @dirrm share/pybench
-@dirrm share/doc/pybench
+@dirrm %%DOCSDIR%%
