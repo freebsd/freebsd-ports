@@ -22,7 +22,6 @@ MAN1=		macunpack.1 hexbin.1 macsave.1 macstream.1 binhex.1 tomac.1 \
 		frommac.1 macutil.1
 
 BINDIR=		${PREFIX}/bin
-DOCDIR=		${PREFIX}/share/doc/macutils
 DOCFILES=	README.crc README.hexbin README.macput README.unpit \
 		README.zoom README.crc.orig README.macget README.scan \
 		README.unsit ../README

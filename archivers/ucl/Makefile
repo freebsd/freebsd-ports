@@ -17,13 +17,15 @@ INSTALLS_SHLIB=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_ARGS=	--enable-shared
 
+PORTDOCS=	COPYING README
+
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/examples/.libs/uclpack \
 		${PREFIX}/bin/uclpack
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/${PORTNAME}
-.for file in COPYING README
-	${INSTALL_DATA}	${WRKSRC}/${file} ${PREFIX}/share/doc/${PORTNAME}
+	@${MKDIR} ${DOCSDIR}
+.for file in ${PORTDOCS}
+	${INSTALL_DATA}	${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
 
