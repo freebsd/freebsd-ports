@@ -17,15 +17,6 @@ MAINTAINER=	gnome@FreeBSD.org
 
 LIB_DEPENDS=	gtop.1:${PORTSDIR}/devel/libgtop
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} != "i386"
-EXTRA_PATCHES=	${FILESDIR}/extra-patch-Makefile.in
-PLIST_SUB=	BATTERY="@comment "
-.else
-PLIST_SUB=	BATTERY=""
-.endif
-
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	yes
@@ -42,6 +33,15 @@ MAN1=		another_clock_applet.1 asclock_applet.1 battery_applet.1 \
 		modemlights_applet.1 multiload_applet.1 odometer_applet.1 \
 		quicklaunch_applet.1 slash_applet.1 sound-monitor_applet.1 \
 		tickastat_applet.1 webcontrol_applet.1 whereami_applet.1
+
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != "i386"
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-Makefile.in
+PLIST_SUB=	BATTERY="@comment "
+.else
+PLIST_SUB=	BATTERY=""
+.endif
 
 pre-patch:
 	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
