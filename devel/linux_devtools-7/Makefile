@@ -28,10 +28,10 @@ PATCHFILES=		${UPDATES}
 MAINTAINER=		marcel@FreeBSD.org
 
 BUILD_DEPENDS=		rpm:${PORTSDIR}/archivers/rpm
-RUN_DEPENDS=		\
-	${LINUXBASE}/etc/redhat-release:${PORTSDIR}/emulators/linux_base-7
 
 ONLY_FOR_ARCHS=		alpha i386
+
+USE_LINUX=		yes
 DIST_SUBDIR=		rpm
 PREFIX=			${LINUXBASE}
 NO_BUILD=		yes

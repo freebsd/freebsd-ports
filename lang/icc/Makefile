@@ -16,7 +16,6 @@ EXTRACT_SUFX=	.tar
 MAINTAINER=	netchild@FreeBSD.org
 
 BUILD_DEPENDS=	rpm2cpio:${PORTSDIR}/archivers/rpm2cpio
-RUN_DEPENDS=	${LINUXBASE}/lib/libc-2.2.2.so:${PORTSDIR}/emulators/linux_base-7
 
 RESTRICTED=	Intel forbids any redistribution
 NO_PACKAGE=	${RESTRICTED}
@@ -24,7 +23,7 @@ NO_CDROM=	${RESTRICTED}
 
 ONLY_FOR_ARCHS=		i386
 
-#USE_LINUX=		yes
+USE_LINUX=		yes
 NO_WRKSUBDIR=		yes
 NO_BUILD=		yes
 NO_FILTER_SHLIBS=	yes
