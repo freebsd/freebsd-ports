@@ -1,0 +1,11 @@
+--- configure.orig	Sat May 11 10:06:56 2002
++++ configure	Sat May 11 10:08:54 2002
+@@ -4543,7 +4543,7 @@
+ 	< $srcdir/po/POTFILES.in > po/POTFILES
+   
+ 
+-CFLAGS="$CFLAGS `$GNOME_CONFIG --cflags gnome gtk glib applets`"
++CFLAGS="$CFLAGS `$GNOME_CONFIG --cflags gnome gtk glib applets libgtop`"
+ LDFLAGS="$LDFLAGS `$GNOME_CONFIG --libs gnome gtk glib applets`"
+ 
+ 
