@@ -1,6 +1,7 @@
-bin/osgconv
 bin/sgv
+bin/osgconv
 include/osg/AlphaFunc
+include/osg/AnimationPath
 include/osg/Billboard
 include/osg/BoundingBox
 include/osg/BoundingSphere
@@ -14,6 +15,7 @@ include/osg/CopyOp
 include/osg/CullFace
 include/osg/Depth
 include/osg/DisplaySettings
+include/osg/DrawPixels
 include/osg/Drawable
 include/osg/EarthSky
 include/osg/Export
@@ -31,6 +33,7 @@ include/osg/Impostor
 include/osg/ImpostorSprite
 include/osg/LOD
 include/osg/Light
+include/osg/LightModel
 include/osg/LightSource
 include/osg/LineSegment
 include/osg/LineStipple
@@ -38,7 +41,7 @@ include/osg/LineWidth
 include/osg/Material
 include/osg/Math
 include/osg/Matrix
-include/osg/MemoryAdapter
+include/osg/MemoryManager
 include/osg/Node
 include/osg/NodeCallback
 include/osg/NodeVisitor
@@ -49,6 +52,7 @@ include/osg/Point
 include/osg/PolygonMode
 include/osg/PolygonOffset
 include/osg/PositionAttitudeTransform
+include/osg/Projection
 include/osg/Quat
 include/osg/Referenced
 include/osg/ShadeModel
@@ -62,6 +66,7 @@ include/osg/TexEnv
 include/osg/TexGen
 include/osg/TexMat
 include/osg/Texture
+include/osg/TextureCubeMap
 include/osg/Timer
 include/osg/Transform
 include/osg/Transparency
@@ -71,9 +76,7 @@ include/osg/Vec3
 include/osg/Vec4
 include/osg/Version
 include/osg/Viewport
-include/osg/mem_ptr
 include/osg/ref_ptr
-@dirrm include/osg
 include/osgDB/DotOsgWrapper
 include/osgDB/DynamicLibrary
 include/osgDB/Export
@@ -89,23 +92,19 @@ include/osgDB/ReaderWriter
 include/osgDB/Registry
 include/osgDB/Version
 include/osgDB/WriteFile
-@dirrm include/osgDB
 include/osgGLUT/Export
 include/osgGLUT/GLUTEventAdapter
 include/osgGLUT/Version
 include/osgGLUT/Viewer
 include/osgGLUT/Window
 include/osgGLUT/glut
-@dirrm include/osgGLUT
 include/osgText/Export
 include/osgText/Font
 include/osgText/Paragraph
 include/osgText/Text
 include/osgText/Version
-@dirrm include/osgText
 include/osgUtil/AppVisitor
 include/osgUtil/CameraManipulator
-include/osgUtil/CullViewState
 include/osgUtil/CullVisitor
 include/osgUtil/DepthSortedBin
 include/osgUtil/DisplayListVisitor
@@ -134,7 +133,13 @@ include/osgUtil/TrackballManipulator
 include/osgUtil/TransformCallback
 include/osgUtil/TriStripVisitor
 include/osgUtil/Version
-@dirrm include/osgUtil
+lib/.README
+lib/libosg.so
+lib/libosgDB.so
+lib/libosgGLUT.so
+lib/libosgText.so
+lib/libosgUtil.so
+lib/osgPlugins/.README
 lib/osgPlugins/osgdb_3ds.so
 lib/osgPlugins/osgdb_bmp.so
 lib/osgPlugins/osgdb_dw.so
@@ -154,36 +159,95 @@ lib/osgPlugins/osgdb_tgz.so
 lib/osgPlugins/osgdb_tiff.so
 lib/osgPlugins/osgdb_txp.so
 lib/osgPlugins/osgdb_zip.so
-@dirrm lib/osgPlugins
-lib/libosg.so
-lib/libosg.so.1
-lib/libosgDB.so
-lib/libosgDB.so.1
-lib/libosgGLUT.so
-lib/libosgGLUT.so.1
-lib/libosgText.so
-lib/libosgText.so.1
-lib/libosgUtil.so
-lib/libosgUtil.so.1
+share/osg/bin/.README
+share/osg/bin/osgbillboard
+share/osg/bin/osgcluster
+share/osg/bin/osgconv
+share/osg/bin/osgcopy
+share/osg/bin/osgcube
+share/osg/bin/osghangglide
+share/osg/bin/osghud
+share/osg/bin/osgimpostor
+share/osg/bin/osgreflect
+share/osg/bin/osgscribe
+share/osg/bin/osgstereoimage
+share/osg/bin/osgtext
+share/osg/bin/osgtexture
+share/osg/bin/osgversion
+share/osg/bin/osgviews
+share/osg/bin/sgv
+share/osg/src/Make/makedefs
+share/osg/src/Make/makerules
+share/osg/src/demos/hangglide/GliderManipulator.cpp
+share/osg/src/demos/hangglide/GliderManipulator.h
+share/osg/src/demos/hangglide/Makefile
+share/osg/src/demos/hangglide/ReaderWriterFLY.cpp
+share/osg/src/demos/hangglide/base.cpp
+share/osg/src/demos/hangglide/hangglide.cpp
+share/osg/src/demos/hangglide/hat.cpp
+share/osg/src/demos/hangglide/hat.h
+share/osg/src/demos/hangglide/sky.cpp
+share/osg/src/demos/hangglide/tank.cpp
+share/osg/src/demos/hangglide/terrain.cpp
+share/osg/src/demos/hangglide/terrain_coords.h
+share/osg/src/demos/hangglide/terrain_normals.h
+share/osg/src/demos/hangglide/terrain_texcoords.h
+share/osg/src/demos/hangglide/trees.cpp
+share/osg/src/demos/osgbillboard/Makefile
+share/osg/src/demos/osgbillboard/osgbillboard.cpp
+share/osg/src/demos/osgcluster/Makefile
+share/osg/src/demos/osgcluster/broadcaster.cpp
+share/osg/src/demos/osgcluster/broadcaster.h
+share/osg/src/demos/osgcluster/osgcluster.cpp
+share/osg/src/demos/osgcluster/receiver.cpp
+share/osg/src/demos/osgcluster/receiver.h
+share/osg/src/demos/osgconv/Makefile
+share/osg/src/demos/osgconv/OrientationConverter.cpp
+share/osg/src/demos/osgconv/OrientationConverter.h
+share/osg/src/demos/osgconv/osgconv.cpp
+share/osg/src/demos/osgcopy/Makefile
+share/osg/src/demos/osgcopy/osgcopy.cpp
+share/osg/src/demos/osgcube/Makefile
+share/osg/src/demos/osgcube/osgcube.cpp
+share/osg/src/demos/osghud/Makefile
+share/osg/src/demos/osghud/osghud.cpp
+share/osg/src/demos/osgimpostor/Makefile
+share/osg/src/demos/osgimpostor/osgimpostor.cpp
+share/osg/src/demos/osgreflect/Makefile
+share/osg/src/demos/osgreflect/osgreflect.cpp
+share/osg/src/demos/osgscribe/Makefile
+share/osg/src/demos/osgscribe/osgscribe.cpp
+share/osg/src/demos/osgstereoimage/Makefile
+share/osg/src/demos/osgstereoimage/osgstereoimage.cpp
+share/osg/src/demos/osgtext/Makefile
+share/osg/src/demos/osgtext/main.cpp
+share/osg/src/demos/osgtexture/Makefile
+share/osg/src/demos/osgtexture/osgtexture.cpp
+share/osg/src/demos/osgversion/Makefile
+share/osg/src/demos/osgversion/osgversion.cpp
+share/osg/src/demos/osgviews/Makefile
+share/osg/src/demos/osgviews/osgviews.cpp
+share/osg/src/demos/sgv/Makefile
+share/osg/src/demos/sgv/sgv.cpp
 share/doc/osg/Doxyfiles/all_Doxyfile
 share/doc/osg/Doxyfiles/auto_Doxyfile
 share/doc/osg/Doxyfiles/auto_Mainpage
 share/doc/osg/Doxyfiles/core_Doxyfile
 share/doc/osg/Doxyfiles/custom_Footer.html
-@dirrm share/doc/osg/Doxyfiles
+share/doc/osg/MindMaps/DesignPatterns.mmp
 share/doc/osg/MindMaps/DesignPatterns/DesignPatterns.gif
 share/doc/osg/MindMaps/DesignPatterns/DesignPatterns.html
-@dirrm share/doc/osg/MindMaps/DesignPatterns
+share/doc/osg/MindMaps/Mission.mmp
 share/doc/osg/MindMaps/Mission/Mission.gif
 share/doc/osg/MindMaps/Mission/Mission.html
-@dirrm share/doc/osg/MindMaps/Mission
-share/doc/osg/MindMaps/DesignPatterns.mmp
-share/doc/osg/MindMaps/Mission.mmp
-@dirrm share/doc/osg/MindMaps
 share/doc/osg/UML/osg.png
 share/doc/osg/UML/osgutils.png
-@dirrm share/doc/osg/UML
+share/doc/osg/contents.html
+share/doc/osg/data.html
+share/doc/osg/demos.html
+share/doc/osg/dependencies.html
 share/doc/osg/doc++/osg/AlphaFunc.html
+share/doc/osg/doc++/osg/AnimationPath.html
 share/doc/osg/doc++/osg/AttributeFunctor.html
 share/doc/osg/doc++/osg/Billboard.html
 share/doc/osg/doc++/osg/BoundingBox.html
@@ -202,6 +266,7 @@ share/doc/osg/doc++/osg/CopyOp.html
 share/doc/osg/doc++/osg/CullFace.html
 share/doc/osg/doc++/osg/Depth.html
 share/doc/osg/doc++/osg/DisplaySettings.html
+share/doc/osg/doc++/osg/DrawPixels.html
 share/doc/osg/doc++/osg/Drawable.html
 share/doc/osg/doc++/osg/EarthSky.html
 share/doc/osg/doc++/osg/Fog.html
@@ -219,6 +284,7 @@ share/doc/osg/doc++/osg/ImpostorSprite.html
 share/doc/osg/doc++/osg/ImpostorSpriteManager.html
 share/doc/osg/doc++/osg/LOD.html
 share/doc/osg/doc++/osg/Light.html
+share/doc/osg/doc++/osg/LightModel.html
 share/doc/osg/doc++/osg/LightSource.html
 share/doc/osg/doc++/osg/LineSegment.html
 share/doc/osg/doc++/osg/LineStipple.html
@@ -251,6 +317,7 @@ share/doc/osg/doc++/osg/Point.html
 share/doc/osg/doc++/osg/PolygonMode.html
 share/doc/osg/doc++/osg/PolygonOffset.html
 share/doc/osg/doc++/osg/PositionAttitudeTransform.html
+share/doc/osg/doc++/osg/Projection.html
 share/doc/osg/doc++/osg/Quat.html
 share/doc/osg/doc++/osg/Referenced.html
 share/doc/osg/doc++/osg/ShadeModel.html
@@ -264,6 +331,7 @@ share/doc/osg/doc++/osg/TexEnv.html
 share/doc/osg/doc++/osg/TexGen.html
 share/doc/osg/doc++/osg/TexMat.html
 share/doc/osg/doc++/osg/Texture.html
+share/doc/osg/doc++/osg/TextureCubeMap.html
 share/doc/osg/doc++/osg/Timer.html
 share/doc/osg/doc++/osg/Transform.html
 share/doc/osg/doc++/osg/Transparency.html
@@ -306,7 +374,7 @@ share/doc/osg/doc++/osg/osgGetLibraryName.html
 share/doc/osg/doc++/osg/osgGetVersion.html
 share/doc/osg/doc++/osg/ref_ptr.html
 share/doc/osg/doc++/osg/setNotifyLevel.html
-@dirrm share/doc/osg/doc++/osg
+share/doc/osg/doc++/osg/tag_au.html
 share/doc/osg/doc++/osgDB/ClassGraph.class
 share/doc/osg/doc++/osgDB/ClassGraphPanel.class
 share/doc/osg/doc++/osgDB/ClassLayout.class
@@ -351,7 +419,6 @@ share/doc/osg/doc++/osgDB/setFilePath.html
 share/doc/osg/doc++/osgDB/writeImageFile.html
 share/doc/osg/doc++/osgDB/writeNodeFile.html
 share/doc/osg/doc++/osgDB/writeObjectFile.html
-@dirrm share/doc/osg/doc++/osgDB
 share/doc/osg/doc++/osgGLUT/ClassGraph.class
 share/doc/osg/doc++/osgGLUT/ClassGraphPanel.class
 share/doc/osg/doc++/osgGLUT/ClassLayout.class
@@ -368,7 +435,6 @@ share/doc/osg/doc++/osgGLUT/index.html
 share/doc/osg/doc++/osgGLUT/osgGLUT.html
 share/doc/osg/doc++/osgGLUT/osgGLUTGetLibraryName.html
 share/doc/osg/doc++/osgGLUT/osgGLUTGetVersion.html
-@dirrm share/doc/osg/doc++/osgGLUT
 share/doc/osg/doc++/osgText/BitmapFont.html
 share/doc/osg/doc++/osgText/ClassGraph.class
 share/doc/osg/doc++/osgText/ClassGraphPanel.class
@@ -393,7 +459,6 @@ share/doc/osg/doc++/osgText/index.html
 share/doc/osg/doc++/osgText/osgText.html
 share/doc/osg/doc++/osgText/osgTextGetLibraryName.html
 share/doc/osg/doc++/osgText/osgTextGetVersion.html
-@dirrm share/doc/osg/doc++/osgText
 share/doc/osg/doc++/osgUtil/AppVisitor.html
 share/doc/osg/doc++/osgUtil/BufferRequirementsVisitor.html
 share/doc/osg/doc++/osgUtil/CameraManipulator.html
@@ -401,7 +466,6 @@ share/doc/osg/doc++/osgUtil/ClassGraph.class
 share/doc/osg/doc++/osgUtil/ClassGraphPanel.class
 share/doc/osg/doc++/osgUtil/ClassLayout.class
 share/doc/osg/doc++/osgUtil/CombineLODsVisitor.html
-share/doc/osg/doc++/osgUtil/CullViewState.html
 share/doc/osg/doc++/osgUtil/CullVisitor.html
 share/doc/osg/doc++/osgUtil/DepthSortedBin.html
 share/doc/osg/doc++/osgUtil/DisplayListVisitor.html
@@ -448,10 +512,64 @@ share/doc/osg/doc++/osgUtil/index.html
 share/doc/osg/doc++/osgUtil/osgUtil.html
 share/doc/osg/doc++/osgUtil/osgUtilGetLibraryName.html
 share/doc/osg/doc++/osgUtil/osgUtilGetVersion.html
-@dirrm share/doc/osg/doc++/osgUtil
-@dirrm share/doc/osg/doc++
+share/doc/osg/documentation.html
+share/doc/osg/images/OpenSceneGraphBanner_Distribution.jpg
+share/doc/osg/images/hangglide.jpg
+share/doc/osg/images/osgbillboard.jpg
+share/doc/osg/images/osgcube.jpg
+share/doc/osg/images/osghud.jpg
+share/doc/osg/images/osgimpostor.jpg
+share/doc/osg/images/osgreflect.jpg
+share/doc/osg/images/osgscribe.jpg
+share/doc/osg/images/osgstereoimage.jpg
+share/doc/osg/images/osgtext.jpg
+share/doc/osg/images/osgtexture.jpg
+share/doc/osg/images/osgviews.jpg
+share/doc/osg/images/sgv_cow.jpg
+share/doc/osg/images/sgv_stereo.jpg
 share/doc/osg/index.html
+share/doc/osg/install.html
+share/doc/osg/introduction.html
+share/doc/osg/plan.html
 share/doc/osg/sgv.html
 share/doc/osg/stereo.html
-share/doc/osg/OpenSceneGraphBanner_Distribution.jpg
+@dirrm include/osg
+@dirrm include/osgDB
+@dirrm include/osgGLUT
+@dirrm include/osgText
+@dirrm include/osgUtil
+@dirrm lib/osgPlugins
+@dirrm share/osg/bin
+@dirrm share/osg/src/Make
+@dirrm share/osg/src/demos/hangglide
+@dirrm share/osg/src/demos/osgbillboard
+@dirrm share/osg/src/demos/osgcluster
+@dirrm share/osg/src/demos/osgconv
+@dirrm share/osg/src/demos/osgcopy
+@dirrm share/osg/src/demos/osgcube
+@dirrm share/osg/src/demos/osghud
+@dirrm share/osg/src/demos/osgimpostor
+@dirrm share/osg/src/demos/osgreflect
+@dirrm share/osg/src/demos/osgscribe
+@dirrm share/osg/src/demos/osgstereoimage
+@dirrm share/osg/src/demos/osgtext
+@dirrm share/osg/src/demos/osgtexture
+@dirrm share/osg/src/demos/osgversion
+@dirrm share/osg/src/demos/osgviews
+@dirrm share/osg/src/demos/sgv
+@dirrm share/osg/src/demos
+@dirrm share/osg/src
+@dirrm share/osg
+@dirrm share/doc/osg/Doxyfiles
+@dirrm share/doc/osg/MindMaps/DesignPatterns
+@dirrm share/doc/osg/MindMaps/Mission
+@dirrm share/doc/osg/MindMaps
+@dirrm share/doc/osg/UML
+@dirrm share/doc/osg/doc++/osg
+@dirrm share/doc/osg/doc++/osgDB
+@dirrm share/doc/osg/doc++/osgGLUT
+@dirrm share/doc/osg/doc++/osgText
+@dirrm share/doc/osg/doc++/osgUtil
+@dirrm share/doc/osg/doc++
+@dirrm share/doc/osg/images
 @dirrm share/doc/osg
