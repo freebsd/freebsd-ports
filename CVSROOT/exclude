@@ -6,6 +6,7 @@
 ^src/etc/motd
 ^src/lib/libc_r/test/.*\.exp
 ^src/share/examples/cvsup/refuse
+^src/share/examples/etc/bsd-style-copyright
 ^src/share/info/dir-tmpl
 ^src/share/man/man0
 ^src/sys/boot/common/help.common
