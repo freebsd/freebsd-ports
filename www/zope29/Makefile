@@ -6,18 +6,12 @@
 #
 
 PORTNAME=	zope
-PORTVERSION=	2.5.0
-PORTREVISION=	1
+PORTVERSION=	2.5.1
+PORTREVISION=	0
 CATEGORIES=	www python zope
-MASTER_SITES=	http://www.zope.org/Products/Zope/${PORTVERSION}/ \
-		http://www.zope.org/Products/Zope/Hotfix_2002-03-01/
+MASTER_SITES=	http://www.zope.org/Products/Zope/${PORTVERSION}/
 DISTNAME=	Zope-${PORTVERSION}-src
-DISTFILES=	${DISTNAME}.tgz \
-		Hotfix_2002-03-01.tgz
-
-PATCHFILES=	Zope-2.5.0-unix-security.patch
-PATCH_DIST_STRIP=	-p1
-PATCH_SITES=	http://www.zope.org/Members/zigg/UnixSecurityPatch/
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	nbm@FreeBSD.org
 
@@ -27,10 +21,6 @@ PYTHON_VERSION=	python2.1
 #RUN_DEPENDS=	${LOCALBASE}/sbin/apache:${PORTSDIR}/www/apache13-modssl
 
 DIST_SUBDIR=	zope
-
-post-patch:
-	@${CP} -Rp ${WRKDIR}/lib ${WRKSRC}
-	@${FIND} ${WRKSRC} -name \*.orig -exec ${RM} {} \;
 
 # Build has to be done in the final location after installing the sources
 # there. It was a major action to fix all paths otherwise.
@@ -74,6 +64,9 @@ do-install:
 	@${ECHO} "===>   Please be patient, some builds need their time."
 	@${ECHO} "===>   Copying..."
 	@${CP} -Rp ${WRKSRC}/* ${ZOPEBASEDIR}/
+	#
+	# Copying some patches
+	#
 	#@${CP} -Rp ${WRKDIR}/lib ${ZOPEBASEDIR}/
 	@#
 	@${CHMOD} -R u+w ${ZOPEBASEDIR}
