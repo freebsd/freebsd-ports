@@ -243,6 +243,7 @@
     SUBDIR += hs-hpl
     SUBDIR += hs-idoc
     SUBDIR += hs-popenhs
+    SUBDIR += hs-tclhaskell-ghc
     SUBDIR += hypersrc
     SUBDIR += i386-rtems-binutils
     SUBDIR += i386-rtems-g77
