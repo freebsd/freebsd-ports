@@ -15,7 +15,7 @@ MAINTAINER=	jaeger16@yahoo.com
 COMMENT=	An OpenGL widget for the GTK+ GUI toolkit
 
 USE_X_PREFIX=	yes
-USE_MESA=	yes
+USE_GL=		yes
 USE_GNOME=	gtk12
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
