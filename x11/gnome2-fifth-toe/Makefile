@@ -7,6 +7,7 @@
 
 PORTNAME=	gnome2-fifth-toe
 PORTVERSION=	2.6.1
+PORTREVISION=	1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -33,9 +34,9 @@ RUN_DEPENDS=	pan:${PORTSDIR}/news/pan2 \
 		liferea:${PORTSDIR}/net/liferea \
 		gnotime:${PORTSDIR}/deskutils/gnotime \
 		sound-juicer:${PORTSDIR}/audio/sound-juicer \
-		rhythmbox:${PORTSDIR}/audio/rhythmbox
-# not yet buildable under GNOME 2.5
-#		jamboree:${PORTSDIR}/audio/jamboree
+		rhythmbox:${PORTSDIR}/audio/rhythmbox \
+		boot-admin:${PORTSDIR}/sysutils/gnomesystemtools \
+		jamboree:${PORTSDIR}/audio/jamboree
 
 .if !defined(PACKAGE_BUILDING) && !defined(PARALLEL_PACKAGE_BUILD)
 RUN_DEPENDS+=	totem:${PORTSDIR}/multimedia/totem
