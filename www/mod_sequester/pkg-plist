@@ -1,0 +1,3 @@
+libexec/apache/mod_sequester.so
+@exec %D/sbin/apxs -e -A -n sequester %D/%F
+@unexec %D/sbin/apxs -e -A -n sequester %D/%F

@@ -1,0 +1,12 @@
+The mod_sequester module is similar to mod_access, controlling whether
+remote clients can access your Apache Web site's resources based upon
+information not subject to the user's control.  Rather than using
+network connexion information to make the access determination,
+however, mod_sequester uses the date and time of the request.  If
+the request is made during an interval when mod_sequester's
+settings indicate the resource is accessible, the document will be
+processed normally -- otherwise a '403 Forbidden' will be returned.
+Obviously, the settings and the check use the server's date and time
+value, not the client's.
+
+WWW: http://MeepZor.Com/packages/
