@@ -3370,7 +3370,6 @@ kimwitu		ports/devel/kimwitu
 kimwitu++	ports/devel/kimwitu++
 kinemage	ports/biology/kinemage
 kinit		src/eBones/kinit
-kinkatta	ports/net/kinkatta
 kio_fish	ports/net/kio_fish
 kisomandel	ports/graphics/kisomandel
 kld		src/sys/modules
@@ -3425,7 +3424,6 @@ klondike	ports/games/klondike
 klone		ports/lang/klone
 kludge3d	ports/graphics/kludge3d
 kmess		ports/net/kmess
-kmsn		ports/net/kmsn
 kmymoney2	ports/deskutils/kmymoney2
 knapster	ports/audio/knapster
 knews		ports/news/knews
@@ -3543,7 +3541,6 @@ kvm_mkdb	src/usr.sbin/kvm_mkdb
 kwatch		ports/misc/kwatch
 kwebget		ports/ftp/kwebget
 kwebwatch	ports/www/kwebwatch
-kwix		ports/x11-wm/kwix
 kxicq-devel		ports/net/kxicq-devel
 kxicq2		ports/net/kxicq2
 kxl		ports/games/kxl
@@ -3772,7 +3769,6 @@ libjtoolbar	ports/x11-toolkits/libjtoolbar
 libjtree	ports/x11-toolkits/libjtree
 libkadm		src/eBones/libkadm
 libkern		src/sys/libkern
-libkmsn		ports/net/libkmsn
 libkvm		src/lib/libkvm
 liblug		ports/graphics/liblug
 libm		src/lib/libm
