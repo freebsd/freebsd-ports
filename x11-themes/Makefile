@@ -64,6 +64,7 @@
     SUBDIR += kde-icons-amaranth-althaea
     SUBDIR += kde-icons-cezanne
     SUBDIR += kde-icons-crystalosx
+    SUBDIR += kde-icons-gartoon-svg
     SUBDIR += kde-icons-gorilla_svg
     SUBDIR += kde-icons-graphite-rade8
     SUBDIR += kde-icons-icosx
