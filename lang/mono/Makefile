@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	mono
-PORTVERSION=	0.95
+PORTVERSION=	0.97
 CATEGORIES=	lang
-MASTER_SITES=	http://www.go-mono.com/archive/beta2/
+MASTER_SITES=	http://www.go-mono.com/archive/rc/
 
 MAINTAINER=	coop9211@uidaho.edu
 COMMENT=	An open source implementation of .NET Development Framework
@@ -20,9 +20,8 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--program-transform-name=\'\' \
-		--with-gc=included
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		--with-gc=included \
+		--with-nptl=no
 
 MAN1=		cert2spc.1 certmgr.1 chktrust.1 cilc.1 disco.1 gacutil.1 \
 		genxs.1 ilasm.1 makecert.1 mcs.1 mint.1 mono.1 \
@@ -42,6 +41,8 @@ IGNORE=	"Does not work on 5.X before 502113"
 
 post-patch:
 	@${FIND} ${WRKSRC} -type f -name configure | ${XARGS} ${REINPLACE_CMD} \
-		-e 's|-pthread|${PTHREAD_LIBS}|g'
+		-e 's|-pthread|${PTHREAD_LIBS}|g' \
+		-e 's|-D_REENTRANT|${PTHREAD_CFLAGS}|g'
+	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/libgc/threadlibs.c
 
 .include <bsd.port.post.mk>
