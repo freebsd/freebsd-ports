@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	IMAP
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	martti.kuparinen@ericsson.com
+MAINTAINER=	martti.kuparinen@iki.fi
 
 USE_PERL5=	YES
 
