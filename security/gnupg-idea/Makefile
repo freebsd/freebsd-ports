@@ -11,6 +11,7 @@ CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG} \
 		ftp://ftp.gnupg.org/gcrypt/%SUBDIR%/ \
 		http://www.gnupg.dk/contrib-dk/:idea \
+		http://www.gnupg.cz/~rp/GnuPG/extensions/:idea \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/gnupg/&,}
 MASTER_SITE_SUBDIR=	contrib
 DISTFILES=	# later
