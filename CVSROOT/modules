@@ -3396,7 +3396,7 @@ kde3-i18n-nb	ports/misc/kde3-i18n-nb
 kde3-i18n-nl	ports/misc/kde3-i18n-nl
 kde3-i18n-nn	ports/misc/kde3-i18n-nn
 kde3-i18n-nso	ports/misc/kde3-i18n-nso
-kde3-i18n-pl	ports/polish/kde3-i18n-pl
+kde3-i18n-pl	ports/polish/kde3-i18n
 kde3-i18n-ro	ports/misc/kde3-i18n-ro
 kde3-i18n-se	ports/misc/kde3-i18n-se
 kde3-i18n-sk	ports/misc/kde3-i18n-sk
@@ -3549,7 +3549,7 @@ koffice-i18n-mt	ports/misc/koffice-i18n-mt
 koffice-i18n-nb	ports/misc/koffice-i18n-nb
 koffice-i18n-nl	ports/misc/koffice-i18n-nl
 koffice-i18n-nn	ports/misc/koffice-i18n-nn
-koffice-i18n-pl	ports/polish/koffice-i18n-pl
+koffice-i18n-pl	ports/polish/koffice-i18n
 koffice-i18n-sk	ports/misc/koffice-i18n-sk
 koffice-i18n-sl	ports/misc/koffice-i18n-sl
 koffice-i18n-sv	ports/misc/koffice-i18n-sv
@@ -6222,9 +6222,9 @@ pkill		ports/sysutils/pkill
 pks		ports/security/pks
 pktrace		ports/print/pktrace
 pktsuckers	ports/security/pktsuckers
-pl-aspell	ports/polish/pl-aspell
-pl-ooodict-PL	ports/editors/ooodict-pl_PL
-pl-openoffice	ports/editors/openoffice-pl
+pl-aspell	ports/polish/aspell
+pl-ooodict-PL	ports/polish/ooodict-pl_PL
+pl-openoffice	ports/polish/openoffice
 pl-sms		ports/polish/sms
 plan		ports/deskutils/plan
 planets		ports/astro/planets
