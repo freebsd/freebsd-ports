@@ -6,9 +6,9 @@
 #
 
 PORTNAME?=	cdrtools
-CDRTLSVERSION=	2.01a25
+CDRTLSVERSION=	2.01a27
 PORTVERSION?=	${CDRTLSVERSION}
-PORTREVISION?=	1
+PORTREVISION?=	0
 CATEGORIES?=	sysutils audio
 MASTER_SITES=	ftp://ftp.berlios.de/pub/cdrecord/alpha/ \
 		ftp://ftp.cs.tu-berlin.de/pub/misc/cdrecord/alpha/
@@ -29,10 +29,10 @@ DOCS=		README README.compression README.eltorito README.graft_dirs \
 		README.session README.sort README.sparcboot README.sunx86boot
 .else
 MAN1=		cdda2wav.1 cdrecord.1 readcd.1 scgcheck.1
-DOCS=		README README.DiskT@2 README.FreeBSD README.WORM README.audio \
-		README.cdplus README.cdrw README.cdtext README.clone \
-		README.copy README.mkisofs README.multi README.raw \
-		README.rscsi README.sony README.verify
+DOCS=		README README.ATAPI README.DiskT@2 README.FreeBSD README.WORM \
+		README.audio README.cdplus README.cdrw README.cdtext \
+		README.clone README.copy README.mkisofs README.multi \
+		README.raw README.rscsi README.sony README.verify
 CDDA2WAVDOCS=	FAQ Frontends HOWTOUSE OtherProgs README THANKS TODO
 .endif
 
@@ -40,8 +40,8 @@ NO_LATEST_LINK=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
-MAKE_ENV=	CCOM=${CC}
-CFLAGS+=	-DSOURCE_MODIFIED
+MAKE_ENV=	CCOM=${CC} LANG=C
+#CFLAGS+=	-DSOURCE_MODIFIED
 WRKSRC=		${WRKDIR}/${DISTNAME:C/a(.+)$//}
 
 .if defined(MKISOFS)
@@ -86,9 +86,10 @@ post-extract:
 .endif
 
 post-patch:
+	@${RM} ${WRKSRC}/TARGETS/85man
 .if defined(MKISOFS)
-.for i in 45libdeflt 45libedc 45libparanoia 55cdda2wav 55cdrecord 55readcd \
-	55rscsi 55scgcheck
+.for i in 45libedc 45libparanoia 55cdda2wav 55cdrecord 55readcd 55rscsi \
+	55scgcheck
 	@${RM} ${WRKSRC}/TARGETS/${i}
 .endfor
 .else
@@ -105,9 +106,9 @@ post-patch:
 		s|\/usr\/local|${PREFIX}|g; s|\/etc\/default|${PREFIX}\/etc|g; \
 		s|\/var\/adm\/messages|\/var\/run\/dmesg.boot|g' ${WRKSRC}/${i}
 .endfor
-	@${REINPLACE_CMD} -E -e \
-		's|#define.+INSERT_YOUR_EMAIL_ADDRESS_HERE|& "${MAINTAINER}"|' \
-		${WRKSRC}/cdrecord/cdrecord.c
+#	@${REINPLACE_CMD} -E -e \
+#		's|#define.+INSERT_YOUR_EMAIL_ADDRESS_HERE|& "${MAINTAINER}"|' \
+#		${WRKSRC}/cdrecord/cdrecord.c
 	@${SED} 's|%%PREFIX%%|${PREFIX}|g' ${PKGDIR}/pkg-message > \
 		${WRKDIR}/pkg-message
 .endif

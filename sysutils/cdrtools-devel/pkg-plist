@@ -14,6 +14,7 @@ etc/cdrecord.sample
 %%RSCSI%%@unexec if pw usershow rscsi >/dev/null 2>&1; then echo "If permanently deleting this package, user \"rscsi\" and its homedirectory must be removed manually."; fi
 %%RSCSI%%@unexec if pw groupshow rscsi >/dev/null 2>&1; then echo "If permanently deleting this package, group \"rscsi\" must be removed manually."; fi
 %%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.ATAPI
 %%PORTDOCS%%%%DOCSDIR%%/README.DiskT@2
 %%PORTDOCS%%%%DOCSDIR%%/README.FreeBSD
 %%PORTDOCS%%%%DOCSDIR%%/README.WORM

@@ -16,6 +16,6 @@ This package contains the following software:
 
 	-	isoinfo analyze or list an ISO-9660 image
 
-	-	isovrfy verify an ISO-9660 image
+	-	isovfy verify an ISO-9660 image
 
 WWW: http://www.fokus.gmd.de/research/cc/glone/employees/joerg.schilling/private/cdrecord.html
