@@ -18,6 +18,7 @@ USE_QT_VER=	3
 QMAKESPEC?=	${LOCALBASE}/share/qt/mkspecs/freebsd-g++
 QMAKE?=		qmake
 USE_REINPLACE=	yes
+MAKE_ENV=	QTDIR="${QT_PREFIX}"
 
 do-configure:
 	${REINPLACE_CMD} -e "s,/usr/local/share/games/qnetwalk,${DATADIR}," ${WRKSRC}/qnetwalk.pro
