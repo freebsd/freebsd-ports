@@ -2099,6 +2099,7 @@ icegradient	ports/x11-toolkits/icegradient
 icepref		ports/x11-wm/icepref
 icewm		ports/x11-wm/icewm
 ici		ports/lang/ici
+ickle		ports/net/ickle
 icmpinfo	ports/net/icmpinfo
 icmpmonitor	ports/net/icmpmonitor
 icmpquery	ports/net/icmpquery
