@@ -19,11 +19,9 @@ BASEFILE=	fgfs-base-${BASEVERSION}${EXTRACT_SUFX}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${BASEFILE}
 
 BUILD_DEPENDS=	${X11BASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib \
-		${LOCALBASE}/lib/libmk4.a:${PORTSDIR}/databases/metakit \
 		${X11BASE}/include/simgear/threads/SGThread.hxx:${PORTSDIR}/devel/simgear \
 		${X11BASE}/lib/libsgmisc.a:${PORTSDIR}/devel/simgear
 RUN_DEPENDS=	${X11BASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib \
-		${LOCALBASE}/lib/libmk4.a:${PORTSDIR}/databases/metakit \
 		${X11BASE}/include/simgear/threads/SGThread.hxx:${PORTSDIR}/devel/simgear \
 		${X11BASE}/lib/libsgmisc.a:${PORTSDIR}/devel/simgear
 
