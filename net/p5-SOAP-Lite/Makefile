@@ -7,6 +7,7 @@
 
 PORTNAME=	SOAP-Lite
 PORTVERSION=	0.55
+PORTREVISION=	1
 CATEGORIES=	net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	SOAP
@@ -26,6 +27,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 PERL_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--noprompt
 INSTALL_TARGET=	pure_install
+USE_REINPLACE=	yes
 
 MAN1=		SOAPsh.pl.1 XMLRPCsh.pl.1
 MAN3PREFIX=	${LOCALBASE}/lib/perl5/${PERL_VERSION}
@@ -49,5 +51,9 @@ MAN3=		Apache::SOAP.3 \
 		XMLRPC::Transport::HTTP.3 \
 		XMLRPC::Transport::POP3.3 \
 		XMLRPC::Transport::TCP.3
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|bin/env|usr/bin/env|' \
+		${WRKSRC}/bin/* ${WRKSRC}/t/*
 
 .include <bsd.port.mk>
