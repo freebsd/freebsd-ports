@@ -1,0 +1,22 @@
+*** configure.orig	Sun Apr 26 20:31:19 1998
+--- configure	Fri May  8 15:34:13 1998
+***************
+*** 2601,2608 ****
+    ac_cv_path_MOC="$MOC" # Let the user override the test with a path.
+    ;;
+    *)
+    IFS="${IFS= 	}"; ac_save_ifs="$IFS"; IFS="${IFS}:"
+!   for ac_dir in $QTDIR/bin:$PATH:/usr/bin:/usr/X11R6/bin:/usr/lib/qt/bin:/usr/local/qt/bin$ac_dummy; do
+      test -z "$ac_dir" && ac_dir=.
+      if test -f $ac_dir/$ac_word; then
+        ac_cv_path_MOC="$ac_dir/$ac_word"
+--- 2601,2609 ----
+    ac_cv_path_MOC="$MOC" # Let the user override the test with a path.
+    ;;
+    *)
+    IFS="${IFS= 	}"; ac_save_ifs="$IFS"; IFS="${IFS}:"
++   FOO="$QTDIR/bin:$PATH:/usr/bin:/usr/X11R6/bin:/usr/lib/qt/bin:/usr/local/qt/bin$ac_dummy"
+!   for ac_dir in $FOO; do
+      test -z "$ac_dir" && ac_dir=.
+      if test -f $ac_dir/$ac_word; then
+        ac_cv_path_MOC="$ac_dir/$ac_word"
