@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pmacct
-PORTVERSION=	0.6.3
+PORTVERSION=	0.6.4
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.ba.cnr.it/~paolo/pmacct/
 
