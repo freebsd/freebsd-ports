@@ -14,6 +14,7 @@ EXTRACT_SUFX=	.tbz
 MAINTAINER=	der_julian@web.de
 COMMENT=	An ANSI Common Lisp implementation
 
+BUILD_DEPENDS=	texi2html:${PORTSDIR}/textproc/texi2html
 LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4
 
 WRKSRC=		${WRKDIR}/ecls
