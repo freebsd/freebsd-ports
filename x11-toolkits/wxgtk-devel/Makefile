@@ -55,7 +55,7 @@ CONFIGURE_ARGS+=--enable-gtk2 ${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=--host=${CONFIGURE_TARGET} --build=${CONFIGURE_TARGET}
 .endif
 
-pre-everything:
+pre-everything::
 .if !defined(WITH_GTK2)
 	@${ECHO_MSG} "* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *"
 	@${ECHO_MSG} "You can define WITH_GTK2=yes if you want to use Gtk20 toolkit."

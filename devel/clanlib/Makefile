@@ -76,7 +76,7 @@ LIB_DEPENDS+=	vorbis.2:${PORTSDIR}/audio/libvorbis
 PLIST_SUB+=	LIBVORBIS=""
 .endif
 
-pre-everything:
+pre-everything::
 	@${ECHO_MSG} "ClanLib has the following tunables option(s):"
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "	WITHOUT_SDL=yes		Turns off SDL support"
