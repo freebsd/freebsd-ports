@@ -5,23 +5,22 @@
 # $FreeBSD$
 #
 
-PORTNAME=		fnccheck
-PORTVERSION=		1.2
-CATEGORIES=		devel
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
+PORTNAME=	fnccheck
+PORTVERSION=	1.2
+CATEGORIES=	devel
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=		${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=		ports@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A profiling library/utilities for C/C++ programs
 
-INSTALLS_SHLIB=		yes
+INSTALLS_SHLIB=	yes
 
-WRKSRC=			${WRKDIR}/${PORTNAME}-devel-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}-devel-${PORTVERSION}
 
-DOCS=			README.txt README1ST.txt CHANGES.txt \
-			doc/fncdump.info doc/html/fncdump_toc.html \
-			doc/html/fncdump.html
+DOCS=		README.txt README1ST.txt CHANGES.txt \
+		doc/fncdump.info doc/html/fncdump_toc.html \
+		doc/html/fncdump.html
 
 do-install:
 .for B in fncdump fncaverage
@@ -29,9 +28,9 @@ do-install:
 .endfor
 	${INSTALL_PROGRAM} ${WRKSRC}/lib/libfnccheck.so ${PREFIX}/lib
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/fnccheck
+	${MKDIR} ${DOCSDIR}
 .for D in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/$D ${PREFIX}/share/doc/fnccheck
+	${INSTALL_DATA} ${WRKSRC}/$D ${DOCSDIR}
 .endfor
 .endif
 
