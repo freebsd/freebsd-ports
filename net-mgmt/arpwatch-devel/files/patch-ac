@@ -1,0 +1,67 @@
+--- ../arpwatch.orig/arpsnmp.c	Sun Jan 17 20:47:40 1999
++++ ./arpsnmp.c	Mon Sep 15 14:31:33 2003
+@@ -63,14 +63,17 @@
+ /* Forwards */
+ int	main(int, char **);
+ int	readsnmp(char *);
+-int	snmp_add(u_int32_t, u_char *, time_t, char *);
++int	snmp_add(u_int32_t, u_char *, time_t, char *, char *);
+ __dead	void usage(void) __attribute__((volatile));
+
+ char *prog;
+
++char *Watcher;
++
+ extern int optind;
+ extern int opterr;
+ extern char *optarg;
++char *interface = NULL;
+
+ int
+ main(int argc, char **argv)
+@@ -90,7 +93,7 @@
+ 	}
+
+ 	opterr = 0;
+-	while ((op = getopt(argc, argv, "df:")) != EOF)
++	while ((op = getopt(argc, argv, "df:m:")) != EOF)
+ 		switch (op) {
+
+ 		case 'd':
+@@ -105,6 +108,10 @@
+ 			arpfile = optarg;
+ 			break;
+
++		case 'm':
++			Watcher = optarg;
++			break;
++
+ 		default:
+ 			usage();
+ 		}
+@@ -138,7 +145,7 @@
+ static time_t now;
+
+ int
+-snmp_add(register u_int32_t a, register u_char *e, time_t t, register char *h)
++snmp_add(register u_int32_t a, register u_char *e, time_t t, register char *h, register char *i)
+ {
+ 	/* Watch for ethernet broadcast */
+ 	if (MEMCMP(e, zero, 6) == 0 || MEMCMP(e, allones, 6) == 0) {
+@@ -153,7 +160,7 @@
+ 	}
+
+ 	/* Use current time (although it would be nice to subtract idle time) */
+-	return (ent_add(a, e, now, h));
++	return (ent_add(a, e, now, h, interface));
+ }
+
+ /* Process an snmp file */
+@@ -184,6 +191,6 @@
+
+ 	(void)fprintf(stderr, "Version %s\n", version);
+ 	(void)fprintf(stderr,
+-	    "usage: %s [-d] [-f datafile] file [...]\n", prog);
++	    "usage: %s [-d] [-f datafile] [-m email] file [...]\n", prog);
+ 	exit(1);
+ }

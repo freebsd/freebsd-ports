@@ -30,6 +30,7 @@
     SUBDIR += arping
     SUBDIR += arprelease
     SUBDIR += arpwatch
+    SUBDIR += arpwatch-devel
     SUBDIR += arts++
     SUBDIR += asfrecorder
     SUBDIR += aslookup

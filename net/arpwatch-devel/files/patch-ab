@@ -1,22 +1,25 @@
---- Makefile.in.orig	Wed Jul 29 06:16:45 1998
-+++ Makefile.in	Fri Aug 21 10:57:51 1998
-@@ -44,7 +44,7 @@
- CC = @CC@
- CCOPT = @V_CCOPT@
- INCLS = -I. @V_INCLS@
--DEFS = -DDEBUG @DEFS@ -DARPDIR=\"$(ARPDIR)\" -DPATH_SENDMAIL=\"$(SENDMAIL)\"
-+DEFS = @DEFS@ -DARPDIR=\"$(ARPDIR)\" -DPATH_SENDMAIL=\"$(SENDMAIL)\"
- 
- # Standard CFLAGS
- CFLAGS = $(CCOPT) $(DEFS) $(INCLS)
-@@ -109,8 +109,8 @@
- 	$(CC) $(CFLAGS) -o $@ zap.o intoa.o -lutil
- 
- install: force
--	$(INSTALL) -m 555 -o bin -g bin arpwatch $(DESTDIR)$(BINDEST)
--	$(INSTALL) -m 555 -o bin -g bin arpsnmp $(DESTDIR)$(BINDEST)
-+	$(INSTALL) -s -m 555 -o bin -g bin arpwatch $(DESTDIR)$(BINDEST)
-+	$(INSTALL) -s -m 555 -o bin -g bin arpsnmp $(DESTDIR)$(BINDEST)
- 
- install-man: force
- 	$(INSTALL) -m 444 -o bin -g bin $(srcdir)/arpwatch.8 \
+--- ../arpwatch.orig/arpsnmp.8	Sun Sep 17 16:34:48 2000
++++ ./arpsnmp.8	Fri Sep  5 14:46:55 2003
+@@ -30,6 +30,9 @@
+ ] [
+ .B -f
+ .I datafile
++] [
++.B -m
++.I email
+ ]
+ .I file
+ [
+@@ -54,6 +57,12 @@
+ flag is used to set the ethernet/ip address database filename.
+ The default is
+ .IR arp.dat .
++.LP
++The
++.B -m
++flag specifies the address that will receive the emails.
++The default is
++.IR root .
+ .LP
+ Note that an empty
+ .I arp.dat

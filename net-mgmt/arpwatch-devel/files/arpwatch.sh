@@ -21,22 +21,29 @@ case $1 in
 start)
 	if [ ! -e "$PREFIX"/arpwatch/arp.dat ]; then
 		if [ -e "$PREFIX"/arpwatch/arp.dat- ]; then
-			cp "$PREFIX"/arpwatch/arp.dat- "$PREFIX"/arpwatch/arp.dat	
+			cp "$PREFIX"/arpwatch/arp.dat- "$PREFIX"/arpwatch/arp.dat
 		else
 			touch "$PREFIX"/arpwatch/arp.dat
+		fi
+	fi
+
+	if [ ! -e "$PREFIX"/arpwatch/ether.dat ]; then
+		if [ -e "$PREFIX"/arpwatch/ether.dat- ]; then
+			cp "$PREFIX"/arpwatch/ether.dat- "$PREFIX"/arpwatch/ether.dat
+		else
+			touch "$PREFIX"/arpwatch/ether.dat
 		fi
 	fi
 
 	case ${arpwatch_interfaces} in
 	'')
 		if [ -x "$PREFIX"/sbin/arpwatch -a -d "$PREFIX"/arpwatch ]; then
-			"$PREFIX"/sbin/arpwatch && echo -n ' arpwatch'
+			"$PREFIX"/sbin/arpwatch ${arpwatch_flags} && echo -n ' arpwatch'
 		fi
 		;;
 	*)
 		for interface in ${arpwatch_interfaces}; do
-			touch "$PREFIX"/arpwatch/arp.${interface}.dat
-			"$PREFIX"/sbin/arpwatch -i "${interface}" -f arp.${interface}.dat && echo -n " arpwatch(${interface})"
+			"$PREFIX"/sbin/arpwatch -i "${interface}" && echo -n " arpwatch(${interface})"
 		done
 		;;
 	esac
