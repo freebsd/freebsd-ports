@@ -3,7 +3,7 @@
 # Date created:		01 May 1998
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.1.1.1 1998/05/05 08:00:27 tg Exp $
+# $Id: Makefile,v 1.2 1998/09/28 02:04:08 steve Exp $
 #
 
 DISTNAME=	awele
@@ -13,6 +13,8 @@ MASTER_SITES=	http://www-rocq.inria.fr/air/ftp/Jean-Paul/
 EXTRACT_SUFX=	1.0.tgz
 
 MAINTAINER=	tg@FreeBSD.ORG
+
+LIB_DEPENDS=	tk80.1:${PORTSDIR}/x11-toolkits/tk80
 
 USE_IMAKE=	yes
 NO_INSTALL_MANPAGES=	yes
