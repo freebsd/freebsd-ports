@@ -1,0 +1,43 @@
+bin/taskjuggler
+bin/tjx2gantt
+%%DOCSDIR%%/Examples/BigProject/Common/Resources.tjsp
+%%DOCSDIR%%/Examples/BigProject/Project1/Project1-Interface.tjsp
+%%DOCSDIR%%/Examples/BigProject/Project1/Project1.html
+%%DOCSDIR%%/Examples/BigProject/Project1/Project1.tjp
+%%DOCSDIR%%/Examples/BigProject/Project2/Project2.html
+%%DOCSDIR%%/Examples/BigProject/Project2/Project2.tjp
+%%DOCSDIR%%/Examples/BigProject/README
+%%DOCSDIR%%/Examples/FirstProject/Accounting.html
+%%DOCSDIR%%/Examples/FirstProject/AccountingSoftware.tjp
+%%DOCSDIR%%/Examples/FirstProject/AccountingSoftware.tjx
+%%DOCSDIR%%/Examples/FirstProject/Calendar.html
+%%DOCSDIR%%/Examples/FirstProject/Staff-Details.html
+%%DOCSDIR%%/Examples/FirstProject/Staff-Overview.html
+%%DOCSDIR%%/Examples/FirstProject/Status-Report.html
+%%DOCSDIR%%/Examples/FirstProject/Tasks-Details.html
+%%DOCSDIR%%/Examples/FirstProject/Tasks-Overview.html
+%%DOCSDIR%%/Examples/FirstProject/acso.eps
+%%DOCSDIR%%/Examples/FirstProject/acso_poster.eps
+%%DOCSDIR%%/Examples/ShiftSchedule/Calendar-anders.html
+%%DOCSDIR%%/Examples/ShiftSchedule/Calendar-joe.html
+%%DOCSDIR%%/Examples/ShiftSchedule/Calendar-khaled.html
+%%DOCSDIR%%/Examples/ShiftSchedule/Calendar-paul.html
+%%DOCSDIR%%/Examples/ShiftSchedule/Calendar-sally.html
+%%DOCSDIR%%/Examples/ShiftSchedule/ResourceUsage-Jun.html
+%%DOCSDIR%%/Examples/ShiftSchedule/ShiftSchedule.tjp
+%%DOCSDIR%%/Examples/ShiftSchedule/ShiftTimes-06-03.html
+%%DOCSDIR%%/Examples/ShiftSchedule/ShiftTimes-06-10.html
+%%DOCSDIR%%/Examples/ShiftSchedule/TaskCoverage-Jun.html
+%%DOCSDIR%%/tjx2gantt/README
+%%DOCSDIR%%/tjx2gantt/TODO
+%%DOCSDIR%%/tjx2gantt/testProject.tjp
+@dirrm %%DOCSDIR%%/Examples/FirstProject
+@dirrm %%DOCSDIR%%/Examples/BigProject/Common
+@dirrm %%DOCSDIR%%/Examples/BigProject/Project1
+@dirrm %%DOCSDIR%%/Examples/BigProject/Project2
+@dirrm %%DOCSDIR%%/Examples/BigProject
+@dirrm %%DOCSDIR%%/Examples/ShiftSchedule
+@dirrm %%DOCSDIR%%/Examples
+@dirrm %%DOCSDIR%%/manual
+@dirrm %%DOCSDIR%%/tjx2gantt
+@dirrm %%DOCSDIR%%
