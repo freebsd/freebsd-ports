@@ -7,43 +7,27 @@ bin/supertux
 %%DATADIR%%/images/background/extro.jpg
 %%DATADIR%%/images/background/ocean.png
 %%DATADIR%%/images/background/oiltux.jpg
-%%DATADIR%%/images/highscore/highscore.png
-%%DATADIR%%/images/icon.png
 %%DATADIR%%/images/icon.xpm
-%%DATADIR%%/images/icons/bgd.png
 %%DATADIR%%/images/icons/bkgrd.png
 %%DATADIR%%/images/icons/default-icon.png
 %%DATADIR%%/images/icons/down.png
-%%DATADIR%%/images/icons/emy.png
 %%DATADIR%%/images/icons/exit.png
-%%DATADIR%%/images/icons/fgd.png
 %%DATADIR%%/images/icons/frgrd.png
 %%DATADIR%%/images/icons/intact.png
 %%DATADIR%%/images/icons/left.png
+%%DATADIR%%/images/icons/objects.png
+%%DATADIR%%/images/icons/properties.png
 %%DATADIR%%/images/icons/right.png
 %%DATADIR%%/images/icons/rubber.png
 %%DATADIR%%/images/icons/save.png
 %%DATADIR%%/images/icons/select-mode1.png
 %%DATADIR%%/images/icons/select-mode2.png
+%%DATADIR%%/images/icons/select-one.png
 %%DATADIR%%/images/icons/settings.png
 %%DATADIR%%/images/icons/test-level.png
 %%DATADIR%%/images/icons/tilegroup.png
 %%DATADIR%%/images/icons/up.png
-%%DATADIR%%/images/intro/beam.png
-%%DATADIR%%/images/intro/copter-squish.png
-%%DATADIR%%/images/intro/copter-stretch.png
-%%DATADIR%%/images/intro/copter1.png
-%%DATADIR%%/images/intro/copter2.png
-%%DATADIR%%/images/intro/gown-lookup.png
-%%DATADIR%%/images/intro/gown-sit.png
-%%DATADIR%%/images/intro/gown-upset.png
-%%DATADIR%%/images/intro/intro-old.png
-%%DATADIR%%/images/intro/intro.png
-%%DATADIR%%/images/intro/tux-mad.png
-%%DATADIR%%/images/intro/tux-sit.png
-%%DATADIR%%/images/intro/tux-upset.png
 %%DATADIR%%/images/leveleditor/select.png
-%%DATADIR%%/images/map/map.png
 %%DATADIR%%/images/shared/1up.png
 %%DATADIR%%/images/shared/bouncingsnowball-left-0.png
 %%DATADIR%%/images/shared/bouncingsnowball-left-1.png
@@ -233,7 +217,9 @@ bin/supertux
 %%DATADIR%%/images/status/letters-black.png
 %%DATADIR%%/images/status/letters-blue.png
 %%DATADIR%%/images/status/letters-gold.png
+%%DATADIR%%/images/status/letters-green.png
 %%DATADIR%%/images/status/letters-red.png
+%%DATADIR%%/images/status/letters-silver.png
 %%DATADIR%%/images/status/letters-white-big.png
 %%DATADIR%%/images/status/letters-white-small.png
 %%DATADIR%%/images/status/letters-white.png
@@ -242,34 +228,7 @@ bin/supertux
 %%DATADIR%%/images/status/mousecursor.png
 %%DATADIR%%/images/status/numbers.png
 %%DATADIR%%/images/status/score.png
-%%DATADIR%%/images/themes/antarctica/bkgd-00.png
-%%DATADIR%%/images/themes/antarctica/bkgd-01.png
-%%DATADIR%%/images/themes/antarctica/bkgd-02.png
-%%DATADIR%%/images/themes/antarctica/bkgd-03.png
-%%DATADIR%%/images/themes/antarctica/bkgd-10.png
-%%DATADIR%%/images/themes/antarctica/bkgd-11.png
-%%DATADIR%%/images/themes/antarctica/bkgd-12.png
-%%DATADIR%%/images/themes/antarctica/bkgd-13.png
-%%DATADIR%%/images/themes/antarctica/brick0.png
-%%DATADIR%%/images/themes/antarctica/brick1.png
-%%DATADIR%%/images/themes/antarctica/solid0.png
-%%DATADIR%%/images/themes/antarctica/solid1.png
-%%DATADIR%%/images/themes/antarctica/solid2.png
-%%DATADIR%%/images/themes/antarctica/solid3.png
-%%DATADIR%%/images/themes/darkstone/bkgd-00.png
-%%DATADIR%%/images/themes/darkstone/bkgd-01.png
-%%DATADIR%%/images/themes/darkstone/bkgd-02.png
-%%DATADIR%%/images/themes/darkstone/bkgd-03.png
-%%DATADIR%%/images/themes/darkstone/bkgd-10.png
-%%DATADIR%%/images/themes/darkstone/bkgd-11.png
-%%DATADIR%%/images/themes/darkstone/bkgd-12.png
-%%DATADIR%%/images/themes/darkstone/bkgd-13.png
-%%DATADIR%%/images/themes/darkstone/brick0.png
-%%DATADIR%%/images/themes/darkstone/brick1.png
-%%DATADIR%%/images/themes/darkstone/solid0.png
-%%DATADIR%%/images/themes/darkstone/solid1.png
-%%DATADIR%%/images/themes/darkstone/solid2.png
-%%DATADIR%%/images/themes/darkstone/solid3.png
+%%DATADIR%%/images/status/select-cursor.png
 %%DATADIR%%/images/tilesets/background.stgt
 %%DATADIR%%/images/tilesets/background1.png
 %%DATADIR%%/images/tilesets/background2.png
@@ -512,6 +471,8 @@ bin/supertux
 %%DATADIR%%/levels/test/level5.stl
 %%DATADIR%%/levels/test/level6.stl
 %%DATADIR%%/levels/test/level7.stl
+%%DATADIR%%/levels/test/level8.stl
+%%DATADIR%%/levels/test/level9.stl
 %%DATADIR%%/levels/world1/level1.stl
 %%DATADIR%%/levels/world1/level10.stl
 %%DATADIR%%/levels/world1/level11.stl
@@ -538,38 +499,38 @@ bin/supertux
 %%DATADIR%%/levels/world1/level7.stl
 %%DATADIR%%/levels/world1/level8.stl
 %%DATADIR%%/levels/world1/level9.stl
-%%SOUND%%%%DATADIR%%/music/Mortimers_chipdisko-fast.mod
-%%SOUND%%%%DATADIR%%/music/Mortimers_chipdisko.mod
-%%SOUND%%%%DATADIR%%/music/SALCON-fast.MOD
-%%SOUND%%%%DATADIR%%/music/SALCON.MOD
-%%SOUND%%%%DATADIR%%/music/cave-fast.mod
-%%SOUND%%%%DATADIR%%/music/cave.mod
-%%SOUND%%%%DATADIR%%/music/fortress-fast.mod
-%%SOUND%%%%DATADIR%%/music/fortress.mod
-%%SOUND%%%%DATADIR%%/music/theme.mod
-%%SOUND%%%%DATADIR%%/music/tux-leveldone.mod
-%%SOUND%%%%DATADIR%%/sounds/bigjump.wav
-%%SOUND%%%%DATADIR%%/sounds/brick.wav
-%%SOUND%%%%DATADIR%%/sounds/bump-upgrade.wav
-%%SOUND%%%%DATADIR%%/sounds/coffee.wav
-%%SOUND%%%%DATADIR%%/sounds/distro.wav
-%%SOUND%%%%DATADIR%%/sounds/excellent.wav
-%%SOUND%%%%DATADIR%%/sounds/explode.wav
-%%SOUND%%%%DATADIR%%/sounds/fall.wav
-%%SOUND%%%%DATADIR%%/sounds/herring.wav
-%%SOUND%%%%DATADIR%%/sounds/hurt.wav
-%%SOUND%%%%DATADIR%%/sounds/jump.wav
-%%SOUND%%%%DATADIR%%/sounds/kick.wav
-%%SOUND%%%%DATADIR%%/sounds/lifeup.wav
-%%SOUND%%%%DATADIR%%/sounds/ricochet.wav
-%%SOUND%%%%DATADIR%%/sounds/shoot.wav
-%%SOUND%%%%DATADIR%%/sounds/skid.wav
-%%SOUND%%%%DATADIR%%/sounds/squish.wav
-%%SOUND%%%%DATADIR%%/sounds/stomp.wav
-%%SOUND%%%%DATADIR%%/sounds/upgrade.wav
+%%DATADIR%%/music/Mortimers_chipdisko-fast.mod
+%%DATADIR%%/music/Mortimers_chipdisko.mod
+%%DATADIR%%/music/SALCON-fast.MOD
+%%DATADIR%%/music/SALCON.MOD
+%%DATADIR%%/music/cave-fast.mod
+%%DATADIR%%/music/cave.mod
+%%DATADIR%%/music/fortress-fast.mod
+%%DATADIR%%/music/fortress.mod
+%%DATADIR%%/music/theme.mod
+%%DATADIR%%/music/tux-leveldone.mod
+%%DATADIR%%/sounds/bigjump.wav
+%%DATADIR%%/sounds/brick.wav
+%%DATADIR%%/sounds/bump-upgrade.wav
+%%DATADIR%%/sounds/coffee.wav
+%%DATADIR%%/sounds/distro.wav
+%%DATADIR%%/sounds/excellent.wav
+%%DATADIR%%/sounds/explode.wav
+%%DATADIR%%/sounds/fall.wav
+%%DATADIR%%/sounds/herring.wav
+%%DATADIR%%/sounds/hurt.wav
+%%DATADIR%%/sounds/jump.wav
+%%DATADIR%%/sounds/kick.wav
+%%DATADIR%%/sounds/lifeup.wav
+%%DATADIR%%/sounds/ricochet.wav
+%%DATADIR%%/sounds/shoot.wav
+%%DATADIR%%/sounds/skid.wav
+%%DATADIR%%/sounds/squish.wav
+%%DATADIR%%/sounds/stomp.wav
+%%DATADIR%%/sounds/upgrade.wav
 %%DATADIR%%/supertux.strf
-%%SOUND%%@dirrm %%DATADIR%%/sounds
-%%SOUND%%@dirrm %%DATADIR%%/music
+@dirrm %%DATADIR%%/sounds
+@dirrm %%DATADIR%%/music
 @dirrm %%DATADIR%%/levels/world1
 @dirrm %%DATADIR%%/levels/test
 @dirrm %%DATADIR%%/levels/misc
@@ -578,16 +539,10 @@ bin/supertux
 @dirrm %%DATADIR%%/images/worldmap
 @dirrm %%DATADIR%%/images/title
 @dirrm %%DATADIR%%/images/tilesets
-@dirrm %%DATADIR%%/images/themes/darkstone
-@dirrm %%DATADIR%%/images/themes/antarctica
-@dirrm %%DATADIR%%/images/themes
 @dirrm %%DATADIR%%/images/status
 @dirrm %%DATADIR%%/images/shared
-@dirrm %%DATADIR%%/images/map
 @dirrm %%DATADIR%%/images/leveleditor
-@dirrm %%DATADIR%%/images/intro
 @dirrm %%DATADIR%%/images/icons
-@dirrm %%DATADIR%%/images/highscore
 @dirrm %%DATADIR%%/images/background
 @dirrm %%DATADIR%%/images
 @dirrm %%DATADIR%%
