@@ -1,21 +1,23 @@
 # New ports collection makefile for:	rocksndiamonds
-# Version required:	1.2.0
+# Version required:	1.4.0
 # Date created:		27 May 1999
 # Whom:			Thomas Gellekum <tg@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	rocksndiamonds-1.2.0
+DISTNAME=	rocksndiamonds-1.4.0
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_XCONTRIB}
+MASTER_SITES=	http://www.artsoft.org/rocksndiamonds/RELEASES/ \
+		${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	games
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mwest@uct.ac.za
 
 USE_XLIB=	yes
 USE_GMAKE=	yes
-MAKE_ENV+=	GAME_DIR=${GAME_DIR} X11_PATH=${X11BASE} OPTIONS="${CFLAGS}"
+MAKE_ENV+=	RO_GAME_DIR=${GAME_DIR} RW_GAME_DIR=${GAME_DIR}/scores \
+		X11_PATH=${X11BASE} OPTIONS="${CFLAGS}"
 .if ${MACHINE_ARCH} == "alpha"
 MAKE_ENV+=	JOYSTICK="-DNO_JOYSTICK"
 .endif

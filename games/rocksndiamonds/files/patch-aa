@@ -1,11 +1,20 @@
---- Makefile.orig	Sat Dec  5 16:24:39 1998
-+++ Makefile	Thu May 27 13:39:26 1999
-@@ -43,8 +43,6 @@
+--- Makefile.orig	Wed Oct 27 02:07:38 1999
++++ Makefile	Wed Jan  5 22:29:39 2000
+@@ -18,7 +18,7 @@
+ 
+ # specify path to X11 on your system
+ # if undefined, use system defaults (works with Linux/gcc/libc5)
+-X11_PATH = /usr/X11
++# X11_PATH = /usr/X11
+ 
+ # specify directory for read-only game data (like graphics, sounds, levels)
+ # default is '.', so you can play without installing game data somewhere
+@@ -46,8 +46,6 @@
+ #-----------------------------------------------------------------------------#
  
  .EXPORT_ALL_VARIABLES:
- 
--MAKE = make
 -
+-MAKE = make
+ 
  SRC_DIR = src
  MAKE_CMD = @$(MAKE) -C $(SRC_DIR)
- 

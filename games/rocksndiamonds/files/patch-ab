@@ -1,11 +1,11 @@
---- src/Makefile.orig	Sat Dec  5 01:53:04 1998
-+++ src/Makefile	Thu May 27 13:44:11 1999
-@@ -64,7 +64,7 @@
- 	 $(CONFIG_SCORE_ENTRIES) $(XPM_INCLUDE_FILE)
- 
- # OPTIONS = -DDEBUG -g -Wall	# only for debugging purposes
+--- src/Makefile.orig	Sun Oct 24 18:51:53 1999
++++ src/Makefile	Wed Jan  5 22:11:35 2000
+@@ -61,7 +61,7 @@
+ # OPTIONS = -DDEBUG -g -Wall			# only for debugging purposes
+ # OPTIONS = -O3 -Wall -ansi -pedantic
+ # OPTIONS = -O3 -Wall
 -OPTIONS = -O3
 +OPTIONS ?= -O3
  
- # SYSTEM = -DSYSV -Ae		# maybe needed for HP-UX
+ # SYSTEM = -DSYSV -Ae		# may be needed for HP-UX
  
