@@ -18,7 +18,13 @@ NO_WRKSUBDIR=	yes
 MAINTAINER=	iwasaki@FreeBSD.org
 COMMENT=	Some utilities for Intel ACPICA (Debugger, ASL Compiler and etc.).
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "ia64" || ${ARCH} == "amd64"
+BROKEN=		"Does not compile on ia64 or amd64"
+.endif
+
 pre-install:
 		@${MKDIR} ${PREFIX}/man/man8
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
