@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	qdbm
-PORTVERSION=	1.8.11
+PORTVERSION=	1.8.12
 CATEGORIES=	databases
-MASTER_SITES=	http://qdbm.sourceforge.net/ \
-		${MASTER_SITE_SOURCEFORGE_EXTENDED}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED} \
+		http://qdbm.sourceforge.net/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	fuyuki@hadaly.org
