@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	hanterm
-PORTVERSION=	2.0.4.172
+PORTVERSION=	2.0.5.173
 CATEGORIES=	korean x11
 MASTER_SITES=	http://download.kldp.net/hanterm-xf/
 PKGNAMESUFFIX=	-xf
-DISTNAME=	hanterm${PKGNAMESUFFIX}-2.0.4-172
+DISTNAME=	hanterm${PKGNAMESUFFIX}-2.0.5-173
 
 MAINTAINER=	cjh@FreeBSD.org
 
