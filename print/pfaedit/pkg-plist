@@ -130,6 +130,7 @@ lib/libgunicode.so.2
 %%PORTDOCS%%share/doc/pfaedit/bitmapchar.png
 %%PORTDOCS%%share/doc/pfaedit/bitmapsavail.png
 %%PORTDOCS%%share/doc/pfaedit/bitmapview.html
+%%PORTDOCS%%share/doc/pfaedit/boustrophedon.png
 %%PORTDOCS%%share/doc/pfaedit/bvlayers.png
 %%PORTDOCS%%share/doc/pfaedit/bvtools.png
 %%PORTDOCS%%share/doc/pfaedit/cap-height.png
