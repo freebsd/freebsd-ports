@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	xawtv
-PORTVERSION=	3.88
+PORTVERSION=	3.88.1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://bytesex.org/xawtv/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	oliver@freebsd.org
+MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	A TV viewing application and a few TV utilities
 
 BUILD_DEPENDS=	iconv:${PORTSDIR}/converters/libiconv
