@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	mytop
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 CATEGORIES=	databases
 MASTER_SITES=	http://jeremy.zawodny.com/mysql/mytop/
 
 MAINTAINER=	leeym@FreeBSD.org
-COMMENT=	Mytop - a top clone for MySQL
+COMMENT=	A top clone for MySQL
 
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Term/ReadKey.pm:${PORTSDIR}/devel/p5-Term-ReadKey \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql \
@@ -19,7 +19,11 @@ RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Term/Read
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes
 
 PERL_CONFIGURE=	yes
+USE_REINPLACE=	yes
 
 MAN1=		mytop.1
+
+post-patch:
+	@${REINPLACE_CMD} -e 's, -P , B<-P> ,g' ${WRKSRC}/mytop
 
 .include <bsd.port.mk>
