@@ -115,6 +115,7 @@ bin/tmda-sendmail
 %%PORTDOCS%%share/doc/tmda/htdocs/index.html
 %%PORTDOCS%%share/doc/tmda/htdocs/install.html
 %%PORTDOCS%%share/doc/tmda/htdocs/inuse.html
+%%PORTDOCS%%share/doc/tmda/htdocs/mirrors.html
 %%PORTDOCS%%share/doc/tmda/htdocs/press.html
 %%PORTDOCS%%share/doc/tmda/htdocs/requirements.html
 %%PORTDOCS%%share/doc/tmda/htdocs/resources.html
@@ -122,6 +123,7 @@ bin/tmda-sendmail
 %%PORTDOCS%%share/doc/tmda/htdocs/support-commercial.html 
 %%PORTDOCS%%share/doc/tmda/htdocs/tmda-cgi.html
 %%PORTDOCS%%share/doc/tmda/htdocs/tmda-ofmipd.html
+%%PORTDOCS%%share/doc/tmda/htdocs/tmda-vdomains.html
 %%PORTDOCS%%share/doc/tmda/htdocs/trouble.html
 share/tmda/bounce.txt
 share/tmda/confirm_accept.txt
