@@ -24,6 +24,7 @@ CONFLICTS=	XFree86-libraries-* xorg-libraries-*
 USE_IMAKE=	YES
 USE_X_PREFIX=	no
 PREFIX?=	${X11BASE}
+MTREE_FILE=	/etc/mtree/BSD.x11-4.dist
 DIST_SUBDIR=	xorg
 INSTALLS_SHLIB=	yes
 WRKSRC=		${WRKDIR}/xc/lib/Xp
