@@ -1,0 +1,11 @@
+--- smpeg-config.in	2000/12/11 12:11:39	1.1
++++ smpeg-config.in	2000/12/11 12:12:00
+@@ -42,7 +42,7 @@
+       if test @includedir@ != /usr/include ; then
+         includes=-I@includedir@
+       fi
+-      echo $includes -I@includedir@/smpeg `sdl-config --cflags`
++      echo $includes -I@includedir@/smpeg `@SDL_CONFIG@ --cflags`
+       ;;
+     --libs)
+       if [ "`uname`" = "SunOS" ]; then
