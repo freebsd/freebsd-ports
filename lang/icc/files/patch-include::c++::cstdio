@@ -1,6 +1,12 @@
---- include/c++/cstdio.orig	Sat Dec 13 19:27:02 2003
-+++ include/c++/cstdio	Sat Dec 13 19:28:46 2003
-@@ -13,36 +13,6 @@
+--- include/c++/cstdio.orig	Wed Mar 17 14:14:58 2004
++++ include/c++/cstdio	Wed Mar 17 14:17:22 2004
+@@ -1,4 +1,4 @@
+-/* static char cvs_id[] = "$Id: cstdio,v 1.11.2.1 2004/02/16 15:14:10 dens Exp $"; */
++/* static char cvs_id[] = "$Id: cstdio,v 1.1 2004/03/17 13:15:04 netchild Exp $"; */
+ // cstdio standard header
+ #ifndef _CSTDIO_
+ #define _CSTDIO_
+@@ -13,40 +13,6 @@
   #include <stdio.h>
  #endif /* _STD_USING */
  
@@ -31,19 +37,25 @@
 - #endif /* !defined(__GLIBC__) etc. */
 -
 - #ifndef _HAS_POINTER_CLIB
--  #define _HAS_CONVENTIONAL_CLIB	1
+-/*
+-    I do not know, why this is defined here, but this breaks down library
+-    compilation. Commented out as QNX does
+- */
+-//  #define _HAS_CONVENTIONAL_CLIB	1
 - #endif /* _HAS_POINTER_CLIB */
 -
   #ifdef _GLOBAL_USING
  _STD_BEGIN
  using _CSTD size_t; using _CSTD fpos_t; using _CSTD FILE;
-@@ -70,21 +40,6 @@
+@@ -74,23 +40,6 @@
  _STD_END
   #endif /* _GLOBAL_USING */
  
+-#ifndef __QNX__
 -#ifndef _Filet
 - #define _Filet	FILE
 -#endif /* _Filet */
+-#endif /* __QNX__ */
 -
 -#ifndef _FPOSOFF
 -

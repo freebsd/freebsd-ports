@@ -1,5 +1,5 @@
---- include/c++/yvals.h.orig	Wed Dec 10 23:36:19 2003
-+++ include/c++/yvals.h	Sun Dec 14 01:05:39 2003
+--- include/c++/yvals.h.orig	Wed Mar 17 14:35:06 2004
++++ include/c++/yvals.h	Wed Mar 17 14:40:46 2004
 @@ -7,24 +7,10 @@
  
  _ABRCPP -- to turn ON Abridged C++ dialect (implies _ECPP)
@@ -25,16 +25,18 @@
  
  Include directories needed to compile with Dinkum C:
  
-@@ -47,78 +33,10 @@
+@@ -47,85 +33,10 @@
  	(--export --template_dir=lib/export)
   */
  
 -#define __need___va_list
 -#include <stdarg.h>
 -
+-#if !(defined __QNX__)
 -#include <features.h>	/* Get glibc version __GLIBC__ and __GLIBC_MINOR__*/
 -#define __GLIBC_2_2     ((__GLIBC__ > 2) || ((__GLIBC__ >= 2) && (__GLIBC_MINOR__ >= 2)))
 -			/* true if glibc-2.2 and older is used */
+-#endif /* __QNX__ */
 -
 -#define _CPPLIB_VER	402
 -
@@ -70,8 +72,13 @@
 -typedef unsigned _MACH_I32 _Uint32t;
 -
 - #else /* defined(_MACH_I32) */
+-  #if defined __QNX__
+-typedef unsigned		 			_Uint32t __attribute__((__aligned__(4)));
+-typedef int				 			_Int32t __attribute__((__aligned__(4)));
+-  #else /* __QNX__ */
 -typedef long _Int32t;
 -typedef unsigned long _Uint32t;
+-  #endif /* __QNX__  */
 - #endif /* defined(_MACH_I32) */
 -
 - #if defined(_MACH_PDT)
@@ -104,7 +111,7 @@
   #if !defined(_ECPP) && defined(_ABRCPP)
    #define _ECPP
   #endif /* !defined(_ECPP) && defined(_ABRCPP) */
-@@ -139,56 +57,8 @@
+@@ -146,56 +57,8 @@
     #define _HAS_NAMESPACE	1	/* 1 for C++ names in std */
   #endif /* _HAS_NAMESPACE */
  
@@ -159,9 +166,9 @@
 - #endif /* define _HAS_ITERATOR_DEBUGGING */
 -
  		/* NAMESPACE CONTROL */
- 
-  #if defined(__cplusplus)
-@@ -259,207 +129,14 @@
+  #if defined(_ECPP) && defined(__cplusplus)
+   #define _STD_USING 1 /* To be compatible with QNX, where _STD_USING defined for C++ only */
+@@ -283,217 +146,13 @@
    #define _END_EXTERN_C
   #endif /* __cplusplus */
  
@@ -230,7 +237,14 @@
 - #ifdef __cplusplus
 -  #define _WCHART
 -typedef wchar_t _Wchart;
+-  #ifdef __QNX__ 
+-/* define _Wint and wint_t as QNX does */
+-typedef long _Wintt;
+-typedef _Wintt wint_t;
+-  #else /* __QNX__ */
+-/* Original _Wint definition */
 -typedef wchar_t _Wintt;
+-  #endif /* __QNX__ */
 - #endif /* __cplusplus */
 -
 - #if defined(_MSL_WCHAR_T_TYPE)
@@ -261,8 +275,10 @@
 -  #define _WCMAX	0x7fffffff	/* assume signed 32-bit wchar_t */
 -
 -  #ifndef __cplusplus
+-   #ifndef __QNX__ /* _Wchart declared in QNX system headers */
 -typedef __WCHAR_TYPE__ _Wchart;
 -typedef __WCHAR_TYPE__ _Wintt;
+-   #endif /* __QNX__ */
 -  #endif /* __cplusplus */
 -
 - #else /* default wchar_t/wint_t */
@@ -275,6 +291,9 @@
 -  #endif /* __cplusplus */
 -
 - #endif /* compiler/library type */
+-
+-		/* POINTER PROPERTIES */
+-#define _NULL		0L	/* 0L if pointer same as long */
 -
 -		/* signal PROPERTIES */
 -
@@ -303,7 +322,7 @@
 -#define _EXFAIL	1	/* EXIT_FAILURE */
 -
 -_EXTERN_C
--void _Atexit(void (*)(void));
+-void __Atexit(void (*)(void));
 -_END_EXTERN_C
 -
 -		/* stdio PROPERTIES */
@@ -326,18 +345,16 @@
 -_C_STD_END
 -
 -		/* MULTITHREAD PROPERTIES */
--
+-_STD_BEGIN
 - #if _MULTI_THREAD
--_EXTERN_C
 -void _Locksyslock(int);
 -void _Unlocksyslock(int);
--_END_EXTERN_C
 -
 - #else /* _MULTI_THREAD */
 -  #define _Locksyslock(x)	(void)0
 -  #define _Unlocksyslock(x)	(void)0
 - #endif /* _MULTI_THREAD */
--
+-_STD_END
 -		/* LOCK MACROS */
 - #define _LOCK_LOCALE	0
 - #define _LOCK_MALLOC	1
@@ -353,7 +370,7 @@
 -	if (_Locktype == _LOCK_MALLOC || _Locktype == _LOCK_DEBUG)
 - #endif /* _IOSTREAM_OP_LOCKS */
 -
- 		/* MISCELLANEOUS MACROS */
+-		/* MISCELLANEOUS MACROS */
 -#define _ATEXIT_T	void
 -
 -#define _MAX	(max)
