@@ -1,0 +1,21 @@
+--- Makefile	Sun Mar  5 20:47:27 1995
++++ /home/andy/tmp/wrk/Makefile	Fri May  1 14:18:33 1998
+@@ -7,15 +7,15 @@
+ RM = rm -f
+ CC = gcc
+ 
+-FILE_CONFIG = -DSAVED_GAME_NAME=\"/tmp/affenspiel.saved\"
++FILE_CONFIG = -DSAVED_GAME_NAME=\"affenspiel.saved\"
+ 
+ CONFIG = $(FILE_CONFIG)
+ #DEBUG = -DDEBUG -g -ansi
+ #DEBUG = -DDEBUG -g -ansi -pedantic
+ DEBUG = -O2
+ 
+-CFLAGS = $(DEBUG) $(CONFIG)
+-LIBS = -lX11
++CFLAGS = $(DEBUG) $(CONFIG) -I${X11BASE}/include
++LIBS = -L${X11BASE}/lib -lX11
+ 
+ OBJS = das_mit_dem_affen.o
+ 
