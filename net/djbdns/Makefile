@@ -43,10 +43,11 @@ BROKEN=		The IPv6 and dnscache-dumpcache patches are currently in conflict.
 PATCH_SITES+=	http://mapage.noos.fr/efge/djbdns/
 PATCHFILES+=	patch-dnscache-dumpcache-v4.txt
 PATCH_DIST_STRIP=	-p1
+CFLAGS+=	-DDUMPCACHE
 .endif
 
 DJBDNS_VER=	1.05
-DJBDNS_V6_VER=	test11
+DJBDNS_V6_VER=	test14
 
 MAINTAINER=	roam@FreeBSD.org
 
