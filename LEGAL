@@ -1,5 +1,5 @@
 # Creator:  Jordan Hubbard
-# $Id: LEGAL,v 1.108 1998/06/04 02:40:27 mph Exp $
+# $Id: LEGAL,v 1.109 1998/06/12 06:26:13 dburr Exp $
 
 Some of the ports in this directory have restrictive copyrights prohibiting
 their actual redistribution on mass media.  When creating compilations
@@ -113,3 +113,4 @@ xinvaders-*		ports/games/xinvaders	Don't sell for profit
 xmdiary-*		ports/misc/xmdiary	Don't sell for profit
 xothello-*		ports/games/xothello	Possible trademark infringement
 xrisk-2.13.tar.Z	ports/games/xrisk	Copyright/trademark violation?
+xteddy-*		ports/games/xteddy	Don't sell for profit
