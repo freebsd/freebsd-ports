@@ -20,8 +20,6 @@ etc/gconf/gconf.xml.defaults/apps/galeon/Rendering/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/galeon/Rendering/FontsColors/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/galeon/Rendering/Language/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/galeon/State/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/galeon/State/bookmarks_editor/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/galeon/State/page_info/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/galeon/UI/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/galeon/UI/Mouse/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/galeon/UI/Tabs/%gconf.xml
@@ -46,8 +44,6 @@ etc/gconf/gconf.xml.defaults/schemas/apps/galeon/Rendering/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/galeon/Rendering/FontsColors/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/galeon/Rendering/Language/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/galeon/State/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/galeon/State/bookmarks_editor/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/galeon/State/page_info/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/galeon/UI/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/galeon/UI/Mouse/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/galeon/UI/Tabs/%gconf.xml
@@ -65,13 +61,15 @@ share/gnome/galeon/Secure.png
 share/gnome/galeon/about_logo.png
 share/gnome/galeon/autoscroll.xpm
 share/gnome/galeon/blocked.png
+share/gnome/galeon/bookmarks-editor-small.glade
 share/gnome/galeon/bookmarks-editor.glade
+share/gnome/galeon/bookmarks-find.glade
 share/gnome/galeon/bookmarks.glade
 share/gnome/galeon/bug.png
 share/gnome/galeon/debian.png
 share/gnome/galeon/default-bookmarks.xbel
+share/gnome/galeon/default-prefs.js
 share/gnome/galeon/fetch_favicon.xpm
-share/gnome/galeon/fonts.png
 share/gnome/galeon/freshmeat.png
 share/gnome/galeon/galeon-bookmark-alias-mark.png
 share/gnome/galeon/galeon-bookmark.png
@@ -81,12 +79,20 @@ share/gnome/galeon/galeon-folder-open.png
 share/gnome/galeon/galeon-folder.png
 share/gnome/galeon/galeon-fullscreen.png
 share/gnome/galeon/galeon-history.png
+share/gnome/galeon/galeon-prefs-fonts.png
+share/gnome/galeon/galeon-prefs-general.png
+share/gnome/galeon/galeon-prefs-language.png
+share/gnome/galeon/galeon-prefs-mouse.png
+share/gnome/galeon/galeon-prefs-network.png
+share/gnome/galeon/galeon-prefs-privacy.png
+share/gnome/galeon/galeon-prefs-tabs.png
+share/gnome/galeon/galeon-prefs-web-content.png
 share/gnome/galeon/galeon-send-link.png
 share/gnome/galeon/galeon-separator.png
+share/gnome/galeon/galeon-tab-loading.gif
 share/gnome/galeon/galeon-viewsource.png
 share/gnome/galeon/galeon.glade
 share/gnome/galeon/galeon.png
-share/gnome/galeon/general.png
 share/gnome/galeon/gnu.png
 share/gnome/galeon/google.png
 share/gnome/galeon/google_groups.png
@@ -94,7 +100,6 @@ share/gnome/galeon/google_images.png
 share/gnome/galeon/imdb_movies.png
 share/gnome/galeon/logo.png
 share/gnome/galeon/myportal.css
-share/gnome/galeon/network.png
 share/gnome/galeon/new_alias.xpm
 share/gnome/galeon/new_alias_small.xpm
 share/gnome/galeon/new_folder.xpm
@@ -167,9 +172,6 @@ share/gnome/galeon/spinners/pipeon/013.png
 share/gnome/galeon/spinners/pipeon/014.png
 share/gnome/galeon/spinners/pipeon/rest.png
 share/gnome/galeon/stocks.png
-share/gnome/galeon/stop.png
-share/gnome/galeon/tabs.png
-share/gnome/galeon/toc.css
 share/gnome/galeon/toolbar-editor.glade
 share/gnome/gnome-2.0/ui/galeon-bookmarks-editor-ui.xml
 share/gnome/gnome-2.0/ui/galeon-ui.xml
@@ -207,6 +209,7 @@ share/locale/cs/LC_MESSAGES/galeon-2.0.mo
 share/locale/da/LC_MESSAGES/galeon-2.0.mo
 share/locale/de/LC_MESSAGES/galeon-2.0.mo
 share/locale/el/LC_MESSAGES/galeon-2.0.mo
+share/locale/en_GB/LC_MESSAGES/galeon-2.0.mo
 share/locale/es/LC_MESSAGES/galeon-2.0.mo
 share/locale/et/LC_MESSAGES/galeon-2.0.mo
 share/locale/eu/LC_MESSAGES/galeon-2.0.mo
@@ -221,7 +224,9 @@ share/locale/ja/LC_MESSAGES/galeon-2.0.mo
 share/locale/ko/LC_MESSAGES/galeon-2.0.mo
 share/locale/lt/LC_MESSAGES/galeon-2.0.mo
 share/locale/lv/LC_MESSAGES/galeon-2.0.mo
+share/locale/mk/LC_MESSAGES/galeon-2.0.mo
 share/locale/ml/LC_MESSAGES/galeon-2.0.mo
+share/locale/mn/LC_MESSAGES/galeon-2.0.mo
 share/locale/ms/LC_MESSAGES/galeon-2.0.mo
 share/locale/nl/LC_MESSAGES/galeon-2.0.mo
 share/locale/nn/LC_MESSAGES/galeon-2.0.mo
@@ -238,8 +243,8 @@ share/locale/sr@Latn/LC_MESSAGES/galeon-2.0.mo
 share/locale/sv/LC_MESSAGES/galeon-2.0.mo
 share/locale/ta/LC_MESSAGES/galeon-2.0.mo
 share/locale/tr/LC_MESSAGES/galeon-2.0.mo
-share/locale/vi/LC_MESSAGES/galeon-2.0.mo
 share/locale/uk/LC_MESSAGES/galeon-2.0.mo
+share/locale/vi/LC_MESSAGES/galeon-2.0.mo
 share/locale/wa/LC_MESSAGES/galeon-2.0.mo
 share/locale/zh_CN/LC_MESSAGES/galeon-2.0.mo
 share/locale/zh_TW/LC_MESSAGES/galeon-2.0.mo
@@ -260,8 +265,6 @@ share/locale/zh_TW/LC_MESSAGES/galeon-2.0.mo
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/galeon/UI/Tabs
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/galeon/UI/Mouse
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/galeon/UI
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/galeon/State/page_info
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/galeon/State/bookmarks_editor
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/galeon/State
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/galeon/Rendering/Language
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/galeon/Rendering/FontsColors
@@ -286,8 +289,6 @@ share/locale/zh_TW/LC_MESSAGES/galeon-2.0.mo
 @dirrm etc/gconf/gconf.xml.defaults/apps/galeon/UI/Tabs
 @dirrm etc/gconf/gconf.xml.defaults/apps/galeon/UI/Mouse
 @dirrm etc/gconf/gconf.xml.defaults/apps/galeon/UI
-@dirrm etc/gconf/gconf.xml.defaults/apps/galeon/State/page_info
-@dirrm etc/gconf/gconf.xml.defaults/apps/galeon/State/bookmarks_editor
 @dirrm etc/gconf/gconf.xml.defaults/apps/galeon/State
 @dirrm etc/gconf/gconf.xml.defaults/apps/galeon/Rendering/Language
 @dirrm etc/gconf/gconf.xml.defaults/apps/galeon/Rendering/FontsColors
