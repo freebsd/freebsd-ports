@@ -5,11 +5,5 @@ bin/webjob
 cgi/cgi-client/nph-webjob.cgi
 doc/webjob.html
 etc/webjob.cfg.sample
-@unexec rmdir %D/bin 2> /dev/null || true
 @unexec rmdir %D/cgi/cgi-client 2> /dev/null || true
 @unexec rmdir %D/cgi 2> /dev/null || true
-@unexec rmdir %D/doc 2> /dev/null || true
-@unexec rmdir %D/etc 2> /dev/null || true
-@unexec rmdir %D/man/man1 2> /dev/null || true
-@unexec rmdir %D/man 2> /dev/null || true
-@unexec rmdir %D 2> /dev/null || true
