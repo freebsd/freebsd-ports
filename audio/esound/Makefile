@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	esound
-PORTVERSION=	0.2.26
-PORTREVISION=	2
+PORTVERSION=	0.2.27
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/esound
@@ -24,5 +23,8 @@ USE_LIBTOOL=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -lgnugetopt"
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
+
+MAN1=	esd-config.1 esd.1 esdcat.1 esdctl.1 esddsp.1 esdfilt.1 esdloop.1 \
+	esdmon.1 esdplay.1 esdrec.1 esdsample.1
 
 .include <bsd.port.mk>
