@@ -3,6 +3,6 @@ similar to xcal, but every day box is large enough to show appointments in
 small print. By pressing on a day box, the appointments for that day can be
 listed and edited.
 
-This port requires Motif to build.
+This port requires Motif or equivalent to build.
 
-Plan's homepage is at http://www.IN-Berlin.DE/User/bitrot/plan.html
+WWW: http://www.IN-Berlin.DE/User/bitrot/plan.html
