@@ -35,11 +35,16 @@ CONFIGURE_ARGS=	--without-pam --with-gl --with-gle --with-xpm --with-xml \
 
 .include <bsd.port.pre.mk>
 
+.if defined(XS_WITH_ALL_FORTUNES)
+CONFIGURE_ARGS+=	--with-fortune="/usr/games/fortune -sa"
+.endif
+
 .if defined(HAVE_GNOME) && defined(WITH_GNOME)
 USE_GNOME=	yes
 CONFIGURE_ARGS+=	--with-gnome
 .else
 CONFIGURE_ARGS+=	--without-gnome
+.undef HAVE_GNOME
 .endif
 
 CONFIGURE_ENV=	X_CFLAGS=-I${LOCALBASE}/include/gnome-xml
@@ -73,7 +78,7 @@ MAN1=	anemone.1 ant.1 apollonian.1 atlantis.1 attraction.1 blaster.1 \
 
 pre-fetch:
 .if !defined(BATCH) && !defined(PACKAGE_BUILDING)
-	${SH} ${MASTERDIR}/pkg-libwarning
+	@(/usr/bin/dialog --textbox ${MASTERDIR}/pkg-libwarning 15 70 || 1)
 .endif
 
 post-patch:
@@ -85,5 +90,11 @@ post-patch:
 	@ ${SED} -e 's/malloc.h/stdlib.h/g' ${WRKSRC}/hacks/glx/${file}.Dist > \
 		${WRKSRC}/hacks/glx/${file}
 .endfor
+
+post-install:
+	@(if test -x ${X11BASE}/bin/xscreensaver-hacks/webcollage-helper; then \
+		${ECHO} "bin/xscreensaver-hacks/webcollage-helper" | \
+			${CAT} - ${TMPPLIST} > ${TMPPLIST}.cat && \
+			${MV} ${TMPPLIST}.cat ${TMPPLIST}; fi)
 
 .include <bsd.port.post.mk>
