@@ -1,5 +1,5 @@
---- gtk-config.in.orig	Fri Aug 14 18:21:57 1998
-+++ gtk-config.in	Fri Aug 14 18:20:36 1998
+--- gtk-config.in.orig	Sat Sep 19 14:38:07 1998
++++ gtk-config.in	Tue Sep 22 22:47:02 1998
 @@ -8,7 +8,7 @@
  exec_prefix_set=no
  
@@ -13,13 +13,13 @@
            fi
          fi
        done
--      echo $libdirs @x_ldflags@ -lgtk-@LT_RELEASE@ -lgdk-@LT_RELEASE@ $my_glib_libs @x_libs@ -lm
+-      echo $libdirs @x_ldflags@ -lgtk -lgdk $my_glib_libs @x_libs@ -lm
 +      echo $libdirs @x_ldflags@ -lgtk11 -lgdk11 $my_glib_libs @x_libs@ -lm
        ;;
      *)
        echo "${usage}" 1>&2
---- gtk.m4.orig	Thu Jun 11 07:52:13 1998
-+++ gtk.m4	Fri Aug 14 18:14:55 1998
+--- gtk.m4.orig	Tue Sep 15 09:55:52 1998
++++ gtk.m4	Tue Sep 22 22:46:00 1998
 @@ -6,7 +6,7 @@
  dnl
  AC_DEFUN(AM_PATH_GTK,
@@ -79,8 +79,8 @@
 +      printf("*** to point to the correct copy of gtk11-config, and remove the file config.cache\n");
        printf("*** before re-running configure\n");
      } 
-   else if ((gtk_major_version != GTK_MAJOR_VERSION) ||
-@@ -115,10 +115,10 @@
+ #if defined (GTK_MAJOR_VERSION) && defined (GTK_MINOR_VERSION) && defined (GTK_MICRO_VERSION)
+@@ -117,10 +117,10 @@
          printf("*** GTK+ is always available from ftp://ftp.gtk.org.\n");
          printf("***\n");
          printf("*** If you have already installed a sufficiently new version, this error\n");
@@ -93,7 +93,7 @@
          printf("*** modify your LD_LIBRARY_PATH enviroment variable, or edit /etc/ld.so.conf\n");
          printf("*** so that the correct libraries are found at run-time))\n");
        }
-@@ -136,10 +136,10 @@
+@@ -138,10 +138,10 @@
    else
       AC_MSG_RESULT(no)
       if test "$GTK_CONFIG" = "no" ; then
@@ -106,7 +106,7 @@
       else
         if test -f conf.gtktest ; then
          :
-@@ -168,7 +168,7 @@
+@@ -170,7 +170,7 @@
          [ echo "*** The test program failed to compile or link. See the file config.log for the"
            echo "*** exact error that occured. This usually means GTK was incorrectly installed"
            echo "*** or that you have moved GTK since it was installed. In the latter case, you"
