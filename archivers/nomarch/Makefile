@@ -12,7 +12,7 @@ CATEGORIES=	archivers
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	utils/compress
 
-MAINTAINER=	erwin@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extracts files from the old `.arc' archive format
 
 LIB_DEPENDS=	gnugetopt:${PORTSDIR}/devel/libgnugetopt
