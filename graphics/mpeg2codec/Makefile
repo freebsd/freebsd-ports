@@ -1,15 +1,15 @@
 # New ports collection makefile for:	mpeg2codec
-# Version required:	1.1a
-# Date created:		June 21, 1996
+# Version required:	1.2
+# Date created:		November 25, 1996
 # Whom:			"Philippe Charnier" <charnier@lirmm.fr>
 #
-# $Id: Makefile,v 1.1.1.1 1996/07/10 05:32:53 asami Exp $
+# $Id: Makefile,v 1.2 1996/11/18 11:28:25 asami Exp $
 #
 
-DISTNAME=	mpeg2codec-1.1a
+DISTNAME=	mpeg2codec-1.2
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://ftp.netcom.com/pub/cf/cfogg/mpeg2/
-DISTFILES=	mpeg2codec_v1.1a.tar.gz
+MASTER_SITES=	ftp://ftp.mpeg.org/pub/mpeg/mssg/
+DISTFILES=	mpeg2vidcodec_v12.tar.gz
 
 MAINTAINER=	charnier@lirmm.fr
 
@@ -21,5 +21,8 @@ do-install:
 	${INSTALL} ${COPY} ${STRIP} -o ${BINOWN} -g ${BINGRP} -m ${BINMODE} \
 		${WRKSRC}/src/mpeg2${i}/mpeg2${i}ode ${PREFIX}/bin
 .endfor
+	${MKDIR} -p ${PREFIX}/share/mpeg2
+	${CP} ${WRKSRC}/doc/mpeg2enc.doc ${PREFIX}/share/mpeg2
+	${CP} ${WRKSRC}/par/* ${PREFIX}/share/mpeg2
 
 .include <bsd.port.mk>
