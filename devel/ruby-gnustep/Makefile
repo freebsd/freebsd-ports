@@ -34,6 +34,8 @@ USE_GMAKE=	yes
 GNUSTEP_PREFIX=		${LOCALBASE}/GNUstep
 GNUSTEP_LOCAL_ROOT=	${GNUSTEP_PREFIX}/Local
 GNUSTEP_SYSTEM_ROOT=	${GNUSTEP_PREFIX}/System
+GNUSTEP_NETWORK_ROOT=	${GNUSTEP_PREFIX}/Network
+GNUSTEP_USER_ROOT=	${GNUSTEP_PREFIX}/Local/Users
 GNUSTEP_MAKEFILES=	${GNUSTEP_SYSTEM_ROOT}/Makefiles
 
 SYSLIBDIR=	${GNUSTEP_PREFIX}/System/Libraries/${GNU_ARCH}/${OPSYS:L}
@@ -51,6 +53,8 @@ GNU_ARCH=	${MACHINE_ARCH}
 MAKEFILE=	GNUmakefile
 MAKE_ENV=	GNUSTEP_LOCAL_ROOT=${GNUSTEP_LOCAL_ROOT} \
 		GNUSTEP_SYSTEM_ROOT=${GNUSTEP_SYSTEM_ROOT} \
+		GNUSTEP_NETWORK_ROOT=${GNUSTEP_NETWORK_ROOT} \
+		GNUSTEP_USER_ROOT=${GNUSTEP_USER_ROOT} \
 		GNUSTEP_MAKEFILES=${GNUSTEP_MAKEFILES} \
 		PATH=${PATH}:${GNUSTEP_SYSTEM_ROOT}/Tools
 PLIST_SUB+=	GNU_ARCH=${GNU_ARCH} OPSYS=${OPSYS:L}
@@ -60,7 +64,10 @@ post-extract:
 	find ${WRKSRC}/ -type f -name '.cvsignore' -delete
 
 post-patch:
-	${RUBY} -i~ -pe 'gsub(/-lpthread/, "-pthread")' ${WRKSRC}/Source/${MAKEFILE}
+	${RUBY} -i~ -p \
+		-e 'gsub(/-lpthread/, "-pthread");' \
+		-e 'gsub(/-lgmodel/, "");' \
+		${WRKSRC}/Source/${MAKEFILE}
 	find ${WRKSRC}/ -type f | xargs ${RUBY} -i -pe 'gsub(/ ruby -/, " ${RUBY} -")'
 
 post-install:
