@@ -6,55 +6,38 @@
 #
 
 PORTNAME=	elmo
-PORTVERSION=	0.8.3
-PORTREVISION=	3
+PORTVERSION=	1.2.0
 CATEGORIES=	mail
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:sf/} \
-		${MASTER_SITE_SAVANNAH:S/$/:sav/}
-MASTER_SITE_SUBDIR=	${PORTNAME}/:sf \
-			${PORTNAME}/unstable.pkg/${PORTVERSION}/:sav
-DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:sf,sav
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	trevor@FreeBSD.org
+MAINTAINER=	adamw@FreeBSD.org
 COMMENT=	Receive, filter, read, compose and send mail at the text console
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV+=	CFLAGS="${PTHREAD_CFLAGS}" LDFLAGS="${PTHREAD_LIBS}"
-INFO=		elmo
-MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}" \
-		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}"
-MAN1=		elmo.1 elmoconf.pl.1
-PLIST=		${WRKDIR}/pkg-plist
 USE_GETTEXT=	yes
 USE_ICONV=	yes
-USE_PERL5=	yes
+USE_OPENSSL=	yes
+USE_PERL5_RUN=	yes
+USE_REINPLACE=	yes
+CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
-pre-extract:
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_CMD} sleeping ten seconds--press control-C to cancel build
-	@${ECHO_CMD} 
-	@sleep 10
+MAN1=		elmo.1 elmoconf.pl.1
 
-pre-install:
-	${RM} -f ${PLIST}
-.for ii in elmo elmoconf.pl
-	${ECHO_CMD} bin/${ii} >> ${PLIST}
-.endfor
-.for ii in de pl
-	${ECHO_CMD} share/locale/${ii}/LC_MESSAGES/elmo.mo >> ${PLIST}
-.endfor
+.include <bsd.port.pre.mk>
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/elmo ${PREFIX}/bin/
-	${INSTALL_SCRIPT} ${WRKSRC}/src/elmoconf.pl ${PREFIX}/bin/
-.for ii in ${MAN1}
-	${INSTALL_MAN} ${WRKSRC}/doc/${ii} ${MANPREFIX}/man/man1
-.endfor
-.for ii in de pl
-	${INSTALL_DATA} ${WRKSRC}/po/${ii}.gmo \
-		${PREFIX}/share/locale/${ii}/LC_MESSAGES/elmo.mo
-.endfor
-	${INSTALL_DATA} ${WRKSRC}/doc/elmo.info ${PREFIX}/info/
-	- install-info --info-dir=${PREFIX}/info ${PREFIX}/info/elmo.info
+.if exists(${LOCALBASE}/lib/libgpgme.so) || defined(WITH_GPGME)
+LIB_DEPENDS+=	gpgme:${PORTSDIR}/security/gpgme
+.else
+pre-everything::
+	@${ECHO_CMD}
+	@${ECHO_CMD} "Define WITH_GPGME=yes to build with gpgme support."
+	@${ECHO_CMD}
+.endif
 
-.include <bsd.port.mk>
+post-patch:
+	@${REINPLACE_CMD} -e "s|/usr/bin/env perl|${PERL}|" \
+		${WRKSRC}/src/elmoconf.pl
+
+.include <bsd.port.post.mk>
