@@ -95,10 +95,11 @@ post-install:
 	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		${FILESDIR}/gkrellmd.sh > ${PREFIX}/etc/rc.d/gkrellmd.sh
 	@${CHMOD} ${BINMODE} ${PREFIX}/etc/rc.d/gkrellmd.sh
+	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/server/gkrellmd.conf \
-		${PREFIX}/etc/gkrellmd.conf.sample
+		${EXAMPLESDIR}/gkrellmd.conf
 	if [ ! -f ${PREFIX}/etc/gkrellmd.conf ]; then \
-		${CP} -p ${PREFIX}/etc/gkrellmd.conf.sample \
+		${CP} -p ${EXAMPLESDIR}/gkrellmd.conf \
 			${PREFIX}/etc/gkrellmd.conf; \
 	fi
 .if !defined(NOPORTDOCS)
