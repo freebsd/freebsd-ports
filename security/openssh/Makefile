@@ -30,7 +30,16 @@ CRYPTOLIBS+=	-lRSAglue -lrsaref
 # Here, MANDIR is concetenated to DESTDIR which all forms the man install dir...
 MAKE_ENV=	DESTDIR=${PREFIX} MANDIR=/man/man CRYPTOLIBS="${CRYPTOLIBS}"
 .if !exists(/usr/include/tcpd.h)
-MAKE_ENV+=	TCP_WRAPPERS=NO
+MAKE_ENV+=	TCP_WRAPPERS=no
+.endif
+.if defined(AFS) && ${AFS} == YES
+MAKE_ENV+=	AFS=yes
+.endif
+.if defined(KERBEROS) && ${KERBEROS} == YES
+MAKE_ENV+=	KERBEROS=yes
+.endif
+.if defined(SKEY) && ${SKEY} == YES
+MAKE_ENV+=	SKEY=yes
 .endif
 STAMPFILE=	${DISTDIR}/${PKGNAME}/.stamp
 WRKSRC=		${WRKDIR}/ssh
