@@ -4,4 +4,4 @@ dbf2mysql: converts a .dbf to a MySQL table
 mysql2dbf: converts a MySQL table to a .dbf file
 
 - Chris D. Faulhaber
-jedgar@fxp.org
+ <jedgar@FreeBSD.org>
