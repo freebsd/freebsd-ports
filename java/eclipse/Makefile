@@ -18,7 +18,7 @@ MAINTAINER=	java@FreeBSD.ORG
 COMMENT=	An open extensible IDE for anything and nothing in particular
 
 LIB_DEPENDS=	gtk-x11-2.0:${PORTSDIR}/x11-toolkits/gtk20
-BUILD_DEPENDS=	ant:${PORTSDIR}/devel/jakarta-ant \
+BUILD_DEPENDS=	ant:${PORTSDIR}/devel/apache-ant \
 		pkg-config:${PORTSDIR}/devel/pkgconfig
 
 ONLY_FOR_ARCHS=	i386
