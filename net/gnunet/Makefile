@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gnunet
-PORTVERSION=	0.6.3a
+PORTVERSION=	0.6.4
 CATEGORIES=	net
 MASTER_SITES=	http://www.ovmj.org/GNUnet/download/ \
 		${MASTER_SITE_GNU}
@@ -17,12 +17,14 @@ DISTNAME=	GNUnet-${PORTVERSION}
 MAINTAINER=	krion@FreeBSD.org
 COMMENT=	An anonymous, distributed, reputation-based network
 
+LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4
+
 USE_LIBLTDL=	yes
 USE_BZIP2=	yes
 USE_GETOPT_LONG=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnometarget gtk12 lthack
+USE_GNOME=	gnometarget gtk20 lthack
 USE_INC_LIBTOOL_VER=13
 USE_OPENSSL=	yes
 USE_REINPLACE=	yes
