@@ -6209,6 +6209,7 @@ nagios-plugins	ports/net-mgmt/nagios-plugins
 nagios-silfreed-plugins	ports/net-mgmt/nagios-silfreed-plugins
 nagios-snmp-plugins	ports/net-mgmt/nagios-snmp-plugins
 nagios-statd	ports/sysutils/nagios-statd
+nagios12	ports/net-mgmt/nagios12
 nagiostat	ports/net-mgmt/nagiostat
 nail		ports/mail/nail
 naim		ports/net/naim
