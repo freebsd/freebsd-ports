@@ -21,7 +21,8 @@ USE_REINPLACE=	yes
 MAN6=		moria.6
 WRKSRC=         ${WRKDIR}/umoria
 ALL_TARGET=	moria
-MAKE_ENV+=	DOCSDIR="${DOCSDIR}" MKDIR="${MKDIR}"
+MAKE_ENV+=	DOCSDIR="${DOCSDIR}" MKDIR="${MKDIR}" CHOWN="${CHOWN}" \
+	CHGRP="${CHGRP}" CHMOD="${CHMOD}" TOUCH="${TOUCH}"
 
 do-configure:
 	for i in ${WRKSRC}/source/config.h ${WRKSRC}/unix/Makefile; do \
@@ -36,7 +37,6 @@ post-install:
 	done
 .endif
 .if !defined(NOPORTDOCS)
-#	cd ${WRKSRC}/doc && $(MAKE) MKDIR="${MKDIR}" DOCSDIR="${DOCSDIR}" INSTALL_DATA="${INSTALL_DATA}" install
 	cd ${WRKSRC}/doc && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} install
 .endif
 
