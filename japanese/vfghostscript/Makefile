@@ -36,6 +36,8 @@ MAN1=		gs.1
 
 DOC_DIR=${PREFIX}/lib/ghostscript/doc 
 
+NO_LATEST_LINK=	yes
+
 # Note: unix-gcc.mak.patch can't be put in patches/ because it should
 # be applied after gs261j.diff, which should, in turn, be applied
 # after the distributed patches
