@@ -26,6 +26,12 @@ case $2 in
 	[ -f ${PREFIX:-/usr/local}/etc/squid/squid.conf ] || \
 		cp -fp	${PREFIX:-/usr/local}/etc/squid/squid.conf.default \
 			${PREFIX:-/usr/local}/etc/squid/squid.conf
+	[ -f ${PREFIX:-/usr/local}/etc/squid/mime.conf ] || \
+		cp -fp	${PREFIX:-/usr/local}/etc/squid/mime.conf.default \
+			${PREFIX:-/usr/local}/etc/squid/mime.conf
+	[ -f ${PREFIX:-/usr/local}/etc/squid/mib.txt ] || \
+		cp -fp	${PREFIX:-/usr/local}/etc/squid/mib.txt.default \
+			${PREFIX:-/usr/local}/etc/squid/mib.txt
 	${EDITOR:-vi} ${PREFIX:-/usr/local}/etc/squid/squid.conf
 	;;
     *)
