@@ -1,23 +1,60 @@
-*** Imakefile.orig	Tue Oct 26 22:43:27 1999
---- Imakefile	Wed Oct 27 04:11:29 1999
+*** Imakefile.orig	Thu Nov 25 07:05:35 1999
+--- Imakefile	Tue Dec 14 04:46:02 1999
 ***************
-*** 31,39 ****
+*** 24,40 ****
+  #CCOPTIONS = -O2
+  #
+  # for debugging purposes uncomment the following line:
+! CDEBUGFLAGS = -g
+! STD_INCLUDES = -I. -I/usr/X11R6/include/X11
+  
+  #------------------------------------------------------------------------
+  # Installation directories:
   # Change the following as desired to suit your environment:
   #------------------------------------------------------------------------
   #
 ! PREFIX = /usr/local
-  # XCIRCUIT_LIB_DIR = $(PREFIX)/src/xcircuit-2.0a11/psfiles
+  # XCIRCUIT_LIB_DIR = $(PREFIX)/src/xcircuit-2.0b1/psfiles
 ! XCIRCUIT_LIB_DIR = $(PREFIX)/lib/xcircuit-2.0
   XCIRCUIT_BIN_DIR = $(PREFIX)/bin
   XCIRCUIT_MAN_DIR = $(PREFIX)/man/man1
   
---- 31,39 ----
+--- 24,40 ----
+  #CCOPTIONS = -O2
+  #
+  # for debugging purposes uncomment the following line:
+! #CDEBUGFLAGS = -g
+! #STD_INCLUDES = -I. -I/usr/X11R6/include/X11
+  
+  #------------------------------------------------------------------------
+  # Installation directories:
   # Change the following as desired to suit your environment:
   #------------------------------------------------------------------------
   #
 ! PREFIX ?= /usr/local
-  # XCIRCUIT_LIB_DIR = $(PREFIX)/src/xcircuit-2.0a11/psfiles
+  # XCIRCUIT_LIB_DIR = $(PREFIX)/src/xcircuit-2.0b1/psfiles
 ! XCIRCUIT_LIB_DIR = $(PREFIX)/lib/X11/xcircuit
   XCIRCUIT_BIN_DIR = $(PREFIX)/bin
   XCIRCUIT_MAN_DIR = $(PREFIX)/man/man1
   
+***************
+*** 87,95 ****
+  # DEC Alpha, Solaris and other SVR4 systems need the following,
+  # or if you have compilation errors about "dp->d_name" being
+  # undefined:
+! #DIRENT = -DSVR4_DIRENT
+  # Otherwise,
+! DIRENT =
+  
+  # My DECstation (Ultrix) has something funny going on in XLib. . . if there
+  # is a compile-time error "ld: Undefined: XUniqueContext *** Error code 1"
+--- 87,95 ----
+  # DEC Alpha, Solaris and other SVR4 systems need the following,
+  # or if you have compilation errors about "dp->d_name" being
+  # undefined:
+! DIRENT = -DSVR4_DIRENT
+  # Otherwise,
+! #DIRENT =
+  
+  # My DECstation (Ultrix) has something funny going on in XLib. . . if there
+  # is a compile-time error "ld: Undefined: XUniqueContext *** Error code 1"
