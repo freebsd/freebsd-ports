@@ -17,3 +17,5 @@ buffer cache is 16MB and the Bonnie test file is 32MB in size, then the
 seek time will come out as half its real value. The seek time includes 
 rotational delay, and will thus always come out higher than specified for 
 a drive.
+
+WWW: http://www.textuality.com/bonnie/
