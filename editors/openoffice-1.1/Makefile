@@ -74,6 +74,12 @@ RELEASE_NR=		${PORTVERSION}
 INSTALLATION_BASEDIR=	OpenOffice.org${RELEASE_NR}
 DIST_SUBDIR=		openoffice1.1
 SIMPLEOSVER!=		${UNAME} -r | ${SED} -e 's/\.//g' | ${SED} -e 's/-.*//'
+.if defined(LANG_PKGNAME) 	 
+PKGNAMEPREFIX=          ${LANG_PKGNAME}- 	 
+.endif 	 
+.if defined(LANG_SUFFIX) 	 
+PKGNAMESUFFIX?=         -${LANG_SUFFIX} 	 
+.endif
 BUILD_DEPENDS+=	gcc32:${PORTSDIR}/lang/gcc32
 
 # FIXME
