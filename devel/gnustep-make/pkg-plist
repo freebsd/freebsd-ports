@@ -1,7 +1,53 @@
+System/Makefiles/Instance/Shared/bundle.make
+System/Makefiles/Instance/Shared/headers.make
+System/Makefiles/Instance/Shared/java.make
+System/Makefiles/Instance/application.make
+System/Makefiles/Instance/bundle.make
+System/Makefiles/Instance/clibrary.make
+System/Makefiles/Instance/ctool.make
+System/Makefiles/Instance/documentation.make
+System/Makefiles/Instance/framework.make
+System/Makefiles/Instance/gswapp.make
+System/Makefiles/Instance/gswbundle.make
+System/Makefiles/Instance/java-tool.make
+System/Makefiles/Instance/java.make
+System/Makefiles/Instance/library.make
+System/Makefiles/Instance/objc.make
+System/Makefiles/Instance/palette.make
+System/Makefiles/Instance/resource-set.make
+System/Makefiles/Instance/rules.make
+System/Makefiles/Instance/service.make
+System/Makefiles/Instance/subproject.make
+System/Makefiles/Instance/test-application.make
+System/Makefiles/Instance/test-library.make
+System/Makefiles/Instance/test-tool.make
+System/Makefiles/Instance/tool.make
+System/Makefiles/Master/aggregate.make
+System/Makefiles/Master/application.make
+System/Makefiles/Master/bundle.make
+System/Makefiles/Master/clibrary.make
+System/Makefiles/Master/ctool.make
+System/Makefiles/Master/documentation.make
+System/Makefiles/Master/framework.make
+System/Makefiles/Master/gswapp.make
+System/Makefiles/Master/gswbundle.make
+System/Makefiles/Master/java-tool.make
+System/Makefiles/Master/java.make
+System/Makefiles/Master/library.make
+System/Makefiles/Master/objc.make
+System/Makefiles/Master/palette.make
+System/Makefiles/Master/resource-set.make
+System/Makefiles/Master/rpm.make
+System/Makefiles/Master/rules.make
+System/Makefiles/Master/service.make
+System/Makefiles/Master/source-distribution.make
+System/Makefiles/Master/subproject.make
+System/Makefiles/Master/test-application.make
+System/Makefiles/Master/test-library.make
+System/Makefiles/Master/test-tool.make
+System/Makefiles/Master/tool.make
 System/Makefiles/GNUstep.csh
 System/Makefiles/GNUstep.sh
-System/Makefiles/MediaBook.func
-System/Makefiles/MediaBook.sh
 System/Makefiles/aggregate.make
 System/Makefiles/application.make
 System/Makefiles/bundle.make
@@ -14,14 +60,15 @@ System/Makefiles/config.guess
 System/Makefiles/config.sub
 System/Makefiles/cpu.sh
 System/Makefiles/ctool.make
-System/Makefiles/cygpath.sh
 System/Makefiles/documentation.make
 System/Makefiles/executable.template
+System/Makefiles/fixpath.sh
 System/Makefiles/framework.make
 System/Makefiles/gswapp.make
 System/Makefiles/gswbundle.make
 System/Makefiles/install-sh
 System/Makefiles/%%GNU_ARCH%%/%%OPSYS%%/config.make
+System/Makefiles/%%GNU_ARCH%%/%%OPSYS%%/user_home
 System/Makefiles/%%GNU_ARCH%%/%%OPSYS%%/which_lib
 System/Makefiles/java-executable.template
 System/Makefiles/java-tool.make
@@ -36,10 +83,9 @@ System/Makefiles/names.make
 System/Makefiles/objc.make
 System/Makefiles/os.sh
 System/Makefiles/palette.make
-System/Makefiles/rpm.make
+System/Makefiles/resource-set.make
 System/Makefiles/rules.make
 System/Makefiles/service.make
-System/Makefiles/source-distribution.make
 System/Makefiles/spec-debug-alone-rules.template
 System/Makefiles/spec-debug-rules.template
 System/Makefiles/spec-rules.template
@@ -55,11 +101,11 @@ System/Tools/debugapp
 System/Tools/openapp
 System/Tools/opentool
 System/share/config.site
-@exec mkdir -p %D/Local/Apps
+@exec mkdir -p %D/Local/Applications
 @exec mkdir -p %D/Local/Developer/Palettes
 @exec mkdir -p %D/Local/Documentation/Developer
 @exec mkdir -p %D/Local/Documentation/User
-@exec mkdir -p %D/Local/Headers/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+@exec mkdir -p %D/Local/Headers/%%GNU_ARCH%%/%%OPSYS%%
 @exec mkdir -p %D/Local/Libraries/Java
 @exec mkdir -p %D/Local/Libraries/Resources
 @exec mkdir -p %D/Local/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
@@ -72,7 +118,7 @@ System/share/config.site
 @exec mkdir -p %D/Local/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
 @exec mkdir -p %D/Local/Users/Administrator
 @exec mkdir -p %D/Network
-@exec mkdir -p %D/System/Apps
+@exec mkdir -p %D/System/Applications
 @exec mkdir -p %D/System/Developer/Palettes
 @exec mkdir -p %D/System/Documentation/Developer
 @exec mkdir -p %D/System/Documentation/User
@@ -98,6 +144,9 @@ System/share/config.site
 @dirrm System/Tools
 @dirrm System/Makefiles/%%GNU_ARCH%%/%%OPSYS%%
 @dirrm System/Makefiles/%%GNU_ARCH%%
+@dirrm System/Makefiles/Master
+@dirrm System/Makefiles/Instance/Shared
+@dirrm System/Makefiles/Instance
 @dirrm System/Makefiles/Additional
 @dirrm System/Makefiles
 @dirrm System/Library/Services
@@ -122,7 +171,7 @@ System/share/config.site
 @dirrm System/Documentation
 @dirrm System/Developer/Palettes
 @dirrm System/Developer
-@dirrm System/Apps
+@dirrm System/Applications
 @dirrm System
 @dirrm Network
 @dirrm Local/Users/Administrator
@@ -152,5 +201,5 @@ System/share/config.site
 @dirrm Local/Documentation
 @dirrm Local/Developer/Palettes
 @dirrm Local/Developer
-@dirrm Local/Apps
+@dirrm Local/Applications
 @dirrm Local
