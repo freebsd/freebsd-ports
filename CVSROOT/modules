@@ -1545,7 +1545,6 @@ examples	src/share/examples
 exctags		ports/devel/ctags
 exiftags	ports/graphics/exiftags
 exim		ports/mail/exim
-exim-devel	ports/mail/exim-devel
 exim-doc-html	ports/mail/exim-doc-html
 exim-doc-pdf	ports/mail/exim-doc-pdf
 exim-doc-postscript	ports/mail/exim-doc-postscript
@@ -1553,6 +1552,7 @@ exim-ldap	ports/mail/exim-ldap
 exim-ldap2	ports/mail/exim-ldap2
 exim-monitor	ports/mail/exim-monitor
 exim-mysql	ports/mail/exim-mysql
+exim-old	ports/mail/exim-old
 exim-postgresql	ports/mail/exim-postgresql
 expand		src/usr.bin/expand
 expat		ports/textproc/expat
