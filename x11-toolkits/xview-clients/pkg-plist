@@ -4,13 +4,10 @@ bin/cmdtool
 bin/olwm
 bin/olwmslave
 bin/shelltool
-lib/help
 lib/help/clock.info
 lib/help/olwm.info
-lib/help/textsw.info
-lib/help/ttysw.info
 lib/help/workspace.info
-lib/help/xview.info
+lib/openwin-menu
 man/man1/clock.1.gz
 man/man1/cmdtool.1.gz
 man/man1/olwm.1.gz

@@ -3,7 +3,7 @@
 # Date created:         22 November 1994
 # Whom:                 ljo
 #
-# $Id$
+# $Id: Makefile,v 1.5 1995/04/12 15:22:43 asami Exp $
 #
 
 DISTNAME=	xview-config
@@ -12,9 +12,12 @@ CATEGORIES+=	x11
 MASTER_SITES=	ftp://ftp.x.org/contrib/libraries/
 DISTFILES=	xview3.2p1-X11R6.tar.gz
 
-WRKSRC=      	work/xview3.2p1-X11R6/config
+WRKSRC=      	${WRKDIR}/xview3.2p1-X11R6/config
 USE_IMAKE=	yes
 
-build:
+post-extract:
+	@chmod -R go+rX ${WRKDIR}
+
+do-build:
 
 .include <bsd.port.mk>
