@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gimp
-PORTVERSION=	1.3.3
-PORTREVISION=	1
+PORTVERSION=	1.3.9
 PORTEPOCH=	1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	ftp://ftp.gimp.org/pub/%SUBDIR%/ \
@@ -23,6 +22,7 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
 MAINTAINER=	gnome@FreeBSD.org
 
 LIB_DEPENDS=	gtk-x11-2.0.0:${PORTSDIR}/x11-toolkits/gtk20 \
+		gimpprint.1:${PORTSDIR}/print/gimp-print \
 		aa.1:${PORTSDIR}/graphics/aalib \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
@@ -42,7 +42,8 @@ USE_REINPLACE=	yes
 LIBTOOLFLAGS=	--disable-ltlibs --release-ignore
 PLIST_SUB=	SHLIBVER="${SHLIBVER}"
 CONFIGURE_ARGS=	--disable-perl \
-		--with-html-dir=${PREFIX}/share/doc/gimp
+		--with-html-dir=${PREFIX}/share/doc/gimp \
+		--disable-gtk-doc
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include -I${MPEG_WRKSRC}" \
 		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
@@ -53,8 +54,12 @@ MPEG_CONFIGURE_ENV=	OPTIMIZE="${CFLAGS}"
 MPEG_CONFIGURE_ARGS=	--prefix=${PREFIX} \
 			--target=${ARCH}-unknown-freebsd${OSREL}
 
-MAN1=		escputil-1.3.1 gimp-1.3.1 gimptool-1.3.1
+MAN1=		gimp-1.3.1 gimptool-1.3.1 gimp-remote-1.3.1
 MAN5=		gimprc-1.3.5
+
+#.if exists(${X11BASE}/libdata/pkgconfig/libgtkhtml-2.0.pc) || defined(WITH_HTML_HELP_BROWSER)
+#LIB_DEPENDS+=	gtkhtml-2.0:${PORTSDIR}/www/libgtkhtml
+#.endif
 
 do-extract:
 	@${MKDIR} ${WRKDIR}
