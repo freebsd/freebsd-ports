@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.194 1999/04/04 18:12:40 sada Exp $
+# $Id: Makefile,v 1.195 1999/04/27 12:45:50 taoka Exp $
 #
 
     SUBDIR += Canna
@@ -91,9 +91,11 @@
     SUBDIR += kon2-16dot
     SUBDIR += kterm
     SUBDIR += kterm16c
+    SUBDIR += latex2html
     SUBDIR += less
     SUBDIR += lesw
     SUBDIR += libicq
+    SUBDIR += libimg
     SUBDIR += libslang
     SUBDIR += libxpg4-ns
     SUBDIR += lipsf
@@ -202,6 +204,7 @@
     SUBDIR += tgif2tex
     SUBDIR += tk42
     SUBDIR += tk80
+    SUBDIR += tkstep80
     SUBDIR += today
     SUBDIR += truetypefonts
     SUBDIR += tvi
