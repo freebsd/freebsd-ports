@@ -477,6 +477,7 @@ autosig		ports/mail/autosig
 autossh		ports/security/autossh
 autotrace	ports/graphics/autotrace
 autozen		ports/audio/autozen
+avalon-logkit	ports/java/avalon-logkit
 avarice		ports/devel/avarice
 avcheck		ports/security/avcheck
 avida		ports/biology/avida
