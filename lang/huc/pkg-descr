@@ -1,0 +1,5 @@
+HuC is a PC Engine C compiler. It can create ROMs (hucard) or CD images
+and is bundled with an assembler and all kinds of libraries. You can ouput
+text, scrolls, make sound, control CD, handle sprites and tiles, and more.
+
+WWW: http://www.zeograd.com/
