@@ -7040,6 +7040,7 @@ tetrinet	ports/games/tetrinet
 tetrinet-x	ports/games/tetrinet-x
 tex		ports/print/tex
 tex2im		ports/textproc/tex2im
+texi2db		ports/textproc/texi2db
 texi2html	ports/textproc/texi2html
 texinfo		src/gnu/usr.bin/texinfo
 texmacs		ports/editors/texmacs
