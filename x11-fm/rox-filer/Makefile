@@ -48,7 +48,7 @@ do-install:
 	@cd ${WRKSRC} && ${CP} -r Choices ${PREFIX}/share/
 	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/Choices
 	@${CAT} ${FILESDIR}/rox | ${SED} -e "s|%%PREFIX%%|${PREFIX}|" > ${PREFIX}/bin/rox
-	@${CHMOD} 775 ${PREFIX}/bin/rox
+	@${CHMOD} 755 ${PREFIX}/bin/rox
 	@${INSTALL_MAN} ${WRKSRC}/rox.1 ${PREFIX}/man/man1
 
 .include <bsd.port.post.mk>
