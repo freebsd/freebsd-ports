@@ -11,12 +11,12 @@ CATEGORIES=	misc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Locale
 PKGNAMEPREFIX=	p5-
-MAN3=		Locale::Msgcat.3
 
 MAINTAINER=	gioria@FreeBSD.org
-COMMENT=	A small Perl module for systems to support the XPG4 message catalog functions
+COMMENT=	Perl module for systems to support the XPG4 message catalog functions
+
+MAN3=		Locale::Msgcat.3
 
 PERL_CONFIGURE=	YES
-
 
 .include <bsd.port.mk>
