@@ -16,8 +16,9 @@ LIB_DEPENDS=	dockapp.1:${PORTSDIR}/x11-wm/libdockapp:install
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_X_PREFIX=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	libcapplet
 USE_GMAKE=	yes
-USE_GNOMECTRL=	yes
 
 MAN1=		wmmenu.1
 

@@ -9,7 +9,7 @@ PORTNAME=	E-Run
 PORTVERSION=	1.2
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR = kbyanc
+MASTER_SITE_SUBDIR=	kbyanc
 
 MAINTAINER=	kbyanc@posi.net
 
@@ -18,6 +18,7 @@ LIB_DEPENDS=	epplet.1:${PORTSDIR}/x11-wm/libepplet
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_X_PREFIX=	yes
-USE_IMLIB=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	imlib
 
 .include <bsd.port.mk>
