@@ -800,6 +800,7 @@ btqueue		ports/net/btqueue
 bubblegum	ports/security/bubblegum
 bubblemon-dockapp	ports/sysutils/bubblemon-dockapp
 bubblemon2	ports/sysutils/bubblemon2
+buddy		ports/science/buddy
 buffer		ports/misc/buffer
 buffy		ports/x11-themes/buffy
 bugbuddy2	ports/devel/bugbuddy2
