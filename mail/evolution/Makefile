@@ -17,6 +17,8 @@ MAINTAINER=	gnome@FreeBSD.org
 #LIB_DEPENDS=	ldap.1:${PORTSDIR}/net/openldap <- avoid extra dependency until
 #						   it actually works
 
+BROKEN=		"Out of sync with latest gal"
+
 USE_GMAKE=	yes
 USE_BISON=	yes
 USE_X_PREFIX=	yes
