@@ -1040,6 +1040,7 @@
     SUBDIR += php4-readline
     SUBDIR += php4-shmop
     SUBDIR += php4-sysvmsg
+    SUBDIR += php4-sysvsem
     SUBDIR += php5-pcre
     SUBDIR += php5-pear
     SUBDIR += phptags
