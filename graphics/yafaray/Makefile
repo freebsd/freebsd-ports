@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	yafray
-PORTVERSION=	0.0.3
-PORTREVISION=	1
+PORTVERSION=	0.0.4
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.coala.uniovi.es/~jandro/noname/downloads/
 
@@ -17,7 +16,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 
 USE_GETOPT_LONG=yes
 USE_REINPLACE=	yes
-GNU_CONFIGURE=	yes
+USE_LIBTOOL=	yes
 
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include -L${LOCALBASE}/lib ${PTHREAD_CFLAGS}" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
