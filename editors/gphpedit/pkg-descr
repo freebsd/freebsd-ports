@@ -1,0 +1,7 @@
+gPHPEdit is a Gnome2 text editor optimised for editing PHP, HTML and CSS
+files. It supports editing multiple documents with a tabbed interface, PHP
+syntax checking, PHP/HTML syntax highlighting, a function list for all open
+documents, incremental search, pop-up function hints, and block
+(un)indentation.
+
+WWW: http://www.gphpedit.org/

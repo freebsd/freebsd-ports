@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	Sun Nov 21 17:31:35 2004
++++ src/Makefile.in	Sun Nov 21 17:32:14 2004
+@@ -495,7 +495,7 @@
+ 	-g -Wall -DGTK -DSCI_LEXER
+ 
+ gtkscintilla2/libgtkscintilla2.a:
+-	cd gtkscintilla2 && make libgtkscintilla2.a && cd ..
++	@cd gtkscintilla2 && $(MAKE) libgtkscintilla2.a && cd ..
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:
