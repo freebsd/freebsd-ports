@@ -4920,6 +4920,7 @@ osalp		ports/audio/osalp
 osf1_base	ports/emulators/osf1_base
 osg		ports/graphics/osg
 osh		ports/shells/osh
+osrtspproxy	ports/net/osrtspproxy
 otcl		ports/lang/otcl
 outguess	ports/security/outguess
 p-interp	ports/emulators/p-interp
