@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	SNMP_Session
-PORTVERSION=	0.83
+PORTVERSION=	0.86
 CATEGORIES=	net perl5
 MASTER_SITES=	ftp://ftp.switch.ch/software/sources/network/snmp/perl/
 PKGNAMEPREFIX=	p5-
@@ -14,9 +14,6 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	petef@databits.net
 
 PERL_CONFIGURE=	yes
-
-post-configure:
-	@${PERL} -pi -e "s:/usr/local:${PREFIX}:g" ${WRKSRC}/Makefile;
 
 post-install:
 .if !defined(NOPORTDOCS)
