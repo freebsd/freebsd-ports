@@ -1,2 +1,4 @@
 MD5 (gcc-core-3.2.3.tar.bz2) = 66664a84b383ba8d68612cd89b9478b2
-MD5 (msp430-gcc-3.2.3.20031203.tar.bz2) = 22f854632bb6c77545cabf43df470f0b
+SIZE (gcc-core-3.2.3.tar.bz2) = 10324429
+MD5 (msp430-gcc-3.2.3.20040205.tar.bz2) = 29c844bcd126db13d199b314ca497891
+SIZE (msp430-gcc-3.2.3.20040205.tar.bz2) = 102271
