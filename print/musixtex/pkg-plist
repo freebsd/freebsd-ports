@@ -59,7 +59,7 @@ lib/texmf/mf/xtie20.mf
 lib/texmf/documentation/backgrnd.sty
 lib/texmf/documentation/musixdoc.tex
 lib/texmf/documentation/musixdoc.tex
-lib/texmf/documentation/musixtex.examples/angescam.tex
+lib/texmf/documentation/musixtex.examples/angescax.tex
 lib/texmf/documentation/musixtex.examples/angescao.tex
 lib/texmf/documentation/musixtex.examples/avemaria.tex
 lib/texmf/documentation/musixtex.examples/avemario.tex
@@ -156,7 +156,6 @@ lib/texmf/tex/musixste.tex
 lib/texmf/tex/musixstf.tex
 lib/texmf/tex/musixstr.tex
 lib/texmf/tex/musixsty.tex
-lib/texmf/tex/musixtex.ins
 lib/texmf/tex/musixtex.sty
 lib/texmf/tex/musixtex.tex
 lib/texmf/tex/musixtri.tex
