@@ -1,4 +1,3 @@
-@cd /usr/local
 @owner bin
 @mode 755
 bin/anytopnm
@@ -89,7 +88,6 @@ bin/pnmdepth
 bin/pnmenlarge
 bin/pnmfile
 bin/pnmflip
-bin/pnmgamma
 bin/pnmhistmap
 bin/pnmindex
 bin/pnminvert
@@ -98,9 +96,7 @@ bin/pnmnlfilt
 bin/pnmnoraw
 bin/pnmpad
 bin/pnmpaste
-bin/pnmrotate
 bin/pnmscale
-bin/pnmshear
 bin/pnmsmooth
 bin/pnmtile
 bin/pnmtoddif
@@ -274,7 +270,6 @@ man/man1/pnmdepth.1.gz
 man/man1/pnmenlarge.1.gz
 man/man1/pnmfile.1.gz
 man/man1/pnmflip.1.gz
-man/man1/pnmgamma.1.gz
 man/man1/pnmhistmap.1.gz
 man/man1/pnmindex.1.gz
 man/man1/pnminvert.1.gz
@@ -283,9 +278,7 @@ man/man1/pnmnlfilt.1.gz
 man/man1/pnmnoraw.1.gz
 man/man1/pnmpad.1.gz
 man/man1/pnmpaste.1.gz
-man/man1/pnmrotate.1.gz
 man/man1/pnmscale.1.gz
-man/man1/pnmshear.1.gz
 man/man1/pnmsmooth.1.gz
 man/man1/pnmtile.1.gz
 man/man1/pnmtoddif.1.gz
@@ -360,11 +353,11 @@ man/man1/ybmtopbm.1.gz
 man/man1/yuvsplittoppm.1.gz
 man/man1/yuvtoppm.1.gz
 man/man1/zeisstopnm.1.gz
-man/man3/libpbm.3.gz
-man/man3/libpgm.3.gz
-man/man3/libpnm.3.gz
-man/man3/libppm.3.gz
-man/man5/pbm.5.gz
-man/man5/pgm.5.gz
-man/man5/pnm.5.gz
-man/man5/ppm.5.gz
+man/man3/libpbm.1.gz
+man/man3/libpgm.1.gz
+man/man3/libpnm.1.gz
+man/man3/libppm.1.gz
+man/man5/pbm.1.gz
+man/man5/pgm.1.gz
+man/man5/pnm.1.gz
+man/man5/ppm.1.gz
