@@ -32,6 +32,7 @@
     SUBDIR += ghostscript6
     SUBDIR += gnumeric
     SUBDIR += gugod-clean
+    SUBDIR += hanzim
     SUBDIR += hc
     SUBDIR += hztty
     SUBDIR += irssi

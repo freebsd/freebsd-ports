@@ -1,0 +1,14 @@
+bin/hanzim
+lib/hanzim/bushou.gb
+lib/hanzim/cidianf.gb
+lib/hanzim/fonts.unix
+lib/hanzim/fonts.windows
+lib/hanzim/hanwin.tcl
+lib/hanzim/hcompound.dat
+lib/hanzim/parts.gb
+lib/hanzim/sanzicidianf.gb
+lib/hanzim/zidianf.gb
+lib/hanzim/zidianfl.b5
+share/doc/hanzim/hanzim.doc
+@dirrm lib/hanzim
+@dirrm share/doc/hanzim
