@@ -1,0 +1,11 @@
+FireTalk is a library designed to make writing applications for online
+chat and instant messenging easier. It was originally written as a
+replacement for libfaim. It currently supports AIM via the TOC
+protocol, but IRC and ICQ support should be implemented within the
+near future. The package also includes a simple AIM client that has
+many of the same command names as functions in the library. This
+allows developers to examine the behavior of the library closely while
+writing their own code.
+
+- George Reid
+greid@ukug.uk.freebsd.org
