@@ -98,6 +98,10 @@ STRIP=
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 502126
+BROKEN=			"Does not compile on FreeBSD >= 5.x"
+.endif
+
 .if defined(ARCH) && \
 	(${ARCH} == "alpha" || ${ARCH} == "sparc64" || \
 	${ARCH} == "amd64" || ${ARCH} == "ia64")

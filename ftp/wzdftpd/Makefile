@@ -62,6 +62,10 @@ CONFIGURE_ARGS+=	--enable-ipv6
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 502126
+BROKEN=		"Does not compile on FreeBSD >= 5.x"
+.endif
+
 .if ${PERL_LEVEL} < 500600
 PLIST_SUB+=	PERL="@comment "
 .else
