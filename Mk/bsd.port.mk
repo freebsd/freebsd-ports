@@ -834,7 +834,7 @@ USE_XLIB=				yes
 LIB_DEPENDS+=			GLU.1:${PORTSDIR}/graphics/Mesa3
 .endif
 XAWVER=					7
-PKG_IGNORE_DEPENDS?=	'()'
+PKG_IGNORE_DEPENDS?=	'this_port_does_not_exist'
 .endif
 PLIST_SUB+=				XAWVER=${XAWVER}
 
