@@ -29,15 +29,15 @@ EXTRACT_CMD=		# empty
 EXTRACT_BEFORE_ARGS=	# empty
 EXTRACT_AFTER_ARGS=	# empty
 
-WRKSRC=		${WRKDIR}/j2sdk1.4.0_01
+WRKSRC=		${WRKDIR}/j2sdk1.4.1
 PLIST_SUB+=	T=${APP_HOME:S/^${PREFIX}\///} PORTVERSION=${PORTVERSION}
 
 NO_BUILD=	yes
 USE_LINUX=	yes
-DL_JDK_VERSION=	1.4.0_01
+DL_JDK_VERSION=	1.4.1
 INSTALL_JDK_VERSION=	${DL_JDK_VERSION:S/_/./g}
 ONLY_FOR_ARCHS=	i386
-DOWNLOAD_URL?=	http://java.sun.com/Download6?url=/Download6&config-file=j2sdk-${DL_JDK_VERSION:S/./_/g}.config&platform=linux-i586
+DOWNLOAD_URL?=	http://java.sun.com/webapps/download/Display?BundleId=7039
 PORTTITLE=	Java 2 Development Kit ${INSTALL_JDK_VERSION} for Linux
 APP_HOME=	${PREFIX}/${PKGNAMEPREFIX}${PORTNAME}${INSTALL_JDK_VERSION:R}
 
