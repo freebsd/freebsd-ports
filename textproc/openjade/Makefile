@@ -21,9 +21,13 @@ BROKEN=		nsgmls coredumps in static constructors
 .endif
 
 USE_GMAKE=	YES
+USE_LIBTOOL=	YES
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CXXFLAGS="${CFLAGS}"
 CONFIGURE_ARGS=	--enable-default-catalog=${PREFIX}/share/sgml/catalog
+
+post-extract:
+	@${CHMOD} u+w ${WRKSRC}/configure
 
 pre-install:
 	@find ${WRKSRC} \( -name \*.orig -o -name \*~ \) -exec ${RM} -f \{} \;
