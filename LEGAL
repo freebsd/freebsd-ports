@@ -101,6 +101,10 @@ dnews			ports/news/dnews	Only free for schools and
 edith*			ports/editors/edith	Redistribution not allowed.
 eijiro*.txt		ports/japanese/eijiro-fpw The original dictionary is not
 						free
+ezmlm			ports/mail/ezmlm	no license--see
+						http://cr.yp.to/softwarelaw.html
+ezmlm-idx		ports/mail/ezmlm-idx	no license--see
+						http://cr.yp.to/softwarelaw.html
 fasta2*			ports/biology/fasta	May not be sold or incorporated
 						into a commercial product
 fasta3*			ports/biology/fasta3	May not be sold or incorporated
@@ -240,6 +244,8 @@ ruby/ruby_cast_256.zip	ports/security/ruby-cast_256	Crypto; export-controlled
 Scilab-*		ports/math/Scilab	Don't sell for profit.
 scilab-*		ports/math/scilab	Don't sell for profit.
 sdr-2.7*		ports/mbone/sdr		Crypto; export-controlled
+serialmail		ports/mail/serialmail	no license--see
+						http://cr.yp.to/softwarelaw.html
 service-config-*	ports/sysutils/service-config	Possibly restricted binary
 						distribution of modified
 						versions
