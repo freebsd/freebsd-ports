@@ -102,6 +102,7 @@
     SUBDIR += metacity-aluminumalloy-volcanic-theme
     SUBDIR += metacity-ana-theme
     SUBDIR += metacity-aquaextremesunken-theme
+    SUBDIR += metacity-milk-theme
     SUBDIR += metacity-theme-6nome
     SUBDIR += metacity-theme-aero
     SUBDIR += metacity-theme-alloy-c
