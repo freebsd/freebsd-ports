@@ -3,7 +3,7 @@
 # Date created:         7 December 1994
 # Whom:                 asami
 #
-# $Id: Makefile,v 1.9 1995/04/22 11:58:42 asami Exp $
+# $Id: Makefile,v 1.10 1996/03/07 01:57:29 asami Exp $
 #
 
 DISTNAME=	xfed
@@ -33,7 +33,7 @@ do-fetch:
 	  echo ">> Fetching files from remote site...";  \
 	  for file in ${SOURCEFILES}; do \
 	    (cd ${.CURDIR}/src/xfed; \
-	      ${NCFTP} ${NCFTPFLAGS} ${SOURCESITE}\{$$file\}); \
+	      ${FETCH_CMD} ${FETCH_BEFORE_ARGS} ${SOURCESITE}\{$$file\} ${FETCH_AFTER_ARGS}); \
 	  done; \
 	  echo ">> Now creating a tarball ${DISTDIR}/${TARFILE}..."; \
 	  tar -C ${.CURDIR}/src -cf - xfed | \
