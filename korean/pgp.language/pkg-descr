@@ -1,0 +1,12 @@
+PGP-2.6.3i
+----------
+
+Korean language module for PGP 2.6.3ia.
+(based on Japanese language module)
+
+This package depends on original PGP 2.6.3ia (International version),
+and replaces some distributed files.
+(config.txt is modified, language.txt is replaced.)
+
+--
+Ports by CHOI Junho <junker@jazz.snu.ac.kr>
