@@ -96,6 +96,7 @@
     SUBDIR += p5-Apache-Radius
     SUBDIR += p5-CGI
     SUBDIR += p5-CGI_Lite
+    SUBDIR += p5-CGI-FastTemplate
     SUBDIR += p5-FastCGI
     SUBDIR += p5-HTML
     SUBDIR += p5-HTML-Parser
