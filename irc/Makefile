@@ -9,7 +9,6 @@
     SUBDIR += irc
     SUBDIR += ircII
     SUBDIR += ircd-hybrid
-    SUBDIR += ircii-epic
     SUBDIR += irssi
     SUBDIR += kvirc
     SUBDIR += muh
