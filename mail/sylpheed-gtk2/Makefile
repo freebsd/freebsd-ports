@@ -6,8 +6,7 @@
 #
 
 PORTNAME=		sylpheed-gtk2
-PORTVERSION=		0.9.99.20041024
-PORTREVISION=	2
+PORTVERSION=		1.0.0.20041224
 CATEGORIES=		mail ipv6
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -33,7 +32,7 @@ OPTIONS=		SSL "SSL support" off \
 			JPILOT "JPilot support" off \
 			LDAP "LDAP support" off
 
-CONFLICTS=		sylpheed-0.*
+CONFLICTS=		sylpheed-[0-9]*
 
 .include <bsd.port.pre.mk>
 
