@@ -14,7 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	RSS Abstraction Interface
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/RSS/Parser.pm:${PORTSDIR}/textproc/p5-XML-RSS-Parser
+BUILD_DEPENDS=	${SITE_PERL}/XML/RSS/Parser.pm:${PORTSDIR}/textproc/p5-XML-RSS-Parser
+RUN_DEPENDS=	${SITE_PERL}/XML/RSS/Parser.pm:${PORTSDIR}/textproc/p5-XML-RSS-Parser
 
 PERL_CONFIGURE=	yes
 
