@@ -1,0 +1,10 @@
+bin/ssed
+share/locale/nl/LC_MESSAGES/ssed.mo
+share/locale/fr/LC_MESSAGES/ssed.mo
+share/locale/ru/LC_MESSAGES/ssed.mo
+share/locale/de/LC_MESSAGES/ssed.mo
+share/locale/it/LC_MESSAGES/ssed.mo
+share/locale/el/LC_MESSAGES/ssed.mo
+share/locale/sk/LC_MESSAGES/ssed.mo
+share/locale/pt_BR/LC_MESSAGES/ssed.mo
+share/locale/sv/LC_MESSAGES/ssed.mo
