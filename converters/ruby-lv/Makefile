@@ -31,6 +31,12 @@ INSTALL_TARGET=	site-install
 DOCS_EN=	ChangeLog README doc/api-en/*
 DOCS_JA=	README.ja doc/api-ja/*
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+BROKEN=		"Does not build on amd64 (Needs to link against shared library)"
+.endif
+
 post-extract:
 	${CP} -Rp `${LV_WRKSRC_CMD}` ${WRKSRC}/lv
 	${LN} -sf . ${WRKSRC}/lv/src
@@ -53,4 +59,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
