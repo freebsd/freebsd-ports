@@ -23,7 +23,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinte
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
-CONFFLAGS=	--tk-autoconf --tk-flags="-I${X11BASE}/include -I${LOCALBASE}/include/tcl8.3 -I${LOCALBASE}/include/tk8.3 -L${LOCALBASE}/lib -ltk83 -ltcl83 -L${X11BASE}/lib -lX11"
+CONFFLAGS=	--tk-autoconf --tk-flags="-I${X11BASE}/include -I${LOCALBASE}/include/tcl8.4 -I${LOCALBASE}/include/tk8.4 -L${LOCALBASE}/lib -ltk84 -ltcl84 -L${X11BASE}/lib -lX11"
 
 SKETCHDIR=	${PREFIX}/share/sketch
 SKETCHDOCDIR=	${PREFIX}/share/doc/sketch
