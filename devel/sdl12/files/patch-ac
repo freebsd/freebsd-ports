@@ -2,7 +2,7 @@
 $FreeBSD$
 
 --- configure.orig	Mon Jun 18 18:21:53 2001
-+++ configure	Mon Jun 25 17:59:47 2001
++++ configure	Mon Jul  2 13:49:08 2001
 @@ -100,6 +100,8 @@
  ac_help="$ac_help
    --enable-video-svga     use SVGAlib video driver [default=no]"
@@ -111,14 +111,14 @@ $FreeBSD$
              ;;
          *-*-netbsd*)
              pthread_cflags="-I/usr/pkg/include -D_REENTRANT"
-@@ -6236,6 +6289,7 @@
+@@ -6387,6 +6440,7 @@
+         CheckARTSC
+         CheckESD
+         CheckNAS
++        CheckVGL
          CheckX11
          CheckDGA
          CheckSVGA
-+        CheckVGL
-         CheckAAlib
-         CheckOpenGL
-         CheckPTHREAD
 @@ -6577,10 +6631,10 @@
    cat >>$new <$old
  
@@ -134,11 +134,18 @@ $FreeBSD$
          # Set up files for the joystick library
          # (No joystick support yet)
          if test x$enable_joystick = xyes; then
-@@ -9088,6 +9142,8 @@
+@@ -9088,6 +9142,7 @@
  src/video/macrom/Makefile
  src/video/quartz/Makefile
  src/video/svga/Makefile
 +src/video/vgl/Makefile
+ src/video/aalib/Makefile
+ src/video/wincommon/Makefile
+ src/video/windib/Makefile
+@@ -9322,6 +9377,7 @@
+ src/video/macrom/Makefile
+ src/video/quartz/Makefile
+ src/video/svga/Makefile
 +src/video/vgl/Makefile
  src/video/aalib/Makefile
  src/video/wincommon/Makefile
