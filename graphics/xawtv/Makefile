@@ -36,6 +36,13 @@ MAN1=		alevtd.1 dump-mixers.1 fbtv.1 motv.1 ntsc-cc.1 propwatch.1 record.1 \
 MAN5=		xawtvrc.5
 MAN8=		v4l-conf.8
 
+.include <bsd.port.pre.mk>
+
+.if ${XFREE86_VERSION} == 4
+BUILD_DEPENDS=  bdftopcf:${PORTSDIR}/x11/XFree86-4-clients
+RUN_DEPENDS=    mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
+.endif
+
 PLIST_SUB+=	X11PREFIX=${X11BASE}
 
 post-patch:
@@ -51,4 +58,4 @@ post-configure:
 	${PERL} -pi -e "s|^CFLAGS=|CFLAGS+=|g" ${WRKSRC}/$i/Makefile
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
