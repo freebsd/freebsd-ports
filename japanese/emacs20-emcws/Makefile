@@ -187,7 +187,4 @@ do-install:
 	  > ${PREFIX}/share/emacs/${EMACS_VER}-emcws/lisp/subdirs.el ; \
 	fi
 
-post-install:
-	@${CAT} ${PKGMESSAGE}
-
 .include <bsd.port.mk>

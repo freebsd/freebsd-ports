@@ -120,7 +120,4 @@ do-install:
 	  fi ; \
 	done
 
-post-install:
-	@${CAT} ${PKGMESSAGE}
-
 .include <bsd.port.mk>
