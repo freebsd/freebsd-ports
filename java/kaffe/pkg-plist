@@ -16,13 +16,13 @@ share/kaffe/lib/biss
 share/kaffe/lib/biss.awt
 share/kaffe/lib/biss.awt.kernel
 lib/libkaffe_agent.so
-lib/libkaffe_agent.so.0.83
+lib/libkaffe_agent.so.0.84
 lib/libkaffe_bissawt.so
 lib/libkaffe_bissawt.so.0.87
 lib/libkaffe_native.so
-lib/libkaffe_native.so.0.83
+lib/libkaffe_native.so.0.84
 lib/libkaffe_vm.so
-lib/libkaffe_vm.so.0.83
+lib/libkaffe_vm.so.0.84
 lib/libkaffe_net.so
-lib/libkaffe_net.so.0.83
+lib/libkaffe_net.so.0.84
 @exec /sbin/ldconfig -m %B
