@@ -9,9 +9,23 @@ bin/vimotd
 bin/viklines
 bin/servlink
 etc/rc.d/ircd-hybrid-ru.sh.sample
+etc/ircd-hybrid-ru/auto.am.conf
+etc/ircd-hybrid-ru/auto.az.conf
+etc/ircd-hybrid-ru/auto.by.conf
+etc/ircd-hybrid-ru/auto.ee.conf
+etc/ircd-hybrid-ru/auto.ge.conf
+etc/ircd-hybrid-ru/auto.kg.conf
+etc/ircd-hybrid-ru/auto.kz.conf
+etc/ircd-hybrid-ru/auto.lt.conf
+etc/ircd-hybrid-ru/auto.lv.conf
+etc/ircd-hybrid-ru/auto.md.conf
+etc/ircd-hybrid-ru/auto.ru.conf
+etc/ircd-hybrid-ru/auto.tj.conf
+etc/ircd-hybrid-ru/auto.tm.conf
+etc/ircd-hybrid-ru/auto.ua.conf
+etc/ircd-hybrid-ru/auto.uz.conf
 etc/ircd-hybrid-ru/example.conf
 etc/ircd-hybrid-ru/example.dalnetru.conf
-etc/ircd-hybrid-ru/ircd.motd
 etc/ircd-hybrid-ru/kline.conf
 etc/ircd-hybrid-ru/dline.conf
 etc/ircd-hybrid-ru/xline.conf
@@ -86,11 +100,13 @@ include/ircd-hybrid-7/vchannel.h
 include/ircd-hybrid-7/whowas.h
 lib/ircd-hybrid-ru-modules/autoload/m_accept.so
 lib/ircd-hybrid-ru-modules/autoload/m_admin.so
+lib/ircd-hybrid-ru-modules/autoload/m_alias.so
 lib/ircd-hybrid-ru-modules/autoload/m_away.so
 lib/ircd-hybrid-ru-modules/autoload/m_capab.so
 lib/ircd-hybrid-ru-modules/autoload/m_cburst.so
 lib/ircd-hybrid-ru-modules/autoload/m_challenge.so
 lib/ircd-hybrid-ru-modules/autoload/m_cjoin.so
+lib/ircd-hybrid-ru-modules/autoload/m_clearchan.so
 lib/ircd-hybrid-ru-modules/autoload/m_close.so
 lib/ircd-hybrid-ru-modules/autoload/m_connect.so
 lib/ircd-hybrid-ru-modules/autoload/m_cryptlink.so
@@ -98,6 +114,8 @@ lib/ircd-hybrid-ru-modules/autoload/m_dmem.so
 lib/ircd-hybrid-ru-modules/autoload/m_drop.so
 lib/ircd-hybrid-ru-modules/autoload/m_encap.so
 lib/ircd-hybrid-ru-modules/autoload/m_eob.so
+lib/ircd-hybrid-ru-modules/autoload/m_force.so
+lib/ircd-hybrid-ru-modules/autoload/m_forcenick.so
 lib/ircd-hybrid-ru-modules/autoload/m_gline.so
 lib/ircd-hybrid-ru-modules/autoload/m_help.so
 lib/ircd-hybrid-ru-modules/autoload/m_info.so
@@ -126,7 +144,6 @@ lib/ircd-hybrid-ru-modules/autoload/m_post.so
 lib/ircd-hybrid-ru-modules/autoload/m_rehash.so
 lib/ircd-hybrid-ru-modules/autoload/m_restart.so
 lib/ircd-hybrid-ru-modules/autoload/m_resv.so
-lib/ircd-hybrid-ru-modules/autoload/m_services.so
 lib/ircd-hybrid-ru-modules/autoload/m_set.so
 lib/ircd-hybrid-ru-modules/autoload/m_svs.so
 lib/ircd-hybrid-ru-modules/autoload/m_stats.so
@@ -159,12 +176,47 @@ lib/ircd-hybrid-ru-modules/m_sjoin.so
 lib/ircd-hybrid-ru-modules/m_squit.so
 messages/ayb/LC_MESSAGES/ircd-hybrid.mo
 messages/custom/LC_MESSAGES/ircd-hybrid.mo
+help/users/accept
+help/users/admin
+help/users/away
+help/users/challenge
+help/users/cjoin
+help/users/cmode
+help/users/credits
+help/users/error
+help/users/help
 help/users/index
 help/users/info
+help/users/invite
+help/users/ison
+help/users/join
+help/users/kick
+help/users/knock
+help/users/links
+help/users/list
+help/users/lusers
+help/users/motd
+help/users/names
+help/users/nick
 help/users/notice
+help/users/oper
+help/users/part
+help/users/pass
+help/users/ping
+help/users/pong
 help/users/privmsg
+help/users/quit
 help/users/stats
+help/users/time
+help/users/topic
 help/users/umode
+help/users/user
+help/users/userhost
+help/users/users
+help/users/version
+help/users/who
+help/users/whois
+help/users/whowas
 help/opers/accept
 help/opers/admin
 help/opers/away
@@ -269,6 +321,14 @@ help/opers/whowas
 @dirrm include/ircd-hybrid-7
 @dirrm lib/ircd-hybrid-ru-modules/autoload
 @dirrm lib/ircd-hybrid-ru-modules
+@dirrm help/users
+@dirrm help/opers
+@dirrm help
+@dirrm messages/ayb/LC_MESSAGES
+@dirrm messages/custom/LC_MESSAGES
+@dirrm messages/ayb
+@dirrm messages/custom
+@dirrm messages
 @exec mkdir -m 755 /var/log/ircd-hybrid-ru
 @exec chown ircdru:ircdru /var/log/ircd-hybrid-ru
 @unexec rmdir /var/log/ircd-hybrid-ru 2>/dev/null || true
