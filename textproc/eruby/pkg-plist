@@ -1,6 +1,6 @@
 bin/eruby
 include/eruby.h
-lib/liberuby.so.1
+lib/liberuby.so.9
 lib/liberuby.so
 lib/liberuby.a
 %%PORTDOCS%%%%RUBY_DOCDIR%%/eruby/ChangeLog
