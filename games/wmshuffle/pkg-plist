@@ -1,0 +1,4 @@
+bin/wmshuffle
+share/wmshuffle/skin-feiticeira.xpm
+share/wmshuffle/skin-lucyenne.xpm
+@dirrm share/wmshuffle
