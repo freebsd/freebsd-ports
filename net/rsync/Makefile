@@ -23,9 +23,8 @@ MAN1=		rsync.1
 MAN5=		rsyncd.conf.5
 
 pre-configure:
-	@${MV} ${WRKSRC}/rsync.1 ${WRKSRC}/rsync.1.in
-	@${SED} -e 's:%%PREFIX%%:${PREFIX}:g'  \
-		${WRKSRC}/rsync.1.in > ${WRKSRC}/rsync.1
+	@${PERL} -pi.orig -e 's:/etc/:${PREFIX}/etc/:g' ${WRKSRC}/rsync.1
+	@${PERL} -pi.orig -e 's:/etc/:${PREFIX}/etc/:g' ${WRKSRC}/rsyncd.conf.5
 
 post-install:
 	@strip ${PREFIX}/bin/rsync
