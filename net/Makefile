@@ -408,9 +408,12 @@
     SUBDIR += opengk
     SUBDIR += openh323
     SUBDIR += openldap12
-    SUBDIR += openldap20
-    SUBDIR += openldap21
-    SUBDIR += openldap22
+    SUBDIR += openldap20-client
+    SUBDIR += openldap20-server
+    SUBDIR += openldap21-client
+    SUBDIR += openldap21-server
+    SUBDIR += openldap22-client
+    SUBDIR += openldap22-server
     SUBDIR += openmcu
     SUBDIR += openreg
     SUBDIR += openslp
