@@ -1,4 +1,5 @@
 bin/mutt
+bin/mutt_dotlock
 share/doc/mutt/COPYRIGHT
 share/doc/mutt/ChangeLog
 share/doc/mutt/GPL
