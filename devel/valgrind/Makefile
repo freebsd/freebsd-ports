@@ -7,6 +7,7 @@
 
 PORTNAME=	valgrind
 PORTVERSION=	352
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.rabson.org/
 DISTNAME=	${PORTNAME}-stable-${PORTVERSION}
@@ -64,10 +65,13 @@ pre-patch:
 .endif
 
 post-install:
+	${INSTALL_DATA} ${WRKSRC}/coregrind/vg_unistd.h \
+		${PREFIX}/include/valgrind
+
 	@${ECHO} ""
 	@${ECHO} ""
 	@${CAT} ${PKGMESSAGE}
-	@${ECHO} ""
+++ pkg-plist	Wed Aug 25 11:23:09 2004
 	@${ECHO} ""
 
 .include <bsd.port.post.mk>
