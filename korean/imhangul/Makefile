@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	imhangul
-PORTVERSION=	0.9.6
+PORTVERSION=	0.9.9
 CATEGORIES=	korean x11-toolkits
 MASTER_SITES=	http://download.kldp.net/imhangul/
 
