@@ -1227,6 +1227,7 @@
     SUBDIR += py-twisted
     SUBDIR += py-ui
     SUBDIR += py-unit
+    SUBDIR += py-urwid
     SUBDIR += py-vmaps
     SUBDIR += py-wsdllib
     SUBDIR += py-xdg

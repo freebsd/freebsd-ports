@@ -1,0 +1,22 @@
+%%PYTHON_SITELIBDIR%%/urwid/__init__.py
+%%PYTHON_SITELIBDIR%%/urwid/__init__.pyc
+%%PYTHON_SITELIBDIR%%/urwid/__init__.pyo
+%%PYTHON_SITELIBDIR%%/urwid/canvas.py
+%%PYTHON_SITELIBDIR%%/urwid/canvas.pyc
+%%PYTHON_SITELIBDIR%%/urwid/canvas.pyo
+%%PYTHON_SITELIBDIR%%/urwid/curses_display.py
+%%PYTHON_SITELIBDIR%%/urwid/curses_display.pyc
+%%PYTHON_SITELIBDIR%%/urwid/curses_display.pyo
+%%PYTHON_SITELIBDIR%%/urwid/html_fragment.py
+%%PYTHON_SITELIBDIR%%/urwid/html_fragment.pyc
+%%PYTHON_SITELIBDIR%%/urwid/html_fragment.pyo
+%%PYTHON_SITELIBDIR%%/urwid/listbox.py
+%%PYTHON_SITELIBDIR%%/urwid/listbox.pyc
+%%PYTHON_SITELIBDIR%%/urwid/listbox.pyo
+%%PYTHON_SITELIBDIR%%/urwid/util.py
+%%PYTHON_SITELIBDIR%%/urwid/util.pyc
+%%PYTHON_SITELIBDIR%%/urwid/util.pyo
+%%PYTHON_SITELIBDIR%%/urwid/widget.py
+%%PYTHON_SITELIBDIR%%/urwid/widget.pyc
+%%PYTHON_SITELIBDIR%%/urwid/widget.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/urwid
