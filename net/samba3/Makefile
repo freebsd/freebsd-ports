@@ -283,11 +283,11 @@ RC_SCRIPTS_SUB=		PREFIX=${PREFIX} \
 
 pre-everything::
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "!!! Due to the bug in the deinstall procedure in port versions prior 3.0.9"
-	@${ECHO_MSG} "!!! you may loose your valuable ${SAMBA_LOCKDIR}/windbindd_* files."
-	@${ECHO_MSG} "!!! Please, BACKUP them before you continue the (re)installation."
+	@${ECHO_MSG} "!!! Due to a bug in the deinstall procedure in port versions prior to 3.0.9,"
+	@${ECHO_MSG} "!!! you should BACK UP YOUR VALUABLE ${SAMBA_LOCKDIR}/windbindd_* FILES"
+	@${ECHO_MSG} "!!! before you continue the (re)installation."
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "***         Press ctrl-C *now* if you need this files         ***"
+	@${ECHO_MSG} "***        Press Ctrl-C *now* if you need to preserve these files       ***"
 	@sleep 5
 
 pre-fetch:
