@@ -6,14 +6,16 @@
 #
 
 PORTNAME=	XML-Sablotron
-PORTVERSION=	0.96
+PORTVERSION=	0.97
 CATEGORIES=	textproc perl5
-MASTER_SITES=	http://download-2.gingerall.cz/download/sablot/
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=	XML
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	skv@FreeBSD.org
+COMMENT=	A Perl interface to the Sablotron XSLT processor
 
-LIB_DEPENDS=	sablot.69:${PORTSDIR}/textproc/sablotron \
+LIB_DEPENDS=	sablot.70:${PORTSDIR}/textproc/sablotron \
 		iconv.3:${PORTSDIR}/converters/libiconv
 
 PERL_CONFIGURE=	yes
@@ -24,13 +26,15 @@ CONFIGURE_ARGS=	LIBS='-L${LOCALBASE}/lib -lexpat -lsablot -liconv' \
 		SABLOTLIBPATH='${LOCALBASE}/lib' \
 		SABLOTINCPATH='${LOCALBASE}/include'
 
-post-patch:
-		@${PERL} -pi -e 's,%%PREFIX%%,${PREFIX},g' \
-			${WRKSRC}/Sablotron/Makefile.PL
-		@${PERL} -pi -e 's/^our /my /;' ${WRKSRC}/Makefile.PL
-
 MAN3=		XML::Sablotron.3 XML::Sablotron::DOM.3 \
 		XML::Sablotron::SAXBuilder.3
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+post-patch:
+.if ${PERL_LEVEL} < 500600
+	@${PERL} -pi -e 's/^our //; $$_="use vars qw(\$$libs \@extras);\n" if $$.==43' ${WRKSRC}/Makefile.PL
+.endif
+
+.include <bsd.port.post.mk>
