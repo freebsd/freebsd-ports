@@ -27,7 +27,7 @@ TGIFDOC=	${PREFIX}/share/doc/tgif
 TGIFDEMO=	${PREFIX}/share/examples/tgif
 DEMO_FILES=	an-sr-flip-flop.obj launch-demo-1.obj \
 		fonts.obj launch-demo.obj keys.obj slide-demo.obj example.tex
-READMES=	Copyright HISTORY LICENSE.QPL README tgif.1.html
+READMES=	Copyright HISTORY LICENSE.QPL README
 SPICE_FILES=	README BZ.mod DN.mod DN.sym MN.mod MN.sym MP.mod MP.sym \
 		SN.mod SN.sym SP.mod SP.sym capacitor.sym connection.sym \
 		demo.obj gauge.sym ground.sym in.sym out.sym port.sym \

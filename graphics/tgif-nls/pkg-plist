@@ -18,7 +18,6 @@ lib/X11/tgif/keys.obj
 %%PORTDOCS%%share/doc/tgif/HISTORY
 %%PORTDOCS%%share/doc/tgif/LICENSE.QPL
 %%PORTDOCS%%share/doc/tgif/README
-%%PORTDOCS%%share/doc/tgif/tgif.1.html
 share/examples/tgif/an-sr-flip-flop.obj
 share/examples/tgif/example.tex
 share/examples/tgif/fonts.obj
