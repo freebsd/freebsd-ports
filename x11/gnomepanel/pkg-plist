@@ -1,4 +1,3 @@
-bin/fish-applet-2
 bin/gnome-desktop-item-edit
 bin/gnome-panel
 bin/gnome-panel-preferences
@@ -60,6 +59,7 @@ libdata/bonobo/servers/GNOME_FishApplet_Factory.server
 libdata/bonobo/servers/GNOME_GenUtilApplet_Factory.server
 libdata/bonobo/servers/GNOME_Panel.server
 libdata/pkgconfig/libpanelapplet-2.0.pc
+libexec/fish-applet-2
 share/gnome/control-center-2.0/capplets/gnome-panel-preferences.desktop
 share/gnome/gen_util/pager.glade
 share/gnome/gen_util/tasklist.glade
@@ -167,9 +167,6 @@ share/locale/vi/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/wa/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-panel-2.0.mo
-@dirrm share/gnome/pixmaps/mailcheck
-@dirrm share/gnome/pixmaps/fish
-@dirrm share/gnome/panel
 @dirrm share/gnome/omf/gnome-panel
 @dirrm share/gnome/idl/gnome-panel-2.0
 @dirrm share/gnome/help/workspace-switcher/C/figures
@@ -190,8 +187,6 @@ share/locale/zh_TW/LC_MESSAGES/gnome-panel-2.0.mo
 @dirrm share/gnome/gen_util
 @dirrm share/gnome/gnome-panel/glade
 @dirrm share/gnome/gnome-panel
-@dirrm share/gnome/control-center-2.0/capplets
-@dirrm share/gnome/control-center-2.0
 @dirrm share/doc/panel-applet
 @dirrm include/panel-2.0
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/tasklist_applet/prefs
