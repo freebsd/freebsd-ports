@@ -87,6 +87,10 @@
 #
 # If you want to have the Maildir mtime patch define:
 #  WITH_MUTT_MAILDIR_MTIME_PATCH
+#
+# If you want to have the Mailbox Sidebar patch define:
+#  WITH_MUTT_SIDEBAR_PATCH
+#
 
 PORTNAME=	mutt-devel
 PORTVERSION=	1.5.6
@@ -107,7 +111,8 @@ PATCH_SITES+=	http://www.mutt.org.ua/download/mutt-${VVV_PATCH_VERSION}/:vvv \
 		ftp://ftp.mutt.org.ua/pub/mutt/mutt-${VVV_PATCH_VERSION}/:vvv \
 		ftp://ftp3.mutt.org.ua/pub/mutt/mutt-${VVV_PATCH_VERSION}/:vvv \
 		http://cedricduval.free.fr/mutt/patches/download/:cd \
-		http://home.woolridge.ca/mutt/patches/:dw
+		http://home.woolridge.ca/mutt/patches/:dw \
+		http://thomer.com/mutt/:thomer
 
 MAINTAINER?=	udo.schweigert@siemens.com
 COMMENT?=	The Mongrel of Mail User Agents (part Elm, Pine, Mush, mh, etc.)
@@ -159,6 +164,17 @@ DW_MBOX_PATCH_VERSION=	${DW_PATCH_VERSION}
 .endif
 .if defined(WITH_MUTT_IMAP_HEADER_CACHE)
 WITH_MUTT_MAILDIR_HEADER_CACHE=	yes
+.endif
+.if defined(WITH_MUTT_SIDEBAR_PATCH)
+.if defined(WITH_MUTT_NNTP)
+.error The WITH_MUTT_SIDEBAR_PATCH and WITH_MUTT_NNTP are not compatible
+.endif
+.if defined(WITH_MUTT_MAILDIR_MTIME_PATCH)
+.error The WITH_MUTT_SIDEBAR_PATCH and WITH_MUTT_MAILDIR_MTIME_PATCH are not compatible
+.endif
+.if defined(WITH_MUTT_SIGNATURE_MENU)
+.error The WITH_MUTT_SIDEBAR_PATCH and WITH_MUTT_SIGNATURE_MENU are not compatible
+.endif
 .endif
 
 # XXX
@@ -332,6 +348,9 @@ SGML_NEEDED=	yes
 .if defined(WITH_MUTT_MBOX_HOOK_PATCH)
 PATCHFILES+=	p0-patch-${DW_MBOX_PATCH_VERSION}.dw.mbox-hook.1:dw
 .endif
+.if defined(WITH_MUTT_SIDEBAR_PATCH)
+PATCHFILES+=	patch-1.5.6i.sidebar.20041122.txt:thomer
+.endif
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/i$//}
 MAN1=		mutt.1 mutt_dotlock.1
@@ -361,6 +380,9 @@ SCRIPTS_ENV+=	MUTT_QUOTE_PATCH="yes"
 .if defined(WITH_MUTT_MAILDIR_HEADER_CACHE)
 SCRIPTS_ENV+=	MUTT_MAILDIR_HEADER_CACHE="yes"
 CONFIGURE_ARGS+=	--enable-hcache --without-gdbm --with-bdb
+.endif
+.if defined(WITH_MUTT_SIDEBAR_PATCH)
+SCRIPTS_ENV+=	MUTT_SIDEBAR_PATCH="yes"
 .endif
 .if defined(WITH_MUTT_EDIT_THREADS)
 SCRIPTS_ENV+=	MUTT_EDIT_THREADS="yes"
