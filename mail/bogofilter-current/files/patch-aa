@@ -1,0 +1,11 @@
+--- ./src/datastore_tdb.c.orig	Tue Aug 19 14:27:27 2003
++++ ./src/datastore_tdb.c	Sun Aug 24 04:35:04 2003
+@@ -77,7 +77,7 @@
+ }
+ 
+ 
+-static void dbh_print_names(dbh_t *dbh, const char *msg)
++static void dbh_print_names(dbh_t *handle, const char *msg)
+ {
+     if (handle->count == 1)
+ 	fprintf(dbgout, "%s (%s)", msg, handle->name[0]);
