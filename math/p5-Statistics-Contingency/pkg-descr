@@ -1,0 +1,14 @@
+The "Statistics::Contingency" class helps you calculate several useful
+statistical measures based on 2x2 "contingency tables". I use these measures
+to help judge the results of automatic text categorization experiments, but
+they are useful in other situations as well.
+
+The general usage flow is to tally a whole bunch of results in the
+"Statistics::Contingency" object, then query that object to obtain the
+measures you are interested in. When all results have been collected, you
+can get a report on accuracy, precision, recall, F1, and so on, with both
+macro-averaging and micro-averaging over categories.
+
+WWW: http://search.cpan.org/dist/Statistics-Contingency
+
+Author:	Ken Williams <kenw@ee.usyd.edu.au>
