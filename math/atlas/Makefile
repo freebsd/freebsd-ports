@@ -5,6 +5,9 @@
 # $FreeBSD$
 #
 
+# NOTE: This port purposely ignores the CC and CFLAGS settings.
+#       Program and compiler flags are finetuned to gcc 2.95/3.1.
+
 PORTNAME=	atlas
 PORTVERSION=	3.4.1
 PORTREVISION=	1
@@ -20,6 +23,11 @@ LIB_DEPENDS=    lapack:${PORTSDIR}/math/lapack
 USE_BZIP2=	yes
 WRKSRC=		${WRKDIR}/ATLAS
 INSTALLS_SHLIB= yes
+USE_REINPLACE=  yes
+
+.if (${MACHINE_ARCH} == "alpha")
+USE_GCC=	3.1
+.endif
 
 do-configure:
 .if defined(BATCH) || defined(PACKAGE_BUILDING)
@@ -27,9 +35,16 @@ do-configure:
 .else
 	@(cd ${WRKSRC}; ${MAKE_ENV} ${MAKE} config)
 .endif
+.if (${MACHINE_ARCH} == "alpha")
+	@(cd ${WRKSRC}; ${PATCH} < ${FILESDIR}/alpha-patch)
+.endif
 
 do-build:
+.if (${MACHINE_ARCH} == "alpha") || defined(USE_GCC)
+	@${REINPLACE_CMD} -e 's|/usr/bin/gcc|${CC}|g;' ${WRKSRC}/Make.`cat ${WRKSRC}/ARCHNAME`
+.endif
 	(cd ${WRKSRC}; ${MAKE_ENV} ${MAKE} install arch=`cat ${WRKSRC}/ARCHNAME`)
+	(cd ${WRKSRC}; ${MAKE_ENV} ${MAKE} sanity_test arch=`cat ${WRKSRC}/ARCHNAME`)
 	(cd ${WRKSRC}; ${MKDIR} tmp ; \
 		${CP} ${LOCALBASE}/lib/liblapack.a tmp ;\
 		cd tmp ;\

@@ -11,14 +11,13 @@ TO ENABLE SSE1/SSE2 SUPPORT BEFORE MAKING ATLAS!
 IT SIGNIFICANTLY IMPROVES PERFORMANCE. 
 
 If you use blas, you can simply change flags when linking,
-from -lblas to -lf77blas -latlas (order is important)
-get a significantly performance increase.
+from -lblas to -lf77blas -latlas (order is important).
 
 A few routines from LAPACK are merged into one library as libalapack.
 It requres both C and Fortran77 interfaces, and thus that link line would be:
--lalapack -lf77blas -lcblas -latlas -lg2c -lm 
-Order *is* important, so -latlas -lcblas will *not* work.
+-lalapack -lf77blas -lcblas -latlas -lg2c -lm .
+
+Other choice of CC and CFLAGS are *NOT* recommended.
+They are already optimized for this platform and automatically searched.
 
 WWW: http://math-atlas.sourceforge.net/
-- NAKATA, Maho
-  E-mail: chat95@mbox.kyoto-inet.or.jp
