@@ -1,0 +1,15 @@
+bin/gnupod_INITpod
+bin/gnupod_addsong
+bin/gnupod_connect
+bin/gnupod_delete
+bin/mktunes
+bin/tunes2pod
+%%PORTDOCS%%share/doc/gnupod/README
+%%PORTDOCS%%share/doc/gnupod/CHANGES
+%%PORTDOCS%%share/doc/gnupod/TODO
+%%PORTDOCS%%share/doc/gnupod/index-de.html
+%%PORTDOCS%%share/doc/gnupod/index.html
+%%PORTDOCS%%share/doc/gnupod/logo.png
+%%PORTDOCS%%share/doc/gnupod/gnutunesdb.example
+%%PORTDOCS%%share/doc/gnupod/ipod.svg
+%%PORTDOCS%%@dirrm share/doc/gnupod

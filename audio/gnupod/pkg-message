@@ -1,0 +1,17 @@
+===>   Please Note:
+*******************************************************************************
+
+gnuPod < 0.25 had a bad typo:
+the 'genere=' tag should be (of course) 'genre='.
+It's corrected in gnuPod 0.25, but if you used the
+'Genre' tag in older versions you'll have to do this
+(To correct your GNUtunesDB)
+
+1) Mount your iPod
+2) Run: tunes2pod -m $IPOD_MOUNTPOINT
+(Make sure to run tunes2pod from gnupod 0.25!)
+
+This will re-parse your iTunesDB and create a
+GNUtunesDB without the typo
+
+*******************************************************************************
