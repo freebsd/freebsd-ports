@@ -1,9 +1,0 @@
---- mysqlcommonguiparts/source/linux/Makefile.am.orig	Sun Feb 22 04:25:16 2004
-+++ mysqlcommonguiparts/source/linux/Makefile.am	Sun Feb 22 04:25:29 2004
-@@ -24,5 +24,5 @@
- INCLUDES=@GNOME_CFLAGS@ @MYSQL_INCLUDE@\
- 	@AUX_INCLUDES@\
-         -DAPP_DATADIR=\""$(mydatadir)"\"\
--        -DAPP_LOCALE_DIR=\""$(prefix)/$(DATADIRNAME)/locale"\"
-+        -DAPP_LOCALE_DIR=\""$(prefix)/share/locale"\"
- 

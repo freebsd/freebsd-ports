@@ -118,6 +118,7 @@ share/mysql-gui/administrator/user_admin_gray.png
 share/mysql-gui/administrator/user_administration.glade
 share/mysql-gui/administrator/variable.png
 share/mysql-gui/administrator/variable_editable.png
+share/mysql-gui/administrator/variable_disabled.png
 share/mysql-gui/common/connect_dialog.glade
 share/mysql-gui/common/connect_to_instance.png
 share/mysql-gui/common/dockpnl_bg_logo.png
