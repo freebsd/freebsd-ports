@@ -3,7 +3,7 @@
 # Date created:                         16 March 1999
 # Whom:                                 Pavel Andreev
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/04/30 16:37:20 taoka Exp $
 #
 
 DISTNAME=	kicq-0.3.0
@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.cn.ua/~denis/kde/
 
 MAINTAINER=	paxvel@iname.com
 
-LIB_DEPENDS=	icq.1:${PORTSDIR}/devel/icqlib \
+LIB_DEPENDS=	icq.1:${PORTSDIR}/net/icqlib \
 		kdecore.2:${PORTSDIR}/x11/kdelibs11 \
 		kdeui.2:${PORTSDIR}/x11/kdelibs11 \
 		kfm.2:${PORTSDIR}/x11/kdelibs11
