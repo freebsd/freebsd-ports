@@ -130,6 +130,7 @@
     SUBDIR += hdf
     SUBDIR += hdf5
     SUBDIR += hobbes-icons-xpm
+    SUBDIR += hpoj
     SUBDIR += hppsmtools
     SUBDIR += hs-HOpenGL
     SUBDIR += hs-hgl
