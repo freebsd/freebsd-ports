@@ -1,5 +1,7 @@
-bin/install.rb
-bin/setup.rb
+bin/ruby-install.rb
+bin/ruby-setup.rb
+%%RUBY_SITELIBDIR%%/install.rb
+%%RUBY_SITELIBDIR%%/setup.rb
 %%PORTDOCS%%%%RUBY_DOCDIR%%/setup.rb/changes.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/setup.rb/devel.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/setup.rb/hookapi.html

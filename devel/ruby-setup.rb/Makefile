@@ -7,6 +7,7 @@
 
 PORTNAME=	setup.rb
 PORTVERSION=	3.1.2
+PORTREVISION=	1
 CATEGORIES=	devel ruby
 MASTER_SITES=	http://www.loveruby.net/archive/%SUBDIR%/ \
 		http://www.ruby-lang.org/~knu/backup/
@@ -21,11 +22,23 @@ USE_RUBY=	yes
 
 NO_BUILD=	yes
 
+_SCRIPTS=	install.rb setup.rb
+
+RUBY_SHEBANG_FILES=	${_SCRIPTS:S:^:${WRKSRC}/ruby-:}
+
 DOCS_EN=	doc.en/* usage-en.txt
 DOCS_JA=	doc.ja/* usage-ja.txt
 
+post-extract:
+.for f in ${_SCRIPTS}
+	${CP} -p ${WRKSRC}/${f} ${WRKSRC}/ruby-${f}
+.endfor
+
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/install.rb ${WRKSRC}/setup.rb ${PREFIX}/bin/
+.for f in ${_SCRIPTS}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_SITELIBDIR}/
+	${INSTALL_SCRIPT} ${WRKSRC}/ruby-${f} ${PREFIX}/bin/
+.endfor
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_DOCDIR}/${PORTNAME}/ja
 .for f in ${DOCS_EN}
