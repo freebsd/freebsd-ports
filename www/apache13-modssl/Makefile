@@ -71,11 +71,13 @@ check-depends::
 	@${FALSE}
 .endif
 
-.if exists(${PREFIX}/etc/rc.d/apache.sh)
-PLIST_FILES+=	etc/rc.d/apache.sh.sample
+.if exists(${PREFIX}/etc/rc.d/apache.sh) || !defined(USE_RC_SUBR)
+APACHE_SH?=	etc/rc.d/apache.sh.sample
 .else
-PLIST_FILES+=	etc/rc.d/apache.sh
+APACHE_SH?=	etc/rc.d/apache.sh
 .endif
+
+PLIST_FILES+=	${APACHE_SH}
 
 .if defined(WITH_APACHE_SUEXEC) && ${WITH_APACHE_SUEXEC} == yes
 
@@ -390,9 +392,9 @@ pre-install:
 
 post-install:
 .if defined(USE_RC_SUBR)
-	${INSTALL_SCRIPT} ${WRKSRC}/rcng.sh ${PREFIX}/etc/rc.d/apache.sh
+	${INSTALL_SCRIPT} ${WRKSRC}/rcng.sh ${PREFIX}/${APACHE_SH}
 .else
-	${INSTALL_SCRIPT} ${WRKSRC}/apache.sh ${PREFIX}/etc/rc.d/apache.sh.sample
+	${INSTALL_SCRIPT} ${WRKSRC}/apache.sh ${PREFIX}/${APACHE_SH}
 .endif
 .if defined(WITH_APACHE_MODSNMP) || defined(APACHE_WITH_MODSNMP)
 	@${MKDIR} ${DATADIR}/buckets
