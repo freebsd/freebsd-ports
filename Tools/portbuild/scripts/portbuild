@@ -2,6 +2,41 @@
 
 # usage: $0 BRANCH [-noclean] [-norestr] [-plistcheck] [-nodummy] PKGNAME.tgz DIRNAME [DEPENDENCY.tgz ...]
 
+cleanup()
+{
+  chroot=$1
+  noclean=$2
+  error=$3
+  cleandirs=$4
+  pkgname=$5
+
+  #umount ${chroot}/proc
+    
+  umount -f ${chroot}/a/ports
+  umount -f ${chroot}/usr/opt/doc
+  umount -f ${chroot}/usr/src
+
+  if [ $noclean = 0 -o $error = 0 ]; then
+    rm -rf ${chroot}/tmp/*
+    for dir in ${cleandirs}; do
+      if ! rm -rf ${chroot}${dir} >/dev/null 2>&1; then
+        chflags -R noschg ${chroot}${dir}
+        rm -rf ${chroot}${dir} >/dev/null 2>&1
+      fi
+    done
+    chroot ${chroot} /sbin/ldconfig -R
+    chroot ${chroot} /sbin/ldconfig -aout -R  #XXX i386 only
+    rm -rf ${chroot}/var/db/pkg/*
+    rm ${chroot}/used/${pkgname}
+    rmdir ${chroot}/used
+  fi
+
+  echo -n "$pkgname done on $(hostname -s) at "
+  date
+
+  exit $error
+}
+
 # configurable variables
 pb=/var/portbuild
 
@@ -9,6 +44,7 @@ pb=/var/portbuild
 . ${pb}/scripts/buildenv
 
 buildroot=${scratchdir}
+error=0
 
 branch=$1
 shift
@@ -45,7 +81,8 @@ shift 2
 
 buildenv ${branch}
 
-export WRKDIRPREFIX=${scratchdir}
+export WRKDIRPREFIX=${buildroot}
+export DISTDIR=/tmp/distfiles
 
 # to catch missing dependencies
 #export DEPENDS_TARGET=/usr/bin/true
@@ -74,7 +111,7 @@ echo "building $pkgname"
 
 chrootdir=${buildroot}/${branch}/chroot
 bakdir=${pb}/${branch}/tarballs
-bindist=${bakdir}/bindist.tar
+bindist=${buildroot}/${branch}/tarballs/bindist.tar
 packages=${pb}/${branch}/packages
 
 found=0
@@ -109,9 +146,11 @@ if [ ${found} != 1 ]; then
   cp -p /usr/bin/killall ${chroot}/usr/bin
 
   # Set up desired uname version
-  cp ${bakdir}/UNAME_TARGET ${chroot}/usr/bin
+  echo ${OSREL}-${BRANCH} > ${chroot}/usr/bin/UNAME_TARGET
 
 fi
+
+trap "cleanup ${chroot} ${noclean} ${error} \"${cleandirs}\" ${pkgname}" 1 2 3 9 10 11 15 
 
 rm -rf ${chroot}/tmp/*
 cd ${chroot}/tmp
@@ -124,13 +163,13 @@ echo "with arguments: ${args}" | tee -a ${chroot}/tmp/${pkgname}.log
 # intentionally set up ${PORTSDIR} with symlink to catch broken ports
 mkdir -p ${chroot}/a/ports
 rm -rf ${chroot}/usr/ports
-mount -o -2 -r ${master}:${pb}/${branch}/ports ${chroot}/a/ports
+mount -r ${master}:${pb}/${branch}/ports ${chroot}/a/ports
 ln -sf ../a/ports ${chroot}/usr/ports
 
 mkdir -p ${chroot}/usr/src ${chroot}/usr/opt/doc
 
-mount -o -2 -r ${master}:${pb}/${branch}/src ${chroot}/usr/src
-mount -o -2 -r ${master}:${pb}/usr/opt/doc ${chroot}/usr/opt/doc
+mount -r ${master}:${pb}/${branch}/src ${chroot}/usr/src
+mount -r ${master}:${pb}/usr/opt/doc ${chroot}/usr/opt/doc
 
 mtree -deU -f ${chroot}/usr/src/etc/mtree/BSD.root.dist -p ${chroot} \
   >/dev/null 2>&1
@@ -156,10 +195,10 @@ chroot ${chroot} /sbin/ldconfig -aout -m /usr/lib/compat/aout
 chroot ${chroot} /sbin/ldconfig -aout -R
 
 while [ $# -gt 0 ]; do
-  if ssh -a -x ${master} [ -f ${packages}/All/$1 ]; then
+  if [ -f ${packages}/All/$1 ]; then
     if [ ! -f ${chroot}/tmp/depends/$1 ]; then
       echo "copying package $1 for ${pkgname}"
-      scp -p $master:${packages}/All/$1 ${chroot}/tmp/depends
+      cp -p ${packages}/All/$1 ${chroot}/tmp/depends
     fi
   else
     echo "skipping package $1 for ${pkgname} since it is missing"
@@ -167,9 +206,7 @@ while [ $# -gt 0 ]; do
   shift
 done
 
-scp -p ${master}:${pb}/scripts/{buildscript,pnohang} ${chroot}
-
-#mount_procfs procfs ${chroot}/proc
+cp -p ${pb}/scripts/buildscript ${pb}/scripts/pnohang ${chroot}
 
 # phase 1, make checksum
 chroot ${chroot} /buildscript ${dirname} 1 2>&1 | tee -a ${chroot}/tmp/${pkgname}.log
@@ -206,28 +243,4 @@ else
   scp ${chroot}/tmp/${pkgname}.log ${master}:${pb}/${branch}/logs/${pkgname}.log
 fi
 
-#umount ${chroot}/proc
-
-umount -f ${chroot}/a/ports
-umount -f ${chroot}/usr/opt/doc
-umount -f ${chroot}/usr/src
-
-if [ $noclean = 0 -o $error = 0 ]; then
-  rm -rf ${chroot}/tmp/*
-  for dir in ${cleandirs}; do
-    if ! rm -rf ${chroot}${dir} >/dev/null 2>&1; then
-      chflags -R noschg ${chroot}${dir}
-      rm -rf ${chroot}${dir} >/dev/null 2>&1
-    fi
-  done
-  chroot ${chroot} /sbin/ldconfig -R
-  chroot ${chroot} /sbin/ldconfig -aout -R
-  rm -rf ${chroot}/var/db/pkg/*
-  rm ${chroot}/used/${pkgname}
-  rmdir ${chroot}/used
-fi
-
-echo -n "$pkgname done on $(hostname -s) at "
-date
-
-exit $error
+cleanup ${chroot} ${noclean} ${error} "${cleandirs}" ${pkgname}
