@@ -1,13 +1,11 @@
---- indent.texinfo.orig	Wed May 26 10:54:29 1999
-+++ indent.texinfo	Mon Jun 28 11:56:16 1999
-@@ -2,6 +2,10 @@
- @c %**start of header
- @setfilename indent.info
- @settitle @code{indent}:  Indent and Format C Program Source
-+@dircategory GNU indent
-+@direntry
-+* GNU indent: (indent).		GNU indent changes the appearance of a C program
-+@end direntry
- @include version.texi
- @c %**end of header
+--- indent.texinfo.orig	Thu Nov 16 10:46:14 2000
++++ indent.texinfo	Sat Nov 18 05:16:14 2000
+@@ -17,7 +17,7 @@
+ @ifinfo
+ @dircategory Indent Code Formatter
+ @direntry
+-* Indent: (indent).		C code formatter.
++* GNU indent: (indent).		C code formatter.
+ @end direntry
  
+ @c !BEGIN INTRO
