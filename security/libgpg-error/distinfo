@@ -1,2 +1,4 @@
-MD5 (libgpg-error-0.5.tar.gz) = 059d8ea9d11bf1054949a23274d7b212
-MD5 (libgpg-error-0.5.tar.gz.sig) = 599a6928a34c99932d2497c33103f7a2
+MD5 (libgpg-error-0.6.tar.gz) = 516623893401d391b6c346cba543681d
+SIZE (libgpg-error-0.6.tar.gz) = 294648
+MD5 (libgpg-error-0.6.tar.gz.sig) = 1951524a8d8b241fbd49d84eb75b62f8
+SIZE (libgpg-error-0.6.tar.gz.sig) = 65
