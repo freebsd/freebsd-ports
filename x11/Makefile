@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.73 1995/07/15 13:57:40 jkh Exp $
+# $Id: Makefile,v 1.74 1995/08/02 06:53:40 jkh Exp $
 #
 
    SUBDIR += FWF
@@ -17,6 +17,7 @@
    SUBDIR += rxvt
    SUBDIR += sxpc
    SUBDIR += tk
+   SUBDIR += tk4
    SUBDIR += tkhfs
    SUBDIR += tkinfo
    BROKEN += tkman
