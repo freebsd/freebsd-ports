@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	tex-texmflocal
-PORTVERSION=	1.6
+PORTVERSION=	1.7
 CATEGORIES=	print
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -28,6 +28,7 @@ MKTEXLSR=	${LOCALBASE}/bin/mktexlsr
 
 DIRS=	bibtex/bib bibtex/bst bibtex\
 	context/config context \
+	doc/latex doc \
 	dvipdfm/config dvipdfm dvips/config dvips \
 	etex/plain/config etex/plain etex \
 	fonts/afm fonts/ofm fonts/ovp fonts/ovf \
