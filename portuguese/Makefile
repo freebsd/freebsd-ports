@@ -11,6 +11,7 @@
     SUBDIR += ooodict-pt_BR
     SUBDIR += ooodict-pt_PT
     SUBDIR += openoffice-1.0
+    SUBDIR += openoffice-1.1-pt_BR
     SUBDIR += staroffice52
     SUBDIR += webalizer-pt_BR
     SUBDIR += webalizer-pt_PT
