@@ -13,9 +13,7 @@ MASTER_SITES=	http://www.gnomemeeting.org/downloads/0.96.1/sources/
 MAINTAINER=	roger@FreeBSD.org
 COMMENT=	GNOME H323 Video Conferencing program, similar to NetMeeting
 
-LIB_DEPENDS=	ldap.2:${PORTSDIR}/net/openldap20 \
-		gnomeui-2.200:${PORTSDIR}/x11-toolkits/libgnomeui \
-		bonobo-2.0:${PORTSDIR}/devel/libbonobo
+LIB_DEPENDS=	ldap.2:${PORTSDIR}/net/openldap20
 BUILD_DEPENDS=  ${NONEXISTENT}:${PORTSDIR}/net/openh323:build
 
 # note, we do not want to clean openh323, otherwise it has to build
@@ -24,7 +22,7 @@ NOCLEANDEPENDS= yes
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gdkpixbuf gnomelibs gnomehack gnomeprefix gconf bonobo esound
+USE_GNOME=	gdkpixbuf gnomelibs gnomehack gnomeprefix gconf bonobo esound libgnomeui libbonobo
 USE_BISON=	yes
 # Clear configure target so we stop getting binaries prefixed with i386-portbld-freebsd46
 CONFIGURE_TARGET=
