@@ -20,6 +20,7 @@ share/locale/cy/LC_MESSAGES/gnome-mag.mo
 share/locale/da/LC_MESSAGES/gnome-mag.mo
 share/locale/de/LC_MESSAGES/gnome-mag.mo
 share/locale/el/LC_MESSAGES/gnome-mag.mo
+share/locale/en_CA/LC_MESSAGES/gnome-mag.mo
 share/locale/es/LC_MESSAGES/gnome-mag.mo
 share/locale/et/LC_MESSAGES/gnome-mag.mo
 share/locale/eu/LC_MESSAGES/gnome-mag.mo
@@ -53,6 +54,7 @@ share/locale/sr/LC_MESSAGES/gnome-mag.mo
 share/locale/sr@Latn/LC_MESSAGES/gnome-mag.mo
 share/locale/sv/LC_MESSAGES/gnome-mag.mo
 share/locale/th/LC_MESSAGES/gnome-mag.mo
+share/locale/tk/LC_MESSAGES/gnome-mag.mo
 share/locale/tr/LC_MESSAGES/gnome-mag.mo
 share/locale/uk/LC_MESSAGES/gnome-mag.mo
 share/locale/vi/LC_MESSAGES/gnome-mag.mo
