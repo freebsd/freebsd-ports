@@ -7393,6 +7393,7 @@ p5-IMDB-Movie	ports/www/p5-IMDB-Movie
 p5-IO		ports/devel/p5-IO
 p5-IO-All	ports/devel/p5-IO-All
 p5-IO-CaptureOutput	ports/devel/p5-IO-CaptureOutput
+p5-IO-CSVHeaderFile	ports/textproc/p5-IO-CSVHeaderFile
 p5-IO-Digest	ports/devel/p5-IO-Digest
 p5-IO-INET6	ports/net/p5-IO-INET6
 p5-IO-Interface	ports/net/p5-IO-Interface
