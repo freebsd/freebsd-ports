@@ -40,7 +40,6 @@
     SUBDIR += dap
     SUBDIR += darkice
     SUBDIR += denemo
-    SUBDIR += disc-cover
     SUBDIR += easytag
     SUBDIR += ecasound
     SUBDIR += ecawave

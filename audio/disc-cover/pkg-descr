@@ -1,7 +1,0 @@
-disc-cover provides an easy way to produce covers for audio cds. It scans
-audio cds and uses information from the freedb database to build a back and
-front cover for the cd. The cover is output is in Latex, Dvi, Pdf or
-Postscript.
-
-WWW: http://www.liacs.nl/~jvhemert/disc-cover/
-Miguel Mendez <flynn@energyhq.homeip.net>
