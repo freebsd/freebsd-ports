@@ -1,6 +1,6 @@
---- hoc.y.orig	Thu Jun 20 10:22:54 2002
-+++ hoc.y	Thu Jun 20 10:35:33 2002
-@@ -36,6 +36,10 @@
+--- hoc.y.orig	Tue May 14 06:09:26 2002
++++ hoc.y	Tue Dec  3 14:45:21 2002
+@@ -38,6 +38,11 @@
  #include <math.h>
  #include <stdlib.h>
  #include <string.h>
@@ -8,31 +8,25 @@
 +extern "C" {
 +#include <getopt.h>
 +}
++
  int precis=8;
  
  void * set_string_input(char *);
-@@ -197,17 +201,17 @@
- 	;
- PARSERexpr:
- 	  PARSERexpr PARSERwhite { $$ = $1; }	
--	| PARSERfunction	{ $$ = new value($1) }
--	| PARSERfunction2	{ $$ = new value($1) }
--	| PARSERat PARSERprocedure	{ $$ = new value($2) }
--	| PARSERuserfunction	{ $$ = new value($1) }
--	| PARSERat PARSERvariable	{ $$ = new value($2) }
-+	| PARSERfunction	{ $$ = new value($1); }
-+	| PARSERfunction2	{ $$ = new value($1); }
-+	| PARSERat PARSERprocedure	{ $$ = new value($2); }
-+	| PARSERuserfunction	{ $$ = new value($1); }
-+	| PARSERat PARSERvariable	{ $$ = new value($2); }
- 	| PARSERlbracket PARSERexprlist PARSERrbracket { $$=new value(bracket(cell(($2)->asMATRIX(),1),cell(($2)->asMATRIX(),2))); delete $2; }
-         | PARSERwhite PARSERexpr %prec PARSERbecomes	{ $$ = $2; }
- 	| PARSERnumber			{ $$ = $1; }
- 	| PARSERvariable		{ $$ = new value($1->var); }
--	| PARSERvariable PARSERplusplus { $1->var=$1->var+1; $$ = new value($1->var) }
--	| PARSERvariable PARSERminusminus { $1->var=$1->var-1; $$ = new value($1->var) }
-+	| PARSERvariable PARSERplusplus { $1->var=$1->var+1; $$ = new value($1->var); }
-+	| PARSERvariable PARSERminusminus { $1->var=$1->var-1; $$ = new value($1->var); }
-         | PARSERvariable PARSERbecomes PARSERexpr { $$ = $3; $1->var=*($3);}
- 	| PARSERprocedure 		{ $$=new value( (*($1->ivalue.procptr))() ); }
- 	| PARSERexpr PARSERlbracket PARSERmatrix PARSERrbracket	
+@@ -517,7 +522,7 @@
+             cout << " The content of given files and expressions will be treated as user input" << endl;
+             cout << " in the order rc-file, given files, expressions." << endl;
+             cout << endl;
+-            cout << " The rc-file is searched in /etc/rascal.rc, /usr/local/bin/rascal.rc, rascal.rc" << endl;
++            cout << " The rc-file is searched in %%PREFIX%%/etc/rascal.rc, rascal.rc" << endl;
+             return 0;
+          case 'n':
+             norc=1;
+@@ -556,7 +561,7 @@
+    }
+ 
+    if(norc==0)
+-      if(load("/etc/rascal.rc") && load("/usr/local/bin/rascal.rc") && load("rascal.rc"))
++      if(load("%%PREFIX%%/etc/rascal.rc") && load("rascal.rc"))
+          ; // no rcfile found
+ 
+    if(doeval!="")
