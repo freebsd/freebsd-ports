@@ -12,8 +12,8 @@ smtpproxy<=1.1.3|http://0xbadc0ded.org/advisories/0402.txt|smtpproxy: remotely e
 subversion<1.0.5|http://subversion.tigris.org/security/CAN-2004-0413-advisory.txt|subversion: remote exploitable buffer overflow in 'svn://' parser|4616bc3b-bd0f-11d8-a252-02e0185c0b53
 imp<3.2.4|http://article.gmane.org/gmane.comp.horde.imp/14421/|imp: XSS hole exploited via the Content-type header of malicious emails|911f1b19-bd20-11d8-84f9-000bdb1444a4
 chora<1.2.2|http://article.gmane.org/gmane.comp.horde.chora/610/|chora: hole in the diff code that allowed malicious input|9e09399d-bd21-11d8-84f9-000bdb1444a4
-squirrelmail<1.4.3a|http://www.cve.mitre.org/cgi-bin/cvename.cgi?name=2004-0519|SquirrelMail XSS vulnerability|89a0de27-bf66-11d8-a252-02e0185c0b53
-ja-squirrelmail<1.4.3a,1|http://www.cve.mitre.org/cgi-bin/cvename.cgi?name=2004-0519|SquirrelMail XSS vulnerability|89a0de27-bf66-11d8-a252-02e0185c0b53
+squirrelmail<1.4.3a|http://www.cve.mitre.org/cgi-bin/cvename.cgi?name=2004-0519 http://www.rs-labs.com/adv/RS-Labs-Advisory-2004-1.txt|SquirrelMail XSS vulnerability|89a0de27-bf66-11d8-a252-02e0185c0b53
+ja-squirrelmail<1.4.3a,1|http://www.cve.mitre.org/cgi-bin/cvename.cgi?name=2004-0519 http://www.rs-labs.com/adv/RS-Labs-Advisory-2004-1.txt|SquirrelMail XSS vulnerability|89a0de27-bf66-11d8-a252-02e0185c0b53
 moinmoin<1.2.2|http://www.osvdb.org/6704|MoinMoin administrative group name privilege escalation vulnerability|da9e6438-bfc0-11d8-b00e-000347a4fa7d
 phpnuke<=7.3|http://www.waraxe.us/?modname=sa&id=032|Multiple security flaws in PhpNuke 6.x - 7.3|33ab4a47-bfc1-11d8-b00e-000347a4fa7d
-webmin<1.150|http://www.webmin.com/changes-1.150.html|Multiple vulnerabilities in Webmin|ab61715f-c027-11d8-b00e-000347a4fa7d
+webmin<1.150|http://www.webmin.com/changes-1.150.html http://www.osvdb.org/6729 http://www.osvdb.org/6730|Multiple vulnerabilities in Webmin|ab61715f-c027-11d8-b00e-000347a4fa7d
