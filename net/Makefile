@@ -223,7 +223,6 @@
     SUBDIR += jwhois
     SUBDIR += kdenetwork3
     SUBDIR += kdetelnet
-    SUBDIR += kio_fish
     SUBDIR += kmess
     SUBDIR += konverse
     SUBDIR += kopete
