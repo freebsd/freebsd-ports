@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.csn.ul.ie/~caolan/publink/libwmf/
 MAINTAINER=	cpiazza@FreeBSD.org
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
+		gd.0:${PORTSDIR}/graphics/gd \
 		png.3:${PORTSDIR}/graphics/png \
 		ttf.4:${PORTSDIR}/print/freetype
 
@@ -21,7 +22,11 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_XLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/freetype \
+		          -I${LOCALBASE}/include/gd \
 		          -I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}"/lib
+
+post-build:
+	@cd ${WRKSRC} && ${PATCH} < ${FILESDIR}/patch-gd
 
 .include <bsd.port.mk>

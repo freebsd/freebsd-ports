@@ -8,9 +8,25 @@ include/wmfapi.h
 include/xgd.h
 include/xgdttf.h
 lib/libXwmf.a
+lib/libXwmf.so
+lib/libXwmf.so.0
 lib/libdib.a
+lib/libdib.so
+lib/libdib.so.0
 lib/libgdwmf.a
+lib/libgdwmf.so
+lib/libgdwmf.so.0
 lib/libwmf.a
+lib/libwmf.so
+lib/libwmf.so.0
 lib/libxfig.a
+lib/libxfig.so
+lib/libxfig.so.0
 lib/libxfwmf.a
+lib/libxfwmf.so
+lib/libxfwmf.so.0
 lib/libxgd.a
+lib/libxgd.so
+lib/libxgd.so.0
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
