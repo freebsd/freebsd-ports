@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		${MASTER_SITE_LOCAL} \
 		ftp://ftp.zsh.org/%SUBDIR%/ \
 		ftp://ftp.sterling.com/%SUBDIR%/ \
-		ftp://ftp.rge.com/pub/%SUBDIR%/ \
+		ftp://ftp.rge.com/pub/shells/%SUBDIR%/ \
 		ftp://ftp.fu-berlin.de/pub/unix/shells/%SUBDIR%/ \
 		ftp://ftp.ips.oz.au/pub/packages/%SUBDIR%/ \
 		ftp://ftp.uit.no/pub/unix/shells/%SUBDIR%/
