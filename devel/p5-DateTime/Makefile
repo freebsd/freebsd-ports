@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DateTime
-PORTVERSION=	0.26
+PORTVERSION=	0.27
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	DateTime
@@ -29,7 +29,7 @@ MAN3=		DateTime.3 DateTime::Duration.3 \
 		DateTime::Infinite.3 DateTime::LeapSecond.3
 
 .if !defined(NOPORTDOCS)
-PORTDOCS=	CREDITS Changes README TODO
+PORTDOCS=	CREDITS Changes TODO
 
 post-install:
 	@${MKDIR} ${DOCSDIR}
