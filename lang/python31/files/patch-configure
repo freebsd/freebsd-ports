@@ -1,6 +1,6 @@
---- configure.orig	Sat Jun 28 16:46:31 2003
-+++ configure	Thu Jul  3 22:29:46 2003
-@@ -3278,6 +3278,12 @@
+--- configure.orig	Sun Jul 13 18:46:13 2003
++++ configure	Sat Jul 19 15:21:09 2003
+@@ -3288,6 +3288,12 @@
  	  RUNSHARED=LD_LIBRARY_PATH=`pwd`:$LD_LIBRARY_PATH
  	  INSTSONAME="$LDLIBRARY".$SOVERSION
  	  ;;
@@ -13,12 +13,3 @@
      hp*|HP*)
  	  LDLIBRARY='libpython$(VERSION).sl'
  	  BLDLIBRARY='-Wl,+b,$(LIBDIR) -L. -lpython$(VERSION)'
-@@ -3907,7 +3913,7 @@
-   echo $ECHO_N "(cached) $ECHO_C" >&6
- else
-   ac_save_cc="$CC"
--CC="$CC -Kthread"
-+CC="/nonexistent/ignore/$CC -Kthread"
- if test "$cross_compiling" = yes; then
-   ac_cv_kthread=no
- else
