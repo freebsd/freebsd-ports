@@ -1,0 +1,23 @@
+cdlabelgen's purpose in life is twofold:
+
+       o To be run automatically and swiftly from a shell script
+            and automatically generate a frontcard and a traycard
+            for a cd--usually data archive cd's. The traycard
+            (which goes behind the CD itself) is U-shaped and the
+            ends of the CD case bear the label of what the CD is.
+
+       o To have a minimum of dependencies--cdlabelgen only
+            requires perl.
+
+       cdlabelgen was designed to simplify the process of
+       generating labels for CD's. It originated as a program to
+       allow auto generation of frontcards and traycards for CD's
+       burned via an automated mechanism (specifically for
+       archiving data), but has now become popular for labelling
+       CD compilations of mp3's, and copies of CDs. Note that
+       cdlabelgen does not actually print anything--it just spits
+       out postscript, which you can then do with as you please.
+
+(from the manual, type `perldoc cdlabelgen' to get the full one)
+
+WWW: http://www.red-bean.com/~bwf/software/cdlabelgen/
