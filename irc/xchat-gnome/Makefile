@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xchat2
-PORTVERSION=	2.0.4
-PORTREVISION=	1
+PORTVERSION=	2.0.5
 CATEGORIES=	irc gnome ipv6
 MASTER_SITES=	http://xchat.org/files/source/2.0/ \
 		http://xchat.linuxpower.org/files/source/2.0/
@@ -76,7 +75,7 @@ pre-everything::
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -E -e 's|PY_LIBS=.*|PY_LIBS="-L\$$PY_EXEC_PREFIX/lib/python\$$PY_VERSION/config -lpython\$$PY_VERSION ${PTHREAD_LIBS} -lutil"|' \
+	@${REINPLACE_CMD} -E -e 's|PY_LIBS=.*|PY_LIBS="-L\$$PY_EXEC_PREFIX/lib/python\$$PY_VER/config -lpython\$$PY_VER ${PTHREAD_LIBS} -lutil"|' \
 		${WRKSRC}/configure
 
 .include <bsd.port.post.mk>
