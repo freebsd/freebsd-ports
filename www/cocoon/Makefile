@@ -1,4 +1,4 @@
-# New ports collection makefile for:	Coccon
+# New ports collection makefile for:	Cocoon
 # Date created:		27 June 1999
 # Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
 #
@@ -6,35 +6,62 @@
 #
 
 PORTNAME=	cocoon
-PORTVERSION= 	1.5
+PORTVERSION= 	1.7.4
 CATEGORIES=	textproc www java
-MASTER_SITES=	http://java.apache.org/cocoon/dist/
-DISTNAME=	Cocoon_${PORTVERSION}
-EXTRACT_SUFX=	.jar
+MASTER_SITES=	http://xml.apache.org/cocoon/dist/
+DISTNAME=	Cocoon-${PORTVERSION}
 
 MAINTAINER=	kuriyama@FreeBSD.org
 
+BUILD_DEPENDS=	${LOCALBASE}/jdk${JDK_VERSION}/bin/javac:${PORTSDIR}/java/jdk
 RUN_DEPENDS=	${LOCALBASE}/libexec/apache/mod_jserv.so:${PORTSDIR}/www/apache-jserv
-#		${LOCALBASE}/share/java/classes/lotusxsl.jar:${PORTSDIR}/textproc/lotusxsl
-#		${LOCALBASE}/share/java/classes/xml4j.jar:${PORTSDIR}/textproc/xml4j
 
-EXTRACT_CMD=	${PREFIX}/${JAVASUBDIR}/bin/jar
-EXTRACT_BEFORE_ARGS=	xf
-EXTRACT_AFTER_ARGS=
-NO_WRKSUBDIR=	YES
-NO_BUILD=	YES
+MAKE_ENV=	JAVA_HOME=${LOCALBASE}/jdk${JDK_VERSION} CLASSPATH=${CLASSPATH}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-JAVASUBDIR=	jdk1.1.8
+JDK_VERSION=	1.1.8
+CLASSPATH=	${LOCALBASE}/jdk${JDK_VERSION}/lib/classes.zip
+LIBS=		fop_0_12_1.jar xalan_1_0_1.jar xerces_1_0_3.jar
+JDIR=		${PREFIX}/share/java/classes
+CDIR=		${PREFIX}/etc/apache/cocoon
+SDIR=		${PREFIX}/share/java/cocoon
+.if defined(NOPORTDOCS)
+PLIST_SUB=	DOC="@comment "
+.else
+PLIST_SUB=	DOC=""
+.endif
+
+pre-build:
+	${CHMOD} a+rx ${WRKSRC}/build.sh
+
+do-build:
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ./build.sh
+
+pre-install:
+	@${MKDIR} ${JDIR} ${CDIR} ${SDIR}
 
 do-install:
-	@${MKDIR} ${PREFIX}/share/java/classes ${PREFIX}/share/java/cocoon
-	@(cd ${WRKSRC}/bin; \
-	  ${INSTALL_DATA} Cocoon.jar fop.0110.jar openxml.106-fix.jar xslp.19991017-fix.jar \
-		${PREFIX}/share/java/classes)
-	@(cd ${WRKSRC}; \
-	 ${CP} -R [LRd-i]* ${PREFIX}/share/java/cocoon)
-	@${INSTALL_DATA} ${WRKSRC}/bin/cocoon.properties \
-		${PREFIX}/etc/apache/cocoon.properties.default
+	@(cd ${WRKSRC}/build && \
+	  ${INSTALL_DATA} cocoon.jar ${JDIR})
+	@(cd ${WRKSRC}/lib; \
+	  for i in ${LIBS}; do \
+		${INSTALL_DATA} $${i} ${JDIR} ; \
+	  done)
+	@(cd ${WRKSRC}/conf; \
+	  ${INSTALL_DATA} cocoon.properties \
+		${CDIR}/cocoon.properties.default)
+	@if [ ! -f ${CDIR}/cocoon.properties ]; then \
+		${CP} ${CDIR}/cocoon.properties.default \
+			${CDIR}/cocoon.properties; \
+	 fi
+.if !defined(NOPORTDOCS)
+	@(cd ${WRKSRC} ; \
+	  ${INSTALL_DATA} LICENSE ${SDIR} ;\
+	  ${INSTALL_DATA} README ${SDIR} ;\
+	  ${CP} -r docs ${SDIR} ;\
+	  ${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${SDIR} ;\
+	)
+.endif
 
 post-install:
 	@${CAT} ${PKGDIR}/MESSAGE
