@@ -693,6 +693,7 @@ calamaris	ports/www/calamaris
 calc		ports/math/calc
 calcoo		ports/math/calcoo
 calctool	ports/math/calctool
+calculix	ports/cad/calculix
 calife		ports/security/calife
 cam		ports/audio/cam
 camediaplay	ports/graphics/camediaplay
