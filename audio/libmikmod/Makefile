@@ -10,10 +10,10 @@ PORTVERSION=	3.1.10
 PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SUNSITE} \
-		http://www.mikmod.org/files/libmikmod/
+		http://mikmod.raphnet.net/files/
 MASTER_SITE_SUBDIR=	apps/sound/libs
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	david@dyn-ns.net
 COMMENT=	MikMod Sound Library
 
 USE_REINPLACE=	yes
