@@ -1,32 +1,38 @@
---- Makefile.orig	Mon Feb 10 13:30:00 1997
-+++ Makefile	Tue Jul 15 15:54:21 1997
-@@ -17,16 +17,21 @@
+--- Makefile.orig	Wed Jun  3 15:19:51 1998
++++ Makefile	Wed Jun  3 15:20:59 1998
+@@ -13,12 +13,12 @@
  ##############################################################################
  
  # For NEXTSTEP/OPENSTEP:
 -CFLAGS = -Wall -O2 -traditional-cpp -g
--INCLUDES = -I$(MYINCL) -I$(INCL)
 +#CFLAGS = -Wall -O2 -traditional-cpp -g
-+#INCLUDES = -I$(MYINCL) -I$(INCL)
+ INCLUDES = $(MYINCL) $(INCL)
  # put your architecture here:
 -ARCH = -arch i386
 -THE_CC = cc
+-RPC_WARNFLAGS = -Wno-unused -Wno-switch -Wno-uninitialized
 +#ARCH = -arch i386
 +#THE_CC = cc
++#RPC_WARNFLAGS = -Wno-unused -Wno-switch -Wno-uninitialized
  
  # For Linux:
  #CFLAGS = -Wall -O2 -g
- #INCLUDES = -I$(INCL)
+@@ -26,10 +26,10 @@
+ #RPC_WARNFLAGS = -Wno-unused -Wno-switch -Wno-uninitialized
  
-+# For FreeBSD
-+CFLAGS = -Wall -O2
-+INCLUDES = -I$(MYINCL) -I$(INCL)
+ # For FreeBSD
+-#CFLAGS = -Wall -O2
+-#INCLUDES = $(MYINCL) $(INCL)
+-#THE_CC = cc
+-#RPC_WARNFLAGS = -Wno-unused -Wno-switch -Wno-uninitialized
++CFLAGS += -Wall
++INCLUDES = $(MYINCL) $(INCL)
 +THE_CC = cc
-+
- ##############################################################################
- ######################## End of system specific part #########################
- ##############################################################################
-@@ -38,7 +43,7 @@
++RPC_WARNFLAGS = -Wno-unused -Wno-switch -Wno-uninitialized
+ 
+ # For NetBsd
+ #CFLAGS = -Wall -O2 -DNETBSD
+@@ -67,7 +67,7 @@
  OFILES = proc.o sock.o rumba.o psinode.o kernel.o smb_abstraction.o fo_nfs.o
  
  .c.o:
@@ -35,12 +41,12 @@
  
  all: $(NAME)
  
-@@ -46,7 +51,7 @@
- 	$(MAKE) -C nfs
+@@ -75,7 +75,7 @@
+ 	(cd nfs; $(MAKE) "CFLAGS=$(CFLAGS)" "CC=$(THE_CC)" "ARCH=$(ARCH)" "RPC_WARNFLAGS=$(RPC_WARNFLAGS)")
  
  $(NAME): $(OFILES) nfs_dir
--	$(CC) $(ARCH) -o $(NAME) $(OFILES) nfs/nfs.o
-+	$(CC) -o $(NAME) $(OFILES) nfs/nfs.o
+-	$(CC) $(ARCH) -o $(NAME) $(OFILES) nfs/nfs.o $(LIBS)
++	$(CC) -o $(NAME) $(OFILES) nfs/nfs.o $(LIBS)
  
  clean:
  	rm -f $(OFILES)

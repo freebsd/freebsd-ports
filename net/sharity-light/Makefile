@@ -1,16 +1,16 @@
 # New ports collection makefile for:	rumba
-# Version required:	0.4
+# Version required:	0.6
 # Date created:		14 June 1997
 # Whom:			Dmitrij Tejblum <dima@tejblum.dnttm.rssi.ru>
 #
-# $Id: Makefile,v 1.1.1.1 1997/07/15 14:09:18 tg Exp $
+# $Id: Makefile,v 1.2 1997/07/21 19:28:46 max Exp $
 #
 
-DISTNAME=	rumba.0.4.s
-PKGNAME=	rumba-0.4
+DISTNAME=	rumba.0.6.s
+PKGNAME=	rumba-0.6
 CATEGORIES=	net
 MASTER_SITES=	ftp://hal.kph.tuwien.ac.at/pub/NeXT/tools/rumba/ \
-		ftp://next-ftp.peak.org/pub/next/apps/utils/networks/
+		ftp://ftp.obdev.at/pub/Products/rumba/
 EXTRACT_SUFX=	.gnutar.gz
 
 MAINTAINER=	dima@tejblum.dnttm.rssi.ru
