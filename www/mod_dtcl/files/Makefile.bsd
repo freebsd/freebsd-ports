@@ -23,7 +23,7 @@ INTERNALLIB=	True	# to avoid building a static version
 
 SRCS=	mod_dtcl.c
 SRCS+=	apache_cookie.c apache_multipart_buffer.c apache_request.c \
-	parser.c tcl_commands.c
+	channel.c parser.c tcl_commands.c
 
 NOMAN=	True	# don't bother with the man-page here, let the port handle it
 
