@@ -14,7 +14,7 @@ MAINTAINER=	anders@fix.no
 
 RUN_DEPENDS=	cdrdao:${PORTSDIR}/audio/cdrdao
 
-USE_GTK=	yes
+USE_GNOME=	yes
 GNU_CONFIGURE=	yes
 
 .include <bsd.port.mk>
