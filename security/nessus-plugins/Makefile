@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-DISTNAME=	nessus-plugins-0.99.1
+DISTNAME=	nessus-plugins-0.99.2
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.cis.fed.gov/pub/nessus/nessus-${NESSUS_REV}/ \
 		ftp://ftp.nessus.org/pub/nessus/nessus-${NESSUS_REV}/ \
@@ -20,7 +20,9 @@ MASTER_SITES=	ftp://ftp.cis.fed.gov/pub/nessus/nessus-${NESSUS_REV}/ \
 
 MAINTAINER=	anders@fix.no
 
-BUILD_DEPENDS=	${LOCALBASE}/include/nessus/config.h:${PORTSDIR}/security/nessus
+BUILD_DEPENDS=	${LOCALBASE}/include/nessus/config.h:${PORTSDIR}/security/nessus \
+		${LOCALBASE}/bin/nmap:${PORTSDIR}/security/nmap
+RUN_DEPENDS=	nmap:${PORTSDIR}/security/nmap
 
 NESSUS_REV=	${DISTNAME:S/nessus-plugins-//g}
 
