@@ -759,211 +759,211 @@ bin/bp_blast2tree.pl
 %%SITE_PERL%%/Bio/SeqIO/game/gameHandler.pm
 %%SITE_PERL%%/Bio/SeqIO/game/gameSubs.pm
 %%SITE_PERL%%/Bio/SeqIO/game/gameWriter.pm
-share/doc/bioperl/AUTHORS
-share/doc/bioperl/BUGS
-share/doc/bioperl/Changes
-share/doc/bioperl/DEPRECATED
-share/doc/bioperl/FAQ
-share/doc/bioperl/INSTALL
-share/doc/bioperl/LICENSE
-share/doc/bioperl/PLATFORMS
-share/doc/bioperl/README
-share/doc/bioperl/doc/faq/faq.html
-share/doc/bioperl/doc/faq/faq.dtd
-share/doc/bioperl/doc/faq/faq.pl
-share/doc/bioperl/doc/faq/faq.xml
-share/doc/bioperl/doc/howto/examples/graphics/render_features.pl
-share/doc/bioperl/doc/howto/examples/graphics/data1.txt
-share/doc/bioperl/doc/howto/examples/graphics/embl2picture.pl
-share/doc/bioperl/doc/howto/examples/graphics/factor7.embl
-share/doc/bioperl/doc/howto/examples/graphics/render_blast1.pl
-share/doc/bioperl/doc/howto/examples/graphics/render_blast2.pl
-share/doc/bioperl/doc/howto/examples/graphics/render_blast3.pl
-share/doc/bioperl/doc/howto/examples/graphics/render_blast4.pl
-share/doc/bioperl/doc/howto/examples/graphics/blastn.out
-share/doc/bioperl/doc/howto/examples/README
-share/doc/bioperl/doc/howto/figs/graphics/fig1.png
-share/doc/bioperl/doc/howto/figs/graphics/fig2.png
-share/doc/bioperl/doc/howto/figs/graphics/fig3.png
-share/doc/bioperl/doc/howto/figs/graphics/fig4.png
-share/doc/bioperl/doc/howto/figs/graphics/fig5.png
-share/doc/bioperl/doc/howto/figs/graphics/fig6.png
-share/doc/bioperl/doc/howto/figs/README
-share/doc/bioperl/doc/howto/html/images/tip.png
-share/doc/bioperl/doc/howto/html/Flat_Databases.html
-share/doc/bioperl/doc/howto/html/Graphics-HOWTO.html
-share/doc/bioperl/doc/howto/html/OBDA_Access.html
-share/doc/bioperl/doc/howto/html/PAML.html
-share/doc/bioperl/doc/howto/html/README
-share/doc/bioperl/doc/howto/html/SearchIO.html
-share/doc/bioperl/doc/howto/html/SeqIO.html
-share/doc/bioperl/doc/howto/html/SimpleWebAnalysis.html
-share/doc/bioperl/doc/howto/html/e-novative.css
-share/doc/bioperl/doc/howto/pdf/Trees.pdf
-share/doc/bioperl/doc/howto/pdf/Graphics-HOWTO.pdf
-share/doc/bioperl/doc/howto/pdf/OBDA_Access.pdf
-share/doc/bioperl/doc/howto/pdf/PAML.pdf
-share/doc/bioperl/doc/howto/pdf/SearchIO.pdf
-share/doc/bioperl/doc/howto/pdf/SeqIO.pdf
-share/doc/bioperl/doc/howto/pdf/SimpleWebAnalysis.pdf
-share/doc/bioperl/doc/howto/pdf/Flat_Databases.pdf
-share/doc/bioperl/doc/howto/sgml/Trees.sgml
-share/doc/bioperl/doc/howto/sgml/Flat_Databases.sgml
-share/doc/bioperl/doc/howto/sgml/Graphics-HOWTO.sgml
-share/doc/bioperl/doc/howto/sgml/OBDA_Access.sgml
-share/doc/bioperl/doc/howto/sgml/PAML.sgml
-share/doc/bioperl/doc/howto/sgml/README
-share/doc/bioperl/doc/howto/sgml/SearchIO.sgml
-share/doc/bioperl/doc/howto/sgml/SeqIO.sgml
-share/doc/bioperl/doc/howto/sgml/SimpleWebAnalysis.sgml
-share/doc/bioperl/doc/howto/sgml/Feature-Annotation.sgml
-share/doc/bioperl/doc/howto/txt/Flat_Databases.txt
-share/doc/bioperl/doc/howto/txt/SimpleWebAnalysis.txt
-share/doc/bioperl/doc/makedoc.PL
-share/examples/bioperl/align/align_on_codons.pl
-share/examples/bioperl/align/aligntutorial.pl
-share/examples/bioperl/align/clustalw.pl
-share/examples/bioperl/align/simplealign.pl
-share/examples/bioperl/tools/standaloneblast.pl
-share/examples/bioperl/tools/gff2ps.pl
-share/examples/bioperl/tools/parse_codeml.pl
-share/examples/bioperl/tools/psw.pl
-share/examples/bioperl/tools/restriction.pl
-share/examples/bioperl/tools/run_genscan.pl
-share/examples/bioperl/tools/seq_pattern.pl
-share/examples/bioperl/tools/gb_to_gff.pl
-share/examples/bioperl/tk/gsequence.pl
-share/examples/bioperl/tk/hitdisplay.pl
-share/examples/bioperl/tree/paup2phylip.pl
-share/examples/bioperl/sirna/TAG
-share/examples/bioperl/sirna/rnai_finder.cgi
-share/examples/bioperl/searchio/waba2gff.pl
-share/examples/bioperl/searchio/custom_writer.pl
-share/examples/bioperl/searchio/hitwriter.pl
-share/examples/bioperl/searchio/hspwriter.pl
-share/examples/bioperl/searchio/htmlwriter.pl
-share/examples/bioperl/searchio/psiblast_features.pl
-share/examples/bioperl/searchio/psiblast_iterations.pl
-share/examples/bioperl/searchio/rawwriter.pl
-share/examples/bioperl/searchio/resultwriter.pl
-share/examples/bioperl/searchio/blast_example.pl
-share/examples/bioperl/root/lib/Bio/PrimarySeq.pm
-share/examples/bioperl/root/lib/Bio/PrimarySeqI.pm
-share/examples/bioperl/root/lib/Bio/Seq.pm
-share/examples/bioperl/root/lib/Bio/SeqI.pm
-share/examples/bioperl/root/lib/Error.pm
-share/examples/bioperl/root/lib/TestInterface.pm
-share/examples/bioperl/root/lib/TestObject.pm
-share/examples/bioperl/root/README
-share/examples/bioperl/root/exceptions1.pl
-share/examples/bioperl/root/exceptions2.pl
-share/examples/bioperl/root/exceptions3.pl
-share/examples/bioperl/root/exceptions4.pl
-share/examples/bioperl/db/gb2features.pl
-share/examples/bioperl/db/dbfetch
-share/examples/bioperl/db/est_tissue_query.pl
-share/examples/bioperl/db/get_seqs.pl
-share/examples/bioperl/db/getGenBank.pl
-share/examples/bioperl/db/rfetch.pl
-share/examples/bioperl/db/use_registry.pl
-share/examples/bioperl/biblio/biblio_examples.pl
-share/examples/bioperl/biblio/biblio_soap.pl
-share/examples/bioperl/popgen/parse_calc_stats.pl
-share/examples/bioperl/biographics/all_glyphs.pl
-share/examples/bioperl/biographics/dynamic_glyphs.pl
-share/examples/bioperl/biographics/feature_data.gff
-share/examples/bioperl/biographics/feature_data.txt
-share/examples/bioperl/biographics/lots_of_glyphs.pl
-share/examples/bioperl/biographics/render_sequence.pl
-share/examples/bioperl/cluster/dbsnp.pl
-share/examples/bioperl/contributed/nmrpdb_parse.pl
-share/examples/bioperl/contributed/prosite2perl.pl
-share/examples/bioperl/contributed/rebase2list.pl
-share/examples/bioperl/liveseq/change_gene.pl
-share/examples/bioperl/Bio-DB-GFF/load_ucsc.pl
-share/examples/bioperl/subsequence.cgi
-share/examples/bioperl/longorf.pl
-share/examples/bioperl/make_mrna_protein.pl
-share/examples/bioperl/bioperl.pl
-share/examples/bioperl/make_primers.pl
-share/examples/bioperl/rev_and_trans.pl
-share/examples/bioperl/revcom_dir.pl
-share/examples/bioperl/generate_random_seq.pl
-share/bioperl/scripts/index/TAG
-share/bioperl/scripts/index/bp_fetch.PLS
-share/bioperl/scripts/index/bp_index.PLS
-share/bioperl/scripts/utilities/seq_length.PLS
-share/bioperl/scripts/utilities/README
-share/bioperl/scripts/utilities/TAG
-share/bioperl/scripts/utilities/bp_mrtrans.PLS
-share/bioperl/scripts/utilities/bp_sreformat.PLS
-share/bioperl/scripts/utilities/dbsplit.PLS
-share/bioperl/scripts/utilities/mask_by_search.PLS
-share/bioperl/scripts/utilities/mutate.PLS
-share/bioperl/scripts/utilities/pairwise_kaks.PLS
-share/bioperl/scripts/utilities/remote_blast.PLS
-share/bioperl/scripts/utilities/search2BSML.PLS
-share/bioperl/scripts/utilities/search2alnblocks.PLS
-share/bioperl/scripts/utilities/search2gff.PLS
-share/bioperl/scripts/utilities/search2tribe.PLS
-share/bioperl/scripts/utilities/bp_nrdb.PLS
-share/bioperl/scripts/DB/TAG
-share/bioperl/scripts/DB/biofetch_genbank_proxy.PLS
-share/bioperl/scripts/DB/bioflat_index.PLS
-share/bioperl/scripts/DB/biogetseq.PLS
-share/bioperl/scripts/DB/flanks.PLS
-share/bioperl/scripts/biblio/TAG
-share/bioperl/scripts/biblio/biblio.PLS
-share/bioperl/scripts/das/README
-share/bioperl/scripts/das/TAG
-share/bioperl/scripts/graphics/frend.PLS
-share/bioperl/scripts/graphics/README
-share/bioperl/scripts/graphics/TAG
-share/bioperl/scripts/graphics/feature_draw.PLS
-share/bioperl/scripts/graphics/search_overview.PLS
-share/bioperl/scripts/tree/TAG
-share/bioperl/scripts/tree/blast2tree.PLS
-share/bioperl/scripts/Bio-DB-GFF/process_wormbase.PLS
-share/bioperl/scripts/Bio-DB-GFF/README
-share/bioperl/scripts/Bio-DB-GFF/TAG
-share/bioperl/scripts/Bio-DB-GFF/bp_genbank2gff.PLS
-share/bioperl/scripts/Bio-DB-GFF/bulk_load_gff.PLS
-share/bioperl/scripts/Bio-DB-GFF/fast_load_gff.PLS
-share/bioperl/scripts/Bio-DB-GFF/generate_histogram.PLS
-share/bioperl/scripts/Bio-DB-GFF/load_ucsc.pl
-share/bioperl/scripts/Bio-DB-GFF/pg_bulk_load_gff.PLS
-share/bioperl/scripts/Bio-DB-GFF/process_gadfly.PLS
-share/bioperl/scripts/Bio-DB-GFF/process_ncbi_human.PLS
-share/bioperl/scripts/Bio-DB-GFF/process_sgd.PLS
-share/bioperl/scripts/Bio-DB-GFF/load_gff.PLS
-share/bioperl/scripts/searchio/filter_search.PLS
-share/bioperl/scripts/seq/TAG
-share/bioperl/scripts/seq/extract_feature_seq.PLS
-share/bioperl/scripts/seq/seqconvert.PLS
-share/bioperl/scripts/seq/split_seq.PLS
-share/bioperl/scripts/seq/translate_seq.PLS
-share/bioperl/scripts/seqstats/TAG
-share/bioperl/scripts/seqstats/aacomp.PLS
-share/bioperl/scripts/seqstats/chaos_plot.PLS
-share/bioperl/scripts/seqstats/gccalc.PLS
-share/bioperl/scripts/seqstats/oligo_count.PLS
-share/bioperl/scripts/taxa/TAG
-share/bioperl/scripts/taxa/local_taxonomydb_query.PLS
-share/bioperl/scripts/taxa/taxid4species.PLS
-share/bioperl/scripts/popgen/composite_LD.PLS
-share/bioperl/scripts/popgen/heterogeneity_test.PLS
-share/bioperl/scripts/install_bioperl_scripts.pl
-share/bioperl/models/population_proposal.txt
-share/bioperl/models/README
-share/bioperl/models/bio_liveseq_variation.dia
-share/bioperl/models/bio_map.dia
-share/bioperl/models/bio_restriction.dia
-share/bioperl/models/bioperl.dia
-share/bioperl/models/coordinatemapper.dia
-share/bioperl/models/map_proposal.txt
-share/bioperl/models/maps_and_markers.dia
-share/bioperl/models/popgen.dia
-share/bioperl/models/biblio.dia
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/BUGS
+%%PORTDOCS%%%%DOCSDIR%%/Changes
+%%PORTDOCS%%%%DOCSDIR%%/DEPRECATED
+%%PORTDOCS%%%%DOCSDIR%%/FAQ
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/PLATFORMS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/doc/faq/faq.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/faq/faq.dtd
+%%PORTDOCS%%%%DOCSDIR%%/doc/faq/faq.pl
+%%PORTDOCS%%%%DOCSDIR%%/doc/faq/faq.xml
+%%PORTDOCS%%%%DOCSDIR%%/doc/howto/examples/graphics/render_features.pl
+%%PORTDOCS%%%%DOCSDIR%%/doc/howto/examples/graphics/data1.txt
+%%PORTDOCS%%%%DOCSDIR%%/doc/howto/examples/graphics/embl2picture.pl
+%%PORTDOCS%%%%DOCSDIR%%/doc/howto/examples/graphics/factor7.embl
+%%PORTDOCS%%%%DOCSDIR%%/doc/howto/examples/graphics/render_blast1.pl
+%%PORTDOCS%%%%DOCSDIR%%/doc/howto/examples/graphics/render_blast2.pl
+%%PORTDOCS%%%%DOCSDIR%%/doc/howto/examples/graphics/render_blast3.pl
+%%PORTDOCS%%%%DOCSDIR%%/doc/howto/examples/graphics/render_blast4.pl
+%%PORTDOCS%%%%DOCSDIR%%/doc/howto/examples/graphics/blastn.out
+%%PORTDOCS%%%%DOCSDIR%%/doc/howto/examples/README
+%%PORTDOCS%%%%DOCSDIR%%/doc/howto/figs/graphics/fig1.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/howto/figs/graphics/fig2.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/howto/figs/graphics/fig3.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/howto/figs/graphics/fig4.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/howto/figs/graphics/fig5.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/howto/figs/graphics/fig6.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/howto/figs/README
+%%PORTDOCS%%%%DOCSDIR%%/doc/howto/html/images/tip.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/howto/html/Flat_Databases.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/howto/html/Graphics-HOWTO.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/howto/html/OBDA_Access.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/howto/html/PAML.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/howto/html/README
+%%PORTDOCS%%%%DOCSDIR%%/doc/howto/html/SearchIO.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/howto/html/SeqIO.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/howto/html/SimpleWebAnalysis.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/howto/html/e-novative.css
+%%PORTDOCS%%%%DOCSDIR%%/doc/howto/pdf/Trees.pdf
+%%PORTDOCS%%%%DOCSDIR%%/doc/howto/pdf/Graphics-HOWTO.pdf
+%%PORTDOCS%%%%DOCSDIR%%/doc/howto/pdf/OBDA_Access.pdf
+%%PORTDOCS%%%%DOCSDIR%%/doc/howto/pdf/PAML.pdf
+%%PORTDOCS%%%%DOCSDIR%%/doc/howto/pdf/SearchIO.pdf
+%%PORTDOCS%%%%DOCSDIR%%/doc/howto/pdf/SeqIO.pdf
+%%PORTDOCS%%%%DOCSDIR%%/doc/howto/pdf/SimpleWebAnalysis.pdf
+%%PORTDOCS%%%%DOCSDIR%%/doc/howto/pdf/Flat_Databases.pdf
+%%PORTDOCS%%%%DOCSDIR%%/doc/howto/sgml/Trees.sgml
+%%PORTDOCS%%%%DOCSDIR%%/doc/howto/sgml/Flat_Databases.sgml
+%%PORTDOCS%%%%DOCSDIR%%/doc/howto/sgml/Graphics-HOWTO.sgml
+%%PORTDOCS%%%%DOCSDIR%%/doc/howto/sgml/OBDA_Access.sgml
+%%PORTDOCS%%%%DOCSDIR%%/doc/howto/sgml/PAML.sgml
+%%PORTDOCS%%%%DOCSDIR%%/doc/howto/sgml/README
+%%PORTDOCS%%%%DOCSDIR%%/doc/howto/sgml/SearchIO.sgml
+%%PORTDOCS%%%%DOCSDIR%%/doc/howto/sgml/SeqIO.sgml
+%%PORTDOCS%%%%DOCSDIR%%/doc/howto/sgml/SimpleWebAnalysis.sgml
+%%PORTDOCS%%%%DOCSDIR%%/doc/howto/sgml/Feature-Annotation.sgml
+%%PORTDOCS%%%%DOCSDIR%%/doc/howto/txt/Flat_Databases.txt
+%%PORTDOCS%%%%DOCSDIR%%/doc/howto/txt/SimpleWebAnalysis.txt
+%%PORTDOCS%%%%DOCSDIR%%/doc/makedoc.PL
+%%EXAMPLESDIR%%/align/align_on_codons.pl
+%%EXAMPLESDIR%%/align/aligntutorial.pl
+%%EXAMPLESDIR%%/align/clustalw.pl
+%%EXAMPLESDIR%%/align/simplealign.pl
+%%EXAMPLESDIR%%/tools/standaloneblast.pl
+%%EXAMPLESDIR%%/tools/gff2ps.pl
+%%EXAMPLESDIR%%/tools/parse_codeml.pl
+%%EXAMPLESDIR%%/tools/psw.pl
+%%EXAMPLESDIR%%/tools/restriction.pl
+%%EXAMPLESDIR%%/tools/run_genscan.pl
+%%EXAMPLESDIR%%/tools/seq_pattern.pl
+%%EXAMPLESDIR%%/tools/gb_to_gff.pl
+%%EXAMPLESDIR%%/tk/gsequence.pl
+%%EXAMPLESDIR%%/tk/hitdisplay.pl
+%%EXAMPLESDIR%%/tree/paup2phylip.pl
+%%EXAMPLESDIR%%/sirna/TAG
+%%EXAMPLESDIR%%/sirna/rnai_finder.cgi
+%%EXAMPLESDIR%%/searchio/waba2gff.pl
+%%EXAMPLESDIR%%/searchio/custom_writer.pl
+%%EXAMPLESDIR%%/searchio/hitwriter.pl
+%%EXAMPLESDIR%%/searchio/hspwriter.pl
+%%EXAMPLESDIR%%/searchio/htmlwriter.pl
+%%EXAMPLESDIR%%/searchio/psiblast_features.pl
+%%EXAMPLESDIR%%/searchio/psiblast_iterations.pl
+%%EXAMPLESDIR%%/searchio/rawwriter.pl
+%%EXAMPLESDIR%%/searchio/resultwriter.pl
+%%EXAMPLESDIR%%/searchio/blast_example.pl
+%%EXAMPLESDIR%%/root/lib/Bio/PrimarySeq.pm
+%%EXAMPLESDIR%%/root/lib/Bio/PrimarySeqI.pm
+%%EXAMPLESDIR%%/root/lib/Bio/Seq.pm
+%%EXAMPLESDIR%%/root/lib/Bio/SeqI.pm
+%%EXAMPLESDIR%%/root/lib/Error.pm
+%%EXAMPLESDIR%%/root/lib/TestInterface.pm
+%%EXAMPLESDIR%%/root/lib/TestObject.pm
+%%EXAMPLESDIR%%/root/README
+%%EXAMPLESDIR%%/root/exceptions1.pl
+%%EXAMPLESDIR%%/root/exceptions2.pl
+%%EXAMPLESDIR%%/root/exceptions3.pl
+%%EXAMPLESDIR%%/root/exceptions4.pl
+%%EXAMPLESDIR%%/db/gb2features.pl
+%%EXAMPLESDIR%%/db/dbfetch
+%%EXAMPLESDIR%%/db/est_tissue_query.pl
+%%EXAMPLESDIR%%/db/get_seqs.pl
+%%EXAMPLESDIR%%/db/getGenBank.pl
+%%EXAMPLESDIR%%/db/rfetch.pl
+%%EXAMPLESDIR%%/db/use_registry.pl
+%%EXAMPLESDIR%%/biblio/biblio_examples.pl
+%%EXAMPLESDIR%%/biblio/biblio_soap.pl
+%%EXAMPLESDIR%%/popgen/parse_calc_stats.pl
+%%EXAMPLESDIR%%/biographics/all_glyphs.pl
+%%EXAMPLESDIR%%/biographics/dynamic_glyphs.pl
+%%EXAMPLESDIR%%/biographics/feature_data.gff
+%%EXAMPLESDIR%%/biographics/feature_data.txt
+%%EXAMPLESDIR%%/biographics/lots_of_glyphs.pl
+%%EXAMPLESDIR%%/biographics/render_sequence.pl
+%%EXAMPLESDIR%%/cluster/dbsnp.pl
+%%EXAMPLESDIR%%/contributed/nmrpdb_parse.pl
+%%EXAMPLESDIR%%/contributed/prosite2perl.pl
+%%EXAMPLESDIR%%/contributed/rebase2list.pl
+%%EXAMPLESDIR%%/liveseq/change_gene.pl
+%%EXAMPLESDIR%%/Bio-DB-GFF/load_ucsc.pl
+%%EXAMPLESDIR%%/subsequence.cgi
+%%EXAMPLESDIR%%/longorf.pl
+%%EXAMPLESDIR%%/make_mrna_protein.pl
+%%EXAMPLESDIR%%/bioperl.pl
+%%EXAMPLESDIR%%/make_primers.pl
+%%EXAMPLESDIR%%/rev_and_trans.pl
+%%EXAMPLESDIR%%/revcom_dir.pl
+%%EXAMPLESDIR%%/generate_random_seq.pl
+%%DATADIR%%/scripts/index/TAG
+%%DATADIR%%/scripts/index/bp_fetch.PLS
+%%DATADIR%%/scripts/index/bp_index.PLS
+%%DATADIR%%/scripts/utilities/seq_length.PLS
+%%DATADIR%%/scripts/utilities/README
+%%DATADIR%%/scripts/utilities/TAG
+%%DATADIR%%/scripts/utilities/bp_mrtrans.PLS
+%%DATADIR%%/scripts/utilities/bp_sreformat.PLS
+%%DATADIR%%/scripts/utilities/dbsplit.PLS
+%%DATADIR%%/scripts/utilities/mask_by_search.PLS
+%%DATADIR%%/scripts/utilities/mutate.PLS
+%%DATADIR%%/scripts/utilities/pairwise_kaks.PLS
+%%DATADIR%%/scripts/utilities/remote_blast.PLS
+%%DATADIR%%/scripts/utilities/search2BSML.PLS
+%%DATADIR%%/scripts/utilities/search2alnblocks.PLS
+%%DATADIR%%/scripts/utilities/search2gff.PLS
+%%DATADIR%%/scripts/utilities/search2tribe.PLS
+%%DATADIR%%/scripts/utilities/bp_nrdb.PLS
+%%DATADIR%%/scripts/DB/TAG
+%%DATADIR%%/scripts/DB/biofetch_genbank_proxy.PLS
+%%DATADIR%%/scripts/DB/bioflat_index.PLS
+%%DATADIR%%/scripts/DB/biogetseq.PLS
+%%DATADIR%%/scripts/DB/flanks.PLS
+%%DATADIR%%/scripts/biblio/TAG
+%%DATADIR%%/scripts/biblio/biblio.PLS
+%%DATADIR%%/scripts/das/README
+%%DATADIR%%/scripts/das/TAG
+%%DATADIR%%/scripts/graphics/frend.PLS
+%%DATADIR%%/scripts/graphics/README
+%%DATADIR%%/scripts/graphics/TAG
+%%DATADIR%%/scripts/graphics/feature_draw.PLS
+%%DATADIR%%/scripts/graphics/search_overview.PLS
+%%DATADIR%%/scripts/tree/TAG
+%%DATADIR%%/scripts/tree/blast2tree.PLS
+%%DATADIR%%/scripts/Bio-DB-GFF/process_wormbase.PLS
+%%DATADIR%%/scripts/Bio-DB-GFF/README
+%%DATADIR%%/scripts/Bio-DB-GFF/TAG
+%%DATADIR%%/scripts/Bio-DB-GFF/bp_genbank2gff.PLS
+%%DATADIR%%/scripts/Bio-DB-GFF/bulk_load_gff.PLS
+%%DATADIR%%/scripts/Bio-DB-GFF/fast_load_gff.PLS
+%%DATADIR%%/scripts/Bio-DB-GFF/generate_histogram.PLS
+%%DATADIR%%/scripts/Bio-DB-GFF/load_ucsc.pl
+%%DATADIR%%/scripts/Bio-DB-GFF/pg_bulk_load_gff.PLS
+%%DATADIR%%/scripts/Bio-DB-GFF/process_gadfly.PLS
+%%DATADIR%%/scripts/Bio-DB-GFF/process_ncbi_human.PLS
+%%DATADIR%%/scripts/Bio-DB-GFF/process_sgd.PLS
+%%DATADIR%%/scripts/Bio-DB-GFF/load_gff.PLS
+%%DATADIR%%/scripts/searchio/filter_search.PLS
+%%DATADIR%%/scripts/seq/TAG
+%%DATADIR%%/scripts/seq/extract_feature_seq.PLS
+%%DATADIR%%/scripts/seq/seqconvert.PLS
+%%DATADIR%%/scripts/seq/split_seq.PLS
+%%DATADIR%%/scripts/seq/translate_seq.PLS
+%%DATADIR%%/scripts/seqstats/TAG
+%%DATADIR%%/scripts/seqstats/aacomp.PLS
+%%DATADIR%%/scripts/seqstats/chaos_plot.PLS
+%%DATADIR%%/scripts/seqstats/gccalc.PLS
+%%DATADIR%%/scripts/seqstats/oligo_count.PLS
+%%DATADIR%%/scripts/taxa/TAG
+%%DATADIR%%/scripts/taxa/local_taxonomydb_query.PLS
+%%DATADIR%%/scripts/taxa/taxid4species.PLS
+%%DATADIR%%/scripts/popgen/composite_LD.PLS
+%%DATADIR%%/scripts/popgen/heterogeneity_test.PLS
+%%DATADIR%%/scripts/install_bioperl_scripts.pl
+%%DATADIR%%/models/population_proposal.txt
+%%DATADIR%%/models/README
+%%DATADIR%%/models/bio_liveseq_variation.dia
+%%DATADIR%%/models/bio_map.dia
+%%DATADIR%%/models/bio_restriction.dia
+%%DATADIR%%/models/bioperl.dia
+%%DATADIR%%/models/coordinatemapper.dia
+%%DATADIR%%/models/map_proposal.txt
+%%DATADIR%%/models/maps_and_markers.dia
+%%DATADIR%%/models/popgen.dia
+%%DATADIR%%/models/biblio.dia
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Bio
 @dirrm %%SITE_PERL%%/Bio/Das
 @dirrm %%SITE_PERL%%/Bio/MapIO
@@ -1065,50 +1065,50 @@ share/bioperl/models/biblio.dia
 @dirrm %%SITE_PERL%%/Bio/SeqIO/game
 @dirrm %%SITE_PERL%%/Bio/SeqIO
 @dirrm %%SITE_PERL%%/Bio
-@dirrm share/doc/bioperl/doc/faq
-@dirrm share/doc/bioperl/doc/howto/examples/graphics
-@dirrm share/doc/bioperl/doc/howto/examples
-@dirrm share/doc/bioperl/doc/howto/figs/graphics
-@dirrm share/doc/bioperl/doc/howto/figs
-@dirrm share/doc/bioperl/doc/howto/html/images
-@dirrm share/doc/bioperl/doc/howto/html
-@dirrm share/doc/bioperl/doc/howto/pdf
-@dirrm share/doc/bioperl/doc/howto/sgml
-@dirrm share/doc/bioperl/doc/howto/txt
-@dirrm share/doc/bioperl/doc/howto
-@dirrm share/doc/bioperl/doc
-@dirrm share/doc/bioperl
-@dirrm share/examples/bioperl/align
-@dirrm share/examples/bioperl/tools
-@dirrm share/examples/bioperl/tk
-@dirrm share/examples/bioperl/tree
-@dirrm share/examples/bioperl/sirna
-@dirrm share/examples/bioperl/searchio
-@dirrm share/examples/bioperl/root/lib/Bio
-@dirrm share/examples/bioperl/root/lib
-@dirrm share/examples/bioperl/root
-@dirrm share/examples/bioperl/db
-@dirrm share/examples/bioperl/biblio
-@dirrm share/examples/bioperl/popgen
-@dirrm share/examples/bioperl/biographics
-@dirrm share/examples/bioperl/cluster
-@dirrm share/examples/bioperl/contributed
-@dirrm share/examples/bioperl/liveseq
-@dirrm share/examples/bioperl/Bio-DB-GFF
-@dirrm share/examples/bioperl
-@dirrm share/bioperl/scripts/index
-@dirrm share/bioperl/scripts/utilities
-@dirrm share/bioperl/scripts/DB
-@dirrm share/bioperl/scripts/biblio
-@dirrm share/bioperl/scripts/das
-@dirrm share/bioperl/scripts/graphics
-@dirrm share/bioperl/scripts/tree
-@dirrm share/bioperl/scripts/Bio-DB-GFF
-@dirrm share/bioperl/scripts/searchio
-@dirrm share/bioperl/scripts/seq
-@dirrm share/bioperl/scripts/seqstats
-@dirrm share/bioperl/scripts/taxa
-@dirrm share/bioperl/scripts/popgen
-@dirrm share/bioperl/scripts
-@dirrm share/bioperl/models
-@dirrm share/bioperl
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/faq
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/howto/examples/graphics
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/howto/examples
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/howto/figs/graphics
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/howto/figs
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/howto/html/images
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/howto/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/howto/pdf
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/howto/sgml
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/howto/txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/howto
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%EXAMPLESDIR%%/align
+@dirrm %%EXAMPLESDIR%%/tools
+@dirrm %%EXAMPLESDIR%%/tk
+@dirrm %%EXAMPLESDIR%%/tree
+@dirrm %%EXAMPLESDIR%%/sirna
+@dirrm %%EXAMPLESDIR%%/searchio
+@dirrm %%EXAMPLESDIR%%/root/lib/Bio
+@dirrm %%EXAMPLESDIR%%/root/lib
+@dirrm %%EXAMPLESDIR%%/root
+@dirrm %%EXAMPLESDIR%%/db
+@dirrm %%EXAMPLESDIR%%/biblio
+@dirrm %%EXAMPLESDIR%%/popgen
+@dirrm %%EXAMPLESDIR%%/biographics
+@dirrm %%EXAMPLESDIR%%/cluster
+@dirrm %%EXAMPLESDIR%%/contributed
+@dirrm %%EXAMPLESDIR%%/liveseq
+@dirrm %%EXAMPLESDIR%%/Bio-DB-GFF
+@dirrm %%EXAMPLESDIR%%
+@dirrm %%DATADIR%%/scripts/index
+@dirrm %%DATADIR%%/scripts/utilities
+@dirrm %%DATADIR%%/scripts/DB
+@dirrm %%DATADIR%%/scripts/biblio
+@dirrm %%DATADIR%%/scripts/das
+@dirrm %%DATADIR%%/scripts/graphics
+@dirrm %%DATADIR%%/scripts/tree
+@dirrm %%DATADIR%%/scripts/Bio-DB-GFF
+@dirrm %%DATADIR%%/scripts/searchio
+@dirrm %%DATADIR%%/scripts/seq
+@dirrm %%DATADIR%%/scripts/seqstats
+@dirrm %%DATADIR%%/scripts/taxa
+@dirrm %%DATADIR%%/scripts/popgen
+@dirrm %%DATADIR%%/scripts
+@dirrm %%DATADIR%%/models
+@dirrm %%DATADIR%%
