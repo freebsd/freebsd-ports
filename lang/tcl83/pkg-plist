@@ -11,7 +11,7 @@ include/tcl8.1/generic/tclRegexp.h
 include/tcl8.1/tcl.h
 include/tcl8.1/unix/tclUnixPort.h
 lib/libtcl81.a
-lib/libtcl81.so.1.0
+lib/libtcl81.so.1
 @exec /sbin/ldconfig -m %B
 @unexec /sbin/ldconfig -R
 lib/tcl8.1/auto.tcl

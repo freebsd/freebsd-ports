@@ -1,0 +1,14 @@
+--- configure.orig	Tue Feb 24 02:02:51 1998
++++ configure	Tue Sep 15 02:45:28 1998
+@@ -4535,7 +4535,11 @@
+ 	    DL_LIBS=""
+ 	    LD_FLAGS=""
+ 	    LD_SEARCH_FLAGS=""
++  if eval "test \"`echo ${PORTOBJFORMAT}`\" = elf"; then
++	    TCL_SHARED_LIB_SUFFIX='`echo ${VERSION} | tr -d .`.so.1'
++    else
+ 	    TCL_SHARED_LIB_SUFFIX='`echo ${VERSION} | tr -d .`.so.1.0'
++  fi
+ 	
+ else
+   echo "$ac_t""no" 1>&6
