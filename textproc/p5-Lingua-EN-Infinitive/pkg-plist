@@ -1,0 +1,7 @@
+lib/perl5/site_perl/%%PERL_VER%%/Lingua/EN/Infinitive.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Lingua/EN/Infinitive/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Lingua/EN/Infinitive
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Lingua/EN 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Lingua 2>/dev/null || true
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Lingua/EN
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Lingua 2>/dev/null || true
