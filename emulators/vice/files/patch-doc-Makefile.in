@@ -1,0 +1,11 @@
+--- doc/Makefile.in.orig	Mon Jun  9 00:09:03 2003
++++ doc/Makefile.in	Sun Jun 15 09:24:28 2003
+@@ -216,7 +216,7 @@
+ xpet_LDFLAGS = @xpet_LDFLAGS@
+ xplus4_LDFLAGS = @xplus4_LDFLAGS@
+ xvic_LDFLAGS = @xvic_LDFLAGS@
+-docdir = $(prefix)/lib/vice/doc
++docdir = $(prefix)/share/doc/vice
+ 
+ doc_DATA = \
+ 	NLS-Howto.txt \
