@@ -9,6 +9,7 @@
 
 PORTNAME=	festival
 PORTVERSION=	1.4.1
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.speech.cs.cmu.edu/festival/cstr/festival/${PORTVERSION}/ \
 		ftp://ftp.leb.net/pub/blinux/${SUB} \
@@ -33,7 +34,7 @@ PATCHFILES=	OGIfestpatch-${PORTVERSION}.tar.gz
 
 MAINTAINER=	trevor@FreeBSD.org
 
-LIB_DEPENDS=	audio.1:${PORTSDIR}/audio/nas \
+LIB_DEPENDS=	audio.2:${PORTSDIR}/audio/nas \
 		esd.2:${PORTSDIR}/audio/esound
 
 DIST_SUBDIR=	festival
