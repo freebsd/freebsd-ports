@@ -1,9 +1,10 @@
-# $Id: Makefile,v 1.3 1995/08/19 08:20:11 asami Exp $
+# $Id: Makefile,v 1.4 1995/10/03 02:47:36 erich Exp $
 #
 
     SUBDIR += cpmemu
     SUBDIR += cpmtools
     SUBDIR += hfs
+    SUBDIR += linux_lib
     SUBDIR += mtools
     SUBDIR += pcemu
     SUBDIR += sim6811
