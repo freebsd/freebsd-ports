@@ -77,6 +77,7 @@
     SUBDIR += kuake
     SUBDIR += ljcharm
     SUBDIR += ljclive
+    SUBDIR += ljit
     SUBDIR += logjam
     SUBDIR += mcal
     SUBDIR += mdh
