@@ -6,7 +6,7 @@
 #
 
 # This port does not work with another version of master port.
-#PORTVERSION=	2.2
+#PORTVERSION=	2.2.1
 CATEGORIES=	japanese net news kde
 
 MASTERDIR=	${.CURDIR}/../../net/kdenetwork2
@@ -15,11 +15,11 @@ MD5_FILE=	${.CURDIR}/distinfo
 MAINTAINER=	sahiro@crest.ocn.ne.jp
 
 PATCH_SITES=	http://www.kde.gr.jp/patch/
-PATCHFILES=	kdenetwork-2.2-kmail-honyaku-20010818.diff \
-		kdenetwork-2.2-kmail-unknowncharset-cjk-20010816.diff \
-		kdenetwork-2.2-kmail-show_userAgent-20010825.diff \
-		kdenetwork-2.2-knewsticker-utf8-20010816.diff \
-		kdenetwork-2.2-ksirc-ja-20010816.diff
+PATCHFILES=	kdenetwork-2.2.1-kmail-honyaku-20010922.diff \
+		kdenetwork-2.2.1-kmail-unknownchrset-cjk-20010922.diff \
+		kdenetwork-2.2.1-kmail-show_userAgent-20010922.diff \
+		kdenetwork-2.2.1-knewsticker-utf8-20010922.diff \
+		kdenetwork-2.2.1-ksirc-ja-20010922.diff
 PATCH_DIST_STRIP=	-p1
 
 .include "${MASTERDIR}/Makefile"
