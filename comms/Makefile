@@ -84,6 +84,7 @@
     SUBDIR += tits
     SUBDIR += tkhylafax
     SUBDIR += tkscanfax
+    SUBDIR += tlf
     SUBDIR += trustedqsl
     SUBDIR += viewfax
     SUBDIR += vpb2
