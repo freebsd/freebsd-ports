@@ -8,6 +8,7 @@
 
 PORTNAME=	Canna
 PORTVERSION=	3.6p4
+PORTREVISION=	1
 CATEGORIES=	japanese
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
 MASTER_SITE_SUBDIR=	canna/6059
@@ -23,7 +24,7 @@ INSTALLS_SHLIB=	yes
 
 MANLANG=ja ""
 MAN1=	addwords.1 cannacheck.1 cannakill.1 cannaserver.1 cannastat.1 \
-	catdic.1 cpdic.1 cshost.1 ctow.1 delwords.1 dicar.1 \
+	catdic.1 chmoddic.1 cpdic.1 cshost.1 ctow.1 delwords.1 dicar.1 \
 	dpbindic.1 dpromdic.1 lsdic.1 mkbindic.1 mkdic.1 mkromdic.1 \
 	mvdic.1 rmdic.1 splitword.1 wtoc.1
 MAN3=	RkCloseRoma.3 RkCvtEuc.3 RkCvtHan.3 RkCvtHira.3 RkCvtKana.3 \
