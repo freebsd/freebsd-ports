@@ -7,4 +7,4 @@
 +CFLAGS = -g -O2 `glib12-config --cflags`
  hanja-hwp2ami: hanja-hwp2ami.o
 -	$(CC) -o hanja-hwp2ami hanja-hwp2ami.o `glib-config --libs`
-+	$(CC) -o hanja-hwp2ami hanja-hwp2ami.o -lxpg4 `glib12-config --libs`
++	$(CC) -o hanja-hwp2ami hanja-hwp2ami.o `glib12-config --libs`
