@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rtc
-PORTVERSION=	2000.05.05
+PORTVERSION=	2000.08.24
 CATEGORIES=	emulators linux
 MASTER_SITES=	# none
 DISTFILES=	# none
@@ -43,6 +43,12 @@ do-extract:
 	@${SED}	-e 's,@@PREFIX@@,${PREFIX},' \
 		${FILESDIR}/${STARTUP} > ${WRKDIR}/${STARTUP}
 	@cd ${FILESDIR} && ${CP} Makefile *.[ch] ${WRKSRC}/
+
+post-patch:
+.if !exists(/sys/compat/linux/linux_ioctl.h)
+	${PERL} -i -pe 's,compat(/linux/linux_ioctl\.h),i386$$1,' \
+		${WRKSRC}/rtc_linux.c
+.endif
 
 pre-install:
 	${MKDIR} ${KMODDIR}
