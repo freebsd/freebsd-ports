@@ -254,6 +254,7 @@
     SUBDIR += p5-XML-NamespaceSupport
     SUBDIR += p5-XML-Node
     SUBDIR += p5-XML-Parser
+    SUBDIR += p5-XML-Quote
     SUBDIR += p5-XML-RSS
     SUBDIR += p5-XML-RegExp
     SUBDIR += p5-XML-SAX
