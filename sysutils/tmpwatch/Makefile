@@ -8,7 +8,8 @@
 PORTNAME=	tmpwatch
 PORTVERSION=	2.8.1
 CATEGORIES=	sysutils
-MASTER_SITES=	ftp://updates.redhat.com/7.2/en/os/SRPMS/
+MASTER_SITES=	${MASTER_SITE_REDHAT_LINUX}
+MASTER_SITE_SUBDIR=	updates/7.2/en/os/SRPMS
 EXTRACT_SUFX=	-1.src.rpm
 
 MAINTAINER=	markp@FreeBSD.org
