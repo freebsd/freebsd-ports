@@ -8,7 +8,9 @@
 PORTNAME=	xmms-shn
 PORTVERSION=	2.2.3
 CATEGORIES=	audio
-MASTER_SITES=	http://shnutils.freeshell.org/xmms-shn/source/
+MASTER_SITES=	http://shnutils.freeshell.org/xmms-shn/source/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	fenner
 
 MAINTAINER=	fenner@FreeBSD.Org
 
