@@ -1,3 +1,4 @@
 bin/avrprog
-share/doc/avrprog/AVRprog.pdf
+share/doc/avrprog/avrprog.pdf
+etc/avrprog.conf.sample
 @dirrm share/doc/avrprog
