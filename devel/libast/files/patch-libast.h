@@ -1,5 +1,5 @@
---- libast.h.orig	Sat Jun 16 02:30:28 2001
-+++ libast.h	Fri Sep  7 01:01:50 2001
+--- include/libast.h.orig	Tue Oct  1 00:43:38 2002
++++ include/libast.h	Sat Oct  5 19:11:22 2002
 @@ -40,6 +40,7 @@
  # endif
  #endif
