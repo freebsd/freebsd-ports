@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.120 1997/11/13 23:25:51 jraynard Exp $
+# $Id: Makefile,v 1.121 1997/11/17 10:14:33 tg Exp $
 #
 
     SUBDIR += amanda
@@ -10,6 +10,7 @@
     SUBDIR += colorls
     SUBDIR += ctk
     SUBDIR += dejagnu
+    SUBDIR += display
     SUBDIR += dotfile
     SUBDIR += ecc
     SUBDIR += estic
