@@ -17,3 +17,6 @@ lib/libpcsclite.so
 lib/libpcsclite.so.0
 sbin/pcscd
 %%PORTDOCS%%@dirrm share/doc/pcsc-lite
+@dirrm pcsc/drivers
+@dirrm pcsc/services
+@dirrm pcsc
