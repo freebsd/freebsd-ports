@@ -5,131 +5,142 @@
 # $FreeBSD$
 #
 
-PORTNAME=	postgresql
-PORTVERSION=	7.1.3
-CATEGORIES=	databases
-MASTER_SITES=	ftp://ftp.sunet.se/pub/unix/databases/relational/postgresql/%SUBDIR%/ \
-		ftp://ftp.postgresql.org/pub/%SUBDIR%/ \
-		ftp://ftp.de.postgresql.org/%SUBDIR%/ \
-		ftp://ftp.digex.net/pub/packages/database/postgresql/%SUBDIR%/ \
+PORTNAME?=	postgresql
+PORTVERSION?=	7.2
+CATEGORIES?=	databases
+MASTER_SITES=	ftp://ftp.postgresql.org/pub/%SUBDIR%/ \
+		ftp://ftp.de.postgresql.org/mirror/postgresql/%SUBDIR%/ \
 		ftp://ftp.chg.ru/pub/databases/postgresql/%SUBDIR%/ \
-		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,misc/db/postgresql/&,}
+		ftp://ftp.sunet.se/pub/unix/databases/relational/postgresql/%SUBDIR%/ \
+		ftp://ftp2.ch.postgresql.org/mirror/postgresql/%SUBDIR%/ \
+		ftp://ftp4.jp.postgresql.org/mirror/postgresql/%SUBDIR%/ \
+		ftp://ftp.us.postgresql.org/%SUBDIR%/
 MASTER_SITE_SUBDIR=	source/v${PORTVERSION}
-DISTFILES=	${PORTNAME}-base-${PORTVERSION}${EXTRACT_SUFX} \
-		${PORTNAME}-opt-${PORTVERSION}${EXTRACT_SUFX}
-.if !defined(NOPORTDOCS)
-DISTFILES+=	${PORTNAME}-docs-${PORTVERSION}${EXTRACT_SUFX}
+DISTFILES=	postgresql-base-${PORTVERSION}${EXTRACT_SUFX} \
+		postgresql-opt-${PORTVERSION}${EXTRACT_SUFX}
+.if !defined(POSTGRESQL_SUBPORT) && !defined(NOPORTDOCS)
+DISTFILES+=	postgresql-docs-${PORTVERSION}${EXTRACT_SUFX}
 .endif
 
-MAINTAINER=	girgen@partitur.se
+MAINTAINER?=	girgen@partitur.se
 
+WRKSRC=		${WRKDIR}/postgresql-${PORTVERSION}
 DIST_SUBDIR=	postgresql
 
+USE_GMAKE=	YES
+GNU_CONFIGURE=	YES
+
+.if defined(POSTGRESQL_SUBPORT)
+## the POSTGRESQL_SUBPORTS use this port's distinfo
+MD5_FILE=	${.CURDIR}/../postgresql7/distinfo
+.else
+
+## The rest of this file is for normal base installation
 INSTALLS_SHLIB=	YES
 
-DOCDIR=		${WRKDIR}/${DISTNAME}/doc
-PLIST=		${WRKDIR}/.PLIST.generated
-
 USE_GMAKE=	YES
-HAS_CONFIGURE=	YES
-CONFIGURE_ARGS=	--enable-locale \
-		--enable-syslog --with-CXX \
-		--sysconfdir=${PREFIX}/etc/postgresql \
-		--with-includes="${PREFIX}/include ${TCL_INCDIR} ${TK_INCDIR}" \
-		--with-libraries=${PREFIX}/lib
-.if defined(WITH_OLD_LAYOUT)
-CONFIGURE_ARGS+=--docdir=${PREFIX}/share/doc --includedir=${PREFIX}/pgsql/include \
-		--datadir=${PREFIX}/share \
-		--with-template=`uname -s | ${TR} '[A-Z]' '[a-z]'` \
-		--prefix=${PREFIX}/pgsql
-PG_PREFIX=	pgsql/
-PG_INCLUDE=	pgsql/include
-LDCONFIG_DIRS=	%%PREFIX%%/pgsql/lib
-MANPREFIX=	${PREFIX}/pgsql
-.else
 GNU_CONFIGURE=	YES
-CONFIGURE_ARGS+=--docdir=${PREFIX}/share/doc --includedir=${PREFIX}/include/pgsql
-PG_PREFIX=""
-PG_INCLUDE=	include/pgsql
+CONFIGURE_ARGS=	--enable-locale --enable-syslog --with-CXX \
+		--docdir=${PREFIX}/share/doc --with-libdir=${LOCALBASE}/lib \
+		--with-includes=${LOCALBASE}/include
+
+.if !defined(WITHOUT_GNUGETOPT)
+LDFLAGS+=	-L${LOCALBASE}/lib -lgnugetopt
+CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
+LIB_DEPENDS=	gnugetopt:${PORTSDIR}/devel/libgnugetopt
 .endif
 
-PLIST_SUB=	PG_PREFIX="${PG_PREFIX}" PG_INCLUDE="${PG_INCLUDE}" WITH_TCL="${WITH_TCL}"
+# if you want localized messages, make -DWITH_GETTEXT
+# WARNING: this seems to require relinking binaries depending on
+# libpq.so, including for example mod_php and tcl.
+.if defined(WITH_GETTEXT)
+CONFIGURE_ARGS+=--enable-nls
+LDFLAGS+=	-L${LOCALBASE}/lib -lintl
+BUILD_DEPENDS+= ${LOCALBASE}/bin/msgfmt:${PORTSDIR}/devel/gettext
+PLIST_SUB+=	GETTEXT=""
+.else
+PLIST_SUB+=	GETTEXT="@comment "
+.endif
+
+.if defined(WITHOUT_SERVER)
+PKGMESSAGE=	${PKGDIR}/pkg-message.client
+PLIST_SUB+=	SERVER="@comment "
+.else
+PLIST_SUB+=	SERVER=""
+.endif
+
+.if !defined(WITHOUT_SSL)
+USE_OPENSSL=	yes
+CONFIGURE_ARGS+= "--with-openssl=${OPENSSLBASE}"
+.endif
 
 MAN1=		createdb.1 createlang.1 createuser.1 dropdb.1 droplang.1 \
 		dropuser.1 ecpg.1 initdb.1 initlocation.1 ipcclean.1 pg_config.1 \
 		pg_ctl.1 pg_dump.1 pg_dumpall.1 pg_passwd.1 pg_restore.1 \
 		pgaccess.1 pgtclsh.1 pgtksh.1 postgres.1 postmaster.1 psql.1 \
 		vacuumdb.1
-MANL=		abort.l alter_group.l alter_table.l alter_user.l \
-		begin.l checkpoint.l close.l cluster.l comment.l commit.l copy.l \
-		create_aggregate.l create_constraint_trigger.l \
-		create_database.l create_function.l create_group.l \
-		create_index.l create_language.l create_operator.l \
-		create_rule.l create_sequence.l create_table.l \
-		create_table_as.l create_trigger.l create_type.l \
-		create_user.l create_view.l declare.l delete.l \
-		drop_aggregate.l drop_database.l drop_function.l \
-		drop_group.l drop_index.l drop_language.l \
-		drop_operator.l drop_rule.l drop_sequence.l \
-		drop_table.l drop_trigger.l drop_type.l drop_user.l \
-		drop_view.l end.l explain.l fetch.l grant.l insert.l \
-		listen.l load.l lock.l move.l notify.l reindex.l \
-		reset.l revoke.l rollback.l select.l select_into.l \
-		set.l set_constraints.l set_transaction.l show.l \
-		truncate.l unlisten.l update.l vacuum.l
+MAN7=		abort.7 alter_group.7 alter_table.7 alter_user.7 analyze.7 \
+		begin.7 checkpoint.7 close.7 cluster.7 comment.7 commit.7 copy.7 \
+		create_aggregate.7 create_constraint_trigger.7 \
+		create_database.7 create_function.7 create_group.7 \
+		create_index.7 create_language.7 create_operator.7 \
+		create_rule.7 create_sequence.7 create_table.7 \
+		create_table_as.7 create_trigger.7 create_type.7 \
+		create_user.7 create_view.7 declare.7 delete.7 \
+		drop_aggregate.7 drop_database.7 drop_function.7 \
+		drop_group.7 drop_index.7 drop_language.7 \
+		drop_operator.7 drop_rule.7 drop_sequence.7 \
+		drop_table.7 drop_trigger.7 drop_type.7 drop_user.7 \
+		drop_view.7 end.7 explain.7 fetch.7 grant.7 insert.7 \
+		listen.7 load.7 lock.7 move.7 notify.7 reindex.7 \
+		reset.7 revoke.7 rollback.7 select.7 select_into.7 \
+		set.7 set_constraints.7 set_transaction.7 show.7 \
+		set_session_authorization.7 \
+		truncate.7 unlisten.7 update.7 vacuum.7
 
 SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
 		WRKDIR="${WRKDIR}" \
 		FILESDIR="${FILESDIR}" \
 		TOUCH="${TOUCH}" \
 		MKDIR="${MKDIR}" \
-		NO_OPENSSL="${NO_OPENSSL}" \
 		DISTNAME="${DISTNAME}"
 
 # We must .include here because we need the Makefile.inc @ pre-install
 # to determine the correct plist.
 .if exists(${WRKDIRPREFIX}${.CURDIR}/Makefile.inc)
 .include "${WRKDIRPREFIX}${.CURDIR}/Makefile.inc"
+.endif
+
+.if defined(WITHOUT_MULTIBYTE)
+PLIST_SUB+=	MULTIBYTE="@comment "
 .else
-# make utility targets like depends and describe happy
-LIB_DEPENDS=	tcl83:${PORTSDIR}/lang/tcl83 \
-		tk83:${PORTSDIR}/x11-toolkits/tk83
+PLIST_SUB+=	MULTIBYTE=""
+CONFIGURE_ARGS+=--enable-multibyte=${MULTIBYTE_ENCODING}
 .endif
 
 pre-everything::
 	@ ${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure.postgresql
 
 pre-install:
-	@ ${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGDIR}/pkg-install ${PORTNAME} PRE-INSTALL
-.if !defined(BATCH)
-# remind folks twice for a while, so they really don't miss the layout shift
-	@ ${SED} "s|/usr/local|${PREFIX}|g" < ${PKGMESSAGE} | head -n 25 | more -e
-.endif
-	@ ${CP} ${PKGDIR}/pkg-plist ${PLIST}
-.if defined(WITHOUT_MULTIBYTE)
-	@${CP} ${PLIST} ${PLIST}.nomulti ;\
-	 ${GREP} -v bin/pg_encoding ${PLIST}.nomulti > ${PLIST}
-.endif
-.if defined(WITH_TCL)
-	@ ${CP} ${PLIST} ${PLIST}.notcl ;\
-	  ${CAT} ${PKGDIR}/${TCL_PLIST} ${PLIST}.notcl > ${PLIST} ;\
-	  ${RM} ${PLIST}.notcl
-.endif
-.if defined(WITH_ODBC)
-	@ ${CP} ${PLIST} ${PLIST}.noodbc ;\
-	  ${CAT} ${PKGDIR}/pkg-plist.odbc ${PLIST}.noodbc > ${PLIST} ;\
-	  ${RM} ${PLIST}.noodbc
-.endif
-.if defined(WITH_JDBC)
-	@ ${CP} ${PLIST} ${PLIST}.nojdbc ;\
-	  ${CAT} ${PKGDIR}/pkg-plist.jdbc ${PLIST}.nojdbc > ${PLIST} ;\
-	  ${RM} ${PLIST}.nojdbc
-.endif
-.if !defined(NOPORTDOCS)
-	@ ${CAT} ${PKGDIR}/pkg-plist.doc >> ${PLIST}
+.if !defined(WITHOUT_SERVER)
+	@ ${SETENV} PKG_PREFIX=${PREFIX} \
+		${SH} ${PKGDIR}/pkg-install ${PORTNAME} PRE-INSTALL
 .endif
 
+post-build:
+	@ cd ${WRKSRC} ; ${SETENV} ${MAKE_ENV} ${GMAKE} -C src/interfaces/odbc odbc-drop.sql
+
 post-install:
+	@ ${MKDIR} ${PREFIX}/share/postgresql ;\
+	${CAT} ${FILESDIR}/post-install-notes ${PKGMESSAGE} |\
+		${SED} "s|/usr/local|${PREFIX}|g" |\
+		tee ${PREFIX}/share/postgresql/post-install-notes
+.if !defined(DEBUG_FLAGS)
+.for file in ecpg pg_dump pg_id pg_passwd pg_restore postgres psql
+	@ strip ${PREFIX}/${PG_PREFIX}bin/${file}
+.endfor
+.endif
+.if !defined(WITHOUT_SERVER)
 # install shell defaults for pgsql user
 .for i in profile cshrc
 	@ ${SED} "s|%%PREFIX%%|${PREFIX}|g; s|%%PG_PREFIX%%|${PG_PREFIX}|g" \
@@ -142,57 +153,19 @@ post-install:
 .endfor
 	@ ${SED} -e "s|%%PREFIX%%|${PREFIX}|g; s|%%PG_PREFIX%%|${PG_PREFIX}|g" \
 		< ${FILESDIR}/pgsql.sh.tmpl \
-		> ${PREFIX}/etc/rc.d/010.pgsql.sh
-	@ ${CHMOD} 554 ${PREFIX}/etc/rc.d/010.pgsql.sh
-	@ ${CHOWN} root:pgsql ${PREFIX}/etc/rc.d/010.pgsql.sh
-.if defined(WITH_TCL)
-# Preparing a loadable TCL-package (pkgIndex.tcl)
-	@${MKDIR} ${PREFIX}/lib/tcl${WITH_TCL}/Pgtcl1.3
-	@${SED} "s|%%PREFIX%%|${PREFIX}|g" < ${FILESDIR}/pkgIndex.tcl.in \
-		> ${PREFIX}/lib/tcl${WITH_TCL}/Pgtcl1.3/pkgIndex.tcl
-.endif
-.if defined(WITH_JDBC)
-	@ ${MKDIR} -m 0555 ${PREFIX}/share/java/classes
-	@ ${INSTALL_DATA} ${WRKSRC}/src/interfaces/jdbc/jars/postgresql.jar \
-			  ${PREFIX}/share/java/classes/postgresql.jar
-	@ ${ECHO_MSG} "---------------------------------------------------------"
-	@ ${ECHO_MSG} "Putting postgresql.jar in"
-	@ ${ECHO_MSG} "${PREFIX}/share/java/classes/postgresql.jar"
-	@ ${ECHO_MSG} "Add this to your CLASSPATH!"
-	@ ${ECHO_MSG} "ALSO NOTE: path inside jar file modified from 6.5.x:"
-	@ ${ECHO_MSG} "  'postgresql.*' -> 'org.postgresql.*'!"
-	@ ${ECHO_MSG} "---------------------------------------------------------"
-.if !defined(NOPORTDOCS)
-	@ ${MKDIR} -m 0555 ${PREFIX}/share/examples/postgresql ;\
-	  cd ${WRKSRC}/src/interfaces/jdbc/example ;\
-	  pax -rw . ${PREFIX}/share/examples/postgresql
-.for i in README Implementation
-	@ ${INSTALL_DATA} ${WRKSRC}/src/interfaces/jdbc/$i \
-			  ${PREFIX}/share/examples/postgresql
-.endfor
-	@ ${ECHO_MSG} "---------------------------------------------------------------"
-	@ ${ECHO_MSG} "Putting java examples into ${PREFIX}/share/examples/postgresql"
-	@ ${ECHO_MSG} "---------------------------------------------------------------"
-.endif
-.endif
-.if !defined(DEBUG_FLAGS)
-.for file in ecpg pg_dump pg_id pg_passwd pg_restore postgres psql
-	@ strip ${PREFIX}/${PG_PREFIX}bin/${file}
-.endfor
-.endif
-# information overload mode activated, sorry about this... ;-)
-	@ ${CAT} ${FILESDIR}/post-install-notes ${PKGMESSAGE} |\
-		${SED} "s|/usr/local|${PREFIX}|g" |\
-		tee ${PREFIX}/share/postgresql/post-install-notes ;\
+		> ${PREFIX}/etc/rc.d/010.pgsql.sh ;\
+	${CHMOD} 554 ${PREFIX}/etc/rc.d/010.pgsql.sh ;\
+	${CHOWN} root:pgsql ${PREFIX}/etc/rc.d/010.pgsql.sh ;\
 	${INSTALL_DATA} ${PREFIX}/share/postgresql/post-install-notes ~pgsql/. ;\
-	${CHOWN} -R pgsql:pgsql ~pgsql/.
-.if defined(WITH_OLD_LAYOUT)
-	@ ${CHOWN} root:pgsql ${PREFIX}/${PG_PREFIX}lib
+	${CHOWN} -R pgsql:pgsql ~pgsql/. ;\
+	${INSTALL_DATA} ${FILESDIR}/502.pgsql \
+			${WRKSRC}/src/interfaces/odbc/odbc.sql \
+			${WRKSRC}/src/interfaces/odbc/odbc-drop.sql \
+			${PREFIX}/share/postgresql
 .endif
 
 post-clean:
 	@ ${RM} -f ${WRKDIRPREFIX}${.CURDIR}/Makefile.inc
 
-post-extract: ${POSTEXTRACT}
-
 .include <bsd.port.mk>
+.endif

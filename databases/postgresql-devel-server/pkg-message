@@ -1,4 +1,3 @@
-
 ======================================================================
 
       * IMPORTANT UPGRADE NOTICE * IMPORTANT UPGRADE NOTICE *
@@ -8,23 +7,21 @@ installs into:
 
 /usr/local/bin
 /usr/local/lib
-/usr/local/include/pgsql
+/usr/local/include  (NOTE! Changed again in 7.2, since PostgreSQL
+                           handles standard install nowadays)
 
 You *must* move away your old installation from users' and
-ldconfig(8)'s PATHs. If you rather install using the old-fashion
-layout, cancel now and build the port with "make -DWITH_OLD_LAYOUT".
+ldconfig(8)'s PATHs.
 
 The pgsql user's home dir is /usr/local/pgsql by default, but can be
 changed with for example chpass(1). Datadir defaults to ~pgsql/data,
 but can be changed by modifying the ~pgsql/.profile script.
 
-As always, backup your data before upgrading. If the upgrade leads to
-a higher minor revision (i.e. 7.0.x -> 7.1.x), a dump and restore of
-all databases is required. This is *NOT* done by the port!
-
 ======================================================================
 
-To initialize the database, you should run initdb as the "pgsql" user.
+To initialize the database, you should run initdb as the "pgsql" user
+(if you want to use your locale for collation, edit ~pgsql/.profile
+and set the locale to your preference first).
 
 Example:
 
@@ -35,4 +32,5 @@ You can then start PostgreSQL by running:
   /usr/local/etc/rc.d/010.pgsql.sh start
 
 For postmaster settings, see ~pgsql/data/postgresql.conf
+For more tips, read ~pgsql/post-install-notes
 ======================================================================
