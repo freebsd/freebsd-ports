@@ -7,6 +7,7 @@
 
 PORTNAME=	mrtg
 PORTVERSION=	2.9.29
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	http://people.ee.ethz.ch/~oetiker/webtools/mrtg/pub/ \
@@ -16,6 +17,8 @@ MASTER_SITE_SUBDIR=	net/mrtg
 
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	The multi-router traffic grapher
+
+RUN_DEPENDS=	${SITE_PERL}/SNMP_Session.pm:${PORTSDIR}/net/p5-SNMP_Session
 
 .if defined(WITH_GD2)
 LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd2
@@ -37,6 +40,9 @@ CONFIGURE_ENV=	PERL=${PERL}
 MAN1=		cfgmaker.1 contrib.1 faq.1 forum.1 indexmaker.1 logfile.1 \
 		mibhelp.1 mrtg.1 mrtg-rrd.1 mrtglib.1 nt-guide.1 reference.1 \
 		squid.1 unix-guide.1 webserver.1
+
+post-patch:
+	${RM} ${WRKSRC}/lib/mrtg2/BER.pm ${WRKSRC}/lib/mrtg2/SNMP_*.pm
 
 do-install:
 		${MKDIR} -m 755 ${PREFIX}/etc/mrtg
