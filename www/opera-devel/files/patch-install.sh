@@ -1,5 +1,5 @@
---- install.sh.orig	Tue Oct 26 20:02:37 2004
-+++ install.sh	Wed Oct 27 21:37:16 2004
+--- install.sh.orig	Tue Nov 16 15:11:43 2004
++++ install.sh	Tue Nov 16 15:26:04 2004
 @@ -108,8 +108,8 @@
  
      if test ${os} = 'FreeBSD' -o ${os} = 'OpenBSD'; then
@@ -20,53 +20,25 @@
  		cpf='-f'
  		if test "$verbose" -gt '1'; then
  		    chmodv='-v'
-@@ -758,15 +758,14 @@
- 
+@@ -759,7 +759,7 @@
      debug_msg 0 "in generate_wrapper()"
- 
--    wrapper_opera_plugin_paths="    \"\${HOME}/.opera/plugins\" \\
-+    wrapper_opera_plugin_paths="    \"\${HOME}/.opera-devel/plugins\" \\
-     ${str_localdirplugin} \\
--    /usr/lib/opera/plugins \\
--    /usr/local/lib/opera/plugins \\
--    /opt/lib/opera/plugins \\"
-+    %%LOCALBASE%%/share/opera/plugins \\"
  
      case "${machine}:${os}" in
 -	i[3456]86:Linux|x86_64:Linux|i[3456]86:FreeBSD|i[3456]86:NetBSD|i[3456]86:OpenBSD)
 +	i[3456]86:Linux|x86_64:Linux|i[3456]86:FreeBSD|amd64:FreeBSD|i[3456]86:NetBSD|i[3456]86:OpenBSD)
- 	    wrapper_plugin_paths="
-+    %%LOCALBASE%%/Acrobat[45]/Browsers/intellinux \\
-     /usr/local/Acrobat[45]/Browsers/intellinux \\
-     /usr/lib/Acrobat[45]/Browsers/intellinux \\
-     /usr/X11R6/lib/Acrobat[45]/Browsers/intellinux \\
-@@ -818,21 +817,13 @@
+ 	    wrapper_ibmjava="
+ 	    IBMJava2-142/jre \\
+ 	    IBMJava2-141/jre \\
+@@ -794,7 +794,7 @@
+ 		error 'os'
  	;;
      esac
-     wrapper_netscape_plugin_paths="
--    /usr/lib/RealPlayer8/Plugins \\
--    /usr/lib/realplay/plugins \\
--    /usr/lib/RealPlayer8 \\
--    /usr/lib/realplay \\
-+    %%LOCALBASE%%/lib/RealPlayer8/Plugins \\
-+    %%X11BASE%%/lib/browser_plugins \\
-     \"\${HOME}/.netscape/plugins\" \\
--    /opt/netscape/plugins \\
--    /usr/lib/netscape/plugins \\
--    /usr/local/netscape/plugins \\
--    /usr/local/lib/netscape/plugins \\
--    /usr/lib/mozilla/plugins \\
--    /usr/lib/mozilla-1.3.1/plugins \\
--    /usr/X11R6/lib/mozilla/plugins \\
-+    %%LOCALBASE%%/lib/netscape-linux/plugins \\
-     \"${HOME}/.kde/.konqueror/nsplugins\" \\"
- 
 -    wrapper_file="${wrapper_dir}/opera"
 +    wrapper_file="${wrapper_dir}/opera-devel"
      
      wrapper_contain="#!/bin/sh
  
-@@ -876,6 +867,9 @@
+@@ -838,6 +838,9 @@
  OPERA_LD_PRELOAD=\"\${LD_PRELOAD}\"
  export OPERA_LD_PRELOAD
  
@@ -76,7 +48,7 @@
  # Native Java enviroment
  if test -f \"\${OPERA_PERSONALDIR}/javapath.txt\"; then
      INIJAVA=\`cat \${OPERA_PERSONALDIR}/javapath.txt\`
-@@ -899,47 +893,12 @@
+@@ -861,47 +864,12 @@
  
  if test ! \"\${OPERA_JAVA_DIR}\"; then
  
@@ -127,7 +99,7 @@
  	; do
  	for PREFIX in \${PREFIXES}; do
  	    if test -f \"\${PREFIX}/\${SUNJAVA}/lib/${wrapper_sunjava_machine}/libjava.so\"; then OPERA_JAVA_DIR=\"\${PREFIX}/\${SUNJAVA}/lib/${wrapper_sunjava_machine}\" && break; fi
-@@ -1004,11 +963,8 @@
+@@ -950,11 +918,8 @@
  
  # Acrobat Reader
  for BINDIR in \\
@@ -141,7 +113,7 @@
      ; do
      if test -d \${BINDIR} ; then PATH=\${PATH}:\${BINDIR}; fi
  done
-@@ -1021,12 +977,13 @@
+@@ -965,12 +930,13 @@
  LD_LIBRARY_PATH=\"\${OPERA_BINARYDIR}:\${LD_LIBRARY_PATH}\"
  export LD_LIBRARY_PATH
  
@@ -157,7 +129,7 @@
          LD_LIBRARY_PATH=\"\${LD_LIBRARY_PATH}:\${LIBASPELL_DIR}\"
      fi
  done
-@@ -1120,7 +1077,7 @@
+@@ -1064,7 +1030,7 @@
      chop "${OPERADESTDIR}" "str_localdirshare"
      chop "${OPERADESTDIR}" "str_localdirplugin"
  
@@ -166,7 +138,7 @@
  
      # Executable
  	debug_msg 1 "Executable"
-@@ -1155,7 +1112,7 @@
+@@ -1099,7 +1065,7 @@
  
  	#cp $cpv $cpf wrapper.sh $wrapper_dir/opera
  	generate_wrapper
@@ -175,7 +147,7 @@
  
      # Documentation
  	debug_msg 1 "Documentation"
-@@ -1309,36 +1266,13 @@
+@@ -1264,36 +1230,13 @@
  
  	if test -z "${OPERADESTDIR}"; then
  
@@ -216,7 +188,7 @@
  
  	fi # OPERADESTDIR
  
-@@ -1366,13 +1300,13 @@
+@@ -1321,13 +1264,13 @@
  {
      # arg1 = location
  
@@ -233,7 +205,7 @@
  opera group "Internet"'
  
      echo "${wmconfig_contain}" > ${wmconfig_file}
-@@ -1383,12 +1317,12 @@
+@@ -1338,12 +1281,12 @@
  {
      # arg1 = location
  
@@ -249,7 +221,7 @@
  Icon=opera.xpm
  Terminal=0
  Type=Application'
-@@ -1467,72 +1401,36 @@
+@@ -1422,72 +1365,36 @@
  
      debug_msg 1 "in gnome()"
  
@@ -344,7 +316,7 @@
     fi
     # Add ximian here
  }
-@@ -1543,39 +1441,31 @@
+@@ -1498,39 +1405,31 @@
  
      debug_msg 1 "in kde()"
  

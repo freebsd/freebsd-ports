@@ -11,6 +11,7 @@ bin/opera-devel
 %%DATADIR%%/config/opera6rc.fixed
 %%DATADIR%%/help/advertising.html
 %%DATADIR%%/help/background.png
+%%DATADIR%%/help/chat.html
 %%DATADIR%%/help/dialogs.html
 %%DATADIR%%/help/filetypes.html
 %%DATADIR%%/help/fonts.html
@@ -30,6 +31,7 @@ bin/opera-devel
 %%DATADIR%%/help/multimedia.html
 %%DATADIR%%/help/network.html
 %%DATADIR%%/help/page.html
+%%DATADIR%%/help/panels.html
 %%DATADIR%%/help/paths.html
 %%DATADIR%%/help/personal.html
 %%DATADIR%%/help/preferences.html
@@ -43,6 +45,7 @@ bin/opera-devel
 %%DATADIR%%/help/toolbars.html
 %%DATADIR%%/help/windows.html
 %%DATADIR%%/hhd.ssr
+%%DATADIR%%/html40_entities.dtd
 %%DATADIR%%/images/background.gif
 %%DATADIR%%/images/blank.gif
 %%DATADIR%%/images/drive.gif
@@ -131,7 +134,7 @@ bin/opera-devel
 @dirrm %%DOCSDIR%%
 
 %%KDE%%@cwd %%LOCALBASE%%
-%%KDE%%share/applnk/Internet/opera.desktop
+%%KDE%%share/applnk/Internet/opera-devel.desktop
 %%KDE%%share/icons/hicolor/22x22/apps/opera.png
 %%KDE%%share/icons/hicolor/32x32/apps/opera.png
 %%KDE%%share/icons/hicolor/48x48/apps/opera.png
