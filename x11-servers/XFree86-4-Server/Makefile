@@ -31,7 +31,7 @@ DIST_SUBDIR=		xc
 WRKSRC=			${WRKDIR}/xc
 PATCHDIR=		${.CURDIR}/../../x11/XFree86-4-libraries/files
 .for pf in patch-text-mode.c patch-xf86Configure.c patch-xf86config.c \
-	patch-mga_driver.c patch-common_x86.c patch-alp_xaam.c
+	patch-mga_driver.c patch-alp_xaam.c
 EXTRA_PATCHES+=		${.CURDIR}/files/${pf}
 .endfor
 SCRIPTS_ENV=		OSVERSION=${OSVERSION} \
