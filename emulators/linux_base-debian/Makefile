@@ -31,8 +31,8 @@ PREFIX?=	${LINUXBASE}
 DPKGDB=		${PREFIX}/var/lib/dpkg
 DPKG_CMD?=	${LOCALBASE}/bin/dpkg
 DPKG_ARGS=	--force-architecture --force-depends
-DPKG=		${BATCHENV} ${DPKG_CMD} --root=${PREFIX} \
-		--admindir=${DPKGDB} ${DPKG_ARGS}
+DPKG=		${BATCHENV} PATH="${PATH}:${LOCALBASE}/sbin" ${DPKG_CMD} \
+		--root=${PREFIX} --admindir=${DPKGDB} ${DPKG_ARGS}
 LIBC6NAME=	libc6_2.2.5-6_${ARCH}
 INSTALL_INFO?=	install-info
 
@@ -58,7 +58,7 @@ post-extract:
 	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/util-linux-locales_2.11n-4_all.deb \
 		${WRKSRC}
 
-do-patch:
+do-patch: build-depends
 	cd ${WRKSRC} && \
 	${DPKG_CMD} -x ${LIBC6NAME}.deb ${LIBC6NAME} && \
 	${DPKG_CMD} -e ${LIBC6NAME}.deb ${LIBC6NAME}/DEBIAN && \
