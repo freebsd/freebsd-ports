@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pstree
-PORTVERSION=	2.16
+PORTVERSION=	2.17
 CATEGORIES=    	sysutils
 MASTER_SITES=	http://www.go.dlr.de/fresh/unix/src/misc/
 
