@@ -3,7 +3,7 @@
 # Date created:         18 November 1997
 # Whom:                 Jun-ichiro itojun Itoh <itojun@itojun.org>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/11/20 13:44:30 itojun Exp $
 #
 
 DISTNAME=       ttt-0.4.1
@@ -13,6 +13,8 @@ MASTER_SITES=   ftp://ftp.csl.sony.co.jp/pub/kjc/
 MAINTAINER=     itojun@itojun.org
 
 LIB_DEPENDS=	BLT:${PORTSDIR}/x11/blt
+
+BROKEN=		tk.h
 
 INSTALL_TARGET=	install install-man
 MAN1=		ttt.1 tttprobe.1 tttview.1
