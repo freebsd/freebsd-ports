@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.34 1999/08/25 06:11:01 taoka Exp $
+# $Id: Makefile,v 1.35 1999/08/25 07:12:53 taoka Exp $
 #
 
     SUBDIR += Wnn
@@ -6,6 +6,7 @@
     SUBDIR += afterstep
     SUBDIR += ami
     SUBDIR += bitchx
+    SUBDIR += byeoroo
     SUBDIR += elm
     SUBDIR += engdic
     SUBDIR += eterm
