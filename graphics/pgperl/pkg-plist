@@ -1,5 +1,6 @@
-lib/perl5/man/man3/./ExtUtils::F77.3
+lib/perl5/man/man3/ExtUtils::F77.3
 lib/perl5/man/man3/PGPLOT.3
+lib/perl5/site_perl/ExtUtils/F77.pm
 lib/perl5/site_perl/PGPLOT.pm
 lib/perl5/site_perl/i386-freebsd/auto/PGPLOT/PGPLOT.so
 lib/perl5/site_perl/i386-freebsd/auto/PGPLOT/PGPLOT.bs
@@ -10,6 +11,7 @@ share/doc/pgperl/test.pl
 share/doc/pgperl/test1.p
 share/doc/pgperl/test10.p
 share/doc/pgperl/test11.p
+share/doc/pgperl/test12.p
 share/doc/pgperl/test2.p
 share/doc/pgperl/test3.p
 share/doc/pgperl/test4.p
