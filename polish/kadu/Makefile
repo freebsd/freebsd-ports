@@ -7,6 +7,7 @@
 
 PORTNAME=		kadu
 PORTVERSION=		0.3.4
+PORTREVISION=		1
 PORTEPOCH=		1
 CATEGORIES=		polish net
 MASTER_SITES=		http://kadu.net/releases/
@@ -15,7 +16,7 @@ DISTNAME=		${PORTNAME}-${PORTVERSION}
 MAINTAINER=		jacek@combit.com.pl
 COMMENT=		QT Gadu-Gadu client
 
-LIB_DEPENDS=		gadu.2:${PORTSDIR}/polish/ekg:install
+LIB_DEPENDS=		gadu.3:${PORTSDIR}/polish/ekg:install
 
 USE_GMAKE=		yes
 GNU_CONFIGURE=		yes
