@@ -1,5 +1,5 @@
-*** /dev/null	Sat Sep 24 18:38:46 1994
---- Makefile	Sat Sep 24 19:16:52 1994
+*** /dev/null	Wed Oct  5 14:46:59 1994
+--- Makefile	Wed Oct  5 16:03:22 1994
 ***************
 *** 0 ****
 --- 1,29 ----
@@ -9,9 +9,9 @@
 + 	cc -O -o iozone iozone.c
 + 
 + install:
-+ 	mkdir -p /usr/local/bin
-+ 	mkdir -p /usr/local/man/man1
-+ 	install -c -o bin -m 755 iozone /usr/local/bin
++ 	mkdir -p ${PREFIX}/bin
++ 	mkdir -p ${PREFIX}/man/man1
++ 	install -c -o bin -m 755 iozone ${PREFIX}/bin
 + 	echo .Dd `/bin/date` > iozone.1
 + 	echo .Dt IOZONE 1 >> iozone.1
 + 	echo .Sh NAME >> iozone.1
@@ -31,4 +31,4 @@
 + 		 {if (x) print $0}' >>iozone.1
 + 	echo .Sh AUTHOR >> iozone.1
 + 	echo Bill Norcott >> iozone.1
-+ 	install -m 644  iozone.1 /usr/local/man/man1
++ 	install -m 644  iozone.1 ${PREFIX}/man/man1
