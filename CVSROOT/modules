@@ -46,13 +46,6 @@ cvswrappers	CVSROOT cvswrappers
 editinfo	CVSROOT editinfo
 log_accum	CVSROOT log_accum.pl
 loginfo		CVSROOT loginfo
-mod_accesscookie	ports/www/mod_accesscookie
-mod_auth_useragent	ports/www/mod_auth_useragent
-mod_log_sql2	ports/www/mod_log_sql2
-mod_jk2-apache2	ports/www/mod_jk2-apache2
-mod_clamav	ports/www/mod_clamav
-mod_log_congif-st	ports/www/mod_log_congif-st
-mod_log_mysql	ports/www/mod_log_mysql
 modules		CVSROOT modules
 rcsinfo		CVSROOT rcsinfo
 rcstemplate	CVSROOT rcstemplate
@@ -5133,6 +5126,7 @@ mnogosearch	ports/www/mnogosearch
 mob		ports/devel/mob
 mod_access_identd	ports/www/mod_access_identd
 mod_access_referer	ports/www/mod_access_referer
+mod_accesscookie	ports/www/mod_accesscookie
 mod_accounting	ports/www/mod_accounting
 mod_auth_any	ports/www/mod_auth_any
 mod_auth_cookie_mysql	ports/www/mod_auth_cookie_mysql
@@ -5148,6 +5142,7 @@ mod_auth_pgsql	ports/www/mod_auth_pgsql
 mod_auth_pgsql2	ports/www/mod_auth_pgsql2
 mod_auth_pwcheck	ports/www/mod_auth_pwcheck
 mod_auth_remote	ports/www/mod_auth_remote
+mod_auth_useragent	ports/www/mod_auth_useragent
 mod_authenticache	ports/www/mod_authenticache
 mod_backhand	ports/www/mod_backhand
 mod_bandwidth	ports/www/mod_bandwidth
@@ -5157,6 +5152,7 @@ mod_blowchunks	ports/www/mod_blowchunks
 mod_bunzip2	ports/www/mod_bunzip2
 mod_cfg_ldap	ports/www/mod_cfg_ldap
 mod_cgi_debug	ports/www/mod_cgi_debug
+mod_clamav	ports/www/mod_clamav
 mod_color	ports/www/mod_color
 mod_csacek	ports/www/mod_csacek
 mod_cvs		ports/www/mod_cvs
@@ -5177,12 +5173,16 @@ mod_injection	ports/www/mod_injection
 mod_jk		ports/www/mod_jk
 mod_jk-apache2	ports/www/mod_jk-apache2
 mod_jk2		ports/www/mod_jk2
+mod_jk2-apache2	ports/www/mod_jk2-apache2
 mod_layout	ports/www/mod_layout
 mod_layout2	ports/www/mod_layout2
 mod_limitipconn	ports/www/mod_limitipconn
 mod_limitipconn2	ports/www/mod_limitipconn2
+mod_log_congif-st	ports/www/mod_log_congif-st
 mod_log_data	ports/www/mod_log_data
+mod_log_mysql	ports/www/mod_log_mysql
 mod_log_sql	ports/www/mod_log_sql
+mod_log_sql2	ports/www/mod_log_sql2
 mod_macro	ports/www/mod_macro
 mod_mp3		ports/www/mod_mp3
 mod_musicindex	ports/www/mod_musicindex
@@ -5773,8 +5773,6 @@ openh323	ports/net/openh323
 openhbci	ports/finance/openhbci
 openjade	ports/textproc/openjade
 openjit		ports/java/openjit
-openldap20-client	ports/net/openldap20-client
-openldap20-server	ports/net/openldap20-server
 openldap21-client	ports/net/openldap21-client
 openldap21-sasl-client	ports/net/openldap21-sasl-client
 openldap21-sasl-server	ports/net/openldap21-sasl-server
