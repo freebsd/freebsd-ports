@@ -1,5 +1,5 @@
 --- user_share.c.orig	Fri Nov 26 04:33:51 2004
-+++ user_share.c	Fri Nov 26 17:12:13 2004
++++ user_share.c	Fri Nov 26 17:24:31 2004
 @@ -59,6 +59,14 @@
  	return -1;
      }
@@ -24,3 +24,15 @@
      int i;
      gint status;
      char *pid_filename;
+@@ -195,9 +203,9 @@
+     str = gconf_client_get_string (client,
+ 				   FILE_SHARING_REQUIRE_PASSWORD, NULL);
+ 
+-    if (strcmp (str, "never") == 0) {
++    if (str && strcmp (str, "never") == 0) {
+ 	/* Do nothing */
+-    } else if (strcmp (str, "on_write") == 0){
++    } else if (str && strcmp (str, "on_write") == 0){
+ 	argv[i++] = "-D";
+ 	argv[i++] = "RequirePasswordOnWrite";
+     } else {
