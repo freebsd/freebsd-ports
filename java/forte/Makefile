@@ -16,11 +16,8 @@ EXTRACT_ONLY=
 
 MAINTAINER=	sobomax@FreeBSD.org
 
-BUILD_DEPENDS=	${JAVAVM}:${PORTSDIR}/java/linux-sun-jdk13
-RUN_DEPENDS=	${JAVAVM}:${PORTSDIR}/java/linux-sun-jdk13
-
-JDK13DIR?=	${LOCALBASE}/linux-sun-jdk1.3.1
-JAVAVM=		${JDK13DIR}/bin/java
+USE_JAVA=	1.3+
+JAVAVM=		${JAVA_HOME}/bin/java
 
 RESTRICTED=     "Restrictive license"
 USE_XLIB=	yes
@@ -33,7 +30,7 @@ IGNORE=	You must manually fetch the source distribution (${DISTFILES}) from http
 .endif
 
 do-configure:
-	@${SED} "s|%%JDK13DIR%%|${JDK13DIR}|g" \
+	@${SED} "s|%%JDK13DIR%%|${JAVA_HOME}|g" \
 		${FILESDIR}/forte.sh > ${WRKDIR}/forte.sh
 
 pre-install:
