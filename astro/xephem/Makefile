@@ -3,7 +3,7 @@
 # Date created:         Thu Aug  1 09:10:22 CDT 1996
 # Whom:                 erich@FreeBSD.org
 #
-# $Id: Makefile,v 1.9 1998/09/16 01:58:38 steve Exp $
+# $Id: Makefile,v 1.10 1998/09/17 00:32:26 asami Exp $
 #
 
 DISTNAME=	xephem-3.1
@@ -22,6 +22,8 @@ USE_IMAKE=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/GUI/xephem
 
 LIBSRC=		${WRKDIR}/${DISTNAME}/libastro
+
+MAN1=		xephem.1
 
 pre-configure:
 	@(cd ${LIBSRC} && ${XMKMF})
