@@ -1,0 +1,21 @@
+apps/Wallpaper/.DirIcon
+apps/Wallpaper/AppInfo.xml
+apps/Wallpaper/AppRun
+apps/Wallpaper/Help/COPYING
+apps/Wallpaper/Help/Changes
+apps/Wallpaper/Help/README
+apps/Wallpaper/actions.py
+apps/Wallpaper/actions.pyc
+apps/Wallpaper/actions.pyo
+apps/Wallpaper/findrox.py
+apps/Wallpaper/findrox.pyc
+apps/Wallpaper/findrox.pyo
+apps/Wallpaper/main.py
+apps/Wallpaper/main.pyc
+apps/Wallpaper/main.pyo
+apps/Wallpaper/options.py
+apps/Wallpaper/options.pyc
+apps/Wallpaper/options.pyo
+@dirrm apps/Wallpaper/Help
+@dirrm apps/Wallpaper
+@unexec rmdir %D/apps 2>/dev/null || true
