@@ -20,10 +20,6 @@ share/doc/conglomerate/CongEditorAreaContainer.html
 share/doc/conglomerate/CongEditorAreaEntityDecl.html
 share/doc/conglomerate/CongEditorAreaEntityRef.html
 share/doc/conglomerate/CongEditorAreaExpander.html
-share/doc/conglomerate/CongEditorAreaFlowHolderBlocks.html
-share/doc/conglomerate/CongEditorAreaFlowHolderInlines.html
-share/doc/conglomerate/CongEditorAreaFlowHolderSingle.html
-share/doc/conglomerate/CongEditorAreaFlowHolder.html
 share/doc/conglomerate/CongEditorAreaLabelled.html
 share/doc/conglomerate/CongEditorAreaLine.html
 share/doc/conglomerate/CongEditorAreaListitem.html
@@ -39,30 +35,26 @@ share/doc/conglomerate/CongEditorAreaText.html
 share/doc/conglomerate/CongEditorAreaUnderline.html
 share/doc/conglomerate/CongEditorAreaUnknownTag.html
 share/doc/conglomerate/CongEditorArea.html
-share/doc/conglomerate/CongEditorChildPolicyFlowHolder.html
-share/doc/conglomerate/CongEditorChildPolicyInline.html
-share/doc/conglomerate/CongEditorChildPolicy.html
-share/doc/conglomerate/CongEditorLineFragments.html
-share/doc/conglomerate/CongEditorNodeComment.html
-share/doc/conglomerate/CongEditorNodeDocument.html
-share/doc/conglomerate/CongEditorNodeDtd.html
-share/doc/conglomerate/CongEditorNodeElementAdmonition.html
 share/doc/conglomerate/CongEditorNodeElementListitem.html
 share/doc/conglomerate/CongEditorNodeElementParagraph.html
-share/doc/conglomerate/CongEditorNodeElementSpan.html
-share/doc/conglomerate/CongEditorNodeElementStructural.html
-share/doc/conglomerate/CongEditorNodeElementUnknown.html
 share/doc/conglomerate/CongEditorNodeElement.html
-share/doc/conglomerate/CongEditorNodeEntityDecl.html
-share/doc/conglomerate/CongEditorNodeEntityRef.html
-share/doc/conglomerate/CongEditorNodeText.html
-share/doc/conglomerate/CongEditorNodeUnimplemented.html
 share/doc/conglomerate/CongEditorNode.html
 share/doc/conglomerate/CongEditorWidget3.html
 share/doc/conglomerate/conglomerate-CongApp.html
 share/doc/conglomerate/conglomerate-CongDispspecElement.html
 share/doc/conglomerate/conglomerate-CongDispspecRegistry.html
 share/doc/conglomerate/conglomerate-CongDispspec.html
+share/doc/conglomerate/conglomerate-CongEditorNodeComment.html
+share/doc/conglomerate/conglomerate-CongEditorNodeDocument.html
+share/doc/conglomerate/conglomerate-CongEditorNodeDtd.html
+share/doc/conglomerate/conglomerate-CongEditorNodeElementAdmonition.html
+share/doc/conglomerate/conglomerate-CongEditorNodeElementSpan.html
+share/doc/conglomerate/conglomerate-CongEditorNodeElementStructural.html
+share/doc/conglomerate/conglomerate-CongEditorNodeElementUnknown.html
+share/doc/conglomerate/conglomerate-CongEditorNodeEntityDecl.html
+share/doc/conglomerate/conglomerate-CongEditorNodeEntityRef.html
+share/doc/conglomerate/conglomerate-CongEditorNodeText.html
+share/doc/conglomerate/conglomerate-CongEditorNodeUnimplemented.html
 share/doc/conglomerate/conglomerate-CongLocation.html
 share/doc/conglomerate/conglomerate-CongObject.html
 share/doc/conglomerate/conglomerate-CongPluginManager.html
@@ -120,7 +112,6 @@ share/doc/conglomerate/CongTraversalNode.html
 share/doc/conglomerate/CongXPathExpression.html
 share/doc/conglomerate/ch01.html
 share/doc/conglomerate/ch02.html
-share/doc/conglomerate/ch03.html
 share/doc/conglomerate/editor.html
 share/doc/conglomerate/helper.html
 share/doc/conglomerate/index.html
@@ -299,6 +290,7 @@ share/locale/sq/LC_MESSAGES/conglomerate.mo
 share/locale/sr/LC_MESSAGES/conglomerate.mo
 share/locale/sr@Latn/LC_MESSAGES/conglomerate.mo
 share/locale/sv/LC_MESSAGES/conglomerate.mo
+share/locale/zh_CN/LC_MESSAGES/conglomerate.mo
 @dirrm share/gnome/pixmaps/conglomerate
 @dirrm share/gnome/omf/conglomerate
 @dirrm share/gnome/help/conglomerate/C/figures
