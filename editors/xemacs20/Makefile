@@ -33,6 +33,7 @@ CONFIGURE_ARGS=	${XEMACS_ARCH} --prefix=${PREFIX} \
 		--site-includes=${PREFIX}/include \
 		--site-libraries=${PREFIX}/lib \
 		--sitelispdir="${PREFIX}/lib/xemacs/site-lisp ${PREFIX}/share/emacs/site-lisp" \
+		--infopath=${PREFIX}/lib/xemacs/info:${PREFIX}/info:${X11BASE}/info:/usr/info:${PREFIX}/lib/texmf/doc/info:/usr/lib/texmf/doc:/usr/share/info \
 		--with-session=yes \
 		${WITH_XFACE} ${WITH_MULE} ${WITH_DIALOGS} ${WITH_OFFIX}
 MAN1=		ctags.1 etags.1 gnuattach.1 gnuclient.1 gnudoit.1 \
