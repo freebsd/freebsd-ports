@@ -6,22 +6,19 @@
 #
 
 PORTNAME=	Net_URL
-PORTVERSION=	1.0.10
-PORTREVISION=	1
+PORTVERSION=	1.0.12
 CATEGORIES=	net www pear
-MASTER_SITES=	http://pear.php.net/get/
-PKGNAMEPREFIX=	pear-
-EXTRACT_SUFX=	.tgz
-DIST_SUBDIR=	PEAR
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Easy parsing of Urls
+COMMENT=	Easy parsing of URLs
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear-PEAR
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 CATEGORY=	Net
 FILES=		URL.php
+EXAMPLES=	example.php
+_EXAMPLESDIR=	docs
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
