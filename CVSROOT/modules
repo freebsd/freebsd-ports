@@ -10179,6 +10179,7 @@ t-gnus		ports/news/t-gnus
 t-gnus-emacs20	ports/news/t-gnus-emacs20
 t-gnus-mule	ports/news/t-gnus-mule
 t-gnus-xemacs21-mule	ports/news/t-gnus-xemacs21-mule
+t-prot		ports/mail/t-prot
 t1lib		ports/devel/t1lib
 t1utils		ports/print/t1utils
 t3d		ports/x11-clocks/t3d
