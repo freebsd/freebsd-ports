@@ -1,0 +1,17 @@
+NetPIPE is a protocol independent performance tool that encapsulates
+the best of ttcp and netperf and visually represents the network
+performance under a variety of conditions. By taking the end-to-end
+application view of a network, NetPIPE clearly shows the overhead
+associated with different protocol layers. Netpipe answers such
+questions as: how soon will a given data block of size k arrive at its
+destination? Which network and protocol will transmit size k blocks
+the fastest? What is a given network's effective maximum throughput
+and saturation level?  Does there exist a block size k for which the
+throughput is maximized? How much communication overhead is due to the
+network communication protocol layer(s)? How quickly will a small (< 1
+kbyte) control message arrive, and which network and protocol are best
+for this purpose?
+
+For a paper fully describing NetPIPE and sample investigation of
+network performance issues using NetPIPE, see
+http://www.scl.ameslab.gov/netpipe/paper/full.html.
