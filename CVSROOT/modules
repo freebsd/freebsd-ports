@@ -5027,6 +5027,7 @@ p5-DBIx-Table	ports/databases/p5-DBIx-Table
 p5-DBIx-XHTML_Table	ports/databases/p5-DBIx-XHTML_Table
 p5-DBIx-XML_RDB	ports/databases/p5-DBIx-XML_RDB
 p5-DBZ_File	ports/databases/p5-DBZ_File
+p5-DB_File-Lock	ports/devel/p5-DB_File-Lock
 p5-Data-Buffer	ports/misc/p5-Data-Buffer
 p5-Data-Compare	ports/devel/p5-Data-Compare
 p5-Data-DumpXML	ports/devel/p5-Data-DumpXML
