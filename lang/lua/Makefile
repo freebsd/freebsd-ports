@@ -44,4 +44,8 @@ post-install:
 	@cd ${WRKSRC}/doc && ${INSTALL_DATA} *.html *.gif ${DOCSDIR}
 .endif
 
+.if ${MACHINE_ARCH:L} == "amd64"
+CFLAGS+=	-fPIC
+.endif
+
 .include <bsd.port.mk>
