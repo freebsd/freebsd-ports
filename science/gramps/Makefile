@@ -7,6 +7,7 @@
 
 PORTNAME=	gramps
 PORTVERSION=	1.0.8
+PORTREVISION=	1
 CATEGORIES=	science gnome python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gramps
@@ -23,6 +24,7 @@ USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnomeprefix
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
+INSTALLS_OMF=	yes
 
 MAN1=		gramps.1
 
