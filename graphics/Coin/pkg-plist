@@ -2493,6 +2493,7 @@ share/Coin/html/structSoIntersectingPrimitive.html
 @dirrm include/Inventor/annex
 @dirrm include/Inventor/bundles
 @dirrm include/Inventor/caches
+@dirrm include/Inventor/collision
 @dirrm include/Inventor/details
 @dirrm include/Inventor/draggers
 @dirrm include/Inventor/elements
