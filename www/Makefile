@@ -183,7 +183,6 @@
     SUBDIR += kazehakase
     SUBDIR += kdewebdev
     SUBDIR += knowledgekit
-    SUBDIR += konqueror-nsplugins
     SUBDIR += larbin
     SUBDIR += libghttp
     SUBDIR += libgtkhtml
