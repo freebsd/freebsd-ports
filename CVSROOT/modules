@@ -695,6 +695,7 @@ checkbot	ports/www/checkbot
 checknr		src/usr.bin/checknr
 checkpassword	ports/security/checkpassword
 checkservice	ports/sysutils/checkservice
+cheesetracker	ports/audio/cheesetracker
 cheetah		ports/www/cheetah
 chemeq		ports/biology/chemeq
 chemtool	ports/science/chemtool
