@@ -1,0 +1,26 @@
+bin/tkmsg
+bin/bbsmount
+share/bbtools/bbsmount.bb-sample
+share/bbtools/bbsmount.nobb
+share/bbtools/bbsmount.style
+share/bbsmount/examples/bbsmount.bb.ex
+share/bbsmount/images/notfound.xpm
+share/bbsmount/images/mountedcd.xpm
+share/bbsmount/images/mounteddisk.xpm
+share/bbsmount/images/mounted.xpm
+share/bbsmount/images/mountedzip.xpm
+share/bbsmount/images/unmountedcd.xpm
+share/bbsmount/images/unmounteddisk.xpm
+share/bbsmount/images/unmounted.xpm
+share/bbsmount/images/unmountedzip.xpm
+%%PORTDOCS%%%%DOCSDIR%%/BUGS
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.bbsmount
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@unexec rmdir %D/share/bbtools 2>/dev/null || true
+@unexec rmdir %D/share/bbsmount/examples 2>/dev/null || true
+@unexec rmdir %D/share/bbsmount/images 2>/dev/null || true
+@unexec rmdir %D/share/bbsmount 2>/dev/null || true

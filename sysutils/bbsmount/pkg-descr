@@ -1,0 +1,7 @@
+bbsmount is a disk mounter for Blackbox, designed to be a part of the
+Blackbox Slit, although it will still function as a stand-alone
+tool.
+
+WWW: http://phoenix.inf.upol.cz/~jezberam/bbsmount
+
+- Eric J. Christeson <echriste@702com.net>
