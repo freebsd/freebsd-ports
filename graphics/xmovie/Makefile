@@ -25,6 +25,7 @@ ONLY_FOR_ARCHS=	i386
 DOC_DIR=	${PREFIX}/share/doc/xmovie
 NO_BUILD=	yes
 USE_X_PREFIX=	yes
+WRKSRC=		${WRKDIR}/xmovie-i586
 
 RPM_MIRRORS=            \
 	ftp://ftp.cdrom.com/pub/linux/redhat/__DIR__/ \
