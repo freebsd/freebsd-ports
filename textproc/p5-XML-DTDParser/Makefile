@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	XML-DTDParser
-PORTVERSION=	1.7
+PORTVERSION=	2.01
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	XML
@@ -17,6 +17,15 @@ COMMENT=	Perl module for parsing XML DTD strings
 PERL_CONFIGURE=	yes
 
 MAN3=		XML::DTDParser.3
+
+.if !defined(NOPORTDOCS)
+PORTDOCS=	Changes
+
+post-install:
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
+	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
+.endif
 
 .include <bsd.port.pre.mk>
 
