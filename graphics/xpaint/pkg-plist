@@ -2,20 +2,62 @@
 bin/xpaint
 lib/X11/app-defaults/XPaint
 lib/X11/app-defaults/XPaint_fr
-lib/X11/xpaint/filters/leftright.c
-lib/X11/xpaint/filters/mapping.c
-lib/X11/xpaint/filters/merge.c
-lib/X11/xpaint/filters/permute.c
-lib/X11/xpaint/filters/rotleft.c
-lib/X11/xpaint/filters/rotright.c
-lib/X11/xpaint/filters/updown.c
+lib/X11/xpaint/XPaintIcon.xpm
+lib/X11/xpaint/c_scripts/3d_curves/helicoid.c
+lib/X11/xpaint/c_scripts/3d_curves/lissajous.c
+lib/X11/xpaint/c_scripts/3d_surfaces/ellipsoid.c
+lib/X11/xpaint/c_scripts/3d_surfaces/heart.c
+lib/X11/xpaint/c_scripts/3d_surfaces/hyperboloid.c
+lib/X11/xpaint/c_scripts/3d_surfaces/polyhedra.c
+lib/X11/xpaint/c_scripts/3d_surfaces/torus.c
+lib/X11/xpaint/c_scripts/3d_surfaces/trefoil.c
+lib/X11/xpaint/c_scripts/3d_surfaces/waves.c
+lib/X11/xpaint/c_scripts/filters/leftright.c
+lib/X11/xpaint/c_scripts/filters/mapping.c
+lib/X11/xpaint/c_scripts/filters/merge.c
+lib/X11/xpaint/c_scripts/filters/permute.c
+lib/X11/xpaint/c_scripts/filters/rotleft.c
+lib/X11/xpaint/c_scripts/filters/rotright.c
+lib/X11/xpaint/c_scripts/filters/updown.c
+lib/X11/xpaint/c_scripts/images/random.c
+lib/X11/xpaint/c_scripts/layers/combine.c
+lib/X11/xpaint/c_scripts/procedures/setmemory.c
 lib/X11/xpaint/help/Help
 lib/X11/xpaint/help/Help_fr
+lib/X11/xpaint/include/Colormap.h
+lib/X11/xpaint/include/ColormapP.h
+lib/X11/xpaint/include/DefaultRC.txt.h
+lib/X11/xpaint/include/Paint.h
+lib/X11/xpaint/include/PaintP.h
+lib/X11/xpaint/include/XPaint.ad.h
+lib/X11/xpaint/include/Xpaint.h
+lib/X11/xpaint/include/Xpaint3d.h
+lib/X11/xpaint/include/color.h
+lib/X11/xpaint/include/graphic.h
+lib/X11/xpaint/include/hash.h
 lib/X11/xpaint/include/image.h
+lib/X11/xpaint/include/menu.h
+lib/X11/xpaint/include/messages.h
+lib/X11/xpaint/include/misc.h
+lib/X11/xpaint/include/operation.h
+lib/X11/xpaint/include/ops.h
+lib/X11/xpaint/include/palette.h
+lib/X11/xpaint/include/patchlevel.h
+lib/X11/xpaint/include/protocol.h
+lib/X11/xpaint/include/rc.h
+lib/X11/xpaint/include/region.h
+lib/X11/xpaint/include/text.h
+lib/X11/xpaint/include/xpaint.h
 lib/X11/xpaint/messages/Messages
 lib/X11/xpaint/messages/Messages_fr
 @dirrm lib/X11/xpaint/messages
-@dirrm lib/X11/xpaint/include
 @dirrm lib/X11/xpaint/help
-@dirrm lib/X11/xpaint/filters
+@dirrm lib/X11/xpaint/include
+@dirrm lib/X11/xpaint/c_scripts/procedures
+@dirrm lib/X11/xpaint/c_scripts/layers
+@dirrm lib/X11/xpaint/c_scripts/images
+@dirrm lib/X11/xpaint/c_scripts/filters
+@dirrm lib/X11/xpaint/c_scripts/3d_surfaces
+@dirrm lib/X11/xpaint/c_scripts/3d_curves
+@dirrm lib/X11/xpaint/c_scripts
 @dirrm lib/X11/xpaint
