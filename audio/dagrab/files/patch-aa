@@ -1,0 +1,16 @@
+*** Makefile~  Mon Jan  4 00:51:29 1999
+--- Makefile   Mon Jan  4 00:51:17 1999
+***************
+*** 1,5 ****
+! CC=gcc
+! CFLAGS=-Wall -g 
+  all:dagrab
+  
+  dagrab:dagrab.o
+--- 1,6 ----
+! CC	?= gcc
+! CFLAGS	?= -O2
+! CFLAGS	+= -Wall -g 
+  all:dagrab
+  
+  dagrab:dagrab.o
