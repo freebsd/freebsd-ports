@@ -10,7 +10,6 @@
     SUBDIR += rtptools
     SUBDIR += rqm
     SUBDIR += sdr
-    SUBDIR += sdr-current
     SUBDIR += speak_freely
     SUBDIR += vat
     SUBDIR += vic
