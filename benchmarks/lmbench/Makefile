@@ -1,18 +1,20 @@
 # New ports collection makefile for:	lmbench
-# Version required:	1.0
+# Version required:	1.1
 # Date created:		6 May 1995
 # Whom:			asami
 #
-# $Id: Makefile,v 1.5 1996/03/21 11:35:08 asami Exp $
+# $Id: Makefile,v 1.6 1996/11/18 11:21:57 asami Exp $
 #
 
-DISTNAME=	lmbench-1.0
+DISTNAME=	lmbench-1.1
 CATEGORIES=	benchmarks
-MASTER_SITES=	ftp://forte.mathematik.uni-bremen.de/pub/unix/benchmarks/
+MASTER_SITES=	ftp://forte.mathematik.uni-bremen.de/pub/comp/benchmarks/
 
-MAINTAINER=	asami@FreeBSD.ORG
+MAINTAINER=	fenner@FreeBSD.ORG
 
+WRKSRC=		${WRKDIR}/lmbench
 ALL_TARGET=	build
+MAKE_ENV=	PATH=${PATH}:${WRKSRC}/scripts
 MAN1=		bargraph.1 graph.1
 MAN8=		bw_file_rd.8 bw_mem_cp.8 bw_mem_rd.8 bw_mem_wr.8 \
 		bw_mmap_rd.8 bw_pipe.8 bw_tcp.8 lat_connect.8 lat_ctx.8 \

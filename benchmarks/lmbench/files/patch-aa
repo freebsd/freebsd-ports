@@ -1,11 +1,20 @@
---- ./src/Makefile.org	Fri Nov 25 08:53:00 1994
-+++ ./src/Makefile	Sat May  6 03:38:01 1995
-@@ -91,7 +91,7 @@
- 	$(MAKE) O=$O CC=cc CFLAGS="$(CFLAGS) -Dvfork=fork" all
+--- src/Makefile.orig	Wed May 28 01:21:10 1997
++++ src/Makefile	Wed May 28 01:19:40 1997
+@@ -93,7 +93,7 @@
+ 	$(MAKE) O=$O CC=cc CFLAGS="$(CFLAGS)" all
  
  bsd:
--	$(MAKE) O=$O CC=$(CC) CFLAGS="$CFLAGS -Duint='unsigned int'" all
+-	$(MAKE) O=$O CC=$(CC) CFLAGS="$(CFLAGS) -Duint='unsigned int'" all
 +	$(MAKE) O=$O CC=$(CC) CFLAGS="$(CFLAGS)" all
  
  Wall:
  	@$(MAKE) clean
+@@ -131,7 +131,7 @@
+ 
+ $O/lat_pagefault:  lat_pagefault.c timing.c bench.h
+ 	if [ $O = ../bin/linux -o $O = ../bin/bsd ];                               \
+-	then    cp /bin/true $O/lat_pagefault;                  \
++	then    cp /usr/bin/true $O/lat_pagefault;                  \
+ 	else    $(COMPILE) -o $O/lat_pagefault lat_pagefault.c $(LDLIBS); \
+ 	fi
+ 
