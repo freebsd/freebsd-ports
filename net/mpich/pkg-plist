@@ -116,11 +116,11 @@ mpich/include/mpif.h
 mpich/include/mpio.h
 mpich/include/mpiof.h
 mpich/include/protofix.h
-mpich/lib/libampe.a
+%%X11%%mpich/lib/libampe.a
 mpich/lib/libfmpich.a
 mpich/lib/liblmpe.a
 mpich/lib/libmpe.a
-mpich/lib/libmpe_nompi.a
+%%X11%%mpich/lib/libmpe_nompi.a
 mpich/lib/libmpich.a
 mpich/lib/libmpichfsup.a
 mpich/lib/libpmpich++.a
@@ -216,28 +216,28 @@ mpich/share/examples/srtest.c
 %%JAVA%%@dirrm mpich/share/jumpshot-3
 mpich/share/machines.freebsd
 mpich/share/machines.sample
-mpich/share/upshot/bin/upshot
-mpich/share/upshot/bitmaps/2x2
-mpich/share/upshot/bitmaps/black
-mpich/share/upshot/bitmaps/boxes
-mpich/share/upshot/bitmaps/dimple3
-mpich/share/upshot/bitmaps/dllines3
-mpich/share/upshot/bitmaps/dllines4
-mpich/share/upshot/bitmaps/drlines3
-mpich/share/upshot/bitmaps/drlines4
-mpich/share/upshot/bitmaps/gray
-mpich/share/upshot/bitmaps/gray2
-mpich/share/upshot/bitmaps/gray3
-mpich/share/upshot/bitmaps/hlines2
-mpich/share/upshot/bitmaps/hlines3
-mpich/share/upshot/bitmaps/hlines4
-mpich/share/upshot/bitmaps/light_gray
-mpich/share/upshot/bitmaps/vlines2
-mpich/share/upshot/bitmaps/vlines3
-mpich/share/upshot/bitmaps/vlines4
-mpich/share/upshot/bitmaps/white
-mpich/share/upshot/logfiles/fft.trf
-mpich/share/upshot/logfiles/sam_hyp.16.log
+%%TK%%mpich/share/upshot/bin/upshot
+%%TK%%mpich/share/upshot/bitmaps/2x2
+%%TK%%mpich/share/upshot/bitmaps/black
+%%TK%%mpich/share/upshot/bitmaps/boxes
+%%TK%%mpich/share/upshot/bitmaps/dimple3
+%%TK%%mpich/share/upshot/bitmaps/dllines3
+%%TK%%mpich/share/upshot/bitmaps/dllines4
+%%TK%%mpich/share/upshot/bitmaps/drlines3
+%%TK%%mpich/share/upshot/bitmaps/drlines4
+%%TK%%mpich/share/upshot/bitmaps/gray
+%%TK%%mpich/share/upshot/bitmaps/gray2
+%%TK%%mpich/share/upshot/bitmaps/gray3
+%%TK%%mpich/share/upshot/bitmaps/hlines2
+%%TK%%mpich/share/upshot/bitmaps/hlines3
+%%TK%%mpich/share/upshot/bitmaps/hlines4
+%%TK%%mpich/share/upshot/bitmaps/light_gray
+%%TK%%mpich/share/upshot/bitmaps/vlines2
+%%TK%%mpich/share/upshot/bitmaps/vlines3
+%%TK%%mpich/share/upshot/bitmaps/vlines4
+%%TK%%mpich/share/upshot/bitmaps/white
+%%TK%%mpich/share/upshot/logfiles/fft.trf
+%%TK%%mpich/share/upshot/logfiles/sam_hyp.16.log
 mpich/www/index.html
 mpich/www/www1/Jumpshots.html
 mpich/www/www1/MPI.html
@@ -538,11 +538,11 @@ mpich/www/www4/index.html
 @dirrm mpich/www/www3
 @dirrm mpich/www/www1
 @dirrm mpich/www
-@dirrm mpich/share/upshot/sbin
-@dirrm mpich/share/upshot/logfiles
-@dirrm mpich/share/upshot/bitmaps
-@dirrm mpich/share/upshot/bin
-@dirrm mpich/share/upshot
+%%TK%%@dirrm mpich/share/upshot/sbin
+%%TK%%@dirrm mpich/share/upshot/logfiles
+%%TK%%@dirrm mpich/share/upshot/bitmaps
+%%TK%%@dirrm mpich/share/upshot/bin
+%%TK%%@dirrm mpich/share/upshot
 @dirrm mpich/share/examples
 @dirrm mpich/share
 @dirrm mpich/sbin
