@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	prayer
-PORTVERSION=	1.0.8
-PORTREVISION=	1
+PORTVERSION=	1.0.10
 CATEGORIES=	mail www
 MASTER_SITES=	ftp://ftp.csx.cam.ac.uk/pub/software/email/prayer/
 # ftp://ftp.csx.cam.ac.uk/pub/software/email/prayer/prayer-1.0.8.tar.gz
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Prayer Webmail System
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libc-client4.a:${PORTSDIR}/mail/cclient
@@ -30,6 +29,9 @@ BERKLEYDB_LIB?=		db3.3
 
 DOCS=	ACCOUNTD CMD_LINE DESIGN DONE DONE-OLD FEATURES ICONLIST \
 	INSTALL LOGS NOTICE README ROADMAP SECURITY TODO URL_OPTIONS
+
+pre-patch:
+	${CP} ${WRKSRC}/defaults/Config ${WRKSRC}/Config
 
 do-configure:
 	@${SED} -e "s=%%PREFIX%%=${PREFIX}=" ${FILESDIR}/prayer.sh \
