@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gspoof
-PORTVERSION=	3.0
+PORTVERSION=	3.1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -21,11 +21,10 @@ USE_GNOME=	gnometarget gtk20
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-libnet-prefix=${LOCALBASE}
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/local/lib|${LOCALBASE}/lib|g ; \
-		 s|/usr/local/include|${LOCALBASE}/include|g ; \
-		 s|-Wall -O2|$${CFLAGS}|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|-Wall -O2|$${CFLAGS}|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|-Wall -O2|@CFLAGS@|g' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|/usr/local/share|${PREFIX}/share|g ; \
 		 s|/usr/share|${X11BASE}/share|g' ${WRKSRC}/gtk.c
