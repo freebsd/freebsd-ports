@@ -1,4 +1,5 @@
 bin/irb
+bin/irb%%_RUBY_SUFFIX%%
 bin/ruby
 bin/ruby%%_RUBY_SUFFIX%%
 lib/lib%%RUBY_NAME%%.so
