@@ -6,12 +6,13 @@
 #
 
 PORTNAME=	mpich
-PORTVERSION=	1.2.2.2
+PORTVERSION=	1.2.3
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.mcs.anl.gov/pub/mpi/
 DIST_SUBDIR=	mpich
 
-#PATCH_SITES=	ftp://ftp.mcs.anl.gov/pub/mpi/patch/${PORTVERSION}/
+PATCH_SITES=	ftp://ftp.mcs.anl.gov/pub/mpi/patch/${PORTVERSION}/
+PATCHFILES=	6589
 
 MAINTAINER=	dbader@eece.unm.edu
 

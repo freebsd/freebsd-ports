@@ -22,14 +22,25 @@ mpich/bin/mpirun.rand
 mpich/bin/mpirun_dbg.dbx
 mpich/bin/mpirun_dbg.ddd
 mpich/bin/mpirun_dbg.gdb
+mpich/bin/mpirun_dbg.ladebug
 mpich/bin/mpirun_dbg.totalview
 mpich/bin/mpirun_dbg.xxgdb
 mpich/bin/serv_p4
 mpich/bin/slog_print
 mpich/bin/tarch
 mpich/bin/tdevice
-mpich/doc/guide.ps.gz
-mpich/doc/install.ps.gz
+mpich/doc/mpeman.pdf
+mpich/doc/mpeman.ps.gz
+mpich/doc/mpichman-chp4.pdf
+mpich/doc/mpichman-chp4.ps.gz
+mpich/doc/mpichman-chp4mpd.pdf
+mpich/doc/mpichman-chp4mpd.ps.gz
+mpich/doc/mpichman-chshmem.pdf
+mpich/doc/mpichman-chshmem.ps.gz
+mpich/doc/mpichman-globus2.pdf
+mpich/doc/mpichman-globus2.ps.gz
+mpich/doc/mpiman.ps
+mpich/doc/romio-users.ps.gz
 mpich/etc/mpichconf.h.dat
 mpich/etc/mpichlib.conf
 mpich/etc/mpif77.conf
@@ -132,6 +143,78 @@ mpich/share/examples/fpi.f
 mpich/share/examples/fxgraphics.f
 mpich/share/examples/mpirun
 mpich/share/examples/srtest.c
+mpich/share/jumpshot-2/README
+mpich/share/jumpshot-2/bin/jumpshot
+mpich/share/jumpshot-2/doc/jumpshot.def
+mpich/share/jumpshot-2/doc/jumpshot.doc
+mpich/share/jumpshot-2/lib/data/jumpshot.colors
+mpich/share/jumpshot-2/lib/data/jumpshot.setup
+mpich/share/jumpshot-2/lib/images.jar
+mpich/share/jumpshot-2/lib/jumpshot.jar
+mpich/share/jumpshot-2/logfiles/fpilog.clog
+mpich/share/jumpshot-2/swing/swing.jar
+mpich/share/jumpshot-3/README
+mpich/share/jumpshot-3/README.slog
+mpich/share/jumpshot-3/TourStepByStep.txt
+mpich/share/jumpshot-3/UserGuide.txt
+mpich/share/jumpshot-3/bin/jumpshot
+mpich/share/jumpshot-3/bin/slog_print
+mpich/share/jumpshot-3/doc/TourStepByStep.pdf
+mpich/share/jumpshot-3/doc/html/TourStepByStep.css
+mpich/share/jumpshot-3/doc/html/TourStepByStep.html
+mpich/share/jumpshot-3/doc/html/WARNINGS
+mpich/share/jumpshot-3/doc/html/crossref.gif
+mpich/share/jumpshot-3/doc/html/footnode.html
+mpich/share/jumpshot-3/doc/html/images.aux
+mpich/share/jumpshot-3/doc/html/images.log
+mpich/share/jumpshot-3/doc/html/images.pl
+mpich/share/jumpshot-3/doc/html/images.tex
+mpich/share/jumpshot-3/doc/html/img1.gif
+mpich/share/jumpshot-3/doc/html/img10.gif
+mpich/share/jumpshot-3/doc/html/img11.gif
+mpich/share/jumpshot-3/doc/html/img12.gif
+mpich/share/jumpshot-3/doc/html/img13.gif
+mpich/share/jumpshot-3/doc/html/img2.gif
+mpich/share/jumpshot-3/doc/html/img3.gif
+mpich/share/jumpshot-3/doc/html/img4.gif
+mpich/share/jumpshot-3/doc/html/img5.gif
+mpich/share/jumpshot-3/doc/html/img6.gif
+mpich/share/jumpshot-3/doc/html/img7.gif
+mpich/share/jumpshot-3/doc/html/img8.gif
+mpich/share/jumpshot-3/doc/html/img9.gif
+mpich/share/jumpshot-3/doc/html/index.html
+mpich/share/jumpshot-3/doc/html/internals.pl
+mpich/share/jumpshot-3/doc/html/labels.pl
+mpich/share/jumpshot-3/doc/html/next.gif
+mpich/share/jumpshot-3/doc/html/next_g.gif
+mpich/share/jumpshot-3/doc/html/node1.html
+mpich/share/jumpshot-3/doc/html/node2.html
+mpich/share/jumpshot-3/doc/html/node3.html
+mpich/share/jumpshot-3/doc/html/node4.html
+mpich/share/jumpshot-3/doc/html/node5.html
+mpich/share/jumpshot-3/doc/html/node6.html
+mpich/share/jumpshot-3/doc/html/node7.html
+mpich/share/jumpshot-3/doc/html/prev.gif
+mpich/share/jumpshot-3/doc/html/prev_g.gif
+mpich/share/jumpshot-3/doc/html/up.gif
+mpich/share/jumpshot-3/doc/html/up_g.gif
+mpich/share/jumpshot-3/doc/jumpshot.def
+mpich/share/jumpshot-3/etc/jumpshot.conf
+mpich/share/jumpshot-3/lib/images.jar
+mpich/share/jumpshot-3/lib/jumpshot.jar
+mpich/share/jumpshot-3/lib/preview.jar
+mpich/share/jumpshot-3/lib/slog.jar
+mpich/share/jumpshot-3/lib/slog_print.class
+mpich/share/jumpshot-3/lib/slog_print_remote.class
+mpich/share/jumpshot-3/lib/statsviewer.jar
+mpich/share/jumpshot-3/logfiles/sample.slog
+mpich/share/jumpshot-3/logfiles/sppm.stats.0301
+mpich/share/jumpshot-3/logfiles/sppm_ic2a.slog
+mpich/share/jumpshot-3/logfiles/stats0204.txt
+mpich/share/jumpshot-3/logfiles/stats3.txt
+mpich/share/jumpshot-3/logfiles/thread1.stats
+mpich/share/jumpshot-3/sbin/exejar
+mpich/share/jumpshot-3/share/jumpshot.colors
 mpich/share/machines.freebsd
 mpich/share/machines.sample
 mpich/share/upshot/bin/upshot
@@ -461,6 +544,23 @@ mpich/www/www4/index.html
 @dirrm mpich/share/upshot/bitmaps
 @dirrm mpich/share/upshot/bin
 @dirrm mpich/share/upshot
+@dirrm mpich/share/jumpshot-3/share
+@dirrm mpich/share/jumpshot-3/sbin
+@dirrm mpich/share/jumpshot-3/logfiles
+@dirrm mpich/share/jumpshot-3/lib
+@dirrm mpich/share/jumpshot-3/etc
+@dirrm mpich/share/jumpshot-3/doc/html
+@dirrm mpich/share/jumpshot-3/doc
+@dirrm mpich/share/jumpshot-3/bin
+@dirrm mpich/share/jumpshot-3
+@dirrm mpich/share/jumpshot-2/swing
+@dirrm mpich/share/jumpshot-2/sbin
+@dirrm mpich/share/jumpshot-2/logfiles
+@dirrm mpich/share/jumpshot-2/lib/data
+@dirrm mpich/share/jumpshot-2/lib
+@dirrm mpich/share/jumpshot-2/doc
+@dirrm mpich/share/jumpshot-2/bin
+@dirrm mpich/share/jumpshot-2
 @dirrm mpich/share/examples
 @dirrm mpich/share
 @dirrm mpich/sbin
@@ -478,3 +578,7 @@ mpich/www/www4/index.html
 @dirrm mpich/doc
 @dirrm mpich/bin
 @dirrm mpich
+@exec mkdir -p %D/mpich/share/upshot/sbin 2>/dev/null || true
+@exec mkdir -p %D/mpich/share/jumpshot-2/sbin 2>/dev/null || true
+@exec mkdir -p %D/mpich/lib/shared 2>/dev/null || true
+@exec mkdir -p %D/mpich/examples/MPI-2-C++ 2>/dev/null || true
