@@ -1,0 +1,32 @@
+# New ports collection makefile for:	libmrproject
+# Date created:				17 February 2003
+# Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	libmrproject
+PORTVERSION=	0.9
+CATEGORIES=	deskutils gnome
+MASTER_SITES=	ftp://ftp.codefactory.se/pub/software/mrproject/source/
+
+MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	Library backend for MrProject project management application
+
+LIB_DEPENDS=	gsf-1.8:${PORTSDIR}/devel/libgsf
+
+USE_X_PREFIX=	yes
+USE_GMAKE=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gnomeprefix gnomehack
+INSTALLS_SHLIB=	yes
+USE_REINPLACE=	yes
+USE_LIBTOOL=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
+		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
+		s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
+
+.include <bsd.port.mk>

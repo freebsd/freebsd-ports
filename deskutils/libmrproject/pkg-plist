@@ -1,0 +1,50 @@
+include/mrproject-1.0/mrproject/mrp-application.h
+include/mrproject-1.0/mrproject/mrp-assignment.h
+include/mrproject-1.0/mrproject/mrp-calendar.h
+include/mrproject-1.0/mrproject/mrp-day.h
+include/mrproject-1.0/mrproject/mrp-error.h
+include/mrproject-1.0/mrproject/mrp-group.h
+include/mrproject-1.0/mrproject/mrp-object.h
+include/mrproject-1.0/mrproject/mrp-project.h
+include/mrproject-1.0/mrproject/mrp-property.h
+include/mrproject-1.0/mrproject/mrp-relation.h
+include/mrproject-1.0/mrproject/mrp-resource.h
+include/mrproject-1.0/mrproject/mrp-storage-module.h
+include/mrproject-1.0/mrproject/mrp-task.h
+include/mrproject-1.0/mrproject/mrp-time.h
+include/mrproject-1.0/mrproject/mrp-types.h
+include/mrproject-1.0/mrproject/mrproject.h
+lib/libmrproject.a
+lib/libmrproject.so
+lib/libmrproject.so.0
+lib/mrproject/file-modules/libmrp-mpx.so
+lib/mrproject/file-modules/libmrp-xml.so
+lib/mrproject/storage-modules/libstorage-mpx.so
+lib/mrproject/storage-modules/libstorage-mrproject-1.so
+libdata/pkgconfig/libmrproject.pc
+share/gnome/mrproject/dtd/mrproject-0.5.1.dtd
+share/gnome/mrproject/dtd/mrproject-0.6.dtd
+share/locale/am/LC_MESSAGES/libmrproject.mo
+share/locale/cs/LC_MESSAGES/libmrproject.mo
+share/locale/da/LC_MESSAGES/libmrproject.mo
+share/locale/de/LC_MESSAGES/libmrproject.mo
+share/locale/es/LC_MESSAGES/libmrproject.mo
+share/locale/fr/LC_MESSAGES/libmrproject.mo
+share/locale/hu/LC_MESSAGES/libmrproject.mo
+share/locale/it/LC_MESSAGES/libmrproject.mo
+share/locale/ja/LC_MESSAGES/libmrproject.mo
+share/locale/kn/LC_MESSAGES/libmrproject.mo
+share/locale/lv/LC_MESSAGES/libmrproject.mo
+share/locale/nn/LC_MESSAGES/libmrproject.mo
+share/locale/no/LC_MESSAGES/libmrproject.mo
+share/locale/pt/LC_MESSAGES/libmrproject.mo
+share/locale/ru/LC_MESSAGES/libmrproject.mo
+share/locale/sv/LC_MESSAGES/libmrproject.mo
+@dirrm share/gnome/mrproject/dtd
+@dirrm share/gnome/mrproject
+@dirrm share/doc/libmrproject
+@dirrm lib/mrproject/storage-modules
+@dirrm lib/mrproject/file-modules
+@dirrm lib/mrproject
+@dirrm include/mrproject-1.0/mrproject
+@dirrm include/mrproject-1.0
