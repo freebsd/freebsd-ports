@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	usermin
-PORTVERSION=	1.080
-PORTREVISION=	3
+PORTVERSION=	1.090
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.webmin.com/uupdates/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -26,7 +25,8 @@ USE_PERL5=	yes
 USE_RC_SUBR=	yes
 USE_REINPLACE=	yes
 
-USERMIN_MODULES=quota-1.080-1.wbm.gz
+USERMIN_MODULES=file-1.090-2.wbm.gz \
+		htaccess-1.090-1.wbm.gz
 
 USERMIN_THEMES=
 
@@ -65,7 +65,7 @@ post-install:
 		'{ print "lib/usermin/" $$1 }' > ${WRKDIR}/PLIST.lib-usermin
 	@cd ${WRKSRC} ; ${FIND} * -type d | ${SORT} -r | ${AWK} \
 		'{ print "lib/usermin/" $$1 }' | ${SED} -e 's/^/@dirrm /g' \
-		>> ${WRKDIR}/PLIST.lib-webmin
+		>> ${WRKDIR}/PLIST.lib-usermin
 	@${ECHO_CMD} "r ${TMPPLIST}"			> ${WRKDIR}/ex.script
 	@${ECHO_CMD} "/Insert PLIST.lib-usermin"	>> ${WRKDIR}/ex.script
 	@${ECHO_CMD} "d"				>> ${WRKDIR}/ex.script
