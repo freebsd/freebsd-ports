@@ -30,6 +30,7 @@ lib/%%PYTHON_VERSION%%/site-packages/libxml2mod.so
 %%EXAMPLESDIR%%/regexp.py
 %%EXAMPLESDIR%%/relaxng.py
 %%EXAMPLESDIR%%/resolver.py
+%%EXAMPLESDIR%%/schema.py
 %%EXAMPLESDIR%%/serialize.py
 %%EXAMPLESDIR%%/sync.py
 %%EXAMPLESDIR%%/thread2.py

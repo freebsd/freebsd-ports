@@ -1,6 +1,6 @@
---- Makefile.in.orig	Fri Jul  2 13:56:41 2004
-+++ Makefile.in	Fri Jul  2 13:59:27 2004
-@@ -418,13 +418,13 @@
+--- Makefile.in.orig	Sun Aug 22 21:07:59 2004
++++ Makefile.in	Sun Aug 22 21:09:14 2004
+@@ -421,13 +421,13 @@
  sharedstatedir = @sharedstatedir@
  sysconfdir = @sysconfdir@
  target_alias = @target_alias@
@@ -11,12 +11,12 @@
  bin_SCRIPTS = xml2-config
  lib_LTLIBRARIES = libxml2.la
  libxml2_la_LIBADD = @THREAD_LIBS@ @Z_LIBS@ $(ICONV_LIBS) @M_LIBS@ @WIN32_EXTRA_LIBADD@
--libxml2_la_LDFLAGS = @WIN32_EXTRA_LDFLAGS@ -version-info @LIBXML_VERSION_INFO@
-+libxml2_la_LDFLAGS = @WIN32_EXTRA_LDFLAGS@ -version-info 5:0:0
+-libxml2_la_LDFLAGS = @CYGWIN_EXTRA_LDFLAGS@ @WIN32_EXTRA_LDFLAGS@ -version-info @LIBXML_VERSION_INFO@
++libxml2_la_LDFLAGS = @CYGWIN_EXTRA_LDFLAGS@ @WIN32_EXTRA_LDFLAGS@ -version-info 5:0:0
  @WITH_TRIO_SOURCES_FALSE@libxml2_la_SOURCES = SAX.c entities.c encoding.c error.c parserInternals.c  \
  @WITH_TRIO_SOURCES_FALSE@		parser.c tree.c hash.c list.c xmlIO.c xmlmemory.c uri.c  \
  @WITH_TRIO_SOURCES_FALSE@		valid.c xlink.c HTMLparser.c HTMLtree.c debugXML.c xpath.c  \
-@@ -501,7 +501,7 @@
+@@ -504,7 +504,7 @@
  testReader_DEPENDENCIES = $(DEPS)
  testReader_LDADD = $(LDADDS)
  CLEANFILES = xml2Conf.sh
@@ -25,8 +25,8 @@
  confexec_DATA = xml2Conf.sh
  EXTRA_DIST = xml2-config.in xml2Conf.sh.in libxml.spec.in libxml2.spec \
               libxml.m4 Copyright check-xml-test-suite.py \
-@@ -521,8 +521,8 @@
- # Instll the tests program sources as examples 
+@@ -525,8 +525,8 @@
+ # Install the tests program sources as examples 
  #
  BASE_DIR = $(datadir)/doc
 -DOC_MODULE = libxml2-$(VERSION)
@@ -36,7 +36,7 @@
  all: config.h
  	$(MAKE) $(AM_MAKEFLAGS) all-recursive
  
-@@ -1209,7 +1209,7 @@
+@@ -1213,7 +1213,7 @@
  check-am: all-am
  	$(MAKE) $(AM_MAKEFLAGS) check-local
  check: check-recursive
