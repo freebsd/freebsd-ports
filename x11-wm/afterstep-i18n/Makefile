@@ -9,7 +9,7 @@ PORTNAME=	afterstep-i18n
 PORTVERSION= 	1.0
 CATEGORIES=	x11-wm afterstep
 MASTER_SITES=	${MASTER_SITE_AFTERSTEP} \
-		http://people.FreeBSD.org/~kuriyama/distfiles/ \
+		ftp://ftp.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/kuriyama/ \
 		http://www.itlb.te.noda.sut.ac.jp/~manome/afterstep/archive/ \
 		http://www.itlb.te.noda.sut.ac.jp/~manome/afterstep/archive/icons/
 MASTER_SITE_SUBDIR=	stable/archives
