@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fox
-PORTVERSION?=	1.0.30
+PORTVERSION?=	1.0.46
 PORTREVISION?=	0
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://www.fox-toolkit.org/ftp/ \
@@ -140,9 +140,7 @@ pre-everything::
 ## Port conflict management
 ##
 .if exists(${LOCALBASE}/lib/libFOX-1.1.so)
-IGNORE=	Conflict management: you have port fox-devel installed. The\
-	fox port is incompatible with fox-devel one. You have to\
-	uninstall fox-devel port if you really need the fox one
+IGNORE=	Conflict: this port is mutually exclusive with x11-toolkits/fox-devel
 .endif
 
 .include <bsd.port.post.mk>
