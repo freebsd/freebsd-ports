@@ -3,11 +3,11 @@
 # Date created:		22 November 1994
 # Whom:			Satoshi Asami (asami)
 #
-# $Id: Makefile,v 1.22 1995/09/15 01:41:22 asami Exp $
+# $Id: Makefile,v 1.23 1996/08/16 09:43:31 asami Exp $
 #
 
 DISTNAME=	mule-2.3
-CATEGORIES+=	editors
+CATEGORIES=	editors
 MASTER_SITES=	ftp://ftp.cs.buffalo.edu/pub/mule/ \
 		ftp://etlport.etl.go.jp/pub/mule/ \
 		ftp://sh.wide.ad.jp/JAPAN/mule/ \

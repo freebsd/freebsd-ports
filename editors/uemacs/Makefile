@@ -3,12 +3,12 @@
 # Date created:         16 Jan 1995
 # Whom:                 thomas@ghpc8.ihf.rwth-aachen.de
 #
-# $Id: Makefile,v 1.7 1996/06/26 22:02:08 gpalmer Exp $
+# $Id: Makefile,v 1.8 1996/06/26 22:25:32 gpalmer Exp $
 #
 
 DISTNAME=	uemacs
 PKGNAME=	uemacs-3.12
-CATEGORIES+=	editors
+CATEGORIES=	editors
 MASTER_SITES=	ftp://midas.mgmt.purdue.edu/dist/uemacs312/
 DISTFILES=	ue312dev.zip
 

@@ -3,13 +3,15 @@
 # Date created:         Fri Jun 21, 1996
 # Whom:                 pgf
 #
-# $Id: Makefile,v 1.7 1996/10/07 12:14:03 max Exp $
+# $Id: Makefile,v 1.8 1996/10/09 09:22:18 max Exp $
 #
 
 DISTNAME=       vile-6.1
 PKGNAME=	xvile-6.1
-CATEGORIES+=	editors
+CATEGORIES=	editors
 MASTER_SITES=   ftp://id.wing.net/pub/pgf/vile/
+
+MAINTAINER=	ports@FreeBSD.org
 
 MAKEFILE=	makefile
 GNU_CONFIGURE=	yes
