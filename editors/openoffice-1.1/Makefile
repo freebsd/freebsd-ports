@@ -1,13 +1,12 @@
 # New ports collection makefile for: OpenOffice.org
-# Date created:		28 Februar 2002
+# Date created:		28 February 2002
 # Whom:                 Martin Blapp
 #
 # $FreeBSD$
 #
 
 PORTNAME=	openoffice
-PORTVERSION=	1.1.2
-PORTREVISION=	1
+PORTVERSION=	1.1.3
 CATEGORIES+=	editors
 MASTER_SITES+=  ${MASTER_SITE_RINGSERVER:S,%SUBDIR%,misc/openoffice/&,} \
 		ftp://sunsite.cnlab-switch.ch/mirror/OpenOffice/%SUBDIR%/ \
@@ -22,8 +21,8 @@ MASTER_SITES+=  ${MASTER_SITE_RINGSERVER:S,%SUBDIR%,misc/openoffice/&,} \
 		ftp://sunsite.cnlab-switch.ch/mirror/OpenOffice/contrib/helpcontent/:help \
 		http://ftp.services.openoffice.org/pub/OpenOffice.org/contrib/helpcontent/:help
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION}
-DISTFILES+=	OOo_${PORTVERSION}_source.tar.gz gpc231.tar.Z:gpc
-EXTRACT_ONLY=	OOo_${PORTVERSION}_source.tar.gz
+DISTFILES+=	OOo_${PORTVERSION}-1_source.tar.gz gpc231.tar.Z:gpc
+EXTRACT_ONLY=	OOo_${PORTVERSION}-1_source.tar.gz
 
 MAINTAINER=	openoffice@FreeBSD.org
 
@@ -37,8 +36,6 @@ USE_PERL5=	yes
 USE_BISON=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
-#mozilla 1.0 seems to have security vulnerability
-WITHOUT_MOZILLA=	yes
 
 .if !defined(WITHOUT_JAVA)
 USE_JAVA=	1.4+
@@ -47,6 +44,9 @@ NO_RUN_DEPENDS_JAVA=	yes
 
 .include <bsd.port.pre.mk>
 .include <${FILESDIR}/Makefile.localized>
+
+LANG_EXT?=	01
+LANG_CONFIGURE_ARG?=	ENUS
 
 .if defined(L10NHELP)
 DISTFILES+=	${L10NHELP}:help
@@ -69,20 +69,14 @@ L10NHELPS=	helpcontent_31_unix.tgz helpcontent_33_unix.tgz \
 .endif
 
 COMMENT?=	Integrated wordprocessor/dbase/spreadheet/drawing/chart/browser
-
 BUILD_NR=		645
 RELEASE_NR=		${PORTVERSION}
 INSTALLATION_BASEDIR=	OpenOffice.org${RELEASE_NR}
 DIST_SUBDIR=		openoffice1.1
-SIMPLEOSVER!=		${UNAME} -r | ${SED} -e 's/\.//' | ${SED} -e 's/\..*//'
-.if defined(LANG_PKGNAME)
-PKGNAMEPREFIX=		${LANG_PKGNAME}-
-.endif
-.if defined(LANG_SUFFIX)
-PKGNAMESUFFIX?=		-${LANG_SUFFIX}
-.endif
+SIMPLEOSVER!=		${UNAME} -r | ${SED} -e 's/\.//g' | ${SED} -e 's/-.*//'
 BUILD_DEPENDS+=	gcc32:${PORTSDIR}/lang/gcc32
-USE_GCC=3.2
+
+# FIXME
 .if defined(WITH_CCACHE)
 BUILD_DEPENDS+=	ccache:${PORTSDIR}/devel/ccache
 CC=	ccache gcc32
@@ -91,7 +85,6 @@ CXX=	ccache g++32
 CC=	gcc32
 CXX=	g++32
 .endif
-
 BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
 		unzip:${PORTSDIR}/archivers/unzip \
 		gcp:${PORTSDIR}/sysutils/coreutils \
@@ -111,7 +104,8 @@ BUILD_DEPENDS+=	${ANT}:${PORTSDIR}/devel/apache-ant
 GNU_CONFIGURE=	yes
 USE_AUTOCONF_VER=	259
 WRKDIR=		${WRKDIRPREFIX}${.CURDIR}/work
-WRKSRC=		${WRKDIR}/oo_${RELEASE_NR}_src/config_office
+WRKSRC=		${WRKDIR}/OOo_${RELEASE_NR}_src
+CONFIGURE_WRKSRC=	${WRKDIR}/OOo_${RELEASE_NR}_src/config_office
 ANT?=		${LOCALBASE}/bin/ant
 TCSH?=		/bin/tcsh
 ZIP?=		${PREFIX}/bin/zip
@@ -136,14 +130,10 @@ CONFIGURE_ARGS+=	--with-jdk-home="${JAVA_HOME}"
 CONFIGURE_ARGS+=	--disable-mozilla
 .endif
 
-.if defined(LANG_EXT)
-CONFIGURE_ARGS+=	--with-lang=${LANG_CONFIGURE_ARG},ENUS
-.else
-LANG_EXT=		01
-.endif
-
 .if defined(ALL_LOCALIZED_LANGS)
 CONFIGURE_ARGS+=	--with-lang=ALL
+.else
+CONFIGURE_ARGS+=	--with-lang=${LANG_CONFIGURE_ARG}
 .endif
 
 .if defined(WITH_DEBUG)
@@ -208,8 +198,8 @@ pre-everything::
 
 post-extract:
 	@cd ${WRKDIR} ; ${CAT} ${DISTDIR}/${DIST_SUBDIR}/gpc231.tar.Z | ${TAR} xfz -
-	@${CP} ${WRKDIR}/gpc231/gpc.c ${WRKSRC}/../external/gpc/
-	@${CP} ${WRKDIR}/gpc231/gpc.h ${WRKSRC}/../external/gpc/
+	@${CP} ${WRKDIR}/gpc231/gpc.c ${WRKSRC}/external/gpc/
+	@${CP} ${WRKDIR}/gpc231/gpc.h ${WRKSRC}/external/gpc/
 .if defined(L10NHELP)
 	@${ECHO_MSG} "===>  Extracting L10NHELP sub project"
 	@${MKDIR} ${WRKDIR}/L10NHELP
@@ -226,8 +216,8 @@ post-extract:
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's+%%PTHREAD_LIBS%%+${PTHREAD_LIBS}+g;' ${WRKSRC}/../odk/settings/settings.mk
-	@${REINPLACE_CMD} -e 's+%%PTHREAD_CFLAGS%%+${PTHREAD_CFLAGS}+g' ${WRKSRC}/../odk/settings/settings.mk
+	@${REINPLACE_CMD} -e 's+%%PTHREAD_LIBS%%+${PTHREAD_LIBS}+g;' ${WRKSRC}/odk/settings/settings.mk
+	@${REINPLACE_CMD} -e 's+%%PTHREAD_CFLAGS%%+${PTHREAD_CFLAGS}+g' ${WRKSRC}/odk/settings/settings.mk
 .if defined(WITH_TTF_BYTECODE_ENABLED)
 	@if [ "`echo ${PATCHDIR}/optpatch-*`" != "${PATCHDIR}/optpatch-*" ]; then \
 		${ECHO_MSG} "===>  Applying additional TTF bytecode patches for ${PKGNAME}" ; \
@@ -239,9 +229,9 @@ post-patch:
 .endif
 
 .if !defined(WITHOUT_MOZILLA) && ( \
-	!exists(${WRKSRC}/../moz/zipped/FREEBSDGCCIruntime.zip) || \
-	!exists(${WRKSRC}/../moz/zipped/FREEBSDGCCIlib.zip) || \
-	!exists(${WRKSRC}/../moz/zipped/FREEBSDGCCIinc.zip) )
+	!exists(${WRKSRC}/moz/zipped/FREEBSDGCCIruntime.zip) || \
+	!exists(${WRKSRC}/moz/zipped/FREEBSDGCCIlib.zip) || \
+	!exists(${WRKSRC}/moz/zipped/FREEBSDGCCIinc.zip) )
 .include <${FILESDIR}/Makefile.mozilla>
 do-build: mozilla
 .else
@@ -258,25 +248,20 @@ do-build:
 	${X11BASE}/bin/Xvfb :1001 -screen 0 800x600x24 > /dev/null 2>&1 & ${ECHO} $$! > ${WRKDIR}/.Xvfb.pid
 	@sleep 5
 .endif
-	@cd ${WRKSRC}/.. ; PATH="${PATH}:${LOCALBASE}/bin:${LOCALBASE}/sbin" ./bootstrap
+	@cd ${WRKSRC} ; PATH="${PATH}:${LOCALBASE}/bin:${LOCALBASE}/sbin" ./bootstrap
 .if defined(L10NHELP) || defined(ALL_LOCALIZED_LANGS)
-	@${MKDIR} ${WRKSRC}/../solver/${BUILD_NR}/unxfbsd.pro/pck
-	@${CP} ${WRKDIR}/L10NHELP/*.zip ${WRKSRC}/../solver/${BUILD_NR}/unxfbsd.pro/pck
+	@${MKDIR} ${WRKSRC}/solver/${BUILD_NR}/unxfbsd.pro/pck
+	@${CP} ${WRKDIR}/L10NHELP/*.zip ${WRKSRC}/solver/${BUILD_NR}/unxfbsd.pro/pck
 .endif
 .if !defined(DISPLAY)
-	@cd ${WRKSRC}/.. ; DISPLAY=${DISPLAYHACK} PATH="${PATH}:${LOCALBASE}/bin:${LOCALBASE}/sbin" ; \
+	@cd ${WRKSRC} ; DISPLAY=${DISPLAYHACK} PATH="${PATH}:${LOCALBASE}/bin:${LOCALBASE}/sbin" ; \
 		${TCSH} -c 'source FreeBSDEnv.Set ; unsetenv TOP ; ${BUILD}'
 	@-${CAT} ${WRKDIR}/.Xvfb.pid | ${XARGS} kill
 	@${RM} -f ${WRKDIR}/.Xvfb.pid
 .else
-	@cd ${WRKSRC}/.. ; DISPLAY=${DISPLAY} PATH="${PATH}:${LOCALBASE}/bin:${LOCALBASE}/sbin" ; \
+	@cd ${WRKSRC} ; DISPLAY=${DISPLAY} PATH="${PATH}:${LOCALBASE}/bin:${LOCALBASE}/sbin" ; \
 		${TCSH} -c 'source FreeBSDEnv.Set ; unsetenv TOP ; ${BUILD}'
 .endif
-.if defined(LANG_PKGNAME)
-	@cd ${WRKSRC}/.. ; PATH="${PATH}:${LOCALBASE}/bin:${LOCALBASE}/sbin" ; \
-		${TCSH} -c 'source FreeBSDEnv.Set ; unsetenv TOP ; cd instsetoo/util ; ${BUILD} LANGEXT=${LANG_EXT}'
-.endif
-
 do-install:
 .if !defined(DISPLAY)
 	#
@@ -284,12 +269,12 @@ do-install:
 	#
 	${X11BASE}/bin/Xvfb :1001 -screen 0 800x600x24 > /dev/null 2>&1 & ${ECHO} $$! > ${WRKDIR}/.Xvfb.pid
 	@sleep 5
-	@cd ${WRKSRC}/../instsetoo/*.pro/${LANG_EXT}/normal/ ; \
+	@cd ${WRKSRC}/instsetoo/*.pro/${LANG_EXT}/normal/ ; \
 	SAL_IGNOREXERRORS=1 TEMP=${WRKDIR} DISPLAY=${DISPLAY} ./install --prefix=${PREFIX}
 	@-${CAT} ${WRKDIR}/.Xvfb.pid | ${XARGS} kill
 	@${RM} -f ${WRKDIR}/.Xvfb.pid
 .else
-	@cd ${WRKSRC}/../instsetoo/*.pro/${LANG_EXT}/normal/ ; \
+	@cd ${WRKSRC}/instsetoo/*.pro/${LANG_EXT}/normal/ ; \
 	SAL_IGNOREXERRORS=1 TEMP=${WRKDIR} DISPLAY=${DISPLAY} ./install --prefix=${PREFIX}
 .endif
 
@@ -299,17 +284,13 @@ install-user:
 post-install:
 	@${ECHO_MSG} "===>  Add wrapper scripts";
 	@${CP} ${FILESDIR}/openoffice-wrapper ${WRKDIR}/
-	@${CP} ${FILESDIR}/freebsd-local.sh ${WRKDIR}/
 	@${REINPLACE_CMD} -e 's#%%PREFIX%%#${PREFIX}#g' \
 			-e 's#%%LANG%%#${USE_LANG}#g' \
 			-e 's#%%BUILD_NR%%#${BUILD_NR}#g' \
 			-e 's#%%RELEASE_NR%%#${RELEASE_NR}#g' \
-			${WRKDIR}/openoffice-wrapper \
-			${WRKDIR}/freebsd-local.sh
+			${WRKDIR}/openoffice-wrapper
 	@${INSTALL_SCRIPT} ${WRKDIR}/openoffice-wrapper \
 		${PREFIX}/bin/openoffice-${RELEASE_NR}
-	@${INSTALL_SCRIPT} ${WRKDIR}/freebsd-local.sh \
-		${PREFIX}/${INSTALLATION_BASEDIR}/program/freebsd-local.sh
 	@${LN} -fs ${PREFIX}/bin/openoffice-${RELEASE_NR} ${PREFIX}/bin/openoffice-${RELEASE_NR}-sagenda
 	@${LN} -fs ${PREFIX}/bin/openoffice-${RELEASE_NR} ${PREFIX}/bin/openoffice-${RELEASE_NR}-scalc
 	@${LN} -fs ${PREFIX}/bin/openoffice-${RELEASE_NR} ${PREFIX}/bin/openoffice-${RELEASE_NR}-sdraw
@@ -342,19 +323,12 @@ package-rename:
 
 sdk:
 	@${ECHO_MSG} "===>   Make SDK of OOo"
-.if !defined(DISPLAY)
-	@cd ${WRKSRC}/.. ; DISPLAY=${DISPLAYHACK} PATH="${PATH}:${LOCALBASE}/bin:${LOCALBASE}/sbin" ; \
+	@cd ${WRKSRC} ; DISPLAY=${DISPLAY} PATH="${PATH}:${LOCALBASE}/bin:${LOCALBASE}/sbin" ; \
 		${TCSH} -c 'source FreeBSDEnv.Set ; unsetenv TOP ; cd sdk_oo ; build.pl ; deliver.pl'
-	@-${CAT} ${WRKDIR}/.Xvfb.pid | ${XARGS} kill
-	@${RM} -f ${WRKDIR}/.Xvfb.pid
-.else
-	@cd ${WRKSRC}/.. ; DISPLAY=${DISPLAY} PATH="${PATH}:${LOCALBASE}/bin:${LOCALBASE}/sbin" ; \
-		${TCSH} -c 'source FreeBSDEnv.Set ; unsetenv TOP ; cd sdk_oo ; build.pl ; deliver.pl'
-.endif
-	@${MV} ${WRKSRC}/../solver/${BUILD_NR}/unxfbsd.pro/bin/OpenOffice.org${RELEASE_NR}_SDK.tar.gz ${WRKDIR}/../OOo_${PORTVERSION}_${OPSYS}${SIMPLEOSVER}Intel_sdk.tar.gz
+	@${MV} ${WRKSRC}/solver/${BUILD_NR}/unxfbsd.pro/bin/OpenOffice.org${RELEASE_NR}_SDK.tar.gz ${WRKDIR}/../OOo_${PORTVERSION}_${OPSYS}${SIMPLEOSVER}Intel_sdk.tar.gz
 
 solver:
 	@${ECHO_MSG} "===>   Make Solver of OOo"
-	@cd ${WRKSRC}/.. ; ${TAR} cfz ${WRKDIR}/../OOo_${PORTVERSION}_${OPSYS}${SIMPLEOSVER}Intel_solver.tar.gz solver
+	@cd ${WRKSRC} ; ${TAR} cfz ${WRKDIR}/../OOo_${PORTVERSION}_${OPSYS}${SIMPLEOSVER}Intel_solver.tar.gz solver
 
 .include <bsd.port.post.mk>

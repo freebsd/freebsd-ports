@@ -1,5 +1,7 @@
---- ../sch/source/ui/unoidl/ChXChartObject.cxx	7 Aug 2002 16:01:42 -0000	1.34
-+++ ../sch/source/ui/unoidl/ChXChartObject.cxx	20 Feb 2004 00:43:10 -0000
+#iZ 9462
+
+--- sch/source/ui/unoidl/ChXChartObject.cxx.orig	7 Aug 2002 16:01:42 -0000	1.34
++++ sch/source/ui/unoidl/ChXChartObject.cxx	20 Feb 2004 00:43:10 -0000
 @@ -161,9 +161,11 @@
  // XShape
  
