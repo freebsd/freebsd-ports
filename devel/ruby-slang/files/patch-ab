@@ -1,0 +1,11 @@
+--- slmodule.c.orig	Sat Dec 18 17:35:32 1999
++++ slmodule.c	Thu Feb  3 23:22:05 2000
+@@ -1321,7 +1321,7 @@
+    tab_pos = SLsmg_Tab_Width;
+    d_end = buf + buf_size;
+    for (d = buf, pp = s; 
+-	pp < d_end -1 && *pp != '\n' && *pp != '\0';)
++	d < d_end -1 && *pp != '\n' && *pp != '\0';)
+      if ('\t' == *pp) {
+ 	while (d - buf + cur_col >= tab_pos)
+ 	  tab_pos += SLsmg_Tab_Width;

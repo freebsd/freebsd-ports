@@ -274,6 +274,7 @@
     SUBDIR += ruby-racc
     SUBDIR += ruby-racc-runtime
     SUBDIR += ruby-runit
+    SUBDIR += ruby-slang
     SUBDIR += ruby-strscan
     SUBDIR += rvm
     SUBDIR += sdcc

@@ -1,0 +1,40 @@
+--- extconf.rb.orig	Mon Dec 20 09:45:03 1999
++++ extconf.rb	Wed Aug 23 12:52:07 2000
+@@ -1,19 +1,8 @@
+ require "mkmf"
+ 
+-$CFLAGS="-I"+ENV['HOME']+"/include -I/usr/include/slang-ja -I/usr/include/slang -I/usr/include -I/usr/local/include/slang-ja -I/usr/local/include/slang -I/usr/local/include"
+-$LDFLAGS="-L"+ENV['HOME']+"/lib -L/usr/lib -L/usr/local/lib"
++dir_config("slang")
+ 
+ if have_header("slang.h")
+-  if have_library("slang-ja", "SLsmg_refresh") 
+-    $LDFLAGS += " -lslang-ja"
+-  elsif have_library("slang", "SLsmg_refresh")
+-    $LDFLAGS += " -lslang"
+-  else
+-    exit
+-  end
+-  for f in ["kanji_pos", "IsKcode"]
+-    have_func(f)
+-  end
+   termcap = true
+   for mid in %w(lib share share/lib local/lib)
+     if FileTest.directory? "/usr/#{mid}/terminfo"
+@@ -23,6 +12,16 @@
+   end
+   if termcap
+     $libs += " -ltermcap "
++  end
++  if have_library("slang-ja", "SLsmg_refresh") 
++    $LDFLAGS += " -lslang-ja"
++  elsif have_library("slang", "SLsmg_refresh")
++    $LDFLAGS += " -lslang"
++  else
++    exit
++  end
++  for f in ["kanji_pos", "IsKcode"]
++    have_func(f)
+   end
+   create_makefile("slanglib")
+ end
