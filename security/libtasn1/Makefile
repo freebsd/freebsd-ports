@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libtasn1
-PORTVERSION=	0.2.7
+PORTVERSION=	0.2.10
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG} \
 	http://www.mirrors.wiretapped.net/security/network-security/gnutls/libtasn1/ \
@@ -17,7 +17,7 @@ MASTER_SITE_SUBDIR=	alpha/gnutls/libtasn1
 MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	ASN.1 structure parser library
 
-USE_INC_LIBTOOL_VER=13
+USE_LIBTOOL_VER=15
 INSTALLS_SHLIB=	yes
 USE_GETOPT_LONG=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
