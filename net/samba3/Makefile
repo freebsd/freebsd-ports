@@ -21,7 +21,6 @@ CONFLICTS=	ja-samba-2.* samba-2.* sharity-light-1.* samba-libsmbclient-3.*
 
 OPTIONS=	CUPS		"With CUPS printing support" on \
 		LDAP		"With LDAP support" on \
-		KRB5		"With Kerberos5 support" on \
 		ADS		"With Active Directory support" on \
 		WINBIND		"With WinBIND support" on \
 		ACL_SUPPORT	"With ACL support" off \
@@ -39,7 +38,6 @@ OPTIONS=	CUPS		"With CUPS printing support" on \
 		POPT		"With installed POPT library" on
 
 USE_BZIP2=	yes
-USE_SIZE=	yes
 USE_RC_SUBR=	yes
 NO_LATEST_LINK=	yes
 INSTALLS_SHLIB=	yes
@@ -77,7 +75,7 @@ CONFIGURE_ARGS=	--exec-prefix=${PREFIX} \
 
 .if defined(WITH_PYTHON)
 USE_PYTHON=		2.1+
-# Hack to make it work with OPTIONS. Breakes portlint
+# Hack to make it work with OPTIONS. Breaks portlint
 .include "${PORTSDIR}/Mk/bsd.python.mk"
 CONFIGURE_ARGS+=	--with-python
 PLIST_SUB+=		PYTHON="" \
@@ -85,10 +83,6 @@ PLIST_SUB+=		PYTHON="" \
 .else
 CONFIGURE_ARGS+=	--without-python
 PLIST_SUB+=		PYTHON="@comment "
-.endif
-
-.if !defined(WITHOUT_CUPS)
-WITH_CUPS=		yes
 .endif
 
 .if defined(WITH_CUPS)
@@ -119,9 +113,26 @@ CONFIGURE_ARGS+=	--with-msdfs
 .if !defined(WITHOUT_WINBIND)
 CONFIGURE_ARGS+=	--with-winbind
 PLIST_SUB+=		WINBIND=""
+.if ${OSVERSION} >= 500112
+WITH_WINBIND_NSS=	yes
+.endif
 .else
 CONFIGURE_ARGS+=	--without-winbind
 PLIST_SUB+=		WINBIND="@comment "
+.endif
+
+.if defined(WITH_WINBIND_NSS)
+PLIST_SUB+=		WINBIND_NSS=""
+.else
+PLIST_SUB+=		WINBIND_NSS="@comment "
+.endif
+
+.if !defined(WITHOUT_ADS)
+WANT_LDAP=		yes
+WANT_KRB5=		yes
+CONFIGURE_ARGS+=	--with-ads
+.else
+CONFIGURE_ARGS+=	--without-ads
 .endif
 
 .if !defined(WITHOUT_LDAP)
@@ -129,28 +140,6 @@ WANT_LDAP=		yes
 CONFIGURE_ARGS+=	--with-ldap
 .else
 CONFIGURE_ARGS+=	--without-ldap
-.endif
-
-.if !defined(WITHOUT_KRB5) && defined(KRB5_HOME) && exists(${KRB5_HOME}/lib/libgssapi_krb5.a)
-CONFIGURE_ARGS+=	--with-krb5=${KRB5_HOME}
-.elif !defined(WITHOUT_KRB5) && defined(HEIMDAL_HOME) && exists(${HEIMDAL_HOME}/lib/libgssapi.a)
-CONFIGURE_ARGS+=	--with-krb5=${HEIMDAL_HOME}
-.elif !defined(WITHOUT_KRB5) && (defined(MAKE_KERBEROS5) || ${OSVERSION} > 500105) && exists(/usr/lib/libkrb5.a)
-CONFIGURE_ARGS+=	--with-krb5=/usr
-.else
-# Kerberos5 is necessary for ADS
-.if defined(WITH_ADS)
-BROKEN=			"Kerberos5 is necessary for ADS support. Please, install either Heimdal or MIT-Kerberos"
-.endif
-WITHOUT_ADS=		yes
-CONFIGURE_ARGS+=	--without-krb5
-.endif
-
-.if !defined(WITHOUT_ADS)
-WANT_LDAP=		yes
-CONFIGURE_ARGS+=	--with-ads
-.else
-CONFIGURE_ARGS+=	--without-ads
 .endif
 
 # SAM
@@ -195,9 +184,23 @@ CONFIGURE_ARGS+=	--with-expsam=${WANT_EXPSAM_MODULES}
 .endif
 # SAM
 
+# Kerberos5 is necessary for ADS
+.if defined(WANT_KRB5)
+.if defined(KRB5_HOME) && exists(${KRB5_HOME}/lib/libgssapi_krb5.a)
+CONFIGURE_ARGS+=	--with-krb5=${KRB5_HOME}
+.elif defined(HEIMDAL_HOME) && exists(${HEIMDAL_HOME}/lib/libgssapi.a)
+CONFIGURE_ARGS+=	--with-krb5=${HEIMDAL_HOME}
+.elif (defined(MAKE_KERBEROS5) || ${OSVERSION} > 500105) && exists(/usr/lib/libkrb5.a)
+CONFIGURE_ARGS+=	--with-krb5=${DESTDIR}/usr
+.else
+#BROKEN=			"Kerberos5 is necessary for ADS support. Please, install either Heimdal or MIT-Kerberos"
+.endif
+.else
+CONFIGURE_ARGS+=	--without-krb5
+.endif
+
 .if defined(WANT_LDAP)
 USE_OPENLDAP=		yes
-USE_OPENLDAP_VER?=	21
 .endif
 
 .if defined(WITH_PAM_SMBPASS)
@@ -210,7 +213,7 @@ PLIST_SUB+=		SMBPASS="@comment "
 
 .if defined(WITH_ACL_SUPPORT)
 .if ${OSVERSION} < 500018
-BROKEN=	"Requires a recent FreeBSD 5.0-CURRENT"
+BROKEN=			"Requires FreeBSD 5.x at least after 20010326"
 .else
 CONFIGURE_ARGS+=	--with-acl-support
 .endif
@@ -264,6 +267,11 @@ RC_SCRIPTS_SUB=		PREFIX=${PREFIX} \
 			SAMBA_SPOOL=${SAMBA_SPOOL} \
 			SAMBA_RUNDIR=${SAMBA_RUNDIR}
 
+pre-fetch:
+	@${ECHO_MSG} "===> -------------------------------------------"
+	@${ECHO_MSG} "===>  Run 'make config' to (re)configure the port"
+	@${ECHO_MSG} "===> -------------------------------------------"
+
 post-install:
 .for sect in 1 5 7 8
 	@${MKDIR} ${MAN${sect}PREFIX}/man/man${sect}
@@ -315,8 +323,10 @@ post-install:
 .endif
 	-@${LN} -snf libsmbclient.so.0 ${SAMBA_LIBDIR}/libsmbclient.so
 .if !defined(WITHOUT_WINBIND)
+.if defined(WITH_WINBIND_NSS)
 	${INSTALL_PROGRAM} ${WRKSRC}/nsswitch/nss_winbind.so ${SAMBA_LIBDIR}/nss_winbind.so.1
 	${INSTALL_PROGRAM} ${WRKSRC}/nsswitch/nss_wins.so ${SAMBA_LIBDIR}/nss_wins.so.1
+.endif
 	${INSTALL_PROGRAM} ${WRKSRC}/nsswitch/pam_winbind.so ${SAMBA_LIBDIR}
 .endif
 .if defined(WITH_PAM_SMBPASS)

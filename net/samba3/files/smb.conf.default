@@ -3,7 +3,7 @@
 # here. Samba has a huge number of configurable options (perhaps too
 # many!) most of which are not shown in this example
 #
-# For a step by step guide on installation, configuration and usage of Samba, 
+# For a step by step guide on installing, configuring and using Samba, 
 # read the Samba HOWTO Collection.
 #
 # Any line which starts with a ; (semi-colon) or a # (hash) 
@@ -28,26 +28,6 @@
 # user level security. See the HOWTO Collection for details.
    security = user
 
-# Use password server option only with security = server
-# The argument list may include:
-#   password server = My_PDC_Name [My_BDC_Name] [My_Next_BDC_Name]
-# or to auto-locate the domain controller/s
-#   password server = *
-;   password server = <NT-Server-Name>
-
-# You may wish to use password encryption. Please read
-# ENCRYPTION.txt, Win95.txt and WinNT.txt in the Samba documentation.
-# Do not enable this option unless you have read those documents
-;  encrypt passwords = yes
-# Use the realm option only with security = ads
-# Specifies the Active Directory realm the host is part of
-;   realm = MY_REALM
-
-# Backend to store user information in. New installations should 
-# use either tdbsam or ldapsam. smbpasswd is available for backwards 
-# compatibility. tdbsam requires no further configuration.
-;   passdb backend = tdbsam
-
 # This option is important for security. It allows you to restrict
 # connections to machines which are on your local network. The
 # following example restricts access to two C class networks and
@@ -69,8 +49,8 @@
 
 # It should not be necessary to specify the print system type unless
 # it is non-standard. Currently supported print systems include:
-# cups, bsd, sysv, plp, lprng, aix, hpux, qnx
-;   printing = bsd
+# bsd, cups, sysv, plp, lprng, aix, hpux, qnx
+;   printing = cups
 
 # Uncomment this if you want a guest account, you must add this to /etc/passwd
 # otherwise the user "nobody" is used
@@ -83,6 +63,21 @@
 # Put a capping on the size of the log files (in Kb).
    max log size = 50
 
+# Use password server option only with security = server
+# The argument list may include:
+#   password server = My_PDC_Name [My_BDC_Name] [My_Next_BDC_Name]
+# or to auto-locate the domain controller/s
+#   password server = *
+;   password server = <NT-Server-Name>
+
+# Use the realm option only with security = ads
+# Specifies the Active Directory realm the host is part of
+;   realm = MY_REALM
+
+# Backend to store user information in. New installations should 
+# use either tdbsam or ldapsam. smbpasswd is available for backwards 
+# compatibility. tdbsam requires no further configuration.
+;   passdb backend = tdbsam
 
 # Using the following line enables you to customise your configuration
 # on a per machine basis. The %m gets replaced with the netbios name
@@ -94,7 +89,9 @@
 # Most people will find that this option gives better performance.
 # See the chapter 'Samba performance issues' in the Samba HOWTO Collection
 # and the manual pages for details.
-   socket options = TCP_NODELAY 
+# You may want to add the following on a Linux system:
+#         SO_RCVBUF=8192 SO_SNDBUF=8192
+   socket options = TCP_NODELAY
 
 # Configure Samba to use multiple interfaces
 # If you have multiple network interfaces then you must list them
@@ -118,10 +115,6 @@
 # Preferred Master causes Samba to force a local browser election on startup
 # and gives it a slightly higher chance of winning the election
 ;   preferred master = yes
-
-# Use only if you have an NT server on your network that has been
-# configured at install time to be a primary domain controller.
-;   domain controller = <NT-Domain-Controller-SMBName>
 
 # Enable this if you want Samba to be a domain logon server for 
 # Windows95 workstations. 
