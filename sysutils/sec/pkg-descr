@@ -1,0 +1,9 @@
+SEC is an event correlation tool that was designed to fill the gap between
+commercial event correlation systems and homegrown solutions that usually
+comprise of a few simple shell scripts.
+SEC is highly customisable to accept events from many sources and build
+a powerful correlation engine.
+
+WWW: http://simple-evcorr.sourceforge.net/
+
+-- Nicolas Jombart <ecu@ipv42.net>
