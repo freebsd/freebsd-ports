@@ -7,7 +7,7 @@
 
 PORTNAME=	ghostscript
 PORTVERSION=	7.04
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:DEFAULT,gprint,hpijs/} \
 		http://www.gelhaus.net/hp880c/1.4beta/:hp8xx \
