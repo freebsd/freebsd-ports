@@ -3925,6 +3925,7 @@ libcapplet	ports/x11/libcapplet
 libcapsinetwork	ports/devel/libcapsinetwork
 libcdaudio	ports/audio/libcdaudio
 libchipcard	ports/devel/libchipcard
+libchipcard-kde	ports/devel/libchipcard-kde
 libchk		ports/sysutils/libchk
 libcii		ports/devel/libcii
 libcipher	src/secure/lib/libcipher
