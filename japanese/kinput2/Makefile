@@ -1,4 +1,4 @@
-# New ports collection makefile for:	kinput2-wnn4
+# New ports collection makefile for:	kinput2-freewnn
 # Date created:		19 Dec 1997
 # Whom:			Satoshi TAOKA <taoka@FreeBSD.org>
 #
@@ -17,13 +17,13 @@ MAINTAINER=	taoka@FreeBSD.org
 LIB_DEPENDS=	${LIB_INPUT_METHOD}
 BUILD_DEPENDS=	${BUILD_INPUT_METHOD}
 
-PATCHDIR=	${.CURDIR}/../kinput2-wnn4/patches
-FILESDIR=	${.CURDIR}/../kinput2-wnn4/files
+PATCHDIR=	${.CURDIR}/../kinput2-freewnn/patches
+FILESDIR=	${.CURDIR}/../kinput2-freewnn/files
 USE_IMAKE=	yes
 
-.if !defined(CANNA) && !defined(SJ3) && !defined(WNN4) && !defined(WNN6)
+.if !defined(CANNA) && !defined(SJ3) && !defined(FREEWNN) && !defined(WNN6)
 # For this port
-WNN4=			yes
+FREEWNN=		yes
 .endif
 #
 # Specifying a velue INPUT_METHOD, and seting values BUILD_DEPENDS,
@@ -40,11 +40,11 @@ BUILD_INPUT_METHOD+=	sj3serv:${PORTSDIR}/japanese/sj3
 KINPUT2_DEF+=		-DUseSj3 -Dport_SJ3SRC=${LOCALBASE}/include \
 			-Dport_SJ3LIB="-L${LOCALBASE}/lib -lsj3lib"
 .endif
-.if defined(WNN4)
-INPUT_METHOD+=		wnn4
-BUILD_INPUT_METHOD+=	${X11BASE}/lib/libwnn.a:${PORTSDIR}/japanese/Wnn
-KINPUT2_DEF+=		-DUseWnn -Dport_WNNINCDIR=$(X11BASE)/include/wnn \
-			-Dport_WNNLIB="-L$(X11BASE)/lib -lwnn -lcrypt"
+.if defined(FREEWNN)
+INPUT_METHOD+=		freewnn
+LIB_INPUT_METHOD+=	wnn.0:${PORTSDIR}/japanese/FreeWnn-lib
+KINPUT2_DEF+=		-DUseWnn -Dport_WNNINCDIR=$(LOCALBASE)/include/wnn \
+			-Dport_WNNLIB="-L$(LOCALBASE)/lib -lwnn -lcrypt"
 .elif defined(WNN6)
 INPUT_METHOD+=		wnn6
 LIB_INPUT_METHOD+=	wnn6.1:${PORTSDIR}/japanese/Wnn6-lib
@@ -70,7 +70,7 @@ do-configure:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${XMKMF}
 
 post-install:
-# For Wnn4 or Wnn6
+# For FreeWnn or Wnn6
 	@if [ -e ${PKGDIR}/MESSAGE ]; then \
 		${CAT} ${PKGDIR}/MESSAGE; \
 	fi

@@ -5,9 +5,9 @@ You should install a package, mule-common-2.3, containing emacs lisp
 files, info pages, and so on (except executables) for mule-2.3.
 
 This package is built with Japanese support, using Canna, sj3(*1) or
-Wnn4. It is supported input methods, jeonkak, hangul for
+FreeWnn. It is supported input methods, jeonkak, hangul for
 Korean(Hanja), and quanjiao, zhuyin, erpin for Chinese (check out
-lib/mule/site-lisp/site-start.el), using Wnn4, too.
+lib/mule/site-lisp/site-start.el), using FreeWnn, too.
 
 This package and the package, mule-common-2.3, *will* clobber any
 existing emacs installation.  In particular, the executables and man

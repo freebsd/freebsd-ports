@@ -1,4 +1,4 @@
-# New ports collection makefile for:	jvim3 for Canna and Wnn4
+# New ports collection makefile for:	jvim3 for Canna and FreeWnn
 # Date created:		98/11/17
 # Whom:			Satoshi TAOKA <taoka@FreeBSD.org>
 #
@@ -6,7 +6,7 @@
 #
 
 CANNA=		yes
-WNN4=		yes
+FREEWNN=	yes
 
 MASTERDIR=	${.CURDIR}/../jvim3
 PKGDIR=		${.CURDIR}/pkg

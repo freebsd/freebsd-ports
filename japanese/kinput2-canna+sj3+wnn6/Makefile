@@ -9,7 +9,7 @@ CANNA=		yes
 SJ3=		yes
 WNN6=		yes
 
-MASTERDIR=	${.CURDIR}/../kinput2-wnn4/
+MASTERDIR=	${.CURDIR}/../kinput2-freewnn/
 PKGDIR=		${.CURDIR}/pkg
 
 .include "${MASTERDIR}/Makefile"

@@ -7,7 +7,7 @@
 
 CANNA=		yes
 
-MASTERDIR=	${.CURDIR}/../onew-wnn4
+MASTERDIR=	${.CURDIR}/../onew-freewnn
 PKGDIR=         ${.CURDIR}/pkg
 
 .include	"${MASTERDIR}/Makefile"

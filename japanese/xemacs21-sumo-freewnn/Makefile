@@ -8,7 +8,7 @@
 CATEGORIES=	japanese
 
 XEMACS_MAJOR_VER=	21
-PKGNAMESUFFIX=		-wnn4
+PKGNAMESUFFIX=		-freewnn
 
 MASTERDIR=	${.CURDIR}/../../editors/xemacs${XEMACS_MAJOR_VER}-sumo
 

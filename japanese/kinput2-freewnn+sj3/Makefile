@@ -1,4 +1,4 @@
-# New ports collection makefile for:	kinput2-sj3+wnn4
+# New ports collection makefile for:	kinput2-freewnn+sj3
 # Date created:		19 Dec 1997
 # Whom:			Satoshi TAOKA <taoka@FreeBSD.org>
 #
@@ -6,9 +6,9 @@
 #
 
 SJ3=		yes
-WNN4=		yes
+FREEWNN=	yes
 
-MASTERDIR=	${.CURDIR}/../kinput2-wnn4/
+MASTERDIR=	${.CURDIR}/../kinput2-freewnn/
 PKGDIR=		${.CURDIR}/pkg
 
 .include "${MASTERDIR}/Makefile"

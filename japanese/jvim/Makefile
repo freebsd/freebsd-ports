@@ -28,15 +28,15 @@ INPUT_METHOD+=	canna
 LIB_DEPENDS+=	canna.1:${PORTSDIR}/japanese/Canna
 JPLIB+=		-lcanna
 .endif
-.if defined(WNN4)
-INPUT_METHOD+=	wnn4
-BUILD_DEPENDS+=	${X11BASE}/lib/libjd.a:${PORTSDIR}/japanese/Wnn
-RUN_DEPENDS+=	${LOCALBASE}/lib/wnn/ja_JP/rk/2B_ROMKANA:${PORTSDIR}/japanese/Wnn
+.if defined(FREEWNN)
+INPUT_METHOD+=	freewnn
+LIB_DEPENDS+=	jd.0:${PORTSDIR}/japanese/FreeWnn-lib
+RUN_DEPENDS+=	${LOCALBASE}/lib/wnn/ja_JP/rk/2B_ROMKANA:${PORTSDIR}/japanese/FreeWnn-lib
 JPDEF+=		-DWNN_ISDIR
 JPLIB+=		-ljd -lcrypt
 .elif defined(WNN6)
 INPUT_METHOD+=	wnn6
-BUILD_DEPENDS+=	${X11BASE}/lib/libjd.a:${PORTSDIR}/japanese/Wnn
+LIB_DEPENDS+=	jd.0:${PORTSDIR}/japanese/FreeWnn-lib
 RUN_DEPENDS+=	${LOCALBASE}/lib/wnn/ja_JP/rk.wnn6/2B_ROMKANA:${PORTSDIR}/japanese/onew${INPUT_METHOD}
 JPDEF+=		-DWNN_ISDIR
 JPLIB+=		-ljd -lcrypt
