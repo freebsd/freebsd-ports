@@ -564,13 +564,13 @@ if ($ARGV[0] =~ /Imported sources/) {
 	@text = &build_header();
 
 	push(@text, "  ".$ARGV[0]);
-	&do_changes_file(@text);
 
 	while (<STDIN>) {
 		chop;                   # Drop the newline
 		push(@text, "  ".$_);
 	}
 
+	&do_changes_file(@text);
 	&mail_notification(@text);
 	&cleanup_tmpfiles();
 	exit 0;
