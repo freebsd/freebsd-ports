@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	sam2p
-PORTVERSION=	0.42
+PORTVERSION=	0.44
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.inf.bme.hu/~pts/
 
@@ -28,9 +28,10 @@ BUILD_DEPENDS=	tif22pnm:${PORTSDIR}/graphics/tif22pnm \
 LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg
 
 USE_PERL5_BUILD=	yes
-GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-ALL_TARGET=	# empty
+GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+ALL_TARGET=	${PORTNAME}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sam2p ${PREFIX}/bin
