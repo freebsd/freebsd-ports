@@ -1,0 +1,120 @@
+*** Count-install.orig	Fri May  3 06:20:31 1996
+--- Count-install	Thu May 16 22:34:39 1996
+***************
+*** 193,199 ****
+  
+  if [ .$answer = . ]
+  then
+!     answer=x
+  fi
+      until [ $answer = "y" -o $answer = "Y" -o $answer = "n" -o $answer = "N" ]
+      do
+--- 193,199 ----
+  
+  if [ .$answer = . ]
+  then
+!     answer=y
+  fi
+      until [ $answer = "y" -o $answer = "Y" -o $answer = "n" -o $answer = "N" ]
+      do
+***************
+*** 233,239 ****
+     read answer
+     if [ .$answer = . ]
+     then
+!         answer=x
+     fi   
+     until [ $answer = "y" -o $answer = "Y" -o $answer = "n" -o $answer = "N" ]
+     do
+--- 233,239 ----
+     read answer
+     if [ .$answer = . ]
+     then
+! 	answer=y
+     fi   
+     until [ $answer = "y" -o $answer = "Y" -o $answer = "n" -o $answer = "N" ]
+     do
+***************
+*** 252,262 ****
+  ###
+  # enter user id -starts
+  ###
+!    echo $n "*Enter user id of httpd's child process [no default]:$c? "
+     read answer
+     if [ .$answer = . ]
+     then 
+!         answer=x
+     fi
+     until [ $answer != "x" ]
+     do
+--- 252,262 ----
+  ###
+  # enter user id -starts
+  ###
+!    echo $n "*Enter user id of httpd's child process [nobody]:$c? "
+     read answer
+     if [ .$answer = . ]
+     then 
+! 	answer=nobody
+     fi
+     until [ $answer != "x" ]
+     do
+***************
+*** 276,286 ****
+  ##
+  # enter groud id -starts
+  ##
+!    echo $n "*Enter group id of httpd's child process [no default]:$c? "
+     read answer
+     if [ .$answer = . ]
+     then 
+!         answer=x
+     fi
+     until [ $answer != "x" ]
+     do
+--- 276,286 ----
+  ##
+  # enter groud id -starts
+  ##
+!    echo $n "*Enter group id of httpd's child process [nobody]:$c? "
+     read answer
+     if [ .$answer = . ]
+     then 
+! 	answer=nobody
+     fi
+     until [ $answer != "x" ]
+     do
+***************
+*** 298,304 ****
+  # enter groud id -ends
+  ##
+  echo "installing Count.cgi->$CGIBIN_DIR"
+! $INSTALL_PROG -c -o $UserId -g $GroupId -m 755 ./Count.cgi $CGIBIN_DIR/Count.cgi
+  echo "installing $CONFIG_FILE->$CONFIG_DIR"
+  $INSTALL_PROG -c -o $UserId -g $GroupId -m 664 $CONFIG_FILE $CONFIG_DIR/$CONFIG_FILE
+  echo "installing sample datafile $SAMPLE_DAT->$DATA_DIR"
+--- 298,304 ----
+  # enter groud id -ends
+  ##
+  echo "installing Count.cgi->$CGIBIN_DIR"
+! $INSTALL_PROG -s -c -o $UserId -g $GroupId -m 755 ./Count.cgi $CGIBIN_DIR/Count.cgi
+  echo "installing $CONFIG_FILE->$CONFIG_DIR"
+  $INSTALL_PROG -c -o $UserId -g $GroupId -m 664 $CONFIG_FILE $CONFIG_DIR/$CONFIG_FILE
+  echo "installing sample datafile $SAMPLE_DAT->$DATA_DIR"
+***************
+*** 358,364 ****
+  
+  EOM
+  echo "installing Count.cgi->$CGIBIN_DIR"
+! $INSTALL_PROG -c -m 755 ./Count.cgi $CGIBIN_DIR/Count.cgi
+  echo "installing $CONFIG_FILE->$CONFIG_DIR"
+  $INSTALL_PROG -c $CONFIG_FILE $CONFIG_DIR/$CONFIG_FILE
+  echo "installing sample datafile $SAMPLE_DAT->$DATA_DIR"
+--- 358,364 ----
+  
+  EOM
+  echo "installing Count.cgi->$CGIBIN_DIR"
+! $INSTALL_PROG -s -c -m 755 ./Count.cgi $CGIBIN_DIR/Count.cgi
+  echo "installing $CONFIG_FILE->$CONFIG_DIR"
+  $INSTALL_PROG -c $CONFIG_FILE $CONFIG_DIR/$CONFIG_FILE
+  echo "installing sample datafile $SAMPLE_DAT->$DATA_DIR"

@@ -1,0 +1,70 @@
+*** Count-config.orig	Fri May  3 06:20:27 1996
+--- Count-config	Thu May 16 22:18:17 1996
+***************
+*** 20,26 ****
+  trap 'echo '';echo "Interrupt Detected..exiting";rm -f "./Config.tmpl" 2>/dev/null;rm -f "./.alfcf" ;rm -f "./strict" 2>/dev/null;echo '';exit 1' 1 2 3 15
+  
+  Tmpl="./Config.tmpl"
+! CgiBinDir="/usr/local/etc/httpd/cgi-bin"
+  
+  if [ ! -f "./VERSION" ] 
+  then
+--- 20,26 ----
+  trap 'echo '';echo "Interrupt Detected..exiting";rm -f "./Config.tmpl" 2>/dev/null;rm -f "./.alfcf" ;rm -f "./strict" 2>/dev/null;echo '';exit 1' 1 2 3 15
+  
+  Tmpl="./Config.tmpl"
+! CgiBinDir="${PREFIX}/www/cgi-bin"
+  
+  if [ ! -f "./VERSION" ] 
+  then
+***************
+*** 36,42 ****
+  Version=`cat ./VERSION`
+  Basedir="wwwcount$Version"
+  ConfigH="config.h"
+! BaseDir="/usr/local/etc/Counter"
+  ConfigDir="conf"
+  ConfFile="count.cfg"
+  DigitDir="digits"
+--- 36,42 ----
+  Version=`cat ./VERSION`
+  Basedir="wwwcount$Version"
+  ConfigH="config.h"
+! BaseDir="${PREFIX}/etc/Counter"
+  ConfigDir="conf"
+  ConfFile="count.cfg"
+  DigitDir="digits"
+***************
+*** 114,120 ****
+  
+  if [ .$answer = . ]
+  then
+!     answer=x
+  fi
+      until [ $answer = "y" -o $answer = "Y" -o $answer = "n" -o $answer = "N" ]
+      do
+--- 114,120 ----
+  
+  if [ .$answer = . ]
+  then
+!     answer=y
+  fi
+      until [ $answer = "y" -o $answer = "Y" -o $answer = "n" -o $answer = "N" ]
+      do
+***************
+*** 302,308 ****
+  
+  if [ .$answer = . ]
+  then
+!     answer=x
+  fi
+      until [ $answer = "y" -o $answer = "Y" -o $answer = "n" -o $answer = "N" ]
+      do
+--- 302,308 ----
+  
+  if [ .$answer = . ]
+  then
+!     answer=y
+  fi
+      until [ $answer = "y" -o $answer = "Y" -o $answer = "n" -o $answer = "N" ]
+      do
