@@ -24,7 +24,7 @@ MAKE_ARGS=	PREFIX="${PREFIX}" CC="${CC}" CPP="${CXX}" \
 		CFLAGS="${CFLAGS} -D__USE_BSD -DUSE_XSHM -DUSE_IMLIB" \
 		INC_DIRS="`imlib-config --cflags` -I${X11BASE}/include" \
 		LIBS="`imlib-config --libs` -lXpm" \
-		LIB_DIRS="-L${X11BASE}/lib"
+		LIB_DIRS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
 pre-patch:
 	@${PERL} -pi -e 's|make |\$$\(MAKE\) |g' ${WRKSRC}/Makefile
