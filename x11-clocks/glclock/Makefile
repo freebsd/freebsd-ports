@@ -7,6 +7,7 @@
 
 PORTNAME=	glclock
 PORTVERSION=	5.0
+PORTREVISION=	1
 CATEGORIES=	x11-clocks
 MASTER_SITES=	http://www.daionet.gr.jp/~masa/archives/ \
 		http://hp.vector.co.jp/authors/VA013133/archives/ \
@@ -18,6 +19,7 @@ USE_X_PREFIX=	yes
 USE_MESA=	yes
 MAKEFILE=	makefile
 ALL_TARGET=	glclock
+MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}"
 
 SCRIPTS = benchclock crystalclock f_crystalclock f_glclock		\
 	  f_marbleclock f_metalclock f_mwclock f_woodclock marbleclock	\
