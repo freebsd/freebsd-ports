@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xinetd
-PORTVERSION=	2.3.11
+PORTVERSION=	2.3.12
 PORTREVISION=	0
 CATEGORIES=	security ipv6
 MASTER_SITES=	http://www.xinetd.org/
