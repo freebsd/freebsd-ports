@@ -421,9 +421,8 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #			  	routines found in etc/rc.subr and may need to
 #				depend on the sysutils/rc_subr port.
 #
-# RC_SUBR		- Set to path of rc.subr, defaults to /etc/rc.subr on
-#				5.x and to ${PREFIX}/etc/rc.subr on non-rcNG
-#				systems.
+# RC_SUBR		- Set to path of rc.subr, defaults to ${LOCALBASE}/etc/rc.subr.
+#				
 #
 #
 # Dependency checking.  Use these if your port requires another port
