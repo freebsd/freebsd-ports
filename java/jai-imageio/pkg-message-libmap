@@ -1,0 +1,7 @@
+In order to use the JAI Image I/O Tools on FreeBSD native JavaVM,
+describe as follows to your /etc/libmap.conf.
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+[%%LIBDIR%%/libclib_jiio.so]
+libm.so.6	libm.so.2
+libc.so.6	pluginwrapper/jai.so
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -

@@ -1,0 +1,18 @@
+%%T%%/COPYRIGHT-jai_imageio.txt
+%%T%%/LICENSE-jai_imageio.txt
+%%T%%/README-jai_imageio.html
+%%T%%/jar/clibwrapper_jiio.jar
+%%T%%/jar/jai_imageio.jar
+%%T%%/jar/mlibwrapper_jai.jar
+%%T%%/lib/libclib_jiio.so
+%%INSTALL_IN_JRE%%@exec /bin/ln -sf %D/%%T%%/jar/clibwrapper_jiio.jar %D/%%JAVA_HOME%%/jre/lib/ext
+%%INSTALL_IN_JRE%%@exec /bin/ln -sf %D/%%T%%/jar/jai_imageio.jar %D/%%JAVA_HOME%%/jre/lib/ext
+%%INSTALL_IN_JRE%%@exec [ -e %D/%%JAVA_HOME%%/jre/lib/ext/mlibwrapper_jai.jar ] || /bin/ln -sf %D/%%T%%/jar/mlibwrapper_jai.jar %D/%%JAVA_HOME%%/jre/lib/ext
+%%INSTALL_IN_JRE%%@exec /bin/ln -sf %D/%%T%%/lib/libclib_jiio.so %D/%%JAVA_HOME%%/jre/lib/i386
+%%INSTALL_IN_JRE%%@unexec /bin/rm -f %D/%%JAVA_HOME%%/jre/lib/ext/clibwrapper_jiio.jar
+%%INSTALL_IN_JRE%%@unexec /bin/rm -f %D/%%JAVA_HOME%%/jre/lib/ext/jai_imageio.jar
+%%INSTALL_IN_JRE%%@unexec [ -e %D/%%JAVA_HOME%%/jre/lib/ext/mlibwrapper_jai.jar ] || /bin/rm -f %D/%%JAVA_HOME%%/jre/lib/ext/mlibwrapper_jai.jar
+%%INSTALL_IN_JRE%%@unexec /bin/rm -f %D/%%JAVA_HOME%%/jre/lib/i386/libclib_jiio.so
+@dirrm %%T%%/lib
+@dirrm %%T%%/jar
+@dirrm %%T%%

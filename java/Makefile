@@ -28,6 +28,7 @@
     SUBDIR += jad
     SUBDIR += jaf
     SUBDIR += jai
+    SUBDIR += jai-imageio
     SUBDIR += jakarta-bcel
     SUBDIR += jakarta-commons-beanutils
     SUBDIR += jakarta-commons-cli
