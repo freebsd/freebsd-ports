@@ -6,6 +6,9 @@
 # $FreeBSD$
 #
 
+# FIXME: needed to make gcc40 port work for now.
+WITHOUT_LIBJAVA=	yes
+
 PORTNAME=	gcc
 PORTVERSION=	4.0.0
 PORTREVISION=	20041024
@@ -17,9 +20,16 @@ MASTER_SITE_SUBDIR=	snapshots/${VERSIONSTRING}
 DISTFILES=	\
 		gcc-core-${VERSIONSTRING}${EXTRACT_SUFX} \
 		gcc-g++-${VERSIONSTRING}${EXTRACT_SUFX} \
-		gcc-java-${VERSIONSTRING}${EXTRACT_SUFX} \
-		gcc-objc-${VERSIONSTRING}${EXTRACT_SUFX} \
 		gcc-testsuite-${VERSIONSTRING}${EXTRACT_SUFX}
+.if !defined(WITHOUT_OBJC)
+DISTFILES+=	gcc-objc-${VERSIONSTRING}${EXTRACT_SUFX}
+.endif
+.if !defined(WITHOUT_FORTRAN)
+DISTFILES+=	gcc-fortran-${VERSIONSTRING}${EXTRACT_SUFX}
+.endif
+.if !defined(WITHOUT_LIBJAVA)
+DISTFILES+=	gcc-java-${VERSIONSTRING}${EXTRACT_SUFX}
+.endif
 
 MAINTAINER?=	gerald@FreeBSD.org
 COMMENT?=	GNU Compiler Collection 4.0
@@ -47,8 +57,6 @@ CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
 .if ${ARCH} == amd64  ||  ${ARCH} == ia64  ||  ${ARCH} == sparc64
 WITHOUT_LIBJAVA=	yes
 .endif
-# FIXME: needed to make gcc40 port work for now.
-WITHOUT_LIBJAVA=	yes
 
 SRCDIR=		${WRKDIR}/gcc-${VERSIONSTRING}
 WRKSRC=		${WRKDIR}/build
@@ -160,7 +168,7 @@ post-install: fake-manpages
 
 cklatest:
 .for SITE in ftp://gcc.gnu.org/pub/gcc/snapshots/                                   ftp://mirrors.rcn.net/mirrors/sources.redhat.com/gcc/snapshots/
-	@-ncftpls ${SITE} | ${GREP} 'LATEST.*4\.0'
+	@-ncftpls -l ${SITE} | ${GREP} 'LATEST.*4\.0'
 .endfor
 
 .include <bsd.port.post.mk>
