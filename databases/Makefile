@@ -9,6 +9,7 @@
     SUBDIR += cdb
     SUBDIR += clip
     SUBDIR += cyrus-imspd
+    SUBDIR += db
     SUBDIR += db2
     SUBDIR += db3
     SUBDIR += db4
