@@ -19,7 +19,7 @@ DISTFILES=	Linux+FreeBSD.sgml.gz  \
 
 MAINTAINER=	ports@FreeBSD.org
 
-#BUILD_DEPENDS=	sgmlfmt:${PORTSDIR}/textproc/sgmlformat
+BUILD_DEPENDS=	sgmlfmt:${PORTSDIR}/textproc/sgmlformat
 
 DIST_SUBDIR=	Howto
 NO_WRKSUBDIR=	yes
