@@ -8,15 +8,19 @@
 PORTNAME=	kwebsearch
 PORTVERSION=	1.2
 CATEGORIES=	www kde
-MASTER_SITES=	http://www.bawue.de/~rgoetz/
+MASTER_SITES=	http://www.guruz.de/
 
 MAINTAINER=	ports@FreeBSD.org
 
+BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext
 LIB_DEPENDS=	kdecore.3:${PORTSDIR}/x11/kdelibs11
-BUILD_DEPENDS=	${LOCALBASE}/bin/gettext:${PORTSDIR}/devel/gettext
 
-GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 USE_QT=		yes
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	QTDIR="${X11BASE}" KDEDIR="${LOCALBASE}"
+CONFIGURE_ARGS=	--with-qt-includes=${X11BASE}/include/X11/qt \
+		--with-extra-includes=${LOCALBASE}/include \
+		--with-extra-libs=${LOCALBASE}/lib
 
 .include <bsd.port.mk>
