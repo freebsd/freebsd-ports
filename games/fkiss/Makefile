@@ -3,7 +3,7 @@
 # Date created:		31 Oct 1998
 # Whom:			Seiichirou Hiraoka
 #
-# $Id: Makefile,v 1.3 1998/11/18 09:29:47 flathill Exp $
+# $Id: Makefile,v 1.4 1998/11/22 03:37:25 flathill Exp $
 #
 
 DISTNAME=	fkiss028
@@ -14,6 +14,8 @@ MASTER_SITES=	http://www2s.biglobe.ne.jp/~yav/soft/fkiss/
 MAINTAINER=	flathill@FreeBSD.ORG
 
 RUN_DEPENDS=	lha:${PORTSDIR}/archivers/lha
+
+NOT_FOR_ARCHS=	alpha
 
 WRKSRC=		${WRKDIR}/fkiss
 USE_IMAKE=	yes
