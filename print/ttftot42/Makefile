@@ -15,6 +15,6 @@ MAINTAINER=	nakai@FreeBSD.org
 LIB_DEPENDS=	ttf.4:${PORTSDIR}/print/freetype
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	"CFLAGS=-I${LOCALBASE}/include"
+CONFIGURE_ENV=	"CFLAGS=-I${LOCALBASE}/include/freetype"
 
 .include <bsd.port.mk>
