@@ -259,7 +259,7 @@ foreach my $thisdir (@dirs) {
 			$tmp = $tmp2;
 		}
 		print AUTOFILL $tmp;
-		print AUTOFILL "PR:		$autofill\n" if ($autofill != -1);
+		print AUTOFILL "PR:		ports/$autofill\n" if ($autofill != -1);
 		print AUTOFILL "Submitted by:	$orig" if ($autofill != -1);
 		close(AUTOFILL);
 		print "Okay, a commit log message was automatically generated for you.\n";
@@ -382,7 +382,7 @@ print <<EOF;
 authors: <will\@FreeBSD.org>, <mharo\@FreeBSD.org>
 
 SYNOPSIS
-	$0 [-c commitfile] [-h host] [-l PR number] [-s distdir] [-s distdir]
+	$0 [-c commitfile] [-h host] [-l PR number] [-s distdir] [-u user]
 	   [-afgimnt] -d directory
 
 	Where "directory" contains the comma-delimited list
