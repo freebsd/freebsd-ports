@@ -6,6 +6,25 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/Extensions/README.txt
 %%ZOPEBASEDIR%%/LICENSE.txt
 %%ZOPEBASEDIR%%/README.txt
+%%ZOPEBASEDIR%%/lib/python/BTrees/tests/test_check.py
+%%ZOPEBASEDIR%%/lib/python/BTrees/check.py
+%%ZOPEBASEDIR%%/lib/python/BTrees/check.pyc
+%%ZOPEBASEDIR%%/lib/python/ZopeUndo/tests/__init__.py
+%%ZOPEBASEDIR%%/lib/python/ZopeUndo/tests/testPrefix.py
+%%ZOPEBASEDIR%%/lib/python/ZopeUndo/Prefix.py
+%%ZOPEBASEDIR%%/lib/python/ZopeUndo/__init__.py
+%%ZOPEBASEDIR%%/lib/python/ZopeUndo/Prefix.pyc
+%%ZOPEBASEDIR%%/lib/python/ZopeUndo/__init__.pyc
+%%ZOPEBASEDIR%%/lib/python/Signals/SignalHandler.py
+%%ZOPEBASEDIR%%/lib/python/Signals/SignalHandler.pyc
+%%ZOPEBASEDIR%%/lib/python/Zope/App/ClassFactory.py
+%%ZOPEBASEDIR%%/lib/python/Zope/App/__init__.py
+%%ZOPEBASEDIR%%/lib/python/Zope/App/startup.py
+%%ZOPEBASEDIR%%/lib/python/Zope/App/ClassFactory.pyc
+%%ZOPEBASEDIR%%/lib/python/Zope/App/__init__.pyc
+%%ZOPEBASEDIR%%/lib/python/Zope/App/startup.pyc
+%%ZOPEBASEDIR%%/lib/python/Lifetime.py
+%%ZOPEBASEDIR%%/lib/python/Lifetime.pyc
 %%ZOPEBASEDIR%%/ZServer/DebugLogger.py
 %%ZOPEBASEDIR%%/ZServer/DebugLogger.pyc
 %%ZOPEBASEDIR%%/ZServer/FCGIServer.py
@@ -2457,6 +2476,7 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/z2.pyc
 %%ZOPEBASEDIR%%/zpasswd.py
 %%ZOPEBASEDIR%%/zpasswd.pyc
+%%ZOPEBASEDIR%%/Makefile
 %%CGIBINDIR%%/Zope.cgi
 %%CGIBINDIR%%/pcgi-wrapper
 @unexec rm -f %D/%%ZOPEBASEDIR%%/inituser
@@ -2484,7 +2504,9 @@ etc/rc.d/zope.sh
 @dirrm %%ZOPEBASEDIR%%/lib/python/webdav/www
 @dirrm %%ZOPEBASEDIR%%/lib/python/webdav/dtml
 @dirrm %%ZOPEBASEDIR%%/lib/python/webdav
-@dirrm %%ZOPEBASEDIR%%/lib/python/build
+@dirrm %%ZOPEBASEDIR%%/lib/python/ZopeUndo/tests
+@dirrm %%ZOPEBASEDIR%%/lib/python/ZopeUndo
+@dirrm %%ZOPEBASEDIR%%/lib/python/Zope/App
 @dirrm %%ZOPEBASEDIR%%/lib/python/Zope
 @dirrm %%ZOPEBASEDIR%%/lib/python/ZTUtils/tests
 @dirrm %%ZOPEBASEDIR%%/lib/python/ZTUtils

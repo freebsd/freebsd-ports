@@ -6,20 +6,17 @@
 #
 
 PORTNAME=	zope
-PORTVERSION=	2.6.0
-PORTREVISION=	1
+PORTVERSION=	2.6.1
 CATEGORIES=	www python zope
 MASTER_SITES=	http://www.zope.org/Products/Zope/${PORTVERSION}/
 DISTNAME=	Zope-${PORTVERSION}-src
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	freebsd-ports@FreeBSD.org
-COMMENT=	An object-based web application platform with DB access, WebDAV, & more
-
-BROKEN=		"Does not compile"
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	An object-based web application platform
 
 USE_PYTHON=	yes
-PYTHON_VERSION=	python2.1
+PYTHON_VERSION=	python2.2
 
 DIST_SUBDIR=	zope
 
@@ -102,10 +99,11 @@ do-install:
 			${CGIBINDIR} )
 	@(cd ${CGIBINDIR} && \
 		${CHMOD} 555 Zope.cgi pcgi-wrapper )
+	@${RM} -rf ${ZOPEBASEDIR}/lib/python/build/
 	@#
 	@${ECHO} "===>   Fixing permissions of Zope's own var directory..."
 	@${CHMOD} ugo+rwt ${ZOPEBASEDIR}/var
-	@${CHOWN} ${ZOPE_USER} ${ZOPEBASEDIR}/var
+	@${CHOWN} root ${ZOPEBASEDIR}/var
 	@${CHOWN} ${ZOPE_USER} ${ZOPEBASEDIR}/var/*
 	@${RM} ${ZOPEBASEDIR}/var/.cvsignore
 	@if [ -e ${ZOPEBASEDIR}/var/Data.fs.preserve ] ; then \
