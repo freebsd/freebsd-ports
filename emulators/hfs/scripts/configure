@@ -1,0 +1,14 @@
+#!/bin/sh
+
+cd $WRKSRC || exit 1;
+
+mv Makefile Makefile.orig || exit 1;
+
+sed -e 's:/usr/.* ::' <Makefile.orig>Makefile
+
+echo "DEBUG		= -O" >> Makefile
+echo "INSTALLPATH	= $PREFIX"  >> Makefile
+echo "CCPLUSPLUS	= c++ -c"  >> Makefile
+echo "LD		= c++"  >> Makefile
+echo "MANINSTALLDIR	= $PREFIX/man/man1" >> Makefile
+exit 0;
