@@ -8,7 +8,7 @@
 PORTNAME=	pantomime
 PORTVERSION=	1.0.5
 CATEGORIES=	mail
-MASTER_SITES=	http://extrovert.screwdriver.net/~extra/ \
+MASTER_SITES=	http://www.collaboration-world.com/pantomime.data/releases/Stable/ \
 		ftp://ftp.gnustep.org/pub/gnustep/libs/
 PKGNAMESUFFIX=	-ssl
 DISTNAME=	Pantomime-${PORTVERSION}
