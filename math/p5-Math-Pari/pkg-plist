@@ -1,0 +1,10 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Math/Pari.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Math/comp_funcs.pl
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Math/foncpari.pl
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Math/libPARI.pod
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Math/Pari/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Math/Pari/Pari.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Math/Pari/Pari.so
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Math/Pari
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Math
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Math

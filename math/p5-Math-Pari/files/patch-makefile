@@ -1,0 +1,11 @@
+--- Makefile.PL.orig	Tue Sep 11 02:52:45 2001
++++ Makefile.PL	Tue Sep 11 02:53:18 2001
+@@ -4,7 +4,7 @@
+ use File::Copy 'copy';
+ 
+ # Uncomment and change this line if I fail to find it
+-# $paridir = "..";
++$paridir = "../../../pari/work/pari-2.1.1";
+ 
+ unless (-t STDOUT) {		# Better reports if run with redirections
+     my $odef = select STDERR;
