@@ -1,42 +1,42 @@
-bin/tkscope
-bin/morse
 bin/dial
+bin/morse
 bin/pplay
-%%SITE_PERL%%/mach/auto/Audio/Play/freebsd/freebsd.so
-%%SITE_PERL%%/mach/auto/Audio/Play/freebsd/freebsd.bs
-%%SITE_PERL%%/mach/auto/Audio/Play/autosplit.ix
-%%SITE_PERL%%/mach/auto/Audio/Data/Data.so
-%%SITE_PERL%%/mach/auto/Audio/Data/Data.bs
-%%SITE_PERL%%/mach/auto/Audio/Data/autosplit.ix
-%%SITE_PERL%%/mach/auto/Audio/Data/solve_polynomial.al
-%%SITE_PERL%%/mach/auto/Audio/.packlist
-%%SITE_PERL%%/mach/Tk/Scope.pm
-%%SITE_PERL%%/mach/Audio/typemap
-%%SITE_PERL%%/mach/Audio/Audio_f.h
-%%SITE_PERL%%/mach/Audio/Audio.t
-%%SITE_PERL%%/mach/Audio/Audio.h
-%%SITE_PERL%%/mach/Audio/Audio.m
-%%SITE_PERL%%/mach/Audio/Data.pm
-%%SITE_PERL%%/mach/Audio/Filter.pm
-%%SITE_PERL%%/mach/Audio/Play.pm
-%%SITE_PERL%%/mach/Audio/Play/freebsd.pm
-%%SITE_PERL%%/mach/Audio/Data/touchtone.9.au
-%%SITE_PERL%%/mach/Audio/Data/touchtone.star.au
-%%SITE_PERL%%/mach/Audio/Data/touchtone.0.au
-%%SITE_PERL%%/mach/Audio/Data/touchtone.5.au
-%%SITE_PERL%%/mach/Audio/Data/touchtone.3.au
-%%SITE_PERL%%/mach/Audio/Data/touchtone.1.au
-%%SITE_PERL%%/mach/Audio/Data/touchtone.6.au
-%%SITE_PERL%%/mach/Audio/Data/touchtone.4.au
-%%SITE_PERL%%/mach/Audio/Data/touchtone.2.au
-%%SITE_PERL%%/mach/Audio/Data/touchtone.8.au
-%%SITE_PERL%%/mach/Audio/Data/touchtone.7.au
-%%SITE_PERL%%/mach/Audio/Data/touchtone.pound.au
-@dirrm %%SITE_PERL%%/mach/Audio/Data
-@dirrm %%SITE_PERL%%/mach/Audio/Play
-@dirrm %%SITE_PERL%%/mach/Audio
-@dirrm %%SITE_PERL%%/mach/Tk
-@dirrm %%SITE_PERL%%/mach/auto/Audio/Data
-@dirrm %%SITE_PERL%%/mach/auto/Audio/Play/freebsd
-@dirrm %%SITE_PERL%%/mach/auto/Audio/Play
-@dirrm %%SITE_PERL%%/mach/auto/Audio
+bin/tkscope
+%%SITE_PERL%%/%%PERL_ARCH%%/Audio/Audio.h
+%%SITE_PERL%%/%%PERL_ARCH%%/Audio/Audio.m
+%%SITE_PERL%%/%%PERL_ARCH%%/Audio/Audio.t
+%%SITE_PERL%%/%%PERL_ARCH%%/Audio/Audio_f.h
+%%SITE_PERL%%/%%PERL_ARCH%%/Audio/Data.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Audio/Data/touchtone.0.au
+%%SITE_PERL%%/%%PERL_ARCH%%/Audio/Data/touchtone.1.au
+%%SITE_PERL%%/%%PERL_ARCH%%/Audio/Data/touchtone.2.au
+%%SITE_PERL%%/%%PERL_ARCH%%/Audio/Data/touchtone.3.au
+%%SITE_PERL%%/%%PERL_ARCH%%/Audio/Data/touchtone.4.au
+%%SITE_PERL%%/%%PERL_ARCH%%/Audio/Data/touchtone.5.au
+%%SITE_PERL%%/%%PERL_ARCH%%/Audio/Data/touchtone.6.au
+%%SITE_PERL%%/%%PERL_ARCH%%/Audio/Data/touchtone.7.au
+%%SITE_PERL%%/%%PERL_ARCH%%/Audio/Data/touchtone.8.au
+%%SITE_PERL%%/%%PERL_ARCH%%/Audio/Data/touchtone.9.au
+%%SITE_PERL%%/%%PERL_ARCH%%/Audio/Data/touchtone.pound.au
+%%SITE_PERL%%/%%PERL_ARCH%%/Audio/Data/touchtone.star.au
+%%SITE_PERL%%/%%PERL_ARCH%%/Audio/Filter.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Audio/Play.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Audio/Play/freebsd.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Audio/typemap
+%%SITE_PERL%%/%%PERL_ARCH%%/Tk/Scope.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Audio/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Audio/Data/Data.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Audio/Data/Data.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Audio/Data/autosplit.ix
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Audio/Data/solve_polynomial.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Audio/Play/autosplit.ix
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Audio/Play/freebsd/freebsd.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Audio/Play/freebsd/freebsd.so
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Audio/Play/freebsd
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Audio/Play
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Audio/Data
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Audio
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Tk 2>/dev/null || true
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Audio/Play
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Audio/Data
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Audio
