@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.58 1999/01/13 23:10:30 billf Exp $
+# $Id: Makefile,v 1.59 1999/01/18 03:42:59 steve Exp $
 #
 
     SUBDIR += LPRng
@@ -58,6 +58,7 @@
     SUBDIR += xlogmaster
     SUBDIR += xosview
     SUBDIR += xperfmon
+    SUBDIR += xperfmon3
     SUBDIR += xsysinfo
     SUBDIR += xsysstats
     SUBDIR += xwatch
