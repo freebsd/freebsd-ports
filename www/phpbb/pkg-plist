@@ -11,7 +11,6 @@ share/phpbb/contrib/dbinformer.php
 share/phpbb/contrib/fixfiles.sh
 share/phpbb/contrib/template_db_cache.php
 share/phpbb/contrib/template_file_cache.php
-share/phpbb/contrib/visual_confirmation.tar.bz2
 share/phpbb/install.php
 share/phpbb/update_to_%%PHPBB_VER%%.php
 share/phpbb/upgrade.php
@@ -98,6 +97,7 @@ share/phpbb/upgrade.php
 %%PHPBBDIR%%/includes/topic_review.php
 %%PHPBBDIR%%/includes/usercp_activate.php
 %%PHPBBDIR%%/includes/usercp_avatar.php
+%%PHPBBDIR%%/includes/usercp_confirm.php
 %%PHPBBDIR%%/includes/usercp_email.php
 %%PHPBBDIR%%/includes/usercp_register.php
 %%PHPBBDIR%%/includes/usercp_sendpasswd.php
