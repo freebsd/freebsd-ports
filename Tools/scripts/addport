@@ -63,6 +63,17 @@ my $nomkdir = $opts{'m'};
 my $addlchk = $opts{'a'};
 my $nofetch = $opts{'f'};
 my $currentdir = abs_path(".");
+my %l10nprefix = (
+	'chinese'	=> 'zh-',
+	'french'	=> 'fr-',
+	'german'	=> 'de-',
+	'hebrew'	=> 'iw-',
+	'japanese'	=> 'ja-',
+	'korean'	=> 'ko-',
+	'russian'	=> 'ru-',
+	'ukrainian'	=> 'uk-',
+	'vietnamese'	=> 'vi-',
+);
 
 my $tmpdir;
 my $repo;
@@ -193,9 +204,10 @@ foreach my $thisdir (@dirs) {
 	chomp(my $cvs_category = $category);
 	$cvs_category =~ s/-/_/g;
  
- 	$module = $portname;
+ 	$module = "$l10nprefix{$category}$portname";
+
 	if ($interactive) {
-		if (prompt("Port will be added as module $portname.  OK? ")) {
+		if (prompt("Port will be added as module $module.  OK? ")) {
 			do {
 				$module = query("Preferred module name for $module? ");
 			} while (prompt("Is the new module name $module OK? "));
