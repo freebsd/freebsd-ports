@@ -26,7 +26,9 @@ USE_LIBTOOL_VER=13
 USE_REINPLACE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib" \
+		HAVECXX="yes"
+
 INSTALLS_SHLIB=	yes
 
 pre-patch: build-depends
