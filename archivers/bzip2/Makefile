@@ -14,6 +14,10 @@ MASTER_SITE_SUBDIR=	bzip2/v100
 
 MAINTAINER=	ports@FreeBSD.org
 
+.if exists(/usr/bin/bzip2)
+IGNORE=		bzip2 is in the base system
+.endif
+
 INSTALLS_SHLIB=	yes
 
 MAN1=		bzip2.1
