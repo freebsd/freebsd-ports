@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zebedee
-PORTVERSION=	2.0.1
+PORTVERSION=	2.2.1
 CATEGORIES=	security
 MASTER_SITES=	http://www.winton.org.uk/zebedee/ \
 		http://www.hewgill.com/zebedee/
