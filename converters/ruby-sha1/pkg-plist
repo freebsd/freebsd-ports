@@ -1,0 +1,3 @@
+%%RUBY_SITEARCHLIBDIR%%/sha1.so
+%%RUBY_DOCDIR%%/sha1/README
+@dirrm %%RUBY_DOCDIR%%/sha1
