@@ -1,0 +1,10 @@
+pipemeter - measure speed of data going through a pipe/redirection
+
+Features:
+- Shows speed of data moving from input to output
+- Shows percentage complete if regular file specified
+- Allows tuning of block size and display interval
+- Support for dd style block size specification
+
+Author:	Clint Byrum <cbyrum@spamaps.org>
+WWW:	http://spamaps.org/pipemeter.php
