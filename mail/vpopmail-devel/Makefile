@@ -35,7 +35,7 @@ CONFIGURE_ARGS=	--enable-qmaildir=${QMAIL_DIR} \
 # Define these to change from the default behaviour
 #
 # WITH_PASSWD   - allow authentication off /etc/passwd
-# WITH_MD5_PASSWORDS - store encrypted passwords in MD5 format
+# WITHOUT_MD5_PASSWORDS - store encrypted passwords in MD5 format
 # WITH_MYSQL	- allow authentitation via mysql
 # WITH_MYSQL_LARGE_SITE - enables large site layout
 # WITH_MYSQL_REPLICATION - enables MySQL database replication
@@ -134,8 +134,8 @@ CONFIGURE_ARGS+=	--enable-defaultquota=${HARDQUOTA} \
 CONFIGURE_ARGS+=	--enable-passwd=y
 .endif
 
-.if defined(WITH_MD5_PASSWORDS)
-CONFIGURE_ARGS+=	--enable-md5-passwords=y
+.if defined(WITHOUT_MD5_PASSWORDS)
+CONFIGURE_ARGS+=	--enable-md5-passwords=n
 .endif
 
 .if defined(WITH_APOP)
