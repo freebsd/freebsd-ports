@@ -1,25 +1,51 @@
 bin/swig
 lib/libswig.a
 include/swig.h
+man/man1/swig.1
+share/swig_lib/Doc/Perl5Doc.ps.gz
+share/swig_lib/Doc/PythonDoc.ps.gz
+share/swig_lib/Doc/README
+share/swig_lib/Doc/SWIGDoc.ps.gz
+share/swig_lib/Doc/TclDoc.ps.gz
+share/swig_lib/Doc/swiglib.html
+share/swig_lib/Makefile
+share/swig_lib/array.i
+share/swig_lib/autodoc.i
+share/swig_lib/carray.i
+share/swig_lib/config/swigptr.swg
+share/swig_lib/ctype.i
+share/swig_lib/guile/interpreter.i
+share/swig_lib/malloc.i
+share/swig_lib/math.i
+share/swig_lib/memory.i
+share/swig_lib/perl4/userinit.i
+share/swig_lib/perl5/perl5ptr.swg
+share/swig_lib/perl5/perlmain.i
+share/swig_lib/python/embed.i
+share/swig_lib/python/embed13.i
+share/swig_lib/python/embed14.i
+share/swig_lib/python/python.swg
+share/swig_lib/stdlib.i
+share/swig_lib/swigptr.swg
+share/swig_lib/tcl/blt.i
 share/swig_lib/tcl/expect.i
 share/swig_lib/tcl/expectk.i
 share/swig_lib/tcl/ish.i
 share/swig_lib/tcl/itclsh.i
 share/swig_lib/tcl/itkwish.i
 share/swig_lib/tcl/iwish.i
-share/swig_lib/tcl/tclsh.i
-share/swig_lib/tcl/wish.i
 share/swig_lib/tcl/swigtcl.swg
-share/swig_lib/perl4/userinit.i
-share/swig_lib/perl5/perlmain.i
-share/swig_lib/perl5/perl5ptr.swg
-share/swig_lib/python/embed.i
-share/swig_lib/python/python.swg
-share/swig_lib/guile-iii/interpreter.i
-share/swig_lib/config/swigptr.swg
-share/swig_lib/carray.i
-share/swig_lib/malloc.i
-share/swig_lib/math.i
-share/swig_lib/stdlib.i
+share/swig_lib/tcl/tcl8ptr.swg
+share/swig_lib/tcl/tclsh.i
+share/swig_lib/tcl/tix.i
+share/swig_lib/tcl/wish.i
+share/swig_lib/test.i
 share/swig_lib/timers.i
-share/swig_lib/SWIG_Doc.ps.gz
+@dirrm share/swig_lib/tcl
+@dirrm share/swig_lib/perl4
+@dirrm share/swig_lib/perl5
+@dirrm share/swig_lib/python
+@dirrm share/swig_lib/guile
+@dirrm share/swig_lib/config
+@dirrm share/swig_lib/Doc
+@dirrm share/swig_lib
