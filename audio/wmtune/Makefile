@@ -46,7 +46,8 @@ post-patch:
 		${WRKSRC}/src/wmtune.c
 
 do-configure:
-	@${PERL} -pi.orig -e 's|/etc|${PREFIX}/etc|' ${WRKSRC}/src/wmtune.c
+	@${REINPLACE_CMD} -pi.orig -e 's|/etc|${PREFIX}/etc|' \
+		${WRKSRC}/src/wmtune.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/wmtune ${PREFIX}/bin
