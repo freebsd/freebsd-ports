@@ -1,0 +1,7 @@
+ bopm is an open-source open proxy monitor, designed for use
+ with hybrid-based ircds, although it can be used with slight
+ modification on any server which has +c to show connects to
+ opers and that supports KLINEs in order to K-LINE incoming
+ connects from open proxies
+
+WWW: http://blitzed.org/bopm/

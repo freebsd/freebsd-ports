@@ -1,0 +1,17 @@
+
+----------------------------------------------------
+
+This port uses now UID/GID - 717
+
+bopm has been installed.
+
+This port create user bopm and group bopm
+
+You should now edit bopm.conf it to suit your needs.
+
+You may then start the bopm by running:
+ cd /usr/local/etc/rc.d/ && \
+ cp bopm.sh.sample bopm.sh && \
+ /usr/local/etc/rc.d/bopm.sh start
+
+----------------------------------------------------
