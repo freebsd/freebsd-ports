@@ -5,16 +5,23 @@
 # $FreeBSD$
 #
 
-PORTNAME=		biabam
-PORTVERSION=		0.9.5
-CATEGORIES=		mail
-MASTER_SITES=		http://mmj.dk/biabam/
+PORTNAME=	biabam
+PORTVERSION=	0.9.5
+CATEGORIES=	mail
+MASTER_SITES=	http://mmj.dk/biabam/
 
-MAINTAINER=		ports@FreeBSD.org
-COMMENT=		A command-line attachment mailer
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A command-line attachment mailer
 
-NO_BUILD=		yes
-PLIST_FILES=		bin/biabam
+RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash2
+
+USE_REINPLACE=	yes
+NO_BUILD=	yes
+PLIST_FILES=	bin/biabam
+
+do-patch:
+	@${REINPLACE_CMD} -e 's|\(#!\)\(/bin/bash\)|\1${LOCALBASE}\2|' \
+		${WRKSRC}/${PORTNAME}
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/biabam ${PREFIX}/bin
