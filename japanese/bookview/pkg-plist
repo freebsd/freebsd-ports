@@ -1,9 +1,10 @@
 bin/bookview
+share/bookview/arrow.xbm
 share/bookview/back.xbm
-share/bookview/clear.xbm
+share/bookview/copyright.xbm
 share/bookview/menu.xbm
 share/bookview/next.xbm
-share/bookview/query.xbm
+share/bookview/space.xbm
 share/bookview/help.txt
 share/bookview/help-ja.txt
 @dirrm share/bookview
