@@ -6,6 +6,7 @@ etc/udmsearch/create/mssql/create.txt
 etc/udmsearch/create/mysql/alter19-20.txt
 etc/udmsearch/create/mysql/alter20-21.txt
 etc/udmsearch/create/mysql/create.txt
+etc/udmsearch/create/mysql/drop.txt
 etc/udmsearch/create/pgsql/create.txt
 etc/udmsearch/create/odbc-mysql/create.txt
 etc/udmsearch/create/odbc-pgsql/create.txt
