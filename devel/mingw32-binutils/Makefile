@@ -16,6 +16,9 @@ DIST_SUBDIR=	mingw
 
 MAINTAINER=	doc@hisio.safenet.pl
 
+BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-20011113
 
 USE_GMAKE=	yes
