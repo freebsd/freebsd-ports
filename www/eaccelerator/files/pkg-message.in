@@ -1,0 +1,16 @@
+*****************************************************************************
+
+You have installed the eaccelerator package.
+
+Edit %%LOCALBASE%%/etc/php.ini and add:
+
+[eaccelerator]
+extension="eaccelerator.so"
+
+Then create the cache directory:
+
+  mkdir /tmp/eaccelerator
+  chown www /tmp/eaccelerator
+  chmod 0700 /tmp/eaccelerator
+
+*****************************************************************************

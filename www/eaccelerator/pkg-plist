@@ -1,8 +1,7 @@
 bin/encoder
-lib/php/%%PHP_EXT_DIR%%/mmcache.so
-%%PORTDOCS%%%%DOCSDIR%%/README
+lib/php/%%PHP_EXT_DIR%%/eaccelerator.so
 @unexec rmdir %D/lib/php/%%PHP_EXT_DIR%% 2> /dev/null || true
-%%EXAMPLESDIR%%/mmcache.php
-%%EXAMPLESDIR%%/mmcache_password.php
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%EXAMPLESDIR%%/eaccelerator.ini
+%%EXAMPLESDIR%%/eaccelerator.php
+%%EXAMPLESDIR%%/eaccelerator_password.php
 @dirrm %%EXAMPLESDIR%%
