@@ -1,5 +1,6 @@
 # $FreeBSD$
 #
+    SUBDIR += zope-guf
     SUBDIR += zope-zpt
     SUBDIR += zope-zwiki
 

@@ -1,0 +1,29 @@
+%%ZOPEBASEDIR%%/lib/python/Products/GenericUserFolder/CHANGES.txt
+%%ZOPEBASEDIR%%/lib/python/Products/GenericUserFolder/GenericUserFolder.py
+%%ZOPEBASEDIR%%/lib/python/Products/GenericUserFolder/GenericUserFolder.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/GenericUserFolder/LICENCE.txt
+%%ZOPEBASEDIR%%/lib/python/Products/GenericUserFolder/Makefile
+%%ZOPEBASEDIR%%/lib/python/Products/GenericUserFolder/README.txt
+%%ZOPEBASEDIR%%/lib/python/Products/GenericUserFolder/User.py
+%%ZOPEBASEDIR%%/lib/python/Products/GenericUserFolder/User.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/GenericUserFolder/WALKTHROUGH.txt
+%%ZOPEBASEDIR%%/lib/python/Products/GenericUserFolder/__init__.py
+%%ZOPEBASEDIR%%/lib/python/Products/GenericUserFolder/__init__.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/GenericUserFolder/addGenericUserFolder.dtml
+%%ZOPEBASEDIR%%/lib/python/Products/GenericUserFolder/folder.gif
+%%ZOPEBASEDIR%%/lib/python/Products/GenericUserFolder/manage_cache.dtml
+%%ZOPEBASEDIR%%/lib/python/Products/GenericUserFolder/manage_listUsers.dtml
+%%ZOPEBASEDIR%%/lib/python/Products/GenericUserFolder/manage_properties.dtml
+%%ZOPEBASEDIR%%/lib/python/Products/GenericUserFolder/manage_userInfo.dtml
+%%ZOPEBASEDIR%%/lib/python/Products/GenericUserFolder/templates/dumb/docLogin.dtml
+%%ZOPEBASEDIR%%/lib/python/Products/GenericUserFolder/templates/dumb/docLoginSuccess.dtml
+%%ZOPEBASEDIR%%/lib/python/Products/GenericUserFolder/templates/dumb/docLogout.dtml
+%%ZOPEBASEDIR%%/lib/python/Products/GenericUserFolder/templates/dumb/userAuthenticate.dtml
+%%ZOPEBASEDIR%%/lib/python/Products/GenericUserFolder/templates/dumb/userDomains.dtml
+%%ZOPEBASEDIR%%/lib/python/Products/GenericUserFolder/templates/dumb/userList.dtml
+%%ZOPEBASEDIR%%/lib/python/Products/GenericUserFolder/templates/dumb/userRoles.dtml
+%%ZOPEBASEDIR%%/lib/python/Products/GenericUserFolder/user.gif
+%%ZOPEBASEDIR%%/lib/python/Products/GenericUserFolder/version.txt
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/GenericUserFolder/templates/dumb
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/GenericUserFolder/templates
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/GenericUserFolder
