@@ -103,6 +103,8 @@ System/Applications/Gorm.app/Resources/GormMHLine.tiff
 System/Applications/Gorm.app/Resources/GormMVCoil.tiff
 System/Applications/Gorm.app/Resources/GormMVLine.tiff
 System/Applications/Gorm.app/Resources/GormMenu.tiff
+System/Applications/Gorm.app/Resources/GormNSSplitViewInspector.gorm/data.classes
+System/Applications/Gorm.app/Resources/GormNSSplitViewInspector.gorm/objects.gorm
 System/Applications/Gorm.app/Resources/GormObject.tiff
 System/Applications/Gorm.app/Resources/GormOutlet.tiff
 System/Applications/Gorm.app/Resources/GormOutletSelected.tiff
@@ -191,6 +193,7 @@ System/Library/Libraries/libGorm.so.1.0.0
 @dirrm System/Applications/Gorm.app/Resources/GormPreferences.gorm
 @dirrm System/Applications/Gorm.app/Resources/GormPrefHeaders.gorm
 @dirrm System/Applications/Gorm.app/Resources/GormPrefGeneral.gorm
+@dirrm System/Applications/Gorm.app/Resources/GormNSSplitViewInspector.gorm
 @dirrm System/Applications/Gorm.app/Resources/GormImageInspector.gorm
 @dirrm System/Applications/Gorm.app/Resources/GormFontView.gorm
 @dirrm System/Applications/Gorm.app/Resources/GormCustomClassInspector.gorm
