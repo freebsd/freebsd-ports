@@ -1,0 +1,4 @@
+bin/tcpreen
+share/locale/fr/LC_MESSAGES/tcpreen.mo
+%%PORTDOCS%%share/doc/tcpreen/README
+%%PORTDOCS%%@dirrm share/doc/tcpreen
