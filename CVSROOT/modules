@@ -5854,6 +5854,7 @@ p5-NNTPClient	ports/news/p5-NNTPClient
 p5-Net		ports/net/p5-Net
 p5-Net-AIM	ports/net/p5-Net-AIM
 p5-Net-AOLIM	ports/net/p5-Net-AOLIM
+p5-Net-Amazon	ports/net/p5-Net-Amazon
 p5-Net-BGP	ports/net/p5-Net-BGP
 p5-Net-CIDR	ports/net/p5-Net-CIDR
 p5-Net-DLookup	ports/net/p5-Net-DLookup
