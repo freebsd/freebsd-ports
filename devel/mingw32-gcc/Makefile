@@ -16,11 +16,11 @@ DIST_SUBDIR=	mingw
 
 MAINTAINER=	doc@hisio.safenet.pl
 
-BUILD_DEPENDS=	i386-mingw32msvc-as:${PORTSDIR}/devel/mingw-binutils \
-		mingwm10.dll:${PORTSDIR}/devel/mingw-bin-msvcrt \
+BUILD_DEPENDS=	${LOCALBASE}/i386-mingw32msvc/bin/as:${PORTSDIR}/devel/mingw-binutils \
+		${LOCALBASE}/bin/mingwm10.dll:${PORTSDIR}/devel/mingw-bin-msvcrt \
 		autoheader:${PORTSDIR}/devel/autoconf
-RUN_DEPENDS=	i386-mingw32msvc-as:${PORTSDIR}/devel/mingw-binutils \
-		mingwm10.dll:${PORTSDIR}/devel/mingw-bin-msvcrt
+RUN_DEPENDS=	${LOCALBASE}/i386-mingw32msvc/bin/as:${PORTSDIR}/devel/mingw-binutils \
+		${LOCALBASE}/bin/mingwm10.dll:${PORTSDIR}/devel/mingw-bin-msvcrt
 
 NO_WRKSUBDIR=	yes
 
