@@ -6,6 +6,7 @@ sbin/nullmailer-queue
 sbin/nullmailer-send
 sbin/sendmail
 etc/nullmailer/remotes.sample
+etc/rc.d/nullmail.sh
 @dirrm var/nullmailer/queue
 @dirrm var/nullmailer/tmp
 @unexec rm -f %D/var/nullmailer/trigger
