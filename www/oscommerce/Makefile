@@ -17,29 +17,14 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/r/ms/}
 MAINTAINER=	hcoyote@ghostar.org
 COMMENT=	An full-featured open source e-commerce system
 
-BROKEN=		"Inconsistent dependencies (on mysql-client 3.x and 4.x)"
-DEPRECATED=	"This port will be removed on April 15 if it is still broken."
-
-USE_MYSQL=	yes
-WANT_MYSQL_VER=	323
-NO_BUILD=	YES
-PHP4_PORT?=	www/mod_php4
-OSCOMMERCE?=	${PREFIX}/www/data/oscommerce
+USE_PHP=	yes
+WANT_PHP_WEB=	yes
+NO_BUILD=	yes
+OSCOMMERCE=	${PREFIX}/www/data/oscommerce
 PKGMESSAGE=	${WRKDIR}/pkg-message
-
-.if defined(WITH_APACHE2)
-MOD_DIR=	libexec/apache2
-.else
-MOD_DIR=	libexec/apache
-.endif
-
-MOD_PHP=	${PREFIX}/${MOD_DIR}/libphp4.so
 
 WWWOWN?=	www
 WWWGRP?=	www
-
-RUN_DEPENDS+=	${MOD_PHP}:${PORTSDIR}/${PHP4_PORT}
-RUN_DEPENDS+=	${PREFIX}/bin/mysql:${PORTSDIR}/databases/mysql323-client
 
 do-install:
 	${MKDIR} ${OSCOMMERCE}
@@ -47,16 +32,16 @@ do-install:
 	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${OSCOMMERCE}
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${CP}	${WRKSRC}/LICENSE ${DOCSDIR}
-	${CP}	${WRKSRC}/FAQ ${DOCSDIR}
-	${CP}	${WRKSRC}/INSTALL ${DOCSDIR}
-	${CP}	${WRKSRC}/README ${DOCSDIR}
-	${CP}	${WRKSRC}/STANDARD ${DOCSDIR}
-	${CP}	${WRKSRC}/tep_database-pr2.2-CVS.pdf ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/LICENSE ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/FAQ ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/INSTALL ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/STANDARD ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/tep_database-pr2.2-CVS.pdf ${DOCSDIR}
 .endif
 
 post-install:
-	@ ${SED} -e 's#%%OSCOMMERCE%%#${OSCOMMERCE}#g' pkg-message > ${PKGMESSAGE}
-	${CAT} ${PKGMESSAGE}
+	@${SED} -e 's#%%OSCOMMERCE%%#${OSCOMMERCE}#g' pkg-message > ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

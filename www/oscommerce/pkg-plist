@@ -1,9 +1,9 @@
-share/doc/oscommerce/FAQ
-share/doc/oscommerce/INSTALL
-share/doc/oscommerce/LICENSE
-share/doc/oscommerce/README
-share/doc/oscommerce/STANDARD
-share/doc/oscommerce/tep_database-pr2.2-CVS.pdf
+%%PORTDOCS%%%%DOCSDIR%%/FAQ
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/STANDARD
+%%PORTDOCS%%%%DOCSDIR%%/tep_database-pr2.2-CVS.pdf
 www/data/oscommerce/catalog/.htaccess
 www/data/oscommerce/catalog/account.php
 www/data/oscommerce/catalog/account_edit.php
@@ -988,6 +988,7 @@ www/data/oscommerce/catalog/specials.php
 www/data/oscommerce/catalog/ssl_check.php
 www/data/oscommerce/catalog/stylesheet.css
 www/data/oscommerce/catalog/tell_a_friend.php
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm www/data/oscommerce/catalog/pub
 @dirrm www/data/oscommerce/catalog/install/templates/pages
 @dirrm www/data/oscommerce/catalog/install/templates/main_page
@@ -1075,4 +1076,3 @@ www/data/oscommerce/catalog/tell_a_friend.php
 @dirrm www/data/oscommerce/catalog/admin
 @dirrm www/data/oscommerce/catalog
 @dirrm www/data/oscommerce
-@dirrm share/doc/oscommerce
