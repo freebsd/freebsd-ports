@@ -3,7 +3,7 @@
 # Date created:        11 July 1998
 # Whom:                Marc G. Fournier <scrappy@freebsd.org>
 #
-# $Id: Makefile,v 1.25 1998/11/16 03:25:26 scrappy Exp $
+# $Id: Makefile,v 1.26 1998/12/13 08:46:12 asami Exp $
 #
 
 DISTNAME=	mico-2.2.3
@@ -36,6 +36,7 @@ WRKSRC=		${WRKDIR}/mico
 
 CONFIGURE_ARGS=	--with-qt --with-gtk --with-tcl \
 		--disable-optimize --disable-mini-stl
+CONFIGURE_ENV=	GTK_CONFIG="${X11BASE}/bin/gtk10-config"
 
 MAN1=		idl.1 imr.1 nsadmin.1
 MAN5=		micorc.5
