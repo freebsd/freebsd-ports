@@ -8,7 +8,9 @@
 PORTNAME=	giftool
 PORTVERSION=	1.0
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://ftp.sbs.de/pub/www/tools/giftool/
+MASTER_SITES=	http://www.the-labs.com/GIFTool/
+DISTNAME=	${PORTNAME}
+EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tool for GIF89a transparent option and interlace mode
@@ -17,29 +19,28 @@ NO_CDROM=	"Shareware"
 
 NO_WRKSUBDIR=	yes
 ALL_TARGET=	giftool
+MAKE_ARGS=	CFLAGS="${CFLAGS}"
 
-.if defined(RETVALUE)
-pre-patch::
-	@${ECHO_MSG} "Return value patch enabled....."
+OPTIONS=	RETVALUE "Return value patch" on \
+		MALLOCSIZE "Improve malloc size" on
+
+PORTDOCS=	COPYRIGHT README
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_RETVALUE)
 EXTRA_PATCHES=	${PATCHDIR}/extra-patch-aa
 .endif
-.if defined(MALLOCSIZE)
-pre-patch::
-	@${ECHO_MSG} "Malloc size improve parch enabled....."
+.if defined(WITH_MALLOCSIZE)
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ab
 .endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/giftool ${PREFIX}/bin
-	${MKDIR} ${PREFIX}/share/doc/giftool
-.for file in COPYRIGHT README
-	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/giftool
-.endfor
-	${INSTALL_DATA} ${FILESDIR}/post-install-notes ${PREFIX}/share/doc/giftool
+	${MKDIR} ${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR})
 
 post-install:
-.if !defined(BATCH)
-	@ /usr/bin/more -e ${FILESDIR}/post-install-notes
-.endif
+	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
