@@ -1850,6 +1850,7 @@ ft2demos	ports/print/ft2demos
 fte		ports/editors/fte
 ftnchek		ports/devel/ftnchek
 ftp		src/usr.bin/ftp
+ftp-tls		ports/ftp/ftp-tls
 ftpcopy		ports/ftp/ftpcopy
 ftpcube		ports/ftp/ftpcube
 ftpd		src/libexec/ftpd
