@@ -9743,6 +9743,7 @@ zh-kon2		ports/chinese/kon2
 zh-libtabe	ports/chinese/libtabe
 zh-links	ports/chinese/links
 zh-linux-gtk	ports/chinese/linux-gtk
+zh-linux-mozillafirebird-zh_TW	ports/chinese/linux-mozillafirebird-zh_TW
 zh-lunar	ports/chinese/lunar
 zh-metalist	ports/chinese/metalist
 zh-miniChinput	ports/chinese/miniChinput
