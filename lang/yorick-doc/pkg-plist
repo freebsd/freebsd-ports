@@ -1,10 +1,8 @@
-share/yorick-doc
 share/yorick-doc/Makefile
 share/yorick-doc/NEWS
 share/yorick-doc/copyright.html
 share/yorick-doc/environ.html
 share/yorick-doc/examples.html
-share/yorick-doc/html_i
 share/yorick-doc/html_i/basfix_i.html
 share/yorick-doc/html_i/bessel_i.html
 share/yorick-doc/html_i/bowtie_i.html
@@ -75,7 +73,6 @@ share/yorick-doc/html_i/testp_i.html
 share/yorick-doc/html_i/txpath_i.html
 share/yorick-doc/html_i/ylmdec_i.html
 share/yorick-doc/html_i/zroots_i.html
-share/yorick-doc/html_xref
 share/yorick-doc/html_xref/basfix-bs.html
 share/yorick-doc/html_xref/basfix-index.html
 share/yorick-doc/html_xref/basfix-os.html
@@ -522,7 +519,6 @@ share/yorick-doc/html_xref/zroots-index.html
 share/yorick-doc/html_xref/zroots-ls.html
 share/yorick-doc/html_xref/zroots-zs.html
 share/yorick-doc/htmldoc.i
-share/yorick-doc/images
 share/yorick-doc/images/a_help.gif
 share/yorick-doc/images/a_index.gif
 share/yorick-doc/images/a_left.gif
@@ -537,7 +533,6 @@ share/yorick-doc/images/wing.gif
 share/yorick-doc/images/ybanng.jpg
 share/yorick-doc/index.html
 share/yorick-doc/keywords.txt
-share/yorick-doc/manual
 share/yorick-doc/manual/texi2html.init
 share/yorick-doc/manual/texi2llnl.init
 share/yorick-doc/manual/yorick.html
@@ -643,7 +638,6 @@ share/yorick-doc/manual/yorick_abt.html
 share/yorick-doc/manual/yorick_ovr.html
 share/yorick-doc/manual/yorick_toc.html
 share/yorick-doc/packinfo.txt
-share/yorick-doc/refcard
 share/yorick-doc/refcard/.x
 share/yorick-doc/refcard/index.html
 share/yorick-doc/refcard/qrefs.tgz
@@ -700,3 +694,9 @@ share/yorick-doc/refcard/refs.pdf
 share/yorick-doc/refcard/refs.tex
 share/yorick-doc/yorick.el
 share/yorick-doc/yorickfaq.html
+@dirrm share/yorick-doc/refcard
+@dirrm share/yorick-doc/manual
+@dirrm share/yorick-doc/images
+@dirrm share/yorick-doc/html_xref
+@dirrm share/yorick-doc/html_i
+@dirrm share/yorick-doc
