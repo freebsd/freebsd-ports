@@ -74,6 +74,7 @@
     SUBDIR += linalg
     SUBDIR += linpack
     SUBDIR += linux-relview
+    SUBDIR += lp_solve
     SUBDIR += matrix
     SUBDIR += maxima
     SUBDIR += metis
