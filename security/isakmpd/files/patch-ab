@@ -1,5 +1,5 @@
---- samples/Makefile.orig	Fri May 11 17:40:05 2001
-+++ samples/Makefile	Fri May 11 17:40:30 2001
+--- samples/Makefile.orig	Tue May  2 16:33:55 2000
++++ samples/Makefile	Wed Jan  9 22:08:47 2002
 @@ -31,7 +31,7 @@
  #
  
