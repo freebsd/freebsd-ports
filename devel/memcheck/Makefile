@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	memcheck
-PORTVERSION=	0.1.1
+PORTVERSION=	0.1.3
 CATEGORIES=	devel
-MASTER_SITES=	http://www.sound.net/~hald/projects/memcheck/
+MASTER_SITES=	http://hald.dnsalias.net/projects/memcheck/
 
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Memory Allocation Checker
