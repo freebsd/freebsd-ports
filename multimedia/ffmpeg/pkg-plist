@@ -9,18 +9,20 @@ lib/libavcodec.a
 lib/libavcodec.so
 lib/libavcodec.so.%%SHLIB_VERSION%%
 lib/libavformat.a
+%%VHOOK%%lib/vhook/fish.so
+%%VHOOK%%%%IMLIB2%%lib/vhook/imlib2.so
+%%VHOOK%%lib/vhook/null.so
 %%PORTDOCS%%share/doc/ffmpeg/COPYING
 %%PORTDOCS%%share/doc/ffmpeg/Changelog
-%%PORTDOCS%%share/doc/ffmpeg/FAQ
-%%PORTDOCS%%share/doc/ffmpeg/HOWTO-STREAM
 %%PORTDOCS%%share/doc/ffmpeg/README
-%%PORTDOCS%%share/doc/ffmpeg/README.beos
-%%PORTDOCS%%share/doc/ffmpeg/README.dev
-%%PORTDOCS%%share/doc/ffmpeg/README.tech
 %%PORTDOCS%%share/doc/ffmpeg/TODO
 %%PORTDOCS%%share/doc/ffmpeg/VERSION
-%%PORTDOCS%%share/doc/ffmpeg/bench.txt
-%%PORTDOCS%%share/doc/ffmpeg/ffmpeg.txt
-%%PORTDOCS%%share/doc/ffmpeg/ffserver.txt
+%%PORTDOCS%%share/doc/ffmpeg/faq.html
+%%PORTDOCS%%share/doc/ffmpeg/faq.texi
+%%PORTDOCS%%share/doc/ffmpeg/ffmpeg-doc.html
+%%PORTDOCS%%share/doc/ffmpeg/ffmpeg-doc.texi
+%%PORTDOCS%%share/doc/ffmpeg/ffserver-doc.html
+%%PORTDOCS%%share/doc/ffmpeg/ffserver-doc.texi
 %%PORTDOCS%%@dirrm share/doc/ffmpeg
+%%VHOOK%%@dirrm lib/vhook
 @dirrm include/ffmpeg

@@ -6,21 +6,15 @@
 #
 
 PORTNAME=	ffmpeg
-PORTVERSION=	0.4.5
-PORTREVISION=	5
+PORTVERSION=	0.4.6
 CATEGORIES=	multimedia audio net
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	lioux
-DISTNAME=	ffmpeg-cvs-2002101400
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	ffmpeg
 
 MAINTAINER=	lioux@FreeBSD.org
 
-BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
-
-ONLY_FOR_ARCHS=	i386
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
@@ -34,18 +28,31 @@ SHLIB_VERSION=	0
 #
 DOC_FILES=	COPYING Changelog README VERSION
 # under subdir doc
-DOC_DOCFILES=	FAQ README.dev README.tech \
-		TODO bench.txt ffmpeg.txt \
-		HOWTO-STREAM README.beos \
-		ffserver.txt
+DOC_DOCFILES=	TODO \
+		faq.html faq.texi \
+		ffmpeg-doc.html ffmpeg-doc.texi \
+		ffserver-doc.html ffserver-doc.texi
 HEADER_FILES=	libavcodec/avcodec.h libavcodec/common.h \
 		libavcodec/dsputil.h
-LIB_FILES=	libavcodec/libavcodec.a libav/libavformat.a
+LIB_FILES=	libavcodec/libavcodec.a libavformat/libavformat.a
 
 .include <bsd.port.pre.mk>
 
+##
+## arch detection
+##
+CONFIGURE_ARGS+=        --cpu=${ARCH:L}
+#
+.if ${ARCH} != "i386"
+WITHOUT_MMX=	yes   
+.endif
+
 ## lib detection
 ##
+##
+.if exists(${X11BASE}/lib/libImlib2.so)
+WITH_IMLIB2=yes
+.endif
 ## lame mp3
 .if exists(${LOCALBASE}/lib/libmp3lame.so.0)
 WITH_MP3=yes
@@ -67,6 +74,14 @@ CONFIGURE_ARGS+=	--enable-a52 \
 CONFIGURE_ARGS+=	--enable-a52 \
 			--disable-a52bin
 .endif
+## enable imlib2
+.if !defined(WITHOUT_VHOOK) && defined(WITH_IMLIB2)
+LIB_DEPENDS+=	Imlib2.1:${PORTSDIR}/graphics/imlib2
+
+PLIST_SUB+=	IMLIB2=""
+.else
+PLIST_SUB+=	IMLIB2="@comment "
+.endif
 ## disable mmx
 .ifdef(WITHOUT_MMX)
 CONFIGURE_ARGS+=	--disable-mmx
@@ -83,6 +98,14 @@ CONFIGURE_ARGS+=	--extra-cflags="${CFLAGS} -I${LOCALBASE}/include \
 				-O3 -ffast-math -fomit-frame-pointer" 
 .else
 CONFIGURE_ARGS+=	--extra-cflags="${CFLAGS} -I${LOCALBASE}/include"
+.endif
+## vhook
+.ifndef(WITHOUT_VHOOK)
+PLIST_SUB+=	VHOOK=""
+.else
+CONFIGURE_ARGS+=	-disable-vhook
+
+PLIST_SUB+=	VHOOK="@comment "
 .endif
 ## vorbis
 .ifdef(WITH_VORBIS)
@@ -106,7 +129,12 @@ pre-everything::
 	@${ECHO_MSG} 'You can enable additional compilation optimizations'
 	@${ECHO_MSG} 'by defining WITH_OPTIMIZED_CFLAGS'
 .endif
+.ifndef(WITHOUT_VHOOK)
+	@${ECHO_MSG}
+	@${ECHO_MSG} 'You can disable vhook support by defining WITHOUT_VHOOK'
+.endif
 .ifndef(WITH_VORBIS)
+	@${ECHO_MSG}
 	@${ECHO_MSG} 'Define WITH_VORBIS to enable libvorbisenc VORBIS codec'
 .endif
 .if !(defined(WITH_BKTR_FORMAT) && defined(WITH_BKTR_DEV))
@@ -123,7 +151,7 @@ pre-everything::
 
 post-extract:
 # install booktree extension
-	@${CP} ${FILESDIR}/grab_bsdbktr.c ${WRKSRC}/libav/
+	@${CP} ${FILESDIR}/grab_bsdbktr.c ${WRKSRC}/libavformat/
 
 post-patch:
 	@${REINPLACE_CMD} -e "s!/etc/ffserver.conf!${PREFIX}/etc/ffserver.conf!g" \
@@ -135,12 +163,12 @@ post-patch:
 .ifdef(WITH_BKTR_FORMAT)
 	@${REINPLACE_CMD} -e \
 		"s!VIDEO_FORMAT NTSC!VIDEO_FORMAT ${WITH_BKTR_FORMAT}!" \
-		${WRKSRC}/libav/grab_bsdbktr.c
+		${WRKSRC}/libavformat/grab_bsdbktr.c
 .endif
 .ifdef(WITH_BKTR_DEV)
 	@${REINPLACE_CMD} -e \
 		"s!VIDEO_INPUT METEOR_INPUT_DEV0!VIDEO_INPUT METEOR_INPUT_DEV${WITH_BKTR_DEV}!" \
-		${WRKSRC}/libav/grab_bsdbktr.c
+		${WRKSRC}/libavformat/grab_bsdbktr.c
 .endif
 .ifndef(WITHOUT_LIBA52)
 	@${REINPLACE_CMD} -e 's|-ldl||' \
