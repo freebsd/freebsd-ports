@@ -11,5 +11,7 @@ include/mycrypt.h
 include/mycrypt_argchk.h
 include/mycrypt_custom.h
 include/mycrypt_pkcs.h
+include/tommath_class.h
+include/tommath_superclass.h
 %%PORTDOCS%%%%DOCSDIR%%/crypt.pdf
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
