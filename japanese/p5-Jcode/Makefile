@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Jcode
-PORTVERSION=	0.82
+PORTVERSION=	0.83
 CATEGORIES=	japanese perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/D/DA/DANKOGAI
@@ -27,7 +27,7 @@ MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 PKGNAMEPREFIX:=	${PKGNAMEPREFIX}p5-
 
 post-configure:
-.for DIR in Unicode Jcode
+.for DIR in Unicode
 	${PERL} -pi -e "s:CCFLAGS = :CCFLAGS = ${CFLAGS} :g ; \
 			s:CC = cc:CC = ${CC}:g" ${WRKSRC}/${DIR}/Makefile
 .endfor
