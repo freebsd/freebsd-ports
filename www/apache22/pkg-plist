@@ -58,6 +58,7 @@ sbin/httpd
 sbin/logresolve
 sbin/rotatelogs
 share/doc/apache/apache_pb.gif
+@exec mkdir -p %D/www
 @exec ln -fs %B %D/www/data.default
 @unexec rm -f %D/www/data.default
 share/doc/apache/index.html
@@ -261,3 +262,5 @@ www/icons/uuencoded.gif
 www/icons/world1.gif
 www/icons/world2.gif
 @exec mkdir -p %D/www/proxy
+@dirrm %D/www/proxy
+@dirrm %D/www
