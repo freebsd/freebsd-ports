@@ -45,8 +45,7 @@ PLIST_SUB=	DATADIR="share"
 CONFIGURE_ARGS+=	--enable-ipv6
 
 .if defined(WITH_ENCODING_PATCH)
-BROKEN=		Patch does not build with xmms version 1.2.10
-ENC_PATCHLEVEL=	27
+ENC_PATCHLEVEL=	27.3
 DISTFILES+=	${PORTNAME}-${PORTVERSION}-recode-csa${ENC_PATCHLEVEL}${EXTRACT_SUFX}:enc
 MASTER_SITES+=	${MASTER_SITE_SOURCEFORGE:S/$/:enc/}
 MASTER_SITE_SUBDIR+=	rusxmms/:enc
@@ -123,7 +122,6 @@ pre-extract:
 post-patch:
 .if defined(WITH_ENCODING_PATCH)
 	@${PATCH} -s -p1 -d ${WRKSRC} < ${WRKDIR}/xmms-ds-recode.patch
-	@${PATCH} -s -p0 -d ${WRKSRC} < ${FILESDIR}/Input-vorbis-fileinfo.c.diff
 .endif
 	@${FIND} ${WRKSRC} -name "Makefile.in*" | ${XARGS} ${REINPLACE_CMD} -e \
 		 's|\(datadir\)/aclocal|(prefix)/share/aclocal|g'
