@@ -251,14 +251,6 @@ include/opentop/ot/xmlcat/CatalogResolver.h
 include/opentop/ot/xmlcat/CatalogSerialisationContext.h
 include/opentop/ot/xmlcat/CatalogSet.h
 include/opentop/ot/xmlcat/defs.h
-lib/libopentop-gccmt.so
-lib/libotxml-gccmt.so
-%%WCHAR%%lib/libopentop-gccwmt.so
-%%WCHAR%%lib/libotxml-gccwmt.so
-%%DEBUG%%lib/libopentop-gccmtd.so
-%%DEBUG%%lib/libotxml-gccmtd.so
-%%DEBUG%%%%WCHAR%%lib/libopentop-gccwmtd.so
-%%DEBUG%%%%WCHAR%%lib/libotxml-gccwmtd.so
 %%PORTDOCS%%%%DOCSDIR%%/allclasses-frame.html
 %%PORTDOCS%%%%DOCSDIR%%/glossary.html
 %%PORTDOCS%%%%DOCSDIR%%/index.html
