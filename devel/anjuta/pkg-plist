@@ -446,6 +446,7 @@ share/locale/fr/LC_MESSAGES/anjuta.mo
 share/locale/hi/LC_MESSAGES/anjuta.mo
 share/locale/it/LC_MESSAGES/anjuta.mo
 share/locale/ja/LC_MESSAGES/anjuta.mo
+share/locale/ko/LC_MESSAGES/anjuta.mo
 share/locale/mk/LC_MESSAGES/anjuta.mo
 share/locale/ml/LC_MESSAGES/anjuta.mo
 share/locale/ms/LC_MESSAGES/anjuta.mo
@@ -456,6 +457,7 @@ share/locale/pt/LC_MESSAGES/anjuta.mo
 share/locale/pt_BR/LC_MESSAGES/anjuta.mo
 share/locale/ru/LC_MESSAGES/anjuta.mo
 share/locale/sk/LC_MESSAGES/anjuta.mo
+share/locale/sq/LC_MESSAGES/anjuta.mo
 share/locale/sr/LC_MESSAGES/anjuta.mo
 share/locale/sr@Latn/LC_MESSAGES/anjuta.mo
 share/locale/sv/LC_MESSAGES/anjuta.mo
