@@ -11,8 +11,6 @@ CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.mesa.nl/pub/mpage/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	kchowksey@hss.hns.com
-
 MAN1=		mpage.1
 ALL_TARGET=	default
 

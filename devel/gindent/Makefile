@@ -12,8 +12,6 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	indent
 DISTNAME=	indent-${PORTVERSION}
 
-MAINTAINER=	kchowksey@hss.hns.com
-
 GNU_CONFIGURE=	yes
 
 MAN1=		indent.1

@@ -11,8 +11,6 @@ CATEGORIES=	devel
 MASTER_SITES=   ftp://sunsite.mff.cuni.cz/OS/Linux/Sparc/local/ultra/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	kchowksey@hss.hns.com
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/elftoaout ${PREFIX}/bin
 
