@@ -1,0 +1,25 @@
+--- Makefile.orig	Sun Dec 19 01:29:33 2004
++++ Makefile	Sun Dec 19 01:32:06 2004
+@@ -30,8 +30,9 @@
+ ##############################################################################
+ ID="@(#)Makefile:3.9 -- 5/15/91 19:30:15";
+ SHELL = /bin/sh
+-#HZ = ????  	   #(read from environment)
+-CFLAGS = -DTIME
++HZ = 128
++CFLAGS ?= -O -finline-functions -funrool-loops -fomit-frame-pointer
++CFLAGS+=-DTIME
+ CC=gcc
+ 
+ ## For Linux 486/Pentium, GCC 2.7.x and 2.8.x
+@@ -60,8 +61,8 @@
+ PROGDIR = ./pgms
+ SRCDIR = ./src
+ TESTDIR = ./testdir
+-RESULTDIR = ./results
+-TMPDIR = ./tmp
++#RESULTDIR = ./results
++#TMPDIR = /var/tmp
+ # other directories
+ INCLDIR = /usr/include
+ LIBDIR = /lib

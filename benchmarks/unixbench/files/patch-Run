@@ -1,0 +1,61 @@
+--- Run.orig	Sun Dec 19 01:34:20 2004
++++ Run	Sun Dec 19 01:39:54 2004
+@@ -88,11 +88,11 @@
+ fi
+ 
+ # check that the required files are in the proper places
+-if make check; then
+-        :
+-else
+-	make all
+-fi
++#if make check; then
++#        :
++#else
++#	make all
++#fi
+ 
+ 
+ # establish full paths to directories
+@@ -114,7 +114,7 @@
+ SCRPDIR=`pwd`
+ cd $_WD
+ 
+-TMPDIR=${HOMEDIR}/tmp
++TMPDIR=${TMPDIR-${HOMEDIR}/tmp}
+ cd $TMPDIR
+ TMPDIR=`pwd`
+ cd $_WD
+@@ -367,10 +367,11 @@
+ 	C)  
+ 		logmsg="C Compiler Throughput"
+ 		prog="looper ${looper-60} ${CC} cctest.c"
++		prog="looper ${looper-60} ${CC} cctest.c -o ${TMPDIR}/a.out"
+ 		stdout=/dev/null
+ 		repeat="$shortloop"
+ 		cleanopt="-m $TMPTIMES"
+-		rm -f ${TESTDIR}/cctest.o ${TESTDIR}/a.out
++		rm -f ${TESTDIR}/cctest.o ${TMPDIR}/a.out
+ 		;;
+ 
+ 	arithoh)
+@@ -385,8 +386,8 @@
+ 
+ 	dc)  
+ 		logmsg="Dc: sqrt(2) to 99 decimal places"
+-		prog="looper ${looper-30} dc"
+-		stdin=dc.dat
++		prog="looper ${looper-30} \"dc < ${TESTDIR}/dc.dat\""
++		stdin=
+ 		stdout=/dev/null
+ 		cleanopt="-m $TMPTIMES"
+ 		;;
+@@ -508,7 +509,7 @@
+     ########### some specific cleanup routines ##############
+     case $bench in
+       C)
+-      rm -f ${TESTDIR}/cctest.o ${TESTDIR}/a.out
++      rm -f ${TESTDIR}/cctest.o ${TMPDIR}/a.out
+       ;;
+ 
+       fstime | fsbuffer | fsdisk)
