@@ -6,13 +6,6 @@ out their relative postions in phylogenic tree.
 Once SeaView is installed, you can open the on-line help window through
 the 'Help' button to learn how to use SeaView.
 
-*****************************************************************************
-*   The help file (seaview.help) is located in /usr/X11R6/lib/X11/seaview/ .
-*   Add an entry in your .Xresources or .Xdefaults file with:
-*
-*   seaview*helpfile:	/usr/X11R6/lib/X11/seaview/seaview.help
-*****************************************************************************
-
 Example mase files can be found at:
 
 	ftp://pbil.univ-lyon1.fr/pub/mol_phylogeny/seaview/

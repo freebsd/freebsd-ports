@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	seaview
-PORTVERSION=	2002.10.18
+PORTVERSION=	2003.01.21
 CATEGORIES=	biology
 MASTER_SITES=	ftp://pbil.univ-lyon1.fr/pub/mol_phylogeny/seaview/
 DISTNAME=	${PORTNAME}
@@ -23,6 +23,9 @@ EXTRACT_CMD=		${TAR}
 EXTRACT_BEFORE_ARGS=	-xf
 EXTRACT_AFTER_ARGS=	# empty
 MAKEFILE=	makefile
+
+CFLAGS+=	-D HAVE_DIRENT_H \
+		-D DEFAULT_HELPFILE=${PREFIX}/lib/X11/seaview/seaview.help
 
 do-install:
 	@ ${INSTALL_PROGRAM} ${WRKSRC}/${DISTNAME} ${PREFIX}/bin
