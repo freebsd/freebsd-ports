@@ -1,4 +1,5 @@
 bin/cdrdao
+share/cdrdao/drivers
 share/doc/cdrdao/COPYING 
 share/doc/cdrdao/CREDITS
 share/doc/cdrdao/INSTALL 
@@ -9,4 +10,5 @@ share/doc/cdrdao/Release-1.1.0
 share/doc/cdrdao/Release-1.1.2
 share/doc/cdrdao/Release-1.1.3
 share/doc/cdrdao/Release-1.1.4
+@dirrm share/cdrdao
 @dirrm share/doc/cdrdao
