@@ -6,14 +6,20 @@
 #
 
 PORTNAME=	listmanager
-PORTVERSION=	2.108
-PORTREVISION=	1
+PORTVERSION=	2.109
 CATEGORIES=	mail
 MASTER_SITES=	http://www.listmanager.org/
 DISTNAME=	${PORTNAME}
-EXTRACT_SUFX=	.freebsd35
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} INSTALL help.tar.gz listmanager.8 ack
 DIST_SUBDIR=	${PORTNAME}
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 440000
+EXTRACT_SUFX=	.freebsd44
+.else
+EXTRACT_SUFX=	.freebsd35
+.endif
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} INSTALL help.tar.gz listmanager.8 ack
 
 MAINTAINER=	gshapiro@FreeBSD.org
 
@@ -53,4 +59,4 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
