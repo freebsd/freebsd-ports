@@ -1,0 +1,12 @@
+--- man/Makefile	Sun Dec  7 20:01:18 1997
++++ man/Makefile	Thu Mar  5 09:44:02 1998
+@@ -12,7 +12,9 @@
+ CFLAGS+= -I${LIBDESTDIR}
+ DPADD=	${LIBDESTDIR}/libman.a
+ LDADD=	-L${LIBDESTDIR} -lman
++.if exists(/usr/lib/libxpg4.a)
+ LDADD+= -L/usr/lib -lxpg4
++.endif
+ 
+ .if exists(${.OBJDIR})
+ MAN1=	${.OBJDIR}/jman.1
