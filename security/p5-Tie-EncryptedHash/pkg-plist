@@ -1,3 +1,5 @@
 lib/perl5/site_perl/%%PERL_VER%%/Tie/EncryptedHash.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tie/EncryptedHash/.packlist
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tie/EncryptedHash
+@unexec rmdir %D/lib/perl5/site_perl/5.005/i386-freebsd/auto/Tie || true
+@unexec rmdir %D/lib/perl5/site_perl/5.005/Tie || true
