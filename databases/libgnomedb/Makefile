@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	libgnomedb
-PORTVERSION=	0.91.0
+PORTVERSION=	1.0.0
 CATEGORIES=	databases gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/libgnomedb/0.91
+MASTER_SITE_SUBDIR=	sources/libgnomedb/1.0
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org

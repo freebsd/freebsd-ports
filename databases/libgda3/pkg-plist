@@ -17,6 +17,7 @@ include/libgda-report/gda-report-result.h
 include/libgda-report/gda-report-types.h
 include/libgda-report/gda-report-valid.h
 include/libgda-report/gda-report.h
+include/libgda/gda-blob.h
 include/libgda/gda-client.h
 include/libgda/gda-command.h
 include/libgda/gda-config.h
@@ -85,7 +86,6 @@ lib/libgdasql.so.0
 lib/libgda/providers/libgda-xml.so
 libdata/pkgconfig/libgda.pc
 %%DOCSDIR%%/architecture.html
-%%DOCSDIR%%/c689.html
 %%DOCSDIR%%/c694.html
 %%DOCSDIR%%/compiling.html
 %%DOCSDIR%%/connecting.html
@@ -111,6 +111,7 @@ libdata/pkgconfig/libgda.pc
 %%DOCSDIR%%/installation.html
 %%DOCSDIR%%/introduction.html
 %%DOCSDIR%%/libgda-api.html
+%%DOCSDIR%%/libgda-gda-blob.html
 %%DOCSDIR%%/libgda-gda-command.html
 %%DOCSDIR%%/libgda-gda-config.html
 %%DOCSDIR%%/libgda-gda-field.html
@@ -122,7 +123,6 @@ libdata/pkgconfig/libgda.pc
 %%DOCSDIR%%/libgda-gda-util.html
 %%DOCSDIR%%/libgda-gda-value.html
 %%DOCSDIR%%/libgda-gda-xql-utils.html
-%%DOCSDIR%%/libgda-gdabatch.html
 %%DOCSDIR%%/libgda-gdaclient.html
 %%DOCSDIR%%/libgda-gdaconnection.html
 %%DOCSDIR%%/libgda-gdadatamodel.html
@@ -183,10 +183,7 @@ libdata/pkgconfig/libgda.pc
 %%DOCSDIR%%/migration-executing-commands.html
 %%DOCSDIR%%/migration.html
 %%DOCSDIR%%/processing-queries.html
-%%DOCSDIR%%/x853.html
 %%DOCSDIR%%/x863.html
-%%DOCSDIR%%/x882.html
-%%DOCSDIR%%/x887.html
 %%DOCSDIR%%/x892.html
 %%DOCSDIR%%/x897.html
 share/gnome/libgda/xml/gda-report.dtd
@@ -196,6 +193,7 @@ share/gnome/libgda/xml/gda-xml-query.xsl
 share/gnome/omf/libgda/libgda-C.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/libgda/libgda-C.omf 2>/dev/null || /usr/bin/true
 share/locale/az/LC_MESSAGES/libgda-2.mo
+share/locale/ca/LC_MESSAGES/libgda-2.mo
 share/locale/cs/LC_MESSAGES/libgda-2.mo
 share/locale/da/LC_MESSAGES/libgda-2.mo
 share/locale/de/LC_MESSAGES/libgda-2.mo
