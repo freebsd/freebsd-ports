@@ -4677,6 +4677,7 @@ p5-XML-Encoding	ports/textproc/p5-XML-Encoding
 p5-XML-Filter-Base	ports/textproc/p5-XML-Filter-Base
 p5-XML-LibXML	ports/textproc/p5-XML-LibXML
 p5-XML-LibXSLT	ports/textproc/p5-XML-LibXSLT
+p5-XML-NamespaceSupport	ports/textproc/p5-XML-NamespaceSupport
 p5-XML-Node	ports/textproc/p5-XML-Node
 p5-XML-Parser	ports/textproc/p5-XML-Parser
 p5-XML-RSS	ports/textproc/p5-XML-RSS
