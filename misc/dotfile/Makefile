@@ -6,45 +6,61 @@
 #
 
 PORTNAME=	dotfile
-PORTVERSION=	2.2
+PORTVERSION=	2.4.1
 CATEGORIES=	misc tk82
-MASTER_SITES=	ftp://ftp.imada.ou.dk/pub/dotfile/
+MASTER_SITES=	http://www.blackie.dk/dotfile/download/
 
 MAINTAINER=	ports@FreeBSD.org
 
+BUILD_DEPENDS=	formail:${PORTSDIR}/mail/procmail
 LIB_DEPENDS=	tk82.1:${PORTSDIR}/x11-toolkits/tk82
 RUN_DEPENDS=	wish8.2:${PORTSDIR}/x11-toolkits/tk82
+.if defined(WITH_JAPANESE)
+BUILD_DEPENDS+=	wish8.0jp:${PORTSDIR}/japanese/tk80
+RUN_DEPENDS+=	wish8.0jp:${PORTSDIR}/japanese/tk80
+.endif
 
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
-MAN1=		dotfile.1
-
+PLIST_SUB=	DISTNAME="${DISTNAME}"
 NO_BUILD=	yes
 
+.if !defined(BATCH)
+IS_INTERACTIVE=	yes
+.endif
+
+MAN1=		dotfile.1
+
 post-patch:
+.if defined(BATCH)
+.if defined(WITH_JAPANESE)
+	@${REINPLACE_CMD} -e "s|set answer \"\"|set answer \"2\"|" \
+		${WRKSRC}/language.tcl
+.else
+	@${REINPLACE_CMD} -e "s|set answer \"\"|set answer \"1\"|" \
+		${WRKSRC}/language.tcl
+.endif # WITH_JAPANESE
+.endif # BATCH
 	@${REINPLACE_CMD} -e "s|%%LOCALBASE%%|${LOCALBASE}|g" ${WRKSRC}/dotfile
 
 post-configure:
-	@(cd ${WRKSRC}/Modules/procmail && CC="${CC}" ac_cv_path_CC="${CC}" CFLAGS="${CFLAGS}" \
+	@(cd ${WRKSRC}/Modules/english/procmail && CC="${CC}" ac_cv_path_CC="${CC}" CFLAGS="${CFLAGS}" \
 	INSTALL="${INSTALL} -c -o ${BINOWN} -g ${BINGRP}" \
 	INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
 	${CONFIGURE_ENV} ./${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS})
 
-.if !defined(DISPLAY)
-PLIST=		${WRKDIR}/PLIST
-pre-install:
-	@${CAT} ${PKGDIR}/pkg-plist | ${SED} -e '/fvwm.\/bytecompile/d' > ${PLIST}
-.endif
-
 post-install:
-	@${MKDIR} ${PREFIX}/share/doc/${DISTNAME}
-	@${MKDIR} ${PREFIX}/share/doc/${DISTNAME}/dotfile
-	@${MKDIR} ${PREFIX}/share/doc/${DISTNAME}/procmail
-	@${MKDIR} ${PREFIX}/share/doc/${DISTNAME}/tcsh
-	${INSTALL_DATA} ${WRKSRC}/Doc/index.html ${PREFIX}/share/doc/${DISTNAME}
-	${INSTALL_DATA} ${WRKSRC}/Doc/dotfile/* ${PREFIX}/share/doc/${DISTNAME}/dotfile
-	${INSTALL_DATA} ${WRKSRC}/Doc/tcsh/* ${PREFIX}/share/doc/${DISTNAME}/tcsh
-	${INSTALL_DATA} ${WRKSRC}/Doc/procmail/* ${PREFIX}/share/doc/${DISTNAME}/procmail
-	@${CAT} ${PKGMESSAGE}
+.ifndef(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}/dotfile
+	@${MKDIR} ${DOCSDIR}/procmail
+	@${MKDIR} ${DOCSDIR}/tcsh
+	@${INSTALL_DATA} ${WRKSRC}/Doc/index.html ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/Doc/dotfile/* ${DOCSDIR}/dotfile
+	@${INSTALL_DATA} ${WRKSRC}/Doc/tcsh/* ${DOCSDIR}/tcsh
+	@${INSTALL_DATA} ${WRKSRC}/Doc/procmail/* ${DOCSDIR}/procmail
+	@${ECHO_CMD} ""
+	@${ECHO_CMD} "Documentation is installed in ${DOCSDIR}"
+	@${ECHO_CMD} ""
+.endif
 
 .include <bsd.port.mk>
