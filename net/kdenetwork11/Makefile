@@ -3,7 +3,7 @@
 # Date created:        28 October 1997
 # Whom:                Stefan Eßer <se@freebsd.org>
 #
-# $Id: Makefile,v 1.22 1998/10/01 18:35:37 brian Exp $
+# $Id: Makefile,v 1.24 1999/01/07 00:51:55 se Exp $
 #
 
 DISTNAME=	kdenetwork
@@ -20,11 +20,11 @@ BUILD_DEPENDS=	bzip2:${PORTSDIR}/archivers/bzip2 \
 LIB_DEPENDS=	gif.3:${PORTSDIR}/graphics/giflib \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		uu.1:${PORTSDIR}/converters/uulib \
-		kdecore.2:${PORTSDIR}/x11/kdelibs \
-		QwSpriteField.6:${PORTSDIR}/converters/kdesupport \
-		js.2:${PORTSDIR}/converters/kdesupport \
-		mimelib.1:${PORTSDIR}/converters/kdesupport \
-		rdb.55:${PORTSDIR}/converters/kdesupport
+		kdecore.2:${PORTSDIR}/x11/kdelibs11 \
+		QwSpriteField.6:${PORTSDIR}/converters/kdesupport11 \
+		js.2:${PORTSDIR}/converters/kdesupport11 \
+		mimelib.1:${PORTSDIR}/converters/kdesupport11 \
+		rdb.55:${PORTSDIR}/converters/kdesupport11
 EXTRACT_CMD=	bzip2
 EXTRACT_BEFORE_ARGS= -cd
 EXTRACT_AFTER_ARGS= | tar xf -
