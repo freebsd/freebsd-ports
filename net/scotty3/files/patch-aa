@@ -1,0 +1,58 @@
+--- configure.orig	Wed Jun  5 08:06:34 1996
++++ configure	Wed Jun  5 11:27:59 1996
+@@ -938,7 +938,7 @@
+ 
+ dynamic=0
+ # Extract the first word of "tclsh", so it can be a program name with args.
+-set dummy tclsh; ac_word=$2
++set dummy tclsh7.4; ac_word=$2
+ echo $ac_n "checking for $ac_word""... $ac_c" 1>&6
+ if eval "test \"`echo '$''{'ac_cv_prog_have_tclsh'+set}'`\" = set"; then
+   echo $ac_n "(cached) $ac_c" 1>&6
+@@ -1026,7 +1026,7 @@
+ echo $ac_n "checking for tcl version number""... $ac_c" 1>&6
+ tcl_major_version=`awk '/TCL_MAJOR_VERSION/ {print $3}' $f/tcl.h`
+ tcl_minor_version=`awk '/TCL_MINOR_VERSION/ {print $3}' $f/tcl.h`
+-tcl_version="$tcl_major_version.$tcl_minor_version"
++tcl_version="$tcl_major_version$tcl_minor_version"
+ echo "$ac_t"""$tcl_version"" 1>&6
+ 
+ if test 7 -ne $tcl_major_version ; then
+@@ -1038,9 +1038,9 @@
+ 
+ for f in $tcl_library $scotty_cv_path_tcl_lib $prefix/lib /usr/local/tk4.0/lib /usr/local/lib /usr/lib ; do
+     echo $ac_n "checking for libtcl$tcl_version in $f""... $ac_c" 1>&6
+-    if test -f "$f/libtcl$tcl_version.a" ; then
++    if test -f "$f/libtcl$tcl_version.so.1.0" ; then
+ 	scotty_cv_path_tcl_lib=$f
+-        TCL_LIB="$TCL_LIB $f/libtcl$tcl_version.a"
++        TCL_LIB="-L$f $TCL_LIB -ltcl$tcl_version"
+         echo "$ac_t""yes" 1>&6
+ 	break
+     else
+@@ -1112,21 +1112,21 @@
+ echo $ac_n "checking for tk version number""... $ac_c" 1>&6
+ tk_major_version=`awk '/TK_MAJOR_VERSION/ {print $3}' $f/tk.h`
+ tk_minor_version=`awk '/TK_MINOR_VERSION/ {print $3}' $f/tk.h`
+-tk_version="$tk_major_version.$tk_minor_version"
++tk_version="$tk_major_version$tk_minor_version"
+ echo "$ac_t"""$tk_version"" 1>&6
+ 
+ if test 4 -ne $tk_major_version ; then
+     { echo "configure: error: "tk 4.0 or later needed"" 1>&2; exit 1; }
+ fi
+ if test 0 -gt $tk_minor_version ; then
+-    { echo "configure: error: "tcl 4.0 or later needed"" 1>&2; exit 1; }
++    { echo "configure: error: "tk 4.0 or later needed"" 1>&2; exit 1; }
+ fi
+ 
+ for f in $tk_library $scotty_cv_path_tk_lib $tcl_library $prefix/lib /usr/local/tk4.0/lib /usr/local/lib /usr/lib /usr/X386/lib /usr/X11/lib ; do
+     echo $ac_n "checking for libtk$tk_version in $f""... $ac_c" 1>&6
+-    if test -f "$f/libtk$tk_version.a" ; then
++    if test -f "$f/libtk$tk_version.so.1.0" ; then
+ 	scotty_cv_path_tk_lib=$f
+-        TK_LIB="$f/libtk$tk_version.a"
++        TK_LIB="-L $f -ltk$tk_version"
+         echo "$ac_t""yes" 1>&6
+ 	break
+     else
