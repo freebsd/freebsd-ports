@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libstatgrab
-PORTVERSION=	0.10.3
+PORTVERSION=	0.11
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.uk.i-scream.org/pub/i-scream/%SUBDIR%/ \
 		http://ftp.uk.i-scream.org/pub/i-scream/%SUBDIR%/ \
