@@ -9,9 +9,12 @@ PORTNAME=	gcc
 PORTVERSION=	2.95.3
 PORTREVISION=	0
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
-MASTER_SITE_SUBDIR=	newlib gcc/releases/${GCCNAME}
-DISTFILES=	${NEWLIBNAME}.tar.gz ${GCCNAME}.tar.gz
+MASTER_SITES=	${MASTER_SITE_SOURCEWARE} \
+		${MASTER_SITE_SOURCEWARE:S/$/:gcc/}
+MASTER_SITE_SUBDIR=	newlib \
+			gcc/releases/${GCCNAME}/:gcc
+DISTFILES=		${NEWLIBNAME}.tar.gz \
+			${GCCNAME}.tar.gz:gcc
 PATCHFILES=	${GCCNAME}-rtems-20010622a.diff \
 		${NEWLIBNAME}-rtems-20010622.diff
 PATCH_SITES=	ftp://ftp.oarcorp.com/pub/rtems/snapshots/c_tools/source/ \
@@ -26,7 +29,6 @@ NEWLIBNAME=	newlib-1.9.0
 MASTERDIR=	${.CURDIR}/../i386-rtems-gcc
 PLIST=		${PKGDIR}/pkg-plist.${LCLTARGET}
 
-FETCH_DEPENDS=	/nonexistent:${PORTSDIR}/devel/rtems-gcc:extract
 BUILD_DEPENDS=	autoheader:${PORTSDIR}/devel/autoconf \
 		${LCLTARGET}-as:${PORTSDIR}/devel/${LCLTARGET}-binutils \
 		${LCLTARGET}-ld:${PORTSDIR}/devel/${LCLTARGET}-binutils
