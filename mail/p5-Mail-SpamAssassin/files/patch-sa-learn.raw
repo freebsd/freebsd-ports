@@ -1,0 +1,6 @@
+--- sa-learn.raw.orig	Mon Sep 15 15:59:24 2003
++++ sa-learn.raw	Fri Jan  2 18:59:25 2004
+@@ -75,2 +75,3 @@
+  --showdots                        Show progress using dots
++ --quiet                           Do not output status from command run
+  --no-rebuild                      Skip building databases after scan
