@@ -4,6 +4,7 @@ include/onig/regex.h
 lib/libonig.a
 lib/libonig.so
 lib/libonig.so.0
+%%PORTDOCS%%%%DOCSDIR%%/API
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTDOCS%%%%EXAMPLESDIR%%/simple.c
