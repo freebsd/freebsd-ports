@@ -171,7 +171,7 @@ do-configure:
 		${SITE} > ${WCONF}/site.config.m4
 .if defined(SENDMAIL_WITH_SMTPS)
 	${ECHO_CMD} \
-	 'APPENDDEF(`conf_sendmail_ENVDEF'\'', `-D_FFR_SMTP_SSL'\'') \
+	 'APPENDDEF(`conf_sendmail_ENVDEF'\'', `-D_FFR_SMTP_SSL'\'')' \
 		>> ${WCONF}/site.config.m4
 .endif
 .if defined(SENDMAIL_WITH_SOCKETMAP)
@@ -186,7 +186,7 @@ do-configure:
 .endif
 .if defined(SENDMAIL_WITH_CONNECTION_RATE)
 	${ECHO_CMD} \
-	 'APPENDDEF(`conf_sendmail_ENVDEF'\'', `-D_FFR_CONNECTION_RATE_CONTROL'\'') \
+	 'APPENDDEF(`conf_sendmail_ENVDEF'\'', `-D_FFR_CONNECTION_RATE_CONTROL'\'')' \
 		>> ${WCONF}/site.config.m4
 .endif
 .if defined(SENDMAIL_WITHOUT_SHMEM)
