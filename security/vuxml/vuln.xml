@@ -142,6 +142,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </description>
     <references>
       <url>http://www.squid-cache.org/Versions/v2/2.5/bugs/#squid-2.5.STABLE7-wccp_denial_of_service</url>
+      <url>http://www.squid-cache.org/bugs/show_bug.cgi?id=1190</url>
     </references>
     <dates>
       <discovery>2005-01-07</discovery>
@@ -174,10 +175,12 @@ http_access deny Gopher</pre>
     </description>
     <references>
       <url>http://www.squid-cache.org/Versions/v2/2.5/bugs/#squid-2.5.STABLE7-gopher_html_parsing</url>
+      <url>http://www.squid-cache.org/bugs/show_bug.cgi?id=1189</url>
     </references>
     <dates>
       <discovery>2005-01-11</discovery>
       <entry>2005-01-12</entry>
+      <modified>2005-01-13</modified>
     </dates>
   </vuln>
 
@@ -922,23 +925,28 @@ http_access deny Gopher</pre>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>The squid-2.5 patches pages notes:</p>
-	<blockquote cite="http://www.squid-cache.org/Versions/v2/2.5/bugs/#squid-2.5.STABLE7-empty_acls">
-	  <p>The meaning of the access controls becomes somewhat
-	    confusing if any of the referenced acls is declared empty,
-	    without any members.</p>
-	  <p>[Administrators should] pay attention to warnings from
-	    "squid -k parse" and do not use configurations where there
-	    are warnings about access controls in production.</p>
+	<p>Applying an empty ACL list results in unexpected behavior:
+	  anything will match an empty ACL list.  For example,</p>
+	<blockquote cite="http://www.squid-cache.org/bugs/show_bug.cgi?id=1166">
+	  <p>The meaning of the configuration gets very confusing when
+	    we encounter empty ACLs such as</p>
+	  <p><code>acl something src "/path/to/empty_file.txt"<br />
+	      http_access allow something somewhere</code></p>
+	  <p>gets parsed (with warnings) as</p>
+	  <p><code>http_access allow somwhere</code></p>
+	  <p>And similarily if you are using proxy_auth acls without
+	    having any auth schemes defined.</p>
 	</blockquote>
       </body>
     </description>
     <references>
       <url>http://www.squid-cache.org/Versions/v2/2.5/bugs/#squid-2.5.STABLE7-empty_acls</url>
+      <url>http://www.squid-cache.org/bugs/show_bug.cgi?id=1166</url>
     </references>
     <dates>
       <discovery>2004-12-21</discovery>
       <entry>2004-12-23</entry>
+      <modified>2005-01-13</modified>
     </dates>
   </vuln>
 
