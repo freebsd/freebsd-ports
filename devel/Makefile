@@ -192,6 +192,7 @@
     SUBDIR += libdlmalloc
     SUBDIR += libdsp
     SUBDIR += libelf
+    SUBDIR += libevent
     SUBDIR += libffi
     SUBDIR += libformat
     SUBDIR += libg++
