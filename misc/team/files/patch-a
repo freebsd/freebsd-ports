@@ -1,0 +1,34 @@
+diff -u team-3.1/Makefile ./Makefile
+--- team-3.1/Makefile	Sat Jul  1 17:33:24 1995
++++ ./Makefile	Sat Jul  1 17:53:20 1995
+@@ -1,25 +1,8 @@
+-CFLAGS		=-O
+-LDFLAGS		=-s
++PROG=	team
+ 
+-INSTX		=install -m 0755 -s
+-INSTD		=install -m 0644
++BINDIR=	${PREFIX}/bin
++MANDIR=	${PREFIX}/man/man
+ 
+-DEST=		
++CFLAGS+= -DHAVE_PARAM_H
+ 
+-MI		=$(DEST)/usr/
+-MD		=$(DEST)/usr/
+-
+-M1X		=1
+-
+-BIND		=$(MD)bin/
+-MANI		=$(MI)man
+-
+-MANI1		=$(MANI)$(M1X)/
+-
+-all:		team
+-
+-clean::
+-	rm -f team team.o
+-
+-$(BIND)team:		team;			$(INSTX) $? $@
+-$(MANI1)team.$(M1X):	team.1;			$(INSTD) $? $@
++.include <bsd.prog.mk>

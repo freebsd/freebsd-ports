@@ -1,0 +1,44 @@
+From: pcg@aber.ac.uk (Piercarlo Grandi)
+Newsgroups: comp.sources.unix
+Subject: v27i195: team - portable multi-buffered tape streaming utility, Part01/01
+Date: 13 Jan 1994 13:24:40 -0800
+Approved: vixie@gw.home.vix.com
+Message-ID: <1.758496249.28141@gw.home.vix.com>
+
+Submitted-By: pcg@aber.ac.uk (Piercarlo Grandi)
+Posting-Number: Volume 27, Issue 195
+Archive-Name: team/part01
+
+There exist a few filters that help tapes streams by buffering IO and
+allowing reads to overlaps with writes under Unix. Most of these filters
+rely on relatively unportable features, for example SYSV like shared
+memory.
+
+team is a filter that runs essentially unchanged on any Unix version, as
+it relies only on features present in V7. A number of team processes
+(team members) share a common input fd and a common output fd, and they
+take turns at reading from the former and writing to the latter; they
+synchronize by using a ring of pipes between them, where a "read-enable"
+and a "write-enable" token circulate.
+
+team is not just very portable, but also portable and efficient. It also
+has some bells & whistles, like command line options to specify the
+number of processes in a team, the block size for IO, and the volume
+size of the input or output media. It also optionally reports its
+progress.
+
+Previous versions of team have been circulating (e.g. via alt.sources)
+for several years; I have not found a bug for a long time, even if
+surely they will exist.
+
+The team source is GPL'ed, and it comes with no warranty.
+
+  Note: this program was developed entirely by the author in his own
+  time, using his own resources, on his machine, in the context of 
+  his own research activities. In no way has the University of Wales,
+  Aberystwyth contributed aided or abetted to this work, for which
+  they bear no responsibility whatsoever. I am grateful to UWA for the
+  ability to use their systems (as a paying customer) to post this work.
+
+	pcg@aber.ac.uk (Piercarlo Grandi)
+

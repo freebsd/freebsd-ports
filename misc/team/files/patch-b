@@ -1,0 +1,28 @@
+diff -u team-3.1/team.c ./team.c
+--- team-3.1/team.c	Sat Jul  1 17:33:24 1995
++++ ./team.c	Sat Jul  1 17:54:05 1995
+@@ -85,6 +85,11 @@
+ #include <sys/stat.h>
+ #include <fcntl.h>
+ 
++#ifdef HAVE_PARAM_H
++#include <sys/param.h>
++#endif
++
++
+ #ifdef sun
+ # undef F_SETLKW
+ #endif
+@@ -286,7 +291,12 @@
+   do
+   {
+ #if (defined i386 || defined sun)
++#  if !(defined(BSD) && (BSD >= 199306))
+     extern char		*(sys_errlist[]);
++#  endif
++#  if (defined(BSD) && (BSD >= 199306)) && __STDC__
++    const
++#  endif
+     char		*errmsg = sys_errlist[errno];
+ #else
+     char		errmsg[32];
