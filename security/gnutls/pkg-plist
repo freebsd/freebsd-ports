@@ -10,10 +10,10 @@ include/gnutls/compat4.h
 include/gnutls/openssl.h
 include/gnutls/gnutls.h
 @dirrm include/gnutls
-lib/libgnutls.so.8
+lib/libgnutls.so.7
 lib/libgnutls.so
 lib/libgnutls.a
-lib/libgnutls-extra.so.8
+lib/libgnutls-extra.so.7
 lib/libgnutls-extra.so
 lib/libgnutls-extra.a
 share/aclocal/libgnutls.m4
