@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	yaz++
-PORTVERSION=	0.5
+PORTVERSION=	0.6
 CATEGORIES=	net
 MASTER_SITES=	http://ftp.indexdata.dk/pub/yaz++/
 
