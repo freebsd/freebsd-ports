@@ -1,0 +1,45 @@
+*** ../xmgr-4.1.1/configure     Mon Dec  1 02:09:24 1997
+--- ./configure Sun Jan 18 17:31:25 1998
+***************
+*** 626,631 ****
+--- 626,632 ----
+
+    case "${host}" in
+      i?86-*-linux-*) CONF_FILE="ix86-linux";;
++     i?86-*-freebsd*) CONF_FILE="freebsd";;
+      *-*-linux-*) CONF_FILE="linux";;
+      i?86-*-sco-*) CONF_FILE="ix86-sco";;
+      alpha-dec-osf4.*) CONF_FILE="alpha-osf4";;
+***************
+*** 4857,4863 ****
+    echo $ac_n "(cached) $ac_c" 1>&6
+  else
+    ac_save_LIBS="$LIBS"
+! LIBS="-ldf  $LIBS"
+  cat > conftest.$ac_ext <<EOF
+  #line 4863 "configure"
+  #include "confdefs.h"
+--- 4857,4863 ----
+    echo $ac_n "(cached) $ac_c" 1>&6
+  else
+    ac_save_LIBS="$LIBS"
+! LIBS="-lmfhdf -ldf -lz $LIBS"
+  cat > conftest.$ac_ext <<EOF
+  #line 4863 "configure"
+  #include "confdefs.h"
+***************
+*** 4881,4887 ****
+  fi
+  if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
+    echo "$ac_t""yes" 1>&6
+!   NETCDF_LIBS="$NETCDF_LIBS -ldf"; cat >> confdefs.h <<\EOF
+  #define HAVE_MFHDF 1
+  EOF
+
+--- 4882,4888 ----
+  fi
+  if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
+    echo "$ac_t""yes" 1>&6
+!   NETCDF_LIBS="$NETCDF_LIBS -lmfhdf -ldf -lz"; cat >> confdefs.h <<\EOF
+  #define HAVE_MFHDF 1
+  EOF
