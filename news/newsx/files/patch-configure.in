@@ -1,0 +1,11 @@
+--- configure.in.orig	Tue Jan 29 20:15:19 2002
++++ configure.in	Thu Jan 31 01:05:04 2002
+@@ -189,7 +189,7 @@
+ dnl  Default list of locations to visit in search of the
+ dnl  news configuration file
+ dnl
+-VISIT="/usr/lib/news /var/news/etc /usr/spool/news /usr/share/news \
++VISIT="%%LOCALBASE%%/news/lib /usr/lib/news /var/news/etc /usr/spool/news /usr/share/news \
+  /var/db/news /usr/local/news/control /usr/local/news /local/news /etc/news \
+  /usr/local/news/bin/control /usr/local/lib/news /news /usr/local/inn \
+  /var/lib/news /usr/lib"
