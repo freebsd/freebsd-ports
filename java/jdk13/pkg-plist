@@ -927,8 +927,8 @@ jdk%%JDK_VERSION%%/src.jar
 @unexec rmdir %D/jdk%%JDK_VERSION%%/jre/lib/ext 2>/dev/null || true
 @exec   mkdir -p %D/share/doc/java
 @unexec rmdir %D/share/doc/java 2>/dev/null || true
-@exec   %D/bin/registervm "%D/jdk%%JDK_VERSION%%/bin/java # FREEBSD-JDK%%JDK_VERSION%%"
-@unexec %D/bin/unregistervm "%D/jdk%%JDK_VERSION%%/bin/java"
+@exec   %%LOCALBASE%%/bin/registervm "%D/jdk%%JDK_VERSION%%/bin/java # FREEBSD-JDK%%JDK_VERSION%%"
+@unexec %%LOCALBASE%%/bin/unregistervm "%D/jdk%%JDK_VERSION%%/bin/java"
 @dirrm jdk%%JDK_VERSION%%/man/man1
 @dirrm jdk%%JDK_VERSION%%/man
 @dirrm jdk%%JDK_VERSION%%/lib/i386
