@@ -4,7 +4,7 @@
  *
  * Daemon control program.
  *
- * $FreeBSD: /tmp/pcvs/ports/www/tomcat41/files/Attic/daemonctl.c,v 1.1 2002-03-30 14:51:12 znerd Exp $
+ * $FreeBSD: /tmp/pcvs/ports/www/tomcat41/files/Attic/daemonctl.c,v 1.2 2002-04-03 19:49:27 znerd Exp $
  */
 
 #include <assert.h>
@@ -33,20 +33,6 @@
 #define ERR_STDOUT_LOGFILE_OPEN				9
 #define ERR_STDERR_LOGFILE_OPEN				10
 #define ERR_FORK_FAILED						11
-
-#if defined JAVA_ARGS
-#define JAVA_ARGS_COMMA ,
-#else
-#define JAVA_ARGS
-#define JAVA_ARGS_COMMA
-#endif
-
-#if defined JAR_ARGS
-#define JAR_ARGS_COMMA ,
-#else
-#define JAR_ARGS
-#define JAR_ARGS_COMMA
-#endif
 
 #define private static
 
@@ -323,7 +309,7 @@ void start(void) {
 		         file using pipe(2) */
 
 		/* Execute the command */
-		execl("%%JAVA_HOME%%/%%JAVA_CMD%%", "%%JAVA_HOME%%/%%JAVA_CMD%%", "-jar", JAVA_ARGS JAVA_ARGS_COMMA "%%JAR_FILE%%", JAR_ARGS JAR_ARGS_COMMA NULL);
+		execl("%%JAVA_HOME%%/%%JAVA_CMD%%", "%%JAVA_HOME%%/%%JAVA_CMD%%", "-jar", %%JAVA_ARGS%% "%%JAR_FILE%%", %%JAR_ARGS%% NULL);
 
 		fprintf(stderr, "%%CONTROL_SCRIPT_NAME%%: Unable to start %%APP_TITLE%% as '%%JAVA_HOME%%/%%JAVA_CMD%% -jar %%JAR_FILE%%' in %%APP_HOME%%: ");
 		perror(NULL);
