@@ -10320,6 +10320,7 @@ trophy		ports/games/trophy
 trove4j		ports/java/trove4j
 trueprint	ports/print/trueprint
 truevision	ports/graphics/truevision
+trustedqsl	ports/comms/trustedqsl
 tsclient	ports/net/tsclient
 tse3		ports/audio/tse3
 tsocks		ports/net/tsocks
