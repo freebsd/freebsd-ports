@@ -1,1 +1,11 @@
 bin/scrollz
+bin/scrollz-%%SCROLLZ_VER%%
+share/scrollz/doc/ScrollZ.doc
+share/scrollz/help/ScrollZ.help
+@exec mkdir %D/share/scrollz/script
+@exec mkdir %D/share/scrollz/translation
+@unexec rmdir %D/share/scrollz/translation 2>/dev/null || true
+@unexec rmdir %D/share/scrollz/script 2>/dev/null || true
+@dirrm share/scrollz/help
+@dirrm share/scrollz/doc
+@unexec rmdir %D/share/scrollz 2>/dev/null || true

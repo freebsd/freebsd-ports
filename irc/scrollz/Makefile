@@ -6,22 +6,22 @@
 #
 
 PORTNAME=	scrollz
-PORTVERSION=	1.8k
-CATEGORIES=	irc
-MASTER_SITES=	http://www.scrollz.com/Bins/${PORTVERSION}/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-freebsd-4.2
-EXTRACT_SUFX=	.gz
+PORTVERSION=	1.8l
+CATEGORIES=	irc ipv6
+MASTER_SITES=	ftp://ftp.scrollz.com/pub/ScrollZ/source/ \
+		ftp://ftp.stealth.net/pub/mirrors/ftp.scrollz.com/pub/ScrollZ/source
+DISTNAME=	ScrollZ-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	petef@databits.net
 
-EXTRACT_CMD=	gunzip
-EXTRACT_BEFORE_ARGS=	-c
-EXTRACT_AFTER_ARGS=	> ${WRKSRC}/scrollz
-NO_WRKSUBDIR=	yes
-NO_BUILD=	yes
-ONLY_FOR_ARCHS=	i386
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=	--enable-ipv6
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/scrollz ${PREFIX}/bin/scrollz
+MAKE_ENV+=	IRCLIB="${PREFIX}/share/scrollz"
+
+PLIST_SUB+=	SCROLLZ_VER="${PORTVERSION}"
+
+post-patch:
+	@${PERL} -pi -e 's!^IRCLIB =!IRCLIB ?=!' ${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
