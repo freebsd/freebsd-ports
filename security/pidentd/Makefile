@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	pidentd
-PORTVERSION= 	3.0.10
+PORTVERSION= 	2.8.5
 CATEGORIES=	security ipv6
 MASTER_SITES=	ftp://ftp.lysator.liu.se/pub/ident/servers/ \
 		ftp://ftp.fu-berlin.de/unix/security/ident/servers/
 
-#PATCH_SITES=	http://www.imasy.or.jp/~ume/ipv6/
-#PATCHFILES=	pidentd-2.8.5-ipv6-1.5.diff.gz
-#PATCH_DIST_STRIP=	-p2
+PATCH_SITES=	http://www.imasy.or.jp/~ume/ipv6/
+PATCHFILES=	pidentd-2.8.5-ipv6-1.5.diff.gz
+PATCH_DIST_STRIP=	-p2
 
 MAINTAINER=	torstenb@FreeBSD.org
 
