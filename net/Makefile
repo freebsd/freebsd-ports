@@ -291,6 +291,7 @@
     SUBDIR += ngrep-lib
     SUBDIR += nic
     SUBDIR += nocol
+    SUBDIR += noip
     SUBDIR += ns
     SUBDIR += nsc
     SUBDIR += nslint

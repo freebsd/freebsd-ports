@@ -1,0 +1,32 @@
+#!/bin/sh
+
+if [ "$2" != "PRE-INSTALL" ]; then
+    exit 0
+fi
+
+PW=/usr/sbin/pw
+ECHO=echo
+USER=noip
+GROUP=${USER}
+
+if ! ${PW} groupshow "${GROUP}" 2>/dev/null 1>&2; then
+	if ${PW} groupadd ${GROUP}; then
+		${ECHO} "Added group \"${GROUP}\"."
+	else
+                ${ECHO} "Adding group \"${GROUP}\" failed..."
+                exit 1
+        fi
+fi
+
+if ! ${PW} usershow "${USER}" 2>/dev/null 1>&2; then
+        if ${PW} useradd ${USER} -g ${GROUP} -h - \
+                -s "/sbin/nologin" -d "/nonexistent" \
+                -c "noip_updater pseudo-user"; \
+        then
+                ${ECHO} "Added user \"${USER}\"."
+        else
+                ${ECHO} "Adding user \"${USER}\" failed..."
+                exit 1
+        fi
+fi
+exit 0

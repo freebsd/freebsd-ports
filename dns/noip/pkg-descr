@@ -1,0 +1,10 @@
+This is a port of No-IP.com's dynamic DNS update client.  When
+configured correctly, the client will check the local IP address at a
+given time interval for any changes.  If the local IP address has
+changed it will notify the DNS servers at No-IP.com and update the IP
+corresponding to your No-IP/No-IP+ hostname.
+
+WWW: http://www.No-IP.com/
+
+- Eyal Soha
+esoha@attbi.com
