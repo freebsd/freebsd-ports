@@ -3,12 +3,12 @@
 # Date created:		9 Jan 1998
 # Whom:			John Polstra <jdp@polstra.com>
 #
-# $Id: Makefile,v 1.7 1998/02/16 09:18:13 asami Exp $
+# $Id: Makefile,v 1.8 1998/02/17 00:04:51 obrien Exp $
 #
 
 DISTNAME=	egcs-980205
 CATEGORIES=	lang
-MASTER_SITES=	ftp://ftp.cygnus.com/pub/egcs/snapshots/1998-02-05/ \
+MASTER_SITES=	ftp://egcs.cygnus.com/pub/egcs/snapshots/1998-02-05/ \
 		ftp://cambridge.cygnus.com/pub/egcs/snapshots/1998-02-05/ \
 		ftp://ftp.fu-berlin.de/unix/languages/egcs/snapshots/1998-02-05/
 
