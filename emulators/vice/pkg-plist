@@ -15,6 +15,7 @@ lib/vice/C128/basichi
 lib/vice/C128/basiclo
 lib/vice/C128/beos_pos.vkm
 lib/vice/C128/beos_sym.vkm
+lib/vice/C128/c64hq.vpl
 lib/vice/C128/c64s.vpl
 lib/vice/C128/ccs64.vpl
 lib/vice/C128/chargde
@@ -46,6 +47,7 @@ lib/vice/C128/x11_sym.vkm
 lib/vice/C64/basic
 lib/vice/C64/beos_pos.vkm
 lib/vice/C64/beos_sym.vkm
+lib/vice/C64/c64hq.vpl
 lib/vice/C64/c64mem.sym
 lib/vice/C64/c64s.vpl
 lib/vice/C64/ccs64.vpl
@@ -69,13 +71,16 @@ lib/vice/CBM-II/amber.vpl
 lib/vice/CBM-II/basic.128
 lib/vice/CBM-II/basic.256
 lib/vice/CBM-II/basic.500
+lib/vice/CBM-II/beos_bukp.vkm
 lib/vice/CBM-II/beos_buks.vkm
 lib/vice/CBM-II/c64s.vpl
+lib/vice/CBM-II/c64hq.vpl
 lib/vice/CBM-II/ccs64.vpl
 lib/vice/CBM-II/chargen.500
 lib/vice/CBM-II/chargen.600
 lib/vice/CBM-II/chargen.700
 lib/vice/CBM-II/default.vpl
+lib/vice/CBM-II/dos_bukp.vkm
 lib/vice/CBM-II/dos_buks.vkm
 lib/vice/CBM-II/frodo.vpl
 lib/vice/CBM-II/godot.vpl
@@ -90,6 +95,7 @@ lib/vice/CBM-II/rom256h.vrs
 lib/vice/CBM-II/rom256l.vrs
 lib/vice/CBM-II/rom500.vrs
 lib/vice/CBM-II/white.vpl
+lib/vice/CBM-II/win_bukp.vkm
 lib/vice/CBM-II/win_buks.vkm
 lib/vice/CBM-II/x11_buks.vkm
 lib/vice/DRIVES/d1541II
@@ -187,7 +193,6 @@ share/doc/vice/cbm_basic_tokens.txt
 share/doc/vice/drive_info.txt
 share/doc/vice/index.html
 share/doc/vice/mon.txt
-share/doc/vice/navbarlogo.gif
 share/doc/vice/new.gif
 share/doc/vice/serial.txt
 share/doc/vice/vice_1.html
@@ -208,7 +213,6 @@ share/doc/vice/vice_8.html
 share/doc/vice/vice_9.html
 share/doc/vice/vice_toc.html
 share/doc/vice/vice-logo.jpg
-share/doc/vice/vice-sublogo.jpg
 @dirrm share/doc/vice
 @dirrm lib/vice/VIC20
 @dirrm lib/vice/PLUS4
