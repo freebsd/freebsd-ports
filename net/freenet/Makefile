@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	freenet
-PORTVERSION=	0.5.2.1.5099
+PORTVERSION=	0.5.2.1.5100
 CATEGORIES=	net java security
 MASTER_SITES=	http://freenetproject.org/snapshots/
-DISTNAME=	${PORTNAME}-20041026
+DISTNAME=	${PORTNAME}-20041122
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	lioux@FreeBSD.org
@@ -22,7 +22,7 @@ NO_BUILD_DEPENDS_JAVA=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 PLIST_SUB=	JAR_DIR=${JAR_DIR}
 
-JAVAVM=		${LOCALBASE}/bin/javavm
+JAVAVM=		${LOCALBASE}/bin/java
 JAR_DIR=	share/java/jar/${PORTNAME}
 #
 DATA_FILES=	seednodes.ref
@@ -38,6 +38,7 @@ PORTDOCS=	${DOC_FILES}
 post-patch:
 	@${SED} -e "s|%%PREFIX%%|${PREFIX}|; \
 		s|%%DATA_DIR%%|${DATADIR:S,^${PREFIX}/,,}|; \
+		s|%%JAVA_VERSION%%|${USE_JAVA}|; \
 		s|%%JAVAVM%%|${JAVAVM}|; \
 		s|%%JAR_DIR%%|${JAR_DIR}|; \
 		s|%%JAR_FILES%%|${JAR_FILES}|; \
