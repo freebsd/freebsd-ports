@@ -6,15 +6,13 @@
 #
 
 PORTNAME=	liba52
-PORTVERSION=	0.7.1.b
-PORTREVISION=	1
+PORTVERSION=	0.7.2
 CATEGORIES=	audio
 MASTER_SITES=	http://liba52.sourceforge.net/files/
 DISTNAME=	a52dec-${PORTVERSION:S/.b/b/}
 
 MAINTAINER=	lioux@FreeBSD.org
 
-USE_AUTOMAKE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-oss --enable-shared
@@ -24,16 +22,18 @@ MAN1=	a52dec.1 extract_a52.1
 
 HEADER_FILES=	liba52/a52_internal.h
 
-.ifndef(WITH_OPTIMIZED_CFLAGS)
-EXTRA_PATCHES=	${FILESDIR}/extra-patch-configure.in
-.endif
-
 pre-everything::
 .ifndef(WITH_OPTIMIZED_CFLAGS)
 	@${ECHO_MSG} ">>>"
 	@${ECHO_MSG} ">>> You can enable extra optimizations by defining WITH_OPTIMIZED_CFLAGS."
 	@${ECHO_MSG} ">>> For example, 'make WITH_OPTIMIZED_CFLAGS=yes'"
 	@${ECHO_MSG} ">>>"
+.endif
+
+post-patch:
+.ifndef(WITH_OPTIMIZED_CFLAGS)
+	@${PERL} -pi.orig -e 's!-O3!${CFLAGS}!;s!-mcpu=[^"]+"!"!' \
+		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 .endif
 
 post-configure:
