@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cnd
-PORTVERSION=	0.5
+PORTVERSION=	0.6
 CATEGORIES=	net
 MASTER_SITES=	http://members.iinet.net.au/~lynx/cnd/
 
