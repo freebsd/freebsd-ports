@@ -12,7 +12,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://www.world.co.uk/sba/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 
 MAKEFILE=	makefile
 
