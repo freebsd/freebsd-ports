@@ -1,0 +1,12 @@
+--- Imakefile-	Fri Oct 16 02:14:52 1998
++++ Imakefile	Fri Oct 16 02:15:41 1998
+@@ -4,9 +4,6 @@
+ XCOMM All rights reserved.
+ XCOMM
+ 
+-BINDIR = /usr/local/bin
+-MANDIR = /usr/local/man/cat1
+-
+ LOCAL_LIBRARIES = $(XLIB)
+ 
+ SRCS = xbattbar.c

@@ -1,0 +1,10 @@
+Xbattbar shows the current (laptop) battery status in the X window
+environment. The battery indicator of this program is very simple: a simple
+bar in the bottom of your display. With its color, it indicates the
+AC-line status (plugged in or off-line), and buttery
+charging/remaining level.
+
+WWW: http://infonet.aist-nara.ac.jp/member/suguru/xbattbar.html
+
+---
+sumikawa@FreeBSD.org
