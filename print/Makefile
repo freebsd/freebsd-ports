@@ -45,6 +45,7 @@
     SUBDIR += cups-lpr
     SUBDIR += cups-pdf
     SUBDIR += cups-pstoraster
+    SUBDIR += cups-samba
     SUBDIR += detex
     SUBDIR += dvi2tty
     SUBDIR += dvi2xx
