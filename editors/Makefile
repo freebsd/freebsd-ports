@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.78 1999/05/29 14:38:49 kuriyama Exp $
+# $Id: Makefile,v 1.79 1999/06/06 17:56:51 steve Exp $
 #
 
     SUBDIR += AbiWord
@@ -73,7 +73,9 @@
     SUBDIR += xemacs
     SUBDIR += xemacs-mule
     SUBDIR += xemacs-mule-common
+    SUBDIR += xemacs-packages
     SUBDIR += xemacs20
+    SUBDIR += xemacs21
     SUBDIR += xvile
     SUBDIR += yudit
 
