@@ -17,7 +17,8 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ring.nacsis.ac.jp/pub/graphics/freetype/ \
 		ftp://ring.so-net.ne.jp/pub/graphics/freetype/ \
 		ftp://ftp.freetype.org/pub/freetype1/
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITE_SUBDIR=	${PORTNAME:S/2//}
+DISTNAME=	${PORTNAME:S/2//}-${PORTVERSION}
 
 MAINTAINER=	jseger@FreeBSD.org
 
