@@ -2,6 +2,7 @@
 #
 
     SUBDIR += AbiWord
+    SUBDIR += aee
     SUBDIR += apel-emacs
     SUBDIR += apel-emacs20
     SUBDIR += apel-mule
