@@ -6,6 +6,7 @@
 # $FreeBSD$
 #
 
+PKGNAMEPREFIX?=	de-
 PORTREVISION=	0
 CATEGORIES=	german www linux
 
