@@ -1,0 +1,11 @@
+--- main.mk.orig	Mon Jun  7 23:37:43 1999
++++ main.mk	Mon Jun  7 23:38:19 1999
+@@ -17,7 +17,7 @@
+  -DBACKSTOP_MAILID='"$(BACKSTOP_MAILID)"'	\
+  -DLOG_MATCH_LIMIT=$(LOG_MATCH_LIMIT) -DUMASK=$(UMASK)
+ 
+-CFLAGS  =       $(P_CFLAGS) $(P_NO_FLAGS) $(P_USE_FLAGS) $(P_INCLUDES) \
++CFLAGS  +=      $(P_CFLAGS) $(P_NO_FLAGS) $(P_USE_FLAGS) $(P_INCLUDES) \
+ 	$(DEFS) -DMAIL_COMMAND='"$(MAIL_COMMAND)"'
+ 
+ LDFLAGS =       $(P_LDFLAGS) $(P_LIBS)
