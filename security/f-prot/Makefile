@@ -9,7 +9,7 @@ PORTNAME=	prot
 PORTVERSION=	4.2.0
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.f-prot.com/pub/bsd/
-PKGNAMEPREFIX=	f
+PKGNAMEPREFIX=	f-
 DISTNAME=	fp-freebsd-ws-${PORTVERSION}
 
 MAINTAINER=	tim@bishnet.net
