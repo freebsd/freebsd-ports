@@ -13,7 +13,6 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ian@broken.net
 
-USE_GMAKE=	yes
 ALL_TARGET=	# yes, an empty target.
 
 # You need to delete the old distfile if you are upgrading, as the tar ball
@@ -23,16 +22,27 @@ ALL_TARGET=	# yes, an empty target.
 
 MAN1=		junkbuster.1
 
-# We have to do the install ourselves...
+JDIR=		${PREFIX}/etc/junkbuster
+
+post-patch:
+	@${PERL} -pi -e 's:\r::' ${WRKSRC}/*
+
 do-install:
-	${INSTALL_PROGRAM} ${WRKDIR}/$(DISTNAME)/junkbuster ${PREFIX}/bin/junkbuster
+	${INSTALL_PROGRAM} ${WRKSRC}/junkbuster ${PREFIX}/bin/junkbuster
 	${MKDIR} -m 755 ${PREFIX}/etc/junkbuster
-	${INSTALL_DATA} ${WRKDIR}/$(DISTNAME)/junkbstr.ini ${PREFIX}/etc/junkbuster/configfile.sample
-	${INSTALL_DATA} ${WRKDIR}/$(DISTNAME)/sblock.ini ${PREFIX}/etc/junkbuster/blockfile.sample
-	${INSTALL_DATA} ${WRKDIR}/$(DISTNAME)/saclfile.ini ${PREFIX}/etc/junkbuster/aclfile.sample
-	${INSTALL_DATA} ${WRKDIR}/$(DISTNAME)/scookie.ini ${PREFIX}/etc/junkbuster/cookiefile.sample
-	${INSTALL_DATA} ${WRKDIR}/$(DISTNAME)/sforward.ini ${PREFIX}/etc/junkbuster/forwardfile.sample
-	${INSTALL_DATA} ${WRKDIR}/$(DISTNAME)/strust.ini ${PREFIX}/etc/junkbuster/trustfile.sample
-	$(INSTALL_MAN) $(WRKDIR)/$(DISTNAME)/junkbuster.1 $(PREFIX)/man/man1/
+	${INSTALL_DATA} ${WRKSRC}/junkbstr.ini ${PREFIX}/etc/junkbuster/configfile.sample
+	${INSTALL_DATA} ${WRKSRC}/sblock.ini ${PREFIX}/etc/junkbuster/blockfile.sample
+	${INSTALL_DATA} ${WRKSRC}/saclfile.ini ${PREFIX}/etc/junkbuster/aclfile.sample
+	${INSTALL_DATA} ${WRKSRC}/scookie.ini ${PREFIX}/etc/junkbuster/cookiefile.sample
+	${INSTALL_DATA} ${WRKSRC}/sforward.ini ${PREFIX}/etc/junkbuster/forwardfile.sample
+	${INSTALL_DATA} ${WRKSRC}/strust.ini ${PREFIX}/etc/junkbuster/trustfile.sample
+	$(INSTALL_MAN) ${WRKSRC}/junkbuster.1 $(PREFIX)/man/man1/
+# Create the startup script.  JB will run as user nobody.
+	@${SED} -e 's%JDIR%${JDIR}%g' -e 's%PREFIX%${PREFIX}%g' \
+	    < ${FILESDIR}/junkbuster.sh.in > ${PREFIX}/etc/rc.d/junkbuster.sh
+	${CHMOD} 755 ${PREFIX}/etc/rc.d/junkbuster.sh
+
+post-install:
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
