@@ -147,6 +147,7 @@
     SUBDIR += wmmixer
     SUBDIR += wmmp3
     SUBDIR += wmtune
+    SUBDIR += wmusic
     SUBDIR += workman
     SUBDIR += wsoundprefs
     SUBDIR += wsoundserver

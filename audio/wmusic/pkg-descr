@@ -1,0 +1,6 @@
+This WindowMaker-dockable program is a simple remote control for xmms. It
+can be configured to start and hide xmms on its startup, completely replacing
+the interface for xmms if desired.
+
+Eric Melville
+eric@osd.bsdi.com
