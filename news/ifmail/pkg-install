@@ -92,9 +92,9 @@ EOF
 #
 # The package system untar's the file first, potentially before the
 # ifmail user is created.  This means that the files in
-# ${PREFIX}/libexec/ifmail will be setuid root, not setuid ifmail.
+# ${PKG_PREFIX}/libexec/ifmail will be setuid root, not setuid ifmail.
 # We have to fix this up.
 POST-INSTALL)
-    chown ifmail ${PREFIX}/libexec/ifmail/*
+    chown ifmail ${PKG_PREFIX}/libexec/ifmail/*
     ;;
 esac
