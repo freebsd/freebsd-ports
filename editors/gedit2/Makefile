@@ -7,18 +7,23 @@
 
 PORTNAME=	gedit
 PORTVERSION=	0.9.7
+PORTREVISION=	1
 CATEGORIES=	editors gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/gedit
 
 MAINTAINER=	gnome@FreeBSD.org
 
+BUILD_DEPENDS=	msgfmt-old:${PORTSDIR}/devel/gettext-old
+
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+		LIBS="-L${LOCALBASE}/lib" \
+		MSGFMT="${LOCALBASE}/bin/msgfmt-old" \
+		XGETTEXT="${LOCALBASE}/bin/xgettext-old"
 
 MAN1=		gedit.1
 
