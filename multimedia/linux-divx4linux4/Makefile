@@ -20,9 +20,12 @@ ONLY_FOR_ARCHS=	i386
 USE_LINUX_PREFIX=	yes
 WRKSRC=	${WRKDIR}/${DISTNAME:C/_.+$//}
 NO_BUILD=	yes
+NO_LATEST_LINK=	yes
 PLIST_SUB=	PKGNAME="${PKGNAME}"
 
 RELEASE_DATE=	20011010_4.02
+
+PKGDEINSTALL=	${PKGINSTALL}
 
 post-patch:
 .for ext in h linux txt
@@ -37,10 +40,14 @@ do-install:
 .endfor
 .endif
 # Header file installation
-	@${MKDIR} ${PREFIX}/usr/include/divx
-	@${INSTALL_DATA} ${WRKSRC}/*.h ${PREFIX}/usr/include/divx
-# Library installation
-	@${INSTALL_DATA} ${WRKSRC}/*.so ${PREFIX}/usr/lib
+	@${MKDIR} ${PREFIX}/usr/include/divx4
+	@${INSTALL_DATA} ${WRKSRC}/*.h ${PREFIX}/usr/include/divx4
+	@${MKDIR} ${PREFIX}/usr/lib/divx4
+	@${INSTALL_DATA} ${WRKSRC}/*.so ${PREFIX}/usr/lib/divx4
 	@${LINUXBASE}/sbin/ldconfig
+
+post-install:
+	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} \
+		${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>
