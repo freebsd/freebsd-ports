@@ -1,4 +1,6 @@
 share/gnome/apps/Internet/lostirc.desktop
+share/applnk/lostirc.desktop
+share/locale/da/LC_MESSAGES/lostirc.mo
 bin/lostirc
 %%PORTDOCS%%share/doc/lostirc/AUTHORS
 %%PORTDOCS%%share/doc/lostirc/COPYING
