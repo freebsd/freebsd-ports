@@ -1,0 +1,8 @@
+%%SITE_PERL%%/Imager/Graph.pm
+%%SITE_PERL%%/Imager/Graph/Pie.pm
+%%SITE_PERL%%/Imager/Graph/Util.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/Graph/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/Graph
+@unexec rmdir %D/%%SITE_PERL%%/Imager/Graph 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Imager 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager 2>/dev/null ||true
