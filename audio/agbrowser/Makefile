@@ -7,6 +7,7 @@
 
 PORTNAME=	agbrowser
 PORTVERSION=	0.96
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.geocities.com/uallloveme/OSS/AGBrowser/
 

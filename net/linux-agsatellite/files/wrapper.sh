@@ -3,11 +3,6 @@
 PREFIX="%%PREFIX%%"
 PROGRAM="${0}"
 
-if [ ${#} -gt 1 ]
-then
-	shift
-fi
-
 if [ ! -d ${HOME}/.agsatellite ]
 then
 	mkdir -p ${HOME}/.agsatellite

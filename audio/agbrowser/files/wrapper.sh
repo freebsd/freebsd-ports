@@ -5,11 +5,6 @@ LOCALBASE="%%LOCALBASE%%"
 PROGRAM="${0}"
 SATELLITE=AGSatellite
 
-if [ ${#} -gt 1 ]
-then
-	shift
-fi
-
 if [ ! -d ${HOME}/.agsatellite ] || [ ! -h ${HOME}/.agsatellite/${SATELLITE} ]
 then
 	${LOCALBASE}/bin/${SATELLITE} -createdironly
