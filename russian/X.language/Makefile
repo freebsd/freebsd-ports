@@ -3,7 +3,7 @@
 # Date created:         31 Aug 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.14 1997/12/24 15:46:40 ache Exp $
+# $Id: Makefile,v 1.15 1997/12/25 22:08:25 asami Exp $
 #
 
 DISTNAME=       x6rus-2.2.0-bin
@@ -15,8 +15,6 @@ EXTRACT_SUFX=   .tgz
 MAINTAINER=	ache@FreeBSD.ORG
 
 RUN_DEPENDS=	${X11BASE}/bin/xinit:${PORTSDIR}/x11/XFree86
-
-BROKEN=		package
 
 WRKSRC=         ${WRKDIR}/cyrillic
 NO_CONFIGURE=   YES
