@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	wmx
-PORTVERSION=	5.6
+PORTVERSION=	6.p1
 CATEGORIES=	x11-wm
-MASTER_SITES=	ftp://ftp.42.org/pub/wmx/ \
-		http://www.all-day-breakfast.com/wmx/
-DISTNAME=	${PORTNAME}-5sec6
+MASTER_SITES=	http://www.all-day-breakfast.com/wmx/
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/.p/pl/}
 
 MAINTAINER=	sec@42.org
 COMMENT=	Extended version of wm2 - A simple window manager for X
