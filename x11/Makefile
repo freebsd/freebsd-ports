@@ -84,6 +84,7 @@
     SUBDIR += wmmatrix
     SUBDIR += wmmenu
     SUBDIR += wrapper
+    SUBDIR += wscan
     SUBDIR += wterm
     SUBDIR += x3270
     SUBDIR += xalf
