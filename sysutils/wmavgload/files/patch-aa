@@ -1,0 +1,19 @@
+*** get_load.c.orig	Wed Nov 11 16:07:42 1998
+--- get_load.c	Wed Nov 11 16:07:54 1998
+***************
+*** 104,110 ****
+  }
+  #endif
+  
+! #if defined(__FreeBSD) || defined(__NetBSD__) || defined(__OpenBSD__)
+  void GetLoad(float *small, float *medium, float *large)
+  {
+     static double loadavg[3];
+--- 104,110 ----
+  }
+  #endif
+  
+! #if defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__)
+  void GetLoad(float *small, float *medium, float *large)
+  {
+     static double loadavg[3];
