@@ -15,12 +15,14 @@ MAINTAINER=	jim@FreeBSD.org
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 WANT_GNOME=	yes
 
 .include <bsd.port.pre.mk>
 
 .if ${HAVE_GNOME:Mgnomelibs}!=""
-USE_GNOME=	gtk12
+USE_GNOME+=	gnomelibs
+PKGNAMESUFFIX=	-gnome
 CONFIGURE_ARGS+= --enable-gnome
 .endif
 
