@@ -2,7 +2,7 @@ bin/scim
 bin/scim-config-agent
 %%NOSTABLE%%bin/scim-make-table
 bin/scim-setup
-@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/scim.schemas >/dev/null || /usr/bin/true
+@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/scim.schemas >/dev/null 2>&1 || /usr/bin/true
 etc/gconf/schemas/scim.schemas
 etc/scim/config
 etc/scim/global
@@ -63,26 +63,28 @@ libdata/pkgconfig/scim-gtkutils.pc
 libdata/pkgconfig/scim.pc
 share/applications/scim-setup.desktop
 share/control-center-2.0/capplets/scim-setup.desktop
+share/locale/de/LC_MESSAGES/scim.mo
+share/locale/ja/LC_MESSAGES/scim.mo
+share/locale/ko/LC_MESSAGES/scim.mo
 share/locale/zh_CN/LC_MESSAGES/scim.mo
 share/locale/zh_TW/LC_MESSAGES/scim.mo
-share/locale/ja/LC_MESSAGES/scim.mo
 share/pixmaps/scim-setup.png
-share/scim/icons/down.png
-share/scim/icons/full-letter.png
-share/scim/icons/full-punct.png
-share/scim/icons/half-letter.png
-share/scim/icons/half-punct.png
-share/scim/icons/help.png
-share/scim/icons/keyboard.png
-share/scim/icons/left.png
-share/scim/icons/pin-down.png
-share/scim/icons/pin-up.png
-share/scim/icons/rawcode.png
-share/scim/icons/right.png
-share/scim/icons/setup.png
-share/scim/icons/table.png
-share/scim/icons/trademark.png
-share/scim/icons/up.png
+%%DATADIR%%/icons/down.png
+%%DATADIR%%/icons/full-letter.png
+%%DATADIR%%/icons/full-punct.png
+%%DATADIR%%/icons/half-letter.png
+%%DATADIR%%/icons/half-punct.png
+%%DATADIR%%/icons/help.png
+%%DATADIR%%/icons/keyboard.png
+%%DATADIR%%/icons/left.png
+%%DATADIR%%/icons/pin-down.png
+%%DATADIR%%/icons/pin-up.png
+%%DATADIR%%/icons/rawcode.png
+%%DATADIR%%/icons/right.png
+%%DATADIR%%/icons/setup.png
+%%DATADIR%%/icons/table.png
+%%DATADIR%%/icons/trademark.png
+%%DATADIR%%/icons/up.png
 @dirrm etc/scim
 @dirrm include/scim-1.0/gtk
 @dirrm include/scim-1.0
@@ -95,7 +97,7 @@ share/scim/icons/up.png
 @dirrm lib/scim-1.0
 @dirrm share/control-center-2.0/capplets
 @dirrm share/control-center-2.0
-@dirrm share/pixmaps
-@dirrm share/scim/icons
-@dirrm share/scim
-@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/scim.schemas >/dev/null || /usr/bin/true
+@unexec rmdir %D/share/pixmaps 2>/dev/null || true
+@dirrm %%DATADIR%%/icons
+@dirrm %%DATADIR%%
+@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/scim.schemas >/dev/null 2>&1 || /usr/bin/true

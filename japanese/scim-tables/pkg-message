@@ -1,10 +1,10 @@
 --------------------------------------------------------------------
-Remember to set environment varible XMODIFIERS:
+Remember to set environment variable XMODIFIERS:
 
   csh/tcsh: setenv XMODIFIERS @im=SCIM
   sh/bash:  export XMODIFIERS='@im=SCIM'
 
-and set LANG, LC_CTYPE to a proper Japanese locale or use scim-setup 
+and set LANG, LC_CTYPE to a proper Japanese locale or use scim-setup
 utility to configure the supported locale.
 
 To start the SCIM input method daemon, use command:

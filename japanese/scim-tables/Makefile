@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	scim-tables
-PORTVERSION=	0.4.1
+PORTVERSION=	0.4.3
 CATEGORIES=	japanese
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://freedesktop.org/~suzhe/sources/
@@ -31,7 +31,7 @@ BROKEN=		scim-make-table is not available for 4.x
 post-install:
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO}
-	@${ECHO} To display this message again, type \`make post-install\'
+	@${ECHO} To display this message again, type \`pkg_info -D ${PKGNAME}\'
 	@${ECHO}
 
 .include <bsd.port.post.mk>
