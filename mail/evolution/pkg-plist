@@ -198,6 +198,7 @@ include/evolution/e-util/e-request.h
 include/evolution/e-util/e-sexp.h
 include/evolution/e-util/e-time-utils.h
 include/evolution/e-util/e-url.h
+include/evolution/e-util/e-xml-hash-utils.h
 include/evolution/e-util/md5-utils.h
 include/evolution/ebook/addressbook.h
 include/evolution/ebook/e-book-listener.h
