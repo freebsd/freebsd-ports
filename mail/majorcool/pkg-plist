@@ -2,7 +2,6 @@ majordomo/majorcool.pl
 majordomo/majorcool_default.cf
 www/cgi-bin/majordomo
 www/data/majorcool.html
-www/data/majorcool.info
 www/icons/mc_action_button.gif
 www/icons/mc_apply_button.gif
 www/icons/mc_browse_active.gif
@@ -18,6 +17,7 @@ www/icons/mc_create_button.gif
 www/icons/mc_create_hot.gif
 www/icons/mc_delete_active.gif
 www/icons/mc_delete_banner.gif
+www/icons/mc_lock.gif
 www/icons/mc_delete_button.gif
 www/icons/mc_delete_hot.gif
 www/icons/mc_help_active.gif
@@ -26,7 +26,6 @@ www/icons/mc_help_button.gif
 www/icons/mc_help_hot.gif
 www/icons/mc_home_button.gif
 www/icons/mc_home_hot.gif
-www/icons/mc_lock.gif
 www/icons/mc_mail_button.gif
 www/icons/mc_mail_hot.gif
 www/icons/mc_modify_active.gif
@@ -38,5 +37,15 @@ www/icons/mc_prefs_active.gif
 www/icons/mc_prefs_banner.gif
 www/icons/mc_prefs_button.gif
 www/icons/mc_prefs_hot.gif
+www/icons/mc_scrncap_approval.gif
+www/icons/mc_scrncap_backdoor.gif
+www/icons/mc_scrncap_browse.gif
+www/icons/mc_scrncap_confkey.gif
+www/icons/mc_scrncap_keywords.gif
+www/icons/mc_scrncap_menu.gif
+www/icons/mc_scrncap_modify.gif
+www/icons/mc_scrncap_prefs.gif
+www/icons/mc_scrncap_sub.gif
+www/icons/mc_scrncap_toggle.gif
 www/icons/mc_send_button.gif
 www/icons/mc_wait.gif
