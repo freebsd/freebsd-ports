@@ -75,6 +75,7 @@
     SUBDIR += nail
     SUBDIR += newmail
     SUBDIR += nmh
+    SUBDIR += p5-Email-Valid
     SUBDIR += p5-IMAP-Admin
     SUBDIR += p5-MIME-Lite
     SUBDIR += p5-MIME-Tools
