@@ -1,4 +1,5 @@
 libexec/apache/mod_uid.so
 %%PORTDOCS%%%%DOCSDIR%%/README.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @exec %D/sbin/apxs -e -A -n uid %D/%F
 @unexec %D/sbin/apxs -e -A -n uid %D/%F
