@@ -2,6 +2,8 @@ bin/imaze
 bin/ninja
 bin/genlab
 bin/imazesrv
+bin/imazestat
+bin/xlabed
 share/imaze/labs/10x10.lab
 share/imaze/labs/12x12.lab
 share/imaze/labs/15x15.lab
@@ -13,8 +15,8 @@ share/imaze/labs/doors.lab
 share/imaze/labs/longest.lab
 share/imaze/labs/no1.lab
 share/imaze/labs/november.lab
-share/imaze/labs/october.lab
 share/imaze/sounds/awake.au
+share/imaze/sounds/bounce.au
 share/imaze/sounds/dead.au
 share/imaze/sounds/kill.au
 share/imaze/sounds/miss.au
@@ -22,8 +24,6 @@ share/imaze/sounds/pause.au
 share/imaze/sounds/shoot.au
 share/imaze/sounds/title.au
 share/imaze/README
-share/imaze/Xdefaults.Motif.example
-share/imaze/Xdefaults.OpenWindows.example
 @dirrm share/imaze/sounds
 @dirrm share/imaze/labs
 @dirrm share/imaze
