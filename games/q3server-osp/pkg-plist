@@ -43,6 +43,7 @@
 %%PORTDOCS%%%%Q3DIR%%Docs/osp-q3-ClientReadme.txt
 %%PORTDOCS%%%%Q3DIR%%Docs/osp-q3-Commands.txt
 %%PORTDOCS%%%%Q3DIR%%Docs/osp-q3-DecalEditing.txt
+%%PORTDOCS%%%%Q3DIR%%Docs/osp-q3-FreezeTag.txt
 %%PORTDOCS%%%%Q3DIR%%Docs/osp-q3-History.txt
 %%PORTDOCS%%%%Q3DIR%%Docs/osp-q3-Logging.txt
 %%PORTDOCS%%%%Q3DIR%%Docs/osp-q3-MapConfigInfo.txt
@@ -77,6 +78,8 @@
 %%Q3DIR%%description.txt
 %%Q3DIR%%ffa.cfg
 %%Q3DIR%%filters.txt
+%%Q3DIR%%freezetag-vanilla.cfg
+%%Q3DIR%%freezetag.cfg
 %%Q3DIR%%instagib.cfg
 %%Q3DIR%%locs/pro-q3dm6.cfg
 %%Q3DIR%%locs/q3dm6.cfg
@@ -255,12 +258,15 @@
 %%Q3DIR%%voodoo/server/voodoostats42-linux.zip
 %%Q3DIR%%voodoo/server/voodoostats42-win32.zip
 %%Q3DIR%%voodoo/voodoostats.bat
+%%Q3DIR%%voodoo/voodoostats41-c.bat
+%%Q3DIR%%voodoo/voodoostats41-c.exe
 %%Q3DIR%%voodoo/voodoostats42-c.exe
 %%Q3DIR%%voodoo/vs-preparse.exe
 %%Q3DIR%%zz-osp-pak0.pk3
 %%Q3DIR%%zz-osp-pak1.pk3
-%%Q3DIR%%zz-osp-server0.pk3
-%%Q3DIR%%zz-osp-server1.pk3
+%%Q3DIR%%zz-osp-pak2.pk3
+%%Q3DIR%%zz-osp-pak3.pk3
+%%Q3DIR%%zz-osp-server3a.pk3
 @dirrm %%Q3DIR%%voodoo/server
 @dirrm %%Q3DIR%%voodoo/log-backup
 @dirrm %%Q3DIR%%voodoo/html/images/maps
