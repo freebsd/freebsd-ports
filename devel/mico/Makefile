@@ -15,6 +15,8 @@ MAINTAINER=	scrappy@freebsd.org
 LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
 		tcl82.1:${PORTSDIR}/lang/tcl82
 
+MICOVER=	`${ECHO} ${DISTNAME} | ${SED} 's/mico-//'`
+
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 
 USE_NEWGCC=	yes
