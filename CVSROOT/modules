@@ -6252,6 +6252,12 @@ nocatauth-server	ports/net/nocatauth-server
 nocatsplash	ports/net/nocatsplash
 nocc		ports/mail/nocc
 nocol		ports/net-mgmt/nocol
+noegnud-addons	ports/games/noegnud-addons
+noegnud-data	ports/games/noegnud-data
+noegnud-littlehack	ports/games/noegnud-littlehack
+noegnud-nethack	ports/games/noegnud-nethack
+noegnud-nethack-deet	ports/games/noegnud-nethack-deet
+noegnud-slashem	ports/games/noegnud-slashem
 noffle		ports/news/noffle
 nofgpg		ports/security/nofgpg
 nogger		ports/audio/nogger
