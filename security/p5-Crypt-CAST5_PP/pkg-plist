@@ -1,13 +1,13 @@
-lib/perl5/site_perl/%%PERL_VER%%/Crypt/CAST5_PP.pm
-lib/perl5/site_perl/%%PERL_VER%%/Crypt/CAST5_PP/Tables.pm
-lib/perl5/site_perl/%%PERL_VER%%/auto/Crypt/CAST5_PP/autosplit.ix
-lib/perl5/site_perl/%%PERL_VER%%/auto/Crypt/CAST5_PP/decrypt.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/Crypt/CAST5_PP/encrypt.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/Crypt/CAST5_PP/init.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/CAST5_PP/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Crypt/CAST5_PP
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Crypt 2>/dev/null || true
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/Crypt/CAST5_PP
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/auto/Crypt 2>/dev/null || true
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/CAST5_PP
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt 2>/dev/null || true
+%%SITE_PERL%%/Crypt/CAST5_PP.pm
+%%SITE_PERL%%/Crypt/CAST5_PP/Tables.pm
+%%SITE_PERL%%/auto/Crypt/CAST5_PP/autosplit.ix
+%%SITE_PERL%%/auto/Crypt/CAST5_PP/decrypt.al
+%%SITE_PERL%%/auto/Crypt/CAST5_PP/encrypt.al
+%%SITE_PERL%%/auto/Crypt/CAST5_PP/init.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/CAST5_PP/.packlist
+@dirrm %%SITE_PERL%%/Crypt/CAST5_PP
+@unexec rmdir %D/%%SITE_PERL%%/Crypt 2>/dev/null || true
+@dirrm %%SITE_PERL%%/auto/Crypt/CAST5_PP
+@unexec rmdir %D/%%SITE_PERL%%/auto/Crypt 2>/dev/null || true
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/CAST5_PP
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt 2>/dev/null || true

@@ -10,7 +10,7 @@ PORTVERSION=	0.3
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.oasis-open.org/docbook/${PORTNAME}/${PORTVERSION}/
 
-MAINTAINER=	fuyuki@hadaly.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XML character entities
 
 USE_ZIP=	yes

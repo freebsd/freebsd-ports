@@ -11,7 +11,7 @@ CATEGORIES=	net multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	fuyuki@hadaly.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A lightweight media streaming server
 
 LIB_DEPENDS=	vorbis.2:${PORTSDIR}/audio/libvorbis

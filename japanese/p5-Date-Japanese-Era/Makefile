@@ -11,7 +11,7 @@ CATEGORIES=	japanese perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Date
 
-MAINTAINER=	fuyuki@hadaly.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Conversion between Japanese Era / Gregorian calendar
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Date/Calc.pm:${PORTSDIR}/devel/p5-Date-Calc
@@ -23,7 +23,6 @@ MAN3=		Date::Japanese::Era.3 \
 		Date::Japanese::Era.ja.3 \
 		Date::Japanese::Era::Table.3 \
 		Date::Japanese::Era::Table::JIS_X0301.3
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.pre.mk>
 

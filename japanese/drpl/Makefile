@@ -10,7 +10,7 @@ PORTVERSION=	1.04
 CATEGORIES=	japanese textproc
 MASTER_SITES=	http://www.yk.rim.or.jp/~tomoto/archives/drpl/
 
-MAINTAINER=	fuyuki@hadaly.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Replaces words in a Japanese text using dictionaries
 
 USE_PERL5=	yes
