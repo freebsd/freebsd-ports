@@ -1,0 +1,16 @@
+--- modules/FvwmForm/FvwmForm.c.orig	Sat Feb  1 14:02:05 1997
++++ modules/FvwmForm/FvwmForm.c	Sat Feb  1 14:03:13 1997
+@@ -16,7 +16,13 @@
+ #include <X11/cursorfont.h>
+ #define XK_MISCELLANY
+ #include <X11/keysymdef.h>
++
++#ifdef __FreeBSD__
++#include <stdlib.h>
++#else
+ #include <malloc.h>
++#endif
++
+ #include <string.h>
+ #include <sys/types.h>
+ #include <sys/time.h>

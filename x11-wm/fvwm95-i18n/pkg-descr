@@ -1,18 +1,18 @@
-This is fvwm-2.0.41 (with the pixmap cache patch) hacked for a look and
-feel similar to Windows-95. 
+Fvwm95 is a hack based on fvwm2.x. It tries to emulate the good
+features of a well known product without bloating the regular 
+fvwm code. The main aspects are: 
 
-It's also included a hacked version of the Win95WinList module from
-David Barth (original from Mike Finger), whichs looks very close
-to the Windows-95 task bar. There is a clock and incoming mail
-indicator on it, it can also swallow other modules. The module is
-named FvwmTaskBar, for more information read the README file in
-the modules/FvwmTaskBar directory. 
+A familiar look and feel. It can be interesting for users moving
+from the MS-World to Unix, or for those who have to switch 
+regularly between the two.
 
-For more informations see also:
+Or for those that simply would like to have the same MS look and feel 
+in Unix, or for those that just want to have another window manager...
 
-	http://ltiwww.epfl.ch/~barth
-	http://ltiwww.epfl.ch/~barth/fvwm95.html
+But before all, it's meant to be useful, simple and efficient:
+	o same flexible and easy configuration as the native fvwm
+	o functionality extensible via loadable modules;
+	o a taskbar: find quickly an application window and don't 
+	  take space with icon windows; 
 
-Have fun
-
-	Andreas Klemm ///
+Home Page: http://www.terraware.net/ftp/pub/Mirrors/FVWM95/fvwm95.html
