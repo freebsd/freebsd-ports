@@ -15,7 +15,8 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
 
-RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/pdflib_pl.pm:${PORTSDIR}/print/pdflib
+BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/pdflib_pl.pm:${PORTSDIR}/print/pdflib
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_PERL5=	yes
 PERL_CONFIGURE=	yes
