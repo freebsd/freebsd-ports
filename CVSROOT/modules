@@ -6637,6 +6637,7 @@ starlanes	ports/games/starlanes
 starlogo	ports/lang/starlogo
 staroffice5	ports/editors/staroffice5
 staroffice52	ports/editors/staroffice52
+staroffice52-pt	ports/editors/staroffice52-pt
 staroffice60	ports/editors/staroffice60
 starplot	ports/astro/starplot
 stars		ports/astro/stars
