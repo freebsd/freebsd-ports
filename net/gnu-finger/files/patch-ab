@@ -1,0 +1,14 @@
+--- lib/os.c.org	Sat Jul  6 14:18:18 1996
++++ lib/os.c	Sat Aug 26 23:38:18 1995
+@@ -70,7 +70,11 @@
+ 
+ /* Where the utmp file is located. */
+ #ifndef HAVE_GETUTENT
++#ifdef __FreeBSD__
++#define UTMP_FILE "/var/run/utmp"
++#else
+ #define UTMP_FILE "/etc/utmp"
++#endif
+ #endif
+ 
+ /* A non-null value is the address of the utmp entry which contains the

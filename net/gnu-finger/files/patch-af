@@ -1,0 +1,11 @@
+--- config.h.org	Mon Jul  8 19:10:59 1996
++++ config.h	Mon Jul  8 19:11:16 1996
+@@ -133,7 +133,7 @@
+ 
+ #define FingerDir /usr/local/etc/fingerdir
+ #define BinDir /usr/local/bin
+-#define EtcDir /usr/local/etc
++#define EtcDir /usr/local/libexec
+ #define MugShotPath "/usr/local/lib/mugshots:/usr/local/mugshots"
+ 
+ /* Define USE_DATABASE if you want to keep information about users in

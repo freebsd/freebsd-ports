@@ -1,0 +1,31 @@
+                            * GNU finger for FreeBSD *
+
+* CAUTION *
+  This ports collection is install some daemon programs, 
+  to /usr/local/libexec, *NOT* to /usr/local/etc.
+
+* how to quick install: *
+
+1) Pleae rewrite collectory serverhost,clients,mailhost for your site.
+   Sample file is in /usr/local/etc/fingerdir.
+
+2) Add below lines to /etc/inetd.conf 
+
+cfingerd	stream	tcp	nowait	nobody	/usr/local/libexec/in.cfingerd	in.cfingerd
+finger		stream	tcp	nowait	nobody	/usr/local/libexec/in.fingerd	in.fingerd
+
+3) Comment out old finger line in /etc/inetd.conf
+
+#finger		stream	tcp	nowait	nobody	/usr/libexec/fingerd	fingerd -s
+
+4) Restart inetd
+
+	% kill -HUP `cat /var/run/inetd.pid`
+
+5) If this host is GNU finger server host,
+   move start.fingerd.sh.sample to start.fingerd.sh in /usr/local/etc/rc.d
+   directory.
+   And exec start_fingerd.sh.
+
+- Yoshiro MIHIRA
+(sanpei@yy.cs.keio.ac.jp)
