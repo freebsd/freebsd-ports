@@ -1,5 +1,4 @@
 bin/gpaint
-share/gnome/pixmaps/gpaint/Makefile.am
 share/gnome/pixmaps/gpaint/about_pict.xpm
 share/gnome/pixmaps/gpaint/arcOp.xpm
 share/gnome/pixmaps/gpaint/arrow.png
