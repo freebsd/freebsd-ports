@@ -22,7 +22,7 @@ RUN_DEPENDS=	${PYNUMERIC}
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack
+USE_GNOME=	gnomehack gnometarget
 USE_PYTHON=	yes
 USE_LIBTOOL=	yes
 
