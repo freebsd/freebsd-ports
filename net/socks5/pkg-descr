@@ -1,0 +1,11 @@
+This is NWSL (previously CSTC) version 5.0 of SOCKS, a package that allows Unix
+hosts behind a firewall to gain full access to the internet without requiring
+direct IP reachability.  It does require a SOCKS server program being run on a
+host that can communicate directly to hosts behind the firewall as well as hosts
+on the Internet at large.  It is based on the original SOCKS written by David
+Koblas <koblas@netcom.com> and the work of the AFT working group of the IETF.
+
+NOTE: The shared library features in socks5 require a dynamic linker that
+      understands the LD_PRELOAD environment variable (only recent FreeBSD
+      2.2-current distributions have this).  All other features will work
+      with FreeBSD 2.0 and later.
