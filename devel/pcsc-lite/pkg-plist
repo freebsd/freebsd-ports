@@ -2,12 +2,12 @@ bin/bundleTool
 bin/formaticc
 bin/installifd
 bin/pcsc_demo
-%%PORTDOCS%%share/doc/pcsc-lite/README.DAEMON
-%%PORTDOCS%%share/doc/pcsc-lite/pcsc-lite-0.8.7.pdf
-%%PORTDOCS%%share/doc/pcsc-lite/muscle-api-1.3.0.pdf
-share/examples/pcsc-lite/Makefile.am
-share/examples/pcsc-lite/Makefile.in
-share/examples/pcsc-lite/pcsc_demo.c
+%%PORTDOCS%%%%DOCSDIR%%/README.DAEMON
+%%PORTDOCS%%%%DOCSDIR%%/pcsc-lite-0.8.7.pdf
+%%PORTDOCS%%%%DOCSDIR%%/muscle-api-1.3.0.pdf
+%%EXAMPLESDIR%%/Makefile.am
+%%EXAMPLESDIR%%/Makefile.in
+%%EXAMPLESDIR%%/pcsc_demo.c
 etc/rc.d/pcscd.sh.sample
 etc/reader.conf.sample
 include/debuglog.h
@@ -22,12 +22,12 @@ lib/libpcsclite.so.0
 lib/libmusclecard.a
 lib/libmusclecard.so
 lib/libmusclecard.so.0
-lib/pkgconfig/libpcsclite.pc
-lib/pkgconfig/libmusclecard.pc
+libdata/pkgconfig/libpcsclite.pc
+libdata/pkgconfig/libmusclecard.pc
 sbin/pcscd
-%%PORTDOCS%%@dirrm share/doc/pcsc-lite
-@dirrm share/examples/pcsc-lite
-@dirrm lib/pkgconfig
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%EXAMPLESDIR%%
+@dirrm libdata/pkgconfig
 @dirrm pcsc/drivers
 @dirrm pcsc/services
 @dirrm pcsc
