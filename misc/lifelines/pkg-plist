@@ -23,11 +23,11 @@ bin/llines
 %%DATADIR%%/ll-userguide.pdf
 %%DATADIR%%/ll-userguide.sv.html
 %%DATADIR%%/ll-userguide.txt
-share/locale/da/LC_MESSAGES/lifelines.mo
-share/locale/de/LC_MESSAGES/lifelines.mo
-share/locale/el/LC_MESSAGES/lifelines.mo
-share/locale/fr/LC_MESSAGES/lifelines.mo
-share/locale/it/LC_MESSAGES/lifelines.mo
-share/locale/sv/LC_MESSAGES/lifelines.mo
-@dirrm %%PORTDOCS%%%%DOCSDIR%%
+%%NLS%%share/locale/da/LC_MESSAGES/lifelines.mo
+%%NLS%%share/locale/de/LC_MESSAGES/lifelines.mo
+%%NLS%%share/locale/el/LC_MESSAGES/lifelines.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/lifelines.mo
+%%NLS%%share/locale/it/LC_MESSAGES/lifelines.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/lifelines.mo
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%
