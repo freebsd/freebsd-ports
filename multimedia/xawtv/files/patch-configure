@@ -1,21 +1,22 @@
---- configure.orig	Wed Jul 24 19:13:38 2002
-+++ configure	Sat Jul 27 10:05:07 2002
-@@ -4460,18 +4460,12 @@
- echo "$as_me:4460: checking for X11 config directory" >&5
+--- configure.orig	Wed Oct 30 12:26:42 2002
++++ configure	Wed Oct 30 20:59:10 2002
+@@ -5749,9 +5749,6 @@
+ echo "$as_me:$LINENO: checking for X11 config directory" >&5
  echo $ECHO_N "checking for X11 config directory... $ECHO_C" >&6
  x11conf=/usr/X11R6/lib/X11
 -if test -d /etc/X11; then
 -	x11conf=/etc/X11
 -fi
- echo "$as_me:4466: result: $x11conf" >&5
+ echo "$as_me:$LINENO: result: $x11conf" >&5
  echo "${ECHO_T}$x11conf" >&6
  
- echo "$as_me:4469: checking for X11 app-defaults directory" >&5
+@@ -5759,9 +5756,6 @@
+ echo "$as_me:$LINENO: checking for X11 app-defaults directory" >&5
  echo $ECHO_N "checking for X11 app-defaults directory... $ECHO_C" >&6
  resdir=/usr/X11R6/lib/X11
 -if test -d /etc/X11/app-defaults; then
 -	resdir=/etc/X11
 -fi
- echo "$as_me:4475: result: $resdir/app-defaults" >&5
+ echo "$as_me:$LINENO: result: $resdir/app-defaults" >&5
  echo "${ECHO_T}$resdir/app-defaults" >&6
  
