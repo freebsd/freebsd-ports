@@ -4,7 +4,6 @@ bin/tdd
 bin/tde
 bin/tdr
 bin/todo
-etc/todorc
 share/examples/devtodo/scripts.sh
 share/examples/devtodo/scripts.tcsh
 share/examples/devtodo/todorc.example
