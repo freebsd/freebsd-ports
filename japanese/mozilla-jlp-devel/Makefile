@@ -18,7 +18,7 @@ MASTER_SITES=	http://www.ash.ne.jp/~mal/mozilla/ \
 		http://www.mozilla.gr.jp/jlp/
 MASTER_SITE_SUBDIR=	jlpmoz
 PKGNAMESUFFIX=	-jlp
-DISTNAME=	${PORTNAME}1.0-jajppack-1
+DISTNAME=	${PORTNAME}1.0-jajppack-2
 EXTRACT_SUFX=	.xpi
 
 MAINTAINER=	yatt@msc.biglobe.ne.jp
