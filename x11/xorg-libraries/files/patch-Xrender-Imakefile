@@ -1,0 +1,39 @@
+Index: lib/Xrender/Imakefile
+===================================================================
+RCS file: /cvs/xorg/xc/lib/Xrender/Imakefile,v
+retrieving revision 1.2
+diff -u -r1.2 Imakefile
+--- lib/Xrender/Imakefile	23 Apr 2004 18:43:50 -0000	1.2
++++ lib/Xrender/Imakefile	7 Jul 2004 19:01:02 -0000
+@@ -133,6 +133,16 @@
+ 
+ HEADERS = Xrender.h $(NONSTANDARD_HEADERS)
+ 
++SUBSTVARS=prefix="$(PROJECTROOT)" \
++          exec_prefix="$(BINDIR)" \
++          libdir="$(USRLIBDIR)" \
++          includedir="$(INCROOT)" \
++          VERSION="0.8.4" \
++          X_REQUIRES="" \
++          RENDER_CFLAGS="" \
++          X_NON_PKG_CFLAGS="" \
++          X_NON_PKG_LIBS="-lX11 -lXext"
++
+ #include <Library.tmpl>
+ 
+ DependTarget()
+@@ -142,3 +152,14 @@
+ distclean:: clean
+ 	RemoveFile(Makefile)
+ #endif
++
++all:: xrender.pc
++
++xrender.pc: xrender.pc.in
++	RemoveFile($@)
++	sh ../Xcursor/config-subst $(SUBSTVARS) < xrender.pc.in > $@
++
++InstallNonExecFile(xrender.pc,$(PROJECTROOT)/libdata/pkgconfig)
++
++clean::
++	RemoveFile(xrender.pc)
