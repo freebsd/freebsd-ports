@@ -1,34 +1,120 @@
 bin/realtimebattle
-include/RealTimeBattle/ArenaBase.h
-include/RealTimeBattle/ArenaController.h
-include/RealTimeBattle/ArenaRealTime.h
-include/RealTimeBattle/ArenaReplay.h
-include/RealTimeBattle/ArenaWindow.h
-include/RealTimeBattle/ControlWindow.h
-include/RealTimeBattle/Dialog.h
-include/RealTimeBattle/Extras.h
-include/RealTimeBattle/GeometricalObjects.h
-include/RealTimeBattle/Gui.h
-include/RealTimeBattle/IntlDefs.h
-include/RealTimeBattle/List.h
-include/RealTimeBattle/MessageWindow.h
 include/RealTimeBattle/Messagetypes.h
-include/RealTimeBattle/MovingObject.h
-include/RealTimeBattle/Options.h
-include/RealTimeBattle/OptionsWindow.h
-include/RealTimeBattle/Robot.h
-include/RealTimeBattle/ScoreWindow.h
-include/RealTimeBattle/Shape.h
-include/RealTimeBattle/Shot.h
-include/RealTimeBattle/StartTournamentWindow.h
-include/RealTimeBattle/StatisticsWindow.h
-include/RealTimeBattle/String.h
-include/RealTimeBattle/Structs.h
-include/RealTimeBattle/Timer.h
-include/RealTimeBattle/Various.h
-include/RealTimeBattle/Vector2D.h
-include/RealTimeBattle/Wall.h
-include/RealTimeBattle/fdstream.h
+lib/RealTimeBattle/Arenas/Circle.arena
+lib/RealTimeBattle/Arenas/Circles.arena
+lib/RealTimeBattle/Arenas/Cross.arena
+lib/RealTimeBattle/Arenas/Diamond.arena
+lib/RealTimeBattle/Arenas/Flower.arena
+lib/RealTimeBattle/Arenas/Forest.arena
+lib/RealTimeBattle/Arenas/Labyrinth.arena
+lib/RealTimeBattle/Arenas/Maze.arena
+lib/RealTimeBattle/Arenas/MrFriendly.arena
+lib/RealTimeBattle/Arenas/Nippon.arena
+lib/RealTimeBattle/Arenas/PPconquest.arena
+lib/RealTimeBattle/Arenas/Pool.arena
+lib/RealTimeBattle/Arenas/Propeller.arena
+lib/RealTimeBattle/Arenas/Rooms.arena
+lib/RealTimeBattle/Arenas/Square.arena
+lib/RealTimeBattle/Arenas/Star.arena
+lib/RealTimeBattle/Arenas/Triangle.arena
+lib/RealTimeBattle/Arenas/my_Star.arena
+lib/RealTimeBattle/Arenas/my_Star2.arena
+lib/RealTimeBattle/RealTimeBattle.xpm
+lib/RealTimeBattle/Robots/Brotfrucht-Robot1-TeamOne.robot
+lib/RealTimeBattle/Robots/Brotfrucht-Robot1-TeamTwo.robot
+lib/RealTimeBattle/Robots/Brotfrucht-Robot2-TeamOne.robot
+lib/RealTimeBattle/Robots/Brotfrucht-Robot2-TeamTwo.robot
+lib/RealTimeBattle/Robots/Brotfrucht-Robot3-TeamOne.robot
+lib/RealTimeBattle/Robots/Brotfrucht-Robot3-TeamTwo.robot
+lib/RealTimeBattle/Robots/Brotfrucht-Robot4-TeamOne.robot
+lib/RealTimeBattle/Robots/Brotfrucht-Robot4-TeamTwo.robot
+lib/RealTimeBattle/Robots/Brotfrucht-Robot5-TeamOne.robot
+lib/RealTimeBattle/Robots/Brotfrucht-Robot5-TeamTwo.robot
+lib/RealTimeBattle/Robots/empty/Makefile.am
+lib/RealTimeBattle/Robots/empty/empty.c
+lib/RealTimeBattle/Robots/empty-Robot1-TeamThree.robot
+lib/RealTimeBattle/Robots/empty-Robot2-TeamThree.robot
+lib/RealTimeBattle/Robots/empty-Robot3-TeamThree.robot
+lib/RealTimeBattle/Robots/empty-Robot4-TeamThree.robot
+lib/RealTimeBattle/Robots/empty-Robot5-TeamThree.robot
+lib/RealTimeBattle/Robots/empty.robot
+lib/RealTimeBattle/Robots/jBot/JBot.java
+lib/RealTimeBattle/Robots/jBot/JBotMain.java
+lib/RealTimeBattle/Robots/jBot/JBot_C.java
+lib/RealTimeBattle/Robots/jBot/JBot_T.java
+lib/RealTimeBattle/Robots/jBot/Makefile.am
+lib/RealTimeBattle/Robots/jBot/jBot.robot.in
+lib/RealTimeBattle/Robots/joypad_robot/Makefile.am
+lib/RealTimeBattle/Robots/joypad_robot/README
+lib/RealTimeBattle/Robots/joypad_robot/joypad_robot.c
+lib/RealTimeBattle/Robots/perl/Robot.pm
+lib/RealTimeBattle/Robots/perl/perl.robot.in
+lib/RealTimeBattle/Robots/perl-Skeleton/perl-Skeleton.robot.in
+lib/RealTimeBattle/Robots/perl-Skeleton.robot
+lib/RealTimeBattle/Robots/perl.robot
+lib/RealTimeBattle/Robots/rotate_and_fire/Makefile.am
+lib/RealTimeBattle/Robots/rotate_and_fire/rotate_and_fire.cc
+lib/RealTimeBattle/Robots/rotate_and_fire/rotate_and_fire.h
+lib/RealTimeBattle/Robots/rotate_and_fire/rotate_and_fire_blocking.cc
+lib/RealTimeBattle/Robots/rotate_and_fire/rotate_and_fire_select.cc
+lib/RealTimeBattle/Robots/rotate_and_fire/rotate_and_fire_signal.cc
+lib/RealTimeBattle/Robots/rotate_and_fire_blocking.robot
+lib/RealTimeBattle/Robots/rotate_and_fire_select.robot
+lib/RealTimeBattle/Robots/rotate_and_fire_signal.robot
+lib/RealTimeBattle/Robots/rtb-team-framework/Brotfrucht-Robot1-TeamOne.conf
+lib/RealTimeBattle/Robots/rtb-team-framework/Brotfrucht-Robot1-TeamTwo.conf
+lib/RealTimeBattle/Robots/rtb-team-framework/Brotfrucht-Robot2-TeamOne.conf
+lib/RealTimeBattle/Robots/rtb-team-framework/Brotfrucht-Robot2-TeamTwo.conf
+lib/RealTimeBattle/Robots/rtb-team-framework/Brotfrucht-Robot3-TeamOne.conf
+lib/RealTimeBattle/Robots/rtb-team-framework/Brotfrucht-Robot3-TeamTwo.conf
+lib/RealTimeBattle/Robots/rtb-team-framework/Brotfrucht-Robot4-TeamOne.conf
+lib/RealTimeBattle/Robots/rtb-team-framework/Brotfrucht-Robot4-TeamTwo.conf
+lib/RealTimeBattle/Robots/rtb-team-framework/Brotfrucht-Robot5-TeamOne.conf
+lib/RealTimeBattle/Robots/rtb-team-framework/Brotfrucht-Robot5-TeamTwo.conf
+lib/RealTimeBattle/Robots/rtb-team-framework/empty-Robot1-TeamThree.conf
+lib/RealTimeBattle/Robots/rtb-team-framework/empty-Robot2-TeamThree.conf
+lib/RealTimeBattle/Robots/rtb-team-framework/empty-Robot3-TeamThree.conf
+lib/RealTimeBattle/Robots/rtb-team-framework/empty-Robot4-TeamThree.conf
+lib/RealTimeBattle/Robots/rtb-team-framework/empty-Robot5-TeamThree.conf
+lib/RealTimeBattle/Robots/rtb-team-framework/rtb-team
+lib/RealTimeBattle/Robots/seek_and_destroy/Makefile.am
+lib/RealTimeBattle/Robots/seek_and_destroy/seek_and_destroy.cc
+lib/RealTimeBattle/Robots/seek_and_destroy.robot
+lib/RealTimeBattle/Robots/thomas2/Makefile.am
+lib/RealTimeBattle/Robots/thomas2/thomas2.cc
+lib/RealTimeBattle/Robots/thomas2.robot
+lib/RealTimeBattle/Robots/xt-bot/Makefile.am
+lib/RealTimeBattle/Robots/xt-bot/xt-bot-a.cpp
+lib/RealTimeBattle/Robots/xt-bot/xt-bot-b.cpp
+lib/RealTimeBattle/Robots/xt-bot-a.robot
+lib/RealTimeBattle/Robots/xt-bot-b.robot
+lib/RealTimeBattle/rtb_logo.jpg
+lib/RealTimeBattle/rtblogo1024.jpg
+lib/RealTimeBattle/rtblogo1600.jpg
+lib/RealTimeBattle/tournament.txt
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/EXTRAROBOTS.README
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/RTB-Team-Framework-Tutorial.tar.gz
+%%PORTDOCS%%%%DOCSDIR%%/RealTimeBattle-1.html
+%%PORTDOCS%%%%DOCSDIR%%/RealTimeBattle-2.html
+%%PORTDOCS%%%%DOCSDIR%%/RealTimeBattle-3.html
+%%PORTDOCS%%%%DOCSDIR%%/RealTimeBattle-4.html
+%%PORTDOCS%%%%DOCSDIR%%/RealTimeBattle-5.html
+%%PORTDOCS%%%%DOCSDIR%%/RealTimeBattle-6.html
+%%PORTDOCS%%%%DOCSDIR%%/RealTimeBattle.dvi
+%%PORTDOCS%%%%DOCSDIR%%/RealTimeBattle.html
+%%PORTDOCS%%%%DOCSDIR%%/RealTimeBattle.sgml
+%%PORTDOCS%%%%DOCSDIR%%/RealTimeBattle.txt
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/next.gif
+%%PORTDOCS%%%%DOCSDIR%%/next.png
+%%PORTDOCS%%%%DOCSDIR%%/prev.gif
+%%PORTDOCS%%%%DOCSDIR%%/prev.png
+%%PORTDOCS%%%%DOCSDIR%%/toc.gif
+%%PORTDOCS%%%%DOCSDIR%%/toc.png
 share/locale/de/LC_MESSAGES/RealTimeBattle.mo
 share/locale/es/LC_MESSAGES/RealTimeBattle.mo
 share/locale/gl/LC_MESSAGES/RealTimeBattle.mo
@@ -36,8 +122,18 @@ share/locale/ja/LC_MESSAGES/RealTimeBattle.mo
 share/locale/pl/LC_MESSAGES/RealTimeBattle.mo
 share/locale/pt/LC_MESSAGES/RealTimeBattle.mo
 share/locale/sv/LC_MESSAGES/RealTimeBattle.mo
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/RealTimeBattle.txt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm lib/RealTimeBattle/Robots/xt-bot
+@dirrm lib/RealTimeBattle/Robots/thomas2
+@dirrm lib/RealTimeBattle/Robots/seek_and_destroy
+@dirrm lib/RealTimeBattle/Robots/rtb-team-framework
+@dirrm lib/RealTimeBattle/Robots/rotate_and_fire
+@dirrm lib/RealTimeBattle/Robots/perl-Skeleton
+@dirrm lib/RealTimeBattle/Robots/perl
+@dirrm lib/RealTimeBattle/Robots/joypad_robot
+@dirrm lib/RealTimeBattle/Robots/jBot
+@dirrm lib/RealTimeBattle/Robots/empty
+@dirrm lib/RealTimeBattle/Robots
+@dirrm lib/RealTimeBattle/Arenas
+@dirrm lib/RealTimeBattle
 @dirrm include/RealTimeBattle

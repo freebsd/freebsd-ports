@@ -1,10 +1,19 @@
---- src/String.cc.orig	Thu Sep 18 02:51:37 2003
-+++ src/String.cc	Sat Mar 13 02:12:19 2004
-@@ -25,6 +25,7 @@
+--- src/String.cc.orig	Fri Nov 12 22:04:38 2004
++++ src/String.cc	Tue Jan 11 02:28:46 2005
+@@ -21,12 +21,13 @@
+ #include <config.h>
+ #endif
+ 
+-#include <string.h>
++#include <cstring>
  #include <iostream>
  //#include <strstream>
  #include <iomanip>
-+#include <stdio.h>
- #include <stdlib.h>
- #include <ctype.h>
+-#include <stdlib.h>
+-#include <ctype.h>
++#include <cstdio>
++#include <cstdlib>
++#include <cctype>
+ 
+ using namespace std;
  

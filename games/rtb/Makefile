@@ -6,44 +6,70 @@
 #
 
 PORTNAME=	RealTimeBattle
-PORTVERSION=	1.0.6
-PORTREVISION=	2
+PORTVERSION=	1.0.7
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-		http://www.lysator.liu.se/realtimebattle/Download/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME:L}
+DISTNAME=	${PORTNAME}-${PORTVERSION}-Ext
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Robot programming game for UNIX
 
-USE_BZIP2=	yes
+BUILD_DEPENDS=	gsed:${PORTSDIR}/textproc/gsed
+
 USE_X_PREFIX=	yes
-USE_GNOME=	gnometarget gtk20 lthack
+USE_GNOME=	gnometarget gtk20
+USE_GCC=	3.4
+USE_PERL5=	yes
 USE_GETOPT_LONG=	yes
-USE_GMAKE=	yes
-USE_LIBTOOL_VER=13
 USE_REINPLACE=	yes
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
-		AUTOHEADER="${TRUE}"
+CONFIGURE_ARGS=	--with-rtb-dir=${PREFIX}/lib/${PORTNAME}
+
+CXXFLAGS+=	-fpermissive
 
 CPPFLAGS=	-I${LOCALBASE}/include -DHAVE_DECL_GETOPT
-LDFLAGS=	-L${LOCALBASE}/lib
+LDFLAGS=	-L${LOCALBASE}/lib -lintl
 
-post-extract:
-	@${REINPLACE_CMD} -E -e 's/min[[:space:]]*\(/Min(/; s/max[[:space:]]*\(/Max\(/' \
-		${WRKSRC}/include/Various.h ${WRKSRC}/src/ArenaBase.cc \
-		${WRKSRC}/src/GeometricalObjects.cc ${WRKSRC}/src/Options.cc \
-		${WRKSRC}/src/Robot.cc ${WRKSRC}/src/StartTournamentWindow.cc \
-		${WRKSRC}/src/StatisticsWindow.cc ${WRKSRC}/src/Various.cc
-	@${REINPLACE_CMD} -E -e 's/\(int\*\)/int\*/' ${WRKSRC}/src/ArenaRealTime.cc
+post-patch:
+.for file in include/Various.h src/ArenaBase.cc src/GeometricalObjects.cc \
+	src/Options.cc src/Robot.cc src/StartTournamentWindow.cc \
+	src/StatisticsWindow.cc src/Various.cc
+	@${REINPLACE_CMD} -E -e 's|min[[:space:]]*\(|Min(|g ; \
+		 s|max[[:space:]]*\(|Max\(|g' ${WRKSRC}/${file}
+.endfor
+.for file in src/ArenaRealTime.cc
+	@${REINPLACE_CMD} -E -e 's|\(int\*\)|int\*|g' ${WRKSRC}/${file}
+.endfor
+.for file in rtb-team-framework/createrobot.sh \
+	rtb-team-framework/createrobotconf.sh
+	@${REINPLACE_CMD} -e 's| sed| gsed|g' ${WRKSRC}/${file}
+.endfor
+.for file in Makefile.in
+	@${REINPLACE_CMD} -e 's|intl Documentation||g' ${WRKSRC}/${file}
+.endfor
 
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/ChangeLog ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/RealTimeBattle.txt ${DOCSDIR}
+.for file in AUTHORS ChangeLog EXTRAROBOTS.README NEWS README TODO \
+	Documentation/RealTimeBattle-1.html \
+	Documentation/RealTimeBattle-2.html \
+	Documentation/RealTimeBattle-3.html \
+	Documentation/RealTimeBattle-4.html \
+	Documentation/RealTimeBattle-5.html \
+	Documentation/RealTimeBattle-6.html \
+	Documentation/RealTimeBattle.html \
+	Documentation/next.gif Documentation/prev.gif Documentation/toc.gif \
+	Documentation/next.png Documentation/prev.png Documentation/toc.png \
+	Documentation/RealTimeBattle.dvi \
+	Documentation/RealTimeBattle.sgml \
+	Documentation/RealTimeBattle.txt \
+	Documentation/RTB-Team-Framework-Tutorial.tar.gz
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.endfor
 .endif
 
 .include <bsd.port.mk>
