@@ -8,7 +8,7 @@
 PORTNAME=	Trf
 PORTVERSION=	2.1p2
 PORTREVISION=	2
-CATEGORIES=	devel tcl83
+CATEGORIES=	devel tcl${TCL_VER:S/.//}
 MASTER_SITES=	http://www.oche.de/~akupries/soft/trf/download/
 PKGNAMEPREFIX=	tcl-
 DISTNAME=	trf${PORTVERSION}
@@ -24,7 +24,7 @@ USE_BZIP2=	yes
 ALL_TARGET=	all test
 MAKE_ARGS+=	-j2
 
-TCL_VER?=		8.3
+TCL_VER?=	8.4
 DDIR=		${PREFIX}/lib/tcl${TCL_VER}/Trf
 
 MAKE_ENV+=	TCL_VER=${TCL_VER} MKDIR="${MKDIR}" \
