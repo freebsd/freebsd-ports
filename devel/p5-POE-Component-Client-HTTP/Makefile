@@ -6,25 +6,23 @@
 #
 
 PORTNAME=	POE-Component-Client-HTTP
-PORTVERSION=	0.43
+PORTVERSION=	0.53
 CATEGORIES=	devel perl5 www
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN} \
-		http://poe.perl.org/poedown/
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	POE
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	POE component for non-blocking/concurrent HTTP queries
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/POE.pm:${PORTSDIR}/devel/p5-POE \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/HTTP/Request.pm:${PORTSDIR}/www/p5-libwww \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Net/SSLeay/Handle.pm:${PORTSDIR}/security/p5-Net-SSLeay \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/URI.pm:${PORTSDIR}/net/p5-URI
+BUILD_DEPENDS=	${SITE_PERL}/POE.pm:${PORTSDIR}/devel/p5-POE \
+		${SITE_PERL}/HTTP/Request.pm:${PORTSDIR}/www/p5-libwww \
+		${SITE_PERL}/${PERL_ARCH}/Net/SSLeay/Handle.pm:${PORTSDIR}/security/p5-Net-SSLeay \
+		${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		POE::Component::Client::HTTP.3 POE::Component::Client::SSL.3
 
 .include <bsd.port.mk>

@@ -1,11 +1,11 @@
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/POE/Component/Client/HTTP/.packlist
-lib/perl5/site_perl/%%PERL_VER%%/POE/Component/Client/HTTP.pm
-lib/perl5/site_perl/%%PERL_VER%%/POE/Component/Client/HTTP/SSL.pm
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/POE/Component/Client/HTTP
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/POE/Component/Client/HTTP
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/POE/Component/Client 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/POE/Component 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/POE 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/POE/Component/Client 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/POE/Component 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/POE 2>/dev/null || true
+%%SITE_PERL%%/POE/Component/Client/HTTP.pm
+%%SITE_PERL%%/POE/Component/Client/HTTP/SSL.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Client/HTTP/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Client/HTTP
+@dirrm %%SITE_PERL%%/POE/Component/Client/HTTP
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Client 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/POE 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/POE/Component/Client 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/POE/Component 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/POE 2>/dev/null || true
