@@ -10,7 +10,7 @@ diff -uNr --exclude=*.orig work.old/ztelnet/Config.generic work/ztelnet/Config.g
  4.4bsd 4.3reno:
  	make -f Makefile.generic ${WHAT} \
 -		LIBS="-lutil -ltermcap ../libtelnet/libtelnet.a" \
-+		LIBS="-lutil -ltermcap ../libtelnet/libtelnet.a ../zmodem/librzsz.a" \
++		LIBS="-lutil -lcurses -lncurses ../libtelnet/libtelnet.a ../zmodem/librzsz.a" \
  		LIBPATH="/lib/libc.a /usr/lib/libtermcap.a \
  				../libtelnet/libtelnet.a" \
  		DEST=${DESTDIR}/usr/bin \
