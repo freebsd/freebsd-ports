@@ -1,0 +1,11 @@
+--- util/wmaker.inst.in	2001/02/19 20:05:14	1.1
++++ util/wmaker.inst.in	2001/02/19 20:05:29
+@@ -293,7 +293,7 @@
+  echo "menu that will be used by default is the property list one. Read"
+  echo "    $GSDIR/Library/WindowMaker/README"
+  echo "for information on how to change it."
+-    if [ "${inst_menu%.*}" == "menu" ]; then
++    if [ "${inst_menu%.*}" = "menu" ]; then
+  echo "However, since you have locale set to $LOCALE and plmenu for such locale"
+  echo "was not found, your WMRootMenu contains path to text formated menu:"
+  echo "    $GSDIR/Library/WindowMaker/$inst_menu"
