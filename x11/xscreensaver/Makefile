@@ -7,10 +7,11 @@
 
 PORTNAME=	xscreensaver
 PORTVERSION=	4.00
-CATEGORIES=	x11
+PORTREVISION=	1
+CATEGORIES?=	x11
 MASTER_SITES=	http://www.jwz.org/xscreensaver/
 
-MAINTAINER=	DougB@FreeBSD.org
+MAINTAINER?=	DougB@FreeBSD.org
 
 LIB_DEPENDS=	gle.3:${PORTSDIR}/graphics/gle \
 		xml.5:${PORTSDIR}/textproc/libxml
@@ -28,6 +29,7 @@ CONFIGURE_ARGS=	--without-pam --with-gl --with-gle --with-xpm --with-xml \
 .include <bsd.port.pre.mk>
 
 .if defined(HAVE_GNOME)
+USE_GNOME=	yes
 CONFIGURE_ARGS+=	--with-gnome
 .else
 CONFIGURE_ARGS+=	--without-gnome

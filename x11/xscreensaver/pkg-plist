@@ -1,3 +1,4 @@
+%%GNOME:%%bin/screensaver-properties-capplet
 bin/xscreensaver
 bin/xscreensaver-command
 bin/xscreensaver-demo
@@ -134,6 +135,15 @@ bin/xscreensaver-hacks/xspirograph
 bin/xscreensaver-hacks/xsublim
 bin/xscreensaver-hacks/xteevee
 bin/xscreensaver-hacks/zoom
+%%GNOME:%%share/gnome/control-center/Desktop/screensaver-properties.desktop
+%%GNOME:%%share/gnome/gnome/apps/Settings/Desktop/screensaver-properties.desktop
+%%GNOME:%%share/gnome/pixmaps/screensaver-cmndln.xpm
+%%GNOME:%%share/gnome/pixmaps/screensaver-colorselector.xpm
+%%GNOME:%%share/gnome/pixmaps/screensaver-diagnostic.xpm
+%%GNOME:%%share/gnome/pixmaps/screensaver-locking.xpm
+%%GNOME:%%share/gnome/pixmaps/screensaver-power.xpm
+%%GNOME:%%share/gnome/pixmaps/screensaver-snap.xpm
+%%GNOME:%%share/gnome/pixmaps/xscreensaver.xpm
 share/xscreensaver/config/README
 share/xscreensaver/config/ant.xml
 share/xscreensaver/config/atlantis.xml
