@@ -1,3 +1,4 @@
+bin/icehelp
 bin/icewm
 bin/icewmbg
 bin/icewmhint
@@ -13,6 +14,7 @@ bin/icewmhint
 %%NODOCS:%%share/doc/icewm/icewm-13.html
 %%NODOCS:%%share/doc/icewm/icewm-14.html
 %%NODOCS:%%share/doc/icewm/icewm-15.html
+%%NODOCS:%%share/doc/icewm/icewm-16.html
 %%NODOCS:%%share/doc/icewm/icewm-2.html
 %%NODOCS:%%share/doc/icewm/icewm-3.html
 %%NODOCS:%%share/doc/icewm/icewm-4.html
@@ -103,6 +105,52 @@ share/icewm/taskbar/linux20.xpm
 share/icewm/taskbar/start.xpm
 share/icewm/taskbar/windows.xpm
 share/icewm/taskbar/xfreeos2.xpm
+share/icewm/themes/Infadel2/Ergonomic.theme
+share/icewm/themes/Infadel2/closeA.xpm
+share/icewm/themes/Infadel2/closeI.xpm
+share/icewm/themes/Infadel2/default.theme
+share/icewm/themes/Infadel2/depthA.xpm
+share/icewm/themes/Infadel2/depthI.xpm
+share/icewm/themes/Infadel2/hideA.xpm
+share/icewm/themes/Infadel2/hideI.xpm
+share/icewm/themes/Infadel2/maximizeA.xpm
+share/icewm/themes/Infadel2/maximizeI.xpm
+share/icewm/themes/Infadel2/menuButtonA.xpm
+share/icewm/themes/Infadel2/menuButtonI.xpm
+share/icewm/themes/Infadel2/minimizeA.xpm
+share/icewm/themes/Infadel2/minimizeI.xpm
+share/icewm/themes/Infadel2/restoreA.xpm
+share/icewm/themes/Infadel2/restoreI.xpm
+share/icewm/themes/Infadel2/rolldownA.xpm
+share/icewm/themes/Infadel2/rolldownI.xpm
+share/icewm/themes/Infadel2/rollupA.xpm
+share/icewm/themes/Infadel2/rollupI.xpm
+share/icewm/themes/Infadel2/titleAB.xpm
+share/icewm/themes/Infadel2/titleAJ.xpm
+share/icewm/themes/Infadel2/titleAM.xpm
+share/icewm/themes/Infadel2/titleAP.xpm
+share/icewm/themes/Infadel2/titleAQ.xpm
+share/icewm/themes/Infadel2/titleAR.xpm
+share/icewm/themes/Infadel2/titleAS.xpm
+share/icewm/themes/Infadel2/titleAT.xpm
+share/icewm/themes/Infadel2/titleIB.xpm
+share/icewm/themes/Infadel2/titleIJ.xpm
+share/icewm/themes/Infadel2/titleIM.xpm
+share/icewm/themes/Infadel2/titleIP.xpm
+share/icewm/themes/Infadel2/titleIQ.xpm
+share/icewm/themes/Infadel2/titleIR.xpm
+share/icewm/themes/Infadel2/titleIS.xpm
+share/icewm/themes/Infadel2/titleIT.xpm
+share/icewm/themes/Infadel2/icons/app_16x16.xpm
+share/icewm/themes/Infadel2/icons/folder_16x16.xpm
+share/icewm/themes/Infadel2/icons/folder_32x32.xpm
+share/icewm/themes/Infadel2/mailbox/errmail.xpm
+share/icewm/themes/Infadel2/mailbox/mail.xpm
+share/icewm/themes/Infadel2/mailbox/newmail.xpm
+share/icewm/themes/Infadel2/mailbox/nomail.xpm
+share/icewm/themes/Infadel2/mailbox/unreadmail.xpm
+share/icewm/themes/Infadel2/taskbar/linux.xpm
+share/icewm/themes/Infadel2/taskbar/windows.xpm
 share/icewm/themes/gtk2/closeA.xpm
 share/icewm/themes/gtk2/closeI.xpm
 share/icewm/themes/gtk2/default.theme
@@ -231,6 +279,10 @@ share/locale/zh_TW.Big5/LC_MESSAGES/icewm.mo
 @dirrm share/icewm/themes/motif
 @dirrm share/icewm/themes/metal2
 @dirrm share/icewm/themes/gtk2
+@dirrm share/icewm/themes/Infadel2/taskbar
+@dirrm share/icewm/themes/Infadel2/mailbox
+@dirrm share/icewm/themes/Infadel2/icons
+@dirrm share/icewm/themes/Infadel2
 @dirrm share/icewm/themes
 @dirrm share/icewm/taskbar
 @dirrm share/icewm/mailbox
