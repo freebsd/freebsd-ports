@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	icc
-PORTVERSION=	8.0.066p070.1
+PORTVERSION=	8.1.022
 CATEGORIES=	lang linux devel
 MASTER_SITES=
 DISTNAME=	l_cc_pc_${PORTVERSION:C/p.+$//}
@@ -21,7 +21,8 @@ DISTFILES+=	${DISTNAME}_${PATCHLEVEL}${EXTRACT_SUFX}
 .endif
 
 EXTRACT_DEPENDS=	rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
-PATCH_DEPENDS=		${LINUXBASE}/etc/redhat-release:${PORTSDIR}/emulators/linux_base
+#PATCH_DEPENDS=		${LINUXBASE}/etc/redhat-release:${PORTSDIR}/emulators/linux_base
+PATCH_DEPENDS=		${LINUXBASE}/lib/libc-2.3.2.so:${PORTSDIR}/emulators/linux_base-8
 
 RESTRICTED=	Intel forbids any redistribution
 NO_PACKAGE=	${RESTRICTED}
@@ -30,7 +31,8 @@ NO_CDROM=	${RESTRICTED}
 ONLY_FOR_ARCHS=		i386
 CONFLICTS=		linux_devtools*
 
-USE_LINUX=		yes
+#USE_LINUX=		yes
+RUN_DEPENDS=		${LINUXBASE}/lib/libc-2.3.2.so:${PORTSDIR}/emulators/linux_base-8
 USE_REINPLACE=		yes
 NO_FILTER_SHLIBS=	yes
 
@@ -47,8 +49,12 @@ ICC_SITE=	http://www.intel.com/software/products/compilers/
 .include <bsd.port.pre.mk>
 
 EXTRACT_AFTER_ARGS=	| tar -xf - \
+			--exclude cdt-\*.zip \
+			--exclude eclipse-platform\*.zip \
+			--exclude intel-icc_ide\*.rpm \
 			--exclude intel-iidb\*.rpm \
 			--exclude intel-isubh\*.rpm \
+			--exclude sdp-core-\*.zip \
 			--exclude \*ia64.rpm \
 			--exclude flexlm64
 
@@ -155,7 +161,8 @@ OBJCOPY_OPS=	--redefine-sym stdin=__stdinp \
 
 do-build:
 # Use the Linux ABI for the binaries
-.for i in codecov iccbin iccfilt icpcbin icpi mcpcom profmerge proforder tselect xiar xild
+.for i in codecov iccbin iccfilt icpcbin icpi mcpcom prelink profmerge \
+	proforder profrun pronto_tool tselect xiar xild
 	@${BRANDELF} -t Linux ${WRKSRC}/opt/${COMPILERDIR}/bin/${i}
 .endfor
 # Fix unresolved references
@@ -170,7 +177,8 @@ do-build:
 	@${CC} ${CFLAGS} -c -o ${WRKSRC}/stdout.o ${FILESDIR}/stdout.c
 	@${CC} ${CFLAGS} -c -o ${WRKSRC}/stderr.o ${FILESDIR}/stderr.c
 .endif
-.for i in libcxa.a libcxaguard.a libimf.a libirc.a libircmt.a libunwind.a
+.for i in libcxa.a libcxaguard.a libimf.a libirc.a libirc_s.a libsvml.a \
+	libunwind.a
 	@${OBJCOPY} --redefine-sym __sigsetjmp=sigsetjmp \
 		${OBJCOPY_OPS} \
 		${WRKSRC}/opt/${COMPILERDIR}/lib/${i}
@@ -184,6 +192,11 @@ do-build:
 		${FILESDIR}/ld.c
 	@${STRIP_CMD} ${WRKSRC}/opt/${COMPILERDIR}/bin/ldwrapper/ld
 	@${CHMOD} 755 ${WRKSRC}/opt/${COMPILERDIR}/bin/ldwrapper/ld
+# Make ICC happy with regards to crtbegin.o, crtend.o and libgcc.a which it
+# expects to find in GXX_ROOT.
+.for file in crtbegin.o crtend.o libgcc.a
+	@cd ${WRKSRC}/opt/${COMPILERDIR}/lib && ${LN} -s /usr/lib/${file} ${file}
+.endfor
 
 do-install:
 	@cd ${WRKSRC}/opt && ${FIND} . -print | \

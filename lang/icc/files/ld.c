@@ -154,8 +154,14 @@ main(int argc, char *argv[], char *envp[])
 	 */
 #if __FreeBSD_version >= 500016
 	if ((libthr = getenv("PTHREAD_LIBS")) == NULL)
-#endif
+#if __FreeBSD_version >= 502102
+		libthr = "-lpthread";
+#else
 		libthr = "-lc_r";
+#endif
+#else
+	libthr = "-lc_r";
+#endif
 	/*
 	 * Use the appropriate libs for libc and libthr when linking static
 	 * and "-KPIC" or "-pg" where given.
@@ -264,13 +270,14 @@ main(int argc, char *argv[], char *envp[])
 		}
 
 		/*
-		 * Force libcxa, libcxaguard and libunwind to static linkage,
-		 * since the dynamic versions have glibc dependencies.
+		 * Force libcxa, libcxaguard, libsvml and libunwind to static
+		 * linkage, since the dynamic versions have glibc dependencies.
 		 * Don't add superfluous -Bdynamic.
 		 */
 		if (ARGCMP(i, "-Bdynamic") && i < argc - 1) {
 			if (ARGCMP(i + 1, "-lcxa") ||
 			    ARGCMP(i + 1, "-lcxaguard") ||
+			    ARGCMP(i + 1, "-lsvml") ||
 			    ARGCMP(i + 1, "-lunwind")) {
 				addarg(&al, "-Bstatic");
 				continue;
@@ -284,7 +291,7 @@ main(int argc, char *argv[], char *envp[])
 		/* Don't add superfluous -Bstatic. */
 		if (ARGCMP(i, "-Bstatic") && i < argc - 1 &&
 		    (ARGCMP(i + 1, "-lcprts") || ARGCMP(i + 1, "-lgcc_s") ||
-		    ARGCMP(i + 1, "-lunwind")))
+		    ARGCMP(i + 1, "-lsvml") || ARGCMP(i + 1, "-lunwind")))
 			continue;
 
 		/*
@@ -295,7 +302,8 @@ main(int argc, char *argv[], char *envp[])
 		    strncmp(al.argv[al.argc - 1], "-B", 2)) {
 			if (ARGCMP(i, "-lcxa") || ARGCMP(i, "-lcxaguard") ||
 			    ARGCMP(i, "-limf") || ARGCMP(i, "-lirc") ||
-			    ARGCMP(i, "-lircmt") || ARGCMP(i, "-lunwind"))
+			    ARGCMP(i, "-lirc_s") || ARGCMP(i, "-lsvml") ||
+			    ARGCMP(i, "-lunwind"))
 				addarg(&al, "-Bstatic");
 			else
 				addarg(&al,

@@ -1,14 +1,14 @@
 --- include/c++/yvals.h.orig	Thu Mar 18 20:22:51 2004
 +++ include/c++/yvals.h	Sat Mar 27 13:32:51 2004
-@@ -7,24 +7,10 @@
+@@ -7,24 +7,6 @@
  
  _ABRCPP -- to turn ON Abridged C++ dialect (implies _ECPP)
  _ECPP -- to turn ON Embedded C++ dialect
 -_NO_MT -- to turn OFF thread synchronization
 -_STL_DB (or _STLP_DEBUG) -- to turn ON iterator/range debugging
- 
- You can change (in this header):
- 
+-
+-You can change (in this header):
+-
 -_COMPILER_TLS -- from 0 to 1 if _TLS_QUAL is not nil
 -_EXFAIL -- from 1 to any nonzero value for EXIT_FAILURE
 -_FILE_OP_LOCKS -- from 0 to 1 for file atomic locks
@@ -19,13 +19,13 @@
 -_HAS_TRADITIONAL_ITERATORS -- from 1 to 0 to change vector/string iterators from
 -                              just pointers to something more complicated
 -_HAS_TRADITIONAL_POS_TYPE -- from 0 to 1 for streampos same as streamoff
- _HAS_TRADITIONAL_STL -- from 1 to 0 to omit old STL functions
+-_HAS_TRADITIONAL_STL -- from 1 to 0 to omit old STL functions
 -_IOSTREAM_OP_LOCKS -- from 0 to 1 for iostream atomic locks
 -_TLS_QUAL -- from nil to compiler TLS qualifier, such as __declspec(thread)
  
  Include directories needed to compile with Dinkum C:
  
-@@ -47,85 +33,10 @@
+@@ -47,85 +29,10 @@
  	(--export --template_dir=lib/export)
   */
  
@@ -111,7 +111,7 @@
   #if !defined(_ECPP) && defined(_ABRCPP)
    #define _ECPP
   #endif /* !defined(_ECPP) && defined(_ABRCPP) */
-@@ -146,56 +57,8 @@
+@@ -146,56 +53,8 @@
     #define _HAS_NAMESPACE	1	/* 1 for C++ names in std */
   #endif /* _HAS_NAMESPACE */
  
@@ -166,9 +166,9 @@
 - #endif /* define _HAS_ITERATOR_DEBUGGING */
 -
  		/* NAMESPACE CONTROL */
-  #if defined(_ECPP) && defined(__cplusplus)
+  #if defined(__QNX__) && defined(__cplusplus)
    #define _STD_USING 1 /* To be compatible with QNX, where _STD_USING defined for C++ only */
-@@ -283,229 +146,13 @@
+@@ -283,221 +142,13 @@
    #define _END_EXTERN_C
   #endif /* __cplusplus */
  
@@ -301,7 +301,11 @@
 -#define _SIGMAX		44
 -
 -		/* stdarg PROPERTIES */
+-#ifdef __x86_64__
+-typedef __gnuc_va_list _Va_list;
+-#else
 -typedef va_list _Va_list;
+-#endif
 -
 - #if _HAS_C9X
 -
@@ -311,7 +315,7 @@
 -
 - #ifndef va_copy
 -_EXTERN_C
--void _Vacopy(va_list *, va_list);
+-void _Vacopy(_Va_list *, _Va_list);
 -_END_EXTERN_C
 -  #define va_copy(apd, aps)	_Vacopy(&(apd), aps)
 - #endif /* va_copy */
@@ -322,11 +326,7 @@
 -#define _EXFAIL	1	/* EXIT_FAILURE */
 -
 -_EXTERN_C
--#ifdef __QNX__
 -void __Atexit(void (*)(void));
--#else
--void _Atexit(void (*)(void));
--#endif
 -_END_EXTERN_C
 -
 -		/* stdio PROPERTIES */
@@ -349,11 +349,7 @@
 -_C_STD_END
 -
 -		/* MULTITHREAD PROPERTIES */
--#ifdef __QNX__
 -_STD_BEGIN
--#else
--_EXTERN_C
--#endif
 - #if _MULTI_THREAD
 -void _Locksyslock(int);
 -void _Unlocksyslock(int);
@@ -362,11 +358,7 @@
 -  #define _Locksyslock(x)	(void)0
 -  #define _Unlocksyslock(x)	(void)0
 - #endif /* _MULTI_THREAD */
--#ifdef __QNX__
 -_STD_END
--#else
--_END_EXTERN_C
--#endif
 -		/* LOCK MACROS */
 - #define _LOCK_LOCALE	0
 - #define _LOCK_MALLOC	1

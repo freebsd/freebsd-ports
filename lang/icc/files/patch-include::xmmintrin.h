@@ -4,8 +4,8 @@
  #ifndef _INCLUDED_MM2
  #define _INCLUDED_MM2
  
--#if defined(__linux__) || defined(__QNX__)
-+#if defined(__linux__) || defined(__QNX__) || defined(__FreeBSD__)
+-#if defined (__linux__) || defined (__QNX__)    /* EIA Compiler does not compile either */
++#if defined (__linux__) || defined (__FreeBSD__) || defined(__QNX__)   /* EIA Compiler does not compile either */
  #define __cdecl
  #endif
  
