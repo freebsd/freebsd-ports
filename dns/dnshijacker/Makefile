@@ -7,6 +7,7 @@
 
 PORTNAME=	dnshijacker
 PORTVERSION=	1.3
+PORTREVISION=	1
 CATEGORIES=	dns security
 MASTER_SITES=	http://pedram.redhive.com/downloads/
 
@@ -28,5 +29,7 @@ do-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/dnshijacker ${PREFIX}/bin
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 
 .include <bsd.port.mk>
