@@ -6,11 +6,13 @@
 #
 
 PORTNAME=	imapfilter
-PORTVERSION=	0.8.2
+PORTVERSION=	0.8.3
 CATEGORIES=	mail
 MASTER_SITES=	http://imapfilter.hellug.gr/source/
 
 MAINTAINER=	lefcha@hellug.gr
+
+USE_BZIP2=	yes
 
 USE_OPENSSL=	yes
 
