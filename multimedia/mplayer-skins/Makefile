@@ -8,10 +8,10 @@
 PORTNAME=	mplayer
 PORTVERSION=	1.0.3
 CATEGORIES=	multimedia
-MASTER_SITES=	http://www.mplayerhq.hu/MPlayer/Skin/ \
-		ftp://ftp.mplayerhq.hu/MPlayer/Skin/ \
-		http://www2.mplayerhq.hu/MPlayer/Skin/ \
-		ftp://ftp2.mplayerhq.hu/MPlayer/Skin/
+MASTER_SITES=	http://www2.mplayerhq.hu/MPlayer/Skin/ \
+		http://ftp.lug.udel.edu/MPlayer/Skin/ \
+		ftp://ftp2.mplayerhq.hu/MPlayer/Skin/ \
+		ftp://ftp.lug.udel.edu/MPlayer/Skin/
 PKGNAMESUFFIX=	-skins
 DISTFILES=
 EXTRACT_ONLY=
