@@ -82,6 +82,7 @@
     SUBDIR += obliterate
     SUBDIR += p5-Filesys-DiskSpace
     SUBDIR += p5-LJ-Cache
+    SUBDIR += p5-LJ-TextMessage
     SUBDIR += p5-Quota
     SUBDIR += p5-Schedule-At
     SUBDIR += p5-Schedule-Cron
