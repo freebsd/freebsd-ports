@@ -23,6 +23,9 @@ ONLY_FOR_ARCHS=	i386
 NO_BUILD=	yes
 
 RESTRICTED=	"Not sure if we can redistribute this."
+.if defined(PACKAGE_BUILDING)
+FORBIDDEN=	"Can't build this port since it requires VMware."
+.endif
 
 VMWARE_VER=	3.1.1
 BUILD_VER=	1790
