@@ -1,0 +1,15 @@
+NetSPoC is a tool for security managment of large computer networks with
+different security domains. It generates configuration files for packet
+filters controlling the borders of security domains.
+
+NetSPoC provides its own language for describing security policy and topology
+of a network. The security policy is a set of rules that state which packets
+are allowed to pass the network and which not. NetSPoC is topology aware: a
+rule for traffic from A to B is automatically applied to all managed packet
+filters on the path from A to B.
+
+Currently NetSPoC generates ACLs and static routing entries for Cisco routers
+and PIX firewalls. Support for network address translation and IPSec has not
+been implemented yet.
+
+WWW: http://netspoc.berlios.de/
