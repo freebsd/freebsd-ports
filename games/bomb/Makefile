@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	apps/graphics/hacks/svgalib
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=	trevor@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interactive display hack for SVGAlib or X
 
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
