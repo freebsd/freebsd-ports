@@ -350,15 +350,14 @@ share/mime/video/x-ms-wmv.xml
 share/mime/video/x-msvideo.xml
 share/mime/video/x-real-video.xml
 share/mime/video/x-sgi-movie.xml
-@dirrm share/mime/video
-@dirrm share/mime/text
-@dirrm share/mime/packages
-@dirrm share/mime/multipart
-@dirrm share/mime/model
-@dirrm share/mime/message
-@dirrm share/mime/inode
-@dirrm share/mime/image
-@dirrm share/mime/audio
-@dirrm share/mime/application
-@dirrm share/mime
+@unexec rmdir %D/share/mime/video 2>/dev/null || true
+@unexec rmdir %D/share/mime/text 2>/dev/null || true
+@unexec rmdir %D/share/mime/packages 2>/dev/null || true
+@unexec rmdir %D/share/mime/multipart 2>/dev/null || true
+@unexec rmdir %D/share/mime/model 2>/dev/null || true
+@unexec rmdir %D/share/mime/message 2>/dev/null || true
+@unexec rmdir %D/share/mime/inode 2>/dev/null || true
+@unexec rmdir %D/share/mime/image 2>/dev/null || true
+@unexec rmdir %D/share/mime/audio 2>/dev/null || true
+@unexec rmdir %D/share/mime/application 2>/dev/null || true
 @unexec rmdir %D/share/mime 2>/dev/null || true
