@@ -1,0 +1,93 @@
+Prodosemu is a text based Apple IIe ProDOS emulator. Unlike most
+popular Apple emulators it does not use disk images, instead it uses
+the UNIX file-system. If you have an Apple IIe then you will need to
+transfer your programs/files into a directory somewhere with your
+favorite comm's program. Otherwise you will need to install the aftp
+port to pull the files out from the Apple disk images that are widely
+available on the net (eg the ProDOS system disk available from
+asimov).
+
+The rom file (included) is stored in /usr/local/lib/apple2 (or similar
+path on your system) under the name "prodos-2e.rom". I've adopted this
+title so that Prodosemu can co-exist with the other apple emulators in
+the ports collection.
+
+There is no man page for this program so I have included the slightly
+modified README at the end of this document. 
+
+Check out the following for all things Apple II:
+
+ftp://ftp.apple.asimov.net/		- Apple II archives 
+news://comp.emulators.apple2/		- Apple II news group
+
+Share and enjoy,
+Joel...
+sutton@aardvark.apana.org.au
+
+===========
+ProDOS Emulator by Matthew Ghio v0.1 of January 8, 1996
+
+To use prodosemu you will need a copy of the Apple IIe ROM.  To get the 
+ROM from an Apple IIe, boot into prodos/basic and do the following:
+
+  ]CALL -151
+  *C007:0
+  *2100<C100.FFFFM
+  *C006:0
+  *bsave apple.rom,a$2100,l$3f00
+
+Then use your favorite communications software to upload it to your unix
+system.  At this time you should also upload some common programs, such
+as BASIC.SYSTEM and SHRINKIT.  Put these files in the same directory as
+the prodos emulator.  You do not need a copy of ProDOS to run the emulator.
+
+To run ProDOS applications on your unix system, type 'prodos' and the
+application name, at your shell prompt.  The ProDOS emulator will load
+the application into a virtual Apple IIe and execute it.  Any ProDOS MLI
+calls are trapped and the equivalent file operations are performed via
+unix kernel calls.  Your current directory appears as a disk named /UNIX
+mounted on slot 7, drive 1.  For example, typing
+  prodos BASIC.SYSTEM
+will launch Applesoft Basic.  Type CAT,S7,D1 to see the files in your
+directory.  Remember that Prodos filenames are UPPERCASE and limited to 15
+characters.  (Prodosemu actually does allow you to create and access
+filenames longer than 15 characters, but only those filenames 15 characters
+or less will show up in directory listings.  This is due to the fact that
+Prodos's directory entries have a fixed size buffer which can only hold 15
+characters.)  When you are finished with basic, type BYE to return to the
+unix shell prompt.
+
+If you want to make another directory the working directory when running
+ProDOS applications, use the -w command line option.  By default, the
+working directory becomes the root of the similated ProDOS filesystem.
+If you wish to make another directory the root of the ProDOS filesystem
+while launching prodos, use the -r option.  The program does not do a
+chroot, and it is possible to get out of the ProDOS root directory by
+using .. or following a symbolic link.
+
+As files are read and written by Prodos applications to the simulated
+filesystem, they are read and written to the corresponding directory
+in your unix filesystem.  Prodos-specific filetype information is stored
+in a .prodosdir file, which is automatically created in each directory
+if it does not already exist.  Filetypes are ignored by Prodosemu when
+launching applications.  Because the ProDOS Emulator does not use disk
+images, disk copiers such as Copy II Plus will not work.  Ordinary file
+copiers and other utilities work fine.
+
+On an Apple II, the up arrow is Control-K, down is Control-J, left is
+Control-H, and right is Control-U.  You may need to use these control
+characters in some applications.
+
+This program uses Randy Frank's 65C02 emulator and I/O code.  While the
+emulation is running, you can use the following key sequences:
+  Ctrl-A Q       Quits
+  Ctrl-A D       Enters the debugger
+  Ctrl-A 0       Toggles the state of the open-apple key
+  Ctrl-A 1       Toggles the state of the closed-apple key
+  Ctrl-A S       Inputs a control-s
+  Ctrl-A Ctrl-A  Inputs a real control-a
+After doing a Control-A 0 to toggle the state of the open-apple key, don't
+forget to do another Ctrl-A 0 to put it back!
+
+The files 6502.c, mega2.c, and debug.c are copyright 1990 Randy Frank and
+are distrbuted under the included license agreement.

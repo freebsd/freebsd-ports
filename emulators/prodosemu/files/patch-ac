@@ -1,0 +1,27 @@
+diff -rc prodosemu-v0.1/main.c prodosemu/main.c
+*** main.c	Tue Jan  9 15:00:03 1996
+--- main.c	Tue Feb 18 09:43:54 1997
+***************
+*** 9,16 ****
+  
+  #include "apple.h"
+  #include <curses.h>
+  #define REF_DELAY 2000
+! #define ROMFILE "apple.rom"
+  
+  extern char prodosroot[];
+  
+--- 9,21 ----
+  
+  #include "apple.h"
+  #include <curses.h>
++ 
+  #define REF_DELAY 2000
+! 
+! /* Where is the default rom file?? */
+! #ifndef ROMFILE
+! #define ROMFILE "/usr/local/lib/apple2/prodos-2e.rom"
+! #endif
+  
+  extern char prodosroot[];
+  
