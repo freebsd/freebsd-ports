@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Math-Random
-PORTVERSION=	0.65
+PORTVERSION=	0.67
 CATEGORIES=	math perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Math
@@ -18,6 +18,5 @@ COMMENT=	Random number generators
 PERL_CONFIGURE=	yes
 
 MAN3=		Math::Random.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>
