@@ -2,6 +2,8 @@
 bin/siteconfig
 bin/siteuptime
 bin/sitewho
+etc/rc.d/wzdftpd.sh
+etc/users.sample
 etc/wzd.cfg.sample
 etc/wzd.pem
 lib/libwzd.a
@@ -27,7 +29,6 @@ etc/file_users.txt
 etc/file_vfs.txt
 etc/file_who.txt
 etc/file_groups.txt
-%%DATADIR%%/users.sample
 %%DATADIR%%/backends/libwzdplaintext.a
 %%DATADIR%%/backends/libwzdplaintext.so
 %%DATADIR%%/backends/libwzdplaintext.la
