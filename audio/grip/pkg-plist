@@ -2,72 +2,27 @@ bin/grip
 share/gnome/apps/Multimedia/grip.desktop
 %%PORTDOCS%%share/gnome/help/grip/C/acknowledge.html
 %%PORTDOCS%%share/gnome/help/grip/C/bugs.html
-%%PORTDOCS%%share/gnome/help/grip/C/cdconfig.png
 %%PORTDOCS%%share/gnome/help/grip/C/cddb.html
 %%PORTDOCS%%share/gnome/help/grip/C/cdplayer.html
-%%PORTDOCS%%share/gnome/help/grip/C/cdplayer.png
-%%PORTDOCS%%share/gnome/help/grip/C/cdplayersmall.png
-%%PORTDOCS%%share/gnome/help/grip/C/cdscan.png
 %%PORTDOCS%%share/gnome/help/grip/C/configure.html
-%%PORTDOCS%%share/gnome/help/grip/C/discdb.png
 %%PORTDOCS%%share/gnome/help/grip/C/discdbconfig.html
-%%PORTDOCS%%share/gnome/help/grip/C/discdbconfig.png
-%%PORTDOCS%%share/gnome/help/grip/C/editing.png
-%%PORTDOCS%%share/gnome/help/grip/C/eject.png
-%%PORTDOCS%%share/gnome/help/grip/C/encprog.png
 %%PORTDOCS%%share/gnome/help/grip/C/faq.html
-%%PORTDOCS%%share/gnome/help/grip/C/ffwd.png
-%%PORTDOCS%%share/gnome/help/grip/C/grip-logo.png
 %%PORTDOCS%%share/gnome/help/grip/C/grip.html
 %%PORTDOCS%%share/gnome/help/grip/C/gripswitches.html
 %%PORTDOCS%%share/gnome/help/grip/C/id3config.html
-%%PORTDOCS%%share/gnome/help/grip/C/id3config.png
 %%PORTDOCS%%share/gnome/help/grip/C/intro.html
 %%PORTDOCS%%share/gnome/help/grip/C/license.html
 %%PORTDOCS%%share/gnome/help/grip/C/ln14.html
-%%PORTDOCS%%share/gnome/help/grip/C/minmax.png
 %%PORTDOCS%%share/gnome/help/grip/C/miscconfig.html
-%%PORTDOCS%%share/gnome/help/grip/C/miscconfig.png
-%%PORTDOCS%%share/gnome/help/grip/C/modeinterface.png
 %%PORTDOCS%%share/gnome/help/grip/C/morehelp.html
 %%PORTDOCS%%share/gnome/help/grip/C/mp3config.html
-%%PORTDOCS%%share/gnome/help/grip/C/mp3config.png
-%%PORTDOCS%%share/gnome/help/grip/C/mp3config2.png
-%%PORTDOCS%%share/gnome/help/grip/C/multiartist.png
-%%PORTDOCS%%share/gnome/help/grip/C/nexttrk.png
-%%PORTDOCS%%share/gnome/help/grip/C/playloop.png
-%%PORTDOCS%%share/gnome/help/grip/C/playnormal.png
-%%PORTDOCS%%share/gnome/help/grip/C/playonce.png
-%%PORTDOCS%%share/gnome/help/grip/C/playpause.png
-%%PORTDOCS%%share/gnome/help/grip/C/playplaylist.png
-%%PORTDOCS%%share/gnome/help/grip/C/playrandom.png
-%%PORTDOCS%%share/gnome/help/grip/C/prevtrk.png
-%%PORTDOCS%%share/gnome/help/grip/C/progtrack.png
 %%PORTDOCS%%share/gnome/help/grip/C/proxyconfig.html
-%%PORTDOCS%%share/gnome/help/grip/C/proxyconfig.png
-%%PORTDOCS%%share/gnome/help/grip/C/quit.png
-%%PORTDOCS%%share/gnome/help/grip/C/rewind.png
 %%PORTDOCS%%share/gnome/help/grip/C/rip-perform.html
 %%PORTDOCS%%share/gnome/help/grip/C/ripconfig.html
-%%PORTDOCS%%share/gnome/help/grip/C/ripconfig.png
-%%PORTDOCS%%share/gnome/help/grip/C/ripconfig2.png
-%%PORTDOCS%%share/gnome/help/grip/C/ripconfig3.png
 %%PORTDOCS%%share/gnome/help/grip/C/ripping.html
-%%PORTDOCS%%share/gnome/help/grip/C/ripping.png
-%%PORTDOCS%%share/gnome/help/grip/C/ripprog.png
-%%PORTDOCS%%share/gnome/help/grip/C/ripsmall.png
+%%PORTDOCS%%share/gnome/help/grip/C/sect-scsi.html
 %%PORTDOCS%%share/gnome/help/grip/C/sect-trackmode.html
-%%PORTDOCS%%share/gnome/help/grip/C/smile1.png
-%%PORTDOCS%%share/gnome/help/grip/C/smile2.png
-%%PORTDOCS%%share/gnome/help/grip/C/smile3.png
-%%PORTDOCS%%share/gnome/help/grip/C/smile4.png
-%%PORTDOCS%%share/gnome/help/grip/C/smile5.png
-%%PORTDOCS%%share/gnome/help/grip/C/smile7.png
-%%PORTDOCS%%share/gnome/help/grip/C/smile8.png
-%%PORTDOCS%%share/gnome/help/grip/C/stop.png
 %%PORTDOCS%%share/gnome/help/grip/C/topic.dat
-%%PORTDOCS%%share/gnome/help/grip/C/trkedit.png
-%%PORTDOCS%%share/gnome/help/grip/C/volume.png
 %%PORTDOCS%%share/gnome/help/grip/C/x135.html
 share/locale/ca/LC_MESSAGES/grip.mo
 share/locale/de/LC_MESSAGES/grip.mo
@@ -81,10 +36,32 @@ share/locale/zh_HK/LC_MESSAGES/grip.mo
 share/locale/zh_TW/LC_MESSAGES/grip.mo
 share/pixmaps/gripicon.png
 %%PORTDOCS%%@exec /bin/mkdir -p %D/share/gnome/help/grip/C/images
-%%PORTDOCS%%@dirrm share/gnome/help/grip/C/images
+%%PORTDOCS%%@unexec /bin/rmdir %D/share/gnome/help/grip/C/images || true
+@dirrm share/pixmaps
+@dirrm share/locale/zh_TW/LC_MESSAGES
+@dirrm share/locale/zh_TW
+@dirrm share/locale/zh_HK/LC_MESSAGES
+@dirrm share/locale/zh_HK
+@dirrm share/locale/zh_CN/LC_MESSAGES
+@dirrm share/locale/zh_CN
+@dirrm share/locale/ru/LC_MESSAGES
+@dirrm share/locale/ru
+@dirrm share/locale/pt_BR/LC_MESSAGES
+@dirrm share/locale/pt_BR
+@dirrm share/locale/ja/LC_MESSAGES
+@dirrm share/locale/ja
+@dirrm share/locale/fr/LC_MESSAGES
+@dirrm share/locale/fr
+@dirrm share/locale/es/LC_MESSAGES
+@dirrm share/locale/es
+@dirrm share/locale/de/LC_MESSAGES
+@dirrm share/locale/de
+@dirrm share/locale/ca/LC_MESSAGES
+@dirrm share/locale/ca
+@dirrm share/locale
 %%PORTDOCS%%@dirrm share/gnome/help/grip/C
 %%PORTDOCS%%@dirrm share/gnome/help/grip
-%%PORTDOCS%%@unexec /bin/rmdir %D/share/gnome/help 2>/dev/null || true
-@unexec /bin/rmdir %D/share/gnome/apps/Multimedia 2>/dev/null || true
-@unexec /bin/rmdir %D/share/gnome/apps 2>/dev/null || true
-@unexec /bin/rmdir %D/share/gnome 2>/dev/null || true
+%%PORTDOCS%%@dirrm share/gnome/help
+@dirrm share/gnome/apps/Multimedia
+@dirrm share/gnome/apps
+@dirrm share/gnome
