@@ -1,0 +1,19 @@
+--- lib/Makefile.in.orig	Tue Oct  2 20:29:13 2001
++++ lib/Makefile.in	Tue Oct  2 20:35:28 2001
+@@ -96,12 +96,12 @@
+ 
+ install:
+ # Don't install any parts of libcyrus from the IMSP collection!
+-#	$(srcdir)/../install-sh -d $(DESTDIR)$(exec_prefix)/lib
+-#	$(INSTALL) -m 644 libcyrus.a $(DESTDIR)$(exec_prefix)/lib
+-#	$(RANLIB) $(DESTDIR)$(exec_prefix)/lib/libcyrus.a
++#	$(srcdir)/../install-sh -d $(exec_prefix)/lib
++#	$(INSTALL) -m 644 libcyrus.a $(exec_prefix)/lib
++#	$(RANLIB) $(exec_prefix)/lib/libcyrus.a
+ #	for file in $(HDRS); \
+ #	do \
+-#		$(INSTALL) -m 644 $$file $(DESTDIR)$(prefix)/include/cyrus || exit 1; \
++#		$(INSTALL) -m 644 $$file $(prefix)/include/cyrus || exit 1; \
+ #	done
+ 
+ .c.o:

@@ -1,0 +1,11 @@
+etc/rc.d/imspd.sh
+lib/sasl/imspd.conf
+sbin/imspd
+%%PORTDOCS%%share/doc/imspd/Setup-instructions
+%%PORTDOCS%%share/doc/imspd/option.registry
+%%PORTDOCS%%share/doc/imspd/Changes-Todo
+%%PORTDOCS%%share/doc/imspd/imsp.implementation
+%%PORTDOCS%%share/doc/imspd/imsp.implementation.updates
+%%PORTDOCS%%@dirrm share/doc/imspd
+@cwd /var
+imsp/options.dist

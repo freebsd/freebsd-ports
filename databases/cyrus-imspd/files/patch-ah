@@ -1,0 +1,11 @@
+--- imsp/Makefile.in.orig	Sun Dec 17 22:27:42 2000
++++ imsp/Makefile.in	Tue Oct  2 20:47:22 2001
+@@ -76,7 +76,7 @@
+ $<
+ 
+ install: cyrus-imspd
+-	$(INSTALL) -s cyrus-imspd $(DESTDIR)/cyrus/usr/cyrus/bin/imspd
++	$(INSTALL) -s cyrus-imspd @prefix@/sbin/imspd
+ 
+ cyrus-imspd: $(IMSPDOBJS) $(DEPLIBS)
+ 	$(CC) $(CFLAGS) $(LDFLAGS) -o cyrus-imspd $(IMSPDOBJS) $(DEPLIBS) $(LIBS)

@@ -1,0 +1,51 @@
+--- Makefile.in.orig	Tue Oct  2 20:31:48 2001
++++ Makefile.in	Tue Oct  2 20:34:09 2001
+@@ -32,19 +32,15 @@
+ 	@for d in  $(SUBDIRS); \
+ 	do \
+ 		(cd $$d; echo "### Making" all "in" `pwd`;	\
+-			$(MAKE) $(MFLAGS) DESTDIR=$(DESTDIR) all;	\
++			$(MAKE) $(MFLAGS) all;	\
+ 			echo "### Done with" `pwd`);		\
+ 	done
+ 
+ install::
+-	- mkdir ${DESTDIR}/cyrus
+-	- mkdir ${DESTDIR}/cyrus/usr
+-	- mkdir ${DESTDIR}/cyrus/usr/cyrus
+-	- mkdir ${DESTDIR}/cyrus/usr/cyrus/bin
+ 	@for d in  $(SUBDIRS); \
+ 	do \
+ 		(cd $$d; echo "### Making" install "in" `pwd`;	\
+-			$(MAKE) $(MFLAGS) DESTDIR=$(DESTDIR) install ;	\
++			$(MAKE) $(MFLAGS) install ;	\
+ 			echo "### Done with" `pwd`);		\
+ 	done
+ 
+@@ -52,7 +48,7 @@
+ 	@-for d in  $(SUBDIRS); \
+ 	do \
+ 		(cd $$d; echo "### Making" clean "in" `pwd`;	\
+-			$(MAKE) $(MFLAGS) DESTDIR=$(DESTDIR) clean ;	\
++			$(MAKE) $(MFLAGS) clean ;	\
+ 			echo "### Done with" `pwd`);		\
+ 	done
+ 
+@@ -60,7 +56,7 @@
+ 	@-for d in  $(SUBDIRS); \
+ 	do \
+ 		(cd $$d; echo "### Making" clean "in" `pwd`;	\
+-			$(MAKE) $(MFLAGS) DESTDIR=$(DESTDIR) distclean ; \
++			$(MAKE) $(MFLAGS) distclean ; \
+ 			echo "### Done with" `pwd`);		\
+ 	done
+ 	rm -f Makefile config.*
+@@ -69,7 +65,7 @@
+ 	@for d in  $(SUBDIRS); \
+ 	do \
+ 		(cd $$d; echo "### Making" depend "in" `pwd`;	\
+-			$(MAKE) $(MFLAGS) DESTDIR=$(DESTDIR) depend ;	\
++			$(MAKE) $(MFLAGS) depend ;	\
+ 			echo "### Done with" `pwd`);		\
+ 	done
+ 
