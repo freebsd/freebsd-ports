@@ -1,0 +1,147 @@
+--- configure.orig	Sun Jan 17 19:49:34 1999
++++ configure	Sun Jan 17 19:52:54 1999
+@@ -1148,25 +1148,6 @@
+ done
+ 
+ 
+-echo $ac_n "checking whether getopt.h defines struct option""... $ac_c" 1>&6
+-echo "configure:1153: checking whether getopt.h defines struct option" >&5
+-   cat > conftest.$ac_ext <<EOF
+-#line 1155 "configure"
+-#include "confdefs.h"
+-#include <getopt.h>
+-EOF
+-if (eval "$ac_cpp conftest.$ac_ext") 2>&5 |
+-  egrep "struct option" >/dev/null 2>&1; then
+-  rm -rf conftest*
+-  echo "$ac_t""yes" 1>&6
+-else
+-  rm -rf conftest*
+-  echo "$ac_t""no" 1>&6
+-   { echo "configure: error: Must have gnu getopt library installed" 1>&2; exit 1; }
+-fi
+-rm -f conftest*
+-
+-
+ echo $ac_n "checking for working const""... $ac_c" 1>&6
+ echo "configure:1172: checking for working const" >&5
+ if eval "test \"`echo '$''{'ac_cv_c_const'+set}'`\" = set"; then
+@@ -1357,7 +1338,7 @@
+ echo "$ac_t""$ac_cv_func_memcmp_clean" 1>&6
+ test $ac_cv_func_memcmp_clean = no && LIBOBJS="$LIBOBJS memcmp.o"
+ 
+-for ac_func in select strdup strstr strtol getopt_long
++for ac_func in select strdup strstr strtol
+ do
+ echo $ac_n "checking for $ac_func""... $ac_c" 1>&6
+ echo "configure:1364: checking for $ac_func" >&5
+@@ -1733,109 +1714,6 @@
+ fi
+ 
+ fi
+-
+-
+-echo $ac_n "checking for getopt_long""... $ac_c" 1>&6
+-echo "configure:1740: checking for getopt_long" >&5
+-if eval "test \"`echo '$''{'ac_cv_func_getopt_long'+set}'`\" = set"; then
+-  echo $ac_n "(cached) $ac_c" 1>&6
+-else
+-  cat > conftest.$ac_ext <<EOF
+-#line 1745 "configure"
+-#include "confdefs.h"
+-/* System header to define __stub macros and hopefully few prototypes,
+-    which can conflict with char getopt_long(); below.  */
+-#include <assert.h>
+-/* Override any gcc2 internal prototype to avoid an error.  */
+-#ifdef __cplusplus
+-extern "C"
+-#endif
+-/* We use char because int might match the return type of a gcc2
+-    builtin and then its argument prototype would still apply.  */
+-char getopt_long();
+-
+-int main() {
+-
+-/* The GNU C library defines this for functions which it implements
+-    to always fail with ENOSYS.  Some functions are actually named
+-    something starting with __ and the normal name is an alias.  */
+-#if defined (__stub_getopt_long) || defined (__stub___getopt_long)
+-choke me
+-#else
+-getopt_long();
+-#endif
+-
+-; return 0; }
+-EOF
+-if { (eval echo configure:1771: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest; then
+-  rm -rf conftest*
+-  eval "ac_cv_func_getopt_long=yes"
+-else
+-  echo "configure: failed program was:" >&5
+-  cat conftest.$ac_ext >&5
+-  rm -rf conftest*
+-  eval "ac_cv_func_getopt_long=no"
+-fi
+-rm -f conftest*
+-fi
+-
+-if eval "test \"`echo '$ac_cv_func_'getopt_long`\" = yes"; then
+-  echo "$ac_t""yes" 1>&6
+-  echo "$ac_t""using libc's getopt_long" 1>&6
+-else
+-  echo "$ac_t""no" 1>&6
+-echo $ac_n "checking for getopt_long in -liberty""... $ac_c" 1>&6
+-echo "configure:1789: checking for getopt_long in -liberty" >&5
+-ac_lib_var=`echo iberty'_'getopt_long | sed 'y%./+-%__p_%'`
+-if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
+-  echo $ac_n "(cached) $ac_c" 1>&6
+-else
+-  ac_save_LIBS="$LIBS"
+-LIBS="-liberty  $LIBS"
+-cat > conftest.$ac_ext <<EOF
+-#line 1797 "configure"
+-#include "confdefs.h"
+-/* Override any gcc2 internal prototype to avoid an error.  */
+-#ifdef __cplusplus
+-extern "C"
+-#endif
+-/* We use char because int might match the return type of a gcc2
+-    builtin and then its argument prototype would still apply.  */
+-char getopt_long();
+-
+-int main() {
+-getopt_long()
+-; return 0; }
+-EOF
+-if { (eval echo configure:1811: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest; then
+-  rm -rf conftest*
+-  eval "ac_cv_lib_$ac_lib_var=yes"
+-else
+-  echo "configure: failed program was:" >&5
+-  cat conftest.$ac_ext >&5
+-  rm -rf conftest*
+-  eval "ac_cv_lib_$ac_lib_var=no"
+-fi
+-rm -f conftest*
+-LIBS="$ac_save_LIBS"
+-
+-fi
+-if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
+-  echo "$ac_t""yes" 1>&6
+-    ac_tr_lib=HAVE_LIB`echo iberty | sed -e 's/^a-zA-Z0-9_/_/g' \
+-    -e 'y/abcdefghijklmnopqrstuvwxyz/ABCDEFGHIJKLMNOPQRSTUVWXYZ/'`
+-  cat >> confdefs.h <<EOF
+-#define $ac_tr_lib 1
+-EOF
+-
+-  LIBS="-liberty $LIBS"
+-
+-else
+-  echo "$ac_t""no" 1>&6
+-fi
+-
+-fi
+-
+ 
+ trap '' 1 2 15
+ cat > confcache <<\EOF
