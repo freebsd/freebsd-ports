@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	mplayer
-PORTVERSION=	0.50.0.1
+PORTVERSION=	0.50.0.2
 CATEGORIES=	graphics
 MASTER_SITES=	http://ftp.mplayerhq.hu/MPlayer/releases/ \
 		http://www.stud.uni-karlsruhe.de/~uedc/mplayer/ \
 		http://www.rrr.de/~riggs/mplayer/
-DISTNAME=	MPlayer-0.50pre1
+DISTNAME=	MPlayer-0.50
 
 MAINTAINER=	riggs@rrr.de
 
@@ -22,8 +22,8 @@ RUN_DEPENDS=	${LOCALBASE}/share/mplayer/fonts:${PORTSDIR}/graphics/mplayer-fonts
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_XLIB=	yes
+WANT_ESOUND=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--disable-esd
 CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
 
@@ -37,15 +37,6 @@ DOCFILES=       DVB bugreports.html cd-dvd.html codecs-in.html \
 
 .include <bsd.port.pre.mk>
 
-.if exists(${WRKDIRPREFIX}${.CURDIR}/Makefile.inc)
-.include "${WRKDIRPREFIX}${.CURDIR}/Makefile.inc"
-.endif
-
-# hack to cope with dmesg standard vs ports standard
-.if (WITH_3DNow!)
-WITH_3DNOW=	yes
-.endif
-
 .if defined(WITH_OPTIMIZED_CFLAGS)
 CFLAGS+=       -O3 -ffast-math -fomit-frame-pointer
 .endif
@@ -55,19 +46,45 @@ USE_GTK=	yes
 CONFIGURE_ARGS+=	--enable-gui
 .endif
 
+.if defined(WITH_DVD)
+LIB_DEPENDS+=	dvdcss.0:${PORTSDIR}/graphics/libdvdcss \
+		dvdread.2:${PORTSDIR}/graphics/libdvdread
+.endif
+
+.if defined(WITH_ESOUND) || defined(HAVE_ESOUND)
+USE_ESOUND=	yes
+.endif
+
+.if defined(WITH_SVGALIB)
+LIB_DEPENDS+=	vga.1:${PORTSDIR}/graphics/svgalib
+.endif
+
+.if defined(WITH_VORBIS)
+LIB_DEPENDS+=	vorbis.0:${PORTSDIR}/audio/libvorbis
+.endif
+
 # "enable" build for other archs
 .if ${ARCH} == "i386"
-.if defined(WITH_MMX)
-CONFIGURE_ARGS+=--enable-mmx
+.if defined(WITHOUT_MMX)
+CONFIGURE_ARGS+=--disable-mmx
 .endif
-.if defined(WITH_3DNOW) && ${OSVERSION} >= 400021
-CONFIGURE_ARGS+=--enable-3dnow
+.if defined(WITHOUT_3DNOW) || ${OSVERSION} < 400021
+CONFIGURE_ARGS+=--disable-3dnow
 .endif
-.if defined(WITH_DSP) && defined(WITH_3DNOW) && ${OSVERSION} >= 400021
-CONFIGURE_ARGS+=--enable-3dnowex
+.if defined(WITHOUT_DSP) || defined(WITHOUT_3DNOW) || ${OSVERSION} < 400021
+CONFIGURE_ARGS+=--disable-3dnowex
 .endif
-.if defined(WITH_SSE)
-CONFIGURE_ARGS+=--enable-mmx2 --enable-sse
+.if !defined(WITH_ESOUND) && !defined(HAVE_ESOUND) 
+CONFIGURE_ARGS+=--disable-esd
+.endif
+.if defined(WITHOUT_SSE)
+CONFIGURE_ARGS+=--disable-mmx2 --disable-sse
+.endif
+.if !defined(WITH_SVGALIB)
+CONFIGURE_ARGS+=--disable-svga
+.endif
+.if !defined(WITH_VORBIS)
+CONFIGURE_ARGS+=--disable-vorbis
 .endif
 .if !defined(WITHOUT_WIN32_CODECS)
 RUN_DEPENDS+=	${CODEC_DETECTION_FILE}:${CODEC_PORT}
@@ -85,26 +102,41 @@ pre-everything::
 	@${ECHO_MSG} "by defining WITH_OPTIMIZED_CFLAGS"
 .endif
 .if !defined(WITH_GUI)
-	@${ECHO} "You can enable GTK GUI by defining WITH_GUI."
+	@${ECHO_MSG} "You can enable GTK GUI by defining WITH_GUI."
+.endif
+.if !defined(WITH_DVD)
+	@${ECHO_MSG} "You can enable DVD support by defining WITH_DVD."
+.endif
+.if !defined(WITH_ESOUND) && !defined(HAVE_ESOUND)
+	@${ECHO_MSG} "You can enable ESOUND sound support by defining WITH_ESOUND."
+.endif
+.if !defined(WITH_SVGALIB)
+	@${ECHO_MSG} "You can enable SVGALIB support by defining WITH_SVGALIB."
+.endif
+.if !defined(WITH_VORBIS)
+	@${ECHO_MSG} "You can enable VORBIS sound support by defining WITH_VORBIS."
 .endif
 .if ${ARCH} == "i386"
 .if !defined(WITHOUT_WIN32_CODECS)
 	@${ECHO_MSG} "You can disable support (this turns this into a X86 only port)"
 	@${ECHO_MSG} "for Win32 codecs"
 .endif
-.if defined(WITH_SSE)
+.if !defined(WITHOUT_SSE)
 	@${ECHO_MSG} "You have to enable \"options CPU_ENABLE_SSE\" in your kernel"
 	@${ECHO_MSG} "config in order to enable kernel support for SSE/MMX2."
 .endif
+.if !defined(WITHOUT_MMX)
+	@${ECHO_MSG} "You can disable use of MMX routines by defining WITHOUT_MMX."
+.endif
+.if !defined(WITHOUT_3DNOW) && ${OSVERSION} >= 400021
+	@${ECHO_MSG} "You can disable use of 3DNow! optimized routines by defining WITHOUT_3DNOW."
+.endif
+.if !defined(WITHOUT_3DNOW) && !defined(WITHOUT_DSP) && ${OSVERSION} >= 400021
+	@${ECHO_MSG} "You can disable support for Athlon DSP extensions by defining WITHOUT_DSP."
+.endif
+	@${ECHO_MSG} "Note: The cpu features are autodetected, so there is probably no need"
+	@${ECHO_MSG} "to manually disable them."
 .endif # ARCH == i386
-
-pre-configure:
-	@${RM} -f "${WRKDIRPREFIX}${.CURDIR}/Makefile.inc"
-	@${MKDIR} "${WRKDIRPREFIX}${.CURDIR}"
-	@${SETENV} TEMPDIR="${WRKDIRPREFIX}${.CURDIR}" ${PERL} ${FILESDIR}/get-feat
-
-post-configure:
-	@${RM} -f "${WRKDIRPREFIX}${.CURDIR}/Makefile.inc"
 
 post-install:
 	@${MKDIR} ${DATADIR}
