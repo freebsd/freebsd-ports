@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.134 1998/05/14 07:13:11 tg Exp $
+# $Id: Makefile,v 1.135 1998/05/15 12:16:29 tg Exp $
 #
 
     SUBDIR += 3dc
@@ -43,6 +43,7 @@
     SUBDIR += netris
     SUBDIR += oneko
     SUBDIR += oonsoo
+    SUBDIR += pente
     SUBDIR += qcc
     SUBDIR += quakeserver
     SUBDIR += seabattle
