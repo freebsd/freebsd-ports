@@ -15,6 +15,7 @@ PKGNAMESUFFIX=	-devel
 MAINTAINER=	lofi@freebsd.org
 COMMENT=	Prerelease package of GnuPG extensions for GnuPG 2.0
 
+BUILD_DEPENDS=	${LOCALBASE}/lib/libassuan.a:${PORTSDIR}/security/libassuan
 LIB_DEPENDS=	gcrypt.12:${PORTSDIR}/security/libgcrypt \
 		ksba.11:${PORTSDIR}/security/libksba \
 		pth.20:${PORTSDIR}/devel/pth
