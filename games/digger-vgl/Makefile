@@ -14,7 +14,7 @@ DISTNAME=	${PORTNAME}-${DIGREL}
 MAINTAINER=	sobomax@FreeBSD.org
 
 .if defined(WITH_SOUND)
-LIB_DEPENDS=	SDL-1.0.2:${PORTSDIR}/devel/sdl
+LIB_DEPENDS=	SDL-1.0.2:${PORTSDIR}/devel/sdl10
 MAKE_ENV=	SOUND=yes
 .endif
 

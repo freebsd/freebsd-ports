@@ -408,8 +408,8 @@
     SUBDIR += ruby-unit
     SUBDIR += rvm
     SUBDIR += sdcc
-    SUBDIR += sdl
-    SUBDIR += sdl-devel
+    SUBDIR += sdl10
+    SUBDIR += sdl12
     SUBDIR += sdts++
     SUBDIR += sfio
     SUBDIR += sh-rtems-binutils

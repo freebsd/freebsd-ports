@@ -16,7 +16,7 @@ MASTER_SITES=	ftp://ftp.lokigames.com/pub/open-source/smpeg/ \
 
 MAINTAINER=	cpiazza@FreeBSD.org
 
-LIB_DEPENDS=  	SDL-1.1.3:${PORTSDIR}/devel/sdl-devel
+LIB_DEPENDS=  	SDL-1.1.3:${PORTSDIR}/devel/sdl12
 
 SDL_CONFIG=	${LOCALBASE}/bin/sdl11-config
 

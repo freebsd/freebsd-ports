@@ -12,7 +12,7 @@ MASTER_SITES=	http://wildsau.idv.uni-linz.ac.at/mfx/download/pysol/pysol-sound-s
 
 MAINTAINER=	sobomax@FreeBSD.org
 
-LIB_DEPENDS=	SDL-1.1.3:${PORTSDIR}/devel/sdl-devel \
+LIB_DEPENDS=	SDL-1.1.3:${PORTSDIR}/devel/sdl12 \
 		smpeg.1:${PORTSDIR}/graphics/smpeg \
 		SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer
 

@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.starfox.org/gnuboy/distrib/
 MAINTAINER=	ijliao@FreeBSD.org
 
 LIB_DEPENDS=	vga.1:${PORTSDIR}/graphics/svgalib \
-		SDL-1.1.3:${PORTSDIR}/devel/sdl-devel
+		SDL-1.1.3:${PORTSDIR}/devel/sdl12
 
 USE_XLIB=	yes
 

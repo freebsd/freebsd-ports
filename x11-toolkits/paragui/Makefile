@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.bms-austria.com/pub/paragui/release/
 
 MAINTAINER=	ijliao@FreeBSD.org
 
-LIB_DEPENDS=	SDL-1.1.3:${PORTSDIR}/devel/sdl-devel \
+LIB_DEPENDS=	SDL-1.1.3:${PORTSDIR}/devel/sdl12 \
 		SDL_ttf.2:${PORTSDIR}/graphics/sdl_ttf
 
 SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config

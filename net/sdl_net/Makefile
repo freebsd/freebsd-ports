@@ -13,7 +13,7 @@ DISTNAME=	SDL_net-${PORTVERSION}
 
 MAINTAINER=	sobomax@FreeBSD.org
 
-LIB_DEPENDS=	SDL-1.1.3:${PORTSDIR}/devel/sdl-devel \
+LIB_DEPENDS=	SDL-1.1.3:${PORTSDIR}/devel/sdl12 \
 		GUI.0:${PORTSDIR}/graphics/guilib
 
 SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config

@@ -16,7 +16,7 @@ DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
 
-LIB_DEPENDS=	SDL-1.1.3:${PORTSDIR}/devel/sdl-devel \
+LIB_DEPENDS=	SDL-1.1.3:${PORTSDIR}/devel/sdl12 \
 		SDL_image.10:${PORTSDIR}/graphics/sdl_image \
 		SDL_ttf.2:${PORTSDIR}/graphics/sdl_ttf \
 		SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer

@@ -19,7 +19,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${WADFILE}
 MAINTAINER=	darius@dons.net.au
 
 BUILD_DEPENDS=	aclocal:${PORTSDIR}/devel/automake
-LIB_DEPENDS=	SDL-1.0.2:${PORTSDIR}/devel/sdl \
+LIB_DEPENDS=	SDL-1.0.2:${PORTSDIR}/devel/sdl10 \
 		${GL_DEPENDS}
 
 SDL_CONFIG?=	${LOCALBASE}/bin/sdl-config
