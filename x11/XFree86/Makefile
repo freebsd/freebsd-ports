@@ -1,16 +1,23 @@
 DISTNAME	=	xc
-PKGNAME		= 	XFree86-3.1
+PKGNAME		= 	XFree86-3.1.1
+WRKDIR?=                ${.CURDIR}/work
+BUILD_COOKIE?=		${WRKDIR}/.build_done
+PATCH_STRIP	=	-p1
 
 # uncomment one of the 2 lines below!
 #X11_ON_CDROM	=	yes
-#X11_VIA_FTP		=	yes
+X11_VIA_FTP	=	yes
 
 #define this if you are short of space - save ~28 Mbytes
 #REMOVE_NOT_ESSENTIAL	=	yes
 
 
 .if defined(X11_ON_CDROM) || defined(X11_VIA_FTP)
-build:
+build: configure ${BUILD_COOKIE}
+
+${BUILD_COOKIE}:
+	@echo "===>  Building for ${DISTNAME}"
+	@${MAKE} ${.MAKEFLAGS} pre-build
 .if defined(REMOVE_NOT_ESSENTIAL)
 	@rm -rf ${WRKSRC}/test ${WRKSRC}/doc/hardcopy ${WRKSRC}/doc/specs
 	@find ${WRKSRC}/ -name '*.orig' -exec rm -f {} ';'
@@ -22,7 +29,6 @@ install:
 	@(cd ${WRKSRC}; make install; make install.man)
 	@touch ${WRKDIR}/.install_done
 .endif
-
 
 .if defined(X11_ON_CDROM)
 .include "Makefile.cdrom"
