@@ -16,6 +16,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@freebsd.org
 COMMENT=	DBI driver for files and data structures
 
+BUILD_DEPENDS+=	${SITE_PERL}/DBD/File.pm:${PORTSDIR}/databases/p5-DBD-File
+RUN_DEPENDS+=	${SITE_PERL}/DBD/File.pm:${PORTSDIR}/databases/p5-DBD-File
+
 PERL_CONFIGURE=	yes
 
 MAN3=		DBD::RAM.3
