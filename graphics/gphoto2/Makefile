@@ -7,7 +7,7 @@
 
 PORTNAME=	gphoto2
 PORTVERSION=	2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.gphoto.net/dist/
 
@@ -17,7 +17,8 @@ LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv \
 		intl.1:${PORTSDIR}/devel/gettext-old \
 		usb-0.1.5:${PORTSDIR}/devel/libusb \
 		aa.1:${PORTSDIR}/graphics/aalib \
-		jpeg.9:${PORTSDIR}/graphics/jpeg
+		jpeg.9:${PORTSDIR}/graphics/jpeg \
+		exif.5:${PORTSDIR}/graphics/libexif
 BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 RUN_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 
@@ -25,7 +26,7 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--without-cdk --without-exif --without-fig2dev \
+CONFIGURE_ARGS=	--without-cdk --without-fig2dev \
 		--with-doc-dir=${DOCSDIR}
 INSTALLS_SHLIB=	yes
 
@@ -37,7 +38,7 @@ post-patch:
 .for file in configure libgphoto2_port/configure
 	@${PERL} -pi -e 's|-g -Wall||g' ${WRKSRC}/${file}
 .endfor
-	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
+	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${PERL} -pi -e \
 		's|\@INSTALL\@|${INSTALL_CMD}|g ; \
 		 s|AUTHORS COPYING README|AUTHORS README|g'
 
