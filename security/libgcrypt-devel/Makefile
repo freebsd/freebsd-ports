@@ -9,17 +9,32 @@ PORTVERSION=	1.1.12
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=	alpha/libgcrypt
+DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
+		${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}.sig
 
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	"General purpose crypto library based on code used in GnuPG"
 
 USE_REINPLACE=	yes
 USE_PERL5=	yes
-#USE_AUTOCONF_VER=	253
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 INSTALLS_SHLIB=	yes
+
+.include <bsd.port.pre.mk>
+
+pre-extract:
+.if exists(${PREFIX}/bin/gpg)
+	@${ECHO_CMD} "===> Verifying GnuPG Signature."
+	-${PREFIX}/bin/gpg --keyserver pgp.mit.edu --recv-key 57548DCD
+	cd ${DISTDIR}; ${PREFIX}/bin/gpg --verify \
+		${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}.sig \
+		${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
+.else
+	@${ECHO_CMD} "===> GnuPG not installed. Signature can not be verified"
+.endif
+
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|" \
@@ -28,4 +43,4 @@ post-patch:
 pre-configure:
 	@${RM} -f ${WRKSRC}/doc/gcrypt.info*
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
