@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.184 1999/01/28 19:02:01 sada Exp $
+# $Id: Makefile,v 1.185 1999/02/04 00:41:55 steve Exp $
 #
 
     SUBDIR += 3dc
@@ -97,6 +97,7 @@
     SUBDIR += xboard
     SUBDIR += xboing
     SUBDIR += xbomb
+    SUBDIR += xchadance
     SUBDIR += xchain
     SUBDIR += xchomp
     SUBDIR += xcogitate
@@ -143,6 +144,7 @@
     SUBDIR += xoct
     SUBDIR += xoids
     SUBDIR += xonix
+    SUBDIR += xosmulti
     SUBDIR += xothello
     SUBDIR += xpacman
     SUBDIR += xpanex
