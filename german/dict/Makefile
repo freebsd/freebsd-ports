@@ -6,8 +6,8 @@
 # $FreeBSD$
 #
 
-DISTNAME=       dict-1.1
-PKGNAME=        de-dict-1.1
+DISTNAME=       dict-1.2
+PKGNAME=        de-dict-1.2
 CATEGORIES=	german
 MASTER_SITES=   http://www.de.freebsd.org/~wosch/src/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${dict}.gz
