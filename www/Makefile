@@ -237,6 +237,7 @@
     SUBDIR += p5-AxKit-XSP-Cookie
     SUBDIR += p5-AxKit-XSP-ESQL
     SUBDIR += p5-AxKit-XSP-Exception
+    SUBDIR += p5-AxKit-XSP-IfParam
     SUBDIR += p5-CGI-Application
     SUBDIR += p5-CGI-ArgChecker
     SUBDIR += p5-CGI-Cache
