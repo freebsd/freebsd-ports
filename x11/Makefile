@@ -1,11 +1,10 @@
-# $Id: Makefile,v 1.68 1995/06/22 06:33:22 asami Exp $
+# $Id: Makefile,v 1.69 1995/07/05 21:39:13 asami Exp $
 #
 
    SUBDIR += XFree86
    SUBDIR += Xaw3d
    SUBDIR += blt
-   SUBDIR += color
-   SUBDIR += _xterm
+   SUBDIR += color_xterm
    SUBDIR += ctwm
    SUBDIR += emiclock
    SUBDIR += emu
