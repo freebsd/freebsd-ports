@@ -3,13 +3,14 @@
 # Date created: 	8 November 1997
 # Whom:			jraynard
 #
-# $Id: Makefile,v 1.2 1997/11/10 09:13:28 asami Exp $
+# $Id: Makefile,v 1.3 1997/11/29 03:08:01 jseger Exp $
 #
 
 DISTNAME=	sfio97
 PKGNAME=	sfio-97
 CATEGORIES=	devel
-MASTER_SITES=	http://www.research.att.com/sw/tools/sfio/
+#Users must register with AT&T before downloading tarball.
+#MASTER_SITES=	http://www.research.att.com/sw/tools/sfio/
 EXTRACT_SUFX=	.src.unix.tar.Z
 
 MAINTAINER=	jraynard@freebsd.org
