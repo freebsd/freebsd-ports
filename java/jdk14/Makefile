@@ -114,6 +114,10 @@ MAKE_ENV+=	NO_PLUGIN="YES" \
 .endif
 ALL_TARGET=	all
 
+PLIST_FILES=	jdk${JDK_VERSION}/jre/.systemPrefs/.system.lock \
+		jdk${JDK_VERSION}/jre/.systemPrefs/.systemRootModFile
+PLIST_DIRS=	jdk${JDK_VERSION}/jre/.systemPrefs
+
 JDKIMAGEDIR=	${WRKSRC}/../build/bsd-i586/j2sdk-image
 JDKIMAGEDIR_G=	${WRKSRC}/../build/bsd-i586/j2sdk-debug-image
 
