@@ -1,5 +1,5 @@
 # New ports collection makefile for:   jpilot
-# Version required:    0.95
+# Version required:    0.96
 # Date created:        23 August 1999
 # Whom:                Alex Varju <varju@webct.com>
 #
@@ -7,14 +7,9 @@
 #
 # "?=" and "+=" are for including this Makefile from japanese/jpilot
 
-DISTNAME=	jpilot-0.95
+DISTNAME=	jpilot-0.96
 CATEGORIES=	palm comms
 MASTER_SITES=	http://jpilot.linuxbox.com/
-
-PATCH_SITES=	${MASTER_SITES}
-PATCHFILES=	patch-1-datebook-0.95 \
-		patch-1-todo-0.95 \
-		patch-1-todo_gui-0.95
 
 MAINTAINER?=	varju@webct.com
 
@@ -27,6 +22,9 @@ CONFIGURE_ARGS+=--with-pilot-prefix=${PREFIX}
 CONFIGURE_ENV+=	GTK_CONFIG=${X11BASE}/bin/gtk12-config
 
 post-install:
-	@strip ${PREFIX}/bin/jpilot
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${PREFIX}/share/doc/jpilot
+	${CP} ${WRKSRC}/docs/plugin.html ${PREFIX}/share/doc/jpilot
+.endif
 
 .include <bsd.port.mk>
