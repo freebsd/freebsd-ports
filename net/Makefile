@@ -111,6 +111,7 @@
     SUBDIR += netcat
     SUBDIR += netpipes
     SUBDIR += nettest
+    SUBDIR += ngrep
     SUBDIR += nocol
     SUBDIR += ns
     SUBDIR += nslint
