@@ -14,6 +14,8 @@ MAINTAINER=	imura@FreeBSD.org
 
 LIB_DEPENDS=	png.3:${PORTSDIR}/graphics/png
 
+FORBIDDEN=	repository copied, awaiting upgrade
+
 NO_LATEST_LINK=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
