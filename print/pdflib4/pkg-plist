@@ -1,12 +1,14 @@
 bin/pdflib-config
 include/pdflib.h
 lib/libpdf.a
+lib/libpdf.la
 lib/libpdf.so
 lib/libpdf.so.4
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/pdflib_pl.a
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/pdflib_pl.la
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/pdflib_pl.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/pdflib_pl.so
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/pdflib_pl.so.4
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/pdflib_pl.so.0
 %%PORTDOCS%%share/doc/pdflib/PDFlib-license.pdf
 %%PORTDOCS%%share/doc/pdflib/PDFlib-manual.pdf
 %%PORTDOCS%%share/doc/pdflib/PDFlib-purchase-order.pdf
