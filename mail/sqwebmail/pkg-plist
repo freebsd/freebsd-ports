@@ -72,7 +72,6 @@ share/sqwebmail/html/en-us/redirect.html
 share/sqwebmail/html/en-us/spellchk.html
 share/sqwebmail/ldapaddressbook.dist
 share/sqwebmail/ldapsearch
-share/sqwebmail/lib/charset.alias
 share/sqwebmail/nodsn
 share/sqwebmail/sbin/makeuserdb
 share/sqwebmail/sbin/pw2userdb
@@ -80,7 +79,6 @@ share/sqwebmail/sbin/userdb
 share/sqwebmail/sbin/userdbpw
 share/sqwebmail/sbin/vchkpw2userdb
 share/sqwebmail/sendit.sh
-share/sqwebmail/share/locale/locale.alias
 share/sqwebmail/webgpg
 @dirrm share/sqwebmail/var/calendar/public
 @dirrm share/sqwebmail/var/calendar/private
@@ -88,10 +86,8 @@ share/sqwebmail/webgpg
 @dirrm share/sqwebmail/var/calendar
 %%AUTHDFLAG%%@dirrm share/sqwebmail/var/authdaemon
 @dirrm share/sqwebmail/var
-@dirrm share/sqwebmail/share/locale
 @dirrm share/sqwebmail/share
 @dirrm share/sqwebmail/sbin
-@dirrm share/sqwebmail/lib
 @dirrm share/sqwebmail/html/en-us
 @dirrm share/sqwebmail/html
 @dirrm share/sqwebmail

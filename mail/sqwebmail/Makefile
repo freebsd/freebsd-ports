@@ -7,7 +7,7 @@
 
 PORTNAME=	sqwebmail
 PORTVERSION=	3.6.0
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	mail www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	courier
@@ -72,7 +72,9 @@ CONFIGURE_ARGS=	\
 	--mandir=${PREFIX}/man \
 	--prefix=${PREFIX}/share/sqwebmail \
 	--enable-imageurl=/${IMAGEURL} \
-	--with-locking-method=fcntl
+	--with-locking-method=fcntl \
+	--with-libintl-prefix=${LOCALBASE} \
+	--with-libiconv-prefix=${LOCALBASE}
 
 PLIST_SUB+=	CGIBINDIR=${CGIBINDIR} CGIBINSUBDIR=${CGIBINSUBDIR} WEBDATADIR=${WEBDATADIR} WEBDATASUBDIR=${WEBDATASUBDIR}
 
