@@ -32,6 +32,7 @@ etc/postfix/sample-lmtp.cf
 etc/postfix/sample-local.cf
 etc/postfix/sample-main.cf
 etc/postfix/sample-master.cf
+etc/postfix/sample-mime.cf
 etc/postfix/sample-misc.cf
 etc/postfix/sample-pcre-access.cf
 etc/postfix/sample-pcre-body.cf
@@ -86,6 +87,7 @@ bin/newaliases
 bin/mailq
 %%SUB_TEST%%sbin/smtp-sink
 %%SUB_TEST%%sbin/smtp-source
+%%PORTDOCS%%share/doc/postfix/ADDRESS_CLASS_README
 %%PORTDOCS%%share/doc/postfix/DB_README
 %%PORTDOCS%%share/doc/postfix/DEBUG_README
 %%PORTDOCS%%share/doc/postfix/ETRN_README
@@ -93,13 +95,16 @@ bin/mailq
 %%PORTDOCS%%share/doc/postfix/INSTALL
 %%PORTDOCS%%share/doc/postfix/LDAP_README
 %%PORTDOCS%%share/doc/postfix/LINUX_README
+%%PORTDOCS%%share/doc/postfix/LOCAL_RECIPIENT_README
 %%PORTDOCS%%share/doc/postfix/LMTP_README
 %%PORTDOCS%%share/doc/postfix/MACOSX_README
+%%PORTDOCS%%share/doc/postfix/MAILDROP_README
 %%PORTDOCS%%share/doc/postfix/MYSQL_README
 %%PORTDOCS%%share/doc/postfix/NFS_README
 %%PORTDOCS%%share/doc/postfix/PACKAGE_README
 %%PORTDOCS%%share/doc/postfix/PCRE_README
 %%PORTDOCS%%share/doc/postfix/QMQP_README
+%%PORTDOCS%%share/doc/postfix/RELEASE_NOTES
 %%PORTDOCS%%share/doc/postfix/RESTRICTION_CLASS_README
 %%PORTDOCS%%share/doc/postfix/SASL_README
 %%PORTDOCS%%share/doc/postfix/ULTRIX_README

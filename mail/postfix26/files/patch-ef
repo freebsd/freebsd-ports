@@ -1,0 +1,11 @@
+*** ./src/postdrop/postdrop.c.orig	Sun Apr 25 18:05:43 1999
+--- ./src/postdrop/postdrop.c	Thu Jun  1 22:44:22 2000
+***************
+*** 39,41 ****
+  /*	/var/spool/postfix, mail queue
+! /*	/etc/postfix, configuration files
+  /* CONFIGURATION PARAMETERS
+--- 39,41 ----
+  /*	/var/spool/postfix, mail queue
+! /*	!!PREFIX!!/etc/postfix, configuration files
+  /* CONFIGURATION PARAMETERS

@@ -1,5 +1,5 @@
 #!/bin/sh
-# $FreeBSD: /tmp/pcvs/ports/mail/postfix27/scripts/Attic/configure.postfix,v 1.25 2003-01-04 16:17:26 seanc Exp $
+# $FreeBSD: /tmp/pcvs/ports/mail/postfix27/scripts/Attic/configure.postfix,v 1.26 2003-01-09 05:10:39 petef Exp $
 
 if [ -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc ]; then
 	exit
@@ -22,14 +22,16 @@ if [ -z "${BATCH}" ]; then
 		--checklist "\n\
 Please select desired options:" -1 -1 16 \
 PCRE		"Perl Compatible Regular Expressions" "$status_PCRE" \
-SASL		"Cyrus SASL (Simple Authentication and Security Layer)" "$status_SASL" \
+SASL		"Cyrus SASLv1 (Simple Authentication and Security Layer)" "$status_SASL" \
+SASL2		"Cyrus SASLv2 (Simple Authentication and Security Layer)" "$status_SASL2" \
 DB3		"Berkeley DB3 (required if SASL also built with DB3)" "$status_DB3" \
 MySQL		"MySQL map lookups" "$status_MySQL" \
 PgSQL		"PostgreSQL map lookups" "$status_PgSQL" \
 OpenLDAP	"OpenLDAP map lookups" "$status_OpenLDAP" \
 Test		"SMTP/LMTP test server and generator" "$status_Test" \
-TLS		"Secure Sockets Layer and Transport Layer Security" "$status_TLS" \
-IPv6		"IPv6 support (not KAME official)" "$status_IPv6" \
+TLS		"SSL and TLS" "$status_TLS" \
+IPv6		"IPv6 support (currently broken)" "$status_IPv6" \
+IPv6TLS		"IPv6 support with SSL and TLS" "$status_IPv6TLS" \
 2> $tempfile
 
 	retval=$?
@@ -58,8 +60,8 @@ echo "PREFIX=	${PREFIX}"
 SUB_TLS="@comment "
 SUB_TEST="@comment "
 
-for i; do
-	case $i in
+while [ "$1" ]; do
+	case $1 in
 		PCRE)
 			echo "LIB_DEPENDS+=	pcre.0:\${PORTSDIR}/devel/pcre"
 			echo "POSTFIX_CCARGS+=	-DHAS_PCRE -I\${LOCALBASE}/include"
@@ -67,13 +69,32 @@ for i; do
 			echo "PCRE_SUFFIX=	+pcre"
 			SUB_PCRE=""
 			;;
-		SASL)
-			echo "LIB_DEPENDS+=	sasl.8:\${PORTSDIR}/security/cyrus-sasl"
-			echo "POSTFIX_CCARGS+=	-DUSE_SASL_AUTH -I\${LOCALBASE}/include"
-			echo "POSTFIX_AUXLIBS+=	-L\${LOCALBASE}/lib -lsasl -lpam -lcrypt"
-			echo "SASL_SUFFIX=	+sasl"
-			if [ -f ${PREFIX}/lib/libsasl.a ]; then 
-				if nm ${PREFIX}/lib/libsasl.a | grep -wq "mysql_verify_password"; then
+                SASL)
+                        echo "LIB_DEPENDS+=     sasl.8:\${PORTSDIR}/security/cyrus-sasl"
+                        echo "POSTFIX_CCARGS+=  -DUSE_SASL_AUTH -I\${LOCALBASE}/include -I\${LOCALBASE}/include/sasl1"
+                        echo "POSTFIX_AUXLIBS+= -L\${LOCALBASE}/lib -lsasl -lpam -lcrypt"
+                        echo "SASL_SUFFIX=      +sasl"
+                        if [ -f ${PREFIX}/lib/libsasl.a ]; then
+                                if nm ${PREFIX}/lib/libsasl.a | grep -wq "mysql_verify_password"; then
+                                        echo "POSTFIX_CCARGS+=  -DHAS_MYSQL -I\${LOCALBASE}/include/mysql"
+                                        echo "POSTFIX_AUXLIBS+= \${LOCALBASE}/lib/mysql/libmysqlclient.a -lm -lz"
+                                fi
+                        else
+                                echo "POSTFIX_CCARGS+=  -DHAS_MYSQL -I\${LOCALBASE}/include/mysql"
+                                echo "POSTFIX_AUXLIBS+= \${LOCALBASE}/lib/mysql/libmysqlclient.a -lm -lz"
+                        fi
+                        echo ".if exists(/usr/lib/libkrb.a)"
+                        echo "POSTFIX_AUXLIBS+= -lkrb -ldes -lcom_err"
+                        echo ".endif"
+                        SUB_SASL=""
+                        ;;
+		SASL2)
+			echo "LIB_DEPENDS+=	sasl2.2:\${PORTSDIR}/security/cyrus-sasl2"
+			echo "POSTFIX_CCARGS+=	-DUSE_SASL_AUTH -I\${LOCALBASE}/include -I\${LOCALBASE}/include/sasl"
+			echo "POSTFIX_AUXLIBS+=	-L\${LOCALBASE}/lib -lsasl2 -lpam -lcrypt"
+			echo "SASL_SUFFIX=	+sasl2"
+			if [ -f ${PREFIX}/lib/libsasl2.a ]; then
+				if nm ${PREFIX}/lib/libsasl2.a | grep -wq "mysql_verify_password"; then
 					echo "POSTFIX_CCARGS+=  -DHAS_MYSQL -I\${LOCALBASE}/include/mysql"
 					echo "POSTFIX_AUXLIBS+= \${LOCALBASE}/lib/mysql/libmysqlclient.a -lm -lz"
 				fi
@@ -90,8 +111,8 @@ for i; do
 			echo "MAN8+=		tlsmgr.8"
 			echo "POSTFIX_CCARGS+=	-DHAS_SSL -I/usr/include/openssl"
 			echo "POSTFIX_AUXLIBS+=	-lssl -lcrypto"
-			echo "DISTFILES+=	\${DISTNAME}.tar.gz pfixtls-0.8.11a-1.1.11-0.9.6g.tar.gz"
-			echo "EXTRA_PATCHES+=	\${WRKDIR}/pfixtls-0.8.11a-1.1.11-0.9.6g/pfixtls.diff"
+			echo "DISTFILES+=	\${DISTNAME}.tar.gz pfixtls-0.8.12-2.0.0.1-0.9.6h.tar.gz"
+			echo "EXTRA_PATCHES+=	\${WRKDIR}/pfixtls-0.8.12-2.0.0.1-0.9.6h/pfixtls.diff"
 			echo "PATCH_STRIP=	-p1"
 			echo "TLS_SUFFIX=	+tls"
 			SUB_TLS=""
@@ -132,10 +153,10 @@ for i; do
 			if [ `uname -m` != "i386" ]; then
 				/usr/bin/dialog --msgbox "IPv6 patch currently only supported on i386!" 5 60 > /dev/stderr
 				rm -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
-				exit 1
+			exit 1
 			fi
-			if [ -z $SUB_TLS ]; then
-				/usr/bin/dialog --msgbox "IPv6 and TLS patch cannot be used simultaneously!" 5 60 > /dev/stderr
+			if [ X$SUB_TLS = "X" ]; then
+				/usr/bin/dialog --msgbox "Select exactly one of the IPv6 and TLS patches" 5 60 > /dev/stderr
 				rm -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
 				exit 1
 			fi
@@ -144,15 +165,30 @@ for i; do
 			echo "PATCH_DIST_STRIP= -p1"
 			echo "IPv6_SUFFIX=	+ipv6"
 			echo ""
+			IPv6SELECTED=YES
 			;;
-	        "")
+		IPv6TLS)
+			if [ X$SUB_TLS = "X" -o X$IPv6SELECTED != X ]; then
+				/usr/bin/dialog --msgbox "Select exactly one of the IPv6 and TLS patches" 5 60 > /dev/stderr
+				rm -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
+				exit 1
+			fi
+			echo "MAN8+=		tlsmgr.8"
+			echo "POSTFIX_CCARGS+=	-DHAS_SSL -I/usr/include/openssl"
+			echo "POSTFIX_AUXLIBS+=	-lssl -lcrypto"
+			echo "PATCH_SITES+=	ftp://ftp.stack.nl/pub/postfix/tls+ipv6/1.10/"
+			echo "PATCHFILES+=	tls+ipv6-1.10-pf-2.0.0.1.patch.gz"
+			echo "PATCH_DIST_STRIP=	-p1"
+			echo "TLS_SUFFIX=	+ipv6+tls"
+			SUB_TLS=""
 			;;
 		*)
-			echo "Invalid option(s): $*" > /dev/stderr
+			echo "Unknown option(s): $*" > /dev/stderr
 			rm -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
 			exit 1
 			;;
 	esac
+	shift
 done
 
 echo "PLIST_SUB+=	SUB_TLS=\"${SUB_TLS}\""

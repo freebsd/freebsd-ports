@@ -1,0 +1,13 @@
+*** ./src/cleanup/cleanup.c.orig	Sun May 28 18:33:41 2000
+--- ./src/cleanup/cleanup.c	Thu Jun  1 21:52:22 2000
+***************
+*** 118,121 ****
+  /* FILES
+! /*	/etc/postfix/canonical*, canonical mapping table
+! /*	/etc/postfix/virtual*, virtual mapping table
+  /* LICENSE
+--- 118,121 ----
+  /* FILES
+! /*	!!PREFIX!!/etc/postfix/canonical*, canonical mapping table
+! /*	!!PREFIX!!/etc/postfix/virtual*, virtual mapping table
+  /* LICENSE
