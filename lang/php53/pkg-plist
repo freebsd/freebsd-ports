@@ -140,7 +140,6 @@ include/php/ext/standard/url.h
 include/php/ext/standard/url_scanner.h
 include/php/ext/standard/url_scanner_ex.h
 include/php/ext/xml/expat_compat.h
-include/php/ext/xml/expat/.php
 include/php/ext/xml/php_xml.h
 include/php/main/SAPI.h
 include/php/main/build-defs.h
@@ -189,7 +188,6 @@ include/php/regex/regex.h
 include/php/regex/regex2.h
 include/php/regex/regex_extra.h
 include/php/regex/utils.h
-lib/php/%%EXT_DIR%%/.php
 lib/php/build/Makefile.global
 lib/php/build/acinclude.m4
 lib/php/build/mkdep.awk
@@ -220,6 +218,7 @@ lib/php/build/shtool
 %%CLI%%%%PEAR%%share/pear/bootstrap/PEAR/Config.php
 %%CLI%%%%PEAR%%share/pear/bootstrap/PEAR/Dependency.php
 %%CLI%%%%PEAR%%share/pear/bootstrap/PEAR/DependencyDB.php
+%%CLI%%%%PEAR%%share/pear/bootstrap/PEAR/Downloader.php
 %%CLI%%%%PEAR%%share/pear/bootstrap/PEAR/Installer.php
 %%CLI%%%%PEAR%%share/pear/bootstrap/PEAR/Packager.php
 %%CLI%%%%PEAR%%share/pear/bootstrap/PEAR/Registry.php
@@ -233,14 +232,12 @@ lib/php/build/shtool
 @dirrm include/php/ext/sqlite/libsqlite
 @dirrm include/php/ext/sqlite
 @dirrm include/php/ext/standard
-@dirrm include/php/ext/xml/expat
 @dirrm include/php/ext/xml
 @dirrm include/php/ext
 @dirrm include/php/main/streams
 @dirrm include/php/main
 @dirrm include/php/regex
 @dirrm include/php/
-@unexec rmdir %D/lib/php/%%EXT_DIR%% 2> /dev/null || true
 @dirrm lib/php/build
 @unexec rmdir %D/lib/php 2> /dev/null || true
 %%CLI%%%%PEAR%%@dirrm share/pear/bootstrap/Archive
