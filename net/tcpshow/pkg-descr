@@ -1,0 +1,10 @@
+tcpshow reads a tcpdump(1) savefile and provides a reasonably complete
+decode of Ethernet, IP, ICMP, UDP and TCP headers.  Boolean expressions
+may also be specified for packet selection.  Data within the packets are
+displayed in ASCII.
+
+tcpshow's output is simular to Sun Solaris's snoop(1M) command for
+network packet capture and inspection.
+
+-- David
+   (obrien@NUXI.com)

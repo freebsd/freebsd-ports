@@ -1,0 +1,32 @@
+# ex:ts=8
+# Ports collection makefile for:  tcpshow
+# Version required:     	  1.0
+# Date created:			  Tue Nov 04, 1997
+# Whom:				  David O'Brien (obrien@NUXI.com)
+#
+# $Id: Makefile,v 1.2 1997/01/25 18:08:40 obrien Exp $
+#
+
+PKGNAME=	tcpshow-1.0
+CATEGORIES=	net security
+MASTER_SITES=	http://www.cs.berkeley.edu/~daw/mike/
+DISTFILES=	tcpshow.c tcpshow.1
+
+MAINTAINER=     obrien@FreeBSD.org
+
+NO_WRKSUBDIR=	yes
+MAN1=		tcpshow.1
+
+do-extract:
+	@${MKDIR} ${WRKDIR}
+	@${CP} ${DISTDIR}/tcpshow.c ${WRKDIR}
+	@${CP} ${DISTDIR}/tcpshow.1 ${WRKDIR}
+
+do-build:
+	(cd ${WRKSRC} && ${CC} ${CFLAGS} -o tcpshow tcpshow.c)
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/tcpshow ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/tcpshow.1 ${PREFIX}/man/man1
+
+.include <bsd.port.mk>
