@@ -298,6 +298,7 @@
     SUBDIR += sdf
     SUBDIR += sdocbook-xml
     SUBDIR += se-ispell
+    SUBDIR += sed_inplace
     SUBDIR += sgmlformat
     SUBDIR += sgmls
     SUBDIR += sgmltools
