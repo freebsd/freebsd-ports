@@ -1,5 +1,5 @@
 # New ports collection makefile for:	wmakerconf
-# Version required:			2.2
+# Version required:			2.3
 # Date Created:				14 August 1999
 # Whom:					Dominik Rothert <dr@domix.de>
 #

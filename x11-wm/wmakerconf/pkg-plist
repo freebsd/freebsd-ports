@@ -1,3 +1,5 @@
+bin/mkpreview
+bin/wmakerconf
 share/wmakerconf/ABOUT-NLS
 share/wmakerconf/COPYING
 share/wmakerconf/MANUAL
@@ -9,7 +11,6 @@ share/wmakerconf/appearance.xpm
 share/wmakerconf/black.xpm
 share/wmakerconf/effects.xpm
 share/wmakerconf/getfile.pl
-share/wmakerconf/gettile.pl
 share/wmakerconf/libwww.pl
 share/wmakerconf/lynx.pl
 share/wmakerconf/menu.xpm
@@ -27,11 +28,9 @@ share/wmakerconf/wm-oldmenu2new.sh
 share/wmakerconf/wmaker-version
 share/wmakerconf/wmakerconf.xpm
 share/wmakerconf/workspace.xpm
-bin/wmakerconf
-bin/mkpreview
 share/locale/ca/LC_MESSAGES/wmakerconf-data.mo
 share/locale/ca/LC_MESSAGES/wmakerconf.mo
-share/locale/cz/LC_MESSAGES/wmakerconf-data.mo
+share/locale/cs/LC_MESSAGES/wmakerconf-data.mo
 share/locale/da/LC_MESSAGES/wmakerconf-data.mo
 share/locale/da/LC_MESSAGES/wmakerconf.mo
 share/locale/de/LC_MESSAGES/wmakerconf-data.mo
