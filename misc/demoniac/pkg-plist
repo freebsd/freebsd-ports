@@ -1,0 +1,4 @@
+bin/demoniac
+share/demoniac/pixmaps/logo.xpm
+@dirrm share/demoniac/pixmaps
+@dirrm share/demoniac
