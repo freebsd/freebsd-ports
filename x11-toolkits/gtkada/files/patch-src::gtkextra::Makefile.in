@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- src/gtkextra/Makefile.in	2001/08/15 08:45:57	1.1
++++ src/gtkextra/Makefile.in	2001/08/15 08:46:10
+@@ -6,7 +6,7 @@
+ OBJ=${SRC:%.c=%.o}
+ CC=@CC@
+ FPIC=@FPIC@
+-CFLAGS=-O2
++CFLAGS=@CFLAGS@
+ ALL_CFLAGS=$(CFLAGS) @GTK_CFLAGS@ $(FPIC)
+ 
+ all: $(OBJ)

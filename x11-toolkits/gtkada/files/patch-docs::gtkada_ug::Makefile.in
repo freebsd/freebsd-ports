@@ -1,0 +1,12 @@
+
+$FreeBSD$
+
+--- docs/gtkada_ug/Makefile.in	2001/08/15 09:24:24	1.1
++++ docs/gtkada_ug/Makefile.in	2001/08/15 09:24:35
+@@ -1,5 +1,5 @@
+ prefix = @prefix@
+-docdir = $(prefix)/doc/GtkAda/gtkada_ug
++docdir = $(prefix)/share/doc/GtkAda/gtkada_ug
+ 
+ MKDIR = mkdir -p
+ INSTALL = @INSTALL@

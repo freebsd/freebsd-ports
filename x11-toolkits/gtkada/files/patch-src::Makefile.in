@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- src/Makefile.in	2001/08/15 08:53:08	1.1
++++ src/Makefile.in	2001/08/15 08:53:31
+@@ -32,7 +32,7 @@
+ INSTALL_SCRIPT = @INSTALL_SCRIPT@
+ 
+ LIBNAME       = libgtkada$(SO_EXT)
+-SONAME        = libgtkada-$(MAJOR).$(MINOR)$(SO_EXT).$(MICRO)
++SONAME        = libgtkada$(SO_EXT).$(MICRO)
+ ARCHIVENAME   = libgtkada.a
+ 
+ GTKADA_CONFIG = gtkada-config
