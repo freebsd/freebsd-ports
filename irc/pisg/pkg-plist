@@ -39,25 +39,27 @@ etc/pisg/pisg.cfg.sample
 %%SITE_PERL%%/Pisg/Parser/Format/hydra.pm
 %%SITE_PERL%%/Pisg/Parser/Format/muh2.pm
 %%SITE_PERL%%/Pisg/Parser/Logfile.pm
-share/pisg/layout/justgrey.css
-share/pisg/layout/darkgalaxy.css
-share/pisg/layout/softgreen.css
-share/pisg/layout/default.css
-share/pisg/layout/ocean.css
-share/pisg/layout/darkred.css
-share/pisg/layout/orange_grey.css
-share/pisg/gfx/blue-h.png
-share/pisg/gfx/blue-v.png
-share/pisg/gfx/green-h.png
-share/pisg/gfx/green-v.png
-share/pisg/gfx/red-h.png
-share/pisg/gfx/red-v.png
-share/pisg/gfx/yellow-h.png
-share/pisg/gfx/yellow-v.png
-share/pisg/lang.txt
-@dirrm share/pisg/layout
-@dirrm share/pisg/gfx
-@dirrm share/pisg
+%%DATADIR%%/layout/justgrey.css
+%%DATADIR%%/layout/darkgalaxy.css
+%%DATADIR%%/layout/softgreen.css
+%%DATADIR%%/layout/default.css
+%%DATADIR%%/layout/ocean.css
+%%DATADIR%%/layout/darkred.css
+%%DATADIR%%/layout/orange_grey.css
+%%DATADIR%%/gfx/blue-h.png
+%%DATADIR%%/gfx/blue-v.png
+%%DATADIR%%/gfx/green-h.png
+%%DATADIR%%/gfx/green-v.png
+%%DATADIR%%/gfx/red-h.png
+%%DATADIR%%/gfx/red-v.png
+%%DATADIR%%/gfx/yellow-h.png
+%%DATADIR%%/gfx/yellow-v.png
+%%DATADIR%%/lang.txt
+%%PORTDOCS%%%%DOCSDIR%%/pisg-doc.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DATADIR%%/layout
+@dirrm %%DATADIR%%/gfx
+@dirrm %%DATADIR%%
 @dirrm %%SITE_PERL%%/Pisg/Parser/Format
 @dirrm %%SITE_PERL%%/Pisg/Parser
 @dirrm %%SITE_PERL%%/Pisg
