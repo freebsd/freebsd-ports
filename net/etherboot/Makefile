@@ -6,14 +6,16 @@
 #
 
 PORTNAME=	etherboot
-PORTVERSION=	4.6.10
+PORTVERSION=	4.7.21
+CATEGORIES=	net
+#MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+#use development sources for now instead of standard ftp site.
+MASTER_SITES=	http://etherboot.sourceforge.net/
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ambrisko@whistle.com
-
-BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 
 NO_PACKAGE=	lots of configuration necessary
 USE_GMAKE=1
