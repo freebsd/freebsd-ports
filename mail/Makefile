@@ -463,7 +463,6 @@
     SUBDIR += sylpheed
     SUBDIR += sylpheed2
     SUBDIR += sylpheed-claws
-    SUBDIR += sylpheed-gtk2
     SUBDIR += sympa
     SUBDIR += sympa-elixus
     SUBDIR += t-prot
