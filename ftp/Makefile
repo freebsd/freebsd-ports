@@ -6,6 +6,7 @@
     SUBDIR += axelq
     SUBDIR += axyftp
     SUBDIR += bftpd
+    SUBDIR += bsdftpd-ssl
     SUBDIR += cftp
     SUBDIR += curl
     SUBDIR += downloader
