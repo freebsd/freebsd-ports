@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	DNS
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	clement@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DNS::Zone is set of perl modules for name service zone files
 
 PERL_CONFIGURE=	yes
