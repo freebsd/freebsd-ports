@@ -3,7 +3,7 @@
 # Date created:        28 October 1997
 # Whom:                Stefan Eßer <se@freebsd.org>
 #
-# $Id: Makefile,v 1.9 1998/04/11 17:37:11 andreas Exp $
+# $Id: Makefile,v 1.10 1998/04/15 22:18:07 jseger Exp $
 #
 
 DISTNAME=	kdenetwork-Beta3-1
@@ -28,6 +28,8 @@ LIB_DEPENDS=	qt\\.1\\.3[1-9]:${PORTSDIR}/x11/qt \
 		kfm\\.0\\.9[0-9]:${PORTSDIR}/x11/kdelibs \
 		mediatool\\.0\\.[6-9]:${PORTSDIR}/x11/kdelibs \
 		mimelib\\.1\\.[0-9]:${PORTSDIR}/converters/kdesupport
+
+BROKEN=		upgrade
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	"--prefix=$(PREFIX)" \
