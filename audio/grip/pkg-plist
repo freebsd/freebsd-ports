@@ -7,6 +7,7 @@ share/gnome/apps/Multimedia/grip.desktop
 %%PORTDOCS%%share/gnome/help/grip/C/cdplayer.html
 %%PORTDOCS%%share/gnome/help/grip/C/cdplayer.png
 %%PORTDOCS%%share/gnome/help/grip/C/cdplayersmall.png
+%%PORTDOCS%%share/gnome/help/grip/C/cdscan.png
 %%PORTDOCS%%share/gnome/help/grip/C/configure.html
 %%PORTDOCS%%share/gnome/help/grip/C/discdb.png
 %%PORTDOCS%%share/gnome/help/grip/C/discdbconfig.html
@@ -67,14 +68,19 @@ share/gnome/apps/Multimedia/grip.desktop
 %%PORTDOCS%%share/gnome/help/grip/C/topic.dat
 %%PORTDOCS%%share/gnome/help/grip/C/trkedit.png
 %%PORTDOCS%%share/gnome/help/grip/C/volume.png
-%%PORTDOCS%%share/gnome/help/grip/C/x131.html
+%%PORTDOCS%%share/gnome/help/grip/C/x135.html
 share/locale/de/LC_MESSAGES/grip.mo
+share/locale/es/LC_MESSAGES/grip.mo
 share/locale/fr/LC_MESSAGES/grip.mo
 share/locale/ja/LC_MESSAGES/grip.mo
+share/locale/pt_BR/LC_MESSAGES/grip.mo
+share/locale/ru/LC_MESSAGES/grip.mo
 share/locale/zh_CN/LC_MESSAGES/grip.mo
+share/locale/zh_HK/LC_MESSAGES/grip.mo
+share/locale/zh_TW/LC_MESSAGES/grip.mo
 share/pixmaps/gripicon.png
 @comment empty dirs
-@exec /bin/mkdir -p %D/share/gnome/help/grip/C/images
+%%PORTDOCS%%@exec /bin/mkdir -p %D/share/gnome/help/grip/C/images
 @comment directories
 %%PORTDOCS%%@dirrm share/gnome/help/grip/C/images
 %%PORTDOCS%%@dirrm share/gnome/help/grip/C
