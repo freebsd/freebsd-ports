@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	vamos
-PORTVERSION=	0.4.3
+PORTVERSION=	0.4.4
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -22,12 +22,11 @@ LIB_DEPENDS=	sigc-1.2.5:${PORTSDIR}/devel/libsigc++12 \
 		glut.3:${PORTSDIR}/graphics/libglut \
 		png.5:${PORTSDIR}/graphics/png
 
+USE_GNOME=	gnometarget lthack
 USE_GL=		yes
 USE_GETOPT_LONG=	yes
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
 		MAKEINFO="makeinfo --no-split"
 INSTALLS_SHLIB=	yes
