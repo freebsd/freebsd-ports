@@ -8,7 +8,7 @@
 PORTNAME=	skk-elisp
 PORTVERSION=	9.6
 CATEGORIES=	japanese elisp
-MASTER_SITES=	ftp://skk.kuis.kyoto-u.ac.jp/skk/${PORTVERSION}/
+MASTER_SITES=	${MASTER_SITE_PORTS_JP}
 DISTNAME=	skk${PORTVERSION}
 
 MAINTAINER=	matusita@jp.FreeBSD.org
