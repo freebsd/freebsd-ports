@@ -7,6 +7,7 @@
 
 PORTNAME=	perforce
 PORTVERSION=	${VERSION}
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.perforce.com/pub/perforce/r${PORTVERSION}/bin.${PLATFORM}/ \
