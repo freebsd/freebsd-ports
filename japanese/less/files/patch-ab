@@ -1,19 +1,10 @@
---- configure.in.orig	Mon Nov  6 22:49:26 2000
-+++ configure.in	Mon Nov  6 22:50:32 2000
-@@ -24,6 +24,16 @@
+--- configure.in.orig	Sat Feb 17 16:37:23 2001
++++ configure.in	Sat Feb 17 16:38:58 2001
+@@ -26,6 +26,7 @@
  AC_CHECK_LIB(gen, regcmp)
  AC_CHECK_LIB(intl, regcmp)
  AC_CHECK_LIB(PW, regcmp)
-+setlocale_works=no
-+AC_TRY_RUN([
-+#include <locale.h>
-+int main() {
-+char *p; p = setlocale(LC_ALL, "ja_JP.EUC");
-+if (p == NULL) exit(1); else exit(0); }],
-+setlocale_works=yes,:,:)
-+if test x$setlocale_works = xno; then
-+AC_CHECK_LIB(xpg4, setlocale)
-+fi
++AC_CHECK_LIB(xpg4, _xpg4_setrunelocale, [LIBS="$LIBS -lxpg4"],,)
  dnl Checks for terminal libraries
  
  AC_MSG_CHECKING(for working terminal libraries)
