@@ -7,6 +7,7 @@
 
 PORTNAME=	apache-ant
 PORTVERSION=	1.6.1
+PORTREVISION=	1
 CATEGORIES=	devel java
 MASTER_SITES=	http://apache.mirror.trueserver.nl/dist/ant/binaries/:bin \
 		http://apache.proserve.nl/dist/ant/binaries/:bin \
@@ -15,14 +16,16 @@ MASTER_SITES=	http://apache.mirror.trueserver.nl/dist/ant/binaries/:bin \
 		http://www.esil.univ-mrs.fr/~hquiroz/:man
 DISTFILES=	${ANT_DISTFILE}:bin \
 		${MANPAGE_DISTFILE}:man
+EXTRACT_ONLY=	${ANT_DISTFILE}
 
 MAINTAINER=	znerd@FreeBSD.org
 COMMENT=	Java- and XML-based build tool, conceptually similar to make
 
+RUN_DEPENDS=	classpath:${PORTSDIR}/java/javavmwrapper
+
 ANT_DISTFILE=	${PORTNAME}-${PORTVERSION}-bin.tar.bz2
 MANPAGE_DISTFILE=	${PORTNAME}-manpage-${MANPAGE_VERSION}.tgz
 MANPAGE_VERSION=	20030908
-EXTRACT_ONLY=	${ANT_DISTFILE}
 USE_BZIP2=	yes
 USE_JAVA=	1.2+
 

@@ -69,17 +69,15 @@ fi
 
 # FreeBSD-specific: Add the .jar files from ${PREFIX}/share/java/classes
 if [ "${ANT_INCLUDE_SHARED_JARS}" = "YES" ]; then
-	for JAR_FILE in "%%PREFIX%%/share/java/classes"/*.jar; do
-
-		# If the directory is empty, then the input string is returned
-		if [ -f "${JAR_FILE}" ]; then
-			if [ -z "${LOCALCLASSPATH}" ]; then
-				LOCALCLASSPATH="${JAR_FILE}"
-			else
-				LOCALCLASSPATH="${JAR_FILE}":"${LOCALCLASSPATH}"
-			fi
-		fi
-	done
+	CLASSPATH_CMD=/usr/local/bin/classpath
+	if [ -x "${CLASSPATH_CMD}" ]; then
+		SHARED_JARS=`${CLASSPATH_CMD}`
+		LOCALCLASSPATH=${SHARED_JARS}:"${LOCALCLASSPATH}"
+	else
+		echo "Error: ${CLASSPATH_CMD} is not present on your system"
+		echo "       you should install the java/javavmwrapper port"
+		exit 1
+	fi
 fi
 
 
