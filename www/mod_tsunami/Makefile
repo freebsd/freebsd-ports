@@ -14,7 +14,7 @@ MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Apache module which dynamically limits a site's slot usage
 
 USE_APACHE=	yes
-DOCS=		AUTHORS Changelog README
+DOCS=		AUTHORS Changelog
 
 do-build:
 	@cd ${WRKSRC} && ${APXS} -c mod_tsunami.c
