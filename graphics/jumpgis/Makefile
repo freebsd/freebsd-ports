@@ -7,6 +7,7 @@
 
 PORTNAME=	jumpgis
 PORTVERSION=	1.1.2
+PORTREVISION=	1
 CATEGORIES=	graphics java
 MASTER_SITES=	http://www.jump-project.org/downloads/jump/:main \
 		http://sam.stral.net/freebsd/:extra
@@ -50,7 +51,7 @@ do-install:
 	@${ECHO_CMD} "---> Installing JAR files"
 	${MKDIR} ${TARGET_DIR}/lib
 	${INSTALL_DATA} ${WRKSRC}/lib/*.jar ${TARGET_DIR}/lib
-	${INSTALL_DATA} -d ${TARGET_DIR}/lib/ext
+	${MKDIR} ${TARGET_DIR}/lib/ext
 	@${ECHO_MSG} "Installing startup script"
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/JUMPWorkbench-unix.sh ${PREFIX}/bin/jumpgis
 
