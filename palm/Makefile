@@ -13,6 +13,7 @@
     SUBDIR += pilot-link
     SUBDIR += pilot_makedoc
     SUBDIR += pilrc
+    SUBDIR += pose
     SUBDIR += prc-tools
     SUBDIR += prc-tools-binutils
     SUBDIR += prc-tools-gcc

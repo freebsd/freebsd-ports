@@ -1,0 +1,16 @@
+The Palm OS(R) Emulator is software that emulates the hardware of
+the various models of Palm OS(R) platform devices. It is extremely
+valuable for writing, testing and debugging applications. Create
+"virtual" handhelds by running the Emulator on Windows, Mac OS, or
+Unix computers.
+
+Emulated devices can be loaded with new ROMs, so you can test your
+application with virtual devices, including different devices than
+you own, foreign language ROMs, and debug-enabled ROMs for extra
+error checking and debugging features.
+
+It was based on "Copilot", written by several different developers,
+principally Greg Hewgill. Palm enhanced it with new features,
+debugging support, and support for more recent ROMs.
+
+WWW: http://www.palmos.com/dev/tech/tools/emulator/
