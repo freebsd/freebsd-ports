@@ -7,7 +7,7 @@
 
 PORTNAME=	libXres
 PORTVERSION=	1.0.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11
 MASTER_SITES=	http://pdx.freedesktop.org/~xlibs/release/
 
@@ -17,6 +17,7 @@ COMMENT=	X Resource usage library
 LIB_PC_DEPENDS=	${X11BASE}/libdata/pkgconfig/x11.pc:${PORTSDIR}/x11/libX11 \
 		${X11BASE}/libdata/pkgconfig/xext.pc:${PORTSDIR}/x11/libXext
 BUILD_DEPENDS=	${X11BASE}/libdata/pkgconfig/resourceext.pc:${PORTSDIR}/x11/resourceext \
+		${X11BASE}/libdata/pkgconfig/xproto.pc:${PORTSDIR}/x11/xproto \
 		${LIB_PC_DEPENDS}
 RUN_DEPENDS=	${LIB_PC_DEPENDS}
 

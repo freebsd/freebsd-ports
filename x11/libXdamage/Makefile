@@ -7,7 +7,7 @@
 
 PORTNAME=	libXdamage
 PORTVERSION=	1.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 MASTER_SITES=	http://pdx.freedesktop.org/~xlibs/release/
 
@@ -16,6 +16,7 @@ COMMENT=	X Damage extension library
 
 LIB_PC_DEPENDS=	${X11BASE}/libdata/pkgconfig/xfixes.pc:${PORTSDIR}/x11/libXfixes
 BUILD_DEPENDS=	${X11BASE}/libdata/pkgconfig/damageext.pc:${PORTSDIR}/x11/damageext \
+		${X11BASE}/libdata/pkgconfig/xproto.pc:${PORTSDIR}/x11/xproto \
 		${LIB_PC_DEPENDS}
 RUN_DEPENDS=	${LIB_PC_DEPENDS}
 
