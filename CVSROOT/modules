@@ -2284,7 +2284,6 @@ itk		ports/x11-toolkits/itk
 its4		ports/security/its4
 iv		ports/x11-toolkits/iv
 iverilog	ports/cad/iverilog
-iview		ports/graphics/iview
 iwidgets	ports/x11-toolkits/iwidgets
 ixlib		ports/devel/ixlib
 ja-ASCIIdates98-fpw	ports/japanese/ASCIIdates98-fpw
@@ -6783,6 +6782,7 @@ vnconfig	src/usr.sbin/vnconfig
 vomit		ports/net/vomit
 vorbis		ports/audio/vorbis
 vorbis-tools	ports/audio/vorbis-tools
+vp		ports/graphics/vp
 vpb2		ports/comms/vpb2
 vpce		ports/emulators/vpce
 vpnd		ports/security/vpnd
