@@ -3,7 +3,7 @@
 # Date created:        12 December 1998
 # Whom:                gljohns@bellsouth.net
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/01/26 03:10:52 steve Exp $
 #
 
 DISTNAME=	WSoundPrefs-0.9.1
@@ -12,8 +12,8 @@ MASTER_SITES=	ftp://shadowmere.student.utwente.nl/pub/WindowMaker/
 
 MAINTAINER=	gljohns@bellsouth.net
 
-BUILD_DEPENDS=	wmaker:${PORTSDIR}/x11-wm/windowmaker
-BUILD_DEPENDS=	wmsound:${PORTSDIR}/audio/wmsound
+BUILD_DEPENDS=	wmaker:${PORTSDIR}/x11-wm/windowmaker \
+		wmsound:${PORTSDIR}/audio/wmsound
 
 USE_IMAKE=	yes
 NO_INSTALL_MANPAGES=	yes
