@@ -17,10 +17,24 @@ USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 INSTALLS_SHLIB=	yes
+.if defined(WITH_COMPAT) && ${WITH_COMPAT:L} != no
+INSTALL_TARGET=	install install-compat
+PLIST_SUB=	GDBM_COMPAT=""
+.else
+PLIST_SUB=	GDBM_COMPAT="@comment "
+.endif
 
 MAN3=		gdbm.3
 
 INSTALL_INFO?=	install-info
+
+pre-everything::
+.if !defined(WITH_COMPAT)
+	@${ECHO_MSG}
+	@${ECHO_MSG} "If you need UNIX dbm/ndbm compatibility functions,"
+	@${ECHO_MSG} "use \"make WITH_COMPAT=yes\""
+	@${ECHO_MSG}
+.endif
 
 post-install:
 	@${INSTALL_INFO} ${PREFIX}/info/${PORTNAME}.info ${PREFIX}/info/dir
