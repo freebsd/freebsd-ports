@@ -1,26 +1,28 @@
---- Makefile.orig	Wed Nov 10 00:01:10 1999
-+++ Makefile	Sun Jun 10 18:30:24 2001
-@@ -1,8 +1,10 @@
+--- Makefile.orig	Wed Nov 10 09:01:10 1999
++++ Makefile	Tue May  6 13:01:15 2003
+@@ -1,8 +1,9 @@
 -prefix=/usr
--BINDIR=${prefix}/bin
--MANDIR=${prefix}/man
--
++prefix=${PREFIX}
+ BINDIR=${prefix}/bin
+ MANDIR=${prefix}/man
+ 
 -CFLAGS=-O2 -D_FILE_OFFSET_BITS=64 -Wall
-+BINDIR=	${PREFIX}/bin
-+MANDIR=	${PREFIX}/man
-+CC	?=gcc
-+CFLAGS+=	-D_FILE_OFFSET_BITS=64 -I${LOCALBASE}/include
-+LD	=${CC}
-+LDFLAGS=-L${LOCALBASE}/lib
-+LIBS=	-lgnugetopt
++CFLAGS+=${CPPFLAGS}
++LD=${CC}
  
  PROGRAM=dvdtape
  OBJECTS=dvdtape.o isosize.o
-@@ -10,6 +12,7 @@
+@@ -10,10 +11,11 @@
  all: $(PROGRAM)
  
  $(PROGRAM): $(OBJECTS)
 +	$(LD) $(LDFLAGS) -o ${PROGRAM} $(OBJECTS) $(LIBS)
  
  install: all
- 	install $(PROGRAM) $(BINDIR)
+-	install $(PROGRAM) $(BINDIR)
+-	install $(PROGRAM).1 $(MANDIR)/man1/
++	${BSD_INSTALL_PROGRAM} $(PROGRAM) $(BINDIR)
++	${BSD_INSTALL_MAN} $(PROGRAM).1 $(MANDIR)/man1/
+ 
+ clean:
+ 	-rm -f $(PROGRAM) *.o *~
