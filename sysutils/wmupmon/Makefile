@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wmupmon
-PORTVERSION=	0.1.2
+PORTVERSION=	0.1.3
 CATEGORIES=	sysutils windowmaker
 MASTER_SITES=	http://j-z-s.com/projects/downloads/
 
@@ -16,17 +16,11 @@ COMMENT=	An uptime showing dockapp with a similar look to wmcpuload
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_XPM=	yes
-GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USE_AUTOMAKE_VER=	15
+USE_AUTOHEADER_VER=	259
 CONFIGURE_ARGS=	--program-prefix=""
 
 MAN1=		wmupmon.1
 PLIST_FILES=	bin/wmupmon
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		"Does not compile on FreeBSD 4.x"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
