@@ -57,6 +57,7 @@
     SUBDIR += msdosfs
     SUBDIR += mule-freewnn
     SUBDIR += munhwafonts-cid
+    SUBDIR += nabi
     SUBDIR += netdic
     SUBDIR += netscape48-communicator
     SUBDIR += netscape48-navigator
