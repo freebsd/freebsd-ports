@@ -1,2 +1,3 @@
 sbin/exact
 etc/exact.conf.sample
+etc/rc.d/exact.sh
