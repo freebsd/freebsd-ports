@@ -29,7 +29,9 @@ CODEC_DETECTION_FILE!=	${MAKE} -f ${CODEC_PORT}/Makefile -V CODEC_DETECTION_FILE
 LIB_VERSION=	0
 
 post-patch:
-	${PERL} -pi -ne "s|/usr/lib/win32|${LOCALBASE}/lib/win32|" ${WRKSRC}/src/win32_codec.c
+	@${PERL} -pi -e "s|/usr/lib/win32|${LOCALBASE}/lib/win32|" \
+		${WRKSRC}/src/win32_codec.c
+	@${PERL} -pi -e 's|<malloc.h>|<stdlib.h>|' ${WRKSRC}/src/*
 
 post-install:
 	@${LN} -sf libwin32.so ${PREFIX}/lib/xmps/codecs/video/libwin32.so.${LIB_VERSION}
