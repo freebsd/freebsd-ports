@@ -1,0 +1,15 @@
+lib/ruby/site_ruby/optparse/shellwords.rb
+lib/ruby/site_ruby/optparse/time.rb
+lib/ruby/site_ruby/optparse.rb
+@dirrm lib/ruby/site_ruby/optparse
+share/doc/ruby/optparse/examples/ja/getopts.test
+share/doc/ruby/optparse/examples/cmd-ls.rb
+share/doc/ruby/optparse/examples/cmd.rb
+share/doc/ruby/optparse/examples/getopts.test.en
+share/doc/ruby/optparse/examples/opttest.rb
+share/doc/ruby/optparse/ja/optparse.ja.rd
+share/doc/ruby/optparse/optparse.rlog
+@dirrm share/doc/ruby/optparse/examples/ja
+@dirrm share/doc/ruby/optparse/examples
+@dirrm share/doc/ruby/optparse/ja
+@dirrm share/doc/ruby/optparse

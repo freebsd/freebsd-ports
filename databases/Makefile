@@ -43,6 +43,7 @@
     SUBDIR += py-MySQLdb
     SUBDIR += py-PyGreSQL
     SUBDIR += rdb
+    SUBDIR += ruby-mysql
     SUBDIR += ruby-postgres
     SUBDIR += sqsh
     SUBDIR += tcl-Mysql
