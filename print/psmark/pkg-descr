@@ -1,0 +1,10 @@
+psmark is a C program that renders a vertical string on any PostScript
+document.
+
+Features :
+   - Prints "watermark"-like text on any PostScript document.
+   - Free choice of brightness, location, size, font, color, string to render
+     and angle.
+   - GPL program.
+
+WWW: http://www.antitachyon.com/?2,14,2
