@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	sdl
-PORTVERSION=	0.3
-PORTREVISION=	4
+PORTVERSION=	0.4
 CATEGORIES=	devel graphics audio ruby
 MASTER_SITES=	http://www.kmc.kyoto-u.ac.jp/~ohai/rubysdl/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -30,17 +29,18 @@ USE_RUBY_RD=	yes
 CONFIGURE_ARGS=	--with-sdl-config="sdl11-config"
 INSTALL_TARGET=	site-install
 
+RD_DOCS_EN=	rubysdl_doc.en.rd
 RD_DOCS_JA=	rubysdl_doc.rd
 
-DOCS_EN=	rubysdl_const_list.txt
-DOCS_JA=	README ${RD_DOCS_JA} ${RD_DOCS_JA:S/.rd$/.html/}
+DOCS_EN=	README.en ${RD_DOCS_EN} ${RD_DOCS_EN:S/.rd$/.html/}
+DOCS_JA=	README.ja ${RD_DOCS_JA} ${RD_DOCS_JA:S/.rd$/.html/}
 
-post-patch:
-	${RUBY} -i -pe 'gsub /EVENT_RESERVED1/, "VIDEOEXPOSE"' ${WRKSRC}/*.c
+post-extract:
+	${RM} ${WRKSRC}/*.o ${WRKSRC}/*.so
 
 post-build:
 .if !defined(NOPORTDOCS)
-.for f in ${RD_DOCS_JA}
+.for f in ${RD_DOCS_EN} ${RD_DOCS_JA}
 	@cd ${WRKSRC} && ${RUBY_RD} ${f} > ${f:S/.rd$/.html/}
 .endfor
 .endif
