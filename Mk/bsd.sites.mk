@@ -28,6 +28,7 @@ MASTER_SITE_XCONTRIB+=	\
 	ftp://ftp.is.co.za/x/contrib/%SUBDIR%/ \
 	ftp://ftp.sunet.se/pub/X11/contrib/%SUBDIR%/ \
 	ftp://ftp.huji.ac.il/mirror/X11/contrib/%SUBDIR%/ \
+	ftp://ftp.chg.ru/pub/X11/contrib/%SUBDIR%/ \
 	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,X/opengroup/contrib/&,}
 
 MASTER_SITE_XFREE+= \
@@ -37,7 +38,8 @@ MASTER_SITE_XFREE+= \
 	ftp://ftp.cs.tu-berlin.de/pub/X/XFree86/%SUBDIR%/source/ \
 	ftp://sunsite.doc.ic.ac.uk/packages/XFree86/%SUBDIR%/source/ \
 	http://ftp-stud.fht-esslingen.de/pub/Mirrors/ftp.xfree86.org/XFree86/%SUBDIR%/source/ \
-	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,XFree86/&/source,}
+	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,XFree86/&/source,} \
+	ftp://ftp.chg.ru/pub/XFree86/%SUBDIR%/source/
 
 
 MASTER_SITE_GNU+=	\
@@ -52,6 +54,7 @@ MASTER_SITE_GNU+=	\
 	ftp://ftp.digex.net/pub/gnu/%SUBDIR%/ \
 	ftp://ftp.wustl.edu/systems/gnu/%SUBDIR%/ \
 	ftp://ftp.kddlabs.co.jp/pub/gnu/%SUBDIR%/ \
+	ftp://ftp.chg.ru/pub/gnu/%SUBDIR%/ \
 	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,GNU/&,}
 
 MASTER_SITE_PERL_CPAN+=	\
@@ -74,6 +77,7 @@ MASTER_SITE_PERL_CPAN+=	\
 	ftp://ftp.cs.colorado.edu/pub/perl/CPAN/modules/by-module/%SUBDIR%/ \
 	ftp://cpan.pop-mg.com.br/pub/CPAN/modules/by-module/%SUBDIR%/ \
 	ftp://ftp.is.co.za/programming/perl/CPAN/modules/by-module/%SUBDIR%/ \
+	ftp://ftp.chg.ru/pub/lang/perl/CPAN/modules/by-module/%SUBDIR%/ \
 	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,lang/perl/CPAN/modules/by-module/&,}
 
 MASTER_SITE_TEX_CTAN+=  \
@@ -109,7 +113,8 @@ MASTER_SITE_SUNSITE+=	\
 	ftp://ftp.nluug.nl/vol/2/metalab/%SUBDIR%/ \
 	ftp://sunsite.anu.edu.au/mnt/disk1/linux/metalab/%SUBDIR%/ \
 	ftp://ftp.cs.umn.edu/pub/Linux/sunsite/%SUBDIR%/ \
-	http://metalab.unc.edu/pub/Linux/%SUBDIR%/
+	http://metalab.unc.edu/pub/Linux/%SUBDIR%/ \
+	ftp://ftp.chg.ru/pub/Linux/sunsite/%SUBDIR%/
 
 MASTER_SITE_RINGSERVER+=	\
 	ftp://core.ring.gr.jp/pub/%SUBDIR%/ \
@@ -171,14 +176,16 @@ MASTER_SITE_GNOME+=	\
 	ftp://gnomeftp.blue-labs.org/pub/gnome/%SUBDIR%/ \
 	ftp://ftp.informatik.uni-bonn.de/pub/os/unix/gnome/%SUBDIR%/ \
 	ftp://ftp.tas.gov.au/gnome/%SUBDIR%/ \
-	ftp://download.sourceforge.net/pub/mirrors/gnome/%SUBDIR%/
+	ftp://download.sourceforge.net/pub/mirrors/gnome/%SUBDIR%/ \
+	ftp://ftp.chg.ru/pub/X11/GNOME/%SUBDIR%/
 
 MASTER_SITE_AFTERSTEP+=	\
 	ftp://ftp.afterstep.org/%SUBDIR%/ \
 	ftp://ftp.digex.net/pub/X11/window-managers/afterstep/%SUBDIR%/ \
 	ftp://ftp.kddlabs.co.jp/X11/AfterStep/%SUBDIR%/ \
 	ftp://ftp.math.uni-bonn.de/pub/mirror/ftp.afterstep.org/pub/%SUBDIR%/ \
-	ftp://ftp.dti.ad.jp/pub/X/AfterStep/%SUBDIR%/
+	ftp://ftp.dti.ad.jp/pub/X/AfterStep/%SUBDIR%/ \
+	ftp://ftp.chg.ru/pub/X11/windowmanagers/afterstep/%SUBDIR%/
 
 MASTER_SITE_WINDOWMAKER+= \
 	ftp://ftp.windowmaker.org/pub/%SUBDIR%/ \
@@ -186,6 +193,7 @@ MASTER_SITE_WINDOWMAKER+= \
 	ftp://ftp.kddlabs.co.jp/X11/window_managers/windowmaker/%SUBDIR%/ \
 	ftp://ftp.ameth.org/pub/mirrors/ftp.windowmaker.org/%SUBDIR%/ \
 	ftp://ftp.minet.net/pub/windowmaker/%SUBDIR%/ \
+	ftp://ftp.chg.ru/pub/X11/windowmanagers/windowmaker/%SUBDIR%/ \
 	ftp://ftp.dti.ad.jp/pub/X/WindowMaker/%SUBDIR%/
 
 MASTER_SITE_MOZILLA+= \
@@ -199,6 +207,7 @@ MASTER_SITE_MOZILLA+= \
 	ftp://ftp.sunsite.kth.se/archive/www/ftp.mozilla.org/%SUBDIR%/ \
 	ftp://ftp2.sinica.edu.tw/pub3/www/mozilla/%SUBDIR%/ \
 	ftp://ftp.is.co.za/networking/info-service/www/clients/netscape/mozilla/%SUBDIR%/ \
+	ftp://ftp.chg.ru/pub/WWW/mozilla/ \
 	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/www/mozilla/&,}
 
 MASTER_SITE_XEMACS+= \
@@ -234,6 +243,7 @@ MASTER_SITE_SOURCEFORGE+= \
 MASTER_SITE_RUBY+= \
 	ftp://ftp.netlab.co.jp/pub/lang/ruby/%SUBDIR%/ \
 	ftp://ftp.fu-berlin.de/unix/languages/ruby/%SUBDIR%/ \
+	ftp://ftp.chg.ru/pub/lang/ruby/%SUBDIR%/ \
 	ftp://ftp.TokyoNet.AD.JP/pub/misc/ruby/%SUBDIR%/ \
 	ftp://ftp.iij.ad.jp/pub/lang/ruby/%SUBDIR%/ \
 	ftp://ftp.krnet.ne.jp/pub/ruby/%SUBDIR%/ \
