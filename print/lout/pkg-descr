@@ -1,0 +1,9 @@
+This is a port of Lout, a document preparation system.
+
+Lout is similar in concept to LaTeX, but it is much smaller
+(in that it doesn't depend on TeX).  Lout produces regular postscript
+for output.  External postscript images/files can be easily embedded in
+a Lout document.
+
+- Oly
+oly@world.std.com
