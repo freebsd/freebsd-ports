@@ -5,6 +5,8 @@
 %%SITE_PERL%%/PDFJ/TTF.pm
 %%SITE_PERL%%/PDFJ/U2C.pm
 %%SITE_PERL%%/PDFJ/Unicode.pm
+%%SITE_PERL%%/XPDFJ.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/PDFJ/.packlist
 @dirrm %%SITE_PERL%%/PDFJ
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/PDFJ
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto 2>/dev/null || true
