@@ -1,0 +1,6 @@
+This is application.rb, which provides the following classes:
+
+	Log		-- Log dumping utility class
+	Application	-- Easy logging application class
+
+Author:	NaHi (NAKAMURA, Hiroshi) <nahi@keynauts.com>

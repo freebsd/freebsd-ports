@@ -125,6 +125,7 @@
     SUBDIR += readlink
     SUBDIR += rmonitor
     SUBDIR += roottail
+    SUBDIR += ruby-application.rb
     SUBDIR += ruby-quota
     SUBDIR += ruby-syslog
     SUBDIR += safecat
