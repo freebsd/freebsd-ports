@@ -6,12 +6,10 @@ lines (two separate implementations), switches, uniform distributed RC
 lines, and the five most common semiconductor devices: diodes, BJTs, JFETs,
 MESFETs, and MOSFETs.
 
-	From the SPICE3 Version3f3 User's Manual.
-	This is availble as a postscript document from:
-		ftp://ic.eecs.berkeley.edu/pub/Spice3/um.3f3.ps
-	or you can read the online documentation on the homepage.
+Patch Levels I and II (including a new spec command for spectral analysis)
+and the level 2 JFET model are courtesy from the Macquarie University.
+
+Online documentation at:
 
 WWW: http://infopad.eecs.berkeley.edu/~icdesign/SPICE/
 
-Julian Jenkins
-kaveman@magna.com.au
