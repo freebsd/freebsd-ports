@@ -26,7 +26,7 @@ INDDIR=		${PREFIX}/share/Ted/ind
 INFODIR=	${PREFIX}/share/doc/Ted
 
 post-extract:
-	cd ${WRKSRC}/tedPackage && ${TAR_CMD} xf TedBindist.tar
+	cd ${WRKSRC}/tedPackage && ${TAR} xf TedBindist.tar
 
 post-patch:
 	cd ${WRKSRC}/tedPackage/info && \
