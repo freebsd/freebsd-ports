@@ -102,6 +102,7 @@
     SUBDIR += qstat
     SUBDIR += quakeserver
     SUBDIR += rocksndiamonds
+    SUBDIR += rollemup
     SUBDIR += seabattle
     SUBDIR += seahaven
     SUBDIR += sl
