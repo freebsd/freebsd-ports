@@ -8,7 +8,7 @@
 
 PORTNAME=	qt
 PORTVERSION=	3.3.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES?=	x11-toolkits
 MASTER_SITES=	ftp://ftp.trolltech.com/qt/source/	\
 		ftp://ftp.silug.org/pub/qt/		\
@@ -137,6 +137,11 @@ post-patch:
 		${WRKSRC}/config.tests/unix/ptrsize.test
 .endif
 	@${REINPLACE_CMD} -e 's|^	cd qmake.*||' ${WRKSRC}/Makefile
+
+post-configure:
+	@${REINPLACE_CMD} -e \
+		's|/usr/X11R6/lib/pkgconfig/qt-mt.pc|${PREFIX}/libdata/pkgconfig/qt-mt.pc|g' \
+			${WRKSRC}/src/Makefile
 
 post-build:
 .for tool in makeqpf mergetr msg2qm qembed qvfb
