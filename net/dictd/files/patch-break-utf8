@@ -1,0 +1,98 @@
+diff -ru ../dictd-freebsd/dictd.c ./dictd.c
+--- ../dictd-freebsd/dictd.c	Sun Nov 24 09:35:55 2002
++++ ./dictd.c	Sun Dec  1 22:29:55 2002
+@@ -662,6 +662,7 @@
+ 
+ static void set_utf8_mode (const char *locale)
+ {
++#if __FreeBSD_version > 499999
+    char *locale_copy;
+    locale_copy = strdup (locale);
+    strlwr_8bit (locale_copy);
+@@ -671,6 +672,9 @@
+        strstr (locale_copy, "utf8");
+ 
+    free (locale_copy);
++#else
++   utf8_mode = 0;
++#endif
+ }
+ 
+ static void init (const char *fn)
+diff -ru ../dictd-freebsd/index.c ./index.c
+--- ../dictd-freebsd/index.c	Sun Dec  1 22:12:49 2002
++++ ./index.c	Sun Dec  1 22:25:06 2002
+@@ -111,6 +111,9 @@
+    const char *src, char *dest,
+    int allchars_mode)
+ {
++#if __FreeBSD_version < 500000
++    abort();
++#else
+     wint_t      ucs4_char;
+ 
+     while (src && src [0]){
+@@ -130,6 +133,7 @@
+     *dest = 0;
+ 
+     return (src != NULL);
++#endif
+ }
+ 
+ static void dict_table_init(void)
+@@ -166,9 +170,11 @@
+ 	p[i]         = &s[2 * i];
+     }
+                                 /* Sort those strings in the locale */
++#if __FreeBSD_version > 499999
+     if (utf8_mode)
+ 	qsort(p, UCHAR_MAX + 1, sizeof(p[0]), dict_table_init_compare_utf8);
+     else
++#endif
+ 	qsort(p, UCHAR_MAX + 1, sizeof(p[0]), dict_table_init_compare_strcoll);
+ 
+                                 /* Extract our unordered arrays */
+@@ -1126,6 +1132,9 @@
+ */
+ static int stranagram_utf8 (char *str)
+ {
++#if __FreeBSD_version < 500000
++    abort();
++#else
+    size_t len;
+    char *p;
+ 
+@@ -1142,6 +1151,7 @@
+ 
+    stranagram_8bit (str, -1);
+    return 1;
++#endif
+ }
+ 
+ /* makes anagram of utf-8 string 'str' */
+diff -ru ../dictd-freebsd/utf8_ucs4.c ./utf8_ucs4.c
+--- ../dictd-freebsd/utf8_ucs4.c	Sun Nov 24 09:35:55 2002
++++ ./utf8_ucs4.c	Sun Dec  1 22:44:40 2002
+@@ -1,3 +1,4 @@
++#if __FreeBSD_version > 499999
+ #include <wctype.h>
+ #include <stdlib.h>
+ #include <ctype.h>
+@@ -210,3 +211,4 @@
+     else
+ 	return (size_t) -1;
+ }
++#endif // __FreeBSD_version > 499999
+diff -ru ../dictd-freebsd/utf8_ucs4.h ./utf8_ucs4.h
+--- ../dictd-freebsd/utf8_ucs4.h	Sun Nov 24 09:35:55 2002
++++ ./utf8_ucs4.h	Sun Dec  1 22:26:15 2002
+@@ -1,3 +1,4 @@
++#if __FreeBSD_version > 499999
+ #ifndef _UTF8_UCS4_H_
+ #define _UTF8_UCS4_H_
+ 
+@@ -73,3 +74,4 @@
+ __END_DECLS
+ 
+ #endif // _UTF8_UCS4_H_
++#endif // __FreeBSD_version > 499999
