@@ -1,0 +1,45 @@
+--- Makefile.in.orig	Tue Dec 29 06:17:43 1998
++++ Makefile.in	Wed Mar 31 21:10:43 2004
+@@ -2,14 +2,15 @@
+ #
+ # My test system is Linux 2.1.30, gcc 2.7.2, libc 5.4.27
+ 
+-CC=@CC@
+-CPP=@CXX@
++CC=@CC@ @CFLAGS@
++CPP=@CXX@ @CXXFLAGS@
+ 
+ #seek_set_hdr is a hack for Sun OS (and others? I hope not)
+-CPPFLAGS=-g -Wall @DEFS@ @seek_set_hdr@
++CPPFLAGS=@CPPFLAGS@ @DEFS@ @seek_set_hdr@
+ LD=@ld@
++LDFLAGS=@LDFLAGS@
+ 
+-CCFLAGS=-O3 @DEFS@
++CCFLAGS=@DEFS@
+ LIBOBJS=wordwrap.o nullproc.o tblock.o scan_num.o map_chars.o col-align.o \
+ 	compat.o num_unit_probe.o part_num_probe.o
+ AR=ar
+@@ -86,7 +87,7 @@
+ 	$(RANLIB) $@
+ 
+ rtest2:	rtest2.o $(READER) tblock.o
+-	g++ -o rtest2 rtest2.o $(READER) tblock.o
++	$(CPP) -o rtest2 rtest2.o $(READER) tblock.o
+ 
+ fmt-text.o: text-fmt.o text-table.o
+ 	$(LD) -r -o $@ text-fmt.o text-table.o
+@@ -107,10 +108,10 @@
+ 	$(LD) -r -o gopt.o getopt.o getopt1.o
+ 
+ word2x: $(PROGOBJS)
+-	$(CPP) -o $@ $(PROGOBJS)
++	$(CPP) -o $@ $(PROGOBJS) $(LDFLAGS)
+ 
+ install: $(TARGETS) $(MANP)
+-	@INSTALL@ $(MANP) -m 644 @mandir@/man1
++	@INSTALL_DATA@ $(MANP) @mandir@/man1
+ 	for I in $(TARGETS); do \
+-		@INSTALL@ $${I} -m 755 @bindir@; \
++		@INSTALL_PROGRAM@ $${I} @bindir@; \
+ 	done
