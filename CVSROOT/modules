@@ -6109,6 +6109,7 @@ p5-Text-FormatTable	ports/textproc/p5-Text-FormatTable
 p5-Text-Glob	ports/textproc/p5-Text-Glob
 p5-Text-Graphics	ports/textproc/p5-Text-Graphics
 p5-Text-Iconv	ports/converters/p5-Text-Iconv
+p5-Text-MagicTemplate	ports/textproc/p5-Text-MagicTemplate
 p5-Text-Metaphone	ports/textproc/p5-Text-Metaphone
 p5-Text-Netstring	ports/textproc/p5-Text-Netstring
 p5-Text-PDF	ports/print/p5-Text-PDF
