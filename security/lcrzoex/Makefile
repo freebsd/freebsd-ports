@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lcrzoex
-PORTVERSION=	4.10
+PORTVERSION=	4.17.0
 CATEGORIES=	security
 MASTER_SITES=	http://www.laurentconstantin.com/common/lcrzoex/download/v4/ \
 		http://www.mirrors.wiretapped.net/security/packet-construction/lcrzoex/ \
