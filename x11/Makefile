@@ -57,6 +57,7 @@
     SUBDIR += props
     SUBDIR += qrash
     SUBDIR += rxvt
+    SUBDIR += stockticker_applet
     SUBDIR += sxpc
     SUBDIR += tkgoodstuff
     SUBDIR += tycoon
