@@ -1,6 +1,154 @@
 --- configure.orig	Thu Jun 19 00:06:29 2003
-+++ configure	Thu Jun 19 11:27:23 2003
-@@ -54325,8 +54325,8 @@
++++ configure	Sat Jun 28 16:45:44 2003
+@@ -597,6 +597,8 @@
+ ac_help="$ac_help
+   --enable-gd-jis-conv      GD: Enable JIS-mapped Japanese font support."
+ ac_help="$ac_help
++  --enable-gd-lzw-gif       GD: Enable LZW-compressed GIF support."
++ac_help="$ac_help
+   --with-gettext[=DIR]    Include GNU gettext support."
+ ac_help="$ac_help
+   --with-gmp              Include GNU MP support"
+@@ -28224,6 +28226,31 @@
+ 
+ 
+ 
++echo $ac_n "checking whether to enable LZW-compressed GIF support in GD""... $ac_c" 1>&6
++echo "configure:28220: checking whether to enable LZW-compressed GIF support in GD" >&5
++# Check whether --enable-gd-lzw-gif or --disable-gd-lzw-gif was given.
++if test "${enable_gd_lzw_gif+set}" = set; then
++  enableval="$enable_gd_lzw_gif"
++  PHP_GD_LZW_GIF=$enableval
++else
++  
++  PHP_GD_LZW_GIF=no
++
++  if test "$PHP_ENABLE_ALL" && test "no" = "yes"; then
++    PHP_GD_LZW_GIF=$PHP_ENABLE_ALL
++  fi
++
++fi
++
++
++ext_output=$PHP_GD_LZW_GIF
++echo "$ac_t""$ext_output" 1>&6
++
++
++
++
++
++
+ 
+ 
+ 
+@@ -28248,7 +28275,7 @@
+                  libgd/gd_io_file.c libgd/gd_ss.c libgd/gd_io_ss.c libgd/gd_png.c libgd/gd_jpeg.c \
+                  libgd/gdxpm.c libgd/gdfontt.c libgd/gdfonts.c libgd/gdfontmb.c libgd/gdfontl.c \
+                  libgd/gdfontg.c libgd/gdtables.c libgd/gdft.c libgd/gdcache.c libgd/gdkanji.c \
+-                 libgd/wbmp.c libgd/gd_wbmp.c libgd/gdhelpers.c libgd/gd_topal.c libgd/gd_gif_in.c \
++                 libgd/wbmp.c libgd/gd_wbmp.c libgd/gdhelpers.c libgd/gd_topal.c libgd/gd_gif_in.c libgd/gd_biggif_out.c libgd/gd_lzw_out.c libgd/gd_gif_out.c \
+                  libgd/xbm.c"
+ 
+   for ac_func in fabsf floorf
+@@ -28323,6 +28350,11 @@
+   fi
+ 
+   
++  if test "$PHP_GD_LZW_GIF" = "yes"; then
++    USE_GD_LZW_GIF=1
++  fi
++
++  
+   if test "$PHP_JPEG_DIR" != "no"; then
+ 
+     for i in /usr /usr/local $PHP_JPEG_DIR; do
+@@ -29724,6 +29756,9 @@
+ 
+   cat >> confdefs.h <<\EOF
+ #define HAVE_GD_BUNDLED 1
++#define HAVE_GD_GIF_CREATE 1
++#define HAVE_GD_GIF_CTX 1
++#define HAVE_GD_GIF_ANIM 1
+ EOF
+ 
+   cat >> confdefs.h <<\EOF
+@@ -29774,6 +29809,14 @@
+     GDLIB_CFLAGS="$GDLIB_CFLAGS -DJISX0208"
+   fi
+ 
++  if test -n "$USE_GD_LZW_GIF"; then
++    cat >> confdefs.h <<\EOF
++#define LZW_LICENCED 1
++EOF
++
++    GDLIB_CFLAGS="$GDLIB_CFLAGS -DLZW_LICENCED"
++  fi
++
+ else
+ 
+  if test "$PHP_GD" != "no"; then
+@@ -32275,6 +32318,60 @@
+   
+   save_old_LDFLAGS=$LDFLAGS
+   LDFLAGS=" -L$GD_LIB $GD_SHARED_LIBADD  $LDFLAGS"
++  echo $ac_n "checking for gdImageGifAnimBegin in -lgd""... $ac_c" 1>&6
++echo "configure:32250: checking for gdImageGifAnimBegin in -lgd" >&5
++ac_lib_var=`echo gd'_'gdImageGifAnimBegin | sed 'y%./+-%__p_%'`
++if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
++  echo $ac_n "(cached) $ac_c" 1>&6
++else
++  ac_save_LIBS="$LIBS"
++LIBS="-lgd  $LIBS"
++cat > conftest.$ac_ext <<EOF
++#line 32258 "configure"
++#include "confdefs.h"
++/* Override any gcc2 internal prototype to avoid an error.  */
++/* We use char because int might match the return type of a gcc2
++    builtin and then its argument prototype would still apply.  */
++char gdImageGifAnimBegin();
++
++int main() {
++gdImageGifAnimBegin()
++; return 0; }
++EOF
++if { (eval echo configure:32269: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
++  rm -rf conftest*
++  eval "ac_cv_lib_$ac_lib_var=yes"
++else
++  echo "configure: failed program was:" >&5
++  cat conftest.$ac_ext >&5
++  rm -rf conftest*
++  eval "ac_cv_lib_$ac_lib_var=no"
++fi
++rm -f conftest*
++LIBS="$ac_save_LIBS"
++
++fi
++if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
++  echo "$ac_t""yes" 1>&6
++  
++    LDFLAGS=$save_old_LDFLAGS
++    cat >> confdefs.h <<\EOF
++#define HAVE_GD_GIF_ANIM 1
++EOF
++
++  
++else
++  echo "$ac_t""no" 1>&6
++
++    LDFLAGS=$save_old_LDFLAGS
++    unset ac_cv_func_gd
++    
++  
++fi
++
++  
++  save_old_LDFLAGS=$LDFLAGS
++  LDFLAGS=" -L$GD_LIB $GD_SHARED_LIBADD  $LDFLAGS"
+   echo $ac_n "checking for gdCacheCreate in -lgd""... $ac_c" 1>&6
+ echo "configure:32280: checking for gdCacheCreate in -lgd" >&5
+ ac_lib_var=`echo gd'_'gdCacheCreate | sed 'y%./+-%__p_%'`
+@@ -54325,8 +54422,8 @@
    
    echo $ac_n "checking Oracle version""... $ac_c" 1>&6
  echo "configure:54328: checking Oracle version" >&5
@@ -11,7 +159,7 @@
  	test -z "$ORACLE_VERSION" && ORACLE_VERSION=7.3
    elif test -f $ORACLE_DIR/lib/libclntsh.$SHLIB_SUFFIX_NAME.9.0; then
      ORACLE_VERSION=9.0
-@@ -56589,6 +56589,102 @@
+@@ -56589,6 +56686,102 @@
  	    
  
    if test "$ext_shared" = "yes"; then
@@ -114,7 +262,7 @@
      ORACLE_SHARED_LIBADD="-lnlsrtl3 $ORACLE_SHARED_LIBADD"
      if test -n "$ORACLE_DIR/lib"; then
        
-@@ -71130,29 +71226,6 @@
+@@ -71130,29 +71323,6 @@
    else
      
    
@@ -144,7 +292,7 @@
    case ct in
    c|c_r|pthread*) ;;
    *) 
-@@ -71176,52 +71249,7 @@
+@@ -71176,52 +71346,7 @@
  
      
    
@@ -198,7 +346,7 @@
    
      
    save_old_LDFLAGS=$LDFLAGS
-@@ -71291,37 +71319,6 @@
+@@ -71291,37 +71416,6 @@
  
      
    
@@ -236,7 +384,7 @@
  fi
  
    
-@@ -84252,10 +84249,7 @@
+@@ -84252,10 +84346,7 @@
  CXXFLAGS="$CXXFLAGS $standard_libtool_flag"
  
  all_targets='$(OVERALL_TARGET) $(PHP_MODULES) $(PHP_CLI_TARGET)'

@@ -1,340 +1,14 @@
-diff -ruN php-4.3.3RC1.orig/configure php-4.3.3RC1/configure
---- php-4.3.3RC1.orig/configure	Mon Jun 23 10:06:05 2003
-+++ php-4.3.3RC1/configure	Mon Jun 23 10:06:17 2003
-@@ -28248,7 +28248,7 @@
-                  libgd/gd_io_file.c libgd/gd_ss.c libgd/gd_io_ss.c libgd/gd_png.c libgd/gd_jpeg.c \
-                  libgd/gdxpm.c libgd/gdfontt.c libgd/gdfonts.c libgd/gdfontmb.c libgd/gdfontl.c \
-                  libgd/gdfontg.c libgd/gdtables.c libgd/gdft.c libgd/gdcache.c libgd/gdkanji.c \
--                 libgd/wbmp.c libgd/gd_wbmp.c libgd/gdhelpers.c libgd/gd_topal.c libgd/gd_gif_in.c \
-+                 libgd/wbmp.c libgd/gd_wbmp.c libgd/gdhelpers.c libgd/gd_topal.c libgd/gd_gif_in.c libgd/gd_gif_out.c \
-                  libgd/xbm.c"
- 
-   for ac_func in fabsf floorf
-@@ -29724,6 +29724,9 @@
- 
-   cat >> confdefs.h <<\EOF
- #define HAVE_GD_BUNDLED 1
-+#define HAVE_GD_GIF_CREATE 1
-+#define HAVE_GD_GIF_CTX 1
-+#define HAVE_GD_GIF_ANIM 1
- EOF
- 
-   cat >> confdefs.h <<\EOF
-@@ -32260,6 +32263,60 @@
-     LDFLAGS=$save_old_LDFLAGS
-     cat >> confdefs.h <<\EOF
- #define HAVE_GD_GIF_CTX 1
-+EOF
-+
-+  
-+else
-+  echo "$ac_t""no" 1>&6
-+
-+    LDFLAGS=$save_old_LDFLAGS
-+    unset ac_cv_func_gd
-+    
-+  
-+fi
-+
-+  
-+  save_old_LDFLAGS=$LDFLAGS
-+  LDFLAGS=" -L$GD_LIB $GD_SHARED_LIBADD  $LDFLAGS"
-+  echo $ac_n "checking for gdImageGifAnimBegin in -lgd""... $ac_c" 1>&6
-+echo "configure:32003: checking for gdImageGifAnimBegin in -lgd" >&5
-+ac_lib_var=`echo gd'_'gdImageGifAnimBegin | sed 'y%./+-%__p_%'`
-+if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
-+  echo $ac_n "(cached) $ac_c" 1>&6
-+else
-+  ac_save_LIBS="$LIBS"
-+LIBS="-lgd  $LIBS"
-+cat > conftest.$ac_ext <<EOF
-+#line 32011 "configure"
-+#include "confdefs.h"
-+/* Override any gcc2 internal prototype to avoid an error.  */
-+/* We use char because int might match the return type of a gcc2
-+    builtin and then its argument prototype would still apply.  */
-+char gdImageGifAnimBegin();
-+
-+int main() {
-+gdImageGifAnimBegin()
-+; return 0; }
-+EOF
-+if { (eval echo configure:32022: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
-+  rm -rf conftest*
-+  eval "ac_cv_lib_$ac_lib_var=yes"
-+else
-+  echo "configure: failed program was:" >&5
-+  cat conftest.$ac_ext >&5
-+  rm -rf conftest*
-+  eval "ac_cv_lib_$ac_lib_var=no"
-+fi
-+rm -f conftest*
-+LIBS="$ac_save_LIBS"
-+
-+fi
-+if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
-+  echo "$ac_t""yes" 1>&6
-+  
-+    LDFLAGS=$save_old_LDFLAGS
-+    cat >> confdefs.h <<\EOF
-+#define HAVE_GD_GIF_ANIM 1
- EOF
- 
-   
-diff -ruN php-4.3.3RC1.orig/ext/gd/config.m4 php-4.3.3RC1/ext/gd/config.m4
---- php-4.3.3RC1.orig/ext/gd/config.m4	Mon Jun 23 10:05:28 2003
-+++ php-4.3.3RC1/ext/gd/config.m4	Mon Jun 23 10:06:17 2003
-@@ -254,6 +254,7 @@
-   PHP_CHECK_LIBRARY(gd, gdImageColorClosestHWB, [AC_DEFINE(HAVE_COLORCLOSESTHWB,     1, [ ])], [], [ -L$GD_LIB $GD_SHARED_LIBADD ])
-   PHP_CHECK_LIBRARY(gd, gdImageColorResolve,    [AC_DEFINE(HAVE_GDIMAGECOLORRESOLVE, 1, [ ])], [], [ -L$GD_LIB $GD_SHARED_LIBADD ])
-   PHP_CHECK_LIBRARY(gd, gdImageGifCtx,          [AC_DEFINE(HAVE_GD_GIF_CTX,          1, [ ])], [], [ -L$GD_LIB $GD_SHARED_LIBADD ])
-+  PHP_CHECK_LIBRARY(gd, gdImageGifAnimBegin,    [AC_DEFINE(HAVE_GD_GIF_ANIM,         1, [ ])], [], [ -L$GD_LIB $GD_SHARED_LIBADD ])
-   PHP_CHECK_LIBRARY(gd, gdCacheCreate,          [AC_DEFINE(HAVE_GD_CACHE_CREATE,     1, [ ])], [], [ -L$GD_LIB $GD_SHARED_LIBADD ])
- ])
- 
-@@ -267,7 +268,7 @@
-                  libgd/gd_io_file.c libgd/gd_ss.c libgd/gd_io_ss.c libgd/gd_png.c libgd/gd_jpeg.c \
-                  libgd/gdxpm.c libgd/gdfontt.c libgd/gdfonts.c libgd/gdfontmb.c libgd/gdfontl.c \
-                  libgd/gdfontg.c libgd/gdtables.c libgd/gdft.c libgd/gdcache.c libgd/gdkanji.c \
--                 libgd/wbmp.c libgd/gd_wbmp.c libgd/gdhelpers.c libgd/gd_topal.c libgd/gd_gif_in.c \
-+                 libgd/wbmp.c libgd/gd_wbmp.c libgd/gdhelpers.c libgd/gd_topal.c libgd/gd_gif_in.c libgd/gd_gif_out.c \
-                  libgd/xbm.c"
- 
- dnl check for fabsf and floorf which are available since C99
-diff -ruN php-4.3.3RC1.orig/ext/gd/gd.c php-4.3.3RC1/ext/gd/gd.c
---- php-4.3.3RC1.orig/ext/gd/gd.c	Mon Jun 23 10:05:28 2003
-+++ php-4.3.3RC1/ext/gd/gd.c	Mon Jun 23 10:06:17 2003
-@@ -206,6 +206,11 @@
- #ifdef HAVE_GD_GIF_CREATE
- 	PHP_FE(imagegif,								NULL)
- #endif
-+#ifdef HAVE_GD_GIF_ANIM
-+	PHP_FE(imagegifanimbegin,						NULL)
-+	PHP_FE(imagegifanimadd,							NULL)
-+	PHP_FE(imagegifanimend,							NULL)
+--- ext/gd/libgd/gd_lzw_out.c.orig	Sat Jun 28 15:47:56 2003
++++ ext/gd/libgd/gd_lzw_out.c	Sat Jun 28 16:01:04 2003
+@@ -0,0 +1,936 @@
++#ifdef HAVE_MALLOC_H
++ #include <malloc.h>
 +#endif
- #ifdef HAVE_GD_JPG
- 	PHP_FE(imagejpeg,								NULL)
- #endif
-@@ -1707,11 +1712,35 @@
- #ifdef HAVE_GD_GIF_CTX
- 	_php_image_output_ctx(INTERNAL_FUNCTION_PARAM_PASSTHRU, PHP_GDIMG_TYPE_GIF, "GIF", gdImageGifCtx);
- #else
-+
-+#ifdef HAVE_GD_BUNDLED
-+#error "I really think there should be ctx version of imagegif in the bundled GD library.  Fix the configuration."
-+#endif
-+
- 	_php_image_output(INTERNAL_FUNCTION_PARAM_PASSTHRU, PHP_GDIMG_TYPE_GIF, "GIF", gdImageGif);
- #endif
- }
- /* }}} */
- #endif /* HAVE_GD_GIF_CREATE */
-+
-+#ifdef HAVE_GD_GIF_ANIM
-+/* {{{ proto int imagegifanimbegin(int im [, string filename [, int GlobalColormap [, int Loops]]])
-+   Begin GIF animation.  Image parameter is only used for size and colormap,
-+   all animation frames must be added separately. */
-+PHP_FUNCTION(imagegifanimbegin)
-+{
-+	_php_image_output_ctx(INTERNAL_FUNCTION_PARAM_PASSTHRU, PHP_GDIMG_TYPE_GIFANIMBEGIN, "GIF", gdImageGifAnimBeginCtx);
-+}
-+/* }}} */
-+
-+/* {{{ proto int imagegifanimadd(int im [, string filename [, int LocalColormap [, LeftOfs [, int TopOfs [, int Delay [, int Disposal]]]]]])
-+   Append GIF image to animation */
-+PHP_FUNCTION(imagegifanimadd)
-+{
-+	_php_image_output_ctx(INTERNAL_FUNCTION_PARAM_PASSTHRU, PHP_GDIMG_TYPE_GIFANIMADD, "GIF", gdImageGifAnimAddCtx);
-+}
-+/* }}} */
-+#endif /* HAVE_GD_GIF_ANIM */
- 
- #ifdef HAVE_GD_PNG
- /* {{{ proto int imagepng(int im [, string filename])
-diff -ruN php-4.3.3RC1.orig/ext/gd/gd_ctx.c php-4.3.3RC1/ext/gd/gd_ctx.c
---- php-4.3.3RC1.orig/ext/gd/gd_ctx.c	Mon Jun 23 10:05:28 2003
-+++ php-4.3.3RC1/ext/gd/gd_ctx.c	Mon Jun 23 10:06:17 2003
-@@ -24,17 +24,22 @@
- 	
- static void _php_image_output_ctx(INTERNAL_FUNCTION_PARAMETERS, int image_type, char *tn, void (*func_p)()) 
- {
--	zval **imgind, **file, **quality;
-+	zval **imgind, **file, **quality, **lo, **to, **del, **dis;
- 	gdImagePtr im;
- 	char *fn = NULL;
- 	FILE *fp = NULL;
- 	int argc = ZEND_NUM_ARGS();
- 	int q = -1, i;
-+#ifdef HAVE_GD_GIF_ANIM
-+	int LeftOfs = -1, TopOfs = -1, Delay = -1, Disposal = -1;
-+#endif /* HAVE_GD_GIF_ANIM */
- 	gdIOCtx *ctx;
- 
- 	/* The quality parameter for Wbmp stands for the threshold when called from image2wbmp() */
-+	/* The quality parameter for GIF animation stands for colormap inclusion. 1==include local/global colormap */
-+	/* The LeftOfs parameter for GIF animation begin stands for NETSCAPE2.0 Loop count extension. */
- 	
--	if (argc < 1 || argc > 3 || zend_get_parameters_ex(argc, &imgind, &file, &quality) == FAILURE) 
-+	if (argc < 1 || argc > 7 || zend_get_parameters_ex(argc, &imgind, &file, &quality, &lo, &to, &del, &dis) == FAILURE) 
- 	{
- 		WRONG_PARAM_COUNT;
- 	}
-@@ -44,11 +49,29 @@
- 	if (argc > 1) {
- 		convert_to_string_ex(file);
- 		fn = Z_STRVAL_PP(file);
--		if (argc == 3) {
--			convert_to_long_ex(quality);
--			q = Z_LVAL_PP(quality);
--		}
- 	}
-+	if (argc >= 3) {
-+		convert_to_long_ex(quality);
-+		q = Z_LVAL_PP(quality);
-+	}
-+#ifdef HAVE_GD_GIF_ANIM
-+	if (argc >= 4) {
-+		convert_to_long_ex(lo);
-+		LeftOfs = Z_LVAL_PP(lo);
-+	}
-+	if (argc >= 5) {
-+		convert_to_long_ex(to);
-+		TopOfs = Z_LVAL_PP(to);
-+	}
-+	if (argc >= 6) {
-+		convert_to_long_ex(del);
-+		Delay = Z_LVAL_PP(del);
-+	}
-+	if (argc >= 7) {
-+		convert_to_long_ex(dis);
-+		Disposal = Z_LVAL_PP(dis);
-+	}
-+#endif /* HAVE_GD_GIF_ANIM */
- 
- 	if ((argc == 2) || (argc > 2 && Z_STRLEN_PP(file))) {
- 		if (!fn || fn == empty_string || php_check_open_basedir(fn TSRMLS_CC)) {
-@@ -94,6 +117,14 @@
- 			} 
- 			(*func_p)(im, i, ctx);
- 			break;
-+#ifdef HAVE_GD_GIF_ANIM
-+		case PHP_GDIMG_TYPE_GIFANIMBEGIN:
-+			(*func_p)(im, ctx, q, LeftOfs);
-+			break;
-+		case PHP_GDIMG_TYPE_GIFANIMADD:
-+			(*func_p)(im, ctx, q, LeftOfs, TopOfs, Delay, Disposal);
-+			break;
-+#endif /* HAVE_GD_GIF_ANIM */
- 		default:
- 			(*func_p)(im, ctx);
- 			break;
-@@ -112,3 +143,72 @@
- 	
-     RETURN_TRUE;
- }
-+
-+#ifdef HAVE_GD_GIF_ANIM
-+/* {{{ proto int imagegifanimend([string filename])
-+   Write end mark to gif animation. */
-+PHP_FUNCTION(imagegifanimend)
-+{
-+	zval **file;
-+	char *fn = NULL;
-+	FILE *fp = NULL;
-+	int argc = ZEND_NUM_ARGS();
-+	gdIOCtx *ctx;
-+
-+	if (argc < 0 || argc > 1 || zend_get_parameters_ex(argc, &file) == FAILURE) {
-+		ZEND_WRONG_PARAM_COUNT();
-+	}
-+
-+	if (argc >= 1) {
-+		convert_to_string_ex(file);
-+		fn = Z_STRVAL_PP(file);
-+	}
-+
-+	if ((argc == 1) || (argc > 1 && Z_STRLEN_PP(file))) {
-+		if (!fn || fn == empty_string || php_check_open_basedir(fn TSRMLS_CC)) {
-+			php_error_docref(NULL TSRMLS_CC, E_WARNING, "Invalid filename '%s'", fn);
-+			RETURN_FALSE;
-+		}
-+
-+		fp = VCWD_FOPEN(fn, "wb");
-+		if (!fp) {
-+			php_error_docref(NULL TSRMLS_CC, E_WARNING, "Unable to open '%s' for writing", fn);
-+			RETURN_FALSE;
-+		}
-+
-+		ctx = gdNewFileCtx(fp);
-+	} else {
-+		ctx = emalloc(sizeof(gdIOCtx));
-+		ctx->putC = _php_image_output_putc;
-+		ctx->putBuf = _php_image_output_putbuf;
-+#if HAVE_LIBGD204
-+		ctx->gd_free = _php_image_output_ctxfree;
-+#else
-+		ctx->free = _php_image_output_ctxfree;
-+#endif		
-+
-+#if APACHE && defined(CHARSET_EBCDIC)
-+		/* XXX this is unlikely to work any more thies@thieso.net */
-+		/* This is a binary file already: avoid EBCDIC->ASCII conversion */
-+		ap_bsetflag(php3_rqst->connection->client, B_EBCDIC2ASCII, 0);
-+#endif
-+	}
-+
-+	/* This could be coded in here, as it only outputs ';' */
-+	gdImageGifAnimEndCtx(ctx);
-+
-+#if HAVE_LIBGD204	
-+	ctx->gd_free(ctx);
-+#else
-+	ctx->free(ctx);
-+#endif		
-+
-+	if(fp) {
-+		fflush(fp);
-+		fclose(fp);
-+	}
-+	
-+    RETURN_TRUE;
-+}
-+/* }}} */
-+#endif /* HAVE_GD_GIF_ANIM */
-diff -ruN php-4.3.3RC1.orig/ext/gd/libgd/gd.h php-4.3.3RC1/ext/gd/libgd/gd.h
---- php-4.3.3RC1.orig/ext/gd/libgd/gd.h	Mon Jun 23 10:05:26 2003
-+++ php-4.3.3RC1/ext/gd/libgd/gd.h	Mon Jun 23 10:06:17 2003
-@@ -445,6 +445,18 @@
- gdImagePtr gdImageCreateFromGif(FILE *fd);
- gdImagePtr gdImageCreateFromGifCtx(gdIOCtxPtr in);
- gdImagePtr gdImageCreateFromGifSource(gdSourcePtr in);
-+void gdImageGif(gdImagePtr im, FILE *outFile);
-+void gdImageGifAnimBegin(gdImagePtr im, FILE *outFile, int GlobalCM, int Loops);
-+void gdImageGifAnimAdd(gdImagePtr im, FILE *outFile, int LocalCM, int LeftOfs, int TopOfs, int Delay, int Disposal);
-+void gdImageGifAnimEnd(FILE *outFile);
-+void gdImageGifCtx(gdImagePtr im, gdIOCtx *out);
-+void gdImageGifAnimBeginCtx(gdImagePtr im, gdIOCtx *out, int GlobalCM, int Loops);
-+void gdImageGifAnimAddCtx(gdImagePtr im, gdIOCtx *out, int LocalCM, int LeftOfs, int TopOfs, int Delay, int Disposal);
-+void gdImageGifAnimEndCtx(gdIOCtx *out);
-+void *gdImageGifPtr(gdImagePtr im, int *size);
-+void *gdImageGifAnimBeginPtr(gdImagePtr im, int *size, int GlobalCM, int Loops);
-+void *gdImageGifAnimAddPtr(gdImagePtr im, int *size, int LocalCM, int LeftOfs, int TopOfs, int Delay, int Disposal);
-+void *gdImageGifAnimEndPtr(int *size);
- 
- /* A custom data sink. For backwards compatibility. Use
- 	gdIOCtx instead. */
-diff -ruN php-4.3.3RC1.orig/ext/gd/libgd/gd_gif_out.c php-4.3.3RC1/ext/gd/libgd/gd_gif_out.c
---- php-4.3.3RC1.orig/ext/gd/libgd/gd_gif_out.c	Thu Jan  1 01:00:00 1970
-+++ php-4.3.3RC1/ext/gd/libgd/gd_gif_out.c	Mon Jun 23 13:22:13 2003
-@@ -0,0 +1,1053 @@
 +#include <stdio.h>
 +#include <math.h>
 +#include <string.h>
 +#include <stdlib.h>
 +#include "gd.h"
-+#include "gdhelpers.h"
-+#include "php.h"
 +
 +/* Code drawn from ppmtogif.c, from the pbmplus package
 +**
@@ -385,7 +59,7 @@ diff -ruN php-4.3.3RC1.orig/ext/gd/libgd/gd_gif_out.c php-4.3.3RC1/ext/gd/libgd/
 +/* Allows for reuse */
 +static void init_statics(void);
 +
-+void gdImageGifCtx(gdImagePtr im, gdIOCtx *out)
++void gdImageLzwCtx(gdImagePtr im, gdIOCtx *out)
 +{
 +	int interlace, transparent, BitsPerPixel;
 +
@@ -401,115 +75,24 @@ diff -ruN php-4.3.3RC1.orig/ext/gd/libgd/gd_gif_out.c php-4.3.3RC1/ext/gd/libgd/
 +		im->red, im->green, im->blue, im);
 +}
 +
-+void gdImageGif(gdImagePtr im, FILE *outFile)
++void gdImageLzw(gdImagePtr im, FILE *outFile)
 +{
 +        gdIOCtx   *out = gdNewFileCtx(outFile);
-+        gdImageGifCtx(im, out);
++        gdImageLzwCtx(im, out);
 +        out->gd_free(out);
 +}
 +
-+void gdImageGifAnimBegin(gdImagePtr im, FILE *outFile, int GlobalCM, int Loops)
++void* gdImageLzwPtr(gdImagePtr im, int *size)
 +{
-+        gdIOCtx   *out = gdNewFileCtx(outFile);
-+        gdImageGifAnimBeginCtx(im, out, GlobalCM, Loops);
-+        out->gd_free(out);
++	void	*rv;
++        gdIOCtx   *out = gdNewDynamicCtx(2048, NULL);
++        gdImageLzwCtx(im, out);
++        rv = gdDPExtractData(out,size);
++	out->gd_free(out);
++	return rv;
 +}
 +
-+void gdImageGifAnimAdd(gdImagePtr im, FILE *outFile, int LocalCM, int LeftOfs, int TopOfs, int Delay, int Disposal)
-+{
-+        gdIOCtx   *out = gdNewFileCtx(outFile);
-+        gdImageGifAnimAddCtx(im, out, LocalCM, LeftOfs, TopOfs, Delay, Disposal);
-+        out->gd_free(out);
-+}
-+
-+void gdImageGifAnimEnd(FILE *outFile)
-+{
-+#if 1
-+	putc (';', outFile);
-+#else
-+        gdIOCtx   *out = gdNewFileCtx(outFile);
-+        gdImageGifAnimEndCtx(out);
-+        out->gd_free(out);
-+#endif
-+}
-+
-+void gdImageGifAnimBeginCtx(gdImagePtr im, gdIOCtx *out, int GlobalCM, int Loops)
-+{
-+        int B;
-+        int RWidth, RHeight;
-+        int Resolution;
-+        int ColorMapSize;
-+	int BitsPerPixel;
-+	int Background = 0;
-+        int i;
-+
-+	BitsPerPixel = colorstobpp(im->colorsTotal);
-+        ColorMapSize = 1 << BitsPerPixel;
-+
-+        RWidth = im->sx;
-+        RHeight = im->sy;
-+
-+        Resolution = BitsPerPixel;
-+
-+        /*
-+         * Write the Magic header
-+         */
-+        gdPutBuf( "GIF89a", 6, out );
-+
-+        /*
-+         * Write out the screen width and height
-+         */
-+        Putword( RWidth, out );
-+        Putword( RHeight, out );
-+
-+        /*
-+         * Indicate that there is a global colour map
-+         */
-+        B = GlobalCM > 0 ? 0x80 : 0;
-+
-+        /*
-+         * OR in the resolution
-+         */
-+        B |= (Resolution - 1) << 5;
-+
-+        /*
-+         * OR in the Bits per Pixel
-+         */
-+        B |= (BitsPerPixel - 1);
-+
-+        /*
-+         * Write it out
-+         */
-+        gdPutC( B, out );
-+
-+        /*
-+         * Write out the Background colour
-+         */
-+        gdPutC( Background, out );
-+
-+        /*
-+         * Byte of 0's (future expansion)
-+         */
-+        gdPutC( 0, out );
-+
-+        /*
-+         * Write out the Global Colour Map
-+         */
-+	if (GlobalCM > 0)
-+		for( i=0; i<ColorMapSize; ++i ) {
-+			gdPutC( im->red[i], out );
-+			gdPutC( im->green[i], out );
-+			gdPutC( im->blue[i], out );
-+		}
-+	if (Loops >= 0) {
-+		gdPutBuf( "!\377\13NETSCAPE2.0\3\1", 16, out );
-+		gdPutC( (unsigned char)(Loops & 255), out );
-+		gdPutC( (unsigned char)((Loops >> 8) & 255), out );
-+		gdPutC( 0, out );
-+	}
-+}
-+
-+void gdImageGifAnimAddCtx(gdImagePtr im, gdIOCtx *out, int LocalCM, int LeftOfs, int TopOfs, int Delay, int Disposal)
++void gdImageLzwAnimAddCtx(gdImagePtr im, gdIOCtx *out, int LocalCM, int LeftOfs, int TopOfs, int Delay, int Disposal)
 +{
 +	int interlace, transparent, BitsPerPixel;
 +
@@ -526,51 +109,24 @@ diff -ruN php-4.3.3RC1.orig/ext/gd/libgd/gd_gif_out.c php-4.3.3RC1/ext/gd/libgd/
 +		LocalCM > 0 ? im->red : 0, im->green, im->blue, im);
 +}
 +
-+void gdImageGifAnimEndCtx(gdIOCtx *out)
++void gdImageLzwAnimAdd(gdImagePtr im, FILE *outFile, int LocalCM, int LeftOfs, int TopOfs, int Delay, int Disposal)
 +{
-+        /*
-+         * Write the GIF file terminator
-+         */
-+        gdPutC( ';', out );
++        gdIOCtx   *out = gdNewFileCtx(outFile);
++        gdImageLzwAnimAddCtx(im, out, LocalCM, LeftOfs, TopOfs, Delay, Disposal);
++        out->gd_free(out);
 +}
 +
-+void* gdImageGifPtr(gdImagePtr im, int *size)
++void* gdImageLzwAnimAddPtr(gdImagePtr im, int *size, int LocalCM, int LeftOfs, int TopOfs, int Delay, int Disposal)
 +{
 +	void	*rv;
 +        gdIOCtx   *out = gdNewDynamicCtx(2048, NULL);
-+        gdImageGifCtx(im, out);
++        gdImageLzwAnimAddCtx(im, out, LocalCM, LeftOfs, TopOfs, Delay, Disposal);
 +        rv = gdDPExtractData(out,size);
 +	out->gd_free(out);
 +	return rv;
 +}
 +
-+void *gdImageGifAnimBeginPtr(gdImagePtr im, int *size, int GlobalCM, int Loops)
-+{
-+	void	*rv;
-+        gdIOCtx   *out = gdNewDynamicCtx(2048, NULL);
-+        gdImageGifAnimBeginCtx(im, out, GlobalCM, Loops);
-+        rv = gdDPExtractData(out,size);
-+	out->gd_free(out);
-+	return rv;
-+}
 +
-+void *gdImageGifAnimAddPtr(gdImagePtr im, int *size, int LocalCM, int LeftOfs, int TopOfs, int Delay, int Disposal)
-+{
-+	void	*rv;
-+        gdIOCtx   *out = gdNewDynamicCtx(2048, NULL);
-+        gdImageGifAnimAddCtx(im, out, LocalCM, LeftOfs, TopOfs, Delay, Disposal);
-+        rv = gdDPExtractData(out,size);
-+	out->gd_free(out);
-+	return rv;
-+}
-+
-+void* gdImageGifAnimEndPtr(int *size)
-+{
-+	char *rv = (char *) gdMalloc (1);
-+	*rv = ';';
-+	*size = 1;
-+	return (void *)rv;
-+}
 +
 +static int
 +colorstobpp(int colors)
@@ -1381,38 +937,3 @@ diff -ruN php-4.3.3RC1.orig/ext/gd/libgd/gd_gif_out.c php-4.3.3RC1/ext/gd/libgd/
 +/* |   notice appear in supporting documentation.  This software is    | */
 +/* |   provided "as is" without express or implied warranty.           | */
 +/* +-------------------------------------------------------------------+ */
-diff -ruN php-4.3.3RC1.orig/ext/gd/php_gd.h php-4.3.3RC1/ext/gd/php_gd.h
---- php-4.3.3RC1.orig/ext/gd/php_gd.h	Mon Jun 23 10:05:28 2003
-+++ php-4.3.3RC1/ext/gd/php_gd.h	Mon Jun 23 10:06:17 2003
-@@ -40,6 +40,8 @@
- #define PHP_GDIMG_TYPE_GD       8
- #define PHP_GDIMG_TYPE_GD2      9
- #define PHP_GDIMG_TYPE_GD2PART 10
-+#define PHP_GDIMG_TYPE_GIFANIMBEGIN 11
-+#define PHP_GDIMG_TYPE_GIFANIMADD 12
- 
- #ifdef PHP_WIN32
- #define PHP_GD_API __declspec(dllexport)
-@@ -137,6 +139,9 @@
- PHP_FUNCTION(imagefontheight);
- 
- PHP_FUNCTION(imagegif );
-+PHP_FUNCTION(imagegifanimbegin);
-+PHP_FUNCTION(imagegifanimadd);
-+PHP_FUNCTION(imagegifanimend);
- PHP_FUNCTION(imagejpeg );
- PHP_FUNCTION(imagepng);
- PHP_FUNCTION(imagewbmp);
-diff -ruN php-4.3.3RC1.orig/main/php_config.h.in php-4.3.3RC1/main/php_config.h.in
---- php-4.3.3RC1.orig/main/php_config.h.in	Mon Jun 23 10:05:59 2003
-+++ php-4.3.3RC1/main/php_config.h.in	Mon Jun 23 10:06:17 2003
-@@ -1523,6 +1523,9 @@
- #undef HAVE_GD_GIF_CREATE
- 
- /*   */
-+#undef HAVE_GD_GIF_ANIM
-+
-+/*   */
- #undef HAVE_GD_WBMP
- 
- /*   */

@@ -63,7 +63,7 @@ USE_BZIP2=	yes
 USE_SUBMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_BISON=	yes
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=14
 
 CONFIGURE_ARGS=	--enable-versioning \
 		--enable-memory-limit \
@@ -126,7 +126,7 @@ PBDIR=		${PREFIX}/share/pear/boot
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 400014
+.if ${OSVERSION} < 400014 || defined(WITHOUT_IPV6)
 CONFIGURE_ARGS+=--disable-ipv6
 .endif
 
@@ -302,6 +302,9 @@ CONFIGURE_ARGS+=--with-gd \
 .if !defined(WITHOUT_X11)
 LIB_DEPENDS+=	Xpm.4:${PORTSDIR}/x11/XFree86-4-libraries
 CONFIGURE_ARGS+=--with-xpm-dir=${LOCALBASE}
+.endif
+.if defined(WITH_LZW)
+CONFIGURE_ARGS+=--enable-gd-lzw-gif
 .endif
 .endif
 
@@ -570,13 +573,11 @@ pre-patch:
 	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure.php
 
 post-patch:
-.if defined(WITH_GD_GIF_OUT)
-	@${PATCH} -b .orig -d ${WRKSRC} -N -s -E -p1 -t < ${FILESDIR}/gd_gif_out.diff
-.endif
 	@${SED} "s|%%PREFIX%%|${PREFIX}|g" \
 		${WRKSRC}/pear/scripts/pearcmd.php > ${WRKSRC}/pear/scripts/pear
 
 pre-configure:
+	@${ECHO_CMD} ""
 .if defined(WITH_IMAP) && defined(WITH_RECODE)
 	@${ECHO_CMD} "You cannot define WITH_IMAP *and* WITH_RECODE!"
 	@${FALSE}
@@ -593,8 +594,11 @@ pre-configure:
 	@${ECHO_CMD} "You cannot define WITH_SYBASEDB *and* WITH_SYBASECT!"
 	@${FALSE}
 .endif
-.if !defined(WITHOUT_APACHE) && !defined(WITHOUT_CLI)
+.if defined(WITH_GD) && !defined(WITH_LZW)
+	@${ECHO_CMD} "To enable LZW-compressed GIF support in GD define the WITH_LZW knob."
 	@${ECHO_CMD} ""
+.endif
+.if !defined(WITHOUT_APACHE) && !defined(WITHOUT_CLI)
 	@${ECHO_CMD} "You are building the Apache Module and the Command Line Interpreter of PHP."
 	@${ECHO_CMD} ""
 	@${ECHO_CMD} "Use port:"
