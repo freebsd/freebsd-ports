@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://www.personal.uni-jena.de/~p6best/comp/sources/
 
-MAINTAINER=	firewolf@lightningfire.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A plugin for GKrellM, which changes the desktop's background image
 
 BUILD_DEPENDS=	${X11BASE}/include/gkrellm/gkrellm.h:${PORTSDIR}/sysutils/gkrellm
