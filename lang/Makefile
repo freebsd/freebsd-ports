@@ -1,10 +1,11 @@
-# $Id: Makefile,v 1.57 1996/11/01 02:41:30 jdp Exp $
+# $Id: Makefile,v 1.58 1996/12/03 11:06:32 asami Exp $
 #
 
     SUBDIR += Gofer
     SUBDIR += STk
     SUBDIR += Sather
     SUBDIR += bwbasic
+    SUBDIR += cim
     SUBDIR += eiffel
     SUBDIR += elk
     SUBDIR += expect
