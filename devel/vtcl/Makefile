@@ -1,25 +1,20 @@
 # New ports collection makefile for:	vtcl
-# Version required:	1.20
+# Version required:	1.2.0
 # Date Created:		29 May 1997
 # Whom:			Vanilla I. Shu <vanilla@MinJe.com.TW>
 #
-# $Id: Makefile,v 1.14 1999/01/20 01:36:03 asami Exp $
+# $Id: Makefile,v 1.15 1999/05/06 21:06:08 billf Exp $
 #
 
-DISTNAME=	current
-PKGNAME=	vtcl-1.20
+DISTNAME=	vtcl-1.2.0
 CATEGORIES=	devel tk80
-MASTER_SITES=	http://www.neuron.com/stewart/vtcl/dload/ \
-		ftp://ftp.neuron.com/pub/
+MASTER_SITES=	ftp://ftp.neuron.com/pub/vtcl/development/1.2/
 
 MAINTAINER=	vanilla@FreeBSD.ORG
 
 RUN_DEPENDS=	wish8.0:${PORTSDIR}/x11-toolkits/tk80
 
-BROKEN=		"the MASTER_SITES have disappeared."
-WRKSRC=		${WRKDIR}/${PKGNAME}
 NO_BUILD=	yes
-DIST_SUBDIR=	${PKGNAME}
 
 do-install:
 	@ ${MKDIR} ${PREFIX}/lib/vtcl/images
