@@ -1,3 +1,4 @@
+@unexec	%%LOCALBASE%%/bin/unregistervm "%D/%%T%%/bin/java"
 %%T%%/COPYRIGHT
 %%T%%/LICENSE
 %%T%%/README.html
@@ -553,10 +554,13 @@
 %%T%%/demo/jvmti/hprof/src/jvm.hprof.txt
 %%T%%/demo/jvmti/hprof/src/linux/hprof_md.c
 %%T%%/demo/jvmti/hprof/src/manual.html
+%%T%%/demo/jvmti/hprof/src/sample.makefile.txt
 %%T%%/demo/jvmti/index.html
 %%T%%/demo/jvmti/java_crw_demo/README.txt
+%%T%%/demo/jvmti/java_crw_demo/src/classfile_constants.h
 %%T%%/demo/jvmti/java_crw_demo/src/java_crw_demo.c
 %%T%%/demo/jvmti/java_crw_demo/src/java_crw_demo.h
+%%T%%/demo/jvmti/java_crw_demo/src/sample.makefile.txt
 %%T%%/demo/jvmti/java_crw_demo/src/test_crw.c
 %%T%%/demo/jvmti/mtrace/README.txt
 %%T%%/demo/jvmti/mtrace/lib/libmtrace.so
@@ -1844,6 +1848,9 @@
 %%T%%/sample/nio/server/StringContent.java
 %%T%%/sample/nio/server/URLDumper.java
 %%T%%/src.zip
+@exec	mkdir -p %D/share/doc/java
+@unexec	rmdir %D/share/doc/java 2>/dev/null || true
+@exec	%%LOCALBASE%%/bin/registervm "%D/%%T%%/bin/java # Linux-Sun-JDK%%PORTVERSION%%"
 @dirrm %%T%%/sample/nio/server
 @dirrm %%T%%/sample/nio
 @dirrm %%T%%/sample/jnlp/webpad/war/app
