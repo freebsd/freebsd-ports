@@ -18,16 +18,15 @@
 %%DOCSDIR%%/appendix/license.html
 %%DOCSDIR%%/appendix/license_terms.html
 %%DOCSDIR%%/appendix/tips.html
-%%DOCSDIR%%/ch12.html
 %%DOCSDIR%%/diveintopython.css
-%%DOCSDIR%%/download/diveintopython-common-4.9.zip
-%%DOCSDIR%%/download/diveintopython-examples-4.9.zip
-%%DOCSDIR%%/download/diveintopython-html-4.9.zip
-%%DOCSDIR%%/download/diveintopython-html-flat-4.9.zip
-%%DOCSDIR%%/download/diveintopython-pdf-4.9.zip
-%%DOCSDIR%%/download/diveintopython-text-4.9.zip
-%%DOCSDIR%%/download/diveintopython-word-4.9.zip
-%%DOCSDIR%%/download/diveintopython-xml-4.9.zip
+%%DOCSDIR%%/download/diveintopython-common-%%VERSION%%.zip
+%%DOCSDIR%%/download/diveintopython-examples-%%VERSION%%.zip
+%%DOCSDIR%%/download/diveintopython-html-%%VERSION%%.zip
+%%DOCSDIR%%/download/diveintopython-html-flat-%%VERSION%%.zip
+%%DOCSDIR%%/download/diveintopython-pdf-%%VERSION%%.zip
+%%DOCSDIR%%/download/diveintopython-text-%%VERSION%%.zip
+%%DOCSDIR%%/download/diveintopython-word-%%VERSION%%.zip
+%%DOCSDIR%%/download/diveintopython-xml-%%VERSION%%.zip
 %%DOCSDIR%%/dynamic_functions/index.html
 %%DOCSDIR%%/dynamic_functions/stage1.html
 %%DOCSDIR%%/dynamic_functions/stage2.html
@@ -43,6 +42,14 @@
 %%DOCSDIR%%/file_handling/more_on_modules.html
 %%DOCSDIR%%/file_handling/os_module.html
 %%DOCSDIR%%/file_handling/summary.html
+%%DOCSDIR%%/functional_programming/all_together.html
+%%DOCSDIR%%/functional_programming/data_centric.html
+%%DOCSDIR%%/functional_programming/dynamic_import.html
+%%DOCSDIR%%/functional_programming/filtering_lists.html
+%%DOCSDIR%%/functional_programming/finding_the_path.html
+%%DOCSDIR%%/functional_programming/index.html
+%%DOCSDIR%%/functional_programming/mapping_lists.html
+%%DOCSDIR%%/functional_programming/summary.html
 %%DOCSDIR%%/getting_to_know_python/declaring_functions.html
 %%DOCSDIR%%/getting_to_know_python/documenting_functions.html
 %%DOCSDIR%%/getting_to_know_python/everything_is_an_object.html
@@ -59,6 +66,16 @@
 %%DOCSDIR%%/html_processing/locals_and_globals.html
 %%DOCSDIR%%/html_processing/quoting_attribute_values.html
 %%DOCSDIR%%/html_processing/summary.html
+%%DOCSDIR%%/http_web_services/alltogether.html
+%%DOCSDIR%%/http_web_services/debugging.html
+%%DOCSDIR%%/http_web_services/etags.html
+%%DOCSDIR%%/http_web_services/gzip_compression.html
+%%DOCSDIR%%/http_web_services/http_features.html
+%%DOCSDIR%%/http_web_services/index.html
+%%DOCSDIR%%/http_web_services/redirects.html
+%%DOCSDIR%%/http_web_services/review.html
+%%DOCSDIR%%/http_web_services/summary.html
+%%DOCSDIR%%/http_web_services/user_agent.html
 %%DOCSDIR%%/images/callouts/1.png
 %%DOCSDIR%%/images/callouts/10.png
 %%DOCSDIR%%/images/callouts/2.png
@@ -94,7 +111,6 @@
 %%DOCSDIR%%/native_data_types/joining_lists.html
 %%DOCSDIR%%/native_data_types/lists.html
 %%DOCSDIR%%/native_data_types/mapping_lists.html
-%%DOCSDIR%%/native_data_types/multiple_values.html
 %%DOCSDIR%%/native_data_types/olde.html
 %%DOCSDIR%%/native_data_types/summary.html
 %%DOCSDIR%%/native_data_types/tuples.html
@@ -106,7 +122,15 @@
 %%DOCSDIR%%/object_oriented_framework/private_functions.html
 %%DOCSDIR%%/object_oriented_framework/special_class_methods.html
 %%DOCSDIR%%/object_oriented_framework/special_class_methods2.html
+%%DOCSDIR%%/object_oriented_framework/summary.html
 %%DOCSDIR%%/object_oriented_framework/userdict.html
+%%DOCSDIR%%/performance_tuning/dictionary_lookups.html
+%%DOCSDIR%%/performance_tuning/index.html
+%%DOCSDIR%%/performance_tuning/list_operations.html
+%%DOCSDIR%%/performance_tuning/regular_expressions.html
+%%DOCSDIR%%/performance_tuning/string_manipulation.html
+%%DOCSDIR%%/performance_tuning/summary.html
+%%DOCSDIR%%/performance_tuning/timeit.html
 %%DOCSDIR%%/power_of_introspection/all_together.html
 %%DOCSDIR%%/power_of_introspection/and_or.html
 %%DOCSDIR%%/power_of_introspection/built_in_functions.html
@@ -121,14 +145,6 @@
 %%DOCSDIR%%/refactoring/postscript.html
 %%DOCSDIR%%/refactoring/refactoring.html
 %%DOCSDIR%%/refactoring/summary.html
-%%DOCSDIR%%/regression_testing/all_together.html
-%%DOCSDIR%%/regression_testing/data_centric.html
-%%DOCSDIR%%/regression_testing/dynamic_import.html
-%%DOCSDIR%%/regression_testing/filtering_lists.html
-%%DOCSDIR%%/regression_testing/finding_the_path.html
-%%DOCSDIR%%/regression_testing/index.html
-%%DOCSDIR%%/regression_testing/mapping_lists.html
-%%DOCSDIR%%/regression_testing/summary.html
 %%DOCSDIR%%/regular_expressions/index.html
 %%DOCSDIR%%/regular_expressions/n_m_syntax.html
 %%DOCSDIR%%/regular_expressions/phone_numbers.html
@@ -144,6 +160,15 @@
 %%DOCSDIR%%/scripts_and_streams/index.html
 %%DOCSDIR%%/scripts_and_streams/stdin_stdout_stderr.html
 %%DOCSDIR%%/scripts_and_streams/summary.html
+%%DOCSDIR%%/soap_web_services/debugging.html
+%%DOCSDIR%%/soap_web_services/first_steps.html
+%%DOCSDIR%%/soap_web_services/google.html
+%%DOCSDIR%%/soap_web_services/index.html
+%%DOCSDIR%%/soap_web_services/install.html
+%%DOCSDIR%%/soap_web_services/introspection.html
+%%DOCSDIR%%/soap_web_services/summary.html
+%%DOCSDIR%%/soap_web_services/troubleshooting.html
+%%DOCSDIR%%/soap_web_services/wsdl.html
 %%DOCSDIR%%/toc/index.html
 %%DOCSDIR%%/unit_testing/diving_in.html
 %%DOCSDIR%%/unit_testing/index.html
@@ -155,11 +180,13 @@
 %%DOCSDIR%%/unit_testing/stage_5.html
 %%DOCSDIR%%/unit_testing/testing_for_failure.html
 %%DOCSDIR%%/unit_testing/testing_for_sanity.html
+%%DOCSDIR%%/unit_testing/testing_for_success.html
 %%DOCSDIR%%/xml_processing/attributes.html
 %%DOCSDIR%%/xml_processing/index.html
 %%DOCSDIR%%/xml_processing/packages.html
 %%DOCSDIR%%/xml_processing/parsing_xml.html
 %%DOCSDIR%%/xml_processing/searching.html
+%%DOCSDIR%%/xml_processing/summary.html
 %%DOCSDIR%%/xml_processing/unicode.html
 %%EXAMPLESDIR%%/BaseHTMLProcessor.py
 %%EXAMPLESDIR%%/LICENSE.txt
@@ -179,7 +206,6 @@
 %%EXAMPLESDIR%%/kgp/kant.xml
 %%EXAMPLESDIR%%/kgp/kgp.dtd
 %%EXAMPLESDIR%%/kgp/kgp.py
-%%EXAMPLESDIR%%/kgp/kgp_optik.py
 %%EXAMPLESDIR%%/kgp/russiansample.xml
 %%EXAMPLESDIR%%/kgp/stderr.py
 %%EXAMPLESDIR%%/kgp/stdout.py
@@ -191,6 +217,7 @@
 %%EXAMPLESDIR%%/makerealworddoc.py
 %%EXAMPLESDIR%%/odbchelper.py
 %%EXAMPLESDIR%%/odbchelpertest.py
+%%EXAMPLESDIR%%/openanything.py
 %%EXAMPLESDIR%%/parsephone.py
 %%EXAMPLESDIR%%/piglatin.py
 %%EXAMPLESDIR%%/plural-rules.en
@@ -240,29 +267,56 @@
 %%EXAMPLESDIR%%/roman/stage9/roman9.py
 %%EXAMPLESDIR%%/roman/stage9/romantest9.py
 %%EXAMPLESDIR%%/romantest.py
-%%EXAMPLESDIR%%/uncurly.py
+%%EXAMPLESDIR%%/search.py
+%%EXAMPLESDIR%%/soundex.py
+%%EXAMPLESDIR%%/soundex/stage1/soundex1a.py
+%%EXAMPLESDIR%%/soundex/stage1/soundex1b.py
+%%EXAMPLESDIR%%/soundex/stage1/soundex1c.py
+%%EXAMPLESDIR%%/soundex/stage1/soundex1d.py
+%%EXAMPLESDIR%%/soundex/stage1/soundex1e.py
+%%EXAMPLESDIR%%/soundex/stage2/soundex2a.py
+%%EXAMPLESDIR%%/soundex/stage2/soundex2b.py
+%%EXAMPLESDIR%%/soundex/stage2/soundex2c.py
+%%EXAMPLESDIR%%/soundex/stage3/soundex3a.py
+%%EXAMPLESDIR%%/soundex/stage3/soundex3b.py
+%%EXAMPLESDIR%%/soundex/stage3/soundex3c.py
+%%EXAMPLESDIR%%/soundex/stage3/soundex3d.py
+%%EXAMPLESDIR%%/soundex/stage4/soundex4a.py
+%%EXAMPLESDIR%%/soundex/stage4/soundex4b.py
+%%EXAMPLESDIR%%/soundex/stage4/soundex4c.py
+%%EXAMPLESDIR%%/soundex/stage4/soundex4d.py
+%%EXAMPLESDIR%%/soundextest.py
+%%EXAMPLESDIR%%/statsout.py
 %%EXAMPLESDIR%%/unicode2koi8r.py
 %%EXAMPLESDIR%%/urllister.py
 @dirrm %%DOCSDIR%%/xml_processing
 @dirrm %%DOCSDIR%%/unit_testing
 @dirrm %%DOCSDIR%%/toc
+@dirrm %%DOCSDIR%%/soap_web_services
 @dirrm %%DOCSDIR%%/scripts_and_streams
 @dirrm %%DOCSDIR%%/regular_expressions
-@dirrm %%DOCSDIR%%/regression_testing
 @dirrm %%DOCSDIR%%/refactoring
 @dirrm %%DOCSDIR%%/power_of_introspection
+@dirrm %%DOCSDIR%%/performance_tuning
 @dirrm %%DOCSDIR%%/object_oriented_framework
 @dirrm %%DOCSDIR%%/native_data_types
 @dirrm %%DOCSDIR%%/installing_python
 @dirrm %%DOCSDIR%%/images/callouts
 @dirrm %%DOCSDIR%%/images
+@dirrm %%DOCSDIR%%/http_web_services
 @dirrm %%DOCSDIR%%/html_processing
 @dirrm %%DOCSDIR%%/getting_to_know_python
+@dirrm %%DOCSDIR%%/functional_programming
 @dirrm %%DOCSDIR%%/file_handling
 @dirrm %%DOCSDIR%%/dynamic_functions
 @dirrm %%DOCSDIR%%/download
 @dirrm %%DOCSDIR%%/appendix
 @dirrm %%DOCSDIR%%
+@dirrm %%EXAMPLESDIR%%/soundex/stage4
+@dirrm %%EXAMPLESDIR%%/soundex/stage3
+@dirrm %%EXAMPLESDIR%%/soundex/stage2
+@dirrm %%EXAMPLESDIR%%/soundex/stage1
+@dirrm %%EXAMPLESDIR%%/soundex
 @dirrm %%EXAMPLESDIR%%/roman/stage9
 @dirrm %%EXAMPLESDIR%%/roman/stage8
 @dirrm %%EXAMPLESDIR%%/roman/stage7

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	diveintopython
-PORTVERSION=	4.9
+PORTVERSION=	5.4
 #PORTREVISION=	1
 CATEGORIES=	lang python
 MASTER_SITES=	http://diveintopython.org/download/
@@ -28,7 +28,7 @@ COMMENT=	A free Python tutorial book that is "not For Dummies(tm)"
 NO_BUILD=	YES
 USE_REINPLACE=	YES
 USE_ZIP=	YES
-WRKSRC=		${WRKDIR}/html
+WRKSRC=		${WRKDIR}/${PORTNAME}-${VERSIONSTR}/html
 DIPDLDIR=	${DOCSDIR}/download
 CPIO=		cpio --quiet -pdum -R
 VERSIONSTR=	${PORTVERSION:C|(\.[^.]*)\.([^.]*)$|\1-\2|}
@@ -36,14 +36,14 @@ PLIST_SUB+=	VERSION=${VERSIONSTR}
 
 post-patch:
 	@ ${FIND} ${WRKSRC} -name \*.html | xargs ${REINPLACE_CMD} \
-	  "s#http[^>]*\(download/${PORTNAME}-examples-${VERSIONSTR}.zip\)#\1#"
+	  "s#http[^>]*\(download/${PORTNAME}-examples-${VERSIONSTR}.zip\)#\.\./\1#"
 
 do-install:
 	@ ${MKDIR} ${DIPDLDIR}
 	@ cd ${WRKSRC} && \
 	  ${FIND} . -name \*.html -o -name \*.css -o -name \*.png \
 	  | ${CPIO} ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
-	@ cd ${WRKDIR}/py && ${FIND} * \
+	@ cd ${WRKSRC}/../py && ${FIND} * \
 	  | ${CPIO} ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR}
 .for format in html html-flat pdf text word xml common examples
 	@ ${INSTALL_DATA} \
