@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	sary
-PORTVERSION=	0.4
+PORTVERSION=	0.5
 CATEGORIES=	textproc ruby
-MASTER_SITES=	ftp://ftp.namazu.org/sary/ruby/
+MASTER_SITES=	http://prime.sourceforge.jp/freebsd/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}-ruby-${PORTVERSION}
 DIST_SUBDIR=	ruby
@@ -16,7 +16,7 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	A Ruby interface to the Sary library
 
-LIB_DEPENDS=	sary.8:${PORTSDIR}/textproc/sary
+LIB_DEPENDS=	sary.9:${PORTSDIR}/textproc/sary
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
