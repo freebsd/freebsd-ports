@@ -8,7 +8,8 @@
 PORTNAME=	balsa
 PORTVERSION= 	0.8.0
 CATEGORIES=	mail gnome
-MASTER_SITES=	ftp://ftp.balsa.net/pub/balsa/
+MASTER_SITES=	ftp://ftp.newton.cx/pub/balsa/ \
+		http://www.theochem.kth.se/~pawsa/balsa/
 
 MAINTAINER=	ports@FreeBSD.org
 
