@@ -42,10 +42,10 @@ post-install:
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/sql/README ${DOCSDIR}/README.sql
 	${INSTALL_DATA} ${WRKSRC}/spamproxy/README ${DOCSDIR}/README.spamproxy
-.for file in Changes README TODO TRADEMARK procmailrc.example sample* \
-	spamd/README* spamproxy/README.SmartHost sql/spamassassin.sql
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
-.endfor
+	cd ${WRKSRC} ; ${INSTALL_DATA} \
+	    Changes README TODO TRADEMARK procmailrc.example sample* \
+	    spamd/README* spamproxy/README.SmartHost sql/spamassassin.sql \
+	    ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
