@@ -4,3 +4,9 @@ etc/rc.d/vmware-guestd.sh
 %%VMWARE_VMMEMCTL:%%lib/vmware-tools/modules/vmmemctl.ko
 %%VMWARE_VMMEMCTL:%%@unexec rmdir %D/lib/vmware-tools/modules 2>/dev/null || true
 %%VMWARE_VMMEMCTL:%%@unexec rmdir %D/lib/vmware-tools 2>/dev/null || true
+share/vmware-tools/poweroff-vm-default
+share/vmware-tools/poweron-vm-default
+share/vmware-tools/suspend-vm-default
+@dirrm share/vmware-tools
+@cwd /
+etc/vmware-tools

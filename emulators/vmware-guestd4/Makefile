@@ -7,7 +7,7 @@
 
 PORTNAME=	vmware
 PORTVERSION=	${VMWARE_VER}.${BUILD_VER}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators
 MASTER_SITES=	# bundled with VMware itself
 PKGNAMESUFFIX?=	-guestd
@@ -116,6 +116,8 @@ post-patch:
 	${REINPLACE_CMD} -e 's|vmmemctl1.o||' ${WRKDIR}/vmmemctl-only/Makefile
 	${ECHO_CMD} "OBJS+=vmmemctl1.o" >> ${WRKDIR}/vmmemctl-only/Makefile
 .endif
+	${REINPLACE_CMD} "`${PRINTF} 's|\0152\013\0350|\0152\\\n\0350|g'`" \
+		${WRKSRC}/sbin/vmware-checkvm
 
 .if defined(VMWARE_X_PORTS)
 
@@ -153,7 +155,11 @@ do-install:
 		${FILESDIR}/vmware-guestd.sh > ${WRKDIR}/vmware-guestd.sh
 	@${INSTALL_SCRIPT} ${WRKDIR}/vmware-guestd.sh ${RC_SCRIPT}
 	-${LOCALBASE}/sbin/vmware-guestd --cmd toolinstall.end
-
 .endif
+	${MKDIR} ${PREFIX}/share/vmware-tools
+	${LN} -sfh /usr/bin/true ${PREFIX}/share/vmware-tools/poweroff-vm-default
+	${LN} -sfh /usr/bin/true ${PREFIX}/share/vmware-tools/poweron-vm-default
+	${LN} -sfh /usr/bin/true ${PREFIX}/share/vmware-tools/suspend-vm-default
+	${LN} -sfh ${PREFIX}/share/vmware-tools /etc/vmware-tools
 
 .include <bsd.port.post.mk>
