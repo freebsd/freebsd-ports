@@ -1,4 +1,0 @@
-bin/uzoo.py
-lib/%%PYTHON_VERSION%%/site-packages/uzoolib.py
-lib/%%PYTHON_VERSION%%/site-packages/uzoolib.pyc
-lib/%%PYTHON_VERSION%%/site-packages/uzoolib.pyo
