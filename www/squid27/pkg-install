@@ -7,6 +7,11 @@ PATH=/bin:/usr/bin:/usr/sbin
 pkgname=$1
 squid_base=${PKG_PREFIX:-/usr/local}/squid
 squid_confdir=${PKG_PREFIX:-/usr/local}/etc/squid
+if [ -x /usr/sbin/nologin ]; then
+	nologin=/usr/sbin/nologin
+else
+	nologin=/sbin/nologin
+fi
 : ${squid_user:=squid}
 : ${squid_group:=squid}
 squid_gid=100
@@ -42,9 +47,11 @@ PRE-INSTALL)
 
 	if ! pw usershow ${squid_user} -q >/dev/null ; then
 		echo "There is no account '${squid_user}' on this system, so I will try to create it:"
-		if ! pw useradd ${squid_user} -u ${squid_uid} -q \
-	  	    -c "squid caching-proxy pseudo user" -g ${squid_group} \
-		    -d "${squid_base}" -s "/sbin/nologin" -h - ; then
+		if ! pw useradd -q -n ${squid_user} \
+		    -u ${squid_uid} -g ${squid_group} \
+	  	    -c "squid caching-proxy pseudo user" \
+		    -d "${squid_base}" -s "${nologin}" \
+		    -h - ; then
 			echo "Failed to create user '${squid_user}'!" >&2
 			echo "Please create it manually." >&2
 			exit 1
