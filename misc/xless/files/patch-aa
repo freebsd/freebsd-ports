@@ -1,0 +1,12 @@
+--- Imakefile.orig	Thu Jun  2 16:22:14 1994
++++ Imakefile	Fri Dec 27 18:52:23 1996
+@@ -5,7 +5,8 @@
+  *	-DPRINTCMD=\"/usr/ucb/lpr\"	- path to send file to printer
+  *	-DTILDE_EXPANSION		- perform ~ expansion on filenames
+  */
+-        DEFINES = -DHELPFILE=\"${LIBDIR}/xless.help\" -DTILDE_EXPANSION
++        DEFINES = -DHELPFILE=\"${LIBDIR}/xless.help\" -DTILDE_EXPANSION \
++		-DDEFEDITOR=\"/usr/bin/vi\" -DPRINTCMD=\"/usr/bin/lpr\"
+ 
+ 
+            SRCS = help.c init.c popup.c util.c callbacks.c window.c main.c \
