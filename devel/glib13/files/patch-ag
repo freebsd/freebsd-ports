@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Mon Jul 17 10:37:18 2000
++++ Makefile.in	Mon Jul 17 10:38:06 2000
+@@ -103,7 +103,7 @@
+ 
+ AUTOMAKE_OPTIONS = 1.4
+ 
+-SUBDIRS = . gobject gmodule gthread docs tests
++SUBDIRS = . gobject gmodule gthread docs
+ 
+ bin_SCRIPTS = glib-config-2.0
+ 

@@ -1,136 +1,35 @@
---- configure.orig	Tue May 11 04:55:02 1999
-+++ configure	Mon May 17 22:30:32 1999
-@@ -587,10 +587,10 @@
- 
- 
- # libtool versioning
--LT_RELEASE=$GLIB_MAJOR_VERSION.$GLIB_MINOR_VERSION
--LT_CURRENT=`expr $GLIB_MICRO_VERSION - $GLIB_INTERFACE_AGE`
--LT_REVISION=$GLIB_INTERFACE_AGE
--LT_AGE=`expr $GLIB_BINARY_AGE - $GLIB_INTERFACE_AGE`
-+LT_RELEASE=12
-+LT_CURRENT=3
-+LT_REVISION=0
-+LT_AGE=0
- 
- 
- 
-@@ -3472,7 +3472,7 @@
- 
- 
- # Check for some functions
--for ac_func in lstat strerror strsignal memmove vsnprintf strcasecmp strncasecmp poll
-+for ac_func in lstat strerror strsignal memmove vsnprintf strcasecmp strncasecmp
- do
- echo $ac_n "checking for $ac_func""... $ac_c" 1>&6
- echo "configure:3479: checking for $ac_func" >&5
-@@ -4365,6 +4365,12 @@
+--- configure.orig	Fri Jul 14 22:09:59 2000
++++ configure	Tue Jul 18 10:06:24 2000
+@@ -4580,6 +4580,12 @@
  	  linux*)
  	    G_MODULE_LDFLAGS='-rdynamic'
  	    ;;
 +	  freebsd*)
 +	    objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo aout`
 +	    if test $objformat = "elf"; then
-+		    G_MODULE_LDFLAGS='-Wl,-E'
++	      G_MODULE_LDFLAGS='-Wl,-E'
 +	    fi
 +	    ;;
  	esac
  	LIBS_orig="$LIBS"
  	LDFLAGS_orig="$LDFLAGS"
-@@ -5057,11 +5063,17 @@
-             	        G_THREAD_CFLAGS="$G_THREAD_CFLAGS -mthreads"
- 		fi
- 		;;
--	*-freebsd2.2*)
--		G_THREAD_CFLAGS="$G_THREAD_CFLAGS -D_THREAD_SAFE"
--
--		# FreeBSD 2.2.x shiped with gcc 2.7.2.x, which doesn't support
--		# -mthreads flag.
-+	*-*-freebsd*)
-+		if test x"$G_THREAD_LIBS" = x"-lc_r"; then
-+			G_THREAD_CFLAGS="-D_THREAD_SAFE"
-+			G_THREAD_LIBS="-pthread"
-+			case $host in
-+			*-*-freebsd4*) ;;
-+			default) have_poll=no ;;
-+			esac
-+		else
-+			G_THREAD_CFLAGS="-D_THREAD_SAFE -DLINUXTHREADS"
-+		fi
- 		;;
-     esac
+@@ -4864,8 +4870,8 @@
+ 				add_thread_lib=""
+ 				IN=""
+ 			else
+-				add_thread_lib="-l$thread_lib"
+-				IN=" in -l$thread_lib"
++				add_thread_lib="-$thread_lib"
++				IN=" in -$thread_lib"
+ 			fi
+ 			if test x"$have_threads" = xposix; then
+ 				defattr=NULL
+@@ -5042,7 +5048,7 @@
  
-@@ -5349,9 +5358,6 @@
+ if test x"$enable_threads" = xyes; then
  
+-    G_THREAD_CFLAGS="$G_THREAD_CFLAGS -D_REENTRANT" # good default guess
++    G_THREAD_CFLAGS="$G_THREAD_CFLAGS -D_REENTRANT -D_THREAD_SAFE" # good default guess
  
- 
--CFLAGS="$CFLAGS $G_THREAD_CFLAGS"
--
--
-         case "$mutex_has_default" in
-         "yes")
-                 echo $ac_n "checking size of $mutex_default_type""... $ac_c" 1>&6
-@@ -5448,6 +5454,63 @@
- 
- 
- 
-+if test x"$have_poll" != xno; then
-+	for ac_func in poll
-+do
-+echo $ac_n "checking for $ac_func""... $ac_c" 1>&6
-+echo "configure:5636: checking for $ac_func" >&5
-+if eval "test \"`echo '$''{'ac_cv_func_$ac_func'+set}'`\" = set"; then
-+  echo $ac_n "(cached) $ac_c" 1>&6
-+else
-+  cat > conftest.$ac_ext <<EOF
-+#line 5641 "configure"
-+#include "confdefs.h"
-+/* System header to define __stub macros and hopefully few prototypes,
-+    which can conflict with char $ac_func(); below.  */
-+#include <assert.h>
-+/* Override any gcc2 internal prototype to avoid an error.  */
-+/* We use char because int might match the return type of a gcc2
-+    builtin and then its argument prototype would still apply.  */
-+char $ac_func();
-+
-+int main() {
-+
-+/* The GNU C library defines this for functions which it implements
-+    to always fail with ENOSYS.  Some functions are actually named
-+    something starting with __ and the normal name is an alias.  */
-+#if defined (__stub_$ac_func) || defined (__stub___$ac_func)
-+choke me
-+#else
-+$ac_func();
-+#endif
-+
-+; return 0; }
-+EOF
-+if { (eval echo configure:5664: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
-+  rm -rf conftest*
-+  eval "ac_cv_func_$ac_func=yes"
-+else
-+  echo "configure: failed program was:" >&5
-+  cat conftest.$ac_ext >&5
-+  rm -rf conftest*
-+  eval "ac_cv_func_$ac_func=no"
-+fi
-+rm -f conftest*
-+fi
-+
-+if eval "test \"`echo '$ac_cv_func_'$ac_func`\" = yes"; then
-+  echo "$ac_t""yes" 1>&6
-+    ac_tr_func=HAVE_`echo $ac_func | tr 'abcdefghijklmnopqrstuvwxyz' 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'`
-+  cat >> confdefs.h <<EOF
-+#define $ac_tr_func 1
-+EOF
-+ 
-+else
-+  echo "$ac_t""no" 1>&6
-+fi
-+done
-+
-+fi
- glib_sysdefso="glibconfig-sysdefs.h"
- glib_sysdef_msg=`echo POLLIN:1 POLLOUT:4 POLLPRI:2 POLLERR:8 POLLHUP:16 POLLNVAL:32 | sed 's/:[^ 	]*//g'`
- if test "x`(echo '\n') 2>/dev/null`" != 'x\n'; then
+     case $host in
+ 	*-aix*)
