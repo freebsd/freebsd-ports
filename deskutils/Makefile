@@ -88,6 +88,7 @@
     SUBDIR += rox-memo
     SUBDIR += rubrica
     SUBDIR += sliderule
+    SUBDIR += splashsetter
     SUBDIR += superkaramba
     SUBDIR += teapot
     SUBDIR += tuxcards
