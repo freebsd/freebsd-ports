@@ -1,6 +1,6 @@
---- Makefile.in.orig	Wed Aug 16 20:10:54 2000
-+++ Makefile.in	Wed Oct 18 03:29:59 2000
-@@ -41,8 +41,8 @@
+--- Makefile.in.orig	Sun Aug  5 12:52:21 2001
++++ Makefile.in	Sun Aug  5 12:53:40 2001
+@@ -43,8 +43,8 @@
  CXX = @CXX@
  CC = @CC@
  DEFS = @DEFS@
@@ -11,10 +11,10 @@
  LD = $(CXX)
  LDFLAGS = @LDFLAGS@ @TDEFS@ @LIBS@
  AR = ar
-@@ -122,7 +122,7 @@
- 	$(LIBTOOL) --mode=install $(INSTALL) $(GB_LIB) $(CLI_LIB) $(libdir)
- 	mkdir -p $(bindir)
- 	cp subsql $(bindir)
+@@ -128,7 +128,7 @@
+ 	else \
+ 		cp subsql $(bindir); \
+ 	fi
 -#	strip $(bindir)/subsql
 +	strip $(bindir)/subsql
  
