@@ -1,6 +1,6 @@
 --- opt/intel/compiler60/ia32/bin/icpc.orig	Fri Sep  6 02:18:03 2002
 +++ opt/intel/compiler60/ia32/bin/icpc	Tue Sep 10 18:32:59 2002
-@@ -1,29 +1,42 @@
+@@ -1,29 +1,45 @@
  #!/bin/sh
  
 -INTEL_LICENSE_FILE=<INSTALLDIR>/licenses;
@@ -43,6 +43,9 @@
 +  if [ ${#val1} -gt ${#val2} ] || [ ${val1} = "-parallel" ] ; then
 +   echo "Sorry, option '$val1' is not supported on FreeBSD."
 +   exit 1
++  fi
++  if [ ${val1} = "-Kpic" ] || [ ${val1} = "-KPIC" ] ; then
++   set -- "$@" "-Qoption,ld,-PIC"
 +  fi
 +  set -- "$@" "$val1"
 +  i=$(($i+1))

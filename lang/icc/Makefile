@@ -7,6 +7,7 @@
 
 PORTNAME=	icc
 PORTVERSION=	6.0.1.304
+PORTREVISION=	1
 CATEGORIES=	lang linux devel
 MASTER_SITES=
 DISTNAME=	l_cc_p_6.0.1.304
@@ -105,10 +106,11 @@ post-patch:
 # \n-Qlocation,ld,/usr/bin\n\n-sox-\n
 
 do-build:
-# Fix unresolved references in libcxa.a, libimf.a and libunwind.a
-	@cd ${WRKSRC} && ${CC} ${CFLAGS} -c ${FILESDIR}/cxa_atexit.c \
-		${FILESDIR}/cxa_finalize.c ${FILESDIR}/errno_location.c \
-		${FILESDIR}/stderr.c && \
+# Fix unresolved references
+	@cd ${WRKSRC} && ${CC} ${CFLAGS} -c ${FILESDIR}/assert_fail.c \
+		${FILESDIR}/cxa_atexit.c ${FILESDIR}/cxa_finalize.c \
+		${FILESDIR}/errno_location.c ${FILESDIR}/stderr.c \
+		${FILESDIR}/mcount.S && \
 		${AR} q opt/intel/compiler60/ia32/lib/libcxa.a *.o
 # Some magic to be able to link
 	@${CC} ${CFLAGS} -o ${WRKSRC}/opt/intel/compiler60/ia32/bin/ld ${FILESDIR}/ld.c
