@@ -1,0 +1,32 @@
+bin/68kasm
+bin/xtermpipe
+bin/bsvc
+bin/sim68000
+lib/bsvc/bitmaps/Down.xbm
+lib/bsvc/bitmaps/wait2.xbm
+lib/bsvc/bitmaps/wait1.xbm
+lib/bsvc/bitmaps/wait0.xbm
+lib/bsvc/bitmaps/wait.xbm
+lib/bsvc/bitmaps/memicon.xbm
+lib/bsvc/bitmaps/listicon.xbm
+lib/bsvc/bitmaps/bsvcicon.xbm
+lib/bsvc/bitmaps/bsvc.xbm
+lib/bsvc/bitmaps/b-logo.gif
+lib/bsvc/bitmaps/Up.xbm
+lib/bsvc/bitmaps/PageUp.xbm
+lib/bsvc/bitmaps/PageDown.xbm
+lib/bsvc/bitmaps/wait3.xbm
+lib/bsvc/help/license
+lib/bsvc/BtkFile.tk
+lib/bsvc/tools.tk
+lib/bsvc/memory.tk
+lib/bsvc/main.tk
+lib/bsvc/listing.tk
+lib/bsvc/license.tk
+lib/bsvc/device.tk
+lib/bsvc/bsvc.tk
+lib/bsvc/breakpt.tk
+lib/bsvc/bsvc.ad
+@dirrm lib/bsvc/bitmaps
+@dirrm lib/bsvc/help
+@dirrm lib/bsvc
