@@ -7,14 +7,15 @@
 #
 
 PORTNAME=	socat
-PORTVERSION=	1.0.4.2
+PORTVERSION=	1.1.0.0
 CATEGORIES=	net
-MASTER_SITES=	http://www.dest-unreach.org/socat/socat-1.0/
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=	http://www.dest-unreach.org/socat/download/
 
 MAINTAINER=	ports@FreeBSD.org
 
 GNU_CONFIGURE=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}-1.0
+WRKSRC=		${WRKDIR}/${PORTNAME}-1.1
+
+MAN1=	socat.1
 
 .include <bsd.port.mk>
