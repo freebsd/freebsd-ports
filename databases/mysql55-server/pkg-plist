@@ -8,6 +8,7 @@ bin/make_binary_distribution
 bin/msql2mysql
 bin/mysql
 bin/mysql_install_db
+bin/mysql_setpermisson
 bin/mysql_zap
 bin/mysqlaccess
 bin/mysqladmin
@@ -66,13 +67,9 @@ share/mysql/hungarian/errmsg.txt
 share/mysql/italian/errmsg.sys
 share/mysql/italian/errmsg.txt
 share/mysql/my-example.cnf
-share/mysql/mysql-3.22.9-beta.spec
+share/mysql/mysql-3.22.10-beta.spec
 share/mysql/mysql-log-rotate
 share/mysql/mysql.server
-share/mysql/mysql/db.frm
-share/mysql/mysql/func.frm
-share/mysql/mysql/host.frm
-share/mysql/mysql/user.frm
 share/mysql/norwegian-ny/errmsg.sys
 share/mysql/norwegian-ny/errmsg.txt
 share/mysql/norwegian/errmsg.sys

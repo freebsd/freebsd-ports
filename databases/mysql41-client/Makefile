@@ -3,11 +3,11 @@
 # Date created:				26 Jan 1998
 # Whom:					Josh Tiefenbach <josh@ican.net>
 #
-# $Id: Makefile,v 1.30 1998/10/22 07:47:24 thepish Exp $
+# $Id: Makefile,v 1.31 1998/11/11 05:37:08 asami Exp $
 #
 
-DISTNAME=	mysql-3.22.9-beta
-PKGNAME=	mysql-3.22.9b
+DISTNAME=	mysql-3.22.10-beta
+PKGNAME=	mysql-3.22.10b
 CATEGORIES=	databases
 MASTER_SITES=	http://mysql.polaris.ca/Downloads/MySQL-3.22/ \
 		http://www.fh-wolfenbuettel.de/ftp/pub/database/mysql/Downloads/MySQL-3.22/ \
@@ -68,9 +68,7 @@ pre-install:
 
 post-install:
 	${MKDIR} ${PREFIX}/share/mysql/mysql
-	${CP} ${WRKSRC}/data/mysql/*.frm ${PREFIX}/share/mysql/mysql
 	${PREFIX}/bin/mysql_install_db
-	@ /usr/bin/killall mysqld
 	@ ${ECHO} "#!/bin/sh" > ${PREFIX}/etc/rc.d/mysql.sh
 	@ ${ECHO} "#" >> ${PREFIX}/etc/rc.d/mysql.sh
 	@ ${ECHO} "" >> ${PREFIX}/etc/rc.d/mysql.sh

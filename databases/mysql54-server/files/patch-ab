@@ -1,119 +1,35 @@
---- scripts/mysql_install_db.sh.orig	Sun Oct 18 23:59:46 1998
-+++ scripts/mysql_install_db.sh	Wed Oct 21 15:22:31 1998
-@@ -3,7 +3,6 @@
- # For a more info consult the file COPYRIGHT distributed with this file
+--- scripts/mysql_install_db.sh.orig	Wed Nov  4 21:25:07 1998
++++ scripts/mysql_install_db.sh	Tue Nov 10 16:54:46 1998
+@@ -11,7 +11,7 @@
+ mdata=@localstatedir@/mysql
  
- # This scripts creates the privilige tables db, host, user in mysql
--# It should be run from the top level installation directory.
- #
- # All arguments to this script is passed to safe_mysqld
+ # Are we are doing a rpm install?
+-if test "$1" = "-IN-RPM"; then IN_RPM=1; shift; fi
++if test "$1" = "-IN-RPM"; then shift; fi
  
-@@ -11,36 +10,8 @@
- 
- if test "$1" = "-IN-RPM"
+ if test ! -x @libexecdir@/mysqld
  then
--  # We are doing a rpm install.
--  IN_RPM=1; shift
--  # First check if we already have the mysql database.
--  if test -f $mdata/user.frm-new -a ! -f $mdata/user.ISM
--  then
--    for file in $mdata/*.frm-new
--    do
--      dir=`dirname $file`
--      bn=`basename $file .frm-new`
--      cp $file $dir/$bn.frm
--    done
--  fi
--else
--  if test ! -d "./data"
--  then
--    echo "Didn't find the 'data' directory in the current directory"
--    echo "You should be in the distribution directory when executing this script"
--    if test -d "../data"
--    then
--      echo "We will now try to execute this in the parent directory;  If this doesn't"
--      echo "work please go to the directory where unpacked this distribution"
--      echo "and try again with 'scripts/mysql_install_db'"
--      echo
--      cd ..
--    else
--      echo "Please go to the directory where you unpacked this distribution"
--      echo "and start this script with 'scripts/mysql_install_db'"
--      exit 1
--    fi
--  fi
-+  # Make -IN-RPM a noop, just in case...
-+  shift
- fi
- 
- if test ! -x @bindir@/mysqladmin
-@@ -51,17 +22,6 @@
-     ls -l /usr/bin/mysql*
-     echo "Didn't find @bindir@/mysqladmin"
-     exit 1
--  elif test "@localstatedir@" = "./data"
--  then
--    echo "Can't execute @bindir@/mysqladmin"
--    echo "You should be in the distribution directory when executing this script"
--    echo "Please go to the directory where you unpacked this distribution"
--    echo "and start this script with 'scripts/mysql_install_db'"
--    exit 1
--  else
--    echo "Didn't find @bindir@/mysqladmin"
--    echo "You should do a 'make install' before executing this script"
--    exit 1
-   fi
- fi
- 
-@@ -84,9 +44,6 @@
+@@ -26,8 +26,6 @@
    fi
  fi
  
 -# On IRIX hostname is in /usr/bsd so add this to the path
 -PATH=$PATH:/usr/bsd
--
  hostname=`hostname`		# Install this too in the user table
  
- # create database mysql & test
-@@ -142,10 +99,7 @@
- then
-   if test ! -f @localstatedir@/mysql/user.frm
-   then
--    if test "@localstatedir@" != "./data"
--    then
--      cp -p ./data/mysql/*.frm @localstatedir@/mysql
--    fi
-+    cp -p ./data/mysql/*.frm @localstatedir@/mysql
-   fi
- fi
- 
-@@ -175,9 +129,6 @@
- # Dumping data for table 'user'
- #
- 
--INSERT INTO user VALUES ('localhost','@MYSQLD_USER@','','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y');
--INSERT INTO user VALUES ('$hostname','@MYSQLD_USER@','','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y');
--
- REPLACE INTO user VALUES ('localhost','root','','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y');
- REPLACE INTO user VALUES ('$hostname','root','','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y');
- 
-@@ -185,6 +136,13 @@
- INSERT INTO user VALUES ('$hostname','','','N','N','N','N','N','N','N','N','N','N');
+ # Create database directories mysql & test
+@@ -149,22 +147,9 @@
  END_OF_DATA
- 
-+if [ @MYSQLD_USER@ != root ]; then
-+  @bindir@/mysql mysql <<END_OF_DATA
-+INSERT INTO user VALUES ('localhost','@MYSQLD_USER@','','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y');
-+INSERT INTO user VALUES ('$hostname','@MYSQLD_USER@','','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y');
-+END_OF_DATA
-+fi
-+
- if test $? -eq 0
- then 
-   @bindir@/mysqladmin reload
-@@ -197,13 +155,6 @@
-   echo
+ then
+   echo ""
+-  if test -z "$IN_RPM"
+-  then
+-    echo "To start mysqld at boot time you have to copy support-files/mysql.server"
+-    echo "to the right place for your system"
+-    echo
+-  fi
    echo "PLEASE REMEMBER TO SET A PASSWORD FOR THE MySQL root USER !"
+   echo "See the manual for instructions."
    echo
 -  if test -z "$IN_RPM"
 -  then
@@ -122,6 +38,6 @@
 -    echo "cd bench ; run-all-tests"
 -    echo
 -  fi
-   echo "You can also try the mysql command line tool with:"
-   echo "@bindir@/mysql test"
+   echo "Please report any problems with the @scriptdir@/mysqlbug script!"
    echo
+   echo "The latest information about MySQL is available on the web at http://www.tcx.se"

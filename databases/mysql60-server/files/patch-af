@@ -1,5 +1,5 @@
---- scripts/safe_mysqld.sh.orig	Wed Oct  7 10:30:58 1998
-+++ scripts/safe_mysqld.sh	Wed Oct 21 15:05:52 1998
+--- scripts/safe_mysqld.sh.orig	Wed Nov  4 13:21:22 1998
++++ scripts/safe_mysqld.sh	Tue Nov 10 16:59:51 1998
 @@ -12,33 +12,9 @@
  
  trap '' 1 2 3 15			# we shouldn't let anyone kill us
@@ -35,10 +35,10 @@
 +DATADIR=@localstatedir@
 +ledir=@libexecdir@
  
- pidfile=$DATADIR/`@HOSTNAME@`.pid
+ pid_file=$DATADIR/`@HOSTNAME@`.pid
  log=$DATADIR/`@HOSTNAME@`.log
-@@ -103,33 +79,6 @@
-   if test ! -f $pidfile			# This is removed if normal shutdown
+@@ -114,33 +90,6 @@
+   if test ! -f $pid_file		# This is removed if normal shutdown
    then
      break;
 -  fi
@@ -50,7 +50,7 @@
 -    # The only thing is ps x => redhat 5 gives warnings when using ps -x.
 -    # kill -9 is used or the proces won't react on the kill.
 -    numofproces=`ps x | grep -v "grep" | grep -c $ledir/mysqld`
--    echo -e "\nNumber of processes running now: $numofproces" | tee -a $err
+-    echo -e "\nNumber of processes running now: $numofproces" | tee -a $err_log
 -    I=1
 -    while test "$I" -le "$numofproces"
 -    do 
@@ -62,12 +62,12 @@
 -	#    echo "TEST $I - $T **"
 -	if kill -9 $T
 -	then
--	  echo "mysqld proces hanging, pid $T - killed" | tee -a $err
+-	  echo "mysqld proces hanging, pid $T - killed" | tee -a $err_log
 -	else 
 -	  break
 -	fi
 -	I=`expr $I + 1`
 -    done
    fi
-   echo "mysqld restarted on " `date` | tee -a $err
+   echo "mysqld restarted on " `date` | tee -a $err_log
  done
