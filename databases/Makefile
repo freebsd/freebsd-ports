@@ -111,6 +111,7 @@
     SUBDIR += p5-Class-DBI-Replication
     SUBDIR += p5-Class-DBI-SAK
     SUBDIR += p5-Class-DBI-SQLite
+    SUBDIR += p5-DWH_File
     SUBDIR += p5-Data-Page
     SUBDIR += p5-Class-DBI-ToSax
     SUBDIR += p5-Class-DBI-mysql
