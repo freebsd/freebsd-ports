@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.visi.com/~barr/dnswalk/
 
 MAINTAINER=	mph@freebsd.org
 
-RUN_DEPENDS=	${PREFIX}/lib/perl5/site_perl/${PERL_VER}/Net/DNS.pm:${PORTSDIR}/net/p5-Net-DNS
+RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Net/DNS.pm:${PORTSDIR}/net/p5-Net-DNS
 
 NO_WRKSUBDIR=	YES
 NO_BUILD=	YES
