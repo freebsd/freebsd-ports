@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	task
-PORTVERSION=	1.50
+PORTVERSION=	1.52
 CATEGORIES=	sysutils security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		${MASTER_SITE_PACKETSTORM:S:%SUBDIR%:UNIX/utilities:}
 MASTER_SITE_SUBDIR=sleuthkit
 
-MAINTAINER=	jan@atstake.com
+MAINTAINER=	ports@freebsd.org
 COMMENT=	The @stake Sleuth Kit for forensic analysis
 
 USE_PERL5=	yes
