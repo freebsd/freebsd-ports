@@ -46,26 +46,26 @@ pre-fetch:
 	@${ECHO}
 .endif
 	@if ${TEST} -f /usr/src/gnu/lib/libgcc/Makefile; then \
-          : ; \
-        else \
-          ${ECHO_MSG} ">>The linuxthreads port needs source code for libgcc"; \
-          ${ECHO_MSG} ">>Please install FreeBSD source code in /usr/src"; \
-	  false; \
+	  : ; \
+	else \
+	  ${ECHO_MSG} ">>The linuxthreads port needs source code for libgcc"; \
+	  ${ECHO_MSG} ">>Please install FreeBSD source code in /usr/src"; \
+	  ${FALSE}; \
 	fi
 .if defined(USING_GCC3)
 	@if ${TEST} -f /usr/src/gnu/lib/libstdc++/Makefile; then \
-          : ; \
-        else \
-          ${ECHO_MSG} ">>The linuxthreads port needs source code for libstdc++"; \
-          ${ECHO_MSG} ">>Please install FreeBSD source code in /usr/src"; \
-	  false; \
+	  : ; \
+	else \
+	  ${ECHO_MSG} ">>The linuxthreads port needs source code for libstdc++"; \
+	  ${ECHO_MSG} ">>Please install FreeBSD source code in /usr/src"; \
+	  ${FALSE}; \
 	fi
 	@if ${TEST} -f /usr/src/gnu/lib/libsupc++/Makefile; then \
-          : ; \
-        else \
-          ${ECHO_MSG} ">>The linuxthreads port needs source code for libsupc++"; \
-          ${ECHO_MSG} ">>Please install FreeBSD source code in /usr/src"; \
-	  false; \
+	  : ; \
+	else \
+	  ${ECHO_MSG} ">>The linuxthreads port needs source code for libsupc++"; \
+	  ${ECHO_MSG} ">>Please install FreeBSD source code in /usr/src"; \
+	  ${FALSE}; \
 	fi
 .endif
 
@@ -78,7 +78,7 @@ post-extract:
 .endfor
 	@cd ${FILESDIR} ; \
 		${CP} -p ${threads_files} ${WRKSRC}/.
-	@${MKDIR} -p ${WRKSRC}/libgcc_r
+	@${MKDIR} ${WRKSRC}/libgcc_r
 	@${TEST} -f ${WRKSRC}/libgcc_r/Makefile || \
 	${LN} -s ${FILESDIR}/Makefile.libgcc_r ${WRKSRC}/libgcc_r/Makefile
 	@${SED} -e 's/^LIB=[ 	]*gcc$$/LIB=	lgcc_r/;' \
@@ -88,7 +88,7 @@ post-extract:
 	${MV} ${WRKSRC}/libgcc_r/Makefile.inc.tmp \
 	   ${WRKSRC}/libgcc_r/Makefile.inc
 .if defined(USING_GCC3)
-	@${MKDIR} -p ${WRKSRC}/libstdc++
+	@${MKDIR} ${WRKSRC}/libstdc++
 	@${TEST} -f ${WRKSRC}/libstdc++/Makefile || \
 	${LN} -s ${FILESDIR}/Makefile.libstdc++ ${WRKSRC}/libstdc++/Makefile
 	@${SED} -e 's/^LIB=[ 	]*stdc\+\+$$/LIB=	lstdc++/;' \
@@ -97,7 +97,7 @@ post-extract:
 	  > ${WRKSRC}/libstdc++/Makefile.inc.tmp && \
 	${MV} ${WRKSRC}/libstdc++/Makefile.inc.tmp \
 	   ${WRKSRC}/libstdc++/Makefile.inc
-	@${MKDIR} -p ${WRKSRC}/libsupc++
+	@${MKDIR} ${WRKSRC}/libsupc++
 	@${TEST} -f ${WRKSRC}/libsupc++/Makefile || \
 	${LN} -s ${FILESDIR}/Makefile.libsupc++ ${WRKSRC}/libsupc++/Makefile
 	@${SED} -e 's/^LIB=[ 	]*supc\+\+$$/LIB=	lsupc++/;' \
@@ -115,7 +115,7 @@ post-patch:
 	  ${ECHO_MSG} "===>  Patch condwait-patch applied successfully"; \
 	else \
 	  ${ECHO_MSG} ">>Patch condwait-patch failed to apply cleanly"; \
-	  false ; \
+	  ${FALSE}; \
 	fi
 .endif
 
@@ -163,6 +163,5 @@ PLIST_SUB+=	LTHREADSHMAJOR:="3"
 PLIST_SUB+=	GCC3ONLY:="@comment "
 PLIST_SUB+=	LTHREADSHMAJOR:="2"
 .endif
-
 
 .include <bsd.port.post.mk>
