@@ -7,7 +7,6 @@
 
 PORTNAME=	clamav
 PORTVERSION=	${DISTVERSION:S/-rc//g:S/-/./g}
-PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	clamav
@@ -24,16 +23,13 @@ RUN_DEPENDS=	lha:${PORTSDIR}/archivers/lha \
 		arc:${PORTSDIR}/archivers/arc \
 		unzip:${PORTSDIR}/archivers/unzip
 
-DISTVERSION=	0.70
-
-CLAMAVUSER?=	clamav
-CLAMAVGROUP?=	clamav
+DISTVERSION=	0.71
 
 OPTIONS=	MILTER "Compile the milter interface" off
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 INSTALLS_SHLIB=	yes
 USE_RC_SUBR=	yes
 
@@ -59,6 +55,8 @@ MAN1=		clamscan.1 freshclam.1 sigtool.1 clamdscan.1
 MAN5=		clamav.conf.5
 MAN8=		clamd.8 clamav-milter.8
 
+CLAMAVUSER?=	clamav
+CLAMAVGROUP?=	clamav
 CLAMAV_CLAMD_SOCKET?=	/var/run/clamav/clamd
 CLAMAV_MILTER_SOCKET?=	/var/run/clmilter.sock
 
@@ -75,10 +73,10 @@ SED_CONF=	-E -e 's|^\#?(Example)$$|\#\1|' \
 		-e 's|^\#?(LogFile) .*$$|\1 /var/log/clamav/clamd.log|' \
 		-e 's|^\#?(PidFile) .*$$|\1 /var/run/clamav/clamd.pid|' \
 		-e 's|^\#?(LocalSocket) .*$$|\1 ${CLAMAV_CLAMD_SOCKET}|' \
-		-e 's|^\#?(User) .*$$|\1 clamav|' \
+		-e 's|^\#?(User) .*$$|\1 ${CLAMAVUSER}|' \
 		-e 's|^\#?(AllowSupplementaryGroups)$$|\1|' \
-		-e 's|^\#?(FixStaleSocket)$$|\1|' \
 		-e 's|^\#?(ScanMail)$$|\1|' \
+		-e 's|^\#?(Checks)$$|\#\1|' \
 		-e 's|^\#?(DatabaseDirectory) .*$$|\1 ${DATADIR}|' \
 		-e 's|^\#?(DatabaseOwner) .*$$|\1 ${CLAMAVUSER}|' \
 		-e 's|^\#?(UpdateLogFile) .*$$|\1 /var/log/clamav/freshclam.log|' \
