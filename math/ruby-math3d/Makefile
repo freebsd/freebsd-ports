@@ -1,0 +1,30 @@
+# New ports collection makefile for:	Ruby/Math3d
+# Date created:		8 May 2001
+# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	math3d
+PORTVERSION=	0.02
+CATEGORIES=	math ruby
+MASTER_SITES=	http://www2.giganet.net/~yoshi/
+PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
+EXTRACT_SUFX=	.tgz
+DIST_SUBDIR=	ruby
+
+MAINTAINER=	knu@FreeBSD.org
+
+USE_RUBY=	yes
+USE_RUBY_EXTCONF=	yes
+
+WRKSRC=		${WRKDIR}/${PORTNAME}
+INSTALL_TARGET=	site-install
+
+post-install:
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${RUBY_DOCDIR}/${PORTNAME}/ja
+	${INSTALL_DATA} ${WRKSRC}/manual.jis ${RUBY_DOCDIR}/${PORTNAME}/ja/
+.endif
+
+.include <bsd.port.mk>

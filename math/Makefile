@@ -89,6 +89,7 @@
     SUBDIR += ruby-bigfloat
     SUBDIR += ruby-bitvector
     SUBDIR += ruby-gnuplot
+    SUBDIR += ruby-math3d
     SUBDIR += ruby-narray
     SUBDIR += sc
     SUBDIR += scigraphica

@@ -1,0 +1,5 @@
+This is a Ruby library for mathematics for 3D graphics, which includes
+Vector/Matrix4x4/LineSeg/Plane/Bound and so on.
+
+Author:	Yoshiyuki Kusano <yoshi@giganet.net>
+WWW:	http://www.ruby-lang.org/en/raa-list.rhtml?name=Math3d
