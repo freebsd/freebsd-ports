@@ -1,5 +1,4 @@
 bin/limewire
-%%PORTDOCS%%share/doc/limewire/license_agreement.txt
 %%JAR_DIR%%/LimeWire.jar
 %%JAR_DIR%%/MessagesBundle.properties
 %%JAR_DIR%%/MessagesBundles.jar
@@ -9,4 +8,3 @@ bin/limewire
 %%JAR_DIR%%/xerces.jar
 @dirrm %%JAR_DIR%%
 @unexec rmdir %D/share/java/jar 2>/dev/null || true
-%%PORTDOCS%%@dirrm share/doc/limewire

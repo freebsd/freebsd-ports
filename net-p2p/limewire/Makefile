@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	limewire
-PORTVERSION=	2.5.5
+PORTVERSION=	2.7.3
 CATEGORIES=	net java
 MASTER_SITES=	http://www3.limewire.com/download/
 DISTNAME=	LimeWireLinux
@@ -34,9 +34,5 @@ do-install:
 	@${MKDIR} ${JAR_DIR}
 	@${INSTALL_DATA} ${WRKSRC}/*.jar ${WRKSRC}/MessagesBundle.properties \
 		${JAR_DIR}
-.ifndef(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/license_agreement.txt ${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>
