@@ -7,36 +7,36 @@
 
 PORTNAME=	gpgme
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=	gpgme
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	lofi@FreeBSD.org
 COMMENT=	A library to make access to GnuPG easier
 
-BUILD_DEPENDS=	gpg:${PORTSDIR}/security/gnupg
+BUILD_DEPENDS=	gpg:${PORTSDIR}/security/gnupg \
+		gpgsm:${PORTSDIR}/security/gnupg-devel
+
+LIB_DEPENDS=	gpg-error:${PORTSDIR}/security/libgpg-error \
+		pth.20:${PORTSDIR}/devel/pth
 
 USE_LIBTOOL_VER=15
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
+USE_REINPLACE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=	--without-pth \
-		--without-pth-test \
-		--with-gpg=${LOCALBASE}/bin/gpg
-
+CONFIGURE_ARGS=	--with-gpg=${LOCALBASE}/bin/gpg \
+		--with-gpgsm=${LOCALBASE}/bin/gpgsm
+	
 INFO=	gpgme
 
-.include <bsd.port.pre.mk>
+post-patch:
+	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' \
+					${WRKSRC}/${CONFIGURE_SCRIPT} \
+					${WRKSRC}/gpgme/Makefile.in \
+					${WRKSRC}/gpgme/gpgme-config.in
+	@${REINPLACE_CMD} -e 's|@RUN_GPG_TESTS_TRUE@tests = tests|@RUN_GPG_TESTS_TRUE@tests =|g' \
+					${WRKSRC}/Makefile.in
 
-.if exists(${LOCALBASE}/bin/gpgsm)
-WITH_GPGSM=	yes
-.endif
-
-.if defined(WITH_GPGSM)
-BUILD_DEPENDS+=	gpgsm:${PORTSDIR}/security/gnupg-devel
-CONFIGURE_ARGS+=--with-gpgsm=${LOCALBASE}/bin/gpgsm
-.else
-CONFIGURE_ARGS+=	--without-gpgsm
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
