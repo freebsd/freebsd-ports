@@ -1,0 +1,15 @@
+--- Makefile.PL.orig	Thu Jun  7 15:29:59 2001
++++ Makefile.PL	Thu Jun  7 15:30:13 2001
+@@ -49,12 +49,6 @@
+ # Allow us to suppress all program installation with the -n (library only)
+ # option.  This is for those that don't want to mess with the configuration
+ # section of this file.
+-use Getopt::Std;
+-use vars qw($opt_n);
+-unless (getopts("n")) {
+-    die "Usage: $0 [-n]\n";
+-}
+-@programs_to_install = () if $opt_n;
+ 
+ # Check for non-standard modules that are used by this library.
+ $| = 1; # autoflush on
