@@ -1,0 +1,25 @@
+@exec /sbin/ldconfig -m %B
+@unexec /sbin/ldconfig -R
+bin/adasockets-config
+lib/adasockets/sockets-constants.ads
+lib/adasockets/sockets-constants.ali
+lib/adasockets/sockets-link.ads
+lib/adasockets/sockets-link.ali
+lib/adasockets/sockets-multicast.adb
+lib/adasockets/sockets-multicast.ads
+lib/adasockets/sockets-multicast.ali
+lib/adasockets/sockets-naming.adb
+lib/adasockets/sockets-naming.ads
+lib/adasockets/sockets-naming.ali
+lib/adasockets/sockets-thin.ads
+lib/adasockets/sockets-thin.ali
+lib/adasockets/sockets-utils.adb
+lib/adasockets/sockets-utils.ads
+lib/adasockets/sockets-utils.ali
+lib/adasockets/sockets.adb
+lib/adasockets/sockets.ads
+lib/adasockets/sockets.ali
+lib/libadasockets.a
+lib/libadasockets.so
+lib/libadasockets.so.0
+@dirrm lib/adasockets

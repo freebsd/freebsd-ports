@@ -2,6 +2,7 @@
 #
 
     SUBDIR += SSLtelnet
+    SUBDIR += adasockets
     SUBDIR += adns
     SUBDIR += amcl
     SUBDIR += archie
