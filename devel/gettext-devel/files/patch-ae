@@ -1,5 +1,43 @@
 --- configure.orig	Fri May  1 07:48:25 1998
 +++ configure	Wed Feb 17 02:05:55 1999
+@@ -837,13 +837,13 @@
+ # Run test in a subshell; some versions of sh will print an error if
+ # an executable is not found, even if stderr is redirected.
+ # Redirect stdin to placate older versions of autoconf.  Sigh.
+-if (aclocal --version) < /dev/null > /dev/null 2>&1; then
+-   ACLOCAL=aclocal
+-   echo "$ac_t""found" 1>&6
+-else
++#if (aclocal --version) < /dev/null > /dev/null 2>&1; then
++#   ACLOCAL=aclocal
++#   echo "$ac_t""found" 1>&6
++#else
+    ACLOCAL="$missing_dir/missing aclocal"
+    echo "$ac_t""missing" 1>&6
+-fi
++#fi
+ 
+ echo $ac_n "checking for working autoconf""... $ac_c" 1>&6
+ echo "configure:850: checking for working autoconf" >&5
+@@ -863,13 +863,13 @@
+ # Run test in a subshell; some versions of sh will print an error if
+ # an executable is not found, even if stderr is redirected.
+ # Redirect stdin to placate older versions of autoconf.  Sigh.
+-if (automake --version) < /dev/null > /dev/null 2>&1; then
+-   AUTOMAKE=automake
+-   echo "$ac_t""found" 1>&6
+-else
++#if (automake --version) < /dev/null > /dev/null 2>&1; then
++#   AUTOMAKE=automake
++#   echo "$ac_t""found" 1>&6
++#else
+    AUTOMAKE="$missing_dir/missing automake"
+    echo "$ac_t""missing" 1>&6
+-fi
++#fi
+ 
+ echo $ac_n "checking for working autoheader""... $ac_c" 1>&6
+ echo "configure:876: checking for working autoheader" >&5
 @@ -3958,7 +3958,7 @@
     fi
     

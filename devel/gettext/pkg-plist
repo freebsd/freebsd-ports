@@ -19,7 +19,6 @@ share/aclocal/gettext.m4
 share/aclocal/lcmessage.m4
 share/aclocal/progtest.m4
 share/gettext/ABOUT-NLS
-share/gettext/po-mode.el
 share/gettext/po/Makefile.in.in
 share/gettext/intl/ChangeLog
 share/gettext/intl/Makefile.in
@@ -57,6 +56,7 @@ share/locale/pt/LC_MESSAGES/gettext.mo
 share/locale/sl/LC_MESSAGES/gettext.mo
 share/locale/sv/LC_MESSAGES/gettext.mo
 share/locale/locale.alias
+share/emacs/site-lisp/po-mode.el
 @dirrm share/gettext/intl
 @dirrm share/gettext/po
 @dirrm share/gettext

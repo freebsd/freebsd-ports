@@ -22,8 +22,9 @@ pre-configure:
 
 post-install:
 	@install-info ${PREFIX}/info/gettext.info ${PREFIX}/info/dir
+	${MKDIR} ${PREFIX}/share/emacs/site-lisp
 	${INSTALL_DATA} ${WRKSRC}/misc/po-mode.el \
-		${PREFIX}/share/gettext/po-mode.el
+		${PREFIX}/share/emacs/site-lisp/po-mode.el
 	${MKDIR} ${X11BASE}/share/locale
 
 .include <bsd.port.mk>
