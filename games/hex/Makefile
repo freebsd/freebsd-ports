@@ -8,8 +8,7 @@
 PORTNAME=	hex
 PORTVERSION=	0.0.2
 CATEGORIES=	games
-MASTER_SITES=	http://www.nott.ac.uk/~psystrj/ \
-		http://www.psn.net/~andrews/dist/
+MASTER_SITES=	http://www.earth.li/projectpurple/files/
 
 MAINTAINER=	ports@FreeBSD.org
 
