@@ -445,7 +445,6 @@
     SUBDIR += p5-POE-Component-DBIAgent
     SUBDIR += p5-POE-Component-IKC
     SUBDIR += p5-POE-Component-IKC-ReallySimple
-    SUBDIR += p5-POE-Component-IRC
     SUBDIR += p5-POE-Component-JobQueue
     SUBDIR += p5-POE-Component-Pcap
     SUBDIR += p5-POE-Component-RSS
