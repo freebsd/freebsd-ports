@@ -14,7 +14,9 @@ include/X11/fonts/codeconv/ftcconv.h
 include/X11/fonts/codeconv/ftcconvC.h
 include/X11/fonts/codeconv/ftcconvP.h
 include/X11/fonts/codeconv/ftmisc.h
+lib/modules/codeconv/ARMSCII8.so
 lib/modules/codeconv/BIG5.so
+lib/modules/codeconv/DOSENCODING.so
 lib/modules/codeconv/GB2312.so
 lib/modules/codeconv/ISO8859_1.so
 lib/modules/codeconv/ISO8859_10.so
@@ -35,6 +37,7 @@ lib/modules/codeconv/JISX0212.so
 lib/modules/codeconv/KOI8.so
 lib/modules/codeconv/KSC5601.so
 lib/modules/codeconv/KSCJOHAB.so
+lib/modules/codeconv/MULEENCODING.so
 lib/modules/codeconv/TCVN.so
 lib/modules/codeconv/VISCII.so
 lib/libfont.a
