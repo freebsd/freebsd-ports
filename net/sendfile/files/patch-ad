@@ -1,0 +1,32 @@
+--- src/sendfiled.c.org	Tue Feb  6 00:42:53 2001
++++ src/sendfiled.c	Sun Aug 26 21:21:18 2001
+@@ -10,6 +10,7 @@
+  * 		Chris Foote (chris@senet.com.au)
+  * 		Daniel Kobras <kobras@lists.tat.physik.uni-tuebingen.de>
+  *		Colin Phipps <cph@cph.demon.co.uk>
++ *		Stefan `Sec` Zehl <sec@42.org>
+  *
+  * History:	
+  *
+@@ -138,6 +139,7 @@
+  *   2001-01-17 Framstag	mail2user() now runs in a subprocess
+  *   2001-02-02 Framstag	fixed openlog() bug
+  *   2001-02-06 Framstag	added timeout on waiting response from client
++ *   2001-08-26 sec		workaround for sete[ug]id on FreeBSD
+  *
+  *
+  * The sendfile-daemon of the sendfile package.
+@@ -4000,11 +4002,13 @@
+  * RETURN: nothing, but terminates program on error
+  */
+ void setreugid() {
++  if (rgid != getegid())
+   if (rgid && setegid(rgid)<0) {
+     printf("490 Internal error on setegid(%u): %s\r\n",
+ 	   (unsigned int)rgid,strerror(errno));
+     exit(1);
+   }
++  if (ruid != geteuid())
+   if (ruid && seteuid(ruid)<0) {
+     printf("490 Internal error on seteuid(%u): %s\r\n",
+ 	   (unsigned int)ruid,strerror(errno));
