@@ -6,14 +6,12 @@
 #
 
 PORTNAME=	teg
-PORTVERSION=	0.9.0
+PORTVERSION=	0.9.2
 CATEGORIES=	games gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	sobomax@FreeBSD.org
-
-BROKEN=		"Remotely exploitable buffer overrun"
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
