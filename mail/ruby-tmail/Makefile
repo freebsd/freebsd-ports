@@ -7,6 +7,7 @@
 
 PORTNAME=	tmail
 PORTVERSION=	0.9.6
+PORTREVISION=	1
 CATEGORIES=	mail ruby
 MASTER_SITES=	http://www.loveruby.net/archive/
 MASTER_SITE_SUBDIR=	knu
@@ -22,15 +23,16 @@ USE_RUBY=	yes
 USE_RUBY_AMSTD=	yes
 USE_RUBY_SETUP=	yes
 
-CONFIGURE_ARGS=	--with=ext/b64,ext/mails,lib/tmail
+#CONFIGURE_ARGS=	--with=ext/b64,ext/mails,lib/tmail
+CONFIGURE_ARGS=	--without=ext/cparse,ext/cscan,lib/amstd,lib/raccrt,lib/strscan
 
 do-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_EXAMPLESDIR}/tmail
-	${CP} -R ${WRKSRC}/sample/ ${RUBY_EXAMPLESDIR}/tmail/
-	${MKDIR} ${RUBY_DOCDIR}/tmail/ja
-	${CP} -R ${WRKSRC}/README.en ${WRKSRC}/doc.en/ ${RUBY_DOCDIR}/tmail/
-	${CP} -R ${WRKSRC}/README.ja ${WRKSRC}/doc.ja/ ${RUBY_DOCDIR}/tmail/ja/
+	${MKDIR} ${RUBY_EXAMPLESDIR}/${PORTNAME}
+	${CP} -R ${WRKSRC}/sample/ ${RUBY_EXAMPLESDIR}/${PORTNAME}/
+	${MKDIR} ${RUBY_DOCDIR}/${PORTNAME}/ja
+	${CP} -R ${WRKSRC}/README.en ${WRKSRC}/doc.en/ ${RUBY_DOCDIR}/${PORTNAME}/
+	${CP} -R ${WRKSRC}/README.ja ${WRKSRC}/doc.ja/ ${RUBY_DOCDIR}/${PORTNAME}/ja/
 .endif
 
 .include <bsd.port.mk>

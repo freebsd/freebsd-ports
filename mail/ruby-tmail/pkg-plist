@@ -47,6 +47,7 @@
 %%PORTDOCS%%%%RUBY_DOCDIR%%/tmail/ja/index.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/tmail/ja/item.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/tmail/ja/loader.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/tmail/ja/mail.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/tmail/ja/port.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/tmail/ja/tmail.html
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/tmail/ja
