@@ -4291,6 +4291,7 @@ nessus-plugins	ports/security/nessus-plugins
 nessus-plugins-devel	ports/security/nessus-plugins-devel
 net-http	ports/net/net-http
 net-snmp	ports/net/net-snmp
+net-snmp4	ports/net/net-snmp4
 netatalk	ports/net/netatalk
 netboot		src/sys/i386/boot/netboot
 netcat		ports/net/netcat
