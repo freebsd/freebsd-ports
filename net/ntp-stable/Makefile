@@ -10,7 +10,7 @@ DISTNAME=	ntp-4.0.93a
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.udel.edu/pub/ntp/testing/
 
-MAINTAINER=	andreas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 # ntp's configure script created by autoconf 2.14.1 doesn't work
 # our autoconf version 2.13 produces better results
