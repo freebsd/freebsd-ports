@@ -7,6 +7,7 @@
 
 PORTNAME=	xcin
 PORTVERSION=	2.5.2p5
+PORTREVISION=	1
 CATEGORIES=	chinese x11
 MASTER_SITES=	ftp://xcin.linux.org.tw/pub/xcin/xcin/devel/
 DISTNAME=	xcin-2.5.2-pre5
