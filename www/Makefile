@@ -148,6 +148,7 @@
     SUBDIR += linux-flashplugin6
     SUBDIR += linux-lesstif-ns
     SUBDIR += linux-mozilla
+    SUBDIR += linux-mozilla-devel
     SUBDIR += linux-opera
     SUBDIR += linux-opera7
     SUBDIR += linux-phoenix
