@@ -87,6 +87,7 @@
     SUBDIR += gnomebreakout
     SUBDIR += gnomechess
     SUBDIR += gnomegames
+    SUBDIR += gnomekiss
     SUBDIR += gnomememoryblocks
     SUBDIR += gnuchess
     SUBDIR += gnugo
