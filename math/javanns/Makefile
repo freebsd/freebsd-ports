@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	javanns
-PORTVERSION=	1.0.b
+PORTVERSION=	1.1
 CATEGORIES=	math java
 MASTER_SITES=	http://www-ra.informatik.uni-tuebingen.de/downloads/JavaNNS/
 DISTNAME=	JavaNNS-LinuxIntel
@@ -24,6 +24,11 @@ LIBSDIR?=	${DATADIR}/lib
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
+post-extract:
+	# Permissions in the tar file are whacked
+	find ${WRKSRC} -type d -print | xargs chmod 755
+	find ${WRKSRC} -type f -print | xargs chmod 644
+
 do-configure:
 	${INSTALL_DATA} ${FILESDIR}/javanns.sh ${WRKSRC}
 	${PERL} -p -i -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/javanns.sh
@@ -32,12 +37,13 @@ do-configure:
 	${FIND} ${WRKSRC} -type d -print | ${XARGS} ${CHMOD} 0755
 
 do-install:
-	${MKDIR} ${DATADIR} ${DOCSDIR} ${LIBSDIR} ${CLASSDIR}
-	${TAR} -cf - -C${WRKSRC} examples manual |\
-	    ${TAR} -xf - -C${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/libSNNS_jkr.so ${LIBSDIR}
-	${INSTALL_DATA} ${WRKSRC}/JavaNNSini.html ${DATADIR}
+	${MKDIR} ${DATADIR} ${LIBSDIR} ${CLASSDIR}
 	${INSTALL_DATA} ${WRKSRC}/JavaNNS.jar ${CLASSDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/javanns.sh ${PREFIX}/bin/javanns
+.ifndef NOPORTDOCS
+	${MKDIR} ${DOCSDIR}
+	${TAR} -cf - -C${WRKSRC} examples manual |\
+	    ${TAR} -xf - -C${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
