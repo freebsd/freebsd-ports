@@ -1,0 +1,31 @@
+bin/krename
+share/applnk/Utilities/krename.desktop
+share/apps/krename/krenameservicemenu.desktop
+share/apps/krename/logo.png
+share/doc/HTML/de/krename/changes.html
+share/doc/HTML/de/krename/compilation.html
+share/doc/HTML/de/krename/credits.html
+share/doc/HTML/de/krename/faq.html
+share/doc/HTML/de/krename/index.html
+share/doc/HTML/de/krename/introduction.html
+share/doc/HTML/de/krename/using-krename.html
+share/doc/HTML/en/krename/changes.html
+share/doc/HTML/en/krename/compilation.html
+share/doc/HTML/en/krename/credits.html
+share/doc/HTML/en/krename/faq.html
+share/doc/HTML/en/krename/index.html
+share/doc/HTML/en/krename/introduction.html
+share/doc/HTML/en/krename/using-krename.html
+share/icons/hicolor/32x32/apps/krename.png
+share/icons/hicolor/48x48/apps/krename.png
+share/icons/locolor/16x16/apps/krename.png
+share/icons/locolor/32x32/apps/krename.png
+share/locale/de/LC_MESSAGES/krename.mo
+share/locale/es/LC_MESSAGES/krename.mo
+share/locale/it/LC_MESSAGES/krename.mo
+share/locale/zh_TW.Big5/LC_MESSAGES/krename.mo
+@dirrm share/apps/krename
+@dirrm share/doc/HTML/de/krename
+@dirrm share/doc/HTML/en/krename
+@unexec rmdir %D/share/applnk/Utilities/ 2>/dev/null || true
+@unexec rmdir %D/share/applnk 2>/dev/null || true
