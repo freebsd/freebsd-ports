@@ -13,7 +13,7 @@ MASTER_SITES=   ftp://src.doc.ic.ac.uk/packages/hpack/
 
 MAINTAINER=     ache@FreeBSD.org
 
-RESTRICTED=	"Using this code inside USA will violate RSA copyright"
+RESTRICTED=	"Using this code inside USA will violate RSA patents"
 NO_WRKSUBDIR=	yes
 MAKEFILE=       makefile
 ALL_TARGET=     freebsd
