@@ -3,12 +3,12 @@
 # Date created:         2 Apr 1997
 # Whom:                 Choi Jun Ho <junker@jazz.snu.ac.kr>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/06/04 08:43:17 asami Exp $
 #
 
 DISTNAME=	linuxdoc-sgml-1.6bh2
 PKGNAME=	kr-linuxdoc-sgml-1.6bh2
-CATEGORIES=	korean
+CATEGORIES=	korean textproc
 MASTER_SITES=	ftp://jazz.snu.ac.kr/pub/unix/util/tools/
 
 MAINTAINER=	junker@jazz.snu.ac.kr
