@@ -1,0 +1,24 @@
+#!/bin/sh
+
+PREFIX=$(expr $0 : "\(/.*/\)etc/rc\.d/$(basename $0)\$")
+
+BOPM=${PREFIX}bin/bopm
+
+case "$1" in
+start)
+	if [ -x $BOPM ]; then
+		su bopm -c $BOPM -d >/dev/null 2>&1
+		echo -n ' bopm'
+	fi
+	;;
+stop)
+#	kill `cat ${PREFIX}/etc/ircd-hybrid-ru/ircd.pid` >/dev/null 2>&1
+	killall bopm >/dev/null 2>&1
+	echo -n ' bopm'
+	;;
+*)
+	echo "Usage: `basename $0` {start|stop}" >&2
+	;;
+esac
+
+exit 0

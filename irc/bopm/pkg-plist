@@ -1,0 +1,14 @@
+bin/bopm
+etc/bopm.conf
+etc/rc.d/bopm.sh.sample
+include/opm.h
+include/opm_error.h
+include/opm_types.h
+include/opm_common.h
+lib/libopm.so.0
+lib/libopm.so
+lib/libopm.la
+lib/libopm.a
+@exec mkdir -m 755 /var/log/bopm
+@exec chown bopm:bopm /var/log/bopm
+@unexec rmdir %D/var/log/bopm 2>/dev/null || true

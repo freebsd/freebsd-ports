@@ -9,6 +9,7 @@
     SUBDIR += blackened
     SUBDIR += bnc
     SUBDIR += bobot++
+    SUBDIR += bopm
     SUBDIR += ctrlproxy
     SUBDIR += dancer
     SUBDIR += dancer-ircd
