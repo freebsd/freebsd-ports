@@ -1,0 +1,30 @@
+--- Makefile.orig	Sun Apr 22 10:34:08 2001
++++ Makefile	Sun Apr 22 10:39:35 2001
+@@ -15,23 +15,23 @@
+ # along with this program; if not, write to the Free Software
+ # Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+ 
+-GL_MODE = 1
++#GL_MODE = 1
+ 
+ CC = gcc
+ INCDIRS = -I. -I/usr/include 
+ LIBDIRS =  -L/usr/X11R6/lib 
+ DEBUG = -g 
+ PROFILE = -pg -O3
+-OPT = -O3  -mpentiumpro  -Wno-unused -funroll-loops -fstrength-reduce -ffast-math -malign-functions=2   -malign-jumps=2 -malign-loops=2 -fomit-frame-pointer -Wall -g
++OPT = -O3  -mpentiumpro  -Wno-unused -funroll-loops -fstrength-reduce -ffast-math -malign-functions=2   -malign-jumps=2 -malign-loops=2 -fomit-frame-pointer -Wall -g -I/usr/local/include/
+ OBJ = memory.o vram.o interrupt.o  cpu.o rom.o sound.o serial.o frame_skip.o main.o 
+ DOBJ = debuger/memory.o debuger/vram.o debuger/interrupt.o debuger/cpu.o debuger/rom.o debuger/sound.o debuger/serial.o debuger/frame_skip.o debuger/log.o debuger/debuger.o
+ 
+ ifdef GL_MODE
+ CFLAGS = $(OPT) -D_REENTRANT -DSDL_GL
+-LIBS = -lSDL -lpthread -lGL
++LIBS = -lSDL-1.1 -lpthread -lGL -L/usr/local/lib
+ else
+ CFLAGS = $(OPT) -D_REENTRANT 
+-LIBS = -lSDL -lpthread 
++LIBS = -lSDL-1.1 -L/usr/local/lib -lc_r
+ endif
+ 
+ all : gngb

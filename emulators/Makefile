@@ -17,6 +17,7 @@
     SUBDIR += frodo
     SUBDIR += gbe
     SUBDIR += generator
+    SUBDIR += gngb
     SUBDIR += gnuboy
     SUBDIR += gsnes9x
     SUBDIR += hfs
