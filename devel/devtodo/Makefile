@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	devtodo
-PORTVERSION=	0.1.14
+PORTVERSION=	0.1.17
 CATEGORIES=	devel
 MASTER_SITES=	http://devtodo.sourceforge.net/?${PORTVERSION}/
 
@@ -21,9 +21,9 @@ USE_REINPLACE=	yes
 CFLAGS+=	-DSTDC_HEADERS
 
 MAN1=	devtodo.1
-MLINKS=	devtodo.1 tda.1 devtodo.1 tdd.1 devtodo.1 tde.1 devtodo.1 tdr.1 \
-	devtodo.1 todo.1
-MANCOMPRESSED=	yes
+MLINKS=	devtodo.1 tda.1 devtodo.1 tdd.1 devtodo.1 tde.1 devtodo.1 tdl.1 \
+	devtodo.1 tdr.1 devtodo.1 todo.1
+MANCOMPRESSED=	no
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/^\ttest -f.*todorc.*\n//' ${WRKSRC}/doc/Makefile.in
