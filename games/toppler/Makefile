@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	toppler
-PORTVERSION=	0.71
+PORTVERSION=	1.0.2
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	toppler
@@ -23,26 +23,14 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}"
 
-SCOREDIR?=	/var/games/${PORTNAME}
-SCOREFILE?=	${PORTNAME}.hscr
+MAN6=		toppler.6
 
 pre-patch:
 	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 	@find ${WRKSRC} \( -name "*.[ch]" -or -name "*.cc" \) | \
 		xargs ${PERL} -pi -e 's|"SDL/SDL|"SDL|g ; s|<SDL/SDL|<SDL|g'
 
-post-patch:
-	@${PERL} -pi -e 's|%SCOREDIR%|${SCOREDIR}|g;' \
-		-e 's|%SCOREFILE%|${SCOREFILE}|g' ${WRKSRC}/menu.cc
-
-pre-install:
-	${MKDIR} ${SCOREDIR}
-
 post-install:
-	${CHOWN} root:games ${PREFIX}/bin/${PORTNAME}
-	${CHMOD} g+s ${PREFIX}/bin/${PORTNAME}
-	${TOUCH} ${SCOREDIR}/${SCOREFILE}
-	${CHMOD} 664 ${SCOREDIR}/${SCOREFILE}
-	${CHOWN} root:games ${SCOREDIR}/${SCOREFILE}
+	@cd ${WRKSRC} && ${MAKE} global_highscore
 
 .include <bsd.port.mk>
