@@ -1,0 +1,13 @@
+--- configure.in	2001/01/04 19:59:25	1.1
++++ configure.in	2001/01/04 19:59:46
+@@ -26,8 +26,8 @@
+ AM_PATH_GTK
+ AM_PATH_GDK_PIXBUF
+ 
+-GNOME_CFLAGS=`gnome-config --cflags gnomeui libglade`
+-GNOME_LIBS=`gnome-config --libs gnomeui libglade`
++GNOME_CFLAGS=`gnome-config --cflags gnomeui`
++GNOME_LIBS=`gnome-config --libs gnomeui`
+ AC_SUBST(GNOME_CFLAGS)
+ AC_SUBST(GNOME_LIBS)
+ 

@@ -1,0 +1,11 @@
+--- Makefile.am.orig	Sat Dec 16 02:23:28 2000
++++ Makefile.am	Thu Jan  4 22:01:33 2001
+@@ -5,6 +5,6 @@
+ #dist-hook: gtk-engines.spec
+ #	cp gtk-engines.spec $(distdir)
+ 
+-noinst_PROGRAMS = test
++#noinst_PROGRAMS = test
+ 
+-test_LDADD = $(GTK_LIBS) $(GNOME_LIBS)
++#test_LDADD = $(GTK_LIBS) $(GNOME_LIBS)
