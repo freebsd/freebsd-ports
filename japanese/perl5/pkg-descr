@@ -2,7 +2,7 @@
 	This port collection was used:
 		port collection lang/perl5
 				by markm@FreeBSD.ORG,
-	    and jperl5.005_02-980917
+	    and jperl5.005_02-981225
 				by yasushi@cs.washington.edu,
 		port collection japanese/perl5
 				by shige@kuis.kyoto-u.ac.jp.

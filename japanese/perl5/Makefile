@@ -3,7 +3,7 @@
 # Date created:		7 January 1997
 # Whom:			Yoshiro MIHIRA
 #
-# $Id: Makefile,v 1.11 1998/05/04 15:33:02 max Exp $
+# $Id: Makefile,v 1.12 1998/10/10 11:23:07 kuriyama Exp $
 #
 
 DISTNAME=	perl5.005_02
@@ -32,17 +32,25 @@ PATCH_SITES=	ftp://ftp.funet.fi/pub/languages/perl/CPAN/authors/id/WATANABE/ \
 		ftp://ftp.cis.ufl.edu/pub/perl/CPAN/authors/id/WATANABE/ \
 		ftp://ftp.delphi.com/pub/mirrors/packages/perl/CPAN/authors/id/WATANABE/ \
 		ftp://uiarchive.cso.uiuc.edu/pub/lang/perl/CPAN/authors/id/WATANABE/
-PATCHFILES=	jperl5.005_02-980929.pat.gz
-PATCH_DIST_STRIP=       -p1
+PATCHFILES=	jperl5.005_02-981225.pat.gz
+PATCH_DIST_STRIP= -p1
 
 MAINTAINER=	shige@kuis.kyoto-u.ac.jp
 
+.include <bsd.port.pre.mk>
+
 HAS_CONFIGURE=		yes
 CONFIGURE_SCRIPT=	Configure
-CONFIGURE_ARGS=		-sde -Dprefix=${PREFIX}
+CONFIGURE_ARGS=		-sde -Dprefix=${PREFIX} -Duseshrplib \
+			-Dlibperl=libperl.so.${PERL_SHLIBVER}
 
 PERL_VERSION=	5.00502
 PERL_VER=	5.005
+.if ${PORTOBJFORMAT} == "aout"
+PERL_SHLIBVER=	1.0
+.else
+PERL_SHLIBVER=	1
+.endif
 PLIST_SUB=	PERL_VERSION=${PERL_VERSION} PERL_VER=${PERL_VER}
 
 MAN1= 	a2p.1 c2ph.1 h2ph.1 h2xs.1 perl.1 perl5004delta.1 \
@@ -102,8 +110,6 @@ MAN3=	AnyDBM_File.3 AutoLoader.3 AutoSplit.3 B.3 B::Asmdata.3 \
 
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}/
 
-post-patch:
-	@(cd ${WRKSRC}; chmod +x t/kanji/*.t)
 test:
 	@(cd ${WRKSRC}; make test)
 
@@ -117,6 +123,7 @@ post-install:
 	@${LN} -fs ${PREFIX}/bin/perl${PERL_VERSION} ${PREFIX}/bin/jperl${PERL_VERSION}
 	@${LN} -fs ${PREFIX}/bin/sperl${PERL_VERSION} ${PREFIX}/bin/suidperl
 	@${LN} -fs ${PREFIX}/bin/sperl${PERL_VERSION} ${PREFIX}/bin/jsuidperl
+	@${LN} -fs ${PREFIX}/lib/perl5/${PERL_VERSION}/i386-freebsd/CORE/libperl.so.${PERL_SHLIBVER} ${PREFIX}/lib/perl5/${PERL_VERSION}/i386-freebsd/CORE/libperl.so
 	@PKG_PREFIX=${PREFIX} ${SH} ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>

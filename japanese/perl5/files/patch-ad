@@ -1,5 +1,5 @@
 --- hints/freebsd.sh.orig	Fri Jul 24 13:00:19 1998
-+++ hints/freebsd.sh	Sat Oct 10 20:39:02 1998
++++ hints/freebsd.sh	Wed Feb 10 15:22:47 1999
 @@ -68,6 +68,7 @@
  	d_setreuid='define'
  	d_setegid='undef'
@@ -27,7 +27,7 @@
  	;;
  esac
  
-@@ -95,12 +102,20 @@
+@@ -95,17 +102,25 @@
  case "$osvers" in
  0.*|1.0*) ;;
  
@@ -37,7 +37,14 @@
 -        fi
 -        cccdlflags='-DPIC -fpic'
 -        lddlflags='-Bshareable'
-+3.0*)	objformat=`objformat`
+-        ;;
+-
+-*)	cccdlflags='-DPIC -fpic'
++2.*)	cccdlflags='-DPIC -fpic'
+ 	lddlflags="-Bshareable $lddlflags"
+ 	;;
++
++*)	objformat=`objformat`
 +	if [ x$objformat = xelf ]; then
 +	    libpth="/usr/lib /usr/local/lib"
 +	    glibpth="/usr/lib /usr/local/lib"
@@ -51,6 +58,33 @@
 +	    lddlflags='-Bshareable'
 +	fi
 +	cccdlflags='-DPIC -fpic'
-         ;;
++        ;;
+ esac
  
- *)	cccdlflags='-DPIC -fpic'
+ cat <<'EOM' >&4
+@@ -125,7 +140,11 @@
+ case "$usethreads" in
+ $define)
+     case "$osvers" in  
+-        3.0*) ldflags="-pthread $ldflags"
++         0.*|1.*|2.0*|2.1*)   cat <<'EOM' >&4
++It is not known if FreeBSD $uname_r supports POSIX threads or not.  Consider
++upgrading to the latest STABLE release.
++EOM
++              exit 1
+               ;;
+         2.2*) if [ ! -r /usr/lib/libc_r ]; then
+                 cat <<'EOM' >&4
+@@ -142,11 +161,7 @@
+               # The safest quick-fix is just to not use nm at all.
+               usenm=false
+               ;;
+-         *)   cat <<'EOM' >&4
+-It is not known if FreeBSD $uname_r supports POSIX threads or not.  Consider
+-upgrading to the latest STABLE release.
+-EOM
+-              exit 1
++        *) ldflags="-pthread $ldflags"
+               ;;
+     esac
+     ;;
