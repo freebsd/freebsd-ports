@@ -1,6 +1,3 @@
 bin/wmnd
-@unexec install-info --delete %D/info/gpl.info %D/info/dir
-info/gpl.info
-@exec install-info %D/info/gpl.info %D/info/dir
 share/examples/wmnd/wmndrc
 @dirrm share/examples/wmnd
