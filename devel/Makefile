@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.152 1998/12/26 05:04:03 steve Exp $
+# $Id: Makefile,v 1.153 1999/01/09 08:52:07 asami Exp $
 #
 
     SUBDIR += ElectricFence
@@ -49,6 +49,7 @@
     SUBDIR += lclint
     SUBDIR += libPropListgnome
     SUBDIR += libU77
+    SUBDIR += libcii
     SUBDIR += libdlmalloc
     SUBDIR += libffi
     SUBDIR += libgtop
