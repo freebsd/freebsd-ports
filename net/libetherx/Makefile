@@ -14,7 +14,7 @@ MAINTAINER=	lukin@okbmei.msk.su
 
 LIB_DEPENDS=	jabber.1:${PORTSDIR}/net/libjabber \
 		pth.13:${PORTSDIR}/devel/pth \
-		adns.0:${PORTSDIR}/net/adns
+		adns.1:${PORTSDIR}/net/adns
 
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
