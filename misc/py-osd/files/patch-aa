@@ -1,0 +1,23 @@
+--- setup.py.orig	Sat Nov 23 22:17:59 2002
++++ setup.py	Sat Aug  9 10:11:17 2003
+@@ -2,15 +2,16 @@
+ 
+ from distutils.core import setup, Extension
+ 
+-setup (name = "pyosd",
++setup (name = "osd",
+        version = "0.2.6",
+        description = "Python wrapper for libosd",
+        url = "http://repose.cx/pyosd/",
+        author = "Damien Elmes",
+        author_email = "pyosd@repose.cx",
+-       packages = ['pyosd'],
++       include_dirs = ['/usr/X11R6/include'],
++       packages = ['osd'],
+        ext_modules = \
+-       [Extension("_pyosd", ["_pyosd.c"],
+-                  libraries=["xosd"])]
++       [Extension("_osd", ["_pyosd.c"],
++                  library_dirs = ['/usr/X11R6/lib'], libraries=["xosd"])]
+       )
+ 

@@ -294,6 +294,7 @@
     SUBDIR += projectionlib
     SUBDIR += proxyper
     SUBDIR += py-distutils
+    SUBDIR += py-osd
     SUBDIR += py-pexpect
     SUBDIR += pybliographer
     SUBDIR += pypanda
