@@ -387,6 +387,7 @@
     SUBDIR += p5-Inline-ASM
     SUBDIR += p5-Inline-CPP
     SUBDIR += p5-Inline-Filters
+    SUBDIR += p5-Inline-Tcl
     SUBDIR += p5-Ioctl
     SUBDIR += p5-Locale-Maketext
     SUBDIR += p5-Locale-PGetText

@@ -1,0 +1,8 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Inline/Tcl/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Inline/Tcl.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Inline/Tcl.pod
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Inline/Tcl/Tcl.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Inline/Tcl/Tcl.so
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Inline/Tcl
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Inline 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Inline 2>/dev/null || true
