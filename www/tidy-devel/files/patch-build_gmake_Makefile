@@ -1,5 +1,5 @@
---- Makefile.orig	Tue Feb 18 08:57:03 2003
-+++ Makefile	Tue Feb 18 21:59:51 2003
+--- build/gmake/Makefile.orig	Tue Feb 18 08:57:03 2003
++++ build/gmake/Makefile	Wed Feb 19 22:17:12 2003
 @@ -58,8 +58,8 @@
  PROJECT=tidy
  
