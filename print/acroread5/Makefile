@@ -3,14 +3,14 @@
 # Date created:		16 November 1996
 # Whom:			Thomas Gellekum <tg@freebsd.org>
 #
-# $Id: Makefile,v 1.1.1.1 1996/11/20 07:29:45 tg Exp $
+# $Id: Makefile,v 1.2 1996/11/21 07:12:10 tg Exp $
 #
 
-DISTNAME=	acroread_linux_b1106
+DISTNAME=	acroread_linux_30
 PKGNAME=	acroread-3.0
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.adobe.com/pub/adobe/acrobatreader/unix/3.x/ \
-		ftp://nic.switch.ch/mirror/Acrobat/unix/3.x/
+		ftp://sunsite.cnlab-switch.ch/mirror/acrobatreader/unix/3.x/
 
 MAINTAINER=	tg@FreeBSD.ORG
 
