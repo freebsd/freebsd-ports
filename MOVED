@@ -129,3 +129,4 @@ net/icradius||2002-12-08|security vulnerability
 net/p5-IC-Radius||2002-12-08|security vulnerability
 net/radius||2002-12-08|security vulnerability
 net/xtradius||2002-12-08|security vulnerability
+net/gated||2002-12-13|no longer distributed by vendor
