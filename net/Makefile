@@ -15,6 +15,7 @@
     SUBDIR += ascend-radius
     SUBDIR += bb
     SUBDIR += bind8
+    SUBDIR += bind9
     SUBDIR += bing
     SUBDIR += binkd
     SUBDIR += boclient
