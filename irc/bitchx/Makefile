@@ -9,7 +9,7 @@
 DISTNAME=	BitchX-1.0c16
 CATEGORIES=	irc
 MASTER_SITES=	ftp://ftp.bitchx.com/pub/BitchX/source/ \
-		ftp://bitchx.dimension6.com/pub/BitchX/source/
+		ftp://ukug.uk.freebsd.org/pub/lord_cj/
 
 MAINTAINER=	calle.madestrand@norrgarden.se
 
