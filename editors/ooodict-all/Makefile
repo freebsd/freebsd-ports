@@ -114,7 +114,7 @@ post-install:
 				${LN} -fs ${DICT_PATH}/de_DE.aff ${DICT_PATH}/de_AT.aff; \
 				${ECHO} "@exec ${ECHO} \"DICT $${LANGUAGE} AT de_AT\" \
 				    >> ${DICT_LIST}" >> ${TMPPLIST} ; \
-				${ECHO_CMD} "DICT $$LANGUAGE AT $${ABRV}" >> ${DICT_LIST} ; \
+				${ECHO_CMD} "DICT $$LANGUAGE AT $${ABRV}" >> ${DICT_LIST_INST} ; \
 				cd ${PREFIX} && ${FIND} -s ${DICT_DIR} -type f | \
 				    ${GREP} $${LANGUAGE}_AT >> ${TMPPLIST} ; \
 				cd ${PREFIX} && ${FIND} -s ${DICT_DIR} -type l | \
