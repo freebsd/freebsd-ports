@@ -6,6 +6,7 @@
 
 PORTNAME=	akregator
 PORTVERSION=	1.0.b7
+PORTREVISION=	1
 CATEGORIES=	www kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,6 +16,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An RSS aggregator for KDE
 
 LIB_DEPENDS=	kdepim.1:${PORTSDIR}/deskutils/kdepim3
+
+EXTRA_PATCHES=	${.CURDIR}/../../x11/kde3/files/extrapatch-configure
 
 USE_BZIP2=		yes
 USE_KDEBASE_VER=	3
