@@ -9,7 +9,7 @@ PORTNAME=	mymoon
 PORTVERSION=	1.0
 PORTREVISION=	1
 CATEGORIES=	astro
-MASTER_SITES=	http://makemebad.net/geek/codes/${PORTNAME}/
+MASTER_SITES=	# http://makemebad.net/geek/codes/${PORTNAME}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Show latitude and longitude of the moon
