@@ -194,7 +194,7 @@ sub format_lists {
 			push @files, $line;
 		}
 	}
-	push @text, &format_names($lastdir, @files);
+	push @text, &format_names($lastdir, sort @files);
 
 	return @text;
 }
@@ -598,7 +598,7 @@ if ($cfg::DEBUG) {
 
 # Was used for To: lines, still used for commitlogs naming.
 &append_line($MAIL_FILE, &mlist_map("$directory/"));
-&append_line($SUBJ_FILE, $input_params);
+&append_line($SUBJ_FILE, "$directory " . join(" ", sort @filenames));
 
 #
 # Check for a new directory first.  This will always appear as a
