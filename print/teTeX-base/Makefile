@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	teTeX
-PORTVERSION=	2.0.1
+PORTVERSION=	2.0.2
 CATEGORIES=	print
 MASTER_SITES=	ftp://sunsite.informatik.rwth-aachen.de/pub/comp/tex/teTeX/2.0/distrib/ \
 		${MASTER_SITE_TEX_CTAN}
@@ -26,7 +26,7 @@ PLIST_SUB+=	X11BITS=""
 PLIST_SUB+=	X11BITS="@comment "
 .endif
 DIST_SUBDIR=	teTeX
-WRKSRC=		${WRKDIR}/tetex-src-2.0.1
+WRKSRC=		${WRKDIR}/tetex-src-${PORTVERSION}
 EXTRACT_ONLY=	${TETEX_SRC}
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
@@ -46,7 +46,8 @@ MAN1=		MakeTeXPK.1 access.1 afm2tfm.1 allcm.1 allneeded.1 \
 		dvicopy.1 dvilj.1 dvips.1 dvired.1 dvitype.1 einitex.1 \
 		elatex.1 eplain.1 etex.1 fontexport.1 fontimport.1 \
 		gftodvi.1 gftopk.1 gftype.1 gsftopk.1 inimf.1 inimpost.1 \
-		iniomega.1 initex.1 kpsestat.1 kpsewhich.1 lambda.1 latex.1 \
+		iniomega.1 initex.1 kpsepath.1 kpsestat.1 kpsewhich.1 \
+		kpsexpand.1 lambda.1 latex.1 \
 		mag.1 makeindex.1 makempx.1 mf.1 mft.1 mktexlsr.1 mktexmf.1 \
 		mktexpk.1 mktextfm.1 mpost.1 mpto.1 newer.1 omega.1 patgen.1 \
 		pdfinitex.1 pdflatex.1 pdftex.1 pfb2pfa.1 pk2bm.1 \
@@ -67,8 +68,8 @@ MLINKS=		allcm.1 allec.1 mktexlsr.1 texhash.1 tex.1 virtex.1 \
 MAN1+=		t1mapper.1 xdvi.1 xdvizilla.1
 .endif
 
-TETEX_SRC=	tetex-src-2.0.1.tar.gz
-TETEX_TEXMF=	tetex-texmf-2.0.1.tar.gz
+TETEX_SRC=	tetex-src-${PORTVERSION}.tar.gz
+TETEX_TEXMF=	tetex-texmf-${PORTVERSION}.tar.gz
 LIBPNG_PREFIX?=	${LOCALBASE}
 LIBWWW_PREFIX?=	${LOCALBASE}
 TEXMF_TREE=	${PREFIX}/share/texmf

@@ -1,0 +1,20 @@
+--- texk/tetex/texconfig.orig	Sat Mar  1 09:01:38 2003
++++ texk/tetex/texconfig	Sat Mar  1 08:59:34 2003
+@@ -1791,7 +1791,7 @@
+ test -z "$TC_DFT_CONFIG_PS" && TC_DFT_CONFIG_PS=$TC_TEXMFMAIN/dvips/config/config.ps
+ 
+ : ${TC_DFT_DVIPDFM_CFG=`kpsewhich -progname=dvipdfm -format='other text files' config`}
+-test -z "$TC_DFT_DVIPDFM_CFG" && TC_DFT_DVIPDFM_CFG=$TC_TEXMFMAIN/dvipdfm/config
++test -z "$TC_DFT_DVIPDFM_CFG" && TC_DFT_DVIPDFM_CFG=$TC_TEXMFMAIN/dvipdfm/config/config
+ 
+ : ${TC_DFT_PDFTEX_CFG=`kpsewhich -progname=pdftex --format=tex pdftex.cfg`}
+ test -z "$TC_DFT_PDFTEX_CFG" && TC_DFT_PDFTEX_CFG=$TC_TEXMFMAIN/pdftex/config/pdftex.cfg
+@@ -1820,7 +1820,7 @@
+ xdvi_app_dir=$TC_VARTEXMF/xdvi
+ xdvi_app_file=$xdvi_app_dir/XDvi
+ dvips_conf_dir=$TC_VARTEXMF/dvips/config
+-dvipdfm_conf_dir=$TC_VARTEXMF/dvipdfm
++dvipdfm_conf_dir=$TC_VARTEXMF/dvipdfm/config
+ pdftex_conf_dir=$TC_VARTEXMF/pdftex/config
+ maketex_site_dir=$TC_VARTEXMF/web2c
+ maketex_site_file=$maketex_site_dir/mktex.cnf

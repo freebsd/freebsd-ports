@@ -133,10 +133,10 @@ bin/virmpost
 bin/viromega
 bin/virtex
 bin/vptovf
-bin/weave
 %%X11BITS%%bin/xdvi
 %%X11BITS%%bin/xdvi.bin
 %%X11BITS%%bin/xdvizilla
+bin/weave
 include/kpathsea/absolute.h
 include/kpathsea/c-auto.h
 include/kpathsea/c-ctype.h
@@ -239,6 +239,9 @@ share/texmf/bibtex/bst/germbib/geralpha.bst
 share/texmf/bibtex/bst/germbib/gerapali.bst
 share/texmf/bibtex/bst/germbib/gerplain.bst
 share/texmf/bibtex/bst/germbib/gerunsrt.bst
+share/texmf/bibtex/bst/jurabib/jurabib.bst
+share/texmf/bibtex/bst/jurabib/jureco.bst
+share/texmf/bibtex/bst/jurabib/jurunsrt.bst
 share/texmf/bibtex/bst/misc/acm.bst
 share/texmf/bibtex/bst/natbib/abbrvnat.bst
 share/texmf/bibtex/bst/natbib/plainnat.bst
@@ -802,6 +805,7 @@ share/texmf/doc/help/Catalogue/entries/bits.html
 share/texmf/doc/help/Catalogue/entries/bitstrea.html
 share/texmf/doc/help/Catalogue/entries/bizcard.html
 share/texmf/doc/help/Catalogue/entries/blackboard.html
+share/texmf/doc/help/Catalogue/entries/blackletter1.html
 share/texmf/doc/help/Catalogue/entries/blkarray.html
 share/texmf/doc/help/Catalogue/entries/blkcntrl.html
 share/texmf/doc/help/Catalogue/entries/block.html
@@ -923,6 +927,7 @@ share/texmf/doc/help/Catalogue/entries/consdiag.html
 share/texmf/doc/help/Catalogue/entries/context.html
 share/texmf/doc/help/Catalogue/entries/contour.html
 share/texmf/doc/help/Catalogue/entries/cooking.html
+share/texmf/doc/help/Catalogue/entries/corelfonts.html
 share/texmf/doc/help/Catalogue/entries/corelpak.html
 share/texmf/doc/help/Catalogue/entries/count1to.html
 share/texmf/doc/help/Catalogue/entries/covfonts.html
@@ -1088,6 +1093,7 @@ share/texmf/doc/help/Catalogue/entries/eurosym.html
 share/texmf/doc/help/Catalogue/entries/euxm.html
 share/texmf/doc/help/Catalogue/entries/everysel.html
 share/texmf/doc/help/Catalogue/entries/everyshi.html
+share/texmf/doc/help/Catalogue/entries/evweek.html
 share/texmf/doc/help/Catalogue/entries/exam.html
 share/texmf/doc/help/Catalogue/entries/examdesign.html
 share/texmf/doc/help/Catalogue/entries/exams.html
@@ -1118,6 +1124,7 @@ share/texmf/doc/help/Catalogue/entries/feyn.html
 share/texmf/doc/help/Catalogue/entries/feynmf.html
 share/texmf/doc/help/Catalogue/entries/fig2sty.html
 share/texmf/doc/help/Catalogue/entries/figcaps.html
+share/texmf/doc/help/Catalogue/entries/figfrag.html
 share/texmf/doc/help/Catalogue/entries/fihyph.html
 share/texmf/doc/help/Catalogue/entries/filecontents.html
 share/texmf/doc/help/Catalogue/entries/filehdr.html
@@ -1400,6 +1407,7 @@ share/texmf/doc/help/Catalogue/entries/lshort-portuguese.html
 share/texmf/doc/help/Catalogue/entries/lshort-russian.html
 share/texmf/doc/help/Catalogue/entries/lshort-slovak.html
 share/texmf/doc/help/Catalogue/entries/lshort-spanish.html
+share/texmf/doc/help/Catalogue/entries/lshort-ukr.html
 share/texmf/doc/help/Catalogue/entries/ltablex.html
 share/texmf/doc/help/Catalogue/entries/ltnews.html
 share/texmf/doc/help/Catalogue/entries/ltoh.html
@@ -1767,6 +1775,7 @@ share/texmf/doc/help/Catalogue/entries/scale.html
 share/texmf/doc/help/Catalogue/entries/scalefnt.html
 share/texmf/doc/help/Catalogue/entries/schedule.html
 share/texmf/doc/help/Catalogue/entries/scientificviewer.html
+share/texmf/doc/help/Catalogue/entries/sciwordconv.html
 share/texmf/doc/help/Catalogue/entries/script.html
 share/texmf/doc/help/Catalogue/entries/scrnger.html
 share/texmf/doc/help/Catalogue/entries/secdot.html
@@ -2632,8 +2641,6 @@ share/texmf/doc/latex/floatflt/floatfge.dvi
 share/texmf/doc/latex/floatflt/floatflt.dvi
 share/texmf/doc/latex/footmisc/README
 share/texmf/doc/latex/footmisc/footmisc.dvi
-share/texmf/doc/latex/g-brief/beispiel.tex
-share/texmf/doc/latex/g-brief/g-brief.dvi
 share/texmf/doc/latex/general/a.ps
 share/texmf/doc/latex/general/guide.dvi
 share/texmf/doc/latex/general/guide.ps
@@ -2661,6 +2668,12 @@ share/texmf/doc/latex/images/new.gif
 share/texmf/doc/latex/images/redball.gif
 share/texmf/doc/latex/jknappen/mathbbol.rme
 share/texmf/doc/latex/jknappen/mathrsfs.rme
+share/texmf/doc/latex/jurabib/jb-bibtex-ref.html
+share/texmf/doc/latex/jurabib/jb-com-ref.html
+share/texmf/doc/latex/jurabib/jb-opt-ref.html
+share/texmf/doc/latex/jurabib/jbendoc.dvi
+share/texmf/doc/latex/jurabib/jbgerdoc.dvi
+share/texmf/doc/latex/jurabib/jurabib-faq.dvi
 share/texmf/doc/latex/koma-script/INSTALL.TXT
 share/texmf/doc/latex/koma-script/INSTALLD.TXT
 share/texmf/doc/latex/koma-script/LEGAL.TXT
@@ -2928,6 +2941,8 @@ share/texmf/doc/latex/leftidx/readme
 share/texmf/doc/latex/lettrine/00README
 share/texmf/doc/latex/lettrine/demo.pdf
 share/texmf/doc/latex/lettrine/lettrine.dvi
+share/texmf/doc/latex/listings/README
+share/texmf/doc/latex/listings/listings.dvi
 share/texmf/doc/latex/mathtime/0readme
 share/texmf/doc/latex/mathtime/mathtime.dvi
 share/texmf/doc/latex/mdwtools/COPYING
@@ -2999,12 +3014,12 @@ share/texmf/doc/latex/pb-diagram/pb-examples.tex
 share/texmf/doc/latex/pb-diagram/pb-manual.aux
 share/texmf/doc/latex/pb-diagram/pb-manual.dvi
 share/texmf/doc/latex/pb-diagram/pb-manual.tex
-share/texmf/doc/latex/pdfpages/README
 share/texmf/doc/latex/pdfpages/dummy-l.pdf
 share/texmf/doc/latex/pdfpages/dummy.pdf
 share/texmf/doc/latex/pdfpages/pdf-ex.tex
 share/texmf/doc/latex/pdfpages/pdf-hyp.tex
 share/texmf/doc/latex/pdfpages/pdfpages.dvi
+share/texmf/doc/latex/pdfpages/readme
 share/texmf/doc/latex/platex/00readme
 share/texmf/doc/latex/platex/conowego.txt
 share/texmf/doc/latex/platex/czytaj.txt
@@ -3114,6 +3129,8 @@ share/texmf/doc/latex/styles/layman.dvi
 share/texmf/doc/latex/styles/mathcomp.dvi
 share/texmf/doc/latex/styles/mflogo.dvi
 share/texmf/doc/latex/styles/moreverb.dvi
+share/texmf/doc/latex/styles/mparhack.dvi
+share/texmf/doc/latex/styles/multiple-span.txt
 share/texmf/doc/latex/styles/paralist.dvi
 share/texmf/doc/latex/styles/picinpar.dvi
 share/texmf/doc/latex/styles/picins.txt
@@ -3250,7 +3267,6 @@ share/texmf/doc/pdftex/base/tmp.pdf
 share/texmf/doc/polish/context/cont-pl.html
 share/texmf/doc/polish/index.html
 share/texmf/doc/polish/mex/00readme
-share/texmf/doc/polish/mex/mex.htm
 share/texmf/doc/polish/mex/mex.html
 share/texmf/doc/polish/mex/mexinfo.eng
 share/texmf/doc/polish/mex/mexinfo.pol
@@ -3276,8 +3292,8 @@ share/texmf/doc/tetex/TETEXDOC.ps
 share/texmf/doc/tetex/eurotex98-te.pdf
 share/texmf/doc/tetex/teTeX-FAQ
 share/texmf/doc/texdoctk/README
-share/texmf/dvipdfm/README.config
-share/texmf/dvipdfm/config
+share/texmf/dvipdfm/config/README.config
+share/texmf/dvipdfm/config/config
 share/texmf/dvips/antp/antp.enc
 share/texmf/dvips/antp/antp.map
 share/texmf/dvips/antp/config.antp
@@ -10174,6 +10190,7 @@ share/texmf/tex/generic/hyphen/nohyphbc.tex
 share/texmf/tex/generic/hyphen/plhyph.tex
 share/texmf/tex/generic/hyphen/pt8hyph.tex
 share/texmf/tex/generic/hyphen/rohyphen.tex
+share/texmf/tex/generic/hyphen/sihyph23.tex
 share/texmf/tex/generic/hyphen/skhyph.tex
 share/texmf/tex/generic/hyphen/skhyph2e.tex
 share/texmf/tex/generic/hyphen/sphyph.tex
@@ -10805,8 +10822,6 @@ share/texmf/tex/latex/fp/fp-upn.sty
 share/texmf/tex/latex/fp/fp.sty
 share/texmf/tex/latex/fp/fp.tex
 share/texmf/tex/latex/fp/lfp.sty
-share/texmf/tex/latex/g-brief/g-brief.cls
-share/texmf/tex/latex/g-brief/g-brief.sty
 share/texmf/tex/latex/graphics/color.sty
 share/texmf/tex/latex/graphics/dvipdf.def
 share/texmf/tex/latex/graphics/dvipdfm.def
@@ -10863,6 +10878,16 @@ share/texmf/tex/latex/jknappen/mathbbol.sty
 share/texmf/tex/latex/jknappen/mathrsfs.sty
 share/texmf/tex/latex/jknappen/ubbold.fd
 share/texmf/tex/latex/jknappen/ursfs.fd
+share/texmf/tex/latex/jurabib/dejbbib.ldf
+share/texmf/tex/latex/jurabib/dujbbib.ldf
+share/texmf/tex/latex/jurabib/enjbbib.ldf
+share/texmf/tex/latex/jurabib/frjbbib.ldf
+share/texmf/tex/latex/jurabib/itjbbib.ldf
+share/texmf/tex/latex/jurabib/jblong.cfg
+share/texmf/tex/latex/jurabib/jurabib.cfg
+share/texmf/tex/latex/jurabib/jurabib.sty
+share/texmf/tex/latex/jurabib/nojbbib.ldf
+share/texmf/tex/latex/jurabib/spjbbib.ldf
 share/texmf/tex/latex/koma-script/DIN.lco
 share/texmf/tex/latex/koma-script/DINmtext.lco
 share/texmf/tex/latex/koma-script/KOMAold.lco
@@ -10885,6 +10910,13 @@ share/texmf/tex/latex/koma-script/scrtime.sty
 share/texmf/tex/latex/koma-script/typearea.sty
 share/texmf/tex/latex/labels/labels.sty
 share/texmf/tex/latex/labels/olabels.sty
+share/texmf/tex/latex/listings/listings.cfg
+share/texmf/tex/latex/listings/lstdoc.sty
+share/texmf/tex/latex/listings/lstlang1.sty
+share/texmf/tex/latex/listings/lstlang2.sty
+share/texmf/tex/latex/listings/lstlang3.sty
+share/texmf/tex/latex/listings/lstmisc.sty
+share/texmf/tex/latex/listings/lstpatch.sty
 share/texmf/tex/latex/lucida/ly1hlce.fd
 share/texmf/tex/latex/lucida/ly1hlcf.fd
 share/texmf/tex/latex/lucida/ly1hlcn.fd
@@ -11081,6 +11113,7 @@ share/texmf/tex/latex/misc/lettrine.sty
 share/texmf/tex/latex/misc/marvosym.sty
 share/texmf/tex/latex/misc/mathcomp.sty
 share/texmf/tex/latex/misc/moreverb.sty
+share/texmf/tex/latex/misc/mparhack.sty
 share/texmf/tex/latex/misc/mt11p.sty
 share/texmf/tex/latex/misc/multibox.sty
 share/texmf/tex/latex/misc/multind.sty
@@ -11745,12 +11778,13 @@ share/texmf/xdvi/XDvi
 @dirrm share/texmf/tex/latex/mathpple
 @dirrm share/texmf/tex/latex/lucidabr
 @dirrm share/texmf/tex/latex/lucida
+@dirrm share/texmf/tex/latex/listings
 @dirrm share/texmf/tex/latex/labels
 @dirrm share/texmf/tex/latex/koma-script
+@dirrm share/texmf/tex/latex/jurabib
 @dirrm share/texmf/tex/latex/jknappen
 @dirrm share/texmf/tex/latex/hyperref
 @dirrm share/texmf/tex/latex/graphics
-@dirrm share/texmf/tex/latex/g-brief
 @dirrm share/texmf/tex/latex/fp
 @dirrm share/texmf/tex/latex/fancyvrb
 @dirrm share/texmf/tex/latex/fancyheadings
@@ -12232,6 +12266,7 @@ share/texmf/xdvi/XDvi
 @dirrm share/texmf/dvips/antt
 @dirrm share/texmf/dvips/antp
 @dirrm share/texmf/dvips
+@dirrm share/texmf/dvipdfm/config
 @dirrm share/texmf/dvipdfm
 @dirrm share/texmf/doc/texdoctk
 @dirrm share/texmf/doc/tetex
@@ -12290,17 +12325,18 @@ share/texmf/xdvi/XDvi
 @dirrm share/texmf/doc/latex/mfnfss
 @dirrm share/texmf/doc/latex/mdwtools
 @dirrm share/texmf/doc/latex/mathtime
+@dirrm share/texmf/doc/latex/listings
 @dirrm share/texmf/doc/latex/lettrine
 @dirrm share/texmf/doc/latex/leftidx
 @dirrm share/texmf/doc/latex/latex2e-html
 @dirrm share/texmf/doc/latex/koma-script
+@dirrm share/texmf/doc/latex/jurabib
 @dirrm share/texmf/doc/latex/jknappen
 @dirrm share/texmf/doc/latex/images
 @dirrm share/texmf/doc/latex/hyperref
 @dirrm share/texmf/doc/latex/graphics
 @dirrm share/texmf/doc/latex/geometry
 @dirrm share/texmf/doc/latex/general
-@dirrm share/texmf/doc/latex/g-brief
 @dirrm share/texmf/doc/latex/footmisc
 @dirrm share/texmf/doc/latex/floatflt
 @dirrm share/texmf/doc/latex/fancyvrb
@@ -12408,6 +12444,7 @@ share/texmf/xdvi/XDvi
 @dirrm share/texmf/bibtex/bst/plbib
 @dirrm share/texmf/bibtex/bst/natbib
 @dirrm share/texmf/bibtex/bst/misc
+@dirrm share/texmf/bibtex/bst/jurabib
 @dirrm share/texmf/bibtex/bst/germbib
 @dirrm share/texmf/bibtex/bst/base
 @dirrm share/texmf/bibtex/bst/ams
