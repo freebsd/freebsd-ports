@@ -10,8 +10,10 @@ PORTVERSION=	1.20
 PORTREVISION=	1
 CATEGORIES=	x11 windowmaker
 MASTER_SITES=	http://www.tcscs.com/wdm/wdm/ \
-		http://www.de.freebsd.org/de/gif/bsd/
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DAEMONPIC}
+		http://www.de.freebsd.org/de/gif/bsd/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	tg
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DAEMONPICS}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -31,7 +33,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include \
 CONFIGURE_ARGS=	--with-logdir=/var/log \
 		--with-runlockdir=/var/run \
 		--with-wdmdir=${PREFIX}/lib/X11/wdm \
-		--with-Logo=Earth200x130.xpm \
+		--with-Logo=beastie.xpm \
 		--with-gfx-incs=${X11BASE}/include/WINGs \
 		--with-gfx-libs=${X11BASE}/lib \
 		--with-defuserpath=/bin:/usr/bin:/sbin:/usr/sbin:${X11BASE}/bin:${LOCALBASE}/bin \
@@ -47,7 +49,7 @@ CONFIGURE_ENV+=	LIBS="-Wl,-export-dynamic ${X11BASE}/lib/libXinerama.a"
 
 MAN1=	wdm.1 wdmLogin.1
 
-DAEMONPIC=	daemon1-HQ-1280x960.jpg
+DAEMONPICS=	beastie.xpm daemon1-HQ-1280x960.jpg
 
 .if defined(WITH_PAM)
 CONFIGURE_ARGS+=	--enable-pam
@@ -85,6 +87,8 @@ post-install:
 		${MV} ${PREFIX}/lib/X11/wdm/Xsetup_0.preserve \
 			${PREFIX}/lib/X11/wdm/Xsetup_0; \
 	fi
-	@${INSTALL_DATA} ${_DISTDIR}/${DAEMONPIC} ${PREFIX}/lib/X11/wdm/pixmaps
+.for file in ${DAEMONPICS}
+	@${INSTALL_DATA} ${_DISTDIR}/${file} ${PREFIX}/lib/X11/wdm/pixmaps
+.endfor
 
 .include <bsd.port.post.mk>
