@@ -3,6 +3,7 @@
 
     COMMENT = System utilities
 
+    SUBDIR += 3dm
     SUBDIR += LPRng
     SUBDIR += LPRngTool
     SUBDIR += Tee
