@@ -75,6 +75,7 @@
     SUBDIR += smpeg
     SUBDIR += smpeg-xmms
     SUBDIR += splitmpg
+    SUBDIR += subconv
     SUBDIR += tkxanim
     SUBDIR += tosvcd
     SUBDIR += totem
