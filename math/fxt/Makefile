@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	fxt
-PORTVERSION=	2002.12.16
+PORTVERSION=	2003.02.18
 CATEGORIES=	math
 MASTER_SITES=	http://www.jjj.de/fxt/
 EXTRACT_SUFX=	.tgz
@@ -17,7 +17,6 @@ COMMENT=	FFT code and related stuff
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USE_GCC=	3.1
 USE_GMAKE=	yes
 MAKEFILE=	makefile
 
