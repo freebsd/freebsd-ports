@@ -64,7 +64,7 @@
 +		extra_width = ws.ws_col - 80;
 +	}
 +
- 	while((c = getopt(argc, argv, "Dflhnsipcr")) != EOF) switch(c) {
+ 	while((c = getopt(argc, argv, "Dd:flhnsipcru:")) != EOF) switch(c) {
  		case 'D':
  			use_dns = 0;
 @@ -469,14 +481,17 @@

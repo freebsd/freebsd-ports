@@ -5,7 +5,7 @@ bin/radwho
 bin/radzap
 sbin/checkrad
 sbin/radiusd
-sbin/radwatch
+sbin/radrelay
 etc/raddb/clients.sample
 etc/raddb/dictionary
 etc/raddb/dictionary.ascend
@@ -22,10 +22,9 @@ etc/raddb/naslist.sample
 etc/raddb/naspasswd.sample
 etc/raddb/realms.sample
 etc/raddb/users.sample
-share/doc/radiusd-cistron/COPYRIGHT.Cistron
-share/doc/radiusd-cistron/COPYRIGHT.Livingston
+share/doc/radiusd-cistron/COPYRIGHT
 share/doc/radiusd-cistron/ChangeLog
-share/doc/radiusd-cistron/INSTALL.OLD
+share/doc/radiusd-cistron/INSTALL
 share/doc/radiusd-cistron/README
 share/doc/radiusd-cistron/README.Y2K
 share/doc/radiusd-cistron/README.cisco
