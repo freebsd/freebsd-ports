@@ -3,7 +3,7 @@
 # Date created:		28 Oct 1997
 # Whom:	      		Vanilla I. Shu <vanilla@MinJe.com.TW>
 #
-# $Id: Makefile,v 1.1.1.1 1998/04/29 21:16:27 vanilla Exp $
+# $Id: Makefile,v 1.2 1998/04/30 02:54:57 asami Exp $
 #
 
 DISTNAME=	Gtk-0.1.17
@@ -14,8 +14,6 @@ MASTER_SITES=	ftp://ftp.gimp.org/pub/gtk/perl/
 MAINTAINER=	vanilla@MinJe.com.TW
 
 LIB_DEPENDS=	gtk\\.1\\.:${PORTSDIR}/x11/gtk
-
-BROKEN=		build
 
 USE_PERL5=	YES
 
