@@ -1,0 +1,9 @@
+--- configure.in.orig	Wed Feb 13 22:27:04 2002
++++ configure.in	Wed Feb 13 22:27:10 2002
+@@ -498,5 +498,5 @@
+ 
+ dnl Run "make depend" if necessary.
+ if test "X$allegro_make_depend" = "Xyes"; then
+-  make depend
++  ${MAKE} depend
+ fi
