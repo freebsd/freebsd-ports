@@ -14,5 +14,9 @@ share/doc/HTML/en/cervisia/common/kde-common.css
 share/doc/HTML/en/cervisia/common/kde-default.css
 share/doc/HTML/en/cervisia/common/kde-localised.css
 share/doc/HTML/en/cervisia/common/logotp3.png
+share/locale/pt/LC_MESSAGES/cervisia.mo
+@unexec rmdir %D/share/locale/*/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/* 2>/dev/null || true
+@unexec rmdir %D/share/locale 2>/dev/null || true
 @dirrm share/doc/HTML/en/cervisia/common
 @dirrm share/doc/HTML/en/cervisia

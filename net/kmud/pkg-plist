@@ -1,4 +1,5 @@
 bin/kmud
+share/applnk/Games/kmud.kdelnk
 share/doc/HTML/de/kmud/index-1.html
 share/doc/HTML/de/kmud/index-2.html
 share/doc/HTML/de/kmud/index-3.html
@@ -32,11 +33,18 @@ share/icons/mini/kmud.xpm
 share/icons/mini/kmud_aliases.xpm
 share/icons/mini/kmud_connectionwizard.xpm
 share/icons/mini/kmud_disconnect.xpm
+share/icons/mini/kmud_logoff.xpm
+share/icons/mini/kmud_logon.xpm
 share/icons/mini/kmud_null.xpm
 share/icons/mini/kmud_quickconnect.xpm
 share/icons/mini/kmud_triggers.xpm
 share/locale/de/LC_MESSAGES/kmud.mo
+share/locale/fr/LC_MESSAGES/kmud.mo
+share/locale/ru/LC_MESSAGES/kmud.mo
 share/locale/sv/LC_MESSAGES/kmud.mo
+@unexec rmdir %D/share/locale/*/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/* 2>/dev/null || true
+@unexec rmdir %D/share/locale 2>/dev/null || true
 @dirrm share/doc/HTML/sv/kmud
 @dirrm share/doc/HTML/ru/kmud
 @dirrm share/doc/HTML/en/kmud
