@@ -8,9 +8,9 @@
 PORTNAME=	tclmidi
 PORTVERSION=	3.1
 CATEGORIES=	audio
-MASTER_SITES=	ftp://ftp.unina.it/pub/Other/music/midi/PROGRAMS/ \
-		ftp://ftp.cs.ruu.nl/pub/MIDI/PROGRAMS/ \
-		ftp://sunsite.mff.cuni.cz/MultiMedia/Audio/MIDI/PROGRAMS/
+MASTER_SITES=	ftp://ftp.cs.ruu.nl/pub/MIDI/PROGRAMS/
+# despite references on the homepage to ftp.xor.com, that server
+# doesn't work - edwin 20021227
 
 MAINTAINER=	shanee@augusta.de
 
