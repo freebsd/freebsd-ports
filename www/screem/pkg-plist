@@ -1,4 +1,17 @@
 bin/screem
+lib/screem/plugins/colourWizard.so
+lib/screem/plugins/cssWizard.so
+lib/screem/plugins/entityWizard.so
+lib/screem/plugins/formWizard.so
+lib/screem/plugins/frameWizard.so
+lib/screem/plugins/galleryWizard.so
+lib/screem/plugins/imageWizard.so
+lib/screem/plugins/linkWizard.so
+lib/screem/plugins/mailWizard.so
+lib/screem/plugins/script.scm
+lib/screem/plugins/ssiWizard.so
+lib/screem/plugins/tableWizard.so
+lib/screem/plugins/uploadWizard.so
 share/gnome/apps/Development/screem.desktop
 share/gnome/help/screem/C/authors.html
 share/gnome/help/screem/C/buttons.html
@@ -213,19 +226,6 @@ share/gnome/screem/htmlhelp/tables/tr.html
 share/gnome/screem/htmlhelp/values.html
 share/gnome/screem/htmlhelp/wdglogo-small.gif
 share/gnome/screem/htmlhelp/wdglogo1.gif
-share/gnome/screem/plugins/colourWizard.so
-share/gnome/screem/plugins/cssWizard.so
-share/gnome/screem/plugins/entityWizard.so
-share/gnome/screem/plugins/formWizard.so
-share/gnome/screem/plugins/frameWizard.so
-share/gnome/screem/plugins/galleryWizard.so
-share/gnome/screem/plugins/imageWizard.so
-share/gnome/screem/plugins/linkWizard.so
-share/gnome/screem/plugins/mailWizard.so
-share/gnome/screem/plugins/script.scm
-share/gnome/screem/plugins/ssiWizard.so
-share/gnome/screem/plugins/tableWizard.so
-share/gnome/screem/plugins/uploadWizard.so
 share/gnome/screem/resources/Images/made.jpg
 share/gnome/screem/screem.tagtree
 share/gnome/screem/syntax/html.screem.syntax
@@ -246,7 +246,6 @@ share/locale/tr/LC_MESSAGES/screem.mo
 @dirrm share/gnome/screem/resources/HTML
 @dirrm share/gnome/screem/resources/Applets
 @dirrm share/gnome/screem/resources
-@dirrm share/gnome/screem/plugins
 @dirrm share/gnome/screem/htmlhelp/tables
 @dirrm share/gnome/screem/htmlhelp/special
 @dirrm share/gnome/screem/htmlhelp/phrase
@@ -269,3 +268,4 @@ share/locale/tr/LC_MESSAGES/screem.mo
 @dirrm share/gnome/help/screem/C/figs
 @dirrm share/gnome/help/screem/C
 @dirrm share/gnome/help/screem
+@dirrm lib/screem/plugins
