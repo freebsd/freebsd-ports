@@ -8,4 +8,5 @@ share/doc/%%PYTHON_VERSION%%/mac.ps
 share/doc/%%PYTHON_VERSION%%/ref.ps
 share/doc/%%PYTHON_VERSION%%/tut.ps
 share/doc/%%PYTHON_VERSION%%/README
+%%PYTHON22_ONLY%%share/doc/%%PYTHON_VERSION%%/whatsnew22.ps
 @unexec rmdir %D/share/doc/%%PYTHON_VERSION%% 2>/dev/null || true

@@ -7,4 +7,5 @@ share/doc/%%PYTHON_VERSION%%/lib.pdf
 share/doc/%%PYTHON_VERSION%%/mac.pdf
 share/doc/%%PYTHON_VERSION%%/ref.pdf
 share/doc/%%PYTHON_VERSION%%/tut.pdf
+%%PYTHON22_ONLY%%share/doc/%%PYTHON_VERSION%%/whatsnew22.pdf
 @unexec rmdir %D/share/doc/%%PYTHON_VERSION%% 2>/dev/null || true
