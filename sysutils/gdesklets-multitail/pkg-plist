@@ -1,3 +1,4 @@
+%%EXAMPLESDIR%%/sample.multitail
 share/gnome/gdesklets/Displays/MultiTail/README
 share/gnome/gdesklets/Displays/MultiTail/gfx/dark/bg.png
 share/gnome/gdesklets/Displays/MultiTail/gfx/dark/bottom-left.png
@@ -17,10 +18,9 @@ share/gnome/gdesklets/Sensors/MultiTail/filter.py
 share/gnome/gdesklets/Sensors/MultiTail/filter.pyc
 share/gnome/gdesklets/Sensors/MultiTail/screenbuffer.py
 share/gnome/gdesklets/Sensors/MultiTail/screenbuffer.pyc
-share/gnome/gdesklets/Sensors/MultiTail/tailbook.py
-share/gnome/gdesklets/Sensors/MultiTail/tailbook.pyc
 share/gnome/gdesklets/Sensors/MultiTail/watchlist.py
 share/gnome/gdesklets/Sensors/MultiTail/watchlist.pyc
+@dirrm %%EXAMPLESDIR%%
 @dirrm share/gnome/gdesklets/Displays/MultiTail/gfx/dark
 @dirrm share/gnome/gdesklets/Displays/MultiTail/gfx/light
 @dirrm share/gnome/gdesklets/Displays/MultiTail/gfx
