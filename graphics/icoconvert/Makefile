@@ -11,7 +11,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://www.mox.net/downloads/ \
 		http://www.xunix.org/~flz/distfiles/
 
-MAINTAINER=	flz@xbsd.org
+MAINTAINER=	flz@FreeBSD.org
 COMMENT=	A small utility to convert Windows icon files into .xpm and .png files
 
 LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd

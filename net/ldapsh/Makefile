@@ -12,7 +12,7 @@ CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/L/LO/LOOSIFER/
 
-MAINTAINER=	flz@xbsd.org
+MAINTAINER=	flz@FreeBSD.org
 COMMENT=	Interactive shell used to administer ldap directories
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Term/ReadKey.pm:${PORTSDIR}/devel/p5-Term-ReadKey \

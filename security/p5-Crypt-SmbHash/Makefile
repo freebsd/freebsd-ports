@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Crypt
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	flz@xbsd.org
+MAINTAINER=	flz@FreeBSD.org
 COMMENT=	Perl module implementing lanman and nt md4 hash functions
 
 PERL_CONFIGURE=	yes
