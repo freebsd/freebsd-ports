@@ -1,0 +1,17 @@
+This port will try and ensure that the tools used by the FreeBSD
+Documentation Project are installed on your system so you can convert
+documentation from SGML to other formats.
+
+One of these components is JadeTeX, which depends on TeTeX. The source
+for TeTeX is larger than 30MB, and may be a very long download for you.
+
+If you do not want to produce PostScript and PDF formats from the 
+documentation then you do not need JadeTeX, and you should set the
+variable "JADETEX" to "no". If you do want to produce PostScript and
+PDF output then set "JADETEX" to yes.
+
+For example;
+
+    make JADETEX=no
+    make JADETEX=yes
+

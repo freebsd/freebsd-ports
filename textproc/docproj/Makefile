@@ -3,7 +3,7 @@
 # Date created:        27 June 1998
 # Whom:                Nik Clayton <nik@freebsd.org>
 #
-# $Id: Makefile,v 1.7 1999/01/20 22:19:42 nik Exp $
+# $Id: Makefile,v 1.8 1999/01/21 03:28:27 jkh Exp $
 #
 
 DISTNAME=	docproj
@@ -25,7 +25,7 @@ JADETEX?=
 
 .if empty(JADETEX) && (make(fetch) || make(build) || make(install))
 .BEGIN:
-	@${CAT} pkg/JADETEX
+	@${CAT} files/JADETEX
 	@${FALSE}
 .endif
 
