@@ -1,6 +1,11 @@
 bin/lgrind
+share/texmf/doc/latex/lgrind/lgrind.dvi
 share/texmf/tex/latex/lgrind/lgrind.sty
 share/texmf/tex/latex/lgrind/lgrindef
-share/texmf/doc/latex/lgrind/lgrind.dvi
 @dirrm share/texmf/tex/latex/lgrind
+@unexec rmdir %D/share/texmf/tex/latex 2>/dev/null || true
+@unexec rmdir %D/share/texmf/tex 2>/dev/null || true
 @dirrm share/texmf/doc/latex/lgrind
+@unexec rmdir %D/share/texmf/doc/latex 2>/dev/null || true
+@unexec rmdir %D/share/texmf/doc 2>/dev/null || true
+@unexec rmdir %D/share/texmf 2>/dev/null || true

@@ -37,13 +37,16 @@ DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${PORTNAME}.tar.gz
 
 PATCH_SITES=	http://home.arcor.de/kay_lehmann/freebsd/ports/lgrind/
-PATCHFILES=	patch-Makefile.gz patch-source_Makefile.gz
+PATCHFILES=	patch-Makefile.gz patch-source_Makefile.gz \
+		patch-source_lgrind.c.gz patch-source_regexp.c.gz
 
 MAINTAINER=	kay_lehmann@web.de
 COMMENT=	Produce beautiful listings of source code with LaTeX
 
 BUILD_DEPENDS=	latex:${PORTSDIR}/print/teTeX
 RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX
+
+USE_REINPLACE=	yes
 
 MAN1=		lgrind.1
 MAN5=		lgrindef.5
@@ -88,6 +91,17 @@ fetchsrctarball:
 extractsrctarball:
 	${GUNZIP_CMD} -qc ${DISTDIR}/${DIST_SUBDIR}/${IGNOREFILES} | tar -C ${DISTDIR}/${DIST_SUBDIR} -xf -; \
 	exit
+
+post-patch:
+# PREFIX safeness
+	@${REINPLACE_CMD} -E \
+		-e s'|^(BASEDIR).*$$|\1=${PREFIX}|' \
+		${WRKSRC}/Makefile
+# C{C,FLAGS} safeness
+	@${REINPLACE_CMD} -E \
+		-e s'|^(CC).*$$|\1=${CC}|' \
+		-e s'|^(CFLAGS).*$$|\1=${CFLAGS}|' \
+		${WRKSRC}/source/Makefile
 
 post-install:
 	texhash

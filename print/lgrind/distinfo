@@ -21,4 +21,6 @@ MD5 (lgrind/lgrind/source/retest.c) = 478fccd23c3e34815faf17b369e53d98
 MD5 (lgrind/lgrind/source/v2lg.c) = f642e88c0a0ab2e4183e46dd5f575605
 MD5 (lgrind/patch-Makefile.gz) = 49212838d1d91c42d7d981537ceffafb
 MD5 (lgrind/patch-source_Makefile.gz) = 750ac77c961e287b8984cddfd052d6f5
+MD5 (lgrind/patch-source_lgrind.c.gz) = 5c5d69cb400d4edb7d8f6e1c666ccfac
+MD5 (lgrind/patch-source_regexp.c.gz) = 2eb6d0d78352b1a474742e60a1239ccd
 MD5 (lgrind/lgrind.tar.gz) = IGNORE
