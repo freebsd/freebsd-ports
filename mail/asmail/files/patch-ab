@@ -1,0 +1,72 @@
+*** sample.asmailrc.orig	Fri Feb 27 22:58:09 1998
+--- sample.asmailrc	Fri Feb 27 22:59:21 1998
+***************
+*** 66,72 ****
+  #########################################################
+  # Truns off shaped window				#
+  #########################################################
+! #NoShape
+  
+  
+  #########################################################
+--- 66,72 ----
+  #########################################################
+  # Truns off shaped window				#
+  #########################################################
+! NoShape
+  
+  
+  #########################################################
+***************
+*** 106,130 ****
+  # Assign icons/animations				#
+  #########################################################
+  NoMail  
+! 	/usr/include/X11/pixmaps/e-no.xpm
+  End
+  
+  OldMail  	
+! 	/usr/include/X11/pixmaps/e1.xpm
+  End
+  
+  NewMail  
+! 	/usr/include/X11/pixmaps/e1.xpm
+! 	/usr/include/X11/pixmaps/e2.xpm
+! 	/usr/include/X11/pixmaps/e3.xpm
+! 	/usr/include/X11/pixmaps/e4.xpm
+! 	/usr/include/X11/pixmaps/e5.xpm
+! 	/usr/include/X11/pixmaps/e6.xpm
+! 	/usr/include/X11/pixmaps/e7.xpm
+! 	/usr/include/X11/pixmaps/e8.xpm
+! 	/usr/include/X11/pixmaps/e9.xpm
+! 	/usr/include/X11/pixmaps/e10.xpm
+! 	/usr/include/X11/pixmaps/e11.xpm
+  End
+  
+  #########################################################
+--- 106,130 ----
+  # Assign icons/animations				#
+  #########################################################
+  NoMail  
+! 	/usr/X11R6/include/X11/pixmaps/e-no.xpm
+  End
+  
+  OldMail  	
+! 	/usr/X11R6/include/X11/pixmaps/e1.xpm
+  End
+  
+  NewMail  
+! 	/usr/X11R6/include/X11/pixmaps/e1.xpm
+! 	/usr/X11R6/include/X11/pixmaps/e2.xpm
+! 	/usr/X11R6/include/X11/pixmaps/e3.xpm
+! 	/usr/X11R6/include/X11/pixmaps/e4.xpm
+! 	/usr/X11R6/include/X11/pixmaps/e5.xpm
+! 	/usr/X11R6/include/X11/pixmaps/e6.xpm
+! 	/usr/X11R6/include/X11/pixmaps/e7.xpm
+! 	/usr/X11R6/include/X11/pixmaps/e8.xpm
+! 	/usr/X11R6/include/X11/pixmaps/e9.xpm
+! 	/usr/X11R6/include/X11/pixmaps/e10.xpm
+! 	/usr/X11R6/include/X11/pixmaps/e11.xpm
+  End
+  
+  #########################################################
