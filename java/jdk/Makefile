@@ -3,7 +3,7 @@
 # Date created:		8 April 1996
 # Whom:			Sujal Patel <smpatel@freebsd.org>
 #
-# $Id: Makefile,v 1.1.1.1 1996/04/08 20:49:12 smpatel Exp $
+# $Id: Makefile,v 1.2 1996/06/16 04:34:18 smpatel Exp $
 #
 
 DISTNAME=       jdk
@@ -16,6 +16,7 @@ DISTFILES=      JDK-1_0_2-solaris2-sparc.tar.Z
 MAINTAINER=	smpatel@freebsd.org
 
 NO_WRKSUBDIR=	yes
+NO_CDROM=	yes	# put copyright on packaging etc.
 
 post-install:
 	@cat ${PKGDIR}/DESCR
