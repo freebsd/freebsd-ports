@@ -1,33 +1,45 @@
-@unexec if cmp -s %D/etc/netams.conf.sample %D/etc/netams.conf; then rm -f %D/etc/netams.conf; fi
-etc/netams.conf.sample
-etc/rc.d/netams.sh.sample
+etc/netams.cfg.sample
+etc/rc.d/netams-startup.sh.sample
 libexec/netams
 sbin/flowprobe
 sbin/ipfw2netflow
 bin/netamsctl
-%%PORTDOCS%%%%DOCSDIR%%/documentation-en.html
-%%PORTDOCS%%%%DOCSDIR%%/diagram-1.gif
-%%PORTDOCS%%%%DOCSDIR%%/logo.gif
-%%PORTDOCS%%%%DOCSDIR%%/net-1-1a.gif
-%%PORTDOCS%%%%DOCSDIR%%/net-1-2a.gif
-%%PORTDOCS%%%%DOCSDIR%%/net-1-3a.gif
-%%EXAMPLESDIR%%/netams-nat-network.cfg
-%%EXAMPLESDIR%%/netams-netflow.cfg
-%%EXAMPLESDIR%%/netams-simple.cfg
-%%EXAMPLESDIR%%/netams.cfg
-%%EXAMPLESDIR%%/netams-quotactl.cfg
-%%EXAMPLESDIR%%/.netamsctl.rc
-%%EXAMPLESDIR%%/cgi-bin/images/admintool-logo.gif
-%%EXAMPLESDIR%%/cgi-bin/images/logo-small.gif
-%%EXAMPLESDIR%%/cgi-bin/images/logo.gif
-%%EXAMPLESDIR%%/cgi-bin/netams_api.pl
-%%EXAMPLESDIR%%/cgi-bin/netams_example.cgi
-%%EXAMPLESDIR%%/cgi-bin/netams_graph.cgi
-%%EXAMPLESDIR%%/cgi-bin/weblogin.cgi
-%%EXAMPLESDIR%%/cgi-bin/weblogin.tem
-%%EXAMPLESDIR%%/cgi-bin/admintool.cgi
-%%EXAMPLESDIR%%/cgi-bin/login.cgi
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%EXAMPLESDIR%%/cgi-bin/images
-@dirrm %%EXAMPLESDIR%%/cgi-bin
-@dirrm %%EXAMPLESDIR%%
+%%DATADIR%%/ru-networks.txt.sample
+%%DATADIR%%/.netamsctl.rc
+%%DATADIR%%/cgi-bin/.htaccess
+%%DATADIR%%/cgi-bin/config.cgi
+%%DATADIR%%/cgi-bin/netams_api.pl
+%%DATADIR%%/cgi-bin/russian.res
+%%DATADIR%%/cgi-bin/weblogin.tem
+%%DATADIR%%/cgi-bin/netams_example.cgi
+%%DATADIR%%/cgi-bin/usertool.cgi
+%%DATADIR%%/cgi-bin/admintool.cgi
+%%DATADIR%%/cgi-bin/login.cgi
+%%DATADIR%%/cgi-bin/netams_graph.cgi
+%%DATADIR%%/cgi-bin/weblogin.cgi
+%%DATADIR%%/cgi-bin/admin/.htaccess
+%%DATADIR%%/cgi-bin/admin/index.cgi
+%%DATADIR%%/cgi-bin/admin/policy.cgi
+%%DATADIR%%/cgi-bin/admin/showusercard.cgi
+%%DATADIR%%/cgi-bin/admin/user.cgi
+%%DATADIR%%/cgi-bin/admin/access.cgi
+%%DATADIR%%/cgi-bin/admin/login.cgi
+%%DATADIR%%/cgi-bin/admin/quota.cgi
+%%DATADIR%%/cgi-bin/admin/showusercard.tmpl
+%%DATADIR%%/cgi-bin/admin/view.cgi
+%%DATADIR%%/cgi-bin/admin/account.cgi
+%%DATADIR%%/cgi-bin/admin/netams.cgi
+%%DATADIR%%/cgi-bin/admin/radius.cgi
+%%DATADIR%%/cgi-bin/admin/subplan.cgi
+%%DATADIR%%/cgi-bin/admin/config.cgi
+%%DATADIR%%/cgi-bin/admin/plan.cgi
+%%DATADIR%%/cgi-bin/admin/russian.res
+%%DATADIR%%/cgi-bin/admin/unit.cgi
+%%DATADIR%%/cgi-bin/images/admintool-logo.gif
+%%DATADIR%%/cgi-bin/images/logo-small.gif
+%%DATADIR%%/cgi-bin/images/logo.gif
+%%DATADIR%%/cgi-bin/images/showtable-logo.gif
+@dirrm %%DATADIR%%/cgi-bin/images
+@dirrm %%DATADIR%%/cgi-bin/admin
+@dirrm %%DATADIR%%/cgi-bin
+@dirrm %%DATADIR%%

@@ -6,17 +6,16 @@
 #
 
 PORTNAME=	netams
-PORTVERSION=	3.1
-PORTREVISION=	3
+PORTVERSION=	3.2.1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.netams.com/files/
-DISTNAME=	${PORTNAME}-${PORTVERSION}.1830
+DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	jura@netams.com
 COMMENT=	Network Traffic Accounting and Monitoring Software
 
 USE_SUBMAKE=	yes
-MAN8=		netams.8 flowprobe.8
+MAN8=		netams.8 flowprobe.8 netamsctl.8
 MANCOMPRESSED=	no
 
 SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
@@ -24,57 +23,44 @@ SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
 		TOUCH="${TOUCH}" \
 		MKDIR="${MKDIR}" \
 		REALCURDIR="${.CURDIR}" \
-		WITH_MYSQL="${WITH_MYSQL}" \
-		WITH_MYSQL40="${WITH_MYSQL40}" \
-		WITH_MYSQL41="${WITH_MYSQL41}" \
-		WITH_POSTGRESQL="${WITH_POSTGRESQL}" \
-		WITH_DEBUG="${WITH_DEBUG}"
 
 .include <bsd.port.pre.mk>
-
-pre-fetch:
-	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure.netams
-
-.if exists(${WRKDIRPREFIX}${.CURDIR}/Makefile.inc)
-.include "${WRKDIRPREFIX}${.CURDIR}/Makefile.inc"
-.endif
 
 FLAGS += ${PTHREAD_CFLAGS}
 LIB += ${PTHREAD_LIBS}
 
-MAKE_ENV+=	DEFINE="${DEFINE}" FLAGS="${FLAGS}" LIB="${LIB}"
+#MAKE_ENV+=	DEFINE="${DEFINE}" FLAGS="${FLAGS}" LIB="${LIB}"
 
 do-install:
 	@ ${INSTALL_PROGRAM} ${WRKSRC}/src/netams ${PREFIX}/libexec/netams
 	@ ${INSTALL_PROGRAM} ${WRKSRC}/src/flowprobe ${PREFIX}/sbin/flowprobe
 	@ ${INSTALL_PROGRAM} ${WRKSRC}/src/ipfw2netflow ${PREFIX}/sbin/ipfw2netflow
 	@ ${INSTALL_PROGRAM} ${WRKSRC}/src/netamsctl ${PREFIX}/bin/netamsctl
-	@ ${INSTALL_DATA} ${WRKSRC}/addon/netams.cfg ${PREFIX}/etc/netams.conf.sample
-	@ ${INSTALL_SCRIPT} ${FILESDIR}/netams.sh ${PREFIX}/etc/rc.d/netams.sh.sample
+	@ ${INSTALL_DATA} ${WRKSRC}/addon/netams.cfg ${PREFIX}/etc/netams.cfg.sample
+	@ ${INSTALL_SCRIPT} ${WRKSRC}/addon/netams-startup.sh ${PREFIX}/etc/rc.d/netams-startup.sh.sample
 	@ ${INSTALL_MAN} ${WRKSRC}/doc/netams.8 ${PREFIX}/man/man8
 	@ ${INSTALL_MAN} ${WRKSRC}/doc/flowprobe.8 ${PREFIX}/man/man8
-	@ ${MKDIR} ${EXAMPLESDIR}/cgi-bin
-	@ ${MKDIR} ${EXAMPLESDIR}/cgi-bin/images
-	@ ${INSTALL_DATA} ${WRKSRC}/addon/.netamsctl.rc ${EXAMPLESDIR}/
-.for example in netams-nat-network.cfg netams-netflow.cfg netams.cfg netams-simple.cfg netams-quotactl.cfg
-	@ ${INSTALL_DATA} ${WRKSRC}/doc/${example} ${EXAMPLESDIR}/
+	@ ${INSTALL_MAN} ${WRKSRC}/doc/netamsctl.8 ${PREFIX}/man/man8
+	@ ${MKDIR} ${DATADIR}
+	@ ${INSTALL_DATA} ${WRKSRC}/addon/ru-networks.txt ${DATADIR}/ru-networks.txt.sample
+	@ ${INSTALL_DATA} ${WRKSRC}/addon/.netamsctl.rc ${DATADIR}
+	@ ${MKDIR} ${DATADIR}/cgi-bin
+	@ ${MKDIR} ${DATADIR}/cgi-bin/admin
+	@ ${MKDIR} ${DATADIR}/cgi-bin/images
+.for image in logo.gif logo-small.gif admintool-logo.gif showtable-logo.gif
+	@ ${INSTALL_DATA} ${WRKSRC}/cgi-bin/images/${image} ${DATADIR}/cgi-bin/images/
 .endfor
-.for image in logo.gif logo-small.gif admintool-logo.gif
-	@ ${INSTALL_DATA} ${WRKSRC}/cgi-bin/images/${image} ${EXAMPLESDIR}/cgi-bin/images/
+.for cgi in .htaccess config.cgi netams_api.pl russian.res weblogin.tem netams_example.cgi \
+	usertool.cgi admintool.cgi login.cgi netams_graph.cgi weblogin.cgi
+	 @ ${INSTALL_DATA} ${WRKSRC}/cgi-bin/${cgi} ${DATADIR}/cgi-bin/
 .endfor
-.for cgi in netams_api.pl netams_graph.cgi weblogin.tem netams_example.cgi weblogin.cgi admintool.cgi login.cgi
-	 @ ${INSTALL_DATA} ${WRKSRC}/cgi-bin/${cgi} ${EXAMPLESDIR}/cgi-bin/
+.for cgi in .htaccess index.cgi policy.cgi showusercard.cgi user.cgi access.cgi login.cgi \
+	quota.cgi showusercard.tmpl view.cgi account.cgi netams.cgi radius.cgi subplan.cgi \
+	config.cgi plan.cgi russian.res unit.cgi
+	@ ${INSTALL_DATA} ${WRKSRC}/cgi-bin/admin/${cgi} ${DATADIR}/cgi-bin/admin/
 .endfor
-.if !defined(NOPORTDOCS)
-	@ ${MKDIR} ${DOCSDIR}
-.for doc in documentation-en.html diagram-1.gif net-1-1a.gif net-1-2a.gif net-1-3a.gif logo.gif
-	@ ${INSTALL_DATA} ${WRKSRC}/doc/${doc} ${DOCSDIR}/
-.endfor
-.endif
 
 post-install:
-	@${SED} 's|%%PREFIX%%|${PREFIX}|g' ${PKGDIR}/pkg-message|${SED} 's|%%EXAMPLESDIR%%|${EXAMPLESDIR}|g'
-post-clean:
-	@${RM} -f ${WRKDIRPREFIX}${.CURDIR}/Makefile.inc
+	@${SED} 's|%%PREFIX%%|${PREFIX}|g' ${PKGDIR}/pkg-message|${SED} 's|%%DATADIR%%|${DATADIR}|g'
 
 .include <bsd.port.post.mk>
