@@ -3,11 +3,11 @@
 # Date created:		19 Aug 1995
 # Whom:			jkh / pst
 #
-# $Id: Makefile,v 1.15 1997/07/14 12:54:05 jkh Exp $
+# $Id: Makefile,v 1.16 1997/09/08 12:46:49 andreas Exp $
 #
 
-DISTNAME=	zircon-1.18.31
-CATEGORIES=	net tk41
+DISTNAME=	zircon-1.18.44
+CATEGORIES=	net tk80
 MASTER_SITES=	ftp://catless.ncl.ac.uk/pub/
 
 MAINTAINER=	ports@FreeBSD.org
@@ -23,8 +23,8 @@ NO_BUILD=	yes
 BUILD_DEPENDS=	dpwish:${PORTSDIR}/net/tclDP
 RUN_DEPENDS=	dpwish:${PORTSDIR}/net/tclDP
 .else
-BUILD_DEPENDS=	wish4.1:${PORTSDIR}/x11/tk41
-RUN_DEPENDS=	wish4.1:${PORTSDIR}/x11/tk41
+BUILD_DEPENDS=	wish8.0:${PORTSDIR}/x11/tk80
+RUN_DEPENDS=	wish8.0:${PORTSDIR}/x11/tk80
 .endif
 
 do-install:
