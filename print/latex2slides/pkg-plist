@@ -1,0 +1,28 @@
+bin/latex2slides
+share/latex2slides/latex2slides-0.8.1/doc/documentation.html
+share/latex2slides/latex2slides-0.8.1/doc/faq.html
+share/latex2slides/latex2slides-0.8.1/doc/logo.jpg
+share/latex2slides/latex2slides-0.8.1/doc/manual.html
+share/latex2slides/latex2slides-0.8.1/doc/style.css
+share/latex2slides/latex2slides-0.8.1/icons/README
+share/latex2slides/latex2slides-0.8.1/icons/first.jpg
+share/latex2slides/latex2slides-0.8.1/icons/first.png
+share/latex2slides/latex2slides-0.8.1/icons/index.jpg
+share/latex2slides/latex2slides-0.8.1/icons/index.png
+share/latex2slides/latex2slides-0.8.1/icons/last.ico
+share/latex2slides/latex2slides-0.8.1/icons/last.jpg
+share/latex2slides/latex2slides-0.8.1/icons/last.png
+share/latex2slides/latex2slides-0.8.1/icons/next.ico
+share/latex2slides/latex2slides-0.8.1/icons/next.jpg
+share/latex2slides/latex2slides-0.8.1/icons/next.png
+share/latex2slides/latex2slides-0.8.1/icons/prev.jpg
+share/latex2slides/latex2slides-0.8.1/icons/prev.png
+share/latex2slides/latex2slides-0.8.1/samples/README
+share/latex2slides/latex2slides-0.8.1/samples/landscape.tex
+share/latex2slides/latex2slides-0.8.1/samples/landscape2.tex
+share/latex2slides/latex2slides-0.8.1/samples/portrait.tex
+@dirrm share/latex2slides/latex2slides-0.8.1/doc
+@dirrm share/latex2slides/latex2slides-0.8.1/icons
+@dirrm share/latex2slides/latex2slides-0.8.1/samples
+@dirrm share/latex2slides/latex2slides-0.8.1
+@dirrm share/latex2slides
