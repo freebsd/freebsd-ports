@@ -10,10 +10,9 @@
 PORTNAME=	queso
 PORTVERSION=	980922
 CATEGORIES=	net security
-MASTER_SITES=	ftp://ftp.ee.lbl.gov/  \
-		${MASTER_SITE_SUNSITE} \
-		ftp://freebsd.ntu.edu.tw/freebsd/_distfiles/
-MASTER_SITE_SUBDIR=	distributions/trinux/src/netmap
+MASTER_SITES=	ftp://freebsd.ntu.edu.tw/FreeBSD/distfiles/  \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	obrien
 
 MAINTAINER=	obrien@FreeBSD.org
 
