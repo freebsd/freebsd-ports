@@ -23,10 +23,16 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A libg++ container classes for EGCS and later versions of GCC
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile (bad C++ code)"
+.endif
+
 CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
 PLIST_SUB=	GCC28SUBDIR=${GCC28DIR}
 
 pre-configure:
 	@${CP} -p ${FILESDIR}/Makefile.libg++ ${WRKSRC}/Makefile
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

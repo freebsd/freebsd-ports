@@ -20,6 +20,11 @@ USE_REINPLACE=	yes
 USE_GMAKE=	yes
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile (bad C++ code)"
+.endif
+
 pre-patch:
 	${REINPLACE_CMD} -e '23s/^.*$$/#include <unistd.h>/' \
 		${WRKSRC}/kmess/kmessview.cpp
