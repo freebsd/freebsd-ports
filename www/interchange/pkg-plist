@@ -750,7 +750,7 @@ interchange/lib/Vend/SOAP.pm
 interchange/lib/Vend/SOAP/Transport.pm
 @dirrm interchange/lib/Vend/SOAP
 interchange/lib/Vend/Scan.pm
-interchange/lib/Search.pm
+interchange/lib/Vend/Search.pm
 interchange/lib/Vend/Server.pm
 interchange/lib/Vend/Session.pm
 interchange/lib/Vend/SessionDB.pm
