@@ -1,6 +1,6 @@
---- Makefile.in.orig	Tue Nov  4 12:52:42 2003
-+++ Makefile.in	Tue Nov  4 12:55:43 2003
-@@ -132,13 +132,12 @@
+--- Makefile.in.orig	Tue Mar 30 12:22:50 2004
++++ Makefile.in	Tue Mar 30 12:24:16 2004
+@@ -230,11 +230,10 @@
  	libexslt \
  	xsltproc \
  	doc \
@@ -8,12 +8,10 @@
 -	tests
 +	@PYTHON_SUBDIR@
  
- 
 -DIST_SUBDIRS = libxslt libexslt xsltproc python doc tests
-+DIST_SUBDIRS = libxslt libexslt xsltproc python doc 
- 
 -confexecdir = $(libdir)
++DIST_SUBDIRS = libxslt libexslt xsltproc python doc
 +confexecdir = $(sysconfdir)
  confexec_DATA = xsltConf.sh
- 
  bin_SCRIPTS = xslt-config
+ EXTRA_DIST = xsltConf.sh.in xslt-config.in libxslt.spec libxslt.spec.in \
