@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	DBIx-SearchBuilder
-PORTVERSION=	1.01
-PORTREVISION=	1
+PORTVERSION=	1.11
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	DBIx
@@ -17,6 +16,7 @@ MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Perl extension for easy SQL SELECT Statement generation
 
 BUILD_DEPENDS=	${SITE_PERL}/Class/ReturnValue.pm:${PORTSDIR}/devel/p5-Class-ReturnValue \
+		${SITE_PERL}/Cache/Simple/TimedExpiry.pm:${PORTSDIR}/devel/p5-Cache-Simple-TimedExpiry \
 		${SITE_PERL}/${PERL_ARCH}/Want.pm:${PORTSDIR}/devel/p5-Want
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
