@@ -1,0 +1,4 @@
+# $FreeBSD$
+#
+
+PKGNAMEPREFIX?=	pl-
