@@ -1,18 +1,5 @@
-Use the FSF m4 instead of the BSD m4, because the BSD m4 is reporting problems
-processing config.c.in.
-Strip binaries at install.
-
---- Makefile.in	Mon Aug 18 14:52:43 1997
-+++ Makefile.in	Tue Aug 26 14:14:44 1997
-@@ -47,7 +47,7 @@
- 
- # INSTALL_PROGRAM_ARGS is changed by configure.in to use -x for a
- # cygwin32 host.
--INSTALL_PROGRAM_ARGS =
-+INSTALL_PROGRAM_ARGS = -s
- 
- INSTALL = $(SHELL) $$s/install-sh -c
- INSTALL_PROGRAM = $(INSTALL) $(INSTALL_PROGRAM_ARGS)
+--- Makefile.in	Sun Jun 28 12:52:20 1998
++++ Makefile.in	Wed Jul 15 12:35:08 1998
 @@ -68,7 +68,7 @@
  HOST_PREFIX_1 = loser-
  

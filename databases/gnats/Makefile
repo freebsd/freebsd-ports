@@ -1,15 +1,16 @@
 # New ports collection makefile for:	gnats
-# Version required:     3.104-beta
+# Version required:     3.102-beta
 # Date created:		10 November 1995
 # Whom:			pst
 #
-# $Id: Makefile,v 1.14 1997/08/26 22:29:48 pst Exp $
+# $Id: Makefile,v 1.15 1998/01/24 22:16:58 pst Exp $
 #
 
-DISTNAME=       gnats-3.104-beta
-PKGNAME=	gnats-3.104b
+DISTNAME=       gnats-3.106-beta
+PKGNAME=	gnats-3.106b
 CATEGORIES=	databases
-MASTER_SITES=   ftp://ftp.cygnus.com/pub/gnats/
+#MASTER_SITES=	ftp://ftp.cygnus.com/pub/gnats/
+MASTER_SITES=	ftp://ftp.juniper.net/pub/gnats/
 
 MAINTAINER=	pst@FreeBSD.org
 
@@ -22,7 +23,8 @@ CONFIGURE_ARGS= --prefix=${PREFIX} \
 		--with-release-based
 
 USE_GMAKE=	yes
-MAN1=		edit-pr.1 gnats.1 query-pr.1 send-pr.1
+MAN1=		edit-pr.1 query-pr.1 send-pr.1
+MAN7=		gnats.7
 MAN8=		mkcat.8 rmcat.8 mkdist.8 queue-pr.8 file-pr.8 gen-index.8
 
 # this stops the configuration program from pulling installation

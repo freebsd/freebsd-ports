@@ -33,9 +33,9 @@ libexec/gnats/queue-pr
 libexec/gnats/rmcat
 @dirrm libexec/gnats
 man/man1/edit-pr.1.gz
-man/man1/gnats.1.gz
 man/man1/query-pr.1.gz
 man/man1/send-pr.1.gz
+man/man7/gnats.7.gz
 man/man8/file-pr.8.gz
 man/man8/gen-index.8.gz
 man/man8/mkcat.8.gz
