@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	anthy
-PORTVERSION=	5100
+PORTVERSION=	5500
 CATEGORIES=	japanese
-MASTER_SITES=	http://downloads.sourceforge.jp/anthy/8433/:anthy
+MASTER_SITES=	http://downloads.sourceforge.jp/anthy/10139/:anthy
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:anthy
 DIST_SUBDIR=	anthy
 
@@ -19,6 +19,7 @@ USE_REINPLACE=	yes
 USE_LIBTOOL_VER=13
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 INSTALLS_SHLIB=	yes
+USE_GNOME=	lthack
 
 DOCSDIR=	share/doc/ja/anthy
 ELISPDIR=	share/emacs/site-lisp/anthy
