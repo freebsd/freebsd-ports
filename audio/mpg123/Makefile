@@ -60,6 +60,7 @@ PKGNAMESUFFIX=	-nas
 ALL_TARGET=	freebsd-nas
 .else
 ALL_TARGET=	freebsd
+CFLAGS+=	 -DWITH_FREEBSD_DSP_ONLY
 .endif
 
 pre-fetch:
