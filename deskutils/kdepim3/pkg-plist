@@ -684,6 +684,7 @@ share/apps/kmail/pics/key_ok.png
 share/apps/kmail/pics/key_unknown.png
 share/apps/kmail/pics/kmgroupware_folder_calendar.png
 share/apps/kmail/pics/kmgroupware_folder_contacts.png
+share/apps/kmail/pics/kmgroupware_folder_journals.png
 share/apps/kmail/pics/kmgroupware_folder_notes.png
 share/apps/kmail/pics/kmgroupware_folder_tasks.png
 share/apps/kmail/pics/kmmsgattachment.png
@@ -899,18 +900,30 @@ share/apps/korganizer/tips
 share/apps/kpilot/icons/crystalsvg/16x16/actions/backup.png
 share/apps/kpilot/icons/crystalsvg/16x16/actions/busysync.png
 share/apps/kpilot/icons/crystalsvg/16x16/actions/fastsync.png
+share/apps/kpilot/icons/crystalsvg/16x16/actions/fullsync.png
 share/apps/kpilot/icons/crystalsvg/16x16/actions/hotsync.png
+share/apps/kpilot/icons/crystalsvg/16x16/actions/listsync.png
 share/apps/kpilot/icons/crystalsvg/16x16/actions/nosync.png
 share/apps/kpilot/icons/crystalsvg/16x16/actions/restore.png
 share/apps/kpilot/icons/crystalsvg/16x16/apps/kpalmdoc.png
 share/apps/kpilot/icons/crystalsvg/22x22/actions/backup.png
 share/apps/kpilot/icons/crystalsvg/22x22/actions/busysync.png
 share/apps/kpilot/icons/crystalsvg/22x22/actions/fastsync.png
+share/apps/kpilot/icons/crystalsvg/22x22/actions/fullsync.png
 share/apps/kpilot/icons/crystalsvg/22x22/actions/hotsync.png
+share/apps/kpilot/icons/crystalsvg/22x22/actions/listsync.png
 share/apps/kpilot/icons/crystalsvg/22x22/actions/nosync.png
 share/apps/kpilot/icons/crystalsvg/22x22/actions/restore.png
 share/apps/kpilot/icons/crystalsvg/22x22/apps/kpalmdoc.png
+share/apps/kpilot/icons/crystalsvg/32x32/actions/fastsync.png
+share/apps/kpilot/icons/crystalsvg/32x32/actions/fullsync.png
+share/apps/kpilot/icons/crystalsvg/32x32/actions/hotsync.png
+share/apps/kpilot/icons/crystalsvg/32x32/actions/listsync.png
 share/apps/kpilot/icons/crystalsvg/32x32/apps/kpalmdoc.png
+share/apps/kpilot/icons/crystalsvg/48x48/actions/fastsync.png
+share/apps/kpilot/icons/crystalsvg/48x48/actions/fullsync.png
+share/apps/kpilot/icons/crystalsvg/48x48/actions/hotsync.png
+share/apps/kpilot/icons/crystalsvg/48x48/actions/listsync.png
 share/apps/kpilot/icons/crystalsvg/48x48/apps/kpalmdoc.png
 share/apps/kpilot/kpilot-address.png
 share/apps/kpilot/kpilot-bhotsync.png
@@ -1608,8 +1621,10 @@ share/servicetypes/kpilotconduit.desktop
 @dirrm share/apps/ksync
 @dirrm share/apps/kpilot/sysinfoconduit
 @dirrm share/apps/kpilot/icons/crystalsvg/48x48/apps
+@dirrm share/apps/kpilot/icons/crystalsvg/48x48/actions
 @dirrm share/apps/kpilot/icons/crystalsvg/48x48
 @dirrm share/apps/kpilot/icons/crystalsvg/32x32/apps
+@dirrm share/apps/kpilot/icons/crystalsvg/32x32/actions
 @dirrm share/apps/kpilot/icons/crystalsvg/32x32
 @dirrm share/apps/kpilot/icons/crystalsvg/22x22/apps
 @dirrm share/apps/kpilot/icons/crystalsvg/22x22/actions

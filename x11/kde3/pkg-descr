@@ -1,4 +1,5 @@
-KDE provides an integrated X11 based environment, much like CDE.
+KDE is a powerful Free Software graphical desktop environment for Linux
+and Unix workstations.
 
 This package does not contain anything by itself -- it is a
 "meta-port" that depends on other KDE packages.  Its sole purpose is

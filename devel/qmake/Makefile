@@ -7,6 +7,7 @@
 
 PORTNAME=	qmake
 PORTVERSION=	3.3.3
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.trolltech.com/qt/source/	\
 		ftp://ftp.silug.org/pub/qt/		\

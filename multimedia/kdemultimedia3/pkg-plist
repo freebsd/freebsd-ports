@@ -104,6 +104,8 @@ lib/kde3/kfile_m3u.la
 lib/kde3/kfile_m3u.so
 lib/kde3/kfile_mp3.la
 lib/kde3/kfile_mp3.so
+lib/kde3/kfile_mpc.la
+lib/kde3/kfile_mpc.so
 lib/kde3/kfile_ogg.la
 lib/kde3/kfile_ogg.so
 lib/kde3/kfile_sid.la
@@ -491,6 +493,7 @@ share/apps/artsbuilder/pics/Synth_WAVE_TRI.xpm
 share/apps/artsbuilder/pics/Synth_XFADE.xpm
 share/apps/artscontrol/artscontrol.rc
 share/apps/artscontrol/artsmidimanagerview.rc
+share/apps/juk/jukui-rtl.rc
 share/apps/juk/jukui.rc
 share/apps/juk/pics/playing.png
 share/apps/kaboodle/icons/crystalsvg/16x16/actions/kaboodleloop.png
@@ -1043,6 +1046,7 @@ share/services/kfile_avi.desktop
 share/services/kfile_flac.desktop
 share/services/kfile_m3u.desktop
 share/services/kfile_mp3.desktop
+share/services/kfile_mpc.desktop
 share/services/kfile_ogg.desktop
 share/services/kfile_sid.desktop
 share/services/kfile_wav.desktop
@@ -1059,7 +1063,6 @@ share/servicetypes/krec_exportitem.desktop
 @dirrm share/icons/locolor
 @dirrm share/icons/crystalsvg/scalable/apps
 @dirrm share/icons/crystalsvg/22x22/apps
-@dirrm share/icons/crystalsvg/128x128/actions
 @dirrm share/doc/HTML/en/noatun
 @dirrm share/doc/HTML/en/kscd
 @dirrm share/doc/HTML/en/krec

@@ -44,7 +44,7 @@ lib/kde3/libwebarchiverplugin.la
 lib/kde3/libwebarchiverplugin.so
 lib/kde3/webarchivethumbnail.la
 lib/kde3/webarchivethumbnail.so
-share/applications/kdeaddons-konq-plugins-3.3.0
+share/applications/kdeaddons-konq-plugins-3.3.1
 share/applnk/.hidden/arkplugin.desktop
 share/applnk/.hidden/babelfishplugin.desktop
 share/applnk/.hidden/crashesplugin.desktop
@@ -80,8 +80,6 @@ share/apps/konqlistview/kpartplugins/kimgalleryplugin.rc
 share/apps/konqlistview/kpartplugins/smbmounterplugin.rc
 share/apps/konqsidebartng/add/mplayer_add.desktop
 share/apps/konqsidebartng/add/news_add.desktop
-share/apps/konqsidebartng/entries/mplayer.desktop
-share/apps/konqsidebartng/entries/news.desktop
 share/apps/konqsidebartng/kicker_entries/mplayer.desktop
 share/apps/konqueror/icons/crystalsvg/16x16/actions/google.png
 share/apps/konqueror/kpartplugins/searchbar.rc

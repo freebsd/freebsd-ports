@@ -1049,10 +1049,16 @@ share/doc/HTML/sv/kolf/common
 share/doc/HTML/sv/kolf/index.cache.bz2
 share/doc/HTML/sv/kolf/index.docbook
 share/doc/HTML/sv/kolourpaint/common
+share/doc/HTML/sv/kolourpaint/image_balance.png
+share/doc/HTML/sv/kolourpaint/image_emboss.png
+share/doc/HTML/sv/kolourpaint/image_flatten.png
 share/doc/HTML/sv/kolourpaint/image_flip.png
+share/doc/HTML/sv/kolourpaint/image_invert.png
+share/doc/HTML/sv/kolourpaint/image_reduce_colors.png
 share/doc/HTML/sv/kolourpaint/image_resize_scale.png
 share/doc/HTML/sv/kolourpaint/image_rotate.png
 share/doc/HTML/sv/kolourpaint/image_skew.png
+share/doc/HTML/sv/kolourpaint/image_soften_sharpen.png
 share/doc/HTML/sv/kolourpaint/index.cache.bz2
 share/doc/HTML/sv/kolourpaint/index.docbook
 share/doc/HTML/sv/kommander/basics.docbook

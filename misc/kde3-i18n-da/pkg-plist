@@ -494,6 +494,7 @@ share/doc/HTML/da/kdevelop/index.cache.bz2
 share/doc/HTML/da/kdevelop/index.docbook
 share/doc/HTML/da/kdevelop/kdevelop-install.docbook
 share/doc/HTML/da/kdevelop/kdevelop-survey.docbook
+share/doc/HTML/da/kdevelop/project-advanced.docbook
 share/doc/HTML/da/kdevelop/project-management.docbook
 share/doc/HTML/da/kdevelop/setup.docbook
 share/doc/HTML/da/kdevelop/unixdev.docbook
@@ -771,6 +772,9 @@ share/doc/HTML/da/klatin/nouns.docbook
 share/doc/HTML/da/klatin/numbers.docbook
 share/doc/HTML/da/klatin/pronouns.docbook
 share/doc/HTML/da/klatin/verbs.docbook
+share/doc/HTML/da/kleopatra/common
+share/doc/HTML/da/kleopatra/index.cache.bz2
+share/doc/HTML/da/kleopatra/index.docbook
 share/doc/HTML/da/klettres/common
 share/doc/HTML/da/klettres/index.cache.bz2
 share/doc/HTML/da/klettres/index.docbook
@@ -911,6 +915,22 @@ share/doc/HTML/da/kolf/index.docbook
 share/doc/HTML/da/kolourpaint/common
 share/doc/HTML/da/kolourpaint/index.cache.bz2
 share/doc/HTML/da/kolourpaint/index.docbook
+share/doc/HTML/da/kommander/basics.docbook
+share/doc/HTML/da/kommander/commands.docbook
+share/doc/HTML/da/kommander/common
+share/doc/HTML/da/kommander/credits.docbook
+share/doc/HTML/da/kommander/dcop.docbook
+share/doc/HTML/da/kommander/editor.docbook
+share/doc/HTML/da/kommander/extending.docbook
+share/doc/HTML/da/kommander/glossary.docbook
+share/doc/HTML/da/kommander/index.cache.bz2
+share/doc/HTML/da/kommander/index.docbook
+share/doc/HTML/da/kommander/installation.docbook
+share/doc/HTML/da/kommander/introduction.docbook
+share/doc/HTML/da/kommander/q-and-a.docbook
+share/doc/HTML/da/kommander/specials.docbook
+share/doc/HTML/da/kommander/tutorials.docbook
+share/doc/HTML/da/kommander/widgets.docbook
 share/doc/HTML/da/kompare/common
 share/doc/HTML/da/kompare/index.cache.bz2
 share/doc/HTML/da/kompare/index.docbook
@@ -1111,18 +1131,22 @@ share/doc/HTML/da/kstars/altvstime.docbook
 share/doc/HTML/da/kstars/altvstime.png
 share/doc/HTML/da/kstars/astroinfo.docbook
 share/doc/HTML/da/kstars/blackbody.docbook
+share/doc/HTML/da/kstars/calc-angdist.docbook
 share/doc/HTML/da/kstars/calc-apcoords.docbook
 share/doc/HTML/da/kstars/calc-apcoords.png
 share/doc/HTML/da/kstars/calc-dayduration.docbook
 share/doc/HTML/da/kstars/calc-daylength.png
+share/doc/HTML/da/kstars/calc-ecliptic.docbook
 share/doc/HTML/da/kstars/calc-eqgal.docbook
 share/doc/HTML/da/kstars/calc-eqgal.png
+share/doc/HTML/da/kstars/calc-equinox.docbook
 share/doc/HTML/da/kstars/calc-geodetic.docbook
 share/doc/HTML/da/kstars/calc-geodetic.png
 share/doc/HTML/da/kstars/calc-horizontal.docbook
 share/doc/HTML/da/kstars/calc-horizontal.png
 share/doc/HTML/da/kstars/calc-julian.png
 share/doc/HTML/da/kstars/calc-julianday.docbook
+share/doc/HTML/da/kstars/calc-planetcoords.docbook
 share/doc/HTML/da/kstars/calc-precess.docbook
 share/doc/HTML/da/kstars/calc-precess.png
 share/doc/HTML/da/kstars/calc-sidereal.docbook
@@ -1971,6 +1995,7 @@ share/locale/da/flag.png
 @dirrm share/doc/HTML/da/konqueror
 @dirrm share/doc/HTML/da/konq-plugins
 @dirrm share/doc/HTML/da/kompare
+@dirrm share/doc/HTML/da/kommander
 @dirrm share/doc/HTML/da/kolourpaint
 @dirrm share/doc/HTML/da/kolf
 @dirrm share/doc/HTML/da/kodo
@@ -1994,6 +2019,7 @@ share/locale/da/flag.png
 @dirrm share/doc/HTML/da/klines
 @dirrm share/doc/HTML/da/klickety
 @dirrm share/doc/HTML/da/klettres
+@dirrm share/doc/HTML/da/kleopatra
 @dirrm share/doc/HTML/da/klatin
 @dirrm share/doc/HTML/da/kjumpingcube
 @dirrm share/doc/HTML/da/kjots

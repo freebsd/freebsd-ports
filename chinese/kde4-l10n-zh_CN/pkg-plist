@@ -274,6 +274,7 @@ share/locale/zh_CN/LC_MESSAGES/kfile_jpeg.mo
 share/locale/zh_CN/LC_MESSAGES/kfile_lnk.mo
 share/locale/zh_CN/LC_MESSAGES/kfile_m3u.mo
 share/locale/zh_CN/LC_MESSAGES/kfile_mp3.mo
+share/locale/zh_CN/LC_MESSAGES/kfile_mpc.mo
 share/locale/zh_CN/LC_MESSAGES/kfile_ogg.mo
 share/locale/zh_CN/LC_MESSAGES/kfile_pcx.mo
 share/locale/zh_CN/LC_MESSAGES/kfile_pdf.mo
@@ -355,6 +356,8 @@ share/locale/zh_CN/LC_MESSAGES/klock.mo
 share/locale/zh_CN/LC_MESSAGES/kmag.mo
 share/locale/zh_CN/LC_MESSAGES/kmahjongg.mo
 share/locale/zh_CN/LC_MESSAGES/kmail.mo
+share/locale/zh_CN/LC_MESSAGES/kmail_text_calendar_plugin.mo
+share/locale/zh_CN/LC_MESSAGES/kmail_text_vcard_plugin.mo
 share/locale/zh_CN/LC_MESSAGES/kmailcvt.mo
 share/locale/zh_CN/LC_MESSAGES/kmathapplet.mo
 share/locale/zh_CN/LC_MESSAGES/kmathtool.mo

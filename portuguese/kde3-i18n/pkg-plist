@@ -117,6 +117,9 @@ share/doc/HTML/pt/kaboodle/index.docbook
 share/doc/HTML/pt/kaddressbook/common
 share/doc/HTML/pt/kaddressbook/index.cache.bz2
 share/doc/HTML/pt/kaddressbook/index.docbook
+share/doc/HTML/pt/kalarm/common
+share/doc/HTML/pt/kalarm/index.cache.bz2
+share/doc/HTML/pt/kalarm/index.docbook
 share/doc/HTML/pt/kalzium/common
 share/doc/HTML/pt/kalzium/index.cache.bz2
 share/doc/HTML/pt/kalzium/index.docbook
@@ -771,7 +774,11 @@ share/doc/HTML/pt/kopete/common
 share/doc/HTML/pt/kopete/index.cache.bz2
 share/doc/HTML/pt/kopete/index.docbook
 share/doc/HTML/pt/kopete/menus.docbook
+share/doc/HTML/pt/korganizer/common
 share/doc/HTML/pt/korganizer/exchange-plugin.docbook
+share/doc/HTML/pt/korganizer/group-scheduling.docbook
+share/doc/HTML/pt/korganizer/index.cache.bz2
+share/doc/HTML/pt/korganizer/index.docbook
 share/doc/HTML/pt/korganizer/outlook-to-vcalendar.docbook
 share/doc/HTML/pt/korn/common
 share/doc/HTML/pt/korn/index.cache.bz2
@@ -1849,6 +1856,7 @@ share/locale/pt/flag.png
 @dirrm share/doc/HTML/pt/kandy
 @dirrm share/doc/HTML/pt/kamera
 @dirrm share/doc/HTML/pt/kalzium
+@dirrm share/doc/HTML/pt/kalarm
 @dirrm share/doc/HTML/pt/kaddressbook
 @dirrm share/doc/HTML/pt/kaboodle
 @dirrm share/doc/HTML/pt/juk

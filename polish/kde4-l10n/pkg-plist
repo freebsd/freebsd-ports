@@ -268,6 +268,7 @@ share/locale/pl/LC_MESSAGES/khotkeys.mo
 share/locale/pl/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/pl/LC_MESSAGES/kicker.mo
 share/locale/pl/LC_MESSAGES/kiconedit.mo
+share/locale/pl/LC_MESSAGES/kig.mo
 share/locale/pl/LC_MESSAGES/kimagemapeditor.mo
 share/locale/pl/LC_MESSAGES/kinetd.mo
 share/locale/pl/LC_MESSAGES/kio.mo
@@ -474,6 +475,7 @@ share/locale/pl/LC_MESSAGES/kwin_quartz_config.mo
 share/locale/pl/LC_MESSAGES/kwin_riscos.mo
 share/locale/pl/LC_MESSAGES/kwin_system.mo
 share/locale/pl/LC_MESSAGES/kwireless.mo
+share/locale/pl/LC_MESSAGES/kwordquiz.mo
 share/locale/pl/LC_MESSAGES/kworldclock.mo
 share/locale/pl/LC_MESSAGES/kwriteconfig.mo
 share/locale/pl/LC_MESSAGES/kxkb.mo

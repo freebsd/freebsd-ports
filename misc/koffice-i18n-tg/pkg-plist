@@ -49,5 +49,3 @@ share/locale/tg/LC_MESSAGES/olefilterswinword97filter.mo
 share/locale/tg/LC_MESSAGES/thesaurus_tool.mo
 share/locale/tg/LC_MESSAGES/xsltexportfilter.mo
 share/locale/tg/LC_MESSAGES/xsltimportfilter.mo
-@dirrm share/locale/tg/LC_MESSAGES
-@dirrm share/locale/tg

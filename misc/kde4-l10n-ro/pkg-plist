@@ -271,6 +271,7 @@ share/locale/ro/LC_MESSAGES/kcmkurifilt.mo
 share/locale/ro/LC_MESSAGES/kcmkvaio.mo
 share/locale/ro/LC_MESSAGES/kcmkwallet.mo
 share/locale/ro/LC_MESSAGES/kcmkwindecoration.mo
+share/locale/ro/LC_MESSAGES/kcmkwinrules.mo
 share/locale/ro/LC_MESSAGES/kcmkwintheme.mo
 share/locale/ro/LC_MESSAGES/kcmkwm.mo
 share/locale/ro/LC_MESSAGES/kcmkxmlrpcd.mo
@@ -580,6 +581,7 @@ share/locale/ro/LC_MESSAGES/kwin.mo
 share/locale/ro/LC_MESSAGES/kwin4.mo
 share/locale/ro/LC_MESSAGES/kwin_b2_config.mo
 share/locale/ro/LC_MESSAGES/kwin_cde_config.mo
+share/locale/ro/LC_MESSAGES/kwin_clients.mo
 share/locale/ro/LC_MESSAGES/kwin_default_config.mo
 share/locale/ro/LC_MESSAGES/kwin_glow_config.mo
 share/locale/ro/LC_MESSAGES/kwin_icewm_config.mo

@@ -322,11 +322,8 @@ share/locale/sv/LC_MESSAGES/example.mo
 share/locale/sv/LC_MESSAGES/karbon.mo
 share/locale/sv/LC_MESSAGES/karbonepsfilter.mo
 share/locale/sv/LC_MESSAGES/kchart.mo
-share/locale/sv/LC_MESSAGES/kdgantt.mo
-share/locale/sv/LC_MESSAGES/kexi.mo
 share/locale/sv/LC_MESSAGES/kfile_koffice.mo
 share/locale/sv/LC_MESSAGES/kfile_ooo.mo
-share/locale/sv/LC_MESSAGES/kformdesigner.mo
 share/locale/sv/LC_MESSAGES/kformula.mo
 share/locale/sv/LC_MESSAGES/kformulalatexfilter.mo
 share/locale/sv/LC_MESSAGES/kformulamathmlfilter.mo
@@ -336,10 +333,8 @@ share/locale/sv/LC_MESSAGES/koconverter.mo
 share/locale/sv/LC_MESSAGES/koffice.mo
 share/locale/sv/LC_MESSAGES/koshell.mo
 share/locale/sv/LC_MESSAGES/kounavail.mo
-share/locale/sv/LC_MESSAGES/kplato.mo
 share/locale/sv/LC_MESSAGES/kpresenter.mo
 share/locale/sv/LC_MESSAGES/kpresenterkwordfilter.mo
-share/locale/sv/LC_MESSAGES/krita.mo
 share/locale/sv/LC_MESSAGES/kscan_plugin.mo
 share/locale/sv/LC_MESSAGES/kspread.mo
 share/locale/sv/LC_MESSAGES/kspreadcalc_calc.mo
@@ -356,7 +351,6 @@ share/locale/sv/LC_MESSAGES/kwordasciifilter.mo
 share/locale/sv/LC_MESSAGES/kwordhtmlexportfilter.mo
 share/locale/sv/LC_MESSAGES/kwordhtmlimportfilter.mo
 share/locale/sv/LC_MESSAGES/kwordlatexexportfilter.mo
-share/locale/sv/LC_MESSAGES/kwordlatexfilter.mo
 share/locale/sv/LC_MESSAGES/kwordlateximportfilter.mo
 share/locale/sv/LC_MESSAGES/kwordmswordfilter.mo
 share/locale/sv/LC_MESSAGES/kwordmswritefilter.mo

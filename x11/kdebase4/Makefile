@@ -8,7 +8,6 @@
 
 PORTNAME=	kdebase
 PORTVERSION=	${KDE_VERSION}
-PORTREVISION=	4
 CATEGORIES=	x11 kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
@@ -37,6 +36,7 @@ GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS+=	%%PREFIX%%/lib %%PREFIX%%/lib/kde3
 
+DO_NOT_COMPILE=	nsplugins
 CONFIGURE_ENV+=	RUN_KAPPFINDER=no
 CONFIGURE_ARGS+=--without-java			\
 		--with-qt-dir=${X11BASE}	\
@@ -46,6 +46,10 @@ OPTIONS=	ARTSWRAPPER "Suid wrapper for aRts, req'd for realtime prio" on
 
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 .include <bsd.port.pre.mk>
+
+.if defined(DO_NOT_COMPILE)
+CONFIGURE_ENV+=DO_NOT_COMPILE="${DO_NOT_COMPILE}"
+.endif # defined(DO_NOT_COMPILE)
 
 .if !defined(WITHOUT_ARTSWRAPPER)
 RUN_DEPENDS+=	artswrapper:${PORTSDIR}/audio/artswrapper

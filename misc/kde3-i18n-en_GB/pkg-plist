@@ -544,7 +544,6 @@ share/locale/en_GB/LC_MESSAGES/kcm_kviewcanvasconfig.mo
 share/locale/en_GB/LC_MESSAGES/kcm_kviewgeneralconfig.mo
 share/locale/en_GB/LC_MESSAGES/kcm_kviewpluginsconfig.mo
 share/locale/en_GB/LC_MESSAGES/kcm_kviewviewerpluginsconfig.mo
-share/locale/en_GB/LC_MESSAGES/kcm_sambaconf.mo
 share/locale/en_GB/LC_MESSAGES/kcmaccess.mo
 share/locale/en_GB/LC_MESSAGES/kcmaccessibility.mo
 share/locale/en_GB/LC_MESSAGES/kcmarts.mo
@@ -559,7 +558,6 @@ share/locale/en_GB/LC_MESSAGES/kcmcrypto.mo
 share/locale/en_GB/LC_MESSAGES/kcmcss.mo
 share/locale/en_GB/LC_MESSAGES/kcmemail.mo
 share/locale/en_GB/LC_MESSAGES/kcmenergy.mo
-share/locale/en_GB/LC_MESSAGES/kcmfileshare.mo
 share/locale/en_GB/LC_MESSAGES/kcmfonts.mo
 share/locale/en_GB/LC_MESSAGES/kcmhtmlsearch.mo
 share/locale/en_GB/LC_MESSAGES/kcmicons.mo

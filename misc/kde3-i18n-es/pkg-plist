@@ -17,9 +17,32 @@ share/apps/ktuberling/sounds/es/oreja.wav
 share/apps/ktuberling/sounds/es/pendiente.wav
 share/apps/ktuberling/sounds/es/reloj.wav
 share/apps/ktuberling/sounds/es/sombrero.wav
+share/doc/HTML/es/KRegExpEditor/altn.png
+share/doc/HTML/es/KRegExpEditor/altntool.png
+share/doc/HTML/es/KRegExpEditor/anychar.png
+share/doc/HTML/es/KRegExpEditor/anychartool.png
+share/doc/HTML/es/KRegExpEditor/begline.png
+share/doc/HTML/es/KRegExpEditor/boundarytools.png
+share/doc/HTML/es/KRegExpEditor/characters.png
+share/doc/HTML/es/KRegExpEditor/charactertool.png
 share/doc/HTML/es/KRegExpEditor/common
+share/doc/HTML/es/KRegExpEditor/compound.png
+share/doc/HTML/es/KRegExpEditor/compoundtool.png
+share/doc/HTML/es/KRegExpEditor/endline.png
 share/doc/HTML/es/KRegExpEditor/index.cache.bz2
 share/doc/HTML/es/KRegExpEditor/index.docbook
+share/doc/HTML/es/KRegExpEditor/linestartendtool.png
+share/doc/HTML/es/KRegExpEditor/lookaheadtools.png
+share/doc/HTML/es/KRegExpEditor/neglookahead.png
+share/doc/HTML/es/KRegExpEditor/nonwordboundary.png
+share/doc/HTML/es/KRegExpEditor/poslookahead.png
+share/doc/HTML/es/KRegExpEditor/repeat.png
+share/doc/HTML/es/KRegExpEditor/repeattool.png
+share/doc/HTML/es/KRegExpEditor/select.png
+share/doc/HTML/es/KRegExpEditor/text.png
+share/doc/HTML/es/KRegExpEditor/texttool.png
+share/doc/HTML/es/KRegExpEditor/theEditor.png
+share/doc/HTML/es/KRegExpEditor/wordboundary.png
 share/doc/HTML/es/aktion/common
 share/doc/HTML/es/aktion/index.cache.bz2
 share/doc/HTML/es/aktion/index.docbook
@@ -150,9 +173,12 @@ share/doc/HTML/es/katomic/common
 share/doc/HTML/es/katomic/index.cache.bz2
 share/doc/HTML/es/katomic/index.docbook
 share/doc/HTML/es/kbabel/catman.docbook
+share/doc/HTML/es/kbabel/common
 share/doc/HTML/es/kbabel/dictionaries.docbook
 share/doc/HTML/es/kbabel/faq.docbook
 share/doc/HTML/es/kbabel/glossary.docbook
+share/doc/HTML/es/kbabel/index.cache.bz2
+share/doc/HTML/es/kbabel/index.docbook
 share/doc/HTML/es/kbabel/kbabeldict.docbook
 share/doc/HTML/es/kbabel/menu.docbook
 share/doc/HTML/es/kbabel/preferences.docbook
@@ -347,6 +373,11 @@ share/doc/HTML/es/kcontrol/windowmanagement/index.docbook
 share/doc/HTML/es/kcron/common
 share/doc/HTML/es/kcron/index.cache.bz2
 share/doc/HTML/es/kcron/index.docbook
+share/doc/HTML/es/kcron/kcron.png
+share/doc/HTML/es/kcron/kcronstart.png
+share/doc/HTML/es/kcron/newtask.png
+share/doc/HTML/es/kcron/newvariable.png
+share/doc/HTML/es/kcron/print.png
 share/doc/HTML/es/kdat/common
 share/doc/HTML/es/kdat/index.cache.bz2
 share/doc/HTML/es/kdat/index.docbook
@@ -380,6 +411,8 @@ share/doc/HTML/es/kdevelop/tip.database
 share/doc/HTML/es/kdf/common
 share/doc/HTML/es/kdf/index.cache.bz2
 share/doc/HTML/es/kdf/index.docbook
+share/doc/HTML/es/kdf/kdf.png
+share/doc/HTML/es/kdf/kdf_config.png
 share/doc/HTML/es/kdm/common
 share/doc/HTML/es/kdm/index.cache.bz2
 share/doc/HTML/es/kdm/index.docbook
@@ -414,8 +447,14 @@ share/doc/HTML/es/kghostview/common
 share/doc/HTML/es/kghostview/index.cache.bz2
 share/doc/HTML/es/kghostview/index.docbook
 share/doc/HTML/es/kgpg/common
+share/doc/HTML/es/kgpg/editor.png
 share/doc/HTML/es/kgpg/index.cache.bz2
 share/doc/HTML/es/kgpg/index.docbook
+share/doc/HTML/es/kgpg/keygen.png
+share/doc/HTML/es/kgpg/keymanage.png
+share/doc/HTML/es/kgpg/keys.png
+share/doc/HTML/es/kgpg/kicker.png
+share/doc/HTML/es/kgpg/options.png
 share/doc/HTML/es/kgpgcertmanager/common
 share/doc/HTML/es/kgpgcertmanager/index.cache.bz2
 share/doc/HTML/es/kgpgcertmanager/index.docbook
@@ -510,6 +549,7 @@ share/doc/HTML/es/khelpcenter/whatiskde.docbook
 share/doc/HTML/es/khexedit/common
 share/doc/HTML/es/khexedit/index.cache.bz2
 share/doc/HTML/es/khexedit/index.docbook
+share/doc/HTML/es/khexedit/khexedit1.png
 share/doc/HTML/es/kicker-applets/common
 share/doc/HTML/es/kicker-applets/index.cache.bz2
 share/doc/HTML/es/kicker-applets/index.docbook
@@ -804,6 +844,7 @@ share/doc/HTML/es/kontact/index.docbook
 share/doc/HTML/es/kooka/common
 share/doc/HTML/es/kooka/index.cache.bz2
 share/doc/HTML/es/kooka/index.docbook
+share/doc/HTML/es/kopete/menus.docbook
 share/doc/HTML/es/korganizer/common
 share/doc/HTML/es/korganizer/exchange-plugin.docbook
 share/doc/HTML/es/korganizer/group-scheduling.docbook
@@ -813,9 +854,21 @@ share/doc/HTML/es/korganizer/outlook-to-vcalendar.docbook
 share/doc/HTML/es/korn/common
 share/doc/HTML/es/korn/index.cache.bz2
 share/doc/HTML/es/korn/index.docbook
+share/doc/HTML/es/kpackage/bsdloc.png
 share/doc/HTML/es/kpackage/common
+share/doc/HTML/es/kpackage/debaptloc.png
+share/doc/HTML/es/kpackage/debloc.png
+share/doc/HTML/es/kpackage/handle.png
 share/doc/HTML/es/kpackage/index.cache.bz2
 share/doc/HTML/es/kpackage/index.docbook
+share/doc/HTML/es/kpackage/install.png
+share/doc/HTML/es/kpackage/left.png
+share/doc/HTML/es/kpackage/right-change.png
+share/doc/HTML/es/kpackage/right-files.png
+share/doc/HTML/es/kpackage/right-prop.png
+share/doc/HTML/es/kpackage/rpmloc.png
+share/doc/HTML/es/kpackage/slackloc.png
+share/doc/HTML/es/kpackage/uninstall.png
 share/doc/HTML/es/kpager/common
 share/doc/HTML/es/kpager/index.cache.bz2
 share/doc/HTML/es/kpager/index.docbook
@@ -978,6 +1031,7 @@ share/doc/HTML/es/kuickshow/index.docbook
 share/doc/HTML/es/kuser/common
 share/doc/HTML/es/kuser/index.cache.bz2
 share/doc/HTML/es/kuser/index.docbook
+share/doc/HTML/es/kuser/kuser.png
 share/doc/HTML/es/kverbos/common
 share/doc/HTML/es/kverbos/index.cache.bz2
 share/doc/HTML/es/kverbos/index.docbook
@@ -996,6 +1050,9 @@ share/doc/HTML/es/kview/snapshot9.png
 share/doc/HTML/es/kvoctrain/common
 share/doc/HTML/es/kvoctrain/index.cache.bz2
 share/doc/HTML/es/kvoctrain/index.docbook
+share/doc/HTML/es/kwallet/common
+share/doc/HTML/es/kwallet/index.cache.bz2
+share/doc/HTML/es/kwallet/index.docbook
 share/doc/HTML/es/kwatchgnupg/common
 share/doc/HTML/es/kwatchgnupg/index.cache.bz2
 share/doc/HTML/es/kwatchgnupg/index.docbook
@@ -1627,6 +1684,7 @@ share/locale/es/flag.png
 @dirrm share/doc/HTML/es/kwifimanager
 @dirrm share/doc/HTML/es/kweather
 @dirrm share/doc/HTML/es/kwatchgnupg
+@dirrm share/doc/HTML/es/kwallet
 @dirrm share/doc/HTML/es/kvoctrain
 @dirrm share/doc/HTML/es/kview
 @dirrm share/doc/HTML/es/kverbos
@@ -1663,6 +1721,7 @@ share/locale/es/flag.png
 @dirrm share/doc/HTML/es/kpackage
 @dirrm share/doc/HTML/es/korn
 @dirrm share/doc/HTML/es/korganizer
+@dirrm share/doc/HTML/es/kopete
 @dirrm share/doc/HTML/es/kooka
 @dirrm share/doc/HTML/es/kontact
 @dirrm share/doc/HTML/es/konsolekalendar

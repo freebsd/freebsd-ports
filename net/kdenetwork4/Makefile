@@ -8,7 +8,6 @@
 
 PORTNAME=	kdenetwork
 PORTVERSION=	${KDE_VERSION}
-PORTREVISION=	1
 CATEGORIES?=	net kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
@@ -51,6 +50,8 @@ pre-configure:
 	@${REINPLACE_CMD} \
 	-E -e '/^SUBDIRS/s/lisa//g' \
 		${WRKSRC}/doc/Makefile.in
+	@${REINPLACE_CMD} -e 's|/bin/bash|${SH}|' \
+		${WRKSRC}/kopete/plugins/latex/kopete_latexconvert.sh
 
 post-configure:
 .if ${OSVERSION} < 500028

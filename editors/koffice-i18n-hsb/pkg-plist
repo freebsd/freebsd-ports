@@ -1,0 +1,7 @@
+share/locale/hsb/LC_MESSAGES/koshell.mo
+share/locale/hsb/LC_MESSAGES/kthesaurus.mo
+share/locale/hsb/LC_MESSAGES/kword.mo
+share/locale/hsb/LC_MESSAGES/kwordmswordfilter.mo
+share/locale/hsb/LC_MESSAGES/thesaurus_tool.mo
+@dirrm share/locale/hsb/LC_MESSAGES
+@dirrm share/locale/hsb
