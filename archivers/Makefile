@@ -43,6 +43,7 @@
     SUBDIR += unlzx
     SUBDIR += unrar
     SUBDIR += unzip
+    SUBDIR += xdms
     SUBDIR += zip
     SUBDIR += zoo
 
