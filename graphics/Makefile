@@ -23,6 +23,7 @@
     SUBDIR += chbg
     SUBDIR += claraocr
     SUBDIR += cqcam
+    SUBDIR += crw
     SUBDIR += cthumb
     SUBDIR += cybervrml97
     SUBDIR += dc20ctrl

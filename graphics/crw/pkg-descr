@@ -1,0 +1,5 @@
+This is the distribution of "crw", a powerful utility that processes 
+RAW (.crw) files from Canon digital cameras and converts them into
+.ppm image files.  You can then do further conversion using ImageMagick's
+'convert' utility, or gimp.  The utility does excellent smoothing and 
+low-light enhancement.
