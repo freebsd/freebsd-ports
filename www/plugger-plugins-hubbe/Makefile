@@ -7,7 +7,7 @@
 
 PORTNAME=	plugger-plugins-hubbe
 PORTVERSION=	5.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www multimedia audio graphics print editors
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -32,7 +32,7 @@ RUN_DEPENDS=	sidplay:${PORTSDIR}/audio/sidplay \
 		${X11BASE}/bin/xscreensaver-hacks/molecule:${PORTSDIR}/x11/xscreensaver-gnome \
 		mplayer:${PORTSDIR}/multimedia/mplayer \
 		gnumeric:${PORTSDIR}/math/gnumeric2 \
-		abiword:${PORTSDIR}/editors/AbiWord2 \
+		abiword:${PORTSDIR}/editors/abiword \
 		display:${PORTSDIR}/graphics/ImageMagick
 
 .if exists(${LOCALBASE}/bin/oowrite)
