@@ -1,5 +1,5 @@
---- src/ftpd.c.orig	Tue Oct  2 22:21:17 2001
-+++ src/ftpd.c	Tue Oct  2 22:21:17 2001
+--- src/ftpd.c.orig	Mon Mar  8 07:24:50 2004
++++ src/ftpd.c	Mon Mar  8 07:24:50 2004
 @@ -447,7 +447,6 @@
  #ifdef OPIE
  #include <opie.h>
@@ -86,3 +86,12 @@
  #endif /* OPIE */
  #ifdef ULTRIX_AUTH
  	    if ((numfails = ultrix_check_pass(passwd, xpasswd)) >= 0) {
+@@ -3189,7 +3191,7 @@
+ 		  pw->pw_name, pw->pw_dir);
+ 	    goto bad;
+ #else
+-	    if (chdir("/") < 0) {
++	    if (restricted_user || chdir("/") < 0) {
+ #ifdef VERBOSE_ERROR_LOGING
+ 		syslog(LOG_NOTICE, "FTP LOGIN FAILED (cannot chdir) for %s, %s",
+ 		       remoteident, pw->pw_name);
