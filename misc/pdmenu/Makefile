@@ -11,7 +11,7 @@ CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
 DISTNAME=	pdmenu_${PORTVERSION}
 
-MAINTAINER=	nbm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple console menu program
 
 LIB_DEPENDS=	slang.1:${PORTSDIR}/devel/libslang

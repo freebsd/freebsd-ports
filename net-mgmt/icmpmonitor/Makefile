@@ -12,7 +12,7 @@ CATEGORIES=	net-mgmt
 MASTER_SITES= 	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= 	icmpmonitor
 
-MAINTAINER=	nbm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A multiple host icmp monitoring tool
 
 GNU_CONFIGURE=	YES
