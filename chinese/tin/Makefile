@@ -1,22 +1,20 @@
 # New ports collection makefile for:	tin
-# Version required:	tin1.4-971123
+# Version required:	tin1.4-980117
 # Date created:		2 Dec 1997
 # Whom:			Yen-Shuo Su <yssu@CCCA.NCTU.edu.tw>
 #
-# $Id: Makefile,v 1.4 1997/12/10 13:56:07 vanilla Exp $
+# $Id: Makefile,v 1.5 1998/01/21 09:40:43 asami Exp $
 #
 
-DISTNAME=       tinpre-1.4-971204
-PKGNAME=        zh-tin-1.4.971204
+DISTNAME=       tinpre-1.4-980117
+PKGNAME=        zh-tin-1.4.980117
 CATEGORIES=	chinese news
-MASTER_SITES=   ftp://nuxi.ucdavis.edu/pub/tin/ \
-		ftp://ftp.akk.uni-karlsruhe.de/pub/tin/ \
+MASTER_SITES=   ftp://ftp.tin.org/pub/news/clients/tin/current/ \
+		ftp://nuxi.ucdavis.edu/pub/tin/ \
 		ftp://ftp.nuxi.com/pub/tin/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=     yssu@CCCA.NCTU.edu.tw
-
-BROKEN=		fetch
 
 WRKSRC=         ${WRKDIR}/${DISTNAME:S/pre-1.4//}
 GNU_CONFIGURE=	yes
@@ -25,6 +23,8 @@ CONFIGURE_ARGS=  --with-nntp-default-server=news  \
 		 --with-libdir=${PREFIX}/news/lib \
 		 --with-mime-default-charset=ISO-8859-1 \
 		 --enable-forgery \
+		 --enable-curses \
+		 --with-ncurses \
 		 --enable-break-long-lines \
 		 --with-pgp=${PREFIX}/bin/pgp \
 		 --with-ispell=${PREFIX}/bin/ispell \
@@ -37,6 +37,13 @@ MAN1=		tin.1
 .if defined(NNTP_ONLY)
 CONFIGURE_ARGS+=	--enable-nntp-only
 .endif
+
+post-patch:
+	@${MV} ${WRKSRC}/doc/tin.1 ${WRKSRC}/doc/tin.1.dist
+	@${SED} -e 's:/var/spool/news:/var/news:' \
+		-e 's:/etc/nntpserver:${PREFIX}/etc/nntpserver:' \
+		-e 's:/usr/lib/news:${PREFIX}/news/lib:' \
+		<${WRKSRC}/doc/tin.1.dist >${WRKSRC}/doc/tin.1
 
 post-configure:
 	${ECHO} '#define NNTP_SERVER_FILE "${PREFIX}/etc/nntpserver"' >>${WRKSRC}/include/autoconf.h
