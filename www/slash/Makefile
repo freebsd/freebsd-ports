@@ -20,10 +20,6 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-D
 RUN_DEPENDS=	${BUILD_DEPENDS} \
 		${LOCALBASE}/libexec/apache/libperl.so:${PORTSDIR}/www/mod_perl
 
-BROKEN=		"Inconsistent dependencies (mysql-client 3.x and 4.x)"
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2004-04-16
-
 DOCS=		README INSTALL
 
 CONFLICTS=	metalist
