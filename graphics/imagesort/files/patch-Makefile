@@ -1,0 +1,20 @@
+--- Makefile.orig	Tue Apr 10 18:16:03 2001
++++ Makefile	Tue Apr 10 18:18:54 2001
+@@ -7,15 +7,14 @@
+ 
+ # you may need to change this if you lack gcc (in which case you may
+ # not be able to compile at all
+-CC = gcc
+ 
+ # you'll probably have to dick with the libs, depending on how your imlib
+ # is compiled.  We default to including all of the extras supported by
+ # imlib 1.9
+-LIBS = -lX11 -lXext -lImlib -ljpeg -lm -lpng -ltiff -lz -lgif
++LIBS = -lX11 -lXext -lImlib -ljpeg -lm -lpng -ltiff -lz -lungif
+ #LIBS = -lImlib -lX11 -lXext -ljpeg -lgif -lm
+ 
+-CFLAGS = -g -L$(XDIR)/lib -I$(XDIR)/include 
++CFLAGS += -L$(LOCALBASE)/lib -L$(X11BASE)/lib -I$(X11BASE)/include 
+ 
+ all: imagesort.o
+ 

@@ -86,6 +86,7 @@
     SUBDIR += hppsmtools
     SUBDIR += hpscan
     SUBDIR += icod
+    SUBDIR += imagesort
     SUBDIR += imanager
     SUBDIR += imlib
     SUBDIR += imlib2
