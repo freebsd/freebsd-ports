@@ -16,8 +16,11 @@
 *     (set-alist 'mime-view-type-subtype-score-alist               *
 *		 '(text . html) 3)))                               *
 *                                                                  *
-* And to use emacs-w3m on Mew, add this to your own .mew:          *
+* And to use emacs-w3m on Mew, add this to your own .mew.el:       *
 *                                                                  *
-* (require 'mew-w3m)                                               *
-* (setq mew-prog-html '(mew-mime-text/html-w3m nil nil))           *
+* (condition-case nil                                              *
+*     (require 'mew-w3m)                                           *
+*   (file-error nil))                                              *
+* (setq w3m-type 'w3m-m17n)                                        *
+*                                                                  *
 ********************************************************************
