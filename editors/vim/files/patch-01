@@ -1,16 +1,15 @@
---- Makefile.orig	Sun Jan 16 06:03:04 2000
-+++ Makefile	Sat May  6 13:04:12 2000
-@@ -302,6 +302,7 @@
- 
- # just an example:
+--- Makefile.orig	Sun Nov 12 10:55:43 2000
++++ Makefile	Mon Nov 13 03:26:41 2000
+@@ -307,2 +307,3 @@
  #CONF_ARGS = --exec-prefix=/usr
 +CONF_ARGS = --prefix=$(PREFIX)
  
- # GUI - For creating Vim with GUI (gvim) (B)
- # Uncomment this line when you don't want to get the GUI version, although you
-@@ -1444,56 +1445,56 @@
- installlinks: $(GUI_TARGETS) $(BINDIR)/$(EXTARGET) $(BINDIR)/$(VIEWTARGET) $(BINDIR)/$(RVIMTARGET) $(BINDIR)/$(RVIEWTARGET)
+@@ -457,3 +458,3 @@
+ # as root: sysctl -w vm.max_proc_mmap=30000
+-EXTRA_LIBS = /usr/local/lib/libefence.a
++#EXTRA_LIBS = /usr/local/lib/libefence.a
  
+@@ -1589,24 +1590,24 @@
  $(BINDIR)/$(EXTARGET):
 -	cd $(BINDIR); ln -s $(VIMTARGET) $(EXTARGET)
 +	#cd $(BINDIR); ln -s $(VIMTARGET) $(EXTARGET)
@@ -43,10 +42,7 @@
 -	cd $(BINDIR); ln -s $(VIMTARGET) $(RGVIEWTARGET)
 +	cd $(BINDIR); ln -sf $(VIMTARGET) $(RGVIEWTARGET)
  
- # create links for the manual pages with various names to vim.	This is only
- # done when the links (or manpages with the same name) don't exist yet.
- installhelplinks: $(GUI_MAN_TARGETS) $(MANSUBDIR)/$(EXNAME).1 $(MANSUBDIR)/$(VIEWNAME).1 $(MANSUBDIR)/$(RVIMNAME).1 $(MANSUBDIR)/$(RVIEWNAME).1
- 
+@@ -1617,24 +1618,24 @@
  $(MANSUBDIR)/$(EXNAME).1:
 -	cd $(MANSUBDIR); ln -s $(VIMNAME).1 $(EXNAME).1
 +	#cd $(MANSUBDIR); ln -s $(VIMNAME).1 $(EXNAME).1
@@ -79,5 +75,3 @@
 -	cd $(MANSUBDIR); ln -s $(VIMNAME).1 $(RGVIEWNAME).1
 +	cd $(MANSUBDIR); ln -sf $(VIMNAME).1 $(RGVIEWNAME).1
  
- uninstall: uninstall_runtime
- 	-rm -f $(BINDIR)/$(VIMTARGET)
