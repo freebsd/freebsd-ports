@@ -1,0 +1,11 @@
+--- src/cproject.cc	2000/09/25 13:46:43	1.1
++++ src/cproject.cc	2000/09/25 13:50:01
+@@ -935,7 +935,7 @@
+ 	if(!hilite){
+ 		hilite = (HighlightSet *)malloc(sizeof(HighlightSet));
+ 		
+-		hilite->scanner = gtk_editor_load_scanner(path);
++		hilite->scanner = gtk_editor_load_scanner("c-scanner");
+ 	};		
+ 
+ 	g_free(path);
