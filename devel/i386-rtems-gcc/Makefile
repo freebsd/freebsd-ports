@@ -32,6 +32,10 @@ BROKEN=		"Configure fails on amd64"
 RTEMS_ARCH?=	i386
 LCLTARGET=	${RTEMS_ARCH}-rtems
 
+.if ${RTEMS_ARCH} == m68k && ${ARCH} != "i386"
+BROKEN=		"Internal compiler error during build on !i386"
+.endif
+
 GCCVERSION=	3.2.3
 GCCNAME=	gcc-${GCCVERSION}
 PLIST_SUB+=	"GCCVERSION=${GCCVERSION}"
