@@ -15,12 +15,12 @@ MASTER_SITE_SUBDIR= stable/1.1.1/distribution/tar/generic/source/bz2
 DISTFILES=	kdetoys-1.1.1.tar.bz2 \
 		kdelnkfiles-ja-19990809.tar.bz2
 
-MAINTAINER=     imura@cs.titech.ac.jp
+MAINTAINER=     imura@kde.gr.jp
 
 BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		kfilei18n.2:${PORTSDIR}/x11/kdelibs11-i18n \
-		qti18n.1:${PORTSDIR}/x11-toolkits/qt-i18n
+		qti18n.2:${PORTSDIR}/x11-toolkits/qt-i18n
 RUN_DEPENDS=	kwm:${PORTSDIR}/x11/kdebase11-i18n
 
 EXTRACT_AFTER_ARGS=	| ${TAR} -xf - ${DISTNAME}
