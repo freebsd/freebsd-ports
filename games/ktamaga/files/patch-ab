@@ -1,0 +1,15 @@
+*** tamaga.h~	Thu Nov 13 23:55:28 1997
+--- tamaga.h	Thu Nov 13 23:56:18 1997
+***************
+*** 28,32 ****
+  
+  // The Data dir for the X-only version
+! #define XDATPATH	"/usr/lib/X11/tamaga"
+  
+  //------------------------------------
+--- 28,32 ----
+  
+  // The Data dir for the X-only version
+! #define XDATPATH	KDEDIR"/share/apps/ktamaga"
+  
+  //------------------------------------
