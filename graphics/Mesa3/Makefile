@@ -3,7 +3,7 @@
 # Date created:         Tue Feb  7 12:02:49  1995
 # Whom:                 hsu
 #
-# $Id: Makefile,v 1.22 1998/02/15 17:13:13 jseger Exp $
+# $Id: Makefile,v 1.23 1998/03/10 09:26:05 tg Exp $
 #
 
 DISTNAME=       MesaLib-2.6
@@ -13,6 +13,8 @@ MASTER_SITES= 	ftp://iris.ssec.wisc.edu/pub/Mesa/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} MesaDemos-2.6.tar.gz
 
 MAINTAINER=	jseger@FreeBSD.ORG
+
+BROKEN=		awaiting upgrade to Mesa3 after repository copy
 
 WRKSRC=		${WRKDIR}/${PKGNAME}
 
