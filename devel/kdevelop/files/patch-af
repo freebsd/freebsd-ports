@@ -1,0 +1,13 @@
+--- kdlgloader/Makefile.in	Sun Feb 27 12:01:29 2000
++++ kdlgloader/Makefile.in.new	Sun Feb 27 21:32:51 2000
+@@ -212,8 +212,8 @@
+ 
+ lib_LTLIBRARIES = libkdlgloader.la
+ 
+-SOMAJOR = 1
+-SOMINOR = 0
++SOMAJOR ?= 1
++SOMINOR ?= 0
+ 
+ include_HEADERS = kdlgloader.h
+ 
