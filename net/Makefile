@@ -483,6 +483,7 @@
     SUBDIR += pmf
     SUBDIR += poink
     SUBDIR += poptop
+    SUBDIR += pork
     SUBDIR += portfwd
     SUBDIR += powerdns
     SUBDIR += pppload
