@@ -66,11 +66,6 @@ MAN8= ap.8 conflict.8 dp.8 fmtdump.8 install-mh.8 mh-mts.8 post.8
 pre-configure:
 	cd ${WRKSRC}; chmod +w configure
 
-# Since we patch the autoconf files as well as their outputs, avoid attempt
-# to regenerate header input files with 'autoheader' by Makefile.
-post-patch:
-	@${TOUCH} ${WRKSRC}/stamp-h.in
-
 post-install:
 	@PKG_PREFIX='${PREFIX}' sh ${PKGDIR}/INSTALL
 	chgrp mail ${PREFIX}/bin/inc
