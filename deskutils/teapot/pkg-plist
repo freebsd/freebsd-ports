@@ -1,16 +1,16 @@
 bin/teapot
-%%PORTDOCS%%share/doc/teapot/teapot.doc
-%%PORTDOCS%%share/doc/teapot/teapot.html
-%%PORTDOCS%%share/doc/teapot/teapot.ps
-%%PORTDOCS%%share/examples/teapot/asqrt
-%%PORTDOCS%%share/examples/teapot/asqrt.README
-%%PORTDOCS%%share/examples/teapot/blink
-%%PORTDOCS%%share/examples/teapot/counter
-%%PORTDOCS%%share/examples/teapot/counter.README
-%%PORTDOCS%%share/examples/teapot/life
-%%PORTDOCS%%share/examples/teapot/life.README
-%%PORTDOCS%%share/examples/teapot/graphtest.sh
-%%PORTDOCS%%share/examples/teapot/sqrt
-%%PORTDOCS%%share/examples/teapot/sqrt.README
-%%PORTDOCS%%@dirrm share/examples/teapot
-%%PORTDOCS%%@dirrm share/doc/teapot
+%%PORTDOCS%%%%DOCSDIR%%/teapot.doc
+%%PORTDOCS%%%%DOCSDIR%%/teapot.html
+%%PORTDOCS%%%%DOCSDIR%%/teapot.ps
+%%PORTDOCS%%%%EXAMPLESDIR%%/asqrt
+%%PORTDOCS%%%%EXAMPLESDIR%%/asqrt.README
+%%PORTDOCS%%%%EXAMPLESDIR%%/blink
+%%PORTDOCS%%%%EXAMPLESDIR%%/counter
+%%PORTDOCS%%%%EXAMPLESDIR%%/counter.README
+%%PORTDOCS%%%%EXAMPLESDIR%%/life
+%%PORTDOCS%%%%EXAMPLESDIR%%/life.README
+%%PORTDOCS%%%%EXAMPLESDIR%%/graphtest.sh
+%%PORTDOCS%%%%EXAMPLESDIR%%/sqrt
+%%PORTDOCS%%%%EXAMPLESDIR%%/sqrt.README
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
