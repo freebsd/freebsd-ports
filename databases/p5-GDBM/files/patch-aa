@@ -1,0 +1,10 @@
+--- Makefile.PL.orig	Tue Nov  9 09:03:15 1999
++++ Makefile.PL	Tue Nov  9 08:13:45 1999
+@@ -2,7 +2,7 @@
+ use ExtUtils::MakeMaker;
+ WriteMakefile(
+     NAME => 'GDBM_File',
++    INC => '-I/usr/local/include',
+     LIBS => ["-L/usr/local/lib -lgdbm", "-ldbm"],
+-    MAN3PODS 	=> {}, 	# Pods will be built by installman.
+     XSPROTOARG => '-noprototypes', 		# XXX remove later?
