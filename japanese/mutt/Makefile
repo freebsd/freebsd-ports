@@ -8,13 +8,14 @@
 PORTNAME=	mutt
 PORTVERSION=	${VERSION}.j${JP_VERSION}
 CATEGORIES=	japanese mail
-MASTER_SITES=	ftp://ftp.gbnet.net/pub/mutt-international/ \
+MASTER_SITES=	ftp://ftp.mutt.org/pub/mutt/ \
+		ftp://ftp.gbnet.net/pub/mutt-international/ \
 		ftp://ftp.guug.de/pub/mutt/ \
 		ftp://ftp.guug.de/pub/mutt/historic/ \
 		http://www.hiei.kit.ac.jp/~hitomi/mutt/
 DISTNAME=	${PORTNAME}-${VERSION}i
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		manual_ja-${VERSION:R}i-0.tar.gz
+		manual_ja-${VERSION:R}i-1.tar.gz
 
 PATCH_SITES=	http://www.geocities.co.jp/SiliconValley-PaloAlto/2594/ \
 		http://www2.odn.ne.jp/~aab27060/ports/distfiles/
@@ -24,36 +25,38 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	shuna@pop16.odn.ne.jp
 
 LIB_DEPENDS=	slang.2:${PORTSDIR}/japanese/libslang
-BUILD_DEPENDS=	${LOCALBASE}/bin/msgfmt:${PORTSDIR}/devel/gettext \
-		autoconf:${PORTSDIR}/devel/autoconf \
-		automake:${PORTSDIR}/devel/automake
+.if !defined(WITH_GETTEXT)
+LIB_DEPENDS+=	intl.1:${PORTSDIR}/devel/gettext
+.endif
+.if defined(WITH_GETTEXT)
+BUILD_DEPENDS=	${LOCALBASE}/bin/msgfmt:${PORTSDIR}/devel/gettext
+.endif
 RUN_DEPENDS=	urlview:${PORTSDIR}/textproc/urlview
 
-VERSION=	1.2.4
+VERSION=	1.2.5
 JP_VERSION=	0
 
 DIST_SUBDIR=	mutt
-GNU_CONFIGURE=	yes
-USE_AUTOCONF=	yes
 USE_GMAKE=	yes
+USE_AUTOMAKE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${VERSION}
-ALL_TARGET=	all
-CONFIGURE_ARGS=	--with-slang --enable-locales-fix --with-included-gettext \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--with-slang --enable-locales-fix \
 		--enable-flock --disable-fcntl \
 		--sysconfdir=${PREFIX}/etc \
 		--with-docdir=${PREFIX}/share/doc/mutt \
 		--enable-pop --enable-imap
-
+.if defined(WITH_GETTEXT)
+CONFIGURE_ARGS+=	--with-included-gettext
+.endif
 MAN1=		mutt.1 mutt_dotlock.1
 MAN5=		muttrc.5
 
 pre-configure:
-	(cd ${WRKSRC}; autoconf)
+	(cd ${WRKSRC}; aclocal -I m4)
 
 post-install:
-	strip ${PREFIX}/bin/mutt
-	strip ${PREFIX}/bin/mutt_dotlock
-	strip ${PREFIX}/bin/pgpring
 	${INSTALL_DATA} ${WRKDIR}/manual_ja.txt ${PREFIX}/share/doc/mutt
 	${INSTALL_DATA} ${WRKDIR}/manual_ja.tex ${PREFIX}/share/doc/mutt
 	${INSTALL_DATA} ${WRKDIR}/manual_ja.html ${PREFIX}/share/doc/mutt

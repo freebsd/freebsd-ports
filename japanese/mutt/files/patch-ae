@@ -1,0 +1,46 @@
+--- khenkan.c.orig	Tue Aug  1 02:28:27 2000
++++ khenkan.c	Tue Aug  1 03:13:51 2000
+@@ -1045,6 +1045,7 @@
+ {
+   char *p = (char *)s, ch, *beg, *end=NULL, *to_ascii=NULL, *to_kanji=NULL;
+   int len = 0, count, beg_kanji, end_kanji=0;
++  char *enc_end = NULL, *prev_brk = NULL;
+ 
+   /* check if buffer 'd' has a enough length */
+   if (dmax - d < strlen((char *)s) * 4 / 3) return (-1);
+@@ -1064,11 +1065,23 @@
+     if (d == dmax) return (-1);
+ 
+     if (len > 75) { /* line break(in text) */
+-      p = beg;  /* search previous word's end */
+-      while(beg > (char *)s && *beg != ' ') beg--;
+-      while(beg > (char *)s && *beg == ' ') beg--;
++      if (enc_end == NULL) {
++        enc_end = s;
++      }
++      while(beg >= enc_end && *beg != ' ') beg--;
++      while(beg >= enc_end && *beg == ' ') beg--;
+       ++beg;
+-      d -= p - beg + 1;
++      if (prev_brk != NULL && beg <= prev_brk) {
++        beg = p;
++        while(beg > prev_brk && isalnum(*beg)) beg--;
++      }
++      if (prev_brk == NULL || beg > prev_brk) {
++        d -= p - beg;
++        p = beg;
++        prev_brk = beg;
++      } else {
++        prev_brk = p;
++      }
+       *d++ = '\n';
+       *d++ = ' ';
+       len = 0;
+@@ -1181,6 +1194,7 @@
+       new_d = encode_base64(d, jtmp_str, jtmp_str + count);
+       len += new_d - d;
+       d = new_d;
++      enc_end = p;
+ 
+       beg_kanji = end_kanji;
+       beg = p;
