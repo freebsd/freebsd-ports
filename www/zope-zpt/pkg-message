@@ -1,0 +1,7 @@
+===> Zope Page Templates post-port installation instructions:
+  To complete the installation of this port, you need to estart Zope.  This
+  may be done from the Zope Control Panel in the Zope management interface.
+
+  A trio of example Page Templates have been placed in your Zope import
+  directory as:  "zpt_examples.zexp".  You may optionally import these
+  examples to any Zope folder.

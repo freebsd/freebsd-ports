@@ -1,5 +1,6 @@
 # $FreeBSD$
 #
+    SUBDIR += zope-zpt
     SUBDIR += zope-zwiki
 
     SUBDIR += Mosaic         # requires Motif
