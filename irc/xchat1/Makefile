@@ -1,15 +1,15 @@
 # New ports collection makefile for:	xchat
-# Version required:		1.2.1
+# Version required:		1.3.3
 # Date created:			17 Nov 1998
 # Whom:				Jim Mock <jim@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	xchat-1.2.1
+DISTNAME=	xchat-1.3.3
 CATEGORIES=	irc
-MASTER_SITES=	http://xchat.org/files/ \
-		http://xchat.linuxpower.org/files/
+MASTER_SITES=	http://xchat.org/files/v1.3/ \
+		http://xchat.linuxpower.org/files/v1.3/
 
 MAINTAINER=	jim@FreeBSD.org
 
@@ -19,6 +19,7 @@ LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 
 USE_X_PREFIX=	yes
+USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
