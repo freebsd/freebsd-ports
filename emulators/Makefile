@@ -1,8 +1,9 @@
-# $Id: Makefile,v 1.7 1996/11/15 19:30:55 erich Exp $
+# $Id: Makefile,v 1.8 1997/02/24 13:51:00 tg Exp $
 #
 
     SUBDIR += cpmemu
     SUBDIR += cpmtools
+    SUBDIR += fmsx
     SUBDIR += hfs
     SUBDIR += ines
     SUBDIR += linux_lib
