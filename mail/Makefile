@@ -71,6 +71,7 @@
     SUBDIR += liboe
     SUBDIR += listar
     SUBDIR += listmanager
+    SUBDIR += lmtp2nntp
     SUBDIR += mahogany
     SUBDIR += mailagent
     SUBDIR += mailcrypt
