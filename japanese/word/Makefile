@@ -6,12 +6,13 @@
 #
 
 PORTNAME=	word
-PORTVERSION=	0.99.12
+PORTVERSION=	0.99.22
 CATEGORIES=	japanese
 MASTER_SITES=	http://www.linet.gr.jp/~mituiwa/
 
 MAINTAINER=	sada@FreeBSD.ORG
 
+FORBIDDEN=	"distfile is not available"
 USE_GTK=	yes
 
 DOCDIR=		${PREFIX}/share/doc/ja-word
