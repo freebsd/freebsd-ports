@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jedit
-PORTVERSION=	4.0.0
+PORTVERSION=	4.1.0
 CATEGORIES=	editors java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,13 +18,12 @@ EXTRACT_ONLY=
 MAINTAINER=	sobomax@FreeBSD.org
 COMMENT=	Powerful programmer's text editor written in Java
 
-BUILD_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper \
-		${LOCALBASE}/etc/javavms:${PORTSDIR}/java/jdk13
-RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper \
-		${LOCALBASE}/etc/javavms:${PORTSDIR}/java/jdk13
+USE_JAVA=	1.3+
 
 USE_XLIB=	yes
 NO_BUILD=	yes
+
+MAN1=		jedit.1
 
 do-configure:
 	@${SED} "s|%%PREFIX%%|${PREFIX}|g ; s|%%LOCALBASE%%|${LOCALBASE}|g" \
