@@ -5,3 +5,5 @@ lib/canna/dic/canna/gcanna.cld
 lib/canna/dic/canna/gcanna.cbd
 lib/canna/dic/canna/gcannaf.cld
 lib/canna/dic/canna/gcannaf.cbd
+%%PORTDOCS%%share/doc/cannadic/README
+%%PORTDOCS%%@dirrm share/doc/cannadic

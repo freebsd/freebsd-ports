@@ -6,17 +6,16 @@
 #
 
 PORTNAME=	cannadic
-PORTVERSION=	0.92
-PORTREVISION=	1
+PORTVERSION=	0.93a
 CATEGORIES=	japanese
-MASTER_SITES=	http://cgi3.osk.3web.ne.jp/~nowaki/computer/
+MASTER_SITES=	http://cannadic.oucrc.org/
 
 MAINTAINER=	toga@puyo.org
 
 RUN_DEPENDS=	${LOCALBASE}/lib/canna/dic/canna/dics.dir:${PORTSDIR}/japanese/Canna
-BUILD_DEPENDS=	mkbindic:${PORTSDIR}/japanese/Canna
+BUILD_DEPENDS=	crxdic:${PORTSDIR}/japanese/Canna
 
-ALL_TARGET=	bindic
+ALL_TARGET=	maindic subdic
 
 DICS=		gcanna.cbd gcanna.cld gcannaf.cbd gcannaf.cld
 DICSFILE=	dics.dir
@@ -31,6 +30,10 @@ do-install:
 	${CAT} ./${ORIGDICSFILE} ./${CANNADICSFILE} > ./${DICSFILE}; \
 	${INSTALL} -c -g bin -m 664 -o bin ${DICS} ${DICDIR} ; \
 	${INSTALL} -c -g bin -m 664 -o bin ${DICSFILE} ${CANNADICSFILE} ${ORIGDICSFILE} ${DICDIR}
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+.endif
 
 post-install:
 	@if [ -e /tmp/.iroha_unix/IROHA ]; then \
