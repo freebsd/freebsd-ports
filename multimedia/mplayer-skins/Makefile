@@ -7,7 +7,7 @@
 
 PORTNAME=	mplayer
 PORTVERSION=	1.0.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.mplayerhq.hu/MPlayer/Skin/:Skin \
 		http://ftp.lug.udel.edu/MPlayer/Skin/:Skin \
@@ -178,9 +178,9 @@ DISTFILES+=	slim-1.0.tar.bz2:Skin
 EXTRACT_ONLY+=	slim-1.0.tar.bz2
 .endif
 
-DISTFILES+=	trium-1.0.tar.bz2:Skin
+DISTFILES+=	trium-1.1.tar.bz2:Skin
 .ifdef(WITH_SKIN_TRIUM)
-EXTRACT_ONLY+=	trium-1.0.tar.bz2
+EXTRACT_ONLY+=	trium-1.1.tar.bz2
 .endif
 
 DISTFILES+=	WindowsMediaPlayer6-1.2.tar.bz2:Skin
