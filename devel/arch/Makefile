@@ -13,6 +13,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.p/pre/}
 
 MAINTAINER=	wjv@FreeBSD.org
 
+BROKEN=		"Does not fetch"
+
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_WRKSRC=	${WRKSRC}/src/=build
