@@ -18,6 +18,7 @@ BUILD_DEPENDS=	${DEPEND_RUBY_AMSTD} \
 		racc:${PORTSDIR}/devel/ruby-racc
 
 USE_RUBY=	yes
+USE_RUBY_FEATURES=	optparse strscan
 
 RUBY_SHEBANG_FILES=	 ${WRKSRC}/rmi2html.rb
 
@@ -26,13 +27,6 @@ XEMACSLISPDIR=	${PREFIX}/lib/xemacs/site-lisp
 
 DOCS_EN=	README.html	doc/rd-draft.rd		doc/rd-draft.html
 DOCS_JA=	README.ja.html	doc/rd-draft.rd.ja	doc/rd-draft.ja.html
-
-.include <bsd.port.pre.mk>
-
-.if ${RUBY_VER} < 1.7
-BUILD_DEPENDS+=	${RUBY_SITELIBDIR}/optparse.rb:${PORTSDIR}/lang/ruby16-shim-ruby18
-RUN_DEPENDS+=	${RUBY_SITELIBDIR}/optparse.rb:${PORTSDIR}/lang/ruby16-shim-ruby18
-.endif
 
 do-configure:
 	@cd ${WRKSRC}; \
@@ -71,4 +65,4 @@ post-install:
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

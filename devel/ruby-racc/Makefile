@@ -19,17 +19,11 @@ MAINTAINER=	knu@FreeBSD.org
 
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
+USE_RUBY_FEATURES=	racc-runtime
 
 CONFIGURE_ARGS=	--with=racc
 
 WRKDIR_RACC=	${WRKSRC}/packages/racc
-
-.include <bsd.port.pre.mk>
-
-.if ${RUBY_VER} < 1.7
-RUN_DEPENDS+=	${RUBY_SITELIBDIR}/racc/parser.rb:${PORTSDIR}/lang/ruby16-shim-ruby18 \
-		${RUBY_SITEARCHLIBDIR}/strscan.so:${PORTSDIR}/lang/ruby16-shim-ruby18
-.endif
 
 post-extract:
 	${CP} -p ${WRKDIR_RACC}/misc/* ${WRKDIR_RACC}/bin/
@@ -43,4 +37,4 @@ do-install:
 	${INSTALL_DATA} ${WRKDIR_RACC}/doc.ja/* ${RUBY_DOCDIR}/${PORTNAME}/ja/
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

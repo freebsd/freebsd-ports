@@ -30,6 +30,7 @@ RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/bdb1.so:${PORTSDIR}/databases/ruby-bdb1
 
 USE_BZIP2=	yes
 USE_RUBY=	yes
+USE_RUBY_FEATURES=	optparse ruby18
 
 MAKE_ARGS=	PREFIX="${PREFIX}" RUBY="${RUBY}"
 
@@ -61,10 +62,6 @@ INSTALL_TARGET+=	install-doc
 PKG_CREATE_OK!=	/usr/sbin/pkg_create 2>&1 | ${GREP} ' -b ' || ${TRUE}
 .if empty(PKG_CREATE_OK)
 IGNORE=	pkg_create does not support -b.  Please update pkg_* tools or stick with portupgrade-20020920 + pkg_tarup-1.2_3, which work just fine
-.endif
-
-.if ${RUBY_VER} < 1.7
-RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/features/ruby18/file_ruby18.so:${PORTSDIR}/lang/ruby16-shim-ruby18
 .endif
 
 post-install:
