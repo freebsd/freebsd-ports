@@ -25,7 +25,7 @@ DISTFILES+=	${SKINFILES:S/$/:skins/}
 .endif
 
 MAINTAINER=	q@uni.de
-COMMENT=	Cleaned up copy of the GPL'd Quake 1 source code
+COMMENT=	Cleaned up copy of the GPLd Quake 1 source code
 
 WADFILE=	quakesw-1.0.6.tar.gz
 PROGFILE=	qwsv-2.30-glibc-i386-unknown-linux2.0.tar.gz
@@ -34,6 +34,7 @@ SKINFILES=	skinbase.zip qw_skins.zip
 USE_LIBTOOL=	yes
 USE_GMAKE=	yes
 USE_XLIB=	yes
+USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 
 .include <bsd.port.pre.mk>
@@ -168,6 +169,11 @@ pre-everything::
 	@${ECHO_MSG} "Define WITHOUT_CLIENTS to disable building of the clients"
 .endif
 
+post-patch:
+.if (${ARCH} == "alpha")
+	@${REINPLACE_CMD} -e 's/-ffast-math//' ${WRKSRC}/configure
+.endif
+
 do-install:
 	@(cd ${INSTALL_WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET})
 
@@ -197,6 +203,6 @@ do-install:
 .endif
 
 post-install:
-	@${CAT} ${PKGMESSAGE} | ${SED} -e 's#$${PREFIX}#${PREFIX}#g'
+	@${SED} -e 's#$${PREFIX}#${PREFIX}#g' ${PKGMESSAGE} 
 
 .include <bsd.port.post.mk>
