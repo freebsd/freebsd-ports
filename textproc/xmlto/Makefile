@@ -9,7 +9,7 @@
 # WITH_PASSIVETEX	Enable PassiveTex support for DVI/PDF/PS output
 
 PORTNAME=	xmlto
-PORTVERSION=	0.0.16.p1
+PORTVERSION=	0.0.17
 CATEGORIES=	textproc
 MASTER_SITES=	http://cyberelk.net/tim/data/xmlto/stable/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.p/pre/}
@@ -40,22 +40,13 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 BASH_CMD=	${LOCALBASE}/bin/bash
 GETOPT_CMD=	${LOCALBASE}/bin/getopt
 PASSIVETEX=	${LOCALBASE}/share/texmf/tex/passivetex
-
-DOCBOOK_URL=	http://www.oasis-open.org/docbook/xml
-DOCBOOK_DIR=	${LOCALBASE}/share/xml/docbook
-XSL_URL=	http://docbook.sourceforge.net/release/xsl/current
 XSL_DIR=	${LOCALBASE}/share/xsl/docbook
 
 MAN1=		xmlif.1 xmlto.1
 DOCS=		AUTHORS NEWS
 
-do-patch:
-	${REINPLACE_CMD} -e 's,/bin/bash,${BASH_CMD},' ${WRKSRC}/xmlto.in
-	${REINPLACE_CMD} -e 's,${DOCBOOK_URL},${DOCBOOK_DIR},' \
-		${WRKSRC}/doc/xml*.xml
-	${REINPLACE_CMD} -e 's,${XSL_URL},${XSL_DIR},' \
-		${WRKSRC}/format/docbook/*
 .if !defined(WITH_PASSIVETEX)
+post-patch:
 	${REINPLACE_CMD} -e '/format\/fo\//d' ${WRKSRC}/Makefile.in
 .endif
 
