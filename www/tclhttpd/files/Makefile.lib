@@ -6,7 +6,7 @@ SRCS=crypt.c setuid.c limit.c utime.c metaPackage.c
 
 CFLAGS+=-I${LOCALBASE}/include/tcl${TCL_DVER} -DUSE_TCL_STUBS \
 	-DTclhttpdbin_Init=${LIB}_Init -Wall -Werror
-LDADD+=-L${PREFIX}/lib -ltclstub${TCL_VER} -lcrypt
+LDADD+=-L${LOCALBASE}/lib -ltclstub${TCL_VER} -lcrypt
 
 .PATH:	${.CURDIR}/src ${FILESDIR}
 
