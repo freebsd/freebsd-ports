@@ -1,0 +1,30 @@
+# New ports collection makefile for:	xjumpjump
+# Version required:			0.12
+# Date created:				9 April 1998
+# Whom:					Andrey Zakhvatov
+#
+# $Id$
+#
+
+DISTNAME=	xjumpjump
+PKGNAME=	xjumpjump-0.12
+CATEGORIES=	games x11
+MASTER_SITES=	http://makosteszta.sote.hu/linux/jumpjump/
+EXTRACT_SUFX=	.tgz
+
+MAINTAINER=	andy@icc.surw.chel.su
+
+LIB_DEPENDS=	xforms\\.0\\.:${PORTSDIR}/x11/xforms
+
+USE_X11=	yes
+
+pre-build:
+	@ ${RM} ${WRKSRC}/xjumpjump
+
+do-install:
+	@ ${INSTALL_PROGRAM} ${WRKSRC}/xjumpjump ${PREFIX}/bin
+	@ ${MKDIR} ${PREFIX}/share/xjumpjump
+	@ ${INSTALL_DATA} ${WRKSRC}/READ.ME ${PREFIX}/share/xjumpjump
+	@ ${INSTALL_DATA} ${WRKSRC}/OLVASS.EL ${PREFIX}/share/xjumpjump
+
+.include <bsd.port.mk>
