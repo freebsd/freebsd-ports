@@ -189,6 +189,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|%%MOZILLA%%|${MOZILLA}|g' \
 		-e 's|%%HEADERS_SUFX%%||g' \
 			${WRKSRC}/config/autoconf.mk.in
+	@${FIND} ${WRKSRC}/other-licenses/libical -name "*.c" | ${XARGS} \
+		${REINPLACE_CMD} 's|<malloc.h>|<stdlib.h>|g'
 
 post-build:
 	${SED} -e "s|%%PREFIX%%|${PREFIX}|g" -e "s|%%MOZILLA%%|${MOZILLA}|g" \
