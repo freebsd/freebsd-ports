@@ -1071,6 +1071,7 @@ crypto_libdes	src/crypto/libdes
 crypto_telnet	src/crypto/telnet
 cryptopp	ports/security/cryptopp
 cryptoslam	ports/games/cryptoslam
+cryptplug	ports/security/cryptplug
 crystal		ports/devel/crystal
 cs		ports/devel/cs
 cs-aspell	ports/textproc/cs-aspell
