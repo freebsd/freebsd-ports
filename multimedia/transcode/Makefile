@@ -7,8 +7,11 @@
 
 PORTNAME=	transcode
 DISTVERSION=	1.0.0beta2
+PORTREVISION=	1
 CATEGORIES=	multimedia
-MASTER_SITES=	http://www.jakemsr.com/transcode/
+MASTER_SITES=	http://dl.fkb.wormulon.net/transcode/ \
+		http://dl.kel.wormulon.net/transcode/ \
+		http://www.jakemsr.com/transcode/
 
 MAINTAINER=	hendrik@scholz.net
 COMMENT=	A text-console utility for video stream processing
