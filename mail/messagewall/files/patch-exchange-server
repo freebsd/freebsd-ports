@@ -1,0 +1,20 @@
+--- client.c-orig	Sat Sep 28 12:21:02 2002
++++ client.c	Tue Mar 25 13:57:37 2003
+@@ -384,8 +384,15 @@
+ 				line = client_get_line(n);
+ 				if (line == NULL)
+ 					return 0;
+-				tls_client_write(backends[n].client,line->s,line->l);
+-				tls_client_write(backends[n].client,"\r\n",2);
++				/*
++				 * Patch from Russell Vincent <rv2@sanger.ac.uk>
++				 * Applied by Douglas K. Rand <rand@meridian-enviro.com>
++				 * Works around problem with MS Exchange servers not liking
++				 * the \r\n showing up in a seperate packet.
++				 * See http://messagewall.org/cgi-bin/ezmlm-browse.cgi?command=showthread&list=messagewall-discuss&month=200302&threadid=nnoiaogojliciagmgpbk
++				 */
++				firestring_estr_sprintf(&outline,"%e\r\n", line);
++				tls_client_write(backends[n].client,outline.s,outline.l);
+ 				firestring_estr_0(line);
+ 				fprintf(stderr,"{%d} [%d] BACKEND/ACCEPT: accepted message responsibility: '%s'\n",process,n,line->s);
+ 				if (line->l >= 4 && line->s[3] != '-') {

@@ -7,6 +7,7 @@
 
 PORTNAME=	messagewall
 PORTVERSION=	1.0.8
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.messagewall.org/download/
 DISTNAME=	messagewall-${PORTVERSION}
@@ -24,6 +25,21 @@ CONF1=		messagewall.conf
 WRKSRC=         ${WRKDIR}/messagewall
 GNU_CONFIGURE=  yes
 USE_REINPLACE=	yes
+
+pre-fetch:
+	@${ECHO} ""
+	@${ECHO} "You may use the following build options:"
+	@${ECHO} ""
+	@${ECHO} "    -DMESSAGEWALL_ALLOW_MULT_RCPT to allow multiple recipients"
+	@${ECHO} "	 The profile for the first recipient will be applied to all"
+	@${ECHO} "	 recipients of the message."
+	@${ECHO} ""
+
+# Patch from "Quentin Guernsey" <quentin@wingateweb.com>
+# for details see http://www.messagewall.org/cgi-bin/ezmlm-browse.cgi?command=showmsg&list=messagewall-discuss&month=200303&msgnum=921&threadid=lcjcimckfmdphlhpjjhn
+.if defined(MESSAGEWALL_ALLOW_MULT_RCPT)
+EXTRA_PATCHES+=	${PATCHDIR}/allow-multiple-recipients.patch
+.endif
 
 post-patch:
 	${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
