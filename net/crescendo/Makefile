@@ -6,6 +6,7 @@
 
 PORTNAME=	crescendo
 PORTVERSION=	1.1.7
+PORTREVISION=	1
 CATEGORIES=	net gnome
 # Master Site broken
 #MASTER_SITES=	http://crescendo.lyrical.net/files/
@@ -18,7 +19,6 @@ RUN_DEPENDS=	tf:${PORTSDIR}/net/tinyfugue
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOME=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_ARGS+=	--enable-compile-warnings=yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
@@ -27,11 +27,14 @@ CFLAGS+=	-g
 PLIST_SUB=	DOCDIR=share/doc/${PORTNAME}
 MODIFY=		Makefile.in data/Makefile.in
 
+USE_X_PREFIX=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gnomelibs
+
 pre-patch:
 .for i in ${MODIFY}
 	@${MV} ${WRKSRC}/${i} ${WRKSRC}/${i}.sed
-	${SED} -e 's=$$(datadir)/gnome/=$$(datadir)/=g' \
-		-e 's=$$(prefix)/share/=$$(datadir)/=g' \
+	${SED} -e 's=$$(prefix)/share/=$$(datadir)/gnome/=g' \
 		${WRKSRC}/${i}.sed > ${WRKSRC}/${i}
 .endfor
 
