@@ -7,6 +7,7 @@
 
 PORTNAME=	afbackup
 PORTVERSION=	3.3.5
+PORTREVISION=	1
 CATEGORIES?=	misc
 MASTER_SITES=	ftp://ftp.vic.com/af/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -33,7 +34,7 @@ MAKE_ARGS+=	NO_GUI=yes
 .endif
 USE_AUTOCONF=	yes
 USE_LIBTOOL=	yes
-.if defined(NO_AUTOKEY) && defined(BATCH)
+.if defined(NO_AUTOKEY) && defined(PACKAGE_BUILDING)
 INGORE =	"cannot be build in batch mode whithout automated DES key generation"
 .endif
 
@@ -125,6 +126,12 @@ AFBACKUP_DOCS=		CONFIG \
 			changer.conf.mtx \
 			changer.conf.stctl
 
+.if defined(PACKAGE_BUILDING)
+PKGINSTALL_ENV=		"NONINTERACTIVE=YES"
+.else
+PKGINSTALL_ENV=
+.endif
+
 .if !defined(WITHOUT_SERVER) && !defined(WITHOUT_CLIENT) \
     && !defined(WITHOUT_REXECLINKS) && !defined(NO_GUI) \
     && !defined(NO_DES) && !defined(NO_AUTOKEY)
@@ -144,6 +151,7 @@ pre-fetch:
 
 pre-configure:
 	@${CP} ${FILESDIR}/configure.in ${FILESDIR}/Makefile.in ${WRKSRC}
+	@${CP} ${WRKSRC}/changer.conf.chio ${WRKSRC}/changer.conf
 
 .if !defined(NO_AUTOKEY) && !defined(NO_DES)
 pre-build:
@@ -163,7 +171,7 @@ pre-install:
 	@${ECHO} @cwd ${PREFIX} >>${PLIST}
 	@${ECHO} @dirrm share/doc/${PORTNAME} >>${PLIST}
 .endif
-	@${PKGINSTALL} ${PKGNAME} PRE-INSTALL
+	@$(PKGINSTALL_ENV) ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
 .if !defined(NO_AUTOKEY)
@@ -183,6 +191,5 @@ post-install:
 	@${ECHO} "	you want."
 	@${ECHO} "-------------------------------------------------------------------"
 .endif
-	@${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>
