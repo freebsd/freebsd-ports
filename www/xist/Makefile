@@ -12,7 +12,7 @@ CATEGORIES=	www python
 MASTER_SITES=	ftp://ftp.livinglogic.de/pub/livinglogic/xist/
 DISTNAME=	XIST-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	yinjieh@csie.nctu.edu.tw
 COMMENT=	An XML-based extensible HTML generator
 
 RUN_DEPENDS=	${PYXML} \
