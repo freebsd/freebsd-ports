@@ -1,5 +1,4 @@
 bin/tclCheck
-man/man1/tclCheck.1.gz
 share/doc/tclCheck/COPYRIGHT
 share/doc/tclCheck/README
 @dirrm share/doc/tclCheck

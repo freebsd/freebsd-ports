@@ -1,5 +1,4 @@
 bin/m68k-coff-gdb
-man/man1/m68k-coff-gdb.1.gz
 @unexec install-info --delete %D/info/gdb.info %D/info/dir
 @unexec install-info --delete %D/info/gdbint.info %D/info/dir
 @unexec install-info --delete %D/info/stabs.info %D/info/dir

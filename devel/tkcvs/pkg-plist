@@ -40,8 +40,6 @@ share/tkcvs/bitmaps/tkcvs32.xbm
 share/tkcvs/bitmaps/tkcvs32_mask.xbm
 share/tkcvs/bitmaps/tree16.xbm
 share/tkcvs/bitmaps/update.xbm
-man/man1/tkcvs.1.gz
-man/man1/tkdiff.1.gz
 @dirrm share/tkcvs/bitmaps
 @dirrm share/tkcvs
 @dirrm share/doc/tkcvs

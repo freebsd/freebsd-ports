@@ -2,11 +2,6 @@ bin/asl
 bin/plist
 bin/p2hex
 bin/p2bin
-man/man1/asl.1.gz
-man/man1/p2bin.1.gz
-man/man1/p2hex.1.gz
-man/man1/pbind.1.gz
-man/man1/plist.1.gz
 share/asl/80c50x.inc
 share/asl/80c552.inc
 share/asl/as.msg

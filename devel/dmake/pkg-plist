@@ -1,5 +1,4 @@
 bin/dmake
-man/man1/dmake.1.gz
 lib/dmake/startup/templates/tos/template.mk
 lib/dmake/startup/templates/msdos/borland/bcc30/template.mk
 lib/dmake/startup/templates/msdos/borland/bcc40/template.mk

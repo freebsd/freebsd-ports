@@ -341,26 +341,6 @@ m68k-palmos-coff/lib/libg.sa
 m68k-palmos-coff/lib/libm.a
 m68k-palmos-coff/lib/libmf.a
 m68k-palmos-coff/lib/scrt0.o
-man/man1/build-prc.1.gz
-man/man1/cccp.1.gz
-man/man1/configure.1.gz
-man/man1/m68k-palmos-coff-ar.1.gz
-man/man1/m68k-palmos-coff-as.1.gz
-man/man1/m68k-palmos-coff-c++filt.1.gz
-man/man1/m68k-palmos-coff-gcc.1.gz
-man/man1/m68k-palmos-coff-gdb.1.gz
-man/man1/m68k-palmos-coff-ld.1.gz
-man/man1/m68k-palmos-coff-nlmconv.1.gz
-man/man1/m68k-palmos-coff-nm.1.gz
-man/man1/m68k-palmos-coff-objcopy.1.gz
-man/man1/m68k-palmos-coff-objdump.1.gz
-man/man1/m68k-palmos-coff-ranlib.1.gz
-man/man1/m68k-palmos-coff-size.1.gz
-man/man1/m68k-palmos-coff-strings.1.gz
-man/man1/m68k-palmos-coff-strip.1.gz
-man/man1/obj-res.1.gz
-man/man1/pilrc.1.gz
-man/man1/txt2bitm.1.gz
 @dirrm bin
 @dirrm include/readline
 @dirrm include

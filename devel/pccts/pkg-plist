@@ -29,9 +29,6 @@ include/pccts/AToken.h
 include/pccts/ATokPtr.h
 include/pccts/ASTBase.h
 include/pccts/AParser.h
-man/man1/pccts.1.gz
-man/man1/antlr.1.gz
-man/man1/dlg.1.gz
 share/doc/pccts/history.txt
 share/doc/pccts/history.ps
 share/doc/pccts/SERVICES

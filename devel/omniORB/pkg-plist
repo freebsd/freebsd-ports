@@ -28,11 +28,6 @@ lib/libomniORB2.a
 lib/libomniORB2.so.1.0
 lib/libomnithread.a
 lib/libomnithread.so.1.0
-man/man1/catior.1.gz
-man/man1/genior.1.gz
-man/man1/nameclt.1.gz
-man/man1/omniNames.1.gz
-man/man1/omniidl2.1.gz
 share/doc/omniORB/README.unix
 share/doc/omniORB/omniNames.dvi
 share/doc/omniORB/omniNames.pdf

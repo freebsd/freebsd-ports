@@ -5,7 +5,6 @@ lib/libswigpy.a
 lib/libswigpl.so
 lib/libswigpy.so
 include/swig.h
-man/man1/swig.1.gz
 lib/swig_lib/Makefile
 lib/swig_lib/array.i
 lib/swig_lib/autodoc.i

@@ -111,12 +111,5 @@ lib/libmicox2.0.6.a
 @unexec /sbin/ldconfig -R
 lib/mico-setup.csh
 lib/mico-setup.sh
-man/man1/idl.1.gz
-man/man1/imr.1.gz
-man/man1/nsadmin.1.gz
-man/man5/micorc.5.gz
-man/man8/ird.8.gz
-man/man8/micod.8.gz
-man/man8/nsd.8.gz
 @dirrm include/mico
 @dirrm include/ministl
