@@ -1,5 +1,5 @@
 @comment $FreeBSD$
-@unexec [ ! -f /var/run/exim.pid ] || %%RC_DIR%%/exim%%RC_SUFX%% stop || true
+%%DAEMON%%@unexec [ ! -f /var/run/exim.pid ] || %%RC_DIR%%/exim%%RC_SUFX%% stop || true
 sbin/exim
 sbin/exim-%%EXIM_VERSION%%
 sbin/exim_checkaccess
@@ -44,10 +44,10 @@ sbin/exiwhat
 %%PORTDOCS%%%%EXAMPLESDIR%%/pcretest
 %%PORTDOCS%%%%EXAMPLESDIR%%/transport-filter.pl
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
-etc/periodic/daily/150.exim-tidydb
-etc/periodic/daily/460.exim-mail-rejects
-@unexec rmdir %D/etc/periodic/daily 2>/dev/null || true
-@unexec rmdir %D/etc/periodic 2>/dev/null || true
+%%DAEMON%%etc/periodic/daily/150.exim-tidydb
+%%DAEMON%%etc/periodic/daily/460.exim-mail-rejects
+%%DAEMON%%@unexec rmdir %D/etc/periodic/daily 2>/dev/null || true
+%%DAEMON%%@unexec rmdir %D/etc/periodic 2>/dev/null || true
 @unexec if cmp -s %D/etc/exim/configure %D/etc/exim/configure.default; then rm -f %D/etc/exim/configure; fi
 etc/exim/configure.default
 @exec [ -f %B/configure ] || cp %B/%f %B/configure
@@ -55,6 +55,6 @@ etc/exim/configure.default
 %%SA_EXIM%%etc/exim/sa-exim.conf.default
 %%SA_EXIM%%@exec [ -f %B/sa-exim.conf ] || cp %B/%f %B/sa-exim.conf
 @unexec rmdir %B 2>/dev/null || true
-%%RCORDER%%@cwd /
-etc/rc.d/exim%%RC_SUFX%%
+%%DAEMON%%%%RCORDER%%@cwd /
+%%DAEMON%%etc/rc.d/exim%%RC_SUFX%%
 @unexec rmdir %%LOGDIR%% 2>/dev/null || true

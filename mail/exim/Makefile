@@ -63,12 +63,7 @@ USE_XLIB=	yes
 .endif
 
 USE_BZIP2=	yes
-USE_ICONV=	yes
 USE_REINPLACE=	yes
-
-.if !defined(WITHOUT_PERL)
-USE_PERL5=	yes
-.endif
 
 .if !defined(EXIMON_ONLY)
 MAN8=		exim.8
@@ -96,6 +91,8 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 MAKE_ENV+=	OSTYPE="${OPSYS}" ARCHTYPE="${ARCH}"
 .if defined(EXIMON_ONLY)
 MAKE_ENV+=	INSTALL_ARG="eximon eximon.bin"
+.elif defined(WITHOUT_SUID)
+MAKE_ENV+=	INSTALL_ARG="-no_chown"
 .endif
 
 EXIM_USER?=	mailnull
@@ -234,6 +231,13 @@ WITH_DEFAULT_CHARSET?=	ISO-8859-1
 #
 # Use the readline(3) library for the test expansion option
 #WITH_READLINE=		yes
+#
+# Don't install the exim binary suid root
+#WITHOUT_SUID=		yes
+#
+# Don't install scripts to run exim as a daemon
+# (for example when using option mua_wrapper)
+#WITHOUT_DAEMON=	yes
 
 # You should not need to fiddle with anything below this point.
 
@@ -248,11 +252,12 @@ PLIST_SUB+=	EXISCAN_ACL=""
 PLIST_SUB+=	EXISCAN_ACL="@comment "
 .endif
 
-SEDLIST=	-e 's,XX_PREFIX_XX,${PREFIX},' \
-		-e 's,XX_EXIM_USER_XX,${EXIM_USER},' \
-		-e 's,XX_EXIM_GROUP_XX,${EXIM_GROUP},' \
+SEDLIST+=	-e 's,XX_CFLAGS_XX,${CFLAGS},' \
+		-e 's,XX_PREFIX_XX,${PREFIX},' \
 		-e 's,XX_LOCALBASE_XX,${LOCALBASE},' \
 		-e 's,XX_LOG_FILE_PATH_XX,${LOG_FILE_PATH},' \
+		-e 's,XX_EXIM_USER_XX,${EXIM_USER},' \
+		-e 's,XX_EXIM_GROUP_XX,${EXIM_GROUP},' \
 		-e 's,XX_DEFAULT_CHARSET_XX,${WITH_DEFAULT_CHARSET},'
 
 .if defined(WITH_EXIMON)
@@ -263,13 +268,14 @@ PLIST_SUB+=	EXIMON="@comment "
 .endif
 
 .if !defined(WITHOUT_TLS)
-SEDLIST+=	-e 's,^\# (SUPPORT_TLS=),\1,'
 USE_OPENSSL=	yes
+SEDLIST+=	-e 's,^\# (SUPPORT_TLS=),\1,'
 .else
 SEDLIST+=	-e 's,^(TLS_LIBS=),\# \1,'
 .endif
 
 .if !defined(WITHOUT_PERL)
+USE_PERL5=	yes
 SEDLIST+=	-e 's,^\# (EXIM_PERL=),\1,'
 .endif
 
@@ -278,6 +284,14 @@ SEDLIST+=	-e 's,XX_TCP_WRAPPERS_LIBS_XX,-lwrap,' \
 		-e 's,^\# (USE_TCP_WRAPPERS=),\1,'
 .else
 SEDLIST+=	-e 's,XX_TCP_WRAPPERS_LIBS_XX,,'
+.endif
+
+.if !defined(WITHOUT_ICONV)
+USE_ICONV=	yes
+SEDLIST+=	-e 's,XX_ICONV_LIBS_XX,-L${LOCALBASE}/lib -liconv,' \
+		-e 's,^\# (HAVE_ICONV=),\1,'
+.else
+SEDLIST+=	-e 's,XX_ICONV_LIBS_XX,,'
 .endif
 
 .if defined(WITH_LDAP) || defined(LDAP_LIB_TYPE) \
@@ -388,7 +402,7 @@ SEDLIST+=	-e 's,XX_RADIUS_LIBS_XX,-lradius,' \
 .elif ${WITH_RADIUS_TYPE:L} == radiusclient
 LIB_DEPENDS+=	radiusclient.0:${PORTSDIR}/net/radiusclient
 SEDLIST+=	-e 's,XX_RADIUS_LIBS_XX,-L${LOCALBASE}/lib -lradiusclient,' \
-		-e 's,^\# (RADIUS_CONFIG_FILE=).*,\1${LOCALBASE}/radiusclient.conf,' \
+		-e 's,^\# (RADIUS_CONFIG_FILE=).*,\1${LOCALBASE}/etc/radiusclient.conf,' \
 		-e 's,^\# (RADIUS_LIB_TYPE=).*,\1RADIUSCLIENT,'
 .else
 IGNORE=		WITH_RADIUS_TYPE must be either RADLIB or RADIUSCLIENT
@@ -497,7 +511,7 @@ SEDLIST+=	-e 's,^\# (USE_READLINE=),\1,'
 .error EXIMON_ONLY is not user settable
 .endif
 
-.if !defined(EXIMON_ONLY)
+.if !defined(EXIMON_ONLY) && !defined(WITHOUT_DAEMON)
 USE_RC_SUBR=	yes
 .if defined(WITH_RCORDER) && ${OSVERSION} >= 500037
 RC_DIR=		/etc/rc.d
@@ -515,6 +529,9 @@ PLIST_SUB+=	RCORDER="@comment " \
 SED_SCRIPT+=	-e 's,%%RC_SUBR%%,${RC_SUBR},g' \
 		-e 's,%%RC_DIR%%,${RC_DIR},g' \
 		-e 's,%%RC_SUFX%%,${RC_SUFX},g'
+PLIST_SUB+=	DAEMON=""
+.else
+PLIST_SUB+=	DAEMON="@comment "
 .endif
 
 .if ${OSVERSION} < 400014
@@ -589,11 +606,13 @@ pre-install:
 	@${SETENV} PKG_PREFIX="${PREFIX}" PKG_DESTDIR="${DESTDIR}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
+.if !defined(WITHOUT_DAEMON)
 	@${INSTALL_SCRIPT} ${WRKDIR}/exim.sh ${DESTDIR}${RC_DIR}/exim${RC_SUFX}
 	@${MKDIR} ${DESTDIR}${PREFIX}/etc/periodic/daily
 .for script in ${DAILY_SCRIPTS}
 	@${INSTALL_SCRIPT} ${WRKDIR}/${script}.sh ${DESTDIR}${PREFIX}/etc/periodic/daily/${script}
 .endfor
+.endif
 	@[ -f ${DESTDIR}${PREFIX}/etc/exim/configure ] || \
 		${CP} ${DESTDIR}${PREFIX}/etc/exim/configure.default ${DESTDIR}${PREFIX}/etc/exim/configure
 .for manfile in ${MAN8}
