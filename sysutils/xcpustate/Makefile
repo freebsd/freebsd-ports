@@ -3,11 +3,11 @@
 # Date created:		31-Dec-1995
 # Whom:                 David O'Brien <obrien@cs.ucdavis.edu>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1996/02/29 01:57:44 asami Exp $
 #
 
 DISTNAME=	xcpustate-2.1
-CATEGORIES+=	sysutils
+CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.cdf.toronto.edu/pub/xcpustate/  \
 		ftp://ftp.x.org/contrib/utilities/xcpustate/
 EXTRACT_SUFX=	.shar.gz
