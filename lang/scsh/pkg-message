@@ -1,0 +1,21 @@
+Differences between FreeBSD port and generic scsh release:
+----------------------------------------------------------
+
+1) When hitting C-d (end-of-file), scsh asks 100 times for
+confirmation. I changed the default to do this just once. Set constant
+*y-or-n-eof-count* in scsh/rw.scm to change it.
+
+2) The original scsh sends a mail to the scsh authors every time you
+make the package. The FreeBSD port/package doesn't. The authors of scsh
+would appreciate it if you do a `(cd work/scsh-0.4.4 && make .notify)`
+after you build the port.  If you installed a binary package, this is
+not possible.
+
+3) A symbolic link ${PREFIX}/share/doc/scsh to the documentation is
+created.
+
+4) Some basic description text files from the distribution base dir
+are copied to lib/doc. The emacs directory is copied into
+lib/scsh/emacs. scsh's default is not to install these files.
+
+5) The port uses /var/tmp instead of /usr/tmp where possible.
