@@ -153,6 +153,7 @@
     SUBDIR += libfpx
     SUBDIR += libgdgeda
     SUBDIR += libggi
+    SUBDIR += libgnomecanvas
     SUBDIR += libgrass5
     SUBDIR += libimg
     SUBDIR += liblug

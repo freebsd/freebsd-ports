@@ -1,5 +1,61 @@
-etc/gnomecanvaspixbufConf.sh
-include/gdk-pixbuf-1.0/gdk-pixbuf/gnome-canvas-pixbuf.h
-lib/libgnomecanvaspixbuf.a
-lib/libgnomecanvaspixbuf.so
-lib/libgnomecanvaspixbuf.so.1
+include/libgnomecanvas-2.0/libgnomecanvas/gnome-canvas-bpath.h
+include/libgnomecanvas-2.0/libgnomecanvas/gnome-canvas-clipgroup.h
+include/libgnomecanvas-2.0/libgnomecanvas/gnome-canvas-line.h
+include/libgnomecanvas-2.0/libgnomecanvas/gnome-canvas-path-def.h
+include/libgnomecanvas-2.0/libgnomecanvas/gnome-canvas-pixbuf.h
+include/libgnomecanvas-2.0/libgnomecanvas/gnome-canvas-polygon.h
+include/libgnomecanvas-2.0/libgnomecanvas/gnome-canvas-rect-ellipse.h
+include/libgnomecanvas-2.0/libgnomecanvas/gnome-canvas-rich-text.h
+include/libgnomecanvas-2.0/libgnomecanvas/gnome-canvas-shape.h
+include/libgnomecanvas-2.0/libgnomecanvas/gnome-canvas-text.h
+include/libgnomecanvas-2.0/libgnomecanvas/gnome-canvas-util.h
+include/libgnomecanvas-2.0/libgnomecanvas/gnome-canvas-widget.h
+include/libgnomecanvas-2.0/libgnomecanvas/gnome-canvas.h
+include/libgnomecanvas-2.0/libgnomecanvas/libgnomecanvas.h
+lib/libglade/2.0/libcanvas.so
+lib/libgnomecanvas-2.a
+lib/libgnomecanvas-2.so
+lib/libgnomecanvas-2.so.0
+libdata/pkgconfig/libgnomecanvas-2.0.pc
+share/doc/libgnomecanvas/c4.html
+share/doc/libgnomecanvas/index.html
+share/doc/libgnomecanvas/index.sgml
+share/doc/libgnomecanvas/libgnomecanvas-gnome-canvas-i18n.html
+share/doc/libgnomecanvas/libgnomecanvas-gnome-canvas-marshal.html
+share/doc/libgnomecanvas/libgnomecanvas-gnome-canvas-path-def.html
+share/doc/libgnomecanvas/libgnomecanvas-gnome-canvas-util.html
+share/doc/libgnomecanvas/libgnomecanvas-gnomecanvas.html
+share/doc/libgnomecanvas/libgnomecanvas-gnomecanvasbpath.html
+share/doc/libgnomecanvas/libgnomecanvas-gnomecanvasclipgroup.html
+share/doc/libgnomecanvas/libgnomecanvas-gnomecanvasellipse.html
+share/doc/libgnomecanvas/libgnomecanvas-gnomecanvasline.html
+share/doc/libgnomecanvas/libgnomecanvas-gnomecanvaspixbuf.html
+share/doc/libgnomecanvas/libgnomecanvas-gnomecanvaspolygon.html
+share/doc/libgnomecanvas/libgnomecanvas-gnomecanvasrichtext.html
+share/doc/libgnomecanvas/libgnomecanvas-gnomecanvasshape.html
+share/doc/libgnomecanvas/libgnomecanvas-gnomecanvastext.html
+share/doc/libgnomecanvas/libgnomecanvas-gnomecanvaswidget.html
+share/doc/libgnomecanvas/libgnomecanvas-libgnomecanvas.html
+share/locale/az/LC_MESSAGES/libgnomecanvas-2.0.mo
+share/locale/es/LC_MESSAGES/libgnomecanvas-2.0.mo
+share/locale/fr/LC_MESSAGES/libgnomecanvas-2.0.mo
+share/locale/it/LC_MESSAGES/libgnomecanvas-2.0.mo
+share/locale/ja/LC_MESSAGES/libgnomecanvas-2.0.mo
+share/locale/ms/LC_MESSAGES/libgnomecanvas-2.0.mo
+share/locale/nl/LC_MESSAGES/libgnomecanvas-2.0.mo
+share/locale/nn/LC_MESSAGES/libgnomecanvas-2.0.mo
+share/locale/no/LC_MESSAGES/libgnomecanvas-2.0.mo
+share/locale/pt/LC_MESSAGES/libgnomecanvas-2.0.mo
+share/locale/ru/LC_MESSAGES/libgnomecanvas-2.0.mo
+share/locale/sk/LC_MESSAGES/libgnomecanvas-2.0.mo
+share/locale/sv/LC_MESSAGES/libgnomecanvas-2.0.mo
+share/locale/ta/LC_MESSAGES/libgnomecanvas-2.0.mo
+share/locale/tr/LC_MESSAGES/libgnomecanvas-2.0.mo
+share/locale/uk/LC_MESSAGES/libgnomecanvas-2.0.mo
+share/locale/wa/LC_MESSAGES/libgnomecanvas-2.0.mo
+share/locale/zh_TW/LC_MESSAGES/libgnomecanvas-2.0.mo
+@dirrm share/doc/libgnomecanvas
+@dirrm lib/libglade/2.0
+@dirrm lib/libglade
+@dirrm include/libgnomecanvas-2.0/libgnomecanvas
+@dirrm include/libgnomecanvas-2.0
