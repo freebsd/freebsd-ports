@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	apache
-PORTVERSION=	2.0.39
-PORTREVISION=	7
+PORTVERSION=	2.0.40
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://www.apache.org/dist/httpd/ \
 		http://apache.mirrorcentral.com/dist/httpd/ \
@@ -44,7 +43,8 @@ CONFIGURE_ARGS=	--prefix=${PREFIX_RELDEST} \
 		--includedir=${PREFIX_RELDEST}/include/apache2
 CONFIGURE_ENV=	CC="${CC}" CPPFLAGS="${CPPFLAGS}" CFLAGS="${CFLAGS}" \
 		LDFLAGS="${LDFLAGS}" CONFIG_SHELL="${SH}"
-SHARED_MODULES= all cgid deflate ext_filter
+SHARED_MODULES= all cgid deflate ext_filter proxy proxy-connect proxy-ftp \
+		proxy-http
 PREFIX_RELDEST=	${PREFIX:S,^${DESTDIR},,}
 RC_SUB=		-e 's,@@PREFIX@@,${PREFIX_RELDEST},g'
 MAKE_ENV+=	DESTDIR=${DESTDIR} EXPR_COMPAT=yes
@@ -52,6 +52,12 @@ MAKE_ENV+=	DESTDIR=${DESTDIR} EXPR_COMPAT=yes
 .if defined(NOPORTDOCS)
 MAKE_ENV+=	NOPORTDOCS=yes
 .endif
+
+.if !defined(WITHOUT_SSL)
+USE_OPENSSL=	yes
+.endif
+
+.include <bsd.port.pre.mk>
 
 .if defined(WITH_SUEXEC)
 SUEXEC_DOCROOT?= ${PREFIX_RELDEST}/www/data
@@ -72,11 +78,6 @@ PLIST_SUB+=	SUEXEC="@comment "
 .if ${WITH_MPM} != "prefork"
 PKGNAMESUFFIX=	-${WITH_MPM}
 WITH_THREADS=	yes
-.if !defined(FORCE_THREADING_MPM)
-FORBIDDEN=	"doesn't support threads on FreeBSD, officially. If you are\
-		prepared to risk unintended problems, make again with\
-		-DFORCE_THREADING_MPM"
-.endif
 .if ${WITH_MPM} == "worker"
 PLIST_SUB+=	PREFORK="@comment " WORKER=""
 .else
@@ -89,29 +90,26 @@ PLIST_SUB+=	PREFORK="" WORKER="@comment "
 .if defined(WITH_THREADS)
 CONFIGURE_ARGS+= --enable-threads
 CFLAGS+=	-DFREEBSD_THREAD_HACK
+SHARED_MODULES+= cache file-cache disk-cache mem_cache
+PLIST_SUB+=	THREADS=""
+.else
+PLIST_SUB+=	THREADS="@comment "
 .endif
 
-.if !defined(WITHOUT_SSL) && exists(/usr/lib/libcrypto.so)
+.if !defined(WITHOUT_SSL)
 SHARED_MODULES+= ssl
+CONFIGURE_ARGS+= --with-ssl=${OPENSSLBASE}
 PLIST_SUB+=	MODSSL=""
+_SSLBUGGY!=	${OPENSSLBASE}/bin/openssl version | \
+		${EGREP} "OpenSSL ([1-9]+)|([0\.9\.[6-9][e-z])|(0\.[1-9][0-9]+)" \
+		|| ${TRUE}
+.if empty(_SSLBUGGY)
+IGNORE=		"requires OpenSSL 0.9.6e or higher. Upgrade your base system"
+.endif
 RC_SUB+=	-e 's,@@SSL@@,ssl,g'
 .else
 PLIST_SUB+=	MODSSL="@comment "
 RC_SUB+=	-e 's,@@SSL@@,,g'
-.endif
-
-.if !defined(WITHOUT_CACHE) && defined(WITH_THREADS)
-SHARED_MODULES+= cache file-cache disk-cache mem_cache
-PLIST_SUB+=	MODCACHE=""
-.else
-PLIST_SUB+=	MODCACHE="@comment "
-.endif
-
-.if !defined(WITHOUT_PROXY)
-SHARED_MODULES+= proxy proxy-connect proxy-ftp proxy-http
-PLIST_SUB+=	MODPROXY=""
-.else
-PLIST_SUB+=	MODPROXY="@comment "
 .endif
 
 .if defined(WITH_EXPERIMENTAL)
@@ -137,7 +135,7 @@ post-patch:
 	  ${REINPLACE_CMD} -e 's,apache_pb,icons/freebsd.gif"\
 		ALT="[Powered by FreeBSD]"><IMG SRC="apache_pb2_ani,g' $$f \
 	 ); done
-	@${FIND} ${WRKSRC} \( -name "*.orig" -or -name "*.bak" \) -exec ${RM} -f {} \;
+	@${RM} -f ${WRKSRC}/docs/docroot/*.bak
 	@${SED} ${RC_SUB} ${FILESDIR}/apache.sh >${WRKDIR}/apache2.sh
 	@${SED} ${RC_SUB} ${FILESDIR}/config.layout >>${WRKSRC}/config.layout
 	@${RM} -f ${WRKSRC}/docs/manual/index.html.ko.euc-kr
@@ -151,4 +149,4 @@ post-install:
 		${INSTALL_SCRIPT} -m 751 ${WRKDIR}/apache2.sh ${PREFIX}/etc/rc.d/apache2.sh; \
 	fi
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
