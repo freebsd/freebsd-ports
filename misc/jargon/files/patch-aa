@@ -1,0 +1,37 @@
+--- jargon-search.orig	Tue Apr  6 12:01:51 1999
++++ jargon-search	Thu Apr 15 13:24:20 1999
+@@ -10,8 +10,8 @@
+ 
+ # The document directory of the server, with *no* trailing slash.  It sucks
+ # that we can't pull this out of the environment, you may have to change it.
+-# (The default /home/httpd/html works for Apache running under Red Hat Linux)
+-$html_base='/home/httpd/html';
++# (The default /usr/local/www/data works for Apache running under Red Hat Linux)
++$html_base='/usr/local/www/data';
+ 
+ # The relative location of the Jargon File files.
+ $jargon_path="/jargon/html";
+@@ -356,10 +356,12 @@
+     $server = $ENV{'SERVER_NAME'};
+ 
+     $match=0;
+-    foreach $piece (split('\n', `ls -1 ${html_base}${jargon_path}/*/*.html`))
++    $ENV{'PATH'} = '/bin:/usr/bin';
++	chdir("${html_base}${jargon_path}");
++    foreach $piece (split('\n', `ls -1 */*.html`))
+     {
+ #	print "Piece: $piece<BR>\n";
+-	$file=substr($piece,length($html_base)+1);
++#	$file=substr($piece,length($html_base)+1);
+ #	print "File: $file<BR>\n";
+ 	open(PART, $piece);
+ 	$tag = "";
+@@ -376,7 +378,7 @@
+ 	    if ($tag && /$key/)
+ 	    {
+ 		$match++;
+-		print "<A HREF=\"http://${server}/${file}#${tag}\">${name}</A> line ${offset}<BR>\n";
++		print "<A HREF=\"http://${server}${jargon_path}/${piece}#${tag}\">${name}</A> line ${offset}<BR>\n";
+ 	    }
+ 	}
+ 	close(PART);

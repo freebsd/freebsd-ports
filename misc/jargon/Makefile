@@ -3,33 +3,32 @@
 # Date created: 	11 July 1998
 # Whom:			moeding
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/07/13 03:58:11 mph Exp $
 #
 
-DISTNAME=	jarg400.info
-PKGNAME=	jargon-4.0.0
+DISTNAME=	jargon-4.1.0
 CATEGORIES=	misc
-MASTER_SITES=	http://sagan.earthspace.net/jargon/
-EXTRACT_SUFX=	.gz
+MASTER_SITES=	http://www.tuxedo.org/~esr/jargon/
 
 MAINTAINER=	s.moeding@ndh.net
 
-NO_WRKSUBDIR=	YES
-EXTRACT_CMD=	${GZCAT}
-EXTRACT_BEFORE_ARGS=	# None
-EXTRACT_AFTER_ARGS=	> ${WRKSRC}/jargon.info
 NO_BUILD=	YES
 
-do-install:
-	@${INSTALL_DATA} ${WRKSRC}/jargon.info ${PREFIX}/info
+FILES=		jarghist.html mirroring.html alternates.html jarginfo.html mirrorlist.html awards.html quoting.html search.html jargon-upd.lst submissions.html index.html jargtxt.html
 
-post-install:
-	@if [ ! -f ${PREFIX}/info/dir ]; then \
-	  ${SED} -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
-	fi
-	@install-info \
-	  --section="Miscellaneous" \
-	  --entry="* Jargon: (jargon).             The hacker's dictionary." \
-	  ${PREFIX}/info/jargon.info ${PREFIX}/info/dir
+post-patch:
+	/usr/bin/perl -pi -e 's,/home/httpd/html,${PREFIX}/www/data,' ${WRKSRC}/jargon-search
+do-install:
+	@${MKDIR} ${PREFIX}/www/cgi-bin
+	@${INSTALL_SCRIPT} ${WRKSRC}/jargon-search ${PREFIX}/www/cgi-bin
+	@${MKDIR} ${PREFIX}/www/data/jargon
+.for file in ${FILES}
+	@${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/www/data/jargon
+.endfor
+	@${INSTALL_DATA} ${DISTDIR}/${DISTFILES} ${PREFIX}/www/data/jargon
+	@${CP} -R ${WRKSRC}/graphics ${PREFIX}/www/data/jargon/
+	@${CP} -R ${WRKSRC}/html ${PREFIX}/www/data/jargon/
+	@${MKDIR} ${PREFIX}/share/doc/jargon
+	@${INSTALL_DATA} ${WRKSRC}/jargon-README ${PREFIX}/share/doc/jargon
 
 .include <bsd.port.mk>
