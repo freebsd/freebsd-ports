@@ -65,6 +65,5 @@
     SUBDIR += pycodec
     SUBDIR += texinfo
     SUBDIR += uniksc
-    SUBDIR += w3m
 
 .include <bsd.port.subdir.mk>
