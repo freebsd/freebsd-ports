@@ -1,0 +1,11 @@
+--- configure.orig	Sat Nov 29 22:39:23 2003
++++ configure	Wed May 26 15:31:52 2004
+@@ -13768,7 +13768,7 @@
+ #define RUDIMENTS_VERSION "$RUDIMENTS_VERSION"
+ _ACEOF
+ 
+-SONAME_VERSION_INFO="1:0:0"
++SONAME_VERSION_INFO="0:0:0"
+ 
+ 
+ 
