@@ -16,7 +16,7 @@ MASTER_SITES=	http://www.erlang.org/contrib/ \
 DISTNAME=	slang-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	chris_pressey@yahoo.ca
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SLang binding for Erlang/OTP
 
 BUILD_DEPENDS=	erlc:${PORTSDIR}/lang/erlang

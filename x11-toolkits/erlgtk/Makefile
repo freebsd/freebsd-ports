@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	erlgtk
 DIST_SUBDIR=	erlang
 
-MAINTAINER=	chris_pressey@yahoo.ca
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK+ binding for Erlang/OTP
 
 BUILD_DEPENDS=	erlc:${PORTSDIR}/lang/erlang

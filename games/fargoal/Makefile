@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	squidfighter
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	chris_pressey@yahoo.ca
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Remake of classic roguelike game "Sword of Fargoal"
 
 LIB_DEPENDS=	alleg.41:${PORTSDIR}/devel/allegro
