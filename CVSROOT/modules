@@ -699,6 +699,7 @@ chimera2	ports/www/chimera2
 ching		src/games/ching
 chio		src/bin/chio
 chipmunk	ports/cad/chipmunk
+chitex		ports/chinese/chitex
 chkey		src/usr.bin/chkey
 chkgrp		src/usr.sbin/chkgrp
 chkrootkit	ports/security/chkrootkit
