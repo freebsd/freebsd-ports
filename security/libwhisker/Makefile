@@ -6,15 +6,13 @@
 #
 
 PORTNAME=	libwhisker
-PORTVERSION= 	1.6
-PORTREVISION=	1
-CATEGORIES= 	security perl5
-
-MAINTAINER= 	jan@atstake.com
-COMMENT=	Perl module to create HTTP test scripts
-
+PORTVERSION=	1.8
+CATEGORIES=	security perl5
 MASTER_SITES=	http://www.wiretrip.net/rfp/${PORTNAME}/
 DISTNAME=	${PORTNAME}-current
+
+MAINTAINER=	jan@atstake.com
+COMMENT=	Perl module to create HTTP test scripts
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
@@ -33,28 +31,28 @@ do-install:
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/libwhisker \
-		&& ${CHMOD} 755 ${PREFIX}/share/doc/libwhisker
-	@${MKDIR} ${PREFIX}/share/doc/libwhisker/docs \
-		&& ${CHMOD} 755 ${PREFIX}/share/doc/libwhisker/docs
-	@${MKDIR} ${PREFIX}/share/doc/libwhisker/imgs \
-		&& ${CHMOD} 755 ${PREFIX}/share/doc/libwhisker/imgs
-	@${MKDIR} ${PREFIX}/share/doc/libwhisker/scripts \
-		&& ${CHMOD} 755 ${PREFIX}/share/doc/libwhisker/scripts
+	@${MKDIR} ${DOCSDIR} \
+		&& ${CHMOD} 755 ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}/docs \
+		&& ${CHMOD} 755 ${DOCSDIR}/docs
+	@${MKDIR} ${DOCSDIR}/imgs \
+		&& ${CHMOD} 755 ${DOCSDIR}/imgs
+	@${MKDIR} ${DOCSDIR}/scripts \
+		&& ${CHMOD} 755 ${DOCSDIR}/scripts
 .for i in ${DOC1}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/share/doc/libwhisker/
+	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
 .for i in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/share/doc/libwhisker/docs/
+	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}/docs/
 .endfor
 .for i in ${IMGS}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/share/doc/libwhisker/imgs/
+	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}/imgs/
 .endfor
 .for i in ${SCRIPTS}
-	${INSTALL_SCRIPT} ${WRKSRC}/${i} ${PREFIX}/share/doc/libwhisker/scripts/
+	${INSTALL_SCRIPT} ${WRKSRC}/${i} ${DOCSDIR}/scripts/
 .endfor
-	${INSTALL_SCRIPT} ${WRKSRC}/api_demo.pl ${PREFIX}/share/doc/libwhisker/
-	${INSTALL_SCRIPT} ${WRKSRC}/simple.pl ${PREFIX}/share/doc/libwhisker/
+	${INSTALL_SCRIPT} ${WRKSRC}/api_demo.pl ${DOCSDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/simple.pl ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
