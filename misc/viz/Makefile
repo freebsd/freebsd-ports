@@ -12,8 +12,6 @@ MASTER_SITES=		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	fenner
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	bjn@visi.com
-
 MAN1=		viz.1 inviz.1
 
 .include <bsd.port.mk>

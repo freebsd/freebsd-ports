@@ -12,8 +12,6 @@ MASTER_SITES=	http://www.unixtools.org/cgiwrap/dist/ \
 		ftp://ftp.umr.edu/pub/cgi/cgiwrap/ \
 		ftp://concert.cert.dfn.de/pub/tools/net/cgiwrap/
 
-MAINTAINER=	bjn@visi.com
-
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	${HTTPDUSER} ${WITHOUTCHECK} --with-install-dir=${INSTALLDIR} \
 		--with-install-group=${BINGRP} --with-cgi-dir=${CGIDIR}
