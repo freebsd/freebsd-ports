@@ -1,0 +1,10 @@
+--- platform.h.orig	Thu Dec 17 11:20:40 1998
++++ platform.h	Wed Dec 23 17:04:27 1998
+@@ -4,6 +4,7 @@
+   See tidy.c for the copyright notice.
+ */
+ 
++#include <sys/types.h>
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>
