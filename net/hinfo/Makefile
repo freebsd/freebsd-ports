@@ -8,8 +8,10 @@
 PORTNAME=	hinfo
 PORTVERSION=	1.0
 CATEGORIES=	net perl5
-MASTER_SITES=	http://www.blars.org/ \
-		http://www.lonesome.com/FreeBSD/distfiles/
+# note: the "true" MASTER_SITE is http://www.blars.org, but
+# due to policies on that site, it is not reachable from the
+# FreeBSD build machines.
+MASTER_SITES=	http://www.lonesome.com/FreeBSD/distfiles/
 
 MAINTAINER=	linimon@lonesome.com
 COMMENT=	Utility primarily designed to find the owner of an IP block
@@ -34,7 +36,7 @@ NO_BUILD=	yes
 # already be patched for you.
 post-extract:
 .for file in ${HINFO_SCRIPTS}
-	${REINPLACE_CMD} -e 's|/usr/bin/|${PREFIX}/bin/|g' ${WRKSRC}/${file}
+	${REINPLACE_CMD} -E '1s|^#!.+|#!${PERL}|' ${WRKSRC}/${file}
 .endfor
 
 do-install:
