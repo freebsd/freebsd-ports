@@ -8,7 +8,7 @@
 PORTNAME=	byaccr
 PORTVERSION=	0.1
 CATEGORIES=	devel ruby
-MASTER_SITES=	http://kt-www.jaist.ac.jp/~ttate/ftp/
+MASTER_SITES=	http://ttsky.net/src/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
