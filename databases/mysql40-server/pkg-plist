@@ -40,7 +40,6 @@ lib/mysql/libmystrings.a
 lib/mysql/libmysys.a
 lib/mysql/libnisam.a
 libexec/mysqld
-man/man1/mysql.1.gz
 share/doc/mysql/include.texi
 share/doc/mysql/manual.html
 share/doc/mysql/manual.ps
