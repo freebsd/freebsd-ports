@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	httplog
-PORTVERSION=	1.9
+PORTVERSION=	2.1
 CATEGORIES=	sysutils www
 MASTER_SITES=	http://nutbar.chemlab.org/downloads/programs/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/
@@ -17,19 +17,21 @@ MAN8=	httplog.8
 
 DOCS=	ChangeLog README
 
+HAS_CONFIGURE=	yes
+CONFIGURE_ARGS=	--prefix=${PREFIX}
+
 post-patch:
-	(cd ${WRKSRC} && printf \
-	"#define VERSION \"1.9\"\n#define USE_ZLIB\n#define USE_DEBUG\n" \
-	>defines.h && \
+	(cd ${WRKSRC} && \
 	${PERL} -pi -e "s@<wait.h>@<sys/wait.h>@" httplog.c && \
-	${PERL} -pi -e "s@/var/lib/apache/bin/httplog@${PREFIX}/bin/httplog@" \
+	${PERL} -pi -e \
+		"s@/var/lib/apache/bin/httplog@${PREFIX}/sbin/httplog@" \
 	httplog.8)
 
 do-build:
 	(cd ${WRKSRC} && ${CC} ${CFLAGS} -o httplog httplog.c -lz)
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/httplog ${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/httplog ${PREFIX}/sbin/
 	${INSTALL_MAN} ${WRKSRC}/httplog.8 ${PREFIX}/man/man8/
 .if !defined(NOPORTDOCS)
 	${INSTALL} -d -o root -g wheel -m 0755 ${DOCSDIR}
