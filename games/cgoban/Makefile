@@ -14,13 +14,17 @@ MASTER_SITE_SUBDIR=	cgoban1
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Internet Go Server client and game editor
 
-BROKEN=		Does not compile, will be removed after Feb 2
-
-GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 USE_X_PREFIX=	yes
-USE_AUTOMAKE=	yes
-ALL_TARGET=
+USE_GMAKE=	yes
+USE_AUTOCONF_VER=	253
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
+		AUTOHEADER="${TRUE}"
+
 MAN6=		cgoban.6
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/src/cgoban ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/man6/cgoban.6 ${MANPREFIX}/man/man6
 
 .include <bsd.port.mk>
