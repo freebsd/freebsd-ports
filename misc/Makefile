@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.159 1998/08/10 00:49:36 steve Exp $
+# $Id: Makefile,v 1.160 1998/08/10 02:51:42 obrien Exp $
 #
 
     SUBDIR += acron
@@ -43,6 +43,7 @@
     SUBDIR += p5-Business-CreditCard
     SUBDIR += p5-Locale-Codes
     SUBDIR += p5-Search
+    SUBDIR += qclock
     SUBDIR += qstat
     SUBDIR += rpm
     SUBDIR += screen
