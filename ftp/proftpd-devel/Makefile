@@ -3,7 +3,7 @@
 # Date created:		26 January 1998
 # Whom:			Stephane Legrand
 #
-# $Id: Makefile,v 1.4 1998/07/02 11:06:26 vanilla Exp $
+# $Id: Makefile,v 1.5 1998/12/14 22:13:37 billf Exp $
 #
 
 DISTNAME=	proftpd-1.2.0pre1
@@ -19,7 +19,7 @@ MAN8=	proftpd.8 ftpshut.8
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
-CONFIGURE_ARGS+=	--localstatedir=/var/run \
+CONFIGURE_ARGS=	--localstatedir=/var/run \
 			--with-modules=mod_ratio
 
 post-configure:
