@@ -2,17 +2,6 @@ bin/ghchtk
 bin/ghcihtk
 lib/uni/bdb-package.options.in
 lib/uni/configure
-lib/uni/davinci/DaVinciBasic.hi
-lib/uni/davinci/DaVinciGraph.hi
-lib/uni/davinci/DaVinciTypes.hi
-lib/uni/davinci/libuni-davinci.a
-lib/uni/davinci/test/MainDepend.hs
-lib/uni/davinci/test/TestDaVinci.hs
-lib/uni/davinci/test/TestDaVinciDouble.hs
-lib/uni/davinci/test/TestGraphEditor.hs
-lib/uni/davinci/test/TestGraphEditor2.hs
-lib/uni/davinci/test/TestGraphEditorRemote.hs
-lib/uni/davinci/uni-davinci.o
 lib/uni/events/After.hi
 lib/uni/events/Cells.hi
 lib/uni/events/Channels.hi
@@ -43,30 +32,8 @@ lib/uni/events/test/TestSyncRec.hs
 lib/uni/events/test/libuni-events-test.a
 lib/uni/events/test/uni-events-test.o
 lib/uni/events/uni-events.o
-lib/uni/graphs/DisplayGraph.hi
-lib/uni/graphs/GetAttributes.hi
-lib/uni/graphs/Graph.hi
-lib/uni/graphs/GraphConfigure.hi
-lib/uni/graphs/GraphConnection.hi
-lib/uni/graphs/GraphDisp.hi
-lib/uni/graphs/GraphEditor.hi
-lib/uni/graphs/GraphEditorRemote.hi
-lib/uni/graphs/GraphEditorService.hi
-lib/uni/graphs/MainGraphEditorServer.hs
-lib/uni/graphs/NewNames.hi
-lib/uni/graphs/RemoveAncestors.hi
-lib/uni/graphs/SimpleGraph.hi
-lib/uni/graphs/libuni-graphs.a
-lib/uni/graphs/test/DrawDepend.hi
-lib/uni/graphs/test/GraphDispTest.hi
-lib/uni/graphs/test/Hasse.hi
-lib/uni/graphs/test/RemoveAncestorsTest.hi
-lib/uni/graphs/test/TestGetAttributes.hs
-lib/uni/graphs/test/TestGetAttributes2.hs
-lib/uni/graphs/test/TopSort.hi
-lib/uni/graphs/test/libuni-graphs-test.a
-lib/uni/graphs/test/uni-graphs-test.o
-lib/uni/graphs/uni-graphs.o
+lib/uni/ghchtk.export
+lib/uni/ghcihtk.export
 lib/uni/htk/examples/canvas/Mainblobs.hs
 lib/uni/htk/examples/canvas/MaincanvasEx.hs
 lib/uni/htk/examples/canvas/MaingoBoard.hs
@@ -86,6 +53,7 @@ lib/uni/htk/examples/simple/Mainhello3.hs
 lib/uni/htk/examples/simple/Mainhello4.hs
 lib/uni/htk/examples/simple/MainlistEx.hs
 lib/uni/htk/examples/simple/MainmenuEx.hs
+lib/uni/htk/examples/simple/MainsimpleButton.hs
 lib/uni/htk/examples/simple/Maintexttag.hs
 lib/uni/htk/examples/tix/Mainpanedwindow.hs
 lib/uni/htk/examples/tix/Maintixwidgets.hs
@@ -93,7 +61,10 @@ lib/uni/htk/examples/toolkit/Maindialog.hs
 lib/uni/htk/examples/toolkit/Mainfiledialog.hs
 lib/uni/htk/examples/toolkit/Mainlogwin.hs
 lib/uni/htk/examples/toolkit/Mainmarkup.hs
+lib/uni/htk/examples/toolkit/Mainnewfiledialog.hs
+lib/uni/htk/examples/toolkit/MainsimpleListBox.hs
 lib/uni/htk/examples/toolkit/Mainsimpleform.hs
+lib/uni/htk/examples/toolkit/Mainsimpleform2.hs
 lib/uni/htk/examples/toolkit/Mainsimplemenu.hs
 lib/uni/htk/examples/toolkit/Mainspinbutton.hs
 lib/uni/htk/examples/toolkit/Maintreelist.hs
@@ -186,6 +157,7 @@ lib/uni/htk/imports/SelectBox.hi
 lib/uni/htk/imports/Selection.hi
 lib/uni/htk/imports/Separator.hi
 lib/uni/htk/imports/SimpleForm.hi
+lib/uni/htk/imports/SimpleListBox.hi
 lib/uni/htk/imports/Slider.hi
 lib/uni/htk/imports/Space.hi
 lib/uni/htk/imports/SpinButton.hi
@@ -218,8 +190,10 @@ lib/uni/includes/copy_file.h
 lib/uni/includes/default_options.h
 lib/uni/includes/new_object.h
 lib/uni/includes/runWish.h
+lib/uni/install
 lib/uni/mk/FixFileNames
 lib/uni/mk/boilerplate.mk.in
+lib/uni/mk/latex.mk
 lib/uni/mk/machinedep.mk.in
 lib/uni/mk/suffix.mk
 lib/uni/mk/var.mk
@@ -231,13 +205,16 @@ lib/uni/posixutil/Mainlog.c
 lib/uni/posixutil/MainrunCommand.c
 lib/uni/posixutil/ProcessClasses.hi
 lib/uni/posixutil/SafeSystem.hi
+lib/uni/posixutil/daVinci.debug.in
 lib/uni/posixutil/libuni-posixutil.a
+lib/uni/posixutil/log
 lib/uni/posixutil/runCommand
 lib/uni/posixutil/test/ChildProcessTest.hi
 lib/uni/posixutil/test/ExecProcessTest.hi
 lib/uni/posixutil/test/libuni-posixutil-test.a
 lib/uni/posixutil/test/uni-posixutil-test.o
 lib/uni/posixutil/uni-posixutil.o
+lib/uni/posixutil/wish.debug.in
 lib/uni/reactor/BSem.hi
 lib/uni/reactor/InfoBus.hi
 lib/uni/reactor/Lock.hi
@@ -246,20 +223,16 @@ lib/uni/reactor/MainParseDebug.hs
 lib/uni/reactor/VSem.hi
 lib/uni/reactor/libuni-reactor.a
 lib/uni/reactor/uni-reactor.o
-lib/uni/server/CallServer.hi
-lib/uni/server/EchoService.hi
-lib/uni/server/HostsPorts.hi
-lib/uni/server/MultiServer.hi
-lib/uni/server/Notification.hi
-lib/uni/server/Server.hi
-lib/uni/server/ServiceClass.hi
-lib/uni/server/Testserver.hs
-lib/uni/server/libuni-server.a
-lib/uni/server/uni-server.o
 lib/uni/uni-package.conf
 lib/uni/uni-package.conf.export
 lib/uni/util/AtomString.hi
+lib/uni/util/Binary.hi
+lib/uni/util/BinaryAll.hi
+lib/uni/util/BinaryExtras.hi
+lib/uni/util/BinaryInstances.hi
+lib/uni/util/BinaryUtils.hi
 lib/uni/util/Broadcaster.hi
+lib/uni/util/Bytes.hi
 lib/uni/util/Cache.hi
 lib/uni/util/CacheTable.hi
 lib/uni/util/CommandStringSub.hi
@@ -272,6 +245,8 @@ lib/uni/util/Dynamics.hi
 lib/uni/util/ExtendedPrelude.hi
 lib/uni/util/FileNames.hi
 lib/uni/util/FileSystem.hi
+lib/uni/util/HostName.hi
+lib/uni/util/ICStringLen.hi
 lib/uni/util/IOExtras.hi
 lib/uni/util/IntPlus.hi
 lib/uni/util/KeyedChanges.hi
@@ -289,8 +264,13 @@ lib/uni/util/RegularExpression.hi
 lib/uni/util/Sink.hi
 lib/uni/util/SmallSet.hi
 lib/uni/util/Sources.hi
+lib/uni/util/Store.hi
+lib/uni/util/StrError.hi
+lib/uni/util/StringSkip.hi
+lib/uni/util/TSem.hi
 lib/uni/util/TempFile.hi
 lib/uni/util/Thread.hi
+lib/uni/util/ThreadDict.hi
 lib/uni/util/UnionFind.hi
 lib/uni/util/UniqueFile.hi
 lib/uni/util/UniqueString.hi
@@ -298,10 +278,12 @@ lib/uni/util/VariableList.hi
 lib/uni/util/VariableMap.hi
 lib/uni/util/VariableSet.hi
 lib/uni/util/VariableSetBlocker.hi
+lib/uni/util/VisitedSet.hi
 lib/uni/util/WBFiles.hi
 lib/uni/util/WaitOnN.hi
 lib/uni/util/libuni-util.a
 lib/uni/util/test/Huffman.hi
+lib/uni/util/test/TestBinary.hs
 lib/uni/util/test/TestDynamics.hs
 lib/uni/util/test/TestDynamics2.hs
 lib/uni/util/test/TestFact.hs
@@ -312,9 +294,10 @@ lib/uni/util/test/VariableListTest.hi
 lib/uni/util/test/libuni-util-test.a
 lib/uni/util/test/uni-util-test.o
 lib/uni/util/uni-util.o
+@dirrm share/nls/en_US.US-ASCII
+@dirrm share/nls/POSIX
 @dirrm lib/uni/util/test
 @dirrm lib/uni/util
-@dirrm lib/uni/server
 @dirrm lib/uni/reactor
 @dirrm lib/uni/posixutil/test
 @dirrm lib/uni/posixutil
@@ -330,10 +313,6 @@ lib/uni/util/uni-util.o
 @dirrm lib/uni/htk/examples/canvas
 @dirrm lib/uni/htk/examples
 @dirrm lib/uni/htk
-@dirrm lib/uni/graphs/test
-@dirrm lib/uni/graphs
 @dirrm lib/uni/events/test
 @dirrm lib/uni/events
-@dirrm lib/uni/davinci/test
-@dirrm lib/uni/davinci
 @dirrm lib/uni
