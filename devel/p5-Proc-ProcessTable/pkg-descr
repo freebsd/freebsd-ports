@@ -1,0 +1,23 @@
+DESCRIPTION
+===========
+This module is a first crack at providing a consistent interface to
+Unix (and maybe other multitasking OS's) process table information.
+The impetus for this came about with my frustration at having to parse
+the output of various systems' ps commands to check whether specific
+processes were running on different boxes at a larged mixed Unix site.
+The output format of ps was different on each OS, and sometimes
+changed with each new release of an OS. Also, running a ps subprocess
+from within a perl or shell script and parsing the output was not a
+very efficient or aesthetic way to do things.
+
+With this module, you can do things like this:
+
+        # kill memory pigs 
+        use Proc::ProcessTable;
+
+        $t = new Proc::ProcessTable;
+        foreach $p ( @{$t->table} ){    
+          if( $p->pctmem > 95 ){
+            $p->kill(9);
+          }             
+        }

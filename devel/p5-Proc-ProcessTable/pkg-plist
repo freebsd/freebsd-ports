@@ -1,0 +1,7 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Proc/Killall.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Proc/Killfam.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Proc/example.pl
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Proc/ProcessTable/Process.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Proc/ProcessTable.pm
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Proc/ProcessTable
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Proc
