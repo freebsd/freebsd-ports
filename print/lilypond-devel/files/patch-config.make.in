@@ -1,0 +1,11 @@
+--- config.make.in.orig	Sun Apr 11 10:26:32 2004
++++ config.make.in	Sun Apr 11 10:26:46 2004
+@@ -41,7 +41,7 @@
+ 
+ # move out of config.make.in?
+ package_datadir = $(datadir)/$(package)
+-package_infodir = $(infodir)/$(package)
++package_infodir = $(infodir)
+ package_libdir = $(libdir)/$(package)
+ package_docdir = $(docdir)/$(package)
+ package_omfdir = $(omfdir)/$(package)

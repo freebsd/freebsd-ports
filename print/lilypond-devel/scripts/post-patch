@@ -4,7 +4,7 @@ cd ${WRKSRC} || exit 2
 echo "Patching for FlexLexer.h <->gcc3 issues"
 
 file=""
-candidates=`find /usr/include/ -name FlexLexer.h`
+candidates=`find /usr/include -name FlexLexer.h`
 #take first found file.
 for d in $candidates; do if [ -f $d ]; then file=$d; break; fi; done
 if [ -z "${file}" ]; then echo "Cannot find FlexLexer.h"; exit 2; fi

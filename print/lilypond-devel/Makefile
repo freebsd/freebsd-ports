@@ -4,27 +4,27 @@
 # based on print/lilypond originally by trevor
 #
 # $FreeBSD$
-# $$Id: Makefile,v 1.41 2004/02/05 18:29:10 patrick Exp $
+# $Id: Makefile,v 1.19 2004/06/15 21:53:22 patrick Exp $
 #
 
 PORTNAME=	lilypond
-PORTVERSION=	2.1.19
+PORTVERSION=	2.3.4
 CATEGORIES=	print audio
-MASTER_SITES=	http://lilypond.org/download/v2.1/ \
-		http://www.atabersk.de/lilypond/
+MASTER_SITES=	http://lilypond.org/download/v2.3/
 PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	atamaniuk-ports@frobs.net
-COMMENT=	The GNU music typesetter (unstable/development)
+COMMENT=	The GNU music typesetter (development)
 
 BUILD_DEPENDS=	latex:${PORTSDIR}/print/teTeX \
-		mftrace:${PORTSDIR}/print/mftrace
+		scrollkeeper-install:${PORTSDIR}/textproc/scrollkeeper
 LIB_DEPENDS=	guile.15:${PORTSDIR}/lang/guile
 RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX
 
-MAN1=	abc2ly.1 convert-ly.1 etf2ly.1 lilypond.1 lilypond-bin.1 \
-	lilypond-book.1 midi2ly.1 mup2ly.1 musedata2ly.1 pmx2ly.1
-INFO=		lilypond lilypond-internals music-glossary
+MAN1=		abc2ly.1 etf2ly.1 midi2ly.1 mup2ly.1 lilypond.1 musedata2ly.1 \
+		convert-ly.1 lilypond-bin.1 lilypond-book.1
+INFO=		lilypond lilypond-internals \
+		music-glossary
 
 CONFLICTS=	lilypond-2.*
 
@@ -38,8 +38,16 @@ MAKEFILE=	GNUmakefile
 PKGINSTALL=	${WRKDIR}/pkg-install
 
 CONFIGURE_ARGS+=	--with-kpathsea-include=${LOCALBASE}/include \
-			--with-kpathsea-lib=${LOCALBASE}/lib
+			--with-kpathsea-lib=${LOCALBASE}/lib \
+			--infodir=${PREFIX}/info
 CONFIGURE_ENV+=		"CPPFLAGS=${CPPFLAGS}"
+
+.if defined(WITH_SELFBUILT_FONTS)
+BUILD_DEPENDS+=	mftrace:${PORTSDIR}/print/mftrace
+.else
+BUILD_DEPENDS+=	wget:${PORTSDIR}/ftp/wget
+BUILD_DEPENDS+=	rpm2cpio:${PORTSDIR}/archivers/rpm
+.endif
 
 # inform kpathsea.h of getopt-prototype version
 CFLAGS+=	-D__GNU_LIBRARY__
@@ -47,7 +55,6 @@ CPPFLAGS+=	-I${WRKSRC}/lily/out
 CFLAGS+=	${CPPFLAGS}
 
 .include <bsd.port.pre.mk>
-MAKE_ENV+=	MAKE_PFA_FILES=1
 ALL_TARGET=	all
 
 .if ${OSVERSION} < 500000
@@ -77,23 +84,23 @@ pre-configure:
 		| ${SED} -e "s=${PREFIX}=\$${PKG_PREFIX}=g" \
 	> ${PKGINSTALL}
 
+.if !defined(WITH_SELFBUILT_FONTS)
+post-configure:
+	cd ${WRKSRC} && ${GMAKE} -C mf get-pfa
+.endif
+
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR} ${EXAMPLESDIR}/scripts
 	cd ${WRKSRC}/input ; \
 	${TAR} -chf - --exclude=out --exclude=CVS --exclude=GNUmakefile . | \
 		${TAR} -xf - -C ${EXAMPLESDIR};
+
 .for ii in login profile
 	${INSTALL_SCRIPT} ${WRKSRC}/buildscripts/out/lilypond-${ii} \
 		${EXAMPLESDIR}/scripts
 .endfor
-.for ii in lilypond-font-lock.el lilypond-indent.el lilypond-init.el \
-	lilypond-mode.el lilypond-init.el
-	${INSTALL_SCRIPT} ${WRKSRC}/elisp/${ii} ${EXAMPLESDIR}/scripts
-.endfor
-.for ii in lilypond.vim server.el.patch
-	${INSTALL_SCRIPT} ${WRKSRC}/${ii} ${EXAMPLESDIR}/scripts
-.endfor
+
 	cd ${WRKSRC}/Documentation/topdocs/out && ${TAR} -chf - \
 		--exclude=dummy.dep --exclude=CVS --exclude=GNUmakefile . \
 		| ${TAR} -xf - -C ${DOCSDIR}
