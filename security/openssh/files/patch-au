@@ -1,0 +1,201 @@
+--- session.c.orig	Thu Apr 20 18:05:07 2000
++++ session.c	Thu Apr 20 18:12:07 2000
+@@ -27,6 +27,18 @@
+ #include "ssh2.h"
+ #include "auth.h"
+ 
++#ifdef __FreeBSD__
++#include <libutil.h>
++#include <poll.h>
++#include <syslog.h>
++#include <time.h>
++#define LOGIN_CAP
++#endif /* __FreeBSD__ */
++
++#ifdef LOGIN_CAP
++#include <login_cap.h>
++#endif /* LOGIN_CAP */
++
+ /* types */
+ 
+ #define TTYSZ 64
+@@ -497,6 +509,10 @@
+ 	struct sockaddr_storage from;
+ 	struct stat st;
+ 	time_t last_login_time;
++#ifdef LOGIN_CAP
++	login_cap_t *lc;
++	char *fname;
++#endif /* LOGIN_CAP */
+ 
+ 	if (s == NULL)
+ 		fatal("do_exec_pty: no session");
+@@ -567,6 +583,12 @@
+ 		/* Check if .hushlogin exists. */
+ 		snprintf(line, sizeof line, "%.200s/.hushlogin", pw->pw_dir);
+ 		quiet_login = stat(line, &st) >= 0;
++#ifdef LOGIN_CAP
++		lc = login_getpwclass(pw);
++		if (lc == NULL)
++			lc = login_getclassbyname(NULL, pw);
++		quiet_login = login_getcapbool(lc, "hushlogin", quiet_login);
++#endif /* LOGIN_CAP */
+ 
+ 		/*
+ 		 * If the user has logged in before, display the time of last
+@@ -590,6 +612,20 @@
+ 			else
+ 				printf("Last login: %s from %s\r\n", time_string, buf);
+ 		}
++#ifdef LOGIN_CAP
++		if (command == NULL && !quiet_login && !options.use_login) {
++			fname = login_getcapstr(lc, "copyright", NULL, NULL);
++			if (fname != NULL && (f = fopen(fname, "r")) != NULL) {
++				while (fgets(line, sizeof(line), f) != NULL)
++					fputs(line, stdout);
++				fclose(f);
++			} else
++				(void)printf("%s\n\t%s %s\n",
++		"Copyright (c) 1980, 1983, 1986, 1988, 1990, 1991, 1993, 1994",
++		    "The Regents of the University of California. ",
++		    "All rights reserved.");
++		}
++#endif /* LOGIN_CAP */
+ 		/*
+ 		 * Print /etc/motd unless a command was specified or printing
+ 		 * it was disabled in server options or login(1) will be
+@@ -599,7 +635,18 @@
+ 		if (command == NULL && options.print_motd && !quiet_login &&
+ 		    !options.use_login) {
+ 			/* Print /etc/motd if it exists. */
++#ifdef LOGIN_CAP
++			fname = login_getcapstr(lc, "welcome", NULL, NULL);
++			login_close(lc);
++			if (fname != NULL) {
++				f = fopen(fname, "r");
++				if (f == NULL)
++					f = fopen("/etc/motd", "r");
++			} else
++				f = fopen("/etc/motd", "r");
++#else /* LOGIN_CAP */
+ 			f = fopen("/etc/motd", "r");
++#endif /* LOGIN_CAP */
+ 			if (f) {
+ 				while (fgets(line, sizeof(line), f))
+ 					fputs(line, stdout);
+@@ -737,9 +784,25 @@
+ 	extern char **environ;
+ 	struct stat st;
+ 	char *argv[10];
++#ifdef LOGIN_CAP
++	login_cap_t *lc;
++
++	lc = login_getpwclass(pw);
++	if (lc == NULL)
++		lc = login_getclassbyname(NULL, pw);
++#endif /* LOGIN_CAP */
+ 
+ 	f = fopen("/etc/nologin", "r");
++#ifdef __FreeBSD__
++	if (f == NULL)
++		f = fopen("/var/run/nologin", "r");
++#endif /* __FreeBSD__ */
++#ifdef LOGIN_CAP
++	/* on FreeBSD, etc., allow overriding nologin via login.conf. */
++	if (f != NULL && !login_getcapbool(lc, "ignorenologin", 0)) {
++#else /* LOGIN_CAP */
+ 	if (f) {
++#endif /* LOGIN_CAP */
+ 		/* /etc/nologin exists.  Print its contents and exit. */
+ 		while (fgets(buf, sizeof(buf), f))
+ 			fputs(buf, stderr);
+@@ -755,6 +818,13 @@
+ 	/* Login(1) does this as well, and it needs uid 0 for the "-h"
+ 	   switch, so we let login(1) to this for us. */
+ 	if (!options.use_login) {
++#ifdef LOGIN_CAP
++		if (setclasscontext(pw->pw_class, LOGIN_SETPRIORITY |
++		    LOGIN_SETRESOURCES | LOGIN_SETUMASK) == -1) {
++			perror("setclasscontext");
++			exit(1);
++		}
++#endif /* LOGIN_CAP */
+ 		if (getuid() == 0 || geteuid() == 0) {
+ 			if (setgid(pw->pw_gid) < 0) {
+ 				perror("setgid");
+@@ -777,7 +847,14 @@
+ 	 * Get the shell from the password data.  An empty shell field is
+ 	 * legal, and means /bin/sh.
+ 	 */
++#ifdef LOGIN_CAP
++	shell = pw->pw_shell;
++	shell = login_getcapstr(lc, "shell", shell, shell);
++	if (shell[0] == '\0')
++		shell = _PATH_BSHELL;
++#else /* LOGIN_CAP */
+ 	shell = (pw->pw_shell[0] == '\0') ? _PATH_BSHELL : pw->pw_shell;
++#endif /* LOGIN_CAP */
+ 
+ #ifdef AFS
+ 	/* Try to get AFS tokens for the local cell. */
+@@ -801,7 +878,12 @@
+ 		child_set_env(&env, &envsize, "USER", pw->pw_name);
+ 		child_set_env(&env, &envsize, "LOGNAME", pw->pw_name);
+ 		child_set_env(&env, &envsize, "HOME", pw->pw_dir);
++#ifdef LOGIN_CAP
++		child_set_env(&env, &envsize, "PATH",
++		    login_getpath(lc, "path", _PATH_STDPATH));
++#else /* LOGIN_CAP */
+ 		child_set_env(&env, &envsize, "PATH", _PATH_STDPATH);
++#endif /* LOGIN_CAP */
+ 
+ 		snprintf(buf, sizeof buf, "%.200s/%.50s",
+ 			 _PATH_MAILDIR, pw->pw_name);
+@@ -890,6 +972,9 @@
+ 	 * descriptors left by system functions.  They will be closed later.
+ 	 */
+ 	endpwent();
++#ifdef LOGIN_CAP
++	login_close(lc);
++#endif /* LOGIN_CAP */
+ 
+ 	/*
+ 	 * Close any extra open file descriptors so that we don\'t have them
+@@ -897,7 +982,7 @@
+ 	 * initgroups, because at least on Solaris 2.3 it leaves file
+ 	 * descriptors open.
+ 	 */
+-	for (i = 3; i < 64; i++)
++	for (i = 3; i < getdtablesize(); i++)
+ 		close(i);
+ 
+ 	/* Change current directory to the user\'s home directory. */
+@@ -916,7 +1001,27 @@
+ 	 * in this order).
+ 	 */
+ 	if (!options.use_login) {
+-		if (stat(SSH_USER_RC, &st) >= 0) {
++#ifdef __FreeBSD__
++		/*
++		 * If the password change time is set and has passed, give the
++		 * user a password expiry notice and chance to change it.
++		 */
++		if (pw->pw_change != 0) {
++			struct timeval tv;
++
++			(void)gettimeofday(&tv, NULL);
++			if (tv.tv_sec >= pw->pw_change) {
++				(void)printf(
++				    "Sorry -- your password has expired.\n");
++				syslog(LOG_INFO,
++				    "%s Password expired - forcing change",
++				    pw->pw_name);
++				if (system("/usr/bin/passwd") != 0)
++					perror("/usr/bin/passwd");
++			}
++		}
++#endif /* __FreeBSD__ */
++                if (stat(SSH_USER_RC, &st) >= 0) {
+ 			if (debug_flag)
+ 				fprintf(stderr, "Running /bin/sh %s\n", SSH_USER_RC);
+ 

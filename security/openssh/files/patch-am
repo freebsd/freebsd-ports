@@ -1,6 +1,6 @@
---- /usr/ports/distfiles/OpenSSH-1.2/src/usr.bin/ssh/sshd/Makefile	Mon Oct 25 16:27:27 1999
-+++ ./sshd/Makefile	Tue Nov 23 19:29:25 1999
-@@ -3,13 +3,14 @@
+--- /usr/ports/distfiles/OpenSSH-1.2.3/src/usr.bin/ssh/sshd/Makefile	Thu Apr 20 17:02:17 2000
++++ sshd/Makefile	Thu Apr 20 17:10:39 2000
+@@ -3,14 +3,15 @@
  PROG=	sshd
  BINOWN=	root
  BINMODE=555
@@ -10,14 +10,15 @@
 +MAN8=	sshd.8
  
  SRCS=	sshd.c auth-rhosts.c auth-passwd.c auth-rsa.c auth-rh-rsa.c \
- 	pty.c log-server.c login.c servconf.c serverloop.c
+ 	pty.c log-server.c login.c servconf.c serverloop.c session.c \
+ 	auth.c
  
  .include <bsd.own.mk> # for KERBEROS and AFS
 +.include "../Makefile.inc"
  
  .if (${KERBEROS} == "yes")
- CFLAGS+= -DKRB4 -I/usr/include/kerberosIV
-@@ -29,7 +30,7 @@
+ .if (${AFS} == "yes")
+@@ -30,7 +31,7 @@
  
  .include <bsd.prog.mk>
  

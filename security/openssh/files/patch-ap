@@ -1,32 +1,32 @@
---- servconf.c.orig	Sun Dec  5 01:48:12 1999
-+++ servconf.c	Sun Dec  5 01:57:57 1999
-@@ -63,6 +63,8 @@
- 	options->num_deny_users = 0;
- 	options->num_allow_groups = 0;
+--- servconf.c.orig	Thu Apr 20 17:55:11 2000
++++ servconf.c	Thu Apr 20 18:00:08 2000
+@@ -71,6 +71,8 @@
  	options->num_deny_groups = 0;
+ 	options->ciphers = NULL;
+ 	options->protocol = SSH_PROTO_UNKNOWN;
 +	options->connections_per_period = 0;
 +	options->connections_period = 0;
  }
  
- void 
-@@ -161,7 +163,7 @@
+ void
+@@ -163,7 +165,7 @@
+ #ifdef SKEY
+ 	sSkeyAuthentication,
+ #endif
+-	sPasswordAuthentication, sListenAddress,
++	sPasswordAuthentication, sListenAddress, sConnectionsPerPeriod,
  	sPrintMotd, sIgnoreRhosts, sX11Forwarding, sX11DisplayOffset,
  	sStrictModes, sEmptyPasswd, sRandomSeedFile, sKeepAlives, sCheckMail,
  	sUseLogin, sAllowUsers, sDenyUsers, sAllowGroups, sDenyGroups,
--	sIgnoreUserKnownHosts
-+	sIgnoreUserKnownHosts, sConnectionsPerPeriod
- } ServerOpCodes;
- 
- /* Textual representation of the tokens. */
-@@ -209,6 +211,7 @@
- 	{ "denyusers", sDenyUsers },
- 	{ "allowgroups", sAllowGroups },
+@@ -218,6 +220,7 @@
  	{ "denygroups", sDenyGroups },
+ 	{ "ciphers", sCiphers },
+ 	{ "protocol", sProtocol },
 +	{ "connectionsperperiod", sConnectionsPerPeriod },
  	{ NULL, 0 }
  };
  
-@@ -270,7 +273,11 @@
+@@ -327,7 +330,11 @@
  					filename, linenum);
  				exit(1);
  			}
@@ -39,64 +39,12 @@
  			if (*intptr == -1)
  				*intptr = value;
  			break;
-@@ -466,63 +473,65 @@
- 
- 		case sAllowUsers:
- 			while ((cp = strtok(NULL, WHITESPACE))) {
--				if (options->num_allow_users >= MAX_ALLOW_USERS) {
--					fprintf(stderr, "%s line %d: too many allow users.\n",
--						filename, linenum);
--					exit(1);
--				}
-+				if (options->num_allow_users >= MAX_ALLOW_USERS)
-+					fatal("%.200s line %d: too many allow users.\n", filename,
-+					    linenum);
- 				options->allow_users[options->num_allow_users++] = xstrdup(cp);
- 			}
- 			break;
- 
- 		case sDenyUsers:
- 			while ((cp = strtok(NULL, WHITESPACE))) {
--				if (options->num_deny_users >= MAX_DENY_USERS) {
--					fprintf(stderr, "%s line %d: too many deny users.\n",
--						filename, linenum);
--					exit(1);
--				}
-+				if (options->num_deny_users >= MAX_DENY_USERS)
-+					fatal("%.200s line %d: too many deny users.\n", filename,
-+					    linenum);
- 				options->deny_users[options->num_deny_users++] = xstrdup(cp);
- 			}
- 			break;
- 
- 		case sAllowGroups:
- 			while ((cp = strtok(NULL, WHITESPACE))) {
--				if (options->num_allow_groups >= MAX_ALLOW_GROUPS) {
--					fprintf(stderr, "%s line %d: too many allow groups.\n",
--						filename, linenum);
--					exit(1);
--				}
-+				if (options->num_allow_groups >= MAX_ALLOW_GROUPS)
-+					fatal("%.200s line %d: too many allow groups.\n", filename,
-+					    linenum);
- 				options->allow_groups[options->num_allow_groups++] = xstrdup(cp);
- 			}
- 			break;
- 
- 		case sDenyGroups:
- 			while ((cp = strtok(NULL, WHITESPACE))) {
--				if (options->num_deny_groups >= MAX_DENY_GROUPS) {
--					fprintf(stderr, "%s line %d: too many deny groups.\n",
--						filename, linenum);
--					exit(1);
--				}
-+				if (options->num_deny_groups >= MAX_DENY_GROUPS)
-+					fatal("%.200s line %d: too many deny groups.\n", filename,
-+					    linenum);
+@@ -551,6 +558,21 @@
+ 					    filename, linenum);
  				options->deny_groups[options->num_deny_groups++] = xstrdup(cp);
  			}
- 			break;
- 
++			break;
++
 +		case sConnectionsPerPeriod:
 +			cp = strtok(NULL, WHITESPACE);
 +			if (cp == NULL)
@@ -110,29 +58,6 @@
 +			    options->connections_period == 0)
 +				fatal("%.200s line %d: invalid connections period.\n",
 +				    filename, linenum);
-+			break;
-+
- 		default:
--			fprintf(stderr, "%s line %d: Missing handler for opcode %s (%d)\n",
-+			fatal("%.200s line %d: Missing handler for opcode %s (%d)\n",
- 				filename, linenum, cp, opcode);
--			exit(1);
--		}
--		if (strtok(NULL, WHITESPACE) != NULL) {
--			fprintf(stderr, "%s line %d: garbage at end of line.\n",
--				filename, linenum);
--			exit(1);
- 		}
-+		if (strtok(NULL, WHITESPACE) != NULL)
-+			fatal("%.200s line %d: garbage at end of line.\n", filename,
-+			    linenum);
- 	}
- 	fclose(f);
--	if (bad_options > 0) {
--		fprintf(stderr, "%s: terminating, %d bad configuration options\n",
-+	if (bad_options > 0)
-+		fatal("%.200s: terminating, %d bad configuration options\n",
- 			filename, bad_options);
--		exit(1);
--	}
- }
+ 			break;
+ 
+ 		case sCiphers:

@@ -1,12 +1,11 @@
---- lib/Makefile.orig	Sun Jan 16 07:10:10 2000
-+++ lib/Makefile	Tue Jan 18 14:56:00 2000
-@@ -4,7 +4,12 @@
- SRCS=   authfd.c authfile.c bufaux.c buffer.c canohost.c channels.c \
+--- /usr/ports/distfiles/OpenSSH-1.2.3/src/usr.bin/ssh/lib/Makefile	Thu Apr 20 17:02:17 2000
++++ lib/Makefile	Thu Apr 20 17:08:05 2000
+@@ -5,7 +5,11 @@
  	cipher.c compat.c compress.c crc32.c deattack.c fingerprint.c \
  	hostfile.c log.c match.c mpaux.c nchan.c packet.c readpass.c \
--	rsa.c tildexpand.c ttymodes.c uidswap.c xmalloc.c atomicio.c
-+	rsa.c tildexpand.c ttymodes.c uidswap.c xmalloc.c atomicio.c \
-+	strlcat.c strlcpy.c
+ 	rsa.c tildexpand.c ttymodes.c uidswap.c xmalloc.c atomicio.c \
+-	key.c dispatch.c dsa.c kex.c hmac.c
++	key.c dispatch.c dsa.c kex.c hmac.c strlcat.c strlcpy.c
 +
 +.if defined(COMPAT_GETADDRINFO)
 +SRCS+=	getaddrinfo.c getnameinfo.c name6.c rcmd.c bindresvport.c
@@ -14,11 +13,11 @@
  
  NOPROFILE= yes
  NOPIC=	yes
-@@ -13,6 +18,7 @@
+@@ -14,6 +18,7 @@
  	@echo -n
  
  .include <bsd.own.mk>
 +.include "../Makefile.inc"
  
  .if (${KERBEROS} == "yes")
- CFLAGS+= -DKRB4 -I/usr/include/kerberosIV
+ CFLAGS+= -DKRB4 -I${DESTDIR}/usr/include/kerberosIV

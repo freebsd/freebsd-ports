@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	OpenSSH
-PORTVERSION=	1.2.2
+PORTVERSION=	1.2.3
 CATEGORIES=	security net ipv6
 # ${MASTER_SITES} is only for if CVS won't work, period.
 MASTER_SITES=	ftp://internat.FreeBSD.org/pub/Crypto/OpenSSH/
@@ -24,7 +24,7 @@ IGNOREFILES!=	${SED} 's:^\(.*\)$$:${PKGNAME}/\1:g' ${FILESDIR}/ignorefiles
 DISTFILES+=	${IGNOREFILES}
 
 CVS_CMD?=	cvs -z3
-CVS_DATE=	Fri Mar  3 00:37:20 EST 2000
+CVS_DATE=	Thu Apr 20 17:00:39 EDT 2000
 SED?=		/usr/bin/sed
 CVS_DATE_!=	${ECHO} -n "${CVS_DATE}" | ${SED} 's/[ \t:]/_/g'
 CVS_SITES?=	anoncvs@anoncvs1.ca.openbsd.org:/cvs \
