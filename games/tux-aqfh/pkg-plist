@@ -1,3 +1,4 @@
+bin/tux_aqfh
 share/games/tux_aqfh/wavs/ahh.wav
 share/games/tux_aqfh/wavs/ahooga.wav
 share/games/tux_aqfh/wavs/barf.wav
@@ -309,4 +310,5 @@ share/tux_aqfh/snap6tb.png
 @dirrm share/games/tux_aqfh/fonts
 @dirrm share/games/tux_aqfh/slamcode
 @dirrm share/games/tux_aqfh
+@unexec rmdir %D/share/games 2>/dev/null || true
 @dirrm share/tux_aqfh
