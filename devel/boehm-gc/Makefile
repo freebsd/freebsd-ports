@@ -14,6 +14,8 @@ DISTNAME=	gc5.0alpha4
 
 MAINTAINER=	mmcg@cs.monash.edu.au
 
+ONLY_FOR_ARCHS=	i386
+
 FETCH_BEFORE_ARGS=	-b
 
 WRKSRC=		${WRKDIR}/gc
