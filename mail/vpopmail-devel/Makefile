@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	vpopmail
-PORTVERSION=	5.3.6
-PORTREVISION=	1
+PORTVERSION=	5.3.8
 CATEGORIES=	mail
 MASTER_SITES=	http://www.inter7.com/devel/
 
@@ -49,6 +48,8 @@ CONFIGURE_ARGS=	--enable-qmaildir=${QMAIL_DIR} \
 # WITH_QMAIL_EXT - enables qmail-like user-* address extesions processing
 # WITHOUT_FILE_LOCKING - disable file locking
 # WITH_FILE_SYNC - enables immediate synching (may decrease performance)
+# WITHOUT_USERS_BIG_DIR - disables using big directories for users
+# WITHOUT_SEEKABLE - disables vdelivermail's attempt to make its input seekable
 #
 # Set these to the values you'd prefer
 #
@@ -227,6 +228,14 @@ CONFIGURE_ARGS+=	--enable-file-sync=y
 
 .if defined(WITHOUT_AUTH_LOG)
 CONFIGURE_ARGS+=	--enable-auth-logging=n
+.endif
+
+.if defined(WITHOUT_USERS_BIG_DIR)
+CONFIGURE_ARGS+=	--enable-users-big-dir=n
+.endif
+
+.if defined(WITHOUT_SEEKABLE)
+CONFIGURE_ARGS+=	--enable-make-seekable=n
 .endif
 
 #
