@@ -1,0 +1,12 @@
+sbin/avcheck
+sbin/uchroot
+%%PORTDOCS%%share/doc/avcheck/README.AVP
+%%PORTDOCS%%share/doc/avcheck/README.AVP.de
+%%PORTDOCS%%share/doc/avcheck/README.DrWeb
+%%PORTDOCS%%share/doc/avcheck/README.Exim
+%%PORTDOCS%%share/doc/avcheck/README.Postfix
+%%PORTDOCS%%share/doc/avcheck/README.Postfix.de
+%%PORTDOCS%%share/doc/avcheck/README.Sendmail
+%%PORTDOCS%%share/doc/avcheck/eicar.msg
+%%PORTDOCS%%share/doc/avcheck/eicar.txt
+%%PORTDOCS%%@dirrm share/doc/avcheck
