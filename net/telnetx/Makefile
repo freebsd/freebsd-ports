@@ -14,7 +14,6 @@ MASTER_SITES=	${MASTER_SITE_LOCAL} \
 
 MAINTAINER=	max@FreeBSD.org
 
-RUN_DEPENDS=	rz:${PORTSDIR}/comms/rzsz
 RUN_DEPENDS+=	bp:${PORTSDIR}/comms/bpl+
 RUN_DEPENDS+=	kermit:${PORTSDIR}/comms/kermit
 
