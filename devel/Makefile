@@ -823,6 +823,7 @@
     SUBDIR += p5-PatchReader
     SUBDIR += p5-Penguin
     SUBDIR += p5-Penguin-Easy
+    SUBDIR += p5-PerlIO-via-dynamic
     SUBDIR += p5-PerlMenu
     SUBDIR += p5-Pod-Coverage
     SUBDIR += p5-Proc-Background
