@@ -5,22 +5,22 @@
 # $FreeBSD$
 #
 
-PORTNAME=       milter-sender
-PORTVERSION=    0.55
-CATEGORIES=     mail
-MASTER_SITES=   http://www.snert.com/Software/download/
-DISTFILES=      libsnert-1.33.tgz milter-sender-${PORTVERSION}.tgz
+PORTNAME=	milter-sender
+PORTVERSION=	0.55
+CATEGORIES=	mail
+MASTER_SITES=	http://www.snert.com/Software/download/
+DISTFILES=	libsnert-1.33.tgz milter-sender-${PORTVERSION}.tgz
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=        Real-time sender address verification, based on Milter API
+COMMENT=	Real-time sender address verification, based on Milter API
 
-RESTRICTED=     see LICENSE.TXT
+RESTRICTED=	see LICENSE.TXT
 
 USE_REINPLACE=	yes
-GNU_CONFIGURE=  yes
+GNU_CONFIGURE=	yes
 
-WRKSRC=         ${WRKDIR}/com/snert/src/milter-sender
-MAKEFILE=       makefile
+WRKSRC=		${WRKDIR}/com/snert/src/milter-sender
+MAKEFILE=	makefile
 
 .include <bsd.port.pre.mk>
 
@@ -29,22 +29,22 @@ BUILD_DEPENDS=	gxargs:${PORTSBASE}/misc/findutils
 .endif
 
 .if !exists(/usr/lib/libmilter.a) && !exists(${LOCALBASE}/lib/libmilter.a)
-IGNORE=         requires Sendmail 8.12
+IGNORE=		requires Sendmail 8.12
 .endif
 .if exists(${LOCALBASE}/lib/libmilter.a)
-CFLAGS+=       -I${LOCALBASE}/include
-LDFLAGS+=      -L${LOCALBASE}/lib
+CFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 .endif
-CFLAGS+=        ${PTHREAD_CFLAGS}
-LDFLAGS+=       ${PTHREAD_LIBS}
+CFLAGS+=	${PTHREAD_CFLAGS}
+LDFLAGS+=	${PTHREAD_LIBS}
 
-DOCS= CHANGES.TXT index.shtml style.css mailto.js \
-      license-body.html LICENSE.TXT
+DOCS=		CHANGES.TXT index.shtml style.css mailto.js \
+		license-body.html LICENSE.TXT
 
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV+= LDFLAGS="${LDFLAGS}"
-CONFIGURE_ARGS+= --with-db --localstatedir=/var/spool \
-		 --enable-milter-cf="${PREFIX}/etc/milter-sender.cf"
+CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
+CONFIGURE_ARGS+=	--with-db --localstatedir=/var/spool \
+			--enable-milter-cf="${PREFIX}/etc/milter-sender.cf"
 
 .if ( ${OSVERSION} < 440000 )
 post-patch:
