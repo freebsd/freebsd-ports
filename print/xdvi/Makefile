@@ -3,7 +3,7 @@
 # Date created:         1 October 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.9 1995/04/15 14:44:37 joerg Exp $
+# $Id: Makefile,v 1.10 1995/04/15 22:06:55 jmz Exp $
 #
 
 DISTNAME=	xdvi
@@ -21,7 +21,7 @@ IS_INTERACTIVE=	yes
 XMKMF=		xmkmf
 
 .if !defined(BATCH)
-install:
+install: build
 	@echo "===>  Installing for ${DISTNAME}"
 	@mkdir -p ${PREFIX}/man/man1
 	@mkdir -p ${PREFIX}/bin

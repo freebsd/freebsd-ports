@@ -3,7 +3,7 @@
 # Date created:         29 September 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.13 1995/04/16 22:52:37 jmz Exp $
+# $Id: Makefile,v 1.14 1995/04/17 00:16:14 jmz Exp $
 #
 
 DISTNAME=	web2c-6.1
@@ -45,7 +45,7 @@ modes.mf:
 tex_base.tar.gz:
 	@${FTPGET} ${CTAN} /tex-archive/macros plain/base.tar.gz ${DISTDIR}/$@
 
-build: ${BUILD_COOKIE}
+build: configure ${BUILD_COOKIE}
 
 ${BUILD_COOKIE}:
 	@echo "===>  Building for ${DISTNAME}"
@@ -60,7 +60,7 @@ ${BUILD_COOKIE}:
 		make fmts="${FORMATS}" fmts)
 	@touch -f ${BUILD_COOKIE}
 
-install:
+install: build
 	@echo "===>  Installing for ${DISTNAME}"
 	@(cd ${WRKSRC}/web2c; make install-exec INSTALL_PROGRAM="/usr/bin/install -c -s")
 	@(cd ${WRKSRC}/web2c; make install-manpages)
