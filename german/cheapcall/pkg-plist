@@ -1,3 +1,3 @@
-bin/cheap-call-0.7e-1.6.99.tcl
+bin/cheap-call-%%LONGVER%%.tcl
 bin/cheap-call
 bin/cheapcall
