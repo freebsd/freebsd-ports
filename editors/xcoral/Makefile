@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xcoral
-PORTVERSION=	3.42
+PORTVERSION=	3.42b
 CATEGORIES=	editors
 MASTER_SITES=	http://xcoral.free.fr/
 
@@ -14,10 +14,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A multiwindow mouse-based text editor for X
 
 USE_X_PREFIX=	yes
-
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--libdir=${PREFIX}/share
-PLIST_SUB+=	PORTVERSION=${PORTVERSION}
+PLIST_SUB+=	PORTVERSION=${PORTVERSION:S/b//}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xcoral ${PREFIX}/bin
