@@ -6079,6 +6079,7 @@ rdate		ports/sysutils/rdate
 rdb		ports/databases/rdb
 rdesktop	ports/net/rdesktop
 rdesktop-devel	ports/net/rdesktop-devel
+rdfdb		ports/databases/rdfdb
 rdist		src/usr.bin/rdist
 rdist6		ports/net/rdist6
 re2c		ports/devel/re2c
