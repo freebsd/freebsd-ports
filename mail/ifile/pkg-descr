@@ -1,6 +1,6 @@
 ifile is a general mail filtering system that works with a mail client to
 intelligently filter mail according to the way the user tends to organize
-mail. ifile uses the machine learning algorithm Naive Bayes to classify
+mail.  ifile uses the machine learning algorithm Naive Bayes to classify
 e-mail documents.
 
 ifile is different from other mail filtering programs in three major ways: 
@@ -12,8 +12,6 @@ ifile is different from other mail filtering programs in three major ways:
 
 ifile is not dependent upon any specific mail system and should be adaptable
 to any mail system which allows an outside program to perform mail
-filtering. The download package includes instructions for using ifile with
-NMH, EXMH and slocal.  Grant Taylor describes the use of ifile with
-procmail.
+filtering.
 
 WWW: http://www.ai.mit.edu/~jrennie/ifile/
