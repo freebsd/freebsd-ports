@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mini_httpd
-PORTVERSION=	1.18
+PORTVERSION=	1.19
 CATEGORIES=	www
 MASTER_SITES=	http://www.acme.com/software/mini_httpd/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
