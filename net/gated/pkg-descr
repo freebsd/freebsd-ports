@@ -1,4 +1,0 @@
-GateD routing protocol daemon (version 3.5 alpha)
-
-This program implements various routing protocols such as OSPF, RIP, EGP,
-HELLO, BGP, ISIS, et al.

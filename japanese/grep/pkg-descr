@@ -1,9 +1,0 @@
-This package is multi-byte extented GNU GREP.  It accepts text which
-includes multi-byte character code.  Supported multi-byte codes are
-2 byte EUC code and/or Shift-JIS code.
-
-Grep searches the named input files (or standard input if no files are
-named, or the file name - is given) for lines containing a match to
-the given pattern. By default, grep prints the matching lines.
-
-Multi-byte patch by t^2(Takahiro Tanimoto, NBC02362@niftyserve.or.jp)

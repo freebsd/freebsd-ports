@@ -1,6 +1,0 @@
-@cd /usr/local
-@owner bin
-@mode 755
-bin/a2ps
-@mode 644
-man/man1/a2ps.1

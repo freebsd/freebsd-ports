@@ -1,3 +1,0 @@
-@cwd ${X11BASE}
-bin/oneko
-man/man1/oneko.1.gz

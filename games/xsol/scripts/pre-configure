@@ -1,6 +1,0 @@
-#!/bin/sh
-
-#echo "LOCAL=$PREFIX" >${WRKSRC}/Imakefile || exit 1;
-echo "MANSUFFIX=6" >>${WRKSRC}/Imakefile  || exit 1
-
-exit 0

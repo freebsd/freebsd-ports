@@ -1,5 +1,0 @@
-@cd /usr/local
-bin/ecu
-lib/ecu
-man/cat1/ecu.1
-man/cat1/proc.1

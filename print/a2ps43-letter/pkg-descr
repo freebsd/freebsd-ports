@@ -1,6 +1,0 @@
-A2ps formats each named file for printing in a postscript printer; if
-no file is given, a2ps reads from the standard input. The format used
-is nice and compact: normally two pages on each physical page, borders
-surrounding pages, headers with useful information (page number,
-printing date, file name or supplied header), line numbering, etc.
-This is very useful for making archive listings of programs.

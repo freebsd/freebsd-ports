@@ -1,9 +1,0 @@
-       The  hpack  Multi-System  Archiver is an archiver that was
-       written to allow the transfer of archived data to  differ-
-       ent  systems.   In  the	past archivers have traditionally
-       been  available	for  single  systems  only,  for  example
-       PKZIP  and  LHARC  for  the  IBM PC, Larc for the Amiga,
-       StuffIt and Compactor for the  Macintosh,  and  tar  and
-       compress  for  UNIX  systems  (while  these  archivers are
-       available on other systems, their use is not  widespread).
-       Open-keys security included.
