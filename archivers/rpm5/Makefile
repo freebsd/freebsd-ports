@@ -6,6 +6,7 @@
 
 PORTNAME=	rpm
 PORTVERSION=	4.0.4
+PORTREVISION=	1
 CATEGORIES=	archivers
 MASTER_SITES=	ftp://ftp.rpm.org/pub/rpm/dist/rpm-4.0.x/ \
 		ftp://ftp.mirror.ac.uk/sites/ftp.rpm.org/pub/rpm/dist/rpm-4.0.x/
@@ -19,6 +20,9 @@ LIB_DEPENDS=	db3.3:${PORTSDIR}/databases/db3 \
 BUILD_DEPENDS=	${LOCALBASE}/bin/gsed:${PORTSDIR}/textproc/gsed
 .if !exists(/usr/bin/bzip2)
 LIB_DEPENDS+=	bz2.1:${PORTSDIR}/archivers/bzip2
+.endif
+.if !defined(NOPORTDOCS)
+BUILD_DEPENDS+=	${LOCALBASE}/bin/doxygen:${PORTSDIR}/devel/doxygen
 .endif
 
 USE_LIBTOOL_VER=14
@@ -51,11 +55,23 @@ CONFIGURE_ARGS+=--without-db \
 MAN1=	gendiff.1
 MAN8=	rpm.8 rpm2cpio.8 rpmbuild.8
 
+.if !defined(NOPORTDOCS)
+PORTDOCS=	*
+.endif
+
 post-patch:
 	${REINPLACE_CMD} -e 's:%%LOCALBASE%%:${LOCALBASE}:' \
 		${WRKSRC}/configure ${WRKSRC}/beecrypt/configure
 
 post-install:
+.if !defined(NOPORTDOCS)
+	# Install documentation
+	${MKDIR} ${DOCSDIR}/apidocs/html
+	cd ${WRKSRC}/apidocs/html && ${FIND} . \
+		| ${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} \
+			${DOCSDIR}/apidocs/html/
+.endif
+	# Run package installation script
 	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGDIR}/pkg-install ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>
