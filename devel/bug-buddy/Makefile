@@ -18,7 +18,7 @@ MAINTAINER=	gnome@FreeBSD.org
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOMENG=	yes
-USE_GNOME=	gnomeprefix gnomehack libglade
+USE_GNOME=	gnomeprefix gnomehack libglade gnomevfs
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
