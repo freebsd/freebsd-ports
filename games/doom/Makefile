@@ -3,7 +3,7 @@
 # Date created:         Mon Dec  9 09:42:37 CST 1996
 # Whom:                 erich@rrnet.com
 #
-# $Id: Makefile,v 1.5 1997/11/29 00:49:08 jseger Exp $
+# $Id: Makefile,v 1.6 1998/12/13 08:47:40 asami Exp $
 #
 
 DISTNAME=	doom-1.8
@@ -16,6 +16,8 @@ MAINTAINER=	erich@FreeBSD.org
 
 BUILD_DEPENDS=	/compat/linux/lib/ld.so:${PORTSDIR}/emulators/linux_lib
 RUN_DEPENDS=    /compat/linux/lib/libc.so.5:${PORTSDIR}/emulators/linux_lib
+
+ONLY_FOR_ARCHS=	i386
 
 USE_XLIB=	yes
 NO_WRKSUBDIR=	yes

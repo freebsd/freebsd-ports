@@ -3,7 +3,7 @@
 # Date created:         Thu Jun 11 22:38:52 PDT 1998
 # Whom:                 dburr@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.2 1998/08/05 09:31:13 asami Exp $
+# $Id: Makefile,v 1.3 1998/11/21 07:27:35 steve Exp $
 #
 
 DISTNAME=	netshow_linux
@@ -16,6 +16,7 @@ MAINTAINER=	dburr@FreeBSD.ORG
 
 RUN_DEPENDS=	/compat/linux/lib/libc.so.5:${PORTSDIR}/emulators/linux_lib
 
+ONLY_FOR_ARCHS=	i386
 RESTRICTED=	"Commercial software"
 NO_CDROM=	${RESTRICTED}
 NO_PACKAGE=	${RESTRICTED}

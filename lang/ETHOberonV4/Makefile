@@ -3,7 +3,7 @@
 # Date created:		12 July 1998
 # Whom:			Jerry Hicks <jhicks@glenatl.glenayre.com>
 #
-# $Id: Makefile,v 1.1.1.1 1998/07/12 21:34:27 jhicks Exp $
+# $Id: Makefile,v 1.1.1.1 1998/07/20 03:51:44 steve Exp $
 #
 
 DISTNAME=	ETHLinuxOberon
@@ -17,6 +17,7 @@ MAINTAINER=	jhicks@glenatl.glenayre.com
 # XXX - how to fix the following?
 RUN_DEPENDS=	/compat/linux/lib/libc.so.5.4.23:${PORTSDIR}/emulators/linux_lib
 
+ONLY_FOR_ARCHS=	i386
 NO_CDROM=	licensing
 NO_PACKAGE=	no version number on distfile
 WRKSRC=		${WRKDIR}/${UNTAR_DIR}

@@ -3,7 +3,7 @@
 # Date created:         20 July 1997
 # Whom:                 Yukihiro Nakai<Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.2 1998/07/27 01:00:43 steve Exp $
+# $Id: Makefile,v 1.3 1998/08/05 09:30:50 asami Exp $
 #
 
 DISTNAME=	s9x.linux.105.i386
@@ -15,6 +15,8 @@ MAINTAINER=	Nakai@Mlab.t.u-tokyo.ac.jp
 
 BUILD_DEPENDS=	/compat/linux/lib/ld.so:${PORTSDIR}/emulators/linux_lib
 RUN_DEPENDS=    /compat/linux/lib/libc.so.5:${PORTSDIR}/emulators/linux_lib
+
+ONLY_FOR_ARCHS=	i386
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes

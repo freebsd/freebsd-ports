@@ -5,7 +5,7 @@
 #					msmith@freebsd.org
 # Relevant URLs:			http://www.corel.com/
 #
-# $Id: Makefile,v 1.1.1.1 1998/12/20 05:23:35 msmith Exp $
+# $Id: Makefile,v 1.2 1999/01/04 16:00:06 obrien Exp $
 
 DISTNAME=	GUILG00
 PKGNAME=	wordperfect-8.0
@@ -17,6 +17,7 @@ MAINTAINER=	msmith@freebsd.org
 
 RUN_DEPENDS=    /compat/linux/lib/libc.so.5:${PORTSDIR}/emulators/linux_lib
 
+ONLY_FOR_ARCHS=	i386
 NO_CDROM=	"LIC: redistribution not allowed"
 
 IS_INTERACTIVE=	"requires user interaction for installation"
