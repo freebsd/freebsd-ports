@@ -2354,6 +2354,7 @@ hexpert		ports/editors/hexpert
 heyu		ports/misc/heyu
 hfs		ports/emulators/hfs
 hfsutils	ports/emulators/hfsutils
+hinfo		ports/net/hinfo
 histring	ports/misc/histring
 hlfl		ports/security/hlfl
 hlmaster	ports/net/hlmaster
