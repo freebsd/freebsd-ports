@@ -7,16 +7,15 @@
 #
 
 PORTNAME=	ucpp
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	devel
-MASTER_SITES=	http://www.di.ens.fr/~pornin/ucpp/
+MASTER_SITES=	http://pornin.nerim.net/ucpp/
 
-MAINTAINER=	ijliao@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
+
+MAKE_ENV=	FLAGS="${CFLAGS}"
 
 MAN1=	ucpp.1
-
-post-patch:
-	@${PERL} -pi -e "s|%%CFLAGS%%|${CFLAGS}|g" ${WRKSRC}/Makefile
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
