@@ -42,7 +42,7 @@ BUILD_DEPENDS=	${opt_hdf}:${PORTSDIR}/graphics/hdf5				\
 LIB_DEPENDS=	tcl${SHORT_TCL_VER}:${PORTSDIR}/lang/tcl${SHORT_TCL_VER}	\
 		tk${SHORT_TK_VER}:${PORTSDIR}/x11-toolkits/tk${SHORT_TK_VER}
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/Gnuplot:${PORTSDIR}/math/py-gnuplot	\
-		${LOCALBASE}/bin/onmetis.exe:${PORTSDIR}/cad/metis-edf
+		${LOCALBASE}/bin/onmetis.exe:${PORTSDIR}/math/metis-edf
 
 EXTRACT_CMD=	${TAR}
 EXTRACT_BEFORE_ARGS=	-xf
