@@ -4,18 +4,22 @@
 # Whom:			pst
 # Changed:		ats, Nov 16, 1994
 #
+# $Id$
+#
 
 DISTNAME=	cku190
 PKGNAME=	kermit-5a.190
-CATEGORIES+=	comms
+CATEGORIES=	comms
 MASTER_SITES=	ftp://kermit.columbia.edu/kermit/archives/ \
 		ftp://ftp.th-darmstadt.de/pub/networking/kermit/ \
 		ftp://ftp.std.com/customers2/src/telcom/
 
-NO_WRKSUBDIR=	yes
+MAINTAINER=	pst@FreeBSD.org
+
 RESTRICTED=	"'No redistibution' copyright."
+NO_WRKSUBDIR=	yes
 
 post-install:
-	@cat ${PKGDIR}/DESCR
+	@${CAT} ${PKGDIR}/DESCR
 
 .include <bsd.port.mk>

@@ -3,19 +3,18 @@
 # Date created:         21 September 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.10 1996/09/13 23:51:51 jmz Exp $
+# $Id: Makefile,v 1.11 1996/09/14 01:59:33 asami Exp $
 #
 
 DISTNAME=	mgetty-0.99
-CATEGORIES+=	comms
+CATEGORIES=	comms
 MASTER_SITES=	ftp://ftp.leo.org/pub/comp/networking/communication/modem/mgetty/
 DISTFILES=	mgetty099-Aug07.tar.gz
 
 MAINTAINER=	jmz@FreeBSD.org
 
-MAKE_FLAGS=	prefix=${PREFIX} -f 
-
 IS_INTERACTIVE= yes
+MAKE_FLAGS=	prefix=${PREFIX} -f 
 
 pre-install:
 	@(cd ${WRKSRC}/doc; ${GMAKE} manpages)
