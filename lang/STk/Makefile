@@ -3,11 +3,11 @@
 # Date created:         17 Sep 96 
 # Whom:                 jmacd@cs.berkeley.edu
 #
-# $Id$
+# $Id: Makefile,v 1.11 1996/09/17 23:55:28 jmacd Exp $
 #
 
 DISTNAME=       STk-3.1
-CATEGORIES+=	lang
+CATEGORIES=	lang
 MASTER_SITES=	ftp://kaolin.unice.fr/pub/
 
 MAINTAINER=	jmacd@FreeBSD.ORG

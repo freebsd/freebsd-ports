@@ -3,11 +3,11 @@
 # Date created:		9 Aug 1995
 # Whom:			msmith@atrad.adelaide.edu.au
 #
-# $Id: Makefile,v 1.2 1995/08/09 14:46:58 asami Exp $
+# $Id: Makefile,v 1.3 1995/11/22 13:12:28 asami Exp $
 #
 
 DISTNAME=	bwbasic-2.10
-CATEGORIES+=	lang
+CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.eng.umd.edu/pub/basic/
 
 MAINTAINER=	msmith@atrad.adelaide.edu.au
@@ -19,8 +19,8 @@ GNU_CONFIGURE=	yes
 # test programs in ${PREFIX}/share/bwbasic/bwbtest.
 
 post-install:
-	-mkdir ${PREFIX}/share/bwbasic
-	cp ${WRKSRC}/bwbasic.doc ${PREFIX}/share/bwbasic/
-	cp -r ${WRKSRC}/bwbtest ${PREFIX}/share/bwbasic/
+	-${MKDIR} ${PREFIX}/share/bwbasic
+	${CP} ${WRKSRC}/bwbasic.doc ${PREFIX}/share/bwbasic/
+	${CP} -r ${WRKSRC}/bwbtest ${PREFIX}/share/bwbasic/
 
 .include <bsd.port.mk>

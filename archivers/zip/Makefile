@@ -3,12 +3,12 @@
 # Date created:         22 Dec 1994
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.5 1995/04/24 10:58:57 asami Exp $
+# $Id: Makefile,v 1.6 1996/05/04 11:34:16 ache Exp $
 #
 
 DISTNAME=       zip21
 PKGNAME=        zip-2.1
-CATEGORIES+=	archivers
+CATEGORIES=	archivers
 MASTER_SITES=   ftp://quest.jpl.nasa.gov/pub/
 EXTRACT_SUFX=   .zip
 

@@ -3,12 +3,12 @@
 # Date created:		31 Oct 1996
 # Whom:			John Polstra <jdp@polstra.com>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1996/11/01 02:37:33 jdp Exp $
 #
 
 DISTNAME=	modula-3-socks
 PKGNAME=	modula-3-socks-1.0
-CATEGORIES+=	lang
+CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.cup.hp.com/dist/socks/A.B9.06/
 DISTFILES=	socks.tar.gz
 
@@ -25,20 +25,20 @@ libm3socks_files=	accept.c bind.c close.c connect.c dup.c dup2.c \
 m3socks_files=		m3socks.sh m3socks.1 m3socks.conf.5
 
 post-extract:
-	@cp -p ${FILESDIR}/Makefile.top ${WRKSRC}/Makefile
-	@test -d ${WRKSRC}/libm3socks || mkdir ${WRKSRC}/libm3socks
+	@${CP} -p ${FILESDIR}/Makefile.top ${WRKSRC}/Makefile
+	@test -d ${WRKSRC}/libm3socks || ${MKDIR} ${WRKSRC}/libm3socks
 	@cd ${FILESDIR}; \
-	    cp -p Makefile.libm3socks ${WRKSRC}/libm3socks/Makefile; \
-	    cp -p ${libm3socks_files} ${WRKSRC}/libm3socks
-	@test -d ${WRKSRC}/m3socks || mkdir ${WRKSRC}/m3socks
+	    ${CP} -p Makefile.libm3socks ${WRKSRC}/libm3socks/Makefile; \
+	    ${CP} -p ${libm3socks_files} ${WRKSRC}/libm3socks
+	@test -d ${WRKSRC}/m3socks || ${MKDIR} ${WRKSRC}/m3socks
 	@cd ${FILESDIR}; \
-	    cp -p Makefile.m3socks ${WRKSRC}/m3socks/Makefile; \
-	    cp -p ${m3socks_files} ${WRKSRC}/m3socks
+	    ${CP} -p Makefile.m3socks ${WRKSRC}/m3socks/Makefile; \
+	    ${CP} -p ${m3socks_files} ${WRKSRC}/m3socks
 
 pre-install:
 	@cd ${PREFIX}/lib; \
 	    test -d m3/FreeBSD2 || { \
-		mkdir -p m3/FreeBSD2; \
+		${MKDIR} m3/FreeBSD2; \
 		chown ${BINOWN}.${BINGRP} m3 m3/FreeBSD2; \
 	    }
 

@@ -3,11 +3,11 @@
 # Date created:		22 October 1994
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.8 1995/08/16 23:55:38 jkh Exp $
+# $Id: Makefile,v 1.9 1995/11/22 13:12:54 asami Exp $
 #
 
 DISTNAME=	ucblogo-3.3
-CATEGORIES+=	lang
+CATEGORIES=	lang
 MASTER_SITES=	ftp://gatekeeper.dec.com/pub/GNU/
 
 MAINTAINER=	jmacd@FreeBSD.ORG

@@ -15,6 +15,7 @@ MASTER_SITES=	ftp://ftp.cs.purdue.edu/pub/ygz/  \
 		ftp://ftp.edu.tw/Chinese/ifcss/software/x-win/cxterm/  \
 		ftp://ftp.mpi-sb.mpg.de/pub/chinese/mirror/ftp.ifcss.org/software/x-win/cxterm/
 
+
 MAINTAINER=     obrien@cs.ucdavis.edu
 
 WRKSRC=		${WRKDIR}/cxterm-5.0

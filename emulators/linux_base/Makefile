@@ -3,7 +3,7 @@
 # Date created:         
 # Whom:                 erich@FreeBSD.org
 #
-# $Id: Makefile,v 1.8 1996/03/29 14:46:25 erich Exp $
+# $Id: Makefile,v 1.9 1996/10/28 15:20:13 erich Exp $
 #
 
 DISTNAME=	linux_lib-2.1
@@ -16,6 +16,6 @@ WRKSRC=		${WRKDIR}
 NO_MTREE=	yes
 
 pre-install:
-	@[ -d ${PREFIX} ] || mkdir -p ${PREFIX}
+	@[ -d ${PREFIX} ] || ${MKDIR} ${PREFIX}
 
 .include <bsd.port.mk>

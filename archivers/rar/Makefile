@@ -3,22 +3,22 @@
 # Date created:         15 May 1996
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.4 1995/05/15 20:55:27 ache Exp $
+# $Id: Makefile,v 1.1.1.1 1996/05/15 19:19:40 ache Exp $
 #
 
 DISTNAME=       rar2bsdb
 PKGNAME=        rar-2.00b
-CATEGORIES+=	archivers
+CATEGORIES=	archivers
 MASTER_SITES=   ftp://ftp.relcom.ru/unix/arcers/
 EXTRACT_SUFX=   .tgz
 
-NO_BUILD=       yes
-
 MAINTAINER=     ache@FreeBSD.ORG
+
+NO_BUILD=       yes
 
 do-install:
 	cd ${WRKSRC}; \
-	$(INSTALL) -c -m $(BINMODE) -o $(BINOWN) -g $(BINGRP) rar_bsd $(PREFIX)/bin/rar; \
-	$(INSTALL) -c -m $(MANMODE) -o $(MANOWN) -g $(MANGRP) rar.man $(PREFIX)/man/cat1/rar.1
+	${INSTALL_PROGRAM} rar_bsd ${PREFIX}/bin/rar; \
+	${INSTALL_MAN} rar.man ${PREFIX}/man/cat1/rar.1
 
 .include <bsd.port.mk>

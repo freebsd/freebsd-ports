@@ -4,12 +4,12 @@
 # Date created:         Mon Oct 28, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1996/10/30 01:58:56 obrien Exp $
 #
 
 DISTNAME=	spim
 PKGNAME=	spim-5.8
-CATEGORIES+=	emulators
+CATEGORIES=	emulators
 MASTER_SITES=	ftp://ftp.cs.wisc.edu/pub/spim/
 
 MAINTAINER=	obrien@cs.ucdavis.edu
@@ -27,7 +27,7 @@ pre-configure:
 	@${RM} -f ${WRKSRC}/y.tab.*
 	
 pre-install:
-	@${MKDIR} -p ${PREFIX}/share/spim && chmod a+rx ${PREFIX}/share/spim
+	@${MKDIR} ${PREFIX}/share/spim && chmod a+rx ${PREFIX}/share/spim
 
 post-install:
 	[ -e ${PREFIX}/bin/cl-spim ] &&  \
@@ -36,7 +36,7 @@ post-install:
 		/bin/ln -f ${PREFIX}/bin/cl-xspim ${PREFIX}/bin/xspim
 .if !defined(NOPORTDOCS)
 	@${ECHO} "Installing spim/xspim documentation"
-	@${MKDIR} -p ${PREFIX}/share/doc/spim  \
+	@${MKDIR} ${PREFIX}/share/doc/spim  \
 		&& chmod a+rx ${PREFIX}/share/doc/spim
 	${INSTALL_DATA} ${WRKSRC}/Documentation/spim.ps  \
 		${PREFIX}/share/doc/spim

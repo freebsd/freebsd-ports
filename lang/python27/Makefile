@@ -3,12 +3,12 @@
 # Date created:         08 August 1995
 # Whom:                 jkh
 #
-# $Id: Makefile,v 1.7 1996/10/14 23:14:37 asami Exp $
+# $Id: Makefile,v 1.8 1996/11/02 19:04:22 jkh Exp $
 #
 
 DISTNAME=       python1.4
 PKGNAME=        python-1.4
-CATEGORIES+=	lang
+CATEGORIES=	lang
 MASTER_SITES=	ftp://www.python.org/pub/python/src/ \
 		ftp://ftp.cwi.nl/pub/python/src/
 
@@ -23,7 +23,7 @@ MAKE_FLAGS+=	'OPT=${CFLAGS}'
 INSTALL_TARGET=	install
 
 post-configure:
-	cp ${FILESDIR}/Setup ${WRKSRC}/Modules
+	${CP} ${FILESDIR}/Setup ${WRKSRC}/Modules
 
 post-install:
 	strip ${PREFIX}/bin/python

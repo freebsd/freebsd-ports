@@ -3,13 +3,13 @@
 # Date created:         Sa   9 Nov 1996 00:52:22 MET
 # Whom:			se
 #
-# $Id: Makefile,v 1.32 1996/10/29 19:08:20 se Exp $
+# $Id: Makefile,v 1.33 1996/11/08 23:57:24 se Exp $
 #
 
 DATE=		961102
 DISTNAME=	Wine-${DATE}
 PKGNAME=	wine-96.11.02
-CATEGORIES+=	emulators x11
+CATEGORIES=	emulators x11
 MASTER_SITES=	ftp://sunsite.unc.edu/pub/Linux/ALPHA/wine/development/ \
 		ftp://tsx-11.mit.edu/pub/linux/ALPHA/Wine/development/ \
 		ftp://ftp.dfv.rwth-aachen.de/pub/linux/sunsite/ALPHA/wine/development/ \
@@ -24,7 +24,7 @@ WRKSRC=		${WRKDIR}/wine${DATE}
 GNU_CONFIGURE=	yes
 
 pre-configure:
-	@echo "WINE_INI_GLOBAL \"${PREFIX}/etc/wine.conf\"" \
+	@${ECHO} "WINE_INI_GLOBAL \"${PREFIX}/etc/wine.conf\"" \
 		>> ${WRKSRC}/autoconf.h
 
 post-configure:
@@ -32,9 +32,9 @@ post-configure:
 
 do-install:
 	install -c ${WRKSRC}/wine ${PREFIX}/bin
-	-@mkdir ${PREFIX}/etc 2>/dev/null
+	-@${MKDIR} ${PREFIX}/etc 2>/dev/null
 	[ -f ${PREFIX}/etc/wine.conf ] \
-		|| cp ${WRKSRC}/wine.ini ${PREFIX}/etc/wine.conf
+		|| ${CP} ${WRKSRC}/wine.ini ${PREFIX}/etc/wine.conf
 	cp ${WRKSRC}/wine.sym ${PREFIX}/etc
 	cp ${WRKSRC}/wine.man ${PREFIX}/man/man1/wine.1
 .if !defined(NOMANCOMPRESS)

@@ -3,11 +3,11 @@
 # Date created:         Sun Aug 13 12:36:14 CDT 1995
 # Whom:                 erich@rrnet.com
 #
-# $Id: Makefile,v 1.1.1.1 1995/08/14 04:07:57 asami Exp $
+# $Id: Makefile,v 1.2 1995/10/28 20:27:20 erich Exp $
 #
 
 DISTNAME=	9wm-1.1
-CATEGORIES+=	plan9
+CATEGORIES=	plan9
 MASTER_SITES=	ftp://ftp.ecf.toronto.edu/pub/plan9/arnold/
 EXTRACT_SUFX=	.shar.gz
 

@@ -3,11 +3,11 @@
 # Date created:         5 October 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.7 1996/05/27 14:09:17 jmz Exp $
+# $Id: Makefile,v 1.8 1996/05/29 01:46:49 ache Exp $
 #
 
 DISTNAME=	mtools-3.0
-CATEGORIES+=	emulators
+CATEGORIES=	emulators
 MASTER_SITES=	ftp://prep.ai.mit.edu/pub/gnu/
 
 MAINTAINER=	jmz@FreeBSD.org
