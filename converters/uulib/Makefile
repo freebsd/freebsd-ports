@@ -15,6 +15,7 @@ MAINTAINER=	hoek@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
+USE_REINPLACE=	yes
 
 MAN3=		uulib.3
 
@@ -39,8 +40,10 @@ do-install:
 	@/usr/bin/ranlib ${PREFIX}/lib/libuu.a
 	${INSTALL_DATA} ${WRKSRC}/uulib/uudeview.h ${PREFIX}/include
 	${INSTALL_MAN} ${FILESDIR}/uulib.3 ${PREFIX}/man/man3
-	${PERL} -pi -e '$$a = '\''${PREFIX}/'\''; $$a =~ s/([^\w\/])/\\$$1/g; \
-		s/FUNKYTOKENHERE/$$a/' ${PREFIX}/man/man3/uulib.3
+	${REINPLACE_CMD} -e 's,FUNKYTOKENHERE,${PREFIX}/,' \
+		${PREFIX}/man/man3/uulib.3
+	@# If we don't remove the .bak file, then man(1) gets confused
+	@${RM} -f ${PREFIX}/man/man3/uulib.3.bak
 .if !defined(NOPORTDOCS)
 	@${ECHO_MSG} "===>   Installing documentation for ${PKGNAME}"
 	@${MKDIR} ${PREFIX}/share/doc/uulib
