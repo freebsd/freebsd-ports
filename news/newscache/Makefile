@@ -25,6 +25,7 @@ MAKE_ENV=	LIBS="-lsocket++"
 
 MAN5=	newscache.conf.5
 MAN8=	newscache.8 newscacheclean.8 updatenews.8
+INFO=	NewsCache
 
 post-patch:
 	cd ${WRKSRC}; ./autogen
