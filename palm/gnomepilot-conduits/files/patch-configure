@@ -1,8 +1,5 @@
-
-$FreeBSD$
-
---- configure	2002/05/24 10:24:53	1.1
-+++ configure	2002/05/24 10:25:21
+--- configure.orig	Wed May 15 09:53:26 2002
++++ configure	Tue Sep 17 18:46:34 2002
 @@ -5316,6 +5316,7 @@
  
  # This can be used to rebuild libtool when needed
@@ -11,3 +8,48 @@ $FreeBSD$
  
  # Always use our own libtool.
  LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+@@ -6497,7 +6498,7 @@
+ 	else
+ 	    PISOCK_CFLAGS="-I$withval/include"
+ 	    incdir="$withval/include"
+-	    PISOCK_LIBS="-L$withval/lib -lpisock"
++	    PISOCK_LIBS="-L$withval/lib -lpisync -lpisock"
+ 	    echo $ac_n "checking "for existance of $withval/lib/libpisock.so"""... $ac_c" 1>&6
+ echo "configure:6503: checking "for existance of $withval/lib/libpisock.so"" >&5
+ 	    if test -r $withval/lib/libpisock.so; then
+@@ -6610,7 +6611,7 @@
+ 	                                                   piversion_include="$prefix/include/pi-version.h"
+ 						           if test x$PISOCK_LIBDIR = x; then
+ 							      incdir="$prefix/include"
+-							      PISOCK_LIBS="-L$prefix/lib -lpisock"
++							      PISOCK_LIBS="-L$prefix/lib -lpisync -lpisock"
+                                                            fi							  
+ else
+   echo "$ac_t""no" 1>&6
+@@ -6661,7 +6662,7 @@
+ fi
+ if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
+   echo "$ac_t""yes" 1>&6
+-   PISOCK_LIBS=-lpisock 
++   PISOCK_LIBS=-lpisync -lpisock 
+ else
+   echo "$ac_t""no" 1>&6
+  { echo "configure: error: "Unable to find libpisock. Try ftp://ryeham.ee.ryerson.ca/pub/PalmOS/."" 1>&2; exit 1; } 
+@@ -8031,7 +8032,7 @@
+   cat conftest.$ac_ext >&5
+   rm -rf conftest*
+   CATOBJEXT=.mo
+-		   DATADIRNAME=lib
++		   DATADIRNAME=share
+ fi
+ rm -f conftest*
+ 		INSTOBJEXT=.mo
+@@ -8201,7 +8202,7 @@
+ #		 USE_INCLUDED_LIBINTL=yes
+ #		 CATOBJEXT=.cat
+ #		 INSTOBJEXT=.cat
+-#		 DATADIRNAME=lib
++#		 DATADIRNAME=share
+ #		 INTLDEPS='$(top_builddir)/intl/libintl.a'
+ #		 INTLLIBS=$INTLDEPS
+ #		 LIBS=`echo $LIBS | sed -e 's/-lintl//'`
