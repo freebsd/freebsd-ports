@@ -1,6 +1,7 @@
 bin/dbget
 %%RUBY_SITELIBDIR%%/bio.rb
 %%RUBY_SITELIBDIR%%/bio/appl/blast.rb
+%%RUBY_SITELIBDIR%%/bio/appl/fasta.rb
 %%RUBY_SITELIBDIR%%/bio/data/aa.rb
 %%RUBY_SITELIBDIR%%/bio/data/codontable.rb
 %%RUBY_SITELIBDIR%%/bio/data/keggorg.rb

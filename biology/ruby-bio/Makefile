@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bio
-PORTVERSION=	0.3.2
+PORTVERSION=	0.3.3
 CATEGORIES=	biology ruby
 MASTER_SITES=	ftp://ftp.bioruby.org/bioruby/src/
 MASTER_SITE_SUBDIR=	knu
