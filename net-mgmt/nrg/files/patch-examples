@@ -11,3 +11,16 @@
  MCONF_FILES = NRG.mconf Site.mconf
  NRG_WEB_DIR = nrg
  
+--- examples/Default.conf.in.orig	Tue Sep 28 23:28:31 2004
++++ examples/Default.conf.in	Tue Sep 28 23:28:44 2004
+@@ -224,8 +224,8 @@
+ 
+ Graph[.*-snmpd-mem$][total_mem_m]:    black LINE2
+ Graph[.*-snmpd-mem$][used_mem_m]:     green AREA
+-Graph[.*-snmpd-mem$][cache_mem_m]:    d0ffff STACK
+-Graph[.*-snmpd-mem$][buff_mem_m]:     ffd0ff STACK
++Graph[.*-snmpd-mem$][cache_mem_m]:    cyan STACK
++Graph[.*-snmpd-mem$][buff_mem_m]:     blue STACK
+ 
+ Label[.*-snmpd-swap$][used_swp_m]:    "used swap " 
+ Label[.*-snmpd-swap$][total_swp_m]:   "total swap"
