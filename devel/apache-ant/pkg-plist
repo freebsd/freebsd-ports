@@ -1,5 +1,16 @@
 bin/ant
 %%T%%/bin/antRun
+%%T%%/etc/changelog.xsl
+%%T%%/etc/checkstyle-frames.xsl
+%%T%%/etc/coverage-frames.xsl
+%%T%%/etc/jdepend-frames.xsl
+%%T%%/etc/jdepend.xsl
+%%T%%/etc/junit-frames.xsl
+%%T%%/etc/junit-noframes.xsl
+%%T%%/etc/log.xsl
+%%T%%/etc/maudit-frames.xsl
+%%T%%/etc/mmetrics-frames.xsl
+%%T%%/etc/tagdiff.xsl
 %%T%%/lib/ant.jar
 %%T%%/lib/optional.jar
 %%T%%/lib/README
@@ -1118,4 +1129,5 @@ bin/ant
 @dirrm %%T%%/docs/projects/antidote
 @dirrm %%T%%/docs/projects
 @dirrm %%T%%/docs
+@dirrm %%T%%/etc
 @dirrm %%T%%
