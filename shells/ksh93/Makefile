@@ -32,7 +32,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/arch/freebsd.${ARCH}/bin/ksh \
 	    ${PREFIX}/bin/ksh93
 	${INSTALL_MAN} ${WRKSRC}/arch/freebsd.${ARCH}/man/man1/sh.1 \
-	    ${PREFIX}/man/man1/ksh93.1
+	    ${MANPREFIX}/man/man1/ksh93.1
 
 post-install:
 	@${ECHO} "updating /etc/shells"
