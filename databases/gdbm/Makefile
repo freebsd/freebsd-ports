@@ -3,12 +3,13 @@
 # Date created:		8 Apr 1996
 # Whom:			Brent J. Nordquist <bjn@visi.com>
 #
-# $Id: Makefile,v 1.4 1997/01/28 08:11:23 asami Exp $
+# $Id: Makefile,v 1.5 1998/02/15 17:00:57 steve Exp $
 #
 
 DISTNAME=          gdbm-1.7.3
 CATEGORIES=        databases
 MASTER_SITES=      ${MASTER_SITE_GNU}
+MASTER_SITE_SUBDIR=	gdbm
 
 MAINTAINER=        bjn@visi.com
 
