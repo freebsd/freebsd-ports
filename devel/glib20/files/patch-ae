@@ -1,6 +1,21 @@
---- configure.orig	Wed Feb 17 04:14:07 1999
-+++ configure	Wed Feb 17 21:11:29 1999
-@@ -3758,7 +3758,7 @@
+--- configure.orig	Tue May 11 04:55:02 1999
++++ configure	Mon May 17 22:30:32 1999
+@@ -587,10 +587,10 @@
+ 
+ 
+ # libtool versioning
+-LT_RELEASE=$GLIB_MAJOR_VERSION.$GLIB_MINOR_VERSION
+-LT_CURRENT=`expr $GLIB_MICRO_VERSION - $GLIB_INTERFACE_AGE`
+-LT_REVISION=$GLIB_INTERFACE_AGE
+-LT_AGE=`expr $GLIB_BINARY_AGE - $GLIB_INTERFACE_AGE`
++LT_RELEASE=12
++LT_CURRENT=2
++LT_REVISION=0
++LT_AGE=0
+ 
+ 
+ 
+@@ -3472,7 +3472,7 @@
  
  
  # Check for some functions
@@ -8,18 +23,21 @@
 +for ac_func in lstat strerror strsignal memmove vsnprintf strcasecmp strncasecmp
  do
  echo $ac_n "checking for $ac_func""... $ac_c" 1>&6
- echo "configure:3765: checking for $ac_func" >&5
-@@ -4610,6 +4610,9 @@
+ echo "configure:3479: checking for $ac_func" >&5
+@@ -4365,6 +4365,12 @@
  	  linux*)
  	    G_MODULE_LDFLAGS='-rdynamic'
  	    ;;
 +	  freebsd*)
-+	    G_MODULE_LDFLAGS='-Wl,-E'
++	    objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo aout`
++	    if test $objformat = "elf"; then
++		    G_MODULE_LDFLAGS='-Wl,-E'
++	    fi
 +	    ;;
  	esac
  	LIBS_orig="$LIBS"
  	LDFLAGS_orig="$LDFLAGS"
-@@ -5302,11 +5305,13 @@
+@@ -5057,11 +5063,14 @@
              	        G_THREAD_CFLAGS="$G_THREAD_CFLAGS -mthreads"
  		fi
  		;;
@@ -28,9 +46,10 @@
 -
 -		# FreeBSD 2.2.x shiped with gcc 2.7.2.x, which doesn't support
 -		# -mthreads flag.
-+	*-*-freebsd2.2* | *-*-freebsd3* | *-*-freebsd4*)
++	*-*-freebsd*)
 +		if test x"$G_THREAD_LIBS" = x"-lc_r"; then
-+			G_THREAD_CFLAGS="-D_THREAD_SAFE -pthread"
++			G_THREAD_CFLAGS="-D_THREAD_SAFE"
++			G_THREAD_LIBS="-pthread"
 +			have_poll=no
 +		else
 +			G_THREAD_CFLAGS="-D_THREAD_SAFE -DLINUXTHREADS"
@@ -38,7 +57,17 @@
  		;;
      esac
  
-@@ -5623,6 +5628,63 @@
+@@ -5349,9 +5358,6 @@
+ 
+ 
+ 
+-CFLAGS="$CFLAGS $G_THREAD_CFLAGS"
+-
+-
+         case "$mutex_has_default" in
+         "yes")
+                 echo $ac_n "checking size of $mutex_default_type""... $ac_c" 1>&6
+@@ -5448,6 +5454,63 @@
  
  
  

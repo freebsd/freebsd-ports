@@ -6,17 +6,14 @@ include/glib12/gmodule.h
 info/glib.info
 @exec install-info %D/info/glib.info %D/info/dir
 lib/libglib12.a
-lib/libglib12.la
 lib/libglib12.so
-lib/libglib12.so.1
+lib/libglib12.so.2
 lib/libgmodule12.a
-lib/libgmodule12.la
 lib/libgmodule12.so
-lib/libgmodule12.so.1
+lib/libgmodule12.so.2
 lib/libgthread12.a
-lib/libgthread12.la
 lib/libgthread12.so
-lib/libgthread12.so.1
+lib/libgthread12.so.2
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 share/aclocal/glib.m4
