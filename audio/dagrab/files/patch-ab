@@ -1,0 +1,20 @@
+*** dagrab.c-fbsd	Sat Nov 13 12:29:44 1999
+--- dagrab.c	Sat Nov 13 23:00:20 1999
+***************
+*** 503,509 ****
+  	struct ioc_toc_header Th;
+  	struct ioc_read_toc_single_entry Te;
+  
+! 	if ((cdrom_fd=open(cd_dev,O_RDONLY|O_NONBLOCK))==-1){
+  		fprintf(stderr,"%s: error opening device %s\n",progname,cd_dev);
+  		exit(1);
+  	}
+--- 503,509 ----
+  	struct ioc_toc_header Th;
+  	struct ioc_read_toc_single_entry Te;
+  
+! 	if ((cdrom_fd=open(cd_dev,O_RDONLY))==-1){
+  		fprintf(stderr,"%s: error opening device %s\n",progname,cd_dev);
+  		exit(1);
+  	}
+
