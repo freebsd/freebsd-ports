@@ -6,7 +6,7 @@
  
 +
 +/* Get generic FreeBSD definitions.  */
-+#include "freebsd.h"
++#include <freebsd.h>
 +
  #undef TARGET_VERSION
  #define TARGET_VERSION fprintf (stderr, " (i386 FreeBSD/ELF)");

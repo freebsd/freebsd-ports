@@ -6,7 +6,7 @@
  
 +
 +/* Get generic FreeBSD definitions.  */
-+#include "freebsd.h"
++#include <freebsd.h>
 +
  /* This goes away when the math-emulator is fixed */
  #define TARGET_CPU_DEFAULT 0400		/* TARGET_NO_FANCY_MATH_387 */
