@@ -76,6 +76,8 @@ dgd/2.4.5-for-1.0.37.tgz ports/net/dgd-lpmud	No monetary gain. No point in
 						Source tarball may go on CDROM.
 dgd/net-*		ports/net/dgd-net	Same as dgd
 divx4linux		ports/graphics/divx4linux	Restrictive copyright
+djbdns			ports/net/djbdns	no license--see
+						http://cr.yp.to/softwarelaw.html
 dnews			ports/news/dnews	Same as dnews3.
 dnews3			ports/news/dnews	Only free for schools and
 						universities, but they have to
