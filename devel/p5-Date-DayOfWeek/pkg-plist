@@ -1,6 +1,10 @@
 lib/perl5/site_perl/%%PERL_VER%%/Date/Doomsday.pm
 lib/perl5/site_perl/%%PERL_VER%%/Date/DayOfWeek.pm
+lib/perl5/site_perl/%%PERL_VER%%/Date/DayOfWeek/Birthday.pm
+lib/perl5/site_perl/%%PERL_VER%%/Date/DayOfWeek/Nails.pm
+lib/perl5/site_perl/%%PERL_VER%%/Date/DayOfWeek/Sneeze.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Date/DayOfWeek/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Date/DayOfWeek
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/Date
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Date/DayOfWeek
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Date

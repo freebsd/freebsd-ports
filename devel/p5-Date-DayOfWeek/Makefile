@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	Date-DayOfWeek
-PORTVERSION=	1.13
+PORTVERSION=	1.17
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Date
@@ -15,9 +15,13 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ijliao@FreeBSD.org
 
+BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Date/Leapyear.pm:${PORTSDIR}/devel/p5-Date-Leapyear
+RUN_DEPENDS=	${BUILD_DEPENDS}
+
 PERL_CONFIGURE=	yes
 
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
-MAN3=	Date::DayOfWeek.3 Date::Doomsday.3
+MAN3=	Date::DayOfWeek.3 Date::DayOfWeek::Birthday.3 \
+	Date::DayOfWeek::Nails.3 Date::DayOfWeek::Sneeze.3 Date::Doomsday.3
 
 .include <bsd.port.mk>
