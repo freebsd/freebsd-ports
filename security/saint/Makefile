@@ -25,7 +25,7 @@ INSTALL_TARGET=	all
 
 pre-install:
 		${MKDIR} ${PREFIX}/saint
-		${TAR} --directory ${WRKSRC} -cf - . --exclude src --exclude Makefile --exclude Makefile.in --exclude old --exclude config --exclude config.cache --exclude config.log --exclude config.status --exclude configure --exclude configure.in --exclude install-sh --exclude saint.1 | \
+		${TAR} --directory ${WRKSRC} -cf - . --exclude src --exclude Makefile --exclude Makefile.in --exclude old --exclude config.cache --exclude config.log --exclude config.status --exclude configure --exclude configure.in --exclude install-sh --exclude saint.1 | \
 			${TAR} --directory ${PREFIX}/saint -xf -
 .if !defined(NOPORTDOCS)
 do-install:

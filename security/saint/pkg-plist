@@ -73,6 +73,22 @@ saint/bin/nfs-chk
 saint/bin/yp-chk
 saint/bin/fping
 saint/bin/smurf.saint
+saint/config/SNMP_communities.pl
+saint/config/passwd
+saint/config/paths.pl
+saint/config/paths.pl.old
+saint/config/paths.sh.old
+saint/config/paths.sh
+saint/config/saint.cf
+saint/config/services
+saint/config/version.pl
+saint/config/saintwriter/detail.cf
+saint/config/saintwriter/full.cf
+saint/config/saintwriter/linked_tech.cf
+saint/config/saintwriter/long_exec.cf
+saint/config/saintwriter/saintwriter.cf
+saint/config/saintwriter/short_exec.cf
+saint/config/saintwriter/tech.cf
 saint/perl/passwd.pl
 saint/html/auth/saint_auth_action.pl
 saint/html/auth/saint_auth_form.pl
@@ -363,6 +379,8 @@ saint/saint
 saint/reconfig
 @dirrm saint/READMEs
 @dirrm saint/bin
+@dirrm saint/config/saintwriter
+@dirrm saint/config
 @dirrm saint/html/auth
 @dirrm saint/html/admin
 @dirrm saint/html/data
