@@ -82,6 +82,8 @@ post-extract:
 post-patch:
 	@${ECHO} "SEARCHDIRS += ${PORTINCLUDES}" >> \
 		${WRKSRC}/${EXTRALIBFILES_MAKE_WRKSRC}/jx_constants
+	@${PERL} -pi -e 's|/var/spool/mail/|/var/mail/|' \
+		${WRKSRC}/programs/arrow/code/*.cc
 
 pre-build:
 .for i in ${JX_MAKE_CONSTANTS}
