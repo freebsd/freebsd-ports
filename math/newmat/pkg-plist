@@ -1,4 +1,3 @@
-include/newmat/boolean.h
 include/newmat/controlw.h
 include/newmat/include.h
 include/newmat/myexcept.h
