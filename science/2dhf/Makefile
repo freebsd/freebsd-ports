@@ -17,7 +17,7 @@ MAINTAINER=	maho@FreeBSD.org
 COMMENT=	A Numerical Hartree-Fock Program for Diatomic Molecules
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash2
-.if defined(USE_INTEL)
+.if defined(WITH_INTEL)
 BUILD_DEPENDS+=  ${LOCALBASE}/intel_fc_80/bin/ifort:${PORTSDIR}/lang/ifc
 BUILD_DEPENDS+=  ${LOCALBASE}/intel_cc_80/bin/icc:${PORTSDIR}/lang/icc
 .endif
@@ -32,7 +32,7 @@ FFLAGS+=	-mfancy-math-387
 .endif
 
 BLAS=		-lf77blas -latlas
-.if defined(USE_INTEL)
+.if defined(WITH_INTEL)
 FC=		${LOCALBASE}/intel_fc_80/bin/ifort
 CC=		${LOCALBASE}/intel_cc_80/bin/icc
 FFLAGS=		-O3 -tpp7 -xKW -Vaxlib
