@@ -37,6 +37,7 @@
     SUBDIR += klh10
     SUBDIR += kmamerun
     SUBDIR += lib765
+    SUBDIR += libspectrum
     SUBDIR += libvm68k
     SUBDIR += linux-ePSXe
     SUBDIR += linux-peops-softgpu
