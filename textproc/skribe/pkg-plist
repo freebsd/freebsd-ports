@@ -1,0 +1,65 @@
+bin/skribe
+bin/skribe-config
+bin/skribe.bigloo
+bin/skribebibtex
+bin/skribebibtex.bigloo
+bin/skribeinfo
+bin/skribeinfo.bigloo
+share/emacs/site-lisp/bigloo/skribe.el
+%%DATADIR%%/%%VERSION%%/skr/acmproc.skr
+%%DATADIR%%/%%VERSION%%/skr/base.skr
+%%DATADIR%%/%%VERSION%%/skr/french.skr
+%%DATADIR%%/%%VERSION%%/skr/html.skr
+%%DATADIR%%/%%VERSION%%/skr/jfp.skr
+%%DATADIR%%/%%VERSION%%/skr/latex.skr
+%%DATADIR%%/%%VERSION%%/skr/letter.skr
+%%DATADIR%%/%%VERSION%%/skr/lncs.skr
+%%DATADIR%%/%%VERSION%%/skr/scribe.skr
+%%DATADIR%%/%%VERSION%%/skr/skribe.skr
+%%DATADIR%%/%%VERSION%%/skr/slide.skr
+%%DATADIR%%/%%VERSION%%/skr/sui.skr
+%%DATADIR%%/%%VERSION%%/skr/texinfo.skr
+%%DATADIR%%/%%VERSION%%/skr/web-book.skr
+%%DATADIR%%/%%VERSION%%/skr/xml.skr
+%%DATADIR%%/extensions/.keep_me
+@dirrm %%DATADIR%%/extensions
+@dirrm %%DATADIR%%/%%VERSION%%/skr
+@dirrm %%DATADIR%%/%%VERSION%%
+@dirrm %%DATADIR%%
+%%PORTDOCS%%%%DOCSDIR%%/img/bsd.gif
+%%PORTDOCS%%%%DOCSDIR%%/img/lambda.gif
+%%PORTDOCS%%%%DOCSDIR%%/img/linux.gif
+%%PORTDOCS%%%%DOCSDIR%%/user-1.html
+%%PORTDOCS%%%%DOCSDIR%%/user-10.html
+%%PORTDOCS%%%%DOCSDIR%%/user-11.html
+%%PORTDOCS%%%%DOCSDIR%%/user-12.html
+%%PORTDOCS%%%%DOCSDIR%%/user-13.html
+%%PORTDOCS%%%%DOCSDIR%%/user-14.html
+%%PORTDOCS%%%%DOCSDIR%%/user-15.html
+%%PORTDOCS%%%%DOCSDIR%%/user-16.html
+%%PORTDOCS%%%%DOCSDIR%%/user-17.html
+%%PORTDOCS%%%%DOCSDIR%%/user-18.html
+%%PORTDOCS%%%%DOCSDIR%%/user-19.html
+%%PORTDOCS%%%%DOCSDIR%%/user-2.html
+%%PORTDOCS%%%%DOCSDIR%%/user-20.html
+%%PORTDOCS%%%%DOCSDIR%%/user-21.html
+%%PORTDOCS%%%%DOCSDIR%%/user-22.html
+%%PORTDOCS%%%%DOCSDIR%%/user-23.html
+%%PORTDOCS%%%%DOCSDIR%%/user-24.html
+%%PORTDOCS%%%%DOCSDIR%%/user-25.html
+%%PORTDOCS%%%%DOCSDIR%%/user-26.html
+%%PORTDOCS%%%%DOCSDIR%%/user-27.html
+%%PORTDOCS%%%%DOCSDIR%%/user-28.html
+%%PORTDOCS%%%%DOCSDIR%%/user-29.html
+%%PORTDOCS%%%%DOCSDIR%%/user-3.html
+%%PORTDOCS%%%%DOCSDIR%%/user-30.html
+%%PORTDOCS%%%%DOCSDIR%%/user-4.html
+%%PORTDOCS%%%%DOCSDIR%%/user-5.html
+%%PORTDOCS%%%%DOCSDIR%%/user-6.html
+%%PORTDOCS%%%%DOCSDIR%%/user-7.html
+%%PORTDOCS%%%%DOCSDIR%%/user-8.html
+%%PORTDOCS%%%%DOCSDIR%%/user-9.html
+%%PORTDOCS%%%%DOCSDIR%%/user.html
+%%PORTDOCS%%%%DOCSDIR%%/user.sui
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/img
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

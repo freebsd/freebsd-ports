@@ -1,0 +1,12 @@
+Skribe is a text processor.  Even if it is a general purpose tool, it
+best suits the writing of technical documents such as web pages or
+technical reports, API documentations, etc.  At first glance, Skribe
+looks like a mark-up language ala HTML.  So, there is no need to be
+provided with computer programming skills in order to use Skribe.
+
+A second look reveals that Skribe is actually a true programming
+language, provided with high level features (such as objects, higher
+order functions, regular and syntactic parsing, etc.).  Skribe is
+based on the Scheme programming language.
+
+WWW: http://www-sop.inria.fr/mimosa/fp/Skribe/
