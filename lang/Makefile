@@ -67,6 +67,7 @@
     SUBDIR += intercal
     SUBDIR += itcl
     SUBDIR += jgnat
+    SUBDIR += jgnat-doc-html
     SUBDIR += jruby
     SUBDIR += jython
     SUBDIR += klone

@@ -1,0 +1,3 @@
+share/doc/jgnat/ps/jgnat_ug.ps
+@dirrm share/doc/jgnat/ps
+@unexec rmdir %D/share/doc/jgnat 2>/dev/null || true

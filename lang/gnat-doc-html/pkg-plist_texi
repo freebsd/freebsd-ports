@@ -1,0 +1,18 @@
+share/doc/gnat/texi/arm95.texi
+share/doc/gnat/texi/cpp.texi
+share/doc/gnat/texi/extend.texi
+share/doc/gnat/texi/gcc.texi
+share/doc/gnat/texi/gcov.texi
+share/doc/gnat/texi/gdb.texinfo
+share/doc/gnat/texi/gdbtk.texinfo
+share/doc/gnat/texi/gnat_rm.texi
+share/doc/gnat/texi/gnat_ug_unx.texi
+share/doc/gnat/texi/install.texi
+share/doc/gnat/texi/invoke.texi
+share/doc/gnat/texi/md.texi
+share/doc/gnat/texi/rtl.texi
+share/doc/gnat/texi/texinfo.tex
+share/doc/gnat/texi/texiplus.tex
+share/doc/gnat/texi/tm.texi
+@dirrm share/doc/gnat/texi
+@unexec rmdir %D/share/doc/gnat 2>/dev/null || true
