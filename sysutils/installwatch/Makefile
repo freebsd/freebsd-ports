@@ -6,7 +6,7 @@
 #
 
 PORTNAME=       installwatch
-PORTVERSION=	0.5.6
+PORTVERSION=	0.6.3
 CATEGORIES=     sysutils
 MASTER_SITES=	http://asic-linux.com.mx/~izto/checkinstall/files/source/
 EXTRACT_SUFX=	.tgz

@@ -1,0 +1,32 @@
+--- Makefile.bak	Fri Jan  2 17:45:26 2004
++++ Makefile	Fri Jan  2 17:48:33 2004
+@@ -4,7 +4,6 @@
+ # Well, the only configurable part is the following variable.
+ # Make sure the directory you specify exists.
+ 
+-PREFIX=/usr/local
+ 
+ # End of configurable part
+ 
+@@ -16,10 +15,10 @@
+ all: installwatch.so
+ 
+ installwatch.so: installwatch.o
+-	ld -shared -o installwatch.so installwatch.o -ldl -lc
++	ld -shared -o installwatch.so installwatch.o -lc
+ 
+ installwatch.o: installwatch.c localdecls.h
+-	gcc -Wall -c -D_GNU_SOURCE -DPIC -fPIC -D_REENTRANT -DVERSION=\"$(VERSION)\" installwatch.c
++	$(CC) -Wall -c $(CFLAGS) -DPIC -fPIC -D_REENTRANT -DVERSION=\"$(VERSION)\" installwatch.c
+ 
+ localdecls.h:
+ 	./create-localdecls
+@@ -41,7 +40,7 @@
+ 	tar -czvC .. -f ../installwatch-$(VERSION).tar.gz installwatch-$(VERSION)
+ 
+ test: install
+-	gcc -Wall -DVERSION=\"$(VERSION)\" -o test-installwatch test-installwatch.c -ldl
++	$(CC) -Wall -DVERSION=\"$(VERSION)\" -o test-installwatch test-installwatch.c
+ 	$(PREFIX)/bin/installwatch ./test-installwatch
+ 
+ 
