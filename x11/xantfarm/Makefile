@@ -9,7 +9,7 @@ PORTNAME=	xantfarm
 PORTVERSION=	1.16
 CATEGORIES=	x11
 MASTER_SITES=	http://www.acme.com/software/xantfarm/
-DISTNAME=	${PORTNAME}_23oct91
+DISTNAME=	${PORTNAME}_23oct1991
 
 MAINTAINER=	nakai@FreeBSD.org
 
