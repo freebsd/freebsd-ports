@@ -5,10 +5,10 @@
 #
 # $FreeBSD$
 #
-# If You don't want to use Joerg Schilling's SCSI library,
+# If you don't want to use Joerg Schilling's SCSI library,
 # set DONT_USE_SCGLIB = yes
-# If You don't want to use pthreads, set DONT_USE_PTHREADS = yes
-# If You want the graphical X toc file editor, set XCDRDAO = yes
+# If you don't want to use pthreads, set DONT_USE_PTHREADS = yes
+# If you want the graphical X toc file editor, set XCDRDAO = yes
 
 DISTNAME=		cdrdao-1.1.3.src
 PKGNAME=		cdrdao-1.1.3
