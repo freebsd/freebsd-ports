@@ -1,8 +1,9 @@
+bin/asclock_applet
 bin/background-properties
 bin/batmon_applet
 bin/battery_applet
 bin/bell-properties
-bin/bussign_applet
+bin/charpick_applet
 bin/clockmail_applet
 bin/cpuload_applet
 bin/cpumemusage_applet
@@ -24,27 +25,38 @@ bin/keyboard-properties
 bin/mixer_applet
 bin/modemlights_applet
 bin/mouse-properties
+bin/multiload_applet
 bin/netload_applet
 bin/panel
 bin/save-session
+bin/screensaver-properties-capplet
 bin/session-properties
 bin/ui-properties
 bin/webcontrol_applet
 bin/wmpager_applet
 include/applet-lib.h
 include/applet-widget.h
+include/capplet-widget.h
+include/panel-types.h
+lib/libcapplet.a
+lib/libcapplet.la
+lib/libcapplet.so
+lib/libcapplet.so.0.30
 lib/libpanel_applet.a
 lib/libpanel_applet.la
 lib/libpanel_applet.so
-lib/libpanel_applet.so.0.27
-@exec /sbin/ldconfig -m %B
-@unexec /sbin/ldconfig -R
+lib/libpanel_applet.so.0.30
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 share/gnome/appletsConf.sh
 share/gnome/applets/Amusements/.directory
-share/gnome/applets/Amusements/bussign_applet.desktop
 share/gnome/applets/Amusements/fifteen_applet.desktop
 share/gnome/applets/Amusements/fish_applet.desktop
 share/gnome/applets/Monitors/.directory
+share/gnome/applets/Monitors/MultiLoad/.directory
+share/gnome/applets/Monitors/MultiLoad/cpuload_applet.desktop
+share/gnome/applets/Monitors/MultiLoad/memload_applet.desktop
+share/gnome/applets/Monitors/MultiLoad/swapload_applet.desktop
 share/gnome/applets/Monitors/batmon_applet.desktop
 share/gnome/applets/Monitors/battery_applet.desktop
 share/gnome/applets/Monitors/cpuload_applet.desktop
@@ -59,6 +71,8 @@ share/gnome/applets/Network/modemlights_applet.desktop
 share/gnome/applets/Network/netload_applet.desktop
 share/gnome/applets/Network/webcontrol_applet.desktop
 share/gnome/applets/Utility/.directory
+share/gnome/applets/Utility/asclock_applet.desktop
+share/gnome/applets/Utility/charpick_applet.desktop
 share/gnome/applets/Utility/clock_applet.desktop
 share/gnome/applets/Utility/clockmail_applet.desktop
 share/gnome/applets/Utility/drivemount_applet.desktop
@@ -95,6 +109,18 @@ share/gnome/apps/Utilities/UNIX-regular.desktop
 share/gnome/apps/Utilities/UNIX.desktop
 share/gnome/apps/Utilities/gnome-terminal.desktop
 share/gnome/apps/gnome-help.desktop
+share/gnome/cappletConf.sh
+share/gnome/control-center/.directory
+share/gnome/control-center/.data/Deco.desktop
+share/gnome/control-center/.data/Qix.desktop
+share/gnome/control-center/.data/deco.png
+share/gnome/control-center/.data/qix.png
+share/gnome/control-center/Appearances/.directory
+share/gnome/control-center/Inputdevs/.directory
+share/gnome/control-center/Inputdevs/keyboard-properties.desktop
+share/gnome/control-center/Inputdevs/mouse-properties.desktop
+share/gnome/control-center/WindowManager/.directory
+share/gnome/control-center/Workspace/.directory
 share/gnome/default.session
 share/gnome/help/gnome-intro/C/a-sample-session.html
 share/gnome/help/gnome-intro/C/a-sample-session75.html
@@ -144,27 +170,17 @@ share/gnome/help/gnome-intro/C/pix/panel-menu.gif
 share/gnome/help/gnome-intro/C/pix/same-gnome.gif
 share/gnome/help/gnome-intro/C/pix/terminal.gif
 share/gnome/help/gnome-intro/C/topic.dat
-share/gnome/help/help-browser/C/bg.xpm
+share/gnome/help/help-browser/C/bg.png
 share/gnome/help/help-browser/C/default-page.html
-share/gnome/help/help-browser/C/gnome-logo2.xpm
+share/gnome/help/help-browser/C/gnome-logo2.png
 share/gnome/help/help-browser/C/help-browser.html
 share/gnome/help/help-browser/C/index.html
 share/gnome/help/help-browser/C/topic.dat
-share/locale/de/LC_MESSAGES/gnome-core.mo
-share/locale/es/LC_MESSAGES/gnome-core.mo
-share/locale/fi/LC_MESSAGES/gnome-core.mo
-share/locale/fr/LC_MESSAGES/gnome-core.mo
-share/locale/ga/LC_MESSAGES/gnome-core.mo
-share/locale/it/LC_MESSAGES/gnome-core.mo
-share/locale/ja/LC_MESSAGES/gnome-core.mo
-share/locale/ko/LC_MESSAGES/gnome-core.mo
-share/locale/no/LC_MESSAGES/gnome-core.mo
-share/locale/pt/LC_MESSAGES/gnome-core.mo
-share/locale/sv/LC_MESSAGES/gnome-core.mo
 share/gnome/panelrc
-share/gnome/pixmaps/batmon-ac.xpm
-share/gnome/pixmaps/batmon-bat.xpm
+share/gnome/pixmaps/batmon-ac.png
+share/gnome/pixmaps/batmon-bat.png
 share/gnome/pixmaps/emacs.png
+share/gnome/pixmaps/fish/fishanim.png
 share/gnome/pixmaps/gnome-aorta.png
 share/gnome/pixmaps/gnome-audio2.png
 share/gnome/pixmaps/gnome-background.png
@@ -192,10 +208,9 @@ share/gnome/pixmaps/gnome-image-jpeg.png
 share/gnome/pixmaps/gnome-irc.png
 share/gnome/pixmaps/gnome-lockscreen.png
 share/gnome/pixmaps/gnome-log.png
-share/gnome/pixmaps/gnome-menu-down.png
-share/gnome/pixmaps/gnome-menu-left.png
-share/gnome/pixmaps/gnome-menu-right.png
-share/gnome/pixmaps/gnome-menu-up.png
+share/gnome/pixmaps/gnome-logo-icon-transparent.png
+share/gnome/pixmaps/gnome-logo-icon.png
+share/gnome/pixmaps/gnome-logo-large.png
 share/gnome/pixmaps/gnome-mnemonic.png
 share/gnome/pixmaps/gnome-money.png
 share/gnome/pixmaps/gnome-mouse.png
@@ -211,22 +226,41 @@ share/gnome/pixmaps/gnome-term.png
 share/gnome/pixmaps/gnome-tigert.png
 share/gnome/pixmaps/gnome-unknown.png
 share/gnome/pixmaps/gnome-word.png
-share/gnome/pixmaps/kterm.xpm
-share/gnome/pixmaps/launcher-program.xpm
-share/gnome/pixmaps/mailcheck/email-e.xpm
-share/gnome/pixmaps/mailcheck/email.xpm
-share/gnome/pixmaps/mailcheck/tux-anim.xpm
-share/gnome/pixmaps/monitor.xpm
+share/gnome/pixmaps/kterm.png
+share/gnome/pixmaps/launcher-program.png
+share/gnome/pixmaps/mailcheck/email-e.png
+share/gnome/pixmaps/mailcheck/email.png
+share/gnome/pixmaps/mailcheck/tux-anim.png
+share/gnome/pixmaps/monitor.png
 share/gnome/pixmaps/netscape.png
-share/gnome/pixmaps/panel-arrow-down.xpm
-share/gnome/pixmaps/panel-arrow-left.xpm
-share/gnome/pixmaps/panel-arrow-right.xpm
-share/gnome/pixmaps/panel-arrow-up.xpm
+share/gnome/pixmaps/panel-arrow-down.png
+share/gnome/pixmaps/panel-arrow-left.png
+share/gnome/pixmaps/panel-arrow-right.png
+share/gnome/pixmaps/panel-arrow-up.png
 share/gnome/pixmaps/panel-drawer.png
-share/gnome/pixmaps/panel-folder.xpm
+share/gnome/pixmaps/panel-folder.png
 share/gnome/pixmaps/panel-knob.png
-share/gnome/pixmaps/panel-menu-main.xpm
+share/gnome/pixmaps/panel-menu-main.png
+share/gnome/pixmaps/tiles/tile-green-down.png
+share/gnome/pixmaps/tiles/tile-green-up.png
+share/gnome/pixmaps/tiles/tile-normal-down.png
+share/gnome/pixmaps/tiles/tile-normal-up.png
+share/gnome/pixmaps/tiles/tile-purple-down.png
+share/gnome/pixmaps/tiles/tile-purple-up.png
+share/locale/cs/LC_MESSAGES/gnome-core.mo
+share/locale/de/LC_MESSAGES/gnome-core.mo
+share/locale/es/LC_MESSAGES/gnome-core.mo
+share/locale/fi/LC_MESSAGES/gnome-core.mo
+share/locale/fr/LC_MESSAGES/gnome-core.mo
+share/locale/ga/LC_MESSAGES/gnome-core.mo
+share/locale/it/LC_MESSAGES/gnome-core.mo
+share/locale/ja/LC_MESSAGES/gnome-core.mo
+share/locale/ko/LC_MESSAGES/gnome-core.mo
+share/locale/no/LC_MESSAGES/gnome-core.mo
+share/locale/pt/LC_MESSAGES/gnome-core.mo
+share/locale/sv/LC_MESSAGES/gnome-core.mo
 @dirrm share/gnome/applets/Amusements
+@dirrm share/gnome/applets/Monitors/MultiLoad
 @dirrm share/gnome/applets/Monitors
 @dirrm share/gnome/applets/Multimedia
 @dirrm share/gnome/applets/Network
@@ -242,6 +276,12 @@ share/gnome/pixmaps/panel-menu-main.xpm
 @dirrm share/gnome/apps/System
 @dirrm share/gnome/apps/Utilities
 @dirrm share/gnome/apps
+@dirrm share/gnome/control-center/.data
+@dirrm share/gnome/control-center/Appearances
+@dirrm share/gnome/control-center/Inputdevs
+@dirrm share/gnome/control-center/WindowManager
+@dirrm share/gnome/control-center/Workspace
+@dirrm share/gnome/control-center
 @dirrm share/gnome/help/gnome-intro/C/pix
 @dirrm share/gnome/help/gnome-intro/C
 @dirrm share/gnome/help/gnome-intro
@@ -249,3 +289,5 @@ share/gnome/pixmaps/panel-menu-main.xpm
 @dirrm share/gnome/help/help-browser
 @dirrm share/gnome/help
 @dirrm share/gnome/pixmaps/mailcheck
+@dirrm share/gnome/pixmaps/fish
+@dirrm share/gnome/pixmaps/tiles

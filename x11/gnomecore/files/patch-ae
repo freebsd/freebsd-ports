@@ -1,6 +1,17 @@
---- applets/batmon/Makefile.in.orig	Tue Sep  1 11:09:50 1998
-+++ applets/batmon/Makefile.in	Tue Sep  1 11:17:15 1998
-@@ -127,7 +127,7 @@
+--- applets/asclock/Makefile.in.orig	Sat Sep 26 23:49:56 1998
++++ applets/asclock/Makefile.in	Sat Sep 26 23:50:23 1998
+@@ -145,7 +145,7 @@
+ 
+ INCLUDES = -I. -I$(srcdir) 				\
+ 	-I$(srcdir)/../../panel				\
+-	-DGNOMELOCALEDIR=\""$(datadir)/locale"\"	\
++	-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\"	\
+ 	-I$(includedir) $(GNOME_INCLUDEDIR)
+ 
+ bin_PROGRAMS = asclock_applet
+--- applets/batmon/Makefile.in.orig	Thu Sep 24 09:00:17 1998
++++ applets/batmon/Makefile.in	Sat Sep 26 23:48:33 1998
+@@ -148,7 +148,7 @@
  INCLUDES = -I. -I$(srcdir) 				\
  	-I$(top_srcdir)/intl -I$(top_builddir)/intl	\
  	-I$(srcdir)/../../panel				\
@@ -9,9 +20,9 @@
  	-I$(includedir) $(GNOME_INCLUDEDIR)
  
  bin_PROGRAMS = batmon_applet
---- applets/battery/Makefile.in.orig	Tue Sep  1 11:17:22 1998
-+++ applets/battery/Makefile.in	Tue Sep  1 11:17:35 1998
-@@ -125,7 +125,7 @@
+--- applets/battery/Makefile.in.orig	Thu Sep 24 09:00:37 1998
++++ applets/battery/Makefile.in	Sat Sep 26 23:48:33 1998
+@@ -146,7 +146,7 @@
  INCLUDES = -I. -I$(srcdir) 				\
  	-I$(top_srcdir)/intl -I$(top_builddir)/intl	\
  	-I$(srcdir)/../../panel				\
@@ -20,9 +31,9 @@
  	-I$(includedir) $(GNOME_INCLUDEDIR)
  
  bin_PROGRAMS = battery_applet
---- applets/bussign/Makefile.in.orig	Tue Sep  1 11:17:42 1998
-+++ applets/bussign/Makefile.in	Tue Sep  1 11:17:58 1998
-@@ -125,7 +125,7 @@
+--- applets/bussign/Makefile.in.orig	Thu Sep 24 09:00:56 1998
++++ applets/bussign/Makefile.in	Sat Sep 26 23:48:33 1998
+@@ -146,7 +146,7 @@
  INCLUDES = -I. -I$(srcdir) 				\
  	-I$(top_srcdir)/intl -I$(top_builddir)/intl	\
  	-I$(srcdir)/../../panel				\
@@ -31,9 +42,9 @@
  	-I$(includedir) $(GNOME_INCLUDEDIR)
  
  bin_PROGRAMS = bussign_applet
---- applets/cdplayer/Makefile.in.orig	Tue Sep  1 11:18:05 1998
-+++ applets/cdplayer/Makefile.in	Tue Sep  1 11:18:16 1998
-@@ -125,7 +125,7 @@
+--- applets/cdplayer/Makefile.in.orig	Thu Sep 24 09:00:47 1998
++++ applets/cdplayer/Makefile.in	Sat Sep 26 23:48:33 1998
+@@ -146,7 +146,7 @@
  INCLUDES = -I. -I$(srcdir) 				\
  	-I$(top_srcdir)/intl -I$(top_builddir)/intl	\
  	-I$(srcdir)/../../panel				\
@@ -42,9 +53,20 @@
  	-I$(includedir) $(GNOME_INCLUDEDIR)
  
  bin_PROGRAMS = cdplayer_applet
---- applets/clockmail/Makefile.in.orig	Tue Sep  1 11:18:24 1998
-+++ applets/clockmail/Makefile.in	Tue Sep  1 11:18:35 1998
-@@ -125,7 +125,7 @@
+--- applets/charpick/Makefile.in.orig	Sat Sep 26 23:50:49 1998
++++ applets/charpick/Makefile.in	Sat Sep 26 23:51:05 1998
+@@ -146,7 +146,7 @@
+ INCLUDES = -I. -I$(srcdir) 				\
+ 	-I$(top_srcdir)/intl -I$(top_builddir)/intl	\
+ 	-I$(srcdir)/../../panel				\
+-	-DGNOMELOCALEDIR=\""$(datadir)/locale"\"	\
++	-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\"	\
+ 	-I$(includedir) $(GNOME_INCLUDEDIR)
+ 
+ bin_PROGRAMS = charpick_applet
+--- applets/clockmail/Makefile.in.orig	Thu Sep 24 09:00:33 1998
++++ applets/clockmail/Makefile.in	Sat Sep 26 23:48:33 1998
+@@ -146,7 +146,7 @@
  INCLUDES = -I. -I$(srcdir) 				\
  	-I$(top_srcdir)/intl -I$(top_builddir)/intl	\
  	-I$(srcdir)/../../panel				\
@@ -53,31 +75,31 @@
  	-I$(includedir) $(GNOME_INCLUDEDIR)
  
  bin_PROGRAMS = clockmail_applet
---- applets/cpuload/Makefile.in.orig	Tue Sep  1 11:18:42 1998
-+++ applets/cpuload/Makefile.in	Tue Sep  1 11:18:51 1998
-@@ -125,7 +125,7 @@
+--- applets/cpuload/Makefile.in.orig	Thu Sep 24 09:00:40 1998
++++ applets/cpuload/Makefile.in	Sat Sep 26 23:51:47 1998
+@@ -146,7 +146,7 @@
  INCLUDES = -I. -I$(srcdir) 				\
  	-I$(top_srcdir)/intl -I$(top_builddir)/intl	\
  	-I$(srcdir)/../../panel				\
 -	-DGNOMELOCALEDIR=\""$(datadir)/locale"\"	\
 +	-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\"	\
- 	-I$(includedir) $(GNOME_INCLUDEDIR)
+ 	-I$(includedir) $(GNOME_INCLUDEDIR)		\
+ 	-I$(LIBGTOP_INCS)
  
- bin_PROGRAMS = cpuload_applet
---- applets/cpumemusage/Makefile.in.orig	Tue Sep  1 11:19:00 1998
-+++ applets/cpumemusage/Makefile.in	Tue Sep  1 11:19:10 1998
-@@ -125,7 +125,7 @@
+--- applets/cpumemusage/Makefile.in.orig	Thu Sep 24 09:00:41 1998
++++ applets/cpumemusage/Makefile.in	Sat Sep 26 23:52:15 1998
+@@ -146,7 +146,7 @@
  INCLUDES = -I. -I$(srcdir) 				\
  	-I$(top_srcdir)/intl -I$(top_builddir)/intl	\
  	-I$(srcdir)/../../panel				\
 -	-DGNOMELOCALEDIR=\""$(datadir)/locale"\"	\
 +	-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\"	\
- 	-I$(includedir) $(GNOME_INCLUDEDIR)
+ 	-I$(includedir) $(GNOME_INCLUDEDIR)		\
+ 	-I$(LIBGTOP_INCS)
  
- bin_PROGRAMS = cpumemusage_applet
---- applets/dialer/Makefile.in.orig	Tue Sep  1 11:19:15 1998
-+++ applets/dialer/Makefile.in	Tue Sep  1 11:19:26 1998
-@@ -125,7 +125,7 @@
+--- applets/dialer/Makefile.in.orig	Thu Sep 24 09:00:26 1998
++++ applets/dialer/Makefile.in	Sat Sep 26 23:48:34 1998
+@@ -146,7 +146,7 @@
  INCLUDES = -I. -I$(srcdir) 				\
  	-I$(top_srcdir)/intl -I$(top_builddir)/intl	\
  	-I$(srcdir)/../../panel				\
@@ -86,20 +108,20 @@
  	-I$(includedir) $(GNOME_INCLUDEDIR)
  
  bin_PROGRAMS = dialer_applet
---- applets/diskusage/Makefile.in.orig	Tue Sep  1 11:19:33 1998
-+++ applets/diskusage/Makefile.in	Tue Sep  1 11:19:45 1998
-@@ -125,7 +125,7 @@
+--- applets/diskusage/Makefile.in.orig	Thu Sep 24 09:00:43 1998
++++ applets/diskusage/Makefile.in	Sat Sep 26 23:52:41 1998
+@@ -146,7 +146,7 @@
  INCLUDES = -I. -I$(srcdir) 				\
  	-I$(top_srcdir)/intl -I$(top_builddir)/intl	\
  	-I$(srcdir)/../../panel				\
 -	-DGNOMELOCALEDIR=\""$(datadir)/locale"\"	\
 +	-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\"	\
- 	-I$(includedir) $(GNOME_INCLUDEDIR)
+ 	-I$(includedir) $(GNOME_INCLUDEDIR) $(LIBGTOP_INCS)
  
  bin_PROGRAMS = diskusage_applet
---- applets/drivemount/Makefile.in.orig	Tue Sep  1 11:19:52 1998
-+++ applets/drivemount/Makefile.in	Tue Sep  1 11:20:06 1998
-@@ -125,7 +125,7 @@
+--- applets/drivemount/Makefile.in.orig	Thu Sep 24 09:00:32 1998
++++ applets/drivemount/Makefile.in	Sat Sep 26 23:48:34 1998
+@@ -146,7 +146,7 @@
  INCLUDES = -I. -I$(srcdir) 				\
  	-I$(top_srcdir)/intl -I$(top_builddir)/intl	\
  	-I$(srcdir)/../../panel				\
@@ -108,9 +130,9 @@
  	-I$(includedir) $(GNOME_INCLUDEDIR)
  
  bin_PROGRAMS = drivemount_applet
---- applets/fifteen/Makefile.in.orig	Tue Sep  1 11:20:11 1998
-+++ applets/fifteen/Makefile.in	Tue Sep  1 11:20:25 1998
-@@ -125,7 +125,7 @@
+--- applets/fifteen/Makefile.in.orig	Thu Sep 24 09:00:35 1998
++++ applets/fifteen/Makefile.in	Sat Sep 26 23:48:34 1998
+@@ -146,7 +146,7 @@
  INCLUDES = -I. -I$(srcdir) 				\
  	-I$(top_srcdir)/intl -I$(top_builddir)/intl	\
  	-I$(srcdir)/../../panel				\
@@ -119,9 +141,9 @@
  	-I$(includedir) $(GNOME_INCLUDEDIR)
  
  bin_PROGRAMS = fifteen_applet
---- applets/fish/Makefile.in.orig	Tue Sep  1 11:20:32 1998
-+++ applets/fish/Makefile.in	Tue Sep  1 11:20:43 1998
-@@ -125,7 +125,7 @@
+--- applets/fish/Makefile.in.orig	Thu Sep 24 09:00:22 1998
++++ applets/fish/Makefile.in	Sat Sep 26 23:48:34 1998
+@@ -146,7 +146,7 @@
  INCLUDES = -I. -I$(srcdir) 				\
  	-I$(top_srcdir)/intl -I$(top_builddir)/intl	\
  	-I$(srcdir)/../../panel				\
@@ -130,9 +152,9 @@
  	-I$(includedir) $(GNOME_INCLUDEDIR)
  
  bin_PROGRAMS = fish_applet
---- applets/gen_util/Makefile.in.orig	Tue Sep  1 11:20:49 1998
-+++ applets/gen_util/Makefile.in	Tue Sep  1 11:21:05 1998
-@@ -125,7 +125,7 @@
+--- applets/gen_util/Makefile.in.orig	Thu Sep 24 09:00:15 1998
++++ applets/gen_util/Makefile.in	Sat Sep 26 23:48:34 1998
+@@ -146,7 +146,7 @@
  INCLUDES = -I. -I$(srcdir) 				\
  	-I$(top_srcdir)/intl -I$(top_builddir)/intl	\
  	-I$(srcdir)/../../panel				\
@@ -141,9 +163,9 @@
  	-I$(includedir) $(GNOME_INCLUDEDIR)
  
  bin_PROGRAMS = gen_util_applet
---- applets/icewm-pager/Makefile.in.orig	Tue Sep  1 11:21:11 1998
-+++ applets/icewm-pager/Makefile.in	Tue Sep  1 11:21:21 1998
-@@ -125,7 +125,7 @@
+--- applets/icewm-pager/Makefile.in.orig	Thu Sep 24 09:00:30 1998
++++ applets/icewm-pager/Makefile.in	Sat Sep 26 23:48:34 1998
+@@ -146,7 +146,7 @@
  INCLUDES = -I. -I$(srcdir) 				\
  	-I$(top_srcdir)/intl -I$(top_builddir)/intl	\
  	-I$(srcdir)/../../panel				\
@@ -152,9 +174,9 @@
  	-I$(includedir) $(GNOME_INCLUDEDIR)
  
  bin_PROGRAMS = wmpager_applet
---- applets/mixer/Makefile.in.orig	Tue Sep  1 11:21:27 1998
-+++ applets/mixer/Makefile.in	Tue Sep  1 11:21:36 1998
-@@ -125,7 +125,7 @@
+--- applets/mixer/Makefile.in.orig	Thu Sep 24 09:00:50 1998
++++ applets/mixer/Makefile.in	Sat Sep 26 23:48:34 1998
+@@ -146,7 +146,7 @@
  INCLUDES = -I. -I$(srcdir) 				\
  	-I$(top_srcdir)/intl -I$(top_builddir)/intl	\
  	-I$(srcdir)/../../panel				\
@@ -163,9 +185,9 @@
  	-I$(includedir) $(GNOME_INCLUDEDIR)
  
  bin_PROGRAMS = mixer_applet
---- applets/modemlights/Makefile.in.orig	Tue Sep  1 11:21:41 1998
-+++ applets/modemlights/Makefile.in	Tue Sep  1 11:21:51 1998
-@@ -125,7 +125,7 @@
+--- applets/modemlights/Makefile.in.orig	Thu Sep 24 09:00:52 1998
++++ applets/modemlights/Makefile.in	Sat Sep 26 23:48:34 1998
+@@ -146,7 +146,7 @@
  INCLUDES = -I. -I$(srcdir) 				\
  	-I$(top_srcdir)/intl -I$(top_builddir)/intl	\
  	-I$(srcdir)/../../panel				\
@@ -174,9 +196,20 @@
  	-I$(includedir) $(GNOME_INCLUDEDIR)
  
  bin_PROGRAMS = modemlights_applet
---- applets/netload/Makefile.in.orig	Tue Sep  1 11:22:00 1998
-+++ applets/netload/Makefile.in	Tue Sep  1 11:22:15 1998
-@@ -125,7 +125,7 @@
+--- applets/multiload/Makefile.in.orig	Sat Sep 26 23:53:03 1998
++++ applets/multiload/Makefile.in	Sat Sep 26 23:53:17 1998
+@@ -144,7 +144,7 @@
+ l = @l@
+ 
+ INCLUDES = -I. -I$(srcdir) 				\
+-	-DGNOMELOCALEDIR=\""$(datadir)/locale"\"	\
++	-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\"	\
+        -I$(srcdir)/../../panel                         \
+ 	-I$(includedir) $(GNOME_INCLUDEDIR) $(LIBGTOP_INCS)
+ 
+--- applets/netload/Makefile.in.orig	Thu Sep 24 09:00:25 1998
++++ applets/netload/Makefile.in	Sat Sep 26 23:48:34 1998
+@@ -146,7 +146,7 @@
  INCLUDES = -I. -I$(srcdir) 				\
  	-I$(top_srcdir)/intl -I$(top_builddir)/intl	\
  	-I$(srcdir)/../../panel				\
@@ -185,9 +218,9 @@
  	-I$(includedir) $(GNOME_INCLUDEDIR)
  
  bin_PROGRAMS = netload_applet
---- applets/webcontrol/Makefile.in.orig	Tue Sep  1 11:22:20 1998
-+++ applets/webcontrol/Makefile.in	Tue Sep  1 11:22:36 1998
-@@ -125,7 +125,7 @@
+--- applets/webcontrol/Makefile.in.orig	Thu Sep 24 09:00:28 1998
++++ applets/webcontrol/Makefile.in	Sat Sep 26 23:48:34 1998
+@@ -146,7 +146,7 @@
  INCLUDES = -I. -I$(srcdir) 				\
  	-I$(top_srcdir)/intl -I$(top_builddir)/intl	\
  	-I$(srcdir)/../../panel				\
@@ -196,9 +229,9 @@
  	-I$(includedir) $(GNOME_INCLUDEDIR)
  
  bin_PROGRAMS = webcontrol_applet
---- applets/winlist/Makefile.in.orig	Tue Sep  1 11:22:42 1998
-+++ applets/winlist/Makefile.in	Tue Sep  1 11:22:52 1998
-@@ -125,7 +125,7 @@
+--- applets/winlist/Makefile.in.orig	Thu Sep 24 09:00:54 1998
++++ applets/winlist/Makefile.in	Sat Sep 26 23:48:34 1998
+@@ -146,7 +146,7 @@
  INCLUDES = -I. -I$(srcdir) 				\
  	-I$(top_srcdir)/intl -I$(top_builddir)/intl	\
  	-I$(srcdir)/../../panel				\
@@ -207,20 +240,9 @@
  	-I$(includedir) $(GNOME_INCLUDEDIR)
  
  bin_PROGRAMS = winlist_applet
---- control-center/Makefile.in.orig	Tue Sep  1 11:29:55 1998
-+++ control-center/Makefile.in	Tue Sep  1 11:30:07 1998
-@@ -119,7 +119,7 @@
- l = @l@
- 
- INCLUDES = 			\
--	-DGNOMELOCALEDIR=\""$(datadir)/locale"\" \
-+	-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\" \
- 	-I$(top_srcdir)/intl -I$(top_builddir)/intl	\
- 	-I$(includedir) $(GNOME_INCLUDEDIR)
- 
---- desktop-properties/Makefile.in.orig	Tue Sep  1 11:30:33 1998
-+++ desktop-properties/Makefile.in	Tue Sep  1 11:30:45 1998
-@@ -119,7 +119,7 @@
+--- desktop-properties/Makefile.in.orig	Thu Sep 24 08:59:56 1998
++++ desktop-properties/Makefile.in	Sat Sep 26 23:48:34 1998
+@@ -144,7 +144,7 @@
  l = @l@
  
  INCLUDES = 			\
@@ -229,9 +251,9 @@
  	-I$(top_srcdir)/intl -I$(top_builddir)/intl	\
  	-I$(includedir) $(X_CFLAGS) $(GNOME_INCLUDEDIR)
  
---- gmenu/Makefile.in.orig	Thu Aug 20 02:46:44 1998
-+++ gmenu/Makefile.in	Sun Sep  6 03:21:25 1998
-@@ -119,7 +119,7 @@
+--- gmenu/Makefile.in.orig	Thu Sep 24 09:00:07 1998
++++ gmenu/Makefile.in	Sat Sep 26 23:48:34 1998
+@@ -144,7 +144,7 @@
  l = @l@
  
  INCLUDES = 			\
@@ -240,9 +262,9 @@
  	-I$(top_srcdir)/intl -I$(top_builddir)/intl	\
  	-I$(includedir) $(GNOME_INCLUDEDIR)
  
---- gnome-terminal/Makefile.in.orig	Tue Sep  1 11:31:53 1998
-+++ gnome-terminal/Makefile.in	Tue Sep  1 11:32:04 1998
-@@ -123,7 +123,7 @@
+--- gnome-terminal/Makefile.in.orig	Thu Sep 24 09:00:03 1998
++++ gnome-terminal/Makefile.in	Sat Sep 26 23:48:34 1998
+@@ -148,7 +148,7 @@
  	-I$(top_srcdir)/intl	\
  	-I$(top_builddir)/intl	\
  	$(GNOME_INCLUDEDIR)	\
@@ -251,9 +273,9 @@
  
  LDADD = \
  	$(GNOME_LIBDIR)					\
---- gsm/Makefile.in.orig	Tue Sep  1 11:32:20 1998
-+++ gsm/Makefile.in	Tue Sep  1 11:32:33 1998
-@@ -120,7 +120,7 @@
+--- gsm/Makefile.in.orig	Thu Sep 24 08:59:50 1998
++++ gsm/Makefile.in	Sat Sep 26 23:48:34 1998
+@@ -145,7 +145,7 @@
  
  INCLUDES = -I$(includedir) $(GNOME_INCLUDEDIR) \
  	-I$(top_srcdir)/intl -I$(top_builddir)/intl	\
@@ -262,9 +284,9 @@
  	-DDEFAULTDIR="\"$(datadir)\""
  
  LDADD = $(GNOME_LIBDIR) $(GNOMEUI_LIBS) $(INTLLIBS)
---- panel/Makefile.in.orig	Thu Aug 20 02:45:47 1998
-+++ panel/Makefile.in	Sun Sep  6 03:22:52 1998
-@@ -126,7 +126,7 @@
+--- panel/Makefile.in.orig	Thu Sep 24 09:00:09 1998
++++ panel/Makefile.in	Sun Sep 27 00:00:12 1998
+@@ -151,7 +151,7 @@
  
  INCLUDES = -I. -I$(srcdir) \
  	-I$(top_srcdir)/intl -I$(top_builddir)/intl \
@@ -272,39 +294,39 @@
 +	-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\" \
  	-I$(includedir) $(GNOME_INCLUDEDIR) $(ORB_CFLAGS)
  
- bin_PROGRAMS = panel #launcher_applet
-@@ -162,7 +162,7 @@
- 	applet-lib.h \
- 	applet-widget.h
+ bin_PROGRAMS = panel
+@@ -178,7 +178,7 @@
+ 	applet-widget.h		\
+ 	panel-types.h
  
 -libpanel_applet_la_LDFLAGS = -version-info 0:0:0 -rpath $(libdir)
-+libpanel_applet_la_LDFLAGS = -version-info 0:27:0 -rpath $(libdir)
++libpanel_applet_la_LDFLAGS = -version-info 0:30:0 -rpath $(libdir)
  libpanel_applet_la_LIBADD = $(ORB_LIBS) -lm $(DL_LIB)
  
  BUILT_SOURCES = $(CORBA_SRCLIST)
-@@ -228,7 +228,7 @@
- 
- EXTRA_DIST = panelrc.in panel.in gnome-panel.idl appletsConf.sh.in
+@@ -244,7 +244,7 @@
+ 	panel.in		\
+ 	appletsConf.sh.in
  
 -confexecdir = $(libdir)
 +confexecdir = $(datadir)
  confexec_DATA = appletsConf.sh
  mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
  CONFIG_HEADER = ../config.h
---- smproxy/Makefile.in.orig	Tue Sep  1 11:34:30 1998
-+++ smproxy/Makefile.in	Tue Sep  1 11:34:41 1998
-@@ -119,7 +119,7 @@
+--- smproxy/Makefile.in.orig	Thu Sep 24 08:59:51 1998
++++ smproxy/Makefile.in	Sun Sep 27 00:01:00 1998
+@@ -144,7 +144,7 @@
  l = @l@
  
  INCLUDES = -I$(includedir) $(GNOME_INCLUDEDIR) \
--	-DGNOMELOCALEDIR=\""$(datadir)/locale\"" \
-+	-DGNOMELOCALEDIR=\""$(prefix)/share/locale\"" \
- 	-DHAS_MKSTEMP $(SMPROXY_DEFS)
+-	-DGNOMELOCALEDIR=\""$(datadir)/locale\""
++	-DGNOMELOCALEDIR=\""$(prefix)/share/locale\""
  
  LDADD = -lXt -lXmu $(GNOME_LIBDIR) $(GNOMEUI_LIBS) $(INTLLIBS)
---- core-docs/Makefile.in.orig	Tue Sep  1 12:32:02 1998
-+++ core-docs/Makefile.in	Tue Sep  1 12:32:20 1998
-@@ -126,7 +126,7 @@
+ 
+--- core-docs/Makefile.in.orig	Thu Sep 24 09:00:04 1998
++++ core-docs/Makefile.in	Sat Sep 26 23:48:34 1998
+@@ -151,7 +151,7 @@
  YACC = @YACC@
  l = @l@
  
@@ -313,9 +335,9 @@
  
  GNOME_INTRO_HTML_FILES = \
  	gnome-intro/c93191.html \
---- help-browser/Makefile.in.orig	Thu Aug 20 02:46:36 1998
-+++ help-browser/Makefile.in	Tue Sep  1 12:35:49 1998
-@@ -124,8 +124,8 @@
+--- help-browser/Makefile.in.orig	Thu Sep 24 08:59:59 1998
++++ help-browser/Makefile.in	Sat Sep 26 23:48:34 1998
+@@ -149,8 +149,8 @@
  	-I$(includedir)						\
  	-I$(top_srcdir)/intl -I$(top_builddir)/intl		\
  	$(GNOME_INCLUDEDIR)					\
@@ -326,7 +348,7 @@
  
  LDADD = \
  	$(GNOME_LIBDIR)					\
-@@ -159,7 +159,7 @@
+@@ -184,7 +184,7 @@
  	     toc.h toc-man.h toc-ghelp.h toc-info.h \
  	     $(PIXMAPS) gnome-help.desktop
  
@@ -335,3 +357,65 @@
  
  sysdir = $(datadir)/apps
  sys_DATA = gnome-help.desktop
+--- capplets/keyboard-properties/Makefile.in.orig	Sun Sep 27 00:07:30 1998
++++ capplets/keyboard-properties/Makefile.in	Sun Sep 27 00:07:41 1998
+@@ -146,7 +146,7 @@
+ INCLUDES = -I. -I$(srcdir) 				\
+ 	-I$(top_srcdir)/intl -I$(top_builddir)/intl	\
+ 	-I$(srcdir)/../../control-center		\
+-	-DGNOMELOCALEDIR=\""$(datadir)/locale"\"	\
++	-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\"	\
+ 	-I$(includedir) $(GNOME_INCLUDEDIR)
+ 
+ bin_PROGRAMS = keyboard-properties
+--- capplets/mouse-properties/Makefile.in.orig	Sun Sep 27 00:07:13 1998
++++ capplets/mouse-properties/Makefile.in	Sun Sep 27 00:07:24 1998
+@@ -146,7 +146,7 @@
+ INCLUDES = -I. -I$(srcdir) 				\
+ 	-I$(top_srcdir)/intl -I$(top_builddir)/intl	\
+ 	-I$(srcdir)/../../control-center		\
+-	-DGNOMELOCALEDIR=\""$(datadir)/locale"\"	\
++	-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\"	\
+ 	-I$(includedir) $(GNOME_INCLUDEDIR)
+ 
+ bin_PROGRAMS = mouse-properties
+--- capplets/screensaver-properties/Makefile.in.orig	Sun Sep 27 00:07:49 1998
++++ capplets/screensaver-properties/Makefile.in	Sun Sep 27 00:08:00 1998
+@@ -146,7 +146,7 @@
+ INCLUDES = -I. -I$(srcdir) 				\
+ 	-I$(top_srcdir)/intl -I$(top_builddir)/intl	\
+ 	-I$(srcdir)/../../control-center		\
+-	-DGNOMELOCALEDIR=\""$(datadir)/locale"\"	\
++	-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\"	\
+ 	-I$(includedir) $(GNOME_INCLUDEDIR)
+ 
+ bin_PROGRAMS = screensaver-properties-capplet
+--- control-center/Makefile.in.orig	Thu Sep 24 09:00:58 1998
++++ control-center/Makefile.in	Sun Sep 27 03:15:36 1998
+@@ -144,7 +144,7 @@
+ l = @l@
+ 
+ INCLUDES = 			\
+-	-DGNOMELOCALEDIR=\""$(datadir)/locale"\" \
++	-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\" \
+ 	-I$(top_srcdir)/intl -I$(top_builddir)/intl	\
+ 	-I$(includedir) $(GNOME_INCLUDEDIR)
+ 
+@@ -177,7 +177,7 @@
+ sysdir = $(datadir)/apps/System
+ sys_DATA = gnomecc.desktop
+ 
+-confexecdir = $(libdir)
++confexecdir = $(datadir)
+ confexec_DATA = cappletConf.sh
+ 
+ libcapplet_la_SOURCES = \
+@@ -186,7 +186,7 @@
+ 	capplet-widget-libs.h	\
+ 	$(CORBA_SRCLIST)
+ 
+-libcapplet_la_LDFLAGS = -version-info 0:0:0 -rpath $(libdir)
++libcapplet_la_LDFLAGS = -version-info 0:30:0 -rpath $(libdir)
+ libcapplet_la_LIBADD = $(ORB_LIBS) -lm $(DL_LIB)
+ 
+ include_HEADERS = capplet-widget.h
