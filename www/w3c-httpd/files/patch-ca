@@ -1,0 +1,12 @@
+--- Daemon/Implementation/CGIParse.c.orig	Wed Jun  3 12:38:15 1998
++++ Daemon/Implementation/CGIParse.c	Wed Jun  3 12:38:41 1998
+@@ -293,7 +293,8 @@
+ 	*cur = 0;
+ 
+ 	if (init) {
+-	    printf("QUERY_STRING='%s'; export QUERY_STRING\n", query_string);
++	    printf("QUERY_STRING='%s'; export QUERY_STRING\n",
++		sh_escape(query_string) );
+ 	    exit(0);
+ 	}
+     }
