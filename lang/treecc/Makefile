@@ -10,7 +10,7 @@ PORTVERSION=	0.2.6
 CATEGORIES=	lang
 MASTER_SITES=	http://www.southern-storm.com.au/download/
 
-MAINTAINER=	ahze@rgv.net
+MAINTAINER=	ahze@ahze.net
 COMMENT=	Treecc is designed to assist in the development of compilers
 
 GNU_CONFIGURE=	yes

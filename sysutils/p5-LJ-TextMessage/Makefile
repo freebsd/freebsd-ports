@@ -11,7 +11,7 @@ MASTER_SITES=	http://livejournal.com/files/code/textmessage/ \
 		ftp://ftp.livejournal.com/code/textmessage/
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ahze@rgv.net
+MAINTAINER=	ahze@ahze.net
 COMMENT=	Perl5 interface to send text messages to phones/pagers
 
 PERL_CONFIGURE=	yes
