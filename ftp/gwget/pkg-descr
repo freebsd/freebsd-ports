@@ -2,4 +2,4 @@ Gwget is a download manager for GNOME which uses wget as its backend.
 The most important features include pause/continue support, resuming
 and recursive downloading.
 
-WWW: http://gwget.sourceforge.net/
+WWW: http://gnome.org/projects/gwget/
