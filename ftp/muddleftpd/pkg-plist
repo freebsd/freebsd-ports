@@ -2,23 +2,20 @@ bin/ftpwho
 bin/muddleftpd
 bin/mudlogd
 bin/mudpasswd
-@unexec install-info --delete %D/info/muddleftpd.info %D/info/dir
-info/muddleftpd.info
-@exec install-info %D/info/muddleftpd.info %D/info/dir
-%%PORTDOCS%%share/doc/muddleftpd/cookie.txt
-%%PORTDOCS%%share/doc/muddleftpd/ftpcmds.txt
-%%PORTDOCS%%share/doc/muddleftpd/muddleftpd.txt
-%%PORTDOCS%%share/doc/muddleftpd/mudlogd.txt
-%%PORTDOCS%%share/doc/muddleftpd/mudpasswd.txt
-%%PORTDOCS%%share/doc/muddleftpd/reference.txt
-%%PORTDOCS%%share/examples/muddleftpd/README
-%%PORTDOCS%%share/examples/muddleftpd/anon-only.conf
-%%PORTDOCS%%share/examples/muddleftpd/anon-reigon.conf
-%%PORTDOCS%%share/examples/muddleftpd/mudlogd.conf
-%%PORTDOCS%%share/examples/muddleftpd/ratios.conf
-%%PORTDOCS%%share/examples/muddleftpd/standard.conf
-%%PORTDOCS%%share/examples/muddleftpd/vserver-host.conf
-%%PORTDOCS%%share/examples/muddleftpd/vserver.conf
-%%PORTDOCS%%share/examples/muddleftpd/vserverbig.conf
-%%PORTDOCS%%@dirrm share/examples/muddleftpd
-%%PORTDOCS%%@dirrm share/doc/muddleftpd
+%%PORTDOCS%%%%DOCSDIR%%/cookie.txt
+%%PORTDOCS%%%%DOCSDIR%%/ftpcmds.txt
+%%PORTDOCS%%%%DOCSDIR%%/muddleftpd.txt
+%%PORTDOCS%%%%DOCSDIR%%/mudlogd.txt
+%%PORTDOCS%%%%DOCSDIR%%/mudpasswd.txt
+%%PORTDOCS%%%%DOCSDIR%%/reference.txt
+%%PORTDOCS%%%%EXAMPLESDIR%%/README
+%%PORTDOCS%%%%EXAMPLESDIR%%/anon-only.conf
+%%PORTDOCS%%%%EXAMPLESDIR%%/anon-reigon.conf
+%%PORTDOCS%%%%EXAMPLESDIR%%/mudlogd.conf
+%%PORTDOCS%%%%EXAMPLESDIR%%/ratios.conf
+%%PORTDOCS%%%%EXAMPLESDIR%%/standard.conf
+%%PORTDOCS%%%%EXAMPLESDIR%%/vserver-host.conf
+%%PORTDOCS%%%%EXAMPLESDIR%%/vserver.conf
+%%PORTDOCS%%%%EXAMPLESDIR%%/vserverbig.conf
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
