@@ -1,31 +1,17 @@
 bin/SuperProbe
 bin/X
-bin/XF86Setup
-bin/XF86_3DLabs
-bin/XF86_8514
-bin/XF86_AGX
-bin/XF86_I128
-bin/XF86_Mach32
-bin/XF86_Mach64
-bin/XF86_Mach8
-bin/XF86_Mono
-bin/XF86_P9000
-bin/XF86_S3
-bin/XF86_S3V
-bin/XF86_SVGA
-bin/XF86_VGA16
-bin/XF86_W32
+bin/XFree86
 bin/Xmark
 bin/Xnest
 bin/Xprt
 bin/Xvfb
-bin/Xwrapper
 bin/appres
 bin/atobm
 bin/bdftopcf
 bin/beforelight
 bin/bitmap
 bin/bmtoa
+bin/cxpm
 bin/dga
 bin/editres
 bin/fsinfo
@@ -33,44 +19,62 @@ bin/fslsfonts
 bin/fstobdf
 bin/gccmakedep
 bin/iceauth
+bin/ico
 bin/imake
-bin/joycal
 bin/kbd_mode
 bin/lbxproxy
+bin/listres
 bin/lndir
 bin/makedepend
 bin/makeg
+bin/makepsres
+bin/makestrs
 bin/mergelib
+bin/mkcfm
 bin/mkdirhier
 bin/mkfontdir
 bin/oclock
+bin/pcitweak
 bin/proxymngr
-bin/reconfig
+bin/pswrap
 bin/resize
+bin/revpath
 bin/rstart
 bin/rstartd
 bin/scanpci
 bin/sessreg
 bin/setxkbmap
+bin/showfont
 bin/showrgb
 bin/smproxy
 bin/startx
+bin/sxpm
 bin/twm
+bin/viewres
 bin/x11perf
 bin/x11perfcomp
 bin/xauth
+bin/xbiff
+bin/xcalc
 bin/xclipboard
 bin/xclock
 bin/xcmsdb
 bin/xconsole
 bin/xcutsel
+bin/xditview
 bin/xdm
 bin/xdpyinfo
+bin/xedit
+bin/xev
+bin/xeyes
 bin/xf86config
 bin/xfd
 bin/xfindproxy
+bin/xfontsel
 bin/xfs
 bin/xfwp
+bin/xgamma
+bin/xgc
 bin/xhost
 bin/xieperf
 bin/xinit
@@ -81,20 +85,20 @@ bin/xkbprint
 bin/xkbvleds
 bin/xkbwatch
 bin/xkill
+bin/xload
 bin/xlogo
 bin/xlsatoms
 bin/xlsclients
 bin/xlsfonts
 bin/xmag
-bin/xmh
+bin/xman
+bin/xmessage
 bin/xmkmf
 bin/xmodmap
-bin/xmseconfig
 bin/xon
 bin/xprop
 bin/xrdb
 bin/xrefresh
-bin/xrx
 bin/xset
 bin/xsetmode
 bin/xsetpointer
@@ -106,6 +110,39 @@ bin/xvidtune
 bin/xwd
 bin/xwininfo
 bin/xwud
+include/DPS/ColorSB.h
+include/DPS/ColorSBP.h
+include/DPS/DPSScrollW.h
+include/DPS/DPSScrollWP.h
+include/DPS/FontCreatP.h
+include/DPS/FontCreato.h
+include/DPS/FontSB.h
+include/DPS/FontSBP.h
+include/DPS/FontSamplP.h
+include/DPS/FontSample.h
+include/DPS/PSres.h
+include/DPS/XDPS.h
+include/DPS/XDPSlib.h
+include/DPS/XDPSproto.h
+include/DPS/dpsNXargs.h
+include/DPS/dpsXclient.h
+include/DPS/dpsXcommon.h
+include/DPS/dpsXpreview.h
+include/DPS/dpsXshare.h
+include/DPS/dpsXuserpath.h
+include/DPS/dpsclient.h
+include/DPS/dpsconfig.h
+include/DPS/dpsexcept.h
+include/DPS/dpsfriends.h
+include/DPS/dpsops.h
+include/DPS/psops.h
+include/GL/gl.h
+include/GL/glext.h
+include/GL/glx.h
+include/GL/glxint.h
+include/GL/glxmd.h
+include/GL/glxproto.h
+include/GL/glxtokens.h
 include/X11/Composite.h
 include/X11/CompositeP.h
 include/X11/ConstrainP.h
@@ -144,9 +181,11 @@ include/X11/Vendor.h
 include/X11/VendorP.h
 include/X11/X.h
 include/X11/X10.h
+include/X11/XF86keysym.h
 include/X11/XKBlib.h
 include/X11/XWDFile.h
 include/X11/Xalloca.h
+include/X11/Xarch.h
 include/X11/Xatom.h
 include/X11/Xauth.h
 include/X11/Xaw/AllWidgets.h
@@ -209,6 +248,8 @@ include/X11/Xaw/TextSink.h
 include/X11/Xaw/TextSinkP.h
 include/X11/Xaw/TextSrc.h
 include/X11/Xaw/TextSrcP.h
+include/X11/Xaw/Tip.h
+include/X11/Xaw/TipP.h
 include/X11/Xaw/Toggle.h
 include/X11/Xaw/ToggleP.h
 include/X11/Xaw/Tree.h
@@ -219,6 +260,7 @@ include/X11/Xaw/ViewportP.h
 include/X11/Xaw/XawImP.h
 include/X11/Xaw/XawInit.h
 include/X11/Xcms.h
+include/X11/Xdefs.h
 include/X11/Xdmcp.h
 include/X11/Xfuncproto.h
 include/X11/Xfuncs.h
@@ -239,6 +281,7 @@ include/X11/Xmu/EditresP.h
 include/X11/Xmu/Error.h
 include/X11/Xmu/ExtAgent.h
 include/X11/Xmu/Initer.h
+include/X11/Xmu/Lookup.h
 include/X11/Xmu/Misc.h
 include/X11/Xmu/StdCmap.h
 include/X11/Xmu/StdSel.h
@@ -273,8 +316,6 @@ include/X11/bitmaps/Stipple
 include/X11/bitmaps/Term
 include/X11/bitmaps/Up
 include/X11/bitmaps/black
-include/X11/bitmaps/black6
-include/X11/bitmaps/box6
 include/X11/bitmaps/boxes
 include/X11/bitmaps/calculator
 include/X11/bitmaps/cntr_ptr
@@ -345,6 +386,8 @@ include/X11/cursorfont.h
 include/X11/extensions/MITMisc.h
 include/X11/extensions/Print.h
 include/X11/extensions/Printstr.h
+include/X11/extensions/XEVI.h
+include/X11/extensions/XEVIstr.h
 include/X11/extensions/XI.h
 include/X11/extensions/XIE.h
 include/X11/extensions/XIElib.h
@@ -369,11 +412,20 @@ include/X11/extensions/XTest.h
 include/X11/extensions/Xag.h
 include/X11/extensions/Xagsrv.h
 include/X11/extensions/Xagstr.h
+include/X11/extensions/Xcup.h
+include/X11/extensions/Xcupstr.h
 include/X11/extensions/Xdbe.h
 include/X11/extensions/Xdbeproto.h
 include/X11/extensions/Xext.h
+include/X11/extensions/Xinerama.h
+include/X11/extensions/Xv.h
+include/X11/extensions/Xvlib.h
+include/X11/extensions/Xvproto.h
 include/X11/extensions/dpms.h
 include/X11/extensions/dpmsstr.h
+include/X11/extensions/fontcache.h
+include/X11/extensions/fontcacheP.h
+include/X11/extensions/fontcachstr.h
 include/X11/extensions/lbxbuf.h
 include/X11/extensions/lbxbufstr.h
 include/X11/extensions/lbxdeltastr.h
@@ -382,6 +434,8 @@ include/X11/extensions/lbxopts.h
 include/X11/extensions/lbxstr.h
 include/X11/extensions/lbxzlib.h
 include/X11/extensions/multibuf.h
+include/X11/extensions/panoramiXext.h
+include/X11/extensions/panoramiXproto.h
 include/X11/extensions/record.h
 include/X11/extensions/recordstr.h
 include/X11/extensions/saver.h
@@ -391,7 +445,11 @@ include/X11/extensions/security.h
 include/X11/extensions/securstr.h
 include/X11/extensions/shape.h
 include/X11/extensions/sync.h
+include/X11/extensions/xf86bigfont.h
+include/X11/extensions/xf86bigfstr.h
 include/X11/extensions/xf86dga.h
+include/X11/extensions/xf86dga1.h
+include/X11/extensions/xf86dga1str.h
 include/X11/extensions/xf86dgastr.h
 include/X11/extensions/xf86misc.h
 include/X11/extensions/xf86mscstr.h
@@ -401,97 +459,26 @@ include/X11/extensions/xtestext1.h
 include/X11/fonts/FS.h
 include/X11/fonts/FSlib.h
 include/X11/fonts/FSproto.h
+include/X11/fonts/codeconv/cconvversion.h
+include/X11/fonts/codeconv/xttcap.h
+include/X11/fonts/codeconv/xttcconv.h
+include/X11/fonts/codeconv/xttcconvP.h
+include/X11/fonts/codeconv/xttcommon.h
+include/X11/fonts/codeconv/xttversion.h
 include/X11/fonts/fsmasks.h
 include/X11/keysym.h
 include/X11/keysymdef.h
+include/X11/xpm.h
+include/bitmaps/ldblarrow
+include/bitmaps/rdblarrow
+include/xf86Optrec.h
+include/xf86Parser.h
+info/dir
 lib/X11/Cards
 lib/X11/XErrorDB
+lib/X11/XF86Config.98
 lib/X11/XF86Config.eg
-lib/X11/XF86Setup/LICENSE
-lib/X11/XF86Setup/card.tcl
-lib/X11/XF86Setup/carddata.tcl
-lib/X11/XF86Setup/done.tcl
-lib/X11/XF86Setup/filelist.tcl
-lib/X11/XF86Setup/keyboard.tcl
-lib/X11/XF86Setup/modeselect.tcl
-lib/X11/XF86Setup/mondata.tcl
-lib/X11/XF86Setup/monitor.tcl
-lib/X11/XF86Setup/mouse.tcl
-lib/X11/XF86Setup/mseproto.tcl
-lib/X11/XF86Setup/phase1.tcl
-lib/X11/XF86Setup/phase2.tcl
-lib/X11/XF86Setup/phase3.tcl
-lib/X11/XF86Setup/phase4.tcl
-lib/X11/XF86Setup/phase5.tcl
-lib/X11/XF86Setup/pics/XFree86.msk
-lib/X11/XF86Setup/pics/XFree86.xbm
-lib/X11/XF86Setup/pics/vidcard.msk
-lib/X11/XF86Setup/pics/vidcard.xbm
-lib/X11/XF86Setup/scripts/mseconfig.tcl
-lib/X11/XF86Setup/setuplib.tcl
-lib/X11/XF86Setup/srvflags.tcl
-lib/X11/XF86Setup/tcllib/button.tcl
-lib/X11/XF86Setup/tcllib/combobox.tcl
-lib/X11/XF86Setup/tcllib/dialog.tcl
-lib/X11/XF86Setup/tcllib/downarrow.xbm
-lib/X11/XF86Setup/tcllib/entry.tcl
-lib/X11/XF86Setup/tcllib/focus.tcl
-lib/X11/XF86Setup/tcllib/init.tcl
-lib/X11/XF86Setup/tcllib/license.terms
-lib/X11/XF86Setup/tcllib/listbox.tcl
-lib/X11/XF86Setup/tcllib/menu.tcl
-lib/X11/XF86Setup/tcllib/misc.tcl
-lib/X11/XF86Setup/tcllib/optionMenu.tcl
-lib/X11/XF86Setup/tcllib/palette.tcl
-lib/X11/XF86Setup/tcllib/scale.tcl
-lib/X11/XF86Setup/tcllib/scrollbar.tcl
-lib/X11/XF86Setup/tcllib/tclIndex
-lib/X11/XF86Setup/tcllib/tearoff.tcl
-lib/X11/XF86Setup/tcllib/text.tcl
-lib/X11/XF86Setup/tcllib/tk.tcl
-lib/X11/XF86Setup/tcllib/tkerror.tcl
-lib/X11/XF86Setup/tcllib/uparrow.xbm
-lib/X11/XF86Setup/texts/generic/help_card.tcl
-lib/X11/XF86Setup/texts/generic/help_done.tcl
-lib/X11/XF86Setup/texts/generic/help_intro.tcl
-lib/X11/XF86Setup/texts/generic/help_keyboard.tcl
-lib/X11/XF86Setup/texts/generic/help_modeselect.tcl
-lib/X11/XF86Setup/texts/generic/help_monitor.tcl
-lib/X11/XF86Setup/texts/generic/help_mouse.tcl
-lib/X11/XF86Setup/texts/generic/help_other.tcl
-lib/X11/XF86Setup/texts/generic/message_proc.tcl
-lib/X11/XF86Setup/texts/generic/messages.tcl
-lib/X11/XF86Setup/texts/ja/help_card.tcl
-lib/X11/XF86Setup/texts/ja/help_done.tcl
-lib/X11/XF86Setup/texts/ja/help_intro.tcl
-lib/X11/XF86Setup/texts/ja/help_keyboard.tcl
-lib/X11/XF86Setup/texts/ja/help_modeselect.tcl
-lib/X11/XF86Setup/texts/ja/help_monitor.tcl
-lib/X11/XF86Setup/texts/ja/help_mouse.tcl
-lib/X11/XF86Setup/texts/ja/help_other.tcl
-lib/X11/XF86Setup/texts/ja/message_proc.tcl
-lib/X11/XF86Setup/texts/ja/messages.tcl
-lib/X11/XF86Setup/texts/local_text.tcl
 lib/X11/XKeysymDB
-lib/X11/app-defaults/Beforelight
-lib/X11/app-defaults/Bitmap
-lib/X11/app-defaults/Bitmap-color
-lib/X11/app-defaults/Chooser
-lib/X11/app-defaults/Clock-color
-lib/X11/app-defaults/Editres
-lib/X11/app-defaults/Editres-color
-lib/X11/app-defaults/XClipboard
-lib/X11/app-defaults/XClock
-lib/X11/app-defaults/XConsole
-lib/X11/app-defaults/XLogo
-lib/X11/app-defaults/XLogo-color
-lib/X11/app-defaults/XSm
-lib/X11/app-defaults/XTerm
-lib/X11/app-defaults/XTerm-color
-lib/X11/app-defaults/Xfd
-lib/X11/app-defaults/Xmag
-lib/X11/app-defaults/Xmh
-lib/X11/app-defaults/Xvidtune
 lib/X11/config/Amoeba.cf
 lib/X11/config/DGUX.cf
 lib/X11/config/FreeBSD.cf
@@ -505,8 +492,8 @@ lib/X11/config/Motif.tmpl
 lib/X11/config/NetBSD.cf
 lib/X11/config/Oki.cf
 lib/X11/config/OpenBSD.cf
-lib/X11/config/QNX.cf
-lib/X11/config/QNX.rules
+lib/X11/config/QNX4.cf
+lib/X11/config/QNX4.rules
 lib/X11/config/Server.tmpl
 lib/X11/config/ServerLib.tmpl
 lib/X11/config/Threads.tmpl
@@ -589,56 +576,31 @@ lib/X11/config/xf86.rules
 lib/X11/config/xf86.tmpl
 lib/X11/config/xf86site.def
 lib/X11/config/xfree86.cf
-lib/X11/doc/AccelCards
-lib/X11/doc/BUILD
-lib/X11/doc/COPYRIGHT
-lib/X11/doc/Devices
-lib/X11/doc/Monitors
-lib/X11/doc/QuickStart.doc
+lib/X11/doc/BugReport
+lib/X11/doc/DESIGN
+lib/X11/doc/Install
+lib/X11/doc/LICENSE
 lib/X11/doc/README
-lib/X11/doc/README.3DLabs
-lib/X11/doc/README.Config
 lib/X11/doc/README.DECtga
 lib/X11/doc/README.DGA
-lib/X11/doc/README.FreeBSD
-lib/X11/doc/README.I128
-lib/X11/doc/README.LinkKit
-lib/X11/doc/README.MGA
-lib/X11/doc/README.Mach32
-lib/X11/doc/README.Mach64
-lib/X11/doc/README.NVIDIA
-lib/X11/doc/README.Oak
-lib/X11/doc/README.P9000
-lib/X11/doc/README.S3
-lib/X11/doc/README.S3V
+lib/X11/doc/README.DRI
 lib/X11/doc/README.SiS
-lib/X11/doc/README.Video7
-lib/X11/doc/README.W32
-lib/X11/doc/README.WstDig
-lib/X11/doc/README.agx
 lib/X11/doc/README.apm
-lib/X11/doc/README.ark
 lib/X11/doc/README.ati
 lib/X11/doc/README.chips
-lib/X11/doc/README.cirrus
-lib/X11/doc/README.clkprog
 lib/X11/doc/README.cyrix
-lib/X11/doc/README.epson
+lib/X11/doc/README.fonts
 lib/X11/doc/README.i740
+lib/X11/doc/README.i810
 lib/X11/doc/README.mouse
-lib/X11/doc/README.neo
 lib/X11/doc/README.r128
 lib/X11/doc/README.rendition
-lib/X11/doc/README.trident
-lib/X11/doc/README.tseng
+lib/X11/doc/README.s3virge
 lib/X11/doc/RELNOTES
 lib/X11/doc/ServersOnly
-lib/X11/doc/VGADriver.Doc
-lib/X11/doc/VideoModes.doc
-lib/X11/doc/xinput
-lib/X11/etc/et4000clock.c
-lib/X11/etc/postinst.sh
-lib/X11/etc/preinst.sh
+lib/X11/doc/Status
+lib/X11/doc/VideoBoard98
+lib/X11/etc/Xinstall.sh
 lib/X11/etc/sun.termcap
 lib/X11/etc/sun.terminfo
 lib/X11/etc/xmodmap.std
@@ -690,6 +652,7 @@ lib/X11/fonts/100dpi/courR12.pcf.gz
 lib/X11/fonts/100dpi/courR14.pcf.gz
 lib/X11/fonts/100dpi/courR18.pcf.gz
 lib/X11/fonts/100dpi/courR24.pcf.gz
+lib/X11/fonts/100dpi/encodings.dir
 lib/X11/fonts/100dpi/fonts.alias
 lib/X11/fonts/100dpi/fonts.dir
 lib/X11/fonts/100dpi/helvB08.pcf.gz
@@ -890,6 +853,7 @@ lib/X11/fonts/75dpi/courR12.pcf.gz
 lib/X11/fonts/75dpi/courR14.pcf.gz
 lib/X11/fonts/75dpi/courR18.pcf.gz
 lib/X11/fonts/75dpi/courR24.pcf.gz
+lib/X11/fonts/75dpi/encodings.dir
 lib/X11/fonts/75dpi/fonts.alias
 lib/X11/fonts/75dpi/fonts.dir
 lib/X11/fonts/75dpi/helvB08.pcf.gz
@@ -1044,8 +1008,11 @@ lib/X11/fonts/75dpi/timR12.pcf.gz
 lib/X11/fonts/75dpi/timR14.pcf.gz
 lib/X11/fonts/75dpi/timR18.pcf.gz
 lib/X11/fonts/75dpi/timR24.pcf.gz
+lib/X11/fonts/CID/fonts.dir
+lib/X11/fonts/CID/fonts.scale
 lib/X11/fonts/PEX/Roman.phont
 lib/X11/fonts/PEX/Roman_M.phont
+lib/X11/fonts/Speedo/encodings.dir
 lib/X11/fonts/Speedo/font0419.spd
 lib/X11/fonts/Speedo/font0582.spd
 lib/X11/fonts/Speedo/font0583.spd
@@ -1056,24 +1023,54 @@ lib/X11/fonts/Speedo/font0709.spd
 lib/X11/fonts/Speedo/font0710.spd
 lib/X11/fonts/Speedo/fonts.dir
 lib/X11/fonts/Speedo/fonts.scale
+lib/X11/fonts/Type1/UTBI____.afm
 lib/X11/fonts/Type1/UTBI____.pfa
+lib/X11/fonts/Type1/UTB_____.afm
 lib/X11/fonts/Type1/UTB_____.pfa
+lib/X11/fonts/Type1/UTI_____.afm
 lib/X11/fonts/Type1/UTI_____.pfa
+lib/X11/fonts/Type1/UTRG____.afm
 lib/X11/fonts/Type1/UTRG____.pfa
+lib/X11/fonts/Type1/c0419bt_.afm
 lib/X11/fonts/Type1/c0419bt_.pfb
+lib/X11/fonts/Type1/c0582bt_.afm
 lib/X11/fonts/Type1/c0582bt_.pfb
+lib/X11/fonts/Type1/c0583bt_.afm
 lib/X11/fonts/Type1/c0583bt_.pfb
+lib/X11/fonts/Type1/c0611bt_.afm
 lib/X11/fonts/Type1/c0611bt_.pfb
+lib/X11/fonts/Type1/c0632bt_.afm
 lib/X11/fonts/Type1/c0632bt_.pfb
+lib/X11/fonts/Type1/c0633bt_.afm
 lib/X11/fonts/Type1/c0633bt_.pfb
+lib/X11/fonts/Type1/c0648bt_.afm
 lib/X11/fonts/Type1/c0648bt_.pfb
+lib/X11/fonts/Type1/c0649bt_.afm
 lib/X11/fonts/Type1/c0649bt_.pfb
+lib/X11/fonts/Type1/cour.afm
 lib/X11/fonts/Type1/cour.pfa
+lib/X11/fonts/Type1/courb.afm
 lib/X11/fonts/Type1/courb.pfa
+lib/X11/fonts/Type1/courbi.afm
 lib/X11/fonts/Type1/courbi.pfa
+lib/X11/fonts/Type1/couri.afm
 lib/X11/fonts/Type1/couri.pfa
+lib/X11/fonts/Type1/cursor.pfa
+lib/X11/fonts/Type1/encodings.dir
 lib/X11/fonts/Type1/fonts.dir
 lib/X11/fonts/Type1/fonts.scale
+lib/X11/fonts/Type1/lcdxmo.afm
+lib/X11/fonts/Type1/lcdxmo.pfa
+lib/X11/fonts/Type1/lcdxmr.afm
+lib/X11/fonts/Type1/lcdxmr.pfa
+lib/X11/fonts/Type1/lcdxro.afm
+lib/X11/fonts/Type1/lcdxro.pfa
+lib/X11/fonts/Type1/lcdxrr.afm
+lib/X11/fonts/Type1/lcdxrr.pfa
+lib/X11/fonts/Type1/lcdxso.afm
+lib/X11/fonts/Type1/lcdxso.pfa
+lib/X11/fonts/Type1/lcdxsr.afm
+lib/X11/fonts/Type1/lcdxsr.pfa
 lib/X11/fonts/cyrillic/crox1c.pcf.gz
 lib/X11/fonts/cyrillic/crox1cb.pcf.gz
 lib/X11/fonts/cyrillic/crox1cbo.pcf.gz
@@ -1134,6 +1131,7 @@ lib/X11/fonts/cyrillic/crox6t.pcf.gz
 lib/X11/fonts/cyrillic/crox6tb.pcf.gz
 lib/X11/fonts/cyrillic/crox6tbo.pcf.gz
 lib/X11/fonts/cyrillic/crox6to.pcf.gz
+lib/X11/fonts/cyrillic/encodings.dir
 lib/X11/fonts/cyrillic/fonts.alias
 lib/X11/fonts/cyrillic/fonts.dir
 lib/X11/fonts/cyrillic/koi10x16b.pcf.gz
@@ -1144,30 +1142,432 @@ lib/X11/fonts/cyrillic/koi6x13.pcf.gz
 lib/X11/fonts/cyrillic/koi8x13.pcf.gz
 lib/X11/fonts/cyrillic/koi9x15.pcf.gz
 lib/X11/fonts/cyrillic/koinil2.pcf.gz
+lib/X11/fonts/encodings/adobe-dingbats.enc.gz
+lib/X11/fonts/encodings/adobe-standard.enc.gz
+lib/X11/fonts/encodings/adobe-symbol.enc.gz
+lib/X11/fonts/encodings/armscii-8.enc
+lib/X11/fonts/encodings/encodings.dir
+lib/X11/fonts/encodings/ibm-cp437.enc
+lib/X11/fonts/encodings/ibm-cp850.enc
+lib/X11/fonts/encodings/ibm-cp852.enc
+lib/X11/fonts/encodings/ibm-cp866.enc
+lib/X11/fonts/encodings/iso8859-11.enc
+lib/X11/fonts/encodings/large/big5.eten-0.enc.gz
+lib/X11/fonts/encodings/large/encodings.dir
+lib/X11/fonts/encodings/large/gb2312.1980-0.enc.gz
+lib/X11/fonts/encodings/large/jisx0201.1976-0.enc.gz
+lib/X11/fonts/encodings/large/jisx0208.1983-0.enc.gz
+lib/X11/fonts/encodings/large/jisx0208.1990-0.enc.gz
+lib/X11/fonts/encodings/large/jisx0212.1990-0.enc.gz
+lib/X11/fonts/encodings/large/ksc5601.1987-0.enc.gz
+lib/X11/fonts/encodings/microsoft-cp1250.enc
+lib/X11/fonts/encodings/microsoft-cp1251.enc
+lib/X11/fonts/encodings/microsoft-cp1252.enc
+lib/X11/fonts/encodings/microsoft-cp1253.enc
+lib/X11/fonts/encodings/microsoft-cp1254.enc
+lib/X11/fonts/encodings/microsoft-cp1255.enc
+lib/X11/fonts/encodings/microsoft-cp1256.enc
+lib/X11/fonts/encodings/microsoft-cp1257.enc
+lib/X11/fonts/encodings/microsoft-cp1258.enc
+lib/X11/fonts/encodings/mulearabic-0.enc
+lib/X11/fonts/encodings/mulearabic-1.enc
+lib/X11/fonts/encodings/mulearabic-2.enc
+lib/X11/fonts/encodings/mulelao-1.enc
+lib/X11/fonts/encodings/tcvn-0.enc
+lib/X11/fonts/encodings/viscii1.1-1.enc.gz
+lib/X11/fonts/latin2/100dpi/UTI___10.pcf.gz
+lib/X11/fonts/latin2/100dpi/UTI___12.pcf.gz
+lib/X11/fonts/latin2/100dpi/UTI___14.pcf.gz
+lib/X11/fonts/latin2/100dpi/UTI___18.pcf.gz
+lib/X11/fonts/latin2/100dpi/UTI___24.pcf.gz
+lib/X11/fonts/latin2/100dpi/UTRG__10.pcf.gz
+lib/X11/fonts/latin2/100dpi/UTRG__12.pcf.gz
+lib/X11/fonts/latin2/100dpi/UTRG__14.pcf.gz
+lib/X11/fonts/latin2/100dpi/UTRG__18.pcf.gz
+lib/X11/fonts/latin2/100dpi/UTRG__24.pcf.gz
+lib/X11/fonts/latin2/100dpi/courB08.pcf.gz
+lib/X11/fonts/latin2/100dpi/courB10.pcf.gz
+lib/X11/fonts/latin2/100dpi/courB12.pcf.gz
+lib/X11/fonts/latin2/100dpi/courB14.pcf.gz
+lib/X11/fonts/latin2/100dpi/courB18.pcf.gz
+lib/X11/fonts/latin2/100dpi/courB24.pcf.gz
+lib/X11/fonts/latin2/100dpi/courBO08.pcf.gz
+lib/X11/fonts/latin2/100dpi/courBO10.pcf.gz
+lib/X11/fonts/latin2/100dpi/courBO12.pcf.gz
+lib/X11/fonts/latin2/100dpi/courBO14.pcf.gz
+lib/X11/fonts/latin2/100dpi/courBO18.pcf.gz
+lib/X11/fonts/latin2/100dpi/courBO24.pcf.gz
+lib/X11/fonts/latin2/100dpi/courO08.pcf.gz
+lib/X11/fonts/latin2/100dpi/courO10.pcf.gz
+lib/X11/fonts/latin2/100dpi/courO12.pcf.gz
+lib/X11/fonts/latin2/100dpi/courO14.pcf.gz
+lib/X11/fonts/latin2/100dpi/courO18.pcf.gz
+lib/X11/fonts/latin2/100dpi/courO24.pcf.gz
+lib/X11/fonts/latin2/100dpi/courR08.pcf.gz
+lib/X11/fonts/latin2/100dpi/courR10.pcf.gz
+lib/X11/fonts/latin2/100dpi/courR12.pcf.gz
+lib/X11/fonts/latin2/100dpi/courR14.pcf.gz
+lib/X11/fonts/latin2/100dpi/courR18.pcf.gz
+lib/X11/fonts/latin2/100dpi/courR24.pcf.gz
+lib/X11/fonts/latin2/100dpi/encodings.dir
+lib/X11/fonts/latin2/100dpi/fonts.dir
+lib/X11/fonts/latin2/100dpi/helvB08.pcf.gz
+lib/X11/fonts/latin2/100dpi/helvB10.pcf.gz
+lib/X11/fonts/latin2/100dpi/helvB12.pcf.gz
+lib/X11/fonts/latin2/100dpi/helvB14.pcf.gz
+lib/X11/fonts/latin2/100dpi/helvB18.pcf.gz
+lib/X11/fonts/latin2/100dpi/helvB24.pcf.gz
+lib/X11/fonts/latin2/100dpi/helvBO08.pcf.gz
+lib/X11/fonts/latin2/100dpi/helvBO10.pcf.gz
+lib/X11/fonts/latin2/100dpi/helvBO12.pcf.gz
+lib/X11/fonts/latin2/100dpi/helvBO14.pcf.gz
+lib/X11/fonts/latin2/100dpi/helvBO18.pcf.gz
+lib/X11/fonts/latin2/100dpi/helvBO24.pcf.gz
+lib/X11/fonts/latin2/100dpi/helvO08.pcf.gz
+lib/X11/fonts/latin2/100dpi/helvO10.pcf.gz
+lib/X11/fonts/latin2/100dpi/helvO12.pcf.gz
+lib/X11/fonts/latin2/100dpi/helvO14.pcf.gz
+lib/X11/fonts/latin2/100dpi/helvO18.pcf.gz
+lib/X11/fonts/latin2/100dpi/helvO24.pcf.gz
+lib/X11/fonts/latin2/100dpi/helvR08.pcf.gz
+lib/X11/fonts/latin2/100dpi/helvR10.pcf.gz
+lib/X11/fonts/latin2/100dpi/helvR12.pcf.gz
+lib/X11/fonts/latin2/100dpi/helvR14.pcf.gz
+lib/X11/fonts/latin2/100dpi/helvR18.pcf.gz
+lib/X11/fonts/latin2/100dpi/helvR24.pcf.gz
+lib/X11/fonts/latin2/100dpi/luBIS08.pcf.gz
+lib/X11/fonts/latin2/100dpi/luBIS10.pcf.gz
+lib/X11/fonts/latin2/100dpi/luBIS12.pcf.gz
+lib/X11/fonts/latin2/100dpi/luBIS14.pcf.gz
+lib/X11/fonts/latin2/100dpi/luBIS18.pcf.gz
+lib/X11/fonts/latin2/100dpi/luBIS19.pcf.gz
+lib/X11/fonts/latin2/100dpi/luBIS24.pcf.gz
+lib/X11/fonts/latin2/100dpi/luBS08.pcf.gz
+lib/X11/fonts/latin2/100dpi/luBS10.pcf.gz
+lib/X11/fonts/latin2/100dpi/luBS12.pcf.gz
+lib/X11/fonts/latin2/100dpi/luBS14.pcf.gz
+lib/X11/fonts/latin2/100dpi/luBS18.pcf.gz
+lib/X11/fonts/latin2/100dpi/luBS19.pcf.gz
+lib/X11/fonts/latin2/100dpi/luBS24.pcf.gz
+lib/X11/fonts/latin2/100dpi/luIS08.pcf.gz
+lib/X11/fonts/latin2/100dpi/luIS10.pcf.gz
+lib/X11/fonts/latin2/100dpi/luIS12.pcf.gz
+lib/X11/fonts/latin2/100dpi/luIS14.pcf.gz
+lib/X11/fonts/latin2/100dpi/luIS18.pcf.gz
+lib/X11/fonts/latin2/100dpi/luIS19.pcf.gz
+lib/X11/fonts/latin2/100dpi/luIS24.pcf.gz
+lib/X11/fonts/latin2/100dpi/luRS08.pcf.gz
+lib/X11/fonts/latin2/100dpi/luRS10.pcf.gz
+lib/X11/fonts/latin2/100dpi/luRS12.pcf.gz
+lib/X11/fonts/latin2/100dpi/luRS14.pcf.gz
+lib/X11/fonts/latin2/100dpi/luRS18.pcf.gz
+lib/X11/fonts/latin2/100dpi/luRS19.pcf.gz
+lib/X11/fonts/latin2/100dpi/luRS24.pcf.gz
+lib/X11/fonts/latin2/100dpi/lubB08.pcf.gz
+lib/X11/fonts/latin2/100dpi/lubB10.pcf.gz
+lib/X11/fonts/latin2/100dpi/lubB12.pcf.gz
+lib/X11/fonts/latin2/100dpi/lubB14.pcf.gz
+lib/X11/fonts/latin2/100dpi/lubB18.pcf.gz
+lib/X11/fonts/latin2/100dpi/lubB19.pcf.gz
+lib/X11/fonts/latin2/100dpi/lubB24.pcf.gz
+lib/X11/fonts/latin2/100dpi/lubBI08.pcf.gz
+lib/X11/fonts/latin2/100dpi/lubBI10.pcf.gz
+lib/X11/fonts/latin2/100dpi/lubBI12.pcf.gz
+lib/X11/fonts/latin2/100dpi/lubBI14.pcf.gz
+lib/X11/fonts/latin2/100dpi/lubBI18.pcf.gz
+lib/X11/fonts/latin2/100dpi/lubBI19.pcf.gz
+lib/X11/fonts/latin2/100dpi/lubBI24.pcf.gz
+lib/X11/fonts/latin2/100dpi/lubI08.pcf.gz
+lib/X11/fonts/latin2/100dpi/lubI10.pcf.gz
+lib/X11/fonts/latin2/100dpi/lubI12.pcf.gz
+lib/X11/fonts/latin2/100dpi/lubI14.pcf.gz
+lib/X11/fonts/latin2/100dpi/lubI18.pcf.gz
+lib/X11/fonts/latin2/100dpi/lubI19.pcf.gz
+lib/X11/fonts/latin2/100dpi/lubI24.pcf.gz
+lib/X11/fonts/latin2/100dpi/lubR08.pcf.gz
+lib/X11/fonts/latin2/100dpi/lubR10.pcf.gz
+lib/X11/fonts/latin2/100dpi/lubR12.pcf.gz
+lib/X11/fonts/latin2/100dpi/lubR14.pcf.gz
+lib/X11/fonts/latin2/100dpi/lubR18.pcf.gz
+lib/X11/fonts/latin2/100dpi/lubR19.pcf.gz
+lib/X11/fonts/latin2/100dpi/lubR24.pcf.gz
+lib/X11/fonts/latin2/100dpi/ncenB08.pcf.gz
+lib/X11/fonts/latin2/100dpi/ncenB10.pcf.gz
+lib/X11/fonts/latin2/100dpi/ncenB12.pcf.gz
+lib/X11/fonts/latin2/100dpi/ncenB14.pcf.gz
+lib/X11/fonts/latin2/100dpi/ncenB18.pcf.gz
+lib/X11/fonts/latin2/100dpi/ncenB24.pcf.gz
+lib/X11/fonts/latin2/100dpi/ncenBI08.pcf.gz
+lib/X11/fonts/latin2/100dpi/ncenBI10.pcf.gz
+lib/X11/fonts/latin2/100dpi/ncenBI12.pcf.gz
+lib/X11/fonts/latin2/100dpi/ncenBI14.pcf.gz
+lib/X11/fonts/latin2/100dpi/ncenBI18.pcf.gz
+lib/X11/fonts/latin2/100dpi/ncenBI24.pcf.gz
+lib/X11/fonts/latin2/100dpi/ncenI08.pcf.gz
+lib/X11/fonts/latin2/100dpi/ncenI10.pcf.gz
+lib/X11/fonts/latin2/100dpi/ncenI12.pcf.gz
+lib/X11/fonts/latin2/100dpi/ncenI14.pcf.gz
+lib/X11/fonts/latin2/100dpi/ncenI18.pcf.gz
+lib/X11/fonts/latin2/100dpi/ncenI24.pcf.gz
+lib/X11/fonts/latin2/100dpi/ncenR08.pcf.gz
+lib/X11/fonts/latin2/100dpi/ncenR10.pcf.gz
+lib/X11/fonts/latin2/100dpi/ncenR12.pcf.gz
+lib/X11/fonts/latin2/100dpi/ncenR14.pcf.gz
+lib/X11/fonts/latin2/100dpi/ncenR18.pcf.gz
+lib/X11/fonts/latin2/100dpi/ncenR24.pcf.gz
+lib/X11/fonts/latin2/100dpi/timB08.pcf.gz
+lib/X11/fonts/latin2/100dpi/timB10.pcf.gz
+lib/X11/fonts/latin2/100dpi/timB12.pcf.gz
+lib/X11/fonts/latin2/100dpi/timB14.pcf.gz
+lib/X11/fonts/latin2/100dpi/timB18.pcf.gz
+lib/X11/fonts/latin2/100dpi/timB24.pcf.gz
+lib/X11/fonts/latin2/100dpi/timBI08.pcf.gz
+lib/X11/fonts/latin2/100dpi/timBI10.pcf.gz
+lib/X11/fonts/latin2/100dpi/timBI12.pcf.gz
+lib/X11/fonts/latin2/100dpi/timBI14.pcf.gz
+lib/X11/fonts/latin2/100dpi/timBI18.pcf.gz
+lib/X11/fonts/latin2/100dpi/timBI24.pcf.gz
+lib/X11/fonts/latin2/100dpi/timI08.pcf.gz
+lib/X11/fonts/latin2/100dpi/timI10.pcf.gz
+lib/X11/fonts/latin2/100dpi/timI12.pcf.gz
+lib/X11/fonts/latin2/100dpi/timI14.pcf.gz
+lib/X11/fonts/latin2/100dpi/timI18.pcf.gz
+lib/X11/fonts/latin2/100dpi/timI24.pcf.gz
+lib/X11/fonts/latin2/100dpi/timR08.pcf.gz
+lib/X11/fonts/latin2/100dpi/timR10.pcf.gz
+lib/X11/fonts/latin2/100dpi/timR12.pcf.gz
+lib/X11/fonts/latin2/100dpi/timR14.pcf.gz
+lib/X11/fonts/latin2/100dpi/timR18.pcf.gz
+lib/X11/fonts/latin2/100dpi/timR24.pcf.gz
+lib/X11/fonts/latin2/75dpi/UTI___10.pcf.gz
+lib/X11/fonts/latin2/75dpi/UTI___12.pcf.gz
+lib/X11/fonts/latin2/75dpi/UTI___14.pcf.gz
+lib/X11/fonts/latin2/75dpi/UTI___18.pcf.gz
+lib/X11/fonts/latin2/75dpi/UTI___24.pcf.gz
+lib/X11/fonts/latin2/75dpi/UTRG__10.pcf.gz
+lib/X11/fonts/latin2/75dpi/UTRG__12.pcf.gz
+lib/X11/fonts/latin2/75dpi/UTRG__14.pcf.gz
+lib/X11/fonts/latin2/75dpi/UTRG__18.pcf.gz
+lib/X11/fonts/latin2/75dpi/UTRG__24.pcf.gz
+lib/X11/fonts/latin2/75dpi/courB08.pcf.gz
+lib/X11/fonts/latin2/75dpi/courB10.pcf.gz
+lib/X11/fonts/latin2/75dpi/courB12.pcf.gz
+lib/X11/fonts/latin2/75dpi/courB14.pcf.gz
+lib/X11/fonts/latin2/75dpi/courB18.pcf.gz
+lib/X11/fonts/latin2/75dpi/courB24.pcf.gz
+lib/X11/fonts/latin2/75dpi/courBO08.pcf.gz
+lib/X11/fonts/latin2/75dpi/courBO10.pcf.gz
+lib/X11/fonts/latin2/75dpi/courBO12.pcf.gz
+lib/X11/fonts/latin2/75dpi/courBO14.pcf.gz
+lib/X11/fonts/latin2/75dpi/courBO18.pcf.gz
+lib/X11/fonts/latin2/75dpi/courBO24.pcf.gz
+lib/X11/fonts/latin2/75dpi/courO08.pcf.gz
+lib/X11/fonts/latin2/75dpi/courO10.pcf.gz
+lib/X11/fonts/latin2/75dpi/courO12.pcf.gz
+lib/X11/fonts/latin2/75dpi/courO14.pcf.gz
+lib/X11/fonts/latin2/75dpi/courO18.pcf.gz
+lib/X11/fonts/latin2/75dpi/courO24.pcf.gz
+lib/X11/fonts/latin2/75dpi/courR08.pcf.gz
+lib/X11/fonts/latin2/75dpi/courR10.pcf.gz
+lib/X11/fonts/latin2/75dpi/courR12.pcf.gz
+lib/X11/fonts/latin2/75dpi/courR14.pcf.gz
+lib/X11/fonts/latin2/75dpi/courR18.pcf.gz
+lib/X11/fonts/latin2/75dpi/courR24.pcf.gz
+lib/X11/fonts/latin2/75dpi/encodings.dir
+lib/X11/fonts/latin2/75dpi/fonts.dir
+lib/X11/fonts/latin2/75dpi/helvB08.pcf.gz
+lib/X11/fonts/latin2/75dpi/helvB10.pcf.gz
+lib/X11/fonts/latin2/75dpi/helvB12.pcf.gz
+lib/X11/fonts/latin2/75dpi/helvB14.pcf.gz
+lib/X11/fonts/latin2/75dpi/helvB18.pcf.gz
+lib/X11/fonts/latin2/75dpi/helvB24.pcf.gz
+lib/X11/fonts/latin2/75dpi/helvBO08.pcf.gz
+lib/X11/fonts/latin2/75dpi/helvBO10.pcf.gz
+lib/X11/fonts/latin2/75dpi/helvBO12.pcf.gz
+lib/X11/fonts/latin2/75dpi/helvBO14.pcf.gz
+lib/X11/fonts/latin2/75dpi/helvBO18.pcf.gz
+lib/X11/fonts/latin2/75dpi/helvBO24.pcf.gz
+lib/X11/fonts/latin2/75dpi/helvO08.pcf.gz
+lib/X11/fonts/latin2/75dpi/helvO10.pcf.gz
+lib/X11/fonts/latin2/75dpi/helvO12.pcf.gz
+lib/X11/fonts/latin2/75dpi/helvO14.pcf.gz
+lib/X11/fonts/latin2/75dpi/helvO18.pcf.gz
+lib/X11/fonts/latin2/75dpi/helvO24.pcf.gz
+lib/X11/fonts/latin2/75dpi/helvR08.pcf.gz
+lib/X11/fonts/latin2/75dpi/helvR10.pcf.gz
+lib/X11/fonts/latin2/75dpi/helvR12.pcf.gz
+lib/X11/fonts/latin2/75dpi/helvR14.pcf.gz
+lib/X11/fonts/latin2/75dpi/helvR18.pcf.gz
+lib/X11/fonts/latin2/75dpi/helvR24.pcf.gz
+lib/X11/fonts/latin2/75dpi/luBIS08.pcf.gz
+lib/X11/fonts/latin2/75dpi/luBIS10.pcf.gz
+lib/X11/fonts/latin2/75dpi/luBIS12.pcf.gz
+lib/X11/fonts/latin2/75dpi/luBIS14.pcf.gz
+lib/X11/fonts/latin2/75dpi/luBIS18.pcf.gz
+lib/X11/fonts/latin2/75dpi/luBIS19.pcf.gz
+lib/X11/fonts/latin2/75dpi/luBIS24.pcf.gz
+lib/X11/fonts/latin2/75dpi/luBS08.pcf.gz
+lib/X11/fonts/latin2/75dpi/luBS10.pcf.gz
+lib/X11/fonts/latin2/75dpi/luBS12.pcf.gz
+lib/X11/fonts/latin2/75dpi/luBS14.pcf.gz
+lib/X11/fonts/latin2/75dpi/luBS18.pcf.gz
+lib/X11/fonts/latin2/75dpi/luBS19.pcf.gz
+lib/X11/fonts/latin2/75dpi/luBS24.pcf.gz
+lib/X11/fonts/latin2/75dpi/luIS08.pcf.gz
+lib/X11/fonts/latin2/75dpi/luIS10.pcf.gz
+lib/X11/fonts/latin2/75dpi/luIS12.pcf.gz
+lib/X11/fonts/latin2/75dpi/luIS14.pcf.gz
+lib/X11/fonts/latin2/75dpi/luIS18.pcf.gz
+lib/X11/fonts/latin2/75dpi/luIS19.pcf.gz
+lib/X11/fonts/latin2/75dpi/luIS24.pcf.gz
+lib/X11/fonts/latin2/75dpi/luRS08.pcf.gz
+lib/X11/fonts/latin2/75dpi/luRS10.pcf.gz
+lib/X11/fonts/latin2/75dpi/luRS12.pcf.gz
+lib/X11/fonts/latin2/75dpi/luRS14.pcf.gz
+lib/X11/fonts/latin2/75dpi/luRS18.pcf.gz
+lib/X11/fonts/latin2/75dpi/luRS19.pcf.gz
+lib/X11/fonts/latin2/75dpi/luRS24.pcf.gz
+lib/X11/fonts/latin2/75dpi/lubB08.pcf.gz
+lib/X11/fonts/latin2/75dpi/lubB10.pcf.gz
+lib/X11/fonts/latin2/75dpi/lubB12.pcf.gz
+lib/X11/fonts/latin2/75dpi/lubB14.pcf.gz
+lib/X11/fonts/latin2/75dpi/lubB18.pcf.gz
+lib/X11/fonts/latin2/75dpi/lubB19.pcf.gz
+lib/X11/fonts/latin2/75dpi/lubB24.pcf.gz
+lib/X11/fonts/latin2/75dpi/lubBI08.pcf.gz
+lib/X11/fonts/latin2/75dpi/lubBI10.pcf.gz
+lib/X11/fonts/latin2/75dpi/lubBI12.pcf.gz
+lib/X11/fonts/latin2/75dpi/lubBI14.pcf.gz
+lib/X11/fonts/latin2/75dpi/lubBI18.pcf.gz
+lib/X11/fonts/latin2/75dpi/lubBI19.pcf.gz
+lib/X11/fonts/latin2/75dpi/lubBI24.pcf.gz
+lib/X11/fonts/latin2/75dpi/lubI08.pcf.gz
+lib/X11/fonts/latin2/75dpi/lubI10.pcf.gz
+lib/X11/fonts/latin2/75dpi/lubI12.pcf.gz
+lib/X11/fonts/latin2/75dpi/lubI14.pcf.gz
+lib/X11/fonts/latin2/75dpi/lubI18.pcf.gz
+lib/X11/fonts/latin2/75dpi/lubI19.pcf.gz
+lib/X11/fonts/latin2/75dpi/lubI24.pcf.gz
+lib/X11/fonts/latin2/75dpi/lubR08.pcf.gz
+lib/X11/fonts/latin2/75dpi/lubR10.pcf.gz
+lib/X11/fonts/latin2/75dpi/lubR12.pcf.gz
+lib/X11/fonts/latin2/75dpi/lubR14.pcf.gz
+lib/X11/fonts/latin2/75dpi/lubR18.pcf.gz
+lib/X11/fonts/latin2/75dpi/lubR19.pcf.gz
+lib/X11/fonts/latin2/75dpi/lubR24.pcf.gz
+lib/X11/fonts/latin2/75dpi/lutBS10.pcf.gz
+lib/X11/fonts/latin2/75dpi/lutBS12.pcf.gz
+lib/X11/fonts/latin2/75dpi/lutBS14.pcf.gz
+lib/X11/fonts/latin2/75dpi/lutBS18.pcf.gz
+lib/X11/fonts/latin2/75dpi/lutRS10.pcf.gz
+lib/X11/fonts/latin2/75dpi/lutRS12.pcf.gz
+lib/X11/fonts/latin2/75dpi/lutRS14.pcf.gz
+lib/X11/fonts/latin2/75dpi/lutRS18.pcf.gz
+lib/X11/fonts/latin2/75dpi/ncenB08.pcf.gz
+lib/X11/fonts/latin2/75dpi/ncenB10.pcf.gz
+lib/X11/fonts/latin2/75dpi/ncenB12.pcf.gz
+lib/X11/fonts/latin2/75dpi/ncenB14.pcf.gz
+lib/X11/fonts/latin2/75dpi/ncenB18.pcf.gz
+lib/X11/fonts/latin2/75dpi/ncenB24.pcf.gz
+lib/X11/fonts/latin2/75dpi/ncenBI08.pcf.gz
+lib/X11/fonts/latin2/75dpi/ncenBI10.pcf.gz
+lib/X11/fonts/latin2/75dpi/ncenBI12.pcf.gz
+lib/X11/fonts/latin2/75dpi/ncenBI14.pcf.gz
+lib/X11/fonts/latin2/75dpi/ncenBI18.pcf.gz
+lib/X11/fonts/latin2/75dpi/ncenBI24.pcf.gz
+lib/X11/fonts/latin2/75dpi/ncenI08.pcf.gz
+lib/X11/fonts/latin2/75dpi/ncenI10.pcf.gz
+lib/X11/fonts/latin2/75dpi/ncenI12.pcf.gz
+lib/X11/fonts/latin2/75dpi/ncenI14.pcf.gz
+lib/X11/fonts/latin2/75dpi/ncenI18.pcf.gz
+lib/X11/fonts/latin2/75dpi/ncenI24.pcf.gz
+lib/X11/fonts/latin2/75dpi/ncenR08.pcf.gz
+lib/X11/fonts/latin2/75dpi/ncenR10.pcf.gz
+lib/X11/fonts/latin2/75dpi/ncenR12.pcf.gz
+lib/X11/fonts/latin2/75dpi/ncenR14.pcf.gz
+lib/X11/fonts/latin2/75dpi/timB08.pcf.gz
+lib/X11/fonts/latin2/75dpi/timB10.pcf.gz
+lib/X11/fonts/latin2/75dpi/timB12.pcf.gz
+lib/X11/fonts/latin2/75dpi/timB14.pcf.gz
+lib/X11/fonts/latin2/75dpi/timB18.pcf.gz
+lib/X11/fonts/latin2/75dpi/timB24.pcf.gz
+lib/X11/fonts/latin2/75dpi/timBI08.pcf.gz
+lib/X11/fonts/latin2/75dpi/timBI10.pcf.gz
+lib/X11/fonts/latin2/75dpi/timBI12.pcf.gz
+lib/X11/fonts/latin2/75dpi/timBI14.pcf.gz
+lib/X11/fonts/latin2/75dpi/timBI18.pcf.gz
+lib/X11/fonts/latin2/75dpi/timBI24.pcf.gz
+lib/X11/fonts/latin2/75dpi/timI08.pcf.gz
+lib/X11/fonts/latin2/75dpi/timI10.pcf.gz
+lib/X11/fonts/latin2/75dpi/timI12.pcf.gz
+lib/X11/fonts/latin2/75dpi/timI14.pcf.gz
+lib/X11/fonts/latin2/75dpi/timI18.pcf.gz
+lib/X11/fonts/latin2/75dpi/timI24.pcf.gz
+lib/X11/fonts/latin2/75dpi/timR08.pcf.gz
+lib/X11/fonts/latin2/75dpi/timR10.pcf.gz
+lib/X11/fonts/latin2/75dpi/timR12.pcf.gz
+lib/X11/fonts/latin2/75dpi/timR14.pcf.gz
+lib/X11/fonts/latin2/75dpi/timR18.pcf.gz
+lib/X11/fonts/latin2/75dpi/timR24.pcf.gz
 lib/X11/fonts/local/fonts.dir
+lib/X11/fonts/misc/10x20-ISO8859-1.pcf.gz
 lib/X11/fonts/misc/10x20.pcf.gz
+lib/X11/fonts/misc/12x13ja.pcf.gz
 lib/X11/fonts/misc/12x24.pcf.gz
 lib/X11/fonts/misc/12x24rk.pcf.gz
+lib/X11/fonts/misc/18x18ja.pcf.gz
+lib/X11/fonts/misc/5x7-ISO8859-1.pcf.gz
 lib/X11/fonts/misc/5x7.pcf.gz
+lib/X11/fonts/misc/5x8-ISO8859-1.pcf.gz
 lib/X11/fonts/misc/5x8.pcf.gz
+lib/X11/fonts/misc/6x10-ISO8859-1.pcf.gz
 lib/X11/fonts/misc/6x10.pcf.gz
+lib/X11/fonts/misc/6x12-ISO8859-1.pcf.gz
 lib/X11/fonts/misc/6x12.pcf.gz
+lib/X11/fonts/misc/6x13-ISO8859-1.pcf.gz
+lib/X11/fonts/misc/6x13-ISO8859-2.pcf.gz
+lib/X11/fonts/misc/6x13-ISO8859-7.pcf.gz
+lib/X11/fonts/misc/6x13-ISO8859-8.pcf.gz
+lib/X11/fonts/misc/6x13-KOI8-R.pcf.gz
 lib/X11/fonts/misc/6x13.pcf.gz
+lib/X11/fonts/misc/6x13B-ISO8859-1.pcf.gz
+lib/X11/fonts/misc/6x13B-ISO8859-2.pcf.gz
+lib/X11/fonts/misc/6x13B-ISO8859-7.pcf.gz
 lib/X11/fonts/misc/6x13B.pcf.gz
+lib/X11/fonts/misc/6x9-ISO8859-1.pcf.gz
 lib/X11/fonts/misc/6x9.pcf.gz
+lib/X11/fonts/misc/7x13-ISO8859-1.pcf.gz
+lib/X11/fonts/misc/7x13-ISO8859-15.pcf.gz
 lib/X11/fonts/misc/7x13.pcf.gz
+lib/X11/fonts/misc/7x13B-ISO8859-1.pcf.gz
+lib/X11/fonts/misc/7x13B-ISO8859-15.pcf.gz
 lib/X11/fonts/misc/7x13B.pcf.gz
-lib/X11/fonts/misc/7x13euro.pcf.gz
-lib/X11/fonts/misc/7x13euroB.pcf.gz
+lib/X11/fonts/misc/7x14-ISO8859-1.pcf.gz
+lib/X11/fonts/misc/7x14-JISX0201.1976-0.pcf.gz
 lib/X11/fonts/misc/7x14.pcf.gz
+lib/X11/fonts/misc/7x14B-ISO8859-1.pcf.gz
 lib/X11/fonts/misc/7x14B.pcf.gz
-lib/X11/fonts/misc/7x14rk.pcf.gz
+lib/X11/fonts/misc/8x13-ISO8859-1.pcf.gz
+lib/X11/fonts/misc/8x13-ISO8859-2.pcf.gz
+lib/X11/fonts/misc/8x13-ISO8859-7.pcf.gz
+lib/X11/fonts/misc/8x13-ISO8859-8.pcf.gz
+lib/X11/fonts/misc/8x13-KOI8-R.pcf.gz
 lib/X11/fonts/misc/8x13.pcf.gz
+lib/X11/fonts/misc/8x13B-ISO8859-1.pcf.gz
+lib/X11/fonts/misc/8x13B-ISO8859-2.pcf.gz
+lib/X11/fonts/misc/8x13B-ISO8859-7.pcf.gz
 lib/X11/fonts/misc/8x13B.pcf.gz
 lib/X11/fonts/misc/8x16.pcf.gz
 lib/X11/fonts/misc/8x16rk.pcf.gz
+lib/X11/fonts/misc/9x15-ISO8859-1.pcf.gz
 lib/X11/fonts/misc/9x15.pcf.gz
+lib/X11/fonts/misc/9x15B-ISO8859-1.pcf.gz
 lib/X11/fonts/misc/9x15B.pcf.gz
+lib/X11/fonts/misc/9x18-ISO8859-1.pcf.gz
+lib/X11/fonts/misc/9x18.pcf.gz
+lib/X11/fonts/misc/9x18B-ISO8859-1.pcf.gz
+lib/X11/fonts/misc/9x18B.pcf.gz
+lib/X11/fonts/misc/arabic24.pcf.gz
 lib/X11/fonts/misc/clB6x10.pcf.gz
 lib/X11/fonts/misc/clB6x12.pcf.gz
 lib/X11/fonts/misc/clB8x10.pcf.gz
@@ -1199,9 +1599,15 @@ lib/X11/fonts/misc/clR8x14.pcf.gz
 lib/X11/fonts/misc/clR8x16.pcf.gz
 lib/X11/fonts/misc/clR8x8.pcf.gz
 lib/X11/fonts/misc/clR9x15.pcf.gz
+lib/X11/fonts/misc/cu-alt12.pcf.gz
+lib/X11/fonts/misc/cu-arabic12.pcf.gz
+lib/X11/fonts/misc/cu-lig12.pcf.gz
+lib/X11/fonts/misc/cu-pua12.pcf.gz
+lib/X11/fonts/misc/cu12.pcf.gz
 lib/X11/fonts/misc/cursor.pcf.gz
 lib/X11/fonts/misc/deccurs.pcf.gz
 lib/X11/fonts/misc/decsess.pcf.gz
+lib/X11/fonts/misc/encodings.dir
 lib/X11/fonts/misc/fonts.alias
 lib/X11/fonts/misc/fonts.dir
 lib/X11/fonts/misc/gb16fs.pcf.gz
@@ -1210,8 +1616,6 @@ lib/X11/fonts/misc/gb24st.pcf.gz
 lib/X11/fonts/misc/hanglg16.pcf.gz
 lib/X11/fonts/misc/hanglm16.pcf.gz
 lib/X11/fonts/misc/hanglm24.pcf.gz
-lib/X11/fonts/misc/heb6x13.pcf.gz
-lib/X11/fonts/misc/heb8x13.pcf.gz
 lib/X11/fonts/misc/jiskan16.pcf.gz
 lib/X11/fonts/misc/jiskan24.pcf.gz
 lib/X11/fonts/misc/k14.pcf.gz
@@ -1221,39 +1625,63 @@ lib/X11/fonts/misc/olgl10.pcf.gz
 lib/X11/fonts/misc/olgl12.pcf.gz
 lib/X11/fonts/misc/olgl14.pcf.gz
 lib/X11/fonts/misc/olgl19.pcf.gz
-lib/X11/fs/config
-lib/X11/lbxproxy/AtomControl
 lib/X11/locale/C/XLC_LOCALE
+lib/X11/locale/armscii-8/Compose
+lib/X11/locale/armscii-8/XLC_LOCALE
 lib/X11/locale/compose.dir
+lib/X11/locale/en_US.UTF-8/XLC_LOCALE
+lib/X11/locale/en_US.utf/Compose
 lib/X11/locale/en_US.utf/XLC_LOCALE
-lib/X11/locale/iso8859-1/Compose
+lib/X11/locale/georgian-academy/Compose
+lib/X11/locale/georgian-academy/XLC_LOCALE
+lib/X11/locale/georgian-ps/Compose
+lib/X11/locale/georgian-ps/XLC_LOCALE
+lib/X11/locale/ibm-cp1133/Compose
+lib/X11/locale/ibm-cp1133/XLC_LOCALE
 lib/X11/locale/iso8859-1/XLC_LOCALE
+lib/X11/locale/iso8859-10/Compose
 lib/X11/locale/iso8859-10/XLC_LOCALE
+lib/X11/locale/iso8859-14/Compose
+lib/X11/locale/iso8859-14/XLC_LOCALE
 lib/X11/locale/iso8859-15/Compose
 lib/X11/locale/iso8859-15/XLC_LOCALE
-lib/X11/locale/iso8859-2/Compose
 lib/X11/locale/iso8859-2/XLC_LOCALE
 lib/X11/locale/iso8859-3/XLC_LOCALE
 lib/X11/locale/iso8859-4/Compose
 lib/X11/locale/iso8859-4/XLC_LOCALE
+lib/X11/locale/iso8859-5/Compose
 lib/X11/locale/iso8859-5/XLC_LOCALE
+lib/X11/locale/iso8859-6/Compose
 lib/X11/locale/iso8859-6/XLC_LOCALE
+lib/X11/locale/iso8859-7/Compose
 lib/X11/locale/iso8859-7/XLC_LOCALE
+lib/X11/locale/iso8859-8/Compose
 lib/X11/locale/iso8859-8/XLC_LOCALE
+lib/X11/locale/iso8859-9/Compose
 lib/X11/locale/iso8859-9/XLC_LOCALE
+lib/X11/locale/ja.JIS/Compose
 lib/X11/locale/ja.JIS/XLC_LOCALE
+lib/X11/locale/ja.SJIS/Compose
 lib/X11/locale/ja.SJIS/XLC_LOCALE
+lib/X11/locale/ja/Compose
 lib/X11/locale/ja/XLC_LOCALE
+lib/X11/locale/ko/Compose
 lib/X11/locale/ko/XLC_LOCALE
+lib/X11/locale/koi8-r/Compose
 lib/X11/locale/koi8-r/XLC_LOCALE
+lib/X11/locale/koi8-u/Compose
+lib/X11/locale/koi8-u/XLC_LOCALE
 lib/X11/locale/locale.alias
 lib/X11/locale/locale.dir
+lib/X11/locale/mulelao-1/Compose
+lib/X11/locale/mulelao-1/XLC_LOCALE
 lib/X11/locale/tbl_data/gb2312
 lib/X11/locale/tbl_data/jis0201
 lib/X11/locale/tbl_data/jis0208
 lib/X11/locale/tbl_data/ksc5601
 lib/X11/locale/tbl_data/tab8859_1
 lib/X11/locale/tbl_data/tab8859_10
+lib/X11/locale/tbl_data/tab8859_14
 lib/X11/locale/tbl_data/tab8859_15
 lib/X11/locale/tbl_data/tab8859_2
 lib/X11/locale/tbl_data/tab8859_3
@@ -1263,44 +1691,31 @@ lib/X11/locale/tbl_data/tab8859_6
 lib/X11/locale/tbl_data/tab8859_7
 lib/X11/locale/tbl_data/tab8859_8
 lib/X11/locale/tbl_data/tab8859_9
+lib/X11/locale/tbl_data/tabarmscii_8
+lib/X11/locale/tbl_data/tabgeorgian_academy
+lib/X11/locale/tbl_data/tabgeorgian_ps
+lib/X11/locale/tbl_data/tabibm_cp1133
 lib/X11/locale/tbl_data/tabkoi8_r
+lib/X11/locale/tbl_data/tabkoi8_u
+lib/X11/locale/tbl_data/tabmulelao_1
+lib/X11/locale/tbl_data/tabtcvn
+lib/X11/locale/tbl_data/tabtis620
+lib/X11/locale/tbl_data/tabviscii
+lib/X11/locale/th_TH.TACTIS/Compose
 lib/X11/locale/th_TH.TACTIS/XLC_LOCALE
+lib/X11/locale/vi_VN.tcvn/Compose
+lib/X11/locale/vi_VN.tcvn/XLC_LOCALE
+lib/X11/locale/vi_VN.viscii/Compose
+lib/X11/locale/vi_VN.viscii/XLC_LOCALE
+lib/X11/locale/zh/Compose
 lib/X11/locale/zh/XLC_LOCALE
-lib/X11/locale/zh_TW.Big5/XLC_LOCALE
+lib/X11/locale/zh_TW.big5/Compose
+lib/X11/locale/zh_TW/Compose
 lib/X11/locale/zh_TW/XLC_LOCALE
-lib/X11/proxymngr/pmconfig
 lib/X11/rgb.txt
-lib/X11/rstart/commands/@List
-lib/X11/rstart/commands/ListContexts
-lib/X11/rstart/commands/ListGenericCommands
-@exec ln -fs %D/lib/X11/rstart/commands/x11r6 %D/lib/X11/rstart/commands/x
-@exec ln -fs %D/lib/X11/rstart/commands/x11r6 %D/lib/X11/rstart/commands/x11
-@unexec rm -f %D/lib/X11/rstart/commands/x
-@unexec rm -f %D/lib/X11/rstart/commands/x11
-lib/X11/rstart/commands/x11r6/@List
-lib/X11/rstart/commands/x11r6/LoadMonitor
-lib/X11/rstart/commands/x11r6/Terminal
-lib/X11/rstart/config
-lib/X11/rstart/contexts/@List
-lib/X11/rstart/contexts/default
-lib/X11/rstart/contexts/x
-lib/X11/rstart/contexts/x11
-lib/X11/rstart/contexts/x11r6
-lib/X11/rstart/rstartd.real
-lib/X11/twm/system.twmrc
 lib/X11/x11perfcomp/fillblnk
 lib/X11/x11perfcomp/perfboth
 lib/X11/x11perfcomp/perfratio
-lib/X11/xdm/GiveConsole
-lib/X11/xdm/TakeConsole
-lib/X11/xdm/Xaccess
-lib/X11/xdm/Xresources
-lib/X11/xdm/Xservers
-lib/X11/xdm/Xsession
-lib/X11/xdm/Xsetup_0
-lib/X11/xdm/chooser
-lib/X11/xdm/xdm-config
-lib/X11/xinit/xinitrc
 lib/X11/xkb/compat.dir
 lib/X11/xkb/compat/accessx
 lib/X11/xkb/compat/basic
@@ -1316,7 +1731,6 @@ lib/X11/xkb/compat/norepeat
 lib/X11/xkb/compat/pc
 lib/X11/xkb/compat/pc98
 lib/X11/xkb/compat/xtest
-lib/X11/xkb/compiled/README
 lib/X11/xkb/geometry.dir
 lib/X11/xkb/geometry/amiga
 lib/X11/xkb/geometry/ataritt
@@ -1326,6 +1740,7 @@ lib/X11/xkb/geometry/digital/pc
 lib/X11/xkb/geometry/digital/unix
 lib/X11/xkb/geometry/everex
 lib/X11/xkb/geometry/fujitsu
+lib/X11/xkb/geometry/hp
 lib/X11/xkb/geometry/keytronic
 lib/X11/xkb/geometry/kinesis
 lib/X11/xkb/geometry/macintosh
@@ -1400,8 +1815,6 @@ lib/X11/xkb/semantics/complete
 lib/X11/xkb/semantics/default
 lib/X11/xkb/semantics/xtest
 lib/X11/xkb/symbols.dir
-lib/X11/xkb/symbols/amiga
-lib/X11/xkb/symbols/ataritt
 lib/X11/xkb/symbols/be
 lib/X11/xkb/symbols/bg
 lib/X11/xkb/symbols/br
@@ -1418,6 +1831,7 @@ lib/X11/xkb/symbols/digital/us
 lib/X11/xkb/symbols/digital/vt
 lib/X11/xkb/symbols/dk
 lib/X11/xkb/symbols/dvorak
+lib/X11/xkb/symbols/ee
 lib/X11/xkb/symbols/en_US
 lib/X11/xkb/symbols/es
 lib/X11/xkb/symbols/fi
@@ -1427,7 +1841,9 @@ lib/X11/xkb/symbols/fujitsu/jp
 lib/X11/xkb/symbols/fujitsu/us
 lib/X11/xkb/symbols/gb
 lib/X11/xkb/symbols/group
+lib/X11/xkb/symbols/hp/us
 lib/X11/xkb/symbols/hu
+lib/X11/xkb/symbols/inet
 lib/X11/xkb/symbols/is
 lib/X11/xkb/symbols/iso9995-3
 lib/X11/xkb/symbols/it
@@ -1444,12 +1860,17 @@ lib/X11/xkb/symbols/ralt
 lib/X11/xkb/symbols/ru
 lib/X11/xkb/symbols/se
 lib/X11/xkb/symbols/sgi/jp
+lib/X11/xkb/symbols/si
 lib/X11/xkb/symbols/sony/us
 lib/X11/xkb/symbols/sun/se
 lib/X11/xkb/symbols/sun/us
 lib/X11/xkb/symbols/th
+lib/X11/xkb/symbols/ua
 lib/X11/xkb/symbols/us
+lib/X11/xkb/symbols/us_group3
 lib/X11/xkb/symbols/us_intl
+lib/X11/xkb/symbols/xfree68/amiga
+lib/X11/xkb/symbols/xfree68/ataritt
 lib/X11/xkb/types.dir
 lib/X11/xkb/types/basic
 lib/X11/xkb/types/cancel
@@ -1460,12 +1881,14 @@ lib/X11/xkb/types/mousekeys
 lib/X11/xkb/types/nocancel
 lib/X11/xkb/types/pc
 lib/X11/xkb/xkbcomp
-lib/X11/xserver/SecurityPolicy
-lib/X11/xsm/system.xsm
+lib/X11/xman.help
 lib/libFS.a
+lib/libGL.a
+lib/libGL.so
+lib/libGL.so.1
 lib/libICE.a
 lib/libICE.so
-lib/libICE.so.6.3
+lib/libICE.so.6
 lib/libPEX5.a
 lib/libPEX5.so
 lib/libPEX5.so.6
@@ -1474,73 +1897,160 @@ lib/libSM.so
 lib/libSM.so.6
 lib/libX11.a
 lib/libX11.so
-lib/libX11.so.6.1
+lib/libX11.so.6
 lib/libXIE.a
 lib/libXIE.so
 lib/libXIE.so.6
 lib/libXau.a
 lib/libXaw.a
 lib/libXaw.so
-lib/libXaw.so.6.1
+lib/libXaw.so.6
+lib/libXaw.so.7
 lib/libXdmcp.a
-lib/libXdpms.a
 lib/libXext.a
 lib/libXext.so
-lib/libXext.so.6.3
+lib/libXext.so.6
+lib/libXfont.a
+lib/libXfont.so
+lib/libXfont.so.1
+lib/libXfontcache.a
 lib/libXi.a
 lib/libXi.so
 lib/libXi.so.6
+lib/libXinerama.a
 lib/libXmu.a
 lib/libXmu.so
 lib/libXmu.so.6
 lib/libXp.a
 lib/libXp.so
-lib/libXp.so.6.2
+lib/libXp.so.6
+lib/libXpm.a
+lib/libXpm.so
+lib/libXpm.so.4
 lib/libXss.a
-lib/libXThrStub.so
-lib/libXThrStub.so.6
 lib/libXt.a
 lib/libXt.so
 lib/libXt.so.6
 lib/libXtst.a
 lib/libXtst.so
-lib/libXtst.so.6.1
+lib/libXtst.so.6
+lib/libXv.a
 lib/libXxf86dga.a
 lib/libXxf86misc.a
 lib/libXxf86vm.a
+lib/libdps.a
+lib/libdps.so
+lib/libdps.so.1
+lib/libdpstk.a
+lib/libdpstk.so
+lib/libdpstk.so.1
+lib/libfntstubs.a
 lib/liboldX.a
 lib/liboldX.so
 lib/liboldX.so.6
+lib/libpsres.a
+lib/libpsres.so
+lib/libpsres.so.1
+lib/libxf86config.a
 lib/libxkbfile.a
 lib/libxkbui.a
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
-lib/modules/pex5.so
-lib/modules/xf86AceCad.so
-lib/modules/xf86Calcomp.so
-lib/modules/xf86Dial.so
-lib/modules/xf86Dyna.so
-lib/modules/xf86Elo.so
-lib/modules/xf86Jstk.so
-lib/modules/xf86MuTouch.so
-lib/modules/xf86Summa.so
-lib/modules/xf86Wacom.so
-lib/modules/xie.so
+lib/libxrx.so
+lib/libxrx.so.6
+lib/modules/codeconv/libARABIC.a
+lib/modules/codeconv/libARMSCII8.a
+lib/modules/codeconv/libBIG5.a
+lib/modules/codeconv/libDOSENCODING.a
+lib/modules/codeconv/libGB2312.a
+lib/modules/codeconv/libGEORGIAN.a
+lib/modules/codeconv/libISO8859_1.a
+lib/modules/codeconv/libISO8859_10.a
+lib/modules/codeconv/libISO8859_11.a
+lib/modules/codeconv/libISO8859_14.a
+lib/modules/codeconv/libISO8859_15.a
+lib/modules/codeconv/libISO8859_2.a
+lib/modules/codeconv/libISO8859_3.a
+lib/modules/codeconv/libISO8859_4.a
+lib/modules/codeconv/libISO8859_5.a
+lib/modules/codeconv/libISO8859_6.a
+lib/modules/codeconv/libISO8859_7.a
+lib/modules/codeconv/libISO8859_8.a
+lib/modules/codeconv/libISO8859_9.a
+lib/modules/codeconv/libJISX0201.a
+lib/modules/codeconv/libJISX0208.a
+lib/modules/codeconv/libJISX0212.a
+lib/modules/codeconv/libKOI8.a
+lib/modules/codeconv/libKSC5601.a
+lib/modules/codeconv/libKSCJOHAB.a
+lib/modules/codeconv/libMULEENCODING.a
+lib/modules/codeconv/libTCVN.a
+lib/modules/codeconv/libVISCII.a
+lib/modules/drivers/apm_drv.o
+lib/modules/drivers/ati_drv.o
+lib/modules/drivers/chips_drv.o
+lib/modules/drivers/cirrus_alpine.o
+lib/modules/drivers/cirrus_drv.o
+lib/modules/drivers/cirrus_laguna.o
+lib/modules/drivers/fbdev_drv.o
+lib/modules/drivers/glint_drv.o
+lib/modules/drivers/i740_drv.o
+lib/modules/drivers/mga_drv.o
+lib/modules/drivers/neomagic_drv.o
+lib/modules/drivers/nv_drv.o
+lib/modules/drivers/r128_drv.o
+lib/modules/drivers/rendition_drv.o
+lib/modules/drivers/s3virge_drv.o
+lib/modules/drivers/sis_drv.o
+lib/modules/drivers/tdfx_drv.o
+lib/modules/drivers/tga_drv.o
+lib/modules/drivers/trident_drv.o
+lib/modules/drivers/tseng_drv.o
+lib/modules/drivers/vga_drv.o
+lib/modules/extensions/libGLcore.a
+lib/modules/extensions/libdbe.a
+lib/modules/extensions/libextmod.a
+lib/modules/extensions/libglx.a
+lib/modules/extensions/libpex5.a
+lib/modules/extensions/librecord.a
+lib/modules/extensions/libxie.a
+lib/modules/fonts/libbitmap.a
+lib/modules/fonts/libfreetype.a
+lib/modules/fonts/libspeedo.a
+lib/modules/fonts/libtype1.a
+lib/modules/fonts/libxtt.a
+lib/modules/input/dynapro_drv.o
+lib/modules/input/elo2300_drv.o
+lib/modules/input/elographics_drv.o
+lib/modules/input/magellan_drv.o
+lib/modules/input/microtouch_drv.o
+lib/modules/input/mutouch_drv.o
+lib/modules/input/spaceorb_drv.o
+lib/modules/input/wacom_drv.o
+lib/modules/libafb.a
+lib/modules/libcfb.a
+lib/modules/libcfb16.a
+lib/modules/libcfb24.a
+lib/modules/libcfb32.a
+lib/modules/libddc.a
+lib/modules/libfb.a
+lib/modules/libi2c.a
+lib/modules/libint10.a
+lib/modules/libmfb.a
+lib/modules/libpcidata.a
+lib/modules/librac.a
+lib/modules/libramdac.a
+lib/modules/libscanpci.a
+lib/modules/libshadowfb.a
+lib/modules/libvbe.a
+lib/modules/libvgahw.a
+lib/modules/libxaa.a
+lib/modules/libxf1bpp.a
+lib/modules/libxf24_32bpp.a
+lib/modules/libxf4bpp.a
+lib/modules/libxf8_16bpp.a
+lib/modules/libxf8_32bpp.a
+lib/modules/v10002d.uc
+lib/modules/v20002d.uc
 man/man1/SuperProbe.1.gz
-man/man1/XF86Setup.1.gz
-man/man1/XF86_8514.1.gz
-man/man1/XF86_AGX.1.gz
-man/man1/XF86_Accel.1.gz
-man/man1/XF86_I128.1.gz
-man/man1/XF86_Mach32.1.gz
-man/man1/XF86_Mach64.1.gz
-man/man1/XF86_Mach8.1.gz
-man/man1/XF86_Mono.1.gz
-man/man1/XF86_P9000.1.gz
-man/man1/XF86_S3.1.gz
-man/man1/XF86_SVGA.1.gz
-man/man1/XF86_VGA16.1.gz
-man/man1/XF86_W32.1.gz
 man/man1/XFree86.1.gz
 man/man1/Xnest.1.gz
 man/man1/Xserver.1.gz
@@ -1551,48 +2061,67 @@ man/man1/bdftopcf.1.gz
 man/man1/beforelight.1.gz
 man/man1/bitmap.1.gz
 man/man1/bmtoa.1.gz
+man/man1/cxpm.1.gz
 man/man1/dga.1.gz
 man/man1/editres.1.gz
 man/man1/fsinfo.1.gz
 man/man1/fslsfonts.1.gz
 man/man1/fstobdf.1.gz
 man/man1/iceauth.1.gz
+man/man1/ico.1.gz
 man/man1/imake.1.gz
 man/man1/kbd_mode.1.gz
 man/man1/lbxproxy.1.gz
+man/man1/libxrx.1.gz
+man/man1/listres.1.gz
 man/man1/lndir.1.gz
 man/man1/makedepend.1.gz
 man/man1/makeg.1.gz
+man/man1/makepsres.1.gz
 man/man1/makestrs.1.gz
+man/man1/mkcfm.1.gz
 man/man1/mkdirhier.1.gz
 man/man1/mkfontdir.1.gz
 man/man1/oclock.1.gz
 man/man1/proxymngr.1.gz
-man/man1/reconfig.1.gz
+man/man1/pswrap.1.gz
 man/man1/resize.1.gz
+man/man1/revpath.1.gz
 man/man1/rstart.1.gz
 man/man1/rstartd.1.gz
 man/man1/sessreg.1.gz
 man/man1/setxkbmap.1.gz
+man/man1/showfont.1.gz
 man/man1/showrgb.1.gz
 man/man1/smproxy.1.gz
 man/man1/startx.1.gz
+man/man1/sxpm.1.gz
 man/man1/twm.1.gz
+man/man1/viewres.1.gz
 man/man1/x11perf.1.gz
 man/man1/x11perfcomp.1.gz
 man/man1/xauth.1.gz
+man/man1/xbiff.1.gz
+man/man1/xcalc.1.gz
 man/man1/xclipboard.1.gz
 man/man1/xclock.1.gz
 man/man1/xcmsdb.1.gz
 man/man1/xconsole.1.gz
 man/man1/xcutsel.1.gz
+man/man1/xditview.1.gz
 man/man1/xdm.1.gz
 man/man1/xdpyinfo.1.gz
+man/man1/xedit.1.gz
+man/man1/xev.1.gz
+man/man1/xeyes.1.gz
 man/man1/xf86config.1.gz
 man/man1/xfd.1.gz
 man/man1/xfindproxy.1.gz
+man/man1/xfontsel.1.gz
 man/man1/xfs.1.gz
 man/man1/xfwp.1.gz
+man/man1/xgamma.1.gz
+man/man1/xgc.1.gz
 man/man1/xhost.1.gz
 man/man1/xieperf.1.gz
 man/man1/xinit.1.gz
@@ -1600,20 +2129,20 @@ man/man1/xkbcomp.1.gz
 man/man1/xkbevd.1.gz
 man/man1/xkbprint.1.gz
 man/man1/xkill.1.gz
+man/man1/xload.1.gz
 man/man1/xlogo.1.gz
 man/man1/xlsatoms.1.gz
 man/man1/xlsclients.1.gz
 man/man1/xlsfonts.1.gz
 man/man1/xmag.1.gz
-man/man1/xmh.1.gz
+man/man1/xman.1.gz
+man/man1/xmessage.1.gz
 man/man1/xmkmf.1.gz
 man/man1/xmodmap.1.gz
-man/man1/xmseconfig.1.gz
 man/man1/xon.1.gz
 man/man1/xprop.1.gz
 man/man1/xrdb.1.gz
 man/man1/xrefresh.1.gz
-man/man1/xrx.1.gz
 man/man1/xset.1.gz
 man/man1/xsetmode.1.gz
 man/man1/xsetpointer.1.gz
@@ -1691,7 +2220,6 @@ man/man3/WhitePixel.3.gz
 man/man3/WhitePixelOfScreen.3.gz
 man/man3/WidthMMOfScreen.3.gz
 man/man3/WidthOfScreen.3.gz
-man/man3/X.3.gz
 man/man3/XActivateScreenSaver.3.gz
 man/man3/XAddConnectionWatch.3.gz
 man/man3/XAddHost.3.gz
@@ -1756,7 +2284,6 @@ man/man3/XColormapEvent.3.gz
 man/man3/XConfigureEvent.3.gz
 man/man3/XConfigureRequestEvent.3.gz
 man/man3/XConfigureWindow.3.gz
-man/man3/XConsortium.3.gz
 man/man3/XContextDependentDrawing.3.gz
 man/man3/XContextualDrawing.3.gz
 man/man3/XConvertCase.3.gz
@@ -1827,35 +2354,19 @@ man/man3/XEventsQueued.3.gz
 man/man3/XExposeEvent.3.gz
 man/man3/XExtendedMaxRequestSize.3.gz
 man/man3/XExtentsOfFontSet.3.gz
-man/man3/XF86DGA.3.gz
-man/man3/XF86DGADirectVideo.3.gz
-man/man3/XF86DGAForkApp.3.gz
-man/man3/XF86DGAGetVideo.3.gz
-man/man3/XF86DGAInstallColormap.3.gz
-man/man3/XF86DGAQueryDirectVideo.3.gz
-man/man3/XF86DGAQueryExtension.3.gz
-man/man3/XF86DGAQueryVersion.3.gz
-man/man3/XF86DGASetVidPage.3.gz
-man/man3/XF86DGASetViewPort.3.gz
-man/man3/XF86DGAViewPortChanged.3.gz
-man/man3/XF86Misc.3.gz
-man/man3/XF86MiscGetKbdSettings.3.gz
-man/man3/XF86MiscGetMouseSettings.3.gz
-man/man3/XF86MiscGetSaver.3.gz
-man/man3/XF86MiscQueryExtension.3.gz
-man/man3/XF86MiscQueryVersion.3.gz
-man/man3/XF86MiscSetKbdSettings.3.gz
-man/man3/XF86MiscSetMouseSettings.3.gz
-man/man3/XF86MiscSetSaver.3.gz
 man/man3/XF86VidMode.3.gz
+man/man3/XF86VidModeDeleteModeLine.3.gz
 man/man3/XF86VidModeGetAllModeLines.3.gz
 man/man3/XF86VidModeGetModeLine.3.gz
 man/man3/XF86VidModeGetMonitor.3.gz
+man/man3/XF86VidModeGetViewPort.3.gz
 man/man3/XF86VidModeLockModeSwitch.3.gz
 man/man3/XF86VidModeModModeLine.3.gz
 man/man3/XF86VidModeQueryExtension.3.gz
 man/man3/XF86VidModeQueryVersion.3.gz
+man/man3/XF86VidModeSetViewPort.3.gz
 man/man3/XF86VidModeSwitchMode.3.gz
+man/man3/XF86VidModeSwitchToMode.3.gz
 man/man3/XFetchBuffer.3.gz
 man/man3/XFetchBytes.3.gz
 man/man3/XFetchName.3.gz
@@ -2152,7 +2663,6 @@ man/man3/XShapeSelectInput.3.gz
 man/man3/XShrinkRegion.3.gz
 man/man3/XSizeHints.3.gz
 man/man3/XStandardColormap.3.gz
-man/man3/XStandards.3.gz
 man/man3/XStoreBuffer.3.gz
 man/man3/XStoreBytes.3.gz
 man/man3/XStoreColor.3.gz
@@ -2218,6 +2728,7 @@ man/man3/XauLockAuth.3.gz
 man/man3/XauReadAuth.3.gz
 man/man3/XauUnlockAuth.3.gz
 man/man3/XauWriteAuth.3.gz
+man/man3/Xaw.3.gz
 man/man3/XcmsAllocColor.3.gz
 man/man3/XcmsAllocNamedColor.3.gz
 man/man3/XcmsCCCOfColormap.3.gz
@@ -2270,6 +2781,8 @@ man/man3/XdbeGetBackBufferAttributes.3.gz
 man/man3/XdbeGetVisualInfo.3.gz
 man/man3/XdbeQueryExtension.3.gz
 man/man3/XdbeSwapBuffers.3.gz
+man/man3/XeviGetVisualInfo.3.gz
+man/man3/XeviQueryVersion.3.gz
 man/man3/XmbDrawImageString.3.gz
 man/man3/XmbDrawString.3.gz
 man/man3/XmbDrawText.3.gz
@@ -2323,7 +2836,6 @@ man/man3/XrmStringToQuark.3.gz
 man/man3/XrmStringToQuarkList.3.gz
 man/man3/XrmUniqueQuark.3.gz
 man/man3/XrmValue.3.gz
-man/man3/Xsecurity.3.gz
 man/man3/XtAddActions.3.gz
 man/man3/XtAddCallback.3.gz
 man/man3/XtAddCallbacks.3.gz
@@ -2587,6 +3099,26 @@ man/man3/XtWidgetToApplicationContext.3.gz
 man/man3/XtWindow.3.gz
 man/man3/XtWindowOfObject.3.gz
 man/man3/XtWindowToWidget.3.gz
+man/man3/Xv.3.gz
+man/man3/XvFreeAdaptorInfo.3.gz
+man/man3/XvFreeEncodingInfo.3.gz
+man/man3/XvGetPortAttribute.3.gz
+man/man3/XvGetStill.3.gz
+man/man3/XvGetVideo.3.gz
+man/man3/XvGrabPort.3.gz
+man/man3/XvPortNotify.3.gz
+man/man3/XvPutStill.3.gz
+man/man3/XvPutVideo.3.gz
+man/man3/XvQueryAdaptors.3.gz
+man/man3/XvQueryBestSize.3.gz
+man/man3/XvQueryEncodings.3.gz
+man/man3/XvQueryExtension.3.gz
+man/man3/XvSelectPortNotify.3.gz
+man/man3/XvSelectVideoNotify.3.gz
+man/man3/XvSetPortAttribute.3.gz
+man/man3/XvStopVideo.3.gz
+man/man3/XvUngrabPort.3.gz
+man/man3/XvVideoNotify.3.gz
 man/man3/XwcDrawImageString.3.gz
 man/man3/XwcDrawString.3.gz
 man/man3/XwcDrawText.3.gz
@@ -2598,95 +3130,299 @@ man/man3/XwcTextExtents.3.gz
 man/man3/XwcTextListToTextProperty.3.gz
 man/man3/XwcTextPerCharExtents.3.gz
 man/man3/XwcTextPropertyToTextList.3.gz
+man/man3/glXChooseVisual.3.gz
+man/man3/glXCopyContext.3.gz
+man/man3/glXCreateContext.3.gz
+man/man3/glXCreateGLXPixmap.3.gz
+man/man3/glXDestroyContext.3.gz
+man/man3/glXDestroyGLXPixmap.3.gz
+man/man3/glXFreeContextEXT.3.gz
+man/man3/glXGetClientString.3.gz
+man/man3/glXGetConfig.3.gz
+man/man3/glXGetContextIDEXT.3.gz
+man/man3/glXGetCurrentContext.3.gz
+man/man3/glXGetCurrentDisplay.3.gz
+man/man3/glXGetCurrentDrawable.3.gz
+man/man3/glXImportContextEXT.3.gz
+man/man3/glXIntro.3.gz
+man/man3/glXIsDirect.3.gz
+man/man3/glXMakeCurrent.3.gz
+man/man3/glXQueryContextInfoEXT.3.gz
+man/man3/glXQueryExtension.3.gz
+man/man3/glXQueryExtensionsString.3.gz
+man/man3/glXQueryServerString.3.gz
+man/man3/glXQueryVersion.3.gz
+man/man3/glXSwapBuffers.3.gz
+man/man3/glXUseXFont.3.gz
+man/man3/glXWaitGL.3.gz
+man/man3/glXWaitX.3.gz
+man/man4/apm.4.gz
+man/man4/ati.4.gz
+man/man4/chips.4.gz
+man/man4/cirrus.4.gz
+man/man4/dynapro.4.gz
+man/man4/fbdev.4.gz
+man/man4/glint.4.gz
+man/man4/i740.4.gz
+man/man4/keyboard.4.gz
+man/man4/mga.4.gz
+man/man4/microtouch.4.gz
+man/man4/neomagic.4.gz
+man/man4/nv.4.gz
+man/man4/r128.4.gz
+man/man4/rendition.4.gz
+man/man4/s3virge.4.gz
+man/man4/sis.4.gz
+man/man4/tdfx.4.gz
+man/man4/trident.4.gz
+man/man4/tseng.4.gz
+man/man4/vga.4.gz
+man/man4/wacom.4.gz
 man/man5/XF86Config.5.gz
-@dirrm lib/modules
-@dirrm lib/X11/xsm
-@dirrm lib/X11/xserver
-@dirrm lib/X11/xkb/types
-@dirrm lib/X11/xkb/symbols/sun
-@dirrm lib/X11/xkb/symbols/sony
-@dirrm lib/X11/xkb/symbols/sgi
-@dirrm lib/X11/xkb/symbols/nec
-@dirrm lib/X11/xkb/symbols/macintosh
-@dirrm lib/X11/xkb/symbols/fujitsu
-@dirrm lib/X11/xkb/symbols/digital
-@dirrm lib/X11/xkb/symbols
-@dirrm lib/X11/xkb/semantics
-@dirrm lib/X11/xkb/rules
-@dirrm lib/X11/xkb/keymap/sun
-@dirrm lib/X11/xkb/keymap/sgi
-@dirrm lib/X11/xkb/keymap/digital
-@dirrm lib/X11/xkb/keymap
-@dirrm lib/X11/xkb/keycodes/sgi
-@dirrm lib/X11/xkb/keycodes/digital
-@dirrm lib/X11/xkb/keycodes
-@dirrm lib/X11/xkb/geometry/sgi
-@dirrm lib/X11/xkb/geometry/digital
-@dirrm lib/X11/xkb/geometry
-@dirrm lib/X11/xkb/compiled
-@dirrm lib/X11/xkb/compat
-@dirrm lib/X11/xkb
-@dirrm lib/X11/xinit
-@dirrm lib/X11/xdm
-@dirrm lib/X11/x11perfcomp
-@dirrm lib/X11/twm
-@dirrm lib/X11/rstart/contexts
-@dirrm lib/X11/rstart/commands/x11r6
-@dirrm lib/X11/rstart/commands
-@dirrm lib/X11/rstart
-@dirrm lib/X11/proxymngr
-@dirrm lib/X11/locale/zh_TW.Big5
-@dirrm lib/X11/locale/zh_TW
-@dirrm lib/X11/locale/zh
-@dirrm lib/X11/locale/th_TH.TACTIS
-@dirrm lib/X11/locale/tbl_data
-@dirrm lib/X11/locale/koi8-r
-@dirrm lib/X11/locale/ko
-@dirrm lib/X11/locale/ja.SJIS
-@dirrm lib/X11/locale/ja.JIS
-@dirrm lib/X11/locale/ja
-@dirrm lib/X11/locale/iso8859-9
-@dirrm lib/X11/locale/iso8859-8
-@dirrm lib/X11/locale/iso8859-7
-@dirrm lib/X11/locale/iso8859-6
-@dirrm lib/X11/locale/iso8859-5
-@dirrm lib/X11/locale/iso8859-4
-@dirrm lib/X11/locale/iso8859-3
-@dirrm lib/X11/locale/iso8859-2
+man/man7/X.7.gz
+man/man7/XProjectTeam.7.gz
+man/man7/XStandards.7.gz
+man/man7/Xsecurity.7.gz
+@cwd /etc
+X11/app-defaults/Beforelight
+X11/app-defaults/Bitmap
+X11/app-defaults/Bitmap-color
+X11/app-defaults/Chooser
+X11/app-defaults/Clock-color
+X11/app-defaults/Editres
+X11/app-defaults/Editres-color
+X11/app-defaults/Viewres
+X11/app-defaults/XCalc
+X11/app-defaults/XCalc-color
+X11/app-defaults/XClipboard
+X11/app-defaults/XClock
+X11/app-defaults/XConsole
+X11/app-defaults/XFontSel
+X11/app-defaults/XLoad
+X11/app-defaults/XLogo
+X11/app-defaults/XLogo-color
+X11/app-defaults/XSm
+X11/app-defaults/XTerm
+X11/app-defaults/XTerm-color
+X11/app-defaults/Xditview
+X11/app-defaults/Xditview-chrtr
+X11/app-defaults/Xedit
+X11/app-defaults/Xedit-color
+X11/app-defaults/Xfd
+X11/app-defaults/Xgc
+X11/app-defaults/Xmag
+X11/app-defaults/Xman
+X11/app-defaults/Xmessage
+X11/app-defaults/Xvidtune
+X11/fs/config
+X11/lbxproxy/AtomControl
+X11/proxymngr/pmconfig
+X11/rstart/commands/@List
+X11/rstart/commands/ListContexts
+X11/rstart/commands/ListGenericCommands
+X11/rstart/commands/x11
+X11/rstart/commands/x11r6/@List
+X11/rstart/commands/x11r6/LoadMonitor
+X11/rstart/commands/x11r6/Terminal
+X11/rstart/config
+X11/rstart/contexts/@List
+X11/rstart/contexts/default
+X11/rstart/contexts/x
+X11/rstart/contexts/x11
+X11/rstart/contexts/x11r6
+X11/rstart/rstartd.real
+X11/twm/system.twmrc
+X11/xdm/GiveConsole
+X11/xdm/TakeConsole
+X11/xdm/Xaccess
+X11/xdm/Xresources
+X11/xdm/Xservers
+X11/xdm/Xsession
+X11/xdm/Xsetup_0
+X11/xdm/Xwilling
+X11/xdm/chooser
+X11/xdm/pixmaps/XFree86.xpm
+X11/xdm/pixmaps/XFree86bw.xpm
+X11/xdm/xdm-config
+X11/xinit/xinitrc
+X11/xserver/SecurityPolicy
+X11/xsm/system.xsm
+@dirrm bin
+@dirrm etc/rc.d
+@dirrm etc
+@dirrm include/DPS
+@dirrm include/GL
+@dirrm include/X11
+@dirrm include/X11/ICE
+@dirrm include/X11/PEX5
+@dirrm include/X11/PM
+@dirrm include/X11/SM
+@dirrm include/X11/Xaw
+@dirrm include/X11/Xmu
+@dirrm include/X11/bitmaps
+@dirrm include/X11/extensions
+@dirrm include/X11/fonts/codeconv
+@dirrm include/X11/fonts
+@dirrm include/X11/pixmaps
+@dirrm include
+@dirrm info
+@dirrm lib/X11/XF86Setup
+@dirrm lib/X11/XF86Setup/pics
+@dirrm lib/X11/XF86Setup/scripts
+@dirrm lib/X11/XF86Setup/tcllib
+@dirrm lib/X11/config
+@dirrm lib/X11/doc
+@dirrm lib/X11/etc
+@dirrm lib/X11/fonts/100dpi
+@dirrm lib/X11/fonts/75dpi
+@dirrm lib/X11/fonts/CID
+@dirrm lib/X11/fonts/PEX
+@dirrm lib/X11/fonts/Speedo
+@dirrm lib/X11/fonts/Type1
+@dirrm lib/X11/fonts/cyrillic
+@dirrm lib/X11/fonts/encodings/large
+@dirrm lib/X11/fonts/encodings
+@dirrm lib/X11/fonts/latin2/100dpi
+@dirrm lib/X11/fonts/latin2/75dpi
+@dirrm lib/X11/fonts/latin2
+@dirrm lib/X11/fonts/local
+@dirrm lib/X11/fonts/misc
+@dirrm lib/X11/fonts
+@dirrm lib/X11/locale/C
+@dirrm lib/X11/locale/armscii-8
+@dirrm lib/X11/locale/en_US.UTF-8
+@dirrm lib/X11/locale/en_US.utf
+@dirrm lib/X11/locale/georgian-academy
+@dirrm lib/X11/locale/georgian-ps
+@dirrm lib/X11/locale/ibm-cp1133
 @dirrm lib/X11/locale/iso8859-1
 @dirrm lib/X11/locale/iso8859-10
+@dirrm lib/X11/locale/iso8859-14
 @dirrm lib/X11/locale/iso8859-15
-@dirrm lib/X11/locale/en_US.utf
-@dirrm lib/X11/locale/C
+@dirrm lib/X11/locale/iso8859-2
+@dirrm lib/X11/locale/iso8859-3
+@dirrm lib/X11/locale/iso8859-4
+@dirrm lib/X11/locale/iso8859-5
+@dirrm lib/X11/locale/iso8859-6
+@dirrm lib/X11/locale/iso8859-7
+@dirrm lib/X11/locale/iso8859-8
+@dirrm lib/X11/locale/iso8859-9
+@dirrm lib/X11/locale/ja
+@dirrm lib/X11/locale/ja.JIS
+@dirrm lib/X11/locale/ja.SJIS
+@dirrm lib/X11/locale/ko
+@dirrm lib/X11/locale/koi8-r
+@dirrm lib/X11/locale/koi8-u
+@dirrm lib/X11/locale/mulelao-1
+@dirrm lib/X11/locale/tbl_data
+@dirrm lib/X11/locale/th_TH.TACTIS
+@dirrm lib/X11/locale/vi_VN.tcvn
+@dirrm lib/X11/locale/vi_VN.viscii
+@dirrm lib/X11/locale/zh
+@dirrm lib/X11/locale/zh_TW
+@dirrm lib/X11/locale/zh_TW.big5
 @dirrm lib/X11/locale
-@dirrm lib/X11/lbxproxy
-@dirrm lib/X11/fs
-@dirrm lib/X11/fonts/misc
-@dirrm lib/X11/fonts/cyrillic
-@dirrm lib/X11/fonts/Type1
-@dirrm lib/X11/fonts/Speedo
-@dirrm lib/X11/fonts/PEX
-@dirrm lib/X11/fonts/75dpi
-@dirrm lib/X11/fonts/100dpi
-@dirrm lib/X11/fonts/local
-@dirrm lib/X11/fonts
-@dirrm lib/X11/etc
-@dirrm lib/X11/doc
-@dirrm lib/X11/config
-@dirrm lib/X11/app-defaults
-@dirrm lib/X11/XF86Setup/texts/ja
-@dirrm lib/X11/XF86Setup/texts/generic
-@dirrm lib/X11/XF86Setup/texts
-@dirrm lib/X11/XF86Setup/tcllib
-@dirrm lib/X11/XF86Setup/scripts
-@dirrm lib/X11/XF86Setup/pics
-@dirrm lib/X11/XF86Setup
-@dirrm include/X11/fonts
-@dirrm include/X11/extensions
-@dirrm include/X11/bitmaps
-@dirrm include/X11/Xmu
-@dirrm include/X11/Xaw
-@dirrm include/X11/SM
-@dirrm include/X11/PM
-@dirrm include/X11/PEX5
-@dirrm include/X11/ICE
+@dirrm lib/X11/x11perfcomp
+@dirrm lib/X11/xkb/compat
+@dirrm lib/X11/xkb/compiled
+@dirrm lib/X11/xkb/geometry/digital
+@dirrm lib/X11/xkb/geometry/sgi
+@dirrm lib/X11/xkb/geometry
+@dirrm lib/X11/xkb/keycodes/digital
+@dirrm lib/X11/xkb/keycodes/sgi
+@dirrm lib/X11/xkb/keycodes
+@dirrm lib/X11/xkb/keymap/digital
+@dirrm lib/X11/xkb/keymap/sgi
+@dirrm lib/X11/xkb/keymap/sun
+@dirrm lib/X11/xkb/keymap
+@dirrm lib/X11/xkb/rules
+@dirrm lib/X11/xkb/semantics
+@dirrm lib/X11/xkb/symbols/digital
+@dirrm lib/X11/xkb/symbols/fujitsu
+@dirrm lib/X11/xkb/symbols/hp
+@dirrm lib/X11/xkb/symbols/macintosh
+@dirrm lib/X11/xkb/symbols/nec
+@dirrm lib/X11/xkb/symbols/sgi
+@dirrm lib/X11/xkb/symbols/sony
+@dirrm lib/X11/xkb/symbols/sun
+@dirrm lib/X11/xkb/symbols/xfree68
+@dirrm lib/X11/xkb/symbols
+@dirrm lib/X11/xkb/types
+@dirrm lib/X11/xkb
+@dirrm lib/X11
+@dirrm lib/modules/codeconv
+@dirrm lib/modules/drivers
+@dirrm lib/modules/extensions
+@dirrm lib/modules/fonts
+@dirrm lib/modules/input
+@dirrm lib/modules
+@dirrm lib
+@dirrm libexec
+@dirrm man/cat1
+@dirrm man/cat2
+@dirrm man/cat3
+@dirrm man/cat4
+@dirrm man/cat5
+@dirrm man/cat6
+@dirrm man/cat7
+@dirrm man/cat8
+@dirrm man/cat9
+@dirrm man/catl
+@dirrm man/catn
+@dirrm man/ja/cat1
+@dirrm man/ja/cat2
+@dirrm man/ja/cat3
+@dirrm man/ja/cat4
+@dirrm man/ja/cat5
+@dirrm man/ja/cat6
+@dirrm man/ja/cat7
+@dirrm man/ja/cat8
+@dirrm man/ja/cat9
+@dirrm man/ja/catl
+@dirrm man/ja/catn
+@dirrm man/ja/man1
+@dirrm man/ja/man2
+@dirrm man/ja/man3
+@dirrm man/ja/man4
+@dirrm man/ja/man5
+@dirrm man/ja/man6
+@dirrm man/ja/man7
+@dirrm man/ja/man8
+@dirrm man/ja/man9
+@dirrm man/ja/manl
+@dirrm man/ja/mann
+@dirrm man/ja
+@dirrm man/man1
+@dirrm man/man2
+@dirrm man/man3
+@dirrm man/man4
+@dirrm man/man5
+@dirrm man/man6
+@dirrm man/man7
+@dirrm man/man8
+@dirrm man/man9
+@dirrm man/manl
+@dirrm man/mann
+@dirrm man
+@dirrm share/doc
+@dirrm share/examples
+@dirrm share
+@unexec rmdir /etc/X11/app-defaults
+@unexec rmdir /etc/X11/fs
+@unexec rmdir /etc/X11/lbxproxy
+@unexec rmdir /etc/X11/proxymngr
+@unexec rmdir /etc/X11/rstart/commands/x
+@unexec rmdir /etc/X11/rstart/commands/x11
+@unexec rmdir /etc/X11/rstart/commands/x11r6
+@unexec rmdir /etc/X11/rstart/commands
+@unexec rmdir /etc/X11/rstart/contexts
+@unexec rmdir /etc/X11/rstart
+@unexec rmdir /etc/X11/twm
+@unexec rmdir /etc/X11/xdm/authdir
+@unexec rmdir /etc/X11/xdm/pixmaps
+@unexec rmdir /etc/X11/xdm
+@unexec rmdir /etc/X11/xinit
+@unexec rmdir /etc/X11/xserver
+@unexec rmdir /etc/X11/xsm
+@unexec rmdir /etc/X11
+@unexec rmdir /var/db/xdm

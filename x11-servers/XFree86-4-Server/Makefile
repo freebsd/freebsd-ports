@@ -1,5 +1,5 @@
 # New ports collection makefile for:    XFree86
-# Version required:     3.3.6
+# Version required:     4.0
 # Date created:         5 January 1995
 # Whom:                 jmz
 #
@@ -7,25 +7,17 @@
 #
 
 DISTNAME=	xc
-PKGNAME= 	XFree86-3.3.6
+PKGNAME= 	XFree86-4.0
 CATEGORIES=	x11
-MASTER_SITES=	ftp://ftp.xfree86.org/pub/XFree86/3.3.6/source/ \
-		ftp://xfree86.cdrom.com/pub/XFree86/3.3.6/source/ \
-		ftp://ftp.lip6.fr/pub/X11/XFree86/XFree86-3.3.6/source/ \
-		ftp://ftp.cs.tu-berlin.de/pub/X/XFree86/3.3.6/source/ \
-		ftp://sunsite.doc.ic.ac.uk/packages/XFree86/3.3.6/source/
-DISTFILES=	X336src-1.tgz X336src-2.tgz
-
-PATCH_SITES=	ftp://ftp.xfree.org/pub/XFree86/3.3.6/fixes/ \
-		ftp://xfree86.cdrom.com/pub/XFree86/3.3.6/fixes/ \
-		ftp://ftp.lip6.fr/pub/X11/XFree86/XFree86-3.3.6/fixes/ \
-		ftp://ftp.cs.tu-berlin.de/pub/X/XFree86/3.3.6/fixes/ \
-		ftp://sunsite.doc.ic.ac.uk/packages/XFree86/3.3.6/fixes/
-PATCHFILES= 	fix-01-r128	
+MASTER_SITES=	ftp://ftp.xfree86.org/pub/XFree86/4.0/source/ \
+		ftp://xfree86.cdrom.com/pub/XFree86/4.0/source/ \
+		ftp://ftp.lip6.fr/pub/X11/XFree86/XFree86-4.0/source/ \
+		ftp://ftp.cs.tu-berlin.de/pub/X/XFree86/4.0/source/ \
+		ftp://sunsite.doc.ic.ac.uk/packages/XFree86/4.0/source/
+DISTFILES=	X400src-1.tgz X400src-2.tgz
 
 MAINTAINER=	jmz@FreeBSD.org
 
-IS_INTERACTIVE=	yes	# configure script asks questions
 .if (${MACHINE} != "alpha")
 #NO_PACKAGE=	package available from XFree86
 .endif
@@ -34,8 +26,19 @@ INSTALL_TARGET=	install install.man
 DIST_SUBDIR=	xc
 PATCH_DIST_ARGS=-p0 -E -d ${WRKDIR} --quiet
 SCRIPTS_ENV=	OSVERSION=${OSVERSION}
+.ifdef DISTRIB
+DESTDIR=	${WRKDIR}/distrib
+MAKE_ENV+=	DESTDIR=${DESTDIR}
+NO_PKG_REGISTER=yes
+SCRIPTS_ENV+=	NO_INPUT=yes
+.endif
 # can't use USE_X_PREFIX here -- it will cause a circular dependency
 PREFIX=		${X11BASE}
+.if defined(DISTRIB) || defined(PACKAGE_BUILDING)
+IS_INTERACTIVE=	no
+.else
+IS_INTERACTIVE=	yes	# configure script asks questions
+.endif
 MTREE_FILE=	/etc/mtree/BSD.x11.dist
 .if (${MACHINE} == "pc98")
 SCRIPTS_ENV+=	MACHINE=pc98
@@ -57,7 +60,7 @@ pre-fetch:
 MASTER_SITES+=	ftp://psych.psy.uq.oz.au/pub/X11R5/ \
 		ftp://ftp.internat.freebsd.org/pub/FreeBSD/X11-Crypto/ \
 		ftp://ftp3.za.freebsd.org/pub/FreeBSD/X11-Crypto/
-EXTRACT_ONLY=	X336src-1.tgz X336src-2.tgz
+EXTRACT_ONLY=	X400src-1.tgz X400src-2.tgz
 DISTFILES+=	Wraphelp.c
 IGNOREFILES=	Wraphelp.c
 .endif
@@ -71,23 +74,60 @@ pre-fetch:
 .include <bsd.port.pre.mk>
 
 pre-install:
-	${MKDIR} ${X11BASE}
+	${MKDIR} ${PREFIX}
 
 post-install:
 .if ${PORTOBJFORMAT} == "aout"
-.for lib in PEX5 SM XIE Xi Xmu Xt oldX XThrStub
-	${LN} -sf lib${lib}.so.6.0 ${PREFIX}/lib/lib${lib}.so
+.for lib in psres dps dpstk Xfont GL
+	${LN} -sf lib${lib}.so.1.0 ${DESTDIR}/${PREFIX}/lib/lib${lib}.so
 .endfor
-.for lib in X11 Xaw Xtst
-	${LN} -sf lib${lib}.so.6.1 ${PREFIX}/lib/lib${lib}.so
+.for lib in Xpm
+	${LN} -sf lib${lib}.so.4.0 ${DESTDIR}/${PREFIX}/lib/lib${lib}.so
+.endfor
+.for lib in PEX5 SM XIE Xi Xmu Xt oldX xrx
+	${LN} -sf lib${lib}.so.6.0 ${DESTDIR}/${PREFIX}/lib/lib${lib}.so
+.endfor
+.for lib in X11 Xtst
+	${LN} -sf lib${lib}.so.6.1 ${DESTDIR}/${PREFIX}/lib/lib${lib}.so
 .endfor
 .for lib in Xp
-	${LN} -sf lib${lib}.so.6.2 ${PREFIX}/lib/lib${lib}.so
+	${LN} -sf lib${lib}.so.6.2 ${DESTDIR}/${PREFIX}/lib/lib${lib}.so
 .endfor
 .for lib in ICE Xext
-	${LN} -sf lib${lib}.so.6.3 ${PREFIX}/lib/lib${lib}.so
+	${LN} -sf lib${lib}.so.6.3 ${DESTDIR}/${PREFIX}/lib/lib${lib}.so
+.endfor
+.for lib in Xaw
+	${LN} -sf lib${lib}.so.7.0 ${DESTDIR}/${PREFIX}/lib/lib${lib}.so
 .endfor
 .endif
+.ifndef DISTRIB
 	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
+.endif
+
+.ifdef DISTRIB
+distrib: all install
+	@cd ../XFree86-contrib && \
+	    ${MAKE} NO_PKG_REGISTER=yes WRKDIR=${WRKDIR}/contrib-work \
+	    PREFIX=${X11BASE} PREFIX=${DESTDIR}/${PREFIX} all install
+	@${MKDIR} ${WRKDIR}/bindist
+	@${CP} ${WRKSRC}/programs/Xserver/hw/xfree86/etc/bindist/FreeBSD-ELF/* \
+	    ${WRKDIR}/bindist
+	@${SED} -e 's:TAR="gnu-tar":TAR="${TAR}":g' \
+	    -e 's/EXTRACTLOPTS="-t -v"/TARLOPTS="-t -v -z"/g' \
+	    -e 's/\(#\)\(      echo $$i >> $$LISTFILE\)/\2/g' \
+	    -e 's/\(#\)\(      echo "------------" >> $$LISTFILE\)/\2/g' \
+	    -e 's/\(#\)\(      $$TAR $$TARLOPTS -f $$i >> $$LISTFILE\)/\2/g' \
+	    -e 's/\(#\)\(      echo "" >> $$LISTFILE\)/\2/g' \
+	    -e 's/\(      $$EXTRACT $$EXTRACTLOPTS $$i >> $$LISTFILE\)/#\1/g' \
+	    < ${WRKSRC}/programs/Xserver/hw/xfree86/etc/bindist/build-bindist \
+	    > ${WRKDIR}/build-bindist
+	@${CHMOD} 0555 ${WRKDIR}/build-bindist
+	@${WRKDIR}/build-bindist X ${WRKDIR}/distrib ${WRKDIR}/bindist
+.else
+distrib:
+	@${ECHO_MSG} '>> The DISTRIB variable must be set when building ' \
+	    '"distrib".'
+	@exit 1
+.endif
 
 .include <bsd.port.post.mk>

@@ -1,12 +1,11 @@
---- programs/xdm/sessreg.c~	Sun Jan 16 18:33:06 2000
-+++ programs/xdm/sessreg.c	Sun Jan 23 03:31:15 2000
-@@ -79,7 +79,9 @@
+--- programs/Xserver/hw/xfree86/os-support/xf86_libc.h.old	Tue Feb 15 21:31:06 2000
++++ programs/Xserver/hw/xfree86/os-support/xf86_libc.h	Tue Feb 15 21:32:27 2000
+@@ -19,7 +19,7 @@
  
- #ifdef CSRG_BASED
- /* *BSD doesn't like a ':0' type entry in utmp */
-+#ifndef __FreeBSD__
- #define NO_UTMP
-+#endif
- #endif
+ #ifndef	XF86_LIBC_H
+ #define XF86_LIBC_H 1
+-
++#include <sys/types.h>
+ #include "Xfuncs.h"
  
- #ifndef WTMP_FILE
+ /*

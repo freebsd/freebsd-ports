@@ -1,7 +1,16 @@
 #!/bin/sh
 
+answset () {
+  if [ -n "$NO_INPUT" ]; then
+    echo "$2 [$1]"
+    answ=$1
+  else
+    answ=X
+  fi
+}
+
 yesno () {
-  answ=X;
+  answset YES "$1"
   while [ $answ = X ]; do
     echo -n "$1 [YES] "
     read answ
@@ -16,7 +25,7 @@ yesno () {
   done
 }
 noyes() {
-  answ=X;
+  answset NO "$1"
   while [ $answ = X ]; do
     echo -n "$1 [NO] "
     read answ
@@ -83,23 +92,23 @@ if [ X$tkversion != X ]; then
   *jp)
     echo "Using Japanized tk-$jptkLversion"
     if [ X"${MACHINE}" = X"pc98" ]; then
-	echo "#define HasJpTk			YES" >>$F
-	echo "#define JpTkLibDir		/usr/local/lib" >>$F
-	echo "#define JpTkIncDir		/usr/local/include/tk$tkLversion" >>$F
-	echo "#define JpTkLibName		tk$tkversion" >>$F
+	echo "#define HasJpTk		YES" >>$F
+	echo "#define JpTkLibDir	/usr/local/lib" >>$F
+	echo "#define JpTkIncDir	/usr/local/include/tk$tkLversion" >>$F
+	echo "#define JpTkLibName	tk$tkversion" >>$F
 	echo "#define HasJpTcl		YES" >>$F
-	echo "#define JpTclLibDir		/usr/local/lib" >>$F
-	echo "#define JpTclIncDir		/usr/local/include/tcl$tclLversion" >>$F
-	echo "#define JpTclLibName		tcl$tclversion" >>$F
+	echo "#define JpTclLibDir	/usr/local/lib" >>$F
+	echo "#define JpTclIncDir	/usr/local/include/tcl$tclLversion" >>$F
+	echo "#define JpTclLibName	tcl$tclversion" >>$F
     else
-	echo "#define HasTk			YES" >>$F
+	echo "#define HasTk		YES" >>$F
 	echo "#define TkLibDir		/usr/local/lib" >>$F
 	echo "#define TkIncDir		/usr/local/include/tk$tkLversion" >>$F
 	echo "#define TkLibName		tk$tkversion" >>$F
-	echo "#define HasTcl			YES" >>$F
+	echo "#define HasTcl		YES" >>$F
 	echo "#define TclLibDir		/usr/local/lib" >>$F
 	echo "#define TclIncDir		/usr/local/include/tcl$tclLversion" >>$F
-	echo "#define TclLibName		tcl$tclversion" >>$F
+	echo "#define TclLibName	tcl$tclversion" >>$F
     fi
     ;;
   *)
@@ -108,7 +117,7 @@ if [ X$tkversion != X ]; then
     echo "#define TkLibDir		/usr/local/lib" >>$F
     echo "#define TkIncDir		/usr/local/include/tk$tkLversion" >>$F
     echo "#define TkLibName		tk$tkversion" >>$F
-    echo "#define HasTcl			YES" >>$F
+    echo "#define HasTcl		YES" >>$F
     echo "#define TclLibDir		/usr/local/lib" >>$F
     echo "#define TclIncDir		/usr/local/include/tcl$tclLversion" >>$F
     echo "#define TclLibName		tcl$tclversion" >>$F
@@ -123,118 +132,16 @@ cat <<EOF
 EOF
 fi
 
-cat <<END
- Which servers do you wish to build, you can save a lot of disk space
- by only compiling the server you will be using.  It will also save you
- considerable compile time.
-END
-if [ X$tkversion != X ]; then
-  echo "*** If you want to use XF86Setup to set the INITIAL configuration,"
-  echo "*** then you must build the VGA server"
-fi
-# force the compilation of the EGC server for pc98.
-if [ X"${MACHINE}" = X"pc98" ]; then
-    echo "#define BuildPC98Servers	YES"  >>$F
-    echo "#undef XF98EGCServer"           >>$F
-    echo "#define XF98EGCServer     YES"  >>$F
-    servers="GA968 GANBWAP NEC480 NKVNEC WABS WABEP WSNA TGUI MGA SVGA NECS3 PWSKB PWLB"
-    selected=EGC
-    for i in $servers; do
-	yesno "Do you want to build the $i server?"
-	if [ $answ = YES ]; then selected="$selected $i"; fi
-	echo "#undef XF98${i}Server"           >>$F
-	echo "#define XF98${i}Server   $answ"  >>$F
-    done
-    echo "#undef XF86SVGAServer"           >>$F
-    echo "#define XF86SVGAServer     NO"  >>$F
-    servers="VGA16 VGA16Dual Mono MonoDual S3 S3V I8514 Mach8 Mach32 Mach64 P9000 AGX  W32 I128 GLINT"
-    for i in $servers; do
-	echo "#undef XF86${i}Server"           >>$F
-    echo "#define XF86${i}Server   NO"  >>$F
-    done
-elif [ X"${MACHINE}" = X"alpha" ]; then
-# force the compilation of the SVGA server.
-    echo "#undef XF86SVGAServer"           >>$F
-    echo "#define XF86SVGAServer     YES"  >>$F
-    servers="Mono S3 S3V Mach64 P9000 I128 GLINT TGA"
-    selected=SVGA
-    for i in $servers; do
-	yesno "Do you want to build the $i server?"
-	if [ $answ = YES ]; then selected="$selected $i"; fi
-	echo "#undef XF86${i}Server"           >>$F
-	echo "#define XF86${i}Server   $answ"  >>$F
-    done
-else
-# force the compilation of the SVGA server.
-    echo "#undef XF86SVGAServer"           >>$F
-    echo "#define XF86SVGAServer     YES"  >>$F
-    servers="VGA16 VGA16Dual Mono MonoDual S3 S3V I8514 Mach8 Mach32 Mach64 P9000 AGX  W32 I128 GLINT"
-    selected=SVGA
-    for i in $servers; do
-	yesno "Do you want to build the $i server?"
-	if [ $answ = YES ]; then selected="$selected $i"; fi
-	echo "#undef XF86${i}Server"           >>$F
-	echo "#define XF86${i}Server   $answ"  >>$F
-    done
-fi
-
-echo
-ok=0
-while [ $ok != 1 ]; do 
-  echo -n "default server to install. [none] "
-  read answ
-  if [ X$answ = X ]; then answ=none; ok=1; fi
-  if [ $answ != none ]; then
-    for i in $selected; do if [ $i = $answ ]; then
-      ok=1  
-      if [ X"${MACHINE}" = X"pc98" ]; then
-      echo "#define ServerToInstall		XF98_$answ" >>$F
-      else
-      echo "#define ServerToInstall		XF86_$answ" >>$F
-      fi
-      fi 
-    done
-  fi
-  if [ $ok = 0 ]; then echo you must choose a server among $selected; fi  
-done
-echo
-yesno "Do you want to build Xvfb?"
-echo "#define XVirtualFramebufferServer $answ" >>$F
-
-if [ X"${MACHINE}" != X"pc98" ]; then
-if [ X"${MACHINE}" = X"alpha" ]; then
 cat >> $F <<END
-#define XF86SvgaDrivers         nv mga s3v generic
-
-#define XF86MonoDrivers		hgc1280 sigma apollo hercules
+#define XF86CardDrivers         mga glint nv tga s3virge sis rendition \
+                                neomagic i740 tdfx \
+                                cirrus tseng trident chips apm \
+                                GlideDriver fbdev \
+                                ati r128 vga XF86ExtraCardDrivers
 END
-else
-cat >> $F <<END
-#define XF86SvgaDrivers         nv et4000 et3000 pvga1 gvga r128 ati sis tvga8900 \
-                                cirrus ncr77c22 compaq mga oak al2101 ali \
-                                cl64xx video7 ark mx realtek apm s3_savage s3v \
-                                s3_svga neo chips cyrix rendition p9x00 \
-				spc8110 i740 tdfx smi generic
-
-#define XF86Vga16Drivers	et4000 et3000 ncr77c22 ati sis tvga8900 oak \
-				cl64xx generic 
-
-#define XF86Vga2Drivers		et4000 et3000 pvga1 gvga ati sis tvga8900 \
-				cirrus ncr77c22 oak cl64xx generic
-
-#define XF86MonoDrivers		hgc1280 sigma apollo hercules
-
-#define XF86W32Drivers		et4000w32
-
-END
-fi
-fi
-
 
 cat <<END
-
-
- Do you want to install the default system config files, this will overwrite
+ Do you want to install the default system config files? This will overwrite
  and files that you may be currently using.  This would only be required
  on a first time build.
 END
@@ -246,16 +153,19 @@ yesno "Install xinit config?"
 if [ $answ = YES ]; then
   echo "#define InstallXinitConfig $answ" >> $F
 fi
-yesno "Install xfs config?"
-if [ $answ = YES ]; then
-  echo "#define InstallFSConfig $answ" >> $F
-fi
 
 yesno "Do you want to include support for the FontServer?"
-echo "#undef BuildFontServer" >>$F
-echo "#define  BuildFontServer $answ" >>$F
-echo "#undef InstallFSConfig" >>$F
-echo "#define   InstallFSConfig $answ" >>$F
+if [ $answ = YES ]; then
+    echo "#define  BuildFontServer $answ" >>$F
+    yesno "Install xfs config?"
+    if [ $answ = YES ]; then
+      echo "#define InstallFSConfig $answ" >> $F
+    fi
+else
+    echo "#define  BuildFontServer $answ" >>$F
+    echo "#define InstallFSConfig $answ" >> $F
+fi
+
 
 cat <<'END'
  Do you want to Build Fonts (Usually you only want to build and install
@@ -263,28 +173,54 @@ cat <<'END'
  fonts)
 END
 yesno "Build fonts?"
-if [ $answ = NO ]; then
-  echo "#define BuildFonts		NO" >> $F
+echo "#define BuildFonts		$answ" >> $F
+if [ $answ = YES ]; then
+  yesno "Build/install the 75dpi fonts?"
+  echo "#define Build75DpiFonts	$answ" >> $F
+  yesno "Build/install the 100dpi fonts?"
+  echo "#define Build100DpiFonts	$answ" >> $F
+  yesno "Build/install the Speedo fonts?"
+  echo "#define BuildSpeedoFonts	$answ" >> $F
+  yesno "Build/install the Type1 fonts?"
+  echo "#define BuildType1Fonts	$answ" >> $F
+  yesno "Build/install the CID fonts?"
+  echo "#define BuildCIDFonts	$answ" >> $F
+  yesno "Build/install the Cyrillic fonts?"
+  echo "#define BuildCyrillicFonts	$answ" >> $F
+  yesno "Build/install the Latin2 fonts?"
+  echo "#define BuildLatin2Fonts	$answ" >> $F
 fi
+
 yesno "Build the servers with Extended input devices?"
 if [ $answ = NO ]; then
   echo "#undef BuildXInputExt" >> $F
   echo "#define BuildXInputExt		NO" >> $F
 else
-  if [ X${MACHINE} != X"alpha" ]; then
-    echo "#define JoystickSupport		YES" >> $F
-  fi
+  echo "#define XInputDrivers dynapro elo2300 elographics magellan microtouch \
+        mutouch spaceorb wacom"  >> $F
+# XXX broken in 3.9.18
+#  if [ X${MACHINE} != X"alpha" ]; then
+#    echo "#define JoystickSupport		YES" >> $F
+#  fi
 fi
 
 yesno "Build PEX?"
 if [ $answ = NO ]; then
   echo "#define BuildPexExt		NO" >> $F
 fi
+yesno "Build Xinerama?"
+echo "#define BuildXinerama  $answ" >> $F
+
 yesno "Build XIE?"
 if [ $answ = NO ]; then
   echo "#define BuildXIE		NO" >> $F
 fi
 echo
+
+yesno "Install application defaults files?"
+if [ $answ = NO ]; then
+  echo "#define InstallAppDefFiles      NO" >> $F
+fi
 
 yesno "Build static libraries in addition to shared libraries?"
 if [ $answ = YES ]; then

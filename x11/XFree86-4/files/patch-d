@@ -1,10 +1,19 @@
---- programs/Xserver/hw/xfree86/xf86Version.h.orig	Sat Jan  8 19:24:57 2000
-+++ programs/Xserver/hw/xfree86/xf86Version.h	Wed Feb  9 16:44:53 2000
-@@ -19,6 +19,6 @@
- 			XF86_VERSION_BETA,			\
- 			XF86_VERSION_ALPHA)
+--- config/cf/FreeBSD.cf~	Tue Feb 22 02:42:26 2000
++++ config/cf/FreeBSD.cf	Tue Feb 22 03:15:08 2000
+@@ -336,14 +336,14 @@
+ /* The GCC strength-reduce bug is fixed for FreeBSD 2.1.5 and later */
+ #ifndef DefaultGcc2i386Opt
+ #if OSMajorVersion > 2 || (OSMajorVersion == 2 && OSMinorVersion > 1) || (OSMajorVersion == 2 && OSMinorVersion == 1 && OSTeenyVersion >= 5)
+-#define DefaultGcc2i386Opt -O2
++#define DefaultGcc2i386Opt
+ #endif
+ #endif
  
--#define XF86_DATE	"January 8 1999"
-+#define XF86_DATE	"January 8 2000"
+ #ifdef i386Architecture
+ # define OptimizedCDebugFlags DefaultGcc2i386Opt
+ #else
+-# define OptimizedCDebugFlags -O
++# define OptimizedCDebugFlags
+ #endif
  
- /* $XConsortium: xf86Version.h /main/78 1996/10/28 05:42:10 kaleb $ */
+ #ifndef PreIncDir
