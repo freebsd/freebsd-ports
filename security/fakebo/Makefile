@@ -8,8 +8,7 @@
 PORTNAME=	fakebo
 PORTVERSION=	0.4.1
 CATEGORIES=	security
-MASTER_SITES=	ftp://ftp.deva.net/pub/sources/networking/ids/ \
-		ftp://the.ausmac.net/wd2a/security/port-loggers/ \
+MASTER_SITES=	ftp://the.ausmac.net/wd2a/security/port-loggers/ \
 		ftp://ftp.mayn.de/pub/unix/security/network/ \
 		ftp://ftp.cps.unizar.es/pub/unix/security/ \
 		ftp://ftp.linux.hr/pub/fakebo/
