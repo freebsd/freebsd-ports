@@ -1,16 +1,37 @@
-diff -ruN lame-3.91.orig/configure lame-3.91/configure
---- configure.orig	Wed Dec 26 02:59:42 2001
-+++ configure	Thu Aug 15 23:54:44 2002
-@@ -5521,12 +5521,6 @@
+--- configure.orig	Mon Apr 15 18:54:58 2002
++++ configure	Sat Aug 31 14:21:47 2002
+@@ -2733,7 +2733,7 @@
+ if test "${GCC}" = "yes"; then
+ 	echo $ac_n "checking version of GCC""... $ac_c" 1>&6
+ echo "configure:2736: checking version of GCC" >&5
+-	GCC_version=`${CC} --version`
++	GCC_version=`${CC} --version | sed -n '1s/^[^ ]* (.*) //;s/ .*$//;1p'`
+ 	echo "$ac_t""${GCC_version}" 1>&6
+ fi
  
+@@ -5541,7 +5541,7 @@
+ 	3.*)
+ 		# -funroll-loops seems to produce buggy code with gcc 3.0.3
+ 		OPTIMIZATION="-O -fomit-frame-pointer -ffast-math \
+-			-funroll-loops -maccumulate-outgoing-args"
++			-funroll-loops"
+ 		;;
+ 	*)
+ 		# default
+@@ -5555,11 +5555,15 @@
+ 	OPTIMIZATION_NORM="-fschedule-insns2"
  
- if test "x$GCC" = "xyes"; then
--	# gcc defaults. OS specific options go in versious sections below
--        # from the gcc man pages:  "there is no reason to use -pedantic"
--	CFLAGS="-Wall -pipe ${CFLAGS}"
--
--
--	OPTIMIZATION="-O3 -fomit-frame-pointer -ffast-math -funroll-loops"
- 	case "${GCC_version}" in
- 	2.96*)
-            # for buggy version of gcc shipped with RH7.1, back of on some
+ 	OPTIMIZATION_FULL="-fmove-all-movables -freduce-all-givs \
+-			-fsched-interblock -fbranch-count-reg -fforce-addr \
++			-fbranch-count-reg -fforce-addr \
+ 			-fforce-mem"
+ 
+ 	case "${CONFIG_EXPOPT}" in
+ 	no)
++		# if someone supplies own CFLAGS, we don't add our own
++		if [ "X${ac_save_CFLAGS}" != "X" ]; then
++			OPTIMIZATION=""
++		fi
+ 		;;
+ 	norm|yes)
+ 		OPTIMIZATION="${OPTIMIZATION} ${OPTIMIZATION_NORM}"
