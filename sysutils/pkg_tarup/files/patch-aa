@@ -1,15 +1,17 @@
---- pkg_tarup.orig	Sun Jun 10 12:51:53 2001
-+++ pkg_tarup	Sun Jun 10 12:58:15 2001
-@@ -7,21 +7,26 @@
+--- pkg_tarup.orig	Thu Aug 23 14:16:01 2001
++++ pkg_tarup	Thu Aug 23 14:18:58 2001
+@@ -7,21 +7,28 @@
  #
  
  PKG_DBDIR=${PKG_DBDIR:-/var/db/pkg}
 -PKGREPOSITORY=${PKGREPOSITORY:-/tmp}
  PKG_SUFX=${PKG_SUFX:-tgz}
- 
++PKG_INFO_CMD=/usr/sbin/pkg_info
++PKG_CREATE_CMD=/usr/sbin/pkg_create
++
 +# A package file can be very big beyond /tmp's capacity
 +PKGREPOSITORY=${PKGREPOSITORY:-${TMPDIR:-/var/tmp}}
-+
+ 
  PKG="$1"
 -rPKG="`pkg_info -e \"$PKG\"`"
  
@@ -23,7 +25,7 @@
  
 -PKG=$rPKG
 -echo "Taring up $PKG"
-+if ! pkg_info -e "$PKG"
++if ! $PKG_INFO_CMD -e "$PKG"
 +then
 +     echo $PKG is not installed.
 +     exit 1
@@ -33,7 +35,7 @@
  
  check_and_add() {
  	opt="$1"
-@@ -40,10 +45,10 @@
+@@ -40,10 +47,10 @@
  
  check_and_add -c ${PKG_DBDIR}/${PKG}/+COMMENT
  check_and_add -d ${PKG_DBDIR}/${PKG}/+DESC
@@ -47,7 +49,7 @@
  check_and_add -i ${PKG_DBDIR}/${PKG}/+INSTALL
  check_and_add -k ${PKG_DBDIR}/${PKG}/+DEINSTALL
  check_and_add -r ${PKG_DBDIR}/${PKG}/+REQUIRE
-@@ -54,7 +59,8 @@
+@@ -54,7 +61,8 @@
  sed -n \
      -e '/^@comment MD5:/d' \
      -e '/^@cwd \.$/,$d' \
@@ -57,14 +59,37 @@
      <${PKG_DBDIR}/${PKG}/+CONTENTS >$PLIST
  
  # Duplicate first @cwd (work around pkg_create "feature" ...)
-@@ -80,10 +86,8 @@
+@@ -64,9 +72,9 @@
+     sed \
+        -e "/`cat ${PLIST}.1 | sed 's,/,\\\\/,g'`/r${PLIST}.1" \
+        <${PLIST} >${PLIST}.2
+-    mv ${PLIST}.2 ${PLIST}
++    /bin/mv ${PLIST}.2 ${PLIST}
+ fi
+-rm ${PLIST}.1
++/bin/rm ${PLIST}.1
+ 
+ # echo -----
+ # cat $PLIST
+@@ -76,17 +84,15 @@
+ # Just for kicks ...
+ # pkg_admin check "${PKG}"
+   
+-pkg_create \
++$PKG_CREATE_CMD \
          ${PKG_ARGS} \
  	-v \
  	-f ${PLIST} \
 -	-l \
- 	-p "`pkg_info -qp ${PKG} | head -1 | awk '{ print $2 }'`" \
- 	-P "`pkg_info -qf ${PKG} | grep ^@pkgdep | awk '{ print $2 }'`" \
+-	-p "`pkg_info -qp ${PKG} | head -1 | awk '{ print $2 }'`" \
+-	-P "`pkg_info -qf ${PKG} | grep ^@pkgdep | awk '{ print $2 }'`" \
 -	-C "`pkg_info -qf ${PKG} | grep ^@pkgcfl | awk '{ print $2 }'`" \
++	-p "`$PKG_INFO_CMD -qp ${PKG} | head -1 | awk '{ print $2 }'`" \
++	-P "`$PKG_INFO_CMD -qf ${PKG} | grep ^@pkgdep | awk '{ print $2 }'`" \
  	${PKGREPOSITORY}/${PKG}.${PKG_SUFX}
  
- rm -f ${PLIST}
+-rm -f ${PLIST}
++/bin/rm -f ${PLIST}
+ exit 0
+ 
+ 
