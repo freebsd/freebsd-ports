@@ -3,7 +3,7 @@
 # Date created:		16 Mar 1996
 # Whom:			Hideaki Ohmon <ohmon@tom.sfc.keio.ac.jp>
 #
-# $Id: Makefile,v 1.11 1998/11/07 10:50:01 asami Exp $
+# $Id: Makefile,v 1.12 1998/11/08 09:36:56 asami Exp $
 #
 
 DISTNAME=	pkfonts
@@ -26,9 +26,9 @@ RESOLUTION=	300
 .if ${RESOLUTION} != 118 && ${RESOLUTION} != 240 && \
 	${RESOLUTION} != 300 && ${RESOLUTION} != 360 && \
 	${RESOLUTION} != 400 && ${RESOLUTION} != 600
-pre-fetch:
+.BEGIN:
 	@${ECHO} "Error: invalid value for RESOLUTION: \"${RESOLUTION}\""
-	@${ECHO} "Possible values are: 118, 240, 300 (default), 360, 400 and 600."
+	@${ECHO} "Possible values are: 118, 240, 300, 360, 400 and 600."
 	@${FALSE}
 .endif
 .endif
