@@ -5992,6 +5992,7 @@ p5-OLE-Storage_Lite	ports/devel/p5-OLE-Storage_Lite
 p5-ORBit	ports/devel/p5-ORBit
 p5-Object-MultiType	ports/devel/p5-Object-MultiType
 p5-Object-Realize-Later	ports/devel/p5-Object-Realize-Later
+p5-OpenCA-CRL	ports/security/p5-OpenCA-CRL
 p5-OpenCA-CRR	ports/security/p5-OpenCA-CRR
 p5-OpenCA-PKCS7	ports/security/p5-OpenCA-PKCS7
 p5-OpenCA-REQ	ports/security/p5-OpenCA-REQ
