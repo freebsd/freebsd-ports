@@ -41,6 +41,75 @@ MASTER_SITE_AFTERSTEP+=	\
 	ftp://ftp.dti.ad.jp/pub/X/AfterStep/%SUBDIR%/ \
 	ftp://ftp.chg.ru/pub/X11/windowmanagers/afterstep/%SUBDIR%/
 
+MASTER_SITE_APACHE+=	\
+	http://nagoya.apache.org/dist/%SUBDIR%/
+
+MASTER_SITE_APACHE_HTTPD+=	\
+	http://www.apache.org/dist/httpd/%SUBDIR%/ \
+	ftp://gd.tuwien.ac.at/pub/infosys/servers/http/apache/dist/httpd/%SUBDIR%/ \
+	ftp://ftp.planetmirror.com/pub/apache/dist/httpd/%SUBDIR%/ \
+	ftp://ftp.pop-mg.com.br/pub/apache/dist/httpd/%SUBDIR%/ \
+	ftp://ftp.gin.cz/pub/mirrors/www.apache.org/dist/httpd/%SUBDIR%/ \
+	ftp://ftp-stud.fht-esslingen.de/pub/Mirrors/ftp.apache.org/dist/httpd/%SUBDIR%/ \
+	ftp://ftp.apache.de/mirrors/dev.apache.org/dist/httpd/%SUBDIR%/ \
+	ftp://ftp.cs.tu-berlin.de/pub/net/www/apache/dist/httpd/%SUBDIR%/ \
+	ftp://ftp.dkuug.dk/pub/apache/httpd/%SUBDIR%/ \
+	ftp://sunsite.auc.dk/pub/infosystems/www/apache/dist/httpd/%SUBDIR%/ \
+	ftp://ftp.pspt.fi/pub/unix/www/apache/dist/httpd/%SUBDIR%/ \
+	ftp://mir1.ovh.net/ftp.apache.org/dist/httpd/%SUBDIR%/ \
+	ftp://ftp.forthnet.gr/pub/www/apache/dist/httpd/%SUBDIR%/ \
+	ftp://sunsite.srce.hr/mirrors/ftp.apache.org/apache/dist/httpd/%SUBDIR%/ \
+	ftp://ebizlab.hit.bme.hu/pub/apache/dist/httpd/%SUBDIR%/ \
+	ftp://xenia.sote.hu/pub/linux/mirrors/www.apache.org/dist/httpd/%SUBDIR%/ \
+	ftp://ftp.esat.net/mirrors/ftp.apache.org/dist/httpd/%SUBDIR%/ \
+	ftp://ftp.heanet.ie/mirrors/www.apache.org/dist/httpd/%SUBDIR%/ \
+	ftp://ftp.rhnet.is/pub/apache/httpd/%SUBDIR%/ \
+	ftp://apache.theomnistore.com/mirror/apache/dist/httpd/%SUBDIR%/ \
+	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/apache/dist/httpd/&,} \
+	ftp://ftp.nuri.net/pub/apache/dist/httpd/%SUBDIR%/ \
+	ftp://ftp.sogang.ac.kr/www/apache/dist/httpd/%SUBDIR%/ \
+	ftp://ftp.xgate.co.kr/pub/mirror/apache/dist/httpd/%SUBDIR%/ \
+	ftp://apache.unam.mx/pub/apache/dist/httpd/%SUBDIR%/ \
+	ftp://ftp.azc.uam.mx/mirrors/apache/dist/httpd/%SUBDIR%/ \
+	ftp://ftp.task.gda.pl/pub/www/apache/dist/httpd/%SUBDIR%/ \
+	ftp://sunsite.icm.edu.pl/pub/www/apache/dist/httpd/%SUBDIR%/ \
+	ftp://ftp.ist.utl.pt/pub/apache/dist/httpd/%SUBDIR%/ \
+	ftp://ftp.telepac.pt/pub/apache/dist/httpd/%SUBDIR%/ \
+	ftp://ftp.kappa.ro/pub/mirrors/ftp.apache.org/dist/httpd/%SUBDIR%/ \
+	ftp://ftp.opsynet.com/linux/apache/dist/httpd/%SUBDIR%/ \
+	ftp://apache.rinet.ru/pub/mirror/apache.org/dist/httpd/%SUBDIR%/ \
+	ftp://ftp.chg.ru/pub/WWW/apache/dist/httpd/%SUBDIR%/ \
+	ftp://ftp.sunet.se/pub/www/servers/apache/dist/httpd/%SUBDIR%/ \
+	ftp://swamp.chl.chalmers.se/pub/apache/dist/httpd/%SUBDIR%/ \
+	ftp://apache.mirrors.rossfell.co.uk/mirrors/apache/dist/httpd/%SUBDIR%/ \
+	ftp://ftp.flirble.org/pub/web/apache/dist/httpd/%SUBDIR%/ \
+	ftp://ftp.gbnet.net/pub/apache/dist/httpd/%SUBDIR%/ \
+	ftp://ftp.plig.net/pub/apache/dist/httpd/%SUBDIR%/ \
+	ftp://mirrors.rmplc.co.uk/pub/apache/dist/httpd/%SUBDIR%/ \
+	ftp://apache.secsup.org/pub/apache/dist/httpd/%SUBDIR%/ \
+	ftp://apache.valueclick.com/pub/apache/dist/httpd/%SUBDIR%/ \
+	ftp://ftp.apache.inetcosmos.org/pub/apache/dist/httpd/%SUBDIR%/ \
+	ftp://ftp.ccs.neu.edu/net/mirrors/Apache/dist/httpd/%SUBDIR%/ \
+	ftp://ftp.digex.net/pub/packages/network/apache/httpd/%SUBDIR%/ \
+	ftp://ftp.epix.net/pub/apache/dist/httpd/%SUBDIR%/ \
+	ftp://ftp.knowledge.com/pub/mirrors/apache/dist/httpd/%SUBDIR%/ \
+	ftp://ftp.rge.com/pub/infosystems/apache/dist/httpd/%SUBDIR%/ \
+	ftp://ftp.sunsite.utk.edu/pub/apache/dist/httpd/%SUBDIR%/ \
+	ftp://ftp.tux.org/pub/net/apache/dist/httpd/%SUBDIR%/ \
+	ftp://mirror.telentente.com/pub/apache/dist/httpd/%SUBDIR%/ \
+	ftp://www.ibiblio.org/pub/packages/infosystems/WWW/servers/apache/httpd/%SUBDIR%/ \
+	ftp://ftp.saix.net/pub/apache/dist/httpd/%SUBDIR%/ \
+	ftp://ftpza.co.za/pub/mirrors/apache/httpd/%SUBDIR%/ \
+	${MASTER_SITE_APACHE:S,%SUBDIR%,httpd/&,}
+
+MASTER_SITE_APACHE_JAKARTA+=	\
+	http://jakarta.apache.org/builds/%SUBDIR%/ \
+	${MASTER_SITE_APACHE:S,%SUBDIR%,jakarta/&,}
+
+MASTER_SITE_APACHE_XML+=	\
+	http://xml.apache.org/dist/%SUBDIR%/ \
+	${MASTER_SITE_APACHE:S,%SUBDIR%,xml/&,}
+
 MASTER_SITE_COMP_SOURCES+=	\
 	ftp://gatekeeper.dec.com/pub/usenet/comp.sources.%SUBDIR%/ \
 	ftp://ftp.kddlabs.co.jp/Unix/com.sources.%SUBDIR%/ \
