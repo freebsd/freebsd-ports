@@ -12,7 +12,9 @@ MASTER_SITES=	http://www.openscenegraph.org/download/snapshots/
 
 MAINTAINER=	aa8vb@nc.rr.com
 
-LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
+		jpeg.9:${PORTSDIR}/graphics/jpeg \
+		freetype.9:${PORTSDIR}/print/freetype2
 
 USE_X_PREFIX=	yes
 USE_MESA=	yes
