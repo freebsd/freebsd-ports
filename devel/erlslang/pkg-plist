@@ -1,0 +1,24 @@
+lib/erlang/lib/slang-%%VERSION%%/c_src/slang_drv.c
+lib/erlang/lib/slang-%%VERSION%%/c_src/slang_drv.o
+lib/erlang/lib/slang-%%VERSION%%/demo/ex1.beam
+lib/erlang/lib/slang-%%VERSION%%/demo/ex1.erl
+lib/erlang/lib/slang-%%VERSION%%/demo/ex2.beam
+lib/erlang/lib/slang-%%VERSION%%/demo/ex2.c
+lib/erlang/lib/slang-%%VERSION%%/demo/ex2.erl
+lib/erlang/lib/slang-%%VERSION%%/demo/ex3.c
+lib/erlang/lib/slang-%%VERSION%%/demo/pager.erl
+lib/erlang/lib/slang-%%VERSION%%/ebin/slang.app
+lib/erlang/lib/slang-%%VERSION%%/ebin/slang.beam
+lib/erlang/lib/slang-%%VERSION%%/priv/slang_drv.so
+lib/erlang/lib/slang-%%VERSION%%/src/slang.app.src
+lib/erlang/lib/slang-%%VERSION%%/src/slang.erl
+lib/erlang/lib/slang-%%VERSION%%/src/slang_int.hrl
+lib/erlang/lib/slang-%%VERSION%%/src/slang_lib.erl
+@dirrm lib/erlang/lib/slang-%%VERSION%%/src
+@dirrm lib/erlang/lib/slang-%%VERSION%%/priv
+@dirrm lib/erlang/lib/slang-%%VERSION%%/ebin
+@dirrm lib/erlang/lib/slang-%%VERSION%%/demo
+@dirrm lib/erlang/lib/slang-%%VERSION%%/c_src
+@dirrm lib/erlang/lib/slang-%%VERSION%%
+@exec ln -sf slang-%%VERSION%% %D/lib/erlang/lib/slang
+@unexec rm -f %D/lib/erlang/lib/slang

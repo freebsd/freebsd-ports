@@ -178,6 +178,7 @@
     SUBDIR += elib-emacs19
     SUBDIR += elib-emacs20
     SUBDIR += entity
+    SUBDIR += erlslang
     SUBDIR += error
     SUBDIR += esdl
     SUBDIR += f77flow
