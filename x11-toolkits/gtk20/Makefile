@@ -38,6 +38,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/mime/magic:${PORTSDIR}/misc/shared-mime-info \
 USE_BZIP2=	yes
 LATEST_LINK=	gtk20
 USE_X_PREFIX=	yes
+USE_GMAKE=	yes
 USE_XPM=	yes
 USE_REINPLACE=	yes
 USE_PERL5=	yes
