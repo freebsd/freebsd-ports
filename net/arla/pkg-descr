@@ -1,0 +1,20 @@
+Arla is a free AFS client implementation.
+
+The main goal of the Arla project is to make a fully functional client with all
+capabilities of commercial AFS. Other planned and implemented things are
+all the normal management tools and a server.
+
+Version 0.9 status:
+
+* Read/write support
+* Authentication (with kth-krb4)
+* Working filesystem on OpenBSD, FreeBSD, NetBSD, Linux and Solaris
+* Some administration programs (fs, vos and pts)
+
+For more information see http://www.stacken.kth.se/projekt/arla/
+
+This port requires kerberos
+
+Peter Hawkins
+thepish@freebsd.org
+
