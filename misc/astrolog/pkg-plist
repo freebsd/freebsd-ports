@@ -1,8 +1,10 @@
 bin/astrolog
-share/doc/astrolog/Helpfile.530
-share/doc/astrolog/README.530
-share/doc/astrolog/Update.530
 lib/astrolog/astrolog.dat
 lib/astrolog/LRZ5_24
 lib/astrolog/CHI_24
 lib/astrolog/CPJV_24
+share/doc/astrolog/Helpfile.530
+share/doc/astrolog/README.530
+share/doc/astrolog/Update.530
+@dirrm lib/astrolog
+@dirrm share/doc/astrolog

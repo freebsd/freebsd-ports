@@ -13,3 +13,4 @@ lib/dejagnu/util-defs.exp
 lib/dejagnu/utils.exp
 lib/dejagnu/vrtx.exp
 lib/dejagnu/vxworks.exp
+@dirrm lib/dejagnu

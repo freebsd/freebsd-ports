@@ -77,6 +77,7 @@ lib/dotfile-2.2/Generator/TAGS
 lib/dotfile-2.2/Generator/Copying
 lib/dotfile-2.2/Generator/versionUpdate.tcl
 lib/dotfile-2.2/Generator/ChangeLog
+lib/dotfile-2.2/fvwm2/bytecompile
 lib/dotfile-2.2/fvwm2/exports/contents
 lib/dotfile-2.2/fvwm2/exports/distrib.export
 lib/dotfile-2.2/fvwm2/exports/imada.export
@@ -243,6 +244,7 @@ lib/dotfile-2.2/elm/behavior.template
 lib/dotfile-2.2/elm/aliasmenu.template
 lib/dotfile-2.2/elm/viewingheaders.template
 lib/dotfile-2.2/elm/bytecompile
+lib/dotfile-2.2/fvwm1/bytecompile
 lib/dotfile-2.2/fvwm1/save-files/system.save
 lib/dotfile-2.2/fvwm1/exports/contents
 lib/dotfile-2.2/fvwm1/exports/system.export

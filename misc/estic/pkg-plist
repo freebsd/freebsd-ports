@@ -7,3 +7,4 @@ var/log/pbx/debug
 etc/pbx/config
 share/doc/estic/README
 share/doc/estic/estic.doc
+@dirrm share/doc/estic
