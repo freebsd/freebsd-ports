@@ -1,5 +1,5 @@
-*** Imakefile.orig	Fri Feb 28 09:48:57 1997
---- Imakefile	Fri Dec 24 12:47:19 1999
+*** Imakefile.orig	Sat Mar  1 00:48:57 1997
+--- Imakefile	Sat Jan 15 00:00:00 2000
 ***************
 *** 6,63 ****
   
@@ -69,9 +69,9 @@
   
 ! /* Install Directory                                                       */
 ! /* You can't install without write permission of these. => Unplayable. (^^;*/
-! PIXMAPDIR	= /usr/X11R6/lib/X11/xsoldier
-! SCOREDIR	= /usr/X11R6/lib/X11/xsoldier
-! BINDIR		= /usr/X11R6/bin
+! PIXMAPDIR	= $(LIBDIR)/xsoldier
+! SCOREDIR	= $(LIBDIR)/xsoldier
+! /* BINDIR		= /usr/local/games */
   
 ! /* Score File Name. It's under SCOREDIR.                                   */
   SCOREFILE	= .scorefile
