@@ -164,6 +164,14 @@ MASTER_SITE_SOURCEFORGE+= \
 	http://download.sourceforge.net/%SUBDIR%/ \
 	ftp://ftp.kddlabs.co.jp/sourceforge/%SUBDIR%/
 
+MASTER_SITE_RUBY+= \
+	ftp://ftp.netlab.co.jp/pub/lang/ruby/%SUBDIR%/ \
+	ftp://ftp.TokyoNet.AD.JP/pub/misc/ruby/%SUBDIR%/ \
+	ftp://ftp.iij.ad.jp/pub/lang/ruby/%SUBDIR%/ \
+	ftp://blade.nagaokaut.ac.jp/pub/lang/ruby/%SUBDIR%/ \
+	ftp://ftp.krnet.ne.jp/pub/ruby/%SUBDIR%/ \
+	ftp://mirror.nucba.ac.jp/mirror/ruby/%SUBDIR%/
+
 # Where to put distfiles that don't have any other master site
 MASTER_SITE_LOCAL?= \
 	ftp://ftp.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/%SUBDIR%/ \
