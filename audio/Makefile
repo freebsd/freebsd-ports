@@ -56,6 +56,7 @@
     SUBDIR += nspmod
     SUBDIR += play
     SUBDIR += playmidi
+    SUBDIR += pysol-sound-server
     SUBDIR += radio
     SUBDIR += raproxy
     SUBDIR += replay
