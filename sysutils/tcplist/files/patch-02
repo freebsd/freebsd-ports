@@ -1,0 +1,11 @@
+--- tcplist.1.orig	Sun Jan 11 00:30:07 1998
++++ tcplist.1	Sun Jan 11 00:30:29 1998
+@@ -49,8 +49,6 @@
+ Verbose mode: give a running commentary of what is being done.
+ .IP \fB\-V\fP
+ Print version information and exit.
+-.IP \fB\-s\fP
+-Show TCP servers running on this machine as well as established connections. 
+ .IP \fB\-f\ filename\fP
+ Assume the hosts listed in the specified file are not running Ident servers,
+ and should not be queried. Listing terminal servers, X terminals, PC's, and 
