@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xscorch
-PORTVERSION=	0.1.7
+PORTVERSION=	0.1.9
 CATEGORIES=	games
 MASTER_SITES=	http://chaos2.org/xscorch/
 
