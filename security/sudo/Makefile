@@ -29,6 +29,7 @@ MAN8=		sudo.8 visudo.8
 
 post-patch:
 	perl -i -pe 's,!!PREFIX!!,${PREFIX},g' ${WRKSRC}/*.man
+	perl -i -pe 's,^,#,g' ${WRKSRC}/sample.sudoers
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/sample.sudoers ${PREFIX}/etc/sudoers.sample
