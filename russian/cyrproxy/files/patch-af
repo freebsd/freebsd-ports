@@ -1,0 +1,23 @@
+*** http_gw.c.bak	Sat May  3 15:57:21 1997
+--- http_gw.c	Sat Jun 21 03:13:55 1997
+***************
+*** 353,360 ****
+  	  char *p = strstr(buf,"charset=");
+  	  if(p)
+  	    sprintf(p,"charset=%s\n",enc->clientcharset);
+- #if 0 /* commented out. I'm not sure, that we must force charset addition
+- 	 for documents, which not contains it! */
+  	  else
+  	    {
+  	      p=strchr(buf,'\n');
+--- 353,358 ----
+***************
+*** 369,375 ****
+  		  strcat(buf,"\n");
+  		}
+  	    }
+- #endif
+  	  n=strlen(buf);
+  	}
+  
+--- 367,372 ----
