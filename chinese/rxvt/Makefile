@@ -3,7 +3,7 @@
 # Date created:         Nov 16 1997
 # Whom:                 frankch@waru.life.nthu.edu.tw
 #
-# $Id$
+# $Id: Makefile,v 1.2 1997/12/04 03:12:16 asami Exp $
 #
 
 DISTNAME=       rxvt-2.4.4
@@ -12,6 +12,8 @@ CATEGORIES=     chinese x11
 MASTER_SITES=   ftp://ftp.math.fu-berlin.de/pub/rxvt/devel/
 
 MAINTAINER=     frankch@waru.life.nthu.edu.tw
+
+RUN_DEPENDS=	${X11BASE}/bin/xcin:${PORTSDIR}/chinese/xcin
 
 USE_X11=        yes
 GNU_CONFIGURE=  yes
