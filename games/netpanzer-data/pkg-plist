@@ -1,9 +1,28 @@
+share/netpanzer/cache/colorfilters/netp/2080.tbl
+share/netpanzer/cache/colorfilters/netp/4060.tbl
+share/netpanzer/cache/colorfilters/netp/6040.tbl
+share/netpanzer/cache/colorfilters/netp/8020.tbl
+share/netpanzer/cache/colorfilters/netp/Brighten.tbl
+share/netpanzer/cache/colorfilters/netp/DarkenALittle.tbl
+share/netpanzer/cache/colorfilters/netp/DarkenALot.tbl
+share/netpanzer/cache/colorfilters/netp/LightDark.tbl
+share/netpanzer/cache/colorfilters/netpmenu/2080.tbl
+share/netpanzer/cache/colorfilters/netpmenu/4060.tbl
+share/netpanzer/cache/colorfilters/netpmenu/6040.tbl
+share/netpanzer/cache/colorfilters/netpmenu/8020.tbl
+share/netpanzer/cache/colorfilters/netpmenu/Brighten.tbl
+share/netpanzer/cache/colorfilters/netpmenu/DarkenALittle.tbl
+share/netpanzer/cache/colorfilters/netpmenu/DarkenALot.tbl
+share/netpanzer/cache/colorfilters/netpmenu/LightDark.tbl
 share/netpanzer/maps/Bad Neuburg.npm
 share/netpanzer/maps/Bad Neuburg.opt
 share/netpanzer/maps/Bad Neuburg.spn
 share/netpanzer/maps/Cramped.npm
 share/netpanzer/maps/Cramped.opt
 share/netpanzer/maps/Cramped.spn
+share/netpanzer/maps/Duell.npm
+share/netpanzer/maps/Duell.opt
+share/netpanzer/maps/Duell.spn
 share/netpanzer/maps/Hill 221.npm
 share/netpanzer/maps/Hill 221.opt
 share/netpanzer/maps/Hill 221.spn
@@ -92,6 +111,7 @@ share/netpanzer/pics/flags/china.bmp
 share/netpanzer/pics/flags/colombia.bmp
 share/netpanzer/pics/flags/czech-republic.bmp
 share/netpanzer/pics/flags/denmark.bmp
+share/netpanzer/pics/flags/finland.bmp
 share/netpanzer/pics/flags/france.bmp
 share/netpanzer/pics/flags/germany.bmp
 share/netpanzer/pics/flags/greece.bmp
@@ -355,4 +375,8 @@ share/netpanzer/wads/summer12mb.tls
 @dirrm share/netpanzer/pics/backgrounds
 @dirrm share/netpanzer/pics
 @dirrm share/netpanzer/maps
+@dirrm share/netpanzer/cache/colorfilters/netpmenu
+@dirrm share/netpanzer/cache/colorfilters/netp
+@dirrm share/netpanzer/cache/colorfilters
+@dirrm share/netpanzer/cache
 @dirrm share/netpanzer

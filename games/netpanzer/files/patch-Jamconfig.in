@@ -1,0 +1,7 @@
+--- Jamconfig.in.orig	Mon Feb 21 21:40:27 2005
++++ Jamconfig.in	Mon Feb 21 21:41:05 2005
+@@ -98,3 +98,4 @@
+ LTLIBOBJS ?= "@LTLIBOBJS@" ;
+ INSTALL ?= "@INSTALL@" ;
+ JAMCONFIG_READ = yes ;
++fbsdocdir = "##DOCSDIR##" ;

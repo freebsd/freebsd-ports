@@ -6,6 +6,14 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20050313:
+  AFFECTS: users of games/netpanzerdata, games/netpanzer
+  AUTHOR: mad@madpilot.net
+
+  The netpanzerdata port has changed it's name to netpanzer-data,
+  so before installing the new one you will need to remove the old
+  netpanzerdata-0.1.3 port.
+
 20050312:
   AFFECTS: all users who have glib/gtk/gnome libraries installed
   AUTHOR: ahze@FreeBSD.org and the FreeBSD gnome team

@@ -1,6 +1,12 @@
 bin/netpanzer
-bin/netpanzerbrowser
-share/pixmaps/netpanzer/netpanzer.png
-share/pixmaps/netpanzer/netpanzer.xpm
-@dirrm share/pixmaps/netpanzer
+share/applications/netpanzer.desktop
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/RELNOTES
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/serverhowto.html
+%%PORTDOCS%%%%DOCSDIR%%/tipofday.txt
+share/pixmaps/netpanzer.png
+share/pixmaps/netpanzer.xpm
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @unexec rmdir %D/share/pixmaps 2>/dev/null || true
