@@ -19,7 +19,7 @@ LIB_DEPENDS=	pspell.15:${PORTSDIR}/textproc/aspell
 USE_X_PREFIX=	yes
 USE_PERL5=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack gtk20
+USE_GNOME=	gnomeprefix gnomehack gtk20 lthack
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
