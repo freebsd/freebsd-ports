@@ -265,6 +265,7 @@
     SUBDIR += oneko-sakura
     SUBDIR += oonsoo
     SUBDIR += openglad
+    SUBDIR += p5-Games-Bingo
     SUBDIR += pengpong
     SUBDIR += penguin-command
     SUBDIR += pentix

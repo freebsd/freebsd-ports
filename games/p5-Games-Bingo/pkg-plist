@@ -1,0 +1,11 @@
+%%SITE_PERL%%/Games/Bingo.pm
+%%SITE_PERL%%/Games/Bingo/Card.pm
+%%SITE_PERL%%/Games/Bingo/Column.pm
+%%SITE_PERL%%/Games/Bingo/ColumnCollection.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Games/Bingo/.packlist
+%%PORTDOCS%%%%EXAMPLESDIR%%/bingo.pl
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Games/Bingo
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Games 2>/dev/null || true
+@dirrm %%SITE_PERL%%/Games/Bingo
+@unexec rmdir %D/%%SITE_PERL%%/Games 2>/dev/null || true
