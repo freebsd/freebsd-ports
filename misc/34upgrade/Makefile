@@ -24,9 +24,10 @@ NO_MTREE=	yes
 PREFIX=		/
 NO_BUILD=	yes
 PKGINSTALL=	${WRKDIR}/INSTALL
+DATE!=		cat /var/db/port.mkversion
 
 do-install:
-	${SED} -e "s/%%VERSION%%/${BSDPORTMKVERSION}/" ${PKGDIR}/INSTALL \
+	${SED} -e "s/%%VERSION%%/${DATE}/" ${PKGDIR}/INSTALL \
 		> ${PKGINSTALL}
 
 deinstall:
