@@ -21,6 +21,8 @@ COMMENT=	A J2EE developer tool build as a plugin for the eclipse platform
 
 RUN_DEPENDS+=	${LOCALBASE}/eclipse/features/org.eclipse.emf_2.0.0/feature.xml:${PORTSDIR}/java/eclipse-emf
 
+BROKEN=		Broken dependency
+
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 USE_ZIP=	yes
