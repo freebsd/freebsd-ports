@@ -1,5 +1,29 @@
 bin/enigma
 
+include/zipios++/basicentry.h
+include/zipios++/filepath.h
+include/zipios++/collcoll.h
+include/zipios++/inflateinputstreambuf.h
+include/zipios++/dircoll.h
+include/zipios++/simplesmartptr.h
+include/zipios++/fcoll.h
+include/zipios++/zipfile.h
+include/zipios++/ziphead.h
+include/zipios++/zipheadio.h
+include/zipios++/fcollexceptions.h
+include/zipios++/zipinputstream.h
+include/zipios++/fileentry.h
+include/zipios++/zipinputstreambuf.h
+include/zipios++/filterinputstreambuf.h
+include/zipios++/virtualseeker.h
+include/zipios++/meta-iostreams.h
+include/zipios++/zipios-config.h
+include/zipios++/filteroutputstreambuf.h
+include/zipios++/zipios_defs.h
+include/zipios++/deflateoutputstreambuf.h
+include/zipios++/zipoutputstreambuf.h
+include/zipios++/zipoutputstream.h
+
 share/enigma/startup.lua
 share/enigma/models.lua
 share/enigma/models-oxyd.lua
@@ -48,6 +72,8 @@ share/enigma/levels/todo.lua
 share/enigma/levels/test_impulses.lua
 share/enigma/levels/test.png
 share/enigma/levels/test.lua
+share/enigma/levels/ss_pox55.png
+share/enigma/levels/ss_pox55.lua
 share/enigma/levels/ss_pox11.png
 share/enigma/levels/ss_pox11.lua
 share/enigma/levels/ss_ox38.png
@@ -100,6 +126,8 @@ share/enigma/levels/ss_esp75.png
 share/enigma/levels/ss_esp75.lua
 share/enigma/levels/ss_esp74.png
 share/enigma/levels/ss_esp74.lua
+share/enigma/levels/ss_esp73.png
+share/enigma/levels/ss_esp73.lua
 share/enigma/levels/ss_esp70.png
 share/enigma/levels/ss_esp70.lua
 share/enigma/levels/ss_esp69.png
@@ -126,6 +154,8 @@ share/enigma/levels/ss_esp52.png
 share/enigma/levels/ss_esp52.lua
 share/enigma/levels/ss_esp49.png
 share/enigma/levels/ss_esp49.lua
+share/enigma/levels/ss_esp48.png
+share/enigma/levels/ss_esp48.lua
 share/enigma/levels/ss_esp47.png
 share/enigma/levels/ss_esp47.lua
 share/enigma/levels/ss_esp43.png
@@ -200,6 +230,22 @@ share/enigma/levels/ss3.png
 share/enigma/levels/ss3.lua
 share/enigma/levels/ss2.png
 share/enigma/levels/ss2.lua
+share/enigma/levels/ss17.png
+share/enigma/levels/ss17.lua
+share/enigma/levels/ss16.png
+share/enigma/levels/ss16.lua
+share/enigma/levels/ss15.png
+share/enigma/levels/ss15.lua
+share/enigma/levels/ss14.png
+share/enigma/levels/ss14.lua
+share/enigma/levels/ss13.png
+share/enigma/levels/ss13.lua
+share/enigma/levels/ss12.png
+share/enigma/levels/ss12.lua
+share/enigma/levels/ss11.png
+share/enigma/levels/ss11.lua
+share/enigma/levels/ss10.png
+share/enigma/levels/ss10.lua
 share/enigma/levels/ss1.png
 share/enigma/levels/ss1.lua
 share/enigma/levels/space.png
@@ -1615,6 +1661,12 @@ share/enigma/fonts/dreamorp24.png
 share/enigma/fonts/dreamorp24.bmf
 share/enigma/fonts/dreamorp.txt
 
+share/applications/enigma.desktop
+share/icons/hicolor/48x48/apps/enigma.png
+share/pixmaps/enigma.png
+@unexec rmdir %D/share/applications/ 2>/dev/null || true
+
+@dirrm include/zipios++
 @dirrm share/enigma/levels/Sokoban
 @dirrm share/enigma/levels
 @dirrm share/enigma/gfx
