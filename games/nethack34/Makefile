@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.nethack.org/pub/nethack/nh${PORTVERSION:S/.//g}/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER?=	dscheidt@enteract.com
+MAINTAINER?=	ports@freebsd.org
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
