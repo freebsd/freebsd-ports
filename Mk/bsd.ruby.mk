@@ -39,8 +39,7 @@ Ruby_Include_MAINTAINER=	knu@FreeBSD.org
 # RUBY_PORTVERSION	- PORTVERSION for the standard ruby ports (ruby, ruby-gdbm, etc.).
 # RUBY_DISTNAME		- DISTNAME for the standard ruby ports, i.e. the basename of the ruby distribution tarball.
 # RUBY_DISTVERSION	- The version number part of RUBY_DISTNAME.
-# RUBY_DISTVER		- Same as RUBY_DISTVERSION, but converted into PORTVERSION style (preview -> .p etc.)
-# RUBY_PATCHLEVEL	- Patchlevel, or a snapshot date.
+# RUBY_PATCHFILES	- PATCHFILES for the standard ruby ports, i.e. the basename of the ruby distribution tarball.
 # RUBY_WRKSRC		- WRKSRC for the ruby port.
 #
 # RUBY_SHLIBVER		- Major version of libruby (see below for current value).
@@ -99,26 +98,24 @@ RUBY_SUFFIX?=		${_RUBY_SUFFIX}
 .elif defined(RUBY_VER) && ${RUBY_VER} == 1.7
 RUBY_VERSION?=		1.7.0
 RUBY_SUFFIX?=		${_RUBY_SUFFIX}
+RUBY_PORT?=		lang/ruby-devel
 RUBY_WRKSRC?=		${WRKDIR}/ruby
 RUBY_DISTVERSION?=	${RUBY_VERSION}-alpha-2001.05.08
-#RUBY_PATCHLEVEL?=	
-RUBY_PORT?=		lang/ruby-devel
+RUBY_DISTPATCHVERSION?=	${RUBY_DISTVERSION}-2001.05.12
+RUBY_PORTVERSION?=	${RUBY_VERSION}-a2001.05.12
 .else
 RUBY_VERSION?=		1.6.4
 RUBY_SUFFIX?=		# empty
 RUBY_DISTVERSION?=	${RUBY_VERSION}-preview2
-RUBY_PATCHLEVEL?=	2001.05.08
+RUBY_DISTPATCHVERSION?=	${RUBY_DISTVERSION}-2001.05.12
+RUBY_PORTVERSION?=	${RUBY_VERSION}.p2.2001.05.12
 .endif
 
 RUBY_DISTVERSION?=	${RUBY_VERSION}
-RUBY_DISTVER=		${RUBY_DISTVERSION:S/-preview/.p/:S/-alpha-/.a/:S/-beta-/.b/}
-
-.if !defined(RUBY_PATCHLEVEL) || empty(RUBY_PATCHLEVEL)
-RUBY_PORTVERSION=	${RUBY_DISTVER}
-.else
-RUBY_PORTVERSION=	${RUBY_DISTVER}.${RUBY_PATCHLEVEL}
+RUBY_PORTVERSION?=	${RUBY_VERSION}
+.if defined(RUBY_DISTPATCHVERSION) && !empty(RUBY_DISTPATCHVERSION)
+RUBY_PATCHFILES?=	ruby-${RUBY_DISTPATCHVERSION}.patch.gz
 .endif
-
 RUBY_DISTNAME?=		ruby-${RUBY_DISTVERSION}
 
 RUBY_WRKSRC?=		${WRKDIR}/ruby-${RUBY_VERSION}
