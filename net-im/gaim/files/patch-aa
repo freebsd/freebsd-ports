@@ -1,9 +1,9 @@
---- Makefile.in.orig	Wed Oct 10 16:33:04 2001
-+++ Makefile.in	Wed Oct 10 16:34:22 2001
-@@ -191,8 +191,8 @@
- #bitssound_DATA = gaim.soundlist
- #
- #endif
+--- Makefile.in.orig	Fri Nov  2 05:31:32 2001
++++ Makefile.in	Fri Nov  2 05:33:10 2001
+@@ -171,8 +171,8 @@
+ @DISTRIB_FALSE@@GNOMEAPPLET_TRUE@gaimdesktopdir = $(gnomedata)/applets/Network
+ @DISTRIB_FALSE@@GNOMEAPPLET_TRUE@gaimdesktop_DATA = $(gaim_DESKTOP)
+ 
 -pixmapdir = $(datadir)/apps/Internet
 -pixmap_DATA = gaim.desktop
 +@GNOMEAPPLET_TRUE@pixmapdir = $(datadir)/apps/Internet
