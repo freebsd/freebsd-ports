@@ -15,7 +15,7 @@ DISTNAME=	libapreq-0.31
 MAINTAINER=	frank@exit.com
 
 BUILD_DEPENDS= 	${LOCALBASE}/include/apache/httpd.h:${PORTSDIR}/www/apache13 \
-		/nonexistent:${PORTSDIR}/www/p5-Apache:extract
+		${LOCALBASE}/include/apache/modules/perl/mod_perl.h:${PORTSDIR}/www/p5-Apache
 
 USE_PERL5=	YES
 

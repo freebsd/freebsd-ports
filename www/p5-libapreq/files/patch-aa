@@ -1,12 +1,13 @@
---- c/Makefile.PL.orig	Tue Mar 14 09:16:14 2000
-+++ c/Makefile.PL	Tue Mar 14 16:31:06 2000
-@@ -7,49 +7,41 @@
+--- c/Makefile.PL.orig	Sat May  1 14:44:28 1999
++++ c/Makefile.PL	Sun Apr 23 21:47:27 2000
+@@ -7,49 +7,23 @@
      win32_setup();
  }
  else {
 -    require Apache::src;
 -    my $src = Apache::src->new;
-+    my $inc = `apxs -q INCLUDEDIR`;
++    my $inc1 = `apxs -q INCLUDEDIR`;
++    my $inc2 = $inc1 ."/modules/perl";
  
      use Cwd;
      my $pwd = fastcwd;
@@ -15,13 +16,12 @@
  
      WriteMakefile(
 -       #grr, problems with things finding libapreq.so, sort out later.
--       'LINKTYPE' => 'static',
+        'LINKTYPE' => 'static',
 -#       'SKIP' => [qw(dynamic_lib dynamic_bs)],
-+       'LINKTYPE' => 'dynamic',
         'NAME'	 => 'libapreq',
 -       'INC' 	 => $src->inc,
 -       'TYPEMAPS'   => $src->typemaps,
-+       'INC' 	 => "-I$inc",
++       'INC' 	 => "-I$inc1 -I$inc2",
         'OBJECT' => "@objs",
      );
  }
@@ -30,7 +30,7 @@
  my $pwd = fastcwd;
 -$ENV{LD_RUN_PATH} = 
 -    "$ENV{LD_RUN_PATH}:$Config{installsitearch}/auto/libapr:$pwd";
- 
+-
 -sub MY::dynamic {
 -    my $self = shift;
 -    my $string = $self->MM::dynamic;
@@ -50,70 +50,53 @@
 -    $string =~ s/(pure_all\s+::\s+)(.*)/$1 static $2/; 
 -    return $libapreq . $so . $string;
 -}
-+#sub MY::dynamic {
-+#    my $self = shift;
-+#    my $string = $self->MM::dynamic;
-+#    $string =~ s/(Makefile\s+).*/$1/g;
-+#    $string;
-+#}
-+
-+#sub MY::top_targets { 
-+#    my $self = shift; 
-+#    my $string = $self->MM::top_targets; 
-+#    my $libapreq = <<"EOF";
-+#EOF
-+#
-+#    my $so = "\n".'$(DLBASE).$(DLEXT): $(INST_DYNAMIC)'."\n";
-+#
-+#    $string =~ s/(pure_all\s+::\s+)(.*)/$1 static $2/; 
-+#    return $libapreq . $so . $string;
-+#}
  
  sub MY::post_initialize { 
      my $self = shift; 
---- Cookie/Makefile.PL.orig	Tue Mar 14 16:02:52 2000
-+++ Cookie/Makefile.PL	Tue Mar 14 16:05:01 2000
-@@ -15,9 +15,8 @@
+--- Cookie/Makefile.PL.orig	Sat May  1 14:44:28 1999
++++ Cookie/Makefile.PL	Sun Apr 23 21:43:43 2000
+@@ -15,9 +15,9 @@
      xsubpp("Cookie");
  }
  else {
 -    require Apache::src;
 -    my $src = Apache::src->new;
      use File::Path 'mkpath';
-+    my $inc = `apxs -q INCLUDEDIR`;
++    my $inc1 = `apxs -q INCLUDEDIR`;
++    my $inc2 = $inc1."/modules/perl";
      my $root = "../blib/arch/auto/libapreq";
      mkpath $root, 1, 0755 unless -d $root;
  
-@@ -25,8 +24,7 @@
+@@ -25,8 +25,7 @@
      system "touch $root/libapreq.a";
      WriteMakefile(
          @mm_args,
 -        'INC'	=> "-I../c ". $src->inc,
 -        'TYPEMAPS'  => $src->typemaps,
-+        'INC'	=> "-I../c -I$inc -I$ENV{'PORTSDIR'}/www/p5-Apache/work/mod_perl-1.21/src/modules/perl",
++        'INC'	=> "-I../c -I$inc1 -I$inc2",
          'LIBS' => "-L$root -lapreq",
      );
      unlink "$root/libapreq.a";
---- Request/Makefile.PL.orig	Tue Mar 14 09:53:01 2000
-+++ Request/Makefile.PL	Tue Mar 14 16:01:06 2000
-@@ -15,9 +15,8 @@
+--- Request/Makefile.PL.orig	Sat May  1 14:44:28 1999
++++ Request/Makefile.PL	Sun Apr 23 21:43:43 2000
+@@ -15,8 +15,8 @@
      xsubpp("Request");
  }
  else {
 -    require Apache::src;
 -    my $src = Apache::src->new;
++    my $inc1 = `apxs -q INCLUDEDIR`;
++    my $inc2 = $inc1 ."/modules/perl";
      use File::Path 'mkpath';
-+    my $inc = `apxs -q INCLUDEDIR`;
      my $root = "../blib/arch/auto/libapreq";
      mkpath $root, 1, 0755 unless -d $root;
- 
-@@ -25,8 +24,7 @@
+@@ -25,8 +25,7 @@
      system "touch $root/libapreq.a";
      WriteMakefile(
  	  @mm_args,
 -	  'INC'	=> "-I../c ". $src->inc,
 -	  'TYPEMAPS'  => $src->typemaps,
-+	  'INC'	=> "-I../c -I$inc -I$ENV{'PORTSDIR'}/www/p5-Apache/work/mod_perl-1.21/src/modules/perl",
++	  'INC'	=> "-I../c -I$inc1 -I$inc2",
            'LIBS' => "-L$root -lapreq",
      );
      unlink "$root/libapreq.a";
