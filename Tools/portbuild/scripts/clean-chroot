@@ -1,0 +1,36 @@
+#!/bin/sh
+
+arch=$1
+branch=$2
+chroot=$3
+noclean=$4
+
+# directories to clean
+cleandirs="/usr/local /usr/X11R6 /compat /var/db/pkg"
+
+#umount ${chroot}/proc
+
+if [ ${arch} = "i386" ]; then
+  chroot ${chroot} umount -f /compat/linux/proc
+fi
+  
+umount -f ${chroot}/a/ports
+umount -f ${chroot}/usr/opt/doc
+umount -f ${chroot}/usr/src
+umount -f ${chroot}/dev
+
+if [ $noclean = 0 ]; then
+  rm -rf ${chroot}/tmp/*
+  for dir in ${cleandirs}; do
+    if ! rm -rf ${chroot}${dir} >/dev/null 2>&1; then
+      chflags -R noschg ${chroot}${dir}
+      rm -rf ${chroot}${dir} >/dev/null 2>&1
+    fi
+  done
+  chroot ${chroot} /sbin/ldconfig -R
+  if [ ${arch} = "i386" ]; then
+	chroot ${chroot} /sbin/ldconfig -aout -R
+  fi
+  rm -rf ${chroot}/var/db/pkg/*
+  rm -rf ${chroot}/used
+fi
