@@ -1,31 +1,14 @@
---- src/Makefile.in.orig	Sun May 26 19:59:24 2002
-+++ src/Makefile.in	Sat Aug  3 10:36:57 2002
-@@ -146,9 +146,9 @@
- 	options.c 
+--- src/Makefile.in.orig	Wed Apr  9 12:19:08 2003
++++ src/Makefile.in	Fri May 23 18:05:51 2003
+@@ -107,9 +107,9 @@
+ extace_SOURCES =  	Makefile 	globals.h 	enums.h 	defaults.h 	defines.h 	protos.h 	convolve.h 	configfile.h 	stars.h 	logo.xpm    	stars.c 	init.c 	main.c 	draw.c 	land3d.c 	gc_maker.c 	dir.c 	audio_processing.c 	events.c 	configfile.c 	buttons.c 	color_win.c 	reducer.c 	convolve.c 	win_func.c 	2d_eq.c 	scope.c 	markers.c 	spike_3d.c 	sound.c 	vert_specgram.c 	horiz_specgram.c  	options.c 
  
  
 -extace_LDADD = @EFENCE@ @GTK_LIBS@ @ESD_LIBS@ @EXTRA_LIBS@ @ALSA_LIBS@ -lgdk_imlib 
-+extace_LDADD = @EFENCE@ @GTK_LIBS@ @ESD_LIBS@ @EXTRA_LIBS@ @ALSA_LIBS@ @IMLIB_LIBS@ -lgdk_imlib 
++extace_LDADD = @EFENCE@ @GTK_LIBS@ @ESD_LIBS@ @EXTRA_LIBS@ @ALSA_LIBS@ @GDK_IMLIB_LIBS@
  
 -LIBS = -lpthread
 +#LIBS = -lpthread
  
  COMMON_FLAGS = @PFLAGS@ @DFLAGS@ 
  
-@@ -321,7 +323,6 @@
- uninstall-info-am:
- install-MultimediaDATA: $(Multimedia_DATA)
- 	@$(NORMAL_INSTALL)
--	$(mkinstalldirs) $(DESTDIR)$(Multimediadir)
- 	@list='$(Multimedia_DATA)'; for p in $$list; do \
- 	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
- 	  f="`echo $$p | sed -e 's|^.*/||'`"; \
-@@ -395,7 +396,7 @@
- all-am: Makefile $(PROGRAMS) $(DATA)
- 
- installdirs:
--	$(mkinstalldirs) $(DESTDIR)$(bindir) $(DESTDIR)$(Multimediadir)
-+	$(mkinstalldirs)  $(DESTDIR)$(bindir)
- 
- install: install-am
- install-exec: install-exec-am

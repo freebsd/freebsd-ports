@@ -1,36 +1,35 @@
 
 $FreeBSD$
 
---- src/color_win.c	2002/08/30 13:00:11	1.1
-+++ src/color_win.c	2002/08/30 13:00:52
-@@ -61,18 +61,18 @@
-     //    printf("Color_button()\n");
-     switch ((gint)data)
-     {
--	case (gpointer)SET_COLOR:
-+	case (gint)SET_COLOR:
- 	    update_gradient(NULL, color_loc);
- 	    init_colortab();
- 	    gradient_update();
- 	    break;
+--- src/color_win.c.orig	Wed Feb 26 01:22:19 2003
++++ src/color_win.c	Fri May 23 18:26:18 2003
+@@ -579,12 +579,12 @@
+ 		button = gtk_button_new_with_label("Set Color");
+ 		gtk_box_pack_start(GTK_BOX(hbox),button,TRUE,TRUE,0);
+ 		gtk_signal_connect(GTK_OBJECT(button), "clicked",
+-				(GtkSignalFunc)color_button, (gpointer)SET_COLOR);
++				(GtkSignalFunc)color_button, (gint)SET_COLOR);
  
--	case (gpointer)CLOSE:
-+	case (gint)CLOSE:
- 	    gtk_widget_hide(grad_win_ptr);
- 	    grad_win_present = 0;
- 	    break;
+ 		button = gtk_button_new_with_label("Close");
+ 		gtk_box_pack_start(GTK_BOX(hbox),button,TRUE,TRUE,0);
+ 		gtk_signal_connect(GTK_OBJECT(button), "clicked",
+-				(GtkSignalFunc)color_button, (gpointer)CLOSE);
++				(GtkSignalFunc)color_button, (gint)CLOSE);
  
--	case (gpointer)SAVE:
-+	case (gint)SAVE:
- 	    filew = gtk_file_selection_new("Save Colormap");
- 	    gtk_signal_connect (GTK_OBJECT(filew), "destroy",
- 		    (GtkSignalFunc) gtk_widget_destroy, GTK_OBJECT (filew));
-@@ -85,7 +85,7 @@
- 	    gtk_file_selection_set_filename(GTK_FILE_SELECTION(filew),g_strconcat(g_get_home_dir(),"/.eXtace/ColorMaps/", NULL));
- 	    gtk_widget_show(filew);
- 	    break;
--	case (gpointer)LOAD:
-+	case (gint)LOAD:
- 	    filew = gtk_file_selection_new("Load Colormap");
- 	    gtk_signal_connect (GTK_OBJECT(filew), "destroy",
- 		    (GtkSignalFunc) gtk_widget_destroy, GTK_OBJECT (filew));
+ 		hbox = gtk_hbox_new(TRUE,0);
+ 		gtk_box_pack_start(GTK_BOX(vbox),hbox,FALSE,FALSE,0);
+@@ -592,12 +592,12 @@
+ 		button = gtk_button_new_with_label("Save");
+ 		gtk_box_pack_start(GTK_BOX(hbox),button,TRUE,TRUE,0);
+ 		gtk_signal_connect(GTK_OBJECT(button), "clicked",
+-				(GtkSignalFunc)color_button, (gpointer)SAVE);
++				(GtkSignalFunc)color_button, (gint)SAVE);
+ 
+ 		button = gtk_button_new_with_label("Load");
+ 		gtk_box_pack_start(GTK_BOX(hbox),button,TRUE,TRUE,0);
+ 		gtk_signal_connect(GTK_OBJECT(button), "clicked",
+-				(GtkSignalFunc)color_button, (gpointer)LOAD);
++				(GtkSignalFunc)color_button, (gint)LOAD);
+ 
+ 		gtk_widget_show_all(grad_win);
+ 	}
