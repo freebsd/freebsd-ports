@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	blue
-PORTVERSION=	2.4
+PORTVERSION=	2.6
 CATEGORIES=	games
-MASTER_SITES=	http://www.tuxedo.org/~esr/blue/
+MASTER_SITES=	http://www.catb.org/~esr/blue/
 
 MAINTAINER=	ports@FreeBSD.org
 

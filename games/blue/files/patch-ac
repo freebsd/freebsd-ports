@@ -1,16 +1,16 @@
---- Makefile.orig	Wed Mar 29 22:20:16 2000
-+++ Makefile	Wed Mar 29 22:21:26 2000
-@@ -7,10 +7,11 @@
+--- Makefile.orig	Tue Jul 30 21:56:34 2002
++++ Makefile	Sat Jan 25 06:27:44 2003
+@@ -6,10 +6,11 @@
+ VERS=2.6
  
- SOURCES = READ.ME Makefile blue.c blue.c.orig blue.6 blue.lsm *.spec
- 
+ SOURCES = READ.ME COPYING Makefile blue.c blue.xml blue.lsm *.spec
 -CFLAGS=-O
 +CC?=cc
 +CFLAGS?=-O
  
  blue: blue.c
--	cc $(CFLAGS) -DVERSION=\"$(V)\" blue.c -lncurses -o blue
-+	$(CC) $(CFLAGS) -DVERSION=\"$(V)\" blue.c -lncurses -o blue
+-	cc $(CFLAGS) -DRELEASE=\"$(VERS)\" blue.c -lncurses -o blue
++	$(CC) $(CFLAGS) -DRELEASE=\"$(VERS)\" blue.c -lncurses -o blue
  
- blue-$(V).tar.gz: $(SOURCES)
- 	@ls $(SOURCES) | sed s:^:blue-$(V)/: >MANIFEST
+ blue.6: blue.xml
+ 	xmlto man blue.xml
