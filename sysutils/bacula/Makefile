@@ -7,7 +7,7 @@
 
 PORTNAME=	bacula
 PORTVERSION=	1.32b
-#PORTREVISION=	1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	bacula
@@ -15,10 +15,13 @@ MASTER_SITE_SUBDIR=	bacula
 MAINTAINER=	Lars.Koeller@Uni-Bielefeld.DE
 COMMENT=	The network backup solution
 
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-tcp-wrappers=/usr/lib \
 		--enable-smartalloc \
 		--with-working-dir=/var/db/bacula
+CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
 # Default is full build with sqlite
 .if defined(WITH_CLIENT_ONLY)
@@ -60,6 +63,9 @@ pre-everything::
 .else
 	@${ECHO_MSG} "===> Building file daemon only."
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_CFLAGS}|g' ${WRKSRC}/configure
 
 post-install:
 .if defined(WITH_CLIENT_ONLY)
