@@ -1,0 +1,11 @@
+--- configure.orig	Wed Jan 10 14:49:07 2001
++++ configure	Wed Jan 10 14:49:22 2001
+@@ -3615,7 +3615,7 @@
+ 
+ 
+ 
+-CUPS_SERVERROOT='${sysconfdif}/cups'
++CUPS_SERVERROOT='${sysconfdir}/cups'
+ CUPS_LOGDIR='${localstatedir}/log/cups'
+ CUPS_REQUESTS='${localstatedir}/spool/cups'
+ 
