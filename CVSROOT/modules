@@ -5195,6 +5195,7 @@ p5-Prima	ports/x11-toolkits/p5-Prima
 p5-Proc-Background	ports/devel/p5-Proc-Background
 p5-Proc-Daemon	ports/devel/p5-Proc-Daemon
 p5-Proc-ProcessTable	ports/devel/p5-Proc-ProcessTable
+p5-Proc-Reliable	ports/devel/p5-Proc-Reliable
 p5-Proc-Simple	ports/devel/p5-Proc-Simple
 p5-Quota	ports/sysutils/p5-Quota
 p5-RADIUS-UserFile	ports/textproc/p5-RADIUS-UserFile
