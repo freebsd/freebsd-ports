@@ -14,6 +14,7 @@ MAINTAINER=	markus@FreeBSD.org
 COMMENT=	CD organizer for KDE
 
 USE_KDEBASE_VER=3
+USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 
