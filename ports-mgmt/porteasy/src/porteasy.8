@@ -27,7 +27,7 @@
 .\"
 .\"	$FreeBSD$
 .\"
-.Dd March 2, 2004
+.Dd April 02, 2004
 .Dt PORTEASY 8
 .Os
 .Sh NAME
@@ -89,7 +89,25 @@ Specify the ports directory (normally
 .It Fl r Ar dir
 Specify the CVS root directory.
 .It Fl s
-List installed ports and their status.
+Indicate the installation status of the selected ports.
+Each selected port is listed with a symbol indicating its status:
+.Bl -tag -width 3n
+.It Ql \&!
+Not installed.
+.It Ql " "
+Up-to-date.
+.It Ql \&<
+Older than the version in the ports tree.
+.It Ql \&>
+Newer than the version in the ports tree.
+.El
+.Pp
+If the
+.Fl s
+option is specified and no ports are specified on the command line,
+all installed ports are selected as if the
+.Fl I
+option had been specified.
 .It Fl t Ar tag
 Specify a tag to use for
 .Xr cvs 1
@@ -153,8 +171,10 @@ If a certain match is not found,
 .Nm
 prints a list of possible matches and exits.
 .Pp
-All direct and indirect dependencies of the ports listed on the
-command line are also selected and marked as dependencies.
+All direct and indirect dependencies (except, if the
+.Fl e option was specified,
+those that are already installed) are also selected and marked as
+dependencies.
 .It Update ports tree and discover dependencies
 If the
 .Fl u
@@ -172,8 +192,8 @@ option was specified,
 .Nm
 checks to see if any of the selected ports are already installed;
 those that are are deselected.
-This process is not very accurate, as it will not detect if an older
-or alternate version of a selected port is installed.
+This process is not very accurate, as it sometimes fails to detect
+that an older or alternate version of a selected port is installed.
 .It List selected ports
 If the
 .Fl l
@@ -183,9 +203,7 @@ Explicitly selected ports are indicated with a star.
 .It List installed ports
 If the
 .Fl s
-option was specified, all installed ports are listed with their status
-('<' for ports that are older than the version in the tree, '>' for
-those that are newer, '?' for those that could not be identified).
+option was specified, all selected ports are listed with their status.
 .It Show packing lists
 If the
 .Fk L
