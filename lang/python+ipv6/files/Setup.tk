@@ -1,0 +1,19 @@
+*shared*
+
+# The _tkinter module.
+#
+# See the section "The Tk interface" in ../README for more info.
+#
+# Enable the TKPATH line and choose the most applicable _tkinter line.
+# You may have to change /usr/local to wherever Tcl/Tk are installed.
+# Change the -l arguments to use Tcl 7.4 and Tk 4.0!
+
+# *** ALWAYS enable this line:
+TKPATH=:$(DESTLIB)/tkinter
+
+# *** Enable *one* of the following lines:
+# For Solaris:
+#_tkinter _tkinter.c -I/usr/openwin/include -I/usr/local/include -L/usr/openwin/lib -L/usr/local/lib -ltk4.1 -ltcl7.5 -lX11
+# For generic system (may have to add -I/-L options to find X11):
+#_tkinter _tkinter.c -I/usr/local/include -L/usr/local/lib -ltk4.1 -ltcl7.5 -lX11
+_tkinter _tkinter.c -I${PREFIX}/include/tk8.0 -I${PREFIX}/include/tcl8.0 -I${X11BASE}/include -L${PREFIX}/lib -L${X11BASE}/lib -ltk80 -ltcl80 -lX11
