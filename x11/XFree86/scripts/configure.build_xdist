@@ -1,0 +1,206 @@
+#!/bin/sh
+
+F=$WRKDIR/config
+WH=$WRKDIR/xc/lib/Xdmcp/Wraphelp.c
+configure () {
+rm -f $F
+
+# Tk detection
+tkversion=
+for v in 42 80 81 82 83; do
+  if [ -f /usr/local/lib/libtk$v.a ]; then
+    tkversion=$v
+    case $tkversion in
+      42)
+        tclversion=76
+        tclLversion=7.6
+        tkLversion=4.2
+        ;;
+      80)
+        tclversion=80
+        tclLversion=8.0
+        tkLversion=8.0
+        ;;
+      81)
+        tclversion=81
+        tclLversion=8.1
+        tkLversion=8.1
+        ;;
+      82)
+        tclversion=82
+        tclLversion=8.2
+        tkLversion=8.2
+        ;;
+      83)
+        tclversion=83
+        tclLversion=8.3
+        tkLversion=8.3
+        ;;
+    esac
+  fi
+done
+
+# Japanese Tk detection
+jptkversion=
+for v in 42jp 80jp; do
+  if [ -f /usr/local/lib/libtk$v.a ]; then
+    jptkversion=$v
+    case $jptkversion in
+      42jp)
+        jptclversion=76jp
+        jptclLversion=7.6jp
+        jptkLversion=4.2jp
+        ;;
+      80jp)
+        jptclversion=80jp
+        jptclLversion=8.0jp
+        jptkLversion=8.0jp
+        ;;
+    esac
+  fi
+done
+if [ X$jptkversion != X ]; then
+    echo "Using Japanized tk-$jptkLversion"
+	echo "#define HasJpTk			YES" >>$F
+	echo "#define JpTkLibDir		/usr/local/lib" >>$F
+	echo "#define JpTkIncDir		/usr/local/include/tk$jptkLversion" >>$F
+	echo "#define JpTkLibName		tk$jptkversion" >>$F
+	echo "#define HasJpTcl		YES" >>$F
+	echo "#define JpTclLibDir		/usr/local/lib" >>$F
+	echo "#define JpTclIncDir		/usr/local/include/tcl$jptclLversion" >>$F
+	echo "#define JpTclLibName		tcl$jptclversion" >>$F
+fi
+
+if [ X$tkversion != X ]; then
+    echo "Using tk-$tkLversion"
+    echo "#define HasTk			YES" >>$F
+    echo "#define TkLibDir		/usr/local/lib" >>$F
+    echo "#define TkIncDir		/usr/local/include/tk$tkLversion" >>$F
+    echo "#define TkLibName		tk$tkversion" >>$F
+    echo "#define HasTcl			YES" >>$F
+    echo "#define TclLibDir		/usr/local/lib" >>$F
+    echo "#define TclIncDir		/usr/local/include/tcl$tclLversion" >>$F
+    echo "#define TclLibName		tcl$tclversion" >>$F
+fi
+
+if [ X$tkversion != X -a X$jptkversion != X ]; then
+  echo "#define BuildXF86Setup		YES" >>$F
+  echo "#define XF86SetupUsesStaticTk	YES" >>$F
+  echo "#define XF86SetupUsesStaticTcl	YES" >>$F
+else
+cat <<EOF
+*** I don't see the static library for tk version $tkversion in /usr/local/lib.
+*** XF86Setup will not be installed. If you want to build this program
+*** install tk 4.2 or 8.x first.
+
+EOF
+fi
+
+# Build the default server set for each machine
+
+if [ X"${MACHINE_ARCH}" = X"i386" ]; then
+    echo "#define BuildPC98Servers	YES"  >>$F
+
+  if [ X"${MACHINE}" = X"pc98" ]; then
+    # Don't build normal i386 servers on PC98
+    echo "#undef XF86SVGAServer"           >>$F
+    echo "#define XF86SVGAServer     NO"  >>$F
+    servers="VGA16 VGA16Dual Mono MonoDual S3 S3V I8514 Mach8 Mach32 Mach64 P9000 AGX  W32 I128 GLINT"
+    for i in $servers; do
+	echo "#undef XF86${i}Server"           >>$F
+        echo "#define XF86${i}Server   NO"  >>$F
+    done
+  fi
+elif [ X"${MACHINE}" == X"alpha" ]; then
+  # force the VGA16 driver on the Alpha
+  echo "#define XF86VGA16Server		YES" >>$F
+fi
+
+echo "#define XVirtualFramebufferServer YES" >>$F
+
+if [ X"${MACHINE}" != X"pc98" ]; then
+if [ X"${MACHINE}" = X"alpha" ]; then
+cat >> $F <<END
+#define XF86SvgaDrivers         nv mga tvga8900 s3v generic
+#define XF86Vga16Drivers	tvga8900 generic
+END
+else
+cat >> $F <<END
+#define XF86SvgaDrivers         nv et4000 et3000 pvga1 gvga r128 ati sis tvga8900 \
+                                cirrus ncr77c22 compaq mga oak al2101 ali \
+                                cl64xx video7 ark mx realtek apm s3_savage s3v \
+                                s3_svga neo chips cyrix rendition p9x00 \
+				spc8110 i740 i810 tdfx smi generic
+END
+fi
+fi
+
+echo "#define InstallXdmConfig	YES" >> $F
+echo "#define InstallXinitConfig YES" >> $F
+echo "#define InstallFSConfig YES" >> $F
+
+echo "#undef BuildFontServer" >>$F
+echo "#define  BuildFontServer YES" >>$F
+echo "#undef InstallFSConfig" >>$F
+echo "#define   InstallFSConfig YES" >>$F
+
+if [ X${MACHINE} != X"alpha" ]; then
+  echo "#define JoystickSupport		YES" >> $F
+fi
+
+echo "#define ForceNormalLib		YES" >> $F
+
+# ELF detection
+if [ `sysctl -n kern.osreldate` -ge 300004 -a  X`objformat` = Xelf ]; then
+  ELF=yes
+else
+  ELF=no
+fi
+
+if [ ${OSVERSION} -ge 300000 ]; then
+  echo "#define HasSecureRPC		YES" >> $F
+fi
+
+cpwh=NO
+
+    if [ -f $WH ] ; then
+	echo "==> $WH found in source distribution."
+    elif [ -f $DISTDIR/xc/Wraphelp.c ] ; then
+	echo "==> Wraphelp.c found in DISTDIR directory, copying to source tree."
+	cpwh=$DISTDIR/xc/Wraphelp.c
+    elif [ -f $FILESDIR/Wraphelp.c ] ; then
+	echo "==> Wraphelp.c found in files directory, copying to source tree."
+	cpwh=$FILESDIR/Wraphelp.c
+    else
+      echo "==> Wraphelp.c not found, DES support NOT enabled."
+      cpwh=NO
+    fi
+if [ $cpwh != NO ]; then
+  echo "#define	HasXdmAuth		YES"	>> $F
+fi
+
+echo "#define	HasPam			YES"	>> $F
+if [ X${MACHINE} != X"alpha" ]; then
+echo "#define	InstallJapaneseDocs	YES"	>> $F
+echo "#define	HasSgmlFmt		YES"	>> $F
+echo "#define	BuildAllDocs		YES"	>> $F
+fi
+}
+
+if [ ! -r $F ]; then
+	configure
+elif grep 'HasXdmAuth.*YES' $F >/dev/null; then
+	for i in $DISTDIR/xc $FILESDIR; do
+		if [ -r $i/Wraphelp.c ]; then
+			cpwh=$i/Wraphelp.c
+		fi
+	done
+fi
+
+if [ X$cpwh != XNO ]; then
+  tr -d '\r' < $cpwh > $WH
+fi
+
+cat $F >>  $WRKDIR/xc/config/cf/xf86site.def
+
+exit 0

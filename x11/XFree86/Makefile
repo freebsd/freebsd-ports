@@ -12,6 +12,9 @@ CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_XFREE}
 MASTER_SITE_SUBDIR=	${PORTVERSION}
 DISTFILES=	X336src-1.tgz X336src-2.tgz
+.if defined(BUILD_XDIST)
+DISTFILES+=	X336src-3.tgz
+.endif
 
 PATCH_SITES=	ftp://ftp.xfree.org/pub/XFree86/3.3.6/fixes/ \
 		ftp://ftp.freesoftware.com/pub/XFree86/3.3.6/fixes/ \
@@ -24,24 +27,24 @@ PATCHFILES=	fix-01-r128 fix-04-s3trio3d2x fix-05-s3trio3d fix-06-s3trio3d2x\
 MAINTAINER=	jmz@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/${DIST_SUBDIR}
+SCRIPTDIR=	${WRKDIR}/scripts
 INSTALLS_SHLIB=	yes
-.if (${MACHINE} != "alpha")
-#NO_PACKAGE=	package available from XFree86
-.endif
 ALL_TARGET=	World
 INSTALL_TARGET=	install install.man
+.if defined(BUILD_XDIST)
+INSTALL_TARGET+=	install.linkkit
+.endif
 DIST_SUBDIR=	xc
 PATCH_DIST_ARGS=-p2 -E -d ${WRKDIR}/xc/programs --quiet
-SCRIPTS_ENV=	OSVERSION=${OSVERSION}
+SCRIPTS_ENV=	OSVERSION=${OSVERSION} MACHINE=${MACHINE} \
+		MACHINE_ARCH=${MACHINE_ARCH}
 # can't use USE_X_PREFIX here -- it will cause a circular dependency
 PREFIX=		${X11BASE}
 MTREE_FILE=	/etc/mtree/BSD.x11.dist
 .if (${MACHINE} == "pc98")
-SCRIPTS_ENV+=	MACHINE=pc98
 PLIST=		${PKGDIR}/pkg-plist.pc98
 .endif
 .if (${MACHINE} == "alpha")
-SCRIPTS_ENV+=	MACHINE=alpha
 PLIST=		${PKGDIR}/pkg-plist.alpha
 .endif
 
@@ -69,6 +72,10 @@ pre-fetch:
 
 post-extract:
 	@${MV} ${WRKSRC}/programs/Xserver/hw/xfree86/vga256/drivers/i810/os-support/linux/agpgart.h ${WRKSRC}/programs/Xserver/hw/xfree86/vga256/drivers/i810/
+.if defined(BUILD_XDIST)
+	@${CP} ${WRKSRC}/programs/Xserver/hw/xfree86/LinkKit/README \
+		${WRKSRC}/programs/Xserver/hw/xfree86/doc/sgml
+.endif
 	@if [ -r ${FILESDIR}/config ]; then \
 		${ECHO} Using your existing ${FILESDIR}/config ; \
 		${CP} ${FILESDIR}/config ${WRKDIR}/config ; \
@@ -76,8 +83,16 @@ post-extract:
 
 .include <bsd.port.pre.mk>
 
-.if !exists(${FILESDIR}/config)
+.if !defined(BUILD_XDIST) && !exists(${FILESDIR}/config)
 IS_INTERACTIVE=	yes	# configure script asks questions
+.endif
+
+pre-configure:
+	@${MKDIR} ${SCRIPTDIR}
+.if defined(BUILD_XDIST)
+	@${CP} ${MASTERDIR}/scripts/configure.build_xdist ${SCRIPTDIR}
+.else
+	@${CP} ${MASTERDIR}/scripts/configure ${SCRIPTDIR}
 .endif
 
 pre-install:
