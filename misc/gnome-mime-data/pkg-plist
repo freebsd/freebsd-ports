@@ -34,7 +34,9 @@ share/gnome/pixmaps/document-icons/gnome-application-x-compress.png
 share/gnome/pixmaps/document-icons/gnome-application-x-dc-rom.png
 share/gnome/pixmaps/document-icons/gnome-application-x-deb.png
 share/gnome/pixmaps/document-icons/gnome-application-x-dia-diagram.png
+share/gnome/pixmaps/document-icons/gnome-application-x-dvi.png
 share/gnome/pixmaps/document-icons/gnome-application-x-e-theme.png
+share/gnome/pixmaps/document-icons/gnome-application-x-flac.png
 share/gnome/pixmaps/document-icons/gnome-application-x-font-sunos-news.png
 share/gnome/pixmaps/document-icons/gnome-application-x-gameboy-rom.png
 share/gnome/pixmaps/document-icons/gnome-application-x-genesis-rom.png
@@ -174,7 +176,9 @@ share/gnome/pixmaps/document-icons/i-sock.png
 share/gnome/pixmaps/document-icons/i-spreadsheet.png
 share/gnome/pixmaps/document-icons/i-web.png
 share/gnome/pixmaps/document-icons/i-zipdisk.png
+share/locale/am/LC_MESSAGES/gnome-mime-data.mo
 share/locale/az/LC_MESSAGES/gnome-mime-data.mo
+share/locale/be/LC_MESSAGES/gnome-mime-data.mo
 share/locale/bg/LC_MESSAGES/gnome-mime-data.mo
 share/locale/ca/LC_MESSAGES/gnome-mime-data.mo
 share/locale/da/LC_MESSAGES/gnome-mime-data.mo
@@ -187,6 +191,8 @@ share/locale/fi/LC_MESSAGES/gnome-mime-data.mo
 share/locale/fr/LC_MESSAGES/gnome-mime-data.mo
 share/locale/ga/LC_MESSAGES/gnome-mime-data.mo
 share/locale/gl/LC_MESSAGES/gnome-mime-data.mo
+share/locale/he/LC_MESSAGES/gnome-mime-data.mo
+share/locale/hi/LC_MESSAGES/gnome-mime-data.mo
 share/locale/hu/LC_MESSAGES/gnome-mime-data.mo
 share/locale/it/LC_MESSAGES/gnome-mime-data.mo
 share/locale/ja/LC_MESSAGES/gnome-mime-data.mo
@@ -194,6 +200,7 @@ share/locale/ko/LC_MESSAGES/gnome-mime-data.mo
 share/locale/lt/LC_MESSAGES/gnome-mime-data.mo
 share/locale/lv/LC_MESSAGES/gnome-mime-data.mo
 share/locale/mk/LC_MESSAGES/gnome-mime-data.mo
+share/locale/mn/LC_MESSAGES/gnome-mime-data.mo
 share/locale/ms/LC_MESSAGES/gnome-mime-data.mo
 share/locale/nl/LC_MESSAGES/gnome-mime-data.mo
 share/locale/nn/LC_MESSAGES/gnome-mime-data.mo
