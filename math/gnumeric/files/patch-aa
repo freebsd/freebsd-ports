@@ -1,6 +1,20 @@
---- configure.orig	Sun May 20 13:17:33 2001
-+++ configure	Mon May 21 11:57:29 2001
-@@ -10526,6 +10532,6 @@
+
+$FreeBSD$
+
+--- configure.orig	Mon Aug  6 12:35:22 2001
++++ configure	Mon Aug  6 12:36:51 2001
+@@ -9496,7 +9496,7 @@
+ done
+ 
+ 
+-for ac_hdr in iconv.h
++for ac_hdr in giconv.h
+ do
+ ac_safe=`echo "$ac_hdr" | sed 'y%./+-%__p_%'`
+ echo $ac_n "checking for $ac_hdr""... $ac_c" 1>&6
+@@ -10664,10 +10664,10 @@
+     top_srcdir="$ac_dots$ac_given_srcdir" ;;
+   esac
  
 -  case "$ac_given_INSTALL" in
 -  [/$]*) INSTALL="$ac_given_INSTALL" ;;
@@ -11,3 +25,5 @@
 +#  *) INSTALL="$ac_dots$ac_given_INSTALL" ;;
 +#  esac
  
+   echo creating "$ac_file"
+   rm -f "$ac_file"
