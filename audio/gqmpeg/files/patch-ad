@@ -1,6 +1,6 @@
 --- Makefile.in.orig	Sun Jan 20 09:20:14 2002
 +++ Makefile.in	Sun Jan 20 09:20:32 2002
-@@ -116,7 +116,7 @@
+@@ -118,7 +118,7 @@
  skindir = $(prefix)/share/gqmpeg/skins
  skin_DATA = SKIN-SPECS README
  
