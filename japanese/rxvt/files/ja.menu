@@ -1,0 +1,29 @@
+#-------------------------------------------------------------------------
+[menu:shell]
+[clear]
+[title:shell]
+# [pixmap:name]
+
+# not necessarily useful, but an example of using the rxvt menuBar
+
+# assuming we have ksh with Emacs bindings
+<u>^P<d>^N<r>^F<l>^B
+
+/Commands/*
+{manual}	man  
+{manual apropos} man -k 
+{manual whatis}  man -f 
+{-}
+{Exit Shell}	exit\r
+
+/Programs/*
+{Mule}		mule &\r
+{Mule(no X)}	mule -nw\r
+{Mail}		Mail\r
+{WWW}		lynx\r
+
+[read:terminal]
+[show]
+[done:shell]
+
+#--------------------------------------------------------------------- eof

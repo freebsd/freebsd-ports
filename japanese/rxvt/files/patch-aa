@@ -1,7 +1,7 @@
-*** Makefile.in.orig	Sun Sep 20 17:48:18 1998
---- Makefile.in	Thu Nov 19 00:19:50 1998
+*** Makefile.in.orig	Fri Jan 29 22:10:45 1999
+--- Makefile.in	Fri Jan 29 22:11:13 1999
 ***************
-*** 8,14 ****
+*** 9,15 ****
   first_rule: all
   dummy:
   
@@ -9,7 +9,7 @@
   
   DIST =	INSTALL README.configure configure Makefile Makefile.in
   
---- 8,14 ----
+--- 9,15 ----
   first_rule: all
   dummy:
   

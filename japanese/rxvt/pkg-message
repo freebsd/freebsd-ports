@@ -1,9 +1,12 @@
 
----------------------------------------------------------
+  See /usr/X11R6/share/doc/ja/rxvt/README.ja for more information
+about using Japanese XIM.
 
-   If you want information about rxvt in 
-   Japanese environment , please see 
-   /usr/X11R6/share/doc/ja/rxvt/README.ja (in Japanese) .
+  If you want to enjoy menuBar features, add following 2 line
 
----------------------------------------------------------
+	Rxvt*path:	/usr/X11R6/lib/X11/rxvt/
+	Rxvt*menu:	ja
 
+to your ~/.Xdefaults.
+
+Documents are at /usr/X11R6/share/doc/ja/rxvt/.

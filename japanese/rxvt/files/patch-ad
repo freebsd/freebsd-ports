@@ -1,5 +1,5 @@
-*** src/command.c.orig	Wed Dec  9 18:26:44 1998
---- src/command.c	Wed Dec  9 18:27:31 1998
+*** src/command.c.orig	Sun Jan 24 14:39:54 1999
+--- src/command.c	Fri Jan 29 22:57:48 1999
 ***************
 *** 289,295 ****
       ttydev = tty_name;
