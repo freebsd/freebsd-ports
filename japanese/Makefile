@@ -92,7 +92,6 @@
     SUBDIR += gnomelibs
     SUBDIR += gnumeric
     SUBDIR += gorua
-    SUBDIR += gp
     SUBDIR += gqmpeg
     SUBDIR += grep
     SUBDIR += groff

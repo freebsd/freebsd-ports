@@ -71,7 +71,6 @@
     SUBDIR += ghostview
     SUBDIR += gimp-print
     SUBDIR += gnomeprint
-    SUBDIR += gp
     SUBDIR += gsfonts
     SUBDIR += gtklp
     SUBDIR += guitartex
