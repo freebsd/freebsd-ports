@@ -1,0 +1,11 @@
+#!/bin/sh
+
+LOCALDEF=$WRKDIR/.config
+
+rm -f $LOCALDEF
+echo "#define BuildMiscDocs YES"		>> $LOCALDEF
+echo "#define BuildSpecsDocs YES"		>> $LOCALDEF
+# echo "#define HasGhostScript YES"		>> $LOCALDEF
+echo "#define DocDir ${PREFIX}/share/doc/X11"	>> $LOCALDEF
+
+sh $PORTSDIR/x11-servers/xorg-server/scripts/configure.gen

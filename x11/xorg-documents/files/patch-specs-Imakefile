@@ -1,0 +1,11 @@
+--- doc/specs/Imakefile.orig	Fri Jul 23 17:03:51 2004
++++ doc/specs/Imakefile	Fri Jul 23 17:03:55 2004
+@@ -13,7 +13,7 @@
+ #else
+ SUBDIRS = BDF CTEXT FSProtocol GL ICCCM ICE PM Render SM X11 XDMCP \
+ 	  XIM XLFD XProtocol Xaw Xext Xi Xmu Xserver Xt Xv XvMC \
+-          i18n programs rstart xfs xterm xtrans
++          i18n rstart xfs xterm xtrans
+ #endif
+ 
+ all::
