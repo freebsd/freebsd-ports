@@ -1,0 +1,18 @@
+--- Makefile.in.orig	Sat Oct 11 18:57:55 2003
++++ Makefile.in	Mon Oct 13 16:29:09 2003
+@@ -296,6 +296,7 @@
+ 	  rm -f $(DESTDIR)$(man1dir)/$$inst; \
+ 	done
+ install-docDATA: $(doc_DATA)
++.if !defined(NOPORTDOCS)
+ 	@$(NORMAL_INSTALL)
+ 	$(mkinstalldirs) $(DESTDIR)$(docdir)
+ 	@list='$(doc_DATA)'; for p in $$list; do \
+@@ -304,6 +305,7 @@
+ 	  echo " $(INSTALL_DATA) $$d$$p $(DESTDIR)$(docdir)/$$f"; \
+ 	  $(INSTALL_DATA) $$d$$p $(DESTDIR)$(docdir)/$$f; \
+ 	done
++.endif
+ 
+ uninstall-docDATA:
+ 	@$(NORMAL_UNINSTALL)
