@@ -46,19 +46,13 @@
  
  /* The following macro defines the format used to output the second
     operand of the .type assembler directive.  Different svr4 assemblers
-@@ -123,6 +140,16 @@
+@@ -123,6 +140,10 @@
  
  #define TYPE_OPERAND_FMT	"@%s"
  
 +/* Handle #pragma weak and #pragma pack. */
 +
 +#define HANDLE_SYSV_PRAGMA	1
-+
-+/* This is how we tell the assembler that a symbol is weak. */
-+
-+#define ASM_WEAKEN_LABEL(FILE,NAME) \
-+  do { fputs ("\t.weak\t", FILE); assemble_name (FILE, NAME); \
-+  fputc ('\n', FILE); } while (0)
 +
  /* Write the extra assembler code needed to declare a function's result.
     Most svr4 assemblers don't require any special declaration of the
