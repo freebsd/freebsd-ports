@@ -37,7 +37,7 @@ if [ x"$2" = xPRE-INSTALL ]; then
         echo "You already have a group \"${group}\", so I will use it."
     else
         echo "You need a group \"${group}\"."
-        if yesno "Would you like me to create it" y; then
+        if ([ -n "$BATCH" ] || yesno "Would you like me to create it" y); then
             /usr/sbin/pw groupadd ${group} -g 522 -h - || exit
             echo "Done."
         else
@@ -50,14 +50,48 @@ if [ x"$2" = xPRE-INSTALL ]; then
         echo "You already have a user \"${user}\", so I will use it."
     else
         echo "You need a user \"${user}\"."
-        if yesno "Would you like me to create it" y; then
-            /usr/sbin/pw useradd ${user} -u 522 -g ${group} -h - -d ${PKG_PREFIX}/var/nullmailer \
+        if ([ -n "$BATCH" ] || yesno "Would you like me to create it" y); then
+            /usr/sbin/pw useradd ${user} -u 522 -g ${group} -h - -d ${NMH_PREFIX}/var/nullmailer \
                 -s /bin/sh -c "Nullmailer Mail System" || exit
             echo "Done."
         else
             echo "Please create it, and try again."
             exit 1
         fi
+    fi
+
+    if [ ! -n "$BATCH" ]; then
+	if grep -q "^[^#]*local5.*/var/log/nullmail.log" /etc/syslog.conf; then
+	    echo -n "It looks like you already have some logging set up, so I "
+	    echo "will use it."
+	elif yesno "Would you like me to set up the syslog logging" y; then
+	    echo "Setting up nullmailer logging in \"/etc/syslog.conf\"."
+	    cat <<EOF | ex -s
+e /etc/syslog.conf
+/\*\.\*/
+-1
+insert
+local5.info					/var/log/nullmail.log
+.
+wq
+EOF
+
+	    if [ ! -f /var/log/nullmail.log ]; then
+		echo "Creating \"/var/log/nullmail.log\"."
+		cp /dev/null /var/log/nullmail.log
+	    fi
+
+	    if [ -f /var/run/syslog.pid ]; then
+		echo "Giving syslogd a kick in the pants."
+		kill -HUP `cat /var/run/syslog.pid`
+	    fi
+
+	    echo "Adding nullmail log entry to \"/etc/newsyslog.conf\"."
+	    cat <<EOF >>/etc/newsyslog.conf
+/var/log/nullmail.log			644  7     *    @T00  Z
+EOF
+	    echo "Done."
+	fi
     fi
 
 fi

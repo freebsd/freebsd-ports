@@ -7,11 +7,22 @@ sbin/nullmailer-send
 sbin/sendmail
 etc/nullmailer/remotes.sample
 etc/rc.d/nullmail.sh
-@dirrm var/nullmailer/queue
-@dirrm var/nullmailer/tmp
-@unexec rm -f %D/var/nullmailer/trigger
+@exec mkdir -p %%LOCALSTATEDIR%%/var/nullmailer/queue
+@exec chmod 700 %%LOCALSTATEDIR%%/var/nullmailer/queue
+@exec mkdir -p %%LOCALSTATEDIR%%/var/nullmailer/tmp
+@exec chmod 700 %%LOCALSTATEDIR%%/var/nullmailer/tmp
+@exec rm -f %%LOCALSTATEDIR%%/var/nullmailer/trigger
+@exec mkfifo %%LOCALSTATEDIR%%/var/nullmailer/trigger
+@exec chmod 600 %%LOCALSTATEDIR%%/var/nullmailer/trigger
+@exec chown -R nullmail %%LOCALSTATEDIR%%/var/nullmailer/*
+@exec chown nullmail %D/sbin/nullmailer-queue
+@exec chmod u+s %D/sbin/nullmailer-queue
+@exec chown nullmail %D/bin/mailq
+@exec chmod u+s %D/bin/mailq
+%%LOCALSTATEDIR_RM%%var/nullmailer/queue
+%%LOCALSTATEDIR_RM%%var/nullmailer/tmp
+@unexec rm -f %%LOCALSTATEDIR%%/var/nullmailer/trigger
 @dirrm etc/nullmailer
-@dirrm var/nullmailer
-@unexec echo "Warning: If you will *NOT* use nullmailer anymore, please remove"
-@unexec echo "         1) nullmail user and its group."
-@unexec echo "         2) its relative entry in /etc/syslog.conf and /etc/newsyslog.conf"
+%%LOCALSTATEDIR_RM%%var/nullmailer
+%%LOCALSTATEDIR_RM%%var
+@unexec if [ -n "$BATCH" ]; then echo "Warning: In batch mode, I will do 'rmuser -y nullmail'"; rmuser -y nullmail; fi

@@ -1,15 +1,9 @@
 ==================================================================
-1) Add the following line into your /etc/syslog.conf and 
-   killall -1 syslogd:
-local5.info					/var/log/nullmail
 
-NOTICE: This entry must be before 
-*.*						/var/log/all.log
+Please take %%PREFIX%%/etc/nullmailer/remotes.sample
+as an example and edit your own 
+%%PREFIX%%/etc/nullmailer/remotes
 
-2) Touch /var/log/nullmail as root.
+Also man nullmailer-send(8) for more details
 
-3) Add this line into your /etc/newsyslog.conf:
-/var/log/nullmail                       644  7     *    @T00  Z
-
-4) Edit %%PREFIX%%/etc/nullmailer/remotes
 ==================================================================
