@@ -7,6 +7,7 @@
 
 PORTNAME=	scilab
 PORTVERSION=	3.0
+PORTREVISION=	1
 CATEGORIES=	math cad parallel
 MASTER_SITES=	ftp://ftp.inria.fr/INRIA/Scilab/distributions/
 EXTRACT_SUFX=	.src.tar.gz
@@ -43,12 +44,17 @@ CONFIGURE_ARGS=	--with-tk \
 		--with-atlas-library=${LOCALBASE}/lib \
 		--without-ocaml
 
-CONFIGURE_ENV=	PVM_ROOT=${PVM_ROOT} X11BASE=${X11BASE}
+CONFIGURE_ENV=	PVM_ROOT=${PVM_ROOT} X11BASE=${X11BASE} F77=$(F77)
 MAKE_ENV=	PVM_INCLUDE=${LOCALBASE}/include
 
 PLIST_SUB=	PORTVERSION="${PORTVERSION}"
 
 .include <bsd.port.pre.mk>
+
+# Scilab broken with GCC 3.3 on FreeBSD 5.3
+.if ${OSVERSION} >= 503000
+USE_GCC=	3.2
+.endif
 
 .if ${ARCH} == "alpha" && ${OSVERSION} >= 502102 || ${ARCH} == "sparc64"
 BROKEN=		"Does not compile on alpha 5.x or sparc64"
