@@ -1,0 +1,34 @@
+--- makefile.orig	Wed Jun  4 13:29:23 1997
++++ makefile	Sat Mar 27 20:19:53 1999
+@@ -1,25 +1,18 @@
+ # Makefile for building a shared library containing
+-# the kjbuckets module.  Configured for Linux using gcc
+-# and local paths.
+-
+-CC=gcc -DSOLARIS -Wall
++# the kjbuckets module.  Configured for FreeBSD.
+ 
+ # the src and bld directories for include files and libraries
+-blddir=		/usr/local/lib/python1.4/lib
+-srcdir=		/usr/local/include/python1.4
+-cfgdir=		/usr/local/lib/python1.4/config
+-#objdir=		/big/arw/Python-1.3/Objects
++srcdir=		${PREFIX}/include/python1.5
++cfgdir=		${PREFIX}/lib/python1.5/config
+ 
+ # Compiler flags
+-OPT=		-g
+-INCLUDES=	-I$(srcdir) -I$(blddir) -I$(cfgdir)
++INCLUDES=	-I$(srcdir) -I$(cfgdir)
+ DEFINES=	-DHAVE_CONFIG_H
+-CFLAGS=		$(OPT) $(DEFINES) $(INCLUDES)
+ 
+ all:		kjbucketsmodule.so
+ 
+ kjbucketsmodule.o:	kjbucketsmodule.c
+-		$(CC) $(CFLAGS) -c kjbucketsmodule.c
++		$(CC) $(CFLAGS) $(DEFINES) $(INCLUDES) -c kjbucketsmodule.c
+ 
+ kjbucketsmodule.so:	kjbucketsmodule.o
+-		$(LD) -G kjbucketsmodule.o -o kjbucketsmodule.so
++		$(CC) $(CFLAGS) -shared kjbucketsmodule.o -o kjbucketsmodule.so

@@ -1,0 +1,92 @@
+--- kjbucketsmodule.c.orig	Thu Jun 26 09:06:40 1997
++++ kjbucketsmodule.c	Sat Mar 27 20:27:50 1999
+@@ -157,7 +157,7 @@
+      ( (tp->entries * RESIZEFACTOR) < (tp->size * GSIZE) ) )
+ 
+ /* group states */
+-enum GState { UNKNOWN, FREE, ROOT, OVERFLOW };
++enum GState { UNKNOWN, FREE, ROOT, OVERFLOW_ };
+ 
+ /* bucket behaviors, smaller is less general! */
+ enum BucketFlag { SETFLAG=0, DICTFLAG=1, GRAPHFLAG=2 };
+@@ -607,7 +607,7 @@
+       Nextptr = &(SGptr->mem.free.Next);\
+       break;\
+     case ROOT:\
+-    case OVERFLOW:\
++    case OVERFLOW_:\
+     case UNKNOWN:\
+       templateptr.sbp = &(SGptr->mem.group);\
+       Nextptr = &(SGptr->mem.group.Next);\
+@@ -623,7 +623,7 @@
+       Nextptr = &(DGptr->mem.free.Next);\
+       break;\
+     case ROOT:\
+-    case OVERFLOW:\
++    case OVERFLOW_:\
+     case UNKNOWN:\
+       templateptr.dbp = &(DGptr->mem.group);\
+       Nextptr = &(DGptr->mem.group.Next);\
+@@ -739,7 +739,7 @@
+   GArrayRef(Jarray,Jflag,Jprevious, Jgprev, JPrevState, JNextOfPrev);\
+   GArrayRef(Jarray,Jflag,Jtoindex, Jgother, JOtherState, JNextOfOther);\
+   *JNextOfOther = *JNext;\
+-  *JOtherState = OVERFLOW;\
++  *JOtherState = OVERFLOW_;\
+   GroupCopy(Jgother, Jg, Jflag);\
+   *JNextOfPrev = Jtoindex;\
+   Groupinit(Jg, Jflag);\
+@@ -879,7 +879,7 @@
+       fprintf(fp, "ROOT(next=%ld)",*Next);
+       if (GroupDump(g,flag,fp)!=0) { return -1; }
+       break;
+-    case OVERFLOW:
++    case OVERFLOW_:
+       fprintf(fp, "OVFLW(next=%ld)",*Next);
+       if (GroupDump(g,flag,fp)!=0) { return -1; }
+       break;
+@@ -903,7 +903,7 @@
+   for (i=0; i<size; i++) {
+     Dprint(("greinit at %ld\n",i));
+     GArrayRef(g, flag, i, groupp, State, d);
+-    if ((*State == ROOT) || (*State == OVERFLOW)) {
++    if ((*State == ROOT) || (*State == OVERFLOW_)) {
+       for (j=0; j<GSIZE; j++) {
+ 	GetBucket(Bp,groupp,flag,j);
+ 	BPtrReInit(Bp, flag);
+@@ -1056,7 +1056,7 @@
+       /* lastgroup and lastbucket must be none */
+       lastgroupI = lastbucketI = -1;
+       /* otherwise must force an insert, need root group... */
+-      if (*state == OVERFLOW) {
++      if (*state == OVERFLOW_) {
+ 	/* swap out the overflow group */
+         Dprint(("root is overflow %ld\n",rootgroupI));
+ 	if (tp->Free == -1) {
+@@ -1130,7 +1130,7 @@
+     }
+     UnFreeTableIndex(AvailableI, tp, tp->Free);
+     GArrayRef(groups, flag, AvailableI, avail, availState, availNext);
+-    *availState = OVERFLOW;
++    *availState = OVERFLOW_;
+     *availNext = rootgroupI;
+     *Next = AvailableI;
+     groupmatch(found, avail,flag,hsh,member1,map1,
+@@ -1235,7 +1235,7 @@
+   /* now reinsert all former contents */
+   for (i=0; i<size; i++) {
+     GArrayRef(oldgroups, flag, i, g, State, Next);
+-    if ( (*State == OVERFLOW) || (*State == ROOT) ) {
++    if ( (*State == OVERFLOW_) || (*State == ROOT) ) {
+       if (ReInsertGroup(g, flag, tp) == 0) {
+ 	success = 0;
+ 	break;
+@@ -1401,7 +1401,7 @@
+   found = 0;
+   do {
+     GArrayRef(tp->groups, flag, twp->lastgroup, g, State, Next);
+-    if ((*State==ROOT) || (*State==OVERFLOW)) {
++    if ((*State==ROOT) || (*State==OVERFLOW_)) {
+       dummy = 0;
+       groupmatch(found, g, flag, NOHASH, dummy, dummy, NOFORCE,\
+ 			 (twp->lastbucket), (twp->lastbucket), \
