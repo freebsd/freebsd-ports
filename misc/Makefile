@@ -384,6 +384,7 @@
     SUBDIR += wmwork
     SUBDIR += wmx10
     SUBDIR += wotsap
+    SUBDIR += xbiso
     SUBDIR += xd
     SUBDIR += xdelta
     SUBDIR += xdf
