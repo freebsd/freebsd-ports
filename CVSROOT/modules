@@ -4393,6 +4393,7 @@ kdegames3	ports/games/kdegames3
 kdegraphics3	ports/graphics/kdegraphics3
 kdehier		ports/misc/kdehier
 kdelibs3	ports/x11/kdelibs3
+kdelibs3-nocups	ports/x11/kdelibs3-nocups
 kdemultimedia3	ports/multimedia/kdemultimedia3
 kdenetwork3	ports/net/kdenetwork3
 kdepim3		ports/deskutils/kdepim3
