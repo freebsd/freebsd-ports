@@ -5360,6 +5360,7 @@ p5-Gtk		ports/x11-toolkits/p5-Gtk
 p5-GtkHTML	ports/www/p5-GtkHTML
 p5-GtkXmHTML	ports/x11-toolkits/p5-GtkXmHTML
 p5-HTML		ports/www/p5-HTML
+p5-HTML-Breadcrumbs	ports/www/p5-HTML-Breadcrumbs
 p5-HTML-CalendarMonthSimple	ports/www/p5-HTML-CalendarMonthSimple
 p5-HTML-Clean	ports/www/p5-HTML-Clean
 p5-HTML-Element-Extended	ports/www/p5-HTML-Element-Extended
