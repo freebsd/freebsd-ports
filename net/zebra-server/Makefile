@@ -13,8 +13,7 @@ DISTNAME=	zebra-${PORTVERSION:S/0./0pl/}
 
 MAINTAINER=	demon@FreeBSD.org
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/yaz-config:${PORTSDIR}/net/yaz
-RUN_DEPENDS=	${LOCALBASE}/bin/yaz-config:${PORTSDIR}/net/yaz
+LIB_DEPENDS=	yaz.1:${PORTSDIR}/net/yaz
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-yazconfig=${LOCALBASE}/bin
