@@ -1,23 +1,6 @@
---- makefile.orig	Mon Oct 28 19:50:00 2002
-+++ makefile	Sun Nov  3 09:09:41 2002
-@@ -4,13 +4,13 @@
- FAULT_TOLERANT=0
- 
- # Place where to copy GastDB header files
--INCSPATH=/usr/local/include/fastdb
-+INCSPATH=${PREFIX}/include/fastdb
- 
- #Place where to copy Fastdb library
--LIBSPATH=/usr/local/lib
-+LIBSPATH=${PREFIX}/lib
- 
- #Place where to copy Fastdb subsql utility
--BINSPATH=/usr/local/bin
-+BINSPATH=${PREFIX}/bin
- 
- OBJS = class.o compiler.o database.o hashtab.o file.o symtab.o ttree.o \
- 	cursor.o query.o wwwapi.o unisock.o sync.o localcli.o
-@@ -29,8 +29,8 @@
+--- makefile.orig	Fri Nov 22 00:41:30 2002
++++ makefile	Sun Dec  1 07:54:01 2002
+@@ -32,8 +32,8 @@
  SUFF=
  else
  ifneq (,$(findstring freebsd,$(OSTYPE)))
@@ -28,7 +11,7 @@
  else 
  TFLAGS=-D_REENTRANT -D_THREAD_SAFE
  THRLIBS=-lpthread
-@@ -62,7 +62,6 @@
+@@ -65,7 +65,6 @@
  
  WEB_EXAMPLES = cgistub bugdb clidb
  
@@ -36,7 +19,7 @@
  
  # Possible FastDB compile time parameters (-Dxxx should be added to DEFS macro):
  # 1. USE_LOCALE_SETTING - use C locale for string comparison operations
-@@ -98,13 +97,13 @@
+@@ -101,13 +100,13 @@
  DEFS = -DUSE_QUEUE_MANAGER -DUSE_LOCALE_SETTINGS
  
  #CFLAGS = $(TFLAGS) -c -Wall -O5 -g $(DEFS) 
@@ -53,7 +36,7 @@
  
  AR = ar
  ARFLAGS = -cru
-@@ -314,14 +313,13 @@
+@@ -326,14 +325,13 @@
  
  install: subsql installlib
  	mkdir -p $(BINSPATH)
@@ -67,7 +50,7 @@
 +	${BSD_INSTALL_DATA} $(INCS) $(INCSPATH)
  	mkdir -p $(LIBSPATH)
 -	cp $(FASTDB_LIB) $(CLI_LIB) $(FASTDB_SHARED) $(CLI_SHARED) $(LIBSPATH)
-+	${BSD_INSTALL_DATA} $(FASTDB_LIB) $(CLI_LIB) $(FASTDB_SHARED) $(CLI_SHARED) $(LIBSPATH)
- 	ln -f -s $(LIBSPATH)/$(FASTDB_SHARED) $(LIBSPATH)/libfastdb$(SUFF).so
- 	ln -f -s $(LIBSPATH)/$(CLI_SHARED) $(LIBSPATH)/libcli$(SUFF).so
++	${BSD_INSTALL_PROGRAM} $(FASTDB_LIB) $(CLI_LIB) $(FASTDB_SHARED) $(CLI_SHARED) $(LIBSPATH)
+ 	cd $(LIBSPATH); ln -f -s $(FASTDB_SHARED) libfastdb$(SUFF).so
+ 	cd $(LIBSPATH); ln -f -s $(CLI_SHARED) libcli$(SUFF).so
  
