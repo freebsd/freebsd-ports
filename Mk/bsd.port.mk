@@ -491,6 +491,10 @@ MASTERDIR?=	${.CURDIR}
 # If they exist, include Makefile.inc, then architecture/operating
 # system specific Makefiles, then local Makefile.local.
 
+.if ${MASTERDIR} != ${.CURDIR} && exists(${.CURDIR}/../Makefile.inc)
+.include "${.CURDIR}/../Makefile.inc"
+.endif
+
 .if exists(${MASTERDIR}/../Makefile.inc)
 .include "${MASTERDIR}/../Makefile.inc"
 .endif
@@ -505,6 +509,25 @@ MASTERDIR?=	${.CURDIR}
 
 .if exists(${MASTERDIR}/Makefile.local)
 .include "${MASTERDIR}/Makefile.local"
+.endif
+
+.if defined(REQUIRE_PORTNAME) && !defined(PORTNAME)
+.BEGIN:
+	@${ECHO} "${PKGNAME}: You need to define PORTNAME and PORTVERSION instead of PKGNAME."
+	@${ECHO} "(This port is too old for your bsd.port.mk.)"
+	@${FALSE}
+.endif
+.if defined(PORTNAME)
+.if defined(PKGNAME) || !defined(PORTVERSION)
+.BEGIN:
+	@${ECHO} "${PKGNAME}: You need to define PORTNAME and PORTVERSION instead of PKGNAME."
+	@${FALSE}
+.endif
+PKGNAME=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
+DISTNAME?=	${PORTNAME}-${PORTVERSION}
+.else
+# old style
+PKGNAME?=		${DISTNAME}
 .endif
 
 # These need to be absolute since we don't know how deep in the ports
@@ -1102,25 +1125,6 @@ PATCH_SITES:=	file:${CD_MOUNTPT}/ports/distfiles/${DIST_SUBDIR}/ ${PATCH_SITES}
 .if defined(FETCH_SYMLINK_DISTFILES)
 FETCH_BEFORE_ARGS+=	-l
 .endif
-.endif
-
-.if defined(REQUIRE_PORTNAME) && !defined(PORTNAME)
-.BEGIN:
-	@${ECHO} "${PKGNAME}: You need to define PORTNAME and PORTVERSION instead of PKGNAME."
-	@${ECHO} "(This port is too old for your bsd.port.mk.)"
-	@${FALSE}
-.endif
-.if defined(PORTNAME)
-.if defined(PKGNAME) || !defined(PORTVERSION)
-.BEGIN:
-	@${ECHO} "${PKGNAME}: You need to define PORTNAME and PORTVERSION instead of PKGNAME."
-	@${FALSE}
-.endif
-PKGNAME=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
-DISTNAME?=	${PORTNAME}-${PORTVERSION}
-.else
-# old style
-PKGNAME?=		${DISTNAME}
 .endif
 
 DISTFILES?=		${DISTNAME}${EXTRACT_SUFX}
