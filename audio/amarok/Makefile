@@ -23,6 +23,7 @@ USE_KDELIBS_VER=3
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
+USE_SDL=	sdl
 
 OPTIONS=	ARTS "aRts support" off \
 		GSTREAMER "GStreamer support" on \
