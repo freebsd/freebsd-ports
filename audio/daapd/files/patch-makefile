@@ -1,45 +1,33 @@
---- makefile.orig	Mon Jun 21 16:07:51 2004
-+++ makefile	Mon Jun 21 16:14:40 2004
-@@ -1,7 +1,5 @@
+--- makefile.orig	Sat Aug 21 15:24:06 2004
++++ makefile	Wed Sep  1 23:14:25 2004
+@@ -1,8 +1,6 @@
  # configure daapd here
  
 -HOWL_ENABLE = 1
--MPEG4_ENABLE = 0
+ ZLIB_ENABLE = 1
+-MPEG4_ENABLE = 1
  
  
  # no need to touch anything below this line
-@@ -10,24 +8,23 @@
+@@ -11,13 +9,12 @@
  CC = g++
  MAKE = $(MAKE_COMMAND)
  TARGET = daapd
 -DEPS = daaplib_ libhttpd_
  OBJS = daapd.o db.o dboutput.o songcache.o parsemp3.o
- LIBS = -ldaaplib -lhttpd-persistent -lid3tag -lz 
+-LIBS = -ldaaplib -lhttpd-persistent -lid3tag -lz -lpthread 
 -LIBPATH = -L. -L./daaplib/src -L./libhttpd/src  -L/usr/local/lib
 -INCPATH = -I. -I./daaplib/include -I./libhttpd/src  -I/usr/local/include
--DEPLOY = /usr/local
-+LIBPATH = -L. -L%%LOCALBASE%%/lib
-+INCPATH = -I. -I%%LOCALBASE%%/include
-+DEPLOY = %%PREFIX%%
- CFLAGS = -Wall -Wno-multichar
++LIBS = -ldaaplib -lhttpd-persistent -lid3tag -lz $(PTHREAD_LIBS)
++LIBPATH = -L. -L/usr/local/lib
++INCPATH = -I. -I/usr/local/include
+ DEPLOY = /usr/local
+-CFLAGS = -Wall -Wno-multichar
++CFLAGS = -Wall -Wno-multichar $(PTHREAD_CFLAGS)
  
  # HOWL
  ifeq ($(HOWL_ENABLE),1)
--	HOWLDIRS := $(sort $(wildcard /usr/local/include/howl*) )
-+	HOWLDIRS := $(sort $(wildcard %%LOCALBASE%%/include/howl*) )
- ifeq ($(words $(HOWLDIRS) ), 0)
- $(error howl not found in /usr/local/include. Install howl or disable it in the makefile)
- endif
- 	HOWLRECENT := $(word $(words $(HOWLDIRS)),$(HOWLDIRS) )
- 	INCPATH := $(INCPATH) -I$(HOWLRECENT)
--	LIBS := $(LIBS) -lpthread -lhowl
--	CFLAGS := $(CFLAGS) -DHOWL_ENABLE
-+	LIBS := $(LIBS) $(PTHREAD_LIBS) -lhowl
-+	CFLAGS := $(CFLAGS) $(PTHREAD_CFLAGS) -DHOWL_ENABLE
- 	ifneq ($(shell $(CC) -E -dM - < /dev/null | grep __APPLE__),)
- 		LIBS := $(LIBS) -framework CoreFoundation
- 	endif
-@@ -53,28 +50,17 @@
+@@ -54,28 +51,17 @@
  .cc.o:
  	$(CC) $(CFLAGS) $(INCPATH) -c $<
  
