@@ -4135,6 +4135,7 @@ loserjabber	ports/deskutils/loserjabber
 lostirc		ports/irc/lostirc
 lout		ports/print/lout
 lpe		ports/editors/lpe
+lplayer		ports/audio/lplayer
 lpr		src/usr.sbin/lpr
 lprps-a4	ports/print/lprps-a4
 lprps-letter	ports/print/lprps-letter
