@@ -46,6 +46,7 @@
     SUBDIR += kmplayer
     SUBDIR += kplayer
     SUBDIR += ksubeditor
+    SUBDIR += ldvd9to5
     SUBDIR += libdivxdecore
     SUBDIR += libdivxdecore-devel
     SUBDIR += libdivxencore
