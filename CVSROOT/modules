@@ -2197,7 +2197,6 @@ gcursor		ports/x11/gcursor
 gcvs		ports/devel/gcvs
 gd		ports/graphics/gd
 gd-aspell	ports/textproc/gd-aspell
-gd1		ports/graphics/gd1
 gdal		ports/graphics/gdal
 gdam		ports/audio/gdam
 gdb52		ports/devel/gdb52
@@ -3367,7 +3366,6 @@ ja-gal		ports/japanese/gal
 ja-gauche-kakasi	ports/japanese/gauche-kakasi
 ja-gawk		ports/japanese/gawk
 ja-gd		ports/japanese/gd
-ja-gd1		ports/japanese/gd1
 ja-ghostscript-gnu-jpnfont	ports/japanese/ghostscript-gnu-jpnfont
 ja-gicq		ports/japanese/gicq
 ja-gn-gnspool	ports/japanese/gn-gnspool
@@ -6424,7 +6422,6 @@ p5-GD-Barcode	ports/graphics/p5-GD-Barcode
 p5-GD-Graph	ports/graphics/p5-GD-Graph
 p5-GD-Graph3d	ports/graphics/p5-GD-Graph3d
 p5-GD-TextUtil	ports/graphics/p5-GD-TextUtil
-p5-GD1		ports/graphics/p5-GD1
 p5-GDBM		ports/databases/p5-GDBM
 p5-GIFgraph	ports/graphics/GIFgraph
 p5-GPS		ports/astro/p5-GPS
@@ -8468,7 +8465,6 @@ ru-d1489	ports/russian/d1489
 ru-elm		ports/russian/elm.language
 ru-elm.language	ports/russian/elm.language
 ru-fortuneru	ports/russian/fortuneru
-ru-gd		ports/russian/gd
 ru-kde3-i18n	ports/russian/kde3-i18n
 ru-koffice-i18n	ports/russian/koffice-i18n
 ru-koi2koi	ports/russian/koi2koi
