@@ -17,6 +17,8 @@ EXTRACT_ONLY=	ee-3.0.tar.gz
 
 MAINTAINER=	kiri@pis.toba-cmt.ac.jp
 
+BROKEN=		"Does not compile"
+
 LIB_DEPENDS=	canna.1:${PORTSDIR}/japanese/Canna
 
 MANLANG=	ja

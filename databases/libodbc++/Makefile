@@ -12,6 +12,8 @@ MASTER_SITES=	http://orcane.net/freeodbc++/download/${PORTVERSION}/
 
 MAINTAINER=	wjv@FreeBSD.org
 
+BROKEN=		"Does not compile"
+
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
