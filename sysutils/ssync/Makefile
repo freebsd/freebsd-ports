@@ -10,7 +10,7 @@ PORTVERSION=	2.3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://angrypot.com/ssync/
 
-MAINTAINER=	nyxo@dnuc.polyn.kiae.su
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A minimalistic tool for keeping filesystems in synchronization
 
 ALL_TARGET=	default

@@ -10,7 +10,7 @@ PORTVERSION=	1.3
 CATEGORIES=	benchmarks
 MASTER_SITES=	ftp://dnuc.polyn.kiae.su/pub/dbench/
 
-MAINTAINER=	nyxo@dnuc.polyn.kiae.su
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simulation of the Ziff-Davis netbench benchmark
 
 WRKSRC=		${WRKDIR}/dbench

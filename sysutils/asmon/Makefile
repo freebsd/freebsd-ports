@@ -11,7 +11,7 @@ CATEGORIES=	sysutils afterstep
 MASTER_SITES=	${MASTER_SITE_AFTERSTEP}
 MASTER_SITE_SUBDIR=	apps/asmon
 
-MAINTAINER=	jack@germanium.xtalwind.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A swallowable applet monitors the CPU usage, memory and swap, etc
 
 USE_X_PREFIX=	yes

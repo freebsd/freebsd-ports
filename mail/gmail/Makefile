@@ -10,7 +10,7 @@ PORTVERSION=	0.7.0
 CATEGORIES=	mail
 MASTER_SITES=	http://bsltwr.dnsalias.org/ftp/pub/gmail/
 
-MAINTAINER=	baskruit@bsltwr.dnsalias.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNOME client that stores email retrieved with pop in a mysql database
 
 LIB_DEPENDS=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client \

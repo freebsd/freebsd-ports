@@ -11,7 +11,7 @@ CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	clts
 
-MAINTAINER=	dr@astorit.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dynamically change some settings of an xterm
 
 GNU_CONFIGURE=	yes
