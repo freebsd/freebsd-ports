@@ -9,6 +9,7 @@
 
 PORTNAME=	tiff
 PORTVERSION=	3.5.7
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.remotesensing.org/pub/libtiff/ \
 		http://www.libtiff.org/
