@@ -16,6 +16,8 @@ MAINTAINER=	ports@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 
+CONFIGURE_ENV+=	CPPFLAGS="-U__DEPRECATED"
+
 MAN1=	bon_csv2html.1 bon_csv2txt.1
 MAN8=	bonnie++.8 zcav.8
 
