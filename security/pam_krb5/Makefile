@@ -27,7 +27,8 @@ DISTNAME=		${PORTNAME}-${PORTVERSION:S/.r/-rc/}
 MAINTAINER=		cy@FreeBSD.org
 COMMENT=	A Pluggable Authentication Module for Kerberos 5
 
-MAN8=			pam_krb5.8
+MAN5=			pam_krb5.5 pam_krb5afs.5
+MAN8=			pam_krb5.8 pam_krb5afs.8
 
 USE_SIZE=		yes
 USE_PERL5=		yes
