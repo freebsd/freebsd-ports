@@ -301,6 +301,7 @@
     SUBDIR += p5-Config-Setting
     SUBDIR += p5-ConfigReader
     SUBDIR += p5-Curses
+    SUBDIR += p5-Curses-Widgets
     SUBDIR += p5-Data-Compare
     SUBDIR += p5-Data-Flow
     SUBDIR += p5-Data-ShowTable
