@@ -1,0 +1,11 @@
+--- run-splitter.in.bak	Wed Jan 10 15:25:43 2001
++++ run-splitter.in	Sun Jan 28 12:06:37 2001
+@@ -2,7 +2,7 @@
+ 
+ PREFIX=@prefix@
+ 
+-VAR=$PREFIX/var
++VAR=/var/mnogosearch
+ SBIN=$PREFIX/sbin
+ PID=$VAR/cachelogd.pid
+ SPLITTER=$SBIN/splitter
