@@ -1,15 +1,15 @@
 # New ports collection makefile for:	webalizer
-# Version required:	1.22
+# Version required:	1.30.*
 # Date created:		02.Jun 1998
 # Whom:			dirk.meyer@dinoex.sub.org
 #
-# $Id: Makefile,v 1.8 1999/07/04 18:54:16 obrien Exp $
+# $Id: Makefile,v 1.9 1999/08/01 20:30:04 billf Exp $
 
 DISTNAME=	webalizer-1.30-04-src
 PKGNAME=	webalizer-1.30.4
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.mrunix.net/pub/webalizer/ \
-		ftp://ftp.dinoex.sub.de/pub/approved/
+		ftp://ftp.lan-ks.de/pub/approved/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	dirk.meyer@dinoex.sub.org
@@ -27,7 +27,7 @@ SUPP_LANG=	catalan chinese czech dutch english french \
 		german italian korean polish portuguese \
 		portuguese_brazil romanian russain slowak \
 		spanish swedish
-WRKSRC=		${WRKDIR}/webalizer-1.30-04
+WRKSRC=		${WRKDIR}/${DISTNAME:S/-src$//}
 MAKE_ARGS+=	CFLAGS="${CFLAGS}"
 
 .if defined(BATCH)
