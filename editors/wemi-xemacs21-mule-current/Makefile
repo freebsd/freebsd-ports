@@ -1,5 +1,5 @@
 # New ports collection makefile for:	wemi-current for xemacs-mule
-# Version required:	1.13.3
+# Version required:	1.13.6
 # Date created:		25 July 1999
 # Whom:			Shigeyuki FUKUSHIMA <shige@FreeBSD.org>
 #
@@ -24,7 +24,15 @@ ALL_TARGET=	package
 INSTALL_TARGET=	install-package
 
 # RUN_DEPENDS port name's suffix is '-common'.
-HAVE_COMMON_PORT=	YES
+HAS_COMMON_PORT=	YES
+
+# whether emacs has mule feature
+HAS_MULE=		YES
+
+# whether building info files by emacs or makeinfo
+BUILD_INFO_BY_EMACS=	YES
+# texinfo packages
+BUILD_DEPENDS+= ${PREFIX}/${EMACS_PACKAGESDIR}/lisp/texinfo/texinfo.el:${PORTSDIR}/editors/xemacs-sumo-packages
 
 # use pkg/* files in ${.CURDIR}
 PKGDIR=		${.CURDIR}/pkg

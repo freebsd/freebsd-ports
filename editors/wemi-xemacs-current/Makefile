@@ -1,5 +1,5 @@
 # New ports collection makefile for:	wemi-current for xemacs
-# Version required:	1.13.3
+# Version required:	1.13.6
 # Date created:		25 July 1999
 # Whom:			Shigeyuki FUKUSHIMA <shige@FreeBSD.org>
 #
