@@ -130,6 +130,7 @@
     SUBDIR += netscape47-navigator
     SUBDIR += nscache
     SUBDIR += npc
+    SUBDIR += nspostgres
     SUBDIR += oops
     SUBDIR += p5-Apache
     SUBDIR += p5-Apache-ASP

@@ -1,0 +1,4 @@
+An driver module allowing access to PostgreSQL databases from
+within AOLserver.
+
+WWW:	http://www.aolserver.com/download/index.adp?dir=%2fmodules%2fnspostgres
