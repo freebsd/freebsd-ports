@@ -8,8 +8,8 @@
 PORTNAME=	freepwing
 PORTVERSION=	${VERSION:S/beta/.b/}
 CATEGORIES=	japanese textproc
-MASTER_SITES=	ftp://ftp.sra.co.jp/pub/misc/freepwing/freepwing/ \
-		ftp://ftp.sra.co.jp/pub/misc/freepwing/freepwing/beta/
+MASTER_SITES=	ftp://ftp.sra.co.jp/pub/misc/freepwing/ \
+		ftp://ftp.sra.co.jp/pub/misc/freepwing/old/
 DISTNAME=	${PORTNAME}-${VERSION}
 
 MAINTAINER=	taoka@FreeBSD.org
