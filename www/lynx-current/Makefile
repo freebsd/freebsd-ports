@@ -6,12 +6,14 @@
 # $FreeBSD$
 #
 
-DISTNAME=       lynx2.8.3dev.18
-PKGNAME=        lynx-2.8.3dev.18
+DISTNAME=       lynx2.8.3dev.20
+PKGNAME=        lynx-2.8.3dev.20
 CATEGORIES=	www
 MASTER_SITES=   http://sol.slcc.edu/lynx/current/
 
 MAINTAINER=	ache@FreeBSD.org
+
+FORBIDDEN=	"Riddled with buffer overflows exploitable by a malicious server to execute code as the local user."
 
 USE_BZIP2=      YES
 NO_LATEST_LINK=	YES
