@@ -12,9 +12,9 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.metaverse.nl/~ernst/
 MASTER_SITE_SUBDIR=	jump-math
 
-BUILD_DEPENDS=	${ANT}:${PORTSDIR}/devel/jakarta-ant
-
 MAINTAINER=	znerd@FreeBSD.org
+
+BUILD_DEPENDS=	${ANT}:${PORTSDIR}/devel/jakarta-ant
 
 USE_JAVA=	1.2+
 
