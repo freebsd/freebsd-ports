@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-DISTNAME=	sp-1.3
+DISTNAME=	sp-1.3.4
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp.jclark.com/pub/sp/
 
@@ -21,7 +21,7 @@ post-patch:
 post-install:
 	$(MKDIR) $(PREFIX)/include/sp
 	$(MKDIR) $(PREFIX)/share/doc/sp
-	$(RM) $(WRKSRC)/include/*.orig
+	$(RM) -f $(WRKSRC)/include/*.orig
 	for file in $(WRKSRC)/include/*;do $(INSTALL_DATA) $$file $(PREFIX)/include/sp;done
 	for file in $(WRKSRC)/doc/*;do $(INSTALL_DATA) $$file $(PREFIX)/share/doc/sp;done
 
