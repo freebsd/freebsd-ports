@@ -571,6 +571,7 @@
     SUBDIR += vtcl
     SUBDIR += wedit
     SUBDIR += xmake
+    SUBDIR += xtl
     SUBDIR += xwpe
     SUBDIR += xxgdb
     SUBDIR += yacl
