@@ -69,7 +69,7 @@ PLIST_SUB+=	TLEN:="@comment "
 
 .if defined(WITH_JABBER)
 CONFIGURE_ARGS+=	--with-jabber
-LIB_DEPENDS+=	loudmouth.0:${PORTSDIR}/net/loudmouth
+LIB_DEPENDS+=	loudmouth-1.0:${PORTSDIR}/net/loudmouth
 PLIST_SUB+=	JABBER:=""
 .else
 CONFIGURE_ARGS+=	--without-jabber
