@@ -106,6 +106,7 @@
     SUBDIR += dtc
     SUBDIR += du2ps
     SUBDIR += dump9660
+    SUBDIR += dupfind
     SUBDIR += duplicity
     SUBDIR += durep
     SUBDIR += dvd+rw-tools
