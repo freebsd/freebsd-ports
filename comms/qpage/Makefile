@@ -3,7 +3,7 @@
 # Date created:		02 Aug 1997
 # Whom:			joes@seaport.net
 #
-# $Id: Makefile,v 1.2 1998/06/03 06:13:48 vanilla Exp $
+# $Id: Makefile,v 1.3 1998/06/04 03:54:35 vanilla Exp $
 #
 
 DISTNAME=	qpage-3.2
@@ -12,6 +12,8 @@ MASTER_SITES=	http://www.qpage.org/download/
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	joes@seaport.net
+
+BROKEN=		checksum
 
 MAN1=		qpage.1
 
