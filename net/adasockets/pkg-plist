@@ -1,4 +1,5 @@
 bin/adasockets-config
+lib/libadasockets.so
 lib/libadasockets.so.0
 lib/libadasockets.a
 lib/adasockets/sockets-constants.ali
@@ -26,7 +27,5 @@ lib/adasockets/sockets.adb
 lib/adasockets/sockets.ads
 share/doc/adasockets/adasockets.ps
 share/doc/adasockets/adasockets.pdf
-@unexec install-info --delete %D/info/adasockets.info %D/info/dir
-info/adasockets.info
-@exec install-info %D/info/adasockets.info %D/info/dir
 @dirrm lib/adasockets
+@dirrm share/doc/adasockets
