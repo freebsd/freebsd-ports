@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	svk
-PORTVERSION=	0.18
+PORTVERSION=	0.19
 PORTREVISION=	0
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
@@ -21,7 +21,10 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/SVN/Core.pm:${PORTSDIR}/devel/subversio
 		${SITE_PERL}/Algorithm/Annotate.pm:${PORTSDIR}/devel/p5-Algorithm-Annotate \
 		${SITE_PERL}/Algorithm/Diff.pm:${PORTSDIR}/devel/p5-Algorithm-Diff \
 		${SITE_PERL}/${PERL_ARCH}/Clone.pm:${PORTSDIR}/devel/p5-Clone \
+		${SITE_PERL}/${PERL_ARCH}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib \
 		${SITE_PERL}/Data/Hierarchy.pm:${PORTSDIR}/devel/p5-Data-Hierarchy \
+		${SITE_PERL}/File/BaseDir.pm:${PORTSDIR}/devel/p5-File-BaseDir \
+		${SITE_PERL}/File/MimeInfo.pm:${PORTSDIR}/devel/p5-File-MimeInfo \
 		${SITE_PERL}/Locale/Maketext/Lexicon.pm:${PORTSDIR}/devel/p5-Locale-Maketext-Lexicon \
 		${SITE_PERL}/Locale/Maketext/Simple.pm:${PORTSDIR}/devel/p5-Locale-Maketext-Simple \
 		${SITE_PERL}/PerlIO/via/dynamic.pm:${PORTSDIR}/devel/p5-PerlIO-via-dynamic \
@@ -81,6 +84,8 @@ MAN3=		SVK.3 \
 		SVK::Editor::Diff.3 \
 		SVK::Editor::Merge.3 \
 		SVK::Editor::Patch.3 \
+		SVK::Editor::Rename.3 \
+		SVK::Editor::Translate.3 \
 		SVK::Editor::XD.3 \
 		SVK::Merge.3 \
 		SVK::Notify.3 \
@@ -100,6 +105,13 @@ PPERL=		${PERL}
 RUN_DEPENDS+=	pperl:${PORTSDIR}/devel/p5-PPerl
 PPERL=		${LOCALBASE}/bin/pperl
 .endif
+
+pre-everything::
+	@${ECHO} ""
+	@${ECHO} "If you see some missing dependency, please update your"
+	@${ECHO} "ports tree and upgrade all dependencies by 'portupgrade -R svk'."
+	@${ECHO} "Then try again."
+	@${ECHO} ""
 
 post-patch:
 	@${REINPLACE_CMD} -e "s,%%PPERL%%,${PPERL}," ${WRKSRC}/bin/svk
