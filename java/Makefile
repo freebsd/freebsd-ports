@@ -67,6 +67,7 @@
     SUBDIR += jump
     SUBDIR += junit
     SUBDIR += kaffe
+    SUBDIR += kaffe-devel
     SUBDIR += linux-blackdown-jdk12
     SUBDIR += linux-blackdown-jdk13
     SUBDIR += linux-blackdown-jdk14

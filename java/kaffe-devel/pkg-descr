@@ -1,0 +1,8 @@
+Kaffe is multi-platform Java virtual machine.  It includes its own
+implementation of the Java JDK 1.2 standard classes, including the
+AWT classes. Kaffe also does "just-in-time" compilation of Java
+bytecode into machine code for increased execution speed.
+
+WWW: http://www.kaffe.org/
+
+* Java and Javasoft are registered trademark of Sun Microsystems, Inc.
