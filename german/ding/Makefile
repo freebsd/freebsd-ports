@@ -6,11 +6,10 @@
 #
 
 PORTNAME=		ding
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=		german
 MASTER_SITES=	http://cgi.tu-chemnitz.de/ftp-home/pub/Local/urz/ding/ \
 				ftp://ftp.tu-chemnitz.de/pub/Local/urz/ding/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=		nectar@FreeBSD.ORG
 
@@ -21,7 +20,7 @@ USE_X_PREFIX=	yes
 
 do-build:
 	${SED} -E -e '1,/^exec/ s!wish!wish8.3!' \
-	  -e 's!/usr/dict/ger-eng.txt!${PREFIX}/share/ding/ger-eng.txt!' \
+	  -e 's!/usr/share/dict/ger-eng.txt!${PREFIX}/share/ding/ger-eng.txt!' \
 	  ${WRKSRC}/ding > ${WRKSRC}/dingX
 
 do-install:
