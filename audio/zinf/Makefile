@@ -11,7 +11,9 @@ PORTREVISION=	1
 CATEGORIES=	audio gnome
 MASTER_SITES=	http://www.freeamp.org/download/src/
 
-MAINTAINER=	roman@xpert.com
+MAINTAINER=	ports@freebsd.org
+
+BROKEN=		"incompatibility with release versions of musicbrainz API."
 
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 LIB_DEPENDS=	musicbrainz.1:${PORTSDIR}/audio/musicbrainz \
