@@ -7979,6 +7979,7 @@ pawm		ports/x11-wm/pawm
 pbasic		ports/lang/pbasic
 pbnc		ports/net/pbnc
 pbs		ports/misc/pbs
+pbzip2		ports/archivers/pbzip2
 pcal		ports/print/pcal
 pcb		ports/cad/pcb
 pccts		ports/devel/pccts
