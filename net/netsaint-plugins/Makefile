@@ -8,7 +8,8 @@
 PORTNAME=	netsaint-plugins
 PORTVERSION=	1.2.9.4
 CATEGORIES=	net
-MASTER_SITES=	http://download.sourceforge.net/netsaintplug/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	netsaintplug
 DISTNAME=	${PORTNAME}-1.2.9-4
 
 MAINTAINER=	blaz@si.FreeBSD.org
