@@ -4,6 +4,7 @@
 #
 # $FreeBSD$
 
+PORTVERSION=	3.08
 CATEGORIES=	astro linux
 PKGNAMEPREFIX=	linux-
 
@@ -22,7 +23,7 @@ USE_LINUX=	yes
 PORT_CPU?=	i686
 PORT_VENDOR=	pc
 PORT_OSNAME=	linux
-PORT_OSREL=	-gnu-gnulibc2.1
+PORT_OSREL=	-gnu
 
 # Local overrides
 #
