@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnumail
-PORTVERSION=	0.7.0
+PORTVERSION=	1.0.0
 CATEGORIES=	mail
 MASTER_SITES=	http://www.collaboration-world.com/gnumail/
 DISTNAME=	GNUMail-${PORTVERSION}
@@ -19,7 +19,7 @@ RUN_DEPENDS=	${XGPSBUNDLEDIR}/${GNU_ARCH}/${OPSYS:L}/gnu-gnu-gnu/libgnustep-xgps
 		${LOCALLIBDIR}/${GNU_ARCH}/${OPSYS:L}/gnu-gnu-gnu/libPantomime.so:${PORTSDIR}/mail/pantomime
 
 PREFIX=		${LOCALBASE}/GNUstep
-WRKSRC=		${WRKDIR}/GNUMail/Source
+WRKSRC=		${WRKDIR}/GNUMail
 USE_NEWGCC=	yes
 USE_GMAKE=	yes
 MAKEFILE=
