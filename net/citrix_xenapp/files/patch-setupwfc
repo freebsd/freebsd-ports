@@ -5,7 +5,7 @@
                 # processor. We also assume that this is reported by uname -m
                 # "ix86" where x is some number.
 -               if uname -m | grep 86 2>&1 >/dev/null ;then
-+               if uname -m | grep i386 2>&1 >/dev/null ;then
++               if uname -m | grep i[3456]86 2>&1 >/dev/null ;then
                     PLATFORM=linuxx86
                     DISP_PLATFORM="Linux (x86)"
                 elif uname -m | grep -i arm 2>&1 >/dev/null  ;then
