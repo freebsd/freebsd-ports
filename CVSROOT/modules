@@ -7681,6 +7681,7 @@ qrash		ports/x11/qrash
 qscanplot	ports/math/qscanplot
 qscheme		ports/lang/qscheme
 qscintilla	ports/x11-toolkits/qscintilla
+qsf		ports/mail/qsf
 qslim		ports/graphics/qslim
 qssl		ports/devel/qssl
 qstat		ports/games/qstat
