@@ -1946,6 +1946,7 @@ fsv		ports/x11-fm/fsv
 fsync		src/usr.bin/fsync
 ft		src/sbin/i386/ft
 ft2demos	ports/print/ft2demos
+ftdi-eeprom	ports/misc/ftdi-eeprom
 fte		ports/editors/fte
 ftnchek		ports/devel/ftnchek
 ftp		src/usr.bin/ftp
