@@ -62,8 +62,8 @@ MAKE_ENV=	MACHINE_ARCH=${RTEMS_ARCH} NO_CPU_CFLAGS=true
 # Since once mk/bsd.cpu.mk adds the _CPUCFLAGS they can't be removed
 # by NO_CPU_FLAGS, and since they are added long before here we are
 # stuck with this hack.
-CFLAGS:=	${CFLAGS:C/${_CPUCFLAGS}//}
-CXXFLAGS:=	${CXXFLAGS:C/${_CPUCFLAGS}//}
+CFLAGS:=	${CFLAGS:C/-mcpu=[^ ]*//:C/-march=[^ ]*//:C/-mtune=[^ ]*//}
+CXXFLAGS:=	${CXXFLAGS:C/-mcpu=[^ ]*//:C/-march=[^ ]*//:C/-mtune=[^ ]*//}
 
 pre-configure:
 	@(cd ${WRKDIR} ; \
