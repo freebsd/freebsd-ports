@@ -6,16 +6,16 @@
 #
 
 PORTNAME?=	to
-PORTVERSION?=	0.2.b
+PORTVERSION?=	2.2.0
 CATEGORIES=	games linux
-MASTER_SITES?=	ftp://files.gamesmania.de/pub/gamesmania/utstation/mods/to20/ \
-		ftp://ftp2.extreme-players.de/ut/mod/tacticalops/ \
-		ftp://ftp.gigabell.net/pub/exp/ut/mod/tacticalops/ \
-		ftp://ftp.task.gda.pl/mirror/ftp.extreme-players.de/exp/ut/mod/tacticalops/ \
-		ftp://downloads.khabal.com/pub/Download/unreal/mods/
+MASTER_SITES?=	http://www.netreachgames.com/downloads/to/ \
+		http://downloads.fragism.com/ \
+		http://lmb.atom.is/downloads/Tacops/ \
+		http://hq.hack.pl/~bond/zip/
+
 PKGNAMEPREFIX=	utserver-
 .ifndef(DISTFILES)
-DISTNAME?=	TOb200ManualInstall
+DISTNAME?=	TacticalOps220
 .endif
 
 MAINTAINER?=	pat@FreeBSD.org
@@ -29,6 +29,7 @@ NO_BUILD=	yes
 .if (${PORTNAME}==to)
 EXECUTABLES+=	TacticalOpsLinux\\w+
 EXTRA_CLEAN_FILES+=	.+/TacticalOpsLinux.+
+DO_USE_WRKSUBDIR=	yes
 .endif
 .ifndef(DONT_USE_ZIP)
 USE_ZIP=	yes
@@ -42,7 +43,7 @@ STRIP=	${LINUXBASE}/usr/bin/strip
 STRIP=
 .endif
 
-UTDIR=		usr/games/ut-server/${UTSUBDIR}/
+UTDIR=		usr/games/ut-server/
 PLIST_SUB+=	UTDIR="${UTDIR}"
 INSTALL_DIR=	${INSTALL} -d -o ${BINOWN} -g ${BINGRP} -m ${BINMODE}
 SORT?=		/usr/bin/sort
