@@ -24,6 +24,7 @@ DISTFILES+=	easton.tar.gz strongs.tar.gz torrey.tar.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A GUI based Bible program for X11
 
+BROKEN=		unfetchable
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
 PLIST=		${WRKDIR}/PLIST
