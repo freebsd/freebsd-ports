@@ -3,6 +3,7 @@ etc/rc.d/courier-authdaemond.sh
 %%MYSQLFLAG%%etc/authlib/authmysqlrc.dist
 %%PGSQLFLAG%%etc/authlib/authpgsqlrc.dist
 %%LDAPFLAG%%etc/authlib/authldaprc.dist
+@unexec if cmp -s %D/etc/authlib/authdaemonrc.dist %D/etc/authlib/authdaemonrc; then rm -f %D/etc/authlib/authdaemonrc; fi
 etc/authlib/authdaemonrc.dist
 include/courier_auth_config.h
 include/courierauth.h
@@ -60,5 +61,6 @@ sbin/vchkpw2userdb
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @unexec rmdir %D/var/authdaemon 2>/dev/null || true
 @unexec rmdir %D/var 2>/dev/null || true
-@dirrm etc/authlib
-@unexec rmdir %D/libexec/authlib 2>/dev/null || true
+@unexec rmdir %D/etc/authlib 2>/dev/null || true
+@dirrm lib/courier-authlib
+@dirrm libexec/courier-authlib
