@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gtk
-PORTVERSION=	1.3.9
+PORTVERSION=	1.3.12
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.gimp.org/pub/%SUBDIR%/ \
 		ftp://ftp.cs.umn.edu/pub/gimp/%SUBDIR%/ \
@@ -19,8 +19,8 @@ DISTNAME=	gtk+-${PORTVERSION}
 MAINTAINER=	gnome@FreeBSD.org
 
 BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
-LIB_DEPENDS=	glib-1.3.9:${PORTSDIR}/devel/glib13 \
-		atk.5:${PORTSDIR}/devel/atk \
+LIB_DEPENDS=	glib-1.3.12:${PORTSDIR}/devel/glib13 \
+		atk.9:${PORTSDIR}/devel/atk \
 		pango.0:${PORTSDIR}/x11-toolkits/pango \
 		png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
@@ -36,6 +36,7 @@ INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 PLIST_SUB=	GTK_VERSION="${PORTVERSION}"
 
 MAN1=		gdk-pixbuf-csource.1

@@ -1,14 +1,14 @@
 
 $FreeBSD$
 
---- configure.orig	Tue Apr 17 23:13:16 2001
-+++ configure	Sun Apr 29 14:55:08 2001
-@@ -3842,7 +3842,7 @@
-   cat conftest.$ac_ext >&5
-   rm -rf conftest*
-   CATOBJEXT=.mo
+--- configure.orig	Mon Dec 24 01:02:02 2001
++++ configure	Fri Jan 18 11:15:57 2002
+@@ -9794,7 +9794,7 @@
+   echo "$as_me: failed program was:" >&5
+ cat conftest.$ac_ext >&5
+ CATOBJEXT=.mo
 -		   DATADIRNAME=lib
 +		   DATADIRNAME=share
  fi
- rm -f conftest*
- 		INSTOBJEXT=.mo 	
+ rm -f conftest.$ac_objext conftest$ac_exeext conftest.$ac_ext
+ 		INSTOBJEXT=.mo
