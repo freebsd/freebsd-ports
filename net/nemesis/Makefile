@@ -13,7 +13,7 @@ MASTER_SITES=	http://celerity.bartoli.org/nemesis/  \
 		http://www.packetfactory.net/Projects/nemesis/  \
 		http://www.nol.net/~halogen/
 
-MAINTAINER=     obrien@FreeBSD.org
+MAINTAINER=     ports@FreeBSD.org
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libnet.a:${PORTSDIR}/net/libnet
 
