@@ -18,6 +18,8 @@ BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/sqlite/main.py:${PORTSDIR}/databases/py-PySQ
 		${PYTHON_SITELIBDIR}/neo_cgi.so:${PORTSDIR}/www/clearsilver-python \
 		${PYTHON_SITELIBDIR}/svn/__init__.py:${PORTSDIR}/devel/subversion-python
 
+BROKEN=		Uses incorrect directory for manpages
+
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
