@@ -3,7 +3,7 @@
 # Date created:		23 June 1996
 # Whom:			axl@iafrica.com
 #
-# $Id: Makefile,v 1.16 1998/10/10 04:12:51 steve Exp $
+# $Id: Makefile,v 1.17 1998/10/12 18:48:52 jseger Exp $
 #
 
 DISTNAME=	exim-2.05
@@ -14,8 +14,6 @@ DISTFILES=	exim-2.05.tar.gz exim-texinfo-2.00.tar.gz
 MAINTAINER=	axl@iafrica.com
 
 USE_PERL5=	YES
-
-BROKEN_ELF=	yes
 
 do-configure:
 	${MKDIR} ${WRKSRC}/Local

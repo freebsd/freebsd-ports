@@ -3,7 +3,7 @@
 # Date created:			Mon  6 Jul 12:00:06 CEST 1998
 # Whom:				Udo Schweigert <Udo.Schweigert@mchp.siemens.de>
 #
-# $Id: Makefile,v 1.1.1.1 1998/07/12 23:04:32 steve Exp $
+# $Id: Makefile,v 1.2 1998/10/12 18:38:00 jseger Exp $
 #
 
 DISTNAME=	coolmail-1.3
@@ -13,8 +13,6 @@ MASTER_SITE_SUBDIR=system/mail/biffs
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	Udo.Schweigert@mchp.siemens.de
-
-BROKEN_ELF=	yes
 
 PATCH_STRIP=	-p1
 

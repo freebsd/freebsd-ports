@@ -1,77 +1,55 @@
-diff -rc coolmail-1.3.org/Makefile coolmail-1.3/Makefile
-*** coolmail-1.3.org/Makefile	Thu Jan 11 18:55:40 1996
---- coolmail-1.3/Makefile	Fri Jul  3 09:02:25 1998
-***************
-*** 22,52 ****
-  # your linker where to find the libraries it will need, and BINDIR and
-  # MANDIR specify the places to install the binary executable and manpage
-  # files for coolmail when you type `make install'.
-! CFLAGS   = 
-  LINK     = $(CC)
-! INCLUDES = -I/usr/X11R5/include
-! LIB_DIRS = -L/usr/X11R5/lib
-  BINDIR   = /usr/local/bin
-  MANDIR   = /usr/local/man/man1
-  
-  # Comment these out if you can't or don't want to use the digitized audio
-  # feature.
-! AUDIO        = -DAUDIO
-! AUDIO_MODULE = audio.o
-  
-  #### You really don't need to read past this point. ####
-  
-  LIBS  = $(LIB_DIRS) -lXt -lX11 -lm -lXext
-! COPTS = $(CFLAGS) $(AUDIO)
-  
-  all: coolmail
-  	# Done.
-  
-! new:
-! 	rm -f *.o coolmail core
-  
-  clean:
-! 	rm -f *.o core
-  
-  install:
-  	@if [ -w $(BINDIR) ] ; then \
---- 22,58 ----
-  # your linker where to find the libraries it will need, and BINDIR and
-  # MANDIR specify the places to install the binary executable and manpage
-  # files for coolmail when you type `make install'.
-! CFLAGS   = -DNO_CUSERID
-  LINK     = $(CC)
-! INCLUDES = -I/usr/X11R6/include
-! LIB_DIRS = -L/usr/X11R6/lib
-  BINDIR   = /usr/local/bin
-  MANDIR   = /usr/local/man/man1
-  
-  # Comment these out if you can't or don't want to use the digitized audio
-  # feature.
-! # AUDIO        = -DAUDIO
-! # AUDIO_MODULE = audio.o
-! 
-! # Comment these out if you don't want Maildir support
-! MAILDIR = -DSUPPORT_MAILDIR
-! # for debugging:
-! #MAILDIR = $(MAILDIR) -DSUPPORT_MAILDIR_DEBUG
-! # normally ignores non-regular files in the Maildir; uncomment to change
-! #MAILDIR = $(MAILDIR) -DSUPPORT_MAILDIR_STRICTER
-  
-  #### You really don't need to read past this point. ####
-  
-  LIBS  = $(LIB_DIRS) -lXt -lX11 -lm -lXext
-! COPTS = $(CFLAGS) $(AUDIO) $(MAILDIR)
-  
-  all: coolmail
-  	# Done.
-  
-! new: clean all
-  
-  clean:
-! 	rm -f *.o core coolmail
-  
-  install:
-  	@if [ -w $(BINDIR) ] ; then \
+--- Makefile.orig	Thu Jan 11 11:55:40 1996
++++ Makefile	Mon Oct 12 17:55:05 1998
+@@ -22,31 +22,40 @@
+ # your linker where to find the libraries it will need, and BINDIR and
+ # MANDIR specify the places to install the binary executable and manpage
+ # files for coolmail when you type `make install'.
+-CFLAGS   = 
++CFLAGS   = -DNO_CUSERID
+ LINK     = $(CC)
+-INCLUDES = -I/usr/X11R5/include
+-LIB_DIRS = -L/usr/X11R5/lib
++INCLUDES = -I$(X11BASE)/include
++LIB_DIRS = -L$(X11BASE)/lib
+ BINDIR   = /usr/local/bin
+ MANDIR   = /usr/local/man/man1
+ 
+ # Comment these out if you can't or don't want to use the digitized audio
+ # feature.
+-AUDIO        = -DAUDIO
+-AUDIO_MODULE = audio.o
++# AUDIO        = -DAUDIO
++# AUDIO_MODULE = audio.o
++
++# Comment these out if you don't want Maildir support
++MAILDIR = -DSUPPORT_MAILDIR
++# for debugging:
++#MAILDIR = $(MAILDIR) -DSUPPORT_MAILDIR_DEBUG
++# normally ignores non-regular files in the Maildir; uncomment to change
++#MAILDIR = $(MAILDIR) -DSUPPORT_MAILDIR_STRICTER
+ 
+ #### You really don't need to read past this point. ####
+ 
+ LIBS  = $(LIB_DIRS) -lXt -lX11 -lm -lXext
+-COPTS = $(CFLAGS) $(AUDIO)
++.if $(PORTOBJFORMAT) == "elf"
++LIBS += -Wl,-rpath,$(X11BASE)/lib
++.endif
++COPTS = $(CFLAGS) $(AUDIO) $(MAILDIR)
+ 
+ all: coolmail
+ 	# Done.
+ 
+-new:
+-	rm -f *.o coolmail core
++new: clean all
+ 
+ clean:
+-	rm -f *.o core
++	rm -f *.o core coolmail
+ 
+ install:
+ 	@if [ -w $(BINDIR) ] ; then \
 diff -rc coolmail-1.3.org/audio.c coolmail-1.3/audio.c
 *** coolmail-1.3.org/audio.c	Thu Jan 11 18:56:40 1996
 --- coolmail-1.3/audio.c	Fri Jul  3 08:47:51 1998
