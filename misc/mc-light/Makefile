@@ -7,6 +7,7 @@
 
 PORTNAME=	mc-light
 PORTVERSION=	4.1.40.p9
+PORTREVISION=	1
 CATEGORIES=	misc shells
 MASTER_SITES=	http://mc.linuxinside.com/Releases/
 DISTNAME=	mc-${PORTVERSION:S/.p9/-pre9/}
