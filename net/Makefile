@@ -335,6 +335,7 @@
     SUBDIR += sendip
     SUBDIR += sharity-light
     SUBDIR += sing
+    SUBDIR += sleuth
     SUBDIR += slirp
     SUBDIR += smbfs
     SUBDIR += smbtcpdump
