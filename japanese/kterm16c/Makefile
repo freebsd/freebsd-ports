@@ -1,18 +1,23 @@
-# New ports collection makefile for:	kterm
+# New ports collection makefile for:	kterm of 16 colors
 # Version required:	6.2
 # Date created:		18 November 1994
 # Whom:			asami
 #
-# $Id: Makefile,v 1.16 1997/12/25 22:29:38 asami Exp $
+# $Id: Makefile,v 1.17 1998/12/23 01:47:23 steve Exp $
 #
 
 DISTNAME=	kterm-6.2.0
-PKGNAME=	ja-kterm-6.2.0
+PKGNAME=	ja-kterm16c-6.2.0
 CATEGORIES=	japanese x11
-MASTER_SITES=	${MASTER_SITE_XCONTRIB}
+MASTER_SITES=	${MASTER_SITE_XCONTRIB} \
+		ftp://ftp.interface-business.de/pub/outgoing/ \
+		ftp://ftp.cs.bris.ac.uk/pub/users/hedley/
+DISTFILES=	kterm-6.2.0.tar.gz pcemu1.01alpha.tar.gz
+EXTRACT_ONLY=	kterm-6.2.0.tar.gz
+
 MASTER_SITE_SUBDIR=	applications
 
-MAINTAINER=	shige@kuis.kyoto-u.ac.jp
+MAINTAINER=	kiri@pis.toba-cmt.ac.jp
 
 BUILD_DEPENDS=	nkf:${PORTSDIR}/japanese/nkf
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
@@ -24,10 +29,15 @@ PATCHFILES=	kterm-6.2.0.NFS-xauth.patch \
 PATCH_DIST_STRIP= -p1
 
 USE_IMAKE=	yes
-MAN1=		kterm.1
-MANCOMPRESSED=	yes
 
-DOCDIR=		${PREFIX}/share/doc/kterm
+DOCDIR=		${PREFIX}/share/doc/kterm16c
+
+post-extract:
+	@${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/pcemu1.01alpha.tar.gz \
+		${EXTRACT_AFTER_ARGS} -C ${WRKDIR} pcemu1.01alpha/vga.bdf
+	@cd ${WRKDIR}/pcemu1.01alpha; \
+		bdftopcf vga.bdf > vga.pcf; \
+		${GZIP_CMD} vga.pcf
 
 .if !defined(PACKAGE_BUILDING)
 
@@ -54,16 +64,19 @@ post-patch:
 .endif
 .endif
 
+do-install:
+	@${INSTALL_PROGRAM} ${WRKSRC}/kterm ${PREFIX}/bin/kterm16c
+	@${INSTALL_DATA} ${WRKSRC}/KTerm.ad ${PREFIX}/lib/X11/app-defaults/KTerm.16-colors
+	@${INSTALL_DATA} ${WRKDIR}/pcemu1.01alpha/vga.pcf.gz \
+		${PREFIX}/lib/X11/fonts/misc
+	@mkfontdir ${PREFIX}/lib/X11/fonts/misc
+
 post-install:
-# install japanese manual
-	@${MV} ${WRKSRC}/kterm.jman ${WRKSRC}/kterm.jman.jis
-	@nkf -e -u ${WRKSRC}/kterm.jman.jis >${WRKSRC}/kterm.jman
-	@${INSTALL_MAN} ${WRKSRC}/kterm.jman ${PREFIX}/man/ja/man1/kterm.1
-	@${GZIP_CMD} ${PREFIX}/man/ja/man1/kterm.1
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCDIR}
-	@${INSTALL_DATA} ${WRKSRC}/README.kt ${DOCDIR}
-	@${INSTALL_DATA} ${WRKSRC}/README.wallpaper ${DOCDIR}/README.wallpaper.ja
+	@${INSTALL_DATA} ${FILESDIR}/dot.termcap ${DOCDIR}
+	@${INSTALL_DATA} ${FILESDIR}/kterm16c.doc ${DOCDIR}
 .endif
+	@${CAT} ${PKGDIR}/MESSAGE
 
 .include <bsd.port.mk>

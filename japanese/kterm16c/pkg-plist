@@ -1,6 +1,7 @@
-bin/kterm
-lib/X11/app-defaults/KTerm
-man/ja/man1/kterm.1.gz
-share/doc/kterm/README.kt
-share/doc/kterm/README.wallpaper.ja
-@dirrm share/doc/kterm
+bin/kterm16c
+lib/X11/app-defaults/KTerm.16-colors
+lib/X11/fonts/misc/vga.pcf.gz
+@exec /usr/X11R6/bin/mkfontdir %B
+share/doc/kterm16c/dot.termcap
+share/doc/kterm16c/kterm16c.doc
+@dirrm share/doc/kterm16c

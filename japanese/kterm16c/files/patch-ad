@@ -1,0 +1,10 @@
+diff --exclude=Makefile -ur kterm-6.2.0.orig/kterm.hkterm.h
+--- kterm-6.2.0.orig/kterm.h	Fri Jul 12 14:01:37 1996
++++ kterm.h	Thu Dec 24 11:46:28 1998
+@@ -37,5 +37,6 @@
+ #define KTERM_COLOR	/* color sequence */
+ #define KTERM_NOTEK	/* disables Tektronix emulation */
+ #undef  KTERM_XAW3D	/* Xaw3d -DARROW_SCROLLBAR support */
++#define COLOR_16	/* 16 palets, BOLD means hilight */
+ 
+ #endif /* !_KTERM_H_ */
