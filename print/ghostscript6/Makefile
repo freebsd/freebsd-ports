@@ -87,7 +87,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/readme.hp8 \
 		${PREFIX}/share/ghostscript/5.50/doc
 .if defined(PDFENCRYPT)
-        ${INSTALL_DATA} ${DISTDIR}/pdf_sec.ps ${PREFIX}/share/ghostscript/5.50
+	${INSTALL_DATA} ${DISTDIR}/pdf_sec.ps ${PREFIX}/share/ghostscript/5.50
 .endif
 
 # encrypted PDF support.  can't be packaged due to export control issues.
