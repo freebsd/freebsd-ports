@@ -18,7 +18,8 @@ MAINTAINER=	yasuf@bsdclub.org
 USE_AUTOCONF=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--enable-shared
-MAN1=		${RUBY_NAME}.1
+MAN1=		ruby${_RUBY_SUFFIX}.1
+MLINKS=		ruby${_RUBY_SUFFIX}.1 ruby.1
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 
@@ -32,7 +33,6 @@ XEMACSLISPDIR=	${PREFIX}/lib/xemacs/site-lisp
 
 .if !empty(RUBY_SUFFIX)
 CONFIGURE_ARGS+=	--program-suffix="${RUBY_SUFFIX}"
-MLINKS=		${RUBY_NAME}.1 ruby.1
 .endif
 
 .if ${OSVERSION} >= 400014
@@ -46,7 +46,13 @@ post-patch:
 
 post-install:
 	strip ${RUBY}
-	${LN} -fs ${RUBY} ${PREFIX}/ruby
+.if empty(RUBY_SUFFIX)
+	${MV} ${RUBY} ${RUBY}${_RUBY_SUFFIX}
+	${LN} -fs ${RUBY}${_RUBY_SUFFIX} ${RUBY}
+	${MV} ${PREFIX}/man/man1/ruby.1 ${PREFIX}/man/man1/ruby${_RUBY_SUFFIX}.1
+.else
+	${LN} -fs ${RUBY} ${PREFIX}/bin/ruby
+.endif
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/sample/* ${RUBY_EXAMPLESDIR}
