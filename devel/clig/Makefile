@@ -13,8 +13,8 @@ MASTER_SITES=	http://wsd.iitb.fhg.de/~kir/clighome/
 MAINTAINER=	billf@FreeBSD.org
 
 # This should work with any version of tcl.  See also ${MAKE_ENV}.
-BUILD_DEPENDS=	${PREFIX}/bin/tclsh8.2:${PORTSDIR}/lang/tcl82
-RUN_DEPENDS=	${PREFIX}/bin/tclsh8.2:${PORTSDIR}/lang/tcl82
+BUILD_DEPENDS=	${LOCALBASE}/bin/tclsh8.2:${PORTSDIR}/lang/tcl82
+RUN_DEPENDS=	${LOCALBASE}/bin/tclsh8.2:${PORTSDIR}/lang/tcl82
 
 MAN1=		clig.1
 
