@@ -18,7 +18,7 @@ restart)
         ;;
 stop)
         [ -r ${PREFIX}/var/smokeping/smokeping.pid ] && \
-	    su -f -m smokeping -c kill `cat ${PREFIX}/var/smokeping/smokeping.pid` > /dev/null && \
+	    su -f -m smokeping -c "kill `cat ${PREFIX}/var/smokeping/smokeping.pid`" > /dev/null && \
 	    echo -n ' smokeping'
         ;;
 *)
