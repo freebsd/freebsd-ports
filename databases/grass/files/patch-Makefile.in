@@ -1,5 +1,5 @@
---- Makefile.in.orig	Mon May 13 09:41:58 2002
-+++ Makefile.in	Sat May 18 21:23:45 2002
+--- Makefile.in.orig	Fri Oct 11 06:06:36 2002
++++ Makefile.in	Thu Oct  9 22:59:48 2003
 @@ -172,8 +172,6 @@
  	test -d ${BINDIR} || ${MAKE_DIR_CMD} ${BINDIR}
  	${SHELL} -c "sed -e \"s#^GISBASE.*#GISBASE=${INST_DIR}#\" ${GRASS_BIN}/grass${NAME_VER} > ${BINDIR}/grass${NAME_VER} ; true"

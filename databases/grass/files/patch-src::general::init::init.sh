@@ -1,6 +1,6 @@
---- src/general/init/init.sh.orig	Tue Feb 12 11:32:40 2002
-+++ src/general/init/init.sh	Tue Feb 12 11:32:52 2002
-@@ -76,12 +76,12 @@
+--- src/general/init/init.sh.orig	Sun Mar 16 21:25:20 2003
++++ src/general/init/init.sh	Thu Oct  9 23:09:58 2003
+@@ -165,12 +165,12 @@
  fi
  
  if [ ! "$GRASS_TCLSH" ] ; then

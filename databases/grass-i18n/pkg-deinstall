@@ -1,0 +1,12 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# remove lockfile so that deinstallation can complete
+
+if [ x$2 != xDEINSTALL ]; then
+    exit
+fi
+
+echo "Removing lockfiles, if any ..."
+rm -rf ${PKG_PREFIX}/grass5/locks/*
