@@ -32,6 +32,35 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="7a9d5dfe-c507-11d8-8898-000d6111a684">
+    <topic>isc-dhcp3-server buffer overflow in logging mechanism</topic>
+    <affects>
+      <package>
+        <name>isc-dhcp3-server</name>
+        <range><lt>3.0.1.r12</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>A buffer overflow exists in the logging functionality
+	  of the DHCP daemon which could lead to Denial of Service
+	  attacks and has the potential to allow attackers to
+	  execute arbitrary code.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0460</cvename>
+      <url>http://www.mandrakesoft.com/security/advisories?name=MDKSA-2004:061</url>
+      <url>http://www.us-cert.gov/cas/techalerts/TA04-174A.html</url>
+      <url>http://www.kb.cert.org/vuls/id/317350</url>
+      <url>http://marc.theaimsgroup.com/?l=bugtraq&amp;m=108795911203342&amp;w=2</url>
+    </references>
+    <dates>
+      <discovery>2004-06-22</discovery>
+      <entry>2004-06-25</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="1f738bda-c6ac-11d8-8898-000d6111a684">
     <topic>Remote Denial of Service of HTTP server and client</topic>
     <affects>
