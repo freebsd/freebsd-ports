@@ -1,0 +1,50 @@
+# This file contains the definitions needed for every possible script
+# to be used with the ABINIT makefiles.  It is very much machine-dependent.
+# It is read by makemake and makearch.
+
+# This file for cernunnos (Pentium 4, Slackware Linux) at the Institute for
+# Materials Physics, University of Vienna, by Wolfgang Pichl
+# with the Intel compiler, Version 7.1
+# see http://www.intel.com/software/products/compilers/flin/noncom.htm
+
+# In this file, the blas library is linked in the same way as the other
+# libraries (lapack, ffts, numrecip).
+
+# Explanations about this file can be found in the  help.makefile_macros file,
+# in the Infos subdirectory
+
+####################################################################
+# Only for the sequential version 
+
+# Machine type
+MACHINE=P6
+# Fortran optimized compilation
+FC=%%FC%%
+FFLAGS=%%FFLAGS%%
+FFLAGS_LIBS=%%FFLAGS_LIBS%%
+
+# C preprocessor, used to preprocess the fortran source.
+CPP=%%CPP%%
+CPP_FLAGS=-P -traditional -D__IFC
+# The cpp directive CHGSTDIO changes the standard I/O definition
+# Uncomment the next line for this to happen.
+#CPP_FLAGS=-P -DCHGSTDIO 
+
+# C optimized compilation.
+CC=%%CC%%
+CFLAGS=%%CFLAGS%%
+
+# Location of perl . Used to generate the script fldiff, in ~ABINIT/Utilities .
+PERL=%%PERL%%
+
+# List of machine-dependent routines
+MACHINE_DEP_C_SEQ_SUBS_LIST=etime.o
+
+# Create BLAS library from abinis source
+# The following lines should be redundant, since this is the default
+# however, we got troubles when they where missing
+BLAS=%%BLAS%%
+LAPACK=%%LAPACK%%
+LIBS=$(LAPACK) $(BLAS)
+
+# This is a last line in makefile_macros ----------
