@@ -1,7 +1,7 @@
 DESCRIPTION
 
 This module implements an Object-Oriented interface to a POP3 server.  It is
-based on RFC1081.
+based on RFC1939.
 
 USAGE
 
@@ -14,3 +14,5 @@ $pop = new Mail::POP3Client("me", "mypassword", "pop3.do.main");
 for ($i = 1; $i <= $pop->Count; $i++) {
 	print $pop->Head($i), "\n";
 }
+
+WWW: http://search.cpan.org/dist/Mail-POP3Client/
