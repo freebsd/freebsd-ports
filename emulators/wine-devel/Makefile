@@ -3,12 +3,12 @@
 # Date created:         Sa   9 Nov 1996 00:52:22 MET
 # Whom:			se
 #
-# $Id: Makefile,v 1.60 1998/09/15 11:13:06 asami Exp $
+# $Id: Makefile,v 1.61 1998/09/17 00:32:31 asami Exp $
 #
 
-DATE=		980517
+DATE=		980927
 DISTNAME=	Wine-${DATE}
-PKGNAME=	wine-98.05.17
+PKGNAME=	wine-98.09.27
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	ALPHA/wine/development
@@ -17,9 +17,13 @@ MAINTAINER=	se@FreeBSD.ORG
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 
-WRKSRC=		${WRKDIR}/wine${DATE}
+WRKSRC=		${WRKDIR}/wine-${DATE}
 GNU_CONFIGURE=	yes
 MAN1=		wine.1
+
+post-extract:
+	-${MKDIR} ${WRKSRC}/include/asm
+	${CP} ${FILESDIR}/bitops.h ${WRKSRC}/include/asm/bitops.h
 
 pre-configure:
 	@${ECHO} "WINE_INI_GLOBAL \"${PREFIX}/etc/wine.conf\"" \
