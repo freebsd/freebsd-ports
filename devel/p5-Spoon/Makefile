@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Spoon
-PORTVERSION=	0.19
+PORTVERSION=	0.20
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/I/IN/INGY/
@@ -25,7 +25,6 @@ PERL_CONFIGURE=	yes
 MAN3=		Spoon.3 \
 		Spoon::Base.3 \
 		Spoon::CGI.3 \
-		Spoon::Config.3 \
 		Spoon::ContentObject.3 \
 		Spoon::Cookie.3 \
 		Spoon::DataObject.3 \
@@ -42,8 +41,18 @@ MAN3=		Spoon.3 \
 
 .include <bsd.port.pre.mk>
 
+.if ${PERL_LEVEL} < 500800
+BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes \
+		${SITE_PERL}/${PERL_ARCH}/Scalar/Util.pm:${PORTSDIR}/lang/p5-Scalar-List-Utils
+post-patch:
+	@${PERL} -i -pe '$$_ = "" if $$. == 3' \
+		${WRKSRC}/lib/Spoon/Base.pm
+
+MAN3+=		Spoon::Config.3
+
 .if ${PERL_LEVEL} < 500601
 IGNORE=		This port requires perl 5.6.1 or later. Install lang/perl5 then try again
+.endif
 .endif
 
 .include <bsd.port.post.mk>
