@@ -1,8 +1,8 @@
---- version.c.org	Sun Oct  4 02:02:34 1998
-+++ version.c	Sun Oct  4 02:10:53 1998
-@@ -643,4 +643,4 @@
- 		for JIS X0212.1990.
+--- version.c.orig	Mon Nov  6 05:30:59 2000
++++ version.c	Mon Nov  6 05:32:35 2000
+@@ -677,4 +677,4 @@
+ iso249 10/29/00	Joined with less-358.  Fixed some bugs caused by join.
  */
  
--char version[] = "332+iso248";
-+char version[] = "332+iso248+regex_cs-lwp9k";
+-char version[] = "358+iso249";
++char version[] = "358+iso249+regex_cs-lwp9k";
