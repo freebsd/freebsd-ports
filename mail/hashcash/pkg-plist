@@ -1,2 +1,6 @@
 bin/hashcash
 bin/sha1
+share/doc/hashcash/CHANGELOG
+share/doc/hashcash/LICENSE
+share/doc/hashcash/README
+@dirrm share/doc/hashcash
