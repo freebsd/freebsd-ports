@@ -1,0 +1,6 @@
+lib/perl5/site_perl/Math/MatrixReal.pm
+lib/perl5/site_perl/Math/Kleene.pod
+lib/perl5/man/man3/Math::MatrixReal.3.gz
+lib/perl5/man/man3/Math::Kleene.3.gz
+lib/perl5/site_perl/i386-freebsd/auto/Math/MatrixReal/.packlist
+@dirrm lib/perl5/site_perl/i386-freebsd/auto/Math/MatrixReal
