@@ -1,12 +1,12 @@
 # New ports collection makefile for:	octave
-# Version required:	2.0.12
-# Date created:		19 April 1998
+# Version required:	2.0.13
+# Date created:		8 September 1998
 # Whom:			chuckr@freebsd.org
 #
-# $Id: Makefile,v 1.14 1998/05/15 18:44:53 chuckr Exp $
+# $Id: Makefile,v 1.15 1998/05/20 02:17:06 chuckr Exp $
 #
 
-DISTNAME=	octave-2.0.12
+DISTNAME=	octave-2.0.13
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.che.wisc.edu/pub/octave/
 
@@ -39,8 +39,8 @@ post-install:
 	$(INSTALL_DATA) $(WRKSRC)/doc/refcard/refcard-legal.ps $(PREFIX)/share/octave/doc
 	$(INSTALL_DATA) $(WRKSRC)/doc/refcard/refcard-a4.ps $(PREFIX)/share/octave/doc
 	$(INSTALL_DATA) $(WRKSRC)/doc/faq/Octave-FAQ.ps $(PREFIX)/share/octave/doc
-	$(RM) -rf $(PREFIX)/libexec/octave/2.0.12/oct/i386-unknown-freebsd?
-	$(RM) -rf $(PREFIX)/libexec/octave/2.0.12/exec/i386-unknown-freebsd?
+	$(RM) -rf $(PREFIX)/libexec/octave/2.0.13/oct/i386-unknown-freebsd?
+	$(RM) -rf $(PREFIX)/libexec/octave/2.0.13/exec/i386-unknown-freebsd?
 	$(RM) -rf $(PREFIX)/libexec/octave/site/oct/i386-unknown-freebsd?
 	$(RM) -rf $(PREFIX)/libexec/octave/site/exec/i386-unknown-freebsd?
 .endif
