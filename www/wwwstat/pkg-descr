@@ -1,0 +1,11 @@
+wwwstat: httpd logfile analysis package
+
+Copyright (c) 1994, 1996 Regents of the University of California.
+
+    wwwstat processes a sequence of httpd Common Logfile Format access_log
+    files and prior summary outputs, and then outputs a summary of
+    the access statistics in a nice HTML format.
+
+    splitlog processes a sequence of httpd Common Logfile Format access_log
+    files (or CLF with a one-field prefix) and splits the entries into
+    separate files according to the requested URL and/or vhost prefix.

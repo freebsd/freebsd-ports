@@ -1,0 +1,15 @@
+--- splitlog.rc.orig	Sun Mar  2 18:50:00 1997
++++ splitlog.rc	Sun Mar  2 18:51:21 1997
+@@ -41,10 +41,12 @@
+ # Specify the default location of your access log
+ #
+ ##  $DefaultLog = '/usr/local/etc/httpd/logs/access_log';
++$DefaultLog = '/var/log/httpd-access.log';
+ #
+ # Specify the default destination directory for the split logfiles
+ #
+ ##  $DestDir    = '';         # current directory
++$DestDir    = '/tmp';         # current directory
+ #
+ # Specify the filename (no .ext) for non-matching, non-split log entries
+ #
