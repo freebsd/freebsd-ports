@@ -1,0 +1,24 @@
+diff -urN ../fvwm95-2.0.43a-Autoconf.orig/modules/Makefile.in ./modules/Makefile.in
+--- ../fvwm95-2.0.43a-Autoconf.orig/modules/Makefile.in	Sun Nov 22 04:52:00 1998
++++ ./modules/Makefile.in	Sun Nov 22 04:59:32 1998
+@@ -10,6 +10,8 @@
+ 	FvwmPager FvwmSave FvwmSaveDesk FvwmScroll FvwmTalk FvwmTaskBar \
+ 	FvwmWinList
+ modules_dir=@prefix@/lib/X11/@fvwm_name@
++INSTALL_MAN=@INSTALL_MAN@
++MANPREFIX=@mandir@
+ 
+ all:
+ 	@for i in ${subdirs}; do \
+@@ -22,6 +24,11 @@
+ 	@for i in ${subdirs}; do \
+ 		echo Installing in $$i ; \
+ 		(cd $$i; ${MAKE} install) \
++	done
++
++install.man:
++	@for i in ${subdirs}; do \
++		(${INSTALL_MAN} $$i/$$i.man ${MANPREFIX}/man1/$$i.1) \
+ 	done
+ 
+ depend:

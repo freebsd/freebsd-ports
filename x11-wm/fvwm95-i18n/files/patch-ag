@@ -1,0 +1,36 @@
+diff -urN ../fvwm95-2.0.43a-Autoconf.orig/fvwm/read.c ./fvwm/read.c
+--- ../fvwm95-2.0.43a-Autoconf.orig/fvwm/read.c	Sun Nov 22 04:58:47 1998
++++ ./fvwm/read.c	Sun Nov 22 04:59:56 1998
+@@ -133,6 +133,22 @@
+       if((filename != NULL)&&(filename!= ofilename))
+ 	free(filename);
+       /* find the home directory to look in */
++#ifdef I18N
++	if (Lang != NULL && strlen(Lang) > 0) {
++		Home = FVWMDIR;
++		HomeLen = strlen(Home);
++		home_file = safemalloc(HomeLen + strlen(ofilename)
++			+ strlen(Lang) + 3);
++		strcpy(home_file,Home);
++		strcat(home_file,"/");
++		strcat(home_file, Lang);
++		strcat(home_file, "/");
++		strcat(home_file,ofilename);
++		filename = home_file;
++		fd = fopen(filename,"r");      
++	}
++	if (fd == NULL) {
++#endif
+       Home = FVWMDIR;
+       HomeLen = strlen(Home);
+       home_file = safemalloc(HomeLen + strlen(ofilename)+3);
+@@ -141,6 +157,9 @@
+       strcat(home_file,ofilename);
+       filename = home_file;
+       fd = fopen(filename,"r");      
++#ifdef I18N
++	}
++#endif
+       }
+     }
+ 

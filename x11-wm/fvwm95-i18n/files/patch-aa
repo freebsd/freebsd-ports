@@ -1,38 +1,24 @@
-*** modules/FvwmAudio/Makefile.in.orig	Tue Sep 10 22:25:33 1996
---- modules/FvwmAudio/Makefile.in	Fri Jun 13 21:41:10 1997
-***************
-*** 10,15 ****
---- 10,17 ----
-  bin_dir=@exec_prefix@/bin
-  x_includes=@x_includes@
-  x_libraries=@x_libraries@
-+ libdir=@libdir@
-+ includedir=@includedir@
-  fvwm_icons=@fvwm_icons@
-  fvwm_rc=@fvwm_rc@
-  fvwm_name=@fvwm_name@
-***************
-*** 24,34 ****
-  XEXT_LIBRARY=-lXext
-  FVWM_LIBRARY=-l${fvwm_name}
-  RPLAY_LIBRARY=-lrplay
-! LIBS=-L${top_srcdir}/libs ${x_libraries} ${FVWM_LIBRARY} ${XPM_LIBRARY} ${XEXT_LIBRARY} ${X_LIBRARY} ${RPLAY_LIBRARY}
-  
-! EXTRA_DEFINES=-DXPM -DSHAPE
-  CC=@CC@
-! INCLUDES=-I${top_srcdir}/include ${x_includes}
-  CFLAGS=${INCLUDES} @CFLAGS@ ${EXTRA_DEFINES} 
-  MAKEDEPEND=@MAKEDEPEND@
-  INSTALL=@INSTALL@
---- 26,36 ----
-  XEXT_LIBRARY=-lXext
-  FVWM_LIBRARY=-l${fvwm_name}
-  RPLAY_LIBRARY=-lrplay
-! LIBS=-L${top_srcdir}/libs ${x_libraries} ${FVWM_LIBRARY} ${XPM_LIBRARY} ${XEXT_LIBRARY} ${X_LIBRARY} -L${libdir} ${RPLAY_LIBRARY}
-  
-! EXTRA_DEFINES=-DXPM -DSHAPE -DHAVE_RPLAY
-  CC=@CC@
-! INCLUDES=-I${top_srcdir}/include ${x_includes} -I${includedir}
-  CFLAGS=${INCLUDES} @CFLAGS@ ${EXTRA_DEFINES} 
-  MAKEDEPEND=@MAKEDEPEND@
-  INSTALL=@INSTALL@
+diff -urN ../fvwm95-2.0.43a-Autoconf.orig/Makefile.in ./Makefile.in
+--- ../fvwm95-2.0.43a-Autoconf.orig/Makefile.in	Sun Nov 22 04:58:50 1998
++++ ./Makefile.in	Sun Nov 22 04:59:56 1998
+@@ -11,6 +11,7 @@
+ prefix=@prefix@
+ exec_prefix=@exec_prefix@
+ subdirs=libs fvwm modules utils sample.fvwmrc xpmroot icons mini-icons
++mansubdirs=fvwm modules xpmroot
+ local_defines=@local_defines@
+ 
+ CFLAGS = -O
+@@ -25,6 +26,12 @@
+ 	@for i in ${subdirs}; do \
+ 		echo Installing in $$i ; \
+ 		(cd $$i; ${MAKE} install) \
++	done
++
++install.man:
++	@for i in ${mansubdirs}; do \
++		echo Installing man in $$i ; \
++		(cd $$i; ${MAKE} install.man) \
+ 	done
+ 
+ depend:

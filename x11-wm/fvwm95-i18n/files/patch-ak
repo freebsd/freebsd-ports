@@ -1,0 +1,26 @@
+diff -urN ../fvwm95-2.0.43a-Autoconf.orig/modules/FvwmAudio/Makefile.in ./modules/FvwmAudio/Makefile.in
+--- ../fvwm95-2.0.43a-Autoconf.orig/modules/FvwmAudio/Makefile.in	Sun Nov 22 04:51:49 1998
++++ ./modules/FvwmAudio/Makefile.in	Sun Nov 22 04:59:31 1998
+@@ -10,6 +10,8 @@
+ bin_dir=@exec_prefix@/bin
+ x_includes=@x_includes@
+ x_libraries=@x_libraries@
++libdir=@libdir@
++includedir=@includedir@
+ fvwm_icons=@fvwm_icons@
+ fvwm_rc=@fvwm_rc@
+ fvwm_name=@fvwm_name@
+@@ -24,11 +26,11 @@
+ XEXT_LIBRARY=-lXext
+ FVWM_LIBRARY=-l${fvwm_name}
+ RPLAY_LIBRARY=-lrplay
+-LIBS=-L${top_srcdir}/libs ${x_libraries} ${FVWM_LIBRARY} ${XPM_LIBRARY} ${XEXT_LIBRARY} ${X_LIBRARY} ${RPLAY_LIBRARY}
++LIBS=-L${top_srcdir}/libs ${x_libraries} ${FVWM_LIBRARY} ${XPM_LIBRARY} ${XEXT_LIBRARY} ${X_LIBRARY} -L${libdir} ${RPLAY_LIBRARY}
+ 
+ EXTRA_DEFINES=-DXPM -DSHAPE
+ CC=@CC@
+-INCLUDES=-I${top_srcdir}/include ${x_includes}
++INCLUDES=-I${top_srcdir}/include ${x_includes} ${includedir}
+ CFLAGS=${INCLUDES} @CFLAGS@ ${EXTRA_DEFINES} 
+ MAKEDEPEND=@MAKEDEPEND@
+ INSTALL=@INSTALL@

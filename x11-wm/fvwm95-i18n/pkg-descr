@@ -1,6 +1,7 @@
 Fvwm95 is a hack based on fvwm2.x. It tries to emulate the good
 features of a well known product without bloating the regular 
-fvwm code. The main aspects are: 
+fvwm code. Additional internationalized patch supports various
+languages. The main aspects are:
 
 A familiar look and feel. It can be interesting for users moving
 from the MS-World to Unix, or for those who have to switch 

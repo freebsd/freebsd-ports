@@ -1,0 +1,22 @@
+diff -urN ../fvwm95-2.0.43a-Autoconf.orig/xpmroot/Makefile.in ./xpmroot/Makefile.in
+--- ../fvwm95-2.0.43a-Autoconf.orig/xpmroot/Makefile.in	Sun Nov 22 04:52:00 1998
++++ ./xpmroot/Makefile.in	Sun Nov 22 04:59:32 1998
+@@ -22,6 +22,8 @@
+ MAKEDEPEND=@MAKEDEPEND@
+ INSTALL=@INSTALL@
+ INSTALL_PROGRAM=@INSTALL_PROGRAM@
++INSTALL_MAN=@INSTALL_MAN@ 
++MANPREFIX=@mandir@
+ RM=@RM@
+ 
+ PROG=xpmroot
+@@ -36,6 +38,9 @@
+ 
+ install: all
+ 	${INSTALL_PROGRAM} ${PROG} ${bin_dir}
++
++install.man:
++	${INSTALL_MAN} ${PROG}.man ${MANPREFIX}/man1/${PROG}.1
+ 
+ clean:
+ 	${RM} ${PROG} ${OBJS} *~ core *.bak

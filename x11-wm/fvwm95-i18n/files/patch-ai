@@ -1,0 +1,20 @@
+diff -urN ../fvwm95-2.0.43a-Autoconf.orig/mini-icons/Makefile.in ./mini-icons/Makefile.in
+--- ../fvwm95-2.0.43a-Autoconf.orig/mini-icons/Makefile.in	Sun Nov 22 04:51:30 1998
++++ ./mini-icons/Makefile.in	Sun Nov 22 04:59:33 1998
+@@ -2,7 +2,7 @@
+ SHELL=/bin/sh
+ 
+ prefix=@prefix@
+-icon_dir=@prefix@/icons
++icon_dir=@prefix@/lib/X11/fvwm95/pixmaps
+ 
+ INSTALL = @INSTALL@
+ INSTALL_DATA = @INSTALL_DATA@
+@@ -13,6 +13,7 @@
+ 	documents.xpm \
+ 	find1.xpm \
+ 	folder.xpm \
++    freebsd-menu.xpm \
+ 	fvwm-menu.xpm \
+ 	gv.xpm \
+ 	help.xpm \

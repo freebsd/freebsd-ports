@@ -1,32 +1,83 @@
 # New ports collection makefile for:	fvwm95-2
 # Version required:	2.0.43a
-# Date created:		Sa   1 Feb 1997 14:46:05 MET
-# Whom:			Andreas Klemm <andreas@klemm.gtn.com>
+# Date created:
+# Whom:			Yoshishige Arai <ryo2@on.rim.or.jp>
 #
-# $Id: Makefile,v 1.20 1998/09/15 11:13:35 asami Exp $
+# $Id$
 #
 
 DISTNAME=	fvwm95-2.0.43a-Autoconf
-PKGNAME=	fvwm95-2.0.43a
+PKGNAME=	fvwm95-i18n-2.0.43a
 CATEGORIES=	x11-wm
-MASTER_SITES=	ftp://mitac11.uia.ac.be/pub/fvwm95/
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=	ftp://mitac11.uia.ac.be/pub/ \
+		ftp://ftp.plig.org/pub/fvwm95/ \
+		ftp://ftp.terraware.net/pub/Mirrors/FVWM95/ \
+		ftp://ftp.freebsd.org/pub/FreeBSD/distfiles/ \
+		ftp://ftp.ics.es.osaka-u.ac.jp/pub/CFAN/misc/fvwm95/ \
+		http://www.rr.iij4u/~sada/distfiles/ \
+		http://www.freebsd.org/~sada/distfiles/
+DISTFILES=	${EXTRACT_ONLY} fvwm95-2.0.43a-FreeBSD.apmpatch.tar.gz
 
-MAINTAINER=	andreas@FreeBSD.ORG
+PATCH_SITES=	ftp://ftp.ics.es.osaka-u.ac.jp/pub/CFAN/misc/fvwm95/ \
+		http://www.freebsd.org/~sada/distfiles/
+PATCHFILES=	fvwm95-2.0.43a-Autoconf.I18N.diff.gz
+
+MAINTAINER=	ryo2@on.rim.or.jp
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 BUILD_DEPENDS=	${LOCALBASE}/lib/librplay.a:${PORTSDIR}/audio/rplay
-RUN_DEPENDS=	${X11BASE}/icons/chuck.xpm:${PORTSDIR}/x11/fbsd-icons
 
+EXTRACT_ONLY=	${DISTNAME}.tgz ${PKGNAME}-portKit-19981122.tgz
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS= --includedir=${LOCALBASE}/include \
-		--libdir=${LOCALBASE}/lib
+CONFIGURE_ARGS+= --prefix=${PREFIX} --x-includes=${X11BASE}/include \
+		--mandir=${MANPREFIX}/man \
+		--includedir=${LOCALBASE}/include --libdir=${LOCALBASE}/lib
+CONFIGURE_ENV+=INSTALL_MAN="${INSTALL_MAN}"
+MAN1=	fvwm95.1 xpmroot.1 FvwmAudio.1 FvwmAuto.1 FvwmBacker.1 FvwmBanner.1 \
+	FvwmButtons.1 FvwmConsole.1 FvwmCpp.1 FvwmDebug.1 FvwmForm.1 \
+	FvwmIconBox.1 FvwmIconMan.1 FvwmIdent.1 FvwmM4.1 FvwmPager.1 \
+	FvwmSave.1 FvwmSaveDesk.1 FvwmScroll.1 FvwmTalk.1 FvwmTaskBar.1 \
+	FvwmWinList.1
 
-MAN1=		fvwm95.1
+SAMPLEDIR=	${PREFIX}/share/examples/fvwm95
+KITDIR=		${WRKDIR}/${PKGNAME}-portKit
+
+post-extract:
+	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
+		${DISTDIR}/fvwm95-2.0.43a-FreeBSD.apmpatch.tar.gz \
+		${EXTRACT_AFTER_ARGS} -C ${WRKDIR}
+	${CP} ${WRKDIR}/apmpatch/freebsd-menu.xpm ${WRKSRC}/mini-icons
+
+pre-patch:
+.if !defined(BATCH) && !defined(FOR_CDROM) && !defined(USE_APM)
+	@${ECHO} -n "Are you going to use APM handling? (y/n) ==> "
+	@(read ans; \
+	  case x"$$ans" in \
+	    xy*|xY*) \
+		${ECHO} "Okay, please rerun make like as \"make USE_APM=yes\"."; \
+		${ECHO} "(Don't worry about the following \"*** Error code 1\"s)"; \
+		return 1; \
+		;; \
+	    *) \
+		return 0; \
+		;; \
+	  esac)
+.endif
+post-patch:
+.if defined(USE_APM)
+	@${CAT} ${WRKDIR}/apmpatch/fvwm95-2.0.43a-Autoconf.I18N.apmpatch \
+	| ${PATCH} -d ${WRKSRC}
+.endif
 
 post-install:
-		@${INSTALL_MAN}	$(WRKSRC)/fvwm/fvwm95.man \
-			$(PREFIX)/man/man1/fvwm95.1
+	@(cd ${WRKSRC} ; ${MAKE} install.man)
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${SAMPLEDIR}
+	@${INSTALL_DATA} ${WRKSRC}/example.fvwm95rc  ${SAMPLEDIR}
+.endif
+	@${MKDIR} ${PREFIX}/lib/X11/fvwm95/ja_JP.EUC
+	@${INSTALL_DATA} ${KITDIR}/system.fvwm95rc.jp \
+		${PREFIX}/lib/X11/fvwm95/ja_JP.EUC/system.fvwm95rc
 
 .include <bsd.port.mk>

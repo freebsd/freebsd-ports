@@ -1,16 +1,19 @@
---- modules/FvwmForm/FvwmForm.c.orig	Sat Feb  1 14:02:05 1997
-+++ modules/FvwmForm/FvwmForm.c	Sat Feb  1 14:03:13 1997
-@@ -16,7 +16,13 @@
- #include <X11/cursorfont.h>
- #define XK_MISCELLANY
- #include <X11/keysymdef.h>
+diff -urN ../fvwm95-2.0.43a-Autoconf.orig/configure ./configure
+--- ../fvwm95-2.0.43a-Autoconf.orig/configure	Sun Nov 22 04:58:50 1998
++++ ./configure	Sun Nov 22 04:59:55 1998
+@@ -2186,6 +2186,7 @@
+ 
+ 
+ 
 +
-+#ifdef __FreeBSD__
-+#include <stdlib.h>
-+#else
- #include <malloc.h>
-+#endif
-+
- #include <string.h>
- #include <sys/types.h>
- #include <sys/time.h>
+ #-------------------------------------------------------------------
+ #
+ # always build Makefiles in examples subdir
+@@ -2352,6 +2353,7 @@
+ s%@INSTALL_PROGRAM@%$INSTALL_PROGRAM%g
+ s%@INSTALL_DATA@%$INSTALL_DATA%g
+ s%@LN_S@%$LN_S%g
++s%@INSTALL_MAN@%$INSTALL_MAN%g
+ s%@x_libraries@%$x_libraries%g
+ s%@x_includes@%$x_includes%g
+ s%@fvwm_icons@%$fvwm_icons%g
