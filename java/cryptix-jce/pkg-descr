@@ -1,0 +1,19 @@
+Cryptix JCE currently supports:
+
+JDKs 
+	1.1 and 1.2 
+Ciphers 
+	Blowfish, CAST5, DES, IDEA, MARS, RC2, RC4, RC6, Rijndael,
+	Serpent, SKIPJACK, Square, TripleDES, Twofish 
+KeyAgreements 
+	Diffie-Hellman 
+Modes 
+	CBC, ECB, OFB 
+Hashes 
+	MD2, MD4, RIPEMD-128, RIPEMD-160, SHA-0, SHA-1, Tiger 
+MACs 
+	HMAC-* (for all hashes mentioned above + MD5) 
+Signatures 
+	RawDSA, RSA 
+Assymetric ciphers 
+	ElGamal, RSA 
