@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	raine
-PORTVERSION=	0.40.5
+PORTVERSION=	0.42.3
 CATEGORIES=	emulators games
 MASTER_SITES=	http://www.rainemu.com/html/archive/
 DISTNAME=	${PORTNAME}s-${PORTVERSION}
@@ -30,12 +30,9 @@ ONLY_FOR_ARCHS=	i386
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-BROKEN=		"pengo.c doesn't compile on 4.10 (see ports/69509)"
-.endif
-
 post-patch:
 	${REINPLACE_CMD} -e "s, [$$]_mcpu,,g" ${WRKSRC}/detect-cpu
 	${REINPLACE_CMD} -e "s,sdl-config,${SDL_CONFIG},g" ${WRKSRC}/makefile
+	${REINPLACE_CMD} -e "s,/usr/share/games/raine,${DATADIR},g" ${WRKSRC}/source/raine.c
 
 .include <bsd.port.post.mk>
