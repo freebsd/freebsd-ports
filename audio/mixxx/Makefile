@@ -6,11 +6,10 @@
 #
 
 PORTNAME=		mixxx
-PORTVERSION=		1.4
+PORTVERSION=		1.4.2
 CATEGORIES=		audio
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTFILES=		${PORTNAME}-${PORTVERSION}a${EXTRACT_SUFX}
 
 MAINTAINER=		jylefort@brutele.be
 COMMENT=		A DJ mixing application
@@ -34,11 +33,14 @@ BUILD_WRKSRC=		${WRKSRC}/src
 INSTALL_WRKSRC=		${WRKSRC}/src
 
 CONFIGURE_ENV=		QTDIR="${X11BASE}" QMAKESPEC="freebsd-g++"
+CONFIGURE_ARGS=		--prefix=${PREFIX}
 MAKE_ENV=		QTDIR="${X11BASE}"
 
 .include <bsd.port.pre.mk>
 
-CONFIGURE_ARGS=		--prefix=${PREFIX}
+.if ${OSVERSION} < 500000
+IGNORE=	does not compile on FreeBSD 4.x, due to lack of pselect() in libc
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} \
