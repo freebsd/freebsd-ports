@@ -1,3 +1,3 @@
 #!/bin/sh
 
-%%PREFIX%%/bin/javavm -jar %%PREFIX%%/share/java/classes/MusicControl-0.1.jar $*
+%%PREFIX%%/bin/javavm -jar %%PREFIX%%/share/java/classes/MusicControl-0.2.jar $*
