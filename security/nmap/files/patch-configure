@@ -1,6 +1,36 @@
 --- configure.orig	Mon Oct  6 13:03:26 2003
 +++ configure	Mon Oct  6 13:03:38 2003
-@@ -3499,7 +3499,7 @@
+@@ -2637,7 +2637,7 @@
+       CXXFLAGS="$CXXFLAGS -Wall "
+  fi
+ # Extract the first word of ""$CXX"", so it can be a program name with args.
+-set dummy "$CXX"; ac_word=$2
++set dummy $CXX; ac_word=$2
+ echo "$as_me:$LINENO: checking for $ac_word" >&5
+ echo $ECHO_N "checking for $ac_word... $ECHO_C" >&6
+ if test "${ac_cv_prog_CXXPROG+set}" = set; then
+@@ -2646,6 +2646,10 @@
+   if test -n "$CXXPROG"; then
+   ac_cv_prog_CXXPROG="$CXXPROG" # Let the user override the test.
+ else
++  case $ac_word in
++  [\\/]* | ?:[\\/]* ) # absolute path given.
++  ac_cv_prog_CXXPROG=$ac_word ;;
++  *)
+ as_save_IFS=$IFS; IFS=$PATH_SEPARATOR
+ for as_dir in $PATH
+ do
+@@ -2658,7 +2662,8 @@
+     break 2
+   fi
+ done
+-done
++done ;;
++esac
+ 
+   test -z "$ac_cv_prog_CXXPROG" && ac_cv_prog_CXXPROG=""MISSING""
+ fi
+@@ -3499,7 +3504,7 @@
  
  
  
