@@ -7,15 +7,12 @@
 #
 
 PORTNAME=	mftrace
-PORTVERSION=	1.0.27
-PORTREVISION=	1
+PORTVERSION=	1.0.29
 CATEGORIES=	print
 MASTER_SITES=	http://www.xs4all.nl/~hanwen/mftrace/
 
 MAINTAINER=	atamaniuk-ports@frobs.net
 COMMENT=	Scalable PostScript (Type1) Fonts for MetaFont
-
-BROKEN=		"Checksum mismatch"
 
 RUN_DEPENDS=	mktextfm:${PORTSDIR}/print/teTeX \
 		t1asm:${PORTSDIR}/print/t1utils \
