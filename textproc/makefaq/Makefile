@@ -16,7 +16,6 @@ MAINTAINER=	king@v2project.com
 COMMENT=	Makefaq is a Python program that creates a (FAQ)
 
 USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
 NO_BUILD=	yes
 
 MAN1=		makefaq.1
