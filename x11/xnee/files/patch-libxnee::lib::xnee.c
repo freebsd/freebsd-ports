@@ -1,9 +1,6 @@
-
-$FreeBSD$
-
---- libxnee/src/xnee.c.orig	Tue Apr 29 07:12:42 2003
-+++ libxnee/src/xnee.c	Sun May 18 23:09:37 2003
-@@ -917,7 +917,7 @@
+--- libxnee/src/xnee.c.orig	Sun Sep 28 07:58:48 2003
++++ libxnee/src/xnee.c	Tue Nov  4 10:36:43 2003
+@@ -572,7 +572,7 @@
  xnee_new_xnee_data()
  {
  
@@ -12,12 +9,12 @@ $FreeBSD$
    if (xd==NULL)
      {
        xnee_print_error ("Could not allocate memory ........\n");
-@@ -1230,7 +1230,7 @@
- xnee_use_plugin(xnee_data *xd, char *pl_name)
- {
+@@ -908,7 +908,7 @@
    int ret=0;
--  xnee_verbose ((xd, "Using plugin file: %s\n", pl_name));
-+/*  xnee_verbose ((xd, "Using plugin file: %s\n", pl_name)); */
-   
    char lib_name[100];
  
+-  xnee_verbose ((xd, "Using plugin file: %s\n", pl_name));
++/*  xnee_verbose ((xd, "Using plugin file: %s\n", pl_name)); */
+   strcpy (lib_name, "lib");
+   strcat (lib_name, pl_name);
+   
