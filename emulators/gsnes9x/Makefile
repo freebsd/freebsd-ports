@@ -18,7 +18,7 @@ COMMENT=	A GTK front-end for the Snes9X SNES emulator
 RUN_DEPENDS=	snes9x:${PORTSDIR}/emulators/snes9x
 
 GNU_CONFIGURE=	yes
-USE_GNOME=	gtk12 orbit esound
+USE_GNOME=	gnomelibs
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 
