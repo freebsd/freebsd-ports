@@ -3,7 +3,7 @@
 # Date created:         6 Apr 97
 # Whom:                 Pedro Giffuni
 #
-# $Id: Makefile,v 1.3 1998/02/20 18:39:56 steve Exp $
+# $Id: Makefile,v 1.4 1998/08/05 09:31:35 asami Exp $
 #
 
 DISTNAME=	pns_source
@@ -16,7 +16,7 @@ MAINTAINER=	giffunip@asme.org
 
 USE_X_PREFIX=	yes
 NO_WRKSUBDIR=	yes
-MAKEFILE=	makefile 
+MAKEFILE=	makefile
 ALL_TARGET=	pns
 
 do-install:
