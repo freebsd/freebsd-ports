@@ -29,7 +29,7 @@ WRKSRC=		${WRKDIR}/GroupUserFolder
 PRODUCTNAME=	GroupUserFolder
 
 do-build:
-	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}/
+	-@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}/
 
 pre-install:
 	@${RM} -f ${PLIST}
