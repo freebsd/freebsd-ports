@@ -22,6 +22,8 @@ MASTER_SITES=	ftp://ftp.mutt.org/pub/mutt/contrib/ \
 
 MAINTAINER=	obrien@FreeBSD.org
 
+BUILD_DEPENDS=	perl:${PORTSDIR}/lang/perl5
+
 GNU_CONFIGURE=	yes
 MAN1=		urlview.1
 

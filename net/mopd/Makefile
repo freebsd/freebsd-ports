@@ -20,6 +20,8 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 
 MAINTAINER=	obrien@FreeBSD.org
 
+BUILD_DEPENDS=	perl:${PORTSDIR}/lang/perl5
+
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 #	MANDIR is concetenated to DESTDIR which all forms the man install dir...
 MAKE_ENV=	DESTDIR=${PREFIX} MANDIR=/man/man NOMANCOMPRESS=true
