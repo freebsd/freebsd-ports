@@ -1,22 +1,20 @@
-diff -r -u ../hypermail-orig/src/Makefile.in ./src/Makefile.in
---- src/Makefile.in	Thu Aug 20 23:12:36 1998
-+++ src/Makefile.in	Tue Jan  5 06:53:02 1988
-@@ -16,7 +16,7 @@
+--- src/Makefile.in.orig	Mon Nov 22 15:37:06 1999
++++ src/Makefile.in	Sun Dec 12 20:56:59 1999
+@@ -27,7 +27,7 @@
+ #WNOERROR=-Werror
+ #WARNINGS=$(WNOERROR) -ansi -pedantic -Wall -Wtraditional -Wshadow -Wpointer-arith -Wcast-qual -Wcast-align -Waggregate-return -Wstrict-prototypes -Wmissing-prototypes -Wnested-externs -Winline -Dlint
  
- CC=@CC@
-  
--CFLAGS=@CFLAGS@
-+CFLAGS?=@CFLAGS@
- LDFLAGS=@LDFLAGS@
-  
+-CFLAGS=@CFLAGS@ $(WARNINGS)
++CFLAGS?=@CFLAGS@ $(WARNINGS)
+ YACC=@YACC@
  NETLIBS=@LIBS@
-@@ -50,7 +50,7 @@
- 
- $(OBJS): Makefile $(INCS)
+ LDFLAGS=@LDFLAGS@
+@@ -70,7 +70,7 @@
+ 	$(YACC) getdate.y
+ 	@mv -f y.tab.c getdate.c
  
 -install: all
-+install: 
- 	install -c -m 0755 hypermail $(bindir)
++install:
+ 	@if [ ! -d $(bindir) ]; then mkdir -p $(bindir); fi
+ 	$(INSTALL_PROG) -s -c -m 0755 hypermail$(SUFFIX) $(bindir)
  
- mail.install:
-

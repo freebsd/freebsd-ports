@@ -1,7 +1,7 @@
 bin/hypermail
-share/doc/hypermail/hypermail.gif
-share/doc/hypermail/hypermail.html
-share/doc/hypermail/customizing.html
-share/doc/hypermail/hr.yellow.gif
-share/doc/hypermail/hmrc.html
-@dirrm share/doc/hypermail
+apache/htdocs/hypermail/hr.yellow.gif
+apache/htdocs/hypermail/hypermail.gif
+apache/htdocs/hypermail/hypermail.html
+apache/htdocs/hypermail/customizing.html
+apache/htdocs/hypermail/hmrc.html
+@dirrm apache/htdocs/hypermail

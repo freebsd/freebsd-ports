@@ -1,14 +1,11 @@
-diff -r -u ../hypermail-orig/Makefile.in ./Makefile.in
---- Makefile.in	Thu Aug 20 23:12:36 1998
-+++ Makefile.in	Tue Jan  5 06:52:58 1988
-@@ -22,7 +22,7 @@
- # Compiler to use
- CC=@CC@
+--- Makefile.in	Mon Nov 22 16:08:43 1999
++++ Makefile.in.new	Mon Nov 22 16:08:24 1999
+@@ -28,7 +28,7 @@
   
--CFLAGS=@CFLAGS@
-+CFLAGS?=@CFLAGS@
+ # Compiler to use
+ CC=@CC@ 
+-CFLAGS=@CFLAGS@ $(WARNINGS)
++CFLAGS?=@CFLAGS@ $(WARNINGS)
+ LIBS=@LIBS@
  LDFLAGS=@LDFLAGS@
  
- all:   hypermail support 
-
-diff -r -u ../hypermail-orig/configure ./configure
