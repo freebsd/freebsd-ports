@@ -32,7 +32,7 @@ bin/whatnow
 bin/whom
 bin/mhparam
 lib/libmh.so.3.2
-@exec ldconfig -m %B
+@exec /sbin/ldconfig -m %B
 lib/mh/mtstailor
 lib/mh/MailAliases
 lib/mh/components
