@@ -21,6 +21,6 @@ MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Crypt::PasswdMD5.3
 
 pre-patch:
-	@${REINPLACE_CMD} -e 's|\r||g' ${WRKSRC}/PasswdMD5.pm
+	@${REINPLACE_CMD} -e 's|[[:cntrl:]]$$||g' ${WRKSRC}/PasswdMD5.pm
 
 .include <bsd.port.mk>
