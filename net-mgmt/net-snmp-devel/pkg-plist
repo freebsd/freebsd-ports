@@ -79,7 +79,9 @@ include/net-snmp/library/snmp-tc.h
 include/net-snmp/library/snmp.h
 include/net-snmp/library/snmpCallbackDomain.h
 include/net-snmp/library/snmpTCPDomain.h
+include/net-snmp/library/snmpTCPIPv6Domain.h
 include/net-snmp/library/snmpUDPDomain.h
+include/net-snmp/library/snmpUDPIPv6Domain.h
 include/net-snmp/library/snmpUnixDomain.h
 include/net-snmp/library/snmp_alarm.h
 include/net-snmp/library/snmp_api.h
@@ -231,8 +233,6 @@ share/snmp/snmpconf-data/snmpd-data/trapsinks
 share/snmp/snmpconf-data/snmptrapd-data/formatting
 share/snmp/snmpconf-data/snmptrapd-data/snmpconf-config
 share/snmp/snmpconf-data/snmptrapd-data/traphandle
-@dirrm include/net-snmp/library
-@dirrm include/net-snmp
 @dirrm share/snmp/snmpconf-data/snmp-data
 @dirrm share/snmp/snmpconf-data/snmpd-data
 @dirrm share/snmp/snmpconf-data/snmptrapd-data
