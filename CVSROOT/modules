@@ -3004,6 +3004,7 @@ jadetex		ports/print/jadetex
 jaf		ports/java/jaf
 jags		ports/net/jags
 jail		src/usr.sbin/jail
+jailutils	ports/sysutils/jailutils
 jakarta-ant	ports/devel/jakarta-ant
 jakarta-bcel	ports/java/jakarta-bcel
 jakarta-oro	ports/java/jakarta-oro
