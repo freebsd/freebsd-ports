@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.gimp.org/pub/gimp/fonts/
 
 MAINTAINER=	ports@FreeBSD.org
 
+RESTRICTED=	"see accompanying .license files"
 NO_WRKSUBDIR=	yes
 USE_X_PREFIX=	yes
 
