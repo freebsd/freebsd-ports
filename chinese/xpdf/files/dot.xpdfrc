@@ -1,21 +1,17 @@
-#----- begin Chinese Traditional support package (2002-apr-14)
+#----- begin Chinese Traditional support package (2004-jul-27)
 cidToUnicode	Adobe-CNS1	/usr/X11R6/share/xpdf/chinese-traditional/Adobe-CNS1.cidToUnicode
 unicodeMap	Big5		/usr/X11R6/share/xpdf/chinese-traditional/Big5.unicodeMap
 unicodeMap	Big5ascii	/usr/X11R6/share/xpdf/chinese-traditional/Big5ascii.unicodeMap
 cMapDir		Adobe-CNS1	/usr/local/share/ghostscript/Resource/CMap
 toUnicodeDir			/usr/local/share/ghostscript/Resource/CMap
-displayCIDFontX	Adobe-CNS1	"-*-fixed-medium-r-normal-*-%s-*-*-*-*-*-big5-0" Big5
-# If you have the Arhpic fonts, you may want to use this instead:
-# displayCIDFontX Adobe-CNS1	"-arphic-ar pl kaitim big5-medium-r-normal--%s-*-*-*-c-*-iso10646-1" UCS-2
+displayCIDFontTT	Adobe-CNS1	/usr/local/share/fonts/TrueType/bkai00mp.ttf
 #----- end Chinese Traditional support package
-#----- begin Chinese Simplified support package (2002-apr-18)
+#----- begin Chinese Simplified support package (2004-jul-27)
 cidToUnicode	Adobe-GB1	/usr/X11R6/share/xpdf/chinese-simplified/Adobe-GB1.cidToUnicode
 unicodeMap	ISO-2022-CN	/usr/X11R6/share/xpdf/chinese-simplified/ISO-2022-CN.unicodeMap
 unicodeMap	EUC-CN		/usr/X11R6/share/xpdf/chinese-simplified/EUC-CN.unicodeMap
 unicodeMap	GBK		/usr/X11R6/share/xpdf/chinese-simplified/GBK.unicodeMap
 cMapDir		Adobe-GB1	/usr/local/share/ghostscript/Resource/CMap
 toUnicodeDir			/usr/local/share/ghostscript/Resource/CMap
-displayCIDFontX	Adobe-GB1	"-*-fangsong ti-medium-r-normal-*-%s-*-*-*-*-*-gb2312.1980-0" ISO-2022-CN
-# If you have the Arhpic fonts, you may want to use this instead:
-# displayCIDFontX Adobe-GB1	"-arphic-ar pl sungtil gb-medium-r-normal--%s-*-*-*-c-*-iso10646-1" UCS-2
+displayCIDFontTT	Adobe-GB1	/usr/local/share/fonts/TrueType/gkai00mp.ttf
 #----- end Chinese Simplified support package

@@ -13,4 +13,3 @@ share/xpdf/chinese-traditional/dot.xpdfrc
 @unexec rm -f %D/etc/xpdfrc.chinese-traditional
 @dirrm share/xpdf/chinese-simplified
 @dirrm share/xpdf/chinese-traditional
-@dirrm share/xpdf
