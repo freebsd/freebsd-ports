@@ -1,0 +1,20 @@
+--- network.pl.in.orig	Mon Mar 21 03:16:35 2005
++++ network.pl.in	Mon Mar 21 03:19:37 2005
+@@ -777,7 +777,7 @@
+       $types_cache{$dev} = "modem";
+     }
+   }
+-  elsif ($dev =~ /(eth|dc|ed|bfe)[0-9]/)
++  elsif ($dev =~ /(eth|dc|ed|bfe|em|fxp|bge|de|xl|ixgb|txp|vx|lge|nge|pcn|re|rl|sf|sis|sk|ste|ti|tl|tx|vge|vr|wb|cs|ex|ep|fe|ie|lnc|sn|xe|le|an|awi|wi|ndis|wlaue|axe|cue|kue|rue|fwe)[0-9]/)
+   {
+     $types_cache{$dev} = "ethernet";
+   }
+@@ -4285,7 +4285,7 @@
+       table =>
+       [
+        [ "hostname",      \&gst_parse_sh_re,                          RC_CONF, hostname, "^([^\.]*)\." ],
+-       [ "domain",        \&gst_parse_sh_re,                          RC_CONF, hostname, "\.([^\.]*)\$" ],
++       [ "domain",        \&gst_parse_split_first_str,                RESOLV_CONF, "domain", "[ \t]+" ],
+        [ "nameserver",    \&gst_parse_split_all_unique_hash_comment,  RESOLV_CONF,  "nameserver", "[ \t]+" ],
+        [ "searchdomain",  \&gst_parse_split_first_array_unique,       RESOLV_CONF,  "search", "[ \t]+", "[ \t]+" ],
+        [ "statichost",    \&gst_parse_split_hash,                     HOSTS,        "[ \t]+", "[ \t]+" ],
