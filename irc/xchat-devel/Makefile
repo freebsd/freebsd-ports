@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		xchat
-PORTVERSION=		1.7.4
+PORTVERSION=		1.7.6
 CATEGORIES=		irc gnome
 MASTER_SITES=		http://xchat.org/files/source/1.7/ \
 			http://xchat.linuxpower.org/files/source/1.7/
@@ -20,7 +20,7 @@ USE_PERL5=		yes
 USE_IMLIB=		yes
 WANT_GNOME=		yes
 GNU_CONFIGURE=		yes
-CONFIGURE_ARGS=		--disable-python
+CONFIGURE_ARGS=		--disable-python --disable-nls
 
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LIBS="-L${LOCALBASE}/lib -lintl"
