@@ -353,7 +353,6 @@
     SUBDIR += pipsecd
     SUBDIR += pmf
     SUBDIR += poptop
-    SUBDIR += ppp-nt
     SUBDIR += pppload
     SUBDIR += pppoa
     SUBDIR += ppptraf
