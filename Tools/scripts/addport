@@ -18,7 +18,10 @@ use strict;
 
 my %opts;
 
-getopts('d:h:intu:v', \%opts);
+if (getopts('d:h:intu:v', \%opts)) {
+	usage();
+	exit 1;
+}
 
 my $dir = $opts{'d'};
 print "dir = $dir\n";
@@ -32,7 +35,6 @@ my $vanilla = $opts{'v'};
 my $interactive = $opts{'i'};
 
 my $tmpdir;
-my $pwd;
 my $repo;
 my $ssh;
 if( !defined $ENV{"CVS_RSH"} ) {
@@ -63,8 +65,6 @@ BEGIN {
 	if ($tmpdir eq "") {
 		errx(1,"making random tmpdir didn't work, aborting.");
 	}
-	$pwd = `pwd`;
-	chomp $pwd;
 }
 
 # stuff that always happens when we exit
@@ -77,16 +77,11 @@ END {
 }
 
 # setup the list of commands to run on the new port(s).
-# This only looks nasty because if we tabbed the entries to
-# @commands, it would have whitespace before the command.  :(
 my @commands;
 if (!$vanilla) {
-@commands = split(/\n/, <<EOF);
-$make clean
-$make check-categories
-$portlint
-$make FETCH_BEFORE_ARGS="-btsA" checksum
-EOF
+	push(@commands, "$make clean check-categories");
+	push(@commands, "$portlint");
+	push(@commands, "$make FETCH_BEFORE_ARGS='-btsA' checksum");
 	if ($more_testing) {
 		push(@commands, "$make distclean");
 		push(@commands, "$make build");
@@ -99,7 +94,6 @@ foreach my $thisdir (@dirs) {
 	# do some dir sanity checking first
 	errx(1, "Please specify valid directories to import new ports from.") if $thisdir eq "";
 	errx(1, "$thisdir is either not a directory or does not exist.") if (! -d $thisdir);
-	$thisdir = abs_path($pwd) if $thisdir eq ".";
 	$thisdir = abs_path($thisdir);
 
 	print "Working with port directory $thisdir.\n";
@@ -155,10 +149,7 @@ foreach my $thisdir (@dirs) {
 
 	# figure out where the port name belongs in category Makefile
 	my @ports = &lsports;
-	if (&contains($portname, @ports)) {
-		print "Error: $portname already exists in $category\'s Makefile\n";
-		&goodbye(1);
-	}
+	errx(1, "Error: $portname already exists in $category\'s Makefile") if (&contains($portname, @ports));
 	my $port = "";
 	foreach my $tmp (sort(@ports)) {
 		if ($tmp gt $portname) {
@@ -171,12 +162,12 @@ foreach my $thisdir (@dirs) {
 	my $cmd;
 	if ($port eq "") {
 		# there were no previous SUBDIR += lines, so we're going to
-		# put ourselves after the last comment (we can't be before a
+		# put ourselves after the last comment (we can't be after a
 		# .include <bsd.port.subdir.mk> for example).
 		my $lastcommentnum = &lastcomment;
 		$cmd = "$lastcommentnum\n+\ni\n";
 	} else {
-		# OK, append ourselves after the appopriate name, so things *stay* sorted.
+		# OK, append ourselves in the right place, so things *stay* sorted.
 		$cmd = "/^    SUBDIR += $port/\ni\n";
 	}
 	print "Inserting new port into $category/Makefile...\n";
