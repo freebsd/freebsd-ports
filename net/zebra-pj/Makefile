@@ -3,18 +3,16 @@
 # Date created:		So  31 Mai 1998 11:00:30 CEST
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.10 1999/04/12 20:12:42 andreas Exp $
+# $Id: Makefile,v 1.11 1999/04/18 18:14:57 andreas Exp $
 #
 
-DISTNAME=	zebra-19990416
+DISTNAME=	zebra-19990420
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.zebra.org/pub/zebra/
 # you might need debugging, it's a developer release !
 #CFLAGS+=	-g
 
 MAINTAINER=	andreas@FreeBSD.ORG
-
-BROKEN=		"bug: waiting for a fix from author"
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--sysconfdir=${PREFIX}/etc/zebra
