@@ -5143,6 +5143,7 @@ py-omniorb	ports/devel/py-omniorb
 py-opengl	ports/graphics/py-opengl
 py-orbit	ports/devel/py-orbit
 py-paint	ports/graphics/py-paint
+py-pyPgSQL	ports/databases/py-pyPgSQL
 py-qt		ports/x11-toolkits/py-qt
 py-reportlab	ports/print/py-reportlab
 py-rijndael	ports/security/py-rijndael
