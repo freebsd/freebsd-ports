@@ -7103,6 +7103,7 @@ pipsecd		ports/net/pipsecd
 pircbot		ports/irc/pircbot
 pisg		ports/irc/pisg
 pixelize	ports/graphics/pixelize
+pixie		ports/graphics/pixie
 pixieplus	ports/graphics/pixieplus
 pixilate	ports/net/pixilate
 pixmap		ports/graphics/pixmap
