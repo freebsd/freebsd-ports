@@ -1,0 +1,2 @@
+Don't forget to copy ${PREFIX}/etc/freepops/config.lua.sample to
+${PREFIX}/etc/freepops/config.lua before running freepopsd
