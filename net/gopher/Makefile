@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	gopher
-PORTVERSION=	3.0.3
+PORTVERSION=	3.0.5
 CATEGORIES=	net
-MASTER_SITES=	http://www.quux.org/give-me-gopher/
+MASTER_SITES=	http://gopher.quux.org:70/give-me-gopher/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	erwin@lansing.dk
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
