@@ -15,9 +15,12 @@ COMMENT=	PPM to Pilot bitmap converter
 
 LIB_DEPENDS=	netpbm.1:${PORTSDIR}/graphics/netpbm
 
+USE_REINPLACE=	yes
+
 post-patch:
-	${PERL} -pi -e "s|^CFLAGS.+|CFLAGS += -I${LOCALBASE}/include|g; \
+	@${REINPLACE_CMD} -e "s|^CFLAGS =.*|CFLAGS += -I${LOCALBASE}/include|g; \
 		s|^LDLIBS =|LDLIBS = -L${LOCALBASE}/lib|g" ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e '/^#include "ppmcmap.h"/d' ${WRKSRC}/ppmtoTbmp.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ppmtoTbmp ${WRKSRC}/Tbmptopnm \
