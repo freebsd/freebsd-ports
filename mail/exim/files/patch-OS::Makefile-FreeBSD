@@ -1,19 +1,10 @@
---- OS/Makefile-FreeBSD.orig	Tue Aug 12 17:39:51 2003
-+++ OS/Makefile-FreeBSD	Thu Aug 14 12:10:46 2003
-@@ -5,12 +5,16 @@
+--- OS/Makefile-FreeBSD.orig	Mon Jun 11 12:04:05 2001
++++ OS/Makefile-FreeBSD	Mon Jun 11 12:04:33 2001
+@@ -5,6 +5,7 @@
  PORTOBJFORMAT!= test -x /usr/bin/objformat && /usr/bin/objformat || echo aout
  
  CHOWN_COMMAND=/usr/sbin/chown
 +STRIP_COMMAND=/usr/bin/strip
  
- HAVE_ICONV=yes
  HAVE_SA_LEN=YES
  
- # crypt() is in a separate library
- LIBS=-lcrypt
-+
-+# iconv() is in a separate 4rd party library
-+LFLAGS+=-liconv -L${LOCALBASE}/lib
- 
- # FreeBSD always ships with Berkeley DB
- USE_DB=yes
