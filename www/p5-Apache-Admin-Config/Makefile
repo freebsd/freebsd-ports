@@ -7,7 +7,7 @@
 
 PORTNAME=	Apache-Admin-Config
 PORTVERSION=	0.12
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Apache
@@ -24,7 +24,8 @@ post-patch:
 	${PERL} -pi -e 's/(!\$$)/0 && $1/;' \
 		-e 's|(VERSION_FROM\s+=>\s+)(.*)(,.*)$$|$$1$$2$$3\nMAN3PODS=>{$$2=>q!\\\$$(INST_MAN3DIR)/${MAN3}!},|;' \
 		${WRKSRC}/Makefile.PL
-	${PERL} -pi -e 's/exists(\s+.*\[.*\])/defined$$1/' \
+	${PERL} -pi -e 's/exists(\s+.*\[.*\])/defined$$1/;' \
+		-e 's/return \$$self unless/return overload::StrVal(\$$self) unless/' \
 		${WRKSRC}/lib/Apache/Admin/Config.pm
 
 .include <bsd.port.mk>
