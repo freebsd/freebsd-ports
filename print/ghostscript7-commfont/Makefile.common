@@ -1,5 +1,5 @@
 PORTNAME=	ghostscript
-PORTVERSION=	7.06
+PORTVERSION=	${GS_VERSION}
 CATEGORIES=	print
 MASTER_SITES=	# nonexistent
 PKGNAMESUFFIX=	-gnu
@@ -39,6 +39,7 @@ CIDFNMAP=	CIDFnmap.ko
 .endif
 .endif
 
+.include <bsd.port.pre.mk>
 do-configure:
 .if !defined(COMMFONT)
 	${SED} -e 's:%%LOCALBASE%%:${LOCALBASE}:g' \
@@ -68,4 +69,5 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include "${PORTSDIR}/print/ghostscript-gnu/Makefile.inc"
+.include <bsd.port.post.mk>
