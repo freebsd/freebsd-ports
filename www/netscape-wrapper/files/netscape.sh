@@ -58,7 +58,7 @@ killstale () {
 
 # Try calling existing netscape process with functions, else start one.
 newbrowser () {
-    [ $# -gt 0 ] && url=`echo $@ | sed 's/\ -[^ ]*//g; s/\( |	\)*//'`
+    [ $# -gt 0 ] && url=`echo $@ | sed 's/\ -[^ ]*//g; s/\( |	\)*//; s/,/%2C/g; s/(/%28/g; s/)/%29/g;'`
     if [ -L $lockfile ]; then
 	if [ "$url" = "" ]; then
 	    $netscape_remote $defsrem "xfeDoCommand($b_opt)" "$@" 2>/dev/null || \
