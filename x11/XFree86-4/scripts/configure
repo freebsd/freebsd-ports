@@ -294,9 +294,7 @@ echo
 yesno YES "Do you want to compile with PAM support?"
 echo "#define	HasPam			$answ"	>> $F
 
-cp $FILESDIR/Makefile.freetype $WRKDIR/xc/extras/freetype2
-(cd  $WRKDIR/xc/extras/freetype2; ln -s obj lib; cd include; ln -s ../include freetype2 )
-echo "#define Freetype2Dir $WRKDIR/xc/extras/freetype2" >> $F
+echo "#define Freetype2Dir $LOCALBASE" >> $F
 }
 
 configure
