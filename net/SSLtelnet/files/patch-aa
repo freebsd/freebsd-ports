@@ -1,5 +1,5 @@
---- Makefile.orig	Sat Aug  2 15:08:25 1997
-+++ Makefile	Wed Sep  2 12:53:13 1998
+--- Makefile.orig	Thu Sep 24 23:50:59 1998
++++ Makefile	Wed Mar 24 19:07:12 1999
 @@ -47,7 +47,7 @@
  
  # the location where SSLeay is installed ... 
@@ -47,14 +47,19 @@
  	@echo "*****************************************************"
  	@echo "* Do not forget to make the certificate for telnetd *"
  	@echo "* either manually or via \"make certificate\"       *"
-@@ -158,6 +161,7 @@
+@@ -158,9 +161,10 @@
  
  certificate:
  	(\
 +	[ -f $(INSTALLTOP)/certs/telnetd.pem ] && exit; \
  	cd $(INSTALLTOP)/certs; \
- 	ssleay req -new -x509 -nodes -days 365 -out telnetd.pem -keyout telnetd.pem; \
- 	ln -s telnetd.pem `ssleay x509 -noout -hash < telnetd.pem`.0 ;\
+-	ssleay req -new -x509 -nodes -days 365 -out telnetd.pem -keyout telnetd.pem; \
+-	ln -s telnetd.pem `ssleay x509 -noout -hash < telnetd.pem`.0 ;\
++	openssl req -new -x509 -nodes -days 365 -out telnetd.pem -keyout telnetd.pem; \
++	ln -s telnetd.pem `openssl x509 -noout -hash < telnetd.pem`.0 ;\
+ 	chmod 600 $(INSTALLTOP)/certs/telnetd.pem; \
+ 	)
+
 --- lib/Makefile.orig	Wed Sep  2 13:11:39 1998
 +++ lib/Makefile	Wed Sep  2 13:11:49 1998
 @@ -1,7 +1,7 @@
