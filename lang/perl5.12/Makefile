@@ -24,6 +24,10 @@ PERL_VER=	5.8.2
 PERL_ARCH=	mach
 PERL_VERSION=	${PERL_VER}
 
+.if ${OSVERSION} < 502100
+LATEST_LINK=	perl5.8
+.endif
+
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=Configure
 CONFIGURE_ARGS=	-sde -Dprefix=${PREFIX} \
@@ -205,8 +209,6 @@ MAN3=	AnyDBM_File.3 Attribute::Handlers.3 AutoLoader.3 AutoSplit.3 \
 MAN3+=	GDBM_File.3
 .endif
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VER}
-
-LATEST_LINK=	perl5.8
 
 test:
 	@(cd ${WRKSRC}; make test)
