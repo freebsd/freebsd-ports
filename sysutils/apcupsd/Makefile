@@ -7,7 +7,7 @@
 
 PORTNAME=	apcupsd
 PORTVERSION=	3.8.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.apcupsd.org/pub/apcupsd/stable/tar/
 
@@ -20,7 +20,7 @@ PLIST_SUB=	STARTUP_SCRIPT=${STARTUP_SCRIPT}
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} --sbindir=${PREFIX}/sbin \
-		--enable-nls \
+		--enable-nls --disable-install-distdir \
 		--sysconfdir=${PREFIX}/etc/apcupsd \
 		--with-serial-dev=/dev/usv \
 		--enable-cgi --with-cgi-bin=${PREFIX}/etc/apcupsd/cgi

@@ -1,0 +1,64 @@
+*** apcnisd.c.orig	Sat Apr 28 09:12:05 2001
+--- apcnisd.c	Mon Dec  3 22:05:08 2001
+***************
+*** 68,79 ****
+--- 68,84 ----
+  #include <sys/socket.h>
+  #include <netinet/in.h>
+  #include <arpa/inet.h>
++ #ifdef HAVE_LIBWRAP
++ #include <tcpd.h>
++ #endif
+  
+  #define NETD_VERSION "1.0"
+  
+  char *pname;
+  
+  UPSINFO myUPS;
++ UPSINFO *core_ups = &myUPS;;
++ char argvalue[MAXSTRING];
+  static char largebuf[4096];
+  static int  stat_recs;
+  static int  logstats = 0;
+***************
+*** 82,87 ****
+--- 87,124 ----
+  void handle_client_request();
+  int do_daemon(int argc, char *argv[]);
+  int do_inetd(int argc, char *argv[]);
++ int check_wrappers(char *av, int newsock);
++ 
++ #ifdef HAVE_LIBWRAP
++ int allow_severity = LOG_INFO;
++ int deny_severity = LOG_WARNING;
++ 
++ int check_wrappers(char *av, int newsock)
++ {
++     struct request_info req;
++     char *av0;
++ 
++     if (strchr(av, '/'))
++         av0 = strrchr(av, '/');
++     else
++         av0 = av;
++ 
++     request_init(&req, RQ_DAEMON, av0, RQ_FILE, newsock, NULL);
++     fromhost(&req);
++     if (!hosts_access(&req)) {
++         log_event(core_ups, LOG_WARNING,
++             _("Connection from %.500s refused by tcp_wrappers."),
++             eval_client(&req));
++         return FAILURE;
++     }
++ #ifdef I_WANT_LOTS_OF_LOGGING
++     log_event(core_ups, LOG_NOTICE, "connect from %.500s", eval_client(&req));
++ #endif
++     return SUCCESS;
++ }
++ 
++ #endif /* HAVE_LIBWRAP */
++ 
+  
+  void error_cleanup(UPSINFO *ups)
+  {
+
