@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	curl
-PORTVERSION=	0.3.3
+PORTVERSION=	0.3.6
 CATEGORIES=	ftp python
 MASTER_SITES=	http://pycurl.sourceforge.net/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

@@ -1,5 +1,6 @@
-%%PYTHON_SITELIBDIR%%/curl.so
 %%PORTDOCS%%share/examples/%%SHARE_SUBDIR%%/test.py
 %%PORTDOCS%%share/examples/%%SHARE_SUBDIR%%/test_cb.py
 %%PORTDOCS%%share/examples/%%SHARE_SUBDIR%%/test_getinfo.py
 %%PORTDOCS%%@dirrm share/examples/%%SHARE_SUBDIR%%
+@cwd %%LOCALBASE%%
+%%PYTHON_SITELIBDIR%%/curl.so
