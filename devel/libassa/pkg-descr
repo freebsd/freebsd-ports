@@ -1,0 +1,6 @@
+ASSA is a UNIX/Linux Object-Oriented C++ networking (BSD sockets) library
+and application framework based on Adaptive Communication Patterns. ASSA is
+designed to improve productivity of writing network-oriented client/server
+applications.
+
+WWW: http://libassa.sourceforge.net/
