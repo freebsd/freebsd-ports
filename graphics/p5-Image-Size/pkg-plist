@@ -14,8 +14,8 @@ lib/perl5/site_perl/%%PERL_VER%%/auto/Image/Size/swfsize.al
 lib/perl5/site_perl/%%PERL_VER%%/auto/Image/Size/tiffsize.al
 lib/perl5/site_perl/%%PERL_VER%%/auto/Image/Size/xbmsize.al
 lib/perl5/site_perl/%%PERL_VER%%/auto/Image/Size/xpmsize.al
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/Image/Size
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Image/Size
 @unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/auto/Image 2>/dev/null || true
 @unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Image 2>/dev/null || true
 @unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Image 2>/dev/null || true
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/Image/Size
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Image/Size
