@@ -1,1 +1,4 @@
-A graphic view base imlib & gtk.
+Also known as EE or ee, ElectricEyes is a generic image viewer for Gnome.  EE
+also contains simple image editing capabilities and has the ability to save
+images in a number of popular formats. EE is designed to fit seamlessly into
+the Gnome desktop environment.
