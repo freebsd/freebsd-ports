@@ -1,0 +1,8 @@
+A "nine mens' morris" implementation for the GNOME Desktop Environment
+
+Features:
+   * a strong computer player,
+   * move takeback,
+   * localization.
+   
+WWW: http://gnmm.sourceforge.net/
