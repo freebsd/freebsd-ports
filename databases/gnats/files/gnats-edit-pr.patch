@@ -1,5 +1,5 @@
 --- gnats/gnats-edit-pr.sh.orig	Tue Apr 20 23:17:07 1999
-+++ gnats/gnats-edit-pr.sh	Mon Dec  3 21:36:18 2001
++++ gnats/gnats-edit-pr.sh	Wed Mar 13 15:00:35 2002
 @@ -124,15 +124,21 @@
  
       *)
@@ -71,7 +71,7 @@
    # we've got a change
    mail_to="$me"
    if [ ! -z "$state_change" ]; then
-@@ -266,14 +278,48 @@
+@@ -266,14 +278,47 @@
      echo State-Changed-By: $me >> $change_msg
      echo State-Changed-When: $DATE >> $change_msg
      echo "State-Changed-Why: " >> $change_msg
@@ -104,7 +104,6 @@
 +    echo Class-Changed-By: $me >> $change_msg
 +    echo Class-Changed-When: $DATE >> $change_msg
 +    echo "Class-Changed-Why: " >> $change_msg
-+    echo 'Why did the class change? (Ctrl-D to end)'
 +    if [ -e $chng_msg ]; then
 +	echo "Re-use last message (y/n)?"
 +	read yesno
@@ -125,10 +124,11 @@
    fi
    if [ ! -z "$resp_change" ]; then
      $debug_print "Doing responsible change."
-@@ -282,11 +328,24 @@
+@@ -281,12 +326,24 @@
+     echo Responsible-Changed-By: $me >> $change_msg
      echo Responsible-Changed-When: $DATE >> $change_msg
      echo "Responsible-Changed-Why: " >> $change_msg
-     echo 'Why did the responsible person change? (Ctrl-D to end)'
+-    echo 'Why did the responsible person change? (Ctrl-D to end)'
 -    cat >> $change_msg
 +    if [ -e $chng_msg ]; then
 +	echo "Re-use last message (y/n)?"
@@ -151,7 +151,7 @@
    if [ -n "$to_subm" ]; then mail_to="${reply_to}, ${mail_to}" ; fi
    if [ -n "$x_gnats_notify" ]; then mail_to="${x_gnats_notify}, ${mail_to}" ; fi
    if [ -n "$to_old" ] ; then mail_to="${mail_to}, `$PR_ADDR ${old_resp}`" ; fi
-@@ -303,7 +362,7 @@
+@@ -303,7 +360,7 @@
    $MAIL_AGENT << __EOF__
  To: $mail_to
  From: $me
@@ -160,7 +160,7 @@
  
  `if [ "$old_synopsis" != "$new_synopsis" ]; then
  	echo Old Synopsis: "$old_synopsis"
-@@ -321,5 +380,9 @@
+@@ -321,5 +378,9 @@
  # call PR_EDIT on the new file and clean up
  $PR_EDIT < $new
  $PR_EDIT --unlock $pr_id
