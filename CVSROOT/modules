@@ -7510,6 +7510,7 @@ phpeclipse	ports/java/phpeclipse
 phpeclipse_phphelp	ports/java/phpeclipse_phphelp
 phpeclipse_sql	ports/java/phpeclipse_sql
 phpeclipse_tidy	ports/java/phpeclipse_tidy
+phpgedview	ports/www/phpgedview
 phpgroupware	ports/deskutils/phpgroupware
 phpicalendar	ports/deskutils/phpicalendar
 phpldapadmin	ports/net/phpldapadmin
