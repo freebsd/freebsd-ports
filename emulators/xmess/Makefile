@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xmess
-PORTVERSION=	0.37b15.2
+PORTVERSION=	0.56.2
 
 MAINTAINER=	stijn@win.tue.nl
 

@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	xmame
-PORTVERSION?=	0.56.1
+PORTVERSION?=	0.56.2
 CATEGORIES=	emulators
 MASTER_SITES=	http://x.mame.net/download/ \
 		http://www.mame.net/zips/ \
@@ -61,17 +61,30 @@ GENERALDOCS=	changes.unix \
 		xmame-doc-5.html \
 		xmame-doc-6.html \
 		xmame-doc-7.html \
+		xmame-doc-8.html \
 		xmame-doc.html \
+		xmame-gdoc-1.html \
+		xmame-gdoc-2.html \
+		xmame-gdoc-3.html \
+		xmame-gdoc-4.html \
+		xmame-gdoc-5.html \
+		xmame-gdoc-6.html \
+		xmame-gdoc-7.html \
+		xmame-gdoc-8.html \
+		xmame-gdoc.html \
+		xmame.css \
 		xmame-doc.lyx \
-		xmame-doc.ps \
-		xmame-doc.sgml \
-		xmame-doc.txt
+		xmame-doc.txt \
+		dga2.txt
 XMAMEDOCS=	changes.mame \
 		gamelist.mame \
 		readme.mame
 XMESSDOCS=	changes.mess \
+		credits.mess \
 		gamelist.mess \
 		readme.mess \
+		messroms.txt \
+		imgtool.txt \
 		messroms.txt
 PINMAMEDOCS=	pinmame/simulation.txt \
 		pinmame/whatsnew.txt \
@@ -87,22 +100,6 @@ ALLDOCS=	${GENERALDOCS} ${XMAMEDOCS}
 ALLDOCS=	${GENERALDOCS} ${XMESSDOCS}
 .else
 ALLDOCS=	${GENERALDOCS} ${PINMAMEDOCS}
-.endif
-.endif
-
-# CPS-2 patches - this enables extra games in MAME.
-# Disabled 2001/09/18 - all CPS2shock releases are in xmame right now.
-.if 0
-.if ${MAMEMESS} == "mame"
-.if defined(WITH_CPS2) && ${WITH_CPS2} == "yes"
-CPS2VERSION=	20010711
-
-PATCH_SITES+=	http://www.win.tue.nl/~stijn/xmame/
-PATCHFILES+=	${DISTNAME}-cps2-${CPS2VERSION}.patch.gz
-.else
-pre-everything::
-	@${ECHO_MSG} "===> If you want to compile MAME with CPS-2 support, use \"make WITH_CPS2=yes\""
-.endif
 .endif
 .endif
 
