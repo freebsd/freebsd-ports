@@ -4,7 +4,7 @@
 # Date created:			  Tue Jan 28, 1997
 # Whom:				  David O'Brien (obrien@NUXI.com)
 #
-# $Id: Makefile,v 1.12 1999/01/21 12:29:16 obrien Exp $
+# $Id: Makefile,v 1.13 1999/03/08 21:23:31 steve Exp $
 #
 
 DISTNAME=	ddd-3.1.3
@@ -25,7 +25,7 @@ REQUIRES_MOTIF=	yes
 MAN1=		ddd.1
 
 post-configure:
-	echo "LIBXM = ${MOTIFLIB}" >> ${WRKSRC}/ddd/Makefile
+	${ECHO} "LIBXM = ${MOTIFLIB}" >> ${WRKSRC}/ddd/Makefile
 
 post-install:
 .if !defined(NOPORTDOCS)
