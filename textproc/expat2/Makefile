@@ -6,25 +6,23 @@
 #
 
 PORTNAME=	expat
-PORTVERSION=	1.95.2
+PORTVERSION=	1.95.3
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	expat
 
 MAINTAINER=	kuriyama@FreeBSD.org
 
-CONFIGURE_ARGS=	--enable-shared --enable-static
 USE_LIBTOOL=	yes
-
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+ALL_TARGET=	default
 INSTALLS_SHLIB=	yes
+MAN1=		xmlwf.1
 
 SHLIB_MAJOR=	2
 
 MAKE_ENV=	LIBCURRENT="${SHLIB_MAJOR}" \
 		SHELL="/bin/sh"
 PLIST_SUB=	SHLIB_MAJOR="${SHLIB_MAJOR}"
-
-post-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/xmlwf/xmlwf ${PREFIX}/bin
 
 .include <bsd.port.mk>
