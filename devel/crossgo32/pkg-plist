@@ -15,6 +15,7 @@ bin/i386-go32-c++
 bin/protoize
 bin/unprotoize
 bin/i386-go32-gcc
+bin/i386-go32-coff2exe
 i386-go32/bin/nm
 i386-go32/bin/strip
 i386-go32/bin/ar
@@ -183,3 +184,21 @@ man/man1/i386-go32-gcc.1.gz
 man/man1/cccp.1.gz
 man/man1/i386-go32-ld.1.gz
 man/man1/i386-go32-as.1.gz
+share/doc/crossgo32/FAQ-0.8
+share/doc/crossgo32/Readme.FreeBSD
+share/crossgo32/go32.exe
+share/crossgo32/emu387
+@dirrm i386-go32/lib/ldscripts
+@dirrm i386-go32/lib
+@dirrm i386-go32/include/sys
+@dirrm i386-go32/include/machine
+@dirrm i386-go32/include
+@dirrm i386-go32/bin
+@dirrm i386-go32/
+@dirrm lib/gcc-lib/i386-go32/2.7.2.2/include/objc
+@dirrm lib/gcc-lib/i386-go32/2.7.2.2/include
+@dirrm lib/gcc-lib/i386-go32/2.7.2.2
+@dirrm lib/gcc-lib/i386-go32
+@dirrm lib/gcc-lib/
+@dirrm share/doc/crossgo32
+@dirrm share/crossgo32
