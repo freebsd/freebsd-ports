@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mod_php
-PORTVERSION= 	4.0.0
+PORTVERSION= 	4.0.1
 CATEGORIES=	www
 MASTER_SITES=	http://us.php.net/${PHP_DISTDIR}/ \
 		http://php.he.net/${PHP_DISTDIR}/ \
@@ -26,7 +26,7 @@ RUN_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache13
 
 Y2K=		http://www.php.net/y2k.php
 
-PHP_DISTDIR=	version4/downloads
+PHP_DISTDIR=	distributions
 
 APXS=		${PREFIX}/sbin/apxs
 
