@@ -114,13 +114,15 @@ CONFIGURE_ARGS+=	--enable-gcc3
 .endif
 
 pre-fetch:
+.if ${OSVERSION} < 500000
 	@${ECHO}
-	@${ECHO} OO setup is currently broken on STABLE and
-	@${ECHO} CURRENT. You'll need a system patch to solve
+	@${ECHO} OO setup is currently broken on STABLE
+	@${ECHO} You'll need a system patch to solve
 	@${ECHO} this problem:
 	@${ECHO}
 	@${ECHO} http://people.freebsd.org/~mbr/patches/rtld-elf.diff
 	@${ECHO}
+.endif
 .if !defined(USE_GCC) || !defined(WITH_DEBUG)
 	@${ECHO}
 	@${ECHO} OPTIONS:
