@@ -8,23 +8,21 @@
 PORTNAME=	slrn
 PORTVERSION=	0.9.6.2
 CATEGORIES=	japanese news
-MASTER_SITES=	ftp://space.mit.edu/pub/davis/slrn/ \
-		http://www.kondara.org/~g/slang/
+MASTER_SITES=	http://straycat.ms.u-tokyo.ac.jp/distfiles/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${PORTNAME}-doc-j0.9.5.6-0.tar.gz
 
-PATCH_SITES=	${MASTER_SITE_PORTS_JP}
+PATCH_SITES=	${MASTER_SITE_PORTS_JP} \
+		http://straycat.ms.u-tokyo.ac.jp/distfiles/
 PATCHFILES=	${PORTNAME}-${PORTVERSION}jp0.pat.gz
 PATCH_DIST_STRIP=-p1
 
-MAINTAINER=	ukatsuta@mud.biglobe.ne.jp
+MAINTAINER=	koma2@ms.u-tokyo.ac.jp
 COMMENT=	A newsreader based by S-Lang
 
-BROKEN=		"Checksum mismatch"
-EXPIRATION_DATE=2004-08-20
-DEPRECATED=	${BROKEN}
-
 LIB_DEPENDS=	slang.2:${PORTSDIR}/japanese/libslang
+
+CONFLICTS=	slrn-0.*
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 JDOCSRC=	${WRKDIR}/${PORTNAME}-doc-j0.9.5.6-0
@@ -32,10 +30,6 @@ GNU_CONFIGURE=	yes
 ALL_TARGET=	all slrnpull
 MANLANG=	'' ja
 MAN1=		slrn.1
-
-pre-install:
-	strip ${WRKSRC}/src/${MACHINE_ARCH}objs/slrn
-	strip ${WRKSRC}/src/${MACHINE_ARCH}objs/slrnpull
 
 post-install:
 	${INSTALL_MAN} ${JDOCSRC}/slrn.1 ${PREFIX}/man/ja/man1
