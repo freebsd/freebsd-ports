@@ -17,7 +17,6 @@ Bitmap-mule, Package to use bitmap in MULE or Emacs/mule.
 To use bitmap-mule, put the following setup into your ~/.emacs:
 
 	(require 'apel-setupel)
-	(require 'flim-setupel)
 	(require 'bitmap-setupel)
 
 --- Porting by shige <shige@FreeBSD.org>
