@@ -25,6 +25,10 @@ COMMENT=	Free Pascal compiler with Turbo, Delphi and other extensions
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 502000
+BROKEN=		"Install fails"
+.endif
+
 LIB_DEPENDS=	gds.1:${PORTSDIR}/databases/firebird
 .if ${OSVERSION} >= 500000
 LIB_DEPENDS+=   c.4:${PORTSDIR}/misc/compat4x
