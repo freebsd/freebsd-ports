@@ -17,6 +17,7 @@ COMMENT=	Kernel module which provides /dev/rtc device support
 
 WRKSRC=		${WRKDIR}/files
 
+NO_FETCH=	yes
 USE_LINUX=	yes
 
 KMODDIR=	${PREFIX}/modules
@@ -39,9 +40,6 @@ IGNORE=		"Systems prior to 400013 are out of support"
 .if !exists(${SRC_BASE}/sys/Makefile)
 IGNORE=		"Kernel source files required"
 .endif
-
-do-fetch:
-	@${ECHO} "I don't fetch anything..."
 
 do-extract:
 	@${MKDIR} ${WRKSRC}
