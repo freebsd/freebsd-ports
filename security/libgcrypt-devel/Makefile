@@ -22,6 +22,8 @@ CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 INSTALLS_SHLIB=	yes
 
+INFO=	gcrypt
+
 .include <bsd.port.pre.mk>
 
 pre-extract:
