@@ -279,8 +279,8 @@
  	env[0] = NULL;
  
 +#ifdef __FreeBSD__
-+ 	if (getenv("TZ"))
-+ 		child_set_env(&env, &envsize, "TZ", getenv("TZ"));
++	if (getenv("TZ"))
++		child_set_env(&env, &envsize, "TZ", getenv("TZ"));
 +#endif /* __FreeBSD__ */
 +
  	if (!options.use_login) {
