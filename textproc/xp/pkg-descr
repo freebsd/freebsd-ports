@@ -1,0 +1,14 @@
+From the XP homepage:
+
+    XP is an XML 1.0 parser written in Java. It is fully conforming: it
+    detects all non well-formed documents.
+
+XP has the following design goals: Conformance and correctness, high
+performance and a layered structure. Is is currently non-validating but can
+parse all external entities.
+
+For more details, please see the XP homepage:
+
+WWW: http://www.jclark.com/xml/xp/index.html
+
+- Mike (mike@vee.net)
