@@ -25,7 +25,7 @@ USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack gnometarget libxml2 gtk20
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
-		LIBS="-L${LOCALBASE}/lib -lgnuregex -lcompat"
+		LIBS="-L${LOCALBASE}/lib -lgnuregex"
 
 OPTIONS=	GTKSPELL "Enable spell checking support" on
 
