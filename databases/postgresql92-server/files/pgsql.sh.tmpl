@@ -23,6 +23,7 @@ prefix=%%PREFIX%%
 
 . %%RC_SUBR%%
 
+load_rc_config postgresql
 
 # set defaults
 postgresql_enable=${postgresql_enable:-"NO"}
@@ -54,5 +55,4 @@ postgresql_initdb()
     su -l ${postgresql_user} -c "exec ${prefix}/bin/initdb -D ${postgresql_data}"
 }
 
-load_rc_config postgresql
 run_rc_command "$1"
