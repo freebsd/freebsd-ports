@@ -31,77 +31,76 @@ share/locale/sv/LC_MESSAGES/sylpheed.mo
 share/locale/tr/LC_MESSAGES/sylpheed.mo
 share/locale/zh_CN/LC_MESSAGES/sylpheed.mo
 share/locale/zh_TW.Big5/LC_MESSAGES/sylpheed.mo
-share/sylpheed/faq/de/sylpheed-faq-1.html
-share/sylpheed/faq/de/sylpheed-faq-2.html
-share/sylpheed/faq/de/sylpheed-faq-3.html
-share/sylpheed/faq/de/sylpheed-faq.html
-share/sylpheed/faq/en/sylpheed-faq-1.html
-share/sylpheed/faq/en/sylpheed-faq-2.html
-share/sylpheed/faq/en/sylpheed-faq-3.html
-share/sylpheed/faq/en/sylpheed-faq.html
-share/sylpheed/faq/es/sylpheed-faq-1.html
-share/sylpheed/faq/es/sylpheed-faq-2.html
-share/sylpheed/faq/es/sylpheed-faq-3.html
-share/sylpheed/faq/es/sylpheed-faq.html
-share/sylpheed/faq/fr/sylpheed-faq-1.html
-share/sylpheed/faq/fr/sylpheed-faq-2.html
-share/sylpheed/faq/fr/sylpheed-faq-3.html
-share/sylpheed/faq/fr/sylpheed-faq.html
-share/sylpheed/faq/it/sylpheed-faq-1.html
-share/sylpheed/faq/it/sylpheed-faq-2.html
-share/sylpheed/faq/it/sylpheed-faq-3.html
-share/sylpheed/faq/it/sylpheed-faq.html
-share/sylpheed/manual/en/sylpheed-1.html
-share/sylpheed/manual/en/sylpheed-10.html
-share/sylpheed/manual/en/sylpheed-11.html
-share/sylpheed/manual/en/sylpheed-12.html
-share/sylpheed/manual/en/sylpheed-13.html
-share/sylpheed/manual/en/sylpheed-14.html
-share/sylpheed/manual/en/sylpheed-15.html
-share/sylpheed/manual/en/sylpheed-16.html
-share/sylpheed/manual/en/sylpheed-17.html
-share/sylpheed/manual/en/sylpheed-18.html
-share/sylpheed/manual/en/sylpheed-19.html
-share/sylpheed/manual/en/sylpheed-2.html
-share/sylpheed/manual/en/sylpheed-20.html
-share/sylpheed/manual/en/sylpheed-3.html
-share/sylpheed/manual/en/sylpheed-4.html
-share/sylpheed/manual/en/sylpheed-5.html
-share/sylpheed/manual/en/sylpheed-6.html
-share/sylpheed/manual/en/sylpheed-7.html
-share/sylpheed/manual/en/sylpheed-8.html
-share/sylpheed/manual/en/sylpheed-9.html
-share/sylpheed/manual/en/sylpheed.html
-share/sylpheed/manual/ja/sylpheed-1.html
-share/sylpheed/manual/ja/sylpheed-10.html
-share/sylpheed/manual/ja/sylpheed-11.html
-share/sylpheed/manual/ja/sylpheed-12.html
-share/sylpheed/manual/ja/sylpheed-13.html
-share/sylpheed/manual/ja/sylpheed-14.html
-share/sylpheed/manual/ja/sylpheed-15.html
-share/sylpheed/manual/ja/sylpheed-16.html
-share/sylpheed/manual/ja/sylpheed-17.html
-share/sylpheed/manual/ja/sylpheed-18.html
-share/sylpheed/manual/ja/sylpheed-19.html
-share/sylpheed/manual/ja/sylpheed-2.html
-share/sylpheed/manual/ja/sylpheed-20.html
-share/sylpheed/manual/ja/sylpheed-3.html
-share/sylpheed/manual/ja/sylpheed-4.html
-share/sylpheed/manual/ja/sylpheed-5.html
-share/sylpheed/manual/ja/sylpheed-6.html
-share/sylpheed/manual/ja/sylpheed-7.html
-share/sylpheed/manual/ja/sylpheed-8.html
-share/sylpheed/manual/ja/sylpheed-9.html
-share/sylpheed/manual/ja/sylpheed.html
-share/sylpheed/manual/ja/sylpheed.sgml
-@dirrm share/sylpheed/manual/ja
-@dirrm share/sylpheed/manual/en
-@dirrm share/sylpheed/manual
-@dirrm share/sylpheed/faq/it
-@dirrm share/sylpheed/faq/fr
-@dirrm share/sylpheed/faq/es
-@dirrm share/sylpheed/faq/en
-@dirrm share/sylpheed/faq/de
-@dirrm share/sylpheed/faq
-@dirrm share/sylpheed
+%%PORTDOCS%%share/doc/sylpheed/faq/de/sylpheed-faq-1.html
+%%PORTDOCS%%share/doc/sylpheed/faq/de/sylpheed-faq-2.html
+%%PORTDOCS%%share/doc/sylpheed/faq/de/sylpheed-faq-3.html
+%%PORTDOCS%%share/doc/sylpheed/faq/de/sylpheed-faq.html
+%%PORTDOCS%%share/doc/sylpheed/faq/en/sylpheed-faq-1.html
+%%PORTDOCS%%share/doc/sylpheed/faq/en/sylpheed-faq-2.html
+%%PORTDOCS%%share/doc/sylpheed/faq/en/sylpheed-faq-3.html
+%%PORTDOCS%%share/doc/sylpheed/faq/en/sylpheed-faq.html
+%%PORTDOCS%%share/doc/sylpheed/faq/es/sylpheed-faq-1.html
+%%PORTDOCS%%share/doc/sylpheed/faq/es/sylpheed-faq-2.html
+%%PORTDOCS%%share/doc/sylpheed/faq/es/sylpheed-faq-3.html
+%%PORTDOCS%%share/doc/sylpheed/faq/es/sylpheed-faq.html
+%%PORTDOCS%%share/doc/sylpheed/faq/fr/sylpheed-faq-1.html
+%%PORTDOCS%%share/doc/sylpheed/faq/fr/sylpheed-faq-2.html
+%%PORTDOCS%%share/doc/sylpheed/faq/fr/sylpheed-faq-3.html
+%%PORTDOCS%%share/doc/sylpheed/faq/fr/sylpheed-faq.html
+%%PORTDOCS%%share/doc/sylpheed/faq/it/sylpheed-faq-1.html
+%%PORTDOCS%%share/doc/sylpheed/faq/it/sylpheed-faq-2.html
+%%PORTDOCS%%share/doc/sylpheed/faq/it/sylpheed-faq-3.html
+%%PORTDOCS%%share/doc/sylpheed/faq/it/sylpheed-faq.html
+%%PORTDOCS%%share/doc/sylpheed/manual/en/sylpheed-1.html
+%%PORTDOCS%%share/doc/sylpheed/manual/en/sylpheed-10.html
+%%PORTDOCS%%share/doc/sylpheed/manual/en/sylpheed-11.html
+%%PORTDOCS%%share/doc/sylpheed/manual/en/sylpheed-12.html
+%%PORTDOCS%%share/doc/sylpheed/manual/en/sylpheed-13.html
+%%PORTDOCS%%share/doc/sylpheed/manual/en/sylpheed-14.html
+%%PORTDOCS%%share/doc/sylpheed/manual/en/sylpheed-15.html
+%%PORTDOCS%%share/doc/sylpheed/manual/en/sylpheed-16.html
+%%PORTDOCS%%share/doc/sylpheed/manual/en/sylpheed-17.html
+%%PORTDOCS%%share/doc/sylpheed/manual/en/sylpheed-18.html
+%%PORTDOCS%%share/doc/sylpheed/manual/en/sylpheed-19.html
+%%PORTDOCS%%share/doc/sylpheed/manual/en/sylpheed-2.html
+%%PORTDOCS%%share/doc/sylpheed/manual/en/sylpheed-20.html
+%%PORTDOCS%%share/doc/sylpheed/manual/en/sylpheed-3.html
+%%PORTDOCS%%share/doc/sylpheed/manual/en/sylpheed-4.html
+%%PORTDOCS%%share/doc/sylpheed/manual/en/sylpheed-5.html
+%%PORTDOCS%%share/doc/sylpheed/manual/en/sylpheed-6.html
+%%PORTDOCS%%share/doc/sylpheed/manual/en/sylpheed-7.html
+%%PORTDOCS%%share/doc/sylpheed/manual/en/sylpheed-8.html
+%%PORTDOCS%%share/doc/sylpheed/manual/en/sylpheed-9.html
+%%PORTDOCS%%share/doc/sylpheed/manual/en/sylpheed.html
+%%PORTDOCS%%share/doc/sylpheed/manual/ja/sylpheed-1.html
+%%PORTDOCS%%share/doc/sylpheed/manual/ja/sylpheed-10.html
+%%PORTDOCS%%share/doc/sylpheed/manual/ja/sylpheed-11.html
+%%PORTDOCS%%share/doc/sylpheed/manual/ja/sylpheed-12.html
+%%PORTDOCS%%share/doc/sylpheed/manual/ja/sylpheed-13.html
+%%PORTDOCS%%share/doc/sylpheed/manual/ja/sylpheed-14.html
+%%PORTDOCS%%share/doc/sylpheed/manual/ja/sylpheed-15.html
+%%PORTDOCS%%share/doc/sylpheed/manual/ja/sylpheed-16.html
+%%PORTDOCS%%share/doc/sylpheed/manual/ja/sylpheed-17.html
+%%PORTDOCS%%share/doc/sylpheed/manual/ja/sylpheed-18.html
+%%PORTDOCS%%share/doc/sylpheed/manual/ja/sylpheed-19.html
+%%PORTDOCS%%share/doc/sylpheed/manual/ja/sylpheed-2.html
+%%PORTDOCS%%share/doc/sylpheed/manual/ja/sylpheed-20.html
+%%PORTDOCS%%share/doc/sylpheed/manual/ja/sylpheed-3.html
+%%PORTDOCS%%share/doc/sylpheed/manual/ja/sylpheed-4.html
+%%PORTDOCS%%share/doc/sylpheed/manual/ja/sylpheed-5.html
+%%PORTDOCS%%share/doc/sylpheed/manual/ja/sylpheed-6.html
+%%PORTDOCS%%share/doc/sylpheed/manual/ja/sylpheed-7.html
+%%PORTDOCS%%share/doc/sylpheed/manual/ja/sylpheed-8.html
+%%PORTDOCS%%share/doc/sylpheed/manual/ja/sylpheed-9.html
+%%PORTDOCS%%share/doc/sylpheed/manual/ja/sylpheed.html
+%%PORTDOCS%%share/doc/sylpheed/manual/ja/sylpheed.sgml
+%%PORTDOCS%%@dirrm share/doc/sylpheed/manual/ja
+%%PORTDOCS%%@dirrm share/doc/sylpheed/manual/en
+%%PORTDOCS%%@dirrm share/doc/sylpheed/manual
+%%PORTDOCS%%@dirrm share/doc/sylpheed/faq/it
+%%PORTDOCS%%@dirrm share/doc/sylpheed/faq/fr
+%%PORTDOCS%%@dirrm share/doc/sylpheed/faq/es
+%%PORTDOCS%%@dirrm share/doc/sylpheed/faq/en
+%%PORTDOCS%%@dirrm share/doc/sylpheed/faq/de
+%%PORTDOCS%%@dirrm share/doc/sylpheed/faq
 %%PORTDOCS%%@dirrm share/doc/sylpheed

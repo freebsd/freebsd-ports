@@ -71,6 +71,11 @@ CONFIGURE_ARGS+=--enable-ssl
 .else
 CONFIGURE_ARGS+=--disable-ssl
 .endif
+ 
+MAKEFILES=	Makefile.in ac/Makefile.in faq/Makefile.in faq/de/Makefile.in \
+		faq/en/Makefile.in faq/es/Makefile.in faq/fr/Makefile.in \
+		faq/it/Makefile.in manual/Makefile.in manual/en/Makefile.in \
+		manual/ja/Makefile.in src/Makefile.in
 
 pre-everything::
 	@${ECHO} ""
@@ -90,6 +95,17 @@ pre-everything::
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS:S/"//g}|g; \
 		s|-lresolv||g' ${WRKSRC}/configure
+
+.if defined(NOPORTDOCS)
+	@${REINPLACE_CMD} -e 's|^SUBDIRS = ac po intl src manual faq$$|SUBDIRS = ac po intl src|g' \
+		${WRKSRC}/Makefile.in
+.else
+.for i in ${MAKEFILES}
+	@${REINPLACE_CMD} -e 's|^faqdir = @faqdir@$$|faqdir = ${DOCSDIR}/faq|g; \
+		s|^manualdir = @manualdir@$$|manualdir = ${DOCSDIR}/manual|g' \
+		${WRKSRC}/${i}
+.endfor
+.endif
 
 pre-build:
 	${LN} -sf ${LOCALBASE}/bin/${LIBTOOL} ${WRKSRC}/libtool
