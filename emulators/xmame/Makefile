@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	xmame
-PORTVERSION?=	0.77.1
+PORTVERSION?=	0.78.1
 CATEGORIES=	emulators
 MASTER_SITES=	http://x.mame.net/download/:xmame \
 		http://www.sys2064.com/files/util/:history \
@@ -24,7 +24,6 @@ USE_BZIP2=	yes
 USE_PERL5=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
-MAKEFILE=	makefile.unix
 
 MAN6=		x${MAMEMESS}.6
 
@@ -79,18 +78,13 @@ GENERALDOCS=	changes.unix \
 		xmame-gdoc.html \
 		xmame.css
 XMAMEDOCS=
-XMESSDOCS=	mess/cgafont.txt \
-		mess/compilewin.html \
-		mess/credits.htm \
-		mess/credits.txt \
+XMESSDOCS=	mess/credits.htm \
 		mess/faq.htm \
 		mess/imgtool.txt \
-		mess/messhelp.txt \
 		mess/messnew.txt \
-		mess/messold.txt \
 		mess/messroms.txt \
 		mess/sysinfo.dat \
-		mess/windows.txt
+
 PINMAMEDOCS=	pinmame/simulation.txt \
 		pinmame/whatsnew.txt \
 		pinmame/pinmame.txt \
@@ -280,6 +274,15 @@ do-configure:
 		-e "s@^SDL_CONFIG.*@SDL_CONFIG = ${SDL_CONFIG}@g" \
 		-e "s@^GLLIBS += .*@GLLIBS += ${PTHREAD_LIBS}@g" \
 			${WRKSRC}/makefile.unix
+
+# png.h conflicts with libpng.
+.for file in mess/artworkx.c mess/artworkx.h src/artwork.c \
+	src/common.c src/png.c src/unix/video-drivers/glexport.c
+
+	${REINPLACE_CMD} -e "s@\"png.h\"@\"mame_png.h\"@g" ${WRKSRC}/${file}
+
+.endfor
+	${LN} -s ${WRKSRC}/src/png.h ${WRKSRC}/src/mame_png.h
 
 post-build:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} SDL_VIDEODRIVER=aalib \

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xmess
-PORTVERSION=	0.77.1
+PORTVERSION=	0.78.1
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X11 emulator for game consoles
