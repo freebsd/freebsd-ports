@@ -1173,6 +1173,7 @@ divx4linux	ports/graphics/divx4linux
 divx4linux4	ports/graphics/divx4linux4
 divxcalc	ports/graphics/divxcalc
 djbdns		ports/net/djbdns
+djbfft		ports/math/djbfft
 djvuplugin	ports/www/djvuplugin
 dkimap4		ports/mail/dkimap4
 dlint		ports/net/dlint
