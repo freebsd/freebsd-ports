@@ -6,25 +6,24 @@
 #
 
 PORTNAME=	fontDefaultBitmaps
-PORTVERSION=	4.2.0
+PORTVERSION=	4.3.0
 CATEGORIES=	x11-fonts
 MASTER_SITES=	${MASTER_SITE_XFREE}
 MASTER_SITE_SUBDIR=	${PORTVERSION}
 PKGNAMEPREFIX=	XFree86-
-DISTFILES=	X${PORTVERSION:S/.//g}src-1.tgz X${PORTVERSION:S/.//g}src-2.tgz
-EXTRACT_ONLY=	X${PORTVERSION:S/.//g}src-2.tgz
+DISTFILES=	X430src-4.tgz X430src-1.tgz
+EXTRACT_ONLY=	X430src-4.tgz
 
 MAINTAINER=	anholt@freebsd.org
 COMMENT=	XFree86-4 default bitmap fonts
 
-BUILD_DEPENDS=	mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
+BUILD_DEPENDS=	ucs2any:${PORTSDIR}/x11/XFree86-4-clients
 RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/encodings/encodings.dir:${PORTSDIR}/x11-fonts/XFree86-4-fontEncodings
 
 XFREE86_VERSION=	4
 USE_IMAKE=		YES
 PROJECTROOT=		-DProjectRoot=${PREFIX}
 DIST_SUBDIR=		xc
-EXTRACT_AFTER_ARGS=	| ${TAR} -xf - xc/fonts
 WRKSRC=			${WRKDIR}/xc/fonts/bdf/misc
 
 post-extract:

@@ -22,6 +22,7 @@ MAN1=	Xmark.1 \
 	makepsres.1 \
 	mkcfm.1 \
 	mkfontdir.1 \
+	mkfontscale.1 \
 	oclock.1 \
 	proxymngr.1 \
 	resize.1 \
@@ -46,6 +47,7 @@ MAN1=	Xmark.1 \
 	xclock.1 \
 	xcmsdb.1 \
 	xconsole.1 \
+	xcursorgen.1 \
 	xcutsel.1 \
 	xditview.1 \
 	xdm.1 \
@@ -61,7 +63,6 @@ MAN1=	Xmark.1 \
 	xgamma.1 \
 	xgc.1 \
 	xhost.1 \
-	xieperf.1 \
 	xinit.1 \
 	xkbcomp.1 \
 	xkbevd.1 \
@@ -79,6 +80,7 @@ MAN1=	Xmark.1 \
 	xmodmap.1 \
 	xon.1 \
 	xprop.1 \
+	xrandr.1 \
 	xrdb.1 \
 	xrefresh.1 \
 	xset.1 \
@@ -88,12 +90,6 @@ MAN1=	Xmark.1 \
 	xsm.1 \
 	xstdcmap.1 \
 	xterm.1 \
-	xvidtune.1 \
-	xvinfo.1 \
-	xwd.1 \
-	xwininfo.1 \
-	xwud.1 \
-	xrandr.1 \
 	xtrap.1 \
 	xtrapchar.1 \
 	xtrapin.1 \
@@ -101,4 +97,9 @@ MAN1=	Xmark.1 \
 	xtrapout.1 \
 	xtrapproto.1 \
 	xtrapreset.1 \
-	xtrapstats.1
+	xtrapstats.1 \
+	xvidtune.1 \
+	xvinfo.1 \
+	xwd.1 \
+	xwininfo.1 \
+	xwud.1

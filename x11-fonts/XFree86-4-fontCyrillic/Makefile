@@ -6,33 +6,24 @@
 #
 
 PORTNAME=	fontCyrillic
-PORTVERSION=	4.2.0
-PORTREVISION=   4
+PORTVERSION=	4.3.0
 CATEGORIES=	x11-fonts
-MASTER_SITES=   ${MASTER_SITE_XFREE:S/$/:x/} \
-		http://koi8.pp.ru/dist/:xrus
-MASTER_SITE_SUBDIR=	${PORTVERSION}/:x
+MASTER_SITES=	${MASTER_SITE_XFREE}
+MASTER_SITE_SUBDIR=	${PORTVERSION}
 PKGNAMEPREFIX=	XFree86-
-DISTFILES=      X${PORTVERSION:S/.//g}src-2.tgz:x \
-		xrus-2.3.1-xf4-bdf.tgz:xrus
+DISTFILES=	X430src-4.tgz
 
 MAINTAINER=	anholt@freebsd.org
-COMMENT=	XFree86-4 Cyrillic Fonts
+COMMENT=	XFree86-4 Cyrillic fonts
 
-BUILD_DEPENDS=	mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
+BUILD_DEPENDS=	ucs2any:${PORTSDIR}/x11/XFree86-4-clients
 RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/encodings/encodings.dir:${PORTSDIR}/x11-fonts/XFree86-4-fontEncodings
 
 XFREE86_VERSION=	4
 USE_IMAKE=		YES
 PROJECTROOT=		-DProjectRoot=${PREFIX}
 DIST_SUBDIR=		xc
-EXTRACT_ONLY=           X${PORTVERSION:S/.//g}src-2.tgz
-EXTRACT_AFTER_ARGS=	| ${TAR} -xf - xc/fonts
 WRKSRC=			${WRKDIR}/xc/fonts/bdf/cyrillic
-
-post-extract:
-	cd ${WRKSRC} && \
-	    ${TAR} zxf ${DISTDIR}/${DIST_SUBDIR}/xrus-2.3.1-xf4-bdf.tgz
 
 do-configure:
 	(cd ${WRKDIR}/xc/fonts/encodings && \

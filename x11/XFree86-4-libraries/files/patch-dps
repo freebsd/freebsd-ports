@@ -1,5 +1,5 @@
---- lib/dps/Imakefile.orig	Sat Apr  7 12:41:50 2001
-+++ lib/dps/Imakefile	Tue Sep  3 22:37:23 2002
+--- lib/dps/Imakefile.orig	Tue Dec 31 13:15:41 2002
++++ lib/dps/Imakefile	Fri Jan 10 21:24:35 2003
 @@ -29,7 +29,6 @@
              SED = sed
              AWK = awk
@@ -8,31 +8,31 @@
  
  COMMONOBJECTFILES = \
  	dpsclient.o\
-@@ -195,7 +194,7 @@
+@@ -201,7 +200,7 @@
  
- includes :: $(DPSOPSCFILES) $(PSOPSCFILES) $(HEADERS)
+ includes:: $(DPSOPSCFILES) $(PSOPSCFILES) $(HEADERS)
  
--$(DPSOPSCFILES) $(PSOPSCFILES): ProgramTargetName($(PSWRAP))
-+$(DPSOPSCFILES) $(PSOPSCFILES) : PsWrapDependency
+-$(DPSOPSCFILES) $(PSOPSCFILES): HostProgramTargetName($(PSWRAP))
++$(DPSOPSCFILES) $(PSOPSCFILES): PsWrapDependency
  
  SRCS = \
  	${COMMONSOURCEFILES} \
-@@ -218,16 +217,11 @@
+@@ -224,16 +223,11 @@
  
  .SUFFIXES: .psw .h
  
--.psw.c : ProgramTargetName($(PSWRAP))
+-.psw.c : HostProgramTargetName($(PSWRAP))
 +.psw.c : PsWrapDependency
  	RunProgram(PSWRAP,-a -o $*.c -h $*.h $<)
  
--.psw.h : ProgramTargetName($(PSWRAP))
+-.psw.h : HostProgramTargetName($(PSWRAP))
 +.psw.h : PsWrapDependency
  	RunProgram(PSWRAP,-a -h $*.h $< > /dev/null)
 -
--ProgramTargetName($(PSWRAP)):
+-HostProgramTargetName($(PSWRAP)):
 -	@echo "checking $@ over in $(PSWRAPSRC) first..."; \
 -	cd $(PSWRAPSRC) && $(MAKE); \
 -	echo "okay, continuing in $(CURRENT_DIR)"
  
- HEADERS = psops.h dpsops.h
- 
+ includes :: $(HEADERS)
+ depend :: $(DPSOPSCFILES) $(PSOPSCFILES)

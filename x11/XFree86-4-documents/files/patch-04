@@ -1,5 +1,5 @@
---- specs/Imakefile.orig	Thu Jan 17 03:36:00 2002
-+++ specs/Imakefile	Mon Jan 21 03:13:38 2002
+--- Imakefile.orig	Wed Jan 16 10:36:00 2002
++++ Imakefile	Mon Mar  3 17:35:16 2003
 @@ -13,7 +13,7 @@
  #else
  SUBDIRS = BDF CTEXT FSProtocol GL ICCCM ICE /*PEX5*/ PM Render SM X11 XDMCP \

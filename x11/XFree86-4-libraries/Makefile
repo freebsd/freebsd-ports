@@ -6,27 +6,27 @@
 #
 
 PORTNAME=	libraries
-PORTVERSION=	4.2.1
-PORTREVISION=	7
+PORTVERSION=	4.3.0
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_XFREE:S/$/:x/} \
 		${MASTER_SITE_LOCAL:S/$/:local/}
-MASTER_SITE_SUBDIR=	4.2.0/:x \
+MASTER_SITE_SUBDIR=	${PORTVERSION}/:x \
 			anholt/:local
 PKGNAMEPREFIX=	XFree86-
-DISTFILES=	X420src-1.tgz:x \
+DISTFILES=	X430src-1.tgz:x \
+		X430src-2.tgz:x \
+		X430src-3.tgz:x \
 		Wraphelp2.gz:local
-EXTRACT_ONLY=	X420src-1.tgz
-
-PATCH_SITES=		${MASTER_SITE_LOCAL}
-PATCH_SITE_SUBDIR=	anholt/patches-4.2.0/
-PATCHFILES=		4.2.0-4.2.1-1-freebsd.patch.gz
+EXTRACT_ONLY=	X430src-1.tgz \
+		X430src-2.tgz \
+		X430src-3.tgz
 
 MAINTAINER=	anholt@freebsd.org
-COMMENT=	XFree86-4 include/(shared) library kit
+COMMENT=	XFree86-4 libraries and headers
 
-BUILD_DEPENDS=	${X11BASE}/lib/X11/config/version.def:${PORTSDIR}/devel/imake-4
+BUILD_DEPENDS=	${X11BASE}/lib/X11/config/date.def:${PORTSDIR}/devel/imake-4
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
 RUN_DEPENDS=	mkhtmlindex:${PORTSDIR}/devel/imake-4
 
 XFREE86_VERSION=	4
@@ -37,51 +37,22 @@ MTREE_FILE=		/etc/mtree/BSD.x11-4.dist
 INSTALLS_SHLIB=		yes
 DIST_SUBDIR=		xc
 WRKSRC=			${WRKDIR}/xc
-SCRIPTS_ENV=		HasSecureRPC=${HasSecureRPC} \
-			BuildPexExt=${BuildPexExt} \
-			BuildXinerama=${BuildXinerama} \
-			BuildXIE=${BuildXIE} \
-			BuildAoutLibraries=${BuildAoutLibraries} \
-			ForceNormalLib=${ForceNormalLib} \
-			DebuggableLibraries=${DebuggableLibraries} \
+SCRIPTS_ENV=		DebuggableLibraries=${DebuggableLibraries} \
 			CC="${CC}" \
 			CXX="${CXX}" \
 			CFLAGS="${CFLAGS}"
-MAKE_ENV=		PKGNAMEPREFIX=${PKGNAMEPREFIX} \
-			PORTNAME=${PORTNAME} \
-			PORTVERSION=${PORTVERSION}
-MAN1=			libxrx.1
-MAN3=			Xaw.3
+MAN3=			Xaw.3 Xcursor.3 Xrandr.3
 XBUILD_DIRS=		lib nls programs/Xserver/include \
-			programs/Xserver/hw/xfree86/parser \
-			programs/xrx
+			programs/Xserver/hw/xfree86/parser
 XINCLUDE_DIRS=		programs/proxymngr
 XINSTALL_DIRS=		include lib nls programs/Xserver/include \
-			programs/xrx/plugin \
 			programs/Xserver/hw/xfree86/parser
 XINSTALL_MAN_DIRS=	${XINSTALL_DIRS}
 
 # XFree86 User Config:
-# ---
-# Name          Default		Meaning
-# ----------------------------------------------------------------------------
-# HasSecureRPC	YES		build with SecureRPC (require FreeBSD-3 or later)
-# BuildPexExt	YES		build PEX extension
-# BuildXinerama	YES		build Xinerama extension
-# BuildXIE	YES		build XIE extension
-# BuildAoutLibraries  NO	build with old Aout libs.
-# ForceNormalLib      YES	build with static libs.
 # DebuggableLibraries NO	build with debug libs (require FreeBSD-4 or later)
 # ----------------------------------------------------------------------------
-# DEFAULT means ports will use values which set by ${PORTSDIR}/devel/imake-4
-#
-HasSecureRPC?=		DEFAULT
-BuildPexExt?=		DEFAULT
-BuildXinerama?=		DEFAULT
-BuildXIE?=		DEFAULT
-BuildAoutLibraries?=	DEFAULT
-ForceNormalLib?=	DEFAULT
-DebuggableLibraries?=	DEFAULT
+DebuggableLibraries?=	NO
 # End of XFree86 User Config
 
 .ifdef USE_XLIB
@@ -110,17 +81,12 @@ post-extract:
 
 post-patch:
 	${CP} ${MASTERDIR}/files/nls::Compose::microsoft-cp1251 ${WRKSRC}/nls/Compose/microsoft-cp1251
-	cd ${WRKSRC}/nls; \
-	for i in Compose XI18N_OBJS XLC_LOCALE; do \
-		${LN} -s zh_TW.big5 $$i/zh_TW.Big5; \
-	done
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/programs/proxymngr/PM.h \
 		${PREFIX}/include/X11/PM
 	${INSTALL_DATA} ${WRKSRC}/programs/proxymngr/PMproto.h \
 		${PREFIX}/include/X11/PM
-	@${MKHTMLINDEX} ${X11BASE}/lib/X11/doc/html
 
 .include "Makefile.inc"
 .include <bsd.port.post.mk>

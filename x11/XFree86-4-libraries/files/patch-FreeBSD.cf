@@ -1,0 +1,77 @@
+--- config/cf/FreeBSD.cf.orig	Tue Jan 14 18:52:12 2003
++++ config/cf/FreeBSD.cf	Tue Mar  4 16:36:20 2003
+@@ -162,11 +162,11 @@
+  *    ld: warning: libXThrStub.so.6, needed by libX11.so, not found
+  */
+ #if BuildThreadStubLibrary && (!defined(UseInstalledX11) || !UseInstalledX11)
+-# define CcCmd			$(CLIENTENVSETUP) cc
+-# define CplusplusCmd		$(CLIENTENVSETUP) c++
++# define CcCmd			$(CLIENTENVSETUP) FreeBSDCC
++# define CplusplusCmd		$(CLIENTENVSETUP) FreeBSDCXX
+ #else
+-# define CcCmd			cc
+-# define CplusplusCmd		c++
++# define CcCmd			FreeBSDCC
++# define CplusplusCmd		FreeBSDCXX
+ #endif
+ 
+ #define CppCmd			/usr/bin/cpp
+@@ -177,7 +177,7 @@
+ #if defined(UseInstalled)
+ #define DefaultCCOptions	/**/
+ #else
+-#define DefaultCCOptions	-ansi -pedantic -Dasm=__asm GccWarningOptions
++#define DefaultCCOptions	-ansi -Dasm=__asm GccWarningOptions
+ #endif
+ #endif
+ #ifndef ExtraLibraries
+@@ -228,13 +228,17 @@
+ #endif
+ 
+ /*
+- * 4.1/i386 and 5.0/i386 have the AGP driver.
++ * 4.1/i386 and 5.0/i386,alpha,ia64 have the AGP driver.
+  */
+ #ifndef HasAgpGart
+ #if defined(i386Architecture) && \
+ 	(OSMajorVersion >= 5 || (OSMajorVersion == 4 && OSMinorVersion >= 1))
+ #define HasAgpGart		YES
+ #endif
++#if (defined(AlphaArchitecture) || defined(ia64Architecture)) && \
++	(OSMajorVersion >= 5)
++#define HasAgpGart		YES
++#endif
+ #endif
+ 
+ /*
+@@ -461,6 +465,9 @@
+ #ifdef Sparc64Architecture
+ #define ServerExtraDefines GccGasOption XFree86ServerDefines -D_XSERVER64
+ #endif
++#ifdef ia64Architecture
++#define ServerExtraDefines GccGasOption XFree86ServerDefines -D_XSERVER64
++#endif
+ 
+ #define StandardDefines	-DCSRG_BASED
+ 
+@@ -482,18 +489,8 @@
+ #define XawI18nDefines		-DUSE_XWCHAR_STRING -DUSE_XMBTOWC
+ #endif
+ 
+-/* The GCC strength-reduce bug is fixed for FreeBSD 2.1.5 and later */
+-#ifndef DefaultGcc2i386Opt
+-#if OSMajorVersion > 2 || (OSMajorVersion == 2 && OSMinorVersion > 1) || (OSMajorVersion == 2 && OSMinorVersion == 1 && OSTeenyVersion >= 5)
+-#define DefaultGcc2i386Opt -O2
+-#endif
+-#endif
+-
+-#ifdef i386Architecture
+-# define OptimizedCDebugFlags DefaultGcc2i386Opt
+-#else
+-# define OptimizedCDebugFlags -O
+-#endif
++#define DefaultGcc2i386Opt
++#define OptimizedCDebugFlags FreeBSDCFLAGS
+ 
+ #ifndef PreIncDir
+ # define PreIncDir	/usr/include

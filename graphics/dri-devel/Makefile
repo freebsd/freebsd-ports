@@ -25,6 +25,8 @@ RUN_DEPENDS=	XFree86:${PORTSDIR}/x11-servers/XFree86-4-Server
 
 WRKSRC=		${WRKDIR}/xc
 
+IGNORE=		outdated, use updated XFree86 4.3.0 ports
+
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 MAKE_ENV=	FBSDCFLAGS="${CFLAGS}" FBSDCC="${CC}" FBSDCXX="${CXX}"

@@ -6,24 +6,23 @@
 #
 
 PORTNAME=	fontScalable
-PORTVERSION=	4.2.0
+PORTVERSION=	4.3.0
 CATEGORIES=	x11-fonts
 MASTER_SITES=	${MASTER_SITE_XFREE}
 MASTER_SITE_SUBDIR=	${PORTVERSION}
 PKGNAMEPREFIX=	XFree86-
-DISTFILES=	X${PORTVERSION:S/.//g}src-2.tgz
+DISTFILES=	X430src-4.tgz X430src-5.tgz
 
 MAINTAINER=	anholt@freebsd.org
-COMMENT=	XFree86-4 Scalable font files
+COMMENT=	XFree86-4 scalable fonts
 
-BUILD_DEPENDS=	ucs2any.pl:${PORTSDIR}/x11/XFree86-4-clients
+BUILD_DEPENDS=	ucs2any:${PORTSDIR}/x11/XFree86-4-clients
 RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/encodings/encodings.dir:${PORTSDIR}/x11-fonts/XFree86-4-fontEncodings
 
 XFREE86_VERSION=	4
 USE_IMAKE=		YES
 PROJECTROOT=		-DProjectRoot=${PREFIX}
 DIST_SUBDIR=		xc
-EXTRACT_AFTER_ARGS=	| ${TAR} -xf - xc/fonts
 WRKSRC=			${WRKDIR}/xc/fonts
 
 # XFree86 User Config:
@@ -67,7 +66,6 @@ TT:=	-DBuildTTFonts=YES
 PLIST_SUB+=	TT:="@comment "
 TT:=	-DBuildTTFonts=NO
 .endif
-
 
 do-configure:
 	(cd ${WRKDIR}/xc/fonts/encodings && \

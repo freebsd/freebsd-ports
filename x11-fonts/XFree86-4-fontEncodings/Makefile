@@ -6,23 +6,23 @@
 #
 
 PORTNAME=	fontEncodings
-PORTVERSION=	4.2.0
+PORTVERSION=	4.3.0
 CATEGORIES=	x11-fonts
 MASTER_SITES=	${MASTER_SITE_XFREE}
-MASTER_SITE_SUBDIR=	${PORTVERSION}
+MASTER_SITE_SUBDIR=	4.3.0
 PKGNAMEPREFIX=	XFree86-
-DISTFILES=	X${PORTVERSION:S/.//g}src-2.tgz
+DISTFILES=	X430src-4.tgz
 
 MAINTAINER=	anholt@freebsd.org
 COMMENT=	XFree86-4 font encoding files
 
-BUILD_DEPENDS=	mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
+BUILD_DEPENDS=	ucs2any:${PORTSDIR}/x11/XFree86-4-clients
 
 XFREE86_VERSION=	4
 USE_IMAKE=		YES
 PROJECTROOT=		-DProjectRoot=${PREFIX}
 DIST_SUBDIR=		xc
-EXTRACT_AFTER_ARGS=	| ${TAR} -xf - xc/fonts
+EXTRACT_AFTER_ARGS=	| ${TAR} -xf - xc/fonts/encodings
 WRKSRC=			${WRKDIR}/xc/fonts/encodings
 
 do-configure:

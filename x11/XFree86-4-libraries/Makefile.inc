@@ -13,9 +13,12 @@ MAKE_ENV+=	FBSDCC="${CC}" FBSDCXX="${CXX}"
 _XBUILD_DIRS=	include ${XBUILD_DIRS}
 XINSTALL_DIRS?=	${XBUILD_DIRS}
 _XINCLUDE_DIRS=	${_XBUILD_DIRS} ${XINCLUDE_DIRS}
+XFREE86_HTML_MAN?= no
 
 .if !target(do-configure)
 do-configure:
+	@cp ${X11BASE}/lib/X11/config/version.def ${WRKSRC}/config/cf
+	@cp ${X11BASE}/lib/X11/config/date.def ${WRKSRC}/config/cf
 	@cd ${.CURDIR} && ${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} Makefile.boot
 	
@@ -50,3 +53,7 @@ do-install:
 	@cd ${WRKSRC}/${i} && ${SETENV} ${MAKE_ENV} ${MAKE} install.man
 .endfor
 .endif
+.if ${XFREE86_HTML_MAN:L} == yes
+	@${MKHTMLINDEX} ${PREFIX}/lib/X11/doc/html
+.endif
+

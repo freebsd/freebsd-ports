@@ -1,14 +1,11 @@
 #!/bin/sh
 
 # This script does the following:
-# (1) cp current xf86site.def (it is created by the imake-4 port) 
+# (1) cp xf86site.def, installed by imake-4 port,
 #       to ${WRKDIR}/xc/config/cf.
-#     this means this port uses imake-4's config for defaults.
-# (2) Generate temporal config for compiling.
-#     Some configs, such as `ForceNormalLib', `FreeBSDBuildXprog', are
-#     used locally for compiling this port, so these configs will be generated
-#     by this script. These configs will be stored to the `host.def' file,
-#     but this host.def will never be installed.
+#     this provides settings for the ports system.
+# (2) Create a host.def for this specific port, using 
+#     host.def as a base.
 
 ORIGDEF=$PREFIX/lib/X11/config/xf86site.def
 DESTDEF=$WRKDIR/xc/config/cf/xf86site.def
@@ -16,18 +13,17 @@ ORIGHOSTDEF=$PREFIX/lib/X11/config/host.def
 LOCALDEF=$WRKDIR/.config
 HOSTDEF=$WRKDIR/xc/config/cf/host.def
 
-configure () {
-    # Use original host.def as initial config file
-    rm -f $LOCALDEF
-    grep -v '#define.*ProjectRoot' $ORIGHOSTDEF >> $LOCALDEF
-    echo "#define ProjectRoot $PREFIX" >> $LOCALDEF
+# Use original host.def as initial config file
+rm -f $LOCALDEF
+grep -v '#define.*ProjectRoot' $ORIGHOSTDEF	>> $LOCALDEF
+echo "#define ProjectRoot $PREFIX"		>> $LOCALDEF
 
-    if [ X$InstallFSConfig = "X" ]; then
-	InstallFSConfig=YES
-    fi
+# This is also defined in xf86site.def, but doesn't get
+# picked up for some reason.
+echo "#define NothingOutsideProjectRoot YES"	>> $LOCALDEF
 
-    # disable some configs: there are not used this ports
-    for i in BuildFonts \
+# disable some options
+for i in BuildFonts \
 	Build75DpiFonts \
 	Build100DpiFonts \
 	BuildSpeedoFonts \
@@ -42,25 +38,23 @@ configure () {
 	LibHeaders \
 	ForceNormalLib \
 	XTrueTypeInstallCConvHeaders
-    do \
-	echo "#define $i NO" >> $LOCALDEF
-    done
-    echo "#define BuildServer YES" >> $LOCALDEF
-    echo "#define XprtServer YES" >> $LOCALDEF
-    echo "#define BuildServersOnly YES" >> $LOCALDEF
-    echo "#define UseInstalledPrograms YES" >> $LOCALDEF
-    echo "#define FreeBSDCC	${CC}" >> $LOCALDEF
-    echo "#define FreeBSDCXX	${CXX}" >> $LOCALDEF
-    echo "#define FreeBSDCFLAGS	${CFLAGS}" >> $LOCALDEF
+do \
+	echo "#define $i NO"			>> $LOCALDEF
+done
 
-    # Copy ORIGDEF to DESTDEF
-    rm -f $DESTDEF
-    cp -f $ORIGDEF $DESTDEF
+echo "#define BuildServer YES"			>> $LOCALDEF
+echo "#define XprtServer YES"			>> $LOCALDEF
+echo "#define BuildServersOnly YES"		>> $LOCALDEF
+echo "#define UseInstalledPrograms YES"		>> $LOCALDEF
+echo "#define FreeBSDCC ${CC}"			>> $LOCALDEF
+echo "#define FreeBSDCXX ${CXX}"		>> $LOCALDEF
+echo "#define FreeBSDCFLAGS ${CFLAGS}"		>> $LOCALDEF
 
-    # copy generated config to host.def
-    cp -f $LOCALDEF $HOSTDEF
-}
+# Copy ORIGDEF to DESTDEF
+rm -f $DESTDEF
+cp -f $ORIGDEF $DESTDEF
 
-cp ${X11BASE}/lib/X11/config/version.def ${WRKSRC}/config/cf
-configure
+# copy generated config to host.def
+cp -f $LOCALDEF $HOSTDEF
+
 exit 0

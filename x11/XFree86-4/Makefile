@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	XFree86
-PORTVERSION=	4.2.0
-PORTREVISION=	1
+PORTVERSION=	4.3.0
 PORTEPOCH=	1
 CATEGORIES=	x11
 MASTER_SITES=	# none
@@ -36,7 +35,7 @@ FONT100DPI=	${X11BASE}/lib/X11/fonts/100dpi/UTBI__10-ISO8859-1.pcf.gz
 FONT75DPI=	${X11BASE}/lib/X11/fonts/75dpi/UTBI__10-ISO8859-1.pcf.gz
 FONTCYR=	${X11BASE}/lib/X11/fonts/cyrillic/crox1c.pcf.gz
 FONTDEFAULT=	${X11BASE}/lib/X11/fonts/misc/cursor.pcf.gz
-FONTSCALE=	${X11BASE}/lib/X11/fonts/PEX/Roman.phont
+FONTSCALE=	${X11BASE}/lib/X11/fonts/TTF/luximb.ttf
 
 .if make(package)
 DEPENDS_TARGET="package"
