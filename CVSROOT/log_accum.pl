@@ -67,14 +67,14 @@ my $FILE_PREFIX = "#cvs.files";
 # Remember to comment out if using for other purposes.
 #-------------------------------------------------------
 if (hostname() =~ /^(freefall|internat)\.freebsd\.org$/i) {
-    $MAILADDRS='cvs-committers@FreeBSD.org cvs-all@FreeBSD.org';
-    if ($1 =~ /freefall/i) {
-	$meister = 'peter@FreeBSD.org';
-    } else {
-	$meister = 'markm@FreeBSD.org';
-	$MAILBANNER = "FreeBSD International Crypto Repository";
-    }
-    $MAILADDRS = $meister if $DEBUG;
+	$MAILADDRS='cvs-committers@FreeBSD.org cvs-all@FreeBSD.org';
+	if ($1 =~ /freefall/i) {
+		$meister = 'peter@FreeBSD.org';
+	} else {
+		$meister = 'markm@FreeBSD.org';
+		$MAILBANNER = "FreeBSD International Crypto Repository";
+	}
+	$MAILADDRS = $meister if $DEBUG;
 }
 
 
@@ -277,50 +277,50 @@ sub append_names_to_file {
 #
 
 sub change_summary_changed {
-    local($out, $tag, @filenames) = @_;
-    local(@revline);
-    local($file, $rev, $rcsfile, $line);
+	local($out, $tag, @filenames) = @_;
+	local(@revline);
+	local($file, $rev, $rcsfile, $line);
 
-    while (@filenames) {
-	$file = shift @filenames;
+	while (@filenames) {
+		$file = shift @filenames;
 
-	if ("$file" eq "") {
-	    next;
-	}
-
-	open(RCS, "-|") || exec 'cvs', '-Qn', 'status', $file;
-
-	$rev = "";
-	$delta = "";
-	$rcsfile = "";
-
-
-	while (<RCS>) {
-	    if (/^[ \t]*Repository revision/) {
-		chop;
-		@revline = split(' ', $_);
-		$rev = $revline[2];
-		$rcsfile = $revline[3];
-		$rcsfile =~ s,^$CVSROOT[/]+,,;
-		$rcsfile =~ s/,v$//;
-		last;
-	    }
-	}
-	close(RCS);
-
-	if ($rev ne '' && $rcsfile ne '') {
-	    open(RCS, "-|") || exec 'cvs', '-Qn', 'log', "-r$rev", $file;
-	    while (<RCS>) {
-		if (/^date:.*lines:\s(.*)$/) {
-		    $delta = $1;
-		    last;
+		if ("$file" eq "") {
+			next;
 		}
-	    }
-	    close(RCS);
-	}
 
-	&append_line($out, "$rev,$delta,$rcsfile");
-    }
+		open(RCS, "-|") || exec 'cvs', '-Qn', 'status', $file;
+
+		$rev = "";
+		$delta = "";
+		$rcsfile = "";
+
+
+		while (<RCS>) {
+			if (/^[ \t]*Repository revision/) {
+				chop;
+				@revline = split(' ', $_);
+				$rev = $revline[2];
+				$rcsfile = $revline[3];
+				$rcsfile =~ s,^$CVSROOT[/]+,,;
+				$rcsfile =~ s/,v$//;
+				last;
+			}
+		}
+		close(RCS);
+
+		if ($rev ne '' && $rcsfile ne '') {
+			open(RCS, "-|") || exec 'cvs', '-Qn', 'log', "-r$rev", $file;
+			while (<RCS>) {
+				if (/^date:.*lines:\s(.*)$/) {
+					$delta = $1;
+					last;
+				}
+			}
+			close(RCS);
+		}
+
+		&append_line($out, "$rev,$delta,$rcsfile");
+	}
 }
 
 # Write these one day.
@@ -330,183 +330,183 @@ sub change_summary_removed {
 }
 
 sub build_header {
-    local($header, $datestr);
-    delete $ENV{'TZ'};
+	local($header, $datestr);
+	delete $ENV{'TZ'};
 
-    $datestr = `/bin/date +"%Y/%m/%d %H:%M:%S %Z"`;
-    chop($datestr);
-    $header = sprintf("%-8s    %s", $login, $datestr);
+	$datestr = `/bin/date +"%Y/%m/%d %H:%M:%S %Z"`;
+	chop($datestr);
+	$header = sprintf("%-8s    %s", $login, $datestr);
 
-    my @text;
-    push @text, $header;
-    push @text, "";
-    push @text, "$MAILBANNER\n" if $MAILBANNER;
+	my @text;
+	push @text, $header;
+	push @text, "";
+	push @text, "$MAILBANNER\n" if $MAILBANNER;
 
-    return @text;
+	return @text;
 }
 
 # !!! Mailing-list and commitlog history file mappings here !!!
 sub mlist_map {
-    local($dir) = @_;		# perl warns about this....
-   
-    return 'cvs-CVSROOT'      if($dir =~ /^CVSROOT\//);
-    return 'cvs-ports'        if($dir =~ /^ports\//);
-    return 'cvs-www'          if($dir =~ /^www\//);
-    return 'cvs-doc'          if($dir =~ /^doc\//);
-    return 'cvs-distrib'      if($dir =~ /^distrib\//);
+	local($dir) = @_;		# perl warns about this....
 
-    return 'cvs-other'        unless($dir =~ /^src\//);
+	return 'cvs-CVSROOT'	if($dir =~ /^CVSROOT\//);
+	return 'cvs-ports'	if($dir =~ /^ports\//);
+	return 'cvs-www'	if($dir =~ /^www\//);
+	return 'cvs-doc'	if($dir =~ /^doc\//);
+	return 'cvs-distrib'	if($dir =~ /^distrib\//);
 
-    $dir =~ s,^src/,,;
+	return 'cvs-other'	unless($dir =~ /^src\//);
 
-    return 'cvs-bin'          if($dir =~ /^bin\//);
-    return 'cvs-contrib'      if($dir =~ /^contrib\//);
-    return 'cvs-eBones'       if($dir =~ /^eBones\//);
-    return 'cvs-etc'          if($dir =~ /^etc\//);
-    return 'cvs-games'        if($dir =~ /^games\//);
-    return 'cvs-gnu'          if($dir =~ /^gnu\//);
-    return 'cvs-include'      if($dir =~ /^include\//);
-    return 'cvs-kerberosIV'   if($dir =~ /^kerberosIV\//);
-    return 'cvs-lib'          if($dir =~ /^lib\//);
-    return 'cvs-libexec'      if($dir =~ /^libexec\//);
-    return 'cvs-lkm'          if($dir =~ /^lkm\//);
-    return 'cvs-release'      if($dir =~ /^release\//);
-    return 'cvs-sbin'         if($dir =~ /^sbin\//);
-    return 'cvs-share'        if($dir =~ /^share\//);
-    return 'cvs-sys'          if($dir =~ /^sys\//);
-    return 'cvs-tools'        if($dir =~ /^tools\//);
-    return 'cvs-usrbin'       if($dir =~ /^usr\.bin\//);
-    return 'cvs-usrsbin'      if($dir =~ /^usr\.sbin\//);
+	$dir =~ s,^src/,,;
 
-    return 'cvs-user';
+	return 'cvs-bin'	if($dir =~ /^bin\//);
+	return 'cvs-contrib'	if($dir =~ /^contrib\//);
+	return 'cvs-eBones'	if($dir =~ /^eBones\//);
+	return 'cvs-etc'	if($dir =~ /^etc\//);
+	return 'cvs-games'	if($dir =~ /^games\//);
+	return 'cvs-gnu'	if($dir =~ /^gnu\//);
+	return 'cvs-include'	if($dir =~ /^include\//);
+	return 'cvs-kerberosIV'	if($dir =~ /^kerberosIV\//);
+	return 'cvs-lib'	if($dir =~ /^lib\//);
+	return 'cvs-libexec'	if($dir =~ /^libexec\//);
+	return 'cvs-lkm'	if($dir =~ /^lkm\//);
+	return 'cvs-release'	if($dir =~ /^release\//);
+	return 'cvs-sbin'	if($dir =~ /^sbin\//);
+	return 'cvs-share'	if($dir =~ /^share\//);
+	return 'cvs-sys'	if($dir =~ /^sys\//);
+	return 'cvs-tools'	if($dir =~ /^tools\//);
+	return 'cvs-usrbin'	if($dir =~ /^usr\.bin\//);
+	return 'cvs-usrsbin'	if($dir =~ /^usr\.sbin\//);
+
+	return 'cvs-user';
 
 }    
 
 sub do_changes_file {
-    local($changes,$category,@mailaddrs);
-    local(@text) = @_;
-    local(%unique);
+	local($changes,$category,@mailaddrs);
+	local(@text) = @_;
+	local(%unique);
 
-    %unique = ();
-    @mailaddrs = &read_logfile("$MAIL_FILE.$PID");
-    foreach $category (@mailaddrs) {
-	next if ($unique{$category});
-	$unique{$category} = 1;
-	if ($category =~ /^cvs-/) {
-	    # convert mailing list name back to category
-	    $category =~ s,\n,,;
-	    $category =~ s/^cvs-//;
-	    $changes = "$CVSROOT/CVSROOT/commitlogs/$category";
+	%unique = ();
+	@mailaddrs = &read_logfile("$MAIL_FILE.$PID");
+	foreach $category (@mailaddrs) {
+		next if ($unique{$category});
+		$unique{$category} = 1;
+		if ($category =~ /^cvs-/) {
+			# convert mailing list name back to category
+			$category =~ s,\n,,;
+			$category =~ s/^cvs-//;
+			$changes = "$CVSROOT/CVSROOT/commitlogs/$category";
 
-	    open(CHANGES, ">>$changes") || die("Cannot open $changes.\n");
-	    print(CHANGES join("\n", @text), "\n\n");
-	    close(CHANGES);
+			open(CHANGES, ">>$changes") || die("Cannot open $changes.\n");
+			print(CHANGES join("\n", @text), "\n\n");
+			close(CHANGES);
+		}
 	}
-    }
 }
 
 sub mail_notification {
-    local(@text) = @_;
-    local($line, $word, $subjlines, $subjwords, @mailaddrs);
-#   local(%unique);
+	local(@text) = @_;
+	local($line, $word, $subjlines, $subjwords, @mailaddrs);
+#	local(%unique);
 
-#   %unique = ();
+#	%unique = ();
 
-    print "Mailing the commit message...\n";
+	print "Mailing the commit message...\n";
 
-    @mailaddrs = &read_logfile("$MAIL_FILE.$PID");
-    open MAIL, "| $MAILCMD $MAILADDRS" or die 'Please check $MAILCMD.';
+	@mailaddrs = &read_logfile("$MAIL_FILE.$PID");
+	open MAIL, "| $MAILCMD $MAILADDRS" or die 'Please check $MAILCMD.';
 
 
 # This is turned off since the To: lines go overboard.
 # - but keep it for the time being in case we do something like cvs-stable
-#    print(MAIL 'To: cvs-committers' . $dom . ", cvs-all" . $dom);
-#    foreach $line (@mailaddrs) {
-#	next if ($unique{$line});
-#	$unique{$line} = 1;
-#	next if /^cvs-/;
-#	print(MAIL ", " . $line . $dom);
-#    }
-#    print(MAIL "\n");
+#	print(MAIL 'To: cvs-committers' . $dom . ", cvs-all" . $dom);
+#	foreach $line (@mailaddrs) {
+#		next if ($unique{$line});
+#		$unique{$line} = 1;
+#		next if /^cvs-/;
+#		print(MAIL ", " . $line . $dom);
+#	}
+#	print(MAIL "\n");
 
-    $subject = 'Subject: cvs commit:';
-    @subj = &read_logfile("$SUBJ_FILE.$PID");
-    $subjlines = 0;
-    $subjwords = 0;	# minimum of two "words" per line
-    LINE: foreach $line (@subj) {
-	foreach $word (split(/ /, $line)) {
-	    if ($subjwords > 2 && length($subject . " " . $word) > 75) {
-		if ($subjlines > 2) {
-		    $subject .= " ...";
+	$subject = 'Subject: cvs commit:';
+	@subj = &read_logfile("$SUBJ_FILE.$PID");
+	$subjlines = 0;
+	$subjwords = 0;	# minimum of two "words" per line
+	LINE: foreach $line (@subj) {
+		foreach $word (split(/ /, $line)) {
+			if ($subjwords > 2 && length($subject . " " . $word) > 75) {
+				if ($subjlines > 2) {
+					$subject .= " ...";
+				}
+				print(MAIL $subject, "\n");
+				if ($subjlines > 2) {
+					$subject = "";
+					last LINE;
+				}
+				$subject = "        ";		# rfc822 continuation line
+				$subjwords = 0;
+				$subjlines++;
+			}
+			$subject .= " " . $word;
+			$subjwords++;
 		}
-		print(MAIL $subject, "\n");
-		if ($subjlines > 2) {
-		    $subject = "";
-		    last LINE;
-		}
-		$subject = "        ";		# rfc822 continuation line
-		$subjwords = 0;
-		$subjlines++;
-	    }
-	    $subject .= " " . $word;
-	    $subjwords++;
 	}
-    }
-    if ($subject ne "") {
-	print(MAIL $subject, "\n");
-    }
+	if ($subject ne "") {
+		print(MAIL $subject, "\n");
+	}
 
-    # Add a header to the mail msg showing which branches
-    # were modified during the commit.
-    %tags = map { $_ => 1 } &read_logfile("$TAGS_FILE.$PID");
-    print (MAIL "$X_BRANCH_HDR ", join(",", sort keys %tags), "\n");
+	# Add a header to the mail msg showing which branches
+	# were modified during the commit.
+	%tags = map { $_ => 1 } &read_logfile("$TAGS_FILE.$PID");
+	print (MAIL "$X_BRANCH_HDR ", join(",", sort keys %tags), "\n");
 
-    print (MAIL "\n");
+	print (MAIL "\n");
 
-    print(MAIL join("\n", @text));
-    close(MAIL);
+	print(MAIL join("\n", @text));
+	close(MAIL);
 }
 
 # Return the length of the longest value in the list.
 sub longest_value {
-    my @values = @_;
+	my @values = @_;
 
-    my @sorted = sort { $b <=> $a } map { length $_ } @values;
-    return $sorted[0];
+	my @sorted = sort { $b <=> $a } map { length $_ } @values;
+	return $sorted[0];
 }
 
 sub format_summaries {
-    my @filenames = @_;
+	my @filenames = @_;
 
-    my @revs;
-    my @deltas;
-    my @files;
+	my @revs;
+	my @deltas;
+	my @files;
 
-    # Parse the summary file.
-    foreach my $filename (@filenames) {
-	open FILE, $filename or next;
-	while (<FILE>) {
-	    chomp;
-	    my ($r, $d, $f) = split /,/, $_;
-	    push @revs, $r;
-	    push @deltas, $d;
-	    push @files, $f;
+	# Parse the summary file.
+	foreach my $filename (@filenames) {
+		open FILE, $filename or next;
+		while (<FILE>) {
+			chomp;
+			my ($r, $d, $f) = split /,/, $_;
+			push @revs, $r;
+			push @deltas, $d;
+			push @files, $f;
+		}
+		close FILE;
+	}    
+
+	# Format the output
+	my $r_max = longest_value("Revision", @revs) + 2;
+	my $d_max = longest_value("Changes  ", @deltas) + 2;
+
+	my @text;
+	my $fmt = "%-" . $r_max . "s%-" . $d_max . "s%s";
+	push @text, sprintf $fmt, "Revision", "Changes", "Path";
+	foreach (0 .. $#revs) {
+		push @text, sprintf $fmt, $revs[$_], $deltas[$_], $files[$_];
 	}
-	close FILE;
-    }    
 
-    # Format the output
-    my $r_max = longest_value("Revision", @revs) + 2;
-    my $d_max = longest_value("Changes  ", @deltas) + 2;
-
-    my @text;
-    my $fmt = "%-" . $r_max . "s%-" . $d_max . "s%s";
-    push @text, sprintf $fmt, "Revision", "Changes", "Path";
-    foreach (0 .. $#revs) {
-	push @text, sprintf $fmt, $revs[$_], $deltas[$_], $files[$_];
-    }
-
-    return @text;
+	return @text;
 }
 
 #############################################################
@@ -530,18 +530,18 @@ $login = $ENV{'USER'} || getlogin || (getpwuid($<))[0] || sprintf("uid#%d",$<);
 @files = split(' ', $ARGV[0]);
 @path = split('/', $files[0]);
 if ($#path == 0) {
-    $dir = ".";
+	$dir = ".";
 } else {
-    $dir = join('/', @path[1..$#path]);
+	$dir = join('/', @path[1..$#path]);
 }
 $dir = $dir . "/";
 
 if ($DEBUG) {
-  print("ARGV  - ", join(":", @ARGV), "\n");
-  print("files - ", join(":", @files), "\n");
-  print("path  - ", join(":", @path), "\n");
-  print("dir   - ", $dir, "\n");
-  print("pid   - ", $PID, "\n");
+	print("ARGV  - ", join(":", @ARGV), "\n");
+	print("files - ", join(":", @files), "\n");
+	print("path  - ", join(":", @path), "\n");
+	print("dir   - ", $dir, "\n");
+	print("pid   - ", $PID, "\n");
 }
 
 # Was used for To: lines, still used for commitlogs naming.
@@ -553,13 +553,13 @@ if ($DEBUG) {
 # single item in the argument list, and an empty log message.
 #
 if ($ARGV[0] =~ /New directory/) {
-    @text = &build_header();
+	@text = &build_header();
 
-    push(@text, "  ".$ARGV[0]);
-    &do_changes_file(@text);
-    #&mail_notification(@text);
-    &cleanup_tmpfiles();
-    exit 0;
+	push(@text, "  ".$ARGV[0]);
+	&do_changes_file(@text);
+	#&mail_notification(@text);
+	&cleanup_tmpfiles();
+	exit 0;
 }
 
 #
@@ -567,19 +567,19 @@ if ($ARGV[0] =~ /New directory/) {
 # single item in the argument list, and a log message.
 #
 if ($ARGV[0] =~ /Imported sources/) {
-    @text = &build_header();
+	@text = &build_header();
 
-    push(@text, "  ".$ARGV[0]);
-    &do_changes_file(@text);
+	push(@text, "  ".$ARGV[0]);
+	&do_changes_file(@text);
 
-    while (<STDIN>) {
-	chop;                   # Drop the newline
-	push(@text, "  ".$_);
-    }
+	while (<STDIN>) {
+		chop;                   # Drop the newline
+		push(@text, "  ".$_);
+	}
 
-    &mail_notification(@text);
-    &cleanup_tmpfiles();
-    exit 0;
+	&mail_notification(@text);
+	&cleanup_tmpfiles();
+	exit 0;
 }    
 
 #
@@ -587,39 +587,39 @@ if ($ARGV[0] =~ /Imported sources/) {
 #
 $tag = "HEAD";
 while (<STDIN>) {
-    s/[ \t\n]+$//;		# delete trailing space
-    if (/^Revision\/Branch:/) {
-	s,^Revision/Branch:,,;
-	$tag = $_;
-	next;
-    }
-    if (/^[ \t]+Tag:/) {
-	s,^[ \t]+Tag: ,,;
-	$tag = $_;
-	next;
-    }
-    if (/^[ \t]+No tag$/) {
-	$tag = "HEAD";
-	next;
-    }
-    if (/^Modified Files/) { $state = $STATE_CHANGED; next; }
-    if (/^Added Files/)    { $state = $STATE_ADDED;   next; }
-    if (/^Removed Files/)  { $state = $STATE_REMOVED; next; }
-    if (/^Log Message/)    { $state = $STATE_LOG;     next; }
-    
-    push (@{ $changed_files{$tag} }, split) if ($state == $STATE_CHANGED);
-    push (@{ $added_files{$tag} },   split) if ($state == $STATE_ADDED);
-    push (@{ $removed_files{$tag} }, split) if ($state == $STATE_REMOVED);
-    if ($state == $STATE_LOG) {
-	if (/^PR:$/i ||
-	    /^Reviewed by:$/i ||
-	    /^Submitted by:$/i ||
-	    /^Obtained from:$/i ||
-	    /^Approved by:$/i) {
-	    next;
+	s/[ \t\n]+$//;		# delete trailing space
+	if (/^Revision\/Branch:/) {
+		s,^Revision/Branch:,,;
+		$tag = $_;
+		next;
 	}
-	push (@log_lines,     $_);
-    }
+	if (/^[ \t]+Tag:/) {
+		s,^[ \t]+Tag: ,,;
+		$tag = $_;
+		next;
+	}
+	if (/^[ \t]+No tag$/) {
+		$tag = "HEAD";
+		next;
+	}
+	if (/^Modified Files/) { $state = $STATE_CHANGED; next; }
+	if (/^Added Files/)    { $state = $STATE_ADDED;   next; }
+	if (/^Removed Files/)  { $state = $STATE_REMOVED; next; }
+	if (/^Log Message/)    { $state = $STATE_LOG;     next; }
+
+	push (@{ $changed_files{$tag} }, split) if ($state == $STATE_CHANGED);
+	push (@{ $added_files{$tag} },   split) if ($state == $STATE_ADDED);
+	push (@{ $removed_files{$tag} }, split) if ($state == $STATE_REMOVED);
+	if ($state == $STATE_LOG) {
+		if (/^PR:$/i ||
+		    /^Reviewed by:$/i ||
+		    /^Submitted by:$/i ||
+		    /^Obtained from:$/i ||
+		    /^Approved by:$/i) {
+			next;
+		}
+		push (@log_lines,     $_);
+	}
 }
 &append_line("$TAGS_FILE.$PID", $tag);
 
@@ -630,72 +630,72 @@ while (<STDIN>) {
 # (Note, this only does the mail and changes log, not the rcs log).
 #
 while ($#log_lines > -1) {
-    last if ($log_lines[0] ne "");
-    shift(@log_lines);
+	last if ($log_lines[0] ne "");
+	shift(@log_lines);
 }
 while ($#log_lines > -1) {
-    last if ($log_lines[$#log_lines] ne "");
-    pop(@log_lines);
+	last if ($log_lines[$#log_lines] ne "");
+	pop(@log_lines);
 }
 for ($l = $#log_lines; $l > 0; $l--) {
-    if (($log_lines[$l - 1] eq "") && ($log_lines[$l] eq "")) {
-	splice(@log_lines, $l, 1);
-    }
+	if (($log_lines[$l - 1] eq "") && ($log_lines[$l] eq "")) {
+		splice(@log_lines, $l, 1);
+	}
 }
 
 #
 # Find the log file that matches this log message
 #
 for ($i = 0; ; $i++) {
-    last if (! -e "$LOG_FILE.$i.$PID");
-    @text = &read_logfile("$LOG_FILE.$i.$PID");
-    last if ($#text == -1);
-    last if (join(" ", @log_lines) eq join(" ", @text));
+	last if (! -e "$LOG_FILE.$i.$PID");
+	@text = &read_logfile("$LOG_FILE.$i.$PID");
+	last if ($#text == -1);
+	last if (join(" ", @log_lines) eq join(" ", @text));
 }
 
 #
 # Spit out the information gathered in this pass.
 #
 foreach $tag ( keys %added_files ) {
-    &append_names_to_file("$ADDED_FILE.$i.$PID",   $dir, $tag,
-	@{ $added_files{$tag} });
+	&append_names_to_file("$ADDED_FILE.$i.$PID",   $dir, $tag,
+	    @{ $added_files{$tag} });
 }
 foreach $tag ( keys %changed_files ) {
-    &append_names_to_file("$CHANGED_FILE.$i.$PID", $dir, $tag,
-	@{ $changed_files{$tag} });
+	&append_names_to_file("$CHANGED_FILE.$i.$PID", $dir, $tag,
+	    @{ $changed_files{$tag} });
 }
 foreach $tag ( keys %removed_files ) {
-    &append_names_to_file("$REMOVED_FILE.$i.$PID", $dir, $tag,
-	@{ $removed_files{$tag} });
+	&append_names_to_file("$REMOVED_FILE.$i.$PID", $dir, $tag,
+	    @{ $removed_files{$tag} });
 }
 &write_logfile("$LOG_FILE.$i.$PID", @log_lines);
 
 if ($RCSIDINFO) {
-    foreach $tag ( keys %added_files ) {
-	&change_summary_added("$SUMMARY_FILE.$i.$PID", $tag,
-	    @{ $added_files{$tag} });
-    }
-    foreach $tag ( keys %changed_files ) {
-	&change_summary_changed("$SUMMARY_FILE.$i.$PID", $tag,
-	    @{ $changed_files{$tag} });
-    }
-    foreach $tag ( keys %removed_files ) {
-	&change_summary_removed("$SUMMARY_FILE.$i.$PID", $tag,
-	    @{ $removed_files{$tag} });
-    }
+	foreach $tag ( keys %added_files ) {
+		&change_summary_added("$SUMMARY_FILE.$i.$PID", $tag,
+		    @{ $added_files{$tag} });
+	}
+	foreach $tag ( keys %changed_files ) {
+		&change_summary_changed("$SUMMARY_FILE.$i.$PID", $tag,
+		    @{ $changed_files{$tag} });
+	}
+	foreach $tag ( keys %removed_files ) {
+		&change_summary_removed("$SUMMARY_FILE.$i.$PID", $tag,
+		    @{ $removed_files{$tag} });
+	}
 }
 
 #
 # Check whether this is the last directory.  If not, quit.
 #
 if (-e "$LAST_FILE.$PID") {
-   $_ = &read_line("$LAST_FILE.$PID");
-   $tmpfiles=$files[0];
-   $tmpfiles =~ s,([^a-zA-Z0-9_/]),\\$1,g;
-   if (! grep(/$tmpfiles$/, $_)) {
-	print "More commits to come...\n";
-	exit 0
-   }
+	$_ = &read_line("$LAST_FILE.$PID");
+	$tmpfiles=$files[0];
+	$tmpfiles =~ s,([^a-zA-Z0-9_/]),\\$1,g;
+	if (! grep(/$tmpfiles$/, $_)) {
+		print "More commits to come...\n";
+		exit 0
+	}
 }
 
 #
@@ -709,32 +709,32 @@ if (-e "$LAST_FILE.$PID") {
 #
 @text = &build_header();
 for ($i = 0; ; $i++) {
-    last if (! -e "$LOG_FILE.$i.$PID");
-    @lines = &read_logfile("$CHANGED_FILE.$i.$PID");
-    if ($#lines >= 0) {
-	push(@text, &format_lists("Modified", @lines));
-    }
-    @lines = &read_logfile("$ADDED_FILE.$i.$PID");
-    if ($#lines >= 0) {
-	push(@text, &format_lists("Added", @lines));
-    }
-    @lines = &read_logfile("$REMOVED_FILE.$i.$PID");
-    if ($#lines >= 0) {
-	push(@text, &format_lists("Removed", @lines));
-    }
-
-    @lines = &read_logfile("$LOG_FILE.$i.$PID");
-    if ($#lines >= 0) {
-        push(@text, "  Log:");
-	push(@text, map { "  $_" } @lines);
-    }
-    if ($RCSIDINFO == 2) {
-	if (-e "$SUMMARY_FILE.$i.$PID") {
-	    push(@text, "  ");
-	    push @text, map {"  $_"} format_summaries("$SUMMARY_FILE.$i.$PID");
+	last if (! -e "$LOG_FILE.$i.$PID");
+	@lines = &read_logfile("$CHANGED_FILE.$i.$PID");
+	if ($#lines >= 0) {
+		push(@text, &format_lists("Modified", @lines));
 	}
-    }
-    push(@text, "", "");
+	@lines = &read_logfile("$ADDED_FILE.$i.$PID");
+	if ($#lines >= 0) {
+		push(@text, &format_lists("Added", @lines));
+	}
+	@lines = &read_logfile("$REMOVED_FILE.$i.$PID");
+	if ($#lines >= 0) {
+		push(@text, &format_lists("Removed", @lines));
+	}
+
+	@lines = &read_logfile("$LOG_FILE.$i.$PID");
+	if ($#lines >= 0) {
+		push(@text, "  Log:");
+		push(@text, map { "  $_" } @lines);
+	}
+	if ($RCSIDINFO == 2) {
+		if (-e "$SUMMARY_FILE.$i.$PID") {
+			push(@text, "  ");
+			push @text, map {"  $_"} format_summaries("$SUMMARY_FILE.$i.$PID");
+		}
+	}
+	push(@text, "", "");
 }
 #
 # Put the log message at the beginning of the Changes file
@@ -745,13 +745,13 @@ for ($i = 0; ; $i++) {
 # Now generate the extra info for the mail message..
 #
 if ($RCSIDINFO == 1) {
-    my @summary_files;
-    for ($i = 0; ; $i++) {
-	last unless -e "$LOG_FILE.$i.$PID";
-	push @summary_files, "$SUMMARY_FILE.$i.$PID";
-    }
-    push @text, format_summaries(@summary_files);
-    push @text, "";
+	my @summary_files;
+	for ($i = 0; ; $i++) {
+		last unless -e "$LOG_FILE.$i.$PID";
+		push @summary_files, "$SUMMARY_FILE.$i.$PID";
+	}
+	push @text, format_summaries(@summary_files);
+	push @text, "";
 }
 
 #
