@@ -7,7 +7,7 @@
 
 PORTNAME=	libgda
 PORTVERSION=	0.2.90
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	databases gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/gnome-db
@@ -38,6 +38,8 @@ pre-patch:
 
 # <GNOME release management sucks!!!>
 MISSED=		install-sh config.sub config.guess mkinstalldirs
+EVILFILES=	libgda-client.la libgda-clientcpp.la libgda-common.la \
+		libgda-server.la
 
 pre-configure:
 .for file in ${MISSED}
@@ -47,6 +49,11 @@ pre-configure:
 
 pre-build:
 	@${LN} -sf ${LOCALBASE}/bin/libtool ${WRKSRC}/
+
+post-install:
+.for file in ${EVILFILES}
+	@${RM} ${PREFIX}/lib/${file}
+.endfor
 # </GNOME release management sucks!!!>
 
 .include <bsd.port.mk>
