@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	CGI-Session
-PORTVERSION=	2.91
+PORTVERSION=	2.94
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	CGI
@@ -23,7 +23,6 @@ MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		CGI::Session::DB_File.3 \
 		CGI::Session::MySQL.3 \
 		CGI::Session::MD5.3 \
-		CGI::Session::File.3 \
-		CGI::Session.3
+		CGI::Session::File.3
 
 .include <bsd.port.mk>

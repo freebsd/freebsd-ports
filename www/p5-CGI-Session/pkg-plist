@@ -3,7 +3,6 @@ lib/perl5/site_perl/%%PERL_VER%%/CGI/Session/MD5.pm
 lib/perl5/site_perl/%%PERL_VER%%/CGI/Session/MySQL.pm
 lib/perl5/site_perl/%%PERL_VER%%/CGI/Session/File.pm
 lib/perl5/site_perl/%%PERL_VER%%/CGI/Session.pm
-lib/perl5/site_perl/%%PERL_VER%%/auto/CGI/Session/id.al
 lib/perl5/site_perl/%%PERL_VER%%/auto/CGI/Session/remote_addr.al
 lib/perl5/site_perl/%%PERL_VER%%/auto/CGI/Session/remote_host.al
 lib/perl5/site_perl/%%PERL_VER%%/auto/CGI/Session/close.al
