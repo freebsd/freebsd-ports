@@ -3,7 +3,7 @@
 # Date created:				October 20th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.3 1996/11/18 08:46:21 asami Exp $
+#   $Id: Makefile,v 1.4 1996/12/11 10:18:33 asami Exp $
 #
 
 DISTNAME=	Image-Size-1.2
@@ -14,7 +14,8 @@ MASTER_SITE_SUBDIR=	Image
 
 MAINTAINER=	jfitz@FreeBSD.ORG
 
-BUILD_DEPENDS= 	perl5.003:${PORTSDIR}/lang/perl5
+BUILD_DEPENDS= 	${PREFIX}/lib/perl5/IO.pm:${PORTSDIR}/net/p5-IO \
+		perl5.003:${PORTSDIR}/lang/perl5
 RUN_DEPENDS=	perl5.003:${PORTSDIR}/lang/perl5
 
 MAN1=		imgsize.1
