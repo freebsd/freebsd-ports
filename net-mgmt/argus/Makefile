@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	argus
-PORTVERSION=	2.0.0
+PORTVERSION=	2.0.1
 CATEGORIES=	net security
 MASTER_SITES=	http://qosient.com/argus/src/ \
 		ftp://qosient.com/pub/argus/src/
@@ -20,7 +20,7 @@ LIB_DEPENDS=	wrap.7:${PORTSDIR}/security/tcp_wrapper
 GNU_CONFIGURE=	true
 CONFIGURE_ARGS=	--exec-prefix=${PREFIX} #--without-flex --without-bison
 
-MAN1=	ra.1 racount.1 ragator.1 ramon.1 rasort.1 raxml.1
+MAN1=	ra.1 racount.1 ragator.1 rasort.1 raxml.1
 MAN5=	argus.5 argus.conf.5 rarc.5
 MAN8=	argus.8
 
