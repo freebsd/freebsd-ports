@@ -105,6 +105,7 @@
     SUBDIR += gsi
     SUBDIR += gsm
     SUBDIR += gtkgep
+    SUBDIR += gtkpod
     SUBDIR += holyshout
     SUBDIR += icecast
     SUBDIR += icecast2
