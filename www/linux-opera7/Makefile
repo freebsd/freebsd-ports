@@ -22,7 +22,7 @@ RUN_DEPENDS=	${LINUXBASE}/lib/ld.so:${PORTSDIR}/emulators/linux_base \
 NO_BUILD=	yes
 
 do-install:
-	(cd ${WRKSRC} && /bin/sh -x ./install.sh \
+	(cd ${WRKSRC} && ./install.sh \
 	    --exec_prefix=${PREFIX}/bin \
 	    --docdir=${PREFIX}/share/doc/opera \
 	    --sharedir=${PREFIX}/share/opera )
