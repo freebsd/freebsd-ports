@@ -1,0 +1,15 @@
+--- config.h.in.orig	Sat Oct 30 01:24:45 2004
++++ config.h.in	Sat Oct 30 01:25:49 2004
+@@ -68,6 +68,12 @@
+ /* Define to 1 if you have the `munmap' function. */
+ #undef HAVE_MUNMAP
+ 
++/* Define to 1 if you have the `getgrgid_r' function. */
++#undef HAVE_GETGRGID_R
++
++/* Define to 1 if you have the `getpwuid_r' function. */
++#undef HAVE_GETPWUID_R
++
+ /* Define to 1 if you have the <netdb.h> header file. */
+ #undef HAVE_NETDB_H
+ 

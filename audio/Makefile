@@ -290,6 +290,7 @@
     SUBDIR += pimp3
     SUBDIR += play
     SUBDIR += playmidi
+    SUBDIR += polypaudio
     SUBDIR += portaudio
     SUBDIR += prokyon3
     SUBDIR += py-ao
