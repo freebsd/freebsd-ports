@@ -6,23 +6,25 @@
 #
 
 PORTNAME=	electric
-PORTVERSION=	5.7.4
+PORTVERSION=	6.0.4
 CATEGORIES=	cad
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
+DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.(.)$/\1/}
 
 MAINTAINER=	lioux@FreeBSD.org
 
 USE_XLIB=	yes
 USE_MOTIF=	yes
-EXTRA_PATCHES=	${WRKDIR}/patch-prefix
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
-MAKE_ENV+=	X11BASE="${X11BASE}" HACK_INSTALL_DIR="${INSTALL_DIR}"
+CONFIGURE_ARGS=	-with-x
 
 INSTALL_DIR=	${INSTALL} -d -o ${BINOWN} -g ${BINGRP} -m 755
 
-pre-patch:
-	${SED} "s!PREFIX!${PREFIX}!g" ${FILESDIR}/template-patch-prefix > ${EXTRA_PATCHES}
+post-patch:
+	@${PERL} -pi -e 's|/usr/local/lib/electric/|${PREFIX}/share/electric/lib/|; \
+		s|/usr/local/|${PREFIX}/|' ${WRKSRC}/src/include/config.h
+	@${PERL} -pi -e 's|/lib/electric|/share/electric/lib|' ${WRKSRC}/Makefile.in
+	@${PERL} -pi -e 's|/usr/X11R6/|${X11BASE}/|' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
