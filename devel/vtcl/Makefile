@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mva@sysfault.org
 COMMENT=	An Application Development Environment For the TCL/TK language
 
 RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
