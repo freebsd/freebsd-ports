@@ -6,12 +6,13 @@
 #
 
 PORTNAME=	audiofile
-PORTVERSION=	0.1.1
+PORTVERSION=	0.2
 CATEGORIES=	audio ruby
 MASTER_SITES=	http://%SUBDIR%.sourceforge.net/download/
 #MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ruby-${PORTNAME}
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
+DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${CDDB_DISTNAME}${EXTRACT_SUFX}
 DIST_SUBDIR=	ruby
 
@@ -21,24 +22,17 @@ LIB_DEPENDS=	audiofile.0:${PORTSDIR}/audio/libaudiofile
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
-.if !defined(NOPORTDOCS)
-USE_RUBY_RD=	yes
-.endif
 
-CDDB_DISTNAME=	cddb-0.1
-CDDB_WRKSRC=	${WRKDIR}/cddb
+CDDB_DISTNAME=	cddb-0.2
+CDDB_WRKSRC=	${WRKDIR}/example
+NO_BUILD=	yes
 INSTALL_TARGET=	site-install
 
 DOCS=		audiofile.html audiofile.rd
 
 post-patch:
 	${RUBY} -i -pe 'gsub %r|/home/jaredj/ruby-lib/cddb\b|, "cddb"' \
-		${CDDB_WRKSRC}/wavcddb.rb
-
-do-build:
-.if !defined(NOPORTDOCS)
-	cd ${WRKSRC} && ${RUBY_RD} audiofile.rd > audiofile.html
-.endif
+		${CDDB_WRKSRC}/wavcddb
 
 post-install:
 .if !defined(NOPORTDOCS)

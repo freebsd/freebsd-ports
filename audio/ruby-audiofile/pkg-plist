@@ -1,9 +1,8 @@
 %%RUBY_SITEARCHLIBDIR%%/audiofile.so
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/audiofile/test.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/audiofile/cddb/README
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/audiofile/cddb/batch-oggenc.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/audiofile/cddb/batch-oggenc
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/audiofile/cddb/cddb.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/audiofile/cddb/wavcddb.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/audiofile/cddb/wavcddb
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/audiofile/cddb
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/audiofile
 %%PORTDOCS%%%%RUBY_DOCDIR%%/audiofile/audiofile.html
