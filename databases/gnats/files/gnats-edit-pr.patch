@@ -1,6 +1,6 @@
 --- gnats/gnats-edit-pr.sh.orig	Tue Apr 20 23:17:07 1999
-+++ gnats/gnats-edit-pr.sh	Wed Mar 13 15:00:35 2002
-@@ -124,15 +124,21 @@
++++ gnats/gnats-edit-pr.sh	Sat Jun  1 13:42:31 2002
+@@ -124,15 +124,22 @@
  
       *)
         if [ "`echo $1 | grep /`" != "" ]; then
@@ -16,15 +16,16 @@
     shift
  done
  
-+chng_msg="/tmp/chng.$$"
 +chng_tpl="/home/gnats/gnats-adm/edit-pr-msg"
 +
 +for pr_id in $prs ; do
 +
++chng_msg="/tmp/chng.$pr.$$"
++
  # set command here to always pass host and port, and directory if supplied
  if [ "$mode" = "network" ]; then
      prog="nedit-pr"
-@@ -149,12 +155,12 @@
+@@ -149,12 +156,12 @@
  fi
  
  # These traps take care of deleting all the /tmp files
@@ -39,7 +40,7 @@
  
  # find a user name
  if [ "$USER" != "" ]; then
-@@ -192,7 +198,7 @@
+@@ -192,7 +197,7 @@
  if cmp -s $new.old $new ; then
    echo "$prog: PR not changed"
    $PR_EDIT --unlock $pr_id
@@ -48,7 +49,7 @@
  fi
  
  # error-check output by calling pr-edit --check; if mistakes exist,
-@@ -229,6 +235,8 @@
+@@ -229,6 +234,8 @@
  new_resp="`sed -n '/^>Responsible:/{s,^>[-a-zA-Z]*: *,,;s, *(.*,,g;p;q;}' $new`"
  old_synopsis="`sed -n '/^>Synopsis:/{s,^>[-a-zA-Z]*: *,,;p;q;}' $new.old`"
  new_synopsis="`sed -n '/^>Synopsis:/{s,^>[-a-zA-Z]*: *,,;p;q;}' $new`"
@@ -57,7 +58,7 @@
  full_id="`sed -n '/^>Category:/{s,^>[-a-zA-Z]*: *,,;p;q;}' $new`/$pr_id"
  
  # If you can read this, you may have a future in sed(1) programming.
-@@ -256,8 +264,12 @@
+@@ -256,8 +263,12 @@
  if [ "$old_resp" != "$new_resp" ]; then
    resp_change=yes
  fi
@@ -71,7 +72,7 @@
    # we've got a change
    mail_to="$me"
    if [ ! -z "$state_change" ]; then
-@@ -266,14 +278,47 @@
+@@ -266,14 +277,47 @@
      echo State-Changed-By: $me >> $change_msg
      echo State-Changed-When: $DATE >> $change_msg
      echo "State-Changed-Why: " >> $change_msg
@@ -124,7 +125,7 @@
    fi
    if [ ! -z "$resp_change" ]; then
      $debug_print "Doing responsible change."
-@@ -281,12 +326,24 @@
+@@ -281,12 +325,24 @@
      echo Responsible-Changed-By: $me >> $change_msg
      echo Responsible-Changed-When: $DATE >> $change_msg
      echo "Responsible-Changed-Why: " >> $change_msg
@@ -151,7 +152,7 @@
    if [ -n "$to_subm" ]; then mail_to="${reply_to}, ${mail_to}" ; fi
    if [ -n "$x_gnats_notify" ]; then mail_to="${x_gnats_notify}, ${mail_to}" ; fi
    if [ -n "$to_old" ] ; then mail_to="${mail_to}, `$PR_ADDR ${old_resp}`" ; fi
-@@ -303,7 +360,7 @@
+@@ -303,7 +359,7 @@
    $MAIL_AGENT << __EOF__
  To: $mail_to
  From: $me
@@ -160,13 +161,13 @@
  
  `if [ "$old_synopsis" != "$new_synopsis" ]; then
  	echo Old Synopsis: "$old_synopsis"
-@@ -321,5 +378,9 @@
+@@ -321,5 +377,9 @@
  # call PR_EDIT on the new file and clean up
  $PR_EDIT < $new
  $PR_EDIT --unlock $pr_id
 +
-+done
-+
 +rm -f $chng_msg
++
++done
  
  exit 0
