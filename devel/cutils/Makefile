@@ -1,21 +1,23 @@
-# Port for:		cutils
-# Version required:	FreeBSD-2.1.5
-# Date created:		26 November 1996
-# Whom:			Sandro Sigala
+# New ports collection makefile for:	cutils
+# Version required:		1.3.1
+# Date created:			26 November 1996
+# Whom:				Sandro Sigala
 #
 # $Id$
 #
 
-DISTNAME=	cutils-1.3
+DISTNAME=	cutils-1.3.1
+PKGNAME=	cutils-1.3.1
 CATEGORIES=	devel
-MASTER_SITES=	ftp://freefall.freebsd.org/pub/FreeBSD/LOCAL_PORTS/
-DISTFILES=	cutils-1.3.tar.gz
+MASTER_SITES=	ftp://freefall.FreeBSD.ORG/pub/FreeBSD/LOCAL_PORTS/
 
 MAINTAINER=	ssigala@globalnet.it
 
+HAS_CONFIGURE=	yes
+
 post-install:
 .if defined(NOMANCOMPRESS)
-	(cd ${PREFIX} ; \
+	@(cd ${PREFIX} ; \
 	gunzip -f `grep man ${PKGDIR}/PLIST` )
 .endif
 
