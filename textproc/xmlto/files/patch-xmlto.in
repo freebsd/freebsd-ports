@@ -1,0 +1,8 @@
+--- xmlto.in.orig	Mon Jan  5 09:20:01 2004
++++ xmlto.in	Mon Jan  5 09:20:32 2004
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!@BASH@
+ # 
+ # @PACKAGE@ - apply an XSL stylesheet to an XML document
+ # Copyright (C) 2001, 2002, 2003  Tim Waugh <twaugh@redhat.com>
