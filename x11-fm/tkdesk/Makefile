@@ -7,21 +7,22 @@
 
 PORTNAME=	tkdesk
 PORTVERSION=	1.2
-CATEGORIES=	x11-fm tk82
-MASTER_SITES=	http://sd.znet.com/~jchris/tkdesk/ \
+PORTREVISION=	1
+CATEGORIES=	x11-fm tk83
+MASTER_SITES=	http://tkdesk.sourceforge.net/dist/ \
 		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR= X11/desktop
 
-MAINTAINER=	andy@geek4food.org
+MAINTAINER=	spadger@best.com
 
-LIB_DEPENDS=	itcl30.1:${PORTSDIR}/lang/itcl \
+LIB_DEPENDS=	itcl32:${PORTSDIR}/lang/itcl \
 		BLT24.2:${PORTSDIR}/x11-toolkits/blt
 
 USE_GMAKE=	YES
 GNU_CONFIGURE=	YES
-CONFIGURE_ARGS+= --with-tcl=${LOCALBASE}/lib/tcl8.2
-CONFIGURE_ARGS+= --with-tk=${LOCALBASE}/lib/tk8.2
-CONFIGURE_ARGS+= --with-itcl=${LOCALBASE}/lib/itcl3.0
+CONFIGURE_ARGS+= --with-tcl=${LOCALBASE}/lib/tcl8.3
+CONFIGURE_ARGS+= --with-tk=${LOCALBASE}/lib/tk8.3
+CONFIGURE_ARGS+= --with-itcl=${LOCALBASE}/lib/itcl3.2
 CONFIGURE_ARGS+= --with-blt=${LOCALBASE}/lib
 
 MAN1=		tkdesk.1 cd-tkdesk.1 ed-tkdesk.1 od-tkdesk.1
