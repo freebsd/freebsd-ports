@@ -20,4 +20,7 @@ USE_PERL5=	yes
 MAN1=		bgrot.1
 MANCOMPRESSED=	yes
 
+post-install:
+	@${INSTALL_DATA} ${WRKSRC}/bgrot.conf.skel ${PREFIX}/etc
+
 .include <bsd.port.mk>
