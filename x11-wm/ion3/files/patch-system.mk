@@ -1,5 +1,5 @@
---- system.mk.orig	Sat Jan 19 18:15:13 2002
-+++ system.mk	Sat Sep  7 15:53:15 2002
+--- system.mk.orig	Sat Jan 19 15:15:13 2002
++++ system.mk	Mon Apr 21 03:53:31 2003
 @@ -7,13 +7,13 @@
  ## Installation paths
  ##
@@ -48,7 +48,7 @@
  
  
  ##
-@@ -112,9 +112,9 @@
+@@ -112,13 +112,13 @@
  ##
  
  # Should work almost everywhere
@@ -60,3 +60,8 @@
  
  INSTALLDIR=mkdir -p
  
+ BIN_MODE=755
+-DATA_MODE=664
++DATA_MODE=644
+ 
+ STRIP=strip
