@@ -1,5 +1,6 @@
 # $FreeBSD$
 #
+    SUBDIR += zclock
 
     SUBDIR += abclock
     SUBDIR += asclock
