@@ -93,6 +93,25 @@ MASTER_SITE_GNOME+=	\
 	ftp://ftp.sunet.se/pub/X11/GNOME/%SUBDIR%/ \
 	ftp://ftp.no.gnome.org/pub/GNOME/%SUBDIR%/
 
+MASTER_SITE_GNU+=	\
+	ftp://ftp.gnu.org/gnu/%SUBDIR%/ \
+	ftp://gatekeeper.dec.com/pub/GNU/%SUBDIR%/ \
+	ftp://ftp.uu.net/archive/systems/gnu/%SUBDIR%/ \
+	ftp://ftp.de.uu.net/pub/gnu/%SUBDIR%/ \
+	ftp://ftp.funet.fi/pub/gnu/prep/%SUBDIR%/ \
+	ftp://ftp.leo.org/pub/comp/os/unix/gnu/%SUBDIR%/ \
+	ftp://ftp.digex.net/pub/gnu/%SUBDIR%/ \
+	ftp://ftp.wustl.edu/mirrors/gnu/%SUBDIR%/ \
+	ftp://ftp.kddlabs.co.jp/pub/gnu/%SUBDIR%/ \
+	ftp://ftp.dti.ad.jp/pub/GNU/%SUBDIR%/ \
+	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,GNU/&,} \
+	ftp://ftp.mirror.ac.uk/sites/ftp.gnu.org/gnu/%SUBDIR%/ \
+	ftp://sunsite.org.uk/Mirrors/ftp.gnu.org/pub/gnu/%SUBDIR%/ \
+	ftp://ftp.informatik.hu-berlin.de/pub/gnu/%SUBDIR%/ \
+	ftp://ftp.rediris.es/mirror/gnu/%SUBDIR%/ \
+	ftp://ftp.lip6.fr/pub/gnu/%SUBDIR%/ \
+	ftp://ftp.chg.ru/pub/gnu/%SUBDIR%/
+
 MASTER_SITE_ISC+=	\
 	ftp://ftp.isc.org/isc/%SUBDIR%/ \
 	ftp://gd.tuwien.ac.at/infosys/servers/isc/%SUBDIR%/ \
@@ -121,25 +140,6 @@ MASTER_SITE_ISC+=	\
 	ftp://ftp.ntua.gr/pub/net/isc/isc/%SUBDIR%/ \
 	ftp://ftp.ulak.net.tr/pub/networking/isc/%SUBDIR%/ \
 	ftp://ftp.metu.edu.tr/pub/mirrors/ftp.isc.org/%SUBDIR%/
-
-MASTER_SITE_GNU+=	\
-	ftp://ftp.gnu.org/gnu/%SUBDIR%/ \
-	ftp://gatekeeper.dec.com/pub/GNU/%SUBDIR%/ \
-	ftp://ftp.uu.net/archive/systems/gnu/%SUBDIR%/ \
-	ftp://ftp.de.uu.net/pub/gnu/%SUBDIR%/ \
-	ftp://ftp.funet.fi/pub/gnu/prep/%SUBDIR%/ \
-	ftp://ftp.leo.org/pub/comp/os/unix/gnu/%SUBDIR%/ \
-	ftp://ftp.digex.net/pub/gnu/%SUBDIR%/ \
-	ftp://ftp.wustl.edu/mirrors/gnu/%SUBDIR%/ \
-	ftp://ftp.kddlabs.co.jp/pub/gnu/%SUBDIR%/ \
-	ftp://ftp.dti.ad.jp/pub/GNU/%SUBDIR%/ \
-	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,GNU/&,} \
-	ftp://ftp.mirror.ac.uk/sites/ftp.gnu.org/gnu/%SUBDIR%/ \
-	ftp://sunsite.org.uk/Mirrors/ftp.gnu.org/pub/gnu/%SUBDIR%/ \
-	ftp://ftp.informatik.hu-berlin.de/pub/gnu/%SUBDIR%/ \
-	ftp://ftp.rediris.es/mirror/gnu/%SUBDIR%/ \
-	ftp://ftp.lip6.fr/pub/gnu/%SUBDIR%/ \
-	ftp://ftp.chg.ru/pub/gnu/%SUBDIR%/
 
 MASTER_SITE_KDE+=	\
 	ftp://ftp.us.kde.org/pub/kde/%SUBDIR%/ \
@@ -307,6 +307,13 @@ MASTER_SITE_RUBY+= \
 	http://mirrors.sunsite.dk/ruby/%SUBDIR%/ \
 	ftp://ftp.iDaemons.org/pub/mirror/ftp.ruby-lang.org/ruby/%SUBDIR%/
 
+MASTER_SITE_SOURCEFORGE+= \
+	http://us.dl.sourceforge.net/%SUBDIR%/ \
+	http://eu.dl.sourceforge.net/%SUBDIR%/ \
+	ftp://us.dl.sourceforge.net/pub/sourceforge/%SUBDIR%/ \
+	ftp://ftp.kddlabs.co.jp/sourceforge/%SUBDIR%/ \
+	ftp://ftp.chg.ru/pub/sourceforge/%SUBDIR%/
+
 MASTER_SITE_SOURCEWARE+= \
 	http://mirrors.rcn.net/pub/sourceware/%SUBDIR%/ \
 	ftp://mirrors.rcn.net/mirrors/sources.redhat.com/%SUBDIR%/ \
@@ -320,13 +327,6 @@ MASTER_SITE_SOURCEWARE+= \
 	http://sunsite.org.uk/Mirrors/sourceware.cygnus.com/pub/%SUBDIR%/ \
 	ftp://unix.hensa.ac.uk/mirrors/sourceware.cygnus.com/pub/%SUBDIR%/ \
 	ftp://sunsite.org.uk/Mirrors/sourceware.cygnus.com/pub/%SUBDIR%/
-
-MASTER_SITE_SOURCEFORGE+= \
-	http://us.dl.sourceforge.net/%SUBDIR%/ \
-	http://eu.dl.sourceforge.net/%SUBDIR%/ \
-	ftp://us.dl.sourceforge.net/pub/sourceforge/%SUBDIR%/ \
-	ftp://ftp.kddlabs.co.jp/sourceforge/%SUBDIR%/ \
-	ftp://ftp.chg.ru/pub/sourceforge/%SUBDIR%/
 
 MASTER_SITE_SUNSITE+=	\
 	ftp://metalab.unc.edu/pub/Linux/%SUBDIR%/ \
