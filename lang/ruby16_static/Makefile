@@ -52,7 +52,7 @@ DESCR=		${_RUBY_PORTDIR}/pkg-descr
 # although the resulted interpreter is not capable of loading dynamic
 # modules.
 
-CONFIGURE_ENV=	XLDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=		LIBS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS!=	cd ${_RUBY_PORTDIR} && ${MAKE} -V CONFIGURE_ARGS
 .if defined(STATIC)
 CONFIGURE_ARGS:=	${CONFIGURE_ARGS:N--enable-shared:M-*} \
