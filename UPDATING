@@ -6,6 +6,19 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20040404:
+  AFFECTS: GNOME desktop users
+
+  GNOME has been updated to 2.6.  Simply portupgrading will cause serious
+  problems if you are using the desktop itself.  If you are a GNOME desktop
+  user, you should carefully read the instructions at:
+
+  http://www.freebsd.org/gnome/docs/faq26.html
+
+  And use the gnome_upgrade.sh script to properly upgrade to GNOME 2.6.  If
+  you are just a casual user of some of the GNOME libraries, portupgrade
+  should be sufficient to update your ports.
+
 20040316:
   AFFECTS: users of net/isc-dhcp3-*
 
