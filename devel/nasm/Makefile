@@ -6,17 +6,18 @@
 #
 
 PORTNAME=	nasm
-PORTVERSION=	0.98.35
+PORTVERSION=	0.98.38
 PORTEPOCH=	1
 CATEGORIES=	devel lang
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	nasm
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	krion@FreeBSD.org
 COMMENT=	General-purpose multi-platform x86 assembler
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 PLIST_SUB=	VERSION=${PORTVERSION}
 
 MAN1=		nasm.1 ndisasm.1
