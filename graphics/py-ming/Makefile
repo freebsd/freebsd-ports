@@ -7,6 +7,7 @@
 
 PORTNAME=	ming
 PORTVERSION=	0.0.2e
+PORTREVISION=	1
 CATEGORIES=	graphics python
 MASTER_SITES=	http://www.opaque.net/ming/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
