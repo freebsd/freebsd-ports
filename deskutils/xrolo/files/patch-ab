@@ -18,6 +18,25 @@
   #include <xview/panel.h>
   #include <xview/textsw.h>
 ***************
+*** 65,72 ****
+  
+  extern void		init_rolo ();
+  
+! extern char		*check_args (), *getenv (), *strcpy (),
+! 			*calloc (), *malloc ();
+  
+  extern char             *exp_fname();
+  
+--- 65,72 ----
+  
+  extern void		init_rolo ();
+  
+! extern char		*check_args (), *getenv (), *strcpy ();/*,
+! 			*calloc (), *malloc ();*/
+  
+  extern char             *exp_fname();
+  
+***************
 *** 320,323 ****
   
   	return (strcpy (q, p));
