@@ -80,18 +80,18 @@ post-install:
 .endif
 
 .if !defined(STANDALONE)
-	@${ECHO} "*****************************************************************************"
-	@${ECHO} "Make sure the mime.types are connected to the php module properly and"
-	@${ECHO} "index.php is part of your DirectoryIndex."
-	@${ECHO} ""
-	@${ECHO} "The following should be in your Apache configuration file:"
-	@${ECHO} "[...]"
-	@${ECHO} "DirectoryIndex index.php index.html"
-	@${ECHO} "[...]"
-	@${ECHO} "AddType application/x-httpd-php .php"
-	@${ECHO} "AddType application/x-httpd-php-source .phps"
-	@${ECHO} "[...]"
-	@${ECHO} "*****************************************************************************"
+	@${ECHO_CMD} "*****************************************************************************"
+	@${ECHO_CMD} "Make sure the mime.types are connected to the php module properly and"
+	@${ECHO_CMD} "index.php is part of your DirectoryIndex."
+	@${ECHO_CMD} ""
+	@${ECHO_CMD} "The following should be in your Apache configuration file:"
+	@${ECHO_CMD} "[...]"
+	@${ECHO_CMD} "DirectoryIndex index.php index.html"
+	@${ECHO_CMD} "[...]"
+	@${ECHO_CMD} "AddType application/x-httpd-php .php"
+	@${ECHO_CMD} "AddType application/x-httpd-php-source .phps"
+	@${ECHO_CMD} "[...]"
+	@${ECHO_CMD} "*****************************************************************************"
 .endif
 
 post-clean:
