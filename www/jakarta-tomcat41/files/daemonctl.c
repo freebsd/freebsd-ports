@@ -4,7 +4,7 @@
  *
  * Daemon control program.
  *
- * $FreeBSD: /tmp/pcvs/ports/www/jakarta-tomcat41/files/Attic/daemonctl.c,v 1.6 2002-05-08 22:00:04 znerd Exp $
+ * $FreeBSD: /tmp/pcvs/ports/www/jakarta-tomcat41/files/Attic/daemonctl.c,v 1.7 2002-08-28 09:22:01 znerd Exp $
  */
 
 #include <assert.h>
@@ -322,7 +322,7 @@ void start(void) {
 		result = existsProcess(pid);
 		if (result == 1) {
 			printf(" [ FAILED ]\n");
-			fprintf(stderr, "%%CONTROL_SCRIPT_NAME%%: %%APP_TITLE%% %%PORTREVISION%% is already running, PID is %d.\n", pid);
+			fprintf(stderr, "%%CONTROL_SCRIPT_NAME%%: %%APP_TITLE%% %%PORTVERSION%% is already running, PID is %d.\n", pid);
 			exit(ERR_ALREADY_RUNNING);
 		}
 	}
