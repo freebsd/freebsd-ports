@@ -8,4 +8,4 @@ mac-robber is based on the grave-robber tool from The Coroners
 Toolkit (TCT) when using the '-m' flag, except it does not require
 Perl!
 
-WWW: http://www.atstake.com/research/tools/forensic/
+WWW: http://www.sleuthkit.org/mac-robber/desc.php
