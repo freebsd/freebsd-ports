@@ -20,6 +20,25 @@ bin/grepjar33
 bin/rmic33
 bin/rmiregistry33
 bin/addr2name.awk
+include/fficonfig.h
+include/ffi.h
+include/ffi_mips.h
+include/jni.h
+include/jvmpi.h
+lib/libffi-2.00-beta.so
+lib/libffi.la
+lib/libffi.a
+lib/security/classpath.security
+lib/security/libgcj.security
+@dirrm lib/security
+lib/lib-org-xml-sax.so.0
+lib/lib-org-xml-sax.la
+lib/lib-org-xml-sax.a
+lib/lib-org-w3c-dom.so.0
+lib/lib-org-w3c-dom.la
+lib/lib-org-w3c-dom.a
+share/java/libgcj-3.3.jar
+@dirrm share/java
 @comment not needed post-libstdc++-v3:	%%GNU_HOST%%/include/_G_config.h
 @comment Insert PLIST.gcc-lib here
 @comment -=[ begin PLIST.gcc-lib ]=-
@@ -31,16 +50,22 @@ bin/addr2name.awk
 @unexec install-info --delete %D/info/cppinternals.info %D/info/dir
 @unexec install-info --delete %D/info/g77.info %D/info/dir
 @unexec install-info --delete %D/info/gcc.info %D/info/dir
+@unexec install-info --delete %D/info/gccint.info %D/info/dir
 @unexec install-info --delete %D/info/gcj.info %D/info/dir
+@unexec install-info --delete %D/info/fastjar.info %D/info/dir
 info/cpp.info
 info/cppinternals.info
 info/g77.info
 info/gcc.info
+info/gccint.info
 info/gcj.info
+info/fastjar.info
 @exec install-info %D/info/cpp.info %D/info/dir
 @exec install-info %D/info/cppinternals.info %D/info/dir
 @exec install-info %D/info/g77.info %D/info/dir
 @exec install-info %D/info/gcc.info %D/info/dir
+@exec install-info %D/info/gccint.info %D/info/dir
 @exec install-info %D/info/gcj.info %D/info/dir
+@exec install-info %D/info/fastjar.info %D/info/dir
 @comment @dirrm %%GNU_HOST%%/include
 @comment @dirrm %%GNU_HOST%%
