@@ -8,7 +8,7 @@
 PORTNAME=	tkxanim
 PORTVERSION=	0.43
 CATEGORIES=	graphics tk82
-MASTER_SITES=	http://members.yourlink.net/aaron/
+MASTER_SITES=	http://members.yourlink.net/aaron/software/linux/
 
 MAINTAINER=	jedgar@fxp.org
 
