@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xsmbrowser
-PORTVERSION=	3.3.0
-PORTREVISION=	1
+PORTVERSION=	3.4.0
 CATEGORIES=	net
 MASTER_SITES=	http://www2.iastate.edu/~chadspen/
 
