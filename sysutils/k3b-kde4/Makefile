@@ -6,13 +6,15 @@
 #
 
 PORTNAME=	k3b
-PORTVERSION=	0.11.14
+PORTVERSION=	0.11.17
 CATEGORIES=	sysutils multimedia kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	h.eichmann@gmx.de
 COMMENT=	A CD/DVD recording GUI for KDE
+
+EXTRA_PATCHES=	${.CURDIR}/../../x11/kde3/files/extrapatch-configure
 
 RUN_DEPENDS=	cdrecord:${PORTSDIR}/sysutils/cdrtools \
 		cdrdao:${PORTSDIR}/sysutils/cdrdao
