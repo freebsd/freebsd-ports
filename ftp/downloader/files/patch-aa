@@ -12,12 +12,13 @@ diff -ru ./Makefile ../../nt-1.07.1/main/Makefile
 +DEST=$(PREFIX)
  LOCALEDIR=$(DEST)/share/locale
 -LIBS=-lpthread
-+LIBS=-pthread
- CFLAGS=-Wall -O2 -D_REENTRANT -D_POSIX_PTHREAD_SEMANTICS
+-CFLAGS=-Wall -O2 -D_REENTRANT -D_POSIX_PTHREAD_SEMANTICS
 -GTKLIBS=`gtk-config --libs`
 -GTKFLAGS=`gtk-config --cflags`
 +GTKLIBS=`gtk12-config --libs`
 +GTKFLAGS=`gtk12-config --cflags`
++LIBS=-pthread
++CFLAGS+=-Wall -D_THREAD_SAFE -D_REENTRANT -D_POSIX_PTHREAD_SEMANTICS
  
  EXECC=$(CCPLUS) $(CFLAGS) $(GTKFLAGS) $(NLS) -DLOCALE=\"${LOCALEDIR}\"
  
