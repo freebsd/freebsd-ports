@@ -1,0 +1,131 @@
+*** ./src/lharc.h.old	Fri Apr 24 20:01:24 1992
+--- ./src/lharc.h	Mon Dec 26 11:39:42 1994
+***************
+*** 12,17 ****
+--- 12,23 ----
+  #include <sys/types.h>
+  #include <sys/file.h>
+  #include <sys/stat.h>
++ #ifdef __FreeBSD__
++ #include <stdlib.h>
++ #include <unistd.h>
++ #include <utime.h>
++ #include <memory.h>
++ #endif
+  
+  #include <signal.h>
+  
+*** ./src/header.c.old	Fri Apr 24 20:01:18 1992
+--- ./src/header.c	Mon Dec 26 11:27:48 1994
+***************
+*** 302,308 ****
+    dostm.tm_mday	 =  t >> 16   & 0x1f;
+    dostm.tm_mon	 = (t >> 16+5 & 0x0f) - 1;	/* 0..11 */
+    dostm.tm_year	 = (t >> 16+9 & 0x7f) + 80;
+!   dostm.tm_isdst = 0;				/* correct? */
+  #ifdef MKTIME
+    return (time_t)mktime(&dostm);
+  #else /* maybe defined(TIMELOCAL) */
+--- 302,308 ----
+    dostm.tm_mday	 =  t >> 16   & 0x1f;
+    dostm.tm_mon	 = (t >> 16+5 & 0x0f) - 1;	/* 0..11 */
+    dostm.tm_year	 = (t >> 16+9 & 0x7f) + 80;
+!   dostm.tm_isdst = -1;  /* mktime try to guess for negative value */
+  #ifdef MKTIME
+    return (time_t)mktime(&dostm);
+  #else /* maybe defined(TIMELOCAL) */
+*** ./src/lhext.c.old	Wed Sep 23 18:51:48 1992
+--- ./src/lhext.c	Mon Dec 26 11:10:11 1994
+***************
+*** 130,141 ****
+--- 130,151 ----
+  char *name;
+  LzHeader *hdr;
+  {
++ #ifdef __FreeBSD__
++   struct utimbuf utimebuf;
++   uid_t myuid;
++ #else
+    time_t utimebuf[2];
+    unsigned myuid;
++ #endif
+  
+    /* adjust file stamp */
++ #ifdef __FreeBSD__
++   utimebuf.actime = utimebuf.modtime = hdr->unix_last_modified_stamp;
++   utime (name, &utimebuf);
++ #else
+    utimebuf[0] = utimebuf[1] = hdr->unix_last_modified_stamp;
+    utime (name, utimebuf);
++ #endif
+  
+    if (hdr->extend_type == EXTEND_UNIX
+        || hdr->extend_type == EXTEND_OS68K
+*** ./src/lhlist.c.old	Sun May  3 01:27:32 1992
+--- ./src/lhlist.c	Mon Dec 26 10:59:33 1994
+***************
+*** 25,33 ****
+       long packed_size, original_size;
+  {
+    if (verbose_listing)
+!     printf ("%7d ", packed_size);
+  
+!   printf ("%7d ", original_size);
+  
+    if (original_size == 0L)
+      printf ("******");
+--- 25,33 ----
+       long packed_size, original_size;
+  {
+    if (verbose_listing)
+!     printf ("%7ld ", packed_size);
+  
+!   printf ("%7ld ", original_size);
+  
+    if (original_size == 0L)
+      printf ("******");
+*** ./Makefile.old	Wed Sep 23 23:29:48 1992
+--- ./Makefile	Mon Dec 26 11:52:27 1994
+***************
+*** 13,31 ****
+  CC = cc
+  
+  # For Sun/SunOS 4.x:
+! SWITCHES	= -DUSESTRCASECMP # -DEUC
+  # For Amdahl/UTS:
+  #SWITCHES	= -DUSG -DSYSTIME_HAS_NO_TM -DNOBSTRING -DNOINDEX -DNOSTRDUP\
+  #		  -DFTIME -DTZSET -DSYSV_SYSTEM_DIR -DNOFTRUNCATE -DNOMKDIR
+  
+  #OPTIMIZE	= -g # -O -fstrength-reduce -fomit-frame-pointer
+! OPTIMIZE	= -O
+  
+  BINDIR = /usr/local/bin
+  MANDIR = /usr/local/man
+! MANSECT = n
+  
+! INSTALL = install
+  INSTALLBIN = -s -m 755
+  INSTALLMAN = -m 644
+  
+--- 13,33 ----
+  CC = cc
+  
+  # For Sun/SunOS 4.x:
+! #SWITCHES        = -DUSESTRCASECMP # -DEUC
+  # For Amdahl/UTS:
+  #SWITCHES	= -DUSG -DSYSTIME_HAS_NO_TM -DNOBSTRING -DNOINDEX -DNOSTRDUP\
+  #		  -DFTIME -DTZSET -DSYSV_SYSTEM_DIR -DNOFTRUNCATE -DNOMKDIR
++ # For FreeBSD
++ SWITCHES        = -DUSESTRCASECMP -DMKTIME -DSYSV_SYSTEM_DIR
+  
+  #OPTIMIZE	= -g # -O -fstrength-reduce -fomit-frame-pointer
+! OPTIMIZE        = -O2
+  
+  BINDIR = /usr/local/bin
+  MANDIR = /usr/local/man
+! MANSECT = 1
+  
+! INSTALL = install -c -o bin -g bin
+  INSTALLBIN = -s -m 755
+  INSTALLMAN = -m 644
+  
