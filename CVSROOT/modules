@@ -6020,6 +6020,7 @@ py-orbit	ports/devel/py-orbit
 py-paint	ports/graphics/py-paint
 py-pcap	ports/net/py-pcap
 py-period	ports/devel/py-period
+py-plex		ports/devel/py-plex
 py-pow		ports/security/py-pow
 py-pqueue	ports/devel/py-pqueue
 py-psycopg	ports/databases/py-psycopg
