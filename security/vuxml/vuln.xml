@@ -10053,4 +10053,38 @@ misc.c:
   <vuln vid="3362f2c1-8344-11d8-a41f-0020ed76ef5a">
     <cancelled/>
   </vuln>
+
+  <vuln vid="e3cf89f0-53da-11d9-92b7-ceadd4ac2edd"> 
+    <topic>User input validation problem in phpBB</topic> 
+    <affects>
+      <package>
+	<name>phpbb</name> 
+	<range><lt>2.0.11</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A US-CERT Technical Cyber Security Alert reports:</p> 
+	<blockquote
+          cite="http://www.us-cert.gov/cas/techalerts/TA04-356A.html">
+          <p>phpBB contains an user input validation problem with regard to
+	    the parsing of the URL. An intruder can deface a phpBB website, execute
+	    arbitrary commands, or gain administrative privileges on a compromised
+	    bulletin board.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references> 
+      <freebsdpr>ports/74106</freebsdpr> 
+      <uscertta>TA04-356A</uscertta>
+      <url>http://www.phpbb.com/phpBB/viewtopic.php?f=14&amp;t=240636</url>
+      <url>http://www.kb.cert.org/vuls/id/497400</url>
+      <url>http://www.us-cert.gov/cas/techalerts/TA04-356A.html</url>
+    </references>
+    <dates>
+      <discovery>2004-11-18</discovery>
+      <entry>2004-12-22</entry>
+    </dates>
+  </vuln>
+
 </vuxml>
