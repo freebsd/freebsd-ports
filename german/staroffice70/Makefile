@@ -49,12 +49,15 @@ pre-fetch:
 	@${ECHO}
 	@${ECHO} Check if linprocfs is running: YES
 .else
+	@${ECHO} Check if linprocfs is running: NO
 	@${ECHO}
 	@${ECHO} ERROR:
 	@${ECHO}
-	@${ECHO} Staroffice setup needs a running linprocfs, which is not
-	@${ECHO} activated on your system. Please read the linprocfs\(5\)
-	@${ECHO} manpage and add the following line to /etc/fstab:
+	@${ECHO} Staroffice setup needs a running linprocfs. it seems
+	@${ECHO} that procfs is not mounted on your system.  Please
+	@${ECHO} read the linprocfs\(5\) manpage and ensure the
+	@${ECHO} the following line is in /etc/fstab, and that the
+	@${ECHO} linprocfs file system is mounted:
 	@${ECHO}
 	@${ECHO} linproc /compat/linux/proc linprocfs rw 0 0
 	@${ECHO}
@@ -82,9 +85,8 @@ pre-fetch:
 	@${ECHO}
 	@${ECHO} Staroffice depends on a scripting fix for
 	@${ECHO} /usr/src/sys/i386/linux/linux_sysvec.c
-	@${ECHO} \(revision 1.55.2.1 or higher\)
 	@${ECHO}
-	@${ECHO} Please upgrade to FreeBSD 4.5
+	@${ECHO} Please upgrade to FreeBSD 4.5 or later.
 	@${ECHO}
 	@${FALSE}
 .endif
@@ -107,6 +109,18 @@ pre-fetch:
 .if defined(USE_CDROM)
 DLTEST=112887-03.tar
 .else
+.if exists(/cdrom/linux/office60/setup)
+	@${ECHO}
+	@${ECHO} It seems that you have a Sun StarOffice 6.0 CDROM
+	@${ECHO} mounted on ${CD_MOUNTPT}.  If you wish to install from
+	@${ECHO} this CD-ROM, please run 
+	@${ECHO}
+	@${ECHO}        make -USE_CDROM
+	@${ECHO}
+	@${ECHO} Otherwise please unmount the CD-ROM.
+	@${ECHO}
+	@${FALSE}
+.endif
 DLTEST=${DISTNAME}
 .endif
 .if !exists(${DISTDIR}/${DLTEST})
@@ -165,7 +179,7 @@ do-install:
 		TEMP=${TMPDIR} ${LINUXBASE}/bin/sh -c '${WRKSRC}/setup /net'
 	@if [ -f ${PREFIX}/${SOVERSION}/program/setup ]; then \
 		${ECHO} ; \
-		${ECHO} Ignore the error-message. StarOffice6.0 has been installed ; \
+		${ECHO} Ignore the error message. StarOffice6.0 has been installed ; \
 		${ECHO} successfully on your system. ; \
 		${ECHO} ; \
 	else \
@@ -210,6 +224,9 @@ post-install:
 	@${LN} -fs ${PREFIX}/bin/staroffice6 ${PREFIX}/bin/staroffice-spadmin
 	@${LN} -fs ${PREFIX}/bin/staroffice6 ${PREFIX}/bin/staroffice-sweb
 	@${LN} -fs ${PREFIX}/bin/staroffice6 ${PREFIX}/bin/staroffice-swriter
+	@${ECHO} StarOffice6.0 has been installed successfully.  In order to use
+	@${ECHO} it, execute ${PREFIX}/bin/staroffice6.
+	@${ECHO} 
 
 install-patch:
 	@-SAL_IGNOREXERRORS=1 PATH="/bin:${PATH}" LD_LIBRARY_PATH=${LD_PATH} \
