@@ -102,6 +102,7 @@
     SUBDIR += solidpop3d
     SUBDIR += spruce
     SUBDIR += sylpheed
+    SUBDIR += teapop
     SUBDIR += tkrat
     SUBDIR += tkrat2
     SUBDIR += wanderlust-emacs
