@@ -3,4 +3,3 @@
 lib/gtk-2.0/2.2.0/engines/libqtpixmap.so
 lib/gtk-2.0/2.2.0/engines/libqtpixmap.la
 @unexec rmdir %D/lib/gtk-2.0/2.2.0/engines 2>/dev/null || true
-%%GTK1%%@dirrm lib/gtk/themes/engines
