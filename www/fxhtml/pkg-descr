@@ -19,5 +19,3 @@ HTML Has the following features:-
   +   Bitmap handling and GIF generation 
   +   Full error tracking system with formatted HTML output 
   +   Common interface to handle files, sockets, devices and pipes. (*) 
-
-WWW: http://www.cybercities.net/fxhtml

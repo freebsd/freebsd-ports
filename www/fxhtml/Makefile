@@ -8,7 +8,8 @@
 PORTNAME=	fxhtml
 PORTVERSION=	1.6.7
 CATEGORIES=	www
-MASTER_SITES=	ftp://ftp.flevel.co.uk/pub/fxhtml/
+# mastersite is long gone as of October 2003
+MASTER_SITES=	# ftp://ftp.flevel.co.uk/pub/fxhtml/
 DISTNAME=	${PORTNAME}-freebsd-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
