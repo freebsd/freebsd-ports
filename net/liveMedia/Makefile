@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	liveMedia
-PORTVERSION=	2003.08.19
+PORTVERSION=	2003.08.21
 PORTEPOCH=	1
 CATEGORIES=	net devel
 MASTER_SITES=	http://www.LIVE.COM/liveMedia/public/
@@ -86,18 +86,19 @@ liveMedia=		\
 		liveMedia/include/MP3FileSource.hh \
 		liveMedia/include/MP3HTTPSource.hh \
 		liveMedia/include/MP3Transcoder.hh \
+		liveMedia/include/MPEG1or2AudioRTPSink.hh
+		liveMedia/include/MPEG1or2AudioRTPSource.hh
+		liveMedia/include/MPEG1or2AudioStreamFramer.hh
+		liveMedia/include/MPEG1or2Demux.hh
+		liveMedia/include/MPEG1or2DemuxedElementaryStream.hh
+		liveMedia/include/MPEG1or2VideoHTTPSink.hh
+		liveMedia/include/MPEG1or2VideoRTPSink.hh
+		liveMedia/include/MPEG1or2VideoRTPSource.hh
+		liveMedia/include/MPEG1or2VideoStreamFramer.hh
 		liveMedia/include/MPEG4ESVideoRTPSource.hh \
 		liveMedia/include/MPEG4GenericRTPSink.hh \
 		liveMedia/include/MPEG4GenericRTPSource.hh \
 		liveMedia/include/MPEG4LATMAudioRTPSource.hh \
-		liveMedia/include/MPEGAudioRTPSink.hh \
-		liveMedia/include/MPEGAudioRTPSource.hh \
-		liveMedia/include/MPEGAudioStreamFramer.hh \
-		liveMedia/include/MPEGDemux.hh \
-		liveMedia/include/MPEGDemuxedElementaryStream.hh \
-		liveMedia/include/MPEGVideoHTTPSink.hh \
-		liveMedia/include/MPEGVideoRTPSink.hh \
-		liveMedia/include/MPEGVideoRTPSource.hh \
 		liveMedia/include/MPEGVideoStreamFramer.hh \
 		liveMedia/include/Media.hh \
 		liveMedia/include/MediaSession.hh \
