@@ -1,0 +1,22 @@
+bin/beep-config
+bin/beep-media-player
+include/beep/beepctrl.h
+include/beep/configfile.h
+include/beep/dirbrowser.h
+include/beep/formatter.h
+include/beep/fullscreen.h
+include/beep/plugin.h
+include/beep/titlestring.h
+include/beep/util.h
+lib/libbeep.a
+lib/libbeep.so
+lib/libbeep.so.1
+lib/beep/Input/libcdaudio.so
+lib/beep/Input/libmpg123.so
+lib/beep/Output/libOSS.so
+%%ESDPLUGIN%%lib/beep/Output/libesdout.so
+share/aclocal/beep.m4
+@dirrm lib/beep/Output
+@dirrm lib/beep/Input
+@dirrm lib/beep
+@dirrm include/beep
