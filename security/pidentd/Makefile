@@ -3,7 +3,7 @@
 # Date created:		19 Oct 1994
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.18 1996/11/15 12:53:24 peter Exp $
+# $Id: Makefile,v 1.19 1996/11/17 07:58:05 obrien Exp $
 #
 
 DISTNAME=       pidentd-2.7.2
@@ -20,7 +20,7 @@ MAN8=		identd.8 idecrypt.8
 # Uncomment to activate the use of verifiable "cookies".  The idea is to be
 # able to detect fake "logs" intended to get your innocent users in trouble.
 # Naturally, since it uses libdes, you must have the "secure" dist installed.
-USE_DES=	true
+# USE_DES=	true
 
 .if defined(USE_DES)
 ADD_GDEFS=	-DINCLUDE_CRYPT
