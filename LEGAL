@@ -1,5 +1,5 @@
 # Creator:  Jordan Hubbard
-# $Id: LEGAL,v 1.100 1998/03/04 10:06:43 tg Exp $
+# $Id: LEGAL,v 1.101 1998/03/09 13:30:37 tg Exp $
 
 Some of the ports in this directory have restrictive copyrights prohibiting
 their actual redistribution on mass media.  When creating compilations
@@ -16,6 +16,8 @@ Such ports are listed below:
 Dist			Port			Why
 ------------------------------------------------------------------------------
 aswedit-*		ports/www/aswedit	Commercial software.
+bro-*			ports/security/bro	No distribution due to
+						alpha status
 bochs-*			ports/emulators/bochs	Commercial software.
 bzip-*			ports/archivers/bzip	Some algorithms used may
 						infringe certain US patents.
