@@ -4,3 +4,5 @@ convenient facilities. It's designed so that you can link it
 into an application or utility to make it extensible.  Our
 plan is to link this library into all GNU programs that call for 
 extensibility.
+
+WWW: http://www.gnu.org/software/guile/

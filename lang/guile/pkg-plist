@@ -1,9 +1,6 @@
 bin/guile
 bin/guile-config
-bin/guile-doc-snarf
-bin/guile-func-name-check
 bin/guile-snarf
-bin/guile-snarf.awk
 include/guile-readline/readline.h
 include/guile/gh.h
 include/libguile.h
@@ -91,20 +88,26 @@ include/libguile/vectors.h
 include/libguile/version.h
 include/libguile/vports.h
 include/libguile/weaks.h
-@unexec install-info --delete %D/info/data-rep.info %D/info/dir
-info/data-rep.info
-@exec install-info %D/info/data-rep.info %D/info/dir
+@unexec install-info --delete %D/info/guile.info %D/info/dir
+info/guile.info
+info/guile.info-1
+info/guile.info-2
+@exec install-info %D/info/guile.info %D/info/dir
 lib/libguile.a
+lib/libguile.la
 lib/libguile.so
-lib/libguile.so.9
+lib/libguile.so.10
 lib/libguilereadline.a
+lib/libguilereadline.la
 lib/libguilereadline.so
 lib/libguilereadline.so.0
 lib/libqthreads.a
+lib/libqthreads.la
 lib/libqthreads.so
 lib/libqthreads.so.0
 share/aclocal/guile.m4
 share/guile/%%GUILE_VER%%/ice-9/and-let*.scm
+share/guile/%%GUILE_VER%%/ice-9/and-let-star.scm
 share/guile/%%GUILE_VER%%/ice-9/arrays.scm
 share/guile/%%GUILE_VER%%/ice-9/boot-9.scm
 share/guile/%%GUILE_VER%%/ice-9/calling.scm
