@@ -15,7 +15,7 @@
 .if !defined(Java_Include)
 
 Java_Include=				bsd.java.mk
-Java_Include_MAINTAINER=	glewis@FreeBSD.org
+Java_Include_MAINTAINER=	glewis@FreeBSD.org hq@FreeBSD.org
 
 #-------------------------------------------------------------------------------
 # Variables that each port can define:
