@@ -3,7 +3,7 @@
 # Date created:		25 August 1996
 # Whom:			chuckr@freebsd.org
 #
-# $Id: Makefile,v 1.11 1997/04/27 00:11:47 asami Exp $
+# $Id: Makefile,v 1.12 1997/07/17 19:29:07 andreas Exp $
 #
 
 DISTNAME=       glimpse-4.0.src
@@ -13,6 +13,8 @@ MASTER_SITES=   ftp://ftp.cs.arizona.edu/glimpse/
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	chuckr@freebsd.org
+
+BROKEN_ELF=	cannot open -ltemplate: No such file or directory
 
 NO_CDROM=	"Restrictive copyright (don't sell for profit)"
 GNU_CONFIGURE=	yes
