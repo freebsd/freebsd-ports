@@ -6,15 +6,13 @@
 #
 
 PORTNAME=	shorten
-PORTVERSION=	2.3a
+PORTVERSION=	3.1
 CATEGORIES=	audio archivers
-MASTER_SITES=		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	fenner
-DISTFILES=	${PORTNAME}.tar.gz
+MASTER_SITES=	http://www.etree.org/software/
 
 MAINTAINER=	sec@42.org
 
-RESTRICTED=	"May not be sold. May not be distributed if modified."
+RESTRICTED=	"May not be sold."
 
 MAN1=		shorten.1
 
