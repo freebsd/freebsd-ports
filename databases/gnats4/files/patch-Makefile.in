@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Mon Sep 22 05:52:58 2003
++++ Makefile.in	Mon Sep 22 05:53:13 2003
+@@ -50,7 +50,7 @@
+ 	$(MAKE) INSTALL_PROGRAM='$(INSTALL_PROGRAM) -s' $@
+ 
+ install-tools: $(LIBIBERTY)
+-	$(MAKE) INSTALL_PROGRAM='$(INSTALL_PROGRAM) -s' $@
++	for d in $(SUBDIRS); do $(MAKE) -C $$d $@; done
+ 
+ uninstall:
+ 	for d in $(SUBDIRS); do $(MAKE) -C $$d $@; done
