@@ -1,8 +1,19 @@
 *** config.h.in.orig	Wed May 12 13:20:04 1999
---- config.h.in	Mon Jan 10 22:56:13 2000
+--- config.h.in	Thu Feb 24 17:12:10 2000
+***************
+*** 285,290 ****
+--- 285,292 ----
+  #undef Rdup2
+  #undef Rfclose
+  #undef Rgethostbyname
++ #undef Rgetaddrinfo
++ 
+  
+  /* Set this to allow group writeability of $HOME, .ssh and authorized_keys */
+  #undef ALLOW_GROUP_WRITEABILITY
 ***************
 *** 323,328 ****
---- 323,346 ----
+--- 325,348 ----
      /etc/nologin.allow. */
   #undef NOLOGIN_ALLOW
   
@@ -29,7 +40,7 @@
   
 ***************
 *** 375,385 ****
---- 393,409 ----
+--- 395,411 ----
   /* Define if you have the ftruncate function.  */
   #undef HAVE_FTRUNCATE
   

@@ -1,5 +1,5 @@
 *** configure.in.orig	Wed May 12 13:20:02 1999
---- configure.in	Sat Feb 12 15:32:11 2000
+--- configure.in	Thu Feb 24 17:12:10 2000
 ***************
 *** 30,37 ****
 --- 30,169 ----
@@ -328,8 +328,18 @@
     KERBEROS_OBJS="auth-kerberos.o"
     ;;
 ***************
+*** 1123,1128 ****
+--- 1370,1376 ----
+      AC_DEFINE(Rdup2,SOCKSdup2)
+      AC_DEFINE(Rfclose,SOCKSfclose)
+      AC_DEFINE(Rgethostbyname,SOCKSgethostbyname)
++     AC_DEFINE(Rgetaddrinfo,SOCKSgetaddrinfo)
+  fi
+  
+  AC_MSG_CHECKING(whether to use rsaref)
+***************
 *** 1252,1257 ****
---- 1499,1536 ----
+--- 1500,1537 ----
     AC_DEFINE(ENABLE_TCP_NODELAY)
   )
   
@@ -370,7 +380,7 @@
   [  --enable-so-linger      Enable setting SO_LINGER socket option],
 ***************
 *** 1311,1316 ****
---- 1590,1597 ----
+--- 1591,1598 ----
     AC_DEFINE(SCP_ALL_STATISTICS_ENABLED)
   )
   
@@ -388,7 +398,7 @@
   
   AC_ARG_PROGRAM
   
---- 1605,1611 ----
+--- 1606,1612 ----
   fi
   AC_MSG_RESULT($PIDDIR)
   
@@ -402,7 +412,7 @@
   AC_SUBST(SSHINSTALLMODE)
   
 ! AC_OUTPUT(Makefile sshd.8 ssh.1 make-ssh-known-hosts.1 zlib-1.0.4/Makefile)
---- 1617,1620 ----
+--- 1618,1621 ----
   AC_SUBST(SSHDCONFOBJS)
   AC_SUBST(SSHINSTALLMODE)
   
