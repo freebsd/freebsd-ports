@@ -6,28 +6,19 @@
 #
 
 PORTNAME=	courier
-PORTVERSION=	0.44.2
-PORTREVISION=	1
+PORTVERSION=	0.45.3
 CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	courier
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	yds@CoolRat.org
 COMMENT=	Courier SMTP IMAP POP3 HTTP mail server suite
-
-FORBIDDEN=	http://vuxml.freebsd.org/98bd69c3-834b-11d8-a41f-0020ed76ef5a.html
 
 CONFLICTS=	exim-4.* courier-imap-2.* maildrop-1.* \
 		postfix-1.* postfix-2.* \
 		qmail-1.* qmail-*-1.* \
 		sendmail-8.* sendmail-*-8.* \
 		smail-3.* sqwebmail-3.* zmailer-2.*
-
-.if defined(WITH_GHOSTSCRIPT_AFPL) && ${WITH_GHOSTSCRIPT_AFPL} == yes
-GSPORT?=        print/ghostscript-afpl
-.else
-GSPORT?=        print/ghostscript-gnu
-.endif
 
 LIB_DEPENDS=	fam.0:${PORTSDIR}/devel/fam
 RUN_DEPENDS=	${LOCALBASE}/share/sysconftool/sysconftool:${PORTSDIR}/devel/sysconftool \
@@ -63,6 +54,7 @@ LOCALSTATEDIR=	/var/spool/courier
 CACHEDIR=	/var/spool/webmail
 CALENDIR=	/var/spool/calendar
 MIMETYPES=	${LOCALBASE}/etc/apache/mime.types:${LOCALBASE}/etc/apache2/mime.types
+WITH_TRANSPORT=	local esmtp dsn
 
 USE_BZIP2=	yes
 USE_SUBMAKE=	yes
@@ -79,6 +71,7 @@ CONFIGURE_ENV=	REHASH=${SCRIPTDIR}/c_rehash \
 		CPPFLAGS='${CPPFLAGS}' \
 		LDFLAGS='${LDFLAGS}'
 MAKE_ENV:=	${CONFIGURE_ENV}
+CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--disable-root-check --with-db=db \
 		--enable-syslog=1 --enable-use-flock \
 		--program-transform-name=s,^,, \
@@ -97,9 +90,9 @@ CONFIGURE_ARGS=	--disable-root-check --with-db=db \
 		--with-cachedir=${CACHEDIR} \
 		--with-cacheowner=${CACHEOWN} \
 		--with-calendardir=${CALENDIR} \
+		--with-transport='${WITH_TRANSPORT}' \
 		--with-default-maildrop=${MAILDROPDEFAULT} \
 		--enable-workarounds-for-imap-client-bugs
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 PKGMESSAGE=	${WRKDIR}/.PKGMESSAGE
 
@@ -110,58 +103,208 @@ PLIST_SUB+=	BINOWN="${BINOWN}" BINGRP="${BINGRP}" \
 		MAILUID="${MAILUID}" MAILGID="${MAILGID}" \
 		CACHEOWN="${CACHEOWN}"
 
-SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
-		WITH_EXPECT="${WITH_EXPECT:L}" \
-		WITH_GNUPG="${WITH_GNUPG:L}" \
-		WITH_ASPELL="${WITH_ASPELL:L}" \
-		WITH_ISPELL="${WITH_ISPELL:L}" \
-		WITH_LDAP="${WITH_LDAP:L}" \
-		WITH_MYSQL="${WITH_MYSQL:L}" \
-		WITH_PGSQL="${WITH_PGSQL:L}" \
-		WITH_VPOPMAIL="${WITH_VPOPMAIL:L}" \
-		WITH_PROCMAIL="${WITH_PROCMAIL:L}" \
-		WITH_SENDFAX="${WITH_SENDFAX:L}" \
-		WITH_UUCP="${WITH_UUCP:L}" \
-		WITH_IPV6="${WITH_IPV6:L}" \
-		TOUCH="${TOUCH}" \
-		MKDIR="${MKDIR}"
-
-.if exists(${WRKDIRPREFIX}${.CURDIR}/Makefile.inc)
-.include "${WRKDIRPREFIX}${.CURDIR}/Makefile.inc"
+OPTIONS+=EXPECT "Expect support for WebMail change passwd"
+.if exists(${LOCALBASE}/bin/expect) || defined(WITH_EXPECT)
+OPTIONS+=on
+.else
+OPTIONS+=off
 .endif
+
+OPTIONS+=GNUPG "GNU Privacy Guard support for WebMail"
+.if exists(${LOCALBASE}/bin/gpg) || defined(WITH_GNUPG)
+OPTIONS+=on
+.else
+OPTIONS+=off
+.endif
+
+OPTIONS+=ASPELL "ASpell support for WebMail  / mutually"
+.if exists(${LOCALBASE}/bin/aspell) || defined(WITH_ASPELL)
+OPTIONS+=on
+.else
+OPTIONS+=off
+.endif
+
+OPTIONS+=ISPELL "ISpell support for WebMail  \ exclusive"
+.if exists(${LOCALBASE}/bin/ispell) || defined(WITH_ISPELL)
+OPTIONS+=on
+.else
+OPTIONS+=off
+.endif
+
+OPTIONS+=OPENLDAP "OpenLDAP 2.x authentication support"
+.if (exists(${LOCALBASE}/lib/libldap.so.2) && exists(${LOCALBASE}/lib/liblber.so.2)) || defined(WITH_OPENLDAP)
+OPTIONS+=on
+.else
+OPTIONS+=off
+.endif
+
+OPTIONS+=MYSQL "MySQL authentication support"
+.if exists(${LOCALBASE}/lib/mysql/libmysqlclient.so.14) || defined(WITH_MYSQL)
+OPTIONS+=on
+.else
+OPTIONS+=off
+.endif
+
+OPTIONS+=PGSQL "PostgreSQL authentication support"
+.if exists(${PGSQLBASE}/lib/libpq.so.3) || defined(WITH_PGSQL)
+OPTIONS+=on
+.else
+OPTIONS+=off
+.endif
+
+OPTIONS+=VCHKPW "VPopMail authentication support"
+.if exists(${LOCALBASE}/vpopmail/lib/libvpopmail.a) || defined(WITH_VCHKPW)
+OPTIONS+=on
+.else
+OPTIONS+=off
+.endif
+
+OPTIONS+=PROCMAIL "Procmail local delivery support"
+.if exists(${LOCALBASE}/bin/procmail) || defined(WITH_PROCMAIL)
+OPTIONS+=on
+.else
+OPTIONS+=off
+.endif
+
+OPTIONS+=SENDFAX "mgetty+sendfax support"
+.if exists(${LOCALBASE}/sbin/sendfax) && exists(${LOCALBASE}/bin/pnmscale) && exists(${LOCALBASE}/bin/gs) || defined(WITH_SENDFAX)
+OPTIONS+=on
+.else
+OPTIONS+=off
+.endif
+
+OPTIONS+=UUCP "UUCP support"
+.if exists(/usr/bin/uux) || exists(${LOCALBASE}/bin/uux) || defined(WITH_UUCP)
+OPTIONS+=on
+.else
+OPTIONS+=off
+.endif
+
+OPTIONS+=IPV6 "IPv6 support"
+.if defined(WITH_IPV6) && !defined(WITHOUT_IPV6)
+OPTIONS+=on
+.else
+OPTIONS+=off
+.endif
+
 .include "${.CURDIR}/Makefile.man"
 .include "${.CURDIR}/Makefile.doc"
 .include "${.CURDIR}/Makefile.own"
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_EXPECT) && !defined(WITHOUT_EXPECT)
+BUILD_DEPENDS+=	expect:${PORTSDIR}/lang/expect
+PLIST_SUB+=	SUB_EXPECT=""
+.else
+CONFIGURE_ARGS+=--disable-changepass
+PLIST_SUB+=	SUB_EXPECT="@comment "
+.endif
+
+.if defined(WITH_GNUPG) && !defined(WITHOUT_GNUPG)
+BUILD_DEPENDS+=	gpg:${PORTSDIR}/security/gnupg
+.endif
+
+.if defined(WITH_ASPELL) && !defined(WITHOUT_ASPELL) && !defined(WITH_ISPELL)
+BUILD_DEPENDS+=	aspell:${PORTSDIR}/textproc/aspell
+CONFIGURE_ARGS+=--with-ispell=${LOCALBASE}/bin/aspell
+.endif
+
+.if defined(WITH_ISPELL) && !defined(WITHOUT_ISPELL) && !defined(WITH_ASPELL)
+BUILD_DEPENDS+=	ispell:${PORTSDIR}/textproc/ispell
+CONFIGURE_ARGS+=--with-ispell=${LOCALBASE}/bin/ispell
+.endif
+
+.if defined(WITH_ASPELL) && defined(WITH_ISPELL)
+BROKEN=	ASpell and ISpell are mutually exclusive.
+.endif
+
+.if !defined(WITH_ASPELL) && !defined(WITH_ISPELL)
+CONFIGURE_ARGS+=--without-ispell
+.endif
+
+.if defined(WITH_OPENLDAP) && !defined(WITHOUT_OPENLDAP)
+PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-ldap
+USE_OPENLDAP=	yes
+CONFIGURE_ARGS+=--with-authldap
+PLIST_SUB+=	SUB_LDAP=""
+.else
+CONFIGURE_ARGS+=--without-authldap
+PLIST_SUB+=	SUB_LDAP="@comment "
+.endif
+
+.if defined(WITH_MYSQL) && !defined(WITHOUT_MYSQL) && !defined(WITH_VCHKPW)
+.if exists(${LOCALBASE}/vpopmail/lib/libvpopmail.a)
+BROKEN+=	VPopMail and MySQL are mutually exclusive.\
+		Uninstall VPopMail if you want MySQL authentication.
+.endif
+PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-mysql
+USE_MYSQL=	yes
+CONFIGURE_ARGS+=--with-authmysql \
+		--with-mysql-libs=${LOCALBASE}/lib/mysql \
+		--with-mysql-includes=${LOCALBASE}/include/mysql
+PLIST_SUB+=	SUB_MYSQL=""
+.else
+CONFIGURE_ARGS+=--without-authmysql
+PLIST_SUB+=	SUB_MYSQL="@comment "
+.endif
+
+.if defined(WITH_PGSQL) && !defined(WITHOUT_PGSQL)
+PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-pgsql
+LIB_DEPENDS+=	pq.3:${PORTSDIR}/databases/postgresql7
+CONFIGURE_ARGS+=--with-authpgsql
+		--with-pgsql-libs=${PGSQLBASE}/lib
+		--with-pgsql-includes=${PGSQLINCLUDES}
+PLIST_SUB+=	SUB_PGSQL=""
+.else
+CONFIGURE_ARGS+=--without-authpgsql
+PLIST_SUB+=	SUB_PGSQL="@comment "
+.endif
+
+.if defined(WITH_VCHKPW) && !defined(WITHOUT_VCHKPW) && !defined(WITH_MYSQL)
+PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-vpopmail
+BUILD_DEPENDS+=	${LOCALBASE}/vpopmail/lib/libvpopmail.a:${PORTSDIR}/mail/vpopmail
+CONFIGURE_ARGS+=--with-authvchkpw
+.else
+CONFIGURE_ARGS+=--without-authvchkpw
+.endif
+
+.if defined(WITH_PROCMAIL) && !defined(WITHOUT_PROCMAIL)
+BUILD_DEPENDS+=	procmail:${PORTSDIR}/mail/procmail
+.endif
+
+.if defined(WITH_SENDFAX) && !defined(WITHOUT_SENDFAX)
+USE_GHOSTSCRIPT=yes
+SENDFAX_DEPENDS=sendfax:${PORTSDIR}/comms/mgetty+sendfax \
+		pnmscale:${PORTSDIR}/graphics/netpbm
+BUILD_DEPENDS+=	${SENDFAX_DEPENDS}
+RUN_DEPENDS+=	${SENDFAX_DEPENDS}
+WITH_TRANSPORT+=fax
+PLIST_SUB+=	SUB_FAX=""
+.else
+PLIST_SUB+=	SUB_FAX="@comment "
+.endif
+
+.if defined(WITH_UUCP) && !defined(WITHOUT_UUCP)
+.if !exists(/usr/bin/uux)
+BUILD_DEPENDS+=	uux:${PORTSDIR}/net/freebsd-uucp
+RUN_DEPENDS+=	uux:${PORTSDIR}/net/freebsd-uucp
+.endif
+WITH_TRANSPORT+=uucp
+PLIST_SUB+=	SUB_UUCP=""
+.else
+PLIST_SUB+=	SUB_UUCP="@comment "
+.endif
+
+.if defined(WITHOUT_IPV6) || !defined(WITH_IPV6)
+CONFIGURE_ARGS+=--without-ipv6
+.else
+CONFIGURE_ARGS+=--with-ipv6
+.endif
 
 pre-everything::
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "You may use the following build options:"
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "	WITH_EXPECT=yes		Expect support for WebMail change passwd"
-	@${ECHO_MSG} "	WITH_GNUPG=yes		GNU Privacy Guard support for WebMail"
-	@${ECHO_MSG} "	WITH_ASPELL=yes		ASpell support for WebMail"
-	@${ECHO_MSG} "	WITH_ISPELL=yes		ISpell support for WebMail"
-	@${ECHO_MSG} "	WITH_LDAP=yes		OpenLDAP 2.x authentication support"
-.if !defined(WANT_OPENLDAP_VER)
-	@${ECHO_MSG} "	WANT_OPENLDAP_VER=??	See <bsd.port.mk> for legal values"
-.endif
-	@${ECHO_MSG} "	WITH_MYSQL=yes		MySQL authentication support"
-	@${ECHO_MSG} "	WITH_PGSQL=yes		PostgreSQL authentication support"
-	@${ECHO_MSG} "	WITH_VPOPMAIL=yes	VPopMail authentication support"
-	@${ECHO_MSG} "	WITH_PROCMAIL=yes	Procmail local delivery support"
-	@${ECHO_MSG} "	WITH_SENDFAX=yes	mgetty+sendfax support"
-.if !defined(WITH_GHOSTSCRIPT_AFPL) || ${WITH_GHOSTSCRIPT_AFPL} != yes
-	@${ECHO_MSG} "	WITH_GHOSTSCRIPT_AFPL=yes to use AFPL Postscript"
-	@${ECHO_MSG} "				interpreter instead of GNU one"
-	@${ECHO_MSG} "				for mgetty+sendfax support"
-.endif
-	@${ECHO_MSG} "	WITH_UUCP=yes		UUCP support"
-	@${ECHO_MSG} "	WITH_IPV6=yes		Pv6 support"
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "	BATCH=yes		To skip INTERACTIVE selection"
-	@${ECHO_MSG} "				of above tunables"
-	@${ECHO_MSG} ""
-	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure.${PORTNAME}
+	@${ECHO_MSG} "===> -------------------------------------------"
+	@${ECHO_MSG} "===> Run 'make config' to (re)configure the port"
+	@${ECHO_MSG} "===> -------------------------------------------"
 
 post-patch:
 	@${PERL} -pi -e 's:\@datadir\@:\@sysconfdir\@:g;' \
@@ -173,6 +316,13 @@ post-patch:
 	@${PERL} -pi -e 's:^(RANDFILE = )\@datadir\@\S+:$$1\@sysconfdir\@/random.tmp:g;' \
 		${WRKSRC}/*/*.cnf.in \
 		${WRKSRC}/*/*/*.cnf.in
+	@${PERL} -pi -e 's:^	sharedindexsplit sharedindexinstall::g;' \
+		${WRKSRC}/courier/Makefile.in
+	@${REINPLACE_CMD} -e 's:"\\$${SHELL} \\$$(install_sh) -c -s":"\\$${BSD_INSTALL_PROGRAM}":' \
+		${WRKSRC}/configure \
+		${WRKSRC}/*/configure \
+		${WRKSRC}/*/*/configure \
+		${WRKSRC}/*/*/*/configure
 
 pre-configure:
 	@${SED}	-e s:%%RC_SUBR%%:${RC_SUBR}: \
@@ -206,6 +356,8 @@ post-install:
 	@${INSTALL_DATA} /dev/null ${SYSCONFDIR}/locallowercase
 	@${INSTALL_DATA} ${WRKDIR}/crontab ${PREFIX}/etc/courier/
 	@${INSTALL_SCRIPT} ${WRKDIR}/courier.sh ${PREFIX}/etc/rc.d/
+	@${INSTALL_SCRIPT} ${WRKSRC}/maildir/sharedindexsplit ${PREFIX}/sbin/
+	@${INSTALL_SCRIPT} ${WRKSRC}/maildir/sharedindexinstall ${PREFIX}/sbin/
 .for file in ${OWNER0}
 	@-${CHOWN} ${BINOWN}:${BINGRP} ${PREFIX}/${file}
 .endfor
@@ -216,8 +368,8 @@ post-install:
 .if !defined(NOPORTDOCS)
 	@${INSTALL} -d -o ${DOCOWN} -g ${DOCGRP} ${DOCSDIR}/html
 	@${INSTALL_DATA} ${DATADIR}/htmldoc/* ${DOCSDIR}/html
-.for file in ${DOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.for f in ${DOCS}
+	@${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
 .endif
 	@${RM} -rf ${DATADIR}/htmldoc
@@ -231,18 +383,15 @@ post-install:
 	@${ECHO_MSG} ""
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_MSG} ""
-.if !defined(BATCH) && !defined(PACKAGE_BUILDING)
-	@PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-.else
+.if defined(BATCH) || defined(PACKAGE_BUILDING)
 	@${ECHO_MSG} "	To activate Courier in /etc/mail/mailer.conf or to"
 	@${ECHO_MSG} "	replace {sendmail,mailq,newaliases} with Courier"
 	@${ECHO_MSG} "	versions execute the following as root user:"
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "PKG_PREFIX=\"${PREFIX}\" ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL"
 	@${ECHO_MSG} ""
+.else
+	@PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 .endif
 
-post-clean:
-	@${RM} -f ${WRKDIRPREFIX}${.CURDIR}/Makefile.inc
-
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

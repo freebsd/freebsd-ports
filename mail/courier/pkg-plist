@@ -5,6 +5,8 @@
 @exec install -d -o %%MAILOWN%% -g %%MAILGRP%% -m 0755 %D/etc/courier/esmtpacceptmailfor.dir
 @exec install -d -o %%MAILOWN%% -g %%MAILGRP%% -m 0755 %D/etc/courier/esmtppercentrelay.dir
 @exec install -d -o %%MAILOWN%% -g %%MAILGRP%% -m 0750 %D/etc/courier/filters/active
+@exec install -d -o %%MAILOWN%% -g %%MAILGRP%% -m 0755 %D/etc/courier/shared
+@exec install -d -o %%MAILOWN%% -g %%MAILGRP%% -m 0755 %D/etc/courier/shared.tmp
 @exec install -d -o %%MAILOWN%% -g %%MAILGRP%% -m 0755 %D/etc/courier/smtpaccess
 @exec install -d -o %%MAILOWN%% -g %%MAILGRP%% -m 0700 %D/etc/courier/webadmin/added
 @exec install -d -o %%MAILOWN%% -g %%MAILGRP%% -m 0700 %D/etc/courier/webadmin/removed
@@ -37,6 +39,7 @@ bin/dotforward
 bin/imapd
 bin/lockmail
 bin/mailbot
+bin/maildiracl
 bin/maildirkw
 bin/maildirmake
 bin/maildrop
@@ -125,6 +128,8 @@ etc/courier/webmail.authpam
 @unexec rmdir %D/etc/courier/esmtppercentrelay.dir 2>/dev/null || true
 @unexec rmdir %D/etc/courier/filters/active 2>/dev/null || true
 @unexec rmdir %D/etc/courier/filters 2>/dev/null || true
+@unexec rmdir %D/etc/courier/shared 2>/dev/null || true
+@unexec rmdir %D/etc/courier/shared.tmp 2>/dev/null || true
 @unexec rmdir %D/etc/courier/smtpaccess 2>/dev/null || true
 @unexec rmdir %D/etc/courier/webadmin/added 2>/dev/null || true
 @unexec rmdir %D/etc/courier/webadmin/removed 2>/dev/null || true
@@ -177,6 +182,7 @@ libexec/filters/perlfilter
 @dirrm libexec/courier/webmail
 @dirrm libexec/courier
 @dirrm libexec/filters
+sbin/authenumerate
 sbin/courier
 sbin/courieresmtpd
 sbin/courierfilter
@@ -203,6 +209,8 @@ sbin/mkpop3dcert
 sbin/pop3d
 sbin/pop3d-ssl
 sbin/pw2userdb
+sbin/sharedindexinstall
+sbin/sharedindexsplit
 sbin/showconfig
 sbin/showmodules
 sbin/userdb
@@ -509,6 +517,7 @@ share/courier/sqwebmail/html/en-us/LANGUAGE_PREF
 share/courier/sqwebmail/html/en-us/LOCALE
 share/courier/sqwebmail/html/en-us/TIMEZONELIST
 share/courier/sqwebmail/html/en-us/abooklist.html
+share/courier/sqwebmail/html/en-us/acl.html
 share/courier/sqwebmail/html/en-us/attachments.html
 share/courier/sqwebmail/html/en-us/autoresponder.html
 share/courier/sqwebmail/html/en-us/calendarlogin.inc.html
@@ -572,6 +581,7 @@ share/courier/sqwebmail/images/graybottomleft.png
 share/courier/sqwebmail/images/graybottomright.png
 share/courier/sqwebmail/images/graytopleft.png
 share/courier/sqwebmail/images/graytopright.png
+share/courier/sqwebmail/images/key.png
 share/courier/sqwebmail/images/last.png
 share/courier/sqwebmail/images/left.png
 share/courier/sqwebmail/images/left2.png
@@ -667,6 +677,7 @@ share/courier/vchkpw2userdb
 %%PORTDOCS%%%%DOCSDIR%%/html/lockmail.html
 %%PORTDOCS%%%%DOCSDIR%%/html/mailbot.html
 %%PORTDOCS%%%%DOCSDIR%%/html/maildir.html
+%%PORTDOCS%%%%DOCSDIR%%/html/maildiracl.html
 %%PORTDOCS%%%%DOCSDIR%%/html/maildirkw.html
 %%PORTDOCS%%%%DOCSDIR%%/html/maildirmake.html
 %%PORTDOCS%%%%DOCSDIR%%/html/maildirquota.html
