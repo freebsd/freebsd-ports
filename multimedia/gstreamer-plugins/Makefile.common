@@ -2,21 +2,24 @@ GST_ALL_PLUGINS= \
 		a52dec \
 		aalib \
 		aalibtest \
-		alsa \
+		amrnb \
 		arts \
 		artstest \
 		artsc \
 		audiofile \
+		audioresample \
 		cairo \
 		cdaudio \
 		cdparanoia \
 		dirac \
+		directfb \
 		divx \
 		dts \
 		dvdnav \
 		dvdread \
 		dxr3 \
 		esd \
+		esdtest \
 		faac \
 		faad \
 		flac \
@@ -49,6 +52,7 @@ GST_ALL_PLUGINS= \
 		musicbrainz \
 		nas \
 		ogg \
+		oggtest \
 		opengl \
 		pango \
 		polyp \
@@ -56,8 +60,10 @@ GST_ALL_PLUGINS= \
 		qcam \
 		raw1394 \
 		sdl \
+		sdltest \
 		shout \
 		shout2 \
+		shout2test \
 		sidplay \
 		smoothwave \
 		sndfile \
@@ -69,6 +75,7 @@ GST_ALL_PLUGINS= \
 		vcd \
 		vorbis \
 		xine \
+		vorbistest \
 		xvid
 
 # Disable all plugins by default\
@@ -77,6 +84,7 @@ CONFIGURE_ARGS+=	--disable-${d}
 .endfor
 
 CONFIGURE_ARGS+=--disable-tests \
+		--disable-examples \
 		--disable-alsa \
 		--disable-http \
 		--enable-cdrom \
@@ -86,8 +94,9 @@ CONFIGURE_ARGS+=--disable-tests \
 		--disable-osx_audio \
 		--disable-osx_video \
 		--enable-static \
-		--enable-gst_v4l \
-		--enable-gst_v4l2 \
+		--disable-sunaudio \
+		--disable-gst_v4l \
+		--disable-gst_v4l2 \
 		--enable-x \
 		--enable-xshm \
 		--enable-xvideo
@@ -429,10 +438,6 @@ do-build:
 	@cd ${WRKSRC}/${dir}; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} \
 		${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET}
 .endfor
-
-post-build:
-	@${ECHO_CMD} ${PREFIX}/bin/gst-register-${GST_VERSION} \
-		--gst-registry=${PREFIX}/share/gnome/cache/gstreamer-${GST_VERSION}/registry.xml
 
 do-install:
 .for dir in ${GST_PLUGIN_DIR}
