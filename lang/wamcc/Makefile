@@ -8,7 +8,7 @@
 PORTNAME=	wamcc
 PORTVERSION=	2.22
 CATEGORIES=	lang
-MASTER_SITES=	ftp://ftp.inria.fr/INRIA/Projects/loco/wamcc/
+MASTER_SITES=	ftp://ftp.inria.fr/INRIA/Projects/contraintes/wamcc/
 DISTFILES=	wamcc2.22.tar.Z prg.tar.Z
 
 MAINTAINER=	ports@FreeBSD.Org
