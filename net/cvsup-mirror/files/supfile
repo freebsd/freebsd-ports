@@ -4,6 +4,7 @@
 *default delete use-rel-suffix
 cvs-all      release=cvs     prefix=prefixes/FreeBSD.cvs
 cvs-crypto   release=cvs     prefix=prefixes/FreeBSD-crypto.cvs
+src-crypto-rsa release=cvs   prefix=prefixes/FreeBSD-crypto-rsa.cvs
 gnats        release=current prefix=prefixes/FreeBSD-gnats.current
 www          release=current prefix=prefixes/FreeBSD-www.current
 mail-archive release=current prefix=prefixes/FreeBSD-mail.current
