@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	MailScanner
-PORTVERSION=	4.37.3
-PORTREVISION=	1
+PORTVERSION=	4.38.2
 CATEGORIES=	mail
 MASTER_SITES=	http://www.sng.ecs.soton.ac.uk/mailscanner/files/4/tar/
 PKGNAMESUFFIX=	-devel
@@ -250,5 +249,12 @@ initial-config: renew-wrapper renew-autoupdate renew-reports
 		${PREFIX}/etc/MailScanner
 	${INSTALL_DATA} ${WRKSRC}/etc/rules/spam.whitelist.rules \
 		${PREFIX}/etc/MailScanner/rules/spam.whitelist.rules
+	@${ECHO} "******************************************************************************"
+	@${ECHO} "The provided default configuration requires several directories to be created:"
+	@${ECHO} "/var/spool/MailScanner/incoming"
+	@${ECHO} "/var/spool/MailScanner/quarantine"
+	@${ECHO} "/var/spool/mqueue"
+	@${ECHO} "Either create those directories or change the configuration."
+	@${ECHO} "******************************************************************************"
 
 .include <bsd.port.post.mk>
