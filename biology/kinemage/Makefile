@@ -3,7 +3,7 @@
 # Date created:         Dec 4 1997
 # Whom:                 frankch@waru.life.nthu.edu.tw
 #
-# $Id: Makefile,v 1.1.1.1 1998/01/29 17:24:27 jseger Exp $
+# $Id: Makefile,v 1.2 1998/03/16 22:15:32 jseger Exp $
 #
 
 DISTNAME=	MAGE_4_2.LINUX
@@ -29,3 +29,7 @@ do-install:
 	@${INSTALL_PROGRAM} ${WRKDIR}/MAGE_4_2.LINUX ${PREFIX}/bin/kinemage
 
 .include <bsd.port.mk>
+
+.if ${PORTOBJFORMAT} == "elf"
+STRIP=
+.endif
