@@ -78,4 +78,5 @@ share/examples/amanda/chg-multi.conf
 share/examples/amanda/chg-scsi.conf
 share/examples/amanda/disklist
 @dirrm share/examples/amanda
+@dirrm share/amanda
 @dirrm libexec/amanda
