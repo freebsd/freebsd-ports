@@ -7,28 +7,22 @@
 #
 
 PORTNAME=	divxcalc
-PORTVERSION=	0.4a
+PORTVERSION=	0.5
 CATEGORIES=	graphics
-MASTER_SITES=	http://members.ams.chello.nl/r.slooten2/divxcalc/
+MASTER_SITES=	http://axljab.homelinux.org:8080/software/divxcalc/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DivX Calculator
 
-BUILD_DEPENDS=	${LOCALBASE}/share/automake14/install-sh:${PORTSDIR}/devel/automake14
+BUILD_DEPENDS=	aclocal:${PORTSDIR}/devel/automake \
+		autoheader:${PORTSDIR}/devel/autoconf
 
-USE_REINPLACE=	yes
-USE_GNOME=	gtk12
+USE_QT_VER=	3
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
-
-post-patch:
-	@${REINPLACE_CMD} -e "s,Bison ,Bison,g" ${WRKSRC}/configure
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 pre-configure:
-.for file in config.guess config.sub install-sh missing mkinstalldirs
-	@${LN} -sf ${LOCALBASE}/share/automake14/${file} ${WRKSRC}
-.endfor
+	@cd ${WRKSRC} && ${GMAKE} -f admin/Makefile.common
 
 .include <bsd.port.mk>
