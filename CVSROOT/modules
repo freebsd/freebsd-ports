@@ -10888,6 +10888,7 @@ wmx10		ports/misc/wmx10
 wmxss		ports/x11/wmxss
 wmymail		ports/mail/wmymail
 wmzazof		ports/sysutils/wmzazof
+wnews		ports/www/wnews
 wol		ports/net/wol
 wolf3d		ports/games/wolf3d
 wolfpack	ports/games/wolfpack
