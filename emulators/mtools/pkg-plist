@@ -54,5 +54,5 @@ info/mtools.info
 @exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
 @exec install-info %D/info/mtools.info %D/info/dir
 etc/mtools.conf
-@exec ln -fs %D/%F %B/mwrite.1.gz
-@unexec rm %B/mwrite.1.gz
+@exec ln -fs %D/man/man1/mcopy.1.gz %D/man/man1/mwrite.1.gz
+@unexec rm %D/man/man1/mwrite.1.gz
