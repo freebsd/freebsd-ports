@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	qt
-PORTVERSION=	3.11
-PORTREVISION=	1
+PORTVERSION=	3.12
 CATEGORIES=	x11-toolkits python
 MASTER_SITES=	http://www.river-bank.demon.co.uk/download/PyQt/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
