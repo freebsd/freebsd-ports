@@ -6,7 +6,9 @@ bin/scwmexec
 bin/scwmrepl
 bin/startscwm
 include/scwmexec.h
+@unexec install-info --delete %D/info/scwm.info %D/info/dir
 info/scwm.info
+@exec install-info %D/info/scwm.info %D/info/dir
 lib/libscwmexec.a
 lib/libscwmexec.la
 lib/libscwmexec.so
@@ -49,9 +51,6 @@ lib/scwm/modules/app/scwm/libxpm-menus.so
 lib/scwm/modules/app/scwm/libxpm-menus.so.0
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
-man/man1/scwm.1.gz
-man/man1/scwmexec.1.gz
-man/man1/scwmrepl.1.gz
 share/scwm/Xmodmap-win95keyboard
 share/scwm/Xresources-cpp
 share/scwm/Xsession
@@ -70,6 +69,7 @@ share/scwm/modules/app/scwm/base.scm
 share/scwm/modules/app/scwm/bincomm.scm
 share/scwm/modules/app/scwm/cascade.scm
 share/scwm/modules/app/scwm/constraints.scm
+share/scwm/modules/app/scwm/corba.scm
 share/scwm/modules/app/scwm/decor.scm
 share/scwm/modules/app/scwm/defoption.scm
 share/scwm/modules/app/scwm/desk-background.scm
@@ -97,6 +97,7 @@ share/scwm/modules/app/scwm/image-path-suggestor.scm
 share/scwm/modules/app/scwm/kde-hints.scm
 share/scwm/modules/app/scwm/key-mover-xtest.scm
 share/scwm/modules/app/scwm/key-mover.scm
+share/scwm/modules/app/scwm/last-mapped-window.scm
 share/scwm/modules/app/scwm/listops.scm
 share/scwm/modules/app/scwm/menus-extras.scm
 share/scwm/modules/app/scwm/message-window.scm
@@ -153,6 +154,7 @@ share/scwm/modules/app/scwm/ui-constraints-gtk-toggle-menu.scm
 share/scwm/modules/app/scwm/ui-constraints-toggle-menu.scm
 share/scwm/modules/app/scwm/ui-constraints.scm
 share/scwm/modules/app/scwm/undo.scm
+share/scwm/modules/app/scwm/viavoice-smrc.scm
 share/scwm/modules/app/scwm/viavoice.scm
 share/scwm/modules/app/scwm/virtual.scm
 share/scwm/modules/app/scwm/wavplay.scm
@@ -189,6 +191,7 @@ share/scwm/pixmaps/kill.xpm
 share/scwm/pixmaps/lambda-rwb.xpm
 share/scwm/pixmaps/lambda.xpm
 share/scwm/pixmaps/move.xpm
+share/scwm/pixmaps/nonant-keys.xpm
 share/scwm/pixmaps/resize_br.xpm
 share/scwm/pixmaps/resize_h.xpm
 share/scwm/pixmaps/resize_tr.xpm
