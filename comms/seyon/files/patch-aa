@@ -101,7 +101,7 @@ diff -c ./config.h ../seyon.new/config.h
 --- ../seyon.new/config.h	Fri Feb  3 07:37:50 1995
 ***************
 *** 81,86 ****
---- 81,92 ----
+--- 81,94 ----
   #define HAVE_USLEEP         YES
   #endif
   
@@ -109,6 +109,8 @@ diff -c ./config.h ../seyon.new/config.h
 + #define USE_NONSTD_BAUD     YES
 + #define LF_PATH				"/var/spool/lock"
 + #define LF_PREFIX           "LCK.."
++ #define LF_USE_ASCII_PID	YES
++ #define LF_USE_DEV_NUMBERS	NO
 + #endif 
 + 
   #ifdef SVR4
