@@ -1,7 +1,7 @@
-*** doc/Makefile.in.orig	Sun Jan 10 18:46:43 1999
---- doc/Makefile.in	Fri Jan 29 23:49:25 1999
+*** doc/Makefile.in.orig	Tue Jun  8 18:53:55 1999
+--- doc/Makefile.in	Tue Jun  8 21:57:59 1999
 ***************
-*** 38,44 ****
+*** 39,45 ****
   
   #-------------------------------------------------------------------------
   
@@ -9,7 +9,7 @@
   	@if test x$(TBL) = x; then : ; else echo "Making rxvt.1"; $(TBL) $(srcdir)/rxvt.tbl > rxvt.1 ; fi
   
   SEDREPLACE = -e 's%@RXVT_VERSION@%$(VERSION)%g;'\
---- 38,44 ----
+--- 39,45 ----
   
   #-------------------------------------------------------------------------
   
@@ -18,7 +18,7 @@
   
   SEDREPLACE = -e 's%@RXVT_VERSION@%$(VERSION)%g;'\
 ***************
-*** 54,60 ****
+*** 55,61 ****
   
   tags allbin:
   
@@ -26,7 +26,7 @@
   
   yodl/versioninfo.yo: yodl/versioninfo.yo.in ../autoconf/Make.common.in
   	$(SED) $(SEDREPLACE) < $(srcdir)/yodl/versioninfo.yo.in > $@
---- 54,60 ----
+--- 55,61 ----
   
   tags allbin:
   
@@ -35,7 +35,7 @@
   yodl/versioninfo.yo: yodl/versioninfo.yo.in ../autoconf/Make.common.in
   	$(SED) $(SEDREPLACE) < $(srcdir)/yodl/versioninfo.yo.in > $@
 ***************
-*** 65,81 ****
+*** 66,82 ****
   rxvt.tbl: yodl/rxvt.yo $(YODL_RXVT) yodl/versioninfo.yo yodl/masonyodl.yo
   	yodl2man -orxvt.tbl yodl/rxvt.yo
   
@@ -53,7 +53,7 @@
   
   clean:
   	$(RMF) rxvt.man *~ yodl/*~
---- 65,77 ----
+--- 66,78 ----
   rxvt.tbl: yodl/rxvt.yo $(YODL_RXVT) yodl/versioninfo.yo yodl/masonyodl.yo
   	yodl2man -orxvt.tbl yodl/rxvt.yo
   
@@ -68,7 +68,7 @@
   clean:
   	$(RMF) rxvt.man *~ yodl/*~
 ***************
-*** 85,92 ****
+*** 86,93 ****
   
   distclean:
   
@@ -77,7 +77,7 @@
   
   uninstall:
   	-cd $(mandir); $(RMF) $(manprefix)rxvt.$(manext)
---- 81,91 ----
+--- 82,92 ----
   
   distclean:
   

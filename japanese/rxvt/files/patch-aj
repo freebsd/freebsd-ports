@@ -1,5 +1,5 @@
-*** src/feature.h.orig	Sun Mar 28 16:36:48 1999
---- src/feature.h	Mon May 10 17:56:35 1999
+*** src/feature.h.orig	Fri Jun  4 00:01:38 1999
+--- src/feature.h	Tue Jun  8 22:09:08 1999
 ***************
 *** 153,159 ****
    * This has been superceded and is only for you older users
@@ -18,21 +18,21 @@
   /*
    * To use
 ***************
-*** 359,366 ****
+*** 365,372 ****
   #ifdef KANJI
   # define NFONTS		5
   # define FONT0_IDX	2
 ! # define MFONT_LIST	"k14", "jiskan16", "jiskan18", "jiskan24", "jiskan26"
 ! # define NFONT_LIST	"7x14", "8x16", "9x18", "12x24", "13x26"
-  #else
-  # ifdef ZH
-  #  define NFONTS	5
---- 359,366 ----
+  #endif
+  #ifdef ZH
+  # define NFONTS		5
+--- 365,372 ----
   #ifdef KANJI
   # define NFONTS		5
   # define FONT0_IDX	2
 ! # define MFONT_LIST	"k14", "k10", "k12", "kanji16", "kanji24"
 ! # define NFONT_LIST	"7x14", "a10", "r12", "8x16", "12x24"
-  #else
-  # ifdef ZH
-  #  define NFONTS	5
+  #endif
+  #ifdef ZH
+  # define NFONTS		5
