@@ -1,0 +1,19 @@
+etc/nntpswitch/access.conf-dist
+etc/nntpswitch/auth.conf-dist
+etc/nntpswitch/nntpswitch.conf-dist
+etc/nntpswitch/overview.fmt-dist
+etc/nntpswitch/profiles.conf-dist
+etc/nntpswitch/servers.conf-dist
+etc/nntpswitch/passwd-dist
+etc/rc.d/nntpswitch.sh-dist
+lib/libacct_none.so
+lib/libacct_syslog.so
+lib/libauth_ignore.so
+lib/libauth_passwd.so
+lib/libauth_pop3.so
+lib/libauth_remote.so
+sbin/nntpswitchd
+sbin/nsstats.pl
+sbin/nsstats.sh
+sbin/updategroups
+@unexec rmdir %D/etc/nntpswitch 2> /dev/null || echo "===> If you plan to do not reinstall nntpswitch, you can safely remove %D/etc/nntpswitch."

@@ -1,0 +1,27 @@
+--- nntpswitch.conf.in.orig	Thu Mar 18 18:13:36 2004
++++ nntpswitch.conf.in	Thu Mar 18 18:14:54 2004
+@@ -11,16 +11,16 @@
+ 
+ # Paths and Files 
+ # kill -1 will reload these
+-string AccessFile /etc/nntpswitch/access.conf
+-string AuthFile /etc/nntpswitch/auth.conf
+-string ProfileFile /etc/nntpswitch/profiles.conf
+-string ServerFile /usr/local/etc/nntpswitch/servers.conf
++string AccessFile %%PREFIX%%/etc/nntpswitch/access.conf
++string AuthFile %%PREFIX%%/etc/nntpswitch/auth.conf
++string ProfileFile %%PREFIX%%/etc/nntpswitch/profiles.conf
++string ServerFile %%PREFIX%%/etc/nntpswitch/servers.conf
+ 
+-string OverviewFmtFile /etc/nntpswitch/overview.fmt
+-string ActiveFile /etc/nntpswitch/active
+-string NewsgroupsFile /etc/nntpswitch/newsgroups
++string OverviewFmtFile %%PREFIX%%/etc/nntpswitch/overview.fmt
++string ActiveFile %%PREFIX%%/etc/nntpswitch/active
++string NewsgroupsFile %%PREFIX%%/etc/nntpswitch/newsgroups
+ 
+-string ModulePath /usr/local/lib
++string ModulePath %%PREFIX%%/lib
+ 
+ # Timeout for server reading
+ int ServerReadTimeout 300
