@@ -24,6 +24,8 @@ PERL_CONFIGURE=	yes
 
 MAN3=		MusicBrainz::Client.3
 
+BROKEN=		"Broken dependencies"
+
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500601
