@@ -1,7 +1,8 @@
-# $Id: Makefile,v 1.61 1995/11/09 07:41:00 asami Exp $
+# $Id: Makefile,v 1.62 1995/11/26 22:21:13 asami Exp $
 #
 
     SUBDIR += archie
+RESTRICTED += dhcp	     # license issues for distribution
     SUBDIR += dgd
     SUBDIR += dgd-lpmud
     SUBDIR += dip
