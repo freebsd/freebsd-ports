@@ -3,3 +3,4 @@ share/doc/omi/CHANGES
 share/doc/omi/README.txt
 share/doc/omi/README.html
 share/doc/omi/BSD-COPYRIGHT
+@dirrm share/doc/omi
