@@ -7,6 +7,7 @@
 
 PORTNAME=	sftp
 PORTVERSION=	0.9.6
+PORTREVISION=	1
 CATEGORIES=	ftp security
 MASTER_SITES=	ftp://ftp.xbill.org/pub/sftp/
 
@@ -21,7 +22,6 @@ RUN_DEPENDS=	ssh:${PORTSDIR}/security/openssh
 RESTRICTED=	"Calls external cryptographic routines."
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-remotepath=${PREFIX}/libexec
 
 MAN1=		secftp.1
 
@@ -30,7 +30,7 @@ PLIST=		${WRKDIR}/.PLIST
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sftp ${PREFIX}/bin/secftp
 	${LN} -s ${PREFIX}/bin/secftp ${PREFIX}/bin/rsftp
-	${INSTALL_PROGRAM} ${WRKSRC}/sftpserv ${PREFIX}/libexec/sftpserv
+	${INSTALL_PROGRAM} ${WRKSRC}/sftpserv ${PREFIX}/bin/sftpserv
 	${INSTALL_MAN} ${WRKSRC}/sftp.1 ${PREFIX}/man/man1/secftp.1
 	${CP} ${PKGDIR}/pkg-plist.in ${PLIST}.unsorted
 	@if [ ! -f ${PREFIX}/bin/sftp ]; then \
