@@ -18,6 +18,7 @@ GLIB_CONFIG?=	${LOCALBASE}/bin/glib12-config
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 
 GNU_CONFIGURE=	yes
+USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 CONFIGURE_ARGS=	--disable-esd
