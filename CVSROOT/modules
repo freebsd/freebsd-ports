@@ -5248,6 +5248,7 @@ pips900		ports/print/pips900
 pips920		ports/print/pips920
 pipsecd		ports/net/pipsecd
 pisces		ports/cad/pisces
+pisg		ports/irc/pisg
 pixmap		ports/graphics/pixmap
 pkfonts118	ports/print/pkfonts118
 pkfonts240	ports/print/pkfonts240
