@@ -1,5 +1,5 @@
---- configure.in.orig	Sat Aug 25 20:50:06 2001
-+++ configure.in	Sat Aug 25 20:50:22 2001
+--- configure.in.orig	Thu Nov 29 20:28:19 2001
++++ configure.in	Thu Nov 29 20:28:35 2001
 @@ -2,49 +2,6 @@
  
  AC_INIT(src/gnut.c)
@@ -47,6 +47,6 @@
 -cat_eof
 -read GPL_OK_TMP
 -
- AM_INIT_AUTOMAKE(gnut,0.4.27)
+ AM_INIT_AUTOMAKE(gnut,0.4.28)
  AM_MAINTAINER_MODE
  AM_ACLOCAL_INCLUDE(macros)

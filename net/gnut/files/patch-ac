@@ -1,0 +1,11 @@
+--- src/td.h.orig	Mon Sep 10 16:36:30 2001
++++ src/td.h	Thu Nov 29 20:31:12 2001
+@@ -30,6 +30,8 @@
+ */
+ 
+ /* level-1 system headers */
++#include <sys/types.h>
++#include <sys/socket.h>
+ #include <netinet/in.h>
+ #include <pthread.h>
+ 
