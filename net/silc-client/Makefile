@@ -44,7 +44,7 @@ PKGDEINSTALL=	${PKGINSTALL}
 INSTALL_DIR?=	${INSTALL} -d -o ${BINOWN} -g ${BINGRP} -m 755
 
 .ifndef(WITH_PTHREADS)
-CONFIGURE_ARGS+=	--disable-threads
+CONFIGURE_ARGS+=	--without-pthreads
 .else
 CONFIGURE_ENV+=	CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS} ${PTHREAD_LIBS}"
 .endif
