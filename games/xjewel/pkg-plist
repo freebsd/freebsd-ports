@@ -1,6 +1,6 @@
 bin/xjewel
 bin/xjewel_
-lib/xjewel.scores
-lib/xjewel.font/fonts.dir
-lib/xjewel.font/seven_seg.pcf.gz
+lib/X11/xjewel.scores
+lib/X11/xjewel/fonts.dir
+lib/X11/xjewel/seven_seg.pcf.gz
 man/man6/xjewel.6.gz
