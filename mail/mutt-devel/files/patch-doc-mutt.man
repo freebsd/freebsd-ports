@@ -1,0 +1,14 @@
+--- doc/mutt.man.orig	Wed Nov 13 11:07:05 2002
++++ doc/mutt.man	Wed Sep 24 15:36:17 2003
+@@ -148,9 +148,9 @@
+ User's personal mapping between MIME types and file extensions.
+ .IP "/etc/mime.types"
+ System mapping between MIME types and file extensions.
+-.IP "/usr/local/bin/mutt_dotlock"
++.IP "${PREFIX}/bin/mutt_dotlock"
+ The privileged dotlocking program.
+-.IP "/usr/local/doc/mutt/manual.txt"
++.IP "${DOCSDIR}/manual.txt"
+ The Mutt manual.
+ .SH BUGS
+ .PP
