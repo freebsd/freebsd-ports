@@ -99,7 +99,6 @@ share/locale/uk/LC_MESSAGES/gnome-media.mo
 share/locale/zh_CN.GB2312/LC_MESSAGES/gnome-media.mo
 share/locale/zh_TW.Big5/LC_MESSAGES/gnome-media.mo
 @dirrm share/gnome/pixmaps/tcd
-@dirrm share/gnome/omf/gnome-media
 @dirrm share/gnome/help/gtcd/C/stylesheet-images
 @dirrm share/gnome/help/gtcd/C/figures
 @dirrm share/gnome/help/gtcd/C
