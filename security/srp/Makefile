@@ -6,41 +6,29 @@
 #
 
 PORTNAME=	srp
-PORTVERSION=	1.7.5
+PORTVERSION=	2.0.0
 CATEGORIES=	security net
-MASTER_SITES=	http://www-cs-students.stanford.edu/~tjw/srp/source/ \
-		http://srp.stanford.edu/source/
+MASTER_SITES=	http://srp.stanford.edu/source/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Secure Remote Password protocol library, TELNET, and FTP
 
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CC="${CC}" CFLAGS="${CFLAGS}" INSTALL="/usr/bin/install -C"
+CONFIGURE_ENV=	INSTALL="/usr/bin/install -C"
 CONFIGURE_ARGS=	--with-openssl=/usr				\
 		--with-zlib					\
 		--enable-loginf
 
-MYPORTDOCS=	Acknowledgements Copyrights LICENSE copyright.c \
-		draft-altman-rfc2942bis-00.txt draft-altman-rfc2944bis-01.txt \
-		draft-altman-telnet-fwdx-02.txt \
-		draft-ietf-tn3270e-telnet-tls-05.txt rfc2941.txt rfc2942.txt \
-		rfc2944.txt rfc2945.txt rfc2946.txt rfc2947.txt rfc2948.txt \
-		rfc2949.txt rfc2950.txt rfc2952.txt rfc2953.txt srp.ps
+post-patch:
+	@${GREP} -lR "malloc\.h" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
+		's|malloc\.h|stdlib.h|g'
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 501000
-BROKEN=		"Does not compile"
-.endif
-
-.if !defined(NOPORTDOCS)
 post-install:
-.for f in ${MYPORTDOCS}
-	${MKDIR} ${PREFIX}/share/doc/srp
-	${INSTALL_DATA} ${WRKSRC}/docs/${f} ${PREFIX}/share/doc/srp/${f}
-	@${ECHO_CMD} share/doc/srp/${f} >> ${TMPPLIST}
-.endfor
-	@${ECHO_CMD} @dirrm share/doc/srp >> ${TMPPLIST}
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	cd ${WRKSRC}/docs && ${FIND} . | \
+		cpio -pdm -L -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -10,12 +10,3 @@
  #  ifdef UTMP_FILE
  char	utmpf[] = UTMP_FILE;
  #  else
-@@ -1473,7 +1476,7 @@
- {
- 	register int i;
- 	int syncpipe[2];
--#if defined(OSF) || defined(ultrix) || defined(__hpux)
-+#if defined(OSF) || defined(ultrix) || defined(__hpux) || defined(__FreeBSD__)
- 	time_t time();
- #else
- 	long time();
