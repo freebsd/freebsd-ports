@@ -24,7 +24,7 @@ USE_XLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/gd" \
 		LIBS="-L${LOCALBASE}/lib"
 
-DOC_DIRS= doc/manuals doc/tutorials doc/programs/text doc/programs/html
+DOC_DIRS=	doc/manuals doc/tutorials doc/programs/text doc/programs/html
 
 post-patch:
 .for DIR in ${DOC_DIRS}
