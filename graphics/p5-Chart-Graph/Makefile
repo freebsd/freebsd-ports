@@ -8,6 +8,7 @@
 
 PORTNAME=	Chart-Graph
 PORTVERSION=	2.0
+PORTREVISION=	1
 CATEGORIES=	graphics perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Chart
@@ -17,7 +18,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl extension for a front-end to gnuplot, XRT, and Xmgrace
 
 RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot \
-		xmgrace:${PORTSDIR}/math/grace
+		xmgrace:${PORTSDIR}/math/grace \
+		ppmtogif:${PORTSDIR}/graphics/netpbm
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 USE_REINPLACE=	yes
