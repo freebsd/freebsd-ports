@@ -41,16 +41,20 @@ share/doc/lynx/test/spaces.html
 share/doc/lynx/test/tabtest.html
 share/doc/lynx/test/unicode.html
 share/doc/lynx/test/utf-8-demo.html
+share/locale/ca/LC_MESSAGES/lynx.mo
 share/locale/cs/LC_MESSAGES/lynx.mo
 share/locale/da/LC_MESSAGES/lynx.mo
 share/locale/de/LC_MESSAGES/lynx.mo
+share/locale/et/LC_MESSAGES/lynx.mo
 share/locale/fr/LC_MESSAGES/lynx.mo
+share/locale/it/LC_MESSAGES/lynx.mo
 share/locale/ja/LC_MESSAGES/lynx.mo
 share/locale/nl/LC_MESSAGES/lynx.mo
 share/locale/pt_BR/LC_MESSAGES/lynx.mo
 share/locale/ru/LC_MESSAGES/lynx.mo
 share/locale/sl/LC_MESSAGES/lynx.mo
 share/locale/sv/LC_MESSAGES/lynx.mo
+share/locale/zh_TW/LC_MESSAGES/lynx.mo
 share/lynx_help/Lynx_users_guide.html
 share/lynx_help/about_lynx.html
 share/lynx_help/keystrokes/alt_edit_help.html
@@ -80,14 +84,20 @@ share/lynx_help/lynx_url_support.html
 @dirrm share/doc/lynx
 @dirrm share/lynx_help/keystrokes
 @dirrm share/lynx_help
+@dirrm share/locale/ca/LC_MESSAGES
+@dirrm share/locale/ca
 @dirrm share/locale/cs/LC_MESSAGES
 @dirrm share/locale/cs
 @dirrm share/locale/da/LC_MESSAGES
 @dirrm share/locale/da
 @dirrm share/locale/de/LC_MESSAGES
 @dirrm share/locale/de
+@dirrm share/locale/et/LC_MESSAGES
+@dirrm share/locale/et
 @dirrm share/locale/fr/LC_MESSAGES
 @dirrm share/locale/fr
+@dirrm share/locale/it/LC_MESSAGES
+@dirrm share/locale/it
 @dirrm share/locale/ja/LC_MESSAGES
 @dirrm share/locale/ja
 @dirrm share/locale/nl/LC_MESSAGES
@@ -100,4 +110,6 @@ share/lynx_help/lynx_url_support.html
 @dirrm share/locale/sl
 @dirrm share/locale/sv/LC_MESSAGES
 @dirrm share/locale/sv
+@dirrm share/locale/zh_TW/LC_MESSAGES
+@dirrm share/locale/zh_TW
 @dirrm share/locale
