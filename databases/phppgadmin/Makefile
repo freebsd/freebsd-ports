@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	phppgadmin
-PORTVERSION=	2.2.1.p1
-PORTREVISION=	1
+PORTVERSION=	2.3
 CATEGORIES=	databases www
 MASTER_SITES=	ftp://ftp.greatbridge.org/pub/phppgadmin/stable/
-DISTNAME=	phpPgAdmin_2-2-1-pl1
+DISTNAME=	phpPgAdmin_2-3
 
 MAINTAINER=	nbm@FreeBSD.org
 
