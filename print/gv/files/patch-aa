@@ -1,0 +1,57 @@
+diff -cr gv.orig/Imakefile gv/Imakefile
+*** gv.orig/Imakefile	Mon Mar  4 00:00:00 1996
+--- gv/Imakefile	Tue Apr 16 18:35:59 1996
+***************
+*** 27,33 ****
+  XCOMM            Mainz, Germany
+  XCOMM 
+  
+! #include "config.linux"
+  
+  #define PassCDebugFlags
+  
+--- 27,33 ----
+  XCOMM            Mainz, Germany
+  XCOMM 
+  
+! #include "config.freebsd"
+  
+  #define PassCDebugFlags
+  
+diff -cr gv.orig/source/Imakefile gv/source/Imakefile
+*** gv.orig/source/Imakefile	Thu Mar  7 00:00:00 1996
+--- gv/source/Imakefile	Tue Apr 16 18:41:38 1996
+***************
+*** 23,29 ****
+  XCOMM            Mainz, Germany
+  XCOMM 
+  
+! #include "../config.linux"
+  
+  SRCS	= 	\
+   Aaa.c		\
+--- 23,29 ----
+  XCOMM            Mainz, Germany
+  XCOMM 
+  
+! #include "../config.freebsd"
+  
+  SRCS	= 	\
+   Aaa.c		\
+***************
+*** 109,115 ****
+  #endif
+  
+  DEFINES 	= -DNON_BLOCKING_IO $(SIGNAL_DEFINES) $(USER_DEFINES)
+! CC              = gcc
+  DEPLIBS		= XawClientDepLibs
+  SYS_LIBRARIES   = -lm XawClientLibs
+  INSTDATFLAGS	= -m 0644
+--- 109,115 ----
+  #endif
+  
+  DEFINES 	= -DNON_BLOCKING_IO $(SIGNAL_DEFINES) $(USER_DEFINES)
+! XCOMM CC              = gcc
+  DEPLIBS		= XawClientDepLibs
+  SYS_LIBRARIES   = -lm XawClientLibs
+  INSTDATFLAGS	= -m 0644
