@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	irssi
-PORTVERSION=	0.7.98.3
-PORTREVISION=	3
+PORTVERSION=	0.7.98.4
+PORTREVISION=	0
 CATEGORIES+=	irc ipv6	# `+=' is for slave ports
 MASTER_SITES=	http://irssi.org/files/
 
