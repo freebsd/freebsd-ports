@@ -32,6 +32,156 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="a7e0d783-131b-11d9-bc4a-000c41e2cdad">
+    <topic>mozilla -- users may be lured into bypassing security dialogs</topic>
+    <affects>
+      <package>
+        <name>thunderbird</name>
+	<range><lt>0.7</lt></range>
+      </package>
+      <package>
+        <name>de-linux-mozillafirebird</name>
+	<name>el-linux-mozillafirebird</name>
+        <name>firefox</name>
+        <name>ja-linux-mozillafirebird-gtk1</name>
+        <name>ja-mozillafirebird-gtk2</name>
+        <name>linux-mozillafirebird</name>
+        <name>ru-linux-mozillafirebird</name>
+        <name>zhCN-linux-mozillafirebird</name>
+        <name>zhTW-linux-mozillafirebird</name>
+	<range><lt>0.9.2</lt></range>
+      </package>
+      <package>
+        <name>de-netscape7</name>
+        <name>fr-netscape7</name>
+        <name>ja-netscape7</name>
+        <name>netscape7</name>
+        <name>pt_BR-netscape7</name>
+	<range><le>7.2</le></range>
+      </package>
+      <package>
+        <name>mozilla-gtk1</name>
+        <name>linux-mozilla</name>
+        <name>linux-mozilla-devel</name>
+        <range><lt>1.7</lt></range>
+      </package>
+      <package>
+	<name>mozilla</name>
+	<range><lt>1.7,2</lt></range>
+      </package>
+      <package>
+	<!-- These package names are obsolete. -->
+        <name>de-linux-netscape</name>
+        <name>fr-linux-netscape</name>
+        <name>ja-linux-netscape</name>
+        <name>linux-netscape</name>
+        <name>linux-phoenix</name>
+        <name>mozilla+ipv6</name>
+        <name>mozilla-embedded</name>
+        <name>mozilla-firebird</name>
+        <name>mozilla-gtk2</name>
+        <name>mozilla-gtk</name>
+        <name>mozilla-thunderbird</name>
+        <name>phoenix</name>
+	<range><ge>0</ge></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Accroding to the Mozilla project:</p>
+	<blockquote cite="http://www.mozilla.org/projects/security/known-vulnerabilities.html">
+	  <p>An attacker who could lure users into clicking in
+	    particular places, or typing specific text, could cause a
+	    security permission or software installation dialog to pop
+	    up under the user's mouse click, clicking on the grant (or
+	    install) button.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0762</cvename>
+      <url>http://bugzilla.mozilla.org/show_bug.cgi?id=162020</url>
+    </references>
+    <dates>
+      <discovery>2004-06-05</discovery>
+      <entry>2004-09-30</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="5360a659-131c-11d9-bc4a-000c41e2cdad">
+    <topic>mozilla -- hostname spoofing bug</topic>
+    <affects>
+      <package>
+        <name>thunderbird</name>
+	<range><lt>0.7</lt></range>
+      </package>
+      <package>
+        <name>de-linux-mozillafirebird</name>
+	<name>el-linux-mozillafirebird</name>
+        <name>firefox</name>
+        <name>ja-linux-mozillafirebird-gtk1</name>
+        <name>ja-mozillafirebird-gtk2</name>
+        <name>linux-mozillafirebird</name>
+        <name>ru-linux-mozillafirebird</name>
+        <name>zhCN-linux-mozillafirebird</name>
+        <name>zhTW-linux-mozillafirebird</name>
+	<range><lt>0.9.2</lt></range>
+      </package>
+      <package>
+        <name>de-netscape7</name>
+        <name>fr-netscape7</name>
+        <name>ja-netscape7</name>
+        <name>netscape7</name>
+        <name>pt_BR-netscape7</name>
+	<range><le>7.2</le></range>
+      </package>
+      <package>
+        <name>mozilla-gtk1</name>
+        <name>linux-mozilla</name>
+        <name>linux-mozilla-devel</name>
+        <range><lt>1.7</lt></range>
+      </package>
+      <package>
+	<name>mozilla</name>
+	<range><lt>1.7,2</lt></range>
+      </package>
+      <package>
+	<!-- These package names are obsolete. -->
+        <name>de-linux-netscape</name>
+        <name>fr-linux-netscape</name>
+        <name>ja-linux-netscape</name>
+        <name>linux-netscape</name>
+        <name>linux-phoenix</name>
+        <name>mozilla+ipv6</name>
+        <name>mozilla-embedded</name>
+        <name>mozilla-firebird</name>
+        <name>mozilla-gtk2</name>
+        <name>mozilla-gtk</name>
+        <name>mozilla-thunderbird</name>
+        <name>phoenix</name>
+	<range><ge>0</ge></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>When processing URIs that contain an unqualified host name--
+	  specifically, a domain name of only one component--
+	  Mozilla will perform matching against the first component
+	  of the domain name in SSL certificates.  In other words, in
+	  some situations, a certificate issued to "www.example.com"
+	  will be accepted as matching "www".</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0765</cvename>
+      <url>http://bugzilla.mozilla.org/show_bug.cgi?id=234058</url>
+    </references>
+    <dates>
+      <discovery>2004-02-12</discovery>
+      <entry>2004-09-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="de16b056-132e-11d9-bc4a-000c41e2cdad">
     <topic>samba -- remote file disclosure</topic>
     <affects>
@@ -68,18 +218,17 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <topic>mozilla -- BMP decoder vulnerabilities</topic>
     <affects>
       <package>
-        <name>mozilla-thunderbird</name>
         <name>thunderbird</name>
 	<range><lt>0.7.3_1</lt></range>
       </package>
       <package>
         <name>de-linux-mozillafirebird</name>
+	<name>el-linux-mozillafirebird</name>
         <name>firefox</name>
         <name>ja-linux-mozillafirebird-gtk1</name>
         <name>ja-mozillafirebird-gtk2</name>
         <name>linux-mozillafirebird</name>
         <name>linux-phoenix</name>
-        <name>mozilla-firebird</name>
         <name>phoenix</name>
         <name>ru-linux-mozillafirebird</name>
         <name>zhCN-linux-mozillafirebird</name>
@@ -87,13 +236,9 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	<range><lt>0.9.3_1</lt></range>
       </package>
       <package>
-        <name>de-linux-netscape</name>
         <name>de-netscape7</name>
-        <name>fr-linux-netscape</name>
         <name>fr-netscape7</name>
-        <name>ja-linux-netscape</name>
         <name>ja-netscape7</name>
-        <name>linux-netscape</name>
         <name>netscape7</name>
         <name>pt_BR-netscape7</name>
 	<range><le>7.2</le></range>
@@ -104,9 +249,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <range><lt>1.7.3</lt></range>
       </package>
       <package>
-        <name>mozilla-gtk</name>
         <name>mozilla-gtk1</name>
-        <name>mozilla-gtk2</name>
 	<range><lt>1.7.2_3</lt></range>
       </package>
       <package>
@@ -115,8 +258,17 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	<range><ge>1.8.a,2</ge><lt>1.8.a3_1,2</lt></range>
       </package>
       <package>
+	<!-- These package names are obsolete. -->
         <name>mozilla+ipv6</name>
         <name>mozilla-embedded</name>
+        <name>mozilla-firebird</name>
+        <name>mozilla-gtk</name>
+        <name>mozilla-gtk2</name>
+        <name>mozilla-thunderbird</name>
+        <name>linux-netscape</name>
+        <name>de-linux-netscape</name>
+        <name>fr-linux-netscape</name>
+        <name>ja-linux-netscape</name>
 	<range><ge>0</ge></range>
       </package>
     </affects>
@@ -136,6 +288,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <dates>
       <discovery>2004-09-13</discovery>
       <entry>2004-09-28</entry>
+      <modified>2004-09-30</modified>
     </dates>
   </vuln>
 
