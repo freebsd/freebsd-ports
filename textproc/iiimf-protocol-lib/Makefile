@@ -27,6 +27,12 @@ HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--includedir=${PREFIX}/include/iiimf/iiimp
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		"Does not compile on 4.x"
+.endif
+
 post-patch:
 	${REINPLACE_CMD} -e "s,-lpthread,-pthread,g" \
 		-e "s,-D_POSIX_C_SOURCE=199506L,,g" \
@@ -34,4 +40,4 @@ post-patch:
 		-e "s,/usr/lib/im,${PREFIX}/lib/im,g" \
 		${WRKSRC}/configure
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

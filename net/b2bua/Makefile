@@ -24,6 +24,12 @@ MAKE_ENV=	PTHREAD_LDFLAGS="${PTHREAD_LIBS}" \
 		PTHREAD_LIBNAME="${PTHREAD_LIBNAME}" \
 		VOCAL_USE_SYSTEM_LIBXML=true
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		"Does not compile on 4.x"
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sip/b2b/bin.nodebug.FreeBSD.${MACHINE_ARCH}/b2bua \
 		${PREFIX}/bin
@@ -34,4 +40,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/sip/b2b/b2bConfig.xml \
 		${PREFIX}/etc/b2bConfig.xml.sample
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
