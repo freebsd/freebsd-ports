@@ -1,0 +1,20 @@
+bin/bogofilter
+bin/bogolexer
+bin/bogoutil
+bin/bogoupgrade
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.freebsd
+%%PORTDOCS%%%%DOCSDIR%%/README.hp-ux
+%%PORTDOCS%%%%DOCSDIR%%/README.solaris
+%%PORTDOCS%%%%DOCSDIR%%/README.unbase64
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/UPGRADE
+%%PORTDOCS%%%%DOCSDIR%%/bogo.R
+%%PORTDOCS%%%%DOCSDIR%%/bogofilter-qfe
+%%PORTDOCS%%%%DOCSDIR%%/integrating-with-qmail
+%%PORTDOCS%%%%DOCSDIR%%/unbase64
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
