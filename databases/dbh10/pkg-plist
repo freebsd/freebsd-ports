@@ -1,8 +1,0 @@
-@comment $FreeBSD$
-include/dbh.h
-include/dbh_config.h
-include/dbh_functions.h
-lib/libdbh.a
-lib/libdbh.so
-lib/libdbh.so.1
-libdata/pkgconfig/dbh-1.0.pc

@@ -23,7 +23,6 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/3./3-/}.1-static-qt.i386.freebsd-en
 MAINTAINER=	avleeuwen@piwebs.com
 COMMENT=	A blazingly fast, full-featured, standards-compliant browser
 
-RESTRICTED=	"not redistributable; commercial software"
 CONFLICTS=	linux-opera-*
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png

@@ -1,4 +1,0 @@
-lib/gtk/themes/engines/libindustrial.so
-share/themes/Industrial/gtk/gtkrc
-@dirrm share/themes/Industrial/gtk
-@unexec rmdir %D/share/themes/Industrial 2>/dev/null || true

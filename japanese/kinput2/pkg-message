@@ -1,5 +1,0 @@
-############################################################
-Default key-binding is changed to "egg" key-binding by defining
-*CcWnn.ccdef:           ccdef.kinput2.egg
-in ${X11BASE}/lib/X11/app-defaults/Kinput2.
-############################################################"

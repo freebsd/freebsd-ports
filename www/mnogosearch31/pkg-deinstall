@@ -1,9 +1,0 @@
-#!/bin/sh
-
-if [ x$2 != xDEINSTALL ]; then
-    exit
-fi
-
-rm -rf /var/mnogosearch
-
-exit 0

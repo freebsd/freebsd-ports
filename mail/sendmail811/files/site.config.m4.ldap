@@ -1,5 +1,0 @@
-APPENDDEF(`confLIBDIRS', `-L%%LOCALBASE%%/lib')
-APPENDDEF(`conf_sendmail_ENVDEF', `-I%%LOCALBASE%%/include')
-APPENDDEF(`conf_sendmail_ENVDEF', `-DLDAPMAP')     
-APPENDDEF(`conf_sendmail_LIBS', `-lldap')
-APPENDDEF(`conf_sendmail_LIBS', `-llber')

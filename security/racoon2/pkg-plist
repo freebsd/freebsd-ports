@@ -1,5 +1,0 @@
-sbin/racoon
-etc/racoon/psk.txt.dist
-etc/racoon/racoon.conf.dist
-etc/rc.d/racoon.sh
-@unexec rmdir %D/etc/racoon 2>/dev/null || true

@@ -1,9 +1,0 @@
---- libtoolize.in.orig	Sun Oct 13 16:21:38 2002
-+++ libtoolize.in	Mon Feb 17 01:56:19 2003
-@@ -39,4 +39,4 @@
- 
--libtool_m4="$aclocaldir/libtool.m4"
--ltdl_m4="$aclocaldir/ltdl.m4"
-+libtool_m4="$aclocaldir/libtool15.m4"
-+ltdl_m4="$aclocaldir/ltdl15.m4"
- 

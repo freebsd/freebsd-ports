@@ -1,5 +1,0 @@
-sbin/remarp
-etc/remarp.conf.sample
-%%SITE_PERL%%/remarp/config.pm
-%%SITE_PERL%%/remarp/configure.pm
-@dirrm %%SITE_PERL%%/remarp

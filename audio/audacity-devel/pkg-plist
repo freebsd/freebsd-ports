@@ -1,5 +1,0 @@
-bin/audacity
-%%PORTDOCS%%%%DOCSDIR%%/audacity-help.htb
-%%PORTDOCS%%%%DOCSDIR%%/README.txt
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

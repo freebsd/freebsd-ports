@@ -1,6 +1,0 @@
-bin/libgcrypt-config
-include/gcrypt.h
-lib/libgcrypt.a
-lib/libgcrypt.so
-lib/libgcrypt.so.6
-share/aclocal/libgcrypt.m4

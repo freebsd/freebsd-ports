@@ -1,4 +1,0 @@
-#!/bin/sh
-
-DBDIR=${PREFIX}/var/bpft
-mkdir -p $DBDIR

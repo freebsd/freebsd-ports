@@ -1,4 +1,0 @@
-@comment $FreeBSD$
-bin/opendchub
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
