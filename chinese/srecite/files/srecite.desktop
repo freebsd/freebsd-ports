@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=SRecite
+Name[zh_CN]=SRecite
+Comment=SRecite
+Comment[zh_CN]=SRecite
+Exec=srecite
+Terminal=0
+Type=Application
+Icon=srecite.png
+StartupNotify=true
+Categories=GNOME;Application;Utility;
