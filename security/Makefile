@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.24 1998/01/21 11:39:36 obrien Exp $
+# $Id: Makefile,v 1.25 1998/02/03 08:15:43 asami Exp $
 #
 
     SUBDIR += SSLeay
@@ -9,7 +9,7 @@
     SUBDIR += fwtk
     SUBDIR += john
     SUBDIR += libident
-    SUBDIR += nat
+    SUBDIR += nbaudit
     SUBDIR += p5-Authen-Radius
     SUBDIR += p5-Crypt-DES
     SUBDIR += p5-Crypt-IDEA
