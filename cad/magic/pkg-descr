@@ -1,0 +1,10 @@
+Magic 6.4.4
+
+Magic is an interactive editor for VLSI layouts that runs under BSD.
+
+To run magic, users should set CAD_HOME to the base installation directory
+where magic was installed, e.g. /usr/local.  Alternatively, the system
+administrator can create a dummy user named 'cad' with its home
+directory set to the installation directory.
+
+Ported to FreeBSD by Steven Wallace, swallace@freebsd.org

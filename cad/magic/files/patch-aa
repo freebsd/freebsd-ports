@@ -1,0 +1,342 @@
+*** extflat/extflat.h.orig	Tue Jul 12 14:29:15 1994
+--- extflat/extflat.h	Sat Dec 17 15:53:53 1994
+***************
+*** 23,29 ****
+--- 23,31 ----
+  int err0 = Need_to_include_magic_header;
+  #endif	_MAGIC
+  
++ #ifndef __FreeBSD__
+  typedef unsigned char u_char;
++ #endif
+  
+  /*
+   * Arguments to EFFlatBuild().
+*** misc/CFLAGS.orig	Fri Jul 29 17:46:00 1994
+--- misc/CFLAGS	Sat Dec 17 23:51:53 1994
+***************
+*** 1 ****
+! -g
+--- 1 ----
+! -m486 -O2
+*** misc/patchlevel.c.orig	Fri Jul 29 12:34:47 1994
+--- misc/patchlevel.c	Sat Dec 17 23:43:48 1994
+***************
+*** 57,62 ****
+--- 57,63 ----
+      strcat(patchstr, "release-6.4");
+      strcat(patchstr, ", linux1");
+  
++     strcat(patchstr, ", FreeBSD1");
+      /* NEW PATCH LINES GO RIGHT BEFORE THIS LINE */
+      return patchstr;
+  }
+*** misc/paths.h.orig	Thu Jul  7 15:26:29 1994
+--- misc/paths.h	Sat Dec 17 23:28:58 1994
+***************
+*** 53,59 ****
+  #  define PAGERDIR "/usr/bin/pg"
+  # endif
+  #else
+! # ifdef linux
+  #  define PAGERDIR "/usr/bin/more"
+  # else
+  #  define PAGERDIR "/usr/ucb/more"
+--- 53,59 ----
+  #  define PAGERDIR "/usr/bin/pg"
+  # endif
+  #else
+! # if linux || __FreeBSD__
+  #  define PAGERDIR "/usr/bin/more"
+  # else
+  #  define PAGERDIR "/usr/ucb/more"
+*** plot/plotPixels.c.orig	Fri Jul 29 15:05:41 1994
+--- plot/plotPixels.c	Sat Dec 17 16:03:24 1994
+***************
+*** 1336,1342 ****
+--- 1336,1344 ----
+      FILE *file;			/* File stream on which to dump it. */
+  {
+      int i;
++ #ifndef __FreeBSD__
+      extern char *sys_errlist[];
++ #endif
+      extern int errno;
+      int r,g,b;
+  
+*** plot/plotRutils.c.orig	Mon Jul 11 11:10:50 1994
+--- plot/plotRutils.c	Sat Dec 17 16:06:21 1994
+***************
+*** 394,400 ****
+--- 394,402 ----
+      FILE *file;			/* File in which to dump it. */
+  {
+      int count;
++ #ifndef __FreeBSD__
+      extern char *sys_errlist[];
++ #endif
+      extern int errno;
+  
+      count = write(fileno(file), (char *) raster->ras_bits,
+*** plow/PlowMain.c.orig	Fri Jul 29 17:08:25 1994
+--- plow/PlowMain.c	Sat Dec 17 15:44:56 1994
+***************
+*** 22,27 ****
+--- 22,28 ----
+  static char rcsid[]="$Header: PlowMain.c,v 6.0 90/08/28 18:52:57 mayo Exp $";
+  #endif  not lint
+  
++ #include <sys/types.h>
+  #include <sys/time.h>
+  #include <sys/resource.h>
+  #include <stdio.h>
+*** prleak/prleak.c.orig	Thu Sep 13 13:27:43 1990
+--- prleak/prleak.c	Sat Dec 17 15:50:19 1994
+***************
+*** 51,59 ****
+  static char	 allName[] = "/tmp/prlaaXXXXX";
+  
+  long ftell();
+  long getw();
+  FILE *uopen();
+! int cleanup();
+  
+  int aflag = 0;	/* -a: print all calls to malloc/free */
+  int dflag = 0;	/* -d: print duplicate frees */
+--- 51,61 ----
+  static char	 allName[] = "/tmp/prlaaXXXXX";
+  
+  long ftell();
++ #ifndef __FreeBSD__
+  long getw();
++ #endif
+  FILE *uopen();
+! void cleanup();
+  
+  int aflag = 0;	/* -a: print all calls to malloc/free */
+  int dflag = 0;	/* -d: print duplicate frees */
+***************
+*** 280,286 ****
+      {
+  	if (ap = (struct active *) HashGetValue(he))
+  	{
+! 	    putw(he->h_key.h_ptr, fd);
+  	    putw(ap->a_size, fd);
+  	    putw(ap->a_seek, fd);
+  	    FREE((char *) ap);
+--- 282,288 ----
+      {
+  	if (ap = (struct active *) HashGetValue(he))
+  	{
+! 	    putw((int)he->h_key.h_ptr, fd);
+  	    putw(ap->a_size, fd);
+  	    putw(ap->a_seek, fd);
+  	    FREE((char *) ap);
+***************
+*** 615,621 ****
+      return (ret);
+  }
+  
+! cleanup()
+  {
+      unlink(dupName);
+      unlink(leakName);
+--- 617,623 ----
+      return (ret);
+  }
+  
+! void cleanup()
+  {
+      unlink(dupName);
+      unlink(leakName);
+*** utils/getrect.c.orig	Mon Jul 18 14:12:35 1994
+--- utils/getrect.c	Sat Dec 17 17:34:16 1994
+***************
+*** 64,75 ****
+--- 64,83 ----
+  #define	FILE_SET_PTR(fin, cp) ((fin)->_IO_read_ptr = (cp))
+  
+  #else
++ #ifdef __FreeBSD__
++ #define	FILE_CNT(fin)	((fin)->_r)
++ #define	FILE_PTR(fin)	((char *) (fin)->_p)
++ #define FILE_DEC_CNT(fin, n)	((fin)->_r -= (n))
++ #define	FILE_SET_PTR(fin, cp) ((fin)->_p = (cp))
++ 
++ #else
+  #define	FILE_CNT(fin)	((fin)->_cnt)	
+  #define	FILE_PTR(fin)	((char *) fin->_ptr)
+  #define FILE_DEC_CNT(fin, n)	((fin)->_cnt -= (n))
+  #define	FILE_SET_PTR(fin, cp) ((fin)->_ptr = (cp))
+  
+  #endif
++ #endif
+  
+  bool
+  GetRect(fin, skip, rect)
+***************
+*** 115,121 ****
+      rect->r_ytop = isNegative ? -n : n;
+  
+      /* Adjust the stdio pointers to reflect the characters read */
+!     FILE_DEC_CNT(fin, cp - (char *) fin->_ptr);
+      FILE_SET_PTR(fin, (STDIOCHAR *) cp);
+  
+      /* Make sure we skip to end of line or EOF */
+--- 123,129 ----
+      rect->r_ytop = isNegative ? -n : n;
+  
+      /* Adjust the stdio pointers to reflect the characters read */
+!     FILE_DEC_CNT(fin, cp - FILE_PTR(fin));
+      FILE_SET_PTR(fin, (STDIOCHAR *) cp);
+  
+      /* Make sure we skip to end of line or EOF */
+***************
+*** 125,131 ****
+  
+      /* Adjust the stdio pointers to reflect the characters read */
+  fastbad:
+!     FILE_DEC_CNT(fin, cp - (char *) fin->_ptr);
+      FILE_SET_PTR(fin, (STDIOCHAR *) cp);
+      goto bad;
+  
+--- 133,139 ----
+  
+      /* Adjust the stdio pointers to reflect the characters read */
+  fastbad:
+!     FILE_DEC_CNT(fin, cp - FILE_PTR(fin));
+      FILE_SET_PTR(fin, (STDIOCHAR *) cp);
+      goto bad;
+  
+*** utils/malloc.c.orig	Thu Aug 25 14:22:18 1994
+--- utils/malloc.c	Sat Dec 17 16:08:04 1994
+***************
+*** 643,649 ****
+--- 643,651 ----
+      int cursize;
+      extern etext;
+      extern int errno;
++ #ifndef __FreeBSD__
+      extern char *sys_errlist[];
++ #endif
+  
+      /*
+       * Hmmmm.  Somebody's not giving us enough memory.
+*** utils/port.c.orig	Thu Aug 18 13:14:30 1994
+--- utils/port.c	Sat Dec 17 17:38:57 1994
+***************
+*** 19,24 ****
+--- 19,25 ----
+  static char rcsid[] = "$Header: port.c,v 6.0 90/08/28 19:01:11 mayo Exp $";
+  #endif  not lint
+  
++ #include <stdlib.h>
+  #include <stdio.h>
+  #include <math.h>
+  #include "magic.h"
+*** windows/windCmdAM.c.orig	Fri Jul 29 16:57:18 1994
+--- windows/windCmdAM.c	Sat Dec 17 16:12:01 1994
+***************
+*** 281,287 ****
+  {
+  #define NUM_FD	20	/* max number of open files per process */
+      extern int errno, sys_nerr;
+! #ifndef	ALPHA
+      extern char *sys_errlist[];
+  #endif
+      int fd;
+--- 281,287 ----
+  {
+  #define NUM_FD	20	/* max number of open files per process */
+      extern int errno, sys_nerr;
+! #if !ALPHA && !__FreeBSD__
+      extern char *sys_errlist[];
+  #endif
+      int fd;
+*** garouter/Makefile.orig	Thu Aug  4 13:16:59 1994
+--- garouter/Makefile	Sat Dec 17 16:50:47 1994
+***************
+*** 22,31 ****
+  
+  LINTFLAGS= ${IFLAGS} -u
+  LINTLIBS= 
+! #LINTLIBS= ${LIB}/lint/database.ln \
+! 	${LIB}/lint/gcr.ln ${LIB}/lint/grouter.ln \
+! 	${LIB}/lint/signals.ln ${LIB}/lint/textio.ln \
+! 	${LIB}/lint/tiles.ln ${LIB}/lint/utils.ln
+  .SUFFIXES: .po
+  
+  ${MODULE}.o: ${OBJS}
+--- 22,28 ----
+  
+  LINTFLAGS= ${IFLAGS} -u
+  LINTLIBS= 
+! #LINTLIBS= ${LIB}/lint/database.ln ${LIB}/lint/gcr.ln ${LIB}/lint/grouter.ln ${LIB}/lint/signals.ln ${LIB}/lint/textio.ln ${LIB}/lint/tiles.ln ${LIB}/lint/utils.ln
+  .SUFFIXES: .po
+  
+  ${MODULE}.o: ${OBJS}
+*** fsleeper/fsleeper.c.orig	Thu Jul  7 15:47:35 1994
+--- fsleeper/fsleeper.c	Sat Dec 17 16:35:09 1994
+***************
+*** 44,49 ****
+--- 44,58 ----
+  #endif
+  #endif
+  
++ #ifdef __FreeBSD__
++ #ifndef gtty
++ #define gtty(fd, buf) ioctl(fd, TIOCGETP, buf)
++ #endif
++ #ifndef stty
++ #define stty(fd, buf) ioctl(fd, TIOCSETP, buf)
++ #endif
++ #endif
++ 
+  main(argc, argv)
+      char *argv[];
+  {
+*** Makefile.orig	Tue Sep 20 13:55:57 1994
+--- Makefile	Sun Dec 18 00:24:12 1994
+***************
+*** 41,46 ****
+--- 41,48 ----
+  CADDIR		= `:findcad`
+  CADDIR_SUB	= `../:findcad`
+  
++ all: everything
++ 
+  everything: ${MODULES} .config
+  	/bin/csh :makeall installhdrs ${MODULES}
+  	/bin/csh :makeall install ${MODULES}
+*** misc/magic.h.orig	Tue Aug  2 15:18:15 1994
+--- misc/magic.h	Sat Dec 17 15:31:52 1994
+***************
+*** 217,222 ****
+--- 217,226 ----
+  #define	IS_LITTLE_ENDIAN	/* Digital Alpha AXP */
+  #endif
+  
++ #ifdef  i386
++ #define IS_LITTLE_ENDIAN	/* i386 CPU */
++ #endif
++ 
+  /* Well, how'd we do? */
+  
+  #if	!defined(IS_BIG_ENDIAN) && !defined(IS_LITTLE_ENDIAN)
+***************
+*** 298,304 ****
+  #ifdef	SYSV
+      extern int sprintf();
+  #else
+! #ifndef ALPHA
+      extern char* sprintf();
+  #endif
+  #endif
+--- 302,308 ----
+  #ifdef	SYSV
+      extern int sprintf();
+  #else
+! #if !ALPHA && !__FreeBSD__
+      extern char* sprintf();
+  #endif
+  #endif
