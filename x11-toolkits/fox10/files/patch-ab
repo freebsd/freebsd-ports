@@ -1,11 +1,11 @@
---- Makefile.in.orig	Sat Mar 17 05:47:30 2001
-+++ Makefile.in	Sat Mar 17 20:18:26 2001
+--- Makefile.in.orig	Fri Jul 13 02:58:24 2001
++++ Makefile.in	Fri Jul 20 20:42:11 2001
 @@ -89,7 +89,7 @@
  AUTOMAKE_OPTIONS = foreign dist-zip
  #AUTOMAKE_OPTIONS = foreign dist-zip no-dependencies
  
 -SUBDIRS = utils include src doc tests textedit pathfinder calculator
-+SUBDIRS = utils include src doc
++SUBDIRS = utils include src ${DOC}
  EXTRA_DIST = ADDITIONS AUTHORS BUGS INSTALL LICENSE TRACING README fox.lsm index.html aclocal.m4
  
  CLEANFILES = fox.tar.gz
