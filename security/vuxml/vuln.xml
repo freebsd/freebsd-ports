@@ -32,6 +32,31 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="5b8f9a02-ec93-11d8-b913-000c41e2cdad">
+    <topic>gaim remotely exploitable vulnerabilities in MSN component</topic>
+    <affects>
+      <package>
+	<name>gaim</name>
+	<name>ja-gaim</name>
+	<range><le>0.81</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Sebastian Krahmer discovered several remotely exploitable
+          buffer overflow vulnerabilities in the MSN component of
+          gaim.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0500</cvename>
+    </references>
+    <dates>
+      <discovery>2004-08-12</discovery>
+      <entry>2004-08-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="78348ea2-ec91-11d8-b913-000c41e2cdad">
     <topic>acroread uudecoder input validation error</topic>
     <affects>
