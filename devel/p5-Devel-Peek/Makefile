@@ -1,13 +1,13 @@
 # New ports collection makefile for:	p5-Devel-Peek
-# Version required:			0.89
+# Version required:			0.9
 # Date created:				June 15th 1997
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-# $Id: Makefile,v 1.4 1998/02/18 18:20:12 vanilla Exp $
+# $Id: Makefile,v 1.5 1998/04/04 13:59:57 vanilla Exp $
 #
 
-DISTNAME=	Devel-Peek-0.89
-PKGNAME=	p5-Devel-Peek-0.89
+DISTNAME=	Devel-Peek-0.9
+PKGNAME=	p5-Devel-Peek-0.9
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Devel
