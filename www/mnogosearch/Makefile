@@ -20,14 +20,16 @@ MAN5=		indexer.conf.5
 USE_LIBTOOL=    yes
 INSTALLS_SHLIB= yes
 USE_GMAKE=	yes
-CONFIGURE_ARGS= --enable-phrase \
+CONFIGURE_ARGS+=--enable-phrase \
 		--enable-shared \
-		--enable-freebsd-pthreads \
 		--sysconfdir=${PREFIX}/etc/mnogosearch \
 		--localstatedir=/var/mnogosearch
 
+.if !defined(WITHOUT_MNOGO_THREADS)
+CONFIGURE_ARGS+= --enable-freebsd-pthreads
 CFLAGS+=        ${PTHREAD_CFLAGS}
 CONFIGURE_ENV=  LIBS="${PTHREAD_LIBS}"
+.endif
 
 RUN_DEPENDS+=	${LOCALBASE}/etc/apache/httpd.conf:${PORTSDIR}/www/apache13
 
