@@ -37,6 +37,7 @@ bin/dotforward
 bin/imapd
 bin/lockmail
 bin/mailbot
+bin/maildirkw
 bin/maildirmake
 bin/maildrop
 bin/mailq
@@ -652,6 +653,7 @@ share/courier/vchkpw2userdb
 %%PORTDOCS%%%%DOCSDIR%%/html/lockmail.html
 %%PORTDOCS%%%%DOCSDIR%%/html/mailbot.html
 %%PORTDOCS%%%%DOCSDIR%%/html/maildir.html
+%%PORTDOCS%%%%DOCSDIR%%/html/maildirkw.html
 %%PORTDOCS%%%%DOCSDIR%%/html/maildirmake.html
 %%PORTDOCS%%%%DOCSDIR%%/html/maildirquota.html
 %%PORTDOCS%%%%DOCSDIR%%/html/maildrop.README.html

@@ -6,15 +6,13 @@
 #
 
 PORTNAME=	courier
-PORTVERSION=	0.42.2
+PORTVERSION=	0.44.0
 CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	courier
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Courier SMTP IMAP POP3 HTTP mail server suite
-
-BROKEN=		Uses unregistered uid/gid, already in use by pf
 
 RUN_DEPENDS=	${LOCALBASE}/share/sysconftool/sysconftool:${PORTSDIR}/devel/sysconftool \
 		${SITE_PERL}/Net/CIDR.pm:${PORTSDIR}/net/p5-Net-CIDR
@@ -38,10 +36,10 @@ CACHEOWN?=	pop
 MAILDROPDEFAULT?=./Maildir
 # End of user-serviceable variables
 CONFLICTS=	postfix-1.* postfix-2.* sendmail-8.* sendmail-*-8.* smail-3.* zmailer-2.*
-MAILOWN=	courier
-MAILGRP=	courier
-MAILUID=	62
-MAILGID=	62
+MAILOWN=	mailnull
+MAILGRP=	mailnull
+MAILUID=	26
+MAILGID=	26
 ETCDIR=		${PREFIX}/etc
 SYSCONFDIR=	${ETCDIR}/courier
 USERDB=		${ETCDIR}/userdb
@@ -55,8 +53,6 @@ USE_BZIP2=	yes
 USE_SUBMAKE=	yes
 USE_PERL5=	yes
 USE_GMAKE=	yes
-USE_AUTOMAKE=	yes
-USE_LIBTOOL=	yes
 USE_OPENSSL=	yes
 USE_AUTOMAKE_VER=15
 CONFIGURE_ENV=	REHASH=${SCRIPTDIR}/c_rehash
@@ -112,7 +108,7 @@ SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
 		WITH_SENDFAX="${WITH_SENDFAX:L}" \
 		WITH_IPV6="${WITH_IPV6:L}" \
 		WITH_TRANSPORT="${WITH_TRANSPORT}" \
-		WITH_GHOSTSCRIPT_AFPL="${WITH_GHOSTSCRIPT_AFPL:no}" \
+		WITH_GHOSTSCRIPT_AFPL="${WITH_GHOSTSCRIPT_AFPL:L}" \
 		TOUCH="${TOUCH}" \
 		MKDIR="${MKDIR}"
 

@@ -6,6 +6,7 @@ MAN1=	\
 	dot-forward.1 \
 	lockmail.1 \
 	mailbot.1 \
+	maildirkw.1 \
 	maildirmake.1 \
 	maildrop.1 \
 	mailq.1 \
