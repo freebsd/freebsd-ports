@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	apache_fp
-PORTVERSION=	1.3.12
+PORTVERSION=	1.3.14
 CATEGORIES=	www
 MASTER_SITES=	http://www.apache.org/dist/ \
 		ftp://ftp.microsoft.com/products/frontpage/ \
@@ -27,7 +27,7 @@ MASTER_SITES=	http://www.apache.org/dist/ \
 		ftp://ftp.mtnranch.net/pub/apache/dist/ \
 		ftp://ftp.iodynamics.com/pub/mirror/apache/dist/ \
 		ftp://apache.nextpath.com/pub/apache/dist/
-DISTNAME=	apache_1.3.12
+DISTNAME=	apache_${PORTVERSION}
 DISTFILES=	${APACHE} ${FRONTPAGE} powerlogo.gif fplogo.gif
 
 MAINTAINER=	hetzels@westbend.net
@@ -89,11 +89,11 @@ OPTIM=		-DHARD_SERVER_LIMIT=512 \
 
 #By default create an Optimized package.
 .if ${BATCH} == YES
-APACHE_PERF_TUNING= YES
+APACHE_PERF_TUNING=	YES
 .endif
 
 .if defined(APACHE_PERF_TUNING) && ${APACHE_PERF_TUNING} == YES
-OPTIM+= 	-DBUFFERED_LOGS -DFD_SETSIZE=1024
+OPTIM+=		-DBUFFERED_LOGS -DFD_SETSIZE=1024
 CFLAGS+=	-O6 -funroll-loops -fstrength-reduce -fomit-frame-pointer \
 		-fexpensive-optimizations -ffast-math
 .endif
@@ -108,12 +108,12 @@ MAN8=	ab.8 apachectl.8 apxs.8 httpd.8 logresolve.8 rotatelogs.8
 .if defined(SUEXEC)
 HTTPD_USER?=www
 USER_DIR?=public_html
-CONFIGURE_ARGS+= --enable-suexec \
-		 --suexec-caller=${HTTPD_USER} \
-		 --suexec-docroot=${PREFIX}/www/data \
-		 --suexec-logfile=/var/log/httpd-suexec.log \
-		 --suexec-userdir=${USER_DIR} \
-		 --suexec-safepath='/bin:/usr/bin:${PREFIX}/bin'
+CONFIGURE_ARGS+=	--enable-suexec \
+			--suexec-caller=${HTTPD_USER} \
+			--suexec-docroot=${PREFIX}/www/data \
+			--suexec-logfile=/var/log/httpd-suexec.log \
+			--suexec-userdir=${USER_DIR} \
+			--suexec-safepath='/bin:/usr/bin:${PREFIX}/bin'
 MAN8+=	suexec.8
 .endif
 
