@@ -19,7 +19,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--program-transform-name="s,0,1,"
 CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib"
 
-WRKSRC= 	${WRKDIR}/${DISTNAME}/build
+WRKSRC=	${WRKDIR}/${DISTNAME}/build
 CFLAGS+= 	-I${LOCALBASE}/include/tcl8.2 -I${LOCALBASE}/include/tk8.2
 
 # Uglyness. So is "-ltcl -ltk -ltcl", so I don't feel bad.
