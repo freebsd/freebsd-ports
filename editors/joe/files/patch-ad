@@ -1,0 +1,18 @@
+--- b.c        Fri Jan 20 03:38:25 1995
++++ b.c.new    Fri Jul 23 03:36:10 1999
+@@ -21,6 +21,7 @@
+ #include <pwd.h>
+ #endif
+ #include <errno.h>
++#include <sys/types.h>
+
+ #include "config.h"
+ #include "blocks.h"
+@@ -1990,6 +1991,7 @@
+  {
+  long tim=time(0);
+  B *b;
++ mode_t mask=umask(077); /* no access to DEADJOE for others */
+  FILE *f=fopen("DEADJOE","a");
+  fprintf(f,"\n*** Modified files in JOE when it aborted on %s",ctime(&tim));
+  if(sig) fprintf(f,"*** JOE was aborted by signal %d\n",sig);
