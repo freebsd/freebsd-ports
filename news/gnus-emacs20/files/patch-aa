@@ -1,0 +1,16 @@
+--- texi/emacs-mime.texi~	Thu Jan  4 08:16:12 2001
++++ texi/emacs-mime.texi	Mon Jan 29 13:34:06 2001
+@@ -1,11 +1,11 @@
+ \input texinfo                  @c -*-texinfo-*-
+ 
+-@setfilename emacs-mime
++@setfilename emacs-mime.info
+ @settitle Emacs MIME Manual
+ @synindex fn cp
+ @synindex vr cp
+ @synindex pg cp
+-@dircategory Editors
++@dircategory The Emacs editor and associated tools
+ @direntry
+ * Emacs MIME: (emacs-mime).   The MIME de/composition library.
+ @end direntry

@@ -1,0 +1,11 @@
+--- Makefile.in~	Thu Jan  4 08:15:51 2001
++++ Makefile.in	Mon Jan 29 14:53:19 2001
+@@ -13,7 +13,7 @@
+ 	cd lisp && $(MAKE) EMACS="$(EMACS)" lispdir="$(lispdir)" all
+ 
+ install:
+-	cd lisp && $(MAKE) EMACS="$(EMACS)" lispdir="$(lispdir)" install
++	cd lisp && $(MAKE) EMACS="$(EMACS)" lispdir="$(lispdir)" install install-el
+ 	cd texi && $(MAKE) EMACS="$(EMACS)" install
+ 
+ # Rule for Lars and nobody else.
