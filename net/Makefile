@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.63 1996/01/23 12:32:53 pst Exp $
+# $Id: Makefile,v 1.64 1996/03/25 08:59:46 asami Exp $
 #
 
     SUBDIR += archie
@@ -28,6 +28,7 @@ RESTRICTED += ivs            # crypto, export controlled
     SUBDIR += sup
     SUBDIR += tclDP
     SUBDIR += tintin++
+    SUBDIR += tinyfugue
     SUBDIR += tkined
     SUBDIR += vic
     BROKEN += wais           # for XFree3.x
