@@ -1,0 +1,3 @@
+%%SITE_PERL%%/Filesys/Virtual/DAAP.pm
+@unexec rmdir %D/%%SITE_PERL%%/Filesys/Virtual 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Filesys 2>/dev/null || true
