@@ -6,24 +6,28 @@
 #
 
 PORTNAME=	visualworks
-PORTVERSION=	7.1
+PORTVERSION=	7.2
 CATEGORIES=	lang linux
-MASTER_SITES=	http://www.cincomsmalltalk.com/bsdports/vwnc7.1/
-DISTFILES=	BaseVisualWorks.tar.gz \
+MASTER_SITES=	http://www.cincomsmalltalk.com/bsdports/vwnc7.2/
+DISTFILES=	AdvancedTools.tar.gz \
+		BaseVisualWorks.tar.gz \
 		COM.tar.gz \
+		DLLC.tar.gz \
 		DST.tar.gz \
-		ExtendedBase.tar.gz \
-		Goodies-Aragon.tar.gz \
-		Goodies-DOME.tar.gz \
-		Goodies-Jun.tar.gz \
+		Database.tar.gz \
 		Goodies.tar.gz \
+		GoodiesAragon.tar.gz \
+		GoodiesCOAST.tar.gz \
+		GoodiesDOME.tar.gz \
+		GoodiesJun.tar.gz \
+		GoodiesSilverMark.tar.gz \
 		I18NCatalogs.tar.gz \
-		Image.tar.gz \
 		Opentalk.tar.gz \
 		PlugIn.tar.gz \
 		Preview.tar.gz \
+		Store.tar.gz \
 		VM-Linux86.tar.gz \
-		VisualWaveWebToolkit.tar.gz \
+		WebApplicationServer.tar.gz \
 		WebServices.tar.gz
 DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
 
@@ -42,25 +46,26 @@ NO_CDROM=	yes
 RESTRICTED=	"Redistribution is probably not permitted."
 
 do-install:
-	@${MKDIR} ${PREFIX}/${PORTNAME}/${PORTVERSION}
-	@cd ${WRKDIR} && tar -cf - * | tar -xf - -C ${PREFIX}/${PORTNAME}/${PORTVERSION}
+	@${MKDIR} ${PREFIX}/${PORTNAME}
+	@cd ${WRKDIR} && tar -cf - * | tar -xf - -C ${PREFIX}/${PORTNAME}
 	@${ECHO_CMD} "#!/bin/sh" > ${WRKDIR}/visual
-	@${ECHO_CMD} VISUALWORKS=${PREFIX}/${PORTNAME}/${PORTVERSION} >> ${WRKDIR}/visual
+	@${ECHO_CMD} VISUALWORKS=${PREFIX}/${PORTNAME} >> ${WRKDIR}/visual
 	@${ECHO_CMD} export VISUALWORKS >> ${WRKDIR}/visual
-	@${ECHO_CMD} ${PREFIX}/${PORTNAME}/${PORTVERSION}/bin/linux86/visual $$\* >> ${WRKDIR}/visual
+	@${ECHO_CMD} ${PREFIX}/${PORTNAME}/bin/linux86/visual $$\* >> ${WRKDIR}/visual
 	@${INSTALL_SCRIPT} ${WRKDIR}/visual ${PREFIX}/bin
 	@${RM} ${WRKDIR}/visual
 
 post-install:
-	@${ECHO_CMD} "   To start using VisualWorks,"
-	@${ECHO_CMD} "   First copy the default image to your home directory :"
-	@${ECHO_CMD} "   ${CP} ${PREFIX}/${PORTNAME}/${PORTVERSION}/image/visualnc.im ~"
-	@${ECHO_CMD} "   Make it writeable:"
-	@${ECHO_CMD} "   ${CHMOD} u+w ~/visualnc.im"
-	@${ECHO_CMD} "   Then run it using:"
-	@${ECHO_CMD} "   visual ~/visualnc.im"
-	@${ECHO_CMD} "   If this produces an out of memory error message try:"
-	@${ECHO_CMD} "   visual -h 1m ~/visualnc.im"
-	@${ECHO_CMD} "   and increase the '1m' value to '2m', ..., until the error goes away."
+	@${ECHO_CMD} "      ##########################################################################"
+	@${ECHO_CMD} "      To start using VisualWorks, copy the default image to your home directory:"
+	@${ECHO_CMD} "        # ${CP} ${PREFIX}/${PORTNAME}/image/visualnc.im ~"
+	@${ECHO_CMD} "      Make it writeable:"
+	@${ECHO_CMD} "        # ${CHMOD} u+w ~/visualnc.im"
+	@${ECHO_CMD} "      Then run it using:"
+	@${ECHO_CMD} "        # visual ~/visualnc.im"
+	@${ECHO_CMD} "      If this produces an out of memory error message try:"
+	@${ECHO_CMD} "        # visual -h 1m ~/visualnc.im"
+	@${ECHO_CMD} "      and increase the '1m' value to '2m', ..., until the error goes away."
+	@${ECHO_CMD} "      ##########################################################################"
 
 .include <bsd.port.mk>
