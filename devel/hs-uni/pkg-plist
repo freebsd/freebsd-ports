@@ -210,7 +210,6 @@ lib/uni/posixutil/libuni-posixutil.a
 lib/uni/posixutil/log
 lib/uni/posixutil/runCommand
 lib/uni/posixutil/test/ChildProcessTest.hi
-lib/uni/posixutil/test/ExecProcessTest.hi
 lib/uni/posixutil/test/libuni-posixutil-test.a
 lib/uni/posixutil/test/uni-posixutil-test.o
 lib/uni/posixutil/uni-posixutil.o
@@ -236,6 +235,7 @@ lib/uni/util/Bytes.hi
 lib/uni/util/Cache.hi
 lib/uni/util/CacheTable.hi
 lib/uni/util/CommandStringSub.hi
+lib/uni/util/CompileFlags.hi
 lib/uni/util/Computation.hi
 lib/uni/util/Debug.hi
 lib/uni/util/DeepSeq.hi
@@ -252,6 +252,7 @@ lib/uni/util/IntPlus.hi
 lib/uni/util/KeyedChanges.hi
 lib/uni/util/LineShow.hi
 lib/uni/util/Maybes.hi
+lib/uni/util/Messages.hi
 lib/uni/util/Myers.hi
 lib/uni/util/NameMangle.hi
 lib/uni/util/Object.hi
@@ -269,6 +270,7 @@ lib/uni/util/StrError.hi
 lib/uni/util/StringSkip.hi
 lib/uni/util/TSem.hi
 lib/uni/util/TempFile.hi
+lib/uni/util/TemplateHaskellHelps.hi
 lib/uni/util/Thread.hi
 lib/uni/util/ThreadDict.hi
 lib/uni/util/UnionFind.hi

@@ -1,4 +1,4 @@
-The workbench has been installed into ${PREFIX}/lib/uni.
+The workbench has been installed into %%PREFIX%%/lib/uni.
 
 The two helper scripts ghchtk and ghcihtk have been installed into
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	uni
 PORTVERSION=	0.99
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel haskell
 MASTER_SITES=	http://www.informatik.uni-bremen.de/htk/download/
 PKGNAMEPREFIX=	hs-
