@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.md.chalmers.se/pub/Femlab/	\
 		ftp://ftp.ifs.hr/pub/SciUtil/
 DISTFILES=	femlab-2d-v${PORTVERSION}.tar.gz
 
-MAINTAINER=	giffunip@asme.org
+MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	${X11BASE}/lib/libsx.a:${PORTSDIR}/x11/libsx
 
