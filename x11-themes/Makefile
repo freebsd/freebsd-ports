@@ -77,7 +77,6 @@
     SUBDIR += metacity-theme-iridium-rounded
     SUBDIR += metacity-theme-microgui
     SUBDIR += metacity-themes
-    SUBDIR += mkultra
     SUBDIR += qinx
     SUBDIR += qnxstyle
     SUBDIR += qt-bluecurve-theme

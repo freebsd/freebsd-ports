@@ -192,7 +192,6 @@
     SUBDIR += wxgtk2-unicode-contrib
     SUBDIR += wxmozilla
     SUBDIR += xbae
-    SUBDIR += xclass
     SUBDIR += xclasses
     SUBDIR += xforms
     SUBDIR += xg

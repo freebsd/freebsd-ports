@@ -342,7 +342,6 @@
     SUBDIR += oops
     SUBDIR += openvrml
     SUBDIR += opera
-    SUBDIR += orion
     SUBDIR += oscommerce
     SUBDIR += p5-Apache-ASP
     SUBDIR += p5-Apache-AddHostPath

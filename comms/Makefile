@@ -80,7 +80,6 @@
     SUBDIR += xcept
     SUBDIR += xdx
     SUBDIR += xlog
-    SUBDIR += xtt516
     SUBDIR += yaps
     SUBDIR += yawmppp
     SUBDIR += zmtx-zmrx

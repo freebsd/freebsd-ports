@@ -128,7 +128,6 @@
     SUBDIR += libijs
     SUBDIR += libotf
     SUBDIR += libpaper
-    SUBDIR += libpdf++
     SUBDIR += lilypond
     SUBDIR += lilypond-devel
     SUBDIR += lout

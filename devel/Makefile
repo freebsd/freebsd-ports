@@ -4,7 +4,6 @@
     COMMENT = Development utilities
 
     SUBDIR += ElectricFence
-    SUBDIR += ORBacus
     SUBDIR += ORBit
     SUBDIR += ORBit2
     SUBDIR += SpecTcl
@@ -374,7 +373,6 @@
     SUBDIR += libbfd
     SUBDIR += libbonobo
     SUBDIR += libbonobomm
-    SUBDIR += libcache
     SUBDIR += libcapsinetwork
     SUBDIR += libcheck
     SUBDIR += libchipcard
@@ -458,7 +456,6 @@
     SUBDIR += libzvbi
     SUBDIR += lightning
     SUBDIR += lincvs
-    SUBDIR += linguist
     SUBDIR += linux-allegro
     SUBDIR += linux-glib2
     SUBDIR += linux-libglade

@@ -204,7 +204,6 @@
     SUBDIR += python21
     SUBDIR += python22
     SUBDIR += q
-    SUBDIR += qc--
     SUBDIR += qscheme
     SUBDIR += quack
     SUBDIR += ratfor

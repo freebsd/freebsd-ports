@@ -333,7 +333,6 @@
     SUBDIR += sphinx
     SUBDIR += spiralloops
     SUBDIR += spiralsynth
-    SUBDIR += spiralsynthbaby
     SUBDIR += spiralsynthmodular
     SUBDIR += splay
     SUBDIR += splaytk
