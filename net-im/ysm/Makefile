@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ysm
-PORTVERSION=	7.2.9.1
+PORTVERSION=	7.2.9.2
 PORTREVISION=	0
 CATEGORIES=	net
 MASTER_SITES=	ftp://rusunix.org/pub/FreeBSD/distfiles/ \
