@@ -584,30 +584,8 @@ share/locale/uk/LC_MESSAGES/nautilus.mo
 share/locale/vi/LC_MESSAGES/nautilus.mo
 share/locale/zh_CN/LC_MESSAGES/nautilus.mo
 share/locale/zh_TW/LC_MESSAGES/nautilus.mo
-@dirrm share/gnome/pixmaps/nautilus/throbber
-@dirrm share/gnome/pixmaps/nautilus/tahoe
-@dirrm share/gnome/pixmaps/nautilus/sierra
-@dirrm share/gnome/pixmaps/nautilus/sidebar_tab_pieces
-@dirrm share/gnome/pixmaps/nautilus/gnome/throbber
-@dirrm share/gnome/pixmaps/nautilus/gnome/sidebar_tab_pieces
-@dirrm share/gnome/pixmaps/nautilus/gnome
 @dirrm share/gnome/pixmaps/nautilus/default
-@dirrm share/gnome/pixmaps/nautilus/crux_teal/throbber
-@dirrm share/gnome/pixmaps/nautilus/crux_teal/sidebar_tab_pieces
-@dirrm share/gnome/pixmaps/nautilus/crux_teal/backgrounds
-@dirrm share/gnome/pixmaps/nautilus/crux_teal
-@dirrm share/gnome/pixmaps/nautilus/crux_eggplant/throbber
-@dirrm share/gnome/pixmaps/nautilus/crux_eggplant/sidebar_tab_pieces
-@dirrm share/gnome/pixmaps/nautilus/crux_eggplant/backgrounds
-@dirrm share/gnome/pixmaps/nautilus/crux_eggplant
-@dirrm share/gnome/pixmaps/nautilus
-@dirrm share/gnome/nautilus/services/text
-@dirrm share/gnome/nautilus/services
-@dirrm share/gnome/nautilus/patterns
 @dirrm share/gnome/nautilus/glade
-@dirrm share/gnome/nautilus/emblems
-@dirrm share/gnome/nautilus
-@dirrm include/libnautilus
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/nautilus/sidebar_panels/tree
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/nautilus/sidebar_panels
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/nautilus/preferences
@@ -622,7 +600,3 @@ share/locale/zh_TW/LC_MESSAGES/nautilus.mo
 @dirrm etc/gconf/gconf.xml.defaults/apps/nautilus/list_view
 @dirrm etc/gconf/gconf.xml.defaults/apps/nautilus/icon_view
 @dirrm etc/gconf/gconf.xml.defaults/apps/nautilus
-@dirrm etc/X11/sysconfig
-@dirrm etc/X11/starthere
-@dirrm etc/X11/serverconfig
-@dirrm etc/X11

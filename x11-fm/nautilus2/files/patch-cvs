@@ -1,0 +1,118 @@
+Index: src/nautilus-sidebar.c
+===================================================================
+RCS file: /cvs/gnome/nautilus/src/nautilus-sidebar.c,v
+retrieving revision 1.214
+retrieving revision 1.215
+diff -d -u -r1.214 -r1.215
+--- src/nautilus-sidebar.c	22 Jul 2002 18:03:44 -0000	1.214
++++ src/nautilus-sidebar.c	24 Jul 2002 20:20:51 -0000	1.215
+@@ -38,7 +38,6 @@
+ #include <bonobo/bonobo-exception.h>
+ 
+ #include <eel/eel-background.h>
+-#include <eel/eel-background-style.h>
+ #include <eel/eel-glib-extensions.h>
+ #include <eel/eel-gtk-extensions.h>
+ #include <eel/eel-gtk-macros.h>
+@@ -178,7 +177,7 @@
+ 	TABS_PART
+ } SidebarPart;
+ 
+-EEL_CLASS_BOILERPLATE (NautilusSidebar, nautilus_sidebar, GTK_TYPE_EVENT_BOX)
++EEL_CLASS_BOILERPLATE (NautilusSidebar, nautilus_sidebar, EEL_TYPE_BACKGROUND_BOX)
+ 
+ /* initializing the class object by installing the operations we override */
+ static void
+@@ -1713,15 +1712,10 @@
+ nautilus_sidebar_style_set (GtkWidget *widget, GtkStyle *previous_style)
+ {
+ 	NautilusSidebar *sidebar;
+-	GtkStyle *style;
+ 
+ 	sidebar = NAUTILUS_SIDEBAR (widget);
+ 
+-	style = gtk_widget_get_style (widget);
+-
+-	/* This is slightly hackish */
+-	if (!EEL_IS_BACKGROUND_STYLE (style))
+-		nautilus_sidebar_theme_changed (sidebar);
++	nautilus_sidebar_theme_changed (sidebar);
+ }
+ 
+ void
+Index: src/nautilus-sidebar.h
+===================================================================
+RCS file: /cvs/gnome/nautilus/src/nautilus-sidebar.h,v
+retrieving revision 1.15
+retrieving revision 1.16
+diff -d -u -r1.15 -r1.16
+--- src/nautilus-sidebar.h	7 Mar 2002 14:02:19 -0000	1.15
++++ src/nautilus-sidebar.h	24 Jul 2002 20:20:51 -0000	1.16
+@@ -28,7 +28,8 @@
+ #ifndef NAUTILUS_SIDEBAR_H
+ #define NAUTILUS_SIDEBAR_H
+ 
+-#include <gtk/gtkeventbox.h>
++#include <eel/eel-background-box.h>
++
+ #include "nautilus-view-frame.h"
+ 
+ #define NAUTILUS_TYPE_SIDEBAR \
+@@ -45,12 +46,12 @@
+ typedef struct NautilusSidebarDetails NautilusSidebarDetails;
+ 
+ typedef struct {
+-	GtkEventBox parent_slot;
++	EelBackgroundBox parent_slot;
+ 	NautilusSidebarDetails *details;
+ } NautilusSidebar;
+ 
+ typedef struct {
+-	GtkEventBoxClass parent_slot;
++	EelBackgroundBoxClass parent_slot;
+ 	
+ 	void (*location_changed) (NautilusSidebar *sidebar,
+ 				  const char *location);
+Index: src/nautilus-window-manage-views.c
+===================================================================
+RCS file: /cvs/gnome/nautilus/src/nautilus-window-manage-views.c,v
+retrieving revision 1.305
+retrieving revision 1.306
+diff -d -u -r1.305 -r1.306
+--- src/nautilus-window-manage-views.c	18 Jul 2002 05:58:20 -0000	1.305
++++ src/nautilus-window-manage-views.c	24 Jul 2002 16:26:19 -0000	1.306
+@@ -231,7 +231,7 @@
+         	nautilus_sidebar_set_title (window->sidebar, title);
+ 	}
+         
+-        if (title [0] != '\0' &&
++        if (title [0] != '\0' && window->current_location_bookmark &&
+             nautilus_bookmark_set_name (window->current_location_bookmark, title)) {
+                 /* Name of item in history list changed, tell listeners. */
+                 nautilus_send_history_list_changed ();
+Index: src/nautilus-window.c
+===================================================================
+RCS file: /cvs/gnome/nautilus/src/nautilus-window.c,v
+retrieving revision 1.392
+retrieving revision 1.393
+diff -d -u -r1.392 -r1.393
+--- src/nautilus-window.c	18 Jul 2002 05:58:21 -0000	1.392
++++ src/nautilus-window.c	24 Jul 2002 07:45:10 -0000	1.393
+@@ -788,10 +788,16 @@
+ 
+ 	nautilus_window_manage_views_destroy (window);
+ 
++	window->sidebar = NULL;
+ 	eel_g_object_list_free (window->sidebar_panels);
+ 	window->sidebar_panels = NULL;
+ 
+-	if (window->content_view != NULL) {
++	window->view_as_option_menu = NULL;
++	window->navigation_bar = NULL;
++	window->content_hbox = NULL;
++	window->zoom_control = NULL;
++
++	if (window->content_view) {
+ 		gtk_object_destroy (GTK_OBJECT (window->content_view));
+ 		window->content_view = NULL;
+ 	}
