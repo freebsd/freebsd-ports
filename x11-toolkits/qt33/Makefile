@@ -18,7 +18,7 @@ DISTNAME=	qt-x11-free-${PORTVERSION}
 DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	A C++ X GUI toolkit
+COMMENT=	Multiplatform C++ application framework
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 
