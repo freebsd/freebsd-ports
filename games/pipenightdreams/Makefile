@@ -19,16 +19,18 @@ GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}" CPPFLAGS="-I${LOCALBASE}/include"
+USE_REINPLACE=	yes
 
 MAN6=		pipenightdreams.6
 
-pre-patch:
-	@${PERL} -pi -e 's|"SDL/SDL|"SDL|g ; s|<SDL/SDL|<SDL|g; \
+post-patch:
+	${REINPLACE_CMD} 's|"SDL/SDL|"SDL|g ; s|<SDL/SDL|<SDL|g; \
 		s|SDL_LIBSS|SDL_LIBS|g; s|datadir/games|datadir|;' \
 		${WRKSRC}/configure
-	@find ${WRKSRC} -name Makefile.in | \
-		xargs ${PERL} -pi -e 's|/games/|/|g; \
+	${FIND} ${WRKSRC} -name Makefile.in | \
+		${XARGS} ${REINPLACE_CMD} 's|/games/|/|g; \
 			s/^pipenightdreams_LDADD.+//g;'
-	@${PERL} -pi -e "s|/usr/share/games|${LOCALBASE}/share|g" ${WRKSRC}/src/main.cpp
+	${REINPLACE_CMD} "s|/usr/share/games|${LOCALBASE}/share|g" \
+		${WRKSRC}/src/main.cpp
 
 .include <bsd.port.mk>
