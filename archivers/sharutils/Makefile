@@ -20,5 +20,6 @@ CONFIGURE_ARGS=	--program-prefix=g --disable-uucode --disable-nls
 INSTALL_TARGET=	install install-man
 MAN1=		gshar.1 gunshar.1
 INFO=		remsync sharutils
+PLIST_FILES=	bin/gmail-files bin/gmailshar bin/gremsync bin/gshar bin/gunshar
 
 .include <bsd.port.mk>
