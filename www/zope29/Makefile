@@ -17,7 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An object-based web application platform
 
 USE_PYTHON=	yes
-PYTHON_VERSION=	python2.1
+PYTHON_VERSION?=python2.1
 
 DIST_SUBDIR=	zope
 
