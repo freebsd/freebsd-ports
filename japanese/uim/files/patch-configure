@@ -1,6 +1,6 @@
---- configure.orig	Wed Dec 31 01:26:36 2003
-+++ configure	Wed Dec 31 23:56:57 2003
-@@ -19085,6 +19085,7 @@
+--- configure.orig	Tue Feb  3 02:41:54 2004
++++ configure	Mon Feb  9 00:06:45 2004
+@@ -19045,6 +19045,7 @@
  
  # This can be used to rebuild libtool when needed
  LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
@@ -8,13 +8,15 @@
  
  # Always use our own libtool.
  LIBTOOL='$(SHELL) $(top_builddir)/libtool'
-@@ -19223,11 +19224,6 @@
+@@ -19183,13 +19184,6 @@
  if test -z "`$INTLTOOL_PERL -v | fgrep '5.' 2> /dev/null`"; then
     { { echo "$as_me:$LINENO: error: perl 5.x required for intltool" >&5
  echo "$as_me: error: perl 5.x required for intltool" >&2;}
 -   { (exit 1); exit 1; }; }
 -fi
--if ! `perl -e "require XML::Parser" 2>/dev/null`; then
+-if `perl -e "require XML::Parser" 2>/dev/null`; then
+-:
+-else
 -   { { echo "$as_me:$LINENO: error: XML::Parser perl module is required for intltool" >&5
 -echo "$as_me: error: XML::Parser perl module is required for intltool" >&2;}
     { (exit 1); exit 1; }; }
