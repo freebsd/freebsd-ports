@@ -1,0 +1,14 @@
+--- src/lib/Unidraw/Imakefile.orig	Wed Dec 29 00:22:37 1999
++++ src/lib/Unidraw/Imakefile	Wed Dec 29 00:25:23 1999
+@@ -5,7 +5,11 @@
+ #ifdef InObjectCodeDir
+ 
+ LIB = Unidraw
++.if defined(PORTOBJFORMAT) && ($(PORTOBJFORMAT) == "elf")
++VERSION = 3
++.else
+ VERSION = 3.1
++.endif
+ 
+ MakeLibrary($(LIB),$(VERSION))
+ 

@@ -1,0 +1,15 @@
+--- src/bin/dclock/segment.c.orig	Tue Dec 28 22:51:59 1999
++++ src/bin/dclock/segment.c	Tue Dec 28 22:52:17 1999
+@@ -41,10 +41,10 @@
+ 
+ Pattern* Segment::MakePattern (int seed) {
+     Pattern* pat;
+-    int dat[16];
++    int dat[16], i;
+     unsigned int Row[4];
+ 
+-    for (int i = 0; i <= 3; i++) {
++    for (i = 0; i <= 3; i++) {
+ 	Row[i] = seed & 0xF;
+ 	Row[i] |= Row[i]<<4;
+ 	Row[i] |= Row[i]<<8;

@@ -1,0 +1,17 @@
+--- src/bin/ibuild/ibvarviews.c.orig	Wed Dec 29 00:09:20 1999
++++ src/bin/ibuild/ibvarviews.c	Wed Dec 29 00:09:52 1999
+@@ -1374,12 +1374,13 @@
+     if (strcmp(orig, subclass) != 0) {
+         if (*subclass != '\0') {
+             if (strcmp(subclass, baseclass) != 0) {
++		UList* i;
+                 GetConflictCmd conflictCmd(
+                     (GraphicComp*) _icomp->GetRoot(), subclass, true
+                 );
+                 conflictCmd.Execute();
+                 UList* cl = conflictCmd.GetConflict();
+-                for(UList* i = cl->First(); i != cl->End(); i = i->Next()) {
++                for(i = cl->First(); i != cl->End(); i = i->Next()) {
+                     StateVar* state = (StateVar*) (*i)();
+                     if (state->IsA(SUBCLASSNAME_VAR) && state != subvar) {
+                         SubclassNameVar* svar = (SubclassNameVar*) state;

@@ -1,0 +1,12 @@
+--- src/bin/ibuild/ibcatalog.c.orig	Tue Dec 28 23:51:30 1999
++++ src/bin/ibuild/ibcatalog.c	Tue Dec 28 23:51:44 1999
+@@ -614,7 +614,8 @@
+ 		graylevel = CalcGrayLevel(data[0]);
+ 	    }
+ 	} else if (graylevel == -1) {
+-	    for (int i = 0; in >> _buf && i < patternHeight; i++) {
++	    int i;
++	    for (i = 0; in >> _buf && i < patternHeight; i++) {
+ 		if (_buf[0] == '>' || sscanf(_buf, "%x", &data[i]) != 1) {
+ 		    break;
+ 		}

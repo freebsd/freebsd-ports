@@ -1,0 +1,17 @@
+--- src/bin/doc/Keymap.c.orig	Tue Dec 28 23:21:41 1999
++++ src/bin/doc/Keymap.c	Tue Dec 28 23:22:00 1999
+@@ -105,12 +105,12 @@
+     ) {
+         _viewer->ref();
+         ItemView* view = _viewer->focus();
+-        long count = _info->count();
++        long count = _info->count(), i;
+         int key = s[0];
+         if (key < 0) {
+             key += 256;
+         }
+-        for (long i = 0; i < count; ++i) {
++        for (i = 0; i < count; ++i) {
+             DocKeymapInfo& info = _info->item_ref(i);
+             if (info._key == key) {
+                 boolean pending_repair;
