@@ -11,7 +11,7 @@ CATEGORIES=	games kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	kpacman
 
-MAINTAINER=	arved@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Pacman Clone for KDE
 
 LIB_DEPENDS=	kdegames.3:${PORTSDIR}/games/kdegames3

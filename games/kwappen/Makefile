@@ -10,7 +10,7 @@ PORTREVISION=	1
 CATEGORIES=	games kde
 MASTER_SITES=	http://www.lcs-chemie.de/
 
-MAINTAINER=	arved@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	KDE board game
 
 USE_KDELIBS_VER=	3
