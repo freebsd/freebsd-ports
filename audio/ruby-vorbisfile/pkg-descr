@@ -1,0 +1,4 @@
+ruby-vorbisfile is a Ruby extension wrapping libvorbisfile.
+
+Author:	Rik Hemsley <rik@kde.org>
+WWW:	http://rikkus.info/ruby_vorbisfile.html

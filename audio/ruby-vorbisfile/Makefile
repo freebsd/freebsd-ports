@@ -1,0 +1,37 @@
+# New ports collection makefile for:	ruby-vorbisfile
+# Date created:		5 October 2002
+# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	vorbisfile
+PORTVERSION=	0.2
+CATEGORIES=	audio ruby
+MASTER_SITES=	 http://rikkus.info/arch/
+PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
+DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
+DIST_SUBDIR=	ruby
+
+MAINTAINER=	knu@FreeBSD.org
+
+LIB_DEPENDS=	vorbis.2:${PORTSDIR}/audio/libvorbis
+
+USE_RUBY=	yes
+USE_RUBY_EXTCONF=	yes
+
+INSTALL_TARGET=	site-install
+
+DOCS=		ChangeLog README
+
+post-install:
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${RUBY_EXAMPLESDIR}/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/test.rb ${RUBY_EXAMPLESDIR}/${PORTNAME}/
+	${MKDIR} ${RUBY_DOCDIR}/${PORTNAME}
+.for f in ${DOCS}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/${PORTNAME}/
+.endfor
+.endif
+
+.include <bsd.port.mk>
