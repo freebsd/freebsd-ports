@@ -3,7 +3,7 @@
 # Date created:        10 June 1997
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.3 1997/09/14 19:54:23 max Exp $
+# $Id: Makefile,v 1.4 1997/09/14 19:58:23 max Exp $
 #
 
 DISTNAME=	enl_DR-0.12.3
@@ -15,9 +15,6 @@ MASTER_SITES=	http://www.rasterman.com/ftp/ \
 MAINTAINER=	vanilla@MinJe.com.TW
 
 LIB_DEPENDS=	Im\\.3\\.:${PORTSDIR}/graphics/imlib
-RUN_DEPENDS=	djpeg:${PORTSDIR}/graphics/jpeg \
-		tgatoppm:${PORTSDIR}/graphics/netpbm \
-		convert:${PORTSDIR}/graphics/ImageMagick
 
 USE_GMAKE=	yes
 USE_IMAKE=	yes
