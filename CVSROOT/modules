@@ -617,6 +617,7 @@ caitoo		ports/ftp/caitoo
 cal		src/usr.bin/cal
 calamaris	ports/www/calamaris
 calc		ports/math/calc
+calcoo		ports/math/calcoo
 calctool	ports/math/calctool
 calendar	src/usr.bin/calendar
 calife		ports/security/calife
