@@ -22,4 +22,7 @@ USE_XLIB=	YES
 pre-install:
 	${MKDIR} ${PREFIX}/include/gd
 
+post-install:
+	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
+
 .include <bsd.port.mk>
