@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.78 1999/04/03 01:48:28 steve Exp $
+# $Id: Makefile,v 1.79 1999/04/12 00:35:31 jseger Exp $
 #
 
     SUBDIR += amp
@@ -7,6 +7,7 @@
     SUBDIR += cam
     SUBDIR += cdd
     SUBDIR += cdplay
+    SUBDIR += cmp3
     SUBDIR += dagrab
     SUBDIR += dap
     SUBDIR += esound
