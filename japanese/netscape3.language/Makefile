@@ -3,7 +3,7 @@
 # Date created:		17 November 1997
 # Whom:			SADA Kenji <sada@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.4 1998/12/10 15:10:19 sada Exp $
+# $Id: Makefile,v 1.5 1999/02/03 11:11:48 asami Exp $
 #
 
 DISTNAME=	ja-netscape-3.04
@@ -25,7 +25,7 @@ NO_WRKSUBDIR=	YES
 NO_BUILD=	YES
 
 # This directory is hard-coded into the netscape binary
-LIBDIR=		/usr/local/lib/netscape
+LIBDIR=		${PREFIX}/lib/netscape
 
 BINDIR=		${PREFIX}/bin
 NLSDIR=		${LIBDIR}/nls

@@ -3,7 +3,7 @@
 # Date created:		4 Nov 1996
 # Whom:			Mita Yoshio <mita@jp.FreeBSD.org>
 #
-# $Id: Makefile,v 1.7 1997/11/22 01:38:46 asami Exp $
+# $Id: Makefile,v 1.8 1999/05/04 10:29:05 kuriyama Exp $
 #
 
 DISTNAME?=	ja-jlatex209-a17-n152
@@ -50,7 +50,7 @@ pre-build:
 post-install:
 .if !defined(BATCH)
 	@(\
-	  if [ -e /usr/local/share/tex/BOTH ] ;  \
+	  if [ -e ${PREFIX}/share/tex/BOTH ] ;  \
 	    then ${SH} ${FILESDIR}/linkselect.sh ; \
 	  fi \
 	)
