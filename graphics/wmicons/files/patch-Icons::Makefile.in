@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- Icons/Makefile.in	2001/05/27 14:13:57	1.1
++++ Icons/Makefile.in	2001/05/27 14:14:26
+@@ -64,7 +64,7 @@
+ 
+ defsdatadir = @ICONSDIR@
+ 
+-defsdata_DATA =  	Ant.xpm 	Antennae.xpm 	Bee48x48.xpm 	Beer.xpm 	Bird.xpm 	Book.xpm 	Bookshelf.xpm 	Brain.xpm 	BulletHole.xpm 	CashRegister.xpm 	Clipboard.xpm 	Cola.xpm 	ColorGNU.xpm 	Correspondence.dir.xpm 	CrystalSkull.dir.xpm 	Daemon.xpm 	Detergent.dir.xpm 	DoomII.xpm 	Draw.xpm 	EscherCube.xpm 	EscherTriangle.xpm 	Fish5.dir.xpm 	Football.xpm 	FootballUS.xpm 	Gear.xpm 	Ghost.xpm 	HP-16C-48.xpm 	HandOpen.xpm 	HandPointing.xpm 	HandPointingLeft.xpm 	HandPunch.xpm 	HandReach.xpm 	HeroSandwich.dir.xpm 	LadyBug48x48.xpm 	Microphone.xpm 	Netscape.xpm 	NewsAgent.xpm 	PDF.xpm 	Padlock.xpm 	Paint.xpm 	Pencils.24.xpm 	Penguin.xpm 	Radio.xpm 	Reference.xpm 	Rumi.xpm 	Snail.xpm 	T2-Film.xpm 	TagIcon.xpm 	TapeIcon1.xpm 	TrueDie48.xpm 	WheelbarrowFull.xpm 	WordEditor.xpm 	Wrench-12bit.xpm 	bomb2.xpm 	inspect.xpm 	monitor.xpm 	paint.xpm 	tile.black.xpm 	tile.snow.xpm 	tile.xpm 	tile2.xpm 	xv.xpm
++defsdata_DATA =  	Ant.xpm 	Antennae.xpm 	Bee48x48.xpm 	Beer.xpm 	Bird.xpm 	Book.xpm 	Bookshelf.xpm 	Brain.xpm 	BulletHole.xpm 	CashRegister.xpm 	Clipboard.xpm 	Cola.xpm 	ColorGNU.xpm 	Correspondence.dir.xpm 	CrystalSkull.dir.xpm 	Daemon.xpm 	Detergent.dir.xpm 	DoomII.xpm 	Draw.xpm 	EscherCube.xpm 	EscherTriangle.xpm 	Fish5.dir.xpm 	Football.xpm 	FootballUS.xpm 	Gear.xpm 	Ghost.xpm 	HP-16C-48.xpm 	HandOpen.xpm 	HandPointing.xpm 	HandPointingLeft.xpm 	HandPunch.xpm 	HandReach.xpm 	HeroSandwich.dir.xpm 	LadyBug48x48.xpm 	Microphone.xpm 	Netscape.xpm 	NewsAgent.xpm 	PDF.xpm 	Padlock.xpm 	Paint.xpm 	Pencils.24.xpm 	Penguin.xpm 	Radio.xpm 	Reference.xpm 	Rumi.xpm 	Snail.xpm 	T2-Film.xpm 	TagIcon.xpm 	TapeIcon1.xpm 	TrueDie48.xpm 	WheelbarrowFull.xpm 	WordEditor.xpm 	Wrench-12bit.xpm 	bomb2.xpm 	inspect.xpm 	monitor.xpm 	paint.xpm 	tile.black.xpm 	tile.snow.xpm 	tile.xpm 	tile2.xpm
+ 
+ 
+ EXTRA_DIST = $(defsdata_DATA) mkMakefile
