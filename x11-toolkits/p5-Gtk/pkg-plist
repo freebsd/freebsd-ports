@@ -1,0 +1,13 @@
+lib/perl5/site_perl/Gtk.pm
+lib/perl5/site_perl/Gtk/Atoms.pm
+lib/perl5/site_perl/Gtk/Gdk.pm
+lib/perl5/site_perl/Gtk/Types.pm
+lib/perl5/site_perl/auto/Gtk/autosplit.ix
+lib/perl5/site_perl/auto/Gtk/Gdk/autosplit.ix
+lib/perl5/site_perl/i386-freebsd/auto/Gtk/.packlist
+lib/perl5/site_perl/i386-freebsd/auto/Gtk/Gtk.bs
+lib/perl5/site_perl/i386-freebsd/auto/Gtk/Gtk.so
+@dirrm lib/perl5/site_perl/i386-freebsd/auto/Gtk
+@dirrm lib/perl5/site_perl/auto/Gtk/Gdk
+@dirrm lib/perl5/site_perl/auto/Gtk
+@dirrm lib/perl5/site_perl/Gtk
