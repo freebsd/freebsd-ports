@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	gsl
-PORTVERSION=	0.3.9
+PORTVERSION=	0.4.6
 CATEGORIES=	math ruby
-MASTER_SITES=	http://www5d.biglobe.ne.jp/~ytsune/
+MASTER_SITES=	http://rubyforge.org/frs/download.php/887/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	rb-${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
@@ -26,6 +26,9 @@ CONFIGURE_ARGS=	-- --with-opt-dir="${LOCALBASE}"
 
 EXAMPLES_EN=	samples/*
 DOCS=		AUTHORS THANKS html rd
+
+post-extract:
+	${FIND} ${WRKSRC} '(' -name '.DS_Store' -o -name '*~' ')' -delete
 
 post-install:
 .if !defined(NOPORTDOCS)
