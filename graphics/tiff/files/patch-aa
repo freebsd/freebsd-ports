@@ -1,5 +1,5 @@
---- ./libtiff/Makefile.in.orig	Tue Apr 30 07:16:21 1996
-+++ ./libtiff/Makefile.in	Sun May 25 22:38:37 1997
+--- libtiff/Makefile.in.orig	Tue Apr 30 07:16:21 1996
++++ libtiff/Makefile.in	Fri Aug 22 00:49:37 1997
 @@ -62,7 +62,7 @@
  #
  CONF_LIBRARY=@CONF_JPEG@ @CONF_ZIP@
@@ -31,7 +31,7 @@
  
  #
  # NB: The configure script verifies that the configured
-@@ -159,47 +159,49 @@
+@@ -159,47 +159,50 @@
  
  # default IRIX DSO building rule
  IRIXdso: ${OBJS}
@@ -93,12 +93,13 @@
 -
 +	${LD} -o libtiff34.@DSOSUF@ -shared -error_unresolved ${OBJS} @LIBJPEG@ @LIBGZ@ -lc -lm
 +FREEBSDdso: ${OBJS}
-+	${LD} -Bshareable -o libtiff34.@DSOSUF_VERSION@ ${OBJS}
++	${LD} -Bshareable -x /usr/lib/c++rt0.o -o libtiff34.@DSOSUF_VERSION@ \
++		${OBJS} @LIBJPEG@ @LIBGZ@
 +	touch $@
  
  ${OBJS}: ${SRCDIR}/tiffio.h ${SRCDIR}/tiff.h ${SRCDIR}/tif_dir.h
  ${OBJS}: ${SRCDIR}/tiffcomp.h ${SRCDIR}/tiffiop.h ${SRCDIR}/tiffconf.h
-@@ -300,23 +302,23 @@
+@@ -300,23 +303,23 @@
  installHdrs: ${INCS}
  	${INSTALL} -idb tiff.sw.dev -m 755 -dir @DIR_INC@
  	for i in ${INCS}; do						\
@@ -127,7 +128,7 @@
  	if [ @DSO@dso != nodso ]; then					\
  	    ${MAKE} installDSO;						\
  	else								\
-@@ -327,4 +329,4 @@
+@@ -327,4 +330,4 @@
  	rm -f ${TARGETS} ${OBJS} core a.out \
  	    mkg3states tif_fax3sm.c \
  	    mkversion version.h \
