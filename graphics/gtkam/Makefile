@@ -1,12 +1,13 @@
 # New ports collection makefile for:	gtkam
-# Date created:				10 June 2002
-# Whom:					KATO Tsuguru <tkato@prontomail.com>
+# Date created:			10 June 2002
+# Whom:				ports@FreeBSD.org
 #
 # $FreeBSD$
 #
 
 PORTNAME=	gtkam
 PORTVERSION=	0.1.9
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gphoto
@@ -19,10 +20,8 @@ LIB_DEPENDS=	exif-gtk.4:${PORTSDIR}/graphics/libexif-gtk \
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
-USE_GNOMENG=	yes
-USE_GNOME=	gtk12 gdkpixbuf
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
@@ -46,8 +45,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|-g -Wall||g' ${WRKSRC}/configure
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
 		's| install-gtkamdocDATA||g ; \
-		 s|images/gtkam|gtkam/images|g'
-	@${REINPLACE_CMD} -e "s|^test_fsel_LDFLAGS =.*|test_fsel_LDFLAGS = \$$(EXIF_LIBS)|" ${WRKSRC}/test/Makefile.in
+		 s|images/gtkam|gtkam/images|g ; \
+		 s|^test_fsel_LDFLAGS =.*|test_fsel_LDFLAGS = \$$(EXIF_LIBS)|g'
 
 post-install:
 .if !defined(NOPORTDOCS)
