@@ -1,1 +1,5 @@
+bin/cdda2mp3.gogo
 bin/gogo
+share/doc/gogo/cdda2mp3.gogo.en
+share/doc/gogo/cdda2mp3.gogo.jp
+@dirrm share/doc/gogo
