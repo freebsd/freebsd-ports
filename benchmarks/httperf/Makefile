@@ -7,7 +7,7 @@
 
 PORTNAME=	httperf
 PORTVERSION=	0.8
-CATEGORIES=	www
+CATEGORIES=	benchmarks www
 MASTER_SITES=	ftp://ftp.hpl.hp.com/pub/httperf/
 
 MAINTAINER=	ports@FreeBSD.org

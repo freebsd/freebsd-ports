@@ -11,6 +11,7 @@
     SUBDIR += dbs
     SUBDIR += forkbomb
     SUBDIR += hpl
+    SUBDIR += httperf
     SUBDIR += iozone
     SUBDIR += iozone21
     SUBDIR += lmbench

@@ -3052,7 +3052,7 @@ http-analyze	ports/www/http-analyze
 http_get	ports/www/http_get
 http_load	ports/www/http_load
 http_ping	ports/net/http_ping
-httperf		ports/www/httperf
+httperf		ports/benchmarks/httperf
 httpgrabber	ports/www/httpgrabber
 httplog		ports/sysutils/httplog
 httptunnel	ports/www/httptunnel

@@ -145,7 +145,6 @@
     SUBDIR += http-analyze
     SUBDIR += http_get
     SUBDIR += http_load
-    SUBDIR += httperf
     SUBDIR += httpgrabber
     SUBDIR += httptunnel
     SUBDIR += httrack
