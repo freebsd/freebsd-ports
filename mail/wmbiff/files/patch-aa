@@ -1,0 +1,44 @@
+--- Makefile.orig	Fri Nov 19 16:27:15 1999
++++ Makefile	Fri Nov 19 16:30:36 1999
+@@ -1,9 +1,9 @@
+-prefix=
+-BIN=/usr/X11R6/bin
+-CONF=/etc
+-LIBDIR = -L/usr/X11R6/lib
++CC ?= gcc
++CFLAGS = -c -Wall
++CONF = ${X11BASE}/etc
++LIBDIR = -L${X11BASE}/lib
++INCLUDES = -I${X11BASE}/include
+ LIBS   = -lXpm -lXext -lX11
+-FLAGS = -O2
+ OBJS =	wmbiff.o \
+ 	../wmgeneral/wmgeneral.o \
+ 	../wmgeneral/misc.o \
+@@ -11,11 +11,10 @@
+ 
+ 
+ .c.o:
+-	cc -I/usr/X11R6/share/include $(FLAGS) -c -Wall $< -o $*.o
++	${CC} ${CFLAGS} ${INCLUDES} $< -o $*.o
+ 
+ wmbiff: $(OBJS)
+-	cc $(FLAGS) -o wmbiff $^ $(LIBDIR) $(LIBS)
+-	strip -s wmbiff
++	${CC} -o wmbiff $^ ${LIBDIR} ${LIBS}
+ 
+ all:: wmbiff
+ 
+@@ -26,11 +25,4 @@
+ 	rm -f wmbiff *~
+ 
+ install:: wmbiff
+-	cp -f wmbiff $(prefix)$(BIN)/
+-	chmod 755 $(prefix)$(BIN)/wmbiff
+-	strip -s $(prefix)$(BIN)/wmbiff
+-#	chown root:root $(prefix)$(BIN)/wminet
+-#	cp wminetrc $(HOME)/.wminetrc
+-#	chmod 600 $(HOME)/.wminetrc
+-#	cp wmbiffrc $(prefix)$(CONF)/wmbiffrc
+-#	chmod 644 $(prefix)$(CONF)/wmbiffrc
++	@/usr/bin/install -c -o 0 -g 0 -s -m 755 wmbiff ${X11BASE}/bin/wmbiff
