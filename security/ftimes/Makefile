@@ -26,4 +26,7 @@ CONFIGURE_ARGS=		--with-ssl=${OPENSSLBASE}
 
 MAN1=			ftimes.1
 
+post-install:
+	strip ${PREFIX}/bin/ftimes
+
 .include <bsd.port.mk>
