@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Math-FixedPrecision
-PORTVERSION=	0.11
+PORTVERSION=	0.12
 CATEGORIES=	math perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Math
@@ -21,7 +21,7 @@ BROKEN=		"Needs Perl 5.6.0 for Math::BigFloat"
 .endif
 
 USE_PERL5=	yes
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE= yes
 
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Math::FixedPrecision.3
