@@ -349,6 +349,7 @@
     SUBDIR += pcl-cvs-emacs
     SUBDIR += pcl-cvs-emacs20
     SUBDIR += pcre
+    SUBDIR += pedisassem
     SUBDIR += perforce
     SUBDIR += perltidy
     SUBDIR += pharmacy
