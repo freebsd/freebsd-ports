@@ -17,6 +17,7 @@ MAINTAINER=	greg@gregnet.net
 USE_X_PREFIX=	yes
 USE_GTK=	yes
 WANT_GNOME=	yes
+USE_GNOMELIBS=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
