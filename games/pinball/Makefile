@@ -44,10 +44,6 @@ DOCS=		README
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 502000
-BROKEN=		"Configure fails"
-.endif
-
 post-install:
 	@${MV} ${PREFIX}/bin/${MACHINE_ARCH}-unknown-freebsd${OSREL}-pinball \
 		${PREFIX}/bin/pinball
