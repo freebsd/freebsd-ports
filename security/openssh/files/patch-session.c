@@ -1,5 +1,5 @@
---- session.c.orig	Sun Jun 30 21:25:39 2002
-+++ session.c	Mon Jul  1 06:45:09 2002
+--- session.c.orig	Thu Oct 17 05:36:12 2002
++++ session.c	Thu Oct 17 05:46:14 2002
 @@ -58,6 +58,13 @@
  #include "session.h"
  #include "monitor_wrap.h"
@@ -14,43 +14,19 @@
  /* func */
  
  Session *session_new(void);
-@@ -437,6 +444,10 @@
- 	if (s == NULL)
- 		fatal("do_exec_no_pty: no session");
- 
-+#ifdef USE_PAM
-+	do_pam_setcred();
-+#endif /* USE_PAM */
-+
- 	session_proctitle(s);
- 
- 	/* Fork the child. */
-@@ -445,6 +456,13 @@
- 		log_init(__progname, options.log_level, options.log_facility, log_stderr);
- 
- 		/*
-+		 * Using login and executing a specific "command" are mutually
-+		 * exclusive, so turn off use_login if there's a command.
-+		 */
-+		if (command != NULL)
-+			options.use_login = 0;
-+
-+		/*
- 		 * Create a new session and process group since the 4.4BSD
- 		 * setlogin() affects the entire process group.
- 		 */
-@@ -539,17 +557,42 @@
+@@ -419,6 +426,9 @@
+ do_exec_no_pty(Session *s, const char *command)
  {
- 	int fdout, ptyfd, ttyfd, ptymaster;
  	pid_t pid;
 +#ifdef USE_PAM
 +	const char *shorttty;
 +#endif /* USE_PAM */
  
+ #ifdef USE_PIPES
+ 	int pin[2], pout[2], perr[2];
+@@ -437,6 +447,20 @@
  	if (s == NULL)
- 		fatal("do_exec_pty: no session");
- 	ptyfd = s->ptyfd;
- 	ttyfd = s->ttyfd;
+ 		fatal("do_exec_no_pty: no session");
  
 +#ifdef USE_PAM
 +	/* check if we have a pathname in the ttyname */
@@ -66,23 +42,24 @@
 +	do_pam_setcred();
 +#endif /* USE_PAM */
 +
- 	/* Fork the child. */
- 	if ((pid = fork()) == 0) {
+ 	session_proctitle(s);
  
- 		/* Child.  Reinitialize the log because the pid has changed. */
+ 	/* Fork the child. */
+@@ -447,6 +471,13 @@
  		log_init(__progname, options.log_level, options.log_facility, log_stderr);
-+
-+		/*
+ 
+ 		/*
 +		 * Using login and executing a specific "command" are mutually
 +		 * exclusive, so turn off use_login if there's a command.
 +		 */
 +		if (command != NULL)
 +			options.use_login = 0;
 +
- 		/* Close the master side of the pseudo tty. */
- 		close(ptyfd);
- 
-@@ -638,6 +681,18 @@
++		/*
+ 		 * Create a new session and process group since the 4.4BSD
+ 		 * setlogin() affects the entire process group.
+ 		 */
+@@ -641,6 +672,18 @@
  	struct sockaddr_storage from;
  	struct passwd * pw = s->pw;
  	pid_t pid = getpid();
@@ -101,9 +78,9 @@
  
  	/*
  	 * Get IP address of client. If the connection is not a socket, let
-@@ -660,10 +715,97 @@
+@@ -663,10 +706,97 @@
  		    options.verify_reverse_mapping),
- 		    (struct sockaddr *)&from);
+ 		    (struct sockaddr *)&from, fromlen);
  
 +#ifdef USE_PAM
 +	/*
@@ -200,7 +177,7 @@
  		time_string = ctime(&s->last_login_time);
  		if (strchr(time_string, '\n'))
  			*strchr(time_string, '\n') = 0;
-@@ -674,7 +816,30 @@
+@@ -677,7 +807,30 @@
  			    s->hostname);
  	}
  
@@ -232,7 +209,7 @@
  }
  
  /*
-@@ -690,9 +855,9 @@
+@@ -693,9 +846,9 @@
  #ifdef HAVE_LOGIN_CAP
  		f = fopen(login_getcapstr(lc, "welcome", "/etc/motd",
  		    "/etc/motd"), "r");
@@ -244,7 +221,7 @@
  		if (f) {
  			while (fgets(buf, sizeof(buf), f))
  				fputs(buf, stdout);
-@@ -719,10 +884,10 @@
+@@ -722,10 +875,10 @@
  #ifdef HAVE_LOGIN_CAP
  	if (login_getcapbool(lc, "hushlogin", 0) || stat(buf, &st) >= 0)
  		return 1;
@@ -257,7 +234,7 @@
  	return 0;
  }
  
-@@ -813,12 +978,39 @@
+@@ -816,12 +969,39 @@
  	fclose(f);
  }
  
@@ -297,28 +274,19 @@
  	struct passwd *pw = s->pw;
  
  	/* Initialize the environment. */
-@@ -826,17 +1018,15 @@
+@@ -829,6 +1009,11 @@
  	env = xmalloc(envsize * sizeof(char *));
  	env[0] = NULL;
  
-+	if (getenv("TZ"))
-+		child_set_env(&env, &envsize, "TZ", getenv("TZ"));
- 	if (!options.use_login) {
++#ifdef __FreeBSD__
++ 	if (getenv("TZ"))
++ 		child_set_env(&env, &envsize, "TZ", getenv("TZ"));
++#endif /* __FreeBSD__ */
 +
+ 	if (!options.use_login) {
  		/* Set basic environment. */
  		child_set_env(&env, &envsize, "USER", pw->pw_name);
- 		child_set_env(&env, &envsize, "LOGNAME", pw->pw_name);
- 		child_set_env(&env, &envsize, "HOME", pw->pw_dir);
--#ifdef HAVE_LOGIN_CAP
--		(void) setusercontext(lc, pw, pw->pw_uid, LOGIN_SETPATH);
--		child_set_env(&env, &envsize, "PATH", getenv("PATH"));
--#else
- 		child_set_env(&env, &envsize, "PATH", _PATH_STDPATH);
--#endif
- 
- 		snprintf(buf, sizeof buf, "%.200s/%.50s",
- 			 _PATH_MAILDIR, pw->pw_name);
-@@ -844,9 +1034,21 @@
+@@ -849,9 +1034,21 @@
  
  		/* Normal systems set SHELL by default. */
  		child_set_env(&env, &envsize, "SHELL", shell);
@@ -342,7 +310,7 @@
  
  	/* Set custom environment options from RSA authentication. */
  	if (!options.use_login) {
-@@ -889,6 +1091,10 @@
+@@ -900,6 +1097,10 @@
  		child_set_env(&env, &envsize, "KRB5CCNAME",
  		    s->authctxt->krb5_ticket_file);
  #endif
@@ -353,7 +321,7 @@
  	if (auth_sock_name != NULL)
  		child_set_env(&env, &envsize, SSH_AUTHSOCKET_ENV_NAME,
  		    auth_sock_name);
-@@ -1005,7 +1211,7 @@
+@@ -1018,7 +1219,7 @@
  	if (getuid() == 0 || geteuid() == 0) {
  #ifdef HAVE_LOGIN_CAP
  		if (setusercontext(lc, pw, pw->pw_uid,
@@ -362,7 +330,7 @@
  			perror("unable to set user context");
  			exit(1);
  		}
-@@ -1045,6 +1251,36 @@
+@@ -1058,6 +1259,36 @@
  	exit(1);
  }
  
@@ -399,7 +367,7 @@
  /*
   * Performs common processing for the child, such as setting up the
   * environment, closing extra file descriptors, setting the user and group
-@@ -1123,7 +1359,7 @@
+@@ -1136,7 +1367,7 @@
  	 * initgroups, because at least on Solaris 2.3 it leaves file
  	 * descriptors open.
  	 */
@@ -408,7 +376,7 @@
  		close(i);
  
  	/*
-@@ -1153,6 +1389,31 @@
+@@ -1166,6 +1397,31 @@
  			exit(1);
  #endif
  	}
