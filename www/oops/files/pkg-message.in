@@ -1,0 +1,11 @@
+===>  CONFIGURATION NOTE:
+	To setup oops, you should check %%PREFIX%%/etc/oops/oops.cfg
+	(a copy of %%PREFIX%%/etc/oops/oops.cfg.sample) as well as
+	other files in %%PREFIX%%/etc/oops before running oops.
+
+	If you use storages, do not forget to format them before
+	the first use (oops -z -c %%PREFIX%%/etc/oops/oops.cfg).
+===>  BE CAREFULL HOW TO BOOT on 1.5.24 and above:
+	To run oops server from startup, add oops_enable="YES"
+	in your /etc/rc.conf.
+

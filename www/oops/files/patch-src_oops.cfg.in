@@ -1,0 +1,114 @@
+
+$FreeBSD$
+
+--- src/oops.cfg.in.orig
++++ src/oops.cfg.in
+@@ -8,8 +8,7 @@
+ #  nameservers. Use your own, not our.
+ ## 
+ 
+-nameserver 195.114.128.50
+-nameserver 193.219.193.130
++nameserver 127.0.0.1
+ 
+ ##
+ #  Ports and address to use for HTTP and ICP
+@@ -38,14 +37,14 @@
+ #  When used in form 'filename [{N S}] [[un]buffered]'
+ #  will be rotated automatically (up to N files up to S bytes in size)
+ ##
+-logfile		/dev/tty
+-#logfile	@OOPS_HOME@/logs/oops.log { 3 1m } unbuffered
++#logfile		/dev/tty
++logfile	/var/log/oops/oops.log { 3 1m } unbuffered
+ 
+ ##
+ #  Accesslog - the same as for squid. Re rotating - see note for logfile
+ ##
+-accesslog	/dev/tty
+-#accesslog	@OOPS_HOME@/logs/access.log
++#accesslog	/dev/tty
++accesslog	/var/log/oops/access.log { 3 1m } unbuffered
+ 
+ ##
+ #  Pidfile. for kill -1 `cat oops.pid` and for locking.
+@@ -325,16 +324,15 @@
+ ##
+ #  Never use "parent" when connecting to server in these domains
+ ##
+-local-domain	odessa.ua od.ua
+-local-domain	odessa.net paco.net netsy.net netsy.com te.net.ua
++#local-domain	myowndomain.tld
+ 
+-local-networks	195.114.128/19 10/8 192.168/16
++local-networks	10/8 192.168/16
+ 
+ #
+ # Groups
+ #
+ 
+-group	paco	{
++group	mynet	{
+ ##
+ #	You can describe group ip adresses here, or using src_ip acl's
+ #	with networks_acl directive.
+@@ -344,7 +342,7 @@
+ #       networks are ordered by masklen - longest masks(most specific networks)
+ #	are checked first.
+ ##
+-	networks	195.114.128/19 127/8 195.5.40.93/32 ;
++	networks	192.168/16 127/8 ;
+ #	networks_acl	LOCAL_NETWORKS !BAD_NETWORKS ;
+ 	badports	[0:79],110,138,139,513,[6000:6010] ;
+ 	miss		allow;
+@@ -697,15 +695,15 @@
+ #	format	"%h->%A %l %u [%t] \"%r\" %s %b \"%{User-Agent}i\""
+ #}
+ 
+-module	berkeley_db {
++#module	berkeley_db {
+     ##
+     #  dbhome - directory where all DB indexes reside. Use full path
+     #	    this directory must exist.
+     #  dbname - filename for index file. Use just filename (no full path)
+     ##
+ 
+-	dbhome	@OOPS_HOME@/DB
+-	dbname	dburl
++	#dbhome	@OOPS_HOME@/DB
++	#dbname	dburl
+ 
+     ##
+     #  This parameter specifies internal cache size of BerkeleyDB.
+@@ -719,9 +717,9 @@
+     ##
+     #db_cache_mem	4m
+ 
+-}
++#}
+ 
+-#module	gigabase_db {
++module	gigabase_db {
+ #    This module enable GigaBASE as database engine.
+ #    You can use berkeley_db or gigabase_db, not both.
+ #    Also, important notice - indexes created with different modules
+@@ -732,8 +730,8 @@
+ #    #  dbname - filename for index file. Use just filename (no full path)
+ #    ##
+ #
+-#	dbhome	@OOPS_HOME@/DB
+-#	dbname	gdburl
++	dbhome	@OOPS_HOME@/DB
++	dbname	gdburl
+ #
+ #    ##
+ #    #  This parameter specifies internal cache size of BerkeleyDB.
+@@ -747,7 +745,7 @@
+ #    ##
+ #    #db_cache_mem	4m
+ #
+-#}
++}
+ 
+ #module wccp2 {
+ # Cache identity.

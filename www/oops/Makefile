@@ -7,7 +7,6 @@
 
 PORTNAME=	oops
 PORTVERSION=	${OOPSVERSION}
-PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	http://oops-cache.org/
 DISTNAME=	${PORTNAME}-${OOPSVERSION}
@@ -17,10 +16,10 @@ COMMENT=	A caching web proxy server
 
 BUILD_DEPENDS+=	gawk:${PORTSDIR}/lang/gawk
 
-OOPSVERSION=	1.5.23
+OOPSVERSION=	1.5.24
 
 USE_SUBMAKE=	yes
-USE_AUTOCONF_VER=	213
+USE_AUTOCONF_VER=	259
 CONFIGURE_ARGS?=--sbindir=${PREFIX}/sbin \
 		--sysconfdir=${PREFIX}/etc/oops \
 		--localstatedir=${OOPSVAR} \
@@ -34,10 +33,20 @@ CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -fPIC" \
 
 MAN8=		oops.8 oopsctl.8
 OOPSVAR=	/var/run/oops
+OOPSLOG=	/var/log/oops
 
 SCRIPTS_ENV+=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
 		TOUCH="${TOUCH}" \
 		MKDIR="${MKDIR}"
+
+USE_RC_SUBR=	YES
+PKGMESSAGE=	${WRKDIR}/pkg-message
+SUB_FILES=	pkg-message
+
+.if defined(BATCH)
+LIB_DEPENDS+=	gigabase_r.2:${PORTSDIR}/databases/gigabase
+CONFIGURE_ARGS+=	--without-DB
+.endif
 
 pre-fetch:
 	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure.oops
@@ -48,6 +57,10 @@ pre-fetch:
 
 pre-configure:
 	@cd ${WRKSRC} && ${AUTOHEADER}
+
+post-build:
+	@${SED} -e 's=%%RC_SUBR%%=${RC_SUBR}=g;s=%%PREFIX%%=${PREFIX}=g' \
+		${FILESDIR}/${PORTNAME}.sh > ${WRKDIR}/${PORTNAME}.sh
 
 pre-install:
 	@PKG_PREFIX=${PREFIX} BATCH=${BATCH} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
@@ -60,16 +73,12 @@ post-install:
 	@${INSTALL_MAN} ${WRKSRC}/doc/oopsctl.8 ${PREFIX}/man/man8
 .endif
 	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-	@ ${ECHO} "------------------------------------------------------------"
-	@ ${ECHO} "Sample of configuration file placed at ${PREFIX}/etc/oops !"
-	@ ${ECHO} "Copy oops.cfg.sample to oops.cfg, then run server..."
-	@ ${ECHO} "------------------------------------------------------------"
-	@${MKDIR} ${OOPSVAR}
-	@${CHMOD} 750 ${OOPSVAR}
+	@${MKDIR} -m 750 ${OOPSVAR}
 	@${CHOWN} oops ${OOPSVAR}
-
-	${ECHO} "Installing ${PREFIX}/etc/rc.d/oops.sh.sample startup file."
-	${INSTALL_SCRIPT} -m 751 ${FILESDIR}/oops.sh ${PREFIX}/etc/rc.d/oops.sh.sample
+	@${MKDIR} -m 750 ${OOPSLOG}
+	@${CHOWN} oops ${OOPSLOG}
+	${INSTALL_SCRIPT} ${WRKDIR}/oops.sh ${PREFIX}/etc/rc.d
+	@${CAT} ${PKGMESSAGE}
 
 post-clean:
 	@${RM} -f ${WRKDIRPREFIX}${.CURDIR}/Makefile.inc
