@@ -1,10 +1,10 @@
-include/gtkDPS/fonts.h
+bin/gtkDPS-config
 include/gtkDPS/gdkDPS.h
-include/gtkDPS/gdkDPS_gdkutils.h
 include/gtkDPS/gtkDPS.h
 include/gtkDPS/gtkDPSarea.h
 include/gtkDPS/gtkDPScontext.h
-include/gtkDPS/gtkDPSfontpanel.h
+include/gtkDPS/gdkDPSfont.h
+include/gtkDPS/gtkDPSfontsel.h
 include/gtkDPS/gtkDPSwidget.h
 lib/libgtkDPS.a
 lib/libgtkDPS.so
