@@ -1,0 +1,13 @@
+--- Makefile.orig	Tue Jul 22 21:21:57 2003
++++ Makefile	Tue Jul 22 21:22:04 2003
+@@ -2,8 +2,8 @@
+ 
+ # variables
+ 
+-CC = gcc
+-CFLAGS = -Wall -O2
++CC ?= gcc
++CFLAGS ?= -Wall -O2
+ 
+ COMMON_OBJS = error.o net6emu.o
+ 

@@ -371,6 +371,7 @@
     SUBDIR += netsed
     SUBDIR += netspeed_applet
     SUBDIR += netspoc
+    SUBDIR += netstrain
     SUBDIR += nettest
     SUBDIR += ngrep
     SUBDIR += ngrep-lib
