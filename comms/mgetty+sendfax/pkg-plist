@@ -8,11 +8,9 @@ bin/newslock
 bin/mg.echo
 bin/pbm2g3
 etc/mgetty+sendfax/dialin.config
-etc/mgetty+sendfax/faxheader
 etc/mgetty+sendfax/faxrunq.config
 etc/mgetty+sendfax/login.config
-etc/mgetty+sendfax/mgetty.config
-etc/mgetty+sendfax/sendfax.config
+@unexec rm -f %D/etc/mgetty+sendfax/faxheader %D/etc/mgetty+sendfax/mgetty.config* %D/etc/mgetty+sendfax/sendfax.config*
 @unexec install-info --delete %D/info/mgetty.info %D/info/dir
 info/mgetty.info
 info/mgetty.info-1
