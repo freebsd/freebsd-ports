@@ -7,10 +7,9 @@
 #
 
 PORTNAME=	xmlwrapp
-PORTVERSION=	0.4.1
-PORTREVISION=	1
+PORTVERSION=	0.4.3
 CATEGORIES=	textproc
-MASTER_SITES=	http://pmade.org/pjones/software/xmlwrapp/download/
+MASTER_SITES=	http://pmade.org/software/xmlwrapp/download/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A modern style C++ library for working with XML data
