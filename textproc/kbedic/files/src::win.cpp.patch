@@ -1,0 +1,11 @@
+--- src/win.cpp.old	Fri Dec 12 04:29:29 2003
++++ src/win.cpp	Fri Dec 12 04:29:38 2003
+@@ -218,7 +218,7 @@
+ // Create GUI
+ // Init objects and set default variables
+ //========================================================================
+-Win::Win(QWidget *parent = 0, const char *name = 0):QMainWindow(parent, name) {
++Win::Win(QWidget *parent, const char *name):QMainWindow(parent, name) {
+ 
+ 	// Init some variables
+ 	fromSystemHighlighted = false;

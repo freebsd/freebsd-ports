@@ -29,15 +29,13 @@ CONFIGURE_ARGS=	--datadir=${DICT_DIR}
 USE_QT_VER=	2
 USE_X_PREFIX=	yes
 CONFIGURE_ARGS+=	--with-x
+EXTRA_PATCHES+=	${FILESDIR}/src::win.cpp.patch
 .else
 PLIST=		${PKGDIR}/pkg-plist.console
+EXTRA_PATCHES+=	${FILESDIR}/src::cbedic.cpp.patch
 .endif
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile"
-.endif
 
 pre-fetch:
 		@${ECHO_MSG} "	--- Dictionaries setup information ---"
