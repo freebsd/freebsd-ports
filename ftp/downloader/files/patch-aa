@@ -1,24 +1,26 @@
-diff -ru ./Makefile ../../nt-1.07.1/main/Makefile
---- ./Makefile	Wed Nov  3 05:20:49 1999
-+++ ../../nt-1.07.1/main/Makefile	Thu Nov 25 22:18:21 1999
-@@ -1,13 +1,13 @@
--CC = gcc
--CCPLUS = c++
-+CC = $(CC)
-+CCPLUS = $(CXX)
+--- Makefile.orig	Sat Jan 29 05:02:17 2000
++++ Makefile	Sun Feb 13 13:18:26 2000
+@@ -1,21 +1,15 @@
+-CXX = c++
  
  NLS=-DENABLE_NLS # Remove or comment this line to disable gettext
+-ifeq ($(DEST),)
 -DEST=/usr/local
-+DEST=$(PREFIX)
+-endif
++DEST?=$(PREFIX)
  LOCALEDIR=$(DEST)/share/locale
--LIBS=-lpthread
+ PTHREAD=-lpthread
+-GTKCONFIG=gtk-config
+ GLIBCONFIG=glib-config
+ 
+ #next strings were added for BSD support
+-ifeq ($(OSTYPE),BSD)
+ PTHREAD=-pthread
+ GTKCONFIG=gtk12-config
+-endif
+ 
 -CFLAGS=-Wall -O2 -D_REENTRANT -D_POSIX_PTHREAD_SEMANTICS
--GTKLIBS=`gtk-config --libs`
--GTKFLAGS=`gtk-config --cflags`
-+GTKLIBS=`gtk12-config --libs`
-+GTKFLAGS=`gtk12-config --cflags`
-+LIBS=-pthread
-+CFLAGS+=-Wall -D_THREAD_SAFE -D_REENTRANT -D_POSIX_PTHREAD_SEMANTICS
- 
- EXECC=$(CCPLUS) $(CFLAGS) $(GTKFLAGS) $(NLS) -DLOCALE=\"${LOCALEDIR}\"
- 
++CFLAGS+=-Wall -O2 -D_REENTRANT -D_POSIX_PTHREAD_SEMANTICS
+ GTKLIBS=`$(GTKCONFIG) --libs` 
+ GTKFLAGS=`$(GTKCONFIG) --cflags` `$(GLIBCONFIG) --cflags`
+ LIBS=$(PTHREAD) $(GTKLIBS)
