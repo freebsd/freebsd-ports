@@ -17,6 +17,8 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	nsayer@FreeBSD.org
 
+RESTRICTED=	"Redistribution rights for Apple Pascal disk images are unclear"
+
 MAN1=	ucsd.1 svolio.1 svolcvt.1
 
 .include <bsd.port.pre.mk>
