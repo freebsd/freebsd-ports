@@ -26,7 +26,8 @@ CONFIGURE_ENV=	NASM="${LOCALBASE}/bin/nasm" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
 CONFIGURE_ARGS=	--enable-video-aalib \
 		--disable-arts \
-		--disable-nas
+		--disable-nas \
+		--disable-joystick
 
 CFLAGS+=	${PTHREAD_CFLAGS}
 
