@@ -1,2 +1,4 @@
-VMware
-
+This is the Linux version of the VMware virtual machine emulator made to
+run on FreeBSD using the Linux compatibility mode.  VMware can be used to
+run IBM's OS/2, Microsoft Windows 95/98, Microsoft NT, Linux, or any other
+operating system that runs on the i486.

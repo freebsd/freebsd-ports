@@ -9,7 +9,7 @@ host_ip=@@HOST_IP@@
 netmask=@@NETMASK@@
 
 [ -x $vmware_dir/bin/vmware ] || exit
-exec >/dev/null 
+exec >/dev/null
 
 case $1 in
 	start)
@@ -28,11 +28,11 @@ case $1 in
 			ifconfig vmnet1 down
 			ifconfig vmnet1 delete $host_ip
         		kldunload vmnet
-		fi	
+		fi
 		;;
 
 	*)
-		echo "usage: `basename $0` {start|stop}" >&2 
+		echo "usage: `basename $0` {start|stop}" >&2
 		exit 64
 		;;
 esac
