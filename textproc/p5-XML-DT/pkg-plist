@@ -1,51 +1,6 @@
 bin/mkdtskel
+bin/mkdtdskel
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/DT/.packlist
 %%SITE_PERL%%/XML/DT.pm
-%%SITE_PERL%%/XML/DT/examples/XPath/ex1.pl
-%%SITE_PERL%%/XML/DT/examples/XPath/ex1.xml
-%%SITE_PERL%%/XML/DT/examples/XPath/ex2.pl
-%%SITE_PERL%%/XML/DT/examples/XPath/ex2.xml
-%%SITE_PERL%%/XML/DT/examples/XPath/ex3.pl
-%%SITE_PERL%%/XML/DT/examples/XPath/ex3.xml
-%%SITE_PERL%%/XML/DT/examples/XPath/ex4.pl
-%%SITE_PERL%%/XML/DT/examples/XPath/ex4.xml
-%%SITE_PERL%%/XML/DT/examples/XPath/ex5.pl
-%%SITE_PERL%%/XML/DT/examples/XPath/ex5.xml
-%%SITE_PERL%%/XML/DT/examples/XPath/ex6.pl
-%%SITE_PERL%%/XML/DT/examples/XPath/ex6.xml
-%%SITE_PERL%%/XML/DT/examples/XPath/ex7.pl
-%%SITE_PERL%%/XML/DT/examples/XPath/ex7.xml
-%%SITE_PERL%%/XML/DT/examples/XPath/ex8.pl
-%%SITE_PERL%%/XML/DT/examples/XPath/ex8.xml
-%%SITE_PERL%%/XML/DT/examples/10nov.sgm
-%%SITE_PERL%%/XML/DT/examples/README
-%%SITE_PERL%%/XML/DT/examples/arq.pl
-%%SITE_PERL%%/XML/DT/examples/arq.xml
-%%SITE_PERL%%/XML/DT/examples/ex.xml
-%%SITE_PERL%%/XML/DT/examples/ex1.pl
-%%SITE_PERL%%/XML/DT/examples/ex10.1.pl
-%%SITE_PERL%%/XML/DT/examples/ex10.2.pl
-%%SITE_PERL%%/XML/DT/examples/ex10.2.xml
-%%SITE_PERL%%/XML/DT/examples/ex10.3.pl
-%%SITE_PERL%%/XML/DT/examples/ex10.3.xml
-%%SITE_PERL%%/XML/DT/examples/ex11.1.pl
-%%SITE_PERL%%/XML/DT/examples/ex11.1.xml
-%%SITE_PERL%%/XML/DT/examples/ex11.5.pl
-%%SITE_PERL%%/XML/DT/examples/ex11.5.xml
-%%SITE_PERL%%/XML/DT/examples/ex2.pl
-%%SITE_PERL%%/XML/DT/examples/ex3.xml
-%%SITE_PERL%%/XML/DT/examples/ex5.pl
-%%SITE_PERL%%/XML/DT/examples/ex6.pl
-%%SITE_PERL%%/XML/DT/examples/ex7.pl
-%%SITE_PERL%%/XML/DT/examples/gcapaper2tex.pl
-%%SITE_PERL%%/XML/DT/examples/jj.dtd
-%%SITE_PERL%%/XML/DT/examples/lat1.html
-%%SITE_PERL%%/XML/DT/examples/makefile
-%%SITE_PERL%%/XML/DT/examples/makenewexample
-%%SITE_PERL%%/XML/DT/examples/pub.pl
-%%SITE_PERL%%/XML/DT/examples/publico.dtd
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/DT
-@dirrm %%SITE_PERL%%/XML/DT/examples/XPath
-@dirrm %%SITE_PERL%%/XML/DT/examples
-@dirrm %%SITE_PERL%%/XML/DT
 @unexec rmdir %D/%%SITE_PERL%%/XML 2>/dev/null || true

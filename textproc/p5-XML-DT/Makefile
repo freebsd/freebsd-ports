@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	XML-DT
-PORTVERSION=	0.20
+PORTVERSION=	0.26
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	XML
@@ -15,17 +15,13 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Perl module for down translation of XML to strings
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser
+BUILD_DEPENDS=	${SITE_PERL}/XML/LibXML.pm:${PORTSDIR}/textproc/p5-XML-LibXML
+BUILD_DEPENDS+=	${SITE_PERL}/LWP/Simple.pm:${PORTSDIR}/www/p5-libwww
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
+MAN1=		mkdtskel.1 mkdtdskel.1
 MAN3=		XML::DT.3
-
-post-install:
-	@${MKDIR} ${PREFIX}/lib/perl5/site_perl/${PERL_VER}/XML/DT/examples
-	@${MKDIR} ${PREFIX}/lib/perl5/site_perl/${PERL_VER}/XML/DT/examples/XPath
-	@${INSTALL_DATA} ${WRKSRC}/examples/XPath/* ${PREFIX}/lib/perl5/site_perl/${PERL_VER}/XML/DT/examples/XPath
-	@${INSTALL_DATA} `${LS} -d ${WRKSRC}/examples/* | ${GREP} -v XPath` ${PREFIX}/lib/perl5/site_perl/${PERL_VER}/XML/DT/examples
 
 .include <bsd.port.mk>
