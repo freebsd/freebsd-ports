@@ -23,4 +23,12 @@ MD5 (squid2.5/squid-2.5.STABLE4-pconn-load.patch) = a432f9eff9e0963b7338e41a9123
 MD5 (squid2.5/squid-2.5.STABLE4-icon_urls.patch) = cf28143216b1364e56e820dddbb66dfc
 MD5 (squid2.5/squid-2.5.STABLE4-redirector_access.patch) = 9c534a3d58fe0e3545cd4ed9af92a0e8
 MD5 (squid2.5/squid-2.5.STABLE4-pconn-lifo.patch) = f41051c248764749d9d9ca5704925da7
+MD5 (squid2.5/squid-2.5.STABLE4-cache_peer_maxconn.patch) = efd99c5e2f526c08cb52d9af948c7b25
+MD5 (squid2.5/squid-2.5.STABLE4-pid_filename_none.patch) = 808bafa144b22c3cf6900759b30f39e6
+MD5 (squid2.5/squid-2.5.STABLE4-dns_namelength.patch) = 290da300d02124be3971282d5b0a799d
+MD5 (squid2.5/squid-2.5.STABLE4-urllogin_acl.patch) = 5ad09d7d4bf105e699cfeb647a4836a3
+MD5 (squid2.5/squid-2.5.STABLE4-russian.patch) = 5a4357bd56134fc6578c435314c1a835
+MD5 (squid2.5/squid-2.5.STABLE4-redirlog.patch) = 8a2cc15f2bde6fa263a9e40aae807f82
+MD5 (squid2.5/squid-2.5.STABLE4-pinger.patch) = 0902849d051873aaf5f54584d0536bb5
+MD5 (squid2.5/squid-2.5.STABLE4-partial_reload.patch) = 6d8fa663f46ffc2272b7d18a0b6eea34
 

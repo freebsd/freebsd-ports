@@ -7,7 +7,7 @@
 
 PORTNAME=	squid
 PORTVERSION=	2.5.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	\
 	ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
@@ -44,7 +44,10 @@ PATCHFILES=	squid-2.5.STABLE4-reconfigure_message.patch \
 		squid-2.5.STABLE4-pconn-load.patch \
 		squid-2.5.STABLE4-icon_urls.patch \
 		squid-2.5.STABLE4-redirector_access.patch \
-		squid-2.5.STABLE4-pconn-lifo.patch
+		squid-2.5.STABLE4-pconn-lifo.patch \
+		squid-2.5.STABLE4-cache_peer_maxconn.patch \
+		squid-2.5.STABLE4-pid_filename_none.patch \
+		squid-2.5.STABLE4-dns_namelength.patch
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	adrian@freebsd.org
