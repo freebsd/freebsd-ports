@@ -7,30 +7,26 @@
 #
 
 PORTNAME=	goblin
-PORTVERSION=	2.6.b5
+PORTVERSION=	2.6
 CATEGORIES=	misc
 MASTER_SITES=	http://www.math.uni-augsburg.de/opt/goblin.docs/
-DISTNAME=	${PORTNAME}.${PORTVERSION:R}${PORTVERSION:E}
+DISTNAME=	${PORTNAME}.${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Graph Object Library for Network Programming Problems
 
-LIB_DEPENDS=	tcl83:${PORTSDIR}/lang/tcl83 \
-		tk83:${PORTSDIR}/x11-toolkits/tk83
+LIB_DEPENDS=	tk83.1:${PORTSDIR}/x11-toolkits/tk83
 
 USE_REINPLACE=	yes
+USE_GMAKE=	yes
+MAKE_ENV=	LDFLAGS="${LDFLAGS}"
+PLIST_SUB+=	PORTVER=${PORTVERSION}
 
 CFLAGS+=	-I${LOCALBASE}/include/tcl8.3 -I${LOCALBASE}/include/tk8.3 \
-		-I${X11BASE}/include
-LIBS=		-L${LOCALBASE}/lib -L${X11BASE}/lib
-USE_GMAKE=	yes
-PLIST_SUB+=	PORTVER=${PORTVERSION:R}
+		-I${X11BASE}/include ${PTHREAD_CFLAGS}
+LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}
 
 post-patch:
-	@${REINPLACE_CMD} -e "s,-lpthread,${PTHREAD_LIBS},g ; \
-		s,g\+\+,${CXX},g ; \
-		s,%%CXXFLAGS%%,${CXXFLAGS},g ; s,%%LIBS%%,${LIBS},g ; \
-		s,%%PREFIX%%,${PREFIX},g" ${WRKSRC}/Makefile
 .for file in include/globals.h globals.cpp
 	@${REINPLACE_CMD} -e "s/malloc.h/stdlib.h/g" ${WRKSRC}/${file}
 .endfor

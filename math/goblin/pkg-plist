@@ -108,7 +108,6 @@ bin/goblin.%%PORTVER%%/samples/connect6.gob
 bin/goblin.%%PORTVER%%/samples/connect7.gob
 bin/goblin.%%PORTVER%%/samples/dodeka.gob
 bin/goblin.%%PORTVER%%/samples/dsearch1.gob
-bin/goblin.%%PORTVER%%/samples/dummy.gob
 bin/goblin.%%PORTVER%%/samples/europe.gob
 bin/goblin.%%PORTVER%%/samples/gedecomp1.gob
 bin/goblin.%%PORTVER%%/samples/gedecomp2.gob
@@ -124,6 +123,7 @@ bin/goblin.%%PORTVER%%/samples/goblet.gob
 bin/goblin.%%PORTVER%%/samples/gsearch1.gob
 bin/goblin.%%PORTVER%%/samples/hamilton57.gob
 bin/goblin.%%PORTVER%%/samples/icosa.gob
+bin/goblin.%%PORTVER%%/samples/lp3a.gob
 bin/goblin.%%PORTVER%%/samples/maxbflow1.gob
 bin/goblin.%%PORTVER%%/samples/maxbflow2.gob
 bin/goblin.%%PORTVER%%/samples/maxbflow3.gob
@@ -231,14 +231,10 @@ bin/goblin.%%PORTVER%%/stepOver2.gif
 bin/goblin.%%PORTVER%%/stepSingle.gif
 bin/goblin.%%PORTVER%%/stepSingle2.gif
 bin/goblin.%%PORTVER%%/tableauCol.gif
-bin/goblin.%%PORTVER%%/tableauCol.gif2
 bin/goblin.%%PORTVER%%/tableauObj.gif
-bin/goblin.%%PORTVER%%/tableauObj.gif2
 bin/goblin.%%PORTVER%%/tableauPivot.gif
 bin/goblin.%%PORTVER%%/tableauRHS.gif
-bin/goblin.%%PORTVER%%/tableauRHS.gif2
 bin/goblin.%%PORTVER%%/tableauRow.gif
-bin/goblin.%%PORTVER%%/tableauRow.gif2
 bin/goblin.%%PORTVER%%/tclLogo.gif
 bin/goblin.%%PORTVER%%/title.tk
 bin/goblin.%%PORTVER%%/toggleBrowser.gif
@@ -246,6 +242,7 @@ bin/goblin.%%PORTVER%%/toggleEditor.gif
 bin/goblin.%%PORTVER%%/toggleScript.gif
 bin/goblin.%%PORTVER%%/traceopt.tk
 bin/goblin.%%PORTVER%%/workspace.tk
+include/goblin.%%PORTVER%%/~globals.h
 include/goblin.%%PORTVER%%/absbal.h
 include/goblin.%%PORTVER%%/absbig.h
 include/goblin.%%PORTVER%%/absdig.h
