@@ -310,6 +310,7 @@
     SUBDIR += xrobots
     SUBDIR += xrot
     SUBDIR += xrubik
+    SUBDIR += xsc
     SUBDIR += xscavenger
     SUBDIR += xscorch
     SUBDIR += xscrabble
