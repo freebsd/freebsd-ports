@@ -1,0 +1,8 @@
+@exec mkdir -p %D/share/linbot
+share/linbot/config.py
+share/linbot/linbot.py
+share/linbot/myUrlLib.py
+share/linbot/robotparser.py
+@exec ln -fs %D/share/linbot/linbot.py %D/bin/linbot
+@unexec rm -rf %D/share/linbot
+@unexec rm %D/bin/linbot
