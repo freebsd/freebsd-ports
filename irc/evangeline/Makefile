@@ -1,6 +1,6 @@
 # New ports collection makefile for:    evangeline
 # Date created:                         1 Mar 2005
-# Whom:         Grega "Edini" Janezic <edini@edini.net>
+# Whom:         			"Edini" <ports@edini.net>
 #
 # $FreeBSD$
 #
