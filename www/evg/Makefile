@@ -6,30 +6,36 @@
 #
 
 PORTNAME=	evg
-PORTVERSION=	1.0.1
+PORTVERSION=	1.3.1
 CATEGORIES=	www
-MASTER_SITES=	ftp://ftp.uni-klu.ac.at/pub/projects/evg/	\
+MASTER_SITES=	ftp://ftp.zurich.ibm.com//pub/sob/www/halloween/ \
 		http://www.chg.ru/~dima/
-DISTNAME=	evg-1.01
+DISTNAME=	evg-1_3_1
+EXTRACT_SUFX=	_tar
 
 MAINTAINER=	demon@FreeBSD.org
 
-RUN_DEPENDS=	python1.5:${PORTSDIR}/lang/python15
 RUN_DEPENDS+=	convert:${PORTSDIR}/graphics/ImageMagick
 RUN_DEPENDS+=	xv:${PORTSDIR}/graphics/xv
 
+USE_PYTHON=	yes
+
 NO_BUILD=	yes
 
+WRKSRC=		${WRKDIR}/${PKGNAME}
+
 post-patch:
-		@ ${MV} ${WRKSRC}/evg.py ${WRKSRC}/evg.py.sed
-		@ ${SED} -e 's%!!PREFIX!!%${PREFIX}%' < ${WRKSRC}/evg.py.sed \
-		  > ${WRKSRC}/evg.py.sed1
-		@ ${SED} -e 's%!!XPREF!!%${X11BASE}%' < ${WRKSRC}/evg.py.sed1 \
-		  > ${WRKSRC}/evg.py
+	@ ${PERL} -pi -e 's#/usr/bin/python#${PYTHON_CMD}#' ${WRKSRC}/evg
+	@ ${PERL} -pi -e 's#/usr/X11R6#${X11BASE}#' ${WRKSRC}/evg
+	@ ${PERL} -pi -e 's#/usr/bin/ee#${X11BASE}/bin/xv#' ${WRKSRC}/evg
 
 do-install:
-		@ ${MKDIR} ${PREFIX}/lib/python1.5/site-packages
-		@ ${INSTALL_SCRIPT} ${WRKSRC}/eclipthtml.py ${PREFIX}/lib/python1.5/site-packages
-		@ ${INSTALL_SCRIPT} ${WRKSRC}/evg.py ${PREFIX}/bin
+	@ ${MKDIR} ${PYTHON_SITELIBDIR}
+	@ ${INSTALL_DATA} ${WRKSRC}/eclipthtml.py ${PYTHON_SITELIBDIR}
+	@ ${INSTALL_SCRIPT} ${WRKSRC}/evg ${PREFIX}/bin
+.ifndef{NOPORTDOC}
+	@ ${MKDIR} ${PREFIX}/share/doc/evg
+	@ ${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/evg
+.endif
 
 .include <bsd.port.mk>

@@ -1,2 +1,4 @@
-bin/evg.py
-lib/python1.5/site-packages/eclipthtml.py
+bin/evg
+lib/%%PYTHON_VERSION%%/site-packages/eclipthtml.py
+share/doc/evg/README
+@dirrm share/doc/evg
