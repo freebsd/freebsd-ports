@@ -10,7 +10,7 @@ PORTVERSION=	2.7
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.inria.fr/INRIA/Projects/SOR/users/piumarta/squeak/ \
 		ftp://ftp.cs.uni-magdeburg.de/pub/Smalltalk/free/squeak/unix/
-DISTNAME=	Squeak${PORTVERSION}-src
+DISTNAME=	Squeak-${PORTVERSION}-src
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${SQUEAK_SRC}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -20,7 +20,7 @@ NO_WRKSUBDIR=	yes
 USE_XLIB=	yes
 USE_GMAKE=	yes
 DIST_SUBDIR=	squeak
-SQUEAK_SRC=	SqueakV2.sources.gz Squeak2.7.image.gz Squeak2.7.changes.gz
+SQUEAK_SRC=	SqueakV2.sources.gz Squeak-2.7.image.gz Squeak-2.7.changes.gz
 SQUEAK_LIB=	Profiler.so SoundCodecPrims.so Squeak3D.so System.so
 
 MAKEFILE=	Makefile
@@ -53,11 +53,11 @@ post-install:
 	@${ECHO} "directory as well as access to a source file."
 	@${ECHO} "Execute the following:"
 	@${ECHO} "cd <your_private_working_directory>"
-	@${ECHO} "cp ${PREFIX}/share/squeak/Squeak2.7.image ."
-	@${ECHO} "cp ${PREFIX}/share/squeak/Squeak2.7.changes ."
+	@${ECHO} "cp ${PREFIX}/share/squeak/Squeak-2.7.image ."
+	@${ECHO} "cp ${PREFIX}/share/squeak/Squeak-2.7.changes ."
 	@${ECHO} "ln -s ${PREFIX}/share/squeak/SqueakV2.sources ."
 	@${ECHO} ""
 	@${ECHO} "To finally start up the system type:"
-	@${ECHO} "squeak Squeak2.7.image"
+	@${ECHO} "squeak Squeak-2.7.image"
 
 .include <bsd.port.mk>
