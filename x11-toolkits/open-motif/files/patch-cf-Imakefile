@@ -1,11 +1,11 @@
---- config/cf/Imakefile.org	Fri Apr 28 08:03:58 2000
-+++ config/cf/Imakefile	Sat Aug  5 04:49:26 2000
-@@ -98,7 +98,7 @@
- x386.cf \
+--- config/cf/Imakefile.orig	Fri Nov  2 03:58:47 2001
++++ config/cf/Imakefile	Fri Nov  2 03:59:06 2001
+@@ -121,8 +121,6 @@
+ QNX.cf \
  xfree86.cf
  
 -INSTFILES = $(RULEFILES) $(TMPLFILES) $(DEFFILES) $(CFFILES) $(LOCALFILES)
-+INSTFILES = Motif.rules Motif.tmpl host.def
- 
+-
  all::
  
+ InstallMultipleDestFlags(install,$(INSTFILES),$(CONFIGDIR),$(INSTDATFLAGS))
