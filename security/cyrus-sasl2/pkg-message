@@ -1,14 +1,14 @@
-PREFIX/etc/cyrusdb.db now needs to be created
+%%PREFIX%%/etc/%%SASLDB%% now needs to be created
 before applications that depend on SASL are used.
 
 	su cyrus
-	PREFIX/sbin/saslpasswd -c userid
+	%%PREFIX%%/sbin/saslpasswd -c userid
 
 You will also need to start the pwcheck daemon:
 
-	PREFIX/etc/rc.d/pwcheck.sh start
+	%%PREFIX%%/etc/rc.d/pwcheck.sh start
 
-Read the documentation in PREFIX/share/doc/SASL
+Read the documentation in %%DOCSDIR%%
 
 How to enable SMTP AUTH with system Sendmail 8.11 - Sendmail.README
 

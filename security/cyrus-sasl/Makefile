@@ -107,6 +107,17 @@ PLIST_SUB=	PREFIX=${PREFIX} \
 pre-fetch:
 	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure.sasl
 
+# Fix sasldb name in pkg-install/deinstall scripts
+post-patch:
+	@${SED} -e "/%%SASLDB%%/s##${SASLDB_NAME}#g" \
+		${.CURDIR}/pkg-install > ${PKGINSTALL}
+	@${SED} -e "/%%SASLDB%%/s##${SASLDB_NAME}#g" \
+		${.CURDIR}/pkg-deinstall > ${PKGDEINSTALL}
+	@${SED} -e "/%%SASLDB%%/s##${SASLDB_NAME}#g" \
+		-e "/%%PREFIX%%/s##${PREFIX}#g" \
+		-e "/%%DOCSDIR%%/s##${DOCSDIR}#g" \
+		${.CURDIR}/pkg-message > ${PKGMESSAGE}
+
 pre-configure:
 	@(cd ${WRKSRC} && ${AUTOHEADER})
 
@@ -119,8 +130,9 @@ post-install:
 		> ${PREFIX}/etc/rc.d/pwcheck.sh
 	@${CHMOD} 755 ${PREFIX}/etc/rc.d/pwcheck.sh
 	${INSTALL} -d -m 770 -o cyrus -g cyrus /var/pwcheck
+	@${LN} ${PREFIX}/sbin/pwcheck ${PREFIX}/sbin/pwcheck_pwnam
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}/html
+	@${MKDIR} ${DOCSDIR}
 .for file in ${DOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor

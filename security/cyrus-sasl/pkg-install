@@ -11,6 +11,8 @@ PKG_BATCH=${BATCH:=NO}
 
 PKG_PREFIX=${PKG_PREFIX:=/usr/local}
 
+SASLDB_NAME=${PKG_PREFIX}/etc/%%SASLDB%%
+
 #
 # create 'cyrus' user and group before installing
 #
@@ -70,10 +72,10 @@ create_user() {
 }
 
 create_sasldb() {
-	if [ ! -f ${PGK_PREFIX}/etc/sasldb.db ]; then
-		touch ${PKG_PREFIX}/etc/sasldb.db
-		chown cyrus:mail ${PKG_PREFIX}/etc/sasldb.db
-		chmod 640 ${PKG_PREFIX}/etc/sasldb.db
+	if [ ! -f ${SASLDB_NAME} ]; then
+		touch ${SASLDB_NAME}
+		chown cyrus:mail ${SASLDB_NAME}
+		chmod 640 ${SASLDB_NAME}
 	fi
 }
 
