@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	PEAR
-PORTVERSION=	1.3.1
+PORTVERSION=	1.3.2
 CATEGORIES=	devel www pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	antonio@php.net
 COMMENT=	PEAR Base System
 
 BUILD_DEPENDS=	${PEARDIR}/Archive/Tar.php:${PORTSDIR}/archivers/pear-Archive_Tar	\
@@ -17,16 +17,15 @@ BUILD_DEPENDS=	${PEARDIR}/Archive/Tar.php:${PORTSDIR}/archivers/pear-Archive_Tar
 		${PEARDIR}/XML/RPC.php:${PORTSDIR}/devel/pear-XML_RPC
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-FILES=		PEAR.php System.php PEAR/Autoloader.php PEAR/Command.php	\
-		PEAR/Command/Auth.php PEAR/Command/Build.php			\
-		PEAR/Command/Common.php PEAR/Command/Config.php			\
-		PEAR/Command/Install.php PEAR/Command/Package.php		\
-		PEAR/Command/Registry.php PEAR/Command/Remote.php		\
-		PEAR/Command/Mirror.php PEAR/Common.php PEAR/Config.php		\
-		PEAR/Dependency.php PEAR/Downloader.php PEAR/ErrorStack.php	\
-		PEAR/Frontend/CLI.php PEAR/Builder.php PEAR/Installer.php	\
-		PEAR/Packager.php PEAR/Registry.php PEAR/Remote.php		\
-		OS/Guess.php package.dtd template.spec
+FILES=		PEAR.php System.php package.dtd template.spec OS/Guess.php 		\
+		PEAR/Command/Auth.php PEAR/Command/Build.php PEAR/Command/Common.php 	\
+		PEAR/Command/Config.php PEAR/Command/Install.php 			\
+		PEAR/Command/Package.php PEAR/Command/Registry.php 			\
+		PEAR/Command/Remote.php PEAR/Command/Mirror.php PEAR/Frontend/CLI.php 	\
+		PEAR/Autoloader.php PEAR/Command.php PEAR/Common.php PEAR/Config.php 	\
+		PEAR/Dependency.php PEAR/Downloader.php PEAR/Exception.php 		\
+		PEAR/ErrorStack.php PEAR/Builder.php PEAR/Installer.php 		\
+		PEAR/Packager.php PEAR/Registry.php PEAR/Remote.php
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
