@@ -1,0 +1,9 @@
+--- kfvflib.mak.orig	Wed Jul 15 22:42:16 1998
++++ kfvflib.mak	Wed Jul 15 22:42:30 1998
+@@ -3,4 +3,5 @@
+ 	$(SHP)gssetmod kfvflib $(kfvflib_)
+ 	$(SHP)gsaddmod kfvflib -oper zkfVFlib
+ 	$(SHP)gsaddmod kfvflib -ps kfvflib
+-	$(SHP)gsaddmod kfvflib -lib VFlib
++	$(SHP)gsaddmod kfvflib -lib VFlib2
++	$(SHP)gsaddmod kfvflib -lib ttf

@@ -3,7 +3,7 @@
 # Date created:		14 May 1996
 # Whom:			Mita Yoshio <mita@jp.FreeBSD.org>
 #
-# $Id: Makefile,v 1.10 1997/12/08 09:05:48 max Exp $
+# $Id: Makefile,v 1.11 1998/04/04 07:36:41 asami Exp $
 #
 
 DISTNAME=	ghostscript2.6.2
@@ -22,7 +22,7 @@ DISTFILES=	ghostscript-2.6.2.tar.gz ghostscript-fonts-2.6.2.tar.gz \
 
 MAINTAINER=	mita@jp.FreeBSD.org
 
-LIB_DEPENDS=	VFlib\\.2\\.:${PORTSDIR}/japanese/vflib
+LIB_DEPENDS=	VFlib2\\.23\\.:${PORTSDIR}/japanese/vflib
 
 NO_LATEST_LINK=	yes
 WRKSRC=		${WRKDIR}/gs262
@@ -59,6 +59,7 @@ pre-patch:
 	  ${CP} gdevp201/gdevp201.c gdevp201/gdevp201.mak ..; )
 	@${PATCH} ${PATCH_ARGS} < ${WRKSRC}/drivers/gdevp201/gdevp201.dif
 	@${PATCH} ${PATCH_ARGS} <${FILESDIR}/unix-gcc.mak.patch >/dev/null 2>&1
+	@${PATCH}  ${PATCH_ARGS} <${FILESDIR}/kfvflib.mak.patch >/dev/null 2>&1
 	@${PATCH} ${PATCH_ARGS} < ${WRKSRC}/bjc600j/gdevcdj.dif >/dev/null 2>&1
 	@${PATCH} ${PATCH_ARGS} < ${WRKSRC}/bjc600j/devsmak.dif >/dev/null 2>&1
 	@${CP} ${WRKSRC}/unix-gcc.mak ${WRKSRC}/Makefile

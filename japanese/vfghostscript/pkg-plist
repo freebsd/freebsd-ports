@@ -277,4 +277,9 @@ lib/ghostscript/kanji/vchars.ps
 lib/ghostscript/kanji/vflib.ps
 lib/ghostscript/kanji/zeit.ps
 lib/ghostscript/kanji/ztbez.ps
+@dirrm lib/ghostscript/doc
+@dirrm lib/ghostscript/examples
+@dirrm lib/ghostscript/kanji
+@dirrm lib/ghostscript/fonts
+@dirrm lib/ghostscript
 man/man1/gs.1.gz
