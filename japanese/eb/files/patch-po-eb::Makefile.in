@@ -1,0 +1,11 @@
+--- po-eb/Makefile.in.dist	Fri Nov 26 04:25:38 2004
++++ po-eb/Makefile.in	Fri Nov 26 04:27:28 2004
+@@ -32,7 +32,7 @@
+ mkdir_p = @mkdir_p@
+ INSTALL = @INSTALL@
+ INSTALL_DATA = @INSTALL_DATA@
+-mkinstalldirs = $(mkdir_p)
++mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ 
+ MSGFMT = @MSGFMT@
+ XGETTEXT = @XGETTEXT@

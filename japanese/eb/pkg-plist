@@ -2,346 +2,371 @@ bin/ebappendix
 bin/ebfont
 bin/ebinfo
 bin/ebrefile
+bin/ebstopcode
 bin/ebunzip
 bin/ebzip
 bin/ebzipinfo
 etc/eb.conf
 include/eb/appendix.h
 include/eb/binary.h
+include/eb/booklist.h
 include/eb/defs.h
 include/eb/eb.h
 include/eb/error.h
 include/eb/font.h
+include/eb/sysdefs.h
 include/eb/text.h
 include/eb/zio.h
 @dirrm include/eb
-@unexec install-info --delete %D/info/eb-ja.info %D/info/dir
-@unexec install-info --delete %D/info/ebfont-ja.info %D/info/dir
-@unexec install-info --delete %D/info/ebfont.info %D/info/dir
-@unexec install-info --delete %D/info/ebinfo-ja.info %D/info/dir
-@unexec install-info --delete %D/info/ebinfo.info %D/info/dir
-@unexec install-info --delete %D/info/ebrefile-ja.info %D/info/dir
-@unexec install-info --delete %D/info/ebrefile.info %D/info/dir
-@unexec install-info --delete %D/info/ebzip-ja.info %D/info/dir
-@unexec install-info --delete %D/info/ebzip.info %D/info/dir
-info/eb-ja.info
-info/ebfont-ja.info
-info/ebfont.info
-info/ebinfo-ja.info
-info/ebinfo.info
-info/ebrefile-ja.info
-info/ebrefile.info
-info/ebzip-ja.info
-info/ebzip.info
-@exec install-info %D/info/eb-ja.info %D/info/dir
-@exec install-info %D/info/ebfont-ja.info %D/info/dir
-@exec install-info %D/info/ebfont.info %D/info/dir
-@exec install-info %D/info/ebinfo-ja.info %D/info/dir
-@exec install-info %D/info/ebinfo.info %D/info/dir
-@exec install-info %D/info/ebrefile-ja.info %D/info/dir
-@exec install-info %D/info/ebrefile.info %D/info/dir
-@exec install-info %D/info/ebzip-ja.info %D/info/dir
-@exec install-info %D/info/ebzip.info %D/info/dir
 lib/libeb.a
 lib/libeb.so
-lib/libeb.so.7
-share/aclocal/eb3.m4
-share/eb/appendix/LIST
-share/eb/appendix/LIST-ja
-share/eb/appendix/cencro-1.0/catalog
-share/eb/appendix/cencro-1.0/catalog.app
-share/eb/appendix/cencro-1.0/cencro.app
-share/eb/appendix/cencro-1.0/cencro/appendix
-share/eb/appendix/chujiten-2.3/catalog
-share/eb/appendix/chujiten-2.3/catalog.app
-share/eb/appendix/chujiten-2.3/eiwa.app
-share/eb/appendix/chujiten-2.3/eiwa/appendix
-share/eb/appendix/chujiten-2.3/waei.app
-share/eb/appendix/chujiten-2.3/waei/appendix
-share/eb/appendix/chujiten2-2.0/catalogs
-share/eb/appendix/chujiten2-2.0/catalogs.app
-share/eb/appendix/chujiten2-2.0/chujiten.app
-share/eb/appendix/chujiten2-2.0/chujiten/data/furoku
-share/eb/appendix/chujiten6-2.3/catalog
-share/eb/appendix/chujiten6-2.3/catalog.app
-share/eb/appendix/chujiten6-2.3/chujiten.app
-share/eb/appendix/chujiten6-2.3/chujiten/appendix
-share/eb/appendix/colloc-2.0/catalogs
-share/eb/appendix/colloc-2.0/catalogs.app
-share/eb/appendix/colloc-2.0/colloc.app
-share/eb/appendix/colloc-2.0/colloc/data/furoku
-share/eb/appendix/crownfj-2.0/catalogs
-share/eb/appendix/crownfj-2.0/catalogs.app
-share/eb/appendix/crownfj-2.0/crown_fj.app
-share/eb/appendix/crownfj-2.0/crown_fj/data/furoku
-share/eb/appendix/crownfj-2.0/daily_ei.app
-share/eb/appendix/crownfj-2.0/daily_ei/data/furoku
-share/eb/appendix/crownfj2-1.0/catalog
-share/eb/appendix/crownfj2-1.0/catalog.app
-share/eb/appendix/crownfj2-1.0/crfre.app
-share/eb/appendix/crownfj2-1.0/crfre/appendix
-share/eb/appendix/crowngj-1.0/catalog
-share/eb/appendix/crowngj-1.0/catalog.app
-share/eb/appendix/crowngj-1.0/crger.app
-share/eb/appendix/crowngj-1.0/crger/appendix
-share/eb/appendix/daihyakka-1.0/catalog
-share/eb/appendix/daihyakka-1.0/catalog.app
-share/eb/appendix/daihyakka-1.0/dhk01.app
-share/eb/appendix/daihyakka-1.0/dhk01/appendix
-share/eb/appendix/daijirin-2.0/catalogs
-share/eb/appendix/daijirin-2.0/catalogs.app
-share/eb/appendix/daijirin-2.0/dgx01.app
-share/eb/appendix/daijirin-2.0/dgx01/data/furoku
-share/eb/appendix/dd75-2.0/catalog
-share/eb/appendix/dd75-2.0/catalog.app
-share/eb/appendix/dd75-2.0/chujiten.app
-share/eb/appendix/dd75-2.0/chujiten/appendix
-share/eb/appendix/dd75-2.0/koujien.app
-share/eb/appendix/dd75-2.0/koujien/appendix
-share/eb/appendix/gendai2000-1.0/catalog
-share/eb/appendix/gendai2000-1.0/catalog.app
-share/eb/appendix/gendai2000-1.0/gn00eb01.app
-share/eb/appendix/gendai2000-1.0/gn00eb01/appendix
-share/eb/appendix/gendai2000-1.0/gn00eb02.app
-share/eb/appendix/gendai2000-1.0/gn00eb02/appendix
-share/eb/appendix/genius-1.0/catalog
-share/eb/appendix/genius-1.0/catalog.app
-share/eb/appendix/genius-1.0/genius.app
-share/eb/appendix/genius-1.0/genius/appendix
-share/eb/appendix/genius2-1.1/catalogs
-share/eb/appendix/genius2-1.1/catalogs.app
-share/eb/appendix/genius2-1.1/genius.app
-share/eb/appendix/genius2-1.1/genius/data/furoku
-share/eb/appendix/global-2.0/catalogs
-share/eb/appendix/global-2.0/catalogs.app
-share/eb/appendix/global-2.0/gejcje.app
-share/eb/appendix/global-2.0/gejcje/data/furoku
-share/eb/appendix/heritage-2.2/abbrev.app
-share/eb/appendix/heritage-2.2/abbrev/appendix
-share/eb/appendix/heritage-2.2/bioentry.app
-share/eb/appendix/heritage-2.2/bioentry/appendix
-share/eb/appendix/heritage-2.2/catalog
-share/eb/appendix/heritage-2.2/catalog.app
-share/eb/appendix/heritage-2.2/colleges.app
-share/eb/appendix/heritage-2.2/colleges/appendix
-share/eb/appendix/heritage-2.2/dict.app
-share/eb/appendix/heritage-2.2/dict/appendix
-share/eb/appendix/heritage-2.2/font
-share/eb/appendix/heritage-2.2/geoentry.app
-share/eb/appendix/heritage-2.2/geoentry/appendix
-share/eb/appendix/heritage-2.2/info.app
-share/eb/appendix/heritage-2.2/info/appendix
-share/eb/appendix/heritage-2.2/roget.app
-share/eb/appendix/heritage-2.2/roget/appendix
-share/eb/appendix/heritage-2.2/root.app
-share/eb/appendix/heritage-2.2/root/appendix
-share/eb/appendix/izumi-2.0/catalog
-share/eb/appendix/izumi-2.0/catalog.app
-share/eb/appendix/izumi-2.0/file1.app
-share/eb/appendix/izumi-2.0/file1/appendix
-share/eb/appendix/jitenban-2.4/catalogs
-share/eb/appendix/jitenban-2.4/catalogs.app
-share/eb/appendix/jitenban-2.4/chiezo.app
-share/eb/appendix/jitenban-2.4/chiezo/data/furoku
-share/eb/appendix/jitenban-2.4/chujiten.app
-share/eb/appendix/jitenban-2.4/chujiten/data/furoku
-share/eb/appendix/jitenban-2.4/iwakoku.app
-share/eb/appendix/jitenban-2.4/iwakoku/data/furoku
-share/eb/appendix/jitenban-2.4/mypaedia.app
-share/eb/appendix/jitenban-2.4/mypaedia/data/furoku
-share/eb/appendix/jitenban97-2.1/catalogs
-share/eb/appendix/jitenban97-2.1/catalogs.app
-share/eb/appendix/jitenban97-2.1/chiezo.app
-share/eb/appendix/jitenban97-2.1/chiezo/data/furoku
-share/eb/appendix/jitenban97-2.1/chujiten.app
-share/eb/appendix/jitenban97-2.1/chujiten/data/furoku
-share/eb/appendix/jitenban97-2.1/iwakoku.app
-share/eb/appendix/jitenban97-2.1/iwakoku/data/furoku
-share/eb/appendix/jitenban97-2.1/mypaedia.app
-share/eb/appendix/jitenban97-2.1/mypaedia/data/furoku
-share/eb/appendix/kanjigen-2.0/catalog
-share/eb/appendix/kanjigen-2.0/catalog.app
-share/eb/appendix/kanjigen-2.0/gdd01.app
-share/eb/appendix/kanjigen-2.0/gdd01/appendix
-share/eb/appendix/kanjigen2-2.0/catalogs
-share/eb/appendix/kanjigen2-2.0/catalogs.app
-share/eb/appendix/kanjigen2-2.0/kanjigen.app
-share/eb/appendix/kanjigen2-2.0/kanjigen/data/furoku
-share/eb/appendix/kojien-2.3/catalog
-share/eb/appendix/kojien-2.3/catalog.app
-share/eb/appendix/kojien-2.3/kojien.app
-share/eb/appendix/kojien-2.3/kojien/appendix
-share/eb/appendix/kojien2-2.0/catalogs
-share/eb/appendix/kojien2-2.0/catalogs.app
-share/eb/appendix/kojien2-2.0/furoku.app
-share/eb/appendix/kojien2-2.0/furoku/data/furoku
-share/eb/appendix/kojien2-2.0/koujien.app
-share/eb/appendix/kojien2-2.0/koujien/data/furoku
-share/eb/appendix/kojien4-2.2/catalog
-share/eb/appendix/kojien4-2.2/catalog.app
-share/eb/appendix/kojien4-2.2/furoku.app
-share/eb/appendix/kojien4-2.2/furoku/appendix
-share/eb/appendix/kojien4-2.2/koujien.app
-share/eb/appendix/kojien4-2.2/koujien/appendix
-share/eb/appendix/oxford-2.0/about.app
-share/eb/appendix/oxford-2.0/about/appendix
-share/eb/appendix/oxford-2.0/catalog
-share/eb/appendix/oxford-2.0/catalog.app
-share/eb/appendix/oxford-2.0/oxford.app
-share/eb/appendix/oxford-2.0/oxford/appendix
-share/eb/appendix/oxford-2.0/quick.app
-share/eb/appendix/oxford-2.0/quick/appendix
-share/eb/appendix/oxford-2.0/user.app
-share/eb/appendix/oxford-2.0/user/appendix
-share/eb/appendix/plus-2.0/catalogs
-share/eb/appendix/plus-2.0/catalogs.app
-share/eb/appendix/plus-2.0/plus.app
-share/eb/appendix/plus-2.0/plus/data/furoku
-share/eb/appendix/readers-2.2/catalog
-share/eb/appendix/readers-2.2/catalog.app
-share/eb/appendix/readers-2.2/readers.app
-share/eb/appendix/readers-2.2/readers/appendix
-share/eb/appendix/readers2-2.0/catalogs
-share/eb/appendix/readers2-2.0/catalogs.app
-share/eb/appendix/readers2-2.0/readers.app
-share/eb/appendix/readers2-2.0/readers/data/furoku
-share/eb/appendix/ruigigo-1.0/ruigigo/data/furoku
-share/eb/appendix/ruigigo-1.0/ruigigo.app
-share/eb/appendix/ruigigo-1.0/catalogs.app
-share/eb/appendix/ruigigo-1.0/catalogs
-share/eb/appendix/superdic98-1.0/catalogs
-share/eb/appendix/superdic98-1.0/catalogs.app
-share/eb/appendix/superdic98-1.0/chujiten.app
-share/eb/appendix/superdic98-1.0/chujiten/data/furoku
-share/eb/appendix/superdic98-1.0/furoku.app
-share/eb/appendix/superdic98-1.0/furoku/data/furoku
-share/eb/appendix/superdic98-1.0/gn98ep01.app
-share/eb/appendix/superdic98-1.0/gn98ep01/data/furoku
-share/eb/appendix/superdic98-1.0/gn98ep02.app
-share/eb/appendix/superdic98-1.0/gn98ep02/data/furoku
-share/eb/appendix/superdic98-1.0/gn98ep03.app
-share/eb/appendix/superdic98-1.0/gn98ep03/data/furoku
-share/eb/appendix/superdic98-1.0/kanjigen.app
-share/eb/appendix/superdic98-1.0/kanjigen/data/furoku
-share/eb/appendix/superdic98-1.0/koujien.app
-share/eb/appendix/superdic98-1.0/koujien/data/furoku
-@dirrm share/eb/appendix/cencro-1.0/cencro
-@dirrm share/eb/appendix/cencro-1.0
-@dirrm share/eb/appendix/chujiten-2.3/eiwa
-@dirrm share/eb/appendix/chujiten-2.3/waei
-@dirrm share/eb/appendix/chujiten-2.3
-@dirrm share/eb/appendix/chujiten2-2.0/chujiten/data
-@dirrm share/eb/appendix/chujiten2-2.0/chujiten
-@dirrm share/eb/appendix/chujiten2-2.0
-@dirrm share/eb/appendix/chujiten6-2.3/chujiten
-@dirrm share/eb/appendix/chujiten6-2.3
-@dirrm share/eb/appendix/colloc-2.0/colloc/data
-@dirrm share/eb/appendix/colloc-2.0/colloc
-@dirrm share/eb/appendix/colloc-2.0
-@dirrm share/eb/appendix/crownfj-2.0/crown_fj/data
-@dirrm share/eb/appendix/crownfj-2.0/crown_fj
-@dirrm share/eb/appendix/crownfj-2.0/daily_ei/data
-@dirrm share/eb/appendix/crownfj-2.0/daily_ei
-@dirrm share/eb/appendix/crownfj-2.0
-@dirrm share/eb/appendix/crownfj2-1.0/crfre
-@dirrm share/eb/appendix/crownfj2-1.0
-@dirrm share/eb/appendix/crowngj-1.0/crger
-@dirrm share/eb/appendix/crowngj-1.0
-@dirrm share/eb/appendix/daihyakka-1.0/dhk01
-@dirrm share/eb/appendix/daihyakka-1.0
-@dirrm share/eb/appendix/daijirin-2.0/dgx01/data
-@dirrm share/eb/appendix/daijirin-2.0/dgx01
-@dirrm share/eb/appendix/daijirin-2.0
-@dirrm share/eb/appendix/dd75-2.0/chujiten
-@dirrm share/eb/appendix/dd75-2.0/koujien
-@dirrm share/eb/appendix/dd75-2.0
-@dirrm share/eb/appendix/gendai2000-1.0/gn00eb01
-@dirrm share/eb/appendix/gendai2000-1.0/gn00eb02
-@dirrm share/eb/appendix/gendai2000-1.0
-@dirrm share/eb/appendix/genius-1.0/genius
-@dirrm share/eb/appendix/genius-1.0
-@dirrm share/eb/appendix/genius2-1.1/genius/data
-@dirrm share/eb/appendix/genius2-1.1/genius
-@dirrm share/eb/appendix/genius2-1.1
-@dirrm share/eb/appendix/global-2.0/gejcje/data
-@dirrm share/eb/appendix/global-2.0/gejcje
-@dirrm share/eb/appendix/global-2.0
-@dirrm share/eb/appendix/heritage-2.2/abbrev
-@dirrm share/eb/appendix/heritage-2.2/bioentry
-@dirrm share/eb/appendix/heritage-2.2/colleges
-@dirrm share/eb/appendix/heritage-2.2/dict
-@dirrm share/eb/appendix/heritage-2.2/geoentry
-@dirrm share/eb/appendix/heritage-2.2/info
-@dirrm share/eb/appendix/heritage-2.2/roget
-@dirrm share/eb/appendix/heritage-2.2/root
-@dirrm share/eb/appendix/heritage-2.2
-@dirrm share/eb/appendix/izumi-2.0/file1
-@dirrm share/eb/appendix/izumi-2.0
-@dirrm share/eb/appendix/jitenban-2.4/chiezo/data
-@dirrm share/eb/appendix/jitenban-2.4/chiezo
-@dirrm share/eb/appendix/jitenban-2.4/chujiten/data
-@dirrm share/eb/appendix/jitenban-2.4/chujiten
-@dirrm share/eb/appendix/jitenban-2.4/iwakoku/data
-@dirrm share/eb/appendix/jitenban-2.4/iwakoku
-@dirrm share/eb/appendix/jitenban-2.4/mypaedia/data
-@dirrm share/eb/appendix/jitenban-2.4/mypaedia
-@dirrm share/eb/appendix/jitenban-2.4
-@dirrm share/eb/appendix/jitenban97-2.1/chiezo/data
-@dirrm share/eb/appendix/jitenban97-2.1/chiezo
-@dirrm share/eb/appendix/jitenban97-2.1/chujiten/data
-@dirrm share/eb/appendix/jitenban97-2.1/chujiten
-@dirrm share/eb/appendix/jitenban97-2.1/iwakoku/data
-@dirrm share/eb/appendix/jitenban97-2.1/iwakoku
-@dirrm share/eb/appendix/jitenban97-2.1/mypaedia/data
-@dirrm share/eb/appendix/jitenban97-2.1/mypaedia
-@dirrm share/eb/appendix/jitenban97-2.1
-@dirrm share/eb/appendix/kanjigen-2.0/gdd01
-@dirrm share/eb/appendix/kanjigen-2.0
-@dirrm share/eb/appendix/kanjigen2-2.0/kanjigen/data
-@dirrm share/eb/appendix/kanjigen2-2.0/kanjigen
-@dirrm share/eb/appendix/kanjigen2-2.0
-@dirrm share/eb/appendix/kojien-2.3/kojien
-@dirrm share/eb/appendix/kojien-2.3
-@dirrm share/eb/appendix/kojien2-2.0/furoku/data
-@dirrm share/eb/appendix/kojien2-2.0/furoku
-@dirrm share/eb/appendix/kojien2-2.0/koujien/data
-@dirrm share/eb/appendix/kojien2-2.0/koujien
-@dirrm share/eb/appendix/kojien2-2.0
-@dirrm share/eb/appendix/kojien4-2.2/furoku
-@dirrm share/eb/appendix/kojien4-2.2/koujien
-@dirrm share/eb/appendix/kojien4-2.2
-@dirrm share/eb/appendix/oxford-2.0/about
-@dirrm share/eb/appendix/oxford-2.0/oxford
-@dirrm share/eb/appendix/oxford-2.0/quick
-@dirrm share/eb/appendix/oxford-2.0/user
-@dirrm share/eb/appendix/oxford-2.0
-@dirrm share/eb/appendix/plus-2.0/plus/data
-@dirrm share/eb/appendix/plus-2.0/plus
-@dirrm share/eb/appendix/plus-2.0
-@dirrm share/eb/appendix/readers-2.2/readers
-@dirrm share/eb/appendix/readers-2.2
-@dirrm share/eb/appendix/readers2-2.0/readers/data
-@dirrm share/eb/appendix/readers2-2.0/readers
-@dirrm share/eb/appendix/readers2-2.0
-@dirrm share/eb/appendix/ruigigo-1.0/ruigigo/data
-@dirrm share/eb/appendix/ruigigo-1.0/ruigigo
-@dirrm share/eb/appendix/ruigigo-1.0
-@dirrm share/eb/appendix/superdic98-1.0/chujiten/data
-@dirrm share/eb/appendix/superdic98-1.0/chujiten
-@dirrm share/eb/appendix/superdic98-1.0/furoku/data
-@dirrm share/eb/appendix/superdic98-1.0/furoku
-@dirrm share/eb/appendix/superdic98-1.0/gn98ep01/data
-@dirrm share/eb/appendix/superdic98-1.0/gn98ep01
-@dirrm share/eb/appendix/superdic98-1.0/gn98ep02/data
-@dirrm share/eb/appendix/superdic98-1.0/gn98ep02
-@dirrm share/eb/appendix/superdic98-1.0/gn98ep03/data
-@dirrm share/eb/appendix/superdic98-1.0/gn98ep03
-@dirrm share/eb/appendix/superdic98-1.0/kanjigen/data
-@dirrm share/eb/appendix/superdic98-1.0/kanjigen
-@dirrm share/eb/appendix/superdic98-1.0/koujien/data
-@dirrm share/eb/appendix/superdic98-1.0/koujien
-@dirrm share/eb/appendix/superdic98-1.0
-@dirrm share/eb/appendix
-@dirrm share/eb
+lib/libeb.so.9
+share/aclocal/eb4.m4
+%%DOCSDIR%%/eb-01.html
+%%DOCSDIR%%/eb-02.html
+%%DOCSDIR%%/eb-03.html
+%%DOCSDIR%%/eb-04.html
+%%DOCSDIR%%/eb-05.html
+%%DOCSDIR%%/eb-06.html
+%%DOCSDIR%%/eb-07.html
+%%DOCSDIR%%/eb-08.html
+%%DOCSDIR%%/eb-09.html
+%%DOCSDIR%%/eb-10.html
+%%DOCSDIR%%/eb-11.html
+%%DOCSDIR%%/eb-12.html
+%%DOCSDIR%%/eb-13.html
+%%DOCSDIR%%/eb-14.html
+%%DOCSDIR%%/eb.html
+%%DOCSDIR%%/ebappendix-01.html
+%%DOCSDIR%%/ebappendix-02.html
+%%DOCSDIR%%/ebappendix-03.html
+%%DOCSDIR%%/ebappendix-04.html
+%%DOCSDIR%%/ebappendix.html
+%%DOCSDIR%%/ebfont-01.html
+%%DOCSDIR%%/ebfont-02.html
+%%DOCSDIR%%/ebfont-03.html
+%%DOCSDIR%%/ebfont-04.html
+%%DOCSDIR%%/ebfont.html
+%%DOCSDIR%%/ebinfo-01.html
+%%DOCSDIR%%/ebinfo-02.html
+%%DOCSDIR%%/ebinfo-03.html
+%%DOCSDIR%%/ebinfo-04.html
+%%DOCSDIR%%/ebinfo-05.html
+%%DOCSDIR%%/ebinfo.html
+%%DOCSDIR%%/ebrefile-01.html
+%%DOCSDIR%%/ebrefile-02.html
+%%DOCSDIR%%/ebrefile-03.html
+%%DOCSDIR%%/ebrefile.html
+%%DOCSDIR%%/ebstopcode-01.html
+%%DOCSDIR%%/ebstopcode-02.html
+%%DOCSDIR%%/ebstopcode-03.html
+%%DOCSDIR%%/ebstopcode.html
+%%DOCSDIR%%/ebzip-01.html
+%%DOCSDIR%%/ebzip-02.html
+%%DOCSDIR%%/ebzip-03.html
+%%DOCSDIR%%/ebzip-04.html
+%%DOCSDIR%%/ebzip-05.html
+%%DOCSDIR%%/ebzip-06.html
+%%DOCSDIR%%/ebzip-07.html
+%%DOCSDIR%%/ebzip-08.html
+%%DOCSDIR%%/ebzip.html
+@dirrm %%DOCSDIR%%
+%%DATADIR%%/appendix/LIST
+%%DATADIR%%/appendix/LIST-ja
+%%DATADIR%%/appendix/cencro-1.0/catalog
+%%DATADIR%%/appendix/cencro-1.0/catalog.app
+%%DATADIR%%/appendix/cencro-1.0/cencro.app
+%%DATADIR%%/appendix/cencro-1.0/cencro/appendix
+%%DATADIR%%/appendix/chujiten-2.3/catalog
+%%DATADIR%%/appendix/chujiten-2.3/catalog.app
+%%DATADIR%%/appendix/chujiten-2.3/eiwa.app
+%%DATADIR%%/appendix/chujiten-2.3/eiwa/appendix
+%%DATADIR%%/appendix/chujiten-2.3/waei.app
+%%DATADIR%%/appendix/chujiten-2.3/waei/appendix
+%%DATADIR%%/appendix/chujiten2-2.0/catalogs
+%%DATADIR%%/appendix/chujiten2-2.0/catalogs.app
+%%DATADIR%%/appendix/chujiten2-2.0/chujiten.app
+%%DATADIR%%/appendix/chujiten2-2.0/chujiten/data/furoku
+%%DATADIR%%/appendix/chujiten6-2.3/catalog
+%%DATADIR%%/appendix/chujiten6-2.3/catalog.app
+%%DATADIR%%/appendix/chujiten6-2.3/chujiten.app
+%%DATADIR%%/appendix/chujiten6-2.3/chujiten/appendix
+%%DATADIR%%/appendix/colloc-2.0/catalogs
+%%DATADIR%%/appendix/colloc-2.0/catalogs.app
+%%DATADIR%%/appendix/colloc-2.0/colloc.app
+%%DATADIR%%/appendix/colloc-2.0/colloc/data/furoku
+%%DATADIR%%/appendix/crownfj-2.0/catalogs
+%%DATADIR%%/appendix/crownfj-2.0/catalogs.app
+%%DATADIR%%/appendix/crownfj-2.0/crown_fj.app
+%%DATADIR%%/appendix/crownfj-2.0/crown_fj/data/furoku
+%%DATADIR%%/appendix/crownfj-2.0/daily_ei.app
+%%DATADIR%%/appendix/crownfj-2.0/daily_ei/data/furoku
+%%DATADIR%%/appendix/crownfj2-1.0/catalog
+%%DATADIR%%/appendix/crownfj2-1.0/catalog.app
+%%DATADIR%%/appendix/crownfj2-1.0/crfre.app
+%%DATADIR%%/appendix/crownfj2-1.0/crfre/appendix
+%%DATADIR%%/appendix/crowngj-1.0/catalog
+%%DATADIR%%/appendix/crowngj-1.0/catalog.app
+%%DATADIR%%/appendix/crowngj-1.0/crger.app
+%%DATADIR%%/appendix/crowngj-1.0/crger/appendix
+%%DATADIR%%/appendix/daihyakka-1.0/catalog
+%%DATADIR%%/appendix/daihyakka-1.0/catalog.app
+%%DATADIR%%/appendix/daihyakka-1.0/dhk01.app
+%%DATADIR%%/appendix/daihyakka-1.0/dhk01/appendix
+%%DATADIR%%/appendix/daijirin-2.0/catalogs
+%%DATADIR%%/appendix/daijirin-2.0/catalogs.app
+%%DATADIR%%/appendix/daijirin-2.0/dgx01.app
+%%DATADIR%%/appendix/daijirin-2.0/dgx01/data/furoku
+%%DATADIR%%/appendix/dd75-2.0/catalog
+%%DATADIR%%/appendix/dd75-2.0/catalog.app
+%%DATADIR%%/appendix/dd75-2.0/chujiten.app
+%%DATADIR%%/appendix/dd75-2.0/chujiten/appendix
+%%DATADIR%%/appendix/dd75-2.0/koujien.app
+%%DATADIR%%/appendix/dd75-2.0/koujien/appendix
+%%DATADIR%%/appendix/gendai2000-1.0/catalog
+%%DATADIR%%/appendix/gendai2000-1.0/catalog.app
+%%DATADIR%%/appendix/gendai2000-1.0/gn00eb01.app
+%%DATADIR%%/appendix/gendai2000-1.0/gn00eb01/appendix
+%%DATADIR%%/appendix/gendai2000-1.0/gn00eb02.app
+%%DATADIR%%/appendix/gendai2000-1.0/gn00eb02/appendix
+%%DATADIR%%/appendix/genius-1.0/catalog
+%%DATADIR%%/appendix/genius-1.0/catalog.app
+%%DATADIR%%/appendix/genius-1.0/genius.app
+%%DATADIR%%/appendix/genius-1.0/genius/appendix
+%%DATADIR%%/appendix/genius2-1.1/catalogs
+%%DATADIR%%/appendix/genius2-1.1/catalogs.app
+%%DATADIR%%/appendix/genius2-1.1/genius.app
+%%DATADIR%%/appendix/genius2-1.1/genius/data/furoku
+%%DATADIR%%/appendix/global-2.0/catalogs
+%%DATADIR%%/appendix/global-2.0/catalogs.app
+%%DATADIR%%/appendix/global-2.0/gejcje.app
+%%DATADIR%%/appendix/global-2.0/gejcje/data/furoku
+%%DATADIR%%/appendix/heritage-2.2/abbrev.app
+%%DATADIR%%/appendix/heritage-2.2/abbrev/appendix
+%%DATADIR%%/appendix/heritage-2.2/bioentry.app
+%%DATADIR%%/appendix/heritage-2.2/bioentry/appendix
+%%DATADIR%%/appendix/heritage-2.2/catalog
+%%DATADIR%%/appendix/heritage-2.2/catalog.app
+%%DATADIR%%/appendix/heritage-2.2/colleges.app
+%%DATADIR%%/appendix/heritage-2.2/colleges/appendix
+%%DATADIR%%/appendix/heritage-2.2/dict.app
+%%DATADIR%%/appendix/heritage-2.2/dict/appendix
+%%DATADIR%%/appendix/heritage-2.2/font
+%%DATADIR%%/appendix/heritage-2.2/geoentry.app
+%%DATADIR%%/appendix/heritage-2.2/geoentry/appendix
+%%DATADIR%%/appendix/heritage-2.2/info.app
+%%DATADIR%%/appendix/heritage-2.2/info/appendix
+%%DATADIR%%/appendix/heritage-2.2/roget.app
+%%DATADIR%%/appendix/heritage-2.2/roget/appendix
+%%DATADIR%%/appendix/heritage-2.2/root.app
+%%DATADIR%%/appendix/heritage-2.2/root/appendix
+%%DATADIR%%/appendix/izumi-2.0/catalog
+%%DATADIR%%/appendix/izumi-2.0/catalog.app
+%%DATADIR%%/appendix/izumi-2.0/file1.app
+%%DATADIR%%/appendix/izumi-2.0/file1/appendix
+%%DATADIR%%/appendix/jitenban-2.4/catalogs
+%%DATADIR%%/appendix/jitenban-2.4/catalogs.app
+%%DATADIR%%/appendix/jitenban-2.4/chiezo.app
+%%DATADIR%%/appendix/jitenban-2.4/chiezo/data/furoku
+%%DATADIR%%/appendix/jitenban-2.4/chujiten.app
+%%DATADIR%%/appendix/jitenban-2.4/chujiten/data/furoku
+%%DATADIR%%/appendix/jitenban-2.4/iwakoku.app
+%%DATADIR%%/appendix/jitenban-2.4/iwakoku/data/furoku
+%%DATADIR%%/appendix/jitenban-2.4/mypaedia.app
+%%DATADIR%%/appendix/jitenban-2.4/mypaedia/data/furoku
+%%DATADIR%%/appendix/jitenban97-2.1/catalogs
+%%DATADIR%%/appendix/jitenban97-2.1/catalogs.app
+%%DATADIR%%/appendix/jitenban97-2.1/chiezo.app
+%%DATADIR%%/appendix/jitenban97-2.1/chiezo/data/furoku
+%%DATADIR%%/appendix/jitenban97-2.1/chujiten.app
+%%DATADIR%%/appendix/jitenban97-2.1/chujiten/data/furoku
+%%DATADIR%%/appendix/jitenban97-2.1/iwakoku.app
+%%DATADIR%%/appendix/jitenban97-2.1/iwakoku/data/furoku
+%%DATADIR%%/appendix/jitenban97-2.1/mypaedia.app
+%%DATADIR%%/appendix/jitenban97-2.1/mypaedia/data/furoku
+%%DATADIR%%/appendix/kanjigen-2.0/catalog
+%%DATADIR%%/appendix/kanjigen-2.0/catalog.app
+%%DATADIR%%/appendix/kanjigen-2.0/gdd01.app
+%%DATADIR%%/appendix/kanjigen-2.0/gdd01/appendix
+%%DATADIR%%/appendix/kanjigen2-2.0/catalogs
+%%DATADIR%%/appendix/kanjigen2-2.0/catalogs.app
+%%DATADIR%%/appendix/kanjigen2-2.0/kanjigen.app
+%%DATADIR%%/appendix/kanjigen2-2.0/kanjigen/data/furoku
+%%DATADIR%%/appendix/kojien-2.3/catalog
+%%DATADIR%%/appendix/kojien-2.3/catalog.app
+%%DATADIR%%/appendix/kojien-2.3/kojien.app
+%%DATADIR%%/appendix/kojien-2.3/kojien/appendix
+%%DATADIR%%/appendix/kojien2-2.0/catalogs
+%%DATADIR%%/appendix/kojien2-2.0/catalogs.app
+%%DATADIR%%/appendix/kojien2-2.0/furoku.app
+%%DATADIR%%/appendix/kojien2-2.0/furoku/data/furoku
+%%DATADIR%%/appendix/kojien2-2.0/koujien.app
+%%DATADIR%%/appendix/kojien2-2.0/koujien/data/furoku
+%%DATADIR%%/appendix/kojien4-2.2/catalog
+%%DATADIR%%/appendix/kojien4-2.2/catalog.app
+%%DATADIR%%/appendix/kojien4-2.2/furoku.app
+%%DATADIR%%/appendix/kojien4-2.2/furoku/appendix
+%%DATADIR%%/appendix/kojien4-2.2/koujien.app
+%%DATADIR%%/appendix/kojien4-2.2/koujien/appendix
+%%DATADIR%%/appendix/oxford-2.0/about.app
+%%DATADIR%%/appendix/oxford-2.0/about/appendix
+%%DATADIR%%/appendix/oxford-2.0/catalog
+%%DATADIR%%/appendix/oxford-2.0/catalog.app
+%%DATADIR%%/appendix/oxford-2.0/oxford.app
+%%DATADIR%%/appendix/oxford-2.0/oxford/appendix
+%%DATADIR%%/appendix/oxford-2.0/quick.app
+%%DATADIR%%/appendix/oxford-2.0/quick/appendix
+%%DATADIR%%/appendix/oxford-2.0/user.app
+%%DATADIR%%/appendix/oxford-2.0/user/appendix
+%%DATADIR%%/appendix/plus-2.0/catalogs
+%%DATADIR%%/appendix/plus-2.0/catalogs.app
+%%DATADIR%%/appendix/plus-2.0/plus.app
+%%DATADIR%%/appendix/plus-2.0/plus/data/furoku
+%%DATADIR%%/appendix/readers-2.2/catalog
+%%DATADIR%%/appendix/readers-2.2/catalog.app
+%%DATADIR%%/appendix/readers-2.2/readers.app
+%%DATADIR%%/appendix/readers-2.2/readers/appendix
+%%DATADIR%%/appendix/readers2-2.0/catalogs
+%%DATADIR%%/appendix/readers2-2.0/catalogs.app
+%%DATADIR%%/appendix/readers2-2.0/readers.app
+%%DATADIR%%/appendix/readers2-2.0/readers/data/furoku
+%%DATADIR%%/appendix/ruigigo-1.0/ruigigo/data/furoku
+%%DATADIR%%/appendix/ruigigo-1.0/ruigigo.app
+%%DATADIR%%/appendix/ruigigo-1.0/catalogs.app
+%%DATADIR%%/appendix/ruigigo-1.0/catalogs
+%%DATADIR%%/appendix/superdic98-1.0/catalogs
+%%DATADIR%%/appendix/superdic98-1.0/catalogs.app
+%%DATADIR%%/appendix/superdic98-1.0/chujiten.app
+%%DATADIR%%/appendix/superdic98-1.0/chujiten/data/furoku
+%%DATADIR%%/appendix/superdic98-1.0/furoku.app
+%%DATADIR%%/appendix/superdic98-1.0/furoku/data/furoku
+%%DATADIR%%/appendix/superdic98-1.0/gn98ep01.app
+%%DATADIR%%/appendix/superdic98-1.0/gn98ep01/data/furoku
+%%DATADIR%%/appendix/superdic98-1.0/gn98ep02.app
+%%DATADIR%%/appendix/superdic98-1.0/gn98ep02/data/furoku
+%%DATADIR%%/appendix/superdic98-1.0/gn98ep03.app
+%%DATADIR%%/appendix/superdic98-1.0/gn98ep03/data/furoku
+%%DATADIR%%/appendix/superdic98-1.0/kanjigen.app
+%%DATADIR%%/appendix/superdic98-1.0/kanjigen/data/furoku
+%%DATADIR%%/appendix/superdic98-1.0/koujien.app
+%%DATADIR%%/appendix/superdic98-1.0/koujien/data/furoku
+@dirrm %%DATADIR%%/appendix/cencro-1.0/cencro
+@dirrm %%DATADIR%%/appendix/cencro-1.0
+@dirrm %%DATADIR%%/appendix/chujiten-2.3/eiwa
+@dirrm %%DATADIR%%/appendix/chujiten-2.3/waei
+@dirrm %%DATADIR%%/appendix/chujiten-2.3
+@dirrm %%DATADIR%%/appendix/chujiten2-2.0/chujiten/data
+@dirrm %%DATADIR%%/appendix/chujiten2-2.0/chujiten
+@dirrm %%DATADIR%%/appendix/chujiten2-2.0
+@dirrm %%DATADIR%%/appendix/chujiten6-2.3/chujiten
+@dirrm %%DATADIR%%/appendix/chujiten6-2.3
+@dirrm %%DATADIR%%/appendix/colloc-2.0/colloc/data
+@dirrm %%DATADIR%%/appendix/colloc-2.0/colloc
+@dirrm %%DATADIR%%/appendix/colloc-2.0
+@dirrm %%DATADIR%%/appendix/crownfj-2.0/crown_fj/data
+@dirrm %%DATADIR%%/appendix/crownfj-2.0/crown_fj
+@dirrm %%DATADIR%%/appendix/crownfj-2.0/daily_ei/data
+@dirrm %%DATADIR%%/appendix/crownfj-2.0/daily_ei
+@dirrm %%DATADIR%%/appendix/crownfj-2.0
+@dirrm %%DATADIR%%/appendix/crownfj2-1.0/crfre
+@dirrm %%DATADIR%%/appendix/crownfj2-1.0
+@dirrm %%DATADIR%%/appendix/crowngj-1.0/crger
+@dirrm %%DATADIR%%/appendix/crowngj-1.0
+@dirrm %%DATADIR%%/appendix/daihyakka-1.0/dhk01
+@dirrm %%DATADIR%%/appendix/daihyakka-1.0
+@dirrm %%DATADIR%%/appendix/daijirin-2.0/dgx01/data
+@dirrm %%DATADIR%%/appendix/daijirin-2.0/dgx01
+@dirrm %%DATADIR%%/appendix/daijirin-2.0
+@dirrm %%DATADIR%%/appendix/dd75-2.0/chujiten
+@dirrm %%DATADIR%%/appendix/dd75-2.0/koujien
+@dirrm %%DATADIR%%/appendix/dd75-2.0
+@dirrm %%DATADIR%%/appendix/gendai2000-1.0/gn00eb01
+@dirrm %%DATADIR%%/appendix/gendai2000-1.0/gn00eb02
+@dirrm %%DATADIR%%/appendix/gendai2000-1.0
+@dirrm %%DATADIR%%/appendix/genius-1.0/genius
+@dirrm %%DATADIR%%/appendix/genius-1.0
+@dirrm %%DATADIR%%/appendix/genius2-1.1/genius/data
+@dirrm %%DATADIR%%/appendix/genius2-1.1/genius
+@dirrm %%DATADIR%%/appendix/genius2-1.1
+@dirrm %%DATADIR%%/appendix/global-2.0/gejcje/data
+@dirrm %%DATADIR%%/appendix/global-2.0/gejcje
+@dirrm %%DATADIR%%/appendix/global-2.0
+@dirrm %%DATADIR%%/appendix/heritage-2.2/abbrev
+@dirrm %%DATADIR%%/appendix/heritage-2.2/bioentry
+@dirrm %%DATADIR%%/appendix/heritage-2.2/colleges
+@dirrm %%DATADIR%%/appendix/heritage-2.2/dict
+@dirrm %%DATADIR%%/appendix/heritage-2.2/geoentry
+@dirrm %%DATADIR%%/appendix/heritage-2.2/info
+@dirrm %%DATADIR%%/appendix/heritage-2.2/roget
+@dirrm %%DATADIR%%/appendix/heritage-2.2/root
+@dirrm %%DATADIR%%/appendix/heritage-2.2
+@dirrm %%DATADIR%%/appendix/izumi-2.0/file1
+@dirrm %%DATADIR%%/appendix/izumi-2.0
+@dirrm %%DATADIR%%/appendix/jitenban-2.4/chiezo/data
+@dirrm %%DATADIR%%/appendix/jitenban-2.4/chiezo
+@dirrm %%DATADIR%%/appendix/jitenban-2.4/chujiten/data
+@dirrm %%DATADIR%%/appendix/jitenban-2.4/chujiten
+@dirrm %%DATADIR%%/appendix/jitenban-2.4/iwakoku/data
+@dirrm %%DATADIR%%/appendix/jitenban-2.4/iwakoku
+@dirrm %%DATADIR%%/appendix/jitenban-2.4/mypaedia/data
+@dirrm %%DATADIR%%/appendix/jitenban-2.4/mypaedia
+@dirrm %%DATADIR%%/appendix/jitenban-2.4
+@dirrm %%DATADIR%%/appendix/jitenban97-2.1/chiezo/data
+@dirrm %%DATADIR%%/appendix/jitenban97-2.1/chiezo
+@dirrm %%DATADIR%%/appendix/jitenban97-2.1/chujiten/data
+@dirrm %%DATADIR%%/appendix/jitenban97-2.1/chujiten
+@dirrm %%DATADIR%%/appendix/jitenban97-2.1/iwakoku/data
+@dirrm %%DATADIR%%/appendix/jitenban97-2.1/iwakoku
+@dirrm %%DATADIR%%/appendix/jitenban97-2.1/mypaedia/data
+@dirrm %%DATADIR%%/appendix/jitenban97-2.1/mypaedia
+@dirrm %%DATADIR%%/appendix/jitenban97-2.1
+@dirrm %%DATADIR%%/appendix/kanjigen-2.0/gdd01
+@dirrm %%DATADIR%%/appendix/kanjigen-2.0
+@dirrm %%DATADIR%%/appendix/kanjigen2-2.0/kanjigen/data
+@dirrm %%DATADIR%%/appendix/kanjigen2-2.0/kanjigen
+@dirrm %%DATADIR%%/appendix/kanjigen2-2.0
+@dirrm %%DATADIR%%/appendix/kojien-2.3/kojien
+@dirrm %%DATADIR%%/appendix/kojien-2.3
+@dirrm %%DATADIR%%/appendix/kojien2-2.0/furoku/data
+@dirrm %%DATADIR%%/appendix/kojien2-2.0/furoku
+@dirrm %%DATADIR%%/appendix/kojien2-2.0/koujien/data
+@dirrm %%DATADIR%%/appendix/kojien2-2.0/koujien
+@dirrm %%DATADIR%%/appendix/kojien2-2.0
+@dirrm %%DATADIR%%/appendix/kojien4-2.2/furoku
+@dirrm %%DATADIR%%/appendix/kojien4-2.2/koujien
+@dirrm %%DATADIR%%/appendix/kojien4-2.2
+@dirrm %%DATADIR%%/appendix/oxford-2.0/about
+@dirrm %%DATADIR%%/appendix/oxford-2.0/oxford
+@dirrm %%DATADIR%%/appendix/oxford-2.0/quick
+@dirrm %%DATADIR%%/appendix/oxford-2.0/user
+@dirrm %%DATADIR%%/appendix/oxford-2.0
+@dirrm %%DATADIR%%/appendix/plus-2.0/plus/data
+@dirrm %%DATADIR%%/appendix/plus-2.0/plus
+@dirrm %%DATADIR%%/appendix/plus-2.0
+@dirrm %%DATADIR%%/appendix/readers-2.2/readers
+@dirrm %%DATADIR%%/appendix/readers-2.2
+@dirrm %%DATADIR%%/appendix/readers2-2.0/readers/data
+@dirrm %%DATADIR%%/appendix/readers2-2.0/readers
+@dirrm %%DATADIR%%/appendix/readers2-2.0
+@dirrm %%DATADIR%%/appendix/ruigigo-1.0/ruigigo/data
+@dirrm %%DATADIR%%/appendix/ruigigo-1.0/ruigigo
+@dirrm %%DATADIR%%/appendix/ruigigo-1.0
+@dirrm %%DATADIR%%/appendix/superdic98-1.0/chujiten/data
+@dirrm %%DATADIR%%/appendix/superdic98-1.0/chujiten
+@dirrm %%DATADIR%%/appendix/superdic98-1.0/furoku/data
+@dirrm %%DATADIR%%/appendix/superdic98-1.0/furoku
+@dirrm %%DATADIR%%/appendix/superdic98-1.0/gn98ep01/data
+@dirrm %%DATADIR%%/appendix/superdic98-1.0/gn98ep01
+@dirrm %%DATADIR%%/appendix/superdic98-1.0/gn98ep02/data
+@dirrm %%DATADIR%%/appendix/superdic98-1.0/gn98ep02
+@dirrm %%DATADIR%%/appendix/superdic98-1.0/gn98ep03/data
+@dirrm %%DATADIR%%/appendix/superdic98-1.0/gn98ep03
+@dirrm %%DATADIR%%/appendix/superdic98-1.0/kanjigen/data
+@dirrm %%DATADIR%%/appendix/superdic98-1.0/kanjigen
+@dirrm %%DATADIR%%/appendix/superdic98-1.0/koujien/data
+@dirrm %%DATADIR%%/appendix/superdic98-1.0/koujien
+@dirrm %%DATADIR%%/appendix/superdic98-1.0
+@dirrm %%DATADIR%%/appendix
+@dirrm %%DATADIR%%
 share/locale/ja/LC_MESSAGES/eb.mo
 share/locale/ja/LC_MESSAGES/ebutils.mo
