@@ -1,0 +1,20 @@
+
+XMX is an X protocol multiplexor.  It is a standalone utility for displaying
+an X Windows session on multiple displays.  XMX takes advantage of the
+networked nature of the X Window System by tapping the communication link
+between an X client and an X server.  In this way, XMX works with any
+X clients and any X servers, without the need to modify either.
+
+It's tempting to call this "broadcast software," and that is certainly the
+effect.  In reality, though, XMX is "multicast" software.  It must know
+all the slave machines ahead of time and it connects to each one directly.
+XMX is more like mail than news.
+
+XMX connects to N servers like an X client, then accepts connections from
+M clients like an X server.  One of those servers is designated the "master"
+from which input is directed to the clients.  The other servers are "slaves."
+Slave servers receive only those protocol requests that are necessary for
+them to maintain a visual look-alike of the master server's display.
+
+This software was developed at Brown University for use in our electronic
+classroom.  Some version of it has been in use here since 1988.

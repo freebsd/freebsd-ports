@@ -1,0 +1,121 @@
+--- Makefile.orig	Wed Apr 13 09:22:21 1994
++++ Makefile	Mon Jun 28 15:57:11 1999
+@@ -1,70 +1,52 @@
+-#
+-#	Makefile for xmx
+-#
+-OPTFG=	-O
+-DBGFG=	-g -DDEBUG -DMALLOC_DEBUG
+-CFLAGS= -g
+-
+-LIB=
+-
+-XMX=	xmx
+-OFILES=\
+-	bufio.o\
+-	connect.o\
+-	error.o\
+-	genreq.o\
+-	main.o\
+-	map.o\
+-	pointer.o\
+-	reply.o\
+-	request.o\
+-	resource.o\
+-	socket.o
+-
+-CFILES= `echo $(OFILES) | sed 's/\.o/.c/g'`
+-DEBUGLIB= /usr/lib/debug/malloc.o /usr/lib/debug/mallocmap.o $(LIB)
+-
+-$(XMX):	$(OFILES)
+-	cc $(CFLAGS) -o $(XMX) $(OFILES) $(LIB)
++LIBPATH		= -L${X11BASE}/lib 
++INCPATH		= -I${X11BASE}/include
+ 
+-debug:
+-	make xmxd CFLAGS="$(DBGFG)" LIB="$(DEBUGLIB)"
+-
+-opt:
+-	make xmx CFLAGS="$(OPTFG)"
+-
+-lint:
+-	lint -hz $(CFILES)
++BIN		= ${PREFIX}/bin
++MANPATH		= ${PREFIX}/man
++LIB		= -lX11 -lm  
++OBJ		= bufio.o connect.o error.o genreq.o main.o map.o \
++		pointer.o reply.o request.o resource.o socket.o
++
++TARGET_FILE	= xmx
++
++#	-02	= enable all optimazions 
++#	-s	= make output smaller (without debug/link-informations)
++OPTION		= ${CFLAGS}
++
++# if yu dont have "gcc" use instead of "gcc" "cc"   
++CC		?= gcc
++
++all: $(TARGET_FILE)
++
++$(TARGET_FILE): $(OBJ)
++	$(CC) $(OPTION) -o $(TARGET_FILE)  $(OBJ)  $(LIBPATH) $(INCPATH) $(LIB)
++bufio.o: bufio.c
++	$(CC) $(OPTION) -c bufio.c	$(LIBPATH) $(INCPATH)
++connect.o: connect.c
++	$(CC) $(OPTION) -c connect.c	$(LIBPATH) $(INCPATH) 
++error.o: error.c
++	$(CC) $(OPTION) -c error.c	$(LIBPATH) $(INCPATH) 
++genreq.o: genreq.c
++	$(CC) $(OPTION) -c genreq.c	$(LIBPATH) $(INCPATH) 
++main.o: main.c
++	$(CC) $(OPTION) -c main.c	$(LIBPATH) $(INCPATH) 
++map.o: map.c
++	$(CC) $(OPTION) -c map.c	$(LIBPATH) $(INCPATH) 
++pointer.o: pointer.c
++	$(CC) $(OPTION) -c pointer.c	$(LIBPATH) $(INCPATH) 
++reply.o: reply.c
++	$(CC) $(OPTION) -c reply.c	$(LIBPATH) $(INCPATH) 
++request.o: request.c
++	$(CC) $(OPTION) -c request.c	$(LIBPATH) $(INCPATH) 
++resource.o: resource.c
++	$(CC) $(OPTION) -c resource.c	$(LIBPATH) $(INCPATH) 
++socket.o: socket.c
++	$(CC) $(OPTION) -c socket.c	$(LIBPATH) $(INCPATH) 
+ 
+ clean:
+-	rm -f *.o xmx xmxd core
+-
+-cs:
+-	cp $(CFILES) xmx.h resource.h Makefile xmx.1 README doc/lab.me /cs/src/xmx
+-
+-howbig:
+-	wc $(CFILES)
+-
+-src:
+-	@echo $(CFILES) xmx.h resource.h
+-
+-listhost:	listhost.c
+-	cc -g -o listhost listhost.c -lX
+-
+-testhash:	testhash.o hash.o error.o
+-	cc -g -o testhash testhash.o hash.o error.o
+-
+-testsocket:	testsocket.o socket.o error.o
+-	cc -g -o testsocket testsocket.o socket.o error.o
+-
+-xcoltest:	xcoltest.o
+-	cc -g -o xcoltest xcoltest.o -lX11
+-
+-xcmaptest:	xcmaptest.o
+-	cc -g -o xcmaptest xcmaptest.o -lX11
+-
+-onecol:	onecol.o
+-	cc -g -o onecol onecol.o -lX11
++	rm -f *.o xmx xmxd *.core
+ 
+-genreq.o resource.o: resource.h
+-$(OFILES): xmx.h
++install: all
++	cp xmx $(BIN)
++	cp xmx.1 $(MANPATH)/man1
++	chmod 755 $(BIN)/xmx
