@@ -16,6 +16,8 @@ MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext
 
+ONLY_FOR_ARCHS=	i386
+
 NO_CDROM=	"don't sell for profit"
 
 USE_X_PREFIX=	yes
