@@ -1,0 +1,4 @@
+Included in this package are a few sample configuration files.
+Please see the /usr/X11R6/share/doc/larswm directory.
+NOTE: larswm will not tile windows unless told to do so in
+      a .larswmrc located in your home directory.
