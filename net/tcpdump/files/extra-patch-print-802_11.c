@@ -1,5 +1,5 @@
---- print-802_11.c.orig	Tue Jul 22 18:36:57 2003
-+++ print-802_11.c	Wed Dec 10 18:56:16 2003
+--- print-802_11.c.orig	Wed Dec 10 09:52:33 2003
++++ print-802_11.c	Wed Mar 31 01:03:41 2004
 @@ -41,15 +41,20 @@
  
  #include "extract.h"
@@ -23,7 +23,7 @@
  		sep = " "; \
  	} \
  	if (p.rates.length != 0) \
-@@ -924,9 +929,194 @@
+@@ -919,9 +924,194 @@
  	return ieee802_11_print(p, h->len, h->caplen);
  }
  
@@ -218,7 +218,7 @@
  	u_int32_t caphdr_len;
  
  	caphdr_len = EXTRACT_32BITS(p + 4);
-@@ -977,7 +1167,7 @@
+@@ -972,7 +1162,7 @@
  	}
  
  	if (EXTRACT_32BITS(p) == WLANCAP_MAGIC_COOKIE_V1)

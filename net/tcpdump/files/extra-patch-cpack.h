@@ -1,5 +1,5 @@
---- cpack.h.orig	Wed Dec 10 18:44:34 2003
-+++ cpack.h	Tue Nov 25 04:08:43 2003
+--- cpack.h.orig	Wed Mar 31 01:03:41 2004
++++ cpack.h	Wed Mar 31 01:03:41 2004
 @@ -0,0 +1,53 @@
 +/*-
 + * Copyright (c) 2003, 2004 David Young.  All rights reserved.

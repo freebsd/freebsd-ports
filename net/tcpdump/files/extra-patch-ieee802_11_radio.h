@@ -1,7 +1,7 @@
---- ieee802_11_radio.h.orig	Wed Dec 10 18:44:53 2003
-+++ ieee802_11_radio.h	Sun Nov 30 04:54:28 2003
+--- ieee802_11_radio.h.orig	Wed Mar 31 01:03:41 2004
++++ ieee802_11_radio.h	Wed Mar 31 01:03:41 2004
 @@ -0,0 +1,201 @@
-+/* $FreeBSD: /tmp/pcvs/ports/net/tcpdump/files/Attic/extra-patch-ieee802_11_radio.h,v 1.1 2003-12-11 14:03:35 bms Exp $ */
++/* $FreeBSD: /tmp/pcvs/ports/net/tcpdump/files/Attic/extra-patch-ieee802_11_radio.h,v 1.2 2004-03-31 00:14:06 bms Exp $ */
 +/* $NetBSD: ieee80211_radiotap.h,v 1.3 2003/11/16 09:02:42 dyoung Exp $ */
 +/* $Header$ */
 +

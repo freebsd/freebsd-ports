@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	libpcap
-PORTVERSION=	0.8.1
-PORTREVISION=	352
+PORTVERSION=	0.8.3
+PORTREVISION=	0
 CATEGORIES=	net
-MASTER_SITES=	http://www.tcpdump.org/beta/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-351
+MASTER_SITES=	http://www.tcpdump.org/release/
+DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	bms@FreeBSD.org
 COMMENT=	Ubiquitous network traffic capture library
