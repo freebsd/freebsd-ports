@@ -1,0 +1,27 @@
+--- Makefile.orig	Wed Aug 22 18:31:55 2001
++++ Makefile	Fri May 10 11:04:48 2002
+@@ -31,24 +31,6 @@
+ 			$(INSTALL) -m 644 $$p $(R)$(mandir)/man$$i; \
+ 		done \
+ 	done
+-	@echo "Creating/updating files in $(R)$(raddbdir)"; \
+-	$(INSTALL) -d -m 755	$(R)$(raddbdir); \
+-	cd raddb; \
+-	for i in [a-c]* [e-z]*; do \
+-		[ $$i != radiusd.conf.in -a ! -f $(R)$(raddbdir)/$$i ] && \
+-                $(INSTALL) -m 644 $$i $(R)$(raddbdir); \
+-	done; \
+-	for i in dictionary*; do \
+-		[ ! -f $(R)$(raddbdir)/$$i ] && $(INSTALL) -m 644 $$i $(R)$(raddbdir); \
+-		if [ "`find $$i -newer $(R)$(raddbdir)/$$i`" ]; then \
+-			echo "** $(R)$(raddbdir)/$$i"; \
+-			nt=1; \
+-		fi; \
+-	done; \
+-	if [ "$$nt" ]; then \
+-		echo "** The samples in ../raddb are newer than these files";\
+-		echo "** Please investigate and copy manually if appropriate";\
+-	fi
+ 
+ common:
+ 	@for dir in $(SUBDIRS); do \
