@@ -6,7 +6,9 @@ bin/phod2a
 bin/tsa2d
 bin/tsd2a
 bin/tslearn
+include/gcin-im-client.h
 lib/gtk-2.0/immodules/im-gcin.so
+lib/libgcin-im-client.so
 lib/menu/gcin
 lib/menu/gcin-setup
 %%DATADIR%%/script/gcin-user-setup
@@ -43,3 +45,4 @@ share/icons/gcin/pin-float16.png
 @dirrm %%DATADIR%%/table
 @dirrm %%DATADIR%%/script
 @dirrm %%DATADIR%%
+@unexec rmdir %D/lib/gtk-2.0/immodules 2>/dev/null || true
