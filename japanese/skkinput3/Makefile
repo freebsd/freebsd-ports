@@ -1,31 +1,46 @@
-# New ports collection makefile for:	skkinput
-# Date created:		28 Jan 1998
-# Whom:			Murata Shuuichirou <mrt@mickey.ai.kyutech.ac.jp>
+# New ports collection makefile for:	skkinput3
+# Date created:		Aug 14 2002
+# Whom:			KOMATSU Shinichiro <koma2@jiro.c.u-tokyo.ac.jp>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	skkinput
-PORTVERSION=	2.03
+PORTNAME=	skkinput3
+PORTVERSION=	${SRCVERSION}.${PATCHLEVEL}
 CATEGORIES=	japanese x11
-MASTER_SITES=	http://member.nifty.ne.jp/Tatari_SAKAMOTO/
+MASTER_SITES=	http://downloads.sourceforge.jp/skkinput3/857/
+DISTNAME=	skkinput-${SRCVERSION}_${PATCHLEVEL}
 
-MAINTAINER=	yasuf@big.or.jp
+MAINTAINER=	koma2@jiro.c.u-tokyo.ac.jp
 
-RUN_DEPENDS=	${LOCALBASE}/sbin/skkserv:${PORTSDIR}/japanese/skkserv
+USE_IMAKE=		yes
 
-USE_IMAKE=	yes
-MANLANG=	ja
-MAN1=		skkinput.1
-MANCOMPRESSED=	yes
+NO_INSTALL_MANPAGES=	yes
 
-DOCS=		*.jis skkinput.doc myeval/skkinputlisp.doc dot.skkinput
+.include <bsd.port.pre.mk>
 
-post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/skkinput
-	@( cd ${WRKSRC} ; \
-	   ${INSTALL_DATA} ${DOCS} ${PREFIX}/share/doc/skkinput )
+# sanity check
+.if defined(WITH_DBSKKD) && defined(WITH_RSKKSERV)
+.error Cannot define both WITH_DBSKKD and WITH_RSKKSERV simultaneously.
 .endif
 
-.include <bsd.port.mk>
+.if defined(WITH_DBSKKD) || exists(${LOCALBASE}/libexec/dbskkd-cdb) && !defined(WITH_RSKKSERV)
+RUN_DEPENDS=	${LOCALBASE}/libexec/dbskkd-cdb:${PORTSDIR}/japanese/dbskkd-cdb
+.elif defined(WITH_RSKKSERV) || exists(${LOCALBASE}/libexec/rskkserv) && !defined(WITH_DBSKKD)
+RUN_DEPENDS=	${LOCALBASE}/libexec/rskkserv:${PORTSDIR}/japanese/rskkserv
+.else
+RUN_DEPENDS=	${LOCALBASE}/sbin/skkserv:${PORTSDIR}/japanese/skkserv
+.endif
+
+SRCVERSION=	3.0
+PATCHLEVEL=	1
+
+DOCS=		*.jis dot.skkinput
+
+.if !defined(NOPORTDOCS)
+post-install:
+	${MKDIR} ${DOCSDIR}
+	cd ${WRKSRC}; ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
+.endif
+
+.include <bsd.port.post.mk>
