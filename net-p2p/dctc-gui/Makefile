@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dctc
-PORTVERSION=	0.60
+PORTVERSION=	0.62
 CATEGORIES=	net gnome
 MASTER_SITES=	http://unixpages.org/distfiles/ \
 		http://ac2i.tzo.com/dctc/
@@ -30,6 +30,7 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	--with-gnome=${X11BASE} \
 		--with-gtk-prefix=${LOCALBASE} \
+		--datadir=${X11BASE}/share/gnome \
 		--enable-manual-db-detect \
 		--with-libiconv-prefix=${LOCALBASE}
 
@@ -56,6 +57,10 @@ post-configure:
 	@${ECHO_CMD} '#ifndef SEMVMX' >> ${WRKSRC}/config.h
 	@${ECHO_CMD} '#define SEMVMX 32767' >> ${WRKSRC}/config.h
 	@${ECHO_CMD} '#endif' >> ${WRKSRC}/config.h
+# disable GNU auto* tools
+	@${FIND} ${WRKSRC} -type f -name "Makefile" | ${XARGS} \
+		-n 10 ${REINPLACE_CMD} -E -e \
+		's! (autoconf|autoheader|automake|aclocal)$$! ${TRUE}!'
 
 post-install:
 .ifndef(NOPORTDOCS)
