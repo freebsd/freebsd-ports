@@ -75,20 +75,3 @@
  	else if (*arguments == '/')
  		this_menu = g_strdup (arguments);
  	else if (*arguments == '~')
---- panel/session.c.orig	Fri May 19 00:29:47 2000
-+++ panel/session.c	Wed May 31 12:49:09 2000
-@@ -777,10 +777,10 @@
- load_default_applets1(PanelWidget *panel)
- {
- 	char *def_launchers[] =
--	      { "gnome/apps/gnome-help.desktop",
--		"gnome/apps/System/gnome-terminal.desktop",
--		"gnome/apps/Settings/gnomecc.desktop",
--		"gnome/apps/Internet/Netscape.desktop",
-+	      { "apps/gnome-help.desktop",
-+		"apps/System/gnome-terminal.desktop",
-+		"apps/Settings/gnomecc.desktop",
-+		"apps/Internet/Netscape.desktop",
- 		NULL };
- 	int i;
- 	char *p;

@@ -1,0 +1,41 @@
+
+$FreeBSD$
+
+--- panel/config/Applet_Config	2002/01/22 14:18:42	1.1
++++ panel/config/Applet_Config	2002/01/22 14:19:44
+@@ -15,7 +15,7 @@
+ [Applet_2]
+ Conditional=screen_width >= 640
+ id=Launcher
+-parameters=gnome/apps/gnome-help.desktop
++parameters=apps/gnome-help.desktop
+ position=12
+ panel=0
+ unique_panel_id=10000001
+@@ -24,7 +24,7 @@
+ [Applet_3]
+ Conditional=screen_width >= 640
+ id=Launcher
+-parameters=gnome/apps/System/gnome-terminal.desktop
++parameters=apps/System/gnome-terminal.desktop
+ position=13
+ panel=0
+ unique_panel_id=10000001
+@@ -33,7 +33,7 @@
+ [Applet_4]
+ Conditional=screen_width >= 640
+ id=Launcher
+-parameters=gnome/apps/Settings/gnomecc.desktop
++parameters=apps/Settings/gnomecc.desktop
+ position=14
+ panel=0
+ unique_panel_id=10000001
+@@ -42,7 +42,7 @@
+ [Applet_5]
+ Conditional=screen_width >= 640
+ id=Launcher
+-parameters:Conditional={exists '/etc/X11/applnk/Internet/mozilla.desktop'}/etc/X11/applnk/Internet/mozilla.desktop{exists 'gnome/apps/Internet/mozilla.desktop'}gnome/apps/Internet/mozilla.desktop{exists 'gnome/apps/Internet/Mozilla.desktop'}gnome/apps/Internet/Mozilla.desktop{true}gnome/apps/Internet/Netscape.desktop
++parameters:Conditional={exists '/etc/X11/applnk/Internet/mozilla.desktop'}/etc/X11/applnk/Internet/mozilla.desktop{exists 'apps/Internet/mozilla.desktop'}apps/Internet/mozilla.desktop{exists 'apps/Internet/Mozilla.desktop'}apps/Internet/Mozilla.desktop{true}apps/Internet/Netscape.desktop
+ position=15
+ panel=0
+ unique_panel_id=10000001
