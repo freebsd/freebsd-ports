@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	cfengine
-PORTVERSION=	1.6.2
+PORTVERSION=	1.6.3
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.iu.hioslo.no/pub/cfengine/ \
 		${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gordont@bluemtn.net
 
 .if defined(PACKAGE_BUILDING) && !exists(/usr/include/tcpd.h)
 LIB_DEPENDS=	wrap.7:${PORTSDIR}/security/tcp_wrapper
