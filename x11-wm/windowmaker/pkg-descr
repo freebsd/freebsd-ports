@@ -1,6 +1,9 @@
-Window Maker is a new Windowmanager for X written by Alfredo Kojima. It follows
-in the tradition of Afterstep, attempting to emulate the most fantastic of
-UI's posessed by the NeXT STEP(tm) operating system.  Window Maker is an
-official part of the GNU Project.
+Window Maker is an X11 window manager designed to give additional
+integration support to the GNUstep Desktop Environment. In every
+way possible, it reproduces the elegant look and feel of the
+NeXTSTEP[tm] GUI. It is fast, feature rich, easy to configure, and
+easy to use. In addition, Window Maker works with GNOME and KDE,
+making it one of the most useful and universal window managers
+available.
 
-WWW:  http://www.windowmaker.org/
+WWW: http://www.windowmaker.org/

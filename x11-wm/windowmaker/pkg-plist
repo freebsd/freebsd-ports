@@ -103,10 +103,10 @@ lib/libWMaker.a
 lib/libWUtil.a
 lib/libwraster.a
 lib/libwraster.so
-lib/libwraster.so.3
-lib/pkgconfig/wrlib.pc
-lib/pkgconfig/WINGs.pc
-lib/pkgconfig/wmlib.pc
+lib/libwraster.so.5
+libdata/pkgconfig/WINGs.pc
+libdata/pkgconfig/wmlib.pc
+libdata/pkgconfig/wrlib.pc
 share/WINGs/Images.tiff
 share/WINGs/Images.xpm
 share/WINGs/defaultIcon.tiff
@@ -277,8 +277,8 @@ share/locale/bg/LC_MESSAGES/WPrefs.mo
 share/locale/bg/LC_MESSAGES/WindowMaker.mo
 share/locale/bs/LC_MESSAGES/WindowMaker.mo
 share/locale/ca/LC_MESSAGES/WINGs.mo
-share/locale/ca/LC_MESSAGES/WindowMaker.mo
 share/locale/ca/LC_MESSAGES/WPrefs.mo
+share/locale/ca/LC_MESSAGES/WindowMaker.mo
 share/locale/cs/LC_MESSAGES/WINGs.mo
 share/locale/cs/LC_MESSAGES/WPrefs.mo
 share/locale/cs/LC_MESSAGES/WindowMaker.mo
@@ -323,6 +323,8 @@ share/locale/sv/LC_MESSAGES/WindowMaker.mo
 share/locale/tr/LC_MESSAGES/WindowMaker.mo
 share/locale/zh_CN/LC_MESSAGES/WPrefs.mo
 share/locale/zh_CN/LC_MESSAGES/WindowMaker.mo
+share/locale/zh_TW/LC_MESSAGES/WPrefs.mo
+share/locale/zh_TW/LC_MESSAGES/WindowMaker.mo
 @exec mkdir -p %D/GNUstep/Apps/WPrefs.app/xpm
 @exec mkdir -p %D/share/WindowMaker/Sounds
 @dirrm share/WindowMaker/Styles
