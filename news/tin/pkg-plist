@@ -1,4 +1,3 @@
 bin/tin
 @exec ln -fs %f %B/rtin
 @unexec rm -f %B/rtin
-man/man1/tin.1.gz
