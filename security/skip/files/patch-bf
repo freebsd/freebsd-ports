@@ -1,6 +1,6 @@
 diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/freebsd/skip_es.c skipsrc-1.0/skip/freebsd/skip_es.c
---- skipsrc-1.0.orig/skip/freebsd/skip_es.c	Fri Oct 25 13:12:42 1996
-+++ skipsrc-1.0/skip/freebsd/skip_es.c	Sun Apr 12 15:51:32 1998
+--- skipsrc-1.0.orig/skip/freebsd/skip_es.c	Fri Oct 25 20:12:42 1996
++++ skipsrc-1.0/skip/freebsd/skip_es.c	Mon Nov 16 22:55:18 1998
 @@ -81,6 +81,11 @@
  static unsigned short	skip_pktid;
  static skip_softc_t	skip_softc[SKIP_MAX_OPENS];
@@ -71,6 +71,15 @@ diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/freebsd/skip_es.c skips
                                          decryptbuf->m_len, decryptbuf->m_data);
  
  	} 
+@@ -1745,7 +1766,7 @@
+ 	ip->ip_id = ntohs(ip->ip_id);
+ 	ip->ip_off = ntohs(ip->ip_off);
+ pass:
+-	m->m_flags &= ~ M_EOR;
++	m->m_flags &= ~ M_PROTO1;
+ 	(*inetsw_default[ip_protox[ip->ip_p]].pr_input)(m, hlen);
+ 	return (0);
+ }
 @@ -1910,6 +1931,13 @@
  		 */
                  IPADDRCOPY(&params.tunnel_addr, &newip->ip_dst);
@@ -126,3 +135,12 @@ diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/freebsd/skip_es.c skips
  		/*
  		 * transport mode, need to copy original IP header
  		 */
+@@ -2195,7 +2230,7 @@
+ 	/*
+ 	 * tag the start of the header buffer so SKIP can recognise it
+ 	 */
+-	outbuf->m_flags |= M_EOR | M_PKTHDR;
++	outbuf->m_flags |= M_PROTO1 | M_PKTHDR;
+     
+ 	s = splimp();
+ 	if (IF_QFULL(&ipintrq)) {

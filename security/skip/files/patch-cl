@@ -1,0 +1,13 @@
+diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/freebsd/skip_if.h skipsrc-1.0/skip/freebsd/skip_if.h
+--- skipsrc-1.0.orig/skip/freebsd/skip_if.h	Fri Oct 25 20:12:43 1996
++++ skipsrc-1.0/skip/freebsd/skip_if.h	Mon Nov 16 22:55:25 1998
+@@ -104,7 +104,7 @@
+ /*
+  * returns TRUE if SKIP has processed this buffer
+  */
+-#define	SKIP_DECRYPTED(m)	((m)->m_flags & M_EOR)
++#define	SKIP_DECRYPTED(m)	((m)->m_flags & M_PROTO1)
+ 
+ /* 
+  * Macro to retrieve an ifnet 
+diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/freebsd/skip_os.h skipsrc-1.0/skip/freebsd/skip_os.h
