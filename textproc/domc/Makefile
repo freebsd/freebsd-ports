@@ -9,7 +9,7 @@
 PORTNAME=	domc
 PORTVERSION=	0.6.0
 CATEGORIES=	textproc
-MASTER_SITES=	http://users.erols.com/mballen/domc/src/
+MASTER_SITES=	http://www.ioplex.com/~miallen/domc/dl/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A light weight implementation of the DOM in ANSI C
