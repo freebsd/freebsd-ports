@@ -1,7 +1,12 @@
 include/gdbm.h
+%%GDBM_COMPAT%%include/dbm.h
+%%GDBM_COMPAT%%include/ndbm.h
 @unexec install-info --delete %D/info/gdbm.info %D/info/dir
 info/gdbm.info
 @exec install-info %D/info/gdbm.info %D/info/dir
 lib/libgdbm.a
 lib/libgdbm.so
 lib/libgdbm.so.3
+%%GDBM_COMPAT%%lib/libgdbm_compat.a
+%%GDBM_COMPAT%%lib/libgdbm_compat.so
+%%GDBM_COMPAT%%lib/libgdbm_compat.so.3
