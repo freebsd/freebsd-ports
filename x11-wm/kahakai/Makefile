@@ -17,7 +17,7 @@ COMMENT=	Kahakai window manager
 
 BUILD_DEPENDS=	swig:${PORTSDIR}/devel/swig13 \
 	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost
-LIB_DEPENDS=	Imlib2.2:${PORTSDIR}/graphics/imlib2 \
+LIB_DEPENDS=	Imlib2.3:${PORTSDIR}/graphics/imlib2 \
 		Xft.2:${PORTSDIR}/x11-fonts/libXft
 RUN_DEPENDS=	\
 	${X11BASE}/lib/X11/fonts/artwiz-fonts:${PORTSDIR}/x11-fonts/artwiz-fonts

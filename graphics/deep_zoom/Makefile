@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generate very highly zoomed fractals
 
 BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
-LIB_DEPENDS=	Imlib2:${PORTSDIR}/graphics/imlib2 \
+LIB_DEPENDS=	Imlib2.3:${PORTSDIR}/graphics/imlib2 \
 		gmp.6:${PORTSDIR}/math/libgmp4
 
 IMLIB2_CONFIG=	${X11BASE}/bin/imlib2-config

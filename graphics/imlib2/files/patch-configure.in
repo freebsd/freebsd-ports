@@ -1,0 +1,121 @@
+--- configure.in.orig	Wed Jan  5 01:39:08 2005
++++ configure.in	Sun Feb 27 21:16:57 2005
+@@ -6,7 +6,7 @@
+ AC_CANONICAL_HOST
+ AC_CANONICAL_TARGET
+ AC_ISC_POSIX
+-AM_INIT_AUTOMAKE(imlib2, 1.2.0)
++AM_INIT_AUTOMAKE(imlib2, 1.2.0.001)
+ AM_CONFIG_HEADER(config.h)
+ 
+ AC_C_BIGENDIAN
+@@ -86,6 +86,9 @@
+ packagesrcdir=`cd $srcdir && pwd`
+ AC_DEFINE_UNQUOTED(PACKAGE_SOURCE_DIR, "${packagesrcdir}", [Source code directory])
+ 
++# FIXME: fill in requirements for pc.in - but only ft2 has a pc file!
++requirements="freetype2"
++
+ mmx=no
+ AC_ARG_ENABLE(mmx,[  --disable-mmx           attempt compiling using mmx assembly [default=yes]],
+ [
+@@ -98,15 +101,16 @@
+   fi
+ ],
+ [
+-if test x$target_os = xlinux-gnu; then
++if test x$target_os = xlinux-gnu -o x$target_os = xlinux; then
+   if test x$target_cpu = x$host_cpu; then
+     mmx=`cat /proc/cpuinfo | grep mmx`
+     if test -n "$mmx"; then
+       mmx=yes
++      echo "You appear to be compiling on a "$target_cpu/$target_os" system; using MMX."
+     fi
+   else
+     echo ""
+-    echo "You are cross-compiling on a "$host_cpu" machine for a "$target_os" machine."
++    echo "You are cross-compiling on a "$host_cpu" machine for a "$target_cpu/$target_os" machine."
+     echo "If this target supports mmx, please enable mmx with --enable-mmx as a"
+     echo "configure option."
+     echo ""
+@@ -114,6 +118,7 @@
+ else
+   echo ""
+   echo "You are not running Linux - This script cannot auto-detect mmx assembly."
++  echo "(You appear to be running $target_os.)"
+   echo "You will have to enable the mmx assembly (which gives anywhere from 10%"
+   echo "to 300% speedups) by adding --enable-mmx on the configure command-line."
+   echo ""
+@@ -139,35 +144,28 @@
+ freetype_cflags=`$FREETYPE_CONFIG --cflags`
+ freetype_libs=`$FREETYPE_CONFIG --libs`
+ 
+-x11=no
+-AC_ARG_ENABLE(x11,[  --disable-x11           attempt to build with X11 support [default=yes]],
+-[
+-  if test x$enableval = xyes; then
+-    have_x=yes
+-  else
+-    have_x=no
+-  fi
+-],
+-[
+-  AC_CHECK_HEADER(X11/X.h,
+-    [ have_x="yes" ],
+-    [ have_x="no" ]
+-  )
+-]
+-)
+-AC_MSG_CHECKING(whether X11 support is to be enabled)
++AC_PATH_X([X], [X11/Xlib.h], [XOpenDisplay(NULL)])
++
++if test "x$have_x" = "xno"; then
++   # If --without-x was passed, this will be "disabled" instead of "no" --
++   # so always treat "no" as an error
++   AC_MSG_ERROR(
++[no X support found.  Use --x-includes and --x-libraries to specify the X
++path on your system, or --without-x to disable X support.])
++fi
++
+ if test "x$have_x" = "xyes"; then
+-  x_dir="/usr/X11R6";
+-  x_cflags="-I"$x_dir"/include"
+-  x_libs="-L"$x_dir"/lib -lX11 -lXext"
+-  AC_MSG_RESULT(enabling X11 support)
++  if test "x$x_includes" != "x"; then
++    x_cflags="-I$x_includes"
++  fi
++  if test "x$x_libraries" != "x"; then
++    x_libs="-L$x_libraries -lX11 -lXext"
++  fi
+   AM_CONDITIONAL(BUILD_X11, true)
+   AC_DEFINE(BUILD_X11, 1, [enabling X11 support])
+ else
+-  x_dir=""
+   x_cflags=""
+   x_libs=""
+-  AC_MSG_RESULT(disabling X11 support)
+   AM_CONDITIONAL(BUILD_X11, false)
+ fi
+ 
+@@ -354,7 +352,9 @@
+ fi
+ AM_CONDITIONAL(BUILD_BZ2_LOADER, test "$bz2_ok" = yes)
+ AC_SUBST(BZ2LIBS)
+-  
++
++AC_SUBST(requirements)
++
+ AC_OUTPUT([
+ Makefile
+ src/Makefile
+@@ -395,6 +395,9 @@
+ echo "  GIF.....................: $gif_ok"
+ echo "  ZLIB....................: $zlib_ok"
+ echo "  BZIP2...................: $bz2_ok"
++echo
++echo
++echo "Use MMX for extra speed...: $mmx"
+ echo
+ echo
+ echo "Installation Path.........: $prefix"

@@ -19,7 +19,7 @@ COMMENT=	KDE Image Plugin Interface plugins
 LIB_DEPENDS=	kexif:${PORTSDIR}/graphics/libkexif \
 		kipi:${PORTSDIR}/graphics/libkipi \
 		gphoto2.2:${PORTSDIR}/graphics/libgphoto2 \
-		Imlib2.2:${PORTSDIR}/graphics/imlib2
+		Imlib2.3:${PORTSDIR}/graphics/imlib2
 
 OPTIONS=	ACQUIREIMAGES "scanner/screenshot plugin" on \
 		BATCHPROCESSIMAGES "batch processing on images" on \

@@ -126,7 +126,7 @@ PLIST_SUB+=	DRAWTEXT="@comment "
 .endif
 ## enable imlib2
 .if !defined(WITHOUT_VHOOK) && defined(WITH_IMLIB2)
-LIB_DEPENDS+=	Imlib2.2:${PORTSDIR}/graphics/imlib2
+LIB_DEPENDS+=	Imlib2.3:${PORTSDIR}/graphics/imlib2
 
 PLIST_SUB+=	IMLIB2=""
 .else
