@@ -1,5 +1,5 @@
---- log.c.orig	Wed Oct  7 04:52:51 1992
-+++ log.c	Tue Dec  9 19:59:48 2003
+--- sim/log.c.orig	Wed Oct  7 04:52:51 1992
++++ sim/log.c	Tue Dec  9 19:59:48 2003
 @@ -23,7 +23,7 @@
  #include "packet.h"
  #include "event.h"
