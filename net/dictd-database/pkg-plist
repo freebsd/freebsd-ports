@@ -12,12 +12,12 @@ lib/dict/hitchcock.dict.dz
 lib/dict/hitchcock.index
 lib/dict/jargon.dict.dz
 lib/dict/jargon.index
+lib/dict/vera.dict
+lib/dict/vera.index
 lib/dict/web1913.dict.dz
 lib/dict/web1913.index
 lib/dict/wn.dict.dz
 lib/dict/wn.index
 lib/dict/world95.dict.dz
 lib/dict/world95.index
-lib/dict/vera.dict.dz
-lib/dict/vera.index
 @dirrm lib/dict
