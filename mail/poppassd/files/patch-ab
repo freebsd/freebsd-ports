@@ -71,7 +71,7 @@
       if ((pw = getpwnam (user)) == NULL)
       {
 -	  WriteToClient ("500 Unknown user, %s.", user);
-+	  syslog (LOG_ERR, "Unkown user, %s", user);
++	  syslog (LOG_ERR, "Unknown user, %s", user);
 +	  sleep (5);
 +	  WriteToClient ("500 Old password is incorrect.");
  	  exit(1);
