@@ -14,8 +14,9 @@
 #
 # WITH_GTK2: Configure and build for gtk2.
 #
-# WITH_REMOTE_INTERFACE: Configure and build with experimental telnet-based
-#	remote interface.
+# WITH_PORTABILITY: Configure code to use the PATH variable at run-time
+#	at a cost in performance. Useful if you intend to move the executable
+#	to multiple machines.
 #
 # DEBUG: Compile with debugging symbols. Useful if you intend to make a bug
 #	report.
@@ -26,7 +27,7 @@
 #
 
 PORTNAME=	gtk-gnutella
-PORTVERSION=	0.93
+PORTVERSION=	0.93.2
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://gtk-gnutella.sourceforge.net/download/ \
@@ -43,7 +44,6 @@ USE_PERL5=	yes
 USE_X_PREFIX=	yes
 USE_BZIP2=	yes
 USE_BISON=	yes
-USE_GMAKE=	yes
 USE_GNOME=	libxml2
 USE_REINPLACE=	yes
 HAS_CONFIGURE=	yes
@@ -69,12 +69,12 @@ CONFIGURE_ARGS+=	-Dgtkversion=1
 USE_GNOME+=		gtk12
 .endif
 
-.if defined(WITH_REMOTE_INTERFACE)
-CONFIGURE_ARGS+=	-Dremotectrl=true
+.if defined(WITH_PORTABILITY)
+CONFIGURE_ARGS+=	-Dd_portable=true
 .endif
 
 .if defined(DEBUG)
-CONFIGURE_ARGS+=	-Doptimize=-g
+CONFIGURE_ARGS+=	-Doptimize=-g  -Uofficial=
 .endif
 
 pre-fetch:
@@ -85,14 +85,15 @@ pre-fetch:
 	@${ECHO} 'You may use the following make options.'
 	@${ECHO} 'See the Makefile for complete descriptions.'
 	@${ECHO} ''
-	@${ECHO} 'RUN_INTERACTIVE:	Use Configure in interactive mode.'
+	@${ECHO} 'RUN_INTERACTIVE:		Use Configure in interactive mode.'
 	@${ECHO} ''
-	@${ECHO} 'WITH_GTK2:		Build with gtk2 frontend.'
+	@${ECHO} 'WITH_GTK2:			Build with gtk2 frontend.'
 	@${ECHO} ''
-	@${ECHO} 'WITH_REMOTE_INTERFACE:	Enable telnet-based remote interface.'
-	@${ECHO} ''
-	@${ECHO} 'DEBUG:			Build with debugging symbols.'
-	@${ECHO} ''
+	@${ECHO} 'DEBUG:				Build with debugging symbols.'
+	@${ECHO}
+	@${ECHO} 'WITH_PORTABILITY:		Configure code to use the PATH variable at'
+	@${ECHO} ' 				run-time, at a cost in performance.'
+	@${ECHO}
 	@${SLEEP}
 .endif
 
