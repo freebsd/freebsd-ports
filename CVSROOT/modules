@@ -7743,6 +7743,7 @@ php4-tokenizer	ports/devel/php4-tokenizer
 php4-wddx	ports/textproc/php4-wddx
 php4-xml	ports/textproc/php4-xml
 php4-xmlrpc	ports/net/php4-xmlrpc
+php4-xslt	ports/textproc/php4-xslt
 php4-yp		ports/net/php4-yp
 php4-zlib	ports/archivers/php4-zlib
 php5		ports/lang/php5
