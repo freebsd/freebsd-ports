@@ -1,0 +1,10 @@
+bin/nettoe
+%%PORTDOCS%%share/doc/nettoe/AUTHORS
+%%PORTDOCS%%share/doc/nettoe/BUGS
+%%PORTDOCS%%share/doc/nettoe/COPYING
+%%PORTDOCS%%share/doc/nettoe/ChangeLog
+%%PORTDOCS%%share/doc/nettoe/INSTALL
+%%PORTDOCS%%share/doc/nettoe/NEWS
+%%PORTDOCS%%share/doc/nettoe/README
+%%PORTDOCS%%share/doc/nettoe/TO-DO
+%%PORTDOCS%%@dirrm share/doc/nettoe

@@ -1,0 +1,9 @@
+netToe is a Tic Tac Toe-like game for the console written in C using 
+UNIX sockets.
+It is playable by 2 players over the network, against computer AI, or 
+against another player on the same machine.
+
+WWW: http://nettoe.sourceforge.net/
+
+- Christopher Preston
+rbg@gayteenresource.org
