@@ -19,4 +19,5 @@ LANG_EXT=	03
 LANG_CONFIGURE_ARG=	PORT
 MASTERDIR=	${.CURDIR}/../../editors/openoffice-1.0
 
+NO_LATEST_LINK=	yes
 .include "${MASTERDIR}/Makefile"

@@ -12,4 +12,5 @@ L10NHELP=	helpcontent_${LANG_EXT}_unix.tgz
 LANG_CONFIGURE_ARG=	SPAN
 MASTERDIR=	${.CURDIR}/../openoffice-1.0
 
+NO_LATEST_LINK=	yes
 .include "${MASTERDIR}/Makefile"

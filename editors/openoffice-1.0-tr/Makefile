@@ -10,4 +10,5 @@ LANG_EXT=	90
 LANG_CONFIGURE_ARG=	TURK
 MASTERDIR=	${.CURDIR}/../openoffice-1.0
 
+NO_LATEST_LINK=	yes
 .include "${MASTERDIR}/Makefile"

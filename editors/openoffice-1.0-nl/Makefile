@@ -10,4 +10,5 @@ LANG_EXT=	31
 LANG_CONFIGURE_ARG=	DTCH
 MASTERDIR=	${.CURDIR}/../openoffice-1.0
 
+NO_LATEST_LINK=	yes
 .include "${MASTERDIR}/Makefile"

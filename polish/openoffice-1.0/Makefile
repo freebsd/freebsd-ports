@@ -12,4 +12,5 @@ LANG_EXT=	48
 LANG_CONFIGURE_ARG=	POL
 MASTERDIR=	${.CURDIR}/../../editors/openoffice-1.0
 
+NO_LATEST_LINK=	yes
 .include "${MASTERDIR}/Makefile"

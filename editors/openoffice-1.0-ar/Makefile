@@ -10,4 +10,6 @@ LANG_EXT=	96
 LANG_CONFIGURE_ARG=	ARAB
 MASTERDIR=	${.CURDIR}/../openoffice-1.0
 
+NO_LATEST_LINK=yes
+
 .include "${MASTERDIR}/Makefile"

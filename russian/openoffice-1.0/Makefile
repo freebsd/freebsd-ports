@@ -19,4 +19,5 @@ MASTERDIR=	${.CURDIR}/../../editors/openoffice-1.0
 PATCH_SITES=	http://people.freebsd.org/~mbr/ooo/
 PATCHFILES=	patch-translation-ru-1.0.3.bz2
 
+NO_LATEST_LINK=	yes	
 .include "${MASTERDIR}/Makefile"
