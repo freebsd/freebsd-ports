@@ -1,16 +1,30 @@
---- Makefile	Mon Apr 27 21:47:35 1998
-+++ /home/andy/tmp/wrk/Makefile	Mon Jul  6 11:56:02 1998
-@@ -1,8 +1,8 @@
+--- Makefile	Tue Apr 28 01:47:35 1998
++++ /home/andy/tmp/wrk/Makefile	Sat May  1 13:01:53 1999
+@@ -1,8 +1,7 @@
 -INCDIR=/usr/local/qt/include
 -CFLAGS=-O2 -I/usr/X11/include -DSHOW_NEXT_COLORS
 -LFLAGS=-L/usr/local/qt/lib -lqt -L/usr/X11/lib -lX11
 -CC=gcc
 -MOC=/usr/local/qt/bin/moc
 +INCDIR=${X11BASE}/include/X11/qt
-+CFLAGS+=-I${X11BASE}/include -DSHOW_NEXT_COLORS
++CXXFLAGS+=-I${X11BASE}/include -DSHOW_NEXT_COLORS
 +LFLAGS=-L${X11BASE}/lib -lqt -lX11
-+#CC=gcc
 +MOC=${X11BASE}/bin/moc
  
  SRC=lines.cpp lines.moc
  OBJECTS=lines.o 
+@@ -14,12 +13,12 @@
+ .SUFFIXES:	.cpp
+ 
+ .cpp.o:
+-	$(CC) -c $(CFLAGS) -I$(INCDIR) $<
++	$(CXX) -c $(CXXFLAGS) -I$(INCDIR) $<
+ 
+ all: $(TARGET)
+ 
+ $(TARGET): $(MOCFILES) $(OBJECTS) lines.h
+-	$(CC) $(OBJECTS) -o $(TARGET) $(LFLAGS) -I$(INCDIR)
++	$(CXX) $(OBJECTS) -o $(TARGET) $(LFLAGS) -I$(INCDIR)
+ 
+ lines.moc: lines.h
+ 	$(MOC) lines.h -o lines.moc
