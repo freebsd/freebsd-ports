@@ -1,5 +1,0 @@
-#! /bin/sh
-
-perl -pi -e "s|!!LOCALBASE!!|$LOCALBASE|" ${WRKSRC}/bin/aps2file
-
-exit 0
