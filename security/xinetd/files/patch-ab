@@ -1,0 +1,32 @@
+--- compile-src.orig	Thu Oct 16 09:06:46 1997
++++ compile-src	Thu Oct 16 09:09:32 1997
+@@ -43,7 +43,7 @@
+ # The default is optimization.
+ #
+ cc=
+-ccopt=-O
++ccopt=-O2
+ lib_defs=
+ xinetd_defs=
+ 
+@@ -677,13 +677,13 @@
+ case "$want_SB" in
+ 	yes) modify_manpages=yes ;;
+ 	no)  modify_manpages= ;;
+-	*)   echo -n "Convert .B -> .SB in man pages ? (if you are not sure, say no) -->"
+-	read x
+-	if test "$x" = "y" -o "$x" = "yes"; then
+-		modify_manpages=yes
+-	else
+-		modify_manpages=
+-	fi
++#	*)   echo -n "Convert .B -> .SB in man pages ? (if you are not sure, say no) -->"
++#	read x
++#	if test "$x" = "y" -o "$x" = "yes"; then
++#		modify_manpages=yes
++#	else
++#		modify_manpages=
++#	fi
+ esac
+ 
+ if test "$modify_manpages" ; then
