@@ -1,11 +1,9 @@
-This library is able to decode files in the following formats:
+This library is able to encode/decode files in the following formats:
 
         uuencode
         xxencode
         Base64
         BinHex
+		yEnc
 
-It is also able to encode files in all of the above formats except
-for BinHex.
-
-WWW: http://www.uni-frankfurt.de/~fp/uudeview/
+WWW: http://www.fpx.de/fp/Software/UUDeview/
