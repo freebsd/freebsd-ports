@@ -10,7 +10,7 @@ PORTVERSION=	2.1.3
 CATEGORIES=	mail python
 MASTER_SITES=	http://www.qcc.sk.ca/~charlesc/software/getmail-2.0/
 
-MAINTAINER=	petef@databits.net
+MAINTAINER=	petef@FreeBSD.org
 
 USE_PYTHON=	yes
 

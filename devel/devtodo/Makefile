@@ -10,7 +10,7 @@ PORTVERSION=	0.1.11
 CATEGORIES=	devel
 MASTER_SITES=	http://activelysecure.net/~alec/development/devtodo/download.php?filename=${PORTVERSION}/
 
-MAINTAINER=	petef@databits.net
+MAINTAINER=	petef@FreeBSD.org
 
 GNU_CONFIGURE=	Yes
 

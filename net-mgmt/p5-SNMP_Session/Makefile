@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.switch.ch/software/sources/network/snmp/perl/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. old
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	petef@databits.net
+MAINTAINER=	petef@FreeBSD.org
 
 PERL_CONFIGURE=	yes
 

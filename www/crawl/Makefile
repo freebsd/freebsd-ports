@@ -10,7 +10,7 @@ PORTVERSION=	0.1b
 CATEGORIES=	www
 MASTER_SITES=	http://www.monkey.org/~provos/
 
-MAINTAINER=	petef@databits.net
+MAINTAINER=	petef@FreeBSD.org
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libevent.a:${PORTSDIR}/devel/libevent
 

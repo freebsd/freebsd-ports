@@ -10,7 +10,7 @@ PORTVERSION=	0.1.1
 CATEGORIES=	news
 MASTER_SITES=	http://phunkbros.dk/newsgrab/
 
-MAINTAINER=	petef@databits.net
+MAINTAINER=	petef@FreeBSD.org
 
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/News/NNTPClient.pm:${PORTSDIR}/news/p5-NNTPClient
 

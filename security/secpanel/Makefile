@@ -10,7 +10,7 @@ PORTVERSION=	0.31
 CATEGORIES=	security
 MASTER_SITES=	http://www2.wiwi.uni-marburg.de/~leich/soft/secpanel/
 
-MAINTAINER=	petef@databits.net
+MAINTAINER=	petef@FreeBSD.org
 
 RUN_DEPENDS=	wish8.3:${PORTSDIR}/x11-toolkits/tk83 \
 		ssh-askpass:${PORTSDIR}/security/openssh-askpass

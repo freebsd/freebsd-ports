@@ -1,6 +1,6 @@
 # New ports collection makefile for:	synaesthesia
 # Date created:				25 May 2001
-# Whom:					petef@databits.net
+# Whom:					petef@FreeBSD.org
 #
 # $FreeBSD$
 #
@@ -10,7 +10,7 @@ PORTVERSION=	2.1
 CATEGORIES=	graphics
 MASTER_SITES=	http://yoyo.cc.monash.edu.au/~pfh/
 
-MAINTAINER=	petef@databits.net
+MAINTAINER=	petef@FreeBSD.org
 
 LIB_DEPENDS=	SDL-1.0.2:${PORTSDIR}/devel/sdl10
 

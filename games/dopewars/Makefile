@@ -11,7 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://dopewars.sourceforge.net/ \
 		http://bellatrix.pcl.ox.ac.uk/~ben/dopewars/
 
-MAINTAINER=	petef@databits.net
+MAINTAINER=	petef@FreeBSD.org
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

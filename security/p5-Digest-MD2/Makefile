@@ -1,6 +1,6 @@
 # New ports collection makefile for:    p5-Digest-MD2
 # Date created:				24 May 2001
-# Whom:					petef@databits.net
+# Whom:					petef@FreeBSD.org
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Digest
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	petef@databits.net
+MAINTAINER=	petef@FreeBSD.org
 
 PERL_CONFIGURE=	yes
 

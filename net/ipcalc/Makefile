@@ -12,7 +12,7 @@ MASTER_SITES=	http://jodies.de/
 DISTFILES=	ipcalc.pl
 EXTRACT_ONLY=	# empty
 
-MAINTAINER=	petef@databits.net
+MAINTAINER=	petef@FreeBSD.org
 
 NO_BUILD=	yes
 USE_PERL5=	yes

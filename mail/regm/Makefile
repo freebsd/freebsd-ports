@@ -10,7 +10,7 @@ PORTVERSION=	1.0
 CATEGORIES=	mail python
 MASTER_SITES=	http://perso.linuxfr.org/jdumont/regm/
 
-MAINTAINER=	petef@databits.net
+MAINTAINER=	petef@FreeBSD.org
 
 NO_BUILD=	yes
 USE_PYTHON=	yes

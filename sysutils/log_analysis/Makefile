@@ -1,6 +1,6 @@
 # New ports collection makefile for:	log_analysis
 # Date created:				5 July 2001
-# Whom:					petef@databits.net
+# Whom:					petef@FreeBSD.org
 #
 # $FreeBSD$
 #
@@ -10,7 +10,7 @@ PORTVERSION=	0.38
 CATEGORIES=	sysutils
 MASTER_SITES=	http://linux.umbc.edu/~mabzug1/
 
-MAINTAINER=	petef@databits.net
+MAINTAINER=	petef@FreeBSD.org
 
 USE_PERL5=	yes
 

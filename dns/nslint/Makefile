@@ -10,7 +10,7 @@ PORTVERSION=	2.0.2
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.ee.lbl.gov/
 
-MAINTAINER=	petef@databits.net
+MAINTAINER=	petef@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 ALL_TARGET=	nslint
