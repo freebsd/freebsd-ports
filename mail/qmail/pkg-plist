@@ -148,6 +148,7 @@ configure/dnsptr
 %%DOCDIR%%/PORT_NOTES
 %%DOCDIR%%/PORT_NOTES_FreeBSD_40-RELEASE
 %%DOCDIR%%/SYSDEPS
+%%DOCDIR%%/mailer.conf.sample
 %%DOCDIR%%/mkaliasdir
 boot/maildir
 @dirrm %%DOCDIR%%
@@ -155,4 +156,6 @@ boot/maildir
 @dirrm boot
 @dirrm bin
 
-@unexec echo "If you are permanently removing qmail, you should also ``rm -Rf ${PKG_PREFIX}/alias ${PKG_PREFIX}/control ${PKG_PREFIX}/queue ${PKG_PREFIX}/users'' and remove the qmail users/groups." | /usr/bin/fmt
+@unexec echo "1) If you are permanently removing qmail, you should also ``rm -Rf ${PKG_PREFIX}/alias ${PKG_PREFIX}/control ${PKG_PREFIX}/queue ${PKG_PREFIX}/users'' and remove the qmail users/groups." | /usr/bin/fmt
+@unexec echo "2) Do not forget to reconfigure your /etc/mail/mailer.conf to use your older MTA, or reconfigure your old MTA binaries if you decided to replace them." | /usr/bin/fmt
+@unexec echo "3) Do not forget to enable sendmail as your default MTA if you have to. Go to mail/qmail portsdir and do a 'make enable-sendmail'" | /usr/bin/fmt

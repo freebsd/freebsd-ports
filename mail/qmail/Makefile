@@ -54,7 +54,8 @@ PLIST_SUB=	DOCDIR=${DOCDIR}
 DOCFILES+=	${WRKSRC}/BLURB ${WRKSRC}/BLURB2 ${WRKSRC}/BLURB3 \
 		${WRKSRC}/BLURB4 ${WRKSRC}/INTERNALS ${WRKSRC}/SECURITY \
 		${WRKSRC}/THOUGHTS ${FILESDIR}/PORT_NOTES \
-		${FILESDIR}/PORT_NOTES_FreeBSD_40-RELEASE
+		${FILESDIR}/PORT_NOTES_FreeBSD_40-RELEASE \
+		${WRKDIR}/mailer.conf.sample
 
 # The following docfiles are normally installed with qmail-hier
 DOCFILES+=	${WRKSRC}/FAQ ${WRKSRC}/UPGRADE ${WRKSRC}/SENDMAIL \
@@ -135,10 +136,10 @@ do-install:
 	@# This is not part of qmail proper, hence the 2nd class citizenship
 	${INSTALL_SCRIPT} ${FILESDIR}/mkaliasdir ${PREFIX}/${DOCDIR}
 	@cd ${PREFIX}/configure ; ./config
-	@${MKDIR} /usr/local/etc/rc.d
-	@${LN} -sf ${PREFIX}/rc /usr/local/etc/rc.d/qmail.sh
+	@${MKDIR} ${LOCALBASE}/etc/rc.d
+	@${LN} -sf ${PREFIX}/rc ${LOCALBASE}/etc/rc.d/qmail.sh
 	@${ECHO}
-	@${SED} s!/var/qmail!${PREFIX}/!g ${PKGDIR}/MESSAGE | /usr/bin/fmt
+	@${SED} s!/var/qmail!${PREFIX}!g ${PKGDIR}/MESSAGE | /usr/bin/fmt
 
 # hack to allow slave ports to include bsd.port.pre.mk and then this file
 .if defined(_PREMKINCLUDED)
@@ -150,7 +151,7 @@ do-install:
 # Ugh...  ;-)
 thereal-post-patch:
 .for i in ${BOOTFILES}
-	if [ `dirname $i` != ${FILESDIR} ] ; \
+	@if [ `dirname $i` != ${FILESDIR} ] ; \
 	then \
 		${CP} $i.sh $i.sh.orig; \
 		(head -c `${EXPR} \`ls -l $i.sh.orig \
@@ -158,6 +159,94 @@ thereal-post-patch:
 		    > $i.sh ; \
 	fi
 .endfor
+	@${SED} s!/var/qmail/!${PREFIX}/!g ${FILESDIR}/mailer.conf.sample > \
+		${WRKDIR}/mailer.conf.sample
+
+# Double Ugh... ;-)
+${WRKDIR}/.thereal_disable_sendmail_done:
+	@if [ ! -d ${WRKDIR} ]; \
+	then \
+		${MKDIR} ${WRKDIR} ; \
+	fi
+
+# I would like some input on the targets below. Only constructive ones
+# please. :)
+# based on shells/pdksh /etc/shells update PLIST.
+thereal-disable-sendmail: ${WRKDIR}/.thereal_disable_sendmail_done /etc/rc.conf 
+	@if [ -f /etc/rc.conf ]; \
+	then \
+		${CP} /etc/rc.conf /etc/rc.conf.bak && \
+			${GREP} -v sendmail_enable /etc/rc.conf.bak > \
+				/etc/rc.conf && \
+			${TOUCH} ${WRKDIR}/.thereal_disable_sendmail_done ; \
+	else \
+		${ECHO_MSG} ¨===> ERROR: YOU DO NOT HAVE A VALID /etc/rc.conf¨ ; \
+		${ECHO_MSG} ¨===> FIX this and try again¨ ; \
+		${FALSE} ; \
+	fi
+
+disable-sendmail: thereal-disable-sendmail
+	@${ECHO_MSG} "===> I hope you know what you are doing:"
+	@${ECHO_MSG} "===> You just told your system to not"
+	@${ECHO_MSG} "===> automaticaly start sendmail on your"
+	@${ECHO_MSG} "===> next startup."
+	@${ECHO_MSG} "===> (i.e., added sendmail_enable=\¨NO\¨ to rc.conf)"
+	@if [ -f /etc/rc.conf ]; \
+	then \
+		${ECHO} sendmail_enable=\"NO\" >> /etc/rc.conf ; \
+	fi
+
+enable-sendmail: thereal-disable-sendmail
+	@${ECHO_MSG} "===> I hope you know what you are doing:"
+	@${ECHO_MSG} "===> You just told your system to"
+	@${ECHO_MSG} "===> automaticaly start sendmail on your"
+	@${ECHO_MSG} "===> next startup."
+	@${ECHO_MSG} "===> (i.e., removed sendmail_enable=\¨NO\¨ from rc.conf)"
+
+enable-qmail: install disable-sendmail
+	@if [ -f /etc/mail/mailer.conf ]; \
+	then \
+		${CP} /etc/mail/mailer.conf /etc/mail/mailer.conf.bak && \
+		${CP} ${WRKDIR}/mailer.conf.sample /etc/mail/mailer.conf ; \
+	else \
+		${ECHO_MSG} "===> ERROR: YOU DO NOT HAVE A VALID /etc/mail/mailer.conf" ; \
+		${ECHO_MSG} "===> FIX this and try again" ; \
+		${ECHO_MSG} "===> or, do \¨make force_enable_qmail\¨ if you are sure" ; \
+		${ECHO_MSG} "===> you want this port replacing some binaries" ; \
+		${ECHO_MSG} "===> IF THIS FEELS UNEASY, read ${PREFIX}/${DOCDIR}/REMOVE.sendmail and do it manually" ; \
+	fi
+	@${ECHO} "===> Do not forget to choose an appropriate qmail startup"
+	@${ECHO} "===> script. Go through ${PREFIX}/boot, choose one"
+	@${ECHO} "===> and copy the chosen script as ${PREFIX}/rc"
+	@${ECHO} "===> For example, \¨cp ${PREFIX}/boot/proc+df ${PREFIX}/rc\¨"
+
+
+# taken from mail/postfix idea
+force-enable-qmail: install disable-sendmail
+	@${ECHO_MSG} "===> Replacing sendmail"
+	@if [ -e /usr/sbin/sendmail ]; then \
+		${MV} -f /usr/sbin/sendmail /usr/sbin/sendmail.OFF && \
+		${CHMOD} 0 /usr/sbin/sendmail.OFF; \
+	fi
+	@if [ -e ${PREFIX}/bin/sendmail ]; then \
+		${LN} -s ${PREFIX}/bin/sendmail /usr/sbin/sendmail; \
+	fi
+	@${ECHO_MSG} "===> Replacing mailq"
+	@if [ -e /usr/bin/mailq ]; then \
+		${MV} -f /usr/bin/mailq /usr/bin/mailq.OFF && \
+		${CHMOD} 0 /usr/bin/mailq.OFF; \
+	fi  
+	@if [ -e ${PREFIX}/bin/qmail-qread ]; then \
+		${LN} -s ${PREFIX}/bin/qmail-qread /usr/bin/mailq; \
+	fi
+	@${ECHO_MSG} "===> Replacing newaliases"
+	@if [ -e /usr/bin/newaliases ]; then \
+		${MV} -f /usr/bin/newaliases /usr/bin/newaliases.OFF && \
+		${CHMOD} 0 /usr/bin/newaliases.OFF; \
+	fi
+	@if [ -e ${PREFIX}/bin/newaliases ]; then \
+		${LN} -s ${PREFIX}/bin/newaliases /usr/bin/newaliases; \
+	fi
 
 # The users are instructed (in PORT_NOTES) to install ${QUEUE_DIR}/rc
 # themselves.  Each /var/qmail/ should have its own rc.  On many machines,

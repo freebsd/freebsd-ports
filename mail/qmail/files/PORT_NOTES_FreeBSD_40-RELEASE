@@ -45,8 +45,13 @@ Here follows my personal /etc/mail/mailer.conf
 
 sendmail        /var/qmail/bin/sendmail
 send-mail       /var/qmail/bin/sendmail
-mailq           /var/qmail/bin/qmail-qstat
+mailq           /var/qmail/bin/qmail-qread
 newaliases      /var/qmail/bin/newaliases
+
+There is a sample mailer.conf in this directory, please install
+over the /etc/mail/mailer.conf to unfold qmail as your default MTA.
+Please don´t forget to backup /etc/mail/mailer.conf before doing
+so. Better safe then sorry.
 
 So, whenever you call sendmail, in fact, you are using the appropriate
 "qmail-clones".
