@@ -1,6 +1,35 @@
-diff -c server.c.orig server.c
 *** server.c.orig	Sun Mar 26 20:33:31 1995
---- server.c	Wed Aug  7 13:47:05 1996
+--- server.c	Wed Oct  9 21:29:25 1996
+***************
+*** 48,53 ****
+--- 48,56 ----
+  #include <pwd.h>                /* For getpwuid(). */
+  #include <signal.h>
+  #include <stdio.h>
++ #ifdef __FreeBSD__
++ #include <stdlib.h>
++ #endif
+  
+  #include "youbin.h"
+  #include "server.h"
+***************
+*** 154,159 ****
+--- 157,171 ----
+      dummy.tv_sec = (long)(UNIT_TIME * 10);
+      dummy.tv_usec = 0L;
+  
++     /*Go to background.  This part was modified locally by Masafumi NAKANE
++         <max@wide.ad.jp>, and is used only on FreeBSD./*
++ #ifdef __FreeBSD__
++     if (daemon(1, 1) == -1) {
++ 	    perror("daemon");
++ 	    kill(getpid(), SIGTERM);
++     }
++ #endif
++ 
+      /* Dive into main loop. Don't use setjmp() and longjmp(),
+         because list maintenance routines are in critical section. */
+      alarm(UNIT_TIME);
 ***************
 *** 244,250 ****
       char            buff[MESS_LEN + 1];
@@ -10,7 +39,7 @@ diff -c server.c.orig server.c
           if (errno != EINTR) {
               warn_log("Error in receiving packet\n");
           }
---- 244,250 ----
+--- 256,262 ----
       char            buff[MESS_LEN + 1];
       int             len, flen = sizeof(ca);
       
@@ -27,7 +56,7 @@ diff -c server.c.orig server.c
           sys_error_log("bind");
           exit(EXIT_FAILURE);
       }
---- 543,549 ----
+--- 555,561 ----
       saddr->sin_family = hp->h_addrtype;
       saddr->sin_addr.s_addr = htonl(INADDR_ANY);
       saddr->sin_port = sp->s_port;
@@ -44,7 +73,7 @@ diff -c server.c.orig server.c
           warn_log("Error in sending packet: %s\n", mess);
       }
   }
---- 586,592 ----
+--- 598,604 ----
       debug_log("Send: %s [%ld]: \"%.*s\"\n",
                 ((sp == CA_ADDR) ? "" : sp->parent->name), (long)sp,
                 MAX_DEBUG_COLUMN, mess); 
