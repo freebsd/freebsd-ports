@@ -28,9 +28,9 @@ DOCS=		AUTHORS CHANGELOG README TODO \
 		${RUBY_RD_FILES} \
 		${RUBY_RD_HTML_FILES}
 
-post-install: doc-install
+.include <bsd.port.pre.mk>
 
-.include <bsd.port.mk>
+post-install: doc-install
 
 doc-install:
 .if !defined(NOPORTDOCS)
@@ -39,3 +39,5 @@ doc-install:
 	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
 .endfor
 .endif
+
+.include <bsd.port.post.mk>

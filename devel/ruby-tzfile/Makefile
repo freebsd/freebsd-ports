@@ -26,12 +26,12 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 DOCS=		${RUBY_RD_HTML_FILES}
 
+.include <bsd.port.pre.mk>
+
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/tzfile.rb ${RUBY_SITELIBDIR}/
 
 post-install: doc-install
-
-.include <bsd.port.mk>
 
 doc-install:
 .if !defined(NOPORTDOCS)
@@ -40,3 +40,5 @@ doc-install:
 	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
 .endfor
 .endif
+
+.include <bsd.port.post.mk>

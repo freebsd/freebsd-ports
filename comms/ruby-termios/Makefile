@@ -28,13 +28,13 @@ DOCS=		ChangeLog	README \
 		${RUBY_RD_FILES} \
 		${RUBY_RD_HTML_FILES}
 
+.include <bsd.port.pre.mk>
+
 post-patch:
 	${RUBY} -i -pe 'gsub(/ttyS\d/, "cuaa0")' ${WRKSRC}/examples/*.rb
 	${RUBY} -i -pe 'gsub(/\.c_/, ".")' ${WRKSRC}/examples/*.rb
 
 post-install: doc-install
-
-.include <bsd.port.mk>
 
 doc-install:
 .if !defined(NOPORTDOCS)
@@ -45,3 +45,5 @@ doc-install:
 	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
 .endfor
 .endif
+
+.include <bsd.port.post.mk>

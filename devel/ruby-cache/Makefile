@@ -24,9 +24,9 @@ RUBY_SETUP=	install.rb
 RUBY_RD_FILES=	${WRKSRC}/MANUAL.rd ${WRKSRC}/README.rd
 DOCS=		${RUBY_RD_FILES} ${RUBY_RD_HTML_FILES}
 
-post-install: doc-install
+.include <bsd.port.pre.mk>
 
-.include <bsd.port.mk>
+post-install: doc-install
 
 doc-install:
 .if !defined(NOPORTDOCS)
@@ -37,3 +37,5 @@ doc-install:
 	${MKDIR} ${RUBY_MODEXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/sample/*.rb ${RUBY_MODEXAMPLESDIR}/
 .endif
+
+.include <bsd.port.post.mk>

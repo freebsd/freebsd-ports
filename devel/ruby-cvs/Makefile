@@ -30,6 +30,8 @@ WRKSRC=		${WRKDIR}/ruby-${PORTNAME}
 
 DOCS=		README TODO ${RUBY_RD_HTML_FILES}
 
+.include <bsd.port.pre.mk>
+
 post-extract:
 .for f in ${RUBY_RD_FILES}
 	cd ${WRKSRC}; ${LN} -sf lib/${f}
@@ -39,8 +41,6 @@ do-install:
 	${CP} -R ${WRKSRC}/lib/* ${RUBY_SITELIBDIR}/
 
 post-install: doc-install
-
-.include <bsd.port.mk>
 
 doc-install:
 .if !defined(NOPORTDOCS)
@@ -52,3 +52,5 @@ doc-install:
 	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
 .endfor
 .endif
+
+.include <bsd.port.post.mk>
