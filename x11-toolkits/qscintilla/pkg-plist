@@ -13,8 +13,10 @@ include/qextscintillalexerhtml.h
 include/qextscintillalexeridl.h
 include/qextscintillalexerjava.h
 include/qextscintillalexerjavascript.h
+include/qextscintillalexerlua.h
 include/qextscintillalexerperl.h
 include/qextscintillalexerpython.h
+include/qextscintillalexerruby.h
 include/qextscintillalexersql.h
 include/qextscintillamacro.h
 include/qextscintillaprinter.h
