@@ -7819,6 +7819,7 @@ str		ports/devel/str
 strace		ports/devel/strace
 stream		ports/benchmarks/stream
 streamripper	ports/audio/streamripper
+streamtuner	ports/audio/streamtuner
 strings		src/usr.bin/strings
 strip		src/usr.bin/strip
 strobe		ports/security/strobe
