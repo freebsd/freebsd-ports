@@ -41,6 +41,9 @@ Ruby_Include_MAINTAINER=	knu@FreeBSD.org
 #			    ruby18 set stringio strscan tsort
 # RUBY_REQUIRE		- Set to a Ruby expression to evaluate before building the port.  The constant "Ruby" is set to the integer version number of ruby, and the result of the expression will be set to RUBY_PROVIDED, which is left undefined if the result is nil, false or a zero-length string.  Implies USE_RUBY.
 # RUBY_SHEBANG_FILES	- Specify the files which shebang lines you want to fix.
+# RUBY_RD_FILES		- Specify the RD files which you want to generate HTML documents from.
+#			  If this is defined and not empty, USE_RUBY_RDTOOL is implied and
+#			  RUBY_RD_HTML_FILES is defined.
 #
 # [variables that each port should not (re)define]
 #
@@ -387,8 +390,28 @@ BUILD_DEPENDS+=		${DEPEND_RUBY_AMSTD}
 RUN_DEPENDS+=		${DEPEND_RUBY_AMSTD}
 .endif
 
+# documents
+
 .if ${ARCH} == alpha && ${RUBY_VER} <= 1.6 && defined(USE_RUBY_RDTOOL)
 NOPORTDOCS=	yes
+.endif
+
+.if defined(RUBY_RD_FILES) && !empty(RUBY_RD_FILES)
+USE_RUBY_RDTOOL=	yes
+
+RUBY_RD_HTML_FILES=	${RUBY_RD_FILES:S/.rd//:S/$/.html/}
+
+do-build:	ruby-rd-build
+
+ruby-rd-build:
+.if !defined(NOPORTDOCS)
+	@${ECHO_MSG} "===>  Generating HTML documents from RD documents"
+	@for rd in ${RUBY_RD_FILES}; do \
+		html="$$(echo $$rd | sed 's/\.rd//').html"; \
+		${ECHO_MSG} "${RUBY_RD2} $$rd > $$html"; \
+		${RUBY_RD2} $$rd > $$html; \
+	done
+.endif
 .endif
 
 .if !defined(NOPORTDOCS) && defined(USE_RUBY_RDTOOL)
