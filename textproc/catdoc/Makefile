@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	catdoc
-PORTVERSION=	0.93.3
+PORTVERSION=	0.93.4
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp.45.free.net/pub/catdoc/
 #		${MASTER_SITE_TEX_CTAN:S/$/support\/catdoc\//}
