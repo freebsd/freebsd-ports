@@ -26,6 +26,7 @@
 %%EMACS_LIBDIR%%/site-lisp/flim/mmcooked.elc
 %%EMACS_LIBDIR%%/site-lisp/flim/std11.el
 %%EMACS_LIBDIR%%/site-lisp/flim/std11.elc
+%%EMACS_LIBDIR%%/site-lisp/flim-setup.el
 @dirrm %%EMACS_LIBDIR%%/site-lisp/flim
 %%FLIMDOCDIR%%/ChangeLog
 %%FLIMDOCDIR%%/README.en
