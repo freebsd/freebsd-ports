@@ -1,0 +1,93 @@
+include/SDL/SDL.h
+include/SDL/SDL_active.h
+include/SDL/SDL_audio.h
+include/SDL/SDL_byteorder.h
+include/SDL/SDL_cdrom.h
+include/SDL/SDL_copying.h
+include/SDL/SDL_endian.h
+include/SDL/SDL_error.h
+include/SDL/SDL_events.h
+include/SDL/SDL_keyboard.h
+include/SDL/SDL_keysym.h
+include/SDL/SDL_mangle.h
+include/SDL/SDL_mouse.h
+include/SDL/SDL_mutex.h
+include/SDL/SDL_quit.h
+include/SDL/SDL_rwops.h
+include/SDL/SDL_syswm.h
+include/SDL/SDL_thread.h
+include/SDL/SDL_timer.h
+include/SDL/SDL_types.h
+include/SDL/SDL_version.h
+include/SDL/SDL_video.h
+include/SDL/begin_code.h
+include/SDL/close_code.h
+lib/libSDL.a
+lib/libSDL.so.0
+lib/libSDLx11.so.0.10
+lib/libSDLx11.so.0.10.0
+@exec /sbin/ldconfig -m %B
+@unexec /sbin/ldconfig -R
+share/doc/SDL/BUGS
+share/doc/SDL/COPYING
+share/doc/SDL/CREDITS
+share/doc/SDL/README
+share/doc/SDL/TODO
+share/doc/SDL/WhatsNew
+share/doc/SDL/docs.html
+share/doc/SDL/audio/examples.html
+share/doc/SDL/audio/funclist.html
+share/doc/SDL/audio/functions.html
+share/doc/SDL/audio/index.html
+share/doc/SDL/cdrom/examples.html
+share/doc/SDL/cdrom/funclist.html
+share/doc/SDL/cdrom/functions.html
+share/doc/SDL/cdrom/index.html
+share/doc/SDL/events/examples.html
+share/doc/SDL/events/functions.html
+share/doc/SDL/events/index.html
+share/doc/SDL/events/keysym.html
+share/doc/SDL/images/SDL_title.gif
+share/doc/SDL/images/rainbow.gif
+share/doc/SDL/index.html
+share/doc/SDL/threads/index.html
+share/doc/SDL/video/examples.html
+share/doc/SDL/video/funclist.html
+share/doc/SDL/video/functions.html
+share/doc/SDL/video/index.html
+share/examples/SDL/COPYING
+share/examples/SDL/GNUC.sh
+share/examples/SDL/GNUmake
+share/examples/SDL/Makefile
+share/examples/SDL/README
+share/examples/SDL/checkkeys.c
+share/examples/SDL/graywin.c
+share/examples/SDL/icon.bmp
+share/examples/SDL/loopwave.c
+share/examples/SDL/picture.xbm
+share/examples/SDL/sample.bmp
+share/examples/SDL/sample.wav
+share/examples/SDL/testalpha.c
+share/examples/SDL/testbitmap.c
+share/examples/SDL/testcdrom.c
+share/examples/SDL/testerror.c
+share/examples/SDL/testhread.c
+share/examples/SDL/testkeys.c
+share/examples/SDL/testlock.c
+share/examples/SDL/testsprite.c
+share/examples/SDL/testtimer.c
+share/examples/SDL/testtypes.c
+share/examples/SDL/testver.c
+share/examples/SDL/testvidinfo.c
+share/examples/SDL/testwin.c
+share/examples/SDL/testwm.c
+share/examples/SDL/threadwin.c
+@dirrm include/SDL
+@dirrm share/doc/SDL/audio
+@dirrm share/doc/SDL/cdrom
+@dirrm share/doc/SDL/events
+@dirrm share/doc/SDL/images
+@dirrm share/doc/SDL/threads
+@dirrm share/doc/SDL/video
+@dirrm share/doc/SDL
+@dirrm share/examples/SDL
