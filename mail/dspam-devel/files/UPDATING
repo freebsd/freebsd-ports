@@ -12,6 +12,34 @@ make extract;  more `find . -type f -maxdepth 2 -name UPGRADING`
 
 
 ############################################################################
+# dspam-devel-3.3.0.a.20041201.1330
+#
+
+Say hello to the daemonized dspam! Enable it at compile-time with DAEMON option.
+
+- it speaks LMTP:
+LHLO
+MAIL FROM: [password]@[server id]
+RCPT TO: [list of DSPAM users] [DSPAM parameters] [delivery agent parameters]
+DATA
+[message]
+.
+
+- daemon processes *and* delivers at the moment (including to stdout).
+- For client-side delivery, use --stdout and configure your MTA to deliver.
+- it may be necessary to perform all delivery in the client, as using fork &&
+  pipe in a MT app may be bad
+- implemented multiple responses per recipient
+- changed storage driver layer to use a driver context (for caching connections)
+- stateful db connections done for mysql driver
+- to do next: client
+
+- remember that all this is experimental and it may change at any time.
+
+- fix PREX_EXT and BDB4 handling in the port Makefile to really enable them.
+
+
+############################################################################
 # dspam-devel-3.3.0.a.20041125.0945
 #
 
