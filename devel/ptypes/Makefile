@@ -23,6 +23,7 @@ PTYPES_CFLAGS=	${CFLAGS}
 
 OPTIONS=	DEBUG "Build debug version" off \
 		OPTIMIZED "Enable -O2 optimization" on
+WITH_OPTIMIZED?=	yes
 
 .include <bsd.port.pre.mk>
 
