@@ -100,6 +100,7 @@ ant/docs/manual/CoreTasks/copyfile.html
 ant/docs/manual/CoreTasks/cvs.html
 ant/docs/manual/CoreTasks/cvspass.html
 ant/docs/manual/CoreTasks/cvstagdiff.html
+ant/docs/manual/CoreTasks/cvsversion.html
 ant/docs/manual/CoreTasks/delete.html
 ant/docs/manual/CoreTasks/defaultexcludes.html
 ant/docs/manual/CoreTasks/deltree.html
@@ -227,7 +228,6 @@ ant/docs/manual/OptionalTasks/mparse.html
 ant/docs/manual/OptionalTasks/native2ascii.html
 ant/docs/manual/OptionalTasks/netrexxc.html
 ant/docs/manual/OptionalTasks/perforce.html
-ant/docs/manual/OptionalTasks/perforce.html.orig
 ant/docs/manual/OptionalTasks/propertyfile.html
 ant/docs/manual/OptionalTasks/pvcstask.html
 ant/docs/manual/OptionalTasks/renameextensions.html
@@ -371,6 +371,7 @@ ant/docs/manual/api/org/apache/tools/ant/taskdefs/condition/package-tree.html
 ant/docs/manual/api/org/apache/tools/ant/taskdefs/cvslib/ChangeLogTask.html
 ant/docs/manual/api/org/apache/tools/ant/taskdefs/cvslib/CvsTagDiff.html
 ant/docs/manual/api/org/apache/tools/ant/taskdefs/cvslib/CvsUser.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/cvslib/CvsVersion.html
 ant/docs/manual/api/org/apache/tools/ant/taskdefs/cvslib/package-frame.html
 ant/docs/manual/api/org/apache/tools/ant/taskdefs/cvslib/package-summary.html
 ant/docs/manual/api/org/apache/tools/ant/taskdefs/cvslib/package-tree.html
@@ -396,7 +397,10 @@ ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ccm/package-tree.html
 ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/clearcase/CCCheckin.html
 ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/clearcase/CCCheckout.html
 ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/clearcase/CCLock.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/clearcase/CCMkattr.html
 ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/clearcase/CCMkbl.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/clearcase/CCMkdir.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/clearcase/CCMkelem.html
 ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/clearcase/CCMklabel.html
 ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/clearcase/CCMklbtype.html
 ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/clearcase/CCRmtype.html
@@ -900,6 +904,7 @@ ant/docs/manual/api/org/apache/tools/ant/taskdefs/LogStreamHandler.html
 ant/docs/manual/api/org/apache/tools/ant/taskdefs/MacroDef.Attribute.html
 ant/docs/manual/api/org/apache/tools/ant/taskdefs/MacroDef.NestedSequential.html
 ant/docs/manual/api/org/apache/tools/ant/taskdefs/MacroDef.TemplateElement.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/MacroDef.Text.html
 ant/docs/manual/api/org/apache/tools/ant/taskdefs/MacroDef.html
 ant/docs/manual/api/org/apache/tools/ant/taskdefs/MacroInstance.Element.html
 ant/docs/manual/api/org/apache/tools/ant/taskdefs/MacroInstance.html
