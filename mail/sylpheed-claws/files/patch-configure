@@ -31,7 +31,7 @@
  #line 9862 "configure"
  #include "confdefs.h"
  #include <libintl.h>
-+#define _nl_domain_bindings _nl_domain_bindings__ /* configure is retarded. */
++#define _nl_domain_bindings	libintl_nl_domain_bindings /* configure is retarded. */
  extern int _nl_msg_cat_cntr;
  extern int *_nl_domain_bindings;
  extern
