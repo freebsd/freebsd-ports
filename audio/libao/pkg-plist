@@ -1,16 +1,46 @@
 @comment $FreeBSD$
 include/ao/ao.h
 include/ao/os_types.h
+include/ao/plugin.h
 lib/libao.so
-lib/libao.so.1
+lib/libao.so.2
 %%ARTS%%lib/ao/libarts.so
 lib/ao/liboss.so
 %%ESOUND%%lib/ao/libesd.so
 share/aclocal/ao.m4
-%%PORTDOCS%%share/doc/libao/API
-%%PORTDOCS%%share/doc/libao/DRIVERS
-%%PORTDOCS%%share/doc/libao/USAGE
-%%PORTDOCS%%share/doc/libao/WANTED
+%%PORTDOCS%%share/doc/libao/ao_append_option.html
+%%PORTDOCS%%share/doc/libao/ao_close.html
+%%PORTDOCS%%share/doc/libao/ao_default_driver_id.html
+%%PORTDOCS%%share/doc/libao/ao_device.html
+%%PORTDOCS%%share/doc/libao/ao_driver_id.html
+%%PORTDOCS%%share/doc/libao/ao_driver_info.html
+%%PORTDOCS%%share/doc/libao/ao_driver_info_list.html
+%%PORTDOCS%%share/doc/libao/ao_example.c
+%%PORTDOCS%%share/doc/libao/ao_free_options.html
+%%PORTDOCS%%share/doc/libao/ao_info.html
+%%PORTDOCS%%share/doc/libao/ao_initialize.html
+%%PORTDOCS%%share/doc/libao/ao_open_file.html
+%%PORTDOCS%%share/doc/libao/ao_open_live.html
+%%PORTDOCS%%share/doc/libao/ao_option.html
+%%PORTDOCS%%share/doc/libao/ao_play.html
+%%PORTDOCS%%share/doc/libao/ao_plugin_close.html
+%%PORTDOCS%%share/doc/libao/ao_plugin_device_clear.html
+%%PORTDOCS%%share/doc/libao/ao_plugin_device_init.html
+%%PORTDOCS%%share/doc/libao/ao_plugin_driver_info.html
+%%PORTDOCS%%share/doc/libao/ao_plugin_open.html
+%%PORTDOCS%%share/doc/libao/ao_plugin_play.html
+%%PORTDOCS%%share/doc/libao/ao_plugin_set_option.html
+%%PORTDOCS%%share/doc/libao/ao_plugin_test.html
+%%PORTDOCS%%share/doc/libao/ao_sample_format.html
+%%PORTDOCS%%share/doc/libao/ao_shutdown.html
+%%PORTDOCS%%share/doc/libao/config.html
+%%PORTDOCS%%share/doc/libao/drivers.html
+%%PORTDOCS%%share/doc/libao/index.html
+%%PORTDOCS%%share/doc/libao/libao-api.html
+%%PORTDOCS%%share/doc/libao/overview.html
+%%PORTDOCS%%share/doc/libao/plugin-api.html
+%%PORTDOCS%%share/doc/libao/plugin-overview.html
+%%PORTDOCS%%share/doc/libao/style.css
 @dirrm include/ao
 @dirrm lib/ao
 %%PORTDOCS%%@dirrm share/doc/libao

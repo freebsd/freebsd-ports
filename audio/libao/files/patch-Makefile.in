@@ -1,7 +1,9 @@
+
 $FreeBSD$
---- Makefile.in.orig	Tue Jul 17 02:31:20 2001
-+++ Makefile.in	Tue Jul 17 02:31:31 2001
-@@ -87,7 +87,7 @@ plugindir = @plugindir@
+
+--- Makefile.in.orig	Mon Aug 13 13:39:22 2001
++++ Makefile.in	Tue Aug 14 17:39:55 2001
+@@ -87,7 +87,7 @@
  
  AUTOMAKE_OPTIONS = foreign dist-zip
  

@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	libvorbis
-PORTVERSION=	1.0.r1
+PORTVERSION=	1.0.r2
 PORTEPOCH=	2
 CATEGORIES=	audio
-MASTER_SITES=	http://www.vorbis.com/files/rc1/unix/
+MASTER_SITES=	http://www.vorbis.com/files/rc2/unix/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/rc/}
 
 MAINTAINER=	naddy@mips.inka.de
@@ -18,8 +18,6 @@ LIB_DEPENDS=	ogg.2:${PORTSDIR}/audio/libogg
 
 USE_LIBTOOL=	yes
 CONFIGURE_ARGS=	--with-ogg-prefix=${LOCALBASE}
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
 
 .if defined(NOPORTDOCS)
 MAKE_ENV=	DOC=""
