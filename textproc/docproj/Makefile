@@ -3,7 +3,7 @@
 # Date created:        27 June 1998
 # Whom:                Nik Clayton <nik@freebsd.org>
 #
-# $Id: Makefile,v 1.14 1999/06/08 20:59:54 nik Exp $
+# $Id: Makefile,v 1.15 1999/07/06 06:06:49 obrien Exp $
 #
 
 DISTNAME=	docproj
@@ -18,7 +18,7 @@ RUN_DEPENDS=	instant:${PORTSDIR}/textproc/sgmlformat \
 		sgmlnorm:${PORTSDIR}/textproc/sp \
 		jade:${PORTSDIR}/textproc/jade \
 		tidy:${PORTSDIR}/www/tidy \
-		lynx:${PORTSDIR}/www/lynx-current \
+		lynx:${PORTSDIR}/www/lynx \
 		${PREFIX}/share/sgml/docbook/dsssl/modular:${PORTSDIR}/textproc/dsssl-docbook-modular \
 		${PREFIX}/share/sgml/html/catalog:${PORTSDIR}/textproc/html \
 		${PREFIX}/share/sgml/linuxdoc:${PORTSDIR}/textproc/linuxdoc \
