@@ -13,6 +13,7 @@ DISTNAME=	xgraph-11
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	sanpei@FreeBSD.org
+COMMENT=	A program that helps you plot graphs
 
 USE_IMAKE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}

@@ -13,6 +13,7 @@ MASTER_SITES=		ftp://ftp.iij.ad.jp/pub/IIJ/dist/utashiro/perl/
 EXTRACT_SUFX=		# empty
 
 MAINTAINER=		sanpei@FreeBSD.org
+COMMENT=	Display word context diff
 
 USE_PERL5=		yes
 

@@ -12,6 +12,7 @@ MASTER_SITES=	# empty
 DISTFILES=	# empty
 
 MAINTAINER=	sanpei@FreeBSD.org
+COMMENT=	Japanese Font Setup for math/ngraph
 
 RUN_DEPENDS= \
 	${X11BASE}/lib/X11/fonts/local/kanji18.pcf.gz:${PORTSDIR}/japanese/kanji18 \
