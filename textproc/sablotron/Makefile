@@ -8,7 +8,7 @@
 PORTNAME=	Sablot
 PORTVERSION=	1.0.1
 CATEGORIES=	textproc
-MASTER_SITES=	http://download-2.gingerall.cz/download/sablot/
+MASTER_SITES=	http://download-1.gingerall.cz/download/sablot/
 
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	XML toolkit implementing XSLT 1.0, XPath 1.0 and DOM Level2
