@@ -1,0 +1,20 @@
+--- libmutt/rfc1524.c.orig	Fri Jan  3 23:18:25 1997
++++ libmutt/rfc1524.c	Thu Dec 23 05:14:52 1999
+@@ -455,7 +455,7 @@
+   if (s[0] == '\0')
+   {
+     snprintf (s, l, "%s/muttXXXXXX", buf);
+-    mktemp (s);
++    mkstemp (s);
+   }
+   else
+   {
+@@ -466,7 +466,7 @@
+     if ((period = strrchr (tmp, '.')) != NULL)
+       *period = 0;
+     snprintf (s, l, "%s/%s.XXXXXX", buf, tmp);
+-    mktemp (s);
++    mkstemp (s);
+     if (period != NULL)
+     {
+       *period = '.';

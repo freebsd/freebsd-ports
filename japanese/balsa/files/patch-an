@@ -1,0 +1,11 @@
+--- libinit_balsa/balsa-druid-page.c.orig	Sun Jul 16 15:16:26 2000
++++ libinit_balsa/balsa-druid-page.c	Sun Jul 16 15:16:42 2000
+@@ -126,7 +126,7 @@
+ 		std->title_item = gnome_canvas_item_new( gnome_canvas_root( GNOME_CANVAS( std->canvas ) ),
+ 			GNOME_TYPE_CANVAS_TEXT, 
+ 			"text", std->title,
+-			"font", "-adobe-helvetica-bold-r-normal-*-*-180-*-*-p-*-iso8859-1",
++			"fontset", "-misc-fixed-medium-r-normal--14-*-*-*-*-*-*-*",
+ 			"x", (gfloat) 15.0,
+ 			"y", (gfloat) 8 + 50.0 / 2.0,
+ 			"anchor", GTK_ANCHOR_WEST,
