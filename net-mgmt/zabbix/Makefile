@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	zabbix
-PORTVERSION=	1.0b12
-PORTREVISION=	2
+PORTVERSION=	1.0b13
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -20,18 +19,21 @@ COMMENT=	Very advanced network monitoring system
 PKGNAMESUFFIX=	-agent
 PLIST=		${MASTERDIR}/pkg-plist.agent
 PKGMESSAGE=	nonexistent
-.else
+.else # ZABBIX_AGENT_ONLY
 LIB_DEPENDS=	netsnmp.6:${PORTSDIR}/net/net-snmp
-RUN_DEPENDS=	php:${PORTSDIR}/lang/php4-nms \
-		fping:${PORTSDIR}/net/fping
+RUN_DEPENDS=	php:${PORTSDIR}/lang/php4-nms
+
+.ifndef(WITHOUT_FPING)
+RUN_DEPENDS+=	fping:${PORTSDIR}/net/fping
+.endif
 
 USE_MYSQL=	yes
 CONFIGURE_ARGS=	--with-mysql --with-net-snmp
 PKGMESSAGE=	${WRKDIR}/pkg-message
-.endif
+.endif # ZABBIX_AGENT_ONLY
 
-USE_RC_SUBR=	yes
 USE_REINPLACE=	yes
+USE_RC_SUBR=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS=-I${LOCALBASE}/include
 
@@ -53,8 +55,13 @@ pre-patch:
 	@${SED} ${SCRIPT_REGEX} ${PKGDIR}/scripts/zabbix-agent.sh.sample > \
 		${WRKDIR}/zabbix-agent.sh.sample
 
+.ifndef(ZABBIX_AGENT_ONLY)
 post-patch:
 	@${REINPLACE_CMD} 's|%LOCALBASE%|${LOCALBASE}|' ${WRKSRC}/src/zabbix_sucker/zabbix_sucker.c
+.ifdef WITHOUT_FPING
+	@${ECHO} 'DisablePinger=yes' >> ${WRKSRC}/misc/conf/zabbix_suckerd.conf
+.endif
+.endif # ZABBIX_AGENT_ONLY
 
 do-install:
 .for FILE in ${ZABBIX_BINARIES}
@@ -83,7 +90,7 @@ do-install:
 			${PREFIX}/etc/rc.d
 	${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 .ifndef(ZABBIX_AGENT_ONLY)
-	${CAT} ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 .endif
 
 .include <bsd.port.mk>
