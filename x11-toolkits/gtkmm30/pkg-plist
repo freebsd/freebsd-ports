@@ -188,14 +188,14 @@ lib/gtkmm/proc/list.m4
 lib/gtkmm/proc/stage1.m4
 lib/libgdkmm.a
 lib/libgdkmm.so
-lib/libgdkmm.so.1
+lib/libgdkmm.so.2
 lib/libgtkmm.a
 lib/libgtkmm.so
 lib/libgtkmm.so.1
 share/aclocal/gtk--.m4
-@dirrm lib/gtkmm/proc
-@dirrm lib/gtkmm/include
-@dirrm lib/gtkmm
+@dirrm include/gdk--
 @dirrm include/gtk--/private
 @dirrm include/gtk--
-@dirrm include/gdk--
+@dirrm lib/gtkmm/include
+@dirrm lib/gtkmm/proc
+@dirrm lib/gtkmm
