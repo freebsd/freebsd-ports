@@ -1,0 +1,28 @@
+%%RUBY_SITELIBDIR%%/cvs.rb
+%%RUBY_SITELIBDIR%%/cvs/cache.rb
+%%RUBY_SITELIBDIR%%/cvs/flex.rb
+%%RUBY_SITELIBDIR%%/cvs/local.rb
+%%RUBY_SITELIBDIR%%/cvs/parser.rb
+%%RUBY_SITELIBDIR%%/cvs/rcs.rb
+%%RUBY_SITELIBDIR%%/cvs/remote.rb
+%%RUBY_SITELIBDIR%%/cvs/revision.rb
+%%RUBY_SITELIBDIR%%/cvs/tempdir.rb
+@dirrm %%RUBY_SITELIBDIR%%/cvs
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/cvs/viztree
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/cvs/reviz/list_repositories.rsp
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/cvs/reviz/log.rsp
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/cvs/reviz/reviz
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/cvs/reviz/reviz-conf.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/cvs/reviz/rsp.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/cvs/reviz/view_annotate.rsp
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/cvs/reviz/view_checkout.rsp
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/cvs/reviz/view_diff.rsp
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/cvs/reviz/view_directory.rsp
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/cvs/reviz/view_log.rsp
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/cvs/reviz
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/cvs
+%%PORTDOCS%%%%RUBY_DOCDIR%%/cvs/README
+%%PORTDOCS%%%%RUBY_DOCDIR%%/cvs/TODO
+%%PORTDOCS%%%%RUBY_DOCDIR%%/cvs/cvs.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/cvs/tempdir.html
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/cvs

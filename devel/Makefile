@@ -448,6 +448,7 @@
     SUBDIR += ruby-amstd
     SUBDIR += ruby-bsearch
     SUBDIR += ruby-byaccr
+    SUBDIR += ruby-cvs
     SUBDIR += ruby-date2
     SUBDIR += ruby-dialogs
     SUBDIR += ruby-dl
