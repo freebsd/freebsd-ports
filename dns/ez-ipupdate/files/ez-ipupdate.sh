@@ -13,18 +13,20 @@
 #ez_ipupdate_enable="YES"
 #
 
+: ${ez_ipupdate_enable="NO"}
+: ${ez_ipupdate_pidfile="/var/run/ez-ipupdate.pid"}
+: ${ez_ipupdate_configfile="%%PREFIX%%/etc/ez-ipupdate.conf"}
+: ${ez_ipupdate_flags="-d -c $ez_ipupdate_configfile -F $ez_ipupdate_pidfile"}
+
 . %%RC_SUBR%%
 
 name=ez_ipupdate
 rcvar=`set_rcvar`
 
 command=%%PREFIX%%/bin/ez-ipupdate
-pidfile=/var/run/ez-ipupdate.pid
-required_files=%%PREFIX%%/etc/ez-ipupdate.conf
-sig_stop="QUIT"
-
-ez_ipupdate_enable="NO"
-ez_ipupdate_flags="-c %%PREFIX%%/etc/ez-ipupdate.conf -d -F $pidfile"
+pidfile=$ez_ipupdate_pidfile
+required_files=$ez_ipupdate_configfile
+sig_stop=QUIT
 
 load_rc_config $name
 run_rc_command "$1"
