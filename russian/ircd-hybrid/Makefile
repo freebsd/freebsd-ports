@@ -10,7 +10,7 @@ PORTVERSION=	7.1
 PORTREVISION=	1
 CATEGORIES=	irc russian
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-		ftp://rusunix.org/pub/FreeBSD/distfles/
+		ftp://rusunix.org/pub/FreeBSD/distfiles/
 MASTER_SITE_SUBDIR=	ircd-hybrid-ru
 PKGNAMESUFFIX=	-hybrid-ru
 DISTNAME=	ircd-hybrid-ru-7.1rc2
