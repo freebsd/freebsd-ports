@@ -25,7 +25,7 @@ LIB_DEPENDS=	png.3:${PORTSDIR}/graphics/png \
 BUILD_DEPENDS=	${LOCALBASE}/lib/libgd.a:${PORTSDIR}/japanese/gd \
 		${LOCALBASE}/lib/libttf.a:${PORTSDIR}/print/freetype
 .else
-LIB_DEPENDS=	gd.0:${PORTSDIR}/graphics/gd
+LIB_DEPENDS=	gd.1:${PORTSDIR}/graphics/gd
 BUILD_DEPENDS=	${LOCALBASE}/lib/libttf.a:${PORTSDIR}/print/freetype
 .endif
 

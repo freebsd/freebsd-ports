@@ -13,7 +13,7 @@ DISTNAME=       ${PORTNAME}-2.00-12-src
 
 MAINTAINER=     ache@FreeBSD.org
 
-LIB_DEPENDS=	gd.0:${PORTSDIR}/graphics/gd
+LIB_DEPENDS=	gd.1:${PORTSDIR}/graphics/gd
 
 NO_LATEST_LINK=	yes
 USE_BZIP2=      yes
