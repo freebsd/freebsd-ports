@@ -1,0 +1,10 @@
+bin/xmitBin
+bin/mailbin
+bin/postbin
+bin/doList.awk
+bin/mkList.awk
+man/man1/xmitBin.1.gz
+lib/xmitBin/autoSend
+lib/xmitBin/autoSend.txt
+lib/xmitBin/anonymous.anondat
+@dirrm lib/xmitBin

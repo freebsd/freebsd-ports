@@ -1,0 +1,28 @@
+diff -ruN postbin.old postbin
+--- postbin.old	Wed Dec 31 16:00:00 1969
++++ postbin	Sat Nov 29 04:15:38 1997
+@@ -0,0 +1,24 @@
++#!/bin/sh
++POSTER="inews -h"
++DSCDIR=${HOME}/.xmitBin
++if [ ! -d ${DSCDIR} ]
++then
++        echo creating ${DSCDIR}
++        mkdir ${DSCDIR}
++fi
++export POSTER DSCDIR
++
++if [ $# -ne 3 ]
++then
++	echo "usage: ${0} newsgroup filename title"
++	echo "NOTE: title must be all one argument, so enclose it in quotes!"
++	exit 1
++fi
++
++NG=${1}
++FILE=${2}
++TITLE=${3}
++
++exec xmitBin -post -d ${NG} -f ${FILE} -verbose "${TITLE}"
++# -l label to put in titlebar
++# consider -noscript
