@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.133 1999/06/19 17:41:06 cpiazza Exp $
+# $Id: Makefile,v 1.134 1999/06/22 23:42:16 sada Exp $
 #
 
     SUBDIR += 4va
@@ -43,6 +43,7 @@
     SUBDIR += gqview
     SUBDIR += gracula
     SUBDIR += graphviz
+    SUBDIR += gridpix
     SUBDIR += gtkdps
     SUBDIR += gtkfig
     SUBDIR += gtksee
