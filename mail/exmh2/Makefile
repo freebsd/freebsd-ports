@@ -3,7 +3,7 @@
 # Date released:		1 Jan 97
 # Whom:				Peter Wemm <peter@freebsd.org>
 #
-# $Id: Makefile,v 1.19 1997/12/25 10:34:54 peter Exp $
+# $Id: Makefile,v 1.20 1997/12/25 21:55:20 asami Exp $
 #
 
 DISTNAME=	exmh-2.0
@@ -12,6 +12,8 @@ MASTER_SITES=	ftp://ftp.sunlabs.com/pub/tcl/exmh/
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	peter@FreeBSD.org
+
+BROKEN=		updated
 
 # There are likely to be distributed patches again.
 DIST_SUBDIR=	${PKGNAME}
