@@ -4999,6 +4999,7 @@ palmos-sdk	ports/palm/palmos-sdk
 palmpower	ports/palm/palmpower
 pam-mysql	ports/security/pam-mysql
 pam-pgsql	ports/security/pam-pgsql
+pam_alreadyloggedin	ports/security/pam_alreadyloggedin
 pam_cleartext_pass_ok	src/lib/libpam/modules/pam_cleartext_pass_ok
 pam_kerberosIV	src/lib/libpam/modules/pam_kerberosIV
 pam_krb5	ports/security/pam_krb5
