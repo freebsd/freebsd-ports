@@ -16,8 +16,6 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	pav@FreeBSD.org
 COMMENT=	An image viewer and browser for the GNOME 2 environment
 
-CONFLICTS=	gthumb-*
-
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
