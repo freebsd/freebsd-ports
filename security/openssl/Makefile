@@ -1,13 +1,13 @@
 # New ports collection makefile for:	OpenSSL
-# Version required:	0.9.3
+# Version required:	0.9.3a
 # Date created:		Sun Jan  3 19:36:27 CET 1999
 # Whom:			Dirk Froemberg <dirk@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.30 1999/04/22 00:17:15 scrappy Exp $
+# $Id: Makefile,v 1.31 1999/06/02 07:30:30 dirk Exp $
 #
 
-DISTNAME=	openssl-0.9.3
-CATEGORIES=	devel security
+DISTNAME=	openssl-0.9.3a
+CATEGORIES=	security devel 
 MASTER_SITES=	http://www.openssl.org/source/ \
 		ftp://ftp.openssl.org/source/ \
 		ftp://ftp.sunet.se/pub/security/tools/net/openssl/source/ \
