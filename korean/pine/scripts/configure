@@ -1,0 +1,7 @@
+#!/bin/sh
+#
+# $Id: configure,v 1.3 1994/10/04 15:12:02 jkh Exp $
+#
+
+rm -f ${WRKSRC}/makefile
+cp ${FILESDIR}/Makefile ${WRKSRC}/Makefile
