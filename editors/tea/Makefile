@@ -1,13 +1,12 @@
 # New ports collection makefile for:	TEA
-# Date created:			13 Jul 2004
-# Whom:				Jean-Yves Lefort <jylefort@brutele.be>
+# Date created:				13 Jul 2004
+# Whom:					Jean-Yves Lefort <jylefort@brutele.be>
 #
 # $FreeBSD$
 #
 
 PORTNAME=		tea
-PORTVERSION=		7.0
-PORTREVISION=	1
+PORTVERSION=		8.1
 CATEGORIES=		editors
 MASTER_SITES=		http://tea.linux.kiev.ua/
 DISTNAME=		${PORTNAME}

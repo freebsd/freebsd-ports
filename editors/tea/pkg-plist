@@ -1,4 +1,5 @@
 bin/tea
+share/locale/cs/LC_MESSAGES/tea.mo
 share/locale/de/LC_MESSAGES/tea.mo
 share/locale/ja/LC_MESSAGES/tea.mo
 share/locale/pl/LC_MESSAGES/tea.mo
@@ -10,13 +11,60 @@ share/locale/uk/LC_MESSAGES/tea.mo
 %%DATADIR%%/pixmaps/tea_logo.jpg
 @dirrm %%DATADIR%%/pixmaps
 @dirrm %%DATADIR%%
-%%DOCSDIR%%/ru/index.html
+%%DOCSDIR%%/cs/index.html
+%%DOCSDIR%%/en/a747.html
+%%DOCSDIR%%/en/c101.html
+%%DOCSDIR%%/en/c17.html
+%%DOCSDIR%%/en/c188.html
+%%DOCSDIR%%/en/c201.html
+%%DOCSDIR%%/en/c222.html
+%%DOCSDIR%%/en/c282.html
+%%DOCSDIR%%/en/c32.html
+%%DOCSDIR%%/en/c560.html
+%%DOCSDIR%%/en/c586.html
+%%DOCSDIR%%/en/c592.html
+%%DOCSDIR%%/en/c60.html
+%%DOCSDIR%%/en/c619.html
+%%DOCSDIR%%/en/c640.html
+%%DOCSDIR%%/en/c707.html
+%%DOCSDIR%%/en/c735.html
+%%DOCSDIR%%/en/c743.html
+%%DOCSDIR%%/en/c90.html
 %%DOCSDIR%%/en/index.html
+%%DOCSDIR%%/en/x230.html
+%%DOCSDIR%%/en/x248.html
+%%DOCSDIR%%/en/x262.html
+%%DOCSDIR%%/en/x289.html
+%%DOCSDIR%%/en/x313.html
+%%DOCSDIR%%/en/x322.html
+%%DOCSDIR%%/en/x331.html
+%%DOCSDIR%%/en/x341.html
+%%DOCSDIR%%/en/x348.html
+%%DOCSDIR%%/en/x359.html
+%%DOCSDIR%%/en/x369.html
+%%DOCSDIR%%/en/x468.html
+%%DOCSDIR%%/en/x474.html
+%%DOCSDIR%%/en/x486.html
+%%DOCSDIR%%/en/x529.html
+%%DOCSDIR%%/en/x538.html
+%%DOCSDIR%%/en/x550.html
+%%DOCSDIR%%/en/x653.html
+%%DOCSDIR%%/en/x670.html
+%%DOCSDIR%%/en/x674.html
+%%DOCSDIR%%/en/x681.html
+%%DOCSDIR%%/en/x685.html
+%%DOCSDIR%%/en/x688.html
+%%DOCSDIR%%/en/x692.html
+%%DOCSDIR%%/en/x698.html
+%%DOCSDIR%%/en/x703.html
+%%DOCSDIR%%/en/x727.html
+%%DOCSDIR%%/ru/index.html
 %%DOCSDIR%%/tea_doc.css
 %%DOCSDIR%%/AUTHORS
 %%DOCSDIR%%/ChangeLog
 %%DOCSDIR%%/NEWS
 %%DOCSDIR%%/TODO
-@dirrm %%DOCSDIR%%/ru
+@dirrm %%DOCSDIR%%/cs
 @dirrm %%DOCSDIR%%/en
+@dirrm %%DOCSDIR%%/ru
 @dirrm %%DOCSDIR%%
