@@ -1030,4 +1030,40 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       <entry>2004-08-17</entry>
     </dates>
   </vuln>
+
+  <vuln vid="59669fc9-fdf4-11d8-81b0-000347a4fa7d">
+    <topic>multiple vulnerabilities in LHA</topic>
+    <affects>
+      <package>
+        <name>lha</name>
+        <range><le>1.14i_4</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Multiple vulnerabilities have been found in the LHA code by Lukasz Wojtow
+          and Thomas Biege.</p>
+        <p>Successful exploitation may allow execution of arbitrary code.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://secunia.com/advisories/12435</url>
+      <cvename>CAN-2004-0694</cvename>
+      <cvename>CAN-2004-0745</cvename>
+      <cvename>CAN-2004-0769</cvename>
+      <cvename>CAN-2004-0771</cvename>
+      <mlist msgid="20040606162856.29866.qmail@www.securityfocus.com">http://www.securityfocus.com/archive/1/365386</mlist>
+      <mlist msgid="20040515110900.24784.qmail@www.securityfocus.com">http://www.securityfocus.com/archive/1/363418</mlist>
+      <url>http://lw.ftw.zamosc.pl/lha-exploit.txt</url>
+      <url>http://www.osvdb.org/9519</url>
+      <url>http://www.osvdb.org/9520</url>
+      <url>http://www.osvdb.org/9521</url>
+      <url>http://www.osvdb.org/9522</url>
+      <bid>10354</bid>
+    </references>
+    <dates>
+      <discovery>2004-05-19</discovery>
+      <entry>2004-09-03</entry>
+    </dates>
+  </vuln>
 </vuxml>
