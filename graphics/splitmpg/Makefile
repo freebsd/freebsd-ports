@@ -11,6 +11,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.ecel.uwa.edu.au/users/michael/ \
 		ftp://ftp.netcom.com/pub/ms/msimmons/
 DISTNAME=	${PORTNAME}
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
