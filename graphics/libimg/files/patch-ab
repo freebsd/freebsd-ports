@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Tue Oct 26 14:29:30 1999
++++ Makefile.in	Thu Nov 18 10:11:53 1999
+@@ -87,7 +87,7 @@
+ TK_XLIBSW		=	@TK_XLIBSW@
+ 
+ # Libraries to be included with libimg$(VERSION).so
+-TCL_SHARED_LIBS		=	@TCL_SHARED_LIBS@
++TCL_SHARED_LIBS		=
+ 
+ # Default top-level directories in which to install architecture-
+ # specific files (exec_prefix) and machine-independent files such
