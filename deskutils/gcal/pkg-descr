@@ -13,4 +13,4 @@ Note that this port will install these utilities with a `g' prefix,
 eg., gdate, gexpr, gtest, but the texinfo documentation will refer to
 these utilities without the `g' prefix.
 
-WWW: http://www.gnu.org/software/gcal/gcal.html
+WWW: http://www.gnu.org/software/gcal/

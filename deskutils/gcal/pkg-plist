@@ -2,161 +2,144 @@ bin/gcal
 bin/gcal2txt
 bin/tcal
 bin/txt2gcal
-@unexec install-info --delete %D/info/gcal.info %D/info/dir
-info/gcal.info
-info/gcal.info-1
-info/gcal.info-10
-info/gcal.info-11
-info/gcal.info-12
-info/gcal.info-13
-info/gcal.info-14
-info/gcal.info-2
-info/gcal.info-3
-info/gcal.info-4
-info/gcal.info-5
-info/gcal.info-6
-info/gcal.info-7
-info/gcal.info-8
-info/gcal.info-9
-@exec install-info %D/info/gcal.info %D/info/dir
+%%DATADIR%%/CREDITS.dates
+%%DATADIR%%/README
+%%DATADIR%%/README.dates
+%%DATADIR%%/ancient
+%%DATADIR%%/ansipic.rc
+%%DATADIR%%/birthday.rc
+%%DATADIR%%/bkk.rc
+%%DATADIR%%/calendar.birth
+%%DATADIR%%/calendar.chris
+%%DATADIR%%/calendar.compu
+%%DATADIR%%/calendar.histo
+%%DATADIR%%/calendar.holid
+%%DATADIR%%/calendar.judai
+%%DATADIR%%/calendar.music
+%%DATADIR%%/calendar.ushol
+%%DATADIR%%/can_holiday
+%%DATADIR%%/celtic
+%%DATADIR%%/computing
+%%DATADIR%%/de-mdata.rc
+%%DATADIR%%/de-sdata.rc
+%%DATADIR%%/events
+%%DATADIR%%/events1
+%%DATADIR%%/events2
+%%DATADIR%%/events3
+%%DATADIR%%/events4
+%%DATADIR%%/events5
+%%DATADIR%%/events6
+%%DATADIR%%/gdead
+%%DATADIR%%/hawaii
+%%DATADIR%%/literature
+%%DATADIR%%/lives
+%%DATADIR%%/lives1
+%%DATADIR%%/lives2
+%%DATADIR%%/lives3
+%%DATADIR%%/lives4
+%%DATADIR%%/lives5
+%%DATADIR%%/lives6
+%%DATADIR%%/lotr
+%%DATADIR%%/mdata.rc
+%%DATADIR%%/meteoric.rc
+%%DATADIR%%/misc/README
+%%DATADIR%%/misc/daily/daily
+@exec ln -fs ../%F %D/bin/gcal-%f
+@unexec rm -f %D/bin/gcal-%f
+%%DATADIR%%/misc/daily/daily.awk
+%%DATADIR%%/misc/daily/daily.pl
+%%DATADIR%%/misc/daily/daily.rc
+%%DATADIR%%/misc/ddiff/ddiff
+@exec ln -fs ../%F %D/bin/gcal-%f
+@unexec rm -f %D/bin/gcal-%f
+%%DATADIR%%/misc/ddiff/ddiff1.awk
+%%DATADIR%%/misc/ddiff/ddiff1.pl
+%%DATADIR%%/misc/ddiff/ddiff2.awk
+%%DATADIR%%/misc/ddiff/ddiff2.pl
+%%DATADIR%%/misc/ddiff/ddiffdrv
+@exec ln -fs ../%F %D/bin/gcal-%f
+@unexec rm -f %D/bin/gcal-%f
+%%DATADIR%%/misc/ddiff/ddiffdrv.awk
+%%DATADIR%%/misc/ddiff/ddiffdrv.pl
+%%DATADIR%%/misc/ddiff/zone.tab
+%%DATADIR%%/misc/dst/dst
+@exec ln -fs ../%F %D/bin/gcal-%f
+@unexec rm -f %D/bin/gcal-%f
+%%DATADIR%%/misc/dst/dst.awk
+%%DATADIR%%/misc/dst/dst.pl
+%%DATADIR%%/misc/gcalltx/gcalltx
+@exec ln -fs ../%F %D/bin/gcal-%f
+@unexec rm -f %D/bin/gcal-%f
+%%DATADIR%%/misc/gcalltx/gcalltx.pl
+@exec ln -fs ../%F %D/bin/gcal-%f
+@unexec rm -f %D/bin/gcal-%f
+%%DATADIR%%/misc/gcalltx/gcalltx.sed
+%%DATADIR%%/misc/gcalmagic.add
+%%DATADIR%%/misc/moon/moon
+@exec ln -fs ../%F %D/bin/gcal-%f
+@unexec rm -f %D/bin/gcal-%f
+%%DATADIR%%/misc/mrms/mrms
+@exec ln -fs ../%F %D/bin/gcal-%f
+@unexec rm -f %D/bin/gcal-%f
+%%DATADIR%%/misc/mrms/mrms.awk
+%%DATADIR%%/misc/mrms/mrms.pl
+%%DATADIR%%/misc/mrms/mrms.rc
+%%DATADIR%%/misc/srss/srss
+@exec ln -fs ../%F %D/bin/gcal-%f
+@unexec rm -f %D/bin/gcal-%f
+%%DATADIR%%/misc/srss/srss.awk
+%%DATADIR%%/misc/srss/srss.pl
+%%DATADIR%%/misc/srss/srss.rc
+%%DATADIR%%/misc/wloc/wlocdrv
+@exec ln -fs ../%F %D/bin/gcal-%f
+@unexec rm -f %D/bin/gcal-%f
+%%DATADIR%%/misc/wloc/wlocdrv1.awk
+%%DATADIR%%/misc/wloc/wlocdrv1.pl
+%%DATADIR%%/misc/wloc/wlocdrv2.awk
+%%DATADIR%%/misc/wloc/wlocdrv2.pl
+%%DATADIR%%/misc/wloc/zone.tab
+%%DATADIR%%/movies
+%%DATADIR%%/ms.rc
+%%DATADIR%%/music
+%%DATADIR%%/radio
+%%DATADIR%%/scripts/cal2gcal.awk
+%%DATADIR%%/scripts/cal2gcal.pl
+%%DATADIR%%/scripts/ct2gcal.awk
+%%DATADIR%%/scripts/ct2gcal.pl
+%%DATADIR%%/scripts/old2v220.awk
+%%DATADIR%%/scripts/old2v220.pl
+%%DATADIR%%/scripts/v2x2v300.awk
+%%DATADIR%%/scripts/v2x2v300.pl
+%%DATADIR%%/sdata.rc
+%%DATADIR%%/sfo
+%%DATADIR%%/space
+%%DATADIR%%/sports
+%%DATADIR%%/sun-moon.rc
+%%DATADIR%%/television
+%%DATADIR%%/textpic.rc
+%%DATADIR%%/usa_holiday
+%%DATADIR%%/usa_other
+%%DATADIR%%/usa_states
+%%DATADIR%%/witchcraft
+%%DATADIR%%/wloc.rc
+%%DATADIR%%/world
+%%DATADIR%%/wtt1.rc
+%%DATADIR%%/wtt2.rc
+%%DATADIR%%/wtt3.rc
 share/locale/de/LC_MESSAGES/gcal.mo
 share/locale/fr/LC_MESSAGES/gcal.mo
 share/locale/nl/LC_MESSAGES/gcal.mo
 share/locale/pl/LC_MESSAGES/gcal.mo
 share/locale/ru/LC_MESSAGES/gcal.mo
 share/locale/sv/LC_MESSAGES/gcal.mo
-share/gcal/misc/daily/daily
-@exec ln -fs ../%F %D/bin/gcal-%f
-@unexec rm -f %D/bin/gcal-%f
-share/gcal/misc/daily/daily.awk
-share/gcal/misc/daily/daily.pl
-share/gcal/misc/daily/daily.rc
-share/gcal/misc/ddiff/ddiff
-@exec ln -fs ../%F %D/bin/gcal-%f
-@unexec rm -f %D/bin/gcal-%f
-share/gcal/misc/ddiff/ddiffdrv
-@exec ln -fs ../%F %D/bin/gcal-%f
-@unexec rm -f %D/bin/gcal-%f
-share/gcal/misc/ddiff/ddiff1.awk
-share/gcal/misc/ddiff/ddiff1.pl
-share/gcal/misc/ddiff/ddiff2.awk
-share/gcal/misc/ddiff/ddiff2.pl
-share/gcal/misc/ddiff/ddiffdrv.awk
-share/gcal/misc/ddiff/ddiffdrv.pl
-share/gcal/misc/ddiff/zone.tab
-share/gcal/misc/dst/dst
-@exec ln -fs ../%F %D/bin/gcal-%f
-@unexec rm -f %D/bin/gcal-%f
-share/gcal/misc/dst/dst.awk
-share/gcal/misc/dst/dst.pl
-share/gcal/misc/gcalltx/gcalltx
-@exec ln -fs ../%F %D/bin/gcal-%f
-@unexec rm -f %D/bin/gcal-%f
-share/gcal/misc/gcalltx/gcalltx.pl
-@exec ln -fs ../%F %D/bin/gcal-%f
-@unexec rm -f %D/bin/gcal-%f
-share/gcal/misc/gcalltx/gcalltx.sed
-share/gcal/misc/moon/moon
-@exec ln -fs ../%F %D/bin/gcal-%f
-@unexec rm -f %D/bin/gcal-%f
-share/gcal/misc/mrms/mrms
-@exec ln -fs ../%F %D/bin/gcal-%f
-@unexec rm -f %D/bin/gcal-%f
-share/gcal/misc/mrms/mrms.awk
-share/gcal/misc/mrms/mrms.pl
-share/gcal/misc/mrms/mrms.rc
-share/gcal/misc/srss/srss
-@exec ln -fs ../%F %D/bin/gcal-%f
-@unexec rm -f %D/bin/gcal-%f
-share/gcal/misc/srss/srss.awk
-share/gcal/misc/srss/srss.pl
-share/gcal/misc/srss/srss.rc
-share/gcal/misc/wloc/wlocdrv
-@exec ln -fs ../%F %D/bin/gcal-%f
-@unexec rm -f %D/bin/gcal-%f
-share/gcal/misc/wloc/wlocdrv1.awk
-share/gcal/misc/wloc/wlocdrv1.pl
-share/gcal/misc/wloc/wlocdrv2.awk
-share/gcal/misc/wloc/wlocdrv2.pl
-share/gcal/misc/wloc/zone.tab
-share/gcal/misc/README
-share/gcal/misc/gcalmagic.add
-share/gcal/scripts/cal2gcal.awk
-share/gcal/scripts/cal2gcal.pl
-share/gcal/scripts/ct2gcal.awk
-share/gcal/scripts/ct2gcal.pl
-share/gcal/scripts/old2v220.awk
-share/gcal/scripts/old2v220.pl
-share/gcal/scripts/v2x2v300.awk
-share/gcal/scripts/v2x2v300.pl
-share/gcal/calendar.birth
-share/gcal/calendar.chris
-share/gcal/calendar.compu
-share/gcal/calendar.histo
-share/gcal/calendar.holid
-share/gcal/calendar.judai
-share/gcal/calendar.music
-share/gcal/calendar.ushol
-share/gcal/ancient
-share/gcal/can_holiday
-share/gcal/celtic
-share/gcal/computing
-share/gcal/events
-share/gcal/events1
-share/gcal/events2
-share/gcal/events3
-share/gcal/events4
-share/gcal/events5
-share/gcal/events6
-share/gcal/gdead
-share/gcal/hawaii
-share/gcal/literature
-share/gcal/lives
-share/gcal/sfo
-share/gcal/lives1
-share/gcal/lives2
-share/gcal/lives3
-share/gcal/lives4
-share/gcal/lives5
-share/gcal/lives6
-share/gcal/lotr
-share/gcal/movies
-share/gcal/music
-share/gcal/radio
-share/gcal/space
-share/gcal/sports
-share/gcal/television
-share/gcal/usa_holiday
-share/gcal/usa_other
-share/gcal/usa_states
-share/gcal/witchcraft
-share/gcal/world
-share/gcal/CREDITS.dates
-share/gcal/README.dates
-share/gcal/README
-share/gcal/ansipic.rc
-share/gcal/birthday.rc
-share/gcal/bkk.rc
-share/gcal/de-mdata.rc
-share/gcal/de-sdata.rc
-share/gcal/mdata.rc
-share/gcal/meteoric.rc
-share/gcal/ms.rc
-share/gcal/sdata.rc
-share/gcal/sun-moon.rc
-share/gcal/textpic.rc
-share/gcal/wloc.rc
-share/gcal/wtt1.rc
-share/gcal/wtt2.rc
-share/gcal/wtt3.rc
-@dirrm share/gcal/misc/daily
-@dirrm share/gcal/misc/ddiff
-@dirrm share/gcal/misc/dst
-@dirrm share/gcal/misc/gcalltx
-@dirrm share/gcal/misc/moon
-@dirrm share/gcal/misc/mrms
-@dirrm share/gcal/misc/srss
-@dirrm share/gcal/misc/wloc
-@dirrm share/gcal/misc
-@dirrm share/gcal/scripts
-@dirrm share/gcal
+@dirrm %%DATADIR%%/scripts
+@dirrm %%DATADIR%%/misc/wloc
+@dirrm %%DATADIR%%/misc/srss
+@dirrm %%DATADIR%%/misc/mrms
+@dirrm %%DATADIR%%/misc/moon
+@dirrm %%DATADIR%%/misc/gcalltx
+@dirrm %%DATADIR%%/misc/dst
+@dirrm %%DATADIR%%/misc/ddiff
+@dirrm %%DATADIR%%/misc/daily
+@dirrm %%DATADIR%%/misc
+@dirrm %%DATADIR%%
