@@ -20,6 +20,7 @@ LIB_DEPENDS=	ltdl.1:${PORTSDIR}/devel/libtool
 HAS_CONFIGURE=	yes
 USE_LIBTOOL=	yes
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 CONFIGURE_ARGS=	--with-mstore --with-icap \
 		--prefix=${PREFIX} --exec-prefix=${PREFIX}
 INSTALLS_SHLIB=	yes
@@ -43,7 +44,7 @@ post-extract:
 	${MV} ${WRKSRC}/mstore/README ${WRKSRC}/mstore/README.mstore
 
 post-patch:
-	${PERL} -pi -e "s:/etc/mpasswd:${PREFIX}/etc/mpasswd:" ${WRKSRC}/mstore/mstore.c
+	${REINPLACE_CMD} -e "s:/etc/mpasswd:${PREFIX}/etc/mpasswd:" ${WRKSRC}/mstore/mstore.c
 
 pre-configure:
 	@${ECHO_MSG} "===>  Building the driver mstore"
@@ -55,8 +56,10 @@ pre-configure:
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${PERL} -pi -e "s:/etc/mpasswd:${LOCALBASE}/etc/mpasswd:" ${WRKSRC}/FAQ-MCAL
-	${PERL} -pi -e "s:/etc/mpasswd:${LOCALBASE}/etc/mpasswd:" ${WRKSRC}/mstore/README.mstore
+	${REINPLACE_CMD} -e "s:/etc/mpasswd:${LOCALBASE}/etc/mpasswd:" \
+		${WRKSRC}/FAQ-MCAL
+	${REINPLACE_CMD} -e "s:/etc/mpasswd:${LOCALBASE}/etc/mpasswd:" \
+		${WRKSRC}/mstore/README.mstore
 	${MKDIR} ${DOCSDIR}
 .for FILE in ${DOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}

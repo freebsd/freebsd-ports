@@ -93,6 +93,9 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/ispell:${PORTSDIR}/textproc/ispell
 .endif
 
 NO_BUILD=	yes
+USE_REINPLACE=	yes
+
+REINPLACE_ARGS=	-i.beforeImp
 DOCS=		COPYING README docs/CHANGES docs/CREDITS docs/DATABASE \
 		docs/HELP docs/INSTALL docs/SECURITY docs/KNOWN_BUGS \
 		docs/PACKAGES
@@ -173,19 +176,17 @@ do-install:
 	${CP} -Rp ${WRKSRC}/config ${WRKSRC}/graphics ${WRKSRC}/lib ${IMPDIR}
 	${CP} -Rp ${WRKSRC}/locale ${WRKSRC}/scripts ${WRKSRC}/templates ${IMPDIR}
 	${CP} -p  ${WRKSRC}/*.php3 ${WRKSRC}/*.css ${IMPDIR}
-	${PERL} -pi -e "s:/usr/bin/ispell:${LOCALBASE}/bin/ispell:g" \
+	${REINPLACE_CMD} -e "s:/usr/bin/ispell:${LOCALBASE}/bin/ispell:g ;	\
+		s:/usr/bin/wvHtml:${LOCALBASE}/bin/wvHtml:g ;			\
+		s:/usr/bin/xlHtml:${LOCALBASE}/bin/xlhtml:g ;			\
+		s:/bin/tar:/usr/bin/tar:g ;					\
+		s:/usr/bin/zipinfo:${LOCALBASE}/bin/zipinfo:g"			\
 			${IMPDIR}/config/defaults.php3.dist
-	${PERL} -pi -e "s:/usr/bin/wvHtml:${LOCALBASE}/bin/wvHtml:g" \
-			${IMPDIR}/config/defaults.php3.dist
-	${PERL} -pi -e "s:/usr/bin/xlHtml:${LOCALBASE}/bin/xlhtml:g" \
-			${IMPDIR}/config/defaults.php3.dist
-	${PERL} -pi -e "s:/bin/tar:/usr/bin/tar:g" ${IMPDIR}/config/defaults.php3.dist
-	${PERL} -pi -e "s:/usr/bin/zipinfo:${LOCALBASE}/bin/zipinfo:g" \
-			${IMPDIR}/config/defaults.php3.dist
-	${PERL} -pi -e "s:sh ./secure.sh:${HORDESBIN}/horde_secure.sh:g" \
+	@${RM} ${IMPDIR}/config/defaults.php3.dist.beforeImp
+	${REINPLACE_CMD} -e "s:sh ./secure.sh:${HORDESBIN}/horde_secure.sh:g ;	\
+		s:sh ./install.sh:${HORDESBIN}/horde_setup.sh:g"		\
 			${IMPDIR}/templates/index/imp_notconfigured.inc
-	${PERL} -pi -e "s:sh ./install.sh:${HORDESBIN}/horde_setup.sh:g" \
-			${IMPDIR}/templates/index/imp_notconfigured.inc
+	@${RM} ${IMPDIR}/templates/index/imp_notconfigured.inc.beforeImp
 	@if [ ! -f ${IMPDIR}/config/defaults.php3 ]; then \
 	    ${CP}     ${IMPDIR}/config/defaults.php3.dist ${IMPDIR}/config/defaults.php3; \
 	fi
@@ -205,7 +206,7 @@ do-install:
 	   (if [ ! -f ${APACHE_CONF}.beforeIMP ] ; then \
 		${ECHO} "===> Updating ${APACHE_CONF}..." ; \
 		${CP} -p ${.CURDIR}/httpd.conf.imp ${WRKDIR}/httpd.conf.imp ; \
-		${PERL} -pi -e "s:/home/httpd/html/horde/imp:${IMPDIR}:g" \
+		${REINPLACE_CMD} -e "s:/home/httpd/html/horde/imp:${IMPDIR}:g" \
 			${WRKDIR}/httpd.conf.imp ; \
 		${CP} -p ${APACHE_CONF} ${APACHE_CONF}.beforeIMP ; \
 		${GREP} -qw 'Added for IMP' ${APACHE_CONF} || ${CAT} ${WRKDIR}/httpd.conf.imp \
@@ -213,7 +214,10 @@ do-install:
 	    fi) ; \
 	fi)
 .if !defined(NOPORTDOCS)
-	${PERL} -pi -e "s:/home/httpd/html/horde/imp:${IMPDIR}:g" ${WRKSRC}/docs/SECURITY
+	${REINPLACE_CMD} -e "s:/home/httpd/html/horde:${HORDEDIR}:g ;	\
+		s:/home/httpd/horde-phplib:${HORDEDIR}/phplib:g ;	\
+		s:nobody:www:g"						\
+			${WRKSRC}/docs/SECURITY
 	${MKDIR} ${DOCSDIR}
 .for FILE in ${DOCS}
 	${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
@@ -248,6 +252,7 @@ post-install:
 	@${ECHO} "IMAP-UW; you may want to reinstall it with SSL support, or"
 	@${ECHO} "if you need an SSL connection to your IMAP server, you can"
 	@${ECHO} "install the port security/stunnel."
+	@${ECHO} "Note: without SSL, you have to choose the IMAP port 143/notls"
 	@${ECHO} "******************************************************************"
 
 .include <bsd.port.mk>
