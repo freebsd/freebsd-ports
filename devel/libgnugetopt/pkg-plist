@@ -1,2 +1,5 @@
 include/getopt.h
-lib/libgnugetopt.a
+lib/libgnugetopt.so
+lib/libgnugetopt.so.1
+@exec /sbin/ldconfig -m %B
+@unexec /sbin/ldconfig -R
