@@ -1,21 +1,24 @@
-*** Makefile.orig	Tue Aug 20 14:22:04 1996
---- Makefile	Sun Sep 28 11:19:23 1997
+*** Makefile.orig	Tue May  5 02:12:41 1998
+--- Makefile	Wed Jan 12 19:29:23 2000
 ***************
-*** 6,18 ****
+*** 6,21 ****
   #
   
   # user setting 
 ! BINDIR		= /usr/sbin		# Linux
 ! #BINDIR 	= /usr/local/libexec	# FreeBSD
-! 
+  
 ! LINES		= 66
 ! COLUMNS		= 80
 ! TOP_MERGIN	= 0
 ! LEFT_MERGIN	= 0
-  
-  CC	= cc
-  CFLAGS	= -O -DLINES=${LINES} -DCOLUMNS=${COLUMNS} -DTOP_MERGIN=${TOP_MERGIN} -DLEFT_MERGIN=${LEFT_MERGIN}
---- 6,19 ----
+! 
+! CC	= cc
+! CFLAGS	= -O -DLINES=${LINES} -DCOLUMNS=${COLUMNS} -DTOP_MERGIN=${TOP_MERGIN} -DLEFT_MERGIN=${LEFT_MERGIN}
+  TYPES1	= -DESCP
+  TYPES2	= -DESCPAGE
+  TYPES3	= -DESCPS -DESCP
+--- 6,22 ----
   #
   
   # user setting 
@@ -28,8 +31,11 @@
 ! TOP_MERGIN	?= 0
 ! LEFT_MERGIN	?= 0
   
-  CC	= cc
-  CFLAGS	= -O -DLINES=${LINES} -DCOLUMNS=${COLUMNS} -DTOP_MERGIN=${TOP_MERGIN} -DLEFT_MERGIN=${LEFT_MERGIN}
+! CC	?= cc
+! CFLAGS	+= -DLINES=${LINES} -DCOLUMNS=${COLUMNS} -DTOP_MERGIN=${TOP_MERGIN} -DLEFT_MERGIN=${LEFT_MERGIN}
+  TYPES1	= -DESCP
+  TYPES2	= -DESCPAGE
+  TYPES3	= -DESCPS -DESCP
 ***************
 *** 41,50 ****
   # ${OBJS}: ${SRCS} ${HEADERS}
@@ -46,10 +52,10 @@
   # ${OBJS}: ${SRCS} ${HEADERS}
   
   install: all
-! 	install -c -o bin -g bin -m 755 -s ./escpf ${BINDIR}
-! 	install -c -o bin -g bin -m 755 -s ./escpagef ${BINDIR}
-! 	install -c -o bin -g bin -m 755 -s ./escpsf ${BINDIR}
-! 	install -c -o bin -g bin -m 755 -s ./escpagesf ${BINDIR}
+! 	install -c -o bin -g bin -m 555 -s ./escpf ${BINDIR}
+! 	install -c -o bin -g bin -m 555 -s ./escpagef ${BINDIR}
+! 	install -c -o bin -g bin -m 555 -s ./escpsf ${BINDIR}
+! 	install -c -o bin -g bin -m 555 -s ./escpagesf ${BINDIR}
   
   # auto select !?
   #	@if [ -d /usr/local/libexec ]; then \

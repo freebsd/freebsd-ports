@@ -1,15 +1,15 @@
 # New ports collection makefile for: escpf
-# Version required:	0.4beta2
+# Version required:	0.4
 # Date created:		15 June 1996
 # Whom:			Mita Yoshio <mita@iis.u-tokyo.ac.jp>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	escpf-0.4beta2
-PKGNAME=	ja-escpf-0.4b2
+DISTNAME=	escpf-0.4
+PKGNAME=	ja-escpf-0.4
 CATEGORIES=	japanese print
-MASTER_SITES=	http://www.bekkoame.or.jp/~wing/Linux/Escpf/
+MASTER_SITES=	http://www.flatout.org/~wing/Linux/Escpf/
 
 MAINTAINER=	mita@jp.FreeBSD.org
 
@@ -31,7 +31,7 @@ MAKE_ENV+=	LINES=${LINES} COLUMNS=${COLUMNS} \
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCDIR}
+	@${MKDIR} ${DOCDIR}
 	${INSTALL_DATA} ${WRKSRC}/escpf.doc ${DOCDIR}
 	${INSTALL_DATA} ${WRKSRC}/escpf.euc ${DOCDIR}
 .endif
