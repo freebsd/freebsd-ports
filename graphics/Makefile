@@ -79,6 +79,7 @@
     SUBDIR += lfview
     SUBDIR += libimg
     SUBDIR += libwmf
+    SUBDIR += linux_glx
     SUBDIR += mpeg-lib
     SUBDIR += mpeg2codec
     SUBDIR += mpeg2play
