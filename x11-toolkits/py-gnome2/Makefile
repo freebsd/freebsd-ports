@@ -5,28 +5,28 @@
 # $FreeBSD$
 #
 
-PORTNAME=	py-gnome
-PORTVERSION=	2.0.2
+PORTNAME=	gnome
+PORTVERSION=	2.0.3
 CATEGORIES=	x11-toolkits python gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-python/2.0
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	gnome-python-${PORTVERSION}
-DIST_SUBDIR=	gnome
+DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A set of Python bindings for GNOME 2
 
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gtk/_gtk.so:${PORTSDIR}/x11-toolkits/py-gtk2 \
-		${PYTHON_SITELIBDIR}/ORBit.so:${PORTSDIR}/devel/py-orbit2
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gtk/_gtk.so:${PORTSDIR}/x11-toolkits/py-gtk2 \
-		${PYTHON_SITELIBDIR}/ORBit.so:${PORTSDIR}/devel/py-orbit2
+BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/ORBit.so:${PORTSDIR}/devel/py-orbit2
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/ORBit.so:${PORTSDIR}/devel/py-orbit2
 
 LATEST_LINK=	py-gnome2
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_PYTHON=	yes
-USE_GNOME=	gnomehack libgnomeprintui libgtkhtml gnomepanel libzvt nautilus2
-USE_INC_LIBTOOL_VER=13
+USE_GNOME=	gnomehack libgnomeprintui libgtkhtml gnomepanel libzvt \
+		nautilus2 pygtk2
+USE_LIBTOOL_VER=15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 
