@@ -8,15 +8,13 @@
 PORTNAME=	jdom
 PORTVERSION=	1.0b10
 CATEGORIES=	java textproc
-MASTER_SITES=	http://www.jdom.org/dist/source/
+MASTER_SITES=	http://www.jdom.org/dist/source/archive/
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/[0-9]*\.[0-9]*//}
 
 MAINTAINER=	znerd@FreeBSD.org
 COMMENT=	Java library for accessing and manipulating XML documents
 
 RUN_DEPENDS=	${LOCAL_JAVAJARDIR}/jaxen-jdom.jar:${PORTSDIR}/java/jaxen
-
-BROKEN=		Unfetchable
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.2+
