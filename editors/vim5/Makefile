@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://nuxi.ucdavis.edu/pub/vim/unix/ \
 		ftp://ftp.vim.org/pub/vim/unix/  \
 		ftp://ftp.is.co.za/applications/editors/vim/  \
 		ftp://ftp.prz.tu-berlin.de/pub/unix/editors/vim/unix/  \
-		ftp://ftp.progsoc.uts.edu.au/pub/vim/
+		ftp://ftp.progsoc.uts.edu.au/pub/vim/unix/
 DISTNAME=	vim-5.7
 DISTFILES=	${DISTNAME}-src${EXTRACT_SUFX} ${DISTNAME}-rt${EXTRACT_SUFX}
 
@@ -30,17 +30,15 @@ Y2K=		http://www.vim.org/y2k.html
 SLAVEDIRS=	editors/vim-lite
 
 .if defined(PACKAGE_BUILDING) && !defined(LITE)
-BUILD_DEPENDS=	tclsh8.0:${PORTSDIR}/lang/tcl80 \
-		python:${PORTSDIR}/lang/python
+BUILD_DEPENDS=	tclsh8.0:${PORTSDIR}/lang/tcl80
 LIB_DEPENDS=	tcl80.1:${PORTSDIR}/lang/tcl80
-RUN_DEPENDS=	python:${PORTSDIR}/lang/python
 USE_PERL5=	yes
 .endif
 
 DIST_SUBDIR=	vim
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 PATCH_DIST_ARGS=	-d ${WRKDIR}/${DISTNAME} --forward --quiet -E ${PATCH_DIST_STRIP}
-MAKE_FLAGS=	CONF_ARGS="--prefix=${PREFIX} --with-tlib=termlib" -f
+MAKE_FLAGS=	CONF_ARGS="--prefix=${PREFIX} --with-tlib=termlib --disable-pythoninterp" -f
 ALL_TARGET=	#
 PLIST_SUB=	VIM_VER=${DISTNAME:S/-//:S/.//}
 MAN1=		vim.1 vimtutor.1 xxd.1 ectags.1
@@ -49,7 +47,7 @@ MLINKS=		vim.1 rvim.1  vim.1 rview.1  ectags.1 etags.1
 .if !defined(LITE)
 MLINKS+=	vim.1 gvim.1  vim.1 gview.1  vim.1 rgvim.1  vim.1 rgview.1
 
-MAKE_FLAGS:=	X_LIBS=-lxpg4 CONF_OPT_MAX="--enable-max-features" ${MAKE_FLAGS}
+MAKE_FLAGS:=	CONF_OPT_MAX="--enable-max-features" ${MAKE_FLAGS}
 
 .if defined(HAVE_GTK)
 LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12

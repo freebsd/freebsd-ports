@@ -15,6 +15,8 @@ DISTFILES=	exim-3.15.tar.gz exim-texinfo-3.10.tar.gz
 
 MAINTAINER=	sheldonh@FreeBSD.org
 
+FORBIDDEN=	Bug with system filters used to freeze messages for manual thawing
+
 # If WITHOUT_X11 is not defined, the eximon monitor, which requires X, will
 # be built. Comment it out unless you have or want XFree86 installed!
 .if !defined(WITHOUT_X11)

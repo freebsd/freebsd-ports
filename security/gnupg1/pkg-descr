@@ -1,8 +1,0 @@
-GNUPG is a complete and free replacement for PGP.
-
-Because it does not use IDEA or RSA it can be used without any
-restrictions.  GNUPG is nearly in complicance with the OpenPGP draft.
-
-WWW: http://www.gnupg.org/
-
-kuriyama@FreeBSD.ORG

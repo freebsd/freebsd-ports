@@ -1,9 +1,0 @@
-Note:
- * If you want to use POSIX schedule mechanism, you must include 
-    
-        options             "P1003_1B"
-        options             "_KPOSIX_PRIORITY_SCHEDULING"
-        options             "_KPOSIX_VERSION=199309L"
-
-   in your kernel configuration. These options are required by POSIX thread
-   control functions.

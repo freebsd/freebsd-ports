@@ -1,8 +1,0 @@
---- tests/scripts/defines.sh~	Wed May 26 02:06:42 1999
-+++ tests/scripts/defines.sh	Thu May 25 22:53:23 2000
-@@ -53,3 +53,5 @@
- ACLOUTMASTER=$DATADIR/acl.out.master
- REPLOUTMASTER=$DATADIR/repl.out.master
- MODSRCHFILTERS=$DATADIR/modify.search.filters
-+# Just in case we linked the binaries dynamically
-+export LD_LIBRARY_PATH=`pwd`/../libraries

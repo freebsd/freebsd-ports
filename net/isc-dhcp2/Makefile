@@ -13,6 +13,8 @@ DISTNAME=	dhcp-2.0pl2
 
 MAINTAINER=	jseger@FreeBSD.org
 
+FORBIDDEN=	security hole found
+
 Y2K=		http://www.isc.org/y2k.html
 
 HAS_CONFIGURE=	yes
