@@ -7,6 +7,7 @@
 
 PORTNAME=	gnome2
 PORTVERSION=	2.0
+PORTREVISION=	1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -26,6 +27,7 @@ RUN_DEPENDS=	battstat-applet-2:${PORTSDIR}/x11/gnomeapplets2 \
 		gnome-session:${PORTSDIR}/x11/gnomesession \
 		metatheme-edit:${PORTSDIR}/misc/metatheme2 \
 		metacity:${PORTSDIR}/x11-wm/metacity \
+		sawfish:${PORTSDIR}/x11-wm/sawfish2 \
 		metacity-setup:${PORTSDIR}/x11-wm/metacity-setup \
 		bug-buddy:${PORTSDIR}/devel/bugbuddy2 \
 		gnome-system-monitor:${PORTSDIR}/sysutils/gnomesystemmonitor \
@@ -33,8 +35,7 @@ RUN_DEPENDS=	battstat-applet-2:${PORTSDIR}/x11/gnomeapplets2 \
 		gdm:${PORTSDIR}/x11/gdm2 \
 		${X11BASE}/share/themes/Metal/gtk-2.0/gtkrc:${PORTSDIR}/x11-toolkits/gtk-engines2 \
 		nautilus:${PORTSDIR}/x11-fm/nautilus2 \
-		nautilus-gtkhtml-view:${PORTSDIR}/www/nautilus-gtkhtml \
-		xscreensaver:${PORTSDIR}/x11/xscreensaver
+		nautilus-gtkhtml-view:${PORTSDIR}/www/nautilus-gtkhtml
 
 NO_BUILD=	yes
 
