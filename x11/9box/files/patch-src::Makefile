@@ -1,7 +1,7 @@
 --- src/Makefile.orig	Tue Oct 29 17:20:46 2002
 +++ src/Makefile	Wed Jul 23 21:35:39 2003
 @@ -1,10 +1,14 @@
-+CC?=		cc
++CC=		%%CC%%
 +CFLAGS+=	-g -I. -I%%X11BASE%%/include
 +LIBS+=		-L%%X11BASE%%/lib -lX11
 +
