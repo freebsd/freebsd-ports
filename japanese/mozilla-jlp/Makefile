@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	mozilla
-PORTVERSION=	1.4
-PORTREVISION=	1
+PORTVERSION=	1.4.1
 PORTEPOCH=	1
 CATEGORIES=	japanese www
 MASTER_SITES=	http://plaza25.mbn.or.jp/~snip/jlp/
 #MASTER_SITE_SUBDIR=	jlpmoz
 PKGNAMESUFFIX=	-jlp
-DISTNAME=	moz${PORTVERSION}-langjajp-tm0.4
+DISTNAME=	moz${PORTVERSION}-langjajp-tm0.1
 EXTRACT_SUFX=	.xpi
 
 MAINTAINER=	yatt@luna2.org
