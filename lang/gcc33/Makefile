@@ -5,7 +5,7 @@
 #
 # $FreeBSD$
 #
-SNAPDATE=	2004-02-16
+SNAPDATE=	2004-03-08
 
 PORTNAME=	gcc
 PORTVERSION=	3.3.4
@@ -41,7 +41,6 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_PERL5_BUILD=yes
 USE_REINPLACE=	yes
-USE_SIZE=	yes
 
 PATCH_WRKSRC=	${SRCDIR}
 CONFIGURE_SCRIPT=	../${SRCDIR:C/${WRKDIR}//}/configure
@@ -49,15 +48,15 @@ NOMANCOMPRESS=	yes	# too hard to deal with differences on 5-cur and releng4
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64"
-BROKEN= "Configure broken due to renaming this architecture from x86_84."
-.endif
-
 .if ${ARCH} == sparc64
 BROKEN=	"libgcj is not supported/packaging is broken on this platform"
 .endif
 
+.if ${ARCH} == "amd64"
+CONFIGURE_TARGET=	x86_64-portbld-freebsd${OSREL}
+.else
 CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
+.endif
 
 SRCDIR=		${WRKDIR}/gcc-${VERSIONSTRING}
 WRKSRC=		${WRKDIR}/build
@@ -77,11 +76,6 @@ LDCONFIG_DIRS=	%%PREFIX%%/lib ${TARGLIB}
 EXTRA_SHLIB=	libgcc_s
 .else
 CONFIGURE_ARGS+=	--disable-shared
-.endif
-.if defined(WANT_THREADS_SUPPORT)
-CONFIGURE_ARGS+=	--enable-threads
-#	?is this an ObjC only thing?
-CONFIGURE_ARGS+=	--enable-threads=posix
 .endif
 ALL_TARGET=	bootstrap-lean
 MAN1=		cpp${SUFFIX}.1 \
