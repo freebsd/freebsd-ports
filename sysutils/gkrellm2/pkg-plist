@@ -5,6 +5,8 @@ sbin/gkrellmd
 %%PORTDOCS%%share/doc/gkrellm/Themes.html
 %%PORTDOCS%%@dirrm share/doc/gkrellm
 @exec mkdir -p %D/libexec/gkrellm2/plugins-gkrellmd
+@unexec rmdir %D/libexec/gkrellm2/plugins-gkrellmd 2>/dev/null || true
+@unexec rmdir %D/libexec/gkrellm2 2>/dev/null || true
 @unexec if cmp -s %D/etc/gkrellmd.conf %D/%%EXAMPLESDIR%%/gkrellmd.conf; then rm -f %D/etc/gkrellmd.conf; fi
 %%EXAMPLESDIR%%/gkrellmd.conf
 @exec [ -f %D/etc/gkrellmd.conf ] || cp %B/%f %D/etc/gkrellmd.conf
