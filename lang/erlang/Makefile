@@ -7,6 +7,7 @@
 
 PORTNAME=	erlang
 PORTVERSION=	9.0
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.erlang.org/pub/download/     \
 		http://www.erlang.org/download/        \
@@ -104,12 +105,33 @@ post-install:
 	@${CHMOD} -R o+rX-w,g+rX-w ${PREFIX}/lib/erlang
 	@sslapp=`ls -d ${PREFIX}/lib/erlang/lib/ssl-* | tail -1`; \
 	cd $$sslapp/priv/obj && ${MAKE} && strip ../bin/ssl_esock
+
+# All non-library files.
+
 	@cd ${PREFIX} ; ${FIND} lib/erlang/* -type f -o -type l \
 		| ${GREP} -v "^lib/erlang/man" \
+		| ${GREP} -v "^lib/erlang/lib" \
 		| sort \
 		> ${WRKDIR}/PLIST.lib-erlang
+
+# Stock OTP libraries.
+
+	for LIBRARY in ${OTP_LIBS}; do \
+		cd ${PREFIX} ; ${FIND} lib/erlang/lib/$${LIBRARY} -type f -o -type l; \
+	done | sort >> ${WRKDIR}/PLIST.lib-erlang
+
+# Stock OTP library directories.
+
+	for LIBRARY in ${OTP_LIBS}; do \
+		cd ${PREFIX} ; ${FIND} lib/erlang/lib/$${LIBRARY} -type d \
+		    	| ${SED} -e 's/^/@dirrm /g'; \
+	done | sort -r >> ${WRKDIR}/PLIST.lib-erlang
+
+# Other directories.
+
 	@cd ${PREFIX} ; ${FIND} lib/erlang/* -type d | sort -r \
 		| ${GREP} -v "^lib/erlang/man" \
+		| ${GREP} -v "^lib/erlang/lib" \
 	    	| ${SED} -e 's/^/@dirrm /g' \
 		>> ${WRKDIR}/PLIST.lib-erlang
 
@@ -134,5 +156,7 @@ MAN3PREFIX=	${PREFIX}/lib/erlang
 MAN4PREFIX=	${PREFIX}/lib/erlang
 MAN6PREFIX=	${PREFIX}/lib/erlang
 
+.include "Makefile.lib"
 .include "Makefile.man"
+
 .include <bsd.port.mk>

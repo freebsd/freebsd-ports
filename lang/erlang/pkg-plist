@@ -13,4 +13,5 @@ bin/escript
 @dirrm lib/erlang/man/man3
 @dirrm lib/erlang/man/man1
 @dirrm lib/erlang/man
-@dirrm lib/erlang
+@unexec rmdir %D/lib/erlang/lib 2>/dev/null || true
+@unexec rmdir %D/lib/erlang 2>/dev/null || true

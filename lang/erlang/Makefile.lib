@@ -1,0 +1,42 @@
+# $FreeBSD$
+
+OTP_LIBS=	appmon-2.1.1 \
+		asn1-1.4 \
+		compiler-4.1 \
+		cosEvent-2.0 \
+		cosEventDomain-1.0 \
+		cosFileTransfer-1.0.2 \
+		cosNotification-1.0.6 \
+		cosProperty-1.0.1 \
+		cosTime-1.0.1.1 \
+		cosTransactions-1.1.2 \
+		crypto-1.1.2 \
+		debugger-2.1 \
+		erl_interface-3.3.2 \
+		et-1.0 \
+		eva-2.0.3 \
+		gs-1.5.0 \
+		hipe-2.0 \
+		ic-4.1.6 \
+		inets-3.0 \
+		jinterface-1.2.1 \
+		kernel-2.8.0 \
+		megaco-1.1.0 \
+		mnemosyne-1.2.5 \
+		mnesia-4.1 \
+		mnesia_session-1.1.5 \
+		observer-0.9 \
+		odbc-1.0 \
+		orber-3.3 \
+		os_mon-1.6.0 \
+		parsetools-1.2 \
+		pman-2.4.1 \
+		runtime_tools-1.3 \
+		sasl-1.9.4 \
+		snmp-3.3.8 \
+		ssl-2.3.5 \
+		stdlib-1.11.0 \
+		toolbar-1.1.0 \
+		tools-2.1 \
+		tv-2.0.4 \
+		webtool-0.7.1
