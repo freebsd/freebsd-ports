@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.155 1998/10/28 14:37:32 kuriyama Exp $
+# $Id: Makefile,v 1.156 1998/11/04 15:27:00 kuriyama Exp $
 #
 
     SUBDIR += Canna
@@ -126,7 +126,10 @@
     SUBDIR += perl5
     SUBDIR += pgp.language
     SUBDIR += pine
-    SUBDIR += pkfonts
+    SUBDIR += pkfonts118
+    SUBDIR += pkfonts240
+    SUBDIR += pkfonts300
+    SUBDIR += pkfonts400
     SUBDIR += plain2
     SUBDIR += plan
     SUBDIR += platex-common
