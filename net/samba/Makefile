@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	samba
-PORTVERSION=	2.0.8
+PORTVERSION=	2.0.9
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.samba.org/pub/samba/%SUBDIR%/ \
 		ftp://ring.asahi-net.or.jp/pub/net/samba/%SUBDIR%/ \
