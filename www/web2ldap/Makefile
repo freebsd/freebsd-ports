@@ -9,7 +9,7 @@ PORTNAME=	web2ldap
 PORTVERSION=	0.8.1
 CATEGORIES=	www
 MASTER_SITES=	http://www.web2ldap.de/download/ \
-		http://www.tricknolgy.org/ports/
+		http://www.tricknology.org/ports/
 
 MAINTAINER=	oddbjorn@tricknology.org
 
