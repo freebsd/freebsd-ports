@@ -11,6 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME} \
 		http://www.freedesktop.org/software/startup-notification/releases/
+MASTER_SITE_SUBDIR=	sources/startup-notification/0.8
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
