@@ -1,0 +1,13 @@
+--- src/msqld/regexp/Makefile.tmpl.old	Fri May 28 01:02:46 2004
++++ src/msqld/regexp/Makefile.tmpl	Fri May 28 01:03:44 2004
+@@ -21,8 +21,8 @@
+ !library_unix libregexp.a regexp.c,regsub.c
+ !library_os2 libregexp.a regexp.c,regsub.c
+ 
+-!libinstall libregexp.a $(INST_DIR)/lib/libregexp.a 744 $(ROOT)
+-!install regexp.h $(INST_DIR)/include/regexp.h 744 $(ROOT)
++!libinstall libregexp.a $(INST_DIR)/lib/libregexp.a 644 $(ROOT)
++!install regexp.h $(INST_DIR)/include/regexp.h 444 $(ROOT)
+ 
+ 
+ all : libregexp.a

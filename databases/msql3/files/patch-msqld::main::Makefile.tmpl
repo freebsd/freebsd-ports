@@ -1,0 +1,11 @@
+--- src/msqld/main/Makefile.tmpl.old	Wed May  5 00:17:37 2004
++++ src/msqld/main/Makefile.tmpl	Wed May  5 00:18:06 2004
+@@ -35,7 +35,7 @@
+ 
+ !program msql3d yaccer.o,lexer.o,parse.o,process.o,index.o,table.o,regex.o,select.o,sysvar.o,varchar.o,compare.o,distinct.o,acl.o,sort.o,cache.o,util.o,net.o,main.o,funct.o,memory.o,tcp.o,../../common/debug/debug.o,../../common/config/config.o,../../common/libc_stuff/strtoul.o,../../common/libc_stuff/tmpnam.o,../regexp/libregexp.a,../index/libidx.a,../../common/types/libtypes.a,../broker/libbroker.a,../cra/libcra.a,../lock/liblock.a,../../libmsql/libmsql.a
+ 
+-!install msql3d $(INST_DIR)/bin/msql3d 0755
++!install msql3d $(INST_DIR)/sbin/msql3d 0755
+ !install msql3_broker $(INST_DIR)/bin/msql3_broker 0755
+ 
+ 

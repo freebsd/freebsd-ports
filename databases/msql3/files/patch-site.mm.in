@@ -1,0 +1,20 @@
+--- conf/site.mm.in.old	Tue May  4 16:50:06 2004
++++ conf/site.mm.in	Tue May  4 16:53:20 2004
+@@ -3,8 +3,8 @@
+ #
+ 
+ 
+-COMPILER= @CC@ @WALL@
+-INST_DIR= /usr/local/msql3
++COMPILER= @CC@
++INST_DIR= $(PREFIX)
+ HAVE_DYNAMIC= -DHAVE_DYNAMIC
+ CC_ONLY_FLAGS=
+ LINK_ONLY_FLAGS= @LINUX_DYNAMIC@
+@@ -33,5 +33,5 @@
+ # Directory for pid file
+ PID_DIR= @PID_DIR@
+ 
+-CFLAGS= -O -I$(TOP)/ $(EXTRA_CFLAGS) -D$(OS_TYPE)
++CFLAGS+= -I$(TOP)/ $(EXTRA_CFLAGS) -D$(OS_TYPE) -fpic -DPIC
+ LDLIBS= -L$(TOP)/lib $(EXTRA_LIB)
