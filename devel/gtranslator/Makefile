@@ -29,7 +29,7 @@ MAN1=		gtranslator.1 pozilla.sh.1
 MANCOMPRESSED=	yes
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|/usr/share/gtranslator|${DATADIR}|g; \
+	@${REINPLACE_CMD} -e "s|/usr/share/gtranslator|${PREFIX}/share/gnome/${PORTNAME}|g; \
 		s|/usr/share/pixmaps|${PREFIX}/share/gnome/pixmaps|g" \
 		${WRKSRC}/src/defines.h
 
