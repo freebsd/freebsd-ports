@@ -225,6 +225,7 @@
     SUBDIR += mod_bunzip2
     SUBDIR += mod_cfg_ldap
     SUBDIR += mod_cgi_debug
+    SUBDIR += mod_clamav
     SUBDIR += mod_color
     SUBDIR += mod_csacek
     SUBDIR += mod_cvs

@@ -1,0 +1,10 @@
+######################################################################
+# First you have to make sure, clamav runs in Daemon-Mode:
+# Add "ClamavMode daemon" to your httpd.conf
+# If clamd run on a local socket, it must have the same userid as the  
+# webserver add something like "user www" to your clamav.conf
+# If you don't want to start clamd as the same user as the Webserver
+# you have to start clamd on an inet socket by removing LocalSocket...
+# and add the options "TCPSocket ..." and "TCPAddr..."
+# later in the clamav.conf
+#######################################################################
