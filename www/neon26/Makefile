@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	neon
-PORTVERSION=	0.24.6
+PORTVERSION=	0.24.7
 CATEGORIES=	www
 MASTER_SITES=	http://www.webdav.org/neon/
 
