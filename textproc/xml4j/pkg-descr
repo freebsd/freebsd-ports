@@ -1,0 +1,9 @@
+IBM's XML for Java parser (XML4J) is a high performance, modular XML
+parser written in 100% Java.  XML4j makes it easy to give an application
+the ability to read and write XML data.  A single JAR file provides classes
+for parsing, generating, manipulating, and validating XML documents.
+XML4J is the most robust XML processor currently available and is most
+faithful to the XML 1.0 Recommendation and associated standards
+(DOM 1.0, SAX 1.0, Namespaces).
+
+WWW: http://www.alphaworks.ibm.com/technologies/xml4j/
