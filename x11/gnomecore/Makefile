@@ -14,6 +14,7 @@ DISTNAME=	gnome-core-${PORTVERSION}
 DIST_SUBDIR=	gnome
 
 MAINTAINER?=	gnome@FreeBSD.org
+COMMENT=	Core component for the Gnome Desktop Environment
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes

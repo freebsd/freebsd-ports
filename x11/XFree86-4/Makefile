@@ -28,6 +28,7 @@ RUN_DEPENDS=	xvinfo:${PORTSDIR}/x11/XFree86-4-clients \
 
 
 MAINTAINER=	anholt@FreeBSD.org
+COMMENT=	X11/XFree86 core distribution (complete, using mini/meta-ports)
 
 NO_BUILD=	yes
 LATEST_LINK=	XFree86

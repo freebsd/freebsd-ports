@@ -16,6 +16,7 @@ DISTFILES=	Login.app-${PORTVERSION:S/.a/-Alpha-/}${EXTRACT_SUFX} \
 		Drone${EXTRACT_SUFX}
 
 MAINTAINER=	sobomax@FreeBSD.org
+COMMENT=	Nice looking login interface to your favorite X-Server
 
 LIB_DEPENDS=	wraster.4:${PORTSDIR}/x11-wm/windowmaker \
 		PropList.2:${PORTSDIR}/devel/libPropList

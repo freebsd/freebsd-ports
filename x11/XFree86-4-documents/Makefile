@@ -15,6 +15,7 @@ DISTFILES=	X${PORTVERSION:S/.//g}src-1.tgz X${PORTVERSION:S/.//g}src-2.tgz X${PO
 EXTRACT_ONLY=	X${PORTVERSION:S/.//g}src-2.tgz X${PORTVERSION:S/.//g}src-3.tgz
 
 MAINTAINER=	anholt@freebsd.org
+COMMENT=	XFree86-4 Document Files
 
 XFREE86_VERSION=	4
 USE_IMAKE=		YES

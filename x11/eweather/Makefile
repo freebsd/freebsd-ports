@@ -11,6 +11,7 @@ CATEGORIES=	x11
 MASTER_SITES=	http://pfnet.org/~cy/
 
 MAINTAINER=	jhb@FreeBSD.org
+COMMENT=	Weather epplet for Enlightenment similar to wmWeather
 
 RUN_DEPENDS=	GrabWeather:${PORTSDIR}/misc/wmweather
 LIB_DEPENDS=	epplet.1:${PORTSDIR}/x11-wm/epplets

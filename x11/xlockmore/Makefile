@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.tux.org/pub/tux/bagleyd/xlockmore/ \
 MASTER_SITE_SUBDIR=	applications
 
 MAINTAINER=	tg@FreeBSD.org
+COMMENT=	Like XLock session locker/screen saver, but just more
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes

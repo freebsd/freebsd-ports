@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://cclub.tutcc.tut.ac.jp/pub/xwin/ \
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	nakai@FreeBSD.org
+COMMENT=	Mold spreading over your X11 screen
 
 USE_IMAKE=	yes
 NO_INSTALL_MANPAGES=	yes

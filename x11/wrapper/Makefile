@@ -11,6 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	x11
 
 MAINTAINER=	trevor@FreeBSD.org
+COMMENT=	Wrapper for XFree86-4 server
 
 RUN_DEPENDS=	XFree86:${PORTSDIR}/x11-servers/XFree86-4-Server
 

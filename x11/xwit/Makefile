@@ -11,6 +11,7 @@ CATEGORIES=	x11
 MASTER_SITES=	http://www.x.org/contrib/utilities/
 
 MAINTAINER=	tg@FreeBSD.org
+COMMENT=	X interface tool
 
 USE_IMAKE=	yes
 MAN1=		xwit.1

@@ -14,6 +14,7 @@ DISTFILES=	# none
 EXTRACT_ONLY=	# empty
 
 MAINTAINER=	kde@FreeBSD.org
+COMMENT=	The "meta-port" for KDE
 
 RUN_DEPENDS+=	kjumpingcube:${PORTSDIR}/games/kdegames3 \
 		kdessh:${PORTSDIR}/misc/kdeutils3 \

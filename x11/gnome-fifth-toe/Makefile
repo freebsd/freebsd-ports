@@ -14,6 +14,7 @@ DISTFILES=	# empty
 EXTRACT_ONLY=	# empty
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	The "meta-port" for the GNOME "Fifth-Toe" extra package set
 
 RUN_DEPENDS=	gabber:${PORTSDIR}/net/gabber \
 		galeon:${PORTSDIR}/www/galeon \

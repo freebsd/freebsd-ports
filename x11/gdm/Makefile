@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=		sources/gdm/2.2
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	GNOME version of xdm display manager
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes

@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	kbyanc
 
 MAINTAINER=	kbyanc@posi.net
+COMMENT=	A simple epplet for launching arbitrary programs
 
 LIB_DEPENDS=	epplet.1:${PORTSDIR}/x11-wm/libepplet
 

@@ -15,6 +15,7 @@ MASTER_SITE_SUBDIR=	stable/${KDE_VERSION}/src
 DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
+COMMENT=	This is the base set of libraries needed by KDE programs
 
 BUILD_DEPENDS=	mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \

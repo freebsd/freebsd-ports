@@ -15,6 +15,7 @@ MASTER_SITES=	ftp://ftp.kiarchive.ru/pub/x11/util/
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ache@FreeBSD.org
+COMMENT=	A .bdf fonts/.xbm bitmaps/.xpm colored pixmaps/mouse cursor editor
 
 USE_IMAKE=	yes
 USE_XPM=	yes

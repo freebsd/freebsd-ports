@@ -12,6 +12,7 @@ MASTER_SITES=		${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	applications
 
 MAINTAINER=		gpalmer@FreeBSD.org
+COMMENT=	A graphical shell for the X Window System
 
 USE_IMAKE=		yes
 USE_XPM=		yes

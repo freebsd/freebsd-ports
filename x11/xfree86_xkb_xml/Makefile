@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gswitchit
 
 MAINTAINER=	sobomax@FreeBSD.org
+COMMENT=	A little set of XML files useful for dealing with XKB rules
 
 LIB_DEPENDS=	iconv:${PORTSDIR}/converters/libiconv \
 		intl.4:${PORTSDIR}/devel/gettext

@@ -11,6 +11,7 @@ CATEGORIES=	x11
 MASTER_SITES=	http://soupnazi.org/FreeBSD/ports/distfiles/
 
 MAINTAINER=	jim@FreeBSD.org
+COMMENT=	HTML color picker written using GTK
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

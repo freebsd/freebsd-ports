@@ -15,6 +15,7 @@ MASTER_SITE_SUBDIR=	stable/${KDE_VERSION}/src
 DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
+COMMENT=	This package provides the basic applications for the KDE system
 
 USE_KDELIBS_VER=3
 PREFIX=		${KDE_PREFIX}

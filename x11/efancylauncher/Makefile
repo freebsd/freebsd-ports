@@ -12,6 +12,7 @@ MASTER_SITES=	http://user.it.uu.se/~adavid/Epplets/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	jhb@FreeBSD.org
+COMMENT=	A flexible and easily configurable button bar for Enlightenment
 
 LIB_DEPENDS=	epplet.1:${PORTSDIR}/x11-wm/epplets	# XXX
 

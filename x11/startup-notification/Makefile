@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.5
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	Library that supports startup notification spec from freedesktop.org
 
 BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 RUN_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig

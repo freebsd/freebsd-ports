@@ -11,6 +11,7 @@ CATEGORIES=	x11 gnome
 MASTER_SITES=	http://www.sci.fi/~syrjala/gnomeres/
 
 MAINTAINER=	sobomax@FreeBSD.org
+COMMENT=	A GNOME applet for changing display modes
 
 USE_X_PREFIX=	yes
 USE_GNOME=	yes
