@@ -1,0 +1,13 @@
+stabilize the build.
+
+--- lib/Makefile.orig	Tue Mar 30 09:22:31 1999
++++ lib/Makefile	Tue Mar 30 09:22:39 1999
+@@ -12,7 +12,7 @@
+ 
+ make-libs:
+ 	@for i in $(DIRS); \
+-	do (echo "cd $$i; $(MAKE)"; cd $$i; $(MAKE); cd ..); done
++	do (echo "cd $$i; $(MAKE)"; cd $$i; $(MAKE); cd ..; sleep 1); done
+ 
+ clean:
+ 	for i in $(DIRS); \
