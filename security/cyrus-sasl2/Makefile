@@ -36,7 +36,7 @@ MAN8=		sasldblistusers.8 saslpasswd.8
 USE_AUTOMAKE=	YES
 USE_LIBTOOL=	YES
 AUTOHEADER=	autoheader
-AUTOMAKE=	automake --add-missing --include-deps
+AUTOMAKE_ARGS=	--add-missing --include-deps
 
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
 		--with-plugindir=${PREFIX}/lib/sasl \
