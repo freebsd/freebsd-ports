@@ -3,7 +3,7 @@
 # Date created:        11 July 1998
 # Whom:                Marc G. Fournier <scrappy@freebsd.org>
 #
-# $Id: Makefile,v 1.13 1998/11/05 03:13:23 scrappy Exp $
+# $Id: Makefile,v 1.14 1998/11/07 04:25:48 scrappy Exp $
 #
 
 DISTNAME=	mico-2.2.1
@@ -14,7 +14,7 @@ MAINTAINER=	scrappy@freebsd.org
 
 LIB_DEPENDS=	gtk.1:${PORTSDIR}/x11-toolkits/gtk \
 		tcl80.1:${PORTSDIR}/lang/tcl80
-#BUILD_DEPENDS=	eg++:${PORTSDIR}/devel/egcs
+#BUILD_DEPENDS=	eg++:${PORTSDIR}/lang/egcs
 
 #CC=		egcc
 #CXX=		eg++
