@@ -1,0 +1,13 @@
+@cwd /usr/local
+etc/ftpd
+man/man1/ftpcount.1
+man/man1/ftpwho.1
+man/man5/ftpaccess.5
+man/man5/ftphosts.5
+man/man5/ftpconversions.5
+man/man5/xferlog.5
+man/man8/ftpd.8
+man/man8/ftpshut.8
+bin/ftpshut
+bin/ftpcount
+bin/ftpwho

@@ -1,0 +1,93 @@
+diff -c -r src/ftpd.c.orig src/ftpd.c
+*** src/ftpd.c.orig	Wed Apr 13 23:17:18 1994
+--- src/ftpd.c	Tue Oct 18 18:04:43 1994
+***************
+*** 139,146 ****
+   *freopen(const char *, const char *, FILE *);
+  extern int ftpd_pclose(FILE *iop),
+    fclose(FILE *);
+! extern char *getline(),
+!  *realpath(char *pathname, char *result);
+  extern char cbuf[];
+  extern off_t restart_point;
+  
+--- 139,148 ----
+   *freopen(const char *, const char *, FILE *);
+  extern int ftpd_pclose(FILE *iop),
+    fclose(FILE *);
+! extern char *getline();
+! #ifndef HAVE_REALPATH
+! extern char *realpath(char *pathname, char *result);
+! #endif
+  extern char cbuf[];
+  extern off_t restart_point;
+  
+***************
+*** 237,242 ****
+--- 239,250 ----
+  
+  #endif /* SETPROCTITLE */
+  
++ #ifdef SKEY
++ int	pwok = 0;
++ char	*skey_challenge();
++ char	*skey_crypt();
++ #endif
++ 
+  #ifdef KERBEROS
+  void init_krb();
+  void end_krb();
+***************
+*** 878,884 ****
+--- 886,897 ----
+      } else
+          acl_setfunctions();
+  
++ #ifdef SKEY
++     pwok = skeyaccess(name, NULL, remotehost);
++     reply(331, "%s", skey_challenge(name, pw, pwok));
++ #else
+      reply(331, "Password required for %s.", name);
++ #endif
+      askpasswd = 1;
+      /* Delay before reading passwd after first failed attempt to slow down
+       * passwd-guessing programs. */
+***************
+*** 1007,1013 ****
+--- 1020,1031 ----
+  #ifdef KERBEROS
+          xpasswd = crypt16(passwd, salt);
+  #else
++ #ifdef SKEY
++ 	xpasswd = skey_crypt(passwd, salt, pw, pwok);
++ 	pwok = 0;
++ #else
+          xpasswd = crypt(passwd, salt);
++ #endif
+  #endif
+  
+  #ifdef ULTRIX_AUTH
+diff -c -r src/realpath.c.orig src/realpath.c
+*** src/realpath.c.orig	Fri Apr  1 21:03:45 1994
+--- src/realpath.c	Tue Oct 18 17:48:34 1994
+***************
+*** 29,36 ****
+--- 29,39 ----
+   * POSSIBILITY OF SUCH DAMAGE.
+   */
+  
++ 
+  #include "config.h"
+  
++ #ifndef HAVE_REALPATH
++ 
+  #include <stdio.h>
+  #include <sys/types.h>
+  #include <sys/stat.h>
+***************
+*** 159,161 ****
+--- 162,165 ----
+      strcpy(result, workpath);
+      return (result);
+  }
++ #endif
