@@ -1,0 +1,7 @@
+Math::Round is a Perl module.  It supplies functions to round numbers,
+both positive and negative, in various ways.  This may seem like an
+odd thing to write a whole module for, but rounding can sometimes be
+a little tricky, so I thought some people might find this useful.
+
+WWW: http://search.cpan.org/dist/Math-Round/
+
