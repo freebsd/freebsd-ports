@@ -1,0 +1,3 @@
+OS independent wrapper class for executing ping calls.
+
+WWW: http://pear.php.net/package/Net_Ping/
