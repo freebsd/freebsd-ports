@@ -523,6 +523,7 @@
     SUBDIR += pchar
     SUBDIR += pcnfsd
     SUBDIR += pear-Net_DIME
+    SUBDIR += pear-Net_IPv6
     SUBDIR += pear-Net_NNTP
     SUBDIR += pear-Net_POP3
     SUBDIR += pear-Net_SMTP
