@@ -13,7 +13,8 @@ DISTFILES=	xisp-2.6-noufc.tar.gz \
 
 MAINTAINER=	morishim@cig.mot.com
 
-LIB_DEPENDS=	xforms:${PORTSDIR}/x11-toolkits/xforms
+LIB_DEPENDS=	xforms:${PORTSDIR}/x11-toolkits/xforms \
+		Xpm.4:${PORTSDIR}/graphics/xpm
 
 WRKSRC=         ${WRKDIR}/xisp-2.6
 MAN1=		xisp.1
