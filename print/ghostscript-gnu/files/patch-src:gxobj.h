@@ -4,7 +4,7 @@
   * The final | is because back pointer values are divided by obj_back_scale,
   * so objects must be aligned at least 0 mod obj_back_scale.
   */
-+#if !defined(__ia64__)
++#if !defined(__ia64__) && !defined(__amd64__)
  #define obj_align_mod\
    (((arch_align_long_mod - 1) | (arch_align_ptr_mod - 1) |\
      (arch_align_double_mod - 1) | (align_bitmap_mod - 1) |\
