@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bozohttpd
-PORTVERSION=	20021106
+PORTVERSION=	20030313
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://www.eterna.com.au/bozohttpd/
 
