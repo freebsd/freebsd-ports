@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xmms
-PORTVERSION=	1.2.2
+PORTVERSION=	1.2.3
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.xmms.org/xmms/1.2.x/ \
 		ftp://ftp.uk.xmms.org/xmms/1.2.x/ \
@@ -71,7 +71,7 @@ CONFIGURE_ENV+=	GTK_CONFIG="${GTK_CONFIG}" \
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_3DNOW) && ${OSVERSION} >= 400021
-PATCHFILES=	xmms-1.2.1-3dnow-20000620.patch.gz
+PATCHFILES=	xmms-${PORTVERSION}-3dnow.patch.gz
 CONFIGURE_ARGS+=	--enable-3dnow
 .endif
 
@@ -103,5 +103,8 @@ post-extract:
 	${PERL} -pi.bak -e 's:blur_8.s:blur_8.S:g' \
 	  ${WRKSRC}/Visualization/blur_scope/Makefile.in
 .endif
+
+pre-patch:
+	@${PERL} -pi -e 's|-lpthread|-pthread|g' ${WRKSRC}/configure
 
 .include <bsd.port.post.mk>
