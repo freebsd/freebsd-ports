@@ -1,0 +1,40 @@
+--- configure.orig	Sat Apr 21 19:23:27 2001
++++ configure	Sat Apr 21 19:24:38 2001
+@@ -1077,20 +1077,20 @@
+   withval="$with_pgsql"
+   
+   if test "$withval" != "no" ; then
+-    if test -f "$withval/include/libpq-fe.h" ; then
++    if test -f "$withval/include/pgsql/libpq-fe.h" ; then
+         PG_DIR=$withval
+-        PG_INCLUDE="$withval/include"
++        PG_INCLUDE="$withval/include/pgsql"
+         PG_LIB="$withval/lib"
+     fi
+     if test "$PG_DIR" = "" ; then
+-      if test -f "$withval/include/libpq-fe.h" ; then
++      if test -f "$withval/include/pgsql/libpq-fe.h" ; then
+         XML_DIR=$withval
+-        XML_INCLUDE="$withval/include"
++        XML_INCLUDE="$withval/include/pgsql"
+         XML_LIB="$withval/lib"
+       fi
+     fi
+     if test "$PG_DIR" = "" ; then
+-      if test -f "$withval/lib/libpq.a" -a -f "$withval/include/libpq-fe.h" ; then
++      if test -f "$withval/lib/libpq.a" -a -f "$withval/include/pgsql/libpq-fe.h" ; then
+ 	XML_DIR=$withval
+ 	XML_INCLUDE="$withval/include"
+ 	XML_LIB=$withval/lib
+@@ -1106,9 +1106,9 @@
+ 
+ if test "$PG_DIR" = ""; then
+ 	for i in /usr /usr/local /usr/local/postgres; do
+-		if test -f "$i/include/libpq-fe.h"; then
++		if test -f "$i/include/pgsql/libpq-fe.h"; then
+ 			PG_DIR=$i
+-			PG_INCLUDE="$i/include"
++			PG_INCLUDE="$i/include/pgsql"
+ 			PG_LIB="$i/lib"
+ 		elif test -f "$i/include/pgsql/libpq-fe.h"; then
+ 			PG_DIR=$i
