@@ -8,7 +8,7 @@
 PORTNAME=	heyu
 PORTVERSION=	1.29
 CATEGORIES=	misc
-MASTER_SITES=	http://www.prado.com/~dbs/
+MASTER_SITES=	http://heyu.tanj.com/
 DISTNAME=	x10_heyu
 EXTRACT_SUFX=	.tgz
 
