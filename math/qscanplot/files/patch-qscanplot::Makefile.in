@@ -1,26 +1,14 @@
 
 $FreeBSD$
 
---- qscanplot/Makefile.in	2002/01/10 16:00:24	1.1
-+++ qscanplot/Makefile.in	2002/01/10 16:01:15
-@@ -615,16 +615,16 @@
- install-data-local:
- #>- 	$(mkinstalldirs) /opt/kde/share/icons/
- #>+ 1
--	$(mkinstalldirs) $(DESTDIR)/opt/kde/share/icons/
-+#	$(mkinstalldirs) $(DESTDIR)/opt/kde/share/icons/
- #>- 	$(INSTALL_DATA) $(srcdir)/mini-qscanplot.xpm /opt/kde/share/icons/mini-qscanplot.xpm
- #>+ 1
--	$(INSTALL_DATA) $(srcdir)/mini-qscanplot.xpm $(DESTDIR)/opt/kde/share/icons/mini-qscanplot.xpm
-+#	$(INSTALL_DATA) $(srcdir)/mini-qscanplot.xpm $(DESTDIR)/opt/kde/share/icons/mini-qscanplot.xpm
- #>- 	$(mkinstalldirs) /opt/kde/share/icons/
- #>+ 1
--	$(mkinstalldirs) $(DESTDIR)/opt/kde/share/icons/
-+#	$(mkinstalldirs) $(DESTDIR)/opt/kde/share/icons/
- #>- 	$(INSTALL_DATA) $(srcdir)/qscanplot.xpm /opt/kde/share/icons/qscanplot.xpm
- #>+ 1
--	$(INSTALL_DATA) $(srcdir)/qscanplot.xpm $(DESTDIR)/opt/kde/share/icons/qscanplot.xpm
-+#	$(INSTALL_DATA) $(srcdir)/qscanplot.xpm $(DESTDIR)/opt/kde/share/icons/qscanplot.xpm
+--- qscanplot/Makefile.in	2002/04/23 10:07:59	1.1
++++ qscanplot/Makefile.in	2002/04/23 10:08:15
+@@ -226,7 +226,7 @@
+ INTERFACES = dlgNewPlugin.ui dlgPreferences.ui dlgNewElement.ui dlgModels.ui dlgInterpolator.ui dlgGrid.ui dlgExportSetup.ui dlgExportPreview.ui dlgEditElement.ui dlgAxisPoint.ui dlgAbout.ui 
+ TRANSLATIONS = 
+ KDE_OPTIONS = qtonly
+-qscanplot_LDADD = -ldl -lm $(LIB_QT) $(LIBSOCKET)
++qscanplot_LDADD = -lm $(LIB_QT) $(LIBSOCKET)
  
- uninstall-local:
- #>- 	-rm -f /opt/kde/share/icons/mini-qscanplot.xpm
+ SUBDIRS = docs plugins templates 
+ 
