@@ -1,6 +1,6 @@
---- configure.orig	Tue Jan 21 15:44:16 2003
-+++ configure	Tue Jan 21 15:45:28 2003
-@@ -14219,6 +14219,7 @@
+--- configure.orig	Sun Mar  9 08:30:25 2003
++++ configure	Mon Apr  7 21:57:40 2003
+@@ -7838,6 +7838,7 @@
  
  # This can be used to rebuild libtool when needed
  LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
@@ -8,3 +8,14 @@
  
  # Always use our own libtool.
  LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+@@ -10305,8 +10306,8 @@
+  1.3a) MOZILLA_SNAPSHOT=4 ;;
+  1.3b) MOZILLA_SNAPSHOT=5 ;;
+   1.3) MOZILLA_SNAPSHOT=6 ;;
+- 1.4a) MOZILLA_SNAPSHOT=6 ;;
+-trunk) MOZILLA_SNAPSHOT=6 ;;
++ 1.4a) MOZILLA_SNAPSHOT=7 ;;
++trunk) MOZILLA_SNAPSHOT=7 ;;
+     *) { { echo "$as_me:$LINENO: error:
+ *****************************************************************************
+ Galeon can be built using mozilla 1.3a, 1.3b or trunk snapshot, but the version
