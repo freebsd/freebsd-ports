@@ -16,7 +16,11 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A library and executables to access Microsoft Word files
 
 LIB_DEPENDS=	wmf.2:${PORTSDIR}/graphics/libwmf
+.if defined(WITHOUT_SSL)
 RUN_DEPENDS=	lynx:${PORTSDIR}/www/lynx
+.else
+RUN_DEPENDS=	lynx:${PORTSDIR}/www/lynx-ssl
+.endif
 
 USE_GETOPT_LONG=	yes
 USE_GNOME=	gnometarget pkgconfig
