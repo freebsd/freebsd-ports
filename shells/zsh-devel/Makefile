@@ -28,7 +28,7 @@ MAINTAINER=	shige@FreeBSD.org
 USE_AUTOCONF=	yes
 
 ZSH_VER=	${PORTVERSION}
-ZSHFUNC_FILES=	zsh-functions-freebsd-2000.05.15.tar.gz
+ZSHFUNC_FILES=	zsh-functions-freebsd-2000.09.06.tar.gz
 ZSHFUNC_SUBDIR=	share/zsh/${ZSH_VER}/functions
 NO_LATEST_LINK=	yes
 GNU_CONFIGURE=	yes
