@@ -9,7 +9,7 @@ PORTNAME=	skk-elisp
 PORTVERSION=	${SKK10_VER}
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 CATEGORIES=	japanese elisp
-MASTER_SITES=	http://openlab.ring.gr.jp/skk/maintrunk/
+MASTER_SITES=	http://openlab.ring.gr.jp/skk/maintrunk/legacy/
 DISTNAME=	skk${SKK10_VER}
 
 MAINTAINER?=	shige@FreeBSD.org
