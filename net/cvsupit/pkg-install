@@ -111,8 +111,8 @@ getsrctag() {
     if dialog --title "Branch selection menu" --menu \
 "
 Please specify which branch of FreeBSD (as designated by branch tag)
-you would like to update your sources to.  If you want 2.2.x then
-this would typically be the RELENG_2_2 tag.  If you're running a 4.0
+you would like to update your sources to.  If you want 3.x then
+this would typically be the RELENG_3 tag.  If you're running a 4.0
 system then RELENG_4 is the tag you want.  To follow -current, that
 being 5.0 right now, you want the HEAD (or .) tag.  If you want to be
 able to check out or compare sources from arbitrary branches at will,
@@ -137,11 +137,7 @@ choose to go this route).
 	C_SRC_TARGETS=""
 	return ${_VAL}
     fi
-
-    if [ "${_VAL}" = "0" ]; then
-	if yesno "Are you within the United States or Canada?"; then
-	    EXPORT=YES
-	fi
+    EXPORT=YES
     fi
     return ${_VAL}
 }
