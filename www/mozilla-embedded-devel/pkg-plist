@@ -24,6 +24,7 @@ lib/mozilla-embedded/components/dom_events.xpt
 lib/mozilla-embedded/components/dom_html.xpt
 lib/mozilla-embedded/components/dom_range.xpt
 lib/mozilla-embedded/components/dom_stylesheets.xpt
+lib/mozilla-embedded/components/dom_traversal.xpt
 lib/mozilla-embedded/components/dom_views.xpt
 lib/mozilla-embedded/components/dom_xbl.xpt
 lib/mozilla-embedded/components/dom_xul.xpt
