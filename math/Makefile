@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.51 1998/10/26 11:59:39 vanilla Exp $
+# $Id: Makefile,v 1.52 1998/11/20 04:14:16 asami Exp $
 #
 
     SUBDIR += R-a4
@@ -34,6 +34,7 @@
     SUBDIR += sc
     SUBDIR += siag
     SUBDIR += simpack
+    SUBDIR += spin
     SUBDIR += ss
     SUBDIR += superlu
     SUBDIR += umatrix
