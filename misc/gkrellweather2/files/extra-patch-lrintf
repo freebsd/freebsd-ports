@@ -1,0 +1,11 @@
+--- gkrellweather.c.orig	Wed Mar  2 00:23:34 2005
++++ gkrellweather.c	Wed Mar  2 00:28:58 2005
+@@ -7,6 +7,8 @@
+ #include <gkrellm2/gkrellm.h>
+ #include <math.h>
+ 
++#define lrintf(x) (int)rintf(x)
++
+ #define DEFAULT_STATION_ID      "YSSY"
+ 
+ #define STYLE_NAME      "weather"

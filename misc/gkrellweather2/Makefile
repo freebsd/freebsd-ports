@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gkrellweather
-PORTVERSION=	2.0.6
-PORTREVISION=	3
+PORTVERSION=	2.0.7
 CATEGORIES=	misc
 MASTER_SITES=	http://kmlinux.fjfi.cvut.cz/~makovick/gkrellm/
 EXTRACT_SUFX=	.tgz
@@ -16,8 +15,7 @@ MAINTAINER=	pav@FreeBSD.org
 COMMENT=	GKrellWeather is a weather plugin for GKrellM
 
 BUILD_DEPENDS=	${X11BASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkrellm2
-RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm2 \
-		${X11BASE}/bin/GrabWeather:${PORTSDIR}/misc/wmweather
+RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm2
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
@@ -25,10 +23,18 @@ ALL_TARGET=	gkrellweather.so
 
 MAKE_ENV=	enable_nls=1 PTHREAD_LIBS=${PTHREAD_LIBS}
 
+.include <bsd.port.pre.mk>
+
+# uses C99 builtin lrintf
+.if ${OSVERSION} < 500000
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-lrintf
+.endif
+
 do-install:
 	${MKDIR} ${PREFIX}/libexec/gkrellm2/plugins
 	${INSTALL_DATA} ${WRKSRC}/gkrellweather.so ${PREFIX}/libexec/gkrellm2/plugins
 	${MKDIR} ${PREFIX}/share/locale/ru/
 	${INSTALL_DATA} ${WRKSRC}/po/ru.mo ${PREFIX}/share/locale/ru/LC_MESSAGES/gkrellweather.mo
+	${INSTALL_SCRIPT} ${WRKSRC}/GrabWeather ${PREFIX}/bin
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
