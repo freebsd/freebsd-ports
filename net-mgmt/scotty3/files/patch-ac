@@ -9,16 +9,18 @@
  
  tnm-install-mibs:
  	@for i in $(TNM_INSTALL_DIR)/mibs ; \
-@@ -589,10 +589,14 @@
+@@ -589,11 +590,15 @@
+ 		else true; \
  		fi; \
  	    done;
- 	@echo "Installing tkined$(TNM_VERSION) and tkined$(TNM_VERSION)$(SHLIB_SUFFIX)"
--	@$(INSTALL_PROGRAM) $(UNIX_DIR)/tkined $(BIN_INSTALL_DIR)/tkined$(TKI_VERSION)
+-	@echo "Installing tkined$(TNM_VERSION) and tkined$(TNM_VERSION)$(SHLIB_SUFFIX)"
+-	@$(INSTALL_PROGRAM) tkined $(BIN_INSTALL_DIR)/tkined$(TKI_VERSION)
++	@echo "Installing tkined$(TKI_VERSION) and tkined$(TKI_VERSION)$(SHLIB_SUFFIX)"
++	@$(INSTALL_DATA) -m 555 tkined $(BIN_INSTALL_DIR)/tkined$(TKI_VERSION)
 +	@sed s,@PREFIX@,${prefix},g tkined.sh.in >tkined.sh
-+	@$(INSTALL) -m 555 ${UNIX_DIR}/tkined.sh ${BIN_INSTALL_DIR}/tkined
-+	@$(INSTALL) -m 555 $(UNIX_DIR)/tkined $(BIN_INSTALL_DIR)/tkined$(TKI_VERSION)
 +	@sed s,@PREFIX@,${prefix},g scotty.sh.in >scotty.sh
-+	@$(INSTALL) -m 555 ${UNIX_DIR}/scotty.sh ${BIN_INSTALL_DIR}/scotty
++	@$(INSTALL_DATA) -m 555 tkined.sh ${BIN_INSTALL_DIR}/tkined
++	@$(INSTALL_DATA) -m 555 scotty.sh ${BIN_INSTALL_DIR}/scotty
  	@$(INSTALL_DATA) tkined$(SHLIB_SUFFIX) $(LIB_RUNTIME_DIR)/tkined$(TKI_VERSION)$(SHLIB_SUFFIX)
  	@chmod 555 $(LIB_RUNTIME_DIR)/tkined$(TKI_VERSION)$(SHLIB_SUFFIX)
 -	@echo 'package ifneeded Tkined $(TKI_VERSION) "load $(LIB_RUNTIME_DIR)/tkined$(TKI_VERSION)[info sharedlibextension]"' > $(TKI_INSTALL_DIR)/pkgIndex.tcl
