@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libjit
-PORTVERSION=	0.0.0f
+PORTVERSION=	0.0.2
 CATEGORIES=	lang
 MASTER_SITES=	http://www.southern-storm.com.au/download/
 
@@ -17,5 +17,6 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 INFO=		libjit
 MAN3=		libjit.3
+INSTALLS_SHLIB=	yes
 
 .include <bsd.port.mk>
