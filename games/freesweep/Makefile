@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	freesweep
-PORTVERSION=	0.87
+PORTVERSION=	0.88
 CATEGORIES=	games
 MASTER_SITES=	http://www.upl.cs.wisc.edu/~hartmann/sweep/
-DISTFILES=	${PORTNAME}.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
 
