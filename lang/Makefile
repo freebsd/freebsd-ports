@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.109 1998/08/26 09:42:48 obrien Exp $
+# $Id: Makefile,v 1.110 1998/09/06 06:42:47 vanilla Exp $
 #
 
     SUBDIR += ETHOberonV4
@@ -29,6 +29,7 @@
     SUBDIR += gnomeobjc
     SUBDIR += guavac
     SUBDIR += guile
+    SUBDIR += guileobjc
     SUBDIR += hugs
     SUBDIR += icon
     SUBDIR += intercal
@@ -38,6 +39,7 @@
     SUBDIR += kaffe
     SUBDIR += kawk
     SUBDIR += lcc
+    SUBDIR += libobjects
     SUBDIR += logo
     SUBDIR += mit-scheme
     SUBDIR += mixal
