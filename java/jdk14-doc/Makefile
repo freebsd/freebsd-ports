@@ -17,7 +17,7 @@ NO_CDROM=	"License does not allow distribution with fee."
 RESTRICTED=	"This software is under license and export control."
 
 .if defined(BATCH) || defined(PACKAGE_BUILDING)
-IGNORE=	"You can not legally distribute packages"
+IGNORE=	"You cannot legally distribute packages"
 .endif
 
 PLIST_SUB+=	JDK_HOME=${JDK_HOME:S/^${PREFIX}\///}
@@ -29,11 +29,9 @@ NO_BUILD=	yes
 
 .include <bsd.port.pre.mk>
 
-.for file in ${DISTFILES}
-.if !exists(${DISTDIR}/${file})
-IGNORE=You must manually fetch ${file} from http://java.sun.com/jdk/1.1/docs.html, place it in ${DISTDIR} and then run make again.
+.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
+IGNORE=You must manually fetch ${DISTNAME}${EXTRACT_SUFX} from http://java.sun.com/jdk/1.1/docs.html, place it in ${DISTDIR} and then run make again
 .endif
-.endfor
 
 do-install:
 	${MKDIR} ${PREFIX}/jdk${PORTVERSION}
