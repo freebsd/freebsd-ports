@@ -1,5 +1,5 @@
---- zvt/Makefile.in.orig	Wed Sep 22 16:56:08 1999
-+++ zvt/Makefile.in	Thu Sep 23 12:25:06 1999
+--- zvt/Makefile.in.orig	Mon May 15 15:11:19 2000
++++ zvt/Makefile.in	Mon May 15 22:44:35 2000
 @@ -20,7 +20,7 @@
  exec_prefix = @exec_prefix@
  
@@ -9,16 +9,16 @@
  libexecdir = @libexecdir@
  datadir = @datadir@
  sysconfdir = @sysconfdir@
-@@ -157,7 +157,7 @@
+@@ -156,7 +156,7 @@
  libzvt_la_SOURCES =  	gnome-login-support.h		gnome-login-support.c		lists.c				subshell.h			subshell.c			subshell-includes.h		update.c			vt.c				zvtterm.c
  
  
--libzvt_la_LDFLAGS = -version-info 4:6:2 -rpath $(libdir)
+-libzvt_la_LDFLAGS = -version-info 4:7:2 -rpath $(libdir)
 +libzvt_la_LDFLAGS = -version-info 3:0:0 -rpath $(libdir)
  
  libzvtinclude_HEADERS =  	lists.h				vt.h				vtx.h				zvtterm.h
  
-@@ -193,7 +193,7 @@
+@@ -192,7 +192,7 @@
  libzvt_la_LIBADD = 
  libzvt_la_OBJECTS =  gnome-login-support.lo lists.lo subshell.lo \
  update.lo vt.lo zvtterm.lo
