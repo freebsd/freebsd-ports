@@ -1,0 +1,13 @@
+--- Libnet-0.99b/configure.orig	Mon Jul 26 08:08:51 1999
++++ Libnet-0.99b/configure	Sat Jan  8 01:00:45 2000
+@@ -884,10 +884,6 @@
+ 
+ 
+ 
+-if test $ac_cv_prog_gcc = yes; then
+-    CCOPTS='-O3 -funroll-loops -fomit-frame-pointer -pipe -Wall'
+-    CFLAGS="$CCOPTS"
+-fi
+ 
+ # Check whether --with-pf_packet or --without-pf_packet was given.
+ if test "${with_pf_packet+set}" = set; then
