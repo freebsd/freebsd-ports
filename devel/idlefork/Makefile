@@ -16,6 +16,8 @@ COMMENT=	An official experimental development fork of IDE for Python
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
 
+BROKEN=		Incorrect pkg-plist
+
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
