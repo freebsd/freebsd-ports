@@ -1,6 +1,21 @@
---- makefile.in.orig	Mon Dec  2 05:07:38 2002
-+++ makefile.in	Thu Jan  2 21:25:10 2003
-@@ -350,22 +350,19 @@
+--- makefile.in.orig	Wed Jan 22 12:43:13 2003
++++ makefile.in	Mon Apr  7 07:32:51 2003
+@@ -54,12 +54,12 @@
+ ## Where you want the doc-files installed
+ docdir= @libdir@/lynx_doc
+ DOCDIR= $(DESTDIR)$(docdir)
+-docdir1= $(shell echo "$(docdir)"|sed -e 's!^/!!')
++docdir1!= echo "$(docdir)"|sed -e 's!^/!!'
+ 
+ ## Where you want the help-files installed
+ helpdir= @libdir@/lynx_help
+ HELPDIR= $(DESTDIR)$(helpdir)
+-helpdir1= $(shell echo "$(helpdir)"|sed -e 's!^/!!')
++helpdir1!= echo "$(helpdir)"|sed -e 's!^/!!'
+ 
+ ##set the relative location of the WWW library Implementation directory,
+ ##from this directory
+@@ -351,22 +351,19 @@
  		if test "$(COMPRESS_PROG)" != "" ; then \
  			(cd $(HELPDIR) && $(COMPRESS_PROG) $$files ) \
  		fi'
@@ -29,7 +44,7 @@
  
  LYHelp.h : help_files.sed LYHelp.hin
  	@echo Creating $@
-@@ -387,7 +384,7 @@
+@@ -388,7 +385,7 @@
  	$(SHELL) -c '$(srcdir)/cfg_defs.sh $(srcdir)'
  
  install-cfg : $(LIBDIR)
