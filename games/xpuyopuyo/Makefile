@@ -12,6 +12,8 @@ MASTER_SITES=	http://chaos2.org/xpuyopuyo/
 
 MAINTAINER=	yinjieh@csie.nctu.edu.tw
 
+LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
+
 USE_X_PREFIX=	yes
 
 GNU_CONFIGURE=	yes
