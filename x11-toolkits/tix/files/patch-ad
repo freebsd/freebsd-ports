@@ -1,5 +1,14 @@
---- ../../generic/tixInit.c~	Thu Feb 11 18:11:44 1999
-+++ ../../generic/tixInit.c	Sun Dec  5 06:46:59 1999
+--- ../../generic/tixInit.c.orig	Thu Feb 11 18:11:44 1999
++++ ../../generic/tixInit.c	Thu Feb 17 19:46:36 2000
+@@ -499,7 +499,7 @@
+  *----------------------------------------------------------------------
+  */
+ 
+-static char *initScript =
++static char initScript[] =
+ "if [catch {file join a a}] {\n\
+     proc tixFileJoin {args} {\n\
+ 	set p [join $args /]\n\
 @@ -537,6 +537,7 @@
      }\n\
      set instDir [file dirname [info library]]\n\
