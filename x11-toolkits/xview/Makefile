@@ -3,13 +3,12 @@
 # Date created:         22 November 1994
 # Whom:                 ljo
 #
-# $Id: Makefile,v 1.6 1995/04/25 04:48:02 asami Exp $
+# $Id: Makefile,v 1.7 1996/11/16 10:49:57 asami Exp $
 #
 
 DISTNAME=	xview-config-3.2.1
 CATEGORIES=	x11
-MASTER_SITES=	${MASTER_SITE_XCONTRIB}
-MASTER_SITE_SUBDIR=	libraries
+MASTER_SITES=	${MASTER_SITE_LOCAL}
 DISTFILES=	xview3.2p1-X11R6.tar.gz
 
 WRKSRC=      	${WRKDIR}/xview3.2p1-X11R6/config
