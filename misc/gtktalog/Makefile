@@ -7,6 +7,7 @@
 
 PORTNAME=	gtktalog
 PORTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTNAME}.pkg/${PORTVERSION}
@@ -18,19 +19,22 @@ USE_GNOME=	gnomeprefix gnomelibs
 GNU_CONFIGURE=	yes
 USE_X_PREFIX=	yes
 USE_BZIP2=	yes
-USE_PERL5=	yes
+USE_REINPLACE=	yes
 
 MAN1=		gtktalog.1
 
-DOCS=	AUTHORS BUGS COPYING ChangeLog NEWS README TODO
+DOCS=	AUTHORS BUGS ChangeLog NEWS README TODO
+
+CONFIGURE_ENV=	XGETTEXT=${LOCALBASE}/bin/xgettext
 
 post-patch:
-	${PERL} -pi -e "s@^(Applicationsdir = ).*@\1${PREFIX}/share/gnome/apps/Applications@" ${WRKSRC}/Makefile.in
-	${PERL} -pi -e "s@^(localedir = ).*@\1${PREFIX}/share/locale@" \
+	@${REINPLACE_CMD} -e "s@-lpthread@${PTHREAD_LIBS}@" ${WRKSRC}/configure
+	@${REINPLACE_CMD} -E "s@^(Applicationsdir = ).*@\1${PREFIX}/share/gnome/apps/Applications@" ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -E "s@^(localedir = ).*@\1${PREFIX}/share/locale@" \
 		${WRKSRC}/po/Makefile.in.in
-	${PERL} -pi -e "s@^(gtktalog_helpdir = ).*@\1${PREFIX}/share/gnome/help/gtktalog/C@" ${WRKSRC}/Docs/C/Makefile.in
-	${PERL} -pi -e "s@^(gtktalog_helpdir = ).*@\1${PREFIX}/share/gnome/help/gtktalog/fr@" ${WRKSRC}/Docs/fr/Makefile.in
-	${PERL} -pi -e "s@^(MountPoint ).*@\1/cdrom@" \
+	@${REINPLACE_CMD} -E "s@^(gtktalog_helpdir = ).*@\1${PREFIX}/share/gnome/help/gtktalog/C@" ${WRKSRC}/Docs/C/Makefile.in
+	@${REINPLACE_CMD} -E "s@^(gtktalog_helpdir = ).*@\1${PREFIX}/share/gnome/help/gtktalog/fr@" ${WRKSRC}/Docs/fr/Makefile.in
+	@${REINPLACE_CMD} -E "s@^(MountPoint ).*@\1/cdrom@" \
 		${WRKSRC}/src/gtktalog/gtktalog.cf.in.in
 
 post-install:

@@ -146,14 +146,13 @@ share/gnome/help/gtktalog/fr/x835.html
 share/gnome/help/gtktalog/fr/x846.html
 share/gnome/help/gtktalog/fr/x947.html
 share/gnome/pixmaps/gtktalog.png
-%%PORTDOCS%%share/doc/gtktalog/AUTHORS
-%%PORTDOCS%%share/doc/gtktalog/BUGS
-%%PORTDOCS%%share/doc/gtktalog/COPYING
-%%PORTDOCS%%share/doc/gtktalog/ChangeLog
-%%PORTDOCS%%share/doc/gtktalog/NEWS
-%%PORTDOCS%%share/doc/gtktalog/README
-%%PORTDOCS%%share/doc/gtktalog/TODO
-%%PORTDOCS%%@dirrm share/doc/gtktalog
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/BUGS
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm lib/gtktalog
 @dirrm share/gnome/gtktalog/icons
 @dirrm share/gnome/gtktalog/xpm
@@ -161,6 +160,3 @@ share/gnome/pixmaps/gtktalog.png
 @dirrm share/gnome/help/gtktalog/C
 @dirrm share/gnome/help/gtktalog/fr
 @dirrm share/gnome/help/gtktalog
-@unexec rmdir %D/share/locale/*/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/* 2>/dev/null || true
-@unexec rmdir share/locale 2>/dev/null || true
