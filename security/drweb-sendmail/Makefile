@@ -6,24 +6,23 @@
 #
 
 PORTNAME=	drweb_sendmail
-PORTVERSION=    4.27
-PORTREVISION=   2
+PORTVERSION=    4.28
 CATEGORIES=	security mail
-MASTER_SITES=	http://www.drweb.ru/ftp/web_pub/
-DISTNAME=	drwebd-${PORTVERSION}-freebsd4
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=   http://drweb.spb.ru/download/unix/
+DISTNAME=       drweb-clients-${PORTVERSION}-sources
 
 MAINTAINER=	anton@urc.ac.ru
 
-RUN_DEPENDS=	${LOCALBASE}/drweb/drwebd:${PORTSDIR}/security/drweb
+RUN_DEPENDS=    ${LOCALBASE}/etc/rc.d/drweb-0.sh:${PORTSDIR}/security/drwebd
 
-WRKSRC=		${WRKDIR}/${DISTNAME}/clients/drwebdc
-
-.include <bsd.port.pre.mk>
+WRKSRC=         ${WRKDIR}/drwebdc-${PORTVERSION}-src/opt/drweb/clients/drwebdc
 
 INST_PREFIX=	${PREFIX}/${PORTNAME}
-WITH_DRWEBSMF_SENDMAIL_DIR=     /usr/src/contrib/sendmail
 DOC_DIR=	${PREFIX}/share/doc/drweb-sendmail
+
+.if !exists( /usr/include/libmilter/mfapi.h )
+IGNORE= "requires libmilter installed in the base system, upgrade your FreeBSD"
+.endif
 
 .if !defined(WITH_DRWEBSMF_HOSTNAME)
 .if defined(BATCH)
@@ -33,103 +32,89 @@ WITH_DRWEBSMF_HOSTNAME!=hostname
 .endif
 .endif
 
-.if exists( ${WITH_DRWEBSMF_SENDMAIL_DIR}/include/libmilter/mfapi.h )
+RANDOM_NUMBER!=dd if=/dev/random count=1 2> /dev/null | md5
+LANGS=en ru
+CONFS=drweb_smf users
+TMPLS=error-admin mailbomb-admin mailbomb-sender skipobj-sender \
+      virus-admin virus-rcpts virus-sender
 
-SENDMAIL_VERSION!=      ${AWK} '/^sendmail [0-9.]+$$/{print $$2}' ${WITH_DRWEBSMF_SENDMAIL_DIR}/FREEBSD-upgrade
-SENDMAIL_MAJOR!=	${ECHO_CMD} ${SENDMAIL_VERSION} | ${AWK} 'BEGIN{ FS="." }{ print $$1 }'
-SENDMAIL_MINOR!=	${ECHO_CMD} ${SENDMAIL_VERSION} | ${AWK} 'BEGIN{ FS="." }{ print $$2 }'
-.if ${SENDMAIL_MAJOR} > 8 || ${SENDMAIL_MAJOR} == 8 && ${SENDMAIL_MINOR} >= 12
-SENDMAIL8_12=	y
-.elif ${SENDMAIL_MAJOR} == 8 && ${SENDMAIL_MINOR} >= 10
-SENDMAIL8_12=	n
-.else
-IGNORE=	"uses Sendmail sources that are expected to have version 8.10.0 or newer. Your system sources are too old - please upgrade them"
-.endif
-
-.else
-IGNORE= "depends on the Sendmail sources. Please place them somewhere first and point WITH_DRWEBSMF_SENDMAIL_DIR there"
-.endif
-
-post-extract:
-	cd ${WRKDIR}/${DISTNAME} && \
-		${TAR} -xzf ${WRKDIR}/${DISTNAME}/${DISTNAME}.tar.gz \
-		clients/sendmail clients/drwebdc
+post-patch:
+	${SED} "s#%PREFIX%#${PREFIX}#g" < ${FILESDIR}/drweb-sendmail.sh \
+	    > ${WRKSRC}/drweb-sendmail.sh
+	cd ${WRKSRC} && \
+	${SED} "s#%PREFIX%#${PREFIX}#g" < dw_options.c > ndwo.c && \
+	    mv ndwo.c dw_options.c
+	cd ${WRKSRC}/etc/sendmail/etc/drweb && \
+	${SED} "s#%PREFIX%#${PREFIX}#g;\
+		s#%HOSTNAME%#${WITH_DRWEBSMF_HOSTNAME}#g;\
+		s#!!!___EDIT_THIS___!!!#${RANDOM_NUMBER}#" \
+	    < drweb_smf.conf > ndrwsmf.conf && \
+	    mv ndrwsmf.conf drweb_smf.conf
 
 post-configure:
-.if defined(SENDMAIL_VERSION)
-.if ${SENDMAIL8_12} == "n" || ${SENDMAIL_VERSION} == "8.12.0"
-	${MKDIR} ${WRKSRC}/libmilter
-	${CP} ${FILESDIR}/Makefile.libmilter ${WRKSRC}/libmilter/Makefile
-.if ${SENDMAIL_VERSION} == "8.11.1"
-	${CP} ${WITH_DRWEBSMF_SENDMAIL_DIR}/libmilter/listener.c ${WRKSRC}/libmilter
-	cd ${WRKSRC}/libmilter && ${PATCH} < ${WRKSRC}/../sendmail/listener-8.11.1.patch
-.elif ${SENDMAIL_VERSION} == "8.12.0"
-	${CP} ${WITH_DRWEBSMF_SENDMAIL_DIR}/libmilter/listener.c ${WRKSRC}/libmilter
-	cd ${WRKSRC}/libmilter && ${PATCH} < ${WRKSRC}/../sendmail/listener-8.12.0.patch
-.endif
-	cd ${WRKSRC}/libmilter && ${MAKE} clean && ${MAKE} SENDMAIL_DIR=${WITH_DRWEBSMF_SENDMAIL_DIR}
-.endif
-.endif
 	cd ${WRKSRC} && { \
-		${ECHO_CMD} y; \
+		${ECHO_CMD} ; \
+		${ECHO_CMD} ; \
 		${ECHO_CMD} n; \
-		${ECHO_CMD} y; \
-		${ECHO_CMD} ${SENDMAIL8_12} ; \
-		${ECHO_CMD} ${WITH_DRWEBSMF_SENDMAIL_DIR} ; \
+		${ECHO_CMD} n; \
+		${ECHO_CMD} n; \
+		${ECHO_CMD} n; \
+		${ECHO_CMD} ; \
+		${ECHO_CMD} ; \
 		${ECHO_CMD} ${CFLAGS} ; \
-		${ECHO_CMD} y; \
+		${ECHO_CMD} ; \
 	} | ./configure
 
 do-install:
 	${MKDIR} ${DOC_DIR}
+.for LANG in ${LANGS}
+	${MKDIR} ${PREFIX}/etc/drweb/templates/${LANG}/sendmail
+.endfor
+.for CONF in ${CONFS}
+	${INSTALL_DATA} -m 600 ${WRKSRC}/etc/sendmail/etc/drweb/${CONF}.conf \
+	    ${PREFIX}/etc/drweb/${CONF}.conf-dist
+	if [ ! -f ${PREFIX}/etc/drweb/${CONF}.conf ]; then \
+	    ${INSTALL_DATA} -m 600 ${WRKSRC}/etc/sendmail/etc/drweb/${CONF}.conf \
+		${PREFIX}/etc/drweb/${CONF}.conf; \
+	fi
+.endfor
+.for LANG in ${LANGS}
+.for TMPL in ${TMPLS}
+	cd ${WRKSRC}/etc/sendmail/etc/drweb/templates/${LANG}/sendmail && \
+	    ${INSTALL_DATA} ${TMPL}.msg \
+		${PREFIX}/etc/drweb/templates/${LANG}/sendmail/${TMPL}.msg-dist
+	if [ ! -f ${PREFIX}/etc/drweb/templates/${LANG}/sendmail/${TMPL}.msg ]; then \
+		cd ${PREFIX}/etc/drweb/templates/${LANG}/sendmail && \
+		${CP} ${TMPL}.msg-dist ${TMPL}.msg; \
+	fi
+.endfor
+.endfor
 	${INSTALL_PROGRAM} ${WRKSRC}/drweb-smf ${PREFIX}/sbin/
 	${INSTALL_PROGRAM} ${WRKSRC}/drwebdc ${PREFIX}/sbin/
-	cd ${WRKSRC}/../sendmail && { \
-		${ECHO_CMD} y; \
+	cd ${WRKSRC}/doc/sendmail && { \
+		${ECHO_CMD} ; \
+		${ECHO_CMD} "${PREFIX}/drweb"; \
 		${ECHO_CMD} "${PREFIX}/sbin"; \
+		${ECHO_CMD} "${PREFIX}/etc/drweb/drweb_smf.conf"; \
 		${ECHO_CMD} ; \
-		${ECHO_CMD} u; \
-		${ECHO_CMD} "${PREFIX}/drweb/run/drweb-smf.sock"; \
-		${ECHO_CMD} drweb; \
-		${ECHO_CMD} "${PREFIX}/drweb/infected"; \
-		${ECHO_CMD} y; \
-		${ECHO_CMD} /tmp; \
-		${ECHO_CMD} y; \
-		${ECHO_CMD} y; \
 		${ECHO_CMD} ; \
-		${ECHO_CMD} postmaster@${WITH_DRWEBSMF_HOSTNAME}; \
-		${ECHO_CMD} y; \
-		${ECHO_CMD} y; \
-		${ECHO_CMD} y; \
-		${ECHO_CMD} c; \
 		${ECHO_CMD} t; \
-		${ECHO_CMD} t; \
-		${ECHO_CMD} t; \
-		${ECHO_CMD} a; \
-		${ECHO_CMD} r; \
-		${ECHO_CMD} 160000; \
-		${ECHO_CMD} ${SENDMAIL8_12} ; \
-		${ECHO_CMD} n; \
-		${ECHO_CMD} y; \
+		${ECHO_CMD} ; \
 		${ECHO_CMD} ; \
 	} | ./configure
-	cd ${WRKSRC}/../sendmail; \
-		${INSTALL_DATA} example* readme.* sendmail.*.addon ${DOC_DIR}
-	cd ${WRKSRC}/../sendmail; \
-		${INSTALL_DATA} drweb-sendmail.sh \
-		${PREFIX}/etc/rc.d/drweb-sendmail.sh-dist
-	if [ ! -f ${PREFIX}/etc/rc.d/drweb-sendmail.sh ] ; then \
-		cd ${WRKSRC}/../sendmail; \
-			${INSTALL_SCRIPT} drweb-sendmail.sh \
-			${PREFIX}/etc/rc.d/; \
+	cd ${WRKSRC}/doc/sendmail; \
+		${INSTALL_DATA} readme* *.txt sendmail.??.addon ${DOC_DIR}
+	${INSTALL_DATA} ${WRKSRC}/drweb-sendmail.sh \
+	    ${PREFIX}/etc/rc.d/drweb-sendmail.sh-dist
+	if [ ! -f ${PREFIX}/etc/rc.d/drweb-sendmail.sh ]; then \
+		${INSTALL_SCRIPT} ${WRKSRC}/drweb-sendmail.sh \
+		    ${PREFIX}/etc/rc.d/; \
 	fi
 
 post-install:
-	PKG_PREFIX=${PREFIX} ${SH} pkg-install ${PKGNAME} POST-INSTALL
-	@echo
-	@${CAT} pkg-message
 	@echo
 	@echo "Read documentation about additional sendmail tuning needed"
 	@echo "in ${DOC_DIR}."
+	@echo
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
