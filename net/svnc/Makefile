@@ -24,12 +24,14 @@ DOCFILES=	README
 DOCDIR=		share/doc/${PORTNAME}/
 ONLY_FOR_ARCHS=	i386
 PLIST=		${WRKDIR}/pkg-plist
-USE_PERL5_BUILD=yes
 WRKSRC=		${WRKDIR}/svncviewer
 
 do-patch:
-	${PERL} -pi -e "s:include <vncviewer.h>:include \"vncviewer.h\":g" \
-		${WRKSRC}/*c
+.for ii in args kbd listen rfbproto sockets svga svncviewer vncviewer
+	@${MV} ${WRKSRC}/${ii}.c ${WRKSRC}/${ii}.c.orig
+	@${SED} -e "s:include <vncviewer.h>:include \"vncviewer.h\":g" \
+		< ${WRKSRC}/${ii}.c.orig > ${WRKSRC}/${ii}.c
+.endfor
 
 do-build:
 	cd ${WRKDIR}/vnc_unixsrc/libvncauth && \
