@@ -22,8 +22,5 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 PERL_CONFIGURE=	yes
 
 MAN3=		News::Article::NoCeM.3
-PLIST_DIRS=	${SITE_PERL_REL}/${PERL_ARCH}/auto/News/Article/NoCeM
-PLIST_FILES=	${SITE_PERL_REL}/News/Article/NoCeM.pm \
-		${SITE_PERL_REL}/${PERL_ARCH}/auto/News/Article/NoCeM/.packlist
 
 .include <bsd.port.mk>
