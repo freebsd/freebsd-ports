@@ -45,22 +45,26 @@ PLIST_SUB=	CHARSETS="@comment "
 .endif
 .if ${PORTNAME} == "mc"
 CONFIGURE_ARGS+=--without-gnome
+.else
+CONFIGURE_ARGS+=--without-edit
 .endif
 CONFIGURE_ENV=	CPPFLAGS=-I${LOCALBASE}/include \
 		LDFLAGS="-L${LOCALBASE}/lib -lintl"
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 .if ${PORTNAME} == "mc"
-PLIST_SUB+=	GNOMEMC="@comment " SHARE_PATH="share"
-.else
-PLIST_SUB+=	GNOMEMC="" SHARE_PATH="share/gnome"
-.endif
-
+PLIST_SUB+=	GNOMEMC="@comment " MC="" SHARE_PATH="share"
 MAN1=		mc.1 mcedit.1
+.else
+PLIST_SUB+=	GNOMEMC="" MC="@comment " SHARE_PATH="share/gnome"
+.endif
 
 post-patch:
 	@find ${WRKSRC} -name "Makefile.in*" | xargs ${REINPLACE_CMD} \
 		-e 's|\$$(libdir)/mc|\$$(datadir)/mc|g' \
 		-e 's|\$$(datadir)/locale|\$$(prefix)/share/locale|g'
+.if ${PORTNAME} != "mc
+	@${REINPLACE_CMD} -e 's|^SUBDIRS = intl po vfs edit src lib doc|SUBDIRS = intl po vfs lib|' ${WRKSRC}/Makefile.in
+.endif
 	@${REINPLACE_CMD} -e 's|DRAR=/usr/bin|DRAR=${LOCALBASE}/bin|' \
 		${WRKSRC}/vfs/extfs/urar.in
 	@${REINPLACE_CMD} -e 's|/usr/bin/\(.*\)zip|${LOCALBASE}/bin/\1zip|' \

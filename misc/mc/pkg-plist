@@ -1,11 +1,11 @@
 %%GNOMEMC%%bin/gmc
 %%GNOMEMC%%bin/gmc-client
 %%GNOMEMC%%bin/plain-gmc
-bin/mcmfmt
-bin/mc
-bin/mcedit
-bin/mcview
-bin/midc
+%%MC%%bin/mcmfmt
+%%MC%%bin/mc
+%%MC%%bin/mcedit
+%%MC%%bin/mcview
+%%MC%%bin/midc
 %%GNOMEMC%%etc/CORBA/servers/gmc.gnorba
 etc/mc.global
 share/locale/az/LC_MESSAGES/mc.mo
@@ -81,7 +81,7 @@ share/locale/zh_TW.Big5/LC_MESSAGES/mc.mo
 %%SHARE_PATH%%/mc/mc.hint.ru
 %%SHARE_PATH%%/mc/mc.hint.uk
 %%SHARE_PATH%%/mc/mc.hint.zh
-%%SHARE_PATH%%/mc/mc.hlp
+%%MC%%%%SHARE_PATH%%/mc/mc.hlp
 %%SHARE_PATH%%/mc/mc.hlp.hu
 %%SHARE_PATH%%/mc/mc.lib
 %%SHARE_PATH%%/mc/mc.menu
