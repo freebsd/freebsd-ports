@@ -22,6 +22,12 @@ PERL_CONFIGURE=	yes
 
 MASTER_SITE_BACKUP+=	http://www.template-toolkit.org/download/
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500007
+BROKEN=	"Perl in base system too old, you need perl 5.6.0"
+.endif
+
 .if defined(BATCH)
 CONFIGURE_ENV=	|
 .endif
@@ -58,4 +64,4 @@ post-patch:
 	${PERL} -pi -e 's,${LOCALBASE}/tt2,${LOCALBASE}/share/tt2,g' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
