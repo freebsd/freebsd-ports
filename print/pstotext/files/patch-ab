@@ -1,0 +1,21 @@
+--- main.c.orig	Fri Oct 16 16:27:57 1998
++++ main.c	Tue Feb  1 23:29:34 2000
+@@ -90,13 +90,16 @@
+ static char *make_temp(b) BUNDLE b; {
+   /* Return pathname of temporary file containing bundle "b".  Caller
+      should unlink file (and, technically, free pathname). */
++  int fd;
+   FILE *f;
+ #ifdef VMS
+   char *path = tempnam("SYS$SCRATCH:", ".ps2t");
+ #else
+-  char *path = tempnam("/tmp", ",ps2t");
++  char *path = strdup("/tmp/ps2tXXXXXXXXXX");
++  if ((fd = mkstemp(path)) == NULL)
++	{perror(cmd); exit(1);}
+ #endif
+-  f = fopen(path, "w");
++  f = fdopen(fd, "w");
+   if (f==NULL) {perror(cmd); exit(1);}
+   putbundle(b, f);
+   fclose(f);

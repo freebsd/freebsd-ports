@@ -1,6 +1,39 @@
---- Makefile.orig	Wed Oct 28 17:45:58 1998
-+++ Makefile	Mon Dec  6 14:36:17 1999
-@@ -43,2 +43,7 @@
+--- Makefile.orig	Wed Oct 28 08:45:58 1998
++++ Makefile	Tue Feb  1 23:21:29 2000
+@@ -8,7 +8,8 @@
+ # commenting out the includes of ptotdll.h in ptotdll.c and main.c.
+ # PMcJ 6 Sep 96
+ 
+-CC=gcc
++CC?=gcc
++CFLAGS?=-O2
+ #CC=cc -std
+ 
+ BUNDLE = ocr.h rot270.h rot90.h
+@@ -16,10 +17,10 @@
+ all:	pstotext
+ 
+ main.o: ptotdll.h bundle.h ocr.h rot270.h rot90.h
+-	$(CC) -c $*.c
++	$(CC) ${CFLAGS} -c $*.c
+ 
+ ptotdll.o: ptotdll.h
+-	$(CC) -c $*.c
++	$(CC) ${CFLAGS} -c $*.c
+ 
+ pstotext: bundle.o main.o ptotdll.o
+ 	$(CC) -o pstotext main.o bundle.o ptotdll.o -lm
+@@ -27,7 +28,7 @@
+ .SUFFIXES: .ps
+ 
+ .c.o:
+-	$(CC) -c $*.c
++	$(CC) ${CFLAGS} -c $*.c
+ 
+ # "Bundle" an Ascii file.
+ .ps.h:
+@@ -42,3 +43,8 @@
+ 
  clean:
  	rm -f pstotext *.o core $(BUNDLE)
 +
