@@ -6,16 +6,15 @@
 #
 
 PORTNAME=	mpd
-PORTVERSION=	3.0.b8
+PORTVERSION=	3.0
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	archie
-DISTNAME=	mpd-3.0b8
 
 MAINTAINER=	archie@freebsd.org
 
 MTREE_FILE=	${FILESDIR}/mpd.mtree
 MAN8=		mpd.8
-MANCOMPRESSED=	yes
+MANCOMPRESSED=	maybe
 
 .include <bsd.port.mk>
