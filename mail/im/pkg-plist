@@ -81,9 +81,7 @@ lib/IM/Util.pm
 %%EXAMPLESDIR%%/scan.sbr.sample1
 %%EXAMPLESDIR%%/scan.sbr.sample2
 @dirrm %%EXAMPLESDIR%%
-@dirrm share/examples
 @dirrm %%DOCSDIR%%/man
 @dirrm %%DOCSDIR%%
-@dirrm share/doc
 @dirrm lib/IM
 @dirrm etc/im
