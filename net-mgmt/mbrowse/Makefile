@@ -33,10 +33,4 @@ CONFIGURE_ENV+=		LDFLAGS="`net-snmp-config --libs`" \
 CONFIGURE_ARGS+=	--with-snmp-type=net
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
