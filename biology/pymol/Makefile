@@ -13,12 +13,13 @@ MASTER_SITE_SUBDIR=	pymol
 DISTNAME=	pymol-${PORTVERSION:S/./_/}-src
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	chat95@mbox.kyoto-inet.or.jp
+MAINTAINER=	maho@FreeBSD.org
 
 BUILD_DEPENDS=	${PYNUMERIC}
 RUN_DEPENDS=	${PYNUMERIC} \
 		${PYTHON_SITELIBDIR}/Pmw:${PORTSDIR}/x11-toolkits/pmw
-LIB_DEPENDS=	glut.3:${PORTSDIR}/graphics/Mesa3
+LIB_DEPENDS=	glut.3:${PORTSDIR}/graphics/Mesa3 \
+		png.5:${PORTSDIR}/graphics/png
 
 WRKSRC=		${WRKDIR}/pymol-${PORTVERSION}
 USE_GMAKE=	yes
