@@ -1,6 +1,10 @@
 bin/giblib-config
+include/giblib/gib_btree.h                                                    
+include/giblib/gib_hash.h                                                    
 include/giblib/gib_imlib.h
 include/giblib/gib_list.h
+include/giblib/gib_queue.h                                                    
+include/giblib/gib_stack.h                                                    
 include/giblib/gib_style.h
 include/giblib/gib_utils.h
 include/giblib/giblib.h
