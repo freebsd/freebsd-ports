@@ -1,0 +1,25 @@
+
+$FreeBSD$
+
+--- configure.orig	Mon Oct 13 17:05:18 2003
++++ configure	Mon Oct 13 17:05:36 2003
+@@ -2450,7 +2450,7 @@
+         case $host in
+         *)
+                 DEBUG="-g"
+-                CFLAGS="-O"
++                CFLAGS=""
+                 PROFILE="-g -p"
+                 ;;
+         esac
+@@ -2458,8 +2458,8 @@
+         case $host in
+         *)
+                 DEBUG="-g -Wall -fsigned-char"
+-                CFLAGS="-O2 -fsigned-char"
+-                PROFILE="-O2 -g -pg -fsigned-char"
++                CFLAGS="-fsigned-char"
++                PROFILE="-g -pg -fsigned-char"
+                 ;;
+         esac
+ fi

@@ -1,14 +1,22 @@
-When listening to Ogg Vorbis (or MP3) files on your computer, you may have
-noticed that some songs are louder than others. To a degree, this can be
-what the artist or producer intended, at least when comparing songs from the
-same CD. However, when (randomly) listening to songs from different CDs, the
-sound level can vary quite much, so much that you need to adjust the volume
-every now and then, to get a comfortable sound level. Wouldn't it be nice if
-that could be handled automatically?
+VorbisGain is a utility that uses a psychoacoustic method to correct
+the volume of an Ogg Vorbis file to a predefined standardized
+loudness.
 
-This is where VorbisGain comes in. It calculates a percieved sound level of
-an Ogg Vorbis file using the ReplayGain algorithm. VorbisGain then stores in
-the comments (tags) in the file a suggestion on how the volume should be
-changed during playback, to get a uniform sound level. However, this only
-solves half the problem; the player application needs to act on that
-suggestion for it to be any useful.
+It is meant as a replacement for the normalization that is commonly
+used before encoding.  Although normalization will ensure that each
+song has the same peak volume, this unfortunately does not say
+anything about the apparent loudness of the music, with the end
+result being that many normalized files still don't sound equally
+loud.  VorbisGain uses psychoacoustics to address this deficiency.
+Moreover, unlike normalization, it's a lossless procedure which
+works by adding tags to the file.  Additionally, it will add hints
+that can be used to prevent clipping on playback.  It is based upon
+the ReplayGain technology.
+
+The end result is that the file ends up with superior playback
+quality compared to a non-VorbisGain'ed file.
+
+It needs player support to work.  Non-supporting players will play
+back the files without problems, but you'll miss out on the benefits.
+
+WWW: http://sjeng.org/vorbisgain.html
