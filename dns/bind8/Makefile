@@ -11,7 +11,7 @@
 # you can generally build it cleanly from the source. - Doug
 
 PORTNAME=	bind
-PORTVERSION=	8.3.0
+PORTVERSION=	8.3.1
 CATEGORIES?=	net
 MASTER_SITES=	ftp://ftp.isc.org/isc/bind/src/${PORTVERSION}/ \
 		ftp://ftp.epix.net/pub/isc/bind/src/${PORTVERSION}/ \
