@@ -14,6 +14,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/XML/LibXML/Node.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/XML/LibXML/NodeList.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/XML/LibXML/Number.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/XML/LibXML/PI.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/XML/LibXML/SAX.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/XML/LibXML/SAX.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/XML/LibXML/SAX/Builder.pm
