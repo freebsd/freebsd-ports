@@ -8,9 +8,9 @@
 PORTNAME=	p2c
 PORTVERSION=	1.21a
 CATEGORIES=	lang
-MASTER_SITES=   ftp://ftp.pal.xgw.fi/pub/gnu/alpha/gnu/ \
-		ftp://ftp.clara.net/pub/mirrors/gnu/hurd/ \
-		ftp://ftp.obspm.fr/pub1/computing/gnu/hurd/
+MASTER_SITES=   ftp://ftp.clara.net/pub/mirrors/gnu/hurd/ \
+		ftp://ftp.u-aizu.ac.jp/pub/lang/netsw/Pascal/ \
+		ftp://ftp.simcb.ru/pub/unix/src/
 DISTFILES=	p2c-1.21alpha2.tar.gz
 
 MAINTAINER=	jmz@FreeBSD.org
