@@ -7,6 +7,7 @@
 
 PORTNAME=	ucd-snmp
 PORTVERSION=	4.2.3
+PORTREVISION=	1
 CATEGORIES=	net ipv6
 MASTER_SITES= 	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ucd-snmp.ucdavis.edu/ \
@@ -61,6 +62,9 @@ STARTUP_FILE=	${PREFIX}/etc/rc.d/snmpd.sh
 
 .if ${OSVERSION} >= 400014
 CONFIGURE_ARGS+= --enable-ipv6
+.endif
+.if defined(WITH_SNMP_DISKIO)
+CONFIGURE_ARGS+=--with-mib-modules="ucd-snmp/diskio" --with-libs="-ldevstat"
 .endif
 
 SHLIB_VERSION=	4
