@@ -1,20 +1,20 @@
---- config.h.orig	Sun Jul 26 21:14:43 1998
-+++ config.h	Sun Jul 26 21:16:05 1998
-@@ -2,7 +2,7 @@
+--- config.h.orig	Tue Sep 22 01:45:27 1998
++++ config.h	Wed Aug  2 02:50:39 2000
+@@ -2,19 +2,19 @@
   * Configuration for SKKFEP
   */
  
--#include "configs/sun.h"
+-#include "configs/solaris2.h"
 +#include "configs/freebsd.h"
  
  #if makefile_parameter
- CC=gcc
-@@ -15,12 +15,12 @@
- #define REGMODE		/* enable register mode feature */
- #define USE_SKKSRCH	/* use skksrch.c instead of skkserv */
- #define USE_TRIANGLE	/* use triangle mark like SKK */
--#define SKKFEP_LIB	/* use skkfep as library for SKK interface on jvim */
-+#undef SKKFEP_LIB	/* use skkfep as library for SKK interface on jvim */
+-CC=gcc
++#CC=gcc
+ DEFINE=-DUSE_LOCALE
+-OPTIMIZE=-O
++#OPTIMIZE=-O
+ EXTRALIBS=
+ #endif
  
  #define DEFAULT_KANAKEY "^j"
  
@@ -22,18 +22,11 @@
 -/*#define KUTOUTEN        /* "."->maru, ","->ten */
 +#define KUTOUTEN        /* "."->maru, ","->ten */
  
- #ifndef SKKFEP_LIB
  #define KANJIBS			/* do/don't shuft-out BS code in JIS mode */
-@@ -43,10 +43,10 @@
+ #define KANJIBS_DEFAULT	0	/* 0 -> shift out / 1 -> don't shift out  */
+@@ -28,4 +28,4 @@
  
  #define NATIVECODE	euc	/* EUC Kanji code */
  
 -#define SKK_SERVER_HOST	"ei5nazha"	/* SKK server host */
 +#define SKK_SERVER_HOST	"localhost"	/* SKK server host */
- 
- #ifdef USE_SKKSRCH
--# define SKKSRCH_DIC		"/usr/local/skk/lib/SKK-JISYO.L"
-+# define SKKSRCH_DIC		"/usr/local/share/skkfep/SKK-JISYO.Li"
- # define BINARY_SEARCH			/* do binary search in skksrch.c */
- # define USE_SERVER
- # define openSKKserv		openSKKsrch
