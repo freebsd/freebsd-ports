@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kde
-PORTVERSION=	2.2
+PORTVERSION=	2.2.1
 CATEGORIES=	japanese x11 kde
 MASTER_SITES=	# empty
 DISTFILES=	# none

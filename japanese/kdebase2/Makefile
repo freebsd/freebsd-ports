@@ -6,7 +6,7 @@
 #
 
 # This port does not work with another version of master port.
-#PORTVERSION=	2.2
+#PORTVERSION=	2.2.1
 CATEGORIES=	japanese x11 kde
 
 MASTERDIR=	${.CURDIR}/../../x11/kdebase2
@@ -15,8 +15,8 @@ MD5_FILE=	${.CURDIR}/distinfo
 MAINTAINER=	sahiro@crest.ocn.ne.jp
 
 PATCH_SITES=	http://www.kde.gr.jp/patch/
-PATCHFILES=	kdebase-2.2-konsole-ja-20010818.diff \
-		kdebase-2.2-kpersonalizer-charset-20010816.diff
+PATCHFILES=	kdebase-2.2.1-konsole-ja-20010922.diff \
+		kdebase-2.2.1-kpersonalizer-charset-20010922.diff
 PATCH_DIST_STRIP=	-p1
 
 .include "${MASTERDIR}/Makefile"
