@@ -4,6 +4,7 @@
 %%INFODIR%%/emacs-w3m-ja.info-1
 %%INFODIR%%/emacs-w3m-ja.info-2
 %%INFODIR%%/emacs-w3m-ja.info-3
+%%INFODIR%%/emacs-w3m-ja.info-4
 @unexec install-info --delete %D/%%INFODIR%%/emacs-w3m.info %D/%%INFODIR%%/dir
 %%INFODIR%%/emacs-w3m.info
 @exec install-info %D/%%INFODIR%%/emacs-w3m.info %D/%%INFODIR%%/dir
@@ -23,6 +24,11 @@
 %%ICONDIR%%/parent-up.xpm
 %%ICONDIR%%/reload-up.xpm
 %%ICONDIR%%/search-up.xpm
+%%ICONDIR%%/spinner.gif
+%%ICONDIR%%/state-00.xpm
+%%ICONDIR%%/state-01.xpm
+%%ICONDIR%%/state-10.xpm
+%%ICONDIR%%/state-11.xpm
 %%ICONDIR%%/weather-up.xpm
 %%LISPDIR%%/_pkg.el
 %%LISPDIR%%/_pkg.elc
@@ -47,12 +53,22 @@
 %%SHIMBUN%%%%LISPDIR%%/sb-airs.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-asahi-html.el
 %%SHIMBUN%%%%LISPDIR%%/sb-asahi-html.elc
+%%SHIMBUN%%%%LISPDIR%%/sb-asahi-mytown.el
+%%SHIMBUN%%%%LISPDIR%%/sb-asahi-mytown.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-asahi.el
 %%SHIMBUN%%%%LISPDIR%%/sb-asahi.elc
+%%SHIMBUN%%%%LISPDIR%%/sb-atmarkit.el
+%%SHIMBUN%%%%LISPDIR%%/sb-atmarkit.elc
+%%SHIMBUN%%%%LISPDIR%%/sb-bbc.el
+%%SHIMBUN%%%%LISPDIR%%/sb-bbc.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-bbdb-ml.el
 %%SHIMBUN%%%%LISPDIR%%/sb-bbdb-ml.elc
+%%SHIMBUN%%%%LISPDIR%%/sb-cgi-board.el
+%%SHIMBUN%%%%LISPDIR%%/sb-cgi-board.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-chalow.el
 %%SHIMBUN%%%%LISPDIR%%/sb-chalow.elc
+%%SHIMBUN%%%%LISPDIR%%/sb-cnet-jp.el
+%%SHIMBUN%%%%LISPDIR%%/sb-cnet-jp.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-cnet.el
 %%SHIMBUN%%%%LISPDIR%%/sb-cnet.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-coldsync.el
@@ -79,14 +95,14 @@
 %%SHIMBUN%%%%LISPDIR%%/sb-glimpse.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-gnome.el
 %%SHIMBUN%%%%LISPDIR%%/sb-gnome.elc
-%%SHIMBUN%%%%LISPDIR%%/sb-h14m.el
-%%SHIMBUN%%%%LISPDIR%%/sb-h14m.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-hns.el
 %%SHIMBUN%%%%LISPDIR%%/sb-hns.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-ibm-dev.el
 %%SHIMBUN%%%%LISPDIR%%/sb-ibm-dev.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-impress.el
 %%SHIMBUN%%%%LISPDIR%%/sb-impress.elc
+%%SHIMBUN%%%%LISPDIR%%/sb-itmedia.el
+%%SHIMBUN%%%%LISPDIR%%/sb-itmedia.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-japantimes.el
 %%SHIMBUN%%%%LISPDIR%%/sb-japantimes.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-javaconf.el
@@ -99,6 +115,8 @@
 %%SHIMBUN%%%%LISPDIR%%/sb-kantei.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-kde.el
 %%SHIMBUN%%%%LISPDIR%%/sb-kde.elc
+%%SHIMBUN%%%%LISPDIR%%/sb-linux-ja.el
+%%SHIMBUN%%%%LISPDIR%%/sb-linux-ja.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-linuxce-jp.el
 %%SHIMBUN%%%%LISPDIR%%/sb-linuxce-jp.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-lotusex.el
@@ -155,10 +173,16 @@
 %%SHIMBUN%%%%LISPDIR%%/sb-pocketgames.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-quickml.el
 %%SHIMBUN%%%%LISPDIR%%/sb-quickml.elc
+%%SHIMBUN%%%%LISPDIR%%/sb-rakuten.el
+%%SHIMBUN%%%%LISPDIR%%/sb-rakuten.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-redhat.el
 %%SHIMBUN%%%%LISPDIR%%/sb-redhat.elc
+%%SHIMBUN%%%%LISPDIR%%/sb-rss.el
+%%SHIMBUN%%%%LISPDIR%%/sb-rss.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-ruby.el
 %%SHIMBUN%%%%LISPDIR%%/sb-ruby.elc
+%%SHIMBUN%%%%LISPDIR%%/sb-sankei.el
+%%SHIMBUN%%%%LISPDIR%%/sb-sankei.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-savannah.el
 %%SHIMBUN%%%%LISPDIR%%/sb-savannah.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-security-memo.el
@@ -191,6 +215,8 @@
 %%SHIMBUN%%%%LISPDIR%%/sb-vinelinux.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-w3m-dev.el
 %%SHIMBUN%%%%LISPDIR%%/sb-w3m-dev.elc
+%%SHIMBUN%%%%LISPDIR%%/sb-wiki.el
+%%SHIMBUN%%%%LISPDIR%%/sb-wiki.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-wincefan.el
 %%SHIMBUN%%%%LISPDIR%%/sb-wincefan.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-wired.el
@@ -203,10 +229,6 @@
 %%SHIMBUN%%%%LISPDIR%%/sb-yomiuri-html.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-yomiuri.el
 %%SHIMBUN%%%%LISPDIR%%/sb-yomiuri.elc
-%%SHIMBUN%%%%LISPDIR%%/sb-zdnet.el
-%%SHIMBUN%%%%LISPDIR%%/sb-zdnet.elc
-%%SHIMBUN%%%%LISPDIR%%/shimbun-servers.el
-%%SHIMBUN%%%%LISPDIR%%/shimbun-servers.elc
 %%SHIMBUN%%%%LISPDIR%%/shimbun.el
 %%SHIMBUN%%%%LISPDIR%%/shimbun.elc
 %%LISPDIR%%/w3m-antenna.el
@@ -216,6 +238,8 @@
 %%LISPDIR%%/w3m-bookmark.elc
 %%LISPDIR%%/w3m-bug.el
 %%LISPDIR%%/w3m-bug.elc
+%%LISPDIR%%/w3m-ccl.el
+%%LISPDIR%%/w3m-ccl.elc
 %%LISPDIR%%/w3m-cookie.el
 %%LISPDIR%%/w3m-cookie.elc
 %%LISPDIR%%/w3m-dtree.el
@@ -223,13 +247,18 @@
 %%LISPDIR%%/w3m-e19.el
 %%LISPDIR%%/w3m-e20.el
 %%LISPDIR%%/w3m-e21.el
-%%LISPDIR%%/w3m-fsf.el
+%%LISPDIR%%/w3m-favicon.el
+%%LISPDIR%%/w3m-favicon.elc
+%%LISPDIR%%/w3m-filter.el
+%%LISPDIR%%/w3m-filter.elc
 %%LISPDIR%%/w3m-form.el
 %%LISPDIR%%/w3m-form.elc
+%%LISPDIR%%/w3m-fsf.el
 %%LISPDIR%%/w3m-hist.el
 %%LISPDIR%%/w3m-hist.elc
 %%LISPDIR%%/w3m-image.el
 %%LISPDIR%%/w3m-image.elc
+%%LISPDIR%%/w3m-load.el
 %%LISPDIR%%/w3m-namazu.el
 %%LISPDIR%%/w3m-namazu.elc
 %%LISPDIR%%/w3m-om.el
@@ -239,18 +268,19 @@
 %%LISPDIR%%/w3m-proc.elc
 %%LISPDIR%%/w3m-search.el
 %%LISPDIR%%/w3m-search.elc
+%%LISPDIR%%/w3m-symbol.el
+%%LISPDIR%%/w3m-symbol.elc
 %%LISPDIR%%/w3m-tabmenu.el
 %%LISPDIR%%/w3m-tabmenu.elc
 %%LISPDIR%%/w3m-ucs.el
+@unexec rm -f %D/%%LISPDIR%%/w3m-ucs.elc
 %%LISPDIR%%/w3m-util.el
 %%LISPDIR%%/w3m-util.elc
-@unexec rm -f %D/%%LISPDIR%%/w3m-ucs.elc
 %%LISPDIR%%/w3m-weather.el
 %%LISPDIR%%/w3m-weather.elc
 %%LISPDIR%%/w3m-xmas.el
-%%LISPDIR%%/w3m.elc
-%%LISPDIR%%/w3mhack.el
 %%LISPDIR%%/w3m.el
+%%LISPDIR%%/w3m.elc
 %%PORTDOCS%%share/doc/ja/emacs-w3m/README.ja
 %%PORTDOCS%%share/doc/emacs-w3m/README
 %%PORTDOCS%%@dirrm share/doc/ja/emacs-w3m
