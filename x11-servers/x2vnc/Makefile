@@ -10,7 +10,7 @@ PORTVERSION=	1.31
 CATEGORIES=	x11-servers
 MASTER_SITES=	http://www.hubbe.net/~hubbe/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	chrise@scardini.com
 
 USE_IMAKE=	yes
 MAN1=		x2vnc.1
