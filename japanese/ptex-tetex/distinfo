@@ -4,3 +4,7 @@ MD5 (teTeX/ptex-texmf-2.1.tar.gz) = d0c01d4114dde202e96c97b1a2ef8523
 SIZE (teTeX/ptex-texmf-2.1.tar.gz) = 1864219
 MD5 (teTeX/tetex-src-2.0.2.tar.gz) = a16f6bba227d55e79aeee46fbbd82d28
 SIZE (teTeX/tetex-src-2.0.2.tar.gz) = 11745933
+MD5 (teTeX/jis.tar.gz) = 12fc14c4ed0530eab018c867b383eedb
+SIZE (teTeX/jis.tar.gz) = 347201
+MD5 (teTeX/morisawa.tar.gz) = 10a3a0bb382d9edf834177d0c03101f5
+SIZE (teTeX/morisawa.tar.gz) = 653674

@@ -6,24 +6,31 @@
 
 PORTNAME=	ptex-tetex
 PORTVERSION=	3.1.3
+PORTREVISION=	1
 CATEGORIES=	japanese print
 MASTER_SITES=	ftp://sunsite.informatik.rwth-aachen.de/pub/comp/tex/teTeX/2.0/distrib/ \
 		${MASTER_SITE_TEX_CTAN} \
-		ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/tetex/:1
+		ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/tetex/:1 \
+		ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/jvf/:2
 MASTER_SITE_SUBDIR=	systems/unix/teTeX/2.0/distrib
 PKGNAMEPREFIX=	ja-
-DISTFILES=	ptex-src-${VER_PTEX}.tar.gz:1 ptex-texmf-2.1.tar.gz:1 \
-		tetex-src-${VER_TETEX}.tar.gz
+DISTFILES=	ptex-src-${VER_PTEX}${EXTRACT_SUFX}:1 ptex-texmf-2.1${EXTRACT_SUFX}:1 \
+		tetex-src-${VER_TETEX}${EXTRACT_SUFX} \
+		jis${EXTRACT_SUFX}:2 morisawa${EXTRACT_SUFX}:2
 DIST_SUBDIR=	teTeX
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	ASCII Japanese pTeX which supports teTeX distribution
 
-BUILD_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX
+BUILD_DEPENDS=	tetex-modesw:${PORTSDIR}/print/tex-texmflocal \
+		${LOCALBASE}/${TEXMFDIR}/LICENSE.texmf:${PORTSDIR}/print/teTeX-texmf \
+		mktexlsr:${PORTSDIR}/print/teTeX-base
+RUN_DEPENDS=	tetex-modesw:${PORTSDIR}/print/tex-texmflocal \
+		${LOCALBASE}/${TEXMFDIR}/LICENSE.texmf:${PORTSDIR}/print/teTeX-texmf \
+		mktexlsr:${PORTSDIR}/print/teTeX-base
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		wwwcore.1:${PORTSDIR}/www/libwww \
 		t1.5:${PORTSDIR}/devel/t1lib
-RUN_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	${KANJICODE}
@@ -37,8 +44,6 @@ MAKE_ENV=	TEXMFLOCAL=${WRKDIR}/texmf-tmp
 ALL_TARGET=	default
 PLIST_SUB=	MKTEXLSR=${MKTEXLSR} TEXMFDIR=${TEXMFDIR}
 CONFLICTS=	ja-ptex-base*
-PKGINSTALL=	${WRKDIR}/pkg-install.sh
-PKGDEINSTALL=	${WRKDIR}/pkg-install.sh
 .if !make(do-patch)
 WRKSRC=		${WRKDIR}/tetex-src-${VER_TETEX}/texk/web2c/ptex-${VER_PTEX}
 .else
@@ -61,6 +66,61 @@ LIBT1_PREFIX?=	${LOCALBASE}
 INSTDIRS=	doc fonts jbibtex ptex
 DOC_FILES=	COPYRIGHT COPYRIGHT.jis Changes.txt README.txt
 
+MAPDIR=		${PREFIX}/${TEXMFDIR}/dvips/ptex
+MAPFILES=	morisawa/morisawa.map jis/jis.map
+
+VFDIR=		${PREFIX}/${TEXMFDIR}/fonts/vf/ptex
+VFFILES=	jis/vf/jis.vf jis/vf/jisg.vf \
+		jis/vf/jis-v.vf jis/vf/jisg-v.vf \
+		jis/vf/jisgn-v.vf jis/vf/jisgn.vf \
+		jis/vf/jisn-v.vf jis/vf/jisn.vf \
+		morisawa/vf/FutoGoB101-Bold-H.vf \
+		morisawa/vf/FutoGoB101-Bold-J.vf \
+		morisawa/vf/FutoGoB101-Bold-V.vf \
+		morisawa/vf/FutoMinA101-Bold-H.vf \
+		morisawa/vf/FutoMinA101-Bold-J.vf \
+		morisawa/vf/FutoMinA101-Bold-V.vf \
+		morisawa/vf/GothicBBB-Medium-H.vf \
+		morisawa/vf/GothicBBB-Medium-J.vf \
+		morisawa/vf/GothicBBB-Medium-V.vf \
+		morisawa/vf/Jun101-Light-H.vf \
+		morisawa/vf/Jun101-Light-J.vf \
+		morisawa/vf/Jun101-Light-V.vf \
+		morisawa/vf/Ryumin-Light-H.vf \
+		morisawa/vf/Ryumin-Light-J.vf \
+		morisawa/vf/Ryumin-Light-V.vf
+
+TFMDIR=		${PREFIX}/${TEXMFDIR}/fonts/tfm/ptex
+TFMFILES=	jis/tfm/ptex/jis.tfm jis/tfm/ptex/jisg.tfm \
+		jis/tfm/ptex/jis-v.tfm jis/tfm/ptex/jisg-v.tfm \
+		jis/tfm/ptex/jisgn-v.tfm jis/tfm/ptex/jisgn.tfm \
+		jis/tfm/ptex/jisn-v.tfm jis/tfm/ptex/jisn.tfm \
+		morisawa/tfm/dvips/futogo-b-v.tfm \
+		morisawa/tfm/dvips/futogo-b.tfm \
+		morisawa/tfm/dvips/futomin-b-v.tfm \
+		morisawa/tfm/dvips/futomin-b.tfm \
+		morisawa/tfm/dvips/gtbbb-m-v.tfm \
+		morisawa/tfm/dvips/gtbbb-m.tfm \
+		morisawa/tfm/dvips/jun101-l-v.tfm \
+		morisawa/tfm/dvips/jun101-l.tfm \
+		morisawa/tfm/dvips/ryumin-l-v.tfm \
+		morisawa/tfm/dvips/ryumin-l.tfm \
+		morisawa/tfm/ptex/FutoGoB101-Bold-H.tfm \
+		morisawa/tfm/ptex/FutoMinA101-Bold-H.tfm \
+		morisawa/tfm/ptex/GothicBBB-Medium-H.tfm \
+		morisawa/tfm/ptex/Jun101-Light-H.tfm \
+		morisawa/tfm/ptex/Ryumin-Light-H.tfm \
+		morisawa/tfm/ptex/FutoGoB101-Bold-J.tfm \
+		morisawa/tfm/ptex/FutoMinA101-Bold-J.tfm \
+		morisawa/tfm/ptex/GothicBBB-Medium-J.tfm \
+		morisawa/tfm/ptex/Jun101-Light-J.tfm \
+		morisawa/tfm/ptex/Ryumin-Light-J.tfm \
+		morisawa/tfm/ptex/FutoGoB101-Bold-V.tfm \
+		morisawa/tfm/ptex/FutoMinA101-Bold-V.tfm \
+		morisawa/tfm/ptex/GothicBBB-Medium-V.tfm \
+		morisawa/tfm/ptex/Jun101-Light-V.tfm \
+		morisawa/tfm/ptex/Ryumin-Light-V.tfm
+
 post-extract:
 	${MV} ${WRKSRC_PTEX} ${WRKSRC}
 
@@ -77,13 +137,12 @@ pre-configure:
 			--with-pnglib-include=${LIBPNG_PREFIX}/include \
 			--with-system-t1lib --with-t1lib-libdir=${LIBT1_PREFIX}/lib \
 			--with-t1lib-include=${LIBT1_PREFIX}/include \
-			--without-dvipsk --without-xdvik --without-oxdvik \
+			--without-xdvik --without-oxdvik \
+			--without-dvipsk --without-odvipsk \
 			--without-x11 --without-dvipdfm --without-omega \
-			--without-pdftex --without-pdfetex && \
+			--without-pdftex --without-pdfetex \
+			--with-etex=no && \
 		${SETENV} ${MAKE_ENV} ${MAKE} ${ALL_TARGET}
-	${SED} -e 's,%%TEXMFCNF%%,${TEXMFCNF},g' \
-		< ${FILESDIR}/pkg-install.in > ${PKGINSTALL}
-	${CHMOD} 0755 ${PKGINSTALL}
 
 pre-build:
 	${MKDIR} ${WRKDIR}/texmf-tmp
@@ -97,7 +156,10 @@ post-install:
 		${TAR} cf - ${INSTDIRS} | \
 			(cd ${PREFIX}/${TEXMFDIR} && ${TAR} xf -) && \
 		${INSTALL_DATA} ${DOC_FILES} ${PREFIX}/${TEXMFDIR}/doc/ptex
-	@${PKGINSTALL} ${PKGNAME} POST-INSTALL
+.for D in MAP VF TFM
+	${MKDIR} ${${D}DIR}
+	cd ${WRKDIR} && ${INSTALL_DATA} ${${D}FILES} ${${D}DIR}
+.endfor
 	${MKTEXLSR}
 	@${CAT} ${PKGMESSAGE}
 
