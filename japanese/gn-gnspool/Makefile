@@ -3,21 +3,23 @@
 # Date created:				14 Feb. 1997
 # Whom:					Kiroh HARADA <kiroh@kh.rim.or.jp>
 #
-# $Id: Makefile,v 1.1.1.1 1997/02/15 11:09:03 max Exp $
+# $Id: Makefile,v 1.2 1997/09/14 21:34:37 max Exp $
 #
 
-DISTNAME=	gn-1.35
-PKGNAME=	ja-gn-gnspool-1.35
+DISTNAME=	gn-1.36
+PKGNAME=	ja-gn-gnspool-1.36
 CATEGORIES=	japanese news
 MASTER_SITES=	ftp://ftp.omronsoft.co.jp/pub/misc/gn/
 
 MAINTAINER=	kiroh@kh.rim.or.jp
 
-WRKSRC=		${WRKDIR}/gn-1.35/src
+WRKSRC=		${WRKDIR}/gn-1.36/src
 
 pre-configure:
-	@${CP} ${WRKDIR}/${DISTNAME}/mkfiles/unix/freebsd ${WRKSRC}/Makefile
-	@${SED} s+@PREFIX@+${PREFIX}+ ${FILESDIR}/site.def.in > ${WRKSRC}/site.def
+	@${CP} ${WRKDIR}/${DISTNAME}/mkfiles/unix/common ${WRKSRC}/Makefile
+	@${PATCH} -d ${WRKSRC} < ${FILESDIR}/Makefile.patch
+	@${SED} s+@PREFIX@+${PREFIX}+ ${FILESDIR}/site.def.in \
+		> ${WRKSRC}/site.def
 	@(cd ${WRKSRC}; ${MAKE} configur)
 
 do-configure:

@@ -1,30 +1,13 @@
-*** smtp.c.orig	Mon May 27 21:04:14 1996
---- smtp.c	Thu Feb  6 05:10:18 1997
-***************
-*** 318,329 ****
-        if ( smtp_get_resp(220) )
-  	return(ERROR);
-      }
-!   }  
-!   sprintf(resp,"helo %s",gn.hostname);
-!   if ( smtp_put_server(resp) != CONT )
-!     return(ERROR);
-!   if ( smtp_get_resp(250) )
-!     return(ERROR);
-    
-    sprintf( resp, "mail from: <%s>", gn.usrname);
-    if ( smtp_put_server( resp ) != CONT )
---- 318,330 ----
-        if ( smtp_get_resp(220) )
-  	return(ERROR);
-      }
-! 
-!     sprintf(resp,"helo %s",gn.hostname);
-!     if ( smtp_put_server(resp) != CONT )
-!       return(ERROR);
-!     if ( smtp_get_resp(250) )
-!       return(ERROR);
-!   }
-    
-    sprintf( resp, "mail from: <%s>", gn.usrname);
-    if ( smtp_put_server( resp ) != CONT )
+--- key.c.orig	Tue Apr  1 17:44:50 1997
++++ key.c	Wed Feb  4 16:11:02 1998
+@@ -47,6 +47,10 @@
+ #	define	exit(n) Exit(n)
+ #endif /* UNIX */
+ 
++#ifdef __FreeBSD__
++#	include <sgtty.h>
++#endif /* __FreeBSD__ */
++
+ #include	"nntp.h"
+ #include	"gn.h"
+ 
