@@ -1,0 +1,5 @@
+@cwd /usr/local
+bin/screen
+bin/screen-3.5.2
+man/man1/screen.1
+etc/screenrc
