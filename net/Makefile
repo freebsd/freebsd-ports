@@ -399,6 +399,7 @@
     SUBDIR += tund
     SUBDIR += unison
     SUBDIR += urlendec
+    SUBDIR += vchat
     SUBDIR += vnc
     SUBDIR += vrrp
     SUBDIR += vtun
