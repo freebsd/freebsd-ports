@@ -14,4 +14,6 @@ MAINTAINER=	cosine@ellipse.mcs.drexel.edu
 
 GNU_CONFIGURE=	yes
 
+MAN8=		ald.8
+
 .include <bsd.port.mk>
