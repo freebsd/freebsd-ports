@@ -13,6 +13,8 @@ PKGNAMEPREFIX=		cl-
 MAINTAINER=		henrik.motakef@web.de
 COMMENT=		Lisp Markup Language
 
+BROKEN=			Does not fetch
+
 BUILD_DEPENDS=		${LOCALBASE}/lib/common-lisp/asdf/asdf.lisp:${PORTSDIR}/devel/cl-asdf
 RUN_DEPENDS=		${LOCALBASE}/lib/common-lisp/asdf/asdf.lisp:${PORTSDIR}/devel/cl-asdf
 
