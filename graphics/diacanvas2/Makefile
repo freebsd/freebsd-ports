@@ -24,10 +24,8 @@ USE_LIBTOOL_VER=	15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 INSTALLS_SHLIB=	yes
-
-.if !defined(DISPLAY)
+.if defined(PACKAGE_BUILDING)
 BUILD_DEPENDS+=	Xvfb:${X_VFBSERVER_PORT}
-CONFIGURE_ENV+=	DISPLAY=localhost:1001
 .endif
 
 .include <bsd.port.pre.mk>
@@ -39,25 +37,6 @@ BROKEN=		"Broken pkg-plist"
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|unit_tests doc|unit_tests|g' ${WRKSRC}/Makefile.in
-
-pre-configure:
-.if exists(${WRKDIR}/.Xvfb.pid)
-	@-${CAT} ${WRKDIR}/.Xvfb.pid | ${XARGS} kill
-	@${RM} -f ${WRKDIR}/.Xvfb.pid
-.endif
-.if !defined(DISPLAY)
-	#
-	# This is a UGLY hack to not have to specify a X-Display.
-	#
-	${X11BASE}/bin/Xvfb :1001 -screen 0 800x600x24 > /dev/null 2>&1 & ${ECHO} $$! > ${WRKDIR}/.Xvfb.pid
-	@sleep 5
-.endif
-
-post-configure:
-.if !defined(DISPLAY)
-	@-${CAT} ${WRKDIR}/.Xvfb.pid | ${XARGS} kill
-	@${RM} -f ${WRKDIR}/.Xvfb.pid
-.endif
 
 post-install:
 .if !defined(NOPORTDOCS)
