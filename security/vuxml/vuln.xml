@@ -32,6 +32,102 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="8f86d8b5-6025-11d9-a9e7-0001020eed82">
+    <topic>tiff -- tiffdump interger overflow vulnerability</topic>
+    <affects>
+      <package>
+	<name>tiff</name>
+	<name>linux-tiff</name>
+	<range><lt>3.7.1_2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Dmitry V. Levin found a potential integer overflow in the
+	  tiffdump utility which could lead to execution of arbritrary
+	  code.  This could be exploited by tricking an user into
+	  executing tiffdump on a specially crafted tiff image.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-1183</cvename>
+    </references>
+    <dates>
+      <discovery>2005-01-06</discovery>
+      <entry>2005-01-06</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="fc7e6a42-6012-11d9-a9e7-0001020eed82">
+    <topic>tiff -- directory entry count integer overflow vulnerability</topic>
+    <affects>
+      <package>
+	<name>tiff</name>
+	<name>linux-tiff</name>
+	<range><lt>3.7.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>In an iDEFENSE Security Advisory infamous41md reports:</p>
+	<blockquote cite="http://www.idefense.com/application/poi/display?id=174&amp;type=vulnerabilities">
+	  <p>Remote exploitation of a heap-based buffer overflow
+	    vulnerability within the LibTIFF package could allow
+	    attackers to execute arbitrary code.</p>
+	  <p>The vulnerability specifically exists due to insufficient
+	    validation of user-supplied data when calculating the size
+	    of a directory entry. A TIFF file includes a number of
+	    directory entry header fields that describe the data in
+	    the file. Included in these entries is an entry count and
+	    offset value that are calculated to determine the size and
+	    location of the data for that entry.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>12075</bid>
+      <cvename>CAN-2004-1308</cvename>
+      <url>http://www.idefense.com/application/poi/display?id=174&amp;type=vulnerabilities</url>
+    </references>
+    <dates>
+      <discovery>2004-12-17</discovery>
+      <entry>2005-01-06</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="14e8f315-600e-11d9-a9e7-0001020eed82">
+    <topic>tiff -- stripoffsets integer overflow vulnerability</topic>
+    <affects>
+      <package>
+	<name>tiff</name>
+	<name>linux-tiff</name>
+	<range><lt>3.7.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>In an iDEFENSE Security Advisory infamous41md reports:</p>
+	<blockquote cite="http://www.idefense.com/application/poi/display?id=173&amp;type=vulnerabilities">
+	  <p>Remote exploitation of an integer overflow in libtiff may
+	    allow for the execution of arbitrary code.</p>
+	  <p>The overflow occurs in the parsing of TIFF files set with
+	    the STRIPOFFSETS flag in libtiff/tif_dirread.c. In the
+	    TIFFFetchStripThing() function, the number of strips
+	    (nstrips) is used directly in a CheckMalloc() routine
+	    without sanity checking.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>12075</bid>
+      <url>http://www.idefense.com/application/poi/display?id=173&amp;type=vulnerabilities</url>
+    </references>
+    <dates>
+      <discovery>2004-12-15</discovery>
+      <entry>2005-01-06</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="bd9fc2bf-5ffe-11d9-a11a-000a95bc6fae">
     <topic>vim -- vulnerabilities in modeline handling</topic>
     <affects>
