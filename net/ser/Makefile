@@ -30,6 +30,12 @@ MAN8=		ser.8
 MAN5=		ser.cfg.5
 MANCOMPRESSED=	no
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 600000
+BROKEN=		"Broken pkg-plist on FreeBSD >= 6.x"
+.endif
+
 post-install:
 	${SED} 's|%%LOCALBASE%%|${LOCALBASE}|g ; s|%%PREFIX%%|${PREFIX}|g' \
 		${WRKSRC}/modules/acc/etc/radiusclient.conf > \
@@ -45,4 +51,4 @@ post-install:
 			${PREFIX}/etc/ser/radiusclient.conf; \
 	fi
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
