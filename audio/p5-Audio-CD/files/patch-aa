@@ -1,0 +1,12 @@
+--- Makefile.PL.orig	Wed May 17 08:12:52 2000
++++ Makefile.PL	Sun Oct 22 17:41:36 2000
+@@ -7,7 +7,8 @@
+     'macro' => {
+ 	  CVSROOT => 'modperl.com:/local/cvs_repository',
+     },
+-    'LIBS'	=> ["-lcdaudio"],
++    'INC'	=> "-I$ENV{'PREFIX'}/include",
++    'LIBS'	=> "-L$ENV{'PREFIX'}/lib -lcdaudio",
+     DEFINE => '-g',
+     OBJECT => 'cddb_lookup.o CD.o',
+ );
