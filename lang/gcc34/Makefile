@@ -29,7 +29,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU Compiler Collection 3.3 (inprogress version)
 
 NO_CDROM=	'dated material'
-LATEST_LINK=	gcc33
+LATEST_LINK?=	gcc33${PKGNAMESUFFIX}
 
 USE_BZIP2=	yes
 USE_REINPLACE=	yes
