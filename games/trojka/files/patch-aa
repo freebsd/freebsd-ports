@@ -1,0 +1,36 @@
+--- Makefile.orig	Sat Oct 21 05:17:43 1995
++++ Makefile	Tue Jul 18 11:39:08 2000
+@@ -6,14 +6,25 @@
+ #
+ 
+ 
+-
++SCOREDIR=$(PREFIX)/share/trojka
++SCOREFILE=$(SCOREDIR)/trojka.scores
++CFLAGS+= -DSCOREFILE=\"$(SCOREFILE)\"
+ OBJS= trojka.o screen.o scan.o hiscore.o system.o
+ 
++all:	freebsd	trojka.6.out
++
+ make:
+ 	@echo please specify: hpux, xenix68, linux or sunos
+ 
+ install:
+-	cp trojka /usr/games
++	install -c -d -m 0755 $(SCOREDIR)
++	install -c -m 2755 -g games -s trojka $(PREFIX)/bin
++	install -c -m 0644 COPYRIGHT README $(SCOREDIR)
++	install -c -m 0664 -g games /dev/null $(SCOREFILE)
++	install -c -m 0444 trojka.6.out $(PREFIX)/man/man6/trojka.6
++
++trojka.6.out:	trojka.6
++	sed "s|%%PREFIX%%|$(PREFIX)|" trojka.6 > trojka.6.out
+ 
+ clean:
+ 	rm -f $(PROGS) *.o core a.out trojka.scores
+@@ -53,3 +64,5 @@
+ 
+ linux:
+ 	make trojka "CFLAGS=-DLINUX"
++
++freebsd: trojka	

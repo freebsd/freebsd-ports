@@ -1,0 +1,11 @@
+--- trojka.6.orig	Mon Jul 17 21:03:06 2000
++++ trojka.6	Mon Jul 17 21:03:36 2000
+@@ -40,7 +40,7 @@
+ 
+ .SH FILES
+ .nf
+-/usr/local/games/lib/trojka.scores	 The Trojka hiscore file
++%%PREFIX%%/share/trojka/trojka.scores         The Trojka hiscore file
+ 
+ .SH HISTORY
+ First version written in 1989 for MS-Dog. Not long thereafter (in 1990)
