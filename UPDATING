@@ -6,6 +6,13 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20040626:
+  AFFECTS: users of php4 and php5 with the PDFlib extension
+
+  The PDFlib extension has been removed from the archive and moved to PECL.
+  Consequently to enable it you have to install print/pecl-pdflib.
+  Alternatively you may want to try the experimental print/pecl-panda.
+
 20040625:
   AFFECTS: users of ftp/pure-ftpd
 
