@@ -19,7 +19,7 @@ COMMENT=	Theme engine for the gtk+-2.0 toolkit
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
-USE_LIBTOOL_VER=13
+USE_LIBTOOL_VER=15
 USE_GNOME=	gnomehack gtk20
 PLIST_SUB=	GTK_VERSION="2.4.0"
 
