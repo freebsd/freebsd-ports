@@ -1,5 +1,6 @@
 # $FreeBSD$
 #
+    SUBDIR += acme
     SUBDIR += avifile
     SUBDIR += dvdrip
     SUBDIR += ffmpeg
