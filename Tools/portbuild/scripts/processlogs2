@@ -15,7 +15,7 @@ echo "</head><body>" >>$of
 
 touch .stamp
 
-grep '^extra: ' *.log > .tmp
+find . -name '*.log' | sort | xargs grep '^extra: ' /dev/null | sed -e 's/^..//' > .tmp
 if [ $(echo $(cat .tmp | wc -l)) = 0 ]; then
   echo "No extra files (yet)" >> $of
 else
