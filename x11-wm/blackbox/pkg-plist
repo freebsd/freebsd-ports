@@ -1,5 +1,17 @@
 bin/blackbox
 share/Blackbox/rc
 share/Blackbox/menu
-share/Blackbox/style
+share/Blackbox/styles/blackmagic
+share/Blackbox/styles/coldsteel
+share/Blackbox/styles/colorpurple
+share/Blackbox/styles/darkgreen
+share/Blackbox/styles/default
+share/Blackbox/styles/gnoid
+share/Blackbox/styles/green
+share/Blackbox/styles/onoid
+share/Blackbox/styles/pnoid
+share/Blackbox/styles/slatebox
+share/Blackbox/styles/steelblue
+share/Blackbox/styles/steelbox
+@dirrm share/Blackbox/styles
 @dirrm share/Blackbox
