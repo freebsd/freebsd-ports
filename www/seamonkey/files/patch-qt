@@ -1,15 +1,15 @@
---- configure.orig	Thu Feb 12 11:11:29 2004
-+++ configure	Wed Feb 25 17:48:17 2004
-@@ -9259,7 +9259,7 @@
+--- configure.orig	Mon Mar 15 23:00:47 2004
++++ configure	Fri Mar 19 18:09:53 2004
+@@ -9370,7 +9370,7 @@
    echo $ac_n "(cached) $ac_c" 1>&6
  else
    ac_save_LIBS="$LIBS"
 -LIBS="-liconv  $LIBS"
 +LIBS="-L$LOCALBASE/lib -liconv  $LIBS"
  cat > conftest.$ac_ext <<EOF
- #line 9265 "configure"
+ #line 9376 "configure"
  #include "confdefs.h"
-@@ -9290,7 +9290,7 @@
+@@ -9401,7 +9401,7 @@
  fi
  if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
    echo "$ac_t""yes" 1>&6
@@ -18,16 +18,16 @@
  else
    echo "$ac_t""no" 1>&6
  echo $ac_n "checking for libiconv in -liconv""... $ac_c" 1>&6
-@@ -9300,7 +9300,7 @@
+@@ -9411,7 +9411,7 @@
    echo $ac_n "(cached) $ac_c" 1>&6
  else
    ac_save_LIBS="$LIBS"
 -LIBS="-liconv  $LIBS"
 +LIBS="-L$LOCALBASE/lib -liconv  $LIBS"
  cat > conftest.$ac_ext <<EOF
- #line 9306 "configure"
+ #line 9417 "configure"
  #include "confdefs.h"
-@@ -9331,7 +9331,7 @@
+@@ -9442,7 +9442,7 @@
  fi
  if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
    echo "$ac_t""yes" 1>&6
@@ -36,15 +36,54 @@
  else
    echo "$ac_t""no" 1>&6
  fi
-@@ -12047,9 +12047,9 @@
+@@ -12299,9 +12299,9 @@
  
  
  
--MOZ_EXTENSIONS_DEFAULT=" cookie wallet content-packs xml-rpc xmlextras help p3p pref transformiix venkman inspector irc universalchardet typeaheadfind webservices spellcheck"
-+MOZ_EXTENSIONS_DEFAULT=" cookie wallet content-packs xml-rpc xmlextras help p3p pref transformiix venkman inspector universalchardet typeaheadfind webservices spellcheck"
+-MOZ_EXTENSIONS_DEFAULT=" cookie wallet content-packs xml-rpc xmlextras help p3p pref transformiix venkman inspector irc universalchardet typeaheadfind webservices spellcheck gnomevfs negotiateauth"
++MOZ_EXTENSIONS_DEFAULT=" cookie wallet content-packs xml-rpc xmlextras help p3p pref transformiix venkman inspector universalchardet typeaheadfind webservices spellcheck gnomevfs negotiateauth"
  
 -MOZ_EXTENSIONS_ALL="$MOZ_EXTENSIONS_DEFAULT xmlterm datetime finger cview layout-debug tasks"
 +MOZ_EXTENSIONS_ALL="$MOZ_EXTENSIONS_DEFAULT irc xmlterm datetime finger cview layout-debug tasks"
  
  # Check whether --enable-extensions or --disable-extensions was given.
  if test "${enable_extensions+set}" = set; then
+@@ -12507,15 +12507,15 @@
+ 
+ 
+                     if test -z "$GSSAPI_LIBS" ; then
+-        LIBS="$LIBS -lgssapi_krb5 -lkrb5 -lk5crypto -lcom_err"
+-        echo $ac_n "checking for gss_init_sec_context in -lgssapi_krb5""... $ac_c" 1>&6
+-echo "configure:12513: checking for gss_init_sec_context in -lgssapi_krb5" >&5
+-ac_lib_var=`echo gssapi_krb5'_'gss_init_sec_context | sed 'y%./+-%__p_%'`
++        LIBS="$LIBS -lkrb5 -lcrypto -lasn1 -lcom_err -lroken -lgssapi -lcrypt"
++        echo $ac_n "checking for gss_init_sec_context in -lgssapi""... $ac_c" 1>&6
++echo "configure:12513: checking for gss_init_sec_context in -lgssapi" >&5
++ac_lib_var=`echo gssapi'_'gss_init_sec_context | sed 'y%./+-%__p_%'`
+ if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-lgssapi_krb5  $LIBS"
++LIBS="-lgssapi  $LIBS"
+ cat > conftest.$ac_ext <<EOF
+ #line 12521 "configure"
+ #include "confdefs.h"
+@@ -12543,7 +12543,7 @@
+ fi
+ if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
+   echo "$ac_t""yes" 1>&6
+-  GSSAPI_LIBS="-L$GSSAPI_DIR/lib -lgssapi_krb5 -lkrb5 -lk5crypto -lcom_err"
++  GSSAPI_LIBS="-L$GSSAPI_DIR/lib -lgssapi -lkrb5 -lasn1 -lroken -lcrypto -lcom_err -lcrypt"
+ else
+   echo "$ac_t""no" 1>&6
+ fi
+@@ -12653,7 +12653,7 @@
+         cat > conftest.$ac_ext <<EOF
+ #line 12655 "configure"
+ #include "confdefs.h"
+- #include <gssapi/gssapi.h> 
++ #include <gssapi.h> 
+ int main() {
+  gss_OID oid = GSS_C_NT_HOSTBASED_SERVICE; 
+ ; return 0; }
