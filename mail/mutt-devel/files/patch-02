@@ -1,5 +1,5 @@
 --- doc/Makefile.in.orig	Wed Mar 29 11:42:49 2000
-+++ doc/Makefile.in	Fri May 12 13:12:32 2000
++++ doc/Makefile.in	Mon Jun 12 16:50:51 2000
 @@ -58,13 +58,16 @@
  topsrcdir_DOCFILES = COPYRIGHT GPL INSTALL ChangeLog	\
  	README NEWS TODO README.SECURITY README.SSL README.UPGRADE
@@ -20,30 +20,22 @@
  
  install: all
  	$(top_srcdir)/mkinstalldirs $(DESTDIR)$(mandir)/man1
-@@ -73,18 +76,18 @@
- 	$(INSTALL) -m 644 $(srcdir)/dotlock.man \
- 		$(DESTDIR)$(mandir)/man1/mutt_dotlock.1
+@@ -75,16 +78,16 @@
  	$(INSTALL) -m 644 muttrc.man $(DESTDIR)$(mandir)/man5/muttrc.5
--	$(top_srcdir)/mkinstalldirs $(DESTDIR)$(docdir)
--	for f in $(srcdir_DOCFILES) ; do \
+ 	$(top_srcdir)/mkinstalldirs $(DESTDIR)$(docdir)
+ 	for f in $(srcdir_DOCFILES) ; do \
 -		$(INSTALL) -m 644 $(srcdir)/$$f $(DESTDIR)$(docdir) ; \
--	done
--	for f in $(topsrcdir_DOCFILES) ; do \
++	 	$(INSTALL) -m 644 $(srcdir)/$$f $(DESTDIR)$(docdir) ; \
+ 	done
+ 	for f in $(topsrcdir_DOCFILES) ; do \
 -		$(INSTALL) -m 644 $(top_srcdir)/$$f $(DESTDIR)$(docdir) ; \
--	done
--	$(INSTALL) -m 644 manual.txt $(DESTDIR)$(docdir) || true
++	 	$(INSTALL) -m 644 $(top_srcdir)/$$f $(DESTDIR)$(docdir) ; \
+ 	done
+ 	$(INSTALL) -m 644 manual.txt $(DESTDIR)$(docdir) || true
 -	$(top_srcdir)/mkinstalldirs $(DESTDIR)$(docdir)/html
 -	for file in manual*.html ; do	\
 -		$(INSTALL) -m 644 $$file $(DESTDIR)$(docdir)/html/ || true ;\
 -	done
-+	# $(top_srcdir)/mkinstalldirs $(DESTDIR)$(docdir)
-+	# for f in $(srcdir_DOCFILES) ; do \
-+	# 	$(INSTALL) -m 644 $(srcdir)/$$f $(DESTDIR)$(docdir) ; \
-+	# done
-+	# for f in $(topsrcdir_DOCFILES) ; do \
-+	# 	$(INSTALL) -m 644 $(top_srcdir)/$$f $(DESTDIR)$(docdir) ; \
-+	# done
-+	# $(INSTALL) -m 644 manual.txt $(DESTDIR)$(docdir) || true
 +	# $(top_srcdir)/mkinstalldirs $(DESTDIR)$(docdir)/html
 +	# for file in manual*.html ; do	\
 +	# 	$(INSTALL) -m 644 $$file $(DESTDIR)$(docdir)/html/ || true ;\
