@@ -6,50 +6,26 @@
 #
 
 PORTNAME=	Archive_Tar
-PORTVERSION=	1.0
-PORTREVISION=	1
+PORTVERSION=	1.1
 CATEGORIES=	archivers www
-MASTER_SITES=	http://pear.php.net/get/
-PKGNAMEPREFIX=	pear-
-EXTRACT_SUFX=	.tgz
-DIST_SUBDIR=	PEAR
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR tar file management class
-COMMENT=	PEAR tar file management class
 
-BUILD_DEPENDS=	${PEARDIR}/PEAR.php.dist:${PORTSDIR}/devel/pear-PEAR
+BUILD_DEPENDS=	pear:${PORTSDIR}/lang/php4
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-NO_BUILD=	yes
-
 .include <bsd.port.pre.mk>
-
-.if exists(${LOCALBASE}/bin/php-config)
-PHP_BASE!=	${LOCALBASE}/bin/php-config --prefix
-.else
-PHP_BASE=	${LOCALBASE}
-.endif
-PEAR=		${LOCALBASE}/bin/pear
-LPHP_LIB=	lib/php
-PEARDIR=	${PHP_BASE}/${LPHP_LIB}
-PLIST_SUB=	PEARDIR=${LPHP_LIB}
-
-DOCSDIR=	${PEARDIR}/docs/Archive_Tar
+.include "${.CURDIR}/../../devel/pear-PEAR/Makefile.common"
 
 do-install:
-	@${MV} ${PEARDIR}/Archive ${PEARDIR}/Archive.dist
+	@${MKDIR} ${PEARDIR}/Archive
 	@${CP} -Rp ${WRKSRC}/Archive ${PEARDIR}
 	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PEARDIR}/Archive
 .if !defined(NOPORTDOCS)
-	@${MV} ${DOCSDIR} ${DOCSDIR}.dist
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/docs/Archive_Tar.txt ${DOCSDIR}
 	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
 .endif
-
-post-install:
-# Register a new package
-	@${PEAR} upgrade -r -f ${WRKDIR}/package.xml
 
 .include <bsd.port.post.mk>

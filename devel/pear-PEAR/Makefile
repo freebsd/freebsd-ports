@@ -6,47 +6,25 @@
 #
 
 PORTNAME=	PEAR
-PORTVERSION=	1.0.1
-PORTREVISION=	2
+PORTVERSION=	1.1
 CATEGORIES=	devel www
-MASTER_SITES=	http://pear.php.net/get/
-PKGNAMEPREFIX=	pear-
-EXTRACT_SUFX=	.tgz
-DIST_SUBDIR=	PEAR
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR Base System
 
-BUILD_DEPENDS=	${PEARDIR}.DIST_PHP:${PORTSDIR}/devel/pear-install
+BUILD_DEPENDS=	${PEARDIR}/Archive/Tar.php:${PORTSDIR}/archivers/pear-Archive_Tar	\
+		${PEARDIR}/Console/Getopt.php:${PORTSDIR}/devel/pear-Console_Getopt
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-NO_BUILD=	yes
-
 .include <bsd.port.pre.mk>
+.include "${.CURDIR}/../../devel/pear-PEAR/Makefile.common"
 
-.if exists(${LOCALBASE}/bin/php-config)
-PHP_BASE!=	${LOCALBASE}/bin/php-config --prefix
-.else
-PHP_BASE=	${LOCALBASE}
-.endif
-PEAR=		${LOCALBASE}/bin/pear
-LPHP_LIB=	lib/php
-PEARDIR=	${PHP_BASE}/${LPHP_LIB}
-PLIST_SUB=	PEARDIR=${LPHP_LIB}
 MANIFEST=	OS PEAR PEAR.php System.php package.dtd scripts template.spec
-TOBACKUP=	OS PEAR PEAR.php System.php
 
 do-install:
-.for FILE in ${TOBACKUP}
-	@${MV} ${PEARDIR}/${FILE} ${PEARDIR}/${FILE}.dist
-.endfor
 	@${CP} -Rp ${WRKSRC}/* ${PEARDIR}
 .for FILE in ${MANIFEST}
 	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PEARDIR}/${FILE}
 .endfor
-
-post-install:
-# Register an upgraded package
-	@${PEAR} upgrade -r -f ${WRKDIR}/package.xml
 
 .include <bsd.port.post.mk>

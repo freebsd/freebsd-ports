@@ -7,4 +7,6 @@
 %%PEARDIR%%/Log/sql.php
 %%PEARDIR%%/Log/syslog.php
 %%PEARDIR%%/Log.php
+%%PKGREGDIR%%/package.xml
 @dirrm %%PEARDIR%%/Log
+@dirrm %%PKGREGDIR%%

@@ -7,52 +7,34 @@
 
 PORTNAME=	mailparse
 PORTVERSION=	0.9.1
+PORTREVISION=	1
 CATEGORIES=	mail www
-MASTER_SITES=	http://pear.php.net/get/
-PKGNAMEPREFIX=	pear-
-EXTRACT_SUFX=	.tgz
-DIST_SUBDIR=	PEAR
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR classes to create and decode MIME messages
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/phpize:${PORTSDIR}/www/mod_php4	\
-		${PEARDIR}/PEAR.php.dist:${PORTSDIR}/devel/pear-PEAR
-RUN_DEPENDS=	${PEARDIR}/PEAR.php.dist:${PORTSDIR}/devel/pear-PEAR
+BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear-PEAR
+RUN_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear-PEAR
 
-USE_AUTOMAKE=	yes
-USE_AUTOCONF=	yes
-
-.include <bsd.port.pre.mk>
-
-# Don't call autoconf directly, ./buildconf does this
-GNU_CONFIGURE=	yes
-USE_AUTOCONF=	no
-USE_LIBTOOL=	no
+USE_PHPIZE=	yes
 USE_REINPLACE=	yes
-
 REINPLACE_ARGS=	-i.before_mailparse
 
+.include <bsd.port.pre.mk>
+.include "${.CURDIR}/../../lang/php4/bsd.php.mk"
+.include "${.CURDIR}/../../devel/pear-PEAR/Makefile.common"
+
 .if exists(${LOCALBASE}/bin/php-config)
-PHP_BASE!=	${LOCALBASE}/bin/php-config --prefix
 EXT_DIR!=	${LOCALBASE}/bin/php-config --extension-dir | ${SED} -e \
 			"s:${PHP_BASE}/::"
-.else
-PHP_BASE=	${LOCALBASE}
 .endif
-PEAR=		${LOCALBASE}/bin/pear
-LPHP_LIB=	lib/php
 PHP_DIR?=	${LOCALBASE}/etc
 PHP_INI=	${PHP_DIR}/php.ini
-PEARDIR=	${PHP_BASE}/${LPHP_LIB}
-PLIST_SUB=	EXTDIR=${EXT_DIR} PEARDIR=${LPHP_LIB}
+PLIST_SUB+=	EXTDIR=${EXT_DIR}
 
 DOCSDIR=	${PEARDIR}/docs/${PORTNAME}
 DOCS=		CREDITS README try.php
 TESTDIR=	${PEARDIR}/tests/${PORTNAME}
-
-post-patch:
-	(cd ${WRKSRC} && ${LOCALBASE}/bin/phpize)
 
 pre-configure:
 	@if ! ${LOCALBASE}/bin/php -i | ${GREP} -q -e "--enable-mbstring"; then \
@@ -62,7 +44,7 @@ pre-configure:
 	    ${FALSE} ; \
 	fi
 
-post-install:
+post-install-script:
 	@${STRIP_CMD} ${PHP_BASE}/${EXT_DIR}/mailparse.so
 # Configure extension_dir
 	@if [ ! -f ${PHP_INI} ]; then \
@@ -85,7 +67,5 @@ post-install:
 	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${TESTDIR}
 	@${ECHO_MSG} "===> Examples installed in ${TESTDIR}."
 .endif
-# Register a new package
-	@${PEAR} install -r -f ${WRKDIR}/package.xml
 
 .include <bsd.port.post.mk>

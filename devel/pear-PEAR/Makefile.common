@@ -1,0 +1,43 @@
+# $FreeBSD$
+
+# Common code for pear- ports.
+
+MASTER_SITES=	http://pear.php.net/get/
+PKGNAMEPREFIX=	pear-
+EXTRACT_SUFX=	.tgz
+DIST_SUBDIR=	PEAR
+
+NO_BUILD=	yes
+
+.if exists(${LOCALBASE}/bin/php-config)
+PHP_BASE!=	${LOCALBASE}/bin/php-config --prefix
+.else
+PHP_BASE=	${LOCALBASE}
+.endif
+LPEARDIR=	share/pear
+PEARDIR=	${PHP_BASE}/${LPEARDIR}
+LPKGREGDIR=	${LPEARDIR}/packages/${PKGNAME}
+PKGREGDIR=	${PHP_BASE}/${LPKGREGDIR}
+PLIST_SUB=	PEARDIR=${LPEARDIR} PKGREGDIR=${LPKGREGDIR}
+PKGINSTALL=	${.CURDIR}/../../devel/pear-PEAR/pkg-install
+PKGDEINSTALL=	${.CURDIR}/../../devel/pear-PEAR/pkg-deinstall
+
+DOCSDIR=	${PEARDIR}/docs/${PORTNAME}
+
+pre-install:
+.if exists(${LOCALBASE}/lib/php.DIST_PHP)	\
+	|| exists(${PHP_BASE}/lib/php.DIST_PHP)	\
+	|| exists(${LOCALBASE}/.PEAR.pkg)	\
+	|| exists(${PHP_BASE}/.PEAR.pkg)
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "	Sorry, the PEAR structure has been modified;"
+	@${ECHO_MSG} "	Please deinstall your installed pear- ports."
+	@${ECHO_MSG} ""
+	@${FALSE}
+.endif
+
+post-install:
+	@${MKDIR} ${PKGREGDIR}
+	@${INSTALL_DATA} ${WRKDIR}/package.xml ${PKGREGDIR}
+	@${SETENV} PKG_PREFIX=${PREFIX} \
+	${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL

@@ -7,31 +7,17 @@
 
 PORTNAME=	Auth
 PORTVERSION=	1.2.0
+PORTREVISION=	1
 CATEGORIES=	security www
-MASTER_SITES=	http://pear.php.net/get/
-PKGNAMEPREFIX=	pear-
-EXTRACT_SUFX=	.tgz
-DIST_SUBDIR=	PEAR
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR authentication methods
 
-BUILD_DEPENDS=	${PEARDIR}/PEAR.php.dist:${PORTSDIR}/devel/pear-PEAR
+BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear-PEAR
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-NO_BUILD=	yes
-
 .include <bsd.port.pre.mk>
-
-.if exists(${LOCALBASE}/bin/php-config)
-PHP_BASE!=	${LOCALBASE}/bin/php-config --prefix
-.else
-PHP_BASE=	${LOCALBASE}
-.endif
-PEAR=		${LOCALBASE}/bin/pear
-LPHP_LIB=	lib/php
-PEARDIR=	${PHP_BASE}/${LPHP_LIB}
-PLIST_SUB=	PEARDIR=${LPHP_LIB}
+.include "${.CURDIR}/../../devel/pear-PEAR/Makefile.common"
 
 MANIFEST=	Auth.php Container Container.php
 
@@ -42,9 +28,5 @@ do-install:
 .endfor
 	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PEARDIR}/Auth
 	@${CHMOD} -R a-x ${PEARDIR}/Auth/Container/*.php
-
-post-install:
-# Register a new package
-	@${PEAR} install -r -f ${WRKDIR}/package.xml
 
 .include <bsd.port.post.mk>

@@ -3,3 +3,5 @@
 %%PEARDIR%%/Mail/mimePart.php
 %%PEARDIR%%/Mail/xmail.dtd
 %%PEARDIR%%/Mail/xmail.xsl
+%%PKGREGDIR%%/package.xml
+@dirrm %%PKGREGDIR%%

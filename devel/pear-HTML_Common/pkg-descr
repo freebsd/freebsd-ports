@@ -5,4 +5,4 @@ attributes handling.
 * Handles comments in HTML code.
 * Handles layout and tabs for nicer HTML code.
 
-WWW: http://pear.php.net/package-info.php?pacid=69
+WWW: http://pear.php.net/package-info.php?package=HTML_Common
