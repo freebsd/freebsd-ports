@@ -13,13 +13,16 @@ CATEGORIES=	www
 MASTER_SITES=	http://www.klomp.org/mod_roaming/
 DISTNAME=	${PORTNAME:S/2$//}-${PORTVERSION}
 
-MAINTAINER=	vivek@kciLink.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An Apache module that works as a Netscape Roaming Access server
 
 USE_APACHE=	yes
 WITH_APACHE2=	yes
 
-DOCS=		CHANGES	INSTALL	LICENSE	README
+DOCSDIR=	${PREFIX}/share/doc/${PORTNAME:S/2$//}
+PORTDOCS=	CHANGES	INSTALL	LICENSE	README
+PLIST_FILES=	etc/apache2/httpd.conf.mod_roaming \
+		libexec/apache2/mod_roaming.so
 
 do-build:
 	@cd ${WRKSRC} && \
@@ -29,9 +32,9 @@ do-install:
 	${APXS} -i -n roaming ${WRKSRC}/mod_roaming.la
 	${INSTALL_DATA} ${FILESDIR}/httpd.conf.${PORTNAME:S/2$//} ${PREFIX}/etc/apache2/
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/${PORTNAME:S/2$//}
-.for f in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/share/doc/${PORTNAME:S/2$//}/
+	${MKDIR} ${DOCSDIR}
+.for f in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
 .endif
 	@${CAT} ${PKGMESSAGE}
