@@ -59,7 +59,7 @@ post-patch:
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 400006
-BROKEN=		New character device registration issues
+BROKEN=		New character device registration issues and _KERNEL
 .endif
 
 .include <bsd.port.post.mk>
