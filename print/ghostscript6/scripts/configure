@@ -189,12 +189,18 @@ case $retval in
 esac
 
 # bring it into the right format with '.dev' appended to each driver name
+#old:
+#echo "DEVICE_DEVS=$choice" \
+#	| sed -e "s/\"//g" \
+#	| sed -e "s/ /.dev /g" \
+#	| sed -e "s/$/.dev/g" \
+#	> ${WRKSRC}/src/unix-gcc.mak.new
+# XXX new:
 echo "DEVICE_DEVS=$choice" \
-	| sed -e "s/\"//g" \
-	| sed -e "s/ /.dev /g" \
-	| sed -e "s/$/.dev/g" \
+	| perl -pe 's|"([a-z0-9]+)"|\$(DD)\1.dev|g' \
 	> ${WRKSRC}/src/unix-gcc.mak.new
 
 # create one new Makefile, where DEVICE_DEVS contains all wanted devices
-cat ${WRKSRC}/src/unix-gcc.mak >> ${WRKSRC}/src/unix-gcc.mak.new
+sed -e '/^DEVICE_DEVS=/d' ${WRKSRC}/src/unix-gcc.mak \
+	>> ${WRKSRC}/src/unix-gcc.mak.new
 mv ${WRKSRC}/src/unix-gcc.mak.new ${WRKSRC}/src/unix-gcc.mak
