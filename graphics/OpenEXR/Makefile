@@ -7,6 +7,7 @@
 
 PORTNAME=	OpenEXR
 PORTVERSION=	1.0.4
+PORTREVISION=	1
 CATEGORIES=	graphics devel
 MASTER_SITES=	http://savannah.nongnu.org/download/openexr/${PORTNAME}.pkg/${PORTVERSION}/
 
@@ -15,35 +16,34 @@ MAINTAINER=	nork@FreeBSD.org
 USE_GCC=	3.1
 USE_LIBTOOL=	YES
 GNU_CONFIGURE=	YES
-
-#CONFIGURE_ENV+=	--program-transform-name=''
+INSTALLS_SHLIB=	YES
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITHOUT_X11)
-.if defined(WITH_FLTK) || defined(WITH_FLTK_XUNICODE)
+.if !defined(WITHOUT_X11) && (defined(WITH_FLTK) || defined(WITH_FLTK_XUNICODE))
 .if defined(WITH_FLTK_XUNICODE)
-BUILD_DEPENDS=	fltk-config:${PORTSDIR}/x11-toolkits/fltk-xunicode
+LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk-xunicode
 .else
-BUILD_DEPENDS=	fltk-config:${PORTSDIR}/x11-toolkits/fltk
+LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
 .endif
 USE_MESA=	YES
-RUN_DEPENDS=	${BUILD_DEPENDS}
 CONFIGURE_ARGS+=--with-fltk-prefix=${X11BASE}
 CFLAGS+=	${PTHREAD_CFLAGS}
 LDFLAGS+=	${PTHREAD_LDFLAGS}
 PLIST_SUB+=	WITH_FLTK=
 .if ${OSVERSION} < 500035
 pre-everything::
+	@${ECHO_CMD} ===================================================
 	@${ECHO_CMD} Please install x11-toolkits/fltk* with USE_GCC=3.1.
+	@${ECHO_CMD} ===================================================
 .endif
 .else
 CONFIGURE_ARGS+=--with-fltk-prefix=DUMMY
-PLIST_SUB+=	WITH_FLTK=@comment
+PLIST_SUB+=	WITH_FLTK="@comment "
 .endif
-.else
-CONFIGURE_ARGS+=--without-x --with-fltk-prefix=DUMMY
-PLIST_SUB+=	WITH_FLTK=@comment
+
+.ifdef WITHOUT_X11
+CONFIGURE_ARGS+=--without-x
 .endif
 
 .include <bsd.port.post.mk>

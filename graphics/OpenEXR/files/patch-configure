@@ -1,5 +1,5 @@
 --- configure.orig	Tue Jan 21 17:47:43 2003
-+++ configure	Sun Jan 26 21:20:16 2003
++++ configure	Mon Jan 27 15:03:50 2003
 @@ -1559,10 +1559,12 @@
  
  # The aliases save the names the user supplied, while $host etc.
@@ -21,3 +21,11 @@
  
  # Always use our own libtool.
  LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+@@ -10533,7 +10536,6 @@
+ echo "$as_me:$LINENO: checking for gcc optimization flags" >&5
+ echo $ECHO_N "checking for gcc optimization flags... $ECHO_C" >&6
+ old_cflags=$CFLAGS
+-CFLAGS="$CFLAGS -O2 -funroll-loops -pipe"
+ cat >conftest.$ac_ext <<_ACEOF
+ #line $LINENO "configure"
+ /* confdefs.h.  */
