@@ -18,8 +18,8 @@ MASTER_SITE_LOCAL?= \
 	ftp://ftp.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/%SUBDIR%/ \
 	ftp://ftp.se.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/%SUBDIR%/ \
 	ftp://ftp.uk.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/%SUBDIR%/ \
-	ftp://ftp.ru.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/%SUBDIR%/
-#	ftp://ftp.jp.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/%SUBDIR%/
+	ftp://ftp.ru.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/%SUBDIR%/ \
+	ftp://ftp.jp.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/%SUBDIR%/
 #	ftp://ftp.nectec.or.th/pub/FreeBSD/ports/local-distfiles/%SUBDIR%/
 
 MASTER_SITE_PORTS_JP+=	\
@@ -47,14 +47,14 @@ MASTER_SITE_COMP_SOURCES+=	\
 	ftp://ftp.funet.fi/pub/archive/comp.sources.%SUBDIR%/ \
 	ftp://rtfm.mit.edu/pub/usenet/comp.sources.%SUBDIR%/
 
-MASTER_SITE_FESTIVAL= \
+MASTER_SITE_FESTIVAL+= \
 	http://www.festvox.org/packed/festival/%SUBDIR%/ \
 	http://www.speech.cs.cmu.edu/festival/cstr/festival/%SUBDIR%/ \
 	ftp://ftp.leb.net/pub/blinux/festival/mirror.festival_home/%SUBDIR%/ \
 	ftp://ftp.mayn.de/pub/linux/BLinux/festival/mirror.festival_home/%SUBDIR%/ \
 	ftp://ftp.tuwien.ac.at/opsys/linux/blinux/festival/mirror.festival_home/%SUBDIR%/
 
-MASTER_SITE_FESTIVAL_OGI= \
+MASTER_SITE_FESTIVAL_OGI+= \
 	ftp://ftp.leb.net/pub/blinux/festival/mirror.ogi-synth_home/ \
 	ftp://ftp.mayn.de/pub/linux/BLinux/festival/mirror.ogi-synth_home/ \
 	ftp://cslu.cse.ogi.edu/pub/tts/
@@ -275,6 +275,7 @@ MASTER_SITE_RUBY+= \
 	ftp://ftp.fu-berlin.de/unix/languages/ruby/%SUBDIR%/ \
 	ftp://ftp.easynet.be/ruby/ruby/%SUBDIR%/ \
 	ftp://ftp.ntua.gr/pub/lang/ruby/%SUBDIR%/ \
+	ftp://ftp.chg.ru/pub/lang/ruby/%SUBDIR%/ \
 	ftp://ftp.kr.FreeBSD.org/pub/ruby/%SUBDIR%/ \
 	http://mirrors.sunsite.dk/ruby/%SUBDIR%/ \
 	ftp://ftp.iDaemons.org/pub/mirror/ftp.ruby-lang.org/ruby/%SUBDIR%/
