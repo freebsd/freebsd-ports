@@ -97,7 +97,18 @@ cd "$TMPDIR" || exit 1
   $XSLTPROC $XSLTPROC_EXTRA_ARGS --stringparam baseurl "$BASEURL" "$STYLESHEET" "$VUXMLDIR/vuln.xml"
   echo "# This part is in the public domain"
   $XSLTPROC $XSLTPROC_EXTRA_ARGS --stringparam baseurl "$BASEURL" "$STYLESHEET" "$PORTAUDITDBDIR/database/portaudit.xml"
-  $CAT "$PORTAUDITDBDIR/database/portaudit.txt"
+  $AWK -F\| '
+    /^(#|$)/ {
+      print
+      next
+    }
+    {
+      if ($4)
+        print $1 FS $2 FS "'"$BASEURL"'" $4 ".html"  FS $4
+      else
+        print
+    }
+  ' "$PORTAUDITDBDIR/database/portaudit.txt"
 } | $AWK -F\| -v XLIST_FILE="$XLIST_FILE" '
   BEGIN {
     while((getline < XLIST_FILE) > 0)
@@ -109,7 +120,7 @@ cd "$TMPDIR" || exit 1
     next
   }
   {
-    if (!ignore[$4])
+    if (!($4 in ignore))
       print $1 "|" $2 "|" $3
   }' > auditfile
 echo "#CHECKSUM: MD5 `$MD5 < auditfile`" >> auditfile
