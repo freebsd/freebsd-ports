@@ -3,7 +3,7 @@
 # post-patch for sattrack-3.1.4
 # modify bin scripts to point to correct install dir
 #
-# script by Brent Nordquist (nordquist@platinum.com)
+# script by Brent J. Nordquist <bjn@visi.com>
 # Sun Apr  7 00:08:56  1996
 #
 if [ -z "$WRKDIR" ]; then
