@@ -197,6 +197,7 @@
     SUBDIR += xpyraminx
     SUBDIR += xqf
     SUBDIR += xquarto
+    SUBDIR += xracer
     SUBDIR += xripple
     SUBDIR += xrisk
     SUBDIR += xroach
