@@ -1,5 +1,7 @@
 share/sgml/linuxdoc/README
+@unexec %%MKCATALOG%% -q deinstall %%DTD_NAME%%
 share/sgml/linuxdoc/catalog
+@exec %%MKCATALOG%% -q install %%DTD_NAME%%
 share/sgml/linuxdoc/freebsd-1.0.dtd
 share/sgml/linuxdoc/freebsd-1.1.dtd
 share/sgml/linuxdoc/linuxdoc.dec

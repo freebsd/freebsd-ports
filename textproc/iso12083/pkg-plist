@@ -2,5 +2,8 @@ share/sgml/iso12083/article.dtd
 share/sgml/iso12083/book.dtd
 share/sgml/iso12083/maths.dtd
 share/sgml/iso12083/serial.dtd
+@unexec %%MKCATALOG%% -q deinstall %%DTD_NAME%%
 share/sgml/iso12083/catalog
+@exec %%MKCATALOG%% -q install %%DTD_NAME%%
 @dirrm share/sgml/iso12083
+@unexec rmdir %D/share/sgml 2>/dev/null || true
