@@ -1,5 +1,5 @@
 --- src/EDITME.orig	Mon Jul 22 10:59:47 2002
-+++ src/EDITME	Fri Sep 13 13:00:02 2002
++++ src/EDITME	Mon Sep 16 11:33:03 2002
 @@ -98,7 +98,7 @@
  # /usr/local/sbin. The installation script will try to create this directory,
  # and any superior directories, if they do not exist.
@@ -91,7 +91,7 @@
  
  # which results in files with names /var/log/exim_mainlog, etc. The directory
  # in which the log files are placed must exist; Exim does not try to create
-@@ -474,7 +476,7 @@
+@@ -474,12 +476,20 @@
  
  #  USE_TCP_WRAPPERS=yes
  #  CFLAGS=-O -I/usr/local/include
@@ -100,7 +100,20 @@
  
  # but of course there may need to be other things in CFLAGS and EXTRALIBS_EXIM
  # as well.
-@@ -695,7 +697,7 @@
+ 
+ 
++# IPv6 is coming. Exim has experimental support that has been tried out on
++# one or two OS. See the file README.IPV6 for the current status of this
++# support. Do not set this option unless you are working on IPv6 and know
++# what you are doing.
++
++# HAVE_IPV6=YES
++
++
+ #------------------------------------------------------------------------------
+ # The default action of the exim_install script is to install the Exim binary
+ # with a unique name such as exim-4.00-1, and then set up a symbolic link
+@@ -695,7 +705,7 @@
  # (process id) to a file so that it can easily be identified. The path of the
  # file can be specified here. Some installations may want something like this:
  
