@@ -17,11 +17,10 @@ COMMENT=	Standards-based system to encode, stream and play MPEG-4 audio/video
 BUILD_DEPENDS=	libtool:${PORTSDIR}/devel/libtool \
 		nasm:${PORTSDIR}/devel/nasm \
 		pkg-config:${PORTSDIR}/devel/pkgconfig
-LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
-		glib-2.0.200:${PORTSDIR}/devel/glib20 \
-		gtk-x11-2.0.200:${PORTSDIR}/x11-toolkits/gtk20
+LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12
 
 USE_GETOPT_LONG=	yes
+USE_GNOME=	gtk20
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 USE_REINPLACE=	yes

@@ -17,21 +17,17 @@ MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Provide View and Controller counterparts to GStreamer's Model
 
 BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
-LIB_DEPENDS=	glib-2.0.200:${PORTSDIR}/devel/glib20 \
-		gconf-2.5:${PORTSDIR}/devel/gconf2 \
-		glade-2.0.0:${PORTSDIR}/devel/libglade2 \
-		gnomeui-2.200:${PORTSDIR}/x11-toolkits/libgnomeui \
-		gstreamer-0.6.0:${PORTSDIR}/multimedia/gstreamer \
-		gtk-x11-2.0.200:${PORTSDIR}/x11-toolkits/gtk20 \
-		pango-1.0.200:${PORTSDIR}/x11-toolkits/pango \
-		popt.0:${PORTSDIR}/devel/popt \
-		xml2.5:${PORTSDIR}/textproc/libxml2
+LIB_DEPENDS=	gstreamer-0.6.0:${PORTSDIR}/multimedia/gstreamer \
+		popt.0:${PORTSDIR}/devel/popt
 RUN_DEPENDS=	gst-visualise:${PORTSDIR}/multimedia/gstreamer-plugins
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack \
 		gnomehier \
-		gnomeprefix
+		gnomeprefix \
+		gconf2 \
+		libglade2 \
+		libgnomeui
 USE_LIBTOOL=	yes
 CONFIGURE_ARGS=	--program-transform-name=''
 CONFIGURE_ENV=	PKG_CONFIG=${PKG_CONFIG}
