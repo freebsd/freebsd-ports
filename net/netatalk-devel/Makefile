@@ -7,6 +7,7 @@
 
 PORTNAME=	netatalk
 PORTVERSION=	1.5.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net print
 MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE}
@@ -42,8 +43,8 @@ CONFIGURE_ARGS+=		--enable-srvloc
 .if defined(WITH_FLOCK_LOCKS)
 # Disable byte locking, and do full file locking.  This _may_ help with some
 # Quark Express save issues.
-.endif
 CONFIGURE_ARGS+=		--with-flock-locks
+.endif
 .if defined(WITH_CNID)
 # Configure EXPERIMENTAL CNID DID support.  This is an attmept to make
 # DIDs more persistent by using a Berkeley database to store the DID values.
