@@ -1,0 +1,6 @@
+Log4r is a flexible logging system written in Ruby.  It is based on
+Apache Log4j, but does a few things better and is considerably easier
+to use.
+
+Author:	Leon Torres <leon@ugcs.caltech.edu>
+WWW:	http://log4r.sourceforge.net/
