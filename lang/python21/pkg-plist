@@ -475,3 +475,13 @@ share/python1.4/whichdb.pyc
 share/python1.4/whrandom.pyc
 share/python1.4/xdrlib.pyc
 share/python1.4/zmod.pyc
+@dirrm include/python1.4
+@dirrm lib/python1.4/config
+@dirrm lib/python1.4/sharedmodules
+@dirrm lib/python1.4
+@dirrm share/python1.4/stdwin
+@dirrm share/python1.4/tkinter
+@dirrm share/python1.4/test
+@dirrm share/python1.4/freebsd
+@dirrm share/python1.4/stdwin
+@dirrm share/python1.4
