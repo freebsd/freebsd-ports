@@ -4,6 +4,9 @@
 pb=/a/asami/portbuild
 user=asami
 
+# packages for dependencies only
+dummyports="x11/XFree86 x11-toolkits/Motif-dummy"
+
 usage () {
   echo "usage: [-nobuild] [-noindex] [-noduds] [-nocvsup] branch"
   exit 1
@@ -25,12 +28,18 @@ makeindex () {
   echo "index generation ended at $(date)"
   if grep -q non-existent INDEX; then
     echo "errors in INDEX:"
-    grep -C non-existent INDEX
-    grep -v non-existent INDEX > INDEX.tmp
-    mv -f INDEX.tmp INDEX
+    grep non-existent INDEX
+    exit 1
+#    grep -C non-existent INDEX
+#    grep -v non-existent INDEX > INDEX.tmp
+#    mv -f INDEX.tmp INDEX
   fi
   echo $(wc -l <INDEX) "lines in INDEX"
   chown ${user} INDEX
+  if ! awk -F '|' '{if (NF != 10) { error=1; printf("line %d: %s\n", NR, $0)}} END {if (error == 1) exit(1)}' INDEX; then
+    echo "error in INDEX"
+    exit 1
+  fi
 }
 
 # usage: makeduds pb scripts branch
@@ -55,17 +64,18 @@ makeduds () {
   cp -p ${pb}/${branch}/duds ${pb}/${branch}/duds.old
 }
 
-# usage: setupnode pb scripts branch me node
+# usage: setupnode pb scripts branch me node md5
 setupnode () {
   pb=$1
   scripts=$2
   branch=$3
   me=$4
   node=$5
+  md5=$6
 
   echo "setting up of $node started at $(date)"
   scp -p -a ${scripts}/setupnode ${node}:${scripts}
-  ssh -n ${node} ${scripts}/setupnode ${me} ${pb} ${branch}
+  ssh -n ${node} ${scripts}/setupnode ${me} ${pb} ${branch} ${md5}
   echo "setting up of $node ended at $(date)"
 }
 
@@ -79,9 +89,9 @@ restrictedlist () {
   echo "================================================"
   echo "creating restricted list"
   echo "================================================"
-  echo "restricted list genaration started at $(date)"
+  echo "restricted list generation started at $(date)"
   make ECHO_MSG=/usr/bin/true clean-restricted-list > ${pb}/${branch}/restricted.sh
-  echo "restricted list genaration ended at $(date)"
+  echo "restricted list generation ended at $(date)"
   echo $(grep -c '^#' ${pb}/${branch}/restricted.sh) "ports in ${pb}/${branch}/restricted.sh"
 }
   
@@ -157,7 +167,7 @@ if [ "$nocvsup" = 0 ]; then
   echo "================================================"
   echo "running cvsup"
   echo "================================================"
-  su ${user} -c 'cvsup -g -L 1 /etc/supfile.cvsup'
+  su ${user} -c 'cvsup -g -L 0 /etc/supfile.cvsup'
   echo "================================================"
   echo "running cvs update on /usr/ports"
   echo "================================================"
@@ -173,22 +183,22 @@ if [ "$nocvsup" = 0 ]; then
   su ${user} -c 'cvs -q update -d -P'
 fi
 
-# this one not in background to check return status
+# these two not in background to check return status
+
 if [ "$noduds" = 0 ]; then
   makeduds ${pb} ${scripts} ${branch}
 fi
 
-# generate new Makefile
 if [ "$noindex" = 0 ]; then
-  makeindex ${pb} ${scripts} ${branch} ${user} &
-  sleep 2
+  makeindex ${pb} ${scripts} ${branch} ${user}
 fi
 
+md5=$(/sbin/md5 ${pb}/${branch}/tarballs/bindist.tar | awk '{print $4}')
 echo "================================================"
 echo "setting up nodes"
 echo "================================================"
 for node in $(awk '{print $1}' ${pb}/mlist); do
-  setupnode ${pb} ${scripts} ${branch} ${me} ${node} &
+  setupnode ${pb} ${scripts} ${branch} ${me} ${node} ${md5} &
   sleep 2
 done
 
@@ -216,8 +226,9 @@ if [ "$nobuild" = 0 ]; then
   mv -f errors logs packages old-errors make.* bak
   mkdir -p errors logs packages/All
   chown -R ${user} errors logs packages 
-  cp -p tarballs/XFree86-3.3.4.tgz packages/All
-  cp -p tarballs/Motif-*.tgz packages/All
+  for dir in ${dummyports}; do
+    cp -p tarballs/$(cd ${pb}/usr/ports/$dir; make package-name).tgz packages/All
+  done
   count=$(awk '{sum+=$2}END{print sum+NR/2}' ${pb}/mlist)
   cd ${pb}/${branch}/packages/All
   echo "================================================"
@@ -273,7 +284,7 @@ if [ "$nobuild" = 0 ]; then
   cd ${pb}/${branch}/errors
   for i in *.log; do
     if [ ! -f ../bak/errors/$i ]; then
-      echo -n " $i"
+      echo -n " $(basename $i .log)"
     fi
   done
   echo
@@ -283,7 +294,7 @@ if [ "$nobuild" = 0 ]; then
   cd ${pb}/${branch}/bak/packages/All
   for i in *.tgz; do
     if [ ! -f ../../../packages/All/$i ]; then
-      echo -n " $i"
+      echo -n " $(basename $i .tgz)"
     fi
   done
   echo
@@ -293,7 +304,7 @@ if [ "$nobuild" = 0 ]; then
   cd ${pb}/${branch}/bak/errors
   for i in *.log; do
     if [ ! -f ../../errors/$i ]; then
-      echo -n " $i"
+      echo -n " $(basename $i .log)"
     fi
   done
   echo
@@ -303,9 +314,15 @@ if [ "$nobuild" = 0 ]; then
   cd ${pb}/${branch}/packages/All
   for i in *.tgz; do
     if [ ! -f ../../bak/packages/All/$i ]; then
-      echo -n " $i"
+      echo -n " $(basename $i .tgz)"
     fi
   done
+  echo
+  echo "================================================"
+  echo "archiving /usr/ports"
+  echo "================================================"
+  cd ${pb}/usr
+  tar --exclude CVS -czf ${pb}/${branch}/tarballs/ports.tar.gz ports
   echo
 fi
 echo "================================================"
