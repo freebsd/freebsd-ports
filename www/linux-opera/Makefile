@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	opera
-PORTVERSION=	7.21.20031013
+PORTVERSION=	7.22.20031103
 CATEGORIES=	www linux
-MASTER_SITES=	ftp://ftp.opera.com/pub/opera/linux/721/final/en/i386/static/
+MASTER_SITES=	ftp://ftp.opera.com/pub/opera/linux/722/final/en/i386/static/
 PKGNAMEPREFIX=	linux-
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.2003/-2003/}.1-static-qt.i386
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/.2003/-2003/}.1-static-qt.i386-en
 
 MAINTAINER=	mezz7@cox.net
 COMMENT=	A blazingly fast, full-featured, standards-compliant browser
