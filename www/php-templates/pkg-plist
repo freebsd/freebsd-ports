@@ -1,1 +1,6 @@
-lib/php/extensions/templates.so
+lib/php/%%EXT_DIR%%/templates.so
+%%PORTDOCS%%share/doc/php-templates/CHANGELOG
+%%PORTDOCS%%share/doc/php-templates/php_templates-eng.html
+%%PORTDOCS%%share/doc/php-templates/php_templates.css
+@unexec rmdir %D/lib/php/%%EXT_DIR%% 2> /dev/null || true
+%%PORTDOCS%%@dirrm share/doc/php-templates
