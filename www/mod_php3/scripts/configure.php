@@ -49,7 +49,7 @@ while [ "$1" ]; do
 			echo "APACHE_PERF_TUNING=	YES"
 			;;
 		\"GD\")
-			echo "BUILD_DEPENDS+=	\${PREFIX}/lib/libgd.a:\${PORTSDIR}/graphics/gd"
+			echo "LIB_DEPENDS+=	gd.0:\${PORTSDIR}/graphics/gd"
 			echo "PHP_CONF_ARGS+=	--with-gd=\${PREFIX}"
 			GD=1
 			;;
