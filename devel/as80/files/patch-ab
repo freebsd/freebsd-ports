@@ -1,0 +1,9 @@
+--- asm80.c.orig	Sun Jan 14 14:08:12 2001
++++ asm80.c	Thu Feb 15 10:55:50 2001
+@@ -23,7 +23,6 @@
+ #include <stdio.h>
+ #include <string.h>
+ #include <stdlib.h>
+-#include <malloc.h>
+ #include "asm80.h"
+ 
