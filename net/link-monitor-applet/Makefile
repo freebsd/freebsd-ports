@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		link-monitor-applet
-PORTVERSION=		1.1
+PORTVERSION=		1.2
 CATEGORIES=		net ipv6
 MASTER_SITES=		${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	link-monitor
@@ -15,7 +15,7 @@ MAINTAINER=		jylefort@brutele.be
 COMMENT=		A GNOME applet displaying the round-trip time to one or more hosts
 
 USE_X_PREFIX=		yes
-USE_GNOME=		gnomehack gnomeprefix gnomepanel
+USE_GNOME=		gnomehack gnomeprefix gnomepanel eel2
 GNU_CONFIGURE=		yes
 USE_GMAKE=		yes
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \

@@ -10,7 +10,6 @@ share/gnome/help/link-monitor-applet/C/figures/link-monitor-applet-empty.png
 share/gnome/help/link-monitor-applet/C/link-monitor-applet.xml
 share/gnome/help/link-monitor-applet/C/software-license.xml
 share/gnome/link-monitor-applet/ui/about-logo.png
-share/gnome/link-monitor-applet/ui/dialog.glade
 share/gnome/link-monitor-applet/ui/link-monitor-applet.png
 share/gnome/link-monitor-applet/ui/preferences.glade
 share/gnome/omf/link-monitor-applet/link-monitor-applet-C.omf
