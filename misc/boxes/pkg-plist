@@ -1,0 +1,3 @@
+bin/boxes
+share/boxes/boxes-config
+@dirrm share/boxes

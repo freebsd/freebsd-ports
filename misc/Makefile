@@ -21,6 +21,7 @@
     SUBDIR += bbjd
     SUBDIR += bidwatcher
     SUBDIR += bottlerocket
+    SUBDIR += boxes
     SUBDIR += buffer
     SUBDIR += cassowary
     SUBDIR += chord
