@@ -3,11 +3,11 @@
 # Date created:		05 Apr 1997
 # Whom:			candy@fct.kgc.co.jp
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/06/14 16:18:25 max Exp $
 #
 
 DISTNAME=	xtimer-8087
-pkgNAME=	xtimer-0.8087
+PKGNAME=	xtimer-0.8087
 CATEGORIES=	misc
 MASTER_SITES=	http://spock.vector.co.jp/authors/VA004959/xtimer/
 
