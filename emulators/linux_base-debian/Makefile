@@ -66,9 +66,6 @@ do-patch: build-depends
 	brandelf -t Linux ${WRKSRC}/${LIBC6NAME}/sbin/ldconfig && \
 	${DPKG_CMD} -b ${LIBC6NAME}
 
-pre-install:
-	@PKG_PREFIX="${PREFIX}" ${SH} ${PKGREQ} INSTALL
-
 do-install:
 # Create /dev/null for the chrooted environment
 	${MKDIR} ${PREFIX}/dev
