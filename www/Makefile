@@ -525,6 +525,7 @@
     SUBDIR += ruby-div
     SUBDIR += ruby-fcgi
     SUBDIR += ruby-google
+    SUBDIR += ruby-gtkhtml2
     SUBDIR += ruby-http-access
     SUBDIR += ruby-mnogosearch
     SUBDIR += ruby-nora
