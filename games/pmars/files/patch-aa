@@ -23,12 +23,3 @@
  
  .SUFFIXES: .o .c .c~ .man .doc .6
  MAINFILE = pmars
-@@ -30,7 +31,7 @@
- OBJ2 = clparse.o global.o token.o 
- OBJ3 = str_eng.o
- 
--ALL: flags $(MAINFILE) man doc
-+all: flags $(MAINFILE) man doc
- 
- flags:
- 	@echo Making $(MAINFILE) with compiler flags $(CFLAGS)
