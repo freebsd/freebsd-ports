@@ -34,7 +34,7 @@ share/texmf/xdvi/xdvipaper.jdvi2kps
 %%PORTDOCS%%%%DOCSDIR%%/xdvi.icon
 @dirrm share/texmf/xdvi
 @dirrm %%DOCSDIR%%
-@exec %D/bin/mktexlsr %D/share/texmf
-@unexec %D/bin/mktexlsr %D/share/texmf
+@exec [ -x %D/bin/mktexlsr ] && %D/bin/mktexlsr %D/share/texmf
+@unexec [ -x %D/bin/mktexlsr ] && %D/bin/mktexlsr %D/share/texmf
 @cwd %%X11BASE%%
 %%APPDEFAULTSDIR%%/XDvi
