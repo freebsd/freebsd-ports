@@ -30,16 +30,16 @@ WRKDIRBASE=	${WRKDIRPREFIX}${.CURDIR:S,/editors/mule-common$,,}
 
 .for dir in 	chinese/mule-freewnn \
 		editors/mule \
+		japanese/mule-canna \
+		japanese/mule-canna+freewnn \
 		japanese/mule-canna+freewnn+sj3 \
 		japanese/mule-canna+sj3+wnn6 \
 		japanese/mule-canna+sj3 \
-		japanese/mule-freewnn+canna \
 		japanese/mule-canna+wnn6 \
-		japanese/mule-canna \
-		japanese/mule-freewnn+sj3 \
-		japanese/mule-sj3+wnn6 \
-		japanese/mule-sj3 \
 		japanese/mule-freewnn \
+		japanese/mule-freewnn+sj3 \
+		japanese/mule-sj3 \
+		japanese/mule-sj3+wnn6 \
 		japanese/mule-wnn6 \
 		korean/mule-freewnn
 .if exists(${WRKDIRBASE}/${dir}/work/.install_done)
