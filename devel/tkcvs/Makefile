@@ -19,6 +19,9 @@ LIB_DEPENDS=	tk84.1:${PORTSDIR}/x11-toolkits/tk84
 NO_BUILD=	yes
 MAN1=		tkcvs.1
 USE_REINPLACE=	yes
+.if !defined(NOPORTDOCS)
+PORTDOCS=	*
+.endif
 
 WISH=		wish8.4
 TCLSH=		tclsh8.4
@@ -29,5 +32,11 @@ post-patch:
 
 do-install:
 	cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${TCLSH} doinstall.tcl -nox ${PREFIX}
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+.for file in FAQ vendor5readme.pdf
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.endfor
+.endif
 
 .include <bsd.port.mk>
