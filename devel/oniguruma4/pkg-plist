@@ -14,4 +14,5 @@ lib/libonig.so.0
 %%PORTDOCS%%%%EXAMPLESDIR%%/names.c
 %%PORTDOCS%%%%EXAMPLESDIR%%/posix.c
 %%PORTDOCS%%%%EXAMPLESDIR%%/simple.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/sql.c
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
