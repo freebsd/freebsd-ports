@@ -52,20 +52,25 @@
 %%CHORADIR%%/locale/.htaccess
 %%CHORADIR%%/locale/cs_CZ/LC_MESSAGES/chora.mo
 %%CHORADIR%%/locale/de_DE/LC_MESSAGES/chora.mo
+%%CHORADIR%%/locale/en_US/help.xml
 %%CHORADIR%%/locale/es_ES/LC_MESSAGES/chora.mo
+%%CHORADIR%%/locale/fi_FI/LC_MESSAGES/chora.mo
 %%CHORADIR%%/locale/fr_FR/LC_MESSAGES/chora.mo
 %%CHORADIR%%/locale/nb_NO/LC_MESSAGES/chora.mo
 %%CHORADIR%%/locale/nl_NL/LC_MESSAGES/chora.mo
 %%CHORADIR%%/locale/pl_PL/LC_MESSAGES/chora.mo
 %%CHORADIR%%/locale/pt_BR/LC_MESSAGES/chora.mo
 %%CHORADIR%%/locale/sv_SE/LC_MESSAGES/chora.mo
+%%CHORADIR%%/menu.php
 %%CHORADIR%%/po/.htaccess
 %%CHORADIR%%/po/Makefile
 %%CHORADIR%%/po/README
+%%CHORADIR%%/po/chora.pot
 %%CHORADIR%%/po/cs_CZ.po
 %%CHORADIR%%/po/de_DE.po
 %%CHORADIR%%/po/es_ES.po
 %%CHORADIR%%/po/extract.pl
+%%CHORADIR%%/po/fi_FI.po
 %%CHORADIR%%/po/fr_FR.po
 %%CHORADIR%%/po/nb_NO.po
 %%CHORADIR%%/po/nl_NL.po
@@ -74,6 +79,8 @@
 %%CHORADIR%%/po/shtool
 %%CHORADIR%%/po/sv_SE.po
 %%CHORADIR%%/po/xgettext.sh
+%%CHORADIR%%/prefs.php
+%%CHORADIR%%/status.php
 %%CHORADIR%%/templates/.htaccess
 %%CHORADIR%%/templates/annotate/footer.inc
 %%CHORADIR%%/templates/annotate/header.inc
@@ -96,6 +103,7 @@
 %%CHORADIR%%/templates/directory/footer.inc
 %%CHORADIR%%/templates/directory/header.inc
 %%CHORADIR%%/templates/error_page.inc
+%%CHORADIR%%/templates/headerbar.inc
 %%CHORADIR%%/templates/history/blank.inc
 %%CHORADIR%%/templates/history/branch_cell.inc
 %%CHORADIR%%/templates/history/footer.inc
@@ -108,6 +116,7 @@
 %%CHORADIR%%/templates/log/header.inc
 %%CHORADIR%%/templates/log/request.inc
 %%CHORADIR%%/templates/log/rev.inc
+%%CHORADIR%%/templates/menu/menu.inc
 etc/horde/httpd.conf.chora
 %%PORTDOCS%%@dirrm share/doc/chora
 @dirrm %%CHORADIR%%/config
@@ -121,8 +130,11 @@ etc/horde/httpd.conf.chora
 @dirrm %%CHORADIR%%/locale/cs_CZ
 @dirrm %%CHORADIR%%/locale/de_DE/LC_MESSAGES
 @dirrm %%CHORADIR%%/locale/de_DE
+@dirrm %%CHORADIR%%/locale/en_US
 @dirrm %%CHORADIR%%/locale/es_ES/LC_MESSAGES
 @dirrm %%CHORADIR%%/locale/es_ES
+@dirrm %%CHORADIR%%/locale/fi_FI/LC_MESSAGES
+@dirrm %%CHORADIR%%/locale/fi_FI
 @dirrm %%CHORADIR%%/locale/fr_FR/LC_MESSAGES
 @dirrm %%CHORADIR%%/locale/fr_FR
 @dirrm %%CHORADIR%%/locale/nb_NO/LC_MESSAGES
@@ -145,6 +157,7 @@ etc/horde/httpd.conf.chora
 @dirrm %%CHORADIR%%/templates/history
 @dirrm %%CHORADIR%%/templates/index
 @dirrm %%CHORADIR%%/templates/log
+@dirrm %%CHORADIR%%/templates/menu
 @dirrm %%CHORADIR%%/templates
 @dirrm %%CHORADIR%%
 @unexec if cmp -s %D/www/horde/config/mime_drivers.php %D/www/horde/config/mime_drivers.php.afterChora; then rm -f %D/www/horde/config/mime_drivers.php.afterChora; mv %D/www/horde/config/mime_drivers.php.beforeChora %D/www/horde/config/mime_drivers.php; fi

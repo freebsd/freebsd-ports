@@ -6,11 +6,14 @@
 #
 
 PORTNAME=	chora
-PORTVERSION=	1.1
-PORTREVISION=	1
+PORTVERSION=	1.2
 CATEGORIES=	devel www
-MASTER_SITES=	ftp://ftp.horde.org/pub/chora/tarballs/%SUBDIR%/
-MASTER_SITE_SUBDIR=	. old
+MASTER_SITES=	ftp://ftp.horde.org/pub/chora/				\
+		ftp://ftp.au.horde.org/pub/horde/chora/			\
+		ftp://ftp.es.horde.org/pub/chora/			\
+		ftp://ftp.it.horde.org/pub/mirror/horde.org/chora/	\
+		ftp://ftp.nl.horde.org/mirror/horde-ftp/pub/chora/	\
+		ftp://ftp.pt.horde.org/pub/horde-ftp/chora/
 
 MAINTAINER=	thierry@pompo.net
 
