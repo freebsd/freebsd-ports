@@ -1,5 +1,5 @@
 --- configure.orig	Thu Dec 23 16:36:00 2004
-+++ configure	Tue Feb  8 23:24:26 2005
++++ configure	Mon Mar 14 21:58:48 2005
 @@ -359,7 +359,7 @@
  
  
@@ -146,6 +146,15 @@
  int main(void) { return RTC_IRQP_READ; }
  EOF
      _rtc=no
+@@ -5235,7 +5173,7 @@
+ if test "$_faad_internal" = auto ; then
+   # the faad check needs a config.h file
+   if not test -f "config.h" ; then
+-    > config.h
++    echo "$_def_lrintf" > config.h
+   fi
+   # internal faad: check if our dear gcc is able to compile it...
+   cp "`pwd`/libfaad2/cfft.c" $TMPC
 @@ -6314,7 +6252,7 @@
    fi
    _stripbinaries=no
