@@ -1,0 +1,72 @@
+*** sys/unix/Makefile.src.orig	Sat Aug  5 12:52:57 2000
+--- sys/unix/Makefile.src	Sat Dec  9 13:09:44 2000
+***************
+*** 139,145 ****
+  # directories.  The ones given below is the usual spot for linux systems.
+  # The paths are for glibconfig.h and gnomesupport.h respectively.
+  #
+! GNOMEINC=-I/usr/lib/glib/include -I/usr/lib/gnome-libs/include -I../win/gnome
+  
+  # flags for debugging:
+  # CFLAGS = -g -I../include
+--- 139,145 ----
+  # directories.  The ones given below is the usual spot for linux systems.
+  # The paths are for glibconfig.h and gnomesupport.h respectively.
+  #
+! GNOMEINC=-I/usr/X11R6/include -I/usr/X11R6/include/gtk12 -I/usr/local/include/glib12 -I/usr/local/include/kpathsea -I../win/gnome
+  
+  # flags for debugging:
+  # CFLAGS = -g -I../include
+***************
+*** 203,210 ****
+  
+  #
+  #
+! WINSRC = $(WINTTYSRC)
+! WINOBJ = $(WINTTYOBJ)
+  
+  # on some systems the termcap library is in -ltermcap or -lcurses
+  # on 386 Xenix, the -ltermlib tputs() seems not to work; use -lcurses instead
+--- 203,210 ----
+  
+  #
+  #
+! WINSRC = $(WINTTYSRC) $(WINGNOMESRC)
+! WINOBJ = $(WINTTYOBJ) $(WINGNOMEOBJ)
+  
+  # on some systems the termcap library is in -ltermcap or -lcurses
+  # on 386 Xenix, the -ltermlib tputs() seems not to work; use -lcurses instead
+***************
+*** 236,242 ****
+  WINKDELIB = -lkdecore -lkdeui -lXext
+  #
+  # libraries for Gnome
+! WINGNOMELIB = -lgnomeui -lgnome -lart_lgpl -lgtk -lgdk -lpopt
+  #
+  # libraries for Gem port
+  WINGEMLIB = -le_gem -lgem
+--- 236,242 ----
+  WINKDELIB = -lkdecore -lkdeui -lXext
+  #
+  # libraries for Gnome
+! WINGNOMELIB = -L/usr/local/lib -L/usr/X11R6/lib -lgnomeui -lgnome -lart_lgpl -lgtk12 -lgdk12 -lglib12 -lpopt -lkpathsea
+  #
+  # libraries for Gem port
+  WINGEMLIB = -le_gem -lgem
+***************
+*** 244,250 ****
+  # libraries for BeOS 
+  WINBELIB = -lbe
+  
+! WINLIB = $(WINTTYLIB)
+  
+  # any other strange libraries your system needs (for Sysunix only -- the more
+  # specialized targets should already be right)
+--- 244,250 ----
+  # libraries for BeOS 
+  WINBELIB = -lbe
+  
+! WINLIB = $(WINTTYLIB) $(WINGNOMELIB)
+  
+  # any other strange libraries your system needs (for Sysunix only -- the more
+  # specialized targets should already be right)

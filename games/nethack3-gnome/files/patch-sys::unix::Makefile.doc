@@ -1,0 +1,44 @@
+*** sys/unix/Makefile.doc.orig	Fri Jan 14 12:49:48 2000
+--- sys/unix/Makefile.doc	Sat Sep 23 01:16:22 2000
+***************
+*** 34,40 ****
+  
+  
+  GAME	= nethack
+! MANDIR	= /usr/man/man6
+  MANEXT	= 6
+  
+  # manual installation for most BSD-style systems
+--- 34,40 ----
+  
+  
+  GAME	= nethack
+! MANDIR	= ${PREFIX}/man/man
+  MANEXT	= 6
+  
+  # manual installation for most BSD-style systems
+***************
+*** 51,61 ****
+  # DLBMANCREATE = nroff -man dlb.6 >
+  
+  manpages:
+! 	-$(GAMEMANCREATE) $(MANDIR)/$(GAME).$(MANEXT)
+! 	-$(LEVMANCREATE) $(MANDIR)/lev_comp.$(MANEXT)
+! 	-$(DGNMANCREATE) $(MANDIR)/dgn_comp.$(MANEXT)
+! 	-$(RCVRMANCREATE) $(MANDIR)/recover.$(MANEXT)
+! 	-$(DLBMANCREATE) $(MANDIR)/dlb.$(MANEXT)
+  
+  # manual creation for distribution
+  DISTRIB = Guidebook.txt nethack.txt lev_comp.txt dgn_comp.txt recover.txt dlb.txt
+--- 51,61 ----
+  # DLBMANCREATE = nroff -man dlb.6 >
+  
+  manpages:
+! 	-$(GAMEMANCREATE) $(MANDIR)$(MANEXT)/$(GAME).$(MANEXT)
+! 	-$(LEVMANCREATE) $(MANDIR)$(MANEXT)/lev_comp.$(MANEXT)
+! 	-$(DGNMANCREATE) $(MANDIR)$(MANEXT)/dgn_comp.$(MANEXT)
+! 	-$(RCVRMANCREATE) $(MANDIR)$(MANEXT)/recover.$(MANEXT)
+! 	-$(DLBMANCREATE) $(MANDIR)$(MANEXT)/dlb.$(MANEXT)
+  
+  # manual creation for distribution
+  DISTRIB = Guidebook.txt nethack.txt lev_comp.txt dgn_comp.txt recover.txt dlb.txt

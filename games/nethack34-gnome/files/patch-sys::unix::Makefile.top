@@ -1,0 +1,78 @@
+*** sys/unix/Makefile.top.orig	Tue Jul  4 02:42:05 2000
+--- sys/unix/Makefile.top	Sat Dec  9 13:08:51 2000
+***************
+*** 14,31 ****
+  # MAKE = make
+  
+  # make NetHack
+- PREFIX	 = /usr
+  GAME     = nethack
+  # GAME     = nethack.prg
+  GAMEUID  = games
+! GAMEGRP  = bin
+  
+  # Permissions - some places use setgid instead of setuid, for instance
+  # See also the option "SECURE" in include/config.h
+! GAMEPERM = 04755
+! FILEPERM = 0644
+  EXEPERM  = 0755
+! DIRPERM  = 0755
+  
+  # GAMEDIR also appears in config.h as "HACKDIR".
+  # VARDIR may also appear in unixconf.h as "VAR_PLAYGROUND" else GAMEDIR
+--- 14,30 ----
+  # MAKE = make
+  
+  # make NetHack
+  GAME     = nethack
+  # GAME     = nethack.prg
+  GAMEUID  = games
+! GAMEGRP  = games
+  
+  # Permissions - some places use setgid instead of setuid, for instance
+  # See also the option "SECURE" in include/config.h
+! GAMEPERM = 02755
+! FILEPERM = 0664
+  EXEPERM  = 0755
+! DIRPERM  = 0775
+  
+  # GAMEDIR also appears in config.h as "HACKDIR".
+  # VARDIR may also appear in unixconf.h as "VAR_PLAYGROUND" else GAMEDIR
+***************
+*** 35,43 ****
+  # therefore there should not be anything in GAMEDIR that you want to keep
+  # (if there is, you'll have to do the installation by hand or modify the
+  # instructions)
+! GAMEDIR  = $(PREFIX)/games/lib/$(GAME)dir
+  VARDIR  = $(GAMEDIR)
+! SHELLDIR = $(PREFIX)/games
+  
+  # per discussion in Install.X11 and Install.Qt
+  VARDATND = 
+--- 34,42 ----
+  # therefore there should not be anything in GAMEDIR that you want to keep
+  # (if there is, you'll have to do the installation by hand or modify the
+  # instructions)
+! GAMEDIR  = $(PREFIX)/share/$(GAME)
+  VARDIR  = $(GAMEDIR)
+! SHELLDIR = $(PREFIX)/bin
+  
+  # per discussion in Install.X11 and Install.Qt
+  VARDATND = 
+***************
+*** 48,54 ****
+  # for BeOS
+  # VARDATND = beostiles
+  # for Gnome
+! # VARDATND = x11tiles pet_mark.xbm rip.xpm mapbg.xpm
+  
+  VARDATD = data oracles options quest.dat rumors
+  VARDAT = $(VARDATD) $(VARDATND)
+--- 47,53 ----
+  # for BeOS
+  # VARDATND = beostiles
+  # for Gnome
+! VARDATND = x11tiles pet_mark.xbm rip.xpm mapbg.xpm
+  
+  VARDATD = data oracles options quest.dat rumors
+  VARDAT = $(VARDATD) $(VARDATND)

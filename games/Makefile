@@ -179,6 +179,7 @@
     SUBDIR += nethack-gtk
     SUBDIR += nethack-qt
     SUBDIR += nethack3
+    SUBDIR += nethack3-gnome
     SUBDIR += nethack3-tty
     SUBDIR += netrek-BRMH-bin
     SUBDIR += netrek-COW3-bin
