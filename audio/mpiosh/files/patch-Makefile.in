@@ -1,11 +1,11 @@
---- Makefile.in.orig	Sun Dec  7 14:52:24 2003
-+++ Makefile.in	Sun Dec  7 14:54:36 2003
-@@ -93,7 +93,7 @@
- am__include = @am__include@
- am__quote = @am__quote@
- install_sh = @install_sh@
--SUBDIRS = kernel libmpio mpiosh etc tools 
-+SUBDIRS = libmpio mpiosh etc tools 
+--- Makefile.in.orig	Mon May 31 09:13:58 2004
++++ Makefile.in	Mon May 31 09:14:08 2004
+@@ -184,7 +184,7 @@
+ target_cpu = @target_cpu@
+ target_os = @target_os@
+ target_vendor = @target_vendor@
+-SUBDIRS = @MPIO_KERNEL@ libmpio mpiosh etc tools hotplug
++SUBDIRS = @MPIO_KERNEL@ libmpio mpiosh etc tools
+ EXTRA_DIST = mpio.spec
+ all: all-recursive
  
- sbin_SCRIPTS = mkmpiodev
- EXTRA_DIST = mpio.spec mkmpiodev
