@@ -1,0 +1,6 @@
+This module figures out the real sizes of Perl variables in bytes. Call
+functions with a reference to the variable you want the size of. If the
+variable is a plain scalar it returns the size of the scalar. If the variable
+is a hash or an array, use a reference when calling.
+
+WWW: http://search.cpan.org/dist/Devel-Size/
