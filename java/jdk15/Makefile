@@ -133,7 +133,7 @@ TAR=		gtar	# Necessary for proper extraction of sources
 .endif
 
 # Check for JDK sources
-.if !exists(${DISTDIR}/${SRCFILE})
+.if !exists(${DISTDIR}/${SRCFILE}) && !defined(PACKAGE_BUILDING)
 ECHO_MSG=/usr/bin/printf
 IGNORE= :\n\
 Because of licensing restrictions, you must fetch the source distribution\n\
@@ -147,7 +147,7 @@ ${DISTDIR}.\n
 .endif
 
 # Check for patchset
-.if !exists(${DISTDIR}/${PATCHSETFILE})
+.if !exists(${DISTDIR}/${PATCHSETFILE}) && !defined(PACKAGE_BUILDING)
 ECHO_MSG=/usr/bin/printf
 IGNORE= :\n\
 The source distribution exists on your system, but due to\n\
