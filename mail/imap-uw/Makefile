@@ -3,13 +3,13 @@
 # Date created:		9 Jan 1997
 # Whom:			pst
 #
-# $Id: Makefile,v 1.24 1998/12/24 18:26:21 jseger Exp $
+# $Id: Makefile,v 1.25 1999/01/13 02:47:30 scrappy Exp $
 #
 
 DISTNAME=	imap-4.4
 PKGNAME=	imap-uw-4.4
 CATEGORIES=	mail
-MASTER_SITES=	ftp://ftp.cac.washington.edu/imap/
+MASTER_SITES=	ftp://ftp.cac.washington.edu/imap/old/
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	imap-uw@freebsd.ady.ro
