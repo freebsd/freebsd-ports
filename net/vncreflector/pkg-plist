@@ -1,0 +1,5 @@
+bin/vncreflector
+etc/rc.d/vncreflector.sh
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@unexec rmdir %D/etc/vncreflector 2>/dev/null || ( echo "Configuration information saved.  If you will *NOT* use this package anymore," && echo "please remove %D/etc/vncreflector and its contents manually.")
