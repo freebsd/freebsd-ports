@@ -3,7 +3,7 @@
 # Date Created:			16 Aug 1998
 # Whom:				Chia-liang Kao <clkao@CirX.ORG>
 #
-# $Id: Makefile,v 1.8 1998/12/26 19:23:25 vanilla Exp $
+# $Id: Makefile,v 1.9 1998/12/31 16:07:48 vanilla Exp $
 #
 
 DISTNAME=	ORBit-0.3.91
@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.jimpick.com/pub/mirrors/gnome/sources/ \
 
 MAINTAINER=	clkao@CirX.ORG
 
-LIB_DEPENDS=	glib11d.1:${PORTSDIR}/devel/glib11-devel
+LIB_DEPENDS=	glib11d.2:${PORTSDIR}/devel/glib11-devel
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

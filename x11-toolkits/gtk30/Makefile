@@ -3,7 +3,7 @@
 # Date Created:			28 Sep 1997
 # Whom:				Vanilla I. Shu <vanilla@MinJe.com.TW>
 #
-# $Id: Makefile,v 1.38 1998/12/30 23:11:36 vanilla Exp $
+# $Id: Makefile,v 1.39 1999/01/01 02:32:05 vanilla Exp $
 #
 
 DISTNAME=	gtk+-1.1.11
@@ -17,7 +17,7 @@ MAINTAINER=	vanilla@FreeBSD.ORG
 
 BUILD_DEPENDS=	gettext:${PORTSDIR}/devel/gettext
 RUN_DEPENDS=	gettext:${PORTSDIR}/devel/gettext
-LIB_DEPENDS=	glib11d.1:${PORTSDIR}/devel/glib11-devel
+LIB_DEPENDS=	glib11d.2:${PORTSDIR}/devel/glib11-devel
 
 USE_X_PREFIX=	yes
 .include <bsd.port.pre.mk>

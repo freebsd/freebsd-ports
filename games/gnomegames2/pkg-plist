@@ -9,6 +9,7 @@ bin/gyahtzee
 bin/mahjongg
 bin/same-gnome
 bin/sol
+etc/sound/events/gnothello.soundlist
 include/gdkcardimage/gdk-card-image.h
 lib/libgdkcardimage.a
 lib/libgdkcardimage.la
@@ -103,7 +104,6 @@ share/gnome/pixmaps/gnobots/mice.png
 share/gnome/pixmaps/gnobots/robots.png
 share/gnome/pixmaps/gnobots/windows.png
 share/gnome/pixmaps/gnobots/yahoo.png
-share/gnome/pixmaps/gnome-mahjongg.png
 share/gnome/pixmaps/gnome-stones/amoeba.png
 share/gnome/pixmaps/gnome-stones/boulder.png
 share/gnome/pixmaps/gnome-stones/butterfly.png
@@ -118,7 +118,6 @@ share/gnome/pixmaps/gnome-stones/frame.png
 share/gnome/pixmaps/gnome-stones/gnome.png
 share/gnome/pixmaps/gnome-stones/title.png
 share/gnome/pixmaps/gnome-stones/wall.png
-share/gnome/pixmaps/gnothello.png
 share/gnome/pixmaps/gnothello/blend.png
 share/gnome/pixmaps/gnothello/classic.png
 share/gnome/pixmaps/gnothello/flipblend.png
@@ -136,7 +135,9 @@ share/gnome/pixmaps/same-gnome/stones.png
 share/gnome/pixmaps/gnome-aisleriot.png
 share/gnome/pixmaps/gnome-gnobots.png
 share/gnome/pixmaps/gnome-gyahtzee.png
+share/gnome/pixmaps/gnome-mahjongg.png
 share/gnome/pixmaps/gnome-stones.png
+share/gnome/pixmaps/gnothello.png
 share/gnome/sol-games/camelot.scm
 share/gnome/sol-games/canfield.scm
 share/gnome/sol-games/clock.scm
@@ -165,6 +166,8 @@ share/locale/no/LC_MESSAGES/gnome-games.mo
 share/locale/pl/LC_MESSAGES/gnome-games.mo
 share/locale/pt/LC_MESSAGES/gnome-games.mo
 @dirrm include/gdkcardimage
+@dirrm share/gnome/help/aisleriot/C
+@dirrm share/gnome/help/aisleriot
 @dirrm share/gnome/help/gnobots/C
 @dirrm share/gnome/help/gnobots
 @dirrm share/gnome/pixmaps/cards/backs

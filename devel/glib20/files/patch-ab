@@ -45,7 +45,7 @@
 -libglib_la_LDFLAGS = \
 -	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE) -release $(LT_RELEASE)
 +libglib11d_la_LDFLAGS = \
-+	-version-info 1:1:0
++	-version-info 2:0:0
  
  noinst_PROGRAMS = testglib testgdate testgdateparser
 -testglib_LDADD = libglib.la
@@ -229,7 +229,7 @@
  	@G_MODULE_LDFLAGS@ \
 -	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE) \
 -	-release $(LT_RELEASE)
-+	-version-info 1:1:0
++	-version-info 2:0:0
  
 -libgmodule_la_LIBADD = @G_MODULE_LIBS@ # $(libglib)
 +libgmodule11d_la_LIBADD = @G_MODULE_LIBS@ # $(libglib)
@@ -348,7 +348,7 @@
 -	-release $(LT_RELEASE)
 +libgthread11d_la_SOURCES = gthread.c
 +libgthread11d_la_LDFLAGS = \
-+	-version-info 1:1:0
++	-version-info 2:0:0
  
 -libgthread_la_LIBADD = @G_THREAD_LIBS@
 +libgthread11d_la_LIBADD = @G_THREAD_LIBS@
