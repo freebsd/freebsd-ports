@@ -1,0 +1,10 @@
+--- wwwstat.rc.orig	Sun Mar  2 18:49:48 1997
++++ wwwstat.rc	Sun Mar  2 18:52:17 1997
+@@ -93,6 +93,7 @@
+ # Specify the default location of your access log
+ #
+ ##  $DefaultLog = '/usr/local/etc/httpd/logs/access_log';
++$DefaultLog = '/var/log/httpd-access.log';
+ #
+ # Specify the command for displaying compressed files to STDOUT
+ #

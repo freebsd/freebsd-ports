@@ -1,0 +1,10 @@
+bin/monthly
+bin/oldlog2new
+bin/splitlog
+bin/wwwerrs
+bin/wwwstat
+lib/perl5/site_perl/i386-freebsd/domains.pl
+lib/perl5/site_perl/i386-freebsd/splitlog.rc
+lib/perl5/site_perl/i386-freebsd/wwwstat.rc
+man/man1/splitlog.1.gz
+man/man1/wwwstat.1.gz
