@@ -103,7 +103,8 @@ PLIST_SUB+=	WITH_VIDIX=""
 PLIST_SUB+=	WITH_VIDIX="@comment "
 .endif
 
-.if exists(${X11BASE}/lib/libXvMCNVIDIA.so.1)
+.if exists(${X11BASE}/lib/libXvMCNVIDIA.so.1) || defined(WITH_XVMC)
+CONFIGURE_ARGS+=--with-xvmc-lib=XvMCNVIDIA
 LIB_DEPENDS+=	XvMCNVIDIA.1:${PORTSDIR}/x11/nvidia-driver
 PLIST_SUB+=	WITH_XVMC=""
 .else
