@@ -11,8 +11,8 @@
 
 -33.55,		151.1,		"bde"				# Sydney, Australia.
 -37.7,		144.9,		"jb,danny,thepish,benno"	# Melbourne, Vic Australia
- 35.16,		139.67		"            ,tanimura"		# Yokosuka, Kanagawa, Japan
- 35.7,		139.6		"     knu"			# Tokyo, Japan
+ 35.16,		139.67,		"            ,tanimura"		# Yokosuka, Kanagawa, Japan
+ 35.7,		139.6,		"     knu"			# Tokyo, Japan
  35.54,		139.53,		"        ,ume"			# Yokohama, Kanagawa, Japan
 -34.14,		138.77,		"grog"				# (CORE) Echunga, SA Australia
 -34.53,		138.35,		"newton, markp"	align=left	# Adelaide, SA Australia
@@ -37,21 +37,20 @@
  56.107165,	10.194201,	"jesper"			# Aarhus, Denmark
  53.56,		10.02,		"cracauer"			# Hamburg, Germany
  53.64,		9.84,		"hm"		align=left	# Rellingen, Germany
- 53.33,		9.59		"stb"				# Hamburg, Germany
- 49.00,     9.5         "schweikh"          # Weinstadt, Germany
- 51.20,		9.20		"dinoex"			# Habichtswald, Germany
+ 53.33,		9.59,		"stb"				# Hamburg, Germany
+ 49.00,		9.5,		"schweikh"			# Weinstadt, Germany
+ 51.20,		9.20,		"dinoex"			# Habichtswald, Germany
  45.27,		9.17,		"olgeni"			# Milano, Italy
  50.1025,	8.6841,		"tomsoft"			# Frankfurt, Hessen, Germany
  51.32,		7.27,		"ue"				# Dortmund, Germany
  50.92,		6.95,		"se"				# Cologne, Germany
- 51.3,		6.75		"alex"		align=left	# Meerbusch, Germany
+ 51.3,		6.75,		"alex"		align=left	# Meerbusch, Germany
  50.70,		6.2,		"tg"				# Aachen, Germany
  51.98,		5.96,		"wilko"				# Arnhem, The Netherlands
  51.25,		5.30,		"guido"		align=left	# Eindhoven, the Netherlands
- 48.36,		2.99		"charnier"	align=left	# Cannes Ecluse, France
+ 48.36,		2.99,		"charnier"	align=left	# Cannes Ecluse, France
  48.7,		2.17,		"roberto"			# Les Ulis, France
  51.67,		0.61,		" brian,markm"			# Amersham, Bucks, UK
- 51.29,		-3.10		"ceri"				# Cardiff, UK
  50.84121667,	0.128383333,	"joe"				# Brighton, East Sussex, UK
  51.5,		0.0,		" dfr"				# (CORE) London, UK
  51.0,		0.0,		"greid"		align=left	# Farnborough, Hampshire, UK
@@ -59,6 +58,7 @@
  51.50,		-0.48,		"nik"		align=left	# West Drayton, Middx., UK
  53.22,		-1.29,		"ben"				# Sheffield, Yorkshire, UK
  51.44,		-2.06,		"marko"		align=left	# Chippenham, Wiltshire, UK
+ 51.29,		-3.10,		"ceri"				# Cardiff, UK
  55.87,		-4.26,		"roger"				# Glasgow, UK
  56.0,		-4.5,		"gary"		align=left	# Glasgow, UK
  52.01,		-0.75,		"tom"		align=left	# Milton Keynes, UK
@@ -68,15 +68,15 @@
  42.1411,	-70.8453,	"jeh"				# Hanover, MA, USA
  42.34,		-71.19,		"wollman"			# Brighton, MA, USA
  42.727,	-73.676,	"dec,jon,gad"			# RPI @ Troy, NY, USA
- 40.087174	-75.150324	"pat"				# Wyncote, PA, USA
+ 40.087174,	-75.150324,	"pat"				# Wyncote, PA, USA
  40.198307,	-75.370454,	"petef"				# Worcester, PA, USA
- 45.3991,	-75.6942	"jake"				# Ottawa, ON, Canada
+ 45.3991,	-75.6942,	"jake"				# Ottawa, ON, Canada
  38.75,		-76.87,		"   ,green"			# Clinton, MD, USA
  39.00,		-76.88,		"         ,chuckr"		# Greenbelt, MD, USA
  39.2,		-77.0,		"jmb,gpalmer"			# Silver Spring, MD, USA
  38.981024,	-77.119791,	"rwatson"			# (CORE) Bethesda, MD, USA
  43.09,		-77.68,		"jseger"			# Rochester, NY, USA
- 35.73,		-78.91		"bsd"				# Apex, NC, USA
+ 35.73,		-78.91,		"bsd"				# Apex, NC, USA
  43.37,		-79.79,		"hoek"				# Burlington, ON, Canada
 #37.23,		-80.41,		"jhb"				# Blacksburg, VA, USA
  29.16,		-82.18,		"jedgar"			# Ocala, FL, USA
@@ -86,7 +86,7 @@
  44.99,		-93.25,		"mpp,mks"			# Minneapolis, MN, USA
  44.59556,	-93.15372,	"       ,nectar"		# Minneapolis, MN, USA
  42.02,		-93.67,		"ghelmer"			# Ames, IA, USA
- 29.834,	-95.00		"     ,chris"			# Houston, TX, USA
+ 29.834,	-95.00,		"     ,chris"			# Houston, TX, USA
  29.7,		-95.4,		"rich"				# Houston, TX, USA
  30.427,	-97.753,	"   ,dbaker"			# Austin, TX, USA
  30.192,	-97.881,	"ade"				# Austin, TX, USA
@@ -95,8 +95,8 @@
  40.55,		-111.90,	"wes"				# South Jordan, UT, USA
  46.59,		-112.04,	"nate"				# Helena, MT, USA
  51.09,		-114.12,	"cpiazza"			# Calgary, AB, Canada
- 34.13,		-118.12		"mph"				# Pasadena, CA, USA
- 33.66,		-117.80		"dd"				# Irvine, CA, USA
+ 34.13,		-118.12,	"mph"				# Pasadena, CA, USA
+ 33.66,		-117.80,	"dd"				# Irvine, CA, USA
  33.83,		-118.22,	"             ,trevor"		# Dominguez, CA, USA
  34.11,		-118.29,	"       ,kris"			# Los Angeles, CA, USA
  39.25,		-121.02,	"truckman"			# Nevada City, CA, USA
@@ -104,7 +104,7 @@
  37.32,		-121.94,	"jmg"				# San Jose, CA, USA
  37.40,		-121.94,	"alfred"			# Santa Clara, CA, USA
  37.75573,	-121.947116,	"peter"				# (CORE) San Ramon, CA, USA
- 37.4014	-121.9544	"cjc"				# Santa Clara, CA, USA
+ 37.4014,	-121.9544,	"cjc"				# Santa Clara, CA, USA
  37.329278,	-121.962306,	"nsayer"			# Santa Clara, CA, USA
  37.4,		-122.0,		"asami"				# (CORE) Santa Clara, CA, USA
  37.68,		-122.03,	"bmah"				# Castro Valley, CA, USA
@@ -119,6 +119,6 @@
 #37.80,		-122.43,	"julian"			# Downtown San Francisco, CA, USA
  37.77,		-122.44,	"archie"			# Haight, San Francisco, CA, USA
  45.5,		-122.6,		"dg"				# (CORE) near Portland, OR, USA
- 44.04  	-123.06		"anholt"			# Eugene, OR, USA
+ 44.04, 	-123.06,	"anholt"			# Eugene, OR, USA
  48.3898,	-123.4875,	"cy"				# Victoria, BC, Canada
  40.0,		-123.5,		"jkh"				# (CORE) Miranda, CA, USA
