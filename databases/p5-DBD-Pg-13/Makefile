@@ -27,7 +27,7 @@ MAN3=		DBD::Pg.3 DBD::dbd-pg.3
 .include <bsd.port.mk>
 
 .if defined(WITH_OLD_LAYOUT)
-CONFIGURE_ENV+=	POSTGRES_INCLUDE=${LOCALBASE}/include/pgsql \
+CONFIGURE_ENV+=	POSTGRES_INCLUDE=${LOCALBASE}/include \
 		POSTGRES_LIB=${LOCALBASE}/lib
 .else
 .if exists(${LOCALBASE}/pgsql/bin/pg_config)
