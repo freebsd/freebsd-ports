@@ -1,0 +1,10 @@
+This port builds a driver for several devices which communicate using Ethernet
+over USB (CDC Ethernet specification).  It does not yet include support for
+more advanced devices such as cable modems, but is sufficient to talk to
+several Linux-based PDAs.
+
+This driver has been confirmed to work with Sharp Zaurus and YOPY handhelds.
+
+It currently only works on FreeBSD 5.3 or later.
+
+WWW: http://www.gank.org/freebsd/cdce/

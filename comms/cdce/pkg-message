@@ -1,0 +1,11 @@
+*******************************************************************************
+* Please add the line                                                         *
+*                                                                             *
+*    if_cdce_load="YES"                                                       *
+*                                                                             *
+* to /boot/loader.conf if you wish the driver to be loaded at system startup. *
+*******************************************************************************
+* This port contains a prebuilt kernel module. Due to the ever changing       *
+* nature of FreeBSD it may be necessary to rebuild the module after a kernel  *
+* source update.  To do this, reinstall the port.                             *
+*******************************************************************************

@@ -1,0 +1,23 @@
+#!/bin/sh
+#
+# Unload cdce kernel module if necessary
+#
+# $FreeBSD$
+#
+
+if [ "x$2" != "xDEINSTALL" ]; then
+	exit 0
+fi
+
+echo "Disabling if_cdce."
+
+# Unload if_cdce kernel module
+kldstat -n if_cdce 2>/dev/null >/dev/null && kldunload if_cdce
+
+# Remove kernel module
+if [ `sysctl -n kern.osreldate` -ge 500000 ]; then
+	KMODDIR="/boot/modules"
+else
+	KMODDIR="/modules"
+fi
+[ -f ${KMODDIR}/if_cdce.ko ] && rm -f ${KMODDIR}/if_cdce.ko
