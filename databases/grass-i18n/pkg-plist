@@ -4460,7 +4460,6 @@ grass5/txt/WEIGHT/syntax
 @dirrm grass5/man/man1
 @dirrm grass5/man/help
 @dirrm grass5/man
-@dirrm grass5/locks/%%HOSTNAME%%
 @dirrm grass5/locks
 @dirrm grass5/locale/ru/LC_MESSAGES
 @dirrm grass5/locale/ru

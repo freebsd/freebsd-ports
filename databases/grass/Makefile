@@ -7,7 +7,7 @@
 
 PORTNAME=	grass
 PORTVERSION=	5.0.2
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://grass.itc.it/grass50/source/ \
@@ -46,6 +46,7 @@ USE_PERL5=	yes
 USE_BISON=	yes
 USE_GMAKE=	yes
 USE_AUTOCONF_VER=	213
+USE_REINPLACE=	yes
 CONFIGURE_ARGS=	--with-includes=${LOCALBASE}/include \
 		--with-libs=${LOCALBASE}/lib \
 		--with-tcltk-includes="${LOCALBASE}/include/tcl8.3 \
@@ -59,17 +60,12 @@ CONFIGURE_ARGS=	--with-includes=${LOCALBASE}/include \
 		--with-lapack \
 		--with-nls \
 		--without-motif
-CONFIGURE_ENV=	LIBS="${PTHREAD_LIBS}"
-CFLAGS+=	${PTHREAD_CFLAGS}
 
-HOSTNAME!=	hostname
-PLIST_SUB=	HOSTNAME="${HOSTNAME}"
+post-patch:
+	@${REINPLACE_CMD} -e 's,%%PTHREAD_CFLAGS%%,${PTHREAD_CFLAGS},' \
+		-e 's,%%PTHREAD_LIBS%%,${PTHREAD_LIBS},' ${WRKSRC}/configure.in
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502000
-BROKEN=		"Broken pkg-plist"
-.endif
 
 post-install:
 	-(cd ${PREFIX} && ${GREP} -v "@" ${PLIST} | \
