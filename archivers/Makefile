@@ -1,9 +1,10 @@
-# $Id: Makefile,v 1.21 1999/04/02 04:19:42 steve Exp $
+# $Id: Makefile,v 1.22 1999/04/30 04:41:53 taoka Exp $
 #
 
     SUBDIR += arc
     SUBDIR += bzip
     SUBDIR += bzip2
+    SUBDIR += deepforest
     SUBDIR += freeze
     SUBDIR += gshar+gunshar
     SUBDIR += ha

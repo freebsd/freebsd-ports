@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.73 1999/04/30 23:06:46 asami Exp $
+# $Id: Makefile,v 1.74 1999/05/04 13:01:33 dburr Exp $
 #
 
     SUBDIR += AbiWord
@@ -27,6 +27,7 @@
     SUBDIR += le
     SUBDIR += leim20
     SUBDIR += lpe
+    SUBDIR += muggy
     SUBDIR += mule
     SUBDIR += mule-common
     SUBDIR += nedit

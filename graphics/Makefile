@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.120 1999/04/12 08:18:19 asami Exp $
+# $Id: Makefile,v 1.121 1999/05/03 04:28:30 steve Exp $
 #
 
     SUBDIR += 4va
@@ -51,6 +51,7 @@
     SUBDIR += hpscan
     SUBDIR += imlib
     SUBDIR += jbigkit
+    SUBDIR += jgv
     SUBDIR += jpeg
     SUBDIR += kdegraphics
     SUBDIR += kdegraphics11

@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.195 1999/04/27 12:45:50 taoka Exp $
+# $Id: Makefile,v 1.196 1999/05/03 04:14:07 steve Exp $
 #
 
     SUBDIR += Canna
@@ -8,12 +8,14 @@
     SUBDIR += Wnn6-lib
     SUBDIR += a2ps
     SUBDIR += ack
+    SUBDIR += binder
     SUBDIR += bookview
     SUBDIR += camltk41
     SUBDIR += canuum
     SUBDIR += cdrom2
     SUBDIR += chasen
     SUBDIR += chimera
+    SUBDIR += deepforest
     SUBDIR += diclookup-mule
     SUBDIR += dserver
     SUBDIR += dvi2dvi
@@ -52,6 +54,7 @@
     SUBDIR += iv
     SUBDIR += japaneseAFM
     SUBDIR += jcode.pl
+    SUBDIR += jgv
     SUBDIR += jhd
     SUBDIR += jls
     SUBDIR += jtex209-ascii
@@ -115,6 +118,7 @@
     SUBDIR += mnews
     SUBDIR += mnews-gnspool
     SUBDIR += mtools
+    SUBDIR += muggy
     SUBDIR += mule-canna
     SUBDIR += mule-canna+sj3
     SUBDIR += mule-canna+sj3+wnn4
@@ -174,9 +178,11 @@
     SUBDIR += ptex-sjis
     SUBDIR += qkc
     SUBDIR += recjis
+    SUBDIR += recycler
     SUBDIR += rubytk
     SUBDIR += rxvt
     SUBDIR += sed
+    SUBDIR += seizedesktop
     SUBDIR += sj3
     SUBDIR += sjxa
     SUBDIR += skk
