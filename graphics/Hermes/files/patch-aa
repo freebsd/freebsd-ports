@@ -1,0 +1,19 @@
+--- src/Makefile.in.orig	Fri Jul 21 03:38:08 2000
++++ src/Makefile.in	Tue Aug 22 21:50:03 2000
+@@ -406,13 +406,13 @@
+ 
+ 
+ .S.lo:
+-	gcc -c -o $@ $<
++	$(CC) -c -o $@ $<
+ 	cp $@ `echo $@ | sed -e 's/\.lo$$/.o/'`
+ 
+ install-data-local:
+-	$(INSTALL) -m 0755 -d $(includedir)/Hermes
++	$(mkinstalldirs) $(DESTDIR)$(includedir)/Hermes
+ 	for incfile in $(publicheaders); do \
+-	  $(INSTALL) -m 0644 $$incfile $(includedir)/Hermes; \
++	  $(INSTALL_DATA) $$incfile $(includedir)/Hermes; \
+ 	done
+ 
+ uninstall-local:

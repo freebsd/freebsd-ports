@@ -12,7 +12,6 @@ lib/libHermes.so
 lib/libHermes.so.1
 share/doc/Hermes/AUTHORS
 share/doc/Hermes/ChangeLog
-share/doc/Hermes/COPYING
 share/doc/Hermes/FAQ
 share/doc/Hermes/README
 share/doc/Hermes/TODO
