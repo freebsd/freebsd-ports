@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=		gambas
-PORTVERSION=		0.93b
-PORTREVISION?=	1
+PORTVERSION=		0.94a
 CATEGORIES=		lang
 MASTER_SITES=		http://gambas.sourceforge.net/
 
@@ -36,6 +35,7 @@ LIBS2FIX=		libqt-mt libkdecore libkdeui libDCOP libkio
 SRC2FIX1=		configure src/comp/gbi.c src/exec/gbx_library.c
 SRC2FIX2=		src/comp/gbc_archive.c src/comp/gbi.c		\
 			src/exec/gbx_library.c src/share/gb_component.h
+SRC2FIX3=		Makefile.in src/exec/gbx_project.c
 
 .if !defined(WITHOUT_SDL)
 USE_SDL=		mixer
@@ -48,6 +48,10 @@ PLIST_SUB+=		SDL="@comment "
 .endif
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=	"Does not compile with gcc-2.95"
+.endif
 
 .for lib in ${LIBS2FIX}
 NEW${lib:U}!=	${LDCONFIG} -r | ${GREP} ${lib} | ${GREP} -v 'compat/pkg'	\
@@ -68,10 +72,10 @@ CONFIGURE_ARGS+=	--without-postgresql-includes				\
 PLIST_SUB+=		PGSQL="@comment "
 .endif
 
-.if exists(${LOCALBASE}/include/sqlite.h) && ${OSVERSION} > 500000
+.if exists(${LOCALBASE}/include/sqlite.h)
 WITH_SQLITE=		yes
 .endif
-.if defined(WITH_SQLITE) && ${OSVERSION} > 500000
+.if defined(WITH_SQLITE)
 LIB_DEPENDS+=		sqlite.2:${PORTSDIR}/databases/sqlite
 CONFIGURE_ARGS+=	--with-sqlite-includes=${LOCALBASE}/include		\
 			--with-sqlite-libraries=${LOCALBASE}/lib
@@ -94,9 +98,11 @@ pre-configure:
 	@${REINPLACE_CMD} -e "s|/usr/bin/gb|${PREFIX}/bin/gb|g"	\
 		${WRKSRC}/${src}
 .endfor
+.for src in ${SRC2FIX3}
+	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g"	${WRKSRC}/${src}
+.endfor
 .if !defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -e "s|# FreeBSD-Doc-Comment||" ${WRKSRC}/Makefile.in
 .endif
-	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/Makefile.in
 
 .include <bsd.port.post.mk>
