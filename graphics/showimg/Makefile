@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	showimg
-PORTVERSION=	0.9.1
+PORTVERSION=	0.9.2
 PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.jalix.org/projects/showimg/download/${PORTVERSION}/
@@ -19,12 +19,17 @@ USE_BZIP2=	yes
 USE_KDEBASE_VER=	3
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
-		AUTOHEADER="${TRUE}"
+USE_REINPLACE=	yes
 
 MAN1=		showimg.1
 
 OPTIONS=	DIGIKAM "Digikam plugins support" off
+
+post-extract:
+	@${TOUCH} ${WRKSRC}/config.h.in
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|-O2||g' ${WRKSRC}/${CONFIGURE_SCRIPT}
 
 .include <bsd.port.pre.mk>
 

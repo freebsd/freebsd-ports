@@ -70,6 +70,7 @@ share/apps/showimg/pics/layout3.png
 share/apps/showimg/pics/layout4.png
 share/apps/showimg/pics/logo.png
 share/apps/showimg/showimgui.rc
+share/apps/showimg/tips
 share/doc/HTML/de/showimg/but-back.png
 share/doc/HTML/de/showimg/but-copy.png
 share/doc/HTML/de/showimg/but-cut.png
@@ -162,8 +163,21 @@ share/locale/tr/LC_MESSAGES/showimg.mo
 share/locale/zh_CN/LC_MESSAGES/showimg.mo
 share/mimelnk/image/x-psd.desktop
 share/mimelnk/image/x-sia.desktop
+@unexec rmdir %D/share/mimelnk/image 2>/dev/null || true
+@unexec rmdir %D/share/mimelnk 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/64x64/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/64x64 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/48x48/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/48x48 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/32x32/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/32x32 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor 2>/dev/null || true
+@unexec rmdir %D/share/icons 2>/dev/null || true
 @dirrm share/doc/HTML/en/showimg
+@unexec rmdir %D/share/doc/HTML/en 2>/dev/null || true
 @dirrm share/doc/HTML/de/showimg
+@unexec rmdir %D/share/doc/HTML/de 2>/dev/null || true
+@unexec rmdir %D/share/doc/HTML 2>/dev/null || true
 @dirrm share/apps/showimg/pics
 @dirrm share/apps/showimg/icons/hicolor/64x64/mimetypes
 @dirrm share/apps/showimg/icons/hicolor/64x64
@@ -187,3 +201,8 @@ share/mimelnk/image/x-sia.desktop
 @dirrm share/apps/showimg/icons/crystalsvg
 @dirrm share/apps/showimg/icons
 @dirrm share/apps/showimg
+@unexec rmdir %D/share/apps/konqueror/servicemenus 2>/dev/null || true
+@unexec rmdir %D/share/apps/konqueror 2>/dev/null || true
+@unexec rmdir %D/share/apps 2>/dev/null || true
+@unexec rmdir %D/share/applnk/Graphics 2>/dev/null || true
+@unexec rmdir %D/share/applnk 2>/dev/null || true
