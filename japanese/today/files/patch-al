@@ -1,0 +1,22 @@
+--- cunix.h.orig	Tue Feb 15 03:17:23 2000
++++ cunix.h	Sun Feb 13 16:38:34 2000
+@@ -38,7 +38,9 @@
+ #define _T_FPBUFSIZE		(64 * 1024)	/* fopen バッファ長 */
+ #define _T_TMPENV			"temp"		/* temporary 環境変数名 */
+ #define _T_TMPDIR			"/tmp"		/* temporary directory */
+-#define _T_SEARCH_CMDPATH	"/usr/local/lib:/usr/lib"
++#ifndef _T_SEARCH_CMDPATH
++#define _T_SEARCH_CMDPATH	"/usr/local/etc"
++#endif
+ #define _T_HOMEENV			"HOME"		/* home 環境変数 */
+ #define _T_PATHSEPARATOR	":"			/* path list separator char */
+ #define _T_PATHSEP_CHR		':'			/* path list separator char */
+@@ -53,7 +55,7 @@
+ #define _T_OUTFILE_DEFAULT	"%c%y%m%d.today"
+ #define _T_OUTFILE_TMPNAME	"%p.today"
+ 
+-#if defined(linux)
++#if defined(linux) || defined(__FreeBSD__)
+ #define _T_ACCESS_ROK	R_OK
+ #define strnicmp		strncasecmp
+ #else

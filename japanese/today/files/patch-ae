@@ -1,39 +1,11 @@
---- main.c.orig	Fri Sep 19 20:27:37 1997
-+++ main.c	Fri Sep 19 20:27:01 1997
-@@ -18,7 +18,14 @@
- #include "date.h"
- #include "event.h"
- #include "getfile.h"
--#include "getopt.h"
-+#ifdef __FreeBSD__
-+/* FreeBSD version 2.x and earlier has them defined in stdlib.h */
-+  #if __FreeBSD__ >= 3
-+    #include <unistd.h>
-+  #endif
-+#else
-+  #include "getopt.h"
-+#endif
- #include "history.h"
- #include "kyureki.h"
- #include "machine.h"
-@@ -710,7 +717,7 @@
+--- main.c.orig	Sun Mar 14 00:00:00 1999
++++ main.c	Sun Feb 13 15:51:22 2000
+@@ -228,7 +228,7 @@
  
  	va_start(ap, fmt);
  
--	fprintf(stderr, "today: ", func);
-+	fprintf(stderr, "today: %s", func);
+-	fprintf(stderr, "today: ");
++	fprintf(stderr, "today: %s");
  	if (level != ERR_INFO) {
  		fprintf(stderr, "%s: ", statname[level - ERR_WARN]);
  	}
-@@ -726,7 +733,11 @@
- /*
-  * インタラプトやエラーによるプログラム中断処理
-  */
-+#ifndef __FreeBSD__
- void	terminate_program(int sig, int subcode)
-+#else
-+void	terminate_program(int sig)
-+#endif
- {
- 	switch (sig) {
- 	case SIGINT:

@@ -1,96 +1,81 @@
 #
 # Makefile for today
 #
+# $FreeBSD$
 
-CFLAGS += -DDISTRIBUTE -DMSG_STYLE
-PROGRAM = today
-MANPAGE = today.1
-PREFIX = /usr/local
-MANDIR = ${PREFIX}/man/ja/cat1
-OBJSMV = birthday.o config.o date.o event.o getfile.o getsb.o \
-	 history.o kansi.o kyureki.o kyusei.o list.o machine.o \
-	 main.o misc.o pager.o rdcalendar.o schedule.o sekki.o sepparam.o
-OBJS = $(OBJSMV) version.o
-OBJS2 = calendar.o config.o getfile.o getsb.o kyureki2.o misc2.o \
-	rdcalendar.o schedule2.o
+CC ?= cc
+CFLAGS += -DTRANS -DMSG_STYLE -DINTERNAL_KYUREKI_TBL -D_T_SEARCH_CMDPATH=\"${PREFIX}/etc\" #-DUSE_TERMCAP
+LDLIBS = -lm #-ltermcap
 
-all: ${PROGRAM} calendar-today dayinfo
+HFILES = cdefs.h chu68k.h cmsdos.h cunix.h cwin32.h extern.h
+        
+OBJST1 = birthday.o config.o date.o event.o getfile.o \
+  getsb.o history.o kansi.o kyureki.o \
+  kyusei.o list.o machine.o main.o misc.o
+OBJST2 = pager.o rdcalend.o rekichu.o schedule.o sekki.o \
+  sepparam.o
+OBJS_TDY = $(OBJST1) $(OBJST2) version.o
+OBJSC1 = config.o getfile.o getsb.o kyureki2.o \
+  misc2.o rdcalend.o schedule2.o
+OBJS_CAL = calendar.o $(OBJSC1)
 
-install: ${PROGRAM} calendar-today dayinfo
-	${INSTALL} -c -o bin -s ${PROGRAM} ${PREFIX}/bin
-	${INSTALL} -c -o bin -s calendar-today ${PREFIX}/bin
-	${INSTALL} -c -o bin -s dayinfo ${PREFIX}/bin
-	mkdir -p ${MANDIR}
-	cp today.doc ${MANPAGE}
-	${INSTALL} -c -m 644 ${MANPAGE} ${MANDIR}
-.if !defined(NOMANCOMPRESS)
-	gzip -9nf ${MANDIR}/${MANPAGE}
-.endif
-	mkdir -p ${PREFIX}/lib
-	${INSTALL} -c -m 644 -o bin today.cnf ${PREFIX}/lib
+
+all: today calendar dayinfo
+
+install: today calendar dayinfo
+	${BSD_INSTALL_PROGRAM} today ${PREFIX}/bin/today
+	${BSD_INSTALL_PROGRAM} calendar ${PREFIX}/bin/calendar-today
+	${BSD_INSTALL_PROGRAM} dayinfo ${PREFIX}/bin/dayinfo
+	${BSD_INSTALL_DATA} today.cnf ${PREFIX}/etc
 	mkdir -p ${PREFIX}/share/today
-	${INSTALL} -c -m 644 -o bin *.tbl ${PREFIX}/share/today
+	${BSD_INSTALL_DATA} *.tbl ${PREFIX}/share/today
+	mkdir -p ${PREFIX}/share/doc/ja/today
+	${BSD_INSTALL_DATA} today.doc ${PREFIX}/share/doc/ja/today
+
+calendar: $(OBJS_CAL)
+	$(CC) $(OBJS_CAL) $(LDLIBS) -o $@
+       
+today: $(OBJS_TDY)
+	$(CC) $(OBJS_TDY) $(LDLIBS) -o $@
+
+dayinfo: dayinfo.c
+	$(CC) $(CFLAGS) $(LDLIBS) $? -o $@
+
+clean:
+	rm -f *.o core dayinfo calendar today
 
 
-
-today : $(OBJS)
-	$(CC) $(OBJS) -lm -o $@
-
-calendar-today : $(OBJS2)
-	$(CC) $(OBJS2) -lm -o $@
-
-dayinfo : dayinfo.c
-	$(CC) $(CFLAGS) -lm $? -o $@
-
-#inreki : inreki.c inreki.h
-#	$(CC) $(CFLAGS) -DSTANDALONE $? -o $@
-#kansi : kansi.c kansi.h
-#	$(CC) $(CFLAGS) -DSTANDALONE -DDEBUG $? -o $@
-#kyusei : kyusei.c kyusei.h
-#	$(CC) $(CFLAGS) -DSTANDALONE $? -o $@
-
-clean :
-	rm -f *.o core calendar-today dayinfo inreki kansi kyusei today
-
-
-birthday.o : birthday.c common.h main.h birthday.h getfile.h list.h misc.h \
-	pager.h
-calendar.o : calendar.c common.h config.h getfile.h getopt.h getsb.h \
-	kyureki.h misc.h rdcalendar.h schedule.h
+birthday.o: birthday.c $(HFILES)
+calendar.o: calendar.c $(HFILES) $(OBJSC1)
 	$(CC) $(CFLAGS) -DINCLUDE_CALENDAR -c -o $@ calendar.c
 
-config.o : config.c common.h config.h getfile.h
-date.o : date.c common.h main.h date.h kansi.h kyusei.h misc.h pager.h \
-	tide_tbl.c
-event.o : event.c common.h main.h event.h getfile.h getsb.h kyureki.h list.h \
-	misc.h pager.h sekki.h sepparam.h
-getfile.o : getfile.c common.h getfile.h
-getopt.o : getopt.c getopt.h
-getsb.o : getsb.c getsb.h sb_tbl.c
-history.o : history.c common.h main.h getfile.h history.h list.h misc.h pager.h
-#inreki.o : inreki.c inreki.h
-kansi.o : kansi.c kansi.h
-kyureki.o : kyureki.c common.h main.h getfile.h kyureki.h misc.h kyutbl.c
-kyureki2.o : kyureki.c common.h main.h getfile.h kyureki.h misc.h kyutbl.c
+config.o: config.c $(HFILES)
+date.o: date.c $(HFILES)
+event.o: event.c $(HFILES)
+getfile.o: getfile.c $(HFILES)
+getopt.o: getopt.c $(HFILES)
+getsb.o: getsb.c $(HFILES)
+history.o: history.c $(HFILES)
+kansi.o: kansi.c $(HFILES)
+kyureki.o: kyureki.c $(HFILES) kyutbl.c
+kyureki2.o: kyureki.c $(HFILES) kyutbl.c
 	$(CC) $(CFLAGS) -DINCLUDE_CALENDAR -c -o $@ kyureki.c
 
-kyusei.o : kyusei.c kyusei.h
-list.o : list.c list.h
-machine.o : machine.c common.h machine.h main.h
-main.o : main.c common.h main.h birthday.h config.h date.h event.h getfile.h \
-	getopt.h history.h kyureki.h machine.h misc.h pager.h rdcalendar.h \
-	schedule.h version.h
-misc.o : misc.c common.h main.h getfile.h kyureki.h misc.h
-misc2.o : misc.c common.h main.h getfile.h kyureki.h misc.h
+kyusei.o: kyusei.c $(HFILES)
+list.o: list.c $(HFILES)
+machine.o: machine.c $(HFILES)
+main.o: main.c $(HFILES)
+misc.o: misc.c $(HFILES)
+misc2.o: misc.c $(HFILES)
 	$(CC) $(CFLAGS) -DINCLUDE_CALENDAR -c -o $@ misc.c
 
-pager.o : pager.c common.h main.h getfile.h misc.h pager.h
-rdcalendar.o : rdcalendar.c common.h rdcalendar.h
-schedule.o : schedule.c common.h main.h getfile.h list.h misc.h pager.h \
-	schedule.h
-schedule2.o : schedule.c common.h main.h getfile.h misc.h schedule.h
+pager.o: pager.c $(HFILES)
+rdcalend.o: rdcalend.c $(HFILES)
+rekichu.o: rekichu.c $(HFILES)
+schedule.o: schedule.c $(HFILES)
+schedule2.o: schedule.c $(HFILES)
 	$(CC) $(CFLAGS) -DINCLUDE_CALENDAR -c -o $@ schedule.c
 
-sekki.o : sekki.c sekki.h
-sepparam.o : sepparam.c sepparam.h
-version.o : version.c version.h $(OBJSMV)
+sekki.o: sekki.c $(HFILES)
+sepparam.o: sepparam.c $(HFILES)
+version.o: version.c $(HFILES) $(OBJST1) $(OBJST2)

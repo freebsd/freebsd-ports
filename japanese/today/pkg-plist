@@ -1,8 +1,8 @@
 bin/today
 bin/calendar-today
 bin/dayinfo
-man/ja/cat1/today.1.gz
-lib/today.cnf
+etc/today.cnf
+share/doc/ja/today/today.doc
 share/today/birthday.tbl
 share/today/event01.tbl
 share/today/event02.tbl
@@ -33,7 +33,11 @@ share/today/hist12.tbl
 share/today/history.tbl
 share/today/holiday.tbl
 share/today/kyureki.tbl
-share/today/magazin.tbl
+share/today/magazine.tbl
 share/today/monthly.tbl
+share/today/schedule.tbl
+share/today/sekki.tbl
+share/today/suffix.tbl
 share/today/week.tbl
 @dirrm share/today
+@dirrm share/doc/ja/today
