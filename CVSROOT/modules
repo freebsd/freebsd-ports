@@ -1479,6 +1479,7 @@ ext_srvtab	src/eBones/ext_srvtab
 extace		ports/audio/extace
 extattrctl	src/usr.sbin/extattrctl
 extipl		ports/sysutils/extipl
+exult		ports/games/exult
 eyeclock	ports/x11-clocks/eyeclock
 ezbounce	ports/irc/ezbounce
 ezfm		ports/x11-fm/ezfm
