@@ -1,0 +1,69 @@
+diff -ur gui/djview/Makefile.in.ori gui/djview/Makefile.in
+--- gui/djview/Makefile.in.ori	Fri Jan 24 14:02:11 2003
++++ gui/djview/Makefile.in	Fri Aug  1 14:59:13 2003
+@@ -50,7 +50,10 @@
+ X_CFLAGS = @X_CFLAGS@
+ 
+ LIBDJVU_A = ${top_builddir}/libdjvu/libdjvulibre.a
+-LIBDJVU_SO = ${top_builddir}/libdjvu/libdjvulibre-${PACKAGE_VERSION}.so
++LIBDJVU_SO = ${top_builddir}/libdjvu/libdjvulibre${PACKAGE_VERSION:R:R}.so.${PACKAGE_VERSION:R:E}
++.if defined(OBJFORMAT) && ${OBJFORMAT} == "aout"
++LIBDJVU_SO:= ${LIBDJVU_SO}.${PACKAGE_VERSION:E}
++.endif
+ @SHARED_YES@LIBDJVU = -Wl,-rpath,${libdir} ${LIBDJVU_SO}
+ @SHARED_NO@LIBDJVU = ${LIBDJVU_A}
+ 
+diff -ur gui/nsdejavu/Makefile.in.ori gui/nsdejavu/Makefile.in
+--- gui/nsdejavu/Makefile.in.ori	Fri Aug  1 16:55:31 2003
++++ gui/nsdejavu/Makefile.in	Fri Aug  1 16:56:55 2003
+@@ -25,7 +25,7 @@
+ datadir = @datadir@
+ libdir = @libdir@
+ mandir = @mandir@
+-plugindir = ${libdir}/netscape/plugins
++plugindir = ${libdir}/browser_plugins/plugins
+ 
+ CC = @CC@
+ CXX = @CXX@
+@@ -40,7 +40,7 @@
+ OPTS = @OPTS@
+ NSDEJAVU = @NSDEJAVU@
+ NSDEJAVU_FLAGS = @NSDEJAVU_FLAGS@
+-NSDEJAVU_LIBS = @NSDEJAVU_LIBS@
++NSDEJAVU_LIBS = @NSDEJAVU_LIBS@ -lXt
+ NSDEJAVU_LINK = @NSDEJAVU_LINK@
+ 
+ INCS = \
+diff -ur libdjvu/Makefile.in.ori libdjvu/Makefile.in
+--- libdjvu/Makefile.in.ori	Mon Jan  6 14:10:43 2003
++++ libdjvu/Makefile.in	Fri Aug  1 14:59:12 2003
+@@ -44,7 +44,11 @@
+ THREAD_CFLAGS = @THREAD_CFLAGS@
+ 
+ LIBDJVU_A = libdjvulibre.a
+-LIBDJVU_SO = libdjvulibre-${PACKAGE_VERSION}.so
++LIBDJVU_SO:= libdjvulibre${PACKAGE_VERSION:R:R}.so.${PACKAGE_VERSION:R:E}
++.if defined(OBJFORMAT) && ${OBJFORMAT} == "aout"
++LIBDJVU_SO:= ${LIBDJVU_SO}.${PACKAGE_VERSION:E}
++.endif
++
+ 
+ @SHARED_YES@CXXPICFLAGS = -fPIC -DPIC
+ @SHARED_NO@CXXPICFLAGS =
+diff -ur tools/Makefile.in.ori tools/Makefile.in
+--- tools/Makefile.in.ori	Mon Jan  6 14:10:47 2003
++++ tools/Makefile.in	Fri Aug  1 14:59:13 2003
+@@ -44,7 +44,11 @@
+ THREAD_CFLAGS = @THREAD_CFLAGS@
+ 
+ LIBDJVU_A = ${top_builddir}/libdjvu/libdjvulibre.a
+-LIBDJVU_SO = ${top_builddir}/libdjvu/libdjvulibre-${PACKAGE_VERSION}.so
++LIBDJVU_SO = ${top_builddir}/libdjvu/libdjvulibre${PACKAGE_VERSION:R:R}.so.${PACKAGE_VERSION:R:E}
++.if defined(OBJFORMAT) && ${OBJFORMAT} == "aout"
++LIBDJVU_SO:= ${LIBDJVU_SO}.${PACKAGE_VERSION:E}
++.endif
++
+ 
+ @SHARED_YES@LIBDJVU = -Wl,-rpath,${libdir} ${LIBDJVU_SO}
+ @SHARED_NO@LIBDJVU = ${LIBDJVU_A}
+

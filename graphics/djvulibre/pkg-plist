@@ -14,7 +14,7 @@ bin/djvups
 bin/djvused
 bin/djvuserve
 bin/djvutxt
-lib/libdjvulibre3.so.5.4
+lib/libdjvulibre-3.5.12.so
 %%X11%%lib/browser_plugins/nsdejavu.so
 share/djvu/osi/Chinese_PRC/libdjvu++.xml
 share/djvu/osi/Chinese_PRC/messages.xml
