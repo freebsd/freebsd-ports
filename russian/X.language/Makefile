@@ -8,8 +8,9 @@
 
 DISTNAME=       ru-X11-3.3
 CATEGORIES=     russian x11
-MASTER_SITES=   ftp://ftp.kiarchive.ru/pub/misc/fonts/cyrillic/xwindows/
-DISTFILES=      x6rus-2.2.0-bin.tgz
+MASTER_SITES=   http://nagual.pp.ru/~ache/koi8/dist/ \
+		ftp://ftp.kiarchive.ru/pub/misc/fonts/cyrillic/xwindows/
+DISTFILES=      x6rus-2.3.1-bin.tgz
 
 .if defined(NON_FREE_FONTS)
 DISTFILES += Type1.koi8-r.tgz
