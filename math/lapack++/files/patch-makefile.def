@@ -29,8 +29,8 @@
 +#
 +# FreeBSD
 +#
-+BLAS_LIB = -lf77blas -latlas
-+LAPACK_LIB = -lalapack -lcblas 
++BLAS_LIB = %%BLAS_LIB%%
++LAPACK_LIB = %%LAPACK_LIB%%
  FLIBS = -lm -lg2c
  #
  # Sun
