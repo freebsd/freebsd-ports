@@ -5,6 +5,17 @@ share/doc/icecast/COPYING
 share/doc/icecast/NEWS
 share/doc/icecast/README
 share/doc/icecast/TODO
+share/doc/icecast/icecast2_TOC.html
+share/doc/icecast/icecast2_admin.html
+share/doc/icecast/icecast2_basicsetup.html
+share/doc/icecast/icecast2_config_file.html
+share/doc/icecast/icecast2_faq.html
+share/doc/icecast/icecast2_glossary.html
+share/doc/icecast/icecast2_introduction.html
+share/doc/icecast/icecast2_relay.html
+share/doc/icecast/icecast2_stats.html
+share/doc/icecast/icecast2_win32.html
+share/doc/icecast/icecast2_yp.html
 share/icecast/admin/listclients.xsl
 share/icecast/admin/listmounts.xsl
 share/icecast/admin/moveclients.xsl

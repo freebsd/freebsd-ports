@@ -6,13 +6,11 @@
 #
 
 PORTNAME=	icecast2
-PORTVERSION=	2.0.a.2.20030811
-PORTREVISION=	1
+PORTVERSION=	2.0.b.2
 PORTEPOCH=	1
 CATEGORIES=	audio net ipv6
-MASTER_SITES=	http://tigress.com/lofi/\
-		http://lofi.dyndns.org/
-DISTNAME=	icecast-2.0-alpha-2-20030811
+MASTER_SITES=	http://www.icecast.org/files/
+DISTNAME=	icecast-2.0-beta-2
 
 MAINTAINER=	lofi@freebsd.org
 COMMENT=	A streaming mp3/ogg-vorbis audio server
@@ -25,7 +23,8 @@ LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
+CONFIGURE_ENV=	OGG_PREFIX=${LOCALBASE}
 
-WRKSRC=		${WRKDIR}/icecast-2.0-alpha-2
+WRKSRC=		${WRKDIR}/icecast-2.0-beta-2
 
 .include <bsd.port.mk>
