@@ -27,6 +27,7 @@ USE_OPENSSL=	yes
 .endif
 
 WRKSRC=		${WRKDIR}/imap-2001a
+USE_REINPLACE=	yes
 
 SHLIBBASE=	c-client4
 SHLIBMAJ=	8
@@ -45,7 +46,7 @@ SHLIBNAME=	lib${SHLIBBASE}.so.${SHLIBMAJ}.0
 
 post-patch:
 .for file in ${PREFIX_FIX_FILES}
-	@${PERL} -pi -ne "s!/usr/local!${PREFIX}!g" ${WRKSRC}/${file}
+	@${REINPLACE_CMD} -ne "s!/usr/local!${PREFIX}!g" ${WRKSRC}/${file}
 .endfor
 
 post-configure:

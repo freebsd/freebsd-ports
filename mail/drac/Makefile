@@ -22,6 +22,7 @@ LIB_DEPENDS+=	db3.3:${PORTSDIR}/databases/db3
 .endif
 
 NO_WRKSUBDIR=	yes
+USE_REINPLACE=	yes
 
 MAN3=		dracauth.3
 MAN1=		rpc.dracd.1
@@ -45,7 +46,7 @@ pre-everything::
 	@${ECHO} "============================================================="
 
 post-patch:
-	@${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/rpc.dracd.1m
+	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/rpc.dracd.1m
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/rpc.dracd ${PREFIX}/sbin/

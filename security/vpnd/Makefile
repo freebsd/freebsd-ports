@@ -15,6 +15,7 @@ MAINTAINER=	anders@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 HAS_CONFIGURE=	yes
+USE_REINPLACE=	yes
 
 DOCFILES=	README FAQ.TXT SPEED.TXT VERSIONS
 
@@ -24,7 +25,8 @@ post-patch:
 	< ${WRKSRC}/Makefile.FreeBSD.in_tmp > ${WRKSRC}/Makefile.FreeBSD.in
 
 pre-configure:
-	${PERL} -pi.orig -e "s@-O3@${CFLAGS}@g; s@gcc@${CC}@g" ${WRKSRC}/configure
+	${REINPLACE_CMD} -e "s@-O3@${CFLAGS}@g; s@gcc@${CC}@g" \
+		${WRKSRC}/configure
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/vpnd ${PREFIX}/sbin/vpnd
