@@ -1,10 +1,10 @@
---- src/zmedia2.c.orig	Wed Sep 20 04:00:54 2000
-+++ src/zmedia2.c	Wed Jun 20 04:06:24 2001
-@@ -427,11 +427,17 @@
+--- src/zmedia2.c.orig	Fri Apr 27 02:57:41 2001
++++ src/zmedia2.c	Fri Nov  2 04:08:16 2001
+@@ -429,11 +429,17 @@
  
  	rx = ry, ry = temp;
      }
--    /* Adjust the medium size if flexible. */
+-    /* Adjust the medium size if flexible. */ 
 -    if (medium->p.x < MIN_MEDIA_SIZE && mx > rx)
 -	mx = rx;
 -    if (medium->p.y < MIN_MEDIA_SIZE && my > ry)
@@ -21,5 +21,5 @@
 +      else if (my > ry) my = ry;	/* fits */
 +      /* else use medium->q.y, i.e., the maximum */
  
-     /* Translate to align the centers. */
+     /* Translate to align the centers. */ 
      gs_make_translation(mx / 2, my / 2, pmat);
