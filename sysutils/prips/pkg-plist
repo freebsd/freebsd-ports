@@ -1,1 +1,3 @@
 bin/prips
+share/doc/prips/README
+@dirrm share/doc/prips
