@@ -10,10 +10,10 @@
 +if [ -z "$INTEL_LICENSE_FILE" ]
  then
 -INTEL_LICENSE_FILE=<INSTALLDIR>/licenses;
-+INTEL_LICENSE_FILE=${PREFIX}/intel/licenses;
++INTEL_LICENSE_FILE=${ICC_LOCALBASE}/intel/licenses;
  else
 -INTEL_LICENSE_FILE=$INTEL_LICENSE_FILE:<INSTALLDIR>/licenses;
-+INTEL_LICENSE_FILE=$INTEL_LICENSE_FILE:${PREFIX}/intel/licenses;
++INTEL_LICENSE_FILE=$INTEL_LICENSE_FILE:${ICC_LOCALBASE}/intel/licenses;
  fi
  export INTEL_LICENSE_FILE;
  
@@ -21,10 +21,10 @@
 +if [ -z "$LD_LIBRARY_PATH" ]
  then 
 - LD_LIBRARY_PATH=<INSTALLDIR>/compiler70/ia32/lib;
-+ LD_LIBRARY_PATH=${PREFIX}/intel/compiler70/ia32/lib;
++ LD_LIBRARY_PATH=${ICC_LOCALBASE}/intel/compiler70/ia32/lib;
  else
 - LD_LIBRARY_PATH=<INSTALLDIR>/compiler70/ia32/lib:$LD_LIBRARY_PATH
-+ LD_LIBRARY_PATH=${PREFIX}/intel/compiler70/ia32/lib:$LD_LIBRARY_PATH
++ LD_LIBRARY_PATH=${ICC_LOCALBASE}/intel/compiler70/ia32/lib:$LD_LIBRARY_PATH
  fi
  export LD_LIBRARY_PATH;
  
@@ -32,10 +32,10 @@
 +if [ -z "$PATH" ]
  then
 - PATH=<INSTALLDIR>/compiler70/ia32/bin;
-+ PATH=${PREFIX}/intel/compiler70/ia32/bin;
++ PATH=${ICC_LOCALBASE}/intel/compiler70/ia32/bin;
  else
 - PATH=<INSTALLDIR>/compiler70/ia32/bin:$PATH;
-+ PATH=${PREFIX}/intel/compiler70/ia32/bin:$PATH;
++ PATH=${ICC_LOCALBASE}/intel/compiler70/ia32/bin:$PATH;
  fi
  export PATH;
  
@@ -81,8 +81,8 @@
 +  set -- "$@" "$val1"
 +  i=$(($i+1))
 + done
-+ exec ${PREFIX}/intel/compiler70/ia32/bin/iccbin "$@";
++ exec ${ICC_LOCALBASE}/intel/compiler70/ia32/bin/iccbin "$@";
  else
 - exec -a "<INSTALLDIR>/compiler70/ia32/bin/icc" <INSTALLDIR>/compiler70/ia32/bin/iccbin;
-+ exec ${PREFIX}/intel/compiler70/ia32/bin/iccbin;
++ exec ${ICC_LOCALBASE}/intel/compiler70/ia32/bin/iccbin;
  fi
