@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Thu Mar  6 13:30:58 2003
++++ Makefile.in	Tue Oct 28 13:55:01 2003
+@@ -126,7 +126,7 @@
+ modlibdir = @modlibdir@
+ sedpath = @sedpath@
+ 
+-@DYNAMIC_MODS_TRUE@LIBLTDLDIR = libltdl
++@DYNAMIC_MODS_TRUE@LIBLTDLDIR =
+ 
+ SUBDIRS = debian docs intl $(LIBLTDLDIR) modules libcomprex po tests
+ 

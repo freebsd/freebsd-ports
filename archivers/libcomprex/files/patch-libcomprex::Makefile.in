@@ -1,0 +1,21 @@
+--- libcomprex/Makefile.in.orig	Thu Mar  6 13:33:01 2003
++++ libcomprex/Makefile.in	Tue Oct 28 13:56:41 2003
+@@ -161,7 +161,7 @@
+ 	utils.c
+ 
+ 
+-libcomprex_la_LIBADD = @DLLDFLAGS@ $(LIBLTDL) $(STATIC_LINK_LIBS)
++libcomprex_la_LIBADD = @DLLDFLAGS@ -lltdl $(STATIC_LINK_LIBS)
+ 
+ libcomprex_la_LDFLAGS = \
+ 	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
+@@ -169,8 +169,7 @@
+ 
+ INCLUDES = \
+ 	-I$(top_srcdir) \
+-	-DCOMPREX_LIBDIR=\""$(libdir)/comprex"\" \
+-	$(INCLTDL)
++	-DCOMPREX_LIBDIR=\""$(libdir)/comprex"\"
+ 
+ subdir = libcomprex
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
