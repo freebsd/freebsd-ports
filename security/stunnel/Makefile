@@ -7,6 +7,7 @@
 
 PORTNAME=	stunnel
 PORTVERSION=	4.05
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.stunnel.org/download/stunnel/src/ \
 		ftp://stunnel.mirt.net/stunnel/OBSOLETE/ \
@@ -17,8 +18,10 @@ COMMENT=	SSL encryption wrapper for standard network daemons
 
 USE_OPENSSL=	YES
 USE_REINPLACE=	YES
+USE_INC_LIBTOOL_VER=	13
 
 GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--localstatedir=/var/tmp --with-pem-dir=${PEM_DIR} \
 		--enable-static
 
@@ -68,7 +71,24 @@ cert:
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} > 500000
-IGNORE=		Bus error with OpenSSL in -CURRENT, under investigation
+.if !defined(WITH_STUNNEL_SSL_ENGINE)
+EXTRA_PATCHES=	${FILESDIR}/ssl-noengine.patch
+pre-patch:
+	@${ECHO} "*************************************************************************"
+	@${ECHO} "Note: you have to explicitly define WITH_STUNNEL_SSL_ENGINE to activate"
+	@${ECHO} "the OpenSSL ENGINE code on FreeBSD 5.x."
+	@${ECHO} "There are known reliability issues with stunnel and the OpenSSL ENGINE"
+	@${ECHO} "code, so you are advised not to enable it."
+	@${ECHO} "*************************************************************************"
+.else
+pre-patch:
+	@${ECHO} "*************************************************************************"
+	@${ECHO} "Note: you have defined WITH_STUNNEL_SSL_ENGINE.  Now stunnel will activate"
+	@${ECHO} "the OpenSSL ENGINE code even on FreeBSD 5.x."
+	@${ECHO} "There are known reliability issues with stunnel and the OpenSSL ENGINE"
+	@${ECHO} "code.  You have enabled it at your own risk."
+	@${ECHO} "*************************************************************************"
+.endif
 .endif
 
 .include <bsd.port.post.mk>
