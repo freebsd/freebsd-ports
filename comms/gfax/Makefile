@@ -24,6 +24,8 @@ USE_GMAKE=	yes
 USE_REINPLACE=	yes
 USE_GNOME=	gnomeprefix gnomehier libgnomeprint
 
+BROKEN=		"Doesn't run"
+
 .include <bsd.port.pre.mk>
 
 MAKE_ENV+=	SETENV="/usr/bin/env" \

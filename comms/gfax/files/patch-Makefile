@@ -1,20 +1,22 @@
---- Makefile.orig	Wed Jun 30 15:27:25 2004
-+++ Makefile	Fri Jul  9 01:14:53 2004
-@@ -1,4 +1,4 @@
+--- Makefile.orig	Wed Jun 30 18:27:25 2004
++++ Makefile	Sat Jan  8 18:54:20 2005
+@@ -1,4 +1,3 @@
 -export MONO_PATH=/usr/lib/mono:/usr/lib/mono/gtk-sharp
-+export MONO_PATH=${LOCALBASE}/lib/mono:${LOCALBASE}/lib/mono/gtk-sharp
  
  MCS = mcs /define:DEBUG
  #MCS = mcs /define:DEBUGHYLAFAX
-@@ -11,7 +11,6 @@
+@@ -11,9 +10,7 @@
  		/resource:./pixmaps/gfax.png,gfax.png \
  		/resource:./pixmaps/send.png,send.png 
  
 -			
- REFERENCES = -r gnome-sharp -r gtk-sharp -r glib-sharp -r glade-sharp -r gdk-sharp \
- 			 -r gconf-sharp -r gconf-sharp-peditors.dll
+-REFERENCES = -r gnome-sharp -r gtk-sharp -r glib-sharp -r glade-sharp -r gdk-sharp \
+-			 -r gconf-sharp -r gconf-sharp-peditors.dll
++REFERENCES = $(shell pkg-config --libs gnome-sharp glade-sharp gconf-sharp)
  SOURCES = 	src/phonebook.cs \
-@@ -22,7 +21,7 @@
+ 			src/gui.cs \
+ 			src/main.cs \
+@@ -22,7 +19,7 @@
  			src/fax.cs \
  			src/hylafax.cs \
  			src/Settings.cs
@@ -23,7 +25,7 @@
  DATE=`date +%y-%m-%d`
  
  all: mono-gfax.exe
-@@ -31,37 +30,43 @@
+@@ -31,37 +28,43 @@
  	$(MCS) $(RESOURCES) -o $@ $(SOURCES) $(REFERENCES)
  
  schema:
