@@ -127,6 +127,7 @@
     SUBDIR += xmx
     SUBDIR += xprompt
     SUBDIR += xscreensaver
+    SUBDIR += xscreensaver-gnome
     SUBDIR += xskyroot
     SUBDIR += xsnow
     SUBDIR += xstarroll
