@@ -95,7 +95,7 @@ SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
 .include "${.CURDIR}/Makefile.man"
 .include "${.CURDIR}/Makefile.doc"
 
-pre-everything:
+pre-everything::
 	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure.courier
 
 .if exists(${WRKDIRPREFIX}${.CURDIR}/Makefile.inc)
