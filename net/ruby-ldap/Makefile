@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ldap
-PORTVERSION=	0.3.2
+PORTVERSION=	0.3.3
 CATEGORIES=	net ruby
 MASTER_SITES=	http://kt-www.jaist.ac.jp:8000/~ttate/ftp/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -49,14 +49,10 @@ CONFIGURE_ARGS?=	--with-netscape \
 			--with-ldap-dir="${LOCALBASE}/mozilla/directory"
 .endif
 
-WRKSRC=		${WRKDIR}/ruby-${PORTNAME}
+#WRKSRC=		${WRKDIR}/ruby-${PORTNAME}
 INSTALL_TARGET=	site-install
 
 DOCS_EN=	README		README.html
-
-post-extract:
-	find ${WRKSRC} -name CVS -type d | xargs ${RM} -r
-	${CHMOD} 644 ${WRKSRC}/test/*.rb
 
 post-patch:
 	${RM} ${WRKSRC}/test/test.sh.orig
