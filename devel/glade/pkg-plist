@@ -21,6 +21,7 @@ share/locale/pl/LC_MESSAGES/glade.mo
 share/locale/pt_BR/LC_MESSAGES/glade.mo
 share/locale/ru/LC_MESSAGES/glade.mo
 share/locale/sv/LC_MESSAGES/glade.mo
+share/locale/uk/LC_MESSAGES/glade.mo
 @dirrm share/glade/gtk
 @dirrm share/glade
 @dirrm share/doc/glade
