@@ -8,10 +8,10 @@
 PORTNAME=	dbf2mysql
 PORTVERSION=	1.13
 CATEGORIES=	databases
-MASTER_SITES=	http://www.mysql.com/Contrib/
+MASTER_SITES=	http://www.mysql.net/Downloads/Contrib/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=jedgar@fxp.org
+MAINTAINER=	jedgar@FreeBSD.org
 
 LIB_DEPENDS=	mysqlclient.6:${PORTSDIR}/databases/mysql322-client
 
