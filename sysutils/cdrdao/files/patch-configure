@@ -18,7 +18,15 @@
  			       scsi_if_src="ScsiIf-freebsd-cam.cc"
  			       scsilib_libs="-lcam"
  			       ;;
-@@ -6164,7 +6164,7 @@
+@@ -6149,7 +6149,6 @@
+ case "$host" in
+   *-freebsd*)
+ 	      if test "$use_pthreads" = yes; then
+-		mydefs="-pthread $mydefs"
+ 		LDFLAGS="-pthread $LDFLAGS"
+ 		thread_libs=""
+ 	      fi
+@@ -6164,7 +6163,7 @@
  esac
  
  case "$host" in

@@ -1,10 +1,10 @@
 bin/cdrdao
 bin/toc2cue
+%%TOC2MP3%%bin/toc2mp3
 share/cdrdao/drivers
 %%PORTDOCS%%share/doc/cdrdao/CREDITS
 %%PORTDOCS%%share/doc/cdrdao/INSTALL 
 %%PORTDOCS%%share/doc/cdrdao/README 
-%%PORTDOCS%%share/doc/cdrdao/README.FreeBSD 
 %%PORTDOCS%%share/doc/cdrdao/README.PlexDAE 
 %%PORTDOCS%%share/doc/cdrdao/Release-1.1.0
 %%PORTDOCS%%share/doc/cdrdao/Release-1.1.2

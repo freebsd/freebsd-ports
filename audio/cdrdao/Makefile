@@ -7,15 +7,17 @@
 
 PORTNAME=	cdrdao
 PORTVERSION=	1.1.7
-CATEGORIES=	audio
+PORTREVISION=	1
+CATEGORIES=	sysutils audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 EXTRACT_SUFX=	.src.tar.gz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	marius@alchemy.franken.de
 
-BUILD_DEPENDS=	antlr:${PORTSDIR}/devel/pccts \
-		dlg:${PORTSDIR}/devel/pccts
+.if defined(WITH_TOC2MP3)
+LIB_DEPENDS=	mp3lame.0:${PORTSDIR}/audio/lame
+.endif
 
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
@@ -26,47 +28,67 @@ MAN1=		cdrdao.1
 .include <bsd.port.pre.mk>
 
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=	--with-lame=no \
-		--with-gtkmm-prefix=${NONEXISTENT} \
-		--with-pcctsbin=${LOCALBASE}/bin \
-		--with-pcctsinc=${LOCALBASE}/include/pccts
+CONFIGURE_ARGS=		--with-gtkmm-prefix=${NONEXISTENT}
+
+.if exists(${LOCALBASE}/bin/antlr) && exists(${LOCALBASE}/bin/dlg)
+CONFIGURE_ARGS+=	--with-pcctsbin=${LOCALBASE}/bin \
+			--with-pcctsinc=${LOCALBASE}/include/pccts
+.endif
 
 .if defined(WITHOUT_SCGLIB) && ${OSVERSION} > 300000
 CONFIGURE_ARGS+=	--without-scglib
 .endif
 
-.if !defined(WITH_PTHREADS) && ${OSVERSION} > 320000
+.if ${OSVERSION} <= 320000 || ${MACHINE_ARCH} == "sparc64" || \
+	!defined(WITH_PTHREADS)
 CONFIGURE_ARGS+=	--without-posix-threads
+.endif
+
+.if defined(WITH_TOC2MP3)
+CONFIGURE_ARGS+=	--with-lame-include=${LOCALBASE}/include \
+			--with-lame-lib=${LOCALBASE}/lib
+PLIST_SUB=		TOC2MP3=""
+.else
+CONFIGURE_ARGS+=	--without-lame
+PLIST_SUB=		TOC2MP3="@comment "
 .endif
 
 pre-everything:
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "If you don't want to use Joerg Schilling's SCSI library,"
-	@${ECHO_MSG} "set WITHOUT_SCGLIB=yes."
+	@${ECHO_MSG} "You may use the following build options:"
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "If you want to use pthreads, set WITH_PTHREADS=yes."
+	@${ECHO_MSG} "WITHOUT_SCGLIB=yes	builds without Joerg Schilling's SCSI library"
+	@${ECHO_MSG} "WITH_PTHREADS=yes	enables usage of POSIX threads for the ring buffers"
+	@${ECHO_MSG} "WITH_TOC2MP3=yes	builds toc2mp3 (requires audio/lame)"
 	@${ECHO_MSG} ""
 
 post-extract:
-.if ${MACHINE_ARCH} == "alpha"
+.if ${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "sparc64"
 	@(cd ${WRKSRC}/scsilib/RULES; \
-	  ${LN} -sf i386-freebsd-cc.rul alpha-freebsd-cc.rul)
+	  ${LN} -sf i386-freebsd-cc.rul ${MACHINE_ARCH}-freebsd-cc.rul)
 .endif
-	@${CP} ${FILESDIR}/getopt.h ${WRKSRC}/utils
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|-D_THREAD_SAFE|${PTHREAD_CFLAGS}|g; \
+		s|-pthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 
-post-install:
-.for i in cdrdao toc2cue
-	@${STRIP_CMD} ${PREFIX}/bin/${i}
-.endfor
+do-install:
+	@${INSTALL_PROGRAM} ${WRKSRC}/dao/cdrdao ${PREFIX}/bin/cdrdao
+	@${INSTALL_PROGRAM} ${WRKSRC}/utils/toc2cue ${PREFIX}/bin/toc2cue
+.if defined(WITH_TOC2MP3)
+	@${INSTALL_PROGRAM} ${WRKSRC}/utils/toc2mp3 ${PREFIX}/bin/toc2mp3
+.endif
+	@${MKDIR} ${DATADIR}
+	@${INSTALL_DATA} ${WRKSRC}/dao/cdrdao.drivers ${DATADIR}/drivers
+	@${INSTALL_MAN} ${WRKSRC}/dao/cdrdao.man ${PREFIX}/man/man1/cdrdao.1
+
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for i in CREDITS INSTALL README README.FreeBSD README.PlexDAE \
+.for i in CREDITS INSTALL README README.PlexDAE \
 	Release-1.1.0 Release-1.1.2 Release-1.1.3 Release-1.1.4 \
 	Release-1.1.5 Release-1.1.6 Release-1.1.7
 	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
-	@${CAT} ${PKGMESSAGE}
+.endif
 
 .include <bsd.port.post.mk>

@@ -1,13 +1,4 @@
-Writes audio CD-Rs in disc-at-once (DAO) mode allowing control over pre-gaps
-(length down to 0, nonzero audio data) and sub-channel information like ISRC
-codes.  All data that is written to the disc  must be specified  with a text
-file.  Audio data may be in WAVE or raw format.
-
- Andreas Mueller <mueller@daneb.ping.de>
-
-Note:
-Cdrdao requires kernel with "options SYSVSHM" and "options SYSVMSG". 
+Cdrdao records audio or data CD-R[W]s in disc-at-once (DAO) mode based on
+textual description of the CD contents (toc-file).
 
 WWW: http://cdrdao.sourceforge.net/
-
- -- Yasuhito FUTATSUKI <futatuki@debug.gr.jp>
