@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	domtools
-PORTVERSION=	1.5.0
+PORTVERSION=	1.6.0
 CATEGORIES=	dns
 MASTER_SITES=	http://www.domtools.com/pub/ \
 		http://www.ussrback.com/UNIX/utilities/ \

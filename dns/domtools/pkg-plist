@@ -5,6 +5,7 @@ domtools/bin/axfr
 domtools/bin/basedomain
 domtools/bin/bits2mask
 domtools/bin/check1101
+domtools/bin/digstd
 domtools/bin/domsort
 domtools/bin/f2iaddr
 domtools/bin/geniplist
@@ -42,14 +43,15 @@ domtools/bin/networktbl
 domtools/bin/netmasktbl
 domtools/bin/uinfo
 domtools/bin/cachebuild
+domtools/bin/loc
 domtools/bin/localad
 domtools/bin/localdom
 domtools/bin/subnetmask
 domtools/bin/siteinfo
+domtools/bin/srv
 domtools/bin/cname
 domtools/bin/rndarg
 domtools/bin/soalist
-domtools/bin/digparse
 domtools/bin/gensubnetlist
 domtools/lib/basedomain.awk
 domtools/lib/domsort.awk
