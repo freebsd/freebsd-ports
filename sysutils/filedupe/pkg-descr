@@ -1,0 +1,6 @@
+Filedupe is a utility to assist in finding any duplicates as you
+accumulate files. It stores md5 hashes of all the files seen in a
+system wide database (/var/db/filedupe.db) so it can quickly spot any
+duplicates.
+
+WWW: http://sammy.net/~sammy/hacks/
