@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnumeric
-PORTVERSION=	0.99.1
+PORTVERSION=	1.0.0
 CATEGORIES?=	math gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/gnumeric
@@ -40,5 +40,10 @@ pre-patch:
 		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g'
 	@find ${WRKSRC}/plugins/excel -name "*.[ch]" | xargs ${PERL} -pi -e \
 		's|iconv\.h|giconv.h|g'
+
+post-install:
+.for dir in share/gnome lib
+	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${PREFIX}/${dir}/gnumeric
+.endfor
 
 .include <bsd.port.mk>
