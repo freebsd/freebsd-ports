@@ -39,9 +39,9 @@ post-install:
 	@${MKDIR} ${DOCSDIR}
 .for file in FAQ.html referenceguide.html
 	${INSTALL_DATA} ${WRKSRC}/docs/${file} ${DOCSDIR}
-	@${ECHO_CMD} "${DOCSDIR:S,^${PREFIX},,}/${file}" >> ${TMPPLIST}
+	@${ECHO_CMD} "${DOCSDIR:S,^${PREFIX}/,,}/${file}" >> ${TMPPLIST}
 .endfor
-	@${ECHO_CMD} "@dirrm ${DOCSDIR:S,^${PREFIX},,}" >> ${TMPPLIST}
+	@${ECHO_CMD} "@dirrm ${DOCSDIR:S,^${PREFIX}/,,}" >> ${TMPPLIST}
 	@${MKDIR} ${EXAMPLESDIR}
 .for dir in docking examples templates
 	${CP} -R ${WRKSRC}/${dir} ${EXAMPLESDIR}
