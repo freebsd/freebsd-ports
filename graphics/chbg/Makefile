@@ -7,7 +7,7 @@
 
 PORTNAME=	chbg
 PORTVERSION=	1.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.idata.sk/~ondrej/sw/
@@ -20,19 +20,14 @@ COMMENT=	Change Background Picture with time period
 # GNOME parts aren't prefix safe, they install into "gnome-config --prefix"
 USE_X_PREFIX=	yes
 USE_GNOME=	gdkpixbuf
-WANT_GNOME=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CFLAGS="${CFLAGS}" CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--disable-gnome
 
 .include <bsd.port.pre.mk>
-
-.if ${HAVE_GNOME:Mlibcapplet} != ""
-USE_GNOME+= gnomeprefix gnomehack libcapplet
-PKGNAMESUFFIX=	-gnome
-.endif
 
 MAN1=		chbg.1
 
