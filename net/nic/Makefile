@@ -11,10 +11,12 @@ PORTREVISION=	1
 CATEGORIES=	net www
 MASTER_SITES=	http://pompo.net/horde/nic/
 
-MAINTAINER=	thierry@pompo.net
+MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Nic is a set of small web-based network applications
 
-RUN_DEPENDS=	${LOCALBASE}/www/horde/index.php:${PORTSDIR}/www/horde2
+RUN_DEPENDS=	${LOCALBASE}/www/horde/index.php:${PORTSDIR}/www/horde
+
+BROKEN=		"Not compatible with Horde 3 - to be refreshed."
 
 NO_BUILD=	yes
 
