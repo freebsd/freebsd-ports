@@ -21,6 +21,6 @@ HAS_CONFIGURE=	yes
 MAN1=		zssh.1 ztelnet.1
 
 post-configure:
-	@${PERL} -pi -e 's,^prefix.*,prefix = ${PREFIX},g' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's,^prefix.*,prefix = ${PREFIX},g' ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>

@@ -15,7 +15,7 @@ MAINTAINER=	gslin@ccca.nctu.edu.tw
 ALL_TARGET=	${PORTNAME}
 
 post-patch:
-	@${PERL} -pi -e "s,-lpthread,${PTHREAD_LIBS},g" ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e "s,-lpthread,${PTHREAD_LIBS},g" ${WRKSRC}/Makefile
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin

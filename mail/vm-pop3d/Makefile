@@ -36,9 +36,9 @@ pre-patch:
 	@${ECHO} ""
 
 post-patch:
-	@${PERL} -pi -e "s@LIBS -ldl@LIBS@" ${WRKSRC}/configure
-	@${PERL} -pi -e "s,%%PREFIX%%,${PREFIX},g" ${WRKSRC}/vm-pop3d.h
-	@${SED} -e "s=%%PREFIX%%=${PREFIX}=g" ${FILESDIR}/vm-pop3d.sh > ${WRKSRC}/vm-pop3d.sh.sample
+	@${REINPLACE_CMD} -e "s@LIBS -ldl@LIBS@" ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e "s,%%PREFIX%%,${PREFIX},g" ${WRKSRC}/vm-pop3d.h
+	@${SED} -e "s,%%PREFIX%%,${PREFIX},g" ${FILESDIR}/vm-pop3d.sh > ${WRKSRC}/vm-pop3d.sh.sample
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/vm-pop3d.8 ${MAN8PREFIX}/man/man8

@@ -17,8 +17,8 @@ LIB_DEPENDS=	gnugetopt:${PORTSDIR}/devel/libgnugetopt
 MAN1=		lbrate.1
 
 post-patch:
-	@${PERL} -pi -e "s,^CC,#CC,g ; s,^PREFIX,#PREFIX,g ; \
-		s,%%LOCALBASE%%,${LOCALBASE},g" ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e "s,^CC|^PREFIX,#,g" ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e "s,%%LOCALBASE%%,${LOCALBASE},g" ${WRKSRC}/Makefile
 
 post-install:
 .if !defined(NOPORTDOCS)
