@@ -6,17 +6,6 @@ lib/dia/libnetwork_objects.so
 lib/dia/libstandard_objects.so
 lib/dia/libsybase_objects.so
 lib/dia/libuml_objects.so
-lib/locale/da/LC_MESSAGES/dia.mo
-lib/locale/de/LC_MESSAGES/dia.mo
-lib/locale/en_GB/LC_MESSAGES/dia.mo
-lib/locale/fr/LC_MESSAGES/dia.mo
-lib/locale/hu/LC_MESSAGES/dia.mo
-lib/locale/ja/LC_MESSAGES/dia.mo
-lib/locale/no/LC_MESSAGES/dia.mo
-lib/locale/pl/LC_MESSAGES/dia.mo
-lib/locale/pt/LC_MESSAGES/dia.mo
-lib/locale/ru/LC_MESSAGES/dia.mo
-lib/locale/sv/LC_MESSAGES/dia.mo
 share/dia/dia_logo.png
 share/dia/shapes/Circuit/ground.shape
 share/dia/shapes/Circuit/ground.xpm
@@ -133,6 +122,17 @@ share/gnome/mime-info/dia.keys
 share/gnome/mime-info/dia.mime
 share/gnome/pixmaps/dia-diagram.png
 share/gnome/pixmaps/dia_gnome_icon.png
+share/locale/da/LC_MESSAGES/dia.mo
+share/locale/de/LC_MESSAGES/dia.mo
+share/locale/en_GB/LC_MESSAGES/dia.mo
+share/locale/fr/LC_MESSAGES/dia.mo
+share/locale/hu/LC_MESSAGES/dia.mo
+share/locale/ja/LC_MESSAGES/dia.mo
+share/locale/no/LC_MESSAGES/dia.mo
+share/locale/pl/LC_MESSAGES/dia.mo
+share/locale/pt/LC_MESSAGES/dia.mo
+share/locale/ru/LC_MESSAGES/dia.mo
+share/locale/sv/LC_MESSAGES/dia.mo
 @dirrm lib/dia
 @dirrm share/dia/shapes/Circuit
 @dirrm share/dia/shapes/Flowchart
