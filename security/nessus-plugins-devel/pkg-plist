@@ -6,6 +6,7 @@ lib/nessus/plugins/40x_cross_site.nasl
 lib/nessus/plugins/BEA_weblogic_Reveal_Script_Code.nasl
 lib/nessus/plugins/ColdFusion.nasl
 lib/nessus/plugins/DDI_Unprotected_SiteScope.nasl
+lib/nessus/plugins/DDI_Unprotected_PCanywhere.nasl
 lib/nessus/plugins/ExAir_dos_advsearch.nasl
 lib/nessus/plugins/ExAir_dos_query.nasl
 lib/nessus/plugins/ExAir_dos_search.nasl
@@ -93,6 +94,7 @@ lib/nessus/plugins/cassandra_nntp_dos.nasl
 lib/nessus/plugins/cayman_any_username.nasl
 lib/nessus/plugins/cdk.nasl
 lib/nessus/plugins/cern_httpd_path.nasl
+lib/nessus/plugins/cf_debug.nasl
 lib/nessus/plugins/cfinger_format_bug.nasl
 lib/nessus/plugins/cfinger_search.nasl
 lib/nessus/plugins/cfinger_version.nasl
@@ -241,6 +243,7 @@ lib/nessus/plugins/hyperbomb.nasl
 lib/nessus/plugins/i2odialogd.nasl
 lib/nessus/plugins/iChat.nasl
 lib/nessus/plugins/iParty.nasl
+lib/nessus/plugins/ibm_server_code.nasl
 lib/nessus/plugins/icat.nasl
 lib/nessus/plugins/icecap_default_pw.nasl
 lib/nessus/plugins/icecast_overflow.nasl
@@ -282,6 +285,7 @@ lib/nessus/plugins/imail_imonitor_overflow.nasl
 lib/nessus/plugins/imap4_rev1_overflow.nasl
 lib/nessus/plugins/imap_overflow.nasl
 lib/nessus/plugins/imate_overflow.nasl
+lib/nessus/plugins/imp_session_hijacking.nasl
 lib/nessus/plugins/in_fingerd.nasl
 lib/nessus/plugins/info2www.nasl
 lib/nessus/plugins/infosrch.nasl
@@ -304,6 +308,7 @@ lib/nessus/plugins/kerberos_overflow.nasl
 lib/nessus/plugins/krb_pingpong.nasl
 lib/nessus/plugins/kuang2_the_virus.nasl
 lib/nessus/plugins/kw_whois.nasl
+lib/nessus/plugins/labrea.nasl
 lib/nessus/plugins/land.nasl
 lib/nessus/plugins/lcdproc_buffer_overflow.nasl
 lib/nessus/plugins/lcdproc_detect.nasl
@@ -316,6 +321,7 @@ lib/nessus/plugins/lion.nasl
 lib/nessus/plugins/listrec.nasl
 lib/nessus/plugins/lotus_envid.nasl
 lib/nessus/plugins/lotus_esmtp_overflow.nasl
+lib/nessus/plugins/lotus_notes_openserver_disclosure.nasl
 lib/nessus/plugins/lpd_overflow.nasl
 lib/nessus/plugins/mailman_webmail.nasl
 lib/nessus/plugins/mailnews.nasl
@@ -649,6 +655,7 @@ lib/nessus/plugins/snmp_lanman_services.nasl
 lib/nessus/plugins/snmp_lanman_shares.nasl
 lib/nessus/plugins/snmp_lanman_users.nasl
 lib/nessus/plugins/snmp_processes.nasl
+lib/nessus/plugins/snmp_sysDesc.nasl
 lib/nessus/plugins/snmp_vacm.nasl
 lib/nessus/plugins/sojourn.nasl
 lib/nessus/plugins/spinclient.nasl
@@ -674,7 +681,6 @@ lib/nessus/plugins/swc_overflow.nasl
 lib/nessus/plugins/sygate_remote_control.nasl
 lib/nessus/plugins/systat.nasl
 lib/nessus/plugins/tcp_chorusing.nasl
-lib/nessus/plugins/tcp_syn_scan.nasl
 lib/nessus/plugins/teardrop.nasl
 lib/nessus/plugins/technote.nasl
 lib/nessus/plugins/telnet.nasl
