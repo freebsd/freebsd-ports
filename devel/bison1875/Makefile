@@ -1,12 +1,12 @@
 # New ports collection makefile for:	bison
-# Version required:     1.27
+# Version required:     1.28
 # Date created:		27 Mar 1999
 # Whom:			Jerry Hicks
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/05/03 03:18:07 steve Exp $
 #
 
-DISTNAME=		bison-1.27
+DISTNAME=		bison-1.28
 CATEGORIES=		devel
 MASTER_SITES=		${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	bison
