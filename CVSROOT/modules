@@ -8297,6 +8297,7 @@ whirlgif	ports/graphics/whirlgif
 whisker		ports/security/whisker
 whistlerk	ports/x11-toolkits/whistlerk
 white_dune	ports/graphics/white_dune
+whitespace.el	ports/textproc/whitespace.el
 who		src/usr.bin/who
 whois		src/usr.bin/whois
 whowatch	ports/sysutils/whowatch
