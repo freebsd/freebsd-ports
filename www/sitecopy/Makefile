@@ -10,7 +10,7 @@ PORTVERSION=	0.10.15
 CATEGORIES=	www
 MASTER_SITES=	http://www.lyra.org/sitecopy/
 
-MAINTAINER=	nik@FreeBSD.org
+MAINTAINER=	olgeni@FreeBSD.org
 
 LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext \
 		expat.1:${PORTSDIR}/textproc/expat \
