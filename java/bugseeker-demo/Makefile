@@ -17,14 +17,12 @@ PATCHFILES=	bugseeker2demo.sh.diff
 MAINTAINER=	znerd@FreeBSD.org
 COMMENT=	A debugger for Java software
 
-BROKEN=		"Bad pkg-plist"
-
-RUN_DEPENDS=	${LOCALBASE}/linux-sun-jdk1.3.1/bin/java:${PORTSDIR}/java/linux-sun-jdk13
+USE_JAVA=	1.3+
 
 NO_BUILD=	YES
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
-PORTDESTDIR=	${PREFIX}/${PORTNAME}${PORTVERSION}
+PORTDESTDIR=	${PREFIX}/${PORTNAME}
 PORTTITLE=	BugSeeker for Java 2 (Trial version)
 RECURSIVE_CP=	${CP} -R
 
@@ -43,8 +41,8 @@ do-install:
 	@${RECURSIVE_CP} ${WRKSRC}/manual/*    ${PORTDESTDIR}/manual/
 
 post-install:
-	@echo "${PORTTITLE} has been installed in ${PORTDESTDIR}."
-	@echo "If you don't have a trial license yet, then you can get a 30-day license at:"
-	@echo "http://www.karmira.com/products/bugseeker2/demo.html."
+	@${ECHO_CMD} "${PORTTITLE} has been installed in ${PORTDESTDIR}."
+	@${ECHO_CMD} "If you don't have a trial license yet, then you can get a 30-day license at:"
+	@${ECHO_CMD} "http://www.karmira.com/products/bugseeker2/demo.html."
 
 .include <bsd.port.post.mk>
