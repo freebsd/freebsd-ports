@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mziq
-PORTVERSION=	0.2.49
-PORTREVISION=	1
+PORTVERSION=	0.3
 CATEGORIES=	audio
 MASTER_SITES=	http://cseg.lucidx.com/projects/src/mziq/
 
@@ -28,7 +27,7 @@ do-install:
 .if !defined(NOPORTDOCS)
 post-install:
 	@${MKDIR} ${DOCSDIR}
-.for FILE in README TODO rcfile
+.for FILE in README TODO default.mz example.mz rcfile
 	@${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
 .endfor
 .endif
