@@ -1,4 +1,4 @@
-bin/X11Helper
+bin/XHelper7
 bin/ext2sim
 bin/ext2spice
 bin/extcheck
@@ -7,23 +7,60 @@ bin/magicusage
 bin/net2ir
 bin/spice2sim
 lib/libmpack.a
+lib/magic/doc/addendum6_5.ps
+lib/magic/doc/copyright.ps
+lib/magic/doc/introduction.ps
+lib/magic/doc/maint1.ps
+lib/magic/doc/maint2.ps
+lib/magic/doc/maint3.ps
+lib/magic/doc/maint4.ps
+lib/magic/doc/tut1.ps
+lib/magic/doc/tut10.ps
+lib/magic/doc/tut11.ps
+lib/magic/doc/tut2.ps
+lib/magic/doc/tut3.ps
+lib/magic/doc/tut4.ps
+lib/magic/doc/tut5.ps
+lib/magic/doc/tut6.ps
+lib/magic/doc/tut7.ps
+lib/magic/doc/tut8.ps
+lib/magic/doc/tut9.ps
+lib/magic/doc/tutscm1.ps
+lib/magic/doc/tutscm2.ps
+lib/magic/doc/tutscm3.ps
+lib/magic/doc/tutscm4.ps
+lib/magic/doc/tutwrl1.ps
+lib/magic/scm/box.scm
+lib/magic/scm/default.scm
+lib/magic/scm/draw.scm
+lib/magic/scm/drc.scm
+lib/magic/scm/gate.scm
+lib/magic/scm/help.scm
+lib/magic/scm/label.scm
+lib/magic/scm/layout.scm
+lib/magic/scm/prs.scm
+lib/magic/scm/sel.scm
+lib/magic/scm/stack.scm
 lib/magic/sys/.magic
 lib/magic/sys/bw.glyphs
 lib/magic/sys/color.glyphs
+lib/magic/sys/magicps.pro
 lib/magic/sys/mos.24bit.dstyle5
 lib/magic/sys/mos.7bit.dstyle5
+lib/magic/sys/mos.7bit.mraster.cmap1
+lib/magic/sys/mos.7bit.mraster_dstyle5
 lib/magic/sys/mos.7bit.std.cmap1
+lib/magic/sys/mos.OpenGL.dstyle5
+lib/magic/sys/mos.OpenGL.std.cmap1
 lib/magic/sys/scmos-sub.tech26
 lib/magic/sys/scmos-sub.tech27
 lib/magic/sys/scmos-tm.tech26
 lib/magic/sys/scmos-tm.tech27
+lib/magic/sys/scmos.tech
 lib/magic/sys/scmos.tech26
 lib/magic/sys/scmos.tech27
 lib/magic/sys/scmosWR.tech26
 lib/magic/sys/scmosWR.tech27
-lib/magic/sys/vfont.B.12
-lib/magic/sys/vfont.I.12
-lib/magic/sys/vfont.R.8
 lib/magic/sys/windows11.glyphs
 lib/magic/sys/windows14.glyphs
 lib/magic/sys/windows22.glyphs
@@ -95,4 +132,6 @@ lib/magic/tutorial/tut9y.mag
 lib/mpack.h
 @dirrm lib/magic/tutorial
 @dirrm lib/magic/sys
+@dirrm lib/magic/scm
+@dirrm lib/magic/doc
 @dirrm lib/magic

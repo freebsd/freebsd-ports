@@ -1,5 +1,5 @@
---- misc/niceabort.c.orig	Thu Jan 27 21:59:20 2000
-+++ misc/niceabort.c	Thu Jan 27 21:59:33 2000
+--- misc/niceabort.c.orig	Sat Jan 13 07:13:00 2001
++++ misc/niceabort.c	Fri Oct 11 23:38:53 2002
 @@ -52,7 +52,7 @@
  bool AbortFatal = FALSE;
  

@@ -1,6 +1,6 @@
---- misc/magic.h.orig	Wed Sep 11 15:23:25 1996
-+++ misc/magic.h	Sun Apr 25 22:32:12 1999
-@@ -166,7 +166,7 @@
+--- misc/magic.h.orig	Sat Sep 22 00:15:45 2001
++++ misc/magic.h	Fri Oct 11 23:38:53 2002
+@@ -146,7 +146,7 @@
   *
   */
  
@@ -9,7 +9,7 @@
  #define       IS_LITTLE_ENDIAN        /* Intel x86 processors. */
  #endif
  
-@@ -244,7 +244,7 @@
+@@ -224,7 +224,7 @@
  #if defined(sun) && !defined(sparc)
  # define NEED_MONCNTL
  #endif  

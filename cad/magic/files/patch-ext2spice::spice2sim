@@ -1,0 +1,8 @@
+--- ext2spice/spice2sim.orig	Thu Mar 30 03:34:59 2000
++++ ext2spice/spice2sim	Fri Oct 11 23:38:53 2002
+@@ -1,4 +1,4 @@
+-#!/bin/awk -f
++#!/usr/bin/awk -f
+ # convert an ext2spice produced file to a .sim file for debugging
+ #
+ BEGIN {
