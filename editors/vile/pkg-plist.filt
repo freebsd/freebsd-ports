@@ -41,6 +41,7 @@ share/vile/dcl.keywords
 share/vile/def.keywords
 share/vile/diff.keywords
 share/vile/ecl.keywords
+share/vile/est.keywords
 share/vile/esql.keywords
 share/vile/fdl.keywords
 share/vile/js.keywords
@@ -56,11 +57,13 @@ share/vile/nr.keywords
 share/vile/pas.keywords
 share/vile/pc.keywords
 share/vile/perl.keywords
+share/vile/ps.keywords
 share/vile/py.keywords
 share/vile/pot.keywords
 share/vile/rc.keywords
 share/vile/rcs.keywords
 share/vile/rexx.keywords
+share/vile/rpm.keywords
 share/vile/sccs.keywords
 share/vile/sh.keywords
 share/vile/sql.keywords

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	vile
-PORTVERSION=	9.3d
+PORTVERSION=	9.3f
 CATEGORIES=	editors
 MASTER_SITES=   ftp://ftp.phred.org/pub/vile/ \
 		ftp://dickey.his.com/vile/
@@ -17,7 +17,9 @@ PATCH_SITES=    ${MASTER_SITES:S,vile/,vile/patches/,g}
 PATCHFILES=	vile-9.3a.patch.gz \
 		vile-9.3b.patch.gz \
 		vile-9.3c.patch.gz \
-		vile-9.3d.patch.gz
+		vile-9.3d.patch.gz \
+		vile-9.3e.patch.gz \
+		vile-9.3f.patch.gz
 
 MAINTAINER=	gj@FreeBSD.org
 

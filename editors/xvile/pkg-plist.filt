@@ -36,6 +36,7 @@ share/xvile/vile/cpp.keywords
 share/xvile/vile/filters.rc
 share/xvile/vile/pas.keywords
 share/xvile/vile/pc.keywords
+share/xvile/vile/ps.keywords
 share/xvile/vile/vb.keywords
 share/xvile/vile/vile.keywords
 share/xvile/vile/vim.keywords
@@ -50,6 +51,7 @@ share/xvile/vile/def.keywords
 share/xvile/vile/diff.keywords
 share/xvile/vile/ecl.keywords
 share/xvile/vile/esql.keywords
+share/xvile/vile/est.keywords
 share/xvile/vile/fdl.keywords
 share/xvile/vile/html.keywords
 share/xvile/vile/imake.keywords
@@ -67,6 +69,7 @@ share/xvile/vile/pot.keywords
 share/xvile/vile/rc.keywords
 share/xvile/vile/rcs.keywords
 share/xvile/vile/rexx.keywords
+share/xvile/vile/rpm.keywords
 share/xvile/vile/sccs.keywords
 share/xvile/vile/sh.keywords
 share/xvile/vile/sml.keywords
