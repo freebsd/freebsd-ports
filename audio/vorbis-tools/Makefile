@@ -13,7 +13,6 @@ CATEGORIES=	audio
 MASTER_SITES=	http://www.vorbis.com/files/1.0/unix/ \
 		ftp://ftp.wiles.org/pub/mirrors/Vorbis/unix/ \
 		http://www.casterclub.com/vorbis/unix/ \
-		http://www.cyclooctane.com/vorbis/unix/ \
 		http://www.math.utoledo.edu/~chaese/Vorbis/unix/
 
 MAINTAINER=	naddy@FreeBSD.org
