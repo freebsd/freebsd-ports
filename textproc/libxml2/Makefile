@@ -52,7 +52,7 @@ pre-patch:
 		's|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g'
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|[%][%]LOCALBASE[%][%]|${LOCALBASE}|g' \
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/catalog.c ${WRKSRC}/xmlcatalog.c
 
 .include <bsd.port.mk>
