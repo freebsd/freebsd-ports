@@ -16,3 +16,11 @@ product to ascertain the source code for any AT&T Software.
 
 (c) AT&T Corp. All rights reserved. AT&T is a registered trademark
 of AT&T Corp.
+
+------------------------------------------------------------------------
+
+Known problem:  Defining the LC_NUMERIC environment variable, or
+any locale setting by which it is implied (LANG, LC_ALL), will cause
+ksh93 to crash.  LC_COLLATE, LC_CTYPE, LC_MESSAGES, LC_MONETARY,
+and LC_TIME are safe.
+
