@@ -1,0 +1,15 @@
+include/apreq2/apreq.h
+include/apreq2/apreq_version.h
+include/apreq2/apreq_cookie.h
+include/apreq2/apreq_params.h
+include/apreq2/apreq_env.h
+include/apreq2/apreq_parsers.h
+lib/libapreq2.so.2
+lib/libapreq2.la
+lib/libapreq2.a
+%%SITE_PERL%%/%%PERL_ARCH%%/Apache2/Apache/Cookie.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Apache2/Apache/Cookie.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Apache2/Apache/Request.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Apache2/Apache/Request.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/libapreq2/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/libapreq2

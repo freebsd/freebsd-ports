@@ -1,0 +1,23 @@
+--- glue/Makefile.in.orig	Sat Jun  5 11:38:26 2004
++++ glue/Makefile.in	Sat Jun  5 11:38:36 2004
+@@ -251,16 +251,16 @@
+ 	cd perl; @PERL@ Makefile.PL -apxs @APACHE2_APXS@
+ 
+ perl_glue: perl/Makefile
+-	cd perl; make
++	cd perl; $(MAKE)
+ 
+ perl_test: perl/Makefile
+-	cd perl; make test
++	cd perl; $(MAKE) test
+ 
+ perl_install:
+-	cd perl; make install
++	cd perl; $(MAKE) install
+ 
+ perl_clean:
+-	cd perl; make clean
++	cd perl; $(MAKE) clean
+ 
+ @BUILD_PERL_GLUE_TRUE@all-local: perl_glue
+ 
