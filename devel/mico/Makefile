@@ -3,7 +3,7 @@
 # Date created:        11 July 1998
 # Whom:                Marc G. Fournier <scrappy@freebsd.org>
 #
-# $Id: Makefile,v 1.7 1998/09/22 22:55:52 asami Exp $
+# $Id: Makefile,v 1.8 1998/10/30 04:42:13 scrappy Exp $
 #
 
 DISTNAME=	mico-2.2.1
@@ -14,8 +14,6 @@ MAINTAINER=	scrappy@freebsd.org
 
 LIB_DEPENDS=	gtk.1:${PORTSDIR}/x11-toolkits/gtk
 
-BROKEN=		build - work in progress
-
 USE_QT=		yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
@@ -23,9 +21,9 @@ USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/mico
 
 CONFIGURE_ARGS=	--with-qt --with-gtk --with-tcl=/usr/include \
-		--disable-optimize --disable-mini-stl --disable-shared
+		--disable-optimize --disable-shared
 
-MAN1=		idl.1 imr.1 nsadmn.1
+MAN1=		idl.1 imr.1 nsadmin.1
 MAN5=		micorc.5
 MAN8=		ird.8 micod.8 nsd.8
 
