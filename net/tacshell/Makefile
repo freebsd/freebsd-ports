@@ -13,8 +13,11 @@ MASTER_SITES=	http://www.rezrov.net/software/
 MAINTAINER=	krion@FreeBSD.org
 COMMENT=	Shell authentication for TACACS+ protocol
 
-USE_SIZE=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+
+PORTDOCS=	README WHATSNEW ChangeLog
+PLIST_FILES=	bin/tacshell etc/tacshell.conf.sample
 
 post-install:
 .for i in ${PORTNAME}

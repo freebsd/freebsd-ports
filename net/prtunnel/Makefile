@@ -19,9 +19,11 @@ ALL_TARGET=	${PORTNAME}
 
 MAN1=		prtunnel.1
 
+PORTDOCS=	README
+PLIST_FILES=	bin/prtunnel
+
 post-patch:
-	@${REINPLACE_CMD} -e \
-	's|%%PREFIX%%|${PREFIX}|g ; \
+	@${REINPLACE_CMD} -e 's|^PREFIX=|#PREFIX=|g ; \
 	s|CC=gcc|CC?=gcc|g ; \
 	s|CFLAGS=|CFLAGS+=|g' ${WRKSRC}/Makefile
 
