@@ -2,4 +2,3 @@ bin/py2tests
 bin/py2xmi
 bin/pyargo
 bin/pyvcg
-%%PYTHON_SITELIBDIR%%/logilab/__init__.py

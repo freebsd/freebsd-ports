@@ -8,16 +8,18 @@
 
 PORTNAME=	reverse
 PORTVERSION=	0.5.0
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	ftp://ftp.logilab.org/pub/pyreverse/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	py${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perky@FreeBSD.org
 COMMENT=	A set of tools for reverse engineering Python code
 
 BUILD_DEPENDS=	${PYXML}
-RUN_DEPENDS=	${PYXML}
+RUN_DEPENDS=	${PYXML} \
+		${PYTHONPREFIX_SITELIBDIR}/logilab/pylint/__init__.py:${PORTSDIR}/devel/py-logilab-common
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
