@@ -20,6 +20,7 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 CONFIGURE_ARGS+=--enable-shared
 INSTALLS_SHLIB=	yes
+USE_REINPLACE=	yes
 
 MANL=		artsportagg.l artsports.l artsprotos.l artsnets.l artsdump.l \
 		artsases.l artstoc.l artsagg.l artsprotoagg.l artsnetagg.l \
@@ -28,8 +29,11 @@ MANL=		artsportagg.l artsports.l artsprotos.l artsnets.l artsdump.l \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 502000
-BROKEN=		"Does not compile"
-.endif
+
+post-patch:
+	cd ${WRKSRC}/classes/src; \
+	    ${REINPLACE_CMD} -e "s,<strstream.h>,<strstream>," \
+	    ArtsBgp4AsPathSegment.cc ArtsIfIndexSelectionSet.lex \
+            ArtsObjectTypeSelectionSet.lex  ArtsTimeIntervalSelectionSet.lex
 
 .include <bsd.port.post.mk>
