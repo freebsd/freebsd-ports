@@ -1,0 +1,8 @@
+This is just a simple frontend module for autoloading of various
+Digest:: modules.  It also provide documentation of the interface that
+all Digest:: modules should provide.
+
+WWW: http://search.cpan.org/search?dist=Digest
+
+-- Sergey Skvortsov
+skv@FreeBSD.org
