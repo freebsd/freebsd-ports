@@ -50,8 +50,8 @@ do-install:
 	${PREFIX}/share/yacl/apps
 	@( cd ${PREFIX}/share/yacl; ${LN} -s ${PREFIX}/lib/yacl lib; \
 	${LN} -s ${PREFIX}/include/yacl/io; ${LN} -s ${PREFIX}/include/yacl/ui )
-	@${ECHO} "Done. Don't forget to set your YACLPATH environment "
-	@${ECHO} "variable to ${PREFIX}/share/yacl!"
+	@${ECHO_MSG} "Done. Don't forget to set your YACLPATH environment "
+	@${ECHO_MSG} "variable to ${PREFIX}/share/yacl!"
 
 post-install:
 	@${STRIP_CMD} ${PREFIX}/share/yacl/apps/bmpview

@@ -148,10 +148,10 @@ do-install:
 # like the Red Hat installer.
 #
 	@for R in ${RPM_SET1}; do \
-		${ECHO} $$R; \
+		${ECHO_MSG} $$R; \
 		${RPM} -U ${RPMFLAGS} ${RPMDIR}/$$R; \
 	done
-	@${ECHO} ${RPM_LDCONFIG}
+	@${ECHO_MSG} ${RPM_LDCONFIG}
 	@${RPM} -U ${RPMFLAGS} --noscripts ${RPMDIR}/${RPM_LDCONFIG}
 	@brandelf -t Linux ${LINUXBASE}/sbin/ldconfig
 	@${LINUXBASE}/sbin/ldconfig
@@ -160,21 +160,21 @@ do-install:
 		zlib-1.1.3-25.6.${MACHINE_ARCH}.rpm \
 		${RPM_SET2} \
 		XFree86-libs-3.3.6-29.${MACHINE_ARCH}.rpm; do \
-			${ECHO} $$R; \
+			${ECHO_MSG} $$R; \
 			${RPM} -U ${RPMFLAGS} ${RPMDIR}/$$R; \
 		done
-	@${ECHO} ${RPM_RPM}
+	@${ECHO_MSG} ${RPM_RPM}
 	@${RPM} -U ${RPMFLAGS} --noscripts ${RPMDIR}/${RPM_RPM}
 	@brandelf -t Linux ${LINUXBASE}/bin/rpm
 	@for R in ${RPM_SET3}; do \
-		${ECHO} $$R; \
+		${ECHO_MSG} $$R; \
 		${RPM} -U ${RPMFLAGS} ${RPMDIR}/$$R; \
 	done
 #
 # Install updates
 #
 	@for R in ${PATCHFILES}; do \
-		${ECHO} $$R; \
+		${ECHO_MSG} $$R; \
 		${RPM} -U ${RPMFLAGS} ${RPMDIR}/$$R; \
 	done
 #
@@ -200,8 +200,8 @@ post-install:
 # the quotacheck warning about unknown owners.
 	@${CHOWN} root:wheel ${LINUXBASE}/usr/man/man8/setserial.8
 	@${CHGRP} mail ${LINUXBASE}/var/spool/mail
-	@${ECHO} ''
+	@${ECHO_MSG} ''
 	@fmt ${PKGMESSAGE}
-	@${ECHO} ''
+	@${ECHO_MSG} ''
 
 .include <bsd.port.post.mk>

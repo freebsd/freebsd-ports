@@ -198,10 +198,10 @@ do-install:
 	${CP} -R ${WRKSRC} ${inst_dir}
 
 post-install:
-	@${ECHO}
+	@${ECHO_MSG}
 	@${CAT} ${PKGMESSAGE} | ${SED} -e "s#%%inst_dir%%#${inst_dir}#"		\
 			-e "s#%%tools_dir%%#${tools_dir}#"			\
 			-e "s#%%ASTER_VER%%#${vaster}#"
-	@${ECHO}
+	@${ECHO_MSG}
 
 .include <bsd.port.post.mk>

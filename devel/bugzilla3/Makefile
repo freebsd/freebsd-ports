@@ -122,9 +122,9 @@ do-install:
 post-install:
 	@${SED} -e "s:%%PREFIX%%:${PREFIX}:g" pkg-message >${PKGMESSAGE}
 .if !defined(BATCH)
-	@${ECHO}
+	@${ECHO_MSG}
 	@${CAT} ${PKGMESSAGE}
-	@${ECHO}
+	@${ECHO_MSG}
 .endif
 
 .include <bsd.port.mk>

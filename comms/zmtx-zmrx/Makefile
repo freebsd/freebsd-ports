@@ -33,8 +33,8 @@ do-install:
 .endfor
 
 post-install:
-	@${ECHO} ""
+	@${ECHO_MSG} ""
 	@/usr/bin/more ${PKGMESSAGE}
-	@${ECHO} ""
+	@${ECHO_MSG} ""
 
 .include <bsd.port.mk>

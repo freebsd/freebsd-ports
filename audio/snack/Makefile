@@ -39,9 +39,9 @@ PLIST_SUB+=	VORBIS="@comment "
 
 pre-everything::
 .if !defined(WITH_VORBIS)
-	@${ECHO}
-	@${ECHO} 'Use "make WITH_VORBIS=yes" to build support for OGG Vorbis.'
-	@${ECHO}
+	@${ECHO_MSG}
+	@${ECHO_MSG} 'Use "make WITH_VORBIS=yes" to build support for OGG Vorbis.'
+	@${ECHO_MSG}
 .endif
 
 post-patch:

@@ -259,9 +259,9 @@ post-install:
 	${LN} -fs ${HOMARDDIR}/homard ${tools_dir}/
 	${LN} -fs ${HOMARDDIR}/aster_homard_py ${tools_dir}/
 .endif
-	@${ECHO}
+	@${ECHO_MSG}
 	@${CAT} ${PKGMESSAGE} | ${SED} -e "s#%%inst_dir%%#${inst_dir}#"
-	@${ECHO}
+	@${ECHO_MSG}
 
 .if defined(MAINTAINER_MODE)
 test:	install

@@ -28,7 +28,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 .ifndef USE_TRIANGLE
 pre-everything::
-	@${ECHO} "You can make with USE_TRIANGLE for faster 2d meshing"
+	@${ECHO_MSG} "You can make with USE_TRIANGLE for faster 2d meshing"
 .else
 NO_CDROM=	"Triangle must not be sold for profit"
 post-extract:

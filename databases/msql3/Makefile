@@ -53,7 +53,7 @@ post-install:
 		@${CHOWN} -R msql:msql ${PREFIX}/etc/msql2/
 		@${MKDIR} ${PREFIX}/etc/rc.d
 		@if [ ! -f ${PREFIX}/etc/rc.d/msql2.sh ]; then \
-			${ECHO} "Installing ${PREFIX}/etc/rc.d/msql2.sh startup file."; \
+			${ECHO_MSG} "Installing ${PREFIX}/etc/rc.d/msql2.sh startup file."; \
 			${INSTALL_SCRIPT} -m 751 ${FILESDIR}/msql2.sh \
 				${PREFIX}/etc/rc.d/msql2.sh; \
 		fi
