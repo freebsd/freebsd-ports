@@ -14,7 +14,8 @@ DISTNAME=	${PORTNAME:S/-/_/}-${PORTVERSION:S/./_/g}-lib-linux-i586
 MAINTAINER=	java@FreeBSD.org
 COMMENT=	Plug-ins for the Java Image I/O Framework
 
-USE_JAVA=	1.4+
+USE_JAVA=	yes
+JAVA_VERSION=	1.4+
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 ONLY_FOR_ARCHS=	i386
@@ -58,10 +59,10 @@ pre-install:
 .endif
 
 do-install:
-		@${ECHO_CMD} -n ">> Creating destination directory..."
+		@${ECHO_MSG} -n ">> Creating destination directory..."
 		@${MKDIR} ${TARGET_DIR}
-		@${ECHO_CMD} " [DONE]"
-		@${ECHO_CMD} -n ">> Installing libraries..."
+		@${ECHO_MSG} " [DONE]"
+		@${ECHO_MSG} -n ">> Installing libraries..."
 		@${INSTALL_DATA} ${WRKSRC}/COPYRIGHT-jai_imageio.txt ${TARGET_DIR}
 		@${INSTALL_DATA} ${WRKSRC}/LICENSE-jai_imageio.txt ${TARGET_DIR}
 		@${INSTALL_DATA} ${WRKSRC}/README-jai_imageio.html ${TARGET_DIR}
@@ -77,7 +78,7 @@ do-install:
 		@${TEST} -e ${JAVA_HOME}/jre/lib/ext/mlibwrapper_jai.jar || ${LN} -sf ${TARGET_DIR}/jar/mlibwrapper_jai.jar ${JAVA_HOME}/jre/lib/ext
 		@${LN} -sf ${TARGET_DIR}/lib/libclib_jiio.so ${JAVA_HOME}/jre/lib/i386
 .endif
-		@${ECHO_CMD} " [DONE]"
+		@${ECHO_MSG} " [DONE]"
 
 post-install:
 .if defined(NOINSTALL_IN_JRE) || defined(WITH_PLUGINWRAPPER)

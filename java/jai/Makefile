@@ -15,7 +15,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/./_/g}-lib-linux-i586
 MAINTAINER=	java@FreeBSD.org
 COMMENT=	High performance image processing libraries for Java
 
-USE_JAVA=	1.3+
+USE_JAVA=	yes
+JAVA_VERSION=	1.3+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/./_/g}
 NO_BUILD=	yes
 ONLY_FOR_ARCHS=	i386
@@ -60,10 +61,10 @@ pre-install:
 .endif
 
 do-install:
-		@${ECHO_CMD} -n ">> Creating destination directory..."
+		@${ECHO_MSG} -n ">> Creating destination directory..."
 		@${MKDIR} ${TARGET_DIR}
-		@${ECHO_CMD} " [DONE]"
-		@${ECHO_CMD} -n ">> Installing libraries..."
+		@${ECHO_MSG} " [DONE]"
+		@${ECHO_MSG} -n ">> Installing libraries..."
 		@${INSTALL_DATA} ${WRKSRC}/COPYRIGHT-jai.txt ${TARGET_DIR}
 		@${INSTALL_DATA} ${WRKSRC}/INSTALL-jai.txt ${TARGET_DIR}
 		@${INSTALL_DATA} ${WRKSRC}/LICENSE-jai.txt ${TARGET_DIR}
@@ -80,7 +81,7 @@ do-install:
 		@${LN} -sf ${TARGET_DIR}/jar/mlibwrapper_jai.jar ${JAVA_HOME}/jre/lib/ext
 		@${LN} -sf ${TARGET_DIR}/lib/libmlib_jai.so ${JAVA_HOME}/jre/lib/i386
 .endif
-		@${ECHO_CMD} " [DONE]"
+		@${ECHO_MSG} " [DONE]"
 
 post-install:
 .if defined(NOINSTALL_IN_JRE) || defined(WITH_PLUGINWRAPPER)
