@@ -1,4 +1,4 @@
 # Exclusions list for header checking.
 # $FreeBSD$
-src/sys/boot/common/help.common
-FREEBSD-Xlist
+^src/sys/boot/common/help.common
+^src/contrib/.*/FREEBSD-Xlist

@@ -114,8 +114,7 @@ sub check_version {
 	    chop;
 	    $line = $_;
 
-	    $ind = index($path, $line);
-	    if ($ind >= 0) {
+	    if ($path =~ /$line/) {
 		close(EX);
 		return(0);
 	    }
