@@ -9,9 +9,13 @@ PORTNAME=	wmappl
 PORTVERSION=	0.6
 PORTREVISION=	1
 CATEGORIES=	x11 windowmaker
-MASTER_SITES=	http://www.upl.cs.wisc.edu/~charkins/wmappl/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:main/}
+MASTER_SITE_SUBDIR=${PORTNAME}/:main
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:main
+
 .ifndef(NOICONS)
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${ICONSDIST}
+PATCH_SITES=	http://www.upl.cs.wisc.edu/~charkins/wmappl/
+PATCHFILES=	16x16xpms.tar.gz icons_16x16.tar.gz smallicons.tar.gz
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 .endif
 
@@ -24,7 +28,7 @@ USE_XPM=	yes
 MAKE_ENV=	DATADIR="${DATADIR}" \
 		CPPFLAGS="${CPPFLAGS}" \
 		LDFLAGS="${LDFLAGS}"
-ICONSDIST=	16x16xpms.tar.gz icons_16x16.tar.gz smallicons.tar.gz
+
 .ifndef(NOICONS)
 PLIST_SUB=	ICONS=""
 .else
@@ -34,7 +38,7 @@ PLIST_SUB=	ICONS="@comment "
 .ifndef(NOICONS)
 post-extract:
 	@${ECHO_MSG} "===>   Extracting icons ..."
-.for icons in ${ICONSDIST}
+.for icons in ${PATCHFILES}
 	@${ECHO_MSG} "===>   ${icons} ..."
 	@${TAR} -C ${WRKSRC}/icons -xzf ${DISTDIR}/${icons}
 .endfor
