@@ -10042,6 +10042,7 @@ saferpay	ports/security/saferpay
 safesh		ports/security/safesh
 safestr		ports/devel/safestr
 sagasu		ports/textproc/sagasu
+sage		ports/graphics/sage
 saint		ports/security/saint
 salias		ports/misc/salias
 sam		ports/editors/sam
