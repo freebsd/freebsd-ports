@@ -1,0 +1,7 @@
+include/libcapsi_network/listener.h
+include/libcapsi_network/server.h
+include/libcapsi_network/socket.h
+lib/libcapsi_network.so
+lib/libcapsi_network.so.0
+lib/libcapsi_network.so.0.0.13
+@dirrm include/libcapsi_network
