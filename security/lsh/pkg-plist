@@ -28,6 +28,7 @@ include/nettle/serpent.h
 include/nettle/sha.h
 include/nettle/twofish.h
 include/nettle/yarrow.h
+@dirrm include/nettle
 @unexec install-info --delete %D/info/lsh.info %D/info/dir
 info/lsh.info
 info/nettle.info
