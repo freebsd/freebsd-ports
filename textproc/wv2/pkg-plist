@@ -27,5 +27,3 @@ lib/libwv2.la
 lib/libwv2.so
 lib/libwv2.so.1
 @dirrm include/wv2
-@dirrm etc/gconf/gconf.xml.defaults
-@dirrm etc/gconf
