@@ -172,6 +172,7 @@
     SUBDIR += jzip
     SUBDIR += kdegames3
     SUBDIR += klondike
+    SUBDIR += knights
     SUBDIR += kobodeluxe
     SUBDIR += kxl
     SUBDIR += ladder

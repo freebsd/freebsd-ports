@@ -1,0 +1,43 @@
+bin/knights
+share/doc/HTML/en/knights/index.docbook
+share/doc/HTML/en/knights/common
+share/doc/HTML/fr/knights/index.docbook
+share/doc/HTML/fr/knights/common
+share/doc/HTML/de/knights/index.docbook
+share/doc/HTML/de/knights/common
+share/doc/HTML/et/knights/index.docbook
+share/doc/HTML/et/knights/common
+share/applnk/Games/Board/knights.desktop
+share/applnk/Amusement/Boards/knights.desktop
+share/mimelnk/application/knights.desktop
+share/locale/fr/LC_MESSAGES/knights.mo
+share/locale/et/LC_MESSAGES/knights.mo
+share/locale/de/LC_MESSAGES/knights.mo
+share/apps/knights/splash.png
+share/apps/knights/icon-display.png
+share/apps/knights/themes/KBDefault.tar.gz
+share/apps/knights/themes/KCDefault.tar.gz
+share/apps/knights/themes/KSDefault.tar.gz
+share/apps/knights/icon-console-bottom.png
+share/apps/knights/icon-console-detach.png
+share/apps/knights/icon-console-side.png
+share/apps/knights/wizard.png
+share/apps/knights/icon-general.png
+share/icons/hicolor/16x16/apps/knights.png
+share/icons/hicolor/16x16/mimetypes/pgn.png
+share/icons/hicolor/32x32/apps/knights.png
+share/icons/hicolor/32x32/mimetypes/pgn.png
+share/icons/hicolor/48x48/apps/knights.png
+share/icons/hicolor/48x48/mimetypes/pgn.png
+share/icons/hicolor/64x64/apps/knights.png
+share/icons/hicolor/64x64/mimetypes/pgn.png
+share/icons/locolor/16x16/apps/knights.png
+share/icons/locolor/16x16/mimetypes/pgn.png
+share/icons/locolor/32x32/apps/knights.png
+share/icons/locolor/32x32/mimetypes/pgn.png
+@dirrm share/doc/HTML/en/knights
+@dirrm share/doc/HTML/fr/knights
+@dirrm share/doc/HTML/de/knights
+@dirrm share/doc/HTML/et/knights
+@dirrm share/apps/knights/themes
+@dirrm share/apps/knights
