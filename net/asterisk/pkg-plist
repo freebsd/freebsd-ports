@@ -587,6 +587,7 @@ sbin/safe_asterisk
 %%DATADIR%%/sounds/vm-saved.gsm
 %%DATADIR%%/sounds/vm-savedto.gsm
 %%DATADIR%%/sounds/vm-savefolder.gsm
+%%DATADIR%%/sounds/vm-saveoper.gsm
 %%DATADIR%%/sounds/vm-savemessage.gsm
 %%DATADIR%%/sounds/vm-sorry.gsm
 %%DATADIR%%/sounds/vm-star-cancel.gsm

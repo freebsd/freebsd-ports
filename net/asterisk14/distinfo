@@ -1,2 +1,4 @@
-MD5 (asterisk-1.0.3.tar.gz) = 20a77d71efb670eb395314d52218fc7c
-SIZE (asterisk-1.0.3.tar.gz) = 9564612
+MD5 (asterisk-1.0.5.tar.gz) = efabd43ac70ada3bdc97a57027c670a3
+SIZE (asterisk-1.0.5.tar.gz) = 9586778
+MD5 (asterisk-1.0.5-bristuff-0.2.0-RC7f.patch.gz) = c4b3de9bffec5b474ce0881dda5825a2
+SIZE (asterisk-1.0.5-bristuff-0.2.0-RC7f.patch.gz) = 38556

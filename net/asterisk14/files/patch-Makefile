@@ -1,9 +1,6 @@
-
-$FreeBSD$
-
---- Makefile.orig
-+++ Makefile
-@@ -44,6 +44,15 @@
+--- Makefile.orig	Fri Jan 21 11:18:35 2005
++++ Makefile	Mon Feb 28 00:19:37 2005
+@@ -45,6 +45,15 @@
  PROC=$(shell uname -m)
  endif
  
@@ -12,14 +9,14 @@ $FreeBSD$
 +PROC=ultrasparc
 +OPTIONS+=$(shell if $(CC) -mtune=$(PROC) -S -o /dev/null -xc /dev/null >/dev/null 2>&1; then echo "-mtune=$(PROC)"; fi)
 +OPTIONS+=$(shell if $(CC) -mcpu=v9 -S -o /dev/null -xc /dev/null >/dev/null 2>&1; then echo "-mcpu=v9"; fi)
-+OPTIONS+=-fomit-frame-pointerendif
++OPTIONS+=-fomit-frame-pointer
 +endif
 +endif
 +
  # Pentium Pro Optimize
  #PROC=i686
  
-@@ -62,10 +71,10 @@
+@@ -63,10 +72,10 @@
  #K6OPT  = -DK6OPT
  
  #Tell gcc to optimize the asterisk's code
@@ -32,7 +29,7 @@ $FreeBSD$
  
  # If you are running a radio application, define RADIO_RELAX so that the DTMF
  # will be received more reliably
-@@ -90,7 +99,7 @@
+@@ -91,7 +100,7 @@
  
  # Where to install asterisk after compiling
  # Default -> leave empty
@@ -41,7 +38,7 @@ $FreeBSD$
  
  # Staging directory
  # Files are copied here temporarily during the install process
-@@ -110,23 +119,23 @@
+@@ -111,23 +120,23 @@
  # Don't use together with -DBUSYDETECT_TONEONLY
  BUSYDETECT+= #-DBUSYDETECT_COMPARE_TONE_AND_SILENCE
  
@@ -75,7 +72,7 @@ $FreeBSD$
  CFLAGS+=$(OPTIMIZE)
  
  ifneq ($(PROC),ultrasparc)
-@@ -137,11 +146,8 @@
+@@ -138,12 +147,8 @@
  CFLAGS+=$(shell if [ -f /usr/include/osp/osp.h ]; then echo "-DOSP_SUPPORT -I/usr/include/osp" ; fi)
  
  ifeq (${OSARCH},FreeBSD)
@@ -84,12 +81,13 @@ $FreeBSD$
 -LIBS+=$(shell if test  ${OSVERSION} -lt 502102 ; then echo "-lc_r"; else echo "-pthread"; fi)
 -INCLUDE+=-I/usr/local/include
 -CFLAGS+=$(shell if [ -d /usr/local/include/spandsp ]; then echo "-I/usr/local/include/spandsp"; fi)
+-MPG123TARG=freebsd
 +CFLAGS+=$(PTHREAD_CFLAGS)
 +LIBS+=$(PTHREAD_LIBS)
  endif # FreeBSD
  
  ifeq (${OSARCH},NetBSD)
-@@ -157,7 +163,10 @@
+@@ -160,7 +165,10 @@
  #CFLAGS+=-DOLD_DSP_ROUTINES
  
  CFLAGS+=$(shell if [ -f /usr/include/linux/zaptel.h ]; then echo "-DZAPTEL_OPTIMIZATIONS"; fi)
@@ -101,7 +99,7 @@ $FreeBSD$
  
  LIBEDIT=editline/libedit.a
  
-@@ -219,7 +228,7 @@
+@@ -222,7 +230,7 @@
  SOLINK=-shared -Xlinker -x
  endif
  
@@ -110,7 +108,7 @@ $FreeBSD$
  INSTALL=install
  
  _all: all
-@@ -231,7 +240,7 @@
+@@ -234,7 +242,7 @@
  	@echo " +               $(MAKE) install                +"  
  	@echo " +-------------------------------------------+"  
  
@@ -119,7 +117,7 @@ $FreeBSD$
  
  editline/config.h:
  	cd editline && unset CFLAGS LIBS && ./configure ; \
-@@ -240,13 +249,13 @@
+@@ -243,13 +251,13 @@
  	cd editline && unset CFLAGS LIBS && test -f config.h || ./configure
  	$(MAKE) -C editline libedit.a
  
@@ -140,7 +138,7 @@ $FreeBSD$
  
  ifneq ($(wildcard .depend),)
  include .depend
-@@ -268,13 +277,10 @@
+@@ -271,13 +279,10 @@
  
  asterisk.o: asterisk.c build.h
  
@@ -157,7 +155,7 @@ $FreeBSD$
  
  ifneq ($(strip $(ASTERISKVERSION)),)
  build.h: .version
-@@ -292,8 +298,8 @@
+@@ -295,8 +300,8 @@
  		exit 1; \
  	fi
  
@@ -168,7 +166,7 @@ $FreeBSD$
  
  muted: muted.o
  	$(CC) -o muted muted.o
-@@ -312,28 +318,28 @@
+@@ -315,28 +320,28 @@
  	$(MAKE) -C stdtime clean
  
  datafiles: all
@@ -203,7 +201,7 @@ $FreeBSD$
  		else \
  			echo "No description for $$x"; \
  			exit 1; \
-@@ -341,18 +347,18 @@
+@@ -344,18 +349,18 @@
  	done
  	for x in sounds/vm-* sounds/transfer* sounds/pbx-* sounds/ss-* sounds/beep* sounds/dir-* sounds/conf-* sounds/agent-* sounds/invalid* sounds/tt-* sounds/auth-* sounds/privacy-* sounds/queue-*; do \
  		if grep -q "^%`basename $$x`%" sounds.txt; then \
@@ -227,7 +225,7 @@ $FreeBSD$
  
  update: 
  	@if [ -d CVS ]; then \
-@@ -364,111 +370,86 @@
+@@ -367,113 +372,88 @@
  	fi
  
  bininstall: all
@@ -296,7 +294,7 @@ $FreeBSD$
  	fi 
 -	( cd $(DESTDIR)$(ASTVARLIBDIR)/sounds  ; ln -s $(ASTSPOOLDIR)/vm . )
 -	( cd $(DESTDIR)$(ASTVARLIBDIR)/sounds  ; ln -s $(ASTSPOOLDIR)/voicemail . )
--	if [ -f mpg123-0.59r/mpg123 ]; then make -C mpg123-0.59r install; fi
+-	if [ -f mpg123-0.59r/mpg123 ]; then $(MAKE) -C mpg123-0.59r install; fi
 -	@echo " +---- Asterisk Installation Complete -------+"  
 -	@echo " +                                           +"
 -	@echo " +    YOU MUST READ THE SECURITY DOCUMENT    +"
@@ -358,6 +356,8 @@ $FreeBSD$
 -	echo "astspooldir => $(ASTSPOOLDIR)" >> $(DESTDIR)$(ASTETCDIR)/asterisk.conf
 -	echo "astrundir => $(ASTVARRUNDIR)" >> $(DESTDIR)$(ASTETCDIR)/asterisk.conf
 -	echo "astlogdir => $(ASTLOGDIR)" >> $(DESTDIR)$(ASTETCDIR)/asterisk.conf
+-	echo "[options]" >> $(DESTDIR)$(ASTETCDIR)/asterisk.conf
+-	echo "uniquename = asterisk" >> $(DESTDIR)$(ASTETCDIR)/asterisk.conf
 +	echo "[directories]" > $(DESTDIR)$(ASTETCDIR)/asterisk.conf-dist
 +	echo "astetcdir => $(ASTETCDIR)" >> $(DESTDIR)$(ASTETCDIR)/asterisk.conf-dist
 +	echo "astmoddir => $(MODULES_DIR)" >> $(DESTDIR)$(ASTETCDIR)/asterisk.conf-dist
@@ -366,6 +366,8 @@ $FreeBSD$
 +	echo "astspooldir => $(ASTSPOOLDIR)" >> $(DESTDIR)$(ASTETCDIR)/asterisk.conf-dist
 +	echo "astrundir => $(ASTVARRUNDIR)" >> $(DESTDIR)$(ASTETCDIR)/asterisk.conf-dist
 +	echo "astlogdir => $(ASTLOGDIR)" >> $(DESTDIR)$(ASTETCDIR)/asterisk.conf-dist
++	echo "[options]" >> $(DESTDIR)$(ASTETCDIR)/asterisk.conf-dist
++	echo "uniquename = asterisk" >> $(DESTDIR)$(ASTETCDIR)/asterisk.conf-dist
 +	if ! [ -f $(DESTDIR)$(ASTETCDIR)/asterisk.conf ]; then \
 +		$(BSD_INSTALL_DATA) $(DESTDIR)$(ASTETCDIR)/asterisk.conf-dist $(DESTDIR)$(ASTETCDIR)/asterisk.conf; \
 +	fi
@@ -388,7 +390,7 @@ $FreeBSD$
  	:> $(DESTDIR)$(ASTSPOOLDIR)/voicemail/default/1234/unavail.gsm
  	for x in vm-theperson digits/1 digits/2 digits/3 digits/4 vm-isunavail; do \
  		cat $(DESTDIR)$(ASTVARLIBDIR)/sounds/$$x.gsm >> $(DESTDIR)$(ASTSPOOLDIR)/voicemail/default/1234/unavail.gsm ; \
-@@ -483,7 +464,7 @@
+@@ -486,7 +466,7 @@
  	@[ -d $(DESTDIR)$(HTTPDIR)/html ] || ( echo "No http directory" && exit 1 )
  	@[ -d $(DESTDIR)$(HTTPDIR)/cgi-bin ] || ( echo "No cgi-bin directory" && exit 1 )
  	install -m 4755 -o root -g root contrib/scripts/vmail.cgi $(DESTDIR)$(HTTPDIR)/cgi-bin/vmail.cgi
@@ -397,7 +399,7 @@ $FreeBSD$
  	for x in images/*.gif; do \
  		install -m 644 $$x $(DESTDIR)$(HTTPDIR)/html/_asterisk/; \
  	done
-@@ -503,10 +484,10 @@
+@@ -506,10 +486,10 @@
  
  __rpm: _version
  	rm -rf /tmp/asterisk ; \
