@@ -7,7 +7,7 @@
 
 PORTNAME=	thunderbird
 PORTVERSION=	0.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	thunderbird/releases/${PORTVERSION}
@@ -34,7 +34,7 @@ HAS_CONFIGURE=	yes
 NO_MTREE=	yes
 PLIST=		${WRKDIR}/plist
 ALL_TARGET=	default
-USE_GNOME=	gtk20 libidl
+USE_GNOME=	gtk20 libidl gnomehier
 CONFIGURE_ENV=	LOCALBASE=${LOCALBASE}
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
@@ -45,6 +45,9 @@ WRKSRC=			${WRKDIR}/mozilla
 LOCAL_SUBDIR=		lib/${PORTNAME}
 LOCAL_PREFIX=		${PREFIX}/${LOCAL_SUBDIR}
 ESD_LIB=		libesd.so.2
+
+THUNDERBIRD_ICON=	thunderbird.xpm
+THUNDERBIRD_ICON_SRC=	${WRKSRC}/other-licenses/branding/thunderbird/default.xpm
 
 OPTIONS=	DEBUG "Build a debugging image" off \
 		LOGGING "Enable additional log messages" off \
@@ -135,6 +138,8 @@ post-patch:
 		< ${MASTERDIR}/pkg-install.in > ${PKGINSTALL}
 	@${SED} -e 's|%%MOZDIR%%|${LOCAL_PREFIX}/lib/${PORTNAME}-${PORTVERSION}|g' \
 		< ${MASTERDIR}/pkg-deinstall.in > ${PKGDEINSTALL}
+	@${SED} -e 's|@THUNDERBIRD_ICON@|${THUNDERBIRD_ICON}|' \
+		< ${FILESDIR}/thunderbird.desktop.in > ${WRKDIR}/thunderbird.desktop
 
 pre-configure:
 	@if [ -n "`${PKG_INFO} -xI '^bind[0-9]*-base-[0-9]'`" ]; then \
@@ -163,6 +168,8 @@ pre-install:
 .for ii in thunderbird thunderbird-config
 	@${ECHO_CMD} bin/${ii} >> ${PLIST}
 .endfor
+	@${CP} -RL ${WRKSRC}/dist/bin/defaults/isp \
+		${FAKEDIR}/${LOCAL_SUBDIR}/lib/${PORTNAME}-${PORTVERSION}/defaults
 	@cd ${FAKEDIR} && ${FIND} * ! -type d | ${SORT} >> ${PLIST}; \
 	${FIND} * -type d -empty | ${SORT} | ${SED} -e \
 		"s:^:@exec ${MKDIR} %D/:" -e "s:$$: || true:" >> ${PLIST}; \
@@ -170,6 +177,9 @@ pre-install:
 		"s:^:@unexec ${RMDIR} %D/:" -e "s:$$: || true:" >> ${PLIST}; \
 	${FIND} * -type d ! -empty | ${SORT} -r | ${SED} -e "s:^:@dirrm :" | \
 		${GREP} / >> ${PLIST}
+	${ECHO_CMD} '@dirrm ${LOCAL_SUBDIR}/defaults/isp' >> ${PLIST}
+	${ECHO_CMD} 'share/gnome/pixmaps/${THUNDERBIRD_ICON}' >> ${PLIST}
+	${ECHO_CMD} 'share/gnome/applications/thunderbird.desktop' >> ${PLIST}
 
 do-install:
 # This is the actual installation.  First, the contents of FAKEDIR are
@@ -198,5 +208,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/other-licenses/branding/thunderbird/mozicon50.xpm \
 	${LOCAL_PREFIX}/lib/${PORTNAME}-${PORTVERSION}/chrome/icons/default/messengerWindow16.xpm
 .endif # defined(WITH_NEW_ICON)
+	${INSTALL_DATA} ${THUNDERBIRD_ICON_SRC} ${PREFIX}/share/gnome/pixmaps/${THUNDERBIRD_ICON}
+	${INSTALL_DATA} ${WRKDIR}/thunderbird.desktop ${PREFIX}/share/gnome/applications
 
 .include <bsd.port.post.mk>
