@@ -9076,6 +9076,7 @@ xperfmon3	ports/sysutils/xperfmon3
 xphoon		ports/astro/xphoon
 xphotohunter	ports/games/xphotohunter
 xpilot		ports/games/xpilot
+xpilot-ng	ports/games/xpilot-ng
 xpilotmon	ports/games/xpilotmon
 xpinmame	ports/emulators/xpinmame
 xpipeman	ports/games/xpipeman
