@@ -9,7 +9,7 @@ PORTNAME=	sgb
 PORTVERSION=	20030623
 CATEGORIES=	devel
 MASTER_SITES=	ftp://labrea.stanford.edu/pub/sgb/
-DISTNAME=	sgb
+DISTNAME=	sgb-2003-06-23
 
 MAINTAINER=	gerald@FreeBSD.org
 COMMENT=	The Stanford GraphBase: A Platform for Combinatorial Computing
