@@ -6202,6 +6202,7 @@ py-psycopg	ports/databases/py-psycopg
 py-px		ports/devel/py-px
 py-pyPgSQL	ports/databases/py-pyPgSQL
 py-qt		ports/x11-toolkits/py-qt
+py-rdflib	ports/textproc/py-rdflib
 py-repl		ports/devel/py-repl
 py-reportlab	ports/print/py-reportlab
 py-reverse	ports/devel/py-reverse
