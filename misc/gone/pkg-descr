@@ -1,0 +1,12 @@
+Gone is a utility that locks a terminal  with  a  password
+chosen by the user.  Gone will prompt the user for a pass-
+word (unless the -p option is given, then gone will use the system
+password), then print the gone banner, then drop into the gone
+shell.  From this shell, only a restricted set of commands
+can be run.  Gone will also disallow messages by  removing
+permissions  on  the parent tty.  After the timeout period
+(10 minutes by default), gone will automatically  log  the
+user out.
+
+-Joe
+marcus@miami.edu
