@@ -886,6 +886,7 @@ contrib_pnpinfo	src/contrib/pnpinfo
 contrib_sendmail	src/contrib/sendmail
 contrib_smbfs   src/contrib/smbfs
 contrib_softupdates	src/contrib/sys/softupdates
+contrib_sort	src/contrib/sort
 contrib_sys	src/contrib/sys
 contrib_tcp_wrappers	src/contrib/tcp_wrappers
 contrib_tcpdump	src/contrib/tcpdump
