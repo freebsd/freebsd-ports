@@ -1,16 +1,17 @@
-diff -ur /usr/local/home/doug/Mail-SpamAssassin-2.30/lib/Mail/SpamAssassin/Conf.pm ./lib/Mail/SpamAssassin/Conf.pm
---- /usr/local/home/doug/Mail-SpamAssassin-2.30/lib/Mail/SpamAssassin/Conf.pm	Mon Jun 10 00:59:38 2002
-+++ ./lib/Mail/SpamAssassin/Conf.pm	Sat Jun 15 01:35:42 2002
-@@ -135,6 +135,8 @@
-   $self->{allow_user_rules} = 0;
+diff -ur ../Mail-SpamAssassin-2.43/lib/Mail/SpamAssassin/Conf.pm ./lib/Mail/SpamAssassin/Conf.pm
+--- ../Mail-SpamAssassin-2.43/lib/Mail/SpamAssassin/Conf.pm	Fri Oct  4 05:54:15 2002
++++ ./lib/Mail/SpamAssassin/Conf.pm	Thu Oct 17 22:12:05 2002
+@@ -144,6 +144,9 @@
    $self->{user_rules_to_compile} = 0;
+   $self->{fold_headers} = 1;
  
++  # Added by FreeBSD ports
 +  $self->{use_dcc} = 1;
 +
+   $self->{dcc_path} = undef; # Browse PATH
    $self->{dcc_body_max} = 999999;
    $self->{dcc_fuz1_max} = 999999;
-   $self->{dcc_fuz2_max} = 999999;
-@@ -613,6 +615,16 @@
+@@ -763,6 +766,16 @@
  
      if (/^rbl[-_]timeout\s+(\d+)$/) {
        $self->{rbl_timeout} = $1+0; next;
@@ -26,22 +27,21 @@ diff -ur /usr/local/home/doug/Mail-SpamAssassin-2.30/lib/Mail/SpamAssassin/Conf.
 +      $self->{use_dcc} = $1+0; next;
      }
  
- =item ok_locales xx [ yy zz ... ]		(default: en)
-diff -ur /usr/local/home/doug/Mail-SpamAssassin-2.30/lib/Mail/SpamAssassin/Dns.pm ./lib/Mail/SpamAssassin/Dns.pm
---- /usr/local/home/doug/Mail-SpamAssassin-2.30/lib/Mail/SpamAssassin/Dns.pm	Wed Jun 12 02:10:43 2002
-+++ ./lib/Mail/SpamAssassin/Dns.pm	Sat Jun 15 01:37:22 2002
-@@ -301,6 +301,10 @@
- 
+ =item ok_locales xx [ yy zz ... ]		(default: all)
+diff -ur ../Mail-SpamAssassin-2.43/lib/Mail/SpamAssassin/Dns.pm ./lib/Mail/SpamAssassin/Dns.pm
+--- ../Mail-SpamAssassin-2.43/lib/Mail/SpamAssassin/Dns.pm	Fri Oct  4 05:54:16 2002
++++ ./lib/Mail/SpamAssassin/Dns.pm	Thu Oct 17 22:12:51 2002
+@@ -449,6 +449,9 @@
  sub is_dcc_available {
    my ($self) = @_;
-+
+ 
 +  # Added by FreeBSD ports
 +  return 0 unless $self->{conf}->{use_dcc};
 +
-   my (@resp);
- 
    if ($self->{main}->{local_tests_only}) {
-@@ -324,6 +328,10 @@
+     dbg ("local tests only, ignoring DCC");
+     return 0;
+@@ -476,6 +479,10 @@
  
  sub dcc_lookup {
    my ($self, $fulltext) = @_;
@@ -52,10 +52,10 @@ diff -ur /usr/local/home/doug/Mail-SpamAssassin-2.30/lib/Mail/SpamAssassin/Dns.p
    my $response = undef;
    my %count;
    my $left;
-diff -ur /usr/local/home/doug/Mail-SpamAssassin-2.30/lib/Mail/SpamAssassin/EvalTests.pm ./lib/Mail/SpamAssassin/EvalTests.pm
---- /usr/local/home/doug/Mail-SpamAssassin-2.30/lib/Mail/SpamAssassin/EvalTests.pm	Fri Jun 14 10:21:47 2002
-+++ ./lib/Mail/SpamAssassin/EvalTests.pm	Sat Jun 15 01:37:34 2002
-@@ -1430,6 +1430,9 @@
+diff -ur ../Mail-SpamAssassin-2.43/lib/Mail/SpamAssassin/EvalTests.pm ./lib/Mail/SpamAssassin/EvalTests.pm
+--- ../Mail-SpamAssassin-2.43/lib/Mail/SpamAssassin/EvalTests.pm	Fri Oct  4 05:54:16 2002
++++ ./lib/Mail/SpamAssassin/EvalTests.pm	Thu Oct 17 22:10:46 2002
+@@ -2026,6 +2026,9 @@
  sub check_dcc {
    my ($self, $fulltext) = @_;
  
@@ -65,24 +65,23 @@ diff -ur /usr/local/home/doug/Mail-SpamAssassin-2.30/lib/Mail/SpamAssassin/EvalT
    return 0 unless ($self->is_dcc_available());
    return 0 if ($self->{already_checked_dcc});
  
-diff -ur /usr/local/home/doug/Mail-SpamAssassin-2.30/lib/Mail/SpamAssassin/Reporter.pm ./lib/Mail/SpamAssassin/Reporter.pm
---- /usr/local/home/doug/Mail-SpamAssassin-2.30/lib/Mail/SpamAssassin/Reporter.pm	Fri Jun 14 11:52:17 2002
-+++ ./lib/Mail/SpamAssassin/Reporter.pm	Sat Jun 15 00:56:39 2002
-@@ -147,6 +147,10 @@
- 
+diff -ur ../Mail-SpamAssassin-2.43/lib/Mail/SpamAssassin/Reporter.pm ./lib/Mail/SpamAssassin/Reporter.pm
+--- ../Mail-SpamAssassin-2.43/lib/Mail/SpamAssassin/Reporter.pm	Mon Oct 14 09:44:35 2002
++++ ./lib/Mail/SpamAssassin/Reporter.pm	Thu Oct 17 22:13:19 2002
+@@ -238,6 +238,9 @@
  sub is_dcc_available {
    my ($self) = @_;
-+
+ 
 +  # Added by FreeBSD ports
 +  return 0 unless $self->{conf}->{use_dcc};
 +
-   my (@resp);
- 
    if ($self->{main}->{local_tests_only}) {
-diff -ur /usr/local/home/doug/Mail-SpamAssassin-2.30/rules/10_misc.cf ./rules/10_misc.cf
---- /usr/local/home/doug/Mail-SpamAssassin-2.30/rules/10_misc.cf	Thu May 30 19:12:10 2002
-+++ ./rules/10_misc.cf	Sat Jun 15 00:56:39 2002
-@@ -102,6 +102,9 @@
+     dbg ("local tests only, ignoring DCC");
+     return 0;
+diff -ur ../Mail-SpamAssassin-2.43/rules/10_misc.cf ./rules/10_misc.cf
+--- ../Mail-SpamAssassin-2.43/rules/10_misc.cf	Thu Sep 26 03:50:25 2002
++++ ./rules/10_misc.cf	Thu Oct 17 22:10:46 2002
+@@ -107,6 +107,9 @@
  # test, so it is set to "all" so the test will not be used by default.
  ok_languages            all
  
