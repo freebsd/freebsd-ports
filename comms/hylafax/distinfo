@@ -1,3 +1,4 @@
-MD5 (hylafax/hylafax-4.1beta2.tar.gz) = d8560726e4f75093b9d6c7d1403694ce
+MD5 (hylafax/hylafax-4.1.tar.gz) = d8a60dcddb4bcfd67c494aee89d036e7
 MD5 (hylafax/tiff-3.5-interfaces.patch) = c1d2847c9967a10961bb7fe123ecd8e6
 MD5 (hylafax/cvtDateTime.patch) = 57b2d1218e83504c85cf31c1e3746e4e
+MD5 (hylafax/rings-cid-passing.patch) = ade1d9adc9dd236e45176b7a0e3b5d78
