@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	lyx
-PORTVERSION=	1.3.3
-PORTREVISION=	1
+PORTVERSION=	1.3.4
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.lyx.org/pub/lyx/stable/ \
 		ftp://ftp.sdsc.edu/pub/other/lyx/stable/ \
@@ -59,6 +58,9 @@ RUN_DEPENDS+=	ispell:${PORTSDIR}/textproc/ispell
 
 .if ${OSVERSION} < 500035
 CFLAGS+=	-Wno-non-template-friend -ftemplate-depth-30
+.if defined(WITH_QT)
+BROKEN=	QT Frontend coredumps on 4.x. Use the xforms Frontend instead.
+.endif
 .endif
 
 pre-everything::
