@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.99 1997/04/13 15:41:57 brian Exp $
+# $Id: Makefile,v 1.100 1997/04/18 12:10:54 jfitz Exp $
 #
 
     SUBDIR += archie
@@ -43,6 +43,7 @@
     SUBDIR += pcnfsd
     SUBDIR += pmf
     SUBDIR += radius
+    SUBDIR += ratoolset
     SUBDIR += rdist6
     SUBDIR += rmsg
     SUBDIR += rsync
