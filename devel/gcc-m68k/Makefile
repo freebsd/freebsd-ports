@@ -3,7 +3,7 @@
 # Date created:		7 July 1998
 # Whom:			Jerry Hicks <jhicks@glenatl.glenayre.com>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/08/09 01:35:38 steve Exp $
 #
 
 DISTNAME=	gcc-2.8.1
@@ -24,7 +24,7 @@ GNU_CONFIGURE=	yes
 
 CONFIGURE_ARGS=	--target=m68k-coff --with-gnu-as --with-gnu-ld
 
-MAKE_FLAGS+=	LANGUAGES="c c++" SUBDIRS="cp"
+MAKE_FLAGS=	LANGUAGES="c c++" SUBDIRS="cp" -f
 
 MAN1=		cccp.1 m68k-coff-g++.1 m68k-coff-gcc.1
 

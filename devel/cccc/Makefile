@@ -3,7 +3,7 @@
 # Date created:				12 September 1997
 # Whom:					Andrey Zakhvatov
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/11/03 10:02:36 tg Exp $
 #
 
 DISTNAME=		cccc-2.1.1.src
@@ -20,7 +20,7 @@ BUILD_DEPENDS=		antlr:${PORTSDIR}/devel/pccts \
 WRKSRC=			${WRKDIR}/usr/local/src/cccc-2.1.1
 USE_GMAKE=		yes
 MAKEFILE=		makefile
-MAKE_ENV+=		OSTYPE=FreeBSD
+MAKE_ENV=		OSTYPE=FreeBSD
 
 do-install:
 	@ ${INSTALL_PROGRAM} ${WRKSRC}/cccc ${PREFIX}/bin
