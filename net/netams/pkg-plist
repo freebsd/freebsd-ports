@@ -15,7 +15,6 @@ share/examples/netams/netams-simple.cfg
 share/examples/netams/netams.cfg
 share/examples/netams/.netamsctl.rc
 share/examples/netams/cgi-bin/logo.gif
-share/examples/netams/cgi-bin/lucon.ttf
 share/examples/netams/cgi-bin/netams_api.pl
 share/examples/netams/cgi-bin/netams_example.cgi
 share/examples/netams/cgi-bin/netams_graph.cgi
@@ -24,4 +23,3 @@ share/examples/netams/cgi-bin/weblogin.tem
 %%PORTDOCS%%@dirrm share/doc/netams
 @dirrm share/examples/netams/cgi-bin
 @dirrm share/examples/netams
-

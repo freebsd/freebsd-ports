@@ -1,20 +1,48 @@
---- Makefile.orig	Sat Apr  5 00:17:21 2003
-+++ Makefile	Sat Apr  5 00:17:52 2003
-@@ -3,7 +3,7 @@
- #***     (c) 1998-2001 Anton Vinokurov, anton@inorg.chem.msu.ru
- #***		
- #*************************************************************************
--LIB = -pthread -lutil -lpcap -lmysqlclient -L/usr/local/lib/mysql
-+LIB = -pthread -lutil -lpcap -lmysqlclient -L${LOCALBASE}/lib/mysql
- DEFINE += -DFREEBSD -DFREEBSD_VER=4 -DUSE_MYSQL
+--- Makefile	Mon May 19 20:41:16 2003
++++ Makefile.orig	Fri May 23 12:27:25 2003
+@@ -11,14 +11,14 @@
  ##########################################################################
- # for Linux, uncomment this
-@@ -40,7 +40,7 @@
+ # for FreeBSD, uncomment this
+-DEFINE = -DFREEBSD -D_THREAD_SAFE
+-LIB = -pthread -lpcap
++DEFINE += -DFREEBSD -D_THREAD_SAFE
++LIB += -pthread -lpcap -lcrypt
+ #
+ # DB1 support
+ # DEFINE+= -DUSE_HASH
+ #
+ # MySQL storage support
+-DEFINE += -DUSE_MYSQL
+-LIB += -lmysqlclient -L/usr/local/lib/mysql
++# DEFINE += -DUSE_MYSQL
++# LIB += -lmysqlclient -L/usr/local/lib/mysql
+ #
+ # PostgreSQL storage support
+ # DEFINE += -DUSE_POSTGRES
+@@ -45,14 +45,14 @@
+ # DEFINE += -DIPTBL_PFSET
+ ##########################################################################
+ # Define here a PATH variables
+-PATH_TO_CONFIG="/usr/local/etc/netams.cfg"
++PATH_TO_CONFIG="${PREFIX}/etc/netams.conf"
+ PATH_TO_LOG="/var/log/netams.log"
+ # 
+ # Uncomment this if you want to log dropped packets
+ # DEFINE += -DLOG_DROP
+ # Uncomment this if you want to enable debug features 
+-DEFINE += -DDEBUG
+-FLAGS += -g -Wall
++# DEFINE += -DDEBUG
++# FLAGS += -g -Wall
+ # Uncomment this if you want to enable profiler support
+ # LIB += -lm -pg
+ # FLAGS += -pg
+@@ -74,7 +74,7 @@
  
  CC	= g++
- FLAGS	= -g -pthread -Wall 
+ FLAGS	+= -pthread 
 -INCLUDE=/usr/local/include
-+INCLUDE=${LOCALBASE}/include
++INCLUDE = ${LOCALBASE}/include
  OBJ	= $(SRC:.c=.o)
- CFLAGS	= $(FLAGS) -I$(INCLUDE) $(DEFINE) -Wall
+ CFLAGS	= $(FLAGS) -I$(INCLUDE) $(DEFINE)
  
