@@ -8,7 +8,8 @@
 PORTNAME=	cli
 PORTVERSION=	20020326
 CATEGORIES=	lang
-MASTER_SITES=	http://download.microsoft.com/download/.netframesdk/Beta1/WXP/EN-US/ \
+MASTER_SITES=	http://download.microsoft.com/download/.netframesdk/CLI/Beta1/WXP/EN-US/ \
+		http://download.microsoft.com/download/.netframesdk/Beta1/WXP/EN-US/ \
 		http://www.corel.com/6763/downloads/mirror/microsoft/rotor/ \
 		ftp://ftp.corel.com/pub/mirror/Microsoft/rotor/
 DISTNAME=	sscli${PORTVERSION}
