@@ -6,23 +6,23 @@
 #
 
 PORTNAME=	commons-logging
-PORTVERSION=	1.0.3
+PORTVERSION=	1.0.4
 CATEGORIES=	java
 MASTER_SITES=	${MASTER_SITE_APACHE_JAKARTA}
-MASTER_SITE_SUBDIR=	commons/logging/source/
+MASTER_SITE_SUBDIR=	${PORTNAME:S,-,/,}/source
 PKGNAMEPREFIX=	jakarta-
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	znerd@FreeBSD.org
 COMMENT=	Generic logging wrapper library
 
-BUILD_DEPENDS=	${ANT}:${PORTSDIR}/devel/apache-ant
-
 OPTIONS=	LOG4J "Enable Jakarta Log4j log factory" on \
 		LOGKIT "Enable Avalon LogKit log factory" off \
 		JDK14LOG "Enable JDK 1.4 log factory" off
 
 USE_JAVA=	yes
+USE_ANT=	yes
+MAKE_ENV+=	ANT_INCLUDE_SHARED_JARS=YES
 
 .include <bsd.port.pre.mk>
 
@@ -33,40 +33,36 @@ JAVA_VERSION=	1.2+
 .endif
 
 .if defined(WITH_LOG4J)
-BUILD_DEPENDS+=	${JAVAJARDIR}/log4j.jar:${PORTSDIR}/java/jakarta-log4j
+BUILD_DEPENDS+=	${JAVALIBDIR}/log4j.jar:${PORTSDIR}/devel/log4j
 .endif
 
 .if defined(WITH_LOGKIT)
-BUILD_DEPENDS+=	${JAVAJARDIR}/logkit.jar:${PORTSDIR}/java/avalon-logkit
+BUILD_DEPENDS+=	${JAVALIBDIR}/logkit.jar:${PORTSDIR}/java/avalon-logkit
 .endif
 
-ANT?=		${LOCALBASE}/bin/ant
-ANT_TARGET=	compile
+ALL_TARGET=	compile
 .if !defined(NOPORTDOCS)
-ANT_TARGET+=	javadoc
+ALL_TARGET+=	javadoc
 PORTDOCS=	api LICENSE
 .endif
 JARFILE=	${PORTNAME}.jar
-DESTJARFILE=	${PORTNAME}.jar
-PLIST_FILES=	${JAVAJARDIR:S,^${PREFIX}/,,}/${DESTJARFILE}
+PLIST_FILES=	%%JAVAJARDIR%%/${JARFILE}
 
 post-extract:
-	@${CP} ${PORTSDIR}/java/jakarta-commons-beanutils/files/LICENSE ${WRKDIR}/${PORTNAME}-${PORTVERSION}-src/
-
-do-build:
-	@cd ${WRKSRC} && ${SETENV} ANT_INCLUDE_SHARED_JARS=YES ${ANT} ${ANT_TARGET}
+	@${CP} ${PORTSDIR}/java/jakarta-commons-beanutils/files/LICENSE ${WRKSRC}/
 
 do-install:
-	@${ECHO_CMD} -n ">> Installing JAR as ${JAVAJARDIR}/${DESTJARFILE}..."
-	@${CP} ${WRKSRC}/target/${JARFILE} ${JAVAJARDIR}/${DESTJARFILE}
-	@${ECHO_CMD} " [ DONE ]"
+	@${ECHO_MSG} -n ">> Installing JAR as ${JAVAJARDIR}/${JARFILE}..."
+	@${INSTALL_DATA} ${WRKSRC}/target/${JARFILE} ${JAVAJARDIR}/${JARFILE}
+	@${ECHO_MSG} " [ DONE ]"
 
 .if !defined(NOPORTDOCS)
-	@${ECHO_CMD} -n ">> Installing documentation in ${DOCSDIR}..."
-	@${MKDIR} ${DOCSDIR}
-	@${CP} -r ${WRKSRC}/dist/docs/api ${DOCSDIR}/
-	@${CP} ${WRKSRC}/LICENSE ${DOCSDIR}/
-	@${ECHO_CMD} " ${PORTDOCS} [ DONE ]"
+	@${ECHO_MSG} -n ">> Installing documentation in ${DOCSDIR}/..."
+	@cd ${WRKSRC}/dist/docs \
+	  && ${FIND} api -type d -exec ${MKDIR} ${DOCSDIR}/{} \; \
+	  && ${FIND} api -type f -exec ${INSTALL_DATA} {} ${DOCSDIR}/{} \;
+	@${INSTALL_DATA} ${WRKSRC}/LICENSE ${DOCSDIR}/
+	@${ECHO_MSG} " ${PORTDOCS} [ DONE ]"
 .endif
 
 .include <bsd.port.post.mk>
