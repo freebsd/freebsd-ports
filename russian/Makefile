@@ -10,6 +10,7 @@
     SUBDIR += fortuneru
     SUBDIR += gd
     SUBDIR += kde2-i18n
+    SUBDIR += koffice-i18n
     SUBDIR += koi8r-ps
     SUBDIR += messarge
     SUBDIR += netscape4.language
