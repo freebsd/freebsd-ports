@@ -79,12 +79,16 @@ lib/ruby/%%RUBY_VER%%/timeout.rb
 lib/ruby/%%RUBY_VER%%/tracer.rb
 lib/ruby/%%RUBY_VER%%/weakref.rb
 lib/ruby/%%RUBY_VER%%/cgi/session.rb
+lib/ruby/%%RUBY_VER%%/net/ftp.rb
+lib/ruby/%%RUBY_VER%%/net/http.rb
 lib/ruby/%%RUBY_VER%%/net/pop.rb
-lib/ruby/%%RUBY_VER%%/net/session.rb
+lib/ruby/%%RUBY_VER%%/net/protocol.rb
 lib/ruby/%%RUBY_VER%%/net/smtp.rb
-@exec /bin/mkdir -p %D/lib/ruby/%%RUBY_VER%%/site_ruby/%%RUBY_ARCH%%
-@dirrm lib/ruby/%%RUBY_VER%%/site_ruby/%%RUBY_ARCH%%
-@dirrm lib/ruby/%%RUBY_VER%%/site_ruby
+lib/ruby/%%RUBY_VER%%/net/telnet.rb
+@exec /bin/mkdir -p %D/lib/ruby/site_ruby/%%RUBY_VER%%/%%RUBY_ARCH%%
+@dirrm lib/ruby/site_ruby/%%RUBY_VER%%/%%RUBY_ARCH%%
+@dirrm lib/ruby/site_ruby/%%RUBY_VER%%
+@dirrm lib/ruby/site_ruby
 @dirrm lib/ruby/%%RUBY_VER%%/%%RUBY_ARCH%%
 @dirrm lib/ruby/%%RUBY_VER%%/cgi
 @dirrm lib/ruby/%%RUBY_VER%%/net
