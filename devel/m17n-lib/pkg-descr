@@ -1,0 +1,23 @@
+The m17n library provides following facilities to handle multilingual
+text.
+
+    * M-text: A data structure for a multilingual text.  It is
+      basically a string but with attributes called text property, and
+      is designed to substitute for the C string.  It is the most
+      important object of the m17n library.
+
+    * Functions for creating and processing M-texts.
+
+    * Functions for converting M-texts from/to strings encoded in
+      various existing formats.
+
+    * A huge character space, which contains all the Unicode
+      characters and more non-Unicode characters.
+
+    * Chartable: A data structure that contains per-character
+      information efficiently.
+
+    * Functions for inputting and displaying M-text on a window
+      system.
+
+WWW: http://www.m17n.org/m17n-lib/

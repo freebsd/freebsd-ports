@@ -470,6 +470,7 @@
     SUBDIR += log4cpp
     SUBDIR += lwp
     SUBDIR += m17n-db
+    SUBDIR += m17n-lib
     SUBDIR += m4
     SUBDIR += m6811-binutils
     SUBDIR += m6811-gcc
