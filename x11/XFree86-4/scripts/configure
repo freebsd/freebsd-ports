@@ -203,10 +203,6 @@ if [ -f $WRKDIR/.cdrom ]; then
      echo "can't find $X11FIXES/XFree86-3.1.2.diff.gz !!!"
      err=1
   fi
-  if [ ! -f $X11FIXES/cfont312.tgz ]; then                          
-     echo "can't find $X11FIXES/cfont312.tgz !!!"    
-     err=1    
-  fi    
   if [ ! -f $X11FIXES/3.1.2-3.1.2-S.diff.gz ]; then
      echo "can't find $X11FIXES/3.1.2-3.1.2-S.diff.gz !!!"
      err=1
@@ -249,7 +245,6 @@ done
 echo 
 echo "==> applying XFree86 patches"
 zcat $X11FIXES/XFree86-3.1.2.diff.gz | patch -d $WRKSRC --forward --quiet -E -p1
-tar xzf $X11FIXES/cfont312.tgz -C $WRKDIR
 zcat $X11FIXES/3.1.2-3.1.2-S.diff.gz | patch -d $WRKSRC --forward --quiet -E -p1
 
 if [ $k4patch = YES ] ; then
