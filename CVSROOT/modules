@@ -11517,6 +11517,7 @@ xcogitate	ports/games/xcogitate
 xcoloredit	ports/x11/xcoloredit
 xcolors		ports/x11/xcolors
 xcolorsel	ports/x11/xcolorsel
+xcompmgr	ports/x11-wm/xcompmgr
 xconq		ports/games/xconq
 xcoral		ports/editors/xcoral
 xcpustate	ports/sysutils/xcpustate
