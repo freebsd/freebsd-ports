@@ -6,12 +6,14 @@
 #
 
 PORTNAME=	6tunnel
-PORTVERSION=	0.07
+PORTVERSION=	0.09
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://amba.bydg.pdi.net/pub/wojtekka/ \
-		ftp://ftp.bsdjeunz.org/pub/ipv6/tools/
+		ftp://ftp.bsdfr.org/pub/projects/6tunnel/ \
+		ftp://atlantis.bsd-fr.org/pub/ipv6/tools/ \
+		http://rencade.raphit.net/~vt/
 
-MAINTAINER=	vt@bsdjeunz.org
+MAINTAINER=	vt@bsd-fr.org
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
