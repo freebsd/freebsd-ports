@@ -1,4 +1,4 @@
-LinCVS is a QT2-based frontend for the CVS-client supporting
+LinCVS is a QT3-based frontend for the CVS-client supporting
 both CVS-versions 1.9 and 1.10, perhaps even older ones....
 It allows to check out a module from and import of a module to a
 repository, to update or retrieve the status of a working directory
