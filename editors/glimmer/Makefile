@@ -35,7 +35,13 @@ PYTHON_LIBS=	-lssl -lcrypto
 .endif
 PYTHON_LIBS+=	-lutil -lreadline -lcrypt -lpython
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502104
+BROKEN=		"Does not compile on FreeBSD >= 5.x"
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpython|${PYTHON_LIBS}|g' ${WRKSRC}/configure
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
