@@ -1,0 +1,20 @@
+--- Imakefile	2000/11/03 15:43:33	1.1.1.1
++++ Imakefile	2000/11/07 15:40:10	1.2
+@@ -3,7 +3,7 @@
+ #endif
+ 
+ XCOMM Remove the next line if you want genuine Xaw instead of Xaw3d
+-#define XAW3D
++XCOMM define XAW3D
+ 
+ SRCS = xvkbd.c findwidget.c
+ OBJS = xvkbd.o findwidget.o
+@@ -15,7 +15,7 @@
+ XAWLIB = -lXaw3d
+ #endif
+ 
+-ComplexProgramTarget(xvkbd)
++ComplexProgramTargetNoMan(xvkbd)
+ 
+ InstallAppDefaults(XVkbd)
+ InstallAppDefaults(XVkbd-common)

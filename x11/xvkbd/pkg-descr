@@ -1,0 +1,11 @@
+From the xvkbd README:
+
+"xvkbd is a virtual (graphical) keyboard program for X Window System which
+ provides facility to enter characters onto other clients (softwares) by
+ clicking on a keyboard displayed on the screen. This may be used for systems
+ without a hardware keyboard such as kiosk terminals or handheld devices.
+ This program also has facility to send characters specified as the command
+ line option to another client."
+
+WWW:		http://member.nifty.ne.jp/tsato/xvkbd/
+Author:		Tom Sato <VEF00200@nifty.ne.jp>

@@ -110,6 +110,7 @@
     SUBDIR += xtermset
     SUBDIR += xtestpicture
     SUBDIR += xtoolwait
+    SUBDIR += xvkbd
     SUBDIR += xwatchwin
     SUBDIR += xwit
     SUBDIR += xzoom
