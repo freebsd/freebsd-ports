@@ -8,7 +8,7 @@
 PORTNAME=	fly
 PORTVERSION=	1.6.5
 CATEGORIES=	graphics
-MASTER_SITES=	# none
+MASTER_SITES=	http://members.optushome.com.au/martingleeson/fly/dist/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple drawing language to generate GIFs on the fly
