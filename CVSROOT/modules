@@ -4603,6 +4603,7 @@ libsocketcpp	ports/net/libsocketcpp
 libsoup		ports/devel/libsoup
 libspectrum	ports/emulators/libspectrum
 libspf		ports/mail/libspf
+libsrs		ports/mail/libsrs
 libstatgrab	ports/devel/libstatgrab
 libstocks	ports/finance/libstocks
 libstrfunc	ports/devel/libstrfunc
