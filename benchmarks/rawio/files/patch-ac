@@ -1,11 +1,13 @@
---- mkrandom.c.orig	Sat Jan 22 03:02:13 2000
-+++ mkrandom.c	Sat Jan 22 03:02:21 2000
-@@ -54,7 +54,7 @@
+--- mkrandom.c.orig	Sat Jan  1 19:47:33 2000
++++ mkrandom.c	Thu Jan 27 21:32:52 2000
+@@ -54,7 +54,9 @@
  #include <sys/wait.h>
  #include <sys/resource.h>
  #include <signal.h>
 -#include "random.h"
++#if !defined(__FreeBSD__) || !defined(__alpha__)
 +#include <machine/random.h>
++#endif
  
  /* submitted by Andy Doran <ad@psn.ie> */
  #ifdef __NetBSD__
