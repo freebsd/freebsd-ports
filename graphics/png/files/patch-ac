@@ -1,0 +1,21 @@
+--- scripts/libpng-config-body.in.orig	Wed Sep 18 08:05:43 2002
++++ scripts/libpng-config-body.in	Sun Jan 30 17:31:12 2005
+@@ -77,12 +77,16 @@
+         echo ${R_opts}
+         ;;
+ 
++    --ldopts)
++	echo ${ldopts}
++        ;;
++
+     --ldflags)
+-        echo ${ldflags} ${L_opts} ${R_opts} ${libs}
++	echo ${ldopts} ${L_opts} ${R_opts} ${libs}
+         ;;
+ 
+     --static)
+-        R_opts=""
++	R_opts="-static"
+         ;;
+ 
+     *)

@@ -1,3 +1,6 @@
+@unexec rm -f %D/bin/libpng12-config
+bin/libpng-config
+@exec ln -sf %f %D/bin/libpng12-config
 include/libpng/png.h
 @exec ln -sf libpng/%f %D/include/%f
 @unexec rm -f %D/include/%f

@@ -1,11 +1,41 @@
 --- scripts/makefile.freebsd.orig	Sat May 18 18:46:45 2002
-+++ scripts/makefile.freebsd	Wed Oct 20 23:06:52 2004
-@@ -25,7 +25,7 @@
++++ scripts/makefile.freebsd	Sun Jan 30 17:33:45 2005
+@@ -24,10 +24,11 @@
+ LDADD+=         -lm -lz
  DPADD+=         ${LIBM} ${LIBZ}
  
- CFLAGS+= -I. -DPNG_USE_PNGGCCRD
+-CFLAGS+= -I. -DPNG_USE_PNGGCCRD
 -.if (${MACHINE_ARCH} != "i386")
+-CFLAGS+= -DPNG_NO_ASSEMBLER_CODE
++cppflags=-DPNG_USE_PNGGCCRD
 +.if (${ARCH} != "i386")
- CFLAGS+= -DPNG_NO_ASSEMBLER_CODE
++cppflags+=-DPNG_NO_ASSEMBLER_CODE
  .endif
++CFLAGS+=-I. ${cppflags}
  
+ SRCS=	png.c pngset.c pngget.c pngrutil.c pngtrans.c pngwutil.c \
+ 	pngread.c pngrio.c pngwio.c pngwrite.c pngrtran.c \
+@@ -44,5 +45,23 @@
+ DOCS = ANNOUNCE CHANGES INSTALL KNOWNBUG LICENSE README TODO Y2KINFO
+ writelock:
+ 	chmod a-w *.[ch35] $(DOCS) scripts/*
++
++libpng-config:
++	( cat scripts/libpng-config-head.in; \
++	echo prefix=\"${PREFIX}\"; \
++	echo libdir=\"${PREFIX}${LIBDIR}\"; \
++	echo ccopts=\"${ccopts}\"; \
++	echo cppflags=\"${cppflags}\"; \
++	echo I_opts=\"-I${PREFIX}${INCSDIR}\"; \
++	echo L_opts=\"-L${PREFIX}${LIBDIR}\"; \
++	echo libs=\"-lpng -lz -lm\"; \
++	echo ldopts=\"${ldopts}\"; \
++	cat scripts/libpng-config-body.in ) > libpng-config
++	chmod +x libpng-config
++
++beforeinstall: libpng-config
++	${INSTALL} -o ${BINOWN} -g ${BINGRP} -m ${BINMODE} \
++		libpng-config ${PREFIX}/bin
++	ln -sf libpng-config ${PREFIX}/bin/libpng12-config
+ 
+ .include <bsd.lib.mk>
