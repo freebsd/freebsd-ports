@@ -80,6 +80,7 @@
     SUBDIR += oqtencoder
     SUBDIR += oqtplayer
     SUBDIR += ppm2fli
+    SUBDIR += quark
     SUBDIR += recmpeg
     SUBDIR += ruby-gst
     SUBDIR += slideshow

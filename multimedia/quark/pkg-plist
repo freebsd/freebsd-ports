@@ -1,0 +1,13 @@
+bin/charm-quark
+bin/quark
+bin/strange-quark
+etc/gconf/schemas/quark.schemas
+etc/gconf/schemas/strange-quark.schemas
+share/gnome/applications/quark.desktop
+share/gnome/pixmaps/quark.png
+share/locale/ko/LC_MESSAGES/quark.mo
+%%PORTDOCS%%share/doc/quark/AUTHORS
+%%PORTDOCS%%share/doc/quark/COPYING
+%%PORTDOCS%%share/doc/quark/INSTALL
+%%PORTDOCS%%share/doc/quark/README
+%%PORTDOCS%%@dirrm share/doc/quark
