@@ -22,5 +22,8 @@ post-patch:
 
 post-install:
 	@${MV} -f ${PREFIX}/bin/pybook.py ${PREFIX}/bin/pybook
+	${MKDIR} ${PREFIX}/share/pybook
+	${INSTALL_DATA} ${WRKSRC}/booklist ${PREFIX}/share/pybook/
+	${INSTALL_DATA} ${WRKSRC}/vimrc ${PREFIX}/share/pybook/
 
 .include <bsd.port.mk>
