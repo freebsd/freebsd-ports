@@ -33,14 +33,15 @@ WRKSRC=		${WRKDIR}/control/make
 JDK_VERSION=	1.4.2
 JDK_PATCHSET_VERSION=	5
 
-SUN_LINUX_JDK_VERSION=  1.4.2_02
+SUN_LINUX_JDK_VERSION=  1.4.2
 
 .if !defined(WITH_LINUX_BOOTSTRAP)
 NATIVE_BOOTSTRAP_JDKS=	${LOCALBASE}/jdk1.4.2 \
 			${LOCALBASE}/jdk1.4.1
 .endif
 
-LINUX_BOOTSTRAP_JDKS=	${LOCALBASE}/linux-sun-jdk1.4.2_02 \
+LINUX_BOOTSTRAP_JDKS=	${LOCALBASE}/linux-sun-jdk1.4.2_03 \
+			${LOCALBASE}/linux-sun-jdk1.4.2_02 \
 			${LOCALBASE}/linux-sun-jdk1.4.2_01 \
 			${LOCALBASE}/linux-sun-jdk1.4.2 \
 			${LOCALBASE}/linux-sun-jdk1.4.1_02 \
