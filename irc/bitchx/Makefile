@@ -27,9 +27,14 @@ WRKSRC=		${WRKDIR}/BitchX
 USE_AUTOCONF=	yes
 USE_GMAKE=	yes
 .if defined(WITH_GNOME)
-CONFIGURE_ARGS+=	--with-plugins --with-gtk --enable-sound
+CONFIGURE_ARGS+=	--with-gtk --enable-sound
 .else
-CONFIGURE_ARGS+=	--with-plugins --without-gtk
+CONFIGURE_ARGS+=	--without-gtk
+.endif
+.if defined(WITH_PLUGINS)
+CONFIGURE_ARGS+=	--with-plugins
+.else
+CONFIGURE_ARGS+=	--without-plugins
 .endif
 CONFIGURE_ARGS+=	--exec-prefix="${PREFIX}/share"	\
 			--bindir="${PREFIX}/bin" \
@@ -46,10 +51,8 @@ MAKE_ENV+=	INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
 .if !defined(WITH_GNOME)
 pre-extract:
 	@${ECHO} "You can add hooks for GNOME by defining WITH_GNOME"
+	@${ECHO} "If you want to build the plugins define WITH_PLUGINS"
 .endif
-
-pre-patch:
-	@${PERL} -pi -e "s!#undef WANT_CHAN_NICK_SERV!#define WANT_CHAN_NICK_SERV!" ${WRKSRC}/include/config.h
 
 post-install:
 .if !defined(NOPORTDOCS)
@@ -62,6 +65,24 @@ post-install:
 	@${ECHO} bin/gtkBitchX >> ${TMPPLIST}
 	@${ECHO} bin/gtkBitchX-1.0c16 >> ${TMPPLIST}
 	@${ECHO} share/bx/plugins/nicklist.so >> ${TMPPLIST}
+.if defined(WITH_PLUGINS)
+	@${ECHO} share/bx/plugins/BitchX.hints >> ${TMPPLIST}
+	@${ECHO} share/bx/plugins/acro.so >> ${TMPPLIST}
+	@${ECHO} share/bx/plugins/amp.so >> ${TMPPLIST}
+	@${ECHO} share/bx/plugins/autobot.so >> ${TMPPLIST}
+	@${ECHO} share/bx/plugins/blowfish.so >> ${TMPPLIST}
+	@${ECHO} share/bx/plugins/encrypt.so >> ${TMPPLIST}
+	@${ECHO} share/bx/plugins/fserv.so >> ${TMPPLIST}
+	@${ECHO} share/bx/plugins/hint.so >> ${TMPPLIST}
+	@${ECHO} share/bx/plugins/nap.so >> ${TMPPLIST}
+	@${ECHO} share/bx/plugins/pkga.so >> ${TMPPLIST}
+	@${ECHO} share/bx/plugins/possum.so >> ${TMPPLIST}
+	@${ECHO} share/bx/plugins/qmail.so >> ${TMPPLIST}
+	@${ECHO} share/bx/plugins/scan.so >> ${TMPPLIST}
+	@${ECHO} share/bx/plugins/wavplay.so >> ${TMPPLIST}
+	@${ECHO} share/bx/plugins/qbx.so >> ${TMPPLIST}
+	@${ECHO} share/bx/plugins/plugins >> ${TMPPLIST}
+.endif
 .else
 	@${ECHO} bin/BitchX >> ${TMPPLIST}
 	@${ECHO} bin/BitchX-1.0c16 >> ${TMPPLIST}
@@ -69,7 +90,6 @@ post-install:
 	@${ECHO} share/bx/wserv >> ${TMPPLIST}
 .endif
 	@${ECHO} @dirrm share/bx/help >> ${TMPPLIST}
-	@${ECHO} @dirrm share/bx/plugins >> ${TMPPLIST}
 	@${ECHO} @dirrm share/bx/script >> ${TMPPLIST}
 	@${ECHO} @dirrm share/bx/translation >> ${TMPPLIST}
 	@${ECHO} @dirrm share/bx >> ${TMPPLIST}
