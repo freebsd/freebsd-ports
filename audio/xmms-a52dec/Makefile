@@ -29,7 +29,7 @@ CFLAGS+=	`xmms-config --cflags` -L${LOCALBASE}/lib
 CFLAGS=	-fPIC
 .endif
 
-PLSIT_FILES=	lib/xmms/Input/liba52dec.so
+PLIST_FILES=	lib/xmms/Input/liba52dec.so
 
 do-build:
 	cd ${WRKSRC} && ${CC} ${CFLAGS} -shared -o liba52dec.so xmms-a52dec.c -la52
