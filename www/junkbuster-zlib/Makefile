@@ -11,7 +11,7 @@
 # in the next revision.
 
 DISTNAME=	ijb20
-PKGNAME=	ijb-2.0.2
+PKGNAME=	junkbuster-2.0.2
 CATEGORIES=	www
 MASTER_SITES=	http://www.junkbusters.com/ht/en/
 
