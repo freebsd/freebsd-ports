@@ -1,5 +1,5 @@
 # New ports collection makefile for:	fetchmail
-# Version required:     5.2.1
+# Version required:     5.2.3
 # Date created:		26 Oct 1996
 # Whom:			Ville Eerola <ve@sci.fi>
 #
@@ -11,7 +11,7 @@
 # does not need Python, so there is no RUN_DEPENDS for Python in
 # this Makefile.
 
-DISTNAME=       fetchmail-5.2.1
+DISTNAME=       fetchmail-5.2.3
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.ccil.org/pub/esr/fetchmail/
 
@@ -20,6 +20,9 @@ MAINTAINER=	ve@sci.fi
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS= --enable-OPIE --enable-RPA --enable-POP2 --enable-SDPS
 CONFIGURE_ENV=  LDFLAGS="${CFLAGS}"
+.if defined(USE_INET6)
+CONFIGURE_ARGS+=--enable-inet6
+.endif
 MAN1=		fetchmail.1
 MLINKS=		fetchmail.1 fetchmailconf.1
 

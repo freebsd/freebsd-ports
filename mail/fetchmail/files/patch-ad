@@ -1,24 +1,15 @@
---- configure.orig	Thu Sep 16 00:21:02 1999
-+++ configure	Fri Sep 24 13:13:25 1999
-@@ -4970,7 +4970,7 @@
-   echo $ac_n "(cached) $ac_c" 1>&6
- else
-   ac_save_LIBS="$LIBS"
--LIBS="-lopie  $LIBS"
-+LIBS="-lopie -lmd $LIBS"
- cat > conftest.$ac_ext <<EOF
- #line 4976 "configure"
- #include "confdefs.h"
-@@ -5004,7 +5004,7 @@
- #define $ac_tr_lib 1
- EOF
- 
--  LIBS="-lopie $LIBS"
-+  LIBS="-lopie -lmd $LIBS"
- 
- else
-   echo "$ac_t""no" 1>&6
-@@ -5368,7 +5368,7 @@
+--- configure.orig	Tue Jan  4 15:59:12 2000
++++ configure	Wed Jan 12 08:56:41 2000
+@@ -1595,7 +1595,7 @@
+ if test `uname` = "FreeBSD" 
+ then
+    echo "Adding -lkvm to standard libraries"
+-   LIBS="$LIBS -lkvm"
++   LIBS="$LIBS -lmd -lkvm"
+ fi
+  
+ # Check for Rhapsody special case: it doesn't like -s
+@@ -5553,7 +5553,7 @@
  then
    echo "Configuring kerberosIV for `uname`"
    CEFLAGS="$CEFLAGS -DKERBEROS_V4 -I/usr/include/kerberosIV"
@@ -27,7 +18,7 @@
  elif test -n "$with_kerberos" -a -n "$with_kerberos5"
  then
      CEFLAGS="$CEFLAGS -DKERBEROS_V4 -I$with_kerberos/include"
-@@ -5399,7 +5399,7 @@
+@@ -5584,7 +5584,7 @@
  then
      CEFLAGS="$CEFLAGS -DKERBEROS_V4 -I$with_kerberos/include"
      LDEFLAGS="$LDEFLAGS -L$with_kerberos/lib"
@@ -36,7 +27,7 @@
  else
    if test "$with_kerberos" != "no"
    then
-@@ -5409,7 +5409,7 @@
+@@ -5594,7 +5594,7 @@
        then
          CEFLAGS="$CEFLAGS -DKERBEROS_V4 -I$dir/include"
          LDEFLAGS="$LDEFLAGS -L$dir/lib"
