@@ -10,7 +10,7 @@ PORTVERSION=	1.0
 CATEGORIES=	net
 MASTER_SITES=	http://www.whizkidtech.redprince.net/fports/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	adam@redprince.net
 COMMENT=	URL encoder and decoder
 
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
