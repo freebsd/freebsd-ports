@@ -44,8 +44,8 @@ post-install:
 	@${ECHO_MSG} "==> Installing extra docs under ${PREFIX}/share/doc/v..."
 	${MKDIR} ${PREFIX}/share/doc/v
 	${CP} -R ${WRKSRC}/doc/* ${PREFIX}/share/doc/v
-	find ${PREFIX}/share/doc/v -type d -exec ${CHMOD} 755 {} \;
-	find ${PREFIX}/share/doc/v -type f -exec ${CHMOD} 644 {} \;
+	${FIND} ${PREFIX}/share/doc/v -type d -exec ${CHMOD} 755 {} \;
+	${FIND} ${PREFIX}/share/doc/v -type f -exec ${CHMOD} 644 {} \;
 	@${ECHO_MSG} "==> Extra docs installed.  Note, you will need *tex to read 'em."
 .endif
 	@${CAT} ${PKGMESSAGE}

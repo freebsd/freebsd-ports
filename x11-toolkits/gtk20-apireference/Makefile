@@ -27,7 +27,7 @@ post-extract:
 	${RM} -f ${PLIST}.tmp; \
 	for dir in gdk glib gtk; do \
 	    ${MV} $${dir}/$${dir}.devhelp $${dir}/$${dir}20.devhelp; \
-	    find $${dir} -type f >> ${PLIST}.tmp ; \
+	    ${FIND} $${dir} -type f >> ${PLIST}.tmp ; \
 	    ${ECHO} "@dirrm share/doc/$${dir}20" >> ${PLIST}.tmp; \
 	done; \
 	${SED}	-e 's/^gdk/share\/doc\/gdk20/' \

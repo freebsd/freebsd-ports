@@ -38,8 +38,8 @@ post-install:
 	${MKDIR} ${EG_DST_DIR}
 	${TAR} -C ${EG_SRC_DIR} -cf - . | ${TAR} -C ${EG_DST_DIR} -xvf -
 	${CHOWN} -R ${BINOWN}:${BINGRP} ${EG_DST_DIR}
-	find ${EG_DST_DIR} -type d -print | xargs ${CHMOD} 0555
-	find ${EG_DST_DIR} -type f -print | xargs ${CHMOD} 0444
+	${FIND} ${EG_DST_DIR} -type d -print | ${XARGS} ${CHMOD} 0555
+	${FIND} ${EG_DST_DIR} -type f -print | ${XARGS} ${CHMOD} 0444
 	${MKDIR} ${PREFIX}/share/doc/py-gtk
 	${INSTALL_DATA} ${WRKSRC}/MAPPING ${PREFIX}/share/doc/py-gtk
 .else
