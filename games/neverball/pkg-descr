@@ -1,11 +1,17 @@
-Tilt the floor to roll a ball through an obstacle course within the given time.
-If the ball falls or time expires, a ball is lost. Collect 100 coins to save
-your progress and earn an extra ball. Red coins are worth 5. Blue coins are
-worth 10.
+In 1.1.5 version, the Neverball and Neverputt source trees have been merged
+into one. It includes 75 Neverball levels and 18 Neverputt levels.
+
+Neverball, tilt the floor to roll a ball through an obstacle course within the
+given time. If the ball falls or time expires, a ball is lost. Collect 100
+coins to save your progress and earn an extra ball. Red coins are worth 5.
+Blue coins are worth 10.
+
+Neverputt, a hot-seat multiplayer miniature golf game using the physics and
+graphics of Neverball.
 
 Neverball runs under Linux, Win2K/XP, and hopefully anywhere else SDL is
-supported. Hardware accellerated OpenGL support with multitexture (OpenGL 1.2.1
-or greater) is required. Neverball has been tested on Intel machines as slow as
-1GHz with GeForce2. Minimum system requirements may be lower.
+supported. Hardware accellerated OpenGL support with multitexture (OpenGL
+1.2.1 or greater) is required. Neverball has been tested on Intel machines as
+slow as 1GHz with GeForce2. Minimum system requirements may be lower.
 
 WWW: http://icculus.org/neverball/

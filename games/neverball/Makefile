@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	neverball
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.2
 CATEGORIES=	games
 MASTER_SITES=	http://icculus.org/neverball/
 
@@ -20,12 +20,10 @@ FREETYPE_CONFIG?=	${LOCALBASE}/bin/freetype-config
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
-USE_SDL=	image mixer ttf sdl
+USE_SDL=	image mixer ttf
 
-TXT=		levels-easy levels-hard levels-misc levels-mym scores-easy \
-		scores-hard scores-mym sets
-DIRS=		bgm map-mym map-rlk mtrl png shot-mym shot-rlk snd sol-mym \
-		sol-rlk ttf
+DIRS=		bgm map-mym map-putt map-rlk mtrl png shot-mym shot-putt \
+		shot-rlk snd sol-mym sol-putt sol-rlk ttf
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|./data|${DATADIR}/data|g' \
@@ -38,9 +36,8 @@ do-install:
 	@${MKDIR} ${DATADIR}/data/${ii}
 	@${INSTALL_DATA} ${WRKSRC}/data/${ii}/* ${DATADIR}/data/${ii}/
 .endfor
-.for tt in ${TXT}
-	@${INSTALL_DATA} ${WRKSRC}/data/${tt}.txt ${DATADIR}/data/
-.endfor
+	@${INSTALL_DATA} ${WRKSRC}/data/*.txt ${DATADIR}/data/
 	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
+	@${INSTALL_PROGRAM} ${WRKSRC}/neverputt ${PREFIX}/bin/
 
 .include <bsd.port.mk>

@@ -1,13 +1,16 @@
 bin/neverball
+bin/neverputt
 share/neverball/data/bgm/flood.ogg
 share/neverball/data/bgm/haze.ogg
 share/neverball/data/bgm/inter.ogg
 share/neverball/data/bgm/snow.ogg
 share/neverball/data/bgm/title.ogg
+share/neverball/data/holes-putt.txt
 share/neverball/data/levels-easy.txt
 share/neverball/data/levels-hard.txt
 share/neverball/data/levels-misc.txt
 share/neverball/data/levels-mym.txt
+share/neverball/data/levels-putt.txt
 share/neverball/data/map-mym/assault_course.map
 share/neverball/data/map-mym/bombman.map
 share/neverball/data/map-mym/circuit1.map
@@ -33,6 +36,24 @@ share/neverball/data/map-mym/scrambling.map
 share/neverball/data/map-mym/trust.map
 share/neverball/data/map-mym/turn.map
 share/neverball/data/map-mym/up.map
+share/neverball/data/map-putt/01_easy.map
+share/neverball/data/map-putt/02_uturn.map
+share/neverball/data/map-putt/03_kink.map
+share/neverball/data/map-putt/04_aych.map
+share/neverball/data/map-putt/05_ramp.map
+share/neverball/data/map-putt/06_cone.map
+share/neverball/data/map-putt/07_tele.map
+share/neverball/data/map-putt/08_zig.map
+share/neverball/data/map-putt/09_vturn.map
+share/neverball/data/map-putt/10_diamond.map
+share/neverball/data/map-putt/11_mover.map
+share/neverball/data/map-putt/12_bumpy.map
+share/neverball/data/map-putt/13_choose.map
+share/neverball/data/map-putt/14_walls.map
+share/neverball/data/map-putt/15_hole.map
+share/neverball/data/map-putt/16_pipe.map
+share/neverball/data/map-putt/17_timing.map
+share/neverball/data/map-putt/18_hill.map
 share/neverball/data/map-rlk/angle.map
 share/neverball/data/map-rlk/bumper.map
 share/neverball/data/map-rlk/bumps.map
@@ -199,6 +220,24 @@ share/neverball/data/shot-mym/scrambling.jpg
 share/neverball/data/shot-mym/trust.jpg
 share/neverball/data/shot-mym/turn.jpg
 share/neverball/data/shot-mym/up.jpg
+share/neverball/data/shot-putt/01_easy.jpg
+share/neverball/data/shot-putt/02_uturn.jpg
+share/neverball/data/shot-putt/03_kink.jpg
+share/neverball/data/shot-putt/04_aych.jpg
+share/neverball/data/shot-putt/05_ramp.jpg
+share/neverball/data/shot-putt/06_cone.jpg
+share/neverball/data/shot-putt/07_tele.jpg
+share/neverball/data/shot-putt/08_zig.jpg
+share/neverball/data/shot-putt/09_vturn.jpg
+share/neverball/data/shot-putt/10_diamond.jpg
+share/neverball/data/shot-putt/11_mover.jpg
+share/neverball/data/shot-putt/12_bumpy.jpg
+share/neverball/data/shot-putt/13_choose.jpg
+share/neverball/data/shot-putt/14_walls.jpg
+share/neverball/data/shot-putt/15_hole.jpg
+share/neverball/data/shot-putt/16_pipe.jpg
+share/neverball/data/shot-putt/17_timing.jpg
+share/neverball/data/shot-putt/18_hill.jpg
 share/neverball/data/shot-rlk/angle.jpg
 share/neverball/data/shot-rlk/bumper.jpg
 share/neverball/data/shot-rlk/bumps.jpg
@@ -304,6 +343,24 @@ share/neverball/data/sol-mym/scrambling.sol
 share/neverball/data/sol-mym/trust.sol
 share/neverball/data/sol-mym/turn.sol
 share/neverball/data/sol-mym/up.sol
+share/neverball/data/sol-putt/01_easy.sol
+share/neverball/data/sol-putt/02_uturn.sol
+share/neverball/data/sol-putt/03_kink.sol
+share/neverball/data/sol-putt/04_aych.sol
+share/neverball/data/sol-putt/05_ramp.sol
+share/neverball/data/sol-putt/06_cone.sol
+share/neverball/data/sol-putt/07_tele.sol
+share/neverball/data/sol-putt/08_zig.sol
+share/neverball/data/sol-putt/09_vturn.sol
+share/neverball/data/sol-putt/10_diamond.sol
+share/neverball/data/sol-putt/11_mover.sol
+share/neverball/data/sol-putt/12_bumpy.sol
+share/neverball/data/sol-putt/13_choose.sol
+share/neverball/data/sol-putt/14_walls.sol
+share/neverball/data/sol-putt/15_hole.sol
+share/neverball/data/sol-putt/16_pipe.sol
+share/neverball/data/sol-putt/17_timing.sol
+share/neverball/data/sol-putt/18_hill.sol
 share/neverball/data/sol-rlk/angle.sol
 share/neverball/data/sol-rlk/bumper.sol
 share/neverball/data/sol-rlk/bumps.sol
@@ -357,13 +414,16 @@ share/neverball/data/sol-rlk/zigzag.sol
 share/neverball/data/ttf/VeraBd.ttf
 @dirrm share/neverball/data/ttf
 @dirrm share/neverball/data/sol-rlk
+@dirrm share/neverball/data/sol-putt
 @dirrm share/neverball/data/sol-mym
 @dirrm share/neverball/data/snd
 @dirrm share/neverball/data/shot-rlk
+@dirrm share/neverball/data/shot-putt
 @dirrm share/neverball/data/shot-mym
 @dirrm share/neverball/data/png
 @dirrm share/neverball/data/mtrl
 @dirrm share/neverball/data/map-rlk
+@dirrm share/neverball/data/map-putt
 @dirrm share/neverball/data/map-mym
 @dirrm share/neverball/data/bgm
 @dirrm share/neverball/data
