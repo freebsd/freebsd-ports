@@ -22,7 +22,6 @@ NO_BUILD=	yes
 NO_FILTER_SHLIBS=	yes
 STRIP=
 WRKSRC?=	${WRKDIR}/${BROWSER}-v408.x86-unknown-freebsd
-FILESDIR=	${.CURDIR}/files
 PKGDIR=		${.CURDIR}/pkg
 PKGREQ=		${MASTERDIR}/pkg/REQ
 
@@ -52,6 +51,10 @@ RESTRICTED=     "Contains strong cryptography"
 .endif
 
 .SILENT:
+
+makesum:
+	${ECHO} "You should make ${FILESDIR}/md5 by hand"
+	${FALSE}
 
 .if !defined(USE_128BIT) && !defined(NO_FORTIFY)
 pre-extract:
