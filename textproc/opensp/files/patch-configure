@@ -1,0 +1,20 @@
+--- configure.orig	Mon Nov 10 13:18:00 2003
++++ configure	Mon Nov 10 13:18:54 2003
+@@ -10832,7 +10832,7 @@
+ #include "confdefs.h"
+ #include <libintl.h>
+ extern int _nl_msg_cat_cntr;
+-extern int *_nl_domain_bindings;
++extern int *libintl_nl_domain_bindings;
+ #ifdef F77_DUMMY_MAIN
+ #  ifdef __cplusplus
+      extern "C"
+@@ -10843,7 +10843,7 @@
+ main ()
+ {
+ bindtextdomain ("", "");
+-return (int) gettext ("") + _nl_msg_cat_cntr + *_nl_domain_bindings
++return (int) gettext ("") + _nl_msg_cat_cntr + *libintl_nl_domain_bindings
+   ;
+   return 0;
+ }
