@@ -38,8 +38,9 @@ sub phase1 {
 sub phase2 {
     while (<>) {
 	if (/(\s*)(\w*)(\s*=\s*)($ctxt)/) {
+	    $p = $2;
 	    s/$ctxt\(&/\(/;
-	    $names[$count] = $2;
+	    $names[$count] = $p;
 	    $count++;
 	    print $_;
 	} else {
