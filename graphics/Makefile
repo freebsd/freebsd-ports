@@ -22,7 +22,6 @@
     SUBDIR += camserv
     SUBDIR += chbg
     SUBDIR += claraocr
-    SUBDIR += compface
     SUBDIR += cqcam
     SUBDIR += cthumb
     SUBDIR += cybervrml97

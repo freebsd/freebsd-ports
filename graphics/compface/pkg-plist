@@ -1,4 +1,0 @@
-bin/compface
-bin/uncompface
-include/compface.h
-lib/libcompface.a

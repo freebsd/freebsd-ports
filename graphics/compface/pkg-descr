@@ -1,8 +1,0 @@
-Compface provides utilities and a library to convert from/to X-Face
-format, a 48x48 bitmap format used to carry thumbnails of email
-authors in a mail header.
-
-WWW: http://freshmeat.net/projects/compface/
-
-- Oliver Braun
-obraun@informatik.unibw-muenchen.de
