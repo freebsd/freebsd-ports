@@ -7,7 +7,7 @@
 
 PORTNAME=	webmin
 PORTVERSION=	1.090
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.webmin.com/updates/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -31,7 +31,8 @@ WEBMIN_MODULES=	mount-1.090-2.wbm.gz \
 		qmailadmin-1.090-1.wbm.gz \
 		quota-1.090-2.wbm.gz \
 		sendmail-1.090-1.wbm.gz \
-		shorewall-1.090-1.wbm.gz
+		shorewall-1.090-1.wbm.gz \
+		usermin-1.090-3.wbm.gz
 
 WEBMIN_THEMES=
 
