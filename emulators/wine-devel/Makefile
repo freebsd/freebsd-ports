@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	ALPHA/wine/development
 DISTNAME=	Wine-${PORTVERSION}
 
 MAINTAINER=	gerald@FreeBSD.org
-COMMENT=	Microsoft Windows emulator for Unix
+COMMENT=	Microsoft Windows compatibility layer for Unix-like systems
 
 WRKSRC=		${WRKDIR}/wine-${PORTVERSION}
 GNU_CONFIGURE=	yes
@@ -30,7 +30,7 @@ USE_GMAKE=	yes
 USE_SIZE=	yes
 # GCC 3.2 also seems fine, but the ports collection requires specifying
 # a concrete version.
-#USE_GCC=	3.3
+USE_GCC=	3.3
 
 .include <bsd.port.pre.mk>
 
