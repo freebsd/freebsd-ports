@@ -7,7 +7,7 @@
 
 PORTNAME=	gconf
 PORTVERSION=	1.0.9
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/GConf/1.0
@@ -17,17 +17,15 @@ DIST_SUBDIR=	gnome
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A configuration database system for GNOME
 
-LIB_DEPENDS=	guile.15:${PORTSDIR}/lang/guile \
-		db3.3:${PORTSDIR}/databases/db3
+LIB_DEPENDS=	guile.15:${PORTSDIR}/lang/guile
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
-USE_GNOME=	gnomeprefix gnomehack glib12 gtk12 oaf libxml orbit
+USE_GNOME=	gnomeprefix gnomehack gnometarget glib12 gtk12 oaf libxml orbit
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
-CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>
