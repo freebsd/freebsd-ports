@@ -5,4 +5,6 @@ support is much more robust, a generic MIME_Viewer framework is
 included, the preferences system supports global or application scope
 for preferences, and assorted bugs have been fixed.
 
+Horde is used by these ports: mail/imp, mail/turba and devel/chora.
+
 WWW: http://www.horde.org/

@@ -1,5 +1,4 @@
-
-# Added for Turba
+# This is included in Apache's httpd.conf for Turba
 #
 # For security, don't serve pages from the Turba configuration and
 # library directories.

@@ -9,7 +9,7 @@ PORTNAME=	turba
 PORTVERSION=	1.0
 CATEGORIES=	mail www
 MASTER_SITES=	ftp://ftp.horde.org/pub/turba/tarballs/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-RC2
+DISTNAME=	${PORTNAME}-${PORTVERSION}-RC3
 
 MAINTAINER=	thierry@thomas.as
 
@@ -52,8 +52,7 @@ HORDEDIR=	${PREFIX}/${LHORDEDIR}
 TURBADIR=	${PREFIX}/${LTURBADIR}
 CONFDIR=	${TURBADIR}/config
 
-APACHE_CNFDIR?=	${LOCALBASE}/etc/apache
-APACHE_CONF=	${APACHE_CNFDIR}/httpd.conf
+HORDE_INC=	${LOCALBASE}/etc/horde
 
 pre-install:
 # N.B.: database dependencies are binded with mod_php#, neither by Horde nor Turba.
@@ -95,39 +94,32 @@ pre-install:
 .endif
 
 do-install:
-	${MKDIR}  ${TURBADIR}
-	${CP} -Rp ${WRKSRC}/config ${WRKSRC}/graphics ${WRKSRC}/lib ${TURBADIR}
-	${CP} -Rp ${WRKSRC}/locale ${WRKSRC}/scripts ${WRKSRC}/templates ${TURBADIR}
-	${CP} -Rp ${WRKSRC}/po ${TURBADIR}
-	${CP} -p  ${WRKSRC}/*.php ${TURBADIR}
+	@${MKDIR}  ${TURBADIR}
+	@${CP} -Rp ${WRKSRC}/config ${WRKSRC}/graphics ${WRKSRC}/lib ${TURBADIR}
+	@${CP} -Rp ${WRKSRC}/locale ${WRKSRC}/scripts ${WRKSRC}/templates ${TURBADIR}
+	@${CP} -Rp ${WRKSRC}/po ${TURBADIR}
+	@${CP} -p  ${WRKSRC}/*.php ${TURBADIR}
 .for FILE in ${CONFFILE}
 	@if [ ! -f ${CONFDIR}/${FILE} ]; then \
 	  ${CP} ${CONFDIR}/${FILE}.dist ${CONFDIR}/${FILE} ; \
 	fi
 .endfor
-	${CHOWN} -R www:www ${TURBADIR}
-	${CHMOD} -R o-rwx ${CONFDIR}
-	@(if [ -f ${APACHE_CONF} ] ; then \
-	    (if [ ! -f ${APACHE_CONF}.beforeTurba ] ; then \
-		${ECHO} "===> Updating ${APACHE_CONF}..." ; \
-		${CP} -p ${FILESDIR}/httpd.conf.turba ${WRKDIR}/httpd.conf.turba ; \
-		${PERL} -pi -e "s:/home/httpd/html/horde/turba:${TURBADIR}:g" ${WRKDIR}/httpd.conf.turba ; \
-		${CP} -p ${APACHE_CONF} ${APACHE_CONF}.beforeTurba ; \
-		${GREP} -qw 'Added for Turba' ${APACHE_CONF} || ${CAT} ${WRKDIR}/httpd.conf.turba >> ${APACHE_CONF} ; \
-	    fi) ; \
-	fi)
+	@${CHOWN} -R www:www ${TURBADIR}
+	@${CHMOD} -R o-rwx ${CONFDIR}
+	@${CP} -p ${FILESDIR}/httpd.conf.turba ${HORDE_INC}
+	@${PERL} -pi -e "s:/home/httpd/html/horde/turba:${TURBADIR}:g" ${HORDE_INC}/httpd.conf.turba
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
 .for FILE in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
 .endfor
-	@${ECHO} "Documentation installed in ${DOCSDIR}."
+	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
 .endif
 
 post-install:
-	@${ECHO}
+	@${ECHO_MSG}
 	@${CAT} ${PKGMESSAGE} | \
-	${SED} -e "s:%%TURBADIR%%:${TURBADIR}:g;s:%%PORTSDIR%%:${PORTSDIR}:g;s:%%CONFDIR%%:${CONFDIR}:g;s:%%APACHE_CONF%%:${APACHE_CONF}:g"
-	@${ECHO}
+	${SED} -e "s:%%TURBADIR%%:${TURBADIR}:g;s:%%PORTSDIR%%:${PORTSDIR}:g;s:%%CONFDIR%%:${CONFDIR}:g"
+	@${ECHO_MSG}
 
 .include <bsd.port.mk>

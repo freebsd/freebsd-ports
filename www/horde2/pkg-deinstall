@@ -8,5 +8,6 @@ fi
 if [ -f ${PKG_PREFIX}/etc/apache/httpd.conf.beforeHorde ] ; then
 	echo "Restoring httpd.conf..."
 	cp ${PKG_PREFIX}/etc/apache/httpd.conf ${PKG_PREFIX}/etc/apache/httpd.conf.deinstHorde
-	mv ${PKG_PREFIX}/etc/apache/httpd.conf.beforeHorde ${PKG_PREFIX}/etc/apache/httpd.conf
+	perl -pi -e "s:Include ${PKG_PREFIX}/etc/horde:# Include ${PKG_PREFIX}/etc/horde:g" \
+		${PKG_PREFIX}/etc/apache/httpd.conf
 fi

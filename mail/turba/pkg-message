@@ -12,6 +12,5 @@ sources.php.
 You have to create a table in your database; please see
 %%TURBADIR%%/scripts/drivers.
 
-If %%APACHE_CONF%% has been updated,
-you have to restart Apache.
+To protect your configuration files, you have to restart Apache.
 ************************************************************************

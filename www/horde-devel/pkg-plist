@@ -109,7 +109,6 @@
 %%HORDEDIR%%/templates/data/datemap.inc
 %%HORDEDIR%%/templates/horde/modules.inc
 %%HORDEDIR%%/templates/problem/javascript.inc
-%%HORDEDIR%%/templates/problem/lynx_problem.inc
 %%HORDEDIR%%/templates/problem/problem.inc
 %%HORDEDIR%%/templates/help/footer.inc
 %%HORDEDIR%%/templates/help/header.inc
@@ -144,7 +143,6 @@
 %%HORDEDIR%%/templates/wml/doctype.inc
 %%HORDEDIR%%/templates/common-header.inc
 %%HORDEDIR%%/templates/common-footer.inc
-%%HORDEDIR%%/scripts/compare_revisions.sh
 %%HORDEDIR%%/scripts/db/mysql_drop.sql
 %%HORDEDIR%%/scripts/db/README
 %%HORDEDIR%%/scripts/db/category.sql
@@ -158,13 +156,12 @@
 %%HORDEDIR%%/scripts/mime_mapping/mime.types
 %%HORDEDIR%%/scripts/set_perms.sh
 %%HORDEDIR%%/scripts/set_perms.sh.orig
-%%HORDEDIR%%/scripts/make-tarball.pl
 %%HORDEDIR%%/scripts/SCRIPTS
 %%HORDEDIR%%/locale/cs_CZ/LC_MESSAGES/horde.mo
 %%HORDEDIR%%/locale/de_DE/LC_MESSAGES/horde.mo
 %%HORDEDIR%%/locale/el_GR/LC_MESSAGES/horde.mo
-%%HORDEDIR%%/locale/en/help.xml
 %%HORDEDIR%%/locale/es_ES/LC_MESSAGES/horde.mo
+%%HORDEDIR%%/locale/en_EN/help.xml
 %%HORDEDIR%%/locale/fr_FR/LC_MESSAGES/horde.mo
 %%HORDEDIR%%/locale/it_IT/LC_MESSAGES/horde.mo
 %%HORDEDIR%%/locale/ko_KR/LC_MESSAGES/horde.mo
@@ -233,14 +230,16 @@
 %%HORDEDIR%%/po/zh_CN.po
 %%HORDEDIR%%/po/zh_TW.po
 %%HORDESBIN%%/horde_set_perms.sh
+etc/horde/httpd.conf.horde
 %%PORTDOCS%%share/doc/horde/CHANGES
 %%PORTDOCS%%share/doc/horde/CODING_STANDARDS
 %%PORTDOCS%%share/doc/horde/COPYING
 %%PORTDOCS%%share/doc/horde/CREDITS
 %%PORTDOCS%%share/doc/horde/HELP
 %%PORTDOCS%%share/doc/horde/INSTALL
+%%PORTDOCS%%share/doc/horde/LISTS
 %%PORTDOCS%%share/doc/horde/README
-%%PORTDOCS%%share/doc/horde/RELEASE
+%%PORTDOCS%%share/doc/horde/SOURCE
 %%PORTDOCS%%@dirrm share/doc/horde
 @dirrm %%HORDEDIR%%/lib/MIME/Viewer
 @dirrm %%HORDEDIR%%/lib/MIME
@@ -278,7 +277,7 @@
 @dirrm %%HORDEDIR%%/locale/de_DE
 @dirrm %%HORDEDIR%%/locale/el_GR/LC_MESSAGES
 @dirrm %%HORDEDIR%%/locale/el_GR
-@dirrm %%HORDEDIR%%/locale/en
+@dirrm %%HORDEDIR%%/locale/en_EN
 @dirrm %%HORDEDIR%%/locale/es_ES/LC_MESSAGES
 @dirrm %%HORDEDIR%%/locale/es_ES
 @dirrm %%HORDEDIR%%/locale/fr_FR/LC_MESSAGES
@@ -312,3 +311,4 @@
 @dirrm %%HORDEDIR%%/admin
 @dirrm %%HORDEDIR%%/po
 @dirrm %%HORDEDIR%%
+@dirrm etc/horde
