@@ -1,11 +1,11 @@
 --- Imakefile.orig	Sun May  5 04:10:27 1996
-+++ Imakefile	Mon Nov  1 02:11:20 1999
++++ Imakefile	Tue Jul 11 21:14:48 2000
 @@ -3,7 +3,7 @@
  # * Copyleft  (c) 1994-1996  Software Research Academy         *
  # **************************************************************
  #
 -SAMEDIR = /usr/local/games/sxsame
-+SAMEDIR = $(PREFIX)/lib/X11/sxsame
++SAMEDIR = $(LIBDIR)/sxsame
  
  #BINDIR = /usr/local/bin
  #MANDIR = /usr/local/man/man1
@@ -17,6 +17,15 @@
  
  XPMLIB = -lXpm
  LOCAL_LIBRARIES = $(XPMLIB) -lX11
+@@ -19,7 +20,7 @@
+ DEFINES = -DSAME_DIR=\"$(SAMEDIR)\"
+ 
+ #CDEBUGFLAGS = -O2 -Wall
+-CDEBUGFLAGS = -g -Wall
++#CDEBUGFLAGS = -g -Wall
+ #CDEBUGFLAGS = -O2
+ ComplexProgramTarget(sxsame)
+ InstallManPage(sxsame,$(MANDIR))
 @@ -29,6 +30,10 @@
  #defdata.o:: defdata.c defdata.h
  install.dir::

@@ -25,12 +25,12 @@ BINGRP=		games
 BINMODE=	2755
 MAKE_ENV+=	BINOWN=${BINOWN} BINGRP=${BINGRP} BINMODE=${BINMODE}
 
-WRKSRC=         ${WRKDIR}/sxsame-3.02
-
 post-install:
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/sxsame
 .for i in INSTALL.jp README.jp
-	@${INSTALL_DATA} ${WRKSRC}/$i ${PREFIX}/share/doc/sxsame
+	${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/share/doc/sxsame
 .endfor
+.endif
 
 .include <bsd.port.mk>
