@@ -331,6 +331,7 @@
     SUBDIR += p5-String-Strip
     SUBDIR += p5-TeX-Hyphen
     SUBDIR += p5-Template-Magic
+    SUBDIR += p5-Text-Affixes
     SUBDIR += p5-Text-Aligner
     SUBDIR += p5-Text-Autoformat
     SUBDIR += p5-Text-Balanced
