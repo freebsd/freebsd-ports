@@ -1,0 +1,15 @@
+@unexec if [ -f %D/etc/barnyard.conf ] && cmp -s %D/etc/barnyard.conf %D/etc/barnyard.conf-sample; then rm -f %D/etc/barnyard.conf; fi
+bin/barnyard
+etc/barnyard.conf-sample
+etc/rc.d/barnyard.sh
+share/doc/barnyard/AUTHORS
+share/doc/barnyard/BUGS
+share/doc/barnyard/COPYING
+share/doc/barnyard/ChangeLog
+share/doc/barnyard/FAQ
+share/doc/barnyard/INSTALL
+share/doc/barnyard/LICENSE.QPL
+share/doc/barnyard/NEWS
+share/doc/barnyard/README
+share/doc/barnyard/USAGE
+@dirrm share/doc/barnyard

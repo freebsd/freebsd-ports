@@ -1,0 +1,20 @@
+Barnyard is output spool reader for Snort! It decouples output overhead
+from the Snort network intrusion detection system and allows Snort to
+run at full speed. It accepts binary inputs from snort and outputs
+human readable files to disc or to a database.  At present, barnyard
+is designed to accept binary inputs from snort and produce either human
+readable files for parsing by log parsers or feed data directly to a
+database (either mysql or postgresql at present.).
+
+Barnyard has 3 modes of operation:
+
+One-shot, continual, continual w/ checkpoint.  In one-shot mode,
+barnyard will process the specified file and exit.  In continual mode,
+barnyard will start with the specified file and continue to process
+new data (and new spool files) as it appears.  Continual mode w/
+checkpointing will also use a checkpoint file (or waldo file in the
+snort world) to track where it is.  In the event the barnyard process
+ends while a waldo file is in use, barnyard will resume processing at
+the last entry as listed in the waldo file.
+
+WWW: http://sourceforge.net/projects/barnyard

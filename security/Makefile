@@ -23,6 +23,7 @@
     SUBDIR += authpf
     SUBDIR += autossh
     SUBDIR += avcheck
+    SUBDIR += barnyard
     SUBDIR += bcwipe
     SUBDIR += beecrypt
     SUBDIR += bfbtester
