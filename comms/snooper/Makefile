@@ -2,11 +2,11 @@
 # Date created:		4 May 1997
 # Whom:			Jun-ichiro itojun Itoh <itojun@itojun.org>
 #
-# $Id: Makefile,v 1.1.1.1 1997/05/20 06:23:49 asami Exp $
+# $Id: Makefile,v 1.2 1997/05/25 18:34:39 max Exp $
 #
 
-DISTNAME=	snooper.970212
-PKGNAME=	snooper-970212
+DISTNAME=	snooper.980813
+PKGNAME=	snooper-980813
 CATEGORIES=	comms
 MASTER_SITES=   ftp://ftp.foretune.co.jp/pub/tools/snooper/
 
