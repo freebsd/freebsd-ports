@@ -1,0 +1,11 @@
+--- configure.in	Tue Jul  9 23:16:00 2002
++++ configure.in	Mon Aug  5 11:03:39 2002
+@@ -113,7 +113,7 @@
+ AC_CHECK_ICONV()
+ 
+ dnl	Check if "IBM Classes for UNICODE library" is present
+-AC_CHECK_LIB(icu-uc, u_getVersion)
++AC_CHECK_LIB(icuuc, u_getVersion)
+ 
+ dnl	Check for cygwin path conversion functions
+ AC_CHECK_FUNCS(cygwin_win32_to_posix_path_list)
