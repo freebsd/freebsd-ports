@@ -4938,6 +4938,7 @@ openoffice-se	ports/editors/openoffice-se
 openoffice-tr	ports/editors/openoffice-tr
 openproducer	ports/graphics/openproducer
 openquicktime	ports/multimedia/openquicktime
+openradius	ports/net/openradius
 openreg		ports/net/openreg
 openrm		ports/graphics/openrm
 opensc		ports/security/opensc
