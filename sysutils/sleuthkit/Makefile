@@ -1,6 +1,6 @@
-# New ports collection makefile for:    sleuthkit
-# Date created:         2003-08-12
-# Whom:                 Pieter Danhieux <opr@bsdaemon.be>
+# New ports collection makefile for:	The Sleuth Kit
+# Date created:				2003-08-12
+# Whom:					Pieter Danhieux <opr@bsdaemon.be>
 #
 # $FreeBSD$
 #
