@@ -8,7 +8,7 @@
 
 PORTNAME=	ngrep
 PORTVERSION=	1.40.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,17 +18,15 @@ COMMENT=	Network grep
 
 WRKSRC=		${WRKDIR}/ngrep
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-pcre --with-restart
+CONFIGURE_ARGS=	--with-pcre --without-restart
 ALL_TARGET=	ngrep
+
 MAN8=		ngrep.8
+PLIST_FILES=	bin/ngrep
 
 PORTDOCS=	BUGS CHANGES README README.pcre USAGE
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} > 501110
-EXTRA_PATCHES=	${PATCHDIR}/patch5-configure ${PATCHDIR}/patch5-ngrep
-.endif
 
 post-install:
 .if !defined(NOPORTDOCS)
