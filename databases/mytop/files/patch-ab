@@ -1,0 +1,10 @@
+--- mytop.orig	Mon Jan  8 23:03:37 2001
++++ mytop	Mon Jan  8 23:04:28 2001
+@@ -1163,6 +1163,6 @@
+ 
+ =item Benjamin Pflugmann (philemon@spin.de)
+ 
+-Suggested -P command-line flag as well as other changes.
++Suggested B<-P> command-line flag as well as other changes.
+ 
+ =back
