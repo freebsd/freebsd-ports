@@ -85,6 +85,7 @@
     SUBDIR += lapack
     SUBDIR += lapack++
     SUBDIR += lapack95
+    SUBDIR += ldouble
     SUBDIR += libRmath
     SUBDIR += libgmp4
     SUBDIR += libmath++
