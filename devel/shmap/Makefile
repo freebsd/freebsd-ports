@@ -8,21 +8,20 @@
 
 PORTNAME=	shmap
 PORTVERSION=	0.3
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	mm:${PORTSDIR}/devel/mm
+LIB_DEPENDS=	mm.11:${PORTSDIR}/devel/mm
 
-USE_LIBTOOL=	yes
 GNU_CONFIGURE=	yes
-CFLAGS+=	-I${LOCALBASE}/include
-CONIFGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 INSTALLS_SHLIB=	yes
 
-pre-configure:
-	@${LN} -sf ${LOCALBASE}/bin/libtool ${WRKSRC}
 
 .include <bsd.port.mk>
