@@ -105,6 +105,22 @@ post-patch:
 	@${PERL} -pi.bak -e 's,/usr/bin/suidperl,${PERL},g' ${PATCH_WRKSRC}/openwebmail*pl
 .endif
 
+pre-install:
+	@${FIND} ${WRKSRC}/*/openwebmail \( -name "*.bak" -or -name "*.orig" \) -delete
+.if !exists(${PLIST})
+	@${FIND} ${WRKSRC}/*/openwebmail -type f -o -type l | ${SED} -e 's,${WRKSRC},www,g' | sort -u > ${PLIST}
+.for file in b2g g2b lunar
+	@${ECHO} "www/cgi-bin/openwebmail/etc/${file}.db" >> ${PLIST}
+.endfor
+.if defined(WITHOUT_SPEEDYCGI)
+	@${FIND} ${WRKSRC}/*/openwebmail -name "openwebmail*pl" | \
+		${SED} -e 's,${WRKSRC},www,g' \
+		-e 's,openwebmail/openwebmail,openwebmail/.openwebmail,g' \
+		>> ${PLIST}
+.endif
+	@${FIND} ${WRKSRC}/*/openwebmail -type d | sort -ur | ${SED} -e 's,${WRKSRC},@dirrm www,g' >> ${PLIST}
+.endif
+
 do-install:
 	@${MKDIR} ${OWCGIDIR} ${OWDATADIR}
 	@cd ${WRKSRC}/cgi-bin/openwebmail && ${FIND} . | cpio -dpum -R ${BINOWN}:mail ${OWCGIDIR}
@@ -115,10 +131,4 @@ do-install:
 	@${PERL} ${OWCGIDIR}/uty/wrapsuid.pl ${OWCGIDIR}
 .endif
 	@${OWCGIDIR}/openwebmail-tool.pl --init --no
-	@${FIND} ${OWCGIDIR} \( -name "*.bak" -or -name "*.orig" \) -delete
-.if !exists(${PLIST})
-	@cd ${PREFIX} && ${FIND} ${OWCGIDIR:S,${PREFIX}/,,} ${OWDATADIR:S,${PREFIX}/,,} -type f -or -type l | sort -u > ${PLIST}
-	@cd ${PREFIX} && ${FIND} ${OWCGIDIR:S,${PREFIX}/,,} ${OWDATADIR:S,${PREFIX}/,,} -type d | sort -ur | ${SED} -e 's,^,@dirrm ,g' >> ${PLIST}
-.endif
-
 .include <bsd.port.post.mk>
