@@ -1,0 +1,11 @@
+--- bw.c.orig	Sun Feb 10 14:27:49 2002
++++ bw.c	Sun Feb 10 14:28:18 2002
+@@ -734,7 +734,7 @@
+ if(window==window->main)
+  {
+  rmkbd(window->kbd);
+- window->kbd=mkkbd(getcontext(w->o.context));
++ window->kbd=mkkbd(joegetcontext(w->o.context));
+  } 
+ w->top->xcol=0; w->cursor->xcol=0;
+ return w;

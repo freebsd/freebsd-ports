@@ -1,5 +1,14 @@
---- rc.c.orig	Fri Feb  1 16:50:23 2002
-+++ rc.c	Fri Feb  1 16:50:43 2002
+--- rc.c.orig	Fri Jan 20 02:53:42 1995
++++ rc.c	Sun Feb 10 14:28:42 2002
+@@ -29,7 +29,7 @@
+  * is created.
+  */
+ 
+-KMAP *getcontext(name)
++KMAP *joegetcontext(name)
+ char *name;
+  {
+  struct context *c;
 @@ -610,7 +610,8 @@
   FILE *fd;			/* rc file */
   int line=0;			/* Line number */
@@ -10,3 +19,21 @@
  #ifdef __MSDOS__
   fd=fopen(buf,"rt");
  #else
+@@ -739,7 +740,7 @@
+        for(buf[x]=c;cwhite(buf[x]);++x);
+        for(c=x;!cwhitef(buf[c]);++c);
+        buf[c]=0;
+-       if(c!=x) kcpy(context,getcontext(buf+x));
++       if(c!=x) kcpy(context,joegetcontext(buf+x));
+        else
+         {
+         err=1;
+@@ -788,7 +789,7 @@
+        err=1;
+        fprintf(stderr,"\n%s %d: No context selected for :delete",name,line);
+        }
+-     else context=getcontext(buf+1);
++     else context=joegetcontext(buf+1);
+     else
+      {
+      err=1;

@@ -1,0 +1,16 @@
+--- rc.h.orig	Sun Feb 10 14:28:00 2002
++++ rc.h	Sun Feb 10 14:28:55 2002
+@@ -34,11 +34,11 @@
+ extern OPTIONS pdefault;
+ void setopt();
+ 
+-/* KMAP *getcontext(char *name);
++/* KMAP *joegetcontext(char *name);
+  * Find and return the KMAP for a given context name.  If none is found, an
+  * empty kmap is created, bound to the context name, and returned.
+  */
+-KMAP *getcontext();
++KMAP *joegetcontext();
+ 
+ /* int procrc(char *name);  Process an rc file
+    Returns 0 for success
