@@ -7,6 +7,7 @@
     SUBDIR += bzip
     SUBDIR += bzip2
     SUBDIR += cabextract
+    SUBDIR += dact
     SUBDIR += deepforest
     SUBDIR += fastjar
     SUBDIR += freeze
