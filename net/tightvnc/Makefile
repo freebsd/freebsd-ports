@@ -20,6 +20,7 @@ LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg
 USE_BZIP2=	yes
 WRKSRC=		${WRKDIR}/vnc_unixsrc
 USE_IMAKE=	yes
+USE_PERL5=	yes
 ALL_TARGET=	World
 NO_INSTALL_MANPAGES=	yes
 XFREE86_HTML_MAN=	no
