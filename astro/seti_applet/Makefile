@@ -6,26 +6,31 @@
 #
 
 PORTNAME=	seti_applet
-PORTVERSION=	0.2.2
+PORTVERSION=	0.3.0
 CATEGORIES=	astro gnome
-MASTER_SITES=	http://download.sourceforge.net/seti-applet/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME:S/_/-/}
 
 MAINTAINER=	th@cis.ibaraki.ac.jp
 
 LIB_DEPENDS=	panel_applet.4:${PORTSDIR}/x11/gnomecore \
-		gnome.4:${PORTSDIR}/x11/gnomelibs
-RUN_DEPENDS=	setiathome:${PORTSDIR}/astro/setiathome
+		gnome.4:${PORTSDIR}/x11/gnomelibs \
+		gtop.1:${PORTSDIR}/devel/libgtop
+RUN_DEPENDS=	setiathome:${PORTSDIR}/astro/setiathome \
+		gnomecc:${PORTSDIR}/sysutils/gnomecontrolcenter
 
 USE_X_PREFIX=	yes
+
 GLIB_CONFIG?=	${LOCALBASE}/bin/glib12-config
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 
-GNU_CONFIGURE=	yes
-
+USE_LIBTOOL=	yes
 CONFIGURE_ENV=	GLIB_CONFIG="${GLIB_CONFIG}" \
-		GTK_CONFIG="${GTK_CONFIG}"
+		GTK_CONFIG="${GTK_CONFIG}" \
+		CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 post-install:
-	${CAT} ${PKGMESSAGE}
+	${SED} "s|%%LOCALBASE%%|${LOCALBASE}|g" ${PKGMESSAGE}
 
 .include <bsd.port.mk>

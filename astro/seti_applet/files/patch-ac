@@ -1,0 +1,13 @@
+--- configure.orig	Fri May 12 15:55:34 2000
++++ configure	Thu Jul 13 13:35:47 2000
+@@ -4538,8 +4538,8 @@
+ 	< $srcdir/po/POTFILES.in > po/POTFILES
+   
+ 
+-CFLAGS=`$CFLAGS $GNOME_CONFIG --cflags gnome gtk glib applets`
+-LDFLAGS=`$LDFLAGS $GNOME_CONFIG --libs gnome gtk glib applets`
++CFLAGS="$CFLAGS `$GNOME_CONFIG --cflags gnome gtk glib applets`"
++LDFLAGS="$LDFLAGS `$GNOME_CONFIG --libs gnome gtk glib applets`"
+ 
+ 
+ 
