@@ -16,6 +16,7 @@ LIB_DEPENDS=	lzo.1:${PORTSDIR}/archivers/lzo
 
 MAN5=		vtund.conf.5
 MAN8=		vtund.8
+MLINKS=		vtund.8 vtun.8
 MANCOMPRESSED=	no
 
 USE_OPENSSL=	yes
