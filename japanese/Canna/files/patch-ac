@@ -49,19 +49,3 @@
            RK_DEFINES = $(pointerIntegerDef)
           RKC_DEFINES = $(wcharDefinition)
         UILIB_DEFINES = $(wcharDefinition) $(pointerIntegerDef) \
-@@ -461,6 +463,15 @@
- 		set +x; else (set -x; $(MKDIRHIER) $(DESTDIR)$$i;$(CHOWN) owner $(DESTDIR)$$i;$(CHGRP) group $(DESTDIR)$$i); fi; \	@@\
- 	done
- #endif /* MakeDirectories */
-+
-+#ifdef LinkFileList
-+#undef LinkFileList
-+#endif
-+#define LinkFileList(step,list,dir,sub)					@@\
-+step:: list								@@\
-+	@MakeFlagsToShellFlags(i,set +e); \				@@\
-+	echo "	cd" dir; cd dir && \					@@\
-+	for i in list; do (set -x; $(LN) -f sub/$$i .); done
- 
- /* libname-def.cppを作るのが面倒なのでXのSharedLibraryTargetを上書き */
- #ifdef CYGWIN_DLL
