@@ -7087,6 +7087,7 @@ ruby_r		ports/lang/ruby_r
 ruby_r-devel	ports/lang/ruby_r-devel
 ruby_static	ports/lang/ruby_static
 ruby_static-devel	ports/lang/ruby_static-devel
+rubyphoto	ports/graphics/rubyphoto
 rudiments	ports/devel/rudiments
 rvi		ports/devel/rvi
 rvm		ports/devel/rvm
