@@ -17,7 +17,9 @@ MASTER_SITES=	ftp://ftp.merit.edu/postfix/official/ \
 		ftp://ftp.postfix.oaktree.co.uk/pub/postfix/official/
 DISTNAME=	${PORTNAME}-19991231-pl08
 
-MAINTAINER=	torstenb@FreeBSD.org
+MAINTAINER=	billf@FreeBSD.org
+
+BROKEN=		"pending update after a repository copy"
 
 # WARNING: this is based on a patch submitted by a user and has not been
 # tested. Use it at your own risk !
