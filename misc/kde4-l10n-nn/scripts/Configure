@@ -85,12 +85,6 @@ while [ "$1" ]; do
 	/usr/bin/grep "^[^@].*-$a\$" ${CURDIR}/pkg-plist >> ${PLIST}
 	/usr/bin/grep "^@.*/$a/.*" ${CURDIR}/pkg-plist >> ${PLIST}.dirs
 	/usr/bin/grep "^@.*/$a$" ${CURDIR}/pkg-plist >> ${PLIST}.dirs
-	if [ x$a = xzh_TW.Big5 ]; then
-	    /usr/bin/grep "^[^@].*/zh_TW/.*" ${CURDIR}/pkg-plist >> ${PLIST}
-	    /usr/bin/grep "^[^@].*-zh_TW\$" ${CURDIR}/pkg-plist >> ${PLIST}
-	    /usr/bin/grep "^@.*/zh_TW/.*" ${CURDIR}/pkg-plist >> ${PLIST}.dirs
-	    /usr/bin/grep "^@.*/zh_TW$" ${CURDIR}/pkg-plist >> ${PLIST}.dirs
-	fi
 	shift
 done
 
