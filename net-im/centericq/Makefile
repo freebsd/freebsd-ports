@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	centericq
-PORTVERSION=	4.9.2
+PORTVERSION=	4.9.3
 PORTREVISION=	0
 CATEGORIES=	net
 MASTER_SITES=	http://konst.org.ua/download/
@@ -21,14 +21,13 @@ LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext \
 
 USE_OPENSSL=	yes
 USE_GMAKE=	yes
-USE_GNOME=	glib12
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -lstdc++"
 CONFIGURE_ARGS=	--with-openssl
 #CONFIGURE_ARGS=	--with-fribidi
 
-MAN1=	centericq.1
+MAN1=	centericq.1 cicqconv.1 cicqsync.1
 
 post-patch:
 .for file in kkconsui-0.1/include/conf.h kkstrtext-0.1/conf.h kksystr-0.1/include/conf.h
