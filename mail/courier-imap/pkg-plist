@@ -5,6 +5,7 @@ bin/pop3d
 etc/courier-imap/authdaemonrc.dist
 %%MYSQLFLAG%%etc/courier-imap/authmysqlrc.dist
 %%PGSQLFLAG%%etc/courier-imap/authpgsqlrc.dist
+%%LDAPFLAG%%etc/courier-imap/authldaprc.dist
 etc/courier-imap/imapd-ssl.dist
 etc/courier-imap/imapd.cnf.dist
 etc/courier-imap/imapd.dist
@@ -18,6 +19,7 @@ libexec/courier-imap/authlib/authdaemon
 libexec/courier-imap/authlib/authdaemond
 %%MYSQLFLAG%%libexec/courier-imap/authlib/authdaemond.mysql
 %%PGSQLFLAG%%libexec/courier-imap/authlib/authdaemond.pgsql
+%%LDAPFLAG%%libexec/courier-imap/authlib/authdaemond.ldap
 libexec/courier-imap/authlib/authdaemond.plain
 libexec/courier-imap/couriertcpd
 libexec/courier-imap/deliverquota
