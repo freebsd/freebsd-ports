@@ -6,11 +6,13 @@
 #
 
 PORTNAME=	photopc
-PORTVERSION=	1.6
+PORTVERSION=	3.04
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.average.org/pub/photopc/
 
-MAINTAINER=	dcarmich@mcs.com
+MAINTAINER=	ports@FreeBSD.org
+
+GNU_CONFIGURE=	yes
 
 MAN1=	photopc.1 epinfo.1
 
