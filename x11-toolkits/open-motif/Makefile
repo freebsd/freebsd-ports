@@ -50,7 +50,10 @@ MAKE_ENV+=	DEMOS="demos"
 PLIST_SUB+=	MOTIF_DEMOS=""
 .endif
 
+# User config option: Build and install Motif manuals
+.if !defined(WITHOUT_OPENMOTIF_MANUALS)
 .include "${.CURDIR}/Makefile.man"
+.endif
 
 post-patch:
 	@${FIND} ${DEMOS_SRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
@@ -145,9 +148,11 @@ post-install:
 	${INSTALL_MAN} ${DEMOS_SRC}/setdate/setDate.man \
 		${MANPREFIX}/man/man1/setDate.1
 .endif
+.if !defined(WITHOUT_OPENMOTIF_MANUALS)
 	@${MKDIR} ${DOCSDIR}
 .for i in BUGREPORT COPYRIGHT.MOTIF README RELNOTES
 	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
+.endif
 
 .include <bsd.port.post.mk>
