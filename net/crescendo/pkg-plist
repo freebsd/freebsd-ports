@@ -1,0 +1,17 @@
+bin/crescendo
+share/crescendo/cr-about.jpg
+share/crescendo/cr-splash1.jpg
+share/crescendo/startup2.wav
+share/gnome/gnome/apps/Internet/crescendo.desktop
+share/pixmaps/crescendo.png
+%%DOCDIR%%/AUTHORS
+%%DOCDIR%%/COPYING
+%%DOCDIR%%/ChangeLog
+%%DOCDIR%%/HACKING
+%%DOCDIR%%/INSTALL
+%%DOCDIR%%/NEWS
+%%DOCDIR%%/README
+%%DOCDIR%%/README.BINARY
+%%DOCDIR%%/TODO
+@dirrm %%DOCDIR%%
+@dirrm share/crescendo
