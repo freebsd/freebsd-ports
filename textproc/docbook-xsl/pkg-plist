@@ -1328,6 +1328,7 @@ share/xsl/docbook/xhtml/titlepage.xsl
 share/xsl/docbook/xhtml/toc.xsl
 share/xsl/docbook/xhtml/verbatim.xsl
 share/xsl/docbook/xhtml/xref.xsl
+@unexec rm -f %D/share/xsl/docbook/catalog
 @dirrm share/xsl/docbook/xhtml
 @dirrm share/xsl/docbook/template
 @dirrm share/xsl/docbook/params
