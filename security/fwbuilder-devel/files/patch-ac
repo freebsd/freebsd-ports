@@ -1,0 +1,20 @@
+--- doc/Makefile.in.orig	Sat Feb  3 23:04:02 2001
++++ doc/Makefile.in	Sat Feb  3 23:03:24 2001
+@@ -12,7 +12,7 @@
+ docdir = @DOCDIR@/fwbuilder
+ 
+ INSTALL = @INSTALL@
+-INSTALL_PROGRAM=@INSTALL_PROGRAM@
++INSTALL_DATA=@INSTALL_DATA@
+ 
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ 
+@@ -33,7 +33,7 @@
+ 
+ install:
+ 	$(mkinstalldirs) $(docdir)
+-	$(INSTALL_PROGRAM) -m 0644 $(DOCS) $(docdir)
++	$(INSTALL_DATA) $(DOCS) $(docdir)
+ 
+ uninstall:
+ 	list='$(DOCS)'; for file in $$list; do \

@@ -31,6 +31,7 @@
     SUBDIR += firewalk
     SUBDIR += fragrouter
     SUBDIR += fuzz
+    SUBDIR += fwbuilder
     SUBDIR += fwtk
     SUBDIR += gag
     SUBDIR += gnupg

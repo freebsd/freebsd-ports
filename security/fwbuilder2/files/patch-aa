@@ -1,0 +1,38 @@
+--- configure.orig	Fri Feb  2 02:17:34 2001
++++ configure	Sun Feb  4 01:26:08 2001
+@@ -3145,14 +3145,14 @@
+   PTHREAD_LIB="-lpthreads"
+ else
+   echo "$ac_t""no" 1>&6
+-echo $ac_n "checking for pthread_create in -lc_r""... $ac_c" 1>&6
+-echo "configure:3150: checking for pthread_create in -lc_r" >&5
++echo $ac_n "checking for pthread_create in -pthread""... $ac_c" 1>&6
++echo "configure:3150: checking for pthread_create in -pthread" >&5
+ ac_lib_var=`echo c_r'_'pthread_create | sed 'y%./+-%__p_%'`
+ if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-lc_r  $LIBS"
++LIBS="-pthread  $LIBS"
+ cat > conftest.$ac_ext <<EOF
+ #line 3158 "configure"
+ #include "confdefs.h"
+@@ -3180,7 +3180,7 @@
+ fi
+ if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
+   echo "$ac_t""yes" 1>&6
+-  PTHREAD_LIB="-lc_r"
++  PTHREAD_LIB="-pthread"
+ else
+   echo "$ac_t""no" 1>&6
+ echo $ac_n "checking for pthread_create""... $ac_c" 1>&6
+@@ -3979,7 +3979,7 @@
+ 
+ else
+   cat >> confdefs.h <<EOF
+-#define TEMPLATE_DIR "${PREFIX}/share/fwbuilder"
++#define TEMPLATE_DIR "${PREFIX}/share/gnome/fwbuilder"
+ EOF
+ 
+ fi

@@ -1,0 +1,20 @@
+--- examples/Makefile.in.orig	Sat Feb  3 23:01:10 2001
++++ examples/Makefile.in	Sat Feb  3 23:01:36 2001
+@@ -13,7 +13,7 @@
+ examplesdir = $(docdir)
+ 
+ INSTALL = @INSTALL@
+-INSTALL_PROGRAM=@INSTALL_PROGRAM@
++INSTALL_DATA=@INSTALL_DATA@
+ 
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ 
+@@ -24,7 +24,7 @@
+ 
+ install:
+ 	$(mkinstalldirs) $(examplesdir)
+-	$(INSTALL_PROGRAM) -m 0644 $(EXAMPLES) $(examplesdir)
++	$(INSTALL_DATA) $(EXAMPLES) $(examplesdir)
+ 
+ uninstall:
+ 	list='$(EXAMPLES)'; for file in $$list; do \
