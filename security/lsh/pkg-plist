@@ -2,10 +2,12 @@ bin/lsftp
 bin/lsh
 bin/lsh-authorize
 bin/lsh-decode-key
+bin/lsh-decrypt-key
 bin/lsh-export-key
 bin/lsh-keygen
 bin/lsh-make-seed
 bin/lsh-upgrade
+bin/lsh-upgrade-key
 bin/lsh-writekey
 bin/lshg
 bin/sexp-conv
