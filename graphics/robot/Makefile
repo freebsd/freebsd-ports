@@ -7,7 +7,7 @@
 
 PORTNAME=	robot
 PORTVERSION=	4.93.89
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://lheaftp.gsfc.nasa.gov/pub/corbet/robot/
 DISTNAME=	robot-beta
@@ -28,7 +28,7 @@ pre-build:
 	@${REINPLACE_CMD} -e 's+netscape+${WEB_BROWSER}+ ' \
 	  ${WRKSRC}/Robot/Makefile
 
-MANL=		robot.l
+MAN1=		robot.1
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/Robot/robot ${PREFIX}/bin
