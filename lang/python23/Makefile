@@ -6,15 +6,11 @@
 #
 
 PORTNAME=	python
-PORTVERSION=	2.3.4
-PORTREVISION?=	4
+PORTVERSION=	2.3.5
 CATEGORIES=	lang python ipv6
 MASTER_SITES=	${PYTHON_MASTER_SITES}
 MASTER_SITE_SUBDIR=	${PYTHON_MASTER_SITE_SUBDIR}
 DISTFILES=	${PYTHON_DISTFILE}
-
-PATCH_SITES=	http://www.python.org/security/PSF-2005-001/
-PATCHFILES=	patch.txt
 
 MAINTAINER=	perky@FreeBSD.org
 COMMENT?=	An interpreted object-oriented programming language
