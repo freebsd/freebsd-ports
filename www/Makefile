@@ -60,7 +60,7 @@
     SUBDIR += demoroniser
     SUBDIR += dhttpd
     SUBDIR += dillo
-    SUBDIR += djvuplugin
+#    SUBDIR += djvuplugin
     SUBDIR += eddie
     SUBDIR += eldav.el
     SUBDIR += elinks
