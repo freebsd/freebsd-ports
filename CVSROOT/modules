@@ -545,6 +545,7 @@ backfract	ports/graphics/backfract
 bacula		ports/sysutils/bacula
 baduki		ports/games/baduki
 badwm		ports/x11-wm/badwm
+baghira		ports/x11-themes/baghira
 bakery		ports/x11-toolkits/bakery
 bakery_gnomeui	ports/x11-toolkits/bakery_gnomeui
 balance		ports/net/balance
