@@ -1,0 +1,5 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/vpopmail/vpopmail.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/vpopmail/vpopmail.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/vpopmail/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/vpopmail
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/vpopmail.pm
