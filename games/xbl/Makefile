@@ -16,6 +16,6 @@ MAINTAINER=	ports@FreeBSD.org
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 CFLAGS+=	-I${PREFIX}/include
-MANn=		xbl.n
+MANN=		xbl.n
 
 .include <bsd.port.mk>
