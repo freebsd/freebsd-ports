@@ -352,6 +352,7 @@ share/xfce/palettes/Alpine
 share/xfce/palettes/Analog
 share/xfce/palettes/Anthracite
 share/xfce/palettes/Bahamas
+share/xfce/palettes/Bronze
 share/xfce/palettes/Cheese
 share/xfce/palettes/Citrouille
 share/xfce/palettes/Clinky
@@ -363,6 +364,7 @@ share/xfce/palettes/Fall
 share/xfce/palettes/Golden
 share/xfce/palettes/Grayscale
 share/xfce/palettes/Ground
+share/xfce/palettes/Helice
 share/xfce/palettes/HiContrast
 share/xfce/palettes/HiTech
 share/xfce/palettes/Iceland
@@ -444,6 +446,7 @@ share/xfce/sounds/zap01.wav
 share/xfce/sounds/zap02.wav
 share/xfce/sounds/zap03.wav
 share/xfce/sounds/zap04.wav
+share/xfce/textures/bronze.xpm
 share/xfce/textures/cheese.xpm
 share/xfce/textures/craters.xpm
 share/xfce/textures/ground.xpm
