@@ -13,6 +13,19 @@
 %%PORTDOCS%%share/doc/bugzilla/html/disclaimer.html
 %%PORTDOCS%%share/doc/bugzilla/html/extraconfig.html
 %%PORTDOCS%%share/doc/bugzilla/html/faq.html
+%%PORTDOCS%%share/doc/bugzilla/html/gfdl-0.html
+%%PORTDOCS%%share/doc/bugzilla/html/gfdl-1.html
+%%PORTDOCS%%share/doc/bugzilla/html/gfdl-10.html
+%%PORTDOCS%%share/doc/bugzilla/html/gfdl-2.html
+%%PORTDOCS%%share/doc/bugzilla/html/gfdl-3.html
+%%PORTDOCS%%share/doc/bugzilla/html/gfdl-4.html
+%%PORTDOCS%%share/doc/bugzilla/html/gfdl-5.html
+%%PORTDOCS%%share/doc/bugzilla/html/gfdl-6.html
+%%PORTDOCS%%share/doc/bugzilla/html/gfdl-7.html
+%%PORTDOCS%%share/doc/bugzilla/html/gfdl-8.html
+%%PORTDOCS%%share/doc/bugzilla/html/gfdl-9.html
+%%PORTDOCS%%share/doc/bugzilla/html/gfdl-howto.html
+%%PORTDOCS%%share/doc/bugzilla/html/gfdl.html
 %%PORTDOCS%%share/doc/bugzilla/html/glossary.html
 %%PORTDOCS%%share/doc/bugzilla/html/groups.html
 %%PORTDOCS%%share/doc/bugzilla/html/hintsandtips.html
@@ -27,7 +40,6 @@
 %%PORTDOCS%%share/doc/bugzilla/html/patches.html
 %%PORTDOCS%%share/doc/bugzilla/html/programadmin.html
 %%PORTDOCS%%share/doc/bugzilla/html/rewrite.html
-%%PORTDOCS%%share/doc/bugzilla/html/rhbugzilla.html
 %%PORTDOCS%%share/doc/bugzilla/html/security.html
 %%PORTDOCS%%share/doc/bugzilla/html/stepbystep.html
 %%PORTDOCS%%share/doc/bugzilla/html/troubleshooting.html
@@ -40,6 +52,7 @@
 %%PORTDOCS%%share/doc/bugzilla/html/voting.html
 %%PORTDOCS%%share/doc/bugzilla/html/variant-issuezilla.html
 %%PORTDOCS%%share/doc/bugzilla/html/variant-perforce.html
+%%PORTDOCS%%share/doc/bugzilla/html/variant-redhat.html
 %%PORTDOCS%%share/doc/bugzilla/html/variant-sourceforge.html
 %%PORTDOCS%%share/doc/bugzilla/html/variants.html
 %%PORTDOCS%%share/doc/bugzilla/html/whatis.html
@@ -51,8 +64,27 @@
 %%PORTDOCS%%share/doc/bugzilla/images/note.gif
 %%PORTDOCS%%share/doc/bugzilla/images/tip.gif
 %%PORTDOCS%%share/doc/bugzilla/images/warning.gif
+%%PORTDOCS%%share/doc/bugzilla/makedocs.pl
 %%PORTDOCS%%share/doc/bugzilla/rel_notes.txt
 %%PORTDOCS%%share/doc/bugzilla/txt/Bugzilla-Guide.txt
+%%PORTDOCS%%share/doc/bugzilla/xml/Bugzilla-Guide.xml
+%%PORTDOCS%%share/doc/bugzilla/xml/about.xml
+%%PORTDOCS%%share/doc/bugzilla/xml/administration.xml
+%%PORTDOCS%%share/doc/bugzilla/xml/conventions.xml
+%%PORTDOCS%%share/doc/bugzilla/xml/database.xml
+%%PORTDOCS%%share/doc/bugzilla/xml/dbschema.mysql
+%%PORTDOCS%%share/doc/bugzilla/xml/faq.xml
+%%PORTDOCS%%share/doc/bugzilla/xml/filetemp.patch
+%%PORTDOCS%%share/doc/bugzilla/xml/gd-makefile.patch
+%%PORTDOCS%%share/doc/bugzilla/xml/gfdl.xml
+%%PORTDOCS%%share/doc/bugzilla/xml/glossary.xml
+%%PORTDOCS%%share/doc/bugzilla/xml/index.xml
+%%PORTDOCS%%share/doc/bugzilla/xml/installation.xml
+%%PORTDOCS%%share/doc/bugzilla/xml/integration.xml
+%%PORTDOCS%%share/doc/bugzilla/xml/introduction.xml
+%%PORTDOCS%%share/doc/bugzilla/xml/patches.xml
+%%PORTDOCS%%share/doc/bugzilla/xml/using.xml
+%%PORTDOCS%%share/doc/bugzilla/xml/variants.xml
 %%PORTDOCS%%%%CONTRIB%%share/doc/bugzilla/contrib/README
 %%PORTDOCS%%%%CONTRIB%%share/doc/bugzilla/contrib/README.Mailif
 %%PORTDOCS%%%%CONTRIB%%share/doc/bugzilla/contrib/bugmail_help.html
@@ -123,6 +155,7 @@ www/data.default/bugzilla/RelationSet.pm
 www/data.default/bugzilla/relogin.cgi
 www/data.default/bugzilla/reports.cgi
 www/data.default/bugzilla/robots.txt
+www/data.default/bugzilla/runtests.pl
 www/data.default/bugzilla/runtests.sh
 www/data.default/bugzilla/sanitycheck.cgi
 www/data.default/bugzilla/show_activity.cgi
@@ -188,6 +221,7 @@ www/data.default/bugzilla/template/en/default/bug/show-multiple.html.tmpl
 www/data.default/bugzilla/template/en/default/bug/votes/delete-all.html.tmpl
 www/data.default/bugzilla/template/en/default/bug/votes/list-for-bug.html.tmpl
 www/data.default/bugzilla/template/en/default/bug/votes/list-for-user.html.tmpl
+www/data.default/bugzilla/template/en/default/filterexceptions.pl
 www/data.default/bugzilla/template/en/default/global/banner.html.tmpl
 www/data.default/bugzilla/template/en/default/global/choose-product.html.tmpl
 www/data.default/bugzilla/template/en/default/global/code-error.html.tmpl
@@ -245,6 +279,7 @@ www/data.default/bugzilla/css/panel.css
 @unexec rmdir %D/www/data.default || true
 @unexec rmdir %D/www || true
 %%PORTDOCS%%%%CONTRIB%%@dirrm share/doc/bugzilla/contrib
+%%PORTDOCS%%@dirrm share/doc/bugzilla/xml
 %%PORTDOCS%%@dirrm share/doc/bugzilla/txt
 %%PORTDOCS%%@dirrm share/doc/bugzilla/images
 %%PORTDOCS%%@dirrm share/doc/bugzilla/html
