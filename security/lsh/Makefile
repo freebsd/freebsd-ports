@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	lsh
-PORTVERSION=	1.5
+PORTVERSION=	1.5.1
 CATEGORIES=	security ipv6
 MASTER_SITES=	${MASTER_SITE_GNUPG} \
 		ftp://ftp.lysator.liu.se/pub/security/%SUBDIR%/
@@ -15,15 +15,13 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A secure (encrypted) remote shell compatible with ssh 2.0
 
-BUILD_DEPENDS+=	${LOCALBASE}/include/gmp.h:${PORTSDIR}/math/libgmp4
+BUILD_DEPENDS+=	${LOCALBASE}/include/gmp.h:${PORTSDIR}/math/libgmp4 \
+		${LOCALBASE}/share/slib/require.scm:${PORTSDIR}/lang/slib
 LIB_DEPENDS+=	oop:${PORTSDIR}/devel/liboop
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 INSTALL_TARGET=	install
-MAN1=		lsh_writekey.1 lsh_keygen.1 lsh.1
-MAN5=		DSA.5 secsh.5 SHA.5 SPKI.5
-MAN8=		lshd.8
 CONFIGURE_ARGS+=	--with-include-path=${LOCALBASE}/include
 CONFIGURE_ARGS+=	--with-lib-path=${LOCALBASE}/lib
 LDFLAGS+=	${PTHREAD_LIBS}
@@ -46,7 +44,7 @@ post-install:
 .for BIN in lsh lsh-keygen lsh-writekey sexp-conv srp-gen lsh-decode-key
 	strip ${PREFIX}/bin/${BIN}
 .endfor
-.for SBIN in lshd lsh_proxy
+.for SBIN in lshd
 	strip ${PREFIX}/sbin/${SBIN}
 .endfor
 .if !defined(NOPORTDOCS)
