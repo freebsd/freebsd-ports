@@ -5,37 +5,24 @@
 # $FreeBSD$
 
 PORTNAME=	qt
-PORTVERSION=	3.8.1
+PORTVERSION=	3.9
 CATEGORIES=	x11-toolkits python
 MASTER_SITES=	http://www.river-bank.demon.co.uk/download/PyQt/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	PyQt-x11-gpl-${PORTVERSION}
 
 MAINTAINER=	eugos@gmx.net
-COMMENT=	Python Bindings for Qt
+COMMENT=	Python bindings for the Qt toolkit
 
-LIB_DEPENDS=	sip.10:${PORTSDIR}/devel/sip
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/libsip.so:${PORTSDIR}/devel/py-sip
+BUILD_DEPENDS=	${LOCALBASE}/bin/sip:${PORTSDIR}/devel/py-sip
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_QT_VER=	3
 USE_PYTHON=	yes
-NO_FILTER_SHLIBS=	yes
-USE_REINPLACE=	yes
-
-ALL_TARGET=	all install
 
 do-configure:
-	@${MKDIR} ${WRKDIR}/binaries
-	@${MKDIR} ${WRKDIR}/modules
-	@(cd ${WRKSRC} && ${ECHO} "yes" | ${PYTHON_CMD} build.py -c \
-		-e ${LOCALBASE}/include/sip -s ${LOCALBASE}/lib \
-		-q ${X11BASE} -b ${WRKDIR}/binaries -d ${WRKDIR}/modules )
-
-pre-build:
-	@${REINPLACE_CMD} -e 's#LIBS *= $$(SUBLIBS)#LIBS = $$(SUBLIBS) -L${WRKDIR}/modules -Wl,-rpath,${PYTHONPREFIX_SITELIBDIR}#' ${WRKSRC}/*/Makefile
-
-do-install:
-	@${CP} ${WRKDIR}/binaries/* ${PREFIX}/bin/
-	${CP} -Rf ${WRKDIR}/modules/* ${PYTHONPREFIX_SITELIBDIR}
+	@(cd ${WRKSRC} && ${ECHO} "yes" | ${PYTHON_CMD} configure.py \
+		-b ${PREFIX}/bin -d ${PYTHONPREFIX_SITELIBDIR} \
+		-v ${PREFIX}/share/sip)
 
 .include <bsd.port.mk>
