@@ -30,8 +30,7 @@ USE_X_PREFIX=	yes
 USE_ZIP=	yes
 EXTRACT_BEFORE_ARGS=	-qo
 
-# forcing define this until www/mozilla would be catched up.
-MOZILLA_IPV6=	yes
+MOZILLA_IPV6?=	yes
 
 .if defined(MOZILLA_IPV6)
 MOZILLA_PORT=	${PORTSDIR}/www/mozilla+ipv6
