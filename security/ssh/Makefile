@@ -3,11 +3,11 @@
 # Date created:		30 Jul 1995
 # Whom:			torstenb@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.3 1995/10/10 17:02:24 ache Exp $
+# $Id: Makefile,v 1.4 1995/11/09 05:58:00 asami Exp $
 #
 
 DISTNAME=	ssh-1.2.10
-CATEGORIES=	security networking
+CATEGORIES=	security net
 MASTER_SITES=	ftp://ftp.funet.fi/pub/unix/security/ \
 		ftp://ftp.cs.hut.fi/pub/ssh/snapshots/
 
