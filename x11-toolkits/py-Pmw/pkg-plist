@@ -214,6 +214,9 @@ share/examples/Pmw/Balloon.pyo
 share/examples/Pmw/BltGraph.py
 share/examples/Pmw/BltGraph.pyc
 share/examples/Pmw/BltGraph.pyo
+share/examples/Pmw/BltTabset.py
+share/examples/Pmw/BltTabset.pyc
+share/examples/Pmw/BltTabset.pyo
 share/examples/Pmw/ButtonBox.py
 share/examples/Pmw/ButtonBox.pyc
 share/examples/Pmw/ButtonBox.pyo
