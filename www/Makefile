@@ -115,6 +115,7 @@
     SUBDIR += kannel
     SUBDIR += knowledgekit
     SUBDIR += kwebwatch
+    SUBDIR += larbin
     SUBDIR += libghttp
     SUBDIR += libwww
     SUBDIR += libxpg4-ns

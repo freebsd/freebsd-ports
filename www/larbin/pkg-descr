@@ -1,0 +1,20 @@
+Larbin is a powerful web crawler (also called [web] robot, spider...).  It
+is intended to fetch a large number of web pages to fill the database of a
+search engine.  With a network fast enough, Larbin is able to fetch more than
+100 million pages on a standard PC.
+
+Larbin was initially developed for the XYLEME project in the VERSO team at
+INRIA.  The goal of Larbin was to go and fetch XML pages on the web to fill
+the database of an xml-oriented search engine.
+
+The following can be done with Larbin:
+
+	o A crawler for a search engine
+	o A crawler for a specialized search enginer (xml, images, mp3...)
+	o Statistics on the web (about servers or page contents)
+
+Larbin is created by: Sebastien Ailleret
+
+WWW: http://larbin.sourceforge.net
+WWW: http://www.sourceforge.net/projects/larbin
+WWW: http://www.ailleret.com

@@ -1,0 +1,8 @@
+--- larbin.make~	Mon Mar  4 11:47:28 2002
++++ larbin.make	Tue Mar 26 21:17:01 2002
+@@ -37,5 +37,3 @@
+ 
+ prof-in: CPPFLAGS += -pg -DPROF
+ prof-in: redo-in
+-
+--include .depend
