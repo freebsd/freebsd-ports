@@ -6,6 +6,7 @@
 
 PORTNAME=	gtk
 PORTVERSION=	2.2.0
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits python
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/pygtk/2.2
@@ -33,7 +34,7 @@ CONFLICTS=	py*-gtk-0*
 # Use the same way as the Python port to determine if we want
 # threading support.
 #
-LIBC_R!=	/sbin/ldconfig -r | grep "c_r|pthread" || true
+LIBC_R!=	/sbin/ldconfig -r | grep "c_r\|pthread" || true
 .if (${LIBC_R} != "") && !defined(WITHOUT_THREADS)
 CONFIGURE_ARGS+=	--enable-thread
 CFLAGS+=		${PTHREAD_CFLAGS}
