@@ -1,5 +1,5 @@
---- gtk-config.in.orig	Wed Aug 12 18:24:01 1998
-+++ gtk-config.in	Wed Aug 12 18:24:15 1998
+--- gtk-config.in.orig	Fri Aug 14 18:21:57 1998
++++ gtk-config.in	Fri Aug 14 18:20:36 1998
 @@ -8,7 +8,7 @@
  exec_prefix_set=no
  
@@ -9,8 +9,17 @@
  
  if test $# -eq 0; then
        echo "${usage}" 1>&2
---- gtk.m4.orig	Wed Aug 12 18:24:19 1998
-+++ gtk.m4	Wed Aug 12 18:24:59 1998
+@@ -64,7 +64,7 @@
+           fi
+         fi
+       done
+-      echo $libdirs @x_ldflags@ -lgtk-@LT_RELEASE@ -lgdk-@LT_RELEASE@ $my_glib_libs @x_libs@ -lm
++      echo $libdirs @x_ldflags@ -lgtk11 -lgdk11 $my_glib_libs @x_libs@ -lm
+       ;;
+     *)
+       echo "${usage}" 1>&2
+--- gtk.m4.orig	Thu Jun 11 07:52:13 1998
++++ gtk.m4	Fri Aug 14 18:14:55 1998
 @@ -6,7 +6,7 @@
  dnl
  AC_DEFUN(AM_PATH_GTK,
