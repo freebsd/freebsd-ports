@@ -5426,6 +5426,7 @@ ru-elm		ports/russian/elm.language
 ru-gd		ports/russian/gd
 ru-kde2-i18n	ports/russian/kde2-i18n
 ru-netscape4	ports/russian/netscape4.language
+ru-p5-XML-Parser-encodings	ports/russian/p5-XML-Parser-encodings
 ru-pine		ports/russian/pine.language
 ru-tac+ia	ports/russian/tac+ia
 ru-wmcyrx	ports/russian/wmcyrx
