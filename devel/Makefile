@@ -61,6 +61,7 @@
     SUBDIR += ilu
     SUBDIR += insight
     SUBDIR += jam
+    SUBDIR += kdbg
     SUBDIR += ktranslator
     SUBDIR += lclint
     SUBDIR += libPropList
@@ -95,6 +96,7 @@
     SUBDIR += ncurses
     SUBDIR += noweb
     SUBDIR += omniORB
+    SUBDIR += p5-AppConfig
     SUBDIR += p5-BSD-Resource
     SUBDIR += p5-C-Scan
     SUBDIR += p5-ConfigReader
