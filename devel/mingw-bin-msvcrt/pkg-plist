@@ -1,6 +1,7 @@
 bin/mingwm10.dll
 i386-mingw32msvc/include/_mingw.h
 i386-mingw32msvc/include/assert.h
+i386-mingw32msvc/include/basetsd.h
 i386-mingw32msvc/include/basetyps.h
 i386-mingw32msvc/include/cderr.h
 i386-mingw32msvc/include/cguid.h
@@ -30,6 +31,11 @@ i386-mingw32msvc/include/imm.h
 i386-mingw32msvc/include/initguid.h
 i386-mingw32msvc/include/intshcut.h
 i386-mingw32msvc/include/io.h
+i386-mingw32msvc/include/ipexport.h
+i386-mingw32msvc/include/iphlpapi.h
+i386-mingw32msvc/include/ipifcons.h
+i386-mingw32msvc/include/iprtrmib.h
+i386-mingw32msvc/include/iptypes.h
 i386-mingw32msvc/include/isguids.h
 i386-mingw32msvc/include/largeint.h
 i386-mingw32msvc/include/limits.h
@@ -65,14 +71,18 @@ i386-mingw32msvc/include/mcx.h
 i386-mingw32msvc/include/mem.h
 i386-mingw32msvc/include/memory.h
 i386-mingw32msvc/include/mmsystem.h
+i386-mingw32msvc/include/mswsock.h
 i386-mingw32msvc/include/nb30.h
 i386-mingw32msvc/include/nddeapi.h
 i386-mingw32msvc/include/nspapi.h
+i386-mingw32msvc/include/ntdef.h
+i386-mingw32msvc/include/ntsecapi.h
 i386-mingw32msvc/include/oaidl.h
 i386-mingw32msvc/include/objbase.h
 i386-mingw32msvc/include/objfwd.h
 i386-mingw32msvc/include/objidl.h
 i386-mingw32msvc/include/ocidl.h
+i386-mingw32msvc/include/odbcinst.h
 i386-mingw32msvc/include/ole.h
 i386-mingw32msvc/include/ole2.h
 i386-mingw32msvc/include/ole2ver.h
@@ -93,6 +103,9 @@ i386-mingw32msvc/include/pshpack2.h
 i386-mingw32msvc/include/pshpack4.h
 i386-mingw32msvc/include/pshpack8.h
 i386-mingw32msvc/include/rapi.h
+i386-mingw32msvc/include/ras.h
+i386-mingw32msvc/include/raserror.h
+i386-mingw32msvc/include/rassapi.h
 i386-mingw32msvc/include/regstr.h
 i386-mingw32msvc/include/richedit.h
 i386-mingw32msvc/include/richole.h
@@ -115,11 +128,14 @@ i386-mingw32msvc/include/signal.h
 i386-mingw32msvc/include/sql.h
 i386-mingw32msvc/include/sqlext.h
 i386-mingw32msvc/include/sqltypes.h
+i386-mingw32msvc/include/sqlucode.h
 i386-mingw32msvc/include/stdarg.h
 i386-mingw32msvc/include/stddef.h
+i386-mingw32msvc/include/stdint.h
 i386-mingw32msvc/include/stdio.h
 i386-mingw32msvc/include/stdlib.h
 i386-mingw32msvc/include/string.h
+i386-mingw32msvc/include/subauth.h
 i386-mingw32msvc/include/sys/fcntl.h
 i386-mingw32msvc/include/sys/file.h
 i386-mingw32msvc/include/sys/locking.h
@@ -129,14 +145,15 @@ i386-mingw32msvc/include/sys/timeb.h
 i386-mingw32msvc/include/sys/types.h
 i386-mingw32msvc/include/sys/unistd.h
 i386-mingw32msvc/include/sys/utime.h
-@dirrm i386-mingw32msvc/include/sys
 i386-mingw32msvc/include/tchar.h
 i386-mingw32msvc/include/time.h
 i386-mingw32msvc/include/tlhelp32.h
 i386-mingw32msvc/include/unistd.h
 i386-mingw32msvc/include/unknwn.h
+i386-mingw32msvc/include/userenv.h
 i386-mingw32msvc/include/values.h
 i386-mingw32msvc/include/varargs.h
+i386-mingw32msvc/include/w32api.h
 i386-mingw32msvc/include/wchar.h
 i386-mingw32msvc/include/wctype.h
 i386-mingw32msvc/include/winbase.h
@@ -161,17 +178,20 @@ i386-mingw32msvc/include/winspool.h
 i386-mingw32msvc/include/winsvc.h
 i386-mingw32msvc/include/winuser.h
 i386-mingw32msvc/include/winver.h
+i386-mingw32msvc/include/ws2tcpip.h
 i386-mingw32msvc/include/wtypes.h
 i386-mingw32msvc/include/zmouse.h
-@dirrm i386-mingw32msvc/include
 i386-mingw32msvc/lib/CRT_noglob.o
+i386-mingw32msvc/lib/crt1.o
 i386-mingw32msvc/lib/crt2.o
 i386-mingw32msvc/lib/crtmt.o
 i386-mingw32msvc/lib/crtst.o
+i386-mingw32msvc/lib/dllcrt1.o
 i386-mingw32msvc/lib/dllcrt2.o
-i386-mingw32msvc/lib/gcrt2.o
+i386-mingw32msvc/lib/gcrt1.o
 i386-mingw32msvc/lib/libadvapi32.a
 i386-mingw32msvc/lib/libcap.a
+i386-mingw32msvc/lib/libcoldname.a
 i386-mingw32msvc/lib/libcomctl32.a
 i386-mingw32msvc/lib/libcomdlg32.a
 i386-mingw32msvc/lib/libcrtdll.a
@@ -194,6 +214,7 @@ i386-mingw32msvc/lib/libglut32.a
 i386-mingw32msvc/lib/libgmon.a
 i386-mingw32msvc/lib/libimagehlp.a
 i386-mingw32msvc/lib/libimm32.a
+i386-mingw32msvc/lib/libiphlpapi.a
 i386-mingw32msvc/lib/libkernel32.a
 i386-mingw32msvc/lib/liblargeint.a
 i386-mingw32msvc/lib/liblz32.a
@@ -206,6 +227,7 @@ i386-mingw32msvc/lib/libmingwthrd.a
 i386-mingw32msvc/lib/libmoldname.a
 i386-mingw32msvc/lib/libmpr.a
 i386-mingw32msvc/lib/libmsacm32.a
+i386-mingw32msvc/lib/libmsvcp60.a
 i386-mingw32msvc/lib/libmsvcrt.a
 i386-mingw32msvc/lib/libmsvcrt20.a
 i386-mingw32msvc/lib/libmsvcrt40.a
@@ -213,6 +235,7 @@ i386-mingw32msvc/lib/libmswsock.a
 i386-mingw32msvc/lib/libnddeapi.a
 i386-mingw32msvc/lib/libnetapi32.a
 i386-mingw32msvc/lib/libodbc32.a
+i386-mingw32msvc/lib/libodbccp32.a
 i386-mingw32msvc/lib/libole32.a
 i386-mingw32msvc/lib/liboleaut32.a
 i386-mingw32msvc/lib/libolecli32.a
@@ -222,6 +245,7 @@ i386-mingw32msvc/lib/libolesvr32.a
 i386-mingw32msvc/lib/libopengl32.a
 i386-mingw32msvc/lib/libpenwin32.a
 i386-mingw32msvc/lib/libpkpd32.a
+i386-mingw32msvc/lib/libpsapi.a
 i386-mingw32msvc/lib/librapi.a
 i386-mingw32msvc/lib/librasapi32.a
 i386-mingw32msvc/lib/librpcdce4.a
@@ -229,6 +253,7 @@ i386-mingw32msvc/lib/librpcns4.a
 i386-mingw32msvc/lib/librpcrt4.a
 i386-mingw32msvc/lib/libscrnsave.a
 i386-mingw32msvc/lib/libscrnsavw.a
+i386-mingw32msvc/lib/libsecur32.a
 i386-mingw32msvc/lib/libshell32.a
 i386-mingw32msvc/lib/libsvrapi.a
 i386-mingw32msvc/lib/libtapi32.a
@@ -236,6 +261,7 @@ i386-mingw32msvc/lib/libth32.a
 i386-mingw32msvc/lib/libthunk32.a
 i386-mingw32msvc/lib/liburl.a
 i386-mingw32msvc/lib/libuser32.a
+i386-mingw32msvc/lib/libuserenv.a
 i386-mingw32msvc/lib/libuuid.a
 i386-mingw32msvc/lib/libvdmdbg.a
 i386-mingw32msvc/lib/libversion.a
@@ -249,4 +275,6 @@ i386-mingw32msvc/lib/libwow32.a
 i386-mingw32msvc/lib/libws2_32.a
 i386-mingw32msvc/lib/libwsock32.a
 i386-mingw32msvc/lib/libwst.a
+@dirrm i386-mingw32msvc/include/sys
+@dirrm i386-mingw32msvc/include
 @unexec rmdir -p %D/i386-mingw32msvc/lib 2>/dev/null || true
