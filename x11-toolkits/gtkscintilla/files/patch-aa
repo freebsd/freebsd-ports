@@ -1,0 +1,49 @@
+--- Makefile	2000/12/14 10:21:57	1.1
++++ Makefile	2000/12/14 10:28:39
+@@ -2,28 +2,18 @@
+ 
+ NAME = GtkScintilla
+ LIB_NAME = gtkscintilla
+-VERSION = 0.2
+-PREFIX = $(shell gtk-config --prefix)
++VERSION = 0
++PREFIX ?= $(shell $(GTK_CONFIG) --prefix)
+ 
+ SCINTILLA_DIR = ./scintilla
+-SCINTILLA_INCLUDE = $(SCINTILLA_DIR)/include
++SCINTILLA_INCLUDE = $(X11BASE)/include/scintilla
+ SCINTILLA_SOURCE = $(SCINTILLA_DIR)/src
+-SCINTILLA_LIB = $(SCINTILLA_DIR)/bin/scintilla.a
+-LEXERS = \
+-	$(SCINTILLA_DIR)/gtk/LexCPP.o \
+-	$(SCINTILLA_DIR)/gtk/LexConf.o \
+-	$(SCINTILLA_DIR)/gtk/LexHTML.o \
+-	$(SCINTILLA_DIR)/gtk/LexLua.o \
+-	$(SCINTILLA_DIR)/gtk/LexOthers.o \
+-	$(SCINTILLA_DIR)/gtk/LexPascal.o \
+-	$(SCINTILLA_DIR)/gtk/LexPerl.o \
+-	$(SCINTILLA_DIR)/gtk/LexPython.o \
+-	$(SCINTILLA_DIR)/gtk/LexSQL.o \
+-	$(SCINTILLA_DIR)/gtk/LexVB.o
+-CFLAGS = $(shell gtk-config --cflags) -g -Wall -DGTK -DSCI_LEXER
+-LDFLAGS = $(shell gtk-config --libs) $(SCINTILLA_LIB) $(LEXERS)
+-CC = gcc
+-LD = gcc
++SCINTILLA_LIB = -lscintilla
++LEXERS = -lscintilla_lexers
++CFLAGS = $(shell $(GTK_CONFIG) --cflags) -g -Wall -DGTK -DSCI_LEXER -I$(SCINTILLA_INCLUDE)
++LDFLAGS = $(shell $(GTK_CONFIG) --libs) $(SCINTILLA_LIB) $(LEXERS)
++CC ?= gcc
++LD = $(CC)
+ AR = ar
+ 
+ SOURCES = $(wildcard *.c)
+@@ -36,7 +26,7 @@
+ LIB_DIR = $(PREFIX)/lib/
+ INCLUDE_DIR = $(PREFIX)/include/
+ 
+-all: ./$(SCINTILLA_LIB) $(STATIC_LIB) $(SHARED_LIB)
++all: $(STATIC_LIB) $(SHARED_LIB)
+ 
+ scintilla: ./$(SCINTILLA_LIB)
+ 

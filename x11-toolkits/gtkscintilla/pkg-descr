@@ -1,0 +1,13 @@
+This is GtkScintilla, a wrapper for the Scintilla (www.scintilla.org) editing
+component wich adds some facility to this powerful component written by Neil
+Hodgson (and may others).
+
+Scintilla has two little problems:
+ - It is available only as a static library
+ - It has a strange (for Linux/GTK+ people) API
+
+GtkScintilla addresses both:
+ - It is a shared library
+ - It is a true GtkWidget subclass with a GTK+ API
+
+WWW: http://www.moleskine.f2s.com/

@@ -30,6 +30,7 @@
     SUBDIR += gtkextra
     SUBDIR += gtkextra--
     SUBDIR += gtkglarea
+    SUBDIR += gtkscintilla
     SUBDIR += gtkstep
     SUBDIR += gtkstep-pastel
     SUBDIR += guile-gnome
