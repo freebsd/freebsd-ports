@@ -34,8 +34,6 @@
     SUBDIR += py-qt
     SUBDIR += py-tkinter
     SUBDIR += py-wxPython
-    SUBDIR += pykde
-    SUBDIR += pyqt
     SUBDIR += qt-i18n
     SUBDIR += qt145
     SUBDIR += qt20
