@@ -8,12 +8,10 @@
 PORTNAME=	xemacs
 PORTVERSION=	${XEMACS_VER}
 CATEGORIES+=	editors
-MASTER_SITES=	\
-		ftp://ftp.xemacs.org/pub/xemacs/xemacs-${XEMACS_REL}/ \
-		ftp://ftp.mpi-sb.mpg.de/pub/gnu/mirror/ftp.xemacs.org/xemacs/xemacs-${XEMACS_REL}/ \
-		ftp://ftp.lab.kdd.co.jp/xemacs/xemacs-${XEMACS_REL}/ \
-		ftp://ftp.th-darmstadt.de/pub/editors/xemacs/xemacs-${XEMACS_REL}/
+MASTER_SITES=	${MASTER_SITE_XEMACS}
+MASTER_SITE_SUBDIR=	xemacs-${XEMACS_REL}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}-elc${EXTRACT_SUFX} ${DISTNAME}-info${EXTRACT_SUFX}
+DIST_SUBDIR=	xemacs
 
 MAINTAINER?=	gj@FreeBSD.org
 
@@ -25,8 +23,6 @@ LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 XEMACS_REL=	21.1
 XEMACS_VER=	21.1.12
 XEMACS_ARCH=	${CONFIGURE_TARGET}
-
-DIST_SUBDIR=	xemacs
 
 SLAVEDIRS+=	editors/xemacs21-mule
 USE_XLIB=	yes
