@@ -1,6 +1,6 @@
---- Makefile.in.orig	Sat Jun 24 16:22:59 2000
-+++ Makefile.in	Mon Oct 16 20:30:48 2000
-@@ -76,7 +76,7 @@
+--- Makefile.in.orig	Thu Jan 17 16:52:38 2002
++++ Makefile.in	Sat Jan 26 10:49:00 2002
+@@ -82,7 +82,7 @@
  man_MANS = feh.1
  
  docs_DATA = README AUTHORS ChangeLog TODO
@@ -9,3 +9,19 @@
  
  EXTRA_DIST =  feh.spec feh.1 $(docs_DATA)
  
+@@ -195,6 +195,7 @@
+ 	$(MAKE) $(AM_MAKEFLAGS) uninstall-man1
+ 
+ install-docsDATA: $(docs_DATA)
++.if !defined(NO_DOC)
+ 	@$(NORMAL_INSTALL)
+ 	$(mkinstalldirs) $(DESTDIR)$(docsdir)
+ 	@list='$(docs_DATA)'; for p in $$list; do \
+@@ -206,6 +207,7 @@
+ 	    $(INSTALL_DATA) $$p $(DESTDIR)$(docsdir)/$$p; \
+ 	  fi; fi; \
+ 	done
++.endif
+ 
+ uninstall-docsDATA:
+ 	@$(NORMAL_UNINSTALL)
