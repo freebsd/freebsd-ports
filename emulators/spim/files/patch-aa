@@ -1,5 +1,5 @@
---- Makefile.std.orig	Mon Jan 15 05:55:16 2001
-+++ Makefile.std	Tue Feb 27 21:16:12 2001
+--- Makefile.std.orig	Mon Aug 23 00:58:00 2004
++++ Makefile.std	Thu Dec 30 01:35:28 2004
 @@ -46,21 +46,21 @@
  
  
@@ -13,9 +13,9 @@
 +TOPDIR = ${X11BASE}
  
  
- # Full path for directory that will hold the trap handler file:
--TRAP_DIR = .
-+TRAP_DIR = ${PREFIX}/share/spim
+ # Full path for directory that will hold the exception handler file:
+-EXCEPTION_DIR = .
++EXCEPTION_DIR = ${PREFIX}/share/spim
  
  # Full path for the directory that will hold the executable files:
 -BIN_DIR = /usr/unsup/bin
@@ -26,10 +26,10 @@
 +MAN_DIR = ${PREFIX}/man/man1
  
  
- # Full path for the trap handler file:
+ # Full path for the exception handler file:
 @@ -93,8 +93,8 @@
  
- DEFINES = $(ENDIAN) $(MEM_SIZES) -DDEFAULT_TRAP_HANDLER=$(TRAP_PATH) -DSPIM_VERSION="\"`cat VERSION`\""
+ DEFINES = $(ENDIAN) $(MEM_SIZES) -DDEFAULT_EXCEPTION_HANDLER=$(EXCEPTION_PATH) -DSPIM_VERSION="\"`cat VERSION`\""
  
 -CC = cc
 -CFLAGS = $(DEFINES)
@@ -61,19 +61,19 @@
  
  force:	configuration
  
-@@ -200,11 +200,12 @@
+@@ -192,11 +192,12 @@
  	  spim.tar.* spim.aux spim.log spim.dvi spim.shar*
  
  install: spim xspim
 -	install -c -s  spim $(BIN_DIR)
 -	install -c -s  xspim $(BIN_DIR)
--	install -c -m 0444 trap.handler $(TRAP_DIR)
+-	install -c -m 0444 exceptions.s $(EXCEPTION_DIR)
 -	install -c -m 0444 spim.man $(MAN_DIR)
 -	install -c -m 0444 xspim.man $(MAN_DIR)
-+	-mkdir -p $(BIN_DIR) $(TRAP_DIR) $(MAN_DIR)
++	-mkdir -p $(BIN_DIR) $(EXCEPTION_DIR) $(MAN_DIR)
 +	${BSD_INSTALL_PROGRAM} spim $(BIN_DIR)
 +	${BSD_INSTALL_PROGRAM} xspim $(BIN_DIR)
-+	${BSD_INSTALL_DATA} trap.handler $(TRAP_DIR)
++	${BSD_INSTALL_DATA} exceptions.s $(EXCEPTION_DIR)
 +	${BSD_INSTALL_MAN} spim.man $(MAN_DIR)/spim.1
 +	${BSD_INSTALL_MAN} xspim.man $(MAN_DIR)/xspim.1
  
