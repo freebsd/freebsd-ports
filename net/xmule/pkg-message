@@ -1,12 +1,12 @@
 	ATTENTIONATTENTION:
 
 Note: Settings were NEVER saved for SharedFile and QueueList and
-possibly some other lists... Due to this, unless you are using LMule
+possibly some other lists... Due to this, unless you are using xMule
 for the first time, there will be no saved settings for these two
 lists; thus, it will think all of their columns are to be hidden.
  
 Best fix: right-click on the grey top of each list and select each
-item in that popup to display the columns... be SURE to quit LMule
+item in that popup to display the columns... be SURE to quit xMule
 after doing this because if it crashes you have to do this step
 again!
  
@@ -15,5 +15,5 @@ EVERYTHING, including shares and whatnot. The preferences.dat is a
 binary file, thus it will be *incredibly* difficult to change by
 hand.
 
-Information taken from LMule developer
+Information taken from xMule developer
 Ted R. Smith <un-thesis@users.sourceforge.net>

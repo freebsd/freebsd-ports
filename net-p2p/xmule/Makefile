@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xmule
-PORTVERSION=	1.4.0
+PORTVERSION=	1.4.3
 CATEGORIES=	net
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	xmule
@@ -18,9 +18,6 @@ LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext \
 		expat.4:${PORTSDIR}/textproc/expat2 \
 		wx_gtk.2:${PORTSDIR}/x11-toolkits/wxgtk-devel
 RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
-
-FORBIDDEN=	"Format string bug: \
-	http://www.xmule.org/geeklog/article.php?story=20030810160606604"
 
 USE_X_PREFIX=	yes
 USE_BZIP2=	yes
