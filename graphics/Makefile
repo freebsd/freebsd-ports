@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.39 1997/01/12 05:55:00 max Exp $
+# $Id: Makefile,v 1.40 1997/02/13 14:58:38 tg Exp $
 #
 
     SUBDIR += ImageMagick
@@ -12,6 +12,7 @@
     SUBDIR += giftrans
     SUBDIR += gimp
     SUBDIR += gimp-devel
+    SUBDIR += hobbes-icons-xpm
     SUBDIR += hpscan
     SUBDIR += jbigkit
     SUBDIR += jpeg
