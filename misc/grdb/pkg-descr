@@ -1,6 +1,2 @@
 A utility that updates X applications that use Motif/Athena/Tk to use
 the colors of the current GTK+ theme. Based on the KDE equivalent krdb.
-
-WWW: http://bucket.pp.ualr.edu/~bit/grdb.html
-
---Stijn Hoop
