@@ -7026,6 +7026,7 @@ truereality	ports/emulators/truereality
 truevision	ports/graphics/truevision
 truncate	src/usr.bin/truncate
 truss		src/usr.bin/truss
+trustedbsd-www	projects/trustedbsd/www
 tset		src/usr.bin/tset
 tsort		src/usr.bin/tsort
 ttcp		ports/net/ttcp
