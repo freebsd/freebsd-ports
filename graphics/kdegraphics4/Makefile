@@ -28,6 +28,15 @@ USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS+=	%%PREFIX%%/lib %%PREFIX%%/lib/kde3
 
+.include "${.CURDIR}/../../x11/kde3/Makefile.kde"
+.include <bsd.port.pre.mk>
+
+IMLIB_CONFIG=	${X11BASE}/bin/imlib-config
+
+.if exists(${IMLIB_CONFIG})
+WITH_IMLIB?=	yes
+.endif
+
 .if defined(WITH_IMLIB) || defined(KDE_WITH_IMLIB)
 USE_GNOME=	imlib
 PLIST_APPEND+=	plist.imlib
@@ -35,10 +44,15 @@ CONFIGURE_ARGS+=--with-imlib-config=${X11BASE}/bin
 .else
 WITHOUT_IMLIB=	yes
 CONFIGURE_ARGS+=--without-imlib-config
+pre-everything::
+	@${ECHO_MSG}
+	@${ECHO_MSG} "======================================================="
+	@${ECHO_MSG} "If you want to compile with imlib support (enables"
+	@${ECHO_MSG} "kuickshow), hit Ctrl-C right now and use"
+	@${ECHO_MSG} "\"make WITH_IMLIB=yes\""
+	@${ECHO_MSG} "======================================================="
+	@${ECHO_MSG}
 .endif # defined(WITH_IMLIB) || defined(KDE_WITH_IMLIB)
-
-.include "${.CURDIR}/../../x11/kde3/Makefile.kde"
-.include <bsd.port.pre.mk>
 
 GPHOTO2_CONFIG=	${LOCALBASE}/bin/gphoto2-config
 
