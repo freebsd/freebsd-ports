@@ -1,0 +1,8 @@
+if [ ! "$2" = "POST-DEINSTALL" ]; then
+	exit 0
+fi
+
+echo ""
+echo "If you want to completely remove this package"
+echo "remove /dev/dazuko"
+echo ""

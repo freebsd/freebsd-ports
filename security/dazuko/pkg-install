@@ -1,0 +1,11 @@
+#!/bin/sh
+
+if [ "$2" = "POST-INSTALL" ]; then
+	if ! [ -c /dev/dazuko ]; then
+		mknod /dev/dazuko c 33 0
+	fi
+	echo ""
+	echo "To load the module do kldload $1/modules/dazuko.ko"
+	echo ""
+fi
+exit 0

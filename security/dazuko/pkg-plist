@@ -1,0 +1,2 @@
+modules/dazuko.ko
+@unexec rmdir %D/modules 2>/dev/null || true
