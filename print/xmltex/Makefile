@@ -24,6 +24,8 @@ LIB_DEPENDS=		png.5:${PORTSDIR}/graphics/png
 RUN_DEPENDS=		tex:${PORTSDIR}/print/teTeX \
 			${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal
 
+BROKEN=			"Does not install"
+
 .include <bsd.port.pre.mk>
 
 PLIST_SUB=	MKTEXLSR=${MKTEXLSR} CLASSDIR=${CLASSDIR} WEB2CDIR=${WEB2CDIR}
