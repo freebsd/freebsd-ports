@@ -152,6 +152,7 @@
     SUBDIR += hydra
     SUBDIR += hypermail
     SUBDIR += igal
+    SUBDIR += imgsizer
     SUBDIR += indexme
     SUBDIR += interchange
     SUBDIR += jakarta-jmeter
