@@ -10,13 +10,11 @@
          INSTOBJEXT=.mo
          DATADIRNAME=share
 -	INTLDEPS='$(top_builddir)/intl/libintl.a'
--	INTLLIBS=$INTLDEPS
--	LIBS=`echo $LIBS | sed -e 's/-lintl//'`
++	INTLDEPS='-lintl'
+	INTLLIBS=$INTLDEPS
+	LIBS=`echo $LIBS | sed -e 's/-lintl//'`
 -        nls_cv_header_intl=intl/libintl.h
 -        nls_cv_header_libgt=intl/libgettext.h
-+#	INTLDEPS='$(top_builddir)/intl/libintl.a'
-+#	INTLLIBS=$INTLDEPS
-+#	LIBS=`echo $LIBS | sed -e 's/-lintl//'`
 +#        nls_cv_header_intl=intl/libintl.h
 +#        nls_cv_header_libgt=intl/libgettext.h
        fi
