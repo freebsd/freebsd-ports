@@ -11,7 +11,7 @@ bin/libnetcfg
 bin/perl
 bin/perl%%PERL_VER%%
 @exec ln -fs %D/%F %B/perl5
-@unexec rm %B/perl5
+@unexec rm -f %B/perl5 2>&1 >/dev/null || true
 bin/perlbug
 bin/perlcc
 bin/perldoc
@@ -32,7 +32,7 @@ bin/s2p
 %%ENABLE_SUIDPERL%%bin/sperl%%PERL_VER%%
 bin/splain
 %%ENABLE_SUIDPERL%%bin/suidperl
-bin/use.perl
+%%NEED_USE_PERL%%bin/use.perl
 bin/xsubpp
 lib/perl5/%%PERL_VER%%/AnyDBM_File.pm
 lib/perl5/%%PERL_VER%%/Attribute/Handlers.pm
@@ -62,6 +62,7 @@ lib/perl5/%%PERL_VER%%/BSDPAN/BSDPAN.pm
 lib/perl5/%%PERL_VER%%/BSDPAN/BSDPAN/Override.pm
 lib/perl5/%%PERL_VER%%/BSDPAN/Config.pm
 lib/perl5/%%PERL_VER%%/BSDPAN/ExtUtils/MM_Unix.pm
+lib/perl5/%%PERL_VER%%/BSDPAN/ExtUtils/MakeMaker.pm
 lib/perl5/%%PERL_VER%%/BSDPAN/ExtUtils/Packlist.pm
 lib/perl5/%%PERL_VER%%/Benchmark.pm
 lib/perl5/%%PERL_VER%%/CGI.pm
@@ -869,6 +870,7 @@ lib/perl5/%%PERL_VER%%/pod/perl582delta.pod
 lib/perl5/%%PERL_VER%%/pod/perl583delta.pod
 lib/perl5/%%PERL_VER%%/pod/perl584delta.pod
 lib/perl5/%%PERL_VER%%/pod/perl585delta.pod
+lib/perl5/%%PERL_VER%%/pod/perl586delta.pod
 lib/perl5/%%PERL_VER%%/pod/perl58delta.pod
 lib/perl5/%%PERL_VER%%/pod/perlaix.pod
 lib/perl5/%%PERL_VER%%/pod/perlamiga.pod
@@ -1458,12 +1460,9 @@ lib/perl5/%%PERL_VER%%/warnings/register.pm
 @dirrm lib/perl5/%%PERL_VER%%/BSDPAN/ExtUtils
 @dirrm lib/perl5/%%PERL_VER%%/BSDPAN
 @unexec find %D/%%SITE_PERL%%/%%PERL_ARCH%%/ -name '*.ph' -delete 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%% 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl 2>/dev/null || true
 %%GDBM%%@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/GDBM_File
 @unexec rmdir %D/lib/perl5/%%PERL_VER%%/auto/POSIX/SigAction 2>/dev/null || true
 @unexec rmdir %D/lib/perl5/%%PERL_VER%%/auto/POSIX 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/auto 2>/dev/null || true
 @unexec rmdir %D/lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/threads 2>/dev/null || true
 @unexec rmdir %D/lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/XS 2>/dev/null || true
 @unexec rmdir %D/lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Sys 2>/dev/null || true
@@ -1566,7 +1565,6 @@ lib/perl5/%%PERL_VER%%/warnings/register.pm
 @unexec rmdir %D/lib/perl5/%%PERL_VER%%/Encode/MIME 2>/dev/null || true
 @unexec rmdir %D/lib/perl5/%%PERL_VER%%/Encode/KR 2>/dev/null || true
 @unexec rmdir %D/lib/perl5/%%PERL_VER%%/Encode/JP 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/Encode 2>/dev/null || true
 @unexec rmdir %D/lib/perl5/%%PERL_VER%%/CPAN 2>/dev/null || true
 @unexec rmdir %D/lib/perl5/%%PERL_VER%%/Carp 2>/dev/null || true
 @dirrm lib/perl5/%%PERL_VER%%/unicore/To

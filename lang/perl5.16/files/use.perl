@@ -1,134 +1,264 @@
-#! %%PREFIX%%/bin/perl -w
+#!/bin/sh
+
 # $FreeBSD$
-use strict;
 
-# XXX what to do with perldoc, pelbug, perlcc ??
+this=`echo -n $0 | /usr/bin/sed -e 's!^.*/!!'`
+PERL_VERSION="%%PERL_VERSION%%"
+MAKE_CONF=%%MAKE_CONF%%
+banner=`date +"%F %T"`
+banner="# added by use.perl $banner"
+if [ -z "${OSVERSION}" ]; then
+	if [ -f /sbin/sysctl -a -x /sbin/sysctl ] ; then
+    		osreldate=`/sbin/sysctl -n kern.osreldate`
+	else
+    		osreldate=`/usr/sbin/sysctl -n kern.osreldate`
+	fi
+else
+    	osreldate=${OSVERSION}
+fi
 
-sub usage
+if [ "x$this" = "xuse.perl" ]; then
+	PKG_PREFIX="%%PREFIX%%"
+	if [ "$1" = "port" ] ; then
+		need_remove_links=yes
+		need_create_links=yes
+		need_cleanup_make_conf=yes
+		need_cleanup_manpath=yes
+		need_spam_make_conf=yes
+		need_spam_manpath=yes
+	elif [ "$1" = "system" ] ; then
+		need_remove_links=yes
+		if [ $osreldate -lt 500036 ] ; then
+			need_base_system_perl=yes
+		fi
+		need_cleanup_make_conf=yes
+		need_cleanup_manpath=yes
+	else
+		echo 'Usage:
+	$0 port       -> /usr/bin/perl is the perl5 port
+	$0 system     -> /usr/bin/perl is the system perl'
+		exit 2;
+	fi
+else
+	if [ "$2" = "POST-INSTALL" ] ; then
+		need_remove_links=yes
+		if [ $osreldate -ge 502100 ] ; then
+			need_create_links=yes
+			need_cleanup_make_conf=yes
+			need_cleanup_manpath=yes
+			need_spam_make_conf=yes
+			need_spam_manpath=yes
+		fi
+		need_post_install=yes
+	elif [ "$2" = "POST-DEINSTALL" ] ; then
+		need_remove_links=yes
+		if [ $osreldate -lt 500036 ] ; then
+			need_base_system_perl=yes
+		fi
+		need_cleanup_make_conf=yes
+		need_cleanup_manpath=yes
+	else
+		exit 0;
+	fi
+fi
+
+link_list="
+	a2p
+	c2ph
+	find2perl
+	h2ph
+	h2xs
+	perlbug
+	perlcc
+	perldoc
+	pl2pm
+	pod2html
+	pod2latex
+	pod2man
+	pod2text
+	s2p
+	splain"
+if [ $osreldate -ge 500036 ] ; then
+	link_list=""
+fi
+special_link_list="
+	perl
+	perl5
+	suidperl"
+
+do_remove_links()
 {
-	print STDERR <<EOF;
-Usage:
-  $0 port       -> /usr/bin/perl is the perl5 port
-  $0 system     -> /usr/bin/perl is the system perl
-EOF
-	exit 2;
+	echo "Removing stale symlinks from /usr/bin..."
+	for binary in $link_list $special_link_list
+	do
+		if [ -L "/usr/bin/$binary" ] ; then
+			echo "    Removing /usr/bin/$binary"
+			/bin/rm -f "/usr/bin/$binary"
+		else
+			echo "    Skipping /usr/bin/$binary"
+		fi
+	done
+	bins=`/bin/ls /usr/bin/*perl*5.* ${PKG_PREFIX}/bin/*perl*5.* 2>/dev/null`
+	for binary in $bins
+	do
+		if [ -L "$binary" ] ; then
+			echo "    Removing $binary installed by an older perl port"
+			/bin/rm -f "$binary"
+		fi
+	done
+	echo "Done."
 }
 
-my $port_perl = '%%PREFIX%%/bin/perl';
-$port_perl =~ tr|/|/|s;
-
-my $ident = `[ -r /usr/bin/perl5 ] && /usr/bin/ident -q /usr/bin/perl5`;
-
-@ARGV == 1 or usage();
-if ($ARGV[0] eq 'port') {
-	switch_to_port();
-} elsif ($ARGV[0] eq 'system') {
-	switch_to_system();
-} else {
-	usage();
-}
-exit 0;
-
-# Both functions depend on the idea that switch_to_port leaves
-# perl5 alone.  If the wrapper is installed on a -current system,
-# /usr/bin/perl5 will also be the wrapper.
-
-sub switch_to_system
+do_create_links()
 {
-	# protect against cases where people use PREFIX=/usr
-	if ($port_perl ne '/usr/bin/perl') {
-		unlink '/usr/bin/perl', '/usr/bin/suidperl',
-			'/usr/bin/perl%%PERL_VERSION%%';
-
-		link '/usr/bin/perl5', '/usr/bin/perl';
-		link '/usr/bin/perl5', '/usr/bin/perl%%PERL_VERSION%%';
-
-		if ($ident =~ m#src/usr.bin/perl/perl.c#) {
-			link '/usr/bin/perl5', '/usr/bin/suidperl';
-		} else {
-			link '/usr/bin/sperl5', '/usr/bin/suidperl';
-		}
-	}
-
-	open MK, ">> /etc/make.conf" or die "/etc/make.conf: $!";
-	print MK <<EOF;
-# -- use.perl generated deltas -- #
-# Created: @{[scalar localtime]}
-# Setting to use base system perl:
-.undef PERL_VER
-.undef PERL_VERSION
-.undef PERL_ARCH
-.undef NOPERL
-.undef NO_PERL
-
-EOF
-	close MK;
-
-	open MPOLD, "< /etc/manpath.config" or die "/etc/manpath.config: $!";
-	open MPNEW, "> /etc/manpath.config.new" or die "/etc/manpath.config.new: $!";
-	while (<MPOLD>) {
-		next if m|use.perl generated line|;
-		next if m|^\s*OPTIONAL_MANPATH\s+\S+/lib/perl5/%%PERL_VERSION%%/man\s*$|;
-		next if m|^\s*OPTIONAL_MANPATH\s+\S+/lib/perl5/%%PERL_VERSION%%/perl/man\s*$|;
-		print MPNEW;
-	}
-	close MPNEW;
-	close MPOLD;
-	rename '/etc/manpath.config', '/etc/manpath.config.bak';
-	rename '/etc/manpath.config.new', '/etc/manpath.config';
+	echo "Creating various symlinks in /usr/bin..."
+	for binary in $link_list
+	do
+		if [ -f "/usr/bin/$binary" ] ; then
+			echo "    Backing up /usr/bin/$binary as /usr/bin/$binary.freebsd"
+			/bin/mv -f "/usr/bin/$binary" "/usr/bin/$binary.freebsd"
+		fi
+		if [ -e "/usr/bin/$binary" ] ; then
+			echo "    *** /usr/bin/$binary is still there, which should not happen"
+		elif [ -e "$PKG_PREFIX/bin/$binary" ] ; then
+			echo "    Symlinking $PKG_PREFIX/bin/$binary to /usr/bin/$binary"
+			/bin/ln -sf "$PKG_PREFIX/bin/$binary" "/usr/bin/$binary"
+		else
+			echo "    *** $PKG_PREFIX/bin/$binary is not there, a symlink won't do any good"
+		fi
+	done
+	for binary in $special_link_list
+	do
+		if [ -f "/usr/bin/$binary" ] ; then
+			echo "    Removing /usr/bin/$binary"
+		fi
+		bin=`echo $binary | /usr/bin/sed -e 's!perl5!perl!'`
+		bin=`echo $bin | /usr/bin/sed -e 's!suidperl!sperl!'`
+		if [ -e "/usr/bin/$binary.XXX" ] ; then
+			echo "    *** /usr/bin/$binary is still there, which should not happen"
+		elif [ -e "$PKG_PREFIX/bin/${bin}%%PERL_VERSION%%" ] ; then
+			echo "    Symlinking $PKG_PREFIX/bin/${bin}%%PERL_VERSION%% to /usr/bin/$binary"
+			/bin/ln -sf "$PKG_PREFIX/bin/${bin}%%PERL_VERSION%%" "/usr/bin/$binary"
+		else
+			echo "    *** $PKG_PREFIX/bin/${bin}%%PERL_VERSION%% is not there, a symlink won't do any good"
+		fi
+	done
+	echo "Done."
 }
 
-sub switch_to_port
+do_base_system_perl()
 {
-	# protect against cases where people use PREFIX=/usr
-	if ($port_perl ne '/usr/bin/perl') {
-		if ($ident =~ m#src/usr.bin/perl/perl.c#) {
-			rename '/usr/bin/perl', '/usr/bin/perl-wrapper';
-		} else {
-			unlink '/usr/bin/perl';
-		}
-
-		unlink '/usr/bin/suidperl', '/usr/bin/perl%%PERL_VERSION%%';
-
-		symlink '%%PREFIX%%/bin/perl', '/usr/bin/perl';
-		symlink '%%PREFIX%%/bin/suidperl', '/usr/bin/suidperl';
-		symlink '%%PREFIX%%/bin/perl', '/usr/bin/perl%%PERL_VERSION%%';
-	}
-
-	open MK, ">> /etc/make.conf" or die "/etc/make.conf: $!";
-	print MK <<EOF;
-# -- use.perl generated deltas -- #
-# Created: @{[scalar localtime]}
-# Setting to use base perl from ports:
-PERL_VER=%%PERL_VER%%
-PERL_VERSION=%%PERL_VERSION%%
-PERL_ARCH=%%PERL_ARCH%%
-NOPERL=yo
-NO_PERL=yo
-NO_PERL_WRAPPER=yo
-
-EOF
-	close MK;
-
-	my $perl_port_manpath = <<EOF;
-# -- use.perl generated line -- #
-OPTIONAL_MANPATH	%%PREFIX%%/lib/perl5/%%PERL_VERSION%%/man
-OPTIONAL_MANPATH	%%PREFIX%%/lib/perl5/%%PERL_VERSION%%/perl/man
-EOF
-
-	open MPOLD, "< /etc/manpath.config" or die "/etc/manpath.config: $!";
-	open MPNEW, "> /etc/manpath.config.new" or die "/etc/manpath.config.new: $!";
-	my $modified = 0;
-	while (<MPOLD>) {
-		if (!$modified && m|^\s*OPTIONAL_MANPATH\s+\S+/lib/perl5/\S+/man\s*$|) {
-			print MPNEW $perl_port_manpath;
-			$modified = 1;
-		}
-		print MPNEW;
-	}
-	print MPNEW $perl_port_manpath unless $modified;
-	close MPNEW;
-	close MPOLD;
-	rename '/etc/manpath.config', '/etc/manpath.config.bak';
-	rename '/etc/manpath.config.new', '/etc/manpath.config';
+	echo "Restoring base system perl binaries..."
+	for binary in $link_list
+	do
+		if [ -e "/usr/bin/$binary" ] ; then
+			echo "    *** /usr/bin/$binary is there, which should not happen"
+		else
+			if [ -f "/usr/bin/$binary.freebsd" ] ; then
+				echo "    Moving /usr/bin/$binary.freebsd to /usr/bin/$binary"
+				/bin/mv -f "/usr/bin/$binary.freebsd" "/usr/bin/$binary"
+			else
+				echo "    *** /usr/bin/$binary.freebsd is NOT there, nothing to restore"
+			fi
+		fi
+	done
+	for binary in $special_link_list
+	do
+		if [ -e "/usr/bin/$binary" ] ; then
+			echo "    *** /usr/bin/$binary is there, which should not happen"
+		else
+			bin=`echo $binary | /usr/bin/sed -e 's!perl5!perl!'`
+			bin=`echo $bin | /usr/bin/sed -e 's!suidperl!sperl!'`
+			bins=`/bin/ls /usr/bin/${bin}5.* 2>/dev/null | /usr/bin/sort`
+			bin=""
+			for b in $bins
+			do
+				if [ -f $b -a ! -L $b ] ; then
+					bin=$b
+				fi
+			done
+			if [ -z $bin ] ; then
+				echo "    *** cannot find what /usr/bin/$binary shall be restored FROM"
+			elif [ -f $bin ] ; then
+				echo "    Hardlinking $bin to /usr/bin/$binary"
+				ln -f "$bin" "/usr/bin/$binary"
+			else
+				echo "    *** $bin is NOT there, nothing to restore"
+			fi
+		fi
+	done
+	echo "Done."
 }
+
+do_post_install()
+{
+	INCLUDEDIR=/usr/include
+	install -d ${PKG_PREFIX}/lib/perl5/site_perl/%%PERL_VERSION%%/%%PERL_ARCH%%/auto
+	install -d ${PKG_PREFIX}/lib/perl5/site_perl/%%PERL_VERSION%%/auto
+	install -d ${PKG_PREFIX}/lib/perl5/%%PERL_VERSION%%/man/man3
+	cd ${INCLUDEDIR} && ${PKG_PREFIX}/bin/h2ph *.h machine/*.h sys/*.h >/dev/null
+}
+
+do_cleanup_make_conf()
+{
+	echo -n "Cleaning up ${MAKE_CONF}..."
+	if [ -f ${MAKE_CONF} ] ; then
+		/usr/bin/awk 's=0;
+			/^#.*use.perl/ { s=1; mode=1 }
+			/^#/ { s=1; if (mode != 1) { mode=0 } }
+			/.*PERL.*=/ { s=1; if (mode == 1) { mode=2 } }
+			/^$/ { s=1; if (mode != 2) { mode = 0 } }
+			{ if (s != 1) { mode = 0 } if (mode == 0) print }' ${MAKE_CONF} >${MAKE_CONF}.new
+		/bin/mv ${MAKE_CONF} ${MAKE_CONF}.bak
+		/bin/mv ${MAKE_CONF}.new ${MAKE_CONF}
+	fi
+	echo " Done."
+}
+
+do_cleanup_manpath()
+{
+	echo -n "Cleaning up /etc/manpath.config..."
+	if [ -f /etc/manpath.config ] ; then
+		/usr/bin/awk 's=0;
+			/^#.*use.perl/ { s=1; mode=1 }
+			/^#/ { s=1; if (mode != 1) { mode=0 } }
+			/^OPTIONAL_MANPATH.*perl5/ { s=1; if (mode == 1) { mode=2 } }
+			/^$/ { s=1; if (mode != 2) { mode = 0 } }
+			{ if (s != 1) { mode = 0 } if (mode == 0) print }' /etc/manpath.config >/etc/manpath.config.new
+		/bin/mv /etc/manpath.config /etc/manpath.config.bak
+		/bin/mv /etc/manpath.config.new /etc/manpath.config
+	fi
+	echo " Done."
+}
+
+do_spam_make_conf()
+{
+	echo -n "Spamming ${MAKE_CONF}..."
+	echo "$banner" >>${MAKE_CONF}
+	echo "PERL_VER=%%PERL_VER%%" >>${MAKE_CONF}
+	echo "PERL_VERSION=%%PERL_VERSION%%" >>${MAKE_CONF}
+	if [ $osreldate -lt 500036 ] ; then
+		echo "NOPERL=yes" >>${MAKE_CONF}
+	fi
+	echo " Done."
+}
+
+do_spam_manpath()
+{
+	echo -n "Spamming /etc/manpath.config..."
+	echo "$banner" >>/etc/manpath.config
+	echo "OPTIONAL_MANPATH	${PKG_PREFIX}/lib/perl5/%%PERL_VERSION%%/man" >>/etc/manpath.config
+	echo "OPTIONAL_MANPATH	${PKG_PREFIX}/lib/perl5/%%PERL_VERSION%%/perl/man" >>/etc/manpath.config
+	echo " Done."
+}
+
+[ $need_remove_links ] && do_remove_links
+[ $need_create_links ] && do_create_links
+[ $need_base_system_perl ] && do_base_system_perl
+[ $need_post_install ] && do_post_install
+[ $need_cleanup_make_conf ] && do_cleanup_make_conf
+[ $need_spam_make_conf ] && do_spam_make_conf
+[ $need_cleanup_manpath ] && do_cleanup_manpath
+[ $need_spam_manpath ] && do_spam_manpath
+
+exit 0

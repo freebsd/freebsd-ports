@@ -19,7 +19,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Practical Extraction and Report Language
 
-PERL_VER=	5.8.5
+PERL_VER=	5.8.6
 PERL_ARCH=	mach
 PERL_VERSION=	${PERL_VER}
 
@@ -39,8 +39,6 @@ CONFIGURE_ARGS=	-sde -Dprefix=${PREFIX} \
 	-Dcc="${CC}" -Doptimize="${CFLAGS}" -Duseshrplib \
 	-Dccflags=-DAPPLLIB_EXP=\"${BSDPAN_DEST}\"
 
-INCLUDEDIR=	/usr/include
-
 .include "Makefile.man"
 .include <bsd.port.pre.mk>
 
@@ -51,7 +49,6 @@ PLIST_SUB+=		ENABLE_SUIDPERL=""
 CONFIGURE_ARGS+=	-Ud_dosuid
 PLIST_SUB+=		ENABLE_SUIDPERL="@comment "
 .endif
-# INSTALLS_SHLIB=	yes
 
 .if defined(WITH_GDBM)
 CONFIGURE_ARGS+=	-Di_gdbm
@@ -69,10 +66,16 @@ WITH_PERL_MALLOC=	yes
 .endif
 
 .if defined(WITH_THREADS)
+.if ${ARCH} == "amd64"
+IGNORE=	Threaded perl does not pass tests on ${ARCH}
+.endif
 CONFIGURE_ARGS+=	-Dusethreads=y
 PKGNAMESUFFIX=		-threaded
 # it seems perl malloc has problems with threaded perl on FreeBSD
 .undef WITH_PERL_MALLOC
+.if ${OSVERSION} < 492000
+CONFIGURE_ARGS+=	-Ud_gethostbyaddr_r
+.endif
 .else
 CONFIGURE_ARGS+=	-Dusethreads=n
 .endif
@@ -89,8 +92,10 @@ CONFIGURE_ARGS+=	-Duse64bitint
 
 .if ${OSVERSION} < 502100
 LATEST_LINK=	perl5.8
+PLIST_SUB+=		NEED_USE_PERL=""
 .else
 PKGMESSAGE=	${PKGDIR}/.not-here
+PLIST_SUB+=		NEED_USE_PERL="@comment "
 .endif
 
 .if defined(WITH_GDBM)
@@ -103,16 +108,34 @@ test:
 
 BSDPAN_DEST=	${PREFIX}/lib/perl5/${PERL_VER}/BSDPAN
 BSDPAN_FILES=	BSDPAN.pm BSDPAN/Override.pm Config.pm \
-		ExtUtils/MM_Unix.pm ExtUtils/Packlist.pm
-BSDPAN_WRKSRC=	${WRKDIR}/BSDPAN-5.8.5
+		ExtUtils/MM_Unix.pm \
+		ExtUtils/MakeMaker.pm \
+		ExtUtils/Packlist.pm
+BSDPAN_WRKSRC=	${WRKDIR}/BSDPAN-${PORTVERSION}
+
+PKGINSTALL=	${WRKDIR}/pkg-install
+PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
+USE_REINPLACE=	yes
 
 post-patch:
 	${SED} -e 's|%%PREFIX%%|${PREFIX}|g;' \
 		-e 's|%%PERL_VER%%|${PERL_VER}|g;' \
 		-e 's|%%PERL_VERSION%%|${PERL_VERSION}|g;' \
 		-e 's|%%PERL_ARCH%%|${PERL_ARCH}|g;' \
+		-e 's|%%MAKE_CONF%%|${__MAKE_CONF}|g;' \
 		${FILESDIR}/use.perl \
 		> ${WRKDIR}/use.perl
+	${CP} ${WRKDIR}/use.perl ${PKGINSTALL}
+	${CP} ${WRKDIR}/use.perl ${PKGDEINSTALL}
+.if defined(WITH_THREADS)
+	${REINPLACE_CMD} -e 's|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|g;' \
+		-e 's|%%PTHREAD_CFLAGS%%|${PTHREAD_CFLAGS}|g;' \
+		${WRKSRC}/hints/freebsd.sh
+.else
+	${REINPLACE_CMD} -e 's|%%PTHREAD_LIBS%%||g;' \
+		-e 's|%%PTHREAD_CFLAGS%%||g;' \
+		${WRKSRC}/hints/freebsd.sh
+.endif
 
 pre-install:
 	@${RM} -f ${PREFIX}/bin/perl${PERL_VER}
@@ -122,20 +145,15 @@ post-install:
 	@${STRIP_CMD} ${PREFIX}/bin/perl${PERL_VER}
 	@${STRIP_CMD} ${PREFIX}/bin/perl
 	@${LN} -sf ${PREFIX}/bin/perl${PERL_VER} ${PREFIX}/bin/perl5
-	${INSTALL_SCRIPT} ${WRKDIR}/use.perl ${PREFIX}/bin/use.perl
 .for files in ${BSDPAN_FILES}
 	${MKDIR} ${BSDPAN_DEST}/${files:H}
 	${INSTALL} ${COPY} -o ${BINOWN} -g ${BINGRP} -m ${NOBINMODE} \
 		${BSDPAN_WRKSRC}/${files} ${BSDPAN_DEST}/${files}
 .endfor
-	@(cd ${INCLUDEDIR} && ${PREFIX}/bin/h2ph *.h machine/*.h sys/*.h)
-	${MKDIR} ${PREFIX}/${SITE_PERL_REL}/auto
-	${MKDIR} ${PREFIX}/${SITE_PERL_REL}/${PERL_ARCH}/auto
-	${MKDIR} ${PREFIX}/lib/perl5/${PERL_VER}/man/man3
+	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 .if ${OSVERSION} < 502100
+	${INSTALL_SCRIPT} ${WRKDIR}/use.perl ${PREFIX}/bin/use.perl
 	@fmt ${PKGMESSAGE}
-.else
-	@${PREFIX}/bin/use.perl port
 .endif
 
 .include <bsd.port.post.mk>

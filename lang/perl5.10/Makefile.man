@@ -1,4 +1,4 @@
-# $Id$
+# $FreeBSD$
 
 MAN1+=	a2p.1
 MAN1+=	c2ph.1
@@ -23,6 +23,7 @@ MAN1+=	perl582delta.1
 MAN1+=	perl583delta.1
 MAN1+=	perl584delta.1
 MAN1+=	perl585delta.1
+MAN1+=	perl586delta.1
 MAN1+=	perl58delta.1
 MAN1+=	perlaix.1
 MAN1+=	perlamiga.1
