@@ -6,12 +6,10 @@
 #
 
 PORTNAME=	asc
-PORTVERSION=	1.3.16
+PORTVERSION=	1.3.21
 CATEGORIES=	games
 MASTER_SITES=	ftp://asc-hq.sourceforge.net/pub/asc-hq/develop/ \
-		ftp://asc-hq.sourceforge.net/pub/asc-hq/ \
-		http://www.asc-hq.org/develop/ \
-		http://www.asc-hq.org/
+		http://www.asc-hq.org/develop/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-beta.src
 
 MAINTAINER=	sobomax@FreeBSD.org
