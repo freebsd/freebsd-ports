@@ -1,13 +1,13 @@
---- configure.orig	Thu Oct 28 19:54:10 1999
-+++ configure	Thu Oct 28 19:54:38 1999
-@@ -3630,14 +3630,14 @@
+--- configure.orig	Sun Nov  7 10:21:24 1999
++++ configure	Sun Nov 14 19:09:32 1999
+@@ -3633,14 +3633,14 @@
  
  
  
 -echo $ac_n "checking for dlopen in -ldl""... $ac_c" 1>&6
--echo "configure:3635: checking for dlopen in -ldl" >&5
+-echo "configure:3638: checking for dlopen in -ldl" >&5
 +echo $ac_n "checking for dlopen""... $ac_c" 1>&6
-+echo "configure:3635: checking for dlopen" >&5
++echo "configure:3638: checking for dlopen" >&5
  ac_lib_var=`echo dl'_'dlopen | sed 'y%./+-%__p_%'`
  if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
    echo $ac_n "(cached) $ac_c" 1>&6
@@ -16,9 +16,9 @@
 -LIBS="-ldl -lm $LIBS"
 +LIBS="-lm $LIBS"
  cat > conftest.$ac_ext <<EOF
- #line 3643 "configure"
+ #line 3646 "configure"
  #include "confdefs.h"
-@@ -3665,7 +3665,7 @@
+@@ -3668,7 +3668,7 @@
  fi
  if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
    echo "$ac_t""yes" 1>&6
