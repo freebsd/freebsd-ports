@@ -97,7 +97,7 @@ post-build:
 .endif
 
 post-install::
-	@${LN} -sf ja ${PREFIX}/lib/xemacs/mule-packages/etc/app-defaults/ja_JP.EUC
+	@${LN} -sf ja ${PREFIX}/lib/xemacs/mule-packages/etc/app-defaults/ja_JP.eucJP
 	@${TOUCH} ${TOUCH_FLAGS} ${INSTALL_COOKIE}
 .endif
 

@@ -188,7 +188,7 @@ post-install::
 .if ${PKGNAMEPREFIX} == "ja-"
 	@${MKDIR} ${PREFIX}/man/ja/man1
 	@${INSTALL_MAN} ${WRKSRC}/etc/xemacs-ja.1 ${PREFIX}/man/ja/man1/xemacs.1
-	@${LN} -sf ja ${PREFIX}/lib/xemacs/mule-packages/etc/app-defaults/ja_JP.EUC
+	@${LN} -sf ja ${PREFIX}/lib/xemacs/mule-packages/etc/app-defaults/ja_JP.eucJP
 .endif
 .endif
 

@@ -373,8 +373,8 @@ lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/sorted-doc
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/vcdiff
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/wakeup
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/yow
-@exec ln -sf ja %D/lib/xemacs/mule-packages/etc/app-defaults/ja_JP.EUC
-@unexec rm -f %D/lib/xemacs/mule-packages/etc/app-defaults/ja_JP.EUC
+@exec ln -sf ja %D/lib/xemacs/mule-packages/etc/app-defaults/ja_JP.eucJP
+@unexec rm -f %D/lib/xemacs/mule-packages/etc/app-defaults/ja_JP.eucJP
 @unexec rmdir %D/lib/xemacs/mule-packages/etc/app-defaults 2>/dev/null || true
 @unexec rmdir %D/lib/xemacs/mule-packages/etc 2>/dev/null || true
 @unexec rmdir %D/lib/xemacs/mule-packages 2>/dev/null || true
