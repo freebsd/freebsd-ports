@@ -1,0 +1,16 @@
+AIM-Transport 0.9
+-----------------
+
+This version of the AIM Transport is designed specifically to work with the
+Jabber server version 1.4.  It will not work with previous versions due to the
+way that it loads itself into the main jabberd binary.
+
+To build the AIM Transport uncompress the tarball, if you uncompressed it into
+the Jabber 1.4 directory you can run the configure directly and it will find
+jabberd.  Otherwise, you need to use the --with-jabberd=PATH option to
+configure.  At this point you can run make and it should build just fine.  Note 
+this version of the AIM Transport no longer requires a seperate download of
+libfaim.
+
+--
+Yen-Ming Lee <leeym@cae.ce.ntu.edu.tw>

@@ -9,6 +9,7 @@
     SUBDIR += adns
     SUBDIR += aggregate
     SUBDIR += aim
+    SUBDIR += aim-transport
     SUBDIR += airport
     SUBDIR += amcl
     SUBDIR += archie
