@@ -2115,6 +2115,7 @@ gkrellmwireless	ports/net/gkrellmwireless
 gkrellmwireless2	ports/net/gkrellmwireless2
 gkrellscore	ports/misc/gkrellscore
 gkrellshoot	ports/misc/gkrellshoot
+gkrellshoot2	ports/misc/gkrellshoot2
 gkrellsun	ports/astro/gkrellsun
 gkrellweather	ports/misc/gkrellweather
 gkrellweather2	ports/misc/gkrellweather2
