@@ -1,11 +1,10 @@
---- configure.org       Wed Nov  3 14:52:06 1999
-+++ configure   Wed Nov  3 14:52:26 1999
-@@ -1086,7 +1086,7 @@
- ##  UID/GID as production oriented as a web server in NIS anyway.
+--- configure.org       Sun Feb 13 11:11:46 2000
++++ configure   Sun Feb 13 11:12:16 2000
+@@ -366,8 +366,8 @@
  ##
- conf_user="nobody"
--conf_group="#-1"
+ ##  Initialize server user ID and group ID variables
+ ##
+-conf_user=""
+-conf_group=""
++conf_user="nobody"
 +conf_group="nogroup"
- conf_port="80"
- conf_serveradmin="you@your.address"
- conf_servername="new.host.name"

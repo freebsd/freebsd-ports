@@ -1,0 +1,20 @@
+--- src/Configure.orig	Sun Feb  6 10:27:19 2000
++++ src/Configure	Thu Apr 27 23:55:17 2000
+@@ -467,7 +467,7 @@
+     	PLATOSVERS=`echo $PLAT | sed 's/^.*freebsd//'`
+ 	OS="FreeBSD $PLATOSVERS"
+ 	case "$PLATOSVERS" in
+-	    [234]*)
++	    [2-9]*)
+ 		DEF_WANTHSREGEX=no
+ 		CFLAGS="$CFLAGS -funsigned-char"
+ 		;;
+@@ -1043,7 +1043,7 @@
+ 	    LDFLAGS_SHLIB_EXPORT=""
+ 	    SHLIB_SUFFIX_DEPTH=2
+ 	    ;;
+-	*-freebsd3*|*-freebsd4*)
++	*-freebsd[3-9]*)
+ 		LD_SHLIB="gcc"
+ 	    CFLAGS_SHLIB="-fpic"
+ 	    LDFLAGS_SHLIB="-shared"
