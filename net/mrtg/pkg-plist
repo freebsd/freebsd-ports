@@ -52,6 +52,9 @@ lib/perl5/site_perl/%%PERL_VER%%/locales_mrtg.pm
 %%PORTDOCS%%share/doc/mrtg/mrtg.html
 %%PORTDOCS%%share/doc/mrtg/mrtg.pod
 %%PORTDOCS%%share/doc/mrtg/mrtg.txt
+%%PORTDOCS%%share/doc/mrtg/mrtglib.html
+%%PORTDOCS%%share/doc/mrtg/mrtglib.pod
+%%PORTDOCS%%share/doc/mrtg/mrtglib.txt
 %%PORTDOCS%%share/doc/mrtg/nt-guide.html
 %%PORTDOCS%%share/doc/mrtg/nt-guide.pod
 %%PORTDOCS%%share/doc/mrtg/nt-guide.txt
