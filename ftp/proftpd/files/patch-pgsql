@@ -1,0 +1,11 @@
+--- ./contrib/mod_sql_postgres.c.orig	Sun Oct  6 21:47:43 2002
++++ ./contrib/mod_sql_postgres.c	Sun Oct  6 21:47:50 2002
+@@ -35,7 +35,7 @@
+ 
+ #define _POSTGRES_PORT "5432"
+ 
+-#include <pgsql/libpq-fe.h>
++#include <libpq-fe.h>
+ #include "conf.h"
+ #include "../contrib/mod_sql.h"
+ 
