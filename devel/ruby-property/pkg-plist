@@ -1,4 +1,4 @@
-lib/ruby/%%RUBY_VER%%/property.rb
+lib/ruby/site_ruby/property.rb
 share/doc/ruby/property/property-example.rb
 share/doc/ruby/property/test.default
 share/doc/ruby/property/property.README

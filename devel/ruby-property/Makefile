@@ -29,7 +29,7 @@ post-patch:
 	${PERL} -i -pe 's|rubyapi.css|../rubyapi.css|g' ${WRKSRC}/Properties-ja.html
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/property.rb ${PREFIX}/lib/ruby/${RUBY_VER}
+	${INSTALL_DATA} ${WRKSRC}/property.rb ${PREFIX}/lib/ruby/site_ruby
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/ruby/property/ja
 .for f in property-example.rb test.default property.README Properties.html rubyapi.css
