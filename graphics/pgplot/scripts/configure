@@ -1,0 +1,11 @@
+#!/bin/sh
+
+cd $WRKSRC/src || exit 1
+mv grgfil.f grgfil.f.orig
+sed -e s:/usr/local/pgplot/:$PREFIX/share/pgplot/: < grgfil.f.orig >grgfil.f
+
+cp $FILESDIR/Makefile* $FILESDIR/drivers.list $FILESDIR/grexec.f $FILESDIR/xf77  $WRKSRC
+chmod u+x $WRKSRC/xf77
+cp $WRKSRC/src/*.inc $WRKSRC
+exit 0
+
