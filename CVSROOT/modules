@@ -766,6 +766,7 @@ chtml		ports/www/chtml
 cider		ports/cad/cider
 cidr		ports/net/cidr
 cim		ports/lang/cim
+cinc		ports/emulators/cinc
 cingb		ports/emulators/cingb
 cisco_conf	ports/net/cisco_conf
 ciscoconf	ports/net/ciscoconf
