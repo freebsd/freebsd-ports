@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	razor-agents
-PORTVERSION=	2.21
-PORTREVISION=	1
+PORTVERSION=	2.22
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	razor
@@ -34,10 +33,7 @@ post-install:
 
 .include <bsd.port.pre.mk>
 
-PERL_MAJOR=${PERL_VER:C|^([1-9]+).*|\1|}
-PERL_MINOR=${PERL_VER:C|^[1-9]+\.0*([1-9]+).*|\1|}
-
-.if ${PERL_MAJOR} < 5 || ${PERL_MAJOR} == 5 && ${PERL_MINOR} < 8
+.if ${PERL_LEVEL} < 580000
 BUILD_DEPENDS+=		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
 .endif
 
