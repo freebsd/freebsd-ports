@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	leafpad
-PORTVERSION=	0.7.5
-PORTREVISION=	1
+PORTVERSION=	0.7.6
 CATEGORIES=	editors
-MASTER_SITES=	http://tarot.freeshell.org/leafpad/
+MASTER_SITES=	${MASTER_SITE_SAVANNAH}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	radek@raadradd.com
 COMMENT=	Light-weight GTK+ Editor similar to notepad.exe
 
-USE_GNOME=	gtk20
+USE_GNOME=	gtk20 gnomehier
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
