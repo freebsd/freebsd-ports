@@ -2498,6 +2498,7 @@ gv		ports/print/gv
 gvd		ports/devel/gvd
 gvid		ports/x11/gvid
 gview		ports/graphics/gview
+gwave		ports/cad/gwave
 gwenview	ports/graphics/gwenview
 gwhich		ports/misc/gwhich
 gwm		ports/x11-wm/gwm
