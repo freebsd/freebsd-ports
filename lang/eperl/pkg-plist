@@ -1,14 +1,30 @@
 bin/eperl
 www/cgi-bin/nph-eperl
-man/man1/eperl.1
-@exec echo "AddType  application/x-httpd-eperl  .phtml .eperl .epl" >>%D/etc/apache/srm.conf 
+man/man1/eperl.1.gz
+@exec echo "AddType  application/x-httpd-eperl  .phtml .eperl .epl" >>%D/etc/apache/srm.conf
 @exec echo "Action   application/x-httpd-eperl  /cgi-bin/nph-eperl" >>%D/etc/apache/srm.conf
 @unexec grep -v "application/x-httpd-eperl" %D/etc/apache/srm.conf >%D/etc/apache/srm.conf.bak; mv %D/etc/apache/srm.conf.bak %D/etc/apache/srm.conf
-share/examples/eperl/demo-01.phtml
-share/examples/eperl/demo-02.phtml
-share/examples/eperl/demo-03.phtml
-share/examples/eperl/demo-04.phtml
-share/examples/eperl/demo-05.phtml
-share/examples/eperl/demo-06.phtml
-share/examples/eperl/demo-07.phtml
-share/examples/eperl/demo-08.phtml
+share/examples/eperl/00README
+share/examples/eperl/demo.cgipm.phtml
+share/examples/eperl/demo.cgipm.iphtml
+share/examples/eperl/demo.env.phtml
+share/examples/eperl/demo.env.iphtml
+share/examples/eperl/demo.errout.phtml
+share/examples/eperl/demo.errout.iphtml
+share/examples/eperl/demo.errsyn.phtml
+share/examples/eperl/demo.errsyn.iphtml
+share/examples/eperl/demo.func.phtml
+share/examples/eperl/demo.func.iphtml
+share/examples/eperl/demo.html.phtml
+share/examples/eperl/demo.html.iphtml
+share/examples/eperl/demo.image.phtml
+share/examples/eperl/demo.image.iphtml
+share/examples/eperl/demo.lwp.phtml
+share/examples/eperl/demo.lwp.iphtml
+share/examples/eperl/demo.net.phtml
+share/examples/eperl/demo.net.iphtml
+share/examples/eperl/demo.pp.phtml
+share/examples/eperl/demo.pp.iphtml
+share/examples/eperl/demo.table.phtml
+share/examples/eperl/demo.table.iphtml
+@dirrm share/examples/eperl
