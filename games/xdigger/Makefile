@@ -16,18 +16,13 @@ MAINTAINER=	ports@FreeBSD.org
 
 USE_IMAKE=	yes
 MAN6=		xdigger.6
-MANCOMPRESSED=	no
 
 post-patch:
 	@${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/configure.h
 
-do-install:
-	${INSTALL_PROGRAM} -m 2755 -o root -g games ${WRKSRC}/xdigger ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/xdigger.man ${PREFIX}/man/man6/xdigger.6
-	@${MKDIR} ${PREFIX}/share/xdigger
-	${INSTALL_DATA} ${WRKSRC}/xdigger.level ${PREFIX}/share/xdigger
-	${INSTALL_DATA} ${WRKSRC}/audio/*.au ${PREFIX}/share/xdigger
-	@${TOUCH} ${PREFIX}/share/xdigger/xdigger.hiscore
+post-install:
+	@${CHMOD} 2755 ${PREFIX}/bin/xdigger
+	@${CHOWN} root:games ${PREFIX}/bin/xdigger
 	@${CHMOD} 664 ${PREFIX}/share/xdigger/xdigger.hiscore
 	@${CHOWN} root:games ${PREFIX}/share/xdigger/xdigger.hiscore
 .if !defined(NOPORTDOCS)
