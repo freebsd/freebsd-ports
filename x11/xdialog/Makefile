@@ -24,7 +24,7 @@ NODOCS=	"@comment "
 
 PLIST_SUB=	NOPORTDOCS=${NODOCS}
 
-.if defined(NOPORTDOCS)
+.if !defined(NOPORTDOCS)
 post-install:
 	${MKDIR} ${PREFIX}/share/${PORTNAME}
 	${CP} ${WRKSRC}/html/* ${PREFIX}/share/${PORTNAME}
