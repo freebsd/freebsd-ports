@@ -12,7 +12,7 @@ MASTER_SITES=	http://shika.aist-nara.ac.jp/member/yukio-m/dbs/software1.1.5/
 
 MAINTAINER=	jkoshy@freebsd.org
 
-RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
+RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot+
 
 DOCDIR=		${PREFIX}/share/doc/dbs/
 DOCS=		dbs.man dbs.man.jis dbs_paper.ps Copyright

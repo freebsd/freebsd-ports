@@ -12,7 +12,7 @@ MASTER_SITES=		http://www.freebsd.org/~mph/distfiles/
 
 MAINTAINER=	mph@freebsd.org
 
-RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
+RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot+
 
 USE_QT=		yes
 USE_X_PREFIX=	yes
