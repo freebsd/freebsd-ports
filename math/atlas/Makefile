@@ -26,7 +26,7 @@ USE_REINPLACE=  yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 501000 && ${MACHINE_ARCH} == "alpha"
+.if ${OSVERSION} < 501000 && ${ARCH} == "alpha"
 USE_GCC=3.3
 .endif
 
@@ -49,7 +49,7 @@ post-patch:
 	@(cd ${WRKSRC}; ${PATCH} < ${FILESDIR}/alpha-patch)
 .endif
 
-PICFLAG!= ${MAKE} -f bsd.lib.mk -V PICFLAG 
+PICFLAG!= ${MAKE} -f bsd.lib.mk -V PICFLAG
 
 ANSWER_i386?=	${PRINTF} "\n\n\n\n\n\n\n\n\n\n"
 ANSWER_ia64?=	${PRINTF} "\n\n\n2\n\n\n\n\nf77\n-O2 -static\n\n"
