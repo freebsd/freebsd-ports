@@ -11,7 +11,7 @@ PORTNAME=	crossgo32
 PORTVERSION=	1.3
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
-		ftp://sourceware.cygnus.com/pub/crossgcc/
+		ftp://sources.redhat.com/pub/crossgcc/
 MASTER_SITE_SUBDIR=	asami/LOCAL_PORTS
 DISTNAME=	crosstree-${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} dosrel-1.0${EXTRACT_SUFX}
