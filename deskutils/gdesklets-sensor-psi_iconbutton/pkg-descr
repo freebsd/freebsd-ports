@@ -1,0 +1,8 @@
+
+This sensor is based on the starter bar and part of the Psi Sensor Package.
+
+It allows to have a button that executes a command (it is possible to i
+change the command in the configurator) when it is clicked and that scales
+on mouse over.
+
+WWW: http://gdesklets.gnomedesktop.org/
