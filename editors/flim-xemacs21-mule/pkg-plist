@@ -1,38 +1,40 @@
-%%EMACS_LIBDIR%%/site-lisp/flim/eword-decode.el
-%%EMACS_LIBDIR%%/site-lisp/flim/eword-decode.elc
-%%EMACS_LIBDIR%%/site-lisp/flim/eword-encode.el
-%%EMACS_LIBDIR%%/site-lisp/flim/eword-encode.elc
-%%EMACS_LIBDIR%%/site-lisp/flim/mailcap.el
-%%EMACS_LIBDIR%%/site-lisp/flim/mailcap.elc
-%%EMACS_LIBDIR%%/site-lisp/flim/mel-b.el
-%%EMACS_LIBDIR%%/site-lisp/flim/mel-b.elc
-%%EMACS_LIBDIR%%/site-lisp/flim/mel-g.el
-%%EMACS_LIBDIR%%/site-lisp/flim/mel-g.elc
-%%EMACS_LIBDIR%%/site-lisp/flim/mel-q.el
-%%EMACS_LIBDIR%%/site-lisp/flim/mel-q.elc
-%%EMACS_LIBDIR%%/site-lisp/flim/mel-u.el
-%%EMACS_LIBDIR%%/site-lisp/flim/mel-u.elc
-%%EMACS_LIBDIR%%/site-lisp/flim/mel.el
-%%EMACS_LIBDIR%%/site-lisp/flim/mel.elc
-%%EMACS_LIBDIR%%/site-lisp/flim/mime-def.el
-%%EMACS_LIBDIR%%/site-lisp/flim/mime-def.elc
-%%EMACS_LIBDIR%%/site-lisp/flim/mime-parse.el
-%%EMACS_LIBDIR%%/site-lisp/flim/mime-parse.elc
-%%EMACS_LIBDIR%%/site-lisp/flim/mime.el
-%%EMACS_LIBDIR%%/site-lisp/flim/mime.elc
-%%EMACS_LIBDIR%%/site-lisp/flim/mmbuffer.el
-%%EMACS_LIBDIR%%/site-lisp/flim/mmbuffer.elc
-%%EMACS_LIBDIR%%/site-lisp/flim/mmcooked.el
-%%EMACS_LIBDIR%%/site-lisp/flim/mmcooked.elc
-%%EMACS_LIBDIR%%/site-lisp/flim/std11.el
-%%EMACS_LIBDIR%%/site-lisp/flim/std11.elc
-@dirrm %%EMACS_LIBDIR%%/site-lisp/flim
-%%FLIMDOCDIR%%/ChangeLog
-%%FLIMDOCDIR%%/README.en
-@dirrm %%FLIMDOCDIR%%
-@unexec install-info --delete %D/info/mime-en.info %D/info/dir
-@unexec install-info --delete %D/info/mime-ja.info %D/info/dir
-info/mime-en.info
-info/mime-ja.info
-@exec install-info %D/info/mime-en.info %D/info/dir
-@exec install-info %D/info/mime-ja.info %D/info/dir
+%%EMACS_PACKAGESDIR%%/lisp/flim/ChangeLog
+%%EMACS_PACKAGESDIR%%/lisp/flim/README.en
+%%EMACS_PACKAGESDIR%%/lisp/flim/auto-autoloads.el
+%%EMACS_PACKAGESDIR%%/lisp/flim/auto-autoloads.elc
+%%EMACS_PACKAGESDIR%%/lisp/flim/custom-load.el
+%%EMACS_PACKAGESDIR%%/lisp/flim/custom-load.elc
+%%EMACS_PACKAGESDIR%%/lisp/flim/eword-decode.el
+%%EMACS_PACKAGESDIR%%/lisp/flim/eword-decode.elc
+%%EMACS_PACKAGESDIR%%/lisp/flim/eword-encode.el
+%%EMACS_PACKAGESDIR%%/lisp/flim/eword-encode.elc
+%%EMACS_PACKAGESDIR%%/lisp/flim/mailcap.el
+%%EMACS_PACKAGESDIR%%/lisp/flim/mailcap.elc
+%%EMACS_PACKAGESDIR%%/lisp/flim/mel-b.el
+%%EMACS_PACKAGESDIR%%/lisp/flim/mel-b.elc
+%%EMACS_PACKAGESDIR%%/lisp/flim/mel-g.el
+%%EMACS_PACKAGESDIR%%/lisp/flim/mel-g.elc
+%%EMACS_PACKAGESDIR%%/lisp/flim/mel-q.el
+%%EMACS_PACKAGESDIR%%/lisp/flim/mel-q.elc
+%%EMACS_PACKAGESDIR%%/lisp/flim/mel-u.el
+%%EMACS_PACKAGESDIR%%/lisp/flim/mel-u.elc
+%%EMACS_PACKAGESDIR%%/lisp/flim/mel.el
+%%EMACS_PACKAGESDIR%%/lisp/flim/mel.elc
+%%EMACS_PACKAGESDIR%%/lisp/flim/mime-def.el
+%%EMACS_PACKAGESDIR%%/lisp/flim/mime-def.elc
+%%EMACS_PACKAGESDIR%%/lisp/flim/mime-parse.el
+%%EMACS_PACKAGESDIR%%/lisp/flim/mime-parse.elc
+%%EMACS_PACKAGESDIR%%/lisp/flim/mime.el
+%%EMACS_PACKAGESDIR%%/lisp/flim/mime.elc
+%%EMACS_PACKAGESDIR%%/lisp/flim/mmbuffer.el
+%%EMACS_PACKAGESDIR%%/lisp/flim/mmbuffer.elc
+%%EMACS_PACKAGESDIR%%/lisp/flim/mmcooked.el
+%%EMACS_PACKAGESDIR%%/lisp/flim/mmcooked.elc
+%%EMACS_PACKAGESDIR%%/lisp/flim/std11.el
+%%EMACS_PACKAGESDIR%%/lisp/flim/std11.elc
+@dirrm %%EMACS_PACKAGESDIR%%/lisp/flim
+%%EMACS_PACKAGESDIR%%/info/mime-en.info
+%%EMACS_PACKAGESDIR%%/info/mime-ja.info
+%%EMACS_PACKAGESDIR%%/man/flim/mime-en.texi
+%%EMACS_PACKAGESDIR%%/man/flim/mime-ja.texi
+@dirrm %%EMACS_PACKAGESDIR%%/man/flim
