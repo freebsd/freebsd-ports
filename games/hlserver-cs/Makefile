@@ -8,8 +8,7 @@
 PORTNAME?=	cs
 PORTVERSION?=	1.4
 CATEGORIES?=	games linux
-MASTER_SITES?=	http://gwforum.net/cs/valve/ \
-		http://stats.redphive.org/ \
+MASTER_SITES?=	http://www.redphive.org/files/ \
 		http://www.carnage.q-net.net.au/downloads/server/halflife/linux/ \
 		http://files.ausgamers.com:81/half-life/counter-strike/linux/
 PKGNAMEPREFIX=	hlserver-
@@ -28,6 +27,8 @@ USE_LINUX_PREFIX=	yes
 NO_CDROM=	"Size; the data set is much too big"
 NO_BUILD=	yes
 .if (${PORTNAME}==cs)
+PORTREVISION=	1
+BUILD_DEPENDS+=	${NONEXISTENT}:${HALFLIFESERVER_PORT}:patch
 WRKSRC?=		${WRKDIR}/cstrike
 .else
 .ifndef(NO_WRKSUBDIR)
@@ -44,6 +45,20 @@ HLDSDIR!=	cd ${HALFLIFESERVER_PORT} && ${MAKE} -V HLDSDIR
 HL_PROGRAM!=	cd ${HALFLIFESERVER_PORT} && ${MAKE} -V HL_PROGRAM
 PLIST_SUB_MASTER!=	cd ${HALFLIFESERVER_PORT} && ${MAKE} -V PLIST_SUB_FOR_THIS_PORT
 PKGMESSAGE!=	cd ${HALFLIFESERVER_PORT} && ${MAKE} -V PKGMESSAGE
+
+# 3.1.0.9 Beta C patch
+HALFLIFESERVER_PORT_WRKSRC!=	cd ${HALFLIFESERVER_PORT} && ${MAKE} -V WRKSRC
+.if (${PORTNAME}==cs) && !target(post-patch)
+post-patch:
+.if exists(${HALFLIFESERVER_PORT_WRKSRC}/cstrike)
+	@${ECHO_MSG} "===> Applying 3.1.0.9 Beta C patch"
+	@${CP} -Rp ${HALFLIFESERVER_PORT_WRKSRC}/cstrike ${WRKDIR}
+.else
+	@${ECHO_MSG} "Please update your ports tree, it is not syncronized to the latest tree"
+	@${ECHO_MSG} "This port will not work. Check the FreeBSD Handbook on how to update"
+	@${FALSE}
+.endif
+.endif
 
 .if !target(slaveport-post-extract)
 slaveport-post-extract:
@@ -79,7 +94,7 @@ install-parse-plist: generate-plist
 			-e 'print FDIR "${INSTALL_DIR}", \
 				" ", "\"${PREFIX}/$$dir\"", \
 				"\n" if $$dir =~ s!(^\@dirrm\s+)!!;' \
-			-e 'print FFILES "${INSTALL_DATA}", \
+			-e 'print FFILES "${INSTALL_DATA:S/${SHAREMODE}/400/}", \
 				" ", "\"${WRKDIR}/$$file_partial\"", \
 				" ", "\"${PREFIX}/$$file\"", \
 				"\n" if ($$file !~ m!^\@!);' \
