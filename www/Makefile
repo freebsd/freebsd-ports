@@ -138,6 +138,7 @@
     SUBDIR += jakarta-tomcat3
     SUBDIR += jakarta-tomcat4
     SUBDIR += jakarta-tomcat41
+    SUBDIR += jakarta-tomcat5
     SUBDIR += jdresolve
     SUBDIR += jesred
     SUBDIR += jetty
