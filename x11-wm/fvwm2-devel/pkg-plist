@@ -1,5 +1,13 @@
+bin/FvwmCommand
+bin/fvwm-config
+bin/fvwm-menu-desktop
+bin/fvwm-menu-directory
+bin/fvwm-menu-headlines
+bin/fvwm-menu-xlock
 bin/fvwm2
+bin/fvwmbug
 bin/xpmroot
+bin/xselection
 lib/X11/fvwm2/pixmaps/Jlock.xpm
 lib/X11/fvwm2/pixmaps/Jnews.xpm
 lib/X11/fvwm2/pixmaps/Jrecycle.xpm
@@ -351,7 +359,42 @@ libexec/fvwm/%%VER%%/FvwmTheme
 libexec/fvwm/%%VER%%/FvwmTile
 libexec/fvwm/%%VER%%/FvwmWharf
 libexec/fvwm/%%VER%%/FvwmWinList
+share/fvwm/ConfigFvwmDefaults
+share/fvwm/ConfigFvwmSetup
+share/fvwm/ConfigFvwmBacker
+share/fvwm/ConfigFvwmButtons
+share/fvwm/FormFvwmSetup.
+share/fvwm/FormFvwmForm.
+share/fvwm/FormFvwmCapture.
+share/fvwm/FormFvwmQuitVerify.
+share/fvwm/FormFvwmRlogin.
+share/fvwm/FormFvwmRootCursor.
+share/fvwm/FormFvwmTalk.
+share/fvwm/FormFvwmTalkHelp.
+share/fvwm/ConfigFvwmIconBox
+share/fvwm/ConfigFvwmIconMan
+share/fvwm/ConfigFvwmIdent
+share/fvwm/ConfigFvwmPager
+share/fvwm/ScriptFvwmBellSetup
+share/fvwm/ScriptFvwmButtons
+share/fvwm/ScriptFvwmColorset
+share/fvwm/ScriptFvwmDate
+share/fvwm/ScriptFvwmBaseConfig
+share/fvwm/ScriptFvwmFileBrowser
+share/fvwm/ScriptFvwmFind
+share/fvwm/ScriptFvwmKeyboardSetup
+share/fvwm/ScriptFvwmPointerSetup
+share/fvwm/ScriptFvwmQuit
+share/fvwm/ScriptFvwmScreenDump
+share/fvwm/ScriptFvwmScreenSetup
+share/fvwm/ScriptFvwmSetup95
+share/fvwm/script-fvwm-setup95.pl
+share/fvwm/ConfigFvwmScroll
+share/fvwm/ConfigFvwmTaskBar
+share/fvwm/ConfigFvwmWinList
+share/fvwm/system.fvwm2rc-sample-95
 @dirrm lib/X11/fvwm2/pixmaps
 @dirrm lib/X11/fvwm2
 @dirrm libexec/fvwm/%%VER%%
 @dirrm libexec/fvwm
+@dirrm share/fvwm
