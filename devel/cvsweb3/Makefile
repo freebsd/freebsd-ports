@@ -6,19 +6,38 @@
 #
 
 PORTNAME=	cvsweb
-PORTVERSION=	2.0.6
-PORTREVISION=	1
+PORTVERSION=	3.0.1
 CATEGORIES=	devel www
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://people.FreeBSD.org/~scop/cvsweb/
 MASTER_SITE_SUBDIR=	scop
 
 MAINTAINER=	freebsd-cvsweb@FreeBSD.org
-COMMENT=	WWW CGI script to browse CVS repository trees
+COMMENT=	WWW CGI script to browse CVS repository trees version 3
+
+RUN_DEPENDS=	${SITE_PERL}/IPC/Run.pm:${PORTSDIR}/devel/p5-IPC-Run \
+		${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI
+
+# The following extra dependencies are optional, but CVSweb works the
+# best with them.
+RUN_DEPENDS+=	${SITE_PERL}/MIME/Types.pm:${PORTSDIR}/mail/p5-MIME-Types \
+		${SITE_PERL}/${PERL_ARCH}/String/Ediff.pm:${PORTSDIR}/devel/p5-String-Ediff \
+		enscript:${PORTSDIR}/print/enscript-a4 \
+		cvsgraph:${PORTSDIR}/devel/cvsgraph
 
 NO_BUILD=	yes
 
 USE_PERL5=	yes
+
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500601
+IGNORE=		Port requires perl 5.6.1 or later. Install lang/perl5 then try again
+.endif
+
+.if ${PERL_LEVEL} < 500800
+RUN_DEPENDS+=	${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
+.endif
 
 # Specify where your repository belongs.
 # (You can reconfigure it after installation anyway)
@@ -30,12 +49,18 @@ CVSROOT=	/home/cvs
 TITLE?=		My CVS Repository
 
 # Specify these directories in relative paths to ${PREFIX}.
-.if !exists(${PREFIX}/www) && exists(${PREFIX}/share/apache)
-CGIDIR?=	share/apache/cgi-bin
-ICONSDIR?=	share/apache/icons
-.else
+.if exists(${PREFIX}/www/cgi-bin)
 CGIDIR?=	www/cgi-bin
 ICONSDIR?=	www/icons
+CSSDIR?=	www/data/css
+.elif exists(${PREFIX}/apache/cgi-bin)
+CGIDIR?=	apache/cgi-bin
+ICONSDIR?=	apache/icons
+CSSDIR?=	apache/data/css
+.else
+CGIDIR?=	share/apache/cgi-bin
+ICONSDIR?=	share/apache/icons
+CSSDIR?=	share/apache/data/css
 .endif
 
 CONFFILES=	cvsweb.conf \
@@ -44,7 +69,7 @@ CONFFILES=	cvsweb.conf \
 		cvsweb.conf-netbsd \
 		cvsweb.conf-ruby
 
-PLIST_SUB=	CGIDIR="${CGIDIR}" ICONSDIR="${ICONSDIR}"
+PLIST_SUB=	CGIDIR="${CGIDIR}" ICONSDIR="${ICONSDIR}" CSSDIR="${CSSDIR}"
 
 post-patch:
 	${PERL} -i -pe "\
@@ -65,16 +90,23 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/etc/cvsweb/${f}.dist
 .endfor
 	${MKDIR} ${PREFIX}/${ICONSDIR}/cvsweb
-	cd ${WRKSRC}/icons && ${INSTALL_DATA} * ${PREFIX}/${ICONSDIR}/cvsweb/
+	${INSTALL_DATA} ${WRKSRC}/icons/* ${PREFIX}/${ICONSDIR}/cvsweb/
+	${MKDIR} ${PREFIX}/${CSSDIR}/cvsweb
+	${INSTALL_DATA} ${WRKSRC}/css/*.css ${PREFIX}/${CSSDIR}/cvsweb/
+	${INSTALL_DATA} ${WRKSRC}/enscript/*.st ${PREFIX}/share/enscript/hl/
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/cvsweb
-	cd ${WRKSRC} && ${INSTALL_DATA} ChangeLog INSTALL README README.FreeBSD TODO TODO.FreeBSD ${PREFIX}/share/doc/cvsweb/
+	${MKDIR} ${DOCSDIR}
+.for f in ChangeLog INSTALL NEWS README TODO
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/
+.endfor
+	${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/samples/* ${EXAMPLESDIR}/
 .endif
 
 post-install:
 .if defined(PACKAGE_BUILDING)
-	${ECHO_CMD} "@unexec rmdir -p %D/${CGIDIR} %D/${ICONSDIR} 2>/dev/null || true" >> ${TMPPLIST}
+	${ECHO_CMD} "@unexec rmdir -p %D/${CGIDIR} %D/${ICONSDIR} %D/${CSSDIR} 2>/dev/null || true" >> ${TMPPLIST}
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
