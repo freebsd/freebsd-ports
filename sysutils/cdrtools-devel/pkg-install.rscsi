@@ -1,0 +1,61 @@
+#!/bin/sh
+
+PATH=/bin:/usr/sbin:/usr/bin
+
+PKG_PREFIX=${PKG_PREFIX:=/usr/local}
+
+case $2 in
+	PRE-INSTALL)
+		;;
+
+	POST-INSTALL)
+		USER=rscsi
+		UID=99
+		GROUP=${USER}
+		GID=${UID}
+		UCOMMENT="Remote SCSI"
+		UHOME=${PKG_PREFIX}/rscsi
+		USHELL=${PKG_PREFIX}/sbin/rscsi
+
+		echo "==========================================================================="
+		echo
+
+		if ! pw groupshow "${GROUP}" >/dev/null 2>&1; then
+			if ! pw groupadd ${GROUP} -g ${GID}; then
+				echo "Adding group \"${GROUP}\" failed."
+				exit 1
+			fi
+		fi
+
+		if ! pw usershow "${USER}" >/dev/null 2>&1; then
+			if ! pw useradd ${USER} -u ${UID} -c "${UCOMMENT}" \
+				-d ${UHOME} -g ${GROUP} -s ${USHELL}; then
+				echo "Adding user \"${USER}\" failed."
+				exit 1
+			fi
+		fi
+
+		if ! [ -d ${UHOME} ] ; then 
+			mkdir -p ${UHOME}
+			chown ${UID}:${GID} ${UHOME}
+		fi
+
+		if ! [ -f ${UHOME}/.rhosts ] ; then
+			cp /usr/share/skel/dot.rhosts ${UHOME}/.rhosts
+			chown ${UID}:${GID} ${UHOME}/.rhosts
+			chmod 0600 ${UHOME}/.rhosts
+		fi
+
+		echo "See ${PKG_PREFIX}/share/doc/cdrtools/README.rscsi and ${PKG_PREFIX}/etc/rscsi"
+		echo "for further information on how to configure remote access to SCSI-devices"
+		echo "via rscsi."
+
+		if ! grep '^shell' /etc/inetd.conf >/dev/null 2>&1; then
+			echo "Don't forget to add an entry for rshd(8) to /etc/inetd.conf in order to"
+			echo "be able to use the remote SCSI daemon."
+		fi
+
+		echo
+
+		;;
+esac
