@@ -1,9 +1,9 @@
 # New ports collection makefile for:	mgv
-# Version required:	mgv-3.1.2
+# Version required:	mgv-3.1.5
 # Date created:		4 Mar 1998
 # Whom:			handy@physics.montana.edu
 #
-# $Id: Makefile,v 1.10 1998/10/12 15:24:14 jseger Exp $
+# $Id: Makefile,v 1.11 1998/10/13 23:44:03 jseger Exp $
 #
 
 DISTNAME=	mgv-3.1.5
