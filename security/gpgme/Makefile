@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gpgme
-PORTVERSION=	0.3.14
+PORTVERSION=	0.3.15
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=	gpgme
@@ -23,7 +23,19 @@ CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
 
+.include <bsd.port.pre.mk>
+
+.if exists(${LOCALBASE}/bin/gpgsm)
+WITH_GPGSM=	yes
+.endif
+
+.if defined(WITH_GPGSM)
+BUILD_DEPENDS+=	gpgsm:${PORTSDIR}/security/newpg
+.else
+CONFIGURE_ARGS+=	--without-gpgsm
+.endif
+
 pre-configure:
 	@${RM} -r ${WRKSRC}/doc/gpgme.info*
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
