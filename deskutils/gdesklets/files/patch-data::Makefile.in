@@ -1,11 +1,12 @@
---- data/Makefile.in.orig	Tue Dec 30 13:24:16 2003
-+++ data/Makefile.in	Tue Dec 30 13:25:10 2003
-@@ -208,7 +208,7 @@
+--- data/Makefile.in.orig	Mon Feb 23 09:58:01 2004
++++ data/Makefile.in	Mon Feb 23 09:59:27 2004
+@@ -213,7 +213,8 @@
  @USERINST_TRUE@mimedir = ~/.gnome/mime-info
  mime_in_files = gdesklets.keys.in
  mime_DATA = $(mime_in_files:.keys.in=.keys) gdesklets.mime
 -@USERINST_FALSE@mimeicondir = $(datadir)/icons/gnome/48x48/mimetypes
 +@USERINST_FALSE@mimeicondir = $(prefix)/share/icons/gnome/48x48/mimetypes
++
  
  @USERINST_TRUE@mimeicondir = ~/.icons/gnome/48x48/mimetypes
  mimeicon_DATA = x-gdesklets-display.png
