@@ -24,6 +24,7 @@ LIB_DEPENDS=	uu.2:${PORTSDIR}/converters/uulib \
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+TIN_EDITOR?=	/usr/bin/ee
 
 # --with-mime-default-charset=US-ASCII needed to build tin in the non-ascii
 # national environment.
@@ -31,7 +32,7 @@ CONFIGURE_ARGS=	--with-nntp-default-server=news \
 		--with-spooldir=/var/news \
 		--with-libdir=${PREFIX}/news/lib \
 		--with-defaults-dir=${PREFIX}/etc \
-		--with-editor=/usr/bin/ee \
+		--with-editor=${TIN_EDITOR} \
 		--enable-nls \
 		--with-pcre=yes \
 		--with-screen=ncurses \
