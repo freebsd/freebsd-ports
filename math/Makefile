@@ -17,6 +17,7 @@
     SUBDIR += atlas-devel
     SUBDIR += bamg
     SUBDIR += biggles
+    SUBDIR += bihar
     SUBDIR += blacs
     SUBDIR += blas
     SUBDIR += blitz++
@@ -42,7 +43,6 @@
     SUBDIR += eval
     SUBDIR += fbm
     SUBDIR += femlab
-    SUBDIR += fftpack
     SUBDIR += fftw
     SUBDIR += fftw3
     SUBDIR += fftw3-float

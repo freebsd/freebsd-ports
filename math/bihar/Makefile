@@ -5,11 +5,11 @@
 # $FreeBSD$
 #
 
-PORTNAME=	fftpack
+PORTNAME=	bihar
 PORTVERSION=	1.0
 CATEGORIES=	math
 MASTER_SITES=	ftp://netlib.bell-labs.com/netlib/
-DISTNAME=	bihar
+DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tar
 
 MAINTAINER=	ports@FreeBSD.org
@@ -25,6 +25,8 @@ EXTRACT_AFTER_ARGS=	# empty
 
 INSTALLS_SHLIB=	yes
 
+PORTDOCS=	fft.doc.gz
+
 .include <bsd.port.pre.mk>
 
 post-extract:
@@ -36,9 +38,9 @@ pre-build:
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} $(PREFIX)/share/doc/fftpack
+	${MKDIR} ${DOCSDIR}
 	-${GZIP_CMD} ${GZIP} ${WRKSRC}/fft.doc
-	${CP} $(WRKSRC)/fft.doc.gz $(PREFIX)/share/doc/fftpack/
+	${CP} $(WRKSRC)/fft.doc.gz ${DOCSDIR}
 .endif
 .if ${PORTOBJFORMAT} == "aout"
 	${LN} -sf libbihar.so.1 ${PREFIX}/lib/libbihar.so
