@@ -6,15 +6,17 @@
 #
 
 PORTNAME=	kwatch
-PORTVERSION=	0.3
+PORTVERSION=	2.0.1
 CATEGORIES=	misc kde
-MASTER_SITES=	${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR=	system/admin/frontends
+MASTER_SITES=	http://www.m-j-s.net/pub/kde/ \
+		${MASTER_SITE_KDE}
+MASTER_SITE_SUBDIR=	unstable/apps/utils
 
 MAINTAINER=	ports@FreeBSD.org
 
-USE_KDELIBS_VER=1
-USE_GMAKE=	yes
+BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext
+
+USE_KDELIBS_VER=	2
 GNU_CONFIGURE=	yes
 
 .include <bsd.port.mk>
