@@ -302,6 +302,7 @@ share/gnome/gnucash/accounts/de_DE/acctchrt_kids.gnucash-xea
 share/gnome/gnucash/accounts/de_DE/acctchrt_otherasset.gnucash-xea
 share/gnome/gnucash/accounts/de_DE/acctchrt_otherloan.gnucash-xea
 share/gnome/gnucash/accounts/de_DE/acctchrt_studium.gnucash-xea
+share/gnome/gnucash/accounts/el_GR/acctchrt_carloan.gnucash-xea
 share/gnome/gnucash/accounts/el_GR/acctchrt_common.gnucash-xea
 share/gnome/gnucash/accounts/es_ES/acctchrt_brokerage.gnucash-xea
 share/gnome/gnucash/accounts/es_ES/acctchrt_carloan.gnucash-xea
@@ -633,6 +634,7 @@ share/gnome/pixmaps/gnucash/gnucash-icon.png
 share/gnome/pixmaps/gnucash/gnucash_splash.png
 share/gnome/pixmaps/gnucash/stock_split_title.png
 share/gnome/pixmaps/gnucash/stock_split_watermark.png
+share/locale/cs/LC_MESSAGES/gnucash.mo
 share/locale/da/LC_MESSAGES/gnucash.mo
 share/locale/de/LC_MESSAGES/gnucash.mo
 share/locale/el/LC_MESSAGES/gnucash.mo
