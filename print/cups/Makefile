@@ -6,20 +6,23 @@
 #
 
 PORTNAME=	cups
-PORTVERSION=	1.1.6
+PORTVERSION=	${VERSION}.${REVISION}
 CATEGORIES=	print
-MASTER_SITES=	ftp://ftp.easysw.com/pub/cups/${PORTVERSION}/ \
-		ftp://ftp2.easysw.com/pub/cups/${PORTVERSION}/ \
-		ftp://ftp.funet.fi/pub/mirrors/ftp.easysw.com/pub/cups/${PORTVERSION}/ \
-		ftp://ftp.mpg.goe.ni.schule.de/pub/internet/printing/cups/${PORTVERSION}/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-source
+MASTER_SITES=	ftp://ftp.easysw.com/pub/cups/${VERSION}/ \
+		ftp://ftp2.easysw.com/pub/cups/${VERSION}/ \
+		ftp://ftp.funet.fi/pub/mirrors/ftp.easysw.com/pub/cups/${VERSION}/ \
+		ftp://ftp.mpg.goe.ni.schule.de/pub/internet/printing/cups/${VERSION}/
+DISTNAME=	${PORTNAME}-${VERSION}-${REVISION}-source
 
 MAINTAINER=	greid@ukug.uk.freebsd.org
+
+VERSION=	1.1.6
+REVISION=	2
 
 USE_BZIP2=	yes
 INSTALLS_SHLIB=	yes
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${VERSION}
 
 GNU_CONFIGURE=	yes
 
