@@ -8,7 +8,7 @@
 PORTNAME=       installwatch
 PORTVERSION=	0.5.6
 CATEGORIES=     sysutils
-MASTER_SITES=   http://mayams.net/~izto/
+MASTER_SITES=	http://asic-linux.com.mx/~izto/checkinstall/files/source/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	greid@ukug.uk.freebsd.org
