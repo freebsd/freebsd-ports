@@ -21,6 +21,7 @@
     SUBDIR += electriceyes
     SUBDIR += enfle
     SUBDIR += eog
+    SUBDIR += epstool
     SUBDIR += eterm-bg
     SUBDIR += fbm
     SUBDIR += flashplayer
@@ -125,6 +126,7 @@
     SUBDIR += tgif-nls
     SUBDIR += tiff
     SUBDIR += tifmerge
+    SUBDIR += tkxanim
     SUBDIR += togl
     SUBDIR += txtmerge
     SUBDIR += urt
