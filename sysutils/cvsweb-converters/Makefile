@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cvsweb-converters
-PORTVERSION=	0.2
+PORTVERSION=	0.2.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.sbox.TUGraz.at/home/d/dada/distfiles/
 
@@ -24,7 +24,7 @@ USE_PERL5=	yes
 post-patch:
 	@${PERL} -i -wpe '			\
 	    s[ \@PREFIX\@ ](${PREFIX})gx;	\
-	    s[ \@PERL5\@  ](${PERL})gx;		\
+	    s[ \@PERL\@  ](${PERL})gx;		\
 	' -- "${WRKSRC}"/*.pl.in
 
 do-install:
