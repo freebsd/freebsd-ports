@@ -9,7 +9,7 @@
 PORTNAME=	rrdtool
 PORTVERSION=	0.1
 CATEGORIES=	net python
-MASTER_SITES=	http://download.extreme-ware.com/open-projects/PyRRDtool/
+MASTER_SITES=	http://projects.gasperino.org/projects/PyRRDtool/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	PyRRDtool-${PORTVERSION}
 

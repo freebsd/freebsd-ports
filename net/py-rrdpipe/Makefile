@@ -9,7 +9,7 @@
 PORTNAME=	rrdpipe
 PORTVERSION=	0.1
 CATEGORIES=	net python
-MASTER_SITES=	http://download.extreme-ware.com/open-projects/PyRRDpipe/
+MASTER_SITES=	http://projects.gasperino.org/projects/PyRRDpipe/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	PyRRDpipe-${PORTVERSION}
 
