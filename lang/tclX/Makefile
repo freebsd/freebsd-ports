@@ -33,7 +33,7 @@ CONFIGURE_ARGS= --enable-shared \
 		--with-help=Help \
 		--with-tcl="${LOCALBASE}/lib/tcl${TCL_VER}" \
 		--with-tk="${LOCALBASE}/lib/tk${TCL_VER}"
-PLIST_SUB=	TCLX_LONG_VER=8.3 TCLX_SHORT_VER=83
+PLIST_SUB=	TCLX_LONG_VER=${TCL_VER} TCLX_SHORT_VER=${TCL_DVER}
 
 .ifdef WITHOUT_X11
 CONFIGURE_ARGS+=--enable-tk=NO
