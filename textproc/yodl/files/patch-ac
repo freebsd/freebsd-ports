@@ -1,0 +1,47 @@
+--- manpages/Makefile.in.orig	Fri Jan 24 05:42:52 1997
++++ manpages/Makefile.in	Fri Mar  3 10:01:20 2000
+@@ -7,4 +7,2 @@
+ 
+-SHELL=__BASH__
+-
+ man1=$(MANPREFIX)/man1
+@@ -24,6 +22,6 @@
+ yodl.man: yodl.yo ../Makefile
+-	yodl2man $<
++	yodl2man yodl.yo
+ 
+ $(man1)/yodl.1: yodl.man
+-	cp $< $@
++	cp yodl.man $@
+         
+@@ -34,6 +32,6 @@
+ yodlconverters.man: yodlconverters.yo ../Makefile
+-	yodl2man $<
++	yodl2man yodlconverters.yo
+ 
+ $(man1)/yodlconverters.1: yodlconverters.man
+-	cp $< $@
++	cp yodlconverters.man $@
+         
+@@ -48,3 +46,3 @@
+ $(man7)/yodlmacros.7: yodlmacros.man
+-	cp $< $@
++	cp yodlmacros.man $@
+         
+@@ -55,6 +53,6 @@
+ yodlmanpage.man: yodlmanpage.yo ../Makefile
+-	yodl2man $<
++	yodl2man yodlmanpage.yo
+ 
+ $(man7)/yodlmanpage.7: yodlmanpage.man
+-	cp $< $@
++	cp yodlmanpage.man $@
+ 
+@@ -65,6 +63,6 @@
+ striproff.man: striproff.yo ../Makefile
+-	yodl2man $<
++	yodl2man striproff.yo
+ 
+ $(man1)/striproff.1: striproff.man
+-	cp $< $@
++	cp striproff.man $@
