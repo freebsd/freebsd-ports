@@ -3,7 +3,7 @@
 # Date created:		19 August 1997
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.11 1998/10/03 21:35:20 steve Exp $
+# $Id: Makefile,v 1.12 1998/12/01 03:06:29 asami Exp $
 #
 
 DISTNAME=	tcl8.1a2
@@ -20,6 +20,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/unix
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared
 CONFIGURE_ENV=  PORTSDIR=${PORTSDIR}
+PKGINSTALL=     ${PORTSDIR}/lang/tcl80/pkg/INSTALL.tclsh
 
 MAN1=	tclsh.1
 MAN3=	AddErrInfo.3 Alloc.3 AllowExc.3 AppInit.3 AssocData.3 Async.3 \
@@ -49,15 +50,15 @@ MANN=	Tcl.n after.n append.n array.n bgerror.n binary.n break.n case.n \
 	variable.n vwait.n while.n
 MANCOMPRESSED=	yes
 
+.include <bsd.port.pre.mk>
+
 post-install:
 	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
-.if exists(${PORTSDIR}/lang/tcl80/pkg/INSTALL.tclsh)
-	${SH} ${PORTSDIR}/lang/tcl80/pkg/INSTALL.tclsh
+.if exists(${PKGINSTALL})
+	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL}
 .endif
 
 test:
 	cd ${WRKSRC} && ${MAKE} test
 
-.include <bsd.port.mk>
-
-PKG_ARGS+=      -i ${PORTSDIR}/lang/tcl80/pkg/INSTALL.tclsh
+.include <bsd.port.post.mk>
