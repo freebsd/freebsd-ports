@@ -314,6 +314,7 @@
     SUBDIR += mod_security
     SUBDIR += mod_sed
     SUBDIR += mod_sequester
+    SUBDIR += mod_shapvh
     SUBDIR += mod_snake
     SUBDIR += mod_sqlinclude
     SUBDIR += mod_throttle

@@ -1,0 +1,6 @@
+Shared Apache VirtualHost module.
+
+This module allows you to store your virtual hosts in a database
+and extract them on the fly.
+
+WWW: http://www.crazygreek.co.uk/content/mod_shapvh
