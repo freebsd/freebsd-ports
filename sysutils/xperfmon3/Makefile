@@ -17,9 +17,15 @@ EXTRACT_SUFX=	v1.1.tar.Z
 MAINTAINER=	Lars.Koeller@Uni-Bielefeld.DE
 COMMENT=	Xperfmon++ : A graphical X11 system performance monitor
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile"
+.endif
+
 LATEST_LINK=	xperfmon3
 
 USE_IMAKE=	yes
 MAN1=		xperfmon++.1
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -18,6 +18,10 @@ COMMENT=	A clone of vi/ex, with perl5 linked into
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile"
+.endif
+
 # can't say PATCH_DIST_STRIP=-p1 because contains files outside ${WRKSRC}
 PATCH_DIST_ARGS=-d ${WRKSRC}/.. --forward --quiet -E -p0
 PATCH_ARGS=	-d ${WRKSRC}/.. --forward --quiet -E -p0
