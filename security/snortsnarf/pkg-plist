@@ -17,11 +17,13 @@ libdata/snortsnarf/SnortSnarf/MemStorage.pm
 libdata/snortsnarf/SnortSnarf/MemTimeBase.pm
 libdata/snortsnarf/SnortSnarf/MultiStore.pm
 libdata/snortsnarf/SnortSnarf/PacketBase.pm
+libdata/snortsnarf/SnortSnarf/SnortDBInput.pm
 libdata/snortsnarf/SnortSnarf/SnortFileInput.pm
 libdata/snortsnarf/SnortSnarf/SnortRules.pm
 libdata/snortsnarf/SnortSnarf/Sort.pm
 libdata/snortsnarf/SnortSnarf/SorterBase.pm
 libdata/snortsnarf/SnortSnarf/StorageBase.pm
+libdata/snortsnarf/SnortSnarf/TimeFilters.pm
 libdata/snortsnarf/ann_xml.pl
 libdata/snortsnarf/web_utils.pl
 libdata/snortsnarf/xml_help.pl

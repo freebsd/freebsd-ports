@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	snortsnarf
-PORTVERSION=	020126
+PORTVERSION=	020516
 CATEGORIES=	security
 MASTER_SITES=	http://www.silicondefense.com/software/snortsnarf/
 DISTNAME=	SnortSnarf-${PORTVERSION}.1
@@ -30,7 +30,7 @@ do-install:
 	AllMods.pm BasicFilters.pm KnownEquiv.pm SnortFileInput.pm \
 	HTMLAnomMemStorage.pm Input.pm SorterBase.pm Sort.pm \
 	StorageBase.pm MemAlert.pm BasicSorters.pm Filter.pm \
-	SnortRules.pm MemStorage.pm
+	SnortRules.pm MemStorage.pm SnortDBInput.pm TimeFilters.pm
 	${INSTALL_DATA} ${WRKSRC}/include/SnortSnarf/${i} ${LOCALBASE}/libdata/snortsnarf/SnortSnarf/
 .endfor
 .if !defined(NOPORTDOCS)
