@@ -1,11 +1,15 @@
 bin/gtklp
 bin/gtklpq
+share/locale/ca/LC_MESSAGES/gtklp.mo
+share/locale/cht/LC_MESSAGES/gtklp.mo
 share/locale/cz/LC_MESSAGES/gtklp.mo
 share/locale/de/LC_MESSAGES/gtklp.mo
 share/locale/en/LC_MESSAGES/gtklp.mo
 share/locale/es/LC_MESSAGES/gtklp.mo
 share/locale/fr/LC_MESSAGES/gtklp.mo
 share/locale/it/LC_MESSAGES/gtklp.mo
+share/locale/ja/LC_MESSAGES/gtklp.mo
 share/locale/nl/LC_MESSAGES/gtklp.mo
 share/locale/pl/LC_MESSAGES/gtklp.mo
+share/locale/pt_BR/LC_MESSAGES/gtklp.mo
 share/locale/ru/LC_MESSAGES/gtklp.mo
