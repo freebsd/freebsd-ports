@@ -5,10 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	subversion
-PORTVERSION=	r3987	# 0.16.0
-PORTREVISION=	1
+PORTVERSION=	0.20.1
 CATEGORIES=	devel
-MASTER_SITES=	http://subversion.tigris.org/files/documents/15/2123/
+MASTER_SITES=	http://subversion.tigris.org/files/documents/15/3440/
 MASTER_SITES+=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=		bmah
 
@@ -48,7 +47,8 @@ post-configure:
 post-install:
 .if !defined(NOPORTDOCS)
 	cd ${WRKSRC}/doc/book; \
-	${MAKE} INSTALL_DIR=${DOCSDIR} install-book
+	${MAKE} INSTALL_DIR=${DOCSDIR} \
+		install-book-html install-book-pdf install-book-ps
 .endif
 
 .include <bsd.port.mk>
