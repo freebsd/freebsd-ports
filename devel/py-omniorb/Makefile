@@ -22,7 +22,7 @@ RUN_DEPENDS=	omniidl:${PORTSDIR}/devel/omniORB
 # see also the "post-extract" target below.
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/devel/omniORB:patch
 
-CONFLICTS=	py*-orbit-*
+CONFLICTS=	py*-orbit-2*
 
 CONFIGURE_WRKSRC=	${WRKSRC}/build
 BUILD_WRKSRC=	${CONFIGURE_WRKSRC}
