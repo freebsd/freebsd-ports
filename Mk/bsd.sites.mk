@@ -158,7 +158,6 @@ MASTER_SITE_NETBSD+=	\
 
 MASTER_SITE_PERL_CPAN+=	\
 	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/%SUBDIR%/ \
-	ftp://gatekeeper.dec.com/pub/plan/perl/CPAN/modules/by-module/%SUBDIR%/ \
 	http://www.cpan.dk/CPAN/modules/by-module/%SUBDIR%/ \
 	ftp://ftp.funet.fi/pub/languages/perl/CPAN/modules/by-module/%SUBDIR%/ \
 	ftp://uiarchive.uiuc.edu/pub/ftp/ftp.cpan.org/pub/CPAN/modules/by-module/%SUBDIR%/ \
