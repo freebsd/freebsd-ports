@@ -10,7 +10,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://mailbox.univie.ac.at/~le/swiggle/files/ \
 		http://www.daemon.li/downloads/
 
-MAINTAINER=	j.el-rayes@daemon.li
+MAINTAINER=	josef@FreeBSD.org
 COMMENT=	"Swiggle is a commandline web image gallery generator"
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg:install \
