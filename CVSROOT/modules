@@ -5525,6 +5525,7 @@ ruby-rd-mode.el	ports/textproc/ruby-rd-mode.el
 ruby-rdbc1	ports/databases/ruby-rdbc1
 ruby-rdtool	ports/textproc/ruby-rdtool
 ruby-reference	ports/lang/ruby-reference
+ruby-rexml	ports/textproc/ruby-rexml
 ruby-ri		ports/lang/ruby-ri
 ruby-rica	ports/irc/ruby-rica
 ruby-rice	ports/irc/ruby-rice
