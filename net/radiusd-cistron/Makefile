@@ -11,9 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.cistron.nl/pub/people/miquels/radius/ \
 		ftp://ftp.freeradius.org/pub/radius/
 
-MAINTAINER=	john@nlc.net.au
-
-# FORBIDDEN=	"Remotely exploitable buffer overflow"
+MAINTAINER=	dinoex@FreeBSD.org
 
 MAKEFILE=	Makefile.BSD
 RADIUS_DIR=	${PREFIX}/etc/raddb
