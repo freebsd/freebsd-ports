@@ -8,4 +8,5 @@ share/locale/fr/LC_MESSAGES/gperiodic.mo
 share/locale/it/LC_MESSAGES/gperiodic.mo
 share/locale/nl/LC_MESSAGES/gperiodic.mo
 share/locale/pt/LC_MESSAGES/gperiodic.mo
+share/locale/ru/LC_MESSAGES/gperiodic.mo
 %%PORTDOCS%%@dirrm share/doc/gperiodic
