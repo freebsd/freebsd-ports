@@ -16,10 +16,8 @@ start)
 	;;
 
 stop)
-#	work around PID file creation problem
-	killall jftpgw
-#	PID=`cat $PIDFILE 2>/dev/null`
-#	ps -p "$PID" | tail +2 | grep -sqw $PROGRAM && kill $PID
+	PID=`cat $PIDFILE 2>/dev/null`
+	ps -p "$PID" | tail +2 | grep -sqw $PROGRAM && kill $PID
 	;;
 
 *)
