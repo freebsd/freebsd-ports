@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	windowmaker-i18n
-PORTVERSION=	0.62.1
-PORTREVISION=	1
+PORTVERSION=	0.63.1
+# PORTREVISION=
 CATEGORIES=	x11-wm windowmaker
 MASTER_SITES=	${MASTER_SITE_WINDOWMAKER}
 MASTER_SITE_SUBDIR=	beta/srcs
@@ -33,7 +33,7 @@ USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	X11BASE=${X11BASE}  LOCALBASE=${LOCALBASE} \
 		CPPFLAGS="-I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib" \
-		LINGUAS="da de es fi fr hr it ja_JP.EUC ko nl no pl pt ru zh_TW.Big5 zh_CN"
+		LINGUAS="bg cs da de el es fi fr gl hr hu it ja_JP.EUC ko nl no pl pt ro ru se sk tr zh_CN zh_TW.Big5"
 CONFIGURE_ARGS=	--with-pixmapdir=${PREFIX}/include/X11/pixmaps \
 	--with-nlsdir=${PREFIX}/share/locale \
 	--with-libs-from="-L${LOCALBASE}/lib" \
@@ -65,9 +65,9 @@ pre-extract:
 	@${ECHO} "You can add hooks for KDE by defining WITH_KDE"
 .endif
 
-post-extract:
-	@cd ${WRKSRC} && \
-	${TAR} xfz libwmfun-0.0.3.tar.gz
+# post-extract:
+# 	@cd ${WRKSRC} && \
+# 	${TAR} xfz libwmfun-0.0.3.tar.gz
 
 post-patch:
 	@${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/WPrefs.app/Paths.c
