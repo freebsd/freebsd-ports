@@ -3,7 +3,7 @@
 # Date created:		10 October 1998
 # Whom:			shige
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/12/13 14:27:06 kuriyama Exp $
 #
 
 DISTNAME=	emacs-20.3
@@ -17,7 +17,7 @@ PATCH_DIST_STRIP= -p1
 
 MAINTAINER=	shige@kuis.kyoto-u.ac.jp
 
-RUN_DEPENDS=	emacs-20.3:${.CURDIR}/../../editors/emacs20
+RUN_DEPENDS=	emacs-20.3:${PORTSDIR}/editors/emacs20
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
