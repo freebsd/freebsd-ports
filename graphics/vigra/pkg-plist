@@ -17,11 +17,13 @@ include/vigra/cornerdetection.hxx
 include/vigra/diff2d.hxx
 include/vigra/distancetransform.hxx
 include/vigra/edgedetection.hxx
+include/vigra/eigensystem.hxx
 include/vigra/error.hxx
 include/vigra/fftw.hxx
 include/vigra/fftw3.hxx
 include/vigra/flatmorphology.hxx
 include/vigra/functorexpression.hxx
+include/vigra/functortraits.hxx
 include/vigra/gaborfilter.hxx
 include/vigra/gaussians.hxx
 include/vigra/imagecontainer.hxx
@@ -36,8 +38,11 @@ include/vigra/iteratoradapter.hxx
 include/vigra/iteratortags.hxx
 include/vigra/iteratortraits.hxx
 include/vigra/labelimage.hxx
+include/vigra/linear_algebra.hxx
+include/vigra/linear_solve.hxx
 include/vigra/localminmax.hxx
 include/vigra/mathutil.hxx
+include/vigra/matrix.hxx
 include/vigra/memory.hxx
 include/vigra/metaprogramming.hxx
 include/vigra/multi_array.hxx
@@ -198,11 +203,15 @@ lib/libvigraimpex.so.2
 %%DOCSDIR%%/classvigra_1_1FindROISize.html
 %%DOCSDIR%%/classvigra_1_1FourNeighborhood_1_1NeighborCode-members.html
 %%DOCSDIR%%/classvigra_1_1FourNeighborhood_1_1NeighborCode.html
+%%DOCSDIR%%/classvigra_1_1FunctorTraits-members.html
+%%DOCSDIR%%/classvigra_1_1FunctorTraits.html
 %%DOCSDIR%%/classvigra_1_1GaborFilterFamily-members.html
 %%DOCSDIR%%/classvigra_1_1GaborFilterFamily.html
 %%DOCSDIR%%/classvigra_1_1GaborFilterFamily.png
 %%DOCSDIR%%/classvigra_1_1Gaussian-members.html
 %%DOCSDIR%%/classvigra_1_1Gaussian.html
+%%DOCSDIR%%/classvigra_1_1GrayToRGBAccessor-members.html
+%%DOCSDIR%%/classvigra_1_1GrayToRGBAccessor.html
 %%DOCSDIR%%/classvigra_1_1GreenAccessor-members.html
 %%DOCSDIR%%/classvigra_1_1GreenAccessor.html
 %%DOCSDIR%%/classvigra_1_1ImageArray-members.html
@@ -309,6 +318,8 @@ lib/libvigraimpex.so.2
 %%DOCSDIR%%/classvigra_1_1Rect2D.html
 %%DOCSDIR%%/classvigra_1_1RedAccessor-members.html
 %%DOCSDIR%%/classvigra_1_1RedAccessor.html
+%%DOCSDIR%%/classvigra_1_1ReduceFunctor-members.html
+%%DOCSDIR%%/classvigra_1_1ReduceFunctor.html
 %%DOCSDIR%%/classvigra_1_1RowIterator-members.html
 %%DOCSDIR%%/classvigra_1_1RowIterator.html
 %%DOCSDIR%%/classvigra_1_1SeedRgDirectValueFunctor-members.html
@@ -380,6 +391,9 @@ lib/libvigraimpex.so.2
 %%DOCSDIR%%/classvigra_1_1YPrimePbPr2RGBPrimeFunctor.html
 %%DOCSDIR%%/classvigra_1_1YPrimeUV2RGBPrimeFunctor-members.html
 %%DOCSDIR%%/classvigra_1_1YPrimeUV2RGBPrimeFunctor.html
+%%DOCSDIR%%/classvigra_1_1linalg_1_1Matrix-members.html
+%%DOCSDIR%%/classvigra_1_1linalg_1_1Matrix.html
+%%DOCSDIR%%/classvigra_1_1linalg_1_1Matrix.png
 %%DOCSDIR%%/codec_8hxx-source.html
 %%DOCSDIR%%/colorconversions_8hxx-source.html
 %%DOCSDIR%%/combineimages_8hxx-source.html
@@ -404,6 +418,7 @@ lib/libvigraimpex.so.2
 %%DOCSDIR%%/doxygen.png
 %%DOCSDIR%%/edge_8cxx-example.html
 %%DOCSDIR%%/edgedetection_8hxx-source.html
+%%DOCSDIR%%/eigensystem_8hxx-source.html
 %%DOCSDIR%%/error_8hxx-source.html
 %%DOCSDIR%%/examples.html
 %%DOCSDIR%%/fftw3_8hxx-source.html
@@ -469,6 +484,7 @@ lib/libvigraimpex.so.2
 %%DOCSDIR%%/functionindex.html
 %%DOCSDIR%%/functions.html
 %%DOCSDIR%%/functorexpression_8hxx-source.html
+%%DOCSDIR%%/functortraits_8hxx-source.html
 %%DOCSDIR%%/gaborfilter_8hxx-source.html
 %%DOCSDIR%%/gaussians_8hxx-source.html
 %%DOCSDIR%%/group__CombineAlgo.html
@@ -482,6 +498,7 @@ lib/libvigraimpex.so.2
 %%DOCSDIR%%/group__FFTWComplexAccessors.html
 %%DOCSDIR%%/group__FFTWComplexOperators.html
 %%DOCSDIR%%/group__FourierTransform.html
+%%DOCSDIR%%/group__Functors.html
 %%DOCSDIR%%/group__GaborFilter.html
 %%DOCSDIR%%/group__GeometricTransformations.html
 %%DOCSDIR%%/group__ImageContainers.html
@@ -491,6 +508,7 @@ lib/libvigraimpex.so.2
 %%DOCSDIR%%/group__InspectAlgo.html
 %%DOCSDIR%%/group__InspectFunctor.html
 %%DOCSDIR%%/group__Labeling.html
+%%DOCSDIR%%/group__LinearAlgebraFunctions.html
 %%DOCSDIR%%/group__LocalMinMax.html
 %%DOCSDIR%%/group__MathFunctions.html
 %%DOCSDIR%%/group__Morphology.html
@@ -538,8 +556,11 @@ lib/libvigraimpex.so.2
 %%DOCSDIR%%/iteratortags_8hxx-source.html
 %%DOCSDIR%%/iteratortraits_8hxx-source.html
 %%DOCSDIR%%/labelimage_8hxx-source.html
+%%DOCSDIR%%/linear__algebra_8hxx-source.html
+%%DOCSDIR%%/linear__solve_8hxx-source.html
 %%DOCSDIR%%/localminmax_8hxx-source.html
 %%DOCSDIR%%/mathutil_8hxx-source.html
+%%DOCSDIR%%/matrix_8hxx-source.html
 %%DOCSDIR%%/memory_8hxx-source.html
 %%DOCSDIR%%/metaprogramming_8hxx-source.html
 %%DOCSDIR%%/modules.html
