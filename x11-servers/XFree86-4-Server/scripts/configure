@@ -64,7 +64,7 @@ echo "#define XVirtualFramebufferServer $answ" >>$F
 cat >> $F <<END
 #define XF86SvgaDrivers		nv et4000 et3000 pvga1 gvga ati sis tvga8900 \
 				cirrus ncr77c22 mga oak al2101 ali cl64xx \
-				video7 chips ark mx realtek apm generic
+				video7 chips ark mx realtek apm s3v generic
 
 #define XF86Vga16Drivers	et4000 et3000 ncr77c22 ati sis tvga8900 oak \
 				cl64xx generic 
@@ -72,7 +72,7 @@ cat >> $F <<END
 #define XF86Vga2Drivers		et4000 et3000 pvga1 gvga ati sis tvga8900 \
 				cirrus ncr77c22 oak cl64xx generic
 
-#define XF86MonoDrivers		hgc1280 sigma apollo
+#define XF86MonoDrivers		hgc1280 sigma apollo hercules
 
 #define XF86W32Drivers		et4000w32
 
@@ -191,16 +191,5 @@ if [ X$cpwh != XNO ]; then
 fi
 
 cat $F >>  $WRKSRC/config/cf/xf86site.def
-
-cd $WRKSRC/config/cf/ || exit 1;
-
-version=`uname -r`
-set `echo $version|sed -e 's/\./ /g' -e 's/-/ /g'`
-mv FreeBSD.cf FreeBSD.cf.old
-sed -e "s/2.1.5/$version/"                       \
-    -e "s/#define OSMajorVersion.*2/#define OSMajorVersion $1/"  \
-    -e "s/#define OSMinorVersion.*1/#define OSMinorVersion $2/"  \
-    -e "s/#define OSTeenyVersion.*5/#define OSTeenyVersion $3/"  \
-    <FreeBSD.cf.old >FreeBSD.cf
 
 exit 0

@@ -1,28 +1,20 @@
 # New ports collection makefile for:    XFree86
-# Version required:     3.2
+# Version required:     3.3
 # Date created:         5 January 1995
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.28 1997/02/05 02:57:10 jmz Exp $
+# $Id: Makefile,v 1.29 1997/02/06 07:53:04 asami Exp $
 #
 
 DISTNAME=	xc
-PKGNAME= 	XFree86-3.2
+PKGNAME= 	XFree86-3.3
 CATEGORIES=	x11
-MASTER_SITES=	ftp://ftp.xfree86.org/pub/XFree86/3.2/source/ \
-		ftp://xfree86.cdrom.com/pub/XFree86/3.2/source/ \
-		ftp://ftp.ibp.fr/pub/X11/XFree86/XFree86-3.2/source/ \
-		ftp://ftp.uni-stuttgart.de/pub/X11/Xfree86/3.2/source/ \
-		ftp://sunsite.doc.ic.ac.uk/packages/XFree86/3.2/source/
-DISTFILES=	X32src-1.tgz X32src-2.tgz
-
-PATCH_SITES=	ftp://ftp.xfree86.org/pub/XFree86/3.2/fixes/ \
-		ftp://xfree86.cdrom.com/pub/XFree86/3.2/fixes/ \
-		ftp://ftp.ibp.fr/pub/X11/XFree86/XFree86-3.2/fixes/ \
-		ftp://ftp.uni-stuttgart.de/pub/X11/Xfree86/3.2/fixes/ \
-		ftp://sunsite.doc.ic.ac.uk/packages/XFree86/3.2/fixes/
-PATCHFILES=	3.2-fix-01
-PATCH_DIST_STRIP=	-p1
+MASTER_SITES=	ftp://ftp.xfree86.org/pub/XFree86/3.3/source/ \
+		ftp://xfree86.cdrom.com/pub/XFree86/3.3/source/ \
+		ftp://ftp.ibp.fr/pub/X11/XFree86/XFree86-3.3/source/ \
+		ftp://ftp.uni-stuttgart.de/pub/X11/Xfree86/3.3/source/ \
+		ftp://sunsite.doc.ic.ac.uk/packages/XFree86/3.3/source/
+DISTFILES=	X33src-1.tgz X32src-2.tgz
 
 MAINTAINER=	jmz@FreeBSD.ORG
 
@@ -37,9 +29,6 @@ pre-install:
 		${PKGNAME} PRE-INSTALL
 
 post-install:
-	if [ -e ${PREFIX}/bin/SuperProbe ]; then \
-		chmod u-s ${PREFIX}/bin/SuperProbe; \
-	fi
 	/sbin/ldconfig -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
