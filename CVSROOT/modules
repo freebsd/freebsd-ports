@@ -1923,6 +1923,7 @@ forkbomb	ports/benchmarks/forkbomb
 forte		ports/java/forte
 forth		ports/lang/forth
 fortran-utils	ports/devel/fortran-utils
+fortune-mod-bofh	ports/misc/fortune-mod-bofh
 fortune-mod-futurama	ports/misc/fortune-mod-futurama
 fortuneit	ports/misc/fortuneit
 fortunelock	ports/sysutils/fortunelock
