@@ -14,9 +14,11 @@ MASTER_SITES=	ftp://ftp.rpm.org/pub/rpm/dist/rpm-3.0.x/ \
 
 MAINTAINER=	nakai@FreeBSD.org
 
-LIB_DEPENDS=	bz2.1:${PORTSDIR}/archivers/bzip2 \
-		intl.1:${PORTSDIR}/devel/gettext \
+LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext \
 		popt.0:${PORTSDIR}/devel/popt
+.if !exists(/usr/bin/bzip2)
+LIB_DEPENDS+=	bz2.1:${PORTSDIR}/archivers/bzip2
+.endif
 
 USE_GMAKE=	yes
 USE_AUTOMAKE=	yes

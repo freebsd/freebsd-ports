@@ -13,7 +13,6 @@ MASTER_SITES=	http://www.amavis.org/dist/perl/
 MAINTAINER=	roman@xpert.com
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/uvscan:${PORTSDIR}/security/vscan \
-		${LOCALBASE}/bin/bunzip2:${PORTSDIR}/archivers/bzip2 \
 		${LOCALBASE}/bin/lha:${PORTSDIR}/archivers/lha \
 		${LOCALBASE}/bin/unarj:${PORTSDIR}/archivers/unarj \
 		${LOCALBASE}/bin/unrar:${PORTSDIR}/archivers/unrar \
@@ -29,6 +28,9 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/uvscan:${PORTSDIR}/security/vscan \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Convert/TNEF.pm:${PORTSDIR}/converters/p5-Convert-TNEF \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Archive/Tar.pm:${PORTSDIR}/archivers/p5-Archive-Tar \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Unix/Syslog.pm:${PORTSDIR}/sysutils/p5-Unix-Syslog
+.if !exists(/usr/bin/bzip2)
+BUILD_DEPENDS+=	bunzip2:${PORTSDIR}/archivers/bzip2
+.endif
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 GNU_CONFIGURE=	yes

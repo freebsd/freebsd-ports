@@ -13,7 +13,9 @@ MASTER_SITES=	http://www.winton.org.uk/zebedee/ \
 
 MAINTAINER=	greg@hewgill.com
 
+.if !exists(/usr/bin/bzip2)
 LIB_DEPENDS=	bz2.1:${PORTSDIR}/archivers/bzip2
+.endif
 
 USE_OPENSSL=	YES
 USE_PERL5=	yes

@@ -20,10 +20,12 @@ LIB_DEPENDS=	jbig.1:${PORTSDIR}/graphics/jbigkit \
 		freetype.7:${PORTSDIR}/print/freetype2 \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.4:${PORTSDIR}/graphics/png \
-		bz2.1:${PORTSDIR}/archivers/bzip2 \
 		ming.2:${PORTSDIR}/graphics/ming \
 		wmf.1:${PORTSDIR}/graphics/libwmf \
 		Magick.5:${PORTSDIR}/graphics/ImageMagick
+.if !exists(/usr/bin/bzip2)
+LIB_DEPENDS+=	bz2.1:${PORTSDIR}/archivers/bzip2
+.endif
 
 USE_AUTOCONF=	yes
 GNU_CONFIGURE=	yes
