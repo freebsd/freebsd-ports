@@ -14,12 +14,12 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	lehmann@ans-netz.de
 
 LIB_DEPENDS=    png.5:${PORTSDIR}/graphics/png \
-		ttf.4:${PORTSDIR}/print/freetype \
 		sigc.1:${PORTSDIR}/devel/libsigc++ \
 		SDL-1.1.3:${PORTSDIR}/devel/sdl12 \
 		SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer
 
-USE_LIBTOOL=	YES
+USE_FREETYPE=	yes
+USE_LIBTOOL=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}
 
 .include <bsd.port.mk>

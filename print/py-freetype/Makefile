@@ -13,10 +13,9 @@ DISTNAME=	PyFT-${PORTVERSION}
 
 MAINTAINER=	sobomax@FreeBSD.org
 
-LIB_DEPENDS=	ttf.4:${PORTSDIR}/print/freetype
-
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
+USE_FREETYPE=	yes
 USE_PYTHON=	yes
 
 .include <bsd.port.pre.mk>

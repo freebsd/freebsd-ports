@@ -12,8 +12,7 @@ MASTER_SITES=	http://www.giga.or.at/pub/nih/ttftot42/
 
 MAINTAINER=	nakai@FreeBSD.org
 
-LIB_DEPENDS=	ttf.4:${PORTSDIR}/print/freetype
-
+USE_FREETYPE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	"CFLAGS=-I${LOCALBASE}/include/freetype"
 

@@ -20,8 +20,8 @@ MAINTAINER=	nakaji@jp.freebsd.org
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		VFlib2.24:${PORTSDIR}/japanese/vflib
-BUILD_DEPENDS=	${LOCALBASE}/lib/libttf.a:${PORTSDIR}/print/freetype
 
+USE_FREETYPE=	yes
 USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_AUTOCONF=	yes

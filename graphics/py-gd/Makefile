@@ -13,9 +13,9 @@ DISTNAME=	gdmodule-${PORTVERSION}
 
 MAINTAINER=	perky@fallin.lv
 
-LIB_DEPENDS=	gd.2:${PORTSDIR}/graphics/gd \
-		ttf.4:${PORTSDIR}/print/freetype
+LIB_DEPENDS=	gd.2:${PORTSDIR}/graphics/gd
 
+USE_FREETYPE=	yes
 USE_PYTHON=	yes
 EXCMD=		/usr/bin/ex
 PLIST_SUB=	PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR:S,^${LOCALBASE}/,,g} \
