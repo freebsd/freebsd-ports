@@ -1,0 +1,31 @@
+--- prom-mew.el.orig	Mon Aug 16 16:14:37 1999
++++ prom-mew.el	Thu Sep  9 22:37:49 1999
+@@ -296,6 +296,11 @@
+        ))
+     ))
+ 
++(if mew-xemacs-p
++   (if (<= emacs-major-version 20)
++       (setq mew-cs-binary mew-cs-noconv))
++)
++
+ (defun prom-mew-setup ()
+   (if prom-mew-setup
+       nil
+@@ -948,6 +953,7 @@
+       nil)
+     ))
+ 
++
+ (defun prom-mew-cache-lastnum (folder &optional cache)
+   (let ((mew-folder-buffer (get-buffer folder))
+ 	(mew-cache (or cache
+@@ -958,7 +964,7 @@
+ 	(set-buffer (get-buffer-create prom-buffer-tmp))
+ 	(erase-buffer)
+ 	(if (file-exists-p mew-cache)
+-	    (mew-frwlet mew-cs-scan mew-cs-noconv
++	    (mew-frwlet mew-cs-scan mew-cs-binary
+ 			(insert-file-contents mew-cache))))
+       (goto-char (point-max))
+       (if (bobp)
