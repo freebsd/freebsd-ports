@@ -10,7 +10,7 @@ PORTVERSION=	3.05
 CATEGORIES=	devel
 MASTER_SITES=	http://wwwfun.kurims.kyoto-u.ac.jp/soft/olabl/dist/\
 		ftp://ftp.kurims.kyoto-u.ac.jp/pub/lang/olabl/\
-		ftp://ftp.inria.fr/lang/caml-light/bazar-ocaml/\
+		ftp://ftp.inria.fr/lang/caml-light/bazar-ocaml/
 PKGNAMEPREFIX=	ocaml-
 DISTNAME=	ocaml-${PORTNAME}-${PORTVERSION}
 
