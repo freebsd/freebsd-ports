@@ -7,6 +7,7 @@
 
 PORTNAME=	libshout2
 PORTVERSION=	20021112
+PORTREVISION=	1
 CATEGORIES=	audio net
 MASTER_SITES=	http://tigress.com/lofi/ \
 		http://lofi.dyndns.org/
@@ -19,9 +20,9 @@ LIB_DEPENDS=	ogg.4:${PORTSDIR}/audio/libogg \
 
 CONFIGURE_ENV=	CFLAGS="${PTHREAD_CFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="${PTHREAD_LIBS} -L${LOCALBASE}/lib"
-GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 USE_GMAKE=	yes
+USE_AUTOMAKE=	yes
 USE_LIBTOOL=	yes
 USE_REINPLACE=	yes
 
