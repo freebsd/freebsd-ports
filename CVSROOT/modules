@@ -6122,6 +6122,7 @@ qpage		ports/comms/qpage
 qpopper		ports/mail/qpopper
 qrash		ports/x11/qrash
 qscanplot	ports/math/qscanplot
+qscheme		ports/lang/qscheme
 qslim		ports/graphics/qslim
 qstat		ports/games/qstat
 qt-designer	ports/devel/qt-designer
