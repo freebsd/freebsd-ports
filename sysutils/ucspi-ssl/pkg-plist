@@ -3,7 +3,7 @@ bin/sslcat
 bin/sslclient
 bin/sslconnect
 bin/sslserver
-%%SSLPERL%%bin/sslperl
+bin/sslperl
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/UCSPI-SSL
