@@ -20,6 +20,7 @@ BUILD_DEPENDS+=	${LOCALBASE}/lib/${PYTHON_VERSION}/site-packages/_xmlplus/sax/ex
 
 USE_PYTHON=	yes
 USE_RC_SUBR=	yes
+USE_REINPLACE=	yes
 DIST_SUBDIR=	zope
 
 # Note: the notes that follow reflect the decisions of prior maintainers
@@ -60,6 +61,10 @@ ISBATCH=	-u admin:test123
 .else
 ISBATCH=	""
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's,^\(ACCEPTABLE="\)\(.*"\)$$,\1 2.3.4 \2,g' \
+		${WRKSRC}/configure
 
 post-install:
 	@${MV} ${ZOPEBASEDIR}/skel/etc/zope.conf.in ${ZOPEBASEDIR}/skel/etc/zope.conf.sample.in
