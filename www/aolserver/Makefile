@@ -8,13 +8,12 @@
 PORTNAME=	aolserver
 PORTVERSION=	3.4
 CATEGORIES=	www
-MASTER_SITES=	ftp://ftp.aolserver.com/server/ \
-		http://aolserver.com/archive/server/
-DISTNAME=	${PORTNAME}-${PORTVERSION}
+MASTER_SITES=	ftp://ftp.aolserver.com/aolserver/
+DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	mab@red-bean.com
 
-WRKSRC=	${WRKDIR}/${DISTNAME}
+WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_GMAKE=	yes
 
