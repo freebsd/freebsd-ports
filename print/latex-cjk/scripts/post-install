@@ -15,115 +15,130 @@ rm ${PREFIX}/bin/mktexpk.CJK
 
 # We have no way telling where generated fonts are, but ask the user.
 echo
-echo Please input where generated fonts are placed.
-echo "->(Default: ${PREFIX}/share/texmf/fonts)"
+echo "Please input where generated fonts are placed."
+echo "It's specified as VARTEXFONTS in your texmf.cnf."
+echo "->(Default: /var/tmp/texfonts)"
 read VARTEXFONTS
 if [ -z ${VARTEXFONTS} ]
 then
-  VARTEXFONTS=${PREFIX}/share/texmf/fonts
+  VARTEXFONTS=/var/tmp/texfonts
 fi
 
-# Chmod 1777 pk/tfm font directory.
+# teTeX no longer makes VARTEXFONTS.
+mkdir -p ${VARTEXFONTS}/pk
+mkdir -p ${VARTEXFONTS}/tfm
+
+# Chmod 1777 ${VARTEXFONTS}.
 if [ -z "${NOCHMOD}" ]
 then
-  chmod -R 1777 ${VARTEXFONTS}/tfm ${VARTEXFONTS}/pk
+  chmod -R 1777 ${VARTEXFONTS}
 fi
 
 # Install moe_* TTF fonts
-if [ ${NOTTF} ]
+echo ===
+echo If you want to install other TTF fonts, you have to manually edit:
+echo ${PREFIX}/share/texmf/fontname/special.map
+echo ${PREFIX}/share/texmf/ttf2pk/ttfonts.map
+echo ${PREFIX}/share/texmf/web2c/texmf.cnf
+echo ${PREFIX}/share/texmf/tex/latex/CJK/Bg5/c00kai.fd, for Kai family fonts.
+echo ${PREFIX}/share/texmf/tex/latex/CJK/Bg5/c00song.fd, for Song family fonts.
+echo ${PREFIX}/share/texmf/tex/latex/CJK/Bg5/c00lishu.fd, for LiShu family fonts.
+echo ===
+mkdir -p ${PREFIX}/share/texmf/fonts/truetype/moe
+ln -s ${X11BASE}/lib/X11/fonts/TrueType/moe_*.ttf ${PREFIX}/share/texmf/fonts/truetype/moe
+
+# fontname/special.map
+if [ -n "`grep moekai ${PREFIX}/share/texmf/fontname/special.map`" ]
 then
-  echo ===
-  echo If you want to install other TTF fonts, you have to manually edit:
-  echo ${PREFIX}/share/texmf/fontname/special.map
-  echo ${PREFIX}/share/texmf/ttf2pk/ttfonts.map
-  echo ${PREFIX}/share/texmf/web2c/texmf.cnf
-  echo ${PREFIX}/share/texmf/tex/latex/CJK/Bg5/c00kai.fd, for Kai family fonts.
-  echo ${PREFIX}/share/texmf/tex/latex/CJK/Bg5/c00song.fd, for Song family fonts.
-  echo ===
+  echo Seems moekai already in special.map, file untouched.
 else
-  mkdir -p ${PREFIX}/share/texmf/fonts/truetype/moe
-  install -c -o root -g wheel -m 644 ${DISTDIR}/moe_kai.ttf ${PREFIX}/share/texmf/fonts/truetype/moe
-  # moe_sung.ttf -> moe_song.ttf
-  install -c -o root -g wheel -m 644 ${DISTDIR}/moe_sung.ttf ${PREFIX}/share/texmf/fonts/truetype/moe/moe_sung.ttf
-
-  # fontname/special.map
-  if [ -n "`grep moekai ${PREFIX}/share/texmf/fontname/special.map`" ]
-  then
-    echo Seems moekai already in spcial.map, file untouched.
-  else
-    echo "@c BIG5 MOE TTF fonts" >> ${PREFIX}/share/texmf/fontname/special.map
-    echo "moekai		big5		moekai" >> ${PREFIX}/share/texmf/fontname/special.map
-  fi
-  if [ -n "`grep moesung ${PREFIX}/share/texmf/fontname/special.map`" ]
-  then
-    echo Seems moesung already in spcial.map, file untouched.
-  else
-    echo "@c BIG5 MOE TTF fonts" >> ${PREFIX}/share/texmf/fontname/special.map
-    echo "moesung		big5		moesung" >> ${PREFIX}/share/texmf/fontname/special.map
-  fi
-
-  # ttf2pk/ttfonts.map
-  if [ -n "`grep moekai ${PREFIX}/share/texmf/ttf2pk/ttfonts.map`" ]
-  then
-    echo Seems moekai already in ttfonts.map, file untouched.
-  else
-    echo "moekai@Big5.sfd@   moe_kai Pid=3 Eid=4" >> ${PREFIX}/share/texmf/ttf2pk/ttfonts.map
-  fi
-  if [ -n "`grep moesung ${PREFIX}/share/texmf/ttf2pk/ttfonts.map`" ]
-  then
-    echo Seems moesung already in ttfonts.map, file untouched.
-  else
-    echo "moesung@Big5.sfd@   moe_sung Pid=3 Eid=4" >> ${PREFIX}/share/texmf/ttf2pk/ttfonts.map
-  fi
-
-  # web2c/texmf.cnf
-  if [ -n "`grep TTF2PKINPUTS ${PREFIX}/share/texmf/web2c/texmf.cnf`" ]
-  then
-    echo Seems TTF2PKINPUTS already set in texmf.cnf, file untouched.
-  else
-    echo "% ttf2pk data directory" >> ${PREFIX}/share/texmf/web2c/texmf.cnf
-    echo "TTF2PKINPUTS = \$TEXMF/ttf2pk//" >> ${PREFIX}/share/texmf/web2c/texmf.cnf
-  fi
-  if [ -n "`grep TTF2TFMINPUTS ${PREFIX}/share/texmf/web2c/texmf.cnf`" ]
-  then
-    echo Seems TTF2TFMINPUTS already set in texmf.cnf, file untouched.
-  else
-    echo "% ttf2tfm data directory" >> ${PREFIX}/share/texmf/web2c/texmf.cnf
-    echo "TTF2TFMINPUTS = \$TEXMF/ttf2pk//" >> ${PREFIX}/share/texmf/web2c/texmf.cnf
-  fi
-
-  # tex/latex/CJK/Bg5/c00kai.fd
-  if [ -n "`grep moekai ${PREFIX}/share/texmf/tex/latex/CJK/Bg5/c00kai.fd`" ]
-  then
-    echo Seems moekai already in c00kai.fd, file untouched.
-  else
-    (cd ${PREFIX}/share/texmf/tex/latex/CJK/Bg5;
-     cp c00kai.fd c00kai.fd.orig;
-     sed -e "s/b5ka12/moekai/" c00kai.fd.orig > c00kai.fd;
-    )
-  fi
-
-  # tex/latex/CJK/Bg5/c00song.fd
-  if [ -n "`grep moesung ${PREFIX}/share/texmf/tex/latex/CJK/Bg5/c00song.fd`" ]
-  then
-    echo Seems moesung already in c00song.fd, file untouched.
-  else
-    (cd ${PREFIX}/share/texmf/tex/latex/CJK/Bg5;
-     cp c00song.fd c00song.fd.orig;
-     sed -e "s/CJKsub \* kai\/m\/n/CJK \* moesung/" c00song.fd.orig > c00song.fd;
-     mv c00song.fd c00song.fd.tmp;
-     sed -e "s/CJKsub \* kai\/bx\/n/CJKb \* moesung/" c00song.fd.tmp > c00song.fd;
-     rm c00song.fd.tmp;
-    )
-  fi
-
-  # Generate tfm fonts for moekai/moesung.
-  texconfig rehash  # Update ls-R
-  mkdir -p ${VARTEXFONTS}/tfm/moe/moekai ${VARTEXFONTS}/tfm/moe/moesung
-  (cd ${VARTEXFONTS}/tfm/moe/moekai; ttf2tfm moe_kai -P 3 -E 4 moekai@Big5@)
-  (cd ${VARTEXFONTS}/tfm/moe/moesung; ttf2tfm moe_sung -P 3 -E 4 moesung@Big5@)
-
+  echo "@c BIG5 MOE TTF fonts" >> ${PREFIX}/share/texmf/fontname/special.map
+  echo "moekai		big5		moekai" >> ${PREFIX}/share/texmf/fontname/special.map
 fi
+if [ -n "`grep moesung ${PREFIX}/share/texmf/fontname/special.map`" ]
+then
+  echo Seems moesung already in special.map, file untouched.
+else
+  echo "@c BIG5 MOE TTF fonts" >> ${PREFIX}/share/texmf/fontname/special.map
+  echo "moesung		big5		moesung" >> ${PREFIX}/share/texmf/fontname/special.map
+fi
+if [ -n "`grep moelishu ${PREFIX}/share/texmf/fontname/special.map`" ]
+then
+  echo Seems moelishu already in special.map, file untouched.
+else
+  echo "@c BIG5 MOE TTF fonts" >> ${PREFIX}/share/texmf/fontname/special.map
+  echo "moelishu	big5		moelishu" >> ${PREFIX}/share/texmf/fontname/special.map
+fi
+
+# ttf2pk/ttfonts.map
+if [ -n "`grep moekai ${PREFIX}/share/texmf/ttf2pk/ttfonts.map`" ]
+then
+  echo Seems moekai already in ttfonts.map, file untouched.
+else
+  echo "moekai@Big5.sfd@   moe_kai Pid=3 Eid=4" >> ${PREFIX}/share/texmf/ttf2pk/ttfonts.map
+fi
+if [ -n "`grep moesung ${PREFIX}/share/texmf/ttf2pk/ttfonts.map`" ]
+then
+  echo Seems moesung already in ttfonts.map, file untouched.
+else
+  echo "moesung@Big5.sfd@   moe_sung Pid=3 Eid=4" >> ${PREFIX}/share/texmf/ttf2pk/ttfonts.map
+fi
+if [ -n "`grep moelishu ${PREFIX}/share/texmf/ttf2pk/ttfonts.map`" ]
+then
+  echo Seems moelishu already in ttfonts.map, file untouched.
+else
+  echo "moelishu@Big5.sfd@   moe_lishu Pid=3 Eid=4" >> ${PREFIX}/share/texmf/ttf2pk/ttfonts.map
+fi
+
+# web2c/texmf.cnf
+if [ -n "`grep TTF2PKINPUTS ${PREFIX}/share/texmf/web2c/texmf.cnf`" ]
+then
+  echo Seems TTF2PKINPUTS already set in texmf.cnf, file untouched.
+else
+  echo "% ttf2pk data directory" >> ${PREFIX}/share/texmf/web2c/texmf.cnf
+  echo "TTF2PKINPUTS = \$TEXMF/ttf2pk//" >> ${PREFIX}/share/texmf/web2c/texmf.cnf
+fi
+if [ -n "`grep TTF2TFMINPUTS ${PREFIX}/share/texmf/web2c/texmf.cnf`" ]
+then
+  echo Seems TTF2TFMINPUTS already set in texmf.cnf, file untouched.
+else
+  echo "% ttf2tfm data directory" >> ${PREFIX}/share/texmf/web2c/texmf.cnf
+  echo "TTF2TFMINPUTS = \$TEXMF/ttf2tfm//" >> ${PREFIX}/share/texmf/web2c/texmf.cnf
+fi
+
+# tex/latex/CJK/Bg5/c00kai.fd
+if [ -n "`grep moekai ${PREFIX}/share/texmf/tex/latex/CJK/Bg5/c00kai.fd`" ]
+then
+  echo Seems moekai already in c00kai.fd, file untouched.
+else
+  (cd ${PREFIX}/share/texmf/tex/latex/CJK/Bg5;
+   cp c00kai.fd c00kai.fd.orig;
+   sed -e "s/b5ka12/moekai/" c00kai.fd.orig > c00kai.fd;
+  )
+fi
+
+# tex/latex/CJK/Bg5/c00song.fd
+if [ -n "`grep moesung ${PREFIX}/share/texmf/tex/latex/CJK/Bg5/c00song.fd`" ]
+then
+  echo Seems moesung already in c00song.fd, file untouched.
+else
+  (cd ${PREFIX}/share/texmf/tex/latex/CJK/Bg5;
+   cp c00song.fd c00song.fd.orig;
+   sed -e "s/CJKsub \* kai\/m\/n/CJK \* moesung/" c00song.fd.orig > c00song.fd;
+   mv c00song.fd c00song.fd.tmp;
+   sed -e "s/CJKsub \* kai\/bx\/n/CJKb \* moesung/" c00song.fd.tmp > c00song.fd;
+   rm c00song.fd.tmp;
+  )
+fi
+
+rm ${PREFIX}/share/texmf/tex/latex/CJK/Bg5/c00lishu.fd.orig
+
+# Generate tfm fonts for moekai/moesung/moelishu.
+texconfig rehash  # Update ls-R
+mkdir -p ${VARTEXFONTS}/tfm/moe/moekai ${VARTEXFONTS}/tfm/moe/moesung ${VARTEXFONTS}/tfm/moe/moelishu
+(cd ${VARTEXFONTS}/tfm/moe/moekai; ttf2tfm moe_kai -P 3 -E 4 moekai@Big5@)
+(cd ${VARTEXFONTS}/tfm/moe/moesung; ttf2tfm moe_sung -P 3 -E 4 moesung@Big5@)
+(cd ${VARTEXFONTS}/tfm/moe/moelishu; ttf2tfm moe_lishu -P 3 -E 4 moelishu@Big5@)
 
 # Update ${TEXMF} tree
 texconfig rehash
@@ -135,15 +150,17 @@ echo
 echo "Use 'bg5latex' instead of 'latex'. You may run 'bg5latex Big5.tex'"
 echo "to check its output. CJK.doc & commands.doc are good starting"
 echo "points."
-if [ -z "${NOTTF}" ]
-then
 echo
-echo "FYI, moe_kai.ttf has some characters loss. These includes:"
+echo "FYI, moe_kai.ttf has some characters lost. These includes:"
 echo "   0xb9a6 0xbcb5 0xd974 0xdb57 0xdd7c 0xe0b5 0xe2e9 0xe351"
 echo "   0xe3c4 0xe5bf 0xe5c1 0xe7ec 0xec52 0xf374 0xf6dd"
-echo "But moe_sung.ttf has these all."
+echo
+echo "Numerous characters are not available in moe_lishu.ttf. It's"
+echo "included only for reference."
+echo
+echo "But moe_sung.ttf has these all. :)"
+echo
 echo "Thanks to Clem Chuang <b5506056@csie.ntu.edu.tw> for this info."
-fi
 echo
 echo "Happy CJKing!"
 echo "----------------------------------------------------------------------"
