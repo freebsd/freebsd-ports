@@ -1,0 +1,19 @@
+--- Makefile.orig	Tue Aug 19 18:15:11 2003
++++ Makefile	Tue Aug 19 18:33:06 2003
+@@ -0,0 +1,16 @@
++NOPROFILE=	true
++CXXFLAGS+=	-Wno-deprecated 
++LIB=		cabinet
++LIBDIR=		${PREFIX}/lib
++INCSDIR=	${PREFIX}/include/cabinet
++INCDIR=		${INCSDIR}		# for pre-bsd.incs.mk API
++SHLIB_MAJOR=	1
++SHLIB_MINOR=	0
++SRCS=		bstring.cpp cfcreate.cpp cfdblock.cpp cffdrmgr.cpp cffile.cpp \
++		cffolder.cpp cfheader.cpp cfreader.cpp cftypes.cpp object.cpp
++INCS=		bstring.h cfcreate.h cfdblock.h cffdrmgr.h cffile.h cffolder.h \
++		cfheader.h cfreader.h cftypes.h darray.h dos_comp.h object.hpp \
++		queue.hpp
++LDADD=		-lz
++
++.include <bsd.lib.mk>
