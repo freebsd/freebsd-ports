@@ -1,24 +1,32 @@
 bin/kbiff
-share/applnk/Internet
+share/applnk/Internet/kbiff.kdelnk
+share/apps/kbiff/pics/delete.xpm
+share/apps/kbiff/pics/mailbox.xpm
 share/apps/kbiff/pics/mini-newmail.xpm
 share/apps/kbiff/pics/mini-nomail.xpm
 share/apps/kbiff/pics/mini-oldmail.xpm
 share/apps/kbiff/pics/newmail.xpm
 share/apps/kbiff/pics/nomail.xpm
 share/apps/kbiff/pics/oldmail.xpm
-share/doc/HTML/en/kbiff/index-1.html
-share/doc/HTML/en/kbiff/index-2.html
-share/doc/HTML/en/kbiff/index-3.html
-share/doc/HTML/en/kbiff/index-4.html
-share/doc/HTML/en/kbiff/index-5.html
-share/doc/HTML/en/kbiff/index-6.html
-share/doc/HTML/en/kbiff/index.html
-share/doc/HTML/en/kbiff/kbiff.gif
-share/icons
+share/doc/HTML/en/kbiff/kbiff-1.html
+share/doc/HTML/en/kbiff/kbiff-2.html
+share/doc/HTML/en/kbiff/kbiff-3.html
+share/doc/HTML/en/kbiff/kbiff-4.html
+share/doc/HTML/en/kbiff/kbiff-5.html
+share/doc/HTML/en/kbiff/kbiff-6.html
+share/doc/HTML/en/kbiff/kbiff.html
+share/doc/HTML/en/kbiff/logotp3.gif
 share/icons/mini/kbiff.xpm
+share/icons/kbiff.xpm
+share/locale/cs/LC_MESSAGES/kbiff.mo
+share/locale/de/LC_MESSAGES/kbiff.mo
+share/locale/fi/LC_MESSAGES/kbiff.mo
 share/locale/no/LC_MESSAGES/kbiff.mo
-share/locale/pt/LC_MESSAGES/kbiff.mo
-@dirrm share/doc/HTML/en/kbiff
-@dirrm share/doc/HTML/en
+share/locale/pl/LC_MESSAGES/kbiff.mo
+share/locale/pt_BR/LC_MESSAGES/kbiff.mo
+share/locale/ru/LC_MESSAGES/kbiff.mo
+share/locale/sk/LC_MESSAGES/kbiff.mo
+share/locale/sv/LC_MESSAGES/kbiff.mo
 @dirrm share/apps/kbiff/pics
 @dirrm share/apps/kbiff
+@dirrm share/doc/HTML/en/kbiff
