@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	samba
-PORTVERSION=	2.2.11
-PORTREVISION=	1
+PORTVERSION=	2.2.12
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SAMBA}
 MASTER_SITE_SUBDIR=	. old-versions
@@ -113,7 +112,11 @@ CONFIGURE_ARGS+=	--with-utmp
 CONFIGURE_ARGS+=	--with-msdfs
 .endif
 
+.if defined(WITH_INCLUDED_POPT)
+CONFIGURE_ARGS+=	--with-included-popt
+.else
 LIB_DEPENDS+=	popt.0:${PORTSDIR}/devel/popt
+.endif
 
 .if defined(WITH_LDAP)
 USE_OPENLDAP=	yes
