@@ -123,6 +123,7 @@
     SUBDIR += splay
     SUBDIR += splaytk
     SUBDIR += streamripper
+    SUBDIR += sweep
     SUBDIR += tclmidi
     SUBDIR += teknap
     SUBDIR += timidity

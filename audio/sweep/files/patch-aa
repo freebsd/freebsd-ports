@@ -1,0 +1,11 @@
+--- src/file_ops.c	2000/09/25 09:15:46	1.1
++++ src/file_ops.c	2000/09/25 09:15:49
+@@ -54,7 +54,7 @@
+   if (!pathname) return NULL;
+ 
+   samplefile = afOpenFile(pathname, "r", NULL);
+-  if (samplefile <= 0)
++  if (samplefile == AF_NULL_FILEHANDLE)
+     /*    return (int) samplefile;*/
+     return NULL;
+ 
