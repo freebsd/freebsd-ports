@@ -1,0 +1,5 @@
+--- config.h.in.orig	Sun Jul  2 15:12:55 1995
++++ config.h.in	Sun Sep  8 17:15:59 2002
+@@ -28 +28 @@
+-#undef HAVE_STRNCASECMP_PROTO
++#define HAVE_STRNCASECMP_PROTO 1
