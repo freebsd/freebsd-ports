@@ -13,6 +13,7 @@
     SUBDIR += asm2html
     SUBDIR += aspell
     SUBDIR += bedic-data
+    SUBDIR += bg-aspell
     SUBDIR += bib2html
     SUBDIR += bibtex2html
     SUBDIR += bidiv
@@ -94,10 +95,12 @@
     SUBDIR += foiltex
     SUBDIR += fop
     SUBDIR += freegrep
+    SUBDIR += ga-aspell
     SUBDIR += galax
     SUBDIR += gauche-sxml
     SUBDIR += gdict
     SUBDIR += gdome2
+    SUBDIR += gl-aspell
     SUBDIR += glark
     SUBDIR += glimpse
     SUBDIR += gmat
@@ -116,6 +119,7 @@
     SUBDIR += hevea
     SUBDIR += hgrep
     SUBDIR += highlight
+    SUBDIR += hr-aspell
     SUBDIR += hs-haxml
     SUBDIR += htdig
     SUBDIR += html
@@ -125,6 +129,7 @@
     SUBDIR += htmldoc
     SUBDIR += htmlsection
     SUBDIR += htmltolatex
+    SUBDIR += id-aspell
     SUBDIR += iiimf-client-lib
     SUBDIR += iiimf-csconv
     SUBDIR += iiimf-gtk
@@ -137,6 +142,7 @@
     SUBDIR += info_to_html
     SUBDIR += intltool
     SUBDIR += ipdf
+    SUBDIR += is-aspell
     SUBDIR += isearch
     SUBDIR += iso12083
     SUBDIR += iso8879
@@ -183,10 +189,12 @@
     SUBDIR += meld
     SUBDIR += mgdiff
     SUBDIR += mguesser
+    SUBDIR += mi-aspell
     SUBDIR += mifluz
     SUBDIR += minidom
     SUBDIR += mkcatalog
     SUBDIR += modlogan
+    SUBDIR += ms-aspell
     SUBDIR += nfbtrans
     SUBDIR += nicetext
     SUBDIR += nl-aspell
@@ -492,6 +500,7 @@
     SUBDIR += silvercity
     SUBDIR += sk-aspell
     SUBDIR += skribe
+    SUBDIR += sl-aspell
     SUBDIR += smartdoc
     SUBDIR += smartdoc-devel
     SUBDIR += source-highlight
