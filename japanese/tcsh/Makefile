@@ -3,7 +3,7 @@
 # Date created:		29 November 1997
 # Whom:			issei <issei@t-cnet.or.jp>
 #
-# $Id: Makefile,v 1.12 1997/10/11 10:42:43 jkh Exp $
+# $Id: Makefile,v 1.1.1.1 1997/12/27 19:04:12 max Exp $
 #
 
 DISTNAME=	tcsh-6.07
@@ -42,6 +42,6 @@ post-install:
 .endif
 	@${ECHO} "updating /etc/shells"
 	@${CP} /etc/shells /etc/shells.bak
-	@(grep -v ${PREFIX}/tcsh /etc/shells.bak; ${ECHO} ${PREFIX}/tcsh) >/etc/shells
+	@(grep -v ${PREFIX}/bin/tcsh /etc/shells.bak; ${ECHO} ${PREFIX}/bin/tcsh) >/etc/shells
 
 .include <bsd.port.mk>
