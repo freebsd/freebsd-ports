@@ -9,9 +9,7 @@ PORTNAME=		gnats
 PORTVERSION=		4.0
 PORTREVISION=		2
 CATEGORIES=		databases devel
-MASTER_SITES=		http://home.pacific.net.au/~meganandaj/ \
-			http://www.yngve.com/%SUBDIR%/ \
-			# ${MASTER_SITE_GNU}
+MASTER_SITES=		${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	gnats
 
 MAINTAINER=		eik@FreeBSD.org
