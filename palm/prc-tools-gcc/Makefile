@@ -16,7 +16,8 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 
 MAINTAINER=	kuriyama@FreeBSD.org
 
-BUILD_DEPENDS=	${PREFIX}/bin/m68k-palmos-as:${PORTSDIR}/palm/prc-tools-binutils
+BUILD_DEPENDS=	${PREFIX}/bin/m68k-palmos-as:${PORTSDIR}/palm/prc-tools-binutils \
+		${LOCALBASE}/bin/autoheader:${PORSDIR}/devel/autoconf
 
 USE_BISON=	YES
 USE_GMAKE=	YES
