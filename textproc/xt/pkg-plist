@@ -2,13 +2,17 @@ bin/xt-xml4j
 share/java/classes/sax.jar
 share/java/classes/xt.jar
 share/java/xt/copying.txt
+share/java/xt/demo/DOMDemo.java
 share/java/xt/demo/date.xsl
 share/java/xt/demo/multiout.xsl
 share/java/xt/demo/nxml.xsl
+share/java/xt/demo/out.xml
 share/java/xt/demo/out1.xml
 share/java/xt/demo/out2.xml
 share/java/xt/demo/slides.xml
 share/java/xt/demo/slides.xsl
+share/java/xt/demo/sort-uniq.xml
+share/java/xt/demo/sort-uniq.xsl
 share/java/xt/demo/split.xml
 share/java/xt/demo/split.xsl
 share/java/xt/demo/textfile.xml
