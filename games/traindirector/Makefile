@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	tdir
-PORTVERSION=	1.18e
+PORTVERSION=	1.18i
 CATEGORIES=	games
-MASTER_SITES=	http://xtsl.free.fr/118e/
+MASTER_SITES=	http://xtsl.free.fr/118i/
 DISTNAME=	traindir-${PORTVERSION}-src
 WRKSRC=		${WRKDIR}/traindir-${PORTVERSION}
 
@@ -28,7 +28,7 @@ post-extract:
 .endfor
 
 post-patch:
-	${REINPLACE_CMD} -e 's#PREFIX#$(PREFIX)#' $(WRKSRC)/setup_trdir.sh
+	${REINPLACE_CMD} -e 's#PREFIX#${PREFIX}#' ${WRKSRC}/setup_trdir.sh
 
 post-configure:
 	${REINPLACE_CMD} -e 's,\#include \<malloc.h\>,/* include malloc.h */,' \
