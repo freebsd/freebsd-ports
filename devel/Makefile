@@ -831,6 +831,7 @@
     SUBDIR += p5-Test-Manifest
     SUBDIR += p5-Test-MockObject
     SUBDIR += p5-Test-Pod
+    SUBDIR += p5-Test-Reporter
     SUBDIR += p5-Test-Simple
     SUBDIR += p5-Test-Unit
     SUBDIR += p5-Tie-Cache

@@ -1,0 +1,7 @@
+Test::Reporter reports the test results of any given distribution
+to the CPAN testing service. See http://testers.cpan.org/ for
+details.
+
+Test::Reporter has wide support for various perl5's and platforms.
+
+WWW: http://search.cpan.org/dist/Test-Reporter/
