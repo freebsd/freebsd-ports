@@ -7,12 +7,12 @@
 
 PORTNAME=	mosfet-liquid
 PORTVERSION=	0.9.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm kde
-#MASTER_SITES=	http://www.mosfet.org/
+MASTER_SITES=	http://virtual-estates.net/~mi/port-stuff/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	mi@FreeBSD.org
+MAINTAINER=	mi@aldan.algebra.com
 
 BUILD_DEPENDS=	automake:${PORTSDIR}/devel/automake \
 		autoconf:${PORTSDIR}/devel/autoconf
