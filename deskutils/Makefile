@@ -64,6 +64,7 @@
     SUBDIR += multisync
     SUBDIR += multisync-backup
     SUBDIR += multisync-evolution
+    SUBDIR += multisync-syncml
     SUBDIR += nag
     SUBDIR += narval
     SUBDIR += notebook
