@@ -1,0 +1,5 @@
+RFC2822 introduces a slightly different format of date than that used by
+RFC822. The main correction is that the format is more limited, and thus easier
+to parse.
+
+WWW: http://datetime.perl.org/
