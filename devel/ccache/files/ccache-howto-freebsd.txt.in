@@ -18,11 +18,11 @@ CXX=/usr/bin/c++
 .endif
 
 For Korn/Bourne shells Add the following to /etc/profile:
- export PATH=%%LOCALBASE%%/libexec/ccache/:$PATH
+ export PATH=%%PREFIX%%/libexec/ccache/:$PATH
  export CCACHE_PATH=/usr/bin:%%LOCALBASE%%/bin
 
 For csh/tcsh Add the following to /etc/csh.cshrc:
- setenv PATH %%LOCALBASE%%/libexec/ccache/:$PATH
+ setenv PATH %%PREFIX%%/libexec/ccache/:$PATH
  setenv CCACHE_PATH /usr/bin:%%LOCALBASE%%/bin
 
 --
@@ -54,3 +54,15 @@ build will fail because it will not be able to find the compiler.
 
 Any time you change CC/CXX you need to reinstall devel/libtool15 or you 
 will run in to problems.
+
+--
+
+Ccache's default cache size is 1GB and this is larger than the default size of
+the root partition (/) on FreeBSD. To over come this you may specify a new 
+cache location on a different partition with the following examples.
+
+For Korn/Bourne shells Add the following to /etc/profile:
+ export CCACHE_DIR=/usr/.ccache
+
+For csh/tcsh Add the following to /etc/csh.cshrc
+ setenv DISTCC_HOSTS "/usr/.ccache"
