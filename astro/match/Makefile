@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	match
-PORTVERSION=	0.4
+PORTVERSION=	0.5
 CATEGORIES=	astro
 MASTER_SITES=	http://acd188a-005.rit.edu/match/
 
