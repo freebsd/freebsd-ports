@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	cbrpager
-PORTVERSION=	0.9.9
-PORTREVISION=	1
+PORTVERSION=	0.9.11
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -22,6 +21,5 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 PLIST_FILES=	bin/cbrpager share/locale/es/LC_MESSAGES/cbrpager.mo
-PLIST_DIRS=	share/locale/es/LC_MESSAGES
 
 .include <bsd.port.mk>
