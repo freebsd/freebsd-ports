@@ -36,6 +36,14 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 FONTNAME=	${PORTNAME}
 FONTSDIR?=	${PREFIX}/lib/X11/fonts/${FONTNAME}
 
+.include <bsd.port.pre.mk>
+
+.if ${X_WINDOW_SYSTEM:L} == xfree86-3
+MTREE_FILE=	/etc/mtree/BSD.x11.dist
+.else
+MTREE_FILE=	/etc/mtree/BSD.x11-4.dist
+.endif
+
 .SILENT:
 
 post-patch:
@@ -75,4 +83,4 @@ post-install:
 	${CAT} ${PKGMESSAGE}
 	${ECHO_MSG}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
