@@ -1,8 +1,6 @@
 PACKAGE		= tls
 VERSION		?= ${PORTVERSION}
-LIB		= ${PACKAGE}
-SHLIB_MAJOR	= ${VERSION:R}
-SHLIB_MINOR	= ${VERSION:E}
+SHLIB_NAME	= lib${PACKAGE}.so.${VERSION:R}
 
 SRCS		= tls.c tlsIO.c tlsBIO.c tlsX509.c # fixstrtod.c strncasecmp.c
 
@@ -24,8 +22,6 @@ LDADD		+= ${TCL_STUB_LIB_SPEC} -L${OPENSSLLIB} -lcrypto -lssl
 CFLAGS		+=-I${PREFIX}/include/tcl${TCL_VER} -I${OPENSSLINC}
 CFLAGS		+=-DNDEBUG -I. -DUSE_TCL_STUBS -I${PREFIX}/include
 CFLAGS		+=-DVERSION=\"${VERSION}\" -DPACKAGE=\"${PACKAGE}\"
-
-INTERNALLIB	= don't build the useless static version
 
 all: ${SHLIB_NAME} pkgIndex.tcl
 

@@ -1,6 +1,5 @@
-LIB=	Memchan
-SHLIB_MAJOR=	2
-SHLIB_MINOR=	2
+LIBNAME=	Memchan
+SHLIB_NAME=	lib${LIBNAME}.so.2
 
 .PATH:	${.CURDIR}/generic
 
@@ -17,16 +16,13 @@ CFLAGS+=	-I${LOCALBASE}/include/tcl${TCL_VER} \
 
 LDADD=		-L${LOCALBASE}/lib -ltcl${TCL_VER:S/.//}
 
-INTERNALLIB	= don't build the useless static version
-NOPROFILE	= don't care for profiling
-
-all: ${SHLIB_NAME} pkgIndex.tcl test
+all: pkgIndex.tcl test
 
 pkgIndex.tcl:
-	echo 'package ifneeded ${LIB} ${SHLIB_MAJOR}.${SHLIB_MINOR} \
+	echo 'package ifneeded ${LIBNAME} ${SHLIB_MAJOR}.${SHLIB_MINOR} \
 		[list load [file join $$dir $(SHLIB_NAME)]]' > pkgIndex.tcl
 
-DIR             = lib/tcl${TCL_VER}/${LIB}
+DIR             = lib/tcl${TCL_VER}/${LIBNAME}
 SHLIBDIR        = ${PREFIX}/${DIR}
 MANDIR          = ${PREFIX}/man/man
 
@@ -43,7 +39,7 @@ beforeinstall: ${SHLIBDIR} pkgIndex.tcl
 
 test:	${SHLIB_NAME} pkgIndex.tcl
 	echo '	set auto_path ${.OBJDIR}; cd ${.CURDIR}/tests; \
-		package require ${LIB} ${SHLIB_MAJOR}.${SHLIB_MINOR}; \
+		package require ${LIBNAME} ${SHLIB_MAJOR}.${SHLIB_MINOR}; \
 		if {[catch {source all} msg]} { \
 			puts stderr $msg; exit -1 \
 		}' | ${LOCALBASE}/bin/tclsh${TCL_VER}
