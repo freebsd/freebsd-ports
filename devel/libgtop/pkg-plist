@@ -1,13 +1,9 @@
+bin/libgtop-config
 bin/libgtop_daemon
 bin/libgtop_server
-bin/libgtop-config
-etc/libgtopConf.sh
 etc/libgtop-features.def
+etc/libgtopConf.sh
 include/glibtop.h
-include/glibtop-config.h
-include/glibtop_machine.h
-include/glibtop_server.h
-include/glibtop_suid.h
 include/glibtop/close.h
 include/glibtop/command.h
 include/glibtop/cpu.h
@@ -16,7 +12,6 @@ include/glibtop/fsusage.h
 include/glibtop/global.h
 include/glibtop/gnuserv.h
 include/glibtop/inodedb.h
-include/glibtop/limits.h
 include/glibtop/loadavg.h
 include/glibtop/mem.h
 include/glibtop/mountlist.h
@@ -49,6 +44,9 @@ include/glibtop/uptime.h
 include/glibtop/version.h
 include/glibtop/write.h
 include/glibtop/xmalloc.h
+include/glibtop_machine.h
+include/glibtop_server.h
+include/glibtop_suid.h
 @unexec install-info --delete %D/info/libgtop.info %D/info/dir
 info/libgtop.info
 @exec install-info %D/info/libgtop.info %D/info/dir
@@ -78,12 +76,8 @@ lib/libgtop_sysdeps_suid.so
 lib/libgtop_sysdeps_suid.so.1
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
+share/locale/da/LC_MESSAGES/libgtop.mo
 share/locale/de/LC_MESSAGES/libgtop.mo
-share/locale/fi/LC_MESSAGES/libgtop.mo
-share/locale/fr/LC_MESSAGES/libgtop.mo
-share/locale/ja/LC_MESSAGES/libgtop.mo
-share/locale/no/LC_MESSAGES/libgtop.mo
-share/locale/ko/LC_MESSAGES/libgtop.mo
 share/locale/es/LC_MESSAGES/libgtop.mo
 share/locale/es_DO/LC_MESSAGES/libgtop.mo
 share/locale/es_GT/LC_MESSAGES/libgtop.mo
@@ -92,4 +86,13 @@ share/locale/es_MX/LC_MESSAGES/libgtop.mo
 share/locale/es_PA/LC_MESSAGES/libgtop.mo
 share/locale/es_PE/LC_MESSAGES/libgtop.mo
 share/locale/es_SV/LC_MESSAGES/libgtop.mo
+share/locale/fi/LC_MESSAGES/libgtop.mo
+share/locale/fr/LC_MESSAGES/libgtop.mo
+share/locale/gl/LC_MESSAGES/libgtop.mo
+share/locale/ja/LC_MESSAGES/libgtop.mo
+share/locale/ko/LC_MESSAGES/libgtop.mo
+share/locale/nl/LC_MESSAGES/libgtop.mo
+share/locale/no/LC_MESSAGES/libgtop.mo
+share/locale/pl/LC_MESSAGES/libgtop.mo
+share/locale/sv/LC_MESSAGES/libgtop.mo
 @dirrm include/glibtop
