@@ -1,0 +1,21 @@
+======================================================================
+In order to use nautilus-cd-burner, you must make sure your CD devices
+have the correct permissions.  You must also make sure you have:
+
+device		atapicam
+
+Configured in your kernel if you are using an ATAPI CD/DVD writer.
+To figure out which CD/DVD drive you will be using, run the following
+command as root:
+
+camcontrol devlist
+
+Your output will look similar to the following:
+
+<CREATIVE CD5233E-N 0.20>          at scbus1 target 0 lun 0 (cd0,pass0)
+
+The devices in parantheses at the end are important.  You must make sure
+the /dev entries for those devices are writable by the users that will
+be using nautilus-cd-burner.  In addition to those devices, /dev/xpt*
+must also be writable to your nautilus-cd-burner users.
+======================================================================

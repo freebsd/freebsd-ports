@@ -1,0 +1,6 @@
+nautilus-cd-burner is an extension to Nautilus that makes it easy to
+write files to a CD burner.
+
+The user uses Nautilus or another gnome-vfs aware app to copy the
+files he wants to write to burn:///, and then nautilus-cd-burner is
+launched in some way to write the files to the CD.
