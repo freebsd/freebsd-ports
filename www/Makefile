@@ -198,14 +198,14 @@
     SUBDIR += p5-Apache-SSI
     SUBDIR += p5-Apache-Session
     SUBDIR += p5-Apache-Session-SharedMem
-    SUBDIR += p5-CGI
-    SUBDIR += p5-CGI.pm
-    SUBDIR += p5-CGI_Lite
     SUBDIR += p5-CGI-Application
     SUBDIR += p5-CGI-ArgChecker
     SUBDIR += p5-CGI-Cache
     SUBDIR += p5-CGI-FastTemplate
     SUBDIR += p5-CGI-Minimal
+    SUBDIR += p5-CGI-modules
+    SUBDIR += p5-CGI.pm
+    SUBDIR += p5-CGI_Lite
     SUBDIR += p5-FastCGI
     SUBDIR += p5-GtkHTML
     SUBDIR += p5-HTML
