@@ -8,7 +8,7 @@
  CC=gcc
  
  OFILES=		basic.o ebcdic.o fileio.o region.o text.o wangpc.o \
-@@ -16,10 +16,17 @@
+@@ -16,10 +16,16 @@
  
  HFILES=     def.h prototyp.h
  
@@ -18,11 +18,10 @@
 +	$(CC) $(CFLAGS) $(OFILES) -ltermcap -o beav
 +
 +install: beav
-+	install -c -s -m 755 -g bin -o bin beav $(PREFIX)/bin
++	$(BSD_INSTALL_PROGRAM) beav $(PREFIX)/bin
 +	mkdir -p $(PREFIX)/share/doc/beav
-+	install -c -m 644 -g bin -o bin beav140.txt $(PREFIX)/share/doc/beav/beav.txt
-+	install -c -m 644 -g bin -o bin beav.1 $(PREFIX)/man/man1
-+	gzip -9nf $(PREFIX)/man/man1/beav.1
++	$(BSD_INSTALL_DATA) beav140.txt $(PREFIX)/share/doc/beav/beav.txt
++	$(BSD_INSTALL_MAN) beav.1 $(PREFIX)/man/man1
  
  clean:
  	rm -f *.o beav
