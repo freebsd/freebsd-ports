@@ -3,7 +3,7 @@
 # Date created:		15 March 1995
 # Whom:			Nobuhiro Yasutomi
 #
-# $Id: Makefile,v 1.11 1998/09/21 01:39:09 steve Exp $
+# $Id: Makefile,v 1.12 1998/09/22 22:32:07 asami Exp $
 #
 
 DISTNAME=	emiclock-1.0.4
@@ -21,8 +21,8 @@ EMICLOCKDIR=	$(X11BASE)/lib/X11/EmiClock
 COPYRIGHTS=	COPYRIGHT COPYRIGHT.en
 
 pre-install:
-	@if [ ! -d $(EMICLOCKDIR) ] ; then mkdir -p $(EMICLOCKDIR); fi
-	@if [ ! -d $(LANGDIR) ] ; then mkdir -p $(LANGDIR); fi
+	@if [ ! -d $(EMICLOCKDIR) ] ; then ${MKDIR} $(EMICLOCKDIR); fi
+	@if [ ! -d $(LANGDIR) ] ; then ${MKDIR} $(LANGDIR); fi
 	cd $(WRKSRC); install -c -m 0444 $(LANGRES) $(LANGDIR)/EmiClock
 	cd $(WRKSRC); install -c -m 0444 $(COPYRIGHTS) $(EMICLOCKDIR)
 #	cd $(WRKSRC); make install.man
