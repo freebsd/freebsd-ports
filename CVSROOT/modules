@@ -4922,6 +4922,7 @@ p5-Alias	ports/devel/p5-Alias
 p5-Apache-ASP	ports/www/p5-Apache-ASP
 p5-Apache-AddHostPath	ports/www/p5-Apache-AddHostPath
 p5-Apache-Admin-Config	ports/www/p5-Apache-Admin-Config
+p5-Apache-AntiSpam	ports/www/p5-Apache-AntiSpam
 p5-Apache-Archive	ports/www/p5-Apache-Archive
 p5-Apache-AuthCookie	ports/www/p5-Apache-AuthCookie
 p5-Apache-AuthTicket	ports/www/p5-Apache-AuthTicket
