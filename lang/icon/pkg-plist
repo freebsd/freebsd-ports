@@ -1,20 +1,20 @@
-lib/icon/bin/colrbook
-lib/icon/bin/colrpick
-lib/icon/bin/fontpick
+%%WITHOUT_X11%%lib/icon/bin/colrbook
+%%WITHOUT_X11%%lib/icon/bin/colrpick
+%%WITHOUT_X11%%lib/icon/bin/fontpick
 lib/icon/bin/icont
 @exec ln -sf %B/%f %D/bin/%f
 @unexec rm -f %D/bin/%f
 lib/icon/bin/iconx
 @exec ln -sf %B/%f %D/bin/%f
 @unexec rm -f %D/bin/%f
-lib/icon/bin/ipatch
-lib/icon/bin/palette
+%%WITHOUT_X11%%lib/icon/bin/ipatch
+%%WITHOUT_X11%%lib/icon/bin/palette
 lib/icon/bin/patchstr
-lib/icon/bin/vib
-@exec ln -sf %B/%f %D/bin/%f
-@unexec rm -f %D/bin/%f
-lib/icon/bin/wevents
-lib/icon/bin/xgamma
+%%WITHOUT_X11%%lib/icon/bin/vib
+%%WITHOUT_X11%%@exec ln -sf %B/%f %D/bin/%f
+%%WITHOUT_X11%%@unexec rm -f %D/bin/%f
+%%WITHOUT_X11%%lib/icon/bin/wevents
+%%WITHOUT_X11%%lib/icon/bin/xgamma
 lib/icon/lib/abkform.u1
 lib/icon/lib/abkform.u2
 lib/icon/lib/adjuncts.u1
