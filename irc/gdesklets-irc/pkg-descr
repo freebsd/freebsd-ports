@@ -1,0 +1,13 @@
+This desklet allows you to chat in your screen background.
+
+Features:
+* Use the mouse scroll wheel to scroll through history.
+* Integrated Text-To-Speech through Festival
+* Dynamically resizable borders
+* Tab completion on nicks and commands
+* Log text to a file
+* Text wrapping
+* Login to secure channels with username and password
+* i18n support 
+
+WWW: http://gdesklets.gnomedesktop.org/

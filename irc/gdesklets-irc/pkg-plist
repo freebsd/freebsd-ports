@@ -1,0 +1,26 @@
+%%DATADIR%%/Displays/irc/gfx/bottom_edge.png
+%%DATADIR%%/Displays/irc/gfx/bottom_left_corner.png
+%%DATADIR%%/Displays/irc/gfx/bottom_right_corner.png
+%%DATADIR%%/Displays/irc/gfx/left_edge.png
+%%DATADIR%%/Displays/irc/gfx/right_edge.png
+%%DATADIR%%/Displays/irc/gfx/top_edge.png
+%%DATADIR%%/Displays/irc/gfx/top_left_corner.png
+%%DATADIR%%/Displays/irc/gfx/top_right_corner.png
+%%DATADIR%%/Displays/irc/irc.display
+%%DATADIR%%/Sensors/irc/__init__.py
+%%DATADIR%%/Sensors/irc/__init__.pyc
+%%DATADIR%%/Sensors/irc/__init__.pyo
+%%DATADIR%%/Sensors/irc/ircbot.py
+%%DATADIR%%/Sensors/irc/ircbot.pyc
+%%DATADIR%%/Sensors/irc/ircbot.pyo
+%%DATADIR%%/Sensors/irc/locale/ko/LC_MESSAGES/irc_sensor.mo
+%%DATADIR%%/Sensors/irc/message_window.py
+%%DATADIR%%/Sensors/irc/message_window.pyc
+%%DATADIR%%/Sensors/irc/message_window.pyo
+@dirrm %%DATADIR%%/Sensors/irc/locale/ko/LC_MESSAGES
+@dirrm %%DATADIR%%/Sensors/irc/locale/ko
+@dirrm %%DATADIR%%/Sensors/irc/locale
+@dirrm %%DATADIR%%/Sensors/irc/gfx
+@dirrm %%DATADIR%%/Sensors/irc
+@dirrm %%DATADIR%%/Displays/irc/gfx
+@dirrm %%DATADIR%%/Displays/irc
