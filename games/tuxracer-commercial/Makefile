@@ -19,6 +19,8 @@ COMMENT=	A 3d penguin racing game using OpenGL
 
 LIB_DEPENDS=	tcl83.1:${PORTSDIR}/lang/tcl83
 
+IGNORE=		is an unfinished repocopy
+
 USE_SDL=	mixer sdl
 USE_GL=	yes
 USE_GMAKE=	yes
