@@ -1,0 +1,30 @@
+--- Makefile.orig	Sat Apr 10 03:11:33 1999
++++ Makefile	Tue Apr 13 17:38:53 1999
+@@ -4,10 +4,10 @@
+ 
+ # Where to install binary and manpage on "make install":
+ 
+-PREFIX=/usr/local
+ BINDIR=$(PREFIX)/bin
+ MANDIR=$(PREFIX)/man
+ SECTION=1
++FLAGS=${CFLAGS}
+ 
+ ###################################################
+ ######                                       ######
+@@ -52,11 +52,11 @@
+ #CFLAGS='-DI386_ASSEM -DREAL_IS_FLOAT -DLINUX -Wall -O2 -m486 -fomit-frame-pointer -funroll-all-loops -finline-functions -ffast-math -malign-loops=2 -malign-jumps=2 -malign-functions=2'
+ 
+ freebsd:
+-	$(MAKE) CC=cc LDFLAGS= \
++	$(MAKE) LDFLAGS= \
+ 		OBJECTS= \
+-		CFLAGS='-Wall -ansi -pedantic -O4 -m486 -fomit-frame-pointer \
+-			-funroll-all-loops -ffast-math -DROT_I386 \
+-			-DI386_ASSEM -DREAL_IS_FLOAT -DUSE_MMAP' \
++		CFLAGS='-fomit-frame-pointer \
++			-funroll-all-loops -ffast-math \
++			-DREAL_IS_FLOAT -DUSE_MMAP ${FLAGS}' \
+ 		greed
+ 
+ solaris:
