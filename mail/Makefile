@@ -67,6 +67,7 @@
     SUBDIR += p5-MIME-Tools
     SUBDIR += p5-Mail-Folder
     SUBDIR += p5-Mail-POP3Client
+    SUBDIR += p5-Mail-Sendmail
     SUBDIR += p5-Mail-Tools
     SUBDIR += pathalias
     SUBDIR += pgp4pine
