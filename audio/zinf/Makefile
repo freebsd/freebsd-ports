@@ -7,7 +7,7 @@
 
 PORTNAME=	zinf
 PORTVERSION=	2.2.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK-based MP3 player
 
-LIB_DEPENDS=	id3-3.8.2:${PORTSDIR}/audio/id3lib \
+LIB_DEPENDS=	id3-3.8.3:${PORTSDIR}/audio/id3lib \
 		musicbrainz.3:${PORTSDIR}/audio/libmusicbrainz \
 		gdbm.3:${PORTSDIR}/databases/gdbm
 
