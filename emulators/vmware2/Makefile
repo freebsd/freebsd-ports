@@ -7,12 +7,7 @@
 #
 
 PORTNAME=	vmware2
-.if defined(WANT_BETA)
-PORTVERSION=	2.0.3.786	# 2.0.3 RC1
-.else
-PORTVERSION=	2.0.2.621
-PORTREVISION=	3
-.endif
+PORTVERSION=	2.0.3.799
 CATEGORIES=	emulators linux
 MASTER_SITES=	http://www4.vmware.com/software/ \
 		${FREEBSD_MODULE_SITES} \
@@ -80,14 +75,10 @@ post-extract:
 .for m in ${MODULES}
 	${TAR} -xf ${WRKSRC}/lib/modules/source/${m}.tar -C ${WRKSRC}
 .endfor
-.if defined(WANT_BETA)
 	${GUNZIP_CMD} ${WRKSRC}/man/man1/vmware.1.gz
-.endif
 
 pre-patch:
-.if defined(WANT_BETA)
 	${PERL} -i -ne 'if (m{^Index: vmnet-only/userif\.c$$}..m{^Index: vmnet-only/vm_oui\.h$$}) { next unless m{^Index: vmnet-only/vm_oui\.h$$} } print' ${WRKDIR}/vmnet-freebsd.diff
-.endif
 .for m in ${MODULES}
 	${CP} -R ${WRKDIR}/${m}-only ${WRKSRC}/
 	${PATCH} ${PATCH_ARGS} < ${WRKDIR}/${m}-freebsd.diff
