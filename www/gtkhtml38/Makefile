@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gtkhtml
-PORTVERSION=	0.16.0
+PORTVERSION=	0.16.1
 CATEGORIES=	www gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	unstable/sources/gtkhtml
@@ -21,11 +21,12 @@ LIB_DEPENDS=	glibwww.1:${PORTSDIR}/www/glibwww \
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOMECTRL=	yes
-USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gconf=yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 pre-patch:
 	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \

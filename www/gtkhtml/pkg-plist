@@ -90,6 +90,7 @@ include/gtkhtml/htmltypes.h
 include/gtkhtml/htmlundo-action.h
 include/gtkhtml/htmlundo.h
 include/gtkhtml/htmlvspace.h
+lib/bonobo/plugin/libstorage_http.a
 lib/bonobo/plugin/libstorage_http.so
 lib/libgtkhtml.a
 lib/libgtkhtml.so
@@ -144,14 +145,6 @@ share/gnome/html/gtkhtml-sections.txt
 share/gnome/html/gtkhtml.hierarchy
 share/gnome/html/gtkhtml.sgml
 share/gnome/html/gtkhtml.types
-share/gnome/html/gtkhtml/gtkhtml-gtkhtml-enums.html
-share/gnome/html/gtkhtml/gtkhtml-gtkhtml-stream.html
-share/gnome/html/gtkhtml/gtkhtml-gtkhtml-types.html
-share/gnome/html/gtkhtml/gtkhtml-gtkhtmlembedded.html
-share/gnome/html/gtkhtml/gtkhtml.html
-share/gnome/html/gtkhtml/index.html
-share/gnome/html/gtkhtml/license.html
-share/gnome/html/gtkhtml/r27.html
 share/gnome/oaf/GNOME_GtkHTML_EBrowser.oaf
 share/gnome/oaf/GNOME_GtkHTML_Editor.oaf
 share/gnome/ui/GNOME_GtkHTML_Editor.xml
@@ -182,9 +175,9 @@ share/locale/sl/LC_MESSAGES/gtkhtml.mo
 share/locale/sv/LC_MESSAGES/gtkhtml.mo
 share/locale/tr/LC_MESSAGES/gtkhtml.mo
 share/locale/uk/LC_MESSAGES/gtkhtml.mo
+share/locale/zh_CN/LC_MESSAGES/gtkhtml.mo
 share/locale/zh_TW/LC_MESSAGES/gtkhtml.mo
 @dirrm share/gnome/html/gtkhtml
 @dirrm share/gnome/gtkhtml/icons
 @dirrm share/gnome/gtkhtml
-@dirrm share/gnome/control-center/capplets
 @dirrm include/gtkhtml
