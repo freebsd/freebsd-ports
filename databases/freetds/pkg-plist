@@ -21,3 +21,4 @@ lib/libsybdb.so.0
 lib/libtds.a
 lib/libtds.so
 lib/libtds.so.0
+@dirrm etc/freetds
