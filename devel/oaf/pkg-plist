@@ -1,22 +1,35 @@
 bin/oaf-client
 bin/oaf-config
 bin/oaf-run-query
+bin/oaf-slay
+bin/oaf-sysconf
 bin/oafd
+etc/oaf/oaf-config.xml
+etc/oaf/oaf-config.xml.sample
 etc/oafConf.sh
-include/liboaf/gnome-factory.h
 include/liboaf/liboaf-version.h
 include/liboaf/liboaf.h
+include/liboaf/oaf-factory-suppress.h
+include/liboaf/oaf-factory.h
 include/liboaf/oaf.h
 lib/liboaf.a
 lib/liboaf.so
 lib/liboaf.so.0
 share/aclocal/oaf.m4
-share/gnome/idl/gnome-factory.idl
+share/gnome/idl/oaf-factory.idl
 share/gnome/idl/oaf.idl
-share/gnome/oaf/broken.oafinfo
 share/gnome/oaf/empty.oafinfo
 share/gnome/oaf/oafd.oafinfo
+share/locale/da/LC_MESSAGES/oaf.mo
+share/locale/de/LC_MESSAGES/oaf.mo
+share/locale/fr/LC_MESSAGES/oaf.mo
+share/locale/no/LC_MESSAGES/oaf.mo
+share/locale/ru/LC_MESSAGES/oaf.mo
+share/locale/tr/LC_MESSAGES/oaf.mo
+@dirrm share/gnome/oaf/html/liboaf
+@dirrm share/gnome/oaf/html
 @unexec rmdir %D/share/gnome/oaf 2>/dev/null || true
 @unexec rmdir %D/share/gnome/idl 2>/dev/null || true
 @unexec rmdir %D/share/gnome 2>/dev/null || true
 @dirrm include/liboaf
+@dirrm etc/oaf
