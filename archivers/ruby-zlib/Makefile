@@ -23,6 +23,9 @@ INSTALL_TARGET=	site-install
 DOCS_EN=	ChangeLog zlib.rd.en zlib.en.html
 DOCS_JA=	zlib.rd.ja zlib.ja.html
 
+post-extract:
+	${RM} ${WRKSRC}/depend
+
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODDOCDIR}/ja
