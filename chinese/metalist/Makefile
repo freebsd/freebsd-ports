@@ -19,6 +19,8 @@ PATCHFILES=	metalist-${PORTREVISION}${EXTRACT_SUFX}
 MAINTAINER=	autrijus@autrijus.org
 COMMENT=	A Chinese port of Slash-Like Automatic Storytelling Homepage system
 
+BROKEN=		Unfetchable
+
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql \
 		${SITE_PERL}/Bundle/Slash.pm:${PORTSDIR}/www/p5-Bundle-Slash \
 		${SITE_PERL}/Locale/Maketext/Lexicon.pm:${PORTSDIR}/devel/p5-Locale-Maketext-Lexicon \

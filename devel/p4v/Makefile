@@ -17,6 +17,8 @@ EXTRACT_SUFX=		.tgz
 MAINTAINER=		bms@FreeBSD.org
 COMMENT=		Visual client for Perforce SCM
 
+BROKEN=			Unfetchable
+
 NO_CDROM=		yes
 RESTRICTED=		"Binary redistribution restrictions in effect"
 
