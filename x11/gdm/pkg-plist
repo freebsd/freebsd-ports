@@ -166,10 +166,4 @@ share/locale/zh_TW/LC_MESSAGES/gdm.mo
 @dirrm share/gnome/help/gdm/C/images
 @dirrm share/gnome/help/gdm/C
 @dirrm share/gnome/help/gdm
-@dirrm share/gnome/gdm
 @dirrm etc/pam.d
-@dirrm etc/gdm/Sessions
-@dirrm etc/gdm/PreSession
-@dirrm etc/gdm/PostSession
-@dirrm etc/gdm/Init
-@dirrm etc/gdm
