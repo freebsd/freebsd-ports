@@ -27,6 +27,7 @@ CONFIGURE_ARGS=	--disable-ltdl-install \
 CONFIGURE_ENV=	PREFIX=${PREFIX} PACKAGE=libtool${BUILD_VERSION}
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_REINPLACE=	yes
+INFO=		libtool${BUILD_VERSION}
 
 post-patch:
 	@(cd ${WRKSRC}/doc && \
@@ -38,14 +39,14 @@ post-patch:
 
 post-install:
 	@-${RM} -fr ${PREFIX}/libexec/libtool${BUILD_VERSION}
-	${MKDIR} ${PREFIX}/libexec/libtool${BUILD_VERSION}
+	@${MKDIR} ${PREFIX}/libexec/libtool${BUILD_VERSION}
 .for i in libtool libtoolize
-	${LN} -sf ${PREFIX}/bin/${i}${BUILD_VERSION} ${PREFIX}/libexec/libtool${BUILD_VERSION}/${i}
+	@${LN} -sf ${PREFIX}/bin/${i}${BUILD_VERSION} ${PREFIX}/libexec/libtool${BUILD_VERSION}/${i}
 .endfor
 .for i in config.guess config.sub
-	${MV} ${PREFIX}/share/libtool${BUILD_VERSION}/${i}${BUILD_VERSION} ${PREFIX}/share/libtool${BUILD_VERSION}/${i}
+	@${MV} ${PREFIX}/share/libtool${BUILD_VERSION}/${i}${BUILD_VERSION} ${PREFIX}/share/libtool${BUILD_VERSION}/${i}
 .endfor
-	${LN} -sf ${PREFIX}/share/libtool${BUILD_VERSION}/ltconfig${BUILD_VERSION} \
+	@${LN} -sf ${PREFIX}/share/libtool${BUILD_VERSION}/ltconfig${BUILD_VERSION} \
 		${PREFIX}/share/libtool${BUILD_VERSION}/ltconfig
 
 .include <bsd.port.mk>
