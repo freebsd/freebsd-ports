@@ -1,4 +1,5 @@
-@cd /usr/local/lib/texmf
+@cd /usr/local
+@cd lib/texmf
 @mode 644
 @owner bin
 fonts/tfm/cmbsy5.tfm
@@ -160,6 +161,6 @@ tex/latex209.def
 tex/sfonts.def
 tex/slides.def
 tex/texsys.cfg
-tex/gglo.ist
-tex/gind.ist
 ini/latex.fmt
+makeindx/gglo.ist
+makeindx/gind.ist
