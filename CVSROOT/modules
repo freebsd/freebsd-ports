@@ -3270,6 +3270,7 @@ kbarcode	ports/graphics/kbarcode
 kbear		ports/ftp/kbear
 kbedic		ports/textproc/kbedic
 kbiff		ports/mail/kbiff
+kbilliards	ports/games/kbilliards
 kbirthday	ports/deskutils/kbirthday
 kcd		ports/misc/kcd
 kcpuload	ports/sysutils/kcpuload
