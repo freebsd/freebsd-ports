@@ -7,6 +7,7 @@
 
 PORTNAME=	tk
 PORTVERSION=	8.4a4
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	tcl
@@ -21,14 +22,14 @@ USE_XLIB=	yes
 INSTALLS_SHLIB=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION}/unix
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-shared --with-tcl=${PREFIX}/lib/tcl8.4
-CONFIGURE_ENV=	PORTSDIR=${PORTSDIR} TK_LIB_FILE=libtk84.so.1
-MAKE_ENV=	SHORT_TK_VER=84
+TK_VER=		8.4
+SHORT_TK_VER=	84
+CONFIGURE_ARGS=	--enable-shared --with-tcl=${PREFIX}/lib/tcl${TK_VER}
+CONFIGURE_ENV=	PORTSDIR=${PORTSDIR} TK_LIB_FILE=libtk${SHORT_TK_VER}.so.1
+MAKE_ENV=	SHORT_TK_VER=${SHORT_TK_VER}
+PLIST_SUB=	TK_VER=${TK_VER} SHORT_TK_VER=${SHORT_TK_VER}
 PKGINSTALL=	${PKGDIR}/pkg-install.wish
 PKGDEINSTALL=	${PKGDIR}/pkg-deinstall.wish
-TK_VER=		8.4
-
-PLIST_SUB=	TK_VER=${TK_VER} SHORT_TK_VER=84
 
 MANCOMPRESSED=	no
 
@@ -335,11 +336,14 @@ MLINKS=	3DBorder.3 Tk_Alloc3DBorderFromObj.3 \
 .include <bsd.port.pre.mk>
 
 post-install:
+	${INSTALL_DATA} ${FILESDIR}/pkgIndex.tcl ${PREFIX}/lib/tk${TK_VER}/
 .if exists(${PKGINSTALL})
 	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL}
 .endif
 
 test:
 	cd ${WRKSRC}; make test
+	echo "package require Tk" | tclsh${TK_VER}
+	echo "load libtk${SHORT_TK_VER}.so" | tclsh${TK_VER}
 
 .include <bsd.port.post.mk>
