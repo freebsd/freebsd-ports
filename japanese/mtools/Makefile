@@ -6,39 +6,46 @@
 #
 
 PORTNAME=	mtools
-PORTVERSION=	3.6
+PORTVERSION=	3.9.6
 CATEGORIES=	japanese emulators
-MASTER_SITES=	${MASTER_SITE_GNU} \
-		ftp://ports.jp.FreeBSD.org/pub/FreeBSD-jp/ports-jp/LOCAL_PORTS/
+MASTER_SITES=	ftp://ftp.tux.org/pub/knaff/mtools/  \
+		http://mtools.linux.lu/  \
+		http://people.freebsd.org/~steve/distfiles/ \
+		${MASTER_SITE_PORTS_JP}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${DISTNAME}.PC98.patch.gz
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	junya-w@remus.dti.ne.jp
 
-GNU_CONFIGURE=  yes
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-xdf
-CONFIGURE_TARGET=	# empty
 
 USE_GMAKE=	yes
 
-MAN1=		mattrib.1 mbadblocks.1 mcd.1 mcopy.1 mdel.1 mdeltree.1 \
-		mdir.1 mformat.1 mkmanifest.1 mlabel.1 mmd.1 mmount.1 mmove.1 \
-		mrd.1 mread.1 mren.1 mtoolstest.1 mtools.1 mtype.1 mwrite.1 mzip.1
+MAN1=		mattrib.1 mbadblocks.1 mcat.1 mcd.1 mcopy.1 mdel.1 mdeltree.1 \
+		mdir.1 mdu.1 mformat.1 mkmanifest.1 mlabel.1 mmd.1 mmount.1 \
+		mmove.1 mpartition.1 mrd.1 mread.1 mren.1 mshowfat.1 \
+		mtoolstest.1 mtools.1 mtype.1 mzip.1
 MAN5=		mtools.5
-ALL_TARGET=	all info
 
 post-patch:
-	@(cd ${WRKSRC} ; \
-	  ${GZCAT} ${DISTDIR}/mtools-3.6.PC98.patch.gz | ${PATCH} -d . >/dev/null 2>&1; \
+	@cd ${WRKSRC}; \
+	  ${GZCAT} ${DISTDIR}/mtools-3.9.6.PC98.patch.gz | ${PATCH} -d . >/dev/null 2>&1; \
 	  for f in config.c mtools.5 mtools.texi; do \
 	    ${MV} $$f $$f.orig; \
 	    ${SED} -e s:/etc/mtools.conf:${PREFIX}/etc/mtools.conf: \
-	    < $$f.orig > $$f; done ;\
-	)
+	    < $$f.orig > $$f; done
+	@cd ${WRKSRC}/scripts; for f in ocopy xcopy; do \
+	 if [ ! -f $$f -a -f $$f.orig ]; then ${CP} -p $$f.orig $$f ; fi \
+	 done
 
 post-install:
-	@install -c ${WRKSRC}/mtools.conf ${PREFIX}/etc
+	@#	mwrite has been removed by author, but we'll keep it just a bit longer
+	@${LN} -sf ${PREFIX}/bin/mtools ${PREFIX}/bin/mwrite
+	@${LN} -sf ${PREFIX}/man/man1/mcopy.1.gz ${PREFIX}/man/man1/mwrite.1.gz
+	@${INSTALL_DATA} ${WRKSRC}/mtools.conf ${PREFIX}/etc
+	@${ECHO} "Please verify ${PREFIX}/etc/mtools.conf for your machine."
 	@install-info ${PREFIX}/info/mtools.info ${PREFIX}/info/dir
 
 .include <bsd.port.mk>

@@ -1,0 +1,11 @@
+--- mtools.5~	Mon May 17 14:42:34 1999
++++ mtools.5	Mon May 17 14:48:20 1999
+@@ -18,7 +18,7 @@
+ .SH Name
+ mtools.conf - mtools configuration files
+ .PP
+-.SS Description
++.SH Description
+ .PP
+ This manpage describes the configuration files for mtools. They 
+ are called \fR\&\f(CW\(if/usr/local/usr/local/etc/mtools.conf\(is\fR and \fR\&\f(CW\(if~/.mtoolsrc\(is\fR. If

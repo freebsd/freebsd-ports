@@ -1,0 +1,11 @@
+--- floppyd.c~	Thu Jul 22 00:41:08 1999
++++ floppyd.c	Thu Jul 22 00:42:36 1999
+@@ -675,7 +675,7 @@
+ 	/*
+ 	 * Ignore dead servers so no zombies should be left hanging.
+ 	 */
+-	signal(SIGCLD, SIG_IGN);
++	signal(SIGCHLD, SIG_IGN);
+ 
+ 	for (;;) {
+ 		int					new_sock;

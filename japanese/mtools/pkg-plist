@@ -1,10 +1,13 @@
 bin/mtools
 @exec ln -fs %D/%F %B/mattrib
+@exec ln -fs %D/%F %B/mbadblocks
+@exec ln -fs %D/%F %B/mcat
 @exec ln -fs %D/%F %B/mcd
 @exec ln -fs %D/%F %B/mcopy
 @exec ln -fs %D/%F %B/mdel
 @exec ln -fs %D/%F %B/mdeltree
 @exec ln -fs %D/%F %B/mdir
+@exec ln -fs %D/%F %B/mdu
 @exec ln -fs %D/%F %B/mformat
 @exec ln -fs %D/%F %B/minfo
 @exec ln -fs %D/%F %B/mlabel
@@ -15,17 +18,20 @@ bin/mtools
 @exec ln -fs %D/%F %B/mrd
 @exec ln -fs %D/%F %B/mread
 @exec ln -fs %D/%F %B/mren
+@exec ln -fs %D/%F %B/mshowfat
+@exec ln -fs %D/%F %B/mtoolstest
 @exec ln -fs %D/%F %B/mtype
 @exec ln -fs %D/%F %B/mwrite
-@exec ln -fs %D/%F %B/mtoolstest
-@exec ln -fs %D/%F %B/mbadblocks
 @exec ln -fs %D/%F %B/mzip
 @unexec rm %B/mattrib
+@unexec rm %B/mbadblocks
+@unexec rm %B/mcat
 @unexec rm %B/mcd
 @unexec rm %B/mcopy
 @unexec rm %B/mdel
 @unexec rm %B/mdeltree
 @unexec rm %B/mdir
+@unexec rm %B/mdu
 @unexec rm %B/mformat
 @unexec rm %B/minfo
 @unexec rm %B/mlabel
@@ -36,17 +42,18 @@ bin/mtools
 @unexec rm %B/mrd
 @unexec rm %B/mread
 @unexec rm %B/mren
+@unexec rm %B/mshowfat
+@unexec rm %B/mtoolstest
 @unexec rm %B/mtype
 @unexec rm %B/mwrite
-@unexec rm %B/mtoolstest
-@unexec rm %B/mbadblocks
 @unexec rm %B/mzip
 bin/mcheck
+bin/mcomp
 bin/mkmanifest
 bin/mxtar
-bin/xcopy
-bin/mcomp
 @unexec install-info --delete %D/info/mtools.info %D/info/dir
 info/mtools.info
 @exec install-info %D/info/mtools.info %D/info/dir
 etc/mtools.conf
+@exec ln -fs %D/man/man1/mcopy.1.gz %D/man/man1/mwrite.1.gz
+@unexec rm %D/man/man1/mwrite.1.gz

@@ -1,25 +1,84 @@
-*** mtools.conf~	Wed Jan 31 22:02:11 1996
---- mtools.conf	Mon May 27 05:03:09 1996
-***************
-*** 2,11 ****
-  drive b: file="/dev/fd1" exclusive
-  
-  # First SCSI hard disk partition
-! drive c: file="/dev/sda1"
-  
-  # First IDE hard disk partition
-! #drive c: file="/dev/hda1"
-  
-  #dosemu floppy image
-  drive m: file="/var/lib/dosemu/diskimage"
---- 2,11 ----
-  drive b: file="/dev/fd1" exclusive
-  
-  # First SCSI hard disk partition
-! drive c: file="/dev/sd0s1"
-  
-  # First IDE hard disk partition
-! #drive c: file="/dev/wd0s1"
-  
-  #dosemu floppy image
-  drive m: file="/var/lib/dosemu/diskimage"
+--- mtools.conf.orig	Sun Jan  4 01:29:32 1998
++++ mtools.conf	Thu May  7 01:35:37 1998
+@@ -1,6 +1,74 @@
+ # Example mtools.conf files.  Uncomment the lines which correspond to
+ # your architecture and comment out the "SAMPLE FILE" line below
+-SAMPLE FILE
++
++# A note on permissions:  a user must have read and write permissions for the
++# devices named here in order to access the DOS file systems.  You might give
++# ALL USERS access to ALL FLOPPY DISKS via the command
++#
++#     chmod a+rw /dev/*fd*
++#
++# or you might give SPECIFIC GROUP MEMBERS access to a PARTICULAR FLOPPY DISK
++# via the commands
++#
++#     chmod g+rw /dev/rfd0 ; chgrp staff /dev/rfd0
++#
++# (and ensure selected people are in a group such as staff).
++
++
++# Floppy disks.  Here, A: and B: use automatic size detection.
++#
++# Example: To prepare drive A: for use as a 1.44M floppy on FreeBSD:
++#   [1] low level format with ......... fdformat /dev/rfd0.1440
++#   [2] write a file system with ...... mkdosfs -f 1440 /dev/rfd0
++#   [3] then use mcopy/mdir etc. in the usual way.
++#
++# The mformat command could also be used to build the DOS file system
++# in place of mkdosfs.
++
++# # FreeBSD floppy drives
++drive a: file="/dev/rfd0"
++drive b: file="/dev/rfd1"
++
++# Drive T: is a 1.72M floppy format with 80 cylinders, double sided (2 heads),
++#          and 43 sectors of size 256 bytes per track.  It uses the same
++#          floppy disk drive (fd0) as drive A: above.
++#
++# Example: To prepare and use a 1.72M floppy on FreeBSD:
++#   [1] low level format with ......... fdformat /dev/rfd0.1720
++#   [2] write a file system with ...... mformat -t 80 -h 2 -s 43 -S 1 t:
++#   [3] then use mcopy/mdir etc. in the usual way.
++#
++# The above note on access permissions applies to /dev/rfd0.1720 as well.
++drive t: file="/dev/rfd0.1720"
++
++# Drive S: is a 720K floppy format with 80 cylinders, double sided (2 heads),
++#          and 43 sectors of size 256 bytes per track.  It uses the same
++#          floppy disk drive (fd0) as drive A: above.
++#
++# Example: To prepare and use a 720K floppy on FreeBSD:
++#   [1] low level format with ......... fdformat /dev/rfd0.720
++#   [2] write a file system with ...... mkdosfs -f 720 /dev/fd0
++#   [3] then use mcopy/mdir etc. in the usual way.
++#
++drive s: file="/dev/rfd0.720"
++
++# SCSI hard disks
++#  first disk (sd0) slice 1 (s1)
++#drive c: file="/dev/rsd0s1"
++
++# IDE hard disks
++#   first disk on the first IDE interface (wd0) slice 1 (s1)
++drive c: file="/dev/rwd0s1"
++#   first disk on the first IDE interface (wd0) slice 3 (s3)
++#drive d: file="/dev/rwd0s3"
++#  second disk on the first IDE interface (wd1) slice 1 (s1)
++#drive d: file="/dev/rwd1s1"
++#  first disk on the second IDE interface (wd2) slice 1 (s1)
++drive d: file="/dev/rwd2s1"
++
++# PCEMU floppy boot image
++drive p: file="/usr/local/lib/pcemu/DriveA"
++
+ 
+ # # Linux floppy drives
+ # drive a: file="/dev/fd0" exclusive
+@@ -61,4 +129,4 @@
+ 
+ # # uncomment the following line to display all file names in lower
+ # # case by default
+-# mtools_lower_case=1
++mtools_lower_case=1
