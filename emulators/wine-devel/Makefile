@@ -28,6 +28,12 @@ USE_XPM=	yes
 #USE_MESA=	yes
 USE_GMAKE=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 400000
+BROKEN=		"Not supported on systems prior to FreeBSD 4.x"
+.endif
+
 .if !defined(NDEBUG)
 STRIP=
 CFLAGS+=	-g
@@ -90,4 +96,4 @@ do-install:
 	${ECHO}
 	@${SED} s+%%PREFIX%%+${PREFIX}+g <${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
