@@ -1,7 +1,7 @@
-*** Imakefile.orig	Mon Nov  8 15:16:05 1993
---- Imakefile	Thu Sep 22 16:30:18 1994
+*** Imakefile.orig	Mon Apr  6 12:59:31 1992
+--- Imakefile	Fri Sep 23 18:24:11 1994
 ***************
-*** 1,44 ****
+*** 1,54 ****
 ! 	SRCS = bitmap.c bonus.c collision.c demo.c draw.c erase.c events.c\
   	 gameover.c initx.c main.c maze.c message.c normal.c quitx.c scores.c\
   	 setinmaze.c setup.c special.c time.c update.c windowx.c
@@ -46,7 +46,17 @@
   
   ComplexProgramTarget(jetpack)
   
---- 1,45 ----
+  DependTarget()
+  DependDependency()
+  
+  InstallNonExec(levels/000,$(LEVELFILE)000)
+  
+  # oops, I can't figure how to override the template default to install the
+  # man page as jetpack.1, so I install both and remove the bad one.
+  install.man:: jetpack.man
+! 	$(INSTALL) -c $(INSTMANFLAGS) jetpack.man $(MANDIR)/jetpack.1
+! 	@rm -f $(MANDIR)/jetpack.n
+--- 1,58 ----
 ! SRCS = bitmap.c bonus.c collision.c demo.c draw.c erase.c events.c\
   	 gameover.c initx.c main.c maze.c message.c normal.c quitx.c scores.c\
   	 setinmaze.c setup.c special.c time.c update.c windowx.c
@@ -92,14 +102,14 @@
   
   ComplexProgramTarget(jetpack)
   
-***************
-*** 50,54 ****
-  # oops, I can't figure how to override the template default to install the
-  # man page as jetpack.1, so I install both and remove the bad one.
-  install.man:: jetpack.man
-! 	$(INSTALL) -c $(INSTMANFLAGS) jetpack.man $(MANDIR)/jetpack.1
-! 	@rm -f $(MANDIR)/jetpack.n
---- 51,55 ----
+  DependTarget()
+  DependDependency()
+  
++ install::
++ 	MakeDir($(LIBDIR))
++ 
+  InstallNonExec(levels/000,$(LEVELFILE)000)
+  
   # oops, I can't figure how to override the template default to install the
   # man page as jetpack.1, so I install both and remove the bad one.
   install.man:: jetpack.man
