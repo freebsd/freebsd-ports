@@ -54,7 +54,7 @@ CONFIGURE_ARGS=	--prefix=${PREFIX_RELDEST} \
 
 CONFIGURE_ENV=	CC="${CC}" CPPFLAGS="${CPPFLAGS}" \
 		CFLAGS="${CFLAGS}" \
- 		LDFLAGS="${LDFLAGS}" CONFIG_SHELL="${SH}" \
+		LDFLAGS="${LDFLAGS}" CONFIG_SHELL="${SH}" \
 		LOCALBASE="${LOCALBASE}"
 
 PREFIX_RELDEST=	${PREFIX:S,^${DESTDIR},,}
@@ -101,16 +101,18 @@ CONFIGURE_ARGS+=	--with-ldap \
 .if defined(WITH_APR_FROM_PORTS)
 .    if defined (WITH_BDB) || defined(WITH_BERKELEYDB)
 BROKEN=			"You can't set WITH_BDB or WITH_BERKELEYDB when WITH_APR_FROM_PORTS is defined"
-.endif
+.    endif
 LIB_DEPENDS+=		apr-0.9:${PORTSDIR}/devel/apr
 CONFIGURE_ARGS+=	--with-apr=${LOCALBASE}/bin/apr-config \
 			--with-apr-util=${LOCALBASE}/bin/apu-config
+PLIST_SUB+=	PORTS_APR="@comment "
 .else
 .   if exists(${LOCALBASE}/lib/libapr-0.so)
 BROKEN=				"apr is installed and may conflict with apache one\
 					(if you want to use apr port define WITH_APR_FROM_PORTS,\
 					at your own risk)"
 .   endif
+PLIST_SUB+=	PORTS_APR=""
 .endif
 
 WITH_PTHREAD_LIBS?=	${PTHREAD_LIBS:S/-l//}

@@ -49,6 +49,7 @@
 ##   Port-related:
 ##      WITHOUT_WWW:              Implies NO_CGI, NO_WWWDATA, NO_ICONS and NO_ERROR
 ##           WITH_CUSTOM_WWW:     Let you choose your ${LOCALBASE}/www components: [cgi|errordocs|icons|wwwdata]
+##      WITH_APR_FROM_PORTS:      Utilise apr and apr-utils from ${PORTSDIR}/devel/apr
 ##
 ## Available make targets:
 ##      show-options:             prints this message
