@@ -3,12 +3,12 @@
 # Date created:         Mon Oct 31 22:04:12 PST 1994
 # Whom:                 hsu
 #
-# $Id: Makefile,v 1.1.1.1 1994/11/01 06:08:02 hsu Exp $
+# $Id: Makefile,v 1.2 1994/11/22 10:05:33 hsu Exp $
 #
 
-DISTNAME=       Sather-1.0.2
+DISTNAME=       Sather-1.0.4
 MASTER_SITES=   ftp://ftp.icsi.berkeley.edu/pub/sather/
-DISTFILES=      Sather-1.0.2.tar.Z
+DISTFILES=      Sather-1.0.4.tar.Z
 WRKSRC=		${WRKDIR}/Sather
 ALL_TARGET=	testall
 
