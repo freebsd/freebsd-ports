@@ -22,9 +22,6 @@
     SUBDIR += c2t
     SUBDIR += cce
     SUBDIR += cdict5
-# Temporarily disconnected to resolve some issues with
-# sysutils/cdrools
-#   SUBDIR += cdrtools
     SUBDIR += celvis
     SUBDIR += chinput
     SUBDIR += chinput2
@@ -73,7 +70,6 @@
     SUBDIR += metalist
     SUBDIR += mingunittf
     SUBDIR += miniChinput
-    SUBDIR += mkisofs
     SUBDIR += mldonkey-core
     SUBDIR += moefonts-cid
     SUBDIR += moettf
