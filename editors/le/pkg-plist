@@ -1,10 +1,10 @@
 @comment $FreeBSD$
 bin/le
-share/doc/le/FEATURES
-share/doc/le/HISTORY
-share/doc/le/NEWS
-share/doc/le/README
-share/doc/le/TODO
+%%PORTDOCS%%share/doc/le/FEATURES
+%%PORTDOCS%%share/doc/le/HISTORY
+%%PORTDOCS%%share/doc/le/NEWS
+%%PORTDOCS%%share/doc/le/README
+%%PORTDOCS%%share/doc/le/TODO
 share/le/colors-black
 share/le/colors-blue
 share/le/colors-defbg
@@ -14,4 +14,4 @@ share/le/le.hlp
 share/le/mainmenu
 share/le/syntax
 @dirrm share/le
-@dirrm share/doc/le
+%%PORTDOCS%%@dirrm share/doc/le

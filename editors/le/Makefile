@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	le
-PORTVERSION=	1.6.1
+PORTVERSION=	1.6.3
 CATEGORIES=	editors
 MASTER_SITES=	ftp://ftp.yars.free.net/pub/software/unix/util/texteditors/
 
@@ -21,7 +21,7 @@ post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/le
 .for file in FEATURES HISTORY NEWS README TODO
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/le
+	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/le
 .endfor
 .endif
 
