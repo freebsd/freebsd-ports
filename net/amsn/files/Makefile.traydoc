@@ -1,0 +1,36 @@
+LOCALBASE = 	!!PREFIX!!
+X11BASE =	!!X11BASE!!
+
+# The path to the tcl.h header file
+
+TCL_INCPATH = ${LOCALBASE}/include/tcl8.4
+
+# The path to the tk.h header file
+
+TK_INCPATH  = ${LOCALBASE}/include/tk8.4
+
+# The path to the X11 include files
+
+XINCLUDES   = -I${X11BASE}/include
+
+TCL_VERSION = @TCLVER@
+
+CC        ?= cc -pipe
+
+INCLUDES  = ${XINCLUDES} -I${TCL_INCPATH} -I${TK_INCPATH}
+
+CFLAGS    += -O -fPIC ${INCLUDES}
+
+SHLIB_LD     = ld -shared -x
+
+LIBSN     = -lc -L${X11BASE}/lib -L${LOCALBASE}/lib -lX11 -lm -ltcl84${TCL_DBGX} -ltk84 -lImlib -ltiff -lungif -lpng -lz -lXext -lSM -lICE
+
+.PHONY : all 
+
+all : libtray.so
+
+tray.o: tray.c
+	$(CC) -c $(CFLAGS) tray.c
+
+libtray.so: tray.o
+	${SHLIB_LD} tray.o $(LIBSN) -o libtray.so
