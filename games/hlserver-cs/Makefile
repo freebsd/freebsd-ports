@@ -8,7 +8,8 @@
 PORTNAME=	CS
 PORTVERSION=	1.1b
 CATEGORIES=	games linux
-MASTER_SITES=	ftp://ftp.icrontic.com/pub/ \
+MASTER_SITES=	http://hex.databits.net/~pat/ \
+		ftp://ftp.icrontic.com/pub/ \
 		http://flf.playnet.com/
 DISTNAME=	cs_11b_full
 EXTRACT_ONLY=	
