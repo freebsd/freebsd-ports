@@ -1,0 +1,20 @@
+--- tools/Xpgp/Xpgp.c.orig	Fri Jan 30 09:25:58 1998
++++ tools/Xpgp/Xpgp.c	Sat Nov 25 15:58:33 2000
+@@ -55,7 +55,7 @@
+ 
+         key = xcalloc(1, sizeof(char) * 1050);
+         
+-        gets(key);  
++        fgets(key, sizeof(key), stdin);  
+         fprintf(fp, "%s\n",key);
+ 
+         if (strstr(key, "END"))
+@@ -72,7 +72,7 @@
+       free(key);
+ 
+       newstr = xcalloc(1, sizeof(char)*100);
+-      gets(newstr);
++      fgets(newstr, sizeof(newstr), stdin);
+ 
+       if (STRN_EQ(newstr,  "-X-pgp off keyadd", 17))
+       {
