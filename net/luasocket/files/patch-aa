@@ -1,0 +1,11 @@
+--- Makefile.orig       Tue Dec 17 10:15:00 2002
++++ Makefile    Tue Dec 17 10:16:08 2002
+@@ -12,7 +12,7 @@
+ 
+ # Set LUAINC to the Lua include directory and LUALIB to the
+ # Lua library directory
+-LUA = /home/i/diego/public/lib/lua-4.0
++LUA = ${LOCALBASE}
+ LUAINC = $(LUA)/include
+ LUALIB = $(LUA)/lib/$(TEC_UNAME)
+ 

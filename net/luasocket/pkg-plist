@@ -1,0 +1,20 @@
+bin/luasocket
+lib/lua/luasocket/cl-compat.lua
+lib/lua/luasocket/code.lua
+lib/lua/luasocket/concat.lua
+lib/lua/luasocket/ftp.lua
+lib/lua/luasocket/http.lua
+lib/lua/luasocket/README
+lib/lua/luasocket/smtp.lua
+lib/lua/luasocket/url.lua
+%%PORTDOCS%%share/doc/luasocket/anybrowser.png
+%%PORTDOCS%%share/doc/luasocket/func.html
+%%PORTDOCS%%share/doc/luasocket/home.html
+%%PORTDOCS%%share/doc/luasocket/idx.html
+%%PORTDOCS%%share/doc/luasocket/intro.html
+%%PORTDOCS%%share/doc/luasocket/luasocket.png
+%%PORTDOCS%%share/doc/luasocket/mod.html
+%%PORTDOCS%%share/doc/luasocket/vim.png
+%%PORTDOCS%%@dirrm share/doc/luasocket
+@dirrm lib/lua/luasocket
+@dirrm lib/lua
