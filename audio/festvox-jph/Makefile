@@ -9,7 +9,7 @@
 
 PORTNAME=	festvox-jph
 PORTVERSION=	2.0
-CATEGORIES=	audio
+CATEGORIES=	audio accessibility
 MASTER_SITES=	${MASTER_SITE_FESTIVAL_OGI}
 DISTNAME=	voice_jph_di-2.0
 DIST_SUBDIR=	festival
