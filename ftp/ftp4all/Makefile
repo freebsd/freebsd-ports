@@ -38,6 +38,12 @@ CFGPATH=	${PREFIX}/etc/ftp4all
 DISTMSGPATH=	${WRKSRC}/standard/msg
 MSGPATH=	${PREFIX}/etc/ftp4all/msg
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64"
+BROKEN=		"Does not compile on sparc64"
+.endif
+
 do-install:
 	-@${MKDIR} /var/log/ftp4all
 	-@${MKDIR} ${PREFIX}
@@ -74,4 +80,4 @@ do-install:
 	-@${MKDIR} ${PREFIX}/etc/rc.d
 	${INSTALL_SCRIPT} ${FILESDIR}/ftp4all.sh ${PREFIX}/etc/rc.d/ftp4all.sh.sample
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

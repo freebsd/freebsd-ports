@@ -17,6 +17,12 @@ COMMENT=	Node builder for Doom
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64"
+BROKEN=		"Does not compile on sparc64"
+.endif
+
 post-patch:
 	${REINPLACE_CMD} -e "s,-O2 -fomit-frame-pointer -ffast-math,${CFLAGS}," \
 		${WRKSRC}/configure
@@ -28,4 +34,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
