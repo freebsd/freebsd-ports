@@ -1,0 +1,10 @@
+--- caitoo/kmainwidget.cpp.orig	Sun Jun 11 04:09:58 2000
++++ caitoo/kmainwidget.cpp	Sun Jun 11 04:11:28 2000
+@@ -60,6 +60,7 @@
+ #undef map
+ #include <sys/sockio.h>  // needed for SIOCGIFFLAGS
+ #else
++#include <sys/socket.h>
+ #include <net/if.h>
+ #endif
+ 
