@@ -8,7 +8,9 @@
 PORTNAME=	poppwd
 PORTVERSION= 	1.0
 CATEGORIES=	mail
-MASTER_SITES=	ftp://ftp.ugh.net.au/pub/unix/poppwd/
+MASTER_SITES=	ftp://ftp.ugh.net.au/pub/unix/poppwd/ \
+		ftp://ftp.megamirror.com/pub/ugh/poppwd/ \
+		http://ftp.megamirror.com/pub/ugh/poppwd/
 
 MAINTAINER=	andrew@ugh.net.au
 
