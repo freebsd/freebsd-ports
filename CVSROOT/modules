@@ -3097,6 +3097,7 @@ gstreamer-plugins-lame		ports/audio/gstreamer-plugins-lame
 gstreamer-plugins-libcaca	ports/graphics/gstreamer-plugins-libcaca
 gstreamer-plugins-libfame	ports/multimedia/gstreamer-plugins-libfame
 gstreamer-plugins-libmng	ports/graphics/gstreamer-plugins-libmng
+gstreamer-plugins-libmms	ports/net/gstreamer-plugins-libmms
 gstreamer-plugins-libpng	ports/graphics/gstreamer-plugins-libpng
 gstreamer-plugins-libvisual	ports/graphics/gstreamer-plugins-libvisual
 gstreamer-plugins-mad		ports/audio/gstreamer-plugins-mad
