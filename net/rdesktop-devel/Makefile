@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	rdesktop-1.2beta1
 
-MAINTAINER=	chris@aims.com.au
+MAINTAINER=	ports@freebsd.org
 COMMENT=	RDP client for Windows NT Terminal Server
 
 USE_XLIB=	yes
