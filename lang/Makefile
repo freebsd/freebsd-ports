@@ -88,6 +88,7 @@
     SUBDIR += gprolog
     SUBDIR += guile
     SUBDIR += harbour
+    SUBDIR += haskell-mode.el
     SUBDIR += helium
     SUBDIR += hope
     SUBDIR += huc
