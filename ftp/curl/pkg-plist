@@ -46,8 +46,10 @@ lib/libcurl.so.%%SHLIB_VER%%
 %%PORTDOCS%%%%DOCSDIR%%/examples/Makefile.example
 %%PORTDOCS%%%%DOCSDIR%%/examples/Makefile.in
 %%PORTDOCS%%%%DOCSDIR%%/examples/README
+%%PORTDOCS%%%%DOCSDIR%%/examples/anyauthput.c
 %%PORTDOCS%%%%DOCSDIR%%/examples/curlgtk.c
 %%PORTDOCS%%%%DOCSDIR%%/examples/curlx.c
+%%PORTDOCS%%%%DOCSDIR%%/examples/debug.c
 %%PORTDOCS%%%%DOCSDIR%%/examples/fileupload.c
 %%PORTDOCS%%%%DOCSDIR%%/examples/fopen.c
 %%PORTDOCS%%%%DOCSDIR%%/examples/ftp3rdparty.c
