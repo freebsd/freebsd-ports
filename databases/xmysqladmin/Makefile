@@ -3,10 +3,10 @@
 # Date created:			Di   2 Sep 1997 16:29:27 CEST
 # Whom:				Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.19 1999/06/08 22:15:07 steve Exp $
+# $Id: Makefile,v 1.20 1999/07/01 09:06:36 dirk Exp $
 #
 
-DISTNAME=	xmysqladmin-1.0
+DISTNAME=	xmysqladmin-0.4.4
 CATEGORIES=	databases
 MASTER_SITES=	http://www.tcx.se/Contrib/ \
 		http://www.buoy.com/mysql/Contrib/ \
