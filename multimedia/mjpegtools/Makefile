@@ -23,15 +23,14 @@ USE_GNOME=	glib12
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 USE_REINPLACE=	yes
-USE_SIZE=       yes
 USE_XLIB=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=  CPPFLAGS="${CPPFLAGS} ${PTHREAD_CFLAGS}" \
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} ${PTHREAD_CFLAGS}" \
 		LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS:S/"//g}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS:S/"//g}"
 WANT_GNOME=	yes
 
-MAN1=   divxdec.1 jpeg2yuv.1 lav2divx.1 lav2mpeg.1 lav2wav.1 lav2yuv.1 \
+MAN1=	divxdec.1 jpeg2yuv.1 lav2divx.1 lav2mpeg.1 lav2wav.1 lav2yuv.1 \
 	lavpipe.1 lavplay.1 lavrec.1 lavtrans.1 mjpegtools.1 mp2enc.1 \
 	mpeg2enc.1 mplex.1 ppmtoy4m.1 y4mcolorbars.1 y4mtoppm.1 \
 	yuv2divx.1 yuv2lav.1 yuvdenoise.1 yuvkineco.1 yuvmedianfilter.1 \
@@ -53,10 +52,6 @@ post-install:
 .endif
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502102
-BROKEN=		"Does not compile"
-.endif
 
 .if ${ARCH} != "i386"
 PLIST_SUB+=	DIVX='@comment '
@@ -160,6 +155,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|SDL/|SDL11/|' \
 		${WRKSRC}/lavtools/liblavplay.c \
 		${WRKSRC}/lavtools/yuvplay.c
+	@${REINPLACE_CMD} -e 's|/bin/bash|${LOCALBASE}/bin/bash|' \
+		${WRKSRC}/scripts/lav2mpeg ${WRKSRC}/scripts/mpegtranscode
 .ifdef(WITH_QUICKTIME)
 	@${REINPLACE_CMD} -E -e 's|^(have_openquicktime=).+$$|\1true|' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
