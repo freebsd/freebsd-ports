@@ -1,5 +1,5 @@
---- Src/umathmodule.c.orig	Sat Aug  2 01:10:09 2003
-+++ Src/umathmodule.c	Sat Aug  2 01:10:43 2003
+--- Src/umathmodule.c.orig	Wed Jan 12 12:45:18 2005
++++ Src/umathmodule.c	Wed Jan 12 12:45:29 2005
 @@ -1,9 +1,9 @@
  
 +#include <math.h>
