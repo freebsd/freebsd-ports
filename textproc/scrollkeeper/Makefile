@@ -7,7 +7,7 @@
 
 PORTNAME=	scrollkeeper
 PORTVERSION=	0.3.11
-PORTREVISION=	6
+PORTREVISION=	7
 PORTEPOCH=	1
 CATEGORIES=	textproc gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
@@ -76,8 +76,6 @@ post-patch:
 		${WRKSRC}/libs/Makefile.in
 
 pre-configure:
-.if !defined(PACKAGE_BUILDING)
 	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
-.endif
 
 .include <bsd.port.post.mk>
