@@ -3,7 +3,7 @@
 # Date created:         Sat Oct 31 16:30:00 CDT 1997
 # Whom:                 hetzels@westbend.net
 #
-# $Id: Makefile,v 1.3 1998/11/10 01:55:55 steve Exp $
+# $Id: Makefile,v 1.4 1998/11/19 22:48:42 billf Exp $
 #
 
 DISTNAME=       apache_1.3.3
@@ -106,19 +106,11 @@ pre-patch:
 	@${PATCH} ${PATCH_DIST_ARGS} < ${FILESDIR}/http_protocol.patch
 
 post-install:
-	@${ECHO} "Installing ${PREFIX}/etc/rc.d/apache.sh.tmpl file."
+	@${ECHO} "Installing ${PREFIX}/etc/rc.d/apache.sh file."
 	@${CAT} ${FILESDIR}/apache.sh.tmpl | \
 		${SED} -e 's;PREFIX;${PREFIX};' -e 's;PERL5;${PERL};' \
-		> ${PREFIX}/etc/rc.d/apache.sh.tmpl
-	@if [ ! -f ${PREFIX}/etc/rc.d/apache.sh ]; then \
-		${ECHO} "Installing ${PREFIX}/etc/rc.d/apache.sh startup file."; \
-		${CP} ${PREFIX}/etc/rc.d/apache.sh.tmpl ${PREFIX}/etc/rc.d/apache.sh; \
-		chmod 751 ${PREFIX}/etc/rc.d/apache.sh; \
-	else \
-		${ECHO} "apache.sh exists, please compare with apache.sh.tmpl."; \
-		${ECHO} "The template will regenerate the FrontPage suidkey"; \
-		${ECHO} "file when the apache server is started/restarted."; \
-	fi
+		> ${PREFIX}/etc/rc.d/apache.sh
+	@chmod 751 ${PREFIX}/etc/rc.d/apache.sh
 	@${SH} ${WRKSRC}/${FPINSTALL}
 	@${INSTALL_FILE} ${WRKSRC}/${FPINSTALL} ${PREFIX}/${FPINSTALL}
 	@${INSTALL_FILE} ${WRKSRC}/${CHANGESERVER} ${PREFIX}/${CHANGESERVER}

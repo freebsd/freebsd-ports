@@ -91,7 +91,7 @@
 ! 		find $(root)$(doc_prefix)/ -type f -exec chmod a+r {} \; ; \
 ! #	fi
 ! 	if [ ! -d $(root)$(datadir)/data ]; then \
-! 		$(LN) -sf $(root)$(doc_prefix) $(root)$(datadir)/data; \
+! 		$(CP) -rp $(root)$(doc_prefix) $(root)$(datadir)/data; \
   	fi
 ! 	$(LN) -sf $(root)$(doc_prefix) $(root)$(datadir)/data.default
 ! #	-@if [ -f $(root)$(datadir)/cgi-bin/printenv ]; then \
