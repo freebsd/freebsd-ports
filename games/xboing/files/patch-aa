@@ -1,42 +1,45 @@
-diff -rc ../xboing2.2.orig/include/misc.h ./include/misc.h
-*** ../xboing2.2.orig/include/misc.h	Wed May 25 01:32:15 1994
---- ./include/misc.h	Wed Feb  1 00:37:19 1995
+diff -rc /usr/ports/games/xboing/xboing/include/misc.h ./include/misc.h
+*** /usr/ports/games/xboing/xboing/include/misc.h	Wed Jan  4 17:14:48 1995
+--- ./include/misc.h	Mon Apr  3 22:26:22 1995
 ***************
-*** 68,81 ****
-  int ObtainWindowWidthHeight(Display *display, Window window,
-  	int *width, int *height);
-  void sleepSync(Display *display, unsigned long ms);
-! int usleep(unsigned long usec);
-  int ObtainMousePosition(Display *display, Window window, int *x, int *y);
-  int YesNoDialogue(Display *display, char *message);
-  #else
-  int YesNoDialogue();
-  int ObtainMousePosition();
-  void sleepSync();
-! int usleep();
-  int ObtainWindowWidthHeight();
-  int ResizeMainWindow();
-  char *GetHomeDir();
---- 68,81 ----
-  int ObtainWindowWidthHeight(Display *display, Window window,
-  	int *width, int *height);
-  void sleepSync(Display *display, unsigned long ms);
-! int Usleep(unsigned long usec);
-  int ObtainMousePosition(Display *display, Window window, int *x, int *y);
-  int YesNoDialogue(Display *display, char *message);
-  #else
-  int YesNoDialogue();
-  int ObtainMousePosition();
-  void sleepSync();
-! int Usleep();
-  int ObtainWindowWidthHeight();
-  int ResizeMainWindow();
-  char *GetHomeDir();
-diff -rc ../xboing2.2.orig/misc.c ./misc.c
-*** ../xboing2.2.orig/misc.c	Mon May 30 05:59:39 1994
---- ./misc.c	Wed Feb  1 00:37:54 1995
+*** 87,93 ****
+  int 	ObtainWindowWidthHeight(Display *display, Window window,
+  			int *width, int *height);
+  void 	sleepSync(Display *display, unsigned long ms);
+! int 	usleep(unsigned long usec);
+  int 	ObtainMousePosition(Display *display, Window window, int *x, int *y);
+  int 	YesNoDialogue(Display *display, char *message);
+  Pixmap 	ScalePixmap(Display *display, Window window, Pixmap source,
+--- 87,93 ----
+  int 	ObtainWindowWidthHeight(Display *display, Window window,
+  			int *width, int *height);
+  void 	sleepSync(Display *display, unsigned long ms);
+! int 	Usleep(unsigned long usec);
+  int 	ObtainMousePosition(Display *display, Window window, int *x, int *y);
+  int 	YesNoDialogue(Display *display, char *message);
+  Pixmap 	ScalePixmap(Display *display, Window window, Pixmap source,
 ***************
-*** 65,73 ****
+*** 100,106 ****
+  int 	YesNoDialogue();
+  int 	ObtainMousePosition();
+  void 	sleepSync();
+! int 	usleep();
+  int 	ObtainWindowWidthHeight();
+  int 	ResizeMainWindow();
+  char 	*GetHomeDir();
+--- 100,106 ----
+  int 	YesNoDialogue();
+  int 	ObtainMousePosition();
+  void 	sleepSync();
+! int 	Usleep();
+  int 	ObtainWindowWidthHeight();
+  int 	ResizeMainWindow();
+  char 	*GetHomeDir();
+diff -rc /usr/ports/games/xboing/xboing/misc.c ./misc.c
+*** /usr/ports/games/xboing/xboing/misc.c	Wed Jan  4 17:13:33 1995
+--- ./misc.c	Mon Apr  3 22:13:07 1995
+***************
+*** 79,87 ****
    */
   
   #if NeedFunctionPrototypes
@@ -46,7 +49,7 @@ diff -rc ../xboing2.2.orig/misc.c ./misc.c
           unsigned long usec;
   #endif
   {
---- 65,73 ----
+--- 79,87 ----
    */
   
   #if NeedFunctionPrototypes
@@ -57,7 +60,7 @@ diff -rc ../xboing2.2.orig/misc.c ./misc.c
   #endif
   {
 ***************
-*** 108,114 ****
+*** 122,128 ****
                  ((et.tv_usec - st.tv_usec) / 1000) );
   
       if ((ms) > ((1000 / 60) + SyncTime))
@@ -65,7 +68,7 @@ diff -rc ../xboing2.2.orig/misc.c ./misc.c
   }
   
   #if NeedFunctionPrototypes
---- 108,114 ----
+--- 122,128 ----
                  ((et.tv_usec - st.tv_usec) / 1000) );
   
       if ((ms) > ((1000 / 60) + SyncTime))
