@@ -3,10 +3,10 @@
 # Date created:				11th Feb 1995
 # Whom:					gpalmer
 #
-# $Id: Makefile,v 1.10 1996/03/01 00:37:45 gpalmer Exp $
+# $Id: Makefile,v 1.11 1996/11/18 11:36:16 asami Exp $
 #
 
-DISTNAME=	samba-1.9.15p8
+DISTNAME=	samba-1.9.16p11
 CATEGORIES=	net
 MASTER_SITES=	ftp://nimbus.anu.edu.au/pub/tridge/samba/
 WRKSRC=		${WRKDIR}/${DISTNAME}/source
