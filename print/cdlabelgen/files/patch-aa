@@ -1,28 +1,5 @@
 --- Makefile	Thu Aug 21 20:53:19 2003
 +++ Makefile	Thu Aug 21 20:56:07 2003
-@@ -8,21 +8,15 @@
- # Change these to locations you need, also
- # remember to edit cdlabelgen and its @where_is_the_template as needed.
- 
--BASE_DIR   = /usr/local
- # BASE_DIR   = /usr/local
- # BASE_DIR   = /opt
- BIN_DIR   = $(BASE_DIR)/bin
--LIB_DIR   = $(BASE_DIR)/lib/cdlabelgen
-+LIB_DIR   = $(BASE_DIR)/share/cdlabelgen
- MAN_DIR   = $(BASE_DIR)/man
- SOURCES    = cdlabelgen ChangeLog INSTALL README Makefile cdinsert.pl INSTALL.WEB cdlabelgen.pod cdlabelgen.1 cdlabelgen.html spec.template
- POSTSCRIPT = template.ps *.eps
- DISTFILES = $(SOURCES) $(POSTSCRIPT)
- 
--# just use 'cp -a' if you don't have install...
--INSTALL		:= install -m 0755
--INSTALL_DIR	:= install -d -m 0755
--INSTALL_FILE	:= install -m 0644
--
- # Makefile macros....
- #1.  $@ is the name of the file to be made.
- #2.  $? is the names of the changed dependents. 
 @@ -45,7 +39,7 @@
  	@echo ""
  	$(INSTALL_DIR) $(BIN_DIR)

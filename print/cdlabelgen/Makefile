@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	cdlabelgen
-PORTVERSION=	2.7.0
+PORTVERSION=	3.5.0
 CATEGORIES=	print perl5
-MASTER_SITES=	http://www.aczone.com/pub/tools/
+MASTER_SITES=	http://www.aczoom.com/pub/tools/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	nox@jelal.kn-bremen.de
@@ -18,7 +18,8 @@ MAN1=		cdlabelgen.1
 MANCOMPRESSED=	no
 
 USE_PERL5=	yes
-MAKE_ENV=	BASE_DIR="${PREFIX}" \
+MAKE_ARGS=	BASE_DIR="${PREFIX}" \
+		LIB_DIR="${DATADIR}" \
 		INSTALL="${INSTALL_SCRIPT}" \
 		INSTALL_DIR="${MKDIR}" \
 		INSTALL_FILE="${INSTALL_DATA}" \
