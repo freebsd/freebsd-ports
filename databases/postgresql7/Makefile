@@ -42,7 +42,6 @@ BUILD_DEPENDS=	${JAVA_HOME}/bin/javac:${PORTSDIR}/java/jdk
 SCRIPTS_ENV+=	JAVA_HOME=${JAVA_HOME}
 .endif
 
-NO_PACKAGE=	"Requires pgsql uid"
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
 USE_GMAKE=	YES

@@ -1,0 +1,44 @@
+#! /bin/sh
+
+# $FreeBSD$
+
+PATH=/bin:/usr/sbin
+
+if [ -z "${DB_DIR}" ]; then
+	DB_DIR=/usr/local/pgsql/data
+fi
+
+case $2 in
+POST-INSTALL)
+	USER=pgsql
+	GROUP=${USER}
+	UID=89
+	GID=${UID}
+
+	if pw group show "${GROUP}" 2>/dev/null; then
+		echo "You already have a group \"${GROUP}\", so I will use it."
+	else
+		if pw groupadd ${GROUP} -g ${GID}; then
+			echo "Added group \"${GROUP}\"."
+		else
+			echo "Adding group \"${GROUP}\" failed..."
+			exit 1
+		fi
+	fi
+
+	if pw user show "${USER}" 2>/dev/null; then
+		echo "You already have a user \"${USER}\", so I will use it."
+	else
+		if pw useradd ${USER} -u ${UID} -g ${GROUP} -h - \
+			-d ${DB_DIR} -s /sbin/nologin -c "PostgreSQL Daemon"
+		then
+			echo "Added user \"${USER}\"."
+		else
+			echo "Adding user \"${USER}\" failed..."
+			exit 1
+		fi
+	fi
+
+	chown -R ${USER}.${GROUP} ${DB_DIR}
+	;;
+esac
