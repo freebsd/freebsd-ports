@@ -8,8 +8,8 @@
 PORTNAME=	pam_mysql
 PORTVERSION=	0.5
 CATEGORIES=	security databases
-MASTER_SITES=	http://download.sourceforge.net/pam-mysql/ \
-		http://atreides.freenix.no/~anders/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	anders@FreeBSD.org
 COMMENT=	A pam module for authenticating with MySQL
