@@ -109,8 +109,8 @@
  #include <stdio.h>
  #else
  #include <u.h>
---- src/engine/fractal.c--	Fri Jul  3 14:05:20 1998
-+++ src/engine/fractal.c	Fri Jul  3 17:24:31 1998
+--- src/engine/fractal.c--	Thu Mar  5 03:19:12 1998
++++ src/engine/fractal.c	Wed Sep  8 00:45:59 1999
 @@ -20,15 +20,21 @@
   * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
   */
@@ -168,17 +168,18 @@
  #ifdef __alpha__
  #ifdef __linux__
    extern void ieee_set_fp_control(unsigned long);
-@@ -352,6 +365,15 @@
+@@ -352,6 +365,16 @@
      /*fcr &= ~(FPINEX | FPOVFL | FPUNFL | FPZDIV);*/
      setfcr (fcr);
    }
 +#endif
 +#ifdef BSD
 +  /* ignore all possible exceptions */
-+  (void) fpsetmask(~(FP_X_INV | FP_X_OFL | FP_X_UFL | FP_X_DZ |
 +#ifdef __alpha__
++  (void) fpsetmask(~(FP_X_INV | FP_X_OFL | FP_X_UFL | FP_X_DZ |
 +		FP_X_IMP));
 +#else
++  (void) fpsetmask(~(FP_X_INV | FP_X_OFL | FP_X_UFL | FP_X_DZ |
 +		FP_X_IMP | FP_X_DNML));
 +#endif
  #endif
