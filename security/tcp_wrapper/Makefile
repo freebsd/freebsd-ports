@@ -3,7 +3,7 @@
 # Date created:		27 Oct 1994
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.13 1996/04/09 05:07:28 peter Exp $
+# $Id: Makefile,v 1.14 1996/11/17 07:58:06 obrien Exp $
 #
 
 DISTNAME=       tcp_wrappers_7.4
@@ -19,6 +19,6 @@ MAN5=		hosts_access.5 hosts_options.5
 MAN8=		tcpd.8 tcpdchk.8 tcpdmatch.8
 
 post-install:
-	/sbin/ldconfig -m ${PREFIX}/lib
+	${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
