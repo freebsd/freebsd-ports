@@ -1,6 +1,11 @@
+%%GNOME:%%bin/gdkxft-capplet
 bin/gdkxft_sysinstall
+etc/gdkxft.conf
 lib/libgdkxft.so
-share/doc/gdkxft/README
-share/gdkxft/gdkxft.conf
-@dirrm share/gdkxft
-@dirrm share/doc/gdkxft
+%%PORTDOCS%%share/doc/gdkxft/README
+%%GNOME:%%share/gnome/apps/Settings/UIOptions/gdkxft.desktop
+%%GNOME:%%share/gnome/control-center/UIOptions/gdkxft.desktop
+%%GNOME:%%share/gnome/gdkxft/gdkxft-capplet.glade
+%%GNOME:%%share/gnome/pixmaps/gdkxft.png
+%%GNOME:%%@dirrm share/gnome/gdkxft
+%%PORTDOCS%%@dirrm share/doc/gdkxft
