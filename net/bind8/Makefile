@@ -12,6 +12,7 @@
 
 PORTNAME=	bind
 PORTVERSION=	8.3.3
+PORTREVISION=	1
 CATEGORIES?=	net
 MASTER_SITES=	${MASTER_SITE_ISC}
 MASTER_SITE_SUBDIR=	bind/src/${PORTVERSION}
@@ -60,11 +61,11 @@ post-install:
 	cd ${WRKDIR}/doc/man && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} \
 		${MAKEFILE} clean all ${INSTALL_TARGET}
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/bind8/html
-	${INSTALL_DATA} ${WRKDIR}/doc/html/*.html ${PREFIX}/share/doc/bind8/html
-	${CP} -Rp ${WRKDIR}/src/conf ${PREFIX}/share/doc/bind8/
+	@${MKDIR} ${DOCSDIR}/html
+	${INSTALL_DATA} ${WRKDIR}/doc/html/*.html ${DOCSDIR}/html
+	${CP} -Rp ${WRKDIR}/src/conf ${DOCSDIR}
 .for file in CHANGES DNSSEC LICENSE LICENSE_RSA README SUPPORT TODO
-	${INSTALL_DATA} ${WRKDIR}/src/${file} ${PREFIX}/share/doc/bind8
+	${INSTALL_DATA} ${WRKDIR}/src/${file} ${DOCSDIR}
 .endfor
 .endif
 
