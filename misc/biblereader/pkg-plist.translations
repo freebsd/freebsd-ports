@@ -1,2 +1,2 @@
-share/biblereader/darby
-share/biblereader/asv
+%%DATADIR%%/darby
+%%DATADIR%%/asv
