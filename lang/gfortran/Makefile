@@ -32,7 +32,11 @@ SNAPDATE=	20040130
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "amd64"
+CONFIGURE_TARGET=	x86_64-portbld-freebsd${OSREL}
+.else
 CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
+.endif
 
 SRCDIR=		${WRKDIR}/gcc
 WRKSRC=		${WRKDIR}/build
