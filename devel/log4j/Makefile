@@ -8,7 +8,8 @@
 PORTNAME=	jakarta-log4j
 PORTVERSION=	1.2.8
 CATEGORIES=	java
-MASTER_SITES=	http://jakarta.apache.org/log4j/
+MASTER_SITES=	${MASTER_SITE_APACHE_JAKARTA}
+MASTER_SITE_SUBDIR=	log4j/source
 
 MAINTAINER=	herve.quiroz@esil.univ-mrs.fr
 COMMENT=	Log4J, a fast and flexible logging library for Java
