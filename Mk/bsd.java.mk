@@ -63,7 +63,7 @@ _JAVA_PORT_LINUX_SUN_JDK_1_3_INFO=			java/linux-sun-jdk13		${LOCALBASE}/linux-su
 _JAVA_PORT_LINUX_SUN_JDK_1_4_INFO=			java/linux-sun-jdk14		${LOCALBASE}/linux-sun-jdk1.4.2			1.4	linux	sun
 
 _JAVA_VENDOR_freebsd=		"FreeBSD Foundation"
-_JAVA_VENDOR_bsdjava=		"FreeBSD Java porting team"
+_JAVA_VENDOR_bsdjava=		"BSD Java Porting Team"
 _JAVA_VENDOR_blackdown=		Blackdown
 _JAVA_VENDOR_ibm=			IBM
 _JAVA_VENDOR_sun=			Sun
