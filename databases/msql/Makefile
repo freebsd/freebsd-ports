@@ -7,9 +7,12 @@
 
 PORTNAME=	msql
 PORTVERSION=    2.0.11
+PORTREVISION=   1
 CATEGORIES=	databases
 
 MAINTAINER=	ports@FreeBSD.org
+
+INSTALLS_SHLIB= YES
 
 # Not free for commercial use.  Must create a user on the local system
 NO_PACKAGE=	YES
@@ -22,7 +25,8 @@ MAKE_ENV+=	WRKSRC=${WRKSRC}
 #OVERWRITE_DB=	YES
 
 post-patch:
-		cp ${FILESDIR}/sobject.mm ${WRKSRC}/src/makegen
+		cd ${FILESDIR}; \
+		cp slibinstall.mm slibrary_unix.mm ${WRKSRC}/src/makegen
 
 do-configure:
 		cd ${WRKSRC}; ${MAKE} target
