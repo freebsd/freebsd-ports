@@ -7,7 +7,6 @@
 
 PORTNAME=	ace
 PORTVERSION=	${ACE_VERSION}
-PORTREVISION=	1
 PKGNAMESUFFIX=
 
 COMMENT=	The Adaptive Communication Environment for C++
