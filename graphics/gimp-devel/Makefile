@@ -23,7 +23,7 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
 MAINTAINER=	gnome@FreeBSD.org
 
 LIB_DEPENDS=	gtk-x11-2.0.200:${PORTSDIR}/x11-toolkits/gtk20 \
-		gimpprint.1:${PORTSDIR}/print/gimp-print \
+		gimpprint.2:${PORTSDIR}/print/gimp-print \
 		art_lgpl_2.5:${PORTSDIR}/graphics/libart_lgpl2 \
 		aa.1:${PORTSDIR}/graphics/aalib \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
