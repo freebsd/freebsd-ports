@@ -6,9 +6,11 @@
 #
 
 PORTNAME=	lpe
-PORTVERSION=	1.2.4
+PORTVERSION=	1.2.5
 CATEGORIES=	editors
-MASTER_SITES=	http://cdsmith.twu.net/lpe/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+		http://cdsmith.twu.net/opensource/lpe/
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	cj@vallcom.net
 
@@ -22,6 +24,7 @@ CONFIGURE_ENV=	LDFLAGS="-L${PREFIX}/lib -L${LOCALBASE}/lib" \
 		LIBS="-ltermcap"
 CONFIGURE_ARGS=	--includedir=${LOCALBASE}/include
 
-MAN1=	lpe.1
+MAN1=		lpe.1
+MANLANG=	bg cz de es fr pl ru
 
 .include <bsd.port.mk>
