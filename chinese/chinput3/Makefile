@@ -9,7 +9,7 @@ PORTNAME=	chinput
 PORTVERSION=	3.0.2
 CATEGORIES=	chinese x11
 MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/statue/chinput3/
-DISTNAME=	zh-${PORTNAME}-${PORTVERSION}fix3
+DISTNAME=	zh-${PORTNAME}-${PORTVERSION}fix4
 
 MAINTAINER=	statue@freebsd.sinica.edu.tw
 COMMENT=	Chinese GB2312,BIG5 code input server
