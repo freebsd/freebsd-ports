@@ -25,9 +25,9 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/txt2tags ${PREFIX}/bin
 	@${MKDIR} ${DATADIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${CONTRIB} ${DATADIR}
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${EXAMPLESDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${EXAMPLES} ${EXAMPLESDIR}
-.if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 .endif
