@@ -7,6 +7,7 @@
 
 PORTNAME=	clamav
 PORTVERSION=	${DISTVERSION:C/([a-z])[a-z]*/.\1/g:S/-/./g}
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	clamav
@@ -56,6 +57,14 @@ CPPFLAGS+=	-I${LOCALBASE}/include \
 		${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib \
 		${PTHREAD_LIBS}
+
+.include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_LDAP) && exists(${LOCALBASE}/lib/libldap.so)
+USE_OPENLDAP=	yes
+LDFLAGS+=	-lldap
+.endif
+
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" \
 		LDFLAGS="${LDFLAGS}"
 MAN1=		clamscan.1 freshclam.1 sigtool.1 clamdscan.1
@@ -100,8 +109,6 @@ SED_SCRIPT+=	-e 's|%%RC_SUBR%%|${RC_SUBR}|g' \
 		-e 's|%%RC_SUFX%%|${RC_SUFX}|g'
 PLIST_SUB+=	RC_DIR=${RC_DIR} \
 		RC_SUFX=${RC_SUFX}
-
-.include <bsd.port.pre.mk>
 
 .if defined(WITH_MILTER)
 .if !exists(/usr/lib/libmilter.a)
