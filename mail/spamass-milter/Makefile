@@ -18,9 +18,49 @@ COMMENT=	Sendmail Milter (mail filter) for SpamAssassin
 BUILD_DEPENDS=	spamc:${PORTSDIR}/mail/p5-Mail-SpamAssassin
 RUN_DEPENDS=	spamc:${PORTSDIR}/mail/p5-Mail-SpamAssassin
 
-.if !exists(/usr/lib/libmilter.a)
-IGNORE=		requires Sendmail 8.12; upgrade the base system
+#
+# You can choose the sendmail to be used by specifying
+#
+# WITH_SENDMAIL_BASE=yes
+#  or
+# WITH_SENDMAIL_PORT=yes
+#
+
+# if no preference was set, check for an up to date base version
+# but give an installed port preference over it.
+
+.include <bsd.port.pre.mk>
+
+.if !defined(WITH_SENDMAIL_BASE) && \
+    !defined(WITH_SENDMAIL_PORT) && \
+    !exists(${LOCALBASE}/lib/libmilter.a)
+WITH_SENDMAIL_BASE=yes
 .endif
+
+.if defined(WITH_SENDMAIL_BASE)
+.if exists(/usr/lib/libmilter.a)
+MILTERBASE=	/usr
+.else
+.BEGIN:
+	@${ECHO_CMD} "This port requires Sendmail 8.12"
+	@${ECHO_CMD} "You requested to build with sendmail from the base system"
+	@${ECHO_CMD} "sendmail in base system is too old or was not installed"
+	@${ECHO_CMD} "Upgrade/reinstall base system or build with"
+	@${ECHO_CMD} "sendmail from ports"
+	@${FALSE}
+.endif
+.else
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libmilter.a:${PORTSDIR}/mail/sendmail
+MILTERBASE?=	${LOCALBASE}
+.endif
+
+MILTERINC=	${MILTERBASE}/include
+MILTERLIB=	${MILTERBASE}/lib
+
+CPPFLAGS+=	-I${MILTERINC}
+LDFLAGS+=	-L${MILTERLIB}
+
+CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 USE_AUTOCONF_VER= 253
 USE_AUTOMAKE_VER= 15
@@ -42,4 +82,4 @@ post-install:
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
