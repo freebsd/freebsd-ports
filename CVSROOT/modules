@@ -8972,6 +8972,7 @@ vpnd		ports/security/vpnd
 vpopmail	ports/mail/vpopmail
 vpopmail-stable	ports/mail/vpopmail-stable
 vqadmin		ports/mail/vqadmin
+vqregister	ports/mail/vqregister
 vrflash		ports/comms/vrflash
 vrfy		ports/mail/vrfy
 vscan		ports/security/vscan
