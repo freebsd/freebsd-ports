@@ -7,14 +7,14 @@
 #
 
 DISTNAME=	imm-3.5a1
-CATEGORIES=	mbone tk81
+CATEGORIES=	mbone tk80
 MASTER_SITES=	ftp://ftp.hawaii.edu/paccom/imm-3.5a1/
 DISTFILES=	imm.source.tar.Z
 WRKSRC=		${WRKDIR}/mnm
 
 MAINTAINER=	fenner@freebsd.org
 
-LIB_DEPENDS=	tk81\\.1:${PORTSDIR}/x11/tk81
+LIB_DEPENDS=	tk80\\.1:${PORTSDIR}/x11/tk80
 
 USE_X11=	yes
 

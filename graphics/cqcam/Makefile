@@ -7,14 +7,13 @@
 #
 
 DISTNAME=	cqcam-0.45a
-CATEGORIES=	graphics tk81
+CATEGORIES=	graphics tk80
 MASTER_SITES=	http://www.cs.virginia.edu/~patrick/cqcam/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.ORG
 
-LIB_DEPENDS=	jpeg\\.7\\.:${PORTSDIR}/graphics/jpeg \
-		tk81\\.1:${PORTSDIR}/x11/tk81
+LIB_DEPENDS=	tk80\\.1:${PORTSDIR}/x11/tk80
 
 MAN1=		cqcam.1
 

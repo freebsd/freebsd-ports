@@ -8,12 +8,12 @@
 
 DISTNAME=	SpecTcl1.1
 PKGNAME=	SpecTcl-1.1
-CATEGORIES=	devel tk81
+CATEGORIES=	devel tk80
 MASTER_SITES=	ftp://ftp.sunlabs.com/pub/tcl/SpecTcl/
 
 MAINTAINER=	andreas@FreeBSD.ORG
 
-RUN_DEPENDS=	wish8.1:${PORTSDIR}/x11/tk81
+RUN_DEPENDS=	wish8.0:${PORTSDIR}/x11/tk80
 
 NO_BUILD=	yes
 
