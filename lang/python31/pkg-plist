@@ -414,9 +414,6 @@ lib/%%PYTHON_VERSION%%/distutils/command/build_py.pyo
 lib/%%PYTHON_VERSION%%/distutils/command/build_scripts.py
 lib/%%PYTHON_VERSION%%/distutils/command/build_scripts.pyc
 lib/%%PYTHON_VERSION%%/distutils/command/build_scripts.pyo
-lib/%%PYTHON_VERSION%%/distutils/command/checkdep.py
-lib/%%PYTHON_VERSION%%/distutils/command/checkdep.pyc
-lib/%%PYTHON_VERSION%%/distutils/command/checkdep.pyo
 lib/%%PYTHON_VERSION%%/distutils/command/clean.py
 lib/%%PYTHON_VERSION%%/distutils/command/clean.pyc
 lib/%%PYTHON_VERSION%%/distutils/command/clean.pyo
@@ -631,6 +628,8 @@ lib/%%PYTHON_VERSION%%/email/test/data/msg_37.txt
 lib/%%PYTHON_VERSION%%/email/test/data/msg_38.txt
 lib/%%PYTHON_VERSION%%/email/test/data/msg_39.txt
 lib/%%PYTHON_VERSION%%/email/test/data/msg_40.txt
+lib/%%PYTHON_VERSION%%/email/test/data/msg_41.txt
+lib/%%PYTHON_VERSION%%/email/test/data/msg_42.txt
 lib/%%PYTHON_VERSION%%/email/test/test_email.py
 lib/%%PYTHON_VERSION%%/email/test/test_email.pyc
 lib/%%PYTHON_VERSION%%/email/test/test_email.pyo
@@ -1645,6 +1644,9 @@ lib/%%PYTHON_VERSION%%/stringold.pyo
 lib/%%PYTHON_VERSION%%/stringprep.py
 lib/%%PYTHON_VERSION%%/stringprep.pyc
 lib/%%PYTHON_VERSION%%/stringprep.pyo
+lib/%%PYTHON_VERSION%%/subprocess.py
+lib/%%PYTHON_VERSION%%/subprocess.pyc
+lib/%%PYTHON_VERSION%%/subprocess.pyo
 lib/%%PYTHON_VERSION%%/sunau.py
 lib/%%PYTHON_VERSION%%/sunau.pyc
 lib/%%PYTHON_VERSION%%/sunau.pyo
@@ -2033,6 +2035,9 @@ lib/%%PYTHON_VERSION%%/test/test_descr.pyo
 lib/%%PYTHON_VERSION%%/test/test_descrtut.py
 lib/%%PYTHON_VERSION%%/test/test_descrtut.pyc
 lib/%%PYTHON_VERSION%%/test/test_descrtut.pyo
+lib/%%PYTHON_VERSION%%/test/test_dict.py
+lib/%%PYTHON_VERSION%%/test/test_dict.pyc
+lib/%%PYTHON_VERSION%%/test/test_dict.pyo
 lib/%%PYTHON_VERSION%%/test/test_difflib.py
 lib/%%PYTHON_VERSION%%/test/test_difflib.pyc
 lib/%%PYTHON_VERSION%%/test/test_difflib.pyo
@@ -2528,6 +2533,9 @@ lib/%%PYTHON_VERSION%%/test/test_struct.pyo
 lib/%%PYTHON_VERSION%%/test/test_structseq.py
 lib/%%PYTHON_VERSION%%/test/test_structseq.pyc
 lib/%%PYTHON_VERSION%%/test/test_structseq.pyo
+lib/%%PYTHON_VERSION%%/test/test_subprocess.py
+lib/%%PYTHON_VERSION%%/test/test_subprocess.pyc
+lib/%%PYTHON_VERSION%%/test/test_subprocess.pyo
 lib/%%PYTHON_VERSION%%/test/test_sunaudiodev.py
 lib/%%PYTHON_VERSION%%/test/test_sunaudiodev.pyc
 lib/%%PYTHON_VERSION%%/test/test_sunaudiodev.pyo
