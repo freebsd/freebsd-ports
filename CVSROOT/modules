@@ -287,6 +287,7 @@ apache13-modssl	ports/www/apache13-modssl
 apache13-ssl	ports/www/apache13-ssl
 apache2		ports/www/apache2
 apc		ports/math/apc
+apcupsd		ports/sysutils/apcupsd
 apel-emacs	ports/editors/apel-emacs
 apel-emacs20	ports/editors/apel-emacs20
 apel-mule	ports/editors/apel-mule
