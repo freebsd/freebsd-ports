@@ -1,5 +1,5 @@
---- Makefile.orig	Sun Aug  3 10:02:37 1997
-+++ Makefile	Tue Jan 27 19:44:58 1998
+--- Makefile.orig	Sun Aug  3 13:02:37 1997
++++ Makefile	Wed Aug  4 13:43:37 1999
 @@ -5,24 +5,22 @@
  # ver 1.0 A
  #
@@ -14,7 +14,8 @@
 +SCRIPTDIR=	${PREFIX}/libexec/bkpupsd
  
  all: ./src/bkpupsd.c
- 	${CC} -o ./bin/bkpupsd ./src/bkpupsd.c
+-	${CC} -o ./bin/bkpupsd ./src/bkpupsd.c
++	${CC} ${CFLAGS} -o ./bin/bkpupsd ./src/bkpupsd.c
  
  install:
 -	chown root.wheel ./bin/bkpupsd
