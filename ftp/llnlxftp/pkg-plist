@@ -1,0 +1,3 @@
+bin/xftp
+man/man1/xftp.1x
+lib/X11/app-defaults/XFtp
