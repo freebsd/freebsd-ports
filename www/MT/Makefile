@@ -9,12 +9,10 @@ PORTNAME=	MT
 PORTVERSION=	2.661
 PORTREVISION=	1
 CATEGORIES=	www
-
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A web-based personal publishing system like weblogs
-
 DISTNAME=	${PORTNAME}-${PORTVERSION}-full-lib
-DOWNLOAD_URL?=	http://www.movabletype.org/download.shtml
+
+MAINTAINER=	arved@FreeBSD.org
+COMMENT=	A web-based personal publishing system like weblogs
 
 DATADIR=	www/data/mt
 CGIDIR=		www/cgi-bin/mt
@@ -34,7 +32,7 @@ PLIST_SUB+=	DATADIR=${DATADIR} CGIDIR=${CGIDIR}
 
 USE_PERL5_RUN=	yes
 NO_BUILD=	yes
-NO_PACKAGE=	"not yet"
+NO_PACKAGE=	"License does not permit distribution"
 
 .include <bsd.port.pre.mk>
 
@@ -42,10 +40,8 @@ NO_PACKAGE=	"not yet"
 ECHO_MSG=/usr/bin/printf
 IGNORE=	:\n\
 Because of licensing restrictions, you must fetch the source distribution\n\
-manually.  Please access ${DOWNLOAD_URL}, follow\n\
-the registration instructions, select \"full version, with libraries\" and\n\
-\"gzipped tar\", download the file into ${DISTDIR}/, and then\n\
-run make again.\n
+manually.  Unfortunately there is no offical download URL anymore.\n\
+Download the file into ${DISTDIR}/, and then run make again.\n
 .endif
 
 do-install:
