@@ -14,7 +14,7 @@ MAINTAINER=	murban@tznet.com
 
 LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
 RUN_DEPENDS=	python:${PORTSDIR}/lang/python
-RUN_DEPENDS=	${LOCALBASE}/lib/python1.5/site-packages/GTK.py:${PORTSDIR}/x11-toolkits/py-gtk
+RUN_DEPENDS=	${LOCALBASE}/lib/python1.6/site-packages/GTK.py:${PORTSDIR}/x11-toolkits/py-gtk
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_X_PREFIX=	yes
