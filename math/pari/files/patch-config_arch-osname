@@ -1,0 +1,23 @@
+
+$FreeBSD$
+
+--- config/arch-osname.orig	Mon Apr  2 00:10:23 2001
++++ config/arch-osname	Tue Nov 12 22:24:03 2002
+@@ -10,11 +10,16 @@
+   irix*)    osname=irix;;
+   fx2800)   arch=fx2800; osname=concentrix;;
+   hp*)      arch=hppa; osname=hpux;;
+-  freebsd|os2)  arch=ix86;;
++  os2)      arch=ix86;;
+   ultrix)   arch=mips;;
+   nextstep) arch=`file /bin/sh | sed 's/.*(for architecture \(.*\))/\1/'`;;
+   osf1)     case "$5" in alpha) arch=alpha;; esac;;
+   cygwin*)  arch=$HOSTTYPE; osname=cygwin;;
++  freebsd)  arch=`uname -m`
++	    case $arch in
++	      i386)    arch=ix86;;
++	      sparc64) arch=sparcv9;;
++	    esac;;
+   linux)    arch=`uname -m`
+ 	    case "`cat /proc/cpuinfo`" in
+ 	    *SuperSparc*)   arch=sparcv8_super;;
