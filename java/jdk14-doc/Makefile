@@ -36,12 +36,6 @@ USE_ZIP=	yes
 IGNORE=You must manually fetch ${DISTNAME}${EXTRACT_SUFX} from ${DOWNLOAD_URL}, place it in ${DISTDIR} and then run make again
 .endif
 
-pre-install:
-	@${ECHO_CMD} -n ">> Removing ${PLIST}..."
-	@${RM} -f ${PLIST}
-	@${TOUCH} ${PLIST}
-	@${ECHO_CMD} " [ DONE ]"
-
 do-install:
 	@${ECHO_CMD} -n ">> Creating directory ${TARGET_DIR}..."
 	@${MKDIR} ${TARGET_DIR}
@@ -51,11 +45,15 @@ do-install:
 	@${CP} -r ${WRKSRC}/* ${TARGET_DIR}
 	@${ECHO_CMD} " [ DONE ]"
 
+post-extract:
 	@${ECHO_CMD} -n ">> Creating packing list..."
-	@${FIND} ${TARGET_DIR} -type f -print | \
-		${SED} "s,${PREFIX}/*,," >> ${PLIST}
-	@${FIND} ${TARGET_DIR} -type d -print | ${SORT} -r | \
-		${SED} -e "s,${PREFIX}/*,," -e "s,^,@dirrm ,g" >> ${PLIST}
+	@${ECHO_CMD} "@cwd ${TARGET_DIR}" > ${PLIST}
+	@${FIND} ${WRKSRC} -type f -print | \
+		${SED} -e "s,${WRKSRC}/*,," >> ${PLIST}
+	@${FIND} ${WRKSRC} -type d -print | ${SORT} -r | \
+		${SED} -e "s,${WRKSRC}/*,," -e "/^$$/d" -e "s,^,@dirrm ," >> ${PLIST}
+	@${ECHO_CMD} "@cwd /" >> ${PLIST}
+	@${ECHO_CMD} "@dirrm ${TARGET_DIR}" >> ${PLIST}
 	@${ECHO_CMD} " [ DONE ]"
 
 .include <bsd.port.post.mk>
