@@ -1,0 +1,24 @@
+[ excerpt (with adaptations) from developer's README ]
+ffmpeg is a hyper fast realtime audio/video encoder, a streaming
+server and a generic audio and video file converter.
+
+It can convert a standard video source into several file formats
+based on DCT/motion compensation encoding. Sound is compressed in
+MPEG audio layer 2 or using an AC3 compatible stream.
+
+What makes ffmpeg interesting ?
+- Simple and efficient video encoder: outputs MPEG1, H263, Real
+  Video(tm), MPEG4, DIVX and MJPEG compatible bitstreams using the
+  same encoder core.
+- Hyper fast MPEG audio layer 2 compression (50 times faster than
+  realtime on a K6 500).
+[snip -> rest on website below]
+
+ffmpeg is made of two programs:
+* ffmpeg: soft VCR which encodes in real time to several formats.
+  It can also encode from any supported input file format to any
+  input supported format.
+* ffserver: high performance live broadcast streaming server based
+  on the ffmpeg core encoders.
+
+WWW: http://ffmpeg.sourceforge.net/

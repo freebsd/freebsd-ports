@@ -41,6 +41,7 @@
     SUBDIR += evas
     SUBDIR += fbm
     SUBDIR += feh
+    SUBDIR += ffmpeg
     SUBDIR += flashplayer
     SUBDIR += fli2gif
     SUBDIR += fly
