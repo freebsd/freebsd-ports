@@ -6,17 +6,18 @@
 #
 
 PORTNAME=	gpgme
-PORTVERSION=	0.3.12
+PORTVERSION=	0.3.14
 CATEGORIES=	security
-MASTER_SITES=	ftp://ftp.gnupg.org/gcrypt/alpha/gpgme/
+MASTER_SITES=	ftp://ftp.gnupg.org/gcrypt/gpgme/
 
 MAINTAINER=	markun@onohara.to
 
 BUILD_DEPENDS=	gpg:${PORTSDIR}/security/gnupg
+LIB_DEPENDS=	pth.14:${PORTSDIR}/devel/pth
 
 USE_LIBTOOL=	yes
+CONFIGURE_ARGS=	--without-gpgsm
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
-CONFIGURE_ARGS=	--with-pth=no
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
 
