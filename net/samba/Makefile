@@ -56,7 +56,7 @@ CONFIGURE_ARGS=	--libdir=${SAMBA_CONFDIR} \
 		--with-sambabook=${PREFIX}/share/swat/using_samba \
 		--with-lockdir=${VARDIR}/lock --with-privatedir=${SAMBA_PRIVATE} \
 		--with-pam --with-piddir=${VARDIR}/run \
-		--with-logfilebase
+		--with-logfilebase=${SAMBA_LOGDIR}
 
 .include <bsd.port.pre.mk>
 
