@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	lsh
-PORTVERSION=	0.9.10
+PORTVERSION=	0.9.11
 CATEGORIES=	security ipv6
 MASTER_SITES=	ftp://ftp.lysator.liu.se/pub/security/lsh/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
