@@ -109,7 +109,7 @@ while [ "$1" ]; do
 			echo "PHP_CONF_ARGS+=	--with-mysql=\${PREFIX}"
 			;;
 		\"PostgreSQL\")
-			echo "BUILD_DEPENDS+=	\${PREFIX}/pgsql/bin/psql:\${PORTSDIR}/databases/postgresql"
+			echo "LIB_DEPENDS+=	pq.2:\${PORTSDIR}/databases/postgresql"
 			echo "PHP_CONF_ARGS+=	--with-pgsql=\${PREFIX}/pgsql"
 			;;
 		\"mSQL\")
