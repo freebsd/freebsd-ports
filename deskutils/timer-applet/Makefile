@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	timer-applet
-PORTVERSION=	0.4
+PORTVERSION=	0.5.1
 CATEGORIES=	deskutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	timerapplet
@@ -18,6 +18,7 @@ RUN_DEPENDS=	${X11BASE}/share/gnome/sounds/gtk-events/clicked.wav:${PORTSDIR}/au
 
 USE_GNOME=	gnomehack gnomeprefix gnomepanel
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--bindir=${PREFIX}/libexec	# applets belong to libexec
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
@@ -27,7 +28,8 @@ post-patch:
 		's|/usr/share/pixmaps/||; \
 		 s|location="timer-applet"|location="${PREFIX}/libexec/timer-applet"|' \
 		${WRKSRC}/timer-applet.server
-	@${REINPLACE_CMD} -e 's|/usr/share/sounds|${X11BASE}/share/gnome/sounds|' \
-		${WRKSRC}/src/timer-applet.c
+	@${REINPLACE_CMD} -e \
+		's|$$(datadir)/sounds|${X11BASE}/share/gnome/sounds|' \
+		${WRKSRC}/src/Makefile.in
 
 .include <bsd.port.mk>
