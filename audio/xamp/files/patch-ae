@@ -1,5 +1,5 @@
---- Makefile.in.orig	Tue Feb 10 16:37:20 1998
-+++ Makefile.in	Sun Sep 27 20:24:53 1998
+--- Makefile.in.orig	Wed Feb 11 07:37:20 1998
++++ Makefile.in	Wed Feb  3 23:00:03 1999
 @@ -14,7 +14,8 @@
  DEFINES = -DOS_@OS_TYPE@ -DARCH_@ARCH_TYPE@
  CFLAGS = @CFLAGS@ ${DEFINES} ${DEBUG} ${BACK}
@@ -20,3 +20,12 @@
  
  all: xamp
  
+@@ -59,7 +63,7 @@
+ 	cd pixmaps ; make
+ 
+ xamp: images $(OBJ) 
+-	$(CC) -o xamp $(OBJ) $(LDFLAGS) $(LIBS) 
++	$(CXX) -o xamp $(OBJ) $(LDFLAGS) $(LIBS) 
+ 	
+ install:
+ 	$(INSTALL) -m 755 xamp $(DESTDIR)
