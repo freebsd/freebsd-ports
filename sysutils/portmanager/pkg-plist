@@ -5,31 +5,15 @@
 @unexec rm -f %D/share/portmanager/ports_cache.db 2>/dev/null || true
 @unexec rm -f %D/share/portmanager/ports_installed.db 2>/dev/null || true
 @unexec rm -f %D/share/portmanager/ports_old.db 2>/dev/null || true
-bin/mgmlParse
-bin/pmStatus
+bin/pmstatus
 bin/pmupgrade
 bin/portmanager
 etc/portmanager/pm-020.conf.SAMPLE
-include/MGrFileSize.h
-include/MGrFileTime.h
-include/MGrIfFileExist.h
-include/MGrInStringSwap.h
-include/MGrIntToString.h
-include/MGrStripComment.h
-include/PMGRrDbCreate.h
-include/PMGRrMakeDescribe.h
-include/PMGRrReadConfigure.h
 include/libMG.h
 include/libPMGR.h
-include/pmStatus.h
-include/pmupgrade.h
-include/portmanager.h
 lib/libMG
 lib/libMG.0
-lib/libMG.a
 lib/libPMGR
 lib/libPMGR.0
-lib/libPMGR.a
-share/portmanager/.keepme
 @unexec rmdir %D/etc/portmanager 2>/dev/null || true
 @unexec rmdir %D/share/portmanager 2>/dev/null || true

@@ -6,59 +6,54 @@
 #
 
 PORTNAME=		portmanager
-PORTVERSION=		0.2.0
-PORTREVISION=		3
+PORTVERSION=		0.2.1
 CATEGORIES=		sysutils
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	portmanager
 
-MAINTAINER=		ringworm@inbox.lv
+MAINTAINER=		reso3w83@verizon.net
 COMMENT=		FreeBSD port management software
 
-.if !defined(NOPORTDOCS)
-BUILD_DEPENDS=		c2html:${PORTSDIR}/textproc/c2html	\
-			tidy:${PORTSDIR}/www/tidy
+.if defined(WITH_DEBUG)
+BUILD_DEPENDS=	autoheader259:${PORTSDIR}/devel/autoconf259	\
+	aclocal19:${PORTSDIR}/devel/automake19	\
+	libtoolize15:${PORTSDIR}/devel/libtool15
 .endif
 
-USE_GMAKE=		yes
+MAN1=			portmanager.1
+
 GNU_CONFIGURE=		yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 INSTALLS_SHLIB=		yes
+USE_REINPLACE=		yes
+# Need INSTALL_TARGET to install /usr/local/etc/portmanager/pm-020.conf.SAMPLE
+INSTALL_TARGET=         install info
 
-.if !defined(NOPORTDOCS)
-PORTDOCS=		docbook.css index.html libPMGR.3.html libPMGR.h.html 				\
-			PMGRrDbCreate.c.html PMGRrDbCreate.h.html PMGRrDbCreate.3.html			\
-			PMGRrReadConfigure.c.html PMGRrReadConfigure.h.html PMGRrReadConfigure.3.html	\
-			PMGRrMakeDescribe.3.html PMGRrMakeDescribe.c.html PMGRrMakeDescribe.h.html	\
-			MGmDbArray.3.html		\
-			MGrFileSize.3.html MGrFileSize.c.html MGrFileSize.h.html \
-			MGrFileTime.3.html MGrFileTime.c.html MGrFileTime.h.html	\
-			MGrIfFileExist.3.html MGrIfFileExist.c.html MGrIfFileExist.h.html		\
-			MGrInStringSwap.3.html MGrInStringSwap.c.html MGrInStringSwap.h.html		\
-			MGrIntToString.3.html MGrIntToString.c.html MGrIntToString.h.html		\
-			MGrStripComment.3.html MGrStripComment.c.html MGrStripComment.h.html		\
-			MGsDb.7.html MGsProperty.7.html libMG.3.html libMG.h.html mgmlParse.1.html	\
-			mgmlParse.c.html mgmlParse.h.html portmanager.1.html portmanager.c.html 	\
-			portmanager.h.html pmStatus.1.html pmStatus.c.html pmStatus.h.html 		\
-			pmupgrade.1.html pmupgrade.c.html pmupgrade.h.html
-INSTALL_TARGET=		install info
-
+# Only way to get WITH_DEBUG build dependencies handled prior to reconfiguring
+# is to use post-configure <sigh>
+post-configure:
+.if defined(WITH_DEBUG)
+	@${REINPLACE_CMD} -e 's|# BDECFLAGS=|BDECFLAGS=|g' ${WRKSRC}/configure.ac
+	@${REINPLACE_CMD} -e 's|# CFLAGS=|CFLAGS=|g' ${WRKSRC}/configure.ac
+	cd ${WRKSRC};sh rePackage.sh;sh configure
 .endif
 
 post-install:
 	@${ECHO}	"******************************************************"
+	@${ECHO}	"* to compile with debug support try:                 *"
+	@${ECHO}	"*   make WITH_DEBUG=yes install clean                *"
+	@${ECHO}	"*                                                    *"
 	@${ECHO}	"* portmanager commands:                              *"
 	@${ECHO}	"*                                                    *"
 	@${ECHO}	"* portmanager -h   brief help screen                 *"
 	@${ECHO}	"*             -s   list status of installed ports    *"
 	@${ECHO}	"*             -u   upgrade installed ports           *"
-	@${ECHO}	"* *WARNING*                                          *"
-	@${ECHO}	"* the formant of                                     *"
-	@${ECHO}	"* /usr/local/etc/portmanager/portmanager.conf is     *"
-	@${ECHO}	"* changed in version 0.2.0 and has been renamed to   *"
-	@${ECHO}	"* pm-020.conf                                        *"
+	@${ECHO}	"*                                                    *"
+	@${ECHO}	"* see man portmanager(1) or                          *"
+	@${ECHO}	"* /usr/local/etc/portmanager/pm-020.conf             *"
+	@${ECHO}	"* for config options                                 *"
 	@${ECHO}	"*                                                    *"
 	@${ECHO}	"* all feedback is welcome, send to:                  *"
-	@${ECHO}	"* Michael C. Shultz ringworm@inbox.lv                *"
+	@${ECHO}	"* Michael C. Shultz reso3w83@verizon.net             *"
 	@${ECHO}	"******************************************************"
 .include <bsd.port.mk>
