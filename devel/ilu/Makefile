@@ -3,10 +3,11 @@
 # Date created:         29.9.1997
 # Whom:                 cracauer@cons.org "Martin Cracauer"
 #
-# $Id: Makefile,v 1.7 1997/10/01 06:50:02 cracauer Exp $
+# $Id: Makefile,v 1.1.1.1 1997/10/01 08:12:53 cracauer Exp $
 #
 
 DISTNAME=       ilu-2.0alpha11
+PKGNAME=	ilu-2.0a11
 CATEGORIES=     devel
 MASTER_SITES=   ftp://parcftp.xerox.com/pub/ilu/2.0a11/
 
