@@ -15,10 +15,11 @@ MAINTAINER=	perky@FreeBSD.org
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+USE_REINPLACE=  yes
 PLIST_SUB=	PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR:S,${LOCALBASE}/,,g}
 
 post-patch:
-	${PERL} -pi -e 's,/usr/bin/env python2,${PYTHON_CMD},' \
+	${REINPLACE_CMD} -e 's,/usr/bin/env python2,${PYTHON_CMD},' \
 		${WRKSRC}/scripts/decompyle
 
 .include <bsd.port.mk>

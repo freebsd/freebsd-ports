@@ -14,22 +14,22 @@ MAINTAINER=	perky@FreeBSD.org
 
 USE_BISON=	yes
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 
 ALL_EXAMPLES=	Makefile fibonacci.spl fibonacci2.spl guess.spl hello.spl \
 		primes.spl reverse.spl shakesbeer.spl
 
 post-patch:
-	@${PERL} -pi -e 's,= gcc,?= gcc,; s,^CCFLAGS.*,CFLAGS += -Wall,; \
-		s,CCFLAGS,CFLAGS,g' \
-		${WRKSRC}/Makefile ${WRKSRC}/examples/Makefile
+	@for f in ${WRKSRC}/Makefile ${WRKSRC}/examples/Makefile; do \
+	 ${REINPLACE_CMD} -i "" -e 's,= gcc,?= gcc,' -e 's,^CCFLAGS.*,CFLAGS += -Wall,' \
+		-e 's,CCFLAGS,CFLAGS,g' -e 's,^SPLPATH =.*,SPLPATH =${PREFIX},g' \
+		-e 's, spl/, ${PREFIX}/,g' $$f; \
+	done
 
-do-install:
-	${TAR} -C ${WRKSRC}/spl -cf- . | ${TAR} -C ${PREFIX} -xpf-
+post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${EXAMPLESDIR}
 	cd ${WRKSRC}/examples && ${INSTALL_DATA} ${ALL_EXAMPLES} ${EXAMPLESDIR}
-	@${PERL} -pi -e 's,^SPLPATH =.*,SPLPATH =${PREFIX},g' \
-		${EXAMPLESDIR}/Makefile
 .endif
 
 .include <bsd.port.mk>

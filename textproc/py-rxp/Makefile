@@ -18,12 +18,13 @@ MAINTAINER=	perky@FreeBSD.org
 NO_WRKSUBDIR=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+USE_REINPLACE=	yes
 
 EXAMPLESDIR=	${PREFIX}/share/examples/py-rxp
 DOCSDIR=	${PREFIX}/share/doc/py-rxp
 
 post-patch:
-	@${PERL} -pi -e 's/freebsd4/freebsd4","freebsd5/g' ${WRKSRC}/setup.py
+	@${REINPLACE_CMD} -e 's/freebsd4/freebsd4","freebsd5/g' ${WRKSRC}/setup.py
 
 .if !defined(NOPORTDOCS)
 post-install:

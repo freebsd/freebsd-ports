@@ -16,6 +16,7 @@ MAINTAINER=	perky@FreeBSD.org
 LIB_DEPENDS=	gd.2:${PORTSDIR}/graphics/gd
 
 USE_PYTHON=	yes
+USE_REINPLACE=  yes
 PLIST_SUB=	PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR:S,^${LOCALBASE}/,,g} \
 		EXAMPLE_DIR=${EXAMPLE_DIR:S,^${PREFIX}/,,g}
 EXAMPLE_DIR=	${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}
@@ -25,10 +26,11 @@ USE_XPM=	yes
 .endif
 
 post-patch:
-	${PERL} -pi -e 's,^(gd.*)$$,\1 -I${LOCALBASE}/include/gd -L${LOCALBASE}/lib,g; s,-lttf,,g; s,/usr/X11R6,${X11BASE},g;' \
-		${WRKSRC}/Setup
+	${REINPLACE_CMD} -e 's,^\(gd.*\)$$,\1 -I${LOCALBASE}/include/gd\
+		-L${LOCALBASE}/lib,g' -e 's,-lttf,,g' \
+		-e 's,/usr/X11R6,${X11BASE},g' ${WRKSRC}/Setup
 .if defined(WITHOUT_X11)
-	${PERL} -pi -e 's,-lX11 -lXpm,,g' ${WRKSRC}/Setup
+	${REINPLACE_CMD} -e 's,-lX11 -lXpm,,g' ${WRKSRC}/Setup
 .endif
 
 pre-build:
