@@ -6,14 +6,12 @@
 #
 
 PORTNAME=	linux-opera
-PORTVERSION=	5.0b8
+PORTVERSION=	5.0
 CATEGORIES=	www linux
-MASTER_SITES=	http://opera.online.no/linux/tgz/
-DISTNAME=	opera-5.0-b8-20010426.023-static.i386
+MASTER_SITES=	http://opera.online.no/linux/tgz/500/
+DISTNAME=	opera-${PORTVERSION}-static.i386
 
 MAINTAINER=	des@FreeBSD.org
-
-IS_INTERACTIVE=	YES
 
 RUN_DEPENDS=	${LINUXBASE}/lib/ld.so:${PORTSDIR}/emulators/linux_base \
 		${LINUXBASE}/usr/lib/libpng.so.2:${PORTSDIR}/graphics/linux-png \
@@ -21,10 +19,14 @@ RUN_DEPENDS=	${LINUXBASE}/lib/ld.so:${PORTSDIR}/emulators/linux_base \
 
 NO_BUILD=	yes
 
+do-configure:
+	${SED} 's|%%PREFIX%%|${PREFIX}|' <${FILESDIR}/opera.sh >${WRKDIR}/opera.sh
+
 do-install:
 	(cd ${WRKSRC} && ./install.sh \
 	    --exec_prefix=${PREFIX}/bin \
 	    --docdir=${PREFIX}/share/doc/opera \
 	    --sharedir=${PREFIX}/share/opera )
+	${INSTALL_SCRIPT} ${WRKDIR}/opera.sh ${PREFIX}/bin/opera
 
 .include <bsd.port.mk>

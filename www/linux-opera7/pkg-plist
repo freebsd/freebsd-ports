@@ -1,7 +1,6 @@
 bin/opera
+bin/opera-bin
 share/doc/opera/LICENSE
-share/opera/buttons/DefSmall
-share/opera/buttons/Default
 share/opera/buttons/ReadMe.txt
 share/opera/buttons/default/abc.gif
 share/opera/buttons/default/buttons.ini
@@ -143,6 +142,8 @@ share/opera/buttons/examples/example_big.ini
 share/opera/buttons/examples/example_small.ini
 share/opera/buttons/examples/opera_22x22.png
 share/opera/buttons/examples/opera_32x32.png
+share/opera/buttons/DefSmall
+share/opera/buttons/Default
 share/opera/help/access.htm
 share/opera/help/alpha.htm
 share/opera/help/bookmark.htm
