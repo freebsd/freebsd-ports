@@ -15,8 +15,8 @@ DISTFILES=	# none
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	Ruby module for Ming which allows you to create Flash 4/5 movies
 
-BUILD_DEPENDS=	${SWIG}:${PORTSDIR}/devel/swig13 \
-		${NONEXISTENT}:${PORTSDIR}/graphics/ming:patch
+EXTRACT_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/graphics/ming:patch
+BUILD_DEPENDS=	${SWIG}:${PORTSDIR}/devel/swig13
 LIB_DEPENDS=	ming.3:${PORTSDIR}/graphics/ming
 
 USE_RUBY=	yes
