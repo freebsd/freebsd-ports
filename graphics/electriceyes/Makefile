@@ -3,14 +3,14 @@
 # Date created:				21 August 1998
 # Whom:					Yukihiro Nakai <Nakai@technologist.com>
 #
-# $Id: Makefile,v 1.11 1999/02/24 22:04:23 vanilla Exp $
+# $Id: Makefile,v 1.12 1999/03/09 01:08:57 nectar Exp $
 #
 
 DISTNAME=	ee-0.3.8
 PKGNAME=	electriceyes-0.3.8
 CATEGORIES=	graphics gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	gnome-1.0/sources
+MASTER_SITE_SUBDIR=	sources/ee
 
 MAINTAINER=	nacai@iname.com
 

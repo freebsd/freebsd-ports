@@ -3,14 +3,14 @@
 # Date created:				22 Dec 1998
 # Whom:					Vanilla I. Shu <vanilla@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.2 1999/01/27 08:31:48 fenner Exp $
+# $Id: Makefile,v 1.3 1999/03/09 01:08:48 nectar Exp $
 #
 
 DISTNAME=	audiofile-0.1.6
 PKGNAME=	libaudiofile-0.1.6
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	gnome-1.0/sources
+MASTER_SITE_SUBDIR=	sources/libaudiofile
 
 MAINTAINER=	vanilla@FreeBSD.ORG
 

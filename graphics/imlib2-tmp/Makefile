@@ -3,13 +3,13 @@
 # Date created:		10 June 1997
 # Whom:			Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.45 1999/03/09 01:08:57 nectar Exp $
+# $Id: Makefile,v 1.46 1999/03/27 10:35:57 vanilla Exp $
 #
 
 DISTNAME=	imlib-1.9.4
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	imlib
+MASTER_SITE_SUBDIR=	sources/imlib
 
 MAINTAINER=	vanilla@FreeBSD.ORG
 

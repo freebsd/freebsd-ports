@@ -3,14 +3,14 @@
 # Date created:				15 Jan 1999
 # Whom:					Vanilla I. Shu <vanilla@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.2 1999/01/27 08:31:52 fenner Exp $
+# $Id: Makefile,v 1.3 1999/02/02 14:17:53 vanilla Exp $
 #
 
 DISTNAME=	gnome-print-0.0.3
 PKGNAME=	gnomeprint-0.0.3
 CATEGORIES=	print gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	gnome-print
+MASTER_SITE_SUBDIR=	sources/gnome-print
 
 MAINTAINER=	nacai@iname.com
 

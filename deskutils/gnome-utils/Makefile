@@ -3,14 +3,14 @@
 # Date created:				03 July 1998
 # Whom:					Yukihiro Nakai <Nakai@technologist.com>
 #
-# $Id: Makefile,v 1.6 1999/02/02 09:56:05 vanilla Exp $
+# $Id: Makefile,v 1.7 1999/03/09 01:09:00 nectar Exp $
 #
 
 DISTNAME=	gnome-utils-1.0.1
 PKGNAME=	gnomeutils-1.0.1
 CATEGORIES=	misc gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	gnome-1.0/sources
+MASTER_SITE_SUBDIR=	sources/gnome-utils
 
 MAINTAINER=	nacai@iname.com
 
