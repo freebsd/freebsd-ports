@@ -16,8 +16,7 @@ MAINTAINER=	sreilly@seanreilly.com
 COMMENT=	A Personal Finance Manager
 
 USE_JAVA=	1.3+
-NO_CDROM=	Strict license
-NO_PACKAGE=	${NO_CDROM}
+RESTRICTED=	Strict license
 
 # Since the vendor's file has not version information in its name:
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
