@@ -1,0 +1,19 @@
+--- gnet-config.in.orig	Sun Feb 16 15:14:23 2003
++++ gnet-config.in	Sun Feb 16 15:15:25 2003
+@@ -9,13 +9,13 @@
+ prefix=@prefix@
+ exec_prefix=@exec_prefix@
+ exec_prefix_set=no
+-cflags="-I@includedir@/gnet -I@libdir@/gnet/include"
+-libs="-L@libdir@ -lgnet"
++cflags="-I@includedir@/gnet-glib2 -I@libdir@/gnet-glib2/include"
++libs="-L@libdir@ -lgnet-glib2"
+ 
+ usage()
+ {
+ 	cat <<EOF
+-Usage: gnet-config [OPTIONS] [LIBRARIES]
++Usage: gnet-glib2-config [OPTIONS] [LIBRARIES]
+ Options:
+ 	[--prefix[=DIR]]
+ 	[--exec-prefix[=DIR]]
