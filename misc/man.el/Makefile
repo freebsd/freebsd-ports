@@ -3,7 +3,7 @@
 # Date created:		10 September 1998
 # Whom:			KIRIYAMA Kazuhiko <kiri@kiri.toba-cmt.ac.jp>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/10/09 00:46:03 kuriyama Exp $
 #
 
 DISTNAME=	i18n-man-1.1
@@ -15,8 +15,8 @@ MAINTAINER=	kiri@kiri.toba-cmt.ac.jp
 
 RUN_DEPENDS=	jman:${PORTSDIR}/japanese/man
 
-NO_WRKDIR=	yes
-NO_EXTRACT=	yes
+EXTRACT_ONLY=	# empty
+NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
 ELISPDIR=	${PREFIX}/share/emacs/site-lisp
