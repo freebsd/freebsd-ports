@@ -12,7 +12,7 @@ CATEGORIES=	emulators
 MASTER_SITES=	http://www.snes9x.com/zips/
 DISTNAME=	s9xs134a
 
-MAINTAINER=	nakai@FreeBSD.org
+MAINTAINER=	green@FreeBSD.org
 
 .if ${MACHINE_ARCH} == i386
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
