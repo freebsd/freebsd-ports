@@ -175,6 +175,7 @@
     SUBDIR += p5-AppConfig
     SUBDIR += p5-BSD-Resource
     SUBDIR += p5-C-Scan
+    SUBDIR += p5-Class-MethodMaker
     SUBDIR += p5-ConfigReader
     SUBDIR += p5-Curses
     SUBDIR += p5-Data-Flow
