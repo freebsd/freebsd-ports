@@ -1,6 +1,6 @@
---- thttpd.c.orig	Sat May 25 19:43:13 2002
-+++ thttpd.c	Sun Oct 20 23:58:44 2002
-@@ -1500,12 +1500,45 @@
+--- thttpd.c.orig	Tue May 13 17:14:33 2003
++++ thttpd.c	Wed Oct 29 05:50:14 2003
+@@ -1593,12 +1593,45 @@
      if ( hc->responselen == 0 )
  	{
  	/* No, just write the file. */
@@ -9,7 +9,7 @@
 +	
 +	sz = sendfile(
 +	     hc->file_fd, hc->conn_fd, c->bytes_sent,
-+	     MIN( c->bytes_to_send - c->bytes_sent, c->limit ),
++	     MIN( c->bytes_to_send - c->bytes_sent, c->max_limit ),
 +	     NULL, &sbytes, 0 );
 +	if (sz == -1 && errno == EAGAIN)
 +	    sz = sbytes > 0 ? sbytes : -1;
@@ -18,7 +18,7 @@
 +#else		      
  	sz = write(
  	    hc->conn_fd, &(hc->file_address[c->bytes_sent]),
- 	    MIN( c->bytes_to_send - c->bytes_sent, c->limit ) );
+ 	    MIN( c->bytes_to_send - c->bytes_sent, c->max_limit ) );
 +#endif
  	}
      else
@@ -36,7 +36,7 @@
 +	sf.trl_cnt = 0;
 +	sz = sendfile(
 +	     hc->file_fd, hc->conn_fd, c->bytes_sent,
-+	     MIN( c->bytes_to_send - c->bytes_sent, c->limit ),
++	     MIN( c->bytes_to_send - c->bytes_sent, c->max_limit ),
 +	     &sf, &sbytes, 0 );
 +	if (sz == -1 && errno == EAGAIN)
 +	    sz = sbytes > 0 ? sbytes : -1;
@@ -46,9 +46,9 @@
  	/* Yes.  We'll combine headers and file into a single writev(),
  	** hoping that this generates a single packet.
  	*/
-@@ -1516,6 +1549,7 @@
+@@ -1609,6 +1642,7 @@
  	iv[1].iov_base = &(hc->file_address[c->bytes_sent]);
- 	iv[1].iov_len = MIN( c->bytes_to_send - c->bytes_sent, c->limit );
+ 	iv[1].iov_len = MIN( c->bytes_to_send - c->bytes_sent, c->max_limit );
  	sz = writev( hc->conn_fd, iv, 2 );
 +#endif
  	}
