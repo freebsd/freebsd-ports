@@ -2146,6 +2146,7 @@ gridpix		ports/graphics/gridpix
 gringotts	ports/security/gringotts
 grip		ports/audio/grip
 grn		ports/news/grn
+gromit		ports/x11/gromit
 groundhog	ports/games/groundhog
 grpn		ports/math/grpn
 gru		ports/games/gru
