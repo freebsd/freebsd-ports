@@ -6,11 +6,17 @@
 #
 
 PORTNAME=	nag
-PORTVERSION=	1.1
-PORTREVISION=	1
+PORTVERSION=	1.1.1
 CATEGORIES=	deskutils www
-MASTER_SITES=	ftp://ftp.horde.org/pub/nag/tarballs/%SUBDIR%/
-MASTER_SITE_SUBDIR=	. old
+MASTER_SITES=	ftp://ftp.horde.org/pub/nag/				\
+		ftp://ftp.planetmirror.com/pub/horde/nag/		\
+		ftp://ftp.au.horde.org/pub/horde/nag/			\
+		ftp://ftp.be.horde.org/nag/				\
+		ftp://ftp.es.horde.org/pub/nag/				\
+		ftp://ftp.it.horde.org/pub/mirror/horde.org/nag/	\
+		ftp://ftp.nl.horde.org/mirror/horde-ftp/pub/nag/	\
+		ftp://ftp.uk.horde.org/mirrors/ftp.horde.org/pub/nag/	\
+		http://ftp.horde.org/pub/nag/
 
 MAINTAINER=	thierry@pompo.net
 COMMENT=	Nag is a simple, multiuser task list manager
@@ -24,9 +30,9 @@ REINPLACE_ARGS=	-i.beforeNag
 
 PLIST_SUB=	HORDEDIR=${LHORDEDIR} NAGDIR=${LNAGDIR}
 
-DOCS=		COPYING README docs/CHANGES docs/CREDITS docs/INSTALL \
-		docs/TODO
-CONFFILE=	conf.php html.php menu.php motd.php prefs.php
+DOCS=		COPYING README docs/CHANGES docs/CREDITS docs/INSTALL	\
+		docs/RELEASE_NOTES docs/TODO
+CONFFILE=	conf.php html.php menu.php prefs.php
 SUB_DIRS=	config graphics lib locale po scripts templates
 
 LHORDEDIR?=	www/horde
@@ -37,6 +43,10 @@ NAGDIR=		${PREFIX}/${LNAGDIR}
 CONFDIR=	${NAGDIR}/config
 
 HORDE_INC=	${LOCALBASE}/etc/horde
+
+post-patch:
+		@${RM} ${WRKSRC}/config/conf.php.dist.orig		\
+			${WRKSRC}/scripts/drivers/nag_tasks.sql.orig
 
 do-install:
 	@${MKDIR}  ${NAGDIR}
@@ -68,8 +78,8 @@ do-install:
 
 post-install:
 	@${ECHO_MSG}
-	@${CAT} ${PKGMESSAGE} | \
-	${SED} -e "s:%%NAGDIR%%:${NAGDIR}:g;s:%%PORTSDIR%%:${PORTSDIR}:g;s:%%CONFDIR%%:${CONFDIR}:g;s:%%HORDEDIR%%:${HORDEDIR}:"
+	@${SED} -e "s:%%NAGDIR%%:${NAGDIR}:g;s:%%PORTSDIR%%:${PORTSDIR}:g"	\
+		-e "s:%%CONFDIR%%:${CONFDIR}:g;s:%%HORDEDIR%%:${HORDEDIR}:" ${PKGMESSAGE}
 	@${ECHO_MSG}
 
 .include <bsd.port.mk>
