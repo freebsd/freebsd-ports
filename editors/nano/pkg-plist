@@ -1,8 +1,13 @@
 bin/nano
-info/nano.info
+share/locale/ca/LC_MESSAGES/nano.mo
+share/locale/cs/LC_MESSAGES/nano.mo
 share/locale/es/LC_MESSAGES/nano.mo
 share/locale/de/LC_MESSAGES/nano.mo
 share/locale/fi/LC_MESSAGES/nano.mo
 share/locale/fr/LC_MESSAGES/nano.mo
+share/locale/hu/LC_MESSAGES/nano.mo
 share/locale/id/LC_MESSAGES/nano.mo
 share/locale/it/LC_MESSAGES/nano.mo
+@unexec install-info --delete %D/info/nano.info %D/info/dir
+info/nano.info
+@exec install-info %D/info/nano.info %D/info/dir
