@@ -1,0 +1,18 @@
+msmtp -- SMTP plugin for MUAs
+
+This is a simple program that works as an "SMTP plugin" for Mutt and probably 
+other MUAs (mail user agents).  msmtp forwards mails to an SMTP server (for 
+example at a free mail provider) which does the delivery.  
+
+Features include:
+    * SMTP AUTH methods PLAIN, LOGIN and CRAM-MD5
+    * TLS encrypted connections
+    * IPv6 support
+    * robustness
+    * detailed error messages (including the full answer of the SMTP server) 
+      if something goes wrong
+    * sendmail compatible exit codes (which most MUAs understand).
+
+Simply tell your MUA to call msmtp instead of /usr/sbin/sendmail 
+
+WWW: http://msmtp.sourceforge.net/
