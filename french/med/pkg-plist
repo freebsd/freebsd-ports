@@ -1,0 +1,20 @@
+bin/medconforme
+bin/mdump
+bin/xmdump
+include/med.h
+include/med.hf
+include/med_proto.h
+include/med_outils.h
+include/med_utils.h
+include/med_hdfi.h
+include/med_misc.h
+lib/libmed.a
+%%PORTDOCS%%%%DOCSDIR%%/html/menu.html
+%%PORTDOCS%%%%DOCSDIR%%/html/index.html
+%%PORTDOCS%%%%DOCSDIR%%/html/introduction.html
+%%PORTDOCS%%%%DOCSDIR%%/html/external_links.html
+%%PORTDOCS%%%%DOCSDIR%%/html/reference_guide.html
+%%PORTDOCS%%%%DOCSDIR%%/html/root.html
+%%PORTDOCS%%%%DOCSDIR%%/html/user_guide.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

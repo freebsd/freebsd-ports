@@ -1,0 +1,26 @@
+--- Makefile.in.orig	Wed Nov 20 17:21:36 2002
++++ Makefile.in	Fri Jun 27 23:01:55 2003
+@@ -8,7 +8,7 @@
+ 
+ @COMMENCE@
+ 
+-SUBDIRS=src tests tools doc
++SUBDIRS=src tools doc
+ 
+ lib:
+ 	@@SETX@; for d in $(SUBDIRS); do				      \
+@@ -30,12 +30,12 @@
+ 	   (cd $$d && $(MAKE) $@) || exit 1;				      \
+ 	done
+ 
+-install: lib bin tests
++install: lib bin
+ 	@@SETX@; for d in $(SUBDIRS); do				      \
+ 	   (cd $$d && $(MAKE) $@) || exit 1;				      \
+ 	done
+ 	@$(LT) --mode=finish $(libdir);
+-	$(INSTALL_PROGRAM) $(top_builddir)/bin/xmdump $(bindir)/.
++	$(INSTALL_SCRIPT) $(top_builddir)/bin/xmdump $(bindir)/.
+ 	$(INSTALL_DATA) $(top_srcdir)/include/med.h $(includedir)/.
+ 	$(INSTALL_DATA) $(top_srcdir)/include/med.hf $(includedir)/.
+ 	$(INSTALL_DATA) $(top_srcdir)/include/med_proto.h $(includedir)/.
