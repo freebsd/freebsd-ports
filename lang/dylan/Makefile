@@ -28,6 +28,7 @@ MAINTAINER=	housel@acm.org
 
 RUN_DEPENDS=	libtool:${PORTSDIR}/devel/libtool
 
+USE_PERL5=	yes
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	--srcdir=$(WRKSRC) --enable-debug
 CONFIGURE_ENV=	D2C="$(WRKDIR)/d2c -p$(WRKSRC)/d2c/compiler/platforms.descr"

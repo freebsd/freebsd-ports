@@ -18,6 +18,7 @@ MAINTAINER=	lioux@FreeBSD.org
 LIB_DEPENDS=	tai.1:${PORTSDIR}/devel/libtai
 
 ALL_TARGET=	it
+USE_REINPLACE=	yes
 INSTALL_TARGET=	setup check
 
 MAN1=		clockadd.1 clockspeed.1 clockview.1 sntpclock.1 \
@@ -44,7 +45,7 @@ real-post-patch:
 	@${SED} "s!/usr/local/!${PREFIX}!" ${CLOCKSPEED_RC_SCRIPT_SAMPLE} > \
 		${WRKDIR}/${CLOCKSPEED_RC_SCRIPT_SAMPLE:T}
 .for file in ${PREFIX_FIX_FILES}
-	@${PERL} -pi -ne "s|%%PREFIX%%|${PREFIX}|g" ${file}
+	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${file}
 .endfor
 
 real-post-install:

@@ -21,7 +21,7 @@ USE_REINPLACE=	yes
 
 post-patch:
 	${CP} ${FILESDIR}/dhisd.sh ${WRKSRC}/dhisd.sh
-	cd ${WRKSRC} && ${REINPLACE_CMD} -p e "s^__PREFIX__^${PREFIX}^g" \
+	cd ${WRKSRC} && ${REINPLACE_CMD} -e "s^__PREFIX__^${PREFIX}^g" \
 		Makefile dhisd.h dhisd.sh ${DOCFILES}
 
 do-install:

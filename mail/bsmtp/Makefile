@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.stud.uni-karlsruhe.de/~uk1o/bsmtp/
 
 MAINTAINER=	naddy@FreeBSD.org
 
-USE_PERL=	yes
+USE_PERL5=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--redo

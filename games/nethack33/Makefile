@@ -20,6 +20,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 NO_LATEST_LINK=	yes
 
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 MAKE_ENV=	CXX="${CXX}" GRAPHICS="${GRAPHICS}"
 
 MAN6=		dgn_comp.6 dlb.6 lev_comp.6 nethack.6 recover.6
@@ -65,8 +66,10 @@ pre-everything::
 .endif
 
 post-patch:
-	@${PERL} -pi -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/include/config.h
-	@${PERL} -pi -e 's|<malloc.h>|<stdlib.h>|g' ${WRKSRC}/win/Qt/qt_win.cpp
+	@${REINPLACE_CMD} -e \
+		's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/include/config.h
+	@${REINPLACE_CMD} -e \
+		's|<malloc.h>|<stdlib.h>|g' ${WRKSRC}/win/Qt/qt_win.cpp
 
 pre-configure:
 	@cd ${WRKSRC}/sys/unix; ${SH} setup.sh
