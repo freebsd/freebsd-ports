@@ -295,6 +295,7 @@ share/gimp/brushes/callig2.gbr
 share/gimp/brushes/callig3.gbr
 share/gimp/brushes/callig4.gbr
 share/gimp/brushes/confetti.gbr
+share/gimp/brushes/confetti.gih
 share/gimp/brushes/dunes.gbr
 share/gimp/brushes/hsparks.gih
 share/gimp/brushes/galaxy.gbr
@@ -598,6 +599,7 @@ share/gimp/gradients/Wood_1
 share/gimp/gradients/Wood_2
 share/gimp/gradients/Yellow_Contrast
 share/gimp/gradients/Yellow_Orange
+share/gimp/help/C/bug_submission.html
 share/gimp/help/C/channels/channel_to_selection.html
 share/gimp/help/C/channels/channels.html
 share/gimp/help/C/channels/delete_channel.html
@@ -717,6 +719,7 @@ share/gimp/help/C/filters/gz.html
 share/gimp/help/C/filters/hrz.html
 share/gimp/help/C/filters/index.html
 share/gimp/help/C/filters/jpeg.html
+share/gimp/help/C/filters/mblur.html
 share/gimp/help/C/filters/miff.html
 share/gimp/help/C/filters/oilify.html
 share/gimp/help/C/filters/pat.html

@@ -17,4 +17,3 @@
 +  fpsetmask(0);
  
    g_set_prgname (g_basename (progname));
- 

@@ -7,7 +7,7 @@
 $progname = "gimp.setfont";
 $version = "Version 0.4 Feb 07 2000";
 
-$fontset{'chinese'} = "-*-helvetica-medium-r-normal--17-*-*-*-*-*-iso8859-1,-*-kai-medium-r-normal--16-*-*-*-*-*-big5-0";
+$fontset{'chinese'} = "-*-helvetica-medium-r-normal--14-*-*-*-*-*-iso8859-1,-*-kai-medium-r-normal--16-*-*-*-*-*-big5-0";
 $fontset{'czech'} = "-*-fixed-medium-r-normal--14-*-*-*-*-*-iso8859-2";
 $fontset{'danish'} = "-*-helvetica-medium-r-normal--14-*-*-*-*-*-iso8859-1";
 $fontset{'dutch'} = "-*-helvetica-medium-r-normal--14-*-*-*-*-*-iso8859-1";
