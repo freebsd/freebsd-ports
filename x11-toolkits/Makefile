@@ -39,6 +39,7 @@
     SUBDIR += gtk--2
     SUBDIR += gtk-Mac2-theme
     SUBDIR += gtk-bluecurve-theme
+    SUBDIR += gtk-cleanice-engine
     SUBDIR += gtk-engines
     SUBDIR += gtk-engines-collection
     SUBDIR += gtk-engines2
