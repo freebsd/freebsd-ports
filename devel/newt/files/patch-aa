@@ -1,5 +1,5 @@
---- grid.c.orig	Mon Feb  8 16:41:47 1999
-+++ grid.c	Sat Jul 22 01:14:25 2000
+--- grid.c.orig	Sun May  5 00:23:33 2002
++++ grid.c	Sun May  5 00:23:45 2002
 @@ -1,4 +1,3 @@
 -#include <alloca.h>
  #include <stdlib.h>
