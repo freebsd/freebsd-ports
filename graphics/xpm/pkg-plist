@@ -3,6 +3,6 @@ bin/sxpm
 include/X11/xpm.h
 lib/libXpm.a
 lib/libXpm.so
-lib/libXpm.so.4.11
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
+lib/libXpm.so.4
+@exec /sbin/ldconfig -m %B
+@unexec /sbin/ldconfig -R
