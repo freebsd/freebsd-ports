@@ -24,7 +24,6 @@ CONFIGURE_ENV=	NASM="${LOCALBASE}/bin/nasm" \
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
 CONFIGURE_ARGS=	--enable-video-aalib \
-		--disable-arts \
 		--disable-nas
 
 CFLAGS+=	${PTHREAD_CFLAGS}
@@ -68,6 +67,13 @@ WITHOUT_SVGALIB=	yes
 .if !defined(WITHOUT_SVGALIB)
 LIB_DEPENDS+=	vga.1:${PORTSDIR}/graphics/svgalib
 CONFIGURE_ARGS+=--enable-video-svga
+.endif
+
+.if exists(${LOCALBASE}/bin/artsc-config) || defined(WITH_ARTS)
+LIB_DEPENDS+=	artsc.0:${PORTSDIR}/audio/arts
+CONFIGURE_ARGS+=--enable-arts
+.else
+CONFIGURE_ARGS+=--disable-arts
 .endif
 
 pre-configure:
