@@ -3,7 +3,7 @@
 # Date created:         Thu Aug  1 09:10:22 CDT 1996
 # Whom:                 erich@FreeBSD.org
 #
-# $Id: Makefile,v 1.8 1998/09/15 11:12:55 asami Exp $
+# $Id: Makefile,v 1.9 1998/09/16 01:58:38 steve Exp $
 #
 
 DISTNAME=	xephem-3.1
@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://iraf.noao.edu/contrib/xephem/xephem-3.1/ \
 
 MAINTAINER=	erich@FreeBSD.org
 
-LIB_DEPENDS=	Xpm.5:${PORTSDIR}/graphics/xpm
+LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 
 REQUIRES_MOTIF=	yes
 USE_IMAKE=	yes

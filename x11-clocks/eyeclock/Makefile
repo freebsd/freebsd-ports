@@ -3,7 +3,7 @@
 # Date created:        4 September 1998
 # Whom:                KIRIYAMA Kazuhiko <kiri@pis.toba-cmt.ac.jp>
 #
-# $Id: Makefile,v 1.1.1.1 1998/09/06 07:46:22 vanilla Exp $
+# $Id: Makefile,v 1.2 1998/09/15 11:13:31 asami Exp $
 #
 
 DISTNAME=	eyeclock-1.0
@@ -13,7 +13,7 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	kiri@pis.toba-cmt.ac.jp
 
-LIB_DEPENDS=	Xpm.5:${PORTSDIR}/graphics/xpm
+LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 
 ALL_TARGET=	eyeclock
 USE_X_PREFIX=	yes

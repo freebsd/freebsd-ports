@@ -4,7 +4,7 @@
 # Date created:			09 Aug 1996
 # Whom:				Masafumi NAKANE <max@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.12 1998/08/03 10:06:58 ache Exp $
+# $Id: Makefile,v 1.13 1998/09/15 11:13:29 asami Exp $
 #
 
 DISTNAME=	youbin-2.13
@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://nuis.nuie.nagoya-u.ac.jp/info/nagoya-u/ \
 
 MAINTAINER=	max@FreeBSD.ORG
 
-LIB_DEPENDS=	Xpm.5:${PORTSDIR}/graphics/xpm
+LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 
 USE_IMAKE=	yes
 PREFIX=         ${LOCALBASE}

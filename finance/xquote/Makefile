@@ -3,7 +3,7 @@
 # Date created:		4 Jan 1998
 # Whom:			Ian Struble <ian@broken.net>
 #
-# $Id: Makefile,v 1.1.1.1 1998/04/22 14:07:50 mph Exp $
+# $Id: Makefile,v 1.2 1998/09/15 11:13:29 asami Exp $
 
 DISTNAME=	xquote-1.1
 CATEGORIES=	misc
@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR= applications
 
 MAINTAINER=	mph@freebsd.org
 
-LIB_DEPENDS=	Xpm.5:${PORTSDIR}/graphics/xpm
+LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 
 REQUIRES_MOTIF=		yes
 

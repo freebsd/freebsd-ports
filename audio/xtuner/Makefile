@@ -3,7 +3,7 @@
 # Date created:		19 December 96
 # Whom:			Lars Koeller <Lars.Koeller@Uni-Bielefeld.DE>
 #
-# $Id: Makefile,v 1.2 1998/08/07 23:56:11 asami Exp $
+# $Id: Makefile,v 1.3 1998/09/15 11:12:58 asami Exp $
 #
 
 DISTNAME=	Xtuner-2.1
@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.uni-bielefeld.de/pub/systems/FreeBSD/lkoeller/
 MAINTAINER=	Lars.Koeller@Uni-Bielefeld.DE
 
 LIB_DEPENDS=	xforms\\.0\\.:${PORTSDIR}/x11-toolkits/xforms \
-		Xpm.5:${PORTSDIR}/graphics/xpm
+		Xpm.4:${PORTSDIR}/graphics/xpm
 
 USE_IMAKE=	YES
 NO_INSTALL_MANPAGES=	YES

@@ -3,7 +3,7 @@
 # Date created:		1 May 1998
 # Whom:			Brett Taylor
 #
-# $Id: Makefile,v 1.24 1998/08/07 23:01:37 asami Exp $
+# $Id: Makefile,v 1.25 1998/09/15 11:13:34 asami Exp $
 #
 
 DISTNAME=	AfterStep-1.4.5.0
@@ -18,7 +18,7 @@ PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	brett@peloton.physics.montana.edu
 
-LIB_DEPENDS=    Xpm.5:${PORTSDIR}/graphics/xpm
+LIB_DEPENDS=    Xpm.4:${PORTSDIR}/graphics/xpm
 
 WRKSRC=         ${WRKDIR}/AfterStep
 

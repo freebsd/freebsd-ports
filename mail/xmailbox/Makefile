@@ -3,7 +3,7 @@
 # Date created:				23 May 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.3 1998/08/25 00:44:31 asami Exp $
+# $Id: Makefile,v 1.4 1998/09/15 11:13:28 asami Exp $
 #
 
 DISTNAME=		xmailbox-2.5
@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	applications
 
 MAINTAINER=		andy@icc.surw.chel.su
 
-LIB_DEPENDS=		Xpm.5:${PORTSDIR}/graphics/xpm
+LIB_DEPENDS=		Xpm.4:${PORTSDIR}/graphics/xpm
 
 USE_IMAKE=		yes
 MAN1=			xmailbox.1

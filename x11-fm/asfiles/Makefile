@@ -3,7 +3,7 @@
 # Date created:                17 August 1997
 # Whom:                        lukin@okbmei.msk.su
 #
-# $Id: Makefile,v 1.3 1998/08/07 22:33:10 asami Exp $
+# $Id: Makefile,v 1.4 1998/09/15 11:13:32 asami Exp $
 #
 
 DISTNAME=	ASFiles-1.0
@@ -14,7 +14,7 @@ MASTER_SITES=	http://w3.one.net/~roz/software/x11/windowmaker/
 MAINTAINER=	lukin@okbmei.msk.su
 
 BUILD_DEPENDS=	${PREFIX}/lib/libDnd.a:${PORTSDIR}/x11/libdnd
-LIB_DEPENDS=    Xpm.5:${PORTSDIR}/graphics/xpm
+LIB_DEPENDS=    Xpm.4:${PORTSDIR}/graphics/xpm
 
 GNU_CONFIGURE=	yes
 MAN1=	files.1

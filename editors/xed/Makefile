@@ -3,7 +3,7 @@
 # Date created:		28 Jul 1996
 # Whom:			shanee
 #
-# $Id: Makefile,v 1.7 1998/07/27 23:24:16 asami Exp $
+# $Id: Makefile,v 1.8 1998/09/15 11:13:03 asami Exp $
 #
 
 DISTNAME=	xed1.3
@@ -15,7 +15,7 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	shanee@augusta.de
 
-LIB_DEPENDS=	Xpm.5:${PORTSDIR}/graphics/xpm
+LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 
 USE_IMAKE=	yes
 XMKMF=		xmkmf

@@ -3,7 +3,7 @@
 # Date created:		Sat Aug 30 13:29:42 CEST 1997
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.4 1998/07/27 23:24:07 asami Exp $
+# $Id: Makefile,v 1.5 1998/09/15 11:12:58 asami Exp $
 #
 
 DISTNAME=	xmbase-grok-1.3.2.sbin
@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	apps/database/flatfile
 
 MAINTAINER=	andreas@FreeBSD.ORG
 
-LIB_DEPENDS=    Xpm.5:${PORTSDIR}/graphics/xpm
+LIB_DEPENDS=    Xpm.4:${PORTSDIR}/graphics/xpm
 
 WRKSRC=		${WRKDIR}/${PKGNAME}
 REQUIRES_MOTIF=	yes

@@ -3,7 +3,7 @@
 # Date created:        28 December 1996
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.1.1.1 1997/07/02 13:00:23 tg Exp $
+# $Id: Makefile,v 1.2 1998/09/15 11:13:12 asami Exp $
 #
 
 DISTNAME=	xdeblo_v1.0
@@ -14,7 +14,7 @@ DISTFILES=	xdeblock.tgz
 
 MAINTAINER=	Nakai@Mlab.t.u-tokyo.ac.jp
 
-LIB_DEPENDS=	Xpm.5:${PORTSDIR}/graphics/xpm
+LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 
 USE_IMAKE=	yes
 NO_INSTALL_MANPAGES=	yes

@@ -3,7 +3,7 @@
 # Date created:         8 Feb 1998
 # Whom:                 Donald Burr <dburr@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.4 1998/07/09 14:43:10 dburr Exp $
+# $Id: Makefile,v 1.5 1998/09/15 11:13:07 asami Exp $
 #
 
 DISTNAME=	xmame-0.33b6.1
@@ -13,7 +13,7 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	dburr@FreeBSD.ORG
 
-LIB_DEPENDS=	Xpm.5:${PORTSDIR}/graphics/xpm
+LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 
 USE_GMAKE=	YES
 MAKEFILE=	makefile.unix
