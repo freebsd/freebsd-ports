@@ -168,17 +168,12 @@ share/locale/zh_TW/LC_MESSAGES/gnome-vfs-2.0.mo
 @dirrm share/doc/gnome-vfs-2.0
 @dirrm lib/vfs/2.0/extfs
 @dirrm lib/vfs/2.0
-@dirrm lib/gnome-vfs-2.0/modules
-@dirrm lib/gnome-vfs-2.0
 @dirrm include/gnome-vfs-module-2.0/libgnomevfs
 @dirrm include/gnome-vfs-module-2.0
 @dirrm include/gnome-vfs-2.0/libgnomevfs
 @dirrm include/gnome-vfs-2.0
 @dirrm etc/gnome-vfs-2.0/vfolders
-@dirrm etc/gnome-vfs-2.0/modules
-@dirrm etc/gnome-vfs-2.0
 @dirrm etc/gconf/gconf.xml.defaults/system/http_proxy
 @dirrm etc/gconf/gconf.xml.defaults/system
 @dirrm etc/gconf/gconf.xml.defaults/schemas/system/http_proxy
 @dirrm etc/gconf/gconf.xml.defaults/schemas/system
-@unexec /bin/rmdir %D/lib/vfs 2>/dev/null || /usr/bin/true
