@@ -1,5 +1,5 @@
---- draw.c.orig	Tue Nov 13 16:00:39 2001
-+++ draw.c	Tue Nov 13 16:00:56 2001
+--- draw.c.orig	Tue Oct  1 20:32:27 2002
++++ draw.c	Tue Aug 17 13:40:08 2004
 @@ -26,6 +26,7 @@
  #include <glibtop/netload.h>
  
@@ -8,3 +8,11 @@
  #include <netinet/in.h>
  
  /*
+@@ -314,6 +315,7 @@
+ 	SLsmg_write_string("SPC,ENTER:  leave help");
+ 	break;
+     default:
++	break;
+     }
+ }
+ 
