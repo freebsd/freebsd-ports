@@ -1,8 +1,5 @@
 @comment $FreeBSD$
 bin/nano
-@unexec install-info --delete %D/info/nano.info %D/info/dir
-info/nano.info
-@exec install-info %D/info/nano.info %D/info/dir
 share/locale/ca/LC_MESSAGES/nano.mo
 share/locale/cs/LC_MESSAGES/nano.mo
 share/locale/da/LC_MESSAGES/nano.mo
@@ -21,6 +18,7 @@ share/locale/nl/LC_MESSAGES/nano.mo
 share/locale/nn/LC_MESSAGES/nano.mo
 share/locale/pl/LC_MESSAGES/nano.mo
 share/locale/pt_BR/LC_MESSAGES/nano.mo
+share/locale/ro/LC_MESSAGES/nano.mo
 share/locale/ru/LC_MESSAGES/nano.mo
 share/locale/sv/LC_MESSAGES/nano.mo
 share/locale/tr/LC_MESSAGES/nano.mo

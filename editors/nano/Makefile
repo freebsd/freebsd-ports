@@ -6,15 +6,12 @@
 #
 
 PORTNAME=	nano
-PORTVERSION=	1.2.1
-PORTREVISION=	1
+PORTVERSION=	1.2.2
 CATEGORIES=	editors
-MASTER_SITES=	http://www.nano-editor.org/dist/v1.2/ \
-		${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	http://www.nano-editor.org/dist/v1.2/
 
 MAINTAINER=	naddy@FreeBSD.org
-COMMENT=	Nano's ANOther editor, an enhanced free Pico Clone
+COMMENT=	Nano's ANOther editor, an enhanced free Pico clone
 
 LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
 
@@ -23,7 +20,14 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--enable-all
 
+INFO=		nano
 MAN1=		nano.1
 MAN5=		nanorc.5
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 500000
+BROKEN=		"memory allocation bug"
+.endif
+
+.include <bsd.port.post.mk>
