@@ -154,9 +154,7 @@ MASTER_SITE_ECLIPSE+= \
 	http://mirror.island.liu.se/eclipse/downloads/drops/%SUBDIR%/ \
 	ftp://sunsite.cnlab-switch.ch/mirror/eclipse/downloads/drops/%SUBDIR%/ \
 	ftp://eclipse.cis.sinica.edu.tw/eclipse.org/%SUBDIR%/ \
-	http://eclipse.cis.sinica.edu.tw/downloads/drops/%SUBDIR%/ \
-	http://www.binarycode.org/eclipse/%SUBDIR%/ \
-	http://eclipse.get-software.com/%SUBDIR%/
+	http://eclipse.cis.sinica.edu.tw/downloads/drops/%SUBDIR%/
 
 MASTER_SITE_EXIM+=	\
 	ftp://ftp.csx.cam.ac.uk/pub/software/email/exim/%SUBDIR%/ \
@@ -454,9 +452,6 @@ MASTER_SITE_FREEBSD_ORG+=	\
 
 MASTER_SITE_GCC+=	\
 	${MASTER_SITE_SOURCEWARE:S,%SUBDIR%,gcc/&,}  \
-	http://gcc.software-archive.net/%SUBDIR%/ \
-	http://gcc.get-software.com/%SUBDIR%/ \
-	http://www.binarycode.org/gcc/%SUBDIR%/ \
 	ftp://gcc.gnu.org/pub/gcc/%SUBDIR%/ \
 	ftp://mirrors.laffeycomputer.com/pub/gcc.gnu.org/pub/gcc/%SUBDIR%/ \
 	ftp://ftp.lip6.fr/pub/gcc/%SUBDIR%/ \
