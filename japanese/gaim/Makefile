@@ -18,4 +18,6 @@ MD5_FILE=	${.CURDIR}/distinfo
 
 CONFLICTS=	gaim-*
 
+BROKEN=		"Checksum mismatch; will be removed after Feb 2"
+
 .include "${MASTERDIR}/Makefile"

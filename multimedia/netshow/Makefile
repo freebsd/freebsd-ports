@@ -17,6 +17,8 @@ COMMENT=	Microsoft NetShow video stream player
 
 RESTRICTED=	"Commercial software"
 
+BROKEN=		Does not fetch, will be removed after Feb 2
+
 ONLY_FOR_ARCHS=	i386
 
 USE_LINUX=	yes

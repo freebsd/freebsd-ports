@@ -14,7 +14,7 @@ DISTFILES=	SimPack3.tar.Z
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SimPack & Sim++ libraries and tools for simulatiom modelling
 
-BROKEN=		"Does not install/compile"
+BROKEN=		"Does not install on 4.x, does not compile on 5.x; will be removed after Feb 2"
 
 BUILD_DEPENDS=	imake:${PORTSDIR}/devel/imake-4
 

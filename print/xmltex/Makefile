@@ -13,11 +13,13 @@ MASTER_SITE_SUBDIR=	macros/xmltex/
 DISTFILES=		base.zip
 
 MAINTAINER=		nik@FreeBSD.org
-COMMENT=	A non-validating XML parser, written in TeX
+COMMENT=		A non-validating XML parser, written in TeX
 
 BUILD_DEPENDS=		hugelatex:${PORTSDIR}/print/hugelatex
 LIB_DEPENDS=		png.5:${PORTSDIR}/graphics/png
 RUN_DEPENDS=		tex:${PORTSDIR}/print/teTeX
+
+BROKEN=			"Does not fetch; will be removed after Feb 2"
 
 WRKSRC=			${WRKDIR}/base
 USE_ZIP=		yes

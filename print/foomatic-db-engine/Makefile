@@ -16,7 +16,7 @@ COMMENT=	Foomatic database engine
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
 		curl.2:${PORTSDIR}/ftp/curl
 
-BROKEN=		Does not compile
+BROKEN=		Does not compile, will be removed after Feb 2
 
 USE_GMAKE=	yes
 USE_PERL5=	yes

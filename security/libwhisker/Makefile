@@ -14,6 +14,8 @@ DISTNAME=	${PORTNAME}-current
 MAINTAINER=	jan@atstake.com
 COMMENT=	Perl module to create HTTP test scripts
 
+BROKEN=		Checksum mismatch, will be removed after Feb 2
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 NO_BUILD=	yes

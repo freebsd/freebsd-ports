@@ -19,6 +19,8 @@ COMMENT=	Python Bindings for KDE
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/qt.py:${PORTSDIR}/x11-toolkits/py-qt
 
+BROKEN=		"Checksum mismatch; will be removed after Feb 2"
+
 WRKSRC=		${WRKDIR}/PyKDE-${PORTVERSION}
 
 USE_PYTHON=	yes

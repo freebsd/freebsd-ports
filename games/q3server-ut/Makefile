@@ -18,6 +18,8 @@ DISTNAME=	urbanterror3
 
 COMMENT=	Quake III Arena Mod: Urban Terror for Linux
 
+BROKEN=		"Does not fetch, will be removed after Feb 2"
+
 WRKSRC=		${WRKDIR}/q3ut3
 
 Q3_MOD_MASTER=	${.CURDIR}/../q3server-ra3

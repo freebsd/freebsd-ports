@@ -14,6 +14,8 @@ MASTER_SITES=	http://caraldi.com/jbq/numlockx/ \
 MAINTAINER=	jb.quenot@caraldi.com
 COMMENT=	This little thingy allows you to start X with NumLock turned on
 
+BROKEN=		Package build fails, will be removed after Feb 2
+
 HAS_CONFIGURE=	yes
 USE_X_PREFIX=	yes
 

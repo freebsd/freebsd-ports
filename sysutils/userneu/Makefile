@@ -20,6 +20,8 @@ RUN_DEPENDS=	\
     ${SITE_PERL}/Crypt/RandPasswd.pm:${PORTSDIR}/security/p5-Crypt-RandPasswd/ \
     ${SITE_PERL}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5/
 
+BROKEN=		"Broken dependencies; will be removed after Feb 2"
+
 USE_PERL5=	yes
 NO_BUILD=	yes
 

@@ -21,9 +21,9 @@ EXTRACT_SUFX=		.tar.gz
 .endif
 
 MAINTAINER=		cy@FreeBSD.org
-COMMENT=	An authentication system developed at MIT, successor to Kerberos IV
+COMMENT=		An authentication system developed at MIT, successor to Kerberos IV
 
-BROKEN=		Broken pkg-plist
+BROKEN=			"Does not build on 4.x, broken pkg-plist on 5.x; will be removed after Feb 2"
 
 BUILD_DEPENDS=		gm4:${PORTSDIR}/devel/m4
 

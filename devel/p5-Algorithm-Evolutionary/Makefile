@@ -22,6 +22,8 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Algorithm/Permute.pm:${PORTSDIR}/devel/
 		${SITE_PERL}/XML/Parser/EasyTree:${PORTSDIR}/textproc/p5-XML-Parser-EasyTree
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+BROKEN=		Broken dependency, will be removed after Feb 2
+
 PERL_CONFIGURE=	yes
 
 MAN3=	Algorithm::Evolutionary.3 \

@@ -19,6 +19,8 @@ BUILD_DEPENDS=	dot:${PORTSDIR}/graphics/graphviz \
 		rdoc:${PORTSDIR}/textproc/ruby-rdoc \
 		pod2man:${PORTSDIR}/lang/perl5
 
+BROKEN=		"Does not build on 4.x/Broken pkg-plist on 5.x, will be removed after Feb 2"
+
 USE_RUBY=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes

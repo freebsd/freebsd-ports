@@ -17,6 +17,8 @@ COMMENT=	System for detecting Network Intruders in real-time
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-pub-${PORTVERSION}a37
 
+BROKEN=		Checksum mismatch, will be removed after Feb 2
+
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 MAKE_ENV+=	CC="${CC}" CFLAGS="${CFLAGS}"

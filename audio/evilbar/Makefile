@@ -13,7 +13,7 @@ MASTER_SITES=	http://arnfast.net/projects/
 MAINTAINER=	jens@arnfast.net
 COMMENT=	Minimalistic statusbar with XMMS control, APM status and clock
 
-BROKEN=		Does not link
+BROKEN=		"Does not link, will be removed after Feb 2"
 
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes

@@ -21,6 +21,8 @@ COMMENT=		Collection of tools supporting C and C++ programming for Palm OS
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/autoheader:${PORTSDIR}/devel/autoconf
 
+BROKEN=		"Broken pkg-plist on 4.x, does not compile on 5.x; will be removed after Feb 2"
+
 # it is unknown whether it could actually be made to work elsewhere,
 # but right now it does not.
 ONLY_FOR_ARCHS=	i386
@@ -51,10 +53,6 @@ MAN1=		cccp.1 m68k-palmos-g++.1 m68k-palmos-gcc.1 \
 .include <bsd.port.pre.mk>
 
 CFLAGS:=	${CFLAGS:C/-m[-=0-9a-z]*//g}
-
-.if ${OSVERSION} >= 501000
-BROKEN=		"Does not compile"
-.endif
 
 post-extract:
 	@(cd ${WRKDIR} && ${GZIP_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/${DISTNAME}.tar.gz ${EXTRACT_AFTER_ARGS})

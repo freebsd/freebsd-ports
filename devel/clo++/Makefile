@@ -15,7 +15,7 @@ COMMENT=	Command line parser generator
 
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
 
-BROKEN=		Does not compile
+BROKEN=		"Does not compile, will be removed after Feb 2"
 
 USE_GCC=	3.2
 USE_PERL5=	yes

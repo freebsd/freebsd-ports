@@ -13,6 +13,8 @@ DISTNAME=		${PORTNAME}-${PORTVERSION}-beta1
 MAINTAINER=		brueffer@phoenix-systems.de
 COMMENT=		GUI to the P2P meta network client mldonkey for KDE
 
+BROKEN=			"Does not compile; will be removed after Feb 2"
+
 USE_KDEBASE_VER=	3
 USE_GMAKE=		yes
 GNU_CONFIGURE=		yes

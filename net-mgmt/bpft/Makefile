@@ -18,6 +18,8 @@ COMMENT=	The BPF Traffic collector
 
 CONFLICTS=	trafd-3.0.*
 
+BROKEN=		Does not fetch, will be removed after Feb 2
+
 WRKSRC=		${WRKDIR}/bpft
 MAN1=		traflog.1 trafstat.1
 MAN8=		trafstatd.8 trafd.8

@@ -20,6 +20,8 @@ DISTNAME=	caudium-${PORTVERSION:S/.20/-20/}-cvs
 MAINTAINER=	kiwi@oav.net
 COMMENT=	A free webserver which is based on the Roxen Challenger 1.3 code base (development branch)
 
+BROKEN=		Does not build, will be removed after Feb 2
+
 USE_OPENSSL=	YES
 
 BUILD_DEPENDS=	pike:${PORTSDIR}/lang/pike74/

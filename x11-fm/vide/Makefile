@@ -15,6 +15,8 @@ COMMENT=	Simple Gtk+ based filemanager with vi keybindings
 
 RUN_DEPENDS=    vim:${PORTSDIR}/editors/vim5
 
+BROKEN=		"Broken checksum; will be removed after Feb 2"
+
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomelibs

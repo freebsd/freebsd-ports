@@ -17,7 +17,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	xBase and Clipper language compatible compiler
 
-BROKEN=		Does not install
+BROKEN=		"Does not install, will be removed after Feb 2"
 
 .include <bsd.port.pre.mk>
 

@@ -19,6 +19,8 @@ COMMENT=	A programmable troff translator with backend for HTML
 RUN_DEPENDS=	elk:${PORTSDIR}/lang/elk
 BUILD_DEPENDS=	elk:${PORTSDIR}/lang/elk
 
+BROKEN=		"Does not build; will be removed after Feb 2"
+
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 DIST_SUBDIR=	unroff
 PATCH_STRIP=	-p1

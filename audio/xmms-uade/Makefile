@@ -18,7 +18,7 @@ COMMENT=	Unix Amiga Delitracker Emulator with XMMS Input plugin
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
 BUILD_DEPENDS=	lha:${PORTSDIR}/archivers/lha
 
-BROKEN=		Does not fetch
+BROKEN=		"Does not fetch, will be removed after Feb 2"
 
 USE_X_PREFIX=	yes
 USE_BZIP2=	yes

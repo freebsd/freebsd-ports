@@ -17,6 +17,8 @@ COMMENT=	A python wrapper for osd, for displaying text on your X display
 
 LIB_DEPENDS=	xosd.4:${PORTSDIR}/misc/xosd
 
+BROKEN=		Does not fetch, will be removed after Feb 2
+
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
 

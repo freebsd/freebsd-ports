@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://ich.bin.kein.hoschi.de/fpl/ \
 MAINTAINER=	d.marks@student.umist.ac.uk
 COMMENT=	An interpreted script/macro language
 
-BROKEN=		Does not fetch
+BROKEN=		"Does not fetch; will be removed after Feb 2"
 
 ALL_TARGET=
 

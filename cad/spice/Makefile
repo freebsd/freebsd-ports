@@ -18,6 +18,8 @@ EXTRACT_ONLY=	sp3f4.kit${EXTRACT_SUFX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A general-purpose circuit simulation program
 
+BROKEN=		"Does not install; will be removed after Feb 2"
+
 USE_XLIB=	yes
 USE_REINPLACE=	yes
 NO_WRKSUBDIR=	yes
@@ -27,10 +29,6 @@ MAN5=		mfbcap.5
 MLINKS=		spice.1 spice3.1
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 501000
-BROKEN=		"Does not compile on FreeBSD ${OSVERSION}"
-.endif
 
 post-configure:
 	@${REINPLACE_CMD} -e 's+@CC@+${CC}+ ; s+@CFLAGS@+${CFLAGS}+ ; \

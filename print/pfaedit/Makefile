@@ -28,6 +28,8 @@ LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 		freetype.9:${PORTSDIR}/print/freetype2 \
 		xml2:${PORTSDIR}/textproc/libxml2
 
+BROKEN=		Does not fetch, will be removed after Feb 2
+
 USE_GMAKE=	yes
 USE_XLIB=	yes
 GNU_CONFIGURE=	yes

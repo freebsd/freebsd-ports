@@ -23,6 +23,8 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 RUN_DEPENDS=	xcin2.5:${PORTSDIR}/chinese/xcin25 \
 		${X11BASE}/lib/X11/fonts/TrueType/bsmi00lp.ttf:${PORTSDIR}/chinese/arphicttf
 
+BROKEN=		"Broken pkg-plist; will be removed after Feb 2"
+
 USE_GMAKE=	yes
 USE_XPM=	yes
 STRIP=

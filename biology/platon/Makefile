@@ -20,7 +20,7 @@ COMMENT=	Tool for viewing molecular/crystallographic structures
 # There is a charge of US$ 5000 for commercial users.
 RESTRICTED=	"free for academic, US$ 5000 for commercial users"
 
-BROKEN=		"Broken pkg-plist"
+BROKEN=		"Broken pkg-plist, will be removed after Feb 2"
 
 USE_XLIB=	yes
 

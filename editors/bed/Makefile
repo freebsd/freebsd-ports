@@ -21,6 +21,8 @@ BUILD_DEPENDS+=	${X11BASE}/bin/rxvt:${PORTSDIR}/x11/rxvt
 RUN_DEPENDS=	${X11BASE}/bin/rxvt:${PORTSDIR}/x11/rxvt
 .endif
 
+BROKEN=		"Broken pkg-plist on 4.x, does not build on 5.x; will be removed after Feb 2"
+
 GNU_CONFIGURE=	yes
 
 USE_GMAKE=	yes
