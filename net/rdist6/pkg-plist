@@ -1,2 +1,2 @@
-bin/rdist6
+bin/%%RDIST_NAME%%
 bin/rdistd
