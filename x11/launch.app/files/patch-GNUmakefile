@@ -1,25 +1,23 @@
-
-$FreeBSD$
-
---- GNUmakefile.orig	Mon Jun  4 14:56:00 2001
-+++ GNUmakefile	Mon Aug 20 18:56:09 2001
+--- GNUmakefile.orig	Thu Oct 18 14:26:03 2001
++++ GNUmakefile	Thu Jan 10 13:52:21 2002
 @@ -1,10 +1,10 @@
 -PREFIX = /usr/local/GNUstep/Apps
 +prefix = $(PREFIX)/GNUstep/Apps
  # Comment out the line below if you don't use shadow passwords
 -SHADOW = yes
--CFLAGS = `get-wraster-flags --cflags` -DPREFIX="\"$(PREFIX)\""
-+#SHADOW = yes
-+CFLAGS += `get-wraster-flags --cflags` -DPREFIX="\"$(prefix)\""
- LDFLAGS = `get-wraster-flags --ldflags`
--LIBS = `get-wraster-flags --libs` -L/usr/X11R6/lib -L/usr/local/GNUstep/lib -lWMaker -lWINGs -lPropList -lcrypt
+-CFLAGS = `get-wings-flags --cflags` -DPREFIX="\"$(PREFIX)\""
+-LDFLAGS = `get-wings-flags --ldflags`
+-LIBS = `get-wings-flags --libs` -lWMaker -lcrypt
 -CC = gcc -O2 -ggdb
-+LIBS = `get-wraster-flags --libs` -L$(X11BASE)/lib -L$(X11BASE)/GNUstep/lib -lWMaker -lWINGs -lPropList -lcrypt
++#SHADOW = yes
++CFLAGS += `get-wings-flags --cflags` -DPREFIX="\"$(prefix)\""
++LDFLAGS = `get-wraster-flags --ldflags`
++LIBS = `get-wings-flags --libs` -L$(X11BASE)/lib -L$(X11BASE)/GNUstep/lib -lWMaker -lcrypt
 +CC ?= gcc
- OBJS = launch.o history.o execute.o user_auth.o exec_panel.o completion.o test_file.o common_panel.o pref_panel.o info.o legal.o
+ OBJS = launch.o history.o execute.o user_auth.o exec_panel.o \
+ completion.o test_file.o common_panel.o preferences.o info.o legal.o utils.o
  
- all: Launch
-@@ -50,21 +50,21 @@
+@@ -51,21 +51,21 @@
  	$(CC) $(CFLAGS) -c legal.c -o legal.o 
  
  install: Launch
