@@ -1,7 +1,26 @@
-*** build.orig	Mon Jun 15 20:35:10 1998
---- build	Wed Aug 12 20:21:46 1998
+*** build.orig	Fri Sep  4 03:01:15 1998
+--- build	Sun Sep 20 00:52:36 1998
 ***************
-*** 256,266 ****
+*** 80,87 ****
+   pine   The Pine mailer. Once compiled this should work just fine on
+          your system with no other files than this binary, and no
+          modifications to your system. Optionally you may create two
+!         configuration files, /usr/local/lib/pine.conf and 
+!         /usr/local/lib/pine.info. See the documentation for details.
+   
+   pico   The standalone editor similar to the Pine message composer.
+          This is a very simple straight forward text editor.
+--- 80,87 ----
+   pine   The Pine mailer. Once compiled this should work just fine on
+          your system with no other files than this binary, and no
+          modifications to your system. Optionally you may create two
+!         configuration files, /usr/local/etc/pine.conf and 
+!         /usr/local/etc/pine.info. See the documentation for details.
+   
+   pico   The standalone editor similar to the Pine message composer.
+          This is a very simple straight forward text editor.
+***************
+*** 274,284 ****
   
           if [ -s c-client ] ; then rm -f c-client ; fi
           ln -s imap/c-client c-client
@@ -13,7 +32,7 @@
           eval echo make "$makeargs" "$K1" "$K2" $ccltarg
           cd $PHOME/imap
           eval make "$makeargs" "$K1" "$K2" $ccltarg
---- 256,266 ----
+--- 274,284 ----
   
           if [ -s c-client ] ; then rm -f c-client ; fi
           ln -s imap/c-client c-client
@@ -26,7 +45,7 @@
           cd $PHOME/imap
           eval make "$makeargs" "$K1" "$K2" $ccltarg
 ***************
-*** 281,294 ****
+*** 299,312 ****
           cd $PHOME/bin
           rm -f pine mtest imapd pico pilot
           if [ -s ../pine/pine ] ;      then ln ../pine/pine  pine      ; fi
@@ -41,7 +60,7 @@
           echo "Done"
           ;;
   
---- 281,296 ----
+--- 299,312 ----
           cd $PHOME/bin
           rm -f pine mtest imapd pico pilot
           if [ -s ../pine/pine ] ;      then ln ../pine/pine  pine      ; fi
@@ -49,17 +68,15 @@
 ! #       if [ -s ../imapd/imapd ] ;    then ln ../imapd/imapd imapd    ; fi
           if [ -s ../pico/pico ] ;      then ln ../pico/pico pico ; fi
           if [ -s ../pico/pilot ] ;     then ln ../pico/pilot pilot ; fi
-+         if [ -s ../pico/libpico.so.2.0 ] ;
-+               then ln ../pico/libpico.so.2.0 libpico.so.2.0 ; fi
           cd $PHOME
           echo ''
           echo "Links to executables are in bin directory:"
-!         size bin/pine bin/pico bin/pilot bin/libpico.so.2.0
+!         size bin/pine bin/pico bin/pilot
           echo "Done"
           ;;
   
 ***************
-*** 299,308 ****
+*** 317,326 ****
   	make clean
           echo "Cleaning Pine"
           cd $PHOME/pine
@@ -70,7 +87,7 @@
           echo "Done"
           cd $PHOME
           ;;
---- 301,310 ----
+--- 317,326 ----
   	make clean
           echo "Cleaning Pine"
           cd $PHOME/pine

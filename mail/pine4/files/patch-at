@@ -1,7 +1,7 @@
-*** pine/pine.hlp.orig	Wed Jul 22 01:04:04 1998
---- pine/pine.hlp	Wed Aug 12 22:17:10 1998
+*** pine/pine.hlp.orig	Wed Sep 16 23:30:24 1998
+--- pine/pine.hlp	Sun Sep 20 00:45:54 1998
 ***************
-*** 750,758 ****
+*** 835,843 ****
   
    executable     &lt;Unix search path&gt;/pine
    persnl cfg     ~/.pinerc
@@ -11,18 +11,37 @@
   
    interrupted    ~/.pine-interrupted-mail
    debug          ~/.pine-debugN
---- 750,758 ----
+--- 835,843 ----
   
    executable     &lt;Unix search path&gt;/pine
    persnl cfg     ~/.pinerc
-!  global cfg     /usr/local/etc/pine.conf
-!  fixed cfg      /usr/local/etc/pine.conf.fixed
-!  local help     /usr/local/etc/pine.info
+!  global cfg     @@PREFIX@@/etc/pine.conf
+!  fixed cfg      @@PREFIX@@/etc/pine.conf.fixed
+!  local help     @@PREFIX@@/etc/pine.info
   
    interrupted    ~/.pine-interrupted-mail
    debug          ~/.pine-debugN
 ***************
-*** 1137,1145 ****
+*** 849,856 ****
+   postponed#     ~/mail/postponed-msgs
+   sentmail#      ~/mail/sent-mail
+   mailcap#       ~/.mailcap + /etc/mailcap
+!                            + /usr/etc/mailcap + /usr/local/etc/mailcap
+!  mimetypes#     ~/.mime.types + /etc/mime.types + /usr/local/lib/mime.types
+  
+   news-spool	varies across Unix flavors, e.g. /usr/spool/news or /var/news
+   active-news	varies across Unix flavors, e.g. /usr/lib/news/active
+--- 849,856 ----
+   postponed#     ~/mail/postponed-msgs
+   sentmail#      ~/mail/sent-mail
+   mailcap#       ~/.mailcap + /etc/mailcap
+!                            + /usr/etc/mailcap + @@PREFIX@@/etc/mailcap
+!  mimetypes#     ~/.mime.types + /etc/mime.types + @@PREFIX@@/etc/mime.types
+  
+   news-spool	varies across Unix flavors, e.g. /usr/spool/news or /var/news
+   active-news	varies across Unix flavors, e.g. /usr/lib/news/active
+***************
+*** 1404,1412 ****
   this link now to send a message to it:<BR>
   <A HREF="X-Pine-Gripe:_LOCAL_ADDRESS_?local"><!--#echo var="_LOCAL_FULLNAME_"--></A><P>
   <!--chtml endif-->
@@ -32,18 +51,18 @@
   <HR WIDTH="75%">
   <!--chtml endif-->
   <P> 
---- 1137,1145 ----
+--- 1404,1412 ----
   this link now to send a message to it:<BR>
   <A HREF="X-Pine-Gripe:_LOCAL_ADDRESS_?local"><!--#echo var="_LOCAL_FULLNAME_"--></A><P>
   <!--chtml endif-->
-! <!--chtml if [ -r /usr/local/etc/pine.info ]-->
+! <!--chtml if [ -r @@PREFIX@@/etc/pine.info ]-->
   <HR WIDTH="75%">Local Support Contacts:<P>
-! <!--#include file="/usr/local/etc/pine.info"-->
+! <!--#include file="@@PREFIX@@/etc/pine.info"-->
   <HR WIDTH="75%">
   <!--chtml endif-->
   <P> 
 ***************
-*** 1226,1232 ****
+*** 1493,1499 ****
   <OL>
     <LI> <A HREF="#intro">Introduction</A>
     <LI> <A HREF="#pine_help">Pine Help</A>
@@ -51,16 +70,16 @@
     <LI> <A HREF="#local_support">Local Support Contacts</A>
   <!--chtml endif-->
     <LI> <A HREF="#giving_cmds">Giving Commands in Pine</A>
---- 1226,1232 ----
+--- 1493,1499 ----
   <OL>
     <LI> <A HREF="#intro">Introduction</A>
     <LI> <A HREF="#pine_help">Pine Help</A>
-! <!--chtml if [ -r /usr/local/etc/pine.info ]-->
+! <!--chtml if [ -r @@PREFIX@@/etc/pine.info ]-->
     <LI> <A HREF="#local_support">Local Support Contacts</A>
   <!--chtml endif-->
     <LI> <A HREF="#giving_cmds">Giving Commands in Pine</A>
 ***************
-*** 1333,1341 ****
+*** 1600,1608 ****
   at your site.)
   
   
@@ -70,13 +89,13 @@
   <!--chtml endif-->
   
   <H2><A NAME="giving_cmds">Giving Commands in Pine</A></H2>
---- 1333,1341 ----
+--- 1600,1608 ----
   at your site.)
   
   
-! <!--chtml if [ -r /usr/local/etc/pine.info ]-->
+! <!--chtml if [ -r @@PREFIX@@/etc/pine.info ]-->
   <H2><A NAME="local_support">Local Support Contacts</A></H2>
-! <!--#include file="/usr/local/etc/pine.info"-->
+! <!--#include file="@@PREFIX@@/etc/pine.info"-->
   <!--chtml endif-->
   
   <H2><A NAME="giving_cmds">Giving Commands in Pine</A></H2>

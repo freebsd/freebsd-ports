@@ -1,17 +1,34 @@
-*** pine/init.c.orig	Thu Jul 16 21:22:22 1998
---- pine/init.c	Tue Jul 21 15:36:43 1998
+*** pine/init.c.orig	Wed Sep  2 20:39:42 1998
+--- pine/init.c	Wed Sep 16 21:08:19 1998
 ***************
-*** 579,584 ****
---- 579,587 ----
+*** 319,325 ****
+  
+  /*----------------------------------------------------------------------
+  These are the variables that control a number of pine functions.  They
+! come out of the .pinerc and the /usr/local/lib/pine.conf files.  Some can
+  be set by the user while in Pine.  Eventually all the local ones should
+  be so and maybe the global ones too.
+  
+--- 319,325 ----
+  
+  /*----------------------------------------------------------------------
+  These are the variables that control a number of pine functions.  They
+! come out of the .pinerc and the @@PREFIX@@/etc/pine.conf files.  Some can
+  be set by the user while in Pine.  Eventually all the local ones should
+  be so and maybe the global ones too.
+  
+***************
+*** 578,583 ****
+--- 578,586 ----
+  #ifdef	DF_SMTP_SERVER
       GLO_SMTP_SERVER		= parse_list(DF_SMTP_SERVER, 1, NULL);
   #endif
-  
++ 
 +     F_TURN_ON(F_TCAP_WINS,ps);
 +     F_TURN_ON(F_QUELL_INTERNAL_MSG,ps);
-+ 
+  
       /* Set the default mail directory */
       build_path(buf, GLO_MAIL_DIRECTORY, "[]");
-      GLO_FOLDER_SPEC		= parse_list(buf, 1, NULL);
 *** pine/other.c.orig	Thu Jul 16 04:09:27 1998
 --- pine/other.c	Tue Jul 21 15:03:18 1998
 ***************
