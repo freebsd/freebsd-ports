@@ -1,0 +1,4 @@
+This plugin silently consumes flash MIME types to prevent the browser from
+prompting the user to download them
+
+WWW: http://www.gsoft.com.au/~doconnor/nullflash.html

@@ -84,6 +84,7 @@
     SUBDIR += drivel
     SUBDIR += drupal
     SUBDIR += dtse
+    SUBDIR += dummyflash
     SUBDIR += eldav.el
     SUBDIR += elinks
     SUBDIR += emacs-w3m
