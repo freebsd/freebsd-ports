@@ -1,9 +1,9 @@
-# New ports collection makefile for:	North American zipcodes
+# New ports collection makefile for:	USA zipcodes
 # Version required:     1.0
 # Date created:         1997-12-30
 # Whom:                 wosch
 #
-# $Id: Makefile,v 1.4 1998/01/01 18:08:37 wosch Exp $
+# $Id: Makefile,v 1.1.1.1 1998/01/02 17:09:08 wosch Exp $
 #
 
 DISTNAME=	zipcodes
