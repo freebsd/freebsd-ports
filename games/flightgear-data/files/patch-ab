@@ -1,32 +1,43 @@
---- Tools/Construct/Parallel/client.cxx.orig	Fri May 21 13:18:06 1999
-+++ Tools/Construct/Parallel/client.cxx	Sat Jun 26 22:32:01 1999
-@@ -20,6 +20,11 @@
+--- src/Main/Makefile.am.orig	Wed Jan 22 14:33:49 2003
++++ src/Main/Makefile.am	Wed Jan 22 14:33:57 2003
+@@ -19,7 +19,7 @@
+ THREAD_LIBS =
+ endif
  
- #include <Bucket/newbucket.hxx>
+-AM_CXXFLAGS = -DPKGLIBDIR=\"$(pkglibdir)\"
++AM_CXXFLAGS = -DPKGDATADIR=\"$(pkgdatadir)\"
  
-+/* the next lines are to define BSD */
-+/* see http://www.freebsd.org/doc/en_US.ISO8859-1/books/porters-handbook/index.html for why we do this */
-+#if (defined(__unix__) || defined(unix)) && !defined(USG)
-+#include <sys/param.h>
-+#endif
+ EXTRA_DIST = 3dfx.sh runfgfs.in runfgfs.bat.in
  
- #define MAXBUF 1024
- #define BUSY_WAIT_TIME 30
-@@ -45,6 +50,9 @@
+--- src/Main/Makefile.in.orig	Wed Jan 22 14:33:49 2003
++++ src/Main/Makefile.in	Wed Jan 22 14:34:16 2003
+@@ -97,7 +97,7 @@
+ @WITH_THREADS_TRUE@THREAD_LIBS = -lsgthreads
+ @WITH_THREADS_FALSE@THREAD_LIBS = 
  
- // check if the host system is free of interactive users
- int system_free() {
-+
-+#ifndef BSD
-+
-     struct utmp *uptr;
+-AM_CXXFLAGS = -DPKGLIBDIR=\"$(pkglibdir)\"
++AM_CXXFLAGS = -DPKGDATADIR=\"$(pkgdatadir)\"
  
-     setutent();
-@@ -61,6 +69,7 @@
+ EXTRA_DIST = 3dfx.sh runfgfs.in runfgfs.bat.in
+ 
+--- src/Main/fg_init.cxx.orig	Wed Jan 22 14:33:49 2003
++++ src/Main/fg_init.cxx	Wed Jan 22 14:34:27 2003
+@@ -264,7 +264,7 @@
+ #elif defined( macintosh )
+         root = "";
+ #else
+-        root = PKGLIBDIR;
++        root = PKGDATADIR;
+ #endif
      }
  
-     endutent();
-+#endif
-     return 1;
- }
- 
+--- configure.orig	Thu Dec  5 16:31:39 2002
++++ configure	Wed Jan 22 11:51:50 2003
+@@ -4206,6 +4206,7 @@
+ if test -r /usr/include/soundcard.h \
+ 	-o -r /usr/include/linux/soundcard.h \
+ 	-o -r /usr/include/machine/soundcard.h \
++	-o -r /usr/include/sys/soundcard.h \
+ 	-o -r /usr/include/audio.h \
+ 	-o "x$ac_cv_header_windows_h" = "xyes" \
+         -o "$HOSTTYPE" = "macintosh"; then
