@@ -31,7 +31,9 @@ CONFIGURE_ARGS=	--localstatedir=${DB_DIR} \
 		--without-bench \
 		--with-mit-threads=no \
 		--with-libwrap \
-		--with-low-memory
+		--with-low-memory \
+		--with-comment='FreeBSD port: ${PKGNAME}'
+
 .if ${MACHINE_ARCH} == "i386"
 CONFIGURE_ARGS+=--enable-assembler --with-berkeley-db
 .endif
@@ -45,7 +47,7 @@ CONFIGURE_ARGS+=--with-extra-charsets=${WITH_XCHARSET}
 CONFIGURE_ARGS+=--with-mysqld-ldflags=--static
 .endif
 .if defined(BUILD_OPTIMIZED)
-CFLAGS+=	-mcpu=pentiumpro -O3 -fno-omit-frame-pointer
+CFLAGS+=	-mcpu=pentiumpro -O3
 .endif
 .if defined(WITH_LINUXTHREADS)
 CONFIGURE_ARGS+=--with-named-thread-libs='-DHAVE_GLIBC2_STYLE_GETHOSTBYNAME_R -D_THREAD_SAFE -I${LOCALBASE}/include/pthread/linuxthreads -L${LOCALBASE}/lib -llthread -llgcc_r'
@@ -94,8 +96,9 @@ pre-fetch:
 	@${ECHO} "				mysql database."
 	@${ECHO} "				Use if your machine has no offical DNS entry."
 	@${ECHO} "	BUILD_STATIC=yes	Build a static version of mysqld."
-	@${ECHO} "	BUILD_OPTIMIZED=yes	Add -mcpu=pentiumpro -O3 -fno-omit-frame-pointer"
-	@${ECHO} "				to CFLAGS."
+	@${ECHO} "	BUILD_OPTIMIZED=yes	Add -mcpu=pentiumpro -O3 to CFLAGS."
+	@${ECHO} "				This setting may produce broken code and thus"
+	@${ECHO} "				is not recommended for production servers."
 	@${ECHO} ""
 
 post-patch:
