@@ -7,6 +7,7 @@ bin/xscreensaver-getimage-file
 bin/xscreensaver-getimage-video
 bin/xscreensaver-gl-helper
 bin/xscreensaver-hacks/anemone
+bin/xscreensaver-hacks/anemotaxis
 bin/xscreensaver-hacks/ant
 bin/xscreensaver-hacks/antinspect
 bin/xscreensaver-hacks/antspotlight
@@ -107,6 +108,7 @@ bin/xscreensaver-hacks/ljlatest
 bin/xscreensaver-hacks/lmorph
 bin/xscreensaver-hacks/loop
 bin/xscreensaver-hacks/maze
+bin/xscreensaver-hacks/memscroller
 bin/xscreensaver-hacks/menger
 bin/xscreensaver-hacks/metaballs
 bin/xscreensaver-hacks/mirrorblob
@@ -223,6 +225,7 @@ share/locale/zh_CN/LC_MESSAGES/xscreensaver.mo
 share/locale/zh_TW/LC_MESSAGES/xscreensaver.mo
 share/xscreensaver/config/README
 share/xscreensaver/config/anemone.xml
+share/xscreensaver/config/anemotaxis.xml
 share/xscreensaver/config/ant.xml
 share/xscreensaver/config/antinspect.xml
 share/xscreensaver/config/antspotlight.xml
@@ -326,6 +329,7 @@ share/xscreensaver/config/lissie.xml
 share/xscreensaver/config/lmorph.xml
 share/xscreensaver/config/loop.xml
 share/xscreensaver/config/maze.xml
+share/xscreensaver/config/memscroller.xml
 share/xscreensaver/config/menger.xml
 share/xscreensaver/config/metaballs.xml
 share/xscreensaver/config/mirrorblob.xml
