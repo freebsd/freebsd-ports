@@ -1,5 +1,5 @@
---- vje30/bin/vjeacc.orig	Tue Dec 28 03:00:00 1999
-+++ vje30/bin/vjeacc	Wed Jul  5 12:26:22 2000
+--- usr/local/vje30/bin/vjeacc.orig	Tue Dec 28 03:00:00 1999
++++ usr/local/vje30/bin/vjeacc	Thu Jan 11 21:28:59 2001
 @@ -23,10 +23,18 @@
  export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$VJE_HOME/lib
  

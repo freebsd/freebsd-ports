@@ -1,0 +1,19 @@
+--- delta/newFrontend/Makefile.FreeBSD.orig	Tue Aug  1 03:00:00 2000
++++ delta/newFrontend/Makefile.FreeBSD	Thu Jan 11 21:22:45 2001
+@@ -16,14 +16,14 @@
+ DEST		= .
+ HDRS		= . -I/usr/X11R6/include
+ 
+-CFLAGS		= -g -DBSD=1 -DUSE_XPM=0 -DPCUNIX=1 -Dunix -DUSER_DIC -DVJE -DSINGLE=0 -DDLL_SRCH=1 -DADELTA=1 -DDELTA=1 -DUCS -I$(HDRS)
++CFLAGS		+= -DBSD=1 -DUSE_XPM=0 -DPCUNIX=1 -Dunix -DUSER_DIC -DVJE -DSINGLE=0 -DDLL_SRCH=1 -DADELTA=1 -DDELTA=1 -DUCS -I$(HDRS)
+ 
+ BSDLIBS		= -lxpg4
+ #BSDLIBS		= 
+ #XPMLIB		= -lXpm
+ XPMLIB		=
+ LIBS		= $(BSDLIBS) $(XPMLIB) -lXmu -L/usr/X11R6/lib -lXt -lX11 -lXext 
+-LINKER		= cc
++LINKER		= $(CC)
+ 
+ MAKEFILE	= Makefile
+ 
