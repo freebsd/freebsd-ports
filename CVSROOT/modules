@@ -7582,6 +7582,7 @@ rmoldmail	ports/mail/rmoldmail
 rmonitor	ports/sysutils/rmonitor
 rmsg		ports/net/rmsg
 rname		ports/misc/rname
+rng_82802	ports/security/rng_82802
 ro-aspell	ports/textproc/ro-aspell
 roadmap		ports/astro/roadmap
 roadrunner	ports/net/roadrunner
