@@ -1,0 +1,4 @@
+bin/ja-xv
+@exec [ ! -f %D/bin/xv.orig ] && mv -f %D/bin/xv %D/bin/xv.orig || rm %D/bin/xv
+@exec ln -sf %D/%F %D/bin/xv
+@unexec [ -f %D/bin/xv.orig ] && mv -f %D/bin/xv.orig %D/bin/xv
