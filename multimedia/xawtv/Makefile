@@ -7,7 +7,7 @@
 
 PORTNAME=	xawtv
 PORTVERSION=	3.91
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	http://bytesex.org/xawtv/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -109,7 +109,7 @@ post-patch:
 
 .if ${OSVERSION} < 500000
 	@${REINPLACE_CMD} -e "s|FOUND_ZVBI|NOT_WORKING_&|g" \
-		${WRKSRC}/vbistuff/Subdir.mk
+		${WRKSRC}/vbistuff/Subdir.mk ${WRKSRC}/x11/Subdir.mk
 .endif
 
 .include <bsd.port.post.mk>

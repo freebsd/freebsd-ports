@@ -1,6 +1,7 @@
 %%ZVBI5%%bin/alevtd
 bin/dump-mixers
 bin/motv
+%%ZVBI5%%bin/mtt
 bin/ntsc-cc
 bin/pia
 bin/propwatch
