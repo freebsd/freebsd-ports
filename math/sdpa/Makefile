@@ -22,7 +22,7 @@ EXTRACT_ONLY=	${PORTNAME}.${PORTVERSION}.src.tar.gz
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	SDPA(SemiDefinite Programming Algorithm) Very efficent SDP Solver
 
-.if defined(USE_ICC)
+.if defined(WITH_ICC)
 BUILD_DEPENDS=	${LOCALBASE}/intel_cc_80/bin/icc:${PORTSDIR}/lang/icc
 .endif
 LIB_DEPENDS=	atlas:${PORTSDIR}/math/atlas
@@ -35,7 +35,7 @@ USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 LAPACK=		-lalapack
 CBLAS=		-lcblas -lf77blas -latlas -lg2c
-#USE_ICC=	yes
+#WITH_ICC=	yes
 
 .if defined(WITH_OPTIMIZED_FLAGS)
 CFLAGS+=	-O3 -ffast-math -finline-functions -fomit-frame-pointer -funroll-loops -fexpensive-optimizations -malign-double
@@ -46,7 +46,7 @@ CXXFLAGS+=	-mcpu=i686 -march=i686 -mfancy-math-387 -mpreferred-stack-boundary=3
 .endif # i386
 .endif
 
-.if defined(USE_ICC)
+.if defined(WITH_ICC)
 CC=		${LOCALBASE}/intel_cc_80/bin/icc
 CXX=		${LOCALBASE}/intel_cc_80/bin/icpc
 CFLAGS=		-O3 -tpp7 -xiMKW -Vaxlib
