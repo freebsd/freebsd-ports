@@ -1,0 +1,71 @@
+# New ports collection makefile for:    icons for WindowMaker
+# Version required:     1.0
+# Date created:         26 Japnuary 1999
+# Whom:                 KIRIYAMA Kazuhiko
+#
+# $Id$
+#
+
+DISTNAME=	wmicons-1.0
+CATEGORIES=	graphics windowmaker
+MASTER_SITES=	${MASTER_SITE_WINDOWMAKER} \
+		http://nether.tky.hut.fi/iconstore/ \
+		http://www.itlb.te.noda.sut.ac.jp/~manome/wmaker/archive/ \
+		http://www.slip.net/~seto/images/ \
+		http://www.lab06.ee.u-tokai.ac.jp/~7jeem005/WindowMaker/Archives/ \
+		ftp://ports.jp.freebsd.org/pub/FreeBSD-jp/ports-jp/LOCAL_PORTS/
+MASTER_SITE_SUBDIR=contrib/icons
+DISTFILES=	DWiconpack1.tar.gz DWiconpack2.tar.gz IconFest-1.2.tgz \
+		NeXT_XEmacs_tar.gz  wm_icons_png.tar.gz wm_icons_tif.tar.gz \
+		isiconpack4.tgz \
+		japanese-step-icons1.1.tar.gz \
+		KTermIcons-1.0.tar.gz
+
+MAINTAINER=	kiri@pis.toba-cmt.ac.jp
+
+EXTRACT_ONLY=	DWiconpack1.tar.gz DWiconpack2.tar.gz IconFest-1.2.tgz \
+		NeXT_XEmacs_tar.gz  wm_icons_png.tar.gz wm_icons_tif.tar.gz \
+		japanese-step-icons1.1.tar.gz \
+		KTermIcons-1.0.tar.gz
+NO_BUILD=	yes
+USE_X_PREFIX=	yes
+
+WMICONDIR=	${PREFIX}/share/WindowMaker/Pixmaps
+WMDOCDIR=	${PREFIX}/share/doc/wmicons
+
+post-extract:
+	${MKDIR} ${WRKDIR}/isiconpack4
+	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/isiconpack4.tgz \
+		${EXTRACT_AFTER_ARGS} -C ${WRKDIR}/isiconpack4
+
+do-install:
+	${MKDIR} ${WMDOCDIR}
+	${MKDIR} ${WMICONDIR}
+	cd ${WRKDIR}/IconFest-1.2; \
+	${INSTALL_DATA} .README.swp ${WMDOCDIR}; \
+	${INSTALL_DATA} *.xpm *.tif ${WMICONDIR}
+	cd ${WRKDIR}/Icons; \
+	${INSTALL_DATA} *.xpm ${WMICONDIR}
+	cd ${WRKDIR}/NeXT.XEmacs; \
+	${INSTALL_DATA} README.NeXT.XEmacs ${WMDOCDIR}; \
+	${INSTALL_DATA} ./*/*.xpm ${WMICONDIR}
+	cd ${WRKDIR}/dwiconpack1; \
+	${INSTALL_DATA} dwiconpack1.README ${WMDOCDIR}; \
+	${INSTALL_DATA} *.tif ${WMICONDIR}
+	cd ${WRKDIR}/dwiconpack2; \
+	${INSTALL_DATA} dwiconpack2.README ${WMDOCDIR}; \
+	${INSTALL_DATA} *.tif ${WMICONDIR}
+	cd ${WRKDIR}/isiconpack4; \
+	${INSTALL_DATA} CREDITS ${WMDOCDIR}; \
+	${INSTALL_DATA} *.xpm *.tif ${WMICONDIR}
+	cd ${WRKDIR}/japanese-step-icons; \
+	${INSTALL_DATA} README.txt ${WMDOCDIR}/README.japanese-step-icons.txt; \
+	${INSTALL_DATA} *.xpm ${WMICONDIR}
+	cd ${WRKDIR}/vf_png; \
+	${INSTALL_DATA} README ${WMDOCDIR}/README.vf_png; \
+	${INSTALL_DATA} *.png ${WMICONDIR}
+	cd ${WRKDIR}/vf_tif; \
+	${INSTALL_DATA} README ${WMDOCDIR}/README.vf_tif; \
+	${INSTALL_DATA} *.tif ${WMICONDIR}
+
+.include <bsd.port.mk>
