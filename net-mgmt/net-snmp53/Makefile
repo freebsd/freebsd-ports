@@ -225,7 +225,7 @@ patch-startup-files:
 
 post-configure:
 	@${FIND} ${WRKSRC} -name Makefile | \
-	 ${XARGS} ${REINPLACE_CMD} -E -e '/^INSTALL[    ]+=/s|$$| -m 755|'
+	 ${XARGS} ${REINPLACE_CMD} -E -e '/^INSTALL[ 	]+=/s|$$| -m 755|'
 
 .if !defined(WITHOUT_PERL)
 post-build:
