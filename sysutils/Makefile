@@ -183,6 +183,7 @@
     SUBDIR += lcdproc
     SUBDIR += ldap-account-manager
     SUBDIR += lfm
+    SUBDIR += libcdio
     SUBDIR += libchk
     SUBDIR += libretto-config
     SUBDIR += lineakd
