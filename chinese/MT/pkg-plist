@@ -1,0 +1,22 @@
+%%DATADIR%%/images/lang-zh-tw/topnav-logout.gif
+%%DATADIR%%/images/lang-zh-tw/nav-search.gif
+%%DATADIR%%/images/lang-zh-tw/nav-entries.gif
+%%DATADIR%%/images/lang-zh-tw/topnav-view-site.gif
+%%DATADIR%%/images/lang-zh-tw/nav-new-entry.gif
+%%DATADIR%%/images/lang-zh-tw/nav-utilities-label.gif
+%%DATADIR%%/images/lang-zh-tw/nav-manage-label.gif
+%%DATADIR%%/images/lang-zh-tw/nav-config.gif
+%%DATADIR%%/images/lang-zh-tw/nav-view-site.gif
+%%DATADIR%%/images/lang-zh-tw/topnav-menu.gif
+%%DATADIR%%/images/lang-zh-tw/nav-upload.gif
+%%DATADIR%%/images/lang-zh-tw/assign_multiple.gif
+%%DATADIR%%/images/lang-zh-tw/nav-import.gif
+%%DATADIR%%/images/lang-zh-tw/nav-rebuild.gif
+%%DATADIR%%/images/lang-zh-tw/topnav-go-button.gif
+%%DATADIR%%/images/lang-zh-tw/nav-post-label.gif
+%%DATADIR%%/images/lang-zh-tw/nav-templates.gif
+%%DATADIR%%/images/lang-zh-tw/topnav-help.gif
+%%DATADIR%%/images/lang-zh-tw/nav-notifications.gif
+%%DATADIR%%/images/lang-zh-tw/nav-categories.gif
+%%CGIDIR%%/extlib/MT/L10N/zh_tw.pm
+@dirrm %%DATADIR%%/images/lang-zh-tw
