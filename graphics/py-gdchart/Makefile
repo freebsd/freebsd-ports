@@ -6,8 +6,9 @@
 
 PORTNAME=	gdchart
 PORTVERSION=	0.6
+PORTREVISION=	1
 CATEGORIES=	graphics python
-MASTER_SITES=	http://athani.pair.com/msteed/software/gdchart/
+MASTER_SITES=	http://www.nullcube.com/software/pygdchart/source/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}-py-${PORTVERSION}
 
