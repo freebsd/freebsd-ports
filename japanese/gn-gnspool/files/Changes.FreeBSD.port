@@ -7,7 +7,7 @@ distribution.
 
 2. mkfiles/unix/freebsd is patched to:
 	Include gninews and gnmail,
-	Chnage MANDIR to man/ja_JP/cat1
+	Chnage MANDIR to man/ja/cat1
 
 3. NEWSSPOOL is changed to /var/spool/gnspool.  See site.def for detail.
 

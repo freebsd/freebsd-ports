@@ -1,9 +1,9 @@
 # New ports collection makefile for: 	gn(Gon's Newsreader with gnspool)
-# Version required:			1.35
+# Version required:			1.36
 # Date created:				14 Feb. 1997
 # Whom:					Kiroh HARADA <kiroh@kh.rim.or.jp>
 #
-# $Id: Makefile,v 1.2 1997/09/14 21:34:37 max Exp $
+# $Id: Makefile,v 1.3 1998/03/21 01:49:56 itojun Exp $
 #
 
 DISTNAME=	gn-1.36
@@ -35,7 +35,7 @@ post-install:
 	@${CP} ${FILESDIR}/Changes.FreeBSD.port ${PREFIX}/share/doc/gn-gnspool
 .endif
 .if !defined(NOMANCOMPRESS)
-	@gzip -9nf ${PREFIX}/man/ja_JP.EUC/cat1/gn.1 ${PREFIX}/man/ja_JP.EUC/cat1/gnspool.1
+	@gzip -9nf ${PREFIX}/man/ja/cat1/gn.1 ${PREFIX}/man/ja/cat1/gnspool.1
 .endif
 	@${MKDIR} ${PREFIX}/share/examples/gn-gnspool
 	@${CP} ${FILESDIR}/_gnrc ${PREFIX}/share/examples/gn-gnspool

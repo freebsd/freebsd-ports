@@ -1,5 +1,5 @@
 BINDIR	=	@PREFIX@/bin
-MANDIR	=	@PREFIX@/man/ja_JP.EUC/cat1
+MANDIR	=	@PREFIX@/man/ja/cat1
 MANEXT	=	.1
 CC	=	cc
 OPTCFLAGS	=	-UHAS_MALLOC_H

@@ -2,8 +2,8 @@ bin/gn
 bin/gnspool
 bin/gninews
 bin/gnmail
-man/ja_JP.EUC/cat1/gn.1.gz
-man/ja_JP.EUC/cat1/gnspool.1.gz
+man/ja/cat1/gn.1.gz
+man/ja/cat1/gnspool.1.gz
 share/examples/gn-gnspool/_gnrc
 share/doc/gn-gnspool/Changes.FreeBSD.port
 share/doc/gn-gnspool/bin-dist
