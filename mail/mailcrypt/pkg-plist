@@ -1,0 +1,9 @@
+share/emacs/site-lisp/mailcrypt.el
+share/emacs/site-lisp/mc-toplev.el
+share/emacs/site-lisp/mc-pgp.el
+share/emacs/site-lisp/mc-remail.el
+share/emacs/site-lisp/mailcrypt.elc
+share/emacs/site-lisp/mc-toplev.elc
+share/emacs/site-lisp/mc-pgp.elc
+share/emacs/site-lisp/mc-remail.elc
+info/mailcrypt
