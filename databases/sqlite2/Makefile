@@ -10,7 +10,6 @@ PORTNAME=	sqlite
 PORTVERSION=	1.0.32
 CATEGORIES=	databases
 MASTER_SITES=	http://www.hwaci.com/sw/sqlite/
-DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
@@ -19,7 +18,6 @@ LIB_DEPENDS=	gdbm.2:${PORTSDIR}/databases/gdbm \
 BUILD_DEPENDS=	lemon:${PORTSDIR}/devel/lemon
 
 MAKEFILE=	${FILESDIR}/Makefile.bsd
-WRKSRC=		${WRKDIR}/sqlite
 MAKE_ARGS+=	-j2
 MAKE_ENV+=	TCL_VER=${TCL_VER}
 TCL_VER?=	8.3
