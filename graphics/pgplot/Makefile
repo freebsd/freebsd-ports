@@ -7,7 +7,7 @@
 
 PORTNAME=	pgplot
 PORTVERSION=	5.2.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.astro.caltech.edu/pub/pgplot/
 DISTNAME=	${PORTNAME}${PORTVERSION:R}
@@ -17,6 +17,7 @@ COMMENT=	A C/FORTRAN library for drawing graphs on a variety of display devices
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 USE_XLIB=	yes
+USE_PERL5_BUILD=yes
 INSTALLS_SHLIB=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
