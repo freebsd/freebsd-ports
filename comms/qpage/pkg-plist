@@ -1,5 +1,5 @@
 bin/qpage
-etc/example-qpage.cf
+etc/qpage-example.cf
 etc/rc.d/qpage.sh
 @exec if [ ! -d /var/spool/qpage ]; then mkdir /var/spool/qpage; chown root:dialer /var/spool/qpage; chmod 0775 /var/spool/qpage; fi
 @unexec if [ -d /var/spool/qpage ]; then rm -rf /var/spool/qpage; fi
