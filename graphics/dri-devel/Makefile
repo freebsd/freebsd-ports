@@ -28,6 +28,12 @@ DRILIST=	ffb gamma i810 i830 mga r128 r200 radeon sis tdfx
 
 ONLY_FOR_ARCHS=	alpha i386
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "alpha"
+BROKEN=		"Install fails on alpha"
+.endif
+
 do-configure:
 	@${RM} -f  ${WRKSRC}/config/cf/version.def
 	@${RM} -f  ${WRKSRC}/config/cf/date.def
@@ -52,4 +58,4 @@ do-install:
 	@cd ${PREFIX} && ${FIND} lib/modules/dri -type f | ${SORT} \
 		>>${TMPPLIST}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
