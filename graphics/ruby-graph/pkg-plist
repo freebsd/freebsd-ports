@@ -1,0 +1,6 @@
+%%RUBY_SITELIBDIR%%/graph/base_extensions.rb
+%%RUBY_SITELIBDIR%%/graph/directed_graph.rb
+%%RUBY_SITELIBDIR%%/graph/graphviz_dot.rb
+@dirrm %%RUBY_SITELIBDIR%%/graph
+%%PORTDOCS%%%%RUBY_DOCDIR%%/graph/README
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/graph

@@ -1,0 +1,10 @@
+GraphR - Graph-related classes
+
+    * DirectedGraph - fairly extensive directed graph class
+    * DotGraphFormatter - output a graph in GraphViz's dot format
+
+GraphR is very simple but might grow to support additional features of
+dot.
+
+Author:	Robert Feldt <feldt@ce.chalmers.se>
+WWW:	http://rockit.sourceforge.net/subprojects/graphr/
