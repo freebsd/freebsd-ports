@@ -6,25 +6,28 @@
 #
 
 PORTNAME?=	xmame
-PORTVERSION?=	0.55.2
+PORTVERSION?=	0.56.1
 CATEGORIES=	emulators
 MASTER_SITES=	http://x.mame.net/download/ \
-		ftp://ftp.kaupp.cx/pub/xmame/ \
 		http://www.mame.net/zips/ \
 		http://cheat.retrogames.com/ \
 		http://www.sys2064.com/files/mame/
 DISTNAME=	xmame-${XMAMEVERSION:S/p/pre/}
 DIST_SUBDIR=	xmame
-XMAMEVERSION?=	${PORTVERSION}
-USE_BZIP2=	yes
 
 MAINTAINER?=	stijn@win.tue.nl
 
-USE_XPM=	yes
-USE_X_PREFIX=	yes
+USE_BZIP2=	yes
 USE_GMAKE=	yes
 
 MAN6=		x${MAMEMESS}.6
+
+XMAMEVERSION?=	${PORTVERSION}
+
+.if !defined(WITH_SVGALIB) || ${WITH_SVGALIB} != "yes"
+USE_XPM=	yes
+USE_X_PREFIX=	yes
+.endif
 
 # Are we building MAME, MESS or PinMAME? (also set by slave ports)
 MAMEMESS?=	mame
@@ -162,6 +165,9 @@ pre-everything::
 #		acceleration
 #  WITH_SDL	Uses the SDL library to be able to play fullscreen
 #		without root rights
+#  WITH_SVGALIB	Uses the svgalib library to allow playing without X. This
+#		has not been extensively tested; patches welcome to make
+#		this actually work.
 #  WITH_X11	The standard display target, should work without
 #		dependancies other than X
 #
@@ -175,6 +181,12 @@ PLIST_SUB+=	OPENGL=""
 ALL_DOCS+=	${GLDOCS}
 .else
 PLIST_SUB+=	OPENGL="@comment "
+.if defined(WITH_SVGALIB) && ${WITH_SVGALIB} == "yes"
+LIB_DEPENDS=	vga.1:${PORTSDIR}/graphics/svgalib
+CFLAGS+=	-I${LOCALBASE}/include
+MAKE_ENV+=	LOCALBASE=${LOCALBASE}
+DISPLAY_METHOD=	svgalib
+.else
 .if !defined(WITH_SDL) || ${WITH_SDL} != "no"
 LIB_DEPENDS=    SDL-1.1.3:${PORTSDIR}/devel/sdl12
 SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
@@ -191,6 +203,8 @@ pre-everything::
 DISPLAY_METHOD=	x11
 .endif
 .endif
+.endif
+PKGNAMESUFFIX=-${DISPLAY_METHOD:L}
 
 # USB joysticks - only enabled on -STABLE because of conflicting USB
 # prototypes in -STABLE & -CURRENT.
@@ -222,12 +236,14 @@ post-patch:
 				${WRKSRC}/src/unix/video-drivers/glexport.c
 	${PERL} -pi -e 's@malloc.h@stdlib.h@' \
 				${WRKSRC}/src/unix/video-drivers/gljpg.c
+	${PERL} -pi -e 's@asm/io.h@machine/cpufunc.h@' \
+				${WRKSRC}/src/unix/video-drivers/twkuser.c
 
 # The large number of sed regexes here is intended to make this port a whole
 # lot easier to maintain - please don't convert them into a patch.
 do-configure:
 	${SED} -e "s@= gcc@?=  ${CC}@g" \
-		-e "s@= -O2 -Wall@?=  ${CFLAGS}@g" \
+		-e "s@^CFLAGS.*@CFLAGS ?= ${CFLAGS}@g" \
 		-e "s@= cp@?=  ${INSTALL} ${COPY}@g" \
 		-e "s@lib/x\$$(TARGET)@share/x\$$(TARGET)@g" \
 		-e "s@/usr/X11R6@${X11BASE}@g" \
