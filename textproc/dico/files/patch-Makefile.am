@@ -1,0 +1,7 @@
+--- old/Makefile.am	Thu Jan  1 01:00:00 1970
++++ new/Makefile.am	Wed Oct 11 03:49:06 2000
+@@ -0,0 +1,4 @@
++docdir = $(datadir)/doc/dico
++doc_DATA = README.TXT
++
++SUBDIRS = sources lexique manuel

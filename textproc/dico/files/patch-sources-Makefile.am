@@ -1,0 +1,4 @@
+--- old/sources/Makefile.am	Thu Jan  1 01:00:00 1970
++++ new/sources/Makefile.am	Wed Oct 11 03:35:13 2000
+@@ -0,0 +1 @@
++bin_PROGRAMS = dico
