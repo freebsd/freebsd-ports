@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	leafnode
-PORTVERSION=	1.9.50
+PORTVERSION=	1.9.51
 CATEGORIES=	news
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:sourceforge/} \
-		http://osdn.dl.sourceforge.net/sourceforge/${PORTNAME}/ \
+		http://osdn.dl.sourceforge.net/sourceforge/${PORTNAME}/:sourceforge \
 		http://www.dt.e-technik.uni-dortmund.de/~ma/${PORTNAME}/ \
 		${MASTER_SITE_SUNSITE:S/$/:sunsite/}
 MASTER_SITE_SUBDIR=	${PORTNAME}/:sourceforge \
