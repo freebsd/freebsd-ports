@@ -21,7 +21,7 @@ LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
 		xfcegui4.1:${PORTSDIR}/x11-toolkits/libxfce4gui
 RUN_DEPENDS=	xfce4-panel:${PORTSDIR}/x11-wm/xfce4-panel
 
-NOT_FOR_ARCHS=	sparc64 alpha
+ONLY_FOR_ARCHS=	i386
 
 USE_GNOME=	gtk20
 USE_X_PREFIX=	yes
