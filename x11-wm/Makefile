@@ -98,6 +98,7 @@
     SUBDIR += wmDeskGuide
     SUBDIR += wmakerconf
     SUBDIR += wmanager
+    SUBDIR += wmconfig
     SUBDIR += wmg
     SUBDIR += wmthemeinstall
     SUBDIR += wmx
