@@ -1,22 +1,12 @@
---- Makefile.orig	Mon Feb  9 09:38:23 1998
-+++ Makefile	Mon Feb  9 09:38:23 1998
-@@ -0,0 +1,19 @@
+--- Makefile.orig	Thu Dec  2 10:13:33 1999
++++ Makefile	Thu Dec  2 10:27:53 1999
+@@ -0,0 +1,9 @@
 +# My makefile for Angband
-+# Matthew Hunt <mph@pobox.com>
++# Matthew Hunt <mph@FreeBSD.org>
 +
-+CFLAGS+=-I/usr/X11R6/include -D"USE_X11" -D"USE_GCU" -DDEFAULT_PATH=\\\"$(PREFIX)/lib/X11/angband\\\"
++CFLAGS+=-I${X11BASE}/include -D"USE_X11" -D"USE_GCU" -DDEFAULT_PATH=\\\"$(PREFIX)/lib/X11/angband\\\"
 +
 +all:	angband
 +
 +angband:
 +	cd src && make "CFLAGS=$(CFLAGS)"
-+
-+install: angband
-+	install -c -o bin -g games -m 2555 angband ${PREFIX}/bin/angband
-+	mkdir -p ${PREFIX}/lib/X11/angband
-+	(cd lib && tar cf - * ) | (cd ${PREFIX}/lib/X11/angband && tar xf - )
-+	/usr/sbin/chown -R bin.games ${PREFIX}/lib/X11/angband
-+	(cd ${PREFIX}/lib/X11/angband && \
-+		/bin/chmod 775 apex bone data edit file help info xtra\
-+			 save user )
-+	install -o games -g games -m 664 /dev/null ${PREFIX}/lib/X11/angband/apex/scores.raw

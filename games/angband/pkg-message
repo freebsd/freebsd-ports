@@ -4,4 +4,12 @@
    angband -- -n2
  To use graphical tiles, use -g:
    angband -g
+
+ You now have the following world-writable (mode 1777)
+ directories:
+   ${PREFIX}/lib/X11/angband/save
+   ${PREFIX}/lib/X11/angband/user
+
+ Scores will not be reported to avoid having a world-writable
+ score file.
  ============================================================

@@ -1,5 +1,11 @@
 bin/angband
 lib/X11/angband/apex/scores.raw
+lib/X11/angband/data/f_info.raw
+lib/X11/angband/data/k_info.raw
+lib/X11/angband/data/a_info.raw
+lib/X11/angband/data/e_info.raw
+lib/X11/angband/data/r_info.raw
+lib/X11/angband/data/v_info.raw
 lib/X11/angband/edit/a_info.txt
 lib/X11/angband/edit/e_info.txt
 lib/X11/angband/edit/f_info.txt
@@ -53,27 +59,17 @@ lib/X11/angband/xtra/tiles.raw
 @exec mkdir -p %D/lib/X11/angband/file
 @exec mkdir -p %D/lib/X11/angband/help
 @exec mkdir -p %D/lib/X11/angband/user
-@exec chown bin.games %D/lib/X11/angband/apex
-@exec chown bin.games %D/lib/X11/angband/bone
-@exec chown bin.games %D/lib/X11/angband/data
-@exec chown bin.games %D/lib/X11/angband/edit
-@exec chown bin.games %D/lib/X11/angband/file
-@exec chown bin.games %D/lib/X11/angband/help
-@exec chown bin.games %D/lib/X11/angband/info
-@exec chown bin.games %D/lib/X11/angband/xtra
-@exec chown bin.games %D/lib/X11/angband/save
-@exec chown bin.games %D/lib/X11/angband/user
-@exec chmod 775 %D/lib/X11/angband/apex
-@exec chmod 775 %D/lib/X11/angband/bone
-@exec chmod 775 %D/lib/X11/angband/data
-@exec chmod 775 %D/lib/X11/angband/edit
-@exec chmod 775 %D/lib/X11/angband/file
-@exec chmod 775 %D/lib/X11/angband/help
-@exec chmod 775 %D/lib/X11/angband/info
-@exec chmod 775 %D/lib/X11/angband/xtra
-@exec chmod 775 %D/lib/X11/angband/save
-@exec chmod 775 %D/lib/X11/angband/user
-@exec chmod 664 %D/lib/X11/angband/apex/scores.raw
+@exec chmod 555 %D/lib/X11/angband/apex
+@exec chmod 555 %D/lib/X11/angband/bone
+@exec chmod 555 %D/lib/X11/angband/data
+@exec chmod 555 %D/lib/X11/angband/edit
+@exec chmod 555 %D/lib/X11/angband/file
+@exec chmod 555 %D/lib/X11/angband/help
+@exec chmod 555 %D/lib/X11/angband/info
+@exec chmod 555 %D/lib/X11/angband/xtra
+@exec chmod 1777 %D/lib/X11/angband/save
+@exec chmod 1777 %D/lib/X11/angband/user
+@exec chmod 444 %D/lib/X11/angband/apex/scores.raw
 @dirrm lib/X11/angband/bone
 @dirrm lib/X11/angband/data
 @dirrm lib/X11/angband/info
