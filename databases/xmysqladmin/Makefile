@@ -3,7 +3,7 @@
 # Date created:			Di   2 Sep 1997 16:29:27 CEST
 # Whom:				Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.11 1998/09/26 23:18:04 steve Exp $
+# $Id: Makefile,v 1.12 1998/10/20 01:31:07 steve Exp $
 #
 
 DISTNAME=	xmysqladmin-0.4.4
@@ -14,8 +14,6 @@ MASTER_SITES=	http://www.tcx.se/Contrib/ \
 		http://mysql.acer.net/Contrib/
 
 MAINTAINER=	andreas@FreeBSD.ORG
-
-BROKEN_ELF=	xforms is a.out only
 
 BUILD_DEPENDS=	mysql:${PORTSDIR}/databases/mysql321
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
