@@ -57,6 +57,7 @@ bin/pbmtopi3
 bin/pbmtopk
 bin/pbmtoplot
 bin/pbmtoptx
+bin/pbmtowbmp
 bin/pbmtox10bm
 bin/pbmtoxbm
 bin/pbmtoybm
@@ -114,6 +115,7 @@ bin/pnmrotate
 bin/pnmscale
 bin/pnmshear
 bin/pnmsmooth
+bin/pnmsplit
 bin/pnmtile
 bin/pnmtoddif
 bin/pnmtofits
@@ -194,6 +196,7 @@ bin/spottopgm
 bin/sputoppm
 bin/tgatoppm
 bin/tifftopnm
+bin/wbmptopbm
 bin/winicontoppm
 bin/xbmtopbm
 bin/ximtoppm

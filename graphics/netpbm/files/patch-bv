@@ -1,0 +1,38 @@
+--- pnm/pnmfile.c.orig	Mon Jun 19 10:04:17 2000
++++ pnm/pnmfile.c	Sat Jul  1 12:00:00 2000
+@@ -11,6 +11,7 @@
+ */
+ 
+ #include "pnm.h"
++#include "shhopt.h"
+ 
+ 
+ struct cmdline_info {
+@@ -38,8 +39,18 @@
+ 
+     unsigned int option_def_index;
+ 
++    /* Create the OptStruct structure describing our options */
++    #define OPTENTRY(shortvalue,longvalue,typevalue,outputvalue,flagvalue) {\
++      option_def[option_def_index].shortName = (shortvalue); \
++      option_def[option_def_index].longName = (longvalue); \
++      option_def[option_def_index].type = (typevalue); \
++      option_def[option_def_index].arg = (outputvalue); \
++      option_def[option_def_index].flags = (flagvalue); \
++      option_def_index++; \
++      }
+     option_def_index = 0;   /* incremented by OPTENTRY */
+     OPTENTRY(0,   "allimages", OPT_FLAG,   &cmdline_p->allimages,     0);
++    option_def[option_def_index].type = OPT_END;
+ 
+     /* Set the defaults */
+     cmdline_p->allimages = FALSE;
+@@ -48,7 +59,7 @@
+     opt.short_allowed = FALSE;  /* We have no short (old-fashioned) options */
+     opt.allowNegNum = FALSE;  /* We have no parms that are negative numbers */
+ 
+-    pm_optParseOptions2(&argc, argv, opt, 0);
++    optParseOptions2(&argc, argv, opt, 0);
+         /* Uses and sets argc, argv, and all of *cmdline_p. */
+ 
+     cmdline_p->input_filespec = argv + 1;

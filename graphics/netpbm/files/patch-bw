@@ -1,16 +1,16 @@
---- ppm/ppmtobmp.c.orig	Sat Jul  1 03:00:34 2000
-+++ ppm/ppmtobmp.c	Sat Jul  1 12:00:00 2000
-@@ -51,6 +51,7 @@
- #include        "ppm.h"
- #include        "ppmcmap.h"
- #include        "bitio.h"
-+#include        "shhopt.h"
+--- pnm/pnmsplit.c.orig	Sat Jul  1 03:09:40 2000
++++ pnm/pnmsplit.c	Sat Jul  1 12:00:00 2000
+@@ -13,6 +13,7 @@
+ #include <string.h>
+ #include <stdio.h>
+ #include "pnm.h"
++#include "shhopt.h"
  
- #define MAXCOLORS 256
  
-@@ -93,16 +94,26 @@
-     opt.short_allowed = FALSE;  /* We have no short (old-fashioned) options */
-     opt.allowNegNum = FALSE;  /* We have no parms that are negative numbers */
+ struct cmdline_info {
+@@ -40,8 +41,18 @@
+ 
+     unsigned int option_def_index;
  
 +    /* Create the OptStruct structure describing our options */
 +    #define OPTENTRY(shortvalue,longvalue,typevalue,outputvalue,flagvalue) {\
@@ -22,17 +22,17 @@
 +      option_def_index++; \
 +      }
      option_def_index = 0;   /* incremented by OPTENTRY */
-     OPTENTRY('w', "windows",   OPT_FLAG,      &windows,   0);
-     OPTENTRY('o', "os2",       OPT_FLAG,      &os2,       0);
-     OPTENTRY(0,   "bpp",       OPT_UINT,      &bpp,       0);
+     OPTENTRY(0,   "debug", OPT_FLAG,   &cmdline_p->debug,     0);
 +    option_def[option_def_index].type = OPT_END;
  
      /* Set the defaults */
-     windows = os2 = FALSE;
-     bpp = -1;
+     cmdline_p->debug = FALSE;
+@@ -50,7 +61,7 @@
+     opt.short_allowed = FALSE;  /* We have no short (old-fashioned) options */
+     opt.allowNegNum = FALSE;  /* We have no parms that are negative numbers */
  
 -    pm_optParseOptions2(&argc, argv, opt, 0);
 +    optParseOptions2(&argc, argv, opt, 0);
-         /* Uses and sets argc, and argv */
+         /* Uses and sets argc, argv, and all of *cmdline_p. */
  
-     if (argc - 1 == 0)
+     if (argc - 1 < 1) 

@@ -1,5 +1,5 @@
---- pbmplus.h.orig	Sat May 27 03:50:50 2000
-+++ pbmplus.h	Sat Jun  3 00:00:00 2000
+--- pbmplus.h.orig	Tue Jun 20 04:24:29 2000
++++ pbmplus.h	Sat Jul  1 12:00:00 2000
 @@ -18,6 +18,9 @@
  #include <stdio.h>
  #include <errno.h>
@@ -28,9 +28,9 @@
  #define RGB_DB2 "/usr/openwin/lib/rgb.txt"
  #endif
  
-@@ -299,37 +302,6 @@
-     PM_CHECK_BASIC
- };
+@@ -298,39 +301,6 @@
+          const unsigned int need_raster_size,
+          enum pm_check_code * const retval_p);
  
 -
 -/* By making this <> instead of "", we avoid making shhopt.h a dependency
@@ -40,6 +40,8 @@
 -
 -void pm_optParseOptions(int *argc, char *argv[],
 -                        optStruct opt[], int allowNegNum);
+-void pm_optParseOptions2(int * const argc, char *argv[],
+-                        const optStruct2 opt, const unsigned long flags);
 -/* Use pm_optParseOptions instead of optParseOptions in order to use the
 -   shared Netpbm libraries
 -*/
