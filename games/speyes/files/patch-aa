@@ -1,0 +1,13 @@
+--- Imakefile.orig	Sat Oct 30 00:31:02 1999
++++ Imakefile	Wed Nov  3 08:28:28 1999
+@@ -2,7 +2,9 @@
+ 
+ SYS_LIBRARIES = MathLibrary
+         DEPLIBS = $(DEPXMULIB) $(DEPXTOOLLIB) $(DEPXLIB)
+-LOCAL_LIBRARIES = $(XMULIB) $(XTOOLLIB) $(XLIB) $(XPMLIB)
++LOCAL_LIBRARIES = $(XMULIB) $(XTOOLLIB) $(XLIB) $(XPMLIB) -lgnugetopt
++EXTRA_INCLUDES  = -ILOCALBASE/include
++LOCAL_LDFLAGS   = -LLOCALBASE/lib
+ 
+ SRCS = speyes.c
+ OBJS = speyes.o
