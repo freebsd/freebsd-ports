@@ -1,11 +1,11 @@
 # New ports collection makefile for:	wmWeather-1.28
-# Version required:     1.30.1
+# Version required:     1.31
 # Date created:		26 January 1998
 # Whom:			Kris Kennaway <kkennawa@physics.adelaide.edu.au>
 #
-# $Id: Makefile,v 1.3 1999/03/22 12:48:05 kris Exp $
+# $Id: Makefile,v 1.4 1999/04/19 13:24:17 kris Exp $
 
-DISTNAME=	wmWeather-1.30.1
+DISTNAME=	wmWeather-1.31
 CATEGORIES=	misc windowmaker
 MASTER_SITES= 	http://nis-www.lanl.gov/~mgh/WindowMaker/
 
