@@ -17,7 +17,6 @@ MAINTAINER=	roam@FreeBSD.org
 
 USE_OPENSSL=	YES
 USE_REINPLACE=	YES
-IS_INTERACTIVE=	YES	# prompts for information while generating certificate
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var/tmp --with-pem-dir=${PEM_DIR}
