@@ -3,18 +3,29 @@
 # Date created:		10 May 1996
 # Whom:			Mita Yoshio <mita@jp.FreeBSD.org>
 #
-# $Id: Makefile,v 1.1.1.1 1996/11/02 12:09:35 asami Exp $
+# $Id: Makefile,v 1.2 1996/11/02 17:04:08 max Exp $
 #
 
 DISTNAME=	VFlib-2.22
 PKGNAME=	jp-vflib-2.22
 CATEGORIES+=	japanese print
 MASTER_SITES=	ftp://gull.se.hiroshima-u.ac.jp/pub/VFlib/
-DISTFILES=	VFlib-2.22.tar.gz watanabe-vf.tar.Z
+DISTFILES=	VFlib-2.22.tar.gz watanabe-vf.tar.Z \
+		VFlib-2.22-PATCH-1 VFlib-2.22-PATCH-2
 
 MAINTAINER=	mita@jp.FreeBSD.org
 
 EXTRACT_ONLY=	VFlib-2.22.tar.gz
+
+post-patch:
+	(cd ${WRKSRC}; \
+	 uudecode ${DISTDIR}/VFlib-2.22-PATCH-1 ; \
+	 cd tools ; \
+	 tar xzf ../ktestdiff.tar.gz ; \
+	 ${PATCH} -s < Imakefile.diff ; \
+	 ${PATCH} -s < ktest.diff ; \
+	 cd ../src ; \
+	 ${PATCH} -s < ${DISTDIR}/VFlib-2.22-PATCH-2 )
 
 do-build:
 	@(cd ${WRKSRC}/src; make)
