@@ -165,6 +165,7 @@
     SUBDIR += sml-nj-devel
     SUBDIR += snobol
     SUBDIR += squeak2
+    SUBDIR += squeak3
     SUBDIR += sr
     SUBDIR += stackless_python
     SUBDIR += starlogo
