@@ -5491,12 +5491,14 @@ p5-Curses-Forms	ports/devel/p5-Curses-Forms
 p5-Curses-Widgets	ports/devel/p5-Curses-Widgets
 p5-DBD-CSV	ports/databases/p5-DBD-CSV
 p5-DBD-Excel	ports/databases/p5-DBD-Excel
+p5-DBD-File	ports/databases/p5-DBD-File
 p5-DBD-InterBase	ports/databases/p5-DBD-InterBase
 p5-DBD-LDAP	ports/databases/p5-DBD-LDAP
 p5-DBD-ODBC	ports/databases/p5-DBD-ODBC
 p5-DBD-Oracle	ports/databases/p5-DBD-Oracle
 p5-DBD-Pg	ports/databases/p5-DBD-Pg
 p5-DBD-PgSPI	ports/databases/p5-DBD-PgSPI
+p5-DBD-RAM	ports/databases/p5-DBD-RAM
 p5-DBD-SQLite	ports/databases/p5-DBD-SQLite
 p5-DBD-Sybase	ports/databases/p5-DBD-Sybase
 p5-DBD-XBase	ports/databases/p5-DBD-XBase
