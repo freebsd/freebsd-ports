@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	zile
-PORTVERSION=	1.5.3
+PORTVERSION=	1.6
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_SUNSITE} \
-		http://web.tiscalinet.it/ssigala/sandro/files/
+		http://prdownloads.sourceforge.net/zile/
 MASTER_SITE_SUBDIR=	apps/editors/emacs/clones
 
 MAINTAINER=	jasone@freebsd.org
