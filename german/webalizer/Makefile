@@ -8,7 +8,7 @@ PORTNAME=	webalizer
 PORTVERSION=	1.30.4
 CATEGORIES=	german www
 MASTER_SITES=	ftp://ftp.mrunix.net/pub/webalizer/ \
-		ftp://ftp.lan-ks.de/pub/FreeBSD/distfiles
+		ftp://ftp.lan-ks.de/pub/FreeBSD/distfiles/
 DISTNAME=	${PORTNAME}-1.30-04-src
 EXTRACT_SUFX=	.tgz
 
