@@ -1,0 +1,11 @@
+--- Make.inc.in.orig	Sat Feb 19 14:33:58 2005
++++ Make.inc.in	Sat Feb 19 14:33:07 2005
+@@ -25,7 +25,7 @@
+ CC		= @CC@
+ RANLIB		= @RANLIB@
+ INCLUDE		= 
+-CFLAGS		= $(INCLUDE) @CFLAGS@ @LFS_CFLAGS@
++CFLAGS		= $(INCLUDE) @CFLAGS@ @CPPFLAGS@ @LFS_CFLAGS@
+ LIBPREFIX	= @LIBPREFIX@
+ EXEEXT		= @EXEEXT@ 
+ 
