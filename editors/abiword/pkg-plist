@@ -178,7 +178,7 @@ share/AbiSuite-2.0/icons/abiword_16.xpm
 share/AbiSuite-2.0/icons/abiword_48.png
 share/AbiSuite-2.0/icons/abiword_48.tif
 share/AbiSuite-2.0/icons/abiword_48.xpm
-%%GNOME:%%share/AbiSuite-2.0/icons/abiword_logo.xpm
+share/AbiSuite-2.0/icons/abiword_logo.xpm
 share/AbiSuite-2.0/templates/A4.awt
 share/AbiSuite-2.0/templates/Business-Report.awt
 share/AbiSuite-2.0/templates/Employee-Directory.awt
@@ -254,6 +254,40 @@ share/gnome/pixmaps/abiword_48.png
 @dirrm share/AbiSuite-2.0/clipart
 @dirrm share/AbiSuite-2.0/AbiWord/strings
 @dirrm share/AbiSuite-2.0/AbiWord/scripts
+@dirrm share/AbiSuite-2.0/AbiWord/sample/en-US
+@dirrm share/AbiSuite-2.0/AbiWord/sample
+@dirrm share/AbiSuite-2.0/AbiWord/help/images
+@dirrm share/AbiSuite-2.0/AbiWord/help/fr-FR/tutorial
+@dirrm share/AbiSuite-2.0/AbiWord/help/fr-FR/problems
+@dirrm share/AbiSuite-2.0/AbiWord/help/fr-FR/plugins
+@dirrm share/AbiSuite-2.0/AbiWord/help/fr-FR/interface/workspace.xhtml_data
+@dirrm share/AbiSuite-2.0/AbiWord/help/fr-FR/interface/rulers.xhtml_data
+@dirrm share/AbiSuite-2.0/AbiWord/help/fr-FR/interface/dialogreplace.xhtml_data
+@dirrm share/AbiSuite-2.0/AbiWord/help/fr-FR/interface
+@dirrm share/AbiSuite-2.0/AbiWord/help/fr-FR/info
+@dirrm share/AbiSuite-2.0/AbiWord/help/fr-FR/images
+@dirrm share/AbiSuite-2.0/AbiWord/help/fr-FR/howto/howtoword.xhtml_data
+@dirrm share/AbiSuite-2.0/AbiWord/help/fr-FR/howto/howtoweb.xhtml_data
+@dirrm share/AbiSuite-2.0/AbiWord/help/fr-FR/howto
+@dirrm share/AbiSuite-2.0/AbiWord/help/fr-FR
+@dirrm share/AbiSuite-2.0/AbiWord/help/es-ES
+@dirrm share/AbiSuite-2.0/AbiWord/help/en-US/tutorial
+@dirrm share/AbiSuite-2.0/AbiWord/help/en-US/problems
+@dirrm share/AbiSuite-2.0/AbiWord/help/en-US/interface/workspace.xhtml_data
+@dirrm share/AbiSuite-2.0/AbiWord/help/en-US/interface/rulers.xhtml_data
+@dirrm share/AbiSuite-2.0/AbiWord/help/en-US/interface/menufile.xhtml_data
+@dirrm share/AbiSuite-2.0/AbiWord/help/en-US/interface/dialogreplace.xhtml_data
+@dirrm share/AbiSuite-2.0/AbiWord/help/en-US/interface
+@dirrm share/AbiSuite-2.0/AbiWord/help/en-US/info
+@dirrm share/AbiSuite-2.0/AbiWord/help/en-US/images
+@dirrm share/AbiSuite-2.0/AbiWord/help/en-US/howto/howtoword.xhtml_data
+@dirrm share/AbiSuite-2.0/AbiWord/help/en-US/howto/howtoweb.xhtml_data
+@dirrm share/AbiSuite-2.0/AbiWord/help/en-US/howto
+@dirrm share/AbiSuite-2.0/AbiWord/help/en-US
+@dirrm share/AbiSuite-2.0/AbiWord/help/de-DE/images
+@dirrm share/AbiSuite-2.0/AbiWord/help/de-DE/de_DE
+@dirrm share/AbiSuite-2.0/AbiWord/help/de-DE
+@dirrm share/AbiSuite-2.0/AbiWord/help
 @dirrm share/AbiSuite-2.0/AbiWord/glade
 @dirrm share/AbiSuite-2.0/AbiWord
 @dirrm share/AbiSuite-2.0

@@ -1,0 +1,22 @@
+--- GNUmakefile.am.orig	Mon Aug 18 09:45:27 2003
++++ GNUmakefile.am	Mon Aug 25 04:25:53 2003
+@@ -76,7 +76,6 @@
+ 
+ # Install the datafiles. This is quick-and-dirty.
+ install-data-local:
+-	@$(mkinstalldirs) $(DESTDIR)$(bonobodir)
+ 	if test -d $(top_srcdir)/../abidistfiles ; then \
+ 	  for dir in `cd $(top_srcdir)/../abidistfiles; find . -type d ! -name CVS` ; do \
+ 	    $(mkinstalldirs) $(DESTDIR)$(pkgdatadir)/$$dir ;\
+@@ -89,11 +88,7 @@
+ 	      for file in $(top_srcdir)/../abidistfiles/$$dir/* ; do \
+ 	        if test -f $$file ; then \
+ 		  sfile=`echo "$$file" | sed 's/\.[^.]*$$//'`; \
+-		  if test "$$sfile.server" = $$file; then \
+-		    $(INSTALL_DATA) $$file $(DESTDIR)$(bonobodir); \
+-		  else \
+ 		    $(INSTALL_DATA) $$file $(DESTDIR)$(pkgdatadir)/$$dir; \
+-		  fi; \
+ 	        fi; \
+ 	      done; \
+ 	    fi; \
