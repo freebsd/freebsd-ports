@@ -1,0 +1,26 @@
+bin/column
+bin/compute
+bin/dataent
+bin/etbl
+bin/headchg
+bin/jointbl
+bin/lst2tbl
+bin/mergetbl
+bin/mktbl
+bin/ptbl
+bin/rdb
+bin/rdbt
+bin/repair
+bin/reporttbl
+bin/row
+bin/search
+bin/sorttbl
+bin/subtotal
+bin/summ
+bin/tbl2lst
+bin/uniqtbl
+bin/valid
+share/doc/rdb/RDB.pln.noM.gz
+share/doc/rdb/RDB.ps.gz
+share/doc/rdb/rdbi.doc
+@dirrm share/doc/rdb
