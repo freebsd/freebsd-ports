@@ -7,8 +7,8 @@
 #
 
 PORTNAME=	gai
-PORTVERSION=	0.5.3
-PORTREVISION=	1
+PORTVERSION=	0.5.4
+PORTREVISION=	0
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -26,7 +26,7 @@ USE_GNOME=	gnomehack gnomeprefix gdkpixbuf gtk20 pango gnomepanel
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	SDLCONF=${SDL_CONFIG}
 
-PLIST_FILES=	include/gai/gai.h lib/libgai.so.0.5.3 lib/libgai.so.0 \
+PLIST_FILES=	include/gai/gai.h lib/libgai.so.0.5.4 lib/libgai.so.0 \
 		lib/libgai.so libdata/pkgconfig/gai.pc
 PLIST_DIRS=	include/gai
 INSTALLS_SHLIB=	yes
