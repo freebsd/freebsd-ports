@@ -1,11 +1,12 @@
 bin/sylpheed
-share/doc/sylpheed/ChangeLog
-share/doc/sylpheed/ChangeLog.jp
-share/doc/sylpheed/INSTALL
-share/doc/sylpheed/INSTALL.jp
-share/doc/sylpheed/README
-share/doc/sylpheed/README.jp
-share/doc/sylpheed/TODO.jp
+%%PORTDOCS%%share/doc/sylpheed/ChangeLog
+%%PORTDOCS%%share/doc/sylpheed/ChangeLog.jp
+%%PORTDOCS%%share/doc/sylpheed/INSTALL
+%%PORTDOCS%%share/doc/sylpheed/INSTALL.jp
+%%PORTDOCS%%share/doc/sylpheed/README
+%%PORTDOCS%%share/doc/sylpheed/README.jp
+%%PORTDOCS%%share/doc/sylpheed/TODO
+%%PORTDOCS%%share/doc/sylpheed/TODO.jp
 share/locale/cs/LC_MESSAGES/sylpheed.mo
 share/locale/de/LC_MESSAGES/sylpheed.mo
 share/locale/el/LC_MESSAGES/sylpheed.mo
@@ -15,10 +16,33 @@ share/locale/it/LC_MESSAGES/sylpheed.mo
 share/locale/ja/LC_MESSAGES/sylpheed.mo
 share/locale/ko/LC_MESSAGES/sylpheed.mo
 share/locale/nl/LC_MESSAGES/sylpheed.mo
+share/locale/pl/LC_MESSAGES/sylpheed.mo
 share/locale/pt_BR/LC_MESSAGES/sylpheed.mo
 share/locale/ru/LC_MESSAGES/sylpheed.mo
 share/locale/zh_CN.GB2312/LC_MESSAGES/sylpheed.mo
 share/locale/zh_TW.Big5/LC_MESSAGES/sylpheed.mo
+share/sylpheed/manual/en/sylpheed-1.html
+share/sylpheed/manual/en/sylpheed-10.html
+share/sylpheed/manual/en/sylpheed-11.html
+share/sylpheed/manual/en/sylpheed-12.html
+share/sylpheed/manual/en/sylpheed-13.html
+share/sylpheed/manual/en/sylpheed-14.html
+share/sylpheed/manual/en/sylpheed-15.html
+share/sylpheed/manual/en/sylpheed-16.html
+share/sylpheed/manual/en/sylpheed-17.html
+share/sylpheed/manual/en/sylpheed-18.html
+share/sylpheed/manual/en/sylpheed-19.html
+share/sylpheed/manual/en/sylpheed-2.html
+share/sylpheed/manual/en/sylpheed-20.html
+share/sylpheed/manual/en/sylpheed-21.html
+share/sylpheed/manual/en/sylpheed-3.html
+share/sylpheed/manual/en/sylpheed-4.html
+share/sylpheed/manual/en/sylpheed-5.html
+share/sylpheed/manual/en/sylpheed-6.html
+share/sylpheed/manual/en/sylpheed-7.html
+share/sylpheed/manual/en/sylpheed-8.html
+share/sylpheed/manual/en/sylpheed-9.html
+share/sylpheed/manual/en/sylpheed.html
 share/sylpheed/manual/ja/sylpheed-1.html
 share/sylpheed/manual/ja/sylpheed-10.html
 share/sylpheed/manual/ja/sylpheed-11.html
@@ -38,7 +62,8 @@ share/sylpheed/manual/ja/sylpheed-8.html
 share/sylpheed/manual/ja/sylpheed-9.html
 share/sylpheed/manual/ja/sylpheed.html
 share/sylpheed/manual/ja/sylpheed.sgml
-@dirrm share/doc/sylpheed
 @dirrm share/sylpheed/manual/ja
+@dirrm share/sylpheed/manual/en
 @dirrm share/sylpheed/manual
 @dirrm share/sylpheed
+%%PORTDOCS%%@dirrm share/doc/sylpheed
