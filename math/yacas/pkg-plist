@@ -1,5 +1,8 @@
 bin/yacas
 bin/yacas_client
+share/yacas/Makefile
+share/yacas/Makefile.am
+share/yacas/Makefile.in
 share/yacas/addons/README
 share/yacas/addons/editvi.ys
 share/yacas/addons/editvi.ys.def
@@ -23,9 +26,7 @@ share/yacas/deffunc.rep/code.ys
 share/yacas/deffunc.rep/code.ys.def
 share/yacas/deriv.rep/code.ys
 share/yacas/deriv.rep/code.ys.def
-share/yacas/documentation/yacaslogo.gif
 share/yacas/documentation/books.html
-share/yacas/documentation/coding.html
 share/yacas/documentation/codingchapter1.html
 share/yacas/documentation/codingchapter2.html
 share/yacas/documentation/codingchapter3.html
@@ -39,7 +40,6 @@ share/yacas/documentation/introchapter2.html
 share/yacas/documentation/introchapter3.html
 share/yacas/documentation/introchapters.html
 share/yacas/documentation/intromanual.html
-share/yacas/documentation/isboolean.html
 share/yacas/documentation/manicon.html
 share/yacas/documentation/ref.html
 share/yacas/documentation/refchapter1.html
@@ -65,15 +65,16 @@ share/yacas/documentation/refprogchapter3.html
 share/yacas/documentation/refprogchapter4.html
 share/yacas/documentation/refprogchapters.html
 share/yacas/documentation/refprogmanual.html
+share/yacas/documentation/yacaslogo.gif
 share/yacas/example.rep/code.ys
 share/yacas/example.rep/code.ys.def
-share/yacas/examples/series.ys
-share/yacas/examples/findsum.ys
-share/yacas/examples/queens.ys
+share/yacas/examples/benchbuild.ys
 share/yacas/examples/benchmark.ys
 share/yacas/examples/benchmark2.ys
-share/yacas/examples/benchbuild.ys
+share/yacas/examples/findsum.ys
 share/yacas/examples/goldbach.ys
+share/yacas/examples/queens.ys
+share/yacas/examples/series.ys
 share/yacas/examples/tests.ys
 share/yacas/factors.rep/code.ys
 share/yacas/factors.rep/code.ys.def
@@ -83,6 +84,7 @@ share/yacas/formula.rep/code.ys
 share/yacas/formula.rep/code.ys.def
 share/yacas/functional.rep/code.ys
 share/yacas/functional.rep/code.ys.def
+share/yacas/glview.ys
 share/yacas/html.rep/code.ys
 share/yacas/html.rep/code.ys.def
 share/yacas/integrate.rep/code.ys
@@ -115,6 +117,7 @@ share/yacas/patterns.rep/code.ys
 share/yacas/patterns.rep/code.ys.def
 share/yacas/predicates.rep/code.ys
 share/yacas/predicates.rep/code.ys.def
+share/yacas/print.ys
 share/yacas/pslq.rep/code.ys
 share/yacas/pslq.rep/code.ys.def
 share/yacas/rabinmiller.rep/code.ys
@@ -127,10 +130,12 @@ share/yacas/simplify.rep/code.ys
 share/yacas/simplify.rep/code.ys.def
 share/yacas/solve.rep/code.ys
 share/yacas/solve.rep/code.ys.def
+share/yacas/standard.ys
 share/yacas/stats.rep/code.ys
 share/yacas/stats.rep/code.ys.def
 share/yacas/stdfuncs.rep/code.ys
 share/yacas/stdfuncs.rep/code.ys.def
+share/yacas/stdopers.ys
 share/yacas/stubs.rep/code.ys
 share/yacas/stubs.rep/code.ys.def
 share/yacas/substitute.rep/code.ys
@@ -147,61 +152,54 @@ share/yacas/trigsimp.rep/code.ys
 share/yacas/trigsimp.rep/code.ys.def
 share/yacas/univar.rep/code.ys
 share/yacas/univar.rep/code.ys.def
-share/yacas/Makefile
-share/yacas/Makefile.am
-share/yacas/Makefile.in
-share/yacas/glview.ys
-share/yacas/print.ys
-share/yacas/standard.ys
-share/yacas/stdopers.ys
 share/yacas/yacasinit.ys
-@dirrm share/yacas/addons
-@dirrm share/yacas/array.rep
-@dirrm share/yacas/assoc.rep
-@dirrm share/yacas/c_form.rep
-@dirrm share/yacas/complex.rep
-@dirrm share/yacas/constants.rep
-@dirrm share/yacas/controlflow.rep
-@dirrm share/yacas/cstubgen.rep
-@dirrm share/yacas/deffunc.rep
-@dirrm share/yacas/deriv.rep
-@dirrm share/yacas/documentation
-@dirrm share/yacas/example.rep
-@dirrm share/yacas/examples
-@dirrm share/yacas/factors.rep
-@dirrm share/yacas/fakedb.rep
-@dirrm share/yacas/formula.rep
-@dirrm share/yacas/functional.rep
-@dirrm share/yacas/html.rep
-@dirrm share/yacas/integrate.rep
-@dirrm share/yacas/limit.rep
-@dirrm share/yacas/linalg.rep
-@dirrm share/yacas/lists.rep
-@dirrm share/yacas/localrules.rep
-@dirrm share/yacas/logic.rep
-@dirrm share/yacas/multivar.rep
-@dirrm share/yacas/newly.rep
-@dirrm share/yacas/numbers.rep
-@dirrm share/yacas/odesolver.rep
-@dirrm share/yacas/openmath.rep
-@dirrm share/yacas/orthopoly.rep
-@dirrm share/yacas/padic.rep
-@dirrm share/yacas/patterns.rep
-@dirrm share/yacas/predicates.rep
-@dirrm share/yacas/pslq.rep
-@dirrm share/yacas/rabinmiller.rep
-@dirrm share/yacas/radsimp.rep
-@dirrm share/yacas/random.rep
-@dirrm share/yacas/simplify.rep
-@dirrm share/yacas/solve.rep
-@dirrm share/yacas/stats.rep
-@dirrm share/yacas/stdfuncs.rep
-@dirrm share/yacas/stubs.rep
-@dirrm share/yacas/substitute.rep
-@dirrm share/yacas/sums.rep
-@dirrm share/yacas/tensor.rep
-@dirrm share/yacas/testers.rep
-@dirrm share/yacas/texform.rep
-@dirrm share/yacas/trigsimp.rep
 @dirrm share/yacas/univar.rep
+@dirrm share/yacas/trigsimp.rep
+@dirrm share/yacas/texform.rep
+@dirrm share/yacas/testers.rep
+@dirrm share/yacas/tensor.rep
+@dirrm share/yacas/sums.rep
+@dirrm share/yacas/substitute.rep
+@dirrm share/yacas/stubs.rep
+@dirrm share/yacas/stdfuncs.rep
+@dirrm share/yacas/stats.rep
+@dirrm share/yacas/solve.rep
+@dirrm share/yacas/simplify.rep
+@dirrm share/yacas/random.rep
+@dirrm share/yacas/radsimp.rep
+@dirrm share/yacas/rabinmiller.rep
+@dirrm share/yacas/pslq.rep
+@dirrm share/yacas/predicates.rep
+@dirrm share/yacas/patterns.rep
+@dirrm share/yacas/padic.rep
+@dirrm share/yacas/orthopoly.rep
+@dirrm share/yacas/openmath.rep
+@dirrm share/yacas/odesolver.rep
+@dirrm share/yacas/numbers.rep
+@dirrm share/yacas/newly.rep
+@dirrm share/yacas/multivar.rep
+@dirrm share/yacas/logic.rep
+@dirrm share/yacas/localrules.rep
+@dirrm share/yacas/lists.rep
+@dirrm share/yacas/linalg.rep
+@dirrm share/yacas/limit.rep
+@dirrm share/yacas/integrate.rep
+@dirrm share/yacas/html.rep
+@dirrm share/yacas/functional.rep
+@dirrm share/yacas/formula.rep
+@dirrm share/yacas/fakedb.rep
+@dirrm share/yacas/factors.rep
+@dirrm share/yacas/examples
+@dirrm share/yacas/example.rep
+@dirrm share/yacas/documentation
+@dirrm share/yacas/deriv.rep
+@dirrm share/yacas/deffunc.rep
+@dirrm share/yacas/cstubgen.rep
+@dirrm share/yacas/controlflow.rep
+@dirrm share/yacas/constants.rep
+@dirrm share/yacas/complex.rep
+@dirrm share/yacas/c_form.rep
+@dirrm share/yacas/assoc.rep
+@dirrm share/yacas/array.rep
+@dirrm share/yacas/addons
 @dirrm share/yacas
