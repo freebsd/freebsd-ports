@@ -1,1 +1,1 @@
-lib/%%PYTHON_VERSION%%/site-packages/spread.so
+%%PYTHON_SITELIBDIR%%/spread.so
