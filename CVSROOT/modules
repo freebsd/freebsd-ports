@@ -1475,6 +1475,7 @@ entity		ports/devel/entity
 entropy		ports/math/entropy
 env		src/usr.bin/env
 envelope	ports/print/envelope
+eo-aspell	ports/textproc/eo-aspell
 eog		ports/graphics/eog
 eog2		ports/graphics/eog2
 eperl		ports/lang/eperl
