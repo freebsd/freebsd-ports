@@ -1,0 +1,71 @@
+--- courier/doc/Makefile.in.orig	Wed Apr 23 01:46:13 2003
++++ courier/doc/Makefile.in	Sat Aug  9 21:59:26 2003
+@@ -985,18 +985,18 @@
+ 	$(MAKE) do-man-install
+ 
+ do-man-install:
+-	for f in $(mandir) $(man1dir) $(man7dir) $(man8dir) ; do test -d $(DESTDIR)$$f && chmod 755 $(DESTDIR)$$f ; done ; exit 0
++#	for f in $(mandir) $(man1dir) $(man7dir) $(man8dir) ; do test -d $(DESTDIR)$$f && chmod 755 $(DESTDIR)$$f ; done ; exit 0
+ 	for f in $(man1) ; do test -f $(DESTDIR)$(man1dir)/$$f && chmod 644 $(DESTDIR)$(man1dir)/$$f ; done ; exit 0
+ 	for f in $(man5) ; do test -f $(DESTDIR)$(man5dir)/$$f && chmod 644 $(DESTDIR)$(man5dir)/$$f ; done ; exit 0
+ 	for f in $(man7) ; do test -f $(DESTDIR)$(man7dir)/$$f && chmod 644 $(DESTDIR)$(man7dir)/$$f ; done ; exit 0
+ 	for f in $(man8) ; do test -f $(DESTDIR)$(man8dir)/$$f && chmod 644 $(DESTDIR)$(man8dir)/$$f ; done ; exit 0
+-	test -w /etc || exit 0 ; for f in $(mandir) $(man1dir) $(man5dir) $(man7dir) $(man8dir) ; do test -d $(DESTDIR)$$f && chown bin $(DESTDIR)$$f && chgrp bin $(DESTDIR)$$f ; done ; exit 0
+-	test -w /etc || exit 0 ; for f in $(man1) ; do test -f $(DESTDIR)$(man1dir)/$$f && chown bin $(DESTDIR)$(man1dir)/$$f && chgrp bin $(DESTDIR)$(man1dir)/$$f ; done ; exit 0
+-	test -w /etc || exit 0 ; for f in $(man5) ; do test -f $(DESTDIR)$(man5dir)/$$f && chown bin $(DESTDIR)$(man5dir)/$$f && chgrp bin $(DESTDIR)$(man5dir)/$$f ; done ; exit 0
+-	test -w /etc || exit 0 ; for f in $(man7) ; do test -f $(DESTDIR)$(man7dir)/$$f && chown bin $(DESTDIR)$(man7dir)/$$f && chgrp bin $(DESTDIR)$(man7dir)/$$f ; done ; exit 0
+-	test -w /etc || exit 0 ; for f in $(man8) ; do test -f $(DESTDIR)$(man8dir)/$$f && chown bin $(DESTDIR)$(man8dir)/$$f && chgrp bin $(DESTDIR)$(man8dir)/$$f ; done ; exit 0
++#	test -w /etc || exit 0 ; for f in $(mandir) $(man1dir) $(man5dir) $(man7dir) $(man8dir) ; do test -d $(DESTDIR)$$f && chown bin $(DESTDIR)$$f && chgrp bin $(DESTDIR)$$f ; done ; exit 0
++#	test -w /etc || exit 0 ; for f in $(man1) ; do test -f $(DESTDIR)$(man1dir)/$$f && chown bin $(DESTDIR)$(man1dir)/$$f && chgrp bin $(DESTDIR)$(man1dir)/$$f ; done ; exit 0
++#	test -w /etc || exit 0 ; for f in $(man5) ; do test -f $(DESTDIR)$(man5dir)/$$f && chown bin $(DESTDIR)$(man5dir)/$$f && chgrp bin $(DESTDIR)$(man5dir)/$$f ; done ; exit 0
++#	test -w /etc || exit 0 ; for f in $(man7) ; do test -f $(DESTDIR)$(man7dir)/$$f && chown bin $(DESTDIR)$(man7dir)/$$f && chgrp bin $(DESTDIR)$(man7dir)/$$f ; done ; exit 0
++#	test -w /etc || exit 0 ; for f in $(man8) ; do test -f $(DESTDIR)$(man8dir)/$$f && chown bin $(DESTDIR)$(man8dir)/$$f && chgrp bin $(DESTDIR)$(man8dir)/$$f ; done ; exit 0
+ 	for f in $(htmldoc_DATA) ; do chmod 444 $(DESTDIR)$(htmldocdir)/$$f ; done
+-	test -w /etc || exit 0; for f in $(htmldoc_DATA) ; do chown bin $(DESTDIR)$(htmldocdir)/$$f ; chgrp bin $(DESTDIR)$(htmldocdir)/$$f ; done
++#	test -w /etc || exit 0; for f in $(htmldoc_DATA) ; do chown bin $(DESTDIR)$(htmldocdir)/$$f ; chgrp bin $(DESTDIR)$(htmldocdir)/$$f ; done
+ 
+ status.html: config.status
+ 
+@@ -1009,24 +1009,24 @@
+ 	@SUBDIRS="$(SUBDIRS)" ; for f in $$SUBDIRS ; do ( cd $$f && $(MAKE) $(AM_MAKEFLAGS) install-perms ) ; cat /dev/null >>$$f/permissions.dat ; cat $$f/permissions.dat >>permissions.dat ; done
+ 
+ install-perms-local:
+-	@echo @mandir@ 755 bin bin >>permissions.dat
+-	@echo $(man1dir) 755 bin bin >>permissions.dat
+-	@echo $(man5dir) 755 bin bin >>permissions.dat
+-	@echo $(man7dir) 755 bin bin >>permissions.dat
+-	@echo $(man8dir) 755 bin bin >>permissions.dat
+-	@for f in $(man1) ; do	\
+-	echo $(man1dir)/$$f 644 bin bin man >>permissions.dat ; done
+-	@for f in $(man5) ; do	\
+-	echo $(man5dir)/$$f 644 bin bin man >>permissions.dat ; done
+-	@for f in $(man7) ; do	\
+-	echo $(man7dir)/$$f 644 bin bin man >>permissions.dat ; done
+-	@for f in $(man8) ; do	\
+-	echo $(man8dir)/$$f 644 bin bin man >>permissions.dat ; done
+-	@for f in $(man_LINKS) ; do	\
+-	echo $$f 644 bin bin man >>permissions.dat ; done
+-	@echo $(htmldocdir) 755 bin bin >>permissions.dat
+-	@for f in $(htmldoc_DATA) ; do \
+-	echo $(htmldocdir)/$$f 444 bin bin doc >>permissions.dat ; done
++#	@echo @mandir@ 755 bin bin >>permissions.dat
++#	@echo $(man1dir) 755 bin bin >>permissions.dat
++#	@echo $(man5dir) 755 bin bin >>permissions.dat
++#	@echo $(man7dir) 755 bin bin >>permissions.dat
++#	@echo $(man8dir) 755 bin bin >>permissions.dat
++#	@for f in $(man1) ; do	\
++#	echo $(man1dir)/$$f 644 bin bin man >>permissions.dat ; done
++#	@for f in $(man5) ; do	\
++#	echo $(man5dir)/$$f 644 bin bin man >>permissions.dat ; done
++#	@for f in $(man7) ; do	\
++#	echo $(man7dir)/$$f 644 bin bin man >>permissions.dat ; done
++#	@for f in $(man8) ; do	\
++#	echo $(man8dir)/$$f 644 bin bin man >>permissions.dat ; done
++#	@for f in $(man_LINKS) ; do	\
++#	echo $$f 644 bin bin man >>permissions.dat ; done
++#	@echo $(htmldocdir) 755 bin bin >>permissions.dat
++#	@for f in $(htmldoc_DATA) ; do \
++#	echo $(htmldocdir)/$$f 444 bin bin doc >>permissions.dat ; done
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:

@@ -1,5 +1,5 @@
 #!/bin/sh
-# $FreeBSD: /tmp/pcvs/ports/mail/courier/scripts/Attic/configure.courier,v 1.6 2003-02-24 02:56:32 edwin Exp $
+# $FreeBSD: /tmp/pcvs/ports/mail/courier/scripts/Attic/configure.courier,v 1.7 2003-08-09 22:40:32 oliver Exp $
 
 [ -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc ] && exit
 
@@ -72,13 +72,13 @@ else
 		SET_LDAP2="OFF"
 	fi
 	if [ ":${WITH_MYSQL}" = ':yes' \
-	  -o -f ${LOCALBASE}/lib/mysql/libmysqlclient.so.10 ]; then
+	  -o -f ${LOCALBASE}/lib/mysql/libmysqlclient.so.12 ]; then
 		SET_MYSQL="ON"
 	else
 		SET_MYSQL="OFF"
 	fi
 	if [ ":${WITH_PGSQL}" = ':yes' \
-	  -o -f ${PGSQLBASE}/lib/libpq.so.2 ]; then
+	  -o -f ${PGSQLBASE}/lib/libpq.so.3 ]; then
 		SET_PGSQL="ON"
 	else
 		SET_PGSQL="OFF"
@@ -210,7 +210,7 @@ while [ "$1" ]; do
 				rm -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
 				exit 1
 			fi
-			echo "LIB_DEPENDS+=	ldap.2:\${PORTSDIR}/net/openldap20"
+			echo "LIB_DEPENDS+=	ldap.2:\${PORTSDIR}/net/openldap21"
 			CPPFLAGS="${CPPFLAGS} -I\${LOCALBASE}/include"
 			LDFLAGS="${LDFLAGS} -L\${LOCALBASE}/lib"
 			WITH_LDAP="--with-authldap"
@@ -225,7 +225,7 @@ while [ "$1" ]; do
 				rm -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
 				exit 1
 			else
-				echo "LIB_DEPENDS+=	mysqlclient.10:\${PORTSDIR}/databases/mysql323-client"
+				echo "LIB_DEPENDS+=	mysqlclient.12:\${PORTSDIR}/databases/mysql40-client"
 				WITH_MYSQL="--with-authmysql"
 				WITH_MYSQL="${WITH_MYSQL} --with-mysql-libs=\${LOCALBASE}/lib/mysql"
 				WITH_MYSQL="${WITH_MYSQL} --with-mysql-includes=\${LOCALBASE}/include/mysql"

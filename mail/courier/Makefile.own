@@ -3,8 +3,8 @@ OWNER0=	bin/courier-config \
 	bin/couriertls \
 	bin/deliverquota \
 	bin/dotforward \
-	bin/dotlock \
 	bin/imapd \
+	bin/lockmail \
 	bin/mailbot \
 	bin/maildirmake \
 	bin/makemime \
