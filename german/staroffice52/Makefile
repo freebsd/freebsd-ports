@@ -91,7 +91,7 @@ do-install:
 	@ ${ECHO}
 	@ ${FALSE}
 .else
-if exists(/compat/linux/${PREFIX})
+.if exists(/compat/linux/${PREFIX})
 	@${LN} -fs /compat/linux/${PREFIX}/office52 ${PREFIX}/office52
 .endif
 	@${CAT} ${PKGDIR}/MESSAGE
@@ -108,6 +108,7 @@ if exists(/compat/linux/${PREFIX})
 		${ECHO} ; \
 		${FALSE} ; \
 	.endif
+.endif
 
 post-install:
 	@${PATCH} -s ${PREFIX}/office52/program/setup ${FILESDIR}/setup.patch
