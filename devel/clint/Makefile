@@ -28,7 +28,7 @@ INFO=		clint
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile with gcc 3.4.2"
+USE_GCC=	3.3
 .endif
 
 post-patch:
