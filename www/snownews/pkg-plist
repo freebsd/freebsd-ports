@@ -6,6 +6,7 @@ share/locale/nl/LC_MESSAGES/snownews.mo
 share/locale/sl/LC_MESSAGES/snownews.mo
 share/locale/es/LC_MESSAGES/snownews.mo
 share/locale/it/LC_MESSAGES/snownews.mo
+share/locale/ru/LC_MESSAGES/snownews.mo
 share/locale/zh_TW/LC_MESSAGES/snownews.mo
 @unexec rmdir %D/man/fr/man1 2>/dev/null || true
 @unexec rmdir %D/man/fr 2>/dev/null || true
@@ -15,3 +16,5 @@ share/locale/zh_TW/LC_MESSAGES/snownews.mo
 @unexec rmdir %D/man/nl 2>/dev/null || true
 @unexec rmdir %D/man/it/man1 2>/dev/null || true
 @unexec rmdir %D/man/it 2>/dev/null || true
+@unexec rmdir %D/man/ru_RU.KOI8-R/man1 2>/dev/null || true
+@unexec rmdir %D/man/ru_RU.KOI8-R 2>/dev/null || true

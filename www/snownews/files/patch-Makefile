@@ -1,0 +1,27 @@
+--- Makefile.orig	Wed Apr 14 12:01:59 2004
++++ Makefile	Sat Jun  5 17:15:12 2004
+@@ -1,12 +1,13 @@
+-CC=         gcc
+-MAKE=       make
++CC?=         gcc
++MAKE?=       gmake
+ INSTALL=    install
+-PREFIX=     /usr/local
++#PREFIX=     /usr/local
+ LOCALEPATH= $(PREFIX)/share/locale
+ 
+ ### Compiler/linker flags ###
+ CFLAGS=  -Wall -O2 -DLOCALEPATH="\"$(LOCALEPATH)\"" -DOS=\"$(shell uname)\" `xml2-config --cflags` $(EXTRA_CFLAGS)
+ LDFLAGS= -lncurses `xml2-config --libs` $(EXTRA_LDFLAGS)
++EXTRA_LDFLAGS = -lintl
+ 
+ ### Object files ###
+ OBJFILES= main.o netio.o interface.o xmlparse.o updatecheck.o conversions.o dialog.o ui-support.o categories.o about.o cookies.o setup.o net-support.o digcalc.o md5.o filters.o
+@@ -79,7 +80,6 @@
+ 		mkdir -p $(PREFIX)/man/man1; \
+ 	fi
+ 	$(INSTALL) -m 0644 $(MAN)/snownews.1 $(PREFIX)/man/man1
+-	$(INSTALL) -m 0644 $(MAN)/opml2snow.1 $(PREFIX)/man/man1
+ 	
+ 	for L in $(LANGS); do \
+ 		if [ ! -d "$(PREFIX)/man/$$L/man1" ]; then \
