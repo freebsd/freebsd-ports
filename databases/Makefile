@@ -100,6 +100,7 @@
     SUBDIR += py-sqlrelay
     SUBDIR += rdb
     SUBDIR += ruby-bdb
+    SUBDIR += ruby-bdb1
     SUBDIR += ruby-cdb
     SUBDIR += ruby-dbd_interbase
     SUBDIR += ruby-dbd_msql
