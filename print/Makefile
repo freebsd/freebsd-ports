@@ -96,6 +96,7 @@
     SUBDIR += latex-biblist
     SUBDIR += latex-bibtopic
     SUBDIR += latex-bibunits
+    SUBDIR += latex-bytefield
     SUBDIR += latex-caption
     SUBDIR += latex-feynmf
     SUBDIR += latex-keystroke
