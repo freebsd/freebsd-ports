@@ -9755,6 +9755,7 @@ tdtd.el		ports/textproc/tdtd.el
 teTeX		ports/print/teTeX
 teTeX-base	ports/print/teTeX-base
 teTeX-texmf	ports/print/teTeX-texmf
+tea		ports/editors/tea
 tea-total	ports/security/tea-total
 team		ports/misc/team
 teamspeak_client	ports/audio/teamspeak_client
