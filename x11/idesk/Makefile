@@ -14,12 +14,11 @@ MASTER_SITES=	http://idesk.timmfin.net/releases/ \
 MAINTAINER=	sascha@root-login.org
 COMMENT=	Place launch icons directly on your desktop
 
-LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/Xft \
-		rsvg-2.4:${PORTSDIR}/graphics/librsvg2
+LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/Xft
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOME=	imlib
+USE_GNOME=	imlib librsvg2
 
 NO_WRKSUBDIR=	yes
 
