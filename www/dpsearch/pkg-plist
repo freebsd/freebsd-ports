@@ -18,6 +18,8 @@ etc/dpsearch/langmap/bg.cp1251.bible.lm
 etc/dpsearch/langmap/bg.cp1251.lm
 etc/dpsearch/langmap/bg.cyrillic.bible.lm
 etc/dpsearch/langmap/bg.cyrillic.lm
+etc/dpsearch/langmap/bg.utf-8.bible.lm
+etc/dpsearch/langmap/bg.utf-8.lm
 etc/dpsearch/langmap/br.latin1.lm
 etc/dpsearch/langmap/bs.ascii.lm
 etc/dpsearch/langmap/bs.cp1250.lm
@@ -25,14 +27,18 @@ etc/dpsearch/langmap/bs.latin2.lm
 etc/dpsearch/langmap/ca.latin1.lit.lm
 etc/dpsearch/langmap/ca.latin1.lm
 etc/dpsearch/langmap/cs.cp1250.lm
+etc/dpsearch/langmap/cs.iso-8859-1.lm
 etc/dpsearch/langmap/cs.latin2.lm
 etc/dpsearch/langmap/cy.latin1.lm
 etc/dpsearch/langmap/da.latin1.bible.lm
 etc/dpsearch/langmap/da.latin1.lm
 etc/dpsearch/langmap/de.latin1.bible.lm
 etc/dpsearch/langmap/de.latin1.lm
+etc/dpsearch/langmap/de.utf8.lit.lm
+etc/dpsearch/langmap/de.utf8.lm
 etc/dpsearch/langmap/el.cp1253.lm
 etc/dpsearch/langmap/el.greek.lm
+etc/dpsearch/langmap/el.utf-8.lm
 etc/dpsearch/langmap/en.ascii.lm
 etc/dpsearch/langmap/eo.latin1-h.as.lm
 etc/dpsearch/langmap/eo.latin1-x.as.lm
@@ -47,6 +53,7 @@ etc/dpsearch/langmap/eu.latin1.lm
 etc/dpsearch/langmap/fi.latin1.lm
 etc/dpsearch/langmap/fr.latin1.bible.lm
 etc/dpsearch/langmap/fr.latin1.lm
+etc/dpsearch/langmap/fr.utf-8.lit.lm
 etc/dpsearch/langmap/ga.latin1.lit.lm
 etc/dpsearch/langmap/ga.latin1.lm
 etc/dpsearch/langmap/he.hebrew.lm
@@ -59,18 +66,32 @@ etc/dpsearch/langmap/hu.latin2.lm
 etc/dpsearch/langmap/hy.armscii-8.lm
 etc/dpsearch/langmap/is.latin1.lm
 etc/dpsearch/langmap/it.latin1.lm
+etc/dpsearch/langmap/ja.euc-jp.lit.lm
+etc/dpsearch/langmap/ja.euc-jp.lm
+etc/dpsearch/langmap/ja.iso-2022-jp.lit.lm
+etc/dpsearch/langmap/ja.iso-2022-jp.lm
+etc/dpsearch/langmap/ja.sjis.lit.lm
+etc/dpsearch/langmap/ja.sjis.lm
+etc/dpsearch/langmap/ja.utf-8.lit.lm
+etc/dpsearch/langmap/ja.utf-8.lm
 etc/dpsearch/langmap/ko.EUC-KR.lm
 etc/dpsearch/langmap/ko.euc-kr.lit.lm
+etc/dpsearch/langmap/ko.utf8.lit.lm
+etc/dpsearch/langmap/ko.utf8.lm
 etc/dpsearch/langmap/la.ascii.lm
 etc/dpsearch/langmap/lt.cp1257.lm
+etc/dpsearch/langmap/lt.latin4.lit.lm
 etc/dpsearch/langmap/lt.latin4.lm
 etc/dpsearch/langmap/lv.cp1257.lm
 etc/dpsearch/langmap/lv.latin4.lm
 etc/dpsearch/langmap/nl.latin1.bible.lm
 etc/dpsearch/langmap/nl.latin1.lm
 etc/dpsearch/langmap/no.latin1.lm
+etc/dpsearch/langmap/pl.cp1250.lit.lm
 etc/dpsearch/langmap/pl.cp1250.lm
+etc/dpsearch/langmap/pl.cp852.lit.lm
 etc/dpsearch/langmap/pl.cp852.lm
+etc/dpsearch/langmap/pl.latin2.lit.lm
 etc/dpsearch/langmap/pl.latin2.lm
 etc/dpsearch/langmap/pt-br.latin1.lm
 etc/dpsearch/langmap/pt-pt.latin1.lm
@@ -80,6 +101,8 @@ etc/dpsearch/langmap/ro.latin2.lm
 etc/dpsearch/langmap/ru.cp1251.lm
 etc/dpsearch/langmap/ru.cp866.lm
 etc/dpsearch/langmap/ru.cyrillic.lm
+etc/dpsearch/langmap/ru.iso-8859-1.lm
+etc/dpsearch/langmap/ru.koi-7.lm
 etc/dpsearch/langmap/ru.koi8-r.lm
 etc/dpsearch/langmap/ru.maccyr.lm
 etc/dpsearch/langmap/ru.utf8.lm
@@ -89,6 +112,7 @@ etc/dpsearch/langmap/sk.latin2.lm
 etc/dpsearch/langmap/sl.ascii.lm
 etc/dpsearch/langmap/sl.cp1250.lm
 etc/dpsearch/langmap/sl.latin2.lm
+etc/dpsearch/langmap/sl.utf-8.lm
 etc/dpsearch/langmap/sq.latin1.lm
 etc/dpsearch/langmap/sr.cp1250.lm
 etc/dpsearch/langmap/sr.latin2.lm
@@ -104,6 +128,7 @@ etc/dpsearch/langmap/tr.cp1254.lm
 etc/dpsearch/langmap/tr.cp857.lm
 etc/dpsearch/langmap/tr.latin5.lm
 etc/dpsearch/langmap/ua.cp1251.lm
+etc/dpsearch/langmap/ua.cp866u.lm
 etc/dpsearch/langmap/ua.koi8-u.lm
 etc/dpsearch/langmap/vi.viscii.lm
 etc/dpsearch/langmap/zh.big5.lm
@@ -146,6 +171,7 @@ etc/dpsearch/stored.conf-dist
 etc/dpsearch/storedoc.htm-dist
 etc/dpsearch/synonym/english.syn
 etc/dpsearch/synonym/francais.syn
+etc/dpsearch/synonym/italian2.syn
 etc/dpsearch/synonym/russian.big.syn
 etc/dpsearch/synonym/russian.syn
 etc/dpsearch/thai.freq
@@ -154,6 +180,7 @@ include/dps_alias.h
 include/dps_base.h
 include/dps_boolean.h
 include/dps_cache.h
+include/dps_carry.h
 include/dps_chinese.h
 include/dps_common.h
 include/dps_conf.h
@@ -223,165 +250,67 @@ lib/libdpsearch.a
 lib/libdpsearch.la
 lib/libdpsearch.so
 sbin/cached
+sbin/dpconv
+sbin/dpguesser
 sbin/indexer
-sbin/mconv
-sbin/mguesser
 sbin/run-splitter
 sbin/searchd
 sbin/splitter
 sbin/stored
-share/doc/dataparksearch/body-after.html
-share/doc/dataparksearch/body-before.html
-share/doc/dataparksearch/datapark.css
-share/doc/dataparksearch/dpsearch-authors.en.html
-share/doc/dataparksearch/dpsearch-authors.ru.html
-share/doc/dataparksearch/dpsearch-cachemode.en.html
-share/doc/dataparksearch/dpsearch-cachemode.ru.html
-share/doc/dataparksearch/dpsearch-categories.en.html
-share/doc/dataparksearch/dpsearch-categories.ru.html
-share/doc/dataparksearch/dpsearch-cjk.en.html
-share/doc/dataparksearch/dpsearch-cjk.ru.html
-share/doc/dataparksearch/dpsearch-content-enc.en.html
-share/doc/dataparksearch/dpsearch-content-enc.ru.html
-share/doc/dataparksearch/dpsearch-db2.en.html
-share/doc/dataparksearch/dpsearch-db2.ru.html
-share/doc/dataparksearch/dpsearch-dbschema.en.html
-share/doc/dataparksearch/dpsearch-dbschema.ru.html
-share/doc/dataparksearch/dpsearch-disclaimer.en.html
-share/doc/dataparksearch/dpsearch-disclaimer.ru.html
-share/doc/dataparksearch/dpsearch-doingsearch.en.html
-share/doc/dataparksearch/dpsearch-doingsearch.ru.html
-share/doc/dataparksearch/dpsearch-extended-indexing.en.html
-share/doc/dataparksearch/dpsearch-extended-indexing.ru.html
-share/doc/dataparksearch/dpsearch-fuzzy.en.html
-share/doc/dataparksearch/dpsearch-fuzzy.ru.html
-share/doc/dataparksearch/dpsearch-get.en.html
-share/doc/dataparksearch/dpsearch-get.ru.html
-share/doc/dataparksearch/dpsearch-howstore.en.html
-share/doc/dataparksearch/dpsearch-howstore.ru.html
-share/doc/dataparksearch/dpsearch-html.en.html
-share/doc/dataparksearch/dpsearch-html.ru.html
-share/doc/dataparksearch/dpsearch-htmlparser-comments.en.html
-share/doc/dataparksearch/dpsearch-htmlparser-comments.ru.html
-share/doc/dataparksearch/dpsearch-htmlparser-links.en.html
-share/doc/dataparksearch/dpsearch-htmlparser-links.ru.html
-share/doc/dataparksearch/dpsearch-htmlparser-meta.en.html
-share/doc/dataparksearch/dpsearch-htmlparser-meta.ru.html
-share/doc/dataparksearch/dpsearch-htmlparser-spec.en.html
-share/doc/dataparksearch/dpsearch-htmlparser-spec.ru.html
-share/doc/dataparksearch/dpsearch-htmlparser.en.html
-share/doc/dataparksearch/dpsearch-htmlparser.ru.html
-share/doc/dataparksearch/dpsearch-http-codes.en.html
-share/doc/dataparksearch/dpsearch-http-codes.ru.html
-share/doc/dataparksearch/dpsearch-index-ru.ru.html
-share/doc/dataparksearch/dpsearch-index.en.html
-share/doc/dataparksearch/dpsearch-indexer-configuration.en.html
-share/doc/dataparksearch/dpsearch-indexer-configuration.ru.html
-share/doc/dataparksearch/dpsearch-indexing.en.html
-share/doc/dataparksearch/dpsearch-indexing.ru.html
-share/doc/dataparksearch/dpsearch-install.en.html
-share/doc/dataparksearch/dpsearch-install.ru.html
-share/doc/dataparksearch/dpsearch-installing.en.html
-share/doc/dataparksearch/dpsearch-installing.ru.html
-share/doc/dataparksearch/dpsearch-installproblem.en.html
-share/doc/dataparksearch/dpsearch-installproblem.ru.html
-share/doc/dataparksearch/dpsearch-international.en.html
-share/doc/dataparksearch/dpsearch-international.ru.html
-share/doc/dataparksearch/dpsearch-intro.en.html
-share/doc/dataparksearch/dpsearch-intro.ru.html
-share/doc/dataparksearch/dpsearch-lib.en.html
-share/doc/dataparksearch/dpsearch-lib.ru.html
-share/doc/dataparksearch/dpsearch-misc.en.html
-share/doc/dataparksearch/dpsearch-misc.ru.html
-share/doc/dataparksearch/dpsearch-mod_dpsearch.en.html
-share/doc/dataparksearch/dpsearch-mod_dpsearch.ru.html
-share/doc/dataparksearch/dpsearch-multilang.en.html
-share/doc/dataparksearch/dpsearch-multilang.ru.html
-share/doc/dataparksearch/dpsearch-opsys.en.html
-share/doc/dataparksearch/dpsearch-opsys.ru.html
-share/doc/dataparksearch/dpsearch-oracle.en.html
-share/doc/dataparksearch/dpsearch-oracle.ru.html
-share/doc/dataparksearch/dpsearch-perf.en.html
-share/doc/dataparksearch/dpsearch-perf.ru.html
-share/doc/dataparksearch/dpsearch-register.en.html
-share/doc/dataparksearch/dpsearch-register.ru.html
-share/doc/dataparksearch/dpsearch-rel.en.html
-share/doc/dataparksearch/dpsearch-rel.ru.html
-share/doc/dataparksearch/dpsearch-searchd.en.html
-share/doc/dataparksearch/dpsearch-searchd.ru.html
-share/doc/dataparksearch/dpsearch-srcache.en.html
-share/doc/dataparksearch/dpsearch-srcache.ru.html
-share/doc/dataparksearch/dpsearch-stored.en.html
-share/doc/dataparksearch/dpsearch-stored.ru.html
-share/doc/dataparksearch/dpsearch-subsections.en.html
-share/doc/dataparksearch/dpsearch-subsections.ru.html
-share/doc/dataparksearch/dpsearch-syslog.en.html
-share/doc/dataparksearch/dpsearch-syslog.ru.html
-share/doc/dataparksearch/dpsearch-templates.en.html
-share/doc/dataparksearch/dpsearch-templates.ru.html
-share/doc/dataparksearch/dpsearch-toolsreq.en.html
-share/doc/dataparksearch/dpsearch-toolsreq.ru.html
-share/doc/dataparksearch/dpsearch-track.en.html
-share/doc/dataparksearch/dpsearch-track.ru.html
-share/doc/dataparksearch/dpsearch-vary.en.html
-share/doc/dataparksearch/dpsearch-vary.ru.html
-share/doc/dataparksearch/index.en.html
-share/doc/dataparksearch/index.ru.html
-share/dpsearch/ibase/create.crc-multi.sql
-share/dpsearch/ibase/create.multi.sql
-share/dpsearch/ibase/create.single.sql
-share/dpsearch/ibase/drop.crc-multi.sql
-share/dpsearch/ibase/drop.multi.sql
-share/dpsearch/ibase/drop.single.sql
-share/dpsearch/mimer/create.crc-multi.sql
-share/dpsearch/mimer/create.multi.sql
-share/dpsearch/mimer/create.single.sql
-share/dpsearch/mimer/drop.crc-multi.sql
-share/dpsearch/mimer/drop.multi.sql
-share/dpsearch/mimer/drop.single.sql
-share/dpsearch/mssql/create.crc-multi.sql
-share/dpsearch/mssql/create.multi.sql
-share/dpsearch/mssql/create.single.sql
-share/dpsearch/mssql/drop.crc-multi.sql
-share/dpsearch/mssql/drop.multi.sql
-share/dpsearch/mssql/drop.single.sql
-share/dpsearch/mysql/create.crc-multi.sql
-share/dpsearch/mysql/create.multi.sql
-share/dpsearch/mysql/create.single.sql
-share/dpsearch/mysql/drop.crc-multi.sql
-share/dpsearch/mysql/drop.multi.sql
-share/dpsearch/mysql/drop.single.sql
-share/dpsearch/oracle/create.crc-multi.sql
-share/dpsearch/oracle/create.multi.sql
-share/dpsearch/oracle/create.single.sql
-share/dpsearch/oracle/drop.crc-multi.sql
-share/dpsearch/oracle/drop.multi.sql
-share/dpsearch/oracle/drop.single.sql
-share/dpsearch/pgsql/create.crc-multi.sql
-share/dpsearch/pgsql/create.crc.sql
-share/dpsearch/pgsql/create.multi.sql
-share/dpsearch/pgsql/create.single.sql
-share/dpsearch/pgsql/drop.crc-multi.sql
-share/dpsearch/pgsql/drop.crc.sql
-share/dpsearch/pgsql/drop.multi.sql
-share/dpsearch/pgsql/drop.single.sql
-share/dpsearch/sqlite/create.crc-multi.sql
-share/dpsearch/sqlite/create.multi.sql
-share/dpsearch/sqlite/create.single.sql
-share/dpsearch/sqlite/drop.crc-multi.sql
-share/dpsearch/sqlite/drop.multi.sql
-share/dpsearch/sqlite/drop.single.sql
-@dirrm share/nls/en_US.US-ASCII
-@dirrm share/nls/POSIX
-@dirrm share/dpsearch/sqlite
-@dirrm share/dpsearch/pgsql
-@dirrm share/dpsearch/oracle
-@dirrm share/dpsearch/mysql
-@dirrm share/dpsearch/mssql
-@dirrm share/dpsearch/mimer
-@dirrm share/dpsearch/ibase
-@dirrm share/dpsearch
-@dirrm share/doc/dataparksearch
+%%DOCSDIR%%/README.html
+%%DATADIR%%/ibase/create.crc-multi.sql
+%%DATADIR%%/ibase/create.multi.sql
+%%DATADIR%%/ibase/create.single.sql
+%%DATADIR%%/ibase/drop.crc-multi.sql
+%%DATADIR%%/ibase/drop.multi.sql
+%%DATADIR%%/ibase/drop.single.sql
+%%DATADIR%%/mimer/create.crc-multi.sql
+%%DATADIR%%/mimer/create.multi.sql
+%%DATADIR%%/mimer/create.single.sql
+%%DATADIR%%/mimer/drop.crc-multi.sql
+%%DATADIR%%/mimer/drop.multi.sql
+%%DATADIR%%/mimer/drop.single.sql
+%%DATADIR%%/mssql/create.crc-multi.sql
+%%DATADIR%%/mssql/create.multi.sql
+%%DATADIR%%/mssql/create.single.sql
+%%DATADIR%%/mssql/drop.crc-multi.sql
+%%DATADIR%%/mssql/drop.multi.sql
+%%DATADIR%%/mssql/drop.single.sql
+%%DATADIR%%/mysql/create.crc-multi.sql
+%%DATADIR%%/mysql/create.multi.sql
+%%DATADIR%%/mysql/create.single.sql
+%%DATADIR%%/mysql/drop.crc-multi.sql
+%%DATADIR%%/mysql/drop.multi.sql
+%%DATADIR%%/mysql/drop.single.sql
+%%DATADIR%%/oracle/create.crc-multi.sql
+%%DATADIR%%/oracle/create.multi.sql
+%%DATADIR%%/oracle/create.single.sql
+%%DATADIR%%/oracle/drop.crc-multi.sql
+%%DATADIR%%/oracle/drop.multi.sql
+%%DATADIR%%/oracle/drop.single.sql
+%%DATADIR%%/pgsql/create.crc-multi.sql
+%%DATADIR%%/pgsql/create.crc.sql
+%%DATADIR%%/pgsql/create.multi.sql
+%%DATADIR%%/pgsql/create.single.sql
+%%DATADIR%%/pgsql/drop.crc-multi.sql
+%%DATADIR%%/pgsql/drop.crc.sql
+%%DATADIR%%/pgsql/drop.multi.sql
+%%DATADIR%%/pgsql/drop.single.sql
+%%DATADIR%%/sqlite/create.crc-multi.sql
+%%DATADIR%%/sqlite/create.multi.sql
+%%DATADIR%%/sqlite/create.single.sql
+%%DATADIR%%/sqlite/drop.crc-multi.sql
+%%DATADIR%%/sqlite/drop.multi.sql
+%%DATADIR%%/sqlite/drop.single.sql
+@dirrm %%DATADIR%%/sqlite
+@dirrm %%DATADIR%%/pgsql
+@dirrm %%DATADIR%%/oracle
+@dirrm %%DATADIR%%/mysql
+@dirrm %%DATADIR%%/mssql
+@dirrm %%DATADIR%%/mimer
+@dirrm %%DATADIR%%/ibase
+@dirrm %%DATADIR%%
+@dirrm %%DOCSDIR%%
 @dirrm etc/dpsearch/synonym
 @dirrm etc/dpsearch/stopwords
 @dirrm etc/dpsearch/langmap
