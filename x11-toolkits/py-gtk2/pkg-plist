@@ -1,11 +1,14 @@
 lib/python1.5/site-packages/GDK.py
 lib/python1.5/site-packages/GDK.pyc
+lib/python1.5/site-packages/GdkImlib.py
+lib/python1.5/site-packages/GdkImlib.pyc
 lib/python1.5/site-packages/GTK.py
 lib/python1.5/site-packages/GTK.pyc
 lib/python1.5/site-packages/GtkExtra.py
 lib/python1.5/site-packages/GtkExtra.pyc
 lib/python1.5/site-packages/Gtkinter.py
 lib/python1.5/site-packages/Gtkinter.pyc
+lib/python1.5/site-packages/_gdkimlibmodule.so
 lib/python1.5/site-packages/gtkmodule.so
 share/doc/pygtk/README
 share/examples/pygtk/ide/README

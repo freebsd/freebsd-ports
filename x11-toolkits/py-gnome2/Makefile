@@ -1,20 +1,21 @@
 # New ports collection makefile for:	pygtk
-# Version required:	0.4.4
+# Version required:	0.4.5
 # Date created:		30 May 1998
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.4 1998/06/30 07:43:02 tg Exp $
+# $Id: Makefile,v 1.5 1998/07/06 11:22:33 tg Exp $
 #
 
-DISTNAME=	pygtk-0.4.4
-PKGNAME=	py-gtk-0.4.4
+DISTNAME=	pygtk-0.4.5
+PKGNAME=	py-gtk-0.4.5
 CATEGORIES=	x11 python
-MASTER_SITES=	ftp://ftp.gimp.org/pub/gtk/python/ \
+MASTER_SITES=	ftp://ftp.daa.com.au/pub/james/python/ \
+		ftp://ftp.gimp.org/pub/gtk/python/ \
 		ftp://infosoc.uni-koeln.de/pub/ftp.gimp.org/pub/gtk/python/ \
 		ftp://ftp.cs.umn.edu/pub/gimp/gtk/python/ \
 		ftp://stef.u-picardie.fr/mirror/ftp.gimp.org/gtk/python/
 
-MAINTAINER=	tg@FreeBSD.ORG
+MAINTAINER=	ports@FreeBSD.ORG
 
 BUILD_DEPENDS=	python:${PORTSDIR}/lang/python
 RUN_DEPENDS=	python:${PORTSDIR}/lang/python
