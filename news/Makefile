@@ -10,7 +10,6 @@
     SUBDIR += cleanfeed
     SUBDIR += cleanscore
     SUBDIR += cnews
-    SUBDIR += dejasearch
     SUBDIR += diablo
     SUBDIR += dnews
     SUBDIR += fidogate
