@@ -53,7 +53,7 @@ RUN_DEPENDS=	${PREFIX}/Acrobat5/Resource/Font/H.cmap:${PORTSDIR}/print/acroread5
 #
 .if ${DISTNAME} == "jpnfont"
 RESTRICTED=	"Be required to register with Adobe before downloading the Japanese font pack."
-IS_INTERACTIVE=	"You should manual-fetch Japanese pack of \"Asian Font Packs\" from http://www.adobe.com/prodindex/acrobat/readstep.html"
+IS_INTERACTIVE=	"You should manual-fetch Japanese pack of \"Asian Font Packs\" from http://www.adobe.com/products/acrobat/acrrasianfontpack.html"
 .if !exists(${DISTDIR}/${DIST_SUBDIR}/jpnfont.tar.gz)
 IGNORE=		": ${RESTRICTED} ${IS_INTERACTIVE}"
 .endif
