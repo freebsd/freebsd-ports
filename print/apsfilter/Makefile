@@ -7,7 +7,7 @@
 
 PORTNAME=	apsfilter
 PORTVERSION=	7.2.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	print
 MASTER_SITES=	http://www.apsfilter.org/download/
 
@@ -32,7 +32,7 @@ MAKE_ENV+=      NO_X=true
 .endif
 
 #
-# define WITH_GHOSTSCRIPT_AFP1=yes for AFPL Postscript interpreter
+# define WITH_GHOSTSCRIPT_AFPL=yes for AFPL Postscript interpreter
 # instead of GNU one
 #
 .if defined(WITH_GHOSTSCRIPT_AFPL)
@@ -132,7 +132,7 @@ SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" GSPORT="${GSPORT}"
 PAPERSIZE?=letter
 
 pre-fetch:
-.if !defined(WITH_GHOSTSCRIPT_AFP1)
+.if !defined(WITH_GHOSTSCRIPT_AFPL)
 	@${ECHO} ""
 	@${ECHO} "      Define WITH_GHOSTSCRIPT_AFPL=yes to use"
 	@${ECHO} "      AFPL Postscript interpreter instead of GNU one"
