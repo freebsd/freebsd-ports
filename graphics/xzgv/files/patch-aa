@@ -1,6 +1,5 @@
-diff -urN ../../xzgv-0.6.orig/Makefile ./Makefile
---- ../../xzgv-0.6.orig/Makefile	Wed Nov  8 21:52:49 2000
-+++ ./Makefile	Sat Nov 11 14:28:52 2000
+--- Makefile.orig	Fri Nov 17 13:28:43 2000
++++ Makefile	Sat Jun  9 17:03:04 2001
 @@ -24,9 +24,9 @@
  
  
@@ -18,10 +17,10 @@ diff -urN ../../xzgv-0.6.orig/Makefile ./Makefile
  # So the `infowarn' below is mainly to warn me if the info gets
  # out of date. :-)
 -info: doc/xzgv.gz
-+info: doc/xzgv
++info: doc/xzgv.info
  
 -doc/xzgv.gz: doc/xzgv.texi
-+doc/xzgv: doc/xzgv.texi
++doc/xzgv.info: doc/xzgv.texi
  	cd doc && $(MAKE) info
  
  # Warn if the info is out of date. This *is* automatically done.

@@ -1,7 +1,15 @@
-diff -urN ../../xzgv-0.6.orig/src/Makefile ./src/Makefile
---- ../../xzgv-0.6.orig/src/Makefile	Wed Nov  8 21:52:49 2000
-+++ ./src/Makefile	Sat Nov 11 14:32:17 2000
-@@ -19,7 +19,7 @@
+--- src/Makefile.orig	Tue Apr 10 21:37:01 2001
++++ src/Makefile	Sat Jun  9 17:09:29 2001
+@@ -9,7 +9,7 @@
+ # This gets definitions for CC, CFLAGS, BINDIR etc.
+ include ../config.mk
+ 
+-CFLAGS+=-DBACKEND_$(BACKEND) `gtk-config --cflags`
++CFLAGS+=-DBACKEND_$(BACKEND) `${GTK_CONFIG} --cflags`
+ 
+ # I could do this less horribly if I made it GNU-make-specific,
+ # but I decided not to. And here we are. :-(
+@@ -30,7 +30,7 @@
  # compile when you do `make install'. :-)
  # (It would also be weird to have it made by the `doc' Makefile, IMHO.)
  
@@ -9,31 +17,16 @@ diff -urN ../../xzgv-0.6.orig/src/Makefile ./src/Makefile
 +all: xzgv #install-info
  
  OBJS=	main.o \
- 	filedetails.o gotodir.o updatetn.o confirm.o \
-@@ -43,14 +43,14 @@
+ 	filedetails.o gotodir.o updatetn.o confirm.o help.o \
+@@ -57,9 +57,8 @@
  installdirs:
  	/bin/sh ../mkinstalldirs $(BINDIR)
  
 -install: xzgv installdirs
--	install -m 511 xzgv $(BINDIR)
+-	install xzgv $(BINDIR)
+-	chmod 755 $(BINDIR)/xzgv
 +install: xzgv #installdirs
-+	install -s -m 511 xzgv $(BINDIR)
++	${BSD_INSTALL_PROGRAM} xzgv $(BINDIR)
  
  uninstall:
  	$(RM) $(BINDIR)/xzgv
- 
- clean:
--	$(RM) *~ *.o xzgv install-info
-+	$(RM) *~ *.o xzgv
- 	$(RM) rcfile_opt.h rcfile_var.h rcfile_short.h
- 	$(RM) logodata.h logoconv
- 
-@@ -63,7 +63,7 @@
- getopt.o: getopt.c
- getopt1.o: getopt1.c getopt.h
- gotodir.o: gotodir.c main.h gotodir.h
--install-info.o: install-info.c getopt.h
-+#install-info.o: install-info.c getopt.h
- logo.o: logo.c logodata.h
- logoconv.o: logoconv.c
- main.o: main.c readmrf.h readgif.h readpng.h readjpegtn.h resizepic.h \
