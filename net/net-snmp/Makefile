@@ -3,10 +3,10 @@
 # Date created:				26 June 1996
 # Whom:					gpalmer
 #
-# $Id: Makefile,v 1.28 1999/04/30 12:59:50 kris Exp $
+# $Id: Makefile,v 1.29 1999/08/22 18:59:35 mharo Exp $
 #
 
-DISTNAME=	ucd-snmp-3.6.1
+DISTNAME=	ucd-snmp-4.0
 CATEGORIES=	net
 MASTER_SITES= 	ftp://ucd-snmp.ucdavis.edu/ \
 		ftp://sunsite.cnlab-switch.ch/mirror/ucd-snmp/ \
@@ -27,7 +27,7 @@ IS_INTERACTIVE= yes
 
 MAN1=		snmpbulkwalk.1 snmpd.1 snmpdelta.1 snmpget.1 snmpgetnext.1 \
 		snmpnetstat.1 snmpset.1 snmpstatus.1 snmptable.1 snmptest.1 \
-		snmptranslate.1 snmptrap.1 snmpwalk.1 snmpcmd.1
+		snmptranslate.1 snmptrap.1 snmpwalk.1 snmpcmd.1 snmpusm.1
 MAN3=		read_config.3 mib_api.3 snmp_api.3 snmp_sess_api.3
 MAN5=		snmp.conf.5 snmp_config.5 snmpd.conf.5 \
 		snmptrapd.conf.5 variables.5
@@ -43,11 +43,15 @@ STARTUP_FILE=	${PREFIX}/etc/rc.d/snmpd.sh.sample
 .if ${PORTOBJFORMAT} == "aout"
 BROKEN=		"aout build breaks: ld: internal error: RRS relocs exceed allocation 343"
 .endif
+.if ${OSVERSION} >= 400000
+BROKEN=		"Uses the old VM system interfaces"
+.endif
 
 SHLIB_VERSION=3
+PLIST_SUB= shlib=${SHLIB_VERSION}
 
 post-patch:
-	${CP} ${FILESDIR}/freebsd4.h ${WRKSRC}/s
+	@${CP} ${FILESDIR}/freebsd4.h ${WRKSRC}/s
 
 post-install:
 	( cd ${PREFIX}/bin && strip ${BIN} )
