@@ -81,4 +81,17 @@ lib/libgtop_sysdeps_suid.so
 lib/libgtop_sysdeps_suid.so.1
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
+share/locale/de/LC_MESSAGES/libgtop.mo
+share/locale/fr/LC_MESSAGES/libgtop.mo
+share/locale/ja/LC_MESSAGES/libgtop.mo
+share/locale/no/LC_MESSAGES/libgtop.mo
+share/locale/ko/LC_MESSAGES/libgtop.mo
+share/locale/es/LC_MESSAGES/libgtop.mo
+share/locale/es_DO/LC_MESSAGES/libgtop.mo
+share/locale/es_GT/LC_MESSAGES/libgtop.mo
+share/locale/es_HN/LC_MESSAGES/libgtop.mo
+share/locale/es_MX/LC_MESSAGES/libgtop.mo
+share/locale/es_PA/LC_MESSAGES/libgtop.mo
+share/locale/es_PE/LC_MESSAGES/libgtop.mo
+share/locale/es_SV/LC_MESSAGES/libgtop.mo
 @dirrm include/glibtop

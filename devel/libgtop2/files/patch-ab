@@ -72,8 +72,8 @@
  LT_VERSION_INFO = @LT_VERSION_INFO@
  MAKEINFO = @MAKEINFO@
  MKINSTALLDIRS = @MKINSTALLDIRS@
---- Makefile.in.orig	Wed Jan  6 03:53:28 1999
-+++ Makefile.in	Thu Jan  7 21:47:02 1999
+--- Makefile.in.orig	Tue Jan  5 21:53:28 1999
++++ Makefile.in	Wed Jan 20 00:33:09 1999
 @@ -172,8 +172,7 @@
  
  @BUILD_GNOME_SUPPORT_TRUE@support = support
@@ -93,6 +93,24 @@
  confexec_DATA	= $(top_builddir)/libgtopConf.sh \
  		  $(top_builddir)/libgtop-features.def
  
+@@ -511,7 +510,7 @@
+ $(top_srcdir)/aclocal.m4: libgtop-sysdeps.m4
+ 
+ libgtopConf.sh: libgtopConf.sh.in Makefile
+-	sed -e 's#\@LIBGTOP_LIBDIR\@#$(libdir)#g' \
++	sed -e 's#\@LIBGTOP_LIBDIR\@#$(confexecdir)#g' \
+ 	  -e 's#\@LIBGTOP_INCLUDEDIR\@#$(includedir)#g' \
+ 	  -e 's#\@LIBGTOP_EXTRA_LIBS\@#$(LIBGTOP_EXTRA_LIBS)#g' \
+ 	  -e 's#\@LIBGTOP_LIBS\@#$(LIBGTOP_LIBS)#g' \
+@@ -539,7 +538,7 @@
+ 	  && mv libgtopConf.tmp libgtopConf.sh
+ 
+ libgtop-config: libgtop-config.in Makefile
+-	sed -e 's#\@LIBGTOP_LIBDIR\@#$(libdir)#g' \
++	sed -e 's#\@LIBGTOP_LIBDIR\@#$(confexecdir)#g' \
+ 	      < $(srcdir)/libgtop-config.in > libgtop-config.tmp \
+ 	  && mv libgtop-config.tmp libgtop-config && \
+ 		chmod 755 libgtop-config
 --- po/Makefile.in.in.orig	Wed Jan  6 03:50:44 1999
 +++ po/Makefile.in.in	Thu Jan  7 21:47:02 1999
 @@ -18,7 +18,7 @@
