@@ -6,10 +6,11 @@
 #
 
 PORTNAME?=	postgresql
-PORTVERSION?=	7.4.b1.2003.08.26
+PORTVERSION?=	7.4.b3.2003.09.30
 CATEGORIES?=	databases
 MASTER_SITES=	http://freebsd.sean.chittenden.org/ports/ \
 		http://people.freebsd.org/~seanc/ports/
+PATCH_SITES=	http://people.FreeBSD.org/~seanc/patches/pgsql/
 PKGNAMESUFFIX=	-devel
 DIST_SUBDIR=	postgresql
 
@@ -51,6 +52,17 @@ PLIST_SUB+=	GETTEXT="@comment "
 
 .if defined(WITH_OPTIMIZED_CFLAGS)
 CFLAGS+= -O3 -funroll-loops
+.endif
+
+.if defined(WITH_PGBLOCKSIZE)
+.if (${WITH_PGBLOCKSIZE} == "16K")
+PATCHFILES+=	"patch-pgblocksize-16K"
+.elif (${WITH_PGBLOCKSIZE} == "32K")
+PATCHFILES+=	"patch-pgblocksize-32K"
+.elif (${WITH_PGBLOCKSIZE} == "65K")
+#	This block size doesn't work, for use by developers only!!!
+PATCHFILES+=	"patch-pgblocksize-65K"
+.endif
 .endif
 
 .if defined(WITH_DEBUG)
@@ -106,18 +118,22 @@ pre-everything::
 	@${ECHO} ""
 	@${ECHO} "${PORTNAME} has several tunables that can be used to configure PostgreSQL:"
 	@${ECHO} ""
-	@${ECHO} "	WITHOUT_GNUGETOPT	Don't install GNU getopt (will"
-	@${ECHO} "				still be used if already installed)"
+	@${ECHO} "	WITH_DEBUG		Builds with debugging symbols"
+	@${ECHO} "	WITH_HEIMDAL_KRB5	Builds with Heimdal's kerberos support"
+	@${ECHO} "	WITH_MIT_KRB5		Builds with MIT's kerberos support"
+	@${ECHO} "	WITH_OPTIMIZED_CFLAGS	Builds with compiler optimizations (-O3)"
+	@${ECHO} "	WITH_PGBLOCKSIZE	It's possible to change the blocksize to \"16K\""
+	@${ECHO} "				or \"32K\" (defaults to 8K and different"
+	@${ECHO} "				block sizes require a dump, initdb, reload!)"
 	@${ECHO} "	WITHOUT_GETTEXT		Skips building with support for"
 	@${ECHO} "				internationalized error messages"
+	@${ECHO} "	WITHOUT_GNUGETOPT	Don't install GNU getopt (will"
+	@${ECHO} "				still be used if already installed)"
+	@${ECHO} "	WITHOUT_PGCRYPTO	Builds without pgcrypto support"
 	@${ECHO} "	WITHOUT_SERVER		Installs the headers and libraries for"
 	@${ECHO} "				PostgreSQL clients"
 	@${ECHO} "	WITHOUT_SSL		Builds without OpenSSL support"
-	@${ECHO} "	WITH_MIT_KRB5		Builds with MIT's kerberos support"
-	@${ECHO} "	WITH_HEIMDAL_KRB5	Builds with Heimdal's kerberos support"
-	@${ECHO} "	WITH_OPTIMIZED_CFLAGS	Builds with compiler optimizations (-O3)"
-	@${ECHO} "	WITHOUT_PGCRYPTO	Builds without pgcrypto support"
-	@${ECHO} "	WITH_DEBUG		Builds with debugging symbols"
+	@${ECHO} ""
 	@${ECHO} ""
 .if defined(WITH_MIT_KRB5) && defined(WITH_HEIMDAL_KRB5)
 	@${ECHO} "WITH_MIT_KRB5 and WITH_HEIMDAL_KRB5 are mutually exclusive."
