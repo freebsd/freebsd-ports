@@ -1,0 +1,31 @@
+bin/E-Biff.epplet
+bin/E-Clock.epplet
+bin/E-Cpu.epplet
+bin/E-Load.epplet
+bin/E-Net.epplet
+bin/E-Time.epplet
+bin/EppletTest.epplet
+include/epplet.h
+lib/libepplet.a
+lib/libepplet.la
+lib/libepplet.so
+lib/libepplet.so.1
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
+share/enlightenment/epplet_icons/E-Biff.icon
+share/enlightenment/epplet_icons/E-Clock-Image.png
+share/enlightenment/epplet_icons/E-Clock.ABOUT/MAIN
+share/enlightenment/epplet_icons/E-Clock.ABOUT/aircut3.ttf
+share/enlightenment/epplet_icons/E-Clock.ABOUT/bg.png
+share/enlightenment/epplet_icons/E-Clock.icon
+share/enlightenment/epplet_icons/E-Cpu.ABOUT/MAIN
+share/enlightenment/epplet_icons/E-Cpu.ABOUT/aircut3.ttf
+share/enlightenment/epplet_icons/E-Cpu.ABOUT/bg.png
+share/enlightenment/epplet_icons/E-Cpu.icon
+share/enlightenment/epplet_icons/E-Load.icon
+share/enlightenment/epplet_icons/E-Net.icon
+share/enlightenment/epplet_icons/newmail.png
+share/enlightenment/epplet_icons/nomail.png
+@dirrm share/enlightenment/epplet_icons/E-Clock.ABOUT
+@dirrm share/enlightenment/epplet_icons/E-Cpu.ABOUT
+@dirrm share/enlightenment/epplet_icons
