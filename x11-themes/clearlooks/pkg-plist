@@ -1,0 +1,14 @@
+lib/gtk-2.0/2.4.0/engines/libclearlooks.so
+share/themes/Clearlooks-DeepSky/gtk-2.0/gtkrc
+share/themes/Clearlooks-Olive/gtk-2.0/gtkrc
+share/themes/Clearlooks/gtk-2.0/gtkrc
+share/themes/Clearlooks/index.theme
+share/gnome/themes/Clearlooks/metacity-1/metacity-theme-1.xml
+@dirrm share/gnome/themes/Clearlooks/metacity-1
+@dirrm share/gnome/themes/Clearlooks
+@dirrm share/themes/Clearlooks/gtk-2.0
+@dirrm share/themes/Clearlooks-Olive/gtk-2.0
+@dirrm share/themes/Clearlooks-Olive
+@dirrm share/themes/Clearlooks-DeepSky/gtk-2.0
+@dirrm share/themes/Clearlooks-DeepSky
+@dirrm share/themes/Clearlooks

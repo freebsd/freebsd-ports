@@ -7,6 +7,7 @@
     SUBDIR += baghira
     SUBDIR += buffy
     SUBDIR += clean-theme-gtk
+    SUBDIR += clearlooks
     SUBDIR += colorstep
     SUBDIR += engradient
     SUBDIR += enlightenment-theme-BlueSteel
