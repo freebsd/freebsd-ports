@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nonsense
-PORTVERSION=	0.4
+PORTVERSION=	0.5
 CATEGORIES=	games
 MASTER_SITES=	http://i-want-a-website.com/about-linux/
 
