@@ -11,17 +11,24 @@ PORTREVISION=	5
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_GNU} \
 		${MASTER_SITE_SOURCEFORGE} \
-		http://members.ozemail.com.au/~geoffk/pdfencrypt/ \
-		http://www.gelhaus.net/hp880c/1.4beta/ \
-		http://home.t-online.de/home/Martin.Lottermoser/pcl3dist/ \
-		http://www.harsch.net/Download/ \
+		http://members.ozemail.com.au/~geoffk/pdfencrypt/:pdf \
+		http://www.gelhaus.net/hp880c/1.4beta/:gdevcd \
+		http://home.t-online.de/home/Martin.Lottermoser/pcl3dist/:hpdj_pcl3 \
+		http://www.harsch.net/Download/:gdevdj \
 		ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/gnu/gs652/ \
 		ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/gnu/fonts/
 MASTER_SITE_SUBDIR=	${PORTNAME} gimp-print hpinkjet
 PKGNAMESUFFIX=	-gnu
-DISTFILES=	${GS_SOURCES} ${GS_FONTS_STD} ${GS_FONTS_OTHER} \
-		${DECRYPT_PDF} ${HP8XX_DRV} ${HPDJ_SRC} ${PCL3_SRC} \
-		${HP970_DRV} ${GPRINT_SRC} ${HPIJS_SRC}
+DISTFILES=	${GS_SOURCES} \
+		${GS_FONTS_STD} \
+		${GS_FONTS_OTHER} \
+		${DECRYPT_PDF}:pdf \
+		${HP8XX_DRV}:gdevcd \
+		${HPDJ_SRC}:hpdj_pcl3 \
+		${PCL3_SRC}:hpdj_pcl3 \
+		${HP970_DRV}:gdevdj \
+		${GPRINT_SRC} \
+		${HPIJS_SRC}
 DIST_SUBDIR=	ghostscript
 EXTRACT_ONLY=	${GS_SOURCES}
 
