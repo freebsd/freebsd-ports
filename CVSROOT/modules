@@ -5642,6 +5642,7 @@ p5-Getopt-Long	ports/devel/p5-Getopt-Long
 p5-Getopt-Mixed	ports/devel/p5-Getopt-Mixed
 p5-Glade	ports/x11-toolkits/p5-Glade
 p5-Glade-Perl	ports/devel/p5-Glade-Perl
+p5-Glib2	ports/devel/p5-Glib2
 p5-Gnome	ports/x11-toolkits/p5-Gnome
 p5-GnomePrint	ports/print/p5-GnomePrint
 p5-GnuPG-Interface	ports/security/p5-GnuPG-Interface
@@ -5651,6 +5652,7 @@ p5-GraphViz-DBI	ports/databases/p5-GraphViz-DBI
 p5-GraphViz-Data-Structure	ports/graphics/p5-GraphViz-Data-Structure
 p5-Graphics-ColorNames	ports/graphics/p5-Graphics-ColorNames
 p5-Gtk		ports/x11-toolkits/p5-Gtk
+p5-Gtk2		ports/x11-toolkits/p5-Gtk2
 p5-GtkHTML	ports/www/p5-GtkHTML
 p5-GtkXmHTML	ports/x11-toolkits/p5-GtkXmHTML
 p5-HTML		ports/www/p5-HTML
