@@ -88,23 +88,38 @@ NTLM=	"@comment "
 CONFIGURE_ARGS+=	--enable-ntlm
 .endif
 
-.if defined(KRB5_HOME) && exists(${KRB5_HOME})
+.if !defined(WITHOUT_GSSAPI) && defined(KRB5_HOME) && exists(${KRB5_HOME}/lib/libgssapi_krb5.a)
 CONFIGURE_ARGS+=	--enable-gssapi=${KRB5_HOME}
-.elif defined(HEIMDAL_HOME) && exists(${HEIMDAL_HOME})
+.elif !defined(WITHOUT_GSSAPI) && defined(HEIMDAL_HOME) && exists(${HEIMDAL_HOME}/lib/libgssapi.a)
 CONFIGURE_ARGS+=	--enable-gssapi=${HEIMDAL_HOME}
+.elif !defined(WITHOUT_GSSAPI) && defined(MAKE_KERBEROS5) && exists(/usr/lib/libkrb5.a)
+CONFIGURE_ARGS+=	--enable-gssapi
 .else
 CONFIGURE_ARGS+=	--disable-gssapi
 GSSAPI=	"@comment "
 .endif
 
-.if exists(/usr/lib/libkrb.a) && !defined(WITHOUT_KERBEROS)
+.include <bsd.port.pre.mk>
+
+# KERBEROS 4 was removed in FreeBSD 5.0-CURRENT
+.if ${OSVERSION} > 500105
+.if defined(WITH_KERBEROS4)
+LIB_DEPENDS+=	krb.2:${PORTSDIR}/security/krb4
+CONFIGURE_ARGS+=	--enable-krb4=${LOCALBASE}/krb4
+.else
+CONFIGURE_ARGS+=	--disable-krb4
+EBONES=	"@comment "
+.endif
+.elif exists(/usr/lib/libkrb.a) && defined(MAKE_KERBEROS4) && !defined(WITHOUT_KERBEROS4)
 CONFIGURE_ARGS+=	--enable-krb4
+.elif !exists(/usr/lib/libkrb.a) && defined(WITH_KERBEROS4)
+LIB_DEPENDS+=	krb.2:${PORTSDIR}/security/krb4
+CONFIGURE_ARGS+=	--enable-krb4=${LOCALBASE}/krb4
 .else
 CONFIGURE_ARGS+=	--disable-krb4
 EBONES=	"@comment "
 .endif
 
-.include <bsd.port.pre.mk>
 .include "${PORTSDIR}/security/openssl/bsd.openssl.mk"
 .if !defined(WITH_OPENSSL_BASE)
 CONFIGURE_ARGS+=	--with-openssl=${OPENSSLBASE}
