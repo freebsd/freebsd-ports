@@ -1,0 +1,24 @@
+--- Makefile.in.orig	Thu May 18 01:00:23 2000
++++ Makefile.in	Tue Aug 29 16:28:47 2000
+@@ -662,9 +662,7 @@
+ 	install-autoconf \
+ 	install-automake \
+ 	install-bash \
+-	install-bfd \
+ 	install-bzip2 \
+-	install-opcodes \
+ 	install-binutils \
+ 	install-bison \
+ 	install-byacc \
+@@ -696,11 +694,9 @@
+ 	install-itcl \
+ 	install-ld \
+ 	install-libgui \
+-	install-libiberty \
+ 	install-libtool \
+ 	install-m4 \
+ 	install-make \
+-	install-mmalloc \
+ 	install-patch \
+ 	install-perl \
+ 	install-prms \
