@@ -1,0 +1,8 @@
+lib/perl5/site_perl/%%PERL_VER%%/Lingua/Preferred.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Lingua/Preferred/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/auto/Lingua/Preferred/autosplit.ix
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/Lingua/Preferred
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/auto/Lingua 2>/dev/null || true
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Lingua/Preferred
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Lingua 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Lingua 2>/dev/null || true
