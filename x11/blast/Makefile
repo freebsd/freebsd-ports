@@ -6,17 +6,16 @@
 #
 
 PORTNAME=	blast
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	x11
-MASTER_SITES=	ftp://hpftp.cict.fr/hpux/X11/Demos/blast-1.0/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-ss-11.00
+MASTER_SITES=	${MASTER_SITE_DEBIAN}
+MASTER_SITE_SUBDIR=	pool/main/b/blast
+DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Blast blows holes through windows
 
-BROKEN=		"Unfetchable"
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}-1.1.orig
 USE_X_PREFIX=	yes
 MAN1=		blast.1
 PLIST_FILES=	bin/blast
