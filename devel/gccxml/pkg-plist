@@ -17,8 +17,8 @@ share/gccxml-%%PORTVERSION%%/MproInclude/7_3/stddef.h
 share/gccxml-%%PORTVERSION%%/MproInclude/7_3/ostream
 share/gccxml-%%PORTVERSION%%/MproInclude/find_mpro_options
 share/gccxml-%%PORTVERSION%%/gccxml_find_flags
-%%PORTSDOCS%%%%DOCSDIR%%/Copyright.txt
-%%PORTSDOCS%%@dirrm %%DOCSDIR%%
+%%PORTDOCS%%%%DOCSDIR%%/Copyright.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm share/gccxml-%%PORTVERSION%%/MproInclude/7_3
 @dirrm share/gccxml-%%PORTVERSION%%/MproInclude
 @dirrm share/gccxml-%%PORTVERSION%%/
