@@ -32,6 +32,60 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="6e6a6b8a-2fde-11d9-b3a2-0050fc56d258">
+    <topic>apache mod_include buffer overflow vulnerability</topic>
+    <affects>
+      <package>
+	<name>apache13</name>
+	<range><lt>1.3.33</lt></range>
+      </package>
+      <package>
+	<name>apache13-modssl</name>
+	<range><lt>1.3.32+2.8.21_1</lt></range>
+      </package>
+      <package>
+	<name>apache13-modssl+ipv6</name>
+	<range><lt>1.3.32+2.8.21_1</lt></range>
+      </package>
+      <package>
+	<name>apache13-modperl</name>
+	<range><le>1.3.31</le></range>
+      </package>
+      <package>
+        <name>apache13+ipv6</name>
+        <range><lt>1.3.33</lt></range>
+      </package>
+      <package>
+	<name>apache-ssl</name>
+	<range><le>1.3.29.1.55</le></range>
+      </package>
+      <package>
+        <name>ru-apache</name>
+	<range><lt>1.3.33+30.21</lt></range>
+      </package>
+      <package>
+	<name>ru-apache+mod_ssl</name>
+	<range><lt>1.3.33+30.21+2.8.22</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>There is a buffer overflow in a function used by mod_include
+	  that may enable a local user to gain privileges of a httpd
+	  child.  Only users that are able to create SSI documents can
+	  take advantage of that vulnerability.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0940</cvename>
+      <url>http://www.securitylab.ru/48807.html</url>
+    </references>
+    <dates>
+      <discovery>2004-10-22</discovery>
+      <entry>2004-11-06</entry>
+    </dates>
+  </vuln>
+  
   <vuln vid="6a164d84-2f7f-11d9-a9e7-0001020eed82">
     <topic>postgresql-contrib -- insecure temporary file
       creation</topic>
