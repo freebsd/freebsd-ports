@@ -8,7 +8,7 @@
 PORTNAME=	jakarta-oro
 PORTVERSION=	2.0.6
 CATEGORIES=	java
-MASTER_SITES=	http://jakarta.apache.org/builds/jakarta-oro/release/v${PORTVERSION}/
+MASTER_SITES=	http://jakarta.apache.org/builds/${PORTNAME}/release/v${PORTVERSION}/
 
 MAINTAINER=	dglo@ssec.wisc.edu
 
@@ -19,25 +19,36 @@ NEED_JAVAC=	YES
 
 PLIST=	${WRKDIR}/PLIST
 
-post-extract:
-	@${CP} ${.CURDIR}/pkg-plist ${WRKDIR}/PLIST
+JAVALIBNAME=	${PORTNAME}-${PORTVERSION}
+APIDOCSDIR=	${DOCSDIR}/${JAVALIBNAME}
+
+pre-install:
+	@${RM} -f ${PLIST}
+	@${TOUCH} ${PLIST}
 
 do-build:
-	@(cd ${WRKSRC}; ${SETENV} JAVA_HOME=${JAVA_HOME} ant jar javadocs)
+	@cd ${WRKSRC} && \
+		${SETENV} JAVA_HOME=${JAVA_HOME} ant jar javadocs
 
-do-install:
-	@${MKDIR} ${PREFIX}/share/java/classes
-	@${INSTALL_DATA} ${WRKSRC}/jakarta-oro-${PORTVERSION}.jar ${LOCALBASE}/share/java/classes/jakarta-oro.jar
+do-install: do-install-jar do-install-apidocs
+
+do-install-jar:
+	@${MKDIR} ${JAVAJARDIR}
+	@${INSTALL_DATA} ${WRKSRC}/${PORTNAME}-${PORTVERSION}.jar ${JAVAJARDIR}/${PORTNAME}.jar
+	@${ECHO} ${JAVAJARDIR}/${PORTNAME}.jar | \
+		${SED} "s,${PREFIX}/*,," >> ${PLIST}
+	@${ECHO} "@unexec ${RMDIR} ${JAVAJARDIR} 2>/dev/null || true" | \
+		${SED} "s,${PREFIX}/*,," >> ${PLIST}
+
+do-install-apidocs:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@(cd ${WRKSRC}/docs/api && ${TAR} -c -f - .) \
-		| (cd ${DOCSDIR} && ${TAR} --unlink -x -f -)
-	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
-	@cd ${PREFIX} \
-		&& ${FIND} share/doc/jakarta-oro -type f -print >> ${PLIST}
-	@cd ${PREFIX} \
-		&& ${FIND} share/doc/jakarta-oro -type d -print | sort -r | \
-		${SED} "s,^,@dirrm ,g" >> ${PLIST}
+	@${MKDIR} ${APIDOCSDIR}
+	@${CP} -r ${WRKSRC}/docs/api/* ${APIDOCSDIR}
+	@${CHOWN} -h -R ${SHAREOWN}:${SHAREGRP} ${APIDOCSDIR}
+	@${FIND} ${APIDOCSDIR} -type f -print | \
+		${SED} "s,${PREFIX}/*,," >> ${PLIST}
+	@${FIND} ${APIDOCSDIR} -type d -print | sort -r | \
+		${SED} -e "s,${PREFIX}/*,," -e "s,^,@dirrm ,g" >> ${PLIST}
 .endif
 
 .include <bsd.port.mk>

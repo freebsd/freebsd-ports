@@ -22,40 +22,47 @@ NEED_JAVAC=	YES
 
 PLIST=	${WRKDIR}/PLIST
 
-CLASSES_SUBDIR=	share/java/classes
-STYLE_SUBDIR=	share/java/${PORTNAME}
+JAVALIBNAME=	${PORTNAME}-${PORTVERSION}
+APIDOCSDIR=	${DOCSDIR}/${JAVALIBNAME}
+STYLEDIR=	${JAVASHAREDIR}/${PORTNAME}
 
-post-extract:
-	@${TOUCH} ${WRKDIR}/PLIST
+pre-install:
+	@${RM} -f ${PLIST}
+	@${TOUCH} ${PLIST}
 
 do-build:
-	@(cd ${WRKSRC}; ${SETENV} JAVA_HOME=${JAVA_HOME} ant build.bindist)
+	@cd ${WRKSRC} && \
+		${SETENV} JAVA_HOME=${JAVA_HOME} ant build.bindist
 
-do-install:
-	@${MKDIR} ${PREFIX}/${CLASSES_SUBDIR}
-	@${INSTALL_DATA} ${WRKSRC}/target/dist/${PORTNAME}-${PORTVERSION}/${PORTNAME}-all-${PORTVERSION}.jar ${PREFIX}/${CLASSES_SUBDIR}/${PORTNAME}.jar
-	@${ECHO} ${CLASSES_SUBDIR}/${PORTNAME}.jar >> ${PLIST}
-	@${MKDIR} ${PREFIX}/${STYLE_SUBDIR}
-	@(cd ${WRKSRC}/target/dist/${PORTNAME}-${PORTVERSION}/contrib && \
-	  ${TAR} -c -f - .) \
-		| (cd ${PREFIX}/${STYLE_SUBDIR} && ${TAR} --unlink -x -f -)
-	@cd ${PREFIX} \
-		&& ${FIND} ${STYLE_SUBDIR} -type f -print >> ${PLIST}
-	@cd ${PREFIX} \
-		&& ${FIND} ${STYLE_SUBDIR} -type d -print | sort -r | \
-		${SED} "s,^,@dirrm ,g" >> ${PLIST}
+do-install: do-install-jar do-install-data do-install-apidocs
+
+do-install-jar:
+	@${MKDIR} ${JAVAJARDIR}
+	@${INSTALL_DATA} ${WRKSRC}/target/dist/${PORTNAME}-${PORTVERSION}/${PORTNAME}-all-${PORTVERSION}.jar ${JAVAJARDIR}/${PORTNAME}.jar
+	@${ECHO} ${JAVAJARDIR}/${PORTNAME}.jar | \
+		${SED} "s,${PREFIX}/*,," >> ${PLIST}
+	@${ECHO} "@unexec ${RMDIR} ${JAVAJARDIR} 2>/dev/null || true" | \
+		${SED} "s,${PREFIX}/*,," >> ${PLIST}
+
+do-install-data:
+	@${MKDIR} ${STYLEDIR}
+	@${CP} -r ${WRKSRC}/target/dist/${PORTNAME}-${PORTVERSION}/contrib/* ${STYLEDIR}
+	@${FIND} ${STYLEDIR} -type f -print | \
+		${SED} "s,${PREFIX}/*,," >> ${PLIST}
+	@${FIND} ${STYLEDIR} -type d -print | sort -r | \
+		${SED} -e "s,${PREFIX}/*,," -e "s,^,@dirrm ,g" >> ${PLIST}
+
+do-install-apidocs:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${APIDOCSDIR}
 	@(cd ${WRKSRC}/target/dist/${PORTNAME}-${PORTVERSION} && \
-	  ${TAR} -c --exclude '*.jar' --exclude contrib -f - .) \
-		| (cd ${DOCSDIR} && ${TAR} --unlink -x -f -)
-	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
-	@cd ${PREFIX} \
-		&& ${FIND} share/doc/${PORTNAME} -type f -print >> ${PLIST}
-	@cd ${PREFIX} \
-		&& ${FIND} share/doc/${PORTNAME} -type d -print | sort -r | \
-		${SED} "s,^,@dirrm ,g" >> ${PLIST}
+		${TAR} -c --exclude '*.jar' --exclude contrib -f - .) | \
+		(cd ${APIDOCSDIR} && ${TAR} --unlink -x -f -)
+	@${CHOWN} -h -R ${SHAREOWN}:${SHAREGRP} ${APIDOCSDIR}
+	@${FIND} ${APIDOCSDIR} -type f -print | \
+		${SED} "s,${PREFIX}/*,," >> ${PLIST}
+	@${FIND} ${APIDOCSDIR} -type d -print | sort -r | \
+		${SED} -e "s,${PREFIX}/*,," -e "s,^,@dirrm ,g" >> ${PLIST}
 .endif
-	@${ECHO} "@unexec ${RMDIR} %D/${CLASSES_SUBDIR} 2>/dev/null || true" >> ${PLIST}
 
 .include <bsd.port.mk>
