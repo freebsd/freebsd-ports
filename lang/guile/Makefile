@@ -3,7 +3,7 @@
 # Date created:		2 November 1997
 # Whom:			jseger@FreeBSD.org
 #
-# $Id: Makefile,v 1.11 1997/11/12 01:33:19 jseger Exp $
+# $Id: Makefile,v 1.12 1997/11/22 16:01:32 jseger Exp $
 #
 
 DISTNAME=	guile-1.2
@@ -14,5 +14,8 @@ MAINTAINER=	jseger@FreeBSD.org
 
 GNU_CONFIGURE=	YES
 MAKE_ENV+=	INSTALL_SCRIPT="${INSTALL_SCRIPT}"
+
+post-install:
+	@${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
