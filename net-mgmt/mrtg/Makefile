@@ -6,12 +6,13 @@
 #
 
 PORTNAME=	mrtg
-PORTVERSION=	2.9.17
+PORTVERSION=	2.9.18.p2
 CATEGORIES=	net
 MASTER_SITES=	http://people.ee.ethz.ch/~oetiker/webtools/mrtg/pub/ \
 		ftp://ftp.chg.ru/pub/networking/monitoring/mrtg/ \
 		${MASTER_SITE_RINGSERVER}
 MASTER_SITE_SUBDIR=	net/mrtg
+DISTNAME=	${PORTNAME}-2.9.18pre2
 
 MAINTAINER=	demon@FreeBSD.org
 
@@ -30,6 +31,9 @@ CONFIGURE_ENV=	PERL=${PERL}
 MAN1=		cfgmaker.1 contrib.1 faq.1 forum.1 indexmaker.1 logfile.1 \
 		mibhelp.1 mrtg.1 mrtg-rrd.1 mrtglib.1 nt-guide.1 reference.1 \
 		squid.1 unix-guide.1 webserver.1
+
+post-patch:
+		${FIND} ${WRKSRC} -type d -name CVS -print | ${XARGS} rm -fr
 
 do-install:
 		${MKDIR} -m 755 ${PREFIX}/etc/mrtg
