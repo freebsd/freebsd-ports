@@ -156,6 +156,7 @@
     SUBDIR += gaim
     SUBDIR += gale
     SUBDIR += gatekeeper
+    SUBDIR += gdesklets-sensor-psi_network
     SUBDIR += gdesklets-sensor-psi_ping
     SUBDIR += generic-nqs
     SUBDIR += geotrace
