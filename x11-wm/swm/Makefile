@@ -22,6 +22,7 @@ MAN1=		swm.1 swmbg.1
 PLIST=		${WRKDIR}/pkg-plist
 SCRIPTS=	startswm.default
 USE_GMAKE=	yes
+USE_XPM=	yes
 USE_X_PREFIX=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-src
 
