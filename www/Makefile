@@ -109,6 +109,7 @@
     SUBDIR += flashplugin-mozilla-devel
     SUBDIR += flashpluginwrapper
     SUBDIR += flood
+    SUBDIR += formication
     SUBDIR += frontpage
     SUBDIR += frontpage-ar
     SUBDIR += frontpage-de
