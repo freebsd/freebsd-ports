@@ -1,0 +1,14 @@
+This module parses a DTD file and creates a data structure containing 
+info about all tags, their allowed parameters, children, parents, 
+optionality etc. etc. etc.
+
+Note: Parse a DTD you need and print the result to a file using 
+Data::Dumper. The datastructure should be selfevident.
+
+Note: The module should be able to parse just about anything, but it intentional
+y looses some information.
+
+WWW: http://search.cpan.org/dist/XML-DTDParser/
+
+Jenda@Krynicky.cz
+http://Jenda.Krynicky.cz
