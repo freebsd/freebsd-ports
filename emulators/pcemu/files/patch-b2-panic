@@ -1,0 +1,71 @@
+diff -ru orig.Makefile ./Makefile
+--- orig.Makefile	Wed Feb 18 10:50:46 1998
++++ ./Makefile	Wed Feb 18 10:56:07 1998
+@@ -16,6 +16,7 @@
+ # -DINLINE_FUNCTIONS if your compiler support inline functions (most do)
+ # -DDEBUG            prints lots of debugging messages.
+ # -DDEBUGGER         compiles in the debugger
++# -DPANIC            halt emulator when you hit an unimplemented interrupt
+ # -DKBUK             if you have a UK style 102 key keyboard
+ # -DBIG_ENDIAN       if your computer is big-endian (Sparc, 68000 etc)
+ # -DCPU_LITTLE_ENDIAN    if your computer is little-endian (80x86 etc)
+diff -ru orig.bios.c ./bios.c
+--- orig.bios.c	Fri Jun 24 13:39:47 1994
++++ ./bios.c	Wed Feb 18 10:56:07 1998
+@@ -657,7 +657,7 @@
+         break;
+     default:
+         printf("unimplement INT 15h function %02X\n",*bregs[AH]);
+-#ifdef DEBUG
++#ifdef PANIC
+         loc();
+         exit_emu();
+ #else
+@@ -790,7 +790,7 @@
+         break;
+     default:
+         printf("unimplemented INT 1Ah function %02X\n", *bregs[AH]);
+-#ifdef DEBUG
++#ifdef PANIC
+         loc();
+         exit_emu();
+ #endif
+@@ -991,7 +991,7 @@
+         break;
+     default:
+         printf("Unimplemented INT 13h function %02X\n",*bregs[AH]);
+-#ifdef DEBUG
++#ifdef PANIC
+         loc();
+         exit_emu();
+ #endif
+diff -ru orig.vga.c ./vga.c
+--- orig.vga.c	Wed Jun 22 16:24:51 1994
++++ ./vga.c	Wed Feb 18 10:56:07 1998
+@@ -560,7 +560,7 @@
+             break;
+         default:
+             printf("Unimplemented int 0x10 function 0x11 sub-function %02X\n",*bregs[AL]);
+-#ifdef DEBUG
++#if PANIC
+             loc();
+             exit_emu();
+ #endif
+@@ -584,7 +584,7 @@
+             break;
+         default:
+             printf("Unimplemented int 10 function 0x12 sub-function 0x%02X\n",*bregs[BL]);
+-#ifdef DEBUG
++#ifdef PANIC
+             loc();
+             exit_emu();
+ #endif
+@@ -615,7 +615,7 @@
+     default:
+         printf("Unimplemented int 10 function: %02X. AL = %02X  BL = %02X\n",
+                *bregs[AH], *bregs[AL], *bregs[BL]);
+-#ifdef DEBUG
++#ifdef PANIC
+         loc();
+         exit_emu();
+ #endif
