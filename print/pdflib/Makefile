@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	pdflib
-PORTVERSION=	4.0.3
-PORTREVISION?=	1
-PORTEPOCH?=	0
+PORTVERSION=	5.0.0
 CATEGORIES=	print
-MASTER_SITES=	http://www.pdflib.com/pdflib/download/
+MASTER_SITES=	http://www.pdflib.com/products/pdflib/download/
+DISTNAME=	PDFlib-Lite-5.0.0-Unix-src
 
 MAINTAINER=	sysadmin@alexdupre.com
 COMMENT=	A C library for dynamically generating PDF
@@ -22,8 +21,7 @@ INSTALLS_SHLIB=	yes
 USE_LIBTOOL=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-cxx \
-		--with-java=no \
+CONFIGURE_ARGS=	--with-java=no \
 		--with-py=no \
 		--with-tcl=no
 
