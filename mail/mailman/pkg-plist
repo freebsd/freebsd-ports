@@ -443,6 +443,8 @@
 %%MMDIR%%/messages/sv/LC_MESSAGES/mailman.mo
 %%MMDIR%%/messages/sv/LC_MESSAGES/mailman.po
 %%MMDIR%%/messages/sv/README.sv
+%%MMDIR%%/messages/tr/LC_MESSAGES/mailman.mo
+%%MMDIR%%/messages/tr/LC_MESSAGES/mailman.po
 %%MMDIR%%/messages/uk/LC_MESSAGES/mailman.mo
 %%MMDIR%%/messages/uk/LC_MESSAGES/mailman.po
 %%MMDIR%%/pythonlib/email/Charset.py
@@ -795,6 +797,7 @@
 %%MMDIR%%/templates/en/postauth.txt
 %%MMDIR%%/templates/en/postheld.txt
 %%MMDIR%%/templates/en/private.html
+%%MMDIR%%/templates/en/probe.txt
 %%MMDIR%%/templates/en/refuse.txt
 %%MMDIR%%/templates/en/roster.html
 %%MMDIR%%/templates/en/subauth.txt
@@ -1094,6 +1097,7 @@
 %%MMDIR%%/templates/hu/postauth.txt
 %%MMDIR%%/templates/hu/postheld.txt
 %%MMDIR%%/templates/hu/private.html
+%%MMDIR%%/templates/hu/probe.txt
 %%MMDIR%%/templates/hu/refuse.txt
 %%MMDIR%%/templates/hu/roster.html
 %%MMDIR%%/templates/hu/subauth.txt
@@ -1160,6 +1164,7 @@
 %%MMDIR%%/templates/ja/archliststart.html
 %%MMDIR%%/templates/ja/archtoc.html
 %%MMDIR%%/templates/ja/archtocentry.html
+%%MMDIR%%/templates/ja/archtocnombox.html
 %%MMDIR%%/templates/ja/article.html
 %%MMDIR%%/templates/ja/bounce.txt
 %%MMDIR%%/templates/ja/checkdbs.txt
@@ -1663,6 +1668,49 @@
 %%MMDIR%%/templates/sv/unsubauth.txt
 %%MMDIR%%/templates/sv/userpass.txt
 %%MMDIR%%/templates/sv/verify.txt
+%%MMDIR%%/templates/tr/admindbdetails.html
+%%MMDIR%%/templates/tr/admindbpreamble.html
+%%MMDIR%%/templates/tr/admindbsummary.html
+%%MMDIR%%/templates/tr/adminsubscribeack.txt
+%%MMDIR%%/templates/tr/adminunsubscribeack.txt
+%%MMDIR%%/templates/tr/admlogin.html
+%%MMDIR%%/templates/tr/approve.txt
+%%MMDIR%%/templates/tr/archidxentry.html
+%%MMDIR%%/templates/tr/archidxfoot.html
+%%MMDIR%%/templates/tr/archidxhead.html
+%%MMDIR%%/templates/tr/archlistend.html
+%%MMDIR%%/templates/tr/archliststart.html
+%%MMDIR%%/templates/tr/archtoc.html
+%%MMDIR%%/templates/tr/archtocentry.html
+%%MMDIR%%/templates/tr/archtocnombox.html
+%%MMDIR%%/templates/tr/article.html
+%%MMDIR%%/templates/tr/bounce.txt
+%%MMDIR%%/templates/tr/checkdbs.txt
+%%MMDIR%%/templates/tr/convert.txt
+%%MMDIR%%/templates/tr/cronpass.txt
+%%MMDIR%%/templates/tr/disabled.txt
+%%MMDIR%%/templates/tr/emptyarchive.html
+%%MMDIR%%/templates/tr/headfoot.html
+%%MMDIR%%/templates/tr/help.txt
+%%MMDIR%%/templates/tr/invite.txt
+%%MMDIR%%/templates/tr/listinfo.html
+%%MMDIR%%/templates/tr/masthead.txt
+%%MMDIR%%/templates/tr/newlist.txt
+%%MMDIR%%/templates/tr/nomoretoday.txt
+%%MMDIR%%/templates/tr/options.html
+%%MMDIR%%/templates/tr/postack.txt
+%%MMDIR%%/templates/tr/postauth.txt
+%%MMDIR%%/templates/tr/postheld.txt
+%%MMDIR%%/templates/tr/private.html
+%%MMDIR%%/templates/tr/refuse.txt
+%%MMDIR%%/templates/tr/roster.html
+%%MMDIR%%/templates/tr/subauth.txt
+%%MMDIR%%/templates/tr/subscribe.html
+%%MMDIR%%/templates/tr/subscribeack.txt
+%%MMDIR%%/templates/tr/unsub.txt
+%%MMDIR%%/templates/tr/unsubauth.txt
+%%MMDIR%%/templates/tr/userpass.txt
+%%MMDIR%%/templates/tr/verify.txt
 %%MMDIR%%/templates/uk/admindbdetails.html
 %%MMDIR%%/templates/uk/admindbpreamble.html
 %%MMDIR%%/templates/uk/admindbsummary.html
@@ -1794,6 +1842,7 @@ etc/rc.d/mailman.sh
 @dirrm %%MMDIR%%/tests/bounces
 @dirrm %%MMDIR%%/tests
 @dirrm %%MMDIR%%/templates/uk
+@dirrm %%MMDIR%%/templates/tr
 @dirrm %%MMDIR%%/templates/sv
 @dirrm %%MMDIR%%/templates/sr
 @dirrm %%MMDIR%%/templates/sl
@@ -1839,6 +1888,8 @@ etc/rc.d/mailman.sh
 @dirrm %%MMDIR%%/pythonlib
 @dirrm %%MMDIR%%/messages/uk/LC_MESSAGES
 @dirrm %%MMDIR%%/messages/uk
+@dirrm %%MMDIR%%/messages/tr/LC_MESSAGES
+@dirrm %%MMDIR%%/messages/tr
 @dirrm %%MMDIR%%/messages/sv/LC_MESSAGES
 @dirrm %%MMDIR%%/messages/sv
 @dirrm %%MMDIR%%/messages/sr/LC_MESSAGES

@@ -6,6 +6,14 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20040529:
+  AFFECTS: users of mail/mailman and japanese/mailman
+
+  In Mailman 2.1.5, some significant changes have been made to the
+  file formats for qfiles and the pendings database.  See
+  $PREFIX/share/docs/mailman/UPGRADING for details (if you define
+  NOPORTDOCS, refer relevant file in an archive).
+
 20040527:
   AFFECTS: users of net/openldap22-client
 
