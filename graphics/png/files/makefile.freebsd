@@ -22,6 +22,8 @@ MAN=		libpng.3 libpngpf.3 png.5
 MANDIR=		/man/man
 SYMLINKS=       libpng/png.h ${INCSDIR}/../png.h \
 		libpng/pngconf.h ${INCSDIR}/../pngconf.h
+LDADD+=		-lm
+DPADD+=		${LIBM}
 
 CFLAGS+= -I. -DPNG_USE_PNGGCCRD
 .if (${ARCH} != "i386")
