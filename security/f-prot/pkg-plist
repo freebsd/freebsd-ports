@@ -5,7 +5,6 @@ f-prot/INSTALL.bsd_ws
 f-prot/LICENSE
 f-prot/README
 f-prot/f-prot
-f-prot/install-f-prot.pl
 f-prot/tools/check-updates.pl
 %%PORTDOCS%%%%DOCSDIR%%/add_info.html
 %%PORTDOCS%%%%DOCSDIR%%/auto_updt.html
