@@ -9,7 +9,7 @@ PORTNAME=	fontconfig
 PORTVERSION=	2.2.3
 PORTEPOCH=	1
 CATEGORIES=	x11-fonts
-MASTER_SITES=	http://pdx.freedesktop.org/~fontconfig/release/
+MASTER_SITES=	http://fontconfig.org/release/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	An XML-based font configuration API for X Windows
