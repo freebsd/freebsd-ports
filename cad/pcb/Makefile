@@ -24,9 +24,15 @@ GNU_CONFIGURE=	yes
 
 INFO=		pcb
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502000
+BROKEN=		"Fails to configure"
+.endif
+
 post-install:
 	install-info --section="Utilities" \
 	--entry="* PCB: (pcb).	Interactive printed circuit board layout system for X11" \
 	${PREFIX}/info/pcb.info ${PREFIX}/info/dir
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
