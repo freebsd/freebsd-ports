@@ -1,0 +1,15 @@
+Philip's Music Writer (PMW) is a computer program for high quality
+music typesetting. Originally written for Acorn RISC OS computers,
+there is now a version that runs on Unix and Unix-like systems.
+
+PMW operates by reading an input file containing an encoded
+description of the music; such a file can be constructed using any
+text editor or word processor. The music encoding is very
+straightforward and compact, and quick to enter.
+
+PMW comes with a PostScript outline font that contains all the musical
+shapes (notes, rests, accidentals, bar lines, clefs, etc.) that it
+requires. There is a man page for the command line options, and a
+200-page manual that is distributed as a PDF file.
+
+WWW: http://www.quercite.com/pmw.html
