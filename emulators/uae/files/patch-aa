@@ -9,3 +9,12 @@
  cat > conftest.$ac_ext <<EOF
  #line 5127 "configure"
  #include "confdefs.h"
+@@ -6051,7 +6051,7 @@
+   if [ "x$HAVE_PTHREAD_LIB" = "xyes" ]; then
+     THREADDEP=td-posix
+     CFLAGS="$CFLAGS -DSUPPORT_THREADS -D_REENTRANT"
+-    LIBS="$LIBS -lpthread"
++    LIBS="$LIBS -pthread"
+     if [ "x$HAVE_POSIX4_LIB" = "xyes" ]; then
+       LIBS="$LIBS -lposix4"
+     fi
