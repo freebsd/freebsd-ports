@@ -21,7 +21,7 @@ MAN1=		sipp.1
 
 .include <bsd.port.pre.mk>
 
-.if ((${ARCH} == "alpha") || (${ARCH} == "ia64"))
+.if ${ARCH} == "ia64"
 BROKEN=		"Does not compile - patch needed by someone who can test it"
 .endif
 
