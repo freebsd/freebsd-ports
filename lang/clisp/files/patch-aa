@@ -1,6 +1,6 @@
---- src/makemake.in.orig	Tue Jul 20 12:03:11 1999
-+++ src/makemake.in	Sun Feb  6 11:12:23 2000
-@@ -1619,7 +1619,14 @@
+--- src/makemake.in.orig	Mon Jun 25 07:54:46 2001
++++ src/makemake.in	Sun Aug 26 23:41:48 2001
+@@ -1634,7 +1634,14 @@
  echol "mandir = \$(exec_prefix)${NEXT_}man"
  echol "htmldir = \$(exec_prefix)${NEXT_}share${NEXT_}html"
  echol "dvidir = \$(exec_prefix)${NEXT_}share${NEXT_}dvi"

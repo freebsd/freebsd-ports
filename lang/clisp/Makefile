@@ -6,10 +6,12 @@
 #
 
 PORTNAME=	clisp
-PORTVERSION=	2.25.1
+PORTVERSION=	2.27
 CATEGORIES=	lang
-MASTER_SITES=	ftp://clisp.cons.org/pub/lisp/clisp/source/
-DISTNAME=	${PORTNAME}-${PORTVERSION}
+MASTER_SITES=	ftp://clisp.cons.org/pub/clisp/${PORTVERSION}/ \
+		ftp://clisp.sourceforge.net/pub/clisp/${PORTVERSION}/ \
+		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	jabrown@caida.org
 
@@ -26,7 +28,7 @@ CONFIGURE_ENV+=	INSTALL=${CP} INSTALL_DATA=${CP} INSTALL_PROGRAM=${CP} \
 # Build subdirectory
 BUILD_DIRNAME=${CONFIGURE_TARGET}
 
-# These came from clisp-2.25.1's "configure" on my 4.1.1-R system.
+# These came from clisp-2.27's "configure" on my 4.1.1-R system.
 MAKEMAKE_ARGS=--prefix=${PREFIX} --with-readline --with-gettext \
 	--with-dynamic-ffi
 
@@ -52,7 +54,7 @@ post-extract:
 
 # The 'configure' script stops short of doing this for us.
 post-configure:
-	@cd ${WRKSRC}/${BUILD_DIRNAME} && \
+	cd ${WRKSRC}/${BUILD_DIRNAME} && \
 	./makemake ${MAKEMAKE_ARGS} > Makefile && \
 	make config.lisp
 
