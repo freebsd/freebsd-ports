@@ -12,6 +12,16 @@ lib/mozilla-embedded/components/chrome.xpt
 lib/mozilla-embedded/components/content_base.xpt
 lib/mozilla-embedded/components/docshell.xpt
 lib/mozilla-embedded/components/dom.xpt
+lib/mozilla-embedded/components/dom_base.xpt
+lib/mozilla-embedded/components/dom_core.xpt
+lib/mozilla-embedded/components/dom_css.xpt
+lib/mozilla-embedded/components/dom_events.xpt
+lib/mozilla-embedded/components/dom_html.xpt
+lib/mozilla-embedded/components/dom_range.xpt
+lib/mozilla-embedded/components/dom_stylesheets.xpt
+lib/mozilla-embedded/components/dom_views.xpt
+lib/mozilla-embedded/components/dom_xbl.xpt
+lib/mozilla-embedded/components/dom_xul.xpt
 lib/mozilla-embedded/components/editor.xpt
 lib/mozilla-embedded/components/gfx.xpt
 lib/mozilla-embedded/components/gfx2.xpt
@@ -38,6 +48,7 @@ lib/mozilla-embedded/components/libimglib2.so
 lib/mozilla-embedded/components/libimgpng.so
 lib/mozilla-embedded/components/libimgppm.so
 lib/mozilla-embedded/components/libjar50.so
+lib/mozilla-embedded/components/libjsdom.so
 lib/mozilla-embedded/components/liblwbrk.so
 lib/mozilla-embedded/components/libmozbrwsr.so
 lib/mozilla-embedded/components/libnecko.so
@@ -99,7 +110,6 @@ lib/mozilla-embedded/gtkEmbed
 lib/mozilla-embedded/libgkgfx.so
 lib/mozilla-embedded/libgtkembedmoz.so
 lib/mozilla-embedded/libgtksuperwin.so
-lib/mozilla-embedded/libjsdom.so
 lib/mozilla-embedded/libmozjs.so
 lib/mozilla-embedded/libnspr4.so
 lib/mozilla-embedded/libplc4.so
