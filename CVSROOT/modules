@@ -1700,6 +1700,7 @@ figurine	ports/graphics/figurine
 filedupe	ports/sysutils/filedupe
 filelight	ports/sysutils/filelight
 filepp		ports/textproc/filepp
+fileprune	ports/sysutils/fileprune
 fileroller	ports/archivers/fileroller
 filerunner	ports/x11-fm/filerunner
 fileutils	ports/sysutils/fileutils
@@ -6885,7 +6886,6 @@ proxyper	ports/misc/proxyper
 proxytunnel	ports/security/proxytunnel
 prozilla	ports/ftp/prozilla
 prtunnel	ports/net/prtunnel
-prune		ports/sysutils/prune
 pscal		ports/print/pscal
 pscan		ports/security/pscan
 pserv		ports/www/pserv

@@ -97,6 +97,7 @@
     SUBDIR += file
     SUBDIR += filedupe
     SUBDIR += filelight
+    SUBDIR += fileprune
     SUBDIR += fileutils
     SUBDIR += finfo
     SUBDIR += flasher
@@ -245,7 +246,6 @@
     SUBDIR += portupgrade
     SUBDIR += prips
     SUBDIR += procmap
-    SUBDIR += prune
     SUBDIR += pslist
     SUBDIR += psmisc
     SUBDIR += pstack
