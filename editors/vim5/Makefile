@@ -44,12 +44,11 @@ ALL_TARGET=	#
 PLIST_SUB=	VIM_VER=${DISTNAME:S/-//:S/.//}
 MAN1=		vim.1 vimtutor.1 xxd.1 ectags.1
 MLINKS=		vim.1 rvim.1  vim.1 rview.1  ectags.1 etags.1
+MLINKS+=	vim.1 gvim.1  vim.1 gview.1  vim.1 rgvim.1  vim.1 rgview.1
 
 .include <bsd.port.pre.mk>
 
 .if !defined(LITE)
-MLINKS+=	vim.1 gvim.1  vim.1 gview.1  vim.1 rgvim.1  vim.1 rgview.1
-
 MAKE_ARGS+=	X_LIBS=-lxpg4 CONF_OPT_MAX="--enable-max-features"
 
 .if defined(WITH_GTK)
@@ -77,9 +76,7 @@ pre-build:
 	@${SED} -e '/gvi/d' ${PKGDIR}/pkg-plist > ${WRKDIR}/PLIST.nogui
 
 post-install:
-.if !defined(LITE)
 	[ -e ${PREFIX}/bin/gvim ] || ${LN} -s ${PREFIX}/bin/vim ${PREFIX}/bin/gvim
-.endif
 	@${RM} -f ${PREFIX}/man/man1/etags.1
 	@${MV} ${PREFIX}/man/man1/ctags.1 ${PREFIX}/man/man1/ectags.1
 
