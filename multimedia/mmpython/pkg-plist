@@ -5,6 +5,9 @@ bin/mminfo
 %%PYTHON_SITELIBDIR%%/mmpython/audio/__init__.py
 %%PYTHON_SITELIBDIR%%/mmpython/audio/__init__.pyc
 %%PYTHON_SITELIBDIR%%/mmpython/audio/__init__.pyo
+%%PYTHON_SITELIBDIR%%/mmpython/audio/ac3info.py
+%%PYTHON_SITELIBDIR%%/mmpython/audio/ac3info.pyc
+%%PYTHON_SITELIBDIR%%/mmpython/audio/ac3info.pyo
 %%PYTHON_SITELIBDIR%%/mmpython/audio/eyeD3/__init__.py
 %%PYTHON_SITELIBDIR%%/mmpython/audio/eyeD3/__init__.pyc
 %%PYTHON_SITELIBDIR%%/mmpython/audio/eyeD3/__init__.pyo
@@ -112,12 +115,6 @@ bin/mminfo
 %%PYTHON_SITELIBDIR%%/mmpython/misc/xmlinfo.py
 %%PYTHON_SITELIBDIR%%/mmpython/misc/xmlinfo.pyc
 %%PYTHON_SITELIBDIR%%/mmpython/misc/xmlinfo.pyo
-%%PYTHON_SITELIBDIR%%/mmpython/mpg_search.py
-%%PYTHON_SITELIBDIR%%/mmpython/mpg_search.pyc
-%%PYTHON_SITELIBDIR%%/mmpython/mpg_search.pyo
-%%PYTHON_SITELIBDIR%%/mmpython/stream_search.py
-%%PYTHON_SITELIBDIR%%/mmpython/stream_search.pyc
-%%PYTHON_SITELIBDIR%%/mmpython/stream_search.pyo
 %%PYTHON_SITELIBDIR%%/mmpython/synchronizedobject.py
 %%PYTHON_SITELIBDIR%%/mmpython/synchronizedobject.pyc
 %%PYTHON_SITELIBDIR%%/mmpython/synchronizedobject.pyo
