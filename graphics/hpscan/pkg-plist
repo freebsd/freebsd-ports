@@ -1,2 +1,2 @@
 @cwd /usr/X11R6
-bin/scanner
+bin/hpscan

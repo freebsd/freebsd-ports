@@ -1,7 +1,7 @@
 This is a HP SCSI scanner driver which uses the FreeBSD 'pt' (Processor
-Type) driver.  It has been tested on the HP ScanJet 3C, and was written
-for the HP ScanJet IIcx, so I suspect it will work with all newer HP
-scanners without modifications.
+Type) driver.  It has been tested on the HP ScanJet 3C and 4A, and was
+written for the HP ScanJet IIcx, so I suspect it will work with all newer
+HP scanners without modifications.
 
 To install the driver you must add a line to your kernel config file
 like the following:
