@@ -3,7 +3,7 @@
 # Date created:         23 November 1994
 # Whom:                 mr
 #
-# $Id: Makefile,v 1.9 1996/11/17 06:12:33 obrien Exp $
+# $Id: Makefile,v 1.10 1998/06/11 02:39:02 mph Exp $
 #
 
 DISTNAME=	pfe-0.9.9
@@ -15,6 +15,7 @@ MASTER_SITES=	ftp://sunsite.unc.edu/pub/multimedia/.languages/forth/ \
 MAINTAINER=	ports@FreeBSD.org
 
 MAN1=		pfe.1
+WRKSRC=		${WRKDIR}/pfe099
 
 pre-install:
 	@${CP} ${WRKSRC}/pfe.1 ${PREFIX}/man/man1/pfe.1
