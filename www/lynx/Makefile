@@ -26,6 +26,11 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-screen=ncurses --with-zlib --libdir="${L_LIB}" \
 		--enable-nsl-fork --enable-persistent-cookies \
 		--enable-ipv6
+
+.if defined(ENABLE_DEFAULT_COLORS)
+CONFIGURE_ARGS+=--enable-default-colors
+.endif
+
 MAKE_ARGS=	helpdir=${L_HELP} docdir=${DOCSDIR}
 MAKEFILE=	makefile
 INSTALL_TARGET=	install-full
