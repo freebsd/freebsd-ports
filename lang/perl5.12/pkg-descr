@@ -3,10 +3,4 @@ awk and shell.  See the manual page for more hype.  There are also
 many published by O'Reilly & Assoc.  See pod/perlbook.pod for more
 information.
 
---
-
-This port is marked FORBIDDEN as it conflics badly with the Perl5
-that is in the 'base' system. Sysadmins and users who know how to
-override this may do so, and must accept the risk of doing so.
-
 - MarkM
