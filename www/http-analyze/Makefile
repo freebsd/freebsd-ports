@@ -6,7 +6,7 @@
 
 PORTNAME=	http-analyze
 PORTVERSION=	2.01
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.rent-a-guru.de/pub/http-analyze2.01/
 DISTNAME=	${PORTNAME}${PORTVERSION}
