@@ -10,9 +10,9 @@
 
 DISTNAME=		splay-0.8.2
 CATEGORIES=		audio
-MASTER_SITES=		http://cain.kaist.ac.kr/~jwj95/
+MASTER_SITES=		ftp://ftp.kr.FreeBSD.org/pub/FreeBSD-kr/distfiles/
 
-MAINTAINER=		junker@jazz.snu.ac.kr
+MAINTAINER=		cjh@kr.freebsd.org
 
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=		--without-xsplay --without-pthread
