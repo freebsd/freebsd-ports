@@ -32,5 +32,7 @@ INSTALLS_OMF=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|src/main\.c|${PORTNAME}|g' ${WRKSRC}/configure
+	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e \
+		's|-DGNOME_DISABLE_DEPRECATED=1||g'
 
 .include <bsd.port.post.mk>
