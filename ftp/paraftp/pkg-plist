@@ -1,0 +1,22 @@
+bin/paraget
+bin/paraget-child
+lib/perl5/site_perl/%%PERL_VER%%/Net/Paraget/Assignment.pm
+lib/perl5/site_perl/%%PERL_VER%%/Net/Paraget/AssignmentManager.pm
+lib/perl5/site_perl/%%PERL_VER%%/Net/Paraget/Client.pm
+lib/perl5/site_perl/%%PERL_VER%%/Net/Paraget/ClientManager.pm
+lib/perl5/site_perl/%%PERL_VER%%/Net/Paraget/Context.pm
+lib/perl5/site_perl/%%PERL_VER%%/Net/Paraget/Display.pm
+lib/perl5/site_perl/%%PERL_VER%%/Net/Paraget/Interval.pm
+lib/perl5/site_perl/%%PERL_VER%%/Net/Paraget/IntervalList.pm
+lib/perl5/site_perl/%%PERL_VER%%/Net/Paraget/IntervalManager.pm
+lib/perl5/site_perl/%%PERL_VER%%/Net/Paraget/Mirror.pm
+lib/perl5/site_perl/%%PERL_VER%%/Net/Paraget/MirrorSet.pm
+lib/perl5/site_perl/%%PERL_VER%%/Net/Paraget/MirrorSetGatherer.pm
+lib/perl5/site_perl/%%PERL_VER%%/Net/Paraget/PerformanceReport.pm
+lib/perl5/site_perl/%%PERL_VER%%/Net/Paraget/Server.pm
+lib/perl5/site_perl/%%PERL_VER%%/Net/Paraget/ServerList.pm
+lib/perl5/site_perl/%%PERL_VER%%/Net/Paraget/ServerQueue.pm
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Net/Paraget
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/paraget/.packlist
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/paraget 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Net 2>/dev/null || true
