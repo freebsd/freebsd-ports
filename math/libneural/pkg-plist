@@ -1,0 +1,5 @@
+include/neuron.h
+include/nnwork.h
+lib/libneural.so
+lib/libneural.so.0
+lib/libneural.a
