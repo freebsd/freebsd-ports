@@ -121,6 +121,7 @@
     SUBDIR += gtkfind
     SUBDIR += gtktalog
     SUBDIR += gtl
+    SUBDIR += gucharmap
     SUBDIR += gwhich
     SUBDIR += hb
     SUBDIR += hello
