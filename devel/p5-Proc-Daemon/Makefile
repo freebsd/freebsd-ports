@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	Proc-Daemon
-PORTVERSION=	0.02
+PORTVERSION=	0.03
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Proc
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	lars@thegler.dk
 COMMENT=	Perl module that provides a method to daemonify a Perl script
 
 PERL_CONFIGURE=	yes
