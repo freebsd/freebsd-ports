@@ -10,6 +10,12 @@ include/varconf/variable.h
 lib/libvarconf.a
 lib/libvarconf.la
 lib/libvarconf.so
-lib/libvarconf.so.5
+lib/libvarconf.so.1
 share/aclocal/varconf.m4
+share/doc/varconf-0.5.4/AUTHORS
+share/doc/varconf-0.5.4/COPYING
+share/doc/varconf-0.5.4/NEWS
+share/doc/varconf-0.5.4/README
+share/doc/varconf-0.5.4/THANKS
 @dirrm include/varconf
+@dirrm share/doc/varconf-0.5.4
