@@ -235,6 +235,7 @@
     SUBDIR += linux-gdk-pixbuf
     SUBDIR += linux-imlib
     SUBDIR += linux-jpeg
+    SUBDIR += linux-libmng
     SUBDIR += linux-png
     SUBDIR += linux-tiff
     SUBDIR += linux-ungif
