@@ -1,6 +1,6 @@
---- break_filelist.orig	Wed Feb 27 00:39:24 2002
-+++ break_filelist	Thu Feb 28 14:42:14 2002
-@@ -562,7 +562,7 @@
+--- break_filelist.orig	Mon Mar 25 11:18:45 2002
++++ break_filelist	Sun Mar 31 16:05:02 2002
+@@ -591,7 +591,7 @@
     return $cached_digest;  # We did, so here's what it was.
   }
  
