@@ -853,6 +853,7 @@ compaq-cc	ports/lang/compaq-cc
 compat22	ports/misc/compat22
 compat3x	ports/misc/compat3x
 compat4x	ports/misc/compat4x
+compupic	ports/graphics/compupic
 comserv		ports/comms/comserv
 concorde	ports/math/concorde
 confregdecode	ports/net/confregdecode
