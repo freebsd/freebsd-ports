@@ -1,11 +1,11 @@
-*** Imakefile.orig	Wed Jan  4 18:10:33 1995
---- Imakefile	Sat Feb 11 11:48:41 1995
+*** Imakefile.orig	Sun Sep 15 00:25:16 1996
+--- Imakefile	Sun Sep 15 00:28:49 1996
 ***************
-*** 10,24 ****
-  #undef  IMCONV
+*** 11,25 ****
   #undef  USE_SOUND
   #define XPM
   #define USEM4
+! #undef X11R6
   
            YFLAGS = -d
           DEPLIBS = $(DEPXMULIB) $(DEPEXTENSIONLIB) $(DEPXLIB)
@@ -17,18 +17,18 @@
   
        XPMDEFINES = -DXPM
            XPMLIB = $(XPMLIBDIR) -lXpm
---- 10,24 ----
-  #undef  IMCONV
+--- 11,25 ----
   #undef  USE_SOUND
   #define XPM
-  #define  USEM4
+  #define USEM4
+! #define X11R6
   
            YFLAGS = -d
           DEPLIBS = $(DEPXMULIB) $(DEPEXTENSIONLIB) $(DEPXLIB)
          LINTLIBS = $(LINTXMU) $(LINTEXTENSIONLIB) $(LINTXLIB)
   
   #ifdef XPM
-!       XPMLIBDIR = -L /usr/X11R6/lib
+!       XPMLIBDIR = -L/usr/X11R6/lib
 !       XPMINCDIR = -I/usr/X11R6/include
   
        XPMDEFINES = -DXPM
