@@ -1,0 +1,9 @@
+AutoIndex is a PHP script that makes a table that lists the files in a
+directory, and lets users access the files and subdirectories. It includes
+searching, icons for each file type, an admin panel, uploads, access logging,
+file descriptions, and more. Designed to work with PHP 5.x.
+
+WWW: http://autoindex.sourceforge.net/
+
+- DanGer
+danger@wilbury.sk

@@ -35,6 +35,8 @@
     SUBDIR += aswiki
     SUBDIR += august
     SUBDIR += auth_ldap
+    SUBDIR += autoindex
+    SUBDIR += autoindex2
     SUBDIR += awstats
     SUBDIR += axis
     SUBDIR += bins
