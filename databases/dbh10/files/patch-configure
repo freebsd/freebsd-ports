@@ -1,6 +1,50 @@
---- configure.orig	Fri Aug  9 23:22:33 2002
-+++ configure	Fri Aug  9 23:22:38 2002
-@@ -10854,7 +10854,7 @@
+--- configure.orig	Wed Aug 14 06:39:38 2002
++++ configure	Sat Oct 26 05:29:34 2002
+@@ -1400,7 +1400,7 @@
+ # an executable is not found, even if stderr is redirected.
+ # Redirect stdin to placate older versions of autoconf.  Sigh.
+ if (aclocal --version) < /dev/null > /dev/null 2>&1; then
+-   ACLOCAL=aclocal
++   ACLOCAL=true
+    echo "$as_me:1404: result: found" >&5
+ echo "${ECHO_T}found" >&6
+ else
+@@ -1415,7 +1415,7 @@
+ # an executable is not found, even if stderr is redirected.
+ # Redirect stdin to placate older versions of autoconf.  Sigh.
+ if (autoconf --version) < /dev/null > /dev/null 2>&1; then
+-   AUTOCONF=autoconf
++   AUTOCONF=true
+    echo "$as_me:1419: result: found" >&5
+ echo "${ECHO_T}found" >&6
+ else
+@@ -1430,7 +1430,7 @@
+ # an executable is not found, even if stderr is redirected.
+ # Redirect stdin to placate older versions of autoconf.  Sigh.
+ if (automake --version) < /dev/null > /dev/null 2>&1; then
+-   AUTOMAKE=automake
++   AUTOMAKE=true
+    echo "$as_me:1434: result: found" >&5
+ echo "${ECHO_T}found" >&6
+ else
+@@ -1445,7 +1445,7 @@
+ # an executable is not found, even if stderr is redirected.
+ # Redirect stdin to placate older versions of autoconf.  Sigh.
+ if (autoheader --version) < /dev/null > /dev/null 2>&1; then
+-   AUTOHEADER=autoheader
++   AUTOHEADER=true
+    echo "$as_me:1449: result: found" >&5
+ echo "${ECHO_T}found" >&6
+ else
+@@ -6802,6 +6802,7 @@
+ 
+ # This can be used to rebuild libtool when needed
+ LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
++$ac_aux_dir/ltconfig $LIBTOOL_DEPS
+ 
+ # Always use our own libtool.
+ LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+@@ -10854,7 +10855,7 @@
  "NONE")
  ;;
  *)
