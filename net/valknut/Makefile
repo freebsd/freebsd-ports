@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	dcgui
-PORTVERSION=	0.2.18
+PORTVERSION=	0.2.19
 CATEGORIES=	net
 MASTER_SITES=	http://download.berlios.de/dcgui/ \
 		http://ftp.kde.com/Networking_Internet/File_Sharing/Direct_Connect_4_Linux/ \
