@@ -8,7 +8,7 @@
 PORTNAME=	cdlabelgen
 PORTVERSION=	1.5.0
 CATEGORIES=	print
-MASTER_SITES=	http://www.red-bean.com/~bwf/software/cdlabelgen/
+MASTER_SITES=	http://www.red-bean.com/fitz/software/cdlabelgen/
 
 MAINTAINER=	nox@jelal.kn-bremen.de
 
