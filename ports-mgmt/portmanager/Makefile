@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		portmanager
-PORTVERSION=		0.1.9
+PORTVERSION=		0.2.0
 CATEGORIES=		sysutils
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	portmanager
@@ -25,14 +25,17 @@ CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 INSTALLS_SHLIB=		yes
 
 .if !defined(NOPORTDOCS)
-PORTDOCS=		docbook.css index.html libPMGR.3.html libPMGR.h.html PMGRrDbCreate.3.html	\
-			PMGRrDbCreate.c.html PMGRrDbCreate.h.html PMGRrMakeDescribe.3.html		\
-			PMGRrMakeDescribe.c.html PMGRrMakeDescribe.h.html MGrDbArray.3.html		\
-			MGrDbArray.c.html MGrDbArray.h.html MGrFileSize.3.html MGrFileSize.c.html	\
-			MGrFileSize.h.html MGrFileTime.3.html MGrFileTime.c.html MGrFileTime.h.html	\
+PORTDOCS=		docbook.css index.html libPMGR.3.html libPMGR.h.html 				\
+			PMGRrDbCreate.c.html PMGRrDbCreate.h.html PMGRrDbCreate.3.html			\
+			PMGRrReadConfigure.c.html PMGRrReadConfigure.h.html PMGRrReadConfigure.3.html	\
+			PMGRrMakeDescribe.3.html PMGRrMakeDescribe.c.html PMGRrMakeDescribe.h.html	\
+			MGmDbArray.3.html		\
+			MGrFileSize.3.html MGrFileSize.c.html MGrFileSize.h.html \
+			MGrFileTime.3.html MGrFileTime.c.html MGrFileTime.h.html	\
 			MGrIfFileExist.3.html MGrIfFileExist.c.html MGrIfFileExist.h.html		\
 			MGrInStringSwap.3.html MGrInStringSwap.c.html MGrInStringSwap.h.html		\
 			MGrIntToString.3.html MGrIntToString.c.html MGrIntToString.h.html		\
+			MGrStripComment.3.html MGrStripComment.c.html MGrStripComment.h.html		\
 			MGsDb.7.html MGsProperty.7.html libMG.3.html libMG.h.html mgmlParse.1.html	\
 			mgmlParse.c.html mgmlParse.h.html portmanager.1.html portmanager.c.html 	\
 			portmanager.h.html pmStatus.1.html pmStatus.c.html pmStatus.h.html 		\
@@ -42,14 +45,19 @@ INSTALL_TARGET=		install info
 .endif
 
 post-install:
-	@${ECHO}	"***************************************************"
-	@${ECHO}	"* portmanager commands:                           *"
-	@${ECHO}	"*                                                 *"
-	@${ECHO}	"* portmanager -h   brief help screen              *"
-	@${ECHO}	"*             -s   list status of installed ports *"
-	@${ECHO}	"*             -u   upgrade installed ports        *"
-	@${ECHO}	"*                                                 *"
-	@${ECHO}	"* all feedback is welcome, send to:               *"
-	@${ECHO}	"* Michael C. Shultz ringworm@inbox.lv             *"
-	@${ECHO}	"***************************************************"
+	@${ECHO}	"******************************************************"
+	@${ECHO}	"* portmanager commands:                              *"
+	@${ECHO}	"*                                                    *"
+	@${ECHO}	"* portmanager -h   brief help screen                 *"
+	@${ECHO}	"*             -s   list status of installed ports    *"
+	@${ECHO}	"*             -u   upgrade installed ports           *"
+	@${ECHO}	"* *WARNING*                                          *"
+	@${ECHO}	"* the formant of                                     *"
+	@${ECHO}	"* ${PREFIX}/etc/portmanager/portmanager.conf is      *"
+	@${ECHO}	"* changed in version 0.2.0 and has been renamed to   *"
+	@${ECHO}	"* pm-020.conf                                        *"
+	@${ECHO}	"*                                                    *"
+	@${ECHO}	"* all feedback is welcome, send to:                  *"
+	@${ECHO}	"* Michael C. Shultz ringworm@inbox.lv                *"
+	@${ECHO}	"******************************************************"
 .include <bsd.port.mk>
