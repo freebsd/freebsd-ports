@@ -1,5 +1,5 @@
 --- makenh.orig	Tue Jul 28 03:21:30 1998
-+++ makenh	Mon Nov  2 19:55:02 1998
++++ makenh	Wed Nov  4 07:05:47 1998
 @@ -68,6 +68,7 @@
  $SITE_RE = '[^:]+:\/\/([^\/]+)\/.*';
  $NumLocalCollected = 0;
@@ -8,7 +8,15 @@
  # LOGFILE, ERRFILE -- files for logging
  
  ### *TO CHANGE TRAVERSAL*
-@@ -187,22 +188,22 @@
+@@ -105,6 +106,7 @@
+ $LOGFILENAME = ".wg_log";
+ # $STARTFILE = ".wgstart";
+ $WGADDSEARCH = ".wgfilter-box";
++$SITECACHE = ".wgsitecache";
+ 
+ $ROBOTNAME = "HTTPGET";
+ 
+@@ -187,22 +189,22 @@
  
  # Initialize variables to avoid warnings
     ($title, $urlpath, $traverse_type, $explicit_only, $numhops,
@@ -36,7 +44,24 @@
  	print LOGFILE " $item: $value\n";
  }
  print LOGFILE " urllist: @urllist\n\n";
-@@ -398,7 +399,7 @@
+@@ -231,6 +233,7 @@
+ $MAPFILE = "$archivepwd/$MAPFILE";
+ $TEMPROBOTFILE = "$archivepwd/$TEMPROBOTFILE";
+ $WGADDSEARCH = "$archivepwd/$WGADDSEARCH";
++$SITECACHE = "$archivepwd/$SITECACHE";
+ 
+ ($archiveprot, $archivehost, $archiveport, $archivepath) = 
+    &url::parse_url($archiveurl);
+@@ -252,7 +255,7 @@
+ 
+ # read in the site configuration
+ &siteconf::ReadConf($vhost);
+-&siteconf::LoadCache();
++&siteconf::LoadCache("$SITECACHE");
+ 
+ ###############
+ ### PHASE 1 ###
+@@ -398,7 +401,7 @@
  &close_logs();
  
  # remove the robots file
@@ -45,7 +70,7 @@
  
  #----------------------
  #change the dir back
-@@ -751,7 +752,7 @@
+@@ -751,7 +754,7 @@
     my($prot, $host, $port, $path) = &url::parse_url($url);
     
     # if the protocol isn't http, assume it's good
@@ -54,7 +79,7 @@
        return 1;
     }
     
-@@ -800,6 +801,7 @@
+@@ -800,6 +803,7 @@
     my($output);
     my($olddata, $newdata);
     my($newprot, $newhost, $newport, $newpath, $url);
@@ -62,7 +87,7 @@
     
     # make the $url
     $url = "http://$host:$port/robots.txt";
-@@ -815,6 +817,7 @@
+@@ -815,6 +819,7 @@
     while($output ne ""){
        # more for error?
        if($output=~/^error/i){
@@ -70,7 +95,7 @@
  	 print ERRFILE "Error with getting $url\n";
  	 #			print LOGFILE "Error with getting $url\n";
  	 last;
-@@ -822,7 +825,13 @@
+@@ -822,7 +827,13 @@
        
        # look at output for redirect -- store redirects in file, too
        if($output=~/^Redirect: (.*)$/){
@@ -85,7 +110,7 @@
  	 
  	 # see if we have the redirected server
  	 ($newprot, $newhost, $newport, $newpath) = &url::parse_url($1);
-@@ -843,6 +852,7 @@
+@@ -843,6 +854,7 @@
  	 }
        }else{
  	 # we've got it, or there's an error...
@@ -93,7 +118,7 @@
  	 last;
        }
     }
-@@ -894,6 +904,7 @@
+@@ -894,6 +906,7 @@
  sub geturl2file{
     my($url) = @_;
     my($output, $link, $file, $oldfile, @aliases);
@@ -101,7 +126,7 @@
     
     # check if we have that in stock (we know it's not local)
     if (defined($URL2FILE{$url})) {
-@@ -930,6 +941,7 @@
+@@ -930,6 +943,7 @@
        while($output ne ""){
  	 # more for error?
  	 if($output=~/^error/i){
@@ -109,7 +134,7 @@
  	    print ERRFILE "Error with getting $url: $output\n";
  	    #				print LOGFILE "Error with getting $url\n";
  	    last;
-@@ -937,6 +949,12 @@
+@@ -937,6 +951,12 @@
  	 
  	 # look at output for redirect -- store redirects in file, too
  	 if($output=~/^Redirect: (.*)$/){
@@ -122,7 +147,7 @@
  	    &ungetnewname();	# rewind the name counter		
  				# The next get will overwrite the unnecessary file
  	    
-@@ -970,6 +988,7 @@
+@@ -970,6 +990,7 @@
  	    }
  	 }else{
  	    # we've got it, or there's an error...
@@ -130,7 +155,7 @@
  	    last;
  	 }
        }
-@@ -1159,6 +1178,15 @@
+@@ -1159,6 +1180,15 @@
        ($prot, $host, $port, $path) = &url::parse_url($url);
        #print "URL after parsing: $prot://$host:$port$path\n";
        
@@ -146,7 +171,7 @@
        # make sure the path has a preceding /
        $path = "/$path" if $path!~/^\//;
        
-@@ -1177,7 +1205,7 @@
+@@ -1177,7 +1207,7 @@
  #      $host = "$a.$b.$c.$d";
  #      }
        

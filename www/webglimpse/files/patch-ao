@@ -1,6 +1,6 @@
 --- dist/wgfilter-index.orig	Tue Jun 16 02:16:17 1998
-+++ dist/wgfilter-index	Tue Nov  3 09:41:31 1998
-@@ -1,26 +1,60 @@
++++ dist/wgfilter-index	Wed Nov  4 07:09:04 1998
+@@ -1,17 +1,49 @@
  Deny \.gif$
  Deny \.jpeg$
  Deny \.mpeg$
@@ -50,12 +50,7 @@
  Deny (^|/)wgindex\.html$
  Deny \.wg
  Deny \.glimpse_
- Deny (^|/)indexing-in-progress$
- Deny (^|/)wgreindex$
-+Deny (^|/).sitecache$
- Deny (^|/)archive.cfg$
- Deny (^|/)\.nh\.
- Deny \?
+@@ -23,4 +55,5 @@
  Deny ~$
  Deny (^|/)_vti
  Deny (^|/)\.htpasswd$

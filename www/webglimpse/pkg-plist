@@ -5,7 +5,6 @@ www/cgi-bin/mfs
 www/cgi-bin/webglimpse
 www/cgi-bin/webglimpse-fullsearch
 www/webglimpse/.archives
-www/webglimpse/.sitecache
 www/webglimpse/.wgsiteconf
 www/webglimpse/Makefile
 www/webglimpse/addsearch
