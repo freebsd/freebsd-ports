@@ -1,17 +1,15 @@
 # New ports collection makefile for:	qico
-# Date created:				13 Jan 2000
-# Whom:					Denis Shaposhnikov <dsh@vlink.ru>
+# Version required:	0.46.2
+# Date created:		13 Jan 2000
+# Whom:			Denis Shaposhnikov <dsh@vlink.ru>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	qico
-PORTVERSION=	0.45.3.1
+PORTVERSION=	0.46.2
 CATEGORIES=	comms
-MASTER_SITES=	${MASTER_SITE_LOCAL} \
-		http://www.ruxy.org.ru/~aaz/files/
-MASTER_SITE_SUBDIR=	will
-DISTNAME=	${PORTNAME}-0.45pl3.1
+MASTER_SITES=	http://lev.serebryakov.spb.ru/download/
 
 MAINTAINER=	dsh@vlink.ru
 
