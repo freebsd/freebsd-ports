@@ -3,7 +3,7 @@
 # Date created:		07 Feb 1999
 # Whom:			Scott Blachowicz <Scott.Blachowicz@seaslug.org>
 #
-# $Id: Makefile,v 1.11 1999/02/11 08:57:13 jkoshy Exp $
+# $Id: Makefile,v 1.13 1999/02/23 03:17:04 jkoshy Exp $
 #
 # Makefile variables of interest:
 #
@@ -31,7 +31,7 @@
 
 DISTNAME=	nmh-1.0
 CATEGORIES=	mail
-MASTER_SITES=   ftp://ftp.math.gatech.edu/pub/nmh/ \
+MASTER_SITES=	ftp://ftp.mhost.com/pub/nmh/ \
 		http://www.freebsd.org/~jkoshy/PORTS/
 
 MAINTAINER=     Scott.Blachowicz@seaslug.org
