@@ -7,6 +7,7 @@
 
 PORTNAME=	transcode
 PORTVERSION=	0.6.2
+PORTREVISION=	1
 DISTNAME=	${PORTNAME}-${PORTVERSION}.20021010
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.theorie.physik.uni-goettingen.de/~ostreich/transcode/pre/
@@ -180,6 +181,7 @@ PLIST_SUB+=	WITH_LIBA52="@comment "
 
 .if defined(WITH_LAME)
 LIB_DEPENDS+=	mp3lame.0:${PORTSDIR}/audio/lame
+CONFIGURE_ARGS+=	--with-lame-libs=${LOCALBASE}/lib
 PLIST_SUB+=	WITH_LAME=""
 .else
 CONFIGURE_ARGS+=	--with-lame=no
