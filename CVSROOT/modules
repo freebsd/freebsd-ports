@@ -214,6 +214,7 @@ adduser		src/usr.sbin/adduser
 adgali		ports/games/adgali
 adjkerntz	src/sbin/adjkerntz
 adns		ports/net/adns
+adobe-cmaps	ports/print/adobe-cmaps
 adodb		ports/databases/adodb
 adom		ports/games/adom
 adpcm		ports/audio/adpcm
