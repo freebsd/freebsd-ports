@@ -1,12 +1,14 @@
 portlint makes a small set of sanity checks for port directory.
 
-usage: portlint [-AabctvN] [-B#] [port_directory]
+usage: portlint [-AabcCtvN] [-M ENV] [-B#] [port_directory]
         -a      additional check for scripts/* and pkg/*
         -A      turn on all additional checks (equivalent to -abcNt)
         -b      warn $(VARIABLE)
+        -C      pedantic committer mode (equivalent to -abct)
         -c      committer mode
         -v      verbose mode
         -t      nit pick about use of spaces
         -N      writing a new port
         -V      print the version and exit
+        -M ENV  set make variables to ENV (ex. PORTSDIR=/usr/ports.work)
         -B#     allow # contiguous blank lines (default: 1 line)
