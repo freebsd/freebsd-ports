@@ -40,6 +40,8 @@ CONFIGURE_ENV+=	PERL=${PERL} \
 .if !defined(CLIENT_ONLY)
 RUN_DEPENDS=	mysql:${PORTSDIR}/databases/mysql322-client
 
+PLIST_SUB=	MYSQL_VERSION=${PORTVERSION}
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 320000
