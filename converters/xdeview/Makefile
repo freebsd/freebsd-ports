@@ -6,27 +6,32 @@
 #
 
 PORTNAME=	xdeview
-PORTVERSION=	0.5.13
-CATEGORIES=	converters tk82
-MASTER_SITES=	ftp://tsx-11.mit.edu/pub/linux/sources/usr.bin/ \
-		http://www.informatik.uni-frankfurt.de/~fp/uudeview/Apps/frank/
+PORTVERSION=	0.5.18
+CATEGORIES=	converters tk83
+MASTER_SITES=	http://www.fpx.de/fp/Software/UUDeview/download/
 DISTNAME=	uudeview-${PORTVERSION}
 
 MAINTAINER=	hoek@FreeBSD.org
 
-LIB_DEPENDS=	tk82.1:${PORTSDIR}/x11-toolkits/tk82 \
-		uu.1:${PORTSDIR}/converters/uulib
+LIB_DEPENDS=	uu.2:${PORTSDIR}/converters/uulib \
+		tk83.1:${PORTSDIR}/x11-toolkits/tk83
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-tcl="${PREFIX}" --enable-tk="${PREFIX}"
-# Season to taste --- anything over tcl7.5
-CONFIGURE_ENV=	CPPFLAGS="-I${PREFIX}/include/tcl8.2 -I${PREFIX}/include/tk8.2"
+# Explicitly disable Tcl otherwise the configure script picks-up
+# crud from the $PATH lie /usr/opt/Simili/tcl/.
+CONFIGURE_ARGS=	--disable-tcl --disable-tk
+# Season to taste --- anything better or equal to tcl8.0 is probably okay
+CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib \
+			-lX11 -ltcl83 -ltk83 -lm" \
+		CPPFLAGS="-I${LOCALBASE}/include/tcl8.3 -DHAVE_TCL \
+			-I${LOCALBASE}/include/tk8.3 -DHAVE_TK \
+			-I${X11BASE}/include"
 
 ALL_TARGET=	xdeview
 INSTALL_TARGET=	install-tcl
 MAN1=		xdeview.1
 
-DOCFILES=	${FILESDIR}/porting.notes ${WRKSRC}/HOWTO
+DOCFILES=	${FILESDIR}/porting.notes
 
 post-install:
 	strip ${PREFIX}/bin/uuwish
