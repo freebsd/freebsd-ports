@@ -6,7 +6,11 @@
 #
 
 PORTNAME=	gnustep-base
+.if defined(WITH_GNUSTEP_DEVEL)
+PORTVERSION=	1.7.0
+.else
 PORTVERSION=	1.6.0
+.endif
 CATEGORIES=	lang devel
 MASTER_SITES=	${MASTER_SITE_GNUSTEP} \
 		ftp://ftp.gnustep.org/pub/gnustep/%SUBDIR%/ \

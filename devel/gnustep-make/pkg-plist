@@ -1,3 +1,6 @@
+System/Makefiles/GNUstep-reset.sh
+System/Makefiles/GNUstep.csh
+System/Makefiles/GNUstep.sh
 System/Makefiles/Instance/Documentation/autogsdoc.make
 System/Makefiles/Instance/Documentation/gsdoc.make
 System/Makefiles/Instance/Documentation/install_files.make
@@ -54,9 +57,6 @@ System/Makefiles/Master/test-application.make
 System/Makefiles/Master/test-library.make
 System/Makefiles/Master/test-tool.make
 System/Makefiles/Master/tool.make
-System/Makefiles/GNUstep.csh
-System/Makefiles/GNUstep.sh
-System/Makefiles/GNUstep-reset.sh
 System/Makefiles/aggregate.make
 System/Makefiles/application.make
 System/Makefiles/bundle.make
@@ -112,110 +112,72 @@ System/Tools/debugapp
 System/Tools/openapp
 System/Tools/opentool
 System/share/config.site
-@exec mkdir -p %D/Local/Applications
-@exec mkdir -p %D/Local/Developer/Palettes
-@exec mkdir -p %D/Local/Documentation/Developer
-@exec mkdir -p %D/Local/Documentation/User
-@exec mkdir -p %D/Local/Headers/%%GNU_ARCH%%/%%OPSYS%%
-@exec mkdir -p %D/Local/Libraries/Java
-@exec mkdir -p %D/Local/Libraries/Resources
-@exec mkdir -p %D/Local/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-@exec mkdir -p %D/Local/Library/Bundles
-@exec mkdir -p %D/Local/Library/Colors
-@exec mkdir -p %D/Local/Library/Frameworks
-@exec mkdir -p %D/Local/Library/PostScript
-@exec mkdir -p %D/Local/Library/Services
-@exec mkdir -p %D/Local/Tools/Java
-@exec mkdir -p %D/Local/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-@exec mkdir -p %D/Local/Users/Administrator
-@exec mkdir -p %D/Network
-@exec mkdir -p %D/System/Applications
-@exec mkdir -p %D/System/Developer/Palettes
-@exec mkdir -p %D/System/Documentation/Developer
-@exec mkdir -p %D/System/Documentation/User
-@exec mkdir -p %D/System/Documentation/info
-@exec mkdir -p %D/System/Documentation/man
-@exec mkdir -p %D/System/Headers/%%GNU_ARCH%%/%%OPSYS%%
-@exec mkdir -p %D/System/Libraries/Java
-@exec mkdir -p %D/System/Libraries/Resources
-@exec mkdir -p %D/System/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-@exec mkdir -p %D/System/Library/Bundles
-@exec mkdir -p %D/System/Library/Colors
-@exec mkdir -p %D/System/Library/Frameworks
-@exec mkdir -p %D/System/Library/PostScript
-@exec mkdir -p %D/System/Library/Services
-@exec mkdir -p %D/System/Makefiles/Additional
-@exec mkdir -p %D/System/Makefiles/Auxiliary
-@exec mkdir -p %D/System/Tools/Java
-@exec mkdir -p %D/System/Tools/Resources
-@exec mkdir -p %D/System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
 @dirrm System/share
-@dirrm System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-@dirrm System/Tools/%%GNU_ARCH%%/%%OPSYS%%
-@dirrm System/Tools/%%GNU_ARCH%%
-@dirrm System/Tools/Java
 @dirrm System/Tools/Resources
+@dirrm System/Tools/Java
 @dirrm System/Tools
 @dirrm System/Makefiles/%%GNU_ARCH%%/%%OPSYS%%
 @dirrm System/Makefiles/%%GNU_ARCH%%
 @dirrm System/Makefiles/Master
-@dirrm System/Makefiles/Instance/Documentation
 @dirrm System/Makefiles/Instance/Shared
+@dirrm System/Makefiles/Instance/Documentation
 @dirrm System/Makefiles/Instance
-@dirrm System/Makefiles/Additional
 @dirrm System/Makefiles/Auxiliary
+@dirrm System/Makefiles/Additional
 @dirrm System/Makefiles
+%%GNUSTEP_DEVEL%%@dirrm System/Library/Sounds
 @dirrm System/Library/Services
 @dirrm System/Library/PostScript
+@comment @dirrm System/Library/Makefiles
+@dirrm %%SYSTEMLIBRARY%%/Libraries/Resources
+@dirrm %%SYSTEMLIBRARY%%/Libraries/Java
+@dirrm %%SYSTEMLIBRARY%%/Libraries
+%%GNUSTEP_DEVEL%%@dirrm System/Library/KeyBindings
+%%GNUSTEP_DEVEL%%@dirrm System/Library/Images
+@dirrm %%SYSTEMLIBRARY%%/Headers
 @dirrm System/Library/Frameworks
+%%GNUSTEP_DEVEL%%@dirrm System/Library/Fonts
+@dirrm %%SYSTEMLIBRARY%%/Documentation/man
+@dirrm %%SYSTEMLIBRARY%%/Documentation/info
+@dirrm %%SYSTEMLIBRARY%%/Documentation/User
+@dirrm %%SYSTEMLIBRARY%%/Documentation/Developer
+@dirrm %%SYSTEMLIBRARY%%/Documentation
+%%GNUSTEP_DEVEL%%@dirrm System/Library/DocTemplates
 @dirrm System/Library/Colors
+%%GNUSTEP_DEVEL%%@dirrm System/Library/ColorPickers
 @dirrm System/Library/Bundles
+%%GNUSTEP_DEVEL%%@dirrm System/Library/ApplicationSupport
 @dirrm System/Library
-@dirrm System/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-@dirrm System/Libraries/%%GNU_ARCH%%/%%OPSYS%%
-@dirrm System/Libraries/%%GNU_ARCH%%
-@dirrm System/Libraries/Resources
-@dirrm System/Libraries/Java
-@dirrm System/Libraries
-@dirrm System/Headers/%%GNU_ARCH%%/%%OPSYS%%
-@dirrm System/Headers/%%GNU_ARCH%%
-@dirrm System/Headers
-@dirrm System/Documentation/man
-@dirrm System/Documentation/info
-@dirrm System/Documentation/User
-@dirrm System/Documentation/Developer
-@dirrm System/Documentation
-@dirrm System/Developer/Palettes
-@dirrm System/Developer
+%%GNUSTEP_STABLE%%@dirrm System/Developer/Palettes
+%%GNUSTEP_STABLE%%@dirrm System/Developer
 @dirrm System/Applications
 @dirrm System
 @dirrm Network
-@dirrm Local/Users/Administrator
-@dirrm Local/Users
-@dirrm Local/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-@dirrm Local/Tools/%%GNU_ARCH%%/%%OPSYS%%
-@dirrm Local/Tools/%%GNU_ARCH%%
-@dirrm Local/Tools/Java
-@dirrm Local/Tools
-@dirrm Local/Library/Services
-@dirrm Local/Library/PostScript
-@dirrm Local/Library/Frameworks
-@dirrm Local/Library/Colors
-@dirrm Local/Library/Bundles
-@dirrm Local/Library
-@dirrm Local/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-@dirrm Local/Libraries/%%GNU_ARCH%%/%%OPSYS%%
-@dirrm Local/Libraries/%%GNU_ARCH%%
-@dirrm Local/Libraries/Resources
-@dirrm Local/Libraries/Java
-@dirrm Local/Libraries
-@dirrm Local/Headers/%%GNU_ARCH%%/%%OPSYS%%
-@dirrm Local/Headers/%%GNU_ARCH%%
-@dirrm Local/Headers
-@dirrm Local/Documentation/User
-@dirrm Local/Documentation/Developer
-@dirrm Local/Documentation
-@dirrm Local/Developer/Palettes
-@dirrm Local/Developer
-@dirrm Local/Applications
 @dirrm Local
+@exec mkdir -p %D/Local
+@exec mkdir -p %D/Network
+@exec mkdir -p %D/System/Applications
+%%GNUSTEP_DEVEL%%@exec mkdir -p %D/%%SYSTEMLIBRARY%%/ApplicationSupport
+@exec mkdir -p %D/%%SYSTEMLIBRARY%%/Bundles
+%%GNUSTEP_DEVEL%%@exec mkdir -p %D/%%SYSTEMLIBRARY%%/ColorPickers
+@exec mkdir -p %D/%%SYSTEMLIBRARY%%/Colors
+%%GNUSTEP_DEVEL%%@exec mkdir -p %D/%%SYSTEMLIBRARY%%/DocTemplates
+@exec mkdir -p %D/%%SYSTEMLIBRARY%%/Documentation/Developer
+@exec mkdir -p %D/%%SYSTEMLIBRARY%%/Documentation/User
+@exec mkdir -p %D/%%SYSTEMLIBRARY%%/Documentation/info
+@exec mkdir -p %D/%%SYSTEMLIBRARY%%/Documentation/man
+%%GNUSTEP_DEVEL%%@exec mkdir -p %D/%%SYSTEMLIBRARY%%/Fonts
+@exec mkdir -p %D/%%SYSTEMLIBRARY%%/Frameworks
+@exec mkdir -p %D/%%SYSTEMLIBRARY%%/Headers
+%%GNUSTEP_DEVEL%%@exec mkdir -p %D/%%SYSTEMLIBRARY%%/Images
+%%GNUSTEP_DEVEL%%@exec mkdir -p %D/%%SYSTEMLIBRARY%%/KeyBindings
+@exec mkdir -p %D/%%SYSTEMLIBRARY%%/Libraries/Java
+@exec mkdir -p %D/%%SYSTEMLIBRARY%%/Libraries/Resources
+@comment @exec mkdir -p %D/System/Library/Makefiles
+@exec mkdir -p %D/%%SYSTEMLIBRARY%%/PostScript
+%%GNUSTEP_DEVEL%%@exec mkdir -p %D/%%SYSTEMLIBRARY%%/Sounds
+@exec mkdir -p %D/%%SYSTEMLIBRARY%%/Services
+@exec mkdir -p %D/System/Makefiles/Additional
+@exec mkdir -p %D/System/Makefiles/Auxiliary
+@exec mkdir -p %D/System/Tools/Java
+@exec mkdir -p %D/System/Tools/Resources
