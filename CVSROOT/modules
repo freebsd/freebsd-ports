@@ -7028,6 +7028,7 @@ sendmail-ldap	ports/mail/sendmail-ldap
 sendmail-old	ports/mail/sendmail-old
 sendmail-sasl	ports/mail/sendmail-sasl
 senso		ports/games/senso
+sentinel	ports/mail/sentinel
 seqio		ports/biology/seqio
 serialmail	ports/mail/serialmail
 serveez		ports/net/serveez
