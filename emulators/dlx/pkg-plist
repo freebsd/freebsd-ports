@@ -1,0 +1,8 @@
+bin/dlxsim
+bin/dlxcc
+bin/dlx-gcc-cc1
+bin/dlx-gcc-cpp
+share/doc/dlx/dlxsim.tex
+share/doc/dlx/manual.tex
+share/doc/dlx/report.tex
+share/doc/dlx/report2.tex

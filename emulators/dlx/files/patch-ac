@@ -1,0 +1,14 @@
+--- dlxsim/tcl/Makefile.orig	Tue Dec 18 12:24:38 1990
++++ dlxsim/tcl/Makefile	Sat Dec 26 13:11:18 1998
+@@ -13,9 +13,8 @@
+ OBJS = glob.o tclBasic.o tclCmdAH.o tclCmdIZ.o tclExpr.o \
+ 	tclGlob.o tclProc.o tclUtil.o
+ 
+-LIBOBJS = panic.o strerror.o strtol.o strtoul.o List_Init.o \
+-	List_Insert.o List_ListIns.o List_Remove.o strspn.o \
+-	strpbrk.o strchr.o
++LIBOBJS = panic.o List_Init.o \
++	List_Insert.o List_ListIns.o List_Remove.o
+ 
+ CSRCS = glob.c tclBasic.c tclCmdAH.c tclCmdIZ.c tclExpr.c \
+ 	tclGlob.c tclProc.c tclUtil.c

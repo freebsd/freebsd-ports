@@ -1,0 +1,11 @@
+--- dlxsim/Makefile.orig	Sat Dec 26 13:14:21 1998
++++ dlxsim/Makefile	Sat Dec 26 13:14:41 1998
+@@ -11,7 +11,7 @@
+ CC = cc
+ CFLAGS = -g -I. -Itcl
+ DEST = /tmp_mnt/home/ginger/pnh/bly/bin/$(MACHINE)/
+-DEST = ../bin
++DEST = ../bin/
+ TARGET = dlxsim
+ 
+ OBJS = asm.o cop0.o getput.o io.o main.o sim.o stop.o sym.o trap.o
