@@ -1,0 +1,12 @@
+*** all.c.orig	Tue Nov  8 14:35:02 1994
+--- all.c	Tue Nov  8 14:35:12 1994
+***************
+*** 638,644 ****
+   */
+  {
+    extern int CONST sys_nerr;
+-   extern char CONST *sys_errlist[];
+    
+    int   error;
+    
+--- 638,643 ----
