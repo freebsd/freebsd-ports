@@ -7,39 +7,33 @@
 #
 
 PORTNAME=	dcgui
-PORTVERSION=	0.1.11
+PORTVERSION=	0.2.18
 CATEGORIES=	net
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+MASTER_SITES=	http://download.berlios.de/dcgui/ \
 		http://ftp.kde.com/Networking_Internet/File_Sharing/Direct_Connect_4_Linux/ \
-		http://download.berlios.de/dcgui/ \
-		ftp://ftp.kde.com/Networking_Internet/File_Sharing/Direct_Connect_4_Linux/ \
-		http://dc.ketelhot.de/files/dcgui/unstable/source/
-MASTER_SITE_SUBDIR=	dc-gui
-DISTNAME=	dcgui-0.1beta11
+		ftp://ftp.kde.com/Networking_Internet/File_Sharing/Direct_Connect_4_Linux/
+DISTNAME=	dcgui-qt-${PORTVERSION}
 
-MAINTAINER=	e96sv@yahoo.se
+MAINTAINER=	brueffer@phoenix-systems.de
 COMMENT=	A Direct Connect client QT GUI
-FORBIDDEN=	"security bug--see <URL:http://dc.ketelhot.de/news.php>"
 
 LIB_DEPENDS=	dc.0:${PORTSDIR}/net/dclib \
 		xml2.5:${PORTSDIR}/textproc/libxml2
 
 USE_X_PREFIX=	yes
-USE_QT_VER=3
+USE_QT_VER=	3
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-libdc=${LOCALBASE} \
-		--with-xml-prefix=${LOCALBASE} \
-		--program-prefix=
+CONFIGURE_ARGS=	--with-libdc=${LOCALBASE}
+
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 post-patch:
-# Fix libxml2 test
-# And, do not add optimizations because it might break some ARCHs, e.g.,
-# alpha
-	@${REINPLACE_CMD} -e 's@xmlversion.h@libxml/xmlversion.h@; \
-		s@-O2@@' \
-		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
+	@${REINPLACE_CMD} -e 's/-O2//g' ${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
+
+post-install:
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
