@@ -6,17 +6,17 @@
 # $FreeBSD$
 #
 
-DISTNAME=	mutt-1.0i
-PKGNAME=	ja-mutt-1.0.j0
+DISTNAME=	mutt-1.0.1i
+PKGNAME=	ja-mutt-1.0.1.j0
 CATEGORIES=	japanese mail
-MASTER_SITES=	ftp://ftp.guug.de/pub/mutt/ \
+MASTER_SITES=	ftp://ftp.gbnet.net/pub/mutt-international/ \
+		ftp://ftp.guug.de/pub/mutt/ \
 		ftp://ftp.guug.de/pub/mutt/historic/ \
-		ftp://ftp.gbnet.net/pub/mutt-international/ \
 		http://www.hiei.kit.ac.jp/~hitomi/mutt/
-DISTFILES=	mutt-1.0i.tar.gz manual_ja-1.0i-2.tar.gz
+DISTFILES=	mutt-1.0.1i.tar.gz manual_ja-1.0i-2.tar.gz
 
 PATCH_SITES=	http://kondara.sdri.co.jp/~kikutani/slang/
-PATCHFILES=	mutt-1.0i-jp0.patch
+PATCHFILES=	mutt-1.0.1i-jp0.patch.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	shuna@pop16.odn.ne.jp
@@ -30,7 +30,7 @@ RUN_DEPENDS=	urlview:${PORTSDIR}/textproc/urlview
 DIST_SUBDIR=	mutt
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-WRKSRC=		${WRKDIR}/mutt-1.0
+WRKSRC=		${WRKDIR}/mutt-1.0.1
 CONFIGURE_ARGS=	--with-slang --enable-locales-fix --with-included-gettext \
 		--enable-flock --disable-fcntl \
 		--sysconfdir=${PREFIX}/share/mutt \
