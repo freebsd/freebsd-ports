@@ -3,7 +3,7 @@
 # Date created:		16 Mar 1996
 # Whom:			Hideaki Ohmon <ohmon@sfc.keio.ac.jp>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1996/03/21 17:25:01 asami Exp $
 #
 
 DISTNAME=	pkfonts
@@ -45,5 +45,8 @@ do-install:
 	mkdir -p ${PREFIX}/lib/fonts
 	tar -C ${PREFIX}/lib/fonts -xzf ${DISTDIR}/${DISTFILES}
 	@cp ${PKGDIR}/${RESOLUTION}.list ${PKGDIR}/PLIST 
+
+pre-clean:
+	@rm -f ${PKGDIR}/PLIST  # created by do-install above
 
 .include <bsd.port.mk>
