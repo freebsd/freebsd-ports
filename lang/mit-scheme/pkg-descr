@@ -1,0 +1,24 @@
+FreeBSD port of MIT Scheme-7.3
+
+This port has been put together out of the scheme runtime binaries
+out of the linux.tar.gz distribution.  These binaries are identical
+for any i386 running an operating system with a unix-like filesystem.
+For this reason, a makefile for building the runtime, compiler, and
+edwin binaries has not been included.  One patch is neccesary to 
+build the runtime binaries due to a problem with one of the system math 
+libraries (mail me if you want it).  Otherwise, this patch was not
+included because building the entire system takes a VERY LONG TIME,
+about as long as a 'make world' in /usr/src (no one said scheme was
+fast).  
+
+The distfile was put together from the linux distribution and the
+microcode sources.  This was to avoid using the official MIT 
+distfiles and having to download the linux compiled binaries
+(the scheme and bchscheme binaries, statically linked, 2M each).  
+
+To use the official distfiles, you must obtain the linux.tar.gz and
+the src-microcode.tar.gz from ftp://ftp-swiss.ai.mit.edu/pub/scheme-7.3.
+Unpack linux.tar.gz, and remove dist-7.3/bin/*.  Unpack src-microcode.tar.gz
+and apply the patches from the port, now you can build the microcode.
+
+Maintainer: jmacd@uclink.berkeley.edu
