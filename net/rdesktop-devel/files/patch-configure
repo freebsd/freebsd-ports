@@ -1,0 +1,19 @@
+--- configure.orig	Tue Nov 19 22:05:27 2002
++++ configure	Tue Dec 31 22:23:43 2002
+@@ -98,7 +98,7 @@
+ echo "CC          = $cc" >>Makeconf
+ 
+ if $cc -v 2>&1 |grep '^gcc' >/dev/null; then
+-    cflags="$cflags -Wall -O2"
++    #cflags="$cflags -Wall -O2"
+ else
+     cflags="$cflags -O"
+ fi
+@@ -222,6 +222,7 @@
+ 
+ echo "CFLAGS     += $cflags" >>Makeconf
+ echo "LDFLAGS    += $ldflags" >>Makeconf
++echo 'DESTDIR     = ${prefix}' >>Makeconf
+ 
+ echo "configure complete - now run make"
+ 

@@ -1,30 +1,44 @@
---- Makefile.orig	Sat Feb  2 00:21:14 2002
-+++ Makefile	Sat Feb  2 00:23:47 2002
-@@ -6,14 +6,9 @@
- 
+--- Makefile.orig	Tue Nov 19 02:46:24 2002
++++ Makefile	Tue Dec 31 22:10:53 2002
+@@ -7,7 +7,7 @@
  # Configuration defaults
  
--CC       = gcc
--CFLAGS   = -O2 -Wall
--INCLUDES = -I$(shell pwd)
--LDLIBS   =
-+INCLUDES = -I.
+ CC       = cc
+-CFLAGS   = -O2 -DKEYMAP_PATH=\"$(KEYMAP_PATH)\"
++CFLAGS  += -DKEYMAP_PATH=\"$(KEYMAP_PATH)\"
+ LDFLAGS  =
  
--PREFIX   = /usr/local
--EPREFIX  = $(PREFIX)
--BINDIR   = $(EPREFIX)/bin
-+BINDIR   = $(PREFIX)/bin
- MANDIR   = $(PREFIX)/man
+ prefix      = /usr/local
+@@ -24,6 +24,8 @@
+ include Makeconf  # configure-generated
  
- RDPOBJ   = rdesktop.o tcp.o iso.o mcs.o secure.o licence.o rdp.o orders.o bitmap.o cache.o decompress.o
-@@ -26,8 +21,8 @@
- SSL_LIBS =
  
- #the xlib layer ( default )
--GUI_XWIN_INC = -I/usr/X11R6/include
--GUI_XWIN_LIB = -L/usr/X11R6/lib -lX11
-+GUI_XWIN_INC = -I${X11BASE}/include
-+GUI_XWIN_LIB = -L${X11BASE}/lib -lX11
- GUI_XWIN_OBJ = gl/xwin.o
++all: rdesktop
++
+ rdesktop: $(RDPOBJ) $(CRYPTOBJ)
+ 	$(CC) $(CFLAGS) -o rdesktop $(RDPOBJ) $(CRYPTOBJ) $(LDFLAGS)
  
- #the nt layer
+@@ -33,23 +35,10 @@
+ install: installbin installkeymaps installman
+ 
+ installbin: rdesktop
+-	mkdir -p $(DESTDIR)/$(bindir)
+-	install rdesktop $(DESTDIR)/$(bindir)
+-	strip $(DESTDIR)/$(bindir)/rdesktop
+-	chmod 755 $(DESTDIR)/$(bindir)/rdesktop
+ 
+ installman: doc/rdesktop.1
+-	mkdir -p $(DESTDIR)/$(mandir)/man1
+-	cp doc/rdesktop.1 $(DESTDIR)/$(mandir)/man1
+-	chmod 644 $(DESTDIR)/$(mandir)/man1/rdesktop.1
+ 
+ installkeymaps:
+-	mkdir -p $(DESTDIR)/$(KEYMAP_PATH)
+-# Prevent copying the CVS directory
+-	cp keymaps/?? keymaps/??-?? $(DESTDIR)/$(KEYMAP_PATH)
+-	cp keymaps/common $(DESTDIR)/$(KEYMAP_PATH)
+-	cp keymaps/modifiers $(DESTDIR)/$(KEYMAP_PATH)
+-	chmod 644 $(DESTDIR)/$(KEYMAP_PATH)/*
+ 
+ proto:
+ 	cproto -DMAKE_PROTO -o proto.h *.c

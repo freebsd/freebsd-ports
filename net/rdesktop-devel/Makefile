@@ -6,30 +6,30 @@
 #
 
 PORTNAME=	rdesktop
-PORTVERSION=	1.1.0.p19.9.0
+PORTVERSION=	1.2b1
 CATEGORIES=	net comms
-MASTER_SITES=	http://bibl4.oru.se/projects/rdesktop/dist/releases/
-DISTNAME=	rdesktop-1.1.0
-
-PATCH_SITES=	http://bibl4.oru.se/projects/rdesktop/ \
-		http://bibl4.oru.se/projects/rdesktop/patch19/
-PATCHFILES=	rdesktop-unified-patch19-9-0.bz2
-PATCH_DIST_STRIP=	-p2
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
+DISTNAME=	rdesktop-1.2beta1
 
 MAINTAINER=	chris@aims.com.au
 
 USE_XLIB=	yes
-USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_OPENSSL=	yes
-
+WRKSRC=		${WRKDIR}/${PORTNAME}
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-openssl --enable-final
+CONFIGURE_ARGS=	--prefix=${PREFIX}
 
 MAN1=		rdesktop.1
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/rdesktop ${PREFIX}/bin
-	@${INSTALL_MAN} ${WRKSRC}/rdesktop.1 ${PREFIX}/man/man1
+	@${INSTALL_MAN} ${WRKSRC}/doc/rdesktop.1 ${PREFIX}/man/man1
+	@${INSTALL} -d -v -m 755 ${PREFIX}/share/rdesktop
+	@${INSTALL} -d -v -m 755 ${PREFIX}/share/rdesktop/keymaps
+	@for f in ${WRKSRC}/keymaps/*; do \
+		${INSTALL_DATA} $$f ${PREFIX}/share/rdesktop/keymaps; \
+	done
 
 .include <bsd.port.mk>
