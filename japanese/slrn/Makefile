@@ -1,20 +1,20 @@
 # New ports collection makefile for:	ja-slrn
-# Version required:	0.9.5.7
+# Version required:   0.9.5.7.jp1
 # Date created:		6 Sept 1999
 # Whom:			Takashi Mega <mega@minz.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	slrn-0.9.5.7
-PKGNAME=	ja-slrn-0.9.5.7
+DISTNAME=     slrn-0.9.5.7.1
+PKGNAME=      ja-slrn-0.9.5.7.1
 CATEGORIES=	japanese news
 MASTER_SITES=	ftp://space.mit.edu/pub/davis/slrn/ \
-		http://home.sprintmail.com/~kikutani/slang/
+              http://kondara.sdri.co.jp/~kikutani/slang/
 DISTFILES= 	slrn-0.9.5.7.tar.gz  slrn-doc-j0.9.5.6-0.tar.gz
 
-PATCH_SITES=	http://home.sprintmail.com/~kikutani/slang/
-PATCHFILES= 	slrn0.9.5.7jp0.pat.gz
+PATCH_SITES=  http://kondara.sdri.co.jp/~kikutani/slang/
+PATCHFILES=   slrn0.9.5.7jp1.pat.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	mega@minz.org

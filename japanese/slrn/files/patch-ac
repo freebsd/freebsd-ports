@@ -1,5 +1,5 @@
 *** src/Makefile.in.orig	Thu Jul 15 16:27:24 1999
---- src/Makefile.in	Sun Sep  5 21:42:00 1999
+--- src/Makefile.in   Wed Oct  6 13:56:10 1999
 ***************
 *** 61,67 ****
   prefix = @prefix@
