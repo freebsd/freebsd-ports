@@ -5,9 +5,9 @@ installdir=${PREFIX}/JDE/JGV; export installdir
 case ${LANGUAGE} in
     Japanese)
 	for f in JGV.app; do
-	    ${PERL} -pi -e '
-		s/^(exec[ \t]+)wishstep[^ \t]*([ \t]+.*)$/$1wishstep$ENV{VERSION}jp$2/
-		' ${installdir}/bin/${f}
+	    ${REINPLACE_CMD} -E -e \
+		"s/^(exec[[:space:]]+)wishstep[[:space:]]*([[:space:]]+.*)\$/\1wishstep${VERSION}jp\2/" \
+		${installdir}/bin/${f}
 	done
     ;;
     *)
@@ -22,9 +22,9 @@ for f in JGV JGV.app; do
 	    target=${installdir}/defaults/${f}
 	;;
     esac
-    ${PERL} -pi -e '
-        s/^([ \t]*set[ \t]+Jlib[ \t]+)"[^"]*"$/$1"$ENV{installdir}"/;
-        ' ${target}
+    ${REINPLACE_CMD} -E -e \
+	"s@^([[:space:]]*set[[:space:]]+Jlib[[:space:]]+)\"[^\"]*\"\$@\1\"${installdir}/\"@" \
+	${target}
 done
 
 ${LN} -sf ${installdir}/bin/JGV.app ${PREFIX}/bin
