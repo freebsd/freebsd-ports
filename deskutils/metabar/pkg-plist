@@ -2,12 +2,20 @@ lib/kde3/konqsidebar_metabar.la
 lib/kde3/konqsidebar_metabar.so
 share/apps/konqsidebartng/add/metabar_add.desktop
 share/apps/konqsidebartng/entries/metabar.desktop
+share/apps/metabar/iconsrc
 share/doc/HTML/en/sidebar/common
 share/doc/HTML/en/sidebar/index.cache.bz2
 share/doc/HTML/en/sidebar/index.docbook
+share/icons/crystalsvg/16x16/actions/metabardown.png
+share/icons/crystalsvg/16x16/actions/metabarup.png
+@unexec rmdir %D/share/icons/crystalsvg/16x16/actions 2>/dev/null || true
+@unexec rmdir %D/share/icons/crystalsvg/16x16 2>/dev/null || true
+@unexec rmdir %D/share/icons/crystalsvg 2>/dev/null || true
+@unexec rmdir %D/share/icons 2>/dev/null || true
 @unexec rmdir %D/share/doc/HTML/en/sidebar 2>/dev/null || true
 @unexec rmdir %D/share/doc/HTML/en 2>/dev/null || true
 @unexec rmdir %D/share/doc/HTML 2>/dev/null || true
+@dirrm share/apps/metabar
 @dirrm share/apps/konqsidebartng/entries
 @dirrm share/apps/konqsidebartng/add
 @dirrm share/apps/konqsidebartng
