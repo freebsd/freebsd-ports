@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	Mon Oct 28 02:01:32 2002
++++ src/Makefile.in	Sun Nov  3 09:31:37 2002
+@@ -96,7 +96,7 @@
+ libdbi_la_SOURCES = dbi_main.c dbi_result.c dbd_helper.c atoll.c asprintf.c
+ libdbi_la_LDFLAGS = -version-info @LIB_CURRENT@:@LIB_REVISION@:@LIB_AGE@
+ 
+-CFLAGS = -DDBI_DRIVER_DIR=\"@driverdir@\"
++CFLAGS = @CFLAGS@ -DDBI_DRIVER_DIR=\"@driverdir@\"
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../config.h
+ CONFIG_CLEAN_FILES = 

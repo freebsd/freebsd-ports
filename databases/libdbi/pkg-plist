@@ -40,4 +40,4 @@ lib/libdbi.so.0
 %%PORTDOCS%%@dirrm share/doc/libdbi/driver-guide
 %%PORTDOCS%%@dirrm share/doc/libdbi
 @dirrm include/dbi
-@dirrm lib/dbd
+@unexec rmdir %D/lib/dbd 2>/dev/null || true
