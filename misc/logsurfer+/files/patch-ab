@@ -1,0 +1,43 @@
+*** man/Makefile.in.orig	Sun Jul 28 10:27:38 1996
+--- man/Makefile.in	Sun Jul 28 10:28:18 1996
+***************
+*** 11,28 ****
+  logsurfer.1: logsurfer.1.in
+  	sed -e "s,@DUMPFILE@,$(DEF_DUMPFILE)," \
+  	-e "s,@CONFFILE@,$(DEF_CONFFILE)," < logsurfer.1.in > logsurfer.1
+  
+  logsurfer.conf.4: logsurfer.conf.4.in
+  	sed -e "s,@DUMPFILE@,$(DEF_DUMPFILE)," \
+  	-e "s,@CONFFILE@,$(DEF_CONFFILE)," < logsurfer.conf.4.in > logsurfer.conf.4
+  
+  install:
+! 	$(INSTALL_DATA) logsurfer.1 $(mandir)/man1/logsurfer.1
+! 	$(INSTALL_DATA) logsurfer.conf.4 $(mandir)/man4/logsurfer.conf.4
+  
+  clean:
+! 	$(RM) logsurfer.1 logsurfer.conf.4
+  
+  distclean:
+  	$(RM) Makefile
+! 	$(RM) logsurfer.1 logsurfer.conf.4
+--- 11,30 ----
+  logsurfer.1: logsurfer.1.in
+  	sed -e "s,@DUMPFILE@,$(DEF_DUMPFILE)," \
+  	-e "s,@CONFFILE@,$(DEF_CONFFILE)," < logsurfer.1.in > logsurfer.1
++ 	gzip -9fn logsurfer.1
+  
+  logsurfer.conf.4: logsurfer.conf.4.in
+  	sed -e "s,@DUMPFILE@,$(DEF_DUMPFILE)," \
+  	-e "s,@CONFFILE@,$(DEF_CONFFILE)," < logsurfer.conf.4.in > logsurfer.conf.4
++ 	gzip -9fn logsurfer.conf.4
+  
+  install:
+! 	$(INSTALL_DATA) logsurfer.1.gz $(mandir)/man1/logsurfer.1.gz
+! 	$(INSTALL_DATA) logsurfer.conf.4.gz $(mandir)/man4/logsurfer.conf.4.gz
+  
+  clean:
+! 	$(RM) logsurfer.1.gz logsurfer.conf.4.gz
+  
+  distclean:
+  	$(RM) Makefile
+! 	$(RM) logsurfer.1.gz logsurfer.conf.4.gz

@@ -1,0 +1,13 @@
+*** Makefile.in.orig	Sun Jul 28 10:17:10 1996
+--- Makefile.in	Sun Jul 28 10:16:55 1996
+***************
+*** 1,4 ****
+! # Makefile for logsurfer
+  # 
+  # Copyright (C) 1995 Wolfgang Ley (ley@cert.dfn.de)
+  #
+--- 1,4 ----
+! # Makefile for logsurfer 1.4
+  # 
+  # Copyright (C) 1995 Wolfgang Ley (ley@cert.dfn.de)
+  #
