@@ -1,0 +1,11 @@
+--- configure-	Wed Jul  5 16:18:19 2000
++++ configure	Wed Jul  5 16:18:32 2000
+@@ -4021,7 +4021,7 @@
+ 
+ cat >> $CONFIG_STATUS <<EOF
+ 
+-CONFIG_FILES=\${CONFIG_FILES-"Makefile samples/psk.txt samples/racoon.conf samples/remote.conf"}
++CONFIG_FILES=\${CONFIG_FILES-"Makefile samples/psk.txt samples/racoon.conf samples/remote.conf racoon.8"}
+ EOF
+ cat >> $CONFIG_STATUS <<\EOF
+ for ac_file in .. $CONFIG_FILES; do if test "x$ac_file" != x..; then

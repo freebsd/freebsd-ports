@@ -1,0 +1,22 @@
+--- Makefile.in.orig	Tue Jun 13 14:01:41 2000
++++ Makefile.in	Wed Jul  5 16:20:04 2000
+@@ -7,7 +7,7 @@
+ LDFLAGS=@LDFLAGS@
+ CPPFLAGS=	@CPPFLAGS@
+ OPTFLAG=@OPTFLAG@
+-CFLAGS=	@CFLAGS@ $(CPPFLAGS) @DEFS@ $(CPPFLAGS) $(OPTFLAG) -DIPSEC -I. -I$(srcdir) -Dss_family=__ss_family -Dss_len=__ss_len -DSYSCONFDIR=\"${sysconfdir}\"
++CFLAGS=	@CFLAGS@ $(CPPFLAGS) @DEFS@ $(CPPFLAGS) $(OPTFLAG) -DIPSEC -I. -I$(srcdir) -Dss_family=__ss_family -Dss_len=__ss_len -DSYSCONFDIR=\"${sysconfdir}/racoon\"
+ CFLAGS+=-DYY_NO_UNPUT
+ CFLAGS+=-I${srcdir}/../libipsec
+ LIBS=	@LIBS@
+@@ -79,10 +79,6 @@
+ 	$(INSTALL) -o bin -g bin -m 444 racoon.conf.5 $(mandir)/man5
+ 	-mkdir -p ${sysconfdir}/racoon
+ 	for i in $(CONF); do \
+-		if test ! -f ${sysconfdir}/racoon/$$i; then \
+-			$(INSTALL) -o bin -g bin -m 444 samples/$$i \
+-				${sysconfdir}/racoon; \
+-		fi; \
+ 		$(INSTALL) -o bin -g bin -m 444 samples/$$i \
+ 			${sysconfdir}/racoon/$$i.dist; \
+ 	done
