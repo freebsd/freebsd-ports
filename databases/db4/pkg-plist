@@ -2,7 +2,6 @@ bin/db4_archive
 bin/db4_checkpoint
 bin/db4_deadlock
 bin/db4_dump
-bin/db4_dump185
 bin/db4_load
 bin/db4_printlog
 bin/db4_recover
