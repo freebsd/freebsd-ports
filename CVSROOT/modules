@@ -10268,6 +10268,7 @@ snowlog		ports/sysutils/snowlog
 snownews	ports/www/snownews
 snowstar	ports/audio/snowstar
 sntop		ports/net/sntop
+snx101util	ports/graphics/snx101util
 socat		ports/net/socat
 socket		ports/sysutils/socket
 socketbind	ports/net/socketbind
