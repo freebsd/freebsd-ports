@@ -1,6 +1,6 @@
---- Makefile.in.orig	Thu Sep 30 14:47:21 2004
-+++ Makefile.in	Thu Sep 30 14:49:03 2004
-@@ -423,13 +423,13 @@
+--- Makefile.in.orig	Mon Jan 17 20:35:00 2005
++++ Makefile.in	Mon Jan 17 20:36:53 2005
+@@ -417,13 +417,13 @@
  sharedstatedir = @sharedstatedir@
  sysconfdir = @sysconfdir@
  target_alias = @target_alias@
@@ -11,21 +11,21 @@
  bin_SCRIPTS = xml2-config
  lib_LTLIBRARIES = libxml2.la
  libxml2_la_LIBADD = @THREAD_LIBS@ @Z_LIBS@ $(ICONV_LIBS) @M_LIBS@ @WIN32_EXTRA_LIBADD@
--libxml2_la_LDFLAGS = @CYGWIN_EXTRA_LDFLAGS@ @WIN32_EXTRA_LDFLAGS@ -version-info @LIBXML_VERSION_INFO@
-+libxml2_la_LDFLAGS = @CYGWIN_EXTRA_LDFLAGS@ @WIN32_EXTRA_LDFLAGS@ -version-info 5:0:0
+-libxml2_la_LDFLAGS = @CYGWIN_EXTRA_LDFLAGS@ @WIN32_EXTRA_LDFLAGS@ -version-info @LIBXML_VERSION_INFO@ @MODULE_PLATFORM_LIBS@
++libxml2_la_LDFLAGS = @CYGWIN_EXTRA_LDFLAGS@ @WIN32_EXTRA_LDFLAGS@ -version-info 5:0:0 @MODULE_PLATFORM_LIBS@
  @WITH_TRIO_SOURCES_FALSE@libxml2_la_SOURCES = SAX.c entities.c encoding.c error.c parserInternals.c  \
  @WITH_TRIO_SOURCES_FALSE@		parser.c tree.c hash.c list.c xmlIO.c xmlmemory.c uri.c  \
  @WITH_TRIO_SOURCES_FALSE@		valid.c xlink.c HTMLparser.c HTMLtree.c debugXML.c xpath.c  \
-@@ -506,7 +506,7 @@
- testReader_DEPENDENCIES = $(DEPS)
- testReader_LDADD = $(LDADDS)
+@@ -512,7 +512,7 @@
+ testapi_DEPENDENCIES = $(DEPS)
+ testapi_LDADD = $(LDADDS)
  CLEANFILES = xml2Conf.sh
 -confexecdir = $(libdir)
 +confexecdir = $(sysconfdir)
  confexec_DATA = xml2Conf.sh
  CVS_EXTRA_DIST = 
  EXTRA_DIST = xml2-config.in xml2Conf.sh.in libxml.spec.in libxml2.spec \
-@@ -528,8 +528,8 @@
+@@ -534,8 +534,8 @@
  # Install the tests program sources as examples 
  #
  BASE_DIR = $(datadir)/doc
@@ -36,7 +36,7 @@
  all: config.h
  	$(MAKE) $(AM_MAKEFLAGS) all-recursive
  
-@@ -1216,7 +1216,7 @@
+@@ -1246,7 +1246,7 @@
  check-am: all-am
  	$(MAKE) $(AM_MAKEFLAGS) check-local
  check: check-recursive
