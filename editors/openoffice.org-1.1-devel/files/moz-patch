@@ -1,0 +1,19 @@
+#iZ 28398
+#iZ 11424
+
+http://qa.openoffice.org/issues/show_bug.cgi?id=28398
+http://qa.openoffice.org/issues/show_bug.cgi?id=11424
+
+--- moz/extractfiles.mk.org	Sat Oct 30 22:01:49 2004
++++ moz/extractfiles.mk	Sat Oct 30 22:00:21 2004
+@@ -269,8 +269,8 @@
+ 	+$(COPY) /QSZ $(INCLUDE_PATH)* $(INCLUDE_DIR)
+ 	+$(COPY) /QSZ $(PUBLIC_PATH)* $(INCLUDE_DIR)
+ .ELSE
+-	+$(GNUCOPY) -pr $(INCLUDE_PATH)* $(INCLUDE_DIR)
+-	+$(GNUCOPY) -pr $(PUBLIC_PATH)* $(INCLUDE_DIR)
++	+$(GNUCOPY) -Lr $(INCLUDE_PATH)* $(INCLUDE_DIR)
++	+$(GNUCOPY) -Lr $(PUBLIC_PATH)* $(INCLUDE_DIR)
+ .ENDIF
+ 
+ .IF "$(GUI)"=="UNX"
