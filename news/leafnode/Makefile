@@ -6,16 +6,17 @@
 #
 
 PORTNAME=	leafnode
-PORTVERSION=	1.9.22
+PORTVERSION=	1.9.24
 CATEGORIES=	news
 MASTER_SITES=	ftp://wpxx02.toxi.uni-wuerzburg.de/pub/ \
 		http://www.Awfulhak.org/leafnode/ \
 		${MASTER_SITE_SUNSITE} \
 		ftp://ftp.karlsruhe.org/pub/news/servers/leafnode/ \
 		ftp://ftp.stikman.com/pub/leafnode/ \
-		ftp://ftp.gigabell.net/pub/leafnode/
+		ftp://ftp.gigabell.net/pub/leafnode/ \
+		http://www.dt.e-technik.uni-dortmund.de/~ma/leafnode/
 MASTER_SITE_SUBDIR=	system/news/transport
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}.rel
+DISTNAME=	${PORTNAME}-${PORTVERSION}.rel
 
 MAINTAINER=	brian@FreeBSD.org
 

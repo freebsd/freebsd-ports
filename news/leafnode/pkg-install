@@ -10,12 +10,12 @@ mkdir -p $SPOOLDIR/leaf.node
 mkdir -p $SPOOLDIR/message.id
 mkdir -p $SPOOLDIR/interesting.groups
 mkdir -p $SPOOLDIR/out.going
-chown news.news `dirname $LOCKFILE`
-chown news.news $SPOOLDIR $LIBDIR
-chown news.news $SPOOLDIR/leaf.node
-chown news.news $SPOOLDIR/message.id
-chown news.news $SPOOLDIR/interesting.groups
-chown news.news $SPOOLDIR/out.going
+chown news:news `dirname $LOCKFILE`
+chown news:news $SPOOLDIR $LIBDIR
+chown news:news $SPOOLDIR/leaf.node
+chown news:news $SPOOLDIR/message.id
+chown news:news $SPOOLDIR/interesting.groups
+chown news:news $SPOOLDIR/out.going
 cd $SPOOLDIR/message.id
 for a in 0 1 2 3 4 5 6 7 8 9 ; do
 	for b in 0 1 2 3 4 5 6 7 8 9 ; do
@@ -23,7 +23,7 @@ for a in 0 1 2 3 4 5 6 7 8 9 ; do
 			${a}${b}3 ${a}${b}4 ${a}${b}5 \
 			${a}${b}6 ${a}${b}7 ${a}${b}8 \
 			${a}${b}9
-		chown news.news ${a}${b}0 ${a}${b}1 ${a}${b}2 \
+		chown news:news ${a}${b}0 ${a}${b}1 ${a}${b}2 \
 			${a}${b}3 ${a}${b}4 ${a}${b}5 \
 			${a}${b}6 ${a}${b}7 ${a}${b}8 \
 			${a}${b}9 ; \
