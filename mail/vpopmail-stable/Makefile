@@ -7,6 +7,7 @@
 
 PORTNAME=	vpopmail
 PORTVERSION=	4.9.8
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.inter7.com/vpopmail/
 
@@ -30,6 +31,7 @@ CONFIGURE_ARGS=	--enable-qmail-dir=${QMAIL_DIR} \
 # Define these to change from the default behaviour
 #
 # WITH_PASSWD   - allow authentication off /etc/passwd
+# WITH_MYSQL	- allow authentitation via mysql
 # WITH_APOP     - allow apop authentication
 # WITHOUT_ROAMING - disallow roaming users
 #
@@ -37,6 +39,7 @@ CONFIGURE_ARGS=	--enable-qmail-dir=${QMAIL_DIR} \
 #
 # HARDQUOTA     - size of hard quota, or 'n' for no hard quota
 # RELAYCLEAR    - time in minutes before clearing relay hole (requires roaming)
+# DEFAULT_DOMAIN - default domain for non-vhost lookups
 # LOGLEVEL	- n - no logging, y - log all,
 #                 e - log errors, p - log passwords in errors
 # APOPFILE	- location of apop secrets file
@@ -82,6 +85,17 @@ CONFIGURE_ARGS+=	--enable-apop=y \
 .if !defined(WITHOUT_ROAMING)
 CONFIGURE_ARGS+=	--enable-roaming-users=y \
 			--enable-relay-clear-minutes=${RELAYCLEAR}
+.endif
+
+.if defined(WITH_MYSQL)
+LIB_DEPENDS+=		mysqlclient.10:${PORTSDIR}/databases/mysql323-client
+CONFIGURE_ARGS+=	--with-mysql=y \
+			--with-sqlincdir=${LOCALBASE}/include/mysql \
+			--with-sqllibdir=${LOCALBASE}/lib/mysql
+.endif
+
+.if defined(DEFAULT_DOMAIN)
+CONFIGURE_ARGS+=	--enable-default-domain=${DEFAULT_DOMAIN}
 .endif
 
 #
