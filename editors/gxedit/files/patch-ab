@@ -1,7 +1,18 @@
---- Makefile.orig	Mon Jul 13 02:13:34 1998
-+++ Makefile	Mon Jul 13 02:14:24 1998
-@@ -3 +3 @@
--CFLAGS = `gtk-config --cflags` -O
-+CFLAGS += `gtk-config --cflags`
-@@ -7 +6,0 @@
+--- Makefile.orig	Sat Aug 22 05:50:16 1998
++++ Makefile	Tue Aug 25 10:47:56 1998
+@@ -1,13 +1,12 @@
+ BIN_DIR =
+ INSTALL_DIR = /usr/X11R6/bin/
+-CFLAGS = `gtk-config --cflags` -I. -O -Wall
++CFLAGS += `gtk11-config --cflags`
+ GTKEDITOR_CFLAGS = -I../gtkeditor-0.0.2
+ GNOME_CFLAGS = -DUSE_GNOME
+-LIBS = `gtk-config --libs`
++LIBS = `gtk11-config --libs`
+ GNOME_LIBS = -lgnomesupport -lgnome -lgnomeui
+ OBJS = bindings.o gxedit.o net.o
+ GTKEDITOR_OBJS = ../gtkeditor-0.0.2/gtkeditor.o ../gtkeditor-0.0.2/regex.o
 -CC = gcc
+ 
+ all:
+ 	$(CC) -o .chk_config chk_config.c
