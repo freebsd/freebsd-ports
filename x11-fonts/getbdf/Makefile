@@ -18,6 +18,11 @@ USE_X_PREFIX=	yes
 NO_WRKSUBDIR=	yes
 ALL_TARGET=	getbdf
 
+pre-patch:
+	@${PERL} -pi -e 's,<malloc.h>,<stdlib.h>,' \
+		${WRKSRC}/Xargs.c ${WRKSRC}/getbdf.c
+
+
 do-install:
 	cd ${WRKSRC}; \
 	${INSTALL} -c -s -o ${BINOWN} -g ${BINGRP} -m ${BINMODE} getbdf ${PREFIX}/bin
