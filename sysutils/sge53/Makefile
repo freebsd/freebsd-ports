@@ -60,8 +60,8 @@ MAN8=		sge_commd.8 sge_execd.8 sge_qmaster.8 sge_schedd.8 \
 EXCEPTFILES=	arc_depend_irix.asc arc_depend_solaris.asc man
 
 .include <bsd.port.pre.mk>
-.if ARCH=alpha
-BROKEN=		Does not build on Alpha
+.if ${ARCH} == "alpha"
+BROKEN=		"Does not compile on alpha"
 .endif
 
 post-patch:
