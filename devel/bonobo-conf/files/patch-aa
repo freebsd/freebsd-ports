@@ -1,0 +1,6 @@
+--- macros/Makefile.in.orig	Fri Feb  9 04:08:41 2001
++++ macros/Makefile.in	Fri Feb  9 16:43:29 2001
+@@ -99,2 +99,2 @@
+ 
+-@INSIDE_GNOME_COMMON_TRUE@gnome_aclocaldir = $(datadir)/aclocal/gnome-macros
++@INSIDE_GNOME_COMMON_TRUE@gnome_aclocaldir = $(prefix)/share/aclocal/gnome-macros

@@ -1,0 +1,10 @@
+The Bonobo configuration moniker is built on top of GConf and
+provides a convenient way to handle configuration data.
+
+Features:
+ - provides persistent storage for configuration data
+ - able to store/edit arbitrary complex types - CORBA_any
+ - fully scriptable: everything is usable through the CORBA interfaces.
+ - easy to use
+
+WWW: http://www.gnome.org/
