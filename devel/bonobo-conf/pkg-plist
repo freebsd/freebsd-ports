@@ -1,9 +1,15 @@
 bin/bonobo-moniker-xmldb
 bin/cedit
 include/bonobo-conf/Bonobo_Config.h
+include/bonobo-conf/bonobo-config-control.h
 include/bonobo-conf/bonobo-config-database.h
 include/bonobo-conf/bonobo-config-utils.h
+include/bonobo-conf/bonobo-property-bag-proxy.h
+include/bonobo-conf/bonobo-property-editor.h
+include/bonobo-conf/bonobo-property-frame.h
+lib/bonobo/monikers/libmoniker_config.a
 lib/bonobo/monikers/libmoniker_config.so
+lib/bonobo/monikers/libmoniker_gconf.a
 lib/bonobo/monikers/libmoniker_gconf.so
 lib/bonobo_confConf.sh
 lib/libbonobo_conf.a
@@ -40,10 +46,9 @@ share/gnome/oaf/Bonobo_Moniker_config.oaf
 share/gnome/oaf/Bonobo_Moniker_gconf.oaf
 share/gnome/oaf/Bonobo_Moniker_xmldb.oaf
 share/locale/de/LC_MESSAGES/bonobo-conf.mo
+share/locale/sv/LC_MESSAGES/bonobo-conf.mo
 @dirrm share/gnome/bonobo-conf/html/bonobo-conf
 @dirrm share/gnome/bonobo-conf/html
 @dirrm share/gnome/bonobo-conf
 @dirrm share/aclocal/gnome-macros
-@dirrm lib/bonobo/monikers
-@dirrm lib/bonobo
 @dirrm include/bonobo-conf
