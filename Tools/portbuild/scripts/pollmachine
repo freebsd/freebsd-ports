@@ -1,0 +1,33 @@
+#!/bin/sh
+
+buildroot=/var/portbuild
+
+i=$1
+m=$2
+if [ "$3" = "-queue" ]; then
+  queue=1
+else
+  queue=0
+fi
+
+infoseek_host=$m
+infoseek_port=infoseek
+. ${buildroot}/${i}/portbuild.conf
+if [ -f ${buildroot}/${i}/portbuild.${m} ]; then
+  . ${buildroot}/${i}/portbuild.${m}
+fi
+if (/usr/local/bin/nc -w 5 ${infoseek_host} ${infoseek_port} > ${buildroot}/${i}/loads/$m < /dev/null); then
+  if [ "${queue}" = 1 ]; then
+    num=$(awk '{print $1}' ${buildroot}/${i}/loads/$m)
+    if [ "$num" -lt "${maxjobs}" ]; then
+      echo ${num} > ${buildroot}/${i}/queue/$m
+      chown ports-${i} ${buildroot}/${i}/queue/$m
+    else
+      rm -f ${buildroot}/${i}/queue/$m
+    fi
+  fi
+else
+    rm -f ${buildroot}/${i}/queue/$m
+    exit 1
+fi
+exit 0

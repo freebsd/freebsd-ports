@@ -1,0 +1,29 @@
+#!/bin/sh
+
+buildroot=/var/portbuild
+
+i=$1
+m=$2
+
+infoseek_host=$m
+infoseek_port=infoseek
+. ${buildroot}/${i}/portbuild.conf
+if [ -f ${buildroot}/${i}/portbuild.${m} ]; then
+  . ${buildroot}/${i}/portbuild.${m}
+fi
+
+q=${buildroot}/${i}/queue/$m
+if [ -f ${q} ]; then
+  num=$(cat $q)
+else
+  num=${maxjobs}
+fi
+
+if [ "$num" -gt 0 ]; then
+  echo $((${num}-1)) > $q
+else
+  echo 0 > $q
+fi
+
+chown ports-${i} ${q}
+exit 0
