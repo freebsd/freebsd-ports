@@ -17,6 +17,7 @@ LIB_DEPENDS=	sablot.70:${PORTSDIR}/textproc/sablotron
 
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 
 MAN1=		rtfx.1
 
@@ -24,6 +25,8 @@ MAN1=		rtfx.1
 
 .if ${OSVERSION} <= 500035
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-src::domhelpers.h-gcc295
+post-patch:
+	@${REINPLACE_CMD} -e "s///g" ${WRKSRC}/src/xmlcomposer.cpp
 .endif
 
 .include <bsd.port.post.mk>
