@@ -1,0 +1,43 @@
+share/doc/commons-pool/allclasses-frame.html
+share/doc/commons-pool/allclasses-noframe.html
+share/doc/commons-pool/constant-values.html
+share/doc/commons-pool/index-all.html
+share/doc/commons-pool/index.html
+share/doc/commons-pool/org/apache/commons/pool/BaseKeyedObjectPool.html
+share/doc/commons-pool/org/apache/commons/pool/BaseKeyedPoolableObjectFactory.html
+share/doc/commons-pool/org/apache/commons/pool/BaseObjectPool.html
+share/doc/commons-pool/org/apache/commons/pool/BasePoolableObjectFactory.html
+share/doc/commons-pool/org/apache/commons/pool/KeyedObjectPool.html
+share/doc/commons-pool/org/apache/commons/pool/KeyedObjectPoolFactory.html
+share/doc/commons-pool/org/apache/commons/pool/KeyedPoolableObjectFactory.html
+share/doc/commons-pool/org/apache/commons/pool/ObjectPool.html
+share/doc/commons-pool/org/apache/commons/pool/ObjectPoolFactory.html
+share/doc/commons-pool/org/apache/commons/pool/PoolableObjectFactory.html
+share/doc/commons-pool/org/apache/commons/pool/impl/GenericKeyedObjectPool.Config.html
+share/doc/commons-pool/org/apache/commons/pool/impl/GenericKeyedObjectPool.html
+share/doc/commons-pool/org/apache/commons/pool/impl/GenericKeyedObjectPoolFactory.html
+share/doc/commons-pool/org/apache/commons/pool/impl/GenericObjectPool.Config.html
+share/doc/commons-pool/org/apache/commons/pool/impl/GenericObjectPool.html
+share/doc/commons-pool/org/apache/commons/pool/impl/GenericObjectPoolFactory.html
+share/doc/commons-pool/org/apache/commons/pool/impl/SoftReferenceObjectPool.html
+share/doc/commons-pool/org/apache/commons/pool/impl/StackKeyedObjectPool.html
+share/doc/commons-pool/org/apache/commons/pool/impl/StackKeyedObjectPoolFactory.html
+share/doc/commons-pool/org/apache/commons/pool/impl/StackObjectPool.html
+share/doc/commons-pool/org/apache/commons/pool/impl/StackObjectPoolFactory.html
+share/doc/commons-pool/org/apache/commons/pool/impl/package-frame.html
+share/doc/commons-pool/org/apache/commons/pool/impl/package-summary.html
+share/doc/commons-pool/org/apache/commons/pool/package-frame.html
+share/doc/commons-pool/org/apache/commons/pool/package-summary.html
+share/doc/commons-pool/overview-frame.html
+share/doc/commons-pool/overview-summary.html
+share/doc/commons-pool/package-list
+share/doc/commons-pool/packages.html
+share/doc/commons-pool/serialized-form.html
+share/doc/commons-pool/stylesheet.css
+share/java/classes/commons-pool.jar
+@dirrm share/doc/commons-pool/org/apache/commons/pool/impl
+@dirrm share/doc/commons-pool/org/apache/commons/pool
+@dirrm share/doc/commons-pool/org/apache/commons
+@dirrm share/doc/commons-pool/org/apache
+@dirrm share/doc/commons-pool/org
+@dirrm share/doc/commons-pool
