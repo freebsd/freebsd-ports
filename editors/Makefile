@@ -23,6 +23,7 @@
     SUBDIR += bitmap
     SUBDIR += bitmap-emacs20
     SUBDIR += bitmap-mule
+    SUBDIR += bless
     SUBDIR += boiling-egg
     SUBDIR += bpatch
     SUBDIR += bvi
