@@ -57,6 +57,7 @@
     SUBDIR += bugsx
     SUBDIR += burgerspace
     SUBDIR += bzflag
+    SUBDIR += cardpics
     SUBDIR += cgoban
     SUBDIR += cgoban2
     SUBDIR += chromium
