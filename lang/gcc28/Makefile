@@ -12,6 +12,11 @@ CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	gcc
 
+.if defined(WANT_BOUNDS_CHECKING)
+PATCH_SITES=	http://web.inter.nl.net/hcc/Haj.Ten.Brugge/
+PATCHFILES=	bounds-checking-2.8.1-1.01.tar.gz
+.endif
+
 MAINTAINER=	obrien@FreeBSD.org
 
 NO_CDROM=	'old version, not worth the cost in real estate'
