@@ -22,7 +22,7 @@ USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
 
 post-extract:
-	@${REINPLACE_CMD} -e 's|gcc|${CC}|g' ${WRKSRC}/build
+	@${REINPLACE_CMD} -e 's|gcc|${CC} ${CFLAGS}|g' ${WRKSRC}/build
 
 do-build:
 	@cd ${WRKSRC} && ./build
