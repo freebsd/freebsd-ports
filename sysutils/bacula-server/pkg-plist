@@ -1,4 +1,4 @@
-%%DATADIR%%/bacula/query.sql
+%%DATADIR%%/query.sql
 etc/rc.d/bacula.sh.sample
 sbin/chio-bacula
 sbin/bacula-dir
