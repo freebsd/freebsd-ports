@@ -4491,6 +4491,7 @@ p5-HTTPD-Tools	ports/www/p5-HTTPD-Tools
 p5-Heap		ports/devel/p5-Heap
 p5-I18N-Charset	ports/misc/p5-I18N-Charset
 p5-I18N-LangTags	ports/misc/p5-I18N-LangTags
+p5-IC-Radius	ports/net/p5-IC-Radius
 p5-IMAP-Admin	ports/mail/p5-IMAP-Admin
 p5-IO		ports/devel/p5-IO
 p5-IO-Interface	ports/net/p5-IO-Interface
