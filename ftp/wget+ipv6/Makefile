@@ -46,7 +46,7 @@ post-patch:
 # convert utf-8 to Big5 for FreeBSD's default old fashioned gettext.
 	(cd ${WRKSRC}; \
 	${MV} po/zh_TW.po po/zh_TW.po.utf-8; \
-	${LOCALBASE}/bin/giconv -f UTF-8 -t BIG5 po/zh_TW.po.utf-8 |\
+	${LOCALBASE}/bin/iconv -f UTF-8 -t BIG5 po/zh_TW.po.utf-8 |\
 		${SED} -e 's/utf-8/big5/' |\
 		${PERL} -p -e 's{([\x81-\xfe])\\}{$$1\\\\}g' |\
 		${PERL} -p -e 's,\\\\([nt\"]),\\$$1,g' \
