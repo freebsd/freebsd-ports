@@ -4857,6 +4857,7 @@ opera		ports/www/opera
 ophoto		ports/graphics/ophoto
 opmixer		ports/audio/opmixer
 oproute		ports/net/oproute
+optipng		ports/graphics/optipng
 oqtencoder	ports/multimedia/oqtencoder
 oqtplayer	ports/multimedia/oqtplayer
 oracle7-client	ports/databases/oracle7-client
