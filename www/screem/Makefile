@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	screem
-PORTVERSION= 	0.2.8
+PORTVERSION= 	0.2.10
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.screem.org/src/
@@ -36,7 +36,14 @@ CONFIGURE_ENV=	GTK_CONFIG="${GTK_CONFIG}" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share/gnome \
-		--datadir=${PREFIX}/share \
-		--libdir=${PREFIX}/share
+		--datadir=${PREFIX}/share/gnome \
+		--libdir=${PREFIX}/share/gnome
+
+post-extract:
+	@${PERL} -pi -e 's|-lpthread|-pthread|g ; \
+		s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
+	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
+		's|\@GNOME_DATA_PREFIX\@/gnome|\@GNOME_DATA_PREFIX\@|g ; \
+		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g'
 
 .include <bsd.port.mk>
