@@ -7,7 +7,7 @@
 
 PORTNAME=	qscheme
 PORTVERSION=	0.5.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://www.sof.ch/dan/qscheme/files/
 
@@ -44,10 +44,6 @@ post-patch:
 BUILD_DEPENDS+= ${LOCALBASE}/include/gmp.h:${PORTSDIR}/math/libgmp4
 CONFIGURE_ARGS+= --with-gmp-lib=${LOCALBASE}/lib \
 		--with-gmp-inc=${LOCALBASE}/include
-.endif
-
-.if ${OSVERSION} >= 502102
-FORBIDDEN=	"Does not respect PTHREAD_{CFLAGS,LIBS}"
 .endif
 
 .include <bsd.port.post.mk>
