@@ -32,3 +32,4 @@ MD5 (squid2.5/squid-2.5.STABLE4-redirlog.patch) = 8a2cc15f2bde6fa263a9e40aae807f
 MD5 (squid2.5/squid-2.5.STABLE4-pinger.patch) = 0902849d051873aaf5f54584d0536bb5
 MD5 (squid2.5/squid-2.5.STABLE4-partial_reload.patch) = 6d8fa663f46ffc2272b7d18a0b6eea34
 MD5 (squid2.5/squid-2.5.STABLE4-ldap_tls.patch) = dcd6b4ec46e252833a54c4bfd155c284
+MD5 (squid2.5/squid-2.5.STABLE4-ldap_group_bufsize.patch) = e42207a45232ca739a64f2ac3901263c
