@@ -18,7 +18,8 @@ BROKEN= "The source tarball no longer resides on alpha.gnu.org and\
 	http://subversions.gnu.org/cgi-bin/cvsweb/gfe/"
 
 GNU_CONFIGURE=	yes
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 USE_XPM=	yes
 
 NO_MAN=
