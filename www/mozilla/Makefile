@@ -7,15 +7,12 @@
 
 PORTNAME?=	mozilla
 PORTVERSION=	1.6
-PORTREVISION?=	2
+PORTREVISION?=	3
 PORTEPOCH?=	2
 CATEGORIES?=	www
-MASTER_SITES=	${MASTER_SITE_MOZILLA} \
-		${MASTER_SITE_LOCAL:S/$/:local/}
-MASTER_SITE_SUBDIR=	mozilla/releases/${PORTNAME}${PORTVERSION}/src \
-		marcus/:local
-DISTFILES=	${PORTNAME}-source-${PORTVERSION}${EXTRACT_SUFX} \
-		libart_lgpl${EXTRACT_SUFX}:local
+MASTER_SITES=	${MASTER_SITE_MOZILLA}
+MASTER_SITE_SUBDIR=	mozilla/releases/${PORTNAME}${PORTVERSION}/src
+DISTFILES=	${PORTNAME}-source-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	The open source, standards compliant web browser
@@ -117,7 +114,8 @@ MOZ_EXTENSIONS:=	${MOZ_EXTENSIONS},irc
 MOZ_EXTENSIONS:=	${MOZ_EXTENSIONS},xmlterm
 .endif
 CONFIGURE_ARGS+=	--enable-extensions=${MOZ_EXTENSIONS}
-CONFIGURE_ENV=	MOZ_INTERNAL_LIBART_LGPL=1
+CONFIGURE_ENV=	MOZ_INTERNAL_LIBART_LGPL=1 \
+		LOCALBASE=${LOCALBASE}
 
 .if defined(WITH_JAVASCRIPT_DEBUGGER)
 CONFIGURE_ARGS+=	--enable-jsd \
@@ -128,7 +126,6 @@ CONFIGURE_ARGS+=	--disable-jsd \
 .endif
 
 .if defined(WITH_CALENDAR)
-CONFIGURE_ENV+=		LIBS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS+=	--enable-calendar
 .endif
 
@@ -148,11 +145,13 @@ CONFIGURE_ARGS+=	--enable-xft
 CONFIGURE_ARGS+=	--disable-xft
 .endif
 
+ESD_LIB=	libesd.so.2
+FREETYPE_LIB=	libfreetype.so.9
 PKGCONFIG_FILES=mozilla-gtkmozembed mozilla-js mozilla-xpcom \
 		mozilla-nspr mozilla-nss mozilla-plugin
 
 # JPI stuff.  List paths to Java Plug-ins here in the order to try.
-JPI_LIST=\
+JPI_LIST?=\
 	${LOCALBASE}/jdk1.4.2/jre/plugin/${ARCH}/ns610/libjavaplugin_oji.so \
 	${LOCALBASE}/jdk1.4.1/jre/plugin/${ARCH}/ns610/libjavaplugin_oji.so \
 	${LOCALBASE}/diablo-jdk1.3.1/jre/plugin/${ARCH}/ns600/libjavaplugin_oji.so \
@@ -208,7 +207,8 @@ post-patch:
 			${WRKSRC}/config/autoconf.mk.in
 	@${FIND} ${WRKSRC}/other-licenses/libical -name "*.c" | ${XARGS} \
 		${REINPLACE_CMD} 's|<malloc.h>|<stdlib.h>|g'
-	@${REINPLACE_CMD} -e 's|-lc_r|${PTHREAD_LIBS}|g' \
+	@${REINPLACE_CMD} -e 's|-lc_r|${PTHREAD_LIBS}|g ; \
+		s|-lpthread|${PTHREAD_LIBS}|g' \
 		${WRKSRC}/configure \
 		${WRKSRC}/nsprpub/configure
 	@${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_LIBS}|g' \
@@ -216,6 +216,17 @@ post-patch:
 		${WRKSRC}/security/coreconf/FreeBSD.mk \
 		${WRKSRC}/directory/c-sdk/config/FreeBSD.mk \
 		${WRKSRC}/js/src/Makefile.in
+	@${REINPLACE_CMD} -e 's|libesd\.so\.0|${ESD_LIB}|g' \
+		${WRKSRC}/widget/src/gtk2/nsSound.cpp
+	@${REINPLACE_CMD} -e '/accessibility.typeaheadfind.enablesound/s/true/false/' \
+		${WRKSRC}/modules/libpref/src/init/all.js \
+		${WRKSRC}/calendar/sunbird/app/profile/all.js
+	@${REINPLACE_CMD} -e 's|<iconv.h>|\"${LOCALBASE}/include/iconv.h\"|g' \
+		${WRKSRC}/configure \
+		${WRKSRC}/intl/uconv/native/nsNativeUConvService.cpp \
+		${WRKSRC}/xpcom/io/nsNativeCharsetUtils.cpp
+	@${REINPLACE_CMD} -e 's|libfreetype.so.6|${FREETYPE_LIB}|g' \
+		${WRKSRC}/modules/libpref/src/init/all.js
 	@for pcfile in ${PKGCONFIG_FILES}; do \
 		${REINPLACE_CMD} -e 's|mozilla-xpcom|mozilla-xpcom${MOZ_SUFX}${PKGNAMESUFFIX}|g ; \
 			s|mozilla-nspr|mozilla-nspr${MOZ_SUFX}${PKGNAMESUFFIX}|g' \
