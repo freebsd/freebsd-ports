@@ -1,0 +1,7 @@
+proFXP is a FXP (server-to-server FTP) client written in Perl. It features
+TAB completion, site management, idle timers, SOCKS support, active and
+passive mode, different listing modes and a very powerful "down-to-the
+protocol metal" 2-char-command command line interface, pleasing newbies and
+hardcore hackers alike.
+
+WWW: http://duncanthrax.net/profxp/

@@ -42,6 +42,7 @@
     SUBDIR += paraget
     SUBDIR += pavuk
     SUBDIR += proftpd
+    SUBDIR += profxp
     SUBDIR += puf
     SUBDIR += pure-ftpd
     SUBDIR += ruby-curl
