@@ -10,8 +10,7 @@ PORTVERSION=	2.0.19.40
 PORTREVISION=1
 CATEGORIES=	audio net
 MASTER_SITES=	ftp://ftp2.teamspeak.org/releases/ \
-		http://www.teamspeak.org/files/ \
-		http://www.gsoft.com.au/~doconnor/
+		ftp://teamspeak.krawall.de/releases/
 DISTNAME=	ts2_server_rc2_201940
 
 MAINTAINER=	darius@dons.net.au
