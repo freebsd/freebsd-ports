@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	cce2k
 DISTNAME=	${PORTNAME}-${PORTVERSION}-02132004-dist
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	statue@freebsd.netlab.cse.yzu.edu.tw
 COMMENT=	Console CJK Environment
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
