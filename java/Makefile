@@ -137,6 +137,7 @@
     SUBDIR += sun-wtk
     SUBDIR += trove4j
     SUBDIR += tya
+    SUBDIR += westhawksnmp
     SUBDIR += xdoclet
 
 .include <bsd.port.subdir.mk>
