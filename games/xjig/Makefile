@@ -3,7 +3,7 @@
 # Date Created:		17 Sep 1997
 # Whom:			Vanilla I. Shu <vanilla@MinJe.com.TW>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/11/18 09:27:00 tg Exp $
 #
 
 DISTNAME=	xjig-2.4
@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	games
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	vanilla@MinJe.com.TW
+MAINTAINER=	vanilla@FreeBSD.ORG
 
 MAKEFILE=	Makefile.Linux
 MAN1=		xjig.1
