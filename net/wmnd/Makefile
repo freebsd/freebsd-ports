@@ -6,33 +6,29 @@
 #
 
 PORTNAME=	wmnd
-PORTVERSION=	0.3.3
+PORTVERSION=	0.4.1
 CATEGORIES=	net
-MASTER_SITES=	http://www.wingeer.org/wmnd/pkg/
-DISTNAME=	wmnd_${PORTVERSION}
+MASTER_SITES=	http://www.hydra.ubiest.com/wmnd/releases/
 
 MAINTAINER=	flag@gufi.org
 
-WRKSRC= 	${WRKDIR}/wmnd
+BUILD_DEPENDS=	automake14:${PORTSDIR}/devel/automake14
+
 USE_X_PREFIX=	yes
-USE_GMAKE=	yes
 USE_XPM=	yes
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--datadir=${EXAMPLESDIR}
 
 MAN1=		wmnd.1
 
-do-install:
-	@${MKDIR} ${PREFIX}/share/examples/${PORTNAME}
-	@${INSTALL_PROGRAM} ${WRKSRC}/wmnd ${PREFIX}/bin
-	@${INSTALL_MAN} ${WRKSRC}/man/wmnd.1 ${PREFIX}/man/man1
-	@${INSTALL_DATA} ${WRKSRC}/wmndrc \
-		${PREFIX}/share/examples/${PORTNAME}
-
-post-install:
-.if !defined(NOPORTDOCS)
-.for docs in CHANGELOGS DISPLAY HINTS README
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/${docs} ${DOCSDIR}
+pre-patch:
+.for m in Makefile.in doc/Makefile.in examples/Makefile.in src/Makefile.in
+	@${PERL} -pi -e 's|\@program_transform_name\@||' ${WRKSRC}/${m}
 .endfor
-.endif
+.for files in install-sh config.sub mkinstalldirs
+	@${LN} -sf ${LOCALBASE}/share/automake14/automake/${files} \
+		${WRKSRC}/${files}
+.endfor
 
 .include <bsd.port.mk>
