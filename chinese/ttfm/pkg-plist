@@ -3,6 +3,7 @@ bin/ttfm.sh
 share/doc/ttfm/README
 share/doc/ttfm/USAGE
 share/ttfm/chitex.ttfm.nop
+share/ttfm/ghostscript6.ttfm
 share/ttfm/ttf2pk.ttfm.nop
 share/ttfm/xttfm-tcl.ttfm.nop
 share/ttfm/xfreetype.ttfm
