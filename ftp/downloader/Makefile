@@ -6,23 +6,21 @@
 #
 
 PORTNAME=	downloader
-PORTVERSION=	1.20
-PORTREVISION=	1
+PORTVERSION=	1.21
 CATEGORIES=	ftp
 MASTER_SITES=	http://www.krasu.ru/soft/chuchelo/files/ \
 		ftp://ftp.server51.freshmeat.net/pub/d4x/ \
 		ftp://ftp.chg.ru/pub/X11/applications/Xdownloader/
 DISTNAME=	nt-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ijliao@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/main
 
 USE_GTK=	yes
 USE_GMAKE=	yes
 MAKE_ENV=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" DEST="${PREFIX}" \
-		GTKCONFIG="${GTK_CONFIG}" MAKE="${GMAKE}" \
-		MSGFMT_CMD="${LOCALBASE}/bin/msgfmt" PTHREAD=-pthread
+		OSTYPE="${OPSYS}" MAKE_CMD="${GMAKE}"
 MAN1=		nt.1
 
 PORTDOCS=	ChangeLog FAQ FAQ.de FAQ.es FAQ.fr FAQ.gr LICENSE     \
