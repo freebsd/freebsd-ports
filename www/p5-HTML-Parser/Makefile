@@ -3,7 +3,7 @@
 # Date Created:				28 April 1998
 # Whom:					Vanilla I. Shu <vanilla@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.5 1998/08/06 15:07:46 vanilla Exp $
+# $Id: Makefile,v 1.6 1998/08/19 12:41:20 vanilla Exp $
 #
 
 DISTNAME=	HTML-Parser-2.20
@@ -26,6 +26,6 @@ MAN3=		HTML::Entities.3 \
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 do-configure:
-		@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PREFIX}/bin/perl Makefile.PL
+		@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 # Date created:				May 5th 1997
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.1.1.1 1997/06/27 01:53:13 jfitz Exp $
+#   $Id: Makefile,v 1.2 1998/04/30 02:56:57 asami Exp $
 #
 
 DISTNAME=	SNMP-1.6
@@ -21,7 +21,7 @@ BROKEN=		build
 USE_PERL5=	YES
 
 do-configure:
-		@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PREFIX}/bin/perl Makefile.PL
+		@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL
 
 post-install:
 		@ ${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/lib/perl5/site_perl/README.SNMP

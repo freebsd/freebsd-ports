@@ -3,7 +3,7 @@
 # Date created:         19 Apr 1997
 # Whom:                 Choi Jun Ho <junker@jazz.snu.ac.kr>
 #
-# $Id: Makefile,v 1.2 1997/07/18 05:04:14 asami Exp $
+# $Id: Makefile,v 1.3 1997/09/22 16:22:12 max Exp $
 #
 
 DISTNAME=	nhppf-1.2
@@ -20,7 +20,7 @@ RUN_DEPENDS=    ${PREFIX}/share/fonts/HLaTeX-0.95-pfb:$(PORTSDIR)/korean/hlatexp
 
 do-configure:
 	@cd ${WRKSRC}; \
-	${ECHO_MSG} "#!${PREFIX}/bin/perl5.003" > scriptheader; \
+	${ECHO_MSG} "#!${PERL5}" > scriptheader; \
 	${CAT} scriptheader nhppf > nhppf.new
 
 do-install:

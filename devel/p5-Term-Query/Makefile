@@ -3,7 +3,7 @@
 # Date created:				21 May 1998
 # Whom:	      				Garrett Wollman <wollman@lcs.mit.edu>
 #
-# $Id: Makefile,v 1.1.1.1 1998/05/22 02:07:30 mph Exp $
+# $Id: Makefile,v 1.2 1998/08/12 09:57:57 asami Exp $
 #
 
 DISTNAME=	Term-Query-2.0
@@ -22,6 +22,6 @@ MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Term::Query.3
 
 do-configure:
-		@cd ${WRKSRC}; ${SETENV} ${CONFIGURE_ENV} ${PREFIX}/bin/perl Makefile.PL
+		@cd ${WRKSRC}; ${SETENV} ${CONFIGURE_ENV} ${PERL5} Makefile.PL
 
 .include <bsd.port.mk>

@@ -11,7 +11,7 @@ fi
 
 case "$1" in
   -d) shift
-      exec ${PREFIX}/bin/perl5 ${SIRCLIB}/dsirc "$@"
+      exec ${PERL5} ${SIRCLIB}/dsirc "$@"
       ;;
-  *)  eval exec ${PREFIX}/bin/ssfe $SSFE ${PREFIX}/bin/perl5 ${SIRCLIB}/dsirc \"\$@\"
+  *)  eval exec ${PREFIX}/bin/ssfe $SSFE ${PERL5} ${SIRCLIB}/dsirc \"\$@\"
 esac

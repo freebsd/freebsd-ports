@@ -3,7 +3,7 @@
 # Date created:         8 May 1998
 # Whom:                 Donald Burr <dburr@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.2 1998/05/30 12:36:19 dburr Exp $
+# $Id: Makefile,v 1.3 1998/07/06 14:13:54 dburr Exp $
 #
 
 DISTNAME=	SMA
@@ -25,7 +25,7 @@ do-extract:
 	@${MKDIR} ${WRKDIR}
 
 pre-configure:
-	@${SED} -e '1,1s:/usr/bin/perl:${PREFIX}/bin/perl5.00404:' \
+	@${SED} -e '1,1s:/usr/bin/perl:${PERL5}:' \
 		-e '/\$debug = 3/s//\$debug = 0/' \
 		${DISTDIR}/SMA.pl > ${WRKDIR}/sma
 

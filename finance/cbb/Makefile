@@ -3,7 +3,7 @@
 # Date created:			14 September, 1997
 # Whom:				kline
 #
-# $Id: Makefile,v 1.5 1998/08/07 23:56:13 asami Exp $
+# $Id: Makefile,v 1.6 1998/08/08 00:20:19 asami Exp $
 #
 
 DISTNAME=	cbb-0.73
@@ -20,6 +20,7 @@ LIB_DEPENDS=    tk42\\.1\\.:${PORTSDIR}/x11-toolkits/tk42
 
 NO_BUILD=       yes
 USE_PERL5=	yes
+MAKE_ENV=	PERL5=${PERL5}
 
 pre-configure:
 	${MV} ${WRKSRC}/install.pl ${WRKSRC}/install.pl.in

@@ -3,7 +3,7 @@
 # Date created:				17 January 1998
 # Whom:					Matthew Hunt <mph@pobox.com>
 #
-# $Id: Makefile,v 1.1.1.1 1998/03/01 18:11:27 obrien Exp $
+# $Id: Makefile,v 1.2 1998/04/17 23:26:26 mph Exp $
 
 DISTNAME=	dnswalk-2.0.2
 CATEGORIES=	net
@@ -24,7 +24,7 @@ DOC_DIR=	${PREFIX}/share/doc/dnswalk
 
 pre-configure:
 	${MV} -f ${WRKDIR}/dnswalk ${WRKDIR}/dnswalk.orig
-	${SED} -e "s#/usr/contrib/bin/perl#${PREFIX}/bin/perl#"\
+	${SED} -e "s#/usr/contrib/bin/perl#${PERL5}#"\
 		 < ${WRKDIR}/dnswalk.orig > ${WRKDIR}/dnswalk
 
 do-install:

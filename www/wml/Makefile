@@ -3,7 +3,7 @@
 # Date created:		09-Sep-1997
 # Whom:			Ralf S. Engelschall <rse@engelschall.com>
 #
-# $Id: Makefile,v 1.23 1998/08/25 00:16:46 asami Exp $
+# $Id: Makefile,v 1.24 1998/08/25 11:18:06 rse Exp $
 #
 
 DISTNAME=	wml-1.6.7
@@ -18,7 +18,7 @@ MAINTAINER=	rse@engelschall.com
 USE_PERL5=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
-		--with-perl=${PREFIX}/bin/perl
+		--with-perl=${PERL5}
 
 CAT1=	wml_aux_linklint.1 wml_aux_txt2html.1 \
 	wml_aux_wwwtable.1 wml_p2_mhc.1 wml_p4_gm4.1

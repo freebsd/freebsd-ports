@@ -3,7 +3,7 @@
 # Date created:		22 December 1996
 # Whom:			jmz
 #
-# $Id: Makefile,v 1.7 1998/01/27 02:25:21 jmz Exp $
+# $Id: Makefile,v 1.8 1998/08/23 13:54:06 jseger Exp $
 #
 
 DISTNAME=       PGPLOT-2.08
@@ -22,7 +22,7 @@ MAN3=	ExtUtils::F77.3 PGPLOT.3
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 do-configure:
-	@cd ${WRKSRC} && ${PREFIX}/bin/perl Makefile.PL
+	@cd ${WRKSRC} && ${PERL5} Makefile.PL
 
 post-install:
 	@${MKDIR} ${PREFIX}/share/doc/pgperl

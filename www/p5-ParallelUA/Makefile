@@ -4,7 +4,7 @@
 # Date created:                         Sep 8 1998
 # Whom:                                 ache@freebsd.org
 #
-# $Id: Makefile,v 1.20 1998/08/19 13:09:15 vanilla Exp $
+# $Id: Makefile,v 1.1.1.1 1998/09/08 17:25:20 ache Exp $
 #
 
 DISTNAME=       ParallelUserAgent-2.36
@@ -30,6 +30,6 @@ MAN3=           LWP::Parallel.3 \
 		LWP::RobotPUA.3
 
 do-configure:
-		@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PREFIX}/bin/perl Makefile.PL
+		@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL
 
 .include <bsd.port.mk>

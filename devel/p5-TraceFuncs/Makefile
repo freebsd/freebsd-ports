@@ -3,7 +3,7 @@
 # Date created:				June 26th 1997
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.ORG>
 #
-#   $Id: Makefile,v 1.1.1.1 1997/06/27 01:57:29 jfitz Exp $
+#   $Id: Makefile,v 1.2 1998/08/12 09:57:59 asami Exp $
 #
 
 DISTNAME=	traceFunc-0.1
@@ -20,6 +20,6 @@ MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Devel::TraceFuncs.3
 
 do-configure:
-		@cd ${WRKSRC}; ${SETENV} ${CONFIGURE_ENV} ${PREFIX}/bin/perl Makefile.PL
+		@cd ${WRKSRC}; ${SETENV} ${CONFIGURE_ENV} ${PERL5} Makefile.PL
 
 .include <bsd.port.mk>

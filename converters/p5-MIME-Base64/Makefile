@@ -3,7 +3,7 @@
 # Date created:                         June 21th 1997
 # Whom:                                 ache@freebsd.org
 #
-# $Id: Makefile,v 1.6 1998/08/06 15:11:36 vanilla Exp $
+# $Id: Makefile,v 1.7 1998/08/19 13:14:57 vanilla Exp $
 #
 
 DISTNAME=       MIME-Base64-2.06
@@ -21,6 +21,6 @@ MAN3=           MIME::Base64.3 \
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 do-configure:
-		@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PREFIX}/bin/perl Makefile.PL
+		@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL
 
 .include <bsd.port.mk>

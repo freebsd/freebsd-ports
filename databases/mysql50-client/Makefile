@@ -3,7 +3,7 @@
 # Date created:				26 Jan 1998
 # Whom:					Josh Tiefenbach <josh@ican.net>
 #
-# $Id$
+# $Id: Makefile,v 1.26 1998/09/06 19:58:25 andreas Exp $
 #
 
 DISTNAME=	mysql-3.22.6-alpha
@@ -25,8 +25,8 @@ CONFIGURE_ARGS=	--localstatedir=/var/db/mysql \
 		--without-debug \
 		--without-readline \
 		--without-bench
-CONFIGURE_ENV+=	PERL=${PREFIX}/bin/perl \
-		PERL5=${PREFIX}/bin/perl5 \
+CONFIGURE_ENV+=	PERL=${PERL5} \
+		PERL5=${PERL5} \
 		INSTALL_SCRIPT="${INSTALL_SCRIPT}"
 
 OSVERSION!=	sysctl -n kern.osreldate
@@ -62,7 +62,7 @@ pre-install:
 .if defined(PACKAGE_BUILDING)
 	@ ${RM} -rf /var/db/mysql
 .endif
-	@ ${SETENV} ${MAKE_ENV} ${PREFIX}/bin/perl ${SCRIPTDIR}/check_old_version
+	@ ${SETENV} ${MAKE_ENV} ${PERL5} ${SCRIPTDIR}/check_old_version
 
 post-install:
 	${MKDIR} ${PREFIX}/share/mysql/mysql

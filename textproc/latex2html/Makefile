@@ -3,7 +3,7 @@
 # Date created:		3 May 1998
 # Whom:			brett@peloton.physics.montana.edu
 #
-# $Id: Makefile,v 1.2 1998/05/05 03:59:28 mph Exp $
+# $Id: Makefile,v 1.3 1998/05/05 05:14:03 mph Exp $
 #
 
 DISTNAME=	latex2html-98.1p1
@@ -13,7 +13,7 @@ MASTER_SITES=	http://www-dsed.llnl.gov/files/programs/unix/latex2html/sources/ \
 
 MAINTAINER=	brett@peloton.physics.montana.edu
 
-RUN_DEPENDS=	${PREFIX}/bin/perl:${PORTSDIR}/lang/perl5 \
+RUN_DEPENDS=	${PERL5}:${PORTSDIR}/lang/perl5 \
 		${PREFIX}/bin/latex:${PORTSDIR}/print/latex \
 		${PREFIX}/bin/dvips:${PORTSDIR}/print/dvips \
 		${PREFIX}/bin/gs:${PORTSDIR}/print/ghostscript5 \
@@ -42,7 +42,7 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/texinputs/* ${PREFIX}/share/texmf/tex/latex/latex2html
 
 post-install:
-	@cd ${PREFIX}/share/latex2html && env LATEX2HTMLDIR=${PREFIX}/share/latex2html ${PREFIX}/bin/perl ${PREFIX}/share/latex2html/install-test
+	@cd ${PREFIX}/share/latex2html && env LATEX2HTMLDIR=${PREFIX}/share/latex2html ${PERL5} ${PREFIX}/share/latex2html/install-test
 	@${INSTALL_SCRIPT} ${PREFIX}/share/latex2html/latex2html ${PREFIX}/bin
 	@${ECHO_MSG} "********************************************************"
 	@${ECHO_MSG} "Latex2html has now been installed with a very basic"

@@ -3,7 +3,7 @@
 # Date created: January 2, 1998
 # Whom: Don Croyle <croyle@gelemna.ft-wayne.in.us>
 #
-# $Id: Makefile,v 1.1.1.1 1998/05/04 15:11:40 mph Exp $
+# $Id: Makefile,v 1.2 1998/08/16 19:47:05 hoek Exp $
 #
 
 DISTNAME=		Gateway-0.42
@@ -23,6 +23,6 @@ MAN3=			News::Gateway.3
 MANPREFIX=		${PREFIX}/lib/perl5/${PERL_VERSION}
 
 do-configure:
-	@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PREFIX}/bin/perl Makefile.PL
+	@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL
 
 .include <bsd.port.mk>

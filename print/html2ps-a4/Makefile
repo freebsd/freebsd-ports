@@ -3,7 +3,7 @@
 # Date created:		Sat Nov 22 12:54:50 CET 1997
 # Whom:			andreas
 #
-# $Id: Makefile,v 1.1.1.1 1998/05/17 20:14:39 andreas Exp $
+# $Id: Makefile,v 1.2 1998/08/31 13:16:21 asami Exp $
 #
 
 DISTNAME=	html2ps-1.0b1
@@ -30,6 +30,6 @@ MAN1=		html2ps.1
 MAN5=		html2psrc.5
 
 do-install:
-	@cd ${WRKSRC}; ${PREFIX}/bin/perl5 install
+	@cd ${WRKSRC}; ${PERL5} install
 
 .include <bsd.port.mk>

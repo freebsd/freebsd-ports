@@ -3,7 +3,7 @@
 # Date Created:				Aug 14 1997
 # Whom:					Sander Vesik <sander@haldjas.folklore.ee>
 #
-# $Id: Makefile,v 1.2 1997/11/25 08:14:01 asami Exp $
+# $Id: Makefile,v 1.3 1998/08/23 04:00:47 jseger Exp $
 
 DISTNAME=		Math-MatrixReal-1.2
 PKGNAME=		p5-MatrixReal-1.2
@@ -19,6 +19,6 @@ MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=	Math::MatrixReal.3 Math::Kleene.3
 
 do-configure:
-	@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PREFIX}/bin/perl Makefile.PL
+	@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 # Date created:		So  21 Jun 1998 16:09:39 CEST
 # Whom:			Stefan Herrmann <stefan@asterix.webaffairs.net>
 #
-# $Id: Makefile,v 1.53 1998/09/01 21:04:57 andreas Exp $
+# $Id: Makefile,v 1.54 1998/09/13 17:18:11 andreas Exp $
 #
 
 DISTNAME=	apache_${APACHE_VER}
@@ -40,7 +40,7 @@ CONFIGURE_ARGS= \
 		 --enable-module=most \
 		 --enable-module=auth_db \
 		 --disable-module=auth_dbm \
-		 --with-perl=${PREFIX}/bin/perl5 \
+		 --with-perl=${PERL5} \
 		 --activate-module=src/modules/php3/libphp3.a
 
 OPTIM=-DHARD_SERVER_LIMIT=512 \

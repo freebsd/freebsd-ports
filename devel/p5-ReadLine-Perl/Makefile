@@ -3,7 +3,7 @@
 # Date created:				20 February 1998
 # Whom:	      				Matthew Hunt <mph@pobox.com>
 #
-# $Id: Makefile,v 1.1.1.1 1998/04/17 20:57:27 mph Exp $
+# $Id: Makefile,v 1.2 1998/04/22 21:39:13 mph Exp $
 #
 
 DISTNAME=	Term-ReadLine-Perl-0.9904
@@ -17,6 +17,6 @@ MAINTAINER=	mph@freebsd.org
 USE_PERL5=	YES
 
 do-configure:
-		@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PREFIX}/bin/perl Makefile.PL
+		@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL
 
 .include <bsd.port.mk>

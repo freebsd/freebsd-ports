@@ -3,7 +3,7 @@
 # Date created:				2. Feb 1998
 # Whom:	      				wosch@FreeBSD.org
 #
-# $Id: Makefile,v 1.3 1998/03/04 16:44:58 wosch Exp $
+# $Id: Makefile,v 1.4 1998/03/07 15:24:20 wosch Exp $
 #
 
 DISTNAME=	checkbot-1.51
@@ -22,6 +22,6 @@ MAN1=		checkbot.1
 USE_PERL5=	YES
 
 do-configure:
-	@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PREFIX}/bin/perl Makefile.PL
+	@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL
 
 .include <bsd.port.mk>

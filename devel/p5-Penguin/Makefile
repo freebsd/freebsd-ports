@@ -3,7 +3,7 @@
 # Date created:				May 28th 1997
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.1.1.1 1997/05/30 20:02:24 jfitz Exp $
+#   $Id: Makefile,v 1.2 1997/06/24 18:43:29 jfitz Exp $
 #
 
 DISTNAME=	Penguin-3.00
@@ -19,7 +19,7 @@ RUN_DEPENDS=	pgp:${PORTSDIR}/security/pgp
 USE_PERL5=	YES
 
 do-configure:
-		@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PREFIX}/bin/perl Makefile.PL
+		@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL
 
 post-install:
 		${MKDIR} ${PREFIX}/lib/perl5/site_perl/Penguin/bin ${PREFIX}/lib/perl5/site_perl/Penguin/misc ${PREFIX}/lib/perl5/site_perl/Penguin/doc
