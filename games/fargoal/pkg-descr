@@ -1,0 +1,12 @@
+This game is a remake of the classic roguelike game "Sword of
+Fargoal", created by Jeff McCord for the Commodore 64 in 1983.
+This remake was written for the 2003 remakes.org competition.
+
+Note: this port installs both the Sword of Fargoal executable,
+'sword', and a wrapper script, 'fargoal', which allows each
+user to keep their own savefiles in their ~/.fargoal directory.
+
+WWW: http://squidfighter.sourceforge.net/fargoal/
+
+-Chris
+chris_pressey@yahoo.ca

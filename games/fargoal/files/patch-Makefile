@@ -1,0 +1,16 @@
+--- Makefile.orig	Thu Jul 31 10:06:51 2003
++++ Makefile	Sat Dec 13 15:44:52 2003
+@@ -1,8 +1,10 @@
+-CC=gcc
++CC ?= gcc
++all: ../sword
++
+ ../sword: char.o config.o credits.o game.o gfx.o main.o map.o menu.o message.o monster.o player.o save.o scroller.o spell.o  
+ 	$(CC) -o $@ $(LDFLAGS) $^ $(LDLIBS)
+ include makefile.dep
+-CFLAGS = -W -Wall -O3
+-CXXFLAGS = -W -Wall -O3
++CFLAGS += -W -Wall `allegro-config --cflags` -DALLEGRO_LINUX
++CXXFLAGS += -W -Wall `allegro-config --cflags` -DALLEGRO_LINUX
+ LDFLAGS = -s
+ LDLIBS =  `allegro-config --libs`

@@ -1,0 +1,14 @@
+#!/bin/sh
+
+if [ -d ~/.fargoal ]; then
+  cd ~/.fargoal
+  sword
+else
+  mkdir ~/.fargoal
+  cd ~/.fargoal
+  mkdir data
+  cp -r %%FARGOAL_ROOT%%/data/* data/
+  ln -s %%FARGOAL_ROOT%%/gfx gfx
+  ln -s %%FARGOAL_ROOT%%/sfx sfx
+  sword
+fi
