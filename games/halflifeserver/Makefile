@@ -6,15 +6,11 @@
 #
 
 PORTNAME=	hlds
-PORTVERSION=	3.1.0.7
+PORTVERSION=	3.1.0.8
 CATEGORIES=	games linux
-MASTER_SITES=	http://games.velocity.net/files/Halflife/ \
-		ftp://ftp.gmd.de/people/cla/hl/hl-newest/linux/ \
-		ftp://ftp.icsmedia.de/pub/games/halflife/hl_server/ \
-		http://ftp1download.gamespy.com/fileplanet/fpnew/action/half-life/official/ \
-		http://fileplanet.games-world.net/dl/ftp1.gamespy.com/fpnew/action/half-life/official/ \
-		ftp://ftp.fh-rosenheim.de/pub/games/halflife/servers/
-DISTFILES=	hlds_l3106.tar.gz hlds_l3107_upgrade.tar.gz
+MASTER_SITES=	ftp://files.ausgamers.com/half-life/linux/ \
+		http://fileplanet.games-world.net/dl/ftp1.gamespy.com/action/half-life/official/
+DISTNAME=	hlds_l_${PORTVERSION:S/.//g}_full
 
 MAINTAINER=	pat@databits.net
 
@@ -36,7 +32,7 @@ SORT?=		/usr/bin/sort
 pre-patch:
 # remove trailing ^M
 	@find -E ${WRKSRC} -type f \
-		-iregex ".*\.(bat|cfg|gam|htm|html|inf|ini|lst|sc|scr|txt)" \
+		-iregex ".*\.(bat|cfg|gam|htm|html|inf|ini|lst|sc|scr|txt|rc)" \
 		-exec ${PERL} -pi -ne 's!\r\n!\n!' {} 1>/dev/null 2>&1 \;
 
 do-install: install-parse-plist install-run-scripts scan-libs

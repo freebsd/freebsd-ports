@@ -1,10 +1,4 @@
-%%HLDSDIR%%engine_i386.so
-%%HLDSDIR%%hlds_run
-%%HLDSDIR%%hlds_run.dat
-%%HLDSDIR%%kver.kp
-%%HLDSDIR%%libhlwon.so
-%%PORTDOCS%%%%HLDSDIR%%linuxreadme.txt
-%%PORTDOCS%%%%HLDSDIR%%sierra.inf
+%%PORTDOCS%%%%HLDSDIR%%HLTV-Readme.txt
 %%HLDSDIR%%dmc/cl_dlls/client.dll
 %%HLDSDIR%%dmc/delta.lst
 %%HLDSDIR%%dmc/dlls/dmc_i386.so
@@ -29,11 +23,13 @@
 %%HLDSDIR%%dmc/events/trail.sc
 %%HLDSDIR%%dmc/liblist.gam
 %%HLDSDIR%%dmc/mapcycle.txt
+%%HLDSDIR%%dmc/maps/dcdm5.bsp
 %%HLDSDIR%%dmc/maps/dmc_dm2.bsp
 %%HLDSDIR%%dmc/maps/dmc_dm3.bsp
 %%HLDSDIR%%dmc/maps/dmc_dm4.bsp
 %%HLDSDIR%%dmc/maps/dmc_dm6.bsp
 %%HLDSDIR%%dmc/maps/dmc_e1m2.bsp
+%%HLDSDIR%%dmc/maps/p_se_3.bsp
 %%HLDSDIR%%dmc/models/armour_g.mdl
 %%HLDSDIR%%dmc/models/armour_gT.mdl
 %%HLDSDIR%%dmc/models/armour_r.mdl
@@ -385,7 +381,16 @@
 %%HLDSDIR%%dmc/sprites/yelflare2.spr
 %%HLDSDIR%%dmc/sprites/zerogxplode.spr
 %%HLDSDIR%%dmc/titles.txt
-%%HLDSDIR%%tfc/cached.wad
+%%HLDSDIR%%engine_i386.so
+%%HLDSDIR%%hlds_run
+%%HLDSDIR%%hlds_run.dat
+%%HLDSDIR%%hltv
+%%HLDSDIR%%hltv.cfg
+%%HLDSDIR%%kver.kp
+%%HLDSDIR%%libhlwon.so
+%%PORTDOCS%%%%HLDSDIR%%linuxreadme.txt
+%%PORTDOCS%%%%HLDSDIR%%readme.txt
+%%HLDSDIR%%sierra.inf
 %%HLDSDIR%%tfc/cl_dlls/client.dll
 %%HLDSDIR%%tfc/decals.wad
 %%HLDSDIR%%tfc/delta.lst
@@ -453,52 +458,33 @@
 %%HLDSDIR%%tfc/manual/tips.jpg
 %%HLDSDIR%%tfc/mapcycle.txt
 %%HLDSDIR%%tfc/maps/2fort.bsp
-%%PORTDOCS%%%%HLDSDIR%%tfc/maps/2fort.txt
+%%HLDSDIR%%tfc/maps/2fort.txt
 %%HLDSDIR%%tfc/maps/avanti.bsp
-%%PORTDOCS%%%%HLDSDIR%%tfc/maps/avanti.txt
+%%HLDSDIR%%tfc/maps/avanti.txt
 %%HLDSDIR%%tfc/maps/badlands.bsp
-%%PORTDOCS%%%%HLDSDIR%%tfc/maps/badlands.txt
+%%HLDSDIR%%tfc/maps/badlands.txt
 %%HLDSDIR%%tfc/maps/casbah.bsp
-%%PORTDOCS%%%%HLDSDIR%%tfc/maps/casbah.txt
+%%HLDSDIR%%tfc/maps/casbah.txt
 %%HLDSDIR%%tfc/maps/crossover2.bsp
-%%PORTDOCS%%%%HLDSDIR%%tfc/maps/crossover2.txt
+%%HLDSDIR%%tfc/maps/crossover2.txt
 %%HLDSDIR%%tfc/maps/cz2.bsp
-%%PORTDOCS%%%%HLDSDIR%%tfc/maps/cz2.txt
+%%HLDSDIR%%tfc/maps/cz2.txt
 %%HLDSDIR%%tfc/maps/dustbowl.bsp
-%%PORTDOCS%%%%HLDSDIR%%tfc/maps/dustbowl.txt
+%%HLDSDIR%%tfc/maps/dustbowl.txt
 %%HLDSDIR%%tfc/maps/epicenter.bsp
-%%PORTDOCS%%%%HLDSDIR%%tfc/maps/epicenter.txt
+%%HLDSDIR%%tfc/maps/epicenter.txt
 %%HLDSDIR%%tfc/maps/flagrun.bsp
-%%PORTDOCS%%%%HLDSDIR%%tfc/maps/flagrun.txt
+%%HLDSDIR%%tfc/maps/flagrun.txt
 %%HLDSDIR%%tfc/maps/hunted.bsp
-%%PORTDOCS%%%%HLDSDIR%%tfc/maps/hunted.txt
+%%HLDSDIR%%tfc/maps/hunted.txt
 %%HLDSDIR%%tfc/maps/push.bsp
-%%PORTDOCS%%%%HLDSDIR%%tfc/maps/push.txt
+%%HLDSDIR%%tfc/maps/push.txt
 %%HLDSDIR%%tfc/maps/rock2.bsp
-%%PORTDOCS%%%%HLDSDIR%%tfc/maps/rock2.txt
+%%HLDSDIR%%tfc/maps/rock2.txt
 %%HLDSDIR%%tfc/maps/warpath.bsp
-%%PORTDOCS%%%%HLDSDIR%%tfc/maps/warpath.txt
+%%HLDSDIR%%tfc/maps/warpath.txt
 %%HLDSDIR%%tfc/maps/well.bsp
-%%PORTDOCS%%%%HLDSDIR%%tfc/maps/well.txt
-%%HLDSDIR%%tfc/models/player/civilian/civilian.mdl
-%%HLDSDIR%%tfc/models/player/demo/demo.mdl
-%%HLDSDIR%%tfc/models/player/demo/demo2.mdl
-%%HLDSDIR%%tfc/models/player/engineer/engineer.mdl
-%%HLDSDIR%%tfc/models/player/engineer/engineer2.mdl
-%%HLDSDIR%%tfc/models/player/hvyweapon/hvyweapon.mdl
-%%HLDSDIR%%tfc/models/player/hvyweapon/hvyweapon2.mdl
-%%HLDSDIR%%tfc/models/player/medic/medic.mdl
-%%HLDSDIR%%tfc/models/player/medic/medic2.mdl
-%%HLDSDIR%%tfc/models/player/pyro/pyro.mdl
-%%HLDSDIR%%tfc/models/player/pyro/pyro2.mdl
-%%HLDSDIR%%tfc/models/player/scout/scout.mdl
-%%HLDSDIR%%tfc/models/player/scout/scout2.mdl
-%%HLDSDIR%%tfc/models/player/sniper/sniper.mdl
-%%HLDSDIR%%tfc/models/player/sniper/sniper2.mdl
-%%HLDSDIR%%tfc/models/player/soldier/soldier.mdl
-%%HLDSDIR%%tfc/models/player/soldier/soldier2.mdl
-%%HLDSDIR%%tfc/models/player/spy/spy.mdl
-%%HLDSDIR%%tfc/models/player/spy/spy2.mdl
+%%HLDSDIR%%tfc/maps/well.txt
 %%HLDSDIR%%tfc/models/p_9mmhandgun.mdl
 %%HLDSDIR%%tfc/models/p_9mmhandgun2.mdl
 %%HLDSDIR%%tfc/models/p_crowbar.mdl
@@ -532,6 +518,25 @@
 %%HLDSDIR%%tfc/models/p_srpg.mdl
 %%HLDSDIR%%tfc/models/p_umbrella.mdl
 %%HLDSDIR%%tfc/models/p_umbrella2.mdl
+%%HLDSDIR%%tfc/models/player/civilian/civilian.mdl
+%%HLDSDIR%%tfc/models/player/demo/demo.mdl
+%%HLDSDIR%%tfc/models/player/demo/demo2.mdl
+%%HLDSDIR%%tfc/models/player/engineer/engineer.mdl
+%%HLDSDIR%%tfc/models/player/engineer/engineer2.mdl
+%%HLDSDIR%%tfc/models/player/hvyweapon/hvyweapon.mdl
+%%HLDSDIR%%tfc/models/player/hvyweapon/hvyweapon2.mdl
+%%HLDSDIR%%tfc/models/player/medic/medic.mdl
+%%HLDSDIR%%tfc/models/player/medic/medic2.mdl
+%%HLDSDIR%%tfc/models/player/pyro/pyro.mdl
+%%HLDSDIR%%tfc/models/player/pyro/pyro2.mdl
+%%HLDSDIR%%tfc/models/player/scout/scout.mdl
+%%HLDSDIR%%tfc/models/player/scout/scout2.mdl
+%%HLDSDIR%%tfc/models/player/sniper/sniper.mdl
+%%HLDSDIR%%tfc/models/player/sniper/sniper2.mdl
+%%HLDSDIR%%tfc/models/player/soldier/soldier.mdl
+%%HLDSDIR%%tfc/models/player/soldier/soldier2.mdl
+%%HLDSDIR%%tfc/models/player/spy/spy.mdl
+%%HLDSDIR%%tfc/models/player/spy/spy2.mdl
 %%HLDSDIR%%tfc/models/sentry1.mdl
 %%HLDSDIR%%tfc/models/v_tfc_spanner.mdl
 %%HLDSDIR%%tfc/motd.txt
@@ -552,22 +557,31 @@
 %%HLDSDIR%%tfc/tfstats/tfc.well.rul
 %%HLDSDIR%%tfc/tfstats/tfstats.txt
 %%HLDSDIR%%tfc/tfstats/tfstats_l
-%%HLDSDIR%%valve/cached.wad
 %%HLDSDIR%%valve/cl_dlls/client.dll
 %%HLDSDIR%%valve/credits.txt
 %%HLDSDIR%%valve/decals.wad
-%%HLDSDIR%%valve/default.cfg
 %%HLDSDIR%%valve/delta.lst
 %%HLDSDIR%%valve/dlls/hl_i386.so
+%%HLDSDIR%%valve/events/crossbow1.sc
+%%HLDSDIR%%valve/events/crossbow2.sc
+%%HLDSDIR%%valve/events/crowbar.sc
+%%HLDSDIR%%valve/events/egon_effect.sc
+%%HLDSDIR%%valve/events/egon_fire.sc
+%%HLDSDIR%%valve/events/egon_stop.sc
+%%HLDSDIR%%valve/events/firehornet.sc
 %%HLDSDIR%%valve/events/gauss.sc
 %%HLDSDIR%%valve/events/gaussspin.sc
 %%HLDSDIR%%valve/events/glock1.sc
 %%HLDSDIR%%valve/events/glock2.sc
 %%HLDSDIR%%valve/events/mp5.sc
+%%HLDSDIR%%valve/events/mp52.sc
 %%HLDSDIR%%valve/events/python.sc
+%%HLDSDIR%%valve/events/rpg.sc
 %%HLDSDIR%%valve/events/shotgun1.sc
 %%HLDSDIR%%valve/events/shotgun2.sc
+%%HLDSDIR%%valve/events/snarkfire.sc
 %%HLDSDIR%%valve/events/train.sc
+%%HLDSDIR%%valve/events/tripfire.sc
 %%HLDSDIR%%valve/fonts.wad
 %%HLDSDIR%%valve/gfx.wad
 %%HLDSDIR%%valve/halflife.wad
@@ -589,12 +603,21 @@
 %%HLDSDIR%%valve/pak0.pak
 %%HLDSDIR%%valve/server.cfg
 %%HLDSDIR%%valve/skill.cfg
+%%HLDSDIR%%valve/sprites/camera.spr
+%%HLDSDIR%%valve/sprites/iflagblue.spr
+%%HLDSDIR%%valve/sprites/iflagred.spr
+%%HLDSDIR%%valve/sprites/iplayer.spr
+%%HLDSDIR%%valve/sprites/iplayerblue.spr
+%%HLDSDIR%%valve/sprites/iplayerdead.spr
+%%HLDSDIR%%valve/sprites/iplayerred.spr
+%%HLDSDIR%%valve/sprites/iunknown.spr
+%%HLDSDIR%%valve/sprites/shellchrome.spr
+%%HLDSDIR%%valve/sprites/tile.spr
+%%HLDSDIR%%valve/sprites/voiceicon.spr
 %%HLDSDIR%%valve/valve.rc
 %%HLDSDIR%%valve/woncomm.lst
 %%HLDSDIR%%valve/xeno.wad
-%%HLDSDIR%%vgui.dll
-%%HLDSDIR%%wonauth.dll
-%%HLDSDIR%%woncrypt.dll
+@dirrm %%HLDSDIR%%valve/sprites
 @dirrm %%HLDSDIR%%valve/maps
 @dirrm %%HLDSDIR%%valve/events
 @dirrm %%HLDSDIR%%valve/dlls
@@ -638,13 +661,15 @@
 @dirrm %%HLDSDIR%%dmc/events
 @dirrm %%HLDSDIR%%dmc/dlls
 @dirrm %%HLDSDIR%%dmc/cl_dlls
-@dirrm %%HLDSDIR%%dmc
 @unexec rmdir %D/%%HLDSDIR%%tfc/SAVE 2>/dev/null || true
 @unexec rmdir %D/%%HLDSDIR%%tfc/logs 2>/dev/null || true
 @unexec rmdir %D/%%HLDSDIR%%valve/SAVE 2>/dev/null || true
 @unexec rmdir %D/%%HLDSDIR%%valve/logs 2>/dev/null || true
-@unexec rmdir %D/%%HLDSDIR%%tfc 2>/dev/null || true
+@unexec rmdir %D/%%HLDSDIR%%dmc/SAVE 2>/dev/null || true
+@unexec rmdir %D/%%HLDSDIR%%dmc/logs 2>/dev/null || true
 @unexec rmdir %D/%%HLDSDIR%%valve 2>/dev/null || true
+@unexec rmdir %D/%%HLDSDIR%%tfc 2>/dev/null || true
+@unexec rmdir %D/%%HLDSDIR%%dmc 2>/dev/null || true
 @unexec rmdir %D/%%HLDSDIR%% 2>/dev/null || echo "If you are permanently removing this port and its mods, you should do a ``rm -rf ${PKG_PREFIX}/%%HLDSDIR%%`` to remove any configuration files and logs left." | fmt
 @mode 0444
 @exec grep -E "^/%%HLDSDIR%%$" %D/etc/ld.so.conf >/dev/null || ( echo /%%HLDSDIR%% >> %D/etc/ld.so.conf ; %%LDCONFIG%% )
