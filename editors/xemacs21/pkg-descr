@@ -17,3 +17,5 @@ XEmacs has similar functionality to GNU Emacs. It uses a different
 display model, including support for Motif menu and scroll bars and the
 ability to run as a widget inside other applications. Many people say
 it looks nicer than GNU Emacs.
+
+Web site: http://www.xemacs.org
