@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	libtre
-PORTVERSION=	0.7.0
+PORTVERSION=	0.7.1
 CATEGORIES=	textproc
 MASTER_SITES=	http://laurikari.net/tre/
 DISTNAME=	tre-${PORTVERSION}
@@ -25,6 +25,8 @@ INSTALLS_SHLIB=	yes
 
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib -lintl
+
+MAN1=		agrep.1
 
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
