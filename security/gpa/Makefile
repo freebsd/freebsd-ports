@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=	alpha/gpa
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	This is a graphical frontend for the GNU Privacy Guard
+COMMENT=	A graphical frontend for the GNU Privacy Guard
 
 BUILD_DEPENDS=	gpg:${PORTSDIR}/security/gnupg
 
