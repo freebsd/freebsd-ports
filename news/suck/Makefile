@@ -12,6 +12,7 @@ CATEGORIES=	news
 #MASTER_SITES=	http://www.sucknews.org/
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	dinoex
+PKGNAMESUFFIX?=	${CNEWS_SUFFIX}${PKGNAMESUFFIX2}
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Receives/sends news to/from localhost via NNTP
@@ -29,7 +30,7 @@ MAKE_ENV+=	CHKHISTORY=chkhistory_db.o
 
 .if defined(NEWSBIN) && !defined(SUCK_WITH_INN)
 CNEWS_PORT?=	news/cnews
-PKGNAMESUFFIX?=	-cnews
+CNEWS_SUFFIX=	-cnews
 MAKE_ENV+=	DB_TYPE=-DUSE_DBZ DB_LIB=-lcnews
 MAKE_ENV+=	DB_LIB_LOC=-L${LOCALBASE}/lib
 MAKE_ENV+=	INCDIR2=-I${LOCALBASE}/include
