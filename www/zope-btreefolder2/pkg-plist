@@ -1,0 +1,18 @@
+%%ZOPEBASEDIR%%/lib/python/Products/BTreeFolder2/BTreeFolder2.py
+%%ZOPEBASEDIR%%/lib/python/Products/BTreeFolder2/BTreeFolder2.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/BTreeFolder2/CHANGES.txt
+%%ZOPEBASEDIR%%/lib/python/Products/BTreeFolder2/CMFBTreeFolder.py
+%%ZOPEBASEDIR%%/lib/python/Products/BTreeFolder2/CMFBTreeFolder.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/BTreeFolder2/README.txt
+%%ZOPEBASEDIR%%/lib/python/Products/BTreeFolder2/__init__.py
+%%ZOPEBASEDIR%%/lib/python/Products/BTreeFolder2/__init__.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/BTreeFolder2/btreefolder2.gif
+%%ZOPEBASEDIR%%/lib/python/Products/BTreeFolder2/contents.dtml
+%%ZOPEBASEDIR%%/lib/python/Products/BTreeFolder2/folderAdd.dtml
+%%ZOPEBASEDIR%%/lib/python/Products/BTreeFolder2/version.txt
+%%ZOPEBASEDIR%%/lib/python/Products/BTreeFolder2/tests/__init__.py
+%%ZOPEBASEDIR%%/lib/python/Products/BTreeFolder2/tests/__init__.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/BTreeFolder2/tests/testBTreeFolder2.py
+%%ZOPEBASEDIR%%/lib/python/Products/BTreeFolder2/tests/testBTreeFolder2.pyc
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/BTreeFolder2/tests
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/BTreeFolder2

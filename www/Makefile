@@ -590,6 +590,7 @@
     SUBDIR += zope-FileSystemSite
     SUBDIR += zope-annotations
     SUBDIR += zope-archetypes
+    SUBDIR += zope-btreefolder2
     SUBDIR += zope-cmf
     SUBDIR += zope-cmf13
     SUBDIR += zope-cmfforum
