@@ -18,6 +18,10 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 .include <bsd.port.pre.mk>
 .include "${.CURDIR}/../../devel/pear-PEAR/Makefile.common"
 
+.if defined(PACKAGE_BUILDING)
+IGNORE=		No package building: The default libraries in the PHP package do not support domxml by default.
+.endif
+
 MANIFEST=	common.php error.php result.php
 
 do-install:
