@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-SNAPDATE=	2002-03-12
+SNAPDATE=	2002-03-27
 SNAPVER=	${SNAPDATE:S/-//g}
 
 PORTNAME=	gcc
@@ -25,6 +25,9 @@ DISTFILES=	\
 		gcc-objc-${SNAPVER}${EXTRACT_SUFX}
 #		gcc-ss-3.2-0_${SNAPVER}.src.rpm
 
+PATCH_SITES=	ftp://relay.nuxi.com/obrien/
+PATCHFILES=	port_gcc32_${SNAPDATE}.diff
+
 MAINTAINER=	obrien@FreeBSD.org
 
 NO_CDROM=	'dated material'
@@ -32,7 +35,7 @@ LATEST_LINK=	gcc32
 
 USE_BZIP2=	yes
 
-CVS_DATE=	${SNAPDATE} 21:39 PST
+CVS_DATE=	${SNAPDATE} 10:41 PST
 PATCH_WRKSRC=	${SRCDIR}
 CONFIGURE_SCRIPT=	../${SRCDIR:C/${WRKDIR}//}/configure
 
@@ -78,14 +81,18 @@ pre-fetch:
 
 .if defined(CVS_DATE)
 NO_CHECKSUM=	yes
+DIST_SUBDIR=	${PKGNAME}
 CVS_CMD?=	cvs -z3
 CVSROOT=	:pserver:anoncvs@subversions.gnu.org:/cvsroot/gcc
-STAMPFILE=	${DISTDIR}/${PKGNAME}/.timestamp
+STAMPFILE=	${DISTDIR}/${DIST_SUBDIR}/.timestamp
 do-fetch:
+	@-[ ! -e ${DISTDIR}/${PKGNAME}/${PATCHFILES} ] \
+	    && fetch -o ${DISTDIR}/${PKGNAME}/${PATCHFILES} \
+		${PATCH_SITES}${PATCHFILES}
 	@if [ ! -e ${STAMPFILE} ] || \
 	    [ "X${CVS_DATE}" != "X$$(${CAT} ${STAMPFILE})" ]; then \
-		${MKDIR} ${DISTDIR}/${PKGNAME} && \
-		cd ${DISTDIR}/${PKGNAME} ; \
+		${MKDIR} ${DISTDIR}/${DIST_SUBDIR} && \
+		cd ${DISTDIR}/${DIST_SUBDIR} ; \
 		unset CVS_RSH CVS_SERVER || ${TRUE} ; \
 		${ECHO_MSG} ">> Attempting to CVS checkout from ${CVSROOT}." ;\
 		if ${CVS_CMD} -d ${CVSROOT} co -D "${CVS_DATE}" gcc ; \
@@ -100,7 +107,7 @@ do-fetch:
 
 do-extract:
 	${MKDIR} ${SRCDIR}
-	cd ${DISTDIR}/${PKGNAME}/gcc ; pax -pe -rwt . ${SRCDIR}
+	cd ${DISTDIR}/${DIST_SUBDIR}/gcc ; pax -pe -rwt . ${SRCDIR}
 .endif
 
 pre-configure:
@@ -123,12 +130,8 @@ post-install:
 	@(for prog in ${PREFIX}/bin/gcc ${PREFIX}/bin/g++ \
 		${PREFIX}/bin/g++filt ${PREFIX}/bin/g77 ${PREFIX}/bin/gcov \
 		${PREFIX}/bin/${CONFIGURE_TARGET}-gcc \
-		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${GCC_REV}/cc1 \
-		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${GCC_REV}/cc1obj \
-		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${GCC_REV}/cc1plus \
-		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${GCC_REV}/cpp0 \
-		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${GCC_REV}/collect2 \
-		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${GCC_REV}/f771 ; \
+		${TARGLIB}/cc1 ${TARGLIB}/cc1obj ${TARGLIB}/cc1plus \
+		${TARGLIB}/collect2 ${TARGLIB}/f771 ; \
 	do \
 		strip $$prog ; \
 	done )
@@ -150,6 +153,7 @@ post-install:
 .endfor
 	-${MV} -f ${PREFIX}/lib/ieee ${TARGLIB}
 	${RM} -f ${PREFIX}/lib/libiberty.a
+	${RM} -f ${TARGLIB}/*.la
 #.for info in cpp cppinternals g77 gcc gcj
 #	install-info ${PREFIX}/info/${info}.info ${PREFIX}/info/dir
 #.endfor

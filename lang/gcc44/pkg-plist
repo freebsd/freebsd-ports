@@ -17,17 +17,17 @@ bin/grepjar31
 @comment Insert PLIST.gcc-lib here
 @comment -=[ begin PLIST.gcc-lib ]=-
 @comment -=[ end PLIST.gcc-lib ]=-
-@unexec install-info --delete %D/info/cppinternals.info %D/info/dir
-@unexec install-info --delete %D/info/gcc.info %D/info/dir
-@unexec install-info --delete %D/info/g77.info %D/info/dir
-info/cpp.info
-info/cppinternals.info
-info/g77.info
-info/gcc.info
-info/gcj.info
-@exec install-info %D/info/cppinternals.info %D/info/dir
-@exec install-info %D/info/g77.info %D/info/dir
-@exec install-info %D/info/gcc.info %D/info/dir
-@exec install-info %D/info/gcj.info %D/info/dir
+@comment	unexec install-info --delete %D/info/cppinternals.info %D/info/dir
+@comment	unexec install-info --delete %D/info/gcc.info %D/info/dir
+@comment	unexec install-info --delete %D/info/g77.info %D/info/dir
+@comment	info/cpp.info
+@comment	info/cppinternals.info
+@comment	info/g77.info
+@comment	info/gcc.info
+@comment	info/gcj.info
+@comment	exec install-info %D/info/cppinternals.info %D/info/dir
+@comment	exec install-info %D/info/g77.info %D/info/dir
+@comment	exec install-info %D/info/gcc.info %D/info/dir
+@comment	exec install-info %D/info/gcj.info %D/info/dir
 @comment @dirrm %%GNU_HOST%%/include
 @comment @dirrm %%GNU_HOST%%
