@@ -7,6 +7,7 @@
 
 PORTNAME=	cue2toc
 PORTVERSION=	0.0
+PORTREVISION=	1
 CATEGORIES=	audio perl5
 MASTER_SITES=	http://www.tuxcoder.com/cue2toc/download/
 
@@ -16,13 +17,13 @@ COMMENT=	Perl script that converts CUE files into TOC files for cdrdao
 RUN_DEPENDS=	${SITE_PERL}/Audio/Wav.pm:${PORTSDIR}/audio/p5-Audio-Wav
 
 NO_BUILD=	yes
-PLIST_FILES=	bin/cue2toc
+PLIST_FILES=	bin/cue2toc.pl
 USE_REINPLACE=	yes
 
 pre-patch:
 	@${REINPLACE_CMD} -e 's|use warnings;||' ${WRKSRC}/cue2toc
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/cue2toc ${PREFIX}/bin/cue2toc
+	${INSTALL_SCRIPT} ${WRKSRC}/cue2toc ${PREFIX}/bin/cue2toc.pl
 
 .include <bsd.port.mk>
