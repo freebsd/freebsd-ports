@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	iroffer
-PORTVERSION=	1.2b28
+PORTVERSION=	1.2b29
 CATEGORIES=	irc
 MASTER_SITES=	http://iroffer.org/archive/v1.2/
 DISTNAME=	iroffer${PORTVERSION}
