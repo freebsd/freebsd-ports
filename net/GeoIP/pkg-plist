@@ -6,6 +6,6 @@ include/GeoIPUpdate.h
 lib/libGeoIP.a
 lib/libGeoIP.la
 lib/libGeoIP.so
-lib/libGeoIP.so.1
+lib/libGeoIP.so.2
 share/GeoIP/GeoIP.dat
 @unexec rmdir %D/share/GeoIP 2>/dev/null || true
