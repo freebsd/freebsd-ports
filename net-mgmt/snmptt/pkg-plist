@@ -1,0 +1,16 @@
+sbin/snmptt
+sbin/snmptt-net-snmp-test
+sbin/snmpttconvert
+sbin/snmpttconvertmib
+sbin/snmptthandler
+etc/snmptt.ini
+etc/snmptt.conf.generic
+%%PORTDOCS%%%%DOCSDIR%%/faqs.html
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/layout1.css
+%%PORTDOCS%%%%DOCSDIR%%/snmptt.html
+%%PORTDOCS%%%%DOCSDIR%%/snmpttconvert.html
+%%PORTDOCS%%%%DOCSDIR%%/snmpttconvertmib.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@cwd %%RC_DIR%%
+snmptt%%RC_SUFX%%
