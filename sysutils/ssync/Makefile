@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	ssync
-PORTVERSION=	2.2
+PORTVERSION=	2.3
 CATEGORIES=	sysutils
-MASTER_SITES=	http://alcatraz.labs.agilent.com/shaffer/ssync/
+MASTER_SITES=	http://angrypot.com/ssync/
 
 MAINTAINER=	nyxo@dnuc.polyn.kiae.su
 
@@ -23,7 +23,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's@/etc/init.d/ssyncd@\$$0@g' ${WRKSRC}/ssyncd.init
 	@${REINPLACE_CMD} -e "s@/etc@${PREFIX}/etc@g;s@/usr/sbin@${PREFIX}/sbin@g;" \
 		${WRKSRC}/ssyncd.init ${WRKSRC}/ssyncd.conf ${WRKSRC}/daemon.c
-	@${REINPLACE_CMD} -e "s@ +CFLAGS.+@@g; s@ +LDFLAGS.+@@g;" ${WRKSRC}/makefile
+	@${REINPLACE_CMD} -e "s@FLAGS=@FLAGS+=@g" ${WRKSRC}/makefile
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/ssync ${PREFIX}/bin/ssync
