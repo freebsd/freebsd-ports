@@ -15,7 +15,7 @@ EXTRACT_SUFX=	-1.src.rpm
 MAINTAINER=	ycheng@sinica.edu.tw
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/rpm2cpio:${PORTSDIR}/misc/rpm \
-		${LOCALBASE}/lib/libpopt.a:${PORTSDIR}/devel/popt
+LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 
 USE_GMAKE=	yes
 MAN8=		logrotate.8
