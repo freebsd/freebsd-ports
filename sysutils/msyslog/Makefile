@@ -35,6 +35,9 @@ CONFIGURE_ARGS+=	--without-mysql
 .if !defined(WITH_PGSQL)
 CONFIGURE_ARGS+=	--without-pgsql
 .endif
+.if defined(WITH_DAEMON_NAME)
+CONFIGURE_ARGS+=    --with-daemon-name=${WITH_DAEMON_NAME}
+.endif
 
 MAN5=	syslog.conf.5
 MAN8=	im_bsd.8 im_tcp.8 im_udp.8 im_unix.8 om_classic.8 om_tcp.8 om_peo.8 \
