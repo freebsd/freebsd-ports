@@ -1,2 +1,5 @@
 %%RUBY_SITEARCHLIBDIR%%/MeCab.so
-%%PORTDOCS%%share/examples/mecab/test.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test.rb
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/bindings.html
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%

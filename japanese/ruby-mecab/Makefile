@@ -8,18 +8,16 @@
 PORTNAME=	${MECAB_PORTNAME}
 PORTVERSION=	${MECAB_PORTVERSION}
 CATEGORIES=	japanese textproc ruby
-MASTER_SITES=	# none
-DISTFILES=	# none
+MASTER_SITES=	http://cl.aist-nara.ac.jp/~taku-ku/software/mecab/bindings/
+DISTNAME=	${PORTNAME}-ruby-${PORTVERSION}
 
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	MeCab library module for Ruby
 
-EXTRACT_DEPENDS=	${NONEXISTENT}:${MECAB_PORTDIR}:patch
 LIB_DEPENDS=	mecab.0:${MECAB_PORTDIR}
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
-RUBY_WITH_PTHREAD=	yes
 
 INSTALL_TARGET=	site-install
 
@@ -29,14 +27,12 @@ INSTALL_TARGET=	site-install
 
 PKGNAMEPREFIX:=	${PKGNAMEPREFIX}${RUBY_PKGNAMEPREFIX}
 
-do-extract:
-	${MKDIR} ${WRKDIR}
-	${LN} -fs `${MECAB_WRKSRC_CMD}`/ruby ${WRKSRC}
-
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/examples/mecab
-	${INSTALL_DATA} ${WRKSRC}/test.rb ${PREFIX}/share/examples/mecab/
+	${MKDIR} ${RUBY_MODEXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/test.rb ${RUBY_MODEXAMPLESDIR}/
+	${MKDIR} ${RUBY_MODDOCDIR}
+	${INSTALL_DATA} ${WRKSRC}/bindings.html ${RUBY_MODDOCDIR}/
 .endif
 
 .include <bsd.port.post.mk>
