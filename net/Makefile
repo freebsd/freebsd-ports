@@ -248,6 +248,7 @@
     SUBDIR += ohphone
     SUBDIR += openam
     SUBDIR += opengatekeeper
+    SUBDIR += opengk
     SUBDIR += openh323
     SUBDIR += openh323proxy
     SUBDIR += openldap
