@@ -365,7 +365,7 @@ libgnomedb_USE_GNOME_IMPL=libgnomeui libgda2
 
 gtksourceview_LIB_DEPENDS=	gtksourceview-1.0.0:${PORTSDIR}/x11-toolkits/gtksourceview
 gtksourceview_DETECT=	${X11BASE}/libdata/pkgconfig/gtksourceview-1.0.pc
-gtksourceview_USE_GNOME_IMPL=libgnome
+gtksourceview_USE_GNOME_IMPL=libgnome libgnomeprintui
 
 pkgconfig_BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 pkgconfig_DETECT=			${LOCALBASE}/bin/pkg-config
