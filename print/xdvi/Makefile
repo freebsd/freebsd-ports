@@ -1,16 +1,16 @@
 # New ports collection makefile for:    xdvi
-# Version required:     patchlevel 18
+# Version required:     patchlevel 20
 # Date created:         1 October 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.13 1995/04/21 00:21:41 jmz Exp $
+# $Id: Makefile,v 1.14 1995/04/22 00:05:24 jmz Exp $
 #
 
-DISTNAME=	xdvi
-PKGNAME=	xdvi-pl18
+DISTNAME=	xdvi-20
+PKGNAME=	xdvi-pl20
 CATEGORIES+=	printing
 MASTER_SITES=	ftp://ftp.x.org/contrib/applications/
-DISTFILES=	xdvi.tar.Z
+EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	jmz@FreeBSD.org
 
@@ -21,7 +21,6 @@ IS_INTERACTIVE=	yes
 XMKMF=		xmkmf
 
 do-install: 
-	@echo "===>  Installing for ${DISTNAME}"
 	@mkdir -p ${PREFIX}/man/man1
 	@mkdir -p ${PREFIX}/bin
 	@(cd ${WRKSRC}; ${GMAKE} install.man \
