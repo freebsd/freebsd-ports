@@ -21,6 +21,12 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
+BROKEN=		"Configure fails on amd64 or ia64"
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/inspector ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
@@ -28,4 +34,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/mob.ps ${PREFIX}/share/doc/mob
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
