@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	mono
-PORTVERSION=	0.19
-PORTREVISION=	1
+PORTVERSION=	0.20
 CATEGORIES=	lang
 MASTER_SITES=	http://www.go-mono.com/archive/
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	An open source implementation of .NET Development Framework
 
 BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 LIB_DEPENDS=	glib-2.0.200:${PORTSDIR}/devel/glib20 \
@@ -31,9 +31,5 @@ CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 MAN1=		mcs.1 mint.1 mono.1 monoburg.1 monodis.1 monostyle.1 \
        		sqlsharp.1
 MAN5=		mono-config.5
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|<gc.h|<'${LOCALBASE}/'include/gc.h|g' \
-		${WRKSRC}/mono/os/gc_wrapper.h
 
 .include <bsd.port.mk>

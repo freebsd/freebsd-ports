@@ -1,3 +1,4 @@
+bin/ilasm.exe
 bin/mbas
 bin/mbas.exe
 bin/mcs
@@ -8,6 +9,7 @@ bin/monodis
 bin/monograph
 bin/monoresgen.exe
 bin/monosn
+bin/pedump
 bin/secutil.exe
 bin/sqlsharp.exe
 etc/mono/config
@@ -34,9 +36,9 @@ include/mono/io-layer/threads.h
 include/mono/io-layer/timefuncs.h
 include/mono/io-layer/types.h
 include/mono/io-layer/uglify.h
-include/mono/io-layer/versioninfo.h
 include/mono/io-layer/wait.h
 include/mono/io-layer/wapi.h
+include/mono/io-layer/versioninfo.h
 include/mono/jit/debug.h
 include/mono/jit/jit.h
 include/mono/jit/regset.h
@@ -46,11 +48,14 @@ include/mono/metadata/blob.h
 include/mono/metadata/cil-coff.h
 include/mono/metadata/class.h
 include/mono/metadata/debug-helpers.h
+include/mono/metadata/debug-mono-symfile.h
+include/mono/metadata/environment.h
 include/mono/metadata/exception.h
 include/mono/metadata/image.h
 include/mono/metadata/loader.h
 include/mono/metadata/mempool.h
 include/mono/metadata/metadata.h
+include/mono/metadata/monitor.h
 include/mono/metadata/mono-endian.h
 include/mono/metadata/object.h
 include/mono/metadata/opcodes.h
@@ -77,6 +82,7 @@ lib/I18N.Rare.dll
 lib/I18N.West.dll
 lib/I18N.dll
 lib/Microsoft.VisualBasic.dll
+lib/Microsoft.VisualC.dll
 lib/Mono.CSharp.Debugger.dll
 lib/Mono.Data.DB2Client.dll
 lib/Mono.Data.MySql.dll
@@ -89,11 +95,13 @@ lib/Mono.GetOptions.dll
 lib/Mono.PEToolkit.dll
 lib/NUnitCore_mono.dll
 lib/System.Configuration.Install.dll
+lib/System.Data.OracleClient.dll
 lib/System.Data.dll
 lib/System.Drawing.dll
 lib/System.EnterpriseServices.dll
 lib/System.Runtime.Remoting.dll
 lib/System.Runtime.Serialization.Formatters.Soap.dll
+lib/System.Security.dll
 lib/System.Web.Services.dll
 lib/System.Web.dll
 lib/System.Windows.Forms.dll
@@ -107,10 +115,10 @@ libdata/pkgconfig/mono.pc
 share/mono/cil/cil-opcodes.xml
 @dirrm share/mono/cil
 @dirrm share/mono
-@dirrm include/mono/cil
-@dirrm include/mono/io-layer
-@dirrm include/mono/jit
-@dirrm include/mono/metadata
 @dirrm include/mono/utils
+@dirrm include/mono/metadata
+@dirrm include/mono/jit
+@dirrm include/mono/io-layer
+@dirrm include/mono/cil
 @dirrm include/mono
 @dirrm etc/mono
