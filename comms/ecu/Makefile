@@ -18,7 +18,7 @@ do-configure:
 	cd ${WRKSRC}; yes "" | ./Configure
 
 pre-patch:
-	@${REINPLACE_CMD} -e "s@#include +<malloc.h>@@g" \
+	@${REINPLACE_CMD} -e "s|#include  *<malloc.h>||g" \
 	    ${WRKSRC}/ecu.h ${WRKSRC}/ecunumrev.c ${WRKSRC}/ptyfork.c \
 	    ${WRKSRC}/qmake.c ${WRKSRC}/unsupported/tts/tts.c
 
