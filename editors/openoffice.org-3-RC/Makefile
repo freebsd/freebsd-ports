@@ -88,10 +88,12 @@ USE_LANG=	${LANG}
 
 LANG_SORTED=`${ECHO} ${LANG_LIST} | ${TR} " " "\n" | ${PASTE} -d " " - -`
 
+.if ${OSVERSION} < 500000
 # OOo requires gcc 3.3 (not systems's gcc)
 USE_GCC=3.3 # make no sense yet
 CC=  gcc33
 CXX= g++33
+.endif
 
 EXTRACT_ONLY=	oo_${PORTVERSION}_src_${SNAPDATE}.tar.bz2
 
