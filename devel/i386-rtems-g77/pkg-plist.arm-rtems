@@ -1,2 +1,9 @@
 bin/arm-rtems-g77
-lib/gcc-lib/arm-rtems/2.95.3/f771
+lib/gcc-lib/arm-rtems/3.2.1/f771
+lib/gcc-lib/arm-rtems/3.2.1/include/g2c.h
+arm-rtems/lib/thumb/libg2c.la
+arm-rtems/lib/thumb/libg2c.a
+arm-rtems/lib/thumb/libfrtbegin.a
+arm-rtems/lib/libg2c.la
+arm-rtems/lib/libg2c.a
+arm-rtems/lib/libfrtbegin.a

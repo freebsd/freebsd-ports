@@ -1,2 +1,15 @@
 bin/sparc-rtems-g77
-lib/gcc-lib/sparc-rtems/2.95.3/f771
+lib/gcc-lib/sparc-rtems/3.2.1/f771
+lib/gcc-lib/sparc-rtems/3.2.1/include/g2c.h
+sparc-rtems/lib/soft/v8/libg2c.la
+sparc-rtems/lib/soft/v8/libg2c.a
+sparc-rtems/lib/soft/v8/libfrtbegin.a
+sparc-rtems/lib/soft/libg2c.la
+sparc-rtems/lib/soft/libg2c.a
+sparc-rtems/lib/soft/libfrtbegin.a
+sparc-rtems/lib/v8/libg2c.la
+sparc-rtems/lib/v8/libg2c.a
+sparc-rtems/lib/v8/libfrtbegin.a
+sparc-rtems/lib/libg2c.la
+sparc-rtems/lib/libg2c.a
+sparc-rtems/lib/libfrtbegin.a
