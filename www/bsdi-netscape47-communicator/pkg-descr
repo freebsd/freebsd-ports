@@ -1,8 +1,15 @@
-This is the netscape web-surfboard.  Please read the file
-"/usr/local/lib/netscape/LICENSE" for the licensing terms.
+This is the BSDI BSD/OS version of the Netscape Communicator suite
+(Navigator Web browser, Messenger e-mail and news reader, and
+Composer HTML editor).
 
-Note: If Java applets fail to display.  Type this as root:
-		cd /usr/X11R6/lib/X11/fonts/misc
-		/usr/X11R6/bin/mkfontdir
-		chmod 444 fonts.dir
-      And then exit and restart your X server.
+Unlike the FreeBSD version, this does not require a.out X libraries.
+
+If Java applets fail to display, do this:
+
+	# cd /usr/X11R6/lib/X11/fonts/misc
+	# /usr/X11R6/bin/mkfontdir
+	# chmod 444 fonts.dir
+
+then exit and restart your X server.
+
+Please read /usr/local/lib/netscape/LICENSE.
