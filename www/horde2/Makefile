@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	horde
-PORTVERSION=	2.2.1
-PORTREVISION=	1
+PORTVERSION=	2.2.3
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.horde.org/pub/horde/				\
 		ftp://ftp.au.horde.org/pub/horde/			\
@@ -31,8 +30,7 @@ LIB_DEPENDS+=	intl.4:${PORTSDIR}/devel/gettext
 LIB_DEPENDS+=	mcal.0:${PORTSDIR}/misc/libmcal
 .endif
 # Remark: pear-XML_sql2xml is included, but never used.
-RUN_DEPENDS=	${PHP_LIB}/Crypt/CBC.php:${PORTSDIR}/security/pear-Crypt_CBC	\
-		${PHP_LIB}/Date.php:${PORTSDIR}/devel/pear-Date			\
+RUN_DEPENDS=	${PHP_LIB}/Date.php:${PORTSDIR}/devel/pear-Date			\
 		${PHP_LIB}/HTML/Select.php:${PORTSDIR}/devel/pear-HTML_Select_Common	\
 		${PHP_LIB}/Log.php:${PORTSDIR}/sysutils/pear-Log		\
 		${PHP_LIB}/Mail/mime.php:${PORTSDIR}/mail/pear-Mail_Mime
@@ -46,7 +44,7 @@ REINPLACE_ARGS=	-i.beforeHorde
 DOCS=		COPYING README docs/CHANGES docs/CODING_STANDARDS \
 		docs/CONTRIBUTING docs/CREDITS docs/HACKING docs/INSTALL \
 		docs/TRANSLATIONS
-CONFFILE=	html.php lang.php mime_drivers.php mime_mapping.php \
+CONFFILE=	horde.php html.php lang.php mime_drivers.php mime_mapping.php \
 		motd.php prefs.php registry.php
 SUB_DIRS=	config graphics lib locale po scripts templates util
 
@@ -159,10 +157,10 @@ do-install:
 		${ECHO_CMD} "# Horde's include directory" >> ${APACHE_CONF} ; \
 		${ECHO_CMD} "Include ${HORDE_INC}" >> ${APACHE_CONF} ; \
 	fi)
-	@${CHOWN} -R www:www ${HORDEDIR}
+#	@${CHOWN} -R www:www ${HORDEDIR}
 	@${CHMOD} -R o-rwx ${CONFDIR}
-	@${TOUCH} ${LOG_FILE}
-	@${CHOWN} www:www ${LOG_FILE}
+#	@${TOUCH} ${LOG_FILE}
+#	@${CHOWN} www:www ${LOG_FILE}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for FILE in ${DOCS}
