@@ -31,4 +31,4 @@ MANCOMPRESSED=	maybe
 
 .include <bsd.port.mk>
 
-PLIST_SUB!=	${ENV} TCL_VER=${TCL_VER} ${MAKE} -f ${MAKEFILE} env
+PLIST_SUB!=	${SETENV} TCL_VER=${TCL_VER} ${MAKE} -f ${MAKEFILE} env
