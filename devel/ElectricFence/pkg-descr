@@ -12,4 +12,4 @@ to a memory page, and mmap() can use /dev/zero or the MAP_ANONYMOUS flag
 to create virtual memory pages.
 
 Complete information on the use of Electric Fence is in the manual page
-libefence.3 .
+efence(3).

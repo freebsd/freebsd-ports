@@ -16,7 +16,7 @@ MASTER_SITES=	ftp://ftp.perens.com/pub/ElectricFence/Beta/  \
 MASTER_SITE_SUBDIR=	devel/lang/c
 DISTNAME=	ElectricFence-${PORTVERSION}
 
-MAINTAINER=	obrien@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 INSTALLS_SHLIB=
 CFLAGS+=	-D__USE_BSD
