@@ -138,6 +138,7 @@
     SUBDIR += pdss
     SUBDIR += perl5
     SUBDIR += perl5.8
+    SUBDIR += pexts
     SUBDIR += pfe-devel
     SUBDIR += php-mode.el
     SUBDIR += php3

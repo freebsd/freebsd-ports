@@ -1,0 +1,4 @@
+Third party Pike extensions to support bzip2 compression library, gzip
+compression library, curses, mhash fast crypto lib, PCRE lib, mcrypt extentions.
+
+WWW: http://caudium.net/
