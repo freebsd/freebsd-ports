@@ -29,7 +29,7 @@
  export RMDIR=rm -rf#            remove directory
  
 -export INSTALL=install -m 644#  copy files
-+export INSTALL=${INSTALL_DATA}#  copy files
++export INSTALL=${BSD_INSTALL_DATA}#  copy files
  export STRIP=strip -g#          strip executables from debug symbols
  export INSTDIR=install -d#      create installation directory
  
