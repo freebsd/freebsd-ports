@@ -14,10 +14,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	joseph@randomnetworks.com
 COMMENT=	Active Directory administration tool
 
-LIB_DEPENDS+= ldap.2:${PORTSDIR}/net/openldap21
-LIB_DEPENDS+= lber.2:${PORTSDIR}/net/openldap21
-
 USE_GMAKE=		yes
+USE_OPENLDAP=	yes
 HAS_CONFIGURE=	yes
 
 CONFIGURE_ARGS=	--prefix=${PREFIX} --with-ldap=${LOCALBASE}
