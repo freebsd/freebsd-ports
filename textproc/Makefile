@@ -8,6 +8,7 @@
     SUBDIR += ant-xinclude-task
     SUBDIR += antiword
     SUBDIR += ascii2pdf
+    SUBDIR += asm2html
     SUBDIR += aspell
     SUBDIR += bedic-data
     SUBDIR += bibtex2html
