@@ -9,7 +9,9 @@ PORTNAME=	gnustep-guile
 PORTVERSION=	1.0.3
 PORTREVISION=	1
 CATEGORIES=	lang
-MASTER_SITES=	ftp://ftp.gnustep.org/pub/gnustep/libs/
+MASTER_SITES=	${MASTER_SITE_GNUSTEP} \
+		ftp://ftp.gnustep.org/pub/gnustep/%SUBDIR%/
+MASTER_SITE_SUBDIR=	libs
 
 MAINTAINER=	dinoex@FreeBSD.org
 

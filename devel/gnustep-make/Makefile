@@ -8,9 +8,11 @@
 PORTNAME=	gnustep-make
 PORTVERSION=	1.5.1
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.gnustep.org/pub/gnustep/core/ \
-		http://archive.progeny.com/gnustep/core/ \
-		ftp://ftp.easynet.nl/mirror/GNUstep/core/
+MASTER_SITES=	${MASTER_SITE_GNUSTEP} \
+		ftp://ftp.gnustep.org/pub/gnustep/%SUBDIR%/ \
+		http://archive.progeny.com/gnustep/%SUBDIR%/ \
+		ftp://ftp.easynet.nl/mirror/GNUstep/%SUBDIR%/
+MASTER_SITE_SUBDIR=	core
 
 MAINTAINER=	dinoex@FreeBSD.org
 
