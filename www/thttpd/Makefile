@@ -10,11 +10,11 @@ DISTNAME=	thttpd-2.16
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://www.acme.com/software/thttpd/ \
 		http://www.freenix.no/~anders/
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} notes.html
 
 MAINTAINER=	anders@fix.no
 
-NO_PACKAGE=     "Group needs to be created for users to have their own web dirs"
-
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 GNU_CONFIGURE=	yes
 
 MAN1=		makeweb.1 htpasswd.1
@@ -36,10 +36,36 @@ do-install:
 	@${INSTALL_MAN} ${WRKSRC}/extras/makeweb.1 ${PREFIX}/man/man1
 	@${INSTALL_MAN} ${WRKSRC}/extras/htpasswd.1 ${PREFIX}/man/man1
 	@${INSTALL_MAN} ${WRKSRC}/extras/syslogtocern.8 ${PREFIX}/man/man8
+	@if [ ! -f ${PREFIX}/sbin/thttpd_wrapper ]; then \
+		${ECHO} "Installing ${PREFIX}/sbin/thttpd_wrapper file."; \
+		${ECHO} "#!/bin/sh" > ${PREFIX}/sbin/thttpd_wrapper; \
+		${ECHO} "while true ; do" >> ${PREFIX}/sbin/thttpd_wrapper; \
+		${ECHO} "	${PREFIX}/sbin/thttpd -D -C ${PREFIX}/etc/thttpd.conf" >> ${PREFIX}/sbin/thttpd_wrapper; \
+		${ECHO} "	sleep 10" >> ${PREFIX}/sbin/thttpd_wrapper; \
+		${ECHO} "done" >> ${PREFIX}/sbin/thttpd_wrapper; \
+		${CHMOD} 751 ${PREFIX}/sbin/thttpd_wrapper; \
+	fi
+	@${ECHO} "Installing ${PREFIX}/etc/thttpd.conf.sample configuration file."
+	@${ECHO} "dir=${PREFIX}/www/data" > ${PREFIX}/etc/thttpd.conf.sample
+	@${ECHO} "chroot" >> ${PREFIX}/etc/thttpd.conf.sample
+	@${ECHO} "cgipat=*.cgi" >> ${PREFIX}/etc/thttpd.conf.sample
+	@${ECHO} "logfile=${PREFIX}/www/logs/thttpd.log" >> ${PREFIX}/etc/thttpd.conf.sample
+	@${ECHO} "pidfile=/var/run/thttpd.pid" >> ${PREFIX}/etc/thttpd.conf.sample
+	@if [ ! -f ${PREFIX}/etc/rc.d/thttpd.sh ]; then \
+		${ECHO} "Installing ${PREFIX}/etc/rc.d/thttpd.sh startup file."; \
+		${ECHO} "#!/bin/sh" > ${PREFIX}/etc/rc.d/thttpd.sh; \
+		${ECHO} "[ -x ${PREFIX}/sbin/thttpd_wrapper ] && ${PREFIX}/sbin/thttpd_wrapper && ${ECHO} -n ' thttpd'" >> ${PREFIX}/etc/rc.d/thttpd.sh; \
+		${CHMOD} 751 ${PREFIX}/etc/rc.d/thttpd.sh; \
+	fi
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${PREFIX}/share/doc/thttpd
+	@${INSTALL_MAN} ${DISTDIR}/notes.html ${PREFIX}/share/doc/thttpd
+.endif
 
-post-install: message
+post-install:
+	@${CAT} ${PKGMESSAGE}
 
-pre-configure: config-message
+post-configure: config-message
 
 post-build: config-message
 
@@ -48,19 +74,6 @@ config-message:
 	@${ECHO} ""
 	@${ECHO} "Be sure to take a look at the options in config.h before (re)building"
 	@${ECHO} "if you want to tweak the server."
-	@${ECHO} ""
-	@${ECHO} "====================================================================="
-
-message:
-	@${ECHO} "====================================================================="
-	@${ECHO} ""
-	@${ECHO} "If you want users to be able to create their own web subdirectories"
-	@${ECHO} "off of the main web directory, you need to:"
-	@${ECHO} ""
-	@${ECHO} "a) add a group for www admins"
-	@${ECHO} "b) chgrp yourgroup ${PREFIX}/bin/makeweb ${PREFIX}/www"
-	@${ECHO} "c) chmod 2755 ${PREFIX}/bin/makeweb"
-	@${ECHO} "d) tell them about makeweb(1)"
 	@${ECHO} ""
 	@${ECHO} "====================================================================="
 

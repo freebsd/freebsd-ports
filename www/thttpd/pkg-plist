@@ -2,6 +2,9 @@ bin/htpasswd
 bin/makeweb
 bin/syslogtocern
 sbin/thttpd
+sbin/thttpd_wrapper
+etc/thttpd.conf.sample
+etc/rc.d/thttpd.sh
 www/cgi-bin/redirect
 www/cgi-bin/phf
 www/cgi-bin/ssi
