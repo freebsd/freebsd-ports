@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xcheckers
-PORTVERSION=	2.2
+PORTVERSION=	2.2.3
 CATEGORIES=	games
 MASTER_SITES=	http://arton.cunst.net/xcheckers/
 
