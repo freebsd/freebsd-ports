@@ -117,6 +117,42 @@ MASTER_SITE_COMP_SOURCES+=	\
 	ftp://ftp.funet.fi/pub/archive/comp.sources.%SUBDIR%/ \
 	ftp://rtfm.mit.edu/pub/usenet/comp.sources.%SUBDIR%/
 
+MASTER_SITE_DEBIAN+=	\
+	ftp://ftp.us.debian.org/debian/%SUBDIR%/ \
+	${MASTER_SITE_DEBIAN_NON_US:S,/debian-non-US/,/debian/,}
+
+MASTER_SITE_DEBIAN_NON_US+=	\
+	ftp://ftp.au.debian.org/debian-non-US/%SUBDIR%/ \
+	ftp://ftp.bg.debian.org/debian-non-US/%SUBDIR%/ \
+	ftp://ftp.br.debian.org/debian-non-US/%SUBDIR%/ \
+	ftp://ftp.cl.debian.org/debian-non-US/%SUBDIR%/ \
+	ftp://ftp.cz.debian.org/debian-non-US/%SUBDIR%/ \
+	ftp://ftp.de.debian.org/debian-non-US/%SUBDIR%/ \
+	ftp://ftp.dk.debian.org/debian-non-US/%SUBDIR%/ \
+	ftp://ftp.ee.debian.org/debian-non-US/%SUBDIR%/ \
+	ftp://ftp.es.debian.org/debian-non-US/%SUBDIR%/ \
+	ftp://ftp.fi.debian.org/debian-non-US/%SUBDIR%/ \
+	ftp://ftp.fr.debian.org/debian-non-US/%SUBDIR%/ \
+	ftp://ftp.hk.debian.org/debian-non-US/%SUBDIR%/ \
+	ftp://ftp.hr.debian.org/debian-non-US/%SUBDIR%/ \
+	ftp://ftp.hu.debian.org/debian-non-US/%SUBDIR%/ \
+	ftp://ftp.ie.debian.org/debian-non-US/%SUBDIR%/ \
+	ftp://ftp.is.debian.org/debian-non-US/%SUBDIR%/ \
+	ftp://ftp.it.debian.org/debian-non-US/%SUBDIR%/ \
+	ftp://ftp.jp.debian.org/debian-non-US/%SUBDIR%/ \
+	ftp://ftp.nl.debian.org/debian-non-US/%SUBDIR%/ \
+	ftp://ftp.no.debian.org/debian-non-US/%SUBDIR%/ \
+	ftp://ftp.nz.debian.org/debian-non-US/%SUBDIR%/ \
+	ftp://ftp.pl.debian.org/debian-non-US/%SUBDIR%/ \
+	ftp://ftp.ru.debian.org/debian-non-US/%SUBDIR%/ \
+	ftp://ftp.se.debian.org/debian-non-US/%SUBDIR%/ \
+	ftp://ftp.si.debian.org/debian-non-US/%SUBDIR%/ \
+	ftp://ftp.sk.debian.org/debian-non-US/%SUBDIR%/ \
+	ftp://ftp.uk.debian.org/debian-non-US/%SUBDIR%/ \
+	ftp://ftp.wa.au.debian.org/debian-non-US/%SUBDIR%/ \
+	ftp://ftp2.de.debian.org/debian-non-US/%SUBDIR%/ \
+	ftp://ftp2.it.debian.org/debian-non-US/%SUBDIR%/
+
 MASTER_SITE_FESTIVAL+= \
 	http://www.festvox.org/packed/festival/%SUBDIR%/ \
 	http://www.speech.cs.cmu.edu/festival/cstr/festival/%SUBDIR%/ \
