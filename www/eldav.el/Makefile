@@ -6,31 +6,29 @@
 #
 
 PORTNAME=	eldav.el
-PORTVERSION=	1.17
+PORTVERSION=	0.7.2
+PORTEPOCH=	1
 CATEGORIES=	www elisp
 MASTER_SITES=	http://www.gohome.org/eldav/
-DISTNAME=	eldav.el
-EXTRACT_SUFX=	.gz
-DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
+DISTNAME=	eldav-${PORTVERSION}
 
 MAINTAINER=	stolz@i2.informatik.rwth-aachen.de
 COMMENT=	An interface to WebDAV servers for Emacs
 
 RUN_DEPENDS=	nd:${PORTSDIR}/www/nd
 
-EXTRACT_AFTER_ARGS=	| ${CAT} >${WRKDIR}/${DISTNAME}
-
 NO_BUILD=	yes
-NO_WRKSUBDIR=	yes
 
 EMACSLISPDIR=	${PREFIX}/share/emacs/site-lisp
 XEMACSLISPDIR=	${PREFIX}/lib/xemacs/site-lisp
 
 do-install:
 	${MKDIR} ${EMACSLISPDIR}
-	${INSTALL_DATA} ${WRKDIR}/${DISTNAME} ${EMACSLISPDIR}/${DISTNAME}
 	${MKDIR} ${XEMACSLISPDIR}
-	${LN} -sf ${EMACSLISPDIR}/${DISTNAME} ${XEMACSLISPDIR}
+.for file in eldav.el vc-eldav.el
+	${INSTALL_DATA} ${WRKSRC}/${file} ${EMACSLISPDIR}/
+	${LN} -sf ${EMACSLISPDIR}/${file} ${XEMACSLISPDIR}/
+.endfor
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
