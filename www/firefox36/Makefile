@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	firefox
-PORTVERSION=	1.0
-PORTREVISION=	7
+PORTVERSION=	1.0.1
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
-MASTER_SITE_SUBDIR=	${PORTNAME}/releases/1.0/source
-DISTNAME=	${PORTNAME}-1.0-source
+MASTER_SITE_SUBDIR=	${PORTNAME}/releases/1.0.1/source
+DISTNAME=	${PORTNAME}-1.0.1-source
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Web browser based on the browser portion of Mozilla
@@ -32,7 +31,7 @@ PLIST=		${WRKDIR}/plist
 PLUGINSDIR=	${PREFIX}/lib/browser_plugins
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gtk20 libidl gnomehier
+USE_GNOME=	gtk20 libidl gnomehier desktopfileutils
 USE_ICONV=	yes
 USE_PERL5_BUILD=yes
 USE_X_PREFIX=	yes
@@ -62,11 +61,14 @@ JPI_LIST?=\
 	${LOCALBASE}/diablo-jdk1.3.1/jre/plugin/${ARCH}/ns600/libjavaplugin_oji.so \
 	${LOCALBASE}/jdk1.3.1/jre/plugin/${ARCH}/ns600/libjavaplugin_oji.so
 
+SYSTEM_PREFS=	${FAKEDIR}/lib/${FIREFOX}-${FF_VER}/defaults/pref/firefox.js
+
 OPTIONS=	DEBUG "Build a debugging image" off \
 		LOGGING "Enable additional log messages" off \
 		OPTIMIZED_CFLAGS "Enable some additional optimizations" off \
 		XFT "Enable support for anti-aliased fonts" on \
-		SMB "Enable smb:// URI support using gnomevfs" off
+		SMB "Enable smb:// URI support using gnomevfs" off \
+		NEWTAB "Open external links in a new tab" on
 
 .include <bsd.port.pre.mk>
 
@@ -76,9 +78,9 @@ CONFIGURE_ENV+=		WITH_DEBUG=yes
 .endif # defined(WITH_DEBUG)
 
 .if defined(WITH_OPTIMIZED_CFLAGS)
-CFLAGS+=		-O2
-CONFIGURE_ENV+=		WITH_OPTIMIZE=-O2
+CFLAGS:=		-O2 -fno-strict-aliasing ${CFLAGS:N-O*}
 .else
+CFLAGS:=		-O ${CFLAGS:N-O*:N-m*}
 CONFIGURE_ENV+=		WITH_OPTIMIZE=-O
 .endif # defined(WITH_OPTIMIZED_CFLAGS)
 
@@ -137,6 +139,12 @@ post-patch:
 		< ${MASTERDIR}/pkg-install.in > ${PKGINSTALL}
 	@${SED} -e 's|%%MOZDIR%%|${PREFIX}/lib/${FIREFOX}|g' \
 		< ${MASTERDIR}/pkg-deinstall.in > ${PKGDEINSTALL}
+.for ii in ${EXTRA_SCRIPTS}
+	@${SED} -e 's|%%MOZILLA%%|${FIREFOX}|g ; \
+		s|%%PREFIX%%|${PREFIX}|g ; \
+		s|%%X11BASE%%|${X11BASE}|g' \
+		< ${FILESDIR}/${ii} > ${WRKDIR}/${ii}
+.endfor
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
 		${WRKSRC}/build/unix/run-mozilla.sh
 	@${REINPLACE_CMD} -e 's|-lc_r|${PTHREAD_LIBS}|g ; \
@@ -180,6 +188,12 @@ pre-install:
 	done
 	${ECHO_CMD} bin/firefox >> ${PLIST}
 	${ECHO_CMD} bin/firefox-config >> ${PLIST}
+.if !defined(WITHOUT_NEWTAB)
+	${ECHO_CMD} >> ${SYSTEM_PREFS}
+	${ECHO_CMD} "// Open external links in new tab" >> ${SYSTEM_PREFS}
+	${ECHO_CMD} "pref(\"browser.link.open_external\", 3);" \
+		>> ${SYSTEM_PREFS}
+.endif # !defined(WITHOUT_NEWTAB)
 	cd ${FAKEDIR}/lib/${FIREFOX}-${FF_VER} && ${FIND} -s * -type f -o -type l | \
 		${SED} -e 's|^|lib/${FIREFOX}/|' >> ${PLIST} \
 		&& ${FIND} -d * -type d | \
@@ -198,6 +212,8 @@ pre-install:
 	${ECHO_CMD} @dirrm include/${FIREFOX} >> ${PLIST}
 	${ECHO_CMD} lib/browser_plugins/.${PORTNAME}.keep >> ${PLIST}
 	${ECHO_CMD} "@unexec ${RMDIR} %D/lib/browser_plugins 2>/dev/null || ${TRUE}" >> ${PLIST}
+	${ECHO_CMD} "@exec update-desktop-database > /dev/null || ${TRUE}" >> ${PLIST}
+	${ECHO_CMD} "@unexec update-desktop-database > /dev/null || ${TRUE}" >> ${PLIST}
 
 do-install:
 	${MKDIR} ${PREFIX}/lib/${FIREFOX}
@@ -240,5 +256,6 @@ post-install:
 	${INSTALL_DATA} ${WRKDIR}/firefox.desktop ${PREFIX}/share/gnome/applications
 	${INSTALL_DATA} ${WRKSRC}/other-licenses/branding/firefox/default.xpm \
 		${PREFIX}/lib/${FIREFOX}/chrome/icons/default/default.xpm
+	@-update-desktop-database
 
 .include <bsd.port.post.mk>
