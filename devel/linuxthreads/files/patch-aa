@@ -564,7 +564,15 @@ diff -ru ../../work/linuxthreads-2.2.3/ptfork.c ./ptfork.c
 diff -ru ../../work/linuxthreads-2.2.3/pthread.c ./pthread.c
 --- ../../work/linuxthreads-2.2.3/pthread.c	Wed Apr 25 21:50:59 2001
 +++ ./pthread.c	Thu Jun  7 22:59:29 2001
-@@ -21,11 +21,11 @@
+@@ -15,17 +15,19 @@
+ 
+ /* Thread creation, initialization, and basic low-level routines */
+ 
++#include <sys/types.h>
++#include <sys/time.h>
+ #include <errno.h>
+ #include <stddef.h>
+ #include <stdio.h>
  #include <stdlib.h>
  #include <string.h>
  #include <unistd.h>
@@ -1133,6 +1141,15 @@ diff -ru ../../work/linuxthreads-2.2.3/sysdeps/unix/sysv/linux/bits/sigthread.h 
 diff -ru ../../work/linuxthreads-2.2.3/wrapsyscall.c ./wrapsyscall.c
 --- ../../work/linuxthreads-2.2.3/wrapsyscall.c	Wed Apr 25 21:50:59 2001
 +++ ./wrapsyscall.c	Thu Jun  7 22:59:29 2001
+@@ -18,6 +18,8 @@
+    write to the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
+    Boston, MA 02111-1307, USA.  */
+ 
++#include <sys/types.h>
++#include <sys/time.h>
+ #include <fcntl.h>
+ #include <sys/mman.h>
+ #include <pthread.h>
 @@ -29,6 +29,7 @@
  #include <sys/resource.h>
  #include <sys/wait.h>
