@@ -1,0 +1,2 @@
+Module::Build is a means for build and install Perl modules.
+It is meant to be a replacement for ExtUtils::MakeMaker.
