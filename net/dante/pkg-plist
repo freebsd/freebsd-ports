@@ -2,10 +2,11 @@ bin/socksify
 etc/sockd.conf.example
 etc/socks.conf.example
 include/socks.h
-lib/libdsocks.a
+lib/libdsocks.la
 lib/libdsocks.so
 lib/libdsocks.so.1
 lib/libsocks.a
+lib/libsocks.la
 lib/libsocks.so
 lib/libsocks.so.1
 sbin/sockd
