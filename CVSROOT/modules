@@ -3627,6 +3627,7 @@ libbf		ports/security/libbf
 libbonobo	ports/devel/libbonobo
 libbonobomm	ports/devel/libbonobomm
 libbonoboui	ports/x11-toolkits/libbonoboui
+libbonobouimm	ports/x11-toolkits/libbonobouimm
 libcabinet	ports/archivers/libcabinet
 libcache	ports/devel/libcache
 libcapplet	ports/x11/libcapplet
