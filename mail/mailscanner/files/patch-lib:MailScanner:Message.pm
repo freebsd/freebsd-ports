@@ -1,5 +1,5 @@
---- ../MailScanner-4.26.8.orig/lib/MailScanner/Message.pm	Fri Feb 13 09:31:30 2004
-+++ lib/MailScanner/Message.pm	Fri Feb 13 09:38:35 2004
+--- ../MailScanner-4.26.8.orig/lib/MailScanner/Message.pm	Mon Feb 23 17:37:26 2004
++++ lib/MailScanner/Message.pm	Mon Feb 23 17:38:33 2004
 @@ -2,7 +2,7 @@
  #   MailScanner - SMTP E-Mail Virus Scanner
  #   Copyright (C) 2002  Julian Field
@@ -170,7 +170,7 @@
      #print STDERR "Adding file $file type $text\n";
      $this->{alltypes}{$file} .= $text;
 +    $types{$file} .= $text;
-   }
++  }
 +
 +  # Now look for the reports we can't match anywhere and make them
 +  # map to the entire message.
@@ -182,8 +182,59 @@
 +      $this->{allreports}{""} .= $value;
 +      $this->{alltypes}{""} .= $types{$key};
 +    }
-+  }
+   }
 +
    #print STDERR "Finished combining reports\n";
  }
+ 
+@@ -3309,6 +3405,50 @@
+     $index = $#{$self->{ME_Parts}} + 2 + $index if ($index < 0);
+     splice(@{$self->{ME_Parts}}, $index, 0, $part);
+     $part;
++}
++
++
++#
++# Over-ride a function in Mail::Header that parses the block of headers
++# at the top of each MIME section. My improvement allows the first line
++# of the header block to be missing, which breaks the original parser
++# though the filename is still there.
++#
++
++package Mail::Header;
++
++sub extract
++{
++ my $me = shift;
++ my $arr = shift;
++ my $line;
++
++ $me->empty;
++
++ # JKF Make this more robust by allowing first line of header to be missing
++ shift @{$arr} while scalar(@{$arr}) &&
++                     $arr->[0] =~ /\A[ \t]+/o &&
++                     $arr->[1] =~ /\A$FIELD_NAME/o;
++ # JKF End mod here
++
++ while(scalar(@{$arr}) && $arr->[0] =~ /\A($FIELD_NAME|From )/o)
++  {
++   my $tag = $1;
++
++   $line = shift @{$arr};
++   $line .= shift @{$arr}
++       while(scalar(@{$arr}) && $arr->[0] =~ /\A[ \t]+/o);
++
++   ($tag,$line) = _fmt_line($me,$tag,$line);
++
++   _insert($me,$tag,$line,-1)
++      if defined $line;
++  }
++
++ shift @{$arr}
++  if(scalar(@{$arr}) && $arr->[0] =~ /\A\s*\Z/o);
++
++ $me;
+ }
+ 
  
