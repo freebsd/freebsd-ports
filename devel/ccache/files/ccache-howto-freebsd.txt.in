@@ -65,4 +65,4 @@ For Korn/Bourne shells Add the following to /etc/profile:
  export CCACHE_DIR=/usr/.ccache
 
 For csh/tcsh Add the following to /etc/csh.cshrc
- setenv DISTCC_HOSTS "/usr/.ccache"
+ setenv CCACHE_DIR "/usr/.ccache"
