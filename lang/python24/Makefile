@@ -7,6 +7,7 @@
 
 PORTNAME=	python
 PORTVERSION=	2.3
+PORTREVISION=	1
 CATEGORIES=	lang python ipv6
 MASTER_SITES=	${MASTER_SITE_PYTHON}
 MASTER_SITE_SUBDIR=	ftp/python/${PORTVERSION}
@@ -52,7 +53,7 @@ CONFIGURE_ENV+=		LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS+=	--enable-unicode=ucs4
 .endif
 
-.if !defined(BUILD_STATIC)
+.if defined(BUILD_SHARED)
 CONFIGURE_ARGS+=	--enable-shared
 INSTALLS_SHLIB=		yes
 PLIST_SUB+=		SHARED_ONLY=""
