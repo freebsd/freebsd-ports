@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	haddock
-PORTVERSION=	0.3
+PORTVERSION=	0.4
 CATEGORIES=	devel
 MASTER_SITES=	http://www.haskell.org/haddock/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -23,8 +23,12 @@ BUILD_DEPENDS+=	${LOCALBASE}/share/sgml/docbook/dsssl/modular:${PORTSDIR}/textpr
 .endif
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-src//g}
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|/usr/local/share/sgml/catalog||' ${WRKSRC}/configure
 
 post-build:
 .if !defined(NOPORTDOCS)
