@@ -3,7 +3,7 @@
 # Date created:         1 October 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.21 1996/11/18 09:54:49 asami Exp $
+# $Id: Makefile,v 1.22 1996/11/30 10:41:21 asami Exp $
 #
 
 DISTNAME=	xdvi-20
@@ -18,9 +18,12 @@ MAINTAINER=	jmz@FreeBSD.org
 DIST_SUBDIR=	xdvi	# to share distfiles with japanese/xdvi
 USE_IMAKE=	yes
 USE_GMAKE=	yes
-IS_INTERACTIVE=	yes
-
 XMKMF=		xmkmf
+.if defined(PACKAGE_BUILDING)
+SCRIPTS_ENV=	PACKAGE_BUILDING=${PACKAGE_BUILDING}
+.else
+IS_INTERACTIVE=	yes
+.endif
 
 do-install: 
 	@${MKDIR} ${PREFIX}/man/man1
