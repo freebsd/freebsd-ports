@@ -1,18 +1,20 @@
---- Makefile.orig	Mon Sep  1 22:18:51 1997
-+++ Makefile	Sun Nov 16 17:24:44 1997
-@@ -2,13 +2,13 @@
+--- Makefile.in~	Wed Mar 10 22:14:48 1999
++++ Makefile.in	Sun Mar 21 18:19:16 1999
+@@ -12,7 +12,7 @@
+ # for gzip because otherwise the load on the web server
+ # grows without having big benefits.
+ # COMPRESSION = -DCOMPRESSION=4
+-COMPRESSION = -DCOMPRESSION=1
++COMPRESSION ?= -DCOMPRESSION=1
  
- CC = gcc
- FLEX = flex
--CFLAGS = -O2 -Wall -pedantic -ansi
-+CFLAGS+= -Wall -pedantic -ansi -DCOMPRESSION=1
+ # Dont change things beyond this line.
+ TARGET          = c2html
+@@ -40,7 +40,7 @@
+ srcdir          = @srcdir@
+ CPPFLAGS        = @CPPFLAGS@
  
- all: c2html
+-CFLAGS  = -O2 -Wall -pedantic $(COMPRESSION) 
++CFLAGS  += -O2 -Wall -pedantic $(COMPRESSION) 
+ ALL_CFLAGS = $(CFLAGS) -I$(srcdir)
  
- c2html:	c2html.l
- 	$(FLEX) c2html.l
--	$(CC) $(CFLAGS) -o c2html lex.yy.c -static -lfl
-+	$(CC) $(CFLAGS) -o c2html lex.yy.c -lfl
- clean:
- 	rm -rf *.o *~ c2html
- 
+ all: $(TARGET)

@@ -4,3 +4,8 @@ graphical WWW-Browser.  If the  browser understands the tags to change
 font colors  (as Netscape does) the  output will look like highlighted
 by emacs.  Otherwise it will  not look  so   nice, but readability  is
 increased too.
+
+c2html can also work as a  CGI program and convert your sources on the
+fly.   To use  in this  way  copy it  to your  /cgi-bin directory  and
+configure  your webserver to  call c2html  for *.c  and *.h  files. An
+example that works with Apache is described in the manpage.
