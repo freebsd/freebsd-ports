@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-SNAPDATE=	2002-03-18
+SNAPDATE=	2002-03-25
 SNAPVER=	${SNAPDATE:S/-//g}
 
 PORTNAME=	gcc
@@ -26,7 +26,7 @@ DISTFILES=	\
 #		gcc-ss-3.1-0_${SNAPVER}.src.rpm
 
 PATCH_SITES=	ftp://relay.nuxi.com/obrien/
-PATCHFILES=	port_gcc31_20020318.diff
+PATCHFILES=	port_gcc31_${SNAPDATE}.diff
 
 MAINTAINER=	obrien@FreeBSD.org
 
@@ -80,8 +80,10 @@ CONFIGURE_ARGS+= --enable-threads
 CONFIGURE_ARGS+= --enable-threads=posix
 .endif
 ALL_TARGET=	bootstrap
-#MAN1=		cpp31.1 g++31.1 g77-31.1 gcc31.1 gcov31.1
-MAN1=		g++31.1
+MAN1=		cpp31.1 g++31.1 g77-31.1 gcc31.1 gcov31.1 \
+		gcj31.1 gcjh31.1 gij.1 \
+		jcf-dump31.1 jv-scan31.1 jv-convert.1
+MAN7=		fsf-funding.7 gfdl.7 gpl.7
 
 pre-fetch:
 	@${ECHO} "Making GCC ${DISTNAME:S/^gcc-//} for ${OPSYS} ${OSREL} ${PORTOBJFORMAT}	target ${ARCH}-portbld-freebsd${OSREL}"
@@ -115,12 +117,8 @@ post-install:
 	@(for prog in ${PREFIX}/bin/gcc ${PREFIX}/bin/g++ \
 		${PREFIX}/bin/g++filt ${PREFIX}/bin/g77 ${PREFIX}/bin/gcov \
 		${PREFIX}/bin/${CONFIGURE_TARGET}-gcc \
-		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${GCC_REV}/cc1 \
-		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${GCC_REV}/cc1obj \
-		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${GCC_REV}/cc1plus \
-		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${GCC_REV}/cpp0 \
-		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${GCC_REV}/collect2 \
-		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${GCC_REV}/f771 ; \
+		${TARGLIB}/cc1 ${TARGLIB}/cc1obj ${TARGLIB}/cc1plus \
+		${TARGLIB}/cpp0 ${TARGLIB}/collect2 ${TARGLIB}/f771 ; \
 	do \
 		strip $$prog ; \
 	done )
@@ -132,7 +130,7 @@ post-install:
 .endfor
 .for file in g77
 	${MV} -f ${PREFIX}/bin/${file} ${PREFIX}/bin/${file}-31
-	#${MV} -f ${PREFIX}/man/man1/${file}.1 ${PREFIX}/man/man1/${file}-31.1
+	${MV} -f ${PREFIX}/man/man1/${file}.1 ${PREFIX}/man/man1/${file}-31.1
 .endfor
 	${MV} -f ${PREFIX}/bin/gccbug ${PREFIX}/bin/gccbug-${SNAPVER}
 	# These 3 libraries are moved from PREFIX/lib to avoid conflicts
@@ -142,6 +140,7 @@ post-install:
 .endfor
 	-${MV} -f ${PREFIX}/lib/ieee ${TARGLIB}
 	${RM} -f ${PREFIX}/lib/libiberty.a
+	${RM} -f ${TARGLIB}/*.la
 #.for info in cpp cppinternals g77 gcc gcj
 #	install-info ${PREFIX}/info/${info}.info ${PREFIX}/info/dir
 #.endfor
