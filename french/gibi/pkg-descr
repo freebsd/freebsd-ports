@@ -1,0 +1,6 @@
+GIBI est la partie mailleur et post de CAST3M.
+
+Code_Aster sait relire les fichiers de maillage issus de GIBI, et produit
+des résultats pour un post-traitement dans GIBI.
+
+WWW: http://www.code-aster.org/outils/gibi/

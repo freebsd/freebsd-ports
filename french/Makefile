@@ -8,6 +8,7 @@
     SUBDIR += eficas
     SUBDIR += facturier
     SUBDIR += gfaim
+    SUBDIR += gibi
     SUBDIR += homard
     SUBDIR += ispell
     SUBDIR += jdictionary-fre-hun
