@@ -1,0 +1,11 @@
+--- configure	2000/08/02 11:30:25	1.1
++++ configure	2000/08/02 11:31:11
+@@ -2833,7 +2833,7 @@
+ VP_CPPFLAGS="-I$vp_python_incdir -I$vp_gd_incdir"
+ VP_GDLDFLAGS="-L$vp_gd_libdir"
+ VP_PYLIBDIR=$vp_python_libdir
+-VP_PYINTERPRETER=$vp_python_interpreter
++VP_PYINTERPRETER="$vp_python_interpreter -lreadline -lcrypt"
+ 
+ 
+ 
