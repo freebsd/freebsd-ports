@@ -1,0 +1,340 @@
+.Dd March 6, 2001
+.Dt NONSENSE 6
+.Sh NAME
+.Nm nonsense
+.Nd generates random text from datafiles and templates
+.Sh SYNOPSIS
+.Nm
+.Op Fl b Ar bullet
+.Op Fl dDeF
+.Op Fl f Ar data_file
+.Op Fl n Ar number
+.Op Fl t Ar template_file
+.Op Fl p
+.Op tag ...
+.Sh DESCRIPTION
+.Nm Nonsense
+generates random
+.Pq and sometime humorous
+text from datafiles and templates using a very simple, recursive grammar.
+It's like having a million monkeys sitting in front of a million
+typewriters, without having to feed or clean up after them.
+From fake Slashdot headlines to absurd
+college courses to buzzword bingo cards,
+.Nm
+is a good way to waste time.
+.Pp
+The following options are available:
+.Bl -tag -width indent
+.It Fl b Ar bullet
+Specify a
+.Dq bullet
+go in front of each item.
+.It Fl d
+Debug mode
+.Pq shows each substitution
+.It Fl D
+Verbose debug mode
+.Pq shows each substitution and the result
+.It Fl e
+Disable direct eval()'s
+.It Fl f Ar data_file
+Specify a data file to load in.
+Use multiple
+.Fl f
+options to include additional files.
+The
+.Pa default.data
+file is always loaded.
+.It Fl F
+Load all
+.Pa *.data
+files.
+.It Fl n Ar number
+Repeat
+.Ar n
+times.
+.It Fl t Ar template_file
+Use a template file.
+The markup in this file will be processed and the result output to
+.Dv stdout.
+.It Fl p
+Separate each item with a blank line.
+.El
+.Pp
+The
+.Fl d
+and
+.Fl D
+options are mutually exclusive.
+.Pp
+Thanks to contributions by
+.An Fred Hirsch Aq truehand@darkhart.com ,
+.Nm
+can also be executed as a CGI script.
+Details are in
+.Pa %%PREFIX%%/share/doc/nonsense/README .
+.Sh FILES
+.Bl -tag -width Pa -compact
+.It Pa %%PREFIX%%/share/nonsense/data/*
+.Nm
+data files.
+Any files specified with the
+.Fl f
+option are found by looking in the current directory and then this
+directory.
+The
+.Fl F
+option loads all files in this directory.
+.It Pa %%PREFIX%%/share/nonsense/template/*
+.Nm
+template files.
+Any file specified with the
+.Fl t
+option is found by looking in the current directory and then this
+directory.
+.El
+.Sh EXAMPLES
+Bellow is a list of things that
+.Nm
+can output with the data files included.
+.Pp
+For a realistic simulation of the Slashdot homepage:
+.Bd -literal -offset indent
+nonsense -t slashdot.html.template
+.Ed
+.Pp
+For a buzzword-enhanced mission statement that only a
+.Dq Pointy Haired Boss
+could love:
+.Bd -literal -offset indent
+nonsense -f mission.data
+.Ed
+.Pp
+For a PHB-inspired business plan
+.Pq in HTML :
+.Bd -literal -offset indent
+nonsense -t bizplan.html.template -f mission.data
+.Ed
+.Pp
+For a person's name:
+.Bd -literal -offset indent
+nonsense Person
+.Ed
+.Pp
+For a long list of random fake e-mail addresses suitable for sending to
+a spammer's e-mail harvester:
+.Bd -literal -offset indent
+nonsense FakeEmail -n 1000
+.Ed
+.Pp
+For a buzzword bingo card
+.Pq in HTML
+to print out for your next meeting:
+.Bd -literal -offset indent
+nonsense -t bingo.html.template
+.Ed
+.Pp
+For a listing of absurd college classes
+.Pq these might be offensive to liberal-arts professors :
+.Bd -literal -offset indent
+nonsense -f college.data -n 20
+.Ed
+.Pp
+For a listing of political organizations
+.Pq again, these might be offensive to certain people :
+.Bd -literal -offset indent
+nonsense OrgPolitical -n 10
+.Ed
+.Pp
+For a listing of stupid laws that may or may not really exist:
+.Bd -literal -offset indent
+nonsense -f stupidlaws.data -n 10
+.Ed
+.Pp
+For a list of Open Source programs as they would appear on Freshmeat:
+.Bd -literal -offset indent
+nonsense -f linux.data FreshmeatApp
+.Ed
+.Pp
+For the resume of a random geek
+.Pq in HTML :
+.Bd -literal -offset indent
+nonsense -f resume.data -t resume.html.template
+.Ed
+.Pp
+For a news headline:
+.Bd -literal -offset indent
+nonsense -f newspaper.data Headline
+.Ed
+.Pp
+For the front page of a newspaper
+.Pq in HTML :
+.Bd -literal -offset indent
+nonsense -f newspaper.data -t newspaper.html.template
+.Ed
+.Pp
+For a cheap replacement for the
+.Xr fortune 6
+program:
+.Bd -literal -offset indent
+nonsense -F Fortune
+.Ed
+.Pp
+To produce a file containing 100 items suitable for feeding to
+.Xr fortune 6 :
+.Bd -literal -offset indent
+nonsense -F FortuneFile -n 100
+.Ed
+.Sh FILE FORMATS
+.Nm Nonsense
+reads in
+.Dq template files
+and
+.Dq data files .
+.Pp
+A template file is merely a text file containing
+.Dq tags
+enclosed in curly braces
+.Po
+.Sq {
+and
+.Sq }
+.Pc .
+.Nm Nonsense
+substitutes random text for these
+tags using a really crude markup language.
+.Pp
+A data file is a text file divided into sections
+.Pq seperated by a blank line ,
+each one containing a list of text items
+.Pq seperated by a newline
+that are randomly selected to fill in the template.
+.Pp
+There are a few special cases that allow
+.Nm
+to handle more elaborate situations:
+.Bl -tag -width 6n
+.It {#number1-number2}
+This tag will be replaced with a random number between
+.Ar number1
+and
+.Ar number2
+.Pq inclusive .
+.It {[item1|item2|item3...}
+This tag will be replaced with one item from the list.
+If only one item is listed then it will be output %50 of the time
+.Pq and nothing output the other 50% .
+.It {@strftime format}
+This tag will be replaced with the current date/time using the
+.Xr strftime 3
+format string.
+So, for instance,
+{@A}
+would be replaced with the current day of the week.
+.It {@strftime format|number1|number2}
+Same as above, but uses the date/time that occured X seconds ago,
+where X is a random number between
+.Ar number1
+and
+.Ar number2 .
+For instance,
+{@%H:%M|0|86400}
+would be replaced by the hour:minute anywhere from 0 to 86400 seconds
+.Pq 1 day
+ago.
+.It {;short perl code segment}
+The perl code within the braces will be evaluated.
+This is useful for doing something really
+complicated that requires the full power of Perl.
+However, this is risky since there's no error checking and no
+.Dq sandbox .
+You can disable this behavior with the
+.Fl e
+option.
+.It {\echaracter}
+This allows literal characters that couldn't otherwise be specified,
+such as:
+.Bl -tag -width "{\e###}" -compact -offset indent
+.It {\en}
+newline
+.It {\e0}
+null
+.Pq i.e. nothing
+.It {\eL}
+Left brace
+.Pq Sq {
+.It {\eR}
+Right brace
+.Pq Sq }
+.It {\e###}
+.Xr ascii 7
+character in decimal
+.El
+.It {variablename=literal text}
+Stores the text on the right-hand side of the equals sign to
+the specified state variable, without outputting anything.
+This is useful for preserving context and is
+used, for example, in the Slashdot simulator.
+.It {variablename:=command}
+Similar to above, but evaluates the command
+and stores the result into a state variable.
+.It {$variablename}
+Returns the contents of a state variable.
+.It {command#number1-number2}
+Evaluates the command a random number of times between
+.Ar number1
+and
+.Ar number2 .
+.El
+.Pp
+Case is important!
+{ProductName}, {productname} and {PRODUCTNAME} are slightly different.
+If the name is given in lowercase, the
+substitution will be converted to all lowercase
+.Pq i.e. fed through the perl lc function .
+.Pp
+Upercase names specify the opposite; the result is uppercoased with uc.
+Mixed case names tell
+.Nm
+to leave the case of the result alone
+.Pq this is usually what is used .
+Finally, if you prepend a name with a caret,
+.Sq ^
+.Pq i.e. {^ProductName} ,
+the result is fed through the perl ucfirst function, which will
+capitalize the first character only.
+.Sh SEE ALSO
+.Xr fortune 6
+.Pp
+http://i-want-a-website.com/about-linux/downloads.shtml
+.Sh AUTHORS
+The
+.Nm
+program is written by
+.An -nosplit
+.An James Baughn Aq nonsense@i-want-a-website.com .
+.Pp
+.An Fred Hirsch Aq truehand@darkhart.com
+and
+.An Peter Suschlik Aq peter@zilium.de
+have both submitted code.
+.Pp
+Send suggestions, comments, feedback, patches, and new
+datafiles/templates to the above address.
+Direct your hate mail and flames to
+.Aq devnull@i-want-a-website.com .
+.Pp
+This manual page was written by
+.An Dave Chapeskie Aq dchapes@ddm.crosswinds.net
+from the
+.Pa README
+file.
+.Pp
+Copyright 2000-2001.
+This program and accompanying files are licensed
+under the GNU General Public License 2.0.
+.Sh BUGS
+The
+.Fl e
+option is not the default.
