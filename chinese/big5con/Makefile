@@ -31,8 +31,7 @@ EXTRACT_ONLY=	${DISTNAME}.tgz
 .include <bsd.port.pre.mk>
 post-patch:
 .if ${OSVERSION} > 500012
-	@${PERL} -pi -e 's,machine/console.h>,sys/consio.h>\n#include\t<sys/kbio.h>\n,' ${WRKSRC}/include/*
-	@${PERL} -pi -e 's,machine/console.h>,sys/consio.h>\n#include\t<sys/kbio.h>\n,' ${WRKSRC}/src/*
+	@${PERL} -pi -e 's,machine/console.h>,sys/consio.h>\n#include\t<sys/kbio.h>\n,' ${WRKSRC}/include/* ${WRKSRC}/src/*
 .endif
 pre-install:
 	@if [ ! -f ${PREFIX}/lib/fonts/kc16.smf ]; then \

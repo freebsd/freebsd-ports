@@ -21,11 +21,9 @@ NO_WRKSUBDIR=	true
 DOC_FILES=	CHANGES TODO README_Snowstar LICENSE
 
 # somehow snowstar.tcl managed to get loaded with ^M's.
-post-extract:
-	@${PERL} -pi -e "s|\r\n|\n|g" ${WRKSRC}/snowstar.tcl
-
 post-patch:
-	@${PERL} -pi -e "s|%%LOCALBASE%%|${LOCALBASE}|g" ${WRKSRC}/snowstar.tcl
+	@${PERL} -pi -e "s|\r\n|\n|g ; \
+		s|%%LOCALBASE%%|${LOCALBASE}|g" ${WRKSRC}/snowstar.tcl
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/snowstar.tcl ${PREFIX}/bin/snowstar

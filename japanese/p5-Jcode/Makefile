@@ -31,8 +31,8 @@ do-configure:
 	@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL \
 		CC="${CC}" CCFLAGS="${CFLAGS}"
 .for DIR in Unicode Jcode
-	${PERL} -pi -e "s:CCFLAGS = :CCFLAGS = ${CFLAGS}:g" ${WRKSRC}/${DIR}/Makefile
-	${PERL} -pi -e "s:CC = cc:CC = ${CC}:g" ${WRKSRC}/${DIR}/Makefile
+	${PERL} -pi -e "s:CCFLAGS = :CCFLAGS = ${CFLAGS}:g ; \
+			s:CC = cc:CC = ${CC}:g" ${WRKSRC}/${DIR}/Makefile
 .endfor
 
 .include <bsd.port.post.mk>

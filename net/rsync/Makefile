@@ -34,9 +34,8 @@ MAN1=		rsync.1
 MAN5=		rsyncd.conf.5
 
 pre-configure:
-	@${PERL} -pi.orig -e 's:/etc/:${PREFIX}/etc/:g' ${WRKSRC}/rsync.h
-	@${PERL} -pi.orig -e 's:/etc/:${PREFIX}/etc/:g' ${WRKSRC}/rsync.1
-	@${PERL} -pi.orig -e 's:/etc/:${PREFIX}/etc/:g' ${WRKSRC}/rsyncd.conf.5
+	@${PERL} -pi.orig -e 's:/etc/:${PREFIX}/etc/:g'
+		${WRKSRC}/rsync.h ${WRKSRC}/rsync.1 ${WRKSRC}/rsyncd.conf.5
 .if defined(WITH_SSH)
 	@${PERL} -pi.orig-rsh -e 's/"rsh"/"ssh"/g' ${WRKSRC}/rsync.h
 .endif

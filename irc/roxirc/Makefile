@@ -25,7 +25,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/help ${PREFIX}/share/doc/roxirc/help
 
 post-patch:
-	@${PERL} -pi -e 's,/usr/local,${PREFIX},g' ${WRKSRC}/roxirc
-	@${PERL} -pi -e 's,wish8.0,wish8.2,g' ${WRKSRC}/roxirc
+	@${PERL} -pi -e 's,/usr/local,${PREFIX},g ; \
+		s,wish8.0,wish8.2,g' ${WRKSRC}/roxirc
 
 .include <bsd.port.mk>

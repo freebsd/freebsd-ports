@@ -38,9 +38,8 @@ CONFIGURE_ARGS=	--x-includes=$(X11BASE)/include \
 CONFIGURE_ENV+=	SS_X_EXTRA_LIBS=-lxpg4
 
 pre-build:
-	for i in `find ${WRKSRC} -name Makefile` ; do \
-		${PERL} -pi -e "s@lqt @lqt2 @g" $$i ; \
-		${PERL} -pi -e "s@lpthread@pthread@g" $$i ; \
-	done
+	@find ${WRKSRC} -name Makefile | xargs ${PERL} -pi -e \
+		"s@lqt @lqt2 @g ; \
+		 s@lpthread@pthread@g"
 
 .include <bsd.port.mk>

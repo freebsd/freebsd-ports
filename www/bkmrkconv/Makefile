@@ -17,8 +17,8 @@ USE_PERL5=	yes
 NO_BUILD=	yes
 
 pre-install:
-	@${PERL} -pi -e "s:/usr/local/bin/perl:${PERL}:g" ${WRKSRC}/*.pl
-	@${PERL} -pi -e "s:/usr/local/share:${PREFIX}/share:g" ${WRKSRC}/bkmrkconv.pl
+	@${PERL} -pi -e "s:/usr/local/bin/perl:${PERL}:g ; \
+		s:/usr/local/share:${PREFIX}/share:g" ${WRKSRC}/*.pl
 
 do-install:
 	@${MKDIR} ${PREFIX}/share/bkmrkconv/src

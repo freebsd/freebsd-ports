@@ -29,8 +29,8 @@ do-extract:
 .endfor
 
 post-patch:
-	@${PERL} -pi -e "s|%%LOCALBASE%%|${LOCALBASE}|g" ${WRKSRC}/povchem.cfg
-	@${PERL} -pi -e "s|%%X11BASE%%|${X11BASE}|g" ${WRKSRC}/povchem.cfg
+	@${PERL} -pi -e "s|%%LOCALBASE%%|${LOCALBASE}|g ; \
+		s|%%X11BASE%%|${X11BASE}|g" ${WRKSRC}/povchem.cfg
 
 do-build:
 	cd ${WRKSRC} && ${CC} ${CFLAGS} ${DEFS} -o povchem povchem.c -lm

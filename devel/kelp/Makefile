@@ -29,8 +29,8 @@ INST_DIST=	bin dgrid doc dock examples include kelp lib mp++ tools
 INST_KELP_HOME=	${LOCALBASE}/kelp
 
 post-patch:
-	@${PERL} -pi -e 's,API2,./API2,' ${WRKSRC}/examples/API/makefile
-	@${PERL} -pi -e 's,API3,./API3,' ${WRKSRC}/examples/API/makefile
+	@${PERL} -pi -e 's,API2,./API2, ; \
+		s,API3,./API3,' ${WRKSRC}/examples/API/makefile
 	@${PERL} -pi -e 's,%LOCALBASE%,${LOCALBASE},' ${WRKSRC}/configure
 
 do-install:

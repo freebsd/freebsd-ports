@@ -48,10 +48,10 @@ post-patch:
 		| eval `${AWK} '{print "ln -sf",$$1,"${WRKSRC}/include"}'`
 
 post-configure:
-	@${PERL} -pi -e "s:g\+\+:${CXX}:g" ${WRKSRC}/configs/freebsd-g++-${STATIC}
-	@${PERL} -pi -e "s:/usr/X11R6:${PREFIX}:g" ${WRKSRC}/configs/freebsd-g++-${STATIC}
-	@${PERL} -pi -e "s:%%CXXFLAGS%%:${CXXFLAGS}:g" ${WRKSRC}/configs/freebsd-g++-${STATIC}
-	@${PERL} -pi -e "s:%%VERSION%%:${VERSION}:g" ${WRKSRC}/configs/freebsd-g++-${STATIC}
+	@${PERL} -pi -e "s:g\+\+:${CXX}:g ; \
+		s:/usr/X11R6:${PREFIX}:g ; \
+		s:%%CXXFLAGS%%:${CXXFLAGS}:g ; \
+		s:%%VERSION%%:${VERSION}:g" ${WRKSRC}/configs/freebsd-g++-${STATIC}
 	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} freebsd-g++-${STATIC})
 
 do-install:
