@@ -796,6 +796,7 @@ calculix	ports/cad/calculix
 calibrator	ports/devel/calibrator
 calife		ports/security/calife
 callgen		ports/net/callgen
+callid		ports/misc/callid
 cam		ports/audio/cam
 camediaplay	ports/graphics/camediaplay
 caml-light	ports/lang/caml-light
