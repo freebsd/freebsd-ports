@@ -5,7 +5,7 @@
 #
 # $FreeBSD$
 #
-SNAPDATE=	2004-01-14
+SNAPDATE=	2004-01-28
 
 PORTNAME=	gcc
 PORTVERSION=	3.4.0
@@ -30,9 +30,12 @@ COMMENT?=	GNU Compiler Collection 3.4
 
 LATEST_LINK?=	gcc34${PKGNAMESUFFIX}
 
+USE_BISON=	yes
 USE_BZIP2=	yes
-USE_REINPLACE=	yes
+USE_GMAKE=	yes
 USE_PERL5_BUILD=yes
+USE_REINPLACE=	yes
+USE_SIZE=	yes
 
 PATCH_WRKSRC=	${SRCDIR}
 CONFIGURE_SCRIPT=	../${SRCDIR:C/${WRKDIR}//}/configure
@@ -48,15 +51,13 @@ CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
 
 SRCDIR=		${WRKDIR}/gcc-${VERSIONSTRING}
 WRKSRC=		${WRKDIR}/build
+SUFFIX=		34
 TARGLIB=	${PREFIX}/lib/gcc/${CONFIGURE_TARGET}/${PORTVERSION}
-PLIST_SUB=	GCC_VER=${PORTVERSION} GNU_HOST=${CONFIGURE_TARGET}
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
-USE_BISON=	yes
 CONFIGURE_ARGS=	--disable-nls \
 		--with-system-zlib \
 		--with-libiconv-prefix=${LOCALBASE} \
-		--program-suffix=34 \
+		--program-suffix=${SUFFIX} \
 		--with-gxx-include-dir=${TARGLIB}/include/c++/
 MAKE_ARGS+=	MAKEINFOFLAGS="--no-split"
 .if defined(WANT_SHAREDLIBS)
@@ -73,10 +74,20 @@ CONFIGURE_ARGS+=	--enable-threads
 CONFIGURE_ARGS+=	--enable-threads=posix
 .endif
 ALL_TARGET=	bootstrap-lean
-MAN1=		cpp34.1 g++34.1 g77-34.1 gcc34.1 gcov34.1 \
-		gcj34.1 gcjh34.1 gij34.1 grepjar34.1 jar34.1 \
-		jcf-dump34.1 jv-scan34.1 jv-convert34.1 \
-		rmic34.1 rmiregistry34.1
+PLIST_SUB=	GCC_VER=${PORTVERSION} GNU_HOST=${CONFIGURE_TARGET}
+MAN1=		cpp${SUFFIX}.1 \
+		g++${SUFFIX}.1 \
+		g77-${SUFFIX}.1 \
+		gcc${SUFFIX}.1 \
+		gcov${SUFFIX}.1 \
+		gcj${SUFFIX}.1 \
+		gcjh${SUFFIX}.1 \
+		gij${SUFFIX}.1 \
+		grepjar${SUFFIX}.1 \
+		jar${SUFFIX}.1 \
+		jcf-dump${SUFFIX}.1 \
+		jv-scan${SUFFIX}.1 jv-convert${SUFFIX}.1 \
+		rmic${SUFFIX}.1 rmiregistry${SUFFIX}.1
 MAN7=		fsf-funding.7 gfdl.7 gpl.7
 INFO=		cpp cppinternals g77 gcc gccinstall gccint gcj fastjar
 
@@ -129,12 +140,13 @@ check: build
 	cd ${WRKSRC}; export RUNTESTFLAGS='--target_board ''unix{-pthread}'''; ${GMAKE} -sk check
 
 post-install:
-.for f in c++ gcc g++ cpp gcov ${CONFIGURE_TARGET}-gcc ${CONFIGURE_TARGET}-g++ gcj gcjh gij jv-scan jcf-dump jv-convert jar grepjar rmic rmiregistry
-	if [ -e ${PREFIX}/bin/${f}34 ]; then \
-	  ${STRIP_CMD} ${PREFIX}/bin/${f}34; \
+.for f in c++ f77 gcc g++ cpp gcov ${CONFIGURE_TARGET}-gcc ${CONFIGURE_TARGET}-g++ gcj gcjh gij jv-scan jcf-dump jv-convert jar grepjar rmic rmiregistry
+	# gij and jv-convert, for example, are not built on all platforms.
+	if [ -e ${PREFIX}/bin/${f}${SUFFIX} ]; then \
+	  ${STRIP_CMD} ${PREFIX}/bin/${f}${SUFFIX}; \
 	  ( ${TEST} ! -e ${PREFIX}/man/man1/${f}.1 \
 		|| ${MV} -f ${PREFIX}/man/man1/${f}.1 \
-		${PREFIX}/man/man1/${f}34.1 ); \
+		${PREFIX}/man/man1/${f}${SUFFIX}.1 ); \
 	fi
 .endfor
 	${MV} -f ${PREFIX}/bin/g7734 ${PREFIX}/bin/g77-34
