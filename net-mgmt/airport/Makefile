@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	airport
-PORTVERSION=	1.5
+PORTVERSION=	1.5.2
 CATEGORIES=	net java
 MASTER_SITES=	http://edge.mcs.drexel.edu/GICL/people/sevy/airport/
-DISTFILES=	configurator_${PORTVERSION:S/.//}${EXTRACT_SUFX} \
+DISTFILES=	configurator_${PORTVERSION:S/.//g}${EXTRACT_SUFX} \
 		link_monitor_${LINKMONVERSION:S/.//}${EXTRACT_SUFX} \
 		host_monitor_${HOSTMONVERSION:S/.//}${EXTRACT_SUFX} \
 		airportmodemutility_${MODEMVERSION:S/.//}${EXTRACT_SUFX}
@@ -30,7 +30,7 @@ JDK_VERSION=	1.1.8
 JFC_VERSION=	1.1.1
 LINKMONVERSION=	1.1
 HOSTMONVERSION=	1.0
-MODEMVERSION=	1.3
+MODEMVERSION=	1.4
 
 NO_BUILD=	yes
 
