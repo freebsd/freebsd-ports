@@ -1,0 +1,104 @@
+--- mime.c.old	1996-06-04 15:36:59.000000000 +0200
++++ mime.c	2004-02-26 16:57:42.000000000 +0100
+@@ -56,18 +56,18 @@
+       if (match(m->sd->type, "TEXT"))
+ 	{
+ 	  if (m->td->charset != NULL)
+-	    sprintf(buf, "%s; charset=\"%s\"", ct, m->td->charset);
++	    snprintf(buf, sizeof(buf), "%s; charset=\"%s\"", ct, m->td->charset);
+ 	  else
+-	    sprintf(buf, "%s", ct);
++	    snprintf(buf, sizeof(buf), "%s", ct);
+ 	}
+       else
+ 	if (match(m->sd->type, "MULTIPART"))
+ 	  {
+ 	    bb = (char *)getmimebound();
+ 	    if (m->sd->applefile == AMDOUBLE)
+-	      sprintf(buf, "Multipart/AppleDouble; boundary=\"%s\"", bb);
++	      snprintf(buf, sizeof(buf), "Multipart/AppleDouble; boundary=\"%s\"", bb);
+ 	    else
+-	      sprintf(buf,"%s; boundary=\"%s\"", ct, bb);
++	      snprintf(buf, sizeof(buf), "%s; boundary=\"%s\"", ct, bb);
+ 	    m->td->startbound = (char *)Yalloc(MIMEBOUNDLEN + 5);
+ 	    m->td->endbound = (char *)Yalloc(MIMEBOUNDLEN + 7);
+ 	    sprintf(m->td->startbound, "--%s", bb);
+@@ -75,7 +75,7 @@
+ 	  }
+ 	else
+ 	  {
+-	    sprintf(buf, "%s", ct);
++	    snprintf(buf, sizeof(buf), "%s", ct);
+ 	  }
+     }
+   else
+@@ -87,7 +87,10 @@
+   
+   if (m->sd->name != NULL)
+     {
+-      sprintf(buf, "%s; name=\"%s\"", buf, m->sd->name);
++      char *buf2;
++      buf2 = strdup(buf);
++      snprintf(buf, sizeof(buf), "%s; name=\"%s\"", buf2, m->sd->name);
++      free(buf2);
+     }
+   add_header(m, "Content-Type", buf, MIME);
+   if (bb != NULL)
+--- uuencode.c.old	1996-06-04 15:37:02.000000000 +0200
++++ uuencode.c	2004-02-26 17:01:09.000000000 +0100
+@@ -116,7 +116,7 @@
+   /* Start with uuencode preamble */
+   fix_filename(m);
+ 
+-  sprintf(outb,"begin 644 %s\n", m->sd->name);
++  snprintf(outb, sizeof(outb), "begin 644 %s\n", m->sd->name);
+   append_data(outbuf, outb, strlen(outb), pz);
+   outbuf->lineend += 1;
+   i = 0;
+@@ -242,7 +242,7 @@
+       inb++;
+       inbuf->offset += 1;
+     }
+-  if ((i = sscanf(inb, "begin%*1[ ]%*3[0-7]%*1[ ]%s", filename)) != 1)
++  if ((i = sscanf(inb, "begin%*1[ ]%*3[0-7]%*1[ ]%511s", filename)) != 1)
+     {
+ #ifdef DEBUG
+       if (edebug)
+--- main.c.old	1996-06-04 15:36:58.000000000 +0200
++++ main.c	2004-02-26 17:02:18.000000000 +0100
+@@ -177,7 +177,7 @@
+ 			sprintf(ebuf,"Invalid parameter to -f: %s",optarg);
+ #ifdef DEBUG
+ 		  if (edebug)
+-		    fprintf(stderr, ebuf);
++		    fprintf(stderr, "%s", ebuf);
+ #endif
+ 			logger(LOG_WARNING,ebuf);
+ 		}
+@@ -303,7 +303,7 @@
+ 		sprintf(ebuf,"Invalid flag: -%c",c);
+ #ifdef DEBUG
+ 			if (edebug)
+-			  fprintf(stderr, ebuf);
++			  fprintf(stderr, "%s", ebuf);
+ #endif
+ 		logger(LOG_WARNING,ebuf);
+ 	}
+@@ -359,7 +359,7 @@
+ 	sprintf(ebuf, "Invalid mailer specification %s", optarg);
+ #ifdef DEBUG
+ 	if (edebug)
+-	  fprintf(stderr, ebuf);
++	  fprintf(stderr, "%s", ebuf);
+ #endif
+ 	logger(LOG_ERR, ebuf);
+ 	fprintf(stderr, "Emil: %s\n", ebuf);
+@@ -448,7 +448,7 @@
+ 		);
+ #ifdef DEBUG
+       if (edebug)
+-	fprintf(stderr, ebuf);
++	fprintf(stderr, "%s", ebuf);
+ #endif
+   logger(LOG_DEBUG,ebuf);
+   if (source == NULL)
