@@ -1,6 +1,6 @@
 bin/kcdmain
 bin/kcdscr
-share/doc/kcd/CHANGES
+share/doc/kcd/ChangeLog
 share/doc/kcd/README
 share/examples/kcd/kcd.csh.init
 share/examples/kcd/kcd.sh.init

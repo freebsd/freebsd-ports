@@ -1,0 +1,14 @@
+--- cxxlib.cc.orig	Fri Aug 11 23:14:55 2000
++++ cxxlib.cc	Sat Aug 12 05:33:05 2000
+@@ -19,7 +19,11 @@
+ */
+ 
+ #include "cxxlib.h"
++#ifdef HAVE_MALLOC_H
+ #include <malloc.h>
++#else
++#include <stdlib.h>
++#endif
+ #include <unistd.h>
+ 
+ extern char progName[];
