@@ -1,6 +1,6 @@
---- Makefile.in.orig	Sun Aug  5 12:52:21 2001
-+++ Makefile.in	Sun Aug  5 12:53:40 2001
-@@ -43,8 +43,8 @@
+--- Makefile.in.orig	Thu Aug 30 15:00:48 2001
++++ Makefile.in	Thu Aug 30 15:01:32 2001
+@@ -41,8 +41,8 @@
  CXX = @CXX@
  CC = @CC@
  DEFS = @DEFS@
@@ -11,7 +11,7 @@
  LD = $(CXX)
  LDFLAGS = @LDFLAGS@ @TDEFS@ @LIBS@
  AR = ar
-@@ -128,7 +128,7 @@
+@@ -126,7 +126,7 @@
  	else \
  		cp subsql $(bindir); \
  	fi

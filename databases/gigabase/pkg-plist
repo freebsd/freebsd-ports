@@ -16,9 +16,13 @@ include/gigabase/pagepool.h
 include/gigabase/blob.h
 include/gigabase/container.h
 include/gigabase/cli.h
-lib/libgigabase_r.a
 lib/libcli_r.a
-lib/libgigabase_r.so.2
+lib/libcli_r.la
+lib/libcli_r.so
 lib/libcli_r.so.2
+lib/libgigabase_r.a
+lib/libgigabase_r.la
+lib/libgigabase_r.so
+lib/libgigabase_r.so.2
 bin/subsql
 @dirrm include/gigabase
