@@ -65,7 +65,7 @@ lib/libbonobo-xml.so
 lib/libbonobo-xml.so.0
 lib/libbonobo.a
 lib/libbonobo.so
-lib/libbonobo.so.1
+lib/libbonobo.so.2
 lib/libefs.a
 lib/libefs.so
 lib/libefs.so.0
@@ -80,6 +80,7 @@ share/gnome/idl/bonobo-canvas.idl
 share/gnome/idl/bonobo-client-site.idl
 share/gnome/idl/bonobo-container.idl
 share/gnome/idl/bonobo-control.idl
+share/gnome/idl/bonobo-desktop.idl
 share/gnome/idl/bonobo-embeddable.idl
 share/gnome/idl/bonobo-factory.idl
 share/gnome/idl/bonobo-persist.idl
