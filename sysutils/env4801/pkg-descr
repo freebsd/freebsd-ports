@@ -1,0 +1,16 @@
+Soekris Net4801 Environmental Monitor
+
+This is a small program to output the voltages and temperatures
+from the PC87366 chip in the Net4801 computer from Soekris.com.
+
+First run the program with a "-i" to initialize the hardware:
+
+	# env4801 -i
+
+Then, as often as you feel like, read out the measured values:
+
+	# env4801
+
+Author:		Poul-Henning Kamp (phk@freebsd.org)
+WWW:		http://phk.freebsd.dk/soekris/env4801/
+		http://www.soekris.com/

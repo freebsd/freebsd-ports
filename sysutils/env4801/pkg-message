@@ -1,0 +1,10 @@
+
+================================================================
+This port installed %%PREFIX%%/etc/rc.d/env4801.sh to initialize
+the hardware at boot time. The env4801 utility will only run on
+a Soekris Engineering Net4801 device. See pkg-descr for more
+information as currently there is no manpage.
+
+Make sure you have /dev/io enabled by putting io_load="YES" in
+/boot/loader.conf or device io in your kernel config file.
+================================================================
