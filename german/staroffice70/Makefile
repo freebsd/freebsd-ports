@@ -192,4 +192,9 @@ install-patch:
 	@-SAL_IGNOREXERRORS=1 PATH="/bin:${PATH}" LD_LIBRARY_PATH=${LD_PATH} \
 		TEMP=${TMPDIR} ${LINUXBASE}/bin/sh -c '${WRKSRC}/../112887-02/so-6_0-pp1-bin-linux.bin'
 
+install-update:
+	@make extract
+	@make install-user
+	@make install-patch
+
 .include <bsd.port.post.mk>
