@@ -6,7 +6,9 @@ samba/bin/testprns
 samba/bin/smbrun
 samba/bin/smbstatus
 samba/bin/smbpasswd
+samba/bin/nmblookup
 samba/bin/smbtar
+samba/bin/addtosmbpass
 man/man1/smbstatus.1.gz
 man/man1/smbclient.1.gz
 man/man1/smbrun.1.gz
