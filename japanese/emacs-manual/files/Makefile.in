@@ -2,19 +2,15 @@ TEXIFILE= emacs.texi
 INFOFILE= ../info/emacs-ja
 
 EMACS?=	emacs
-FORMAT_FLAG?= t
 
 EMACS_ARGS= -batch -nw --multibyte -no-init-file -no-site-file
-EMACS_LOADLIBS= --load=texinfmt.el
-EMACS_FUNCALLS=	--eval "(texinfo-format-buffer ${FORMAT_FLAG})" -f save-buffer
+EMACS_LOADLIBS= --load=texinfmt.el --load=PORT_TEXIFMT.MK
+EMACS_FUNCALLS= --eval "(defconst PORT-TEXI \"${TEXIFILE}\")" -f port-texinfo-format
 
 all: ${INFOFILE}
 
-MAKEINFO-BY-EMACS: .USE
-	${EMACS} ${EMACS_ARGS} ${EMACS_LOADLIBS} ${.ALLSRC} ${EMACS_FUNCALLS} \
-		> /dev/null 2>&1
-
-${INFOFILE}: ${TEXIFILE} MAKEINFO-BY-EMACS
+${INFOFILE}: ${TEXIFILE}
+	${EMACS} ${EMACS_ARGS} ${EMACS_LOADLIBS} ${EMACS_FUNCALLS}
 
 install: all
 	${BSD_INSTALL_DATA} ${INFOFILE} ${PREFIX}/info
