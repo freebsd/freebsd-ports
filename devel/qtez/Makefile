@@ -18,7 +18,7 @@ USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_QT_VER=	2
 USE_AUTOMAKE=	yes
-AUTOMAKE=	automake -a -i && ${PERL} automoc
+AUTOMAKE_ARGS=	-a -i && ${PERL} automoc
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	QTDIR="${X11BASE}" QTEZ="${PREFIX}/share/qtez"
 MAKE_ENV=	QTEZ="${PREFIX}/share/qtez"
