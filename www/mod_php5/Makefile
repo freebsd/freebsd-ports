@@ -57,6 +57,8 @@ CONFIGURE_ARGS+=--enable-versioning \
 		--without-gd \
 		--without-mysql
 
+CFLAGS+=	-I${PREFIX}/include
+
 SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
 		TOUCH="${TOUCH}" \
 		MKDIR="${MKDIR}" \
