@@ -189,6 +189,7 @@
     SUBDIR += rlytest
     SUBDIR += rmime
     SUBDIR += rmoldmail
+    SUBDIR += ruby-mail
     SUBDIR += ruby-tmail
     SUBDIR += sendmail
     SUBDIR += sendmail-ldap
