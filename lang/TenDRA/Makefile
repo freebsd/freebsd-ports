@@ -16,9 +16,11 @@ MASTER_SITES=	ftp://alph.dera.gov.uk/pub/TenDRA/ \
 
 MAINTAINER=	obrien@FreeBSD.org
 
-BROKEN=		"Does not build"
-
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 500000
+BROKEN=		"Does not build"
+.endif
 
 ONLY_FOR_ARCHS=	i386
 OSRELEASE!=	uname -r
