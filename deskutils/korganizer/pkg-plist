@@ -7,6 +7,13 @@ share/doc/HTML/en/korganizer/korganizer-3.html
 share/doc/HTML/en/korganizer/korganizer-4.html
 share/doc/HTML/en/korganizer/korganizer-5.html
 share/doc/HTML/en/korganizer/korganizer-6.html
+share/doc/HTML/en/korganizer/korganizer-7.html
+share/doc/HTML/en/korganizer/korganizer-8.html
+share/doc/HTML/en/korganizer/korganizer-9.html
+share/doc/HTML/en/korganizer/korganizer-10.html
+share/doc/HTML/en/korganizer/alarmd-panel.gif
+share/doc/HTML/en/korganizer/kagenda-appointment.gif
+share/doc/HTML/en/korganizer/datenavigator.gif
 share/doc/HTML/en/korganizer/logotp3.gif
 share/doc/HTML/en/korganizer/index.html
 share/apps/korganizer/pics/smallcal.xpm
@@ -29,6 +36,13 @@ share/apps/korganizer/pics/emptybox-mask.xpm
 share/apps/korganizer/pics/emptybox.xpm
 share/apps/korganizer/pics/bell.xpm
 share/apps/korganizer/pics/recur.xpm
+share/apps/korganizer/pics/runprog.xpm
+share/apps/korganizer/pics/playsound.xpm
+share/apps/korganizer/pics/knlogo1.gif
+share/apps/korganizer/pics/smallclock.xpm
+share/apps/korganizer/pics/mailappt.xpm
+share/apps/korganizer/pics/nomailappt.xpm
+share/apps/korganizer/pics/readonlyevent.xpm
 share/apps/korganizer/toolbar/listicon.xpm
 share/apps/korganizer/toolbar/5dayicon.xpm
 share/apps/korganizer/toolbar/dayicon.xpm
@@ -42,9 +56,41 @@ share/apps/korganizer/toolbar/monthicon.xpm
 share/apps/korganizer/toolbar/search.xpm
 share/apps/korganizer/toolbar/checkedclipboard.xpm
 share/apps/korganizer/toolbar/send.xpm
+share/apps/korganizer/toolbar/findf.xpm
+share/apps/korganizer/ical2vcal
+share/apps/korganizer/holiday_dutch
+share/apps/korganizer/holiday_japan
+share/apps/korganizer/holiday_finnish
+share/apps/korganizer/holiday_norway
+share/apps/korganizer/holiday_australia
+share/apps/korganizer/holiday_french
+share/apps/korganizer/holiday_quebec
+share/apps/korganizer/holiday_austria
+share/apps/korganizer/holiday_frswiss
+share/apps/korganizer/holiday_spain
+share/apps/korganizer/holiday_bavarian
+share/apps/korganizer/holiday_german
+share/apps/korganizer/holiday_swedish
+share/apps/korganizer/holiday_belgium
+share/apps/korganizer/holiday_uk
+share/apps/korganizer/holiday_canada
+share/apps/korganizer/holiday_hungary
+share/apps/korganizer/holiday_us
+share/apps/korganizer/holiday_denmark
+share/apps/korganizer/holiday_italy
+share/apps/korganizer/holiday_portugal
+share/apps/korganizer/holiday_thailand
+share/apps/korganizer/holiday_czechia
+share/apps/korganizer/holiday_iceland
 share/locale/de/LC_MESSAGES/korganizer.mo
+share/locale/fr/LC_MESSAGES/korganizer.mo
+share/locale/cs/LC_MESSAGES/korganizer.mo
+share/locale/es/LC_MESSAGES/korganizer.mo
+share/locale/da/LC_MESSAGES/korganizer.mo
 share/locale/no/LC_MESSAGES/korganizer.mo
+share/locale/pl/LC_MESSAGES/korganizer.mo
 share/locale/fi/LC_MESSAGES/korganizer.mo
+share/locale/is/LC_MESSAGES/korganizer.mo
 share/icons/mini/korganizer.xpm
 share/icons/korganizer.xpm
 share/mimelnk/text/x-vcalendar.kdelnk
@@ -52,4 +98,5 @@ share/applnk/Applications/korganizer.kdelnk
 @dirrm share/apps/korganizer/pics
 @dirrm share/apps/korganizer/toolbar
 @dirrm share/doc/HTML/en/korganizer
+@unexec if [ -d %D/share/apps/korganizer/sounds ]; then rmdir %D/share/apps/korganizer/sounds; fi
 @dirrm share/apps/korganizer
