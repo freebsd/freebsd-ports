@@ -1,5 +1,4 @@
 bin/tellnews
-etc/rc.d/dnews.sh
 dnews/access.conf
 dnews/control.conf
 dnews/dis.sh
@@ -13,6 +12,7 @@ dnews/dmgr/feed.htm
 dnews/dmgr/feeds.htm
 dnews/dmgr/help.htm
 dnews/dmgr/log.htm
+dnews/dmgr/logoff.htm
 dnews/dmgr/menu.htm
 dnews/dmgr/sucks.htm
 dnews/dmgr/tellnews.htm
@@ -21,7 +21,6 @@ dnews/dmgrsvc
 dnews/dmulti
 dnews/dmulti_start.sh
 dnews/dnews
-dnews/dnews.conf
 dnews/dnews_start
 dnews/dnews_start.sh
 dnews/dnewsweb
@@ -30,6 +29,7 @@ dnews/dnewsweb.txt
 dnews/dposter
 dnews/drobot
 dnews/expire.conf
+dnews/faq.html
 dnews/fixinet.sh
 dnews/fixowner.sh
 dnews/fts.conf
@@ -51,9 +51,11 @@ dnews/setprot.sh
 dnews/tar.sh
 dnews/tellnews
 dnews/web/advert.htm
+dnews/web/config.tpl
 dnews/web/empty.htm
 dnews/web/follow.tpl
 dnews/web/frame.htm
+dnews/web/grpsrch.tpl
 dnews/web/item.htm
 dnews/web/item.tpl
 dnews/web/item_f.tpl
@@ -64,6 +66,7 @@ dnews/web/items_f.tpl
 dnews/web/items_t.tpl
 dnews/web/itemslst.tpl
 dnews/web/list.tpl
+dnews/web/login.tpl
 dnews/web/post.htm
 dnews/web/post.tpl
 dnews/web/post2.tpl
@@ -75,9 +78,12 @@ dnews/web/results.tpl
 dnews/web/results2.tpl
 dnews/web/search.tpl
 dnews/web/top.tpl
+dnews/web/user.tpl
 dnews/web/xresult2.tpl
 dnews/web/xresults.tpl
 dnews/web/xsearch.tpl
 dnews/xmit
+etc/dnews.conf
+etc/rc.d/dnews.sh
 @dirrm dnews/dmgr
 @dirrm dnews/web
