@@ -499,6 +499,7 @@
     SUBDIR += p5-POE-Component-Logger
     SUBDIR += p5-POE-Component-Pcap
     SUBDIR += p5-POE-Component-RSS
+    SUBDIR += p5-POE-Session-Cascading
     SUBDIR += p5-PV
     SUBDIR += p5-Params-Validate
     SUBDIR += p5-Parse-RecDescent
