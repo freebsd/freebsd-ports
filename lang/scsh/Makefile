@@ -36,5 +36,6 @@ post-install:
 .else
 	@${RM} -rf ${PREFIX}/lib/scsh/doc
 .endif
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
