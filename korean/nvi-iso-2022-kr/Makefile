@@ -3,24 +3,20 @@
 # Date created:		6 Mar 1997
 # Whom:			Jun-ichiro itojun Itoh <itojun@itojun.org>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/03/06 08:38:46 asami Exp $
 #
 
 # can't use PORTSDIR here, since we haven't included bsd.port.mk
+FILESDIR=	${.CURDIR}/../../editors/nvi/files
+PATCHDIR=	${.CURDIR}/../../editors/nvi/patches
+PKGDIR=		${.CURDIR}/../../editors/nvi/pkg
+COMMENT=	${.CURDIR}/pkg/COMMENT
+
 .include <${.CURDIR}/../../editors/nvi/Makefile>
-# bsd.port.mk has been included in the above statement, so we don't need to
-# include it again.
 
 PKGNAME=	kr-nvi-iso2022kr-1.79-970306
 CATEGORIES=	korean editors
 
 MAINTAINER=	itojun@itojun.org
-
-#LIB_DEPENDS+=	canna\\.1\\.:${PORTSDIR}/japanese/Canna
-
-FILESDIR=	${PORTSDIR}/editors/nvi/files
-PATCHDIR=	${PORTSDIR}/editors/nvi/patches
-PKGDIR=		${PORTSDIR}/editors/nvi/pkg
-COMMENT=	${.CURDIR}/pkg/COMMENT
 
 CONFIGURE_ARGS=	--enable-multibyte=iso-2022-kr --program-prefix=n
