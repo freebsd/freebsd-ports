@@ -8,7 +8,7 @@
 
 PORTNAME=	opendx
 PORTVERSION=	4.3.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics math
 MASTER_SITES=	http://opendx.npaci.edu/source/
 DISTNAME=	dx-${PORTVERSION}
@@ -24,13 +24,14 @@ OPTIONS=	HDF "Build hdf-support (only hdf OR netcdf is supported)" on \
 
 USE_REINPLACE=	yes
 USE_BISON=	yes
-USE_MESA=	yes
+USE_GL=		yes
 USE_MOTIF=	yes
 USE_XLIB=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--without-javadx
 CFLAGS+=	${PTHREAD_CFLAGS}
-CONFIGURE_ENV=	ARCH="freebsd" \
+CONFIGURE_ENV=	ARCH="${OPSYS:L}" \
 		CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 USE_GMAKE=	yes
@@ -40,11 +41,13 @@ PLIST_SUB=	ARCH=${OPSYS:L}
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 502126
-BROKEN=		"Broken pkg-plist"
+PLIST_SUB+=	UNAMEP=${ARCH} ARCHDIR=""
+.else
+PLIST_SUB+=	UNAMEP=${OPSYS:L} ARCHDIR="@comment "
 .endif
 
 .if defined(WITH_HDF)
-LIB_DEPENDS+=	df.1:${PORTSDIR}/science/hdf
+LIB_DEPENDS+=	mfhdf.2:${PORTSDIR}/science/hdf
 .endif
 
 .if defined(WITH_NETCDF)
