@@ -8,7 +8,7 @@
 PORTNAME=	sdic
 PORTVERSION=	2.1.2
 CATEGORIES=	japanese elisp
-MASTER_SITES=	ftp://pine.kuee.kyoto-u.ac.jp/pub/tsuchiya/sdic/
+MASTER_SITES=	http://www-nagao.kuee.kyoto-u.ac.jp/member/tsuchiya/sdic/
 
 MAINTAINER=	taoka@FreeBSD.org
 
