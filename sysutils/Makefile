@@ -124,6 +124,7 @@
     SUBDIR += fvcool
     SUBDIR += ganglia-monitor-core
     SUBDIR += ganglia-webfrontend
+    SUBDIR += gcdmaster
     SUBDIR += gcombust
     SUBDIR += gconf-editor
     SUBDIR += gdesklets-multitail

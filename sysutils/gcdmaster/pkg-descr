@@ -1,0 +1,15 @@
+Gnome CD Master is a GUI frontend for creating audio CDs and burning them
+using cdrdao.
+
+Features:
+
+	* Easy to use graphical interface
+	* Multiple project support
+	* Playing of Audio CD images
+	* Easy dump of CDs to disk
+	* CD to CD copy
+	* Composition of new Audio CDs from wav files
+	* Graphical insertion of Track Marks (to divide live recordings)
+	* Easy CD-TEXT modification
+
+WWW: http://cdrdao.sourceforge.net/gcdmaster
