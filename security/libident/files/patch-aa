@@ -1,5 +1,5 @@
-*** Makefile.orig	Sun Sep 15 01:13:03 1996
---- Makefile	Sun Sep 15 01:14:06 1996
+*** Makefile.o	Sat Jan 24 17:11:37 1998
+--- Makefile	Sat Jan 24 17:12:49 1998
 ***************
 *** 8,14 ****
   RANLIB=ranlib
@@ -35,24 +35,21 @@
   LDLIBS =
   LIBIDENT = libident.a
 ***************
-*** 32,37 ****
---- 32,38 ----
-  	@echo ""
+*** 33,38 ****
+--- 33,39 ----
   	@echo aix
   	@echo bsd
-+ 	@echo freebsd (FreeBSD 2.x)
+  	@echo bsd2.11
++ 	@echo freebsd
   	@echo dynix
   	@echo hpux
   	@echo irix
 ***************
-*** 121,126 ****
---- 122,132 ----
-  #
-  bsd:
-  	@$(MAKE) all CC="$(CC)" CFLAGS="-O -DSIGRETURNTYPE=int"
-+ 
-+ #
-+ # FreeBSD 2.x
+*** 126,131 ****
+--- 127,134 ----
+  bsd2.11:
+  	@$(MAKE) all CC="$(CC)" CFLAGS="-O -DSIGRETURNTYPE=int -DHAVE_ANSIHEADERS"
+  
 + freebsd:
 + 	@$(MAKE) all CC="$(CC)" CFLAGS="${CFLAGS} -Wall -DHAVE_ANSIHEADERS"
   
