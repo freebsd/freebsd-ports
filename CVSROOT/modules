@@ -5154,6 +5154,7 @@ p5-Pg		ports/databases/p5-Pg
 p5-PlRPC	ports/net/p5-PlRPC
 p5-Pod-Constants	ports/textproc/p5-Pod-Constants
 p5-Pod-POM	ports/textproc/p5-Pod-POM
+p5-PodParser	ports/textproc/p5-PodParser
 p5-Prima	ports/x11-toolkits/p5-Prima
 p5-Proc-Background	ports/devel/p5-Proc-Background
 p5-Proc-Daemon	ports/devel/p5-Proc-Daemon
