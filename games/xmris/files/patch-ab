@@ -1,0 +1,19 @@
+*** Xmris-ad.src~	Tue Dec 14 08:55:32 1993
+--- Xmris-ad.src	Thu Apr  6 15:58:42 1995
+***************
+*** 18,24 ****
+  *Monochrome:		no
+  *Gender:		he
+  *Random:		no
+! *Busywait:		no
+  *UserName:		no
+  *Font:			FONT
+  *Static:		no
+--- 18,24 ----
+  *Monochrome:		no
+  *Gender:		he
+  *Random:		no
+! *Busywait:		yes
+  *UserName:		no
+  *Font:			FONT
+  *Static:		no
