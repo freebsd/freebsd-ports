@@ -1,0 +1,22 @@
+--- tools/build/v1/gcc-tools.jam.orig	Thu Jan 22 05:11:52 2004
++++ tools/build/v1/gcc-tools.jam	Wed Feb 18 12:57:30 2004
+@@ -61,7 +61,7 @@
+ flags gcc LINKFLAGS <runtime-link>static : -static ;
+ flags gcc CFLAGS <debug-symbols>on : -g ;
+ flags gcc LINKFLAGS <debug-symbols>on : -g ;
+-flags gcc CFLAGS <optimization>off : -O0 ;
++flags gcc CFLAGS <optimization>off : ;
+ flags gcc CFLAGS <optimization>speed : -O3 ;
+ 
+ # Other optimizations we might want for GCC
+@@ -125,8 +125,8 @@
+         }
+     case *BSD :
+         {
+-        flags gcc CFLAGS <threading>multi : -pthread ;
+-        flags gcc LINKFLAGS <threading>multi : -pthread ;
++        flags gcc CFLAGS <threading>multi : %%PTHREAD_CFLAGS%% ;
++        flags gcc LINKFLAGS <threading>multi : %%PTHREAD_LIBS%% ;
+         # there is no -lrt on BSD
+         }
+     case IRIX :

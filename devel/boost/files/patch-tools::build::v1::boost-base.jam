@@ -1,0 +1,14 @@
+--- tools/build/v1/boost-base.jam.orig	Wed Jan 28 23:52:25 2004
++++ tools/build/v1/boost-base.jam	Wed Feb 18 14:06:58 2004
+@@ -2621,11 +2621,6 @@
+     local version-tag = [ MATCH "^([^.]+).([^.]+)" : $(version-number[1]) ] ;
+     version-tag = $(version-tag:J="_") ;
+     
+-    tags += $(toolset-tag:J=) ;
+-    tags += $(thread-tag:J=) ;
+-    tags += $(runtime-tag:J=) ;
+-    tags += $(version-tag) ;
+-    
+     if $(tags)
+     {
+         return $(properties) <*><*><tag><prefix>-$(tags:J=-) ;
