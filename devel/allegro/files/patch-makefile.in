@@ -1,11 +1,61 @@
---- makefile.in.orig	Wed Jan 24 00:15:20 2001
-+++ makefile.in	Sat Dec 15 13:24:16 2001
-@@ -279,7 +279,7 @@
- 	done
+--- makefile.in.orig	Mon Dec 10 11:37:39 2001
++++ makefile.in	Thu Feb 14 08:59:06 2002
+@@ -31,7 +31,7 @@
+ ACLOCAL = aclocal
+ ACLOCAL_M4 = $(srcdir)/aclocal.m4
+ AUTOCONF = autoconf
+-AUTOHEADER = autoheader
++AUTOHEADER =autoheader213
+ 
+ INSTALL = @INSTALL@
+ INSTALL_PROGRAM = @INSTALL_PROGRAM@
+@@ -323,18 +323,19 @@
+ 	fi
  	$(mkinstalldirs) $(bindir)
  	@echo Installing allegro-config to $(bindir)
 -	@$(INSTALL_PROGRAM) allegro-config $(bindir)
+-	@if test -n "$(LIBDIR)/liball*-$(shared_version).so"; then \
+-		(grep -q $(libdir) /etc/ld.so.conf || \
+-		 test $(libdir) = /lib || test $(libdir) = /usr/lib) \
+-		&& ($(LDCONFIG) $(libdir) || true) || (\
+-			echo "" ; \
+-			echo "Warning: shared library destination $(libdir) is not in ldd search path." ; \
+-			echo "Unless you add it to /etc/ld.so.conf, you must set LD_LIBRARY_PATH to include"; \
+-			echo "$(libdir) each time you want to run an Allegro program." ; \
+-			$(LDCONFIG) -n $(libdir) ; \
+-		) ; \
+-	fi
 +	@$(INSTALL) allegro-config $(bindir)
- 	@if test -n "$(LIBDIR)/liball*-$(shared_version).so"; then \
- 		grep -q $(libdir) /etc/ld.so.conf && ($(LDCONFIG) $(libdir) || true) || (\
- 			echo "" ; \
++#	Don't worry about this, 
++#	@if test -n "$(LIBDIR)/liball*-$(shared_version).so"; then \
++#		(grep -q $(libdir) /etc/ld.so.conf || \
++#		 test $(libdir) = /lib || test $(libdir) = /usr/lib) \
++#		&& ($(LDCONFIG) $(libdir) || true) || (\
++#			echo "" ; \
++#			echo "Warning: shared library destination $(libdir) is not in ldd search path." ; \
++#			echo "Unless you add it to /etc/ld.so.conf, you must set LD_LIBRARY_PATH to include"; \
++#			echo "$(libdir) each time you want to run an Allegro program." ; \
++#			$(LDCONFIG) $(libdir) ; \
++#		) ; \
++#	fi
+ 
+ install-headers:
+ 	$(mkinstalldirs) $(includedir)/allegro
+@@ -367,7 +368,7 @@
+ 	@for prog in $(ALLEGRO_LIB_EXES) $(ALLEGRO_DATAFILE_EXES); do \
+ 	  if test "X`echo $$prog | sed -e s,tools/.\*,,`" = X; then \
+ 	    echo Installing $$prog to $(bindir); \
+-	    $(INSTALL_PROGRAM) $$prog $(bindir); \
++	    $(INSTALL) $$prog $(bindir); \
+ 	  fi; \
+ 	done
+ 
+@@ -424,7 +425,7 @@
+ 	@for l in alleg alld allp; do \
+ 	  rm -f $(libdir)/lib$${l}-${shared_version}.so; \
+ 	done
+-	$(LDCONFIG) -n $(libdir)    # remove symlinks
++	$(LDCONFIG) $(libdir)    # remove symlinks
+ 	-$(LDCONFIG) $(libdir)       # update cache (only works if we're root)
+ 
+ uninstall-modules:
