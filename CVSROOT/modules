@@ -8898,6 +8898,7 @@ postgresql73-server	ports/databases/postgresql73-server
 postgresql74-client	ports/databases/postgresql74-client
 postgresql74-server	ports/databases/postgresql74-server
 postgresql80-client	ports/databases/postgresql80-client
+postgresql80-server	ports/databases/postgresql80-server
 postgresql_autodoc	ports/databases/postgresql_autodoc
 postgrey	ports/mail/postgrey
 postilion	ports/mail/postilion
