@@ -1,18 +1,15 @@
 --- xwipower.c.orig	Fri Jun 23 17:53:11 2000
-+++ xwipower.c	Sat Apr 21 07:51:15 2001
-@@ -18,7 +18,11 @@
++++ xwipower.c	Thu Sep 19 12:53:24 2002
+@@ -18,7 +18,7 @@
  #ifdef __FreeBSD__
  #include <net/if_var.h>
  #include <net/ethernet.h>
-+#if __FreeBSD_version >= 500000
+-#include <machine/if_wavelan_ieee.h>
 +#include <dev/wi/if_wavelan_ieee.h>
-+#else
- #include <machine/if_wavelan_ieee.h>
-+#endif
  #include <machine/apm_bios.h>
  #else
  #include <netinet/in.h>
-@@ -93,7 +97,7 @@
+@@ -93,7 +93,7 @@
  
  Widget	toplevel;
  Widget	base, strip_chart_obj;
@@ -21,7 +18,7 @@
  
  
  unsigned	long	MyColor(display, color)
-@@ -223,10 +227,10 @@
+@@ -223,10 +223,10 @@
  static void usage(app)
  char            *app;
  {
