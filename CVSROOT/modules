@@ -8497,6 +8497,7 @@ ports_x11_wm	ports/x11-wm
 portscanner	ports/security/portscanner
 portsentry	ports/security/portsentry
 portsman	ports/sysutils/portsman
+portsnap	ports/sysutils/portsnap
 porttools	ports/devel/porttools
 portupgrade	ports/sysutils/portupgrade
 posadis		ports/dns/posadis
