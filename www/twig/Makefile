@@ -34,6 +34,14 @@ USERFILES=	announcements.inc.php3 config.inc.php3 dbconfig.inc.php3 \
 		images.inc.php3 login.footer.inc.php3 login.form.php3 \
 		login.header.inc.php3 mainmenu.inc.php3 newusergroups.inc.php3
 
+.if defined(WITH_APACHE2)
+pre-everything::
+	@${ECHO_CMD} "#"
+	@${ECHO_CMD} "# this ports does not support Apache2"
+	@${ECHO_CMD} "#"
+	@${FALSE}
+.endif
+
 do-install:
 	-${MKDIR} ${PREFIX}/${TWIG}/config
 	@(cd ${WRKSRC} && ${CP} ${ROOTFILES} ${PREFIX}/${TWIG}/ )
