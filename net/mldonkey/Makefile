@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	mldonkey
-PORTVERSION=	2.5.14
+PORTVERSION=	2.5.16
 CATEGORIES+=	net
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}-${PORTVERSION:C/\./-/g}
+DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER?=	holger@e-gitt.net
 COMMENT?=	A OCAML client for multiple peer-to-peer networks
@@ -19,7 +19,7 @@ BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-pthread --enable-ocamlver=3
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C/\./-/g}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_GMAKE=	yes
 ALL_TARGET=	depend opt
 
