@@ -1,13 +1,29 @@
 #!/bin/sh
-if ! id -u pop > /dev/null 2>&1; then
-  echo "You need an account \"pop\" to install this package."
-  echo "Please add it by hand (try \"man vipw\") and try again."
-  echo ""
-  echo "An example passwd entry is:"
-  echo "pop:*:68:6::0:0:Post Office Owner:/nonexistent:/nonexistent"
-  echo ""
-  exit 1
+USER=pop
+UID=68
+GID=6
+GROUP=mail
+
+if ! pw group show "${GROUP}" 2>/dev/null 1>&2; then
+	if pw groupadd ${GROUP} -g ${GID}; then
+		echo "Added group \"${GROUP}\"."
+	else
+		echo "Adding group \"${GROUP}\" failed..."
+		exit 1
+	fi
 fi
+
+if ! pw user show "${USER}" 2>/dev/null 1>&2; then
+	if pw useradd ${USER} -u ${UID} -g ${GROUP} -h - \
+		-s "/sbin/nologin" -d "/nonexistent" -c "Post Office Owner"
+	then
+		echo "Added user \"${USER}\"."
+	else
+		echo "Adding user \"${USER}\" failed..."
+		exit 1
+	fi
+fi
+
 usrdir=${PREFIX}/etc/popper
 if [ ! -d $usrdir ]; then
   mkdir -p $usrdir
