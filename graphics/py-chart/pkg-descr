@@ -1,0 +1,6 @@
+PyChart is a Python library for creating high quality Encapsulated Postscript,
+PDF, or PNG charts. It currently supports line plots, bar plots, range-fill
+plots, and pie charts. Because it is based on Python, you can make full use
+of Python's scripting power.
+
+WWW: http://www.hpl.hp.com/personal/Yasushi_Saito/pychart/
