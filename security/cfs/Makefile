@@ -6,20 +6,15 @@
 #
 
 PORTNAME=	cfs
-PORTVERSION=	1.4.0b2
+PORTVERSION=	1.4.1
 CATEGORIES=	security
-MASTER_SITES=	ftp://ftp.hacktic.nl/pub/crypto/disk/cfs/ \
-		ftp://ftp.uni-bielefeld.de/pub/crypto/replay/disk/cfs/
-DISTNAME=	cfs.1.4.0.beta2
-PORTREVISION=	1
+MASTER_SITES=	http://www.crypto.com/software/
 
 MAINTAINER=	green@FreeBSD.org
 
 ALL_TARGET=	cfs
 MAN1=		cattach.1 cdetach.1 cmkdir.1 cpasswd.1 cfssh.1
 MAN8=		ccat.8 cfsd.8 cname.8
-
-NO_WRKSUBDIR=	yes
 
 do-install:
 	@cd ${WRKSRC}; \
