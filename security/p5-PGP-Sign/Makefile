@@ -1,34 +1,66 @@
 # New ports collection makefile for: p5-PGP-Sign
-# Version required:	0.13
+# Version required:	0.14
 # Date created:		January 2, 1998
 # Whom:			Don Croyle <croyle@gelemna.ft-wayne.in.us>
 #
-# $Id: Makefile,v 1.4 1998/09/15 21:31:53 asami Exp $
+# $Id: Makefile,v 1.5 1998/12/07 17:33:32 billf Exp $
 #
 
-DISTNAME=	PGP-Sign-0.13
-PKGNAME=	p5-PGP-Sign-0.13
+DISTNAME=	PGP-Sign-0.14
+PKGNAME=	p5-PGP-Sign-0.14
 CATEGORIES=	security perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	PGP
 
 MAINTAINER=	croyle@gelemna.ft-wayne.in.us
 
-RUN_DEPENDS=	pgp:${PORTSDIR}/security/pgp
-
 USE_PERL5=	yes
 
 MAN3=		PGP::Sign.3
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
-# This module only works with version 2, so you need to set this
-# variable on the command line if you have something else installed as
-# pgp.
+# You can either define one of these on the command line or accept the
+# default (USE_PGP2).  You can also predefine the values for PGP (or
+# PGPS and PGPV) and PGPSTYLE if you don't like what this makefile
+# would assign.
+# USE_PGP2 - use PGP 2.6.* or a reasonable facsimile thereof
+# USE_PGP5 - use PGP 5 or a work-alike
+# USE_GPG  - use Gnu Privacy Guard
+
+.if !defined(USE_PGP5) && !defined(USE_GPG)
+USE_PGP2?=	yes
+RUN_DEPENDS=	pgp:${PORTSDIR}/security/pgp
 .ifndef PGP
-PGP!=	which pgp || echo ${PREFIX}/bin/pgp
+PGP!=	which pgp || ${ECHO} ${PREFIX}/bin/pgp
+.endif
+PGPSTYLE?=	PGP2
+.else
+.ifdef USE_PGP5
+RUN_DEPENDS=	pgps:${PORTSDIR}/security/pgp5
+.ifndef PGPS
+PGPS!=	which pgps || ${ECHO} ${PREFIX}/bin/pgps
+.endif
+.ifndef PGPV
+PGPV!=	which pgpv || ${ECHO} ${PREFIX}/bin/pgpv
+.endif
+PGPSTYLE?=	PGP5
+.endif
+.ifdef USE_GPG
+RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg
+.ifndef PGP
+PGP!=	which gpg || ${ECHO} ${PREFIX}/bin/gpg
+.endif
+PGPSTYLE?=	GPG
+.endif
 .endif
 
+.ifdef PGP
+PGPS=	${PGP}
+PGPV=	${PGP}
+.endif
+CONFIG_ARGS=	PGPS=${PGPS} PGPV=${PGPV} PGPSTYLE=${PGPSTYLE}
+
 do-configure:
-	@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL PGP=${PGP}
+	@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL ${CONFIG_ARGS}
 
 .include <bsd.port.mk>
