@@ -41,6 +41,7 @@ WITH_CSCOPE=	yes
 
 USE_BZIP2=	yes
 USE_REINPLACE=	yes
+USE_GNOMENG=	yes
 DIST_SUBDIR=	vim
 WRKSRC=		${WRKDIR}/vim${PORTVERSION:C/\.[0-9]*$//:S/.//g}/src
 PATCH_DIST_ARGS=	-d ${WRKSRC:S/src$//} --forward --quiet -E ${PATCH_DIST_STRIP}
@@ -96,20 +97,24 @@ MAKE_ARGS+=	CONF_OPT_RUBY="--enable-rubyinterp"
 .if !defined(WITHOUT_X11)
 #	for now default the GUI to the GTK+ one
 #	will be reviewed when the GTK+ 1.{3,4} behemoth is released
-.if !defined(WITH_ATHENA) && !defined(WITH_GTK) && !defined(WITH_MOTIF) && !defined(WITH_GNOME)
-WITH_GTK=	yes
+.if !defined(WITH_ATHENA) && !defined(WITH_MOTIF) && !defined(WITH_GNOME)
+WITH_GNOME=	gtk12
 .endif
 
 .if defined(WITH_ATHENA)
 MAKE_ARGS+=	CONF_OPT_GUI="--enable-gui=athena" ${I18N}
-.elif defined(WITH_GTK)
-USE_GTK=	yes
-MAKE_ARGS+=	CONF_OPT_GUI="--enable-gui=gtk --with-gtk-prefix=${X11BASE}" ${I18N}
-MAKE_ARGS+=	X_LIBS="$(X_LIBS) -lXt"
 .elif defined(WITH_GNOME)
-USE_GNOME=	yes
+.if ${WITH_GNOME:Mgnomelibs}!="" || ${WITH_GNOME}=="yes" || \
+	${WITH_GNOME}=="1"
+USE_GNOME=	gnomelibs gnomeprefix
+PKGNAMESUFFIX=	-gnome
 MAKE_ARGS+=	CONF_OPT_GUI="--enable-gui=gnome --with-gtk-prefix=${X11BASE}" ${I18N}
 MAKE_ARGS+=	X_LIBS="$(X_LIBS) -lXt"
+.else
+USE_GNOME=	gtk12
+MAKE_ARGS+=	CONF_OPT_GUI="--enable-gui=gtk --with-gtk-prefix=${X11BASE}" ${I18N}
+MAKE_ARGS+=	X_LIBS="$(X_LIBS) -lXt"
+.endif
 .elif defined(WITH_MOTIF)
 USE_MOTIF=	yes
 MAKE_ARGS+=	CONF_OPT_GUI="--enable-gui=motif --with-motif-lib=\"${MOTIFLIB}\"" MOTIFHOME=${X11BASE} ${I18N}
@@ -129,7 +134,7 @@ LIB_DEPENDS+=	iconv.3:${PORTSDIR}/converters/libiconv
 .endif
 
 # Until the bsd.gnome.mk people fix their damned file
-.if defined(WITH_GTK)
+.if defined(WITH_GNOME)
 USE_XLIB=	yes
 .endif
 
