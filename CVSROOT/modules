@@ -8841,6 +8841,7 @@ scalapack	ports/math/scalapack
 scan_ffs	ports/sysutils/scan_ffs
 scand		ports/net/scand
 scandoc		ports/devel/scandoc
+scanlogd	ports/security/scanlogd
 scanssh		ports/security/scanssh
 sccmilter	ports/mail/sccmilter
 scdp		ports/net-mgmt/scdp
