@@ -1,3 +1,5 @@
+%%WITH_X11%%bin/floppyd
+%%WITH_X11%%bin/floppyd_installtest
 bin/mattrib
 bin/mbadblocks
 bin/mcat
@@ -30,6 +32,8 @@ bin/mzip
 @unexec install-info --delete %D/info/mtools.info %D/info/dir
 info/mtools.info
 @exec install-info %D/info/mtools.info %D/info/dir
+@unexec if cmp -s %D/etc/mtools.conf %D/etc/mtools.conf.sample; then rm -f %D/etc/mtools.conf; fi
 etc/mtools.conf.sample
+@exec if [ ! -f %D/etc/mtools.conf ]; then cp %B/%f %D/etc/mtools.conf; fi
 @exec ln -fs %D/man/man1/mcopy.1.gz %D/man/man1/mwrite.1.gz
 @unexec rm %D/man/man1/mwrite.1.gz

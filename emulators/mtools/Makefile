@@ -22,9 +22,10 @@ GNU_CONFIGURE=	yes
 .if !defined(NO_X)
 USE_XLIB=	yes
 CONFIGURE_ARGS=	--enable-xdf --enable-floppyd
-PLIST=		pkg-plist.x11
+PLIST_SUB=	WITH_X11=""
 .else
 CONFIGURE_ARGS=	--enable-xdf
+PLIST_SUB=	WITH_X11="@comment "
 .endif
 
 USE_GMAKE=	yes
@@ -49,7 +50,7 @@ post-patch:
 	 done
 
 post-install:
-	@#	mwrite has been removed by author, but we'll keep it just a bit longer
+#	mwrite has been removed by author, but we'll keep it just a bit longer
 	@${LN} -sf ${PREFIX}/bin/mtools ${PREFIX}/bin/mwrite
 	@${LN} -sf ${PREFIX}/man/man1/mcopy.1.gz ${PREFIX}/man/man1/mwrite.1.gz
 	@${INSTALL_DATA} ${WRKSRC}/mtools.conf ${PREFIX}/etc/mtools.conf.sample
