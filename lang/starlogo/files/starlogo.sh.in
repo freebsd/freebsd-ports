@@ -1,0 +1,6 @@
+#!/bin/sh
+#
+# $FreeBSD$
+
+cd %%DATADIR%%/sample-projects && \
+JAVA_VERSION="1.2+" "%%LOCALBASE%%/bin/java" -cp "%%DATADIR%%/starlogo.jar" starlogo.Toplevel compiler english "init 100" "$@"
