@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	vsftpd
-PORTVERSION=	1.2.2
+PORTVERSION=	2.0.1
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	ftp://vsftpd.beasts.org/users/cevans/
 
@@ -18,14 +18,24 @@ ALL_TARGET=	vsftpd
 MAN5=		vsftpd.conf.5
 MAN8=		vsftpd.8
 DOCFILES=	AUDIT BENCHMARKS BUGS Changelog FAQ INSTALL LICENSE \
-		README README.security REWARD SIZE SPEED TODO TUNING
+		README README.security README.ssl REFS REWARD \
+		SIZE SPEED TODO TUNING
+
+.if !defined(WITHOUT_SSL) && defined(WITH_VSFTPD_SSL)
+USE_OPENSSL=	yes
+CFLAGS+=	-I${OPENSSLINC}
+LDFLAGS+=	-L${OPENSSLLIB}
+.endif
 
 .include <bsd.port.pre.mk>
 
 do-configure:
 	${REINPLACE_CMD} -e "s=/etc/vsftpd.conf=${PREFIX}/etc/vsftpd.conf=" \
 		${WRKSRC}/defs.h
-	${REINPLACE_CMD} -e "s/^CFLAGS	=/CFLAGS	+=/" \
+	${REINPLACE_CMD} \
+		-e "s|^CC 	=	gcc|CC	= ${CC}|" \
+		-e "s|^CFLAGS	=|CFLAGS	= ${CFLAGS}|" \
+		-e "s|	-Wl,-s| -Wl,-s ${LDFLAGS}|" \
 		${WRKSRC}/Makefile
 	${REINPLACE_CMD} -e \
 		"s/#undef VSF_BUILD_TCPWRAPPERS/#define VSF_BUILD_TCPWRAPPERS 1/" \
@@ -34,6 +44,11 @@ do-configure:
 		${WRKSRC}/vsftpd.conf
 	${REINPLACE_CMD} -e "s=/etc/v=${PREFIX}/etc/v=" \
 		${WRKSRC}/vsftpd.8 ${WRKSRC}/vsftpd.conf.5 ${WRKSRC}/tunables.c
+.if !defined(WITHOUT_SSL) && defined(WITH_VSFTPD_SSL)
+	${REINPLACE_CMD} -e \
+		"s/#undef VSF_BUILD_SSL/#define VSF_BUILD_SSL 1/" \
+		${WRKSRC}/builddefs.h
+.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/vsftpd ${PREFIX}/libexec/
