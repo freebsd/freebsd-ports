@@ -1,0 +1,39 @@
+--- Makefile.orig	Fri Jun  6 17:43:02 2003
++++ Makefile	Thu Mar 18 20:25:55 2004
+@@ -1,8 +1,7 @@
+-LAPACK = $(HOME)/lib/b/lapack
++LAPACK = %%LOCALBASE%%
+ RSDPA  = .
+ 
+-LAPACK_LIB =  -llapack -lcblaswr -lcblas \
+-              -lf77blas -lI77 -lF77 -latlas
++LAPACK_LIB = -lalapack -lcblas -lf77blas -latlas -lg2c
+ 
+ # if you use BLAS in clapack.tgz, use next line
+ # and set NON_ATLAS_SDPA in rsdpa_include.h to 1.
+@@ -17,10 +16,11 @@
+ RSDPA_LIB = -l$(RSDPA_LIB_NAME)
+ 
+ # CC = /home/yamashi9/lib/b/mpich/bin/mpiCC
+-MPIBIN=
++MPIBIN= %%LOCALBASE%%/mpich/bin/
+ CC = $(MPIBIN)mpiCC
+ F77 = $(MPIBIN)mpif77
+-OPTION = -O3 #-Wall # -g
++FFLAGS = %%FFLAGS%%
++CXXFLAGS = %%CXXFLAGS%%
+ 
+ TARGET_EXE = $(RSDPA_LIB_NAME)
+ #TARGET_EXE = rsdpa_main.exe
+@@ -41,9 +41,9 @@
+ 	  -L$(LAPACK)/lib $(SCALAPACK_LIB) $(LAPACK_LIB) 
+ 
+ .cpp.o:
+-	$(CC) $(OPTION) -c -I$(RSDPA) -I$(LAPACK)/include $<
++	$(CC) $(CXXFLAGS) -c -I$(RSDPA) -I$(LAPACK)/include $<
+ .f.o:
+-	$(F77) $(OPTION) -c $<
++	$(F77) $(FFLAGS) -c $<
+ 
+ force: clean now
+ forceall: clean all
