@@ -212,6 +212,7 @@
     SUBDIR += pear-DB_DataObject_FormBuilder
     SUBDIR += pear-DB_Pager
     SUBDIR += pear-MDB
+    SUBDIR += pear-MDB2
     SUBDIR += pear-sqlite
     SUBDIR += pecl-memcache
     SUBDIR += pgaccess
