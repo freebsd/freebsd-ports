@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	plruby
-PORTVERSION=	0.3.5
+PORTVERSION=	0.3.6
 CATEGORIES=	databases ruby
 MASTER_SITES=	ftp://moulon.inra.fr/pub/ruby/
 PKGNAMEPREFIX=	postgresql-
@@ -27,7 +27,7 @@ PGSQL_PORTDIR?=		${PORTSDIR}/${POSTGRESQL_PORT}
 PGSQL_WRKSRC_CMD=	cd ${PGSQL_PORTDIR} && ${MAKE} -V WRKSRC
 
 CONFIGURE_ARGS=		--with-pgsql-version="${PGSQL_VERSION}" \
-			--with-pgsql-srcinc-dir="`${PGSQL_WRKSRC_CMD}`/src/include" \
+			--with-pgsql-srcinc="`${PGSQL_WRKSRC_CMD}`/src/include" \
 			--with-pgsql-include-dir="${LOCALBASE}/include" \
 			--with-pgsql-lib="${LOCALBASE}/lib"
 #CONFIGURE_ARGS+=	--with-safe-level=0
