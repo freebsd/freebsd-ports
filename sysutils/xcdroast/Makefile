@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	xcdroast
-PORTVERSION=	0.98.a.13
+PORTVERSION=	0.98.a.14
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.xcdroast.org/download/
 MASTER_SITE_SUBDIR=	xcdroast
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.a./alpha/}
 
-MAINTAINER=	oliver@freebsd.org
+MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	Another X11 frontend to mkisofs/cdrecord
 
 RUN_DEPENDS=	cdrecord:${PORTSDIR}/sysutils/cdrtools \
@@ -37,20 +37,23 @@ CONFIGURE_ARGS+=--disable-nonrootmode
 .endif
 
 pre-everything::
+.if defined(WITH_NONROOT)
+	@${CAT} ${PKGMESSAGE}
+	@${ECHO_MSG}
+	@${ECHO_MSG} "Are you sure you want this? If not, hit Ctrl+C right now "
+	@${ECHO_MSG}
+	sleep 5
+.else
 	@${ECHO} ""
 	@${ECHO} "You may use the following build options:"
 	@${ECHO} ""
 	@${ECHO} "      WITH_NONROOT=yes"
 	@${ECHO} "         Use xcdroast w/o being root."
-	@${ECHO} "         Actually, that breaks all interactions with cdda2wav"
-	@${ECHO} "         (For example, you are not able to grab tracks, neither"
-	@${ECHO} "         as root, nor as a normal user). Think about WITH_NONROOT"
-	@${ECHO} "          - if you are really in need of it (with the attendant"
-	@${ECHO} "         circumstanceces noticed above) or not."
+	@${ECHO} "         But beware!  This is a security risk! XCDRost will use an"
+	@${ECHO} "         own wrapping utility which gets a SUID Bit after enabling"
+	@${ECHO} "         the non-root mode inside the application!"
 	@${ECHO} ""
 
-post-install:
-.if defined(WITH_NONROOT)
-	@${CAT} ${PKGMESSAGE}
 .endif
+
 .include <bsd.port.mk>

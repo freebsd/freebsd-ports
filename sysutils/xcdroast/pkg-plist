@@ -21,6 +21,7 @@ share/locale/ca/LC_MESSAGES/xcdroast.mo
 share/locale/cs/LC_MESSAGES/xcdroast.mo
 share/locale/da/LC_MESSAGES/xcdroast.mo
 share/locale/de/LC_MESSAGES/xcdroast.mo
+share/locale/el_GR/LC_MESSAGES/xcdroast.mo
 share/locale/es/LC_MESSAGES/xcdroast.mo
 share/locale/et/LC_MESSAGES/xcdroast.mo
 share/locale/fi/LC_MESSAGES/xcdroast.mo
@@ -40,6 +41,7 @@ share/locale/ru/LC_MESSAGES/xcdroast.mo
 share/locale/sk/LC_MESSAGES/xcdroast.mo
 share/locale/sv/LC_MESSAGES/xcdroast.mo
 share/locale/tr/LC_MESSAGES/xcdroast.mo
+share/locale/uk/LC_MESSAGES/xcdroast.mo
 share/locale/zh_CN.GB2312/LC_MESSAGES/xcdroast.mo
 share/locale/zh_TW.Big5/LC_MESSAGES/xcdroast.mo
 @dirrm lib/xcdroast-0.98/bin
