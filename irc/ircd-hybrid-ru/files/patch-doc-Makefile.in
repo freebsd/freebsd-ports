@@ -1,0 +1,20 @@
+--- doc/Makefile.in.orig	Sat Nov 13 23:58:49 2004
++++ doc/Makefile.in	Mon Nov 15 17:34:02 2004
+@@ -26,7 +26,7 @@
+ automoduledir	= @prefix@/modules/autoload
+ 
+ # Local to the etc Makefile
+-mandir          = @prefix@/man8
++mandir          = @prefix@/man/man8
+ MANPAGES        = ircd.8
+ 
+ CONFS		= example.conf example.dalnetru.conf
+@@ -81,6 +81,8 @@
+ 			touch $(sysconfdir)/$${i}line.conf; \
+ 		fi; \
+ 	done
++	mkdir -p $(sysconfdir)/codepage; \
++	$(INSTALL_DATA) codepage/* $(sysconfdir)/codepage/
+ 
+ 	@for i in n c; do \
+ 		if test ! -f "$(sysconfdir)/$${i}resv.conf"; then \

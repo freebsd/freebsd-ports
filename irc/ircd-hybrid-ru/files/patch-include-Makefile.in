@@ -1,0 +1,14 @@
+--- include/Makefile.in.orig	Mon Nov 15 15:32:30 2004
++++ include/Makefile.in	Mon Nov 15 15:33:04 2004
+@@ -21,9 +21,9 @@
+ 	@echo installing header files...
+ 	-@if test ! -d $(prefix)/include; then \
+ 		echo "mkdir $(prefix)/include"; \
+-		mkdir $(prefix)/include; \
+-		mkdir $(prefix)/include/ircd-hybrid-7; \
++		mkdir $(prefix)/include; \
+ 	fi
++	mkdir $(prefix)/include/ircd-hybrid-7
+ 	@for header in *.h; do \
+ 		${INSTALL_DATA} $$header $(prefix)/include/ircd-hybrid-7; \
+ 	done

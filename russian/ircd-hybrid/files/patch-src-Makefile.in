@@ -1,11 +1,15 @@
---- src/Makefile.in.orig	Sun Dec 14 14:44:19 2003
-+++ src/Makefile.in	Sun Dec 14 14:44:37 2003
-@@ -128,7 +128,7 @@
- 
- install-mkdirs:
- 	mkdir -p $(prefix) $(exec_prefix) $(bindir) $(sysconfdir) \
--		$(localstatedir)/logs 
-+		/var/log/ircd-hybrid-ru
+--- src/Makefile.in.orig	Mon Nov 15 14:39:25 2004
++++ src/Makefile.in	Mon Nov 15 14:39:59 2004
+@@ -141,9 +141,9 @@
+ 		echo "mkdir $(sysconfdir)"; \
+ 		mkdir $(sysconfdir); \
+ 	fi
+-	-@if test ! -d $(localstatedir)/logs; then \
+-		echo "mkdir $(localstatedir)/logs"; \
+-		mkdir $(localstatedir)/logs; \
++	-@if test ! -d /var/log/ircd-hybrid-ru; then \
++		echo "/var/log/ircd-hybrid-ru"; \
++		mkdir /var/log/ircd-hybrid-ru; \
+ 	fi
  
  install: install-mkdirs build
- 	@for i in $(PROGS); do \
