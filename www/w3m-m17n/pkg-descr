@@ -5,8 +5,6 @@ doesn't have.
 
 * Rendering tables.
 * Rendering frames. (It converts frames into a table).
-* Display documents given from standard input.
-* Small binary size.
 
 This package also supports multilingualization.
 
