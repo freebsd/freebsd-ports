@@ -14,23 +14,17 @@ DISTNAME=	NetComponents-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java library with common network protocol implementations
 
-PLIST_FILES=	share/java/classes/NetComponents.jar
-USE_JAVA=	1.1+
+PLIST_FILES=	%%JAVAJARDIR%%/${JARFILE}
+USE_JAVA=	yes
 USE_ZIP=	yes
 WRKSRC=		${WRKDIR}/NetComponents-1.3.8a
 NO_BUILD=	yes
 
-JAVASHAREDIR=	${PREFIX}/share/java
-JARDIR=		${JAVASHAREDIR}/classes
 JARFILE=	NetComponents.jar
 
 do-install:
-	@${ECHO} -n ">> Installing JAR as ${JARDIR}/${JARFILE}..."
-	@${CP} ${WRKSRC}/${JARFILE} ${JARDIR}/
-	@${ECHO} " [ DONE ]"
-
-	@${ECHO} -n ">> Fixing permissions..."
-	@${CHMOD} 644 ${JARDIR}/${JARFILE}
-	@${ECHO} " [ DONE ]"
+	@${ECHO_MSG} -n ">> Installing JAR as ${JAVAJARDIR}/${JARFILE}..."
+	@${INSTALL_DATA} ${WRKSRC}/${JARFILE} ${JAVAJARDIR}/
+	@${ECHO_MSG} " [ DONE ]"
 
 .include <bsd.port.mk>
