@@ -17,7 +17,7 @@
 # OpenBSD and NetBSD will be accepted.
 #
 # $FreeBSD$
-# $Id: portlint.pl,v 1.43 2004/03/21 07:31:33 marcus Exp $
+# $Id: portlint.pl,v 1.44 2004/03/26 20:42:32 marcus Exp $
 #
 
 use vars qw/ $opt_a $opt_A $opt_b $opt_c $opt_h $opt_t $opt_v $opt_M $opt_N $opt_B $opt_V /;
@@ -39,8 +39,8 @@ $portdir = '.';
 
 # version variables
 my $major = 2;
-my $minor = 5;
-my $micro = 9;
+my $minor = 6;
+my $micro = 0;
 
 sub l { '[{(]'; }
 sub r { '[)}]'; }
@@ -250,12 +250,13 @@ close(IN);
 #
 # check for files.
 #
-my @checker = ($makevar{DESCR}, 'Makefile', $makevar{MD5_FILE});
+my @checker = ($makevar{DESCR}, 'Makefile', 'distinfo', $makevar{MD5_FILE});
 my %checker = (
-			   $makevar{DESCR} => 'checkdescr',
-			   'Makefile' => 'checkmakefile',
-			   $makevar{MD5_FILE} => 'TRUE'
-			  );
+				$makevar{DESCR} => 'checkdescr',
+				'Makefile' => 'checkmakefile',
+				$makevar{MD5_FILE} => 'TRUE',
+				'distinfo' => 'checkdistinfo',
+);
 if ($extrafile) {
 	my @files = (
 				 <$makevar{SCRIPTDIR}/*>,
@@ -493,6 +494,24 @@ if ($err || $warn) {
 exit $err;
 
 #
+# distinfo
+#
+sub checkdistinfo {
+		my($file) = @_;
+		my($sizefound) = 0;
+		open(IN, "< $file") || return 0;
+		while (<IN>) {
+				if ($_ =~ /^SIZE/) {
+						$sizefound = 1;
+				}
+		}
+		if (!$sizefound) {
+				&perror("WARN: $file: does not contain SIZE.");
+		}
+		close(IN);
+}
+
+#
 # pkg-descr
 #
 sub checkdescr {
@@ -693,7 +712,7 @@ sub checkplist {
 
 			if ($_ =~ /^info\/dir$/) {
 				&perror("FATAL: $file [$.]: \"info/dir\" should not be listed.".
-					"use install-info to add/remove ".
+					"Use install-info to add/remove ".
 					"an entry.");
 				$infooverwrite++;
 			}
@@ -1016,18 +1035,20 @@ sub checkmakefile {
 		print "OK: checking for USE_* used too late.\n" if ($verbose);
 		my @use_early = qw(
 			APACHE
+			BZIP2
 			GNUSTEP
 			IMAKE
 			JAVA
 			KDE(?:BASE|LIBS)_VER
-			LIBRUBY
+			(?:LIB)?RUBY
 			LINUX_PREFIX
 			OPENSSL
+			PHP
 			PYTHON
 			QT2?
 			QT_VER
-			RUBY
 			X_PREFIX
+			ZIP
 		);
 
 		my @other_early = qw(
@@ -1067,6 +1088,16 @@ sub checkmakefile {
 		my $lineno = &linenumber($`);
 		&perror("FATAL: $file [$lineno]: use of NO_CHECKSUM discouraged. ".
 			"it is intended to be a user variable.");
+	}
+
+	#
+	# whole file: USE_SIZE
+	#
+	print "OK: checking USE_SIZE.\n" if ($verbose);
+	if ($whole =~ /\nUSE_SIZE/) {
+			my $lineno = &linenumber($`);
+			&perror("WARN: $file [$lineno]: use of USE_SIZE is no longer ".
+					"required.");
 	}
 
 	#
@@ -1112,6 +1143,15 @@ sub checkmakefile {
 	 && $whole !~ m#(\$[\{\(]PREFIX[\}\)]|$localbase)/share/doc#) {
 		&perror("WARN: $file: use \".if !defined(NOPORTDOCS)\" to wrap ".
 			"installation of files into $localbase/share/doc.");
+	}
+
+	#
+	# whole file: check for USE_GETTEXT
+	#
+	print "OK: checking for USE_GETTEXT without WITHOUT_NLS.\n" if ($verbose);
+	if ($whole =~ /\nUSE_GETTEXT/ && $whole !~ /def(?:ined)?\s*\(?WITHOUT_NLS\)?/) {
+			&perror("WARN: $file: Consider adding support for a WITHOUT_NLS ".
+					"knob to conditionally disable gettext support.");
 	}
 
 	#
