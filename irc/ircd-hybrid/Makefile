@@ -84,6 +84,9 @@ CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc/ircd-hybrid \
 	--ohelpdir=${PREFIX}/share/${PORTNAME}-${PORTVERSION}/help/opers \
 	--messagedir=${PREFIX}/share/${PORTNAME}-${PORTVERSION}/messages \
 
+pre-patch:
+	@${SED} -e "s#%%PORTVERSION%%#${PORTVERSION}#" ${FILESDIR}/include-config.h.pre-patch > ${FILESDIR}/patch-include-config.h
+
 post-patch:
 	@${REINPLACE_CMD} -e "s#man8#man/man8#" ${WRKSRC}/doc/Makefile.in
 	@${MV} ${WRKSRC}/doc/ircd.motd ${WRKSRC}/doc/ircd.motd.sample
@@ -99,5 +102,8 @@ post-install:
 	@${SED} -e "s#%PREFIX%#${PREFIX}#" ${FILESDIR}/ircd-hybrid.sh > ${WRKDIR}/ircd-hybrid.sh
 	@${INSTALL_SCRIPT} ${WRKDIR}/ircd-hybrid.sh ${PREFIX}/etc/rc.d
 	@${SED} -e "s#/usr/local/#${PREFIX}/#" ${PKGMESSAGE}
+
+pre-clean:
+	@${RM} -f ${FILESDIR}/patch-include-config.h
 
 .include <bsd.port.mk>

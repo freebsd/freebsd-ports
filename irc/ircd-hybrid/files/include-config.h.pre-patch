@@ -18,15 +18,15 @@
 -#define AUTOMODPATH IRCD_PREFIX "/modules/autoload/"
 -#define MSGPATH IRCD_PREFIX "/messages/"
 -#define ETCPATH IRCD_PREFIX "/etc"
-+#define MODPATH IRCD_PREFIX "/share/ircd-hybrid-7.0/modules/"
-+#define AUTOMODPATH IRCD_PREFIX "/share/ircd-hybrid-7.0/modules/autoload/"
-+#define MSGPATH IRCD_PREFIX "/share/ircd-hybrid-7.0/messages/"
++#define MODPATH IRCD_PREFIX "/share/ircd-hybrid-%%PORTVERSION%%/modules/"
++#define AUTOMODPATH IRCD_PREFIX "/share/ircd-hybrid-%%PORTVERSION%%/modules/autoload/"
++#define MSGPATH IRCD_PREFIX "/share/ircd-hybrid-%%PORTVERSION%%/messages/"
 +#define ETCPATH IRCD_PREFIX "/etc/ircd-hybrid"
  #define LOGPATH IRCD_PREFIX "/logs"
 -#define UHPATH   IRCD_PREFIX "/help/users"
 -#define HPATH  IRCD_PREFIX "/help/opers"
-+#define UHPATH   IRCD_PREFIX "/share/ircd-hybrid-7.0/help/users"
-+#define HPATH  IRCD_PREFIX "/share/ircd-hybrid-7.0/help/opers"
++#define UHPATH   IRCD_PREFIX "/share/ircd-hybrid-%%PORTVERSION%%/help/users"
++#define HPATH  IRCD_PREFIX "/share/ircd-hybrid-%%PORTVERSION%%/help/opers"
  
  /* files */
  #define SPATH   BINPATH "/ircd"                 /* ircd executable */
