@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	quasi88
-PORTVERSION=	0.4.5
+PORTVERSION=	0.5.4
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.117.ne.jp/~show/pc8801/
 EXTRACT_SUFX=	.tgz
@@ -17,7 +17,8 @@ COMMENT=	PC-8801 emulator for X
 USE_X_PREFIX=	yes
 USE_XLIB=	yes
 USE_GMAKE=	yes
-DATAFILES=	FAQ FORMAT GET-IMAGE HISTORY MANUAL QUASI88 _quasi88rc
+DATAFILES=	_quasi88rc
+DOCFILES=	FAQ.TXT FORMAT.TXT GET-IMAGE.TXT HISTORY.TXT MANUAL.TXT QUASI88.TXT
 
 .if !defined(WITH_SOUND)
 pre-everything::
@@ -39,6 +40,9 @@ do-install:
 	@ ${MKDIR} ${PREFIX}/share/doc/quasi88
 .for i in ${DATAFILES}
 	@ ${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/share/doc/quasi88/
+.endfor
+.for i in ${DOCFILES}
+	@ ${INSTALL_DATA} ${WRKSRC}/doc/${i} ${PREFIX}/share/doc/quasi88/
 .endfor
 .endif
 
