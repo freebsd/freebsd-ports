@@ -9,7 +9,6 @@
 DISTNAME=	xlockmore-2.9
 CATEGORIES+=	x11
 MASTER_SITES+=	ftp://ftp.germany.eu.net/pub/X11/XConsortium/contrib
-MASTER_SITES=	ftp://gatekeeper.dec.com//pub/X11/contrib/
 MASTER_SITES+=	ftp://ftp.x.org/contrib/applications/
 
 WRKSRC=		${WRKDIR}/xlockmore
