@@ -2,7 +2,7 @@ include/png.h
 include/pngconf.h
 lib/libpng.a
 @exec ranlib %D/%F
-lib/libpng.so.0.96
+lib/libpng.so.0.99
 @exec /sbin/ldconfig -m %B
 man/man3/libpng.3.gz
 man/man3/libpngpf.3.gz
