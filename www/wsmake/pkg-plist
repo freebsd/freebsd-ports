@@ -1,0 +1,178 @@
+bin/wsmake
+share/examples/wsmake/ex1/README
+share/examples/wsmake/ex1/ex1.final.ws
+share/examples/wsmake/ex1/ex1.ws
+share/examples/wsmake/ex1/docs/.cvsignore
+share/examples/wsmake/ex1/docs/.keepme
+share/examples/wsmake/ex1/html/about.html
+share/examples/wsmake/ex1/html/help.html
+share/examples/wsmake/ex1/html/index.html
+share/examples/wsmake/ex2/README
+share/examples/wsmake/ex2/ex2.final.ws
+share/examples/wsmake/ex2/ex2.ws
+share/examples/wsmake/ex2/html/about.html
+share/examples/wsmake/ex2/html/help.html
+share/examples/wsmake/ex2/html/index.html
+share/examples/wsmake/ex3/README
+share/examples/wsmake/ex3/ex3.final.ws
+share/examples/wsmake/ex3/ex3.ws
+share/examples/wsmake/ex3/html/about.html
+share/examples/wsmake/ex3/html/help.html
+share/examples/wsmake/ex3/html/index.html
+share/examples/wsmake/ex4/README
+share/examples/wsmake/ex4/ex4.final.ws
+share/examples/wsmake/ex4/ex4.ws
+share/examples/wsmake/ex4/html/about.html
+share/examples/wsmake/ex4/html/help.html
+share/examples/wsmake/ex4/html/index.html
+share/examples/wsmake/ex4/templates/footer.html
+share/examples/wsmake/ex4/templates/header.html
+share/examples/wsmake/ex5/README
+share/examples/wsmake/ex5/ex5.final.ws
+share/examples/wsmake/ex5/ex5.ws
+share/examples/wsmake/ex5/html/about.html
+share/examples/wsmake/ex5/html/help.html
+share/examples/wsmake/ex5/html/index.html
+share/examples/wsmake/ex5/html/linuxlinks.txt
+share/examples/wsmake/ex5/html/mikeslinks.txt
+share/examples/wsmake/ex5/html/incdirtest/index.html
+share/examples/wsmake/ex5/includes/linuxlinks.txt
+share/examples/wsmake/ex5/templates/footer.html
+share/examples/wsmake/ex5/templates/header.html
+share/examples/wsmake/ex6/README
+share/examples/wsmake/ex6/ex6.ws
+share/examples/wsmake/ex6/html/about.html
+share/examples/wsmake/ex6/html/help.html
+share/examples/wsmake/ex6/html/index.html
+share/examples/wsmake/ex6/html/linuxlinks.txt
+share/examples/wsmake/ex6/templates/footer.html
+share/examples/wsmake/ex6/templates/header.html
+share/examples/wsmake/ex6/templates/menu.html
+share/examples/wsmake/ex7/README
+share/examples/wsmake/ex7/ex7-2.ws
+share/examples/wsmake/ex7/ex7.ws
+share/examples/wsmake/ex7/html/about.html
+share/examples/wsmake/ex7/html/help.html
+share/examples/wsmake/ex7/html/index.html
+share/examples/wsmake/ex7/html/linuxlinks.txt
+share/examples/wsmake/ex7/templates/footer.html
+share/examples/wsmake/ex7/templates/header.html
+share/examples/wsmake/ex7/templates/menu.html
+share/examples/wsmake/ex8/README
+share/examples/wsmake/ex8/ex8.ws
+share/examples/wsmake/ex8/html/index.cgi
+share/examples/wsmake/ex8/templates/footer.html
+share/examples/wsmake/ex8/templates/header.html
+share/examples/wsmake/ex9/README
+share/examples/wsmake/ex9/ex9.ws
+share/examples/wsmake/ex9/myparser.pl
+share/examples/wsmake/ex9/html/about.html
+share/examples/wsmake/ex9/html/binary.file
+share/examples/wsmake/ex9/html/help.html
+share/examples/wsmake/ex9/html/index.html
+share/examples/wsmake/ex10/README
+share/examples/wsmake/ex10/ex10.ws
+share/examples/wsmake/ex10/html/index.html
+share/examples/wsmake/ex10/templates/header.html
+share/examples/wsmake/ex11/README
+share/examples/wsmake/ex11/ex11.ws
+share/examples/wsmake/ex11/html/external.html
+share/examples/wsmake/ex11/html/external2.html
+share/examples/wsmake/ex11/html/news/archive.html
+share/examples/wsmake/ex11/html/news/index.html
+share/examples/wsmake/ex11/html/news/search.html
+share/examples/wsmake/ex11/templates/footer.html
+share/examples/wsmake/ex11/templates/header.html
+share/examples/wsmake/ex12/README
+share/examples/wsmake/ex12/depend1.txt
+share/examples/wsmake/ex12/ex12.ws
+share/examples/wsmake/ex12/html/about.html
+share/examples/wsmake/ex12/html/depend2.txt
+share/examples/wsmake/ex12/html/help.html
+share/examples/wsmake/ex12/html/index.html
+share/examples/wsmake/ex13/README
+share/examples/wsmake/ex13/ex13.ws
+share/examples/wsmake/ex13/pagegroup.wsc
+share/examples/wsmake/ex13/pagegroup_config.wsc
+share/examples/wsmake/ex13/pages.wsc
+share/examples/wsmake/ex13/website.wsc
+share/examples/wsmake/ex13/html/index.html
+%%PORTDOCS%%share/doc/wsmake/user-manual/book1.html
+%%PORTDOCS%%share/doc/wsmake/user-manual/ln55.html
+%%PORTDOCS%%share/doc/wsmake/user-manual/f57.html
+%%PORTDOCS%%share/doc/wsmake/user-manual/c76.html
+%%PORTDOCS%%share/doc/wsmake/user-manual/x103.html
+%%PORTDOCS%%share/doc/wsmake/user-manual/c181.html
+%%PORTDOCS%%share/doc/wsmake/user-manual/x386.html
+%%PORTDOCS%%share/doc/wsmake/user-manual/c459.html
+%%PORTDOCS%%share/doc/wsmake/user-manual/x504.html
+%%PORTDOCS%%share/doc/wsmake/user-manual/c1021.html
+%%PORTDOCS%%share/doc/wsmake/user-manual/x1028.html
+%%PORTDOCS%%share/doc/wsmake/user-manual/x1032.html
+%%PORTDOCS%%share/doc/wsmake/user-manual/x1036.html
+%%PORTDOCS%%share/doc/wsmake/user-manual/x1040.html
+%%PORTDOCS%%share/doc/wsmake/user-manual/x1045.html
+%%PORTDOCS%%share/doc/wsmake/user-manual/x1049.html
+%%PORTDOCS%%share/doc/wsmake/user-manual/x1053.html
+%%PORTDOCS%%share/doc/wsmake/user-manual/x1059.html
+%%PORTDOCS%%share/doc/wsmake/user-manual/x1063.html
+%%PORTDOCS%%share/doc/wsmake/user-manual/x1067.html
+%%PORTDOCS%%share/doc/wsmake/user-manual/x1071.html
+%%PORTDOCS%%share/doc/wsmake/user-manual/x1075.html
+%%PORTDOCS%%share/doc/wsmake/user-manual/c1079.html
+%%PORTDOCS%%share/doc/wsmake/user-manual/docbook.css
+%%PORTDOCS%%share/doc/wsmake/user-manual/stylesheet-images/caution.gif
+%%PORTDOCS%%share/doc/wsmake/user-manual/stylesheet-images/home.gif
+%%PORTDOCS%%share/doc/wsmake/user-manual/stylesheet-images/important.gif
+%%PORTDOCS%%share/doc/wsmake/user-manual/stylesheet-images/next.gif
+%%PORTDOCS%%share/doc/wsmake/user-manual/stylesheet-images/note.gif
+%%PORTDOCS%%share/doc/wsmake/user-manual/stylesheet-images/prev.gif
+%%PORTDOCS%%share/doc/wsmake/user-manual/stylesheet-images/tip.gif
+%%PORTDOCS%%share/doc/wsmake/user-manual/stylesheet-images/toc-blank.gif
+%%PORTDOCS%%share/doc/wsmake/user-manual/stylesheet-images/toc-minus.gif
+%%PORTDOCS%%share/doc/wsmake/user-manual/stylesheet-images/toc-plus.gif
+%%PORTDOCS%%share/doc/wsmake/user-manual/stylesheet-images/up.gif
+%%PORTDOCS%%share/doc/wsmake/user-manual/stylesheet-images/warning.gif
+%%PORTDOCS%%share/doc/wsmake/user-manual/configlayout.jpg
+%%PORTDOCS%%share/doc/wsmake/user-manual/index.html
+@dirrm share/examples/wsmake/ex1/docs
+@dirrm share/examples/wsmake/ex1/html
+@dirrm share/examples/wsmake/ex1
+@dirrm share/examples/wsmake/ex2/html
+@dirrm share/examples/wsmake/ex2
+@dirrm share/examples/wsmake/ex3/html
+@dirrm share/examples/wsmake/ex3
+@dirrm share/examples/wsmake/ex4/html
+@dirrm share/examples/wsmake/ex4/templates
+@dirrm share/examples/wsmake/ex4
+@dirrm share/examples/wsmake/ex5/html/incdirtest
+@dirrm share/examples/wsmake/ex5/html
+@dirrm share/examples/wsmake/ex5/includes
+@dirrm share/examples/wsmake/ex5/templates
+@dirrm share/examples/wsmake/ex5
+@dirrm share/examples/wsmake/ex6/html
+@dirrm share/examples/wsmake/ex6/templates
+@dirrm share/examples/wsmake/ex6
+@dirrm share/examples/wsmake/ex7/html
+@dirrm share/examples/wsmake/ex7/templates
+@dirrm share/examples/wsmake/ex7
+@dirrm share/examples/wsmake/ex8/html
+@dirrm share/examples/wsmake/ex8/templates
+@dirrm share/examples/wsmake/ex8
+@dirrm share/examples/wsmake/ex9/html
+@dirrm share/examples/wsmake/ex9
+@dirrm share/examples/wsmake/ex10/html
+@dirrm share/examples/wsmake/ex10/templates
+@dirrm share/examples/wsmake/ex10
+@dirrm share/examples/wsmake/ex11/html/news
+@dirrm share/examples/wsmake/ex11/html
+@dirrm share/examples/wsmake/ex11/templates
+@dirrm share/examples/wsmake/ex11
+@dirrm share/examples/wsmake/ex12/html
+@dirrm share/examples/wsmake/ex12
+@dirrm share/examples/wsmake/ex13/html
+@dirrm share/examples/wsmake/ex13
+@dirrm share/examples/wsmake
+@dirrm share/doc/wsmake/user-manual/stylesheet-images
+@dirrm share/doc/wsmake/user-manual
+@dirrm share/doc/wsmake
