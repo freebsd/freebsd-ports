@@ -32,6 +32,7 @@
     SUBDIR += gnome--
     SUBDIR += gnome-look
     SUBDIR += gnome-themes
+    SUBDIR += gnome-themes-extras
     SUBDIR += gnustep-art
     SUBDIR += gnustep-back
     SUBDIR += gnustep-gui
