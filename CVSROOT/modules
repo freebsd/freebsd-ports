@@ -8263,6 +8263,7 @@ win32-codecs	ports/multimedia/win32-codecs
 windowlab	ports/x11-wm/windowlab
 windowmaker	ports/x11-wm/windowmaker
 wine		ports/emulators/wine
+wings		ports/graphics/wings
 wingz		ports/math/wingz
 wingz3		ports/math/wingz3
 wise		ports/biology/wise
