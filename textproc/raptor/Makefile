@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	raptor
-PORTVERSION=	1.2.0
-PORTREVISION=	3
+PORTVERSION=	1.3.1
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.redland.opensource.ac.uk/dist/source/
@@ -22,7 +21,7 @@ LIB_DEPENDS=	curl.3:${PORTSDIR}/ftp/curl \
 
 USE_GETOPT_LONG=	yes
 USE_GNOME=	glib20 gnomehack gnometarget libxml2 lthack
-USE_LIBTOOL_VER=13
+USE_LIBTOOL_VER=	13
 CONFIGURE_ARGS=	--with-xml2-config=${LOCALBASE}/bin/xml2-config \
 		--with-curl-config=${LOCALBASE}/bin/curl-config \
 		--with-libwww-config=${LOCALBASE}/bin/libwww-config \
