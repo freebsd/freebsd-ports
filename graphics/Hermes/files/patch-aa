@@ -1,9 +1,9 @@
---- src/Makefile.in.orig	Fri Jul 21 03:38:08 2000
-+++ src/Makefile.in	Tue Aug 22 21:50:03 2000
-@@ -406,13 +406,13 @@
+--- src/Makefile.in.orig	Mon Jul  7 00:56:57 2003
++++ src/Makefile.in	Sun Aug 10 18:54:05 2003
+@@ -540,13 +540,13 @@
  
  
- .S.lo:
+ .S.o:
 -	gcc -c -o $@ $<
 +	$(CC) -c -o $@ $<
  	cp $@ `echo $@ | sed -e 's/\.lo$$/.o/'`

@@ -6,15 +6,12 @@
 #
 
 PORTNAME=	Hermes
-PORTVERSION=	1.3.2
-PORTREVISION=	1
+PORTVERSION=	1.3.3
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.clanlib.org/download/files/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast pixel formats conversion library
-
-BUILD_DEPENDS=	${LOCALBASE}/share/automake/depcomp:${PORTSDIR}/devel/automake
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -23,9 +20,6 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
 		AUTOHEADER="${TRUE}"
 INSTALLS_SHLIB=	yes
-
-pre-configure:
-	@${CP} ${LOCALBASE}/share/automake/depcomp ${WRKSRC}
 
 post-install:
 .if !defined(NOPORTDOCS)
