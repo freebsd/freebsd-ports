@@ -1,0 +1,8 @@
+bin/pospell
+bin/newsbody
+share/locale/da/LC_MESSAGES/spellutils.mo
+%%PORTDOCS%%share/doc/spellutils/NEWS
+%%PORTDOCS%%share/doc/spellutils/README
+%%PORTDOCS%%share/examples/spellutils/aspell.sl
+%%PORTDOCS%%@dirrm share/doc/spellutils
+%%PORTDOCS%%@dirrm share/examples/spellutils
