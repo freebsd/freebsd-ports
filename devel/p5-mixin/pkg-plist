@@ -1,0 +1,5 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/mixin/.packlist
+%%SITE_PERL%%/mixin.pm
+%%SITE_PERL%%/mixin/with.pm
+@dirrm %%SITE_PERL%%/mixin
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/mixin
