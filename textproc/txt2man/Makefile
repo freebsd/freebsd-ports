@@ -7,11 +7,14 @@
 #
 
 PORTNAME=	txt2man
-PORTVERSION=	1.4.2
+PORTVERSION=	1.4.4
 CATEGORIES=	textproc
 MASTER_SITES=	http://mvertes.free.fr/download/
 
 MAINTAINER=	ports@FreeBSD.org
+
+BUILD_DEPENDS=	gawk:${PORTSDIR}/lang/gawk
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 ALL_TARGET=	txt2man.1
 INSTALL_TARGET=	install prefix=${PREFIX}
