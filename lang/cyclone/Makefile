@@ -22,7 +22,6 @@ COMMENT=	A safe dialect of C from Cornell and AT&T Research
 
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
-NO_PACKAGE=	'Neither CC nor CFLAGS safe.'
 WRKSRC=		${WRKDIR}/${PORTNAME}
 CYCBINDIR=	${PREFIX}/bin
 CYCINCDIR=	${PREFIX}/include/cyclone
@@ -34,6 +33,7 @@ pre-everything::
 	@${ECHO_MSG} '>>>'
 	@${ECHO_MSG} '>>> You can enable extra optimizations by defining WITH_OPTIMIZED_CFLAGS.'
 	@${ECHO_MSG} '>>>'
+	@${ECHO_MSG} '>>> Note that this port does not respect CC or CFLAGS'
 
 post-patch:
 .ifndef(WITH_OPTIMIZED_CFLAGS)
