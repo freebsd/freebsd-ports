@@ -21,18 +21,20 @@ lib/%%PYTHON_VERSION%%/Tools/compiler/compile.py
 lib/%%PYTHON_VERSION%%/Tools/compiler/compiler/__init__.py
 lib/%%PYTHON_VERSION%%/Tools/compiler/compiler/ast.py
 lib/%%PYTHON_VERSION%%/Tools/compiler/compiler/consts.py
+lib/%%PYTHON_VERSION%%/Tools/compiler/dumppyc.py
 lib/%%PYTHON_VERSION%%/Tools/compiler/compiler/misc.py
 lib/%%PYTHON_VERSION%%/Tools/compiler/compiler/pyassem.py
 lib/%%PYTHON_VERSION%%/Tools/compiler/compiler/pycodegen.py
 lib/%%PYTHON_VERSION%%/Tools/compiler/compiler/transformer.py
 lib/%%PYTHON_VERSION%%/Tools/compiler/compiler/visitor.py
 lib/%%PYTHON_VERSION%%/Tools/compiler/demo.py
+lib/%%PYTHON_VERSION%%/Tools/compiler/regrtest.py
+lib/%%PYTHON_VERSION%%/Tools/compiler/setup.py
 lib/%%PYTHON_VERSION%%/Tools/faqwiz/README
 lib/%%PYTHON_VERSION%%/Tools/faqwiz/faqconf.py
 lib/%%PYTHON_VERSION%%/Tools/faqwiz/faqcust.py
 lib/%%PYTHON_VERSION%%/Tools/faqwiz/faqw.py
 lib/%%PYTHON_VERSION%%/Tools/faqwiz/faqwiz.py
-lib/%%PYTHON_VERSION%%/Tools/freeze/.cvsignore
 lib/%%PYTHON_VERSION%%/Tools/freeze/README
 lib/%%PYTHON_VERSION%%/Tools/freeze/bkfile.py
 lib/%%PYTHON_VERSION%%/Tools/freeze/checkextensions.py
@@ -47,6 +49,7 @@ lib/%%PYTHON_VERSION%%/Tools/freeze/modulefinder.py
 lib/%%PYTHON_VERSION%%/Tools/freeze/parsesetup.py
 lib/%%PYTHON_VERSION%%/Tools/freeze/win32.html
 lib/%%PYTHON_VERSION%%/Tools/freeze/winmakemakefile.py
+lib/%%PYTHON_VERSION%%/Tools/i18n/msgfmt.py
 lib/%%PYTHON_VERSION%%/Tools/i18n/pygettext.py
 lib/%%PYTHON_VERSION%%/Tools/idle/AutoExpand.py
 lib/%%PYTHON_VERSION%%/Tools/idle/AutoIndent.py
@@ -200,14 +203,18 @@ lib/%%PYTHON_VERSION%%/Tools/scripts/pathfix.py
 lib/%%PYTHON_VERSION%%/Tools/scripts/pdeps.py
 lib/%%PYTHON_VERSION%%/Tools/scripts/pindent.py
 lib/%%PYTHON_VERSION%%/Tools/scripts/ptags.py
+lib/%%PYTHON_VERSION%%/Tools/scripts/redemo.py
+lib/%%PYTHON_VERSION%%/Tools/scripts/reindent.py
 lib/%%PYTHON_VERSION%%/Tools/scripts/rgrep.py
 lib/%%PYTHON_VERSION%%/Tools/scripts/suff.py
 lib/%%PYTHON_VERSION%%/Tools/scripts/sum5.py
 lib/%%PYTHON_VERSION%%/Tools/scripts/texi2html.py
+lib/%%PYTHON_VERSION%%/Tools/scripts/trace.py
 lib/%%PYTHON_VERSION%%/Tools/scripts/treesync.py
 lib/%%PYTHON_VERSION%%/Tools/scripts/untabify.py
 lib/%%PYTHON_VERSION%%/Tools/scripts/which.py
 lib/%%PYTHON_VERSION%%/Tools/scripts/xxci.py
+lib/%%PYTHON_VERSION%%/Tools/unicode/makeunicodedata.py
 lib/%%PYTHON_VERSION%%/Tools/versioncheck/README
 lib/%%PYTHON_VERSION%%/Tools/versioncheck/_checkversion.py
 lib/%%PYTHON_VERSION%%/Tools/versioncheck/checkversions.py
@@ -224,6 +231,7 @@ lib/%%PYTHON_VERSION%%/Tools/world/world
 @dirrm lib/%%PYTHON_VERSION%%/Tools/world
 @dirrm lib/%%PYTHON_VERSION%%/Tools/webchecker
 @dirrm lib/%%PYTHON_VERSION%%/Tools/versioncheck
+@dirrm lib/%%PYTHON_VERSION%%/Tools/unicode
 @dirrm lib/%%PYTHON_VERSION%%/Tools/scripts
 @dirrm lib/%%PYTHON_VERSION%%/Tools/pynche/X
 @dirrm lib/%%PYTHON_VERSION%%/Tools/pynche
