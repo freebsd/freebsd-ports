@@ -1,0 +1,31 @@
+--- Makefile.orig	Sat Aug  7 21:03:49 2004
++++ Makefile	Sat Aug  7 21:24:17 2004
+@@ -1,16 +1,5 @@
+-# C compiler to use
+-CC=gcc
+-
+-# Set PREFIX to the root of where you want to install gtklife
+-PREFIX=/usr/local
+-
+-# Installation points for the gtklife binary, data, and documentation.
+-BINDIR=$(PREFIX)/games
++BINDIR=$(PREFIX)/bin
+ DATADIR=$(PREFIX)/share/gtklife
+-DOCDIR=$(PREFIX)/doc/gtklife
+-
+-# Optimization and debug flags
+-CFLAGS=-O3 -mpentiumpro -Wall # -g
+ 
+ ########## No user-serviceable parts below ##########
+ 
+@@ -32,8 +21,10 @@
+ 	install -m 0644 graphics/* $(DATADIR)/graphics
+ 	install -d $(DATADIR)/patterns
+ 	install -m 0644 patterns/* $(DATADIR)/patterns
++ifndef NOPORTDOCS
+ 	install -d $(DOCDIR)
+ 	install -m 0644 doc/* $(DOCDIR)
++endif
+ 
+ gtklife: $(OBJS)
+ 	$(CC) -o gtklife $(OBJS) $(LDFLAGS)
