@@ -62,6 +62,7 @@ dnews3			ports/news/dnews	Only free for schools and
 						free trial for everybody.
 						We currently ask for permission
 						to put a package on the CD-ROM.
+elsa*			ports/net/elsa		Crypto; export-controlled
 fmsx-*			ports/emulators/fmsx	Unclear legal status of
 						distributed ROMs.
 fwtk-*			ports/security/fwtk	No redistribution allowed
