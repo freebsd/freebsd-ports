@@ -142,6 +142,9 @@ RD=$5
 
 buildenv ${pb} ${arch} ${branch}
 
+# Want to use the /etc/make.conf in the chroot
+unset __MAKE_CONF
+
 pkgname=$(basename $6 ${PKGSUFFIX})
 dirname=$7
 shift 2
