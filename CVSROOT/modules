@@ -726,9 +726,9 @@ cdindex		ports/audio/cdindex
 cdk		ports/devel/cdk
 cdlabelgen	ports/print/cdlabelgen
 cdpd		ports/net/cdpd
-cdpr		ports/net/cdpr
 cdplay		src/usr.sbin/cdplay
 cdplayer.app	ports/audio/cdplayer.app
+cdpr		ports/net/cdpr
 cdrdao		ports/audio/cdrdao
 cdroot		ports/sysutils/cdroot
 cdrtools	ports/sysutils/cdrtools
@@ -1011,8 +1011,8 @@ crypto_telnet	src/crypto/telnet
 cryptopp	ports/security/cryptopp
 cryptoslam	ports/games/cryptoslam
 crystal		ports/devel/crystal
-cs-ooodict-CZ	ports/editors/ooodict-cs_CZ
 cs		ports/devel/cs
+cs-ooodict-CZ	ports/editors/ooodict-cs_CZ
 cscope		ports/devel/cscope
 csh		src/bin/csh
 csound		ports/audio/csound
@@ -1041,6 +1041,7 @@ custom-mule	ports/editors/custom-mule
 cut		src/usr.bin/cut
 cutils		ports/devel/cutils
 cvs		src/gnu/usr.bin/cvs
+cvs+ipv6		ports/devel/cvs+ipv6
 cvs2cl		ports/devel/cvs2cl
 cvs2html	ports/devel/cvs2html
 cvs2p4		ports/devel/cvs2p4
@@ -1079,7 +1080,6 @@ cyrus-imapd2	ports/mail/cyrus-imapd2
 cyrus-imspd	ports/databases/cyrus-imspd
 cyrus-sasl	ports/security/cyrus-sasl
 cyrus-sasl2	ports/security/cyrus-sasl2
-cvs+ipv6		ports/devel/cvs+ipv6
 d1489		ports/russian/d1489
 da-ooodict-DK	ports/editors/ooodict-da_DK
 dact		ports/archivers/dact
@@ -1476,9 +1476,9 @@ error		ports/devel/error
 eruby		ports/textproc/eruby
 erun		ports/x11/erun
 erwn		ports/www/erwn
+es		ports/shells/es
 es-ooodict-ES	ports/editors/ooodict-es_ES
 es-openoffice	ports/editors/openoffice-es
-es		ports/shells/es
 esh		ports/shells/esh
 eshell-emacs20	ports/editors/eshell-emacs20
 esound		ports/audio/esound
@@ -2868,6 +2868,7 @@ ja-migemo-emacs20	ports/japanese/migemo-emacs20
 ja-migemo-emacs21	ports/japanese/migemo-emacs21
 ja-migemo-xemacs21-mule	ports/japanese/migemo-xemacs21-mule
 ja-mimekit	ports/japanese/mimekit
+ja-ming		ports/japanese/ming
 ja-mnews	ports/japanese/mnews
 ja-mnews-gnspool	ports/japanese/mnews-gnspool
 ja-mnews-im	ports/japanese/mnews-im
@@ -3777,6 +3778,7 @@ libpam		src/lib/libpam
 libpanel	src/lib/libpanel
 libparanoia	ports/security/libparanoia
 libpcap		src/lib/libpcap
+libpdel		ports/devel/libpdel
 libquicktime	ports/graphics/libquicktime
 libradius	src/lib/libradius
 libranlib	ports/math/libranlib
@@ -4933,6 +4935,7 @@ p5-CGI.pm	ports/www/p5-CGI.pm
 p5-CSS-SAC	ports/textproc/p5-CSS-SAC
 p5-Cache-Cache	ports/devel/p5-Cache-Cache
 p5-Carp-Assert	ports/devel/p5-Carp-Assert
+p5-Carp-Datum	ports/devel/p5-Carp-Datum
 p5-Cdk		ports/devel/p5-Cdk
 p5-Cflow	ports/net/p5-Cflow
 p5-Chart-PNGgraph	ports/graphics/p5-Chart-PNGgraph
@@ -5416,6 +5419,7 @@ p5-Schedule-At	ports/sysutils/p5-Schedule-At
 p5-Schedule-Cron	ports/sysutils/p5-Schedule-Cron
 p5-Schedule-Match	ports/sysutils/p5-Schedule-Match
 p5-Search-Binary	ports/devel/p5-Search-Binary
+p5-Search-Namazu	ports/databases/p5-Search-Namazu
 p5-Server-FastPL	ports/devel/p5-Server-FastPL
 p5-Set-IntSpan	ports/math/p5-Set-IntSpan
 p5-Set-NestedGroups	ports/devel/p5-Set-NestedGroups
@@ -7621,9 +7625,9 @@ tramp-emacs20	ports/net/tramp-emacs20
 trans		ports/converters/trans
 transcode	ports/graphics/transcode
 transfig	ports/print/transfig
+translate	ports/misc/translate
 transpec	src/share/sgml/transpec
 transproxy	ports/www/transproxy
-translate	ports/misc/translate
 tree		ports/sysutils/tree
 treecc		ports/lang/treecc
 treeviewx	ports/biology/treeviewx
@@ -8101,8 +8105,8 @@ wxgtk-devel	ports/x11-toolkits/wxgtk-devel
 wy60		ports/comms/wy60
 wyvern		ports/www/wyvern
 x-files		ports/x11-fm/x-files
-x11amp		ports/audio/x11amp
 x11_twin	ports/x11/twin
+x11amp		ports/audio/x11amp
 x2vnc		ports/x11-servers/x2vnc
 x2x		ports/x11-servers/x2x
 x3270		ports/x11/x3270
@@ -8761,6 +8765,3 @@ ztelnet		ports/net/ztelnet
 zthread		ports/devel/zthread
 ztrack		ports/games/ztrack
 zziplib		ports/devel/zziplib
-p5-Search-Namazu	ports/databases/p5-Search-Namazu
-p5-Carp-Datum	ports/devel/p5-Carp-Datum
-ja-ming		ports/japanese/ming
