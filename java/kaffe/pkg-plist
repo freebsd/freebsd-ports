@@ -1,18 +1,15 @@
+@name kaffe
+@owner bin
+@group bin
 bin/javac
 bin/javadoc
 bin/kaffe
 bin/kaffeh
 include/kaffe/native.h
 include/kaffe/stubPreamble.h
-lib/libkaffe_agent.so.0.3   
-lib/libkaffe_mmedia.so.0.3  
-lib/libkaffe_vm.so.0.3
-lib/libkaffe_awt.so.0.3     
-lib/libkaffe_native.so.0.3
-lib/libkaffe_jpeg.so.0.3    
-lib/libkaffe_net.so.0.3
-@exec /sbin/ldconfig -m %B
-share/kaffe/classes.zip
-share/kaffe/lib/javac.properties
-share/kaffe/COPYRIGHT
+include/kaffe/jtypes.h
+lib/libkaffe_vm.so.0.4
+lib/libkaffe_native.so.0.4
+lib/libkaffe_net.so.0.4
 share/kaffe/license.terms
+@exec /sbin/ldconfig -m %B
