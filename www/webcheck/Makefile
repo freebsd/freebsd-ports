@@ -1,40 +1,38 @@
-# New ports collection makefile for: linbot
-# Date created:        19 September 1998
-# Whom:                Bill Fumerola <billf@chc-chimes.com>
+# New ports collection makefile for: webcheck
+# Date created:        10 May, 2002
+# Whom:                Mike Meyer <mwm@mired.org>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	linbot
+PORTNAME=	webcheck
 PORTVERSION=	1.0
-PORTREVISION=	3
 CATEGORIES=	www python
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR=	apps/www/misc
-EXTRACT_SUFX=	.tgz
+EXTRACT_SUFX=	.bz2
 
 MAINTAINER=	mwm@mired.org
 
 USE_PYTHON=	YES
 
 do-install:
-	${MKDIR} ${PREFIX}/share/linbot
-	${CP} ${WRKSRC}/*.py ${PREFIX}/share/linbot
-	${CP} ${WRKSRC}/*.css ${PREFIX}/share/linbot
+	@${MKDIR} ${DATADIR}
+	${CP} ${WRKSRC}/*.py ${DATADIR}
+	${CP} ${WRKSRC}/*.css ${DATADIR}
 .for d in plugins schemes
-	${MKDIR} ${PREFIX}/share/linbot/${d}
-	${CP} ${WRKSRC}/${d}/*.py ${PREFIX}/share/linbot/${d}
+	@${MKDIR} ${DATADIR}/${d}
+	${CP} ${WRKSRC}/${d}/*.py ${DATADIR}/${d}
 .endfor
-	${LN} -sf ${PREFIX}/share/linbot/linbot.py ${PREFIX}/bin/linbot
+	${LN} -sf ${DATADIR}/webcheck.py ${PREFIX}/bin/webcheck
 .ifndef NOPORTDOCS
-	${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/USAGE ${DOCSDIR}
 
 do-build:
-	${AWK} '/^Running Linbot/ { output=1 } output' \
+	${AWK} '/^Running Webcheck/ { output=1 } output' \
 		< ${WRKSRC}/INSTALL > ${WRKSRC}/USAGE
 .else
-NO_BUILD=	yeah
+NO_BUILD=	yes
 .endif
 
 .include <bsd.port.mk>
