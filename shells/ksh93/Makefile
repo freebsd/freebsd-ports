@@ -5,18 +5,17 @@
 # $FreeBSD$
 
 PORTNAME=	ksh93
-PORTVERSION= 	${VERSION:S/-//g}
-VERSION=	2001-01-01.0000
+PORTVERSION=	${VERSION:S/-//g}
+VERSION=	2001-07-04.0000
 CATEGORIES=	shells
 MASTER_SITES=	http://www.research.att.com/~gsf/download/tgz/
 
-MAINTAINER=	Christian Weisgerber <naddy@mips.inka.de>
+MAINTAINER=	naddy@mips.inka.de
 
-RESTRICTED=	"Impenetrable license"
-IS_INTERACTIVE=	yes	# must acknowledge license
-
+RESTRICTED=	"Source recipient must acknowledge license"
 DISTNAME=	${PORTNAME}-${VERSION}
 DISTFILES=	INIT.${VERSION}.tgz ast-ksh.${VERSION}.tgz
+DIST_SUBDIR=	${PORTNAME}
 
 NO_WRKSUBDIR=	yes
 MAKE_ARGS=	CC='${CC}' CCFLAGS='${CFLAGS}' SHELL='${SH}'
@@ -26,8 +25,15 @@ MAKE_ARGS+=	LDFLAGS=-static
 
 MAN1=		ksh93.1
 
+.if defined(ACCEPT_AST_LICENSE)
+post-patch:
+	@touch ${WRKSRC}/lib/package/gen/ast.license.accepted
+.else
+IS_INTERACTIVE=	yes	# must acknowledge license
+.endif
+
 do-build:
-	@cd ${WRKSRC}; bin/package make ${MAKE_ARGS}
+	@cd ${WRKSRC}; ./bin/package make ${MAKE_ARGS}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/arch/freebsd.${ARCH}/bin/ksh \
