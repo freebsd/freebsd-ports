@@ -7,6 +7,7 @@
 
 PORTNAME=	xine_d4d_plugin
 PORTVERSION=	0.3.1
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://worldzone.net/technology/captaincss/ \
 		http://debianlinux.net/
