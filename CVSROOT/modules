@@ -4963,6 +4963,7 @@ p5-GD-Barcode	ports/graphics/p5-GD-Barcode
 p5-GD-Graph	ports/graphics/p5-GD-Graph
 p5-GD-Graph3d	ports/graphics/p5-GD-Graph3d
 p5-GD-TextUtil	ports/graphics/p5-GD-TextUtil
+p5-GD2		ports/graphics/p5-GD2
 p5-GDBM		ports/databases/p5-GDBM
 p5-GIFgraph	ports/graphics/GIFgraph
 p5-GPS		ports/astro/p5-GPS
