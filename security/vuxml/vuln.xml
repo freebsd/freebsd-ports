@@ -120,12 +120,14 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </description>
     <references>
       <cvename>CAN-2004-0180</cvename>
+      <cvename>CAN-2004-0405</cvename>
       <url>http://ccvs.cvshome.org/servlets/NewsItemView?newsID=102</url>
       <freebsdsa>SA-04:07.cvs</freebsdsa>
     </references>
     <dates>
       <discovery>2004-04-14</discovery>
       <entry>2004-04-14</entry>
+      <modified>2004-04-15</modified>
     </dates>
   </vuln>
 
