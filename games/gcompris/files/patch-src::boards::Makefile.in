@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- src/boards/Makefile.in	2001/12/23 08:00:35	1.1
++++ src/boards/Makefile.in	2001/12/23 08:01:15
+@@ -133,7 +133,7 @@
+ 
+ 
+ libdir = $(plugindir)
+-INCLUDES = -I$(top_builddir)/intl $(GNOME_INCLUDEDIR) -I..
++INCLUDES = $(GDK_PIXBUF_CFLAGS) -I$(top_builddir)/intl $(GNOME_INCLUDEDIR) -I..
+ 
+ libmenu_la_LDFLAGS = -module -avoid-version
+ libmenu_la_LIBADD = @GTK_LIBS@ @PTHREAD_LIB@
