@@ -1175,6 +1175,7 @@ dico		ports/textproc/dico
 dict		src/share/dict
 dictd		ports/net/dictd
 dictd-database	ports/net/dictd-database
+dictfmt		ports/textproc/dictfmt
 diction		ports/misc/diction
 dictionary	ports/textproc/dictionary
 didentd		ports/security/didentd
