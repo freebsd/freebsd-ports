@@ -8,8 +8,7 @@
 PORTNAME=		cost
 PORTVERSION=		2.2p1
 CATEGORIES=		textproc tk82
-MASTER_SITES=		http://www.flightlab.com/~joe/cost/ \
-			ftp://bowhill.vservers.com/pub/
+MASTER_SITES=		http://www.flightlab.com/~joe/cost/
 
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=	SGML/XML application programming tool
