@@ -13,6 +13,8 @@ MASTER_SITES=	http://untroubled.org/${PORTNAME}/
 MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	One stop library package by Bruce Guenter
 
+NOT_FOR_ARCHS=	alpha
+
 LDFLAGS?=	-s
 
 DOCS=		NEWS README TODO doc/html/*
