@@ -3,7 +3,7 @@
 # Date created:		04 Janyary 1999
 # Whom:			Sergey Osokin aka oZZ <ozz@FreeBSD.org.ru>
 #
-# $Id: Makefile,v 1.1.1.1 1999/02/28 11:17:14 kuriyama Exp $
+# $Id: Makefile,v 1.2 1999/02/28 15:24:16 kuriyama Exp $
 #
 
 DISTNAME=	wmmount
@@ -21,7 +21,11 @@ USE_IMAKE=	yes
 NO_INSTALL_MANPAGES=	yes
 
 post-extract:
-	@ ${WRKSRC}/system.wmmount.awk >${WRKSRC}/system.wmmount
+	@ if [ -r /etc/fstab ]; then \
+		${WRKSRC}/system.wmmount.awk >${WRKSRC}/system.wmmount; \
+	  else \
+		${CP} ${WRKSRC}/system.wmmount.eg ${WRKSRC}/system.wmmount; \
+	  fi
 
 do-install:
 	@ ${MKDIR} ${PREFIX}/lib/X11/wmmount

@@ -1,0 +1,11 @@
+--- system.wmmount.eg.orig	Sun Sep  6 00:11:18 1998
++++ system.wmmount.eg	Wed May  5 11:29:11 1999
+@@ -74,7 +74,7 @@
+ # Details of at least one mointpoint must be specified.
+ # References to invalid iconnumbers will cause crashes.
+ 
+-mountname Linux
++mountname FreeBSD
+    mountpoint /
+    iconnumber 3
+    usagedisplay Free
