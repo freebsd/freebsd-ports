@@ -6,21 +6,22 @@
 #
 
 PORTNAME=	acroread
-PORTVERSION=	5.05
+PORTVERSION=	5.0.6
 CATEGORIES=	print linux
 MASTER_SITES=	ftp://ftp.adobe.com/pub/adobe/acrobatreader/unix/5.x/
 .include <bsd.port.pre.mk>
 .if ${ARCH} == "i386"
-DISTNAME=	linux-505
+DISTNAME=	linux-506
 .endif
+DIST_SUBDIR=	acroread
 
 MAINTAINER=	trevor@FreeBSD.org
-
-FORBIDDEN=	"unconfirmed suspicion of temporary file bug--see http://online.securityfocus.com/archive/1/278984 "
 
 ONLY_FOR_ARCHS=	i386
 
 USE_LINUX=	yes
+USE_REINPLACE=	yes
+REINPLACE_ARGS=	-i
 NO_FILTER_SHLIBS=	yes
 
 .if ${ARCH} == "i386"
@@ -29,7 +30,7 @@ PLIST_SUB=      "ARCHDIR=intellinux"
 WRKSRC=		${WRKDIR}
 
 pre-configure:
-	@${PERL} -pi.fbsd -e 's:Linux\):FreeBSD|Linux):g' ${WRKDIR}/INSTALL
+	${REINPLACE_CMD} -E 's:Linux):FreeBSD|Linux):g' ${WRKDIR}/INSTALL
 
 do-build:
 	@${ECHO_MSG} "Do a \`make install' as root."
@@ -37,12 +38,16 @@ do-build:
 do-install:
 	@${MKDIR} ${PREFIX}/Acrobat5
 	@ReadInstallDir=${PREFIX}/Acrobat5 ${WRKDIR}/INSTALL
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	strings -1 ${WRKDIR}/README > ${DOCSDIR}/README
+.endif
 
 post-install:
-	@${PERL} -pi -e 's:Linux\):FreeBSD|Linux):g' ${PREFIX}/Acrobat5/bin/acroread
+	${REINPLACE_CMD} -E 's:Linux):FreeBSD|Linux):g' ${PREFIX}/Acrobat5/bin/acroread
 	-@/compat/linux/usr/bin/strip ${PREFIX}/Acrobat5/Reader/intellinux/bin/acroread
 	@brandelf -t Linux ${PREFIX}/Acrobat5/Reader/intellinux/bin/acroread
-	@${PERL} -pi -e 's:OSF1\):FreeBSD|OSF1):g' ${PREFIX}/Acrobat5/bin/acroread
+	${REINPLACE_CMD} -E 's:OSF1):FreeBSD|OSF1):g' ${PREFIX}/Acrobat5/bin/acroread
 	@cd ${PREFIX}/Acrobat5/bin && \
 	  ${INSTALL_SCRIPT} ${PREFIX}/Acrobat5/bin/acroread \
 	     ${PREFIX}/bin/acroread5
