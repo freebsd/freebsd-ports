@@ -4,4 +4,4 @@ Swatch is designed to  monitor  system  activity.   Swatch
 requires a configuration file which contains pattern(s) to
 look for and action(s) to do when each pattern is found.
 
-WWW: http://www.stanford.edu/~atkins/swatch/
+WWW: http://swatch.sourceforge.net/
