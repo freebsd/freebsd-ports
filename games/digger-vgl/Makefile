@@ -7,6 +7,7 @@
 
 PORTNAME=	digger
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.digger.org/
 DISTNAME=	${PORTNAME}-${DIGREL}
@@ -14,8 +15,10 @@ DISTNAME=	${PORTNAME}-${DIGREL}
 MAINTAINER=	sobomax@FreeBSD.org
 
 .if defined(WITH_SOUND)
-LIB_DEPENDS=	SDL-1.0.2:${PORTSDIR}/devel/sdl10
-MAKE_ENV=	SOUND=yes
+SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
+LIB_DEPENDS=	SDL-1.1.3:${PORTSDIR}/devel/sdl12
+MAKE_ENV=	SOUND=yes \
+		SDL_CONFIG=${SDL_CONFIG}
 .endif
 
 ONLY_FOR_ARCHS=	i386	# Alphas don't have libvgl yet...
