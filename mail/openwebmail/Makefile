@@ -10,7 +10,6 @@ PORTVERSION=	2.32
 CATEGORIES=	mail
 MASTER_SITES=	http://openwebmail.org/openwebmail/download/release/ \
 		http://turtle.ee.ncku.edu.tw/openwebmail/download/release/
-EXTRACT_SUFX=	.tar.gz
 
 MAINTAINER=	leeym@FreeBSD.org
 COMMENT=	A webmail system designed to manage big mail folder files efficiently
@@ -36,8 +35,8 @@ PATCH_STRIP=	-p1
 PLIST=		${WRKDIR}/.PLIST.${PKGNAME}
 
 .if !defined(WITHOUT_SPEEDYCGI)
-BUILD_DEPENDS+=	speedy_suid:${PORTSDIR}/www/p5-CGI-SpeedyCGI
-RUN_DEPENDS+=	speedy_suid:${PORTSDIR}/www/p5-CGI-SpeedyCGI
+BUILD_DEPENDS+=	speedy_suidperl:${PORTSDIR}/www/p5-CGI-SpeedyCGI
+RUN_DEPENDS+=	speedy_suidperl:${PORTSDIR}/www/p5-CGI-SpeedyCGI
 EXTRA_PATCHES=	${PATCH_WRKSRC}/uty/suidperl2speedy_suid.diff
 .else
 _CUSTOMIZED=	yes
@@ -114,6 +113,9 @@ pre-fetch:
 	@${ECHO} "You can use them in combinations."
 	@${ECHO} ""
 .endif
+
+pre-patch:
+	@${PERL} -pi.bak -e 's,${LOCALBASE}/bin/speedy_suid,${LOCALBASE}/bin/speedy_suidperl,g' ${PATCH_WRKSRC}/uty/*.diff
 
 post-patch:
 	@${MV} ${PATCH_WRKSRC}/etc/openwebmail.conf ${PATCH_WRKSRC}/etc/openwebmail.conf-dist
