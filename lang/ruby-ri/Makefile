@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ri
-PORTVERSION=	0.7a
-PORTREVISION=	2
+PORTVERSION=	0.8a
 CATEGORIES=	lang ruby
 MASTER_SITES=	ftp://www.pragmaticprogrammer.com/ruby/downloads/files/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
