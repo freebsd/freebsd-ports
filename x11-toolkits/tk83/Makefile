@@ -25,7 +25,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION}/unix
 GNU_CONFIGURE=	yes
 TK_VER=		8.3
 SHORT_TK_VER=	83
-CONFIGURE_ARGS=	--enable-shared --with-tcl=${PREFIX}/lib/tcl${TK_VER}
+CONFIGURE_ARGS=	--enable-shared --with-tcl=${PREFIX}/lib/tcl${TK_VER} \
+		--includedir=${LOCALBASE}/include/tk${TK_VER}
 CONFIGURE_ENV=	PORTSDIR=${PORTSDIR} TK_LIB_FILE=libtk${SHORT_TK_VER}.so.1
 MAKE_ENV=	SHORT_TK_VER=${SHORT_TK_VER}
 PLIST_SUB=	TK_VER=${TK_VER} SHORT_TK_VER=${SHORT_TK_VER}
@@ -34,7 +35,6 @@ PKGDEINSTALL=	${PKGDIR}/pkg-deinstall.wish
 NOPRECIOUSMAKEVARS=	Too many _MLINKS for README.html
 TCL83_PORT?=	lang/tcl83
 USE_REINPLACE=	YES
-
 MANCOMPRESSED=	no
 
 MAN1=	wish.1
@@ -319,11 +319,11 @@ MLINKS=	3DBorder.3 Tk_Alloc3DBorderFromObj.3 \
 	palette.n tk_bisque.n \
 	popup.n tk_popup.n
 
+.include <bsd.port.pre.mk>
+
 post-configure:
 	${REINPLACE_CMD} -e 's=${WRKDIRPREFIX}${PORTSDIR}=$${WRKDIRPREFIX}${PORTSDIR}=' \
 		${WRKSRC}/tkConfig.sh
-
-.include <bsd.port.pre.mk>
 
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/pkgIndex.tcl ${PREFIX}/lib/tk${TK_VER}/
