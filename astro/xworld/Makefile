@@ -13,6 +13,8 @@ MASTER_SITES=	ftp://gutemine.geo.uni-koeln.de/pub/xworld/ \
 
 MAINTAINER=	naddy@mips.inka.de
 
+USE_XLIB=	yes
+
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	CAT=${CAT} \
 		STRIP=/usr/bin/strip \
