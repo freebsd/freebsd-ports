@@ -313,6 +313,7 @@ share/opera/plugins/libnpp.so.0
 share/opera/plugins/libnpp.so.0.1
 share/opera/plugins/libnpp.so.0.1.5
 share/opera/plugins/operamotifwrapper
+share/opera/skin/foreground.png
 share/opera/styles/OPF.css
 share/opera/styles/about.css
 share/opera/styles/cache.css
@@ -329,6 +330,7 @@ share/opera/styles/plugins.css
 share/opera/styles/wml.css
 share/opera/unicode.dat
 @dirrm share/opera/styles
+@dirrm share/opera/skin
 @dirrm share/opera/plugins
 @dirrm share/opera/images
 @dirrm share/opera/help
