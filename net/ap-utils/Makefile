@@ -6,29 +6,23 @@
 #
 
 PORTNAME=	ap-utils
-PORTVERSION=	1.0.3
+PORTVERSION=	1.0.4
 CATEGORIES=	net
-MASTER_SITES=	http://ap-utils.polesye.net/files/
+MASTER_SITES=	http://ap-utils.polesye.net/files/ \
+		http://web.cs.cmu.edu/~dpelleg/download/
 
-MAINTAINER=	jerry@thehutt.org
+MAINTAINER=	daniel+aputils@pelleg.org
 
-USE_BZIP2=	yes
+LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
+
 GNU_CONFIGURE=	yes
+USE_BZIP2=	yes
+MAN8=		ap-trapd.8 ap-mrtg.8 ap-atmel.8 ap-nwn.8
 
+.if !defined(NOPORTDOCS)
 post-install:
-.ifndef(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/Documentation/FAQ \
-		${PREFIX}/share/doc/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/Documentation/README.* \
-		${PREFIX}/share/doc/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/Documentation/THANKS \
-		${PREFIX}/share/doc/${PORTNAME}
-	@${MKDIR} ${DOCSDIR}/mib
-	${INSTALL_DATA} ${WRKSRC}/Documentation/mib/*.mib \
-		${PREFIX}/share/doc/${PORTNAME}/mib
-	${INSTALL_DATA} ${WRKSRC}/Documentation/mib/README \
-		${PREFIX}/share/doc/${PORTNAME}/mib
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/Documentation/FAQ ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
