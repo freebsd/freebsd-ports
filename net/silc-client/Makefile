@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	silc
-PORTVERSION=	0.9.16
+PORTVERSION=	1.0
 CATEGORIES=	net ipv6 security
 MASTER_SITES=	http://www.silcnet.org/download/%SUBDIR%/ \
 		http://ftp.silcnet.org/%SUBDIR%/ \
@@ -32,14 +32,15 @@ USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GNOME=	glib12
-USE_LIBTOOL=	yes
+#USE_LIBTOOL=	yes
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	--with-etcdir=${PREFIX}/etc/${PORTNAME} \
 		--with-simdir=${PREFIX}/lib/silcsim/client \
 		--with-helpdir=${PREFIX}/share/${PORTNAME}/help \
 		--with-docdir=${PREFIX}/share/doc/silc \
-		--with-perl-lib=${PREFIX}/lib/${PORTNAME}/perl
-INSTALLS_SHLIB=	yes
+		--with-perl-lib=${PREFIX}/lib/${PORTNAME}/perl \
+		--without-libtoolfix
+#INSTALLS_SHLIB=	yes
 PLIST_SUB=	INSTALL_DIR="${INSTALL_DIR}"
 PLIST_SUB+=	ARCH="${ARCH}-freebsd"
 PKGDEINSTALL=	${PKGINSTALL}
@@ -84,8 +85,8 @@ post-patch:
 	@${PERL} -pi -e 's/--libtool-enable-shared//' \
 		${WRKSRC}/lib/silccrypt/Makefile.in
 
-post-configure:
-	@${CP} ${LIBTOOL} ${WRKSRC}
+#post-configure:
+#	@${CP} ${LIBTOOL} ${WRKSRC}
 
 post-install:
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} \

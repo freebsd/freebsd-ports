@@ -1,20 +1,5 @@
 bin/silc
 etc/silc/silc.conf.sample
-lib/libsilc-1.0.so.3
-lib/libsilc.la
-lib/libsilc.so
-lib/libsilcclient-1.0.so.2
-lib/libsilcclient.la
-lib/libsilcclient.so
-lib/silcsim/client/aes.sim.so
-lib/silcsim/client/blowfish.sim.so
-lib/silcsim/client/cast.sim.so
-lib/silcsim/client/md5.sim.so
-lib/silcsim/client/none.sim.so
-lib/silcsim/client/rc5.sim.so
-lib/silcsim/client/rsa.sim.so
-lib/silcsim/client/sha1.sim.so
-lib/silcsim/client/twofish.sim.so
 share/silc/help/action
 share/silc/help/admin
 share/silc/help/alias
@@ -138,8 +123,6 @@ lib/silc/perl/%%ARCH%%/Irssi/TextUI.pm
 @dirrm share/silc/scripts
 @dirrm share/silc
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm lib/silcsim/client
-@unexec rmdir %D/lib/silcsim 2>/dev/null || true
 @unexec rmdir %D/etc/silc 2>/dev/null || true
 @dirrm lib/silc/perl/%%ARCH%%/auto/Irssi/TextUI
 @dirrm lib/silc/perl/%%ARCH%%/auto/Irssi/UI

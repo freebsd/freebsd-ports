@@ -1,6 +1,6 @@
---- Makefile.in.orig	Thu Oct 16 00:31:17 2003
-+++ Makefile.in	Thu Oct 16 15:39:51 2003
-@@ -234,7 +234,7 @@
+--- Makefile.in.orig	Thu Nov 27 11:07:16 2003
++++ Makefile.in	Sat Nov 29 01:46:30 2003
+@@ -235,7 +235,7 @@
  
  AUTOMAKE_OPTIONS = 1.0 no-dependencies foreign
  
@@ -9,7 +9,20 @@
  
  # Sub directories defined by "distributions" file, and can be overridden
  # with ./configure, which substitutes these variables.
-@@ -707,17 +707,13 @@
+@@ -270,7 +270,6 @@
+ # Installing of SILC into the system
+ #
+ etcdir = $(DESTDIR)$(silc_etcdir)
+-modulesdir = $(DESTDIR)$(silc_modulesdir)
+ helpdir = $(DESTDIR)$(silc_helpdir)
+ docdir = $(DESTDIR)$(silc_docdir)
+ logsdir = $(DESTDIR)$(silc_logsdir)
+@@ -712,22 +711,17 @@
+ 
+ install-dirs:
+ 	-mkdir -p $(etcdir)
+-	-mkdir -p $(modulesdir)
+ 	-mkdir -p $(docdir)
  
  install-dirs-client: install-dirs
  	-mkdir -p $(helpdir)
@@ -27,7 +40,7 @@
  	-$(INSTALL_DATA) $(srcdir)/COPYING $(docdir)/
  	-$(INSTALL_DATA) $(srcdir)/CHANGES $(docdir)/
  	-$(INSTALL_DATA) $(srcdir)/CREDITS $(docdir)/
-@@ -741,12 +737,8 @@
+@@ -751,12 +745,8 @@
  	fi
  
  etc-install-client:
@@ -41,3 +54,26 @@
  
  etc-install-server:
  	-@if test '!' -f $(etcdir)/silcd.conf ; then \
+@@ -767,9 +757,6 @@
+           chmod go= $(etcdir)/silcd.conf; \
+ 	fi
+ 
+-sim-install:
+-	-$(INSTALL_DATA) $(srcdir)/lib/silcsim/*.so $(modulesdir)/
+-
+ toolkit-install:
+ 	-mkdir -p $(docdir)/toolkit/
+ 	-$(INSTALL_DATA) $(srcdir)/doc/toolkit/* $(docdir)/toolkit
+@@ -786,9 +773,9 @@
+ 	  $(sbindir)/silcd -C $(etcdir); \
+ 	fi
+ 
+-@SILC_DIST_CLIENT_TRUE@install-data-hook: install-dirs-client sim-install doc-install-client etc-install-client
+-@SILC_DIST_CLIENT_FALSE@@SILC_DIST_TOOLKIT_TRUE@install-data-hook: install-dirs-client install-dirs-server sim-install doc-install-client doc-install-server toolkit-install examples-install etc-install-client etc-install-server
+-@SILC_DIST_CLIENT_FALSE@@SILC_DIST_TOOLKIT_FALSE@install-data-hook: install-dirs-server sim-install doc-install-server examples-install etc-install-server generate-server-key
++@SILC_DIST_CLIENT_TRUE@install-data-hook: install-dirs-client doc-install-client etc-install-client
++@SILC_DIST_CLIENT_FALSE@@SILC_DIST_TOOLKIT_TRUE@install-data-hook: install-dirs-client install-dirs-server doc-install-client doc-install-server toolkit-install examples-install etc-install-client etc-install-server
++@SILC_DIST_CLIENT_FALSE@@SILC_DIST_TOOLKIT_FALSE@install-data-hook: install-dirs-server doc-install-server examples-install etc-install-server generate-server-key
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:

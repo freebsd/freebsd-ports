@@ -1,0 +1,19 @@
+--- lib/Makefile.in.orig	Thu Nov 27 16:07:17 2003
++++ lib/Makefile.in	Fri Nov 28 15:56:07 2003
+@@ -551,15 +551,8 @@
+ 	-rm -rf libsilcclient.a
+ 
+ @SILC_DIST_TOOLKIT_TRUE@install-exec-hook:
+-@SILC_DIST_TOOLKIT_TRUE@	-mkdir -p $(DESTDIR)$(libdir)
+-@SILC_DIST_TOOLKIT_TRUE@	-$(LIBTOOL) $(INSTALL) libsilc.la $(DESTDIR)$(libdir)/
+-@SILC_DIST_TOOLKIT_TRUE@	-$(LIBTOOL) $(INSTALL) libsilcclient.la $(DESTDIR)$(libdir)/
++
+ @SILC_DIST_TOOLKIT_FALSE@install-exec-hook:
+-@SILC_DIST_TOOLKIT_FALSE@	-mkdir -p $(libdir)
+-@SILC_DIST_TOOLKIT_FALSE@	-$(LIBTOOL) $(INSTALL) libsilc.la $(DESTDIR)$(libdir)/
+-@SILC_DIST_TOOLKIT_FALSE@	-rm -rf $(DESTDIR)$(libdir)/libsilc.a
+-@SILC_DIST_CLIENT_TRUE@@SILC_DIST_TOOLKIT_FALSE@	-$(LIBTOOL) $(INSTALL) libsilcclient.la $(DESTDIR)$(libdir)/
+-@SILC_DIST_CLIENT_TRUE@@SILC_DIST_TOOLKIT_FALSE@	-rm -rf $(DESTDIR)$(libdir)/libsilcclient.a
+ 
+ # WIN32 DLL generation
+ @SILC_DIST_WIN32DLL_TRUE@silc.dll: libsilc.a
