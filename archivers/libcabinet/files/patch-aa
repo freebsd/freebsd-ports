@@ -1,10 +1,11 @@
---- Makefile.orig	Mon Dec  4 13:44:56 2000
-+++ Makefile	Mon Dec  4 13:45:45 2000
-@@ -0,0 +1,14 @@
+--- Makefile.orig	Sun Jul 21 20:06:14 2002
++++ Makefile	Sun Jul 21 20:07:49 2002
+@@ -0,0 +1,15 @@
 +NOPROFILE=	true
 +LIB=		cabinet
 +LIBDIR=		${PREFIX}/lib
-+INCDIR=		${PREFIX}/include/cabinet
++INCSDIR=	${PREFIX}/include/cabinet
++INCDIR=		${INCSDIR}		# for pre-bsd.incs.mk API
 +SHLIB_MAJOR=	1
 +SHLIB_MINOR=	0
 +SRCS=		bstring.cpp cfcreate.cpp cfdblock.cpp cffdrmgr.cpp cffile.cpp \
