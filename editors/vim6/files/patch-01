@@ -1,34 +1,11 @@
---- Makefile.orig	Tue Jun 10 13:57:59 1997
-+++ Makefile	Wed Jun 11 04:17:07 1997
-@@ -563,7 +563,7 @@
- $(MOTIF_COMMENT)GUI_DEFS  = -DUSE_GUI_MOTIF $(NARROW_PROTO)
- $(MOTIF_COMMENT)GUI_IPATH = -I$(GUI_INC_LOC)
- $(MOTIF_COMMENT)GUI_LIBS_DIR = -L$(GUI_LIB_LOC)
--$(MOTIF_COMMENT)GUI_LIBS  = -lXm -lXt
-+$(MOTIF_COMMENT)GUI_LIBS  = ${MOTIFLIB} -lXt
- $(MOTIF_COMMENT)GUI_TARGETS =	$(BINDIR)/$(GVIMTARGET) \
+--- Makefile.orig	Thu Aug 21 04:24:06 1997
++++ Makefile	Fri Aug 22 11:59:58 1997
+@@ -578,7 +578,7 @@
+ MOTIF_DEFS	= -DUSE_GUI_MOTIF $(NARROW_PROTO)
+ MOTIF_IPATH	= -I$(GUI_INC_LOC)
+ MOTIF_LIBS_DIR	= -L$(GUI_LIB_LOC)
+-MOTIF_LIBS	= -lXm -lXt
++MOTIF_LIBS	= ${MOTIFLIB} -lXt
+ MOTIF_TARGETS	= $(BINDIR)/$(GVIMTARGET) \
  				$(BINDIR)/$(GEXTARGET) \
  				$(BINDIR)/$(GVIEWTARGET) \
-@@ -800,7 +800,8 @@
- 	GUI_INC_LOC="$(GUI_INC_LOC)" GUI_LIB_LOC="$(GUI_LIB_LOC)" \
- 		CC="$(CC)" CFLAGS="$(CFLAGS)" TERM_LIB="$(TERM_LIB)" \
- 	$(CONF_SHELL) ./configure $(CONF_OPT_GUI) $(CONF_OPT_X) \
--	$(CONF_OPT_PERL) $(CONF_ARGS)
-+	$(CONF_OPT_PERL) $(CONF_ARGS) \
-+	--prefix=$(PREFIX)
- 
- # When configure.in has changed, run autoconf to produce configure
- # If you don't have autoconf, use the configure that's there
-@@ -941,10 +942,10 @@
- installinks: $(GUI_TARGETS) $(BINDIR)/$(EXTARGET) $(BINDIR)/$(VIEWTARGET) $(BINDIR)/$(RVIMTARGET) $(BINDIR)/$(REXTARGET) $(BINDIR)/$(RVIEWTARGET)
- 
- $(BINDIR)/$(EXTARGET):
--	cd $(BINDIR); ln -s $(VIMTARGET) $(EXTARGET)
-+	#cd $(BINDIR); ln -s $(VIMTARGET) $(EXTARGET)
- 
- $(BINDIR)/$(VIEWTARGET):
--	cd $(BINDIR); ln -s $(VIMTARGET) $(VIEWTARGET)
-+	#cd $(BINDIR); ln -s $(VIMTARGET) $(VIEWTARGET)
- 
- $(BINDIR)/$(GVIMTARGET):
- 	cd $(BINDIR); ln -s $(VIMTARGET) $(GVIMTARGET)
