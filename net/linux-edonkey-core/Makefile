@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	edonkey
-PORTVERSION=	0.45
+PORTVERSION=	0.48
 PORTEPOCH=	1
 CATEGORIES=	net linux
 MASTER_SITES=	http://www.overnet.com/files/
 PKGNAMESUFFIX=	-core
-DISTNAME=	eDonkey${PORTVERSION}
+DISTNAME=	donkey${PORTVERSION}
 
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	eDonkey2000 'core' command line client
@@ -30,7 +30,7 @@ BRANDELF?=	/usr/bin/brandelf
 BRANDELF?=	brandelf
 .endif
 
-BINARY_NAME_OLD?=	donkey_s_${PORTVERSION:S/^0.//}
+BINARY_NAME_OLD?=	donkey${PORTVERSION}
 BINARY_NAME=	donkey
 
 post-patch:
