@@ -3,7 +3,7 @@
 # Date created:		16 Aug 1996
 # Whom:			joerg@freebsd.org
 #
-# $Id: Makefile,v 1.1.1.1 1996/08/27 20:16:32 joerg Exp $
+# $Id: Makefile,v 1.2 1996/11/18 11:25:52 asami Exp $
 #
 
 DISTNAME=	xmahjongg
@@ -18,9 +18,9 @@ MAINTAINER=	joerg@freebsd.org
 WRKSRC=		${WRKDIR}/xmahjongg
 USE_IMAKE=	yes
 
-NO_CDROM=	"Restrictive copyright."
+NO_CDROM=	"Restrictive copyright"
 
 post-extract:
-	@cp ${WRKSRC}/xmahjongg.6 ${WRKSRC}/xmahjongg.man
+	@${CP} ${WRKSRC}/xmahjongg.6 ${WRKSRC}/xmahjongg.man
 
 .include <bsd.port.mk>
