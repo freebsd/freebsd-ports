@@ -21,8 +21,8 @@ LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt \
 		gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf
 
 USE_REINPLACE=	yes
-USE_GTK=	yes
-USE_ESOUND=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12 esound
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}

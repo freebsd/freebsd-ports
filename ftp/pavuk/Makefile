@@ -20,7 +20,8 @@ MAINTAINER=	ports@FreeBSD.org
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 
 USE_REINPLACE=	yes
-WANT_GTK=	yes
+USE_GNOMENG=	yes
+WANT_GNOME=	yes
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
@@ -32,8 +33,8 @@ MAN1=		pavuk.1
 
 .include <bsd.port.pre.mk>
 
-.if defined(HAVE_GTK)
-USE_GTK=	yes
+.if ${HAVE_GNOME:Mgtk12}!=""
+USE_GNOME=	gtk12
 CONFIGURE_ARGS+=	--with-gtk-config="${GTK_CONFIG}"
 .else
 CONFIGURE_ARGS+=	--disable-gtk
