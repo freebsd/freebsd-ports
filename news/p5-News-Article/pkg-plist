@@ -1,0 +1,10 @@
+lib/perl5/man/man3/News::Article.3.gz
+lib/perl5/man/man3/News::AutoReply.3.gz
+lib/perl5/man/man3/News::FormArticle.3.gz
+lib/perl5/man/man3/News::FormReply.3.gz
+lib/perl5/site_perl/News/Article.pm
+lib/perl5/site_perl/News/AutoReply.pm
+lib/perl5/site_perl/News/FormArticle.pm
+lib/perl5/site_perl/News/FormReply.pm
+lib/perl5/site_perl/i386-freebsd/auto/News/Article/.packlist
+@dirrm lib/perl5/site_perl/i386-freebsd/auto/News/Article
