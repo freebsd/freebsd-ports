@@ -47,6 +47,8 @@ PATCH_VERSION=	${PORTVERSION}
 
 .if defined(PACKAGE_BUILDING)
 WITH_MUTT_SLANG=	yes
+WITH_MUTT_IMAP=		yes
+WITH_MUTT_POP=		yes
 BUILD_DEPENDS+=	ispell:${PORTSDIR}/textproc/ispell
 RUN_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell \
 		urlview:${PORTSDIR}/textproc/urlview
@@ -127,8 +129,12 @@ post-build:
 		ed -s ${WRKSRC}/doc/mutt.man
 .if defined(WITH_MUTT_HTML)
 PLIST_SUB+=	SUB_HTML=""
+.if defined(WITH_MUTT_IMAP) || defined(WITH_MUTT_POP)
+IMAP_OR_POP_SET:=	yes
+.endif
 .if defined(WITH_MUTT_COMPRESSED_FOLDERS) && defined(WITH_MUTT_NNTP) && \
-	defined(WITH_MUTT_RU_PATCH) && defined(WITH_MUTT_QUOTE_PATCH)
+	defined(WITH_MUTT_RU_PATCH) && defined(WITH_MUTT_QUOTE_PATCH) && \
+	defined(IMAP_OR_POP_SET)
 PLIST_SUB+=	SUB_ADD_G=""
 PLIST_SUB+=	SUB_ADD_A="@comment "
 PLIST_SUB+=	SUB_ADD_B="@comment "
@@ -136,8 +142,16 @@ PLIST_SUB+=	SUB_ADD_C="@comment "
 PLIST_SUB+=	SUB_ADD_D="@comment "
 PLIST_SUB+=	SUB_ADD_E="@comment "
 PLIST_SUB+=	SUB_ADD_F="@comment "
+PLIST_SUB+=	SUB_ADD_H="@comment "
+PLIST_SUB+=	SUB_ADD_I="@comment "
+PLIST_SUB+=	SUB_ADD_J="@comment "
+PLIST_SUB+=	SUB_ADD_K="@comment "
+PLIST_SUB+=	SUB_ADD_L="@comment "
+PLIST_SUB+=	SUB_ADD_M="@comment "
+PLIST_SUB+=	SUB_ADD_N="@comment "
 .elif defined(WITH_MUTT_COMPRESSED_FOLDERS) && defined(WITH_MUTT_NNTP) && \
-	defined(WITH_MUTT_RU_PATCH) && !defined(WITH_MUTT_QUOTE_PATCH)
+	defined(WITH_MUTT_RU_PATCH) && !defined(WITH_MUTT_QUOTE_PATCH) && \
+	defined(IMAP_OR_POP_SET)
 PLIST_SUB+=	SUB_ADD_F=""
 PLIST_SUB+=	SUB_ADD_A="@comment "
 PLIST_SUB+=	SUB_ADD_B="@comment "
@@ -145,8 +159,16 @@ PLIST_SUB+=	SUB_ADD_C="@comment "
 PLIST_SUB+=	SUB_ADD_D="@comment "
 PLIST_SUB+=	SUB_ADD_E="@comment "
 PLIST_SUB+=	SUB_ADD_G="@comment "
+PLIST_SUB+=	SUB_ADD_H="@comment "
+PLIST_SUB+=	SUB_ADD_I="@comment "
+PLIST_SUB+=	SUB_ADD_J="@comment "
+PLIST_SUB+=	SUB_ADD_K="@comment "
+PLIST_SUB+=	SUB_ADD_L="@comment "
+PLIST_SUB+=	SUB_ADD_M="@comment "
+PLIST_SUB+=	SUB_ADD_N="@comment "
 .elif defined(WITH_MUTT_COMPRESSED_FOLDERS) && defined(WITH_MUTT_NNTP) && \
-	!defined(WITH_MUTT_RU_PATCH) && defined(WITH_MUTT_QUOTE_PATCH)
+	!defined(WITH_MUTT_RU_PATCH) && defined(WITH_MUTT_QUOTE_PATCH) && \
+	defined(IMAP_OR_POP_SET)
 PLIST_SUB+=	SUB_ADD_G=""
 PLIST_SUB+=	SUB_ADD_A="@comment "
 PLIST_SUB+=	SUB_ADD_B="@comment "
@@ -154,8 +176,16 @@ PLIST_SUB+=	SUB_ADD_C="@comment "
 PLIST_SUB+=	SUB_ADD_D="@comment "
 PLIST_SUB+=	SUB_ADD_E="@comment "
 PLIST_SUB+=	SUB_ADD_F="@comment "
+PLIST_SUB+=	SUB_ADD_H="@comment "
+PLIST_SUB+=	SUB_ADD_I="@comment "
+PLIST_SUB+=	SUB_ADD_J="@comment "
+PLIST_SUB+=	SUB_ADD_K="@comment "
+PLIST_SUB+=	SUB_ADD_L="@comment "
+PLIST_SUB+=	SUB_ADD_M="@comment "
+PLIST_SUB+=	SUB_ADD_N="@comment "
 .elif defined(WITH_MUTT_COMPRESSED_FOLDERS) && defined(WITH_MUTT_NNTP) && \
-	!defined(WITH_MUTT_RU_PATCH) && !defined(WITH_MUTT_QUOTE_PATCH)
+	!defined(WITH_MUTT_RU_PATCH) && !defined(WITH_MUTT_QUOTE_PATCH) && \
+	defined(IMAP_OR_POP_SET)
 PLIST_SUB+=	SUB_ADD_F=""
 PLIST_SUB+=	SUB_ADD_A="@comment "
 PLIST_SUB+=	SUB_ADD_B="@comment "
@@ -163,8 +193,16 @@ PLIST_SUB+=	SUB_ADD_C="@comment "
 PLIST_SUB+=	SUB_ADD_D="@comment "
 PLIST_SUB+=	SUB_ADD_E="@comment "
 PLIST_SUB+=	SUB_ADD_G="@comment "
+PLIST_SUB+=	SUB_ADD_H="@comment "
+PLIST_SUB+=	SUB_ADD_I="@comment "
+PLIST_SUB+=	SUB_ADD_J="@comment "
+PLIST_SUB+=	SUB_ADD_K="@comment "
+PLIST_SUB+=	SUB_ADD_L="@comment "
+PLIST_SUB+=	SUB_ADD_M="@comment "
+PLIST_SUB+=	SUB_ADD_N="@comment "
 .elif defined(WITH_MUTT_COMPRESSED_FOLDERS) && !defined(WITH_MUTT_NNTP) && \
-	defined(WITH_MUTT_RU_PATCH) && defined(WITH_MUTT_QUOTE_PATCH)
+	defined(WITH_MUTT_RU_PATCH) && defined(WITH_MUTT_QUOTE_PATCH) && \
+	defined(IMAP_OR_POP_SET)
 PLIST_SUB+=	SUB_ADD_C=""
 PLIST_SUB+=	SUB_ADD_A="@comment "
 PLIST_SUB+=	SUB_ADD_B="@comment "
@@ -172,8 +210,16 @@ PLIST_SUB+=	SUB_ADD_D="@comment "
 PLIST_SUB+=	SUB_ADD_E="@comment "
 PLIST_SUB+=	SUB_ADD_F="@comment "
 PLIST_SUB+=	SUB_ADD_G="@comment "
+PLIST_SUB+=	SUB_ADD_H="@comment "
+PLIST_SUB+=	SUB_ADD_I="@comment "
+PLIST_SUB+=	SUB_ADD_J="@comment "
+PLIST_SUB+=	SUB_ADD_K="@comment "
+PLIST_SUB+=	SUB_ADD_L="@comment "
+PLIST_SUB+=	SUB_ADD_M="@comment "
+PLIST_SUB+=	SUB_ADD_N="@comment "
 .elif defined(WITH_MUTT_COMPRESSED_FOLDERS) && !defined(WITH_MUTT_NNTP) && \
-	defined(WITH_MUTT_RU_PATCH) && !defined(WITH_MUTT_QUOTE_PATCH)
+	defined(WITH_MUTT_RU_PATCH) && !defined(WITH_MUTT_QUOTE_PATCH) && \
+	defined(IMAP_OR_POP_SET)
 PLIST_SUB+=	SUB_ADD_B=""
 PLIST_SUB+=	SUB_ADD_A="@comment "
 PLIST_SUB+=	SUB_ADD_C="@comment "
@@ -181,8 +227,16 @@ PLIST_SUB+=	SUB_ADD_D="@comment "
 PLIST_SUB+=	SUB_ADD_E="@comment "
 PLIST_SUB+=	SUB_ADD_F="@comment "
 PLIST_SUB+=	SUB_ADD_G="@comment "
+PLIST_SUB+=	SUB_ADD_H="@comment "
+PLIST_SUB+=	SUB_ADD_I="@comment "
+PLIST_SUB+=	SUB_ADD_J="@comment "
+PLIST_SUB+=	SUB_ADD_K="@comment "
+PLIST_SUB+=	SUB_ADD_L="@comment "
+PLIST_SUB+=	SUB_ADD_M="@comment "
+PLIST_SUB+=	SUB_ADD_N="@comment "
 .elif defined(WITH_MUTT_COMPRESSED_FOLDERS) && !defined(WITH_MUTT_NNTP) && \
-	!defined(WITH_MUTT_RU_PATCH) && defined(WITH_MUTT_QUOTE_PATCH)
+	!defined(WITH_MUTT_RU_PATCH) && defined(WITH_MUTT_QUOTE_PATCH) && \
+	defined(IMAP_OR_POP_SET)
 PLIST_SUB+=	SUB_ADD_C=""
 PLIST_SUB+=	SUB_ADD_A="@comment "
 PLIST_SUB+=	SUB_ADD_B="@comment "
@@ -190,8 +244,16 @@ PLIST_SUB+=	SUB_ADD_D="@comment "
 PLIST_SUB+=	SUB_ADD_E="@comment "
 PLIST_SUB+=	SUB_ADD_F="@comment "
 PLIST_SUB+=	SUB_ADD_G="@comment "
+PLIST_SUB+=	SUB_ADD_H="@comment "
+PLIST_SUB+=	SUB_ADD_I="@comment "
+PLIST_SUB+=	SUB_ADD_J="@comment "
+PLIST_SUB+=	SUB_ADD_K="@comment "
+PLIST_SUB+=	SUB_ADD_L="@comment "
+PLIST_SUB+=	SUB_ADD_M="@comment "
+PLIST_SUB+=	SUB_ADD_N="@comment "
 .elif defined(WITH_MUTT_COMPRESSED_FOLDERS) && !defined(WITH_MUTT_NNTP) && \
-	!defined(WITH_MUTT_RU_PATCH) && !defined(WITH_MUTT_QUOTE_PATCH)
+	!defined(WITH_MUTT_RU_PATCH) && !defined(WITH_MUTT_QUOTE_PATCH) && \
+	defined(IMAP_OR_POP_SET)
 PLIST_SUB+=	SUB_ADD_B=""
 PLIST_SUB+=	SUB_ADD_A="@comment "
 PLIST_SUB+=	SUB_ADD_C="@comment "
@@ -199,8 +261,16 @@ PLIST_SUB+=	SUB_ADD_D="@comment "
 PLIST_SUB+=	SUB_ADD_E="@comment "
 PLIST_SUB+=	SUB_ADD_F="@comment "
 PLIST_SUB+=	SUB_ADD_G="@comment "
+PLIST_SUB+=	SUB_ADD_H="@comment "
+PLIST_SUB+=	SUB_ADD_I="@comment "
+PLIST_SUB+=	SUB_ADD_J="@comment "
+PLIST_SUB+=	SUB_ADD_K="@comment "
+PLIST_SUB+=	SUB_ADD_L="@comment "
+PLIST_SUB+=	SUB_ADD_M="@comment "
+PLIST_SUB+=	SUB_ADD_N="@comment "
 .elif !defined(WITH_MUTT_COMPRESSED_FOLDERS) && defined(WITH_MUTT_NNTP) && \
-	defined(WITH_MUTT_RU_PATCH) && defined(WITH_MUTT_QUOTE_PATCH)
+	defined(WITH_MUTT_RU_PATCH) && defined(WITH_MUTT_QUOTE_PATCH) && \
+	defined(IMAP_OR_POP_SET)
 PLIST_SUB+=	SUB_ADD_E=""
 PLIST_SUB+=	SUB_ADD_A="@comment "
 PLIST_SUB+=	SUB_ADD_B="@comment "
@@ -208,8 +278,16 @@ PLIST_SUB+=	SUB_ADD_C="@comment "
 PLIST_SUB+=	SUB_ADD_D="@comment "
 PLIST_SUB+=	SUB_ADD_F="@comment "
 PLIST_SUB+=	SUB_ADD_G="@comment "
+PLIST_SUB+=	SUB_ADD_H="@comment "
+PLIST_SUB+=	SUB_ADD_I="@comment "
+PLIST_SUB+=	SUB_ADD_J="@comment "
+PLIST_SUB+=	SUB_ADD_K="@comment "
+PLIST_SUB+=	SUB_ADD_L="@comment "
+PLIST_SUB+=	SUB_ADD_M="@comment "
+PLIST_SUB+=	SUB_ADD_N="@comment "
 .elif !defined(WITH_MUTT_COMPRESSED_FOLDERS) && defined(WITH_MUTT_NNTP) && \
-	defined(WITH_MUTT_RU_PATCH) && !defined(WITH_MUTT_QUOTE_PATCH)
+	defined(WITH_MUTT_RU_PATCH) && !defined(WITH_MUTT_QUOTE_PATCH) && \
+	defined(IMAP_OR_POP_SET)
 PLIST_SUB+=	SUB_ADD_D=""
 PLIST_SUB+=	SUB_ADD_A="@comment "
 PLIST_SUB+=	SUB_ADD_B="@comment "
@@ -217,8 +295,16 @@ PLIST_SUB+=	SUB_ADD_C="@comment "
 PLIST_SUB+=	SUB_ADD_E="@comment "
 PLIST_SUB+=	SUB_ADD_F="@comment "
 PLIST_SUB+=	SUB_ADD_G="@comment "
+PLIST_SUB+=	SUB_ADD_H="@comment "
+PLIST_SUB+=	SUB_ADD_I="@comment "
+PLIST_SUB+=	SUB_ADD_J="@comment "
+PLIST_SUB+=	SUB_ADD_K="@comment "
+PLIST_SUB+=	SUB_ADD_L="@comment "
+PLIST_SUB+=	SUB_ADD_M="@comment "
+PLIST_SUB+=	SUB_ADD_N="@comment "
 .elif !defined(WITH_MUTT_COMPRESSED_FOLDERS) && defined(WITH_MUTT_NNTP) && \
-	!defined(WITH_MUTT_RU_PATCH) && defined(WITH_MUTT_QUOTE_PATCH)
+	!defined(WITH_MUTT_RU_PATCH) && defined(WITH_MUTT_QUOTE_PATCH) && \
+	defined(IMAP_OR_POP_SET)
 PLIST_SUB+=	SUB_ADD_E=""
 PLIST_SUB+=	SUB_ADD_A="@comment "
 PLIST_SUB+=	SUB_ADD_B="@comment "
@@ -226,8 +312,16 @@ PLIST_SUB+=	SUB_ADD_C="@comment "
 PLIST_SUB+=	SUB_ADD_D="@comment "
 PLIST_SUB+=	SUB_ADD_F="@comment "
 PLIST_SUB+=	SUB_ADD_G="@comment "
+PLIST_SUB+=	SUB_ADD_H="@comment "
+PLIST_SUB+=	SUB_ADD_I="@comment "
+PLIST_SUB+=	SUB_ADD_J="@comment "
+PLIST_SUB+=	SUB_ADD_K="@comment "
+PLIST_SUB+=	SUB_ADD_L="@comment "
+PLIST_SUB+=	SUB_ADD_M="@comment "
+PLIST_SUB+=	SUB_ADD_N="@comment "
 .elif !defined(WITH_MUTT_COMPRESSED_FOLDERS) && defined(WITH_MUTT_NNTP) && \
-	!defined(WITH_MUTT_RU_PATCH) && !defined(WITH_MUTT_QUOTE_PATCH)
+	!defined(WITH_MUTT_RU_PATCH) && !defined(WITH_MUTT_QUOTE_PATCH) && \
+	defined(IMAP_OR_POP_SET)
 PLIST_SUB+=	SUB_ADD_D=""
 PLIST_SUB+=	SUB_ADD_A="@comment "
 PLIST_SUB+=	SUB_ADD_B="@comment "
@@ -235,8 +329,16 @@ PLIST_SUB+=	SUB_ADD_C="@comment "
 PLIST_SUB+=	SUB_ADD_E="@comment "
 PLIST_SUB+=	SUB_ADD_F="@comment "
 PLIST_SUB+=	SUB_ADD_G="@comment "
+PLIST_SUB+=	SUB_ADD_H="@comment "
+PLIST_SUB+=	SUB_ADD_I="@comment "
+PLIST_SUB+=	SUB_ADD_J="@comment "
+PLIST_SUB+=	SUB_ADD_K="@comment "
+PLIST_SUB+=	SUB_ADD_L="@comment "
+PLIST_SUB+=	SUB_ADD_M="@comment "
+PLIST_SUB+=	SUB_ADD_N="@comment "
 .elif !defined(WITH_MUTT_COMPRESSED_FOLDERS) && !defined(WITH_MUTT_NNTP) && \
-	defined(WITH_MUTT_RU_PATCH) && defined(WITH_MUTT_QUOTE_PATCH)
+	defined(WITH_MUTT_RU_PATCH) && defined(WITH_MUTT_QUOTE_PATCH) && \
+	defined(IMAP_OR_POP_SET)
 PLIST_SUB+=	SUB_ADD_A=""
 PLIST_SUB+=	SUB_ADD_B="@comment "
 PLIST_SUB+=	SUB_ADD_C="@comment "
@@ -244,8 +346,16 @@ PLIST_SUB+=	SUB_ADD_D="@comment "
 PLIST_SUB+=	SUB_ADD_E="@comment "
 PLIST_SUB+=	SUB_ADD_F="@comment "
 PLIST_SUB+=	SUB_ADD_G="@comment "
+PLIST_SUB+=	SUB_ADD_H="@comment "
+PLIST_SUB+=	SUB_ADD_I="@comment "
+PLIST_SUB+=	SUB_ADD_J="@comment "
+PLIST_SUB+=	SUB_ADD_K="@comment "
+PLIST_SUB+=	SUB_ADD_L="@comment "
+PLIST_SUB+=	SUB_ADD_M="@comment "
+PLIST_SUB+=	SUB_ADD_N="@comment "
 .elif !defined(WITH_MUTT_COMPRESSED_FOLDERS) && !defined(WITH_MUTT_NNTP) && \
-	defined(WITH_MUTT_RU_PATCH) && !defined(WITH_MUTT_QUOTE_PATCH)
+	defined(WITH_MUTT_RU_PATCH) && !defined(WITH_MUTT_QUOTE_PATCH) && \
+	defined(IMAP_OR_POP_SET)
 PLIST_SUB+=	SUB_ADD_A="@comment "
 PLIST_SUB+=	SUB_ADD_B="@comment "
 PLIST_SUB+=	SUB_ADD_C="@comment "
@@ -253,8 +363,16 @@ PLIST_SUB+=	SUB_ADD_D="@comment "
 PLIST_SUB+=	SUB_ADD_E="@comment "
 PLIST_SUB+=	SUB_ADD_F="@comment "
 PLIST_SUB+=	SUB_ADD_G="@comment "
+PLIST_SUB+=	SUB_ADD_H="@comment "
+PLIST_SUB+=	SUB_ADD_I="@comment "
+PLIST_SUB+=	SUB_ADD_J="@comment "
+PLIST_SUB+=	SUB_ADD_K="@comment "
+PLIST_SUB+=	SUB_ADD_L="@comment "
+PLIST_SUB+=	SUB_ADD_M="@comment "
+PLIST_SUB+=	SUB_ADD_N="@comment "
 .elif !defined(WITH_MUTT_COMPRESSED_FOLDERS) && !defined(WITH_MUTT_NNTP) && \
-	!defined(WITH_MUTT_RU_PATCH) && defined(WITH_MUTT_QUOTE_PATCH)
+	!defined(WITH_MUTT_RU_PATCH) && defined(WITH_MUTT_QUOTE_PATCH) && \
+	defined(IMAP_OR_POP_SET)
 PLIST_SUB+=	SUB_ADD_A=""
 PLIST_SUB+=	SUB_ADD_B="@comment "
 PLIST_SUB+=	SUB_ADD_C="@comment "
@@ -262,8 +380,16 @@ PLIST_SUB+=	SUB_ADD_D="@comment "
 PLIST_SUB+=	SUB_ADD_E="@comment "
 PLIST_SUB+=	SUB_ADD_F="@comment "
 PLIST_SUB+=	SUB_ADD_G="@comment "
+PLIST_SUB+=	SUB_ADD_H="@comment "
+PLIST_SUB+=	SUB_ADD_I="@comment "
+PLIST_SUB+=	SUB_ADD_J="@comment "
+PLIST_SUB+=	SUB_ADD_K="@comment "
+PLIST_SUB+=	SUB_ADD_L="@comment "
+PLIST_SUB+=	SUB_ADD_M="@comment "
+PLIST_SUB+=	SUB_ADD_N="@comment "
 .elif !defined(WITH_MUTT_COMPRESSED_FOLDERS) && !defined(WITH_MUTT_NNTP) && \
-	!defined(WITH_MUTT_RU_PATCH) && !defined(WITH_MUTT_QUOTE_PATCH)
+	!defined(WITH_MUTT_RU_PATCH) && !defined(WITH_MUTT_QUOTE_PATCH) && \
+	defined(IMAP_OR_POP_SET)
 PLIST_SUB+=	SUB_ADD_A="@comment "
 PLIST_SUB+=	SUB_ADD_B="@comment "
 PLIST_SUB+=	SUB_ADD_C="@comment "
@@ -271,6 +397,285 @@ PLIST_SUB+=	SUB_ADD_D="@comment "
 PLIST_SUB+=	SUB_ADD_E="@comment "
 PLIST_SUB+=	SUB_ADD_F="@comment "
 PLIST_SUB+=	SUB_ADD_G="@comment "
+PLIST_SUB+=	SUB_ADD_H="@comment "
+PLIST_SUB+=	SUB_ADD_I="@comment "
+PLIST_SUB+=	SUB_ADD_J="@comment "
+PLIST_SUB+=	SUB_ADD_K="@comment "
+PLIST_SUB+=	SUB_ADD_L="@comment "
+PLIST_SUB+=	SUB_ADD_M="@comment "
+PLIST_SUB+=	SUB_ADD_N="@comment "
+.elif defined(WITH_MUTT_COMPRESSED_FOLDERS) && defined(WITH_MUTT_NNTP) && \
+	defined(WITH_MUTT_RU_PATCH) && defined(WITH_MUTT_QUOTE_PATCH) && \
+	!defined(IMAP_OR_POP_SET)
+PLIST_SUB+=	SUB_ADD_N=""
+PLIST_SUB+=	SUB_ADD_A="@comment "
+PLIST_SUB+=	SUB_ADD_B="@comment "
+PLIST_SUB+=	SUB_ADD_C="@comment "
+PLIST_SUB+=	SUB_ADD_D="@comment "
+PLIST_SUB+=	SUB_ADD_E="@comment "
+PLIST_SUB+=	SUB_ADD_F="@comment "
+PLIST_SUB+=	SUB_ADD_G="@comment "
+PLIST_SUB+=	SUB_ADD_H="@comment "
+PLIST_SUB+=	SUB_ADD_I="@comment "
+PLIST_SUB+=	SUB_ADD_J="@comment "
+PLIST_SUB+=	SUB_ADD_K="@comment "
+PLIST_SUB+=	SUB_ADD_L="@comment "
+PLIST_SUB+=	SUB_ADD_M="@comment "
+.elif defined(WITH_MUTT_COMPRESSED_FOLDERS) && defined(WITH_MUTT_NNTP) && \
+	defined(WITH_MUTT_RU_PATCH) && !defined(WITH_MUTT_QUOTE_PATCH) && \
+	!defined(IMAP_OR_POP_SET)
+PLIST_SUB+=	SUB_ADD_M=""
+PLIST_SUB+=	SUB_ADD_A="@comment "
+PLIST_SUB+=	SUB_ADD_B="@comment "
+PLIST_SUB+=	SUB_ADD_C="@comment "
+PLIST_SUB+=	SUB_ADD_D="@comment "
+PLIST_SUB+=	SUB_ADD_E="@comment "
+PLIST_SUB+=	SUB_ADD_F="@comment "
+PLIST_SUB+=	SUB_ADD_G="@comment "
+PLIST_SUB+=	SUB_ADD_H="@comment "
+PLIST_SUB+=	SUB_ADD_I="@comment "
+PLIST_SUB+=	SUB_ADD_J="@comment "
+PLIST_SUB+=	SUB_ADD_K="@comment "
+PLIST_SUB+=	SUB_ADD_L="@comment "
+PLIST_SUB+=	SUB_ADD_N="@comment "
+.elif defined(WITH_MUTT_COMPRESSED_FOLDERS) && defined(WITH_MUTT_NNTP) && \
+	!defined(WITH_MUTT_RU_PATCH) && defined(WITH_MUTT_QUOTE_PATCH) && \
+	!defined(IMAP_OR_POP_SET)
+PLIST_SUB+=	SUB_ADD_N=""
+PLIST_SUB+=	SUB_ADD_A="@comment "
+PLIST_SUB+=	SUB_ADD_B="@comment "
+PLIST_SUB+=	SUB_ADD_C="@comment "
+PLIST_SUB+=	SUB_ADD_D="@comment "
+PLIST_SUB+=	SUB_ADD_E="@comment "
+PLIST_SUB+=	SUB_ADD_F="@comment "
+PLIST_SUB+=	SUB_ADD_G="@comment "
+PLIST_SUB+=	SUB_ADD_H="@comment "
+PLIST_SUB+=	SUB_ADD_I="@comment "
+PLIST_SUB+=	SUB_ADD_J="@comment "
+PLIST_SUB+=	SUB_ADD_K="@comment "
+PLIST_SUB+=	SUB_ADD_L="@comment "
+PLIST_SUB+=	SUB_ADD_M="@comment "
+.elif defined(WITH_MUTT_COMPRESSED_FOLDERS) && defined(WITH_MUTT_NNTP) && \
+	!defined(WITH_MUTT_RU_PATCH) && !defined(WITH_MUTT_QUOTE_PATCH) && \
+	!defined(IMAP_OR_POP_SET)
+PLIST_SUB+=	SUB_ADD_M=""
+PLIST_SUB+=	SUB_ADD_A="@comment "
+PLIST_SUB+=	SUB_ADD_B="@comment "
+PLIST_SUB+=	SUB_ADD_C="@comment "
+PLIST_SUB+=	SUB_ADD_D="@comment "
+PLIST_SUB+=	SUB_ADD_E="@comment "
+PLIST_SUB+=	SUB_ADD_F="@comment "
+PLIST_SUB+=	SUB_ADD_G="@comment "
+PLIST_SUB+=	SUB_ADD_H="@comment "
+PLIST_SUB+=	SUB_ADD_I="@comment "
+PLIST_SUB+=	SUB_ADD_J="@comment "
+PLIST_SUB+=	SUB_ADD_K="@comment "
+PLIST_SUB+=	SUB_ADD_L="@comment "
+PLIST_SUB+=	SUB_ADD_N="@comment "
+.elif defined(WITH_MUTT_COMPRESSED_FOLDERS) && !defined(WITH_MUTT_NNTP) && \
+	defined(WITH_MUTT_RU_PATCH) && defined(WITH_MUTT_QUOTE_PATCH) && \
+	!defined(IMAP_OR_POP_SET)
+PLIST_SUB+=	SUB_ADD_J=""
+PLIST_SUB+=	SUB_ADD_A="@comment "
+PLIST_SUB+=	SUB_ADD_B="@comment "
+PLIST_SUB+=	SUB_ADD_C="@comment "
+PLIST_SUB+=	SUB_ADD_D="@comment "
+PLIST_SUB+=	SUB_ADD_E="@comment "
+PLIST_SUB+=	SUB_ADD_F="@comment "
+PLIST_SUB+=	SUB_ADD_G="@comment "
+PLIST_SUB+=	SUB_ADD_H="@comment "
+PLIST_SUB+=	SUB_ADD_I="@comment "
+PLIST_SUB+=	SUB_ADD_K="@comment "
+PLIST_SUB+=	SUB_ADD_L="@comment "
+PLIST_SUB+=	SUB_ADD_M="@comment "
+PLIST_SUB+=	SUB_ADD_N="@comment "
+.elif defined(WITH_MUTT_COMPRESSED_FOLDERS) && !defined(WITH_MUTT_NNTP) && \
+	defined(WITH_MUTT_RU_PATCH) && !defined(WITH_MUTT_QUOTE_PATCH) && \
+	!defined(IMAP_OR_POP_SET)
+PLIST_SUB+=	SUB_ADD_I=""
+PLIST_SUB+=	SUB_ADD_A="@comment "
+PLIST_SUB+=	SUB_ADD_B="@comment "
+PLIST_SUB+=	SUB_ADD_C="@comment "
+PLIST_SUB+=	SUB_ADD_D="@comment "
+PLIST_SUB+=	SUB_ADD_E="@comment "
+PLIST_SUB+=	SUB_ADD_F="@comment "
+PLIST_SUB+=	SUB_ADD_G="@comment "
+PLIST_SUB+=	SUB_ADD_H="@comment "
+PLIST_SUB+=	SUB_ADD_J="@comment "
+PLIST_SUB+=	SUB_ADD_K="@comment "
+PLIST_SUB+=	SUB_ADD_L="@comment "
+PLIST_SUB+=	SUB_ADD_M="@comment "
+PLIST_SUB+=	SUB_ADD_N="@comment "
+.elif defined(WITH_MUTT_COMPRESSED_FOLDERS) && !defined(WITH_MUTT_NNTP) && \
+	!defined(WITH_MUTT_RU_PATCH) && defined(WITH_MUTT_QUOTE_PATCH) && \
+	!defined(IMAP_OR_POP_SET)
+PLIST_SUB+=	SUB_ADD_J=""
+PLIST_SUB+=	SUB_ADD_A="@comment "
+PLIST_SUB+=	SUB_ADD_B="@comment "
+PLIST_SUB+=	SUB_ADD_C="@comment "
+PLIST_SUB+=	SUB_ADD_D="@comment "
+PLIST_SUB+=	SUB_ADD_E="@comment "
+PLIST_SUB+=	SUB_ADD_F="@comment "
+PLIST_SUB+=	SUB_ADD_G="@comment "
+PLIST_SUB+=	SUB_ADD_H="@comment "
+PLIST_SUB+=	SUB_ADD_I="@comment "
+PLIST_SUB+=	SUB_ADD_K="@comment "
+PLIST_SUB+=	SUB_ADD_L="@comment "
+PLIST_SUB+=	SUB_ADD_M="@comment "
+PLIST_SUB+=	SUB_ADD_N="@comment "
+.elif defined(WITH_MUTT_COMPRESSED_FOLDERS) && !defined(WITH_MUTT_NNTP) && \
+	!defined(WITH_MUTT_RU_PATCH) && !defined(WITH_MUTT_QUOTE_PATCH) && \
+	!defined(IMAP_OR_POP_SET)
+PLIST_SUB+=	SUB_ADD_I=""
+PLIST_SUB+=	SUB_ADD_A="@comment "
+PLIST_SUB+=	SUB_ADD_B="@comment "
+PLIST_SUB+=	SUB_ADD_C="@comment "
+PLIST_SUB+=	SUB_ADD_D="@comment "
+PLIST_SUB+=	SUB_ADD_E="@comment "
+PLIST_SUB+=	SUB_ADD_F="@comment "
+PLIST_SUB+=	SUB_ADD_G="@comment "
+PLIST_SUB+=	SUB_ADD_H="@comment "
+PLIST_SUB+=	SUB_ADD_J="@comment "
+PLIST_SUB+=	SUB_ADD_K="@comment "
+PLIST_SUB+=	SUB_ADD_L="@comment "
+PLIST_SUB+=	SUB_ADD_M="@comment "
+PLIST_SUB+=	SUB_ADD_N="@comment "
+.elif !defined(WITH_MUTT_COMPRESSED_FOLDERS) && defined(WITH_MUTT_NNTP) && \
+	defined(WITH_MUTT_RU_PATCH) && defined(WITH_MUTT_QUOTE_PATCH) && \
+	!defined(IMAP_OR_POP_SET)
+PLIST_SUB+=	SUB_ADD_L=""
+PLIST_SUB+=	SUB_ADD_A="@comment "
+PLIST_SUB+=	SUB_ADD_B="@comment "
+PLIST_SUB+=	SUB_ADD_C="@comment "
+PLIST_SUB+=	SUB_ADD_D="@comment "
+PLIST_SUB+=	SUB_ADD_E="@comment "
+PLIST_SUB+=	SUB_ADD_F="@comment "
+PLIST_SUB+=	SUB_ADD_G="@comment "
+PLIST_SUB+=	SUB_ADD_H="@comment "
+PLIST_SUB+=	SUB_ADD_I="@comment "
+PLIST_SUB+=	SUB_ADD_J="@comment "
+PLIST_SUB+=	SUB_ADD_K="@comment "
+PLIST_SUB+=	SUB_ADD_M="@comment "
+PLIST_SUB+=	SUB_ADD_N="@comment "
+.elif !defined(WITH_MUTT_COMPRESSED_FOLDERS) && defined(WITH_MUTT_NNTP) && \
+	defined(WITH_MUTT_RU_PATCH) && !defined(WITH_MUTT_QUOTE_PATCH) && \
+	!defined(IMAP_OR_POP_SET)
+PLIST_SUB+=	SUB_ADD_K=""
+PLIST_SUB+=	SUB_ADD_A="@comment "
+PLIST_SUB+=	SUB_ADD_B="@comment "
+PLIST_SUB+=	SUB_ADD_C="@comment "
+PLIST_SUB+=	SUB_ADD_D="@comment "
+PLIST_SUB+=	SUB_ADD_E="@comment "
+PLIST_SUB+=	SUB_ADD_F="@comment "
+PLIST_SUB+=	SUB_ADD_G="@comment "
+PLIST_SUB+=	SUB_ADD_H="@comment "
+PLIST_SUB+=	SUB_ADD_I="@comment "
+PLIST_SUB+=	SUB_ADD_J="@comment "
+PLIST_SUB+=	SUB_ADD_L="@comment "
+PLIST_SUB+=	SUB_ADD_M="@comment "
+PLIST_SUB+=	SUB_ADD_N="@comment "
+.elif !defined(WITH_MUTT_COMPRESSED_FOLDERS) && defined(WITH_MUTT_NNTP) && \
+	!defined(WITH_MUTT_RU_PATCH) && defined(WITH_MUTT_QUOTE_PATCH) && \
+	!defined(IMAP_OR_POP_SET)
+PLIST_SUB+=	SUB_ADD_L=""
+PLIST_SUB+=	SUB_ADD_A="@comment "
+PLIST_SUB+=	SUB_ADD_B="@comment "
+PLIST_SUB+=	SUB_ADD_C="@comment "
+PLIST_SUB+=	SUB_ADD_D="@comment "
+PLIST_SUB+=	SUB_ADD_E="@comment "
+PLIST_SUB+=	SUB_ADD_F="@comment "
+PLIST_SUB+=	SUB_ADD_G="@comment "
+PLIST_SUB+=	SUB_ADD_H="@comment "
+PLIST_SUB+=	SUB_ADD_I="@comment "
+PLIST_SUB+=	SUB_ADD_J="@comment "
+PLIST_SUB+=	SUB_ADD_K="@comment "
+PLIST_SUB+=	SUB_ADD_M="@comment "
+PLIST_SUB+=	SUB_ADD_N="@comment "
+.elif !defined(WITH_MUTT_COMPRESSED_FOLDERS) && defined(WITH_MUTT_NNTP) && \
+	!defined(WITH_MUTT_RU_PATCH) && !defined(WITH_MUTT_QUOTE_PATCH) && \
+	!defined(IMAP_OR_POP_SET)
+PLIST_SUB+=	SUB_ADD_K=""
+PLIST_SUB+=	SUB_ADD_A="@comment "
+PLIST_SUB+=	SUB_ADD_B="@comment "
+PLIST_SUB+=	SUB_ADD_C="@comment "
+PLIST_SUB+=	SUB_ADD_D="@comment "
+PLIST_SUB+=	SUB_ADD_E="@comment "
+PLIST_SUB+=	SUB_ADD_F="@comment "
+PLIST_SUB+=	SUB_ADD_G="@comment "
+PLIST_SUB+=	SUB_ADD_H="@comment "
+PLIST_SUB+=	SUB_ADD_I="@comment "
+PLIST_SUB+=	SUB_ADD_J="@comment "
+PLIST_SUB+=	SUB_ADD_L="@comment "
+PLIST_SUB+=	SUB_ADD_M="@comment "
+PLIST_SUB+=	SUB_ADD_N="@comment "
+.elif !defined(WITH_MUTT_COMPRESSED_FOLDERS) && !defined(WITH_MUTT_NNTP) && \
+	defined(WITH_MUTT_RU_PATCH) && defined(WITH_MUTT_QUOTE_PATCH) && \
+	!defined(IMAP_OR_POP_SET)
+PLIST_SUB+=	SUB_ADD_H=""
+PLIST_SUB+=	SUB_ADD_A="@comment "
+PLIST_SUB+=	SUB_ADD_B="@comment "
+PLIST_SUB+=	SUB_ADD_C="@comment "
+PLIST_SUB+=	SUB_ADD_D="@comment "
+PLIST_SUB+=	SUB_ADD_E="@comment "
+PLIST_SUB+=	SUB_ADD_F="@comment "
+PLIST_SUB+=	SUB_ADD_G="@comment "
+PLIST_SUB+=	SUB_ADD_I="@comment "
+PLIST_SUB+=	SUB_ADD_J="@comment "
+PLIST_SUB+=	SUB_ADD_K="@comment "
+PLIST_SUB+=	SUB_ADD_L="@comment "
+PLIST_SUB+=	SUB_ADD_M="@comment "
+PLIST_SUB+=	SUB_ADD_N="@comment "
+.elif !defined(WITH_MUTT_COMPRESSED_FOLDERS) && !defined(WITH_MUTT_NNTP) && \
+	defined(WITH_MUTT_RU_PATCH) && !defined(WITH_MUTT_QUOTE_PATCH) && \
+	!defined(IMAP_OR_POP_SET)
+PLIST_SUB+=	SUB_ADD_A="@comment "
+PLIST_SUB+=	SUB_ADD_B="@comment "
+PLIST_SUB+=	SUB_ADD_C="@comment "
+PLIST_SUB+=	SUB_ADD_D="@comment "
+PLIST_SUB+=	SUB_ADD_E="@comment "
+PLIST_SUB+=	SUB_ADD_F="@comment "
+PLIST_SUB+=	SUB_ADD_G="@comment "
+PLIST_SUB+=	SUB_ADD_H="@comment "
+PLIST_SUB+=	SUB_ADD_I="@comment "
+PLIST_SUB+=	SUB_ADD_J="@comment "
+PLIST_SUB+=	SUB_ADD_K="@comment "
+PLIST_SUB+=	SUB_ADD_L="@comment "
+PLIST_SUB+=	SUB_ADD_M="@comment "
+PLIST_SUB+=	SUB_ADD_N="@comment "
+.elif !defined(WITH_MUTT_COMPRESSED_FOLDERS) && !defined(WITH_MUTT_NNTP) && \
+	!defined(WITH_MUTT_RU_PATCH) && defined(WITH_MUTT_QUOTE_PATCH) && \
+	!defined(IMAP_OR_POP_SET)
+PLIST_SUB+=	SUB_ADD_H=""
+PLIST_SUB+=	SUB_ADD_A="@comment "
+PLIST_SUB+=	SUB_ADD_B="@comment "
+PLIST_SUB+=	SUB_ADD_C="@comment "
+PLIST_SUB+=	SUB_ADD_D="@comment "
+PLIST_SUB+=	SUB_ADD_E="@comment "
+PLIST_SUB+=	SUB_ADD_F="@comment "
+PLIST_SUB+=	SUB_ADD_G="@comment "
+PLIST_SUB+=	SUB_ADD_I="@comment "
+PLIST_SUB+=	SUB_ADD_J="@comment "
+PLIST_SUB+=	SUB_ADD_K="@comment "
+PLIST_SUB+=	SUB_ADD_L="@comment "
+PLIST_SUB+=	SUB_ADD_M="@comment "
+PLIST_SUB+=	SUB_ADD_N="@comment "
+.elif !defined(WITH_MUTT_COMPRESSED_FOLDERS) && !defined(WITH_MUTT_NNTP) && \
+	!defined(WITH_MUTT_RU_PATCH) && !defined(WITH_MUTT_QUOTE_PATCH) && \
+	!defined(IMAP_OR_POP_SET)
+PLIST_SUB+=	SUB_ADD_A="@comment "
+PLIST_SUB+=	SUB_ADD_B="@comment "
+PLIST_SUB+=	SUB_ADD_C="@comment "
+PLIST_SUB+=	SUB_ADD_D="@comment "
+PLIST_SUB+=	SUB_ADD_E="@comment "
+PLIST_SUB+=	SUB_ADD_F="@comment "
+PLIST_SUB+=	SUB_ADD_G="@comment "
+PLIST_SUB+=	SUB_ADD_H="@comment "
+PLIST_SUB+=	SUB_ADD_I="@comment "
+PLIST_SUB+=	SUB_ADD_J="@comment "
+PLIST_SUB+=	SUB_ADD_K="@comment "
+PLIST_SUB+=	SUB_ADD_L="@comment "
+PLIST_SUB+=	SUB_ADD_M="@comment "
+PLIST_SUB+=	SUB_ADD_N="@comment "
 .else # patches
 PLIST_SUB+=	SUB_ADD_A="@comment "
 PLIST_SUB+=	SUB_ADD_B="@comment "
@@ -279,6 +684,13 @@ PLIST_SUB+=	SUB_ADD_D="@comment "
 PLIST_SUB+=	SUB_ADD_E="@comment "
 PLIST_SUB+=	SUB_ADD_F="@comment "
 PLIST_SUB+=	SUB_ADD_G="@comment "
+PLIST_SUB+=	SUB_ADD_H="@comment "
+PLIST_SUB+=	SUB_ADD_I="@comment "
+PLIST_SUB+=	SUB_ADD_J="@comment "
+PLIST_SUB+=	SUB_ADD_K="@comment "
+PLIST_SUB+=	SUB_ADD_L="@comment "
+PLIST_SUB+=	SUB_ADD_M="@comment "
+PLIST_SUB+=	SUB_ADD_N="@comment "
 .endif
 .else # HTML
 PLIST_SUB+=	SUB_HTML="@comment "
@@ -289,6 +701,13 @@ PLIST_SUB+=	SUB_ADD_D="@comment "
 PLIST_SUB+=	SUB_ADD_E="@comment "
 PLIST_SUB+=	SUB_ADD_F="@comment "
 PLIST_SUB+=	SUB_ADD_G="@comment "
+PLIST_SUB+=	SUB_ADD_H="@comment "
+PLIST_SUB+=	SUB_ADD_I="@comment "
+PLIST_SUB+=	SUB_ADD_J="@comment "
+PLIST_SUB+=	SUB_ADD_K="@comment "
+PLIST_SUB+=	SUB_ADD_L="@comment "
+PLIST_SUB+=	SUB_ADD_M="@comment "
+PLIST_SUB+=	SUB_ADD_N="@comment "
 .endif
 .else 	# NOPORTDOCS
 PLIST_SUB+=	SUB_DOCS="@comment "
@@ -300,6 +719,13 @@ PLIST_SUB+=	SUB_ADD_D="@comment "
 PLIST_SUB+=	SUB_ADD_E="@comment "
 PLIST_SUB+=	SUB_ADD_F="@comment "
 PLIST_SUB+=	SUB_ADD_G="@comment "
+PLIST_SUB+=	SUB_ADD_H="@comment "
+PLIST_SUB+=	SUB_ADD_I="@comment "
+PLIST_SUB+=	SUB_ADD_J="@comment "
+PLIST_SUB+=	SUB_ADD_K="@comment "
+PLIST_SUB+=	SUB_ADD_L="@comment "
+PLIST_SUB+=	SUB_ADD_M="@comment "
+PLIST_SUB+=	SUB_ADD_N="@comment "
 post-patch:
 	${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-nodoc
 	${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-nodoc-contrib
