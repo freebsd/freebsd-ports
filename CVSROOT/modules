@@ -1047,6 +1047,7 @@ daemontools53	ports/sysutils/daemontools53
 dagrab		ports/audio/dagrab
 dailystrips	ports/deskutils/dailystrips
 danamics	ports/net/danamics
+dancer		ports/irc/dancer
 dancer-ircd	ports/irc/dancer-ircd
 dancer-services	ports/irc/dancer-services
 dansguardian	ports/www/dansguardian
