@@ -4,9 +4,6 @@ rt3/etc/schema.SQLite
 rt3/etc/schema.Pg
 rt3/etc/schema.Oracle
 rt3/etc/schema.mysql
-rt3/etc/rt.spec
-rt3/etc/constraints.mysql
-rt3/etc/drop.Oracle
 rt3/etc/acl.mysql
 rt3/etc/acl.Pg
 rt3/etc/acl.Oracle
@@ -30,6 +27,7 @@ rt3/share/html/Ticket/Elements/ShowLinks
 rt3/share/html/Ticket/Elements/ShowMemberOf
 rt3/share/html/Ticket/Elements/ShowMembers
 rt3/share/html/Ticket/Elements/ShowMessageStanza
+rt3/share/html/Ticket/Elements/ShowMessageHeaders
 rt3/share/html/Ticket/Elements/ShowPeople
 rt3/share/html/Ticket/Elements/ShowReferences
 rt3/share/html/Ticket/Elements/Tabs
@@ -222,7 +220,7 @@ rt3/share/html/Admin/index.html
 rt3/share/html/autohandler
 rt3/share/html/index.html
 rt3/share/html/l
-rt3/share/doc
+rt3/share/doc/README
 rt3/lib/t/data/nested-mime-sample
 rt3/lib/t/regression/00placeholder
 rt3/lib/t/regression/mime_tests
@@ -234,6 +232,24 @@ rt3/lib/t/02regression.t
 rt3/lib/t/00smoke.t.in
 rt3/lib/t/03web.pl
 rt3/lib/t/01harness.t.in
+rt3/lib/t/04_send_email.pl
+rt3/lib/t/04_send_email.pl.in
+rt3/lib/t/data/8859-15-message-series/msg7
+rt3/lib/t/data/8859-15-message-series/msg1
+rt3/lib/t/data/8859-15-message-series/msg2
+rt3/lib/t/data/8859-15-message-series/msg3
+rt3/lib/t/data/8859-15-message-series/msg4
+rt3/lib/t/data/8859-15-message-series/msg5
+rt3/lib/t/data/8859-15-message-series/msg6
+rt3/lib/t/data/8859-15-message-series/dir
+rt3/lib/t/data/multipart-alternative-with-umlaut
+rt3/lib/t/data/multipart-report
+rt3/lib/t/data/nested-rfc-822
+rt3/lib/t/data/new-ticket-from-iso-8859-1
+rt3/lib/t/data/new-ticket-from-iso-8859-1-full
+rt3/lib/t/data/russian-subject-no-content-type
+rt3/lib/t/data/text-html-in-russian
+rt3/lib/t/data/text-html-with-umlaut
 rt3/lib/RT/Condition/UserDefined.pm
 rt3/lib/RT/Condition/BeforeDue.pm
 rt3/lib/RT/Condition/Generic.pm
@@ -255,9 +271,11 @@ rt3/lib/RT/I18N/de.po
 rt3/lib/RT/I18N/en.po
 rt3/lib/RT/I18N/es.po
 rt3/lib/RT/I18N/fi.po
+rt3/lib/RT/I18N/it.po
 rt3/lib/RT/I18N/ja.po
 rt3/lib/RT/I18N/he.po
 rt3/lib/RT/I18N/nl.po
+rt3/lib/RT/I18N/no.po
 rt3/lib/RT/I18N/ru.po
 rt3/lib/RT/I18N/zh_tw.po
 rt3/lib/RT/I18N/zh_cn.po
@@ -266,6 +284,7 @@ rt3/lib/RT/Interface/Email/Auth/MailFrom.pm
 rt3/lib/RT/Interface/Email/Filter/SpamAssassin.pm
 rt3/lib/RT/Interface/CLI.pm
 rt3/lib/RT/Interface/Email.pm
+rt3/lib/RT/Interface/REST.pm
 rt3/lib/RT/Interface/Web.pm
 rt3/lib/RT/Action/UserDefined.pm
 rt3/lib/RT/Action/Autoreply.pm
@@ -332,6 +351,7 @@ rt3/lib/RT/Scrips.pm
 rt3/lib/RT/Scrips_Overlay.pm
 rt3/lib/RT/System.pm
 rt3/lib/RT/SearchBuilder.pm
+rt3/lib/RT/StyleGuide.pod
 rt3/lib/RT/Template.pm
 rt3/lib/RT/Template_Overlay.pm
 rt3/lib/RT/Templates.pm
@@ -394,6 +414,9 @@ rt3/README
 @dirrm rt3/share/html/REST/1.0/ticket
 @dirrm rt3/share/html/REST/1.0/search
 @dirrm rt3/share/html/REST/1.0/NoAuth
+@dirrm rt3/share/html/REST/1.0/Forms/queue
+@dirrm rt3/share/html/REST/1.0/Forms/ticket
+@dirrm rt3/share/html/REST/1.0/Forms/user
 @dirrm rt3/share/html/REST/1.0/Forms
 @dirrm rt3/share/html/REST/1.0
 @dirrm rt3/share/html/REST
@@ -409,6 +432,7 @@ rt3/README
 @dirrm rt3/share/html/Admin/Elements
 @dirrm rt3/share/html/Admin
 @dirrm rt3/share/html
+@dirrm rt3/share/doc
 @dirrm rt3/share
 @dirrm rt3/sbin
 @dirrm rt3/local/po
@@ -416,6 +440,7 @@ rt3/README
 @dirrm rt3/local/etc
 @dirrm rt3/local
 @dirrm rt3/lib/t/regression
+@dirrm rt3/lib/t/data/8859-15-message-series
 @dirrm rt3/lib/t/data
 @dirrm rt3/lib/t
 @dirrm rt3/lib/RT/URI
