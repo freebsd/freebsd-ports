@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gl-117
-PORTVERSION=	0.7
+PORTVERSION=	0.8
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -34,5 +34,8 @@ post-patch:
 		 s|-lSDL |-lSDL-1.1 |g ; \
 		 s|-lSDLmain|-lSDLmain-1.1|g' ${WRKSRC}/${file}
 .endfor
+	@cd ${WRKSRC}/src \
+		&& ${MV} loader_tga.cpp loader_tga.cpp.bak \
+		&& ${TR} -d '\015' < loader_tga.cpp.bak > loader_tga.cpp
 
 .include <bsd.port.mk>
