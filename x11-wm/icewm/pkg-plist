@@ -5,6 +5,8 @@ lib/X11/icewm/icons/app_16x16.xpm
 lib/X11/icewm/icons/app_32x32.xpm
 lib/X11/icewm/icons/bomb_16x16.xpm
 lib/X11/icewm/icons/bomb_32x32.xpm
+lib/X11/icewm/icons/file_16x16.xpm
+lib/X11/icewm/icons/file_32x32.xpm
 lib/X11/icewm/icons/folder_16x16.xpm
 lib/X11/icewm/icons/folder_32x32.xpm
 lib/X11/icewm/icons/fte_16x16.xpm
@@ -50,6 +52,66 @@ lib/X11/icewm/taskbar/linux.xpm
 lib/X11/icewm/taskbar/start.xpm
 lib/X11/icewm/taskbar/windows.xpm
 lib/X11/icewm/taskbar/xfreeos2.xpm
+lib/X11/icewm/themes/TechnologicEnvy/icons/app_16x16.xpm
+lib/X11/icewm/themes/TechnologicEnvy/icons/app_32x32.xpm
+lib/X11/icewm/themes/TechnologicEnvy/mailbox/mail.xpm
+lib/X11/icewm/themes/TechnologicEnvy/mailbox/newmail.xpm
+lib/X11/icewm/themes/TechnologicEnvy/mailbox/unreadmail.xpm
+lib/X11/icewm/themes/TechnologicEnvy/taskbar/linux.xpm
+lib/X11/icewm/themes/TechnologicEnvy/taskbar/windows.xpm
+lib/X11/icewm/themes/TechnologicEnvy/closeA.xpm
+lib/X11/icewm/themes/TechnologicEnvy/closeI.xpm
+lib/X11/icewm/themes/TechnologicEnvy/default.theme
+lib/X11/icewm/themes/TechnologicEnvy/dframeAB.xpm
+lib/X11/icewm/themes/TechnologicEnvy/dframeABL.xpm
+lib/X11/icewm/themes/TechnologicEnvy/dframeABR.xpm
+lib/X11/icewm/themes/TechnologicEnvy/dframeAL.xpm
+lib/X11/icewm/themes/TechnologicEnvy/dframeAR.xpm
+lib/X11/icewm/themes/TechnologicEnvy/dframeAT.xpm
+lib/X11/icewm/themes/TechnologicEnvy/dframeATL.xpm
+lib/X11/icewm/themes/TechnologicEnvy/dframeATR.xpm
+lib/X11/icewm/themes/TechnologicEnvy/dframeIB.xpm
+lib/X11/icewm/themes/TechnologicEnvy/dframeIBL.xpm
+lib/X11/icewm/themes/TechnologicEnvy/dframeIBR.xpm
+lib/X11/icewm/themes/TechnologicEnvy/dframeIL.xpm
+lib/X11/icewm/themes/TechnologicEnvy/dframeIR.xpm
+lib/X11/icewm/themes/TechnologicEnvy/dframeIT.xpm
+lib/X11/icewm/themes/TechnologicEnvy/dframeITL.xpm
+lib/X11/icewm/themes/TechnologicEnvy/dframeITR.xpm
+lib/X11/icewm/themes/TechnologicEnvy/frameAB.xpm
+lib/X11/icewm/themes/TechnologicEnvy/frameABL.xpm
+lib/X11/icewm/themes/TechnologicEnvy/frameABR.xpm
+lib/X11/icewm/themes/TechnologicEnvy/frameAL.xpm
+lib/X11/icewm/themes/TechnologicEnvy/frameAR.xpm
+lib/X11/icewm/themes/TechnologicEnvy/frameAT.xpm
+lib/X11/icewm/themes/TechnologicEnvy/frameATL.xpm
+lib/X11/icewm/themes/TechnologicEnvy/frameATR.xpm
+lib/X11/icewm/themes/TechnologicEnvy/frameIB.xpm
+lib/X11/icewm/themes/TechnologicEnvy/frameIBL.xpm
+lib/X11/icewm/themes/TechnologicEnvy/frameIBR.xpm
+lib/X11/icewm/themes/TechnologicEnvy/frameIL.xpm
+lib/X11/icewm/themes/TechnologicEnvy/frameIR.xpm
+lib/X11/icewm/themes/TechnologicEnvy/frameIT.xpm
+lib/X11/icewm/themes/TechnologicEnvy/frameITL.xpm
+lib/X11/icewm/themes/TechnologicEnvy/frameITR.xpm
+lib/X11/icewm/themes/TechnologicEnvy/maximizeA.xpm
+lib/X11/icewm/themes/TechnologicEnvy/maximizeI.xpm
+lib/X11/icewm/themes/TechnologicEnvy/menuButtonA.xpm
+lib/X11/icewm/themes/TechnologicEnvy/menuButtonI.xpm
+lib/X11/icewm/themes/TechnologicEnvy/minimizeA.xpm
+lib/X11/icewm/themes/TechnologicEnvy/minimizeI.xpm
+lib/X11/icewm/themes/TechnologicEnvy/restoreA.xpm
+lib/X11/icewm/themes/TechnologicEnvy/restoreI.xpm
+lib/X11/icewm/themes/TechnologicEnvy/titleAB.xpm
+lib/X11/icewm/themes/TechnologicEnvy/titleAL.xpm
+lib/X11/icewm/themes/TechnologicEnvy/titleAM.xpm
+lib/X11/icewm/themes/TechnologicEnvy/titleAR.xpm
+lib/X11/icewm/themes/TechnologicEnvy/titleAT.xpm
+lib/X11/icewm/themes/TechnologicEnvy/titleIB.xpm
+lib/X11/icewm/themes/TechnologicEnvy/titleIL.xpm
+lib/X11/icewm/themes/TechnologicEnvy/titleIM.xpm
+lib/X11/icewm/themes/TechnologicEnvy/titleIR.xpm
+lib/X11/icewm/themes/TechnologicEnvy/titleIT.xpm
 lib/X11/icewm/themes/aesthetech-big/closeA.xpm
 lib/X11/icewm/themes/aesthetech-big/closeI.xpm
 lib/X11/icewm/themes/aesthetech-big/default.theme
@@ -140,6 +202,25 @@ lib/X11/icewm/themes/aesthetech/restoreA.xpm
 lib/X11/icewm/themes/aesthetech/restoreI.xpm
 lib/X11/icewm/themes/aesthetech/titleAB.xpm
 lib/X11/icewm/themes/aesthetech/titleIB.xpm
+lib/X11/icewm/themes/bluePlastic/ledclock/a.xpm
+lib/X11/icewm/themes/bluePlastic/ledclock/colon.xpm
+lib/X11/icewm/themes/bluePlastic/ledclock/dot.xpm
+lib/X11/icewm/themes/bluePlastic/ledclock/m.xpm
+lib/X11/icewm/themes/bluePlastic/ledclock/n0.xpm
+lib/X11/icewm/themes/bluePlastic/ledclock/n1.xpm
+lib/X11/icewm/themes/bluePlastic/ledclock/n2.xpm
+lib/X11/icewm/themes/bluePlastic/ledclock/n3.xpm
+lib/X11/icewm/themes/bluePlastic/ledclock/n4.xpm
+lib/X11/icewm/themes/bluePlastic/ledclock/n5.xpm
+lib/X11/icewm/themes/bluePlastic/ledclock/n6.xpm
+lib/X11/icewm/themes/bluePlastic/ledclock/n7.xpm
+lib/X11/icewm/themes/bluePlastic/ledclock/n8.xpm
+lib/X11/icewm/themes/bluePlastic/ledclock/n9.xpm
+lib/X11/icewm/themes/bluePlastic/ledclock/p.xpm
+lib/X11/icewm/themes/bluePlastic/ledclock/slash.xpm
+lib/X11/icewm/themes/bluePlastic/ledclock/space.xpm
+lib/X11/icewm/themes/bluePlastic/taskbar/linux.xpm
+lib/X11/icewm/themes/bluePlastic/taskbar/windows.xpm
 lib/X11/icewm/themes/bluePlastic/closeA.xpm
 lib/X11/icewm/themes/bluePlastic/closeI.xpm
 lib/X11/icewm/themes/bluePlastic/default.theme
@@ -178,8 +259,6 @@ lib/X11/icewm/themes/bluePlastic/frameITR.xpm
 lib/X11/icewm/themes/bluePlastic/maximizeA.xpm
 lib/X11/icewm/themes/bluePlastic/maximizeI.xpm
 lib/X11/icewm/themes/bluePlastic/menuButtonA.xpm
-lib/X11/icewm/themes/bluePlastic/menuButtonAN.xpm
-lib/X11/icewm/themes/bluePlastic/menuButtonAP.xpm
 lib/X11/icewm/themes/bluePlastic/menuButtonI.xpm
 lib/X11/icewm/themes/bluePlastic/minimizeA.xpm
 lib/X11/icewm/themes/bluePlastic/minimizeI.xpm
@@ -195,6 +274,37 @@ lib/X11/icewm/themes/bluePlastic/titleIL.xpm
 lib/X11/icewm/themes/bluePlastic/titleIM.xpm
 lib/X11/icewm/themes/bluePlastic/titleIR.xpm
 lib/X11/icewm/themes/bluePlastic/titleIT.xpm
+lib/X11/icewm/themes/blueice/icons/app_16x16.xpm
+lib/X11/icewm/themes/blueice/icons/app_32x32.xpm
+lib/X11/icewm/themes/blueice/icons/brushes_16x16.xpm
+lib/X11/icewm/themes/blueice/icons/brushes_32x32.xpm
+lib/X11/icewm/themes/blueice/icons/dbbrowser_16x16.xpm
+lib/X11/icewm/themes/blueice/icons/dbbrowser_32x32.xpm
+lib/X11/icewm/themes/blueice/icons/gimp_16x16.xpm
+lib/X11/icewm/themes/blueice/icons/gimp_32x32.xpm
+lib/X11/icewm/themes/blueice/icons/gradient_16x16.xpm
+lib/X11/icewm/themes/blueice/icons/gradient_32x32.xpm
+lib/X11/icewm/themes/blueice/icons/layers_16x16.xpm
+lib/X11/icewm/themes/blueice/icons/layers_32x32.xpm
+lib/X11/icewm/themes/blueice/icons/palette_16x16.xpm
+lib/X11/icewm/themes/blueice/icons/palette_32x32.xpm
+lib/X11/icewm/themes/blueice/icons/patterns_16x16.xpm
+lib/X11/icewm/themes/blueice/icons/patterns_32x32.xpm
+lib/X11/icewm/themes/blueice/icons/prefs_16x16.xpm
+lib/X11/icewm/themes/blueice/icons/prefs_32x32.xpm
+lib/X11/icewm/themes/blueice/icons/script-fu_16x16.xpm
+lib/X11/icewm/themes/blueice/icons/script-fu_32x32.xpm
+lib/X11/icewm/themes/blueice/icons/scriptconsole_16x16.xpm
+lib/X11/icewm/themes/blueice/icons/scriptconsole_32x32.xpm
+lib/X11/icewm/themes/blueice/icons/tooloption_16x16.xpm
+lib/X11/icewm/themes/blueice/icons/tooloption_32x32.xpm
+lib/X11/icewm/themes/blueice/icons/work_16x16.xpm
+lib/X11/icewm/themes/blueice/icons/work_32x32.xpm
+lib/X11/icewm/themes/blueice/mailbox/mail.xpm
+lib/X11/icewm/themes/blueice/mailbox/newmail.xpm
+lib/X11/icewm/themes/blueice/mailbox/unreadmail.xpm
+lib/X11/icewm/themes/blueice/taskbar/linux.xpm
+lib/X11/icewm/themes/blueice/taskbar/windows.xpm
 lib/X11/icewm/themes/blueice/close.xpm
 lib/X11/icewm/themes/blueice/closeA.xpm
 lib/X11/icewm/themes/blueice/closeI.xpm
@@ -253,6 +363,41 @@ lib/X11/icewm/themes/blueice/titleIL.xpm
 lib/X11/icewm/themes/blueice/titleIM.xpm
 lib/X11/icewm/themes/blueice/titleIR.xpm
 lib/X11/icewm/themes/blueice/titleIT.xpm
+lib/X11/icewm/themes/fvwm/default.theme
+lib/X11/icewm/themes/fvwm/frameAB.xpm
+lib/X11/icewm/themes/fvwm/frameABL.xpm
+lib/X11/icewm/themes/fvwm/frameABR.xpm
+lib/X11/icewm/themes/fvwm/frameAL.xpm
+lib/X11/icewm/themes/fvwm/frameAR.xpm
+lib/X11/icewm/themes/fvwm/frameAT.xpm
+lib/X11/icewm/themes/fvwm/frameATL.xpm
+lib/X11/icewm/themes/fvwm/frameATR.xpm
+lib/X11/icewm/themes/fvwm/frameIB.xpm
+lib/X11/icewm/themes/fvwm/frameIBL.xpm
+lib/X11/icewm/themes/fvwm/frameIBR.xpm
+lib/X11/icewm/themes/fvwm/frameIL.xpm
+lib/X11/icewm/themes/fvwm/frameIR.xpm
+lib/X11/icewm/themes/fvwm/frameIT.xpm
+lib/X11/icewm/themes/fvwm/frameITL.xpm
+lib/X11/icewm/themes/fvwm/frameITR.xpm
+lib/X11/icewm/themes/fvwm/maximizeA.xpm
+lib/X11/icewm/themes/fvwm/maximizeI.xpm
+lib/X11/icewm/themes/fvwm/menuButtonA.xpm
+lib/X11/icewm/themes/fvwm/menuButtonI.xpm
+lib/X11/icewm/themes/fvwm/minimizeA.xpm
+lib/X11/icewm/themes/fvwm/minimizeI.xpm
+lib/X11/icewm/themes/fvwm/restoreA.xpm
+lib/X11/icewm/themes/fvwm/restoreI.xpm
+lib/X11/icewm/themes/fvwm/titleAB.xpm
+lib/X11/icewm/themes/fvwm/titleAL.xpm
+lib/X11/icewm/themes/fvwm/titleAM.xpm
+lib/X11/icewm/themes/fvwm/titleAR.xpm
+lib/X11/icewm/themes/fvwm/titleAT.xpm
+lib/X11/icewm/themes/fvwm/titleIB.xpm
+lib/X11/icewm/themes/fvwm/titleIL.xpm
+lib/X11/icewm/themes/fvwm/titleIM.xpm
+lib/X11/icewm/themes/fvwm/titleIR.xpm
+lib/X11/icewm/themes/fvwm/titleIT.xpm
 lib/X11/icewm/themes/gtk/closeA.xpm
 lib/X11/icewm/themes/gtk/closeI.xpm
 lib/X11/icewm/themes/gtk/default.theme
@@ -291,8 +436,6 @@ lib/X11/icewm/themes/gtk/frameITR.xpm
 lib/X11/icewm/themes/gtk/maximizeA.xpm
 lib/X11/icewm/themes/gtk/maximizeI.xpm
 lib/X11/icewm/themes/gtk/menuButtonA.xpm
-lib/X11/icewm/themes/gtk/menuButtonAN.xpm
-lib/X11/icewm/themes/gtk/menuButtonAP.xpm
 lib/X11/icewm/themes/gtk/menuButtonI.xpm
 lib/X11/icewm/themes/gtk/minimizeA.xpm
 lib/X11/icewm/themes/gtk/minimizeI.xpm
@@ -308,6 +451,28 @@ lib/X11/icewm/themes/gtk/titleIL.xpm
 lib/X11/icewm/themes/gtk/titleIM.xpm
 lib/X11/icewm/themes/gtk/titleIR.xpm
 lib/X11/icewm/themes/gtk/titleIT.xpm
+lib/X11/icewm/themes/jaywalk/ledclock/a.xpm
+lib/X11/icewm/themes/jaywalk/ledclock/colon.xpm
+lib/X11/icewm/themes/jaywalk/ledclock/dot.xpm
+lib/X11/icewm/themes/jaywalk/ledclock/m.xpm
+lib/X11/icewm/themes/jaywalk/ledclock/n0.xpm
+lib/X11/icewm/themes/jaywalk/ledclock/n1.xpm
+lib/X11/icewm/themes/jaywalk/ledclock/n2.xpm
+lib/X11/icewm/themes/jaywalk/ledclock/n3.xpm
+lib/X11/icewm/themes/jaywalk/ledclock/n4.xpm
+lib/X11/icewm/themes/jaywalk/ledclock/n5.xpm
+lib/X11/icewm/themes/jaywalk/ledclock/n6.xpm
+lib/X11/icewm/themes/jaywalk/ledclock/n7.xpm
+lib/X11/icewm/themes/jaywalk/ledclock/n8.xpm
+lib/X11/icewm/themes/jaywalk/ledclock/n9.xpm
+lib/X11/icewm/themes/jaywalk/ledclock/p.xpm
+lib/X11/icewm/themes/jaywalk/ledclock/slash.xpm
+lib/X11/icewm/themes/jaywalk/ledclock/space.xpm
+lib/X11/icewm/themes/jaywalk/mailbox/mail.xpm
+lib/X11/icewm/themes/jaywalk/mailbox/newmail.xpm
+lib/X11/icewm/themes/jaywalk/mailbox/unreadmail.xpm
+lib/X11/icewm/themes/jaywalk/taskbar/linux.xpm
+lib/X11/icewm/themes/jaywalk/taskbar/windows.xpm
 lib/X11/icewm/themes/jaywalk/close.xpm
 lib/X11/icewm/themes/jaywalk/default.theme
 lib/X11/icewm/themes/jaywalk/hide.xpm
@@ -353,8 +518,6 @@ lib/X11/icewm/themes/metal-big/frameITR.xpm
 lib/X11/icewm/themes/metal-big/maximizeA.xpm
 lib/X11/icewm/themes/metal-big/maximizeI.xpm
 lib/X11/icewm/themes/metal-big/menuButtonA.xpm
-lib/X11/icewm/themes/metal-big/menuButtonAN.xpm
-lib/X11/icewm/themes/metal-big/menuButtonAP.xpm
 lib/X11/icewm/themes/metal-big/menuButtonI.xpm
 lib/X11/icewm/themes/metal-big/minimizeA.xpm
 lib/X11/icewm/themes/metal-big/minimizeI.xpm
@@ -408,8 +571,6 @@ lib/X11/icewm/themes/metal/frameITR.xpm
 lib/X11/icewm/themes/metal/maximizeA.xpm
 lib/X11/icewm/themes/metal/maximizeI.xpm
 lib/X11/icewm/themes/metal/menuButtonA.xpm
-lib/X11/icewm/themes/metal/menuButtonAN.xpm
-lib/X11/icewm/themes/metal/menuButtonAP.xpm
 lib/X11/icewm/themes/metal/menuButtonI.xpm
 lib/X11/icewm/themes/metal/minimizeA.xpm
 lib/X11/icewm/themes/metal/minimizeI.xpm
@@ -462,10 +623,6 @@ lib/X11/icewm/themes/metal2/frameITL.xpm
 lib/X11/icewm/themes/metal2/frameITR.xpm
 lib/X11/icewm/themes/metal2/maximizeA.xpm
 lib/X11/icewm/themes/metal2/maximizeI.xpm
-lib/X11/icewm/themes/metal2/menuButtonA.xpm
-lib/X11/icewm/themes/metal2/menuButtonAN.xpm
-lib/X11/icewm/themes/metal2/menuButtonAP.xpm
-lib/X11/icewm/themes/metal2/menuButtonI.xpm
 lib/X11/icewm/themes/metal2/minimizeA.xpm
 lib/X11/icewm/themes/metal2/minimizeI.xpm
 lib/X11/icewm/themes/metal2/restoreA.xpm
@@ -480,6 +637,28 @@ lib/X11/icewm/themes/metal2/titleIL.xpm
 lib/X11/icewm/themes/metal2/titleIM.xpm
 lib/X11/icewm/themes/metal2/titleIR.xpm
 lib/X11/icewm/themes/metal2/titleIT.xpm
+lib/X11/icewm/themes/monte-carlo/ledclock/a.xpm
+lib/X11/icewm/themes/monte-carlo/ledclock/colon.xpm
+lib/X11/icewm/themes/monte-carlo/ledclock/dot.xpm
+lib/X11/icewm/themes/monte-carlo/ledclock/m.xpm
+lib/X11/icewm/themes/monte-carlo/ledclock/n0.xpm
+lib/X11/icewm/themes/monte-carlo/ledclock/n1.xpm
+lib/X11/icewm/themes/monte-carlo/ledclock/n2.xpm
+lib/X11/icewm/themes/monte-carlo/ledclock/n3.xpm
+lib/X11/icewm/themes/monte-carlo/ledclock/n4.xpm
+lib/X11/icewm/themes/monte-carlo/ledclock/n5.xpm
+lib/X11/icewm/themes/monte-carlo/ledclock/n6.xpm
+lib/X11/icewm/themes/monte-carlo/ledclock/n7.xpm
+lib/X11/icewm/themes/monte-carlo/ledclock/n8.xpm
+lib/X11/icewm/themes/monte-carlo/ledclock/n9.xpm
+lib/X11/icewm/themes/monte-carlo/ledclock/p.xpm
+lib/X11/icewm/themes/monte-carlo/ledclock/slash.xpm
+lib/X11/icewm/themes/monte-carlo/ledclock/space.xpm
+lib/X11/icewm/themes/monte-carlo/mailbox/mail.xpm
+lib/X11/icewm/themes/monte-carlo/mailbox/newmail.xpm
+lib/X11/icewm/themes/monte-carlo/mailbox/unreadmail.xpm
+lib/X11/icewm/themes/monte-carlo/taskbar/linux.xpm
+lib/X11/icewm/themes/monte-carlo/taskbar/windows.xpm
 lib/X11/icewm/themes/monte-carlo/close.xpm
 lib/X11/icewm/themes/monte-carlo/default.theme
 lib/X11/icewm/themes/monte-carlo/hide.xpm
@@ -572,15 +751,31 @@ lib/X11/icewm/winoptions
 @dirrm lib/X11/icewm/ledclock
 @dirrm lib/X11/icewm/mailbox
 @dirrm lib/X11/icewm/taskbar
+@dirrm lib/X11/icewm/themes/TechnologicEnvy/icons
+@dirrm lib/X11/icewm/themes/TechnologicEnvy/mailbox
+@dirrm lib/X11/icewm/themes/TechnologicEnvy/taskbar
+@dirrm lib/X11/icewm/themes/TechnologicEnvy
 @dirrm lib/X11/icewm/themes/aesthetech
 @dirrm lib/X11/icewm/themes/aesthetech-big
+@dirrm lib/X11/icewm/themes/bluePlastic/ledclock
+@dirrm lib/X11/icewm/themes/bluePlastic/taskbar
 @dirrm lib/X11/icewm/themes/bluePlastic
+@dirrm lib/X11/icewm/themes/blueice/icons
+@dirrm lib/X11/icewm/themes/blueice/mailbox
+@dirrm lib/X11/icewm/themes/blueice/taskbar
 @dirrm lib/X11/icewm/themes/blueice
+@dirrm lib/X11/icewm/themes/fvwm
 @dirrm lib/X11/icewm/themes/gtk
+@dirrm lib/X11/icewm/themes/jaywalk/ledclock
+@dirrm lib/X11/icewm/themes/jaywalk/mailbox
+@dirrm lib/X11/icewm/themes/jaywalk/taskbar
 @dirrm lib/X11/icewm/themes/jaywalk
 @dirrm lib/X11/icewm/themes/metal
 @dirrm lib/X11/icewm/themes/metal-big
 @dirrm lib/X11/icewm/themes/metal2
+@dirrm lib/X11/icewm/themes/monte-carlo/ledclock
+@dirrm lib/X11/icewm/themes/monte-carlo/mailbox
+@dirrm lib/X11/icewm/themes/monte-carlo/taskbar
 @dirrm lib/X11/icewm/themes/monte-carlo
 @dirrm lib/X11/icewm/themes/motif
 @dirrm lib/X11/icewm/themes/nice

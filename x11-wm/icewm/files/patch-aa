@@ -1,7 +1,7 @@
---- Makefile.orig	Sun Oct  4 21:40:46 1998
-+++ Makefile	Wed Oct  7 16:36:55 1998
-@@ -9,8 +9,7 @@
-               aesthetech aesthetech-big
+--- Makefile.orig	Mon Nov  9 00:19:14 1998
++++ Makefile	Wed Nov 11 20:25:53 1998
+@@ -11,8 +11,7 @@
+ GNOMEFILES  = src/icewm-gnome
  
  all:
 -	cd src ; $(MAKE) LIBDIR=$(LIBDIR) ETCDIR=$(ETCDIR)
@@ -10,3 +10,12 @@
  
  doc:
  	cd doc ; $(MAKE)
+@@ -57,7 +56,7 @@
+                 $(INSTALLLIB) $$config $(LIBDIR)/themes/$$theme; \
+             done; \
+             for l in $(XPMDIRS) ; do \
+-                if [ -a lib/themes/$$theme/$$l ] ; then \
++                if [ -d lib/themes/$$theme/$$l ] ; then \
+                     $(INSTALLDIR) $(LIBDIR)/themes/$$theme/$$l; \
+                     for f in lib/themes/$$theme/$$l/* ; do \
+                         $(INSTALLLIB) $$f $(LIBDIR)/themes/$$theme/$$l; \

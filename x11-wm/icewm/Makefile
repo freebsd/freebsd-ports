@@ -1,24 +1,24 @@
 # New ports collection makefile for:   icewm
-# Version required:    0.9.14
+# Version required:    0.9.16
 # Date created:        10 August 1997
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.17 1998/09/17 00:32:57 asami Exp $
+# $Id: Makefile,v 1.18 1998/10/10 01:11:18 vanilla Exp $
 #
 
-DISTNAME=	icewm-0.9.14
+DISTNAME=	icewm-0.9.16
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://berta.fri.uni-lj.si/~markom/icewm/devel/
 EXTRACT_SUFX=	.src.tar.gz
 
 MAINTAINER=	Nakai@technologist.com
 
-LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 .if defined(GNOME)
 BUILD_DEPENDS+=	gnome-config:${PORTSDIR}/x11/gnomelibs
 BUILD_DEPENDS+=	imlib-config:${PORTSDIR}/graphics/imlib
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libintl.a:${PORTSDIR}/devel/gettext
 .endif
+LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
@@ -46,5 +46,8 @@ do-configure:
 
 post-install:
 	${CP} ${FILESDIR}/bsd-daemon.xpm ${PREFIX}/lib/X11/icewm/taskbar
+	strip ${PREFIX}/bin/icewm
+	strip ${PREFIX}/bin/icewmbg
+	strip ${PREFIX}/bin/icewmhint
 
 .include <bsd.port.mk>
