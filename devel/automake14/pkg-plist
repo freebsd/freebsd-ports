@@ -79,8 +79,6 @@ share/automake14/texi-vers.am
 share/automake14/texinfo.tex
 share/automake14/texinfos.am
 share/automake14/ylwrap
-share/automake14/aclocal
-share/automake14/automake
 @dirrm libexec/automake14
 @dirrm share/aclocal14
 @dirrm share/automake14

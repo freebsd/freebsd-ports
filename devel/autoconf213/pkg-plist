@@ -29,6 +29,5 @@ share/autoconf213/autoheader.m4f
 share/autoconf213/config.guess
 share/autoconf213/config.sub
 share/autoconf213/install-sh
-share/autoconf213/autoconf
 @dirrm libexec/autoconf213
 @dirrm share/autoconf213
