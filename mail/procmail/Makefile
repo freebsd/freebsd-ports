@@ -1,15 +1,16 @@
 # New ports collection makefile for:	procmail
-# Version required:     3.11pre7
+# Version required:     3.12
 # Date created:		24 September 1994
 # Whom:			adam
 #
-# $Id: Makefile,v 1.23 1997/03/06 04:31:07 asami Exp $
+# $Id: Makefile,v 1.24 1997/05/14 14:40:34 ache Exp $
 #
 
-DISTNAME=       procmail-3.11pre7
-PKGNAME=        procmail-3.11p7
+DISTNAME=       procmail-3.12
+PKGNAME=        procmail-3.12
 CATEGORIES=	mail
-MASTER_SITES=	ftp://ftp.informatik.rwth-aachen.de/pub/packages/procmail/
+MASTER_SITES=	ftp://ftp.procmail.org/pub/procmail/ \
+		ftp://ftp.informatik.rwth-aachen.de/pub/packages/procmail/
 INSTALL_TARGET= install-suid install.man
 
 MAINTAINER=     ache@FreeBSD.ORG
