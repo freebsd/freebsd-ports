@@ -8247,6 +8247,7 @@ worm		src/games/worm
 wormcontrol	src/usr.sbin/wormcontrol
 worms		src/games/worms
 wots		ports/sysutils/wots
+wprint		ports/print/wprint
 wrapper		ports/x11/wrapper
 write		src/usr.bin/write
 wscan		ports/x11/wscan
