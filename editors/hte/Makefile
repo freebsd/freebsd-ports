@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	hte
-PORTVERSION=	0.7.5
+PORTVERSION=	0.8.0
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -42,9 +42,16 @@ LDFLAGS=	-L${X11BASE}/lib
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|$$FLAGS_PIPE $$FLAGS_ALL|$$CFLAGS|g ; \
+	@${REINPLACE_CMD} -e 's|^CXXFLAGS=.*$$|CXXFLAGS="$$CXXFLAGS"|g ; \
+		 s|^CFLAGS=.*$$|CFLAGS="$$CFLAGS"|g ; \
 		 s|-L/usr/X11/lib -L/usr/X11R6/lib|$$LDFLAGS|g' \
 			${WRKSRC}/configure
+	@${REINPLACE_CMD} -e \
+		's|typedef unsigned int uint;||g' ${WRKSRC}/global.h
+	@${REINPLACE_CMD} -e \
+		's|uint |UINT |g' ${WRKSRC}/htdata.h
+	@${REINPLACE_CMD} -e \
+		's|#include <malloc.h>||g' ${WRKSRC}/cp-demangle.c
 
 post-install:
 .if !defined(NOPORTDOCS)
