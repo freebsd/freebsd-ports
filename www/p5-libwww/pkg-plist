@@ -43,6 +43,7 @@ bin/lwp-rget
 %%SITE_PERL%%/LWP/Protocol/http10.pm
 %%SITE_PERL%%/LWP/Protocol/https.pm
 %%SITE_PERL%%/LWP/Protocol/https10.pm
+%%SITE_PERL%%/LWP/Protocol/loopback.pm
 %%SITE_PERL%%/LWP/Protocol/mailto.pm
 %%SITE_PERL%%/LWP/Protocol/nntp.pm
 %%SITE_PERL%%/LWP/Protocol/nogo.pm
