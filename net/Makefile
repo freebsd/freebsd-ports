@@ -328,6 +328,7 @@
     SUBDIR += p5-Net-Daemon
     SUBDIR += p5-Net-Google
     SUBDIR += p5-Net-ICQ2000
+    SUBDIR += p5-Net-IP
     SUBDIR += p5-Net-IPv4Addr
     SUBDIR += p5-Net-IPv6Addr
     SUBDIR += p5-Net-Jabber
