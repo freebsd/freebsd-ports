@@ -11,10 +11,9 @@ CATEGORIES+=	editors
 MASTER_SITES=	${MASTER_SITE_XEMACS}
 MASTER_SITE_SUBDIR=	xemacs-${XEMACS_REL}
 DISTNAME=	xemacs-${XEMACS_VER}
-DISTFILES=	${DISTNAME}-src${EXTRACT_SUFX} ${DISTNAME}-elc${EXTRACT_SUFX} ${DISTNAME}-info${EXTRACT_SUFX}
 DIST_SUBDIR=	xemacs
 
-MAINTAINER?=	gj@FreeBSD.org
+MAINTAINER?=	anray@inet.ua
 COMMENT?=	This port tracks the stable version of the XEmacs text editor
 
 NOT_FOR_ARCHS=	sparc64
@@ -28,6 +27,7 @@ LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 USE_XLIB=	yes
 USE_XPM=	yes
 .endif
+USE_BZIP2=	yes
 
 XEMACS_REL=	21.4
 XEMACS_VER=	21.4.15
