@@ -1,0 +1,33 @@
+--- run.c.orig	Fri May 11 00:08:14 2001
++++ run.c	Fri May 11 00:07:26 2001
+@@ -30,6 +30,9 @@
+     char *tcp, *tcp1;		/* temporary character pointers	*/
+     char *tmp;
+     int ch;
++#ifdef __FreeBSD__
++    int tmpid;                  /* FreeBSD uses mkstemp instead of mktemp */
++#endif
+     extern BOOLEAN epsf;
+ 
+     for (argind = 1; argind < argc; argind++) {
+@@ -206,11 +209,20 @@
+             ((tmp = getenv("TEMP")) == NULL))
+ 	    tmp = TMP;
+ 	(void)strcpy(dvifilename, tmp);
++#ifdef __FreeBSD__
++	(void)strcat(dvifilename, DVITEMPLATE);
++	(void)strcat(dvifilename,".dvi");
++	if((tmpid = mkstemps (dvifilename, 4)) == -1)
++	    Fatal("can't create DVI file for stdin");
++	dvifp = fdopen(tmpid, "w+");
++#else
++
+ 	(void)mktemp(strcat(dvifilename, DVITEMPLATE));
+ 	(void)strcpy(rootname, dvifilename);	/* not used now */
+ 	(void)strcat(dvifilename, ".dvi");
+ 	if ((dvifp = BINARYWOPEN(dvifilename)) == NULL)
+ 	    Fatal("can't create DVI file for stdin");
++#endif
+ 	stdindvi = TRUE;
+ #if !defined(MSDOS) && !defined(WIN32)
+ 	(void)signal(SIGHUP, sigabort);
