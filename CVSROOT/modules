@@ -8685,6 +8685,7 @@ vim5		ports/editors/vim5
 vim6+ruby	ports/editors/vim6+ruby
 vipec		ports/cad/vipec
 virt		ports/games/virt
+virtualmin	ports/sysutils/virtualmin
 virtualpaper	ports/print/virtualpaper
 vis5d+		ports/science/vis5d+
 visionegg	ports/graphics/visionegg
