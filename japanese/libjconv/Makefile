@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	libjconv
-PORTVERSION=	2.8.1
+PORTVERSION=	2.9
 CATEGORIES=	japanese
-MASTER_SITES=	http://www.kondara.org/libjconv/
+MASTER_SITES=	http://ghost.math.sci.hokudai.ac.jp/misc/libjconv/
 
 MAINTAINER=	ports@FreeBSD.org
 
@@ -23,5 +23,9 @@ post-patch:
 
 post-extract:
 	${CP} ${FILESDIR}/Makefile* ${WRKSRC}/
+
+post-install:
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/libjconv.html ${DOCSDIR}/
 
 .include <bsd.port.mk>
