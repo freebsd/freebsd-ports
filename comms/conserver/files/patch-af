@@ -26,3 +26,10 @@
 +	(void)tcsetattr(0, TCSANOW, &o_tios);
  #else
  #if USE_TERMIO
+@@ -950,5 +950,5 @@
+ 	iRem = iMax;
+ 	i = 0;
+-	while (0 < (nr = read(s, pcBuf+i, iRem))) {
++	while (0 <= (nr = read(s, pcBuf+i, iRem))) {
+ 		i += nr;
+ 		iRem -= nr;
