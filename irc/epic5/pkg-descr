@@ -6,7 +6,8 @@ make EPIC the best ircII client available.
 
 http://www.frenzy.com/~bhauber/epic/
 
-This port is not intended to co-exist with ircii - they share filenames.
+EPIC no longer shares any file names with ircII, so they should happily
+co-exist.
 
 - BenHutch
   benhutch@xfiles.org.uk
