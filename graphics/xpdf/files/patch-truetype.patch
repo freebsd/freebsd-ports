@@ -1,5 +1,5 @@
 --- splash/Splash.cc.orig	Thu Jan 22 10:26:44 2004
-+++ splash/Splash.cc	Fri Mar  5 21:37:59 2004
++++ splash/Splash.cc	Fri May  7 20:20:08 2004
 @@ -952,7 +952,7 @@
  }
  
@@ -19,7 +19,7 @@
    }
    err = fillGlyph(x, y, &glyph);
 --- splash/Splash.h.orig	Thu Jan 22 10:26:44 2004
-+++ splash/Splash.h	Fri Mar  5 21:37:59 2004
++++ splash/Splash.h	Fri May  7 20:20:08 2004
 @@ -104,7 +104,7 @@
    SplashError xorFill(SplashPath *path, GBool eo);
  
@@ -30,7 +30,7 @@
    // Draw a glyph, using the current fill pattern.  This function does
    // not free any data, i.e., it ignores glyph->freeData.
 --- splash/SplashFTFont.cc.orig	Thu Jan 22 10:26:44 2004
-+++ splash/SplashFTFont.cc	Fri Mar  5 21:37:59 2004
++++ splash/SplashFTFont.cc	Fri May  7 20:20:08 2004
 @@ -125,12 +125,12 @@
  }
  
@@ -101,8 +101,18 @@
      return NULL;
    }
 --- splash/SplashFTFont.h.orig	Thu Jan 22 10:26:44 2004
-+++ splash/SplashFTFont.h	Fri Mar  5 21:37:59 2004
-@@ -33,15 +33,15 @@
++++ splash/SplashFTFont.h	Fri May  7 22:53:52 2004
+@@ -15,7 +15,8 @@
+ #pragma interface
+ #endif
+ 
+-#include <freetype/freetype.h>
++#include <ft2build.h>
++#include FT_FREETYPE_H
+ #include "SplashFont.h"
+ 
+ class SplashFTFontFile;
+@@ -33,15 +34,15 @@
  
    // Munge xFrac and yFrac before calling SplashFont::getGlyph.
    virtual GBool getGlyph(int c, int xFrac, int yFrac,
@@ -122,7 +132,7 @@
  private:
  
 --- splash/SplashFTFontEngine.cc.orig	Thu Jan 22 10:26:44 2004
-+++ splash/SplashFTFontEngine.cc	Fri Mar  5 21:38:00 2004
++++ splash/SplashFTFontEngine.cc	Fri May  7 20:20:08 2004
 @@ -107,7 +107,12 @@
    SplashFontFile *ret;
  
@@ -138,7 +148,7 @@
    tmpFileName = NULL;
    if (!openTempFile(&tmpFileName, &tmpFile, "wb", NULL)) {
 --- splash/SplashFTFontFile.cc.orig	Thu Jan 22 10:26:44 2004
-+++ splash/SplashFTFontFile.cc	Fri Mar  5 21:38:00 2004
++++ splash/SplashFTFontFile.cc	Fri May  7 20:20:08 2004
 @@ -43,7 +43,7 @@
    }
  
@@ -208,8 +218,18 @@
  
  SplashFTFontFile::~SplashFTFontFile() {
 --- splash/SplashFTFontFile.h.orig	Thu Jan 22 10:26:44 2004
-+++ splash/SplashFTFontFile.h	Fri Mar  5 21:38:00 2004
-@@ -53,13 +53,14 @@
++++ splash/SplashFTFontFile.h	Fri May  7 22:51:30 2004
+@@ -15,7 +15,8 @@
+ #pragma interface
+ #endif
+ 
+-#include <freetype/freetype.h>
++#include <ft2build.h>
++#include FT_FREETYPE_H
+ #include "SplashFontFile.h"
+ 
+ class SplashFontFileID;
+@@ -53,13 +54,14 @@
    SplashFTFontFile(SplashFTFontEngine *engineA,
  		   SplashFontFileID *idA,
  		   char *fileNameA, GBool deleteFileA,
@@ -226,7 +246,7 @@
    friend class SplashFTFont;
  };
 --- splash/SplashFont.cc.orig	Thu Jan 22 10:26:44 2004
-+++ splash/SplashFont.cc	Fri Mar  5 21:38:00 2004
++++ splash/SplashFont.cc	Fri May  7 20:20:08 2004
 @@ -89,7 +89,7 @@
  }
  
@@ -246,7 +266,7 @@
    }
  
 --- splash/SplashFont.h.orig	Thu Jan 22 10:26:44 2004
-+++ splash/SplashFont.h	Fri Mar  5 21:38:00 2004
++++ splash/SplashFont.h	Fri May  7 20:20:08 2004
 @@ -61,15 +61,15 @@
    // should override this to zero out xFrac and/or yFrac if they don't
    // support fractional coordinates.
@@ -267,7 +287,7 @@
  protected:
  
 --- splash/SplashT1Font.cc.orig	Thu Jan 22 10:26:44 2004
-+++ splash/SplashT1Font.cc	Fri Mar  5 21:38:00 2004
++++ splash/SplashT1Font.cc	Fri May  7 20:20:08 2004
 @@ -171,12 +171,12 @@
  }
  
@@ -294,7 +314,7 @@
    T1_OUTLINE *outline;
    T1_PATHSEGMENT *seg;
 --- splash/SplashT1Font.h.orig	Thu Jan 22 10:26:44 2004
-+++ splash/SplashT1Font.h	Fri Mar  5 21:38:00 2004
++++ splash/SplashT1Font.h	Fri May  7 20:20:08 2004
 @@ -30,15 +30,15 @@
  
    // Munge xFrac and yFrac before calling SplashFont::getGlyph.
@@ -315,7 +335,7 @@
  private:
  
 --- splash/SplashTypes.h.orig	Thu Jan 22 10:26:44 2004
-+++ splash/SplashTypes.h	Fri Mar  5 21:38:00 2004
++++ splash/SplashTypes.h	Fri May  7 20:20:08 2004
 @@ -9,6 +9,7 @@
  
  #include <aconf.h>
@@ -324,8 +344,20 @@
  
  //------------------------------------------------------------------------
  // coordinates
+--- splash/SplashFTFontEngine.h.orig	Fri May  7 22:52:10 2004
++++ splash/SplashFTFontEngine.h	Fri May  7 22:52:41 2004
+@@ -15,7 +15,8 @@
+ #pragma interface
+ #endif
+ 
+-#include <freetype/freetype.h>
++#include <ft2build.h>
++#include FT_FREETYPE_H
+ #include "gtypes.h"
+ 
+ class SplashFontFile;
 --- xpdf/SplashOutputDev.cc.orig	Thu Jan 22 10:26:45 2004
-+++ xpdf/SplashOutputDev.cc	Fri Mar  5 21:38:00 2004
++++ xpdf/SplashOutputDev.cc	Fri May  7 20:20:08 2004
 @@ -823,12 +823,12 @@
  
    // fill

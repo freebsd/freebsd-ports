@@ -1,0 +1,18 @@
+--- configure.in.orig	Fri May  7 22:54:35 2004
++++ configure.in	Fri May  7 22:33:28 2004
+@@ -306,10 +306,13 @@
+ dnl ##### (Note: FT_Get_Name_Index was added in FT 2.0.5, and is
+ dnl ##### the reason that Xpdf requires 2.0.5+.)
+ smr_CHECK_LIB(freetype2, freetype, [FreeType2 font rasterizer - version 2.0.5+],
+-              FT_Get_Name_Index, freetype/freetype.h, -lm)
++              FT_Get_Name_Index, freetype/ft2build.h, -lm)
+ if test x"$freetype2_LIBS" = x; then
+   smr_CHECK_LIB(freetype2, freetype, [FreeType2 font rasterizer - version 2.0.5+],
+-                FT_Get_Name_Index, freetype.h, -lm)
++                FT_Get_Name_Index, ft2build.h, -lm)
++  if test "x$smr_have_freetype2_library" = xyes; then
++    AC_DEFINE(HAVE_FREETYPE_H)
++  fi
+ fi
+ AC_SUBST(freetype2_LIBS)
+ AC_SUBST(freetype2_CFLAGS)
