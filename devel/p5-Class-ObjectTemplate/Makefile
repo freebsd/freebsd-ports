@@ -6,18 +6,17 @@
 #
 
 PORTNAME=	Class-ObjectTemplate
-PORTVERSION=	0.4
+PORTVERSION=	0.7
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Class
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	tonym@biolateral.com.au
+MAINTAINER=	m@absolight.net
 COMMENT=	An optimized template builder base class
 
 PERL_CONFIGURE=	yes
 
 MAN3=		Class::ObjectTemplate.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>
