@@ -6,19 +6,20 @@
 #
 
 PORTNAME=	tkcvs
-PORTVERSION=	6.4
-CATEGORIES=	devel tk82
+PORTVERSION=	7.0.3
+CATEGORIES=	devel tk83
 MASTER_SITES=	http://www.twobarleycorns.net/
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/./_/:S/.//g}
 
 MAINTAINER=	shanee@augusta.de
 
-LIB_DEPENDS=	tk82.1:${PORTSDIR}/x11-toolkits/tk82
+LIB_DEPENDS=	tk83.1:${PORTSDIR}/x11-toolkits/tk83
 
 NO_BUILD=	yes
-MANN=		tkcvs.n
+MAN1=		tkcvs.1
 
-WISH=		wish8\.2
-TCLSH=		tclsh8\.2
+WISH=		wish8\.3
+TCLSH=		tclsh8\.3
 
 post-patch:
 	@${PERL} -pi -e 's|wish|${WISH}|g' ${WRKSRC}/tkcvs/tkcvs.blank
@@ -26,7 +27,7 @@ post-patch:
 	@${PERL} -pi -e 's|wish|${WISH}|g' ${WRKSRC}/doinstall.tcl
 
 do-install:
-	(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${TCLSH} doinstall.tcl)
+	cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${TCLSH} doinstall.tcl -nox ${PREFIX}
 
 post-install:
 .if !defined{NOPORTDOCS}
