@@ -10400,7 +10400,6 @@ sudosh		ports/security/sudosh
 sun-wtk		ports/java/sun-wtk
 sunclock	ports/astro/sunclock
 sunterlib	ports/devel/sunterlib
-sup_port	ports/net/sup
 super		ports/security/super
 super_methane_brothers	ports/games/super_methane_brothers
 superkaramba	ports/deskutils/superkaramba
