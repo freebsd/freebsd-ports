@@ -1,0 +1,576 @@
+bin/cdclcc
+bin/cdclclr
+bin/cdclconfig
+bin/cdclconfig52
+bin/cdcldate
+bin/cdcldbs
+bin/cdclexec
+bin/cdclfont
+bin/cdclpara
+bin/cdcltone
+bin/cdcltrf
+bin/cdclver
+bin/crepsl
+include/libtinyf2c.h
+include/cdcl.h
+lib/dcldbase/bitmap.x11
+lib/dcldbase/border_world
+lib/dcldbase/cl2tnmap
+lib/dcldbase/coast_japan
+lib/dcldbase/coast_world
+lib/dcldbase/coast_world_1
+lib/dcldbase/colormap.x11
+lib/dcldbase/font1u
+lib/dcldbase/font2u
+lib/dcldbase/plate_world
+lib/dcldbase/pref_japan
+lib/dcldbase/state_usa
+lib/libcdcl52.a
+lib/libf2c4dcl.a
+%%PORTDOCS%%share/doc/cdcl/CHECK
+%%PORTDOCS%%share/doc/cdcl/CREDITS
+%%PORTDOCS%%share/doc/cdcl/HISTORY
+%%PORTDOCS%%share/doc/cdcl/README
+%%PORTDOCS%%@dirrm share/doc/cdcl
+%%PORTDOCS%%share/examples/cdcl/Makefile
+%%PORTDOCS%%share/examples/cdcl/gokuraku/Makefile
+%%PORTDOCS%%share/examples/cdcl/gokuraku/hop/Makefile
+%%PORTDOCS%%share/examples/cdcl/gokuraku/hop/hop.P
+%%PORTDOCS%%share/examples/cdcl/gokuraku/hop/hop.c
+%%PORTDOCS%%share/examples/cdcl/gokuraku/jump/Makefile
+%%PORTDOCS%%share/examples/cdcl/gokuraku/jump/jump1.P
+%%PORTDOCS%%share/examples/cdcl/gokuraku/jump/jump1.c
+%%PORTDOCS%%share/examples/cdcl/gokuraku/jump/jump2.P
+%%PORTDOCS%%share/examples/cdcl/gokuraku/jump/jump2.c
+%%PORTDOCS%%share/examples/cdcl/gokuraku/layout/Makefile
+%%PORTDOCS%%share/examples/cdcl/gokuraku/layout/lay1.P
+%%PORTDOCS%%share/examples/cdcl/gokuraku/layout/lay1.c
+%%PORTDOCS%%share/examples/cdcl/gokuraku/layout/lay2.P
+%%PORTDOCS%%share/examples/cdcl/gokuraku/layout/lay2.c
+%%PORTDOCS%%share/examples/cdcl/gokuraku/step/Makefile
+%%PORTDOCS%%share/examples/cdcl/gokuraku/step/step1.P
+%%PORTDOCS%%share/examples/cdcl/gokuraku/step/step1.c
+%%PORTDOCS%%share/examples/cdcl/gokuraku/step/step2.P
+%%PORTDOCS%%share/examples/cdcl/gokuraku/step/step2.c
+%%PORTDOCS%%share/examples/cdcl/gokuraku/u1d/Makefile
+%%PORTDOCS%%share/examples/cdcl/gokuraku/u1d/u1d1.P
+%%PORTDOCS%%share/examples/cdcl/gokuraku/u1d/u1d1.c
+%%PORTDOCS%%share/examples/cdcl/gokuraku/u1d/u1d2.P
+%%PORTDOCS%%share/examples/cdcl/gokuraku/u1d/u1d2.c
+%%PORTDOCS%%share/examples/cdcl/gokuraku/u2d/Makefile
+%%PORTDOCS%%share/examples/cdcl/gokuraku/u2d/u2d1.P
+%%PORTDOCS%%share/examples/cdcl/gokuraku/u2d/u2d1.c
+%%PORTDOCS%%share/examples/cdcl/gokuraku/u2d/u2d2.P
+%%PORTDOCS%%share/examples/cdcl/gokuraku/u2d/u2d2.c
+%%PORTDOCS%%share/examples/cdcl/gokuraku/u2d/u2d3.P
+%%PORTDOCS%%share/examples/cdcl/gokuraku/u2d/u2d3.c
+%%PORTDOCS%%share/examples/cdcl/gokuraku/u2d/u2d4.P
+%%PORTDOCS%%share/examples/cdcl/gokuraku/u2d/u2d4.c
+%%PORTDOCS%%share/examples/cdcl/grph1/Makefile
+%%PORTDOCS%%share/examples/cdcl/grph1/scpack/Makefile
+%%PORTDOCS%%share/examples/cdcl/grph1/scpack/scpkt1.P
+%%PORTDOCS%%share/examples/cdcl/grph1/scpack/scpkt1.c
+%%PORTDOCS%%share/examples/cdcl/grph1/scpack/scpkt2.P
+%%PORTDOCS%%share/examples/cdcl/grph1/scpack/scpkt2.c
+%%PORTDOCS%%share/examples/cdcl/grph1/scpack/scpkt3.P
+%%PORTDOCS%%share/examples/cdcl/grph1/scpack/scpkt3.c
+%%PORTDOCS%%share/examples/cdcl/grph1/scpack/scpkt4.P
+%%PORTDOCS%%share/examples/cdcl/grph1/scpack/scpkt4.c
+%%PORTDOCS%%share/examples/cdcl/grph1/scpack/scpkt5.P
+%%PORTDOCS%%share/examples/cdcl/grph1/scpack/scpkt5.c
+%%PORTDOCS%%share/examples/cdcl/grph1/scpack/scpkt6.P
+%%PORTDOCS%%share/examples/cdcl/grph1/scpack/scpkt6.c
+%%PORTDOCS%%share/examples/cdcl/grph1/scpack/scpkt7.P
+%%PORTDOCS%%share/examples/cdcl/grph1/scpack/scpkt7.c
+%%PORTDOCS%%share/examples/cdcl/grph1/scpack/scpkt8.P
+%%PORTDOCS%%share/examples/cdcl/grph1/scpack/scpkt8.c
+%%PORTDOCS%%share/examples/cdcl/grph1/scpack/t810630.dat
+%%PORTDOCS%%share/examples/cdcl/grph1/scpack/t811231.dat
+%%PORTDOCS%%share/examples/cdcl/grph1/sgpack/Makefile
+%%PORTDOCS%%share/examples/cdcl/grph1/sgpack/sgfont.P
+%%PORTDOCS%%share/examples/cdcl/grph1/sgpack/sgfont.c
+%%PORTDOCS%%share/examples/cdcl/grph1/sgpack/sgfonz.P
+%%PORTDOCS%%share/examples/cdcl/grph1/sgpack/sgfonz.c
+%%PORTDOCS%%share/examples/cdcl/grph1/sgpack/sgksx1.P
+%%PORTDOCS%%share/examples/cdcl/grph1/sgpack/sgksx1.c
+%%PORTDOCS%%share/examples/cdcl/grph1/sgpack/sgksx2.P
+%%PORTDOCS%%share/examples/cdcl/grph1/sgpack/sgksx2.c
+%%PORTDOCS%%share/examples/cdcl/grph1/sgpack/sgksx3.P
+%%PORTDOCS%%share/examples/cdcl/grph1/sgpack/sgksx3.c
+%%PORTDOCS%%share/examples/cdcl/grph1/sgpack/sglidx.P
+%%PORTDOCS%%share/examples/cdcl/grph1/sgpack/sglidx.c
+%%PORTDOCS%%share/examples/cdcl/grph1/sgpack/sgltyp.P
+%%PORTDOCS%%share/examples/cdcl/grph1/sgpack/sgltyp.c
+%%PORTDOCS%%share/examples/cdcl/grph1/sgpack/sgpk01.P
+%%PORTDOCS%%share/examples/cdcl/grph1/sgpack/sgpk01.c
+%%PORTDOCS%%share/examples/cdcl/grph1/sgpack/sgpk02.P
+%%PORTDOCS%%share/examples/cdcl/grph1/sgpack/sgpk02.c
+%%PORTDOCS%%share/examples/cdcl/grph1/sgpack/sgpk03.P
+%%PORTDOCS%%share/examples/cdcl/grph1/sgpack/sgpk03.c
+%%PORTDOCS%%share/examples/cdcl/grph1/sgpack/sgpk04.P
+%%PORTDOCS%%share/examples/cdcl/grph1/sgpack/sgpk04.c
+%%PORTDOCS%%share/examples/cdcl/grph1/sgpack/sgpk05.P
+%%PORTDOCS%%share/examples/cdcl/grph1/sgpack/sgpk05.c
+%%PORTDOCS%%share/examples/cdcl/grph1/sgpack/sgpk06.P
+%%PORTDOCS%%share/examples/cdcl/grph1/sgpack/sgpk06.c
+%%PORTDOCS%%share/examples/cdcl/grph1/sgpack/sgpk07.P
+%%PORTDOCS%%share/examples/cdcl/grph1/sgpack/sgpk07.c
+%%PORTDOCS%%share/examples/cdcl/grph1/sgpack/sgpk08.P
+%%PORTDOCS%%share/examples/cdcl/grph1/sgpack/sgpk08.c
+%%PORTDOCS%%share/examples/cdcl/grph1/sgpack/sgpk09.P
+%%PORTDOCS%%share/examples/cdcl/grph1/sgpack/sgpk09.c
+%%PORTDOCS%%share/examples/cdcl/grph1/sgpack/sgpk10.P
+%%PORTDOCS%%share/examples/cdcl/grph1/sgpack/sgpk10.c
+%%PORTDOCS%%share/examples/cdcl/grph1/sgpack/sgtclr.P
+%%PORTDOCS%%share/examples/cdcl/grph1/sgpack/sgtclr.c
+%%PORTDOCS%%share/examples/cdcl/grph1/sgpack/sgtone.P
+%%PORTDOCS%%share/examples/cdcl/grph1/sgpack/sgtone.c
+%%PORTDOCS%%share/examples/cdcl/grph1/sgpack/sgtonz.P
+%%PORTDOCS%%share/examples/cdcl/grph1/sgpack/sgtonz.c
+%%PORTDOCS%%share/examples/cdcl/grph1/slpack/Makefile
+%%PORTDOCS%%share/examples/cdcl/grph1/slpack/slpk01.P
+%%PORTDOCS%%share/examples/cdcl/grph1/slpack/slpk01.c
+%%PORTDOCS%%share/examples/cdcl/grph1/slpack/slpk02.P
+%%PORTDOCS%%share/examples/cdcl/grph1/slpack/slpk02.c
+%%PORTDOCS%%share/examples/cdcl/grph1/slpack/slpk03.P
+%%PORTDOCS%%share/examples/cdcl/grph1/slpack/slpk03.c
+%%PORTDOCS%%share/examples/cdcl/grph1/slpack/slpk04.P
+%%PORTDOCS%%share/examples/cdcl/grph1/slpack/slpk04.c
+%%PORTDOCS%%share/examples/cdcl/grph2/Makefile
+%%PORTDOCS%%share/examples/cdcl/grph2/grpack/Makefile
+%%PORTDOCS%%share/examples/cdcl/grph2/grpack/grpk01.P
+%%PORTDOCS%%share/examples/cdcl/grph2/grpack/grpk01.c
+%%PORTDOCS%%share/examples/cdcl/grph2/ucpack/Makefile
+%%PORTDOCS%%share/examples/cdcl/grph2/ucpack/ucpk01.P
+%%PORTDOCS%%share/examples/cdcl/grph2/ucpack/ucpk01.c
+%%PORTDOCS%%share/examples/cdcl/grph2/ucpack/ucpk02.P
+%%PORTDOCS%%share/examples/cdcl/grph2/ucpack/ucpk02.c
+%%PORTDOCS%%share/examples/cdcl/grph2/udegpk/Makefile
+%%PORTDOCS%%share/examples/cdcl/grph2/udegpk/u2df01.P
+%%PORTDOCS%%share/examples/cdcl/grph2/udegpk/u2df01.c
+%%PORTDOCS%%share/examples/cdcl/grph2/udegpk/u2df02.P
+%%PORTDOCS%%share/examples/cdcl/grph2/udegpk/u2df02.c
+%%PORTDOCS%%share/examples/cdcl/grph2/udegpk/u2df03.P
+%%PORTDOCS%%share/examples/cdcl/grph2/udegpk/u2df03.c
+%%PORTDOCS%%share/examples/cdcl/grph2/udegpk/u2df04.P
+%%PORTDOCS%%share/examples/cdcl/grph2/udegpk/u2df04.c
+%%PORTDOCS%%share/examples/cdcl/grph2/udegpk/u2df05.P
+%%PORTDOCS%%share/examples/cdcl/grph2/udegpk/u2df05.c
+%%PORTDOCS%%share/examples/cdcl/grph2/udegpk/u2df06.P
+%%PORTDOCS%%share/examples/cdcl/grph2/udegpk/u2df06.c
+%%PORTDOCS%%share/examples/cdcl/grph2/udegpk/u2df07.P
+%%PORTDOCS%%share/examples/cdcl/grph2/udegpk/u2df07.c
+%%PORTDOCS%%share/examples/cdcl/grph2/udegpk/u2df08.P
+%%PORTDOCS%%share/examples/cdcl/grph2/udegpk/u2df08.c
+%%PORTDOCS%%share/examples/cdcl/grph2/ulpack/Makefile
+%%PORTDOCS%%share/examples/cdcl/grph2/ulpack/ulpk01.P
+%%PORTDOCS%%share/examples/cdcl/grph2/ulpack/ulpk01.c
+%%PORTDOCS%%share/examples/cdcl/grph2/ulpack/ulpk02.P
+%%PORTDOCS%%share/examples/cdcl/grph2/ulpack/ulpk02.c
+%%PORTDOCS%%share/examples/cdcl/grph2/umpack/Makefile
+%%PORTDOCS%%share/examples/cdcl/grph2/umpack/t811231.dat
+%%PORTDOCS%%share/examples/cdcl/grph2/umpack/test01.P
+%%PORTDOCS%%share/examples/cdcl/grph2/umpack/test01.c
+%%PORTDOCS%%share/examples/cdcl/grph2/umpack/test02.P
+%%PORTDOCS%%share/examples/cdcl/grph2/umpack/test02.c
+%%PORTDOCS%%share/examples/cdcl/grph2/umpack/test03.P
+%%PORTDOCS%%share/examples/cdcl/grph2/umpack/test03.c
+%%PORTDOCS%%share/examples/cdcl/grph2/umpack/test04.P
+%%PORTDOCS%%share/examples/cdcl/grph2/umpack/test04.c
+%%PORTDOCS%%share/examples/cdcl/grph2/umpack/test05.P
+%%PORTDOCS%%share/examples/cdcl/grph2/umpack/test05.c
+%%PORTDOCS%%share/examples/cdcl/grph2/umpack/test06.P
+%%PORTDOCS%%share/examples/cdcl/grph2/umpack/test06.c
+%%PORTDOCS%%share/examples/cdcl/grph2/umpack/test07.P
+%%PORTDOCS%%share/examples/cdcl/grph2/umpack/test07.c
+%%PORTDOCS%%share/examples/cdcl/grph2/umpack/test08.P
+%%PORTDOCS%%share/examples/cdcl/grph2/umpack/test08.c
+%%PORTDOCS%%share/examples/cdcl/grph2/umpack/umpk01.P
+%%PORTDOCS%%share/examples/cdcl/grph2/umpack/umpk01.c
+%%PORTDOCS%%share/examples/cdcl/grph2/umpack/umpk02.P
+%%PORTDOCS%%share/examples/cdcl/grph2/umpack/umpk02.c
+%%PORTDOCS%%share/examples/cdcl/grph2/umpack/umpk03.P
+%%PORTDOCS%%share/examples/cdcl/grph2/umpack/umpk03.c
+%%PORTDOCS%%share/examples/cdcl/grph2/umpack/umpk04.P
+%%PORTDOCS%%share/examples/cdcl/grph2/umpack/umpk04.c
+%%PORTDOCS%%share/examples/cdcl/grph2/umpack/umpk05.P
+%%PORTDOCS%%share/examples/cdcl/grph2/umpack/umpk05.c
+%%PORTDOCS%%share/examples/cdcl/grph2/uspack/Makefile
+%%PORTDOCS%%share/examples/cdcl/grph2/uspack/uspk01.P
+%%PORTDOCS%%share/examples/cdcl/grph2/uspack/uspk01.c
+%%PORTDOCS%%share/examples/cdcl/grph2/uspack/uspk02.P
+%%PORTDOCS%%share/examples/cdcl/grph2/uspack/uspk02.c
+%%PORTDOCS%%share/examples/cdcl/grph2/uspack/uspk03.P
+%%PORTDOCS%%share/examples/cdcl/grph2/uspack/uspk03.c
+%%PORTDOCS%%share/examples/cdcl/grph2/uspack/uspk04.P
+%%PORTDOCS%%share/examples/cdcl/grph2/uspack/uspk04.c
+%%PORTDOCS%%share/examples/cdcl/grph2/uspack/uspk05.P
+%%PORTDOCS%%share/examples/cdcl/grph2/uspack/uspk05.c
+%%PORTDOCS%%share/examples/cdcl/grph2/uspack/uspk06.P
+%%PORTDOCS%%share/examples/cdcl/grph2/uspack/uspk06.c
+%%PORTDOCS%%share/examples/cdcl/grph2/uspack/uspk07.P
+%%PORTDOCS%%share/examples/cdcl/grph2/uspack/uspk07.c
+%%PORTDOCS%%share/examples/cdcl/grph2/uspack/uspk08.P
+%%PORTDOCS%%share/examples/cdcl/grph2/uspack/uspk08.c
+%%PORTDOCS%%share/examples/cdcl/grph2/uspack/uspk09.P
+%%PORTDOCS%%share/examples/cdcl/grph2/uspack/uspk09.c
+%%PORTDOCS%%share/examples/cdcl/grph2/uspack/uspk10.P
+%%PORTDOCS%%share/examples/cdcl/grph2/uspack/uspk10.c
+%%PORTDOCS%%share/examples/cdcl/grph2/uspack/uspk11.P
+%%PORTDOCS%%share/examples/cdcl/grph2/uspack/uspk11.c
+%%PORTDOCS%%share/examples/cdcl/grph2/uspack/uspk12.P
+%%PORTDOCS%%share/examples/cdcl/grph2/uspack/uspk12.c
+%%PORTDOCS%%share/examples/cdcl/grph2/uupack/Makefile
+%%PORTDOCS%%share/examples/cdcl/grph2/uupack/uupk01.P
+%%PORTDOCS%%share/examples/cdcl/grph2/uupack/uupk01.c
+%%PORTDOCS%%share/examples/cdcl/grph2/uupack/uupk02.P
+%%PORTDOCS%%share/examples/cdcl/grph2/uupack/uupk02.c
+%%PORTDOCS%%share/examples/cdcl/grph2/uupack/uupk03.P
+%%PORTDOCS%%share/examples/cdcl/grph2/uupack/uupk03.c
+%%PORTDOCS%%share/examples/cdcl/grph2/uupack/uupk04.P
+%%PORTDOCS%%share/examples/cdcl/grph2/uupack/uupk04.c
+%%PORTDOCS%%share/examples/cdcl/grph2/uupack/uupk05.P
+%%PORTDOCS%%share/examples/cdcl/grph2/uupack/uupk05.c
+%%PORTDOCS%%share/examples/cdcl/grph2/uupack/uupk06.P
+%%PORTDOCS%%share/examples/cdcl/grph2/uupack/uupk06.c
+%%PORTDOCS%%share/examples/cdcl/grph2/uupack/uupk07.P
+%%PORTDOCS%%share/examples/cdcl/grph2/uupack/uupk07.c
+%%PORTDOCS%%share/examples/cdcl/grph2/uxyzpk/Makefile
+%%PORTDOCS%%share/examples/cdcl/grph2/uxyzpk/uxyz01.P
+%%PORTDOCS%%share/examples/cdcl/grph2/uxyzpk/uxyz01.c
+%%PORTDOCS%%share/examples/cdcl/grph2/uxyzpk/uxyz02.P
+%%PORTDOCS%%share/examples/cdcl/grph2/uxyzpk/uxyz02.c
+%%PORTDOCS%%share/examples/cdcl/grph2/uxyzpk/uxyz03.P
+%%PORTDOCS%%share/examples/cdcl/grph2/uxyzpk/uxyz03.c
+%%PORTDOCS%%share/examples/cdcl/grph2/uxyzpk/uxyz04.P
+%%PORTDOCS%%share/examples/cdcl/grph2/uxyzpk/uxyz04.c
+%%PORTDOCS%%share/examples/cdcl/grph2/uxyzpk/uxyz05.P
+%%PORTDOCS%%share/examples/cdcl/grph2/uxyzpk/uxyz05.c
+%%PORTDOCS%%share/examples/cdcl/grph2/uxyzpk/uxyz06.P
+%%PORTDOCS%%share/examples/cdcl/grph2/uxyzpk/uxyz06.c
+%%PORTDOCS%%share/examples/cdcl/grph2/uxyzpk/uxyz07.P
+%%PORTDOCS%%share/examples/cdcl/grph2/uxyzpk/uxyz07.c
+%%PORTDOCS%%share/examples/cdcl/grph2/uxyzpk/uxyz08.P
+%%PORTDOCS%%share/examples/cdcl/grph2/uxyzpk/uxyz08.c
+%%PORTDOCS%%share/examples/cdcl/grph2/uxyzpk/uxyz09.P
+%%PORTDOCS%%share/examples/cdcl/grph2/uxyzpk/uxyz09.c
+%%PORTDOCS%%share/examples/cdcl/grph2/uxyzpk/uxyz10.P
+%%PORTDOCS%%share/examples/cdcl/grph2/uxyzpk/uxyz10.c
+%%PORTDOCS%%share/examples/cdcl/grph2/ximage/MEMO
+%%PORTDOCS%%share/examples/cdcl/grph2/ximage/Makefile
+%%PORTDOCS%%share/examples/cdcl/grph2/ximage/tomsclm.dat
+%%PORTDOCS%%share/examples/cdcl/grph2/ximage/ximg01.P
+%%PORTDOCS%%share/examples/cdcl/grph2/ximage/ximg01.c
+%%PORTDOCS%%share/examples/cdcl/math1/Makefile
+%%PORTDOCS%%share/examples/cdcl/math1/blklib/Makefile
+%%PORTDOCS%%share/examples/cdcl/math1/blklib/blkl01.P
+%%PORTDOCS%%share/examples/cdcl/math1/blklib/blkl01.c
+%%PORTDOCS%%share/examples/cdcl/math1/chrlib/Makefile
+%%PORTDOCS%%share/examples/cdcl/math1/chrlib/chrl01.P
+%%PORTDOCS%%share/examples/cdcl/math1/chrlib/chrl01.c
+%%PORTDOCS%%share/examples/cdcl/math1/fnclib/Makefile
+%%PORTDOCS%%share/examples/cdcl/math1/fnclib/fncl01.P
+%%PORTDOCS%%share/examples/cdcl/math1/fnclib/fncl01.c
+%%PORTDOCS%%share/examples/cdcl/math1/gnmlib/Makefile
+%%PORTDOCS%%share/examples/cdcl/math1/gnmlib/gnml01.P
+%%PORTDOCS%%share/examples/cdcl/math1/gnmlib/gnml01.c
+%%PORTDOCS%%share/examples/cdcl/math1/ifalib/Makefile
+%%PORTDOCS%%share/examples/cdcl/math1/ifalib/ifal01.P
+%%PORTDOCS%%share/examples/cdcl/math1/ifalib/ifal01.c
+%%PORTDOCS%%share/examples/cdcl/math1/indxlib/Makefile
+%%PORTDOCS%%share/examples/cdcl/math1/indxlib/indx01.P
+%%PORTDOCS%%share/examples/cdcl/math1/indxlib/indx01.c
+%%PORTDOCS%%share/examples/cdcl/math1/indxlib/indx02.P
+%%PORTDOCS%%share/examples/cdcl/math1/indxlib/indx02.c
+%%PORTDOCS%%share/examples/cdcl/math1/intlib/Makefile
+%%PORTDOCS%%share/examples/cdcl/math1/intlib/intl01.P
+%%PORTDOCS%%share/examples/cdcl/math1/intlib/intl01.c
+%%PORTDOCS%%share/examples/cdcl/math1/lrllib/Makefile
+%%PORTDOCS%%share/examples/cdcl/math1/lrllib/lrll01.P
+%%PORTDOCS%%share/examples/cdcl/math1/lrllib/lrll01.c
+%%PORTDOCS%%share/examples/cdcl/math1/lrllib/lrll02.P
+%%PORTDOCS%%share/examples/cdcl/math1/lrllib/lrll02.c
+%%PORTDOCS%%share/examples/cdcl/math1/oslib/Makefile
+%%PORTDOCS%%share/examples/cdcl/math1/oslib/oslb01.P
+%%PORTDOCS%%share/examples/cdcl/math1/oslib/oslb01.c
+%%PORTDOCS%%share/examples/cdcl/math1/oslib/oslb02.P
+%%PORTDOCS%%share/examples/cdcl/math1/oslib/oslb02.c
+%%PORTDOCS%%share/examples/cdcl/math1/rfalib/Makefile
+%%PORTDOCS%%share/examples/cdcl/math1/rfalib/rfal01.P
+%%PORTDOCS%%share/examples/cdcl/math1/rfalib/rfal01.c
+%%PORTDOCS%%share/examples/cdcl/math1/rfblib/Makefile
+%%PORTDOCS%%share/examples/cdcl/math1/rfblib/rfbl01.P
+%%PORTDOCS%%share/examples/cdcl/math1/rfblib/rfbl01.c
+%%PORTDOCS%%share/examples/cdcl/math1/sublib/Makefile
+%%PORTDOCS%%share/examples/cdcl/math1/sublib/subl01.P
+%%PORTDOCS%%share/examples/cdcl/math1/sublib/subl01.c
+%%PORTDOCS%%share/examples/cdcl/math1/syslib/Makefile
+%%PORTDOCS%%share/examples/cdcl/math1/syslib/sysl01.P
+%%PORTDOCS%%share/examples/cdcl/math1/syslib/sysl01.c
+%%PORTDOCS%%share/examples/cdcl/math1/syslib/sysl02.P
+%%PORTDOCS%%share/examples/cdcl/math1/syslib/sysl02.c
+%%PORTDOCS%%share/examples/cdcl/math1/vialib/Makefile
+%%PORTDOCS%%share/examples/cdcl/math1/vialib/vial01.P
+%%PORTDOCS%%share/examples/cdcl/math1/vialib/vial01.c
+%%PORTDOCS%%share/examples/cdcl/math1/vialib/vial02.P
+%%PORTDOCS%%share/examples/cdcl/math1/vialib/vial02.c
+%%PORTDOCS%%share/examples/cdcl/math1/viblib/Makefile
+%%PORTDOCS%%share/examples/cdcl/math1/viblib/vibl01.P
+%%PORTDOCS%%share/examples/cdcl/math1/viblib/vibl01.c
+%%PORTDOCS%%share/examples/cdcl/math1/vralib/Makefile
+%%PORTDOCS%%share/examples/cdcl/math1/vralib/vral01.P
+%%PORTDOCS%%share/examples/cdcl/math1/vralib/vral01.c
+%%PORTDOCS%%share/examples/cdcl/math1/vralib/vral02.P
+%%PORTDOCS%%share/examples/cdcl/math1/vralib/vral02.c
+%%PORTDOCS%%share/examples/cdcl/math1/vrblib/Makefile
+%%PORTDOCS%%share/examples/cdcl/math1/vrblib/vrbl01.P
+%%PORTDOCS%%share/examples/cdcl/math1/vrblib/vrbl01.c
+%%PORTDOCS%%share/examples/cdcl/math2/Makefile
+%%PORTDOCS%%share/examples/cdcl/math2/fftlib/Makefile
+%%PORTDOCS%%share/examples/cdcl/math2/fftlib/fftl01.P
+%%PORTDOCS%%share/examples/cdcl/math2/fftlib/fftl01.c
+%%PORTDOCS%%share/examples/cdcl/math2/fftlib/fftl02.P
+%%PORTDOCS%%share/examples/cdcl/math2/fftlib/fftl02.c
+%%PORTDOCS%%share/examples/cdcl/math2/intrlib/Makefile
+%%PORTDOCS%%share/examples/cdcl/math2/intrlib/intr01.P
+%%PORTDOCS%%share/examples/cdcl/math2/intrlib/intr01.c
+%%PORTDOCS%%share/examples/cdcl/math2/rnmlib/Makefile
+%%PORTDOCS%%share/examples/cdcl/math2/rnmlib/rnml01.P
+%%PORTDOCS%%share/examples/cdcl/math2/rnmlib/rnml01.c
+%%PORTDOCS%%share/examples/cdcl/math2/vstlib/Makefile
+%%PORTDOCS%%share/examples/cdcl/math2/vstlib/vstl01.P
+%%PORTDOCS%%share/examples/cdcl/math2/vstlib/vstl01.c
+%%PORTDOCS%%share/examples/cdcl/math2/vstlib/vstl02.P
+%%PORTDOCS%%share/examples/cdcl/math2/vstlib/vstl02.c
+%%PORTDOCS%%share/examples/cdcl/misc1/Makefile
+%%PORTDOCS%%share/examples/cdcl/misc1/bitlib/Makefile
+%%PORTDOCS%%share/examples/cdcl/misc1/bitlib/bitl01.P
+%%PORTDOCS%%share/examples/cdcl/misc1/bitlib/bitl01.c
+%%PORTDOCS%%share/examples/cdcl/misc1/chglib/Makefile
+%%PORTDOCS%%share/examples/cdcl/misc1/chglib/chgl01.P
+%%PORTDOCS%%share/examples/cdcl/misc1/chglib/chgl01.c
+%%PORTDOCS%%share/examples/cdcl/misc1/chklib/Makefile
+%%PORTDOCS%%share/examples/cdcl/misc1/chklib/chkl01.P
+%%PORTDOCS%%share/examples/cdcl/misc1/chklib/chkl01.c
+%%PORTDOCS%%share/examples/cdcl/misc1/chnlib/Makefile
+%%PORTDOCS%%share/examples/cdcl/misc1/chnlib/chnl01.P
+%%PORTDOCS%%share/examples/cdcl/misc1/chnlib/chnl01.c
+%%PORTDOCS%%share/examples/cdcl/misc1/chnlib/chnl02.P
+%%PORTDOCS%%share/examples/cdcl/misc1/chnlib/chnl02.c
+%%PORTDOCS%%share/examples/cdcl/misc1/chnlib/chnl03.P
+%%PORTDOCS%%share/examples/cdcl/misc1/chnlib/chnl03.c
+%%PORTDOCS%%share/examples/cdcl/misc1/clcklib/Makefile
+%%PORTDOCS%%share/examples/cdcl/misc1/clcklib/clck01.P
+%%PORTDOCS%%share/examples/cdcl/misc1/clcklib/clck01.c
+%%PORTDOCS%%share/examples/cdcl/misc1/datelib/Makefile
+%%PORTDOCS%%share/examples/cdcl/misc1/datelib/date01.P
+%%PORTDOCS%%share/examples/cdcl/misc1/datelib/date01.c
+%%PORTDOCS%%share/examples/cdcl/misc1/datelib/date02.P
+%%PORTDOCS%%share/examples/cdcl/misc1/datelib/date02.c
+%%PORTDOCS%%share/examples/cdcl/misc1/datelib/date03.P
+%%PORTDOCS%%share/examples/cdcl/misc1/datelib/date03.c
+%%PORTDOCS%%share/examples/cdcl/misc1/datelib/date04.P
+%%PORTDOCS%%share/examples/cdcl/misc1/datelib/date04.c
+%%PORTDOCS%%share/examples/cdcl/misc1/fmtlib/Makefile
+%%PORTDOCS%%share/examples/cdcl/misc1/fmtlib/fmtl01.P
+%%PORTDOCS%%share/examples/cdcl/misc1/fmtlib/fmtl01.c
+%%PORTDOCS%%share/examples/cdcl/misc1/hexlib/Makefile
+%%PORTDOCS%%share/examples/cdcl/misc1/hexlib/hexl01.P
+%%PORTDOCS%%share/examples/cdcl/misc1/hexlib/hexl01.c
+%%PORTDOCS%%share/examples/cdcl/misc1/misclib/Makefile
+%%PORTDOCS%%share/examples/cdcl/misc1/misclib/fncl01.P
+%%PORTDOCS%%share/examples/cdcl/misc1/misclib/fncl01.c
+%%PORTDOCS%%share/examples/cdcl/misc1/randlib/Makefile
+%%PORTDOCS%%share/examples/cdcl/misc1/randlib/rand01.P
+%%PORTDOCS%%share/examples/cdcl/misc1/randlib/rand01.c
+%%PORTDOCS%%share/examples/cdcl/misc1/timelib/Makefile
+%%PORTDOCS%%share/examples/cdcl/misc1/timelib/time01.P
+%%PORTDOCS%%share/examples/cdcl/misc1/timelib/time01.c
+%%PORTDOCS%%share/examples/cdcl/misc1/timelib/time02.P
+%%PORTDOCS%%share/examples/cdcl/misc1/timelib/time02.c
+%%PORTDOCS%%share/examples/cdcl/misc2/Makefile
+%%PORTDOCS%%share/examples/cdcl/rakuraku/Makefile
+%%PORTDOCS%%share/examples/cdcl/rakuraku/color/Makefile
+%%PORTDOCS%%share/examples/cdcl/rakuraku/color/color1.P
+%%PORTDOCS%%share/examples/cdcl/rakuraku/color/color1.c
+%%PORTDOCS%%share/examples/cdcl/rakuraku/color/color2.P
+%%PORTDOCS%%share/examples/cdcl/rakuraku/color/color2.c
+%%PORTDOCS%%share/examples/cdcl/rakuraku/color/color3.P
+%%PORTDOCS%%share/examples/cdcl/rakuraku/color/color3.c
+%%PORTDOCS%%share/examples/cdcl/rakuraku/color/colormap1.x11
+%%PORTDOCS%%share/examples/cdcl/rakuraku/color/colormap2.x11
+%%PORTDOCS%%share/examples/cdcl/rakuraku/color/colormap3.x11
+%%PORTDOCS%%share/examples/cdcl/rakuraku/color/colormap4.x11
+%%PORTDOCS%%share/examples/cdcl/rakuraku/kihon/Makefile
+%%PORTDOCS%%share/examples/cdcl/rakuraku/kihon/kihon1.P
+%%PORTDOCS%%share/examples/cdcl/rakuraku/kihon/kihon1.c
+%%PORTDOCS%%share/examples/cdcl/rakuraku/kihon/kihon2.P
+%%PORTDOCS%%share/examples/cdcl/rakuraku/kihon/kihon2.c
+%%PORTDOCS%%share/examples/cdcl/rakuraku/kihon/kihon3.P
+%%PORTDOCS%%share/examples/cdcl/rakuraku/kihon/kihon3.c
+%%PORTDOCS%%share/examples/cdcl/rakuraku/kihon/kihon4.P
+%%PORTDOCS%%share/examples/cdcl/rakuraku/kihon/kihon4.c
+%%PORTDOCS%%share/examples/cdcl/rakuraku/kihon/kihon5.P
+%%PORTDOCS%%share/examples/cdcl/rakuraku/kihon/kihon5.c
+%%PORTDOCS%%share/examples/cdcl/rakuraku/kihon/kihon6.P
+%%PORTDOCS%%share/examples/cdcl/rakuraku/kihon/kihon6.c
+%%PORTDOCS%%share/examples/cdcl/rakuraku/kihon/kihon7.P
+%%PORTDOCS%%share/examples/cdcl/rakuraku/kihon/kihon7.c
+%%PORTDOCS%%share/examples/cdcl/rakuraku/kihon/kihon8.P
+%%PORTDOCS%%share/examples/cdcl/rakuraku/kihon/kihon8.c
+%%PORTDOCS%%share/examples/cdcl/rakuraku/kihon/kihon9.P
+%%PORTDOCS%%share/examples/cdcl/rakuraku/kihon/kihon9.c
+%%PORTDOCS%%share/examples/cdcl/rakuraku/kihon/kihona.P
+%%PORTDOCS%%share/examples/cdcl/rakuraku/kihon/kihona.c
+%%PORTDOCS%%share/examples/cdcl/rakuraku/kihon/kihonb.P
+%%PORTDOCS%%share/examples/cdcl/rakuraku/kihon/kihonb.c
+%%PORTDOCS%%share/examples/cdcl/rakuraku/kihon/kihonc.P
+%%PORTDOCS%%share/examples/cdcl/rakuraku/kihon/kihonc.c
+%%PORTDOCS%%share/examples/cdcl/rakuraku/layout/Makefile
+%%PORTDOCS%%share/examples/cdcl/rakuraku/layout/lay1.P
+%%PORTDOCS%%share/examples/cdcl/rakuraku/layout/lay1.c
+%%PORTDOCS%%share/examples/cdcl/rakuraku/layout/lay2.P
+%%PORTDOCS%%share/examples/cdcl/rakuraku/layout/lay2.c
+%%PORTDOCS%%share/examples/cdcl/rakuraku/layout/lay3.P
+%%PORTDOCS%%share/examples/cdcl/rakuraku/layout/lay3.c
+%%PORTDOCS%%share/examples/cdcl/rakuraku/map3d/Makefile
+%%PORTDOCS%%share/examples/cdcl/rakuraku/map3d/map3d1.P
+%%PORTDOCS%%share/examples/cdcl/rakuraku/map3d/map3d1.c
+%%PORTDOCS%%share/examples/cdcl/rakuraku/map3d/map3d2.P
+%%PORTDOCS%%share/examples/cdcl/rakuraku/map3d/map3d2.c
+%%PORTDOCS%%share/examples/cdcl/rakuraku/map3d/map3d3.P
+%%PORTDOCS%%share/examples/cdcl/rakuraku/map3d/map3d3.c
+%%PORTDOCS%%share/examples/cdcl/rakuraku/map3d/map3d4.P
+%%PORTDOCS%%share/examples/cdcl/rakuraku/map3d/map3d4.c
+%%PORTDOCS%%share/examples/cdcl/rakuraku/map3d/map3d5.P
+%%PORTDOCS%%share/examples/cdcl/rakuraku/map3d/map3d5.c
+%%PORTDOCS%%share/examples/cdcl/rakuraku/map3d/map3d6.P
+%%PORTDOCS%%share/examples/cdcl/rakuraku/map3d/map3d6.c
+%%PORTDOCS%%share/examples/cdcl/rakuraku/miss/Makefile
+%%PORTDOCS%%share/examples/cdcl/rakuraku/miss/miss1.P
+%%PORTDOCS%%share/examples/cdcl/rakuraku/miss/miss1.c
+%%PORTDOCS%%share/examples/cdcl/rakuraku/miss/miss2.P
+%%PORTDOCS%%share/examples/cdcl/rakuraku/miss/miss2.c
+%%PORTDOCS%%share/examples/cdcl/rakuraku/quick/Makefile
+%%PORTDOCS%%share/examples/cdcl/rakuraku/quick/quick1+.P
+%%PORTDOCS%%share/examples/cdcl/rakuraku/quick/quick1+.c
+%%PORTDOCS%%share/examples/cdcl/rakuraku/quick/quick1.P
+%%PORTDOCS%%share/examples/cdcl/rakuraku/quick/quick1.c
+%%PORTDOCS%%share/examples/cdcl/rakuraku/quick/quick2.P
+%%PORTDOCS%%share/examples/cdcl/rakuraku/quick/quick2.c
+%%PORTDOCS%%share/examples/cdcl/rakuraku/quick/quick3.P
+%%PORTDOCS%%share/examples/cdcl/rakuraku/quick/quick3.c
+%%PORTDOCS%%share/examples/cdcl/rakuraku/quick/quick4.P
+%%PORTDOCS%%share/examples/cdcl/rakuraku/quick/quick4.c
+%%PORTDOCS%%share/examples/cdcl/rakuraku/quick/quick5.P
+%%PORTDOCS%%share/examples/cdcl/rakuraku/quick/quick5.c
+%%PORTDOCS%%share/examples/cdcl/rakuraku/u2d/Makefile
+%%PORTDOCS%%share/examples/cdcl/rakuraku/u2d/u2d1.P
+%%PORTDOCS%%share/examples/cdcl/rakuraku/u2d/u2d1.c
+%%PORTDOCS%%share/examples/cdcl/rakuraku/u2d/u2d2.P
+%%PORTDOCS%%share/examples/cdcl/rakuraku/u2d/u2d2.c
+%%PORTDOCS%%share/examples/cdcl/rakuraku/u2d/u2d3.P
+%%PORTDOCS%%share/examples/cdcl/rakuraku/u2d/u2d3.c
+%%PORTDOCS%%share/examples/cdcl/rakuraku/u2d/u2d4.P
+%%PORTDOCS%%share/examples/cdcl/rakuraku/u2d/u2d4.c
+%%PORTDOCS%%share/examples/cdcl/rakuraku/u2d/u2d5.P
+%%PORTDOCS%%share/examples/cdcl/rakuraku/u2d/u2d5.c
+%%PORTDOCS%%share/examples/cdcl/rakuraku/u2d/u2d6.P
+%%PORTDOCS%%share/examples/cdcl/rakuraku/u2d/u2d6.c
+%%PORTDOCS%%share/examples/cdcl/rakuraku/u2d/u2d7.P
+%%PORTDOCS%%share/examples/cdcl/rakuraku/u2d/u2d7.c
+%%PORTDOCS%%share/examples/cdcl/rakuraku/uspack/Makefile
+%%PORTDOCS%%share/examples/cdcl/rakuraku/uspack/uspac1.P
+%%PORTDOCS%%share/examples/cdcl/rakuraku/uspack/uspac1.c
+%%PORTDOCS%%share/examples/cdcl/rakuraku/uspack/uspac2.P
+%%PORTDOCS%%share/examples/cdcl/rakuraku/uspack/uspac2.c
+%%PORTDOCS%%share/examples/cdcl/rakuraku/uspack/uspac3.P
+%%PORTDOCS%%share/examples/cdcl/rakuraku/uspack/uspac3.c
+%%PORTDOCS%%share/examples/cdcl/rakuraku/uspack/uspac4.P
+%%PORTDOCS%%share/examples/cdcl/rakuraku/uspack/uspac4.c
+%%PORTDOCS%%share/examples/cdcl/rakuraku/uxyz/Makefile
+%%PORTDOCS%%share/examples/cdcl/rakuraku/uxyz/uxyz1.P
+%%PORTDOCS%%share/examples/cdcl/rakuraku/uxyz/uxyz1.c
+%%PORTDOCS%%share/examples/cdcl/rakuraku/uxyz/uxyz2.P
+%%PORTDOCS%%share/examples/cdcl/rakuraku/uxyz/uxyz2.c
+%%PORTDOCS%%share/examples/cdcl/rakuraku/uxyz/uxyz3.P
+%%PORTDOCS%%share/examples/cdcl/rakuraku/uxyz/uxyz3.c
+%%PORTDOCS%%share/examples/cdcl/rakuraku/uxyz/uxyz4.P
+%%PORTDOCS%%share/examples/cdcl/rakuraku/uxyz/uxyz4.c
+%%PORTDOCS%%share/examples/cdcl/rakuraku/uxyz/uxyz5.P
+%%PORTDOCS%%share/examples/cdcl/rakuraku/uxyz/uxyz5.c
+%%PORTDOCS%%share/examples/cdcl/rakuraku/uxyz/uxyz6.P
+%%PORTDOCS%%share/examples/cdcl/rakuraku/uxyz/uxyz6.c
+%%PORTDOCS%%share/examples/cdcl/rakuraku/uxyz/uxyz7.P
+%%PORTDOCS%%share/examples/cdcl/rakuraku/uxyz/uxyz7.c
+%%PORTDOCS%%share/examples/cdcl/rakuraku/uxyz/uxyz8.P
+%%PORTDOCS%%share/examples/cdcl/rakuraku/uxyz/uxyz8.c
+%%PORTDOCS%%@dirrm share/examples/cdcl/gokuraku/hop
+%%PORTDOCS%%@dirrm share/examples/cdcl/gokuraku/jump
+%%PORTDOCS%%@dirrm share/examples/cdcl/gokuraku/layout
+%%PORTDOCS%%@dirrm share/examples/cdcl/gokuraku/step
+%%PORTDOCS%%@dirrm share/examples/cdcl/gokuraku/u1d
+%%PORTDOCS%%@dirrm share/examples/cdcl/gokuraku/u2d
+%%PORTDOCS%%@dirrm share/examples/cdcl/gokuraku/
+%%PORTDOCS%%@dirrm share/examples/cdcl/grph1/scpack
+%%PORTDOCS%%@dirrm share/examples/cdcl/grph1/sgpack
+%%PORTDOCS%%@dirrm share/examples/cdcl/grph1/slpack
+%%PORTDOCS%%@dirrm share/examples/cdcl/grph1
+%%PORTDOCS%%@dirrm share/examples/cdcl/grph2/grpack
+%%PORTDOCS%%@dirrm share/examples/cdcl/grph2/ucpack
+%%PORTDOCS%%@dirrm share/examples/cdcl/grph2/udegpk
+%%PORTDOCS%%@dirrm share/examples/cdcl/grph2/ulpack
+%%PORTDOCS%%@dirrm share/examples/cdcl/grph2/umpack
+%%PORTDOCS%%@dirrm share/examples/cdcl/grph2/uspack
+%%PORTDOCS%%@dirrm share/examples/cdcl/grph2/uupack
+%%PORTDOCS%%@dirrm share/examples/cdcl/grph2/uxyzpk
+%%PORTDOCS%%@dirrm share/examples/cdcl/grph2/ximage
+%%PORTDOCS%%@dirrm share/examples/cdcl/grph2
+%%PORTDOCS%%@dirrm share/examples/cdcl/math1/blklib
+%%PORTDOCS%%@dirrm share/examples/cdcl/math1/chrlib
+%%PORTDOCS%%@dirrm share/examples/cdcl/math1/fnclib
+%%PORTDOCS%%@dirrm share/examples/cdcl/math1/gnmlib
+%%PORTDOCS%%@dirrm share/examples/cdcl/math1/ifalib
+%%PORTDOCS%%@dirrm share/examples/cdcl/math1/indxlib
+%%PORTDOCS%%@dirrm share/examples/cdcl/math1/intlib
+%%PORTDOCS%%@dirrm share/examples/cdcl/math1/lrllib
+%%PORTDOCS%%@dirrm share/examples/cdcl/math1/oslib
+%%PORTDOCS%%@dirrm share/examples/cdcl/math1/rfalib
+%%PORTDOCS%%@dirrm share/examples/cdcl/math1/rfblib
+%%PORTDOCS%%@dirrm share/examples/cdcl/math1/sublib
+%%PORTDOCS%%@dirrm share/examples/cdcl/math1/syslib
+%%PORTDOCS%%@dirrm share/examples/cdcl/math1/vialib
+%%PORTDOCS%%@dirrm share/examples/cdcl/math1/viblib
+%%PORTDOCS%%@dirrm share/examples/cdcl/math1/vralib
+%%PORTDOCS%%@dirrm share/examples/cdcl/math1/vrblib
+%%PORTDOCS%%@dirrm share/examples/cdcl/math1
+%%PORTDOCS%%@dirrm share/examples/cdcl/math2/fftlib
+%%PORTDOCS%%@dirrm share/examples/cdcl/math2/intrlib
+%%PORTDOCS%%@dirrm share/examples/cdcl/math2/rnmlib
+%%PORTDOCS%%@dirrm share/examples/cdcl/math2/vstlib
+%%PORTDOCS%%@dirrm share/examples/cdcl/math2
+%%PORTDOCS%%@dirrm share/examples/cdcl/misc1/bitlib
+%%PORTDOCS%%@dirrm share/examples/cdcl/misc1/chglib
+%%PORTDOCS%%@dirrm share/examples/cdcl/misc1/chklib
+%%PORTDOCS%%@dirrm share/examples/cdcl/misc1/chnlib
+%%PORTDOCS%%@dirrm share/examples/cdcl/misc1/clcklib
+%%PORTDOCS%%@dirrm share/examples/cdcl/misc1/datelib
+%%PORTDOCS%%@dirrm share/examples/cdcl/misc1/fmtlib
+%%PORTDOCS%%@dirrm share/examples/cdcl/misc1/hexlib
+%%PORTDOCS%%@dirrm share/examples/cdcl/misc1/misclib
+%%PORTDOCS%%@dirrm share/examples/cdcl/misc1/randlib
+%%PORTDOCS%%@dirrm share/examples/cdcl/misc1/timelib
+%%PORTDOCS%%@dirrm share/examples/cdcl/misc1
+%%PORTDOCS%%@dirrm share/examples/cdcl/misc2
+%%PORTDOCS%%@dirrm share/examples/cdcl/rakuraku/color
+%%PORTDOCS%%@dirrm share/examples/cdcl/rakuraku/kihon
+%%PORTDOCS%%@dirrm share/examples/cdcl/rakuraku/layout
+%%PORTDOCS%%@dirrm share/examples/cdcl/rakuraku/map3d
+%%PORTDOCS%%@dirrm share/examples/cdcl/rakuraku/miss
+%%PORTDOCS%%@dirrm share/examples/cdcl/rakuraku/quick
+%%PORTDOCS%%@dirrm share/examples/cdcl/rakuraku/u2d
+%%PORTDOCS%%@dirrm share/examples/cdcl/rakuraku/uspack
+%%PORTDOCS%%@dirrm share/examples/cdcl/rakuraku/uxyz
+%%PORTDOCS%%@dirrm share/examples/cdcl/rakuraku
+%%PORTDOCS%%@dirrm share/examples/cdcl
+@dirrm lib/dcldbase
