@@ -1,11 +1,17 @@
---- src/magic.c.orig	Sun Aug  9 13:47:06 1998
-+++ src/magic.c	Sun Aug  9 13:47:18 1998
-@@ -227,7 +227,7 @@
- 	    default:
- 		mtypes[count].flags |= M_EQ;
- 	    }
--	    mtypes[count].value.number = strtol(cptr, &cptr, 0);
-+	    mtypes[count].value.number = strtoul(cptr, &cptr, 0);
- 	}
- 	while(isspace(*cptr))
- 	    cptr++;
+--- src/Fm.h.orig	Tue Aug  1 09:09:35 2000
++++ src/Fm.h	Tue Aug  1 09:16:04 2000
+@@ -19,10 +19,14 @@
+ #include <malloc.h>
+ #endif
+ 
++#ifdef __FreeBSD__
++#include <stdlib.h>
++#else
+ #ifdef _AIX
+ #pragma alloca
+ #else
+ #include <alloca.h>
++#endif
+ #endif
+ 
+ #include <stdio.h>
