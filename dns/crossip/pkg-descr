@@ -1,0 +1,11 @@
+A Cross Platform DNS update client, written in java.  CrossIP uses the
+ThatIP protocol version 1.1 to send DNS update requests.  It manages DNS
+records, update history, and allows for per record configuration.  It also
+includes a wizard for generation of configuration files.
+
+http://www.thatip.com/crossip/
+
+WWW: http://www.thatip.com/
+
+-Dan Smith
+ dan@algenta.com
