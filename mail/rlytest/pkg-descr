@@ -1,0 +1,14 @@
+The rlytest utility tests a host to determine whether it will relay
+third-party email.  It will try to relay an email message to yourself
+through that host.  A host that allows third-party relay is subject to
+attack by Internet vandals, and frequently is hijacked by spammers to
+relay massive amounts of junk email.  A host that allows third-party
+relay should IMMEDIATELY be secured, disconnected, or shunned as a
+menace to the Internet.
+
+See http://www.unicom.com/sw/#rlytest for mor information.
+
+rlytest was written by Chip Rosenthal, and is featured at
+http://maps.vix.com/tsi/ and http://www.badrelay.org/.
+
+- Paul Chvostek <paul@it.ca>
