@@ -10,7 +10,7 @@ MASTERDIR=	${.CURDIR}/../fox
 PORTVERSION=	0.99.174
 PORTREVISION=	1
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 COMMENT=	${.CURDIR}/pkg-comment
 
