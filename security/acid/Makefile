@@ -10,7 +10,7 @@ PORTVERSION=	0.9.6b23
 CATEGORIES=	security
 MASTER_SITES=	http://www.andrew.cmu.edu/user/rdanyliw/snort/
 
-MAINTAINER=	possamai@xs4all.nl
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Analysis Console for Intrusion Databases (ACID) with Snort and MySQL
 
 RUN_DEPENDS=	${LOCALBASE}/bin/snort:${PORTSDIR}/security/snort \
