@@ -4,8 +4,10 @@ bin/debugsh
 bin/dlpsh
 bin/hinotes
 bin/install-datebook
+bin/install-expenses
 bin/install-hinote
 bin/install-memo
+bin/install-netsync
 bin/install-todos
 bin/install-user
 bin/memos
@@ -73,6 +75,15 @@ lib/libpisock.a
 lib/libpisock.la
 lib/libpisock.so
 lib/libpisock.so.8
+lib/libpisync.so.0
+lib/libpisync.so
+lib/libpisync.la
+lib/libpisync.a
+lib/libpisock++.so.0
+lib/libpisock++.so
+lib/libpisock++.la
+lib/libpisock++.a
+share/aclocal/pilot-link.m4
 share/pilot-link/getrom.prc
 share/pilot-link/getrom2.prc
 share/pilot-link/pix/b1.gif
@@ -85,5 +96,6 @@ share/pilot-link/pix/b7.gif
 share/pilot-link/pix/case.gif
 share/pilot-link/pix/casemask.xbm
 share/pilot-link/pix/case.xbm
+@dirrm share/aclocal
 @dirrm share/pilot-link/pix
 @dirrm share/pilot-link
