@@ -26,7 +26,8 @@ MAN1=		cdrdao.1
 
 .include <bsd.port.pre.mk>
 
-CONFIGURE_ARGS=	--disable-gtkmmtest
+CONFIGURE_ARGS=	--disable-gtkmmtest --with-pcctsbin=${LOCALBASE}/bin \
+		--with-pcctsinc=${LOCALBASE}/include/pccts
 
 .if defined(WITHOUT_SCGLIB) && ${OSVERSION} > 300000
 CONFIGURE_ARGS+=	--without-scglib
