@@ -1895,6 +1895,7 @@ fortunelock	ports/sysutils/fortunelock
 fox		ports/x11-toolkits/fox
 fox-devel		ports/x11-toolkits/fox-devel
 fpc		ports/lang/fpc
+fpc-odbc	ports/databases/fpc-odbc
 fping		ports/net/fping
 fpm		ports/security/fpm
 fpp		ports/devel/fpp
