@@ -16,7 +16,8 @@ MASTER_SITES=	http://ftp1download.gamespy.com/fileplanet/fpnew/action/half-life/
 		ftp://ftp.gamesurf.de/pub/gamesurf/halflife/mods/actionhl/beta4/ \
 		ftp://ftp.wireplay.net/pub/downloads/fps/halflife/mods/action/linux/ \
 		ftp://ftp.blackmesa.de/mods/ahl/
-DISTFILES=	action.tgz
+DISTNAME=	action
+EXTRACT_SUFX=	.tgz
 
 HALFLIFE_COUNTERSTRIKE_MASTER=	${.CURDIR}/../hlserver-cs
 
