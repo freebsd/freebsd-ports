@@ -1,12 +1,9 @@
-Version 4.2 of the Berkeley Data Base library which offers (key/value) storage
+Version 4.3 of the Berkeley Data Base library which offers (key/value) storage
 with optional concurrent access or transactions interface.
 
-Utilities are included in the distribution to convert v1.85 databases to v4.2
+Utilities are included in the distribution to convert v1.85 databases to v4.3
 databases, and a backwards compatible API is provided to maintain
 compatibility with programs using the v1.85 interface.
-
-Note that this port has a different layout than the 3.3, 4.0 and 4.1 ports,
-it does not rename libraries.
 
 For details on compatibility with other DB versions, see:
 http://www.sleepycat.com/download/patchlogs.shtml
