@@ -1,5 +1,5 @@
-*** Makefile.old	Mon Feb 12 11:58:22 1996
---- Makefile	Thu Feb 22 04:50:37 1996
+*** Makefile.orig	Mon Feb 12 11:58:22 1996
+--- Makefile	Thu Feb 22 05:23:54 1996
 ***************
 *** 10,29 ****
   ##change the next line if you want lynx installed somewhere 
@@ -43,6 +43,23 @@
   
   
   #set the relative location of the WWW library Implementation directory, 
+***************
+*** 320,326 ****
+  freebsd-ncurses:  
+  	cd WWW/Library/freebsd; make LYFLAGS="$(SITE_LYDEFS)"
+  	cd src; make all MCFLAGS="$(CFLAGS) -DFANCY_CURSES -DNCURSES -DUNIX \
+! 		-DNO_TTYTYPE -DNO_CUSERID -DLOCALE \
+  		-I../$(WWWINC) $(SITE_DEFS)" \
+  		LIBS="-lncurses -lmytinfo $(WAISLIB) $(SOCKSLIB)" \
+  		WWWLIB="../WWW/Library/freebsd/libwww.a"
+--- 320,326 ----
+  freebsd-ncurses:  
+  	cd WWW/Library/freebsd; make LYFLAGS="$(SITE_LYDEFS)"
+  	cd src; make all MCFLAGS="$(CFLAGS) -DFANCY_CURSES -DNCURSES -DUNIX \
+! 		-DLYNX_CFG_FILE='\"${PREFIX}/etc/lynx.cfg\"' -DNO_TTYTYPE -DNO_CUSERID -DLOCALE \
+  		-I../$(WWWINC) $(SITE_DEFS)" \
+  		LIBS="-lncurses -lmytinfo $(WAISLIB) $(SOCKSLIB)" \
+  		WWWLIB="../WWW/Library/freebsd/libwww.a"
 ***************
 *** 644,650 ****
   
