@@ -2,6 +2,7 @@
 bin/g++295
 bin/g++filt295
 bin/gcc295
+bin/gcov
 bin/%%GNU_HOST%%-gcc
 bin/protoize295
 bin/unprotoize295
