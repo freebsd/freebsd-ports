@@ -1,5 +1,7 @@
 bin/cpmemu
-lib/cpm/cpm.sys
-lib/cpm/cd.com
-lib/cpm/link.com
-lib/cpm/xccp.com
+bin/cpmformat
+share/cpm/cpm.sys
+share/cpm/cd.com
+share/cpm/link.com
+share/cpm/xccp.com
+@dirrm share/cpm
