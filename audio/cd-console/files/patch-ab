@@ -1,0 +1,12 @@
+--- cd_ll_bsd.cpp.orig	Sun Nov 28 20:14:31 1999
++++ cd_ll_bsd.cpp	Sun Nov 28 20:15:29 1999
+@@ -10,7 +10,9 @@
+ #include "cd_ll_bsd.h"
+ 
+ // the cd-rom device file
++#ifndef DEVICE
+ #define DEVICE "/dev/acd0c"
++#endif
+ 
+ cd_ll_bsd::cd_ll_bsd()
+     : m_fd(-1)

@@ -6,6 +6,7 @@
     SUBDIR += aumix
     SUBDIR += bladeenc
     SUBDIR += cam
+    SUBDIR += cd-control
     SUBDIR += cdd
     SUBDIR += cdindex
     SUBDIR += cdplay
