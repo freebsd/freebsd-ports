@@ -33,7 +33,7 @@ RUN_DEPENDS=	mozilla:${PORTSDIR}/www/mozilla \
 		gob:${PORTSDIR}/x11-toolkits/gob \
 		gtm:${PORTSDIR}/ftp/gtm \
 		gnucash:${PORTSDIR}/deskutils/gnucash \
-		abiword:${PORTSDIR}/editors/AbiWord \
+		AbiWord:${PORTSDIR}/editors/AbiWord \
 		anjuta:${PORTSDIR}/devel/anjuta \
 		guppi:${PORTSDIR}/math/guppi
 
