@@ -1,0 +1,5 @@
+lib/canna/dic/canna/dics.dir.gpl_canna
+@exec (%D/etc/rc.d/canna.sh stop ; mv %D/lib/canna/dic/canna/dics.dir %D/lib/canna/dic/canna/dics.dir.orig ; cat %D/lib/canna/dic/canna/dics.dir.orig %D/lib/canna/dic/canna/dics.dir.gpl_canna > %D/lib/canna/dic/canna/dics.dir ; chown bin:bin %D/lib/canna/dic/canna/dics.dir ; chmod 464 %D/lib/canna/dic/canna/dics.dir ; %D/etc/rc.d/canna.sh start)
+@unexec (%D/etc/rc.d/canna.sh stop ; mv %D/lib/canna/dic/canna/dics.dir.orig %D/lib/canna/dic/canna/dics.dir ; %D/etc/rc.d/canna.sh start)
+lib/canna/dic/canna/gcanna.d
+lib/canna/dic/canna/gcanna.fq

@@ -1,0 +1,9 @@
+*** dics.dir.gpl_canna.orig	Sat Oct 21 00:29:47 2000
+--- dics.dir.gpl_canna	Sat Oct 21 00:29:34 2000
+***************
+*** 0 ****
+--- 1,4 ----
++ gcanna.d(gcanna.mwd)     -gcanna---
++ gcanna.fq(gcanna.mwd)    -gcanna---
++ gcannaf.d(gcannaf.swd)   -gcannaf---
++ gcannaf.fq(gcannaf.swd)  -gcannaf---

@@ -1,0 +1,12 @@
+This is a canna dictionary that contains a lot of words.
+The words come from many dictionaries(pubdic, SKK, kakasi...).
+
+After installing, you have to add lines to your .canna.
+(use-dictionary
+	"iroha" ; and more....
+
+	"gcanna"  ; add this!
+	"gcannas" ; add this!
+)
+
+toga@puyo.org

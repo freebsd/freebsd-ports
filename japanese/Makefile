@@ -18,6 +18,7 @@
     SUBDIR += bible_names-fpw
     SUBDIR += binder
     SUBDIR += bookview
+    SUBDIR += cannadic
     SUBDIR += canuum
     SUBDIR += cdrom2
     SUBDIR += chasen

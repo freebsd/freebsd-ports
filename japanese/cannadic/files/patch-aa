@@ -1,0 +1,22 @@
+--- Makefile.orig	Fri Feb 16 03:12:21 2001
++++ Makefile	Sun Apr  8 08:33:24 2001
+@@ -30,7 +30,7 @@
+ MAINDIC         = gcanna.t
+ SUBDIC          = gcannaf.t
+ 
+-all: help
++all: bindic-old-version
+ 
+ help:
+ 	echo "see README."
+@@ -40,10 +40,6 @@
+ 	mkbindic -s ${SUBDIC}
+ 
+ bindic-old-version:
+-	mv ${MAINDIC} ${MAINDIC}.orig
+-	sed -e 's/\#KYme/\#KY/g' ${MAINDIC}.orig |\
+-	  sed -e 's/\#KYmime/\#KY/' |\
+-	  sed -e 's///' > ${MAINDIC}
+ 	mkbindic -m ${MAINDIC}
+ 	mkbindic -s ${SUBDIC}
+ 
