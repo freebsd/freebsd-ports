@@ -7,7 +7,7 @@
 
 CATEGORIES=	japanese
 
-MASTERDIR=	${.CURDIR}/../../editors/xemacs-devel-mule
+MASTERDIR=	${.CURDIR}/../../editors/xemacs21-mule
 COMMENT=	XEmacs(gamma version) text editor, with SJ3, SKK, Canna and FreeWnn support
 
 CANNA=		yes
