@@ -2,4 +2,3 @@ bin/dir
 bin/dircolors
 bin/gnuls
 bin/vdir
-lib/charset.alias
