@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net_Sieve
-PORTVERSION=	1.0.1
+PORTVERSION=	1.1.1
 CATEGORIES=	net www pear
 
 MAINTAINER=	martin@matuska.org
