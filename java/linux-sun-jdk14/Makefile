@@ -7,7 +7,7 @@
 
 PORTNAME=	jdk
 PORTVERSION=	${INSTALL_JDK_VERSION}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	java devel
 MASTER_SITES=	#
 PKGNAMEPREFIX=	linux-sun-
@@ -29,7 +29,7 @@ PLIST_SUB+=	T=${APP_HOME:S/^${PREFIX}\///} PORTVERSION=${PORTVERSION}
 
 NO_BUILD=	yes
 USE_LINUX=	yes
-DL_JDK_VERSION=	1.4.1_02
+DL_JDK_VERSION=	1.4.1_03
 INSTALL_JDK_VERSION=	1.4.1
 ONLY_FOR_ARCHS=	i386
 DOWNLOAD_URL?=	http://java.sun.com/webapps/download/Display?BundleId=7547&Referer=http://java.sun.com/j2se/1.4.1/download.html
@@ -49,7 +49,7 @@ pre-everything::
 do-extract:
 	@${MKDIR} ${WRKDIR}
 	@cd ${WRKDIR} \
-	&& ${TAIL} +430 ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} > ${WRKDIR}/install.sfx \
+	&& ${TAIL} -n 158349 ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} > ${WRKDIR}/install.sfx \
 	&& ${CHMOD} +x ${WRKDIR}/install.sfx \
 	&& ${WRKDIR}/install.sfx > /dev/null
 

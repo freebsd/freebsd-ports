@@ -1,13 +1,3 @@
-%%T%%/jre/LICENSE_de
-%%T%%/jre/LICENSE_en
-%%T%%/jre/LICENSE_es
-%%T%%/jre/LICENSE_fr
-%%T%%/jre/LICENSE_it
-%%T%%/jre/LICENSE_ja
-%%T%%/jre/LICENSE_ko
-%%T%%/jre/LICENSE_sv
-%%T%%/jre/LICENSE_zh_CN
-%%T%%/jre/LICENSE_zh_TW
 %%T%%/jre/bin/java
 %%T%%/jre/bin/keytool
 %%T%%/jre/bin/policytool
@@ -533,7 +523,7 @@
 %%T%%/jre/plugin/i386/ns600/libjavaplugin_oji.so
 %%T%%/jre/plugin/i386/ns610/libjavaplugin_oji.so
 %%T%%/jre/ControlPanel.html
-%%T%%/jre/javaws-1_2_0_02-linux-i586-i.zip
+%%T%%/jre/javaws-1_2_0_03-linux-i586-i.zip
 %%T%%/lib/htmlconverter.jar
 %%T%%/lib/tools.jar
 %%T%%/lib/orb.idl
