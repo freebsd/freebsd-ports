@@ -1,0 +1,29 @@
+*** /dev/null	Tue Aug 23 17:16:08 1994
+--- ./include/setup.h	Tue Aug 23 17:42:49 1994
+***************
+*** 0 ****
+--- 1,24 ----
++ #ifndef __setup_include__
++ #define __setup_include__
++ #define	PARAMH
++ #define	UNISTDH
++ #define	STRINGH
++ #define	STRINGSH
++ #define	STDLIBH
++ #define	STDDEFH
++ #define	SYSSYSLOGH
++ #undef	NOINDEX
++ #undef	NEED_STRERROR
++ #define	NEED_STRTOKEN
++ #undef	NEED_STRTOK
++ #undef	NEED_INET_ADDR
++ #undef	NEED_INET_NTOA
++ #undef	NEED_INET_NETOF
++ #define	GETTIMEOFDAY
++ #undef	LRAND48
++ #define	MALLOCH	<malloc.h>
++ #define	NBLOCK_POSIX
++ #define	BSD_RELIABLE_SIGNALS
++ #undef	TIMES_2
++ #define	GETRUSAGE_2
++ #endif
