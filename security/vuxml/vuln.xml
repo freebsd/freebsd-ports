@@ -32,6 +32,69 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   "http://www.vuxml.org/dtd/vuxml-1/vuxml-10.dtd">
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
 
+  <vuln vid="2c6acefd-8194-11d8-9645-0020ed76ef5a">
+    <topic>setsockopt(2) IPv6 sockets input validation error</topic>
+    <affects>
+      <system>
+	<name>FreeBSD</name>
+	<range><ge>5.2</ge><lt>5.2.1p4</lt></range>
+      </system>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>From the FreeBSD Security Advisory:</p>
+	<blockquote>
+          <p>A programming error in the handling of some IPv6 socket
+            options within the setsockopt(2) system call may result
+            in memory locations being accessed without proper
+            validation.</p>
+          <p>It may be possible for a local attacker to read portions
+            of kernel memory, resulting in disclosure of sensitive
+            information.  A local attacker can cause a system
+            panic.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0370</cvename>
+      <freebsdsa>SA-04:06.ipv6</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2004-03-29</discovery>
+      <entry>2004-03-09</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="3e9be8c4-8192-11d8-9645-0020ed76ef5a">
+    <topic>ecartis buffer overflows and input validation bugs</topic>
+    <affects>
+      <package>
+	<name>ecartis</name>
+	<range><lt>1.0.0.s20030814,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Timo Sirainen reports multiple buffer overflows that may be
+	  triggered while parsing messages, as well as input validation
+	  errors that could result in disclosure of mailing list
+	  passwords.</p>
+	<p>These bugs were resolved in the August 2003 snapshot of
+	  ecartis.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2003-0781</cvename>
+      <cvename>CAN-2003-0782</cvename>
+      <url>http://www.securiteam.com/unixfocus/5YP0H2AAUY.html</url>
+      <!-- <freebsdpr>ports/57082</freebsdpr> -->
+    </references>
+    <dates>
+      <discovery>2003-08-14</discovery>
+      <entry>2004-03-29</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ce46b93a-80f2-11d8-9645-0020ed76ef5a">
     <topic>Buffer overflows and format string bugs in Emil</topic>
     <affects>
@@ -1282,7 +1345,7 @@ misc.c:
       </body>
     </description>
     <references>
-      <freebsdsa>SA-02:05</freebsdsa>
+      <freebsdsa>SA-02:05.pine</freebsdsa>
     </references>
     <dates>
       <discovery>2002-01-04</discovery>
