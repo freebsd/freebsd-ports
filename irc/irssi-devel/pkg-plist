@@ -12,6 +12,10 @@ lib/irssi/plugins/libspeech.a
 lib/irssi/plugins/libspeech.la
 lib/irssi/plugins/libspeech.so
 lib/irssi/plugins/libspeech.so.0
+lib/irssi/plugins/libsound.a
+lib/irssi/plugins/libsound.la
+lib/irssi/plugins/libsound.so
+lib/irssi/plugins/libsound.so.0
 share/examples/irssi/irssi.conf
 @dirrm lib/irssi/plugins
 @dirrm lib/irssi

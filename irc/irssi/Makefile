@@ -1,12 +1,13 @@
 # New ports collection makefile for:	irssi
-# Version required:		0.7.9
+# Version required:		0.7.11
 # Date created:			14 Apr 1999
 # Whom:				Jim Mock <jim@phrantic.phear.net>
 #
-# $Id: Makefile,v 1.2 1999/05/09 14:29:10 flathill Exp $
+# $Id: Makefile,v 1.3 1999/05/29 03:55:52 steve Exp $
 #
 
-DISTNAME=	irssi-0.7.9
+DISTNAME=	irssi-0.7.11-2
+PKGNAME=	irssi-0.7.11
 CATEGORIES=	net
 MASTER_SITES=	http://www.sicom.fi/~ikioma/irssi/
 
@@ -19,12 +20,13 @@ GLIB_CONFIG?=	${LOCALBASE}/bin/glib12-config
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+WRKSRC=		${WRKDIR}/irssi-0.7.11
 USE_PERL5=	yes
 USE_X_PREFIX=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-gnome --without-dock --without-pthreads \
-		--without-socks --with-textui=none
+		--without-socks --without-textui
 CONFIGURE_ENV=	GTK_CONFIG="${GTK_CONFIG}" \
 		GLIB_CONFIG="${GLIB_CONFIG}"
 
