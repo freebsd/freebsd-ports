@@ -7,30 +7,25 @@
 #
 
 PORTNAME=	icb
-PORTVERSION=	5.0.9
+PORTVERSION=	5.1.0
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.swcp.com/pub/icb/clients/unix/  \
-		ftp://ftp.empire.net/pub/icb/clients/  \
-		ftp://ftp.cs.unm.edu/pub/armijo/icb.src/clients/ \
-		ftp://ftp.dorje.com/pub/archive/ \
-		ftp://ftp.tu-clausthal.de/pub/unix.new/net/
-EXTRACT_SUFX=	.tar.Z
+MASTER_SITES=	http://ftp.obfuscation.org/ftp/pub/icb/  \
+		ftp://ftp.obfuscation.org/pub/icb/
+DISTNAME=	cicb-${PORTVERSION}
 
-MAINTAINER=	obrien@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
-do-configure:
-	@cd ${WRKSRC}; \
-	${SED} -e s,@PREFIX@,${PREFIX},g ${FILESDIR}/config >${WRKSRC}/config
+GNU_CONFIGURE=	yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/icb/icb ${PREFIX}/bin
 	${INSTALL} -d -o ${BINOWN} -g ${BINGRP} -m ${BINMODE} \
 		${PREFIX}/share/icb
 	${INSTALL_DATA} ${WRKSRC}/icbserverdb ${PREFIX}/share/icb
-	${INSTALL_DATA} ${WRKSRC}/sample.icbrc \
+	${INSTALL_DATA} ${WRKSRC}/contrib/sample.icbrc \
 		${WRKSRC}/contrib/bartender \
 		${WRKSRC}/contrib/confuse \
-		${WRKSRC}/contrib/echofile \
+		${WRKSRC}/contrib/echofunctions \
 		${PREFIX}/share/icb
 
 .include <bsd.port.mk>
