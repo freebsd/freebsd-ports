@@ -6,14 +6,25 @@
 #
 
 PORTNAME=	libident
-PORTVERSION=	0.22
+PORTVERSION=	0.31
 CATEGORIES=	security
-MASTER_SITES=	http://melkor.dnp.fmph.uniba.sk/~garabik/efingerd/libident/
+MASTER_SITES=	http://rdenisc.free.fr/libident/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A small library to interface the ident protocol server (rfc1413)
 
-ALL_TARGET=	freebsd
+GNU_CONFIGURE=	yes
+INSTALLS_SHLIB=	yes
+USE_LIBTOOL=	yes
+
 MAN3=		ident.3
+
+post-install:
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+.for i in README
+	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+.endfor
+.endif
 
 .include <bsd.port.mk>
