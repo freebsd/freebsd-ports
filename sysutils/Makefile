@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.18 1997/05/03 10:18:11 andreas Exp $
+# $Id: Makefile,v 1.19 1997/05/04 18:12:15 jmz Exp $
 #
 
     SUBDIR += afio
@@ -10,6 +10,7 @@
     SUBDIR += mkisofs
     SUBDIR += pib
     SUBDIR += rtty
+    SUBDIR += skill
     SUBDIR += socket
     SUBDIR += star
     SUBDIR += stat
