@@ -80,4 +80,7 @@ validate:
 tidy:
 	@${SH} ${FILESDIR}/tidy.sh "${FILESDIR}/tidy.xsl" "${VUXML_FILE}"
 
+newentry:
+	@${SH} ${FILESDIR}/newentry.sh "${VUXML_FILE}"
+
 .include <bsd.port.mk>
