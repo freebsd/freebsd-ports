@@ -141,7 +141,6 @@
     SUBDIR += pfe-devel
     SUBDIR += php-mode.el
     SUBDIR += php3
-    SUBDIR += php4
     SUBDIR += php_doc
     SUBDIR += pike70
     SUBDIR += pike72
