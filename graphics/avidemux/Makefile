@@ -15,7 +15,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	amistry@am-productions.biz
 COMMENT=	GUI based AVI (DivX) editor
 
-LIB_DEPENDS=	xvidcore.0:${PORTSDIR}/graphics/xvid \
+LIB_DEPENDS=	xvidcore.0:${PORTSDIR}/multimedia/xvid \
 		mp3lame.0:${PORTSDIR}/audio/lame \
 		mad.1:${PORTSDIR}/audio/mad
 BUILD_DEPENDS=	\
