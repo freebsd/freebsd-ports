@@ -30,9 +30,10 @@ INSTALLS_SHLIB=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
+.if ${OSVERSION} < 500000 || (${OSVERSION} >= 502102 && ARCH=="alpha")
 BROKEN=		"Does not compile"
 .endif
+
 
 .if ${OSVERSION} < 500035
 USE_GCC=	3.1
