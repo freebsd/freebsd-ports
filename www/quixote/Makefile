@@ -8,7 +8,8 @@
 PORTNAME=	quixote
 PORTVERSION=	1.2
 CATEGORIES=	www python
-MASTER_SITES=	http://www.mems-exchange.org/software/files/quixote/
+MASTER_SITES=	http://www.mems-exchange.org/software/files/quixote/ \
+		http://bsdchat.com/dist/dryice/
 DISTNAME=	Quixote-${PORTVERSION}
 
 MAINTAINER=	dryice@liu.com.cn

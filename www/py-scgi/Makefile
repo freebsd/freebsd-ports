@@ -8,7 +8,8 @@
 PORTNAME=	scgi
 PORTVERSION=	1.2
 CATEGORIES=	www
-MASTER_SITES=	http://www.mems-exchange.org/software/files/scgi/
+MASTER_SITES=	http://www.mems-exchange.org/software/files/scgi/ \
+		http://bsdchat.com/dist/dryice/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	scgi-${PORTVERSION:S/.a/a/}
 

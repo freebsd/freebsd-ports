@@ -8,7 +8,8 @@
 PORTNAME=	ipython
 PORTVERSION=	0.6.6
 CATEGORIES=	devel python
-MASTER_SITES=	http://ipython.scipy.org/dist/
+MASTER_SITES=	http://ipython.scipy.org/dist/ \
+		http://bsdchat.com/dist/dryice/
 PKGNAMESUFFIX=	${PYTHON_PKGNAMESUFFIX}
 
 MAINTAINER=	dryice@liu.com.cn

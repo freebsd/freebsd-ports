@@ -10,7 +10,8 @@ PORTVERSION=	20040727
 PORTREVISION=	1
 CATEGORIES=	chinese graphics print
 MASTER_SITES=	ftp://ftp.foolabs.com/pub/xpdf/ \
-		${MASTER_SITE_TEX_CTAN}
+		${MASTER_SITE_TEX_CTAN} \
+		http://bsdchat.com/dist/dryice/
 MASTER_SITE_SUBDIR=	support/xpdf
 DISTFILES=	xpdf-chinese-simplified-2004-jul-27.tar.gz \
 		xpdf-chinese-traditional-2004-jul-27.tar.gz
