@@ -191,6 +191,7 @@
     SUBDIR += mod_auth_mysql_another
     SUBDIR += mod_auth_pam
     SUBDIR += mod_auth_pgsql
+    SUBDIR += mod_auth_pgsql2
     SUBDIR += mod_auth_pwcheck
     SUBDIR += mod_backhand
     SUBDIR += mod_bandwidth

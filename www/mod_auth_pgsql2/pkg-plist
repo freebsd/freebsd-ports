@@ -1,0 +1,5 @@
+libexec/apache2/mod_auth_pgsql.so
+@exec %D/sbin/apxs -e -a -n auth_pgsql %D/%f
+%%PORTDOCS%%%%DOCSDIR%%/mod_auth_pgsql.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@unexec echo "===>  If you do not plan on reinstalling mod_auth_pgsql, you must manually remove"; echo "===>  references to it in httpd.conf."
