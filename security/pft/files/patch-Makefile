@@ -1,0 +1,11 @@
+--- Makefile.orig	Wed Jan 30 14:47:32 2002
++++ Makefile	Thu Aug  5 19:29:52 2004
+@@ -3,7 +3,7 @@
+ #
+ #
+ 
+-CPPFLAGS= -Wall -g -DUNIX -D_DEBUG
++CPPFLAGS= -Wall -g -DUNIX -D_DEBUG ${CXXFLAGS}
+ AR=ar rcs 
+ RM=rm -f 
+ 
