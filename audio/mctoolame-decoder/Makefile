@@ -7,6 +7,7 @@
 
 PORTNAME=	mctoolame
 PORTVERSION=	0.1.a
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -58,8 +59,8 @@ post-configure:
 
 do-install:
 .ifndef(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}/html
-	@${INSTALL_DATA} ${WRKSRC}/html/* ${DOCSDIR}/html
+	@${MKDIR} ${DOCSDIR}${PKGNAMESUFFIX}/html
+	@${INSTALL_DATA} ${WRKSRC}/html/* ${DOCSDIR}${PKGNAMESUFFIX}/html
 .endif
 	@${INSTALL_PROGRAM} ${WRKSRC}/mctoolamed ${PREFIX}/bin
 
