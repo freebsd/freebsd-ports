@@ -1,0 +1,13 @@
+
+$FreeBSD$
+
+--- buildutils/makedepend-sh.orig	Tue Dec 31 02:41:12 2002
++++ buildutils/makedepend-sh	Tue Dec 31 02:45:59 2002
+@@ -576,6 +576,7 @@
+                 eval $CPP $arg_cc $d/$s $errout | \
+                   sed -n -e "s;^\# [0-9][0-9 ]*\"\(.*\)\";$f: \1;p" | \
+                   grep -v "$s\$" | \
++                  grep -v ": <.*>\$" | \
+                   sed -e 's;\([^ :]*: [^ ]*\).*;\1;' \
+                   >> $TMP
+                 ;;
