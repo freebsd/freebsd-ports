@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	sim4
-PORTVERSION=	2000.08.24
+PORTVERSION=	2000.10.19
 CATEGORIES=	biology
 MASTER_SITES=	http://globin.cse.psu.edu/ftp/dist/sim4/
 DISTNAME=	sim4
 
-MAINTAINER=	johann@egenetics.com
+MAINTAINER=	bio@freebsd.net
 
-WRKSRC=		${WRKDIR}/sim4.2000-08-24
+WRKSRC=		${WRKDIR}/sim4.${PORTVERSION:S/./-/g}
 
 ALL_TARGET=	sim4
 
