@@ -21,6 +21,8 @@ LIB_DEPENDS=	crypto.1:${PORTSDIR}/security/openssl
 .include <bsd.port.pre.mk>
 CAT?=		/bin/cat
 DISTFILES!=	${CAT} ${FILESDIR}/distfiles
+IGNOREFILES!=	${CAT} ${FILESDIR}/ignorefiles
+DISTFILES+=	${IGNOREFILES}
 
 CVS_CMD?=	cvs -z3
 CVS_DATE=	Fri Jan  7 01:25:49 JST 2000
