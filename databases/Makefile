@@ -39,6 +39,7 @@
     SUBDIR += libsdb
     SUBDIR += libudbc
     SUBDIR += lsdb
+    SUBDIR += lsdb-emacs20
     SUBDIR += mdbtools
     SUBDIR += metakit
     SUBDIR += mird
