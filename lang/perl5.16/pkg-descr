@@ -5,6 +5,10 @@ and shell.  See the manual page for more hype.  There are also two Nutshell
 Handbooks published by O'Reilly & Assoc.  See pod/perlbook.pod
 for more information.
 
-(I Beleive from recent discussions on the lists that this port will not
+--
+
+I believe from recent discussions on the lists that this port will not
 work on FreeBSD 2.0, nor will it work on earlier snapshots. This (if my
-memory serves me) is due to a bug in the system library (vprintf) - MarkM)
+memory serves me) is due to a bug in the C library (possibly vprintf).
+
+- MarkM
