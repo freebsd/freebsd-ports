@@ -1,0 +1,23 @@
+bin/zhcon
+lib/zhcon/asc16
+lib/zhcon/big516
+lib/zhcon/cjf.mb
+lib/zhcon/cjj.mb
+lib/zhcon/dzm.mb
+lib/zhcon/ed.mb
+lib/zhcon/gb16
+lib/zhcon/gbk16
+lib/zhcon/jis16
+lib/zhcon/jp.mb
+lib/zhcon/kscm16
+lib/zhcon/pt.mb
+lib/zhcon/py.mb
+lib/zhcon/sp.mb
+lib/zhcon/wb.mb
+lib/zhcon/wbew.mb
+lib/zhcon/wbh.mb
+lib/zhcon/winpy.mb
+lib/zhcon/winsp.mb
+lib/zhcon/winzm.mb
+lib/zhcon/zhcon.cfg
+@dirrm lib/zhcon/
