@@ -1,5 +1,5 @@
-*** Configure.orig	Sat Feb 10 04:41:40 1996
---- Configure	Thu Aug  1 02:16:34 1996
+*** Configure.orig	Sat Feb 10 02:41:40 1996
+--- Configure	Mon Jun  9 21:04:51 1997
 ***************
 *** 159,167 ****
 --- 159,170 ----
@@ -17,13 +17,14 @@
   
 ***************
 *** 217,222 ****
---- 220,228 ----
+--- 220,229 ----
   
   cleandir: clean
   	rm -f .depend Makefile config.h
 + 
 + install:
 + 	install -o bin -g bin -s -m 755 $(PROG) $(DESTDIR)
++ 	install -o bin -g bin -s -m 755 sr $(DESTDIR)
   
   ##### DO NOT EDIT OR DELETE THIS LINE, it's needed by make depend #####
   END
