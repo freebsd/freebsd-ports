@@ -16,7 +16,7 @@ MAN8=		checkgroups.8 fetchnews.8 leafnode.8 texpire.8
 PKGINSTALL=	${WRKDIR}/INSTALL
 
 .if defined(NOPORTDOCS)
-PLIST=	${PKGDIR}/PLIST.nodocs
+PLIST=	${PKGDIR}/pkg-plist.nodocs
 .endif
 
 LEAFLIBDIR?=	${PREFIX}/lib/leafnode
