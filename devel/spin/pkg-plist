@@ -45,7 +45,7 @@ bin/spin
 %%PORTDOCS%%%%DOCSDIR%%/Test/snoopy
 %%PORTDOCS%%%%DOCSDIR%%/Test/sort
 %%PORTDOCS%%%%DOCSDIR%%/Test/wordcount
-@dirrm %%PORTDOCS%%%%DOCSDIR%%/Test
-@dirrm %%PORTDOCS%%%%DOCSDIR%%/Examples
-@dirrm %%PORTDOCS%%%%DOCSDIR%%/Doc
-@dirrm %%PORTDOCS%%%%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/Test
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/Examples
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/Doc
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
