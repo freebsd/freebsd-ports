@@ -12,7 +12,7 @@ MASTER_SITE_SUBDIR=	python-ldap
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	python-ldap-${PORTVERSION}
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	ldap.2:${PORTSDIR}/net/openldap2
 
