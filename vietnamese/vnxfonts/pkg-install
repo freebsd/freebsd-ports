@@ -5,4 +5,4 @@ if [ "$2" != "POST-INSTALL" ]; then
 fi
 
 cd ${PKG_PREFIX}/lib/X11/fonts/vietnamese
-mkfontdir >/dev/null 2>&1
+${PKG_PREFIX}/mkfontdir >/dev/null 2>&1
