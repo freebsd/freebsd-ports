@@ -28,7 +28,7 @@ USE_X_PREFIX=	yes
 USE_PERL5=	yes
 USE_GMAKE=	yes
 USE_XPM=	yes
-USE_IMLIB=	yes
+USE_GNOME=	imlib
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-wmakerdir="${X11BASE}/share/WindowMaker"

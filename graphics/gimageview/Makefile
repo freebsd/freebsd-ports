@@ -14,12 +14,10 @@ MASTER_SITE_SUBDIR=	gtkmmviewer
 MAINTAINER=	katsu@iec.hiroshima-u.ac.jp
 COMMENT=	Yet another GTK+ based image viewer
 
-LIB_DEPENDS=	gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf
-
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gtk12
+USE_GNOME=	gdkpixbuf
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
@@ -30,6 +28,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 .if ${HAVE_GNOME:Mimlib}!=""
 USE_GNOME+=	imlib
 PKGNAMESUFFIX=	-imlib
+WITH_IMLIB=	yes
 .endif
 
 post-patch:
@@ -37,7 +36,7 @@ post-patch:
 		${WRKSRC}/configure
 
 post-configure:
-.if !defined(USE_IMLIB)
+.if !defined(WITH_IMLIB)
 	@${FIND} ${WRKSRC} -name 'Makefile' | ${XARGS} ${REINPLACE_CMD} -Ee \
 		's/^(GDK_IMLIB_(CFLAGS|LIBS) =).*$$/$${1}/'
 .endif
