@@ -1,0 +1,11 @@
+--- lib/XRes/Imakefile.orig	Fri Apr  9 12:51:17 2004
++++ lib/XRes/Imakefile	Fri Apr  9 12:53:13 2004
+@@ -7,6 +7,8 @@
+ #define LibName XRes
++#define DoSharedLib  YES
++SOXRESREV = 0.0
+ #define SoRev SOXRESREV
+ #define LibHeaders NO
+ 
+ #include <Threads.tmpl>
+ 

@@ -545,12 +545,16 @@ lib/libX11.a
 lib/libX11.so
 lib/libX11.so.6
 lib/libXRes.a
+lib/libXRes.so
+lib/libXRes.so.0
 %%XTHRSTUB:%%lib/libXThrStub.so
 %%XTHRSTUB:%%lib/libXThrStub.so.6
 lib/libXTrap.a
 lib/libXTrap.so
 lib/libXTrap.so.6
 lib/libXau.a
+lib/libXau.so
+lib/libXau.so.0
 lib/libXaw.a
 lib/libXaw.so
 lib/libXaw.so.6

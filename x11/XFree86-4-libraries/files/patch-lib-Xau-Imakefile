@@ -1,0 +1,11 @@
+--- lib/Xau/Imakefile.orig	Wed Apr 14 19:40:56 2004
++++ lib/Xau/Imakefile	Wed Apr 14 19:42:08 2004
+@@ -11,6 +11,8 @@
+ #define DoDebugLib DebugLibXau
+ #define DoProfileLib ProfileLibXau
+ #define LibName Xau
++#define DoSharedLib YES
++SOXAUTHREV = 0.0
+ #define SoRev SOXAUTHREV
+ #define IncSubdir X11
+ 
