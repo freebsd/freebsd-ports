@@ -6,37 +6,55 @@
 #
 
 PORTNAME=	xxdiff
-PORTVERSION=	2.0.3
-PORTREVISION=	1
+PORTVERSION=	3.0.2
 CATEGORIES=	textproc
-MASTER_SITES=	${MASTER_SITE_LOCAL:S/%SUBDIR%/petef/g} \
-		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-
-.if !defined(NOPORTDOCS)
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} xxdiff-${PORTVERSION}.html
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
-.endif
 
 MAINTAINER=	petef@FreeBSD.org
 COMMENT=	QT interface to view/merge differences between 2 or 3 files
 
 BUILD_DEPENDS=	tmake:${PORTSDIR}/devel/tmake
 
-BROKEN=		"Inconsistent dependencies (qt 2.x and 3.x)"
-
 USE_BISON=	yes
 USE_GMAKE=	yes
-USE_QT_VER=	2
+USE_QT_VER=	3
 TMAKEENV=	TMAKEPATH=${LOCALBASE}/share/tmake/freebsd-g++ QTDIR=${X11BASE}
 MAKE_ENV+=	QTDIR=${X11BASE} PTHREAD_LIBS=${PTHREAD_LIBS}
 WRKSRC=	${WRKDIR}/xxdiff-${PORTVERSION}/src
 
-.include <bsd.port.pre.mk>
+DOCFILES=	xxdiff-cvs-diff.html xxdiff-doc.html \
+		xxdiff-encrypted.html xxdiff-find-grep-sed.html \
+		xxdiff-integration.html xxdiff-match.html \
+		xxdiff-patch-UNFINISHED.html xxdiff-secrets.html \
+		equals.png select.png
 
-.if ${OSVERSION} >= 502000
-BROKEN=		"Does not compile"
-.endif
+SSDIR=		${DOCSDIR}/screenshots
+SSFILES=	allindex.cidx allindex.html dirindex.html sortindex.html \
+		xxdiff-snap-about--thumb.jpg xxdiff-snap-about.desc \
+		xxdiff-snap-about.html xxdiff-snap-about.jpg \
+		xxdiff-snap-dirs2--thumb.jpg xxdiff-snap-dirs2.desc \
+		xxdiff-snap-dirs2.html xxdiff-snap-dirs2.jpg \
+		xxdiff-snap-doc--thumb.jpg xxdiff-snap-doc.desc \
+		xxdiff-snap-doc.html xxdiff-snap-doc.jpg \
+		xxdiff-snap-files2--thumb.jpg xxdiff-snap-files2.desc \
+		xxdiff-snap-files2.html xxdiff-snap-files2.jpg \
+		xxdiff-snap-files3--thumb.jpg xxdiff-snap-files3.desc \
+		xxdiff-snap-files3.html xxdiff-snap-files3.jpg \
+		xxdiff-snap-merged--thumb.jpg xxdiff-snap-merged.desc \
+		xxdiff-snap-merged.html xxdiff-snap-merged.jpg \
+		xxdiff-snap-opt1--thumb.jpg xxdiff-snap-opt1.desc \
+		xxdiff-snap-opt1.html xxdiff-snap-opt1.jpg \
+		xxdiff-snap-opt2--thumb.jpg xxdiff-snap-opt2.desc \
+		xxdiff-snap-opt2.html xxdiff-snap-opt2.jpg \
+		xxdiff-snap-opt3--thumb.jpg xxdiff-snap-opt3.desc \
+		xxdiff-snap-opt3.html xxdiff-snap-opt3.jpg \
+		xxdiff-snap-opt4--thumb.jpg xxdiff-snap-opt4.desc \
+		xxdiff-snap-opt4.html xxdiff-snap-opt4.jpg \
+		xxdiff-snap-opt5--thumb.jpg xxdiff-snap-opt5.desc \
+		xxdiff-snap-opt5.html xxdiff-snap-opt5.jpg
+
+.include <bsd.port.pre.mk>
 
 do-build:
 	(cd ${WRKSRC}; ${SETENV} ${TMAKEENV} tmake -o Makefile xxdiff.pro)
@@ -44,11 +62,11 @@ do-build:
 		${MAKEFILE} ${MAKE_ARGS})
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/xxdiff ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/../bin/xxdiff ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${DISTDIR}/xxdiff-${PORTVERSION}.html \
-		${DOCSDIR}/xxdiff.html
+	@${MKDIR} ${DOCSDIR} ${SSDIR}
+	${INSTALL_DATA} ${DOCFILES:S,^,${WRKSRC}/../doc/,} ${DOCSDIR}
+	${INSTALL_DATA} ${SSFILES:S,^,${WRKSRC}/../doc/screenshots/,} ${SSDIR}
 .endif
 
 .include <bsd.port.post.mk>
