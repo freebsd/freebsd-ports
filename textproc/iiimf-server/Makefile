@@ -31,6 +31,12 @@ LIBTOOLFILES=	${WRKSRC}/aclocal.m4
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" PTHREAD_LIBS="${PTHREAD_LIBS}"
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64"
+BROKEN=		"Does not build on sparc64"
+.endif
+
 post-patch:
 	${REINPLACE_CMD} -e "s,/usr/lib/im,${PREFIX}/lib/im,g" \
 		${WRKSRC}/../acfiles/im_common.m4 \
@@ -42,4 +48,4 @@ pre-configure:
 	cd ${WRKSRC} && ${ACLOCAL} -I ${LOCALBASE}/share/aclocal -I ../acfiles
 	${TOUCH} ${WRKSRC}/config.h.in
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
