@@ -94,6 +94,7 @@
     SUBDIR += diskusage
     SUBDIR += dmidecode
     SUBDIR += doconfig
+    SUBDIR += dolly
     SUBDIR += dt
     SUBDIR += dtc
     SUBDIR += du2ps
