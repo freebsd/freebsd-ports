@@ -1,1 +1,3 @@
 bin/rpc
+%%PORTDOCS%%share/doc/rpc/manual
+%%PORTDOCS%%@dirrm share/doc/rpc
