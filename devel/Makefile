@@ -1087,6 +1087,7 @@
     SUBDIR += py-ro
     SUBDIR += py-roxlib
     SUBDIR += py-simpleparse
+    SUBDIR += py-simpy
     SUBDIR += py-sip
     SUBDIR += py-spark
     SUBDIR += py-statgrab
