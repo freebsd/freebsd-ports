@@ -268,7 +268,7 @@ safe_useradd ()
 	local _user _group _home _shell _gecos
 
 	_user=$1 _group=$2 _gecos=${3:-"& daemon"}
-	_home=${4:-/nonexistent} _shell=${5:-/sbin/nologin}
+	_home=${4:-/nonexistent} _shell=${5:-%%NOLOGIN%%}
 
 	if [ -n "${_group}" ]; then
 		if pw group show ${_group} 2>/dev/null; then
@@ -443,7 +443,7 @@ setup_chroot ()
 {
 	if checkyesno paranoia && checkyesno dhcpd_chroot_enable; then
 		safe_mkdir ${_dhcpd_rootdir} ${_dhcpd_devdir}/_ ${_dhcpd_confdir}
-		safe_rmdir ${_dhcpd_devdir}/_	# /_, so, .../dev is root owned.
+		# XXX /_ hack! so, .../dev is root owned.
 		if checkyesno dhcpd_devfs_enable; then
 			safe_mount ${_dhcpd_devdir}
 		else
@@ -540,7 +540,7 @@ remove_chroot ()
 		safe_remove ${_dhcpd_conffile}
 		if checkyesno dhcpd_devfs_enable; then
 			safe_umount ${_dhcpd_devdir}
-			safe_rmdir ${_dhcpd_devdir}
+			safe_rmdir ${_dhcpd_devdir}/_ # XXX /_ hack!
 		else
 			safe_remove ${_dhcpd_devdir}
 		fi
