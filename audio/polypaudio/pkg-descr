@@ -1,0 +1,21 @@
+Polypaudio is a sound server for UNIX.  It is intended to be an improved
+drop-in replacement for the Enlightenment Sounds Daemon (ESOUND).  In
+addition to the features ESDOUND provides, polypaudio has:
+
+* Extensible plugin architecture (by loading dynamic modules with dlopen())
+* Support for more than one sink/source
+* Better low latency behavior
+* Embedable into other software (the core is available as C library)
+* Completely asynchronous C API
+* Simple command line interface for reconfiguring the daemon while running
+* Flexible, implicit sample type conversion and resampling
+* "Zero-Copy" architecture
+* Module autoloading
+* Very accurate latency measurement for playback and recording
+* May be used to combine multiple sound cards to one (with sample rate
+  adjustment)
+* Client side latency interpolation
+
+-- Polypaudio homepage
+
+WWW: http://0pointer.de/lennart/projects/polypaudio/
