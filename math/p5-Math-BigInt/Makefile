@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Math-BigInt
-PORTVERSION=	1.66
+PORTVERSION=	1.69
 CATEGORIES=	math perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Math
@@ -20,6 +20,7 @@ CONFIGURE_ARGS=	INSTALLDIRS='site'
 
 MAN3=		Math::BigFloat.3 \
 		Math::BigInt.3 \
-		Math::BigInt::Calc.3
+		Math::BigInt::Calc.3 \
+		Math::BigInt::CalcEmu.3
 
 .include <bsd.port.mk>
