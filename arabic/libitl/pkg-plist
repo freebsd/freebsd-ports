@@ -1,0 +1,8 @@
+lib/itl/libitl.0.6.3.so.0
+lib/itl/libitl.so.0
+lib/itl/libitl.so
+lib/itl/libitl.a
+include/itl/prayer.h
+include/itl/hijri.h
+@dirrm lib/itl
+@dirrm include/itl

@@ -1,0 +1,41 @@
+--- Makefile.orig	Wed Dec 29 00:26:47 2004
++++ Makefile	Sat Jan 15 09:46:50 2005
+@@ -9,7 +9,7 @@
+ 
+ COMPONENTS = hijri prayertime
+ 
+-all: configure build/config.mk build/libitl.so
++all: configure build/config.mk build/libitl.so build/static/libitl.a
+ 
+ static: configure build/config.mk build/static/libitl.a
+ 
+@@ -40,8 +40,8 @@
+ 	|| mkdir -p $(PREFIX)/lib \
+ 	|| exit 1;
+ 	cp build/libitl.$(VERSION).so.$(SONAME) $(PREFIX)/lib
+-	cp -d build/libitl.so.$(SONAME) $(PREFIX)/lib
+-	cp -d build/libitl.so $(PREFIX)/lib
++	cp -R build/libitl.so.$(SONAME) $(PREFIX)/lib
++	cp -R build/libitl.so $(PREFIX)/lib
+ 	@echo "==> Installing ITL components..."
+ 	for i in $(COMPONENTS); do \
+ 	  $(MAKE) -C $$i install || exit 1; \
+@@ -52,14 +52,15 @@
+ 	$(AR) rcs build/libitl.a build/*.o
+ 	rm -f build/*.o build/ITL_*
+ 
+-install: build/libitl.so
++install: build/libitl.so build/static/libitl.a
+ 	@echo "==> Installing libitl library..."
+ 	test -d $(PREFIX)/lib/itl \
+ 	|| mkdir -p $(PREFIX)/lib/itl \
+ 	|| exit 1;
+ 	cp build/libitl.$(VERSION).so.$(SONAME) $(PREFIX)/lib/itl
+-	cp -d build/libitl.so.$(SONAME) $(PREFIX)/lib/itl
+-	cp -d build/libitl.so $(PREFIX)/lib/itl
++	cp -R build/libitl.so.$(SONAME) $(PREFIX)/lib/itl
++	cp -R build/libitl.so $(PREFIX)/lib/itl
++	cp -R build/libitl.a $(PREFIX)/lib/itl
+ 	@echo "==> Installing ITL components..."
+ 	for i in $(COMPONENTS); do \
+ 	  $(MAKE) -C $$i install || exit 1; \
