@@ -3332,6 +3332,7 @@ kde3-i18n-fi	ports/misc/kde3-i18n-fi
 kde3-i18n-hr	ports/misc/kde3-i18n-hr
 kde3-i18n-id	ports/misc/kde3-i18n-id
 kde3-i18n-is	ports/misc/kde3-i18n-is
+kde3-i18n-is	ports/misc/kde3-i18n-is
 kde3-i18n-it	ports/misc/kde3-i18n-it
 kde3-i18n-lt	ports/misc/kde3-i18n-lt
 kde3-i18n-lv	ports/misc/kde3-i18n-lv
@@ -3351,6 +3352,7 @@ kde3-i18n-ta	ports/misc/kde3-i18n-ta
 kde3-i18n-th	ports/misc/kde3-i18n-th
 kde3-i18n-tr	ports/misc/kde3-i18n-tr
 kde3-i18n-ven	ports/misc/kde3-i18n-ven
+kde3-i18n-vi	ports/misc/kde3-i18n-vi
 kde3-i18n-xh	ports/misc/kde3-i18n-xh
 kde3-i18n-zu	ports/misc/kde3-i18n-zu
 kdeaddons3	ports/misc/kdeaddons3
