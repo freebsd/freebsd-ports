@@ -11,7 +11,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER?=	marcus@FreeBSD.org
-COMMENT=	Gtk+-2.0 open-source 'clone' of AOL's Instant Messenger client
+COMMENT=	Multi-protocol instant messaging client
 
 LIB_DEPENDS=	startup-notification-1.0:${PORTSDIR}/x11/startup-notification
 

@@ -1,11 +1,21 @@
-GAIM is an Open Source 'clone' of America OnLine's Instant Messenger
-client using the GTK+-2.0 toolkit. It features most of the functionality
-of the official AIM client while being much smaller and faster.  It
-features multiple groups, group chat, user information fetching and
-registration, time stamping, sound (for when you really do want to be
-interrupted), multiple away messages, and more.
+Gaim is a multi-protocol instant messaging client. It is compatible with AIM
+(Oscar and TOC protocols), ICQ, MSN Messenger, Yahoo, IRC, Jabber, Gadu-Gadu,
+and Zephyr networks.
 
-GAIM also has support for other IM protocols such as Yahoo!, MSN, ICQ,
-Jabber, Napster, IRC, and Zephyr via included plugins.
+Gaim users can log in to multiple accounts on multiple IM networks
+simultaneously. This means that you can be chatting with friends on AOL
+Instant Messenger, talking to a friend on Yahoo Messenger, and sitting in an
+IRC channel all at the same time.
+
+Gaim supports many features of the various networks, such as file transfer
+(coming soon), away messages, typing notification, and MSN window closing
+notification. It also goes beyond that and provides many unique features. A
+few popular features are Buddy Pounces, which give the ability to notify you,
+send a message, play a sound, or run a program when a specific buddy goes away,
+signs online, or returns from idle; and plugins, consisting of text
+replacement, a buddy ticker, extended message notification, iconify on away,
+and more.
+
+(Adapted from the About Gaim page.)
 
 WWW: http://gaim.sourceforge.net/
