@@ -1,5 +1,5 @@
---- Docs/sample/gnokiirc.orig	Tue May 20 20:31:08 2003
-+++ Docs/sample/gnokiirc	Tue May 20 20:32:23 2003
+--- Docs/sample/gnokiirc.orig	Thu Jan  8 15:16:55 2004
++++ Docs/sample/gnokiirc	Thu Jan  8 15:17:40 2004
 @@ -6,7 +6,7 @@
  
  # Set port to the physical serial port used to connect to your phone.
