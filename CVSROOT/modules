@@ -4034,6 +4034,7 @@ msun		src/lib/msun
 msyslog		ports/sysutils/msyslog
 mt		src/usr.bin/mt
 mtest		src/usr.sbin/mtest
+mtl		ports/math/mtl
 mtools		ports/emulators/mtools
 mtoolsfm	ports/x11-fm/mtoolsfm
 mtr		ports/net/mtr
