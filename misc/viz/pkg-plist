@@ -1,0 +1,4 @@
+bin/viz
+bin/inviz
+man/man1/viz.1.gz
+man/man1/inviz.1.gz

@@ -1,0 +1,13 @@
+Copyright (c) 1989-1994 by William Deich.
+
+Viz copies its input to its output, converting invisible characters
+to a visible form.  If the -t option is used, the output is formatted
+in a form that can be completely inverted by inviz, which allows
+a binary file to be converted to a text form and then back.  It is
+much more flexible than either cat -v or od (either old or POSIX
+od), and it is also 2-4 times faster.
+
+--
+Port to FreeBSD 2.2 by
+Brent J. Nordquist <bjn@visi.com>
+8 Mar 1997
