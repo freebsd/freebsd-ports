@@ -1,0 +1,36 @@
+bin/tecoc
+%%DATADIR%%/upcase.tec
+%%DATADIR%%/change.tes
+%%DATADIR%%/date.tes
+%%DATADIR%%/detab.tes
+%%DATADIR%%/dir.tes
+%%DATADIR%%/makprnt.tes
+%%DATADIR%%/squ.tes
+%%DATADIR%%/unsqu.tes
+%%DATADIR%%/change.tec
+%%DATADIR%%/checkqr.tec
+%%DATADIR%%/date.tec
+%%DATADIR%%/detab.tec
+%%DATADIR%%/dir.tec
+%%DATADIR%%/lowcase.tec
+%%DATADIR%%/makprnt.tec
+%%DATADIR%%/squ.tec
+%%DATADIR%%/sub.tec
+%%DATADIR%%/tstbsl.tec
+%%DATADIR%%/tstcss.tec
+%%DATADIR%%/tstequ.tec
+%%DATADIR%%/tsto.tec
+%%DATADIR%%/tstqr.tec
+%%DATADIR%%/tstsrc.tec
+%%DATADIR%%/tst.tec
+%%DATADIR%%/unsqu.tec
+%%PORTDOCS%%%%DOCSDIR%%/readme.1st
+%%PORTDOCS%%%%DOCSDIR%%/readme.lnx
+%%PORTDOCS%%%%DOCSDIR%%/changes.txt
+%%PORTDOCS%%%%DOCSDIR%%/aaout.txt
+%%PORTDOCS%%%%DOCSDIR%%/problems.txt
+%%PORTDOCS%%%%DOCSDIR%%/video.txt
+%%PORTDOCS%%%%DOCSDIR%%/teco.doc
+%%PORTDOCS%%%%DOCSDIR%%/wchart.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DATADIR%%
