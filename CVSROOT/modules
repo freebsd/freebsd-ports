@@ -4547,6 +4547,7 @@ mlvwm		ports/x11-wm/mlvwm
 mlx		src/sys/dev/mlx
 mlxcontrol	src/usr.sbin/mlxcontrol
 mm		ports/devel/mm
+mmail		ports/news/mmail
 mmake		ports/java/mmake
 mmc		ports/mail/mmc
 mmencode	ports/converters/mmencode
