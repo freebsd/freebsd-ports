@@ -1,27 +1,33 @@
---- configure.orig	Sun Sep 14 11:10:24 2003
-+++ configure	Sun Sep 14 11:16:41 2003
-@@ -33,7 +33,9 @@
+--- configure.orig	Fri Jan  7 14:37:18 2005
++++ configure	Sun Feb 13 14:34:25 2005
+@@ -33,7 +33,7 @@
  echo
  
  echo "Checking for openssl ..."
 -for i in  $LIBDIRS /lib  /usr/lib /usr/local/lib /opt/local/lib \
-+# FreeBSD: Try port version of openssl first. LIBDIRS is irrelevant for us
-+# Since we don't have /etc/ld.so.conf
 +for i in ${PREFIX}/lib $LIBDIRS /lib  /usr/lib /usr/local/lib /opt/local/lib \
  /*ssl /usr/*ssl /opt/*ssl /usr/local/*ssl /opt/local/*ssl \
- /*ssl/lib /usr/*ssl/lib /opt/*ssl/lib /usr/local/*ssl/lib /opt/local/*ssl/lib
+ /*ssl/lib /usr/*ssl/lib /opt/*ssl/lib /usr/local/*ssl/lib /opt/local/*ssl/lib .
  do
-@@ -61,7 +63,8 @@
+@@ -61,7 +61,7 @@
      fi
  done
  
 -for i in /usr/local/include /*ssl/include /usr/include \
-+# FreeBSD: Change to prefer installed port over base-system openssl.
 +for i in ${PREFIX}/include /usr/local/include /*ssl/include /usr/include \
- /opt/*ssl/include /usr/*ssl/include /usr/local/*ssl/include
+ /opt/*ssl/include /usr/*ssl/include /usr/local/*ssl/include .
  do
      if [ "X" = "X$SSL_IPATH" ]; then
-@@ -152,7 +155,7 @@
+@@ -127,7 +127,7 @@
+ XLIBPATHS=""
+ XIPATHS=""
+ 
+-SYS=`uname -o`
++SYS=`uname -o 2>/dev/null`
+ if [ "$SYS" = "Cygwin" ]; then
+     echo "Cygwin detected, enabling compability options ..."
+     XDEFINES="-DCYGWIN"
+@@ -159,7 +159,7 @@
      XLIBS="$XLIBS -lresolv"
  fi
  
