@@ -166,6 +166,7 @@ include/gsl/gsl_sort_vector_uint.h
 include/gsl/gsl_sort_vector_ulong.h
 include/gsl/gsl_sort_vector_ushort.h
 include/gsl/gsl_specfunc.h
+include/gsl/gsl_spline.h
 include/gsl/gsl_statistics.h
 include/gsl/gsl_statistics_char.h
 include/gsl/gsl_statistics_double.h
