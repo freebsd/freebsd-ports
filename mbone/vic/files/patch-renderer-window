@@ -1,0 +1,14 @@
+--- render/renderer-window.h	Thu Sep  9 08:38:16 1999
++++ render/renderer-window.h	Thu Sep 23 21:43:13 2004
+@@ -54,10 +54,10 @@
+ 		  int minx, int maxx) const;
+ 	void sync() const;
+ 	void resize(int w, int h);
+-    protected:
+ 	/*XXX*/
+ 	void dither_null(const u_char* frm, u_int off, u_int x,
+ 			 u_int width, u_int height) const;
++    protected:
+ 	virtual void setcolor(int c);
+ 	void compute_scale(int w, int h);
+ 	virtual void alloc_image() = 0;

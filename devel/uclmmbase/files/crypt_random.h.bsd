@@ -1,0 +1,4 @@
+#include <stdlib.h>
+
+#define lbl_random	random
+#define	lbl_srandom	srandom

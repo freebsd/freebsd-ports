@@ -1,0 +1,30 @@
+CFLAGS+= -I${OPENSSLINC}
+LDADD  = -L${OPENSSLLIB} -lssl -lcrypto
+VERSION!=cat ${.CURDIR:H}/VERSION
+LIB    = uclmmbase
+NOPROFILE=	yes
+SHLIB_MAJOR=	${VERSION:R:S/.//g}
+SHLIB_MINOR=	${VERSION:E}
+LIBDIR=	${PREFIX}/lib
+INCLUDEDIR=	${PREFIX}/include/${LIB}
+
+SRCS =	base64.c debug.c memory.c net_udp.c qfDES.c util.c \
+	rijndael-api-fst.c rijndael-alg-fst.c \
+	ntp.c rtp.c mbus_parser.c mbus_config.c mbus_addr.c \
+	mbus.c asarray.c sdp.c sap.c qfDES.c
+
+INCS=	base64.h config_win32.h config_unix.h crypt_random.h \
+	debug.h hmac.h mbus.h mbus_parser.h md5.h memory.h \
+	net_udp.h qfDES.h rtp.h uclconf.h util.h version.h
+
+all: version.h lib${LIB}.a ${SHLIB_NAME}
+
+version.h: ${.CURDIR:H}/VERSION
+	echo '#define CCL_VERSION "v${VERSION}"' > $@
+
+${INCLUDEDIR} ${LIBDIR}:
+	mkdir -p $@
+
+beforeinstall: ${INCLUDEDIR} ${LIBDIR}
+
+.include <bsd.lib.mk>

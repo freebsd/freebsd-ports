@@ -1,0 +1,25 @@
+--- config.h	Thu Apr 10 13:57:28 2003
++++ config.h	Thu Sep 23 18:37:11 2004
+@@ -38,11 +38,6 @@
+ 
+ #if defined(sgi) || defined(__bsdi__) || defined(__FreeBSD__) 
+ #include <sys/types.h>
+-#ifndef uint16_t
+-typedef unsigned char  uint8_t;
+-typedef unsigned short uint16_t;
+-typedef unsigned int   uint32_t;
+-#endif
+ #elif defined(sun)
+ 
+ #include <sys/types.h>
+@@ -91,10 +86,6 @@
+ #include "debug.h"
+ #include <stdlib.h>
+ #include <time.h>		/* For clock_t */
+-
+-#ifdef HAVE_MALLOC_H
+-#include <malloc.h>
+-#endif /* HAVE_MALLOC_H */
+ 
+ #if defined(NEED_SUNOS_PROTOS)
+ #if defined(__cplusplus)

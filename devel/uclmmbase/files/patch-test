@@ -1,0 +1,9 @@
+--- tests/Makefile.in	Fri Mar  9 11:39:57 2001
++++ tests/Makefile.in	Thu Sep 23 16:40:19 2004
+@@ -10,5 +10,5 @@
+ DEFS   = @DEFS@
+ CFLAGS = -I$(COMMONSRC) @CFLAGS@ $(DEFS) 
+-LIBS   = -L../src @LIBS@ 
++LIBS   = -L../src @LIBS@ -L${OPENSSLLIB}/lib -lssl -lcrypto
+ CC     = @CC@
+ 
