@@ -460,6 +460,7 @@
     SUBDIR += ruby-sablot
     SUBDIR += ruby-sary
     SUBDIR += ruby-spreadsheet-excel
+    SUBDIR += ruby-tempura
     SUBDIR += ruby-text-format
     SUBDIR += ruby-wordnet
     SUBDIR += ruby-xmlconfigfile
