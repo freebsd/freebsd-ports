@@ -1,0 +1,16 @@
+yapsnmp is a Python SNMP module based on the net-snmp library. It's composed
+of a low level interface to the library, created using SWIG, and a higher
+level python module removing all the complexity out of dealing with SNMP.
+
+* Full MIB parsing, enabling you to use named OIDs as well as the numeric
+  representations;
+* Support for SNMP version 1 and 2c (with 3 coming);
+* Supports GET, GETNEXT, GETBULK, SET and TRAPv2 (INFORM to come), as well
+  as convenient "walk" and "table extraction" functions;
+* Uses the Single Session API and appropriate Python interpreter releases,
+  rendering the module thread safe;
+* Offers a very high level interface, allowing easy SNMP integration into
+  your code.
+
+WWW:	http://yapsnmp.sourceforge.net/
+Author:	Yves Perrenoud

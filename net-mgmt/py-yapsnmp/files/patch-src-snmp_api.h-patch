@@ -1,0 +1,247 @@
+--- src/snmp_api.h-patch.orig	Fri Jan  7 17:10:27 2005
++++ src/snmp_api.h-patch	Fri Jan  7 17:10:56 2005
+@@ -1,147 +1,100 @@
+-*** /usr/include/net-snmp/library/snmp_api.h	2003-11-11 08:37:07.000000000 -0800
+---- snmp_api.h	2004-03-07 15:02:18.000000000 -0800
+-***************
+-*** 82,91 ****
+-  
+-      /*
+-       * The actual transport domain.  This SHOULD NOT BE FREE()D.  
+--      */
+-  
+-      const oid      *tDomain;
+-      size_t          tDomainLen;
+-  
+-      netsnmp_variable_list *variables;
+-  
+---- 82,91 ----
+-  
+-      /*
+-       * The actual transport domain.  This SHOULD NOT BE FREE()D.  
+-  
+-      const oid      *tDomain;
+-      size_t          tDomainLen;
+-+      */
+-  
+-      netsnmp_variable_list *variables;
+-  
+-***************
+-*** 152,158 ****
+-      /*
+-       * Authentication function or NULL if null authentication is used 
+-       */
+-!     u_char         *(*authenticator) (u_char *, size_t *, u_char *, size_t);
+-      netsnmp_callback callback;      /* Function to interpret incoming data */
+-      /*
+-       * Pointer to data that the callback function may consider important 
+---- 152,158 ----
+-      /*
+-       * Authentication function or NULL if null authentication is used 
+-       */
+-!     /*    u_char         *(*authenticator) (u_char *, size_t *, u_char *, size_t);*/
+-      netsnmp_callback callback;      /* Function to interpret incoming data */
+-      /*
+-       * Pointer to data that the callback function may consider important 
+-***************
+-*** 384,391 ****
+---- 384,393 ----
+-  
+-  #define SNMPERR_MAX			(-63)
+-  
+-+ /*
+-  #define non_repeaters	errstat
+-  #define max_repetitions errindex
+-+ */
+-  
+-  struct variable_list {
+-      struct variable_list *next_variable;    /* NULL for last variable */
+-***************
+-*** 410,416 ****
+-      oid             name_loc[MAX_OID_LEN];  /* 90 percentile < 24. */
+-      u_char          buf[40];        /* 90 percentile < 40. */
+-      void           *data;   /* (Opaque) hook for additional data */
+-!     void            (*dataFreeHook)(void *);       /* callback to free above */
+-      int             index;
+-  };
+-  
+---- 412,418 ----
+-      oid             name_loc[MAX_OID_LEN];  /* 90 percentile < 24. */
+-      u_char          buf[40];        /* 90 percentile < 40. */
+-      void           *data;   /* (Opaque) hook for additional data */
+-!     /*    void            (*dataFreeHook)(void *); */      /* callback to free above */
+-      int             index;
+-  };
+-  
+-***************
+-*** 601,608 ****
+-                                           size_t);
+-      int             netsnmp_oid_equals(const oid *, size_t, const oid *,
+-                                         size_t);
+-!     int             netsnmp_oid_tree_equals(const oid *, size_t, const oid *,
+-!                                             size_t);
+-      int             netsnmp_oid_is_subtree(const oid *, size_t, const oid *,
+-                                             size_t);
+-      int             netsnmp_oid_find_prefix(const oid * in_name1, size_t len1,
+---- 603,610 ----
+-                                           size_t);
+-      int             netsnmp_oid_equals(const oid *, size_t, const oid *,
+-                                         size_t);
+-! /*    int             netsnmp_oid_tree_equals(const oid *, size_t, const oid *,
+-!                                             size_t);*/
+-      int             netsnmp_oid_is_subtree(const oid *, size_t, const oid *,
+-                                             size_t);
+-      int             netsnmp_oid_find_prefix(const oid * in_name1, size_t len1,
+-***************
+-*** 619,629 ****
+---- 621,633 ----
++--- snmp_api.h.orig	Fri Jan  7 17:06:46 2005
+++++ snmp_api.h	Fri Jan  7 17:10:01 2005
++@@ -112,10 +112,10 @@
++ 
++     /**
++      * The actual transport domain.  This SHOULD NOT BE FREE()D.  
++-     */
++ 
++     const oid      *tDomain;
++     size_t          tDomainLen;
+++     */
++ 
++     netsnmp_variable_list *variables;
++ 
++@@ -209,7 +209,7 @@
++     /**
++      * Authentication function or NULL if null authentication is used 
++      */
++-    u_char         *(*authenticator) (u_char *, size_t *, u_char *, size_t);
+++    /* u_char         *(*authenticator) (u_char *, size_t *, u_char *, size_t); */
++     /** Function to interpret incoming data */
++     netsnmp_callback callback;      
++     /**
++@@ -487,8 +487,10 @@
++ 
++ #define SNMPERR_MAX			(-63)
++ 
+++/*
++ #define non_repeaters	errstat
++ #define max_repetitions errindex
+++*/
++ 
++ typedef union {
++    long           *integer;
++@@ -530,7 +532,7 @@
++    /** (Opaque) hook for additional data */
++    void           *data;
++    /** callback to free above */
++-   void            (*dataFreeHook)(void *);    
+++   /* void            (*dataFreeHook)(void *); */
++    int             index;
++ };
++ 
++@@ -721,8 +723,8 @@
++                                          size_t);
++     int             netsnmp_oid_equals(const oid *, size_t, const oid *,
++                                        size_t);
++-    int             netsnmp_oid_tree_equals(const oid *, size_t, const oid *,
++-                                            size_t);
+++/*    int             netsnmp_oid_tree_equals(const oid *, size_t, const oid *,
+++                                            size_t);*/
++     int             netsnmp_oid_is_subtree(const oid *, size_t, const oid *,
++                                            size_t);
++     int             netsnmp_oid_find_prefix(const oid * in_name1, size_t len1,
++@@ -739,11 +741,13 @@
++                                         size_t * out_length,
++                                         u_char * pdu_data,
++                                         size_t pdu_data_len);
+++/*
++     int             snmpv3_packet_rbuild(netsnmp_session *,
++                                          netsnmp_pdu *pdu, u_char * packet,
+                                           size_t * out_length,
+                                           u_char * pdu_data,
+                                           size_t pdu_data_len);
+-+ /*
+-      int             snmpv3_packet_rbuild(netsnmp_session *,
+-                                           netsnmp_pdu *pdu, u_char * packet,
+-                                           size_t * out_length,
+-                                           u_char * pdu_data,
+-                                           size_t pdu_data_len);
+-+ */
+-      int             snmpv3_make_report(netsnmp_pdu *pdu, int error);
+-      int             snmpv3_get_report_type(netsnmp_pdu *pdu);
+-      int             snmp_pdu_parse(netsnmp_pdu *pdu, u_char * data,
+-***************
+-*** 672,677 ****
+---- 676,682 ----
+-       * Extended open; fpre_parse has changed.  
+-       */
+-  
+-+     /*
+-      netsnmp_session *snmp_open_ex(netsnmp_session *,
+-                                    int (*fpre_parse) (netsnmp_session *,
+-                                                       struct
+-***************
+-*** 689,694 ****
+---- 694,700 ----
+-                                                    netsnmp_pdu *, u_char **,
+-                                                    size_t *, size_t *),
+-                                    int (*fcheck) (u_char *, size_t));
+-+     */
+-  
+-      /*
+-       * provided for backwards compatability.  Don't use these functions.
+-***************
+-*** 770,775 ****
+---- 776,782 ----
+-       * 
+-       */
+-  
+-+     /*
+-      void           *snmp_sess_add_ex(netsnmp_session *,
+-                                       struct netsnmp_transport_s *,
+-                                       int (*fpre_parse) (netsnmp_session *,
+-***************
+-*** 836,841 ****
+---- 843,849 ----
+-                                                                  *, void *,
+-                                                                  size_t)
+-          );
+-+     */
+-  
+-      /*
+-       * use return value from snmp_sess_open as void * parameter 
+++*/
++     int             snmpv3_make_report(netsnmp_pdu *pdu, int error);
++     int             snmpv3_get_report_type(netsnmp_pdu *pdu);
++     int             snmp_pdu_parse(netsnmp_pdu *pdu, u_char * data,
++@@ -793,6 +797,7 @@
++      * Extended open; fpre_parse has changed.  
++      */
++ 
+++    /*
++     netsnmp_session *snmp_open_ex(netsnmp_session *,
++                                   int (*fpre_parse) (netsnmp_session *,
++                                                      struct
++@@ -810,6 +815,7 @@
++                                                   netsnmp_pdu *, u_char **,
++                                                   size_t *, size_t *),
++                                   int (*fcheck) (u_char *, size_t));
+++    */
++ 
++     /*
++      * provided for backwards compatability.  Don't use these functions.
++@@ -891,6 +897,7 @@
++      * 
++      */
++ 
+++    /*
++     void           *snmp_sess_add_ex(netsnmp_session *,
++                                      struct netsnmp_transport_s *,
++                                      int (*fpre_parse) (netsnmp_session *,
++@@ -957,6 +964,7 @@
++                                                                 *, void *,
++                                                                 size_t)
++         );
+++    */
++ 
++     /*
++      * use return value from snmp_sess_open as void * parameter 

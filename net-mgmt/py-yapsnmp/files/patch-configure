@@ -1,0 +1,11 @@
+--- configure.orig	Fri Jan  7 17:13:40 2005
++++ configure	Fri Jan  7 17:13:59 2005
+@@ -9291,7 +9291,7 @@
+ done
+ 
+ 
+-for PYTHONINCPATH in python2.3 python2.2 python2.1 python2.0 python1.6 python1.5
++for PYTHONINCPATH in python2.4 python2.3 python2.2 python2.1 python2.0 python1.6 python1.5
+ do
+  as_ac_Header=`echo "ac_cv_header_$PYTHONINCPATH/Python.h" | $as_tr_sh`
+ if eval "test \"\${$as_ac_Header+set}\" = set"; then
