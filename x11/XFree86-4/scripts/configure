@@ -43,7 +43,7 @@ echo "#define ProjectRoot ${PREFIX}" >>$F
 
 cat >> $F <<END
 #ifdef i386Architecture
-#define XF86CardDrivers         mga glint nv tga s3virge sis rendition \
+#define XF86CardDrivers         mga glint nv tga s3 s3virge sis rendition \
                                 neomagic i740 tdfx savage \
                                 cirrus vmware tseng trident chips apm \
                                 GlideDriver fbdev i128 \
@@ -51,7 +51,7 @@ cat >> $F <<END
                                 siliconmotion \
                                 vesa vga XF86OSCardDrivers XF86ExtraCardDrivers
 #else
-#define XF86CardDrivers         mga glint nv tga s3virge sis rendition \
+#define XF86CardDrivers         mga glint nv tga s3 s3virge sis rendition \
                                 neomagic i740 tdfx savage \
                                 cirrus tseng trident chips apm \
                                 GlideDriver fbdev i128 \

@@ -7080,6 +7080,7 @@ lib/modules/drivers/nv_drv.o
 lib/modules/drivers/r128_drv.o
 lib/modules/drivers/radeon_drv.o
 lib/modules/drivers/rendition_drv.o
+lib/modules/drivers/s3_drv.o
 lib/modules/drivers/s3virge_drv.o
 lib/modules/drivers/savage_drv.o
 lib/modules/drivers/siliconmotion_drv.o
