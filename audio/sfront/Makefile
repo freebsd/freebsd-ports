@@ -7,14 +7,12 @@
 #
 
 PORTNAME=	sfront
-PORTVERSION=	0.8.0
+PORTVERSION=	0.8.1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.cs.berkeley.edu/~lazzaro/sa/
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
-
-BROKEN=		"checksum mismatch"
 
 USE_BISON=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}/src
