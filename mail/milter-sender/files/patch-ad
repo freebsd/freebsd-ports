@@ -1,11 +1,11 @@
---- ../lib/configure.orig	Wed Nov  5 23:55:38 2003
-+++ ../lib/configure	Sat Nov 15 05:25:33 2003
-@@ -1508,7 +1508,7 @@
+--- ../lib/configure.orig	Sun Mar 28 11:13:05 2004
++++ ../lib/configure	Thu Jun  3 17:25:12 2004
+@@ -1581,7 +1581,7 @@
  		COMPILE='$(CC) $(CFLAGS) $(CC_O)$*$O -c $<'
- 
+ 	elif test "$OS" = 'FreeBSD'; then
  		# Assume GCC.
--		CFLAGS="$CFLAGS -pthread -Wall"
-+		CFLAGS="$CFLAGS -Wall"
- 	elif test "$OS" = 'SunOS'; then
- 		# This used to be -I{}, but I've seen two different SunOS 5.8
- 		# systems in two different parts of the world with man pages
+-		CFLAGS="${CFLAGS} -pthread -Wall"
++		CFLAGS="${CFLAGS} -Wall"
+ 
+ 		XARGSI='xargs -J{}'
+ 		ARCHIVE='ar rc $(LIB) {}'
