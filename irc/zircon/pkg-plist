@@ -30,6 +30,7 @@ lib/zircon/help/Zircon/Windows/Info
 lib/zircon/help/Zircon/Windows/Message
 lib/zircon/installed
 lib/zircon/lang/bulgar.tcl
+lib/zircon/lang/catala.tcl
 lib/zircon/lang/deutsch.tcl
 lib/zircon/lang/english.tcl
 lib/zircon/lang/espanol.tcl
@@ -48,12 +49,14 @@ lib/zircon/lib/Classes.tcl
 lib/zircon/lib/Control.tcl
 lib/zircon/lib/DALnet.tcl
 lib/zircon/lib/Entry.tcl
+lib/zircon/lib/Friend.tcl
 lib/zircon/lib/Friends.tcl
 lib/zircon/lib/Help.tcl
 lib/zircon/lib/IRC.tcl
 lib/zircon/lib/Ignore.tcl
 lib/zircon/lib/Info.tcl
 lib/zircon/lib/Interface.tcl
+lib/zircon/lib/List.tcl
 lib/zircon/lib/Log.tcl
 lib/zircon/lib/Look.tcl
 lib/zircon/lib/Mac.tcl
@@ -74,6 +77,7 @@ lib/zircon/lib/Undernet.tcl
 lib/zircon/lib/Unix.tcl
 lib/zircon/lib/User.tcl
 lib/zircon/lib/Util.tcl
+lib/zircon/lib/WBoard.tcl
 lib/zircon/lib/Window.tcl
 lib/zircon/lib/Windows.tcl
 lib/zircon/lib/bindings.tcl
@@ -101,30 +105,20 @@ lib/zircon/lib/tcl80.tcl
 lib/zircon/lib/tcl81.tcl
 lib/zircon/lib/upgrade.tcl
 lib/zircon/lib/userCmds.tcl
-lib/zircon/lib/zdraw.tcl
 lib/zircon/lib/zircon.tcl
 lib/zircon/look/standard.tcl
 lib/zircon/plugins/Dcc/auto.tcl
 lib/zircon/plugins/Dcc/chat.tcl
 lib/zircon/plugins/Dcc/dcc.tcl
-lib/zircon/plugins/Dcc/dccget
-lib/zircon/plugins/Dcc/dccsend
+lib/zircon/plugins/Dcc/dccget.tcl
+lib/zircon/plugins/Dcc/dccsend.tcl
 lib/zircon/plugins/Dcc/pkgIndex.tcl
 lib/zircon/plugins/Dcc/send.tcl
 lib/zircon/plugins/MsgOps/setup.tcl
 lib/zircon/plugins/NoticeOps/setup.tcl
-lib/zircon/plugins/Sed/crypt
 lib/zircon/plugins/Sed/decrypt.tcl
-lib/zircon/plugins/Sed/libSed.so
 lib/zircon/plugins/Sed/pkgIndex.tcl
-lib/zircon/rc
-lib/zircon/zircon.ad
-@exec mkdir %D/lib/zircon/help/Channels
-@exec mkdir %D/lib/zircon/help/Servers
-@exec mkdir %D/lib/zircon/help/Services
-@exec mkdir %D/lib/zircon/help/Users
-@exec mkdir %D/lib/zircon/scripts
-@exec mkdir %D/lib/zircon/sounds
+lib/zircon/samples/zircon.ad
 @dirrm lib/zircon/help/Zircon/Windows
 @dirrm lib/zircon/help/Channels
 @dirrm lib/zircon/help/Servers
@@ -141,6 +135,7 @@ lib/zircon/zircon.ad
 @dirrm lib/zircon/plugins/NoticeOps
 @dirrm lib/zircon/plugins/Sed
 @dirrm lib/zircon/plugins
+@dirrm lib/zircon/samples
 @dirrm lib/zircon/scripts
 @dirrm lib/zircon/sounds
 @dirrm lib/zircon
