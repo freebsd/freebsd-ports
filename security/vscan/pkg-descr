@@ -1,5 +1,4 @@
-uvscan is an evaluation VirusScan running on FreeBSD under Linux
-emulation.
+uvscan is an evaluation VirusScan running on FreeBSD in native mode.
 
         THIS IS AN EVALUATION COPY OF THIS SOFTWARE.
         You may use this software for only thirty (30)
