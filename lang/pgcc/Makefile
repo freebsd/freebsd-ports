@@ -3,7 +3,7 @@
 # Date created:		Mi 18 Dez 1996 00:26:20 MET
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.2 1996/12/24 05:29:43 asami Exp $
+# $Id: Makefile,v 1.3 1997/06/08 12:58:59 andreas Exp $
 #
 
 DISTNAME=	gcc-2.7.2
@@ -12,9 +12,9 @@ CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GNU}
 
 # note this is an http site 
-PATCH_SITES=	http://www.iti.cs.tu-bs.de/soft/www.goof.com/pcg/data/ \
-		http://www.nightflight.com/~pcg/data/ \
+PATCH_SITES=	http://www.nightflight.com/~pcg/data/ \
 		http://www.goof.com/pcg/data/ \
+		http://www.iti.cs.tu-bs.de/soft/www.goof.com/pcg/data/ \
 		http://www.pmi.saitama-med.ac.jp/pcg/data/ \
 		http://linux.cis.nctu.edu.tw/pcg/data/
 
