@@ -105,6 +105,7 @@
     SUBDIR += latex-mathabx
     SUBDIR += latex-pgf
     SUBDIR += latex-subfig
+    SUBDIR += latex-subfloat
     SUBDIR += latex-timing
     SUBDIR += latex-xcolor
     SUBDIR += latex2rtf
