@@ -1,5 +1,5 @@
-*** premail.bak	Thu Oct 31 06:25:10 1996
---- premail	Sun Feb  2 01:50:16 1997
+*** premail.orig	Thu Oct 31 06:25:10 1996
+--- premail	Sun Jun 15 00:26:28 1997
 ***************
 *** 226,232 ****
   # Return the name of the real sendmail executable
@@ -17,3 +17,335 @@
   	# Newer BSD-based systems
   	(-x '/usr/sbin/sendmail') && return '/usr/sbin/sendmail';
   	# Okay, I give up
+***************
+*** 308,313 ****
+--- 308,319 ----
+  	    if ($1 =~ /^[mwpqe]$/) { push (@sendmail_args, $_); }
+  	} elsif (/^\-od(.)$/) {
+  	    push (@sendmail_args, $_);
++ 	} elsif (/^\-[BNRV].+$/) {
++ 	    push (@sendmail_args, $_);
++ 	} elsif (/^\-[BNRV]$/) {
++ 	    if ($#_ < 0) { &error ("$_ option needs an argument\n"); }
++ 	    push (@sendmail_args, $_);
++ 	    push (@sendmail_args, shift);
+          } elsif (/^\-f$/) {
+  	    if ($#_ < 0) { &error ("$_ option needs an argument\n"); }
+  	    shift;		# discard
+***************
+*** 1268,1274 ****
+      my ($body, @the_recips) = @_;
+      my ($key_type, $key);
+      my (@keys);
+!     my ($new_body, $err, $line);
+      my (@mime_fields, $prefix, $boundary);
+      my ($sign_type, $sign);
+      my ($invoc, $errfile);
+--- 1274,1280 ----
+      my ($body, @the_recips) = @_;
+      my ($key_type, $key);
+      my (@keys);
+!     my ($err, $line);
+      my (@mime_fields, $prefix, $boundary);
+      my ($sign_type, $sign);
+      my ($invoc, $errfile);
+***************
+*** 1354,1360 ****
+      my ($body, @the_recips) = @_;
+      my ($key_type, $key);
+      my (@keys);
+!     my ($new_body, $err, $line);
+      my (@mime_fields, $prefix);
+      my ($sign_type, $sign);
+      my ($invoc, $errfile);
+--- 1360,1366 ----
+      my ($body, @the_recips) = @_;
+      my ($key_type, $key);
+      my (@keys);
+!     my ($err, $line);
+      my (@mime_fields, $prefix);
+      my ($sign_type, $sign);
+      my ($invoc, $errfile);
+***************
+*** 2214,2220 ****
+  	# we know it's sendmail
+  	$invoc = &bin_sendmail ();
+  	if ($#sendmail_args >= 0) {
+! 	    $invoc .= ' '.join (' ', $sendmail_args);
+  	}
+  	$invoc .= ' -oi';
+  	foreach $recip (@the_recips) {
+--- 2220,2226 ----
+  	# we know it's sendmail
+  	$invoc = &bin_sendmail ();
+  	if ($#sendmail_args >= 0) {
+! 	    $invoc .= ' '.join (' ', @sendmail_args);
+  	}
+  	$invoc .= ' -oi';
+  	foreach $recip (@the_recips) {
+***************
+*** 3040,3046 ****
+  	$pass = '';
+      }
+      if ($pubring) { $invoc .= ' +pubring='.&shell_quote ($pubring); }
+!     $invoc .= ' +comment= -feat';
+      if ($sign) {
+  	$invoc .= 's -u '.&shell_quote ($signuser);
+  	&load_secrets ();
+--- 3046,3052 ----
+  	$pass = '';
+      }
+      if ($pubring) { $invoc .= ' +pubring='.&shell_quote ($pubring); }
+!     $invoc .= ' +language=en +comment= -feat';
+      if ($sign) {
+  	$invoc .= 's -u '.&shell_quote ($signuser);
+  	&load_secrets ();
+***************
+*** 3126,3132 ****
+  	$signuser = '0x';
+  	$pass = '';
+      }
+!     $invoc .= ' +comment= -fats +clearsig=on';
+      $invoc .= ' -u '.&shell_quote ($signuser);
+      unless (defined $pass) {
+  	if (defined $pgppass{$signuser}) {
+--- 3132,3138 ----
+  	$signuser = '0x';
+  	$pass = '';
+      }
+!     $invoc .= ' +language=en +comment= -fats +clearsig=on';
+      $invoc .= ' -u '.&shell_quote ($signuser);
+      unless (defined $pass) {
+  	if (defined $pgppass{$signuser}) {
+***************
+*** 3182,3188 ****
+  	$signuser = '0x';
+  	$pass = '';
+      }
+!     $invoc .= ' +comment= -fabst';
+      $invoc .= ' -u '.&shell_quote ($signuser);
+      unless (defined $pass) {
+  	if (defined $pgppass{$signuser}) {
+--- 3188,3194 ----
+  	$signuser = '0x';
+  	$pass = '';
+      }
+!     $invoc .= ' +language=en +comment= -fabst';
+      $invoc .= ' -u '.&shell_quote ($signuser);
+      unless (defined $pass) {
+  	if (defined $pgppass{$signuser}) {
+***************
+*** 3251,3257 ****
+      $outfile = &tmp_filename ();
+      $errfile = &tmp_filename ();
+      $invoc = &tilde_expand ($config{'pgp'});
+!     $invoc .= ' +batchmode=on';
+      $invoc .= " +pubring=$PUBRING" if $PUBRING;
+      $invoc .= " +secring=$SECRING" if $SECRING;
+  #    if ($pass =~ /^RING$;/) {
+--- 3257,3263 ----
+      $outfile = &tmp_filename ();
+      $errfile = &tmp_filename ();
+      $invoc = &tilde_expand ($config{'pgp'});
+!     $invoc .= ' +language=en +batchmode=on';
+      $invoc .= " +pubring=$PUBRING" if $PUBRING;
+      $invoc .= " +secring=$SECRING" if $SECRING;
+  #    if ($pass =~ /^RING$;/) {
+***************
+*** 3299,3305 ****
+  
+      $errfile = &tmp_filename ();
+      $invoc = &tilde_expand ($config{'pgp'});
+!     $invoc .= ' +batchmode=on ';
+      $invoc .= ' '.$pgp_file;
+      $invoc .= ' '.$signed_file;
+      $invoc .= ' > '.$errfile.' 2>&1';
+--- 3305,3311 ----
+  
+      $errfile = &tmp_filename ();
+      $invoc = &tilde_expand ($config{'pgp'});
+!     $invoc .= ' +language=en +batchmode=on ';
+      $invoc .= ' '.$pgp_file;
+      $invoc .= ' '.$signed_file;
+      $invoc .= ' > '.$errfile.' 2>&1';
+***************
+*** 3390,3396 ****
+      $chars_needed = 2 + sprintf ("%d", $bits / 8);
+      &pdv ($config{'pgp'}." +makerandom=$chars_needed $outf"
+  	." >/dev/null 2>&1\n");
+!     $status = system $config{'pgp'}." +makerandom=$chars_needed $outf"
+  	." >/dev/null 2>&1";
+      &pdv ($status."\n");
+      if (!$status) {
+--- 3396,3402 ----
+      $chars_needed = 2 + sprintf ("%d", $bits / 8);
+      &pdv ($config{'pgp'}." +makerandom=$chars_needed $outf"
+  	." >/dev/null 2>&1\n");
+!     $status = system $config{'pgp'}." +language=en +makerandom=$chars_needed $outf"
+  	." >/dev/null 2>&1";
+      &pdv ($status."\n");
+      if (!$status) {
+***************
+*** 3626,3636 ****
+  
+      $errfile = &tmp_filename ();
+      $invoc = &tilde_expand ($config{'pgp'});
+!     $invoc .= ' +batchmode=on -f';
+      $invoc .= ' < '.$ps_pgp;
+      $invoc .= ' > '.$ps;
+      $invoc .= ' 2> '.$errfile;
+      &pdv ("Invoking PGP as $invoc\n");
+      $status = &open_pgp ($invoc, $pass, '');
+      $err = &read_and_delete ($errfile);
+      &pdv ($err);
+--- 3632,3645 ----
+  
+      $errfile = &tmp_filename ();
+      $invoc = &tilde_expand ($config{'pgp'});
+!     $invoc .= ' +language=en +batchmode=on -f';
+      $invoc .= ' < '.$ps_pgp;
+      $invoc .= ' > '.$ps;
+      $invoc .= ' 2> '.$errfile;
+      &pdv ("Invoking PGP as $invoc\n");
++     if(-e $ps) {
++ 	&error ("Premail secrets file already exists\n");
++     }
+      $status = &open_pgp ($invoc, $pass, '');
+      $err = &read_and_delete ($errfile);
+      &pdv ($err);
+***************
+*** 3647,3653 ****
+  	unlink $ps_pgp;
+      }
+      $invoc = &tilde_expand ($config{'pgp'});
+!     $invoc .= ' +batchmode=on -cf';
+      $invoc .= ' < '.$ps;
+      $invoc .= ' > '.$ps_pgp;
+      $invoc .= ' 2> '.$errfile;
+--- 3656,3662 ----
+  	unlink $ps_pgp;
+      }
+      $invoc = &tilde_expand ($config{'pgp'});
+!     $invoc .= ' +language=en +batchmode=on -cf';
+      $invoc .= ' < '.$ps;
+      $invoc .= ' > '.$ps_pgp;
+      $invoc .= ' 2> '.$errfile;
+***************
+*** 5129,5135 ****
+      &load_secrets ();
+      foreach (keys %pgpring) {
+  	my ($tpr, $tsr) = &makerings ($pgpring{$_});
+! 	system ("$PGP +batchmode +verbose=0 -kx 0x $pr $tpr > /dev/null");
+  	#filecat ($tpr, $pr);
+  	filecat ($tsr, $sr);
+  	&delete_tmpfile ($tpr);
+--- 5138,5144 ----
+      &load_secrets ();
+      foreach (keys %pgpring) {
+  	my ($tpr, $tsr) = &makerings ($pgpring{$_});
+! 	system ("$PGP +language=en +batchmode +verbose=0 -kx 0x $pr $tpr > /dev/null");
+  	#filecat ($tpr, $pr);
+  	filecat ($tsr, $sr);
+  	&delete_tmpfile ($tpr);
+***************
+*** 5162,5168 ****
+      }
+      my $PGP = &tilde_expand ($config{'pgp'});
+      foreach $id (@pubkeys) {
+! 	my $invoc = "$PGP +batchmode +force +verbose=0 -kx "
+  	    . "$id $pr $pubring 2>&1";
+  	&pdv ("$invoc > /dev/null\n");
+  	system "$invoc > /dev/null";
+--- 5171,5177 ----
+      }
+      my $PGP = &tilde_expand ($config{'pgp'});
+      foreach $id (@pubkeys) {
+! 	my $invoc = "$PGP +language=en +batchmode +force +verbose=0 -kx "
+  	    . "$id $pr $pubring 2>&1";
+  	&pdv ("$invoc > /dev/null\n");
+  	system "$invoc > /dev/null";
+***************
+*** 5189,5195 ****
+      $outfile = &tmp_filename ();
+      $errfile = &tmp_filename ();
+      $invoc = &tilde_expand ($config{'pgp'});
+!     $invoc .= ' +batchmode +force +verbose=0 ';
+      $invoc .= " +pubring=$pr +secring=$sr ";
+      $invoc .= $cmd;
+      $invoc .= ' < ' . $infile if $infile;
+--- 5198,5204 ----
+      $outfile = &tmp_filename ();
+      $errfile = &tmp_filename ();
+      $invoc = &tilde_expand ($config{'pgp'});
+!     $invoc .= ' +language=en +batchmode +force +verbose=0 ';
+      $invoc .= " +pubring=$pr +secring=$sr ";
+      $invoc .= $cmd;
+      $invoc .= ' < ' . $infile if $infile;
+***************
+*** 5248,5254 ****
+  EOF
+      <STDIN>;
+  
+!     if (system ("$PGP -kg +pubring=$pr +secring=$sr +verbose=0")) {
+  	print STDERR "\nKey generation failed.\n";
+  	&killbaks ($pr, $sr);
+  	&delete_open_tmpfiles ();
+--- 5257,5263 ----
+  EOF
+      <STDIN>;
+  
+!     if (system ("$PGP +language=en -kg +pubring=$pr +secring=$sr +verbose=0")) {
+  	print STDERR "\nKey generation failed.\n";
+  	&killbaks ($pr, $sr);
+  	&delete_open_tmpfiles ();
+***************
+*** 5272,5278 ****
+      foreach $a ("$kid $pr",
+  		"$remid $pr " . &tilde_expand ($config{'pubring'}),
+  		"$kid $sr $defsr") {
+! 	my $invoc = "$PGP +batchmode +force +verbose=0 -kx $a 2>&1";
+  #	print STDERR "+ $invoc\n";
+  	my $result = `$invoc`;
+  	unless ($result =~ /^Key extracted/m) {
+--- 5281,5287 ----
+      foreach $a ("$kid $pr",
+  		"$remid $pr " . &tilde_expand ($config{'pubring'}),
+  		"$kid $sr $defsr") {
+! 	my $invoc = "$PGP +language=en +batchmode +force +verbose=0 -kx $a 2>&1";
+  #	print STDERR "+ $invoc\n";
+  	my $result = `$invoc`;
+  	unless ($result =~ /^Key extracted/m) {
+***************
+*** 5300,5306 ****
+  EOF
+      <STDIN>;
+  
+!     my $invoc = "$PGP +secring=$sr -ke $kid $pr";
+  #    print STDERR "+ $invoc\n";
+      if (system ($invoc)) {
+  	print STDERR "Edit failed.\n";
+--- 5309,5315 ----
+  EOF
+      <STDIN>;
+  
+!     my $invoc = "$PGP +language=en +secring=$sr -ke $kid $pr";
+  #    print STDERR "+ $invoc\n";
+      if (system ($invoc)) {
+  	print STDERR "Edit failed.\n";
+***************
+*** 6315,6321 ****
+  # Open a Web connection for the file as file handle WWW.
+      my ($url) = @_;
+      my ($host, $port, $suf);
+!     my ($fqdn, $aliases, $type, $len, $thataddr);
+      my ($name, $proto);
+      my ($that, $thataddr);
+      my ($savesel, $gotsep);
+--- 6324,6330 ----
+  # Open a Web connection for the file as file handle WWW.
+      my ($url) = @_;
+      my ($host, $port, $suf);
+!     my ($fqdn, $aliases, $type, $len);
+      my ($name, $proto);
+      my ($that, $thataddr);
+      my ($savesel, $gotsep);
