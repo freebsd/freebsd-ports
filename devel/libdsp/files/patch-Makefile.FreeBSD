@@ -1,5 +1,5 @@
---- Makefile.FreeBSD.orig	Sat Oct 20 09:17:16 2001
-+++ Makefile.FreeBSD	Tue Dec 11 03:01:44 2001
+--- Makefile.FreeBSD.orig	Sat Dec 29 23:25:39 2001
++++ Makefile.FreeBSD	Sun Dec 30 10:35:30 2001
 @@ -17,15 +17,8 @@
  # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  #
@@ -7,8 +7,8 @@
 -CC = gcc
 -CXX = g++
 -
--CFLAGS = -mcpu=i586 -march=i586 -O6 -fomit-frame-pointer -ffast-math -funroll-loops -malign-loops=5 -malign-jumps=5 -malign-functions=5 -mpreferred-stack-boundary=5 -mfancy-math-387 -Wall -Werror -pthread #-g
--OPTFLAGS = -march=i686 -O3 -ffast-math -funroll-loops -malign-loops=5 -malign-jumps=5 -malign-functions=5 -mpreferred-stack-boundary=5 -mfancy-math-387 -Wall -Werror #-g
+-CFLAGS = -march=i586 -mcpu=i586 -O6 -fomit-frame-pointer -ffast-math -funroll-loops -malign-loops=5 -malign-jumps=5 -malign-functions=5 -mpreferred-stack-boundary=5 -mfancy-math-387 -Wall -Werror -pthread #-g
+-OPTCFLAGS = -march=i686 -O3 -ffast-math -funroll-loops -malign-loops=5 -malign-jumps=5 -malign-functions=5 -mpreferred-stack-boundary=5 -mfancy-math-387 -Wall -Werror #-g
 -CXXFLAGS = $(CFLAGS)
 -
  # thread safety
@@ -34,7 +34,7 @@
 -PREFIX = /usr/local
 +PREFIX ?= /usr/local
  
- VERSION = 1:4:0
+ VERSION = 3:4:0
  
 @@ -113,24 +106,24 @@
  	$(LIBTOOL) --mode=link $(CXX) $(LDFLAGS) -rpath $(PREFIX)/lib -version-info $(VERSION) -o libdsp.la $(LOBJS) $(LIBS)
