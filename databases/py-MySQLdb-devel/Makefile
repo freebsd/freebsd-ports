@@ -12,22 +12,23 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mysql-python
 DISTNAME=	MySQL-python-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sheepkiller@cultdeadsheep.org
 COMMENT=	Access a MySQL database through Python
 
-LIB_DEPENDS=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
-
-USE_PYTHON=	yes
+USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
+USE_MYSQL=		yes
+BROKEN_WITH_MYSQL=	41
 
 DOCS=		MANIFEST README doc/*.html
 
 .if !defined(NOPORTDOCS)
 post-install:
 	@${MKDIR} ${DOCSDIR}
-.for file in ${DOCS}
-	@${INSTALL_MAN} ${WRKSRC}/${file} ${DOCSDIR}
+.for FILE in ${DOCS}
+	@${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
 .endfor
 .endif
 
 .include <bsd.port.mk>
+
