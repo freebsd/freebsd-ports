@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	est
-PORTVERSION=	0.7.1
+PORTVERSION=	0.7.2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.daemonology.net/freebsd-est/
 
