@@ -21,6 +21,7 @@ include/wx/combobox.h
 include/wx/confbase.h
 include/wx/config.h
 include/wx/control.h
+include/wx/ctrlsub.h
 include/wx/cursor.h
 include/wx/dataobj.h
 include/wx/date.h
@@ -37,6 +38,7 @@ include/wx/dde.h
 include/wx/debug.h
 include/wx/defs.h
 include/wx/dialog.h
+include/wx/dialup.h
 include/wx/dirdlg.h
 include/wx/dnd.h
 include/wx/docmdi.h
@@ -54,6 +56,9 @@ include/wx/filefn.h
 include/wx/filesys.h
 include/wx/font.h
 include/wx/fontdlg.h
+include/wx/fontenum.h
+include/wx/fontmap.h
+include/wx/fontutil.h
 include/wx/frame.h
 include/wx/fs_inet.h
 include/wx/fs_zip.h
@@ -67,6 +72,7 @@ include/wx/generic/dcpsg.h
 include/wx/generic/dirdlgg.h
 include/wx/generic/filedlgg.h
 include/wx/generic/fontdlgg.h
+include/wx/generic/grid.h
 include/wx/generic/gridg.h
 include/wx/generic/helpext.h
 include/wx/generic/helphtml.h
@@ -105,7 +111,9 @@ include/wx/gtk/colour.h
 include/wx/gtk/combobox.h
 include/wx/gtk/control.h
 include/wx/gtk/cursor.h
+include/wx/gtk/dataform.h
 include/wx/gtk/dataobj.h
+include/wx/gtk/dataobj2.h
 include/wx/gtk/dc.h
 include/wx/gtk/dcclient.h
 include/wx/gtk/dcmemory.h
@@ -135,6 +143,7 @@ include/wx/gtk/scrolbar.h
 include/wx/gtk/settings.h
 include/wx/gtk/slider.h
 include/wx/gtk/spinbutt.h
+include/wx/gtk/spinctrl.h
 include/wx/gtk/statbmp.h
 include/wx/gtk/statbox.h
 include/wx/gtk/statline.h
@@ -153,17 +162,19 @@ include/wx/helpbase.h
 include/wx/helphtml.h
 include/wx/helpwin.h
 include/wx/helpxlp.h
-include/wx/html/forcelink.h
+include/wx/html/forcelnk.h
+include/wx/html/helpctrl.h
+include/wx/html/helpdata.h
+include/wx/html/helpfrm.h
 include/wx/html/htmlcell.h
 include/wx/html/htmldefs.h
-include/wx/html/htmlfilter.h
-include/wx/html/htmlhelp.h
-include/wx/html/htmlparser.h
+include/wx/html/htmlfilt.h
+include/wx/html/htmlpars.h
 include/wx/html/htmltag.h
 include/wx/html/htmlwin.h
-include/wx/html/htmlwinparser.h
-include/wx/html/mod_templ.h
-include/wx/html/version.h
+include/wx/html/htmprint.h
+include/wx/html/m_templ.h
+include/wx/html/winpars.h
 include/wx/icon.h
 include/wx/image.h
 include/wx/imaglist.h
@@ -229,6 +240,7 @@ include/wx/sizer.h
 include/wx/slider.h
 include/wx/socket.h
 include/wx/spinbutt.h
+include/wx/spinctrl.h
 include/wx/splitter.h
 include/wx/statbmp.h
 include/wx/statbox.h
@@ -259,6 +271,7 @@ include/wx/treectrl.h
 include/wx/txtstrm.h
 include/wx/types.h
 include/wx/unix/execute.h
+include/wx/unix/fontutil.h
 include/wx/url.h
 include/wx/utils.h
 include/wx/valgen.h
@@ -280,9 +293,9 @@ include/wx/wxprec.h
 include/wx/xpmhand.h
 include/wx/zipstrm.h
 include/wx/zstream.h
-lib/wx/include/wx/gtk/setup.h
 lib/libwx_gtk.so
-lib/libwx_gtk.so.1
+lib/libwx_gtk.so.2
+lib/wx/include/wx/gtk/setup.h
 share/wx/afm/Cour.afm
 share/wx/afm/CourBo.afm
 share/wx/afm/CourBoO.afm
@@ -317,8 +330,8 @@ share/wx/gs_afm/TimesRo.afm
 @dirrm lib/wx/include/wx
 @dirrm lib/wx/include
 @dirrm lib/wx
-@dirrm share/wx/afm
 @dirrm share/wx/gs_afm
+@dirrm share/wx/afm
 @dirrm share/wx
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %D/lib
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R

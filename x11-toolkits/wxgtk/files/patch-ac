@@ -1,0 +1,41 @@
+--- Makefile.in.orig	Fri Jan 14 09:27:03 2000
++++ Makefile.in	Fri Jan 14 09:27:48 2000
+@@ -2050,19 +2050,11 @@
+ 	
+ CREATE_LINKS: @WX_LIBRARY_NAME_SHARED@
+ 	@$(RM) ./lib/@WX_LIBRARY_LINK1@
+-	@$(RM) ./lib/@WX_LIBRARY_LINK2@
+-	@$(RM) ./lib/@WX_LIBRARY_LINK3@
+ 	$(LN_S) @WX_TARGET_LIBRARY@ ./lib/@WX_LIBRARY_LINK1@
+-	$(LN_S) @WX_TARGET_LIBRARY@ ./lib/@WX_LIBRARY_LINK2@
+-	$(LN_S) @WX_TARGET_LIBRARY@ ./lib/@WX_LIBRARY_LINK3@
+ 	
+ CREATE_INSTALLED_LINKS:  $(libdir)/@WX_LIBRARY_NAME_SHARED@
+ 	$(RM) $(libdir)/@WX_LIBRARY_LINK1@
+-	$(RM) $(libdir)/@WX_LIBRARY_LINK2@
+-	$(RM) $(libdir)/@WX_LIBRARY_LINK3@
+ 	$(LN_S) @WX_LIBRARY_NAME_SHARED@ $(libdir)/@WX_LIBRARY_LINK1@
+-	$(LN_S) @WX_LIBRARY_NAME_SHARED@ $(libdir)/@WX_LIBRARY_LINK2@
+-	$(LN_S) @WX_LIBRARY_NAME_SHARED@ $(libdir)/@WX_LIBRARY_LINK3@
+ 	
+ $(OBJECTS):	$(WXDIR)/include/wx/defs.h $(WXDIR)/include/wx/object.h
+ 
+@@ -2115,9 +2107,7 @@
+ 	$(INSTALL_DATA) $(top_srcdir)/misc/gs_afm/*.afm $(datadir)/wx/gs_afm
+ 	
+ 	$(INSTALL) -d $(includedir)/wx
+-	$(INSTALL) -d $(includedir)/wx/msw
+ 	$(INSTALL) -d $(includedir)/wx/gtk
+-	$(INSTALL) -d $(includedir)/wx/motif
+ 	$(INSTALL) -d $(includedir)/wx/html
+ 	$(INSTALL) -d $(includedir)/wx/protocol
+ 	$(INSTALL) -d $(includedir)/wx/unix
+@@ -2148,8 +2138,6 @@
+ 	@echo " Removing library..."
+ 	@$(RM) $(libdir)/@WX_TARGET_LIBRARY@
+ 	@$(RM) $(libdir)/@WX_LIBRARY_LINK1@
+-	@$(RM) $(libdir)/@WX_LIBRARY_LINK2@
+-	@$(RM) $(libdir)/@WX_LIBRARY_LINK3@
+ 	@echo " Removing helper files..."
+ 	@$(RM) $(libdir)/wx/include/wx/@TOOLKIT_DIR@/setup.h
+ 	@$(RM) $(bindir)/wx-config
