@@ -1,0 +1,51 @@
+# Makefile for mod_jk on FreeBSD.
+#
+# Customized for the www/mod_jk port on FreeBSD by
+# Ernst de Haan <znerd@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+# Set the operating system
+OS=freebsd
+
+# Define the location of Apache apxs
+APXS=%%APXS%%
+
+# Apache 1.3 flags
+A13_FLAGS=-I${PREFIX}/include/apache
+
+# Set the location of Java 2
+JAVA_HOME=%%JAVA_HOME%%
+
+# The Java-related includes and libraries for the C compiler
+JAVA_INCL=-I${JAVA_HOME}/include -I${JAVA_HOME}/include/${OS}
+JAVA_LIB=-L${JAVA_HOME}/jre/lib/${ARCH} -L${JAVA_HOME}/lib/${ARCH}/native_threads
+
+# Some more C compiler flags
+XCFLAGS=${CFLAGS}
+CFLAGS=-DHAVE_CONFIG_H -fpic -DSHARED_MODULE -DFREEBSD -Wall
+
+JK=../jk/
+SRCS=jk_ajp12_worker.c jk_connect.c jk_msg_buff.c jk_util.c jk_ajp13.c \
+     jk_jni_worker.c jk_pool.c jk_worker.c jk_ajp13_worker.c jk_lb_worker.c \
+     jk_sockbuf.c  jk_map.c jk_uri_worker_map.c          
+
+
+OBJS=${patsubst %.c,%.o,${SRCS}}
+
+%.o: ${JK}/%.c 
+	${CC} -c ${XCFLAGS} ${CFLAGS} ${JAVA_INCL} ${A13_FLAGS} $< -o $@ 
+
+.c.o:
+	${APXS} -c ${JAVA_INCL} -DFREEBSD ${A13_FLAGS} -I${JK} $<
+
+all: mod_jk.so
+
+mod_jk.so: ${OBJS} mod_jk.o
+	$(APXS) -c -o mod_jk.so ${OBJS} mod_jk.o
+	
+# $(CC) -shared -o mod_jk.so ${OBJS} mod_jk.o
+
+clean:
+	rm *.o *.so
