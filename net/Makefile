@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.258 1999/05/05 13:59:05 taoka Exp $
+# $Id: Makefile,v 1.259 1999/05/07 17:44:05 flathill Exp $
 #
 
     SUBDIR += IglooFTP
@@ -92,6 +92,7 @@
     SUBDIR += ksamba
     SUBDIR += ldap
     SUBDIR += lftp
+    SUBDIR += libicq
     SUBDIR += libsocket++
     SUBDIR += licq
     SUBDIR += llnlxdir
