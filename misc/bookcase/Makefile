@@ -29,5 +29,4 @@ post-patch:
 CFLAGS+=	-D__LIBSTDCPP_PARTIAL_SUPPORT__
 .endif
 
-.include "${PORTSDIR}/x11/kde3/Makefile.kde"
 .include <bsd.port.post.mk>
