@@ -1,4 +1,4 @@
 include/sectok.h
 lib/libsectok.a
+lib/libsectok.so.3
 lib/libsectok.so.3.1
-@unexec rm -f lib/libsectok.so.3
