@@ -22,7 +22,6 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
-USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
@@ -35,6 +34,13 @@ LIB_DEPENDS+=	gimp:${PORTSDIR}/graphics/gimp1
 CONFIGURE_ARGS+=	--enable-gimp
 .else
 CONFIGURE_ARGS+=	--disable-gimp
+.endif
+
+.if defined(WITH_GTK2)
+USE_GNOME=	gtk20
+.else
+USE_GNOME=	gtk12
+CONFIGURE_ARGS= --disable-gtk2
 .endif
 
 pre-everything::
