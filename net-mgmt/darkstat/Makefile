@@ -12,7 +12,7 @@ CATEGORIES=	net-mgmt
 MASTER_SITES=	http://members.optushome.com.au/emikulic/net/darkstat/ \
 		http://yallara.cs.rmit.edu.au/~emikulic/_/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	emikulic@cs.rmit.edu.au
 COMMENT=	Network statistics gatherer, similar to ntop
 
 USE_GETTEXT=	yes
