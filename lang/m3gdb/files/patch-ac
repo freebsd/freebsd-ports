@@ -1,0 +1,23 @@
+--- m3-lang.c.orig	Sat Feb  6 13:14:26 1999
++++ m3-lang.c	Sun Mar 14 11:13:56 1999
+@@ -546,6 +546,20 @@
+ };
+ #endif
+ 
++#if defined(__FreeBSD__) && defined(__i386__)
++#define HAVE_REGISTER_MAP
++#define DK	6	/* "Don't know" */
++static int regno_to_jmpbuf[24] = {
++    DK,  DK,  DK,   1,	/* eax, ecx,    edx, ebx */
++     2,   3,   4,   5,	/* esp, ebp,    esi, edi */
++     0,  DK,  DK,  DK,	/* eip, eflags, cs,  ss */
++    DK,  DK,  DK,  DK,	/* ds,  es,     fs,  gs */
++    DK,  DK,  DK,  DK,	/* st0, st1,    st2, st3 */
++    DK,  DK,  DK,  DK	/* st4, st5,    st6, st7 */
++};
++#undef DK
++#endif
++
+ /*---------------------------------------------------- thread enumeration ---*/
+ 
+ typedef struct {
