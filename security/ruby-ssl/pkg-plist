@@ -1,9 +1,13 @@
 %%RUBY_SITEARCHLIBDIR%%/ssl.so
 %%RUBY_SITELIBDIR%%/buffering.rb
 %%RUBY_SITELIBDIR%%/ssl.rb
+%%RUBY_SITELIBDIR%%/net/https.rb
+%%RUBY_SITELIBDIR%%/net/telnets.rb
+@dirrm %%RUBY_SITELIBDIR%%/net
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/ssl/cli.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/ssl/sample.crt
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/ssl/sample.key
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/ssl/svr.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/ssl/wget.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/ssl/wget2.rb
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/ssl
