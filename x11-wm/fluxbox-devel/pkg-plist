@@ -1,7 +1,8 @@
 bin/fbrun-devel
-bin/fluxbox-devel
 bin/fbsetbg-devel
+bin/fluxbox-devel
 bin/fluxbox-generate_menu-devel
+bin/startfluxbox-devel
 share/fluxbox-devel/init
 share/fluxbox-devel/keys
 share/fluxbox-devel/menu
@@ -20,6 +21,7 @@ share/fluxbox-devel/nls/pt_PT/fluxbox.cat
 share/fluxbox-devel/nls/ru_RU/fluxbox.cat
 share/fluxbox-devel/nls/sv_SE/fluxbox.cat
 share/fluxbox-devel/nls/tr_TR/fluxbox.cat
+share/fluxbox-devel/startup
 share/fluxbox-devel/styles/Artwiz
 share/fluxbox-devel/styles/Blue
 share/fluxbox-devel/styles/BlueNight

@@ -1,0 +1,25 @@
+--- data/startup.in.orig	Mon Nov 17 02:11:52 2003
++++ data/startup.in	Mon Nov 17 02:13:49 2003
+@@ -12,7 +12,7 @@
+ @pkgbindir@/bsetroot -solid black
+ 
+ # This shows the fluxbox-splash-screen
+-# fbsetbg -C /usr/share/fluxbox/splash.jpg
++# fbsetbg -C %%PREFIX%%/share/fluxbox-devel/splash.jpg
+ 
+ # Other examples. Check man xset for details.
+ #
+@@ -41,9 +41,9 @@
+ # wmsmixer -w &
+ # idesk &
+ 
+-# And last but not least we start fluxbox.
++# And last but not least we start fluxbox-devel.
+ # Because it is the last app you have to run it with ``exec'' before it.
+ 
+-exec @pkgbindir@/fluxbox
++exec @pkgbindir@/fluxbox-devel
+ # or if you want to keep a log:
+-# exec @pkgbindir@/fluxbox -log ~/.fluxbox/log
+\ No newline at end of file
++# exec @pkgbindir@/fluxbox-devel -log ~/.fluxbox/log

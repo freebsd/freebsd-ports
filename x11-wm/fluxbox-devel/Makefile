@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	fluxbox
-PORTVERSION=	0.9.5
+PORTVERSION=	0.9.6
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	fluxbox
 PKGNAMESUFFIX=	-devel
-DISTNAME=	fluxbox-${PORTVERSION}
 
 MAINTAINER=	hendrik@scholz.net
 COMMENT=	A small and fast window manager based on BlackBox
@@ -26,9 +25,11 @@ GNU_CONFIGURE=	yes
 WANT_GNOME=	yes
 USE_REINPLACE=	yes
 CONFIGURE_ARGS=		--enable-nls --program-suffix=-devel
+
 .if defined(WITH_KDE) || defined(PACKAGE_BUILDING)
 CONFIGURE_ARGS+=	--enable-kde
 .endif
+
 .if defined(WITH_XINERAMA) || defined(PACKAGE_BUILDING)
 CONFIGURE_ARGS+=	--enable-xinerama
 .endif
@@ -39,6 +40,8 @@ MAN1=		fluxbox-devel.1
 
 .if ${HAVE_GNOME:Mgnomelibs}!="" || defined(PACKAGE_BUILDING)
 CONFIGURE_ARGS+=	--enable-gnome
+.else
+CONFIGURE_ARGS+=	--disable-gnome
 .endif
 
 NLSMAKEFILES=	nls nls/C nls/da_DK nls/es_ES nls/et_EE nls/fr_FR nls/pt_BR \
@@ -57,15 +60,19 @@ pre-everything::
 .endif
 
 post-patch::
-	@${REINPLACE_CMD} -e 's|PACKAGE=fluxbox|PACKAGE=fluxbox-devel|' \
+	@${REINPLACE_CMD} -e 's|PACKAGE=fluxbox|PACKAGE=fluxbox-devel|g' \
 		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
+		${WRKSRC}/data/startup.in
 	@${REINPLACE_CMD} -e 's|fluxbox-generate_menu|fluxbox-generate_menu-devel|g; \
-		s|fbrun|fbrun-devel|g' ${WRKSRC}/util/fluxbox-generate_menu
+		s|fbrun|fbrun-devel|g; s|%%LOCALBASE%%|${LOCALBASE}|g; s|%%X11BASE%%|${X11BASE}|g' \
+		${WRKSRC}/util/fluxbox-generate_menu.in
 
 post-configure::
 .for i in ${NLSMAKEFILES}
 	@${REINPLACE_CMD} -e 's|@NLS@|-DNLS|' ${WRKSRC}/${i}/Makefile
 .endfor
+
 post-install::
 	@${CAT} ${PKGMESSAGE}
 

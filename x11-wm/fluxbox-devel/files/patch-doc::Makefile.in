@@ -1,6 +1,6 @@
---- doc/Makefile.in.orig	Tue Oct  8 23:14:11 2002
-+++ doc/Makefile.in	Tue Oct  8 23:14:41 2002
-@@ -97,8 +97,8 @@
+--- doc/Makefile.in.orig	Mon Nov 17 01:38:46 2003
++++ doc/Makefile.in	Mon Nov 17 01:39:36 2003
+@@ -100,8 +100,8 @@
  
  CLEANFILES = fluxbox.1
  MAINTAINERCLEANFILES = Makefile.in
