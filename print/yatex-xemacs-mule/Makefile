@@ -3,11 +3,11 @@
 # Date created:		18 Feb. 1998
 # Whom:			Satoshi Taoka <taoka@infonets.hiroshima-u.ac.jp>
 #
-# $Id: Makefile,v 1.1.1.1 1998/08/14 02:08:39 kuriyama Exp $
+# $Id: Makefile,v 1.2 1998/08/17 16:33:44 kuriyama Exp $
 #
 
 PKGNAME=	ja-yatex-xemacs-1.65.6
-CATEGORIES=	japanese print
+CATEGORIES=	japanese print elisp
 
 XEMACS-MULE=	yes
 
