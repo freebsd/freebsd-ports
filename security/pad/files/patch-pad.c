@@ -1,5 +1,5 @@
 --- pad.c.orig	Sun Jul 23 09:14:10 2000
-+++ pad.c	Sun Oct  6 15:17:31 2002
++++ pad.c	Wed Oct 15 06:43:08 2003
 @@ -31,17 +31,17 @@
  #include "pad.h"
  #include "md5.h"
@@ -162,20 +162,49 @@
  
  /* Return size of fp passed */
  long filesize(FILE *fp)
-@@ -282,11 +286,11 @@
- options:
- 
-   -r [num]    - Pad will XOR in [num] pads generated from random data. if this
+@@ -277,24 +281,24 @@
+ /* print out the help message */
+ void printhelp()
+ {
+-  fprintf(stderr, "Usage: pad [options] [input files]
+-
+-options:
+-
+-  -r [num]    - Pad will XOR in [num] pads generated from random data. if this
 -                is ommited, pad will use either 1 or 0 random pads, depending on
-+                is omitted, pad will use either 1 or 0 random pads, depending on
-                 if there is only one input file or more than one, respectively.
- 
-   -o [output] - The result of all the XOR operations will be stored in this
+-                if there is only one input file or more than one, respectively.
+-
+-  -o [output] - The result of all the XOR operations will be stored in this
 -                file. If [output] is ommitted, pad will name the file according
-+                file. If [output] is omitted, pad will name the file according
-                 to its MD5-sum, along with the rest of the random pads.
+-                to its MD5-sum, along with the rest of the random pads.
+-
+-  -s [size]   - The output data will be [size] bytes. If this is less than the
+-                smallest input file, the output will be clipped to match, if it
+-                is larger, random data will be appended to the end.
+-
+-  -h          - Show usage.
+-
++  fprintf(stderr, "Usage: pad [options] [input files]\n\
++\n\
++options:\n\
++\n\
++  -r [num]    - Pad will XOR in [num] pads generated from random data. if this\n\
++                is omitted, pad will use either 1 or 0 random pads, depending on\n\
++                if there is only one input file or more than one, respectively.\n\
++\n\
++  -o [output] - The result of all the XOR operations will be stored in this\n\
++                file. If [output] is omitted, pad will name the file according\n\
++                to its MD5-sum, along with the rest of the random pads.\n\
++\n\
++  -s [size]   - The output data will be [size] bytes. If this is less than the\n\
++                smallest input file, the output will be clipped to match, if it\n\
++                is larger, random data will be appended to the end.\n\
++\n\
++  -h          - Show usage.\n\
++\n\
+ ");
+ }
  
-   -s [size]   - The output data will be [size] bytes. If this is less than the
 @@ -325,8 +329,8 @@
    buf[0] = '\0';
    for ( j=0 ; j<16 ; j++ )
