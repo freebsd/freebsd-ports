@@ -7,8 +7,9 @@
 
 PORTNAME=	dovecot
 PORTVERSION=	0.99.10.4
+PORTREVISION=	1
 CATEGORIES=	mail ipv6
-MASTER_SITES=	http://dovecot.procontrol.fi/
+MASTER_SITES=	http://www.dovecot.org/
 
 MAINTAINER=	robin@isometry.net
 COMMENT=	Secure and compact IMAP and POP3 servers
@@ -78,9 +79,9 @@ LIB_DEPENDS+=	pq.3:${PORTSDIR}/databases/postgresql7
 CONFIGURE_ARGS+=	--with-pgsql
 .endif
 
-pre-everything::
-	@${ECHO_MSG} "==> Dovecot options: see ${MAKEFILE} for descriptions"
-	@${SED} -ne 's,^##,==> ,p' ${MAKEFILE}
+pre-configure:
+	@${ECHO_MSG} "=> ${PORTNAME} options: see ${MAKEFILE} for descriptions"
+	@${SED} -ne 's,^##,=> ,p' ${MAKEFILE}
 
 pre-build:
 	@${REINPLACE_CMD} -e 's,%%SSLDIR%%,/var/dovecot/ssl,' \
