@@ -1,11 +1,11 @@
---- makefile.orig	Wed Jun  3 22:17:30 1998
-+++ makefile	Wed Jun  3 22:17:35 1998
-@@ -20,7 +20,7 @@
- SUPPORT    = is_able.lst suid.stop crc_list
+--- makefile.orig	Tue Mar  9 02:19:18 1993
++++ makefile	Tue Jul 11 21:44:29 2000
+@@ -23,7 +23,7 @@
+ # C2         = -DC2
  
  #
--CFLAGS     = -O
-+#CFLAGS     = -O
+-CFLAGS     = -O $(C2)
++CFLAGS+     = $(C2)
  # sequents need "-lseq" as well... uncomment this if you're running on one:
  # SEQFLAGS   = -lseq
  
