@@ -1,0 +1,18 @@
+#!/bin/sh
+#
+# $FreeBSD$
+
+PREFIX=${PKG_PREFIX:-/usr/local}
+
+[ "x$1" = "x" ] && exit 1
+if [ "x$2" = "xPOST-INSTALL" ]; then
+	if [ `sysctl -n kern.osreldate` -ge 500000 ]; then
+		KMODDIR="/boot/modules"
+	else
+		KMODDIR="/modules"
+	fi
+
+	install -C -o root -g wheel -m 555 ${PREFIX}/lib/cdce/if_cdce.ko \
+		${KMODDIR}
+	kldxref ${KMODDIR}
+fi
