@@ -2035,6 +2035,7 @@ gsk		ports/net/gsk
 gsl		ports/math/gsl
 gsm		ports/audio/gsm
 gsnes9x		ports/emulators/gsnes9x
+gsubedit	ports/graphics/gsubedit
 gswitchit_applet ports/x11/gswitchit_applet
 gtar		ports/archivers/gtar
 gtetrinet	ports/games/gtetrinet
