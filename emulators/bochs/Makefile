@@ -27,7 +27,8 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--disable-split-hd \
-		--enable-all-optimizations
+		--enable-all-optimizations \
+		--with-x11
 
 CFLAGS+=	-fno-rtti -fno-exceptions -fomit-frame-pointer
 
@@ -54,6 +55,17 @@ WITH_BOCHS_CPU_LEVEL=	6
 .error "WITH_BOCHS_CPU_LEVEL must be an integer value between 3 and 6."
 .endif
 CONFIGURE_ARGS+=	--enable-cpu-level=${WITH_BOCHS_CPU_LEVEL}
+.if ${WITH_BOCHS_CPU_LEVEL} < 5
+CONFIGURE_ARGS+=	--disable-mmx
+.endif
+.endif
+
+.if defined(WITH_BOCHS_TERM)
+CONFIGURE_ARGS+=	--with-term
+.endif
+
+.if defined(WITH_BOCHS_VESA)
+CONFIGURE_ARGS+=	--enable-vbe
 .endif
 
 .if defined(WITH_BOCHS_AMD64)
@@ -91,14 +103,24 @@ MKFONTDIR?=	mkfontdir
 #
 
 pre-everything::
-.if !defined(WITH_BOCHS_CPU_LEVEL) || !defined(WITH_BOCHS_PROCESSORS) || \
-    !defined(WITH_BOCHS_DEBUGGER) || !defined(WITH_BOCHS_X86_DEBUGGER) || \
-    !defined(WITH_SOUND)
 	@${ECHO_MSG}
 .if !defined(WITH_BOCHS_CPU_LEVEL)
 	@${ECHO_MSG} "If you want to change the processor level to emulate (default is 5, aka Pentium)"
 	@${ECHO_MSG} "Choices are 3,4,5,6 which mean target 386, 486, Pentium or Pentium Pro emulation"
 	@${ECHO_MSG} "hit Ctrl-C right now and use \"make WITH_BOCHS_CPU_LEVEL=<cpu level>\""
+	@${ECHO_MSG}
+.endif
+.if !defined(WITH_BOCHS_TERM)
+	@${ECHO_MSG} "If you want to enable the plain text, console-based bochs interface"
+	@${ECHO_MSG} "hit Ctrl-C right now and use \"make WITH_BOCHS_GUI_TERM=yes\""
+	@${ECHO_MSG}
+.endif
+.if !defined(WITH_BOCHS_VESA)
+	@${ECHO_MSG} "If you want to enable the VESA BIOS video extensions of bochs,"
+	@${ECHO_MSG} "hit Ctrl-C right now and use \"make WITH_BOCHS_VESA=yes\""
+	@${ECHO_MSG}
+.else
+	@${ECHO_MSG} "Remember that with the VESA option you must also use VGABIOS-lgpl-latest"
 	@${ECHO_MSG}
 .endif
 .if !defined(WITH_BOCHS_PROCESSORS)
@@ -131,7 +153,6 @@ pre-everything::
 	@${ECHO_MSG} "hit Ctrl-C right now and use \"make WITH_SOUND=yes\""
 .endif
 	@${ECHO_MSG}
-.endif
 
 # Post-configure
 #
