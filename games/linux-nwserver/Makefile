@@ -1,6 +1,6 @@
 # New ports collection makefile for:	linux-nwserver
 # Date created:		22 July 2002
-# Whom:			Igor Pokrovsky <tiamat@telegraph.spb.ru>
+# Whom:			Igor Pokrovsky <igor.pokrovsky@cnrm.meteo.fr>
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ CATEGORIES=	games linux
 MASTER_SITES=	http://nwdownloads.bioware.com/neverwinternights/linux/121/
 DISTNAME=	linuxserver
 
-MAINTAINER=	tiamat@telegraph.spb.ru
+MAINTAINER=	igor.pokrovsky@cnrm.meteo.fr
 
 USE_LINUX=	yes
 NO_BUILD=	yes
