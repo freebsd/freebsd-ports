@@ -1,0 +1,8 @@
+--- configure	Wed Apr 19 12:46:10 2000
++++ configure	Thu May 18 12:22:27 2000
+@@ -2638,3 +2638,3 @@
+ else
+-	CFLAGS="-O2 -Wall $LIBOL_CFLAGS -D_GNU_SOURCE"
++	CFLAGS="${CFLAGS} -Wall $LIBOL_CFLAGS -D_GNU_SOURCE"
+ 	YFLAGS="-d"
+
