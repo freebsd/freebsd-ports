@@ -7,7 +7,7 @@
 
 PORTNAME=	popa3d
 PORTVERSION=	0.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail
 MASTER_SITES=	http://www.openwall.com/popa3d/ \
 		ftp://ftp.openwall.com/popa3d/ \
@@ -20,6 +20,7 @@ PKGNAMESUFFIX?=	-before-sendmail
 MAINTAINER=	dinoex@FreeBSD.org
 
 ALL_TARGET=	popa3d
+MAN8=		popa3d.8
 CFLAGS+=	-DPREFIX=${PREFIX}
 
 .if defined(SMTP_AFTER_POP3)
@@ -45,6 +46,7 @@ pre-install:
 do-install:
 	${INSTALL} ${COPY} -o root -g wheel -m 500 \
 	    ${WRKSRC}/popa3d ${PREFIX}/libexec/popa3d
+	${INSTALL_MAN} ${WRKSRC}/popa3d.8 ${MANPREFIX}/man/man8
 .if defined(SMTP_AFTER_POP3)
 	${INSTALL_DATA} ${FILESDIR}/popauth.m4 ${CFDIR}/hack
 .endif
