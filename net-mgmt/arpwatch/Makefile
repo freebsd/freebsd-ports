@@ -1,9 +1,9 @@
 # New ports collection makefile for:    arpwatch
 # Version required:     2.0.1a1
 # Date created:         March 24 1997
-# Whom:                 Brian Somers <brian@awfulhak.demon.co.uk>
+# Whom:                 Brian Somers <brian@awfulhak.org>
 #
-# $Id: Makefile,v 1.2 1997/03/30 18:11:58 obrien Exp $
+# $Id: Makefile,v 1.3 1997/03/30 18:26:41 obrien Exp $
 #
 
 DISTNAME=       arpwatch-2.0.1a1
@@ -12,7 +12,7 @@ MASTER_SITES=   ftp://ftp.ee.lbl.gov/ \
 		ftp://ftp.cso.uiuc.edu/pub/security/coast/unix/arpwatch/
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=     brian@awfulhak.demon.co.uk
+MAINTAINER=     brian@awfulhak.org
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--quiet
