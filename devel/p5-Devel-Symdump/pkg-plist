@@ -1,0 +1,5 @@
+lib/perl5/man/man3/Devel::Symdump.3.gz
+lib/perl5/site_perl/Devel/Symdump.pm
+lib/perl5/site_perl/Devel/Symdump/Export.pm
+lib/perl5/site_perl/i386-freebsd/auto/Devel/Symdump/.packlist
+@dirrm lib/perl5/site_perl/i386-freebsd/auto/Devel/Symdump

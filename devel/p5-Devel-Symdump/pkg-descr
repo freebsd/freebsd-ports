@@ -1,0 +1,15 @@
+       This little package serves to access the symbol table of
+       perl.
+
+       Devel::Symdump->rnew(@packages)
+
+       returns a symbol table object for all subtrees below
+       @packages.  Nested Modules are analyzed recursively. If no
+       package is given as argument, it defaults to main. That
+       means to get the whole symbol table, just do a rnew
+       without arguments.
+
+       Devel::Symdump->new(@packages)
+
+       does not go into recursion and only analyzes the packages
+       that are given as arguments.
