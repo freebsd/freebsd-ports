@@ -11,14 +11,16 @@
 %%ADODB_DIR%%/adodb-perf.inc.php
 %%ADODB_DIR%%/adodb-php4.inc.php
 %%ADODB_DIR%%/adodb-time.inc.php
+%%ADODB_DIR%%/adodb-time.zip
 %%ADODB_DIR%%/adodb-xmlschema.inc.php
-%%ADODB_DIR%%/adodb-xmlschema.zip
 %%ADODB_DIR%%/adodb.inc.php
 %%ADODB_DIR%%/pivottable.inc.php
 %%ADODB_DIR%%/rsfilter.inc.php
 %%ADODB_DIR%%/server.php
 %%ADODB_DIR%%/toexport.inc.php
 %%ADODB_DIR%%/tohtml.inc.php
+%%ADODB_DIR%%/xmlschema.dtd
+%%ADODB_DIR%%/contrib/toxmlrpc.inc.php
 %%ADODB_DIR%%/datadict/datadict-access.inc.php
 %%ADODB_DIR%%/datadict/datadict-db2.inc.php
 %%ADODB_DIR%%/datadict/datadict-generic.inc.php
@@ -96,6 +98,8 @@
 %%ADODB_DIR%%/session/old/adodb-session-clob.php
 %%ADODB_DIR%%/session/old/adodb-session.php
 %%ADODB_DIR%%/session/old/crypt.inc.php
+%%ADODB_DIR%%/xsl/convert-0.1-0.2.xsl
+%%ADODB_DIR%%/xsl/convert-0.2-0.1.xsl
 %%TESTS%%%%ADODB_DIR%%/tests/benchmark.php
 %%TESTS%%%%ADODB_DIR%%/tests/client.php
 %%TESTS%%%%ADODB_DIR%%/tests/test-datadict.php
@@ -128,16 +132,16 @@
 %%PORTDOCS%%%%DOCSDIR%%/tips_portable_sql.htm
 %%PORTDOCS%%%%DOCSDIR%%/tute.htm
 %%PORTDOCS%%%%DOCSDIR%%/cute_icons_for_site/adodb.gif
-%%PORTDOCS%%%%DOCSDIR%%/cute_icons_for_site/adodb.png
 %%PORTDOCS%%%%DOCSDIR%%/cute_icons_for_site/adodb2.gif
-%%PORTDOCS%%%%DOCSDIR%%/cute_icons_for_site/adodb2.png
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/cute_icons_for_site
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%ADODB_DIR%%/contrib
 @dirrm %%ADODB_DIR%%/datadict
 @dirrm %%ADODB_DIR%%/drivers
 @dirrm %%ADODB_DIR%%/lang
 @dirrm %%ADODB_DIR%%/perf
 @dirrm %%ADODB_DIR%%/session/old
 @dirrm %%ADODB_DIR%%/session
+@dirrm %%ADODB_DIR%%/xsl
 %%TESTS%%@dirrm %%ADODB_DIR%%/tests
 @dirrm %%ADODB_DIR%%
