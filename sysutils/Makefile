@@ -263,6 +263,7 @@
     SUBDIR += paicc
     SUBDIR += pciutils
     SUBDIR += pdumpfs
+    SUBDIR += pear-Cache
     SUBDIR += pear-File
     SUBDIR += pear-File_Find
     SUBDIR += pear-Log
