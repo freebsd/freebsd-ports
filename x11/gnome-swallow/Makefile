@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	gnome-swallow
-PORTVERSION=	1.1
-PORTREVISION=	3
+PORTVERSION=	1.2
 CATEGORIES=	x11 gnome
-MASTER_SITES=	http://www-unix.oit.umass.edu/~tetron/technology/swallow/
+MASTER_SITES=	http://interreality.org/~tetron/technology/swallow/
 
 MAINTAINER=	marcus@FreeBSD.org
 COMMENT=	Applet that swallows any X11 application into the GNOME 2 panel
