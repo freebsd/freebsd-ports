@@ -26,6 +26,7 @@ lib/mozilla/chrome/installed-chrome.txt
 lib/mozilla/chrome/messenger.jar
 lib/mozilla/chrome/modern.jar
 lib/mozilla/chrome/overlayinfo/communicator/content/overlays.rdf
+lib/mozilla/chrome/overlayinfo/cookie/content/overlays.rdf
 lib/mozilla/chrome/overlayinfo/editor/content/overlays.rdf
 lib/mozilla/chrome/overlayinfo/inspector/content/overlays.rdf
 lib/mozilla/chrome/overlayinfo/messenger/content/overlays.rdf
@@ -178,6 +179,7 @@ lib/mozilla/components/libucvmath.so
 lib/mozilla/components/libucvtw.so
 lib/mozilla/components/libucvtw2.so
 lib/mozilla/components/libunicharutil.so
+lib/mozilla/components/libuniversalchardet.so
 lib/mozilla/components/liburiloader.so
 lib/mozilla/components/libvcard.so
 lib/mozilla/components/libwallet.so
@@ -225,6 +227,7 @@ lib/mozilla/components/nsDictionary.js
 lib/mozilla/components/nsDownloadProgressListener.js
 lib/mozilla/components/nsFilePicker.js
 lib/mozilla/components/nsHelperAppDlg.js
+lib/mozilla/components/nsKillAll.js
 lib/mozilla/components/nsLDAPPrefsService.js
 lib/mozilla/components/nsProgressDialog.js
 lib/mozilla/components/nsProxyAutoConfig.js
@@ -582,6 +585,8 @@ lib/mozilla/xpt_link
 @dirrm lib/mozilla/chrome/overlayinfo/inspector
 @dirrm lib/mozilla/chrome/overlayinfo/editor/content
 @dirrm lib/mozilla/chrome/overlayinfo/editor
+@dirrm lib/mozilla/chrome/overlayinfo/cookie/content
+@dirrm lib/mozilla/chrome/overlayinfo/cookie
 @dirrm lib/mozilla/chrome/overlayinfo/communicator/content
 @dirrm lib/mozilla/chrome/overlayinfo/communicator
 @dirrm lib/mozilla/chrome/overlayinfo

@@ -1,16 +1,6 @@
---- configure.orig	Fri May 10 17:05:47 2002
-+++ configure	Fri May 10 17:06:17 2002
-@@ -6256,6 +6256,9 @@
- # for stuff like -lXshm
-     CPPFLAGS="${CPPFLAGS} ${X_CFLAGS}"
-     ;;
-+freebsd*)
-+    CPPFLAGS="${CPPFLAGS} ${X_CFLAGS}"
-+    ;;
- esac
- for ac_hdr in sys/byteorder.h compat.h getopt.h
- do
-@@ -7489,7 +7492,7 @@
+--- configure.orig	Wed May  8 22:24:05 2002
++++ configure	Mon May 13 01:18:53 2002
+@@ -7489,7 +7489,7 @@
  EOF
  
  						if test "$ac_cv_have_dash_pthread" = "yes"; then
@@ -19,7 +9,7 @@
  			else
  				_PTHREAD_LDFLAGS="-lc_r"
  			fi
-@@ -9927,7 +9930,7 @@
+@@ -9967,7 +9967,7 @@
      fi
      MOC=$HOST_MOC
  
@@ -28,16 +18,14 @@
      QT_LIBS="-L/usr/X11R6/lib -L${QTDIR}/lib -lqt -lXext -lX11"
  
      # Check whether --with-static-qt or --without-static-qt was given.
-@@ -10796,7 +10799,7 @@
+@@ -10836,13 +10836,13 @@
  
  
  
--MOZ_EXTENSIONS_DEFAULT=" cookie wallet content-packs xml-rpc xmlextras help pref transformiix venkman inspector irc"
-+MOZ_EXTENSIONS_DEFAULT=" cookie wallet content-packs xml-rpc xmlextras help pref transformiix venkman inspector"
+-MOZ_EXTENSIONS_DEFAULT=" cookie wallet content-packs xml-rpc xmlextras help pref transformiix venkman inspector irc universalchardet"
++MOZ_EXTENSIONS_DEFAULT=" cookie wallet content-packs xml-rpc xmlextras help pref transformiix venkman inspector universalchardet"
  
- case "$target_os" in
- msvc*|mksnt*|mingw*|cygwin*)
-@@ -10808,7 +10811,7 @@
+ if test -n "$SUNCTL"; then
    MOZ_EXTENSIONS_DEFAULT="$MOZ_EXTENSIONS_DEFAULT ctl"
  fi
  
