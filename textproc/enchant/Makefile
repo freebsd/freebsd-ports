@@ -7,7 +7,7 @@
 
 PORTNAME=	enchant
 PORTVERSION=	1.1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	abiword
@@ -15,8 +15,6 @@ DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Dictionary/spellchecking framework
-
-LIB_DEPENDS=	aspell.15:${PORTSDIR}/textproc/aspell
 
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
@@ -43,14 +41,23 @@ WITH_HSPELL=	yes
 
 .if defined(WITH_ASPELL)
 LIB_DEPENDS+=	pspell.15:${PORTSDIR}/textproc/aspell
+PLIST_SUB+=	ASPELL=""
+.else
+PLIST_SUB+=	ASPELL="@comment "
 .endif
 
 .if defined(WITH_ISPELL)
 BUILD_DEPENDS+=	ispell:${PORTSDIR}/textproc/ispell
+PLIST_SUB+=	ISPELL=""
+.else
+PLIST_SUB+=	ISPELL="@comment "
 .endif
 
 .if defined(WITH_HSPELL)
 BUILD_DEPENDS+=	hspell:${PORTSDIR}/hebrew/hspell
+PLIST_SUB+=	HSPELL=""
+.else
+PLIST_SUB+=	HSPELL="@comment "
 .endif
 
 pre-everything::
