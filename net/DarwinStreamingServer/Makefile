@@ -7,7 +7,7 @@
 
 PORTNAME=	DarwinStreamingServer
 PORTVERSION=	5.0
-#PORTREVISION=	1
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	#http://developer.apple.com/darwin/projects/streaming/source/
 #		You must accept APSL (Apple Public Source License),  and get
@@ -93,14 +93,14 @@ do-build:
 post-build:
 	@${CP} ${.CURDIR}/pkg-message ${WRKDIR}/pkg-message
 	@${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},g' ${WRKDIR}/pkg-message
-	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} /bin/sh -x ./DSS_MakeRoot -f ${OPSYS} dss)
+	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ./DSS_MakeRoot -f ${OPSYS} dss)
 
 pre-install:
 	@${SETENV} PKG_PREFIX=${PREFIX} \
 		${SH} ${PKGINSTALL} ${PORTNAME} PRE-INSTALL
 
 do-install:
-	@(cd ${WRKSRC}/${OPSYS}; ${SETENV} ${MAKE_ENV} /bin/sh -x ./Install)
+	@(cd ${WRKSRC}/${OPSYS}; ${SETENV} ${MAKE_ENV} ./Install)
 
 post-install:
 	${INSTALL_SCRIPT} ${FILESDIR}/streamingadminserver.sh    ${PREFIX}/etc/rc.d/
