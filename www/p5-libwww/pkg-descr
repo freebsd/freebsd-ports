@@ -1,0 +1,55 @@
+       Libwww-perl is a collection of Perl modules which provides
+       a simple and consistent programming interface (API) to the
+       World-Wide Web.  The main focus of the library is to
+       provide classes and functions that allow you to write WWW
+       clients, thus libwww-perl said to be a WWW client library.
+       The library also contain modules that are of more general
+       use.                                          
+
+       The main architecture of the library is object oriented.
+       The user agent, requests sent and responses received from
+       the WWW server are all represented by objects.  This makes
+       a simple and powerful interface to these services.  The
+       interface should be easy to extend and customize for your
+       needs.                               
+
+       The main features of the library are:
+
+       o  Contains various reuseable components (modules) that
+          can be used separately or together.
+
+       o  Provides an object oriented model of HTTP-style
+          communication.  Within this framework we currently
+          support access to http, gopher, ftp, news, file, and
+          mailto resources.
+
+       o  The library be used through the full object oriented
+          interface or through a very simple procedural
+          interface.
+
+       o  Support the basic and digest authorization schemes.
+
+       o  Transparent redirect handling.
+
+       o  Supports access through proxy servers.
+
+       o  URL handling (both absolute and relative URLs are
+          supported).                                   
+
+       o  A parser for robots.txt files and a framework for
+          constructing robots.
+
+       o  An experimental HTML parser and formatters (for
+          PostScript and plain text).
+
+       o  The library can cooperate with Tk.  A simple Tk-based
+          GUI browser called 'tkweb' is distributed with the Tk
+          extention for perl.
+
+       o  An implementation of the HTTP content negotiation
+          algorithm that can be used both in protocol modules and
+          in server scripts (like CGI scripts).
+
+       o  A simple command line client application called lwp-
+          request.                            
+                                                                   
