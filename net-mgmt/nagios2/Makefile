@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	nagios
-PORTVERSION=	2.0.b2
+PORTVERSION=	2.0.b3
 CATEGORIES=	net-mgmt
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=nagios
-DISTNAME=	nagios-2.0b2
+DISTNAME=	nagios-2.0b3
 
 MAINTAINER=	blaz@si.FreeBSD.org
 COMMENT=	Extremely powerful network monitoring system

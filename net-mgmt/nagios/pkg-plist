@@ -197,8 +197,6 @@ share/nagios/docs/verifyconfig.html
 share/nagios/docs/volatileservices.html
 share/nagios/docs/whatsnew.html
 share/nagios/docs/xodtemplate.html
-share/nagios/docs/xpddefault.html
-share/nagios/docs/xpdfile.html
 share/nagios/images/ack.gif
 share/nagios/images/action.gif
 share/nagios/images/command.png
