@@ -2482,6 +2482,7 @@ gtk-xfce-engine	ports/x11-toolkits/gtk-xfce-engine
 gtk-zenith-theme	ports/x11-toolkits/gtk-zenith-theme
 gtk12		ports/x11-toolkits/gtk12
 gtk12-apireference	ports/x11-toolkits/gtk12-apireference
+gtk2-theme-switch	ports/x11/gtk2-theme-switch
 gtk20		ports/x11-toolkits/gtk20
 gtk20-apireference	ports/x11-toolkits/gtk20-apireference
 gtkabale	ports/games/gtkabale
