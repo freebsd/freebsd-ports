@@ -3,7 +3,7 @@
 # Date created:		19 Feb 1998
 # Whom:			eivind
 #
-# $Id: Makefile,v 1.8 1998/06/07 14:54:07 eivind Exp $
+# $Id: Makefile,v 1.10 1998/11/29 12:33:04 eivind Exp $
 #
 
 DISTNAME=	xscavenger-135
@@ -13,6 +13,10 @@ MASTER_SITES=	http://www.xdr.com/dash/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	eivind@FreeBSD.org
+
+.if ${MACHINE_ARCH} == "alpha"
+BROKEN=		no sound support on the alpha yet
+.endif
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 USE_IMAKE=	yes
