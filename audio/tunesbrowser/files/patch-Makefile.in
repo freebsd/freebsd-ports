@@ -1,0 +1,17 @@
+--- Makefile.in.orig	Wed Feb  2 22:27:56 2005
++++ Makefile.in	Wed Feb  2 22:29:51 2005
+@@ -389,12 +389,12 @@
+ uiDATA_INSTALL = $(INSTALL_DATA)
+ install-uiDATA: $(ui_DATA)
+ 	@$(NORMAL_INSTALL)
+-	$(mkinstalldirs) $(DESTDIR)$(uidir)
++	$(mkinstalldirs) $(DESTDIR)$(uidir)/tunesbrowser
+ 	@list='$(ui_DATA)'; for p in $$list; do \
+ 	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+ 	  f="`echo $$p | sed -e 's|^.*/||'`"; \
+ 	  echo " $(uiDATA_INSTALL) $$d$$p $(DESTDIR)$(uidir)/$$f"; \
+-	  $(uiDATA_INSTALL) $$d$$p $(DESTDIR)$(uidir)/$$f; \
++	  $(uiDATA_INSTALL) $$d$$p $(DESTDIR)$(uidir)/tunesbrowser/$$f; \
+ 	done
+ 
+ uninstall-uiDATA:

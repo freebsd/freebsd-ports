@@ -1,0 +1,7 @@
+bin/tunesbrowser
+share/gnome/tunesbrowser/comp.blue.png
+share/gnome/tunesbrowser/comp.red.png
+share/gnome/tunesbrowser/sound1.png
+share/gnome/tunesbrowser/sound2.png
+share/gnome/tunesbrowser/tunesbrowser.glade
+@dirrm share/gnome/tunesbrowser
