@@ -2,7 +2,7 @@
 ** This file is in the public domain, so clarified as of
 ** June 5, 1996 by Arthur David Olson (arthur_david_olson@nih.gov).
 **
-** $FreeBSD: /tmp/pcvs/ports/devel/linuxthreads/files/localtime.c,v 1.2 2002-06-08 18:15:54 tegge Exp $
+** $FreeBSD: /tmp/pcvs/ports/devel/linuxthreads/files/localtime.c,v 1.3 2002-09-06 15:02:24 tegge Exp $
 */
 
 #ifndef lint
@@ -1077,12 +1077,12 @@ localtime(timep)
 const time_t * const	timep;
 {
 	static pthread_mutex_t localtime_mutex = PTHREAD_MUTEX_INITIALIZER;
-	static pthread_key_t localtime_key = -1;
+	static pthread_key_t localtime_key = (pthread_key_t) -1;
 	struct tm *p_tm;
 
 	if (__isthreaded != 0) {
 		pthread_mutex_lock(&localtime_mutex);
-		if (localtime_key < 0) {
+		if (localtime_key == (pthread_key_t) -1) {
 			if (pthread_key_create(&localtime_key, free) < 0) {
 				pthread_mutex_unlock(&localtime_mutex);
 				return(NULL);
@@ -1155,12 +1155,12 @@ gmtime(timep)
 const time_t * const	timep;
 {
 	static pthread_mutex_t gmtime_mutex = PTHREAD_MUTEX_INITIALIZER;
-	static pthread_key_t gmtime_key = -1;
+	static pthread_key_t gmtime_key = (pthread_key_t) -1;
 	struct tm *p_tm;
 
 	if (__isthreaded != 0) {
 		pthread_mutex_lock(&gmtime_mutex);
-		if (gmtime_key < 0) {
+		if (gmtime_key == (pthread_key_t) -1) {
 			if (pthread_key_create(&gmtime_key, free) < 0) {
 				pthread_mutex_unlock(&gmtime_mutex);
 				return(NULL);
