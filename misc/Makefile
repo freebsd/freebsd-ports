@@ -213,6 +213,7 @@
     SUBDIR += knewsticker-scripts
     SUBDIR += koffice-i18n
     SUBDIR += koffice-i18n-af
+    SUBDIR += koffice-i18n-bg
     SUBDIR += koffice-i18n-bs
     SUBDIR += koffice-i18n-ca
     SUBDIR += koffice-i18n-cs
