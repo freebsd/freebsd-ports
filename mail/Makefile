@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.39 1997/02/02 15:27:16 ache Exp $
+# $Id: Makefile,v 1.40 1997/03/26 02:15:28 jfitz Exp $
 #
 
     SUBDIR += bulk_mailer
@@ -14,7 +14,6 @@
     SUBDIR += metamail
     SUBDIR += mew
     SUBDIR += mh
-    SUBDIR += mpack
     SUBDIR += mutt
     SUBDIR += mutt.with_pgp
     SUBDIR += p5-Mail-Folder
