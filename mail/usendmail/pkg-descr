@@ -1,0 +1,7 @@
+usendmail is a replacement for the sendmail clone of the qmail package.
+
+It accepts more of the original sendmail's commandline options and does
+not depend on environment variables to set the envelope sender.
+
+Author:	Uwe Ohse <uwe@ohse.de>
+WWW:	http://www.ohse.de/uwe/usendmail.html
