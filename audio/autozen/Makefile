@@ -30,6 +30,7 @@ post-patch:
 			${WRKSRC}/autozen.c; \
 	fi
 	@${PERL} -pi -e "s=X11BASE=${X11BASE}=g" ${WRKSRC}/autozen.c
+	cd ${WRKSRC} && ${RM} autozen seq2wav
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/autozen ${PREFIX}/bin
