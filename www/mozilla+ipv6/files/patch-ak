@@ -1,7 +1,5 @@
-Index: nsprpub/pr/include/md/_freebsd.h
-diff -u nsprpub/pr/include/md/_freebsd.h.orig nsprpub/pr/include/md/_freebsd.h
---- nsprpub/pr/include/md/_freebsd.h.orig	Thu Dec 23 08:39:04 1999
-+++ nsprpub/pr/include/md/_freebsd.h	Fri Apr 28 22:14:54 2000
+--- nsprpub/pr/include/md/_freebsd.h.orig	Wed Dec 22 15:39:04 1999
++++ nsprpub/pr/include/md/_freebsd.h	Thu Feb  3 03:48:20 2000
 @@ -21,6 +21,7 @@
  
  #include "prthread.h"
