@@ -1,6 +1,6 @@
---- ./src/s/freebsd.h.org	Mon Oct 24 21:18:02 1994
-+++ ./src/s/freebsd.h	Tue Jan  3 02:14:03 1995
-@@ -31,7 +31,7 @@
+--- ./src/s/freebsd.h.org	Fri Nov  4 03:11:17 1994
++++ ./src/s/freebsd.h	Wed Aug  9 02:29:56 1995
+@@ -31,10 +31,10 @@
  
  #define PENDING_OUTPUT_COUNT(FILE) ((FILE)->_p - (FILE)->_bf._base)
  
@@ -8,4 +8,8 @@
 +#define LIBS_DEBUG -lcrypt
  #define LIBS_SYSTEM -lutil
  #define LIBS_TERMCAP -ltermcap
- #define LIB_GCC -lgcc
+-#define LIB_GCC -lgcc
++#define LIB_GCC /usr/lib/libgcc.a
+ 
+ /* Reread the time zone on startup. */
+ #define LOCALTIME_CACHE
