@@ -1,0 +1,14 @@
+Index: volume.c
+diff -u volume.c.orig volume.c
+--- volume.c.orig	Thu Nov 23 05:35:42 2000
++++ volume.c	Sat Jun 29 17:55:08 2002
+@@ -17,7 +17,8 @@
+ |  Free Software Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+ */
+ 
+-#ifdef __FreeBSD__
++#include <sys/param.h>
++#if defined(__FreeBSD__) && __FreeBSD_version < 500000
+ #include <machine/soundcard.h>
+ #else
+ #include <sys/soundcard.h>
