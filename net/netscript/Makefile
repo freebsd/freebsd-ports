@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	netscript
-PORTVERSION=	1.7.0
+PORTVERSION=	1.7.1
 PORTREVISION=	0
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
@@ -41,6 +41,8 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 	@${MKDIR} ${EXAMPLESDIR}
 	${CP} -R ${WRKSRC}/examples/* ${EXAMPLESDIR}
+	@${CHMOD} -R og+r ${EXAMPLESDIR}
+	@${CHMOD} og+x ${EXAMPLESDIR}/gui ${EXAMPLESDIR}/ncurses
 .endif
 
 .include <bsd.port.post.mk>
