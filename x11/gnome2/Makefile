@@ -52,6 +52,8 @@ NO_BUILD=	yes
 
 USE_PYTHON=	yes
 
+CONFLICTS=	gnome2-lite*
+
 .if !defined(BATCH) && !defined(PACKAGE_BUILDING)
 pre-configure:
 	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
