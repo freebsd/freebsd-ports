@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xmame
-PORTVERSION=	0.37b10.1
+PORTVERSION=	0.37b11.1
 CATEGORIES=	emulators
 MASTER_SITES=	http://x.mame.net/download/ \
 		ftp://ftp.kaupp.cx/pub/xmame/ \
@@ -25,12 +25,8 @@ MAN6=		xmame.6
 XMAMEDOCS=	changes.mame \
 		changes.unix \
 		credits.txt \
-		imgtool.txt \
+		gamelist.mame \
 		liesmich.unix \
-		mess.txt \
-		messnew.txt \
-		messold.txt \
-		messroms.txt \
 		multiplayer-readme.txt \
 		readme.mame \
 		xmame-doc-1.html \
