@@ -2,7 +2,7 @@ bin/nessus-build
 lib/nessus/plugins/12planet_chat_server_path_disclosure.nasl
 lib/nessus/plugins/12planet_chat_server_plaintext_password.nasl
 lib/nessus/plugins/3com_config_disclosure.nasl
-lib/nessus/plugins/3com_hub.nes
+%%AMD%%lib/nessus/plugins/3com_hub.nes
 lib/nessus/plugins/3com_ras_crash.nasl
 lib/nessus/plugins/3com_switches.nasl
 lib/nessus/plugins/404_path_disclosure.nasl
