@@ -501,6 +501,7 @@ bash-completion	ports/shells/bash-completion
 bash1		ports/shells/bash1
 bash2		ports/shells/bash2
 basiliskII	ports/emulators/basiliskII
+basket		ports/deskutils/basket
 battalion	ports/games/battalion
 battfink	ports/sysutils/battfink
 battleball	ports/games/battleball
