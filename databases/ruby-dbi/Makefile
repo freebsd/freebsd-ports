@@ -22,14 +22,12 @@ USE_RUBY_SETUP=	yes
 WRKSRC=		${RUBY_DBI_WRKSRC}
 CONFIGURE_ARGS=	--with=bin/commandline,lib/${PORTNAME},lib/wrapper
 
-DOCS_EN=	README.1st doc/* lib/${PORTNAME}/doc/*
+DOCS_EN=	README.1st doc/*
 
 .include "${.CURDIR}/Makefile.common"
 
 post-extract:
 	${MV} ${WRKSRC}/README ${WRKSRC}/README.1st
-	${RM} ${WRKSRC}/doc/create_html
-	${RM} ${WRKSRC}/lib/${PORTNAME}/doc/create_html
 
 post-install:
 	${MKDIR} ${RUBY_SITEARCHLIBDIR}/${PORTNAME}

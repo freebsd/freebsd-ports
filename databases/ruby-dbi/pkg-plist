@@ -20,7 +20,6 @@ bin/sqlsh.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/dbi/xmlgen.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/dbi/xmltest.rb
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/dbi
-%%PORTDOCS%%%%RUBY_DOCDIR%%/dbi/ChangeLog
 %%PORTDOCS%%%%RUBY_DOCDIR%%/dbi/DBD_SPEC
 %%PORTDOCS%%%%RUBY_DOCDIR%%/dbi/DBI_SPEC
 %%PORTDOCS%%%%RUBY_DOCDIR%%/dbi/README.1st
