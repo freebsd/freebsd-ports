@@ -1,0 +1,4 @@
+Python FAM provides a Python module to use the File Alteration
+Monitor(ports/devel/fam) in Python.
+
+WWW: http://python-fam.sourceforge.net/
