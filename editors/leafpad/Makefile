@@ -6,42 +6,32 @@
 #
 
 PORTNAME=	leafpad
-PORTVERSION=	0.7.6
-PORTREVISION=	1
+PORTVERSION=	0.7.7
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	radek@raadradd.com
-COMMENT=	Light-weight GTK+ Editor similar to notepad.exe
+COMMENT=	Light-weight GTK+ editor similar to notepad.exe
 
 USE_GNOME=	gtk20 gnomehier
+USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
-DOCS=		AUTHORS COPYING ChangeLog INSTALL README
-
-.if !defined(WITHOUT_NLS)
-USE_GETTEXT=	yes
-CONFIGURE_ARGS=	--enable-nls \
-		--with-libiconv-prefix=${LOCALBASE} \
-		--with-libintl-prefix=${LOCALBASE}
-PLIST_SUB+=	NLS:=""
-.else
-CONFIGURE_ARGS=	--disable-nls
-PLIST_SUB+=	NLS:="@comment "
-.endif
+PORTDOCS=	AUTHORS COPYING ChangeLog INSTALL README
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/pixmaps|/gnome/pixmaps|; \
 		s|/applications|/gnome/applications|' \
-			${WRKSRC}/Makefile.in ${WRKSRC}/src/Makefile.in
+		${WRKSRC}/Makefile.in ${WRKSRC}/src/Makefile.in
 
-.ifndef (NOPORTDOCS)
+.if !defined(NOPORTDOCS)
 post-install:
 	@${MKDIR} ${DOCSDIR}
-.for i in ${DOCS}
+.for i in ${PORTDOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
 .endif

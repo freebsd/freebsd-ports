@@ -1,19 +1,14 @@
 bin/leafpad
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/INSTALL
-%%PORTDOCS%%%%DOCSDIR%%/README
 share/gnome/applications/leafpad.desktop
 share/gnome/pixmaps/leafpad.png
-%%NLS:%%share/locale/de/LC_MESSAGES/leafpad.mo
-%%NLS:%%share/locale/es/LC_MESSAGES/leafpad.mo
-%%NLS:%%share/locale/fr/LC_MESSAGES/leafpad.mo
-%%NLS:%%share/locale/ja/LC_MESSAGES/leafpad.mo
-%%NLS:%%share/locale/ru/LC_MESSAGES/leafpad.mo
-%%NLS:%%share/locale/sv/LC_MESSAGES/leafpad.mo
-%%NLS:%%share/locale/zh_CN/LC_MESSAGES/leafpad.mo
-%%NLS:%%share/locale/zh_TW/LC_MESSAGES/leafpad.mo
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@exec update-mime-database %D/share/mime
-@unexec update-mime-database %D/share/mime
+share/locale/cs/LC_MESSAGES/leafpad.mo
+share/locale/de/LC_MESSAGES/leafpad.mo
+share/locale/es/LC_MESSAGES/leafpad.mo
+share/locale/fr/LC_MESSAGES/leafpad.mo
+share/locale/ja/LC_MESSAGES/leafpad.mo
+share/locale/ru/LC_MESSAGES/leafpad.mo
+share/locale/sv/LC_MESSAGES/leafpad.mo
+share/locale/zh_CN/LC_MESSAGES/leafpad.mo
+share/locale/zh_TW/LC_MESSAGES/leafpad.mo
+@exec update-desktop-database > /dev/null || true
+@unexec update-desktop-database > /dev/null || true
