@@ -23,6 +23,7 @@ lib/%%PYTHON_VERSION%%/site-packages/Crypto/Hash/RIPEMD.so
 lib/%%PYTHON_VERSION%%/site-packages/Crypto/Hash/SHA.py
 lib/%%PYTHON_VERSION%%/site-packages/Crypto/Hash/SHA.pyc
 lib/%%PYTHON_VERSION%%/site-packages/Crypto/Hash/SHA.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Crypto/Hash/SHA256.so
 lib/%%PYTHON_VERSION%%/site-packages/Crypto/Hash/__init__.py
 lib/%%PYTHON_VERSION%%/site-packages/Crypto/Hash/__init__.pyc
 lib/%%PYTHON_VERSION%%/site-packages/Crypto/Hash/__init__.pyo
@@ -53,6 +54,7 @@ lib/%%PYTHON_VERSION%%/site-packages/Crypto/PublicKey/pubkey.pyo
 lib/%%PYTHON_VERSION%%/site-packages/Crypto/PublicKey/qNEW.py
 lib/%%PYTHON_VERSION%%/site-packages/Crypto/PublicKey/qNEW.pyc
 lib/%%PYTHON_VERSION%%/site-packages/Crypto/PublicKey/qNEW.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Crypto/PublicKey/_fastmath.so
 lib/%%PYTHON_VERSION%%/site-packages/Crypto/Util/RFC1751.py
 lib/%%PYTHON_VERSION%%/site-packages/Crypto/Util/RFC1751.pyc
 lib/%%PYTHON_VERSION%%/site-packages/Crypto/Util/RFC1751.pyo
