@@ -1,0 +1,6 @@
+--- xinetd/xconv.pl	Mon Oct 18 01:27:18 1999
++++ xinetd/xconv.pl	Fri Feb 25 16:30:16 2000
+@@ -43 +43 @@
+-	@user = split /\./, $command[4];
++	@user = split /[:\.]/, $command[4];
+

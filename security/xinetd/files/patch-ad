@@ -1,0 +1,37 @@
+--- configure	Fri Dec 10 19:02:56 1999
++++ configure	Fri Feb 25 17:12:19 2000
+@@ -3020,34 +3019,0 @@
+-echo $ac_n "checking for R_OK""... $ac_c" 1>&6
+-echo "configure:3022: checking for R_OK" >&5
+-if eval "test \"`echo '$''{'ac_cv_type_R_OK'+set}'`\" = set"; then
+-  echo $ac_n "(cached) $ac_c" 1>&6
+-else
+-  cat > conftest.$ac_ext <<EOF
+-#line 3027 "configure"
+-#include "confdefs.h"
+-#include <sys/types.h>
+-#if STDC_HEADERS
+-#include <stdlib.h>
+-#include <stddef.h>
+-#endif
+-EOF
+-if (eval "$ac_cpp conftest.$ac_ext") 2>&5 |
+-  egrep "(^|[^a-zA-Z_0-9])R_OK[^a-zA-Z_0-9]" >/dev/null 2>&1; then
+-  rm -rf conftest*
+-  ac_cv_type_R_OK=yes
+-else
+-  rm -rf conftest*
+-  ac_cv_type_R_OK=no
+-fi
+-rm -f conftest*
+-
+-fi
+-echo "$ac_t""$ac_cv_type_R_OK" 1>&6
+-if test $ac_cv_type_R_OK = no; then
+-  cat >> confdefs.h <<\EOF
+-#define R_OK 4
+-EOF
+-
+-fi
+-
+-
