@@ -10,7 +10,7 @@ PORTVERSION=	0.1a
 CATEGORIES=	net
 MASTER_SITES=	http://www.x-router.com/files/
 
-MAINTAINER=	mich@freebsdcluster.org
+MAINTAINER=	mich@FreeBSD.org
 COMMENT=	A Web-based graphical ping log
 
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/GD.pm:${PORTSDIR}/graphics/p5-GD \
