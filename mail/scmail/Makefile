@@ -8,7 +8,7 @@
 PORTNAME=	scmail
 PORTVERSION=	1.2
 CATEGORIES=	mail
-MASTER_SITES=	http://www.namazu.org/~satoru/scmail/
+MASTER_SITES=	http://namazu.org/~satoru/scmail/
 
 MAINTAINER=	fuyuki@nigredo.org
 COMMENT=	A mail filter written in Scheme
