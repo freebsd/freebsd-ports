@@ -128,6 +128,7 @@
     SUBDIR += wmtictactoe
     SUBDIR += wmtimebomb
     SUBDIR += wolfpack
+    SUBDIR += x3eyes
     SUBDIR += xabacus
     SUBDIR += xasteroids
     SUBDIR += xataxx
