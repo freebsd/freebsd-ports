@@ -120,7 +120,7 @@ post-install:
 	@${SED} -e "/%%PREFIX%%/s##${PREFIX}#g" ${FILESDIR}/pwcheck.sh \
 		> ${PREFIX}/etc/rc.d/pwcheck.sh
 	@${CHMOD} 755 ${PREFIX}/etc/rc.d/pwcheck.sh
-	${INSTALL} -d -m 760 -o cyrus -g cyrus /var/pwcheck
+	${INSTALL} -d -m 770 -o cyrus -g cyrus /var/pwcheck
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/SASL/html
 .for file in ${DOCS}
