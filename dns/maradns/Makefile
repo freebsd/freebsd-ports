@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	maradns
-PORTVERSION=	0.9.09
+PORTVERSION=	0.9.11
 CATEGORIES=	net
 MASTER_SITES=	http://www.maradns.org/download/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/
@@ -44,7 +44,6 @@ do-install:
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/00README.FIRST ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/TODO.* ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/old.changelog ${DOCSDIR}
 	@${MKDIR} ${DOCSDIR}/en
 	@${INSTALL_DATA} ${WRKSRC}/doc/en/QuickStart ${DOCSDIR}/en
 	@${INSTALL_DATA} ${WRKSRC}/doc/en/README ${DOCSDIR}/en
