@@ -8,6 +8,7 @@
 
 SNAPDATE=	2002-09-02
 SNAPVER=	${SNAPDATE:S/-//g}
+#CVS_DATE=	${SNAPDATE} 23:46:00 EDT
 
 PORTNAME=	gcc
 PORTVERSION=	3.2
@@ -16,12 +17,14 @@ CATEGORIES=	lang java
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE} \
 		ftp://gcc.gnu.org/pub/%SUBDIR%/
 MASTER_SITE_SUBDIR=	gcc/snapshots/${SNAPDATE}
+.if !defined(CVS_DATE)
 DISTFILES=	\
 		gcc-core-${SNAPVER}${EXTRACT_SUFX} \
 		gcc-g++-${SNAPVER}${EXTRACT_SUFX} \
 		gcc-g77-${SNAPVER}${EXTRACT_SUFX} \
 		gcc-java-${SNAPVER}${EXTRACT_SUFX} \
 		gcc-objc-${SNAPVER}${EXTRACT_SUFX}
+.endif
 
 PATCH_SITES=	ftp://relay.nuxi.com/obrien/
 PATCHFILES=	port_gcc32_${SNAPDATE}.diff
@@ -82,6 +85,37 @@ MAN7=		fsf-funding.7 gfdl.7 gpl.7
 
 pre-fetch:
 	@${ECHO} "Making GCC ${DISTNAME:S/^gcc-//} for ${OPSYS} ${OSREL} ${PORTOBJFORMAT}	target ${CONFIGURE_TARGET}"
+
+.if defined(CVS_DATE)
+DIST_SUBDIR=	${PKGNAME}
+CVS_CMD?=	cvs -z3 -qR
+CVSROOT=	:pserver:anoncvs@subversions.gnu.org:/cvsroot/gcc
+STAMPFILE=	${DISTDIR}/${DIST_SUBDIR}/.timestamp
+_CKSUMFILES=	${DIST_SUBDIR}/${PATCHFILES}
+do-fetch:
+	@if [ ! -e ${STAMPFILE} ] || \
+	    [ "X${CVS_DATE}" != "X$$(${CAT} ${STAMPFILE})" ]; then \
+		${MKDIR} ${DISTDIR}/${DIST_SUBDIR} && \
+		cd ${DISTDIR}/${DIST_SUBDIR} ; \
+		unset CVS_RSH CVS_SERVER || ${TRUE} ; \
+		${ECHO_MSG} ">> Attempting to CVS checkout from ${CVSROOT}." ;\
+		if ${CVS_CMD} -d ${CVSROOT} co -r gcc-3_2-branch gcc ; \
+		then \
+			( ${ECHO} -n "${CVS_DATE}" > ${STAMPFILE} ) ; \
+			exit ; \
+		fi ; \
+		${ECHO_MSG} ">> Couldn't CVS checkout ${PKGNAME}." ; \
+		${ECHO_MSG} ">> Please try again later."; \
+		exit 1; \
+	fi
+	@test -e ${DISTDIR}/${DIST_SUBDIR}/${PATCHFILES} \
+	    || fetch -o ${DISTDIR}/${DIST_SUBDIR}/${PATCHFILES} \
+		${PATCH_SITES}${PATCHFILES}
+
+do-extract:
+	${MKDIR} ${SRCDIR}
+	cd ${DISTDIR}/${DIST_SUBDIR}/gcc ; pax -pe -rwt . ${SRCDIR}
+.endif	# CVS_DATE
 
 pre-configure:
 	@# Keep from running `autoconf' and `autoheader' since we modified
