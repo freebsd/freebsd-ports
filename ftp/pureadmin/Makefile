@@ -18,7 +18,8 @@ COMMENT=	Management utility for the PureFTPd
 
 LIB_DEPENDS=	fam.0:${PORTSDIR}/devel/fam
 
-USE_GNOME=	gnomehack pkgconfig gtk20
+USE_GNOME=	gnomeprefix gnomehack pkgconfig gtk20
+USE_X_PREFIX=	yes
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
