@@ -1,0 +1,12 @@
+--- configure.orig	Thu Oct 18 06:16:47 2001
++++ configure	Thu Oct 18 06:18:59 2001
+@@ -5065,7 +5065,8 @@
+ LIBTOOL_DEPS="--disable-ltlibs /usr/local/share/libtool/ltmain.sh"
+ 
+ # Always use our own libtool.
+-LIBTOOL='$(SHELL) $(top_builddir)/libtool'
++# LIBTOOL='$(SHELL) $(top_builddir)/libtool'
++LIBTOOL='$(PREFIX)/bin/libtool'
+ 
+ # Prevent multiple expansion
+ 

@@ -5,8 +5,8 @@
 # $FreeBSD$
 #
 
-PORTNAME=	libnasl
-PORTVERSION=	1.0.9
+PORTNAME=	nessus-libnasl
+PORTVERSION=	1.2.2
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.cis.fed.gov/pub/nessus/nessus-${PORTVERSION}/src/ \
 		ftp://ftp.nessus.org/pub/nessus/nessus-${PORTVERSION}/src/ \
@@ -17,11 +17,11 @@ MASTER_SITES=	ftp://ftp.cis.fed.gov/pub/nessus/nessus-${PORTVERSION}/src/ \
 		ftp://sunsite.cnlab-switch.ch/mirror/nessus/nessus-${PORTVERSION}/src/ \
 		ftp://ftp.chg.ru/pub/security/nessus/nessus-${PORTVERSION}/src/ \
 		ftp://ftp.sekure.net/pub/nessus/nessus-${PORTVERSION}/src/
-PKGNAMEPREFIX=	nessus-
+DISTNAME=	libnasl-${PORTVERSION}
 
-MAINTAINER=	olgeni@FreeBSD.org
+MAINTAINER=	udo.schweigert@siemens.com
 
-LIB_DEPENDS=	nessus.1:${PORTSDIR}/security/nessus-libraries
+LIB_DEPENDS=	nessus.3:${PORTSDIR}/security/nessus-libraries
 
 DIST_SUBDIR=	nessus
 WRKSRC=		${WRKDIR}/libnasl

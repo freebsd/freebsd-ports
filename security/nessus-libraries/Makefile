@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	nessus-libraries
-PORTVERSION=	1.0.9
-PORTREVISION=	1
+PORTVERSION=	1.2.2
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.cis.fed.gov/pub/nessus/nessus-${PORTVERSION}/src/ \
 		ftp://ftp.nessus.org/pub/nessus/nessus-${PORTVERSION}/src/ \
@@ -18,8 +17,9 @@ MASTER_SITES=	ftp://ftp.cis.fed.gov/pub/nessus/nessus-${PORTVERSION}/src/ \
 		ftp://sunsite.cnlab-switch.ch/mirror/nessus/nessus-${PORTVERSION}/src/ \
 		ftp://ftp.chg.ru/pub/security/nessus/nessus-${PORTVERSION}/src/ \
 		ftp://ftp.sekure.net/pub/nessus/nessus-${PORTVERSION}/src/
+DISTNAME=	nessus-libraries-${PORTVERSION}
 
-MAINTAINER=	olgeni@FreeBSD.org
+MAINTAINER=	udo.schweigert@siemens.com
 
 DIST_SUBDIR=	nessus
 WRKSRC=		${WRKDIR}/nessus-libraries

@@ -1,0 +1,13 @@
+--- nessus-mkcert-client.in.orig	Thu Feb 28 18:03:45 2002
++++ nessus-mkcert-client.in	Wed May 29 13:12:17 2002
+@@ -84,8 +84,8 @@
+ 
+ 
+ 
+-NESSUSPRIV="$localstatedir/nessus/CA"
+-NESSUSPUB="$sharedstatedir/nessus/CA"
++NESSUSPRIV="$localstatedir/CA"
++NESSUSPUB="$sharedstatedir/CA"
+ 
+ while [ ! -d "$NESSUSPRIV" ]; do
+     echo_no_nl "Nessus server 'private' directory: "
