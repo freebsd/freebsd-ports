@@ -152,6 +152,17 @@
  
  
  bin_PROGRAMS = gen_util_applet
+--- applets/gkb/Makefile.in.orig	Fri Feb 19 03:47:32 1999
++++ applets/gkb/Makefile.in	Fri Feb 19 03:47:52 1999
+@@ -152,7 +152,7 @@
+ cxxflags_set = @cxxflags_set@
+ l = @l@
+ 
+-INCLUDES = -I. -I$(srcdir)                                      -I$(top_srcdir)/intl -I$(top_builddir)/intl             -I$(srcdir)/../../panel                                 -I$(top_builddir)/panel         -DGNOMELOCALEDIR=\""$(datadir)/locale"\"                -I$(includedir) $(GNOME_INCLUDEDIR)
++INCLUDES = -I. -I$(srcdir)                                      -I$(top_srcdir)/intl -I$(top_builddir)/intl             -I$(srcdir)/../../panel                                 -I$(top_builddir)/panel         -DGNOMELOCALEDIR=\""$(prefix)/share/locale"\"                -I$(includedir) $(GNOME_INCLUDEDIR)
+ 
+ 
+ #if DO_EXE
 --- applets/gnome-pager/Makefile.in.orig	Mon Feb  1 07:47:04 1999
 +++ applets/gnome-pager/Makefile.in	Tue Feb  2 06:02:53 1999
 @@ -150,7 +150,7 @@
@@ -163,17 +174,6 @@
  
  
  bin_PROGRAMS = gnomepager_applet
---- applets/gticker/Makefile.in.orig	Mon Feb  1 07:47:20 1999
-+++ applets/gticker/Makefile.in	Tue Feb  2 06:03:08 1999
-@@ -150,7 +150,7 @@
- YACC = @YACC@
- l = @l@
- 
--INCLUDES = -I. -I$(srcdir) 					-I$(srcdir)/../../panel					-DGNOMELOCALEDIR=\""$(datadir)/locale"\"		-I$(top_builddir)/panel 	-I$(includedir) $(GNOME_INCLUDEDIR)
-+INCLUDES = -I. -I$(srcdir) 					-I$(srcdir)/../../panel					-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\"		-I$(top_builddir)/panel 	-I$(includedir) $(GNOME_INCLUDEDIR)
- 
- 
- bin_PROGRAMS = gticker_applet
 --- applets/mini-commander/src/Makefile.in.orig	Tue Feb  2 06:03:17 1999
 +++ applets/mini-commander/src/Makefile.in	Tue Feb  2 06:03:29 1999
 @@ -150,7 +150,7 @@
@@ -432,3 +432,44 @@
  
  gnome_terminal_help_DATA =  	index.html			topic.dat
  
+--- applets/cpumemusage/proc.c.orig	Fri Feb 19 04:07:15 1999
++++ applets/cpumemusage/proc.c	Fri Feb 19 04:07:29 1999
+@@ -1,3 +1,4 @@
++#include <sys/types.h>
+ #include <glibtop.h>
+ #include <glibtop/cpu.h>
+ #include <glibtop/mem.h>
+--- applets/diskusage/diskusage_read.c.orig	Fri Feb 19 04:09:00 1999
++++ applets/diskusage/diskusage_read.c	Fri Feb 19 04:09:13 1999
+@@ -1,3 +1,4 @@
++#include <sys/types.h>
+ #include <glibtop.h>
+ #include <glibtop/fsusage.h>
+ #include <glibtop/mountlist.h>
+--- applets/Makefile.in.orig	Fri Feb 19 04:43:52 1999
++++ applets/Makefile.in	Fri Feb 19 04:44:40 1999
+@@ -152,13 +152,13 @@
+ cxxflags_set = @cxxflags_set@
+ l = @l@
+ 
+-always_built_SUBDIRS = applet-dirs gen_util asclock 	 fish dialer webcontrol 	 drivemount clockmail fifteen battery charpick 	 gnome-pager mini-commander gkb
++always_built_SUBDIRS = applet-dirs gen_util asclock 	 fish dialer webcontrol clockmail fifteen battery charpick 	 gnome-pager mini-commander gkb
+ 
+ @FALSE_TRUE@@HAVE_LIBESD_TRUE@esdmanager = esd-manager
+ @FALSE_TRUE@@HAVE_LIBESD_FALSE@esdmanager = 
+ 
+ @FALSE_TRUE@@HAVE_FVWM_TRUE@fvwm = fvwm-pager
+-@HAVE_LIBGTOP_TRUE@libgtop_SUBDIRS = cpumemusage diskusage multiload netload
++@HAVE_LIBGTOP_TRUE@libgtop_SUBDIRS = cpumemusage diskusage multiload
+ @HAVE_LIBGTOP_FALSE@libgtop_SUBDIRS = 
+ 
+ @HAVE_LIBGHTTP_TRUE@slashapp = slashapp
+@@ -174,7 +174,7 @@
+ SUBDIRS = $(always_built_SUBDIRS) $(libgtop_SUBDIRS) 	 $(cdplayer) $(mixer) $(modemlights) $(winlist)          $(slashapp) $(esdmanager) $(fvwm)
+ 
+ 
+-DIST_SUBDIRS = $(always_built_SUBDIRS) esd-manager cpumemusage 	diskusage multiload netload slashapp cdplayer 	 mixer modemlights winlist fvwm-pager
++DIST_SUBDIRS = $(always_built_SUBDIRS) esd-manager cpumemusage 	diskusage multiload slashapp cdplayer 	 mixer modemlights winlist fvwm-pager
+ 
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../config.h

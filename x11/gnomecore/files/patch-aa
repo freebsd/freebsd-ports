@@ -1,14 +1,14 @@
---- configure.orig	Mon Feb  1 06:34:03 1999
-+++ configure	Tue Feb  2 05:57:35 1999
-@@ -1121,13 +1121,13 @@
+--- configure.orig	Tue Feb 16 01:45:51 1999
++++ configure	Fri Feb 19 03:41:47 1999
+@@ -1133,13 +1133,13 @@
  	    fi
  	
  	    if test "$no_gnome_config" = "yes"; then
 -              echo $ac_n "checking for gnomeConf.sh file in $gnome_prefix""... $ac_c" 1>&6
--echo "configure:1126: checking for gnomeConf.sh file in $gnome_prefix" >&5
+-echo "configure:1138: checking for gnomeConf.sh file in $gnome_prefix" >&5
 -	      if test -f $gnome_prefix/gnomeConf.sh; then
 +              echo $ac_n "checking for gnomeConf.sh file in $prefix/share/gnome""... $ac_c" 1>&6
-+echo "configure:1126: checking for gnomeConf.sh file in $prefix/share/gnome" >&5
++echo "configure:1138: checking for gnomeConf.sh file in $prefix/share/gnome" >&5
 +	      if test -f $prefix/share/gnome/gnomeConf.sh; then
  	        echo "$ac_t""found" 1>&6
  	        echo "loading gnome configuration from" \
@@ -19,7 +19,7 @@
  	        
  	      else
  	        echo "$ac_t""not found" 1>&6
-@@ -5046,7 +5046,7 @@
+@@ -5071,7 +5071,7 @@
    cat conftest.$ac_ext >&5
    rm -rf conftest*
    CATOBJEXT=.mo
@@ -28,7 +28,7 @@
  fi
  rm -f conftest*
  		INSTOBJEXT=.mo
-@@ -5308,7 +5308,7 @@
+@@ -5333,7 +5333,7 @@
  		 USE_INCLUDED_LIBINTL=yes
  		 CATOBJEXT=.cat
  		 INSTOBJEXT=.cat

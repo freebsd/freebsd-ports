@@ -5,7 +5,6 @@ bin/clockmail_applet
 bin/cpumemusage_applet
 bin/dialer_applet
 bin/diskusage_applet
-bin/drivemount_applet
 bin/fifteen_applet
 bin/gen_util_applet
 bin/gmenu
@@ -17,12 +16,10 @@ bin/gnome-session
 bin/gnome-smproxy
 bin/gnome-terminal
 bin/gnomepager_applet
-bin/gticker_applet
 bin/mini_commander_applet
 bin/mixer_applet
 bin/modemlights_applet
 bin/multiload_applet
-bin/netload_applet
 bin/panel
 bin/save-session
 bin/session-properties
@@ -35,19 +32,19 @@ etc/CORBA/servers/clockmail_applet.gnorba
 etc/CORBA/servers/cpumemusage_applet.gnorba
 etc/CORBA/servers/dialer_applet.gnorba
 etc/CORBA/servers/diskusage_applet.gnorba
-etc/CORBA/servers/drivemount_applet.gnorba
 etc/CORBA/servers/fifteen_applet.gnorba
 etc/CORBA/servers/fish_applet.gnorba
 etc/CORBA/servers/gen_util.gnorba
+etc/CORBA/servers/gkb_applet.gnorba
 etc/CORBA/servers/gnomepager_applet.gnorba
 etc/CORBA/servers/help-browser.gnorba
 etc/CORBA/servers/mini-commander_applet.gnorba
 etc/CORBA/servers/mixer_applet.gnorba
 etc/CORBA/servers/modemlights_applet.gnorba
 etc/CORBA/servers/multiload_applet.gnorba
-etc/CORBA/servers/netload_applet.gnorba
 etc/CORBA/servers/panel.gnorba
 etc/CORBA/servers/slash_applet.gnorba
+etc/CORBA/servers/webcontrol_applet.gnorba
 etc/sound/events/panel.soundlist
 include/applet-widget.h
 include/gnome-panel.h
@@ -56,6 +53,10 @@ lib/libfish_applet.a
 lib/libfish_applet.la
 lib/libfish_applet.so
 lib/libfish_applet.so.0
+lib/libgkb_applet.a
+lib/libgkb_applet.la
+lib/libgkb_applet.so
+lib/libgkb_applet.so.0
 lib/libpanel_applet.a
 lib/libpanel_applet.la
 lib/libpanel_applet.so
@@ -66,7 +67,6 @@ share/gnome/appletsConf.sh
 share/gnome/applets/Amusements/.directory
 share/gnome/applets/Amusements/fifteen_applet.desktop
 share/gnome/applets/Amusements/fish_applet.desktop
-share/gnome/applets/Amusements/gticker_applet.desktop
 share/gnome/applets/Amusements/slash_applet.desktop
 share/gnome/applets/Monitors/.directory
 share/gnome/applets/Monitors/battery_applet.desktop
@@ -81,14 +81,13 @@ share/gnome/applets/Network/.directory
 share/gnome/applets/Network/dialer_applet.desktop
 share/gnome/applets/Network/mailcheck_applet.desktop
 share/gnome/applets/Network/modemlights_applet.desktop
-share/gnome/applets/Network/netload_applet.desktop
 share/gnome/applets/Network/webcontrol_applet.desktop
 share/gnome/applets/Utility/.directory
 share/gnome/applets/Utility/asclock_applet.desktop
 share/gnome/applets/Utility/charpick_applet.desktop
 share/gnome/applets/Utility/clock_applet.desktop
 share/gnome/applets/Utility/clockmail_applet.desktop
-share/gnome/applets/Utility/drivemount_applet.desktop
+share/gnome/applets/Utility/gkb_applet.desktop
 share/gnome/applets/Utility/gnomepager_applet.desktop
 share/gnome/applets/Utility/mini-commander_applet.desktop
 share/gnome/applets/Utility/printer.desktop
@@ -174,7 +173,6 @@ share/gnome/help/gnome-terminal/C/docbook.css
 share/gnome/help/gnome-terminal/C/emulation.html
 share/gnome/help/gnome-terminal/C/enviroment.html
 share/gnome/help/gnome-terminal/C/index.html
-share/gnome/help/gnome-terminal/C/ln9.html
 share/gnome/help/gnome-terminal/C/menus.html
 share/gnome/help/gnome-terminal/C/options.html
 share/gnome/help/gnome-terminal/C/pointerusage.html
@@ -220,6 +218,37 @@ share/gnome/panelrc
 share/gnome/pixmaps/emacs.png
 share/gnome/pixmaps/fish/fishanim.png
 share/gnome/pixmaps/fish/oldwanda.png
+share/gnome/pixmaps/gkb.xpm
+share/gnome/pixmaps/gkb/be.xpm
+share/gnome/pixmaps/gkb/bg.xpm
+share/gnome/pixmaps/gkb/ca.xpm
+share/gnome/pixmaps/gkb/ch.xpm
+share/gnome/pixmaps/gkb/cz.xpm
+share/gnome/pixmaps/gkb/de.xpm
+share/gnome/pixmaps/gkb/dk.xpm
+share/gnome/pixmaps/gkb/es.xpm
+share/gnome/pixmaps/gkb/fi.xpm
+share/gnome/pixmaps/gkb/fr.xpm
+share/gnome/pixmaps/gkb/gb.xpm
+share/gnome/pixmaps/gkb/gr.xpm
+share/gnome/pixmaps/gkb/hu.xpm
+share/gnome/pixmaps/gkb/il.xpm
+share/gnome/pixmaps/gkb/is.xpm
+share/gnome/pixmaps/gkb/it.xpm
+share/gnome/pixmaps/gkb/jp.xpm
+share/gnome/pixmaps/gkb/nl.xpm
+share/gnome/pixmaps/gkb/no.xpm
+share/gnome/pixmaps/gkb/pl.xpm
+share/gnome/pixmaps/gkb/pt.xpm
+share/gnome/pixmaps/gkb/qc.xpm
+share/gnome/pixmaps/gkb/ru.xpm
+share/gnome/pixmaps/gkb/se.xpm
+share/gnome/pixmaps/gkb/si.xpm
+share/gnome/pixmaps/gkb/sk.xpm
+share/gnome/pixmaps/gkb/th.xpm
+share/gnome/pixmaps/gkb/tr.xpm
+share/gnome/pixmaps/gkb/us.xpm
+share/gnome/pixmaps/gkb/yu.xpm
 share/gnome/pixmaps/gnome-aorta.png
 share/gnome/pixmaps/gnome-audio2.png
 share/gnome/pixmaps/gnome-background.png
@@ -302,6 +331,42 @@ share/gnome/pixmaps/tiles/tile-purple-up.png
 share/gnome/pixmaps/tiles/tile-sand-down.png
 share/gnome/pixmaps/tiles/tile-sand-up.png
 share/gnome/pixmaps/vnterm.xpm
+share/gnome/xmodmap/xmodmap.be
+share/gnome/xmodmap/xmodmap.bg
+share/gnome/xmodmap/xmodmap.ch
+share/gnome/xmodmap/xmodmap.cz
+share/gnome/xmodmap/xmodmap.de
+share/gnome/xmodmap/xmodmap.dk
+share/gnome/xmodmap/xmodmap.dvorak
+share/gnome/xmodmap/xmodmap.es
+share/gnome/xmodmap/xmodmap.fi
+share/gnome/xmodmap/xmodmap.fr
+share/gnome/xmodmap/xmodmap.gr
+share/gnome/xmodmap/xmodmap.hu
+share/gnome/xmodmap/xmodmap.hu.old
+share/gnome/xmodmap/xmodmap.il
+share/gnome/xmodmap/xmodmap.is
+share/gnome/xmodmap/xmodmap.it
+share/gnome/xmodmap/xmodmap.la
+share/gnome/xmodmap/xmodmap.nl
+share/gnome/xmodmap/xmodmap.no
+share/gnome/xmodmap/xmodmap.pl
+share/gnome/xmodmap/xmodmap.pt
+share/gnome/xmodmap/xmodmap.qc
+share/gnome/xmodmap/xmodmap.ru
+share/gnome/xmodmap/xmodmap.ru_koi8
+share/gnome/xmodmap/xmodmap.se
+share/gnome/xmodmap/xmodmap.sf
+share/gnome/xmodmap/xmodmap.sg
+share/gnome/xmodmap/xmodmap.si
+share/gnome/xmodmap/xmodmap.sk
+share/gnome/xmodmap/xmodmap.th
+share/gnome/xmodmap/xmodmap.tr_f
+share/gnome/xmodmap/xmodmap.tr_q
+share/gnome/xmodmap/xmodmap.uk
+share/gnome/xmodmap/xmodmap.us
+share/gnome/xmodmap/xmodmap.us.old
+share/gnome/xmodmap/xmodmap.yu
 share/locale/ca/LC_MESSAGES/gnome-core.mo
 share/locale/cs/LC_MESSAGES/gnome-core.mo
 share/locale/da/LC_MESSAGES/gnome-core.mo
@@ -359,7 +424,9 @@ share/locale/sv/LC_MESSAGES/gnome-core.mo
 @dirrm share/gnome/help
 @dirrm share/gnome/mc/templates
 @dirrm share/gnome/mc
+@dirrm share/gnome/pixmaps/gkb
+@dirrm share/gnome/pixmaps/fish
 @dirrm share/gnome/pixmaps/mailcheck
 @dirrm share/gnome/pixmaps/mini-commander
-@dirrm share/gnome/pixmaps/fish
 @dirrm share/gnome/pixmaps/tiles
+@dirrm share/gnome/xmodmap
