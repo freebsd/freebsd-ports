@@ -168,7 +168,8 @@ PHP_PORT=	${.CURDIR:S|^${_PORTSDIR}||:S|^/||}
 post-patch:
 	@${TOUCH} ${WRKSRC}/ext/php_config.h
 	@${REINPLACE_CMD} "s|^\(extension_dir\)|; \1|" ${WRKSRC}/php.ini-*
-	@${REINPLACE_CMD} "s|<crypt.h>|<unistd.h>|g" ${WRKSRC}/configure
+	@${REINPLACE_CMD} "s|<crypt.h>|<unistd.h>|g;s|HAVE_CRYPT_H|HAVE_UNISTD_H|g" \
+		${WRKSRC}/configure
 
 .if ${PHP_SAPI} == "full"
 pre-configure:
