@@ -1,0 +1,19 @@
+sdd is a replacement for dd(1).
+
+- Much faster than dd in cases where input block size (ibs) is not equal
+  to the output block size (obs).
+- sdd does not share the design bugs of dd that cause fragments to be
+  read from a pipe and filled up to input block size.
+- Statistics are much better readable as from 'dd'.
+- Timing available, -time option will print transfer speed
+- Timing & Statistics available at any time with SIGQUIT (^\)
+- Can seek on input and output
+- Fast null input
+- Fast null output
+- Reblocking on pipes does not fill small input blocks to 
+  input block size
+- Debug printing
+- Progress printing
+
+Author: Joerg Schilling <schilling@fokus.gmd.de>
+Please mail bugs and suggestions to him.
