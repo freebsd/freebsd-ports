@@ -1,5 +1,5 @@
 --- lib/Makefile.orig	Thu Mar 18 19:09:21 2004
-+++ lib/Makefile	Tue Mar 30 06:34:58 2004
++++ lib/Makefile	Sun Apr  4 08:05:19 2004
 @@ -34,6 +34,8 @@
  # Library objects to be linked but not built by Makefile.common:
  LIBOBJECTS_X = util/shhopt.o util/nstring.o
@@ -26,7 +26,7 @@
  
  ifeq ($(NETPBMLIBTYPE),irixshared)
  # The libxxx.so link is needed to link the executables.
-@@ -104,11 +109,8 @@
+@@ -104,12 +109,9 @@
  # The $(SONAME) link is needed only to test the programs without
  # installing the libraries (in that case, you also need to direct the 
  # dynamic linker to the source directories, e.g. set LD_LIBRARY_PATH).
@@ -35,11 +35,13 @@
 -	$(SYMLINK) $< $@
 -libnetpbm.$(NETPBMLIBSUFFIX).$(MAJ).$(MIN): $(LIBOBJECTS) $(LIBOBJECTS_X)
 -	$(LD) $(LDSHLIB) -o $@ $(LIBOBJECTS) $(LIBOBJECTS_X) \
+-          $(SHLIB_CLIB) $(LADD)
 +$(SONAME): $(SHLIBOBJECTS) $(LIBOBJECTS_X)
 +	$(LD) $(LDSHLIB) -o $@ $(SHLIBOBJECTS) $(LIBOBJECTS_X) \
-           $(SHLIB_CLIB) $(LADD)
++          $(SHLIB_CLIB) $(MATHLIB) $(LADD)
  endif
  
+ ifeq ($(NETPBMLIBTYPE),dll)
 @@ -186,13 +188,10 @@
  .PHONY: install.lib
  ifeq ($(NETPBMLIBTYPE),unixshared)
