@@ -8,9 +8,8 @@
 PORTNAME=	xephem
 PORTVERSION=	3.5.2
 CATEGORIES=	astro
-MASTER_SITES=	http://www.clearskyinstitute.com/xephem/ \
-		ftp://iraf.noao.edu/contrib/xephem/ \
-		ftp://wolf.ifj.edu.pl/mirror/xephem/
+MASTER_SITES=	# http://www.clearskyinstitute.com/xephem/
+DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
 
@@ -24,7 +23,18 @@ MAN1=		xephem.1
 LIBASTROSRC=	${WRKDIR}/${DISTNAME}/libastro
 LIBIPSRC=	${WRKDIR}/${DISTNAME}/libip
 
+NO_CDROM=	Personal use only
+
+.include <bsd.port.pre.mk>
+
+.for file in ${DISTFILES}
+.if !exists(${DISTDIR}/${file})
+IGNORE=You must manually fetch ${file} from http://www.clearskyinstitute.com/xephem/, place it in ${DISTDIR} and then run make again.
+.endif
+.endfor
+
 post-patch:
+	@${CHMOD} u+w ${LIBASTROSRC}/Makefile ${LIBIPSRC}/Makefile
 	@${REINPLACE_CMD} -e 's|CC =|CC?=|g ; \
 		 s|CFLAGS=|CFLAGS+=|g ; \
 		 s|-O2 ||g' ${LIBASTROSRC}/Makefile ${LIBIPSRC}/Makefile
@@ -42,4 +52,4 @@ post-install:
 	@${FIND} ${PREFIX}/lib/X11/xephem | ${XARGS} ${CHOWN} ${SHAREOWN}:${SHAREMODE}
 	@${FIND} ${PREFIX}/lib/X11/xephem -type f | ${XARGS} ${CHMOD} ${SHAREMODE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
