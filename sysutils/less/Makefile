@@ -3,7 +3,7 @@
 # Date created:         8 Nov 1994
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.8 1995/04/12 04:56:12 asami Exp $
+# $Id: Makefile,v 1.9 1995/11/26 10:47:49 asami Exp $
 #
 
 DISTNAME=       less-290
@@ -16,20 +16,13 @@ GNU_CONFIGURE=	yes
 
 EXTRA_PATCH=	patch-ab
 
-color:
-	@echo "Okay, making a color version of less...."
-	@cp ${FILESDIR}/${EXTRA_PATCH} ${PATCHDIR}
-	@${MAKE} ${.MAKEFLAGS} all
-
 pre-clean:
 	@rm -f ${PATCHDIR}/${EXTRA_PATCH}
 
+.if defined(COLOUR_LESS) || defined(COLOR_LESS)
 pre-patch:
-	@if [ ! -f ${PATCHDIR}/${EXTRA_PATCH} ]; then \
-	  echo '******************************************************' ; \
-	  echo '* Note that you can build a color version of less by *' ; \
-	  echo '* typing "make color" following a "make clean"       *' ; \
-	  echo '******************************************************' ; \
-	fi
+	@echo "Making a colour version of less."
+	@cp ${FILESDIR}/${EXTRA_PATCH} ${PATCHDIR}
+.endif
 
 .include <bsd.port.mk>
