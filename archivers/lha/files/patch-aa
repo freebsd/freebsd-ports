@@ -1,57 +1,42 @@
-*** Makefile.orig	Fri Mar  1 17:59:19 1996
---- Makefile	Sun Dec 15 11:00:17 1996
-***************
-*** 11,35 ****
-  #-----------------------------------------------------------------------
-  
-  SHELL=/bin/sh
-! MAKE = make
-  
-  #CC			= cc
-! CC			= gcc
-! SWITCHES	= -DNEED_INCREMENTAL_INDICATOR \
-!  -DTMP_FILENAME_TEMPLATE="\"/tmp/lhXXXXXX\""
-  #MACHINE     = -DSYSTIME_HAS_NO_TM -DFTIME -DEUC
-! MACHINE     = -DSYSTIME_HAS_NO_TM -DEUC -DFTIME
-  #OPTIMIZE	= -O2 -fstrength-reduce -fomit-frame-pointer -mv8
-  #OPTIMIZE	= -O2 -fstrength-reduce -fomit-frame-pointer
-! OPTIMIZE	= -O2 -fstrength-reduce -fomit-frame-pointer
-  
-! BINDIR = /usr/local/bin
-! MANDIR = /usr/local/man
-! MANSECT = n
-  
-! INSTALL = install
-! INSTALLBIN = -s -m 755
-! INSTALLMAN = -m 644
-  
-  SUBDIRS = src man
-  
---- 11,37 ----
-  #-----------------------------------------------------------------------
-  
-  SHELL=/bin/sh
-! #MAKE = make
-  
-  #CC			= cc
-! #CC                      = gcc
-! SWITCHES        = -DNEED_INCREMENTAL_INDICATOR
-  #MACHINE     = -DSYSTIME_HAS_NO_TM -DFTIME -DEUC
-! MACHINE     = -DSYSTIME_HAS_NO_TM -DTIMELOCAL -DUSESTRCASECMP \
-! 	      -DSYSV_SYSTEM_DIR
-  #OPTIMIZE	= -O2 -fstrength-reduce -fomit-frame-pointer -mv8
-  #OPTIMIZE	= -O2 -fstrength-reduce -fomit-frame-pointer
-! #OPTIMIZE        = -O2 -fstrength-reduce -fomit-frame-pointer
-! OPTIMIZE        = ${CFLAGS}
-  
-! PREFIX ?= /usr/local
-! BINDIR = ${PREFIX}/bin
-! MANDIR = ${PREFIX}/man/ja
-! MANSECT = 1
-  
-! #INSTALL = install
-! INSTALLBIN = -c -s -o ${BINOWN} -g ${BINGRP} -m ${BINMODE}
-! INSTALLMAN = -m 444 -o bin -g bin -c
-  
-  SUBDIRS = src man
-  
+--- Makefile.orig	Wed Jan 15 18:46:08 1997
++++ Makefile	Mon Mar 30 22:09:06 1998
+@@ -11,26 +11,23 @@
+ #-----------------------------------------------------------------------
+ 
+ SHELL=/bin/sh
+-MAKE = make
++#MAKE = make
+ 
+ #CC			= cc
+-CC			= gcc
+-SWITCHES	= -DNEED_INCREMENTAL_INDICATOR \
+- -DTMP_FILENAME_TEMPLATE="\"/tmp/lhXXXXXX\""
+-#MACHINE     = -DSYSTIME_HAS_NO_TM -DFTIME -DEUC
+-MACHINE     = -DSYSTIME_HAS_NO_TM -DEUC -DHAVE_TM_ZONE
+-#OPTIMIZE	= -O2 -fstrength-reduce -fomit-frame-pointer -mv8
+-#OPTIMIZE	= -O2 -fstrength-reduce -fomit-frame-pointer
+-OPTIMIZE	= -O2 -fstrength-reduce -fomit-frame-pointer
+-#OPTIMIZE	= -g
++#CC			= gcc
++SWITCHES	= -DNEED_INCREMENTAL_INDICATOR
++MACHINE     = -DSYSTIME_HAS_NO_TM -DTIMELOCAL -DUSESTRCASECMP \
++              -DSYSV_SYSTEM_DIR -DEUC
++OPTIMIZE	= ${CFLAGS}
+ 
+-BINDIR = /usr/local/bin
+-MANDIR = /usr/local/man
+-MANSECT = n
++PREFIX ?= /usr/local
++BINDIR = ${PREFIX}/bin
++MANDIR = ${PREFIX}/man/ja
++MANSECT = 1
+ 
+-INSTALL = install
+-INSTALLBIN = -s -m 755
+-INSTALLMAN = -m 644
++#INSTALL = install
++INSTALLBIN = -c -s -o ${BINOWN} -g ${BINGRP} -m ${BINMODE}
++INSTALLMAN = -c -o ${MANOWN} -g ${MANGRP} -m ${MANMODE}
+ 
+ SUBDIRS = src man
+ 
