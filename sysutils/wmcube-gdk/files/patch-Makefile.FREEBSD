@@ -1,0 +1,35 @@
+--- Makefile.FREEBSD.orig	Sun Oct  8 20:38:24 2000
++++ Makefile.FREEBSD	Wed Aug 29 15:51:33 2001
+@@ -1,26 +1,21 @@
+-CC = gcc
+ OS = -DFREEBSD
+ 
+-LIBDIR = -L/usr/X11R6/lib
+-LIBDIR = -L/usr/X11R6/lib
+-INCDIR = -I/usr/X11R6/include
++LIBDIR != ${GTK_CONFIG} --libs
++INCDIR != ${GTK_CONFIG} --cflags
+ 
+ # Edit OSLIBS as appropriate to include OS specific libraries.
+ 
+ OSLIBS = -lkvm
+-LIBS   = -lXpm -lXext -lX11 -lm $(OSLIBS)
+-CFLAGS = -Wall -O2 $(OS)
++LIBS   = -lXpm $(OSLIBS)
++CFLAGS += -Wall $(OS)
+ 
+-OBJS =	wmcube.o \
+-	../wmgeneral/wmgeneral.o \
+-	../wmgeneral/misc.o \
+-	../wmgeneral/list.o
++OBJS =	wmcube.o
+ 
+ .c.o:
+ 	$(CC) $(CFLAGS) $(INCDIR) -c $< -o $*.o
+ 
+ wmcube: $(OBJS)
+-	$(CC) -o wmcube $(OBJS) -lXext $(LIBDIR) $(LIBS)
++	$(CC) -o wmcube $(OBJS) $(LIBDIR) $(LIBS)
+ 
+ all:: wmcube
+ 
