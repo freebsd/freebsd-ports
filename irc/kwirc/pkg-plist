@@ -1,0 +1,68 @@
+bin/kwirc
+share/applications/kde/kwirc.desktop
+share/apps/kwirc/eventsrc
+share/apps/kwirc/icons/op.png
+share/apps/kwirc/icons/op_away.png
+share/apps/kwirc/icons/standard.png
+share/apps/kwirc/icons/standard_away.png
+share/apps/kwirc/icons/voice.png
+share/apps/kwirc/icons/voice_away.png
+share/apps/kwirc/scripts/YS.rb
+share/apps/kwirc/scripts/annoy.rb
+share/apps/kwirc/scripts/autoslaps.rb
+share/apps/kwirc/scripts/beepme.rb
+share/apps/kwirc/scripts/ircutils.rb
+share/apps/kwirc/scripts/testerror.rb
+share/apps/kwirc/scripts/testscript.rb
+share/apps/kwirc/scripts/wordautocomplete.rb
+share/apps/kwirc/smileys/icon_ass.png
+share/apps/kwirc/smileys/icon_biggrin.png
+share/apps/kwirc/smileys/icon_borne.png
+share/apps/kwirc/smileys/icon_confused.png
+share/apps/kwirc/smileys/icon_cool.png
+share/apps/kwirc/smileys/icon_cry.png
+share/apps/kwirc/smileys/icon_dick.png
+share/apps/kwirc/smileys/icon_eek.png
+share/apps/kwirc/smileys/icon_razz.png
+share/apps/kwirc/smileys/icon_smile.png
+share/apps/kwirc/smileys/icon_turtle.png
+share/apps/kwirc/smileys/icon_wink.png
+share/apps/kwirc/themes/blackmore.theme
+share/apps/kwirc/themes/default.theme
+share/apps/kwirc/themes/nohar.theme
+share/config.kcfg/kwircsettings.kcfg
+share/doc/HTML/en/kwirc/common
+share/doc/HTML/en/kwirc/index.cache.bz2
+share/doc/HTML/en/kwirc/index.docbook
+share/icons/hicolor/16x16/apps/kwirc.png
+share/icons/hicolor/22x22/apps/kwirc.png
+share/icons/hicolor/32x32/apps/kwirc.png
+share/icons/hicolor/48x48/apps/kwirc.png
+share/icons/hicolor/64x64/apps/kwirc.png
+@unexec rmdir %D/share/locale/fr/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/fr 2>/dev/null || true
+@unexec rmdir %D/share/locale 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/64x64/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/64x64 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/48x48/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/48x48 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/32x32/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/32x32 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/22x22/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/22x22 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/16x16/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/16x16 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor 2>/dev/null || true
+@unexec rmdir %D/share/icons 2>/dev/null || true
+@dirrm share/doc/HTML/en/kwirc
+@unexec rmdir %D/share/doc/HTML/en 2>/dev/null || true
+@unexec rmdir %D/share/doc/HTML 2>/dev/null || true
+@unexec rmdir %D/share/config.kcfg 2>/dev/null || true
+@dirrm share/apps/kwirc/themes
+@dirrm share/apps/kwirc/smileys
+@dirrm share/apps/kwirc/scripts
+@dirrm share/apps/kwirc/icons
+@dirrm share/apps/kwirc
+@unexec rmdir %D/share/apps 2>/dev/null || true
+@unexec rmdir %D/share/applications/kde 2>/dev/null || true
+@unexec rmdir %D/share/applications 2>/dev/null || true
