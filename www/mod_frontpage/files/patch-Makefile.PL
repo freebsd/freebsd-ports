@@ -38,13 +38,14 @@
      print "If you don't know, enter the word 'findit'. I will try to look\n";
      print "for you... but it will take a few minutes.\n";
      print "Your choice: ";
-@@ -109,20 +127,27 @@
+@@ -109,20 +127,28 @@
      $errorlog="$serverroot/$errorlog";
      print "$errorlog\n";
  }
 -print "DocumentRoot: $documentroot\n";
 +$documentroot =~ s/"$//;
 +$documentroot =~ s/^"//;
++print "DocumentRoot_unresolved: ($documentroot)\n";
 +$documentroot = realpath($documentroot);
 +print "DocumentRoot: ($documentroot)\n";
  
