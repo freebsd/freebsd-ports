@@ -1,3 +1,4 @@
+bin/dns-boot-check
 bin/dns-bootp
 bin/dns-bootparams
 bin/dns-ethers-import
