@@ -1,0 +1,49 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/XML/DT/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/XML/DT.pm
+lib/perl5/site_perl/%%PERL_VER%%/XML/DT/examples/XPath/ex1.pl
+lib/perl5/site_perl/%%PERL_VER%%/XML/DT/examples/XPath/ex1.xml
+lib/perl5/site_perl/%%PERL_VER%%/XML/DT/examples/XPath/ex2.pl
+lib/perl5/site_perl/%%PERL_VER%%/XML/DT/examples/XPath/ex2.xml
+lib/perl5/site_perl/%%PERL_VER%%/XML/DT/examples/XPath/ex3.pl
+lib/perl5/site_perl/%%PERL_VER%%/XML/DT/examples/XPath/ex3.xml
+lib/perl5/site_perl/%%PERL_VER%%/XML/DT/examples/XPath/ex4.pl
+lib/perl5/site_perl/%%PERL_VER%%/XML/DT/examples/XPath/ex4.xml
+lib/perl5/site_perl/%%PERL_VER%%/XML/DT/examples/XPath/ex5.pl
+lib/perl5/site_perl/%%PERL_VER%%/XML/DT/examples/XPath/ex5.xml
+lib/perl5/site_perl/%%PERL_VER%%/XML/DT/examples/XPath/ex6.pl
+lib/perl5/site_perl/%%PERL_VER%%/XML/DT/examples/XPath/ex6.xml
+lib/perl5/site_perl/%%PERL_VER%%/XML/DT/examples/XPath/ex7.pl
+lib/perl5/site_perl/%%PERL_VER%%/XML/DT/examples/XPath/ex7.xml
+lib/perl5/site_perl/%%PERL_VER%%/XML/DT/examples/XPath/ex8.pl
+lib/perl5/site_perl/%%PERL_VER%%/XML/DT/examples/XPath/ex8.xml
+lib/perl5/site_perl/%%PERL_VER%%/XML/DT/examples/10nov.sgm
+lib/perl5/site_perl/%%PERL_VER%%/XML/DT/examples/README
+lib/perl5/site_perl/%%PERL_VER%%/XML/DT/examples/arq.pl
+lib/perl5/site_perl/%%PERL_VER%%/XML/DT/examples/arq.xml
+lib/perl5/site_perl/%%PERL_VER%%/XML/DT/examples/ex.xml
+lib/perl5/site_perl/%%PERL_VER%%/XML/DT/examples/ex1.pl
+lib/perl5/site_perl/%%PERL_VER%%/XML/DT/examples/ex10.1.pl
+lib/perl5/site_perl/%%PERL_VER%%/XML/DT/examples/ex10.2.pl
+lib/perl5/site_perl/%%PERL_VER%%/XML/DT/examples/ex10.2.xml
+lib/perl5/site_perl/%%PERL_VER%%/XML/DT/examples/ex10.3.pl
+lib/perl5/site_perl/%%PERL_VER%%/XML/DT/examples/ex10.3.xml
+lib/perl5/site_perl/%%PERL_VER%%/XML/DT/examples/ex11.1.pl
+lib/perl5/site_perl/%%PERL_VER%%/XML/DT/examples/ex11.1.xml
+lib/perl5/site_perl/%%PERL_VER%%/XML/DT/examples/ex11.5.pl
+lib/perl5/site_perl/%%PERL_VER%%/XML/DT/examples/ex11.5.xml
+lib/perl5/site_perl/%%PERL_VER%%/XML/DT/examples/ex2.pl
+lib/perl5/site_perl/%%PERL_VER%%/XML/DT/examples/ex3.xml
+lib/perl5/site_perl/%%PERL_VER%%/XML/DT/examples/ex5.pl
+lib/perl5/site_perl/%%PERL_VER%%/XML/DT/examples/ex6.pl
+lib/perl5/site_perl/%%PERL_VER%%/XML/DT/examples/ex7.pl
+lib/perl5/site_perl/%%PERL_VER%%/XML/DT/examples/gcapaper2tex.pl
+lib/perl5/site_perl/%%PERL_VER%%/XML/DT/examples/jj.dtd
+lib/perl5/site_perl/%%PERL_VER%%/XML/DT/examples/lat1.html
+lib/perl5/site_perl/%%PERL_VER%%/XML/DT/examples/makefile
+lib/perl5/site_perl/%%PERL_VER%%/XML/DT/examples/pub.pl
+lib/perl5/site_perl/%%PERL_VER%%/XML/DT/examples/publico.dtd
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/XML/DT
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/XML/DT/examples/XPath
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/XML/DT/examples
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/XML/DT
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/XML 2>/dev/null || true
