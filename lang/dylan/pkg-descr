@@ -7,12 +7,6 @@ powerful class and function library.  Though it is a DYnamic LANguage, it
 includes facilities for making compiled programs more efficient than many
 other dynamic languages.
 
-The Dylan language was originally developed by Apple, but the project
-was dropped just as the language definition was being finished and
-before a production-quality compiler was complete.  The Gwydion
-project and Harlequin have continued use and development of the
-language.
-
 Gwydion Dylan actually contains two implementations of the language.
 One, called Mindy (Mindy Is Not Dylan Yet), is a bytecode compiler and
 interpreter that implements most of the language except for the macro
@@ -21,16 +15,7 @@ uses C as its target "assembly language".  The d2c compiler was
 written in Dylan and bootstrapped using Mindy.
 
 A copy of the d2c compiler binary is required by the port to
-bootstrap the entire system.  As the Gwydion documentation says,
-
- Recompiling the entire system takes over an hour on 64meg 200mhz
- Pentium Pro running Windows/NT. This is almost all for the
- compilation of the d2c runtime and compiler; compiling just Mindy
- takes only a few minutes. d2c also uses lots of memory, especially
- when compiling itself: you want at least 48 meg, and more is
- better.
+bootstrap the entire system, which can often take quite a bit of time.
 
 For more information about Gwydion Dylan, see the Gwydion Dylan maintainers
 WWW: http://www.gwydiondylan.org/
-
--Peter S. Housel- housel@acm.org
