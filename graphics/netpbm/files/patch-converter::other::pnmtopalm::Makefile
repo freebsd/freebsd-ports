@@ -1,22 +1,11 @@
---- converter/other/pnmtopalm/Makefile.orig	Mon Jun 10 13:40:28 2002
-+++ converter/other/pnmtopalm/Makefile	Tue Jun 18 00:00:00 2002
-@@ -35,15 +35,15 @@
+--- converter/other/pnmtopalm/Makefile.orig	Thu Sep 19 12:30:39 2002
++++ converter/other/pnmtopalm/Makefile	Sat Oct  5 00:00:00 2002
+@@ -11,7 +11,7 @@
+ OBJECTS = $(BINARIES:%=%.o) palmcolormap.o
+ MERGE_OBJECTS = $(BINARIES:%=%.o2) palmcolormap.o
+ MERGEBINARIES = $(BINARIES)
+-DATAFILE = palmcolor8.map palmgray1.map palmgray2.map palmgray4.map
++DATAFILES = palmcolor8.map palmgray1.map palmgray2.map palmgray4.map
  
- install.bin: install.bin.local
- .PHONY: install.bin.local
--install.bin.local: $(PKGDIR)/misc $(DATAFILE:%=%_installdata)
-+install.bin.local: $(PKGDIR)/share/netpbm $(DATAFILE:%=%_installdata)
+ all: $(BINARIES)
  
- install.merge: install.merge.local
- .PHONY: install.merge.local
--install.merge.local: $(PKGDIR)/misc $(DATAFILE:%=%_installdata)
-+install.merge.local: $(PKGDIR)/share/netpbm $(DATAFILE:%=%_installdata)
- 
- %_installdata:
--	$(INSTALL) -c -m $(INSTALL_PERM_DATA) \
--	  $(SRCDIR)/$(SUBDIR)/$(@:%_installdata=%) $(PKGDIR)/misc;
-+	${BSD_INSTALL_DATA} \
-+	  $(SRCDIR)/$(SUBDIR)/$(@:%_installdata=%) $(PKGDIR)/share/netpbm;
- 
- 
- clean: cleanspecial

@@ -1,6 +1,6 @@
---- lib/Makefile.orig	Wed Jun 12 13:00:32 2002
-+++ lib/Makefile	Tue Jun 18 00:00:00 2002
-@@ -31,12 +31,14 @@
+--- lib/Makefile.orig	Thu Sep 19 12:58:41 2002
++++ lib/Makefile	Sat Oct  5 00:00:00 2002
+@@ -32,14 +32,16 @@
  # Library objects to be linked but not built by Makefile.common:
  LIBOBJECTS_X = util/shhopt.o util/nstring.o
  
@@ -15,9 +15,12 @@
 +	pgm.h ppm.h ppm.h ppmcmap.h ppmdraw.h ppmfloyd.h colorname.h \
 +	pnm.h pam.h pammap.h util/pm_shhopt.h util/pm_nstring.h
  
+-DATAFILE = rgb.txt
++DATAFILES = rgb.txt
+ 
  HEADERLINKS = pm_config.h version.h compile.h shhopt.h
  
-@@ -57,6 +59,9 @@
+@@ -69,12 +71,15 @@
  
  $(LIBOBJECTS): %.o: %.c $(HEADERLINKS)
  # Note that the user may have configured -I options into CFLAGS.
@@ -26,8 +29,6 @@
 +$(SHLIBOBJECTS): %.lo: %.c $(HEADERLINKS)
  	$(CC) -c $(INCLUDE) $(CFLAGS) $(CFLAGS_SHLIB) $(CADD) -o $@ $<
  
- SUBDIRS = util
-@@ -67,7 +72,7 @@
  MAJ = $(NETPBM_MAJOR_RELEASE)
  MIN = $(NETPBM_MINOR_RELEASE)
  
@@ -36,7 +37,7 @@
  
  ifeq ($(NETPBMLIBTYPE),irixshared)
  # The libxxx.so link is needed to link the executables.
-@@ -97,12 +102,9 @@
+@@ -98,12 +103,9 @@
  # The $(SONAME) link is only needed to test the programs without
  # installing the libraries (in that case, you also need to direct the 
  # dynamic linker to the source directories, e.g. set LD_LIBRARY_PATH).
@@ -45,14 +46,14 @@
 -	$(SYMLINK) $< $@
 -libnetpbm.$(NETPBMLIBSUFFIX).$(MAJ).$(MIN): $(LIBOBJECTS) $(LIBOBJECTS_X)
 -	$(LD) $(LDSHLIB) -o $@ $(LIBOBJECTS) $(LIBOBJECTS_X) \
--          -lc $(CADD)
+-          -lc $(LADD)
 +$(SONAME): $(SHLIBOBJECTS) $(LIBOBJECTS_X)
 +	$(LD) $(LDSHLIB) -o $@ $(SHLIBOBJECTS) $(LIBOBJECTS_X) \
-+          $(CADD)
++          $(LADD)
  endif
  
  ifeq ($(NETPBMLIBTYPE),dll)
-@@ -181,13 +183,10 @@
+@@ -180,13 +182,10 @@
  .PHONY: install.lib
  ifeq ($(NETPBMLIBTYPE),unixshared)
  # install a Unix-style shared library
@@ -70,7 +71,7 @@
  endif
  ifeq ($(NETPBMLIBTYPE),dll)
  #install a Windows DLL shared library
-@@ -217,23 +216,23 @@
+@@ -216,23 +215,23 @@
  # directory when you compile your programs.
  
  %_installhdr: $(PKGDIR)/include
