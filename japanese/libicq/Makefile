@@ -24,5 +24,6 @@ GLIB_CONFIG?=	${LOCALBASE}/bin/glib12-config
 
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	GLIB_CONFIG="${GLIB_CONFIG}"
+INSTALLS_SHLIB=	yes
 
 .include <bsd.port.mk>

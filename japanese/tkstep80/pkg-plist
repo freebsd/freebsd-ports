@@ -25,8 +25,6 @@ include/tkstep8.0jp/unix/tkUnixPort.h
 lib/libtkstep80jp.a
 lib/libtkstep80jp.so
 lib/libtkstep80jp.so.1
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 lib/tkstep8.0jp/FontChooser.tcl
 lib/tkstep8.0jp/bgerror.tcl
 lib/tkstep8.0jp/button.tcl

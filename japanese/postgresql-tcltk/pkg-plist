@@ -269,5 +269,3 @@ share/doc/%%INSTALL_DIR%%/KNOWN_BUGS
 share/doc/%%INSTALL_DIR%%/MISSING_FEATURES
 share/doc/%%INSTALL_DIR%%/README.Charsets
 share/doc/%%INSTALL_DIR%%/README.NT
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R

@@ -69,5 +69,3 @@ lib/mh/spost
 lib/mh/tmac.h
 lib/mh/viamail
 lib/libmh.so.3.2
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R

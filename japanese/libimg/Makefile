@@ -22,6 +22,8 @@ HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-tcl=${PREFIX}/lib/tcl${TCLVERSION}jp \
 		--with-tk=${PREFIX}/lib/tk${TKVERSION}jp \
 		--disable-stubs
+INSTALLS_SHLIB=	yes
+LDCONFIG_DIRS=	${PREFIX}/lib/Img1.2
 
 TCLVERSION=	8.0
 TKVERSION=	8.0
@@ -42,6 +44,5 @@ post-install:
 .else
 	${LN} -sf libimg12.so.1 ${PREFIX}/lib/Img1.2/libimg12.so
 .endif
-	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib/Img1.2
 
 .include <bsd.port.post.mk>

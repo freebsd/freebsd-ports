@@ -27,9 +27,9 @@ WRKSRC=		${WRKDIR}/slang-${PREV_VERSION}
 CONFIGURE_ARGS=	--includedir=${PREFIX}/include/slang
 ALL_TARGET=	all elf
 INSTALL_TARGET=	install-elf
+INSTALLS_SHLIB=	yes
 
 post-install:
-	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 	${CP} ${WRKSRC}/slang-j.doc ${PREFIX}/share/doc/slang
 
 .include <bsd.port.mk>

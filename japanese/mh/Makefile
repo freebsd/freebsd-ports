@@ -34,8 +34,6 @@ MAN5=	mh-alias.5 mh-format.5 mh-mail.5 mh-profile.5 mh-sequence.5 mh-tailor.5
 MAN8=	ap.8 conflict.8 dp.8 fmtdump.8 install-mh.8 post.8
 MANLANG=	"" ja
 MANCOMPRESSED=	yes
-
-post-install:
-	${LDCONFIG} -m ${PREFIX}/lib
+INSTALLS_SHLIB=	yes
 
 .include <bsd.port.mk>

@@ -524,8 +524,6 @@ lib/libIV.so
 lib/libIV.so.3.1
 lib/libUnidraw.so
 lib/libUnidraw.so.3.1
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %D/lib
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 @dirrm interviews/bin
 @dirrm interviews/config/InterViews
 @dirrm interviews/config

@@ -31,8 +31,6 @@ lib/libnmz.a
 lib/libnmz.la
 lib/libnmz.so
 lib/libnmz.so.3
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 libexec/namazu.cgi
 share/locale/ja/LC_MESSAGES/namazu.mo
 share/locale/ja_JP.SJIS/LC_MESSAGES/namazu.mo

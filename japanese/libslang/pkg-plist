@@ -1,8 +1,6 @@
 lib/libslang.a
 lib/libslang.so
 lib/libslang.so.2
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %D/lib
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 include/slang/slang.h
 include/slang/slcurses.h
 include/slang/slkanji.h

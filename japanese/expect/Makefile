@@ -22,11 +22,11 @@ CONFIGURE_ARGS=	--enable-shared --with-tclconfig=${PREFIX}/lib/tcl8.0jp \
 		--with-tkinclude=${PREFIX}/include/tk8.0jp
 
 NO_MAN_INSTALL=	yes
+INSTALLS_SHLIB=	yes
 
 .include <bsd.port.pre.mk>
 
 post-install:
-	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 .if ${PORTOBJFORMAT} == "aout"
 	${LN} -sf libexpect530jp.so.1.2 ${PREFIX}/lib/libexpect530jp.so
 .endif

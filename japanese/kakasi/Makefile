@@ -16,9 +16,9 @@ GNU_CONFIGURE=	yes
 
 MANLANG=		ja
 MAN1=			kakasi.1
+INSTALLS_SHLIB=	yes
 
 post-install:
-	@${LDCONFIG} -m ${PREFIX}/lib
 	${INSTALL_MAN} ${WRKSRC}/doc/kakasi.1 ${PREFIX}/man/${MANLANG}/man1
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/kakasi

@@ -13,8 +13,6 @@ lib/libmej.a
 lib/libmej.la
 lib/libmej.so
 lib/libmej.so.9
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 share/Eterm/pix/014.jpg
 share/Eterm/pix/40.jpg
 share/Eterm/pix/backwave.jpg

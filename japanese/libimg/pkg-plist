@@ -1,7 +1,5 @@
 lib/Img1.2/libimg12.so
 lib/Img1.2/libimg12.so.1
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %D/lib/Img1.2
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 lib/Img1.2/pkgIndex.tcl
 share/doc/img/ANNOUNCE
 share/doc/img/README
