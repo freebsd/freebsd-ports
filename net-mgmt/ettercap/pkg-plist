@@ -1,7 +1,8 @@
 bin/ettercap
+share/ettercap/etter.conf
+share/ettercap/grell_ssl.crt
 share/ettercap/mac-fingerprints
 share/ettercap/nmap-os-fingerprints
-share/ettercap/etter.conf
 @dirrm share/ettercap
 %%PORTDOCS%%share/doc/ettercap-%%PORTVERSION%%/AUTHORS
 %%PORTDOCS%%share/doc/ettercap-%%PORTVERSION%%/CHANGELOG
@@ -10,7 +11,12 @@ share/ettercap/etter.conf
 %%PORTDOCS%%share/doc/ettercap-%%PORTVERSION%%/KNOWN-BUGS
 %%PORTDOCS%%share/doc/ettercap-%%PORTVERSION%%/PORTINGS
 %%PORTDOCS%%share/doc/ettercap-%%PORTVERSION%%/README
+%%PORTDOCS%%share/doc/ettercap-%%PORTVERSION%%/README.fr
+%%PORTDOCS%%share/doc/ettercap-%%PORTVERSION%%/README.it
 %%PORTDOCS%%share/doc/ettercap-%%PORTVERSION%%/README.PLUGINS
+%%PORTDOCS%%share/doc/ettercap-%%PORTVERSION%%/README.PLUGINS.fr
+%%PORTDOCS%%share/doc/ettercap-%%PORTVERSION%%/README.PLUGINS.it
 %%PORTDOCS%%share/doc/ettercap-%%PORTVERSION%%/THANKS
 %%PORTDOCS%%share/doc/ettercap-%%PORTVERSION%%/TODO
+%%PORTDOCS%%share/doc/ettercap-%%PORTVERSION%%/ettercap.fr.8.in
 %%PORTDOCS%%@dirrm share/doc/ettercap-%%PORTVERSION%%
