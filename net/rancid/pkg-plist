@@ -1,0 +1,50 @@
+rancid/util/lg/lg.cgi
+rancid/util/lg/lgform.cgi
+rancid/util/lg/lg.conf
+rancid/util/lg/README
+rancid/util/lg/index.html
+rancid/util/lg/lgnotes.html
+rancid/util/README
+rancid/util/rtrfilter
+rancid/util/rtrfilter.README
+rancid/util/cisco-load.exp
+rancid/util/cisco-reload.exp
+rancid/util/downreport
+rancid/bin/hpfilter
+rancid/bin/cat5rancid
+rancid/bin/control_rancid
+rancid/bin/alogin
+rancid/bin/arancid
+rancid/bin/clogin
+rancid/bin/create_cvs
+rancid/bin/blogin
+rancid/bin/brancid
+rancid/bin/do-diffs
+rancid/bin/elogin
+rancid/bin/erancid
+rancid/bin/f10rancid
+rancid/bin/flogin
+rancid/bin/francid
+rancid/bin/jlogin
+rancid/bin/jrancid
+rancid/bin/hlogin
+rancid/bin/hrancid
+rancid/bin/mrancid
+rancid/bin/par
+rancid/bin/rancid-fe
+rancid/bin/rancid
+rancid/bin/rename
+rancid/bin/rrancid
+rancid/bin/xrancid
+rancid/bin/env
+rancid/CHANGES
+rancid/README
+rancid/FAQ
+rancid/cloginrc.sample
+@dirrm rancid/util/lg
+@dirrm rancid/util
+@dirrm rancid/bin
+@dirrm rancid/man/man1
+@dirrm rancid/man/man5
+@dirrm rancid/man
+@dirrm rancid

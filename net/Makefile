@@ -439,6 +439,7 @@
     SUBDIR += radiusd-cistron
     SUBDIR += radreport
     SUBDIR += radvd
+    SUBDIR += rancid
     SUBDIR += ratoolset
     SUBDIR += rboot
     SUBDIR += rdesktop

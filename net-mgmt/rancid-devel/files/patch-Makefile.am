@@ -1,0 +1,19 @@
+*** Makefile.am.orig	Mon Jun  3 14:01:32 2002
+--- Makefile.am	Mon Jun  3 14:02:03 2002
+***************
+*** 22,28 ****
+  	$(mkinstalldirs) $(prefix)/util $(prefix)/util/lg
+  
+  install:
+! 	for file in CHANGES README cloginrc.sample ; do \
+  	    $(INSTALL_DATA) $$file $(prefix); \
+  	done
+  
+--- 22,28 ----
+  	$(mkinstalldirs) $(prefix)/util $(prefix)/util/lg
+  
+  install:
+! 	for file in CHANGES FAQ README cloginrc.sample ; do \
+  	    $(INSTALL_DATA) $$file $(prefix); \
+  	done
+  
