@@ -1,0 +1,12 @@
+%%SITE_PERL%%/PLP.pm
+%%SITE_PERL%%/PLP/FAQ.pod
+%%SITE_PERL%%/PLP/Fields.pm
+%%SITE_PERL%%/PLP/Functions.pm
+%%SITE_PERL%%/PLP/HowTo.pod
+%%SITE_PERL%%/PLP/Tie/Delay.pm
+%%SITE_PERL%%/PLP/Tie/Headers.pm
+%%SITE_PERL%%/PLP/Tie/Print.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/PLP/.packlist
+@dirrm %%SITE_PERL%%/PLP/Tie
+@dirrm %%SITE_PERL%%/PLP
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/PLP
