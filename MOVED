@@ -1277,3 +1277,4 @@ audio/ruby-musicbrainz||2004-10-22|distfile did not keep up with libmusicbrainz
 devel/ruby-flex_rb||2004-10-22|did not compile
 devel/ruby-gconf|devel/ruby-gconf2|2004-10-22|did not install
 devel/whups||2004-10-22|not compatible with latest version of Horde
+french/abispell-fr-FR||2004-10-22|did not work with AbiWord-2.0
