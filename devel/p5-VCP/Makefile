@@ -6,6 +6,7 @@
 
 PORTNAME=	VCP
 PORTVERSION=	0.9
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	XML/RBS
@@ -28,13 +29,25 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-X
 
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500800
+BUILD_DEPENDS+=	${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
+RUN_DEPENDS+=	${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
+.endif
+
 PERL_CONFIGURE=	yes
+
+.if ${PERL_LEVEL} < 500600
+BROKEN=		"Does not compile with perl ${PERL_VERSION}"
+.endif
 
 MAN1=		vcp.1
 MAN3=		RevML::Doctype.3 \
 		RevML::Writer.3 \
 		VCP.3 \
 		VCP::Branches.3 \
+		VCP::ConfigFileUtils.3 \
 		VCP::DB.3 \
 		VCP::DB_File.3 \
 		VCP::DB_File::big_records.3 \
@@ -100,14 +113,5 @@ MAN3=		RevML::Doctype.3 \
 		VCP::Utils::p4.3 \
 		VCP::Utils::revml.3 \
 		VCP::Utils::vss.3
-
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800
-BUILD_DEPENDS+=	${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
-.if ${PERL_LEVEL} < 500600
-BROKEN=		"Does not compile with perl ${PERL_VERSION}"
-.endif
-.endif
 
 .include <bsd.port.post.mk>
