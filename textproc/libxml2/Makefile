@@ -30,7 +30,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 MAN1=		xml2-config.1 xmllint.1 xmlcatalog.1
 MAN3=		libxml.3
 
-OPTIONS=	THREADS "Enable pthread support" off \
+OPTIONS=	THREADS "Enable pthread support (MAY BREAK OTHER PORTS!)" off \
 		SCHEMA "Enable XML schema support" on \
 		MEM_DEBUG "Enable memory debugging (DEVELOPERS ONLY!)" off \
 		XMLLINT_HIST "Enable history for xmllint" off \
