@@ -1,11 +1,34 @@
---- parse/Makefile.old	Sat May 26 19:34:30 2001
-+++ parse/Makefile	Sat May 26 19:34:39 2001
-@@ -6,7 +6,7 @@
+--- parse/Makefile.old	Mon Jun 25 00:46:40 2001
++++ parse/Makefile	Mon Jun 25 00:47:50 2001
+@@ -5,7 +5,7 @@
+ OBJECTS=$(JOBJS) $(MJOBJS) $(POBJECTS) $(DOBJECTS)
  EXECS=parsetest parsetest2
  
- #FLAGS = -O2
--FLAGS = -g
-+FLAGS = -g $(CFLAGS)
+-FLAGS = -O2
++FLAGS = $(CFLAGS)
+ #FLAGS = -g
  
  all: $(EXECS)
+@@ -17,17 +17,17 @@
+ 	cd libs ; make
+ 
+ ParseMaraRc.o: ParseMaraRc.c ../libs/JessStr.h ../libs/MaraHash.h ../MaraDns.h
+-	gcc -c $(FLAGS) -o ParseMaraRc.o ParseMaraRc.c 
++	$(CC) -c $(FLAGS) -o ParseMaraRc.o ParseMaraRc.c 
+ 
+ ParseCsv1.o: ParseCsv1.c ../libs/JessStr.h ../libs/MaraHash.h ../MaraDns.h
+-	gcc -c $(FLAGS) -o ParseCsv1.o ParseCsv1.c 
++	$(CC) -c $(FLAGS) -o ParseCsv1.o ParseCsv1.c 
+ 
+ ParseIpAcl.o: ParseIpAcl.c ../libs/JessStr.h ../libs/MaraHash.h ../MaraDns.h
+-	gcc -c $(FLAGS) -o ParseIpAcl.o ParseIpAcl.c
++	$(CC) -c $(FLAGS) -o ParseIpAcl.o ParseIpAcl.c
+ 
+ parsetest: parsetest.c $(OBJECTS) 
+-	gcc $(FLAGS) -o parsetest parsetest.c $(OBJECTS) 
++	$(CC) $(FLAGS) -o parsetest parsetest.c $(OBJECTS) 
+ 
+ parsetest2: parsetest2.c $(OBJECTS) 
+-	gcc $(FLAGS) -o parsetest2 parsetest2.c $(OBJECTS) 
++	$(CC) $(FLAGS) -o parsetest2 parsetest2.c $(OBJECTS) 
  
