@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	qemu
-PORTVERSION=	0.5.5.s.20040615
+PORTVERSION=	0.5.5.s.20040622
 CATEGORIES=	emulators
 MASTER_SITES=	http://dad-answers.com/qemu/FreeBSD/
-DISTNAME=	${PORTNAME}-snapshot-2004-06-15_00
+DISTNAME=	${PORTNAME}-snapshot-2004-06-22_23
 
 MAINTAINER=	nox@jelal.kn-bremen.de
 COMMENT=	QEMU CPU Emulator
@@ -25,7 +25,7 @@ USE_GCC=	3.3
 USE_PERL5=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}
 PATCH_STRIP=	-p1
-CONFIGURE_ARGS+=	--prefix=${PREFIX} --cc=${CC}\ -fno-strict-aliasing\ -DDEBUG_IRQ_COUNT\ -I${PREFIX}/include
+CONFIGURE_ARGS+=	--prefix=${PREFIX} --cc=${CC}\ -I${PREFIX}/include
 MAN1=		qemu.1 qemu-mkcow.1
 
 post-install:
