@@ -31,7 +31,11 @@ COMMENT=	XFree86-4 X server and related programs
 	patch-radeon_cursor.c patch-radeon_reg.h patch-smi \
 	patch-libc_wrapper.c patch-xf86-common-Imakefile patch-loader-Imakefile \
 	patch-loader-elfloader.c patch-bsd-Imakefile patch-bsd-bsdResource.c \
-	patch-bus-Imakefile patch-r200_vtxtmp_x86.S patch-radeon_vtxtmp_x86.S
+	patch-bus-Imakefile patch-r200_vtxtmp_x86.S patch-radeon_vtxtmp_x86.S \
+	patch-compiler.h patch-os-support_Imakefile patch-bsd_Imakefile \
+	patch-freebsdPci.c patch-bus_Imakefile patch-xf86Sbus.h patch-loader.c \
+	patch-Sbus.c patch-elfloader.c patch-xfree86.cf patch-FreeBSD.cf \
+	patch-sunffb_Imakefile patch-xf86sym.c patch-xf86Events.c
 EXTRA_PATCHES+=		${FILESDIR}/${pf}
 .endfor
 SCRIPTS_ENV=		OSVERSION=${OSVERSION} \
@@ -70,22 +74,14 @@ MAN4=			citron.4 \
 			dynapro.4 \
 			elographics.4 \
 			fbdevhw.4 \
-			glint.4 \
 			kbd.4 \
 			keyboard.4 \
-			mga.4 \
 			microtouch.4 \
 			mouse.4 \
 			mutouch.4 \
 			nv.4 \
 			r128.4 \
 			radeon.4 \
-			rendition.4 \
-			s3virge.4 \
-			savage.4 \
-			siliconmotion.4 \
-			tdfx.4 \
-			vga.4 \
 			void.4 \
 			wacom.4
 MAN5=			XF86Config.5
@@ -112,7 +108,9 @@ PLIST_SUB+=		DRI="@comment "
 PLIST_SUB+=	ALPHA_NA="@comment "
 .else
 PLIST_SUB+=	ALPHA_NA=""
+.if ${ARCH} != sparc64
 MAN1+=		scanpci.1
+.endif
 .endif
 
 .if ${ARCH} == ia64
@@ -125,6 +123,14 @@ PLIST_SUB+=	IA64_NA=""
 PLIST_SUB+=	SPARC64_NA="@comment "
 .else
 PLIST_SUB+=	SPARC64_NA=""
+MAN4+=		glint.4 \
+		mga.4 \
+		rendition.4 \
+		s3virge.4 \
+		savage.4 \
+		siliconmotion.4 \
+		tdfx.4 \
+		vga.4
 .endif
 
 .if ${ARCH} == i386
