@@ -1,3 +1,4 @@
+bin/adsquery
 lib/perl5/site_perl/%%PERL_VER%%/Astro/ADS/Query.pm
 lib/perl5/site_perl/%%PERL_VER%%/Astro/ADS/Result.pm
 lib/perl5/site_perl/%%PERL_VER%%/Astro/ADS/Result/Paper.pm

@@ -8,6 +8,7 @@
 
 PORTNAME=	Astro-ADS
 PORTVERSION=	1.20.4
+PORTREVISION=	1
 CATEGORIES=	astro perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN} \
 		http://www.astro.ex.ac.uk/estar/software/
