@@ -1,0 +1,43 @@
+# New ports collection makefile for:	faac
+# Date created:			Wed May  5 16:38:55 EDT 2004
+# Whom:				Michael Johnson <ahze@ahze.net>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	faac
+PORTVERSION=	1.24
+CATEGORIES=	audio
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	faac
+
+MAINTAINER=	ahze@ahze.net
+COMMENT=	FAAC is an AAC audio encoder
+
+BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/audio/faad:extract
+LIB_DEPENDS=	faad.0:${PORTSDIR}/audio/faad
+
+NO_PACKAGE=	Distribution in binary form is prohibited
+
+WRKSRC=		${WRKDIR}/${PORTNAME}
+USE_AUTOMAKE_VER=15
+USE_AUTOHEADER=	yes
+AUTOMAKE_ARGS=	--add-missing
+USE_GMAKE=	yes
+USE_LIBTOOL_VER=13
+USE_REINPLACE=	yes
+CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include \
+		-I${WRKDIR}/../../../audio/faad/work/faad2/common/mp4v2" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+INSTALLS_SHLIB=	yes
+
+pre-patch: build-depends
+
+post-patch:
+	@cd ${WRKSRC}; ${ACLOCAL} -I .; \
+		${SETENV} ${SCRIPTS_ENV} ${LIBTOOLIZE} --automake
+	@${REINPLACE_CMD} -e 's|$$lt_target|$$host|' \
+		${WRKSRC}/aclocal.m4
+
+.include <bsd.port.mk>
