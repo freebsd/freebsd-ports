@@ -3,7 +3,7 @@
 # Date created:		10 November 1995
 # Whom:			pst
 #
-# $Id: Makefile,v 1.6 1996/08/03 19:11:26 pst Exp $
+# $Id: Makefile,v 1.7 1996/11/17 03:18:23 obrien Exp $
 #
 
 DISTNAME=       gnats-3.97-beta
@@ -22,6 +22,8 @@ CONFIGURE_ARGS= --prefix=${PREFIX} \
 		--with-lispdir=${PREFIX}/share/emacs/site-lisp \
 		--with-full-gnats
 USE_GMAKE=	yes
+MAN1=		edit-pr.1 gnats.1 query-pr.1 send-pr.1
+MAN8=		mkcat.8 rmcat.8 mkdist.8 query-pr.8 file-pr.8 gen-index.8
 
 # this stops the configuration program from pulling installation
 # information in from the standard freebsd send-pr program

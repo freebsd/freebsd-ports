@@ -1,12 +1,11 @@
-@cwd /usr/X11R6
 bin/xvcg
 bin/pbmrot90
 bin/pbmshift
 bin/pbm2hp
 bin/vcgdemomaker
-man/manl/pbmrot90.l
-man/manl/pbmshift.l
-man/manl/pbm2hp.l
-man/manl/vcgdemomaker.l
-man/manl/vcg.l
-man/manl/xvcg.l
+man/manl/pbmrot90.l.gz
+man/manl/pbmshift.l.gz
+man/manl/pbm2hp.l.gz
+man/manl/vcgdemomaker.l.gz
+man/manl/vcg.l.gz
+man/manl/xvcg.l.gz

@@ -1,11 +1,8 @@
-@owner bin
-@mode 755
 bin/unzip
 @exec ln -f %D/%F %B/zipinfo
 bin/funzip
 bin/unzipsfx
-@mode 644
-man/man1/funzip.1
-man/man1/unzip.1
-man/man1/unzipsfx.1
-man/man1/zipinfo.1
+man/man1/funzip.1.gz
+man/man1/unzip.1.gz
+man/man1/unzipsfx.1.gz
+man/man1/zipinfo.1.gz

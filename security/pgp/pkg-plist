@@ -1,6 +1,5 @@
-@cwd /usr/local
 bin/pgp
-man/man1/pgp.1
+man/man1/pgp.1.gz
 lib/pgp/pgp.hlp
 lib/pgp/pgpdoc1.txt
 lib/pgp/pgpdoc2.txt

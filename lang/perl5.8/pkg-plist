@@ -17,7 +17,6 @@ bin/pod2man
 bin/pod2html
 bin/pod2latex
 bin/pod2text
-@mode  444
 lib/perl5/pod/perl.pod
 lib/perl5/pod/perlbook.pod
 lib/perl5/pod/perlbot.pod

@@ -163,7 +163,7 @@ share/octave/site/oct/i386-unknown-freebsd2.2
 bin/octave
 bin/octave-bug
 bin/octave-1.1.1
-man/man1/octave.1
+man/man1/octave.1.gz
 info/octave.info
 info/octave.info-1
 info/octave.info-10

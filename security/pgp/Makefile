@@ -5,7 +5,7 @@
 # Date created:         8 Jul 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.16 1996/10/16 08:13:48 asami Exp $
+# $Id: Makefile,v 1.17 1996/11/17 07:58:03 obrien Exp $
 #
 
 # Pick an initial default, else it doesn't get set in the INDEX.
@@ -14,12 +14,13 @@ CATEGORIES=	security
 
 MAINTAINER=	ache@FreeBSD.ORG
 
-RESTRICTED=     YES
+# Need to define USA_RESIDENT to YES or NO
+IS_INTERACTIVE=	YES
+RESTRICTED=     "Crypto"
 MAKEFILE=       makefile
 ALL_TARGET=     freebsd
 PGPLIB=         ${PREFIX}/lib/pgp
-# Need to define USA_RESIDENT to YES or NO
-IS_INTERACTIVE=	YES
+MAN1=		pgp.1
 
 do-install:
 	cd ${WRKSRC}; install -c -o bin -g bin -m 555 pgp ${PREFIX}/bin

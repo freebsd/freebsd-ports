@@ -1,6 +1,4 @@
-@mode 555
 bin/x3270
-@mode 444
 lib/X11/app-defaults/X3270
 lib/X11/fonts/misc/3270.pcf.Z
 lib/X11/fonts/misc/3270b.pcf.Z

@@ -5,8 +5,8 @@ bin/gunshar
 bin/mailshar
 bin/mail-files
 bin/remsync
-man/man1/gshar.1
-man/man1/gunshar.1
+man/man1/gshar.1.gz
+man/man1/gunshar.1.gz
 share/locale/de/sharutils.msg
 share/locale/fr/sharutils.msg
 share/locale/sv/sharutils.msg

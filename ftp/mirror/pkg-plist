@@ -7,5 +7,5 @@ lib/mirror/dateconv.pl
 lib/mirror/ftp.pl
 lib/mirror/lsparse.pl
 lib/mirror/mirror.defaults.sample
-man/man1/mirror.1
-man/man1/mirrormaster.1
+man/man1/mirror.1.gz
+man/man1/mirrormaster.1.gz

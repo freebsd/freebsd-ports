@@ -3,7 +3,7 @@
 # Date created:         26 September 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.16 1996/11/14 08:08:04 ache Exp $
+# $Id: Makefile,v 1.17 1996/11/18 11:21:53 asami Exp $
 #
 
 DISTNAME=       iozone
@@ -20,5 +20,6 @@ MAINTAINER=	jmz@FreeBSD.org
 EXTRACT_CMD=    ( gzcat | awk '{if (/^\#!/) x++} {if(x) print $$0'}| /bin/sh )
 EXTRACT_ARGS=   <
 NO_WRKSUBDIR=   YES
+MAN1=		iozone.1
 
 .include <bsd.port.mk>

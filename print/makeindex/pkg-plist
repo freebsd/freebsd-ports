@@ -13,4 +13,4 @@ lib/texmf/makeindx/german/digit.ist
 lib/texmf/makeindx/german/special.ist
 lib/texmf/makeindx/german/umlaut.ist
 lib/texmf/makeindx/german/wb.ist
-man/man1/makeindex.1
+man/man1/makeindex.1.gz

@@ -1,6 +1,6 @@
 bin/xboard
 bin/cmail
 bin/pxboard
-man/man6/xboard.6
-man/man6/cmail.6
+man/man6/xboard.6.gz
+man/man6/cmail.6.gz
 info/xboard.info

@@ -1,4 +1,3 @@
-@cwd /usr/local
 include/png.h
 include/pngconf.h
 lib/libpng.a

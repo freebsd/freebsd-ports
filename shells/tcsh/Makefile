@@ -3,7 +3,7 @@
 # Date created:		22 August 1994
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.13 1996/05/01 01:33:55 ache Exp $
+# $Id: Makefile,v 1.14 1996/11/18 11:39:56 asami Exp $
 #
 
 DISTNAME=       tcsh-6.06
@@ -14,6 +14,7 @@ MAINTAINER=     ache@FreeBSD.ORG
 
 ALL_TARGET=     all catalogs
 INSTALL_TARGET= install install.man
+MAN1=		tcsh.1
 
 post-install:
 	chown bin.bin ${PREFIX}/bin/tcsh

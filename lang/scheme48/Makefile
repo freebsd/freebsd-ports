@@ -3,7 +3,7 @@
 # Date created:         2 Jan 1995
 # Whom:                 jmacd@uclink.berkeley.edu
 #
-# $Id: Makefile,v 1.6 1995/11/22 13:13:09 asami Exp $
+# $Id: Makefile,v 1.7 1996/11/12 02:19:03 obrien Exp $
 #
 
 DISTNAME=	scheme48-0.36
@@ -17,5 +17,6 @@ CONFIGURE_ARGS= --prefix=${PREFIX}
 ALL_TARGET = 	enough
 NO_WRKSUBDIR=	yes
 STRIP=
+MAN1=		scheme48.1
 
 .include <bsd.port.mk>

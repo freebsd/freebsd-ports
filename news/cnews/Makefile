@@ -3,7 +3,7 @@
 # Date created:		28 September 1994
 # Whom:			adam
 #
-# $Id: Makefile,v 1.12 1995/10/05 10:20:26 adam Exp $
+# $Id: Makefile,v 1.13 1996/11/18 11:37:31 asami Exp $
 #
 
 DISTNAME=	cnews
@@ -14,6 +14,13 @@ EXTRACT_SUFX=	.tar.Z
 
 WRKSRC=		${WRKDIR}
 MAKEFILE=	makefile
+MAN1=		checknews.1cn inews.1cn postnews.1cn readnews.1cn
+MAN5=		controlperm.5 news.5 newsctl.5 newsdb.5 newsoverview.5 \
+		newssys.5 \
+MAN8=		cnewsdo.8cn expire.8cn explode.8cn mergeactive.8 \
+		mkhistory.8cn newsaux.8cn newsbatch.8cn newsmail.8cn \
+		newsmaint.8cn newsoverview.8 relaynews.8cn report.8cn \
+		rnews.8cn
 
 NEWSSPOOL=	${PREFIX}/newsspool
 NEWSBIN=	${PREFIX}/libexec/news
@@ -40,7 +47,6 @@ do-install:
 		su -m bin
 	chown news.news ${NEWSBIN}/input/newsspool
 	chmod 6755 ${NEWSBIN}/input/newsspool
-	mkdir -p ${MANDIR}/man1 ${MANDIR}/man5 ${MANDIR}/man8
 	install -c -o bin -g bin -m 444 ${WRKSRC}/man/*.1* ${MANDIR}/man1
 	install -c -o bin -g bin -m 444 ${WRKSRC}/man/*.5* ${MANDIR}/man5
 	install -c -o bin -g bin -m 444 ${WRKSRC}/man/*.8* ${MANDIR}/man8

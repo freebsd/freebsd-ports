@@ -1,5 +1,3 @@
-@owner bin
-@mode 755
 bin/pbmmerge
 bin/pgmmerge
 bin/ppmmerge
@@ -176,7 +174,6 @@ bin/ybmtopbm
 bin/yuvsplittoppm
 bin/yuvtoppm
 bin/zeisstopnm
-@mode 444
 include/pbm.h
 include/pbmplus.h
 include/pgm.h

@@ -3,7 +3,7 @@
 # Date created:		19 Jun 1995
 # Whom:			joerg
 #
-# $Id: Makefile,v 1.2 1996/06/11 21:52:30 asami Exp $
+# $Id: Makefile,v 1.3 1996/11/11 05:07:27 obrien Exp $
 #
 
 DISTNAME=	uzap
@@ -15,7 +15,7 @@ MAINTAINER=	joerg@FreeBSD.org
 
 # restrictive Copyright; the author is no longer reachable, however :-(
 RESTRICTED=	"Restrictive copyright."
-
 WRKSRC=		${WRKDIR}
+MAN1=		uzap.1
 
 .include <bsd.port.mk>

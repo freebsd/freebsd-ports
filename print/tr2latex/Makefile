@@ -11,5 +11,6 @@ MASTER_SITES=	ftp://sol.cs.ruu.nl/pub/TEX/TOOLS/
 MAINTAINER=	thomas@ghpc8.ihf.rwth-aachen.de
 
 WRKSRC=		${WRKDIR}/tr2latex
+MAN1=		tr2latex.1
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 # Date created:         7 Jan 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.5 1996/04/12 08:16:45 asami Exp $
+# $Id: Makefile,v 1.6 1996/11/12 02:17:29 obrien Exp $
 #
 
 DISTNAME=       hpack79src
@@ -19,5 +19,6 @@ NO_WRKSUBDIR=	yes
 MAKEFILE=       makefile
 ALL_TARGET=     freebsd
 INSTALL_TARGET= freebsd.install
+MAN1=		hpack.1
 
 .include <bsd.port.mk>

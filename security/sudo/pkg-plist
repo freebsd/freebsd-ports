@@ -1,6 +1,6 @@
 bin/sudo
 sbin/visudo
 etc/sudoers.sample
-man/man5/sudoers.5
-man/man8/sudo.8
-man/man8/visudo.8
+man/man5/sudoers.5.gz
+man/man8/sudo.8.gz
+man/man8/visudo.8.gz

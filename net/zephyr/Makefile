@@ -3,7 +3,7 @@
 # Date created:		1-Aug-1995
 # Whom:			pst
 #
-# $Id: Makefile,v 1.3 1996/11/07 17:49:38 pst Exp $
+# $Id: Makefile,v 1.4 1996/11/18 11:37:23 asami Exp $
 #
 
 DISTNAME=	zephyr-2.0.4
@@ -15,6 +15,10 @@ CONFIGURE_ARGS="--with-krb4"
 .endif
 
 HAS_CONFIGURE=	yes
+MAN1=		zephyr.1 xzwrite.1 zaway.1 zctl.1 zleave.1 zlocate.1 \
+		zmailnotify.1 znol.1 zwgc.1 zwrite.1
+MAN8=		syslogd.8 zpopnotify.8 zshutdown_notify.8 zstat.8 \
+		zephyrd.8 zhm.8
 
 ZEPHYR_RCDIR=	${PREFIX}/etc/rc.d
 ZEPHYR_DOCDIR=	${PREFIX}/share/doc/zephyr

@@ -1,4 +1,3 @@
-@cwd ${X11BASE}
 bin/xlife
 bin/lifeconv
 bin/collect

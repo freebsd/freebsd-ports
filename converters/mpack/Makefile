@@ -3,7 +3,7 @@
 # Date created:         1 May 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.4 1995/11/26 10:51:42 asami Exp $
+# $Id: Makefile,v 1.5 1996/11/10 21:31:57 obrien Exp $
 #
 
 DISTNAME=       mpack-1.5-src
@@ -16,5 +16,6 @@ MAINTAINER=     ache@FreeBSD.ORG
 
 WRKSRC=         ${WRKDIR}/mpack
 MAKEFLAGS=      -DDESTDIR=${PREFIX} -f
+MAN1=		mpack.1 munpack.1
 
 .include <bsd.port.mk>

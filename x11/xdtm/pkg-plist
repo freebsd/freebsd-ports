@@ -1,4 +1,3 @@
-@cwd /usr/X11R6
 bin/xdtm
 bin/xdtm.sh
 lib/X11/xdtm/help

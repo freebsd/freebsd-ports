@@ -3,7 +3,7 @@
 # Date created:         24 September 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.7 1995/11/26 10:48:04 asami Exp $
+# $Id: Makefile,v 1.8 1996/11/11 05:49:51 obrien Exp $
 #
 
 DISTNAME=	mshell
@@ -15,6 +15,7 @@ DISTFILES=	7432.Z
 MAINTAINER=	jmz@FreeBSD.org
 
 NO_WRKSUBDIR=	yes
+MAN1=		mshell.1
 
 do-extract:
 	@rm -rf ${WRKDIR}

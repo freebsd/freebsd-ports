@@ -3,7 +3,7 @@
 # Date created:         3 October 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.6 1995/04/28 13:35:26 jkh Exp $
+# $Id: Makefile,v 1.7 1996/11/18 11:32:07 asami Exp $
 #
 
 DISTNAME=	calc-2.9.3t6
@@ -13,8 +13,10 @@ MASTER_SITES=	ftp://ftp.cs.uni-sb.de/pub/misc/4.4BSD-Lite/contrib/
 
 MAINTAINER=	jmz@FreeBSD.org
 
+MAN1=		calc.1
+
 pre-install:
-	@mkdir -p ${PREFIX}/lib/calc/help
-	@mkdir -p ${PREFIX}/man/man1
+	@${MKDIR} ${PREFIX}/lib/calc/help
+	@${MKDIR} ${PREFIX}/man/man1
 
 .include <bsd.port.mk>

@@ -1,5 +1,4 @@
-@cwd /usr/local
 lib/libmpeg.a
 lib/libmpeg.so.1.1
-@exec ldconfig -m %B
+@exec /sbin/ldconfig -m %B
 include/mpeg.h

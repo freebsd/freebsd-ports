@@ -3,7 +3,7 @@
 # Date created:		04 July 1996
 # Whom:			markm
 #
-# $Id: Makefile,v 1.2 1996/07/10 02:36:38 asami Exp $
+# $Id: Makefile,v 1.3 1996/11/18 10:23:11 asami Exp $
 #
 
 DISTNAME=	gnuchess-4.0.pl77
@@ -17,5 +17,6 @@ HAS_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 #CONFIGURE_SCRIPT=	src/configure
 #CONFIGURE_ARGS=		-sde -Dprefix=${PREFIX}
+MAN6=		game.6 gnuan.6 gnuchess.6 postprint.6
 
 .include <bsd.port.mk>

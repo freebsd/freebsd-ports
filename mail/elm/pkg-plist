@@ -1,4 +1,3 @@
-@cwd /usr/local
 bin/elm
 bin/answer
 bin/checkalias

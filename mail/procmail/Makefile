@@ -3,7 +3,7 @@
 # Date created:		24 September 1994
 # Whom:			adam
 #
-# $Id: Makefile,v 1.20 1995/12/28 16:02:43 ache Exp $
+# $Id: Makefile,v 1.21 1996/11/10 21:32:41 obrien Exp $
 #
 
 DISTNAME=       procmail-3.11pre4
@@ -17,5 +17,7 @@ MAINTAINER=     ache@FreeBSD.ORG
 # It asks for list af directories to do test for file locking
 # (defaults to /tmp and ".", so return should suffice in most cases).
 IS_INTERACTIVE=	yes
+MAN1=		procmail.1 formail.1 lockfile.1
+MAN5=		procmailex.5 procmailrc.5 procmailsc.5
 
 .include <bsd.port.mk>

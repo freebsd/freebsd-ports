@@ -1,7 +1,3 @@
-@mode 755
-@owner bin
-@group bin
 bin/xmix
-@mode 644
 lib/X11/app-defaults/XMix
 man/man1/xmix.1.gz

@@ -3,7 +3,7 @@
 # Date created:		29 June 1996
 # Whom:			gena
 #
-# $Id: Makefile,v 1.5 1996/07/12 11:38:14 asami Exp $
+# $Id: Makefile,v 1.6 1996/11/18 11:44:20 asami Exp $
 #
 
 DISTNAME=	bxform-081
@@ -16,6 +16,8 @@ MAINTAINER=	gena@NetVision.net.il
 
 USE_X11=	yes
 WRKSRC=		${WRKDIR}/xforms
+MAN1=		fdesign.1
+MAN5=		xforms.5
 
 post-install:
 	/sbin/ldconfig -m ${PREFIX}/lib

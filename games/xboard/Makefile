@@ -3,7 +3,7 @@
 # Date created:         2 Jan 1995
 # Whom:                 swallace
 #
-# $Id: Makefile,v 1.6 1996/07/12 11:07:20 asami Exp $
+# $Id: Makefile,v 1.7 1996/11/18 10:23:28 asami Exp $
 #
 
 DISTNAME=       xboard-3.4.pl1
@@ -18,6 +18,7 @@ BUILD_DEPENDS=  autoconf:${PORTSDIR}/devel/autoconf
 HAS_CONFIGURE=  yes
 CONFIGURE_ARGS= --prefix=${PREFIX}
 STRIP=
+MAN6=		xboard.6 cmail.6
 
 pre-configure:
 	cd ${WRKSRC}; autoconf; autoheader

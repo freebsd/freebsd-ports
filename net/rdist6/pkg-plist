@@ -1,4 +1,3 @@
-@cwd /usr/local
 bin/rdist6
 bin/rdistd
 man/man1/rdist6.1.gz

@@ -3,7 +3,7 @@
 # Date created:         6 October 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.5 1995/04/28 13:35:36 jkh Exp $
+# $Id: Makefile,v 1.6 1996/11/18 10:24:43 asami Exp $
 #
 
 DISTNAME=	gnuplot
@@ -14,6 +14,8 @@ MASTER_SITES=	ftp://ftp.dartmouth.edu/pub/gnuplot/ \
 DISTFILES=	gnuplot3.5.tar.Z
 
 MAINTAINER=	jmz@FreeBSD.org
+
+MAN1=		gnuplot.1 lasergnu.1
 
 pre-install:
 	@mkdir -p ${PREFIX}/bin

@@ -1,11 +1,6 @@
-@cd /usr/local
-@owner bin
-@group bin
-@mode 755
 bin/afm2tfm
 bin/dvips
 bin/MakeTeXPK
-@mode 644
 lib/texmf/ps/tex.pro
 lib/texmf/ps/texc.pro
 lib/texmf/ps/texps.pro
@@ -25,5 +20,5 @@ lib/texmf/tex/blackdvi.sty
 lib/texmf/tex/blackdvi.tex
 lib/texmf/tex/dvips.tex
 lib/texmf/tex/dvipsmac.tex
-man/man1/dvips.1
-man/man1/afm2tfm.1
+man/man1/dvips.1.gz
+man/man1/afm2tfm.1.gz

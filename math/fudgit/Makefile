@@ -3,7 +3,7 @@
 # Date created:         17 November 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.5 1995/04/22 11:30:07 asami Exp $
+# $Id: Makefile,v 1.6 1995/05/03 02:21:59 asami Exp $
 #
 
 DISTNAME=	Fudgit_2.41
@@ -15,6 +15,7 @@ DISTFILES=	fudgit_2.41.tar.gz
 MAINTAINER=	jmz@FreeBSD.org
 
 USE_GMAKE=	yes
+MAN1=		fudgit.1
 
 pre-install:
 	@mkdir -p ${PREFIX}/bin

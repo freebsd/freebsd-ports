@@ -3,7 +3,7 @@
 # Date created:         8 Nov 1994
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.13 1996/11/17 09:06:02 obrien Exp $
+# $Id: Makefile,v 1.14 1996/11/18 10:25:06 asami Exp $
 #
 
 DISTNAME=       less-321
@@ -13,6 +13,7 @@ MASTER_SITES=   ${MASTER_SITE_GNU}
 MAINTAINER=	ache@FreeBSD.ORG
 
 GNU_CONFIGURE=	yes
+MAN1=		less.1 lesskey.1
 
 EXTRA_PATCH=	patch-ab
 

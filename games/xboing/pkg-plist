@@ -1,10 +1,5 @@
-@cd ${X11BASE}
-@owner games
-@mode 555
 bin/xboing
-@mode 666
 lib/X11/xboing/.xboing.scr
-@mode 444
 lib/X11/xboing/levels/demo.data
 lib/X11/xboing/levels/editor.data
 lib/X11/xboing/levels/level01.data

@@ -1,6 +1,5 @@
-@cwd /usr/local
 bin/scm
-man/man1/scm.1
+man/man1/scm.1.gz
 lib/scm
 lib/slib
 info/slib.info

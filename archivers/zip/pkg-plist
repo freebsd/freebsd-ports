@@ -1,5 +1,5 @@
-man/man1/zip.1
-man/man1/zipgrep.1
+man/man1/zip.1.gz
+man/man1/zipgrep.1.gz
 bin/zip
 bin/zipnote
 bin/zipsplit

@@ -1,6 +1,5 @@
-@cwd /usr/local
 bin/sup
 bin/supscan
 bin/supfilesrv
-man/man1/sup.1
-man/man8/supservers.8
+man/man1/sup.1.gz
+man/man8/supservers.8.gz

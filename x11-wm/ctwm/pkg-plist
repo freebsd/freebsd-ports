@@ -1,4 +1,3 @@
-@cwd /usr/X11R6
 bin/ctwm
 lib/X11/twm/system.ctwmrc
 man/man1/ctwm.1.gz

@@ -1,6 +1,3 @@
-@cd /usr/local
-@owner bin
-@mode 755
 bin/buildhash
 bin/findaffix
 bin/icombine
@@ -10,20 +7,18 @@ bin/munchlist
 bin/sq
 bin/tryaffix
 bin/unsq
-@mode 644
 share/emacs/site-lisp/ispell.el
 share/emacs/site-lisp/ispell.elc
 lib/american.hash
 lib/americanmed+.hash
 lib/english.aff
 lib/english.hash
-man/man1/buildhash.1
-man/man1/findaffix.1
-man/man1/ispell.1
-man/man1/munchlist.1
-man/man1/sq.1
-man/man1/tryaffix.1
-man/man1/unsq.1
-man/man4/ispell.4
-man/man4/english.4
-
+man/man1/buildhash.1.gz
+man/man1/findaffix.1.gz
+man/man1/ispell.1.gz
+man/man1/munchlist.1.gz
+man/man1/sq.1.gz
+man/man1/tryaffix.1.gz
+man/man1/unsq.1.gz
+man/man4/ispell.4.gz
+man/man4/english.4.gz
