@@ -1,0 +1,21 @@
+--- Makefile.orig	Sun Oct 19 01:04:35 2003
++++ Makefile	Sun Oct 19 01:04:55 2003
+@@ -36,16 +36,15 @@
+ #	HPUX			cc (v10.10)
+ #
+ 
+-CC	= cc
++CC	?= cc
+ 
+ # Select appropriate flag... -g for debugging, -O for optimized.
+ #OPTIMIZE	= -g
+ #OPTIMIZE	= -p
+-OPTIMIZE	= -O
+ GCC_PARANOIA	= -Wall -Wtraditional \
+ 		  -Wstrict-prototypes -Wmissing-prototypes -Wpointer-arith 
+ DEFINES		=
+-CFLAGS		= $(DEFINES) $(OPTIMIZE) $(EFT) # $(GCC_PARANOIA)
++CFLAGS		+= $(DEFINES) $(EFT) # $(GCC_PARANOIA)
+ 
+ LDFLAGS	=
+ LIBS	=
