@@ -1,0 +1,29 @@
+
+$FreeBSD$
+
+--- Makefile.orig	Sun Jun 20 18:38:31 2004
++++ Makefile	Sun Jun 20 18:39:44 2004
+@@ -2,11 +2,12 @@
+ OBJDIR = ./work/
+ BUILD = garnax-f1.1
+ TARFILE = $(BUILD).tar
+-CC = gcc
++CC ?= gcc
+ 
+ # Note: -lpthread may be needed instead of -pthread
+ #CFLAGS = -Wall -pedantic -ansi -pthread -g
+-CFLAGS = -Wall -pthread -g
++CFLAGS += -Wall -pthread -g
++LIBS=	${PTHREAD_LIBS}
+ 
+ # Arguments for SunOS
+ # CC = cc
+@@ -19,7 +20,7 @@
+ install : garnax
+ 
+ garnax : work $(objects)
+-	$(CC) $(CFLAGS) $(objects) -o garnax 
++	$(CC) $(CFLAGS) $(LIBS) $(objects) -o garnax 
+ 
+ work : 
+ 	mkdir -p work
