@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	tkrat
-PORTVERSION=	2.0
+PORTVERSION=	2.0.1
 CATEGORIES=	mail tk82
 MASTER_SITES=	ftp://ftp.md.chalmers.se/pub/tkrat/ \
 		ftp://ftp.sunet.se/pub/unix/mail/tkrat/
-DISTNAME=	${PORTNAME}-2.0
+DISTNAME=	${PORTNAME}-2.0.1
 
 MAINTAINER=	ports@FreeBSD.org
 
@@ -24,7 +24,6 @@ CONFIGURE_ARGS=	--with-tcl-config=${PREFIX}/lib/tcl8.2 \
 		--with-tk-config=${PREFIX}/lib/tk8.2 \
 		--with-tcl-include=${PREFIX}/include/tcl8.2 \
 		--with-tk-include=${PREFIX}/include/tk8.2
-		
 
 DOCFILES=	CONFIGURATION COPYRIGHT README doc/interface doc/userprocs \
 		doc/userproc.example
