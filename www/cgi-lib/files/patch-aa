@@ -5,7 +5,8 @@
  
  CGI-LIB=cgi-lib.a
 -CC=gcc
+-CCFLAGS=-c
 +CC?=gcc
- CCFLAGS=-c
++CCFLAGS+=-c
  AR=ar
  ARFLAGS=rc

@@ -1,15 +1,15 @@
 # New ports collection makefile for:	libcgi
-# Date created:		7 January 2000
-# Whom:			Sergey Samoyloff <gonza@techline.ru>
+# Date created:				7 January 2000
+# Whom:					Sergey Samoyloff <gonza@techline.ru>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	cgi-lib
-PORTVERSION= 	1.3
+PORTVERSION= 	1.4
 CATEGORIES=	www
-MASTER_SITES=	http://www.geocities.com/SiliconValley/Vista/6493/projects/code/
-DISTNAME=	${PORTNAME}
+MASTER_SITES=		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	alex
 
 MAINTAINER=	gonza@techline.ru
 
