@@ -19,6 +19,7 @@ NO_WRKSUBDIR=	yes
 MAKEFILE=	makefile
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
+ONLY_FOR_ARCHS=	i386
 
 PLIST_FILES=	lib/libml.a \
 		lib/libml.so \
