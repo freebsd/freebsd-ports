@@ -5,19 +5,19 @@
 # $FreeBSD$
 #
 
-PORTNAME=		clanbomber
-PORTVERSION=		1.01
-CATEGORIES=		games
-MASTER_SITES=		http://www.clanbomber.de/files/
+PORTNAME=	clanbomber
+PORTVERSION=	1.01
+CATEGORIES=	games
+MASTER_SITES=	http://www.clanbomber.de/files/
 
-MAINTAINER=		sobomax@FreeBSD.org
+MAINTAINER=	sobomax@FreeBSD.org
 
-LIB_DEPENDS=		clanCore.0:${PORTSDIR}/devel/clanlib
+LIB_DEPENDS=	clanCore.0:${PORTSDIR}/devel/clanlib
 
-USE_XLIB=		yes
-GNU_CONFIGURE=		yes
-CONFIGURE_ENV=		LIBS="-pthread -L${LOCALBASE}/lib" \
-			CPPFLAGS="-I${LOCALBASE}/include"
-CFLAGS+=		-fpermissive -g3
+USE_XLIB=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	LIBS="-pthread -L${LOCALBASE}/lib" \
+		CPPFLAGS="-I${LOCALBASE}/include"
+CFLAGS+=	-fpermissive
 
 .include <bsd.port.mk>

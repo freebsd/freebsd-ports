@@ -1,6 +1,6 @@
 # New ports collection makefile for:    Adobe Acrobar Viewer Version 1.1
-# Date created:		4 Febrary 2000
-# Whom:			Maxim Sobolev
+# Date created:				4 Febrary 2000
+# Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
 #
 # $FreeBSD$
 #

@@ -1,6 +1,6 @@
 # New ports collection makefile for:	Digger
 # Date created:				14 April 2000
-# Whom:					Maxim Sobolev
+# Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -24,24 +24,24 @@ MAKEFILE=	Makefile.fbsd
 
 .if !defined(WITH_SOUND)
 post-extract:
-		@${ECHO_MSG}
-		@${ECHO_MSG} "Please use \"make -DWITH_SOUND\" if you want to build the game with sound support."
-		@${ECHO_MSG}
+	@${ECHO_MSG}
+	@${ECHO_MSG} "Please use \"make -DWITH_SOUND\" if you want to build the game with sound support."
+	@${ECHO_MSG}
 .endif
 
 do-install:
-		@${INSTALL_PROGRAM} ${WRKSRC}/digger ${PREFIX}/bin
-		@${MKDIR} /var/games/digger
+	@${INSTALL_PROGRAM} ${WRKSRC}/digger ${PREFIX}/bin
+	@${MKDIR} /var/games/digger
 .if !defined(NOPORTDOCS)
-		@${MKDIR} ${PREFIX}/share/doc/digger
-		@${INSTALL_MAN} ${WRKSRC}/digger.txt ${PREFIX}/share/doc/digger
+	@${MKDIR} ${PREFIX}/share/doc/digger
+	@${INSTALL_MAN} ${WRKSRC}/digger.txt ${PREFIX}/share/doc/digger
 .endif
 
 .if defined(WITH_SOUND)
 post-install:
-		@${ECHO_MSG}
-		@${ECHO_MSG} "Use \"digger /A\" command to run Digger with sound enabled."
-		@${ECHO_MSG}
+	@${ECHO_MSG}
+	@${ECHO_MSG} "Use \"digger /A\" command to run Digger with sound enabled."
+	@${ECHO_MSG}
 .endif
 
 .include <bsd.port.mk>

@@ -1,6 +1,6 @@
-# New ports collection makefile for:   login.app
-# Date created:		17 January 1999
-# Whom:		 	Maxim Sobolev <sobomax@FreeBSD.org>
+# New ports collection makefile for:	login.app
+# Date created:				17 January 1999
+# Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
 #
 # $FreeBSD$
 #

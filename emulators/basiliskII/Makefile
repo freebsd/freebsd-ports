@@ -1,6 +1,6 @@
 # New ports collection makefile for:	BasiliskII
 # Date created:				17 April 2000
-# Whom:					Maxim Sobolev
+# Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
 #
 # $FreeBSD$
 #

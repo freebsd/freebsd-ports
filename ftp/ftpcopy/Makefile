@@ -1,6 +1,6 @@
 # New ports collection makefile for:	ftpcopy
-# Date created:		5 June 2000
-# Whom:			Maxim Sobolev <sobomax@FreeBSD.org>
+# Date created:				5 June 2000
+# Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
 #
 # $FreeBSD$
 #

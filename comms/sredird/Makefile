@@ -1,6 +1,6 @@
 # New ports collection makefile for:	sredird
-# Date created:		19 Dec 1999
-# Whom:			Maxim Sobolev <sobomax@FreeBSD.org>
+# Date created:				19 Dec 1999
+# Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
 #
 # $FreeBSD$
 #

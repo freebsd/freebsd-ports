@@ -1,6 +1,6 @@
 # New ports collection makefile for:	pysol-sound-server
-# Date created:		7 January 2000
-# Whom:			Maxim Sobolev
+# Date created:				7 January 2000
+# Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
 #
 # $FreeBSD$
 #

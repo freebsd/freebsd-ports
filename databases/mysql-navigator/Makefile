@@ -1,6 +1,6 @@
 # New ports collection makefile for:	mysql-navigator
 # Date created:				2 June 2000
-# Whom:				Maxim Sobolev <sobomax@FreeBSD.org>
+# Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
 #
 # $FreeBSD$
 #

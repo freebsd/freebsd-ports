@@ -1,6 +1,6 @@
 # New ports collection makefile for:	pythoong
-# Date created:		24 July 2000
-# Whom:			Maxim Sobolev
+# Date created:				24 July 2000
+# Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
 #
 # $FreeBSD$
 #
