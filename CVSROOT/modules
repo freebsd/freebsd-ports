@@ -10016,6 +10016,7 @@ uwm		ports/x11-wm/uwm
 uzap		ports/editors/uzap
 v		ports/x11-toolkits/v
 v6eval		ports/net/v6eval
+v7sh		ports/shells/v7sh
 vMac		ports/emulators/vMac
 valgrind	ports/devel/valgrind
 valgrind-snapshot	ports/devel/valgrind-snapshot
