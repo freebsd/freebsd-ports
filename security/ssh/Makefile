@@ -23,6 +23,8 @@ MASTER_SITES=	ftp://ftp.cs.engr.uky.edu/cs/software/ \
 
 MAINTAINER=	ports@FreeBSD.org
 
+FORBIDDEN=	"Remote vulnerabilities"
+
 #RESTRICTED=	"Crypto: export-controlled"
 
 USE_AUTOCONF=	YES
