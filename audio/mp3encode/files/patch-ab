@@ -1,0 +1,214 @@
+*** musicin.c.orig	Wed May 20 22:09:24 1998
+--- musicin.c	Wed May 20 22:15:02 1998
+***************
+*** 161,167 ****
+  
+      do  {
+         printf("Enter PCM input file name <required>: ");
+!        gets(original_file_name);
+         if (original_file_name[0] == NULL_CHAR)
+         printf("PCM input file name is required.\n");
+      } while (original_file_name[0] == NULL_CHAR);
+--- 161,167 ----
+  
+      do  {
+         printf("Enter PCM input file name <required>: ");
+!        fgets(original_file_name,255,stdin);
+         if (original_file_name[0] == NULL_CHAR)
+         printf("PCM input file name is required.\n");
+      } while (original_file_name[0] == NULL_CHAR);
+***************
+*** 182,188 ****
+             original_file_name, DFLT_EXT);
+  #endif
+   
+!     gets(encoded_file_name);
+      
+      if (encoded_file_name[0] == NULL_CHAR) {
+  #ifdef  MS_DOS
+--- 182,188 ----
+             original_file_name, DFLT_EXT);
+  #endif
+   
+!     fgets(encoded_file_name,255,stdin);
+      
+      if (encoded_file_name[0] == NULL_CHAR) {
+  #ifdef  MS_DOS
+***************
+*** 227,233 ****
+      else {    /* Not using Audio IFF sound file headers. */
+  
+         printf("What is the sampling frequency? <44100>[Hz]: ");
+!        gets(t);
+         freq = atol(t);
+         switch (freq) {
+            case 48000 : info->sampling_frequency = 1;
+--- 227,233 ----
+      else {    /* Not using Audio IFF sound file headers. */
+  
+         printf("What is the sampling frequency? <44100>[Hz]: ");
+!        fgets(t,255,stdin);
+         freq = atol(t);
+         switch (freq) {
+            case 48000 : info->sampling_frequency = 1;
+***************
+*** 268,274 ****
+  
+      printf("Which layer do you want to use?\n");
+      printf("Available: Layer (1), Layer (<2>), Layer (3): ");
+!     gets(t);
+      switch(*t){
+         case '1': info->lay = 1; printf(">>> Using Layer %s\n",t); break;
+         case '2': info->lay = 2; printf(">>> Using Layer %s\n",t); break;
+--- 268,274 ----
+  
+      printf("Which layer do you want to use?\n");
+      printf("Available: Layer (1), Layer (<2>), Layer (3): ");
+!     fgets(t,255,stdin);
+      switch(*t){
+         case '1': info->lay = 1; printf(">>> Using Layer %s\n",t); break;
+         case '2': info->lay = 2; printf(">>> Using Layer %s\n",t); break;
+***************
+*** 279,285 ****
+      printf("Which mode do you want?\n");
+      printf("Available: (<s>)tereo, (j)oint stereo, ");
+      printf("(d)ual channel, s(i)ngle Channel: ");
+!     gets(t);
+      switch(*t){
+         case 's':
+         case 'S':
+--- 279,285 ----
+      printf("Which mode do you want?\n");
+      printf("Available: (<s>)tereo, (j)oint stereo, ");
+      printf("(d)ual channel, s(i)ngle Channel: ");
+!     fgets(t,255,stdin);
+      switch(*t){
+         case 's':
+         case 'S':
+***************
+*** 308,314 ****
+      }
+  
+      printf("Which psychoacoustic model do you want to use? <1>: ");
+!     gets(t);
+      model = atoi(t);
+      if (model > 2 || model < 1) {
+         printf(">>> Default model 1 selected\n");
+--- 308,314 ----
+      }
+  
+      printf("Which psychoacoustic model do you want to use? <1>: ");
+!     fgets(t,255,stdin);
+      model = atoi(t);
+      if (model > 2 || model < 1) {
+         printf(">>> Default model 1 selected\n");
+***************
+*** 322,328 ****
+      /* set default bitrate to highest allowed, which is index 14 */
+    brt = bitrate[info->version][info->lay-1][14];
+      printf( "What is the total bitrate? <%u>[kbps]: ", brt );
+!     gets( t );
+      brt = atoi( t );
+      if ( brt == 0 )
+        j = 15;
+--- 322,328 ----
+      /* set default bitrate to highest allowed, which is index 14 */
+    brt = bitrate[info->version][info->lay-1][14];
+      printf( "What is the total bitrate? <%u>[kbps]: ", brt );
+!     fgets(t,255,stdin);
+      brt = atoi( t );
+      if ( brt == 0 )
+        j = 15;
+***************
+*** 348,354 ****
+   
+      printf("What type of de-emphasis should the decoder use?\n");
+      printf("Available: (<n>)one, (5)0/15 microseconds, (c)citt j.17: ");
+!     gets(t);
+      if (*t != 'n' && *t != '5' && *t != 'c') {
+         printf(">>> Using default no de-emphasis\n");
+         info->emphasis = 0;
+--- 348,354 ----
+   
+      printf("What type of de-emphasis should the decoder use?\n");
+      printf("Available: (<n>)one, (5)0/15 microseconds, (c)citt j.17: ");
+!     fgets(t,255,stdin);
+      if (*t != 'n' && *t != '5' && *t != 'c') {
+         printf(">>> Using default no de-emphasis\n");
+         info->emphasis = 0;
+***************
+*** 363,369 ****
+  /*  Start 2. Part changes for CD Ver 3.2; jsp; 22-Aug-1991 */
+   
+      printf("Do you want to set the private bit? (y/<n>): ");
+!     gets(t);
+      if (*t == 'y' || *t == 'Y') info->extension = 1;
+      else                        info->extension = 0;
+      if(info->extension) printf(">>> Private bit set\n");
+--- 363,369 ----
+  /*  Start 2. Part changes for CD Ver 3.2; jsp; 22-Aug-1991 */
+   
+      printf("Do you want to set the private bit? (y/<n>): ");
+!     fgets(t,255,stdin);
+      if (*t == 'y' || *t == 'Y') info->extension = 1;
+      else                        info->extension = 0;
+      if(info->extension) printf(">>> Private bit set\n");
+***************
+*** 372,399 ****
+  /*  End changes for CD Ver 3.2; jsp; 22-Aug-1991 */
+   
+      printf("Do you want error protection? (y/<n>): ");
+!     gets(t);
+      if (*t == 'y' || *t == 'Y') info->error_protection = TRUE;
+      else                        info->error_protection = FALSE;
+      if(info->error_protection) printf(">>> Error protection used\n");
+      else printf(">>> Error protection not used\n");
+   
+      printf("Is the material copyrighted? (y/<n>): ");
+!     gets(t);
+      if (*t == 'y' || *t == 'Y') info->copyright = 1;
+      else                        info->copyright = 0;
+      if(info->copyright) printf(">>> Copyrighted material\n");
+      else                printf(">>> Material not copyrighted\n");
+   
+      printf("Is this the original? (y/<n>): ");
+!     gets(t);
+      if (*t == 'y' || *t == 'Y') info->original = 1;
+      else                        info->original = 0;
+      if(info->original) printf(">>> Original material\n");
+      else               printf(">>> Material not original\n");
+   
+      printf("Do you wish to exit (last chance before encoding)? (y/<n>): ");
+!     gets(t);
+      if (*t == 'y' || *t == 'Y') exit(0);
+  }
+  
+--- 372,399 ----
+  /*  End changes for CD Ver 3.2; jsp; 22-Aug-1991 */
+   
+      printf("Do you want error protection? (y/<n>): ");
+!     fgets(t,255,stdin);
+      if (*t == 'y' || *t == 'Y') info->error_protection = TRUE;
+      else                        info->error_protection = FALSE;
+      if(info->error_protection) printf(">>> Error protection used\n");
+      else printf(">>> Error protection not used\n");
+   
+      printf("Is the material copyrighted? (y/<n>): ");
+!     fgets(t,255,stdin);
+      if (*t == 'y' || *t == 'Y') info->copyright = 1;
+      else                        info->copyright = 0;
+      if(info->copyright) printf(">>> Copyrighted material\n");
+      else                printf(">>> Material not copyrighted\n");
+   
+      printf("Is this the original? (y/<n>): ");
+!     fgets(t,255,stdin);
+      if (*t == 'y' || *t == 'Y') info->original = 1;
+      else                        info->original = 0;
+      if(info->original) printf(">>> Original material\n");
+      else               printf(">>> Material not original\n");
+   
+      printf("Do you wish to exit (last chance before encoding)? (y/<n>): ");
+!     fgets(t,255,stdin);
+      if (*t == 'y' || *t == 'Y') exit(0);
+  }
+  

@@ -1,0 +1,38 @@
+INTRODUCTION
+============
+mp3encode is a package for encoding MPEG layer I, II and III audio
+files. This is the reference implementation so don't expect
+spectacular performance.
+
+Driving encode is pretty simple although it may take some practice to
+work out an optimal compression rate. AIFF files are the only type of
+files that seem to work with this version so you may need to install a
+port like "sox" to convert your file types. I use the "nas" port to
+record and edit all of my audio files but so long as you have a valid
+AIFF file it shouldn't matter what you use.
+
+Although the source code includes a decoder I have decided not to port
+it because we already have a couple of top class mpeg decoders in the 
+ports collection.
+
+HINTS & TIPS 
+============ 
+Physcoacoustic model 2 is the only supported model in layer III
+encoding.  A bit-rate of 128Kbps is adequate for most forms of music but
+you may need to turn down the compression to 160Kbps if the music is
+particularly atmospheric.
+
+Vocal spoken recordings are best encoded using a 32Kbps bit-rate with
+layer II (layer III makes you sound like a Dalek under digital water)
+with a 32kHz sample rate in mono. Using this method I have managed to
+get about 5 minutes of AM Radio quality audio into around 1 MB.
+
+MISC
+====
+If anyone finds any bugs in this software please let me know and
+include patches to fix them.
+
+Share and enjoy,
+
+Joel...
+jsutton@webnet.com.au
