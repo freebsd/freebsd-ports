@@ -3,7 +3,7 @@
 # Date created:         Sat Dec 7, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.3 1997/10/10 06:53:42 obrien Exp $
+# $Id: Makefile,v 1.4 1997/11/03 21:07:11 obrien Exp $
 #
 
 DISTNAME=	vnpstext
