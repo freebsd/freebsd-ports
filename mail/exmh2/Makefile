@@ -3,7 +3,7 @@
 # Date released:		1 Jan 97
 # Whom:				Peter Wemm <peter@freebsd.org>
 #
-# $Id: Makefile,v 1.22 1997/12/26 04:51:00 peter Exp $
+# $Id: Makefile,v 1.23 1997/12/26 07:11:40 peter Exp $
 #
 
 DISTNAME=	exmh-2.0.1
@@ -11,9 +11,18 @@ CATEGORIES=	mail tk80
 MASTER_SITES=	ftp://ftp.sunlabs.com/pub/tcl/exmh/
 EXTRACT_SUFX=	.tar.Z
 
+PATCH_SITES=	http://www.sunlabs.com/~bwelch/exmh/patches/2.0.1/
+PATCHFILES=	folderNew.patch seditpost.patch extrasInit.patch
+# XXX newsgroups.patch is relative to a different directory
+
+.if defined(PATCH_DEBUG)
+PATCH_DIST_ARGS= -d ${WRKSRC}/lib -E ${PATCH_DIST_STRIP}
+.else
+PATCH_DIST_ARGS= -d ${WRKSRC}/lib --forward --quiet -E ${PATCH_DIST_STRIP}
+.endif
+
 MAINTAINER=	peter@FreeBSD.org
 
-# There are likely to be distributed patches again.
 DIST_SUBDIR=	${PKGNAME}
 
 RUN_DEPENDS=	wish8.0:${PORTSDIR}/x11/tk80
