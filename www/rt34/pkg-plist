@@ -232,11 +232,13 @@ rt3/lib/RT/I18N/zh_tw.po
 rt3/lib/RT/I18N/i_default.pm
 rt3/lib/RT/I18N/pt_br.po
 rt3/lib/RT/I18N/cs.po
+rt3/lib/RT/I18N/cs.pm
 rt3/lib/RT/I18N/de.po
 rt3/lib/RT/I18N/en.po
 rt3/lib/RT/I18N/es.po
 rt3/lib/RT/I18N/fi.po
 rt3/lib/RT/I18N/ja.po
+rt3/lib/RT/I18N/he.po
 rt3/lib/RT/I18N/nl.po
 rt3/lib/RT/I18N/ru.po
 rt3/lib/RT/I18N/zh_cn.po
