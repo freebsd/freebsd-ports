@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	grappa
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.3
 CATEGORIES=	biology
 MASTER_SITES=	http://www.cs.unm.edu/~moret/
-DISTNAME=	GRAPPA-1.02
+DISTNAME=	GRAPPA-1.03
 
 MAINTAINER=	dbader@eece.unm.edu
 
