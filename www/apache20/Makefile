@@ -3,7 +3,7 @@
 # Date created:         Fri Aug 25 16:42:36 CDT 1995
 # Whom:                 erich@rrnet.com
 #
-# $Id: Makefile,v 1.16 1996/07/12 10:27:53 asami Exp $
+# $Id: Makefile,v 1.17 1996/08/11 14:49:21 markm Exp $
 #
 
 DISTNAME=       apache_1.1.1
@@ -14,6 +14,7 @@ MASTER_SITES=   ftp://www.apache.org/apache/dist/
 MAINTAINER=	ache@freebsd.org
 
 .if defined(SECURE_SERVER)
+
 PKGNAME=        apache_SSL-1.1.1
 MAIN_SRC=	${DISTNAME}${EXTRACT_SUFX}
 SSL_EXTRAS=	${DISTNAME}+1.3.ssl${EXTRACT_SUFX}
@@ -24,14 +25,23 @@ MD5_FILE=	${FILESDIR}/md5.SSL
 PATCHDIR=	${.CURDIR}/patches.SSL
 PKGDIR=		${.CURDIR}/pkg.SSL
 CONFIGURE_SCRIPT=	configure.SSL
-DEPENDS=	ssleay:${PORTSDIR}/security/SSLeay
+#DEPENDS=	${PORTSDIR}/security/SSLeay
 
 post-extract:
 	@cd ${WRKSRC} && tar xzf ${DISTDIR}/${SSL_EXTRAS}
 
 pre-patch:
 	@cd ${WRKSRC} && ${PATCH} ${PATCH_DIST_ARGS} < SSLpatch
-.endif
+
+post-install:
+	@if [ ! -f ${PREFIX}/etc/rc.d/apache_ssl.sh ]; then \
+		echo "Installing ${PREFIX}/etc/rc.d/apache_ssl.sh startup file."; \
+		echo "#!/bin/sh" > ${PREFIX}/etc/rc.d/apache_ssl.sh; \
+		echo "[ -x /usr/local/sbin/httpsd ] && /usr/local/sbin/httpsd && echo -n ' httpsd'" >> ${PREFIX}/etc/rc.d/apache_ssl.sh; \
+		chmod 751 ${PREFIX}/etc/rc.d/apache_ssl.sh; \
+	fi
+
+.else
 
 post-install:
 	@if [ ! -f ${PREFIX}/etc/rc.d/apache.sh ]; then \
@@ -40,5 +50,7 @@ post-install:
 		echo "[ -x /usr/local/sbin/httpd ] && /usr/local/sbin/httpd && echo -n ' httpd'" >> ${PREFIX}/etc/rc.d/apache.sh; \
 		chmod 751 ${PREFIX}/etc/rc.d/apache.sh; \
 	fi
+
+.endif
 
 .include <bsd.port.mk>
