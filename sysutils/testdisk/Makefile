@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	testdisk
-PORTVERSION=	5.2
-PORTREVISION=	2
+PORTVERSION=	5.3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.cgsecurity.org/
 
@@ -20,6 +19,8 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${PREFIX}/include" LDFLAGS="-L${PREFIX}/lib"
 
 MAN1=		testdisk.1
+PLIST_FILES=	sbin/testdisk
+PORTDOCS=	*
 
 .if defined(WITH_E2FSPROGS)
 LIB_DEPENDS+=	ext2fs.2:${PORTSDIR}/sysutils/e2fsprogs
@@ -31,12 +32,6 @@ LIB_DEPENDS+=	ntfs.5:${PORTSDIR}/sysutils/ntfsprogs
 
 .if defined(WITH_PROGSREISERFS)
 LIB_DEPENDS+=	reiserfs-0.3.0:${PORTSDIR}/sysutils/progsreiserfs
-.endif
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500040
-IGNORE=		"Requires FreeBSD 5.x, some defines are missing in sys/disk.h before __FreeBSD_version 500040"
 .endif
 
 .if !defined(WITH_E2FSPROGS) || !defined(WITH_NTFSPROGS) || !defined(WITH_PROGSREISERFS)
@@ -57,6 +52,6 @@ pre-everything::
 .endif
 
 post-patch:
-	${REINPLACE_CMD} -e 's|/doc/.(PACKAGE)-.(VERSION)|/doc/${PORTNAME}|' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|/doc/.(PACKAGE)-.(VERSION)/doc|/doc/${PORTNAME}|' ${WRKSRC}/Makefile.in
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
