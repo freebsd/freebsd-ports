@@ -1,9 +1,10 @@
 bin/ctangle
 bin/cweave
+share/cweb/c++lib.w
 share/doc/cweb/cwebman.tex
 share/emacs/site-lisp/cweb.el
 share/texmf/tex/generic/misc/cwebmac.tex
-share/texmf/tex/generic/misc/cwebmac-pdf.tex
+@dirrm share/cweb
 @dirrm share/doc/cweb
 @unexec rmdir %D/share/texmf/tex/generic/misc 2>/dev/null || true
 @unexec rmdir %D/share/texmf/tex/generic 2>/dev/null || true

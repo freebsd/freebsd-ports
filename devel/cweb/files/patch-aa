@@ -1,10 +1,10 @@
---- Makefile.orig	Thu Sep 21 22:32:18 1995
-+++ Makefile	Tue Feb 10 19:30:55 1998
+--- Makefile.orig	Mon Jan  1 04:13:48 2001
++++ Makefile	Mon Jan  7 14:28:39 2002
 @@ -18,23 +18,23 @@
  #
  
  # directory for TeX inputs (cwebmac.tex goes here)
--MACROSDIR= /usr/local/lib/tex/inputs
+-MACROSDIR= /usr/local/texmf/tex/generic
 +MACROSDIR= ${PREFIX}/share/texmf/tex/generic/misc
  
  # directory for CWEB inputs in @i files
@@ -31,7 +31,7 @@
  
  # Set DESTPREF to null if you want to call the executables "tangle" and "weave"
  # (probably NOT a good idea; we recommend leaving DESTPREF=c)
-@@ -50,10 +50,10 @@
+@@ -50,9 +50,9 @@
  WCHANGES=
  
  # We keep debugging info around, for fun, but most users don't need it
@@ -39,9 +39,29 @@
 +#CFLAGS = -g
  #CFLAGS = -O
 -LINKFLAGS = -g
--#LINKFLAGS = -s # for smaller (stripped) executables on many UNIX systems
 +#LINKFLAGS = -g
-+LINKFLAGS = -s # for smaller (stripped) executables on many UNIX systems
+ #LINKFLAGS = -s # for smaller (stripped) executables on many UNIX systems
  
  # What C compiler are you using?
- CC = cc
+@@ -162,21 +162,16 @@
+ 	  *.log *.dvi *.toc *.idx *.scn *.pdf core cweave ctangle
+ 
+ install: all
+-	- mkdir $(DESTDIR)
+ 	$(CP) cweave $(DESTDIR)$(DESTPREF)weave
+ 	chmod 755 $(DESTDIR)$(DESTPREF)weave
+ 	$(CP) ctangle $(DESTDIR)$(DESTPREF)tangle
+ 	chmod 755 $(DESTDIR)$(DESTPREF)tangle
+-	- mkdir $(MANDIR)
+ 	$(CP) cweb.1 $(MANDIR)/cweb.$(MANEXT)
+ 	chmod 644 $(MANDIR)/cweb.$(MANEXT)
+-	- mkdir $(MACROSDIR)
+ 	$(CP) cwebmac.tex $(MACROSDIR)
+ 	chmod 644 $(MACROSDIR)/cwebmac.tex
+-	- mkdir $(EMACSDIR)
+ 	$(CP) cweb.el $(EMACSDIR)
+ 	chmod 644 $(EMACSDIR)/cweb.el
+-	- mkdir $(CWEBINPUTS)
+ 	$(CP) c++lib.w $(CWEBINPUTS)
+ 	chmod 644 $(CWEBINPUTS)/c++lib.w
+ 

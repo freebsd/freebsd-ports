@@ -1,0 +1,19 @@
+--- cweb.1.orig	Tue Jul  3 21:44:09 2001
++++ cweb.1	Mon Jan  7 14:19:06 2002
+@@ -85,13 +85,11 @@
+ means omit the index and table of contents.
+ .PP
+ .SH FILES
+-/usr/local/lib/tex/inputs/cwebmac.tex   TeX macros used by cweave output.
++/usr/local/share/texmf/tex/generic/misc/cwebmac.tex   TeX macros used by cweave output.
+ .br
+-/usr/local/src/cweb/cwebman.tex      The user manual.
++/usr/local/share/doc/cweb/cwebman.tex      The user manual.
+ .br
+-/usr/local/src/cweb/examples/wc.w   An introductory example.
+-.br
+-/usr/local/lib/cweb    Directory for cweb "include" files.
++/usr/local/share/cweb   Directory for cweb "include" files.
+ .SH "SEE ALSO"
+ .I Literate Programming
+ by D.E. Knuth.
