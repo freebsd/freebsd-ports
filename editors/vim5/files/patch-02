@@ -1,5 +1,19 @@
 --- configure.orig	Sun Sep 19 03:59:45 1999
 +++ configure	Sun Oct 24 21:47:29 1999
+@@ -2906,11 +2906,11 @@
+ 
+   if test "x$gtk_config_prefix" != "x" ; then
+      gtk_config_args="$gtk_config_args --prefix=$gtk_config_prefix"
+-     GTK_CONFIG=$gtk_config_prefix/bin/gtk-config
++     GTK_CONFIG=$gtk_config_prefix/bin/gtk12-config
+   fi
+   if test "x$gtk_config_exec_prefix" != "x" ; then
+      gtk_config_args="$gtk_config_args --exec-prefix=$gtk_config_exec_prefix"
+-     GTK_CONFIG=$gtk_config_exec_prefix/bin/gtk-config
++     GTK_CONFIG=$gtk_config_exec_prefix/bin/gtk12-config
+   fi
+   if test "X$GTK_CONFIG" = "X"; then
+     # Extract the first word of "gtk-config", so it can be a program name with args.
 @@ -3098,7 +3098,7 @@
    gui_libs="`echo $x_libraries|sed 's%/^/^/*$%%'` `echo "$gui_XXX" | sed s/XXX/lib/g` `echo "$GUI_INC_LOC" | sed s/include/lib/` $GUI_LIB_LOC"
    GUI_LIB_LOC=
