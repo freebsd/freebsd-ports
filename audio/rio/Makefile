@@ -1,13 +1,13 @@
 # New ports collection makefile for:   rio
-# Version required:    1.05
-# Date created:        6 February 1999
-# Whom:                Dermot McNally <derm@ibm.net>
+# Version required:    1.06
+# Date created:        29 April 1999
+# Whom:                Nick Sayer <nsayer@freebsd.org>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/03/02 00:07:02 fenner Exp $
 #
 
-DISTNAME=	rio005
-PKGNAME=	rio-1.05
+DISTNAME=	rio006
+PKGNAME=	rio-1.06
 CATEGORIES=	audio
 MASTER_SITES=	http://www.world.co.uk/sba/
 EXTRACT_SUFX=	.tgz
