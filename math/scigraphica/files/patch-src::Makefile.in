@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- src/Makefile.in	2001/07/04 14:09:22	1.1
++++ src/Makefile.in	2001/07/04 14:10:08
+@@ -139,7 +139,7 @@
+ INCLUDES = -Ipython 	$(GTK_CFLAGS) $(GTK_EXTRA_CFLAGS) $(XML_CFLAGS) $(PY_CFLAGS)         $(BONOBO_CFLAGS) $(OAF_CFLAGS)
+ 
+ 
+-sga_LDADD = -L./python python/libpint.a 	$(GTK_LIBS) $(GTK_EXTRA_LIBS) $(XML_LIBS)         $(BONOBO_LIBS) $(OAF_LIBS) 	-L$(PY_LIB_LOC)/config -l$(PY_LIBS) $(PY_EXTRA_LIBS)         $(UTIL_LIBS) $(READLINE_LIB)
++sga_LDADD = -L./python python/libpint.a 	$(GTK_LIBS) $(GTK_EXTRA_LIBS) $(XML_LIBS)         $(BONOBO_LIBS) $(OAF_LIBS) 	-L$(PY_LIB_LOC)/config -pthread -l$(PY_LIBS) $(PY_EXTRA_LIBS)         $(UTIL_LIBS) $(READLINE_LIB)
+ 
+ 
+ LIBS = @LIBS@
