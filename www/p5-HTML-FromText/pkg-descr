@@ -1,0 +1,10 @@
+The text2html function marks up plain text as HTML.  By
+default it converts HTML metacharacters into the
+corresponding entities.  More sophisticated transformations,
+such as splitting the text into paragraphs or marking up
+bulleted lists, can be carried out by setting the
+appropriate options.
+
+WWW: http://search.cpan.org/author/GDR/HTML-FromText/
+
+Seamus Venasse <svenasse@polaris.ca>
