@@ -1,13 +1,10 @@
 
-Please set SWARMHOME to /usr/local while using this package.
+Please set SWARMHOME to %%PREFIX%% while using this package.
 ex:
   in tcsh:
-	setenv SWARMHOME /usr/local
+	setenv SWARMHOME %%PREFIX%%
 
   in bash:
-	export SWARMHOME=/usr/local
+	export SWARMHOME=%%PREFIX%%
 
 Swarm samples can be found at ftp://ftp.swarm.org/pub/swarm/src/apps/objc/swarmapps-2.1.1.tar.gz
-
- *Note* java support is not enabled in this port.
-

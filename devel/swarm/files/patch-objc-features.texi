@@ -1,0 +1,13 @@
+--- libobjc/doc/objc-features.texi.orig	Mon Nov 11 17:43:05 2002
++++ libobjc/doc/objc-features.texi	Mon Nov 11 17:49:43 2002
+@@ -2,6 +2,10 @@
+ @c %**start of header 
+ @setfilename objc-features.info
+ @settitle GNU Objective-C runtime features
++@dircategory Programming & development tools.
++@direntry
++* GNU Objective-C runtime features: (objc-features).	GNU Objective-C runtime features
++@end direntry
+ @setchapternewpage odd
+ @c %**end of header
+      
