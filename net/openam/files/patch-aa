@@ -1,0 +1,25 @@
+*** main.cxx.orig	Thu Jan 24 17:49:41 2002
+--- main.cxx	Thu Jan 24 17:50:02 2002
+*************** BOOL G7231_OGMChannel::ReadFrame(PINDEX 
+*** 1640,1649 ****
+  void G7231_OGMChannel::CreateSilenceFrame(PINDEX /*amount*/)
+  {
+    frameOffs = 0;
+!   frameLen  = 4;
+  
+!   frameBuffer[0] = 2;
+!   memset(frameBuffer.GetPointer()+1, 0, 3);
+  }
+  
+  BOOL G7231_OGMChannel::IsWAVFileValid(PWAVFile *chan) {
+--- 1640,1649 ----
+  void G7231_OGMChannel::CreateSilenceFrame(PINDEX /*amount*/)
+  {
+    frameOffs = 0;
+!   frameLen  = 24;
+  
+!   frameBuffer[0] = 0;
+!   memset(frameBuffer.GetPointer()+1, 0, 23);
+  }
+  
+  BOOL G7231_OGMChannel::IsWAVFileValid(PWAVFile *chan) {
