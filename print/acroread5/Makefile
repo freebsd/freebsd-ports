@@ -6,21 +6,19 @@
 #
 
 PORTNAME=	acroread
-PORTVERSION=	5.08
+PORTVERSION=	5.09
 CATEGORIES=	print linux
 MASTER_SITES=	http://download.adobe.com/pub/adobe/acrobatreader/unix/5.x/ \
 		ftp://ftp.adobe.com/pub/adobe/acrobatreader/unix/5.x/
 .include <bsd.port.pre.mk>
 .if ${ARCH} == "i386"
-DISTNAME=	linux-508
+DISTNAME=	linux-509
 .endif
 CONFLICTS=	acroread-3*
 DIST_SUBDIR=	acroread
 
 MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	View, distribute and print PDF documents
-
-FORBIDDEN=	arbitrary command execution http://vuxml.freebsd.org/78348ea2-ec91-11d8-b913-000c41e2cdad.html
 
 ONLY_FOR_ARCHS=	i386
 
