@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	postgresql
-PORTVERSION=	7.0beta5
+PORTVERSION=	7.0.b5
 CATEGORIES=	databases
 MASTER_SITES=	ftp://ftp.de.postgresql.org/ \
 		ftp://ftp.postgresql.org/pub/ \
 		ftp://ftp.iodynamics.com/pub/mirror/postgresql/ \
 		ftp://ftp.digex.net/pub/packages/database/postgresql/ \
 		ftp://ftp.sunet.se/pub/unix/databases/relational/postgresql/
+DISTNAME=	${PORTNAME}-7.0beta5
 
 MAINTAINER=	andreas@FreeBSD.org
 
@@ -49,7 +50,7 @@ DOCDIR=		${WRKDIR}/${DISTNAME}/doc
 USE_GMAKE=	YES
 MAKEFILE=	GNUmakefile
 HAS_CONFIGURE=	YES
-CONFIGURE_ARGS= --prefix=${PREFIX}/pgsql \
+CONFIGURE_ARGS=	--prefix=${PREFIX}/pgsql \
 		--enable-locale \
 		--with-template=`uname -s | ${TR} '[A-Z]' '[a-z]'` \
 		--with-includes="${PREFIX}/include ${TCL_INCDIR} ${TK_INCDIR}" \
