@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	wmcube
-PORTVERSION=	0.98
+PORTVERSION=	0.98p1
 CATEGORIES=	sysutils windowmaker
-MASTER_SITES=	http://www.ne.jp/asahi/linux/timecop/
+MASTER_SITES=	http://www.ne.jp/asahi/linux/timecop/software/
 PKGNAMESUFFIX=	-gdk
-DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}
+DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 
 MAINTAINER=	pat@databits.net
 
