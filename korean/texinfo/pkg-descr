@@ -1,0 +1,15 @@
+  Texinfo is a documentation system that uses a single source file to
+produce both online information and printed output.
+
+  Texinfo-ko is a Korean patched version of Texinfo formatter.  It
+enables users to write a Korean Texinfo document with EUC-KR
+encoded Hangul.
+
+  Texinfo-ko includes makeinfo (info formatter), texinfo-ko.tex (TeX
+formatter), and texindex.
+
+  Korean Texinfo system by Changwoo Ryu <cwryu@debian.org>
+
+--
+CHOI Junho <cjh@FreeBSD.org>
+WWW: http://master.debian.or.kr/~cwryu/hacks/texinfo-ko/

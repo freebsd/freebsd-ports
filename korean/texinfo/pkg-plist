@@ -1,0 +1,11 @@
+bin/makeinfo
+bin/texindex
+share/doc/texinfo-ko/NEWS.ko
+share/doc/texinfo-ko/README.ko
+share/doc/texinfo-ko/TODO.ko
+share/texmf/tex/texinfo/texinfo-ko-HLaTeX.tex
+share/texmf/tex/texinfo/texinfo-ko.tex
+@dirrm share/doc/texinfo-ko
+@comment to safely execute texhash
+@exec env PATH=%D/bin:$PATH %D/bin/texhash
+@unexec env PATH=%D/bin:$PATH %D/bin/texhash
