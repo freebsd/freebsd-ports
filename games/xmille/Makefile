@@ -3,11 +3,11 @@
 # Date created:         30 Dec 1994
 # Whom:                 swallace
 #
-# $Id: Makefile,v 1.3 1995/04/01 12:45:23 jkh Exp $
+# $Id: Makefile,v 1.4 1995/04/11 00:20:41 asami Exp $
 #
 
 DISTNAME=       xmille
-PKGNAME=	2.0
+PKGNAME=	xmille-2.0
 CATEGORIES+=	games
 MASTER_SITES=	ftp://gatekeeper.dec.com/.b/X11-contrib/
 EXTRACT_SUFX=   .tar.Z
