@@ -1,29 +1,29 @@
+@comment $FreeBSD$
 bin/dopewars
-lib/charset.alias
-%%PORTDOCS%%share/doc/%%DOPEWARS%%/LICENCE
-%%PORTDOCS%%share/doc/%%DOPEWARS%%/aiplayer.html
-%%PORTDOCS%%share/doc/%%DOPEWARS%%/clientplay.html
-%%PORTDOCS%%share/doc/%%DOPEWARS%%/commandline.html
-%%PORTDOCS%%share/doc/%%DOPEWARS%%/configfile.html
-%%PORTDOCS%%share/doc/%%DOPEWARS%%/contribute.html
-%%PORTDOCS%%share/doc/%%DOPEWARS%%/credits.html
-%%PORTDOCS%%share/doc/%%DOPEWARS%%/developer.html
-%%PORTDOCS%%share/doc/%%DOPEWARS%%/example-cfg
-%%PORTDOCS%%share/doc/%%DOPEWARS%%/help/cops.html
-%%PORTDOCS%%share/doc/%%DOPEWARS%%/help/drugs.html
-%%PORTDOCS%%share/doc/%%DOPEWARS%%/help/general.html
-%%PORTDOCS%%share/doc/%%DOPEWARS%%/help/guns.html
-%%PORTDOCS%%share/doc/%%DOPEWARS%%/help/locations.html
-%%PORTDOCS%%share/doc/%%DOPEWARS%%/help/server.html
-%%PORTDOCS%%share/doc/%%DOPEWARS%%/help/sounds.html
-%%PORTDOCS%%share/doc/%%DOPEWARS%%/i18n.html
-%%PORTDOCS%%share/doc/%%DOPEWARS%%/index.html
-%%PORTDOCS%%share/doc/%%DOPEWARS%%/installation.html
-%%PORTDOCS%%share/doc/%%DOPEWARS%%/metaserver.html
-%%PORTDOCS%%share/doc/%%DOPEWARS%%/protocol.html
-%%PORTDOCS%%share/doc/%%DOPEWARS%%/server.html
-%%PORTDOCS%%share/doc/%%DOPEWARS%%/servercommands.html
-%%PORTDOCS%%share/doc/%%DOPEWARS%%/windows.html
+%%PORTDOCS%%share/doc/dopewars/LICENCE
+%%PORTDOCS%%share/doc/dopewars/aiplayer.html
+%%PORTDOCS%%share/doc/dopewars/clientplay.html
+%%PORTDOCS%%share/doc/dopewars/commandline.html
+%%PORTDOCS%%share/doc/dopewars/configfile.html
+%%PORTDOCS%%share/doc/dopewars/contribute.html
+%%PORTDOCS%%share/doc/dopewars/credits.html
+%%PORTDOCS%%share/doc/dopewars/developer.html
+%%PORTDOCS%%share/doc/dopewars/example-cfg
+%%PORTDOCS%%share/doc/dopewars/help/cops.html
+%%PORTDOCS%%share/doc/dopewars/help/drugs.html
+%%PORTDOCS%%share/doc/dopewars/help/general.html
+%%PORTDOCS%%share/doc/dopewars/help/guns.html
+%%PORTDOCS%%share/doc/dopewars/help/locations.html
+%%PORTDOCS%%share/doc/dopewars/help/server.html
+%%PORTDOCS%%share/doc/dopewars/help/sounds.html
+%%PORTDOCS%%share/doc/dopewars/i18n.html
+%%PORTDOCS%%share/doc/dopewars/index.html
+%%PORTDOCS%%share/doc/dopewars/installation.html
+%%PORTDOCS%%share/doc/dopewars/metaserver.html
+%%PORTDOCS%%share/doc/dopewars/protocol.html
+%%PORTDOCS%%share/doc/dopewars/server.html
+%%PORTDOCS%%share/doc/dopewars/servercommands.html
+%%PORTDOCS%%share/doc/dopewars/windows.html
 share/dopewars/dopewars.sco
 share/dopewars/bye.wav
 share/dopewars/colt.wav
@@ -44,7 +44,6 @@ share/dopewars/pixmaps/dopewars-weed.png
 share/locale/de/LC_MESSAGES/dopewars.mo
 share/locale/es/LC_MESSAGES/dopewars.mo
 share/locale/fr/LC_MESSAGES/dopewars.mo
-share/locale/locale.alias
 share/locale/nn/LC_MESSAGES/dopewars.mo
 share/locale/pl/LC_MESSAGES/dopewars.mo
 share/locale/pt_BR/LC_MESSAGES/dopewars.mo
@@ -54,5 +53,5 @@ share/gnome/apps/Games/dopewars.desktop
 @unexec rmdir %D/share/gnome 2>/dev/null || true
 @dirrm share/dopewars/pixmaps
 @dirrm share/dopewars
-%%PORTDOCS%%@dirrm share/doc/%%DOPEWARS%%/help
-%%PORTDOCS%%@dirrm share/doc/%%DOPEWARS%%
+%%PORTDOCS%%@dirrm share/doc/dopewars/help
+%%PORTDOCS%%@dirrm share/doc/dopewars
