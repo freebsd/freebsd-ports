@@ -8203,7 +8203,6 @@ ports_libedit	ports/devel/libedit
 ports_libpcap	ports/net/libpcap
 ports_libusb	ports/devel/libusb
 ports_lukemftp	ports/ftp/lukemftp
-ports_lukemftpd	ports/ftp/lukemftpd
 ports_mail	ports/mail
 ports_math	ports/math
 ports_mbone	ports/mbone
