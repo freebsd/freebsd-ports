@@ -29,7 +29,7 @@
 +# This should work for non-i386 FreeBSD (e.g. Alpha)
 +freebsd-generic:
 +	$(MAKE) target=FreeBSD \
-+		CC='$(CC) CXX='$(CXX)' \
++		CC='$(CC)' CXX='$(CXX)' \
 +		CFLAGS='$(CFLAGS)' \
 +		LDFLAGS='$(LDFLAGS)' \
 +		opt='$(opt) -DCOMPACT_ATTACKS -DUSE_ATTACK_FUNCTIONS -DFAST' \
