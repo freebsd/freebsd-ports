@@ -1,0 +1,24 @@
+*** etc/rsconvert/lex.l.orig	Sun Mar  8 18:55:39 1998
+--- etc/rsconvert/lex.l	Sun Mar  8 18:56:05 1998
+***************
+*** 22,27 ****
+--- 22,28 ----
+  #include "libcommon/common.h"
+  #include "y.tab.h"
+  %}
++ %option yylineno
+  alpha	[a-zA-Z]
+  special	[\.\_-]
+  digit	[0-9]
+*** libshade/lex.l.orig	Sun Mar  8 18:52:11 1998
+--- libshade/lex.l	Sun Mar  8 18:53:18 1998
+***************
+*** 29,34 ****
+--- 29,35 ----
+  #include "y.tab.h"
+  extern char *strsave();
+  %}
++ %option yylineno
+  alpha	[a-zA-Z]
+  special	[\.\_-]
+  digit	[0-9]

@@ -1,0 +1,33 @@
+bin/rayshade
+share/doc/rayshade/README
+share/doc/rayshade/animate.tex
+share/doc/rayshade/camera.tex
+share/doc/rayshade/guide.tex
+share/doc/rayshade/height.tex
+share/doc/rayshade/intro.tex
+share/doc/rayshade/lights.tex
+share/doc/rayshade/objects.tex
+share/doc/rayshade/options.tex
+share/doc/rayshade/preface.tex
+share/doc/rayshade/running.tex
+share/doc/rayshade/surfaces.tex
+share/doc/rayshade/texture.tex
+share/doc/rayshade/transform.tex
+share/doc/rayshade/quickref.txt
+share/examples/rayshade/ashtray.def.ray
+share/examples/rayshade/ashtray.ray
+share/examples/rayshade/balls.ray
+share/examples/rayshade/blob.ray
+share/examples/rayshade/boxball.ray
+share/examples/rayshade/coin.ray
+share/examples/rayshade/csg.ray
+share/examples/rayshade/glass.def.ray
+share/examples/rayshade/glass.ray
+share/examples/rayshade/mtv.ray
+share/examples/rayshade/planet.map
+share/examples/rayshade/planet.ray
+share/examples/rayshade/pool.ray
+share/examples/rayshade/solids.ray
+share/examples/rayshade/stripe.ray
+@dirrm share/doc/rayshade
+@dirrm share/examples/rayshade
