@@ -45,6 +45,7 @@ etc/xfce/xinitrc
 etc/xfce/xinitrc.mwm
 etc/xfce/xsession
 etc/xfce/xtree.reg
+lib/gtk/themes/engines/libxfce.so
 share/locale/ca/LC_MESSAGES/xfce.mo
 share/locale/cs/LC_MESSAGES/xfce.mo
 share/locale/da/LC_MESSAGES/xfce.mo
@@ -446,12 +447,12 @@ share/xfce/textures/oldwood.xpm
 share/xfce/textures/paper.xpm
 share/xfce/textures/silver.xpm
 share/xfce/textures/stripe.xpm
-@dirrm share/xfce/help
-@dirrm share/xfce/sounds
 @dirrm share/xfce/textures
-@dirrm share/xfce/fonts
+@dirrm share/xfce/sounds
 @dirrm share/xfce/palettes
 @dirrm share/xfce/icons
+@dirrm share/xfce/help
+@dirrm share/xfce/fonts
 @dirrm share/xfce/backdrops
 @dirrm share/xfce
 @dirrm etc/xfce
