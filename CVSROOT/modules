@@ -2302,6 +2302,7 @@ gauche-sdl	ports/devel/gauche-sdl
 gauche-sxml	ports/textproc/gauche-sxml
 gaul		ports/devel/gaul
 gave		ports/science/gave
+gavl		ports/multimedia/gavl
 gawk		ports/lang/gawk
 gbase		ports/converters/gbase
 gbe		ports/emulators/gbe
