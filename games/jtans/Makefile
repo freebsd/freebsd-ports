@@ -18,18 +18,20 @@ EXTRACT_SUFX=	.jar
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A (not so) ancient puzzle
 
+RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
+
 NO_WRKSUBDIR=	yes
 EXTRACT_CMD=	${CP}
 EXTRACT_BEFORE_ARGS=	# empty
 EXTRACT_AFTER_ARGS=	.
-USE_JAVA=	1.3+
+USE_JAVA=	yes
+JAVA_VERSION=	1.3+
 NO_BUILD=	yes
-
-post-patch:
-	@${SED} 's,%%DATADIR%%,${DATADIR},' ${FILESDIR}/jtans > ${WRKSRC}/jtans
+SUB_FILES=	jtans.sh
+DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/jtans ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKDIR}/jtans.sh ${PREFIX}/bin/jtans
 	@${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/jtans_appli-1.0.jar ${DATADIR}
 

@@ -1,3 +1,0 @@
-#!/bin/sh
-
-java -jar %%DATADIR%%/jtans_appli-1.0.jar
