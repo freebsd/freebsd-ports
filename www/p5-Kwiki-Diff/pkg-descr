@@ -1,0 +1,7 @@
+Kwiki::Diff - Kwiki Diff plugin
+
+Kwiki::Diff display differences between the current wiki page and
+older revisions
+
+Author:	Ian Langworth
+WWW:	http://search.cpan.org/~ian/Kwiki-Diff/
