@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	avr-libc
-PORTVERSION=	2003.05.11
+PORTVERSION=	2003.09.09
 CATEGORIES=	devel
 # Currently still snapshots, not yet officially released again.
 #MASTER_SITES=	http://savannah.nongnu.org/download/avr-libc/
