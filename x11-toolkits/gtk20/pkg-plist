@@ -136,10 +136,15 @@ lib/libgtk12.so.2
 share/aclocal/gtk.m4
 share/locale/ca/LC_MESSAGES/gtk+.mo
 share/locale/cs/LC_MESSAGES/gtk+.mo
+share/locale/da/LC_MESSAGES/gtk+.mo
 share/locale/de/LC_MESSAGES/gtk+.mo
+share/locale/el/LC_MESSAGES/gtk+.mo
 share/locale/es/LC_MESSAGES/gtk+.mo
+share/locale/et/LC_MESSAGES/gtk+.mo
+share/locale/eu/LC_MESSAGES/gtk+.mo
 share/locale/fi/LC_MESSAGES/gtk+.mo
 share/locale/fr/LC_MESSAGES/gtk+.mo
+share/locale/ga/LC_MESSAGES/gtk+.mo
 share/locale/hr/LC_MESSAGES/gtk+.mo
 share/locale/hu/LC_MESSAGES/gtk+.mo
 share/locale/it/LC_MESSAGES/gtk+.mo
@@ -149,6 +154,7 @@ share/locale/nl/LC_MESSAGES/gtk+.mo
 share/locale/no/LC_MESSAGES/gtk+.mo
 share/locale/pl/LC_MESSAGES/gtk+.mo
 share/locale/pt/LC_MESSAGES/gtk+.mo
+share/locale/pt_BR/LC_MESSAGES/gtk+.mo
 share/locale/ru/LC_MESSAGES/gtk+.mo
 share/locale/sk/LC_MESSAGES/gtk+.mo
 share/locale/sl/LC_MESSAGES/gtk+.mo

@@ -1,15 +1,15 @@
---- Makefile.in.orig	Tue May 11 06:11:20 1999
-+++ Makefile.in	Mon May 17 22:58:32 1999
-@@ -127,7 +127,7 @@
+--- Makefile.in.orig	Fri Sep 24 09:12:11 1999
++++ Makefile.in	Sat Oct  9 22:05:42 1999
+@@ -129,7 +129,7 @@
  SRC_SUBDIRS = gdk gtk
  SUBDIRS = po $(SRC_SUBDIRS) docs
  
 -bin_SCRIPTS = gtk-config
 +bin_SCRIPTS = gtk@LT_RELEASE@-config
  
- EXTRA_DIST =  	HACKING			gtk+.spec.in	        gtk.m4          	makecopyright		TODO			NEWS.pre-1-0		ChangeLog.pre-1-0		README.cvs-commits		intl/libgettext.h		intl/po2tbl.sed.in		examples/aspectframe/Makefile  	examples/aspectframe/aspectframe.c  	examples/Makefile  	examples/README.1ST  	examples/extract.awk  	examples/extract.sh  	examples/base/Makefile  	examples/base/base.c  	examples/buttons/Makefile  	examples/buttons/buttons.c  	examples/buttons/info.xpm  	examples/calendar/Makefile  	examples/calendar/gcalendar.c  	examples/clist/Makefile  	examples/clist/clist.c  	examples/entry/Makefile  	examples/entry/entry.c  	examples/eventbox/Makefile  	examples/eventbox/eventbox.c  	examples/filesel/Makefile  	examples/filesel/filesel.c  	examples/gtkdial/Makefile  	examples/gtkdial/dial_test.c  	examples/gtkdial/gtkdial.c  	examples/gtkdial/gtkdial.h  	examples/helloworld/Makefile  	examples/helloworld/helloworld.c  	examples/helloworld2/Makefile  	examples/helloworld2/helloworld2.c  	examples/list/Makefile  	examples/list/list.c  	examples/menu/Makefile  	examples/menu/menu.c  	examples/menu/itemfactory.c  	examples/notebook/Makefile  	examples/notebook/notebook.c  	examples/packbox/Makefile  	examples/packbox/packbox.c  	examples/packer/Makefile  	examples/packer/pack.c  	examples/paned/Makefile  	examples/paned/paned.c  	examples/pixmap/Makefile  	examples/pixmap/pixmap.c  	examples/progressbar/Makefile  	examples/progressbar/progressbar.c  	examples/radiobuttons/Makefile  	examples/radiobuttons/radiobuttons.c  	examples/rangewidgets/Makefile  	examples/rangewidgets/rangewidgets.c  	examples/rulers/Makefile  	examples/rulers/rulers.c  	examples/scribble-simple/Makefile  	examples/scribble-simple/scribble-simple.c  	examples/scrolledwin/Makefile  	examples/scrolledwin/scrolledwin.c  	examples/selection/Makefile  	examples/selection/gettargets.c  	examples/selection/setselection.c  	examples/statusbar/Makefile  	examples/statusbar/statusbar.c  	examples/table/Makefile  	examples/table/table.c  	examples/text/Makefile  	examples/text/text.c  	examples/tictactoe/Makefile  	examples/tictactoe/tictactoe.c  	examples/tictactoe/tictactoe.h  	examples/tictactoe/ttt_test.c  	examples/tree/Makefile  	examples/tree/tree.c  	examples/wheelbarrow/Makefile  	examples/wheelbarrow/wheelbarrow.c  	examples/fixed/fixed.c  	examples/fixed/Makefile  	examples/frame/frame.c  	examples/frame/Makefile  	examples/spinbutton/spinbutton.c  	examples/spinbutton/Makefile  	examples/find-examples.sh
- 
-@@ -137,7 +137,7 @@
+ # require automake 1.4
+ AUTOMAKE_OPTIONS = 1.4
+@@ -142,7 +142,7 @@
  ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
  mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
  CONFIG_HEADER = config.h
@@ -18,7 +18,7 @@
  SCRIPTS =  $(bin_SCRIPTS)
  
  DATA =  $(m4data_DATA)
-@@ -199,7 +199,10 @@
+@@ -204,7 +204,10 @@
  maintainer-clean-hdr:
  gtk+.spec: $(top_builddir)/config.status gtk+.spec.in
  	cd $(top_builddir) && CONFIG_FILES=$@ CONFIG_HEADERS= $(SHELL) ./config.status
@@ -30,7 +30,7 @@
  	cd $(top_builddir) && CONFIG_FILES=$@ CONFIG_HEADERS= $(SHELL) ./config.status
  
  install-binSCRIPTS: $(bin_SCRIPTS)
-@@ -408,7 +411,6 @@
+@@ -413,7 +416,6 @@
  	      || exit 1; \
  	  fi; \
  	done
@@ -38,35 +38,37 @@
  info-am:
  info: info-recursive
  dvi-am:
---- gtk/Makefile.in.orig	Tue May 11 06:11:28 1999
-+++ gtk/Makefile.in	Mon May 17 22:58:32 1999
-@@ -157,13 +157,13 @@
+--- gtk/Makefile.in.orig	Fri Sep 24 09:12:19 1999
++++ gtk/Makefile.in	Sat Oct  9 22:13:52 1999
+@@ -126,7 +126,7 @@
+ x_libs = @x_libs@
+ xinput_progs = @xinput_progs@
  
- #	$(top_builddir)/gdk/libgdk.la
+-INCLUDES = @STRIP_BEGIN@ 	-DG_LOG_DOMAIN=\"Gtk\"					-DGTK_DISABLE_COMPAT_H					-DGTK_EXE_PREFIX=\"$(exec_prefix)\"			-DGTK_DATA_PREFIX=\"$(prefix)\"				-DGTK_SYSCONFDIR=\"$(sysconfdir)\"			-DGTK_LOCALEDIR=\"$(gtklocaledir)\"			-I$(top_srcdir)						@GTK_DEBUG_FLAGS@					@GTK_XIM_FLAGS@						@GTK_LOCALE_FLAGS@					@GLIB_CFLAGS@						@x_cflags@					@STRIP_END@
++INCLUDES = @STRIP_BEGIN@ 	-DG_LOG_DOMAIN=\"Gtk\"					-DGTK_DISABLE_COMPAT_H					-DGTK_EXE_PREFIX=\"$(exec_prefix)\"			-DGTK_DATA_PREFIX=\"$(prefix)\"				-DGTK_SYSCONFDIR=\"$(gtkconfdir)\"			-DGTK_LOCALEDIR=\"$(gtklocaledir)\"			-I$(top_srcdir)						@GTK_DEBUG_FLAGS@					@GTK_XIM_FLAGS@						@GTK_LOCALE_FLAGS@					@GLIB_CFLAGS@						@x_cflags@					@STRIP_END@
+ 
+ 
+ #
+@@ -191,7 +191,7 @@
+ gen_sources = xgen-gdef xgen-gtbh xgen-gtbvc xgen-gtbic xgen-gtbec xgen-gmh xgen-gmc
+ CLEANFILES =  $(gen_sources)
  
 -gtkconfdir = $(sysconfdir)/gtk
 +gtkconfdir = $(datadir)/themes/Default/gtk
  gtkconf_DATA = gtkrc.ja gtkrc.ko gtkrc.ru gtkrc.iso-8859-2
  
- EXTRA_DIST =  	line-arrow.xbm 			line-wrap.xbm 			testgtk.1 			testgtkrc 			testgtkrc2 			gtkfeatures.h.in		makeenums.pl			makeenums.awk			maketypes.awk			makeenums.h			gtkargcollector.c		gtktypebuiltins_vars.c		gtktypebuiltins_ids.c		gtktypebuiltins_evals.c		gtk-boxed.defs			gtk.defs			genmarshal.pl			gtkmarshal.list			check-y.xpm			check-n.xpm			test.xpm			marble.xpm			3DRings.xpm			FilesQueue.xpm			Modeller.xpm			tree_plus.xpm			tree_minus.xpm			tree_plus.xbm			tree_minus.xbm                  circles.xbm			gtkrc.iso-8859-2        	gtkrc.ja 			gtkrc.ko			gtkrc.ru
- 
- 
--INCLUDES =  	-DGTK_DISABLE_COMPAT_H					-DG_LOG_DOMAIN=\"Gtk\"					-DGTK_EXE_PREFIX=\"$(exec_prefix)\"			-DGTK_DATA_PREFIX=\"$(prefix)\"				-DGTK_SYSCONFDIR=\"$(sysconfdir)\"			-DGTK_LOCALEDIR=\"$(gtklocaledir)\"			-I$(top_srcdir)						@GTK_DEBUG_FLAGS@					@GTK_XIM_FLAGS@						@GTK_LOCALE_FLAGS@					@GLIB_CFLAGS@						@x_cflags@
-+INCLUDES =  	-DGTK_DISABLE_COMPAT_H					-DG_LOG_DOMAIN=\"Gtk\"					-DGTK_EXE_PREFIX=\"$(exec_prefix)\"			-DGTK_DATA_PREFIX=\"$(prefix)\"				-DGTK_SYSCONFDIR=\"$(gtkconfdir)\"			-DGTK_LOCALEDIR=\"$(gtklocaledir)\"			-I$(top_srcdir)						@GTK_DEBUG_FLAGS@					@GTK_XIM_FLAGS@						@GTK_LOCALE_FLAGS@					@GLIB_CFLAGS@						@x_cflags@
- 
- 
- noinst_PROGRAMS = testgtk testinput testselection testrgb testdnd simple 
-@@ -479,7 +479,7 @@
+ #
+@@ -503,7 +503,7 @@
  uninstall-am: uninstall-libLTLIBRARIES uninstall-gtkconfDATA \
- 		uninstall-gtkincludeHEADERS uninstall-local
+ 		uninstall-libgtkincludeHEADERS uninstall-local
  uninstall: uninstall-am
 -all-am: Makefile $(LTLIBRARIES) $(PROGRAMS) $(DATA) $(HEADERS)
 +all-am: Makefile $(LTLIBRARIES) $(DATA) $(HEADERS)
  all-redirect: all-am
  install-strip:
  	$(MAKE) $(AM_MAKEFLAGS) AM_INSTALL_PROGRAM_FLAGS=-s install
---- docs/Makefile.in.orig	Tue May 11 06:13:29 1999
-+++ docs/Makefile.in	Mon May 17 22:58:33 1999
+--- docs/Makefile.in.orig	Fri Sep 24 09:13:34 1999
++++ docs/Makefile.in	Sat Oct  9 22:15:26 1999
 @@ -99,7 +99,7 @@
  LT_RELEASE = @LT_RELEASE@
  LT_REVISION = @LT_REVISION@
@@ -76,7 +78,7 @@
  MKINSTALLDIRS = @MKINSTALLDIRS@
  NM = @NM@
  OBJDUMP = @OBJDUMP@
-@@ -126,7 +126,7 @@
+@@ -128,7 +128,7 @@
  
  info_TEXINFOS = gdk.texi gtk.texi 
  
@@ -85,21 +87,22 @@
  
  TUTORIAL_FR_FILES = html/gtk_tut_fr-1.html   	html/gtk_tut_fr-2.html   	html/gtk_tut_fr-3.html   	html/gtk_tut_fr-4.html   	html/gtk_tut_fr-5.html   	html/gtk_tut_fr-6.html   	html/gtk_tut_fr-7.html   	html/gtk_tut_fr-8.html   	html/gtk_tut_fr-9.html   	html/gtk_tut_fr-10.html  	html/gtk_tut_fr-11.html  	html/gtk_tut_fr-12.html  	html/gtk_tut_fr-13.html  	html/gtk_tut_fr-14.html  	html/gtk_tut_fr-15.html  	html/gtk_tut_fr-16.html  	html/gtk_tut_fr-17.html  	html/gtk_tut_fr-18.html  	html/gtk_tut_fr-19.html  	html/gtk_tut_fr-20.html  	html/gtk_tut_fr-21.html  	html/gtk_tut_fr-22.html  	html/gtk_tut_fr-23.html  	html/gtk_tut_fr-24.html  	html/gtk_tut_fr.html text/gtk_tut_fr.txt
  
-@@ -140,7 +140,7 @@
- FAQ_FILES = html/gtkfaq.html			html/gtkfaq-1.html       		html/gtkfaq-2.html       		html/gtkfaq-3.html       		html/gtkfaq-4.html       		html/gtkfaq-5.html       		html/gtkfaq-6.html       		html/gtkfaq-7.html			text/gtkfaq.txt
- 
- 
--EXTRA_DIST =  	gtk-config.1.in			texinfo.tex 			macros.texi			gtkdocs_fix			gtkfaq.sgml		        gtk-config.txt          	gtk_tut.sgml			gtk_tut_it.sgml			gtk_tut_fr.sgml			debugging.txt			developers.txt			refcounting.txt			styles.txt			text_widget.txt 		widget_system.txt 		gtk_tut_packbox1.gif 		gtk_tut_packbox2.gif 		html/gtk_tut_table.gif		html/gtk_tut_packbox1.gif 		html/gtk_tut_packbox2.gif 		gtk_tut_table.gif		html/gdk.html            		html/gdk_toc.html        		html/gtk.html            		html/gtk_toc.html        		$(TUTORIAL_FILES)			$(TUTORIAL_FR_FILES)			$(TUTORIAL_IT_FILES)			$(FAQ_FILES)
-+EXTRA_DIST =  	gtk@LT_RELEASE@-config.1.in			texinfo.tex 			macros.texi			gtkdocs_fix			gtkfaq.sgml		        gtk-config.txt          	gtk_tut.sgml			gtk_tut_it.sgml			gtk_tut_fr.sgml			debugging.txt			developers.txt			refcounting.txt			styles.txt			text_widget.txt 		widget_system.txt 		gtk_tut_packbox1.gif 		gtk_tut_packbox2.gif 		html/gtk_tut_table.gif		html/gtk_tut_packbox1.gif 		html/gtk_tut_packbox2.gif 		gtk_tut_table.gif		html/gdk.html            		html/gdk_toc.html        		html/gtk.html            		html/gtk_toc.html        		$(TUTORIAL_FILES)			$(TUTORIAL_FR_FILES)			$(TUTORIAL_IT_FILES)			$(FAQ_FILES)
+@@ -146,7 +146,7 @@
  
  mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
  CONFIG_HEADER = ../config.h
-@@ -180,6 +180,8 @@
- gtk.info: gtk.texi
- gtk.dvi: gtk.texi
+-CONFIG_CLEAN_FILES =  gtk-config.1
++CONFIG_CLEAN_FILES =  gtk@LT_RELEASE@-config.1
+ TEXI2DVI = texi2dvi
+ INFO_DEPS = gdk.info gtk.info
+ DVIS = gdk.dvi gtk.dvi
+@@ -174,6 +174,9 @@
  
+ gtk-config.1: $(top_builddir)/config.status gtk-config.1.in
+ 	cd $(top_builddir) && CONFIG_FILES=$(subdir)/$@ CONFIG_HEADERS= $(SHELL) ./config.status
++
 +gtk@LT_RELEASE@-config.1: gtk-config.1
 +	cp gtk-config.1 gtk@LT_RELEASE@-config.1
  
- DVIPS = dvips
- 
+ gdk.info: gdk.texi
+ gdk.dvi: gdk.texi
