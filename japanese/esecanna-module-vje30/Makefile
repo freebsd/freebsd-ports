@@ -9,7 +9,7 @@
 DISTNAME=	esecanna-module-vje30_0.13.0
 PKGNAME=	ja-esecanna-module-vje30-0.13.0
 CATEGORIES=	japanese
-MASTER_SITES=	http://www.idaemons.org/ports/distfiles/ \
+MASTER_SITES=	http://people.FreeBSD.org/~knu/ports/distfiles/ \
 		http://esecanna.netfort.gr.jp/
 
 MAINTAINER=	knu@idaemons.org
