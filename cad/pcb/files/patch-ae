@@ -1,0 +1,11 @@
+--- src/Imakefile.orig	Thu Jan 14 02:52:36 1999
++++ src/Imakefile	Sun Dec 10 17:17:07 2000
+@@ -67,7 +67,7 @@
+ 
+ depend:: parse_l.c parse_y.c
+ 
+-ComplexProgramTarget(pcb)
++ComplexProgramTargetNoMan(pcb)
+ InstallAppDefaults(Pcb)
+ InstallMultipleFlags($(DEFAULTFONT),$(PCBLIBDIR),$(INSTLIBFLAGS))
+ 
