@@ -8,9 +8,9 @@
 PORTNAME=	xmysqladmin
 PORTVERSION=	1.0
 CATEGORIES=	databases
-MASTER_SITES=	http://www.tcx.se/Contrib/ \
-		http://www.buoy.com/mysql/Contrib/ \
-		http://web.tryc.on.ca/mysql/Downloads/Contrib/
+MASTER_SITES=	http://www.mysql.com/Downloads/Contrib/ \
+		http://www.mysql.net/Downloads/Contrib/ \
+		ftp://ftp.wipol.uni-bonn.de/pub/mirror/MySQL/Contrib/
 
 MAINTAINER=	dirk@FreeBSD.org
 
