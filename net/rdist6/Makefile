@@ -3,7 +3,7 @@
 # Date created:		19 August 1995
 # Whom:			peter
 #
-# $Id: Makefile,v 1.10 1996/11/18 11:35:54 asami Exp $
+# $Id: Makefile,v 1.11 1996/12/01 01:23:09 obrien Exp $
 #
 
 DISTNAME=	rdist-6.1.3
@@ -26,3 +26,6 @@ post-install:
 	@strip ${PREFIX}/bin/rdistd
 
 .include <bsd.port.mk>
+
+# Stupid GNU Make 2.5!!!
+PATCH:=		env POSIXLY_CORRECT=yes ${PATCH}
