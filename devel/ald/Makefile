@@ -18,11 +18,6 @@ GNU_CONFIGURE=	yes
 MAN8=		ald.8
 PLIST_FILES=	bin/ald
 ONLY_FOR_ARCHS=	i386
+NOPRECIOUSMAKEVARS=yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
-BROKEN=		"Broken by make(1) changes on FreeBSD >= 5.x"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
