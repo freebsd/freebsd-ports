@@ -403,6 +403,7 @@
     SUBDIR += libpci
     SUBDIR += libpdel
     SUBDIR += libpreps
+    SUBDIR += libpreps-devel
     SUBDIR += libredblack
     SUBDIR += libshbuf
     SUBDIR += libshhmsg

@@ -1,0 +1,12 @@
+diff -ur doc.orig/C/Makefile.in doc/C/Makefile.in
+--- doc.orig/C/Makefile.in	Mon Oct 28 03:50:24 2002
++++ doc/C/Makefile.in	Fri Mar 19 14:05:19 2004
+@@ -108,7 +108,7 @@
+ CONFIG_CLEAN_FILES =
+ DIST_SOURCES =
+ DIST_COMMON = Makefile.am Makefile.in
+-all: all-am
++all: 
+ 
+ .SUFFIXES:
+ $(srcdir)/Makefile.in:  Makefile.am  $(top_srcdir)/configure.in $(ACLOCAL_M4)
