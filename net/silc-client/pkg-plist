@@ -1,6 +1,4 @@
 bin/silc
-etc/silc/config
-etc/silc/default.theme
 etc/silc/silc.conf.sample
 share/silc/help/action
 share/silc/help/admin
@@ -32,6 +30,7 @@ share/silc/help/hilight
 share/silc/help/ignore
 share/silc/help/info
 share/silc/help/invite
+share/silc/help/invitelist
 share/silc/help/join
 share/silc/help/key
 share/silc/help/kick
@@ -52,6 +51,7 @@ share/silc/help/nick
 share/silc/help/notice
 share/silc/help/oper
 share/silc/help/part
+share/silc/help/perlflush
 share/silc/help/ping
 share/silc/help/query
 share/silc/help/quit
@@ -61,11 +61,13 @@ share/silc/help/rmreconns
 share/silc/help/rmrejoins
 share/silc/help/save
 share/silc/help/sconnect
+share/silc/help/script
 share/silc/help/scrollback
 share/silc/help/server
 share/silc/help/set
 share/silc/help/shutdown
 share/silc/help/silcoper
+share/silc/help/statusbar
 share/silc/help/toggle
 share/silc/help/topic
 share/silc/help/umode
@@ -73,11 +75,22 @@ share/silc/help/unalias
 share/silc/help/unignore
 share/silc/help/unload
 share/silc/help/unquery
+share/silc/help/upgrade
 share/silc/help/users
 share/silc/help/version
 share/silc/help/whois
 share/silc/help/whowas
 share/silc/help/window
+share/silc/scripts/autoop.pl
+share/silc/scripts/beep.pl
+share/silc/scripts/clones.pl
+share/silc/scripts/dns.pl
+share/silc/scripts/hello.pl
+share/silc/scripts/mail-maildir.pl
+share/silc/scripts/mail.pl
+share/silc/themes/default.theme
+@dirrm share/silc/themes
+@dirrm share/silc/scripts
 @dirrm share/silc/help
 @dirrm share/silc
 @unexec rmdir %D/etc/silc 2>/dev/null || true
