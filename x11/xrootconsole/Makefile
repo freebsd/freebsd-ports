@@ -6,27 +6,25 @@
 #
 
 PORTNAME=	xrootconsole
-PORTVERSION=	0.5
-PORTREVISION=	1
+PORTVERSION=	0.6
 CATEGORIES=	x11
-MASTER_SITES=	http://de-fac.to/bob/xrootconsole/ \
-		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Writes any log live onto the background
 
-USE_REINPLACE=	yes
 USE_XLIB=	yes
-CFLAGS+=	-I${X11BASE}/include
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
 
 MAN1=		xrootconsole.1
 PLIST_FILES=	bin/xrootconsole
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|^CC|#CC|g" \
-		-e "s|CFLAGS = -O2|CFLAGS +=|g" ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|^CC =|CC ?=|g ; \
+		 s|^CFLAGS = -O2|CFLAGS +=|g ; \
+		 s|/usr/X11R6|$${X11BASE}|g' ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xrootconsole ${PREFIX}/bin

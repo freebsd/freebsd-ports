@@ -1,9 +1,10 @@
-xrootconsole is a small utility to write any log file of your choice live
-to anywhere on your root window with options for color and placement all
-documented in the man file or with the --help option.
+xrootconsole is a small utility which displays its input in a transparent
+text box on X's root window.  It will read from any file listed on the
+command line or, by default, from stdin.  It is most useful when it reads
+from a FIFO; this allows you to redirect multiple commands to the FIFO
+and monitor their output.
 
-The official homepage is:
-WWW: http://de-fac.to/bob/xrootconsole/
+WWW: http://de-fac.to/wiki/XrootConsole
 
 Enjoy!
 
