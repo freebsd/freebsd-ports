@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dejavu
-PORTVERSION=	1.7
+PORTVERSION=	1.8
 CATEGORIES=	x11-fonts
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -21,7 +21,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 USE_X_PREFIX=	yes
 NO_BUILD=	yes
 
-PORTDOCS=	README
+PORTDOCS=	README status.txt unicover.txt
 PLIST_SUB=	FONTSDIR="${FONTSDIR:S|${PREFIX}/||}"
 
 MSG_FILE=	${PKGDIR}/pkg-message
@@ -39,14 +39,16 @@ do-install:
 	${INSTALL_DATA} ${FILESDIR}/fonts.dir ${FONTSDIR}
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+.for f in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+.endfor
 .endif
 
 post-install:
-	${ECHO_MSG} "===> Running fc-cache"
+	@${ECHO_MSG} "===> Running fc-cache"
 	-${X11BASE}/bin/fc-cache -f -v ${FONTSDIR}
-	${ECHO_MSG}
+	@${ECHO_MSG}
 	${CAT} ${PKGMESSAGE}
-	${ECHO_MSG}
+	@${ECHO_MSG}
 
 .include <bsd.port.mk>
