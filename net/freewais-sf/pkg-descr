@@ -4,4 +4,7 @@ The SF suffix in the software name stands for  "structured fields," an
 indexing  and search feature which  distinguishes this software from its 
 predecessors.
 
+For Year 2000 problems, you may try the patches at
+http://www.de.freebsd.org/~wosch/src/freewais/
+
 WWW: http://ls6-www.informatik.uni-dortmund.de/ir/projects/freeWAIS-sf/
