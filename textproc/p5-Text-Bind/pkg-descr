@@ -1,0 +1,11 @@
+Text::Bind allows you to bind Perl structures (strings, routines,
+filehandles, objects, and arrays) to specific locations (called *data
+sites*) in text files. 
+
+The main purpose of this module is to support HTML templates for CGI
+programs. Therefore, HTML pages design can be kept separate from CGI
+code. However, the class is general enough to be used in other contexts
+than CGI application development.
+
+-Anton
+<tobez@tobez.org>
