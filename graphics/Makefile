@@ -421,6 +421,7 @@
     SUBDIR += xv-m17n
     SUBDIR += xwpick
     SUBDIR += xzgv
+    SUBDIR += yafray
     SUBDIR += zimg
     SUBDIR += zphoto
 
