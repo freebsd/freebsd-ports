@@ -7,8 +7,11 @@
 
 PORTNAME=	qbrew
 PORTVERSION=	0.3.3
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://www.usermode.org/code/
+PATCH_SITES=	http://www.usermode.org/code/
+PATCHFILES=	qbrew-0.3.3.1.patch
 
 MAINTAINER=	david@usermode.org
 COMMENT=	A homebrewer's recipe calculator
