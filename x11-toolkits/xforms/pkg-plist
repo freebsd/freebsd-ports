@@ -1,0 +1,12 @@
+@cwd /usr/X11R6
+@mode 755
+bin/fdesign
+@mode 644
+lib/libforms.a
+lib/libforms.so.0.7
+@exec ldconfig -m %B
+@exec ranlib %D/lib/libforms.a
+@mode 444
+include/Xf/forms.h
+man/man1/fdesign.1
+man/man5/xforms.5
