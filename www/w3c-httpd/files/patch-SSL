@@ -363,19 +363,19 @@ PATCH TO WWW COMMON LIBRARY 2.17 AND CERN HTTPD 3.0:
 +     fd_set rd_fds, wr_fds;
 +     int status;
 + 
-+     memset(&rd_fds, 0, sizeof(rd_fds));
-+     memset(&wr_fds, 0, sizeof(wr_fds));
-+ 
 +     if (initial && *initial) {
 + 	strcpy(b1, initial);
 + 	c1 = strlen(initial);
 +     }
 + 
 +     while (1) {
-+ 	FD_SET(sd1, &rd_fds);
-+ 	FD_SET(sd2, &rd_fds);
-+ 	FD_SET(sd1, &wr_fds);
-+ 	FD_SET(sd2, &wr_fds);
++	FD_ZERO(&rd_fds);
++	FD_ZERO(&wr_fds);
++	/* Only set the FDs that are relevant - 10/12/98 gram@cdsec.com */
++	if (!c1) FD_SET(sd2, &rd_fds);
++	else FD_SET(sd1, &wr_fds);
++	if (!c2) FD_SET(sd1, &rd_fds);
++	else FD_SET(sd2, &wr_fds);
 + 
 + 	if (!(status = select(n_fds, &rd_fds, &wr_fds, NULL, NULL)))
 + 	  {
@@ -404,12 +404,12 @@ PATCH TO WWW COMMON LIBRARY 2.17 AND CERN HTTPD 3.0:
 + 	      if (shove_buffer(sd2, b2, &i2, &c2) == -1)
 + 		    closed2 = 1;
 + 	  }
-+ 	if (r1 && !c2)
++ 	if (r1)
 + 	  {
 + 	      if (!drag_buffer(sd1, b2, &i2, &c2))
 + 		  closed1 = 1;
 + 	  }
-+ 	if (r2 && !c1)
++ 	if (r2)
 + 	  {
 + 	      if (!drag_buffer(sd2, b1, &i1, &c1))
 + 		  closed2 = 1;
