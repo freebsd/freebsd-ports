@@ -1,4 +1,11 @@
-dmake is different from other versions of Make in that it supports significant
-enhancements.  See the WWW page for the detail.
+dmake is different from other versions of Make in that it supports
+significant enhancements.
 
-WWW: http://dmake.wticorp.com/
+The original author(s) were WTICorp.com, but they appear to have lost
+interest in maintaining the code.
+
+This port installs the version currently maintained by OpenOffice
+project. Unfortunately, OOo does not offer dmake as an independent
+download, but, fortunately, the folks at Debian do.
+
+WWW: http://people.debian.org/~rene/pkgs/dmake/

@@ -6,35 +6,20 @@
 #
 
 PORTNAME=	dmake
-PORTVERSION=	4.1
-PORTREVISION=	1
+PORTVERSION=	4.3
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.internat.freebsd.org/pub/FreeBSD/distfiles/
-DISTNAME=	${PORTNAME}-v${PORTVERSION}-src-export.all-unknown-all
+MASTER_SITES=	http://people.debian.org/~rene/pkgs/dmake/
+DISTFILES=	${PORTNAME}_${PORTVERSION}.orig.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Another hyper make utility
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
-USE_REINPLACE=	yes
-USE_GMAKE=	yes
-MAKE_ENV=	CC=${CC}
-MAKEFILE=	makefile
-ALL_TARGET=	bsd43
+GNU_CONFIGURE=	yes
+#CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -Wall -Werror"
+CONFIGURE_ARGS+=--datadir=${PREFIX}/share/${PORTNAME}
 MAN1=		dmake.1
 
-post-extract:
-.for f in limits.h string.h dirent.h
-	@${RM} -f ${WRKSRC}/unix/bsd43/${f}
-.endfor
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/unix/startup.h
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/dmake ${PREFIX}/bin
+post-install:
 	${INSTALL_MAN} ${WRKSRC}/man/dmake.tf ${PREFIX}/man/man1/dmake.1
-	@${MKDIR} ${PREFIX}/share/dmake/startup
-	${CP} -R ${WRKSRC}/startup/* ${PREFIX}/share/dmake/startup
 
 .include <bsd.port.mk>

@@ -1,0 +1,143 @@
+Fix warnings to allow ``-Wall -Werror'' with gcc-3.4.2 on FreeBSD/i386.
+Most of these seemed fairly benign -- assumptions about time_t are the
+most common.
+
+	-mi
+
+--- state.c	Fri Sep 22 11:33:25 2000
++++ state.c	Sun Jan  2 18:13:26 2005
+@@ -123,6 +123,6 @@
+ 	    fprintf( fp, "%s\n",  sp->st_name   );
+ 	    fprintf( fp, "%d\n",  sp->st_count );
+-	    fprintf( fp, "%lu\n", sp->st_dkey   );
+-	    fprintf( fp, "%lu\n", sp->st_key    );
++	    fprintf( fp, "%lu\n", (unsigned long)sp->st_dkey );
++	    fprintf( fp, "%lu\n", (unsigned long)sp->st_key );
+ 	 }
+       }
+--- getinp.c	Wed Apr 21 10:10:17 2004
++++ getinp.c	Sun Jan  2 18:16:37 2005 -- remove unused variables
+@@ -481,6 +481,6 @@
+    static char		ifcntl[MAX_COND_DEPTH];
+    char			*lhs, *expr, *expr_end;
+-   char			*lop, *partstr;
+-   int			result, n, m;
++   const char		*lop;
++   int			result;
+ 
+    DB_ENTER( "_handle_conditional" );
+@@ -562,5 +562,7 @@
+ 
+ /* uncomment to turn on expression debug statements */
+-/*#define PARSE_DEBUG		/* */
++#if 0
++#	define PARSE_DEBUG		/* */
++#endif
+ #define PARSE_SKIP_WHITE(A)		while( *A && ((*A==' ') || (*A=='\t')) )  A++;
+ 
+--- unix/arlib.c	Wed Sep  8 12:08:45 2004
++++ unix/arlib.c	Sun Jan  2 18:20:44 2005
+@@ -399,5 +399,5 @@
+       fseek( f, (long) _ar.ar_size, 0 );
+ #else
+-      fseek( f, arhdroffset + sizeof(arhdr) + (_ar.ar_size+1 & ~1L), 0 );
++      fseek( f, arhdroffset + sizeof(arhdr) + ((_ar.ar_size+1) & ~1L), 0 );
+ #endif
+    }
+@@ -422,5 +422,5 @@
+ 
+ #if ASCARCH
+-   fprintf(f, "%lu", now);
++   fprintf(f, "%llu", (unsigned long long)now);
+ #else
+    fwrite((char *)now, sizeof(now), 1, f);
+--- unix/runargv.c	Wed Sep  8 12:09:39 2004
++++ unix/runargv.c	Sun Jan  2 18:25:02 2005
+@@ -26,4 +26,7 @@
+ */
+ 
++#ifdef HAVE_CONFIG_H
++#  include "config.h"
++#endif
+ #include <signal.h>
+ #ifdef HAVE_WAIT_H
+--- make.c	Wed Sep  8 12:06:46 2004
++++ make.c	Sun Jan  2 18:26:55 2005
+@@ -336,6 +336,6 @@
+ 	       
+ 	    if( Verbose & V_MAKE )
+-	       printf("%s:  Time stamp of [%s] is %ld\n",Pname,tcp->CE_NAME,
+-		      tcp->ce_time);
++	       printf("%s:  Time stamp of [%s] is %llu\n",Pname,tcp->CE_NAME,
++		      (unsigned long long)tcp->ce_time);
+ 	 }
+       }
+@@ -590,6 +590,6 @@
+ 
+       if( Verbose & V_MAKE )
+-	 printf( "%s:  Updating [%s], (%ld > %ld)\n", Pname,
+-		 cp->CE_NAME, otime, cp->ce_time );
++	 printf( "%s:  Updating [%s], (%llu > %llu)\n", Pname,
++		 cp->CE_NAME, (unsigned long long)otime, (unsigned long long)cp->ce_time );
+ 
+       if( Touch ) {
+--- stat.c	Fri Sep 22 11:33:25 2000
++++ stat.c	Sun Jan  2 18:27:46 2005
+@@ -140,6 +140,6 @@
+ 
+       if( Verbose & V_MAKE )
+-	 printf( "%s:  Checking library '%s' for member [%s], time %ld\n",
+-		 Pname, cp->ce_lib, name, cp->ce_time );
++	 printf( "%s:  Checking library '%s' for member [%s], time %llu\n",
++		 Pname, cp->ce_lib, name, (unsigned long long)cp->ce_time );
+    }
+ 
+--- sysintf.c	Thu Oct  7 18:18:47 2004 -- change the loop to make it more
++++ sysintf.c	Sun Jan  2 18:30:33 2005 -- obvious, that fd *will* be set
+@@ -500,11 +500,10 @@
+       tmpdir = "/tmp";
+ 
+-   while( --tries )
+-   {
++   do {
+       if( (fd = Create_temp(tmpdir, path, suff)) != -1)
+          break;
+ 
+       free(*path);
+-   }
++   } while( --tries );
+ 
+    if( fd != -1)
+@@ -739,6 +738,6 @@
+ 
+       if( Verbose & V_MAKE )
+-	 printf( "%s:  <<<< Set [%s] time stamp to %lu\n",
+-		 Pname, tcp->CE_NAME, tcp->ce_time );
++	 printf( "%s:  <<<< Set [%s] time stamp to %llu\n",
++		 Pname, tcp->CE_NAME, (unsigned long long)tcp->ce_time );
+ 
+       Unlink_temp_files( tcp );
+--- function.c	Wed Sep  8 12:06:20 2004
++++ function.c	Sun Jan  2 18:33:09 2005 -- unused variable
+@@ -287,5 +287,5 @@
+ 
+    if( file && *file ) {
+-      char *newtmp;
++      /* char *newtmp; */
+ 
+       /* This call to Get_temp sets TMPFILE for subsequent expansion of file.
+--- configure	Fri Oct 22 05:36:37 2004 -- fix warnings, so configure does
++++ configure	Sun Jan  2 19:07:52 2005 -- not conclude, our utime is bad.
+@@ -6207,4 +6207,5 @@
+ /* end confdefs.h.  */
+ $ac_includes_default
++#include <utime.h>
+ int
+ main ()
+@@ -6212,5 +6213,5 @@
+ struct stat s, t;
+   exit (!(stat ("conftest.data", &s) == 0
+-	  && utime ("conftest.data", (long *)0) == 0
++	  && utime ("conftest.data", (void *)0) == 0
+ 	  && stat ("conftest.data", &t) == 0
+ 	  && t.st_mtime >= s.st_mtime
