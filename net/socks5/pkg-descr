@@ -9,3 +9,11 @@ NOTE: The shared library features in socks5 require a dynamic linker that
       understands the LD_PRELOAD environment variable (only recent FreeBSD
       2.2-current distributions have this).  All other features will work
       with FreeBSD 2.0 and later.
+
+WARNING: Export of SOCKS from the US without a proper license is a violation
+	 of ITAR rules.
+
+WARNING: Commercial use and distribution of this software requires a license
+	 from NEC corporation.
+
+See the README files for more information.
