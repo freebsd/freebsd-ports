@@ -2156,7 +2156,6 @@ gopher		ports/net/gopher
 gorm		ports/devel/gorm
 gotmail		ports/mail/gotmail
 gozer		ports/graphics/gozer
-gp		ports/print/gp
 gpa		ports/security/gpa
 gpaint		ports/graphics/gpaint
 gpart		ports/sysutils/gpart
@@ -2766,7 +2765,6 @@ ja-gnome	ports/japanese/gnome
 ja-gnomelibs	ports/japanese/gnomelibs
 ja-gnumeric	ports/japanese/gnumeric
 ja-gorua	ports/japanese/gorua
-ja-gp		ports/japanese/gp
 ja-gqmpeg	ports/japanese/gqmpeg
 ja-grep		ports/japanese/grep
 ja-groff	ports/japanese/groff
