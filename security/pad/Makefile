@@ -8,7 +8,7 @@
 PORTNAME=	pad
 PORTEPOCH=	1
 PORTVERSION=	1.0.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://www.lammah.com/pad/
 EXTRACT_SUFX=	.tgz
@@ -21,12 +21,6 @@ GNU_CONFIGURE=	yes
 MAN1=		pad.1
 PLIST=		${WRKDIR}/pkg-plist
 USE_OPENSSL=	yes
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 501000
-BROKEN=		"Does not compile"
-.endif
 
 pre-install:
 	${ECHO_CMD} bin/pad > ${PLIST}
@@ -47,4 +41,4 @@ do-install:
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
