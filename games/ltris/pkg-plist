@@ -1,0 +1,23 @@
+bin/ltris
+share/ltris/bkgnd0.bmp
+share/ltris/bkgnd1.bmp
+share/ltris/bkgnd2.bmp
+share/ltris/bkgnd3.bmp
+share/ltris/bkgnd4.bmp
+share/ltris/blocks.bmp
+share/ltris/click.wav
+share/ltris/explosion.wav
+share/ltris/f_white.bmp
+share/ltris/f_yellow.bmp
+share/ltris/font_s.sdlfnt
+share/ltris/leftright.wav
+share/ltris/logo.bmp
+share/ltris/quest.bmp
+share/ltris/stop.wav
+share/ltris/title.bmp
+@dirrm share/ltris
+@cwd /var/games
+ltris/highscore.0
+ltris/highscore.1
+ltris/highscore.2
+@dirrm ltris
