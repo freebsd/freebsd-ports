@@ -142,7 +142,7 @@ do-configure:
 	${ECHO_CMD}	"#!/bin/sh"		>  ${STARTUP_CMD}
 	${ECHO_CMD} -n	"cd "			>> ${STARTUP_CMD}
 	${ECHO_CMD}	${INSTALL_DIR}		>> ${STARTUP_CMD}
-	${ECHO_CMD}	"exec ./netscape"	>> ${STARTUP_CMD}
+	${ECHO_CMD}	'exec ./netscape $$*'	>> ${STARTUP_CMD}
 
 pre-install:
 	${ECHO_CMD} bin/netscape6 > ${PLIST}
