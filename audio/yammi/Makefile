@@ -24,7 +24,7 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CXXFLAGS="${CXXFLAGS} ${PTHREAD_CFLAGS}" \
 		LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS}"
-CONFIGURE_ARGS+=	--program-prefix=''
+CONFIGURE_ARGS+=	--program-prefix='' --enable-threading=yes --enable-mt=yes
 USE_REINPLACE=	yes
 
 .include <bsd.port.pre.mk>
@@ -36,6 +36,8 @@ WITH_NOATUN=yes
 .if defined(WITH_NOATUN)
 BUILD_DEPENDS+=	noatun:${PORTSDIR}/multimedia/kdemultimedia3
 WITH_KDE=yes
+.else
+CONFIGURE_ARGS+=	--disable-noatun
 .endif # defined(WITH_NOATUN)
 
 .if exists(${LOCALBASE}/lib/libkdecore.so)
@@ -44,12 +46,14 @@ WITH_KDE=yes
 
 .if defined(WITH_KDE)
 USE_KDELIBS_VER=3
+.else
+CONFIGURE_ARGS+=	--disable-KDE
 .endif # defined(WITH_KDE)
 
-pre-configure::
+pre-configure:
 	@${REINPLACE_CMD} -e 's@-lpthread@${PTHREAD_LIBS}@g' ${WRKSRC}/configure
 
-post-configure::
+post-configure:
 	@${REINPLACE_CMD} -e 's@$$(DESTDIR)$$(KDEDIR)@$$(prefix)@g' ${WRKSRC}/yammi/docs/en/Makefile
 
 .include <bsd.port.post.mk>
