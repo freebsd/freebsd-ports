@@ -5,19 +5,17 @@
 # $FreeBSD$
 #
 
-BROKEN=		out of sync with mozilla
 PORTNAME=	mozilla
-PORTVERSION=	0.8.1
-PORTREVISION=	1
+PORTVERSION=	0.9
 PORTEPOCH=	1
 CATEGORIES=	japanese www
 MASTER_SITES=	http://www.mozilla.gr.jp/tools/search/ \
 		http://www.mozilla.gr.jp/jlp/
 PKGNAMESUFFIX=	-jlp
 DISTNAME=	GoogleJapan.png GoogleJapan.src \
-		${JLP_SRC}
+		moz0.9-langfix.xpi ${JLP_SRC}
 EXTRACT_SUFX=	# none
-EXTRACT_ONLY=	${JLP_SRC}
+EXTRACT_ONLY=	moz0.9-langfix.xpi ${JLP_SRC}
 
 MAINTAINER=	yatt@msc.biglobe.ne.jp
 
@@ -38,7 +36,8 @@ MOZILLA_PORT=	${PORTSDIR}/www/mozilla+ipv6
 .else
 MOZILLA_PORT=	${PORTSDIR}/www/mozilla
 .endif
-JLP_SRC=	mozilla0.8.1-langjajp.xpi mozilla0.8.1-regjp.xpi
+JLP_SRC=	${PORTNAME}${PORTVERSION}-langjajp.xpi \
+		${PORTNAME}${PORTVERSION}-regjp.xpi
 
 .include <bsd.port.pre.mk>
 
@@ -61,6 +60,10 @@ post-extract:
 	${CP} ${FILESDIR}/unix.js ${WRKSRC}/defaults/pref
 	${CP} ${DISTDIR}/${DIST_SUBDIR}/GoogleJapan.png ${WRKDIR}/sp
 	${CP} ${DISTDIR}/${DIST_SUBDIR}/GoogleJapan.src ${WRKDIR}/sp
+	${MKDIR} ${WRKSRC}/chrome/comm; cd ${WRKSRC}/chrome/comm; \
+	${EXTRACT_CMD} ${WRKDIR}/comm.jar content/communicator/profile/selectLang.js
+	${MKDIR} ${WRKSRC}/chrome/toolkit; cd ${WRKSRC}/chrome/toolkit; \
+	${EXTRACT_CMD} ${WRKDIR}/toolkit.jar content/global/strres.js
 
 post-patch:
 	find ${WRKSRC} -name '*.orig' | xargs ${RM}
@@ -76,6 +79,8 @@ do-install:
 	${MV} -f all-skins.rdf all-skins.rdf.orig; \
 	${MV} -f user-locales.rdf user-locales.rdf.orig; \
 	${MV} -f user-skins.rdf user-skins.rdf.orig; \
+	${MV} -f comm/content/communicator/profile/selectLang.js comm/content/communicator/profile/selectLang.js.orig; \
+	${MV} -f toolkit/content/global/strres.js toolkit/content/global/strres.js.orig; \
 	${MV} -f installed-chrome.txt installed-chrome.txt.orig)
 	(cd ${PREFIX}/lib/mozilla/defaults/pref; \
 	${MV} -f all.js all.js.orig; ${MV} -f unix.js unix.js.orig)
