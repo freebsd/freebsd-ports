@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xmms-avi
-PORTVERSION=	1.2.2
+PORTVERSION=	1.2.3
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.xmms.org/files/plugins/avi-xmms/ \
 		ftp://ftp.sunet.se/pub/multimedia/xmms/plugins/avi-xmms/ \
@@ -15,24 +15,24 @@ DISTNAME=	avi-xmms-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
-BROKEN=		Maintainer is working on a fix
-
 BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms
 LIB_DEPENDS=	aviplay.0:${PORTSDIR}/multimedia/avifile
 RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 
-SDL_CONFIG?=    ${LOCALBASE}/bin/sdl11-config
+SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
 
 ONLY_FOR_ARCHS=	i386
+USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 USE_LIBTOOL=	yes
+CONFIGURE_ARGS=	--with-win32-path=${LOCALBASE}/lib/win32
 CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}"
 
 pre-patch:
-	@${PERL} -pi.orig -e "s|SDL/SDL.h|SDL11/SDL.h|g" ${WRKSRC}/src/ctrackbar.cpp
-	@${PERL} -pi.orig -e "s|lc_r|pthread|g" ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e "s|SDL/SDL.h|SDL11/SDL.h|g" ${WRKSRC}/src/ctrackbar.cpp
+	@${REINPLACE_CMD} -e "s|lc_r|pthread|g" ${WRKSRC}/configure
 
 # This is to avoid libtool running ldconfig -m ${X11BASE}/lib/xmms/Input
 do-install:

@@ -1,6 +1,6 @@
 --- configure.orig	Wed Feb  7 22:07:08 2001
 +++ configure	Wed Feb  7 22:08:06 2001
-@@ -2192,7 +2192,8 @@
+@@ -6305,7 +6305,8 @@
      no_sdl=yes
    else
      SDL_CFLAGS=`$SDL_CONFIG $sdlconf_args --cflags`
