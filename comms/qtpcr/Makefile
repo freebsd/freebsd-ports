@@ -1,12 +1,13 @@
 # New ports collection makefile for:	qtpcr
 # Date created:			31 Jan 2003
-# Whom:				Sebastian Yepes <esn@x123.info>
+# Whom:				Sebastian Yepes F. <esn@x123.info>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	qtpcr
 PORTVERSION=	1.1.3
+PORTREVISION=	1
 CATEGORIES=	comms
 MASTER_SITES=	http://www.physics.purdue.edu/~teepanis/qtpcr/
 DISTNAME=	qtpcr-${PORTVERSION}
@@ -22,12 +23,10 @@ INSTALL_TARGET=
 
 .if defined(WITH_QT23)
 USE_QT_VER=	2
-LIB_DEPENDS+=	pthread:${PORTSDIR}/devel/pth
-MAKE_ENV=	INCPATH=-I${X11BASE}/include/qt2 MOC=moc2 LIBS="-lqt2-mt -L${X11BASE}/lib -lpthread -L${LOCALBASE}/lib/pth"
+MAKE_ENV=	INCPATH=-I${X11BASE}/include/qt2 MOC=moc2 LIBS="-lqt2-mt -L${X11BASE}/lib ${PTHREAD_LIBS}"
 .else
 USE_QT_VER=	3
-LIB_DEPENDS+=	pthread:${PORTSDIR}/devel/pth
-MAKE_ENV=	INCPATH=-I${X11BASE}/include MOC=moc LIBS="-lqt-mt -L${X11BASE}/lib -lpthread -L${LOCALBASE}/lib/pth"
+MAKE_ENV=	INCPATH=-I${X11BASE}/include MOC=moc LIBS="-lqt-mt -L${X11BASE}/lib ${PTHREAD_LIBS}"
 .endif
 
 .include <bsd.port.pre.mk>
