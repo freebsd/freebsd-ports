@@ -8,7 +8,7 @@
 PORTNAME=	nas
 PORTVERSION=	1.6
 CATEGORIES=	audio
-MASTER_SITES=	http://radscan.com/nas/
+MASTER_SITES=	http://nas.codebrilliance.com/nas/
 EXTRACT_SUFX=	.src.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
