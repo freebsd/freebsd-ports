@@ -1,11 +1,18 @@
 #!/bin/sh
-ex=0
+# $FreeBSD$
+#
+
+if [ "$2" != "POST-INSTALL" ]; then
+    exit 0
+fi
+
 USER=drweb
 GROUP=${USER}
 UID=426
 GID=${UID}
+ex=0
 
-if ! pw group show "${GROUP}" 2>/dev/null 1>&2; then
+if ! pw groupshow "${GROUP}" 2>/dev/null 1>&2; then
 	if pw groupadd ${GROUP} -g ${GID}; then
 		echo "Added group \"${GROUP}\"."
 	else
@@ -14,7 +21,7 @@ if ! pw group show "${GROUP}" 2>/dev/null 1>&2; then
 	fi
 fi
 
-if ! pw user show "${USER}" 2>/dev/null 1>&2; then
+if ! pw usershow "${USER}" 2>/dev/null 1>&2; then
 	if pw useradd ${USER} -u ${UID} -g ${GROUP} -h - \
 		-s "/sbin/nologin" -d "/nonexistent" -c "Dr. Web Scanner"
 	then
