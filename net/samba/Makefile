@@ -23,7 +23,7 @@ PATCH_SITES+=	ftp://totem.fix.no/pub/mirrors/misc/:smbjail \
 PATCHFILES=	samba-2.2.8a-freebsd-jail-patch-20040226.gz:smbjail
 .endif
 
-MAINTAINER=	dwcjr@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A free SMB and CIFS client and server for UNIX
 
 CONFLICTS=	ja-samba-2.* samba-3.* sharity-light-1.*
