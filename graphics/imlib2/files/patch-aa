@@ -1,7 +1,7 @@
---- configure.orig	Thu Jan 21 00:10:05 1999
-+++ configure	Fri Jan 22 03:38:47 1999
-@@ -2173,8 +2173,8 @@
- echo "configure:2174: checking If dynamic linking works on this system" >&5
+--- configure.orig	Fri Feb 12 14:06:46 1999
++++ configure	Thu Feb 18 00:47:01 1999
+@@ -2304,8 +2304,8 @@
+ echo "configure:2305: checking If dynamic linking works on this system" >&5
    oLIBS="$LIBS"
    oCFLAGS="$CFLAGS"
 -  LIBS="$LIBS `glib-config --libs gmodule`"
@@ -11,7 +11,7 @@
    if test "$cross_compiling" = yes; then
      { echo "configure: error: can not run test program while cross compiling" 1>&2; exit 1; }
  else
-@@ -2223,8 +2223,8 @@
+@@ -2354,8 +2354,8 @@
  #define USE_GMODULE 1
  EOF
  
@@ -22,42 +22,42 @@
     
     
     echo "$ac_t""yes" 1>&6
-@@ -3987,7 +3853,7 @@
+@@ -4153,7 +4153,7 @@
    echo $ac_n "(cached) $ac_c" 1>&6
  else
    ac_save_LIBS="$LIBS"
 -LIBS="-lXext $X_LIBS $LIBS"
 +LIBS="-lXext -lX11 $X_LIBS $LIBS"
  cat > conftest.$ac_ext <<EOF
- #line 3993 "configure"
+ #line 4159 "configure"
  #include "confdefs.h"
-@@ -4322,7 +4188,7 @@
+@@ -4488,7 +4488,7 @@
    echo $ac_n "(cached) $ac_c" 1>&6
  else
    ac_save_LIBS="$LIBS"
 -LIBS="-ltiff $GX_LIBS $LIBS"
 +LIBS="-ltiff -ljpeg -lz $GX_LIBS $LIBS"
  cat > conftest.$ac_ext <<EOF
- #line 4328 "configure"
+ #line 4494 "configure"
  #include "confdefs.h"
-@@ -4549,16 +4415,16 @@
+@@ -4715,16 +4715,16 @@
  
  
  
 -ac_safe=`echo "gif_lib.h" | sed 'y%./+-%__p_%'`
 -echo $ac_n "checking for gif_lib.h""... $ac_c" 1>&6
--echo "configure:4555: checking for gif_lib.h" >&5
+-echo "configure:4721: checking for gif_lib.h" >&5
 +ac_safe=`echo "giflib/gif_lib.h" | sed 'y%./+-%__p_%'`
 +echo $ac_n "checking for giflib/gif_lib.h""... $ac_c" 1>&6
-+echo "configure:4555: checking for giflib/gif_lib.h" >&5
++echo "configure:4721: checking for giflib/gif_lib.h" >&5
  if eval "test \"`echo '$''{'ac_cv_header_$ac_safe'+set}'`\" = set"; then
    echo $ac_n "(cached) $ac_c" 1>&6
  else
    cat > conftest.$ac_ext <<EOF
- #line 4560 "configure"
+ #line 4726 "configure"
  #include "confdefs.h"
 -#include <gif_lib.h>
 +#include <giflib/gif_lib.h>
  EOF
  ac_try="$ac_cpp conftest.$ac_ext >/dev/null 2>conftest.out"
- { (eval echo configure:4565: \"$ac_try\") 1>&5; (eval $ac_try) 2>&5; }
+ { (eval echo configure:4731: \"$ac_try\") 1>&5; (eval $ac_try) 2>&5; }
