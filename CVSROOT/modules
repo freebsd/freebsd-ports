@@ -4009,6 +4009,7 @@ juk		ports/audio/juk
 juke		ports/audio/juke
 jump		ports/java/jump
 jumpgate	ports/net/jumpgate
+jumpgis		ports/graphics/jumpgis
 jumpnbump	ports/games/jumpnbump
 junglemonkey	ports/ftp/junglemonkey
 junipoll	ports/net-mgmt/junipoll
