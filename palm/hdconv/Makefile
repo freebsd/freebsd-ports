@@ -8,7 +8,7 @@
 PORTNAME=	hdconv
 PORTVERSION=	2.01f
 CATEGORIES=	palm databases linux
-MASTER_SITES=	ftp://ftp.SilberSoft.com/pub/Software/Database/HanDBase/
+MASTER_SITES=	# no longer available from original site
 DISTNAME=	handbase_desktop_${PORTVERSION:S/./_/}.i386-any-linux2.0
 
 MAINTAINER=	ports@FreeBSD.org
