@@ -1,0 +1,4 @@
+bin/fastjar
+share/doc/fastjar/CHANGES
+share/doc/fastjar/README
+@dirrm share/doc/fastjar
