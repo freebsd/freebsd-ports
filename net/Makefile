@@ -675,6 +675,7 @@
     SUBDIR += wmnetload
     SUBDIR += wmnetmon
     SUBDIR += wmpiki
+    SUBDIR += wmping
     SUBDIR += wmq3
     SUBDIR += wmwave
     SUBDIR += wol
