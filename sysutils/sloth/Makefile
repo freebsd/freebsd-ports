@@ -14,11 +14,12 @@ MASTER_SITES=	ftp://ftp.namodn.com/pub/projects/ \
 
 MAINTAINER=	ports@FreeBSD.org
 
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 
 MAN1=	sloth.1
 
 post-patch:
-	@${PERL} -pi -e "s,wait.h,sys/wait.h,g" ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e "s,wait.h,sys/wait.h,g" ${WRKSRC}/configure
 
 .include <bsd.port.mk>

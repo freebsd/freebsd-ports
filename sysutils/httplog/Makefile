@@ -17,13 +17,14 @@ MAN8=	httplog.8
 
 DOCS=	ChangeLog README
 
+USE_REINPLACE=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}
 
 post-patch:
 	(cd ${WRKSRC} && \
-	${PERL} -pi -e "s@<wait.h>@<sys/wait.h>@" httplog.c && \
-	${PERL} -pi -e \
+	${REINPLACE_CMD} -e "s@<wait.h>@<sys/wait.h>@" httplog.c && \
+	${REINPLACE_CMD} -e \
 		"s@/var/lib/apache/bin/httplog@${PREFIX}/sbin/httplog@" \
 	httplog.8)
 

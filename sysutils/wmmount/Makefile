@@ -18,10 +18,11 @@ LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 
 USE_IMAKE=	yes
 USE_XPM=	yes
+USE_REINPLACE=	yes
 
 post-patch:
 .for file in system.wmmount.eg system.wmmount.sh
-	@${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/config/${file}
+	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/config/${file}
 .endfor
 .if exists(/etc/fstab)
 	@${SH} ${WRKSRC}/config/system.wmmount.sh > ${WRKSRC}/system.wmmount
