@@ -1,5 +1,5 @@
 # New ports collection makefile for:	PowerPak
-# Version required:			990829
+# Version required:			990901
 # Date created:				19 August 1999
 # Whom:					Andrey Zakhvatov
 #
@@ -7,7 +7,7 @@
 #
 
 DISTNAME=	PowerPak
-PKGNAME=	powerpak-990829
+PKGNAME=	powerpak-990901
 CATEGORIES= 	games
 MASTER_SITES=	http://www.angelfire.com/va/powerpakgsdk/images/
 
