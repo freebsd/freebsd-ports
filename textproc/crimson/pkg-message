@@ -1,0 +1,7 @@
+The following jar files have been installed: 
+
+  %%PREFIX%%/share/java/classes/crimson.jar
+  %%PREFIX%%/share/java/classes/jaxp.jar
+
+Add them to your CLASSPATH to use JAXP.
+Documentation is in %%PREFIX%%/share/java/crimson-1.1

@@ -1,0 +1,251 @@
+share/java/%%CRIMSON_SUBDIR%%/docs/api/org/xml/sax/class-use/AttributeList.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/org/xml/sax/class-use/Attributes.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/org/xml/sax/class-use/ContentHandler.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/org/xml/sax/class-use/DTDHandler.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/org/xml/sax/class-use/DocumentHandler.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/org/xml/sax/class-use/EntityResolver.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/org/xml/sax/class-use/ErrorHandler.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/org/xml/sax/class-use/HandlerBase.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/org/xml/sax/class-use/InputSource.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/org/xml/sax/class-use/Locator.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/org/xml/sax/class-use/Parser.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/org/xml/sax/class-use/SAXException.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/org/xml/sax/class-use/SAXNotRecognizedException.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/org/xml/sax/class-use/SAXNotSupportedException.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/org/xml/sax/class-use/SAXParseException.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/org/xml/sax/class-use/XMLFilter.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/org/xml/sax/class-use/XMLReader.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/org/xml/sax/ext/class-use/DeclHandler.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/org/xml/sax/ext/class-use/LexicalHandler.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/org/xml/sax/ext/DeclHandler.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/org/xml/sax/ext/LexicalHandler.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/org/xml/sax/ext/package-frame.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/org/xml/sax/ext/package-summary.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/org/xml/sax/ext/package-tree.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/org/xml/sax/ext/package-use.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/org/xml/sax/helpers/class-use/AttributeListImpl.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/org/xml/sax/helpers/class-use/AttributesImpl.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/org/xml/sax/helpers/class-use/DefaultHandler.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/org/xml/sax/helpers/class-use/LocatorImpl.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/org/xml/sax/helpers/class-use/NamespaceSupport.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/org/xml/sax/helpers/class-use/ParserAdapter.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/org/xml/sax/helpers/class-use/ParserFactory.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/org/xml/sax/helpers/class-use/XMLFilterImpl.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/org/xml/sax/helpers/class-use/XMLReaderAdapter.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/org/xml/sax/helpers/class-use/XMLReaderFactory.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/org/xml/sax/helpers/AttributeListImpl.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/org/xml/sax/helpers/AttributesImpl.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/org/xml/sax/helpers/DefaultHandler.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/org/xml/sax/helpers/LocatorImpl.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/org/xml/sax/helpers/NamespaceSupport.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/org/xml/sax/helpers/ParserAdapter.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/org/xml/sax/helpers/ParserFactory.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/org/xml/sax/helpers/XMLFilterImpl.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/org/xml/sax/helpers/XMLReaderAdapter.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/org/xml/sax/helpers/XMLReaderFactory.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/org/xml/sax/helpers/package-frame.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/org/xml/sax/helpers/package-summary.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/org/xml/sax/helpers/package-tree.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/org/xml/sax/helpers/package-use.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/org/xml/sax/AttributeList.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/org/xml/sax/Attributes.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/org/xml/sax/ContentHandler.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/org/xml/sax/DTDHandler.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/org/xml/sax/DocumentHandler.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/org/xml/sax/EntityResolver.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/org/xml/sax/ErrorHandler.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/org/xml/sax/HandlerBase.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/org/xml/sax/InputSource.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/org/xml/sax/Locator.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/org/xml/sax/Parser.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/org/xml/sax/SAXException.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/org/xml/sax/SAXNotRecognizedException.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/org/xml/sax/SAXNotSupportedException.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/org/xml/sax/SAXParseException.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/org/xml/sax/XMLFilter.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/org/xml/sax/XMLReader.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/org/xml/sax/package-frame.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/org/xml/sax/package-summary.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/org/xml/sax/package-tree.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/org/xml/sax/package-use.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/org/w3c/dom/class-use/Attr.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/org/w3c/dom/class-use/CDATASection.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/org/w3c/dom/class-use/CharacterData.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/org/w3c/dom/class-use/Comment.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/org/w3c/dom/class-use/DOMException.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/org/w3c/dom/class-use/DOMImplementation.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/org/w3c/dom/class-use/Document.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/org/w3c/dom/class-use/DocumentFragment.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/org/w3c/dom/class-use/DocumentType.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/org/w3c/dom/class-use/Element.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/org/w3c/dom/class-use/Entity.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/org/w3c/dom/class-use/EntityReference.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/org/w3c/dom/class-use/NamedNodeMap.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/org/w3c/dom/class-use/Node.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/org/w3c/dom/class-use/NodeList.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/org/w3c/dom/class-use/Notation.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/org/w3c/dom/class-use/ProcessingInstruction.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/org/w3c/dom/class-use/Text.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/org/w3c/dom/Attr.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/org/w3c/dom/CDATASection.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/org/w3c/dom/CharacterData.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/org/w3c/dom/Comment.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/org/w3c/dom/DOMException.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/org/w3c/dom/DOMImplementation.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/org/w3c/dom/Document.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/org/w3c/dom/DocumentFragment.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/org/w3c/dom/DocumentType.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/org/w3c/dom/Element.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/org/w3c/dom/Entity.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/org/w3c/dom/EntityReference.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/org/w3c/dom/NamedNodeMap.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/org/w3c/dom/Node.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/org/w3c/dom/NodeList.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/org/w3c/dom/Notation.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/org/w3c/dom/ProcessingInstruction.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/org/w3c/dom/Text.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/org/w3c/dom/package-frame.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/org/w3c/dom/package-summary.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/org/w3c/dom/package-tree.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/org/w3c/dom/package-use.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/javax/xml/parsers/class-use/DocumentBuilder.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/javax/xml/parsers/class-use/DocumentBuilderFactory.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/javax/xml/parsers/class-use/FactoryConfigurationError.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/javax/xml/parsers/class-use/ParserConfigurationException.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/javax/xml/parsers/class-use/SAXParser.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/javax/xml/parsers/class-use/SAXParserFactory.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/javax/xml/parsers/DocumentBuilder.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/javax/xml/parsers/DocumentBuilderFactory.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/javax/xml/parsers/FactoryConfigurationError.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/javax/xml/parsers/ParserConfigurationException.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/javax/xml/parsers/SAXParser.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/javax/xml/parsers/SAXParserFactory.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/javax/xml/parsers/package-frame.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/javax/xml/parsers/package-summary.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/javax/xml/parsers/package-tree.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/javax/xml/parsers/package-use.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/javax/xml/transform/sax/class-use/SAXResult.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/javax/xml/transform/sax/class-use/SAXSource.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/javax/xml/transform/sax/class-use/SAXTransformerFactory.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/javax/xml/transform/sax/class-use/TemplatesHandler.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/javax/xml/transform/sax/class-use/TransformerHandler.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/javax/xml/transform/sax/SAXResult.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/javax/xml/transform/sax/SAXSource.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/javax/xml/transform/sax/SAXTransformerFactory.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/javax/xml/transform/sax/TemplatesHandler.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/javax/xml/transform/sax/TransformerHandler.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/javax/xml/transform/sax/package-frame.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/javax/xml/transform/sax/package-summary.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/javax/xml/transform/sax/package-tree.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/javax/xml/transform/sax/package-use.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/javax/xml/transform/stream/class-use/StreamResult.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/javax/xml/transform/stream/class-use/StreamSource.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/javax/xml/transform/stream/StreamResult.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/javax/xml/transform/stream/StreamSource.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/javax/xml/transform/stream/package-frame.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/javax/xml/transform/stream/package-summary.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/javax/xml/transform/stream/package-tree.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/javax/xml/transform/stream/package-use.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/javax/xml/transform/dom/class-use/DOMLocator.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/javax/xml/transform/dom/class-use/DOMResult.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/javax/xml/transform/dom/class-use/DOMSource.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/javax/xml/transform/dom/DOMLocator.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/javax/xml/transform/dom/DOMResult.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/javax/xml/transform/dom/DOMSource.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/javax/xml/transform/dom/package-frame.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/javax/xml/transform/dom/package-summary.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/javax/xml/transform/dom/package-tree.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/javax/xml/transform/dom/package-use.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/javax/xml/transform/class-use/ErrorListener.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/javax/xml/transform/class-use/OutputKeys.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/javax/xml/transform/class-use/Result.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/javax/xml/transform/class-use/Source.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/javax/xml/transform/class-use/SourceLocator.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/javax/xml/transform/class-use/Templates.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/javax/xml/transform/class-use/Transformer.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/javax/xml/transform/class-use/TransformerConfigurationException.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/javax/xml/transform/class-use/TransformerException.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/javax/xml/transform/class-use/TransformerFactory.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/javax/xml/transform/class-use/TransformerFactoryConfigurationError.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/javax/xml/transform/class-use/URIResolver.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/javax/xml/transform/ErrorListener.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/javax/xml/transform/OutputKeys.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/javax/xml/transform/Result.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/javax/xml/transform/Source.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/javax/xml/transform/SourceLocator.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/javax/xml/transform/Templates.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/javax/xml/transform/Transformer.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/javax/xml/transform/TransformerConfigurationException.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/javax/xml/transform/TransformerException.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/javax/xml/transform/TransformerFactory.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/javax/xml/transform/TransformerFactoryConfigurationError.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/javax/xml/transform/URIResolver.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/javax/xml/transform/package-frame.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/javax/xml/transform/package-summary.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/javax/xml/transform/package-tree.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/javax/xml/transform/package-use.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/allclasses-frame.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/deprecated-list.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/help-doc.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/index-all.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/index.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/overview-frame.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/overview-summary.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/overview-tree.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/package-list
+share/java/%%CRIMSON_SUBDIR%%/docs/api/packages.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/serialized-form.html
+share/java/%%CRIMSON_SUBDIR%%/docs/api/stylesheet.css
+share/java/%%CRIMSON_SUBDIR%%/README.txt
+share/java/%%CRIMSON_SUBDIR%%/examples/SAXTagCount/SAXTagCount.java
+share/java/%%CRIMSON_SUBDIR%%/examples/SAXTagCount/build.xml
+share/java/%%CRIMSON_SUBDIR%%/examples/samples/REC-xml-19980210.xml
+share/java/%%CRIMSON_SUBDIR%%/examples/samples/book-order.xml
+share/java/%%CRIMSON_SUBDIR%%/examples/samples/java.xml
+share/java/%%CRIMSON_SUBDIR%%/examples/samples/namespace.xml
+share/java/%%CRIMSON_SUBDIR%%/examples/samples/play.dtd
+share/java/%%CRIMSON_SUBDIR%%/examples/samples/rich_iii.xml
+share/java/%%CRIMSON_SUBDIR%%/examples/samples/spec.dtd
+share/java/%%CRIMSON_SUBDIR%%/examples/samples/two_gent.xml
+share/java/%%CRIMSON_SUBDIR%%/examples/samples/weekly-euc-jp.dtd
+share/java/%%CRIMSON_SUBDIR%%/examples/samples/weekly-euc-jp.xml
+share/java/%%CRIMSON_SUBDIR%%/examples/DOMEcho/DOMEcho$MyErrorHandler.class
+share/java/%%CRIMSON_SUBDIR%%/examples/DOMEcho/DOMEcho.class
+share/java/%%CRIMSON_SUBDIR%%/examples/DOMEcho/DOMEcho.java
+share/java/%%CRIMSON_SUBDIR%%/examples/DOMEcho/build.xml
+share/java/%%CRIMSON_SUBDIR%%/examples/DOMEcho/t1.xml
+share/java/%%CRIMSON_SUBDIR%%/examples/index.html
+share/java/classes/crimson.jar
+share/java/classes/jaxp.jar
+@dirrm share/java/%%CRIMSON_SUBDIR%%/docs/api/org/xml/sax/class-use
+@dirrm share/java/%%CRIMSON_SUBDIR%%/docs/api/org/xml/sax/ext/class-use
+@dirrm share/java/%%CRIMSON_SUBDIR%%/docs/api/org/xml/sax/ext
+@dirrm share/java/%%CRIMSON_SUBDIR%%/docs/api/org/xml/sax/helpers/class-use
+@dirrm share/java/%%CRIMSON_SUBDIR%%/docs/api/org/xml/sax/helpers
+@dirrm share/java/%%CRIMSON_SUBDIR%%/docs/api/org/xml/sax
+@dirrm share/java/%%CRIMSON_SUBDIR%%/docs/api/org/xml
+@dirrm share/java/%%CRIMSON_SUBDIR%%/docs/api/org/w3c/dom/class-use
+@dirrm share/java/%%CRIMSON_SUBDIR%%/docs/api/org/w3c/dom
+@dirrm share/java/%%CRIMSON_SUBDIR%%/docs/api/org/w3c
+@dirrm share/java/%%CRIMSON_SUBDIR%%/docs/api/org
+@dirrm share/java/%%CRIMSON_SUBDIR%%/docs/api/javax/xml/parsers/class-use
+@dirrm share/java/%%CRIMSON_SUBDIR%%/docs/api/javax/xml/parsers
+@dirrm share/java/%%CRIMSON_SUBDIR%%/docs/api/javax/xml/transform/sax/class-use
+@dirrm share/java/%%CRIMSON_SUBDIR%%/docs/api/javax/xml/transform/sax
+@dirrm share/java/%%CRIMSON_SUBDIR%%/docs/api/javax/xml/transform/stream/class-use
+@dirrm share/java/%%CRIMSON_SUBDIR%%/docs/api/javax/xml/transform/stream
+@dirrm share/java/%%CRIMSON_SUBDIR%%/docs/api/javax/xml/transform/dom/class-use
+@dirrm share/java/%%CRIMSON_SUBDIR%%/docs/api/javax/xml/transform/dom
+@dirrm share/java/%%CRIMSON_SUBDIR%%/docs/api/javax/xml/transform/class-use
+@dirrm share/java/%%CRIMSON_SUBDIR%%/docs/api/javax/xml/transform
+@dirrm share/java/%%CRIMSON_SUBDIR%%/docs/api/javax/xml
+@dirrm share/java/%%CRIMSON_SUBDIR%%/docs/api/javax
+@dirrm share/java/%%CRIMSON_SUBDIR%%/docs/api
+@dirrm share/java/%%CRIMSON_SUBDIR%%/docs
+@dirrm share/java/%%CRIMSON_SUBDIR%%/examples/SAXTagCount
+@dirrm share/java/%%CRIMSON_SUBDIR%%/examples/samples
+@dirrm share/java/%%CRIMSON_SUBDIR%%/examples/DOMEcho
+@dirrm share/java/%%CRIMSON_SUBDIR%%/examples
+@dirrm share/java/%%CRIMSON_SUBDIR%%
+@unexec rmdir %D/share/java/classes 2>/dev/null || true
+@unexec rmdir %D/share/java 2>/dev/null || true
