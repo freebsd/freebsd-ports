@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	hsn@netmag.cz
 COMMENT=	A client for the fsp service
 
+IGNORE=		does not work correctly under FreeBSD libc
+
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GETOPT_LONG=	yes
