@@ -1,11 +1,11 @@
---- configure.orig	Tue Nov 30 02:37:24 1999
-+++ configure	Sun Dec  5 12:07:23 1999
-@@ -3496,7 +3496,7 @@
-   if test "$enable_debug" = yes; then
-     CFLAGS_O="-O0"
+--- configure.orig	Sun Jul 14 10:29:10 2002
++++ configure	Sun Jul 14 10:30:32 2002
+@@ -12064,7 +12064,7 @@
+   if test "X$enable_debug" = Xyes; then
+     CFLAGS="$CFLAGS -O0"
    else
--    CFLAGS_O="-O2"
-+    CFLAGS_O=""
+-    CFLAGS="$CFLAGS -O2"
++    CFLAGS="$CFLAGS"
    fi
-   CFLAGS_W="-Wall -Wcast-align -Wwrite-strings"
-   case $host in
+   CFLAGS="$CFLAGS -Wall -Wcast-align -Wcast-qual -Wwrite-strings"
+   case $MFX_CPU in

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lzo
-PORTVERSION=	1.07
+PORTVERSION=	1.08
 CATEGORIES=	archivers devel
 MASTER_SITES=	http://www.oberhumer.com/opensource/lzo/download/ \
 		${MASTER_SITE_SUNSITE}
