@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.perforce.com/perforce/utils/c4/
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	A CVS-like Frontend to Perforce
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 ALL_TARGET=	c4

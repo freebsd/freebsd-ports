@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	A utility C++ class library for daemons, clients, servers and more
 
 USE_GMAKE=	yes
 USE_AUTOCONF_VER=213

@@ -20,6 +20,7 @@ DISTFILES=	${MAINDIST} \
 DIST_SUBDIR=	vje30
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	Modern intelligent Japanese input engine (purchase version)
 
 LIB_DEPENDS=	c.3:${PORTSDIR}/misc/compat3x
 #RUN_DEPENDS=	${LOCALBASE}/share/java/classes/jfc-1.1.1/swing.jar:${PORTSDIR}/java/jfc

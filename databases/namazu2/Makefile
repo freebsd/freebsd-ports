@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.namazu.org/stable/
 PKGNAMESUFFIX=	2
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	Full-text search system intended for easy use
 
 PATCH_SITES=	${MASTER_SITES}
 PATCHFILES=	${DISTNAME}-de.diff

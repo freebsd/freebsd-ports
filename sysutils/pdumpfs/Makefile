@@ -11,6 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://namazu.org/~satoru/pdumpfs/
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	A daily backup system similar to Plan9's dumpfs
 
 USE_RUBY=	yes
 

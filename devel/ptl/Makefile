@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME:U}/${PORTNAME:U}2
 DISTNAME=	${PORTNAME:U}-${PORTVERSION}
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	A user level multi-thread library based on POSIX 1003.1c API
 
 BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf
 

@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	knu
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	CVS utilities which facilitate working with local working directories
 
 USE_AUTOMAKE_VER=15
 AUTOMAKE_ARGS=	--add-missing

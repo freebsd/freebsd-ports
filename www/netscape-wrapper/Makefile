@@ -12,6 +12,7 @@ MASTER_SITES=	# none
 DISTFILES=	# none
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	Netscape wrapper to avoid multiple invocation and more
 
 RUN_DEPENDS=	netscape-remote:${PORTSDIR}/www/netscape-remote
 

@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	Simplified Wrapper and Interface Generator
 
 BUILD_DEPENDS=		autoconf:${PORTSDIR}/devel/autoconf
 

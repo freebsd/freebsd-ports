@@ -12,6 +12,7 @@ MASTER_SITES=	http://chasen.aist-nara.ac.jp/stable/chasen/
 DISTNAME=	chasen-${CHASEN_VERSION}
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	ChaSen library module for Perl5
 
 LIB_DEPENDS=	chasen.0:${PORTSDIR}/japanese/chasen-base
 

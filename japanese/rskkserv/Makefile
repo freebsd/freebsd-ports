@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.unixuser.org/~ysjj/rskkserv/
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	An alternative implementation of skkserv written in Ruby
 
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/tcpwrap.so:${PORTSDIR}/security/ruby-tcpwrap \
 		${SKKJISYO_BASE}/${SKKJISYO}:${SKK_MASTERDIR}

@@ -11,6 +11,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://sary.namazu.org/stable/
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	A suffix array library and tools, which provide fast full-text search
 
 USE_GNOMENG=	yes
 USE_GNOME=	glib12 gnomehack

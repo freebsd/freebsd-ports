@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.iDaemons.org/pub/distfiles/ \
 MASTER_SITE_SUBDIR=	knu
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	A tool to check shared library links
 
 USE_BZIP2=	yes
 USE_RUBY=	yes
