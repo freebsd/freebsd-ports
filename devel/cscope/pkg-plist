@@ -1,3 +1,2 @@
-@comment $FreeBSD$
 bin/cscope
 bin/ocs
