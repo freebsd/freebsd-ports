@@ -2,7 +2,7 @@ lib/libautotrace.a
 bin/autotrace
 bin/autotrace-config
 share/aclocal/autotrace.m4
-@dirrm share/aclocal
+@unexec rmdir %D/share/aclocal 2>/dev/null || true
 include/autotrace/types.h
 include/autotrace/autotrace.h
 @dirrm include/autotrace
