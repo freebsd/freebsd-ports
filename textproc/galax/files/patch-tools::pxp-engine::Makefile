@@ -1,0 +1,11 @@
+--- tools/pxp-engine/Makefile.orig	Thu Jan 15 10:28:06 2004
++++ tools/pxp-engine/Makefile	Thu Jan 15 10:28:17 2004
+@@ -26,7 +26,7 @@
+ #generate: pxp_yacc.ml pxp_lexing.ml
+ 
+ pxp_lexing.ml: pxp_lexing.mlp
+-	ifdef -D LEXBUF_$(OCAMLVERSION) pxp_lexing.mlp
++	./ifdef -D LEXBUF_$(OCAMLVERSION) pxp_lexing.mlp
+ 
+ depend: 
+ 	$(OCAMLDEP) *.ml *.mli >depend

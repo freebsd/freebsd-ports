@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	galax
-PORTVERSION=	0.3.0
+PORTVERSION=	0.3.5
 CATEGORIES=	textproc
 MASTER_SITES=	http://db.bell-labs.com/galax/Downloads/
 
@@ -17,14 +17,18 @@ BUILD_DEPENDS=	ocaml:${PORTSDIR}/lang/ocaml
 
 WRKSRC=		${WRKDIR}/galax
 
+INSTALLS_SHLIBS=yes
+LDCONFIG_DIRS=	${LOCALBASE}/%%GALAX%%/lib/c
 USE_GMAKE=	yes
 ALL_TARGET=	world
-MAKE_ENV=	PREFIX=${PREFIX} JAVA_HOME=${JAVE_HOME}
+MAKE_ARGS=	JAVAHOME=${JAVA_HOME} OCAMLHOME=${LOCALBASE}/lib/ocaml OCAMLBIN=${LOCALBASE}/bin \
+		GALAXHOME=${PREFIX}/Galax-${PORTVERSION} APIS="c" OPTAPIS="c" WITH_CLIBS="-lm -lcurses" \
+		CC=${CC} CPP=${CPP}
 
 PLIST_SUB=	GALAX=Galax-${PORTVERSION}
 
 pre-patch:
-	${SED} s,%%GALAXHOME%%,'$(PREFIX)/Galax-${PORTVERSION}', ${FILESDIR}/Makefile >${WRKSRC}/config/Makefile
+	${CP} ${WRKSRC}/config/Makefile.unix ${WRKSRC}/config/Makefile
 
 post-install:
 	@${SED} 's,PREFIX,${PREFIX},; s,GALAX,Galax-${PORTVERSION},' ${PKGMESSAGE}
