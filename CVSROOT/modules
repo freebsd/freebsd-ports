@@ -7964,6 +7964,7 @@ tinc		ports/security/tinc
 tinker		ports/biology/tinker
 tintin++	ports/net/tintin++
 tintin++-devel	ports/net/tintin++-devel
+tinyca		ports/security/tinyca
 tinycdb		ports/databases/tinycdb
 tinycobol	ports/lang/tinycobol
 tinyfugue	ports/net/tinyfugue
