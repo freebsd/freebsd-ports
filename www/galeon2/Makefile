@@ -7,7 +7,7 @@
 
 PORTNAME=	galeon
 PORTVERSION=	1.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,11 +16,9 @@ MAINTAINER=	gnome@FreeBSD.org
 
 BUILD_DEPENDS=	${X11BASE}/include/mozilla/gtkembedmoz/gtkmozembed.h:${PORTSDIR}/www/mozilla-headers \
 		${X11BASE}/lib/${MOZILLA}/libgtkembedmoz.so:${PORTSDIR}/www/${MOZILLA} \
-		msgfmt-new:${PORTSDIR}/devel/gettext-devel \
-		nautilus:${PORTSDIR}/x11-fm/nautilus
+		msgfmt-new:${PORTSDIR}/devel/gettext-devel
 LIB_DEPENDS=	giconv.2:${PORTSDIR}/converters/libiconv
-RUN_DEPENDS=	${X11BASE}/lib/${MOZILLA}/libgtkembedmoz.so:${PORTSDIR}/www/${MOZILLA} \
-		nautilus:${PORTSDIR}/x11-fm/nautilus
+RUN_DEPENDS=	${X11BASE}/lib/${MOZILLA}/libgtkembedmoz.so:${PORTSDIR}/www/${MOZILLA}
 
 #BROKEN=		"b0rken with Mozilla-0.9.9"
 
@@ -37,7 +35,8 @@ USE_NEWGCC=	yes
 USE_GNOME=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-mozilla-includes="${X11BASE}/include/mozilla" \
-		--with-mozilla-libs="${X11BASE}/lib/${MOZILLA}"
+		--with-mozilla-libs="${X11BASE}/lib/${MOZILLA}" \
+		--enable-nautilus-view
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -D_REENTRANT ${PTHREAD_CFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}" \
 		MSGFMT=${LOCALBASE}/bin/msgfmt-new \
@@ -65,12 +64,14 @@ pre-patch:
 		 s|-lpthread|${PTHREAD_LIBS}|g'
 	@find ${WRKSRC} -name "*.[ch]" | xargs ${PERL} -pi -e \
 		's|iconv\.h|giconv.h|g'
+	@${MKDIR} ${WRKSRC}/src/libnautilus
 
 post-configure:
 	@${PERL} -pi -e 's|%%PREFIX%%|${PREFIX}|g ; \
 			 s|%%LOCALBASE%%|${LOCALBASE}|g ; \
 			 s|%%X11BASE%%|${X11BASE}|g ; \
-			 s|%%MOZILLA%%|${MOZILLA}|g' ${WRKSRC}/src/galeon
+			 s|%%MOZILLA%%|${MOZILLA}|g' ${WRKSRC}/src/galeon \
+						     ${WRKSRC}/src/nautstub.c
 
 pre-install:
 	@-${X11BASE}/bin/gconftool --shutdown
