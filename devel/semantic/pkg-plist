@@ -4,10 +4,14 @@ info/semantic.info-1
 info/semantic.info-2
 info/semantic.info-3
 @exec install-info %D/info/semantic.info %D/info/dir
+%%EMACS_VERSION_SITE_LISPDIR%%/semantic/c.bnf
 %%EMACS_VERSION_SITE_LISPDIR%%/semantic/document-vars.el
 %%EMACS_VERSION_SITE_LISPDIR%%/semantic/document-vars.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/semantic/document.el
 %%EMACS_VERSION_SITE_LISPDIR%%/semantic/document.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/semantic/java.bnf
+%%EMACS_VERSION_SITE_LISPDIR%%/semantic/make.bnf
+%%EMACS_VERSION_SITE_LISPDIR%%/semantic/scheme.bnf
 %%EMACS_VERSION_SITE_LISPDIR%%/semantic/semantic-analyze.el
 %%EMACS_VERSION_SITE_LISPDIR%%/semantic/semantic-analyze.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/semantic/semantic-bnf.el
@@ -46,15 +50,10 @@ info/semantic.info-3
 %%EMACS_VERSION_SITE_LISPDIR%%/semantic/senator.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/semantic/sformat.el
 %%EMACS_VERSION_SITE_LISPDIR%%/semantic/sformat.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/semantic/skeleton.bnf
 %%EMACS_VERSION_SITE_LISPDIR%%/semantic/working.el
 %%EMACS_VERSION_SITE_LISPDIR%%/semantic/working.elc
 @dirrm %%EMACS_VERSION_SITE_LISPDIR%%/semantic
-share/examples/semantic/c.bnf
-share/examples/semantic/java.bnf
-share/examples/semantic/make.bnf
-share/examples/semantic/scheme.bnf
-share/examples/semantic/skeleton.bnf
-@dirrm share/examples/semantic
 %%PORTDOCS%%share/doc/semantic/INSTALL
 %%PORTDOCS%%share/doc/semantic/NEWS
 %%PORTDOCS%%@dirrm share/doc/semantic
