@@ -56,6 +56,7 @@ PLIST_SUB+=	NOBASE=""
 .endif
 
 MAKE_ENV+=	MANPREFIX=${MANPREFIX}
+NOPRECIOUSMAKEVARS=	To much _MLINKS for fetch
 NO_LATEST_LINK=	yes
 
 MAN1=		CA.pl.1 asn1parse.1 ca.1 ciphers.1 crl.1 crl2pkcs7.1 dgst.1 \
@@ -147,7 +148,6 @@ MAN3+=		ASN1_OBJECT_new.3 ASN1_STRING_length.3 ASN1_STRING_new.3 \
 		d2i_PKCS8PrivateKey.3 d2i_DSAPublicKey.3 d2i_X509_ALGOR.3 \
 		d2i_X509_CRL.3 d2i_X509.3 d2i_X509_NAME.3 d2i_X509_REQ.3 \
 		d2i_X509_SIG.3 engine.3 pem.3 ui.3 ui_compat.3
-.if !defined(BROKEN_MLINKS)
 MLINKS=		dgst.1 md4.1 \
 		dgst.1 sha.1 \
 		dgst.1 mdc2.1 \
@@ -860,7 +860,6 @@ MLINKS=		dgst.1 md4.1 \
 		des_modes.7 DES.7 \
 		des_modes.7 Modes.7 \
 		des_modes.7 of.7
-.endif
 
 .if defined(BATCH) || defined(OPENSSL_WITH_386)
 .if ${MACHINE_ARCH} == "i386"
