@@ -15,12 +15,10 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
-RUN_DEPENDS=	/compat/linux/usr/i486-linux-libc5/lib/libc.so.5:${PORTSDIR}/emulators/linux_base
-
 ONLY_FOR_ARCHS=	i386
 
+USE_LINUX=	yes
 NO_WRKSUBDIR=	yes
-
 USE_X_PREFIX=	yes
 
 post-install:

@@ -15,10 +15,9 @@ DISTNAME=	linux-505
 .endif
 MAINTAINER=	osa@FreeBSD.org.ru
 
-RUN_DEPENDS=	/compat/linux/usr/i486-linux-libc5/lib/libc.so.5:${PORTSDIR}/emulators/linux_base
-
 ONLY_FOR_ARCHS=	i386
 
+USE_LINUX=	yes
 NO_FILTER_SHLIBS=	yes
 
 .if ${ARCH} == "i386"

@@ -17,11 +17,12 @@ DISTNAME=	ar302lin
 DISTNAME=	ar302osf
 .endif
 EXTRACT_SUFX=	.tar.Z
+LATEST_LINK=	acroread3
 
 MAINTAINER=	tg@FreeBSD.org
 
 .if ${ARCH} == "i386"
-RUN_DEPENDS=	/compat/linux/usr/i486-linux-libc5/lib/libc.so.5:${PORTSDIR}/emulators/linux_base
+USE_LINUX=	yes
 .elif ${ARCH} == "alpha"
 RUN_DEPENDS=	/compat/osf1/usr/shlib/libc.so:${PORTSDIR}/emulators/osf1_base
 .endif
@@ -61,9 +62,12 @@ post-install:
 .endif
 	@cd ${PREFIX}/Acrobat3/bin && \
 	  ${PATCH} --quiet < ${FILESDIR}/acroread.diff && \
-	  ${INSTALL_SCRIPT} ${PREFIX}/Acrobat3/bin/acroread ${PREFIX}/bin && \
+	  ${INSTALL_SCRIPT} ${PREFIX}/Acrobat3/bin/acroread \
+	    ${PREFIX}/bin/acroread3 && \
 	  ${RM} acroread.orig
-	@${CHMOD} +x ${PREFIX}/bin/acroread
+	@${CHMOD} +x ${PREFIX}/bin/acroread3
+	[ -e ${PREFIX}/bin/acroread ] \
+	    || (cd ${PREFIX}/bin ; ${LN} -s acroread3 acroread)
 	@${ECHO_MSG} "Be sure to read the license agreement in"
 	@${ECHO_MSG} "${PREFIX}/Acrobat3/Reader/License.pdf"
 

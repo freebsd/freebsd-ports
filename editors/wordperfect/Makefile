@@ -15,13 +15,12 @@ EXTRACT_SUFX=	.GZ
 
 MAINTAINER=	msmith@freebsd.org
 
-RUN_DEPENDS=	/compat/linux/usr/i486-linux-libc5/lib/libc.so.5:${PORTSDIR}/emulators/linux_base
-
 ONLY_FOR_ARCHS=	i386
 NO_CDROM=	"LIC: redistribution not allowed"
 
 IS_INTERACTIVE=	"requires user interaction for installation"
 
+USE_LINUX=	yes
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 

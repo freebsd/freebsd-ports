@@ -14,14 +14,14 @@ DISTNAME=	Rollemup
 
 MAINTAINER=	sanpei@FreeBSD.org
 
-RUN_DEPENDS=	/compat/linux/usr/i486-linux-libc5/lib/libc.so.5:${PORTSDIR}/emulators/linux_base
-
 LICENSE=	no-commercial-use
 RESTRICTED=	You are not allowed to distribute the software by any means. \
 		You are allowed to download a copy from this site for personal use. \
 		See http://www.medialab.lostboys.nl/content/showcase/license.html
 
 ONLY_FOR_ARCHS= i386
+
+USE_LINUX=	yes
 
 EXTRACT_ONLY=	# empty
 NO_PACKAGE=	${RESTRICTED}
