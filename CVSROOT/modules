@@ -2320,6 +2320,7 @@ gubby		ports/mail/gubby
 gucharmap	ports/misc/gucharmap
 guile		ports/lang/guile
 guile-gnome	ports/x11-toolkits/guile-gnome
+guile-gobject	ports/x11-toolkits/guile-gobject
 guile-gtk	ports/x11-toolkits/guile-gtk
 guile-www	ports/www/guile-www
 guileobjc	ports/lang/guileobjc
