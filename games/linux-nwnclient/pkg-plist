@@ -1,38 +1,38 @@
-%%NWNDIR%%/dmclient
-%%DOCSDIR%%/EULA.txt
-%%NWNDIR%%/fixinstall
-%%NWNDIR%%/lib/libSDL-1.2.so.0.0.5
-%%NWNDIR%%/lib/libSDL-1.2.so.0
-%%NWNDIR%%/miles/mssdsp.flt
-%%NWNDIR%%/miles/mssmp3.asi
-%%NWNDIR%%/miles/msssoft.m3d
-%%NWNDIR%%/miles/libmss.so.6.5.2
-%%NWNDIR%%/miles/libmss.so.6
-%%NWNDIR%%/miles/libmss.so
-%%NWNDIR%%/movies-OC.txt
-%%NWNDIR%%/nwmain
-%%NWNDIR%%/nwn
-%%NWNDIR%%/nwn.ini
-%%NWNDIR%%/nwserver
-%%NWNDIR%%/override/soundprovider.2da
-%%NWNDIR%%/override/load_legal2.tga
-%%NWNDIR%%/override/load_legal.tga
-%%DOCSDIR%%/readme.linuxserver.txt
-%%DOCSDIR%%/readme-SDL.txt
-%%DOCSDIR%%/readme.txt
-%%NWNDIR%%/data/patch.bif
-%%NWNDIR%%/dialog.tlk
-%%NWNDIR%%/nwm/Chapter1.nwm
-%%NWNDIR%%/nwm/Chapter1E.nwm
-%%NWNDIR%%/nwm/Chapter2.nwm
-%%NWNDIR%%/nwm/Chapter3.nwm
-%%NWNDIR%%/nwm/Prelude.nwm
-%%DOCSDIR%%/NWNv130.txt
-%%NWNDIR%%/patch.key
-@unexec rmdir %D/%%NWNDIR%%/lib 2>/dev/null || true
-@unexec rmdir %D/%%NWNDIR%%/miles 2>/dev/null || true
-@unexec rmdir %D/%%NWNDIR%%/override 2>/dev/null || true
-@unexec rmdir %D/%%NWNDIR%%/data 2>/dev/null || true
-@unexec rmdir %D/%%NWNDIR%%/nwm 2>/dev/null || true
-@unexec rmdir %D/%%NWNDIR%% 2>/dev/null || true
-@unexec rmdir %D/%%DOCSDIR%% 2>/dev/null || true
+%%DATADIR%%/EULA.txt
+%%DATADIR%%/NWNv162.txt
+%%DATADIR%%/data/patch.bif
+%%DATADIR%%/dialog.tlk
+%%DATADIR%%/dmclient
+%%DATADIR%%/lib/libstdc++-libc6.1-2.so.3
+%%DATADIR%%/miles/libmss.so
+%%DATADIR%%/miles/libmss.so.6
+%%DATADIR%%/miles/libmss.so.6.5.2
+%%DATADIR%%/miles/mssdsp.flt
+%%DATADIR%%/miles/mssmp3.asi
+%%DATADIR%%/miles/msssoft.m3d
+%%DATADIR%%/movies-OC.txt
+%%DATADIR%%/nwm/Chapter1.nwm
+%%DATADIR%%/nwm/Chapter1E.nwm
+%%DATADIR%%/nwm/Chapter2.nwm
+%%DATADIR%%/nwm/Chapter2E.nwm
+%%DATADIR%%/nwm/Chapter3.nwm
+%%DATADIR%%/nwm/Chapter4.nwm
+%%DATADIR%%/nwm/Prelude.nwm
+%%DATADIR%%/nwmain
+%%DATADIR%%/nwn.ini
+%%DATADIR%%/nwserver
+%%DATADIR%%/override/iit_medkit_001.tga
+%%DATADIR%%/override/load_legal.tga
+%%DATADIR%%/override/load_legal2.tga
+%%DATADIR%%/override/soundprovider.2da
+%%DATADIR%%/patch.key
+%%DATADIR%%/readme-SDL.txt
+%%DATADIR%%/readme.linuxclientupdate.txt
+%%DATADIR%%/readme.linuxserver.txt
+%%DATADIR%%/readme.txt
+@dirrm %%DATADIR%%/override
+@dirrm %%DATADIR%%/nwm
+@dirrm %%DATADIR%%/miles
+@dirrm %%DATADIR%%/lib
+@dirrm %%DATADIR%%/data
+@dirrm %%DATADIR%%
