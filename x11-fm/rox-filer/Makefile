@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	rox
-PORTVERSION=	2.1.1
-PORTREVISION=	3
+PORTVERSION=	2.1.2
 CATEGORIES=	x11-fm gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	rox
@@ -20,7 +19,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/mime/packages/freedesktop.org.xml:${PORTSDIR}/mi
 
 PLIST_SUB+=	LOCALBASE=${LOCALBASE}
 
-USE_GNOME=	gtk20 pkgconfig libxml2 gnomevfs2
+USE_GNOME=	pkgconfig glib20 gtk20 libxml2 gnomevfs2 pango
 USE_AUTOCONF_VER=	213
 HAS_CONFIGURE=	yes
 
@@ -43,7 +42,7 @@ ALL_TARGET=
 
 do-install:
 	@${MKDIR} ${PREFIX}/apps/ROX-Filer
-	@cd ${WRKSRC}/ROX-Filer && ${CP} -r .DirIcon Action.png Action-it.png AppInfo.xml AppRun ${BINARIES} Help Messages Options.xml ROX images style.css ${PREFIX}/apps/ROX-Filer
+	@cd ${WRKSRC}/ROX-Filer && ${CP} -r .DirIcon Action-it.png Action.png AppInfo.xml AppRun ${BINARIES} Help Messages Options.xml ROX images style.css ${PREFIX}/apps/ROX-Filer
 	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/apps/ROX-Filer
 	@cd ${WRKSRC} && ${CP} -r Choices ${PREFIX}/share/
 	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/Choices
@@ -52,5 +51,6 @@ do-install:
 	@${INSTALL_MAN} ${WRKSRC}/rox.1 ${PREFIX}/man/man1
 	@${INSTALL_DATA} ${WRKSRC}/rox.xml ${PREFIX}/share/mime/packages
 	@${LOCALBASE}/bin/update-mime-database ${PREFIX}/share/mime
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
