@@ -20,3 +20,8 @@ etc/Counter/digits/D/strip.gif
 etc/Counter/digits/D/lenna.gif
 etc/Counter/digits/E
 etc/Counter/digits/E/strip.gif
+@owner bin
+@group bin
+etc/Counter/digits/mkstrip.sh
+bin/mkstrip
+man/man1/mkstrip.1
