@@ -968,6 +968,7 @@
     SUBDIR += swig13
     SUBDIR += swig13-doc
     SUBDIR += swigruby
+    SUBDIR += syntax_tools
     SUBDIR += sysconftool
     SUBDIR += t1lib
     SUBDIR += tcl-memchan
