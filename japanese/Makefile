@@ -265,6 +265,7 @@
     SUBDIR += ruby14-tcltklib
     SUBDIR += ruby14-tk
     SUBDIR += rxvt
+    SUBDIR += ryaku-fpw
     SUBDIR += samba
     SUBDIR += sdic
     SUBDIR += sed
