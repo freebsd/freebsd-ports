@@ -16,6 +16,8 @@ DISTFILES+=	${HYPHDIST}
 MAINTAINER=     openoffice@FreeBSD.org
 COMMENT?=	MySpell dictionaries for OpenOffice.org
 
+BROKEN=		Missing dependency on unzip
+
 USE_ZIP=	yes
 EXTRACT_ONLY=
 
