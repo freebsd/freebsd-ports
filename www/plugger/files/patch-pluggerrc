@@ -1,70 +1,159 @@
---- pluggerrc.orig	Wed Dec  5 11:14:01 2001
-+++ pluggerrc	Wed Apr  3 08:05:35 2002
-@@ -58,12 +58,12 @@
+--- pluggerrc.orig	Sun Jun 22 14:48:34 2003
++++ pluggerrc	Sun Jun 22 15:06:47 2003
+@@ -1,4 +1,4 @@
+-# Configure file for plugger version 4.0
++# Configure file for plugger version 4.0 (FreeBSD modified)
+ # Commands which are not installed on your system will not
+ # be used.
+ #
+@@ -6,16 +6,15 @@
+ video/x-mpeg: mpeg, mpg, mpe: MPEG animation
+ video/x-mpeg2: mpv2, mp2ve: MPEG2 animation
+ 	stream: mtvp -W$window - 2>/dev/null 1>/dev/null
+-	ignore_errors maxaspect swallow(MPlayer):mplayer "$file" >/dev/null 2>/dev/null </dev/null
++	nokill, ignore_errors: mplayer -really-quiet -framedrop -wid $window -aop list=volume:volume=64 "$file" >/dev/null 2>/dev/null
+ 	loop:mtvp -l -W$window "$file"
+ 	:mtvp -W$window "$file"
+ 	loop: xanim +Av100 -Zr +W$window +q +f "$file"
+ 	: xanim +Av100 -Zr +W$window +q +Ze +f "$file"
+ 
+-
+ video/msvideo: avi: AVI animation
+ video/x-msvideo: avi: AVI animation
+-	ignore_errors maxaspect swallow(MPlayer):if mplayer -autoq 3 "$file" 2>&1 | grep 'Sorry,' >/dev/null ; then mplayer -vo x11 -autoq 3 "$file" >/dev/null 2>/dev/null ; fi </dev/null
++	nokill, ignore_errors: mplayer -really-quiet -framedrop -wid $window -aop list=volume:volume=64 "$file" >/dev/null 2>/dev/null
+ 	loop:xanim +Av100 -Zr +W$window +q +f "$file"
+ 	:xanim +Av100 -Zr +W$window +q +Ze +f "$file"
+ 
+@@ -37,18 +36,11 @@
+ audio/midi: midi,mid: MIDI audio file
+ audio/x-midi: midi,mid: MIDI audio file
+ 	: timidity -s 48000 -a -idqqqqqqq "$file" >/dev/null 2>/dev/null
+-	: playmidi $file
+ 
+ audio/mod: mod: Soundracker audio Module
+ audio/x-mod: mod: Soundracker audio Module
+-	repeat swallow(alsaplayer): alsaplayer -q "$file" >/dev/null
+ 	loop: xmp -l --nocmd "$file" 2>/dev/null
+ 	: xmp --nocmd "$file" 2>/dev/null
+-	loop: nspmod -r "$file" 2>/dev/null 1>/dev/null
+-	repeat: nspmod -l $repeat "$file" 2>/dev/null 1>/dev/null
+-	: tracker -q -frequency 65000 "$file"
+-	loop: mikmod -i -r "$file" 2>/dev/null 1>/dev/null
+-	: mikmod -i "$file" 2>/dev/null 1>/dev/null
+ 
+ audio/mp3: mp3: MPEG audio
+ audio/x-mp3: mp3: MPEG audio
+@@ -58,15 +50,8 @@
  audio/x-mpeg3: mp3: MPEG audio
  audio/mpeg: mpa,abs,mpega: MPEG audio
  audio/x-mpeg: mpa,abs,mpega: MPEG audio
 -	stream, preload: splay -t 200 -M
 -	stream, preload: mpg123 -q -b 128 -
-+	stream, preload: mpg123 -q -b 1024 -
-+	stream, preload: splay -M -t 200
- 	repeat swallow(alsaplayer): alsaplayer -q "$file" >/dev/null
+-	repeat swallow(alsaplayer): alsaplayer -q "$file" >/dev/null
 -	: mpg123 -q -b 128 "$file"
 -	nokill exits:xmms "$file"
 -	: splay -t 200 "$file"
+-	: amp -b 200 -q "$file"
+-	: maplay "$file"
+-	: mpeg3play "$file"
++	stream, preload: mpg123 -q -b 1024 -
 +	: mpg123 -q -b 1024 "$file"
-+#	nokill exits:xmms "$file"  # immortal on FreeBSD
-+	: splay "$file" -t 200
- 	: amp -b 200 -q "$file"
- 	: maplay "$file"
- 	: mpeg3play "$file"
-@@ -89,12 +89,21 @@
- 	stream preload: bplay 1>/dev/null 2>/dev/null
- 	: bplay 1>/dev/null 2>/dev/null "$file"
- 	: splay "$file"
+ 
+ audio/x-sidtune: sid,psid,dat: Commodore 64 audio
+ audio/sidtune: sid,psid,dat: Commodore 64 audio
+@@ -74,7 +59,6 @@
+ audio/x-psid: psid,sid,dat: Commodore 64 audio
+ 	stream: sidplay -16 -f44100 -a - >/dev/null 2>/dev/null
+ 
+-
+ audio/basic: au,snd: Basic audio file
+ audio/x-basic: au,snd: Basic audio file
+ 	loop: xanim +Av100 -Zr +W$window +q +f "$file"
+@@ -83,13 +67,7 @@
+ 
+ audio/wav:wav:Microsoft wave file
+ audio/x-wav:wav:Microsoft wave file
+-	stream preload: splay -W
+-	repeat swallow(alsaplayer): alsaplayer -q "$file" >/dev/null
+ 	: wavplay -q "$file"
+-	stream preload: bplay 1>/dev/null 2>/dev/null
+-	: bplay 1>/dev/null 2>/dev/null "$file"
+-	: splay "$file"
 -	nokill exits:xmms "$file"
-+#	nokill exits:xmms "$file"  # immortal on FreeBSD
  	loop: xanim +Av100 -Zr +W$window +q +f "$file"
   	: xanim +Av100 -Zr +W$window +q +f +Ze "$file"
  	
- image/tiff: tiff,tif: TIFF image
- image/x-tiff: tiff,tif: TIFF image
-+	repeat swallow(display) fill: display "$file"
-+	repeat swallow(Sdtimage) fill: sdtimage "$file"
-+	repeat swallow(gqview) fill: gqview -t "$file" >/dev/null 2>/dev/null
-+	repeat swallow(xli) fill: xli -quiet "$file" >/dev/null 2>/dev/null
-+	repeat swallow(xloadimage) fill: xloadimage -quiet "$file" >/dev/null 2>/dev/null
-+	exits: xli -quiet -windowid $window "$file"
-+	exits: xloadimage -quiet -windowid $window "$file"
-+	exits: display -window $window -backdrop $file
-+
- image/png: png: PNG image
+@@ -99,12 +77,7 @@
  image/x-png: png: PNG image
  	repeat swallow(gqview) fill: gqview -t "$file" >/dev/null 2>/dev/null
-@@ -132,7 +141,7 @@
+ 	repeat swallow(display) fill: display "$file"
+-	repeat swallow(Sdtimage) fill: sdtimage "$file"
+-	repeat swallow(xli) fill: xli -quiet "$file" >/dev/null 2>/dev/null
+-	repeat swallow(xloadimage) fill: xloadimage -quiet "$file" >/dev/null 2>/dev/null
+-	exits: xloadimage -quiet -windowid $window "$file"
+ 	exits: display -window $window -backdrop $file
+-	exits: xli -quiet -windowid $window "$file"
+ 
+ image/sun-raster: rs: SUN raster image
+ image/x-sun-raster: rs: SUN raster image
+@@ -117,54 +90,34 @@
+ image/x-portable-bitmap: pbm: PBM Image
+ image/x-portable-anymap: pnm: PBM Image
+ 	repeat swallow(display) fill: display "$file"
+-	repeat swallow(Sdtimage) fill: sdtimage "$file"
+ 	repeat swallow(gqview) fill: gqview -t "$file" >/dev/null 2>/dev/null
+-	repeat swallow(xli) fill: xli -quiet "$file" >/dev/null 2>/dev/null
+-	repeat swallow(xloadimage) fill: xloadimage -quiet "$file" >/dev/null 2>/dev/null
+-	exits: xli -quiet -windowid $window "$file"
+-	exits: xloadimage -quiet -windowid $window "$file"
+ 	exits: display -window $window -backdrop $file
+ 
+-# This does not work :(
+-#	swallow(XVroot) maxaspect: xv -nopos "$file"
+-
+ audio/mpeg-url: m3u: MPEG music resource locator
  audio/x-mpeg-url: m3u: MPEG music resource locator
  audio/mpegurl: m3u: MPEG music resource locator
  audio/x-mpegurl: m3u: MPEG music resource locator
 -	nokill exits:xmms "$file"
-+#	nokill exits:xmms "$file"  # immortal on FreeBSD
++	ignore_errors: mplayer -really-quiet -framedrop -demuxer 17 -playlist "$file" >/dev/null 2>/dev/null
  	:internal:url
  
- audio/x-pn-realaudio-plugin:rpm:Realaudio-plugin resource locator
-@@ -142,7 +151,7 @@
+-audio/x-pn-realaudio-plugin:rpm:Realaudio-plugin resource locator
+-	exits nokill: realplay "$file"
+-
+ application/pdf: pdf: PDF file
  application/x-pdf: pdf: PDF file
  text/pdf: pdf: PDF file
  text/x-pdf: pdf: PDF file
 -	repeat swallow(documentShell) fill: acroread -geometry +9000+9000 -xrm '*userFrontEndProgram: FALSE' "$file"
 +	repeat swallow(documentShell) fill: acroread5 -geometry +9000+9000 -xrm '*userFrontEndProgram: FALSE' "$file"
  	repeat swallow(gv) fill: gv -safer -quiet -antialias -geometry +9000+9000 "$file" 2>/dev/null
- 	repeat swallow(xpdf) fill: xpdf -g +9000+9000 -err "$file"
+-	repeat swallow(xpdf) fill: xpdf -g +9000+9000 -err "$file"
+-
+-
+-application/x-dvi: dvi: DVI file
+-	repeat swallow(xdvi) fill: xdvi -safer -hush -geometry +9000+9000 "$file"
  
-@@ -159,7 +168,7 @@
+ application/x-postscript: ps: PostScript file
+ application/postscript: ps: PostScript file
+ 	repeat swallow(gv) fill: gv -safer -quiet -antialias -geometry +9000+9000 "$file" 2>/dev/null
+-	repeat swallow(Pageview) fill: pageview "$file"
+-
+ 
  application/rtf: rtf: Rich Text Format
  application/x-msword: doc, dot: Microsoft Word Document
  application/msword: doc, dot: Microsoft Word Document
--	repeat swallow(AbiWord) fill: abiword -nosplash -geometry +9000+9000 "$file" >/dev/null 2>/dev/null
-+	repeat swallow(AbiWord) fill: abiword --nosplash --geometry=+9000+9000 "$file" >/dev/null 2>/dev/null
- 	repeat swallow(PCFileViewer) fill: sdtpcv "$file"
- 	repeat swallow(PCFileViewer) fill: /opt/SUNWdtpcv/bin/sdtpcv "$file"
+ 	repeat swallow(AbiWord) fill: abiword -nosplash -geometry +9000+9000 "$file" >/dev/null 2>/dev/null
+-	repeat swallow(PCFileViewer) fill: sdtpcv "$file"
+-	repeat swallow(PCFileViewer) fill: /opt/SUNWdtpcv/bin/sdtpcv "$file"
+-
  
+ application/vnd.ms-excel: xls, xlb: Microsoft Excel Document
+ 	repeat swallow(PluggerGnumeric) fill: gnumeric --class PluggerGnumeric "$file"
+-	repeat swallow(PCFileViewer) fill: sdtpcv "$file"
+-	repeat swallow(PCFileViewer) fill: /opt/SUNWdtpcv/bin/sdtpcv "$file"
++
++application/vnd.ms-powerpoint: ppt: Microsoft PowerPoint Document
++	: nspptview "$file"
