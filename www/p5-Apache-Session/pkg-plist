@@ -1,0 +1,19 @@
+lib/perl5/site_perl/%%PERL_VER%%/Apache/Session/Counted.pm
+lib/perl5/site_perl/%%PERL_VER%%/Apache/Session/PosixFileLocker.pm
+lib/perl5/site_perl/%%PERL_VER%%/Apache/Session/DaemonLocker.pm
+lib/perl5/site_perl/%%PERL_VER%%/Apache/Session/MemoryStore.pm
+lib/perl5/site_perl/%%PERL_VER%%/Apache/Session/Embperl.pm
+lib/perl5/site_perl/%%PERL_VER%%/Apache/Session/SysVSemaphoreLocker.pm
+lib/perl5/site_perl/%%PERL_VER%%/Apache/Session/SingleThread.pm
+lib/perl5/site_perl/%%PERL_VER%%/Apache/Session/NullLocker.pm
+lib/perl5/site_perl/%%PERL_VER%%/Apache/Session/DBIStore.pm
+lib/perl5/site_perl/%%PERL_VER%%/Apache/Session/FileStore.pm
+lib/perl5/site_perl/%%PERL_VER%%/Apache/Session/TreeStore.pm
+lib/perl5/site_perl/%%PERL_VER%%/Apache/Session/DBI.pm
+lib/perl5/site_perl/%%PERL_VER%%/Apache/Session/Tree.pm
+lib/perl5/site_perl/%%PERL_VER%%/Apache/Session/File.pm
+lib/perl5/site_perl/%%PERL_VER%%/Apache/Session.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/Session/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/Session
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Apache/Session
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Apache
