@@ -42,6 +42,7 @@
     SUBDIR += eperl
     SUBDIR += erlang
     SUBDIR += erlang-doc
+    SUBDIR += execline
     SUBDIR += expect
     SUBDIR += ezm3
     SUBDIR += f2c
