@@ -1,10 +1,12 @@
-# $Id: Makefile,v 1.8 1998/11/17 04:54:28 jkoshy Exp $
+# $Id: Makefile,v 1.9 1999/05/06 08:18:35 taoka Exp $
 #
 
     SUBDIR += babel
     SUBDIR += hmmer
     SUBDIR += kinemage
+    SUBDIR += molden
     SUBDIR += mopac
+    SUBDIR += platon
     SUBDIR += povchem
     SUBDIR += psi88
     SUBDIR += rasmol
