@@ -8,7 +8,7 @@
 PORTNAME=	kbiff
 PORTVERSION= 	2.3.12
 CATEGORIES=	mail kde
-MASTER_SITES=	http://home.sprintmail.com/~granroth/kbiff/
+MASTER_SITES=	http://granroth.kde.org/kbiff/
 
 MAINTAINER=	kris@FreeBSD.org
 
