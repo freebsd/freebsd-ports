@@ -22,6 +22,12 @@ MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
 		AUTOHEADER="${TRUE}"
 INSTALLS_SHLIB=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == sparc64
+IGNORE=		"is broken on sparc64: interchanges red and blue colour channels in images"
+.endif
+
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
@@ -35,4 +41,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/docs/api/sgml/api.sgml ${DOCSDIR}/API
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
