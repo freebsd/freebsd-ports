@@ -13,8 +13,6 @@ MASTER_SITES=	http://www.icecrew.nl/software/gnoemoe/download/
 MAINTAINER=	jesse@icecrew.nl
 COMMENT=	Gnome MOO Client
 
-LIB_DEPENDS=	vte:${PORTSDIR}/x11-toolkits/vte
-
 USE_RUBY=	yes
 USE_RUBY_FEATURES=	ruby18
 
