@@ -15,7 +15,6 @@ MAINTAINER=	rneswold@enteract.com
 WRKSRC=		${WRKDIR}/wmtime.app/wmtime
 USE_IMAKE=	yes
 USE_XPM=	yes
-NO_INSTALL_MANPAGES= 1
 
 post-extract:
 	${CP} ${WRKSRC}/../Imakefile ${WRKSRC}/Imakefile
