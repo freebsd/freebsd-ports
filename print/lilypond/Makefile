@@ -5,12 +5,11 @@
 #
 # $NetBSD: Makefile,v 1.1.1.1 2000/10/15 17:32:11 rh Exp $
 # $FreeBSD$
-# $Id: Makefile,v 1.15 2004/01/12 21:58:57 patrick Exp $
+# $Id: Makefile,v 1.1 2004/02/05 19:31:41 patrick Exp $
 #
 
 PORTNAME=	lilypond
-PORTVERSION=	2.0.2
-PORTREVISION=	1
+PORTVERSION=	2.0.3
 CATEGORIES=	print audio
 MASTER_SITES=	http://lilypond.org/download/v2.0/ \
 		http://www.atabersk.de/lilypond/
