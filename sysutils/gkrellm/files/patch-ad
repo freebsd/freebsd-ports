@@ -1,7 +1,7 @@
 Index: Makefile.top
 diff -u Makefile.top.orig Makefile.top
---- Makefile.top.orig	Wed May 17 14:33:59 2000
-+++ Makefile.top	Fri May 19 04:52:52 2000
+--- Makefile.top.orig	Sun Jun 18 00:24:58 2000
++++ Makefile.top	Thu Jun 22 09:33:42 2000
 @@ -24,7 +24,7 @@
  #
  # Default
@@ -11,15 +11,16 @@ diff -u Makefile.top.orig Makefile.top
  BINMODE = 755
  
  # FreeBSD 2.X
-@@ -65,11 +65,11 @@
- 	(cd src && ${MAKE} clean)
+@@ -71,12 +71,12 @@
  
  freebsd2:
+ 	(cd locale && ${MAKE} all)
 -	(cd src && ${MAKE} GTK_CONFIG=gtk12-config GTOP_LIBS= GTOP_INCLUDE= \
 +	(cd src && ${MAKE} GTK_CONFIG=$(GTK_CONFIG) GTOP_LIBS= GTOP_INCLUDE= \
  		SYS_LIBS="-lkvm" gkrellm )
  
  freebsd3 freebsd:
+ 	(cd locale && ${MAKE} all)
 -	(cd src && ${MAKE} GTK_CONFIG=gtk12-config GTOP_LIBS= GTOP_INCLUDE= \
 +	(cd src && ${MAKE} GTK_CONFIG=$(GTK_CONFIG) GTOP_LIBS= GTOP_INCLUDE= \
  		SYS_LIBS="-lkvm -ldevstat" gkrellm )

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gkrellm
-PORTVERSION=	0.9.10
+PORTVERSION=	0.10.0
 CATEGORIES=	sysutils ipv6
 MASTER_SITES=	http://web.wt.net/~billw/gkrellm/ \
 		${MASTER_SITE_LOCAL}
@@ -24,7 +24,7 @@ USE_GMAKE=	yes
 MAKE_ENV=	GTK_CONFIG="${GTK_CONFIG}"
 
 INCLUDES=	gkrellm.h gkrellm_public_proto.h gkrellm_private_proto.h
-DOCS=		COPYRIGHT README Themes
+DOCS=		COPYRIGHT README Themes.html
 
 # You should aware that GKrellM must be setuid root to obtain
 # temperatures.  If your motherboard doesn't support LM78/79 feature,
