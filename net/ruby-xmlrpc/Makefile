@@ -7,6 +7,7 @@
 
 PORTNAME=	xmlrpc
 PORTVERSION=	1.7.2
+PORTREVISION=	1
 CATEGORIES=	net ruby
 MASTER_SITES=	http://www.fantasy-coders.de/ruby/xmlrpc4r/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -16,7 +17,8 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	knu@FreeBSD.org
 
 RUN_DEPENDS=	${RUBY_SITELIBDIR}/nqxml/info.rb:${PORTSDIR}/textproc/ruby-nqxml \
-		${RUBY_SITELIBDIR}/TCPSocketPipe.rb:${PORTSDIR}/net/ruby-tcpsocketpipe
+		${RUBY_SITELIBDIR}/TCPSocketPipe.rb:${PORTSDIR}/net/ruby-tcpsocketpipe \
+		${RUBY_SITELIBDIR}/GServer.rb:${PORTSDIR}/net/ruby-gserver
 # Alternative to ruby-nqxml:
 #		${RUBY_SITELIBDIR}/xmlparser.rb:${PORTSDIR}/textproc/ruby-xmlparser
 
@@ -30,7 +32,7 @@ post-extract:
 	${RM} -rf ${WRKSRC}/samples/monitor
 
 post-patch:
-	${RUBY} -i -pe '$$_ = "FILES2 = %w(GServer.rb)\n" if /^FILES2\s*=/' ${WRKSRC}/install.rb
+	${RUBY} -i -pe '$$_ = "FILES2 = []\n" if /^FILES2\s*=/' ${WRKSRC}/install.rb
 
 do-install:
 	cd ${WRKSRC} && ${RUBY} install.rb
