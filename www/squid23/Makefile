@@ -98,7 +98,7 @@ MAKEFILE=	makefile
 #CONFIGURE_ARGS+= --enable-heap-replacement
 
 post-extract:
-	@${PERL} -pi -e 's|-lpthread|-pthread|g' ${WRKSRC}/configure
+	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 
 post-install:
 	cd ${WRKSRC}/src; make install-pinger

@@ -26,7 +26,7 @@ USE_LIBTOOL=	yes
 CONFIGURE_ENV=	NASM="${LOCALBASE}/bin/nasm"
 CONFIGURE_ARGS=	--enable-video-svga
 
-CFLAGS+=	-D_THREAD_SAFE
+CFLAGS+=	${PTHREAD_CFLAGS}
 
 post-configure:
 	@${PERL} -pi -e 's|^deplibs_check_method=.*|deplibs_check_method=pass_all|' \

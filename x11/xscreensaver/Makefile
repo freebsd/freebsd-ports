@@ -38,7 +38,7 @@ MAN1=		attraction.1 blitspin.1 bouboule.1 braid.1 \
 
 post-patch:
 	@ ${CP} ${WRKSRC}/configure ${WRKSRC}/configure.Patched
-	@ ${SED} -e 's#-lpthread#-pthread#g' \
+	@ ${SED} -e 's#-lpthread#${PTHREAD_LIBS}#g' \
 		${WRKSRC}/configure.Patched > ${WRKSRC}/configure
 
 .include <bsd.port.pre.mk>

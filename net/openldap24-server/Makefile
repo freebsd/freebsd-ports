@@ -41,7 +41,7 @@ CONFIGURE_ARGS+=	--enable-wrappers
 .endif
 
 # math.h uses _REENTRANT and stdio.h uses _THREAD_SAFE, so define both.
-CPPFLAGS+=	-D_REENTRANT -D_THREAD_SAFE \
+CPPFLAGS+=	-D_REENTRANT ${PTHREAD_CFLAGS} \
 		-I${LOCALBASE}/include \
 		-I${LOCALBASE}/include/db3
 LDFLAGS+=	-L${LOCALBASE}/lib

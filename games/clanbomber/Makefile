@@ -16,7 +16,7 @@ LIB_DEPENDS=	clanCore.0:${PORTSDIR}/devel/clanlib
 
 USE_XLIB=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LIBS="-pthread -L${LOCALBASE}/lib" \
+CONFIGURE_ENV=	LIBS="${PTHREAD_LIBS} -L${LOCALBASE}/lib" \
 		CPPFLAGS="-I${LOCALBASE}/include"
 CFLAGS+=	-fpermissive
 

@@ -28,7 +28,7 @@ CONFIGURE_ARGS=		--enable-compat185 \
 			--target=$(ARCH)-unknown-freebsd$(OSREL)
 
 pre-patch:
-	@${PERL} -pi -e 's|-lpthread|-pthread|g' ${WRKSRC}/${CONFIGURE_SCRIPT}
+	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/${CONFIGURE_SCRIPT}
 
 post-patch:
 	@${CHMOD} 755 ${WRKSRC}/${CONFIGURE_SCRIPT}

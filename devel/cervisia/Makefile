@@ -46,13 +46,6 @@ KDE_VERSION?=	2
 .if exists(${X11BASE}/lib/libqt2-mt.so)
 .if exists(${X11BASE}/lib/libXThrStub.so)
 QT_ADD=		-mt
-.if ${OSVERSION} >= 500016
-PTHREAD_CFLAGS=
-PTHREAD_LIBS=	-lc_r
-.else
-PTHREAD_CFLAGS=	-D_THREAD_SAFE
-PTHREAD_LIBS=	-pthread
-.endif
 .else
 QT_ADD=		""
 PTHREAD_CFLAGS=

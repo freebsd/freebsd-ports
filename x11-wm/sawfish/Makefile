@@ -44,7 +44,7 @@ PLIST_SUB+=	GNOME:="@comment "
 .endif
 
 pre-patch:
-	@${PERL} -pi -e 's^-l(pthread|c_r)^-pthread^g ; \
+	@${PERL} -pi -e 's^-l(pthread|c_r)^${PTHREAD_LIBS}^g ; \
 		 s|DATADIRNAME=lib|DATADIRNAME=share|g ; \
 		 s|USE_INCLUDED_LIBINTL=yes|#USE_INCLUDED_LIBINTL=yes|g ; \
 		 s|\$$\(top_builddir\)/intl/libintl.a|-lintl|g' ${WRKSRC}/configure

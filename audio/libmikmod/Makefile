@@ -22,7 +22,7 @@ INSTALLS_SHLIB=	yes
 MAN1=	libmikmod-config.1
 
 pre-patch:
-	@${PERL} -pi -e 's|-lpthread|-pthread|g' ${WRKSRC}/configure
+	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 
 pre-build:
 	${RM} -rf ${WRKSRC}/docs/mikmod.info-*

@@ -35,7 +35,7 @@ CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}" \
 DATAFILE=	main.con
 
 pre-patch:
-	@${PERL} -pi -e 's|-lpthread|-pthread|g' ${WRKSRC}/configure
+	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 	@find ${WRKSRC} \( -name "*.cpp" -or -name "*.h" \) | xargs \
 		${PERL} -pi -e 's|malloc\.h|stdlib.h|g'
 

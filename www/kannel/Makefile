@@ -17,7 +17,7 @@ LIB_DEPENDS=	xml2:${PORTSDIR}/textproc/libxml2
 USE_AUTOCONF=	yes
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/gateway-${PORTVERSION}/
-CFLAGS+=	-pthread
+CFLAGS+=	${PTHREAD_LIBS}
 CONFIGURE_ARGS+=	--with-malloc=native
 
 do-install:

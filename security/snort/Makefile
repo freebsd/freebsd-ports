@@ -34,7 +34,7 @@ CONFIGURE_ARGS+=--with-mysql-includes=${LOCALBASE}/include/mysql \
 LIB_DEPENDS+=	odbc.1:${PORTSDIR}/databases/unixODBC
 CONFIGURE_ARGS+=--with-unixodbc-includes=${LOCALBASE}/include \
 		--with-unixodbc-libraries=${LOCALBASE}/lib
-LDFLAGS+=	-pthread
+LDFLAGS+=	${PTHREAD_LIBS}
 .endif
 
 .if defined(WITH_POSTGRES)

@@ -28,7 +28,7 @@ CONFIGURE_ARGS=	--enable-video-aalib \
 		--disable-arts \
 		--disable-nas
 
-CFLAGS+=	-D_THREAD_SAFE
+CFLAGS+=	${PTHREAD_CFLAGS}
 
 .if exists(/usr/lib/libvgl.so.3)
 CONFIGURE_ARGS+=--enable-video-vgl

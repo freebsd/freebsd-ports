@@ -20,8 +20,8 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libmilter.a:${PORTSDIR}/mail/sendmail
 NO_PACKAGE=	"only with sendmail from the ports"
 
 CTARGETS+=	vbsfilter-1.3
-CFLAGS+=	-Wall -I$(LOCALBASE)/include -D_THREAD_SAFE
-FLAGS+=		-pthread
+CFLAGS+=	-Wall -I$(LOCALBASE)/include ${PTHREAD_CFLAGS}
+FLAGS+=		${PTHREAD_LIBS}
 LDFLAGS+=	-L$(LOCALBASE)/lib
 LIBS+=		-lmilter -lsmutil
 .if defined(SENDMAIL_WITH_SFIO)

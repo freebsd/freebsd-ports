@@ -39,8 +39,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-mozilla-includes="${X11BASE}/include/mozilla" \
 		--with-mozilla-libs="${X11BASE}/lib/${MOZILLA}"
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include \
-			  -D_REENTRANT -D_THREAD_SAFE -fno-rtti" \
-		LIBS="-L${LOCALBASE}/lib -L${WRKSRC} -pthread ${GCC_R_LIB}"
+			  -D_REENTRANT ${PTHREAD_CFLAGS} -fno-rtti" \
+		LIBS="-L${LOCALBASE}/lib -L${WRKSRC} ${PTHREAD_LIBS} ${GCC_R_LIB}"
 
 .if exists(/usr/lib/libgcc_r.a)
 GCC_R_LIB=	-lgcc_r
@@ -56,12 +56,12 @@ post-extract:
 .endif
 
 pre-patch:
-	@${PERL} -pi -e 's|-lpthread|-pthread|g ; \
+	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
 		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
 	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
 		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g ; \
 		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g ; \
-		 s|-lpthread|-pthread|g'
+		 s|-lpthread|${PTHREAD_LIBS}|g'
 
 post-configure:
 	@${PERL} -pi -e 's|%%PREFIX%%|${PREFIX}|g ; \

@@ -53,7 +53,7 @@ pre-extract:
 	@${ECHO} "WITH_XMMS - Support XMMS"
 
 pre-configure:
-	@${PERL} -pi -e "s:-lc_r:-pthread:g" ${WRKSRC}/configure
+	@${PERL} -pi -e "s:-lc_r:${PTHREAD_LIBS}:g" ${WRKSRC}/configure
 
 post-install:
 .if !defined(NOPORTDOCS)
