@@ -15,6 +15,8 @@ COMMENT=	One stop library package by Bruce Guenter
 
 BGLIBS_ROOT?=	${PREFIX}
 
+NOT_FOR_ARCHS=	alpha ia64
+
 DOCS=		NEWS README TODO
 
 pre-build:
