@@ -44,6 +44,8 @@
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/ja/README.rd.ja
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/drb/ja
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/drb
+%%PORTDOCS%%%%RUBY_DOCDIR%%/drb/changelog.rd
+%%PORTDOCS%%%%RUBY_DOCDIR%%/drb/changelog.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/drb/drb-ref.rd
 %%PORTDOCS%%%%RUBY_DOCDIR%%/drb/drb-ref.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/drb/ja/drb-ref.ja.html
