@@ -20,6 +20,8 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:src \
 MAINTAINER=	danfe@regency.nsu.ru
 COMMENT=	An excellent QuakeWorld client
 
+BROKEN=		"Checksum mismatch"
+
 .if defined(WITH_SHAREWARE_DATA)
 DISTFILES+=	q1-shareware-pak0.pak:pak
 PLIST_SUB+=	SHAREWARE=""
