@@ -17,7 +17,7 @@ NO_PACKAGE=	Forbidden - we have patches to the distribution.
 
 ALL_TARGET=
 INSTALL_TARGET=setup check
-USE_PERL=	yes
+USE_PERL5_BUILD=yes
 
 post-patch:
 	@${FIND} ${WRKSRC} -type f -exec \

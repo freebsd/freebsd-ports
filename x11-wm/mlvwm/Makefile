@@ -17,7 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Macintosh like window manager for X11
 
 USE_IMAKE=	yes
-USE_PERL=	yes
+USE_PERL5_BUILD=yes
 USE_XPM=	yes
 MAN1=		mlvwm.1
 

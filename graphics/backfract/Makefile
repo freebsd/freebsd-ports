@@ -14,7 +14,7 @@ MAINTAINER=	patrick@FreeBSD.org
 COMMENT=	Fractal image animated wallpaper program
 
 GNU_CONFIGURE=	yes
-USE_PERL=	yes
+USE_PERL5_BUILD=yes
 USE_X_PREFIX=	yes
 NO_INSTALL_MANPAGE=	yes
 ALL_TARGET= 	# none

@@ -24,7 +24,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/tcl8.2 \
 		      -ltcl82 -ltk82 -lX11 -lm"
 #CFLAGS+=		-lX11 -lm -ltcl82 -ltk82 \
 #			-L${LOCALBASE}/lib -L${X11BASE}/lib
-USE_PERL=	yes
+USE_PERL5_BUILD=yes
 
 MAN6=	tvp.6
 MLINKS=	tvp.6 xprez.6 - aprez.6 - prez.6

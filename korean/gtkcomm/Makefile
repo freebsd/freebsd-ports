@@ -16,7 +16,7 @@ COMMENT=	Serial controlling software, with gtk+ widget
 RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/local/gulim12.pcf.gz:${PORTSDIR}/korean/baekmukfonts-bdf
 
 USE_X_PREFIX=	yes
-USE_PERL=	yes
+USE_PERL5_BUILD=yes
 USE_GNOME=	imlib
 GNU_CONFIGURE=	yes
 

@@ -18,7 +18,7 @@ MAN5=		tw.config.5
 MAN8=		siggen.8 tripwire.8
 NO_CDROM=	"cannot be redistributed for more than the cost of duplication"
 NO_PACKAGE=	"requires local database to be built"
-USE_PERL=	yes
+USE_PERL5_BUILD=yes
 
 TWCONFIG?=	${FILESDIR}/tw.conf.freebsd2
 

@@ -21,7 +21,7 @@ LIB_DEPENDS=	neo82:${PORTSDIR}/devel/tcl-neo
 MAKEFILE=	${FILESDIR}/Makefile.bsd
 WRKSRC=		${WRKDIR}/${DISTNAME}/modules
 MAKE_ENV+=	FILESDIR="${FILESDIR}" INSTALL_DATA="${INSTALL_DATA}"
-USE_PERL=	yes
+USE_PERL5_BUILD=yes
 
 SUBDIRS=	modules neowebscript htdocs # tools
 

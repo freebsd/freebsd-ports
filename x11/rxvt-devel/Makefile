@@ -23,7 +23,7 @@ COMMENT=	A low memory usage xterm replacement that supports color
 
 USE_LIBTOOL=	yes
 
-USE_PERL=	yes
+USE_PERL5_BUILD=yes
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 GNU_CONFIGURE=	yes

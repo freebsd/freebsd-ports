@@ -20,7 +20,7 @@ USE_LINUX_PREFIX=	yes
 NO_CDROM=	"Size; the data set is much too big"
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
-USE_PERL=	yes
+USE_PERL5_BUILD=yes
 RTCWDIR=	usr/games/rtcw
 PLIST_SUB+=	RTCWDIR="${RTCWDIR}"
 INSTALL_DIR=	${INSTALL} -d -o ${BINOWN} -g ${BINGRP} -m 755

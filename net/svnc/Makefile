@@ -24,7 +24,7 @@ DOCFILES=	README
 DOCDIR=		share/doc/${PORTNAME}/
 ONLY_FOR_ARCHS=	i386
 PLIST=		${WRKDIR}/pkg-plist
-USE_PERL=	yes
+USE_PERL5_BUILD=yes
 WRKSRC=		${WRKDIR}/svncviewer
 
 do-patch:

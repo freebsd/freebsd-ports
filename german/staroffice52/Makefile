@@ -44,7 +44,7 @@ LD_PATH=	${TMPDIR}:${WRKSRC}:${LINUXBASE}/lib:${LINUXBASE}/usr/lib
 INSTDB.INS=	${PREFIX}/office52/program/instdb.ins
 SUNSOLVE=	${WRKDIR}/109939-03
 ADABAS_DIST=	soa-5_2-ga-bin-linux-de.bin
-USE_PERL=	yes
+USE_PERL5_BUILD=yes
 
 .include <bsd.port.pre.mk>
 

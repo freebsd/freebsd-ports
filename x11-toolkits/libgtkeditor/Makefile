@@ -21,7 +21,7 @@ LIB_DEPENDS=	unicode.0:${PORTSDIR}/devel/libunicode
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
 USE_GMAKE=	yes
-USE_PERL=	yes
+USE_PERL5_BUILD=yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 

@@ -19,7 +19,7 @@ DOCDIR=		share/doc/${PORTNAME}
 NO_PACKAGE=	"uses GNU getopt with BSDish-licensed code from OpenSSL"
 NO_WRKSUBDIR=	yes
 PLIST=		${WRKDIR}/pkg-plist
-USE_PERL=	yes
+USE_PERL5_BUILD=yes
 USE_ZIP=	yes
 
 post-extract:

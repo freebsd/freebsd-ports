@@ -20,7 +20,7 @@ RUN_DEPENDS=	${JAVAVM}:${PORTSDIR}/java/javavmwrapper \
 
 USE_ZIP=	yes
 USE_XLIB=	yes
-USE_PERL=	yes
+USE_PERL5_BUILD=yes
 NO_BUILD=	yes
 
 JAVAVM=		${LOCALBASE}/bin/javavm

@@ -36,7 +36,7 @@ PREFIX?=	${QMAIL_PORT_PREFIX}
 QMAIL_PORT=	${.CURDIR}/../qmail
 QMAIL_PORT_PREFIX!=	cd ${QMAIL_PORT} && ${MAKE} -V PREFIX
 
-USE_PERL=	yes
+USE_PERL5_BUILD=yes
 
 # Yet anther ugly hack (works due to code inside the main qmail port)
 slaveport-post-patch: qmail-mysql-post-patch

@@ -22,7 +22,7 @@ DISTFILES=	${EXTRACT_ONLY} ${EPHEM}
 MAINTAINER=	ache@FreeBSD.org
 COMMENT=	An astrology program for X11 and alpha-numeric terminals
 
-USE_PERL=	yes
+USE_PERL5_BUILD=yes
 USE_XLIB=	yes
 EXTRACT_CMD=	${SH}
 EXTRACT_BEFORE_ARGS=	# empty

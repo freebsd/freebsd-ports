@@ -18,7 +18,7 @@ COMMENT=	Zangband (Zelazny Angband) with color, X11 support
 USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_AUTOMAKE_VER=14
-USE_PERL=	yes
+USE_PERL5_BUILD=yes
 CONFIGURE_ARGS=	--datadir=${PREFIX}/lib \
 		--with-setgid=${SHAREGRP}
 

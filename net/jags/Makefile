@@ -18,7 +18,7 @@ COMMENT=	JAGS - Just Another GTK+ Samba Client
 USE_GMAKE=	yes
 USE_XPM=	yes
 USE_GNOME=	gtk12
-USE_PERL=	yes
+USE_PERL5_BUILD=yes
 GNU_CONFIGURE=	yes
 
 pre-patch:

@@ -25,7 +25,7 @@ RUN_DEPENDS=	procmail:${PORTSDIR}/mail/procmail
 WRKSRC=		${WRKDIR}/JX-1.5.3
 
 USE_XLIB=	yes
-USE_PERL=	yes
+USE_PERL5_BUILD=yes
 USE_GMAKE=	yes
 MAKE_ARGS=	CC="${CC}" CXX="${CXX}" \
 		CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}"
