@@ -3,7 +3,7 @@
 # Date created:         24 Feb 1999
 # Whom:                 Donald Burr <dburr@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.2 1999/02/28 09:30:56 dburr Exp $
+# $Id: Makefile,v 1.3 1999/05/01 12:34:22 jseger Exp $
 #
 
 DISTNAME=	uox3v6902-linux
@@ -15,7 +15,9 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} tqpsworld${EXTRACT_SUFX}
 
 MAINTAINER=	dburr@FreeBSD.ORG
 
-DIST_SUBDIR=		uox3
+BROKEN=		"Floating exception (core dumped)"
+
+DIST_SUBDIR=	uox3
 USE_ZIP=	YES
 NO_WRKSUBDIR=	YES
 
