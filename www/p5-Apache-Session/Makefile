@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Apache-Session
-PORTVERSION=	1.53
+PORTVERSION=	1.54
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Apache
@@ -25,6 +25,8 @@ MAN3=		Apache::Session.3 \
 		Apache::Session::File.3 \
 		Apache::Session::Flex.3 \
 		Apache::Session::Generate::MD5.3 \
+		Apache::Session::Generate::ModUniqueId.3 \
+		Apache::Session::Generate::ModUsertrack.3 \
 		Apache::Session::Lock::File.3 \
 		Apache::Session::Lock::MySQL.3 \
 		Apache::Session::Lock::Null.3 \
