@@ -1,0 +1,45 @@
+       Net::DNS is a collection of Perl modules to interface with
+       the Domain Name System (DNS) resolver.  It allows the
+       programmer to perform queries that are beyond the
+       capabilities of gethostbyname and gethostbyaddr.
+
+       Resolver Objects
+
+       A resolver object is an instance of the Net::DNS::Resolver
+       class.  A program can have multiple resolver objects, each
+       maintaining its own state information such as the
+       nameservers to be queried, whether recursion is desired,
+       etc.
+
+       Packet Objects
+
+       Net::DNS::Resolver queries return Net::DNS::Packet
+       objects.  Packet objects have five sections:
+
+       o  The header section, a Net::DNS::Header object.
+
+       o  The question section, a list of Net::DNS::Question
+          objects.
+
+       o  The answer section, a list of Net::DNS::RR objects.
+
+       o  The authority section, a list of Net::DNS::RR objects.
+
+       o  The additional section, a list of Net::DNS::RR objects.
+
+       Header Objects
+
+       Net::DNS::Header objects represent the header section of a
+       DNS packet.
+
+       Question Objects
+
+       Net::DNS::Question objects represent the query section of
+       a DNS packet.
+
+       RR Objects
+
+       Net::DNS::RR is the base class for DNS resource record
+       (RR) objects in the answer, authority, and additional
+       sections of a DNS packet.
+
