@@ -21,6 +21,9 @@ USE_REINPLACE=	yes
 
 # No Manual page
 
+post-extract:
+	${FIND} ${WRKSRC} -type d -exec ${CHMOD} +x {} \;
+
 post-configure:
 	(cd ${WRKSRC}; ${MAKE} bsd);
 	${REINPLACE_CMD} -e 's:^INSTALL_PATH = "/usr/local/bugs-.*":INSTALL_PATH = "${PREFIX}/${DISTNAME}":' ${WRKSRC}/Makefile;
