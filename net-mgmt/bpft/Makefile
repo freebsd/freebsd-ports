@@ -16,6 +16,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	aquatique@rusunix.org
 COMMENT=	The BPF Traffic collector
 
+BROKEN=		"Changes permissions of system directories"
+
 CONFLICTS=	trafd-3.0.*
 
 WRKSRC=		${WRKDIR}/bpft
