@@ -8,8 +8,8 @@
 PORTNAME=	geomview
 PORTVERSION=	1.8.1
 CATEGORIES=	graphics tk83
-MASTER_SITES=	http://ftp1.sourceforge.net/geomview/ \
-		ftp://ftp1.sourceforge.net/pub/sourceforge/geomview/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	geomview
 
 MAINTAINER=	fenner@freebsd.org
 COMMENT=	An interactive viewer for 3- and 4-D geometric objects
