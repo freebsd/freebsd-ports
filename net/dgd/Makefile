@@ -4,17 +4,15 @@
 # Whom:			adam
 #
 
-DISTNAME=	dgd-1.0.8
+DISTNAME=	dgd-1.0.9
 DISTFILES=	${DISTNAME}.tar.gz
 
-PATCHFILES=	1.0.8-1.0.8.1.gz 1.0.8.1-1.0.8.2.gz 1.0.8.2-1.0.8.3.gz \
-		1.0.8.3-1.0.8.4.gz 1.0.8.4-1.0.8.5.gz 1.0.8.5-1.0.8.6.gz \
-		1.0.8.6-1.0.8.7.gz 1.0.8.7-1.0.8.8.gz
+PATCHFILES=	1.0.9-1.0.9.1.gz
 .if defined(MASTER_SITE_OVERRIDE)
 PATCHSITE:=	${MASTER_SITE_OVERRIDE}
 .else
 PATCHSITE=	epsilon.me.chalmers.se:
-NCFTPFLAGS=	-P
+NCFTPFLAGS=	-P -V2
 .endif
 _PATCH_COOKIE=	${.CURDIR}/work/._patch_done
 PATCHLIST=	${.CURDIR}/work/.patchlist
