@@ -10,7 +10,7 @@ PORTVERSION=	2.1.3
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://newcorridor.com/pub/upsmon/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	erwin@lansing.dk
 
 MAKEFILE=	makefile.bsdi
 NO_PACKAGE=	"must provide without modifications"
