@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- src/backends/text/Makefile.in	2002/03/01 16:48:42	1.1
++++ src/backends/text/Makefile.in	2002/03/01 16:49:22
+@@ -152,7 +152,7 @@
+ backends_DATA = text.xml
+ backendslib_LTLIBRARIES = text.la
+ 
+-INCLUDES =  	-I$(top_srcdir) 	-I$(includedir) 	-DG_LOG_DOMAIN=\""gtranslator"\" 	$(GLIB_CFLAGS)
++INCLUDES =  	-I$(top_srcdir) 	-I$(includedir) 	$(GNOME_INCLUDEDIR)	-DG_LOG_DOMAIN=\""gtranslator"\" 	$(GLIB_CFLAGS)
+ 
+ 
+ text_la_SOURCES = text.c
