@@ -6,19 +6,17 @@
 #
 
 PORTNAME=	cal.rb
-PORTVERSION=	0.2
+PORTVERSION=	0.21
 CATEGORIES=	japanese deskutils
 MASTER_SITES=	http://aglaia.c.u-tokyo.ac.jp/~yamamoto/Script/Calendar/
 DISTFILES=	cal.rb Calendar.rb era_name
-DIST_SUBDIR=	${PORTNAME}
+DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	fuyuki@hadaly.org
 
 USE_RUBY=	yes
 RUBY_SHEBANG_FILES=	${WRKSRC}/cal.rb
 NO_BUILD=	yes
-
-LIBDIR=		${PREFIX}/libdata/cal
 
 do-extract:
 	${MKDIR} ${WRKSRC}
@@ -27,13 +25,15 @@ do-extract:
 .endfor
 
 post-patch:
-	${RUBY} -i -pe 'sub "chdir(.*)", %q{chdir("${LIBDIR}")}' ${WRKSRC}/cal.rb
+	${RUBY} -i -pe 'sub "./era_name", "${DATADIR}/era_name"' \
+		${WRKSRC}/Calendar.rb
+	${RUBY} -i -pe '/Dir::chdir/ and print "#"' \
+		${WRKSRC}/cal.rb
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/cal.rb ${PREFIX}/bin
-	${MKDIR} ${LIBDIR}
-.for i in Calendar.rb era_name
-	${INSTALL_DATA} ${WRKSRC}/${i} ${LIBDIR}
-.endfor
+	${INSTALL_DATA} ${WRKSRC}/Calendar.rb ${RUBY_SITELIBDIR}
+	${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/era_name ${DATADIR}
 
 .include <bsd.port.mk>
