@@ -1,5 +1,9 @@
-bin/pychecker.sh
+bin/pychecker
+lib/%%PYTHON_VERSION%%/site-packages/pychecker/CHANGELOG
 lib/%%PYTHON_VERSION%%/site-packages/pychecker/COPYRIGHT
+lib/%%PYTHON_VERSION%%/site-packages/pychecker/KNOWN_BUGS
+lib/%%PYTHON_VERSION%%/site-packages/pychecker/MAINTAINERS
+lib/%%PYTHON_VERSION%%/site-packages/pychecker/TODO
 lib/%%PYTHON_VERSION%%/site-packages/pychecker/CodeChecks.py
 lib/%%PYTHON_VERSION%%/site-packages/pychecker/CodeChecks.pyc
 lib/%%PYTHON_VERSION%%/site-packages/pychecker/CodeChecks.pyo
