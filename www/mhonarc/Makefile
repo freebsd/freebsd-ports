@@ -17,7 +17,7 @@ MASTER_SITES=	http://www.mhonarc.org/tar/ \
 		http://www.perl.com/CPAN-local/authors/id/EHOOD/
 DISTNAME=	MHonArc${PORTVERSION}
 
-MAINTAINER=	jkoshy@freebsd.org
+MAINTAINER=	max@freebsd.org
 
 USE_BZIP2=	Yes
 USE_PERL5=	Yes
