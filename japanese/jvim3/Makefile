@@ -3,15 +3,15 @@
 # Date created:         97/10/30
 # Whom:                 Satoshi TAOKA <taoka@infonets.hiroshima-u.ac.jp>
 #
-# $Id: Makefile,v 1.2 1998/10/26 07:32:49 asami Exp $
+# $Id: Makefile,v 1.3 1998/10/28 09:21:51 kuriyama Exp $
 #
 
 DISTNAME=	vim
 PKGNAME?=	ja-jvim-3.0.1.3d
 CATEGORIES=	japanese editors
 MASTER_SITES=	ftp://dutepp0.et.tudelft.nl/pub/Unix/Editors/ \
-		http://spock.vector.co.jp/authors/VA003457/vim/vim3/1.3d/ \
-		http://www.freebsd.org/~kuriyama/distfiles/
+		http://www.freebsd.org/~kuriyama/distfiles/ \
+		http://spock.vector.co.jp/authors/VA003457/vim/vim3/1.3d/
 DISTFILES=	vim-3.0.tar.gz jvim.1.3d.tar.gz
 
 MAINTAINER=	taoka@infonets.hiroshima-u.ac.jp
