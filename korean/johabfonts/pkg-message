@@ -1,5 +1,5 @@
-KAIST Font(x-johab)
-===================
+Hangul X11 fonts(Johab)
+-----------------------
 
 Please note:
 
@@ -20,4 +20,4 @@ Please note:
  add the correct font path after you reboots X.
 
 --
-CHOI Junho <junker@jazz.snu.ac.kr>
+CHOI Junho <cjh@FreeBSD.org>
