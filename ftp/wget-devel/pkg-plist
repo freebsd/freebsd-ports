@@ -1,8 +1,5 @@
 bin/wget
 etc/wgetrc
-@unexec install-info --delete %D/info/wget.info %D/info/dir
-info/wget.info
-@exec install-info %D/info/wget.info %D/info/dir
 share/locale/bg/LC_MESSAGES/wget.mo
 share/locale/ca/LC_MESSAGES/wget.mo
 share/locale/cs/LC_MESSAGES/wget.mo
