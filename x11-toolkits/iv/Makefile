@@ -8,7 +8,7 @@
 PORTNAME=	iv
 PORTVERSION=	3.2a
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	ftp://sgi.com/graphics/interviews/
+MASTER_SITES=	ftp://ftp.sgi.com/graphics/interviews/
 DISTNAME=	${PORTVERSION}
 EXTRACT_SUFX=	.tar.Z
 
