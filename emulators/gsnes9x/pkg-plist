@@ -1,0 +1,35 @@
+bin/GSnes9x
+share/gnome/apps/Games/gsnes9x.desktop
+share/gnome/help/GSnes9x/C/addrom.png
+share/gnome/help/GSnes9x/C/cheat.png
+share/gnome/help/GSnes9x/C/codes.png
+share/gnome/help/GSnes9x/C/format.png
+share/gnome/help/GSnes9x/C/help-2.html
+share/gnome/help/GSnes9x/C/index.html
+share/gnome/help/GSnes9x/C/info.png
+share/gnome/help/GSnes9x/C/joystick.png
+share/gnome/help/GSnes9x/C/main.png
+share/gnome/help/GSnes9x/C/pop.png
+share/gnome/help/GSnes9x/C/readme-snes9x.html
+share/gnome/help/GSnes9x/C/system.png
+share/gnome/help/GSnes9x/C/tooltips.png
+share/gnome/help/GSnes9x/C/topic.dat
+share/gnome/help/GSnes9x/es/addrom.png
+share/gnome/help/GSnes9x/es/cheat.png
+share/gnome/help/GSnes9x/es/codes.png
+share/gnome/help/GSnes9x/es/format.png
+share/gnome/help/GSnes9x/es/index.html
+share/gnome/help/GSnes9x/es/info.png
+share/gnome/help/GSnes9x/es/joystick.png
+share/gnome/help/GSnes9x/es/main.png
+share/gnome/help/GSnes9x/es/pop.png
+share/gnome/help/GSnes9x/es/system.png
+share/gnome/help/GSnes9x/es/tooltips.png
+share/gnome/help/GSnes9x/es/topic.dat
+share/gnome/pixmaps/gsnes9x-icon.png
+share/gnome/pixmaps/gsnesdefault.png
+share/locale/es/LC_MESSAGES/GSnes9x.mo
+share/locale/no/LC_MESSAGES/GSnes9x.mo
+@dirrm share/gnome/help/GSnes9x/es
+@dirrm share/gnome/help/GSnes9x/C
+@dirrm share/gnome/help/GSnes9x
