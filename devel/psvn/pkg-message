@@ -1,0 +1,3 @@
+To use psvn, add the following line to your ~/.emacs:
+
+(require 'psvn)
