@@ -14,7 +14,7 @@ DISTNAME=	skk${SKK10_VER}
 
 MAINTAINER?=	shige@FreeBSD.org
 
-SKK10_VER=	10.57
+SKK10_VER=	10.59
 
 # This port is a master port.
 PORT_CLASS?=	master
@@ -26,11 +26,16 @@ EMACS_PORT_NAME=	emacs20
 
 .include <bsd.port.pre.mk>
 
-# dependency: skk-jisyo
-RUN_DEPENDS+=	${LOCALBASE}/${SKKJISYODIR}/${SKKJISYO}:${SKK_MASTERDIR}
+.if defined(EMACS_PORT_NAME)
 # dependency: apel
 BUILD_DEPENDS+=	${LOCALBASE}/${EMACS_LIBDIR_WITH_VER}/site-lisp/emu/emu.el:${PORTSDIR}/editors/apel-${EMACS_PORT_NAME}
 RUN_DEPENDS+=	${LOCALBASE}/${EMACS_LIBDIR_WITH_VER}/site-lisp/emu/emu.el:${PORTSDIR}/editors/apel-${EMACS_PORT_NAME}
+.else
+.BEGIN:
+	@${ECHO} "Error: Bad port."
+	@${ECHO} "You must define EMACS_PORT_NAME."
+	@${FALSE}
+.endif
 
 WRKSRC=		${WRKDIR}/skk-${SKK10_VER}
 ALL_TARGET?=	elc
@@ -40,12 +45,18 @@ PLIST_SUB=	EMACS=${EMACS_CMD} EMACS_LIBDIR=${EMACS_LIBDIR} \
 		SKK_STARTUPEL=${SKK_STARTUPEL}
 
 # information of skk-jisyo
+WITH_SKKJISYO?=	YES
 SKKJISYODIR=	share/skk
 SKK_DOCDIR=	share/doc/skk10
 SKKJISYO_SIZE?=	L
 SKKJISYO?=	SKK-JISYO.${SKKJISYO_SIZE}
 SKK_MASTERDIR=	${PORTSDIR}/japanese/skk-jisyo
 SKK_STARTUPEL=	skk-startup.el
+
+.if (${WITH_SKKJISYO} == "YES")
+# dependency: skk-jisyo
+RUN_DEPENDS+=	${LOCALBASE}/${SKKJISYODIR}/${SKKJISYO}:${SKK_MASTERDIR}
+.endif
 
 EXPERIMENTAL_LISPS=	experimental/skk-abbrev.el \
 			experimental/dbm/skk-dbm.el \
@@ -56,6 +67,15 @@ EXPERIMENTAL_LISPS=	experimental/skk-abbrev.el \
 			experimental/tut-code/skk-def.el \
 			experimental/tut-code/skk-tutcdef.el \
 			experimental/tut-code/skk-tutcode.el
+
+pre-fetch:
+.if (${WITH_SKKJISYO} == "YES")
+	@${ECHO_MSG} "NOTE: You can avoid installing SKK-JISYO by adding"
+	@${ECHO_MSG} "    WITH_SKKJISYO=NO"
+	@${ECHO_MSG} "to argument of make."
+	@${ECHO_MSG} "When you want to use skkserv, this option is useful."
+	@${ECHO_MSG} "Without it, SKK-JISYO is installed defaultly."
+.endif
 
 # install experimantal lisps [handy optional]
 #pre-build:
@@ -70,23 +90,23 @@ EXPERIMENTAL_LISPS=	experimental/skk-abbrev.el \
 
 post-install:
 	@${MAKE} startup-install
-	@${MKDIR} ${PREFIX}/${SKK_DOCDIR}
+	@${MKDIR} ${LOCALBASE}/${SKK_DOCDIR}
 	@(cd ${WRKSRC} ;\
 		for i in ${EXPERIMENTAL_LISPS} ; do \
-			${INSTALL_DATA} $${i} ${PREFIX}/${SKK_DOCDIR} ;\
+			${INSTALL_DATA} $${i} ${LOCALBASE}/${SKK_DOCDIR} ;\
 		done ;\
 	)
-	@install-info ${PREFIX}/info/skk.info ${PREFIX}/info/dir
+	@install-info ${LOCALBASE}/info/skk.info ${LOCALBASE}/info/dir
 .if !defined(NOPORTDOCS)
-	@${INSTALL_DATA} ${WRKSRC}/READMEs/* ${PREFIX}/${SKK_DOCDIR}
+	@${INSTALL_DATA} ${WRKSRC}/READMEs/* ${LOCALBASE}/${SKK_DOCDIR}
 	@${INSTALL_DATA} ${WRKSRC}/experimental/GUIDELINE \
-					${PREFIX}/${SKK_DOCDIR}
+					${LOCALBASE}/${SKK_DOCDIR}
 	@${INSTALL_DATA} ${WRKSRC}/experimental/dbm/README.dbm \
-					${PREFIX}/${SKK_DOCDIR}
+					${LOCALBASE}/${SKK_DOCDIR}
 .endif
 
 startup-install:
 	@${INSTALL_DATA} ${FILESDIR}/${SKK_STARTUPEL} \
-		${PREFIX}/${EMACS_LIBDIR}/site-lisp/skk
+		${LOCALBASE}/${EMACS_LIBDIR}/site-lisp/skk
 
 .include <bsd.port.post.mk>

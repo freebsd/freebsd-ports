@@ -36,22 +36,18 @@
 %%EMACS_LIBDIR%%/site-lisp/skk/skk-viper.elc
 %%EMACS_LIBDIR%%/site-lisp/skk/skk.el
 %%EMACS_LIBDIR%%/site-lisp/skk/skk.elc
-%%EMACS_LIBDIR%%/site-lisp/skk/stack-m.el
-%%EMACS_LIBDIR%%/site-lisp/skk/stack-m.elc
 %%EMACS_LIBDIR%%/site-lisp/skk/%%SKK_STARTUPEL%%
 @dirrm %%EMACS_LIBDIR%%/site-lisp/skk
 @unexec install-info --delete %D/info/skk.info %D/info/dir
 info/skk.info
-info/skk.info-1
-info/skk.info-2
-info/skk.info-3
-info/skk.info-4
 @exec install-info %D/info/skk.info %D/info/dir
 %%SKK_JISYODIR%%/SKK.tut
 %%SKK_JISYODIR%%/SKK.tut.E
 %%SKK_DOCDIR%%/AUTHORS
 %%SKK_DOCDIR%%/COPYING
-%%SKK_DOCDIR%%/Contriutors
+%%SKK_DOCDIR%%/Contributors
+%%SKK_DOCDIR%%/CVS_digest
+%%SKK_DOCDIR%%/CVS_on_Windows
 %%SKK_DOCDIR%%/GUIDELINE
 %%SKK_DOCDIR%%/INSTALL
 %%SKK_DOCDIR%%/NEWS
