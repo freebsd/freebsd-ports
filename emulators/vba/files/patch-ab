@@ -1,0 +1,64 @@
+*** configure.orig	Sat Aug 23 16:20:50 2003
+--- configure	Fri Sep  5 01:50:01 2003
+***************
+*** 2726,2784 ****
+  
+  fi
+  
+- echo $ac_n "checking for socklen_t""... $ac_c" 1>&6
+- echo "configure:2731: checking for socklen_t" >&5
+- cat > conftest.$ac_ext <<EOF
+- #line 2733 "configure"
+- #include "confdefs.h"
+- #include <sys/socket.h>
+- socklen_t x;
+- 
+- int main() {
+- 
+- ; return 0; }
+- EOF
+- if { (eval echo configure:2742: \"$ac_compile\") 1>&5; (eval $ac_compile) 2>&5; }; then
+-   rm -rf conftest*
+-   echo "$ac_t""yes" 1>&6
+- else
+-   echo "configure: failed program was:" >&5
+-   cat conftest.$ac_ext >&5
+-   rm -rf conftest*
+-   
+- cat > conftest.$ac_ext <<EOF
+- #line 2751 "configure"
+- #include "confdefs.h"
+- #include <sys/socket.h>
+- int accept (int, struct sockaddr *, size_t *);
+- 
+- int main() {
+- 
+- ; return 0; }
+- EOF
+- if { (eval echo configure:2760: \"$ac_compile\") 1>&5; (eval $ac_compile) 2>&5; }; then
+-   rm -rf conftest*
+-   
+- echo "$ac_t""size_t" 1>&6
+- cat >> confdefs.h <<\EOF
+- #define socklen_t size_t
+- EOF
+- 
+- else
+-   echo "configure: failed program was:" >&5
+-   cat conftest.$ac_ext >&5
+-   rm -rf conftest*
+-   
+- echo "$ac_t""int" 1>&6
+- cat >> confdefs.h <<\EOF
+- #define socklen_t int
+- EOF
+- 
+- fi
+- rm -f conftest*
+- fi
+- rm -f conftest*
+- 
+  echo $ac_n "checking whether byte ordering is bigendian""... $ac_c" 1>&6
+  echo "configure:2784: checking whether byte ordering is bigendian" >&5
+  if eval "test \"`echo '$''{'ac_cv_c_bigendian'+set}'`\" = set"; then
+--- 2726,2731 ----
