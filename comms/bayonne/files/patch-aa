@@ -1,0 +1,13 @@
+--- configure.in.orig	Thu Nov  2 07:57:56 2000
++++ configure.in	Thu Nov  2 10:48:06 2000
+@@ -28,7 +28,10 @@
+ OST_CCXX_FOX
+ OST_PORTIO
+ OST_STREAMS
++AC_LANG_SAVE
++AC_LANG_CPLUSPLUS
+ AC_CHECK_LIB(gnugetopt, getopt_long, [LIBS="$LIBS -lgnugetopt"])
++AC_LANG_RESTORE
+ 
+ AC_ARG_WITH(phonedev, [--without-phonedev      Disable phonedev support],
+ 	ost_cv_phonedev_driver=false,

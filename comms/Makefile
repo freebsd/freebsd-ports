@@ -2,6 +2,7 @@
 #
 
     SUBDIR += asmodem
+    SUBDIR += bayonne
     SUBDIR += bpl+
     SUBDIR += conserver
     SUBDIR += ecu

@@ -1,0 +1,8 @@
+Bayonne is a modular multithreaded telephony server that allows one to
+build and deploy script driven telephony voice response applications that
+are either stand-alone or integrated with other existing system services
+thru perl scripts, web servers, etc.  Bayonne initially supports Quicknet
+and Voicetronix hardware under FreeBSD.
+
+- David Sugar
+dyfet@gnu.org
