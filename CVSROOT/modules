@@ -6955,7 +6955,7 @@ p5-HTTP-Proxy	ports/www/p5-HTTP-Proxy
 p5-HTTP-Recorder	ports/www/p5-HTTP-Recorder
 p5-HTTP-WebTest	ports/www/p5-HTTP-WebTest
 p5-HTTPD-Log-Filter	ports/www/p5-HTTPD-Log-Filter
-p5-HTTPD-User-Manage	ports/www/p5-User-Manage
+p5-HTTPD-User-Manage	ports/www/p5-HTTPD-User-Manage
 p5-Hash-Merge	ports/textproc/p5-Hash-Merge
 p5-Heap		ports/devel/p5-Heap
 p5-Heap-Simple	ports/devel/p5-Heap-Simple
