@@ -7,6 +7,7 @@
 
 PORTNAME=	kipi-plugins
 PORTVERSION=	0.1.b.1
+PORTEPOCH=	1
 CATEGORIES=	graphics kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	digikam
@@ -151,5 +152,8 @@ PLIST_SUB+=	WALLPAPER:="@comment "
 post-patch::
 	@${REINPLACE_CMD} -e 's@-lpthread@${PTHREAD_LIBS}@g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's@%%SUBDIRS%%@${SUBDIRS}@g' ${WRKSRC}/kipi-plugins/Makefile.in
+	@${REINPLACE_CMD} -e 's@\/usr\/bin\/k3b@${PREFIX}\/bin\/k3b@g' \
+		${WRKSRC}/kipi-plugins/cdarchiving/cdarchiving.cpp \
+		${WRKSRC}/kipi-plugins/cdarchiving/cdarchivingdialog.cpp
 
 .include <bsd.port.post.mk>
