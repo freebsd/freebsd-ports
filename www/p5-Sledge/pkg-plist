@@ -6,11 +6,13 @@ bin/sledge-setup
 %%SITE_PERL%%/Sledge/Charset/Default.pm
 %%SITE_PERL%%/Sledge/Charset/Null.pm
 %%SITE_PERL%%/Sledge/Charset/Shift_JIS.pm
+%%SITE_PERL%%/Sledge/Charset/UTF8.pm
 %%SITE_PERL%%/Sledge/Config.pm
 %%SITE_PERL%%/Sledge/Constants.pm
 %%SITE_PERL%%/Sledge/Doc/FAQ.pod
 %%SITE_PERL%%/Sledge/Doc/Hooks.pod
 %%SITE_PERL%%/Sledge/Doc/Install.pod
+%%SITE_PERL%%/Sledge/Doc/Overview.pod
 %%SITE_PERL%%/Sledge/Doc/Tutorial.pod
 %%SITE_PERL%%/Sledge/Exception.pm
 %%SITE_PERL%%/Sledge/Exceptions.pm
@@ -27,10 +29,12 @@ bin/sledge-setup
 %%SITE_PERL%%/Sledge/Request/Upload.pm
 %%SITE_PERL%%/Sledge/Session.pm
 %%SITE_PERL%%/Sledge/Session/DBI.pm
+%%SITE_PERL%%/Sledge/Session/File.pm
 %%SITE_PERL%%/Sledge/Session/MySQL.pm
 %%SITE_PERL%%/Sledge/Session/Pg.pm
 %%SITE_PERL%%/Sledge/Session/SQLite.pm
 %%SITE_PERL%%/Sledge/SessionManager.pm
+%%SITE_PERL%%/Sledge/SessionManager/Any.pm
 %%SITE_PERL%%/Sledge/SessionManager/Cookie.pm
 %%SITE_PERL%%/Sledge/SessionManager/Rewrite.pm
 %%SITE_PERL%%/Sledge/SessionManager/StickyQuery.pm
