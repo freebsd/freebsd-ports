@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	spamass-rules
-PORTVERSION=	20040807
+PORTVERSION=	20040811
 CATEGORIES=	mail
 MASTER_SITES=	http://www.ranner.jawa.at/stuff/
 
@@ -15,13 +15,16 @@ COMMENT=	Custom rulesets for SpamAssassin
 
 RUN_DEPENDS=	spamc:${PORTSDIR}/mail/p5-Mail-SpamAssassin
 
-OPTIONS=	AIRMAX "Some custom rulesets" off \
+OPTIONS=	AHBL "Check AHBL Blacklist" off \
+		AIRMAX "Some custom rulesets" off \
 		ANTIDRUG "Catch those pesky 'pill spams'" on \
 		BACKHAIR "Catch those ugly, unsightly HTML tags" on \
 		BOGUS_VIRUS "Catch 'collateral spam' caused by viruses" on \
+		BRAZILIAN "Catches spam written in Portuguese" off \
 		CHICKENPOX "Catch spam like 'l.ooks f|or th.is garb+age'" on \
 		EVILNUMBERS "Phone numbers, PO boxes, ... from spam " on \
-		FRENCH "Catches spams written in French" off \
+		FRENCH "Catches spam written in French" off \
+		GERMAN "Catches spam written in German" off \
 		RANDOM "Detects spamware mistakes like: %RANDOM_WORD" on \
 		SARE "Installs safe SARE rules" on \
 		SARE1 "Installs more restrictive SARE rules" off \
@@ -35,9 +38,14 @@ NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 SPAMASS_CONF=	etc/mail/spamassassin
 SPAMASS_FILES=
+USE_BZIP2=	yes
 INSTALL_DIR=	${PREFIX}/${SPAMASS_CONF}
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_AHBL)
+SPAMASS_FILES+=	20_dnsbl_ahbl.cf
+.endif
 
 .if defined(WITH_AIRMAX)
 SPAMASS_FILES+=	airmax.cf
@@ -55,6 +63,13 @@ SPAMASS_FILES+=	backhair.cf
 SPAMASS_FILES+=	bogus-virus-warnings.cf
 .endif
 
+.if defined(WITH_BRAZILIAN)
+.for i in 24_br_wiki_BODY.cf 24_br_wiki_HEADER.cf 24_br_wiki_META.cf \
+	24_br_wiki_RAWBODY.cf 24_br_wiki_URI.cf
+SPAMASS_FILES+=	$i
+.endfor
+.endif
+
 .if defined(WITH_CHICKENPOX)
 SPAMASS_FILES+=	chickenpox.cf
 .endif
@@ -65,6 +80,12 @@ SPAMASS_FILES+=	evilnumbers.cf
 
 .if defined(WITH_FRENCH)
 SPAMASS_FILES+=	french_rules.cf
+.endif
+
+.if defined(WITH_GERMAN)
+.for i in 24_de_wiki_BODY.cf 24_de_wiki_HEADER.cf 24_de_wiki_URI.cf
+SPAMASS_FILES+=	$i
+.endfor
 .endif
 
 .if defined(WITH_RANDOM)
