@@ -44,7 +44,7 @@ symlink-inc:
 
 symlink-lib:
 .for file in ${LIB_FILES}
-	@${LN} -fs ${file} ${PREFIX}/${LIB_SUBDIR}/${file:E}
+	@${LN} -fs ${file} ${PREFIX}/${LIB_SUBDIR}/${file:R}
 .endfor
 
 install-doc:
