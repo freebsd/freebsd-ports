@@ -1,0 +1,31 @@
+bin/cpp2html
+share/cpp2html/tags.j2h
+share/doc/cpp2html/COPYING
+share/doc/cpp2html/ChangeLog
+share/doc/cpp2html/INSTALL
+share/doc/cpp2html/NEWS
+share/doc/cpp2html/README
+share/doc/cpp2html/README.compile_VC6
+share/doc/cpp2html/THANKS
+share/doc/cpp2html/TODO.txt
+share/doc/cpp2html/cmdline.c.html
+share/doc/cpp2html/cmdline.h.html
+share/doc/cpp2html/colors.html
+share/doc/cpp2html/cpp2html.css
+share/doc/cpp2html/cpp2html.html
+share/doc/cpp2html/decorators.h.html
+share/doc/cpp2html/footer.html
+share/doc/cpp2html/generators.cc.html
+share/doc/cpp2html/generators.h.html
+share/doc/cpp2html/header.html
+share/doc/cpp2html/list.h.html
+share/doc/cpp2html/mails.txt
+share/doc/cpp2html/main.cc.html
+share/doc/cpp2html/main.h.html
+share/doc/cpp2html/messages.cc.html
+share/doc/cpp2html/mono-alt.css
+share/doc/cpp2html/mono.css
+share/doc/cpp2html/tags.cc.html
+share/doc/cpp2html/tags.h.html
+@dirrm share/cpp2html
+@dirrm share/doc/cpp2html
