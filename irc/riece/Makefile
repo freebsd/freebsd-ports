@@ -6,6 +6,7 @@
 
 PORTNAME=	riece
 PORTVERSION=	1.0.4
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	irc elisp
 MASTER_SITES=	http://wiliki.designflaw.org/riece/
