@@ -14,7 +14,7 @@ DISTFILES=	# none
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	Emacs lisp modules for the Ruby language
 
-BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/${RUBY_PORT}:patch
+EXTRACT_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/${RUBY_PORT}:patch
 
 USE_RUBY=	yes
 RUBY_VER=	1.8
