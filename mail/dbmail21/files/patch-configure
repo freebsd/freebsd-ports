@@ -1,0 +1,29 @@
+--- configure.orig	Mon Oct  6 18:12:06 2003
++++ configure	Mon Oct  6 18:13:28 2003
+@@ -842,19 +842,22 @@
+ 
+ 
+ mysqllibpaths="/usr/lib /usr/local/lib /lib /usr/freeware/lib \
+-               /usr/freeware/lib32 $HOME/lib $HOME/tcl/lib $HOME"
++               /usr/freeware/lib32 $HOME/lib $HOME/tcl/lib $HOME \
++               $LOCALBASE/lib $PREFIX/lib"
+ mysqlheaderpaths="/usr/include/mysql /usr/include /usr/local/include/mysql \
+                   /usr/local/include /usr/freeware/include/mysql \
+                   /usr/freeware/include $HOME/include $HOME/mysql/include \
+-                  $HOME"
++                  $HOME $LOCALBASE/include/mysql $PREFIX/include/mysql"
+ 
+ pgsqllibpaths="/usr/lib /usr/local/lib /lib /usr/freeware/lib \
+-               /usr/freeware/lib32 $HOME/lib $HOME/tcl/lib $HOME"
++               /usr/freeware/lib32 $HOME/lib $HOME/tcl/lib $HOME \
++	       $LOCALBASE/lib $PREFIX/lib"
+ 
+ pgsqlheaderpaths="/usr/include/pgsql /usr/include /usr/local/include/pgsql \
+                   /usr/local/include /usr/freeware/include/pgsql \
+                   /usr/freeware/include $HOME/include $HOME/pgsql/include \
+-		  /usr/local/pgsql/include $HOME"
++		  /usr/local/pgsql/include $HOME \
++		  $LOCALBASE/include/pgsql $PREFIX/include/pgsql"
+ 
+ # Check whether --with-mysql or --without-mysql was given.
+ if test "${with_mysql+set}" = set; then
