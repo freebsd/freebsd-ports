@@ -204,6 +204,7 @@
     SUBDIR += py-imaging-handbook
     SUBDIR += py-ming
     SUBDIR += py-opengl
+    SUBDIR += py-paint
     SUBDIR += qcread
     SUBDIR += qdraw
     SUBDIR += qiv
