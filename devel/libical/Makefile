@@ -29,4 +29,8 @@ CONFIGURE_ARGS=	--enable-python=no
 PLIST_SUB+=     PYTHON:="@comment "
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.if ${ARCH} == "amd64"
+CONFIGURE_ENV=	CFLAGS="${CFLAGS} -fPIC"
+.endif
+.include <bsd.port.post.mk>
