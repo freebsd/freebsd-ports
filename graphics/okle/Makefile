@@ -12,10 +12,10 @@ MASTER_SITES=	http://okle.sourceforge.net/
 
 MAINTAINER=	lioux@FreeBSD.org
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/ogle/libdvdcontrol.so.8:${PORTSDIR}/graphics/ogle \
-		autoconf:${PORTSDIR}/devel/autoconf
+BUILD_DEPENDS=	${LOCALBASE}/lib/ogle/libdvdcontrol.so.8:${PORTSDIR}/graphics/ogle
 RUN_DEPENDS=	ogle:${PORTSDIR}/graphics/ogle
 
+USE_AUTOCONF_VER=	253
 USE_KDELIBS_VER=	3
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
@@ -37,7 +37,7 @@ pre-everything::
 .endif
 
 pre-configure:
-	@cd ${WRKSRC} && ${LOCALBASE}/bin/autoconf && ${LOCALBASE}/bin/autoheader
+	@cd ${WRKSRC} && ${AUTOCONF} && ${AUTOHEADER}
 
 .include <bsd.port.pre.mk>
 
