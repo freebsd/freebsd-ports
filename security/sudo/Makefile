@@ -3,7 +3,7 @@
 # Date created:         Sun Aug 13 12:36:14 CDT 1995
 # Whom:                 erich@rrnet.com
 #
-# $Id: Makefile,v 1.10 1998/01/13 13:49:01 erich Exp $
+# $Id: Makefile,v 1.11 1998/10/23 14:29:31 vanilla Exp $
 #
 
 DISTNAME=	cu-sudo.v1.5.6p3
@@ -13,6 +13,8 @@ MASTER_SITES=	ftp://ftp.cs.colorado.edu/pub/sysadmin/sudo/
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	erich@FreeBSD.ORG
+
+BROKEN=		fetch
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-C2 --with-skey --with-fbsdops
