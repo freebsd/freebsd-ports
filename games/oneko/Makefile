@@ -24,10 +24,12 @@ COMMENT=	A cat chasing a mouse all over the screen
 
 BUILD_DEPENDS=	nkf:${PORTSDIR}/japanese/nkf
 
+BROKEN=		Incomplete pkg-plist
+
 GNU_CONFIGURE=	yes
 USE_X_PREFIX=	yes
 MAN6=		oneko.6
-MANLANG=	. ja
+MANLANG=	"" ja
 WRKSRC=		${WRKDIR}/${PORTNAME}
 INSTALL_TARGET=	install install.man
 MAKE_ARGS=	MANSUFFIX=6 \
