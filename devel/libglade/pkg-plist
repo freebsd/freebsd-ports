@@ -1,7 +1,6 @@
 bin/libglade-config
 bin/libglade-xgettext
 etc/libgladeConf.sh
-include/glade
 include/libglade-1.0/glade/glade-build.h
 include/libglade-1.0/glade/glade-widget-tree.h
 include/libglade-1.0/glade/glade-xml.h
