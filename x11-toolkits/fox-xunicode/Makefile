@@ -11,8 +11,7 @@ PORTVERSION=	0.99.174
 PORTREVISION=	1
 
 MAINTAINER=	ports@FreeBSD.org
-
-COMMENTFILE=	${.CURDIR}/pkg-comment
+COMMENT=	FOX with Unicode support
 
 WITH_XUNICODE=	yes
 
