@@ -1,0 +1,6 @@
+bin/xds-config
+include/xds.h
+lib/libxds.a
+lib/libxds.la
+lib/libxds.so
+lib/libxds.so.9
