@@ -22,12 +22,3 @@
  # libraries
  LDLIBS  := @LDLIBS@
  
-@@ -131,7 +120,7 @@
- ar_lib		= rm -f $@ && ar -r $@ $^ && ranlib $@
- 
- # non-verbose output
--VERBOSE		= no
-+VERBOSE		= yes
- ifeq ($(VERBOSE),yes)
- echo_compile_c	= echo $(compile_c)
- echo_compile_cc	= echo $(compile_cc)

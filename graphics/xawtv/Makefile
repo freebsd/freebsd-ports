@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	xawtv
-PORTVERSION=	3.79
+PORTVERSION=	3.82
 CATEGORIES=	graphics
 MASTER_SITES=	http://bytesex.org/xawtv/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	lehmann@ans-netz.de
 
+BUILD_DEPENDS=	iconv:${PORTSDIR}/converters/libiconv
 LIB_DEPENDS=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d \
 		png.5:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
@@ -26,6 +27,8 @@ USE_XPM=	yes
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
 
+MAKE_ENV=	verbose=yes
+
 FILES_LIBJPEG=	console/Subdir.mk debug/Subdir.mk x11/Subdir.mk
 
 MAN1=		alevtd.1 dump-mixers.1 fbtv.1 mtt.1 motv.1 ntsc-cc.1 pia.1 \
@@ -37,19 +40,14 @@ MAN8=		v4l-conf.8
 
 .include <bsd.port.pre.mk>
 
-.if ${XFREE86_VERSION} == 4
-BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11/XFree86-4-clients
-RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
-.endif
-
 PLIST_SUB+=	X11PREFIX=${X11BASE}
 
 post-patch:
-	${REINPLACE_CMD} -e "s|/usr/X11R6|${X11BASE}|g" \
+	@${REINPLACE_CMD} -e "s|/usr/X11R6|${X11BASE}|g" \
 		-e "s|/usr/local|${LOCALBASE}|g" ${WRKSRC}/configure
 
 .for i in ${FILES_LIBJPEG}
-	${REINPLACE_CMD} -e "s|-ljpeg|-L${LOCALBASE}/lib -ljpeg|g" ${WRKSRC}/$i
+	@${REINPLACE_CMD} -e "s|-ljpeg|-L${LOCALBASE}/lib -ljpeg|g" ${WRKSRC}/$i
 .endfor
 
 .include <bsd.port.post.mk>
