@@ -6,7 +6,7 @@ Set of modules:
 * Pod::Text::Color - convert POD data to formatted color ASCII text
 * Pod::Text::Overstrike - convert POD data to formatted overstrike text
 
-WWW: http://search.cpan.org/search?dist=podlators
+WWW: http://search.cpan.org/dist/podlators/
 
 -- Sergey Skvortsov
 skv@FreeBSD.org
