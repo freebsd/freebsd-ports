@@ -1,9 +1,0 @@
-lib/libkmsn.la
-lib/libkmsn.so
-lib/libkmsn.so.1
-include/kmsn/msn.h
-include/kmsn/msnuser.h
-include/kmsn/switchboard.h
-@dirrm include/kmsn
-share/locale/nl/LC_MESSAGES/libkmsn.mo
-share/locale/de/LC_MESSAGES/libkmsn.mo

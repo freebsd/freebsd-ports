@@ -222,10 +222,8 @@
     SUBDIR += jwhois
     SUBDIR += kdenetwork3
     SUBDIR += kdetelnet
-    SUBDIR += kinkatta
     SUBDIR += kio_fish
     SUBDIR += kmess
-    SUBDIR += kmsn
     SUBDIR += konverse
     SUBDIR += kopete
     SUBDIR += krdesktop
@@ -239,7 +237,6 @@
     SUBDIR += libfreenet
     SUBDIR += libicq
     SUBDIR += libicq2000
-    SUBDIR += libkmsn
     SUBDIR += libnet
     SUBDIR += libnids
     SUBDIR += libosip
