@@ -14,6 +14,7 @@ MAINTAINER=	trevor@FreeBSD.org
 
 HAS_CONFIGURE=	yes
 PLIST=		${WRKDIR}/pkg-plist
+USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 WANT_GTK=	yes
 SCRIPTS=	${WRKSRC}/scriptdir
