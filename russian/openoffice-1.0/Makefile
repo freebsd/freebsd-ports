@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-CATEGORIES=     russian editors
+CATEGORIES=     russian
 
 .if !defined (LANG) && !defined(USE_LANG)
 USE_LANG=	ru_RU.KOI8-R

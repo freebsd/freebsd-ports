@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-CATEGORIES=	german editors
+CATEGORIES=	german
 
 .if !defined (LANG) && !defined(USE_LANG)
 USE_LANG=	de_DE.ISO8859-15
