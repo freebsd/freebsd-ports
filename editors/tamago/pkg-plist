@@ -32,6 +32,7 @@
 %%ELISPDIR%%/egg/its-keydef.elc
 %%ELISPDIR%%/egg/its.el
 %%ELISPDIR%%/egg/its.elc
+%%ELISPDIR%%/egg/its/.nosearch
 %%ELISPDIR%%/egg/its/ascii.el
 %%ELISPDIR%%/egg/its/ascii.elc
 %%HAS_JISX0213%%%%ELISPDIR%%/egg/its/aynu.el
@@ -50,6 +51,8 @@
 %%ELISPDIR%%/egg/its/hira.elc
 %%ELISPDIR%%/egg/its/jeonkak.el
 %%ELISPDIR%%/egg/its/jeonkak.elc
+%%ELISPDIR%%/egg/its/jiskana.el
+%%ELISPDIR%%/egg/its/jiskana.elc
 %%ELISPDIR%%/egg/its/kata.el
 %%ELISPDIR%%/egg/its/kata.elc
 %%ELISPDIR%%/egg/its/pinyin.el
