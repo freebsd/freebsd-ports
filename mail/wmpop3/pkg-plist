@@ -1,0 +1,5 @@
+bin/wmpop3
+share/examples/wmpop3/wmpop3rc
+share/doc/wmpop3/README
+@dirrm share/examples/wmpop3
+@dirrm share/doc/wmpop3
