@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	gcompris2
-PORTVERSION=	6.5.1
+PORTVERSION=	6.5.2
 CATEGORIES=	games gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gcompris
-DISTNAME=	gcompris-${PORTVERSION:S/.r/RC/}
+DISTNAME=	gcompris-${PORTVERSION}
 
 MAINTAINER=	gnome@freebsd.org
 COMMENT=	Gnome2 educational games and activities for kids ages 2 to 10
