@@ -21,14 +21,7 @@ info/geomview-3
 info/geomview-4
 info/geomview-5
 libexec/geomview/bin/x11/gvx
-libexec/geomview/bin/x11/gvx.OGL
-libexec/geomview/modules/tcl/3D-Snapshot
-libexec/geomview/modules/tcl/Colormap
-libexec/geomview/modules/tcl/Crayola
-libexec/geomview/modules/tcl/Labeler
-libexec/geomview/modules/tcl/NDdemo
-libexec/geomview/modules/tcl/NDview
-libexec/geomview/modules/tcl/Slicer
+libexec/geomview/bin/x11/gvx.X11
 libexec/geomview/modules/x11/.geomview-3D-Snapshot
 libexec/geomview/modules/x11/.geomview-Colormap
 libexec/geomview/modules/x11/.geomview-Crayola
@@ -59,6 +52,7 @@ libexec/geomview/modules/x11/clipboard
 libexec/geomview/modules/x11/cplxview
 libexec/geomview/modules/x11/drawbdy
 libexec/geomview/modules/x11/emodule_wish
+libexec/geomview/modules/x11/emodule_wish.sh
 libexec/geomview/modules/x11/example
 libexec/geomview/modules/x11/flythrough
 libexec/geomview/modules/x11/ginsu
@@ -407,13 +401,20 @@ share/geomview/data/things/xyz.vect
 share/geomview/maple/Makefile
 share/geomview/maple/README.gvplot
 share/geomview/maple/gvplot.mapleV3
+share/geomview/maple/gvplot.mapleV4
 share/geomview/maple/remotegv
 share/geomview/mathematica/BezierPlot.m
 share/geomview/mathematica/Geomview.m
 share/geomview/mathematica/OOGL.m
+share/geomview/modules/tcl/3D-Snapshot
+share/geomview/modules/tcl/Colormap
+share/geomview/modules/tcl/Crayola
+share/geomview/modules/tcl/Labeler
+share/geomview/modules/tcl/NDdemo
+share/geomview/modules/tcl/NDview
+share/geomview/modules/tcl/Slicer
 @dirrm libexec/geomview/bin/x11
 @dirrm libexec/geomview/bin
-@dirrm libexec/geomview
 @dirrm libexec/geomview/modules/tcl
 @dirrm libexec/geomview/modules/x11
 @dirrm libexec/geomview/modules
@@ -442,4 +443,5 @@ share/geomview/mathematica/OOGL.m
 @dirrm share/geomview/data
 @dirrm share/geomview/maple
 @dirrm share/geomview/mathematica
+@dirrm share/geomview/modules
 @dirrm share/geomview
