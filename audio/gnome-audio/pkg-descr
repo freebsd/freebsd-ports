@@ -1,0 +1,3 @@
+This module holds sound files for use with GNOME. Stick them in the
+'sounds' directory here, or a subdirectory thereof - the whole tree will
+be copied over into $(gnome_prefix)/share/gnome/sounds.
