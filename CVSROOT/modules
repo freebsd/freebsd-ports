@@ -1225,6 +1225,7 @@ cucipop		ports/mail/cucipop
 cue2toc		ports/audio/cue2toc
 cuecat		ports/misc/cuecat
 cuetools	ports/audio/cuetools
+cupid		ports/multimedia/cupid
 cups		ports/print/cups
 cups-base	ports/print/cups-base
 cups-lpr	ports/print/cups-lpr
