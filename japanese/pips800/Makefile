@@ -2,7 +2,7 @@
 # Date created:        00/04/18
 # Whom:                Satoshi Taoka <taoka@FreeBSD.org>
 #
-# $FreeBSD: /tmp/pcvs/ports/japanese/pips800/Attic/Makefile,v 1.4 2001-02-06 13:21:56 olgeni Exp $
+# $FreeBSD: /tmp/pcvs/ports/japanese/pips800/Attic/Makefile,v 1.5 2001-03-09 04:56:00 taoka Exp $
 #
 
 PORTNAME=	pips${PRTYPE}
@@ -13,9 +13,9 @@ DISTFILES=	# empty
 
 MAINTAINER=	taoka@FreeBSD.org
 
-RUN_DEPENDS=	/compat/linux/usr/share/locale/ja_JP/LC_COLLATE:${PORTSDIR}/japanese/linux_locale
+RUN_DEPENDS=	${PREFIX}/usr/share/locale/ja_JP/LC_COLLATE:${PORTSDIR}/japanese/linux_locale
 
-PREFIX=		/compat/linux
+USE_LINUX_PREFIX=	yes
 NO_BUILD=       yes
 USE_PERL5=	yes
 ONLY_FOR_ARCHS= i386
@@ -27,9 +27,9 @@ DESCR=		${.CURDIR}/pkg-descr
 
 PRTYPE?=	800
 .if (${PORTVERSION} == 1.3)
-RUN_DEPENDS+=	/compat/linux/usr/lib/libpm${PRTYPE}c.so:${PORTSDIR}/print/pips${PRTYPE}
+RUN_DEPENDS+=	${PREFIX}/usr/lib/libpm${PRTYPE}c.so:${PORTSDIR}/print/pips${PRTYPE}
 .else
-RUN_DEPENDS+=	/compat/linux/usr/lib/libPrt${PRTYPE}.so:${PORTSDIR}/print/pips${PRTYPE}
+RUN_DEPENDS+=	${PREFIX}/usr/lib/libPrt${PRTYPE}.so:${PORTSDIR}/print/pips${PRTYPE}
 .endif
 
 do-install:     # empty
