@@ -128,7 +128,6 @@
     SUBDIR += easysoap
     SUBDIR += echolot
     SUBDIR += echoping
-    SUBDIR += edonkey-core
     SUBDIR += edonkey-gui-gtk
     SUBDIR += edonkey-gui-gtk-urlslave
     SUBDIR += edonkey-gui-java
@@ -295,6 +294,8 @@
     SUBDIR += linc
     SUBDIR += linphone
     SUBDIR += linpopup
+    SUBDIR += linux-agsatellite
+    SUBDIR += linux-edonkey-core
     SUBDIR += linux-edonkey-gui-gtk
     SUBDIR += linux-edonkey-server
     SUBDIR += linux-jigdo
@@ -710,6 +711,7 @@
     SUBDIR += xipmsg
     SUBDIR += xisp
     SUBDIR += xmlrpc-c
+    SUBDIR += xnap
     SUBDIR += xprobe
     SUBDIR += xsmbrowser
     SUBDIR += xtraceroute
