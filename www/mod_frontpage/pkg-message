@@ -27,6 +27,14 @@ FrontPageAdminDisable	# Disable Frontpage Extensions fpadmcgi.exe
 
 After you have made these changes, you'll have to execute:
 
-/usr/local/frontpage/version5.0/fp_install.sh
+%%PREFIX%%/frontpage/version5.0/fp_install.sh
+
+
+If you have installed the port in another PREFIX than "/usr/local"
+you have to create a symlink. Microsoft has hardcoded the local
+path in their binarys. If you do not use fp_install.sh, you have
+to create the link manually:
+
+ln -s %%PREFIX%%/frontpage /usr/local/frontpage
 
 ************************************************************************

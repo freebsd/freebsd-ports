@@ -65,6 +65,11 @@ pre-fetch:
 	
 
 post-install:
-		@${CAT} ${PKGMESSAGE}
+.if (${PREFIX} != "/usr/local")
+	@${CAT} ${PKGMESSAGE} | ${SED} -e 's|%%PREFIX%%|${PREFIX}|'
+.else
+	@${CAT} ${PKGMESSAGE} | ${SED} -e 's|%%PREFIX%%|${PREFIX}|' \
+	    | ${GREP} -v "ln"
+.endif
 
 .include <bsd.port.post.mk>
