@@ -1,0 +1,12 @@
+--- util.c.orig	Sun Dec  1 16:07:11 2002
++++ util.c	Sun Dec  1 16:07:29 2002
+@@ -585,8 +585,8 @@
+ local_strerror(e)
+ int e;
+ {
+-	extern int sys_nerr;
+ #if !defined(__FreeBSD__)
++	extern int sys_nerr;
+ 	extern char *sys_errlist[];
+ #endif
+ 
