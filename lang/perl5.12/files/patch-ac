@@ -1,31 +1,27 @@
 $FreeBSD$
 
---- hints/freebsd.sh.orig	Sun Apr  8 06:09:16 2001
-+++ hints/freebsd.sh	Sat Jun  1 23:41:18 2002
-@@ -85,10 +85,17 @@
- 	d_setreuid='define'
- 	d_setegid='undef'
- 	d_seteuid='undef'
-+	d_dosuid='define'
- 	;;
- *)	usevfork='true'
- 	usemymalloc='n'
+--- hints/freebsd.sh.orig	Sat Jun  1 19:03:12 2002
++++ hints/freebsd.sh	Sat Jul 20 22:51:05 2002
+@@ -98,6 +98,13 @@
+ 	        ;;
+ 	esac
  	libswanted=`echo $libswanted | sed 's/ malloc / /'`
 + 	libswanted=`echo $libswanted | sed 's/ bind / /'`
++	libswanted=`echo $libswanted | sed 's/ iconv / /'`
 +	d_setregid='define'
 +	d_setreuid='define'
-+	d_setegid='undef'
-+	d_seteuid='undef'
++	d_setegid='define'
++	d_seteuid='define'
 +	d_dosuid='define'
  	;;
  esac
  
-@@ -115,7 +121,8 @@
+@@ -124,7 +131,7 @@
              fi
              lddlflags='-Bshareable'
          fi
 -        cccdlflags='-DPIC -fpic'
 +        cccdlflags='-DPIC -fPIC'
-+        libswanted=`echo $libswanted | sed 's/ iconv / /'`
          ;;
  esac
+ 
