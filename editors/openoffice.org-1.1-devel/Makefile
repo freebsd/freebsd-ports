@@ -46,6 +46,9 @@ NO_RUN_DEPENDS_JAVA=	yes
 LANG_EXT?=	01
 LANG_CONFIGURE_ARG?=	ENUS
 
+.if defined(L10NHELP)
+DISTFILES+=	${L10NHELP}:help
+.endif
 .if defined(ALL_LOCALIZED_LANGS)
 DISTFILES+=	helpcontent_31_unix.tgz:help helpcontent_33_unix.tgz:help \
 		helpcontent_34_unix.tgz:help helpcontent_39_unix.tgz:help \
