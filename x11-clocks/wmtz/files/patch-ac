@@ -1,0 +1,31 @@
+--- wmtz.c.orig	Sat Apr 21 20:18:05 2001
++++ wmtz.c	Sat Apr 21 20:19:47 2001
+@@ -275,15 +275,15 @@
+ 
+         if (!Read_Config_File(config_file))
+         {
+-            /* Fall back to /etc/wmtzrc */
++            /* Fall back to ${PREFIX}/etc/wmtzrc */
+             free(config_file);
+             config_file = malloc( 12 );
+             if (config_file == NULL)
+                 errH(1, 1, "malloc");
+ 
+-            sprintf(config_file, "/etc/wmtzrc");
++            sprintf(config_file, "${PREFIX}/etc/wmtzrc ");
+             
+-            fprintf(stderr, "Using /etc/wmtzrc as config file.\n");
++            fprintf(stderr, "Using ${PREFIX}/etc/wmtzrc as config file.\n");
+         
+             Read_Config_File(config_file);
+         }
+@@ -729,7 +729,8 @@
+ void usage(void)
+ {
+   fprintf(stderr, "\nwmtz - shows local time around the world and more.\n");
+-  fprintf(stderr, "See ~/.wmtzrc or /etc/wmtzrc for configuration.\n\n");
++  fprintf(stderr, "See ~/.wmtzrc or ${PREFIX}/etc/wmtzrc.default for\n");
++  fprintf(stderr, "configuration.\n\n");
+   fprintf(stderr, "Usage:\n");
+   fprintf(stderr, "    -display <display name>\n");
+   fprintf(stderr, "    -e <editor>               use specified editor\n");   
