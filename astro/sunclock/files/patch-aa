@@ -1,31 +1,45 @@
---- Imakefile.orig	Sat Dec 30 15:24:02 2000
-+++ Imakefile	Sat Dec 30 15:38:55 2000
-@@ -8,7 +8,7 @@
- XCOMM Pick -O or -g
+--- Imakefile.orig	Sun Apr 22 22:27:53 2001
++++ Imakefile	Sun Apr 22 22:30:04 2001
+@@ -1,15 +1,17 @@
+ XCOMM Should install to /usr or /usr/local ??
+-DESTDIR=/usr
++DESTDIR=${PREFIX}
+ 
+ XCOMM Name of man subdirectory of DESTDIR:
+-MANDIR=/X11R6/man/man1
++MANDIR=/man/man1
+ 
+ XCOMM Name of bin subdirectory of DESTDIR: /X11R6/bin or maybe just  /bin
+-BINDIR=/X11R6/bin
++BINDIR=/bin
+ 
+ XCOMM Name of share subdirectory of DESTDIR:
+ SHAREDIR=/share/sunclock
+ 
++DOCHTMLDIR=/lib/X11/doc/html
++
  XCOMM
- 
--SHAREDIR=/usr/share/sunclock
-+SHAREDIR=%%X11BASE%%/share/sunclock
- 
- #ifdef HPArchitecture
- CCOPTIONS = -Ae -DBIGFONT=\"6x13\" -DSMALLFONT=\"6x10\" -DAPPDEF=\"$(DESTDIR)$(XAPPLOADDIR)\" -DSHAREDIR=\"$(DESTDIR)$(SHAREDIR)\"
-@@ -16,16 +16,16 @@
- # SunOS
- #CCOPTIONS=-DBIGFONT=\"6x13\" -DSMALLFONT=\"6x10\" -O -DNEW_CTIME -DAPPDEF=\"$(DESTDIR)$(XAPPLOADDIR)\" -DSHAREDIR=\"$(DESTDIR)$(SHAREDIR)\"
+ XCOMM Compile options:
+ XCOMM
+@@ -38,17 +40,17 @@
  # Solaris, Linux
--CCOPTIONS=-DBIGFONT=\"6x13\" -DSMALLFONT=\"6x10\" -O -DAPPDEF=\"$(DESTDIR)$(XAPPLOADDIR)\" -DSHAREDIR=\"$(DESTDIR)$(SHAREDIR)\"
-+CCOPTIONS=-DBIGFONT=\"6x13\" -DSMALLFONT=\"6x10\" -O -DAPPDEF=\"$(DESTDIR)$(XAPPLOADDIR)\" -DSHAREDIR=\"$(DESTDIR)$(SHAREDIR)\" -DNEW_CTIME
+ #XPMLIB=-L/usr/X11R6/lib
+ #XPMINC=-I/usr/X11R6/include/X11
+-#JLIB=-L/usr/lib
+-#JINC=-I/usr/include
++JLIB=-L${LOCALBASE}/lib
++JINC=-I${LOCALBASE}/include
+ 
+-CCOPTIONS=-O -DSHAREDIR=\"$(DESTDIR)$(SHAREDIR)\"
++CCOPTIONS=-O -DSHAREDIR=\"$(DESTDIR)$(SHAREDIR)\"  -DNEW_CTIME -I${LOCALBASE}/include
  #endif
  
- SRCS=sunclock.c astro.c tildepath.c mapdata.c dirlist.c
- OBJS=sunclock.o astro.o tildepath.o mapdata.o dirlist.o
--LOCAL_LIBRARIES=$(XLIB) -lXpm -lm
-+LOCAL_LIBRARIES=$(XLIB) -lXpm -lm -lcompat
+ SRCS=sunclock.c astro.c widgets.c tildepath.c dirlist.c \
+      readvmf.c readxpm.c readjpeg.c
+ OBJS=sunclock.o astro.o widgets.o tildepath.o dirlist.o \
+      readvmf.o readxpm.o readjpeg.o
+-LOCAL_LIBRARIES=$(XLIB) $(XPMLIB) -lXpm $(JLIB) -ljpeg -lm
++LOCAL_LIBRARIES=$(XLIB) $(XPMLIB) -lXpm $(JLIB) -ljpeg -lm -lcompat
  DEPLIBS=		# I don't know what I'm doing, and I hate imake!
  
- genmap:: mapdata.o
--	gcc -c mapgen.c -o mapgen.o 
-+	gcc -I%%X11BASE%%/include -c mapgen.c -o mapgen.o 
- 	gcc -o mapgen -O mapgen.o mapdata.o -lm
- 
- maps:: genmap
+ ComplexProgramTarget(sunclock)
