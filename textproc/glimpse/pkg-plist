@@ -1,7 +1,11 @@
-bin/glimpseindex
 bin/agrep
-bin/glimpseserver
+bin/buildcast
+bin/cast
 bin/glimpse
+bin/glimpseindex
+bin/glimpseserver
+bin/tbuild
+bin/uncast
 bin/wgconvert
 share/doc/glimpse/COPYRIGHT
 share/doc/glimpse/README
