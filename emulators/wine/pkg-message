@@ -10,6 +10,4 @@ but the others are only useful in conjunction with the rest of the
 source tree, and then you can as well look at them there.  (If you
 just installed this as a package and don't know how to use the ports
 system to have it fetch and extract the source for you have a look at
-http://www.freebsd.org/handbook/ports.html .  In short:
-cd /usr/ports/emulators/wine && make configure )
-
+<http://www.freebsd.org/handbook/ports.html>.)
