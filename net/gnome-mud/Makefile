@@ -19,7 +19,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gtk/_gtk.so:${PORTSDIR}/x11-toolkits/p
 
 USE_X_PREFIX=	yes
 USE_PYTHON=	yes
-USE_GNOME=	gnomehack gnomeprefix gnometarget libgnomeui vte
+USE_GNOME=	gnomehack gnomeprefix intlhack gnometarget libgnomeui vte
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
