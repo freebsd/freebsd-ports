@@ -62,3 +62,18 @@
 ! ) | /usr/sbin/sendmail -t $args	# some sites might want "mail" instead
   
   # and the trap handles the exit status
+*** inject/makefile.ORIG	Thu Dec 29 00:30:01 1994
+--- inject/makefile	Thu Feb 23 11:21:46 1995
+***************
+*** 57,61 ****
+  	cp $(PROGS) ../util/canonhdr regress/tmp/inject
+  	$(MX) regress/regress regress/master/run
+  	$(HERE) cd regress ; NEWSTZ=3660 ; export NEWSTZ ; ./regress
+! 	
+  # header dependencies follow
+--- 57,61 ----
+  	cp $(PROGS) ../util/canonhdr regress/tmp/inject
+  	$(MX) regress/regress regress/master/run
+  	$(HERE) cd regress ; NEWSTZ=3660 ; export NEWSTZ ; ./regress
+! 
+  # header dependencies follow
