@@ -1,7 +1,3 @@
 %%SITE_PERL%%/DateTime/Format/HTTP.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime/Format/HTTP/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime/Format/HTTP
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime/Format 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/DateTime/Format 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/DateTime 2>/dev/null || true
