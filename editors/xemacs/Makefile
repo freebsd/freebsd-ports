@@ -1,26 +1,31 @@
 # New ports collection makefile for:	X-Emacs
-# Version required:	20.4
-# Date created:		26 August 1997
-# Whom:			Michael Elbel (me)
+# Version required:	21.1
+# Date created:		24 Apr 1999
+# Whom:			Michael Elbel (me@FreeBSD.org)
 #
-# $Id: Makefile,v 1.26 1999/01/25 22:06:11 gj Exp $
+# $Id$
 #
 
-DISTNAME=	xemacs-20.4
+DISTNAME=	xemacs-21.1.2
+PKGNAME=	xemacs-21.1
 CATEGORIES=	editors
 MASTER_SITES=	\
-		ftp://ftp.xemacs.org/pub/xemacs/${DISTNAME}/ \
-		ftp://ftp.mpi-sb.mpg.de/pub/gnu/mirror/ftp.xemacs.org/xemacs/${DISTNAME}/ \
-		ftp://ftp.usyd.edu.au:/pub/Xemacs/${DISTNAME}/ \
-		ftp://ftp.lab.kdd.co.jp/xemacs/${DISTNAME}/ \
-		ftp://ftp.th-darmstadt.de:/pub/editors/xemacs/${DISTNAME}/
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${MULEDISTFILE}
+		ftp://ftp.xemacs.org/pub/xemacs/${PKGNAME}/ \
+		ftp://ftp.mpi-sb.mpg.de/pub/gnu/mirror/ftp.xemacs.org/xemacs/${PKGNAME}/ \
+		ftp://ftp.usyd.edu.au/pub/Xemacs/${PKGNAME}/ \
+		ftp://ftp.lab.kdd.co.jp/xemacs/${PKGNAME}/ \
+		ftp://ftp.th-darmstadt.de/pub/editors/xemacs/${PKGNAME}/
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}-elc${EXTRACT_SUFX} ${DISTNAME}-info${EXTRACT_SUFX}
 
 MAINTAINER=	me@FreeBSD.org
 
+RUN_DEPENDS=    ${PREFIX}/lib/xemacs/xemacs-packages/etc/enriched.doc:${PORTSDIR}/editors/xemacs-packages
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.3:${PORTSDIR}/graphics/png
+
+XEMACS_VER=	21.1-p2
+DIST_SUBDIR=	xemacs
 
 USE_GMAKE=	yes
 STRIP=
@@ -32,29 +37,33 @@ CONFIGURE_ARGS=	${XEMACS_ARCH} --prefix=${PREFIX} \
 		--with-sound=native \
 		--site-includes=${PREFIX}/include \
 		--site-libraries=${PREFIX}/lib \
-		--sitelispdir="${PREFIX}/lib/xemacs/site-lisp ${PREFIX}/share/emacs/site-lisp" \
 		--with-session=yes \
 		${WITH_XFACE} ${WITH_MULE} ${WITH_DIALOGS} ${WITH_OFFIX}
 MAN1=		ctags.1 etags.1 gnuattach.1 gnuclient.1 gnudoit.1 \
 		gnuserv.1 xemacs.1
 ALL_TARGET=	all dist
-PLIST_SUB=	XEMACS_VER=20.4 XEMACS_ARCH=${XEMACS_ARCH}
+
+PLIST_SUB=	XEMACS_VER=${XEMACS_VER} XEMACS_ARCH=${XEMACS_ARCH}
 
 # Have
-pre-configure:
+pre-fetch:
+.if !defined(USE_MULE)
 	@echo "To compile in the MULE features, set the environment variable USE_MULE"
+.endif
 .if defined(HAVE_MOTIF)
+.if !defined(MOTIF_STATIC)
 	@echo ""
 	@echo "If your MOTIF library is actually lesstif, you might occasionally"
 	@echo "experience locked-up frames."
 	@echo "In this case, set the environment variable MOTIF_STATIC and recompile, "
 	@echo "which will force the use of athena widgets for dialogs."
 .endif
+.endif
 
 .if defined(USE_MULE)
 WITH_MULE=	--with-mule
-MULEDISTFILE=	${DISTNAME}-mule.tar.gz
-PLIST=		${PKGDIR}/PLIST.mule
+# MULEDISTFILE=	${DISTNAME}-mule.tar.gz
+# PLIST=		${PKGDIR}/PLIST.mule
 .endif
 
 # hack to avoid shipping binaries linked with Motif
@@ -70,16 +79,16 @@ WITH_OFFIX?=	--with-offix=no
 .endif
 
 post-install:
-.for file in b2m ctags etags gnuclient ${DISTNAME}
+	ln -s xemacs-${XEMACS_VER} ${PREFIX}/bin/xemacs21
+.for file in b2m ctags etags gnuclient xemacs-${XEMACS_VER}
 	strip ${PREFIX}/bin/${file}
 .endfor
 # ``make install'' does not set the permissions like pkg_add does.
 	chmod 1777 /var/run/emacs/lock
-	chmod 755 ${PREFIX}/lib/xemacs/site-lisp
-	chmod 755 ${PREFIX}/share/emacs/site-lisp
+#	${MKDIR} ${PREFIX}/lib/xemacs
 	${RM} -f ${PREFIX}/bin/send-pr
-# install xemacs20.sh into ${PREFIX}/etc/rc.d
-	@if [ ! -d ${PREFIX}/etc/rc.d ]; then mkdir -p ${PREFIX}/etc/rc.d; fi
-	${INSTALL_SCRIPT} ${FILESDIR}/xemacs20.sh ${PREFIX}/etc/rc.d
+# install xemacs21.sh into ${PREFIX}/etc/rc.d
+	@if [ ! -d ${PREFIX}/etc/rc.d ]; then ${MKDIR} ${PREFIX}/etc/rc.d; fi
+	${INSTALL_SCRIPT} ${FILESDIR}/xemacs21.sh ${PREFIX}/etc/rc.d
 
 .include <bsd.port.mk>
