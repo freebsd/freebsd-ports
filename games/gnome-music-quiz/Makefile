@@ -7,6 +7,7 @@
 
 PORTNAME=	gnome-music-quiz
 PORTVERSION=	0.1
+PORTREVISION=	1
 CATEGORIES=	games audio
 MASTER_SITES=	http://ishamael.tunkeymicket.com/tarballs/
 DISTNAME=	mq-${PORTVERSION}
