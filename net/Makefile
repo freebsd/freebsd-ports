@@ -109,7 +109,6 @@
     SUBDIR += etherboot
     SUBDIR += ethereal
     SUBDIR += ethereal-lite
-    SUBDIR += eudc-emacs20
     SUBDIR += fcptools
     SUBDIR += fidelio
     SUBDIR += firetalk
@@ -381,7 +380,6 @@
     SUBDIR += opendchub
     SUBDIR += opengk
     SUBDIR += openh323
-    SUBDIR += openldap12
     SUBDIR += openldap20-client
     SUBDIR += openldap20-server
     SUBDIR += openldap21-client
@@ -523,7 +521,6 @@
     SUBDIR += py-fngrab
     SUBDIR += py-google
     SUBDIR += py-jabber
-    SUBDIR += py-ldap1
     SUBDIR += py-ldap2
     SUBDIR += py-libnet
     SUBDIR += py-medusa

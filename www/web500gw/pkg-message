@@ -1,8 +1,0 @@
-###
-Web500gw can be installed as an nph-CGI program.  For example, with
-Apache installed in /usr/local:
-
-cp /usr/local/bin/web500gw /usr/local/www/cgi-bin/nph-web500gw
-
-Web500gw can also be started from inetd; "man web500gw" for details.
-###

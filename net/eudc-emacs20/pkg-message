@@ -1,7 +1,0 @@
-*******************************************************************
-
-Add the following to your .emacs init file if you want to use EUDC:
-
-  (require 'eudc-autoloads)
-
-*******************************************************************
