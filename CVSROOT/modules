@@ -4355,7 +4355,9 @@ mp3gain		ports/audio/mp3gain
 mp3info		ports/audio/mp3info
 mp3mover	ports/audio/mp3mover
 mp3rename	ports/audio/mp3rename
+mp3splt		ports/audio/mp3splt
 mp3stat		ports/audio/mp3stat
+mp3wrap		ports/audio/mp3wrap
 mpack		ports/converters/mpack
 mpage		ports/print/mpage
 mpb		ports/science/mpb
