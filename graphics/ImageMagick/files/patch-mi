@@ -12,7 +12,7 @@
  #if defined(HasX11)
 +#if defined(HasSharedMemory)
 +#include <machine/param.h>
-+typedef unsigned short ushort;	/* needed for sys/ipc.h at the moment */
++//typedef unsigned short ushort;	/* needed for sys/ipc.h at the moment */
 +#include <sys/types.h>
 +#include <sys/ipc.h>
 +#include <sys/shm.h>
