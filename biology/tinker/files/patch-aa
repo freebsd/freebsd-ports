@@ -1,5 +1,5 @@
---- ../make/Makefile.orig	Mon Jun 14 08:23:04 1999
-+++ ../make/Makefile	Tue Jun 22 17:13:26 1999
+--- ../make/Makefile.orig	Mon Jun 14 10:23:04 1999
++++ ../make/Makefile	Thu Jun 24 22:48:51 1999
 @@ -9,8 +9,8 @@
  ##
  ##   1. make all              Build all the TINKER executables
@@ -45,7 +45,7 @@
  
  ##
  ##  Machine:  Silicon Graphics
-@@ -104,6 +104,38 @@
+@@ -104,6 +104,40 @@
  #diagq.o:
  #	${F77} ${F77FLAGS} -ffast-math diagq.f
  
@@ -62,11 +62,13 @@
 +.if ${FC}==f77
 +.if !defined(HAVE_G2C)
 +LIBS = -lU77
-+.else
-+LIBS = -lg2c
-+.endif
 +F77FLAGS = -NL400 -c
 +LINKFLAGS = -L${PREFIX}/lib
++.else
++LIBS = -lg2c
++F77FLAGS = -Wno-globals -fno-globals -c
++LINKFLAGS =
++.endif
 +.elseif ${FC}==g77
 +LIBS=
 +F77FLAGS = -Wno-globals -fno-globals -c
@@ -84,7 +86,7 @@
  #################################################################
  ##  Should not be Necessary to Change Things Below this Point  ##
  #################################################################
-@@ -765,6 +797,7 @@
+@@ -765,6 +799,7 @@
          volume2.o \
          writeout.o \
          xyzatm.o
@@ -92,7 +94,7 @@
  
  alchemy.x:
  	${F77} ${LINKFLAGS} -o alchemy.x alchemy.o libtinker.a ${LIBS}
-@@ -858,51 +891,51 @@
+@@ -858,51 +893,51 @@
  	${F77} ${LINKFLAGS} -o xyzsybyl.x xyzsybyl.o libtinker.a ${LIBS}
  
  rename:
