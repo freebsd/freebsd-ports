@@ -15,6 +15,8 @@ DISTFILES=	${BROWSER}-v472-export.x86-unknown-linuxglibc2.0.tar.gz
 
 MAINTAINER=	girgen@partitur.se
 
+IGNORE=	"Just repository copied"
+
 RUN_DEPENDS=	/compat/linux/lib/ld.so:${PORTSDIR}/emulators/linux_base
 
 ONLY_FOR_ARCHS=	i386
