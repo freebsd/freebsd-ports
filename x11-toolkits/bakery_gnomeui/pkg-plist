@@ -11,3 +11,4 @@ share/locale/de/LC_MESSAGES/bakery_gnomeui.mo
 @dirrm include/bakery_gnomeui-2.0/bakery_gnomeui/Configuration
 @dirrm include/bakery_gnomeui-2.0/bakery_gnomeui/App
 @dirrm include/bakery_gnomeui-2.0/bakery_gnomeui
+@dirrm include/bakery_gnomeui-2.0
