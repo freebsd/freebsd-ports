@@ -7,12 +7,12 @@
 #
 
 PORTNAME=	dhcp
-PORTVERSION=	3.0.r1.1
+PORTVERSION=	3.0.r2
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.isc.org/isc/dhcp/
 PKGNAMEPREFIX=	isc-
 PKGNAMESUFFIX=	3
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/rc/:R}pl${PORTVERSION:E}
+DISTNAME=	${PORTNAME}-${RELEASE}${VERSION}${PATCHLEVEL}
 
 MAINTAINER=	clefevre@poboxes.com
 
@@ -31,6 +31,26 @@ MAN8=		dhclient.8 dhclient-script.8 dhcpd.8 dhcrelay.8
 #
 # Local variables
 #
+
+# for instance, possible version formats are, in order:
+#	1.2.r3.4 (or 1.2.b3.4), 1.2.r3 (or 1.2.b3), 1.2.3, 1.2
+# which have to become:
+#	1.2rc3pl4 (or 1.2beta3pl4), 1.2rc3 (or 1.2beta3), 1.2pl3, 1.2
+VERSION=
+PATCHLEVEL=
+.if ${PORTVERSION:R:E:M[br]*} != ""
+RELEASE=	${PORTVERSION:R:R}
+VERSION=	${PORTVERSION:R:E:S/b/beta/:S/r/rc/}
+PATCHLEVEL=	pl${PORTVERSION:E}
+.elif ${PORTVERSION:E:M[br]*} != ""
+RELEASE=	${PORTVERSION:R}
+VERSION=	${PORTVERSION:E:S/b/beta/:S/r/rc/}
+.elif ${PORTVERSION:R:E} != ""
+RELEASE=	${PORTVERSION:R}
+PATCHLEVEL=	pl${PORTVERSION:E}
+.else
+RELEASE=	${PORTVERSION}
+.endif
 
 PATCH_SUBDIRS=	common minires dst omapip server client relay dhcpctl
 

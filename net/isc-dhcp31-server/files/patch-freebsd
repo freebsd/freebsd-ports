@@ -1,12 +1,12 @@
---- client/scripts/freebsd.orig	Thu Mar 22 07:59:28 2001
-+++ client/scripts/freebsd	Sat Mar 24 04:50:11 2001
+--- client/scripts/freebsd.orig	Fri Apr 20 22:01:14 2001
++++ client/scripts/freebsd	Sat Apr 21 19:01:59 2001
 @@ -16,17 +16,17 @@
  # Must be used on exit.   Invokes the local dhcp client exit hooks, if any.
  exit_with_hooks() {
    exit_status=$1
--  if [ -x /etc/dhclient-exit-hooks ]; then
+-  if [ -f /etc/dhclient-exit-hooks ]; then
 -    . /etc/dhclient-exit-hooks
-+  if [ -x !!PREFIX!!/etc/dhclient-exit-hooks ]; then
++  if [ -f !!PREFIX!!/etc/dhclient-exit-hooks ]; then
 +    . !!PREFIX!!/etc/dhclient-exit-hooks
    fi
  # probably should do something with exit status of the local script
@@ -14,8 +14,8 @@
  }
  
  # Invoke the local dhcp client enter hooks, if they exist.
--if [ -x /etc/dhclient-enter-hooks ]; then
-+if [ -x !!PREFIX!!/etc/dhclient-enter-hooks ]; then
+-if [ -f /etc/dhclient-enter-hooks ]; then
++if [ -f !!PREFIX!!/etc/dhclient-enter-hooks ]; then
    exit_status=0
 -  . /etc/dhclient-enter-hooks
 +  . !!PREFIX!!/etc/dhclient-enter-hooks
