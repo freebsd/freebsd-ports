@@ -1,4 +1,4 @@
-@comment $FreeBSD: /tmp/pcvs/ports/www/apache13+ipv6/Attic/pkg-plist,v 1.17 2003-09-25 21:29:03 sumikawa Exp $
+@comment $FreeBSD: /tmp/pcvs/ports/www/apache13+ipv6/Attic/pkg-plist,v 1.18 2003-10-29 11:36:44 sumikawa Exp $
 bin/checkgid
 bin/dbmmanage
 bin/htdigest
@@ -139,6 +139,7 @@ www/data-dist/index.html.ru.ucs4
 www/data-dist/index.html.ru.utf8
 www/data-dist/index.html.se
 www/data-dist/index.html.zh-tw.big5
+share/doc/apache/FAQ.html
 share/doc/apache/LICENSE
 share/doc/apache/bind.html.en
 share/doc/apache/bind.html.fr
@@ -317,7 +318,9 @@ share/doc/apache/mod/mod_negotiation.html.en
 share/doc/apache/mod/mod_negotiation.html.html
 share/doc/apache/mod/mod_negotiation.html.ja.jis
 share/doc/apache/mod/mod_proxy.html
-share/doc/apache/mod/mod_rewrite.html
+share/doc/apache/mod/mod_rewrite.html.en
+share/doc/apache/mod/mod_rewrite.html.html
+share/doc/apache/mod/mod_rewrite.html.ja.jis
 share/doc/apache/mod/mod_setenvif.html.en
 share/doc/apache/mod/mod_setenvif.html.html
 share/doc/apache/mod/mod_setenvif.html.ja.jis
