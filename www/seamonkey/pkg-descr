@@ -6,7 +6,4 @@ the use of the FreeBSD native Java plug-in.
 This is the latest bleeding edge release.  Beware that you'll probably find
 bugs here, so if you value stability, try www/mozilla.
 
-This version has been built with GTK+-2 bindings for use with applications
-such as Galeon 2.
-
 WWW: http://www.mozilla.org/
