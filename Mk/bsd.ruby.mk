@@ -26,6 +26,7 @@ Ruby_Include_MAINTAINER=	knu@FreeBSD.org
 # RUBY_SETUP		- Set to the alternative name of setup.rb (default: setup.rb).
 # USE_RUBY_AMSTD	- Says that the port uses amstd for building and running.
 # USE_RUBY_RD		- Says that the port uses rd to generate documents.
+# RUBY_SHEBANG_FILES	- Specify the files which shebang lines you want to fix.
 #
 # [variables that each port should not define]
 #
@@ -113,6 +114,19 @@ PLIST_SUB+=		RUBY_VERSION="${RUBY_VERSION}" \
 			RUBY_SUFFIX="${RUBY_SUFFIX}" \
 			RUBY_NAME="${RUBY_NAME}" \
 			${PLIST_RUBY_DIRS:S,DIR="${LOCALBASE}/,DIR=",}
+
+# fix shebang lines
+.if defined(RUBY_SHEBANG_FILES) && !empty(RUBY_SHEBANG_FILES)
+USE_RUBY=		yes
+
+post-patch:	ruby-shebang-patch
+
+ruby-shebang-patch:
+	@for f in ${RUBY_SHEBANG_FILES}; do \
+	${ECHO_MSG} "===>  Fixing the #! line of $$f"; \
+	${RUBY} -i -pe '$$. == 1 and sub /^#!\s*\S*(\benv\s+)?\bruby/, "#!${RUBY}"' $$f; \
+	done
+.endif
 
 # extconf.rb
 .if defined(USE_RUBY_EXTCONF)
