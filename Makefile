@@ -70,8 +70,9 @@ index:
 	@cd ${.CURDIR} && make ${.CURDIR}/${INDEXFILE}
 
 fetchindex:
-	@cd ${.CURDIR} && ${FETCHINDEX} http://www.FreeBSD.org/ports/${INDEXFILE}.bz2 && bunzip2 -f ${INDEXFILE}.bz2 && chmod a+r ${INDEXFILE}
+	@cd ${.CURDIR} && ${FETCHINDEX} ${MASTER_SITE_INDEX}/${INDEXFILE}.bz2 && bunzip2 -f ${INDEXFILE}.bz2 && chmod a+r ${INDEXFILE}
 
+MASTER_SITE_INDEX?=	http://www.FreeBSD.org/ports/
 FETCHINDEX?=	fetch -am
 INDEX_JOBS?=	2
 
