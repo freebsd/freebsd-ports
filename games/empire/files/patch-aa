@@ -1,0 +1,56 @@
+*** ../empire-1.1.orig/Makefile	Fri Jun 28 06:27:39 1996
+--- Makefile	Fri Jun 27 02:31:13 1997
+***************
+*** 14,25 ****
+  # Change the line below for your system.  If you are on a Sun or Vax,
+  # you may want BSD.
+  
+! #SYS = BSD
+! SYS = SYSV
+  
+  # Use -g to compile the program for debugging.
+  
+! DEBUG = -g -DDEBUG
+  #DEBUG = -O
+  
+  # Use -p to profile the program.
+--- 14,25 ----
+  # Change the line below for your system.  If you are on a Sun or Vax,
+  # you may want BSD.
+  
+! SYS = BSD
+! #SYS = SYSV
+  
+  # Use -g to compile the program for debugging.
+  
+! #DEBUG = -g -DDEBUG
+  #DEBUG = -O
+  
+  # Use -p to profile the program.
+***************
+*** 28,39 ****
+  
+  # Define all necessary libraries.  'curses' is necessary.  'termcap'
+  # is needed on BSD systems.
+! LIBS = -lncurses
+! #LIBS = -lcurses -ltermcap
+  
+  # You shouldn't have to modify anything below this line.
+  
+! CFLAGS = $(DEBUG) $(PROFILE) -D$(SYS)
+  
+  FILES = \
+  	attack.c \
+--- 28,39 ----
+  
+  # Define all necessary libraries.  'curses' is necessary.  'termcap'
+  # is needed on BSD systems.
+! #LIBS = -lncurses
+! LIBS = -lcurses
+  
+  # You shouldn't have to modify anything below this line.
+  
+! CFLAGS+= $(DEBUG) $(PROFILE) -D$(SYS)
+  
+  FILES = \
+  	attack.c \
