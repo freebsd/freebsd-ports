@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	automake
 DISTNAME=	automake-${PORTVERSION}
 
-MAINTAINER=	ade@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU Standards-compliant Makefile generator (version 1.9)
 
 WANT_AUTOCONF_VER=259

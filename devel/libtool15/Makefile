@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	libtool
 DISTNAME=	libtool-${PORTVERSION}
 
-MAINTAINER=	ade@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	Generic shared library support script (version 1.5)
 
 BUILD_VERSION=	15
