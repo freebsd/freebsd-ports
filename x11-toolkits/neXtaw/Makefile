@@ -8,7 +8,7 @@
 PORTNAME=	neXtaw
 PORTVERSION=	0.9
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	http://www.inf.ufrgs.br/~casantos/neXtaw/
+MASTER_SITES=	http://gama.urisan.tche.br/~casantos/neXtaw/
 
 MAINTAINER=	tg@FreeBSD.org
 
