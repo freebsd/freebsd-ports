@@ -1,13 +1,13 @@
 # New ports collection makefile for:	squid
-# Version required:	2.1.PATCH2
+# Version required:	2.2.STABLE3
 # Date created:		Thu Nov  7 00:53:18 WST 1996
 # Whom:			Peter Wemm <peter@freebsd.org>
 #
-# $Id: Makefile,v 1.54 1998/12/26 15:55:47 peter Exp $
+# $Id: Makefile,v 1.55 1999/04/18 06:46:51 max Exp $
 #
 
-DISTNAME=	squid-2.1.PATCH2
-PKGNAME=	squid-2.1
+DISTNAME=	squid-2.2.STABLE3
+PKGNAME=	squid-2.2
 CATEGORIES=	www
 MASTER_SITES=  \
 	ftp://squid.nlanr.net/pub/squid-2/STABLE/ \
@@ -16,12 +16,9 @@ MASTER_SITES=  \
 	ftp://ftp.net.lut.ac.uk/squid/squid-2/STABLE/
 EXTRACT_SUFX=	-src.tar.gz
 
-PATCH_SITES=	http://squid.nlanr.net/Squid/v2/2.1/
-PATCHFILES=	squid-2.1.PATCH2-clientHandleIMSReply-leak.patch
-
 MAINTAINER=	peter@freebsd.org
 
-DIST_SUBDIR=	squid2.1
+DIST_SUBDIR=	squid2.2
 PATCH_DIST_STRIP= -p0
 GNU_CONFIGURE=	yes
 # Follow the apache port's lead...
@@ -78,6 +75,9 @@ NO_LATEST_LINK=	yes
 #CONFIGURE_ARGS+= --disable-http-violations
 #  - Enable Transparent Proxy support for IP-Filter systems (incl 3.0)
 #CONFIGURE_ARGS+= --enable-ipf-transparent
+# (--enable-leakfinfer is a developer support tool only)
+#  - Compile out code that does optional Ident (RFC931) lookups
+#CONFIGURE_ARGS+= --disable-ident-lookups
 
 post-install:
 	cd ${WRKSRC}/src; make install-pinger
