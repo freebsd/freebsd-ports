@@ -7,6 +7,7 @@
 
 PORTNAME?=	${MASTERPORTNAME}
 PORTVERSION=	3.23.41
+PORTREVISION?=	1
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.kernelnotes.de/MySQL/Downloads/MySQL-3.23/ \
@@ -61,7 +62,8 @@ CXXFLAGS+=	-fno-exceptions
 
 # MySQL-Server part
 .if !defined(CLIENT_ONLY)
-RUN_DEPENDS=	mysql:${PORTSDIR}/databases/mysql323-client
+RUN_DEPENDS=	mysql:${PORTSDIR}/databases/mysql323-client \
+		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Mysql.pm:${PORTSDIR}/databases/p5-Mysql
 
 PLIST_SUB=	MYSQL_VERSION=${PORTVERSION}
 
