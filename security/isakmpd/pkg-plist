@@ -1,0 +1,11 @@
+sbin/isakmpd
+share/examples/isakmpd/VPN-3way-template.conf
+share/examples/isakmpd/VPN-east.conf
+share/examples/isakmpd/VPN-west.conf
+share/examples/isakmpd/policy
+share/examples/isakmpd/singlehost-east.conf
+share/examples/isakmpd/singlehost-east.gdb
+share/examples/isakmpd/singlehost-setup.sh
+share/examples/isakmpd/singlehost-west.conf
+share/examples/isakmpd/singlehost-west.gdb
+@dirrm share/examples/isakmpd

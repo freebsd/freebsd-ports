@@ -50,6 +50,7 @@
     SUBDIR += inflex
     SUBDIR += integrit
     SUBDIR += ipfmeta
+    SUBDIR += isakmpd
     SUBDIR += its4
     SUBDIR += john
     SUBDIR += keynote

@@ -1,0 +1,15 @@
+This is isakmpd, a BSD-licensed ISAKMP/Oakley (a.k.a. IKE)
+implementation.  It's written by Niklas Hallqvist and Niels Provos,
+funded by Ericsson Radio Systems AB.  Currently it is work in
+progress, although it can be used for real setups.  There are
+releases, but this distribution is not a release and is not named with
+ordinary version numbers.  When you got the source, hopefully the
+archive was named with a date which reflects when it was created.
+These archives are also known as snapshots and will be created at
+irregular intervals and put up on ftp.gsnig.net and ftp.appli.se in
+/pub/isakmpd.  From Nov 14, 1998 isakmpd is also available in the
+OpenBSD main source tree under src/sbin/isakmpd, though slightly
+modified because I don't want to carry support files for other OSes in
+that distribution.
+
+WWW: http://www.openbsd.org/
