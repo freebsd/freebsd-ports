@@ -112,7 +112,6 @@
     SUBDIR += etcmerge
     SUBDIR += extipl
     SUBDIR += fastest_cvsup
-    SUBDIR += fastresolve
     SUBDIR += fcron
     SUBDIR += fetchlog
     SUBDIR += ffsrecov

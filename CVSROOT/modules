@@ -1853,7 +1853,7 @@ fastdep		ports/devel/fastdep
 fastdnaml	ports/biology/fastdnaml
 fastest_cvsup	ports/sysutils/fastest_cvsup
 fastjar		ports/archivers/fastjar
-fastresolve	ports/sysutils/fastresolve
+fastresolve	ports/dns/fastresolve
 fb		ports/editors/fb
 fbbi		ports/lang/fbbi
 fbdesk		ports/x11-wm/fbdesk

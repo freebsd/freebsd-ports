@@ -7,8 +7,8 @@
 
 PORTNAME=	fastresolve
 PORTVERSION=	2.10
-PORTREVISION=	1
-CATEGORIES=	sysutils
+PORTREVISION=	2
+CATEGORIES=	dns
 MASTER_SITES=	http://www.djmnet.org/sw/dist/
 
 MAINTAINER=	martin@tradex.sk
@@ -31,15 +31,18 @@ WITH_BDB_VER?=	3
 
 .if ${WITH_BDB_VER} == 3
 LIB_DEPENDS+=	db3.3:${PORTSDIR}/databases/db3
-CONFIGURE_ARGS= --with-bdb-lib=-ldb3_cxx --with-bdb-incdir=${LOCALBASE}/include/db3
+CONFIGURE_ARGS=	--with-bdb-lib=-ldb3_cxx --with-bdb-incdir=${LOCALBASE}/include/db3
 .elif ${WITH_BDB_VER} == 4
 LIB_DEPENDS+=	db4.0:${PORTSDIR}/databases/db4
-CONFIGURE_ARGS= --with-bdb-lib=-ldb4_cxx --with-bdb-incdir=${LOCALBASE}/include/db4
+CONFIGURE_ARGS=	--with-bdb-lib=-ldb4_cxx --with-bdb-incdir=${LOCALBASE}/include/db4
 .elif ${WITH_BDB_VER} == 41
 LIB_DEPENDS+=	db41.1:${PORTSDIR}/databases/db41
-CONFIGURE_ARGS= --with-bdb-lib=-ldb41_cxx --with-bdb-incdir=${LOCALBASE}/include/db41
+CONFIGURE_ARGS=	--with-bdb-lib=-ldb41_cxx --with-bdb-incdir=${LOCALBASE}/include/db41
+.elif ${WITH_BDB_VER} == 42
+LIB_DEPENDS+=	db-4.2:${PORTSDIR}/databases/db42
+CONFIGURE_ARGS=	--with-bdb-lib=-ldb_cxx-4.2 --with-bdb-incdir=${LOCALBASE}/include/db42
 .else
-.error WITH_BDB_VER must be one between 3, 4 and 41
+.error WITH_BDB_VER must be one between 3, 4, 41 or 42
 .endif
 
 MAN1=	dns-terror.1 btree-dump.1 convert-dom-db.1 convert-ip-db.1 \

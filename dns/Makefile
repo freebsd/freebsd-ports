@@ -29,6 +29,7 @@
     SUBDIR += dnswalk
     SUBDIR += domtools
     SUBDIR += ez-ipupdate
+    SUBDIR += fastresolve
     SUBDIR += firedns
     SUBDIR += fpdns
     SUBDIR += geta
