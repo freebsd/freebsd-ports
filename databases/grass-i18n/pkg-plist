@@ -4437,8 +4437,6 @@ grass5/txt/WEIGHT/dir
 grass5/txt/WEIGHT/general
 grass5/txt/WEIGHT/intro
 grass5/txt/WEIGHT/syntax
-share/nls/POSIX
-share/nls/en_US.US-ASCII
 @dirrm grass5/txt/WEIGHT
 @dirrm grass5/txt/MONITOR
 @dirrm grass5/txt/DIGIT2
@@ -4462,6 +4460,7 @@ share/nls/en_US.US-ASCII
 @dirrm grass5/man/man1
 @dirrm grass5/man/help
 @dirrm grass5/man
+@dirrm grass5/locks/%%HOSTNAME%%
 @dirrm grass5/locks
 @dirrm grass5/locale/ru/LC_MESSAGES
 @dirrm grass5/locale/ru
