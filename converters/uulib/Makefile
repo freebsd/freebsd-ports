@@ -3,7 +3,7 @@
 # Date Created:		04 Aug 1996
 # Whom:			Tim Vanderhoek <ac199@freenet.hamilton.on.ca>
 #
-# $Id: Makefile,v 1.5 1996/12/11 23:03:42 ache Exp $
+# $Id: Makefile,v 1.6 1997/03/29 21:45:24 obrien Exp $
 #
 
 DISTNAME=       uudeview-0.5.13
@@ -16,9 +16,10 @@ MASTER_SITES=	ftp://ftp.uni-frankfurt.de/pub/dist/frank/ \
 MAINTAINER=	ac199@freenet.hamilton.on.ca
 
 GNU_CONFIGURE=	yes
-ALL_TARGET=	libuu.a
+ALL_TARGET=	libuu.a	# libuu.so.1.0
 MAN3=		uulib.3
 
+DOCFILES+=	HISTORY
 DOCFILES+=	doc/Makefile
 DOCFILES+=	doc/README
 DOCFILES+=	doc/binhex.fig
@@ -30,6 +31,7 @@ DOCFILES+=	doc/td-v3.c
 DOCFILES+=	doc/test.txt
 
 do-install:
+	@#	${INSTALL_DATA} ${WRKSRC}/uulib/libuu.so.1.0 ${PREFIX}/lib
 	${INSTALL_DATA} ${WRKSRC}/uulib/libuu.a ${PREFIX}/lib
 	/usr/bin/ranlib ${PREFIX}/lib/libuu.a
 	${INSTALL_DATA} ${WRKSRC}/uulib/uudeview.h ${PREFIX}/include/uu.h
