@@ -13,7 +13,8 @@ DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	# empty
 EXTRACT_ONLY=	# empty
 
-MAINTAINER=	fuyuki@mj.0038.net
+MAINTAINER=	fuyuki@hadaly.org
+COMMENT=	A simple XML-editing for GNU Emacs
 
 EMACS_PORT_NAME?=	emacs21
 EMACS_NO_BUILD_DEPENDS=	YES
