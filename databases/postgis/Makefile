@@ -31,7 +31,7 @@ PGSQL_SRC=	${PGSQL_PORTDIR}/work/postgresql-7.4.6
 INSTALL_TARGET=	install
 
 .if defined(WITH_GEOS)
-LIB_DEPENDS+=	geos.1:${PORTSDIR}/graphics/geos
+LIB_DEPENDS+=	geos.2:${PORTSDIR}/graphics/geos
 .endif
 
 post-extract:
