@@ -1,0 +1,40 @@
+diff -ur gtk-gnutella-0.95-old/src/ui/gtk/gtk2/pbarcellrenderer.c gtk-gnutella-0.95/src/ui/gtk/gtk2/pbarcellrenderer.c
+--- src/ui/gtk/gtk2/pbarcellrenderer.c	2005-01-25 01:24:15.291080696 -0500
++++ src/ui/gtk/gtk2/pbarcellrenderer.c	2005-01-25 01:37:07.614669664 -0500
+@@ -51,6 +51,9 @@
+  * Boston, MA 02111-1307, USA.
+  */
+ 
++/* If we're using GTK 2.6, this is obsolete - Tim Hentenaar */
++#if GTK_MAJOR_VERSION == 2 && GTK_MINOR_VERSION < 6
++
+ #include "gtk/gui.h"
+ 
+ RCSID("$Id: 0.95-gtk2.6.patch,v 1.1 2005/01/30 20:46:05 squinky86 Exp $");
+@@ -426,5 +429,5 @@
+ 	G_FREE_NULL(cellprogress->priv);
+ 	(*G_OBJECT_CLASS(parent_class)->finalize)(object);
+ }
+-
++#endif		/* GTK < 2.6 */
+ /* vi: set ts=4: */
+diff -ur gtk-gnutella-0.95-old/src/ui/gtk/gtk2/pbarcellrenderer.h gtk-gnutella-0.95/src/ui/gtk/gtk2/pbarcellrenderer.h
+--- src/ui/gtk/gtk2/pbarcellrenderer.h	2005-01-25 01:24:15.291080696 -0500
++++ src/ui/gtk/gtk2/pbarcellrenderer.h	2005-01-25 01:35:55.844580376 -0500
+@@ -49,6 +49,9 @@
+ #ifndef _gtk2_pbarcellrenderer_h_
+ #define _gtk2_pbarcellrenderer_h_
+ 
++/* If we're using GTK 2.6, this is obsolete - Tim Hentenaar */
++#if GTK_MAJOR_VERSION == 2 && GTK_MINOR_VERSION < 6
++
+ #include <gtk/gtkcellrenderer.h>
+ #include "gtk/gui.h"
+ 
+@@ -76,5 +79,5 @@
+ GtkCellRenderer* gtk_cell_renderer_progress_new(void);
+ 
+ G_END_DECLS
+-
++#endif	/* GTK < 2.6 */
+ #endif	/* _gtk2_pbarcellrenderer_h_ */
