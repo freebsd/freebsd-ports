@@ -20,6 +20,8 @@ LIB_DEPENDS=	medusa.0:${PORTSDIR}/sysutils/medusa \
 		ghttp.1:${PORTSDIR}/www/libghttp \
 		bz2.1:${PORTSDIR}/archivers/bzip2
 
+BROKEN=		Build failures with new bonobo"
+
 .if defined(WITH_MOZILLA)
 MOZILLA=	mozilla-embedded
 BUILD_DEPENDS=	${X11BASE}/lib/${MOZILLA}/libgtkembedmoz.so:${PORTSDIR}/www/${MOZILLA}
