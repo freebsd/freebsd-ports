@@ -1,0 +1,7 @@
+This perl library aims to provide as many tools to make it as simple as possible
+to calculate distances between geographic points, and anything that can be
+derived from that. Currently there is support for finding the closest locations
+within a specified distance, to find the closest number of points to a specified
+point, and to do basic point-to-point distance calculations.
+
+WWW: http://search.cpan.org/~bluefeet/Geo-Distance/

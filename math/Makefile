@@ -121,6 +121,7 @@
     SUBDIR += p5-Bit-Vector
     SUBDIR += p5-Chart-Math-Axis
     SUBDIR += p5-Date-Handler
+    SUBDIR += p5-Geo-Distance
     SUBDIR += p5-Graph
     SUBDIR += p5-Math-Base85
     SUBDIR += p5-Math-BaseCalc
