@@ -2,5 +2,6 @@ bin/nasl
 bin/nasl-config
 include/nessus/nasl.h
 lib/libnasl.a
+lib/libnasl.la
 lib/libnasl.so
 lib/libnasl.so.2

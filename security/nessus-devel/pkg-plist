@@ -1,4 +1,5 @@
 bin/nessus
+bin/nessus-mkrand
 include/nessus/config.h
 include/nessus/includes.h
 include/nessus/nessus-devel.h
@@ -10,14 +11,12 @@ include/nessus/nessusudp.h
 include/nessus/ntcompat.h
 sbin/nessus-adduser
 sbin/nessus-mkcert
+sbin/nessus-mkcert-client
 sbin/nessus-rmuser
 sbin/nessusd
-@unexec rmdir %D/var/nessus/jobs 2>/dev/null || true
-@unexec rmdir %D/var/nessus/logs 2>/dev/null || true
-@unexec rmdir %D/var/nessus/users 2>/dev/null || true
-@unexec rmdir %D/var/nessus 2>/dev/null || true
+@unexec rmdir %D/etc/nessus/var/nessus/jobs 2>/dev/null || true
+@unexec rmdir %D/etc/nessus/var/nessus/logs 2>/dev/null || true
+@unexec rmdir %D/etc/nessus/var/nessus/users 2>/dev/null || true
 @unexec rmdir %D/lib/nessus/plugins 2>/dev/null || true
 @unexec rmdir %D/lib/nessus 2>/dev/null || true
 @unexec rmdir %D/include/nessus 2>/dev/null || true
-@unexec rmdir %D/etc/nessus 2>/dev/null || true
-@unexec rmdir %D/var 2>/dev/null || true
