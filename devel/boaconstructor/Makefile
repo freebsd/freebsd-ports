@@ -15,6 +15,8 @@ DISTNAME=	boa-constructor-${PORTVERSION}.src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A cross platform RAD GUI Building IDE for wxPython
 
+BROKEN=		"Bad pkg-plist"
+
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/wxPython/wxc.so:${PORTSDIR}/x11-toolkits/py-wxPython
 
 WRKSRC=		${WRKDIR}/boa-constructor-${PORTVERSION}
