@@ -3,19 +3,16 @@
 # Date created:		1 Aug 1997
 # Whom:			Pedro Giffuni (orig)
 #
-# $Id: Makefile,v 1.3 1997/09/17 04:46:56 chuckr Exp $
+# $Id: Makefile,v 1.4 1998/12/21 21:08:12 jseger Exp $
 #
 
 DISTNAME=	Thot
 PKGNAME=	thoteditor-2.1b
 CATEGORIES=	editors www
-MASTER_SITES=	ftp://ftp.uni-paderborn.de/ftp/disk6/unix/infosys/www/clients/amaya/thot/ \
-		ftp://ftp.ruhr-uni-bochum.de/local/jk.collection/thot/ \
-		ftp://ftp.cs.itu.edu.tr/pub/Linux/Apps/Editors/ \
+MASTER_SITES=	ftp://ftp.ruhr-uni-bochum.de/local/jk.collection/thot/ \
 		ftp://ftp.uni-stuttgart.de/pub/comm/infosystems/www/clients/amaya/thot/ \
 		ftp://ftp.netlab.is.tsukuba.ac.jp/pub/editors/opera.inrialpes.fr/sources/thot/ \
-		ftp://ftp.agix.net/pub/infosystems/www/clients/amaya/thot/ \
-		ftp://ftp.cnti.chel.su/pub/linux/X11/apps/thot/
+		ftp://ftp.agix.net/pub/infosystems/www/clients/amaya/thot/
 DISTFILES=	thot-src-2.1b.tar.gz		\
 		thoteditor-src-2.1b.tar.gz
 
