@@ -2,6 +2,7 @@ sbin/smtpd
 sbin/smtpfwdd
 etc/rc.d/smtpd.sh
 share/doc/smtpd/README
+@dirrm share/doc/smtpd
 @exec mkdir /var/smtpd
 @exec chown root.uucp /var/smtpd
 @exec chmod 0710 /var/smtpd
