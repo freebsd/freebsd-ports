@@ -197,6 +197,7 @@
     SUBDIR += libmalloc
     SUBDIR += libol
     SUBDIR += libole2
+    SUBDIR += liboop
     SUBDIR += libshhmsg
     SUBDIR += libshhopt
     SUBDIR += libsigc++
