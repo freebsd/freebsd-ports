@@ -1,12 +1,12 @@
---- Makefile.ORIG	Sat Nov 27 23:06:31 1999
-+++ Makefile	Sun Nov 28 15:18:03 1999
-@@ -354,6 +354,9 @@
- ifeq ($(ARCH),os2)
- LDLIBS := $(LDLIBS) -lMesaGL -lMesaGLU -lglut
+--- Makefile.vars.ORIG	Sat May 20 13:55:28 2000
++++ Makefile.vars	Sat May 20 13:56:19 2000
+@@ -217,6 +217,9 @@
  endif
+ 
+ ifeq "$(findstring OPENGL,$(EXPERIMENTAL))" "OPENGL"
 +ifeq ($(ARCH),bsd)
-+LDLIBS := $(LDLIBS) -lMesaGL -lMesaGLU
++LDLIBS := $(LDLIBS) -lGL -lGLU -lglut
 +endif
- ifeq ($(ARCH),linux)
+ ifeq ($(ARCH),os2)
  LDLIBS := $(LDLIBS) -lMesaGL -lMesaGLU -lglut
  endif

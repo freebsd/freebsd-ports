@@ -1,0 +1,23 @@
+--- Makefile.config.ORIG	Sun May 21 21:24:16 2000
++++ Makefile.config	Sun May 21 21:24:45 2000
+@@ -168,7 +168,7 @@
+ #CFLAGS := $(CFLAGS) -malign-loops=3
+ 
+ # for alpha
+-#CFLAGS := $(CFLAGS) -mcpu=ev4
++CFLAGS := $(CFLAGS) -mcpu=ev4
+ #CFLAGS := $(CFLAGS) -mcpu=ev5
+ #CFLAGS := $(CFLAGS) -mcpu=ev6
+ #CFLAGS := $(CFLAGS) -mcpu=ev7
+@@ -203,9 +203,9 @@
+ #ASM := $(ASM) CPU
+ #ASM := $(ASM) MEMORY
+ 
+-#CPU = alpha
++CPU = alpha
+ #CPU = arm
+-CPU = i386
++#CPU = i386
+ #CPU = m68k
+ #CPU = mips
+ #CPU = ppc
