@@ -8,7 +8,7 @@ $FreeBSD$
      ( defined(HPUX10) && !defined(_REENTRANT)) || defined(HPUX11) || \
      defined(UnixWare) || defined(LINUX) || defined(NETBSD) || \
 -    (defined(AIX) && !defined(USE_REENTRANT_LIBC))
-+    defined (FreeBSD) || (defined(AIX) && !defined(USE_REENTRANT_LIBC))
++    defined (FREEBSD) || (defined(AIX) && !defined(USE_REENTRANT_LIBC))
  #define GETHOSTBYNAME( n, r, b, l, e )  gethostbyname( n )
  #elif defined(AIX)
  /* Maybe this is for another version of AIX?
