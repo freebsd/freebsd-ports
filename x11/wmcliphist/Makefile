@@ -17,6 +17,9 @@ USE_X_PREFIX=	yes
 USE_XPM=	yes
 USE_GNOME=	gtk12
 
+pre-patch:
+	@${RM} ${WRKSRC}/foodock/foodock.o
+
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 	@${MKDIR} ${EXAMPLESDIR}
