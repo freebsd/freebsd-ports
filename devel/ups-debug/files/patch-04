@@ -1,19 +1,6 @@
---- ups/xc_builtins.c.orig	Thu Oct  1 12:30:57 1998
-+++ ups/xc_builtins.c	Fri Nov 13 20:08:21 1998
-@@ -33,7 +33,11 @@
- #include <ctype.h>
- #include <errno.h>
- 
--#if defined (OS_SUNOS_5) && defined (__CLCC__)
-+#if defined(OS_BSD44)
-+#include <sys/ioctl.h>
-+#endif
-+
-+#if defined (OS_SUNOS_5) && defined (__CLCC__) || defined(OS_BSD44)
- #include <unistd.h>
- #endif
- 
-@@ -77,7 +81,7 @@
+--- ups/xc_builtins.c.orig	Fri Feb 19 07:14:51 1999
++++ ups/xc_builtins.c	Sun May  9 10:45:18 1999
+@@ -61,7 +61,7 @@
  static int builtin_read PROTO((int fd, void *buf, size_t nbytes));
  static int builtin_write PROTO((int fd, const void *buf, size_t nbytes));
  static int builtin_pipe PROTO((int *fds));
@@ -22,16 +9,16 @@
  static int builtin_fcntl PROTO((int fd, int cmd, char *arg));
  static int builtin_dup2 PROTO((int fd, int newfd));
  static int builtin_dup PROTO((int fd));
-@@ -87,7 +91,7 @@
- #ifdef BUILTIN_FLOCK
+@@ -71,7 +71,7 @@
+ #if HAVE_FLOCK
  static int builtin_flock PROTO((int fd, int op));
  #endif
 -static int builtin_ftruncate PROTO((int fd, long length));
 +static int builtin_ftruncate PROTO((int fd, off_t length));
  static int builtin_ioctl PROTO((int fd, unsigned cmd, caddr_t arg));
  static int builtin_fstat PROTO((int fd, struct stat *stbuf));
- static Display *builtin_XOpenDisplay PROTO((const char *display_name));
-@@ -298,7 +302,7 @@
+ #if HAVE_X_WINDOWS
+@@ -306,7 +306,7 @@
  static int
  builtin_ftruncate(fd, length)
  int fd;
@@ -40,7 +27,7 @@
  {
         return fd_ok(fd) ? ftruncate(fd, (off_t)length) : -1;
  }
-@@ -321,7 +325,7 @@
+@@ -329,7 +329,7 @@
  	return res;
  }
  
