@@ -17,8 +17,7 @@ Mpd also includes many additional features:
       Multiple active connections running simultaneously 
       Dynamic demand based link management (also known as ``rubber bandwidth'') 
       Powerful chat scripting language for asynchronous serial ports 
-      Pre-tested chat scripts for automatic configuration of several
-	common modems and ISDN terminal adapters 
+      Pre-tested chat scripts for several common modems and ISDN TAs
       Clean device-type independent design 
       Comprehensive logging 
 
