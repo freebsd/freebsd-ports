@@ -1,0 +1,140 @@
+bin/bins
+%%GUI%%bin/bins-edit-gui
+bin/bins_edit
+bin/bins_txt2xml
+%%GUI%%share/bins/bins-edit-gui.glade
+share/bins/binsrc
+share/bins/templates.default/details.html
+share/bins/templates.default/footer.html
+share/bins/templates.default/image.html
+share/bins/templates.default/imagelist.html
+share/bins/templates.default/navbar.html
+share/bins/templates.default/path.html
+share/bins/templates.default/subalbum.html
+share/bins/templates.default/thumbnail.html
+share/bins/templates.default/tree.html
+share/bins/templates.joi/details.html
+share/bins/templates.joi/footer.html
+share/bins/templates.joi/image.html
+share/bins/templates.joi/imagelist.html
+share/bins/templates.joi/navbar.html
+share/bins/templates.joi/path.html
+share/bins/templates.joi/static/actthumb.png
+share/bins/templates.joi/static/actthumb.png.bak
+share/bins/templates.joi/static/albumtree.png
+share/bins/templates.joi/static/albumtree.png.bak
+share/bins/templates.joi/static/back.png
+share/bins/templates.joi/static/back.png.bak
+share/bins/templates.joi/static/contact.png
+share/bins/templates.joi/static/contact.png.bak
+share/bins/templates.joi/static/exit.png
+share/bins/templates.joi/static/exit.png.bak
+share/bins/templates.joi/static/home.png
+share/bins/templates.joi/static/home.png.bak
+share/bins/templates.joi/static/imagelist.png
+share/bins/templates.joi/static/imagelist.png.bak
+share/bins/templates.joi/static/info.png
+share/bins/templates.joi/static/info.png.bak
+share/bins/templates.joi/static/large.png
+share/bins/templates.joi/static/large.png.bak
+share/bins/templates.joi/static/largeActive.png
+share/bins/templates.joi/static/largeActive.png.bak
+share/bins/templates.joi/static/medium.png
+share/bins/templates.joi/static/medium.png.bak
+share/bins/templates.joi/static/mediumActive.png
+share/bins/templates.joi/static/mediumActive.png.bak
+share/bins/templates.joi/static/meshman.css
+share/bins/templates.joi/static/meshman.css.bak
+share/bins/templates.joi/static/next.png
+share/bins/templates.joi/static/next.png.bak
+share/bins/templates.joi/static/nextInactive.png
+share/bins/templates.joi/static/nextInactive.png.bak
+share/bins/templates.joi/static/prev.png
+share/bins/templates.joi/static/prev.png.bak
+share/bins/templates.joi/static/prevInactive.png
+share/bins/templates.joi/static/prevInactive.png.bak
+share/bins/templates.joi/static/preview.js
+share/bins/templates.joi/static/preview.js.bak
+share/bins/templates.joi/static/small.png
+share/bins/templates.joi/static/small.png.bak
+share/bins/templates.joi/static/smallActive.png
+share/bins/templates.joi/static/smallActive.png.bak
+share/bins/templates.joi/static/subalbum.png
+share/bins/templates.joi/static/subalbum.png.bak
+share/bins/templates.joi/static/thumbnails.png
+share/bins/templates.joi/static/thumbnails.png.bak
+share/bins/templates.joi/static/up.png
+share/bins/templates.joi/static/up.png.bak
+share/bins/templates.joi/subalbum.html
+share/bins/templates.joi/subjectpath.html
+share/bins/templates.joi/thumbnail.html
+share/bins/templates.joi/thumbnav.html
+share/bins/templates.joi/thumbnavrow.html
+share/bins/templates.joi/tree.html
+share/locale/de/LC_MESSAGES/bins.mo
+%%GUI%%share/locale/fr/LC_MESSAGES/bins-edit-gui.mo
+share/locale/fr/LC_MESSAGES/bins.mo
+share/locale/it/LC_MESSAGES/bins.mo
+share/locale/pl/LC_MESSAGES/bins.mo
+share/locale/ru/LC_MESSAGES/bins.mo
+%%PORTDOCS%%share/doc/bins/autolayout.xml
+%%PORTDOCS%%share/doc/bins/bins-edit-gui.sgml
+%%PORTDOCS%%share/doc/bins/bins-edit-gui_man.html
+%%PORTDOCS%%share/doc/bins/bins.sgml
+%%PORTDOCS%%share/doc/bins/bins_edit.sgml
+%%PORTDOCS%%share/doc/bins/bins_edit_man.html
+%%PORTDOCS%%share/doc/bins/bins_man.html
+%%PORTDOCS%%share/doc/bins/download.html
+%%PORTDOCS%%share/doc/bins/download.xml
+%%PORTDOCS%%share/doc/bins/examples.html
+%%PORTDOCS%%share/doc/bins/examples.xml
+%%PORTDOCS%%share/doc/bins/index.html
+%%PORTDOCS%%share/doc/bins/index.xml
+%%PORTDOCS%%share/doc/bins/index_fr.html
+%%PORTDOCS%%share/doc/bins/install.html
+%%PORTDOCS%%share/doc/bins/install.xml
+%%PORTDOCS%%share/doc/bins/install_automatic.html
+%%PORTDOCS%%share/doc/bins/install_automatic.xml
+%%PORTDOCS%%share/doc/bins/install_manual.html
+%%PORTDOCS%%share/doc/bins/install_manual.xml
+%%PORTDOCS%%share/doc/bins/install_prerequisites.html
+%%PORTDOCS%%share/doc/bins/install_prerequisites.xml
+%%PORTDOCS%%share/doc/bins/intro.html
+%%PORTDOCS%%share/doc/bins/intro.xml
+%%PORTDOCS%%share/doc/bins/layout.xml
+%%PORTDOCS%%share/doc/bins/license.html
+%%PORTDOCS%%share/doc/bins/license.xml
+%%PORTDOCS%%share/doc/bins/usage.html
+%%PORTDOCS%%share/doc/bins/usage.xml
+%%PORTDOCS%%share/doc/bins/usage_album.html
+%%PORTDOCS%%share/doc/bins/usage_album.xml
+%%PORTDOCS%%share/doc/bins/usage_custom.html
+%%PORTDOCS%%share/doc/bins/usage_custom.xml
+%%PORTDOCS%%share/doc/bins/usage_desc.html
+%%PORTDOCS%%share/doc/bins/usage_desc.xml
+%%PORTDOCS%%share/doc/bins/usage_desc_cli.html
+%%PORTDOCS%%share/doc/bins/usage_desc_cli.xml
+%%PORTDOCS%%share/doc/bins/usage_desc_gui.html
+%%PORTDOCS%%share/doc/bins/usage_desc_gui.xml
+%%PORTDOCS%%share/doc/bins/usage_desc_gui_gqview.html
+%%PORTDOCS%%share/doc/bins/usage_desc_gui_gqview.xml
+%%PORTDOCS%%share/doc/bins/usage_desc_gui_nautilus.html
+%%PORTDOCS%%share/doc/bins/usage_desc_gui_nautilus.xml
+%%PORTDOCS%%share/doc/bins/usage_desc_xml.html
+%%PORTDOCS%%share/doc/bins/usage_desc_xml.xml
+%%PORTDOCS%%share/doc/bins/album.xml
+@unexec rmdir %D/share/locale/ru/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/ru 2>/dev/null || true
+@unexec rmdir %D/share/locale/pl/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/pl 2>/dev/null || true
+@unexec rmdir %D/share/locale/it/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/it 2>/dev/null || true
+@unexec rmdir %D/share/locale/fr/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/fr 2>/dev/null || true
+@unexec rmdir %D/share/locale/de/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/de 2>/dev/null || true
+%%PORTDOCS%%@dirrm share/doc/bins
+@dirrm share/bins/templates.joi/static
+@dirrm share/bins/templates.joi
+@dirrm share/bins/templates.default
+@dirrm share/bins
