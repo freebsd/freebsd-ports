@@ -3,7 +3,7 @@
 # Date created:		3 May 1998
 # Whom:			brett@peloton.physics.montana.edu
 #
-# $Id: Makefile,v 1.4 1998/09/15 21:31:53 asami Exp $
+# $Id: Makefile,v 1.5 1999/01/02 00:12:21 asami Exp $
 #
 
 DISTNAME=	latex2html-98.1p1
@@ -24,6 +24,9 @@ USE_PERL5=	yes
 NO_BUILD=	yes
 IS_INTERACTIVE=	yes
 NO_PACKAGE=	An interrogation follows installation
+
+post-patch:
+	@${PERL} -pi -e 's:/usr/local/bin/perl:${PERL}:' ${WRKSRC}/latex2html
 
 do-install:
 	@${MKDIR} ${PREFIX}/share/latex2html
