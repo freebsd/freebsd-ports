@@ -3468,7 +3468,6 @@ ja-dvi2ps	ports/japanese/dvi2ps
 ja-dvi2tty	ports/japanese/dvi2tty
 ja-dvipdfm	ports/japanese/dvipdfm
 ja-dvipsk	ports/japanese/dvipsk
-ja-dvipsk-vflib	ports/japanese/dvipsk-vflib
 ja-e2ps		ports/japanese/e2ps
 ja-easypr	ports/japanese/easypr
 ja-eb		ports/japanese/eb
