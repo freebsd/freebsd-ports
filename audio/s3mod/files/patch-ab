@@ -1,21 +1,20 @@
---- Makefile.orig	Sat Oct 21 12:48:51 1995
-+++ Makefile	Sat Jun 19 02:56:40 1999
-@@ -5,11 +5,10 @@
+--- Makefile.orig	Sun Oct 22 04:48:51 1995
++++ Makefile	Sat Jan 27 15:52:13 2001
+@@ -5,11 +5,11 @@
  #
  ########
  
 -CC	= gcc 
--RM	= rm
--LN	= ln -s
 +CC	?= gcc 
-+RM	?= rm
-+LN	+= -s
+ RM	= rm
+ LN	= ln -s
  
 -CFLAGS  = -O2
++CFLAGS  ?= -O2
  LFLAGS  = 
  
  OBJS	= mod.o s3m.o main.o play.o mix.o cmdline.o dsp.o gus.o
-@@ -24,6 +23,7 @@
+@@ -24,6 +24,7 @@
  	@echo "     make sun              - SunOS/Solaris"
  	@echo "     make sgi              - SGI Irix"
  	@echo "     make linux            - Voxware DSP/GUS"
@@ -23,23 +22,13 @@
  	@echo "     make dec              - Dec OSF/1"
  	@echo "     make clean            - remove all .o files"
  	@echo "     make clobber          - remove all .o and targets"
-@@ -51,6 +51,9 @@
+@@ -50,6 +51,9 @@
+ 	$(RM) -f dsp.c
  	$(LN) DspDrivers/linux_dsp.c dsp.c
  	make CC=gcc CFLAGS=-O2 DEFINES="-DLINUX -DGUS" s3mod
- 
-+freebsd:
-+	make CFLAGS="$(CFLAGS)" DEFINES="-DGUS" s3mod
 +
++freebsd:
++	$(MAKE) CFLAGS="$(CFLAGS)" DEFINES="-DGUS" s3mod
+ 
  s3mod:	$(OBJS)
  	$(CC) $(CFLAGS) -o s3mod $(OBJS) $(LFLAGS) $(LIBS)
- 
-@@ -62,6 +65,9 @@
- 
- dep:
- 	makedepend $(CFLAGS) $(LFLAGS) $(LIBS) $(CFILES)
-+
-+install:
-+	install -c -m 555 s3mod ${PREFIX}/bin
- 
- # DO NOT DELETE THIS LINE -- make depend depends on it.
- 

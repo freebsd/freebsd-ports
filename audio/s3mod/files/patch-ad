@@ -1,0 +1,39 @@
+--- dsp.c.orig	Sat Oct 21 15:40:29 1995
++++ dsp.c	Sat Jan 27 15:24:31 2001
+@@ -22,14 +22,14 @@
+  *  linux_dsp.c - Support for the Linux DSP driver from the Voxware(C) Drivers.
+  */
+ 
+-#ifdef LINUX
++#ifdef __FreeBSD__
+ #include "config.h"
+ #include <unistd.h>
+ #include <stdio.h>
+ #include <fcntl.h>
+ #include <sys/types.h>
+-#include <linux/soundcard.h>
+-#include <bytesex.h>
++#include <machine/soundcard.h>
++#include <machine/endian.h>
+ #include "main.h"
+ #include "dsp.h"
+ 
+@@ -68,11 +68,6 @@
+     printf("Unable to get audio blocksize\n");
+     exit(1);
+   }
+-  if ((audio_buffer_size < 4096) || (audio_buffer_size > 131072))
+-  {
+-    printf("Invalid audio buffer size: %d\n",audio_buffer_size);
+-    exit(1);
+-  }
+   if (!(audio_start_buffer = (uint8 *) malloc(audio_buffer_size)))
+   {
+     printf("Could not get audio buffer memory!\n");
+@@ -93,5 +88,5 @@
+     return;
+ }
+ 
+-#endif /* ?LINUX */
++#endif /* ?__FreeBSD__ */
+ 

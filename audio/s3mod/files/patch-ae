@@ -1,0 +1,13 @@
+--- gus.c.orig	Sun Oct 22 04:14:33 1995
++++ gus.c	Sat Jan 27 15:04:15 2001
+@@ -25,8 +25,8 @@
+ 
+ #ifdef GUS
+ 
+-#include <sys/soundcard.h>
+-#include <sys/ultrasound.h>
++#include <machine/soundcard.h>
++#include <machine/ultrasound.h>
+ #include <unistd.h>
+ #include "gus.h"
+ #include "mod.h"

@@ -1,0 +1,17 @@
+--- config.h.orig	Sun Oct 22 04:59:55 1995
++++ config.h	Sat Jan 27 15:04:14 2001
+@@ -64,6 +64,14 @@
+ #define GUS
+ #endif /* GUS */
+ 
++#elif defined(__FreeBSD__)
++#define BIT_32
++#undef NEAR_FAR_PTR
++#define DSP
++#ifndef GUS
++#define GUS
++#endif /* GUS */
++
+ #elif defined(MSDOS)
+ #define NEAR_FAR_PTR
+ #define DSP
