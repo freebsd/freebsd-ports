@@ -23,10 +23,6 @@ COMMENT?=	Adaptation of SGI's Standard Template Library
 BROKEN=		"Requires /usr/include/wchar.h for compilation"
 .endif
 
-.if ${OSVERSION} >= 501000
-BROKEN=		"Does not compile"
-.endif
-
 WRKSRC=		${WRKDIR}/STLport-${PORTVERSION:S/.b/b/}/src
 PATCH_WRKSRC=	${WRKDIR}/STLport-${PORTVERSION:S/.b/b/}
 USE_GMAKE=	yes
