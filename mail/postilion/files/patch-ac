@@ -1,5 +1,5 @@
---- imap-4.6.BETA/src/osdep/unix/Makefile.orig	Sun Feb 21 10:27:22 1999
-+++ imap-4.6.BETA/src/osdep/unix/Makefile	Sun Feb 21 10:29:24 1999
+--- imap/src/osdep/unix/Makefile.orig	Sun Feb 21 10:27:22 1999
++++ imap/src/osdep/unix/Makefile	Sun Feb 21 10:29:24 1999
 @@ -100,7 +100,7 @@
   dummy.o pseudo.o netmsg.o flstring.o fdstring.o \
   rfc822.o nntp.o smtp.o imap4r1.o pop3.o \

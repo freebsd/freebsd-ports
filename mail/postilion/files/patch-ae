@@ -1,36 +1,11 @@
-*** imap-4.6.BETA/Makefile.orig	Thu Feb 18 13:09:30 1999
---- imap-4.6.BETA/Makefile	Wed Apr 21 10:54:50 1999
-***************
-*** 200,206 ****
-  
-  # Make the IMAP Toolkit
-  
-! all:	c-client rebuild bundled
-  
-  
-  #  The following ports are defined.  These refer to the *standard* compiler
---- 200,206 ----
-  
-  # Make the IMAP Toolkit
-  
-! all:	c-client rebuild
-  
-  
-  #  The following ports are defined.  These refer to the *standard* compiler
-***************
-*** 386,392 ****
-  	$(TOOLS)/$@ "$(LN)" src/imapd imapd
-  	$(LN) $(TOOLS)/$@ .
-  
-! build:	OSTYPE rebuild rebuildclean bundled
-  
-  OSTYPE:
-  	@echo Building c-client for $(OS)...
---- 386,392 ----
-  	$(TOOLS)/$@ "$(LN)" src/imapd imapd
-  	$(LN) $(TOOLS)/$@ .
-  
-! build:	OSTYPE rebuild rebuildclean
-  
-  OSTYPE:
-  	@echo Building c-client for $(OS)...
+--- lib/Makefile.in.orig	Sun Feb 27 17:06:43 2000
++++ lib/Makefile.in	Sun Feb 27 17:06:46 2000
+@@ -35,7 +35,7 @@
+ 
+ # To change the compiler switches, for example to change from -O
+ # to -g, change the following line:
+-override EXTRA_CFLAGS += @CFLAGS@
++#override EXTRA_CFLAGS += @CFLAGS@
+ 
+ # Default top-level directories in which to install architecture-
+ # specific files (exec_prefix) and machine-independent files such
