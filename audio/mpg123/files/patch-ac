@@ -5,7 +5,7 @@
      return -1;
  
 -  ai->fn = esd_play_stream_fallback(format, ai->rate, esdserver, "mpg123");
-+  ai->fn = esd_play_stream_fallback(format, ai->rate, getenv("ESPEAKER"), "mpg123");
++  ai->fn = esd_play_stream_fallback(format, ai->rate, NULL, "mpg123");
    return (ai->fn);
  }
  
