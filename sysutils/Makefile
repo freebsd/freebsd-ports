@@ -189,6 +189,7 @@
     SUBDIR += lxsplit
     SUBDIR += maint
     SUBDIR += manck
+    SUBDIR += mcron
     SUBDIR += memgrep
     SUBDIR += memtest
     SUBDIR += metalog
