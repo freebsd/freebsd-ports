@@ -3,16 +3,15 @@
 # Date created:         Fri Oct 4, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.3 1996/11/13 12:41:23 asami Exp $
+# $Id: Makefile,v 1.4 1996/11/18 10:36:37 asami Exp $
 #
 
-DISTNAME=	splitvt-1.6.1
+DISTNAME=	splitvt-1.6.3
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	utils/console
-EXTRACT_SUFX=	.tgz
 
-MAINTAINER=     obrien@cs.ucdavis.edu
+MAINTAINER=     obrien@FreeBSD.org
 
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	Configure
