@@ -61,8 +61,6 @@ sbin/courierlogger
 %%PORTDOCS%%%%DOCSDIR%%/README.ldap
 %%PORTDOCS%%%%DOCSDIR%%/README_authlib.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@exec mkdir -m 0750 /var/run/authdaemond 2>/dev/null || true
-@exec chown %%MAILUSER%%:%%MAILGROUP%% /var/run/authdaemond 2>/dev/null || true
 @unexec rmdir /var/run/authdaemond 2>/dev/null || true
 @unexec rmdir %D/etc/authlib 2>/dev/null || true
 @dirrm lib/courier-authlib
