@@ -9,11 +9,12 @@
 PORTNAME=	getxml
 PORTVERSION=	1.0.4
 CATEGORIES=	devel
-MASTER_SITES=	ftp://toutdoux.sourceforge.net/pub/toutdoux/
+MASTER_SITES=	${MASTER_SITE_GNU}
+MASTER_SITE_SUBDIR=	toutdoux
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	xml:${PORTSDIR}/textproc/libxml
+LIB_DEPENDS=	xml.5:${PORTSDIR}/textproc/libxml
 
 USE_GLIB=	yes
 GNU_CONFIGURE=	yes
