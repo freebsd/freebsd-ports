@@ -6,26 +6,31 @@
 #
 
 PORTNAME=	saint
-PORTVERSION=	2.2
+PORTVERSION=	3.0
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.wwdsi.com/pub/saint/			\
-		http://www.wwdsi.com/saint/downloads/		
+		http://www.wwdsi.com/saint/downloads/
 
 MAINTAINER=	cj@vallcom.net
 
-RUN_DEPENDS=	nmap:${PORTSDIR}/security/nmap
+DISTNAME=	${PKGNAME}.beta1
+BUILD_DEPENDS=	nmap:${PORTSDIR}/security/nmap
 
 USE_PERL5=	yes
-MAKE_ENV=	XFLAGS="DAUTH_GID_T=int -DSYS_ERRLIST_DECLARED -DFDSETSIZE=2048"
-ALL_TARGET=	freebsd
+MANCOMPRESSED=	no
+MAN1=		saint.1
+WRKSRC=		${WRKDIR}/saint-3.0
+GNU_CONFIGURE=	yes
+MAKE_ENV=	"LIBS=-lrpcsvc" "XFLAGS=-g -O2   -DSTDC_HEADERS=1 -DGETGROUPS_T=gid_t -DSYS_ERRLIST_DECLARED=1 " "RPCGEN=/usr/bin/rpcgen"
 INSTALL_TARGET=	all
-
-pre-configure:
-		@ cd ${WRKSRC}; ${SETENV} ${PERL5} ${WRKSRC}/reconfig
 
 pre-install:
 		${MKDIR} ${PREFIX}/saint
-		${TAR} --directory ${WRKSRC} -cf - . --exclude src --exclude Makefile | \
+		${TAR} --directory ${WRKSRC} -cf - . --exclude src --exclude Makefile --exclude Makefile.in --exclude old --exclude config --exclude config.cache --exclude config.log --exclude config.status --exclude configure --exclude configure.in --exclude install-sh --exclude saint.1 | \
 			${TAR} --directory ${PREFIX}/saint -xf -
+.if !defined(NOPORTDOCS)
+do-install:
+		${INSTALL_MAN} ${WRKSRC}/saint.1 ${PREFIX}/man/man1
+.endif
 
 .include <bsd.port.mk>
