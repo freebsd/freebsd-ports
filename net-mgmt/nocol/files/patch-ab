@@ -1,0 +1,37 @@
+--- doc/Makefile.mid.orig	Fri Aug 28 12:28:12 1998
++++ doc/Makefile.mid	Mon Nov 23 09:26:25 1998
+@@ -6,26 +6,26 @@
+ MANPAGES1 = netconsole.1
+ MANPAGES3 = perlnocol.3 nocol-prog.3
+ MANPAGES8 = 	etherload.8 eventselect.8 genmon.8 multiping.8 \
+-		noclogd.8 nocol-overview.8 nocol-utility.8 nsmon.8 \
++		noclogd.8 nocol-overview.8 nocol-utility.8 nsmon.8 ntpmon.8 \
+ 		pingmon.8 portmon.8 tpmon.8 trapmon.8
+ 
+ all:
+ 	@echo	"Building all in 'doc'"
+ 
+-install:  installdir
++install: # installdir
+ 	@echo "Installing in 'doc'"
+ 	@- [ -d $(MANDIR) ] || mkdir $(MANDIR)
+-#	@-for d in $(MANDIR)/man1 $(MANDIR)/man3 $(MANDIR)/man8; do \
+-#		[! -d $$d ]  && mkdir $$d ;\
+-#	 done
++	@-for d in $(MANDIR)/man1 $(MANDIR)/man3 $(MANDIR)/man8; do \
++		[ -d $$d ]  || mkdir $$d ;\
++	 done
+ 	@- for m in $(MANPAGES1); do \
+-	 	$(INSTALL) -c -m 644 $$m $(MANDIR)/`basename $$m 1`$(MANEXT) ;\
++		$(INSTALL) -c -m 644 $$m $(MANDIR)/man1/ ;\
+ 	 done
+ 	@- for m in $(MANPAGES3); do \
+-	 	$(INSTALL) -c -m 644 $$m $(MANDIR)/`basename $$m 3`$(MANEXT) ;\
++		$(INSTALL) -c -m 644 $$m $(MANDIR)/man3/ ;\
+ 	 done
+ 	@- for m in $(MANPAGES8); do \
+-	 	$(INSTALL) -c -m 644 $$m $(MANDIR)/`basename $$m 8`$(MANEXT) ;\
++		$(INSTALL) -c -m 644 $$m $(MANDIR)/man8/ ;\
+ 	 done
+ 
+ clean:

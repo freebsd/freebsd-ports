@@ -1,0 +1,97 @@
+@exec mkdir -p %D/nocol/data %D/nocol/msgs %D/nocol/run
+nocol/etc/samples/pm3dmmon-confg
+nocol/etc/samples/pm3t1e1mon-confg
+nocol/etc/samples/etherload-confg
+nocol/etc/samples/noclogd-confg
+nocol/etc/samples/nsmon-confg
+nocol/etc/samples/ntpmon-confg
+nocol/etc/samples/apcmon-confg
+nocol/etc/samples/armon-confg
+nocol/etc/samples/bgpmon-confg
+nocol/etc/samples/bpmon-confg
+nocol/etc/samples/hostmon-confg
+nocol/etc/samples/modemmon-confg
+nocol/etc/samples/novellmon-confg
+nocol/etc/samples/snmpmon-client-confg
+nocol/etc/samples/snmpmon-confg
+nocol/etc/samples/syslogmon-confg
+nocol/etc/samples/ippingmon-confg
+nocol/etc/samples/rpcpingmon-confg
+nocol/etc/samples/portmon-confg
+nocol/etc/samples/radiusmon-confg
+nocol/etc/samples/tpmon-confg
+nocol/etc/samples/notifier-confg
+nocol/etc/netconsole-help
+nocol/etc/mibII.txt
+nocol/bin/crontab.nocol
+nocol/bin/eventselect
+nocol/bin/etherload
+nocol/bin/genmon
+nocol/bin/netconsole
+nocol/bin/noclogd
+nocol/bin/nsmon
+nocol/bin/ntpmon
+nocol/bin/hostmon-osclients/hostmon-client
+nocol/bin/hostmon-osclients/hostmon-client.aix
+nocol/bin/hostmon-osclients/hostmon-client.bsdi
+nocol/bin/hostmon-osclients/hostmon-client.freebsd
+nocol/bin/hostmon-osclients/hostmon-client.hpux
+nocol/bin/hostmon-osclients/hostmon-client.irix5
+nocol/bin/hostmon-osclients/hostmon-client.irix6
+nocol/bin/hostmon-osclients/hostmon-client.linux
+nocol/bin/hostmon-osclients/hostmon-client.osf1
+nocol/bin/hostmon-osclients/hostmon-client.seds
+nocol/bin/hostmon-osclients/hostmon-client.solaris2
+nocol/bin/hostmon-osclients/hostmon-client.sunos4
+nocol/bin/hostmon-osclients/hostmon-client.ultrix
+nocol/bin/hostmon-osclients/newsys.sh
+nocol/bin/apcmon
+nocol/bin/armon
+nocol/bin/bgpmon
+nocol/bin/bpmon
+nocol/bin/ciscomon
+nocol/bin/modemmon
+nocol/bin/novellmon
+nocol/bin/nrmon
+nocol/bin/nocollib.pl
+nocol/bin/hostmon
+nocol/bin/snmpmon
+nocol/bin/snmpmon-client
+nocol/bin/syslogmon
+nocol/bin/rcisco
+nocol/bin/testlog
+nocol/bin/snmpwalk
+nocol/bin/ippingmon
+nocol/bin/osipingmon
+nocol/bin/rpcpingmon
+nocol/bin/portmon
+nocol/bin/portmon2
+nocol/bin/radiusmon
+nocol/bin/tpmon
+nocol/bin/trapmon
+nocol/bin/display_nocol_datafile
+nocol/bin/show_nocol_struct_sizes
+nocol/bin/keepalive_monitors
+nocol/bin/log-maint
+nocol/bin/notifier
+nocol/bin/logstats
+nocol/bin/docrypt.pl
+nocol/bin/notifier.pl
+nocol/bin/genweb.pl
+nocol/bin/webnocol.cgi
+nocol/bin/multiping
+nocol/bin/rpcping
+nocol/help/default
+@dirrm nocol/bin/hostmon-osclients
+@dirrm nocol/bin
+@dirrm nocol/data
+@dirrm nocol/etc/samples
+@dirrm nocol/etc
+@dirrm nocol/help
+@dirrm nocol/man/man1
+@dirrm nocol/man/man3
+@dirrm nocol/man/man8
+@dirrm nocol/man
+@dirrm nocol/msgs
+@dirrm nocol/run
+@dirrm nocol
