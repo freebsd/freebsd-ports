@@ -1,0 +1,21 @@
+--- lib/wgserver.pl.orig	Mon Jun 29 20:45:06 1998
++++ lib/wgserver.pl	Mon Nov  2 08:26:21 1998
+@@ -114,6 +114,7 @@
+ 
+ 	$override = 0;
+ 	$ServerRoot = '';
++	$output = '';
+ 	
+ 	while (<CONF>)	{
+ 		# Trim leading white space 
+@@ -163,8 +164,8 @@
+ 
+ 	close(CONF);
+ 
+-	($ServerRoot ne '') && ($ResourceConfig = $ServerRoot.'/'.$ResourceConfig);	
+-	($ServerRoot ne '') && ($AccessConfig = $ServerRoot.'/'.$AccessConfig);	
++	($ServerRoot ne '') && ($ResourceConfig ne '') && ($ResourceConfig !~ '^/') && ($ResourceConfig = $ServerRoot.'/'.$ResourceConfig);
++	($ServerRoot ne '') && ($AccessConfig ne '') && ($AccessConfig !~ '^/') && ($AccessConfig = $ServerRoot.'/'.$AccessConfig);
+ 
+ 	return $output;
+ }
