@@ -1,5 +1,5 @@
---- Makefile.in.orig	Tue Mar 23 09:17:22 2004
-+++ Makefile.in	Tue Mar 23 09:18:51 2004
+--- Makefile.in.orig	Fri Jul  2 13:56:41 2004
++++ Makefile.in	Fri Jul  2 13:59:27 2004
 @@ -418,13 +418,13 @@
  sharedstatedir = @sharedstatedir@
  sysconfdir = @sysconfdir@
@@ -25,15 +25,17 @@
  confexec_DATA = xml2Conf.sh
  EXTRA_DIST = xml2-config.in xml2Conf.sh.in libxml.spec.in libxml2.spec \
               libxml.m4 Copyright check-xml-test-suite.py \
-@@ -521,7 +521,7 @@
+@@ -521,8 +521,8 @@
  # Instll the tests program sources as examples 
  #
  BASE_DIR = $(datadir)/doc
 -DOC_MODULE = libxml2-$(VERSION)
+-EXAMPLES_DIR = $(BASE_DIR)/$(DOC_MODULE)/examples
 +DOC_MODULE = libxml2
- EXAMPLES_DIR = $(BASE_DIR)/$(DOC_MODULE)/examples
++EXAMPLES_DIR = $(datadir)/examples/libxml2
  all: config.h
  	$(MAKE) $(AM_MAKEFLAGS) all-recursive
+ 
 @@ -1209,7 +1209,7 @@
  check-am: all-am
  	$(MAKE) $(AM_MAKEFLAGS) check-local
