@@ -39,6 +39,7 @@ include/libxml2/libxml/xmlreader.h
 include/libxml2/libxml/xmlregexp.h
 include/libxml2/libxml/xmlschemas.h
 include/libxml2/libxml/xmlschemastypes.h
+include/libxml2/libxml/xmlstring.h
 include/libxml2/libxml/xmlunicode.h
 include/libxml2/libxml/xmlversion.h
 include/libxml2/libxml/xmlwriter.h
@@ -84,6 +85,7 @@ share/aclocal/libxml.m4
 %%PYTHON:%%share/doc/libxml2-python/examples/thread2.py
 %%PYTHON:%%share/doc/libxml2-python/examples/tst.py
 %%PYTHON:%%share/doc/libxml2-python/examples/tst.xml
+%%PYTHON:%%share/doc/libxml2-python/examples/tstLastError.py
 %%PYTHON:%%share/doc/libxml2-python/examples/tstURI.py
 %%PYTHON:%%share/doc/libxml2-python/examples/tstxpath.py
 %%PYTHON:%%share/doc/libxml2-python/examples/valid.xml
@@ -144,6 +146,7 @@ share/doc/libxml2/html/libxml-xmlreader.html
 share/doc/libxml2/html/libxml-xmlregexp.html
 share/doc/libxml2/html/libxml-xmlschemas.html
 share/doc/libxml2/html/libxml-xmlschemastypes.html
+share/doc/libxml2/html/libxml-xmlstring.html
 share/doc/libxml2/html/libxml-xmlunicode.html
 share/doc/libxml2/html/libxml-xmlversion.html
 share/doc/libxml2/html/libxml-xmlwriter.html
