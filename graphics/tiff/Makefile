@@ -121,6 +121,3 @@ post-install:
 .endif
 
 .include <bsd.port.mk>
-
-# bsd.autotools.mk does not allow additional vars
-LIBTOOL_VARS+=	-version-number=4
