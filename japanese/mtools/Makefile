@@ -29,6 +29,7 @@ MAN1=		mattrib.1 mbadblocks.1 mcat.1 mcd.1 mcopy.1 mdel.1 mdeltree.1 \
 		mmove.1 mpartition.1 mrd.1 mread.1 mren.1 mshowfat.1 \
 		mtoolstest.1 mtools.1 mtype.1 mzip.1
 MAN5=		mtools.5
+MLINKS=		mcopy.1 mwrite.1
 
 post-patch:
 	@cd ${WRKSRC}; \
@@ -44,7 +45,6 @@ post-patch:
 post-install:
 	@#	mwrite has been removed by author, but we'll keep it just a bit longer
 	@${LN} -sf ${PREFIX}/bin/mtools ${PREFIX}/bin/mwrite
-	@${LN} -sf ${PREFIX}/man/man1/mcopy.1.gz ${PREFIX}/man/man1/mwrite.1.gz
 	@${INSTALL_DATA} ${WRKSRC}/mtools.conf ${PREFIX}/etc
 	@${ECHO} "Please verify ${PREFIX}/etc/mtools.conf for your machine."
 	@install-info ${PREFIX}/info/mtools.info ${PREFIX}/info/dir
