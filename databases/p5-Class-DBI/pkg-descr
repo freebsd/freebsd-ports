@@ -1,13 +1,14 @@
-Although the difficulties in serialising objects to a relational
-database are well documented, we often find outselves using such a
-database to store the data that will make up the objects in our system.
+Class::DBI provides a convenient abstraction layer to a database.
 
-Thus we end up writing many classes, each mapping to a table in our
-database, and each containing accessor and mutator methods for each of
-the columns.  We then write simple constructors, search methods and the
-like for each these classes.
+It not only provides a simple database to object mapping layer, but can
+be used to implement several higher order database functions (triggers,
+referential integrity, cascading delete etc.), at the application level,
+rather than at the database.
 
-Class::DBI is here to make this task trivial.
+This is particularly useful when using a database which doesn't support
+these (such as MySQL), or when you would like your code to be portable
+across multiple databases which might implement these things in
+different ways.
 
 WWW: http://search.cpan.org/search?dist=Class-DBI
 
