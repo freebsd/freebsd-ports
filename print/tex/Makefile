@@ -1,5 +1,5 @@
 #define this if you want to build LaTeX too
-#MAKE_LATEX=	yes
+MAKE_LATEX=	yes
 
 PKGNAME=	tex
 DISTFILES=	web2c.tar.gz web.tar.gz tex_base.tar.gz cm_tfm.tar.gz \
@@ -145,11 +145,12 @@ install:
 	@(cd ${WRKDIR}/lib; install -c -m 644 *.tex ${PREFIX}/lib/texmf/tex)
 	@(cd ${WRKDIR}/plain/base; install -c -m 644 *.tex ${PREFIX}/lib/texmf/tex)
 .if defined(MAKE_LATEX)
-	@(cd ${WRKSRC}/latex/base; for f in latexbug.tex testpage.tex \
+	@(cd ${WRKDIR}/latex/base; for f in latexbug.tex testpage.tex \
 	   lablst.tex idx.tex nfssfont.tex small2e.tex sample2e.tex docstrip.tex \
 	   *.cls *.clo *.sty *.fd *.def *.cfg ; do \
-	    if [ -f $f ]; then install -c -m 644  $f ${PREFIX}/lib/texmf/tex; fi; done)
-	@(cd ${WRKDIR}/latex/base; install -c -m 644 *.ist ${PREFIX}/lib/makeindex)	
+	    if [ -f $${f} ]; then install -c -m 644  $${f} ${PREFIX}/lib/texmf/tex; fi; done)
+	@(cd ${WRKDIR}/latex/base; for f in *.ist ; do \
+	    install -c -m 644 $${f} ${PREFIX}/lib/makeindex ; done)	
 .endif
 
 .include <bsd.port.mk>
