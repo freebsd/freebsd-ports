@@ -5,11 +5,10 @@
 # $FreeBSD$
 
 PORTNAME=	pine
-PORTVERSION=	4.21.2.9
-PORTREVISION=	1
+PORTVERSION=	4.30.2.9
 CATEGORIES=	hebrew mail news
 MASTER_SITES=	ftp://www8.cc.huji.ac.il/pub/pine/
-DISTNAME=	pine4.21_heb2.09
+DISTNAME=	pine4.30_heb2.09
 
 MAINTAINER?=	nadav@cs.technion.ac.il
 
