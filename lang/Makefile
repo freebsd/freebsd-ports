@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.119 1998/12/23 04:34:10 steve Exp $
+# $Id: Makefile,v 1.120 1998/12/24 18:12:31 flathill Exp $
 #
 
     SUBDIR += ETHOberonV4
@@ -63,6 +63,7 @@
     SUBDIR += pgcc
     SUBDIR += ptoc
     SUBDIR += python
+    SUBDIR += python-beta
     SUBDIR += rexx-imc
     SUBDIR += ruby
     SUBDIR += scheme48
