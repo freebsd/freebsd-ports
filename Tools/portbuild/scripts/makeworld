@@ -76,6 +76,8 @@ if [ "$client" = "0" ]; then
 
 	echo "==> Starting make distribute"
 	cd etc
+	make obj
+	make all
 	make distribute DISTRIBUTION=/var/chroot/
 	error=$?
 	if [ "$error" != "0" ]; then
