@@ -1,4 +1,5 @@
 bin/bfilter
+etc/rc.d/bfilter.sh
 %%WITH_GUI%%bin/bfilter-gui
 @unexec if cmp -s %D/etc/bfilter/config %D/etc/bfilter/config.default; then rm -f %D/etc/bfilter/config; fi
 etc/bfilter/config.default
