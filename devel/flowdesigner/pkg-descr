@@ -1,0 +1,7 @@
+FlowDesigner is a free (GPL) "data flow oriented" development environment. It
+works by visually connecting basic nodes into a network in order to create
+complex applications.  It can be used as a rapid development tool, but also in
+real-time applications. The design has been done in C++ and allows toolkits
+to be easily added.
+
+WWW: http://flowdesigner.sourceforge.net/

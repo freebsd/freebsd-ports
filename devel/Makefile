@@ -231,6 +231,7 @@
     SUBDIR += fib
     SUBDIR += flick
     SUBDIR += florist
+    SUBDIR += flowdesigner
     SUBDIR += flyspray
     SUBDIR += fnccheck
     SUBDIR += fnorb
