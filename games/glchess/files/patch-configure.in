@@ -1,0 +1,33 @@
+--- configure.in.orig	Thu Jan 10 15:36:21 2002
++++ configure.in	Fri Jan 11 16:47:02 2002
+@@ -21,8 +21,8 @@
+   GL_LDOPTS="-L$with_GL_prefix/lib"
+ fi
+ 
+-AC_CHECK_LIB(MesaGL, glBegin, have_MesaGL=yes, , $GTK_LIBS $GL_LDOPTS)
+-AC_CHECK_LIB(GL,     glBegin, have_GL=yes,     , $GTK_LIBS $GL_LDOPTS)
++AC_CHECK_LIB(MesaGL, glBegin, have_MesaGL=yes, , $GTK_LIBS $GL_LDOPTS $PTHREAD_LIBS)
++AC_CHECK_LIB(GL,     glBegin, have_GL=yes,     , $GTK_LIBS $GL_LDOPTS $PTHREAD_LIBS)
+ 
+ if test "$with_lib_GL" = yes; then
+ 
+@@ -62,7 +62,7 @@
+ fi
+ 
+ AC_CHECK_LIB(gtkgl, gtk_gl_area_make_current, gtkgl_ok=yes, ,
+-  ${GTKGL_LDOPTS} ${GTK_LIBS} ${GL_LIBS})
++  ${GTKGL_LDOPTS} ${GTK_LIBS} ${GL_LIBS} $PTHREAD_LIBS)
+ 
+ if test "$gtkgl_ok" = yes; then
+   GTKGL_LIBS="${GTKGL_LDOPTS} -lgtkgl"
+@@ -75,8 +75,8 @@
+ AC_C_CONST
+ AC_TYPE_SIZE_T
+ 
+-CFLAGS="$GTK_CFLAGS $GL_CFLAGS $GTKGL_CFLAGS"
+-LIBS="$GTKGL_LIBS $GTK_LIBS $GL_LIBS $IMG_LIBS"
++CFLAGS="$GTK_CFLAGS $GL_CFLAGS $GTKGL_CFLAGS $PTHREAD_CFLAGS"
++LIBS="$GTKGL_LIBS $GTK_LIBS $GL_LIBS $IMG_LIBS $PTHREAD_LIBS"
+ 
+ AC_OUTPUT(src/Makefile man/Makefile textures/Makefile Makefile)
+ 
