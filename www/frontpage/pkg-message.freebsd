@@ -1,7 +1,7 @@
-The FreeBSD FrontPage Extensions require that libcrypt.* be linked to the
-libdescrypt.* libraries.  This is due to a problem with the fpsrvadm.exe
-program will create invaild MD5 passwords when libcrypt.* are linked to
-the libscrypt.* libraries.
+The FreeBSD FrontPage Extensions requires crypt_des is included in
+your libcrypt.* libraries.  Otherwise the fpsrvadm.exe program will
+create invaild MD5 passwords when libcrypt.* doesn't support DES
+passwords.  Fpsrvadm.exe can only create DES passwords.
 
 For this port to be usefull you need to install an Apache-Frontpage
 enabled web server.  Only the following ports/packages qualifies:
