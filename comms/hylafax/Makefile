@@ -78,8 +78,8 @@ USE_REINPLACE=	yes
 REINPLACE_ARGS=	-i ""
 post-patch:
 	${REINPLACE_CMD} -e 's^/usr/local^${LOCALBASE}^g' \
-		`find ${WRKSRC} -type f -print0 | \
-			xargs -0 ${GREP} -F -l --mmap /usr/local`
+		`${FIND} ${WRKSRC} -type f -print0 | \
+			${XARGS} -0 ${GREP} -F -l --mmap /usr/local`
 .endif
 
 .include <bsd.port.post.mk>
