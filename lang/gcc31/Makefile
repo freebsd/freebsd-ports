@@ -34,6 +34,11 @@ USE_BZIP2=	yes
 
 PATCH_WRKSRC=	${SRCDIR}
 CONFIGURE_SCRIPT=	../${SRCDIR:C/${WRKDIR}//}/configure
+
+.ifdef USE_GCC
+.error You have `USE_GCC' variable defined either in environment or in make(1) arguments. Please undefine and try again.
+.endif
+
 # do not require Gcc 3.1 to compile -- or we have an infinate loop on RELENG_4.
 USE_GCC=	X
 NOMANCOMPRESS=	yes	# to hard to deal with differences on 5-cur and releng4
@@ -78,10 +83,6 @@ MAN1=		cpp31.1 g++31.1 g77-31.1 gcc31.1 gcov31.1 \
 		gcj31.1 gcjh31.1 gij.1 \
 		jcf-dump31.1 jv-scan31.1 jv-convert.1
 MAN7=		fsf-funding.7 gfdl.7 gpl.7
-
-.ifdef USE_GCC
-.error You have `USE_GCC' variable defined either in environment or in make(1) arguments. Please undefine and try again.
-.endif
 
 pre-fetch:
 	@${ECHO} "Making GCC ${DISTNAME:S/^gcc-//} for ${OPSYS} ${OSREL} ${PORTOBJFORMAT}	target ${CONFIGURE_TARGET}"
