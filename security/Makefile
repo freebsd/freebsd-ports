@@ -50,6 +50,7 @@
     SUBDIR += cyrus-sasl
     SUBDIR += cyrus-sasl2
     SUBDIR += cyrus-sasl2-saslauthd
+    SUBDIR += dcetest
     SUBDIR += ddos_scan
     SUBDIR += didentd
     SUBDIR += digest
