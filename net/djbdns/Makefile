@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	djbdns
-PORTVERSION=	1.02
+PORTVERSION=	1.03
 CATEGORIES=	net
 MASTER_SITES=	http://cr.yp.to/djbdns/ \
 		ftp://cr.yp.to/djbdns/
