@@ -29,6 +29,7 @@ lib/jack/jack_oss.so
 lib/jack/jack_portaudio.la
 lib/jack/jack_portaudio.so
 lib/libjack.la
+lib/libjack.so
 lib/libjack.so.0
 libdata/pkgconfig/jack.pc
 @dirrm include/jack
