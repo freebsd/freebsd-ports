@@ -24,23 +24,6 @@
   
   /*
 ***************
-*** 53,59 ****
-   * I compile with -g to compile in a full symbol table, but you might choose
-   * to use -O or something else.
-   */
-! #define MK_CCOPTS -g
-  /*
-   * You can also redefine MK_CC here if you wish to override the system
-   * dependent C compiler.  If you have a stable version of GCC, you may
---- 53,59 ----
-   * I compile with -g to compile in a full symbol table, but you might choose
-   * to use -O or something else.
-   */
-! #define MK_CCOPTS -O
-  /*
-   * You can also redefine MK_CC here if you wish to override the system
-   * dependent C compiler.  If you have a stable version of GCC, you may
-***************
 *** 77,83 ****
    * Since 2.2.1 is a major change, I recommend defining this for existing
    * Amanda sites.
