@@ -1,6 +1,10 @@
 bin/direct
 bin/iter
 lib/libtaucs.a
+include/taucs.h
+include/taucs_config_build.h
+include/taucs_config_tests.h
+include/taucs_private.h
 %%PORTDOCS%%%%DOCSDIR%%/taucs.pdf
 %%PORTDOCS%%%%DOCSDIR%%/cilk-mf.pdf
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -7,6 +7,7 @@
 
 PORTNAME=	taucs
 PORTVERSION=	2.2
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://www.tau.ac.il/~stoledo/taucs/${PORTVERSION}/
 DISTNAME=	${PORTNAME}
@@ -31,6 +32,8 @@ post-configure:
 
 do-install:
 	@${INSTALL_DATA} ${WRKSRC}/lib/FreeBSD/libtaucs.a ${PREFIX}/lib
+	@${INSTALL_DATA} ${WRKSRC}/build/FreeBSD/*.h ${PREFIX}/include
+	@${INSTALL_DATA} ${WRKSRC}/src/*.h ${PREFIX}/include
 	@${INSTALL_PROGRAM} ${WRKSRC}/bin/FreeBSD/direct ${PREFIX}/bin
 	@${INSTALL_PROGRAM} ${WRKSRC}/bin/FreeBSD/iter ${PREFIX}/bin
 
