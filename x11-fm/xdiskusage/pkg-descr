@@ -1,0 +1,10 @@
+This utility runs "du" to scan directories of your choosing, then displays a
+graph which emphasizes the subdirectories where the largest files are kept, and
+optionally lists the files themselves.  You can descend into the directory
+tree, or back out, by clicking on the graph.  If you save the output of "du" in
+a file, xdiskusage can analyze that too.  PostScript output is available.
+
+WWW:  http://xdiskusage.sourceforge.net/
+
+Trevor Johnson
+trevor@freebsd.org

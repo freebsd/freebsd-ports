@@ -19,6 +19,7 @@
     SUBDIR += workplace
     SUBDIR += x-files
     SUBDIR += xcruise
+    SUBDIR += xdiskusage
     SUBDIR += xfm
     SUBDIR += xnc
 
