@@ -1,13 +1,13 @@
 # New ports collection makefile for:	p5-ePerl
-# Version required:	2.2.2
-# Date created:		Thu Aug 14 16:57:13 MET DST 1997
+# Version required:	2.2.3
+# Date created:		Thu Aug 21 17:32:36 MET DST 1997
 # Whom:	      		Ralf S. Engelschall <rse@engelschall.com>
 #
-# $Id: Makefile,v 1.1.1.1 1997/08/11 10:09:45 rse Exp $
+# $Id: Makefile,v 1.2 1997/08/14 15:10:32 rse Exp $
 #
 
-DISTNAME=	eperl-2.2.2
-PKGNAME=	p5-ePerl-2.2.2
+DISTNAME=	eperl-2.2.3
+PKGNAME=	p5-ePerl-2.2.3
 CATEGORIES=	lang www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN} \
 		http://www.engelschall.com/sw/eperl/distrib/ \
