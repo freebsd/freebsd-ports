@@ -1,28 +1,15 @@
-*** Imakefile.old	Fri Oct 28 00:12:20 1994
---- Imakefile	Sat Nov 16 04:08:12 1996
-***************
-*** 1,9 ****
-! LOCAL_LIBRARIES = -lX11 
-    SYS_LIBRARIES = -lm
-             SRCS = calcalt.c random.c  artist.c global.c xmountains.c X_graphics.c print_alg.c
-             OBJS = calcalt.o random.o  artist.o global.o xmountains.o X_graphics.o print_alg.o
-             HDRS = crinkle.h global.h paint.h patchlevel.h copyright.h
-            SHARS = README $(SRCS) $(HDRS) Imakefile xmountains.man
-  ComplexProgramTarget(xmountains)
-  
-  
---- 1,14 ----
-! LOCAL_LIBRARIES = $(XLIB)
-! DEPLIBS = $(DEPXLIB)
-    SYS_LIBRARIES = -lm
-             SRCS = calcalt.c random.c  artist.c global.c xmountains.c X_graphics.c print_alg.c
-             OBJS = calcalt.o random.o  artist.o global.o xmountains.o X_graphics.o print_alg.o
-             HDRS = crinkle.h global.h paint.h patchlevel.h copyright.h
-            SHARS = README $(SRCS) $(HDRS) Imakefile xmountains.man
-+ BINDIR= /usr/X11R6/bin
-+ MANDIR= /usr/X11R6/man/man6
-+ MANSUFFIX= 6
-+ 
-  ComplexProgramTarget(xmountains)
-  
-  
+--- Imakefile.orig	Wed Sep 11 22:40:57 1996
++++ Imakefile	Thu Aug 10 22:44:57 2000
+@@ -1,9 +1,10 @@
+-LOCAL_LIBRARIES = -lX11 
+-  SYS_LIBRARIES = -lm
++LOCAL_LIBRARIES = $(XLIB)
++  SYS_LIBRARIES = MathLibrary
+            SRCS = calcalt.c random.c  artist.c global.c xmountains.c X_graphics.c print_alg.c
+            OBJS = calcalt.o random.o  artist.o global.o xmountains.o X_graphics.o print_alg.o
+            HDRS = crinkle.h global.h paint.h patchlevel.h copyright.h
+           SHARS = README $(SRCS) $(HDRS) Imakefile xmountains.man Makefile.alt
++      MANSUFFIX = 6
+ ComplexProgramTarget(xmountains)
+ 
+ 

@@ -6,17 +6,16 @@
 #
 
 PORTNAME=	xmountains
-PORTVERSION=	2.4
+PORTVERSION=	2.5
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR=	apps/math/fractals
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=	http://www.epcc.ed.ac.uk/~spb/xmountains/
+DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	proff@iq.org
 
+NO_WRKSUBDIR=	yes
+
 USE_IMAKE=	yes
 MAN6=		xmountains.6
-
-NO_WRKSUBDIR=	yes
 
 .include <bsd.port.mk>
