@@ -7,6 +7,7 @@
 
 PORTNAME=	kazehakase
 PORTVERSION=	0.1.9
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
 MASTER_SITE_SUBDIR=	${PORTNAME}/11115/
@@ -49,6 +50,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_C
 		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
 OPTIONS=	MIGEMO "Enable Migemo (Japanese incremental search)" Off \
+		ESTRAIER "Enable a full-text search system (Japanese)" Off \
 		IMAGEMAGICK "Enable Thumbnail support (EXPERIMENTAL!)" Off
 
 FLASHPLAYER=	${LOCALBASE}/lib/libflashplayer.so.1
@@ -59,6 +61,10 @@ FLASHPLAYER=	${LOCALBASE}/lib/libflashplayer.so.1
 .if exists(${RUBY_SITEARCHLIBDIR}/uconv.so)
 WITH_MIGEMO=	yes
 .endif
+.endif
+
+.if exists(${LOCALBASE}/bin/estxview)
+WITH_ESTRAIER=	yes
 .endif
 
 .if exists(${LOCALBASE}/bin/convert)
@@ -72,6 +78,10 @@ RUN_DEPENDS+=	migemo:${PORTSDIR}/japanese/migemo \
 
 CONFIUGURE_ARGS+=	--enable-migemo
 .endif
+.endif
+
+.if defined(WITH_ESTRAIER)
+RUN_DEPENDS+=	estxview:${PORTSDIR}/japanese/estraier
 .endif
 
 .if defined(WITH_IMAGEMAGICK)
