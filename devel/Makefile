@@ -801,6 +801,7 @@
     SUBDIR += pear-HTML_Template_IT
     SUBDIR += pear-I18N
     SUBDIR += pear-PEAR
+    SUBDIR += pear-XML_Parser
     SUBDIR += pear-XML_Util
     SUBDIR += pedisassem
     SUBDIR += perforce
