@@ -1,0 +1,33 @@
+--- src/font.c.orig	Sat Jul 21 22:25:23 2001
++++ src/font.c	Fri Sep  7 01:11:47 2001
+@@ -21,7 +21,7 @@
+  * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+  */
+ 
+-static const char cvs_ident[] = "$Id: font.c,v 1.28 2001/07/22 03:25:23 mej Exp $";
++static const char cvs_ident[] = "$Id: font.c,v 1.29 2001/09/06 22:26:20 mej Exp $";
+ 
+ #include "config.h"
+ #include "feature.h"
+@@ -41,7 +41,8 @@
+ #include "windows.h"
+ 
+ char **etfonts = NULL;
+-unsigned char font_idx = DEF_FONT_IDX, def_font_idx = DEF_FONT_IDX, font_cnt = 0;
++unsigned char font_idx = DEF_FONT_IDX, font_cnt = 0;
++int def_font_idx = DEF_FONT_IDX;
+ char *rs_font[NFONTS];
+ #ifdef MULTI_CHARSET
+ char *rs_mfont[NFONTS];
+--- src/font.h.orig	Thu Jun 14 00:31:08 2001
++++ src/font.h	Fri Sep  7 01:11:47 2001
+@@ -73,7 +73,8 @@
+ } fontshadow_t;
+ 
+ /************ Variables ************/
+-extern unsigned char font_idx, def_font_idx, font_cnt, font_chg;
++extern unsigned char font_idx, font_cnt, font_chg;
++extern int def_font_idx;
+ extern const char *def_fontName[];
+ extern char *rs_font[NFONTS];
+ extern char **etfonts, **etmfonts;

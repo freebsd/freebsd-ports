@@ -1,0 +1,20 @@
+--- themes/Eterm/theme.cfg.in.orig	Wed Jul  4 00:53:52 2001
++++ themes/Eterm/theme.cfg.in	Sat Sep 22 16:15:24 2001
+@@ -16,7 +16,7 @@
+ begin color
+ 
+ # Foreground, background, cursor, scrollbar, pointer colors
+-    foreground #aaaaaa
++    foreground #ffffff
+     background black
+     cursor #ffff00
+     cursor_text #880000
+@@ -401,7 +401,7 @@
+ #    line_space 2
+ 
+ # Value to use for $TERM
+-    term_name Eterm
++    term_name xterm-color
+ 
+ # Program to exec (intended for use with themes)
+ #    exec foo

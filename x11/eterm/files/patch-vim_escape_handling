@@ -1,0 +1,77 @@
+--- src/term.c.orig	Thu Aug 23 19:22:55 2001
++++ src/term.c	Fri Sep  7 01:13:07 2001
+@@ -21,7 +21,7 @@
+  * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+  */
+ 
+-static const char cvs_ident[] = "$Id: term.c,v 1.68 2001/08/23 21:04:36 mej Exp $";
++static const char cvs_ident[] = "$Id: term.c,v 1.69 2001/09/06 22:38:21 mej Exp $";
+ 
+ #include "config.h"
+ #include "feature.h"
+@@ -945,15 +945,12 @@
+ process_csi_seq(void)
+ {
+ 
+-  unsigned char ch, priv;
+-  unsigned int nargs;
+-  int arg[ESC_ARGS];
+-
+-  nargs = 0;
+-  arg[0] = 0;
+-  arg[1] = 0;
++  unsigned char ch;
++  unsigned char priv = 0;
++  unsigned int nargs = 0;
++  int arg[ESC_ARGS] = {0, 0};
++  int ignore = 0;
+ 
+-  priv = 0;
+   ch = cmd_getc();  /* Get the next character */
+   if (ch >= '<' && ch <= '?') {
+     priv = ch;  /* DEC private mode sequence.  Get next character. */
+@@ -977,6 +974,8 @@
+       scr_add_lines(&ch, 0, 1);  /* Insert verbatim non-printable character (NPC) */
+       return;
+     }
++    if (ch == '-')  /* HACK: Ignore this sequence, but finish reading */
++      ignore = 1;   /* xterm ignores more than this, but we need this for vim */
+     if (ch < '@')
+       ch = cmd_getc();  /* Separator.  Go to next digit or operation. */
+   } while (ch >= ' ' && ch < '@');
+@@ -986,6 +985,9 @@
+   } else if (ch < ' ')
+     return;  /* An NPC.  Punt. */
+ 
++  if(ignore)
++    return;
++
+   switch (ch) {
+     case '@':
+       scr_insdel_chars((arg[0] ? arg[0] : 1), INSERT);
+@@ -1067,6 +1069,8 @@
+       break;
+ 
+     case 'c':
++      /* TODO: A different response should be sent depending on the value of
++        priv and of arg[0], but what should those reponses be? */
+ #ifndef NO_VT100_ANS
+       tt_printf(VT100_ANS);
+ #endif
+@@ -1403,7 +1407,7 @@
+ process_terminal_mode(int mode, int priv, unsigned int nargs, int arg[])
+ {
+   unsigned int i;
+-  int state;
++  int state; /* This gets set by the PrivCases macro */
+ 
+   if (nargs == 0)
+     return;
+@@ -1526,6 +1530,7 @@
+ 	    else
+ 	      Options |= Opt_home_on_input;
+ 	    break;
++      
+           case 1047:            /* Alternate screen & clear */
+             PrivCases(PrivMode_Screen);
+             scr_change_screen(state);
