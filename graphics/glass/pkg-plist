@@ -1,0 +1,7 @@
+include/glass.h
+include/glass_types.h
+lib/libglass.so
+lib/libglass.so.1
+%%PORTDOCS%%share/doc/glass/specification.html
+%%PORTDOCS%%share/doc/glass/tutorial.html
+%%PORTDOCS%%@dirrm share/doc/glass

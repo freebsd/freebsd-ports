@@ -1,0 +1,8 @@
+GLASS is a 3D library, designed to make easy use of structured
+models in open GL applications. What do I mean by structured? That
+is models, that are made up of components linked by basic transforms,
+for example, rotations and translations. By using GLASS in an
+application, these models can be loaded, modified, and displayed
+using a minimum of function calls.
+
+WWW: http://glass.sourceforge.net/
