@@ -14,6 +14,8 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Perl module for manage templates and parses templates
+
 PERL_CONFIGURE=	yes
 
 MAN3=		CGI::FastTemplate.3

@@ -12,6 +12,8 @@ MASTER_SITES=	ftp://cns-ftp.bu.edu/pub/xbattle/
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A concurrent multi-player battle strategy game
+
 USE_IMAKE=	yes
 MAN1=		xbattle.1
 

@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	euler
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A program computes with real and complex numbers and matrices
+
 USE_REINPLACE=	yes
 USE_GNOMENG=	yes
 USE_GNOME=	gtk12

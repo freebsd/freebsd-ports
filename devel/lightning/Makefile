@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Generates assembly language code at run-time
+
 GNU_CONFIGURE=	yes
 
 .include <bsd.port.mk>

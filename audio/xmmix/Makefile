@@ -13,6 +13,8 @@ MASTER_SITE_SUBDIR=	applications
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A Motif based audio mixer
+
 USE_REINPLACE=	yes
 USE_IMAKE=	yes
 USE_MOTIF=	yes

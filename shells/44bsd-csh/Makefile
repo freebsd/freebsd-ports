@@ -13,6 +13,8 @@ MASTER_SITE_SUBDIR=	cy
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	The traditional 4.4BSD /bin/csh C-shell
+
 USE_BZIP2=	yes
 
 NO_WRKSUBDIR=	yes

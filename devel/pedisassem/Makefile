@@ -13,6 +13,8 @@ DISTNAME=	dsasmsrc
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A disassembler for Win32 code (PE format)
+
 NO_WRKSUBDIR=	yes
 
 USE_ZIP=	yes

@@ -13,6 +13,8 @@ MASTER_SITE_SUBDIR=${PORTNAME}
 
 MAINTAINER=	ports@freebsd.org
 
+PORTCOMMENT=	Tk console for Tcl
+
 RUN_DEPENDS=	wish8.3:${PORTSDIR}/x11-toolkits/tk83
 
 USE_REINPLACE=	yes

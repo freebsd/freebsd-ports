@@ -13,6 +13,8 @@ MASTER_SITES=	ftp://ftp.wwdsi.com/pub/saint/			\
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Security Administrator\'s Integrated Network Tool
+
 BUILD_DEPENDS=	nmap:${PORTSDIR}/security/nmap
 
 USE_PERL5=	yes

@@ -13,6 +13,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Make a simple GUI under OpenGL
+
 LIB_DEPENDS=	SDL-1.1.4:${PORTSDIR}/devel/sdl12 \
 		freetype.9:${PORTSDIR}/print/freetype2
 

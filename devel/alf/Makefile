@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	largefiles
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Abstract Large File
+
 USE_PYTHON=	yes
 USE_LIBTOOL=	yes
 

@@ -15,6 +15,8 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Future Composer Reference Player
+
 BUILD_DEPENDS=	${LOCALBASE}/include/sidplay/compconf.h:${PORTSDIR}/audio/libsidplay
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

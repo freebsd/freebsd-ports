@@ -14,6 +14,8 @@ DISTNAME=	XBanner${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Make your XDM login screen look beautiful
+
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_XPM=	yes

@@ -12,6 +12,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	GIMP Print Printer Driver
+
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 
 USE_REINPLACE=	yes

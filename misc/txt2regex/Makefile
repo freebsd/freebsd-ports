@@ -14,6 +14,8 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A Regular Expression "wizard"
+
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash2
 
 USE_REINPLACE=	yes

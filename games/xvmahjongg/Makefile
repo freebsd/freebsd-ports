@@ -13,6 +13,8 @@ DISTFILES=	${PORTNAME}${PORTVERSION}.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Mahjongg for XView with multicolored tiles
+
 LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview
 
 ALL_TARGET=	mahjongg.swap

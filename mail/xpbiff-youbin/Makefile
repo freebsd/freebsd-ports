@@ -12,6 +12,8 @@ PORTVERSION=	1.27
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A replacement for xbiff that handles popup window with mail header via youbin
+
 YOUBIN=		yes
 MASTERDIR=	${.CURDIR}/../xpbiff
 PKGDIR=		${.CURDIR}

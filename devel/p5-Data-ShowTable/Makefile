@@ -14,6 +14,8 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Perl5 module to pretty-print arrays of data
+
 PERL_CONFIGURE=	yes
 
 MAN1=		showtable.1

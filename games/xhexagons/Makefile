@@ -13,6 +13,8 @@ MASTER_SITE_SUBDIR=	games/xpuzzles
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Hexagons puzzle (similar to Fifteen Puzzle) for X Window System
+
 WRKSRC=		${WRKDIR}/xhexagons
 USE_IMAKE=	yes
 MAN1=		xhexagons.1

@@ -15,6 +15,8 @@ DISTNAME=	PyChart-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Create high quality Encapsulated Postscript, PDF, or PNG charts
+
 RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript-gnu
 
 USE_PYTHON=	yes

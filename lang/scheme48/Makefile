@@ -13,6 +13,8 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	The Scheme Underground\'s implementation of R4RS
+
 GNU_CONFIGURE=  yes
 ALL_TARGET = 	enough
 STRIP=

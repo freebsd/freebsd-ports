@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	An object oriented recursive descent parser generator framework
+
 GNU_CONFIGURE=	yes
 
 .include <bsd.port.mk>

@@ -15,6 +15,8 @@ DISTNAME=	MayaVi-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	The MayaVi Data Visualizer
+
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
 RUN_DEPENDS=	${BUILD_DEPENDS}
 

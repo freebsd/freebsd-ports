@@ -13,6 +13,8 @@ MASTER_SITES=	http://www.cs.duke.edu/~reynolds/cqcam/
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Color Quickcam control program
+
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 
 ONLY_FOR_ARCHS=	i386

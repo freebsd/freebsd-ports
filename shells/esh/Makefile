@@ -12,6 +12,8 @@ MASTER_SITES=	http://slon.ttk.ru/esh/
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	The "easy shell", a small shell with Lisp-like syntax
+
 WRKSRC=		${WRKDIR}/esh
 
 pre-build:

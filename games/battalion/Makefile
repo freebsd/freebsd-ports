@@ -13,6 +13,8 @@ DISTFILES=	battalionSource1.4.tar.Z battalionSUN4.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Monsters, explosions, destruction game for X Window System
+
 WRKSRC=		${WRKDIR}/battalionSource
 
 ALL_TARGET=	# empty

@@ -13,6 +13,8 @@ MASTER_SITE_SUBDIR=	pardiff
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Parallelizing diff Filter, converts diff output to paralleled format
+
 GNU_CONFIGURE=	yes
 
 MAN1=	pardiff.1 diffp.1

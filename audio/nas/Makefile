@@ -13,6 +13,8 @@ EXTRACT_SUFX=	.src.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Network Audio System
+
 USE_REINPLACE=	yes
 USE_IMAKE=	yes
 ALL_TARGET=	World

@@ -13,6 +13,8 @@ DISTNAME=	${PORTNAME}.${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	An X11 program which emulates a plan9 window
+
 # needs library and private header, but not during runtime
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/editors/sam:build
 

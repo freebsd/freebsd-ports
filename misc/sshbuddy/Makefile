@@ -14,6 +14,8 @@ MASTER_SITES=	http://topcu.linux.tucows.com/files/x11/network/ \
 
 MAINTAINER=	ports@freebsd.org
 
+PORTCOMMENT=	Simple and small GUI utility to manage ssh sessions
+
 RUN_DEPENDS=	expectk:${PORTSDIR}/lang/expect
 
 NO_BUILD=	yes

@@ -14,6 +14,8 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A generic interface for processing online credit card payments
+
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Net/SSLeay.pm:${PORTSDIR}/security/p5-Net-SSLeay
 RUN_DEPENDS=	${BUILD_DEPENDS}
 

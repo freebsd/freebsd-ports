@@ -12,6 +12,8 @@ MASTER_SITES=	http://www.linuxbrit.co.uk/downloads/
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A utility library that includes a wrapper for imlib2
+
 LIB_DEPENDS=	Imlib2.1:${PORTSDIR}/graphics/imlib2
 
 USE_X_PREFIX=	yes

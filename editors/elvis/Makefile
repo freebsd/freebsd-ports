@@ -15,6 +15,8 @@ DISTNAME=	${PORTNAME}-2.1_4
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A clone of the ex/vi text editor
+
 USE_REINPLACE=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--bindir=${PREFIX}/bin --datadir=${PREFIX}/share/elvis

@@ -13,6 +13,8 @@ MASTER_SITES=	http://www.arnoldarts.de/
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Convert C++ source to a file you can input in an LaTeX-document
+
 GNU_CONFIGURE=	yes
 
 .include <bsd.port.mk>

@@ -14,6 +14,8 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Cpu's Audio Mixer [curses based]
+
 MAN1=	cam.1
 PLIST=	${WRKDIR}/pkg-plist
 

@@ -13,6 +13,8 @@ MASTER_SITES=	ftp://ftp.math.muni.cz/pub/math/people/Dobes/ \
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Xboard-compatible chess playing program
+
 LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 
 WRKSRC=		${WRKDIR}/Phalanx-XXII

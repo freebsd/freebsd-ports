@@ -12,6 +12,8 @@ MASTER_SITES=	http://www.math.lsa.umich.edu/~mattiasj/games/xquarto/
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	X version of simple but tricky board game
+
 USE_IMAKE=	yes
 USE_XPM=	yes
 MAN6=		xquarto.6

@@ -15,6 +15,8 @@ EXTRACT_SUFX=	.tar
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A stacheldraht (DOS attack) agent detector
+
 ALL_TARGET=	gag
 
 do-install:

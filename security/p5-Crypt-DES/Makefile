@@ -14,6 +14,8 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Perl5 interface to DES block cipher
+
 RESTRICTED=	"Crypto; export-controlled"
 
 PERL_CONFIGURE=	yes

@@ -12,6 +12,8 @@ MASTER_SITES=	http://gliv.tuxfamily.org/
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	An image viewer that uses Gdk-Pixbuf and OpenGL
+
 LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt \
 		gtkgl-2.0.1:${PORTSDIR}/x11-toolkits/gtkglarea2
 RUN_DEPENDS=	${LOCALBASE}/bin/convert:${PORTSDIR}/graphics/ImageMagick

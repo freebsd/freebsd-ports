@@ -11,6 +11,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A Python interface to PostgreSQL, including a DP-API 2.0 wrapper
+
 POSTGRESQL_SUBPORT=	YES
 .include <${.CURDIR}/../postgresql7/Makefile>
 

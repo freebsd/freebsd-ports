@@ -14,6 +14,8 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Extremely lightweight CGI processing package
+
 PERL_CONFIGURE=	yes
 
 MAN3=		CGI::Minimal.3

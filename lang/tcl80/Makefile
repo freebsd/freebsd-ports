@@ -13,6 +13,8 @@ DISTNAME=	tcl8.0.5
 
 MAINTAINER=	ports@freebsd.org
 
+PORTCOMMENT=	Tool Command Language
+
 NO_LATEST_LINK=	yes
 WRKSRC=		${WRKDIR}/tcl8.0.5/unix
 INSTALLS_SHLIB=	yes

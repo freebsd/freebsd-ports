@@ -14,6 +14,8 @@ EXTRACT_SUFX=	.l
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Apache module that provides syntax coloring for various languages
+
 BUILD_DEPENDS=	${APXS}:${APACHE_PORT}
 RUN_DEPENDS=	${APXS}:${APACHE_PORT}
 

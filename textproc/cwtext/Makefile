@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Morse Code Generator
+
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 MAKEFILE=	makefile

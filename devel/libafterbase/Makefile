@@ -15,6 +15,8 @@ DISTNAME=	libAfterBase-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	AfterStep basic functionality library
+
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes

@@ -14,6 +14,8 @@ EXTRACT_SUFX=	# none
 
 MAINTAINER=	ports@freebsd.org
 
+PORTCOMMENT=	A XFree86 4.x driver module for VMware guests
+
 RUN_DEPENDS=	XFree86:${PORTSDIR}/x11/XFree86-4
 
 NO_WRKSUBDIR=	yes

@@ -15,6 +15,8 @@ DIST_SUBDIR=	${PKGNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A translator that converts MP4-SA files into efficient C programs
+
 USE_REINPLACE=	yes
 USE_BISON=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}/src

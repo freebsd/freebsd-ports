@@ -13,6 +13,8 @@ DISTNAME=	UMFPACK${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Unsymmetric-pattern Multifrontal Package
+
 BUILD_DEPENDS=	${LOCALBASE}/lib/libblas.a:${PORTSDIR}/math/blas
 
 NO_CDROM=	'Must not be sold'

@@ -15,6 +15,8 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Create your own VCD
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}.orig
 
 do-install:

@@ -16,6 +16,8 @@ MASTER_SITES=	http://twtelecom.dl.sourceforge.net/sourceforge/lesstif/ \
 
 MAINTAINER=	ports@freebsd.org
 
+PORTCOMMENT=	API compatible clone of the Motif toolkit
+
 BUILD_DEPENDS=	${LOCALBASE}/bin/automake:${PORTSDIR}/devel/automake
 
 MANUAL_PACKAGE_BUILD=	do not want to install during interactive build

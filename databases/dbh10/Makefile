@@ -17,6 +17,8 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Disk Based Hashtables
+
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 

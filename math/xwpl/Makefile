@@ -13,6 +13,8 @@ DISTNAME=	${PKGNAME}-freebsd
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	The X Wavelet Packet Laboratory
+
 ONLY_FOR_ARCHS=	i386
 
 NO_CDROM=	"Free for Non-Commercial Use Only"

@@ -14,6 +14,8 @@ DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Minesweeper game for the X Window System
+
 USE_X_PREFIX=	yes
 
 post-install:

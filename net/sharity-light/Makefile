@@ -17,6 +17,8 @@ DISTNAME=	Sharity-Light.1.2
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	An userland smbfs --- SMB to NFS protocols converter
+
 MAN8=		smbmount.8
 
 post-extract:

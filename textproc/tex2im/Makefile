@@ -13,6 +13,8 @@ MASTER_SITES=	http://www.nought.de/
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Converts LaTeX formulas into high resolution pixmap graphics
+
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash2 \
 		latex:${PORTSDIR}/print/teTeX \
 		convert:${PORTSDIR}/graphics/ImageMagick

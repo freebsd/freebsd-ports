@@ -14,6 +14,8 @@ DISTNAME=	RasMol
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Fast Molecular Visualization Program
+
 WRKSRC=		${WRKDIR}/RasMol_2.7.2/src
 
 USE_X_PREFIX=	yes

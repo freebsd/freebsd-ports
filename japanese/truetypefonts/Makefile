@@ -13,6 +13,8 @@ DISTNAME=	ttf-xtt_0.${PORTVERSION:R:S/.//g}-${PORTVERSION:E}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Japanese TrueType Fonts
+
 USE_X_PREFIX=	yes
 
 WRKSRC=		${WRKDIR}/ttf-xtt-0.${PORTVERSION:R:S/.//g}

@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A photorealistic rendering system
+
 BUILD_DEPENDS=	${LOCALBASE}/lib/libargparse.a:${PORTSDIR}/devel/libargparse
 LIB_DEPENDS=	tiff:${PORTSDIR}/graphics/tiff
 

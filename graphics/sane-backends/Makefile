@@ -15,6 +15,8 @@ MASTER_SITE_SUBDIR=	sane-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	API for access to scanners, digitals camera, frame grabbers etc
+
 LIB_DEPENDS=	usb-0.1.5:${PORTSDIR}/devel/libusb \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
 

@@ -14,6 +14,8 @@ DISTNAME=	${PORTNAME}_v${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Generates mazes on a text terminal and lets you traverse them
+
 USE_PERL5=	yes
 WRKSRC=		${WRKDIR}/TextMaze
 NO_BUILD=	yes

@@ -13,6 +13,8 @@ MASTER_SITES=	http://xtl.sourceforge.net/
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A library for R/W structured data to/from an external representation
+
 NO_BUILD=	yes
 
 do-install:

@@ -12,6 +12,8 @@ MASTER_SITES=	http://www.isi.edu/nsnam/dist/
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	MIT Object Tcl
+
 LIB_DEPENDS=	tk83.1:${PORTSDIR}/x11-toolkits/tk83
 
 INSTALLS_SHLIB=	yes

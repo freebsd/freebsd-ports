@@ -14,6 +14,8 @@ DISTNAME=	locale-ja_${VERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Linux glibc 2.0/2.1 locale definition for Japanese
+
 BUILD_DEPENDS=	${LCDEF_CMD}:${PORTSDIR}/emulators/linux_base
 
 IGNORE=		"ja-linux_locale is not needed for linux_base7"

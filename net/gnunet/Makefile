@@ -15,6 +15,8 @@ DISTNAME=	GNUnet-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	An anonymous, distributed, reputation-based network
+
 LIB_DEPENDS=	gdbm.2:${PORTSDIR}/databases/gdbm
 
 USE_BZIP2=	yes

@@ -10,6 +10,8 @@ PKGNAMESUFFIX=	-euctw
 
 MAINTAINER=	ports@freebsd.org
 
+PORTCOMMENT=	A clone of vi/ex, with multilingual patch, default settings for euc-tw
+
 CONFIGURE_ARGS+=	--enable-multibyte=euc-tw --program-prefix=n
 
 MASTERDIR=	${.CURDIR}/../../editors/nvi-m17n

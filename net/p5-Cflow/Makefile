@@ -13,6 +13,8 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Analyze raw flow files written by cflowd (Cisco NetFlow data)
+
 PERL_CONFIGURE=	YES
 
 MAN1=		flowdumper.1

@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A C library for writing servers
+
 USE_GNOMENG=	yes
 USE_GNOME=	glib12
 USE_GMAKE=	yes

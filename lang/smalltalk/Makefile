@@ -13,6 +13,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	GNU Smalltalk
+
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv \
 		gdbm.2:${PORTSDIR}/databases/gdbm \
 		gmp.6:${PORTSDIR}/math/libgmp4

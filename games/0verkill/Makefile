@@ -13,6 +13,8 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	0verkill is a bloody 2D action deathmatch-like game in ASCII-ART
+
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 

@@ -15,6 +15,8 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	GPL standalone Flash (TM) player
+
 LIB_DEPENDS=	flash.0:${.CURDIR}/../libflash
 
 USE_X_PREFIX=	yes

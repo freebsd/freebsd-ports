@@ -13,6 +13,8 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A spreadsheet program for X and terminals
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}.orig
 
 USE_XLIB=	yes

@@ -21,6 +21,8 @@ MASTER_SITES=	ftp://ftp.cnidr.org/software/freewais/ \
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A Wide Area Information Server
+
 NO_PACKAGE=	"not yet"
 NO_INSTALL=	almost
 ALL_TARGET=	freebsd

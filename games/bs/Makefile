@@ -12,6 +12,8 @@ MASTER_SITES=	http://www.tuxedo.org/~esr/bs/
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Battleships solitaire game with a color interface
+
 ALL_TARGET=	# empty
 MAN6=		bs.6
 

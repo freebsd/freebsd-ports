@@ -13,6 +13,8 @@ MASTER_SITE_SUBDIR=	libraries
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	The X Pixmap library
+
 USE_IMAKE=	yes
 INSTALLS_SHLIB=	yes
 

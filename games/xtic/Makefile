@@ -14,6 +14,8 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	An X version of a simple but tricky board game
+
 USE_REINPLACE=	yes
 USE_IMAKE=	yes
 USE_XPM=	yes

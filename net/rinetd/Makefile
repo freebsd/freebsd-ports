@@ -13,6 +13,8 @@ DISTNAME=	rinetd
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A simple TCP port redirector
+
 WRKSRC=		${WRKDIR}/rinetd/
 
 MAN8=		rinetd.8

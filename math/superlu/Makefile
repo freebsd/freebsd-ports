@@ -13,6 +13,8 @@ DISTNAME=	${PORTNAME}_2.0
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A library of routines for performing sparse factorization
+
 BUILD_DEPENDS=	${LOCALBASE}/lib/libblas.a:${PORTSDIR}/math/blas
 
 WRKSRC=		${WRKDIR}/SuperLU

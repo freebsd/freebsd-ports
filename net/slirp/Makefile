@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=slirp
 
 MAINTAINER=	ports@FreeBSD.Org
 
+PORTCOMMENT=	A SLIP/CSLIP emulator for users with shell accounts
+
 BUILD_DEPENDS=	perl:${PORTSDIR}/lang/perl5
 
 # serious LP64 issues

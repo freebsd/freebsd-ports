@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	toutdoux
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	An XML internationalization tool
+
 LIB_DEPENDS=	xml.5:${PORTSDIR}/textproc/libxml
 
 USE_REINPLACE=	yes

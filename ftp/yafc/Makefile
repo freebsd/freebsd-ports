@@ -13,6 +13,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Yet another ftp client. Similar to ftp(1)
+
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 

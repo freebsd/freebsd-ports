@@ -25,6 +25,8 @@ BUILD_DEPENDS+= tex:${PORTSDIR}/print/teTeX \
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Brian Harvey\'s logo language interpreter
+
 USE_XLIB=	yes
 MAKEFILE=	makefile
 HAS_CONFIGURE=	yes

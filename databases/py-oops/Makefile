@@ -15,6 +15,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Object Oriented Database Library For Persistent Storage in Python
+
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 

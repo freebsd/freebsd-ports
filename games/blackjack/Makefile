@@ -14,6 +14,8 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	One of the better implementations of blackjack, based on QT
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_QT_VER=	1
 

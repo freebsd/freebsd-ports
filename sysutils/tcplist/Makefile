@@ -15,6 +15,8 @@ EXTRACT_SUFX=	.shar
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Lists tcp connections to/from local machine (+username on both sides)
+
 RUN_DEPENDS=	${LOCALBASE}/sbin/lsof:${PORTSDIR}/sysutils/lsof
 
 EXTRACT_CMD=	${CAT}

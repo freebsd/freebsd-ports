@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Trivial Database
+
 LIB_DEPENDS=	gdbm:${PORTSDIR}/databases/gdbm
 
 USE_LIBTOOL=	yes

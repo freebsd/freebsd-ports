@@ -18,6 +18,8 @@ EXTRACT_ONLY=	wmpuzzle_${PORTVERSION}.orig${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A dockable puzzle game for WindowMaker and AfterStep
+
 LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 
 GNU_CONFIGURE=	yes

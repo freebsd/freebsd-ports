@@ -14,6 +14,8 @@ EXTRACT_SUFX=	.tar
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Strips TeX/LaTeX codes from a file
+
 EXTRACT_CMD=		${TAR}
 EXTRACT_BEFORE_ARGS=	-xf
 EXTRACT_AFTER_ARGS=	#empty

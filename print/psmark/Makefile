@@ -14,6 +14,8 @@ DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Renders a vertical string on any PostScript document
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_REINPLACE=	yes
 

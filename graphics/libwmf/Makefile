@@ -13,6 +13,8 @@ MASTER_SITE_SUBDIR=	wvware
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Tools and library for converting microsoft\'s wmf (windows metafile)
+
 BUILD_DEPENDS=	freetype-config:${PORTSDIR}/print/freetype2     # XXX
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \

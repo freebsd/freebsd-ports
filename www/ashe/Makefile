@@ -14,6 +14,8 @@ DISTFILES=	xhtml-1.3.tar.Z cci.tar.Z libhtmlw.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A simple HTML editor
+
 NO_WRKSUBDIR=	yes
 CONFIGURE_WRKSRC=	${WRKDIR}/src
 INSTALL_WRKSRC=		${WRKDIR}/src

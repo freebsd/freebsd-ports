@@ -14,6 +14,8 @@ DISTNAME=	tn-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A cross-platform terminal manipulation library
+
 do-install:
 	@${MKDIR} ${PREFIX}/include/tn
 	${INSTALL_DATA} ${WRKSRC}/*.h ${PREFIX}/include/tn

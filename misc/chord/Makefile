@@ -14,6 +14,8 @@ DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Produce PS sheet-music from text input
+
 MAN1=		a2crd.1 chord.1
 MANCOMPRESSED=	yes
 

@@ -13,6 +13,8 @@ DISTNAME=	ipw
 
 MAINTAINER=	ports@freebsd.org
 
+PORTCOMMENT=	A "whois" replacement that automatically queries several databases
+
 NO_WRKSUBDIR=	yes
 
 .include <bsd.port.mk>

@@ -12,6 +12,8 @@ MASTER_SITES=	http://www.asleep.net/wmpal/
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A one of the most useless dockapps in the world
+
 LIB_DEPENDS=	dockapp.1:${PORTSDIR}/x11-wm/libdockapp
 
 USE_X_PREFIX=	yes

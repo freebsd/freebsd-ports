@@ -13,6 +13,8 @@ MASTER_SITES=	http://mvertes.free.fr/download/
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Converts flat ASCII text to man page format
+
 BUILD_DEPENDS=	gawk:${PORTSDIR}/lang/gawk
 RUN_DEPENDS=	${BUILD_DEPENDS}
 

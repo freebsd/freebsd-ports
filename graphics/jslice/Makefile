@@ -12,6 +12,8 @@ MASTER_SITES=	http://www.pldaniels.com/jslice/
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Graphics tool to split up a JPEG image and provide HTML for the slices
+
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 
 do-install:

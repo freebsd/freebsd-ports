@@ -14,6 +14,8 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Perl5 module to install die() and warn() handlers
+
 PERL_CONFIGURE=	YES
 
 MAN3=		Religion.3

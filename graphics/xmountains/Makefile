@@ -13,6 +13,8 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.Org
 
+PORTCOMMENT=	X11 based fractal landscape generator
+
 NO_WRKSUBDIR=	yes
 
 USE_IMAKE=	yes

@@ -12,6 +12,8 @@ MASTER_SITES=	ftp://ftp.netbsd.org/pub/NetBSD/misc/proff/ \
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Command line interface to popular WWW search engines
+
 GNU_CONFIGURE=	yes
 
 post-install:

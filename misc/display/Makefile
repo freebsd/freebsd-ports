@@ -13,6 +13,8 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Runs command repeatedly; shows output (can conflict with ImageMagick)
+
 GNU_CONFIGURE=	yes
 
 MAN1=		display.1

@@ -13,6 +13,8 @@ DISTNAME=	${PORTNAME}-freebsd-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Server side extension to HTML eliminating the need for CGI scripts
+
 pre-install:
 	${MKDIR} ${PREFIX}/www/cgi-bin ${PREFIX}/www/data
 

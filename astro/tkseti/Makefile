@@ -12,6 +12,8 @@ MASTER_SITES=	http://www.cuug.ab.ca/~macdonal/tkseti/
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Tk-based interface to SETI@Home
+
 RUN_DEPENDS=	wish8.3:${PORTSDIR}/x11-toolkits/tk83 \
 		${LOCALBASE}/sbin/setiathome:${PORTSDIR}/astro/setiathome
 

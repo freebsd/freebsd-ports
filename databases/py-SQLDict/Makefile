@@ -13,6 +13,8 @@ PKGNAMEPREFIX=		py-
 
 MAINTAINER=		ports@FreeBSD.org
 
+PORTCOMMENT=	Python dictionary wrapper around a SQL database
+
 USE_PYTHON=		yes
 NO_WRKSUBDIR=		yes
 

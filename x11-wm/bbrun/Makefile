@@ -12,6 +12,8 @@ MASTER_SITES=	http://www.dwave.net/~jking/bbrun/
 
 MAINTAINER=	adamw@FreeBSD.org
 
+PORTCOMMENT=	A Run box for Blackbox
+
 LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 
 USE_X_PREFIX=	yes

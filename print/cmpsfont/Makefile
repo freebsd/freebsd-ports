@@ -15,6 +15,8 @@ EXTRACT_SUFX=	-unix.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Computer Modern PostScript Fonts (Adobe Type 1 format)
+
 BUILD_DEPENDS=	${LOCALBASE}/bin/type1inst:${PORTSDIR}/x11-fonts/p5-type1inst
 
 WRKSRC=		${WRKDIR}/cmpsfont

@@ -13,6 +13,8 @@ DISTNAME=	${PORTNAME}_1.0-2
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Chain Reaction, a strategy game for 2-4 players
+
 RUN_DEPENDS=	wish8.2:${PORTSDIR}/x11-toolkits/tk82
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-1.0

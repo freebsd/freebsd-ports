@@ -13,6 +13,8 @@ DISTNAME=	greed.81p
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A utility for downloading files with resume capabilities
+
 ALL_TARGET=	freebsd
 WRKSRC=		${WRKDIR}/greed.81p
 

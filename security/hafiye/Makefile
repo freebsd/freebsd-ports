@@ -14,6 +14,8 @@ MASTER_SITES=	http://www.enderunix.org/hafiye/ \
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Multi Platform Customizable TCP/IP Packet Sniffer
+
 USE_REINPLACE=	yes
 MAKE_ENV=	LDFLAGS="-lpcap"
 

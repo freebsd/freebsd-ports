@@ -15,6 +15,8 @@ MASTER_SITE_SUBDIR=	gphoto
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A universal digital camera picture control tool
+
 BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext \
 		usb-0.1.5:${PORTSDIR}/devel/libusb \

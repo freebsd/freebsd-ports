@@ -13,6 +13,8 @@ MASTER_SITES=	ftp://athena-dist.mit.edu/pub/ATHENA/zephyr/ \
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Real time message passing and notification service
+
 WRKSRC=		${WRKDIR}/zephyr
 
 USE_XLIB=	yes

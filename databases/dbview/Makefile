@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	apps/database/proprietary
 
 MAINTAINER=		ports@FreeBSD.org
 
+PORTCOMMENT=	View dBase III files
+
 LIB_DEPENDS=		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 
 MAN1=			dbview.1

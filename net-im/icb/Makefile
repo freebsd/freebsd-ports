@@ -16,6 +16,8 @@ DISTNAME=	c${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Internet CB - a mostly-defunct chat client
+
 LIB_DEPENDS=	tcl83:${PORTSDIR}/lang/tcl83
 
 

@@ -14,6 +14,8 @@ DISTNAME=	AntipoliX_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Simple multiplayer game for X Window System
+
 NO_WRKSUBDIR=	yes
 USE_IMAKE=	yes
 NO_INSTALL_MANPAGES=	yes

@@ -15,6 +15,8 @@ EXTRACT_ONLY=	${DISTNAME}.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	MIDI to WAV renderer and player
+
 NO_CDROM=	"Uses copyrighted patches"
 
 TIINS=		goemon.tgz

@@ -17,6 +17,8 @@ DISTNAME=	GOPchop-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	MPEG2 GOP-accurate editor
+
 BUILD_DEPENDS=	${LOCALBASE}/lib/libvo.a:${PORTSDIR}/graphics/libmpeg2
 LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt \
 		mpeg2.0:${PORTSDIR}/graphics/libmpeg2

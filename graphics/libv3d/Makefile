@@ -14,6 +14,8 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	V3D IO Library
+
 USE_REINPLACE=	yes
 USE_MESA=	yes
 HAS_CONFIGURE=	yes

@@ -13,6 +13,8 @@ MASTER_SITES=	http://www.dante.net/staff/konstantin/FreeBSD/iconv/
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Charset conversion library and utilities
+
 USE_PERL5=	yes
 INSTALLS_SHLIB=	yes
 

@@ -15,6 +15,8 @@ DISTNAME=	PyRRDtool-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Python C extension module to access RRDtool files
+
 LIB_DEPENDS=	rrd:${PORTSDIR}/net/rrdtool
 
 USE_PYTHON=	yes

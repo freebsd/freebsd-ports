@@ -13,6 +13,8 @@ DISTNAME=	gnome-breakout-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	GNOME version of the classic breakout game
+
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_GNOMENG=	yes

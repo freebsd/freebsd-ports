@@ -14,6 +14,8 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Perl5 module for single call read & write file routines
+
 PERL_CONFIGURE=	YES
 
 MAN3=		File::Slurp.3

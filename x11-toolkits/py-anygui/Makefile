@@ -15,6 +15,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Generic GUI-creation front-end for Python
+
 BUILD_DEPENDS=	${PYDISTUTILS}
 
 USE_PYTHON=	yes

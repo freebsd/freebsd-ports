@@ -15,6 +15,8 @@ DISTNAME=	${PORTNAME}_${PORTVERSION:S/p/pre/}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A Multibody Dynamic Simulation Library
+
 USE_MESA=	yes
 USE_GMAKE=	yes
 MAKE_ENV=	OPENGLINCDIR="${X11BASE}/include" \

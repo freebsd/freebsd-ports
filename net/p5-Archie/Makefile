@@ -15,6 +15,8 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Perl5 module to make Archie queries via Prospero requests
+
 USE_PERL5=	yes
 
 NO_WRKSUBDIR=	yes

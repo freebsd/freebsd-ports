@@ -15,6 +15,8 @@ DIST_SUBDIR=	ruby
 
 MAINTAINER?=	ports@FreeBSD.org
 
+PORTCOMMENT=	Ruby reference manual, in HTML format
+
 USE_RUBY=	yes
 RUBY_NO_BUILD_DEPENDS=	yes
 RUBY_NO_RUN_DEPENDS=	yes

@@ -13,6 +13,8 @@ MASTER_SITES=	http://www.cabaret.demon.co.uk/filepp/
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A generic file preprocessor
+
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 NO_BUILD=	yes

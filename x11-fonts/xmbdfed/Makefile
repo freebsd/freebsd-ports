@@ -17,6 +17,8 @@ PATCHFILES=	${PORTNAME}-${PORTVERSION:R}-patch1
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A Motif tool for editing X11 bitmap fonts
+
 USE_X_PREFIX=	yes
 USE_FREETYPE=	yes
 USE_MOTIF=	yes

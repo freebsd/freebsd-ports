@@ -13,6 +13,8 @@ DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Collection of over 3000 icons in XPM3 format
+
 USE_X_PREFIX=	yes
 NO_BUILD=	yes
 

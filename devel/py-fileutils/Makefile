@@ -15,6 +15,8 @@ DISTNAME=	FileUtils-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	File I/O related functions and classes
+
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 

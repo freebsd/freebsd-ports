@@ -14,6 +14,8 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A perl5 interface to Gd Graphics Library
+
 LIB_DEPENDS=	gd.2:${PORTSDIR}/graphics/gd
 
 PERL_CONFIGURE=	yes

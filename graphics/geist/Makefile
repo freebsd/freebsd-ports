@@ -12,6 +12,8 @@ MASTER_SITES=	http://www.linuxbrit.co.uk/downloads/
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	An object-based image creation/layout application
+
 LIB_DEPENDS=	Imlib2.1:${PORTSDIR}/graphics/imlib2 \
 		xml2.5:${PORTSDIR}/textproc/libxml2
 

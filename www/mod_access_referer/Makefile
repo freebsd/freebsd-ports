@@ -13,6 +13,8 @@ MASTER_SITE_SUBDIR=	accessreferer
 
 MAINTAINER=	ports@freebsd.org
 
+PORTCOMMENT=	An Apache module that provides access control based on Referer HTTP header
+
 BUILD_DEPENDS=	${APXS}:${APACHE_PORT}
 RUN_DEPENDS=	${APXS}:${APACHE_PORT}
 

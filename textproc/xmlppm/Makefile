@@ -17,6 +17,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	XML-Conscious PPM Compression
+
 LIB_DEPENDS=	expat.4:${PORTSDIR}/textproc/expat2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src

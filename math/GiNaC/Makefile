@@ -15,6 +15,8 @@ MASTER_SITES=	ftp://ftpthep.physik.uni-mainz.de/pub/GiNaC/ \
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A C++ library for symbolic mathematical calculations
+
 LIB_DEPENDS=	cln.2:${PORTSDIR}/math/cln
 
 USE_REINPLACE=	yes

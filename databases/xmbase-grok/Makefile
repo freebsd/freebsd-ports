@@ -14,6 +14,8 @@ DISTNAME=	${PORTNAME:S/-/_/}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Graphical Resource Organizer Kit
+
 BUILD_WRKSRC=	${WRKDIR}/${DISTNAME}/src
 
 USE_REINPLACE=	yes

@@ -15,6 +15,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	General (or GNU) template generation tools
+
 GNU_CONFIGURE=	yes
 
 .include <bsd.port.mk>

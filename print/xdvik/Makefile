@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	asami/LOCAL_PORTS
 
 MAINTAINER=	ports@FreeBSD.Org
 
+PORTCOMMENT=	DVI Previewer(kpathsearch) for X
+
 RUN_DEPENDS=	mf:${PORTSDIR}/print/tex
 
 USE_XLIB=	yes

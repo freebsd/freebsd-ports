@@ -15,6 +15,8 @@ DISTNAME=	pysmb-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	SMB/CIFS library written in Python
+
 USE_PYTHON=	yes
 WRKSRC=		${WRKDIR}/pysmb
 NO_BUILD=	yes

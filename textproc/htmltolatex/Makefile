@@ -14,6 +14,8 @@ DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	HTML to LaTeX to PDF Converter
+
 LIB_DEPENDS=	Magick:${PORTSDIR}/graphics/ImageMagick
 
 USE_REINPLACE=	yes

@@ -13,6 +13,8 @@ DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A program that will let you edit X fonts (.bdf files)
+
 IGNOREFILES=	${DISTFILES}
 USE_IMAKE=	yes
 MAKE_FLAGS=	MANDIR=${PREFIX}/man/man1 BINDIR=${PREFIX}/bin -f

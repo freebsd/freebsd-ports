@@ -14,6 +14,8 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	An HP48sx emulator
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/e//}
 
 USE_IMAKE=	yes

@@ -15,6 +15,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Logging for C Library
+
 LIB_DEPENDS=	expat.4:${PORTSDIR}/textproc/expat2
 
 USE_LIBTOOL=	yes

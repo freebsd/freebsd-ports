@@ -14,6 +14,8 @@ MASTER_SITES=	ftp://ftp.hypercore.co.jp/vx68k/${PORTNAME}-${PORTVERSION:R}/
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A virtual machine that emulates a Sharp X68000
+
 LIB_DEPENDS=	vm68k.4:${PORTSDIR}/emulators/libvm68k
 
 USE_MESA=	yes

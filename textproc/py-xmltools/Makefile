@@ -14,6 +14,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	High level xml tools for Python
+
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 

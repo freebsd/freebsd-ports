@@ -15,6 +15,8 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Parse a CDDB/freedb data file
+
 PERL_CONFIGURE=	yes
 
 MAN3=		CDDB::File.3

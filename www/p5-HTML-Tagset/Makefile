@@ -14,6 +14,8 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.ORG
 
+PORTCOMMENT=	Some useful data table in parsing HTML
+
 PERL_CONFIGURE=	yes
 
 MAN3=		HTML::Tagset.3

@@ -16,6 +16,8 @@ PATCHFILES=	tk8.0.4-to-tkstep8.0.4-2.patch.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	The Tk toolkit with a NeXTSTEP look and more
+
 LIB_DEPENDS=	tcl80.1:${PORTSDIR}/lang/tcl80 \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff

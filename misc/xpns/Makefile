@@ -13,6 +13,8 @@ DISTFILES=	pns_source.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Petri-Net Simulator for Xwindows
+
 USE_REINPLACE=	yes
 NO_WRKSUBDIR=	yes
 USE_X_PREFIX=	yes

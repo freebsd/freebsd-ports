@@ -9,6 +9,8 @@ PORTNAME=	br-aspell
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Aspell with Breton dictionary
+
 MASTERDIR=	${.CURDIR}/../aspell
 
 ASPELL_BR=	ya

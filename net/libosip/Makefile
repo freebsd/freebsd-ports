@@ -15,6 +15,8 @@ MASTER_SITE_SUBDIR=	osip
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	oSIP is an implementation of SIP
+
 USE_REINPLACE=	yes
 USE_LIBTOOL=	yes
 LIBTOOLFLAGS=	--disable-ltlibs --release-ignore

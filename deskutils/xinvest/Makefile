@@ -12,6 +12,8 @@ MASTER_SITES=	http://sunsite.dk/xinvest/
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A personal finance tracking and performance tool
+
 USE_MOTIF=	yes
 USE_IMAKE=	yes
 NO_INSTALL_MANPAGES=	yes

@@ -20,6 +20,8 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} pathcharnotes.html pathchar.8 \
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	LBNL Internet path characterization tool
+
 ONLY_FOR_ARCHS=	i386
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAN8=		pathchar.8

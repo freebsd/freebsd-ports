@@ -18,6 +18,8 @@ DISTNAME=	celvis
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A vi/ex clone that speaks Chinese
+
 MAN1=		celvis.1
 MLINKS=		celvis.1 cvi.1
 

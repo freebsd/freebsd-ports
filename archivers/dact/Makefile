@@ -14,6 +14,8 @@ MASTER_SITES=	http://www.rkeene.org/devel/
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Dynamic Adaptive Compression Tool
+
 LIB_DEPENDS=	mcrypt.7:${PORTSDIR}/security/libmcrypt
 .if !exists(/usr/bin/bzip2)
 LIB_DEPENDS+=	bz2.1:${PORTSDIR}/archivers/bzip2

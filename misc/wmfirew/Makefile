@@ -12,6 +12,8 @@ MASTER_SITES=	http://web.novalis.org/programs/
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A dockapp that shows fireworks in action
+
 WRKSRC=	${WRKDIR}/${PORTNAME}.app/${PORTNAME}
 USE_GMAKE=	yes
 USE_XPM=	yes

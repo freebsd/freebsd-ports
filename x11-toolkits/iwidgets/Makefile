@@ -14,6 +14,8 @@ DISTNAME=	itcl3.2
 
 MAINTAINER=	ports@freebsd.org
 
+PORTCOMMENT=	[incr Widgets] (A.K.A. "iwidgets")
+
 LIB_DEPENDS=	itk32.1:${PORTSDIR}/x11-toolkits/itk
 
 EXTRACT_AFTER_ARGS=| ${TAR} -xf - ./itcl3.2/iwidgets\*

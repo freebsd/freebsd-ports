@@ -13,6 +13,8 @@ MASTER_SITE_SUBDIR=	trevor
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A great http server
+
 FORBIDDEN=	"Remotely exploitable buffer overflow."
 
 IS_INTERACTIVE=

@@ -14,6 +14,8 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Scheme-to-C, a compiler and interpreter for compiling scheme into C
+
 USE_REINPLACE=	yes
 USE_XLIB=	yes
 INSTALLS_SHLIB=	yes

@@ -11,6 +11,8 @@ MASTER_SITES=	http://www.giuseppetanzilli.it/mod_auth_pgsql/dist/
 
 MAINTAINER=	ports@freebsd.org
 
+PORTCOMMENT=	Allows users to use PostgreSQL databases for user authentication
+
 BUILD_DEPENDS=	${APXS}:${APACHE_PORT}
 RUN_DEPENDS=	${LOCALBASE}/sbin/${AP_TARGET}:${APACHE_PORT}
 LIB_DEPENDS=	pq.2:${PORTSDIR}/databases/postgresql7

@@ -15,6 +15,8 @@ DISTNAME=	mj-${PORTVERSION}-src
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A networked Mah Jong program, together with a computer player
+
 USE_PERL5=	yes
 USE_GNOMENG=	yes
 USE_GNOME=	gtk12

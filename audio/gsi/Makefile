@@ -13,6 +13,8 @@ MASTER_SITE_SUBDIR=	gsi
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	GSI - general sound interface
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_GMAKE=	yes

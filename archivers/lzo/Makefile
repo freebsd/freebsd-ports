@@ -15,6 +15,8 @@ MASTER_SITE_SUBDIR=	libs/compression
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Portable speedy, lossless data compression library
+
 USE_LIBTOOL=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--enable-shared

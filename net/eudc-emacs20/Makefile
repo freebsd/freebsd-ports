@@ -13,6 +13,8 @@ PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	An Emacs client to directory servers
+
 RUN_DEPENDS=	ldapsearch:${PORTSDIR}/net/openldap
 
 EMACS_PORT_NAME?=emacs20

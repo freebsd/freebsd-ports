@@ -14,6 +14,8 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Othello aka Reversi game for X Window
+
 LIB_DEPENDS=	forms.1:${PORTSDIR}/x11-toolkits/xforms
 
 NO_CDROM=	Possible trademark infringement

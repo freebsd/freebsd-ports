@@ -18,6 +18,8 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${WADFILE}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Cleaned up copy of the GPL\'d Quake 1 source code
+
 BUILD_DEPENDS=	${ACLOCAL}:${PORTSDIR}/devel/automake14
 LIB_DEPENDS=	SDL-1.1.4:${PORTSDIR}/devel/sdl12 \
 		${GL_DEPENDS}

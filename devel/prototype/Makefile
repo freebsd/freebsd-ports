@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Prototype Makefiles allows very fast project start ups
+
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 NO_BUILD=	yes

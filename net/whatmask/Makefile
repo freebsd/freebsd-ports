@@ -13,6 +13,8 @@ MASTER_SITES=	http://downloads.laffeycomputer.com/current_builds/whatmask/
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Easily convert between three common subnet mask notations
+
 GNU_CONFIGURE=	yes
 
 .include <bsd.port.mk>

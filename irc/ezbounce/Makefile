@@ -12,6 +12,8 @@ MASTER_SITES=  	http://druglord.freelsd.org/ezbounce/
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A highly configurable IRC Proxy
+
 GNU_CONFIGURE= 	yes
 
 MAN1=		ezbounce.1

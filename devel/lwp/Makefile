@@ -10,7 +10,7 @@ PORTVERSION=	1.9
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.coda.cs.cmu.edu/pub/lwp/src/
 
-
+PORTCOMMENT=	A userspace thread library
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=  yes

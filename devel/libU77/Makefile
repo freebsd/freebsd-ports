@@ -12,6 +12,8 @@ MASTER_SITES=	http://www.esc.auckland.ac.nz/People/Staff/Norris/src/
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Adds Fortran intrinsics missing from f2c
+
 INSTALLS_SHLIB=	yes
 
 pre-build:

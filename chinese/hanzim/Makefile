@@ -14,6 +14,8 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A Chinese character learning-aid program
+
 BUILD_DEPENDS+=	wish8.3:${PORTSDIR}/x11-toolkits/tk83
 RUN_DEPENDS+=	wish8.3:${PORTSDIR}/x11-toolkits/tk83
 

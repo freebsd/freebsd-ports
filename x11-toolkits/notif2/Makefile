@@ -14,6 +14,8 @@ DISTNAME=	Notif2-${PORTVERSION}-${GTKVERSION}-199908211219
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	The Notif2 GTK theme engine following the new Motif look and feel
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_X_PREFIX=	yes

@@ -13,6 +13,8 @@ MASTER_SITE_SUBDIR=	asami/LOCAL_PORTS
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Display DL animations on an X screen
+
 USE_X_PREFIX=	yes
 MAN1=		xdl.1
 

@@ -13,6 +13,8 @@ DISTNAME=	Columns-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Nice little implementation of columns game for X Window System
+
 LIB_DEPENDS=	SDL-1.1.4:${PORTSDIR}/devel/sdl12
 
 SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config

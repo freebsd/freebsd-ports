@@ -13,6 +13,8 @@ DISTFILES=	1079.gz
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Realtime sky drawer for X root window
+
 EXTRACT_CMD=	${GZIP_CMD}
 EXTRACT_BEFORE_ARGS=	-dc
 EXTRACT_AFTER_ARGS=	| ${SED} -e "/^...bin.sh/,/exit 0/!d" | ${SH}

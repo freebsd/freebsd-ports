@@ -15,6 +15,8 @@ MASTER_SITES=	http://www.lysator.liu.se/~nisse/archive/ \
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A low-level cryptographic library
+
 LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4
 
 USE_GMAKE=	yes

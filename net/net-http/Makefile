@@ -13,6 +13,8 @@ MASTER_SITES= 	http://evan.prodromou.san-francisco.ca.us/software/net-http/
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A library for doing HTTP client-side programming in Guile
+
 BUILD_DEPENDS=	guile:${PORTSDIR}/lang/guile
 RUN_DEPENDS=	${BUILD_DEPENDS}
 

@@ -16,6 +16,8 @@ DISTNAME=	python-mhash-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Python mhash module
+
 LIB_DEPENDS=	mhash:${PORTSDIR}/security/mhash
 
 USE_PYTHON=	yes

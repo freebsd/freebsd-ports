@@ -12,6 +12,8 @@ MASTER_SITES=	http://slrn.sourceforge.net/cleanscore/
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A perl script to clean up your slrn score file
+
 USE_PERL5=	yes
 NO_BUILD=	yes
 

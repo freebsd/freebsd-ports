@@ -14,6 +14,8 @@ MASTER_SITES=	http://www.cs.unibo.it/helm/mml-widget/sources/
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A minimal implementation of the Document Object Model
+
 LIB_DEPENDS=	xml2:${PORTSDIR}/textproc/libxml2 \
 		iconv.3:${PORTSDIR}/converters/libiconv
 

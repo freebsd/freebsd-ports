@@ -13,6 +13,8 @@ MASTER_SITE_SUBDIR=	modbf
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A brainf*ck module for Apache
+
 BUILD_DEPENDS=	${APXS}:${APACHE_PORT}
 RUN_DEPENDS=	${APXS}:${APACHE_PORT}
 

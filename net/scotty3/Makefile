@@ -13,6 +13,8 @@ DISTNAME=	${PORTNAME}-00-02-21
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Network management extensions to tcl
+
 .ifdef (WITHOUT_X11)
 PKGNAMESUFFIX=	-nox11
 LIB_DEPENDS=	tcl83.1:${PORTSDIR}/lang/tcl83

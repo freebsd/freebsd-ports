@@ -13,6 +13,8 @@ DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Mahjongg
+
 USE_IMAKE=	yes
 
 .include <bsd.port.mk>

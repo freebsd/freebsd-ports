@@ -13,6 +13,8 @@ MASTER_SITES=	http://www.cooptel.qc.ca/~limitln/
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A simple program to administrate users of a CVS repository
+
 GNU_CONFIGURE=	yes
 
 MAN1=	cvsadmin.1

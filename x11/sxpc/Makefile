@@ -14,6 +14,8 @@ EXTRACT_SUFX=	.shar.Z
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	The Simple X Protocol Compressor
+
 USE_IMAKE=	yes
 NO_WRKSUBDIR=	yes
 EXTRACT_CMD=		${GZIP_CMD}

@@ -13,6 +13,8 @@ MASTER_SITES=	http://chasen.aist-nara.ac.jp/stable/ipadic/
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Japanese Morphological Dictionary for ChaSen
+
 BUILD_DEPENDS=	chasen:${PORTSDIR}/japanese/chasen-base
 
 GNU_CONFIGURE=	YES

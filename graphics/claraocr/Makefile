@@ -17,6 +17,8 @@ DISTNAME=	clara-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Optical character recognition (OCR) utility
+
 USE_XLIB=	yes
 USE_PERL5=	yes
 MAKE_ENV=	MKDIR="${MKDIR}"

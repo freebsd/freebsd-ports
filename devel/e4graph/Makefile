@@ -15,6 +15,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A C++ library that persistently stores graph like data
+
 BROKEN=		"Does not compile"
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libmk4.a:${PORTSDIR}/databases/metakit

@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	GNU sed + multi-byte extension
+
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 

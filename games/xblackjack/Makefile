@@ -14,6 +14,8 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	An X11/Motif blackjack game
+
 USE_MOTIF=	yes
 USE_IMAKE=	yes
 MAN1=		xblackjack.1

@@ -13,6 +13,8 @@ MASTER_SITES=	http://www.eudoxos.de/gtk/download/gtkdatabox/
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Display large amounts of numerical data fast and easy
+
 USE_X_PREFIX=	yes
 USE_GNOMENG=	yes
 USE_GNOME=	gtk12

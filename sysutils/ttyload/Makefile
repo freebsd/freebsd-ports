@@ -12,6 +12,8 @@ MASTER_SITES=	http://www.daveltd.com/src/util/ttyload/
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Give a color-coded graph of load averages over time
+
 USE_REINPLACE=	yes
 ALL_TARGET=	default
 

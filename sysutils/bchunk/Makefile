@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	utils/disk-management
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Converts .bin/.cue files to .iso/audio
+
 MAN1=	bchunk.1
 
 do-build:

@@ -16,6 +16,8 @@ DISTFILES=	${TETEX_SRC} ${TETEX_TEXMF}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Thomas Esser\'s distribution of TeX & friends
+
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		wwwcore.1:${PORTSDIR}/www/libwww
 

@@ -14,6 +14,8 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A perl module to provide custom forms for reauthentication
+
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/mod_perl.pm:${PORTSDIR}/www/mod_perl \
 		${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/${APACHE_PORT}
 RUN_DEPENDS=	${BUILD_DEPENDS}

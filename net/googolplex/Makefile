@@ -13,6 +13,8 @@ MASTER_SITES=	http://googolplex.sourceforge.net/source/
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Query Google, parse it and returns the result as a list
+
 USE_PYTHON=	yes
 NO_BUILD=	yes
 

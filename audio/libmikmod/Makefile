@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	apps/sound/libs
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	MikMod Sound Library
+
 USE_REINPLACE=	yes
 USE_GNOMENG=	yes
 WANT_GNOME=	yes

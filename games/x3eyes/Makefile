@@ -13,6 +13,8 @@ DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	An xeyes-like game except with 3 eyes
+
 USE_IMAKE=	yes
 MAN1=		x3eyes.1
 

@@ -15,6 +15,8 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A Commercial Spreadsheet
+
 ONLY_FOR_ARCHS=	i386
 
 USE_LINUX=	yes

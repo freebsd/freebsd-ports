@@ -13,6 +13,8 @@ MASTER_SITES=	http://www.dwheeler.com/flawfinder/
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Examines source code looking for security weaknesses
+
 USE_PYTHON=	yes
 NO_BUILD=	yes
 

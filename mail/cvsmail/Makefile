@@ -13,6 +13,8 @@ DISTNAME=	mailutils-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A small program to add cvsweb links to FreeBSD commit messages
+
 ALL_TARGET=	cvsmail
 MANCOMPRESSED=	no
 MAN1=		cvsmail.1

@@ -16,6 +16,8 @@ DISTNAME=	xview3.2p1-X11R6
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	OpenLook applications and man pages
+
 DEPENDS=	${PORTSDIR}/x11-toolkits/xview:install
 
 USE_X_PREFIX=	yes

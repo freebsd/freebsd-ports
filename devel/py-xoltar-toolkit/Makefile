@@ -15,6 +15,8 @@ DISTNAME=	${PORTNAME}-01jun01
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Functional programming, lazy expressions and thread pools for Python
+
 USE_PYTHON=	yes
 NO_WRKSUBDIR=	yes
 INSTALLDIR=	${PREFIX}/lib/${PYTHON_VERSION}/site-packages

@@ -14,6 +14,8 @@ MASTER_SITES=	ftp://ftp.linuxhacker.org/pub/tea-total/  \
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Extremely small 128 bit private key based encryption/decryption system
+
 #	code is not 64-bit clean...
 ONLY_FOR_ARCHS=	i386
 

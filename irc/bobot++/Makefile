@@ -15,6 +15,8 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	An IRC bot written in C++
+
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 

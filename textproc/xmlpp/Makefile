@@ -13,6 +13,8 @@ MASTER_SITES=	http://www.root.at/download/gpl/
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	XML Parser and Validator
+
 USE_REINPLACE=	yes
 FETCH_CMD=	/usr/bin/fetch
 USE_GMAKE=	yes

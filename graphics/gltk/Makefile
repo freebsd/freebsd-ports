@@ -15,6 +15,8 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	An OpenGL/Tk interface
+
 USE_IMAKE=	yes
 USE_MESA=	yes
 

@@ -13,6 +13,8 @@ MASTER_SITE_SUBDIR=	utilities
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	An X window interface for gdb
+
 USE_IMAKE=	yes
 MAN1=		xxgdb.1
 

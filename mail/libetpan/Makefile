@@ -15,6 +15,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A mail library
+
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv \
 		db3.3:${PORTSDIR}/databases/db3
 

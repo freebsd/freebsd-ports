@@ -15,6 +15,8 @@ EXTRACT_SUFX=		.Z
 
 MAINTAINER=		ports@FreeBSD.org
 
+PORTCOMMENT=		A program that is used to duplicate magtapes
+
 BUILD_DEPENDS=		gunshar:${PORTSDIR}/archivers/gshar+gunshar
 
 NO_WRKSUBDIR=		yes

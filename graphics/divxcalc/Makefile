@@ -13,6 +13,8 @@ MASTER_SITES=	http://members.ams.chello.nl/r.slooten2/divxcalc/
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	DivX Calculator
+
 BUILD_DEPENDS=	${LOCALBASE}/share/automake14/automake/install-sh:${PORTSDIR}/devel/automake14
 
 USE_REINPLACE=	yes

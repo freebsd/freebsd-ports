@@ -13,6 +13,8 @@ MASTER_SITES=	http://bluebat.dnsalias.org/software/libfs++/
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	C++ library which provides a file_iterator class
+
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 

@@ -12,6 +12,8 @@ MASTER_SITES=	http://www.psionic.com/downloads/
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Port scan detection and active defense
+
 ALL_TARGET=	freebsd
 USE_REINPLACE=	yes
 

@@ -13,6 +13,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A multi-platform Atari 2600 VCS emulator
+
 USE_XLIB=	yes
 
 PORTTOP=	${WRKDIR}/${PKGNAME}

@@ -12,6 +12,8 @@ MASTER_SITES=	http://www.blackie.dk/dotfile/download/
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A GUI dotfile generator program to create .config files
+
 BUILD_DEPENDS=	formail:${PORTSDIR}/mail/procmail
 LIB_DEPENDS=	tk82.1:${PORTSDIR}/x11-toolkits/tk82
 RUN_DEPENDS=	wish8.2:${PORTSDIR}/x11-toolkits/tk82

@@ -13,6 +13,8 @@ MASTER_SITES=	http://www.cs.indiana.edu/hyplan/kinzler/vshnu/
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	New Visual Shell
+
 .include <bsd.port.pre.mk>
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Term/Screen.pm:${PORTSDIR}/devel/p5-Term-Screen

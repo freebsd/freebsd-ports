@@ -12,6 +12,8 @@ MASTER_SITES=	http://www.unixodbc.org/
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	ODBC library suite for Unix
+
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 
 USE_REINPLACE=	yes

@@ -13,6 +13,8 @@ DISTNAME=	vms-empire-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Solitaire empire game 'VMS Empire'
+
 MAN6=		empire.6
 
 do-install:

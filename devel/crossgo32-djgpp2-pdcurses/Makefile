@@ -14,6 +14,8 @@ DISTNAME=	pdc22
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	PD curses for crossgo32 crosscompiler with djgpp v2 libraries
+
 RUN_DEPENDS=	i386-go32-stubify:${PORTSDIR}/devel/crossgo32-djgpp2
 
 USE_ZIP=	yes

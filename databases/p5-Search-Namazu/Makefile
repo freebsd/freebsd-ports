@@ -14,6 +14,8 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Namazu library module for perl
+
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext \
 		nmz.6:${PORTSDIR}/databases/namazu2
 

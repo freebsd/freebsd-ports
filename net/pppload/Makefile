@@ -13,6 +13,8 @@ MASTER_SITE_SUBDIR=		system/network/serial/ppp
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Display the current throughput of a network device in a window
+
 USE_QT_VER=	1
 USE_GMAKE=	yes
 

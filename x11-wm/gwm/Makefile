@@ -13,6 +13,8 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Generic Window Manager
+
 USE_IMAKE=	yes
 USE_XPM=	yes
 MAN1=		gwm.1

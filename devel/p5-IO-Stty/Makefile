@@ -15,6 +15,8 @@ DISTNAME=	${PORTNAME}-.${PORTVERSION:E}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Perl5 module that hacks around IO::File deficiencies
+
 PERL_CONFIGURE=	yes
 
 .include <bsd.port.mk>

@@ -15,6 +15,8 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	File transfer tool for the MPMan MP-F20 portable MP3-player
+
 MAKEFILE=	makefile
 
 do-install:

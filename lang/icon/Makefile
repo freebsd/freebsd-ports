@@ -14,6 +14,8 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	The Icon programming language
+
 ONLY_FOR_ARCHS=	alpha i386
 
 .ifdef WITHOUT_X11

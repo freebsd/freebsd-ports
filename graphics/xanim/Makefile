@@ -18,6 +18,8 @@ PATCHFILES=	xanim-2801-to-2802-patch.gz
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Play most popular animation formats and show pictures
+
 .if (${MACHINE_ARCH} == "i386")
 EXTRA_FILES=	vid_cvid_2.1_freebsdELFx86.tgz \
 		vid_cyuv_1.0_freebsdELFx86.tgz \

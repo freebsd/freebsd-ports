@@ -13,6 +13,8 @@ MASTER_SITES=	http://site.informatik.hu-berlin.de/kimwitu++/
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A tool for processing trees (i.e. terms)
+
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 

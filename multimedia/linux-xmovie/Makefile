@@ -14,6 +14,8 @@ DISTFILES=	${PORTNAME}-${PORTVERSION:R}-${PORTVERSION:E}.i386.rpm
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A movie player for MPEG-2 and Quicktime movies
+
 BUILD_DEPENDS=	rpm2cpio:${PORTSDIR}/archivers/rpm
 RUN_DEPENDS=	${LINUX_BASE}/lib/libc.so.6:${PORTSDIR}/emulators/linux_base \
 		${LINUX_BASE}/usr/lib/libjpeg.so.62.0.0:${PORTSDIR}/graphics/linux-jpeg \

@@ -12,6 +12,8 @@ MASTER_SITES=	http://dark.x.dtu.dk/~mbn/clanlib/download/
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Fast pixel formats conversion library
+
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes

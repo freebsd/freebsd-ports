@@ -12,6 +12,8 @@ MASTER_SITES=	http://www.packetfactory.net/firewalk/
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A network auditing tool
+
 BUILD_DEPENDS=	${LOCALBASE}/lib/libnet.a:${PORTSDIR}/net/libnet
 
 MAN1=		firewalk.1

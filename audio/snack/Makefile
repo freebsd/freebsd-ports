@@ -15,6 +15,8 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	The Snack Sound Toolkit
+
 LIB_DEPENDS=	tk83.1:${PORTSDIR}/x11-toolkits/tk83
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/unix

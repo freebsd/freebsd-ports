@@ -14,6 +14,8 @@ MASTER_SITES=	http://software.tangent.org/download/ \
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Apache module to allow MP3 streaming
+
 BUILD_DEPENDS=	${APXS}:${APACHE_PORT}
 RUN_DEPENDS=	${APXS}:${APACHE_PORT}
 

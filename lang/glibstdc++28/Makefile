@@ -15,6 +15,8 @@ DISTNAME=	libstdc++-2.8.1.1
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	ISO Standard C++ library (includes the STL) for G++ 2.8.0
+
 BUILD_DEPENDS=	gcc28:${PORTSDIR}/lang/gcc28 \
 		g++28:${PORTSDIR}/lang/gcc28
 RUN_DEPENDS=	gcc28:${PORTSDIR}/lang/gcc28 \

@@ -15,6 +15,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	An outline font viewer
+
 LIB_DEPENDS=	t1.4:${PORTSDIR}/devel/t1lib
 
 USE_X_PREFIX=	yes

@@ -14,6 +14,8 @@ DISTNAME=	cupsrc
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Experimental constraint logic programming language
+
 WRKSRC=		${WRKDIR}/src
 MAKEFILE=	makefile
 ALL_TARGET=	cup

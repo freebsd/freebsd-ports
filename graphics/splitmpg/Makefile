@@ -14,6 +14,8 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Splits an ISO 11172-1 into its components
+
 NO_WRKSUBDIR=	yes
 MAKEFILE=	makefile
 MAN1=		splitmpeg.1

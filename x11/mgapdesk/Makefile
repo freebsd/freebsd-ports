@@ -14,6 +14,8 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@freebsd.org
 
+PORTCOMMENT=	Matrox Powerdesk for *nix
+
 BUILD_DEPENDS=	XFree86:${PORTSDIR}/x11/XFree86-4
 
 USE_X_PREFIX=	YES

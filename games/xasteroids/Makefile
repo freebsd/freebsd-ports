@@ -13,6 +13,8 @@ DISTFILES=	xasteroids.sh.Z
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	X11 based asteroids style arcade game
+
 USE_IMAKE=	yes
 NO_WRKSUBDIR=	yes
 EXTRACT_CMD=	( cd ${WRKDIR}; zcat | sh -s )

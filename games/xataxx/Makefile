@@ -14,6 +14,8 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Strategy game of position and movement for X Window System
+
 USE_IMAKE=	yes
 MAN6=		xataxx.6
 

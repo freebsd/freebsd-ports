@@ -14,6 +14,8 @@ DISTNAME=	MToolsFM-${PORTVERSION:R}-${PORTVERSION:E}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A graphical frontend to mtools
+
 RUN_DEPENDS=	mtools:${PORTSDIR}/emulators/mtools
 
 USE_REINPLACE=	yes

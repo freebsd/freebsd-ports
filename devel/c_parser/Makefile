@@ -13,6 +13,8 @@ MASTER_SITES=	http://www.mazumdar.demon.co.uk/
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A C99 Parser
+
 NO_WRKSUBDIR=	yes
 
 do-install:

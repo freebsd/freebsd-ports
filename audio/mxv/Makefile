@@ -13,6 +13,8 @@ DISTNAME=	${PORTNAME}-v${PORTVERSION}-source
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Sound file editor/player/recorder/converter for X Window System
+
 BROKEN=		"Does not build"
 
 BUILD_DEPENDS=	${LOCALBASE}/interviews/bin/FREEBSD/ivmkmf:${PORTSDIR}/x11-toolkits/iv

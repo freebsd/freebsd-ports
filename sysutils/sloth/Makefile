@@ -14,6 +14,8 @@ MASTER_SITES=	ftp://ftp.namodn.com/pub/projects/ \
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Slow down a process
+
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 

@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A curses-based tool for creating and solving the cryptograms
+
 USE_REINPLACE=  yes
 
 .include <bsd.port.pre.mk>

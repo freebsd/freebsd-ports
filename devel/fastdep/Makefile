@@ -13,6 +13,8 @@ MASTER_SITES=	http://www.irule.be/bvh/c++/fastdep/
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Fast dependency generator for C/C++ files
+
 LIB_DEPENDS=	gnugetopt:${PORTSDIR}/devel/libgnugetopt
 
 USE_REINPLACE=	yes

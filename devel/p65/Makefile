@@ -14,6 +14,8 @@ EXTRACT_SUFX=	# empty
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	An assembler for the 6502 microprocessor
+
 EXTRACT_CMD=	${CP}
 EXTRACT_BEFORE_ARGS=	# empty
 EXTRACT_AFTER_ARGS=	${WRKSRC}

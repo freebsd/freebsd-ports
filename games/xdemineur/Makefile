@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	games
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Another minesweeper game for the X Window System
+
 USE_IMAKE=	yes
 USE_XPM=	yes
 MAN1=		xdemineur.1

@@ -14,6 +14,8 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	ports@Freebsd.ORG
 
+PORTCOMMENT=	Graphical toolkit for TCL
+
 LIB_DEPENDS=	tcl80.1:${PORTSDIR}/lang/tcl80
 
 NO_LATEST_LINK=	yes

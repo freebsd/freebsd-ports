@@ -14,6 +14,8 @@ DISTNAME=	${PKGNAME}.src
 
 MAINTAINER=	ports@freebsd.org
 
+PORTCOMMENT=	WWW interface to Glimpse search engine
+
 RUN_DEPENDS+=	${LOCALBASE}/etc/apache/httpd.conf:${PORTSDIR}/www/apache13
 RUN_DEPENDS+=	glimpse:${PORTSDIR}/textproc/glimpse
 

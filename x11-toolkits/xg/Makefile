@@ -14,6 +14,8 @@ DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	Windows(tm) controls - like widget set for Motif(tm)
+
 WRKSRC=		${WRKDIR}/Xg-${PORTVERSION}
 USE_X_PREFIX=	yes
 USE_MOTIF=	yes

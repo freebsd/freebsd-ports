@@ -13,6 +13,8 @@ DISTNAME=	${PORTNAME}-2001feb22
 
 MAINTAINER=	ports@FreeBSD.org
 
+PORTCOMMENT=	A digital image warping program
+
 USE_X_PREFIX=	yes
 INSTALLS_SHLIB=	yes
 
