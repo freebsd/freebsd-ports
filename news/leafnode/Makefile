@@ -9,17 +9,15 @@ PORTNAME=	leafnode
 PORTVERSION=	1.9.33
 PORTREVISION=	1
 CATEGORIES=	news ipv6
-MASTER_SITES=	http://dl.sourceforge.net/sourceforge/leafnode/ \
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:sourceforge/} \
 		http://www.dt.e-technik.uni-dortmund.de/~ma/${PORTNAME}/ \
 		ftp://wpxx02.toxi.uni-wuerzburg.de/pub/ \
-		http://www.Awfulhak.org/leafnode/ \
-		${MASTER_SITE_SUNSITE:S/$/:sunsite/} \
-		ftp://ftp.karlsruhe.org/pub/news/servers/leafnode/ \
-		ftp://ftp.stikman.com/pub/leafnode/ \
-		ftp://ftp.gigabell.net/pub/leafnode/
-MASTER_SITE_SUBDIR=	./:DEFAULT system/news/transport/:sunsite
+		${MASTER_SITE_SUNSITE:S/$/:sunsite/}
+MASTER_SITE_SUBDIR=	${PORTNAME}/:sourceforge \
+			./:DEFAULT \
+			system/news/transport/:sunsite
 DISTNAME=	${PORTNAME}-${PORTVERSION}.rel
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:DEFAULT,sunsite
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:sourceforge,sunsite,DEFAULT
 
 MAINTAINER=	matthias.andree@web.de
 
