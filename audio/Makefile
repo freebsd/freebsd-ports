@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.92 1999/06/11 08:56:42 taoka Exp $
+# $Id: Makefile,v 1.93 1999/06/11 14:27:52 sada Exp $
 #
 
     SUBDIR += amp
@@ -7,6 +7,7 @@
     SUBDIR += bladeenc
     SUBDIR += cam
     SUBDIR += cdd
+    SUBDIR += cdindex
     SUBDIR += cdplay
     SUBDIR += cdrdao
     SUBDIR += cmp3
