@@ -65,7 +65,7 @@ MACHDESTLIB=$(BINLIBDEST)
 DESTPATH=
 
 # Site specific path insertions -- should begin with : if non-empty
-SITEPATH=:NumPy
+SITEPATH=
 
 # Standard enabled (tests are always available)
 TESTPATH=:test
@@ -84,7 +84,6 @@ PYTHONPATH=$(COREPYTHONPATH)
 # Some modules that are normally always on:
 
 regex regexmodule.c regexpr.c	# Regular expressions, GNU Emacs style
-reop reopmodule.c		# Additional RE support (for re1.py)
 pcre pcremodule.c pypcre.c	# Regular expressions, Perl style (for re.py)
 posix posixmodule.c		# posix (UNIX) system calls
 signal signalmodule.c		# signal(2)
@@ -93,11 +92,14 @@ signal signalmodule.c		# signal(2)
 
 #gl glmodule.c -lgl -lX11	# Graphics Library -- SGI only
 
-# Thread module -- use only if Python has thread support for your OS.
-# Note that you must have configured (and built!) Python with the
-# --with-thread option passed to the configure script for this to work:
+# The thread module is now automatically enabled, see Setup.thread.
 
-#thread threadmodule.c
+# Pure module.  Cannot be linked dynamically.
+# -DWITH_QUANTIFY, -DWITH_PURIFY, or -DWITH_ALL_PURE
+#WHICH_PURE_PRODUCTS=-DWITH_ALL_PURE
+#PURE_INCLS=-I/usr/local/include
+#PURE_STUBLIBS=-L/usr/local/lib -lpurify_stubs -lquantify_stubs
+#pure puremodule.c $(WHICH_PURE_PRODUCTS) $(PURE_INCLS) $(PURE_STUBLIBS)
 
 # Uncommenting the following line tells makesetup that all following
 # modules are to be built as shared libraries (see above for more
@@ -124,7 +126,7 @@ cmath cmathmodule.c	# complex math library functions
 math mathmodule.c -lm	# math library functions, e.g. sin()
 strop stropmodule.c	# fast string operations implemented in C
 struct structmodule.c	# binary structure packing/unpacking
-time timemodule.c	# time operations and variables
+time timemodule.c # -lm	# time operations and variables
 operator operator.c	# operator.add() and similar goodies
 
 _locale _localemodule.c  # access to ISO C locale support
@@ -137,17 +139,19 @@ _locale _localemodule.c  # access to ISO C locale support
 fcntl fcntlmodule.c	# fcntl(2) and ioctl(2)
 pwd pwdmodule.c		# pwd(3) 
 grp grpmodule.c		# grp(3)
-crypt cryptmodule.c -lcrypt	# crypt(3); needs -lcrypt on some systems
 select selectmodule.c	# select(2); not on ancient System V
 socket socketmodule.c	# socket(2); not on ancient System V
 errno errnomodule.c	# posix (UNIX) errno values
+
+# The crypt module is now disabled by default because it breaks builds
+# on many systems (where -lcrypt is needed), e.g. Linux (I believe).
+crypt cryptmodule.c -lcrypt	# crypt(3); needs -lcrypt on some systems
 
 *shared*
 
 # Some more UNIX dependent modules -- off by default, since these
 # are not supported by all UNIX systems:
 
-dbm dbmmodule.c 	# dbm(3) may require -lndbm or similar
 nis nismodule.c 	# Sun yellow pages -- not everywhere
 termios termios.c	# Steen Lumholt's termios module
 resource resource.c	# Jeremy Hylton's rlimit interface
@@ -319,6 +323,16 @@ curses cursesmodule.c -lncurses -ltermcap
 
 #dl dlmodule.c
 
+# Modules that provide persistent dictionary-like semantics.  You will
+# probably want to arrange for at least one of them to be available on
+# your machine, though none are defined by default because of library
+# dependencies.  The Python module anydbm.py provides an
+# implementation independent wrapper for these; dumbdbm.py provides
+# similar functionality (but slower of course) implemented in Python.
+
+# The standard Unix dbm module:
+
+dbm dbmmodule.c 	# dbm(3) may require -lndbm or similar
 
 # Anthony Baxter's gdbm module (derived from Jack's dbm module)
 # GNU dbm(3) will require -lgdbm:
