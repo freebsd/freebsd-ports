@@ -1,6 +1,18 @@
---- config/imake/imake.c.ORIG	Mon Dec 18 14:54:34 2000
-+++ config/imake/imake.c	Mon Dec 18 14:55:25 2000
-@@ -1208,6 +1208,19 @@
+
+$FreeBSD$
+
+--- config/imake/imake.c.orig	Fri Dec 14 21:53:18 2001
++++ config/imake/imake.c	Sat May 11 03:03:51 2002
+@@ -1161,7 +1161,7 @@
+ get_gcc_incdir(FILE *inFile)
+ {
+   static char* gcc_path[] = {
+-#if defined(linux) || defined(__OpenBSD__) || defined (__GNU__)
++#if defined(linux) || defined(__OpenBSD__) || defined (__GNU__) || defined(__FreeBSD__)
+     "/usr/bin/cc",	/* for Linux PostIncDir */
+ #endif
+     "/usr/local/bin/gcc",
+@@ -1207,6 +1207,19 @@
  	if (uname(&name) < 0)
  		LogFatal("Cannot invoke uname", "");
  
