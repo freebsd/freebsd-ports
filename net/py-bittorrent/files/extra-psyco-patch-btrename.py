@@ -1,8 +1,8 @@
---- bttrack.py.orig	Fri Mar 11 23:17:26 2005
-+++ bttrack.py	Fri Mar 11 23:17:31 2005
+--- btrename.py.orig	Fri Mar 11 23:16:21 2005
++++ btrename.py	Fri Mar 11 23:16:28 2005
 @@ -12,6 +12,15 @@
  
- # Written by Bram Cohen
+ # Written by Henry 'Pi' James
  
 +from BitTorrent import PSYCO
 +if PSYCO.psyco:
@@ -13,6 +13,6 @@
 +    except:
 +       pass
 +
- from sys import argv
- from BitTorrent.track import track
- 
+ from sys import *
+ from os.path import *
+ from sha import *

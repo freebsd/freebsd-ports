@@ -6,14 +6,11 @@
 #
 
 PORTNAME=	BitTorrent
-PORTVERSION=	3.4.2
-PORTREVISION=	5
+PORTVERSION=	4.0.0
 PORTEPOCH=	1
 CATEGORIES?=	net python
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
-MASTER_SITE_SUBDIR=	${PORTNAME:L}
+MASTER_SITES=	http://www.bittorrent.com/dl/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-#DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.(.)$/\1/}
 
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT?=	A peer-to-peer tool for distributing files written in Python
@@ -24,8 +21,13 @@ USE_REINPLACE=	yes
 
 CONFLICTS=	py??-*[Bb]it[Tt]orrent* py??-*[Bb]it[Tt]ornado* btqueue*
 
-PORTDOCS=	BUILD.windows.txt INSTALL.unix.txt LICENSE.txt \
+PORTDOCS=	LICENSE.txt \
+		redirdonate.html \
 		README.txt credits.txt
+
+.ifdef(NOPORTDOCS)
+EXTRA_PATCHES+=	${FILESDIR}/extra-noportdocs-setup.py
+.endif
 
 .include <bsd.port.pre.mk>
 
@@ -35,11 +37,27 @@ WITHOUT_PSYCO=	yes
 
 # required for GUI
 .ifndef(WITHOUT_GUI)
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/wxPython/__init__.py:${PORTSDIR}/x11-toolkits/py-wxPython
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/pygtk.py:${PORTSDIR}/x11-toolkits/py-gtk2
 
 PLIST_FILES+=	\
-		bin/btcompletedirgui.py \
-		bin/btdownloadgui.py
+		bin/btmaketorrentgui.py \
+		bin/btdownloadgui.py \
+		share/pixmaps/BitTorrent/bittorrent.ico \
+		share/pixmaps/BitTorrent/broken.png \
+		share/pixmaps/BitTorrent/finished.png \
+		share/pixmaps/BitTorrent/info.png \
+		share/pixmaps/BitTorrent/logo/bittorrent_32.png \
+		share/pixmaps/BitTorrent/logo/bittorrent_96.png \
+		share/pixmaps/BitTorrent/pause.png \
+		share/pixmaps/BitTorrent/paused.png \
+		share/pixmaps/BitTorrent/play.png \
+		share/pixmaps/BitTorrent/queued.png \
+		share/pixmaps/BitTorrent/remove.png \
+		share/pixmaps/BitTorrent/running.png
+
+PLIST_DIRS+=	share/pixmaps/BitTorrent/logo \
+		share/pixmaps/BitTorrent
+
 .else
 EXTRA_PATCHES+=	${FILESDIR}/extra-nogui-patch-setup.py
 .endif
@@ -48,14 +66,15 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-nogui-patch-setup.py
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/psyco/_psyco.so:${PORTSDIR}/devel/py-psyco
 
 EXTRA_PATCHES+= \
-		${FILESDIR}/extra-psyco-patch-btcompletedir.py \
-		${FILESDIR}/extra-psyco-patch-btcompletedirgui.py \
 		${FILESDIR}/extra-psyco-patch-btdownloadcurses.py \
-		${FILESDIR}/extra-psyco-patch-btdownloadgui.py \
 		${FILESDIR}/extra-psyco-patch-btdownloadheadless.py \
 		${FILESDIR}/extra-psyco-patch-btlaunchmany.py \
 		${FILESDIR}/extra-psyco-patch-btlaunchmanycurses.py \
-		${FILESDIR}/extra-psyco-patch-btmakemetafile.py \
+		${FILESDIR}/extra-psyco-patch-btmaketorrent.py \
+		${FILESDIR}/extra-psyco-patch-btreannouce.py \
+		${FILESDIR}/extra-psyco-patch-btrename.py \
+		${FILESDIR}/extra-psyco-patch-btshowmetainfo.py \
+		${FILESDIR}/extra-psyco-patch-bttest.py \
 		${FILESDIR}/extra-psyco-patch-bttrack.py
 
 PLIST_FILES+=	\
@@ -76,28 +95,29 @@ post-patch:
 	@${FIND} ${WRKSRC} -type f | \
 		${XARGS} -x -n 10 \
 		${REINPLACE_CMD} -E \
-		-e 's|/usr/bin/env python2|${LOCALBASE}/bin/python|'
-.ifdef(WITHOUT_GUI)
-	@${REINPLACE_CMD} -E \
-		-e 's|btdownloadgui.py|btdownloadcurses.py|' \
-		${WRKSRC}/INSTALL.unix.txt
-.endif
+		-e 's|/usr/bin/env python.*|${LOCALBASE}/bin/python|'
 .ifndef(WITHOUT_PSYCO)
 # activate psyco optimization
 	@${ECHO_CMD} 'psyco = 1' > ${WRKSRC}/BitTorrent/PSYCO.py
 .endif
 
 post-install:
-.ifndef(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.for file in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
-.endfor
-.endif
 # set proper permissions
 	@${CHMOD} -R ${SHAREMODE} \
 		${PREFIX}/${PYTHON_SITELIBDIR:S|^${PYTHONBASE}/||}/BitTorrent
 	@${CHMOD} ${SHAREMODE} ${PREFIX}/${PYTHON_SITELIBDIR:S|^${PYTHONBASE}/||}/BitTorrent
 	@${CHMOD} a+x ${PREFIX}/${PYTHON_SITELIBDIR:S|^${PYTHONBASE}/||}/BitTorrent
+.ifndef(WITHOUT_GUI)
+# pixmaps
+	@${CHMOD} -R ${SHAREMODE} \
+		${PREFIX}/share/pixmaps/${PORTNAME}/*
+	@${CHMOD} a+x \
+		${PREFIX}/share/pixmaps/${PORTNAME}/logo
+.endif
+.ifndef(NOPORTDOCS)
+# docs
+	@${CHMOD} -R ${SHAREMODE} \
+		${DOCSDIR}/*
+.endif
 
 .include <bsd.port.post.mk>
