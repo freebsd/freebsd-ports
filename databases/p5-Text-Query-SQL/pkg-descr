@@ -1,0 +1,10 @@
+Text-Query-SQL provides query builders for SQL databases. Searching 'foo
+and bar' will retrieve rows containing the words foo and bar. It does it
+by generating the appropriate SQL request.
+
+Text-Query-SQL is derived from the Text-Query module.
+
+WWW: http://www.senga.org/Text-Query-SQL/
+
+-Anton
+<tobez@tobez.org>

@@ -1,0 +1,13 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Text/Query/SQL/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/Text/Query/BuildSQLMifluz.pm
+lib/perl5/site_perl/%%PERL_VER%%/Text/Query/BuildSQLMySQL.pm
+lib/perl5/site_perl/%%PERL_VER%%/Text/Query/BuildSQLFulcrum.pm
+lib/perl5/site_perl/%%PERL_VER%%/Text/Query/BuildSQL.pm
+lib/perl5/site_perl/%%PERL_VER%%/Text/Query/BuildSQLPg.pm
+lib/perl5/site_perl/%%PERL_VER%%/Text/Query/SolveSQL.pm
+lib/perl5/site_perl/%%PERL_VER%%/Bundle/Text/Query/BuildSQL.pm
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Text/Query/SQL
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Bundle/Text/Query 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Bundle/Text 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Bundle 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Text/Query 2>/dev/null || true
