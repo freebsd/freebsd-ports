@@ -1,1492 +1,40 @@
-diff -Nur binutils-2.14-vanilla/bfd/Makefile.am binutils-2.14/bfd/Makefile.am
---- binutils-2.14-vanilla/bfd/Makefile.am	Mon Apr 21 15:24:18 2003
-+++ bfd/Makefile.am	Sat Sep  6 22:24:22 2003
-@@ -179,6 +179,8 @@
- 	coff-apollo.lo \
- 	coff-arm.lo \
- 	coff-aux.lo \
-+	coff-avr.lo \
-+	coff-ext-avr.lo \
- 	coff-h8300.lo \
- 	coff-h8500.lo \
- 	coff-i386.lo \
-@@ -343,6 +345,8 @@
- 	coff-apollo.c \
- 	coff-arm.c \
- 	coff-aux.c \
-+	coff-avr.c \
-+	coff-ext-avr.c \
- 	coff-h8300.c \
- 	coff-h8500.c \
- 	coff-i386.c \
-@@ -1028,6 +1032,12 @@
-   $(INCDIR)/coff/internal.h $(INCDIR)/coff/m68k.h $(INCDIR)/coff/external.h \
-   coff-m68k.c libcoff.h $(INCDIR)/bfdlink.h coffcode.h \
-   coffswap.h
-+coff-avr.lo: coff-avr.c $(INCDIR)/filenames.h $(INCDIR)/coff/avr.h \
-+  $(INCDIR)/coff/external.h $(INCDIR)/coff/internal.h \
-+  libcoff.h $(INCDIR)/bfdlink.h coffcode.h coffswap.h
-+coff-ext-avr.lo: coff-ext-avr.c $(INCDIR)/filenames.h $(INCDIR)/coff/avr.h \
-+  $(INCDIR)/coff/external.h $(INCDIR)/coff/internal.h \
-+  libcoff.h $(INCDIR)/bfdlink.h coffcode.h coffswap.h
- coff-h8300.lo: coff-h8300.c $(INCDIR)/filenames.h $(INCDIR)/bfdlink.h \
-   genlink.h $(INCDIR)/coff/h8300.h $(INCDIR)/coff/external.h \
-   $(INCDIR)/coff/internal.h libcoff.h $(INCDIR)/libiberty.h \
-diff -Nur binutils-2.14-vanilla/bfd/Makefile.in binutils-2.14/bfd/Makefile.in
---- binutils-2.14-vanilla/bfd/Makefile.in	Fri May  2 19:06:14 2003
-+++ bfd/Makefile.in	Sat Sep  6 22:24:22 2003
-@@ -306,6 +306,8 @@
- 	coff-apollo.lo \
- 	coff-arm.lo \
- 	coff-aux.lo \
-+	coff-avr.lo \
-+	coff-ext-avr.lo \
- 	coff-h8300.lo \
- 	coff-h8500.lo \
- 	coff-i386.lo \
-@@ -471,6 +473,8 @@
- 	coff-apollo.c \
- 	coff-arm.c \
- 	coff-aux.c \
-+	coff-avr.c \
-+	coff-ext-avr.c \
- 	coff-h8300.c \
- 	coff-h8500.c \
- 	coff-i386.c \
-@@ -1561,6 +1565,12 @@
-   $(INCDIR)/coff/internal.h $(INCDIR)/coff/m68k.h $(INCDIR)/coff/external.h \
-   coff-m68k.c libcoff.h $(INCDIR)/bfdlink.h coffcode.h \
-   coffswap.h
-+coff-avr.lo: coff-avr.c $(INCDIR)/filenames.h $(INCDIR)/coff/avr.h \
-+  $(INCDIR)/coff/external.h $(INCDIR)/coff/internal.h \
-+  libcoff.h $(INCDIR)/bfdlink.h coffcode.h coffswap.h
-+coff-ext-avr.lo: coff-ext-avr.c $(INCDIR)/filenames.h $(INCDIR)/coff/avr.h \
-+  $(INCDIR)/coff/external.h $(INCDIR)/coff/internal.h \
-+  libcoff.h $(INCDIR)/bfdlink.h coffcode.h coffswap.h
- coff-h8300.lo: coff-h8300.c $(INCDIR)/filenames.h $(INCDIR)/bfdlink.h \
-   genlink.h $(INCDIR)/coff/h8300.h $(INCDIR)/coff/external.h \
-   $(INCDIR)/coff/internal.h libcoff.h $(INCDIR)/libiberty.h \
-diff -Nur binutils-2.14-vanilla/bfd/coff-avr.c binutils-2.14/bfd/coff-avr.c
---- binutils-2.14-vanilla/bfd/coff-avr.c	Thu Jan  1 01:00:00 1970
-+++ bfd/coff-avr.c	Sat Sep  6 22:24:22 2003
-@@ -0,0 +1,609 @@
-+/* BFD back-end for Atmel AVR COFF files.
-+   Copyright 1990, 1991, 1992, 1993, 1994, 1995, 1999, 2000, 2001, 2003
-+   Free Software Foundation, Inc.
-+   Created mostly by substituting "avr" for "i860" in coff-i860.c
-+
-+This file is part of BFD, the Binary File Descriptor library.
-+
-+This program is free software; you can redistribute it and/or modify
-+it under the terms of the GNU General Public License as published by
-+the Free Software Foundation; either version 2 of the License, or
-+(at your option) any later version.
-+
-+This program is distributed in the hope that it will be useful,
-+but WITHOUT ANY WARRANTY; without even the implied warranty of
-+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-+GNU General Public License for more details.
-+
-+You should have received a copy of the GNU General Public License
-+along with this program; if not, write to the Free Software
-+Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
-+
-+#include "bfd.h"
-+#include "sysdep.h"
-+#include "libbfd.h"
-+
-+#include "coff/avr.h"
-+
-+#include "coff/internal.h"
-+
-+#include "libcoff.h"
-+
-+static bfd_reloc_status_type coff_avr_reloc
-+  PARAMS ((bfd *, arelent *, asymbol *, PTR, asection *, bfd *, char **));
-+static reloc_howto_type *coff_avr_rtype_to_howto
-+  PARAMS ((bfd *, asection *, struct internal_reloc *,
-+	   struct coff_link_hash_entry *, struct internal_syment *,
-+	   bfd_vma *));
-+static const bfd_target * coff_avr_object_p PARAMS ((bfd *));
-+
-+#define COFF_DEFAULT_SECTION_ALIGNMENT_POWER (2)
-+/* The page size is a guess based on ELF.  */
-+
-+#define COFF_PAGE_SIZE 0x1000
-+
-+/* For some reason when using avr COFF the value stored in the .text
-+   section for a reference to a common symbol is the value itself plus
-+   any desired offset.  Ian Taylor, Cygnus Support.  */
-+
-+/* If we are producing relocateable output, we need to do some
-+   adjustments to the object file that are not done by the
-+   bfd_perform_relocation function.  This function is called by every
-+   reloc type to make any required adjustments.  */
-+
-+static bfd_reloc_status_type
-+coff_avr_reloc (abfd, reloc_entry, symbol, data, input_section, output_bfd,
-+		 error_message)
-+     bfd *abfd;
-+     arelent *reloc_entry;
-+     asymbol *symbol;
-+     PTR data;
-+     asection *input_section ATTRIBUTE_UNUSED;
-+     bfd *output_bfd;
-+     char **error_message ATTRIBUTE_UNUSED;
-+{
-+  symvalue diff;
-+
-+  if (output_bfd == (bfd *) NULL)
-+    return bfd_reloc_continue;
-+
-+  if (bfd_is_com_section (symbol->section))
-+    {
-+      /* We are relocating a common symbol.  The current value in the
-+	 object file is ORIG + OFFSET, where ORIG is the value of the
-+	 common symbol as seen by the object file when it was compiled
-+	 (this may be zero if the symbol was undefined) and OFFSET is
-+	 the offset into the common symbol (normally zero, but may be
-+	 non-zero when referring to a field in a common structure).
-+	 ORIG is the negative of reloc_entry->addend, which is set by
-+	 the CALC_ADDEND macro below.  We want to replace the value in
-+	 the object file with NEW + OFFSET, where NEW is the value of
-+	 the common symbol which we are going to put in the final
-+	 object file.  NEW is symbol->value.  */
-+      diff = symbol->value + reloc_entry->addend;
-+    }
-+  else
-+    {
-+      /* For some reason bfd_perform_relocation always effectively
-+	 ignores the addend for a COFF target when producing
-+	 relocateable output.  This seems to be always wrong for 860
-+	 COFF, so we handle the addend here instead.  */
-+      diff = reloc_entry->addend;
-+    }
-+
-+#define DOIT(x) \
-+  x = ((x & ~howto->dst_mask) | (((x & howto->src_mask) + diff) & howto->dst_mask))
-+
-+    if (diff != 0)
-+      {
-+	reloc_howto_type *howto = reloc_entry->howto;
-+	unsigned char *addr = (unsigned char *) data + reloc_entry->address;
-+
-+	switch (howto->size)
-+	  {
-+	  case 0:
-+	    {
-+	      char x = bfd_get_8 (abfd, addr);
-+	      DOIT (x);
-+	      bfd_put_8 (abfd, x, addr);
-+	    }
-+	    break;
-+
-+	  case 1:
-+	    {
-+	      short x = bfd_get_16 (abfd, addr);
-+	      DOIT (x);
-+	      bfd_put_16 (abfd, (bfd_vma) x, addr);
-+	    }
-+	    break;
-+
-+	  case 2:
-+	    {
-+	      long x = bfd_get_32 (abfd, addr);
-+	      DOIT (x);
-+	      bfd_put_32 (abfd, (bfd_vma) x, addr);
-+	    }
-+	    break;
-+
-+	  default:
-+	    abort ();
-+	  }
-+      }
-+
-+  /* Now let bfd_perform_relocation finish everything up.  */
-+  return bfd_reloc_continue;
-+}
-+
-+#ifndef PCRELOFFSET
-+#define PCRELOFFSET FALSE
-+#endif
-+
-+static reloc_howto_type howto_table[] =
-+{
-+  EMPTY_HOWTO (0),
-+  EMPTY_HOWTO (1),
-+  EMPTY_HOWTO (2),
-+  EMPTY_HOWTO (3),
-+  EMPTY_HOWTO (4),
-+  EMPTY_HOWTO (5),
-+  HOWTO (R_DIR32,               /* type */
-+	 0,	                /* rightshift */
-+	 2,	                /* size (0 = byte, 1 = short, 2 = long) */
-+	 32,	                /* bitsize */
-+	 FALSE,	                /* pc_relative */
-+	 0,	                /* bitpos */
-+	 complain_overflow_bitfield, /* complain_on_overflow */
-+	 coff_avr_reloc,       /* special_function */
-+	 "dir32",               /* name */
-+	 TRUE,	                /* partial_inplace */
-+	 0xffffffff,            /* src_mask */
-+	 0xffffffff,            /* dst_mask */
-+	 TRUE),                /* pcrel_offset */
-+  /* {7}, */
-+  HOWTO (R_IMAGEBASE,            /* type */
-+	 0,	                /* rightshift */
-+	 2,	                /* size (0 = byte, 1 = short, 2 = long) */
-+	 32,	                /* bitsize */
-+	 FALSE,	                /* pc_relative */
-+	 0,	                /* bitpos */
-+	 complain_overflow_bitfield, /* complain_on_overflow */
-+	 coff_avr_reloc,       /* special_function */
-+	 "rva32",	           /* name */
-+	 TRUE,	                /* partial_inplace */
-+	 0xffffffff,            /* src_mask */
-+	 0xffffffff,            /* dst_mask */
-+	 FALSE),                /* pcrel_offset */
-+  EMPTY_HOWTO (010),
-+  EMPTY_HOWTO (011),
-+  EMPTY_HOWTO (012),
-+  EMPTY_HOWTO (013),
-+  EMPTY_HOWTO (014),
-+  EMPTY_HOWTO (015),
-+  EMPTY_HOWTO (016),
-+  HOWTO (R_RELBYTE,		/* type */
-+	 0,			/* rightshift */
-+	 0,			/* size (0 = byte, 1 = short, 2 = long) */
-+	 8,			/* bitsize */
-+	 FALSE,			/* pc_relative */
-+	 0,			/* bitpos */
-+	 complain_overflow_bitfield, /* complain_on_overflow */
-+	 coff_avr_reloc,	/* special_function */
-+	 "8",			/* name */
-+	 TRUE,			/* partial_inplace */
-+	 0x000000ff,		/* src_mask */
-+	 0x000000ff,		/* dst_mask */
-+	 PCRELOFFSET),		/* pcrel_offset */
-+  HOWTO (R_RELWORD,		/* type */
-+	 0,			/* rightshift */
-+	 1,			/* size (0 = byte, 1 = short, 2 = long) */
-+	 16,			/* bitsize */
-+	 FALSE,			/* pc_relative */
-+	 0,			/* bitpos */
-+	 complain_overflow_bitfield, /* complain_on_overflow */
-+	 coff_avr_reloc,	/* special_function */
-+	 "16",			/* name */
-+	 TRUE,			/* partial_inplace */
-+	 0x0000ffff,		/* src_mask */
-+	 0x0000ffff,		/* dst_mask */
-+	 PCRELOFFSET),		/* pcrel_offset */
-+  HOWTO (R_RELLONG,		/* type */
-+	 0,			/* rightshift */
-+	 2,			/* size (0 = byte, 1 = short, 2 = long) */
-+	 32,			/* bitsize */
-+	 FALSE,			/* pc_relative */
-+	 0,			/* bitpos */
-+	 complain_overflow_bitfield, /* complain_on_overflow */
-+	 coff_avr_reloc,	/* special_function */
-+	 "32",			/* name */
-+	 TRUE,			/* partial_inplace */
-+	 0xffffffff,		/* src_mask */
-+	 0xffffffff,		/* dst_mask */
-+	 PCRELOFFSET),		/* pcrel_offset */
-+  HOWTO (R_PCRBYTE,		/* type */
-+	 0,			/* rightshift */
-+	 0,			/* size (0 = byte, 1 = short, 2 = long) */
-+	 8,			/* bitsize */
-+	 TRUE,			/* pc_relative */
-+	 0,			/* bitpos */
-+	 complain_overflow_signed, /* complain_on_overflow */
-+	 coff_avr_reloc,	/* special_function */
-+	 "DISP8",		/* name */
-+	 TRUE,			/* partial_inplace */
-+	 0x000000ff,		/* src_mask */
-+	 0x000000ff,		/* dst_mask */
-+	 PCRELOFFSET),		/* pcrel_offset */
-+  HOWTO (R_PCRWORD,		/* type */
-+	 0,			/* rightshift */
-+	 1,			/* size (0 = byte, 1 = short, 2 = long) */
-+	 16,			/* bitsize */
-+	 TRUE,			/* pc_relative */
-+	 0,			/* bitpos */
-+	 complain_overflow_signed, /* complain_on_overflow */
-+	 coff_avr_reloc,	/* special_function */
-+	 "DISP16",		/* name */
-+	 TRUE,			/* partial_inplace */
-+	 0x0000ffff,		/* src_mask */
-+	 0x0000ffff,		/* dst_mask */
-+	 PCRELOFFSET),		/* pcrel_offset */
-+  HOWTO (R_PCRLONG,		/* type */
-+	 0,			/* rightshift */
-+	 2,			/* size (0 = byte, 1 = short, 2 = long) */
-+	 32,			/* bitsize */
-+	 TRUE,			/* pc_relative */
-+	 0,			/* bitpos */
-+	 complain_overflow_signed, /* complain_on_overflow */
-+	 coff_avr_reloc,	/* special_function */
-+	 "DISP32",		/* name */
-+	 TRUE,			/* partial_inplace */
-+	 0xffffffff,		/* src_mask */
-+	 0xffffffff,		/* dst_mask */
-+	 PCRELOFFSET)		/* pcrel_offset */
-+};
-+
-+/* Turn a howto into a reloc  nunmber */
-+
-+#define SELECT_RELOC(x,howto) { x.r_type = howto->type; }
-+#define BADMAG(x) AVRBADMAG(x)
-+#define AVR 1			/* Customize coffcode.h */
-+
-+#define RTYPE2HOWTO(cache_ptr, dst) \
-+	    (cache_ptr)->howto = howto_table + (dst)->r_type;
-+
-+/* For AVR COFF a STYP_NOLOAD | STYP_BSS section is part of a shared
-+   library.  On some other COFF targets STYP_BSS is normally
-+   STYP_NOLOAD.  */
-+#define BSS_NOLOAD_IS_SHARED_LIBRARY
-+
-+/* Compute the addend of a reloc.  If the reloc is to a common symbol,
-+   the object file contains the value of the common symbol.  By the
-+   time this is called, the linker may be using a different symbol
-+   from a different object file with a different value.  Therefore, we
-+   hack wildly to locate the original symbol from this file so that we
-+   can make the correct adjustment.  This macro sets coffsym to the
-+   symbol from the original file, and uses it to set the addend value
-+   correctly.  If this is not a common symbol, the usual addend
-+   calculation is done, except that an additional tweak is needed for
-+   PC relative relocs.
-+   FIXME: This macro refers to symbols and asect; these are from the
-+   calling function, not the macro arguments.  */
-+
-+#define CALC_ADDEND(abfd, ptr, reloc, cache_ptr)		\
-+  {								\
-+    coff_symbol_type *coffsym = (coff_symbol_type *) NULL;	\
-+    if (ptr && bfd_asymbol_bfd (ptr) != abfd)			\
-+      coffsym = (obj_symbols (abfd)				\
-+	         + (cache_ptr->sym_ptr_ptr - symbols));		\
-+    else if (ptr)						\
-+      coffsym = coff_symbol_from (abfd, ptr);			\
-+    if (coffsym != (coff_symbol_type *) NULL			\
-+	&& coffsym->native->u.syment.n_scnum == 0)		\
-+      cache_ptr->addend = - coffsym->native->u.syment.n_value;	\
-+    else if (ptr && bfd_asymbol_bfd (ptr) == abfd		\
-+	     && ptr->section != (asection *) NULL)		\
-+      cache_ptr->addend = - (ptr->section->vma + ptr->value);	\
-+    else							\
-+      cache_ptr->addend = 0;					\
-+    if (ptr && howto_table[reloc.r_type].pc_relative)		\
-+      cache_ptr->addend += asect->vma;				\
-+  }
-+
-+/* We use the special COFF backend linker.  */
-+#define coff_relocate_section _bfd_coff_generic_relocate_section
-+
-+static reloc_howto_type *
-+coff_avr_rtype_to_howto (abfd, sec, rel, h, sym, addendp)
-+     bfd *abfd ATTRIBUTE_UNUSED;
-+     asection *sec;
-+     struct internal_reloc *rel;
-+     struct coff_link_hash_entry *h;
-+     struct internal_syment *sym;
-+     bfd_vma *addendp;
-+{
-+
-+  reloc_howto_type *howto;
-+
-+  howto = howto_table + rel->r_type;
-+
-+  if (howto->pc_relative)
-+    *addendp += sec->vma;
-+
-+  if (sym != NULL && sym->n_scnum == 0 && sym->n_value != 0)
-+    {
-+      /* This is a common symbol.  The section contents include the
-+	 size (sym->n_value) as an addend.  The relocate_section
-+	 function will be adding in the final value of the symbol.  We
-+	 need to subtract out the current size in order to get the
-+	 correct result.  */
-+
-+      BFD_ASSERT (h != NULL);
-+
-+      /* I think we *do* want to bypass this.  If we don't, I have seen some data
-+	 parameters get the wrong relcation address.  If I link two versions
-+	 with and without this section bypassed and then do a binary comparison,
-+	 the addresses which are different can be looked up in the map.  The
-+	 case in which this section has been bypassed has addresses which correspond
-+	 to values I can find in the map.  */
-+      *addendp -= sym->n_value;
-+    }
-+
-+  /* If the output symbol is common (in which case this must be a
-+     relocateable link), we need to add in the final size of the
-+     common symbol.  */
-+  if (h != NULL && h->root.type == bfd_link_hash_common)
-+    *addendp += h->root.u.c.size;
-+
-+  return howto;
-+}
-+
-+#define coff_rtype_to_howto coff_avr_rtype_to_howto
-+
-+#include "coffcode.h"
-+
-+static const bfd_target *
-+coff_avr_object_p(a)
-+     bfd *a;
-+{
-+  return coff_object_p (a);
-+}
-+
-+/* Handle all the abominations of AVR COFF:
-+
-+   Generic COFF always uses the D1 slot to indicate the "most
-+   important" derived type, and the D2...Dn slots for decreasing
-+   importance.  E. g., a function symbol will always have its DT_FCN
-+   element in D1, an array its DT_ARY (its first DT_ARY in a
-+   multi-dimensional array).  In contrast, AVR COFF expects this most
-+   important derived type specifier in the upmost Dn slot that is
-+   allocated at all (i. e. that is != 0).
-+
-+   Generic COFF says that "Any symbol that satisfies more than one
-+   condition [... for AUX entries] should have a union format in its
-+   auxiliary entry."  AVR COFF uses sepearate AUX entries for multiple
-+   derived types, and in some cases (like the ISFCN one), even puts
-+   the most important one into the last allocated AUX entry.  We
-+   join/split them here at the border as well.  Note that when
-+   generating AUX entries (where we need to split them), the n_numaux
-+   field must already have been set up properly (e. g. in
-+   binutils/wrcoff.c) since the entry renumbering and pointerization
-+   would not work otherwise.  Thus, we only split the information into
-+   multiple records if n_numaux > 1.  For similar reasons, we keep
-+   n_numaux > 1 on input to keep the appropriate AUX entries
-+   allocated, so a symbol can be reconstructed if it is being passed
-+   through one of the GNU tools.
-+
-+   Note that this adjustment is called after the symbol itself has
-+   been swapped in, but before the AUX entries are swapped in.  This
-+   is the only hook available that could swap (or merge) AUX entries
-+   at all, so we have to operate on the external AUX entries still. */
-+
-+void
-+avr_coff_adjust_sym_in_post (abfd, ext, in)
-+     bfd *abfd;
-+     PTR ext;
-+     PTR in;
-+{
-+  struct internal_syment *dst = (struct internal_syment *)in;
-+  unsigned short dt, bt, ndt;
-+  dt = dst->n_type & ~N_BTMASK;
-+  bt = BTYPE (dst->n_type);
-+
-+  /* Some AVR COFF producers seem to violate the COFF specs, and
-+     produce symbols for tag names that have the C_FOO filled in
-+     properly, but T_NULL as the base type value.  Patch up here,
-+     since some of our generic COFF tools (in particular
-+     binutils/rdcoff.c) rely on the correct data. */
-+  if (bt == T_NULL)
-+    switch (dst->n_sclass)
-+      {
-+      case C_STRTAG:
-+	bt = T_STRUCT;
-+	break;
-+
-+      case C_UNTAG:
-+	bt = T_UNION;
-+	break;
-+
-+      case C_ENTAG:
-+	bt = T_ENUM;
-+	break;
-+      }
-+
-+  /* Swap the derived type slots. */
-+  if (dt != 0)
-+    {
-+      ndt = 0;
-+      while (dt != 0)
-+	{
-+	  ndt = (ndt << N_TSHIFT) | (dt & (N_TMASK >> N_BTSHFT));
-+	  dt >>= N_TSHIFT;
-+	}
-+      dst->n_type = (ndt << N_BTSHFT) | bt;
-+    }
-+  else
-+    dst->n_type = bt;
-+
-+  /* If the derived type is function, and there is more than one AUX
-+     entry, swap the first and the last AUX entry, so the most
-+     interesting one will become the first.
-+
-+     If the fundamental type is a tagged type (struct/union/enum), try
-+     to find the AUX entry describing the tagged type (the one that
-+     has x_sym.x_tagndx filled in), and merge the tag index into the
-+     first AUX entry.  Depending on the actual input file, there might
-+     be further DT_PTR entries which we just ignore, since we could
-+     not handle that information anyway. */
-+  if (dst->n_numaux > 1 && dst->n_sclass != C_FILE)
-+    {
-+      AUXENT caux, *auxp1, *auxp2;
-+      size_t symesz;
-+      unsigned int i;
-+
-+      symesz = bfd_coff_symesz (abfd);
-+      i = dst->n_numaux;
-+
-+      auxp1 = (AUXENT *)((char *)ext + symesz);
-+      auxp2 = (AUXENT *)((char *)ext + i * symesz);
-+
-+      if (ISFCN (dst->n_type)
-+	  || (ISPTR(dst->n_type)
-+	      && (bt == T_STRUCT || bt == T_UNION || bt == T_ENUM)))
-+	{
-+	  caux = *auxp2;
-+	  *auxp2 = *auxp1;
-+	  *auxp1 = caux;
-+	}
-+      else
-+	caux = *auxp1;
-+
-+      if ((ISFCN (dst->n_type) || ISARY (dst->n_type))
-+	  && (bt == T_STRUCT || bt == T_UNION || bt == T_ENUM))
-+	{
-+	  while (i > 1)
-+	    {
-+	      auxp2 = (AUXENT *)((char *)ext + i * symesz);
-+
-+	      if (auxp2->x_sym.x_tagndx[0] != 0 || auxp2->x_sym.x_tagndx[1] != 0
-+		  || auxp2->x_sym.x_tagndx[2] != 0 || auxp2->x_sym.x_tagndx[3] != 0)
-+		{
-+		  memcpy (caux.x_sym.x_tagndx, auxp2->x_sym.x_tagndx,
-+			  4 * sizeof (char));
-+		  break;
-+		}
-+	      i--;
-+	    }
-+	  if (i > 1)
-+	    *auxp1 = caux;
-+	}
-+    }
-+}
-+
-+/* When exporting an AVR COFF file, just undo all that has been done
-+   above.  Again, we are called after the symbol itself has been
-+   swapped out, but before the AUX entries are being written.
-+   Unfortunately, we are only given a pointer to the symbol itself, so
-+   we have to derive the pointer to the respective aux entries from
-+   that address, which is a bit clumsy. */
-+void
-+avr_coff_adjust_sym_out_post (abfd, in, ext)
-+     bfd *abfd;
-+     PTR in;
-+     PTR ext;
-+{
-+  struct internal_syment *src = (struct internal_syment *)(in);
-+  struct external_syment *dst = (struct external_syment *)(ext);
-+  unsigned short dt, bt, ndt;
-+
-+  dt = src->n_type & ~N_BTMASK;
-+  bt = BTYPE (src->n_type);
-+
-+  if (dt != 0)
-+    {
-+      ndt = 0;
-+      while (dt != 0)
-+	{
-+	  ndt = (ndt << N_TSHIFT) | (dt & (N_TMASK >> N_BTSHFT));
-+	  dt >>= N_TSHIFT;
-+	}
-+      H_PUT_16 (abfd, (ndt << N_BTSHFT) | bt, dst->e_type);
-+    }
-+
-+  if (src->n_numaux > 1 && src->n_sclass != C_FILE)
-+    {
-+      combined_entry_type *srce, *dste;
-+      char *hackp;
-+      unsigned int i;
-+
-+      /* Recover the original combinend_entry_type *. */
-+      hackp = (char *)in;
-+      hackp -= offsetof(combined_entry_type, u.syment);
-+      srce = (combined_entry_type *)hackp;
-+      srce++;
-+
-+      /* We simply duplicate the first AUX entry as many times as
-+	 needed.  Since COFF itself normally uses just a single AUX
-+	 entry for all the information, this will work -- each COFF
-+	 consumer will then just pick the fields it is particularly
-+	 interested in.  This would not work for the AVR COFF specific
-+	 DT_PTR AUX entries, but we don't support them anyway. */
-+      for (i = 1; i < src->n_numaux; i++)
-+	{
-+	  dste = srce + i;
-+	  *dste = *srce;
-+	}
-+    }
-+}
-+
-+const bfd_target
-+#ifdef TARGET_SYM
-+  TARGET_SYM =
-+#else
-+  avrcoff_vec =
-+#endif
-+{
-+#ifdef TARGET_NAME
-+  TARGET_NAME,
-+#else
-+  "coff-avr",			/* name */
-+#endif
-+  bfd_target_coff_flavour,
-+  BFD_ENDIAN_LITTLE,		/* data byte order is little */
-+  BFD_ENDIAN_LITTLE,		/* header byte order is little */
-+
-+  (HAS_RELOC | EXEC_P |		/* object flags */
-+   HAS_LINENO | HAS_DEBUG |
-+   HAS_SYMS | HAS_LOCALS | WP_TEXT),
-+
-+  (SEC_HAS_CONTENTS | SEC_ALLOC | SEC_LOAD | SEC_RELOC), /* section flags */
-+  0,				/* leading char */
-+  '/',				/* ar_pad_char */
-+  15,				/* ar_max_namelen */
-+
-+  bfd_getl64, bfd_getl_signed_64, bfd_putl64,
-+     bfd_getl32, bfd_getl_signed_32, bfd_putl32,
-+     bfd_getl16, bfd_getl_signed_16, bfd_putl16, /* data */
-+  bfd_getl64, bfd_getl_signed_64, bfd_putl64,
-+     bfd_getl32, bfd_getl_signed_32, bfd_putl32,
-+     bfd_getl16, bfd_getl_signed_16, bfd_putl16, /* hdrs */
-+
-+/* Note that we allow an object file to be treated as a core file as well.  */
-+    {_bfd_dummy_target, coff_avr_object_p, /* bfd_check_format */
-+       bfd_generic_archive_p, coff_avr_object_p},
-+    {bfd_false, coff_mkobject, _bfd_generic_mkarchive, /* bfd_set_format */
-+       bfd_false},
-+    {bfd_false, coff_write_object_contents, /* bfd_write_contents */
-+       _bfd_write_archive_contents, bfd_false},
-+
-+     BFD_JUMP_TABLE_GENERIC (coff),
-+     BFD_JUMP_TABLE_COPY (coff),
-+     BFD_JUMP_TABLE_CORE (_bfd_nocore),
-+     BFD_JUMP_TABLE_ARCHIVE (_bfd_archive_coff),
-+     BFD_JUMP_TABLE_SYMBOLS (coff),
-+     BFD_JUMP_TABLE_RELOCS (coff),
-+     BFD_JUMP_TABLE_WRITE (coff),
-+     BFD_JUMP_TABLE_LINK (coff),
-+     BFD_JUMP_TABLE_DYNAMIC (_bfd_nodynamic),
-+
-+  NULL,
-+
-+  COFF_SWAP_TABLE
-+};
-diff -Nur binutils-2.14-vanilla/bfd/coff-ext-avr.c binutils-2.14/bfd/coff-ext-avr.c
---- binutils-2.14-vanilla/bfd/coff-ext-avr.c	Thu Jan  1 01:00:00 1970
-+++ bfd/coff-ext-avr.c	Sat Sep  6 22:24:22 2003
-@@ -0,0 +1,424 @@
-+/* BFD back-end for Atmel AVR "extended" COFF files.
-+   Copyright 1990, 1991, 1992, 1993, 1994, 1995, 1999, 2000, 2001, 2003
-+   Free Software Foundation, Inc.
-+   This is mostly the same as avr-coff, except of the presence of the
-+   COFF optional header.
-+
-+This file is part of BFD, the Binary File Descriptor library.
-+
-+This program is free software; you can redistribute it and/or modify
-+it under the terms of the GNU General Public License as published by
-+the Free Software Foundation; either version 2 of the License, or
-+(at your option) any later version.
-+
-+This program is distributed in the hope that it will be useful,
-+but WITHOUT ANY WARRANTY; without even the implied warranty of
-+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-+GNU General Public License for more details.
-+
-+You should have received a copy of the GNU General Public License
-+along with this program; if not, write to the Free Software
-+Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
-+
-+#include "bfd.h"
-+#include "sysdep.h"
-+#include "libbfd.h"
-+
-+#define AVR_EXT_COFF 1
-+#include "coff/avr.h"
-+
-+#include "coff/internal.h"
-+
-+#include "libcoff.h"
-+
-+static bfd_reloc_status_type coff_ext_avr_reloc
-+  PARAMS ((bfd *, arelent *, asymbol *, PTR, asection *, bfd *, char **));
-+static reloc_howto_type *coff_ext_avr_rtype_to_howto
-+  PARAMS ((bfd *, asection *, struct internal_reloc *,
-+	   struct coff_link_hash_entry *, struct internal_syment *,
-+	   bfd_vma *));
-+static const bfd_target * coff_ext_avr_object_p PARAMS ((bfd *));
-+
-+#define COFF_DEFAULT_SECTION_ALIGNMENT_POWER (2)
-+/* The page size is a guess based on ELF.  */
-+
-+#define COFF_PAGE_SIZE 0x1000
-+
-+/* For some reason when using avr COFF the value stored in the .text
-+   section for a reference to a common symbol is the value itself plus
-+   any desired offset.  Ian Taylor, Cygnus Support.  */
-+
-+/* If we are producing relocateable output, we need to do some
-+   adjustments to the object file that are not done by the
-+   bfd_perform_relocation function.  This function is called by every
-+   reloc type to make any required adjustments.  */
-+
-+static bfd_reloc_status_type
-+coff_ext_avr_reloc (abfd, reloc_entry, symbol, data, input_section, output_bfd,
-+		 error_message)
-+     bfd *abfd;
-+     arelent *reloc_entry;
-+     asymbol *symbol;
-+     PTR data;
-+     asection *input_section ATTRIBUTE_UNUSED;
-+     bfd *output_bfd;
-+     char **error_message ATTRIBUTE_UNUSED;
-+{
-+  symvalue diff;
-+
-+  if (output_bfd == (bfd *) NULL)
-+    return bfd_reloc_continue;
-+
-+  if (bfd_is_com_section (symbol->section))
-+    {
-+      /* We are relocating a common symbol.  The current value in the
-+	 object file is ORIG + OFFSET, where ORIG is the value of the
-+	 common symbol as seen by the object file when it was compiled
-+	 (this may be zero if the symbol was undefined) and OFFSET is
-+	 the offset into the common symbol (normally zero, but may be
-+	 non-zero when referring to a field in a common structure).
-+	 ORIG is the negative of reloc_entry->addend, which is set by
-+	 the CALC_ADDEND macro below.  We want to replace the value in
-+	 the object file with NEW + OFFSET, where NEW is the value of
-+	 the common symbol which we are going to put in the final
-+	 object file.  NEW is symbol->value.  */
-+      diff = symbol->value + reloc_entry->addend;
-+    }
-+  else
-+    {
-+      /* For some reason bfd_perform_relocation always effectively
-+	 ignores the addend for a COFF target when producing
-+	 relocateable output.  This seems to be always wrong for 860
-+	 COFF, so we handle the addend here instead.  */
-+      diff = reloc_entry->addend;
-+    }
-+
-+#define DOIT(x) \
-+  x = ((x & ~howto->dst_mask) | (((x & howto->src_mask) + diff) & howto->dst_mask))
-+
-+    if (diff != 0)
-+      {
-+	reloc_howto_type *howto = reloc_entry->howto;
-+	unsigned char *addr = (unsigned char *) data + reloc_entry->address;
-+
-+	switch (howto->size)
-+	  {
-+	  case 0:
-+	    {
-+	      char x = bfd_get_8 (abfd, addr);
-+	      DOIT (x);
-+	      bfd_put_8 (abfd, x, addr);
-+	    }
-+	    break;
-+
-+	  case 1:
-+	    {
-+	      short x = bfd_get_16 (abfd, addr);
-+	      DOIT (x);
-+	      bfd_put_16 (abfd, (bfd_vma) x, addr);
-+	    }
-+	    break;
-+
-+	  case 2:
-+	    {
-+	      long x = bfd_get_32 (abfd, addr);
-+	      DOIT (x);
-+	      bfd_put_32 (abfd, (bfd_vma) x, addr);
-+	    }
-+	    break;
-+
-+	  default:
-+	    abort ();
-+	  }
-+      }
-+
-+  /* Now let bfd_perform_relocation finish everything up.  */
-+  return bfd_reloc_continue;
-+}
-+
-+#ifndef PCRELOFFSET
-+#define PCRELOFFSET FALSE
-+#endif
-+
-+static reloc_howto_type howto_table[] =
-+{
-+  EMPTY_HOWTO (0),
-+  EMPTY_HOWTO (1),
-+  EMPTY_HOWTO (2),
-+  EMPTY_HOWTO (3),
-+  EMPTY_HOWTO (4),
-+  EMPTY_HOWTO (5),
-+  HOWTO (R_DIR32,               /* type */
-+	 0,	                /* rightshift */
-+	 2,	                /* size (0 = byte, 1 = short, 2 = long) */
-+	 32,	                /* bitsize */
-+	 FALSE,	                /* pc_relative */
-+	 0,	                /* bitpos */
-+	 complain_overflow_bitfield, /* complain_on_overflow */
-+	 coff_ext_avr_reloc,       /* special_function */
-+	 "dir32",               /* name */
-+	 TRUE,	                /* partial_inplace */
-+	 0xffffffff,            /* src_mask */
-+	 0xffffffff,            /* dst_mask */
-+	 TRUE),                /* pcrel_offset */
-+  /* {7}, */
-+  HOWTO (R_IMAGEBASE,            /* type */
-+	 0,	                /* rightshift */
-+	 2,	                /* size (0 = byte, 1 = short, 2 = long) */
-+	 32,	                /* bitsize */
-+	 FALSE,	                /* pc_relative */
-+	 0,	                /* bitpos */
-+	 complain_overflow_bitfield, /* complain_on_overflow */
-+	 coff_ext_avr_reloc,       /* special_function */
-+	 "rva32",	           /* name */
-+	 TRUE,	                /* partial_inplace */
-+	 0xffffffff,            /* src_mask */
-+	 0xffffffff,            /* dst_mask */
-+	 FALSE),                /* pcrel_offset */
-+  EMPTY_HOWTO (010),
-+  EMPTY_HOWTO (011),
-+  EMPTY_HOWTO (012),
-+  EMPTY_HOWTO (013),
-+  EMPTY_HOWTO (014),
-+  EMPTY_HOWTO (015),
-+  EMPTY_HOWTO (016),
-+  HOWTO (R_RELBYTE,		/* type */
-+	 0,			/* rightshift */
-+	 0,			/* size (0 = byte, 1 = short, 2 = long) */
-+	 8,			/* bitsize */
-+	 FALSE,			/* pc_relative */
-+	 0,			/* bitpos */
-+	 complain_overflow_bitfield, /* complain_on_overflow */
-+	 coff_ext_avr_reloc,	/* special_function */
-+	 "8",			/* name */
-+	 TRUE,			/* partial_inplace */
-+	 0x000000ff,		/* src_mask */
-+	 0x000000ff,		/* dst_mask */
-+	 PCRELOFFSET),		/* pcrel_offset */
-+  HOWTO (R_RELWORD,		/* type */
-+	 0,			/* rightshift */
-+	 1,			/* size (0 = byte, 1 = short, 2 = long) */
-+	 16,			/* bitsize */
-+	 FALSE,			/* pc_relative */
-+	 0,			/* bitpos */
-+	 complain_overflow_bitfield, /* complain_on_overflow */
-+	 coff_ext_avr_reloc,	/* special_function */
-+	 "16",			/* name */
-+	 TRUE,			/* partial_inplace */
-+	 0x0000ffff,		/* src_mask */
-+	 0x0000ffff,		/* dst_mask */
-+	 PCRELOFFSET),		/* pcrel_offset */
-+  HOWTO (R_RELLONG,		/* type */
-+	 0,			/* rightshift */
-+	 2,			/* size (0 = byte, 1 = short, 2 = long) */
-+	 32,			/* bitsize */
-+	 FALSE,			/* pc_relative */
-+	 0,			/* bitpos */
-+	 complain_overflow_bitfield, /* complain_on_overflow */
-+	 coff_ext_avr_reloc,	/* special_function */
-+	 "32",			/* name */
-+	 TRUE,			/* partial_inplace */
-+	 0xffffffff,		/* src_mask */
-+	 0xffffffff,		/* dst_mask */
-+	 PCRELOFFSET),		/* pcrel_offset */
-+  HOWTO (R_PCRBYTE,		/* type */
-+	 0,			/* rightshift */
-+	 0,			/* size (0 = byte, 1 = short, 2 = long) */
-+	 8,			/* bitsize */
-+	 TRUE,			/* pc_relative */
-+	 0,			/* bitpos */
-+	 complain_overflow_signed, /* complain_on_overflow */
-+	 coff_ext_avr_reloc,	/* special_function */
-+	 "DISP8",		/* name */
-+	 TRUE,			/* partial_inplace */
-+	 0x000000ff,		/* src_mask */
-+	 0x000000ff,		/* dst_mask */
-+	 PCRELOFFSET),		/* pcrel_offset */
-+  HOWTO (R_PCRWORD,		/* type */
-+	 0,			/* rightshift */
-+	 1,			/* size (0 = byte, 1 = short, 2 = long) */
-+	 16,			/* bitsize */
-+	 TRUE,			/* pc_relative */
-+	 0,			/* bitpos */
-+	 complain_overflow_signed, /* complain_on_overflow */
-+	 coff_ext_avr_reloc,	/* special_function */
-+	 "DISP16",		/* name */
-+	 TRUE,			/* partial_inplace */
-+	 0x0000ffff,		/* src_mask */
-+	 0x0000ffff,		/* dst_mask */
-+	 PCRELOFFSET),		/* pcrel_offset */
-+  HOWTO (R_PCRLONG,		/* type */
-+	 0,			/* rightshift */
-+	 2,			/* size (0 = byte, 1 = short, 2 = long) */
-+	 32,			/* bitsize */
-+	 TRUE,			/* pc_relative */
-+	 0,			/* bitpos */
-+	 complain_overflow_signed, /* complain_on_overflow */
-+	 coff_ext_avr_reloc,	/* special_function */
-+	 "DISP32",		/* name */
-+	 TRUE,			/* partial_inplace */
-+	 0xffffffff,		/* src_mask */
-+	 0xffffffff,		/* dst_mask */
-+	 PCRELOFFSET)		/* pcrel_offset */
-+};
-+
-+/* Turn a howto into a reloc  nunmber */
-+
-+#define SELECT_RELOC(x,howto) { x.r_type = howto->type; }
-+#define BADMAG(x) AVRBADMAG(x)
-+#define AVR 1			/* Customize coffcode.h */
-+
-+#define RTYPE2HOWTO(cache_ptr, dst) \
-+	    (cache_ptr)->howto = howto_table + (dst)->r_type;
-+
-+/* For AVR COFF a STYP_NOLOAD | STYP_BSS section is part of a shared
-+   library.  On some other COFF targets STYP_BSS is normally
-+   STYP_NOLOAD.  */
-+#define BSS_NOLOAD_IS_SHARED_LIBRARY
-+
-+/* Compute the addend of a reloc.  If the reloc is to a common symbol,
-+   the object file contains the value of the common symbol.  By the
-+   time this is called, the linker may be using a different symbol
-+   from a different object file with a different value.  Therefore, we
-+   hack wildly to locate the original symbol from this file so that we
-+   can make the correct adjustment.  This macro sets coffsym to the
-+   symbol from the original file, and uses it to set the addend value
-+   correctly.  If this is not a common symbol, the usual addend
-+   calculation is done, except that an additional tweak is needed for
-+   PC relative relocs.
-+   FIXME: This macro refers to symbols and asect; these are from the
-+   calling function, not the macro arguments.  */
-+
-+#define CALC_ADDEND(abfd, ptr, reloc, cache_ptr)		\
-+  {								\
-+    coff_symbol_type *coffsym = (coff_symbol_type *) NULL;	\
-+    if (ptr && bfd_asymbol_bfd (ptr) != abfd)			\
-+      coffsym = (obj_symbols (abfd)				\
-+	         + (cache_ptr->sym_ptr_ptr - symbols));		\
-+    else if (ptr)						\
-+      coffsym = coff_symbol_from (abfd, ptr);			\
-+    if (coffsym != (coff_symbol_type *) NULL			\
-+	&& coffsym->native->u.syment.n_scnum == 0)		\
-+      cache_ptr->addend = - coffsym->native->u.syment.n_value;	\
-+    else if (ptr && bfd_asymbol_bfd (ptr) == abfd		\
-+	     && ptr->section != (asection *) NULL)		\
-+      cache_ptr->addend = - (ptr->section->vma + ptr->value);	\
-+    else							\
-+      cache_ptr->addend = 0;					\
-+    if (ptr && howto_table[reloc.r_type].pc_relative)		\
-+      cache_ptr->addend += asect->vma;				\
-+  }
-+
-+/* We use the special COFF backend linker.  */
-+#define coff_relocate_section _bfd_coff_generic_relocate_section
-+
-+static reloc_howto_type *
-+coff_ext_avr_rtype_to_howto (abfd, sec, rel, h, sym, addendp)
-+     bfd *abfd ATTRIBUTE_UNUSED;
-+     asection *sec;
-+     struct internal_reloc *rel;
-+     struct coff_link_hash_entry *h;
-+     struct internal_syment *sym;
-+     bfd_vma *addendp;
-+{
-+
-+  reloc_howto_type *howto;
-+
-+  howto = howto_table + rel->r_type;
-+
-+  if (howto->pc_relative)
-+    *addendp += sec->vma;
-+
-+  if (sym != NULL && sym->n_scnum == 0 && sym->n_value != 0)
-+    {
-+      /* This is a common symbol.  The section contents include the
-+	 size (sym->n_value) as an addend.  The relocate_section
-+	 function will be adding in the final value of the symbol.  We
-+	 need to subtract out the current size in order to get the
-+	 correct result.  */
-+
-+      BFD_ASSERT (h != NULL);
-+
-+      /* I think we *do* want to bypass this.  If we don't, I have seen some data
-+	 parameters get the wrong relcation address.  If I link two versions
-+	 with and without this section bypassed and then do a binary comparison,
-+	 the addresses which are different can be looked up in the map.  The
-+	 case in which this section has been bypassed has addresses which correspond
-+	 to values I can find in the map.  */
-+      *addendp -= sym->n_value;
-+    }
-+
-+  /* If the output symbol is common (in which case this must be a
-+     relocateable link), we need to add in the final size of the
-+     common symbol.  */
-+  if (h != NULL && h->root.type == bfd_link_hash_common)
-+    *addendp += h->root.u.c.size;
-+
-+  return howto;
-+}
-+
-+#define coff_rtype_to_howto coff_ext_avr_rtype_to_howto
-+
-+#include "coffcode.h"
-+
-+static const bfd_target *
-+coff_ext_avr_object_p(a)
-+     bfd *a;
-+{
-+  return coff_object_p (a);
-+}
-+
-+const bfd_target
-+#ifdef TARGET_SYM
-+  TARGET_SYM =
-+#else
-+  avrextcoff_vec =
-+#endif
-+{
-+#ifdef TARGET_NAME
-+  TARGET_NAME,
-+#else
-+  "coff-ext-avr",			/* name */
-+#endif
-+  bfd_target_coff_flavour,
-+  BFD_ENDIAN_LITTLE,		/* data byte order is little */
-+  BFD_ENDIAN_LITTLE,		/* header byte order is little */
-+
-+  (HAS_RELOC | EXEC_P |		/* object flags */
-+   HAS_LINENO | HAS_DEBUG |
-+   HAS_SYMS | HAS_LOCALS | WP_TEXT),
-+
-+  (SEC_HAS_CONTENTS | SEC_ALLOC | SEC_LOAD | SEC_RELOC), /* section flags */
-+  0,				/* leading char */
-+  '/',				/* ar_pad_char */
-+  15,				/* ar_max_namelen */
-+
-+  bfd_getl64, bfd_getl_signed_64, bfd_putl64,
-+     bfd_getl32, bfd_getl_signed_32, bfd_putl32,
-+     bfd_getl16, bfd_getl_signed_16, bfd_putl16, /* data */
-+  bfd_getl64, bfd_getl_signed_64, bfd_putl64,
-+     bfd_getl32, bfd_getl_signed_32, bfd_putl32,
-+     bfd_getl16, bfd_getl_signed_16, bfd_putl16, /* hdrs */
-+
-+/* Note that we allow an object file to be treated as a core file as well.  */
-+    {_bfd_dummy_target, coff_ext_avr_object_p, /* bfd_check_format */
-+       bfd_generic_archive_p, coff_ext_avr_object_p},
-+    {bfd_false, coff_mkobject, _bfd_generic_mkarchive, /* bfd_set_format */
-+       bfd_false},
-+    {bfd_false, coff_write_object_contents, /* bfd_write_contents */
-+       _bfd_write_archive_contents, bfd_false},
-+
-+     BFD_JUMP_TABLE_GENERIC (coff),
-+     BFD_JUMP_TABLE_COPY (coff),
-+     BFD_JUMP_TABLE_CORE (_bfd_nocore),
-+     BFD_JUMP_TABLE_ARCHIVE (_bfd_archive_coff),
-+     BFD_JUMP_TABLE_SYMBOLS (coff),
-+     BFD_JUMP_TABLE_RELOCS (coff),
-+     BFD_JUMP_TABLE_WRITE (coff),
-+     BFD_JUMP_TABLE_LINK (coff),
-+     BFD_JUMP_TABLE_DYNAMIC (_bfd_nodynamic),
-+
-+  NULL,
-+
-+  COFF_SWAP_TABLE
-+};
-diff -Nur binutils-2.14-vanilla/bfd/coffcode.h binutils-2.14/bfd/coffcode.h
---- binutils-2.14-vanilla/bfd/coffcode.h	Thu Apr 24 14:36:06 2003
-+++ bfd/coffcode.h	Sat Sep  6 22:24:22 2003
-@@ -1,3 +1,4 @@
-+
- /* Support for the generic parts of most COFF variants, for BFD.
-    Copyright 1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999,
-    2000, 2001, 2002, 2003
-@@ -1741,6 +1742,17 @@
-   coff->relocbase = 0;
-   coff->local_toc_sym_map = 0;
- 
-+  /* These members communicate important constants about the symbol
-+     table to GDB's symbol-reading code.  These `constants'
-+     unfortunately vary among coff implementations...  */
-+  coff->local_n_btmask = N_BTMASK;
-+  coff->local_n_btshft = N_BTSHFT;
-+  coff->local_n_tmask = N_TMASK;
-+  coff->local_n_tshift = N_TSHIFT;
-+  coff->local_symesz = bfd_coff_symesz (abfd);
-+  coff->local_auxesz = bfd_coff_auxesz (abfd);
-+  coff->local_linesz = bfd_coff_linesz (abfd);
-+
- /*  make_abs_section(abfd);*/
- 
-   return TRUE;
-@@ -1766,17 +1778,6 @@
- 
-   coff->sym_filepos = internal_f->f_symptr;
- 
--  /* These members communicate important constants about the symbol
--     table to GDB's symbol-reading code.  These `constants'
--     unfortunately vary among coff implementations...  */
--  coff->local_n_btmask = N_BTMASK;
--  coff->local_n_btshft = N_BTSHFT;
--  coff->local_n_tmask = N_TMASK;
--  coff->local_n_tshift = N_TSHIFT;
--  coff->local_symesz = bfd_coff_symesz (abfd);
--  coff->local_auxesz = bfd_coff_auxesz (abfd);
--  coff->local_linesz = bfd_coff_linesz (abfd);
--
-   coff->timestamp = internal_f->f_timdat;
- 
-   obj_raw_syment_count (abfd) =
-@@ -1905,6 +1906,11 @@
- 	}
-       break;
- #endif
-+#ifdef AVRMAGIC
-+    case AVRMAGIC:
-+      arch = bfd_arch_avr;
-+      break;
-+#endif
- #ifdef MC68MAGIC
-     case MC68MAGIC:
-     case M68MAGIC:
-@@ -2690,6 +2696,12 @@
- 	}
-       return TRUE;
- #endif
-+#ifdef AVRMAGIC
-+    case bfd_arch_avr:
-+      *magicp = AVRMAGIC;
-+      return TRUE;
-+      break;
-+#endif
- #ifdef PPCMAGIC
-     case bfd_arch_powerpc:
-       *magicp = PPCMAGIC;
-@@ -3586,6 +3598,11 @@
-       section.s_page = coff_get_section_load_page (current);
- #endif
- 
-+#ifdef AVR
-+      /* AVR uses s_paddr the way GNU uses s_vaddr, and effectively
-+	 ignores s_vaddr. */
-+      section.s_paddr = current->vma;
-+#endif
- #ifdef COFF_WITH_PE
-       section.s_paddr = 0;
- #endif
-@@ -3936,6 +3953,17 @@
-     internal_a.magic = ZMAGIC;
- #endif
- 
-+#ifdef AVR
-+    /* a.out is a dummy for non-extended COFF */
-+    internal_a.magic = AVRAOUTMAGIC;
-+    /* Upper nibble of f_flags must be set for historical reasons.
-+       The upper byte remains blank on coff-avr, so undo the F_AR32WR
-+       setting performed above. */
-+    internal_f.f_flags |= F_JUNK;
-+    internal_f.f_flags &= ~F_UNUSED;
-+#define __A_MAGIC_SET__
-+#endif /* AVR */
-+
- #if defined(PPC_PE)
- #define __A_MAGIC_SET__
-     internal_a.magic = IMAGE_NT_OPTIONAL_HDR_MAGIC;
-@@ -3996,8 +4024,16 @@
- #endif
-   }
- 
-+#ifdef AVR_EXT_COFF
-+    /* Note that we do not set F_PTRINFO because the GNU toolchain
-+       doesn't provide any information about the target of a pointer,
-+       so we cannot derive which section our pointer target would be
-+       in. */
-+  internal_a.vstamp = F_FULLPATHS | F_STRUCTINFO;
-+#else
-   /* FIXME: Does anybody ever set this to another value?  */
-   internal_a.vstamp = 0;
-+#endif
- 
-   /* Now should write relocs, strings, syms.  */
-   obj_sym_filepos (abfd) = sym_base;
-@@ -4186,22 +4222,29 @@
-       char * buff;
-       bfd_size_type amount = bfd_coff_aoutsz (abfd);
- 
--      buff = bfd_malloc (amount);
--      if (buff == NULL)
--	return FALSE;
-+      /* Do not attempt to malloc() zero bytes.  According to the
-+         C standard, the behaviour is implementation-defined, and
-+	 malloc() might return NULL in that case, which would confuse
-+	 us to assume an error where it actually isn't. */
-+      if (amount != 0)
-+	{
-+	  buff = bfd_malloc (amount);
-+	  if (buff == NULL)
-+	    return FALSE;
- 
--      coff_swap_aouthdr_out (abfd, (PTR) &internal_a, (PTR) buff);
--      amount = bfd_bwrite ((PTR) buff, amount, abfd);
-+	  coff_swap_aouthdr_out (abfd, (PTR) &internal_a, (PTR) buff);
-+	  amount = bfd_bwrite ((PTR) buff, amount, abfd);
- 
--      free (buff);
-+	  free (buff);
- 
--      if (amount != bfd_coff_aoutsz (abfd))
--	return FALSE;
-+	  if (amount != bfd_coff_aoutsz (abfd))
-+	    return FALSE;
- 
- #ifdef COFF_IMAGE_WITH_PE
--      if (! coff_apply_checksum (abfd))
--	return FALSE;
-+	  if (! coff_apply_checksum (abfd))
-+	    return FALSE;
- #endif
-+	}
-     }
- #ifdef RS6000COFF_C
-   else
-@@ -4520,6 +4563,10 @@
- 	    /* In PE, 0x69 (105) denotes a weak external symbol.  */
- 	    case C_NT_WEAK:
- #endif
-+#ifdef AVR
-+	    /* Some AVR COFF compilers handle EXTDEF like EXT. */
-+	    case C_EXTDEF:	/* external definition		 */
-+#endif
- 	      switch (coff_classify_symbol (abfd, &src->u.syment))
- 		{
- 		case COFF_SYMBOL_GLOBAL:
-@@ -4748,7 +4795,9 @@
- 		  && src->u.syment.n_scnum == 0)
- 		break;
- 	      /* Fall through.  */
-+#if !defined(AVR)
- 	    case C_EXTDEF:	/* External definition.  */
-+#endif
- 	    case C_ULABEL:	/* Undefined label.  */
- 	    case C_USTATIC:	/* Undefined static.  */
- #ifndef COFF_WITH_PE
-diff -Nur binutils-2.14-vanilla/bfd/coffgen.c binutils-2.14/bfd/coffgen.c
---- binutils-2.14-vanilla/bfd/coffgen.c	Tue Apr  1 15:08:05 2003
-+++ bfd/coffgen.c	Sat Sep  6 22:24:22 2003
-@@ -727,6 +727,20 @@
- 	      if (last_file != (struct internal_syment *) NULL)
- 		last_file->n_value = native_index;
- 	      last_file = &(s->u.syment);
-+	      if (bfd_get_arch (bfd_ptr) == bfd_arch_avr
-+		  && bfd_coff_long_filenames (bfd_ptr)
-+		  && s->u.syment.n_numaux > 0)
-+		{
-+		  /* AVR COFF records long filenames in successive aux
-+		     records.  Adjust the number of aux records
-+		     required here, so the renumbering will account
-+		     for them. */
-+		  unsigned int filnmlen = bfd_coff_filnmlen (bfd_ptr);
-+		  unsigned int namelen = strlen (coff_symbol_ptr->symbol.name);
-+		  unsigned int n = (namelen + filnmlen - 1) / filnmlen;
-+
-+		  s->u.syment.n_numaux = n > NAUXENTS? NAUXENTS: n;
-+		}
- 	    }
- 	  else
- 	    {
-@@ -864,6 +878,20 @@
- 	    {
- 	      strncpy (auxent->x_file.x_fname, name, filnmlen);
- 	    }
-+	  else if (bfd_get_arch (abfd) == bfd_arch_avr)
-+	    {
-+	      /* AVR COFF records long filenames in successive aux records. */
-+	      int i = 1;
-+	      while (name_length > filnmlen && i < NAUXENTS)
-+		{
-+		  strncpy (auxent->x_file.x_fname, name, filnmlen);
-+		  name += filnmlen;
-+		  name_length -= filnmlen;
-+		  i++;
-+		  auxent = &(native + i)->u.auxent;
-+		}
-+	      strncpy (auxent->x_file.x_fname, name, filnmlen);
-+	    }
- 	  else
- 	    {
- 	      auxent->x_file.x_n.x_offset = *string_size_p + STRING_SIZE_SIZE;
-@@ -1304,7 +1332,11 @@
- 		  if (bfd_bwrite (".file", (bfd_size_type) 6, abfd) != 6)
- 		    return FALSE;
- 		}
--	      maxlen = bfd_coff_filnmlen (abfd);
-+	      if (bfd_get_arch (abfd) == bfd_arch_avr)
-+		/* AVR COFF handles long file names in aux records. */
-+		maxlen = name_length;
-+	      else
-+		maxlen = bfd_coff_filnmlen (abfd);
- 	    }
- 	  else
- 	    maxlen = bfd_coff_force_symnames_in_strings (abfd) ? 0 : SYMNMLEN;
-@@ -1440,7 +1472,7 @@
- 	{
- 	  coff_symbol_type sym;
- 	  /* @@FIXME This shouldn't use a fixed size!!  */
--	  combined_entry_type e[10];
-+	  combined_entry_type e[NAUXENTS + 1];
- 	};
-       struct foo *f;
- 
-@@ -1806,15 +1838,26 @@
- 	    {
- 	      /* Ordinary short filename, put into memory anyway.  The
-                  Microsoft PE tools sometimes store a filename in
--                 multiple AUX entries.  */
-+                 multiple AUX entries.
-+		 AVR COFF does it that way, too. */
- 	      if (internal_ptr->u.syment.n_numaux > 1
--		  && coff_data (abfd)->pe)
-+		  && (coff_data (abfd)->pe
-+		      || (bfd_get_arch (abfd) == bfd_arch_avr)))
- 		{
--		  internal_ptr->u.syment._n._n_n._n_offset =
--		    ((long)
--		     copy_name (abfd,
--				(internal_ptr + 1)->u.auxent.x_file.x_fname,
--				internal_ptr->u.syment.n_numaux * symesz));
-+		  char *b;
-+		  unsigned int i;
-+
-+		  /* We allocate enough storage to fit the contents of
-+		     this many aux records, and simply append a \0.
-+		     This ensures the string will always be
-+		     terminated, even in the case where it just fit
-+		     into the aux records. */
-+		  b = (char *) bfd_alloc (abfd,
-+					  internal_ptr->u.syment.n_numaux * FILNMLEN + 1);
-+		  internal_ptr->u.syment._n._n_n._n_offset = (long) b;
-+		  b[internal_ptr->u.syment.n_numaux * FILNMLEN] = '\0';
-+		  for (i = 0; i < internal_ptr->u.syment.n_numaux; i++, b += FILNMLEN)
-+		    memcpy (b, (internal_ptr + i + 1)->u.auxent.x_file.x_fname, FILNMLEN);
- 		}
- 	      else
- 		{
-@@ -1924,9 +1967,9 @@
-   coff_symbol_type *new = (coff_symbol_type *) bfd_alloc (abfd, amt);
-   if (new == NULL)
-     return (NULL);
--  /* @@ The 10 is a guess at a plausible maximum number of aux entries
--     (but shouldn't be a constant).  */
--  amt = sizeof (combined_entry_type) * 10;
-+  /* @@ The NAUXENTS is a guess at a plausible maximum number of aux
-+     entries (but shouldn't be a constant).  */
-+  amt = sizeof (combined_entry_type) * (NAUXENTS + 1);
-   new->native = (combined_entry_type *) bfd_zalloc (abfd, amt);
-   if (!new->native)
-     return (NULL);
-diff -Nur binutils-2.14-vanilla/bfd/coffswap.h binutils-2.14/bfd/coffswap.h
---- binutils-2.14-vanilla/bfd/coffswap.h	Wed Aug 28 12:38:44 2002
-+++ bfd/coffswap.h	Sat Sep  6 22:24:22 2003
-@@ -454,9 +454,13 @@
- #else
- 	  if (numaux > 1)
- 	    {
-+#if defined(AVR)
-+	      memcpy (in->x_file.x_fname, ext->x_file.x_fname, sizeof (AUXENT));
-+#else
- 	      if (indx == 0)
- 		memcpy (in->x_file.x_fname, ext->x_file.x_fname,
- 			numaux * sizeof (AUXENT));
-+#endif
- 	    }
- 	  else
- 	    memcpy (in->x_file.x_fname, ext->x_file.x_fname, FILNMLEN);
-diff -Nur binutils-2.14-vanilla/bfd/config.bfd binutils-2.14/bfd/config.bfd
---- binutils-2.14-vanilla/bfd/config.bfd	Mon Jun  2 22:35:20 2003
-+++ bfd/config.bfd	Sat Sep  6 22:24:22 2003
-@@ -275,6 +275,7 @@
- 
-   avr-*-*)
-     targ_defvec=bfd_elf32_avr_vec
-+    targ_selvecs="bfd_elf32_avr_vec avrcoff_vec avrextcoff_vec"
-     ;;
- 
-   c30-*-*aout* | tic30-*-*aout*)
-diff -Nur binutils-2.14-vanilla/bfd/configure binutils-2.14/bfd/configure
---- binutils-2.14-vanilla/bfd/configure	Thu Jun 12 16:25:46 2003
-+++ bfd/configure	Sat Sep  6 22:25:04 2003
-@@ -1016,10 +1016,10 @@
- 
- bfd_version=`echo "${VERSION}" | sed -e 's/\([^\.]*\)\.*\([^\.]*\)\.*\([^\.]*\)\.*\([^\.]*\)\.*\([^\.]*\).*/\1.00\2.00\3.00\4.00\5/' -e 's/\([^\.]*\)\..*\(..\)\..*\(..\)\..*\(..\)\..*\(..\)$/\1\2\3\4\5/'`
- 
--bfd_version_string="\"${VERSION}\""
-+bfd_version_string="\"${VERSION} + coff-avr-patch (20030831)\""
- if test x${is_release} = x; then
-   bfd_version_date=`sed -n -e 's/.*DATE //p' < ${srcdir}/version.h`
--  bfd_version_string="\"${VERSION} ${bfd_version_date}\""
-+  bfd_version_string="\"${VERSION} ${bfd_version_date} + coff-avr-patch (20030831)\""
- fi
- 
- 
-@@ -6100,6 +6100,8 @@
-     armpe_little_vec)		tb="$tb pe-arm.lo peigen.lo cofflink.lo " ;;
-     armpei_big_vec)		tb="$tb pei-arm.lo peigen.lo cofflink.lo " ;;
-     armpei_little_vec)		tb="$tb pei-arm.lo peigen.lo cofflink.lo " ;;
-+    avrcoff_vec)		tb="$tb coff-avr.lo cofflink.lo " ;;
-+    avrextcoff_vec)		tb="$tb coff-ext-avr.lo cofflink.lo " ;;
-     b_out_vec_big_host)		tb="$tb bout.lo aout32.lo" ;;
-     b_out_vec_little_host)	tb="$tb bout.lo aout32.lo" ;;
-     bfd_efi_app_ia32_vec)	tb="$tb efi-app-ia32.lo peigen.lo cofflink.lo" ;;
-diff -Nur binutils-2.14-vanilla/bfd/configure.in binutils-2.14/bfd/configure.in
---- binutils-2.14-vanilla/bfd/configure.in	Thu Jun 12 16:25:46 2003
-+++ bfd/configure.in	Sat Sep  6 22:24:22 2003
-@@ -562,6 +562,8 @@
-     armpe_little_vec)		tb="$tb pe-arm.lo peigen.lo cofflink.lo " ;;
-     armpei_big_vec)		tb="$tb pei-arm.lo peigen.lo cofflink.lo " ;;
-     armpei_little_vec)		tb="$tb pei-arm.lo peigen.lo cofflink.lo " ;;
-+    avrcoff_vec)		tb="$tb coff-avr.lo cofflink.lo " ;;
-+    avrextcoff_vec)		tb="$tb coff-ext-avr.lo cofflink.lo " ;;
-     b_out_vec_big_host)		tb="$tb bout.lo aout32.lo" ;;
-     b_out_vec_little_host)	tb="$tb bout.lo aout32.lo" ;;
-     bfd_efi_app_ia32_vec)	tb="$tb efi-app-ia32.lo peigen.lo cofflink.lo" ;;
-diff -Nur binutils-2.14-vanilla/bfd/targets.c binutils-2.14/bfd/targets.c
---- binutils-2.14-vanilla/bfd/targets.c	Tue Apr  1 17:50:27 2003
-+++ bfd/targets.c	Sat Sep  6 22:24:22 2003
-@@ -505,6 +505,8 @@
- extern const bfd_target armpe_little_vec;
- extern const bfd_target armpei_big_vec;
- extern const bfd_target armpei_little_vec;
-+extern const bfd_target avrcoff_vec;
-+extern const bfd_target avrextcoff_vec;
- extern const bfd_target b_out_vec_big_host;
- extern const bfd_target b_out_vec_little_host;
- extern const bfd_target bfd_efi_app_ia32_vec;
-@@ -786,6 +788,8 @@
- 	&armpe_little_vec,
- 	&armpei_big_vec,
- 	&armpei_little_vec,
-+	&avrcoff_vec,
-+	&avrextcoff_vec,
- 	&b_out_vec_big_host,
- 	&b_out_vec_little_host,
- 	&bfd_efi_app_ia32_vec,
-diff -Nur binutils-2.14-vanilla/binutils/Makefile.am binutils-2.14/binutils/Makefile.am
---- binutils-2.14-vanilla/binutils/Makefile.am	Mon Mar 24 12:28:35 2003
-+++ binutils/Makefile.am	Sat Sep  6 22:24:22 2003
+--- ./binutils/doc/objcopy.1.orig	Fri Apr  9 21:32:16 2004
++++ ./binutils/doc/objcopy.1	Wed Jun 16 22:50:00 2004
+@@ -185,6 +185,8 @@
+         [\fB\-\-readonly\-text\fR]
+         [\fB\-\-pure\fR]
+         [\fB\-\-impure\fR]
++        [\fB\-\-change\-pathname\fR \fIold\fR=\fInew\fR]
++        [\fB\-\-basename\fR]
+         [\fB\-v\fR|\fB\-\-verbose\fR]
+         [\fB\-V\fR|\fB\-\-version\fR]  
+         [\fB\-\-help\fR] [\fB\-\-info\fR]
+@@ -711,6 +713,23 @@
+ full executable.  It does not have to be a file created by the
+ \&\fB\-\-only\-keep\-debug\fR switch.
+ .RE
++.IP "\fB\-\-change\-pathname\fR \fIold\fR=\fInew\fR" 4
++.IX Item "--change-pathname old=new"
++When converting debugging information using \fB\-\-debugging\fR, for
++every pathname that starts with \fIold\fR, replace the matching part
++by \fInew\fR.  This is intented to map pathnames between different
++debugging tools, or when parts of the object file(s) had their
++pathnames recorded in a different build environment.  Note that only
++leading directory name components might be changed that way, since the
++trailing filename could be recorded elsewhere as well (depending on the
++debugging format of the input file).
++.IP "\fB\-\-basename\fR"
++.IX Item "--basename"
++When converting debugging information using \fB\-\-debugging\fR, for
++every pathname, strip all leading directory information.  This option
++takes precedence over any \fB\-\-change\-pathname\fR option.  For some
++debugging formats that cannot handle long filenames, this options is
++implied (notably, some COFF debugging formats).
+ .IP "\fB\-V\fR" 4
+ .IX Item "-V"
+ .PD 0
+--- ./binutils/Makefile.am.orig	Fri Nov 28 05:58:41 2003
++++ ./binutils/Makefile.am	Wed Jun 16 22:41:11 2004
 @@ -95,14 +95,14 @@
  	rdcoff.c rddbg.c readelf.c rename.c \
  	resbin.c rescoff.c resrc.c resres.c \
@@ -1504,9 +52,8 @@ diff -Nur binutils-2.14-vanilla/binutils/Makefile.am binutils-2.14/binutils/Make
  
  # Code shared by all the binutils.
  BULIBS = bucomm.c version.c filemode.c
-diff -Nur binutils-2.14-vanilla/binutils/Makefile.in binutils-2.14/binutils/Makefile.in
---- binutils-2.14-vanilla/binutils/Makefile.in	Mon Mar 24 12:28:35 2003
-+++ binutils/Makefile.in	Sat Sep  6 22:24:22 2003
+--- ./binutils/Makefile.in.orig	Fri Nov 28 05:58:41 2003
++++ ./binutils/Makefile.in	Wed Jun 16 22:41:11 2004
 @@ -207,7 +207,7 @@
  	rdcoff.c rddbg.c readelf.c rename.c \
  	resbin.c rescoff.c resrc.c resres.c \
@@ -1543,14 +90,12 @@ diff -Nur binutils-2.14-vanilla/binutils/Makefile.in binutils-2.14/binutils/Make
  version.$(OBJEXT) filemode.$(OBJEXT)
  strip_new_LDADD = $(LDADD)
  strip_new_DEPENDENCIES =  ../bfd/libbfd.la ../libiberty/libiberty.a
-diff -Nur binutils-2.14-vanilla/binutils/bucomm.c binutils-2.14/binutils/bucomm.c
---- binutils-2.14-vanilla/binutils/bucomm.c	Mon Mar 24 12:28:35 2003
-+++ binutils/bucomm.c	Sat Sep  6 22:24:22 2003
-@@ -468,3 +468,29 @@
- 
+--- ./binutils/bucomm.c.orig	Fri Nov  7 13:19:34 2003
++++ ./binutils/bucomm.c	Wed Jun 16 22:41:11 2004
+@@ -451,6 +451,32 @@
    return ret;
  }
-+
+ 
 +/* Return the basename of "file", i. e. everything minus whatever
 +   directory part has been provided.  Stolen from bfd/archive.c.
 +   Should we also handle the VMS case (as in bfd/archive.c)?  */
@@ -1576,38 +121,38 @@ diff -Nur binutils-2.14-vanilla/binutils/bucomm.c binutils-2.14/binutils/bucomm.
 +    filename = file;
 +  return filename;
 +}
-diff -Nur binutils-2.14-vanilla/binutils/bucomm.h binutils-2.14/binutils/bucomm.h
---- binutils-2.14-vanilla/binutils/bucomm.h	Mon Mar 24 12:28:35 2003
-+++ binutils/bucomm.h	Sat Sep  6 22:24:22 2003
-@@ -187,6 +187,8 @@
- bfd_vma parse_vma
-   PARAMS ((const char *, const char *));
++
+ /* Returns the size of the named file.  If the file does not
+    exist, or if it is not a real file, then a suitable non-fatal
+    error message is printed and zero is returned.  */
+--- ./binutils/bucomm.h.orig	Fri Nov  7 13:19:34 2003
++++ ./binutils/bucomm.h	Wed Jun 16 22:41:11 2004
+@@ -176,6 +176,8 @@
+ 
+ off_t get_file_size (const char *);
  
 +const char *bu_basename PARAMS ((const char *));
 +
  extern char *program_name;
  
  /* filemode.c */
-diff -Nur binutils-2.14-vanilla/binutils/budbg.h binutils-2.14/binutils/budbg.h
---- binutils-2.14-vanilla/binutils/budbg.h	Sat Nov 30 09:39:41 2002
-+++ binutils/budbg.h	Sat Sep  6 22:24:22 2003
-@@ -57,9 +57,12 @@
- extern bfd_boolean write_ieee_debugging_info
-   PARAMS ((bfd *, PTR));
+--- ./binutils/budbg.h.orig	Sun Sep 14 14:20:16 2003
++++ ./binutils/budbg.h	Wed Jun 16 22:44:07 2004
+@@ -51,8 +51,11 @@
+ 
+ extern bfd_boolean write_ieee_debugging_info (bfd *, void *);
  
 -/* Routine used to read COFF debugging information.  */
-+/* Routines used to read and write COFF debugging information.  */
++/* Routine used to read and write COFF debugging information.  */
  
- extern bfd_boolean parse_coff
-   PARAMS ((bfd *, asymbol **, long, PTR));
+ extern bfd_boolean parse_coff (bfd *, asymbol **, long, void *);
 +
 +extern bfd_boolean write_coff_debugging_info
-+  PARAMS ((bfd *abfd, PTR, long *symcountp, asymbol ***));
++  (bfd *abfd, void *, long *symcountp, asymbol ***);
  
  #endif
-diff -Nur binutils-2.14-vanilla/binutils/debug.c binutils-2.14/binutils/debug.c
---- binutils-2.14-vanilla/binutils/debug.c	Mon Jun  2 22:35:15 2003
-+++ binutils/debug.c	Sat Sep  6 22:24:22 2003
+--- ./binutils/debug.c.orig	Mon Oct 27 14:20:32 2003
++++ ./binutils/debug.c	Wed Jun 16 22:53:52 2004
 @@ -552,6 +552,19 @@
    struct debug_type *t;
  };
@@ -1627,12 +172,12 @@ diff -Nur binutils-2.14-vanilla/binutils/debug.c binutils-2.14/binutils/debug.c
 +
  /* Local functions.  */
  
- static void debug_error
-@@ -590,6 +603,11 @@
-   PARAMS ((struct debug_handle *, struct debug_type *, struct debug_type *));
+ static void debug_error (const char *);
+@@ -588,6 +601,11 @@
+   (struct debug_handle *, struct debug_type *, struct debug_type *);
  static bfd_boolean debug_class_type_samep
-   PARAMS ((struct debug_handle *, struct debug_type *, struct debug_type *));
-+static const char *debug_xlat_pathname PARAMS ((const char *));
+   (struct debug_handle *, struct debug_type *, struct debug_type *);
++static const char *debug_xlat_pathname (const char *);
 +
 +/* List of pathname translations. */
 +static struct xlat_list *xlat, *xltail;
@@ -1640,7 +185,7 @@ diff -Nur binutils-2.14-vanilla/binutils/debug.c binutils-2.14/binutils/debug.c
  
  /* Issue an error message.  */
  
-@@ -689,6 +707,8 @@
+@@ -680,6 +698,8 @@
  
    if (name == NULL)
      name = "";
@@ -1649,7 +194,7 @@ diff -Nur binutils-2.14-vanilla/binutils/debug.c binutils-2.14/binutils/debug.c
  
    nfile = (struct debug_file *) xmalloc (sizeof *nfile);
    memset (nfile, 0, sizeof *nfile);
-@@ -731,6 +751,8 @@
+@@ -720,6 +740,8 @@
  
    if (name == NULL)
      name = "";
@@ -1658,7 +203,7 @@ diff -Nur binutils-2.14-vanilla/binutils/debug.c binutils-2.14/binutils/debug.c
  
    if (info->current_unit == NULL)
      {
-@@ -3552,4 +3574,70 @@
+@@ -3369,4 +3391,70 @@
      }
  
    return TRUE;
@@ -1729,12 +274,11 @@ diff -Nur binutils-2.14-vanilla/binutils/debug.c binutils-2.14/binutils/debug.c
 +  /* Not found, pass the original name on. */
 +  return oname;
  }
-diff -Nur binutils-2.14-vanilla/binutils/debug.h binutils-2.14/binutils/debug.h
---- binutils-2.14-vanilla/binutils/debug.h	Sat Nov 30 09:39:41 2002
-+++ binutils/debug.h	Sat Sep  6 22:24:22 2003
+--- ./binutils/debug.h.orig	Mon Oct 27 14:20:32 2003
++++ ./binutils/debug.h	Wed Jun 16 22:41:12 2004
 @@ -440,6 +440,12 @@
  
- extern bfd_boolean debug_start_source PARAMS ((PTR, const char *));
+ extern bfd_boolean debug_start_source (void *, const char *);
  
 +/* Register a pathname translation for source (and include) filenames.
 +   This is used by the --change-pathname option of objcopy. */
@@ -1745,55 +289,20 @@ diff -Nur binutils-2.14-vanilla/binutils/debug.h binutils-2.14/binutils/debug.h
  /* Record a function definition.  This implicitly starts a function
     block.  The debug_type argument is the type of the return value.
     The bfd_boolean indicates whether the function is globally visible.
-diff -Nur binutils-2.14-vanilla/binutils/doc/objcopy.1 binutils-2.14/binutils/doc/objcopy.1
---- binutils-2.14-vanilla/binutils/doc/objcopy.1	Sun Apr 27 22:15:08 2003
-+++ binutils/doc/objcopy.1	Sat Sep  6 22:24:22 2003
-@@ -173,6 +173,8 @@
-         [\fB\-\-prefix\-symbols=\fR\fIstring\fR]
-         [\fB\-\-prefix\-sections=\fR\fIstring\fR]
-         [\fB\-\-prefix\-alloc\-sections=\fR\fIstring\fR]
-+        [\fB\-\-change\-pathname\fR \fIold\fR=\fInew\fR]
-+        [\fB\-\-basename\fR]        
-         [\fB\-v\fR|\fB\-\-verbose\fR]
-         [\fB\-V\fR|\fB\-\-version\fR]  
-         [\fB\-\-help\fR] [\fB\-\-info\fR]
-@@ -601,6 +603,23 @@
- .IX Item "--prefix-alloc-sections=string"
- Prefix all the names of all allocated sections in the output file with
- \&\fIstring\fR.
-+.IP "\fB\-\-change\-pathname\fR \fIold\fR=\fInew\fR" 4
-+.IX Item "--change-pathname old=new"
-+When converting debugging information using \fB\-\-debugging\fR, for
-+every pathname that starts with \fIold\fR, replace the matching part
-+by \fInew\fR.  This is intented to map pathnames between different
-+debugging tools, or when parts of the object file(s) had their
-+pathnames recorded in a different build environment.  Note that only
-+leading directory name components might be changed that way, since the
-+trailing filename could be recorded elsewhere as well (depending on the
-+debugging format of the input file).
-+.IP "\fB\-\-basename\fR"
-+.IX Item "--basename"
-+When converting debugging information using \fB\-\-debugging\fR, for
-+every pathname, strip all leading directory information.  This option
-+takes precedence over any \fB\-\-change\-pathname\fR option.  For some
-+debugging formats that cannot handle long filenames, this options is
-+implied (notably, some COFF debugging formats).
- .IP "\fB\-V\fR" 4
- .IX Item "-V"
- .PD 0
-diff -Nur binutils-2.14-vanilla/binutils/objcopy.c binutils-2.14/binutils/objcopy.c
---- binutils-2.14-vanilla/binutils/objcopy.c	Mon Jun  2 22:35:15 2003
-+++ binutils/objcopy.c	Sat Sep  6 22:24:22 2003
-@@ -276,6 +276,8 @@
- #define OPTION_PREFIX_SECTIONS (OPTION_PREFIX_SYMBOLS + 1)
- #define OPTION_PREFIX_ALLOC_SECTIONS (OPTION_PREFIX_SECTIONS + 1)
- #define OPTION_FORMATS_INFO (OPTION_PREFIX_ALLOC_SECTIONS + 1)
-+#define OPTION_CHANGE_PATHNAME (OPTION_FORMATS_INFO + 1)
-+#define OPTION_BASENAME (OPTION_CHANGE_PATHNAME + 1)
+--- ./binutils/objcopy.c.orig	Mon May 17 21:35:51 2004
++++ ./binutils/objcopy.c	Wed Jun 16 22:52:52 2004
+@@ -246,7 +246,9 @@
+     OPTION_READONLY_TEXT,
+     OPTION_WRITABLE_TEXT,
+     OPTION_PURE,
+-    OPTION_IMPURE
++    OPTION_IMPURE,
++    OPTION_CHANGE_PATHNAME,
++    OPTION_BASENAME
+   };
  
  /* Options to handle if running as "strip".  */
- 
-@@ -314,10 +316,12 @@
+@@ -289,10 +291,12 @@
    {"adjust-section-vma", required_argument, 0, OPTION_CHANGE_SECTION_ADDRESS},
    {"adjust-warnings", no_argument, 0, OPTION_CHANGE_WARNINGS},
    {"alt-machine-code", required_argument, 0, OPTION_ALT_MACH_CODE},
@@ -1806,7 +315,7 @@ diff -Nur binutils-2.14-vanilla/binutils/objcopy.c binutils-2.14/binutils/objcop
    {"change-section-address", required_argument, 0, OPTION_CHANGE_SECTION_ADDRESS},
    {"change-section-lma", required_argument, 0, OPTION_CHANGE_SECTION_LMA},
    {"change-section-vma", required_argument, 0, OPTION_CHANGE_SECTION_VMA},
-@@ -457,6 +461,8 @@
+@@ -456,6 +460,8 @@
       --prefix-alloc-sections <prefix>\n\
                                     Add <prefix> to start of every allocatable\n\
                                       section name\n\
@@ -1815,7 +324,7 @@ diff -Nur binutils-2.14-vanilla/binutils/objcopy.c binutils-2.14/binutils/objcop
    -v --verbose                     List all object files modified\n\
    -V --version                     Display this program's version number\n\
    -h --help                        Display this output\n\
-@@ -784,6 +790,8 @@
+@@ -792,6 +798,8 @@
    long src_count = 0, dst_count = 0;
    int relocatable = (abfd->flags & (HAS_RELOC | EXEC_P | DYNAMIC))
  		    == HAS_RELOC;
@@ -1824,7 +333,7 @@ diff -Nur binutils-2.14-vanilla/binutils/objcopy.c binutils-2.14/binutils/objcop
  
    for (; src_count < symcount; src_count++)
      {
-@@ -878,9 +886,10 @@
+@@ -887,9 +895,10 @@
  	       || bfd_is_com_section (bfd_get_section (sym)))
  	keep = strip_symbols != STRIP_UNNEEDED;
        else if ((flags & BSF_DEBUGGING) != 0)	/* Debugging symbol.  */
@@ -1838,7 +347,7 @@ diff -Nur binutils-2.14-vanilla/binutils/objcopy.c binutils-2.14/binutils/objcop
        else if (bfd_get_section (sym)->comdat)
  	/* COMDAT sections store special information in local
  	   symbols, so we cannot risk stripping any of them.  */
-@@ -2024,6 +2033,10 @@
+@@ -2202,6 +2211,10 @@
      return write_ieee_debugging_info (obfd, dhandle);
  
    if (bfd_get_flavour (obfd) == bfd_target_coff_flavour
@@ -1849,7 +358,7 @@ diff -Nur binutils-2.14-vanilla/binutils/objcopy.c binutils-2.14/binutils/objcop
        || bfd_get_flavour (obfd) == bfd_target_elf_flavour)
      {
        bfd_byte *syms, *strings;
-@@ -2669,6 +2682,30 @@
+@@ -2864,6 +2877,30 @@
  
  	case OPTION_PREFIX_ALLOC_SECTIONS:
  	  prefix_alloc_sections_string = optarg;
@@ -1879,10 +388,9 @@ diff -Nur binutils-2.14-vanilla/binutils/objcopy.c binutils-2.14/binutils/objcop
 +	  debug_register_pathname_xlat (NULL, NULL);
  	  break;
  
- 	case 0:
-diff -Nur binutils-2.14-vanilla/binutils/rdcoff.c binutils-2.14/binutils/rdcoff.c
---- binutils-2.14-vanilla/binutils/rdcoff.c	Sat Nov 30 09:39:41 2002
-+++ binutils/rdcoff.c	Sat Sep  6 22:24:22 2003
+ 	case OPTION_READONLY_TEXT:
+--- ./binutils/rdcoff.c.orig	Sun Sep 14 14:20:16 2003
++++ ./binutils/rdcoff.c	Wed Jun 16 22:53:36 2004
 @@ -80,6 +80,9 @@
    struct coff_slots *slots;
    /* Basic types.  */
@@ -1892,17 +400,16 @@ diff -Nur binutils-2.14-vanilla/binutils/rdcoff.c binutils-2.14/binutils/rdcoff.
 +  size_t doublesize;		/* sizeof (double) */
  };
  
- static debug_type *coff_get_slot
-@@ -101,6 +104,8 @@
- 	   struct internal_syment *, PTR, debug_type, bfd_boolean));
- static bfd_boolean external_coff_symbol_p
-   PARAMS ((int sym_class));
-+static bfd_vma coff_convert_register
-+  PARAMS ((bfd *, bfd_vma));
+ static debug_type *coff_get_slot (struct coff_types *, int);
+@@ -99,6 +102,7 @@
+   (bfd *, struct coff_types *, asymbol *, long, struct internal_syment *,
+    void *, debug_type, bfd_boolean);
+ static bfd_boolean external_coff_symbol_p (int sym_class);
++static bfd_vma coff_convert_register (bfd *, bfd_vma);
  
  /* Return the slot for a type.  */
  
-@@ -285,8 +290,7 @@
+@@ -269,8 +273,7 @@
        break;
  
      case T_INT:
@@ -1912,7 +419,7 @@ diff -Nur binutils-2.14-vanilla/binutils/rdcoff.c binutils-2.14/binutils/rdcoff.
        name = "int";
        break;
  
-@@ -301,7 +305,7 @@
+@@ -285,7 +288,7 @@
        break;
  
      case T_DOUBLE:
@@ -1921,7 +428,7 @@ diff -Nur binutils-2.14-vanilla/binutils/rdcoff.c binutils-2.14/binutils/rdcoff.
        name = "double";
        break;
  
-@@ -321,7 +325,7 @@
+@@ -305,7 +308,7 @@
        break;
  
      case T_UINT:
@@ -1930,7 +437,7 @@ diff -Nur binutils-2.14-vanilla/binutils/rdcoff.c binutils-2.14/binutils/rdcoff.
        name = "unsigned int";
        break;
  
-@@ -592,6 +596,8 @@
+@@ -563,6 +566,8 @@
  
      case C_WEAKEXT:
      case C_EXT:
@@ -1939,7 +446,7 @@ diff -Nur binutils-2.14-vanilla/binutils/rdcoff.c binutils-2.14/binutils/rdcoff.
        if (! debug_record_variable (dhandle, bfd_asymbol_name (sym), type,
  				   DEBUG_GLOBAL, bfd_asymbol_value (sym)))
  	return FALSE;
-@@ -607,9 +613,9 @@
+@@ -578,9 +583,9 @@
        break;
  
      case C_REG:
@@ -1951,7 +458,7 @@ diff -Nur binutils-2.14-vanilla/binutils/rdcoff.c binutils-2.14/binutils/rdcoff.
  	return FALSE;
        break;
  
-@@ -623,9 +629,9 @@
+@@ -594,9 +599,9 @@
        break;
  
      case C_REGPARM:
@@ -1963,7 +470,7 @@ diff -Nur binutils-2.14-vanilla/binutils/rdcoff.c binutils-2.14/binutils/rdcoff.
  	return FALSE;
        break;
  
-@@ -676,6 +682,28 @@
+@@ -646,6 +651,28 @@
    return FALSE;
  }
  
@@ -1992,7 +499,7 @@ diff -Nur binutils-2.14-vanilla/binutils/rdcoff.c binutils-2.14/binutils/rdcoff.
  /* This is the main routine.  It looks through all the symbols and
     handles them.  */
  
-@@ -706,6 +734,17 @@
+@@ -672,6 +699,17 @@
    types.slots = NULL;
    for (i = 0; i <= T_MAX; i++)
      types.basic[i] = DEBUG_TYPE_NULL;
@@ -2010,7 +517,7 @@ diff -Nur binutils-2.14-vanilla/binutils/rdcoff.c binutils-2.14/binutils/rdcoff.
  
    next_c_file = -1;
    fnname = NULL;
-@@ -766,7 +805,6 @@
+@@ -732,7 +770,6 @@
        switch (syment.n_sclass)
  	{
  	case C_EFCN:
@@ -2018,7 +525,7 @@ diff -Nur binutils-2.14-vanilla/binutils/rdcoff.c binutils-2.14/binutils/rdcoff.
  	case C_ULABEL:
  	case C_USTATIC:
  	case C_LINE:
-@@ -789,6 +827,8 @@
+@@ -755,6 +792,8 @@
  	  /* Fall through.  */
  	case C_WEAKEXT:
  	case C_EXT:
@@ -2027,9 +534,8 @@ diff -Nur binutils-2.14-vanilla/binutils/rdcoff.c binutils-2.14/binutils/rdcoff.
  	  if (ISFCN (syment.n_type))
  	    {
  	      fnname = name;
-diff -Nur binutils-2.14-vanilla/binutils/wrcoff.c binutils-2.14/binutils/wrcoff.c
---- binutils-2.14-vanilla/binutils/wrcoff.c	Thu Jan  1 01:00:00 1970
-+++ binutils/wrcoff.c	Sat Sep  6 22:24:22 2003
+--- ./binutils/wrcoff.c.orig	Wed Jun 16 22:41:12 2004
++++ ./binutils/wrcoff.c	Wed Jun 16 22:41:12 2004
 @@ -0,0 +1,3406 @@
 +/* wrcoff.c -- Generate (AVR) COFF debugging information
 +   Copyright 2003 Free Software Foundation, Inc.
@@ -5437,9 +3943,1483 @@ diff -Nur binutils-2.14-vanilla/binutils/wrcoff.c binutils-2.14/binutils/wrcoff.
 +
 +  return TRUE;
 +}
-diff -Nur binutils-2.14-vanilla/include/coff/avr.h binutils-2.14/include/coff/avr.h
---- binutils-2.14-vanilla/include/coff/avr.h	Thu Jan  1 01:00:00 1970
-+++ include/coff/avr.h	Sat Sep  6 22:24:22 2003
+--- ./bfd/Makefile.am.orig	Mon May 17 21:35:56 2004
++++ ./bfd/Makefile.am	Wed Jun 16 22:41:11 2004
+@@ -179,6 +179,8 @@
+ 	coff-apollo.lo \
+ 	coff-arm.lo \
+ 	coff-aux.lo \
++	coff-avr.lo \
++	coff-ext-avr.lo \
+ 	coff-h8300.lo \
+ 	coff-h8500.lo \
+ 	coff-i386.lo \
+@@ -344,6 +346,8 @@
+ 	coff-apollo.c \
+ 	coff-arm.c \
+ 	coff-aux.c \
++	coff-avr.c \
++	coff-ext-avr.c \
+ 	coff-h8300.c \
+ 	coff-h8500.c \
+ 	coff-i386.c \
+@@ -1023,6 +1027,12 @@
+   $(INCDIR)/coff/internal.h $(INCDIR)/coff/m68k.h $(INCDIR)/coff/external.h \
+   coff-m68k.c libcoff.h $(INCDIR)/bfdlink.h coffcode.h \
+   coffswap.h
++coff-avr.lo: coff-avr.c $(INCDIR)/filenames.h $(INCDIR)/coff/avr.h \
++  $(INCDIR)/coff/external.h $(INCDIR)/coff/internal.h \
++  libcoff.h $(INCDIR)/bfdlink.h coffcode.h coffswap.h
++coff-ext-avr.lo: coff-ext-avr.c $(INCDIR)/filenames.h $(INCDIR)/coff/avr.h \
++  $(INCDIR)/coff/external.h $(INCDIR)/coff/internal.h \
++  libcoff.h $(INCDIR)/bfdlink.h coffcode.h coffswap.h
+ coff-h8300.lo: coff-h8300.c $(INCDIR)/filenames.h $(INCDIR)/bfdlink.h \
+   genlink.h $(INCDIR)/coff/h8300.h $(INCDIR)/coff/external.h \
+   $(INCDIR)/coff/internal.h libcoff.h $(INCDIR)/libiberty.h \
+--- ./bfd/Makefile.in.orig	Wed Jun 16 22:41:11 2004
++++ ./bfd/Makefile.in	Wed Jun 16 22:41:11 2004
+@@ -309,6 +309,8 @@
+ 	coff-apollo.lo \
+ 	coff-arm.lo \
+ 	coff-aux.lo \
++	coff-avr.lo \
++	coff-ext-avr.lo \
+ 	coff-h8300.lo \
+ 	coff-h8500.lo \
+ 	coff-i386.lo \
+@@ -475,6 +477,8 @@
+ 	coff-apollo.c \
+ 	coff-arm.c \
+ 	coff-aux.c \
++	coff-avr.c \
++	coff-ext-avr.c \
+ 	coff-h8300.c \
+ 	coff-h8500.c \
+ 	coff-i386.c \
+@@ -1561,6 +1565,12 @@
+   $(INCDIR)/coff/internal.h $(INCDIR)/coff/m68k.h $(INCDIR)/coff/external.h \
+   coff-m68k.c libcoff.h $(INCDIR)/bfdlink.h coffcode.h \
+   coffswap.h
++coff-avr.lo: coff-avr.c $(INCDIR)/filenames.h $(INCDIR)/coff/avr.h \
++  $(INCDIR)/coff/external.h $(INCDIR)/coff/internal.h \
++  libcoff.h $(INCDIR)/bfdlink.h coffcode.h coffswap.h
++coff-ext-avr.lo: coff-ext-avr.c $(INCDIR)/filenames.h $(INCDIR)/coff/avr.h \
++  $(INCDIR)/coff/external.h $(INCDIR)/coff/internal.h \
++  libcoff.h $(INCDIR)/bfdlink.h coffcode.h coffswap.h
+ coff-h8300.lo: coff-h8300.c $(INCDIR)/filenames.h $(INCDIR)/bfdlink.h \
+   genlink.h $(INCDIR)/coff/h8300.h $(INCDIR)/coff/external.h \
+   $(INCDIR)/coff/internal.h libcoff.h $(INCDIR)/libiberty.h \
+--- ./bfd/coff-avr.c.orig	Wed Jun 16 22:41:11 2004
++++ ./bfd/coff-avr.c	Wed Jun 16 22:41:11 2004
+@@ -0,0 +1,609 @@
++/* BFD back-end for Atmel AVR COFF files.
++   Copyright 1990, 1991, 1992, 1993, 1994, 1995, 1999, 2000, 2001, 2003
++   Free Software Foundation, Inc.
++   Created mostly by substituting "avr" for "i860" in coff-i860.c
++
++This file is part of BFD, the Binary File Descriptor library.
++
++This program is free software; you can redistribute it and/or modify
++it under the terms of the GNU General Public License as published by
++the Free Software Foundation; either version 2 of the License, or
++(at your option) any later version.
++
++This program is distributed in the hope that it will be useful,
++but WITHOUT ANY WARRANTY; without even the implied warranty of
++MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++GNU General Public License for more details.
++
++You should have received a copy of the GNU General Public License
++along with this program; if not, write to the Free Software
++Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
++
++#include "bfd.h"
++#include "sysdep.h"
++#include "libbfd.h"
++
++#include "coff/avr.h"
++
++#include "coff/internal.h"
++
++#include "libcoff.h"
++
++static bfd_reloc_status_type coff_avr_reloc
++  PARAMS ((bfd *, arelent *, asymbol *, PTR, asection *, bfd *, char **));
++static reloc_howto_type *coff_avr_rtype_to_howto
++  PARAMS ((bfd *, asection *, struct internal_reloc *,
++	   struct coff_link_hash_entry *, struct internal_syment *,
++	   bfd_vma *));
++static const bfd_target * coff_avr_object_p PARAMS ((bfd *));
++
++#define COFF_DEFAULT_SECTION_ALIGNMENT_POWER (2)
++/* The page size is a guess based on ELF.  */
++
++#define COFF_PAGE_SIZE 0x1000
++
++/* For some reason when using avr COFF the value stored in the .text
++   section for a reference to a common symbol is the value itself plus
++   any desired offset.  Ian Taylor, Cygnus Support.  */
++
++/* If we are producing relocateable output, we need to do some
++   adjustments to the object file that are not done by the
++   bfd_perform_relocation function.  This function is called by every
++   reloc type to make any required adjustments.  */
++
++static bfd_reloc_status_type
++coff_avr_reloc (abfd, reloc_entry, symbol, data, input_section, output_bfd,
++		 error_message)
++     bfd *abfd;
++     arelent *reloc_entry;
++     asymbol *symbol;
++     PTR data;
++     asection *input_section ATTRIBUTE_UNUSED;
++     bfd *output_bfd;
++     char **error_message ATTRIBUTE_UNUSED;
++{
++  symvalue diff;
++
++  if (output_bfd == (bfd *) NULL)
++    return bfd_reloc_continue;
++
++  if (bfd_is_com_section (symbol->section))
++    {
++      /* We are relocating a common symbol.  The current value in the
++	 object file is ORIG + OFFSET, where ORIG is the value of the
++	 common symbol as seen by the object file when it was compiled
++	 (this may be zero if the symbol was undefined) and OFFSET is
++	 the offset into the common symbol (normally zero, but may be
++	 non-zero when referring to a field in a common structure).
++	 ORIG is the negative of reloc_entry->addend, which is set by
++	 the CALC_ADDEND macro below.  We want to replace the value in
++	 the object file with NEW + OFFSET, where NEW is the value of
++	 the common symbol which we are going to put in the final
++	 object file.  NEW is symbol->value.  */
++      diff = symbol->value + reloc_entry->addend;
++    }
++  else
++    {
++      /* For some reason bfd_perform_relocation always effectively
++	 ignores the addend for a COFF target when producing
++	 relocateable output.  This seems to be always wrong for 860
++	 COFF, so we handle the addend here instead.  */
++      diff = reloc_entry->addend;
++    }
++
++#define DOIT(x) \
++  x = ((x & ~howto->dst_mask) | (((x & howto->src_mask) + diff) & howto->dst_mask))
++
++    if (diff != 0)
++      {
++	reloc_howto_type *howto = reloc_entry->howto;
++	unsigned char *addr = (unsigned char *) data + reloc_entry->address;
++
++	switch (howto->size)
++	  {
++	  case 0:
++	    {
++	      char x = bfd_get_8 (abfd, addr);
++	      DOIT (x);
++	      bfd_put_8 (abfd, x, addr);
++	    }
++	    break;
++
++	  case 1:
++	    {
++	      short x = bfd_get_16 (abfd, addr);
++	      DOIT (x);
++	      bfd_put_16 (abfd, (bfd_vma) x, addr);
++	    }
++	    break;
++
++	  case 2:
++	    {
++	      long x = bfd_get_32 (abfd, addr);
++	      DOIT (x);
++	      bfd_put_32 (abfd, (bfd_vma) x, addr);
++	    }
++	    break;
++
++	  default:
++	    abort ();
++	  }
++      }
++
++  /* Now let bfd_perform_relocation finish everything up.  */
++  return bfd_reloc_continue;
++}
++
++#ifndef PCRELOFFSET
++#define PCRELOFFSET FALSE
++#endif
++
++static reloc_howto_type howto_table[] =
++{
++  EMPTY_HOWTO (0),
++  EMPTY_HOWTO (1),
++  EMPTY_HOWTO (2),
++  EMPTY_HOWTO (3),
++  EMPTY_HOWTO (4),
++  EMPTY_HOWTO (5),
++  HOWTO (R_DIR32,               /* type */
++	 0,	                /* rightshift */
++	 2,	                /* size (0 = byte, 1 = short, 2 = long) */
++	 32,	                /* bitsize */
++	 FALSE,	                /* pc_relative */
++	 0,	                /* bitpos */
++	 complain_overflow_bitfield, /* complain_on_overflow */
++	 coff_avr_reloc,       /* special_function */
++	 "dir32",               /* name */
++	 TRUE,	                /* partial_inplace */
++	 0xffffffff,            /* src_mask */
++	 0xffffffff,            /* dst_mask */
++	 TRUE),                /* pcrel_offset */
++  /* {7}, */
++  HOWTO (R_IMAGEBASE,            /* type */
++	 0,	                /* rightshift */
++	 2,	                /* size (0 = byte, 1 = short, 2 = long) */
++	 32,	                /* bitsize */
++	 FALSE,	                /* pc_relative */
++	 0,	                /* bitpos */
++	 complain_overflow_bitfield, /* complain_on_overflow */
++	 coff_avr_reloc,       /* special_function */
++	 "rva32",	           /* name */
++	 TRUE,	                /* partial_inplace */
++	 0xffffffff,            /* src_mask */
++	 0xffffffff,            /* dst_mask */
++	 FALSE),                /* pcrel_offset */
++  EMPTY_HOWTO (010),
++  EMPTY_HOWTO (011),
++  EMPTY_HOWTO (012),
++  EMPTY_HOWTO (013),
++  EMPTY_HOWTO (014),
++  EMPTY_HOWTO (015),
++  EMPTY_HOWTO (016),
++  HOWTO (R_RELBYTE,		/* type */
++	 0,			/* rightshift */
++	 0,			/* size (0 = byte, 1 = short, 2 = long) */
++	 8,			/* bitsize */
++	 FALSE,			/* pc_relative */
++	 0,			/* bitpos */
++	 complain_overflow_bitfield, /* complain_on_overflow */
++	 coff_avr_reloc,	/* special_function */
++	 "8",			/* name */
++	 TRUE,			/* partial_inplace */
++	 0x000000ff,		/* src_mask */
++	 0x000000ff,		/* dst_mask */
++	 PCRELOFFSET),		/* pcrel_offset */
++  HOWTO (R_RELWORD,		/* type */
++	 0,			/* rightshift */
++	 1,			/* size (0 = byte, 1 = short, 2 = long) */
++	 16,			/* bitsize */
++	 FALSE,			/* pc_relative */
++	 0,			/* bitpos */
++	 complain_overflow_bitfield, /* complain_on_overflow */
++	 coff_avr_reloc,	/* special_function */
++	 "16",			/* name */
++	 TRUE,			/* partial_inplace */
++	 0x0000ffff,		/* src_mask */
++	 0x0000ffff,		/* dst_mask */
++	 PCRELOFFSET),		/* pcrel_offset */
++  HOWTO (R_RELLONG,		/* type */
++	 0,			/* rightshift */
++	 2,			/* size (0 = byte, 1 = short, 2 = long) */
++	 32,			/* bitsize */
++	 FALSE,			/* pc_relative */
++	 0,			/* bitpos */
++	 complain_overflow_bitfield, /* complain_on_overflow */
++	 coff_avr_reloc,	/* special_function */
++	 "32",			/* name */
++	 TRUE,			/* partial_inplace */
++	 0xffffffff,		/* src_mask */
++	 0xffffffff,		/* dst_mask */
++	 PCRELOFFSET),		/* pcrel_offset */
++  HOWTO (R_PCRBYTE,		/* type */
++	 0,			/* rightshift */
++	 0,			/* size (0 = byte, 1 = short, 2 = long) */
++	 8,			/* bitsize */
++	 TRUE,			/* pc_relative */
++	 0,			/* bitpos */
++	 complain_overflow_signed, /* complain_on_overflow */
++	 coff_avr_reloc,	/* special_function */
++	 "DISP8",		/* name */
++	 TRUE,			/* partial_inplace */
++	 0x000000ff,		/* src_mask */
++	 0x000000ff,		/* dst_mask */
++	 PCRELOFFSET),		/* pcrel_offset */
++  HOWTO (R_PCRWORD,		/* type */
++	 0,			/* rightshift */
++	 1,			/* size (0 = byte, 1 = short, 2 = long) */
++	 16,			/* bitsize */
++	 TRUE,			/* pc_relative */
++	 0,			/* bitpos */
++	 complain_overflow_signed, /* complain_on_overflow */
++	 coff_avr_reloc,	/* special_function */
++	 "DISP16",		/* name */
++	 TRUE,			/* partial_inplace */
++	 0x0000ffff,		/* src_mask */
++	 0x0000ffff,		/* dst_mask */
++	 PCRELOFFSET),		/* pcrel_offset */
++  HOWTO (R_PCRLONG,		/* type */
++	 0,			/* rightshift */
++	 2,			/* size (0 = byte, 1 = short, 2 = long) */
++	 32,			/* bitsize */
++	 TRUE,			/* pc_relative */
++	 0,			/* bitpos */
++	 complain_overflow_signed, /* complain_on_overflow */
++	 coff_avr_reloc,	/* special_function */
++	 "DISP32",		/* name */
++	 TRUE,			/* partial_inplace */
++	 0xffffffff,		/* src_mask */
++	 0xffffffff,		/* dst_mask */
++	 PCRELOFFSET)		/* pcrel_offset */
++};
++
++/* Turn a howto into a reloc  nunmber */
++
++#define SELECT_RELOC(x,howto) { x.r_type = howto->type; }
++#define BADMAG(x) AVRBADMAG(x)
++#define AVR 1			/* Customize coffcode.h */
++
++#define RTYPE2HOWTO(cache_ptr, dst) \
++	    (cache_ptr)->howto = howto_table + (dst)->r_type;
++
++/* For AVR COFF a STYP_NOLOAD | STYP_BSS section is part of a shared
++   library.  On some other COFF targets STYP_BSS is normally
++   STYP_NOLOAD.  */
++#define BSS_NOLOAD_IS_SHARED_LIBRARY
++
++/* Compute the addend of a reloc.  If the reloc is to a common symbol,
++   the object file contains the value of the common symbol.  By the
++   time this is called, the linker may be using a different symbol
++   from a different object file with a different value.  Therefore, we
++   hack wildly to locate the original symbol from this file so that we
++   can make the correct adjustment.  This macro sets coffsym to the
++   symbol from the original file, and uses it to set the addend value
++   correctly.  If this is not a common symbol, the usual addend
++   calculation is done, except that an additional tweak is needed for
++   PC relative relocs.
++   FIXME: This macro refers to symbols and asect; these are from the
++   calling function, not the macro arguments.  */
++
++#define CALC_ADDEND(abfd, ptr, reloc, cache_ptr)		\
++  {								\
++    coff_symbol_type *coffsym = (coff_symbol_type *) NULL;	\
++    if (ptr && bfd_asymbol_bfd (ptr) != abfd)			\
++      coffsym = (obj_symbols (abfd)				\
++	         + (cache_ptr->sym_ptr_ptr - symbols));		\
++    else if (ptr)						\
++      coffsym = coff_symbol_from (abfd, ptr);			\
++    if (coffsym != (coff_symbol_type *) NULL			\
++	&& coffsym->native->u.syment.n_scnum == 0)		\
++      cache_ptr->addend = - coffsym->native->u.syment.n_value;	\
++    else if (ptr && bfd_asymbol_bfd (ptr) == abfd		\
++	     && ptr->section != (asection *) NULL)		\
++      cache_ptr->addend = - (ptr->section->vma + ptr->value);	\
++    else							\
++      cache_ptr->addend = 0;					\
++    if (ptr && howto_table[reloc.r_type].pc_relative)		\
++      cache_ptr->addend += asect->vma;				\
++  }
++
++/* We use the special COFF backend linker.  */
++#define coff_relocate_section _bfd_coff_generic_relocate_section
++
++static reloc_howto_type *
++coff_avr_rtype_to_howto (abfd, sec, rel, h, sym, addendp)
++     bfd *abfd ATTRIBUTE_UNUSED;
++     asection *sec;
++     struct internal_reloc *rel;
++     struct coff_link_hash_entry *h;
++     struct internal_syment *sym;
++     bfd_vma *addendp;
++{
++
++  reloc_howto_type *howto;
++
++  howto = howto_table + rel->r_type;
++
++  if (howto->pc_relative)
++    *addendp += sec->vma;
++
++  if (sym != NULL && sym->n_scnum == 0 && sym->n_value != 0)
++    {
++      /* This is a common symbol.  The section contents include the
++	 size (sym->n_value) as an addend.  The relocate_section
++	 function will be adding in the final value of the symbol.  We
++	 need to subtract out the current size in order to get the
++	 correct result.  */
++
++      BFD_ASSERT (h != NULL);
++
++      /* I think we *do* want to bypass this.  If we don't, I have seen some data
++	 parameters get the wrong relcation address.  If I link two versions
++	 with and without this section bypassed and then do a binary comparison,
++	 the addresses which are different can be looked up in the map.  The
++	 case in which this section has been bypassed has addresses which correspond
++	 to values I can find in the map.  */
++      *addendp -= sym->n_value;
++    }
++
++  /* If the output symbol is common (in which case this must be a
++     relocateable link), we need to add in the final size of the
++     common symbol.  */
++  if (h != NULL && h->root.type == bfd_link_hash_common)
++    *addendp += h->root.u.c.size;
++
++  return howto;
++}
++
++#define coff_rtype_to_howto coff_avr_rtype_to_howto
++
++#include "coffcode.h"
++
++static const bfd_target *
++coff_avr_object_p(a)
++     bfd *a;
++{
++  return coff_object_p (a);
++}
++
++/* Handle all the abominations of AVR COFF:
++
++   Generic COFF always uses the D1 slot to indicate the "most
++   important" derived type, and the D2...Dn slots for decreasing
++   importance.  E. g., a function symbol will always have its DT_FCN
++   element in D1, an array its DT_ARY (its first DT_ARY in a
++   multi-dimensional array).  In contrast, AVR COFF expects this most
++   important derived type specifier in the upmost Dn slot that is
++   allocated at all (i. e. that is != 0).
++
++   Generic COFF says that "Any symbol that satisfies more than one
++   condition [... for AUX entries] should have a union format in its
++   auxiliary entry."  AVR COFF uses sepearate AUX entries for multiple
++   derived types, and in some cases (like the ISFCN one), even puts
++   the most important one into the last allocated AUX entry.  We
++   join/split them here at the border as well.  Note that when
++   generating AUX entries (where we need to split them), the n_numaux
++   field must already have been set up properly (e. g. in
++   binutils/wrcoff.c) since the entry renumbering and pointerization
++   would not work otherwise.  Thus, we only split the information into
++   multiple records if n_numaux > 1.  For similar reasons, we keep
++   n_numaux > 1 on input to keep the appropriate AUX entries
++   allocated, so a symbol can be reconstructed if it is being passed
++   through one of the GNU tools.
++
++   Note that this adjustment is called after the symbol itself has
++   been swapped in, but before the AUX entries are swapped in.  This
++   is the only hook available that could swap (or merge) AUX entries
++   at all, so we have to operate on the external AUX entries still. */
++
++void
++avr_coff_adjust_sym_in_post (abfd, ext, in)
++     bfd *abfd;
++     PTR ext;
++     PTR in;
++{
++  struct internal_syment *dst = (struct internal_syment *)in;
++  unsigned short dt, bt, ndt;
++  dt = dst->n_type & ~N_BTMASK;
++  bt = BTYPE (dst->n_type);
++
++  /* Some AVR COFF producers seem to violate the COFF specs, and
++     produce symbols for tag names that have the C_FOO filled in
++     properly, but T_NULL as the base type value.  Patch up here,
++     since some of our generic COFF tools (in particular
++     binutils/rdcoff.c) rely on the correct data. */
++  if (bt == T_NULL)
++    switch (dst->n_sclass)
++      {
++      case C_STRTAG:
++	bt = T_STRUCT;
++	break;
++
++      case C_UNTAG:
++	bt = T_UNION;
++	break;
++
++      case C_ENTAG:
++	bt = T_ENUM;
++	break;
++      }
++
++  /* Swap the derived type slots. */
++  if (dt != 0)
++    {
++      ndt = 0;
++      while (dt != 0)
++	{
++	  ndt = (ndt << N_TSHIFT) | (dt & (N_TMASK >> N_BTSHFT));
++	  dt >>= N_TSHIFT;
++	}
++      dst->n_type = (ndt << N_BTSHFT) | bt;
++    }
++  else
++    dst->n_type = bt;
++
++  /* If the derived type is function, and there is more than one AUX
++     entry, swap the first and the last AUX entry, so the most
++     interesting one will become the first.
++
++     If the fundamental type is a tagged type (struct/union/enum), try
++     to find the AUX entry describing the tagged type (the one that
++     has x_sym.x_tagndx filled in), and merge the tag index into the
++     first AUX entry.  Depending on the actual input file, there might
++     be further DT_PTR entries which we just ignore, since we could
++     not handle that information anyway. */
++  if (dst->n_numaux > 1 && dst->n_sclass != C_FILE)
++    {
++      AUXENT caux, *auxp1, *auxp2;
++      size_t symesz;
++      unsigned int i;
++
++      symesz = bfd_coff_symesz (abfd);
++      i = dst->n_numaux;
++
++      auxp1 = (AUXENT *)((char *)ext + symesz);
++      auxp2 = (AUXENT *)((char *)ext + i * symesz);
++
++      if (ISFCN (dst->n_type)
++	  || (ISPTR(dst->n_type)
++	      && (bt == T_STRUCT || bt == T_UNION || bt == T_ENUM)))
++	{
++	  caux = *auxp2;
++	  *auxp2 = *auxp1;
++	  *auxp1 = caux;
++	}
++      else
++	caux = *auxp1;
++
++      if ((ISFCN (dst->n_type) || ISARY (dst->n_type))
++	  && (bt == T_STRUCT || bt == T_UNION || bt == T_ENUM))
++	{
++	  while (i > 1)
++	    {
++	      auxp2 = (AUXENT *)((char *)ext + i * symesz);
++
++	      if (auxp2->x_sym.x_tagndx[0] != 0 || auxp2->x_sym.x_tagndx[1] != 0
++		  || auxp2->x_sym.x_tagndx[2] != 0 || auxp2->x_sym.x_tagndx[3] != 0)
++		{
++		  memcpy (caux.x_sym.x_tagndx, auxp2->x_sym.x_tagndx,
++			  4 * sizeof (char));
++		  break;
++		}
++	      i--;
++	    }
++	  if (i > 1)
++	    *auxp1 = caux;
++	}
++    }
++}
++
++/* When exporting an AVR COFF file, just undo all that has been done
++   above.  Again, we are called after the symbol itself has been
++   swapped out, but before the AUX entries are being written.
++   Unfortunately, we are only given a pointer to the symbol itself, so
++   we have to derive the pointer to the respective aux entries from
++   that address, which is a bit clumsy. */
++void
++avr_coff_adjust_sym_out_post (abfd, in, ext)
++     bfd *abfd;
++     PTR in;
++     PTR ext;
++{
++  struct internal_syment *src = (struct internal_syment *)(in);
++  struct external_syment *dst = (struct external_syment *)(ext);
++  unsigned short dt, bt, ndt;
++
++  dt = src->n_type & ~N_BTMASK;
++  bt = BTYPE (src->n_type);
++
++  if (dt != 0)
++    {
++      ndt = 0;
++      while (dt != 0)
++	{
++	  ndt = (ndt << N_TSHIFT) | (dt & (N_TMASK >> N_BTSHFT));
++	  dt >>= N_TSHIFT;
++	}
++      H_PUT_16 (abfd, (ndt << N_BTSHFT) | bt, dst->e_type);
++    }
++
++  if (src->n_numaux > 1 && src->n_sclass != C_FILE)
++    {
++      combined_entry_type *srce, *dste;
++      char *hackp;
++      unsigned int i;
++
++      /* Recover the original combinend_entry_type *. */
++      hackp = (char *)in;
++      hackp -= offsetof(combined_entry_type, u.syment);
++      srce = (combined_entry_type *)hackp;
++      srce++;
++
++      /* We simply duplicate the first AUX entry as many times as
++	 needed.  Since COFF itself normally uses just a single AUX
++	 entry for all the information, this will work -- each COFF
++	 consumer will then just pick the fields it is particularly
++	 interested in.  This would not work for the AVR COFF specific
++	 DT_PTR AUX entries, but we don't support them anyway. */
++      for (i = 1; i < src->n_numaux; i++)
++	{
++	  dste = srce + i;
++	  *dste = *srce;
++	}
++    }
++}
++
++const bfd_target
++#ifdef TARGET_SYM
++  TARGET_SYM =
++#else
++  avrcoff_vec =
++#endif
++{
++#ifdef TARGET_NAME
++  TARGET_NAME,
++#else
++  "coff-avr",			/* name */
++#endif
++  bfd_target_coff_flavour,
++  BFD_ENDIAN_LITTLE,		/* data byte order is little */
++  BFD_ENDIAN_LITTLE,		/* header byte order is little */
++
++  (HAS_RELOC | EXEC_P |		/* object flags */
++   HAS_LINENO | HAS_DEBUG |
++   HAS_SYMS | HAS_LOCALS | WP_TEXT),
++
++  (SEC_HAS_CONTENTS | SEC_ALLOC | SEC_LOAD | SEC_RELOC), /* section flags */
++  0,				/* leading char */
++  '/',				/* ar_pad_char */
++  15,				/* ar_max_namelen */
++
++  bfd_getl64, bfd_getl_signed_64, bfd_putl64,
++     bfd_getl32, bfd_getl_signed_32, bfd_putl32,
++     bfd_getl16, bfd_getl_signed_16, bfd_putl16, /* data */
++  bfd_getl64, bfd_getl_signed_64, bfd_putl64,
++     bfd_getl32, bfd_getl_signed_32, bfd_putl32,
++     bfd_getl16, bfd_getl_signed_16, bfd_putl16, /* hdrs */
++
++/* Note that we allow an object file to be treated as a core file as well.  */
++    {_bfd_dummy_target, coff_avr_object_p, /* bfd_check_format */
++       bfd_generic_archive_p, coff_avr_object_p},
++    {bfd_false, coff_mkobject, _bfd_generic_mkarchive, /* bfd_set_format */
++       bfd_false},
++    {bfd_false, coff_write_object_contents, /* bfd_write_contents */
++       _bfd_write_archive_contents, bfd_false},
++
++     BFD_JUMP_TABLE_GENERIC (coff),
++     BFD_JUMP_TABLE_COPY (coff),
++     BFD_JUMP_TABLE_CORE (_bfd_nocore),
++     BFD_JUMP_TABLE_ARCHIVE (_bfd_archive_coff),
++     BFD_JUMP_TABLE_SYMBOLS (coff),
++     BFD_JUMP_TABLE_RELOCS (coff),
++     BFD_JUMP_TABLE_WRITE (coff),
++     BFD_JUMP_TABLE_LINK (coff),
++     BFD_JUMP_TABLE_DYNAMIC (_bfd_nodynamic),
++
++  NULL,
++
++  COFF_SWAP_TABLE
++};
+--- ./bfd/coff-ext-avr.c.orig	Wed Jun 16 22:41:11 2004
++++ ./bfd/coff-ext-avr.c	Wed Jun 16 22:41:11 2004
+@@ -0,0 +1,424 @@
++/* BFD back-end for Atmel AVR "extended" COFF files.
++   Copyright 1990, 1991, 1992, 1993, 1994, 1995, 1999, 2000, 2001, 2003
++   Free Software Foundation, Inc.
++   This is mostly the same as avr-coff, except of the presence of the
++   COFF optional header.
++
++This file is part of BFD, the Binary File Descriptor library.
++
++This program is free software; you can redistribute it and/or modify
++it under the terms of the GNU General Public License as published by
++the Free Software Foundation; either version 2 of the License, or
++(at your option) any later version.
++
++This program is distributed in the hope that it will be useful,
++but WITHOUT ANY WARRANTY; without even the implied warranty of
++MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++GNU General Public License for more details.
++
++You should have received a copy of the GNU General Public License
++along with this program; if not, write to the Free Software
++Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
++
++#include "bfd.h"
++#include "sysdep.h"
++#include "libbfd.h"
++
++#define AVR_EXT_COFF 1
++#include "coff/avr.h"
++
++#include "coff/internal.h"
++
++#include "libcoff.h"
++
++static bfd_reloc_status_type coff_ext_avr_reloc
++  PARAMS ((bfd *, arelent *, asymbol *, PTR, asection *, bfd *, char **));
++static reloc_howto_type *coff_ext_avr_rtype_to_howto
++  PARAMS ((bfd *, asection *, struct internal_reloc *,
++	   struct coff_link_hash_entry *, struct internal_syment *,
++	   bfd_vma *));
++static const bfd_target * coff_ext_avr_object_p PARAMS ((bfd *));
++
++#define COFF_DEFAULT_SECTION_ALIGNMENT_POWER (2)
++/* The page size is a guess based on ELF.  */
++
++#define COFF_PAGE_SIZE 0x1000
++
++/* For some reason when using avr COFF the value stored in the .text
++   section for a reference to a common symbol is the value itself plus
++   any desired offset.  Ian Taylor, Cygnus Support.  */
++
++/* If we are producing relocateable output, we need to do some
++   adjustments to the object file that are not done by the
++   bfd_perform_relocation function.  This function is called by every
++   reloc type to make any required adjustments.  */
++
++static bfd_reloc_status_type
++coff_ext_avr_reloc (abfd, reloc_entry, symbol, data, input_section, output_bfd,
++		 error_message)
++     bfd *abfd;
++     arelent *reloc_entry;
++     asymbol *symbol;
++     PTR data;
++     asection *input_section ATTRIBUTE_UNUSED;
++     bfd *output_bfd;
++     char **error_message ATTRIBUTE_UNUSED;
++{
++  symvalue diff;
++
++  if (output_bfd == (bfd *) NULL)
++    return bfd_reloc_continue;
++
++  if (bfd_is_com_section (symbol->section))
++    {
++      /* We are relocating a common symbol.  The current value in the
++	 object file is ORIG + OFFSET, where ORIG is the value of the
++	 common symbol as seen by the object file when it was compiled
++	 (this may be zero if the symbol was undefined) and OFFSET is
++	 the offset into the common symbol (normally zero, but may be
++	 non-zero when referring to a field in a common structure).
++	 ORIG is the negative of reloc_entry->addend, which is set by
++	 the CALC_ADDEND macro below.  We want to replace the value in
++	 the object file with NEW + OFFSET, where NEW is the value of
++	 the common symbol which we are going to put in the final
++	 object file.  NEW is symbol->value.  */
++      diff = symbol->value + reloc_entry->addend;
++    }
++  else
++    {
++      /* For some reason bfd_perform_relocation always effectively
++	 ignores the addend for a COFF target when producing
++	 relocateable output.  This seems to be always wrong for 860
++	 COFF, so we handle the addend here instead.  */
++      diff = reloc_entry->addend;
++    }
++
++#define DOIT(x) \
++  x = ((x & ~howto->dst_mask) | (((x & howto->src_mask) + diff) & howto->dst_mask))
++
++    if (diff != 0)
++      {
++	reloc_howto_type *howto = reloc_entry->howto;
++	unsigned char *addr = (unsigned char *) data + reloc_entry->address;
++
++	switch (howto->size)
++	  {
++	  case 0:
++	    {
++	      char x = bfd_get_8 (abfd, addr);
++	      DOIT (x);
++	      bfd_put_8 (abfd, x, addr);
++	    }
++	    break;
++
++	  case 1:
++	    {
++	      short x = bfd_get_16 (abfd, addr);
++	      DOIT (x);
++	      bfd_put_16 (abfd, (bfd_vma) x, addr);
++	    }
++	    break;
++
++	  case 2:
++	    {
++	      long x = bfd_get_32 (abfd, addr);
++	      DOIT (x);
++	      bfd_put_32 (abfd, (bfd_vma) x, addr);
++	    }
++	    break;
++
++	  default:
++	    abort ();
++	  }
++      }
++
++  /* Now let bfd_perform_relocation finish everything up.  */
++  return bfd_reloc_continue;
++}
++
++#ifndef PCRELOFFSET
++#define PCRELOFFSET FALSE
++#endif
++
++static reloc_howto_type howto_table[] =
++{
++  EMPTY_HOWTO (0),
++  EMPTY_HOWTO (1),
++  EMPTY_HOWTO (2),
++  EMPTY_HOWTO (3),
++  EMPTY_HOWTO (4),
++  EMPTY_HOWTO (5),
++  HOWTO (R_DIR32,               /* type */
++	 0,	                /* rightshift */
++	 2,	                /* size (0 = byte, 1 = short, 2 = long) */
++	 32,	                /* bitsize */
++	 FALSE,	                /* pc_relative */
++	 0,	                /* bitpos */
++	 complain_overflow_bitfield, /* complain_on_overflow */
++	 coff_ext_avr_reloc,       /* special_function */
++	 "dir32",               /* name */
++	 TRUE,	                /* partial_inplace */
++	 0xffffffff,            /* src_mask */
++	 0xffffffff,            /* dst_mask */
++	 TRUE),                /* pcrel_offset */
++  /* {7}, */
++  HOWTO (R_IMAGEBASE,            /* type */
++	 0,	                /* rightshift */
++	 2,	                /* size (0 = byte, 1 = short, 2 = long) */
++	 32,	                /* bitsize */
++	 FALSE,	                /* pc_relative */
++	 0,	                /* bitpos */
++	 complain_overflow_bitfield, /* complain_on_overflow */
++	 coff_ext_avr_reloc,       /* special_function */
++	 "rva32",	           /* name */
++	 TRUE,	                /* partial_inplace */
++	 0xffffffff,            /* src_mask */
++	 0xffffffff,            /* dst_mask */
++	 FALSE),                /* pcrel_offset */
++  EMPTY_HOWTO (010),
++  EMPTY_HOWTO (011),
++  EMPTY_HOWTO (012),
++  EMPTY_HOWTO (013),
++  EMPTY_HOWTO (014),
++  EMPTY_HOWTO (015),
++  EMPTY_HOWTO (016),
++  HOWTO (R_RELBYTE,		/* type */
++	 0,			/* rightshift */
++	 0,			/* size (0 = byte, 1 = short, 2 = long) */
++	 8,			/* bitsize */
++	 FALSE,			/* pc_relative */
++	 0,			/* bitpos */
++	 complain_overflow_bitfield, /* complain_on_overflow */
++	 coff_ext_avr_reloc,	/* special_function */
++	 "8",			/* name */
++	 TRUE,			/* partial_inplace */
++	 0x000000ff,		/* src_mask */
++	 0x000000ff,		/* dst_mask */
++	 PCRELOFFSET),		/* pcrel_offset */
++  HOWTO (R_RELWORD,		/* type */
++	 0,			/* rightshift */
++	 1,			/* size (0 = byte, 1 = short, 2 = long) */
++	 16,			/* bitsize */
++	 FALSE,			/* pc_relative */
++	 0,			/* bitpos */
++	 complain_overflow_bitfield, /* complain_on_overflow */
++	 coff_ext_avr_reloc,	/* special_function */
++	 "16",			/* name */
++	 TRUE,			/* partial_inplace */
++	 0x0000ffff,		/* src_mask */
++	 0x0000ffff,		/* dst_mask */
++	 PCRELOFFSET),		/* pcrel_offset */
++  HOWTO (R_RELLONG,		/* type */
++	 0,			/* rightshift */
++	 2,			/* size (0 = byte, 1 = short, 2 = long) */
++	 32,			/* bitsize */
++	 FALSE,			/* pc_relative */
++	 0,			/* bitpos */
++	 complain_overflow_bitfield, /* complain_on_overflow */
++	 coff_ext_avr_reloc,	/* special_function */
++	 "32",			/* name */
++	 TRUE,			/* partial_inplace */
++	 0xffffffff,		/* src_mask */
++	 0xffffffff,		/* dst_mask */
++	 PCRELOFFSET),		/* pcrel_offset */
++  HOWTO (R_PCRBYTE,		/* type */
++	 0,			/* rightshift */
++	 0,			/* size (0 = byte, 1 = short, 2 = long) */
++	 8,			/* bitsize */
++	 TRUE,			/* pc_relative */
++	 0,			/* bitpos */
++	 complain_overflow_signed, /* complain_on_overflow */
++	 coff_ext_avr_reloc,	/* special_function */
++	 "DISP8",		/* name */
++	 TRUE,			/* partial_inplace */
++	 0x000000ff,		/* src_mask */
++	 0x000000ff,		/* dst_mask */
++	 PCRELOFFSET),		/* pcrel_offset */
++  HOWTO (R_PCRWORD,		/* type */
++	 0,			/* rightshift */
++	 1,			/* size (0 = byte, 1 = short, 2 = long) */
++	 16,			/* bitsize */
++	 TRUE,			/* pc_relative */
++	 0,			/* bitpos */
++	 complain_overflow_signed, /* complain_on_overflow */
++	 coff_ext_avr_reloc,	/* special_function */
++	 "DISP16",		/* name */
++	 TRUE,			/* partial_inplace */
++	 0x0000ffff,		/* src_mask */
++	 0x0000ffff,		/* dst_mask */
++	 PCRELOFFSET),		/* pcrel_offset */
++  HOWTO (R_PCRLONG,		/* type */
++	 0,			/* rightshift */
++	 2,			/* size (0 = byte, 1 = short, 2 = long) */
++	 32,			/* bitsize */
++	 TRUE,			/* pc_relative */
++	 0,			/* bitpos */
++	 complain_overflow_signed, /* complain_on_overflow */
++	 coff_ext_avr_reloc,	/* special_function */
++	 "DISP32",		/* name */
++	 TRUE,			/* partial_inplace */
++	 0xffffffff,		/* src_mask */
++	 0xffffffff,		/* dst_mask */
++	 PCRELOFFSET)		/* pcrel_offset */
++};
++
++/* Turn a howto into a reloc  nunmber */
++
++#define SELECT_RELOC(x,howto) { x.r_type = howto->type; }
++#define BADMAG(x) AVRBADMAG(x)
++#define AVR 1			/* Customize coffcode.h */
++
++#define RTYPE2HOWTO(cache_ptr, dst) \
++	    (cache_ptr)->howto = howto_table + (dst)->r_type;
++
++/* For AVR COFF a STYP_NOLOAD | STYP_BSS section is part of a shared
++   library.  On some other COFF targets STYP_BSS is normally
++   STYP_NOLOAD.  */
++#define BSS_NOLOAD_IS_SHARED_LIBRARY
++
++/* Compute the addend of a reloc.  If the reloc is to a common symbol,
++   the object file contains the value of the common symbol.  By the
++   time this is called, the linker may be using a different symbol
++   from a different object file with a different value.  Therefore, we
++   hack wildly to locate the original symbol from this file so that we
++   can make the correct adjustment.  This macro sets coffsym to the
++   symbol from the original file, and uses it to set the addend value
++   correctly.  If this is not a common symbol, the usual addend
++   calculation is done, except that an additional tweak is needed for
++   PC relative relocs.
++   FIXME: This macro refers to symbols and asect; these are from the
++   calling function, not the macro arguments.  */
++
++#define CALC_ADDEND(abfd, ptr, reloc, cache_ptr)		\
++  {								\
++    coff_symbol_type *coffsym = (coff_symbol_type *) NULL;	\
++    if (ptr && bfd_asymbol_bfd (ptr) != abfd)			\
++      coffsym = (obj_symbols (abfd)				\
++	         + (cache_ptr->sym_ptr_ptr - symbols));		\
++    else if (ptr)						\
++      coffsym = coff_symbol_from (abfd, ptr);			\
++    if (coffsym != (coff_symbol_type *) NULL			\
++	&& coffsym->native->u.syment.n_scnum == 0)		\
++      cache_ptr->addend = - coffsym->native->u.syment.n_value;	\
++    else if (ptr && bfd_asymbol_bfd (ptr) == abfd		\
++	     && ptr->section != (asection *) NULL)		\
++      cache_ptr->addend = - (ptr->section->vma + ptr->value);	\
++    else							\
++      cache_ptr->addend = 0;					\
++    if (ptr && howto_table[reloc.r_type].pc_relative)		\
++      cache_ptr->addend += asect->vma;				\
++  }
++
++/* We use the special COFF backend linker.  */
++#define coff_relocate_section _bfd_coff_generic_relocate_section
++
++static reloc_howto_type *
++coff_ext_avr_rtype_to_howto (abfd, sec, rel, h, sym, addendp)
++     bfd *abfd ATTRIBUTE_UNUSED;
++     asection *sec;
++     struct internal_reloc *rel;
++     struct coff_link_hash_entry *h;
++     struct internal_syment *sym;
++     bfd_vma *addendp;
++{
++
++  reloc_howto_type *howto;
++
++  howto = howto_table + rel->r_type;
++
++  if (howto->pc_relative)
++    *addendp += sec->vma;
++
++  if (sym != NULL && sym->n_scnum == 0 && sym->n_value != 0)
++    {
++      /* This is a common symbol.  The section contents include the
++	 size (sym->n_value) as an addend.  The relocate_section
++	 function will be adding in the final value of the symbol.  We
++	 need to subtract out the current size in order to get the
++	 correct result.  */
++
++      BFD_ASSERT (h != NULL);
++
++      /* I think we *do* want to bypass this.  If we don't, I have seen some data
++	 parameters get the wrong relcation address.  If I link two versions
++	 with and without this section bypassed and then do a binary comparison,
++	 the addresses which are different can be looked up in the map.  The
++	 case in which this section has been bypassed has addresses which correspond
++	 to values I can find in the map.  */
++      *addendp -= sym->n_value;
++    }
++
++  /* If the output symbol is common (in which case this must be a
++     relocateable link), we need to add in the final size of the
++     common symbol.  */
++  if (h != NULL && h->root.type == bfd_link_hash_common)
++    *addendp += h->root.u.c.size;
++
++  return howto;
++}
++
++#define coff_rtype_to_howto coff_ext_avr_rtype_to_howto
++
++#include "coffcode.h"
++
++static const bfd_target *
++coff_ext_avr_object_p(a)
++     bfd *a;
++{
++  return coff_object_p (a);
++}
++
++const bfd_target
++#ifdef TARGET_SYM
++  TARGET_SYM =
++#else
++  avrextcoff_vec =
++#endif
++{
++#ifdef TARGET_NAME
++  TARGET_NAME,
++#else
++  "coff-ext-avr",			/* name */
++#endif
++  bfd_target_coff_flavour,
++  BFD_ENDIAN_LITTLE,		/* data byte order is little */
++  BFD_ENDIAN_LITTLE,		/* header byte order is little */
++
++  (HAS_RELOC | EXEC_P |		/* object flags */
++   HAS_LINENO | HAS_DEBUG |
++   HAS_SYMS | HAS_LOCALS | WP_TEXT),
++
++  (SEC_HAS_CONTENTS | SEC_ALLOC | SEC_LOAD | SEC_RELOC), /* section flags */
++  0,				/* leading char */
++  '/',				/* ar_pad_char */
++  15,				/* ar_max_namelen */
++
++  bfd_getl64, bfd_getl_signed_64, bfd_putl64,
++     bfd_getl32, bfd_getl_signed_32, bfd_putl32,
++     bfd_getl16, bfd_getl_signed_16, bfd_putl16, /* data */
++  bfd_getl64, bfd_getl_signed_64, bfd_putl64,
++     bfd_getl32, bfd_getl_signed_32, bfd_putl32,
++     bfd_getl16, bfd_getl_signed_16, bfd_putl16, /* hdrs */
++
++/* Note that we allow an object file to be treated as a core file as well.  */
++    {_bfd_dummy_target, coff_ext_avr_object_p, /* bfd_check_format */
++       bfd_generic_archive_p, coff_ext_avr_object_p},
++    {bfd_false, coff_mkobject, _bfd_generic_mkarchive, /* bfd_set_format */
++       bfd_false},
++    {bfd_false, coff_write_object_contents, /* bfd_write_contents */
++       _bfd_write_archive_contents, bfd_false},
++
++     BFD_JUMP_TABLE_GENERIC (coff),
++     BFD_JUMP_TABLE_COPY (coff),
++     BFD_JUMP_TABLE_CORE (_bfd_nocore),
++     BFD_JUMP_TABLE_ARCHIVE (_bfd_archive_coff),
++     BFD_JUMP_TABLE_SYMBOLS (coff),
++     BFD_JUMP_TABLE_RELOCS (coff),
++     BFD_JUMP_TABLE_WRITE (coff),
++     BFD_JUMP_TABLE_LINK (coff),
++     BFD_JUMP_TABLE_DYNAMIC (_bfd_nodynamic),
++
++  NULL,
++
++  COFF_SWAP_TABLE
++};
+--- ./bfd/coffcode.h.orig	Fri Dec 19 11:01:59 2003
++++ ./bfd/coffcode.h	Wed Jun 16 22:41:11 2004
+@@ -1,3 +1,4 @@
++
+ /* Support for the generic parts of most COFF variants, for BFD.
+    Copyright 1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999,
+    2000, 2001, 2002, 2003
+@@ -1787,6 +1788,17 @@
+   coff->relocbase = 0;
+   coff->local_toc_sym_map = 0;
+ 
++  /* These members communicate important constants about the symbol
++     table to GDB's symbol-reading code.  These `constants'
++     unfortunately vary among coff implementations...  */
++  coff->local_n_btmask = N_BTMASK;
++  coff->local_n_btshft = N_BTSHFT;
++  coff->local_n_tmask = N_TMASK;
++  coff->local_n_tshift = N_TSHIFT;
++  coff->local_symesz = bfd_coff_symesz (abfd);
++  coff->local_auxesz = bfd_coff_auxesz (abfd);
++  coff->local_linesz = bfd_coff_linesz (abfd);
++
+ /*  make_abs_section(abfd);*/
+ 
+   return TRUE;
+@@ -1812,17 +1824,6 @@
+ 
+   coff->sym_filepos = internal_f->f_symptr;
+ 
+-  /* These members communicate important constants about the symbol
+-     table to GDB's symbol-reading code.  These `constants'
+-     unfortunately vary among coff implementations...  */
+-  coff->local_n_btmask = N_BTMASK;
+-  coff->local_n_btshft = N_BTSHFT;
+-  coff->local_n_tmask = N_TMASK;
+-  coff->local_n_tshift = N_TSHIFT;
+-  coff->local_symesz = bfd_coff_symesz (abfd);
+-  coff->local_auxesz = bfd_coff_auxesz (abfd);
+-  coff->local_linesz = bfd_coff_linesz (abfd);
+-
+   coff->timestamp = internal_f->f_timdat;
+ 
+   obj_raw_syment_count (abfd) =
+@@ -1951,6 +1952,11 @@
+ 	}
+       break;
+ #endif
++#ifdef AVRMAGIC
++    case AVRMAGIC:
++      arch = bfd_arch_avr;
++      break;
++#endif
+ #ifdef MC68MAGIC
+     case MC68MAGIC:
+     case M68MAGIC:
+@@ -2736,6 +2742,12 @@
+ 	}
+       return TRUE;
+ #endif
++#ifdef AVRMAGIC
++    case bfd_arch_avr:
++      *magicp = AVRMAGIC;
++      return TRUE;
++      break;
++#endif
+ #ifdef PPCMAGIC
+     case bfd_arch_powerpc:
+       *magicp = PPCMAGIC;
+@@ -3637,6 +3649,11 @@
+       section.s_page = coff_get_section_load_page (current);
+ #endif
+ 
++#ifdef AVR
++      /* AVR uses s_paddr the way GNU uses s_vaddr, and effectively
++	 ignores s_vaddr. */
++      section.s_paddr = current->vma;
++#endif
+ #ifdef COFF_WITH_PE
+       section.s_paddr = 0;
+ #endif
+@@ -3989,6 +4006,17 @@
+     internal_a.magic = ZMAGIC;
+ #endif
+ 
++#ifdef AVR
++    /* a.out is a dummy for non-extended COFF */
++    internal_a.magic = AVRAOUTMAGIC;
++    /* Upper nibble of f_flags must be set for historical reasons.
++       The upper byte remains blank on coff-avr, so undo the F_AR32WR
++       setting performed above. */
++    internal_f.f_flags |= F_JUNK;
++    internal_f.f_flags &= ~F_UNUSED;
++#define __A_MAGIC_SET__
++#endif /* AVR */
++
+ #if defined(PPC_PE)
+ #define __A_MAGIC_SET__
+     internal_a.magic = IMAGE_NT_OPTIONAL_HDR_MAGIC;
+@@ -4049,8 +4077,16 @@
+ #endif
+   }
+ 
++#ifdef AVR_EXT_COFF
++    /* Note that we do not set F_PTRINFO because the GNU toolchain
++       doesn't provide any information about the target of a pointer,
++       so we cannot derive which section our pointer target would be
++       in. */
++  internal_a.vstamp = F_FULLPATHS | F_STRUCTINFO;
++#else
+   /* FIXME: Does anybody ever set this to another value?  */
+   internal_a.vstamp = 0;
++#endif
+ 
+   /* Now should write relocs, strings, syms.  */
+   obj_sym_filepos (abfd) = sym_base;
+@@ -4239,22 +4275,29 @@
+       char * buff;
+       bfd_size_type amount = bfd_coff_aoutsz (abfd);
+ 
+-      buff = bfd_malloc (amount);
+-      if (buff == NULL)
+-	return FALSE;
++      /* Do not attempt to malloc() zero bytes.  According to the
++         C standard, the behaviour is implementation-defined, and
++	 malloc() might return NULL in that case, which would confuse
++	 us to assume an error where it actually isn't. */
++      if (amount != 0)
++	{
++	  buff = bfd_malloc (amount);
++	  if (buff == NULL)
++	    return FALSE;
+ 
+-      coff_swap_aouthdr_out (abfd, (PTR) &internal_a, (PTR) buff);
+-      amount = bfd_bwrite ((PTR) buff, amount, abfd);
++	  coff_swap_aouthdr_out (abfd, (PTR) &internal_a, (PTR) buff);
++	  amount = bfd_bwrite ((PTR) buff, amount, abfd);
+ 
+-      free (buff);
++	  free (buff);
+ 
+-      if (amount != bfd_coff_aoutsz (abfd))
+-	return FALSE;
++	  if (amount != bfd_coff_aoutsz (abfd))
++	    return FALSE;
+ 
+ #ifdef COFF_IMAGE_WITH_PE
+-      if (! coff_apply_checksum (abfd))
+-	return FALSE;
++	  if (! coff_apply_checksum (abfd))
++	    return FALSE;
+ #endif
++	}
+     }
+ #ifdef RS6000COFF_C
+   else
+@@ -4580,6 +4623,10 @@
+ 	    /* In PE, 0x69 (105) denotes a weak external symbol.  */
+ 	    case C_NT_WEAK:
+ #endif
++#ifdef AVR
++	    /* Some AVR COFF compilers handle EXTDEF like EXT. */
++	    case C_EXTDEF:	/* external definition		 */
++#endif
+ 	      switch (coff_classify_symbol (abfd, &src->u.syment))
+ 		{
+ 		case COFF_SYMBOL_GLOBAL:
+@@ -4810,7 +4857,9 @@
+ 		  && src->u.syment.n_scnum == 0)
+ 		break;
+ 	      /* Fall through.  */
++#if !defined(AVR)
+ 	    case C_EXTDEF:	/* External definition.  */
++#endif
+ 	    case C_ULABEL:	/* Undefined label.  */
+ 	    case C_USTATIC:	/* Undefined static.  */
+ #ifndef COFF_WITH_PE
+--- ./bfd/coffgen.c.orig	Tue Nov  4 12:30:54 2003
++++ ./bfd/coffgen.c	Wed Jun 16 22:41:11 2004
+@@ -727,6 +727,20 @@
+ 	      if (last_file != (struct internal_syment *) NULL)
+ 		last_file->n_value = native_index;
+ 	      last_file = &(s->u.syment);
++	      if (bfd_get_arch (bfd_ptr) == bfd_arch_avr
++		  && bfd_coff_long_filenames (bfd_ptr)
++		  && s->u.syment.n_numaux > 0)
++		{
++		  /* AVR COFF records long filenames in successive aux
++		     records.  Adjust the number of aux records
++		     required here, so the renumbering will account
++		     for them. */
++		  unsigned int filnmlen = bfd_coff_filnmlen (bfd_ptr);
++		  unsigned int namelen = strlen (coff_symbol_ptr->symbol.name);
++		  unsigned int n = (namelen + filnmlen - 1) / filnmlen;
++
++		  s->u.syment.n_numaux = n > NAUXENTS? NAUXENTS: n;
++		}
+ 	    }
+ 	  else
+ 	    {
+@@ -864,6 +878,20 @@
+ 	    {
+ 	      strncpy (auxent->x_file.x_fname, name, filnmlen);
+ 	    }
++	  else if (bfd_get_arch (abfd) == bfd_arch_avr)
++	    {
++	      /* AVR COFF records long filenames in successive aux records. */
++	      int i = 1;
++	      while (name_length > filnmlen && i < NAUXENTS)
++		{
++		  strncpy (auxent->x_file.x_fname, name, filnmlen);
++		  name += filnmlen;
++		  name_length -= filnmlen;
++		  i++;
++		  auxent = &(native + i)->u.auxent;
++		}
++	      strncpy (auxent->x_file.x_fname, name, filnmlen);
++	    }
+ 	  else
+ 	    {
+ 	      auxent->x_file.x_n.x_offset = *string_size_p + STRING_SIZE_SIZE;
+@@ -1304,7 +1332,11 @@
+ 		  if (bfd_bwrite (".file", (bfd_size_type) 6, abfd) != 6)
+ 		    return FALSE;
+ 		}
+-	      maxlen = bfd_coff_filnmlen (abfd);
++	      if (bfd_get_arch (abfd) == bfd_arch_avr)
++		/* AVR COFF handles long file names in aux records. */
++		maxlen = name_length;
++	      else
++		maxlen = bfd_coff_filnmlen (abfd);
+ 	    }
+ 	  else
+ 	    maxlen = bfd_coff_force_symnames_in_strings (abfd) ? 0 : SYMNMLEN;
+@@ -1440,7 +1472,7 @@
+ 	{
+ 	  coff_symbol_type sym;
+ 	  /* @@FIXME This shouldn't use a fixed size!!  */
+-	  combined_entry_type e[10];
++	  combined_entry_type e[NAUXENTS + 1];
+ 	};
+       struct foo *f;
+ 
+@@ -1806,15 +1838,26 @@
+ 	    {
+ 	      /* Ordinary short filename, put into memory anyway.  The
+                  Microsoft PE tools sometimes store a filename in
+-                 multiple AUX entries.  */
++                 multiple AUX entries.
++		 AVR COFF does it that way, too. */
+ 	      if (internal_ptr->u.syment.n_numaux > 1
+-		  && coff_data (abfd)->pe)
++		  && (coff_data (abfd)->pe
++		      || (bfd_get_arch (abfd) == bfd_arch_avr)))
+ 		{
+-		  internal_ptr->u.syment._n._n_n._n_offset =
+-		    ((long)
+-		     copy_name (abfd,
+-				(internal_ptr + 1)->u.auxent.x_file.x_fname,
+-				internal_ptr->u.syment.n_numaux * symesz));
++		  char *b;
++		  unsigned int i;
++
++		  /* We allocate enough storage to fit the contents of
++		     this many aux records, and simply append a \0.
++		     This ensures the string will always be
++		     terminated, even in the case where it just fit
++		     into the aux records. */
++		  b = (char *) bfd_alloc (abfd,
++					  internal_ptr->u.syment.n_numaux * FILNMLEN + 1);
++		  internal_ptr->u.syment._n._n_n._n_offset = (long) b;
++		  b[internal_ptr->u.syment.n_numaux * FILNMLEN] = '\0';
++		  for (i = 0; i < internal_ptr->u.syment.n_numaux; i++, b += FILNMLEN)
++		    memcpy (b, (internal_ptr + i + 1)->u.auxent.x_file.x_fname, FILNMLEN);
+ 		}
+ 	      else
+ 		{
+@@ -1924,9 +1967,9 @@
+   coff_symbol_type *new = (coff_symbol_type *) bfd_alloc (abfd, amt);
+   if (new == NULL)
+     return (NULL);
+-  /* @@ The 10 is a guess at a plausible maximum number of aux entries
+-     (but shouldn't be a constant).  */
+-  amt = sizeof (combined_entry_type) * 10;
++  /* @@ The NAUXENTS is a guess at a plausible maximum number of aux
++     entries (but shouldn't be a constant).  */
++  amt = sizeof (combined_entry_type) * (NAUXENTS + 1);
+   new->native = (combined_entry_type *) bfd_zalloc (abfd, amt);
+   if (!new->native)
+     return (NULL);
+--- ./bfd/coffswap.h.orig	Wed Aug 28 12:38:44 2002
++++ ./bfd/coffswap.h	Wed Jun 16 22:41:11 2004
+@@ -454,9 +454,13 @@
+ #else
+ 	  if (numaux > 1)
+ 	    {
++#if defined(AVR)
++	      memcpy (in->x_file.x_fname, ext->x_file.x_fname, sizeof (AUXENT));
++#else
+ 	      if (indx == 0)
+ 		memcpy (in->x_file.x_fname, ext->x_file.x_fname,
+ 			numaux * sizeof (AUXENT));
++#endif
+ 	    }
+ 	  else
+ 	    memcpy (in->x_file.x_fname, ext->x_file.x_fname, FILNMLEN);
+--- ./bfd/config.bfd.orig	Mon May 17 21:35:56 2004
++++ ./bfd/config.bfd	Wed Jun 16 22:41:11 2004
+@@ -290,6 +290,7 @@
+ 
+   avr-*-*)
+     targ_defvec=bfd_elf32_avr_vec
++    targ_selvecs="bfd_elf32_avr_vec avrcoff_vec avrextcoff_vec"
+     ;;
+ 
+   c30-*-*aout* | tic30-*-*aout*)
+--- ./bfd/configure.orig	Mon May 17 21:35:57 2004
++++ ./bfd/configure	Wed Jun 16 22:41:11 2004
+@@ -1006,10 +1006,10 @@
+ 
+ bfd_version=`echo "${VERSION}" | sed -e 's/\([^\.]*\)\.*\([^\.]*\)\.*\([^\.]*\)\.*\([^\.]*\)\.*\([^\.]*\).*/\1.00\2.00\3.00\4.00\5/' -e 's/\([^\.]*\)\..*\(..\)\..*\(..\)\..*\(..\)\..*\(..\)$/\1\2\3\4\5/'`
+ 
+-bfd_version_string="\"${VERSION}\""
++bfd_version_string="\"${VERSION} + coff-avr-patch (20030831)\""
+ if test x${is_release} = x; then
+   bfd_version_date=`sed -n -e 's/.*DATE //p' < ${srcdir}/version.h`
+-  bfd_version_string="\"${VERSION} ${bfd_version_date}\""
++  bfd_version_string="\"${VERSION} ${bfd_version_date} + coff-avr-patch (20030831)\""
+ fi
+ 
+ 
+@@ -6274,6 +6274,8 @@
+     armpe_little_vec)		tb="$tb pe-arm.lo peigen.lo cofflink.lo " ;;
+     armpei_big_vec)		tb="$tb pei-arm.lo peigen.lo cofflink.lo " ;;
+     armpei_little_vec)		tb="$tb pei-arm.lo peigen.lo cofflink.lo " ;;
++    avrcoff_vec)		tb="$tb coff-avr.lo cofflink.lo " ;;
++    avrextcoff_vec)		tb="$tb coff-ext-avr.lo cofflink.lo " ;;
+     b_out_vec_big_host)		tb="$tb bout.lo aout32.lo" ;;
+     b_out_vec_little_host)	tb="$tb bout.lo aout32.lo" ;;
+     bfd_efi_app_ia32_vec)	tb="$tb efi-app-ia32.lo peigen.lo cofflink.lo" ;;
+--- ./bfd/configure.in.orig	Mon May 17 21:35:57 2004
++++ ./bfd/configure.in	Wed Jun 16 22:41:11 2004
+@@ -583,6 +583,8 @@
+     armpe_little_vec)		tb="$tb pe-arm.lo peigen.lo cofflink.lo " ;;
+     armpei_big_vec)		tb="$tb pei-arm.lo peigen.lo cofflink.lo " ;;
+     armpei_little_vec)		tb="$tb pei-arm.lo peigen.lo cofflink.lo " ;;
++    avrcoff_vec)		tb="$tb coff-avr.lo cofflink.lo " ;;
++    avrextcoff_vec)		tb="$tb coff-ext-avr.lo cofflink.lo " ;;
+     b_out_vec_big_host)		tb="$tb bout.lo aout32.lo" ;;
+     b_out_vec_little_host)	tb="$tb bout.lo aout32.lo" ;;
+     bfd_efi_app_ia32_vec)	tb="$tb efi-app-ia32.lo peigen.lo cofflink.lo" ;;
+--- ./bfd/targets.c.orig	Mon May 17 21:36:04 2004
++++ ./bfd/targets.c	Wed Jun 16 22:41:11 2004
+@@ -507,6 +507,8 @@
+ extern const bfd_target armpe_little_vec;
+ extern const bfd_target armpei_big_vec;
+ extern const bfd_target armpei_little_vec;
++extern const bfd_target avrcoff_vec;
++extern const bfd_target avrextcoff_vec;
+ extern const bfd_target b_out_vec_big_host;
+ extern const bfd_target b_out_vec_little_host;
+ extern const bfd_target bfd_efi_app_ia32_vec;
+@@ -791,6 +793,8 @@
+ 	&armpe_little_vec,
+ 	&armpei_big_vec,
+ 	&armpei_little_vec,
++	&avrcoff_vec,
++	&avrextcoff_vec,
+ 	&b_out_vec_big_host,
+ 	&b_out_vec_little_host,
+ 	&bfd_efi_app_ia32_vec,
+--- ./include/coff/avr.h.orig	Wed Jun 16 22:41:12 2004
++++ ./include/coff/avr.h	Wed Jun 16 22:41:12 2004
 @@ -0,0 +1,110 @@
 +/* coff information for Atmel AVR.
 +   
@@ -5551,10 +5531,9 @@ diff -Nur binutils-2.14-vanilla/include/coff/avr.h binutils-2.14/include/coff/av
 +
 +#define RELOC struct external_reloc
 +#define RELSZ 10
-diff -Nur binutils-2.14-vanilla/include/coff/internal.h binutils-2.14/include/coff/internal.h
---- binutils-2.14-vanilla/include/coff/internal.h	Wed Aug 28 12:38:48 2002
-+++ include/coff/internal.h	Sat Sep  6 22:24:22 2003
-@@ -587,6 +587,8 @@
+--- ./include/coff/internal.h.orig	Tue Dec  2 11:49:14 2003
++++ ./include/coff/internal.h	Wed Jun 16 22:41:12 2004
+@@ -591,6 +591,8 @@
  
  };
  
