@@ -1,0 +1,17 @@
+ripit
+-----
+
+ripit is a small front-end program written in perl for ripping,
+encoding & tagging MP3s. It is a console program that needs no user
+intervention. It requires cdd, bladeenc and xmcd (for CDDB access).
+
+WWW: http://www.netcomuk.co.uk/~squinn/ripit.html
+
+This version has been modified from the original 'ripit' port to use
+CDD (/usr/ports/audio/cdd) to rip the tracks, for those of us (unfortunate
+enough) who own ATAPI CD-ROM drives.
+
+Note: This port also requires sox, the SOund eXchanger (/usr/ports/audio/sox)
+as part of the ripping process.
+--
+Port by Donald Burr <dburr@FreeBSD.ORG>
