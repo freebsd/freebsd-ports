@@ -14,7 +14,12 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	mich@freebsdcluster.org
 
 GNU_CONFIGURE=	yes
+USE_REINPLACE=	yes
 
 MAN1=		ah-tty.1
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|' \
+		${WRKSRC}/dillib/vty/vtlabel.c
 
 .include <bsd.port.mk>
