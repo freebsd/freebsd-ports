@@ -273,7 +273,6 @@ share/gnome/galeon/themes/Remembrance/empty.png
 share/gnome/galeon/toc.css
 share/gnome/galeon/toolbars.png
 share/gnome/galeon/windows.png
-share/gnome/help/galeon-manual/C/LEGALNOTICE.html
 share/gnome/help/galeon-manual/C/aboutbook.html
 share/gnome/help/galeon-manual/C/apx-authors.sgml
 share/gnome/help/galeon-manual/C/apx-bugs.sgml
@@ -333,6 +332,7 @@ share/gnome/help/galeon-manual/C/getting-started.sgml
 share/gnome/help/galeon-manual/C/history.html
 share/gnome/help/galeon-manual/C/index.html
 share/gnome/help/galeon-manual/C/introduction.html
+share/gnome/help/galeon-manual/C/ln26.html
 share/gnome/help/galeon-manual/C/menubar.html
 share/gnome/help/galeon-manual/C/mouse-gestures.html
 share/gnome/help/galeon-manual/C/other-tools.html
@@ -348,18 +348,6 @@ share/gnome/help/galeon-manual/C/prefs-handlers.html
 share/gnome/help/galeon-manual/C/prefs-rendering.html
 share/gnome/help/galeon-manual/C/prefs-user-interface.html
 share/gnome/help/galeon-manual/C/statusbar.html
-share/gnome/help/galeon-manual/C/stylesheet-images/caution.gif
-share/gnome/help/galeon-manual/C/stylesheet-images/home.gif
-share/gnome/help/galeon-manual/C/stylesheet-images/important.gif
-share/gnome/help/galeon-manual/C/stylesheet-images/next.gif
-share/gnome/help/galeon-manual/C/stylesheet-images/note.gif
-share/gnome/help/galeon-manual/C/stylesheet-images/prev.gif
-share/gnome/help/galeon-manual/C/stylesheet-images/tip.gif
-share/gnome/help/galeon-manual/C/stylesheet-images/toc-blank.gif
-share/gnome/help/galeon-manual/C/stylesheet-images/toc-minus.gif
-share/gnome/help/galeon-manual/C/stylesheet-images/toc-plus.gif
-share/gnome/help/galeon-manual/C/stylesheet-images/up.gif
-share/gnome/help/galeon-manual/C/stylesheet-images/warning.gif
 share/gnome/help/galeon-manual/C/tabbed-browsing.html
 share/gnome/help/galeon-manual/C/toolbar.html
 share/gnome/oaf/GNOME_Galeon_Automation.oaf

@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	galeon
-PORTVERSION=	1.2.7
-PORTREVISION=	1
+PORTVERSION=	1.2.8
 CATEGORIES=	www gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -33,7 +32,7 @@ MOZ_CONFIGURE_ARGS=	--with-mozilla-snapshot="1.0"
 .if ${WITH_MOZILLA}=="mozilla-devel" || ${WITH_MOZILLA}=="mozilla-embedded-devel"
 MOZILLA=	${WITH_MOZILLA}
 HEADERS_SUFX=	-devel
-MOZ_CONFIGURE_ARGS=	--with-mozilla-snapshot="trunk"
+MOZ_CONFIGURE_ARGS=	--with-mozilla-snapshot="1.3b"
 .else
 .if ${WITH_MOZILLA}=="mozilla-embedded"
 MOZILLA=	mozilla-embedded
