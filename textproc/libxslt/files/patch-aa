@@ -1,35 +1,25 @@
-
-$FreeBSD$
-
---- Makefile.in.orig	Mon Feb 11 20:57:11 2002
-+++ Makefile.in	Tue Feb 26 20:53:28 2002
-@@ -122,17 +122,15 @@
+--- Makefile.in.orig	Thu Sep 26 14:59:25 2002
++++ Makefile.in	Tue Oct  8 01:09:21 2002
+@@ -123,19 +123,17 @@
  @WITH_DEBUGGER_TRUE@  	libexslt \
  @WITH_DEBUGGER_TRUE@  	xsltproc \
  @WITH_DEBUGGER_TRUE@  	doc \
--@WITH_DEBUGGER_TRUE@	python \
+-@WITH_DEBUGGER_TRUE@	@PYTHON_SUBDIR@ \
 -@WITH_DEBUGGER_TRUE@  	tests
-+@WITH_DEBUGGER_TRUE@	@WITH_PYTHON_TRUE@ python
++@WITH_DEBUGGER_TRUE@	@WITH_PYTHON_TRUE@ @PYTHON_SUBDIR@ \
  @WITH_DEBUGGER_FALSE@SUBDIRS = @WITH_DEBUGGER_FALSE@\
  @WITH_DEBUGGER_FALSE@	libxslt \
  @WITH_DEBUGGER_FALSE@	libexslt \
  @WITH_DEBUGGER_FALSE@	xsltproc \
  @WITH_DEBUGGER_FALSE@	doc \
--@WITH_DEBUGGER_FALSE@	python \
+-@WITH_DEBUGGER_FALSE@	@PYTHON_SUBDIR@ \
 -@WITH_DEBUGGER_FALSE@	tests
-+@WITH_DEBUGGER_FALSE@	@WITH_PYTHON_TRUE@ python
++@WITH_DEBUGGER_FALSE@	@WITH_PYTHON_TRUE@ @PYTHON_SUBDIR@
+ 
+ DIST_SUBDIRS = libxslt libexslt xsltproc python doc tests breakpoint
  
 -confexecdir = $(libdir)
 +confexecdir = $(sysconfdir)
  confexec_DATA = xsltConf.sh
  
  bin_SCRIPTS = xslt-config
-@@ -143,7 +141,7 @@
- 	     win32/libxslt/libxslt_so.dsp win32/libxslt/xsltproc.dsp
- 
- 
--pkgconfigdir = $(libdir)/pkgconfig
-+pkgconfigdir = $(prefix)/libdata/pkgconfig
- pkgconfig_DATA = libxslt.pc
- ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
- mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
