@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Algorithm/MinMax.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm/MinMax/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm/MinMax
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Algorithm 2>/dev/null || true
