@@ -1,5 +1,5 @@
---- Makefile.orig	Thu Nov 25 06:38:29 1999
-+++ Makefile	Sat Feb 12 18:22:41 2000
+--- Makefile.orig	Thu Nov 25 03:38:29 1999
++++ Makefile	Thu Feb 17 00:51:02 2000
 @@ -12,22 +12,22 @@
  #
  
@@ -29,11 +29,13 @@
  
  # Only group wheel can execute binary files.
  SHELL	= /bin/sh
-@@ -36,7 +36,7 @@
+@@ -35,8 +35,8 @@
+ GROUP	= wheel
  
  # This options intended for BSD/OS V2.
- CC	= gcc
+-CC	= gcc
 -FLAGS	= -O2
++CC	?= gcc
 +#FLAGS	= -O2
  DEFINE	= -DRETSIGTYPE=void -DRETSIGVAL=
  #DEFINE += -DHAVE_FCNTL_H=1
