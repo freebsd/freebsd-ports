@@ -59,6 +59,7 @@ share/AbiSuite/AbiWord/help/en-US/interface/index.html
 share/AbiSuite/AbiWord/help/en-US/interface/menucontextual.html
 share/AbiSuite/AbiWord/help/en-US/interface/menuedit.html
 share/AbiSuite/AbiWord/help/en-US/interface/menufile.html
+share/AbiSuite/AbiWord/help/en-US/interface/menufile.xhtml_data/menufile.png
 share/AbiSuite/AbiWord/help/en-US/interface/menuformat.html
 share/AbiSuite/AbiWord/help/en-US/interface/menuhelp.html
 share/AbiSuite/AbiWord/help/en-US/interface/menuinsert.html
@@ -67,6 +68,17 @@ share/AbiSuite/AbiWord/help/en-US/interface/menuview.html
 share/AbiSuite/AbiWord/help/en-US/interface/menuweb.html
 share/AbiSuite/AbiWord/help/en-US/interface/menuwindow.html
 share/AbiSuite/AbiWord/help/en-US/interface/rulers.html
+share/AbiSuite/AbiWord/help/en-US/interface/rulers.xhtml_data/rulers.png
+share/AbiSuite/AbiWord/help/en-US/interface/rulers.xhtml_data/rulerscentertab.png
+share/AbiSuite/AbiWord/help/en-US/interface/rulers.xhtml_data/rulersdecimaltab.png
+share/AbiSuite/AbiWord/help/en-US/interface/rulers.xhtml_data/rulersfirstindent.png
+share/AbiSuite/AbiWord/help/en-US/interface/rulers.xhtml_data/rulersindent.png
+share/AbiSuite/AbiWord/help/en-US/interface/rulers.xhtml_data/rulersleftindent.png
+share/AbiSuite/AbiWord/help/en-US/interface/rulers.xhtml_data/rulerslefttab.png
+share/AbiSuite/AbiWord/help/en-US/interface/rulers.xhtml_data/rulerslinetab.png
+share/AbiSuite/AbiWord/help/en-US/interface/rulers.xhtml_data/rulersmargins.png
+share/AbiSuite/AbiWord/help/en-US/interface/rulers.xhtml_data/rulersrighttab.png
+share/AbiSuite/AbiWord/help/en-US/interface/rulers.xhtml_data/rulerstab.png
 share/AbiSuite/AbiWord/help/en-US/interface/toolbarextra.html
 share/AbiSuite/AbiWord/help/en-US/interface/toolbarformatting.html
 share/AbiSuite/AbiWord/help/en-US/interface/toolbarstandard.html
@@ -88,6 +100,103 @@ share/AbiSuite/AbiWord/help/en-US/problems/problemshelp.html
 share/AbiSuite/AbiWord/help/en-US/search.html
 share/AbiSuite/AbiWord/help/en-US/style.css
 share/AbiSuite/AbiWord/help/en-US/tutorial/index.html
+share/AbiSuite/AbiWord/help/fr-FR/aboutos.html
+share/AbiSuite/AbiWord/help/fr-FR/credits.html
+share/AbiSuite/AbiWord/help/fr-FR/fdl.html
+share/AbiSuite/AbiWord/help/fr-FR/histyle.css
+share/AbiSuite/AbiWord/help/fr-FR/howto/howtonormaltemplate.html
+share/AbiSuite/AbiWord/help/fr-FR/howto/howtotables.html
+share/AbiSuite/AbiWord/help/fr-FR/howto/howtoweb.html
+share/AbiSuite/AbiWord/help/fr-FR/howto/howtoweb.xhtml_data/ruler.png
+share/AbiSuite/AbiWord/help/fr-FR/howto/howtoword.html
+share/AbiSuite/AbiWord/help/fr-FR/howto/howtoword.xhtml_data/gettingstarted.abw.png
+share/AbiSuite/AbiWord/help/fr-FR/howto/index.html
+share/AbiSuite/AbiWord/help/fr-FR/index.html
+share/AbiSuite/AbiWord/help/fr-FR/info/index.html
+share/AbiSuite/AbiWord/help/fr-FR/info/infoformats.html
+share/AbiSuite/AbiWord/help/fr-FR/info/infomsdi.html
+share/AbiSuite/AbiWord/help/fr-FR/info/inforequirements.html
+share/AbiSuite/AbiWord/help/fr-FR/info/infosections.html
+share/AbiSuite/AbiWord/help/fr-FR/info/infospelling.html
+share/AbiSuite/AbiWord/help/fr-FR/interface/dialogactivatewindow.html
+share/AbiSuite/AbiWord/help/fr-FR/interface/dialogbackgroundcolor.html
+share/AbiSuite/AbiWord/help/fr-FR/interface/dialogbookmark.html
+share/AbiSuite/AbiWord/help/fr-FR/interface/dialogbreak.html
+share/AbiSuite/AbiWord/help/fr-FR/interface/dialogchangecase.html
+share/AbiSuite/AbiWord/help/fr-FR/interface/dialogcolumns.html
+share/AbiSuite/AbiWord/help/fr-FR/interface/dialogdateandtime.html
+share/AbiSuite/AbiWord/help/fr-FR/interface/dialogfield.html
+share/AbiSuite/AbiWord/help/fr-FR/interface/dialogfind.html
+share/AbiSuite/AbiWord/help/fr-FR/interface/dialogfont.html
+share/AbiSuite/AbiWord/help/fr-FR/interface/dialogformatheaderfooters.html
+share/AbiSuite/AbiWord/help/fr-FR/interface/dialoggoto.html
+share/AbiSuite/AbiWord/help/fr-FR/interface/dialoghyperlink.html
+share/AbiSuite/AbiWord/help/fr-FR/interface/dialogimageproperties.html
+share/AbiSuite/AbiWord/help/fr-FR/interface/dialoglanguage.html
+share/AbiSuite/AbiWord/help/fr-FR/interface/dialoglists.html
+share/AbiSuite/AbiWord/help/fr-FR/interface/dialogmodifystyle.html
+share/AbiSuite/AbiWord/help/fr-FR/interface/dialognew.html
+share/AbiSuite/AbiWord/help/fr-FR/interface/dialognewstyle.html
+share/AbiSuite/AbiWord/help/fr-FR/interface/dialogopenlinux.html
+share/AbiSuite/AbiWord/help/fr-FR/interface/dialogpagenumbers.html
+share/AbiSuite/AbiWord/help/fr-FR/interface/dialogpagesetup.html
+share/AbiSuite/AbiWord/help/fr-FR/interface/dialogparagraph.html
+share/AbiSuite/AbiWord/help/fr-FR/interface/dialogplugins.html
+share/AbiSuite/AbiWord/help/fr-FR/interface/dialogpreferences.html
+share/AbiSuite/AbiWord/help/fr-FR/interface/dialogreplace.html
+share/AbiSuite/AbiWord/help/fr-FR/interface/dialogreplace.xhtml_data/replace.png
+share/AbiSuite/AbiWord/help/fr-FR/interface/dialogsavelinux.html
+share/AbiSuite/AbiWord/help/fr-FR/interface/dialogscreencolor.html
+share/AbiSuite/AbiWord/help/fr-FR/interface/dialogspelling.html
+share/AbiSuite/AbiWord/help/fr-FR/interface/dialogstyles.html
+share/AbiSuite/AbiWord/help/fr-FR/interface/dialogsymbol.html
+share/AbiSuite/AbiWord/help/fr-FR/interface/dialogtabs.html
+share/AbiSuite/AbiWord/help/fr-FR/interface/dialogwordcount.html
+share/AbiSuite/AbiWord/help/fr-FR/interface/dialogzoom.html
+share/AbiSuite/AbiWord/help/fr-FR/interface/index.html
+share/AbiSuite/AbiWord/help/fr-FR/interface/menucontextual.html
+share/AbiSuite/AbiWord/help/fr-FR/interface/menuedit.html
+share/AbiSuite/AbiWord/help/fr-FR/interface/menufile.html
+share/AbiSuite/AbiWord/help/fr-FR/interface/menuformat.html
+share/AbiSuite/AbiWord/help/fr-FR/interface/menuhelp.html
+share/AbiSuite/AbiWord/help/fr-FR/interface/menuinsert.html
+share/AbiSuite/AbiWord/help/fr-FR/interface/menutools.html
+share/AbiSuite/AbiWord/help/fr-FR/interface/menuview.html
+share/AbiSuite/AbiWord/help/fr-FR/interface/menuweb.html
+share/AbiSuite/AbiWord/help/fr-FR/interface/menuwindow.html
+share/AbiSuite/AbiWord/help/fr-FR/interface/rulers.html
+share/AbiSuite/AbiWord/help/fr-FR/interface/rulers.xhtml_data/image_1.png
+share/AbiSuite/AbiWord/help/fr-FR/interface/rulers.xhtml_data/image_10.png
+share/AbiSuite/AbiWord/help/fr-FR/interface/rulers.xhtml_data/image_11.png
+share/AbiSuite/AbiWord/help/fr-FR/interface/rulers.xhtml_data/image_12.png
+share/AbiSuite/AbiWord/help/fr-FR/interface/rulers.xhtml_data/image_2.png
+share/AbiSuite/AbiWord/help/fr-FR/interface/rulers.xhtml_data/image_3.png
+share/AbiSuite/AbiWord/help/fr-FR/interface/rulers.xhtml_data/image_4.png
+share/AbiSuite/AbiWord/help/fr-FR/interface/rulers.xhtml_data/image_5.png
+share/AbiSuite/AbiWord/help/fr-FR/interface/rulers.xhtml_data/image_6.png
+share/AbiSuite/AbiWord/help/fr-FR/interface/rulers.xhtml_data/image_7.png
+share/AbiSuite/AbiWord/help/fr-FR/interface/rulers.xhtml_data/image_8.png
+share/AbiSuite/AbiWord/help/fr-FR/interface/toolbarextra.html
+share/AbiSuite/AbiWord/help/fr-FR/interface/toolbarformatting.html
+share/AbiSuite/AbiWord/help/fr-FR/interface/toolbarstandard.html
+share/AbiSuite/AbiWord/help/fr-FR/interface/workspace.html
+share/AbiSuite/AbiWord/help/fr-FR/interface/workspace.xhtml_data/full_window.png
+share/AbiSuite/AbiWord/help/fr-FR/interface/workspace.xhtml_data/functionbars.png
+share/AbiSuite/AbiWord/help/fr-FR/interface/workspace.xhtml_data/functionbars_hiding.png
+share/AbiSuite/AbiWord/help/fr-FR/interface/workspace.xhtml_data/grabbar_shaded.png
+share/AbiSuite/AbiWord/help/fr-FR/interface/workspace.xhtml_data/ruler.png
+share/AbiSuite/AbiWord/help/fr-FR/interface/workspace.xhtml_data/statusbar.png
+share/AbiSuite/AbiWord/help/fr-FR/interface/workspace.xhtml_data/statusbar_quickhelp.png
+share/AbiSuite/AbiWord/help/fr-FR/interface/workspace.xhtml_data/titlebar.png
+share/AbiSuite/AbiWord/help/fr-FR/introduction.html
+share/AbiSuite/AbiWord/help/fr-FR/plugins/index.html
+share/AbiSuite/AbiWord/help/fr-FR/problems/index.html
+share/AbiSuite/AbiWord/help/fr-FR/problems/problemsbugs.html
+share/AbiSuite/AbiWord/help/fr-FR/problems/problemsfaq.html
+share/AbiSuite/AbiWord/help/fr-FR/problems/problemsfonts.html
+share/AbiSuite/AbiWord/help/fr-FR/problems/problemshelp.html
+share/AbiSuite/AbiWord/help/fr-FR/style.css
+share/AbiSuite/AbiWord/help/fr-FR/tutorial/index.html
 share/AbiSuite/AbiWord/readme.txt
 share/AbiSuite/AbiWord/scripts/abw2html.pl
 share/AbiSuite/AbiWord/strings/bg-BG.strings
@@ -102,6 +211,7 @@ share/AbiSuite/AbiWord/strings/en-AU.strings
 share/AbiSuite/AbiWord/strings/en-GB.strings
 share/AbiSuite/AbiWord/strings/en-IE.strings
 share/AbiSuite/AbiWord/strings/es-ES.strings
+share/AbiSuite/AbiWord/strings/eu-ES.strings
 share/AbiSuite/AbiWord/strings/fi-FI.strings
 share/AbiSuite/AbiWord/strings/fr-FR.strings
 share/AbiSuite/AbiWord/strings/ga-IE.strings
@@ -117,6 +227,7 @@ share/AbiSuite/AbiWord/strings/nn-NO.strings
 share/AbiSuite/AbiWord/strings/pl-PL.strings
 share/AbiSuite/AbiWord/strings/pt-BR.strings
 share/AbiSuite/AbiWord/strings/pt-PT.strings
+share/AbiSuite/AbiWord/strings/ro-RO.strings
 share/AbiSuite/AbiWord/strings/ru-RU.strings
 share/AbiSuite/AbiWord/strings/sk-SK.strings
 share/AbiSuite/AbiWord/strings/sl-SI.strings
@@ -177,6 +288,7 @@ share/AbiSuite/AbiWord/system.profile-sv-SE
 share/AbiSuite/AbiWord/system.profile-tr
 share/AbiSuite/AbiWord/system.profile-tr-TR
 share/AbiSuite/AbiWord/system.profile-tr-TR.CP1254
+share/AbiSuite/AbiWord/system.profile-uk-UA
 share/AbiSuite/AbiWord/system.profile-zh-CN
 share/AbiSuite/AbiWord/system.profile-zh-TW
 share/AbiSuite/GNOME_AbiWord_Control_1_0.oaf
@@ -309,9 +421,23 @@ share/gnome/pixmaps/abiword_48.png
 @dirrm share/AbiSuite/clipart
 @dirrm share/AbiSuite/AbiWord/strings
 @dirrm share/AbiSuite/AbiWord/scripts
+@dirrm share/AbiSuite/AbiWord/help/fr-FR/tutorial
+@dirrm share/AbiSuite/AbiWord/help/fr-FR/problems
+@dirrm share/AbiSuite/AbiWord/help/fr-FR/plugins
+@dirrm share/AbiSuite/AbiWord/help/fr-FR/interface/workspace.xhtml_data
+@dirrm share/AbiSuite/AbiWord/help/fr-FR/interface/rulers.xhtml_data
+@dirrm share/AbiSuite/AbiWord/help/fr-FR/interface/dialogreplace.xhtml_data
+@dirrm share/AbiSuite/AbiWord/help/fr-FR/interface
+@dirrm share/AbiSuite/AbiWord/help/fr-FR/info
+@dirrm share/AbiSuite/AbiWord/help/fr-FR/howto/howtoword.xhtml_data
+@dirrm share/AbiSuite/AbiWord/help/fr-FR/howto/howtoweb.xhtml_data
+@dirrm share/AbiSuite/AbiWord/help/fr-FR/howto
+@dirrm share/AbiSuite/AbiWord/help/fr-FR
 @dirrm share/AbiSuite/AbiWord/help/en-US/tutorial
 @dirrm share/AbiSuite/AbiWord/help/en-US/problems
 @dirrm share/AbiSuite/AbiWord/help/en-US/interface/workspace.xhtml_data
+@dirrm share/AbiSuite/AbiWord/help/en-US/interface/rulers.xhtml_data
+@dirrm share/AbiSuite/AbiWord/help/en-US/interface/menufile.xhtml_data
 @dirrm share/AbiSuite/AbiWord/help/en-US/interface/dialogreplace.xhtml_data
 @dirrm share/AbiSuite/AbiWord/help/en-US/interface
 @dirrm share/AbiSuite/AbiWord/help/en-US/info

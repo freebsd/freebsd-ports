@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	AbiWord
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.3
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.abisource.com/downloads/Version-${PORTVERSION}/lf/
@@ -59,11 +59,6 @@ PKGNAMESUFFIX=	-gnome
 .if exists(${LOCALBASE}/include/wv.h)
 BROKEN=	"This port cannot be built when textproc/wv is installed because of a header conflict.  Please remove textproc/wv, and resume the build.  If textproc/wv is no longer installed, please remove ${LOCALBASE}/include/wv.h, and resume the AbiWord build"
 .endif
-
-post-patch:
-	@iconv -f cp1251 -t koi8-u ${WRKSRC}/user/wp/strings/uk-UA.strings > \
-		${WRKDIR}/.uk-UA.strings
-	@${MV} ${WRKDIR}/.uk-UA.strings ${WRKSRC}/user/wp/strings/uk-UA.strings
 
 pre-configure:
 	@cd ${WRKSRC} && ${TOUCH} NEWS README AUTHORS ChangeLog
