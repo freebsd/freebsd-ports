@@ -7,6 +7,7 @@
 
 PORTNAME=	staroffice
 PORTVERSION=	5.2
+PORTREVISION=	1
 CATEGORIES=	german editors linux
 MASTER_SITES=	ftp://ftp.hu-berlin.de/pub/linux/staroffice/german/ \
 		ftp://sunsite.cnlab-switch.ch/mirror/staroffice/deutsch/ \

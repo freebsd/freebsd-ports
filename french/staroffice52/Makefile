@@ -8,6 +8,7 @@
 
 PORTNAME=	staroffice
 PORTVERSION=	5.2
+PORTREVISION=	1
 CATEGORIES=	french editors linux
 MASTER_SITES=	ftp://ftp.cem2.univ-montp2.fr/pub/linux/soft/StarOffice/ \
 		ftp://sunsite.cnlab-switch.ch/mirror/staroffice/francais/ \

@@ -7,6 +7,7 @@
 
 PORTNAME=	staroffice
 PORTVERSION=	5.2
+PORTREVISION=	1
 CATEGORIES=	editors linux
 MASTER_SITES=	ftp://ftp.csua.berkeley.edu/pub/.1/ports/distfiles/staroffice52/ \
 		ftp://sunsite.cnlab-switch.ch/mirror/staroffice/english/ \
