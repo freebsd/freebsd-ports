@@ -613,6 +613,7 @@ bestfit		ports/misc/bestfit
 bf2c		ports/lang/bf2c
 bfbtester	ports/security/bfbtester
 bfe		ports/emulators/bfe
+bfhist		ports/comms/bfhist
 bfilter		ports/net/bfilter
 bforce		ports/comms/bforce
 bforce-kst	ports/comms/bforce-kst
