@@ -1,0 +1,8 @@
+libexec/apache/mod_ruby.so
+@exec %D/sbin/apxs -e -A -n ruby %D/%F
+@unexec %D/sbin/apxs -e -A -n ruby %D/%F
+share/doc/ruby/mod_ruby/ChangeLog
+share/doc/ruby/mod_ruby/README.en
+share/doc/ruby/mod_ruby/ja/README.ja
+@dirrm share/doc/ruby/mod_ruby/ja
+@dirrm share/doc/ruby/mod_ruby
