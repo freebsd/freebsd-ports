@@ -1,0 +1,6 @@
+bin/tacshell
+etc/tacshell.conf.sample
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/WHATSNEW
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
