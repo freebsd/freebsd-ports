@@ -567,6 +567,7 @@
     SUBDIR += qt-designer
     SUBDIR += qtez
     SUBDIR += qtk
+    SUBDIR += ragel
     SUBDIR += re2c
     SUBDIR += regexx
     SUBDIR += rinfo
