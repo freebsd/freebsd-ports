@@ -1,14 +1,16 @@
 LIB	=	fpx
 INCS	=	fpxlib.h
 SHLIB_MAJOR=	1
-SHLIB_MINOR=	2
+SHLIB_MINOR=	7
 
 LIBDIR	=	${LOCALBASE}/lib
 INCSDIR	=	${LOCALBASE}/include
 INCDIR	=	${INCSDIR}		# for pre-bsd.incs.mk API
 
 NOPROFILE=	Don't want it
-CFLAGS+=	-DHAVE_WCHAR_H=1 -DHAVE_DLFCN_H=1
+HAVES=		-DHAVE_WCHAR_H -DHAVE_DLFCN_H \
+		-DHAVE_SYS_PARAM_H -DHAVE_SYS_MOUNT_H
+CFLAGS+=	${HAVES}
 
 CPPS	!=	find ${.CURDIR} -name \*.cpp -print
 # Some of the .cxx files are #include-ed into others, so can't use `find' here:
@@ -24,7 +26,7 @@ CPPS	+=	${OLESS:S/^/${.CURDIR}\/oless\//} ${JPGS}
 
 SRCS	=	${CPPS:T}
 
-CXXFLAGS+=	-fno-rtti -fno-exceptions -DHAVE_WCHAR_H=1 -DHAVE_DLFCN_H=1
+CXXFLAGS+=	-fno-rtti -fno-exceptions ${HAVES}
 LDADD	+=	-L${LOCALBASE}/lib -ljpeg -lstdc++
 
 .PATH: ${CPPS:H}
