@@ -1,9 +1,8 @@
-# $Id: Makefile,v 1.19 1995/06/21 20:39:49 asami Exp $
+# $Id: Makefile,v 1.20 1995/07/01 09:19:52 asami Exp $
 #
 # RESTRICTED: xmcd (needs Motif, xmcd itself isn't restricted)
 #
 # BROKEN: gmod
-# BROKEN: rsynth (can't find a master site)
 #
 
    SUBDIR += gsm
@@ -11,6 +10,7 @@
    SUBDIR += nas
    SUBDIR += playmidi
    SUBDIR += rplay
+   SUBDIR += rsynth
    SUBDIR += s3mod
    SUBDIR += sox
    SUBDIR += tracker
