@@ -30,6 +30,6 @@ command="%%PREFIX%%/sbin/estctrl"
 command_args="-a ${estctrl_speed_ac}"
 command_args="${command_args} -b ${estctrl_speed_battery}"
 command_args="${command_args} -d ${estctrl_speed_default}"
-command_args="${command_args &"
+command_args="${command_args} &"
 
 run_rc_command "$1"
