@@ -1,0 +1,11 @@
+This package consists of a C library and a Perl module (which uses
+the C library, internally) for all kinds of date calculations based
+on the Gregorian calendar (the one used in all western countries today),
+thereby complying with all relevant norms and standards: ISO/R 2015-1971,
+DIN 1355 and, to some extent, ISO 8601 (where applicable).
+
+WWW: http://www.engelschall.com/u/sb/download/
+
+--
+Brad Hendrickse
+bradh@uunet.co.za
