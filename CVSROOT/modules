@@ -9421,6 +9421,7 @@ tmake		ports/devel/tmake
 tmda		ports/mail/tmda
 tmetric		ports/benchmarks/tmetric
 tmpwatch	ports/sysutils/tmpwatch
+tn-aspell	ports/textproc/tn-aspell
 tn5250		ports/net/tn5250
 tnef		ports/converters/tnef
 tnef2txt	ports/textproc/tnef2txt
