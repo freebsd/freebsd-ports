@@ -1,13 +1,13 @@
 # New ports collection makefile for:    a2ps
-# Version required:     4.9.9
-# Date created:         18 August 1997
+# Version required:     4.10.2
+# Date created:         17 May 1998
 # Whom:                 Chuck Robey (chuckr@freebsd.org)
 #
-# $Id: Makefile,v 1.14 1998/02/26 04:31:49 asami Exp $
+# $Id: Makefile,v 1.15 1998/04/19 03:39:04 itojun Exp $
 #
 
-DISTNAME=	a2ps-4.10
-PKGNAME=	a2ps-${PAPERSIZE}-4.10
+DISTNAME=	a2ps-4.10.2
+PKGNAME=	a2ps-${PAPERSIZE}-4.10.2
 CATEGORIES=	print
 MASTER_SITES=	http://www-inf.enst.fr/~demaille/ftp/a2ps/
 
@@ -46,6 +46,9 @@ pre-configure:
 post-install:
 	${LDCONFIG} -R ${PREFIX}/lib
 	strip ${PREFIX}/bin/a2ps
+	$(INSTALL_DATA) $(WRKSRC)/doc/a2ps.info* $(PREFIX)/info
+	$(INSTALL_MAN) $(WRKSRC)/doc/a2ps.1 $(PREFIX)/man/man1
+	-/usr/bin/install-info --info-dir=$(PREFIX)/info $(WRKSRC)/doc/a2ps.info
 
 .include <bsd.port.mk>
 
