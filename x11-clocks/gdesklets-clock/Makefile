@@ -7,10 +7,10 @@
 
 PORTNAME=	clock
 PORTVERSION=	0.32
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-clocks gnome
 MASTER_SITES=	http://gdesklets.gnomedesktop.org/files/
-PKGNAMEPREFIX= gdesklets-
+PKGNAMEPREFIX=	gdesklets-
 DISTNAME=	clock-desklet-${PORTVERSION}
 
 MAINTAINER=	mezz7@cox.net
@@ -28,6 +28,7 @@ LANG=		de fr pt sq sr sr@Latn sv
 do-build:
 	@${WRKSRC}/Install_${NAME}_Sensor.bin --nomsg ${WRKSRC}
 	@${FIND} ${WRKSRC} -name '*.orig' -delete
+	@${PATCH} ${WRKSRC}/Clock/__init__.py < ${FILESDIR}/Clock::__init__.py
 
 do-install:
 	@${MKDIR} ${DATADIR}/gdesklets/Displays/${NAME}/gfx
