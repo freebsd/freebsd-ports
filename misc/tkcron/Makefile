@@ -3,7 +3,7 @@
 # Date created:		30 July 1996
 # Whom:			Sander Vesik <sander@haldjas.folklore.ee>
 #
-# $Id: Makefile,v 1.2 1996/11/30 09:00:18 asami Exp $
+# $Id: Makefile,v 1.3 1997/04/20 13:19:33 wosch Exp $
 #
 
 DISTNAME=	tkcron-2.12
@@ -22,6 +22,6 @@ EXTRACT_AFTER_ARGS= > tkcron.tcl
 NO_WRKSUBDIR=	yes
 
 post-extract:
-	@${CP} files/Makefile ${WRKSRC}
+	@${CP} ${FILESDIR}/Makefile ${WRKSRC}
 
 .include <bsd.port.mk>

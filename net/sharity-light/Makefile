@@ -3,7 +3,7 @@
 # Date created:		14 June 1997
 # Whom:			Dmitrij Tejblum <dima@tejblum.dnttm.rssi.ru>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/07/15 14:09:18 tg Exp $
 #
 
 DISTNAME=	rumba.0.4.s
@@ -21,7 +21,7 @@ MAN8=		smbmount.8
 
 post-extract:
 	@${MKDIR} work/unrumba
-	@${CP} files/unrumba.c ${WRKDIR}/unrumba
+	@${CP} ${FILESDIR}/unrumba.c ${WRKDIR}/unrumba
 	@${CP} files/Makefile.unrumba ${WRKDIR}/unrumba/Makefile
 
 post-build:

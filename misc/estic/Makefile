@@ -3,7 +3,7 @@
 # Date created:					21 Sep 1996
 # Whom:						Julian Stacey <jhs@freebsd.org>
 #
-# $Id: Makefile,v 1.2 1996/12/28 00:19:55 asami Exp $
+# $Id: Makefile,v 1.1.1.1 1996/12/29 04:44:13 obrien Exp $
 #
 
 DISTNAME=		estic-1.40-sources
@@ -57,7 +57,7 @@ do-install:
 	@# files/README is not in nroff, but is a temporary document.
 	@${MKDIR} ${PBX_ETC} ${PBX_VAR}
 	${INSTALL_DATA} ${ESTIC}/estic.ini ${PBX_ETC}/estic.ini.generic_example
-	${INSTALL_DATA} files/estic.ini ${PBX_ETC}/estic.ini.freebsd_example
+	${INSTALL_DATA} ${FILESDIR}/estic.ini ${PBX_ETC}/estic.ini.freebsd_example
 	${INSTALL_DATA} ${ESTIC}/alias.dat ${PBX_ETC}/aliases.example
 	@# create config & debug so we can change mode to private
 	@touch ${PBX_ETC}/config ${PBX_VAR}/debug
