@@ -1498,6 +1498,7 @@ dns_balance	ports/dns/dns_balance
 dnsdoctor	ports/dns/dnsdoctor
 dnsflood	ports/dns/dnsflood
 dnshijacker	ports/dns/dnshijacker
+dnsjava		ports/dns/dnsjava
 dnsmasq		ports/dns/dnsmasq
 dnsproxy	ports/dns/dnsproxy
 dnssecwalker	ports/dns/dnssecwalker
