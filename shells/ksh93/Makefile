@@ -6,7 +6,6 @@
 
 PORTNAME=	ksh93
 PORTVERSION=	${VERSION:S/-//g}
-PORTREVISION=	1
 CATEGORIES=	shells
 MASTER_SITES=	http://www.research.att.com/~gsf/download/tgz/
 DISTNAME=	${PORTNAME}-${VERSION}
@@ -16,7 +15,7 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	Official AT&T release of KornShell 93
 
-VERSION=	2002-12-21
+VERSION=	2003-04-22
 RESTRICTED=	"Source recipient must acknowledge license"
 
 NO_WRKSUBDIR=	yes
