@@ -1398,6 +1398,7 @@ lib/TenDRA/machines/freebsd/%OSREL%/80x86/env/32bit
 lib/TenDRA/machines/freebsd/%OSREL%/80x86/env/Goption
 lib/TenDRA/machines/freebsd/%OSREL%/80x86/env/K-P5
 lib/TenDRA/machines/freebsd/%OSREL%/80x86/env/K-PIC
+lib/TenDRA/machines/freebsd/%OSREL%/80x86/env/K-aout
 lib/TenDRA/machines/freebsd/%OSREL%/80x86/env/K-frame
 lib/TenDRA/machines/freebsd/%OSREL%/80x86/env/K-i386
 lib/TenDRA/machines/freebsd/%OSREL%/80x86/env/K-i486
@@ -1518,4 +1519,5 @@ lib/TenDRA/machines/freebsd/%OSREL%/80x86/startup/svid3.h
 lib/TenDRA/machines/freebsd/%OSREL%/80x86/startup/system.h
 lib/TenDRA/machines/freebsd/%OSREL%/80x86/startup/unix95.h
 lib/TenDRA/machines/freebsd/%OSREL%/80x86/startup/xpg3.h
+lib/TenDRA/machines/freebsd/%OSREL%/80x86/startup/xpg3.h.orig
 lib/TenDRA/machines/freebsd/%OSREL%/80x86/startup/xpg4.h
