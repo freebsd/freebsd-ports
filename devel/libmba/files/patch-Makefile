@@ -1,0 +1,33 @@
+--- Makefile.orig	Fri Mar 29 17:23:23 2002
++++ Makefile	Tue Sep 24 15:51:24 2002
+@@ -3,9 +3,9 @@
+ libdir    = /usr/lib
+ mandir    = /usr/man
+ LIBNAME   = mba
+-SONAME    = lib$(LIBNAME).so.0.3.6
+-SOVERSION = lib$(LIBNAME).so.0.3
+-CFLAGS    = -Wall -DMSGNO $(RPM_OPT_FLAGS)
++SONAME    = lib$(LIBNAME).so.${SHLIB_MAJOR}
++SOVERSION = lib$(LIBNAME).so.${SHLIB_MAJOR}
++CFLAGS    += -Wall -DMSGNO $(RPM_OPT_FLAGS)
+ OBJS      = src/stack.o src/linkedlist.o src/hashmap.o src/profile.o src/hexdump.o src/msgno.o src/domnode.o src/mbs.o
+ HDRS      = src/msgno.h src/stack.h src/linkedlist.h src/hashmap.h src/hexdump.h src/domnode.h src/profile.h src/mbs.h
+ MAN       = msgno.3m.gz stack.3m.gz linkedlist.3m.gz hashmap.3m.gz hexdump.3m.gz domnode.3m.gz
+@@ -17,13 +17,12 @@
+ 
+ install: $(SONAME)
+ 	install -d $(libdir)
+-	install -m 755 $(SONAME) $(libdir)
+-	cd $(libdir) && ln -sf $(SONAME) $(SOVERSION) && ln -sf $(SONAME) lib$(LIBNAME).so
++	${BSD_INSTALL_DATA} $(SONAME) $(INSTDIR)/lib
++	cd $(INSTDIR)/lib ; ln -sf $(SONAME) $(INSTDIR)/lib/lib$(LIBNAME).so
+ 	install -d $(includedir)/mba
+-	install -m 444 $(HDRS) $(includedir)/mba
++	${BSD_INSTALL_DATA} $(HDRS) $(includedir)/mba
+ 	install -d $(mandir)/man3
+-	install -m 444 docs/man/* $(mandir)/man3
+-	-/sbin/ldconfig $(libdir)
++	${BSD_INSTALL_MAN} docs/man/* $(mandir)/man3
+ 
+ clean:
+ 	rm -rf $(includedir)/mba
