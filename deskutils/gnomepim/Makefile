@@ -27,7 +27,7 @@ USE_LIBTOOL=	yes
 
 CPPFLAGS=	-I${LOCALBASE}/include
 LIBS=		-L${LOCALBASE}/lib
-.if !defined(WITHOUT_PILOT)
+.if defined(WITHOUT_PILOT)
 CONFIGURE_ARGS=	--without-pisock --disable-pilotlinktest
 .else
 CPPFLAGS+=	-I${LOCALBASE}/pilot/include
