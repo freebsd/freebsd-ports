@@ -3,7 +3,7 @@
 # Date created:				26 June 1996
 # Whom:					gpalmer
 #
-# $Id: Makefile,v 1.24 1999/04/06 19:00:36 fenner Exp $
+# $Id: Makefile,v 1.25 1999/04/07 16:07:40 kuriyama Exp $
 #
 
 DISTNAME=	ucd-snmp-3.6.1
@@ -69,4 +69,3 @@ post-install:
 .include <bsd.port.post.mk>
 
 CFLAGS=		-g
-
