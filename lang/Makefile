@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.103 1998/07/04 19:22:50 steve Exp $
+# $Id: Makefile,v 1.104 1998/07/12 21:59:15 hsu Exp $
 #
 
     SUBDIR += Gofer
@@ -58,6 +58,7 @@
     SUBDIR += schemetoc
     SUBDIR += scm
     SUBDIR += smalltalk
+    SUBDIR += sml-nj
     SUBDIR += squeak
     SUBDIR += sr
     SUBDIR += swi-pl
