@@ -3,7 +3,7 @@
 # Date created:			So   2 Mär 1997 18:10:49 MET
 # Whom:				Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.6 1997/07/18 05:04:19 asami Exp $
+# $Id: Makefile,v 1.7 1997/10/13 21:06:15 andreas Exp $
 #
 
 DISTNAME=	wwwstat-2.01
@@ -16,7 +16,7 @@ PATCHFILES=	patch-2.01.txt
 
 MAINTAINER=	andreas@FreeBSD.ORG
 
-RUN_DEPENDS=	${PREFIX}/etc/apache/srm.conf:${PORTSDIR}/www/apache
+RUN_DEPENDS=    ${PREFIX}/etc/apache/srm.conf:${PORTSDIR}/www/apache13
 
 USE_PERL5=	yes
 DIST_SUBDIR=	wwwstat
