@@ -9,22 +9,14 @@
 
 PORTNAME=	invitation_to_ruby
 PORTVERSION=	1.0.0
-#PORTEPOCH=
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.one.net/pub/users/jweirich/talks/
-#MASTER_SITE_SUBDIR=
-#PKGNAMEPREFIX=
-#PKGNAMESUFFIX=
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	trevor
 DISTNAME=	invitationtoruby
 EXTRACT_SUFX=	.tgz
-#DISTFILES=
-#DIST_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}
-#EXTRACT_ONLY=
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	A talk given by Jim Weirich, a brief introduction to Ruby
-DEPRECATED=	"no longer available in original form from any website"
-EXPIRATION_DATE=	"April 09, 2004"
 
 NO_BUILD=	yes
 
@@ -34,12 +26,10 @@ PLIST=		${WRKDIR}/plist
 
 pre-install:
 	${RM} -f ${PLIST}
-	${ECHO_CMD} "@comment files" >> ${PLIST}
-	cd ${WRKSRC}; ${FIND} . -type f | cut -c2- \
+	cd ${WRKSRC}; ${FIND} * -type f \
 		| ${SED} 's|^|${DOCSDIR:S,${PREFIX}/,,}|' \
 		| ${SORT} >> ${PLIST}
-	${ECHO_CMD} "@comment directories" >> ${PLIST}
-	cd ${WRKSRC}; ${FIND} . -type d | cut -c2- \
+	cd ${WRKSRC}; ${FIND} * -type d \
 		| ${SED} 's|^|@dirrm ${DOCSDIR:S,${PREFIX}/,,}|' \
 		| ${SORT} -r >> ${PLIST}
 
