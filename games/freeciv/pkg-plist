@@ -126,8 +126,8 @@ share/freeciv/nation/viking.ruleset
 share/freeciv/nation/welsh.ruleset
 share/freeciv/nation/zulu.ruleset
 share/freeciv/scenario/british-isles-85x80-v2.80.sav
-share/freeciv/scenario/earth-80x50-v2.sav
 share/freeciv/scenario/earth-160x90-v2.sav
+share/freeciv/scenario/earth-80x50-v2.sav
 share/freeciv/scenario/europe-200x100-v2.sav
 share/freeciv/scenario/hagworld-120x60-v1.2.sav
 share/freeciv/scenario/iberian-peninsula-136x100-v1.0.sav
@@ -164,12 +164,51 @@ share/locale/pt_BR/LC_MESSAGES/freeciv.mo
 share/locale/ro/LC_MESSAGES/freeciv.mo
 share/locale/ru/LC_MESSAGES/freeciv.mo
 share/locale/sv/LC_MESSAGES/freeciv.mo
+share/locale/uk/LC_MESSAGES/freeciv.mo
+@unexec rmdir %D/share/locale/da/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/da 2>/dev/null || true
+@unexec rmdir %D/share/locale/de/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/de 2>/dev/null || true
+@unexec rmdir %D/share/locale/en_GB/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/en_GB 2>/dev/null || true
+@unexec rmdir %D/share/locale/es/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/es 2>/dev/null || true
+@unexec rmdir %D/share/locale/et/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/et 2>/dev/null || true
+@unexec rmdir %D/share/locale/fi/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/fi 2>/dev/null || true
+@unexec rmdir %D/share/locale/fr/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/fr 2>/dev/null || true
+@unexec rmdir %D/share/locale/hu/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/hu 2>/dev/null || true
+@unexec rmdir %D/share/locale/it/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/it 2>/dev/null || true
+@unexec rmdir %D/share/locale/ja/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/ja 2>/dev/null || true
+@unexec rmdir %D/share/locale/nl/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/nl 2>/dev/null || true
+@unexec rmdir %D/share/locale/no/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/no 2>/dev/null || true
+@unexec rmdir %D/share/locale/pl/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/pl 2>/dev/null || true
+@unexec rmdir %D/share/locale/pt/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/pt 2>/dev/null || true
+@unexec rmdir %D/share/locale/pt_BR/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/pt_BR 2>/dev/null || true
+@unexec rmdir %D/share/locale/ro/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/ro 2>/dev/null || true
+@unexec rmdir %D/share/locale/ru/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/ru 2>/dev/null || true
+@unexec rmdir %D/share/locale/sv/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/sv 2>/dev/null || true
+@unexec rmdir %D/share/locale/sk/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/sk 2>/dev/null || true
 @dirrm share/freeciv/trident
 @dirrm share/freeciv/scenario
 @dirrm share/freeciv/nation
 @dirrm share/freeciv/misc
-@dirrm share/freeciv/history
 @dirrm share/freeciv/isotrident
+@dirrm share/freeciv/history
 @dirrm share/freeciv/default
 @dirrm share/freeciv/civ2
 @dirrm share/freeciv/civ1

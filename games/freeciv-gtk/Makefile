@@ -6,11 +6,11 @@
 #
 
 PKGNAMESUFFIX=	-gtk
-MASTERDIR=	${.CURDIR}/../freeciv
 
-MAINTAINER=	adam-ports@blacktabby.org
 COMMENT=	A civilisation clone for X11 using GNOME; multiplayer
 
-USE_GNOME=	gtk12
+MASTERDIR=	${.CURDIR}/../freeciv
+
+WITH_GTK=	yes
 
 .include "${MASTERDIR}/Makefile"
