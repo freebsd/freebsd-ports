@@ -1,0 +1,33 @@
+--- crypto/des/Makefile.ssl.bak	Thu Oct 17 10:21:30 2002
++++ crypto/des/Makefile.ssl	Thu Oct 17 10:31:20 2002
+@@ -32,14 +32,14 @@
+ 	fcrypt.c ofb64enc.c ofb_enc.c  pcbc_enc.c \
+ 	qud_cksm.c rand_key.c read_pwd.c rpc_enc.c  set_key.c  \
+ 	des_enc.c fcrypt_b.c read2pwd.c \
+-	xcbc_enc.c \
++	xcbc_enc.c rnd_keys.c \
+ 	str2key.c  cfb64ede.c ofb64ede.c ede_cbcm_enc.c
+ 
+ LIBOBJ= set_key.o  ecb_enc.o  cbc_enc.o \
+ 	ecb3_enc.o cfb64enc.o cfb64ede.o cfb_enc.o  ofb64ede.o \
+ 	enc_read.o enc_writ.o ofb64enc.o \
+ 	ofb_enc.o  str2key.o  pcbc_enc.o qud_cksm.o rand_key.o \
+-	${DES_ENC} read2pwd.o \
++	${DES_ENC} read2pwd.o rnd_keys.o \
+ 	fcrypt.o xcbc_enc.o read_pwd.o rpc_enc.o  cbc_cksm.o \
+ 	ede_cbcm_enc.o
+ 
+--- crypto/des/des.h.bak	Thu Oct 17 10:25:47 2002
++++ crypto/des/des.h	Thu Oct 17 10:30:00 2002
+@@ -200,6 +200,11 @@
+ DES_LONG des_quad_cksum(const unsigned char *input,des_cblock output[],
+ 			long length,int out_count,des_cblock *seed);
+ void des_random_seed(des_cblock *key);
++
++int des_new_random_key(des_cblock *key);
++void des_init_random_number_generator(des_cblock *seed);
++void des_rand_data(unsigned char *data, int size);
++
+ int des_random_key(des_cblock *ret);
+ int des_read_password(des_cblock *key,const char *prompt,int verify);
+ int des_read_2passwords(des_cblock *key1,des_cblock *key2,

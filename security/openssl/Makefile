@@ -7,6 +7,7 @@
 
 PORTNAME=	openssl
 PORTVERSION=	0.9.6g
+PORTREVISION=	1
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.openssl.org/source/ \
 		ftp://ftp.openssl.org/source/ \
@@ -46,13 +47,14 @@ SHLIBVER=	2
 OPENSSLDIR=	/etc/ssl
 MANPREFIX=	${PREFIX}/openssl
 PLIST_SUB+=	MANDIR=""
+PLIST_SUB+=	NOBASE="@comment "
 .else
 OPENSSLDIR=	${PREFIX}/openssl
 MANPREFIX=	${PREFIX}
 PLIST_SUB+=	MANDIR="@comment "
+PLIST_SUB+=	NOBASE=""
 .endif
 
-MANPREFIX=	${PREFIX}
 MAKE_ENV+=	MANPREFIX=${MANPREFIX}
 
 MAN1=		CA.pl.1 asn1parse.1 ca.1 ciphers.1 crl.1 crl2pkcs7.1 dgst.1 \
@@ -135,6 +137,13 @@ EXTRACONFIGURE=	386
 .endif
 
 do-configure:
+.if exists(/usr/src/crypto/openssl/crypto/des/rnd_keys.c)
+	${CP} /usr/src/crypto/openssl/crypto/des/rnd_keys.c \
+		${WRKSRC}/crypto/des/rnd_keys.c
+.else
+	${CP} ${FILESDIR}/rnd_keys.c \
+		${WRKSRC}/crypto/des/rnd_keys.c
+.endif
 	@cd ${WRKSRC} \
 	&& ${SETENV} CC="${CC}" CFLAGS="${CFLAGS}" PERL="${PERL}" \
 	./config --prefix=${PREFIX} --openssldir=${OPENSSLDIR} \
