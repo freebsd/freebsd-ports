@@ -20,6 +20,7 @@ LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv \
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CFLAGS="${PTHREAD_CFLAGS}" LDFLAGS="${PTHREAD_LIBS}"
+INFO=		elmo
 MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}" \
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}"
 MAN1=		elmo.1 elmoconf.pl.1
@@ -33,11 +34,7 @@ pre-extract:
 	@sleep 10
 
 pre-install:
-	${ECHO_CMD} @unexec install-info --delete %D/info/elmo.info %D/info/dir\
-		> ${PLIST}
-	${ECHO_CMD} @exec install-info --info-dir=%D/info %D/info/elmo.info \
-		>> ${PLIST}
-	${ECHO_CMD} info/elmo.info >> ${PLIST}
+	${RM} -f ${PLIST}
 .for ii in elmo elmoconf.pl
 	${ECHO_CMD} bin/${ii} >> ${PLIST}
 .endfor
