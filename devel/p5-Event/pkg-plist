@@ -1,20 +1,20 @@
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Event/.packlist
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Event.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Event.pod
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Event/EventAPI.h
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Event/MakeMaker.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Event/Watcher.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Event/group.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Event/idle.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Event/io.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Event/signal.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Event/timer.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Event/type.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Event/typemap
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Event/var.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Event/Event.bs
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Event/Event.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Event/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/Event.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Event.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Event/EventAPI.h
+%%SITE_PERL%%/%%PERL_ARCH%%/Event/MakeMaker.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Event/Watcher.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Event/group.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Event/idle.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Event/io.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Event/signal.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Event/timer.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Event/type.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Event/typemap
+%%SITE_PERL%%/%%PERL_ARCH%%/Event/var.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Event/Event.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Event/Event.so
 %%PORTDOCS%%%%DOCSDIR%%/Tutorial.pdf
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Event 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Event 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Event 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Event 2>/dev/null || true
