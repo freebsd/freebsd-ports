@@ -7,7 +7,7 @@
 
 PORTNAME=	gphoto2
 PORTVERSION=	2.1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.gphoto.net/dist/
@@ -17,7 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext \
-		usb-0.1.5:${PORTSDIR}/devel/libusb \
+		usb-0.1.7:${PORTSDIR}/devel/libusb \
 		aa.1:${PORTSDIR}/graphics/aalib \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		exif.8:${PORTSDIR}/graphics/libexif
