@@ -5170,6 +5170,7 @@ p5-DateTime-Calendar-Mayan	ports/devel/p5-DateTime-Calendar-Mayan
 p5-DateTime-Event-Cron	ports/devel/p5-DateTime-Event-Cron
 p5-DateTime-Event-Easter	ports/devel/p5-DateTime-Event-Easter
 p5-DateTime-Event-ICal	ports/devel/p5-DateTime-Event-ICal
+p5-DateTime-Event-NameDay	ports/devel/p5-DateTime-Event-NameDay
 p5-DateTime-Event-Recurrence	ports/devel/p5-DateTime-Event-Recurrence
 p5-DateTime-LeapSecond	ports/devel/p5-DateTime-LeapSecond
 p5-DateTime-Precise	ports/devel/p5-DateTime-Precise
