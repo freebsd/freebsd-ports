@@ -1,0 +1,5 @@
+ezmlm-web provides a convinient, GUI method for users to configure and
+maintain ezmlm-idx mailing lists. It allows one to create, reconfigure and
+delete mailing lists, as well as manage subscriber lists. It supports all
+the features of ezmlm-idx 4.0, and has full support for virtual domains,
+multiple access levels. It can also be configured to use different languages.

@@ -1,0 +1,13 @@
+
+NB!! By default no security is enabled on ezmlm-web.
+
+The effectively means that at the moment, anyone can go to
+  http://<your host>/cgi-bin/ezmlm-web
+and alter any of your primary mailing lists.
+
+If this is not what you want (and it probably isn't :), you need to
+either create a <File> directive in you apache configuration, or
+use a .htaccess file, or provide some other means of security.
+
+Have a look at the README file in %%PREFIX%%/share/ezmlm-web for
+more information. There are also some sample files there.

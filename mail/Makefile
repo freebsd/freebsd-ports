@@ -23,6 +23,7 @@
     SUBDIR += exmh2
     SUBDIR += ezmlm
     SUBDIR += ezmlm-idx
+    SUBDIR += ezmlm-web
     SUBDIR += faces
     SUBDIR += fetchmail
     SUBDIR += gbuffy
