@@ -1,11 +1,26 @@
---- configure.orig	Sat Sep 18 15:51:47 1999
-+++ configure	Sat Sep 18 15:54:47 1999
-@@ -1727,7 +1727,7 @@
+--- configure.orig	Thu Oct 10 19:57:27 1996
++++ configure	Sun Mar 28 22:54:44 2004
+@@ -1604,7 +1604,7 @@
+ 	        # Greg figured out how to use gcc instead of ld..
+ 		# -lgcc can be found in /usr/lib/gcc-lib/i486-linux/2.7.0/
+ 		# or something similar.
+-	        SHLIB_LD_CXX="-Bstatic -lg++ -lstdc++ -lgcc"
++	        SHLIB_LD_CXX="-lg++ -lstdc++ -lgcc"
+ 		DL_OBJS="tclLoadDld.o"
+ 		DL_LIBS="-ldld"
+ 		LD_FLAGS=""
+@@ -1727,12 +1727,12 @@
  if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
    echo "$ac_t""yes" 1>&6
    
 -		SHLIB_LD_CXX="-Bstatic -lg++ -lstdc++ -lgcc 2> /dev/null"
-+		SHLIB_LD_CXX="-Bstatic -lstdc++ -lgcc 2> /dev/null"
++		SHLIB_LD_CXX="-lstdc++ -lgcc 2> /dev/null"
  	
  else
    echo "$ac_t""no" 1>&6
+ 
+-		SHLIB_LD_CXX="-Bstatic -lg++ -lgcc 2> /dev/null"
++		SHLIB_LD_CXX="-lg++ -lgcc 2> /dev/null"
+ 	
+ fi
+ 
