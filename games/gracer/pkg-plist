@@ -1,4 +1,5 @@
 bin/gracer
+share/gracer/courses/cliff.jpg
 share/gracer/courses/course1.grc
 share/gracer/courses/course1.grs
 share/gracer/courses/course2.grc
@@ -7,17 +8,25 @@ share/gracer/courses/course3.grc
 share/gracer/courses/course3.grs
 share/gracer/courses/course4.grc
 share/gracer/courses/course4.grs
+share/gracer/courses/course5.grc
+share/gracer/courses/course5.grs
 share/gracer/courses/grass.jpg
 share/gracer/courses/road.jpg
+share/gracer/courses/road2.jpg
+share/gracer/images/icon.xpm
+share/gracer/images/mini-icon.xpm
 share/gracer/license
+share/gracer/scenes/cement.png
 share/gracer/scenes/font.grs
+share/gracer/scenes/grass.png
 share/gracer/scenes/panel.grs
+share/gracer/scenes/rock.png
 share/gracer/scenes/sky.grs
 share/gracer/scenes/sky.jpg
 share/gracer/scripts/cache.tcl
 share/gracer/scripts/glut.tcl
-share/gracer/scripts/hiscore.tcl
 share/gracer/scripts/gr.tcl
+share/gracer/scripts/hiscore.tcl
 share/gracer/scripts/init.tcl
 share/gracer/scripts/postinit.tcl
 share/gracer/scripts/timestamp.tcl
@@ -66,5 +75,6 @@ share/gracer/vehicles/s2000/sbmu.dat
 @dirrm share/gracer/sounds
 @dirrm share/gracer/scripts
 @dirrm share/gracer/scenes
+@dirrm share/gracer/images
 @dirrm share/gracer/courses
 @dirrm share/gracer
