@@ -3567,6 +3567,7 @@ kronolith	ports/deskutils/kronolith
 krss		ports/deskutils/krss
 krusader	ports/x11-fm/krusader
 kseg		ports/math/kseg
+ksetisaver	ports/astro/ksetisaver
 ksetispy	ports/astro/ksetispy
 ksetiwatch	ports/astro/ksetiwatch
 ksh93		ports/shells/ksh93
