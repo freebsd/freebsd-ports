@@ -1,5 +1,3 @@
-# ex:ts=8
-#
 # New ports collection makefile for:	leo
 # Date created:			2002/11/17
 # Whom:				Alan Eldridge <ports@geeksrus.net>
@@ -8,110 +6,43 @@
 #
 
 PORTNAME=	leo
-PORTVERSION=	3.11.1
-CATEGORIES=	editors
+PORTVERSION=	3.12.b1
+CATEGORIES=	editors python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTFILES=	${DISTNAME}.zip ${SBOOKFILE} \
-	${EXAMPLESFILES} ${WEBDOCSFILE} ${LEODOCSFILE}
-DIST_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/-beta-/}
+DIST_SUBDIR=	leo
 
 MAINTAINER=	sergei@kolobov.com
-COMMENT=	An advanced outline editor
+COMMENT=	Advanced outline editor for programmers
 
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
+RUN_DEPENDS=	${TKINTER}:${PORTSDIR}/x11-toolkits/py-tkinter
 
 USE_ZIP=	yes
 USE_PYTHON=	yes
-NO_BUILD=	yes
+TKINTER=	${PYTHON_SITELIBDIR}/_tkinter.so
 
-.include <bsd.port.pre.mk>
+WRKSRC=		${WRKDIR}/${DISTNAME:S/-beta-/\ beta\ /}
+LEO_DIR=	${PYTHONPREFIX_SITELIBDIR}/leo
+DOCS=		doc/LICENSE.TXT doc/README.TXT
 
-ICONSDIR=	${LOCALBASE}/share/icons
-DESKTOPDIR=	${LOCALBASE}/share/applnk
-
-SBOOK=		SbooksLeo
-SBOOKFILE=	${SBOOK}.zip
-SBOOKDIR=	${DOCSDIR}/${SBOOK}
-
-EXAMPLES=	cweb.leo noweb.leo python.leo tkinter.leo
-EXAMPLESFILES=	${EXAMPLES:S|leo$|leo.zip|}
-
-WEBDOCS=	LeoWeb
-WEBDOCSFILE=	leodocs.zip
-WEBDOCSDIR=	${DOCSDIR}/${WEBDOCS}
-
-LEODOCS=	LeoDocs
-LEODOCSFILE=	LeoDocs.zip
-LEODOCSDIR=	${DOCSDIR}/${LEODOCS}
-
-PLIST=		${WRKDIR}/plist
-
-BINDIR=		${PREFIX}/bin
-DATADIR=	${PREFIX}/share
-ETCDIR=		${PREFIX}/etc
-LIBDIR=		${PREFIX}/lib
-PKGDATADIR=	${DATADIR}/${DISTNAME}
-
-BIN_SUBDIR=		${BINDIR:S|^${PREFIX}/||}
-DATA_SUBDIR=		${DATADIR:S|^${PREFIX}/||}
-DOCS_SUBDIR=		${DOCSDIR:S|^${PREFIX}/||}
-ETC_SUBDIR=		${ETCDIR:S|^${PREFIX}/||}
-EXAMPLES_SUBDIR=	${EXAMPLESDIR:S|^${PREFIX}/||}
-LIB_SUBDIR=		${LIBDIR:S|^${PREFIX}/||}
-PKGDATA_SUBDIR=		${PKGDATADIR:S|^${PREFIX}/||}
-
-.if defined(NOPORTDOCS)
-ALL_SUBDIRS=	${PKGDATA_SUBDIR}
-.else
-ALL_SUBDIRS=	${PKGDATA_SUBDIR} ${DOCS_SUBDIR} ${EXAMPLES_SUBDIR}
-.endif # defined(NOPORTDOCS)
-
-CPIO?=	/usr/bin/cpio
-SORT?=	/usr/bin/sort
+do-build:
+	${SED} -e 's|@PKGDATADIR@|${LEO_DIR}/src|' ${FILESDIR}/leo.in \
+		> ${WRKDIR}/leo
 
 do-install:
-# install dist
-	${MKDIR} ${PKGDATADIR}
-	cd ${WRKDIR}; ${FIND} ${DISTNAME} \
-		| ${CPIO} -pdmv -R ${LIBOWN}:${LIBGRP} ${DATADIR}
-# fix dist perms
-	${FIND} ${PKGDATADIR} -type f | ${XARGS} ${CHMOD} ${LIBMODE}
+	${INSTALL_SCRIPT} ${WRKDIR}/leo ${PREFIX}/bin/leo
+	@${MKDIR} ${LEO_DIR}
+.for dir in Icons config plugins src
+	@${MKDIR} ${LEO_DIR}/${dir}
+	${INSTALL_DATA} ${WRKSRC}/${dir}/* ${LEO_DIR}/${dir}
+.endfor
+	@${RM} -f ${LEO_DIR}/Icons/*.bmp ${LEO_DIR}/Icons/*.ico
 .if !defined(NOPORTDOCS)
-# install tutorial
-	${MKDIR} ${SBOOKDIR}
-	cd ${WRKDIR}/${SBOOK}; ${FIND} . \
-		| ${CPIO} -pdmv -R ${DOCOWN}:${DOCGRP} ${SBOOKDIR}
-# install web docs
-	${MKDIR} ${WEBDOCSDIR}
-	cd ${WRKDIR}/${WEBDOCS}; ${FIND} . \
-		| ${CPIO} -pdmv -R ${DOCOWN}:${DOCGRP} ${WEBDOCSDIR}
-# install LeoDocs.zip
-	${MKDIR} ${LEODOCSDIR}
-	cd ${WRKDIR}; ${ECHO_CMD} LeoDocs.leo \
-		| ${CPIO} -pdmv -R ${DOCOWN}:${DOCGRP} ${LEODOCSDIR}
-# fix docs perms
-	${FIND} ${DOCSDIR} -type f -print0 | ${XARGS} -0 ${CHMOD} ${DOCMODE}
-# install examples
-	${MKDIR} ${EXAMPLESDIR}
-	cd ${WRKDIR}; ${INSTALL_DATA} ${EXAMPLES} ${EXAMPLESDIR}
-.endif # !defined(NOPORTDOCS)
-# fix dir perms
-	cd ${PREFIX}; ${FIND} ${ALL_SUBDIRS} -type d -print0 \
-		| ${XARGS} -0 ${CHMOD} ${BINMODE}
-# create start script
-	${SED} -e 's|@PKGDATADIR@|${PKGDATADIR}|' \
-		<${FILESDIR}/leo.in >${BINDIR}/leo
-	${CHMOD} ${BINMODE} ${BINDIR}/leo
-	${CHOWN} ${BINOWN}:${BINGRP} ${BINDIR}/leo
-# build plist: bin
-	${ECHO_CMD} "${BIN_SUBDIR}/leo" >${PLIST}
-# build plist: files
-	cd ${PREFIX}; ${FIND} ${ALL_SUBDIRS} -type f \
-		| ${SORT} >>${PLIST}
-# build plist: dirs
-	cd ${PREFIX}; ${FIND} ${ALL_SUBDIRS} -type d \
-		| ${SORT} -r | ${SED} -e 's|^|@dirrm |' >>${PLIST}
+	@${MKDIR} ${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
+	@${MKDIR} ${LEO_DIR}/doc
+	${INSTALL_DATA} ${WRKSRC}/doc/LeoDocs.leo ${LEO_DIR}/doc
+.endif
 
-.include <bsd.port.post.mk>
-#EOF
+.include <bsd.port.mk>
