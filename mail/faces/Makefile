@@ -4,13 +4,12 @@
 # Whom:			Lars Koeller <Lars_Koeller@odie.physik2.uni-rostock.de>
 #			Andreas Klemm <andreas@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.4 1997/07/17 15:12:51 max Exp $
+# $Id: Makefile,v 1.5 1997/11/17 18:47:53 max Exp $
 #
 
 DISTNAME=	faces-1.6.1
 CATEGORIES=	mail
-MASTER_SITES=	ftp://ftp.cs.indiana.edu/pub/faces/faces/ \
-		ftp://odie.physik2.uni-rostock.de/pub/
+MASTER_SITES=	ftp://ftp.cs.indiana.edu/pub/faces/faces/
 EXTRACT_SUFX=	.tar.Z
 		
 MAINTAINER=	Lars.Koeller@Uni-Bielefeld.DE
