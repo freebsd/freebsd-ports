@@ -6,7 +6,7 @@
 #
 
 PORTNAME=       ettercap
-PORTVERSION=	0.4.0
+PORTVERSION=	0.4.2
 CATEGORIES=     net
 MASTER_SITES=   http://ettercap.sourceforge.net/download/
 
