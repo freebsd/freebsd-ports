@@ -3,7 +3,7 @@
 # Date created:		23 Nov 1996
 # Whom:			Mita Yoshio <mita@jp.FreeBSD.org>
 #
-# $Id: Makefile,v 1.3 1997/01/01 15:40:14 torstenb Exp $
+# $Id: Makefile,v 1.4 1997/01/03 01:38:33 max Exp $
 #
 
 DISTNAME=	ghostscript-4.03
@@ -12,7 +12,8 @@ CATEGORIES=	japanese print
 MASTER_SITES=	ftp://ftp.cs.wisc.edu/ghost/aladdin/ \
 		ftp://i1nws2.fukui-u.ac.jp/pub/TeX/dvipr/ \
 		ftp://ftp.mei.co.jp/free/gnu/util/ghostscript/drivers/ \
-		ftp://freefall.freebsd.org/pub/FreeBSD/LOCAL_PORTS/
+		ftp://freefall.freebsd.org/pub/FreeBSD/LOCAL_PORTS/ \
+		http://www.jp.FreeBSD.org/~mita/LOCAL_PORTS/
 DISTFILES=	${GS_SOURCES} ${GS_DRIVERS} ${GS_FONTS_STD} ${GS_FONTS_OTHER}
 
 MAINTAINER=	mita@jp.FreeBSD.org
@@ -32,8 +33,8 @@ GS_SOURCES=	ghostscript-4.03.tar.gz
 GS_SOURCES+=	ghostscript-4.03gnu.tar.gz
 GS_DRIVERS=	gs4.03-vflib.tar.gz
 GS_DRIVERS+=	gdevlips4-1.0.1.tar.gz
-GS_DRIVERS+=	gdevbitps-1.0.tar.gz
 GS_DRIVERS+=	gdevmjc-0.7.tar.gz
+GS_DRIVERS+=	gdevrpdl.tar.gz
 #  Note: the following two are real files that have symlinks with
 #  later version numbers pointing to them.  To avoid unnecessarily
 #  downloading distfiles, do not change these when upgrading the port
@@ -54,22 +55,22 @@ pre-patch:
 post-patch:
 	@( mkdir ${PRINTER} ; \
 	  cd ${PRINTER} ; \
-	  tar xzf ${DISTDIR}/gdevbitps-1.0.tar.gz ; \
 	  ${PATCH} -p0 < ${FILESDIR}/gdevep82.patch >/dev/null 2>&1 ; \
 	  tar xzf ${DISTDIR}/gdevlips4-1.0.1.tar.gz ; \
 	  tar xzf ${DISTDIR}/gdevmjc-0.7.tar.gz ; \
+	  tar xzf ${DISTDIR}/gdevrpdl.tar.gz ; \
 	  ${CP} gdevmjc-0.7/gdevmjc.c gdevmjc-0.7/mjc.dev ${WRKSRC}; \
 	  ${CP} gdevlips4-1.0.1/gdevlips4.c gdevlips4-1.0.1/gdevlips4.mak ${WRKSRC}; \
 	  ${CP} gdevep82/gdevep82.c gdevep82/gdevep82.mak ${WRKSRC}; \
-	  ${CP} gdevbitps/gdevbitps.c gdevbitps/bitps4.03.mak ${WRKSRC}; \
+	  ${CP} gdevrpdl/gdevrpdl.c gdevrpdl/gdevrpdl.mak ${WRKSRC}; \
 	  )
 	@${PATCH} ${PATCH_ARGS} < ${FILESDIR}/gdevlips4.mak.patch
 	@${PATCH} ${PATCH_ARGS} < ${FILESDIR}/gdevlips4.c.patch
 	@${PATCH} ${PATCH_ARGS} < ${FILESDIR}/mjc.dev.patch
 	@${PATCH} ${PATCH_ARGS} < ${FILESDIR}/gdevmjc.c.patch
-	@${CAT} ${WRKSRC}/bitps4.03.mak >> ${WRKSRC}/unix-gcc.mak
 	@${CAT} ${WRKSRC}/gdevep82.mak >> ${WRKSRC}/unix-gcc.mak
 	@${CAT} ${WRKSRC}/gdevlips4.mak >> ${WRKSRC}/unix-gcc.mak
+	@${CAT} ${WRKSRC}/gdevrpdl.mak >> ${WRKSRC}/unix-gcc.mak
 	@${CAT} ${WRKSRC}/mjc.dev >> ${WRKSRC}/unix-gcc.mak
 
 
@@ -89,7 +90,6 @@ pre-install:
 post-install:
 	@strip ${PREFIX}/bin/gs
 	@( \
-	  ${CP} ${PRINTER}/gdevbitps/gdevbitps.jis ${DOC_DIR} ; \
 	  ${CP} ${PRINTER}/gdevep82/gdevep82.jis ${DOC_DIR} ; \
 	  ${CP} ${PRINTER}/gdevlips4-1.0.1/Readme ${DOC_DIR}/gdevlips4.euc ; \
 	  ${CP} ${PRINTER}/gdevmjc-0.7/README.jis ${DOC_DIR}/gdevmjc.jis ; \
