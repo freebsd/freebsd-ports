@@ -93,10 +93,11 @@ CONFIGURE_ARGS+=	--with-dbm=sdbm
 
 .if defined(WITH_THREADS)
 CONFIGURE_ARGS+=	--enable-threads
-CFLAGS+=		-DFREEBSD_THREAD_HACK
 .   if ${WITH_PTHREAD_LIBS} != "c_r" && ${OSVERSION} > 500023
 CONFIGURE_ENV+=		apr_cv_pthreads_lib=-l${WITH_PTHREAD_LIBS} \
 			apr_cv_pthreads_cflags=${WITH_PTHREAD_CFLAGS}
+.  else
+CFLAGS+=		-DFREEBSD_THREAD_HACK
 .   endif
 .endif
 
