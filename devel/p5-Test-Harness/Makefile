@@ -7,6 +7,7 @@
 
 PORTNAME=	Test-Harness
 PORTVERSION=	2.38
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Test
@@ -17,6 +18,7 @@ COMMENT=	Run perl standard test scripts with statistics
 
 PERL_CONFIGURE=	yes
 
+MAN1=		prove.1
 MAN3=		Test::Harness.3 Test::Harness::Assert.3 \
 		Test::Harness::Iterator.3 Test::Harness::Straps.3
 
