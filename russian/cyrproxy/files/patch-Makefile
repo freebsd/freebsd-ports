@@ -1,0 +1,35 @@
+--- Makefile.orig	Fri Feb  9 04:33:53 2001
++++ Makefile	Sat Mar  6 18:25:24 2004
+@@ -65,7 +65,7 @@
+ 
+ 
+ subdirmake:
+-	@for i in ${SUBDIRS}; do echo "Making all in $$i" ;cd $$i; pmake all; cd ..; done
++	@for i in ${SUBDIRS}; do echo "Making all in $$i" ;cd $$i; make all; cd ..; done
+ 
+ .SUFFIXES: .a .o .c
+ 
+@@ -78,12 +78,12 @@
+ 	rm -f config.gen cyrproxy.config.sample alldefs.h
+ 
+ clean-sub:
+-	@for i in ${SUBDIRS}; do echo "Make clean in $$i" ; cd $$i; pmake clean; cd .. ; done
++	@for i in ${SUBDIRS}; do echo "Make clean in $$i" ; cd $$i; make clean; cd .. ; done
+ 
+ install: install-bin install-config install-tables install-sub
+ 
+ install-sub:
+-	@for i in ${SUBDIRS} ; do cd $$i ; pmake install; cd ..; done
++	@for i in ${SUBDIRS} ; do cd $$i ; make install; cd ..; done
+ 
+ install-bin: ${CYRPROXY} ${SPY}
+ 	cp ${CYRPROXY} ${BINDIR}
+@@ -128,7 +128,7 @@
+ 	awk '/^\#/{print $0}' <policy.h >alldefs.h
+ 
+ config.gen: cyrproxy.conf.tmpl Makefile alldefs.h
+-	${CC}  ${CFLAGS} -P -E - < cyrproxy.conf.tmpl | awk -f extranl.awk >config.gen
++	${CC}  ${CFLAGS} -P -E - < cyrproxy.conf.tmpl | awk -f extranl.awk | sed 's,^%,#,' >config.gen
+ 
+ ${CYRPROXY}: ${OBJS}
+ 	${CC} ${CFLAGS} ${LDFLAGS} -o ${CYRPROXY} ${OBJS} ${EXTRALIBS}

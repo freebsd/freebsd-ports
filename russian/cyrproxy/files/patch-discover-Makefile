@@ -1,0 +1,15 @@
+--- discover/Makefile.orig	Tue Mar 26 02:24:35 1996
++++ discover/Makefile	Sat Mar  6 18:37:20 2004
+@@ -1,9 +1,9 @@
+ # $Id: Makefile,v 1.1 1996/03/25 20:24:35 lexa Exp $
+ 
+-CC=gcc
+-CFLAGS=
++CC?=gcc
++CFLAGS?=
+ BINARY=encdiscover
+-UTILDIR?=/usr/local/bin
++UTILDIR?=${PREFIX}/bin
+ BINOWN?=root.wheel
+ BINMODE?=755
+ CHOWN?=/usr/sbin/chown

@@ -1,0 +1,83 @@
+--- cyrproxy.conf.tmpl.orig	Sat May  3 16:37:05 1997
++++ cyrproxy.conf.tmpl	Sat Mar  6 18:23:59 2004
+@@ -1,31 +1,31 @@
+ #include "alldefs.h"
+ 
+-# tabledir - диpектоpия с табличками
+-tabledir /usr/local/share/proxy
++% tabledir - диpектоpия с табличками
++tabledir /usr/local/share/cyrproxy
+ 
+-# encoding name table_from_client table_to_client
+-# none is reserved filename - no encoding
++% encoding name table_from_client table_to_client
++% none is reserved filename - no encoding
+ encoding koi8 NONE NONE 
+ encoding alt  alt-koi8 koi8-alt 
+ encoding win  win-koi8 koi8-win 
+-#encoding iso  iso-koi8 koi8-iso
+-#encoding mac  mac-koi8 koi8-mac
++%encoding iso  iso-koi8 koi8-iso
++%encoding mac  mac-koi8 koi8-mac
+ 
+ 
+-# add MIME charset descriptions for each encoding
+-# emailcharset encoding_name server-charset client-charset
+-#
+-# different charset rules for different clients
+-# can be  described with _several_ encodings with same tables
+-# and different emailcharset strings
+-# 
++% add MIME charset descriptions for each encoding
++% emailcharset encoding_name server-charset client-charset
++%
++% different charset rules for different clients
++% can be  described with _several_ encodings with same tables
++% and different emailcharset strings
++% 
+ emailcharset win koi8-r windows-1251
+ emailcharset alt koi8-r cp866
+ 
+ 
+ 
+ #ifdef TRANSPARENT_HOST
+-#
++%
+ transparenthost ns.lexa.ru
+ #endif
+ 
+@@ -34,24 +34,24 @@
+ 
+ default koi8
+ 
+-# options.
++% options.
+ option port 23 protocol telnet
+ option port 70 protocol gopher
+ option port 8080 protocol http
+ option port 110 protocol pop
+ option port 25  protocol smtp
+ 
+-# option tos  16 protocol telnet
++% option tos  16 protocol telnet
+ 
+-# peer section. 
+-# Syntax:
+-# Peer address encoding
++% peer section. 
++% Syntax:
++% Peer address encoding
+ peer 1.2.3.4 win
+ 
+-# Virtualhost
+-# virtualhost koi8.lexa.ru koi8
++% Virtualhost
++% virtualhost koi8.lexa.ru koi8
+ virtualhost win.lexa.ru  win
+-#virtualhost iso.lexa.ru  iso
++%virtualhost iso.lexa.ru  iso
+ virtualhost dos.lexa.ru  alt
+-# virtualhost mac.lexa.ru  mac
+-# virtualhost 127.0.0.1	 koi8
++% virtualhost mac.lexa.ru  mac
++% virtualhost 127.0.0.1	 koi8
