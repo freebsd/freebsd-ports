@@ -1,8 +1,8 @@
 
 $FreeBSD$
 
---- codecs/lpc10/Makefile.orig	Thu Jan  8 18:52:11 2004
-+++ codecs/lpc10/Makefile	Fri Jan 30 02:06:54 2004
+--- codecs/lpc10/Makefile.orig	Mon Mar 15 18:52:28 2004
++++ codecs/lpc10/Makefile	Wed Apr 14 22:13:47 2004
 @@ -3,7 +3,7 @@
  # 
  
@@ -12,7 +12,7 @@ $FreeBSD$
  
  # 
  # These definitions for CFLAGS and LIB_TARGET_DIR are used when one
-@@ -22,14 +22,14 @@
+@@ -22,7 +22,7 @@
  # 
  
  WARNINGS = -Wall -Wno-comment -Wno-error
@@ -20,12 +20,13 @@ $FreeBSD$
 +CFLAGS += $(OPTIMIZE) -I$(LIB_TARGET_DIR) $(WARNINGS) -fPIC
  #CFLAGS+= $(shell if uname -m | grep -q 86; then echo "-mpentium" ; fi)
  
- #fix for PPC processors
- ifneq ($(OSARCH),Darwin)
+ #fix for PPC processors and ALPHA too
+@@ -30,7 +30,7 @@
  ifneq ($(PROC),ppc)
  ifneq ($(PROC),x86_64)
+ ifneq ($(PROC),alpha)
 -	CFLAGS+= -march=$(PROC)
-+	CFLAGS+= 
++	CFLAGS+=
  endif
  endif
  endif
