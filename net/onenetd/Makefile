@@ -8,7 +8,7 @@
 PORTNAME=	onenetd
 PORTVERSION=	1.10
 CATEGORIES=	net
-MASTER_SITES=	http://azz.us-lot.org/files/
+MASTER_SITES=	http://offog.org/files/
 
 MAINTAINER=	tim@bishnet.net
 COMMENT=	A single-server inetd
