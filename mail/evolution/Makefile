@@ -9,7 +9,8 @@ PORTNAME=	evolution
 PORTVERSION=	1.0.3
 CATEGORIES=	mail gnome
 MASTER_SITES=	${MASTER_SITE_GNOME} \
-		${MASTER_SITE_LOCAL:S,$,:local,}
+		http://people.FreeBSD.org/~sobomax/:local
+#		${MASTER_SITE_LOCAL:S,$,:local,}
 MASTER_SITE_SUBDIR=	stable/sources/evolution \
 			sobomax/:local
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
