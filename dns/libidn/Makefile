@@ -23,6 +23,7 @@ USE_GNOME=		gnomehack
 USE_ICONV=	yes
 USE_LIBTOOL_VER=	13
 USE_PERL5_BUILD=	yes
+USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
@@ -38,6 +39,10 @@ PLIST_SUB+=	EMACS="" EMACSDIR=lib/xemacs
 .else
 PLIST_SUB+=	EMACS="@comment " EMACSDIR=""
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|@image{components}||g' \
+		${WRKSRC}/doc/libidn.texi
 
 post-install:
 .if !defined(NOPORTDOCS)
