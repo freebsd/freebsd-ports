@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	docproj
-PORTVERSION=	1.11
+PORTVERSION=	1.12
 CATEGORIES=	textproc
 MASTER_SITES=	# empty
 DISTFILES=	# empty
+EXTRACT_ONLY=	# empty
 
 MAINTAINER=	doceng@freebsd.org
 COMMENT=	The "meta-port" for the FreeBSD Documentation Project
@@ -17,48 +18,68 @@ COMMENT=	The "meta-port" for the FreeBSD Documentation Project
 # This dependency list should be kept in sync with the list of
 # required ports in src/release/Makefile.inc.docports.
 
-RUN_DEPENDS=	instant:${PORTSDIR}/textproc/sgmlformat \
+RUN_DEPENDS=	links:${PORTSDIR}/www/links1 \
+		pngtopnm:${PORTSDIR}/graphics/netpbm \
+		scr2png:${PORTSDIR}/graphics/scr2png \
+		scr2txt:${PORTSDIR}/textproc/scr2txt \
 		tidy:${PORTSDIR}/www/tidy \
-		${PREFIX}/share/sgml/docbook/dsssl/modular:${PORTSDIR}/textproc/dsssl-docbook-modular \
-		${PREFIX}/share/sgml/html/catalog:${PORTSDIR}/textproc/html \
-		${PREFIX}/share/sgml/linuxdoc:${PORTSDIR}/textproc/linuxdoc \
-		${PREFIX}/share/sgml/docbook/4.1/docbook.dtd:${PORTSDIR}/textproc/docbook-410 \
-		${PREFIX}/share/sgml/iso8879:${PORTSDIR}/textproc/iso8879 \
-		${PREFIX}/share/xml/dtd/xhtml/xhtml.soc:${PORTSDIR}/textproc/xhtml \
-		${PREFIX}/bin/peps:${PORTSDIR}/graphics/peps \
-		${PREFIX}/bin/pngtopnm:${PORTSDIR}/graphics/netpbm \
-		${PREFIX}/bin/links:${PORTSDIR}/www/links1 \
-		${PREFIX}/bin/xsltproc:${PORTSDIR}/textproc/libxslt \
-		${PREFIX}/bin/scr2png:${PORTSDIR}/graphics/scr2png \
-		${PREFIX}/bin/scr2txt:${PORTSDIR}/textproc/scr2txt \
-		${PREFIX}/share/xsl/docbook/html/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl \
-		${PREFIX}/share/xml/docbook/4.2/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml
+		xsltproc:${PORTSDIR}/textproc/libxslt \
+		${LOCALBASE}/share/sgml/docbook/dsssl/modular:${PORTSDIR}/textproc/dsssl-docbook-modular \
+		${LOCALBASE}/share/sgml/html/catalog:${PORTSDIR}/textproc/html \
+		${LOCALBASE}/share/sgml/linuxdoc:${PORTSDIR}/textproc/linuxdoc \
+		${LOCALBASE}/share/sgml/docbook/4.1/docbook.dtd:${PORTSDIR}/textproc/docbook-410 \
+		${LOCALBASE}/share/sgml/iso8879:${PORTSDIR}/textproc/iso8879 \
+		${LOCALBASE}/share/xml/dtd/xhtml/xhtml.soc:${PORTSDIR}/textproc/xhtml \
+		${LOCALBASE}/share/xsl/docbook/html/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl \
+		${LOCALBASE}/share/xml/docbook/4.2/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml
 
-.if defined(WITH_OPENJADE) || ${MACHINE_ARCH} != "i386"
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_OPENJADE) || ${ARCH} != "i386"
 RUN_DEPENDS+=	openjade:${PORTSDIR}/textproc/openjade
 .else
 RUN_DEPENDS+=	jade:${PORTSDIR}/textproc/jade
 .endif
 
-.if !defined(JADETEX)
-IS_INTERACTIVE= "user must set JADETEX variable to 'yes' or 'no'"
+.if defined(JADETEX)
+WITH_JADETEX=	${JADETEX}
+.endif
+WITH_JADETEX?=
+
+.if defined(WITH_JADETEX) && ${WITH_JADETEX} == yes
+RUN_DEPENDS+=	${LOCALBASE}/share/texmf/web2c/jadetex.fmt:${PORTSDIR}/print/jadetex
 .endif
 
-JADETEX?=
+NO_BUILD=		yes
+USE_GHOSTSCRIPT=	yes
+PLIST_FILES=		#empty
 
-.if empty(JADETEX) && (make(build) || make(install))
-.BEGIN:
+WITHOUT_X11=	yes
+DEPENDS_ARGS+=	BATCH=yes WITHOUT_X11=${WITHOUT_X11}
+
+IS_INTERACTIVE=	"user must set WITH_JADETEX variable to 'yes' or 'no'"
+
+message-jadetex:
 	@${CAT} ${FILESDIR}/JADETEX
 	@${FALSE}
-.endif
+message-gs:
+	@${ECHO_MSG} "NOTICE: Define WITH_GHOSTSCRIPT_AFPL=yes to use"
+	@${ECHO_MSG} "        AFPL Postscript interpreter instead of GNU one."
+	@${ECHO_MSG} ""
 
-.if ${JADETEX} == yes
-RUN_DEPENDS+= ${PREFIX}/share/texmf/web2c/jadetex.fmt:${PORTSDIR}/print/jadetex
-.endif
+# generate MINIMALDOCPORTS for src/release/Makefile.inc.docports.
+# (XXX: incomplete yet)
+minimaldocports:
+	@${ECHO_CMD} "MINIMALDOCPORTS= \\"
+	@${MAKE} all-depends-list | ${SED} -e 's,^${PORTSDIR}/,	,' -e 's,$$, \\,'
 
-EXTRACT_ONLY=	# empty
-NO_BUILD=	yes
+.if empty(WITH_JADETEX) && !make(deinstall)
+pre-everything:: message-jadetex
+.endif
+.if !defined(WITH_GHOSTSCRIPT_AFPL) || ${WITH_GHOSTSCRIPT_AFPL} != yes
+pre-everything:: message-gs
+.endif
 
 do-install:	# empty
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

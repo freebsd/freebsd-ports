@@ -6,7 +6,7 @@
 #
 
 PKGNAMESUFFIX=	-jadetex
-JADETEX=	yes
+WITH_JADETEX=	yes
 
 MAINTAINER=	cyrille.lefevre@laposte.net
 
