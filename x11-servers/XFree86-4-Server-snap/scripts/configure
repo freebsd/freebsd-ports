@@ -36,7 +36,7 @@ rm -f $F
 
 # Tk detection
 tkversion=
-for v in 42 80; do
+for v in 42 80 81; do
   if [ -f /usr/local/lib/libtk$v.a ]; then
     tkversion=$v
     case $tkversion in
@@ -49,6 +49,11 @@ for v in 42 80; do
         tclversion=80
         tclLversion=8.0
         tkLversion=8.0
+        ;;
+      81)
+        tclversion=81
+        tclLversion=8.1
+        tkLversion=8.1
         ;;
     esac
   fi
@@ -161,7 +166,7 @@ else
 cat >> $F <<END
 #define XF86SvgaDrivers         nv et4000 et3000 pvga1 gvga ati sis tvga8900 \
                                 cirrus ncr77c22 compaq mga oak al2101 ali \
-                                cl64xx video7 ark mx realtek apm s3v \
+                                cl64xx video7 ark mx realtek apm s3_savage s3v \
                                 s3_svga neo chips cyrix rendition p9x00 \
 				spc8110 i740 tdfx generic
 
