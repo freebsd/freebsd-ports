@@ -3,7 +3,7 @@
 # Date created:				October 20th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.5 1997/05/24 13:17:15 jfitz Exp $
+#   $Id: Makefile,v 1.6 1997/06/24 18:43:19 jfitz Exp $
 #
 
 DISTNAME=	HTML-0.6
@@ -20,7 +20,7 @@ NO_WRKSUBDIR=	YES
 NO_BUILD=	YES
 
 do-install:
-		@ ${MKDIR} -p ${PREFIX}/lib/perl5/site_perl/HTML/
+		@ ${MKDIR} ${PREFIX}/lib/perl5/site_perl/HTML/
 		@ ${INSTALL_DATA} ${WRKDIR}/HTML/Base.pm ${PREFIX}/lib/perl5/site_perl/HTML/
 		@ ${INSTALL_DATA} ${WRKDIR}/html_base.pod ${PREFIX}/lib/perl5/site_perl/
 
