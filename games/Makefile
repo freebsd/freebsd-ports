@@ -299,6 +299,7 @@
     SUBDIR += tetrinet
     SUBDIR += tetrinet-x
     SUBDIR += textmaze
+    SUBDIR += tileworld
     SUBDIR += tinymux
     SUBDIR += tkmoo
     SUBDIR += tksol
