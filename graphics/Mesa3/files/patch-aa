@@ -1,20 +1,20 @@
-*** Makefile.old	Wed Dec  4 01:51:17 1996
---- Makefile	Wed Dec  4 01:53:57 1996
+*** Makefile.old	Wed Jan 29 19:27:49 1997
+--- Makefile	Wed Jan 29 19:28:44 1997
 ***************
-*** 118,123 ****
---- 118,146 ----
-  	cd samples ; $(MAKE) $@
-  	cd book ; $(MAKE) $@
+*** 289,291 ****
+--- 289,318 ----
+  	tar -cvf src.tar $(SRC_FILES) ; \
+  	gzip src.tar
   
 + install:
 + 	install -c -m 444 lib/libMesaGL.a ${X11BASE}/lib
-+ 	install -c -m 444 lib/libMesaGL.so.13.0 ${X11BASE}/lib
++ 	install -c -m 444 lib/libMesaGL.so.2.1 ${X11BASE}/lib
 + 	install -c -m 444 lib/libMesaGLU.a ${X11BASE}/lib
-+ 	install -c -m 444 lib/libMesaGLU.so.13.0 ${X11BASE}/lib
++ 	install -c -m 444 lib/libMesaGLU.so.2.1 ${X11BASE}/lib
 + 	install -c -m 444 lib/libMesaaux.a ${X11BASE}/lib
-+ 	install -c -m 444 lib/libMesaaux.so.13.0 ${X11BASE}/lib
++ 	install -c -m 444 lib/libMesaaux.so.2.1 ${X11BASE}/lib
 + 	install -c -m 444 lib/libMesatk.a ${X11BASE}/lib
-+ 	install -c -m 444 lib/libMesatk.so.13.0 ${X11BASE}/lib
++ 	install -c -m 444 lib/libMesatk.so.2.1 ${X11BASE}/lib
 + 	mkdir -p -m 0775 ${X11BASE}/include/Mesa/GL
 + 	install -c include/glaux.h ${X11BASE}/include/Mesa
 + 	install -c include/gltk.h ${X11BASE}/include/Mesa
@@ -27,19 +27,10 @@
 + 	install -c include/GL/svgamesa.h ${X11BASE}/include/Mesa/GL
 + 	install -c include/GL/wmesa.h ${X11BASE}/include/Mesa/GL
 + 	install -c include/GL/xmesa.h ${X11BASE}/include/Mesa/GL
++ 	mkdir -p -m 0775 ${PREFIX}/share/Mesa
++ 	cp -rp samples ${PREFIX}/share/Mesa
++ 	cp -rp demos ${PREFIX}/share/Mesa
++ 	cp -rp book ${PREFIX}/share/Mesa
++ 	cp -rp widgets-sgi ${PREFIX}/share/Mesa
 + 	ldconfig -m ${X11BASE}/lib
-+ 
-  amiga:
-  	@echo "See the README.AMIGA file for installation information"
-  
---- ./mklib.freebsd.org	Tue Aug 13 19:56:47 1996
-+++ ./mklib.freebsd	Mon Dec 16 19:52:10 1996
-@@ -6,7 +6,7 @@
- # First argument is name of output library
- # Rest of arguments are object files
- 
--VERSION="2.0"
-+VERSION="13.0"
- 
- LIBRARY=$1
- shift 1
++  
