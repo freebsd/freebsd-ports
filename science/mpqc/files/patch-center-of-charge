@@ -1,0 +1,46 @@
+Add a method that return center of charge of the system
+
+--- src/lib/chemistry/molecule/molecule.cc.orig	Wed Apr  3 15:44:33 2002
++++ src/lib/chemistry/molecule/molecule.cc	Fri Feb 11 11:37:29 2005
+@@ -607,6 +607,27 @@
+   return ret;
+ }
+ 
++SCVector3
++Molecule::center_of_charge() const
++{
++  SCVector3 ret;
++  double C;
++
++  ret = 0.0;
++  C = 0.0;
++
++  for (int i=0; i < natom(); i++) {
++    double c = charge(i);
++    ret += c * SCVector3(r(i));
++    C += c;
++  }
++
++  ret *= 1.0/C;
++
++  return ret;
++}
++
++
+ double
+ Molecule::nuclear_repulsion_energy()
+ {
+
+--- src/lib/chemistry/molecule/molecule.h.orig	Sat Nov 23 04:00:23 2002
++++ src/lib/chemistry/molecule/molecule.h	Fri Feb 11 11:36:30 2005
+@@ -209,6 +209,10 @@
+         the center of mass for the molecule. */
+     SCVector3 center_of_mass() const;
+ 
++    /** Returns a SCVector3 containing the cartesian coordinates of
++        the center of charge for the molecule. */
++    SCVector3 center_of_charge() const;
++
+     /// Returns the nuclear repulsion energy for the molecule
+     double nuclear_repulsion_energy();
+     
