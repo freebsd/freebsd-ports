@@ -35,6 +35,14 @@ LIB_DEPENDS+=		iodbc.3:${PORTSDIR}/databases/libiodbc
 CONFIGURE_ARGS+=	--with-odbc-ini=${LOCALBASE}/etc/libiodbc/odbc.ini
 .endif
 
+# Allow a new value of ODBCVER to be set at build-time
+.if defined(ODBCVER)
+post-patch:
+	cd ${WRKSRC}; \
+	${MV} myodbc.h myodbc.h.orig; \
+	${SED} -e "s/ODBCVER 0x0250/ODBCVER ${ODBCVER}/" < myodbc.h.orig > myodbc.h
+.endif
+
 # XXX untested
 .if defined(STATIC)
 CONFIGURE_ARGS+=	--enable-shared=no \
