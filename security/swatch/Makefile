@@ -6,18 +6,22 @@
 #
 
 PORTNAME=	swatch
-PORTVERSION=	2.2
+PORTVERSION=	3.0.1
 CATEGORIES=	security sysutils
-MASTER_SITES=	ftp://ftp.stanford.edu/general/security-tools/swatch/OLD/
+MASTER_SITES=	ftp://ftp.stanford.edu/general/security-tools/swatch/
 
 MAINTAINER=	joseph@randomnetworks.com
 
-NO_BUILD=	YES
+BUILD_DEPENDS=	${site_perl}/Date/Format.pm:${PORTSDIR}/devel/p5-TimeDate \
+	${site_perl}/${PERL_ARCH}/Date/Calc.pm:${PORTSDIR}/devel/p5-Date-Calc \
+	${site_perl}/File/Tail.pm:${PORTSDIR}/devel/p5-File-Tail
 
-MAN5=		swatch.conf.5
-MAN8=		swatch.8
+site_perl=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
 
-do-install:
-		@cd ${WRKSRC}; sh ${WRKSRC}/install.sh
+USE_PERL5=	yes
+PERL_CONFIGURE=	yes
+CONFIGURE_ARGS+=	INSTALLMAN1DIR=${PREFIX}/man/man1
+
+MAN1=	swatch.1 swatch_oldrc2newrc.1
 
 .include <bsd.port.mk>
