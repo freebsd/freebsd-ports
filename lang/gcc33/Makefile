@@ -12,8 +12,7 @@ PORTVERSION=	3.3.4
 PORTREVISION=	${SNAPDATE:S/-//g}
 CATEGORIES=	lang java
 VERSIONSTRING=	3.3-${PORTREVISION}
-MASTER_SITES=	${MASTER_SITE_GCC} \
-		http://web.inter.NL.net/hcc/Haj.Ten.Brugge/:bc
+MASTER_SITES=	${MASTER_SITE_GCC}
 MASTER_SITE_SUBDIR=	snapshots/${VERSIONSTRING}
 DISTFILES=	\
 		gcc-core-${VERSIONSTRING}${EXTRACT_SUFX} \
@@ -25,14 +24,6 @@ DISTFILES=	\
 
 MAINTAINER?=	gerald@FreeBSD.org
 COMMENT?=	GNU Compiler Collection 3.3
-
-.if defined (WITH_BOUNDSCHECKING)
-# Fetch another file, but don't extract it.  Also add another patchfile.
-BCPATCH=	bounds-checking-gcc-3.3.3-1.00.patch.bz2
-DISTFILES+=	${BCPATCH}:bc
-EXTRACT_ONLY=	${DISTFILES:S/${BCPATCH}:bc//}
-EXTRA_PATCHES=	${FILESDIR}/opt.patch-bc
-.endif
 
 LATEST_LINK?=	gcc33${PKGNAMESUFFIX}
 
@@ -105,21 +96,6 @@ pre-everything::
 	@${ECHO_MSG} "Making GCC ${DISTNAME:S/^gcc-//} for ${OPSYS} ${OSREL}  target=${CONFIGURE_TARGET}"
 .if defined(WITHOUT_LIBJAVA)
 	@${ECHO_MSG} "(without libgcj)"
-.endif
-.if !defined(WITH_BOUNDSCHECKING)
-#	@${ECHO_MSG} "You can enable fine-grained bounds-checking support for compiled C programs"
-#	@${ECHO_MSG} "by defining WITH_BOUNDSCHECKING.  Compile and link with \"-fbounds-checking\""
-#	@${ECHO_MSG} "to use."
-.endif
-
-.if defined(WITH_BOUNDSCHECKING)
-# Extract bounds-checking patch, removing the ada parts of the patch with sed.
-pre-patch:
-	cd ${_DISTDIR} ; \
-	${BZCAT} ${BCPATCH} | \
-		${SED} -e '/^--- .*ada/,/^diff/d' | \
-		${SED} -e '/^--- .*parse.h/,/^diff/d' | \
-		${PATCH} -d ${PATCH_WRKSRC} -E -p1 --quiet
 .endif
 
 post-patch:
