@@ -11,6 +11,7 @@
     SUBDIR += arpack
     SUBDIR += asir2000
     SUBDIR += atlas
+    SUBDIR += atlas-devel
     SUBDIR += biggles
     SUBDIR += blacs
     SUBDIR += blas

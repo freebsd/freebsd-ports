@@ -1,0 +1,23 @@
+The ATLAS (Automatically Tuned Linear Algebra Software) project is
+an ongoing research effort focusing on applying empirical techniques
+in order to provide portable performance. 
+
+At present, it provides C and Fortran77 interfaces to a
+portably efficient BLAS implementation, as well as a few routines from LAPACK.
+
+PLEASE REBUILD YOUR KERNEL WITH 
+options         CPU_ENABLE_SSE
+TO ENABLE SSE1/SSE2 SUPPORT BEFORE MAKING ATLAS!
+IT SIGNIFICANTLY IMPROVES PERFORMANCE. 
+
+If you use blas, you can simply change flags when linking,
+from -lblas to -lf77blas -latlas (order is important).
+
+A few routines from LAPACK are merged into one library as libalapack.
+It requres both C and Fortran77 interfaces, and thus that link line would be:
+-lalapack -lf77blas -lcblas -latlas -lg2c -lm .
+
+Other choice of CC and CFLAGS are *NOT* recommended.
+They are already optimized for this platform and automatically searched.
+
+WWW: http://math-atlas.sourceforge.net/
