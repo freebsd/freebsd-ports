@@ -2825,6 +2825,7 @@ gnotime		ports/deskutils/gnotime
 gnowavcut	ports/audio/gnowavcut
 gnu-autoconf	ports/devel/gnu-autoconf
 gnu-automake	ports/devel/gnu-automake
+gnu-crypto	ports/security/gnu-crypto
 gnu-finger	ports/net/gnu-finger
 gnu-libtool	ports/devel/gnu-libtool
 gnu-radius	ports/net/gnu-radius
