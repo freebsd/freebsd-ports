@@ -12,7 +12,6 @@ PORTNAME=	xmlto
 PORTVERSION=	0.0.18
 CATEGORIES=	textproc
 MASTER_SITES=	http://cyberelk.net/tim/data/xmlto/stable/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.p/pre/}
 
 MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	Front-end to an XSL toolchain
@@ -25,6 +24,7 @@ BUILD_DEPENDS=	${BASH_CMD}:${PORTSDIR}/shells/bash2 \
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 .if defined(WITH_PASSIVETEX) || exists(${PASSIVETEX})
+IGNORE=		with PassiveTex support needs more testing
 BUILD_DEPENDS+=	${PASSIVETEX}:${PORTSDIR}/print/passivetex
 PLIST_SUB=	PASSIVETEX=""
 .else
