@@ -1,5 +1,7 @@
-bin/imtest
 bin/cyradm
+bin/imtest
+bin/installsieve
+bin/sieveshell
 cyrus/bin/ctl_deliver
 cyrus/bin/ctl_mboxlist
 cyrus/bin/cyrquota
@@ -45,7 +47,14 @@ include/cyrus/stristr.h
 include/cyrus/sysexits.h
 include/cyrus/util.h
 include/cyrus/xmalloc.h
+lib/libacap.a
 lib/libcyrus.a
+lib/perl5/%%PERL_VERSION%%/man/man3/Cyrus::IMAP::Shell.3
+lib/perl5/%%PERL_VERSION%%/man/man3/Cyrus::IMAP::IMSP.3
+lib/perl5/%%PERL_VERSION%%/man/man3/Cyrus::IMAP::Admin.3
+lib/perl5/%%PERL_VERSION%%/man/man3/Cyrus::IMAP.3
+lib/perl5/%%PERL_VERSION%%/man/man3/Cyrus::SIEVE::acap.3
+lib/perl5/%%PERL_VERSION%%/man/man3/Cyrus::SIEVE::managesieve.3
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Cyrus/IMAP/Admin.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Cyrus/IMAP/IMSP.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Cyrus/IMAP/Shell.pm
