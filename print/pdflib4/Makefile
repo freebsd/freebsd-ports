@@ -6,18 +6,17 @@
 #
 
 PORTNAME=	pdflib
-PORTVERSION=	4.0.1
+PORTVERSION=	4.0.2
 CATEGORIES=	print
-MASTER_SITES=	http://www.pdflib.com/pdflib/download/ \
-		ftp://ftp.oav.net/pkg_freebsd/distfiles/ \
-		http://grendel.firewall.com/caudium-pkg/ \
-		http://ftp.oav.net/pkg_freebsd/distfiles/
+MASTER_SITES=	http://www.pdflib.com/pdflib/download/
 
 MAINTAINER=	sysadmin@alexdupre.com
 
 RESTRICTED=	"many odd restrictions on usage and distribution"
+
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL=	yes
+LIBTOOLFILES=	config/aclocal.m4
 USE_PERL5=	yes
 CONFIGURE_ARGS=	--enable-cxx
 
