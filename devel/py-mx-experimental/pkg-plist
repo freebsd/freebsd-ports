@@ -96,9 +96,6 @@ lib/%%PYTHON_VERSION%%/site-packages/mx/URL/mxURL/mxh.h
 lib/%%PYTHON_VERSION%%/site-packages/mx/URL/mxURL/test.py
 lib/%%PYTHON_VERSION%%/site-packages/mx/URL/mxURL/test.pyc
 lib/%%PYTHON_VERSION%%/site-packages/mx/URL/mxURL/test.pyo
-lib/%%PYTHON_VERSION%%/site-packages/mx/__init__.py
-lib/%%PYTHON_VERSION%%/site-packages/mx/__init__.pyc
-lib/%%PYTHON_VERSION%%/site-packages/mx/__init__.pyo
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/mx/URL/mxURL
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/mx/URL/Doc
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/mx/URL
