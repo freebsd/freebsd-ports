@@ -39,6 +39,10 @@ PLIST_SUB=	ARCH=${OPSYS:L}
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 502126
+BROKEN=		"Broken pkg-plist"
+.endif
+
 .if defined(WITH_HDF)
 LIB_DEPENDS+=	df.1:${PORTSDIR}/science/hdf
 .endif
