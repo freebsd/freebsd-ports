@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	cosi-nms
 DISTNAME=	confregdecode-src-${PORTVERSION}
 
 MAINTAINER=	marcus@FreeBSD.org
+COMMENT=	Cisco Systems IOS(tm) configuration register decoder
 
 USE_JAVA=	1.1+
 NEED_JAVAC=	YES

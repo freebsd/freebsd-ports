@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	openslp
 
 MAINTAINER=	marcus@FreeBSD.org
+COMMENT=	Open-source implementation of the Service Location Protocol
 
 .if defined(WITH_SLP_SECURITY)
 USE_OPENSSL=	yes

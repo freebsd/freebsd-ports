@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.sonic.net/pub/users/nbs/unix/x/xbomber/
 DISTNAME=	${PORTNAME}.${PORTVERSION}
 
 MAINTAINER=	marcus@FreeBSD.org
+COMMENT=	A game based on "Super Bomberman" for the Super Nintendo
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

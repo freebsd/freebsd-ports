@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	marcus/
 
 MAINTAINER=	marcus@FreeBSD.org
+COMMENT=	Gtk+-2.0 open-source 'clone' of AOL's Instant Messenger client
 
 LIB_DEPENDS=	gtk-x11-2.0.200:${PORTSDIR}/x11-toolkits/gtk20
 
