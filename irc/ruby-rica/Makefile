@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rica
-PORTVERSION=	0.9
+PORTVERSION=	0.10
 CATEGORIES=	irc ruby
 MASTER_SITES=	http://www.koka-in.org/%7Ezophos/lib/rica/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -24,10 +24,11 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 MODULES=	rica.rb \
 		ctcpresponder.rb \
+		connectiondiag.rb \
 		logholder.rb
 
 DOCS=		CHANGES	README	classes_and_methods.txt	event.lst *.png
-EXAMPLES=	erica.* ricaco.rb
+EXAMPLES=	erica.* ricaco.rb rica-example.rb
 
 do-install:
 .for f in ${MODULES}
