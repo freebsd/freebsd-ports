@@ -4367,6 +4367,7 @@ klone		ports/lang/klone
 kludge3d	ports/graphics/kludge3d
 kluje		ports/deskutils/kluje
 kmamerun	ports/emulators/kmamerun
+kmenc15		ports/multimedia/kmenc15
 kmerlin		ports/net/kmerlin
 kmess		ports/net/kmess
 kmldonkey	ports/net/kmldonkey
