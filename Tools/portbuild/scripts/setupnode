@@ -10,42 +10,50 @@ if [ "x$1" = "x-nocopy" ]; then
   nocopy=1
   shift
 fi
-if [ $# != 4 ]; then
-  echo "usage: $0 [-nocopy] master portbuilddir branch md5"
+
+if [ $# != 5 ]; then
+  echo "usage: $0 [-nocopy] master portbuilddir branch tmpdir md5"
   exit 1
 fi
-if [ $(echo $(/sbin/mount | grep "$2/.*read-only" | awk '{print $3}' | wc -c)) != 0 ]; then
-  /sbin/umount -f $(/sbin/mount | grep "$2/.*read-only" | awk '{print $3}')
+
+master=$1
+pb=$2
+branch=$3
+tmpdir=$4
+md5master=$5
+
+if [ $(echo $(/sbin/mount | grep "${pb}/.*read-only" | awk '{print $3}' | wc -c)) != 0 ]; then
+  /sbin/umount -f $(/sbin/mount | grep "${pb}/.*read-only" | awk '{print $3}')
 fi
 
-#cd $2
+#cd ${pb}
 #fs=$(df . | sed -e '1d' | awk '{print $6}')
 
 #mount -u -w $fs
 
-if ! rm -rf $2/*/chroot/* >/dev/null 2>&1; then
-  chflags -R noschg $2/*/chroot/*
-  rm -rf $2/*/chroot/*
+cd ${tmpdir}
+
+mkdir -p ${tmpdir}/${branch}/chroot
+
+# Clean up the tmpdir
+# XXX Should try and unmount old nfs filesystems first 
+if ! rm -rf ${tmpdir}/${branch}/chroot/* >/dev/null 2>&1; then
+  chflags -R noschg ${tmpdir}/${branch}/chroot/*
+  rm -rf ${tmpdir}/${branch}/chroot/*
 fi
 
 killall make fetch >/dev/null 2>&1
 
-mkdir -p $2/scripts $2/$3/tarballs $2/$3/chroot
-
-scp -p $1:$2/scripts/portbuild $2/scripts
-scp -p $1:$2/portbuild.conf $2
-
-scp -p $1:$2/$3/UNAME_TARGET $2/$3/tarballs/
-
+mkdir -p ${tmpdir}/${branch}/tarballs
 if [ "$nocopy" = 0 ]; then
-  if [ -f $2/$3/tarballs/bindist.tar ]; then
-    md5=$(/sbin/md5 $2/$3/tarballs/bindist.tar | awk '{print $4}')
+  if [ -f ${tmpdir}/${branch}/tarballs/bindist.tar ]; then
+    md5=$(/sbin/md5 ${tmpdir}/${branch}/tarballs/bindist.tar | awk '{print $4}')
   fi
-  if [ "$md5" = "$4" ]; then
+  if [ "${md5}" = "${md5master}" ]; then
     echo "not copying bindist to $(hostname -s) since it is already up to date"
   else
     echo "copying bindist to $(hostname -s)"
-    scp -p $1:$2/$3/tarballs/bindist.tar $2/$3/tarballs
+    cp -p ${pb}/${branch}/tarballs/bindist.tar ${tmpdir}/${branch}/tarballs
   fi
 fi
 
