@@ -6,23 +6,20 @@
 #
 
 PORTNAME=	gmime
-PORTVERSION=	2.1.1
-PORTREVISION=	1
+PORTVERSION=	2.1.2
 CATEGORIES=	mail
 MASTER_SITES=	http://spruce.sourceforge.net/gmime/sources/v2.1/
 
 MAINTAINER=	krion@FreeBSD.org
 COMMENT=	Library (written in C) for parsing and creating messages using MIME
 
-LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
-
 CONFLICTS=	gmime-1.0.*
 
-USE_SIZE=	yes
+USE_ICONV=	yes
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_GNOME=	glib20
+USE_GNOME=	glib20 lthack
 USE_LIBTOOL=	yes
 CONFIGURE_ARGS+=	--with-libiconv=${LOCALBASE}
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
