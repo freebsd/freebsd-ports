@@ -1,0 +1,48 @@
+--- INSTALL.orig	Tue Dec 21 05:10:46 1999
++++ INSTALL	Tue Sep 26 15:58:13 2000
+@@ -2,39 +2,17 @@
+ 
+ A Reflective JIT Compiler for Java
+ 
+-REQUIREMENTS
+-============
+-OpenJIT requires a running port of the JDK 1.1.x or 1.2.x on Solaris,
+-Linux or FreeBSD platform. Please download JDK 1.1.x or later and
+-install it on your system. The current version of OpenJIT was tested
+-on the following JDK packages:
+-
+-  * Solaris (SPARC) JDK1.1.8 and JDK1.2.2
+-    downloaded from http://java.sun.com/jdk/
+-  * Linux (x86) JDK1.1.7 and JDK1.2.2
+-    downloaded from http://www.blackdown.org/
+-  * FreeBSD (x86) JDK1.1.8
+-    downloaded from http://www.freebsd.org/java/
+-
+-And to build OpenJIT will require the GNU C Compiler (version 2.7.2.3
+-or egcs-1.1.2, or later)
+-
+-
+-BUILDING AND INSTALLATION
+-=========================
+-To install the OpenJIT into JDK, perform the following steps in your
+-shell:
+-
+-    $ ./configure --with-jdk=/path/to/jdk
+-    $ make
+-    $ make install
+-
+-
+ HOW TO RUN
+ ==========
+ You may either specify the compiler to the JVM on the command line, or
+ you may set an environment variable that will let the JVM find the
+ compiler.
++
++In both cases first you should set LD_LIBRARY_PATH and CLASSPATH enviropment
++variables as follows:
++
++    $ export LD_LIBRARY_PATH=%%PREFIX%%/lib/OpenJIT
++    $ export CLASSPATH=%%PREFIX%%/lib/OpenJIT/OpenJIT.jar
+ 
+ For the command line option, run Java using option "-Djava.compiler=",
+ like this example: 

@@ -23,6 +23,7 @@
     SUBDIR += kaffe
     SUBDIR += linux-jdk
     SUBDIR += netrexx
+    SUBDIR += openjit
     SUBDIR += shujit
     SUBDIR += tya
 

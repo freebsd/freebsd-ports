@@ -1,0 +1,11 @@
+--- configure	2000/09/26 12:09:19	1.1
++++ configure	2000/09/26 12:09:47
+@@ -724,7 +724,7 @@
+   SET_MAKE="MAKE=${MAKE-make}"
+ fi
+ 
+-CFLAGS=""
++#CFLAGS=""
+ # Extract the first word of "gcc", so it can be a program name with args.
+ set dummy gcc; ac_word=$2
+ echo $ac_n "checking for $ac_word""... $ac_c" 1>&6

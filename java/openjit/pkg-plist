@@ -1,0 +1,5 @@
+lib/OpenJIT/OpenJIT.jar
+lib/OpenJIT/libOpenJIT.so
+share/OpenJIT/README
+@dirrm share/OpenJIT
+@dirrm lib/OpenJIT
