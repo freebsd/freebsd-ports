@@ -76,30 +76,30 @@ include/rle_raw.h
 lib/librle.a
 lib/librle.so
 lib/librle.so.1
-%%PORTDOCS%%share/doc/urt/README
-%%PORTDOCS%%share/doc/urt/pics/README
-%%PORTDOCS%%share/doc/urt/pics/bullet_holes_and_shot_turb.ps.Z
-%%PORTDOCS%%share/doc/urt/pics/center_masks_and_fin_turb.ps.Z
-%%PORTDOCS%%share/doc/urt/pics/dart_and_strtch.ps.Z
-%%PORTDOCS%%share/doc/urt/pics/dart_shadow_and_monkey.ps.Z
-%%PORTDOCS%%share/doc/urt/pics/pahriah_final.ps.Z
-%%PORTDOCS%%share/doc/urt/pics/scanned_and_cropped.ps.Z
-%%PORTDOCS%%share/doc/urt/rle.doc
-%%PORTDOCS%%share/doc/urt/rle.mss
-%%PORTDOCS%%share/doc/urt/rle.ps
-%%PORTDOCS%%share/doc/urt/rle_head.ps
-%%PORTDOCS%%share/doc/urt/rleops.ps
-%%PORTDOCS%%share/doc/urt/toolkit.bib
-%%PORTDOCS%%share/doc/urt/toolkit.doc
-%%PORTDOCS%%share/doc/urt/toolkit.mss
-%%PORTDOCS%%share/doc/urt/toolkit.ps
-%%PORTDOCS%%share/examples/urt/img/README
-%%PORTDOCS%%share/examples/urt/img/christmas_ball.rle
-%%PORTDOCS%%share/examples/urt/img/dart.rle
-%%PORTDOCS%%share/examples/urt/img/lenna.rle
-%%PORTDOCS%%share/examples/urt/img/mandrill.rle
-%%PORTDOCS%%share/examples/urt/img/tack_w_shadow.rle
-%%PORTDOCS%%@dirrm share/doc/urt/pics
-%%PORTDOCS%%@dirrm share/doc/urt
-%%PORTDOCS%%@dirrm share/examples/urt/img
-%%PORTDOCS%%@dirrm share/examples/urt
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/pics/README
+%%PORTDOCS%%%%DOCSDIR%%/pics/bullet_holes_and_shot_turb.ps.Z
+%%PORTDOCS%%%%DOCSDIR%%/pics/center_masks_and_fin_turb.ps.Z
+%%PORTDOCS%%%%DOCSDIR%%/pics/dart_and_strtch.ps.Z
+%%PORTDOCS%%%%DOCSDIR%%/pics/dart_shadow_and_monkey.ps.Z
+%%PORTDOCS%%%%DOCSDIR%%/pics/pahriah_final.ps.Z
+%%PORTDOCS%%%%DOCSDIR%%/pics/scanned_and_cropped.ps.Z
+%%PORTDOCS%%%%DOCSDIR%%/rle.doc
+%%PORTDOCS%%%%DOCSDIR%%/rle.mss
+%%PORTDOCS%%%%DOCSDIR%%/rle.ps
+%%PORTDOCS%%%%DOCSDIR%%/rle_head.ps
+%%PORTDOCS%%%%DOCSDIR%%/rleops.ps
+%%PORTDOCS%%%%DOCSDIR%%/toolkit.bib
+%%PORTDOCS%%%%DOCSDIR%%/toolkit.doc
+%%PORTDOCS%%%%DOCSDIR%%/toolkit.mss
+%%PORTDOCS%%%%DOCSDIR%%/toolkit.ps
+%%PORTDOCS%%%%EXAMPLESDIR%%/img/README
+%%PORTDOCS%%%%EXAMPLESDIR%%/img/christmas_ball.rle
+%%PORTDOCS%%%%EXAMPLESDIR%%/img/dart.rle
+%%PORTDOCS%%%%EXAMPLESDIR%%/img/lenna.rle
+%%PORTDOCS%%%%EXAMPLESDIR%%/img/mandrill.rle
+%%PORTDOCS%%%%EXAMPLESDIR%%/img/tack_w_shadow.rle
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/pics
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/img
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
