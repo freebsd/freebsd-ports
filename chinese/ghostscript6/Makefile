@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ghostscript
-PORTVERSION=	6.01
+PORTVERSION=	6.50
 CATEGORIES=	chinese print
 MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/keith/CID/CMap/ \
 		ftp://freebsd.sinica.edu.tw/pub/keith/GS6TTF/ \
@@ -14,12 +14,12 @@ MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/keith/CID/CMap/ \
 		http://www.aihara.co.jp/~taiji/tops/
 DISTFILES=	ac13.tar.Z ag13.tar.Z ai0.tar.Z aj14.tar.Z \
 		aj20.tar.Z ak12.tar.Z rksj-cmaps.tar.Z \
-		cjkvttcidmap-0.8.tar.gz gs_ttf.ps-cjkv-20001120.patch.gz
+		cjkvttcidmap-0.8.tar.gz gs6.50_ttf.ps-cjkv-20001215.patch.gz
 EXTRACT_ONLY=
 
 MAINTAINER=	keith@FreeBSD.org
 
-RUN_DEPENDS=	${LOCALBASE}/share/ghostscript/6.01/lib/gs_ttf.ps:${PORTSDIR}/print/ghostscript6 \
+RUN_DEPENDS=	${LOCALBASE}/share/ghostscript/6.50/lib/gs_ttf.ps:${PORTSDIR}/print/ghostscript6 \
 		ttfm.sh:${PORTSDIR}/chinese/ttfm
 
 NO_BUILD=	yes
@@ -40,13 +40,13 @@ do-install:
 		${LN} -sf rksj-cmaps/* . )
 	@(cd ${PREFIX}/share/ghostscript/CJK/TrueType; \
 		${TAR} -xzf ${DISTDIR}/cjkvttcidmap-0.8.tar.gz )
-	@(cd ${PREFIX}/share/ghostscript/6.01/lib; \
-		${GZCAT} ${DISTDIR}/gs_ttf.ps-cjkv-20001120.patch.gz |${PATCH} )
-	@${CP} ${PREFIX}/share/ghostscript/6.01/lib/gs_res.ps \
-		${PREFIX}/share/ghostscript/6.01/lib/gs_res.ps.orig
+	@(cd ${PREFIX}/share/ghostscript/6.50/lib; \
+		${GZCAT} ${DISTDIR}/gs6.50_ttf.ps-cjkv-20001215.patch.gz |${PATCH} )
+	@${CP} ${PREFIX}/share/ghostscript/6.50/lib/gs_res.ps \
+		${PREFIX}/share/ghostscript/6.50/lib/gs_res.ps.orig
 	@${SED} -e "s:(/Resource/):(${PREFIX}/share/ghostscript/CJK/):g" \
 		-e "s:(/Resource/Font/):(${PREFIX}/share/ghostscript/CJK/Font/):g" \
-		${PREFIX}/share/ghostscript/6.01/lib/gs_res.ps.orig > \
-		${PREFIX}/share/ghostscript/6.01/lib/gs_res.ps
+		${PREFIX}/share/ghostscript/6.50/lib/gs_res.ps.orig > \
+		${PREFIX}/share/ghostscript/6.50/lib/gs_res.ps
 
 .include	<bsd.port.mk>
