@@ -75,6 +75,7 @@ post-patch:
 	@${FIND} ${WRKSRC} -name \*.orig -delete
 	@${SED} -e 's#B_CONFDIR)/local.cf#B_CONFDIR)/local.cf.sample#g' \
 		-e 's#B_CONFDIR)/init.pre#B_CONFDIR)/init.pre.sample#g' \
+		-e 's/require DBI/0/' \
 		${WRKSRC}/Makefile.PL > ${WRKSRC}/Makefile.PL.sed
 	@${MV} ${WRKSRC}/Makefile.PL.sed ${WRKSRC}/Makefile.PL
 
