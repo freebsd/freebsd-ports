@@ -1,0 +1,12 @@
+The suite of utilities known as DosUnix provide a selection of features
+allowing manipulation of text files in a mixed DOS/Windows and Unix
+environment.
+
+The three utilities are:
+
+   - dosunix, which creates a copy of a DOS text file in Unix text format;
+   - unixdos, which creates a copy of a Unix text file in DOS text format;
+   - chktxt, which inspects a given text file to determine whether it is in
+     DOS text format or Unix text format.
+
+WWW: http://dosunix.sourceforge.net/

@@ -5,6 +5,7 @@
     SUBDIR += base64
     SUBDIR += btoa
     SUBDIR += cn2jp
+    SUBDIR += dosunix
     SUBDIR += dumpasn1
     SUBDIR += fconv
     SUBDIR += gb2jis
