@@ -1,19 +1,17 @@
 @comment $FreeBSD$
-@unexec if cmp -s %D/etc/apache2/highperformance.conf %D/etc/apache2/highperformance-std.conf; then rm -f %D/etc/apache2/highperformance.conf; fi
-etc/apache2/highperformance-std.conf
-@exec [ -f %B/highperformance.conf ] || cp %B/%f %B/highperformance.conf
-@unexec if cmp -s %D/etc/apache2/httpd.conf %D/etc/apache2/httpd-std.conf; then rm -f %D/etc/apache2/httpd.conf; fi
-etc/apache2/httpd-std.conf
-@exec [ -f %B/httpd.conf ] || cp %B/%f %B/httpd.conf
-@unexec if cmp -s %D/etc/apache2/magic %D/etc/apache2/magic-dist; then rm -f %D/etc/apache2/magic; fi
-etc/apache2/magic-dist
-@exec [ -f %B/magic ] || cp %B/%f %B/magic
-@unexec if cmp -s %D/etc/apache2/mime.types %D/etc/apache2/mime.types-dist; then rm -f %D/etc/apache2/mime.types; fi
-etc/apache2/mime.types-dist
-@exec [ -f %B/mime.types ] || cp %B/%f %B/mime.types
-@unexec if cmp -s %D/etc/apache2/ssl.conf %D/etc/apache2/ssl-std.conf; then rm -f %D/etc/apache2/ssl.conf; fi
-etc/apache2/ssl-std.conf
-@exec [ -f %B/ssl.conf ] || cp %B/%f %B/ssl.conf
+@exec mkdir -p %D/etc/apache2 2> /dev/null
+@unexec if cmp -s %D/etc/apache2/httpd.conf %D/%%EXAMPLESDIR%%/httpd-std.conf; then rm -f %D/etc/apache2/httpd.conf; fi
+%%EXAMPLESDIR%%/httpd-std.conf
+@exec [ -f %D/etc/apache2/httpd.conf ] || cp %D/%%EXAMPLESDIR%%/httpd-std.conf %D/etc/apache2/httpd.conf
+@unexec if cmp -s %D/etc/apache2/magic %D/%%EXAMPLESDIR%%/magic-dist; then rm -f %D/etc/apache2/magic; fi
+%%EXAMPLESDIR%%/magic-dist
+@exec [ -f %D/etc/apache2/magic ] || cp %D/%%EXAMPLESDIR%%/magic-dist %D/etc/apache2/magic
+@unexec if cmp -s %D/etc/apache2/mime.types %D/%%EXAMPLESDIR%%/mime.types-dist; then rm -f %D/etc/apache2/mime.types; fi
+%%EXAMPLESDIR%%/mime.types-dist
+@exec [ -f %D/etc/apache2/mime.types ] || cp %D/%%EXAMPLESDIR%%/mime.types-dist %D/etc/apache2/mime.types
+@unexec if cmp -s %D/etc/apache2/ssl.conf %D/%%EXAMPLESDIR%%/ssl-std.conf; then rm -f %D/etc/apache2/ssl.conf; fi
+%%EXAMPLESDIR%%/ssl-std.conf
+@exec [ -f %D/etc/apache2/ssl.conf ] || cp %D/%%EXAMPLESDIR%%/ssl-std.conf %D/etc/apache2/ssl.conf
 etc/rc.d/000.apache2libs.sh
 etc/rc.d/apache2.sh
 include/apache2/ap_compat.h
@@ -223,11 +221,10 @@ share/apache2/build/program.mk
 share/apache2/build/rules.mk
 share/apache2/build/special.mk
 %%CGI%%@unexec if [ -L %D/www/cgi-bin ]; then rm -f %D/www/cgi-bin; fi
-%%CGI%%@exec [ ! -d %D/www/cgi-bin ] && ln -fs %D/www/cgi-bin-dist %D/www/cgi-bin
 %%CGI%%www/cgi-bin-dist/printenv
 %%CGI%%www/cgi-bin-dist/test-cgi
+%%CGI%%@exec [ ! -d %D/www/cgi-bin ] && ln -fs %D/www/cgi-bin-dist %D/www/cgi-bin
 %%WWWDATA%%@unexec if [ -L %D/www/data ]; then rm -f %D/www/data; fi
-%%WWWDATA%%@exec [ ! -d %D/www/data ] && ln -fs %D/www/data-dist %D/www/data
 %%WWWDATA%%www/data-dist/apache_pb.gif
 %%WWWDATA%%www/data-dist/apache_pb.png
 %%WWWDATA%%www/data-dist/apache_pb2.gif
@@ -264,8 +261,8 @@ share/apache2/build/special.mk
 %%WWWDATA%%www/data-dist/index.html.var
 %%WWWDATA%%www/data-dist/index.html.zh-cn.gb2312
 %%WWWDATA%%www/data-dist/index.html.zh-tw.big5
+%%WWWDATA%%@exec [ ! -d %D/www/data ] && ln -fs %D/www/data-dist %D/www/data
 %%ERROR%%@unexec if [ -L %D/www/error ]; then rm -f %D/www/error; fi
-%%ERROR%%@exec [ ! -d %D/www/error ] && ln -fs %D/www/error-dist %D/www/error
 %%ERROR%%www/error-dist/HTTP_BAD_GATEWAY.html.var
 %%ERROR%%www/error-dist/HTTP_BAD_REQUEST.html.var
 %%ERROR%%www/error-dist/HTTP_FORBIDDEN.html.var
@@ -289,8 +286,8 @@ share/apache2/build/special.mk
 %%ERROR%%www/error-dist/include/bottom.html
 %%ERROR%%www/error-dist/include/spacer.html
 %%ERROR%%www/error-dist/include/top.html
+%%ERROR%%@exec [ ! -d %D/www/error ] && ln -fs %D/www/error-dist %D/www/error
 %%ICONS%%@unexec if [ -L %D/www/icons ]; then rm -f %D/www/icons; fi
-%%ICONS%%@exec [ ! -d %D/www/icons ] && ln -fs %D/www/icons-dist %D/www/icons
 %%ICONS%%www/icons-dist/README
 %%ICONS%%www/icons-dist/a.gif
 %%ICONS%%www/icons-dist/a.png
@@ -515,10 +512,12 @@ share/apache2/build/special.mk
 %%ICONS%%www/icons-dist/world2.png
 %%ICONS%%@dirrm www/icons-dist/small
 %%ICONS%%@dirrm www/icons-dist
+%%ICONS%%@exec [ ! -d %D/www/icons ] && ln -fs %D/www/icons-dist %D/www/icons
 %%ERROR%%@dirrm www/error-dist/include
 %%ERROR%%@dirrm www/error-dist
 %%WWWDATA%%@dirrm www/data-dist
 %%CGI%%@dirrm www/cgi-bin-dist
+@dirrm %%EXAMPLESDIR%%
 @dirrm share/apache2/build
 @dirrm share/apache2
 @unexec rmdir %D/libexec/apache2 2> /dev/null || true
