@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.87 1998/07/25 11:40:37 andreas Exp $
+# $Id: Makefile,v 1.88 1998/07/31 18:50:34 nectar Exp $
 #
 
     SUBDIR += Mosaic         # requires Motif
@@ -71,5 +71,6 @@
     SUBDIR += wn
     SUBDIR += wwwcount
     SUBDIR += wwwstat
+    SUBDIR += xitami
 
 .include <bsd.port.subdir.mk>
