@@ -1,0 +1,6 @@
+$FreeBSD$
+
+This directory contains the scripts that are used to break up the packages
+for a given release, so that they fit on a particular 4 CD set.  They rely
+on src/release/scripts/print-cdrom-packages.sh to give preference for
+particular packages to be located on particular CDs.
