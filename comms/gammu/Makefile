@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gammu
-PORTVERSION=	0.90.0
+PORTVERSION=	0.91.0
 CATEGORIES=	comms
 MASTER_SITES=	http://www.mwiacek.com/zips/gsm/gammu/older/ \
 		http://www.kirill.spb.ru/gammu/
@@ -20,6 +20,6 @@ MAN1=		gammu.1
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
-CONFIGURE_ARGS=	--disable-obexgen
+CONFIGURE_ARGS=	--disable-obexgen --disable-fbuspl2303
 
 .include <bsd.port.mk>
