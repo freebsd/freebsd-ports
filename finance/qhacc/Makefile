@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qhacc
-PORTVERSION=	3.2.3
+PORTVERSION=	3.3
 CATEGORIES=	finance
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -35,6 +35,10 @@ QTCFGLIBS+=	${PTHREAD_LIBS}
 USE_MYSQL=	yes
 .endif
 
+.if defined(WITH_PGSQL)
+USE_PGSQL=	yes
+.endif
+
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_MYSQL)
@@ -45,7 +49,6 @@ PLIST_SUB+=	MYSQL="@comment "
 .endif
 
 .if defined(WITH_PGSQL)
-USE_PGSQL=	yes
 CONFIGURE_ARGS+=	--enable-psql
 PLIST_SUB+=	PGSQL=""
 .else
@@ -62,6 +65,21 @@ PLIST_SUB+=	SQLITE=""
 PLIST_SUB+=	SQLITE="@comment "
 .endif
 
+.if defined(WITH_GPGME)
+LIB_DEPENDS+=	gpgme.14:${PORTSDIR}/security/gpgme
+CONFIGURE_ARGS+=	--enable-gpg
+PLIST_SUB+=	GPGME=""
+.else
+PLIST_SUB+=	GPGME="@comment "
+.endif
+
+.if defined(WITH_GENERATOR)
+CONFIGURE_ARGS+=	--enable-generator
+PLIST_SUB+=	GENERATOR=""
+.else
+PLIST_SUB+=	GENERATOR="@comment "
+.endif
+
 pre-everything::
 	@${ECHO_MSG}
 	@${ECHO_MSG} "QHacc has the following tunable option(s):"
@@ -69,6 +87,8 @@ pre-everything::
 	@${ECHO_MSG} "	WITH_MYSQL=yes		Turns on MySQL support"
 	@${ECHO_MSG} "	WITH_PGSQL=yes		Turns on PostgreSQL support"
 	@${ECHO_MSG} "	WITH_SQLITE=yes		Turns on SQLite support"
+	@${ECHO_MSG} "	WITH_GPGME=yes		Turns on GnuPG support"
+	@${ECHO_MSG} "	WITH_GENERATOR=yes	Turns on random-data generator support"
 	@${ECHO_MSG}
 
 post-patch:
