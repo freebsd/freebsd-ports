@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	gchempaint
-PORTVERSION=	0.4.2
-PORTREVISION=	1
+PORTVERSION=	0.4.3
 CATEGORIES=	science
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,7 +17,7 @@ LIB_DEPENDS=	gcu.2:${PORTSDIR}/science/gchemutils
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
-USE_GNOME=	gnomehack gnomeprefix libgnomeprintui libgnomeui
+USE_GNOME=	gnomehack gnomeprefix intlhack libgnomeprintui libgnomeui
 USE_GMAKE=	yes
 USE_LIBTOOL_VER=13
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib"
