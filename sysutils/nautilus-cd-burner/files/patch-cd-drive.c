@@ -59,7 +59,7 @@
 +		if (wr_speed != NULL) {
 +		    	char *tok;
 +		    	wr_speed += strlen ("Maximum write speed:");
-+			for (tok = strtok (rd_speed, " (),\t\n");
++			for (tok = strtok (wr_speed, " (),\t\n");
 +				tok && strcmp (tok, "CD");
 +				tok = strtok (NULL, " (),\t\n")) {}
 +			tok = strtok (NULL, " (),\t\n"); /* Get the CD speed. */
@@ -70,7 +70,7 @@
 +			if (wr_speed != NULL) {
 +			    	char *tok;
 +			    	wr_speed += strlen ("Maximum write speed in kB/s:");
-+				for (tok = strtok (rd_speed, " (),\t\n");
++				for (tok = strtok (wr_speed, " (),\t\n");
 +					tok && strcmp (tok, "CD");
 +					tok = strtok (NULL, " (),\t\n")) {}
 +				tok = strtok (NULL, " (),\t\n"); /* Get the CD speed. */
