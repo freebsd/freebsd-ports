@@ -3,22 +3,26 @@
 # Whom:					Sverre Valgeirsson <sverre@k9k203-3.kam.afb.lu.se>
 #
 # $FreeBSD$
-#
 
 PORTNAME=	ksetiwatch
-PORTVERSION=	2.2.1
+PORTVERSION=	2.5.0
 CATEGORIES=	astro kde
-MASTER_SITES=	http://download.sourceforge.net/ksetiwatch/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR= ksetiwatch
+DISTNAME=	${PORTNAME}-${PORTVERSION}-1
 
 MAINTAINER=	sverrir@hem.passagen.se
 
-USE_KDELIBS_VER=2
+BUILD_DEPENS=	autoconf:${PORTSDIR}/devel/autoconf
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/-1//}
+USE_BZIP2=	yes
+USE_KDELIBS_VER=3
 USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
-USE_XLIB=	yes
+GNU_CONFIGURE=		yes
+CONFIGURE_TARGET=       --build=${ARCH}-portbld-freebsd${OSREL}
 
 pre-configure:
-	${PERL} -pi.orig -e "s@-lqt@-lqt2@g" ${WRKSRC}/ksetiwatch/Makefile.in
-	${PERL} -pi.orig -e "s@-lqt@-lqt2@g; s@libqt\.@libqt2\.@g" ${WRKSRC}/configure
+	cd ${WRKSRC}; autoconf
 
 .include <bsd.port.mk>
