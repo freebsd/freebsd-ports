@@ -1,5 +1,5 @@
-*** Makefile.bak	Fri Feb 17 00:39:41 1995
---- Makefile	Mon May  1 18:09:04 1995
+*** Makefile.orig	Thu Feb 16 15:39:41 1995
+--- Makefile	Sat May 15 19:18:04 1999
 ***************
 *** 1,5 ****
 ! CFLAGS=$(OPT) $(DEFINES)
@@ -13,6 +13,23 @@
   
   
   #Uncomment the following line if your system does not have strchr()
+***************
+*** 28,34 ****
+  UNPACKOBJS = unixunpk.o decode.o uudecode.o codes.o unixos.o string.o \
+  		part.o xmalloc.o md5c.o getopt.o
+  
+! DESTDIR=/usr/local
+  
+  all: mpack munpack
+  
+--- 28,34 ----
+  UNPACKOBJS = unixunpk.o decode.o uudecode.o codes.o unixos.o string.o \
+  		part.o xmalloc.o md5c.o getopt.o
+  
+! DESTDIR?=/usr/local
+  
+  all: mpack munpack
+  
 ***************
 *** 42,51 ****
   	-mkdir $(DESTDIR)/bin
