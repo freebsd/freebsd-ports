@@ -43,6 +43,8 @@ post-extract:
 
 pre-patch:
 	@${PERL} -pi -e 's|\r\n|\n|' ${WRKSRC}/macros/util/formatman.sci
+
+post-patch:
 	@${PERL} -pi -e 's,%%PVM_ROOT%%,${PVM_ROOT},' \
 		${WRKSRC}/scripts/scilab.g
 
