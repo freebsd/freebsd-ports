@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- camel/providers/pop3/Makefile.in	2002/01/22 19:07:18	1.1
++++ camel/providers/pop3/Makefile.in	2002/01/22 19:08:04
+@@ -215,7 +215,7 @@
+ 	camel-pop3-store.h
+ 
+ 
+-libcamelpop3_la_LDFLAGS = $(KRB4_LDFLAGS) -version-info 0:0:0
++libcamelpop3_la_LDFLAGS = $(KRB4_LDFLAGS) -avoid-version -module
+ 
+ libcamelpop3_la_LIBADD = $(top_builddir)/e-util/libeutil.la
+ 

@@ -1,14 +1,14 @@
 
 $FreeBSD$
 
---- camel/providers/imap/Makefile.in.orig	Wed May 16 10:20:23 2001
-+++ camel/providers/imap/Makefile.in	Wed May 16 10:21:14 2001
-@@ -179,7 +179,7 @@
- libcamelimapinclude_HEADERS =  	camel-imap-command.h				camel-imap-folder.h				camel-imap-message-cache.h			camel-imap-search.h				camel-imap-store.h				camel-imap-summary.h				camel-imap-types.h				camel-imap-utils.h				camel-imap-wrapper.h
+--- camel/providers/imap/Makefile.in.orig	Tue Jan 22 09:37:18 2002
++++ camel/providers/imap/Makefile.in	Tue Jan 22 21:07:36 2002
+@@ -227,7 +227,7 @@
+ 	camel-imap-wrapper.h
  
  
 -libcamelimap_la_LDFLAGS = -version-info 0:0:0
-+libcamelimap_la_LDFLAGS = -avoid-version
++libcamelimap_la_LDFLAGS = -avoid-version -module
  
- noinst_HEADERS =  	camel-imap-private.h
- 
+ noinst_HEADERS = \
+ 	camel-imap-private.h

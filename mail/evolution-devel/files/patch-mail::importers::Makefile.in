@@ -1,0 +1,18 @@
+
+$FreeBSD$
+
+--- mail/importers/Makefile.in	2002/01/22 19:54:48	1.1
++++ mail/importers/Makefile.in	2002/01/22 19:55:23
+@@ -202,10 +202,10 @@
+ liboutlook_la_SOURCES = \
+ 	evolution-outlook-importer.c
+ 
+-liboutlook_la_LDFLAGS = -version-info 0:0:0
++liboutlook_la_LDFLAGS = -avoid-version -module
+ 
+ libmbox_la_SOURCES = evolution-mbox-importer.c
+-libmbox_la_LDFLAGS = -version-info 0:0:0
++libmbox_la_LDFLAGS = -avoid-version -module
+ 
+ oafdir = $(datadir)/oaf
+ oaf_in_files = GNOME_Evolution_Mail_Mbox_Importer.oaf.in	\
