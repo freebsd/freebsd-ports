@@ -1,0 +1,3 @@
+include/firedns.h
+lib/libfiredns.so
+lib/libfiredns.a

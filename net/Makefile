@@ -109,6 +109,7 @@
     SUBDIR += eudc-emacs20
     SUBDIR += everybuddy
     SUBDIR += fidelio
+    SUBDIR += firedns
     SUBDIR += firetalk
     SUBDIR += flow-tools
     SUBDIR += flowscan
