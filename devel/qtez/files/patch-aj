@@ -1,8 +1,0 @@
---- src/plugins/srceditor/Makefile.am.orig	Thu Dec  7 20:45:50 2000
-+++ src/plugins/srceditor/Makefile.am	Sat Feb  3 04:16:19 2001
-@@ -11,4 +11,4 @@
- 	MainEditor.h MainEditor.cpp
-         
- libSyntaxEditor_la_METASOURCES = USE_AUTOMOC
--libdir = $(prefix)/qtez/plugins/sourceditor
-+libdir = $(prefix)/lib/qtez/plugins/sourceditor
