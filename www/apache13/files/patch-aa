@@ -1,0 +1,40 @@
+*** configure.bak	Sun Jul 12 13:25:46 1998
+--- configure	Thu Jul 23 16:52:04 1998
+***************
+*** 877,884 ****
+      echo "       DEFAULT_PIDLOG: ${runtimedir_relative}httpd.pid"
+      echo "   DEFAULT_SCOREBOARD: ${runtimedir_relative}httpd.scoreboard"
+      echo "     DEFAULT_LOCKFILE: ${runtimedir_relative}httpd.lock"
+!     echo "      DEFAULT_XFERLOG: ${logfiledir_relative}access_log"
+!     echo "     DEFAULT_ERRORLOG: ${logfiledir_relative}error_log"
+      echo "    TYPES_CONFIG_FILE: ${sysconfdir_relative}mime.types"
+      echo "   SERVER_CONFIG_FILE: ${sysconfdir_relative}httpd.conf"
+      echo "   ACCESS_CONFIG_FILE: ${sysconfdir_relative}access.conf"
+--- 877,884 ----
+      echo "       DEFAULT_PIDLOG: ${runtimedir_relative}httpd.pid"
+      echo "   DEFAULT_SCOREBOARD: ${runtimedir_relative}httpd.scoreboard"
+      echo "     DEFAULT_LOCKFILE: ${runtimedir_relative}httpd.lock"
+!     echo "      DEFAULT_XFERLOG: ${logfiledir_relative}httpd-access.log"
+!     echo "     DEFAULT_ERRORLOG: ${logfiledir_relative}httpd-error.log"
+      echo "    TYPES_CONFIG_FILE: ${sysconfdir_relative}mime.types"
+      echo "   SERVER_CONFIG_FILE: ${sysconfdir_relative}httpd.conf"
+      echo "   ACCESS_CONFIG_FILE: ${sysconfdir_relative}access.conf"
+***************
+*** 942,949 ****
+  echo "echo '-DDEFAULT_PIDLOG=\"${runtimedir_relative}httpd.pid\"'" >>$src/apaci
+  echo "echo '-DDEFAULT_SCOREBOARD=\"${runtimedir_relative}httpd.scoreboard\"'" >>$src/apaci
+  echo "echo '-DDEFAULT_LOCKFILE=\"${runtimedir_relative}httpd.lock\"'" >>$src/apaci
+! echo "echo '-DDEFAULT_XFERLOG=\"${logfiledir_relative}access_log\"'" >>$src/apaci
+! echo "echo '-DDEFAULT_ERRORLOG=\"${logfiledir_relative}error_log\"'" >>$src/apaci
+  echo "echo '-DTYPES_CONFIG_FILE=\"${sysconfdir_relative}mime.types\"'" >>$src/apaci
+  echo "echo '-DSERVER_CONFIG_FILE=\"${sysconfdir_relative}httpd.conf\"'" >>$src/apaci
+  echo "echo '-DACCESS_CONFIG_FILE=\"${sysconfdir_relative}access.conf\"'" >>$src/apaci
+--- 942,949 ----
+  echo "echo '-DDEFAULT_PIDLOG=\"${runtimedir_relative}httpd.pid\"'" >>$src/apaci
+  echo "echo '-DDEFAULT_SCOREBOARD=\"${runtimedir_relative}httpd.scoreboard\"'" >>$src/apaci
+  echo "echo '-DDEFAULT_LOCKFILE=\"${runtimedir_relative}httpd.lock\"'" >>$src/apaci
+! echo "echo '-DDEFAULT_XFERLOG=\"${logfiledir_relative}httpd-access.log\"'" >>$src/apaci
+! echo "echo '-DDEFAULT_ERRORLOG=\"${logfiledir_relative}httpd-error.log\"'" >>$src/apaci
+  echo "echo '-DTYPES_CONFIG_FILE=\"${sysconfdir_relative}mime.types\"'" >>$src/apaci
+  echo "echo '-DSERVER_CONFIG_FILE=\"${sysconfdir_relative}httpd.conf\"'" >>$src/apaci
+  echo "echo '-DACCESS_CONFIG_FILE=\"${sysconfdir_relative}access.conf\"'" >>$src/apaci
