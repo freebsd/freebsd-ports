@@ -26,7 +26,7 @@ GNU_CONFIGURE=	YES
 
 .if defined(POSTGRESQL_SUBPORT)
 ## the POSTGRESQL_SUBPORTS use this port's distinfo
-MD5_FILE=	${.CURDIR}/../postgresql7/distinfo
+MD5_FILE=	${.CURDIR}/../postgresql73/distinfo
 .else
 
 ## POSTGRESQL_SUBPORTS stops here
