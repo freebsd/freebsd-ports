@@ -1,0 +1,109 @@
+--- Makefile.orig	Wed Nov 12 11:01:58 1997
++++ Makefile	Sun May  5 14:57:01 2002
+@@ -1,7 +1,8 @@
+ # change following for your environment
+-INC = /usr/X11R6/include/X11/qt
+-LIB = /usr/X11R6/lib
+-MOC = moc
++#INC = /usr/X11R6/include/X11/qt1
++INC = -I${X11BASE}/include -I${X11BASE}/include/X11/qt1
++LIB = -L${X11BASE}/lib -Wl,-R${X11BASE}/lib -L${X11BASE}/lib -Wl,-R${X11BASE}/lib
++MOC = moc1
+ 
+ # if you use freebsd
+ CFLAGS = -DFreeBSD
+@@ -9,7 +10,7 @@
+ #if you use linux
+ #CFLAGS = -DLinux
+ 
+-GCC = gcc
++GCC ?= cc
+ 
+ ALL = mplayer.o player.o ListView.o clock.o mclock.o mListView.o  \
+ 	filebrowse.o mfilebrowse.o qktstreelist.o mqktstreelist.o \
+@@ -18,69 +19,69 @@
+ PKG = musicbox
+ 
+ all:	${ALL}
+-	${GCC} ${ALL} -o ${PKG} -L${LIB} -I${INC} -lqt
++	${GCC} ${ALL} -o ${PKG} ${LIB}  -lqt1 -lX11 -lXext
+ 
+-player.o:
+-	${GCC} -c player.cpp -o player.o ${CFLAGS} -L${LIB} -I${INC}
++player.o: player.cpp
++	${GCC} -c player.cpp -o player.o ${CFLAGS} ${INC}
+ 
+ mplayer.o: mplayer.cpp
+-	${GCC} -c mplayer.cpp -o mplayer.o ${CFLAGS} -L${LIB} -I${INC}
++	${GCC} -c mplayer.cpp -o mplayer.o ${CFLAGS} ${INC}
+ 
+ mplayer.cpp:
+ 	${MOC} player.h -o mplayer.cpp
+ 
+ ListView.o:
+-	${GCC} -c ListView.cpp -o ListView.o ${CFLAGS} -L${LIB} -I${INC} 
++	${GCC} -c ListView.cpp -o ListView.o ${CFLAGS} ${INC} 
+ 
+ mListView.o: mListView.cpp
+-	${GCC} -c mListView.cpp -o mListView.o ${CFLAGS} -L${LIB} -I${INC}
++	${GCC} -c mListView.cpp -o mListView.o ${CFLAGS} ${INC}
+ 
+ mListView.cpp:
+ 	${MOC} ListView.h -o mListView.cpp
+ clock.o:
+-	${GCC} -c clock.cpp -o clock.o -L${LIB} -I${INC}
++	${GCC} -c clock.cpp -o clock.o ${INC}
+ 
+ mclock.cpp:
+ 	${MOC} clock.h -o mclock.cpp
+ 
+ mclock.o: mclock.cpp
+-	${GCC} -c mclock.cpp -o mclock.o -L${LIB} -I${INC}
++	${GCC} -c mclock.cpp -o mclock.o ${INC}
+ 
+ mfilebrowse.cpp: 
+ 	${MOC} filebrowse.h -o mfilebrowse.cpp
+ 
+ filebrowse.o :
+-	${GCC} -c filebrowse.cpp -o filebrowse.o -L${LIB} -I${INC}
++	${GCC} -c filebrowse.cpp -o filebrowse.o ${INC}
+ 
+ mfilebrowse.o: mfilebrowse.cpp
+-	${GCC} -c mfilebrowse.cpp -o mfilebrowse.o -L${LIB} -I${INC}
++	${GCC} -c mfilebrowse.cpp -o mfilebrowse.o ${INC}
+ 
+ diskbrowse.o:
+-	${GCC} -c diskbrowse.cpp -o $@ -L${LIB} -I${INC}
++	${GCC} -c diskbrowse.cpp -o $@ ${INC}
+ 
+ mdiskbrowse.o: mdiskbrowse.cpp
+-	${GCC} -c mdiskbrowse.cpp -o $@ -L${LIB} -I${INC}
++	${GCC} -c mdiskbrowse.cpp -o $@ ${INC}
+ 
+ mdiskbrowse.cpp:
+ 	${MOC} diskbrowse.h -o $@ 
+ 
+ qktstreelist.o:
+-	${GCC} -c qktstreelist.cpp -o $@ -L${LIB} -I${INC}
++	${GCC} -c qktstreelist.cpp -o $@ ${INC}
+ 
+ mqktstreelist.o: mqktstreelist.cpp
+-	${GCC} -c mqktstreelist.cpp -o $@ -L${LIB} -I${INC}
++	${GCC} -c mqktstreelist.cpp -o $@ ${INC}
+ 
+ mqktstreelist.cpp:
+ 	${MOC} qktstreelist.h -o $@
+ 
+ MultiListBox.o:
+-	${GCC} -c MultiListBox.cpp -o $@ -L${LIB} -I${INC}
++	${GCC} -c MultiListBox.cpp -o $@ ${INC}
+ 	
+ mMultiListBox.cpp:
+ 	${MOC} MultiListBox.h -o $@
+ 
+ mMultiListBox.o: mMultiListBox.cpp
+-	${GCC} -c mMultiListBox.cpp -o $@ -L${LIB} -I${INC}
++	${GCC} -c mMultiListBox.cpp -o $@ ${INC}
+ 
+ clean:
+ 	rm -f player mplayer.cpp *.o mclock.cpp mListView.cpp mfilebrowse.cpp \
