@@ -9,14 +9,14 @@
 
 PORTNAME=	cdoc
 PORTVERSION=	0.9.6
-PORTREVISION=	0
+PORTREVISION=	1
 PORTEPOCH=	0
 CATEGORIES=	devel
 MASTER_SITES=	http://www.annexia.org/freeware/${PORTNAME}/
 
 MAINTAINER=	alane@FreeBSD.org
 
-BUILD_REQUIRES+=make+:${.CURDIR}/../makeplus
+BUILD_DEPENDS+=	make+:${.CURDIR}/../makeplus
 
 USE_GMAKE=	yes
 USE_PERL5_RUN=	yes
