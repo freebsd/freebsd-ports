@@ -162,7 +162,7 @@ post-install:
 	if [ -f ${PREFIX}/etc/wx-console.conf.new ]; then \
 		${ECHO_CMD} "etc/wx-console.conf.new" >> ${TMPPLIST}; \
 	elif [ -f ${PREFIX}/etc/wx-console.conf ]; then \
-		${MV} ${PREFIX}/etc/wx-console.conf ${PREFIX}/etc/wx-console.conf.sample;
+		${MV} ${PREFIX}/etc/wx-console.conf ${PREFIX}/etc/wx-console.conf.sample; \
 		${ECHO_CMD} "etc/wx-console.conf.sample" >> ${TMPPLIST}; \
 	fi
 .endif
@@ -170,7 +170,7 @@ post-install:
 	if [ -f ${PREFIX}/etc/gnome-console.conf.new ]; then \
 		${ECHO_CMD} "etc/gnome-console.conf.new" >> ${TMPPLIST}; \
 	elif [ -f ${PREFIX}/etc/gnome-console.conf ]; then \
-		${MV} ${PREFIX}/etc/gnome-console.conf ${PREFIX}/etc/gnome-console.conf.sample;
+		${MV} ${PREFIX}/etc/gnome-console.conf ${PREFIX}/etc/gnome-console.conf.sample; \
 		${ECHO_CMD} "etc/gnome-console.conf.sample" >> ${TMPPLIST}; \
 	fi
 .endif	# chmod of bsmtp program so bacula can use it with dropped down permissions
@@ -182,7 +182,7 @@ post-install:
 		if [ -f ${PREFIX}/etc/bacula-$$na.conf.new ]; then \
 			${ECHO_CMD} "etc/bacula-$$na.conf.new" >> ${TMPPLIST}; \
 		elif [ -f ${PREFIX}/etc/bacula-$$na.conf ]; then \
-			${MV} ${PREFIX}/etc/bacula-$$na.conf ${PREFIX}/etc/bacula-$$na.sample;
+			${MV} ${PREFIX}/etc/bacula-$$na.conf ${PREFIX}/etc/bacula-$$na.sample; \
 			${ECHO_CMD} "etc/bacula-$$na.conf.sample" >> ${TMPPLIST}; \
 		fi \
 	done; \
