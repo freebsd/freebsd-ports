@@ -1,0 +1,64 @@
+--- imap.c.orig	Mon Aug  2 09:41:38 1999
++++ imap.c	Sat Jul 15 19:49:45 2000
+@@ -318,12 +318,12 @@
+ static int parse_fetch (BOX_INFO *ibox, CONNECTION *conn, GList *headers, 
+     int unseen)
+ {
+-  char from[STRING] = "";
+-  char subject[STRING] = "";
+-  char xface[STRING] = "";
++  char from[LONG_STRING] = "";
++  char subject[LONG_STRING] = "";
++  char xface[LONG_STRING] = "";
+   char buf[LONG_STRING];
+   char seq[8];
+-  char *s;
++  char *s, *last_head;
+   int recent = 0;
+ 
+ 
+@@ -339,8 +339,7 @@
+       return (-1);
+     }
+ 
+-    if (buf[0] == '*') 
+-    {
++    if (buf[0] == '*') {
+       s = imap_next_word (buf);
+       if (!isdigit (*s))
+ 	continue;
+@@ -377,10 +376,12 @@
+ 	  if (!strncasecmp (buf, "From:", 5))
+ 	  {
+ 	    rfc2047_decode (from, buf, sizeof (from));
++	    last_head = from;
+ 	  }
+ 	  else if (!strncasecmp (buf, "Subject:", 8))
+ 	  {
+ 	    rfc2047_decode (subject, buf, sizeof (subject));
++	    last_head = subject;
+ 	  }
+ 	  else if (!strncasecmp (buf, "X-Face:", 7))
+ 	  {
+@@ -389,6 +390,21 @@
+ 	    strfcpy (xface, s, sizeof (xface));
+ 	    if (strlen (s) > sizeof (xface))
+ 	      g_print ("-E- xface header is larger than buffer\n");
++	    last_head = xface;
++	  }
++	  else if (ISSPACE(buf[0])) {
++	    s = buf;
++	    while (*s && ISSPACE (*s)) s++;
++	    if(strlen(s) + strlen(last_head) + 1 > LONG_STRING)
++	      g_print ("-E- a continuing header is larger than buffer\n");
++	    else {
++	      /* If this is an X-Face line the space don't matter, but if this 
++	       * is any other header the space is required. */
++	      strcat(last_head, " ");
++	      strncat(last_head, s, LONG_STRING - strlen(last_head));
++	    }
++	  } else {
++	    last_head = NULL;
+ 	  }
+ 	}
+       } 
