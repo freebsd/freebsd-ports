@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	sdig
-PORTVERSION=	0.40
-PORTREVISION=	1
+PORTVERSION=	0.42
 CATEGORIES=	net-mgmt
-MASTER_SITES=	http://www.exploits.org/sdig/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	rjackson@cserv62.csub.edu
-COMMENT=	Find which switch/router port a given host is on
+MAINTAINER=	raj@cserv62.csub.edu
+COMMENT=	Translate IP/DNS/WINS/MAC address into port description
 
 LIB_DEPENDS=	netsnmp.6:${PORTSDIR}/net-mgmt/net-snmp
 
@@ -21,6 +21,6 @@ GNU_CONFIGURE=	yes
 
 MAN5=		sdig.conf.5
 MAN8=		sdig.8
-PLIST_FILES=	bin/sdig etc/sdig.conf-sample
+PLIST_FILES=	bin/sdig etc/sdig.conf-sample etc/mactable-sample
 
 .include <bsd.port.mk>
