@@ -25,6 +25,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
+MAN1=	autodia.pl.1 autodia_java.pl.1
 MAN3=	Autodia.3 autodia.3 autodia_java.3 \
 	Autodia::Diagram.3 \
 	Autodia::Diagram::Class.3 \
