@@ -14,17 +14,22 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
-
 USE_GNOMENG=	yes
 USE_GNOME=	gdkpixbuf
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -lgnugetopt"
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--enable-exportpng
 
 MAN1=	gerbv.1
+
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+
+.if !exists(/usr/include/getopt.h)
+LIB_DEPENDS+=   gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
+LDFLAGS+=       -lgnugetopt
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|malloc.h|stdlib.h|g" ${WRKSRC}/src/amacro.c
