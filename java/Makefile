@@ -2,6 +2,7 @@
 #
     SUBDIR += xalan-j
 
+    SUBDIR += bluej
     SUBDIR += bugseeker
     SUBDIR += bugseeker-demo
     SUBDIR += collections
