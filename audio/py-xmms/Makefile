@@ -19,16 +19,10 @@ BUILD_DEPENDS=	${XMMS_CONFIG}:${PORTSDIR}/audio/xmms
 LIB_DEPENDS=	xmms.3:${PORTSDIR}/audio/xmms
 
 USE_PYTHON=	yes
+USE_PYDISTUTILS=	yes
 USE_GLIB=	yes
 PLIST_SUB+=	PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR:S,^${LOCALBASE}/,,g}
 XMMS_CONFIG?=	${X11BASE}/bin/xmms-config
 MAKE_ENV=	GLIB_CONFIG="${GLIB_CONFIG}" XMMS_CONFIG="${XMMS_CONFIG}"
-SETUP_CMD=	cd ${WRKSRC} && ${MAKE_ENV} ${PYTHON_CMD} setup.py
-
-do-build:
-	${SETUP_CMD} build
-
-do-install:
-	${SETUP_CMD} install -c -O1 --prefix=${PREFIX}
 
 .include <bsd.port.mk>
