@@ -3,14 +3,15 @@
 # Date created:		So   2 Mär 1997 12:11:43 MET
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.5 1998/04/30 08:40:07 tg Exp $
+# $Id: Makefile,v 1.6 1998/04/30 08:52:05 tg Exp $
 #
 
 DISTNAME=	xmgr-4.1.1
 CATEGORIES=	math print
-MASTER_SITES=	ftp://plasma-gate.weizmann.ac.il/pub/xmgr4/src/ \
-		ftp://fire.mpi-stuttgart.mpg.de/pub/mirror/xmgr4/src/ \
-		ftp://wauug.erols.com/pub/X-Windows/xmgr4/src/
+MASTER_SITES=	ftp://ftp.uni-bielefeld.de/pub/systems/FreeBSD/lkoeller/ \
+		ftp://plasma-gate.weizmann.ac.il/pub/xmgr4/src/old/ \
+		ftp://fire.mpi-stuttgart.mpg.de/pub/mirror/xmgr4/src/old/ \
+		ftp://wauug.erols.com/pub/X-Windows/xmgr4/src/old/
 
 MAINTAINER=	Lars.Koeller@Uni-Bielefeld.DE
 
