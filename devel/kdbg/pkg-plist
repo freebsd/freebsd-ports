@@ -1,5 +1,5 @@
 bin/kdbg
-share/applnk/Development/kdbg.kdelnk
+share/applnk/Development/kdbg.desktop
 share/apps/kdbg/pics/brkcond.xpm
 share/apps/kdbg/pics/brkdis.xpm
 share/apps/kdbg/pics/brkena.xpm
