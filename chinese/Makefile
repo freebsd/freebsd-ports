@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.19 1997/12/01 21:18:24 vanilla Exp $
+# $Id: Makefile,v 1.20 1997/12/04 01:58:07 vanilla Exp $
 #
 
     SUBDIR += Wnn
@@ -14,6 +14,7 @@
     SUBDIR += gbscript
     SUBDIR += hc
     SUBDIR += hztty
+    SUBDIR += kcfonts
     SUBDIR += lunar
     SUBDIR += mule-wnn4
     SUBDIR += nvi-big5
