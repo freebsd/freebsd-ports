@@ -1,0 +1,4 @@
+bin/tidy
+share/doc/tidy/Overview.html
+share/doc/tidy/tidy.gif
+@dirrm share/doc/tidy
