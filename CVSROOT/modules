@@ -2934,6 +2934,7 @@ gru		ports/games/gru
 grub		ports/sysutils/grub
 grubinvaders	ports/games/grubinvaders
 gruftistats	ports/irc/gruftistats
+gruler		ports/deskutils/gruler
 grun		ports/misc/grun
 grustibus	ports/emulators/grustibus
 gsasl		ports/security/gsasl
