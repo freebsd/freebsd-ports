@@ -1,18 +1,5 @@
 --- src/device/k3bscsicommand.cpp.orig	Wed Jan 21 11:20:11 2004
-+++ src/device/k3bscsicommand.cpp	Fri Feb 13 21:03:38 2004
-@@ -1,10 +1,10 @@
- /* 
-  *
-- * $Id: k3bscsicommand.cpp,v 1.4 2004/01/21 10:20:11 trueg Exp $
-+ * $Id: k3bscsicommand.cpp,v 1.3 2003/12/31 14:15:17 trueg Exp $
-  * Copyright (C) 2003 Sebastian Trueg <trueg@k3b.org>
-  *
-  * This file is part of the K3b project.
-- * Copyright (C) 1998-2004 Sebastian Trueg <trueg@k3b.org>
-+ * Copyright (C) 1998-2003 Sebastian Trueg <trueg@k3b.org>
-  *
-  * This program is free software; you can redistribute it and/or modify
-  * it under the terms of the GNU General Public License as published by
++++ src/device/k3bscsicommand.cpp	Mon May 24 23:32:04 2004
 @@ -58,13 +58,14 @@
  
  
@@ -34,7 +21,7 @@
  
  K3bCdDevice::ScsiCommand::ScsiCommand( const K3bCdDevice::CdDevice* dev )
    : m_device(dev)
-@@ -135,6 +136,105 @@
+@@ -135,6 +136,155 @@
      return 0;
  }
  
@@ -65,42 +52,41 @@
 +#include <sys/ioctl.h>
 +
 +K3bCdDevice::ScsiCommand::ScsiCommand( const K3bCdDevice::CdDevice* dev )
-+  : m_device(dev)
++  : closecam(true), m_device(dev)
 +{
-+  clear();
++   cam = cam_open_pass (m_device->m_passDevice.latin1(),O_RDWR,NULL);
++   kdDebug() << "(K3bCdDevice::ScsiCommand) open device " << m_device->m_passDevice << ((cam)?" succeeded.":" failed.") << endl;
++   clear();
++}
++
++K3bCdDevice::ScsiCommand::ScsiCommand( const K3bCdDevice::CdDevice* dev, struct cam_device * c)
++  : closecam(false), cam(c), m_device(dev)
++{
++   clear();
 +}
 +
 +K3bCdDevice::ScsiCommand::~ScsiCommand()
 +{
-+   if(cam)
++   if(cam && closecam)
++   {
 +       cam_close_device(cam);
-+//   if (m_fd >0)
-+//       close(m_fd);
++       kdDebug() << "(K3bCdDevice::ScsiCommand) device " << m_device->m_passDevice << " closed." << endl;
++   }
 +}
 +
 +
 +void K3bCdDevice::ScsiCommand::clear()
 +{
-+//   char pass[32];
-+   cam=NULL;
 +   memset (&ccb,0,sizeof(ccb));
-+   ccb.ccb_h.func_code = XPT_GDEVLIST;
-+//   if (ioctl (m_fd,CAMGETPASSTHRU,&ccb) < 0) return;
-+//   sprintf (pass,"/dev/%.15s%u",ccb.cgdl.periph_name,ccb.cgdl.unit_number);
-+   cam = cam_open_pass (m_device->m_passDevice.latin1(),O_RDWR,NULL);
-+   kdDebug() << "(K3bCdDevice::ScsiCommand) open device " << m_device->m_passDevice << ((cam)?" succeeded.":" failed.") << endl;
++   if (!cam)
++      return;
++   ccb.ccb_h.path_id    = cam->path_id;
++   ccb.ccb_h.target_id  = cam->target_id;
++   ccb.ccb_h.target_lun = cam->target_lun;
 +}
 +
 +unsigned char& K3bCdDevice::ScsiCommand::operator[]( size_t i )
 +{
-+   if (!i && cam)
-+   {
-+      memset(&ccb,0,sizeof(ccb));
-+      ccb.ccb_h.path_id    = cam->path_id;
-+      ccb.ccb_h.target_id  = cam->target_id;
-+      ccb.ccb_h.target_lun = cam->target_lun;
-+      cam_fill_csio (&(ccb.csio), 1, NULL, CAM_DEV_QFRZDIS, MSG_SIMPLE_Q_TAG, NULL, 0, sizeof(ccb.csio.sense_data), 0, 30*1000);
-+   }
 +   ccb.csio.cdb_len = i+1;
 +   return ccb.csio.cdb_io.cdb_bytes[i];
 +}
@@ -114,26 +100,77 @@
 +      return -1;
 +   kdDebug() << "(K3bCdDevice::ScsiCommand) transport command " << QString::number((int)ccb.csio.cdb_io.cdb_bytes[0], 16) << ", length: " << (int)ccb.csio.cdb_len << endl;
 +   int ret=0;
-+   ccb.csio.ccb_h.flags |= dir;
-+   ccb.csio.data_ptr  = (u_int8_t *)data;
-+   ccb.csio.dxfer_len = len;
++   unsigned char command = ccb.csio.cdb_io.cdb_bytes[0];
++   int direction = CAM_DEV_QFRZDIS;
++   if (!len)
++      direction |= CAM_DIR_NONE;
++   else
++      direction |= (dir & TR_DIR_READ)?CAM_DIR_IN : CAM_DIR_OUT;
++   cam_fill_csio (&(ccb.csio), 1, NULL, direction | CAM_DEV_QFRZDIS, MSG_SIMPLE_Q_TAG, (u_int8_t *)data, len, sizeof(ccb.csio.sense_data), ccb.csio.cdb_len, 30*1000);
++   unsigned char * sense = (unsigned char *)&ccb.csio.sense_data;
 +   if ((ret = cam_send_ccb(cam, &ccb)) < 0)
 +   {
 +      kdDebug() << "(K3bCdDevice::ScsiCommand) transport failed: " << ret << endl;
-+      return -1;
++      goto dump_error;
 +  }
 +   if ((ccb.ccb_h.status & CAM_STATUS_MASK) == CAM_REQ_CMP)
-+   {
-+      kdDebug() << "(K3bCdDevice::ScsiCommand) transport succeeded" << endl;
-+    return 0;
-+   }
++      return 0;
++   
 +   errno = EIO;
-+   ret = ERRCODE(((unsigned char *)&ccb.csio.sense_data));
++   // FreeBSD 5-CURRENT since 2003-08-24, including 5.2 fails to
++   // pull sense data automatically, at least for ATAPI transport,
++   // so I reach for it myself...
++   if ((ccb.csio.scsi_status==SCSI_STATUS_CHECK_COND) &&
++      !(ccb.ccb_h.status&CAM_AUTOSNS_VALID))
++   {   
++      u_int8_t  _sense[18];
++      u_int32_t resid=ccb.csio.resid;
++
++      memset(_sense,0,sizeof(_sense));
++
++      operator[](0)      = 0x03;	// REQUEST SENSE
++      ccb.csio.cdb_io.cdb_bytes[4] = sizeof(_sense);
++      ccb.csio.cdb_len   = 6;
++      ccb.csio.ccb_h.flags |= CAM_DIR_IN|CAM_DIS_AUTOSENSE;
++      ccb.csio.data_ptr  = _sense;
++      ccb.csio.dxfer_len = sizeof(_sense);
++      ccb.csio.sense_len = 0;
++      ret = cam_send_ccb(cam, &ccb);
++
++      ccb.csio.resid = resid;
++      if (ret<0)
++      {
++         kdDebug() << "(K3bCdDevice::ScsiCommand) transport failed (2): " << ret << endl;
++         ret = -1;
++         goto dump_error;
++      }
++      if ((ccb.ccb_h.status&CAM_STATUS_MASK) != CAM_REQ_CMP)
++      {
++         kdDebug() << "(K3bCdDevice::ScsiCommand) transport failed (3): " << ret << endl;
++         errno=EIO,-1;
++         ret = -1;
++         goto dump_error;
++      } 
++
++      memcpy(sense,_sense,sizeof(_sense));
++   }
++
++   ret = ERRCODE(sense);
++   kdDebug() << "(K3bCdDevice::ScsiCommand) transport failed (4): " << ret << endl;
 +   if (ret == 0)
 +      ret = -1;
 +   else
 +      CREAM_ON_ERRNO(((unsigned char *)&ccb.csio.sense_data));
-+   kdDebug() << "(K3bCdDevice::ScsiCommand) transport failed (2): " << ret << endl;
++dump_error:
++    kdDebug() << "(K3bCdDevice::ScsiCommand) failed: " << endl
++              << "                           command:    " << QString("%1 (%2)")
++      .arg( MMC::commandString( ccb.csio.cdb_io.cdb_bytes[0] ) )
++      .arg( QString::number(ccb.csio.cdb_io.cdb_bytes[0], 16) ) << endl
++              << "                           errorcode:  " << QString::number(((struct scsi_sense_data *)sense)->error_code & SSD_ERRCODE, 16) << endl
++              << "                           sense key:  " << senseKeyToString(((struct scsi_sense_data *)sense)->flags & SSD_KEY) << endl
++              << "                           asc:        " << QString::number(((struct scsi_sense_data *)sense)->add_sense_code, 16) << endl
++              << "                           ascq:       " << QString::number(((struct scsi_sense_data *)sense)->add_sense_code_qual, 16) << endl;
++   
 +   return ret;
 +}
 +#endif

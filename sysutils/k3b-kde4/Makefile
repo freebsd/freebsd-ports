@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	k3b
-PORTVERSION=	0.11.6
-PORTREVISION=	1
+PORTVERSION=	0.11.9
 CATEGORIES=	sysutils multimedia kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,6 +18,7 @@ RUN_DEPENDS=	cdrecord:${PORTSDIR}/sysutils/cdrtools \
 		cdrdao:${PORTSDIR}/sysutils/cdrdao \
 		mkisofs:${PORTSDIR}/sysutils/mkisofs
 LIB_DEPENDS=	mad:${PORTSDIR}/audio/libmad \
+		id3tag:${PORTSDIR}/audio/libid3tag \
 		vorbis:${PORTSDIR}/audio/libvorbis \
 		FLAC:${PORTSDIR}/audio/flac
 

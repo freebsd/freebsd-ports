@@ -1,18 +1,5 @@
 --- src/device/k3bscsicommand.h.orig	Wed Jan 21 11:20:11 2004
-+++ src/device/k3bscsicommand.h	Fri Feb 13 21:03:38 2004
-@@ -1,10 +1,10 @@
- /* 
-  *
-- * $Id: k3bscsicommand.h,v 1.3 2004/01/21 10:20:11 trueg Exp $
-+ * $Id: k3bscsicommand.h,v 1.2 2003/12/19 19:40:40 trueg Exp $
-  * Copyright (C) 2003 Sebastian Trueg <trueg@k3b.org>
-  *
-  * This file is part of the K3b project.
-- * Copyright (C) 1998-2004 Sebastian Trueg <trueg@k3b.org>
-+ * Copyright (C) 1998-2003 Sebastian Trueg <trueg@k3b.org>
-  *
-  * This program is free software; you can redistribute it and/or modify
-  * it under the terms of the GNU General Public License as published by
++++ src/device/k3bscsicommand.h	Tue May 11 22:57:03 2004
 @@ -17,9 +17,27 @@
  #define _K3B_SCSI_COMMAND_H_
  
@@ -41,24 +28,7 @@
  
  
  #include <qstring.h>
-@@ -87,16 +105,24 @@
-   }
- 
- 
-+#ifndef __FreeBSD__
-   enum TransportDirection {
-     TR_DIR_NONE,
-     TR_DIR_READ,
-     TR_DIR_WRITE
-   };
-+#else
-+  enum TransportDirection {
-+    TR_DIR_NONE = 0,
-+    TR_DIR_READ = CAM_DIR_IN,
-+    TR_DIR_WRITE = CAM_DIR_OUT
-+  };
-+#endif
- 
+@@ -96,7 +114,7 @@
    class ScsiCommand
      {
      public:
@@ -67,7 +37,7 @@
        ScsiCommand( const CdDevice* );
        ~ScsiCommand();
  
-@@ -109,9 +135,13 @@
+@@ -109,10 +127,16 @@
  		     size_t len = 0 );
  
      private:
@@ -76,9 +46,12 @@
        struct request_sense m_sense;
 -
 +#else
++      ScsiCommand( const CdDevice* , struct cam_device *);
++      bool closecam;
 +      struct cam_device  *cam;
 +      union ccb		ccb;
-+#endif
        int m_fd;
++#endif
        const CdDevice* m_device;
        bool m_needToCloseDevice;
+     };
