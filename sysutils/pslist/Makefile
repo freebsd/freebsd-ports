@@ -8,7 +8,7 @@
 PORTNAME=	pslist
 PORTVERSION=	1.0
 CATEGORIES=	sysutils
-MASTER_SITES=	http://ringwraith.online.bg/~roam/devel/sysutils/
+MASTER_SITES=	http://ringwraith.online.bg/devel/sysutils/
 
 MAINTAINER=	roam@FreeBSD.org
 
