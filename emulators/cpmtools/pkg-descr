@@ -1,0 +1,20 @@
+Title:		CPM
+
+Author:		Helge Skrivervik, now (1994) helge@mellvik.no
+
+Description:
+
+Cpm lets UNIX users read and write standard cp/m 8" floppy disks and
+provides a cp/m like user interface for manipulating cp/m files.
+
+History:
+
+The program has been developed in 1983.  Helge was kind enough to change
+the original copyright to a BSD-like one, so i've been able to port the
+program to FreeBSD and distribute it freely.
+
+Ported & maintained by: J"org Wunsch <joerg@FreeBSD.org>, 1994
+
+Frequently asked question:
+
+No, FreeBSD's floppy-disk driver does not (yet) understand FM diskettes.
