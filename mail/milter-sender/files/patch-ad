@@ -1,0 +1,11 @@
+--- milter-sender.c.bak	Fri Oct  3 13:54:10 2003
++++ milter-sender.c	Sat Oct  4 06:03:58 2003
+@@ -2326,7 +2326,7 @@
+ 		/* Generate a false address. */
+ 		TextInvert(data->replyLine, 0, -1);
+ 		TextReverse(data->replyLine, 0, -1);
+-		(void) snprintf(data->line, SMTP_LINE_SIZE, "RCPT TO:<%s%d@%s>\r\n", data->replyLine, data->domain, LuhnGenerate(data->replyLine));
++		(void) snprintf(data->line, SMTP_LINE_SIZE, "RCPT TO:<%s%d@%s>\r\n", data->replyLine, LuhnGenerate(data->replyLine), data->domain);
+ 
+ 		if (!printline(data, data->line)) {
+ 			rc = setReply(data, 450, NULL, MX_INFO_FORMAT " socket write error", MX_INFO_ARGS);
