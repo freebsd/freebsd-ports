@@ -21,12 +21,15 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 PERL_CONFIGURE=	yes
 CONFIGURE_ARGS=	INC='-I${LOCALBASE}/include -I${LOCALBASE}/include/libxml2'
 
-MAN3=		XML::LibXML::Element.3 XML::LibXML::CDATASection.3 \
-		XML::LibXML::Comment.3 XML::LibXML::Text.3 XML::LibXML.3 \
-		XML::LibXML::Node.3 XML::LibXML::Document.3 \
-		XML::LibXML::Dtd.3 XML::LibXML::Namespace.3 \
-		XML::LibXML::DocumentFragment.3 XML::LibXML::Attr.3
-
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
+MAN3=		XML::LibXML.3 XML::LibXML::Attr.3 XML::LibXML::Boolean.3 \
+		XML::LibXML::CDATASection.3 XML::LibXML::Comment.3 \
+		XML::LibXML::Document.3 XML::LibXML::DocumentFragment.3 \
+		XML::LibXML::Dtd.3 XML::LibXML::Element.3 \
+		XML::LibXML::Literal.3 XML::LibXML::Namespace.3 \
+		XML::LibXML::Node.3 XML::LibXML::NodeList.3 \
+		XML::LibXML::Number.3 XML::LibXML::SAX::Builder.3 \
+		XML::LibXML::SAX::Generator.3 XML::LibXML::SAX::Parser.3 \
+		XML::LibXML::Text.3
 
 .include <bsd.port.mk>

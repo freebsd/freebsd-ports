@@ -1,3 +1,6 @@
 This module is a minimal interface to the Gnome libxml2 library.
 
 WWW: http://www.xmlsoft.org/
+
+-- Sergey Skvortsov
+skv@protey.ru
