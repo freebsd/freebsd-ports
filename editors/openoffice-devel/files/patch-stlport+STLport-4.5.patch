@@ -1,6 +1,6 @@
 --- ../stlport/STLport-4.5.patch.orig	Mon Jan 14 18:33:17 2002
 +++ ../stlport/STLport-4.5.patch	Tue May 28 23:55:42 2002
-@@ -174,3 +174,138 @@
+@@ -174,3 +174,110 @@
    class _STLP_CLASS_DECLSPEC __Named_exception : public _STLP_EXCEPTION_BASE {
    public:
      __Named_exception(const string& __str) 
@@ -111,31 +111,3 @@
 + # include <stl/_cwchar.h>
 + 
 + # if (_STLP_OUTERMOST_HEADER_ID == 0x120)
-+--- misc/STLport-4.5/stlport/config/stl_gcc.h.orig	Tue May 28 23:46:40 2002
-++++ misc/build/STLport-4.5/stlport/config/stl_gcc.h	Tue May 28 23:54:30 2002
-+@@ -226,8 +226,13 @@
-+ 
-+ # if (__GNUC__ >= 3)
-+ 
-++#ifdef __FreeBSD__
-++#  define _STLP_NATIVE_INCLUDE_PATH ../g++
-++#  define _STLP_NATIVE_OLD_STREAMS_INCLUDE_PATH ../g++/backward
-++#else
-+ #  define _STLP_NATIVE_INCLUDE_PATH ../g++-v3
-+ #  define _STLP_NATIVE_OLD_STREAMS_INCLUDE_PATH ../g++-v3/backward
-++#endif
-+ 
-+ # elif (__GNUC_MINOR__ < 8)
-+ 
-+@@ -261,7 +266,11 @@
-+ # if defined(__DJGPP)
-+ #   define _STLP_NATIVE_INCLUDE_PATH ../lang/cxx
-+ # elif (__GNUC__ >= 3) || (__GNUC_MINOR__ >= 97)
-++#ifdef __FreeBSD__
-++#   define _STLP_NATIVE_INCLUDE_PATH ../include/g++
-++#else
-+ #   define _STLP_NATIVE_INCLUDE_PATH ../include/g++-v3
-++#endif
-+ # elif ((__GNUC_MINOR__ >= 95 && __GNUC_MINOR__ < 97) && !( defined (__FreeBSD__) || defined (__NetBSD__) || defined(__sgi) ) )
-+ #   define _STLP_NATIVE_INCLUDE_PATH ../g++-3
-+ # elif (__GNUC_MINOR__ > 8) && (__GNUC_MINOR__ < 95) && (__GNUC__ < 3)
