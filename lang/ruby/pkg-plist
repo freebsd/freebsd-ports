@@ -131,6 +131,7 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/shell
 %%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%
 @unexec rmdir %D/lib/ruby 2>/dev/null || true
+%%PORTDOCS%%%%RUBY_DOCDIR%%/NEWS
 %%PORTDOCS%%%%RUBY_DOCDIR%%/README
 %%PORTDOCS%%%%RUBY_DOCDIR%%/README.jp
 %%PORTDOCS%%%%RUBY_DOCDIR%%/README.EXT
