@@ -23,7 +23,7 @@ NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 post-patch:
-	${PERL} -i -pe 's|rubyapi.css|../rubyapi.css|g' ${WRKSRC}/Properties-ja.html
+	${RUBY} -i -pe 'gsub /rubyapi\.css/, "../rubyapi.css"' ${WRKSRC}/Properties-ja.html
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/property.rb ${RUBY_SITELIBDIR}
