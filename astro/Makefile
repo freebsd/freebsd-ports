@@ -8,6 +8,7 @@
     SUBDIR += rmap
     SUBDIR += saoimage
     SUBDIR += sattrack
+    SUBDIR += seti_applet
     SUBDIR += setiathome
     SUBDIR += ssystem
     SUBDIR += stars

@@ -1,0 +1,16 @@
+bin/seti_applet
+etc/CORBA/servers/seti_applet.gnorba
+share/gnome/applets/Monitors/seti_applet.desktop
+share/gnome/help/seti_applet/C/configuration.html
+share/gnome/help/seti_applet/C/docbook.css
+share/gnome/help/seti_applet/C/images/adv_prop.gif
+share/gnome/help/seti_applet/C/images/basic_prop.gif
+share/gnome/help/seti_applet/C/index.html
+share/gnome/help/seti_applet/C/operation.html
+share/gnome/help/seti_applet/C/startingsetiprocess.html
+share/gnome/help/seti_applet/C/topic.dat
+share/gnome/help/seti_applet/C/x42.html
+share/gnome/pixmaps/seti_applet-logo-green.png
+@dirrm share/gnome/help/seti_applet/C/images
+@dirrm share/gnome/help/seti_applet/C
+@dirrm share/gnome/help/seti_applet
