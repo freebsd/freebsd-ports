@@ -1,5 +1,12 @@
 --- configure~	Fri Oct  8 15:34:48 1999
 +++ configure	Fri Oct  8 15:36:43 1999
+@@ -1038,6 +1038,7 @@
+ 
+ case "$canonical" in
+   *-*-linux*    ) opsys=linux ;;
++  *-*-freebsd* ) opsys=freebsd ;;
+   *-*-netbsd*   ) opsys=netbsd ;;
+   *-*-openbsd* ) opsys=openbsd ;;
 @@ -11108,7 +11108,7 @@
  if test "$with_database_berkdb" != "no"; then
    echo $ac_n "checking for Berkeley db.h""... $ac_c" 1>&6
