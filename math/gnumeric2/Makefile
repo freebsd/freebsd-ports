@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnumeric2
-PORTVERSION=	1.1.16
-PORTREVISION=	2
+PORTVERSION=	1.1.17
 CATEGORIES=	math gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/1.1
@@ -17,7 +16,7 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	The GNOME 2 spreadsheet
 
-LIB_DEPENDS=	gsf-1.8:${PORTSDIR}/devel/libgsf
+LIB_DEPENDS=	gsf-1.9:${PORTSDIR}/devel/libgsf
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
@@ -27,7 +26,7 @@ USE_GNOME=	gnomeprefix gnomehack gnomehier libgnomeprintui gal2 libgda2
 USE_PYTHON=	yes
 USE_REINPLACE=	yes
 USE_LIBTOOL=	yes
-CONFIGURE_ARGS=	--without-guile --with-bonobo
+CONFIGURE_ARGS=	--without-guile --with-bonobo --with-gnome-db
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib -liconv ${PTHREAD_LIBS}" \
 		DEFS="-I${X11BASE}/include/gal-2.0"
