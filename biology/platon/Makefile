@@ -8,7 +8,7 @@
 PORTNAME=	platon
 PORTVERSION=	2000.06.05
 CATEGORIES=	biology
-MASTER_SITES=	ftp://xraysoft.chem.ruu.nl/pub/unix/
+MASTER_SITES=	ftp://xraysoft.chem.uu.nl/pub/unix/
 DISTNAME=	platon
 
 MAINTAINER=	rmiya@cc.hirosaki-u.ac.jp
