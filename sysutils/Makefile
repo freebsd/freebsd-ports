@@ -317,6 +317,7 @@
     SUBDIR += pear-File_Gettext
     SUBDIR += pear-I18Nv2
     SUBDIR += pear-Log
+    SUBDIR += pear-Translation2
     SUBDIR += pecl-fileinfo
     SUBDIR += penv
     SUBDIR += perf

@@ -1,0 +1,23 @@
+This class provides an easy way to retrieve all the strings for a multilingual
+site from a data source (i.e. db).
+The following containers are provided, more will follow:
+- PEAR::DB
+- PEAR::MDB
+- PEAR::MDB2
+- gettext
+- XML
+- PEAR::DB_DataObject (experimental)
+It is designed to reduce the number of queries to the db, caching the results 
+when possible. An Admin class is provided to easily manage translations
+(add/remove a language, add/remove a string).
+
+Currently, the following decorators are provided:
+- CacheLiteFunction (for file-based caching)
+- CacheMemory (for memory-based caching)
+- DefaultText (to replace empty strings with their keys)
+- Iconv (to switch from/to different encodings)
+- Lang (resort to fallback languages for empty strings)
+- SpecialChars (replace html entities with their hex codes)
+- UTF-8 (to convert UTF-8 strings to ISO-8859-1)
+
+WWW: http://pear.php.net/package/Translation2/
