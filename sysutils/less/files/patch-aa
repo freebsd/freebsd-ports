@@ -1,5 +1,5 @@
-*** Makefile.in.orig	Fri Sep 16 09:57:05 1994
---- Makefile.in	Mon Nov  7 19:29:18 1994
+*** Makefile.in.orig	Mon Nov  7 03:04:04 1994
+--- Makefile.in	Tue Nov 22 02:26:12 1994
 ***************
 *** 5,21 ****
   srcdir = @srcdir@
@@ -7,74 +7,48 @@
   
 ! CC = @CC@
 ! INSTALL = @INSTALL@
-  INSTALL_PROGRAM = @INSTALL_PROGRAM@
+! INSTALL_PROGRAM = @INSTALL_PROGRAM@
   INSTALL_DATA = @INSTALL_DATA@
   
 - CFLAGS = -O
   CFLAGS_COMPILE_ONLY = -c
-! LDFLAGS = 
+  LDFLAGS = 
   O=o
   
 ! LIBS = @LIBS@
   
-  prefix = /usr/local
-  exec_prefix = $(prefix)
+  prefix = @prefix@
+  exec_prefix = @exec_prefix@
 --- 5,19 ----
   srcdir = @srcdir@
   VPATH = @srcdir@
   
-! INSTALL = /usr/bin/install -c -o bin -g bin
-  INSTALL_PROGRAM = @INSTALL_PROGRAM@
+! INSTALL = @INSTALL@ -o bin -g bin
+! INSTALL_PROGRAM = @INSTALL_PROGRAM@ -s
   INSTALL_DATA = @INSTALL_DATA@
   
   CFLAGS_COMPILE_ONLY = -c
-! LDFLAGS = -s
+  LDFLAGS = 
   O=o
   
 ! LIBS = -ltermcap
   
-  prefix = /usr/local
-  exec_prefix = $(prefix)
-*** screen.c.old	Fri Sep 23 10:51:39 1994
---- screen.c	Mon Nov  7 19:09:54 1994
+  prefix = @prefix@
+  exec_prefix = @exec_prefix@
 ***************
-*** 169,175 ****
---- 169,206 ----
-  		 */
-  		save_term = s;
-  #if HAVE_OSPEED
-+ #ifndef __FreeBSD__
-  		ospeed = cfgetospeed(&s);
-+ #else
-+ 		switch (cfgetospeed(&s)) {
-+ 		case B0: ospeed = 0; break;
-+ 		case B50: ospeed = 1; break;
-+ 		case B75: ospeed = 2; break;
-+ 		case B110: ospeed = 3; break;
-+ 		case B134: ospeed = 4; break;
-+ 		case B150: ospeed = 5; break;
-+ 		case B200: ospeed = 6; break;
-+ 		case B300: ospeed = 7; break;
-+ 		case B600: ospeed = 8; break;
-+ 		case B1200: ospeed = 9; break;
-+ 		case B1800: ospeed = 10; break;
-+ 		case B2400: ospeed = 11; break;
-+ 		case B4800: ospeed = 12; break;
-+ 		case B9600: ospeed = 13; break;
-+ #ifdef EXTA
-+ 		case EXTA: ospeed = 14; break;
-+ #endif
-+ #ifdef EXTB
-+ 		case EXTB: ospeed = 15; break;
-+ #endif
-+ #ifdef B57600
-+ 		case B57600: ospeed = 16; break;
-+ #endif
-+ #ifdef B115200
-+ 		case B115200: ospeed = 17; break;
-+ #endif
-+ 		}
-+ #endif
-  #endif
-  		erase_char = s.c_cc[VERASE];
-  		kill_char = s.c_cc[VKILL];
+*** 25,31 ****
+  binprefix = 
+  
+  # Where the help file goes.
+! datadir = $(prefix)/share
+  
+  mandir = $(prefix)/man/man$(manext)
+  manext = 1
+--- 23,29 ----
+  binprefix = 
+  
+  # Where the help file goes.
+! datadir = $(prefix)/lib
+  
+  mandir = $(prefix)/man/man$(manext)
+  manext = 1
