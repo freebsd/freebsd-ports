@@ -1,2 +1,9 @@
 bin/distcc
 sbin/distccd
+%%PORTDOCS%%share/doc/distcc/distcc.pdf
+%%PORTDOCS%%share/doc/distcc/distcc.ps
+%%PORTDOCS%%share/doc/distcc/distcc.html
+%%PORTDOCS%%share/doc/distcc/distccd.pdf
+%%PORTDOCS%%share/doc/distcc/distccd.ps
+%%PORTDOCS%%share/doc/distcc/distccd.html
+%%PORTDOCS%%@dirrm share/doc/distcc
