@@ -54,6 +54,14 @@
        s1 = 0;
        s2 = 0;
        break;
+@@ -2687,6 +2687,7 @@
+       l1 = l2 = s1 = s2 = 0;
+       lf2 = 4096;
+    }
++   s1 = 0; // XXX always calculate L1 cache size
+    if (lvl == 1)
+    {
+       if (AmSure) *AmSure = s1;
 @@ -2799,7 +2803,7 @@
        else if (strstr(ln, "ia64")) la = LAIA64;
        else if ( strstr(ln, "i686") || strstr(ln, "i586") ||
