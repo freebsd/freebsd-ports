@@ -3203,6 +3203,7 @@ libmenu		src/lib/libmenu
 libmikmod	ports/audio/libmikmod
 libmng		ports/graphics/libmng
 libmorph	ports/graphics/libmorph
+libmovtar	ports/graphics/libmovtar
 libmp		src/gnu/lib/libmp
 libmpeg2	ports/graphics/libmpeg2
 libmytinfo	src/lib/libmytinfo
