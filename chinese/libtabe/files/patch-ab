@@ -1,5 +1,14 @@
---- src/supports/bims/Makefile.in.orig	Sat Dec 18 16:11:10 1999
-+++ src/supports/bims/Makefile.in	Sat Dec 18 16:11:19 1999
+--- src/supports/bims/Makefile.in.orig	Wed Feb 23 09:48:10 2000
++++ src/supports/bims/Makefile.in	Thu Mar  2 16:31:33 2000
+@@ -27,7 +27,7 @@
+ bindir      = @bindir@
+ includedir  = @includedir@
+ 
+-version     = 0.1-2
++version     = 0.1
+ major_ver   = 0
+ 
+ AR          = ar cr
 @@ -72,7 +72,7 @@
  	if [ -d obj-s ]; then rmdir obj-s; fi
  	$(RM) Makefile 
@@ -8,4 +17,4 @@
 +install:
  	if [ ! -d $(libdir) ]; then $(INSTALL) -d $(libdir); fi
  	$(INSTALL_DATA) lib$(LIBNAME).a $(libdir)
- 	if [ -f lib$(LIBNAME).so.$(version) ]; then \
+ 	if [ -f lib$(LIBNAME).so ]; then \
