@@ -20,8 +20,6 @@ ONLY_FOR_ARCHS=	i386
 
 MAN1=		strace.1
 
-check-umask:
-
 do-install:
 	-${MKDIR} ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/strace ${PREFIX}/bin
