@@ -35,6 +35,7 @@ post-extract:
 	${MV} ${WRKSRC}/${f} ${WRKSRC}/lib/
 .endfor
 	${CP} ${_DISTDIR}/romp.html ${WRKSRC}/
+	${RM} ${WRKSRC}/druby4*
 
 post-patch:
 	${RUBY} -i~ -pe 'sub /^(#include\s*<stdint\.h>)/, "/*\\1*/"' ${WRKSRC}/*.c
