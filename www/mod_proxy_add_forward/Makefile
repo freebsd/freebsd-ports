@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	mod_proxy_add_forward
-PORTVERSION=	20010201
+PORTVERSION=	20020710
 CATEGORIES=	www
 MASTER_SITES=	http://develooper.com/code/mpaf/ \
 		http://atreides.freenix.no/~anders/
-DISTNAME=	${PORTNAME}
+DISTNAME=	${PORTNAME}-${PORTVERSION}
 EXTRACT_SUFX=	.c
 
 MAINTAINER=	anders@FreeBSD.org
@@ -25,7 +25,7 @@ APXS?=		${LOCALBASE}/sbin/apxs
 
 do-extract:
 	@${MKDIR} ${WRKDIR}
-	@${CP} -p ${DISTDIR}/${DISTFILES} ${WRKDIR}
+	@${CP} -p ${DISTDIR}/${DISTFILES} ${WRKDIR}/${PORTNAME}.c
 
 do-build:
 	cd ${WRKSRC} && ${APXS} -c ${PORTNAME}.c
