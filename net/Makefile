@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.261 1999/05/09 01:17:10 steve Exp $
+# $Id: Makefile,v 1.262 1999/05/11 01:24:57 flathill Exp $
 #
 
     SUBDIR += IglooFTP
@@ -92,6 +92,7 @@
     SUBDIR += kvirc
     SUBDIR += ksamba
     SUBDIR += ldap
+    SUBDIR += ldapsdk
     SUBDIR += lftp
     SUBDIR += libicq
     SUBDIR += libnet
@@ -143,6 +144,7 @@
     SUBDIR += pathchar
     SUBDIR += pavuk
     SUBDIR += pcnfsd
+    SUBDIR += perldap
     SUBDIR += pmf
     SUBDIR += ppp-nt
     SUBDIR += pppload
