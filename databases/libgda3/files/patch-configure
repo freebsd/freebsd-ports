@@ -1,0 +1,11 @@
+--- configure.orig	Tue Apr  6 14:10:07 2004
++++ configure	Tue Apr  6 14:10:19 2004
+@@ -23012,7 +23012,7 @@
+ _ACEOF
+ 
+ 		FIREBIRD_CFLAGS="-I${firebirddir}/include"
+-		FIREBIRD_LIBS="-L${firebirddir}/lib -lgds -ldl -lcrypt"
++		FIREBIRD_LIBS="-L${firebirddir}/lib -lgds -lcrypt"
+ 	fi
+ fi
+
