@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	boehm-gc
-PORTVERSION=	6.1
-PORTREVISION=	1
+PORTVERSION=	6.2.a3
 CATEGORIES=	devel
 MASTER_SITES=	http://www.hpl.hp.com/personal/Hans_Boehm/gc/gc_source/
-DISTNAME=	gc${PORTVERSION}
+DISTNAME=	gc${PORTVERSION:S/.a/alpha/}
 
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	Garbage collection and memory leak detection for C and C++
