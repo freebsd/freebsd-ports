@@ -49,7 +49,7 @@ ONLY_FOR_ARCHS=	alpha i386
 .endif
 
 .if defined(WITH_LIBZVBI)
-LIB_DEPENDS+=	zvbi.3:${PORTSDIR}/devel/libzvbi
+LIB_DEPENDS+=	zvbi.4:${PORTSDIR}/devel/libzvbi
 CONFIGURE_ARGS+=--enable-zvbi
 .if ${OSVERSION} > 500000
 PLIST_SUB+=	ZVBI="" ZVBI5=""
