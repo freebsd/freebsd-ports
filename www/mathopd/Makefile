@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.mathopd.org/dist/ \
 		http://www.tobez.org/download/port-mirrors/www/mathopd/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/p/pl/}
 
-MAINTAINER=	tobez@tobez.org
+MAINTAINER=	tobez@FreeBSD.org
 
 post-install:
 	@${INSTALL_DATA} ${FILESDIR}/mathopd.conf.sample ${PREFIX}/etc

@@ -6,4 +6,4 @@ It tries C<syscall(SYS_statfs)> and C<syscall(SYS_statvfs)> in several
 ways. If all fails, it C<croak>s.
 
 -Anton
-<tobez@tobez.org>
+<tobez@FreeBSD.org>

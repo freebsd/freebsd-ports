@@ -11,4 +11,4 @@ Subclassing is only needed to send a message to a different output, not
 to change the message format.
 
 -Anton
-<tobez@tobez.org>
+<tobez@FreeBSD.org>

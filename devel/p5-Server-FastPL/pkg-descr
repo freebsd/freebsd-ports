@@ -3,4 +3,4 @@ lot of times. It works forking your script into MAX_CHILDS childs, and using
 Unix Sockets to run your code. Just like CGI::Fast.
 
 -Anton
-<tobez@tobez.org>
+<tobez@FreeBSD.org>

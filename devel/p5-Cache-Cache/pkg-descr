@@ -6,4 +6,4 @@ Cache::SizeAwareSharedMemoryCache classes.  This work replaces
 File::Cache and IPC::Cache.
 
 -Anton
-<tobez@tobez.org>
+<tobez@FreeBSD.org>

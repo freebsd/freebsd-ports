@@ -11,7 +11,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://totoro.berkeley.edu/software/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	tobez@plab.ku.dk
+MAINTAINER=	tobez@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/Cgraph/source
 

@@ -2,4 +2,4 @@ This module provides methods to sort a list of strings based on parsing
 the strings according to a configurable set of specifications.
 
 -Anton
-<tobez@tobez.org>
+<tobez@FreeBSD.org>

@@ -12,7 +12,7 @@ MASTER_SITES=	http://oss.sgi.com/projects/state-threads/download/ \
 		ftp://oss.sgi.com/www/projects/state-threads/download/ \
 		http://www.tobez.org/download/port-mirrors/devel/st/
 
-MAINTAINER=	tobez@tobez.org
+MAINTAINER=	tobez@FreeBSD.org
 
 INSTALLS_SHLIB=	yes
 
