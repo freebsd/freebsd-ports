@@ -34,12 +34,18 @@
 %%PYTHON_SITELIBDIR%%/nltk/draw/chart.py
 %%PYTHON_SITELIBDIR%%/nltk/draw/chart.pyc
 %%PYTHON_SITELIBDIR%%/nltk/draw/chart.pyo
-%%PYTHON_SITELIBDIR%%/nltk/draw/earley.py
-%%PYTHON_SITELIBDIR%%/nltk/draw/earley.pyc
-%%PYTHON_SITELIBDIR%%/nltk/draw/earley.pyo
+%%PYTHON_SITELIBDIR%%/nltk/draw/corpus.py
+%%PYTHON_SITELIBDIR%%/nltk/draw/corpus.pyc
+%%PYTHON_SITELIBDIR%%/nltk/draw/corpus.pyo
+%%PYTHON_SITELIBDIR%%/nltk/draw/featurestruct.py
+%%PYTHON_SITELIBDIR%%/nltk/draw/featurestruct.pyc
+%%PYTHON_SITELIBDIR%%/nltk/draw/featurestruct.pyo
 %%PYTHON_SITELIBDIR%%/nltk/draw/fsa.py
 %%PYTHON_SITELIBDIR%%/nltk/draw/fsa.pyc
 %%PYTHON_SITELIBDIR%%/nltk/draw/fsa.pyo
+%%PYTHON_SITELIBDIR%%/nltk/draw/graph.py
+%%PYTHON_SITELIBDIR%%/nltk/draw/graph.pyc
+%%PYTHON_SITELIBDIR%%/nltk/draw/graph.pyo
 %%PYTHON_SITELIBDIR%%/nltk/draw/plot.py
 %%PYTHON_SITELIBDIR%%/nltk/draw/plot.pyc
 %%PYTHON_SITELIBDIR%%/nltk/draw/plot.pyo
@@ -52,9 +58,9 @@
 %%PYTHON_SITELIBDIR%%/nltk/draw/tree.py
 %%PYTHON_SITELIBDIR%%/nltk/draw/tree.pyc
 %%PYTHON_SITELIBDIR%%/nltk/draw/tree.pyo
-%%PYTHON_SITELIBDIR%%/nltk/draw/tree_edit.py
-%%PYTHON_SITELIBDIR%%/nltk/draw/tree_edit.pyc
-%%PYTHON_SITELIBDIR%%/nltk/draw/tree_edit.pyo
+%%PYTHON_SITELIBDIR%%/nltk/featurestruct.py
+%%PYTHON_SITELIBDIR%%/nltk/featurestruct.pyc
+%%PYTHON_SITELIBDIR%%/nltk/featurestruct.pyo
 %%PYTHON_SITELIBDIR%%/nltk/parser/__init__.py
 %%PYTHON_SITELIBDIR%%/nltk/parser/__init__.pyc
 %%PYTHON_SITELIBDIR%%/nltk/parser/__init__.pyo
@@ -64,9 +70,6 @@
 %%PYTHON_SITELIBDIR%%/nltk/parser/chunk.py
 %%PYTHON_SITELIBDIR%%/nltk/parser/chunk.pyc
 %%PYTHON_SITELIBDIR%%/nltk/parser/chunk.pyo
-%%PYTHON_SITELIBDIR%%/nltk/parser/earley.py
-%%PYTHON_SITELIBDIR%%/nltk/parser/earley.pyc
-%%PYTHON_SITELIBDIR%%/nltk/parser/earley.pyo
 %%PYTHON_SITELIBDIR%%/nltk/parser/probabilistic.py
 %%PYTHON_SITELIBDIR%%/nltk/parser/probabilistic.pyc
 %%PYTHON_SITELIBDIR%%/nltk/parser/probabilistic.pyo
@@ -127,6 +130,9 @@
 %%PYTHON_SITELIBDIR%%/nltk/tree.py
 %%PYTHON_SITELIBDIR%%/nltk/tree.pyc
 %%PYTHON_SITELIBDIR%%/nltk/tree.pyo
+%%PYTHON_SITELIBDIR%%/nltk/util.py
+%%PYTHON_SITELIBDIR%%/nltk/util.pyc
+%%PYTHON_SITELIBDIR%%/nltk/util.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/nltk/classifier
 @dirrm %%PYTHON_SITELIBDIR%%/nltk/draw
 @dirrm %%PYTHON_SITELIBDIR%%/nltk/parser
