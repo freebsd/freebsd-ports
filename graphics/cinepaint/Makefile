@@ -40,12 +40,6 @@ PLIST_SUB+=	OPENEXR:=""
 PLIST_SUB+=	OPENEXR:="@comment "
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's| -Wall||' \
@@ -55,4 +49,8 @@ post-patch:
 		's|-LINUX.+$$||' \
 		${WRKSRC}/Makefile.in
 
-.include <bsd.port.post.mk>
+	@${REINPLACE_CMD} -e \
+		's|static GDrawableType|static GImageType|' \
+		${WRKSRC}/plug-ins/psd/psd.c
+
+.include <bsd.port.mk>
