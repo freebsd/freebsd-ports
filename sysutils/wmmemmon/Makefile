@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wmmemmon
-PORTVERSION=	0.5.2
+PORTVERSION=	0.6.0
 CATEGORIES=	sysutils windowmaker
 MASTER_SITES=	http://www.sh.rim.or.jp/~ssato/src/
 DISTNAME=	WMMemMon-${PORTVERSION}
@@ -19,7 +19,7 @@ GNU_CONFIGURE=	yes
 
 pre-patch:
 	@${PERL} -pi.orig -e 's|WMMwmMon|WMMemMon|' \
-		${WRKSRC}/src/wmmemmon.c
+		${WRKSRC}/src/main.c
 
 post-install:
 .ifndef(NOPORTDOCS)
