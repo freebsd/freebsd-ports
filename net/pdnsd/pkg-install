@@ -1,0 +1,9 @@
+#!/bin/sh
+PDNSDB=/var/db/pdnsd
+
+mkdir -p ${PDNSDB}
+chown nobody ${PDNSDB}
+chmod 755 ${PDNSDB}
+dd if=/dev/zero of=${PDNSDB}/pdnsd.cache bs=1 count=4 >/dev/null 2>&1
+chown nobody ${PDNSDB}/pdnsd.cache
+chmod 640 ${PDNSDB}/pdnsd.cache

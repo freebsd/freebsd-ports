@@ -204,6 +204,7 @@
     SUBDIR += pathchar
     SUBDIR += pchar
     SUBDIR += pcnfsd
+    SUBDIR += pdnsd
     SUBDIR += perldap
     SUBDIR += pipsecd
     SUBDIR += pmf
