@@ -1,0 +1,12 @@
+#!/bin/sh
+
+TARGETS='apel-setup.el'
+
+for i in ${TARGETS}
+do
+	cat ${WRKDIR}/${i}.in | /usr/bin/sed \
+		-e "s;@@PREFIX@@;${PREFIX};g" \
+		-e "s;@@EMACS_LIBDIR@@;${EMACS_LIBDIR};g" \
+		-e "s;@@EMACS_VER@@;${EMACS_VER};g" \
+	> ${WRKDIR}/${i}
+done

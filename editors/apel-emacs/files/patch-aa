@@ -1,0 +1,10 @@
+--- Makefile.orig	Tue Oct 27 23:58:27 1998
++++ Makefile	Sun Nov  1 20:44:21 1998
+@@ -17,6 +17,7 @@
+ PACKAGEDIR = NONE
+ VERSION_SPECIFIC_LISPDIR = NONE
+ 
++all:	elc
+ 
+ elc:
+ 	$(EMACS) $(FLAGS) -f compile-apel
