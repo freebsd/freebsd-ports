@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ImageMagick
-PORTVERSION=	5.3.7
-PORTREVISION=	1
+PORTVERSION=	5.3.8.2
 CATEGORIES=	graphics perl5
 MASTER_SITES=	http://imagemagick.sourceforge.net/http/ \
 		ftp://ftp.yggdrasil.com/mirrors/site/ftp.simplesystems.org/pub/%SUBDIR%/ \
@@ -42,6 +41,8 @@ LIB_DEPENDS=	fpx.1:${PORTSDIR}/graphics/libfpx \
 .if !exists(/usr/bin/bzip2)
 LIB_DEPENDS+=	bz2.1:${PORTSDIR}/archivers/bzip2
 .endif
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 
 USE_PERL5=	yes
 USE_LIBTOOL=	yes
@@ -92,7 +93,7 @@ PLIST_SUB+=	MODULES='@comment '
 PKGNAMESUFFIX=	-nox11
 BUILD_DEPENDS+=	gs:${PORTSDIR}/print/ghostscript-gnu-nox11
 RUN_DEPENDS+=	gs:${PORTSDIR}/print/ghostscript-gnu-nox11
-CONFIGURE_ARGS+=	--without-x --without-wmf
+CONFIGURE_ARGS+=	--without-x
 PLIST_SUB+=	X11='@comment '
 .else
 BUILD_DEPENDS+=	gs:${PORTSDIR}/print/ghostscript-gnu
