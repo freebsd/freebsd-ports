@@ -7537,6 +7537,7 @@ p5-Lingua-StopWords	ports/textproc/p5-Lingua-StopWords
 p5-List-Compare	ports/misc/p5-List-Compare
 p5-List-Group	ports/devel/p5-List-Group
 p5-List-MoreUtil	ports/lang/p5-List-MoreUtil
+p5-List-MoreUtils	ports/lang/p5-List-MoreUtils
 p5-Locale-Codes	ports/misc/p5-Locale-Codes
 p5-Locale-Maketext	ports/devel/p5-Locale-Maketext
 p5-Locale-Maketext-Fuzzy	ports/devel/p5-Locale-Maketext-Fuzzy
