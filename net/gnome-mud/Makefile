@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnome-mud
-PORTVERSION=	0.9.1
+PORTVERSION=	0.10.2
 CATEGORIES=	net gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	amcl
@@ -14,21 +14,20 @@ MASTER_SITE_SUBDIR=	amcl
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK-based MUD client with triggers, aliases, colors, etc
 
-LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-1.2/_gtkmodule.so:${PORTSDIR}/x11-toolkits/py-gtk
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-1.2/_gtkmodule.so:${PORTSDIR}/x11-toolkits/py-gtk
+BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gtk/_gtk.so:${PORTSDIR}/x11-toolkits/py-gtk2
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gtk/_gtk.so:${PORTSDIR}/x11-toolkits/py-gtk2
 
-USE_PYTHON=	yes
-USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
-USE_GNOME=	gnomelibs
+USE_PYTHON=	yes
+USE_GNOME=	gnomehack gnomeprefix gnometarget libgnomeui vte
+USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 MAN1=	gnome-mud.1
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|CFLAGS -O -pipe -Wall|CFLAGS|g' ${WRKSRC}/configure
+	@cd ${WRKSRC}/doc && ${LN} -sf gnome-mud.6 gnome-mud.1
 
 .include <bsd.port.mk>

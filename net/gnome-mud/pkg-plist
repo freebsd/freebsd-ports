@@ -1,35 +1,52 @@
 bin/gnome-mud
-share/gnome/apps/Games/gnome-mud.desktop
-share/gnome/help/gnome-mud-manual/C/index.html
-share/gnome/help/gnome-mud-manual/C/figures/connections-window.png
-share/gnome/help/gnome-mud-manual/C/figures/main-window.png
-share/gnome/help/gnome-mud-manual/C/figures/mudlist-window.png
-share/gnome/help/gnome-mud-manual/C/figures/preferences-window.png
-share/gnome/help/gnome-mud-manual/C/figures/profiles-window.png
-share/gnome/help/gnome-mud-manual/C/gnome-mud-manual.sgml
-share/gnome/help/gnome-mud-manual/C/x35.html
-share/gnome/help/gnome-mud-manual/C/x365.html
-share/gnome/help/gnome-mud-manual/C/x435.html
-share/gnome/help/gnome-mud-manual/C/x440.html
-share/gnome/help/gnome-mud-manual/C/x453.html
-share/gnome/help/gnome-mud-manual/C/topic.dat
-share/gnome/help/gnome-mud-plugin-api/C/index.html
-share/gnome/help/gnome-mud-plugin-api/C/gnome-mud-plugin-api.sgml
-share/gnome/help/gnome-mud-plugin-api/C/a217.html
-share/gnome/help/gnome-mud-plugin-api/C/a224.html
-share/gnome/help/gnome-mud-plugin-api/C/x213.html
-share/gnome/help/gnome-mud-plugin-api/C/x33.html
-share/gnome/help/gnome-mud-plugin-api/C/topic.dat
+etc/gconf/gconf.xml.defaults/apps/gnome-mud/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/gnome-mud/connections/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/gnome-mud/functionality/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/gnome-mud/mapper/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/gnome-mud/profiles/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/gnome-mud/profiles/Default/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/gnome-mud/ui/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/gnome-mud/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/gnome-mud/connections/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/gnome-mud/functionality/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/gnome-mud/mapper/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/gnome-mud/profiles/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/gnome-mud/profiles/Default/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/gnome-mud/ui/%gconf.xml
+etc/gconf/schemas/gnome-mud.schemas
+share/gnome/applications/gnome-mud.desktop
+share/gnome/help/gnome-mud/C/figures/connections-window.png
+share/gnome/help/gnome-mud/C/figures/main-window.png
+share/gnome/help/gnome-mud/C/figures/mudlist-window.png
+share/gnome/help/gnome-mud/C/figures/preferences-window.png
+share/gnome/help/gnome-mud/C/figures/profiles-window.png
+share/gnome/help/gnome-mud/C/gnome-mud-manual.xml
+share/gnome/help/gnome-mud/C/gnome-mud-plugin-api.xml
+share/gnome/help/gnome-mud/C/monitor.py
+share/gnome/omf/gnome-mud/gnome-mud-manual-C.omf
+share/gnome/omf/gnome-mud/gnome-mud-plugin-api-C.omf
 share/locale/ca/LC_MESSAGES/gnome-mud.mo
 share/locale/de/LC_MESSAGES/gnome-mud.mo
 share/locale/es/LC_MESSAGES/gnome-mud.mo
 share/locale/fr/LC_MESSAGES/gnome-mud.mo
+share/locale/mk/LC_MESSAGES/gnome-mud.mo
 share/locale/sv/LC_MESSAGES/gnome-mud.mo
-@dirrm share/gnome/help/gnome-mud-manual/C/figures
-@dirrm share/gnome/help/gnome-mud-manual/C/stylesheet-images
-@dirrm share/gnome/help/gnome-mud-manual/C
-@dirrm share/gnome/help/gnome-mud-manual
-@dirrm share/gnome/help/gnome-mud-plugin-api/C/stylesheet-images
-@dirrm share/gnome/help/gnome-mud-plugin-api/C/figures
-@dirrm share/gnome/help/gnome-mud-plugin-api/C
-@dirrm share/gnome/help/gnome-mud-plugin-api
+share/locale/tr/LC_MESSAGES/gnome-mud.mo
+@dirrm share/gnome/omf/gnome-mud
+@dirrm share/gnome/help/gnome-mud/C/figures
+@dirrm share/gnome/help/gnome-mud/C
+@dirrm share/gnome/help/gnome-mud
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnome-mud/ui
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnome-mud/profiles/Default
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnome-mud/profiles
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnome-mud/mapper
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnome-mud/functionality
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnome-mud/connections
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnome-mud
+@dirrm etc/gconf/gconf.xml.defaults/apps/gnome-mud/ui
+@dirrm etc/gconf/gconf.xml.defaults/apps/gnome-mud/profiles/Default
+@dirrm etc/gconf/gconf.xml.defaults/apps/gnome-mud/profiles
+@dirrm etc/gconf/gconf.xml.defaults/apps/gnome-mud/mapper
+@dirrm etc/gconf/gconf.xml.defaults/apps/gnome-mud/functionality
+@dirrm etc/gconf/gconf.xml.defaults/apps/gnome-mud/connections
+@dirrm etc/gconf/gconf.xml.defaults/apps/gnome-mud
