@@ -6997,6 +6997,7 @@ ruby-tgif	ports/graphics/ruby-tgif
 ruby-tk		ports/x11-toolkits/ruby-tk
 ruby-tmail	ports/mail/ruby-tmail
 ruby-tmpl	ports/www/ruby-tmpl
+ruby-tserver	ports/net/ruby-tserver
 ruby-tzfile	ports/devel/ruby-tzfile
 ruby-usersguide	ports/lang/ruby-usersguide
 ruby-vorbisfile	ports/audio/ruby-vorbisfile
