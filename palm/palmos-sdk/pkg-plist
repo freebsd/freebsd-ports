@@ -1,0 +1,156 @@
+palmdev/sdk-3.5/include/BuildDefaults.h
+palmdev/sdk-3.5/include/BuildDefines.h
+palmdev/sdk-3.5/include/Core/CoreTraps.h
+palmdev/sdk-3.5/include/Core/Hardware/HAL.h
+palmdev/sdk-3.5/include/Core/Hardware/HwrMiscFlags.h
+palmdev/sdk-3.5/include/Core/Hardware/M68KHwr.h
+palmdev/sdk-3.5/include/Core/System/AlarmMgr.h
+palmdev/sdk-3.5/include/Core/System/AppLaunchCmd.h
+palmdev/sdk-3.5/include/Core/System/Bitmap.h
+palmdev/sdk-3.5/include/Core/System/CharAttr.h
+palmdev/sdk-3.5/include/Core/System/CharLatin.h
+palmdev/sdk-3.5/include/Core/System/Chars.h
+palmdev/sdk-3.5/include/Core/System/CharShiftJIS.h
+palmdev/sdk-3.5/include/Core/System/CMCommon.h
+palmdev/sdk-3.5/include/Core/System/CMLConst.h
+palmdev/sdk-3.5/include/Core/System/ConnectionMgr.h
+palmdev/sdk-3.5/include/Core/System/ConsoleMgr.h
+palmdev/sdk-3.5/include/Core/System/Crc.h
+palmdev/sdk-3.5/include/Core/System/CTP.h
+palmdev/sdk-3.5/include/Core/System/DataMgr.h
+palmdev/sdk-3.5/include/Core/System/DateTime.h
+palmdev/sdk-3.5/include/Core/System/DebugMgr.h
+palmdev/sdk-3.5/include/Core/System/DLCommon.h
+palmdev/sdk-3.5/include/Core/System/DLServer.h
+palmdev/sdk-3.5/include/Core/System/EmuStubs.h
+palmdev/sdk-3.5/include/Core/System/Encrypt.h
+palmdev/sdk-3.5/include/Core/System/ErrorBase.h
+palmdev/sdk-3.5/include/Core/System/ErrorMgr.h
+palmdev/sdk-3.5/include/Core/System/ExgLib.h
+palmdev/sdk-3.5/include/Core/System/ExgMgr.h
+palmdev/sdk-3.5/include/Core/System/FeatureMgr.h
+palmdev/sdk-3.5/include/Core/System/FileStream.h
+palmdev/sdk-3.5/include/Core/System/FloatMgr.h
+palmdev/sdk-3.5/include/Core/System/Font.h
+palmdev/sdk-3.5/include/Core/System/Graffiti.h
+palmdev/sdk-3.5/include/Core/System/HostControl.h
+palmdev/sdk-3.5/include/Core/System/ImcUtils.h
+palmdev/sdk-3.5/include/Core/System/IntlMgr.h
+palmdev/sdk-3.5/include/Core/System/IrLib.h
+palmdev/sdk-3.5/include/Core/System/KeyMgr.h
+palmdev/sdk-3.5/include/Core/System/Localize.h
+palmdev/sdk-3.5/include/Core/System/MemoryMgr.h
+palmdev/sdk-3.5/include/Core/System/ModemMgr.h
+palmdev/sdk-3.5/include/Core/System/NetBitUtils.h
+palmdev/sdk-3.5/include/Core/System/NetMgr.h
+palmdev/sdk-3.5/include/Core/System/NotifyMgr.h
+palmdev/sdk-3.5/include/Core/System/OverlayMgr.h
+palmdev/sdk-3.5/include/Core/System/Password.h
+palmdev/sdk-3.5/include/Core/System/PenMgr.h
+palmdev/sdk-3.5/include/Core/System/Preferences.h
+palmdev/sdk-3.5/include/Core/System/Rect.h
+palmdev/sdk-3.5/include/Core/System/ScriptPlugin.h
+palmdev/sdk-3.5/include/Core/System/SerialDrvr.h
+palmdev/sdk-3.5/include/Core/System/SerialLinkMgr.h
+palmdev/sdk-3.5/include/Core/System/SerialMgr.h
+palmdev/sdk-3.5/include/Core/System/SerialMgrOld.h
+palmdev/sdk-3.5/include/Core/System/SerialSdrv.h
+palmdev/sdk-3.5/include/Core/System/SerialVdrv.h
+palmdev/sdk-3.5/include/Core/System/SoundMgr.h
+palmdev/sdk-3.5/include/Core/System/StdIOPalm.h
+palmdev/sdk-3.5/include/Core/System/StdIOProvider.h
+palmdev/sdk-3.5/include/Core/System/StringMgr.h
+palmdev/sdk-3.5/include/Core/System/SysEvent.h
+palmdev/sdk-3.5/include/Core/System/SysEvtMgr.h
+palmdev/sdk-3.5/include/Core/System/SysResTypes.rh
+palmdev/sdk-3.5/include/Core/System/SystemMgr.h
+palmdev/sdk-3.5/include/Core/System/SystemPkt.h
+palmdev/sdk-3.5/include/Core/System/SystemPublic.h
+palmdev/sdk-3.5/include/Core/System/SystemResources.h
+palmdev/sdk-3.5/include/Core/System/SysUtils.h
+palmdev/sdk-3.5/include/Core/System/TextMgr.h
+palmdev/sdk-3.5/include/Core/System/TextServicesMgr.h
+palmdev/sdk-3.5/include/Core/System/TimeMgr.h
+palmdev/sdk-3.5/include/Core/System/Unix/arpa_inet.h
+palmdev/sdk-3.5/include/Core/System/Unix/netdb.h
+palmdev/sdk-3.5/include/Core/System/Unix/netinet_in.h
+palmdev/sdk-3.5/include/Core/System/Unix/netinet_in_systm.h
+palmdev/sdk-3.5/include/Core/System/Unix/netinet_ip.h
+palmdev/sdk-3.5/include/Core/System/Unix/netinet_tcp.h
+palmdev/sdk-3.5/include/Core/System/Unix/sys_errno.h
+palmdev/sdk-3.5/include/Core/System/Unix/sys_socket.h
+palmdev/sdk-3.5/include/Core/System/Unix/sys_socketvar.h
+palmdev/sdk-3.5/include/Core/System/Unix/sys_time.h
+palmdev/sdk-3.5/include/Core/System/Unix/sys_types.h
+palmdev/sdk-3.5/include/Core/System/Unix/sys_uio.h
+palmdev/sdk-3.5/include/Core/System/Unix/unix_fcntl.h
+palmdev/sdk-3.5/include/Core/System/Unix/unix_netdb.h
+palmdev/sdk-3.5/include/Core/System/Unix/unix_stdarg.h
+palmdev/sdk-3.5/include/Core/System/Unix/unix_stdio.h
+palmdev/sdk-3.5/include/Core/System/Unix/unix_stdlib.h
+palmdev/sdk-3.5/include/Core/System/Unix/unix_string.h
+palmdev/sdk-3.5/include/Core/System/Window.h
+palmdev/sdk-3.5/include/Core/UI/AboutBox.h
+palmdev/sdk-3.5/include/Core/UI/Category.h
+palmdev/sdk-3.5/include/Core/UI/Clipboard.h
+palmdev/sdk-3.5/include/Core/UI/Control.h
+palmdev/sdk-3.5/include/Core/UI/Day.h
+palmdev/sdk-3.5/include/Core/UI/Event.h
+palmdev/sdk-3.5/include/Core/UI/FatalAlert.h
+palmdev/sdk-3.5/include/Core/UI/Field.h
+palmdev/sdk-3.5/include/Core/UI/Find.h
+palmdev/sdk-3.5/include/Core/UI/FontSelect.h
+palmdev/sdk-3.5/include/Core/UI/Form.h
+palmdev/sdk-3.5/include/Core/UI/GraffitiReference.h
+palmdev/sdk-3.5/include/Core/UI/GraffitiShift.h
+palmdev/sdk-3.5/include/Core/UI/InsPoint.h
+palmdev/sdk-3.5/include/Core/UI/Keyboard.h
+palmdev/sdk-3.5/include/Core/UI/Launcher.h
+palmdev/sdk-3.5/include/Core/UI/List.h
+palmdev/sdk-3.5/include/Core/UI/Menu.h
+palmdev/sdk-3.5/include/Core/UI/PhoneLookup.h
+palmdev/sdk-3.5/include/Core/UI/PrivateRecords.h
+palmdev/sdk-3.5/include/Core/UI/Progress.h
+palmdev/sdk-3.5/include/Core/UI/ScrollBar.h
+palmdev/sdk-3.5/include/Core/UI/SelDay.h
+palmdev/sdk-3.5/include/Core/UI/SelTime.h
+palmdev/sdk-3.5/include/Core/UI/Table.h
+palmdev/sdk-3.5/include/Core/UI/UIColor.h
+palmdev/sdk-3.5/include/Core/UI/UIControls.h
+palmdev/sdk-3.5/include/Core/UI/UIPublic.h
+palmdev/sdk-3.5/include/Core/UI/UIResDefs.r
+palmdev/sdk-3.5/include/Core/UI/UIResources.h
+palmdev/sdk-3.5/include/Dynamic/PalmOptErrorCheckLevel.Debug
+palmdev/sdk-3.5/include/Dynamic/PalmOptErrorCheckLevel.h
+palmdev/sdk-3.5/include/Dynamic/PalmOptErrorCheckLevel.Release
+palmdev/sdk-3.5/include/header.gcc
+palmdev/sdk-3.5/include/Libraries/INet/INetMgr.h
+palmdev/sdk-3.5/include/Libraries/LibTraps.h
+palmdev/sdk-3.5/include/Libraries/PalmOSGlue/DateGlue.h
+palmdev/sdk-3.5/include/Libraries/PalmOSGlue/FntGlue.h
+palmdev/sdk-3.5/include/Libraries/PalmOSGlue/IntlGlue.h
+palmdev/sdk-3.5/include/Libraries/PalmOSGlue/TsmGlue.h
+palmdev/sdk-3.5/include/Libraries/PalmOSGlue/TxtGlue.h
+palmdev/sdk-3.5/include/Libraries/PalmOSGlue/WinGlue.h
+palmdev/sdk-3.5/include/PalmCompatibility.h
+palmdev/sdk-3.5/include/PalmOS.h
+palmdev/sdk-3.5/include/PalmOS.pch
+palmdev/sdk-3.5/include/PalmOS.win.pch
+palmdev/sdk-3.5/include/PalmTypes.h
+palmdev/sdk-3.5/lib/m68k-palmos-coff/libNetSocket.a
+palmdev/sdk-3.5/lib/m68k-palmos-coff/libPalmOSGlue-debug.a
+palmdev/sdk-3.5/lib/m68k-palmos-coff/libPalmOSGlue.a
+@dirrm palmdev/sdk-3.5/include/Core/Hardware
+@dirrm palmdev/sdk-3.5/include/Core/System/Unix
+@dirrm palmdev/sdk-3.5/include/Core/System
+@dirrm palmdev/sdk-3.5/include/Core/UI
+@dirrm palmdev/sdk-3.5/include/Core
+@dirrm palmdev/sdk-3.5/include/Dynamic
+@dirrm palmdev/sdk-3.5/include/Libraries/INet
+@dirrm palmdev/sdk-3.5/include/Libraries/PalmOSGlue
+@dirrm palmdev/sdk-3.5/include/Libraries
+@dirrm palmdev/sdk-3.5/include
+@dirrm palmdev/sdk-3.5/lib/m68k-palmos-coff
+@dirrm palmdev/sdk-3.5/lib
+@dirrm palmdev/sdk-3.5
+@dirrm palmdev
