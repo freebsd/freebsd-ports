@@ -42,7 +42,7 @@ do-install:
 	${INSTALL_MAN} ${FILESDIR}/uulib.3 ${PREFIX}/man/man3
 	perl -pi -e '$$a = '\''${PREFIX}/'\''; $$a =~ s/([^\w\/])/\\$$1/g; s/FUNKYTOKENHERE/$$a/' ${PREFIX}/man/man3/uulib.3
 .if !defined(NOPORTDOCS)
-	@echo "===>   Installing documentation for ${PKGNAME}"
+	@${ECHO_MSG} "===>   Installing documentation for ${PKGNAME}"
 	@${MKDIR} ${PREFIX}/share/doc/uulib
 	@${INSTALL_MAN} ${FILESDIR}/porting.notes ${PREFIX}/share/doc/uulib
 .for docfile in ${DOCFILES}

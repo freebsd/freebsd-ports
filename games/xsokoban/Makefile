@@ -29,8 +29,6 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/screens/* ${PREFIX}/lib/X11/xsokoban/screens
 	@${INSTALL_DATA} ${WRKSRC}/bitmaps/defaults/* \
 		${PREFIX}/lib/X11/xsokoban/bitmaps/defaults
-	@echo "First, type: 'xsokoban -c' to make score files."
-	@echo "You must be the superuser 'root', and enter password 'score'."
-	@echo
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

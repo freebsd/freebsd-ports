@@ -27,14 +27,14 @@ post-install:
 	cd ${WRKSRC}/..; \
 	    tar -cf - --exclude tags examples/ examples_cxx/ examples_java/ | \
 	    ( cd ${PREFIX}/share/examples/db2; tar xf - )
-	@echo ""
-	@echo "Java support for ${PKGNAME} is *not* built by default, and requires that you"
-	@echo "have a working copy of the JDK (v1.1) installed."
-	@echo ""
-	@echo "To build java support, please read:"
-	@echo ""
-	@echo "${WRKDIR}/${DISTNAME}/java/README"
-	@echo ""
-	@echo "and follow the directions therein."
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "Java support for ${PKGNAME} is *not* built by default, and requires that you"
+	@${ECHO_MSG} "have a working copy of the JDK (v1.1) installed."
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "To build java support, please read:"
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "${WRKDIR}/${DISTNAME}/java/README"
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "and follow the directions therein."
 
 .include <bsd.port.mk>

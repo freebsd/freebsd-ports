@@ -18,6 +18,6 @@ USE_IMAKE=	yes
 MAN6=		xquarto.6
 
 pre-configure:
-	@echo "MANSUFFIX=6" >>${WRKSRC}/src/Imakefile
+	@${ECHO} "MANSUFFIX=6" >>${WRKSRC}/src/Imakefile
 
 .include <bsd.port.mk>

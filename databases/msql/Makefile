@@ -45,7 +45,7 @@ post-install:
 		@if [ ! -f ${PREFIX}/etc/rc.d/msql2.sh ]; then \
 			${ECHO} "Installing ${PREFIX}/etc/rc.d/msql2.sh startup file."; \
 			${ECHO} "#!/bin/sh" > ${PREFIX}/etc/rc.d/msql2.sh; \
-			${ECHO} "[ -x ${PREFIX}/bin/msql2d ] && su -l msql -c 'exec ${PREFIX}/bin/msql2d' > /dev/null 2>&1 & && echo -n ' msql2'" >> ${PREFIX}/etc/rc.d/msql2.sh; \
+			${ECHO} "[ -x ${PREFIX}/bin/msql2d ] && su -l msql -c 'exec ${PREFIX}/bin/msql2d' > /dev/null 2>&1 & && ${ECHO} -n ' msql2'" >> ${PREFIX}/etc/rc.d/msql2.sh; \
 			${CHMOD} 751 ${PREFIX}/etc/rc.d/msql2.sh; \
 		fi
 .if !defined(BATCH)

@@ -24,14 +24,14 @@ ALL_TARGET=	freebsd
 pre-configure:
 .if $(MACHINE_ARCH) == "i386"
 .if !defined(OPT_ARCH) || (($(OPT_ARCH) != "i486") && ($(OPT_ARCH) != "i586"))
-	@echo "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
-	@echo "Note: you can set OPT_ARCH to optimize for your hardware. (Eg:- make OPT_ARCH=i486)"
+	@${ECHO_MSG} "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
+	@${ECHO_MSG} "Note: you can set OPT_ARCH to optimize for your hardware. (Eg:- make OPT_ARCH=i486)"
 .if $(PORTOBJFORMAT) == "elf"
-	@echo "Valid values are: i486, i586"
+	@${ECHO_MSG} "Valid values are: i486, i586"
 .else
-	@echo "Valid values are: i486"
+	@${ECHO_MSG} "Valid values are: i486"
 .endif
-	@echo "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
+	@${ECHO_MSG} "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
 .endif
 .endif
 

@@ -24,10 +24,10 @@ MAN1=		xvile.1
 
 pre-configure:
 .if ! defined(USE_MENUS)
-	@echo "To use xvile with menus, set the environment variable USE_MENUS"
+	@${ECHO_MSG} "To use xvile with menus, set the environment variable USE_MENUS"
 .endif
 .if ! defined(USE_PERL)
-	@echo "To use xvile with PERL, set the environment variable USE_PERL"
+	@${ECHO_MSG} "To use xvile with PERL, set the environment variable USE_PERL"
 .endif
 
 .if defined(USE_MENUS)
@@ -53,7 +53,7 @@ post-install:
 .if defined(USE_PERL)
 	${INSTALL_DATA} ${WRKSRC}/*.doc ${PREFIX}/share/doc/vile
 .endif
-	@echo "Look in ${PREFIX}/share/doc/vile for documentation."
-	@echo "Look in ${PREFIX}/share/vile/macros for macros."
+	@${ECHO_MSG} "Look in ${PREFIX}/share/doc/vile for documentation."
+	@${ECHO_MSG} "Look in ${PREFIX}/share/vile/macros for macros."
 
 .include <bsd.port.mk>

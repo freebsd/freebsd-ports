@@ -63,6 +63,6 @@ do-install:
 		do ${INSTALL_DATA} $$f ${PREFIX}/share/imaze/$$f.example;\
 		done; \
 		${INSTALL_DATA} README ${PREFIX}/share/imaze)
-	@echo "Please read the file \"README\" in \"${PREFIX}/share/imaze\"."
+	@${ECHO_MSG} "Please read the file \"README\" in \"${PREFIX}/share/imaze\"."
 
 .include <bsd.port.mk>

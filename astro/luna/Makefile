@@ -22,7 +22,7 @@ EXTRACT_AFTER_ARGS=	# empty
 PATCH_STRIP=	-p1
 
 post-extract:
-	@echo "===>  Removing object files for ${DISTNAME}"
+	@${ECHO_MSG} "===>  Removing object files for ${DISTNAME}"
 	@(cd ${WRKDIR}/luna19/iprintf; ${RM} -fr *.o)
 
 .include <bsd.port.mk>

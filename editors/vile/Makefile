@@ -27,8 +27,8 @@ USE_PERL5=	yes
 
 pre-configure:
 .if ! defined(USE_PERL)
-	@echo "Define USE_PERL if you want to make a vile which includes"
-	@echo "PERL functionality"
+	@${ECHO_MSG} "Define USE_PERL if you want to make a vile which includes"
+	@${ECHO_MSG} "PERL functionality"
 .endif
 
 post-install:
@@ -42,7 +42,7 @@ post-install:
 .if defined(USE_PERL)
 	${INSTALL_DATA} ${WRKSRC}/*.doc ${PREFIX}/share/doc/vile
 .endif
-	@echo "Look in ${PREFIX}/share/doc/vile for documentation."
-	@echo "Look in ${PREFIX}/share/vile/macros for macros."
+	@${ECHO_MSG} "Look in ${PREFIX}/share/doc/vile for documentation."
+	@${ECHO_MSG} "Look in ${PREFIX}/share/vile/macros for macros."
 
 .include <bsd.port.mk>

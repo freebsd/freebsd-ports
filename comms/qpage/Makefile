@@ -20,7 +20,7 @@ post-install:
 	@if [ ! -f ${PREFIX}/etc/rc.d/qpage.sh ]; then \
 		${ECHO} "Install ${PREFIX}/etc/rc.d/qpage.sh startup file."; \
 		${ECHO} "#!/bin/sh" > ${PREFIX}/etc/rc.d/qpage.sh; \
-		${ECHO} "[ -x ${PREFIX}/bin/qpage ] && ${PREFIX}/bin/qpage -q10 && echo -n ' qpage'" >> ${PREFIX}/etc/rc.d/qpage.sh; \
+		${ECHO} "[ -x ${PREFIX}/bin/qpage ] && ${PREFIX}/bin/qpage -q10 && ${ECHO} -n ' qpage'" >> ${PREFIX}/etc/rc.d/qpage.sh; \
 		${CHMOD} 751 ${PREFIX}/etc/rc.d/qpage.sh; \
 	fi
 
