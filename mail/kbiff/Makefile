@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	kbiff
-PORTVERSION=	3.6.3
-PORTREVISION=	3
+PORTVERSION=	3.7
 CATEGORIES=	mail kde
 MASTER_SITES=	http://devel-home.kde.org/~granroth/kbiff/
 
-MAINTAINER=	arved@FreeBSD.org
-COMMENT=	"Mail notification utility for KDE with nice features"
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Mail notification utility for KDE with nice features
 
 USE_KDELIBS_VER=3
 USE_BZIP2=	yes
