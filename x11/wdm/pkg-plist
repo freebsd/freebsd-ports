@@ -35,3 +35,5 @@ lib/X11/wdm/wdmReconfig
 @unexec rmdir %D/lib/X11/wdm/authdir/authfiles 2>/dev/null || true
 @unexec rmdir %D/lib/X11/wdm/authdir 2>/dev/null || true
 @unexec rmdir %D/lib/X11/wdm 2>/dev/null || true
+%%PAM%%@cwd %%LOCALBASE%%
+%%PAM%%etc/pam.d/wdm
