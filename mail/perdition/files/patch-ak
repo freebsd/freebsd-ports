@@ -1,0 +1,11 @@
+--- perdition/pam.h.orig	Sat Dec 21 01:36:10 2002
++++ perdition/pam.h	Sat Dec 21 01:36:12 2002
+@@ -37,6 +37,8 @@
+ 
+ #ifdef WITH_PAM_SUPPORT
+ 
++#include <stddef.h>
++
+ #ifdef HAVE_SECURITY_PAM_MISC_H
+ #include <security/pam_misc.h>
+ #endif /* HAVE_SECURITY_PAM_MISC_H */
