@@ -17,7 +17,7 @@ COMMENT=	The BYTE magazine's Public Domain benchmark for UNIX
 SUB_FILES=	unixbench
 
 post-extract:
-	${RM} -f ${WRKDIR}/unixbench/pgms/select
+	${RM} -f ${WRKSRC}/pgms/select
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/unixbench ${PREFIX}/bin/
