@@ -1,0 +1,30 @@
+--- install.orig	Sat Sep 13 14:37:20 1997
++++ install	Sun May 17 21:29:55 1998
+@@ -1,5 +1,5 @@
+ : # Use perl
+-eval 'exec perl -S $0 "$@"'
++eval 'exec !!PERL5!! -S $0 "$@"'
+   if $running_under_some_shell;
+ 
+ $vid=101;
+@@ -121,7 +121,7 @@
+ 
+ chop ($cd = `pwd`);
+ 
+-$prefix = "/usr/local";
++$prefix = "!!PREFIX!!";
+ 
+ &getval($ans, "y",
+  "\nBy default all files will be installed in subdirectories 'bin', 'lib',\n"
+@@ -181,9 +181,9 @@
+ $ht = "\nTo use the automatic hyphenation feature, hyphenation pattern files\n"
+      ."from the TeX distribution are needed.";
+ $cophy = 1;
+-if($exist{'TeX'}) {
++if($exist{'share'}) {
+     $hfile = "";
+-    ($texdir = $dir{'TeX'}) =~ s|/bin$||;
++    ($texdir = $dir{'share'}) =~ s|/bin$||;
+     SW:for("texmf/tex/generic/hyphen","macros","inputs","lib/macros",
+         "lib/inputs","lib/tex/macros","lib/tex/inputs") {
+         if(-f "$texdir/$_/ushyph1.tex") {

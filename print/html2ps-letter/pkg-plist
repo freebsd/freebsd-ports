@@ -1,0 +1,6 @@
+bin/html2ps
+lib/html2ps/html2ps.html
+lib/html2ps/html2psrc
+lib/html2ps/hyphen.tex
+man/man1/html2ps.1.gz
+man/man5/html2psrc.5.gz
