@@ -1,0 +1,12 @@
+diff -ru work/wpa_supplicant-0.3.0/eapol_sm.c work.sav/wpa_supplicant-0.3.0/eapol_sm.c
+--- work/wpa_supplicant-0.3.0/eapol_sm.c	Sun Dec  5 16:28:25 2004
++++ work.sav/wpa_supplicant-0.3.0/eapol_sm.c	Sun Dec 12 15:53:17 2004
+@@ -1371,7 +1371,7 @@
+ }
+ 
+ 
+-static unsigned int eapol_sm_get_int(void *ctx, enum eapol_int_var variable)
++static unsigned int eapol_sm_get_int(void *ctx, enum eapol_bool_var variable)
+ {
+ 	struct eapol_sm *sm = ctx;
+ 	if (sm == NULL)
