@@ -21,8 +21,11 @@ MAN3=		Include.3
 
 .include <bsd.port.pre.mk>
 
+post-build:
 .if ${PERL_LEVEL} > 500800
-BROKEN=		Does not install
+	@${CP} ${WRKSRC}/Include.pm ${WRKSRC}/blib/lib
+	@${MKDIR} ${WRKSRC}/blib/man3
+	@pod2man ${WRKSRC}/Include.pm > ${WRKSRC}/blib/man3/Include.3
 .endif
 
 .include <bsd.port.post.mk>
