@@ -176,6 +176,7 @@
     SUBDIR += php4-overload
     SUBDIR += php5
     SUBDIR += php5-cli
+    SUBDIR += php5-extensions
     SUBDIR += php_doc
     SUBDIR += pike70
     SUBDIR += pike72
