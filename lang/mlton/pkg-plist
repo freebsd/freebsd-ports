@@ -1,0 +1,427 @@
+bin/mllex
+bin/mlprof
+bin/mlton
+bin/mlyacc
+lib/mlton/include/IntInf.h
+lib/mlton/include/basis-constants.h
+lib/mlton/include/c-chunk.h
+lib/mlton/include/c-common.h
+lib/mlton/include/c-main.h
+lib/mlton/include/gc.h
+lib/mlton/include/libmlton.h
+lib/mlton/include/main.h
+lib/mlton/include/mlton-basis.h
+lib/mlton/include/mlton-posix.h
+lib/mlton/include/my-lib.h
+lib/mlton/include/net-constants.h
+lib/mlton/include/posix-constants.h
+lib/mlton/include/types.h
+lib/mlton/include/x86-main.h
+lib/mlton/mlton-compile
+lib/mlton/platform
+lib/mlton/self/constants
+lib/mlton/self/libgdtoa.a
+lib/mlton/self/libmlton-gdb.a
+lib/mlton/self/libmlton.a
+lib/mlton/sml/basis-library/Makefile
+lib/mlton/sml/basis-library/README
+lib/mlton/sml/basis-library/arrays-and-vectors/array-slice.sig
+lib/mlton/sml/basis-library/arrays-and-vectors/array.sig
+lib/mlton/sml/basis-library/arrays-and-vectors/array.sml
+lib/mlton/sml/basis-library/arrays-and-vectors/array2.sig
+lib/mlton/sml/basis-library/arrays-and-vectors/array2.sml
+lib/mlton/sml/basis-library/arrays-and-vectors/mono-array-slice.sig
+lib/mlton/sml/basis-library/arrays-and-vectors/mono-array.fun
+lib/mlton/sml/basis-library/arrays-and-vectors/mono-array.sig
+lib/mlton/sml/basis-library/arrays-and-vectors/mono-array2.fun
+lib/mlton/sml/basis-library/arrays-and-vectors/mono-array2.sig
+lib/mlton/sml/basis-library/arrays-and-vectors/mono-vector-slice.sig
+lib/mlton/sml/basis-library/arrays-and-vectors/mono-vector.fun
+lib/mlton/sml/basis-library/arrays-and-vectors/mono-vector.sig
+lib/mlton/sml/basis-library/arrays-and-vectors/mono.sml
+lib/mlton/sml/basis-library/arrays-and-vectors/sequence.fun
+lib/mlton/sml/basis-library/arrays-and-vectors/sequence.sig
+lib/mlton/sml/basis-library/arrays-and-vectors/slice.sig
+lib/mlton/sml/basis-library/arrays-and-vectors/vector-slice.sig
+lib/mlton/sml/basis-library/arrays-and-vectors/vector.sig
+lib/mlton/sml/basis-library/arrays-and-vectors/vector.sml
+lib/mlton/sml/basis-library/general/bool.sig
+lib/mlton/sml/basis-library/general/bool.sml
+lib/mlton/sml/basis-library/general/general.sig
+lib/mlton/sml/basis-library/general/general.sml
+lib/mlton/sml/basis-library/general/option.sig
+lib/mlton/sml/basis-library/general/option.sml
+lib/mlton/sml/basis-library/general/sml90.sig
+lib/mlton/sml/basis-library/general/sml90.sml
+lib/mlton/sml/basis-library/integer/int-inf.sig
+lib/mlton/sml/basis-library/integer/int-inf.sml
+lib/mlton/sml/basis-library/integer/int.sml
+lib/mlton/sml/basis-library/integer/integer.sig
+lib/mlton/sml/basis-library/integer/pack-word.sig
+lib/mlton/sml/basis-library/integer/pack-word32.sml
+lib/mlton/sml/basis-library/integer/patch.sml
+lib/mlton/sml/basis-library/integer/word.sig
+lib/mlton/sml/basis-library/integer/word.sml
+lib/mlton/sml/basis-library/io/bin-io.sig
+lib/mlton/sml/basis-library/io/bin-io.sml
+lib/mlton/sml/basis-library/io/bin-prim-io.sml
+lib/mlton/sml/basis-library/io/bin-stream-io.sig
+lib/mlton/sml/basis-library/io/imperative-io.fun
+lib/mlton/sml/basis-library/io/imperative-io.sig
+lib/mlton/sml/basis-library/io/io.sig
+lib/mlton/sml/basis-library/io/io.sml
+lib/mlton/sml/basis-library/io/prim-io.fun
+lib/mlton/sml/basis-library/io/prim-io.sig
+lib/mlton/sml/basis-library/io/stream-io.fun
+lib/mlton/sml/basis-library/io/stream-io.sig
+lib/mlton/sml/basis-library/io/text-io.sig
+lib/mlton/sml/basis-library/io/text-io.sml
+lib/mlton/sml/basis-library/io/text-prim-io.sml
+lib/mlton/sml/basis-library/io/text-stream-io.sig
+lib/mlton/sml/basis-library/libs/basis-1997/arrays-and-vectors/array.sig
+lib/mlton/sml/basis-library/libs/basis-1997/arrays-and-vectors/mono-array.sig
+lib/mlton/sml/basis-library/libs/basis-1997/arrays-and-vectors/mono-array2.sig
+lib/mlton/sml/basis-library/libs/basis-1997/arrays-and-vectors/mono-vector-array-array2-convert.fun
+lib/mlton/sml/basis-library/libs/basis-1997/arrays-and-vectors/mono-vector.sig
+lib/mlton/sml/basis-library/libs/basis-1997/arrays-and-vectors/vector-array-convert.fun
+lib/mlton/sml/basis-library/libs/basis-1997/arrays-and-vectors/vector.sig
+lib/mlton/sml/basis-library/libs/basis-1997/bind
+lib/mlton/sml/basis-library/libs/basis-1997/integer/word.sig
+lib/mlton/sml/basis-library/libs/basis-1997/io/bin-io-convert.fun
+lib/mlton/sml/basis-library/libs/basis-1997/io/bin-io.sig
+lib/mlton/sml/basis-library/libs/basis-1997/io/bin-stream-io.sig
+lib/mlton/sml/basis-library/libs/basis-1997/io/io-convert.fun
+lib/mlton/sml/basis-library/libs/basis-1997/io/io.sig
+lib/mlton/sml/basis-library/libs/basis-1997/io/stream-io.sig
+lib/mlton/sml/basis-library/libs/basis-1997/io/text-io-convert.fun
+lib/mlton/sml/basis-library/libs/basis-1997/io/text-io.sig
+lib/mlton/sml/basis-library/libs/basis-1997/io/text-stream-io.sig
+lib/mlton/sml/basis-library/libs/basis-1997/posix/file-sys-convert.fun
+lib/mlton/sml/basis-library/libs/basis-1997/posix/file-sys.sig
+lib/mlton/sml/basis-library/libs/basis-1997/posix/flags-convert.fun
+lib/mlton/sml/basis-library/libs/basis-1997/posix/flags.sig
+lib/mlton/sml/basis-library/libs/basis-1997/posix/io-convert.fun
+lib/mlton/sml/basis-library/libs/basis-1997/posix/io.sig
+lib/mlton/sml/basis-library/libs/basis-1997/posix/posix-convert.fun
+lib/mlton/sml/basis-library/libs/basis-1997/posix/posix.sig
+lib/mlton/sml/basis-library/libs/basis-1997/posix/process-convert.fun
+lib/mlton/sml/basis-library/libs/basis-1997/posix/process.sig
+lib/mlton/sml/basis-library/libs/basis-1997/posix/tty-convert.fun
+lib/mlton/sml/basis-library/libs/basis-1997/posix/tty.sig
+lib/mlton/sml/basis-library/libs/basis-1997/prefix
+lib/mlton/sml/basis-library/libs/basis-1997/real/IEEE-real-convert.fun
+lib/mlton/sml/basis-library/libs/basis-1997/real/IEEE-real.sig
+lib/mlton/sml/basis-library/libs/basis-1997/real/real-convert.fun
+lib/mlton/sml/basis-library/libs/basis-1997/real/real.sig
+lib/mlton/sml/basis-library/libs/basis-1997/suffix
+lib/mlton/sml/basis-library/libs/basis-1997/system/file-sys-convert.fun
+lib/mlton/sml/basis-library/libs/basis-1997/system/file-sys.sig
+lib/mlton/sml/basis-library/libs/basis-1997/system/os-convert.fun
+lib/mlton/sml/basis-library/libs/basis-1997/system/os.sig
+lib/mlton/sml/basis-library/libs/basis-1997/system/path-convert.fun
+lib/mlton/sml/basis-library/libs/basis-1997/system/path.sig
+lib/mlton/sml/basis-library/libs/basis-1997/system/process-convert.fun
+lib/mlton/sml/basis-library/libs/basis-1997/system/process.sig
+lib/mlton/sml/basis-library/libs/basis-1997/system/timer-convert.fun
+lib/mlton/sml/basis-library/libs/basis-1997/system/timer.sig
+lib/mlton/sml/basis-library/libs/basis-1997/system/unix-convert.fun
+lib/mlton/sml/basis-library/libs/basis-1997/system/unix.sig
+lib/mlton/sml/basis-library/libs/basis-1997/text/string.sig
+lib/mlton/sml/basis-library/libs/basis-1997/text/substring.sig
+lib/mlton/sml/basis-library/libs/basis-1997/text/text-convert.fun
+lib/mlton/sml/basis-library/libs/basis-1997/top-level/basis-funs.sml
+lib/mlton/sml/basis-library/libs/basis-1997/top-level/basis-sigs.sml
+lib/mlton/sml/basis-library/libs/basis-1997/top-level/basis.sig
+lib/mlton/sml/basis-library/libs/basis-1997/top-level/basis.sml
+lib/mlton/sml/basis-library/libs/basis-1997/top-level/infixes.sml
+lib/mlton/sml/basis-library/libs/basis-1997/top-level/overloads.sml
+lib/mlton/sml/basis-library/libs/basis-1997/top-level/top-level.sml
+lib/mlton/sml/basis-library/libs/basis-2002-strict/bind
+lib/mlton/sml/basis-library/libs/basis-2002-strict/prefix
+lib/mlton/sml/basis-library/libs/basis-2002-strict/suffix
+lib/mlton/sml/basis-library/libs/basis-2002-strict/top-level/top-level.sml
+lib/mlton/sml/basis-library/libs/basis-2002/bind
+lib/mlton/sml/basis-library/libs/basis-2002/prefix
+lib/mlton/sml/basis-library/libs/basis-2002/suffix
+lib/mlton/sml/basis-library/libs/basis-2002/top-level/basis-funs.sml
+lib/mlton/sml/basis-library/libs/basis-2002/top-level/basis-sigs.sml
+lib/mlton/sml/basis-library/libs/basis-2002/top-level/basis.sig
+lib/mlton/sml/basis-library/libs/basis-2002/top-level/basis.sml
+lib/mlton/sml/basis-library/libs/basis-2002/top-level/infixes.sml
+lib/mlton/sml/basis-library/libs/basis-2002/top-level/overloads.sml
+lib/mlton/sml/basis-library/libs/basis-2002/top-level/top-level.sml
+lib/mlton/sml/basis-library/libs/basis-none/bind
+lib/mlton/sml/basis-library/libs/basis-none/prefix
+lib/mlton/sml/basis-library/libs/basis-none/suffix
+lib/mlton/sml/basis-library/libs/basis-none/top-level/basis.sig
+lib/mlton/sml/basis-library/libs/basis-none/top-level/basis.sml
+lib/mlton/sml/basis-library/libs/basis-none/top-level/infixes.sml
+lib/mlton/sml/basis-library/libs/basis-none/top-level/suffix.sml
+lib/mlton/sml/basis-library/libs/basis-none/top-level/top-level.sml
+lib/mlton/sml/basis-library/libs/build
+lib/mlton/sml/basis-library/list/list-pair.sig
+lib/mlton/sml/basis-library/list/list-pair.sml
+lib/mlton/sml/basis-library/list/list.sig
+lib/mlton/sml/basis-library/list/list.sml
+lib/mlton/sml/basis-library/misc/C.sig
+lib/mlton/sml/basis-library/misc/C.sml
+lib/mlton/sml/basis-library/misc/basic.sml
+lib/mlton/sml/basis-library/misc/cleaner.sig
+lib/mlton/sml/basis-library/misc/cleaner.sml
+lib/mlton/sml/basis-library/misc/dynamic-wind.sig
+lib/mlton/sml/basis-library/misc/dynamic-wind.sml
+lib/mlton/sml/basis-library/misc/primitive.sml
+lib/mlton/sml/basis-library/misc/reader.sig
+lib/mlton/sml/basis-library/misc/reader.sml
+lib/mlton/sml/basis-library/misc/suffix.sml
+lib/mlton/sml/basis-library/misc/unique-id.fun
+lib/mlton/sml/basis-library/misc/unique-id.sig
+lib/mlton/sml/basis-library/misc/util.sml
+lib/mlton/sml/basis-library/mlton/array.sig
+lib/mlton/sml/basis-library/mlton/bin-io.sig
+lib/mlton/sml/basis-library/mlton/cont.sig
+lib/mlton/sml/basis-library/mlton/cont.sml
+lib/mlton/sml/basis-library/mlton/exn.sig
+lib/mlton/sml/basis-library/mlton/exn.sml
+lib/mlton/sml/basis-library/mlton/ffi.sig
+lib/mlton/sml/basis-library/mlton/ffi.sml
+lib/mlton/sml/basis-library/mlton/finalizable.sig
+lib/mlton/sml/basis-library/mlton/finalizable.sml
+lib/mlton/sml/basis-library/mlton/gc.sig
+lib/mlton/sml/basis-library/mlton/gc.sml
+lib/mlton/sml/basis-library/mlton/int-inf.sig
+lib/mlton/sml/basis-library/mlton/io.fun
+lib/mlton/sml/basis-library/mlton/io.sig
+lib/mlton/sml/basis-library/mlton/itimer.sig
+lib/mlton/sml/basis-library/mlton/itimer.sml
+lib/mlton/sml/basis-library/mlton/mlton.sig
+lib/mlton/sml/basis-library/mlton/mlton.sml
+lib/mlton/sml/basis-library/mlton/platform.sig
+lib/mlton/sml/basis-library/mlton/platform.sml
+lib/mlton/sml/basis-library/mlton/pointer.sig
+lib/mlton/sml/basis-library/mlton/pointer.sml
+lib/mlton/sml/basis-library/mlton/proc-env.sig
+lib/mlton/sml/basis-library/mlton/proc-env.sml
+lib/mlton/sml/basis-library/mlton/process.sig
+lib/mlton/sml/basis-library/mlton/process.sml
+lib/mlton/sml/basis-library/mlton/profile.sig
+lib/mlton/sml/basis-library/mlton/profile.sml
+lib/mlton/sml/basis-library/mlton/ptrace.sig
+lib/mlton/sml/basis-library/mlton/ptrace.sml
+lib/mlton/sml/basis-library/mlton/random.sig
+lib/mlton/sml/basis-library/mlton/random.sml
+lib/mlton/sml/basis-library/mlton/rlimit.sig
+lib/mlton/sml/basis-library/mlton/rlimit.sml
+lib/mlton/sml/basis-library/mlton/rusage.sig
+lib/mlton/sml/basis-library/mlton/rusage.sml
+lib/mlton/sml/basis-library/mlton/signal.sig
+lib/mlton/sml/basis-library/mlton/signal.sml
+lib/mlton/sml/basis-library/mlton/socket.sig
+lib/mlton/sml/basis-library/mlton/socket.sml
+lib/mlton/sml/basis-library/mlton/syslog.sig
+lib/mlton/sml/basis-library/mlton/syslog.sml
+lib/mlton/sml/basis-library/mlton/text-io.sig
+lib/mlton/sml/basis-library/mlton/thread.sig
+lib/mlton/sml/basis-library/mlton/thread.sml
+lib/mlton/sml/basis-library/mlton/vector.sig
+lib/mlton/sml/basis-library/mlton/weak.sig
+lib/mlton/sml/basis-library/mlton/weak.sml
+lib/mlton/sml/basis-library/mlton/word.sig
+lib/mlton/sml/basis-library/mlton/world.sig
+lib/mlton/sml/basis-library/mlton/world.sml
+lib/mlton/sml/basis-library/net/generic-sock.sig
+lib/mlton/sml/basis-library/net/generic-sock.sml
+lib/mlton/sml/basis-library/net/inet-sock.sig
+lib/mlton/sml/basis-library/net/inet-sock.sml
+lib/mlton/sml/basis-library/net/net-host-db.sig
+lib/mlton/sml/basis-library/net/net-host-db.sml
+lib/mlton/sml/basis-library/net/net-prot-db.sig
+lib/mlton/sml/basis-library/net/net-prot-db.sml
+lib/mlton/sml/basis-library/net/net-serv-db.sig
+lib/mlton/sml/basis-library/net/net-serv-db.sml
+lib/mlton/sml/basis-library/net/net.sig
+lib/mlton/sml/basis-library/net/net.sml
+lib/mlton/sml/basis-library/net/socket.sig
+lib/mlton/sml/basis-library/net/socket.sml
+lib/mlton/sml/basis-library/net/unix-sock.sig
+lib/mlton/sml/basis-library/net/unix-sock.sml
+lib/mlton/sml/basis-library/notes.txt
+lib/mlton/sml/basis-library/posix/error.sig
+lib/mlton/sml/basis-library/posix/error.sml
+lib/mlton/sml/basis-library/posix/file-sys.sig
+lib/mlton/sml/basis-library/posix/file-sys.sml
+lib/mlton/sml/basis-library/posix/flags.sig
+lib/mlton/sml/basis-library/posix/flags.sml
+lib/mlton/sml/basis-library/posix/io.sig
+lib/mlton/sml/basis-library/posix/io.sml
+lib/mlton/sml/basis-library/posix/posix.sig
+lib/mlton/sml/basis-library/posix/posix.sml
+lib/mlton/sml/basis-library/posix/primitive.sml
+lib/mlton/sml/basis-library/posix/proc-env.sig
+lib/mlton/sml/basis-library/posix/proc-env.sml
+lib/mlton/sml/basis-library/posix/process.sig
+lib/mlton/sml/basis-library/posix/process.sml
+lib/mlton/sml/basis-library/posix/signal.sig
+lib/mlton/sml/basis-library/posix/signal.sml
+lib/mlton/sml/basis-library/posix/sys-db.sig
+lib/mlton/sml/basis-library/posix/sys-db.sml
+lib/mlton/sml/basis-library/posix/tty.sig
+lib/mlton/sml/basis-library/posix/tty.sml
+lib/mlton/sml/basis-library/real/IEEE-real.sig
+lib/mlton/sml/basis-library/real/IEEE-real.sml
+lib/mlton/sml/basis-library/real/math.sig
+lib/mlton/sml/basis-library/real/pack-real.sig
+lib/mlton/sml/basis-library/real/pack-real.sml
+lib/mlton/sml/basis-library/real/real.fun
+lib/mlton/sml/basis-library/real/real.sig
+lib/mlton/sml/basis-library/real/real32.sml
+lib/mlton/sml/basis-library/real/real64.sml
+lib/mlton/sml/basis-library/sml-nj/sml-nj.sig
+lib/mlton/sml/basis-library/sml-nj/sml-nj.sml
+lib/mlton/sml/basis-library/sml-nj/unsafe.sig
+lib/mlton/sml/basis-library/sml-nj/unsafe.sml
+lib/mlton/sml/basis-library/system/command-line.sig
+lib/mlton/sml/basis-library/system/command-line.sml
+lib/mlton/sml/basis-library/system/date.sig
+lib/mlton/sml/basis-library/system/date.sml
+lib/mlton/sml/basis-library/system/file-sys.sig
+lib/mlton/sml/basis-library/system/file-sys.sml
+lib/mlton/sml/basis-library/system/io.sig
+lib/mlton/sml/basis-library/system/io.sml
+lib/mlton/sml/basis-library/system/os.sig
+lib/mlton/sml/basis-library/system/os.sml
+lib/mlton/sml/basis-library/system/path.sig
+lib/mlton/sml/basis-library/system/path.sml
+lib/mlton/sml/basis-library/system/pre-os.sml
+lib/mlton/sml/basis-library/system/process.sig
+lib/mlton/sml/basis-library/system/process.sml
+lib/mlton/sml/basis-library/system/time.sig
+lib/mlton/sml/basis-library/system/time.sml
+lib/mlton/sml/basis-library/system/timer.sig
+lib/mlton/sml/basis-library/system/timer.sml
+lib/mlton/sml/basis-library/system/unix.sig
+lib/mlton/sml/basis-library/system/unix.sml
+lib/mlton/sml/basis-library/text/byte.sig
+lib/mlton/sml/basis-library/text/byte.sml
+lib/mlton/sml/basis-library/text/char.sig
+lib/mlton/sml/basis-library/text/char.sml
+lib/mlton/sml/basis-library/text/char0.sml
+lib/mlton/sml/basis-library/text/string-cvt.sig
+lib/mlton/sml/basis-library/text/string-cvt.sml
+lib/mlton/sml/basis-library/text/string.sig
+lib/mlton/sml/basis-library/text/string.sml
+lib/mlton/sml/basis-library/text/string0.sml
+lib/mlton/sml/basis-library/text/substring.sig
+lib/mlton/sml/basis-library/text/substring.sml
+lib/mlton/sml/basis-library/text/text.sig
+lib/mlton/sml/basis-library/text/text.sml
+lib/mlton/sml/basis-library/top-level/arithmetic.sml
+lib/mlton/sml/basis-library/top-level/infixes.sml
+lib/mlton/target-map
+lib/mlton/world.mlton
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/changelog
+%%PORTDOCS%%%%DOCSDIR%%/cmcat/cmcat.sml
+%%PORTDOCS%%%%DOCSDIR%%/cmcat/sources.cm
+%%PORTDOCS%%%%DOCSDIR%%/examples/Makefile
+%%PORTDOCS%%%%DOCSDIR%%/examples/callcc.sml
+%%PORTDOCS%%%%DOCSDIR%%/examples/command-line.sml
+%%PORTDOCS%%%%DOCSDIR%%/examples/ffi/Makefile
+%%PORTDOCS%%%%DOCSDIR%%/examples/ffi/export.sml
+%%PORTDOCS%%%%DOCSDIR%%/examples/ffi/ffi-export.c
+%%PORTDOCS%%%%DOCSDIR%%/examples/ffi/ffi-import.c
+%%PORTDOCS%%%%DOCSDIR%%/examples/ffi/import.sml
+%%PORTDOCS%%%%DOCSDIR%%/examples/finalizable/Makefile
+%%PORTDOCS%%%%DOCSDIR%%/examples/finalizable/cons.c
+%%PORTDOCS%%%%DOCSDIR%%/examples/finalizable/finalizable.sml
+%%PORTDOCS%%%%DOCSDIR%%/examples/hello-world.sml
+%%PORTDOCS%%%%DOCSDIR%%/examples/profiling/Makefile
+%%PORTDOCS%%%%DOCSDIR%%/examples/profiling/fib-tak.sml
+%%PORTDOCS%%%%DOCSDIR%%/examples/profiling/list-rev.sml
+%%PORTDOCS%%%%DOCSDIR%%/examples/profiling/tak.sml
+%%PORTDOCS%%%%DOCSDIR%%/examples/same-fringe.sml
+%%PORTDOCS%%%%DOCSDIR%%/examples/save-world/Makefile
+%%PORTDOCS%%%%DOCSDIR%%/examples/save-world/save-world.sml
+%%PORTDOCS%%%%DOCSDIR%%/examples/signals.sml
+%%PORTDOCS%%%%DOCSDIR%%/examples/size.sml
+%%PORTDOCS%%%%DOCSDIR%%/examples/taut.sml
+%%PORTDOCS%%%%DOCSDIR%%/examples/thread-switch.sml
+%%PORTDOCS%%%%DOCSDIR%%/examples/thread1.sml
+%%PORTDOCS%%%%DOCSDIR%%/examples/thread2.sml
+%%PORTDOCS%%%%DOCSDIR%%/examples/timeout.sml
+%%PORTDOCS%%%%DOCSDIR%%/license/MLKit-LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/license/MLton-LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/license/NJ-LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/license/README
+%%PORTDOCS%%%%DOCSDIR%%/license/gdtoa-LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/license/gmp-LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/mllex.ps.gz
+%%PORTDOCS%%%%DOCSDIR%%/mlyacc.ps.gz
+%%PORTDOCS%%%%DOCSDIR%%/user-guide.ps.gz
+%%PORTDOCS%%%%DOCSDIR%%/user-guide/Basis_library.html
+%%PORTDOCS%%%%DOCSDIR%%/user-guide/Bugs.html
+%%PORTDOCS%%%%DOCSDIR%%/user-guide/CM.html
+%%PORTDOCS%%%%DOCSDIR%%/user-guide/Compiling_MLton.html
+%%PORTDOCS%%%%DOCSDIR%%/user-guide/Credits.html
+%%PORTDOCS%%%%DOCSDIR%%/user-guide/Cross_compiling.html
+%%PORTDOCS%%%%DOCSDIR%%/user-guide/Deviations_SML_NJ_from.html
+%%PORTDOCS%%%%DOCSDIR%%/user-guide/Drawbacks_MLton.html
+%%PORTDOCS%%%%DOCSDIR%%/user-guide/Features_MLton.html
+%%PORTDOCS%%%%DOCSDIR%%/user-guide/Foreign_function_interface.html
+%%PORTDOCS%%%%DOCSDIR%%/user-guide/Getting_started.html
+%%PORTDOCS%%%%DOCSDIR%%/user-guide/MLton_extensions.html
+%%PORTDOCS%%%%DOCSDIR%%/user-guide/Manual_page.html
+%%PORTDOCS%%%%DOCSDIR%%/user-guide/Platform_specific_notes.html
+%%PORTDOCS%%%%DOCSDIR%%/user-guide/Profiling.html
+%%PORTDOCS%%%%DOCSDIR%%/user-guide/Type_checking.html
+%%PORTDOCS%%%%DOCSDIR%%/user-guide/contents_motif.gif
+%%PORTDOCS%%%%DOCSDIR%%/user-guide/index.html
+%%PORTDOCS%%%%DOCSDIR%%/user-guide/main.haux
+%%PORTDOCS%%%%DOCSDIR%%/user-guide/main.htoc
+%%PORTDOCS%%%%DOCSDIR%%/user-guide/main016.html
+%%PORTDOCS%%%%DOCSDIR%%/user-guide/next_motif.gif
+%%PORTDOCS%%%%DOCSDIR%%/user-guide/previous_motif.gif
+@dirrm lib/mlton/self
+@dirrm lib/mlton/include
+@dirrm lib/mlton/sml/basis-library/general
+@dirrm lib/mlton/sml/basis-library/top-level
+@dirrm lib/mlton/sml/basis-library/text
+@dirrm lib/mlton/sml/basis-library/system
+@dirrm lib/mlton/sml/basis-library/sml-nj
+@dirrm lib/mlton/sml/basis-library/arrays-and-vectors
+@dirrm lib/mlton/sml/basis-library/integer
+@dirrm lib/mlton/sml/basis-library/real
+@dirrm lib/mlton/sml/basis-library/libs/basis-1997/integer
+@dirrm lib/mlton/sml/basis-library/libs/basis-1997/top-level
+@dirrm lib/mlton/sml/basis-library/libs/basis-1997/text
+@dirrm lib/mlton/sml/basis-library/libs/basis-1997/real
+@dirrm lib/mlton/sml/basis-library/libs/basis-1997/arrays-and-vectors
+@dirrm lib/mlton/sml/basis-library/libs/basis-1997/system
+@dirrm lib/mlton/sml/basis-library/libs/basis-1997/posix
+@dirrm lib/mlton/sml/basis-library/libs/basis-1997/io
+@dirrm lib/mlton/sml/basis-library/libs/basis-1997
+@dirrm lib/mlton/sml/basis-library/libs/basis-2002/top-level
+@dirrm lib/mlton/sml/basis-library/libs/basis-2002
+@dirrm lib/mlton/sml/basis-library/libs/basis-2002-strict/top-level
+@dirrm lib/mlton/sml/basis-library/libs/basis-2002-strict
+@dirrm lib/mlton/sml/basis-library/libs/basis-none/top-level
+@dirrm lib/mlton/sml/basis-library/libs/basis-none
+@dirrm lib/mlton/sml/basis-library/libs
+@dirrm lib/mlton/sml/basis-library/io
+@dirrm lib/mlton/sml/basis-library/misc
+@dirrm lib/mlton/sml/basis-library/mlton
+@dirrm lib/mlton/sml/basis-library/net
+@dirrm lib/mlton/sml/basis-library/posix
+@dirrm lib/mlton/sml/basis-library/list
+@dirrm lib/mlton/sml/basis-library
+@dirrm lib/mlton/sml
+@dirrm lib/mlton
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/license
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/ffi
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/finalizable
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/profiling
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/save-world
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/cmcat
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/user-guide
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
