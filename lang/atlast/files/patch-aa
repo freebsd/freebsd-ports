@@ -1,0 +1,48 @@
+*** Makefile.orig	Tue Aug 26 21:20:06 1997
+--- Makefile	Tue Aug 26 21:21:46 1997
+***************
+*** 1,13 ****
+  
+  #	Unix makefile for ATLAST
+  
+! COPTIONS = -O
+  
+  LIBRARIES = -lm
+  
+  INCLUDE =
+  
+! ATLCONFIG = -DMEMSTAT -DALIGNMENT -DEXPORT
+  
+  CFLAGS = $(COPTIONS) $(INCLUDE) $(ATLCONFIG)
+  
+--- 1,13 ----
+  
+  #	Unix makefile for ATLAST
+  
+! COPTIONS = -O3 -pipe
+  
+  LIBRARIES = -lm
+  
+  INCLUDE =
+  
+! ATLCONFIG = -DMEMSTAT -DALIGNMENT -DEXPORT -DNOMEMCHECK
+  
+  CFLAGS = $(COPTIONS) $(INCLUDE) $(ATLCONFIG)
+  
+***************
+*** 33,39 ****
+  	echo  >>/tmp/regin.tmp
+  	echo  >>/tmp/regin.tmp
+  	atlast -iregress </tmp/regin.tmp >/tmp/regout.tmp
+! 	/bin/diff regout.txt /tmp/regout.tmp
+  
+  clean:
+  	rm -f $(APPS)
+--- 33,39 ----
+  	echo  >>/tmp/regin.tmp
+  	echo  >>/tmp/regin.tmp
+  	atlast -iregress </tmp/regin.tmp >/tmp/regout.tmp
+! 	/usr/bin/diff regout.txt /tmp/regout.tmp
+  
+  clean:
+  	rm -f $(APPS)
