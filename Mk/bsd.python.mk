@@ -13,7 +13,9 @@ Python_Include_MAINTAINER=	perky@FreeBSD.org
 # make your life easier when dealing with ports related to the Python
 # language. It's automatically included when USE_PYTHON or PYTHON_VERSION
 # is defined in the ports' makefile. Define PYTHON_VERSION to override the
-# defaults that USE_PYTHON would give you.
+# defaults that USE_PYTHON would give you. If your port requires only some
+# set of Python versions, you can define USE_PYTHON as [min]-[max] or
+# min+. (eg. 2.1-2.3, 2.0+ or -2.2)
 #
 # The variables:
 #
@@ -38,6 +40,10 @@ Python_Include_MAINTAINER=	perky@FreeBSD.org
 # PYTHON_PKGNAMEPREFIX:	Use this as a ${PKGNAMEPREFIX} to distinguish
 #						packages for different Python versions.
 #						default: py${PYTHON_SUFFIX}-
+#
+# PYTHON_PKGNAMESUFFIX:	If your port's name is more popular without `py-'
+#						prefix, use this as a ${PKGNAMESUFFIX} alternatively.
+#						default: -py${PYTHON_SUFFIX}
 #
 # PYTHON_PLATFORM:	Python's idea of the OS release.
 #					XXX This is faked with ${OPSYS} and ${OSREL} until I  
@@ -99,24 +105,77 @@ Python_Include_MAINTAINER=	perky@FreeBSD.org
 # PYSETUP:		Name of the setup script used by the distutils package.
 #				default: setup.py
 
+_PYTHON_PORTBRANCH=		2.3
+_PYTHON_PORTVERSION=	2.3.2
+_PYTHON_ALLBRANCHES=	2.3 2.2 2.1 2.0 1.5 2.4 # preferred first
+
+.if defined(USE_ZOPE)
+PYTHON_VERSION=		python2.2
+.endif
+
+.if defined(PYTHON_VERSION)
+_PYTHON_VERSION!=	echo "${PYTHON_VERSION}" | ${SED} 's/^python//'
+_PYTHON_CMD=		${LOCALBASE}/bin/${PYTHON_VERSION}
+.else
 # Determine the currently installed version. If Python is not installed, a
 # default version number is substituted and the corresponding Python
 # distribution will be built through the dependency processing.
 .if defined(PYTHON_CMD)
-_PYTHON_VERSION!=	${PYTHON_CMD} -c 'import sys; print sys.version[:3]'
-.elif defined(USE_ZOPE)
-_PYTHON_VERSION=	2.1
+_PYTHON_CMD=		${PYTHON_CMD}
 .else
-_PYTHON_VERSION!=	(${LOCALBASE}/bin/python -c 'import sys; print sys.version[:3]') 2> /dev/null \
-					|| echo 2.3
+_PYTHON_CMD=		${LOCALBASE}/bin/python
 .endif
+_PYTHON_VERSION!=	${_PYTHON_CMD} -c \
+					'import sys; print sys.version[:3]' 2> /dev/null \
+					|| echo ${_PYTHON_PORTBRANCH}
+.endif	# defined(PYTHON_VERSION)
+
+# Validate Python version whether it meets USE_PYTHON version restriction.
+_PYTHON_VERSION_CHECK!=		echo "${USE_PYTHON}" | \
+							${SED} 's/^\([1-9]\.[0-9]\)$$/\1-\1/'
+_PYTHON_VERSION_MINIMUM!=   echo "${_PYTHON_VERSION_CHECK}" | \
+							${SED} -n 's/.*\([1-9]\.[0-9]\)[-+].*/\1/p'
+_PYTHON_VERSION_MAXIMUM!=   echo "${_PYTHON_VERSION_CHECK}" | \
+							${SED} -n 's/.*-\([1-9]\.[0-9]\).*/\1/p'
+.if !empty(_PYTHON_VERSION_MINIMUM) && ( \
+		${_PYTHON_VERSION} < ${_PYTHON_VERSION_MINIMUM})
+_PYTHON_VERSION_NONSUPPORTED=	${_PYTHON_VERSION_MINIMUM} at least
+.elif !empty(_PYTHON_VERSION_MAXIMUM) && ( \
+		${_PYTHON_VERSION} > ${_PYTHON_VERSION_MAXIMUM})
+_PYTHON_VERSION_NONSUPPORTED=	${_PYTHON_VERSION_MAXIMUM} at most
+.endif
+
+# If we have an unsupported version of Python, try another.
+.if defined(_PYTHON_VERSION_NONSUPPORTED)
+.if defined(PYTHON_VERSION) || defined(PYTHON_CMD)
+IGNORE=				needs Python ${_PYTHON_VERSION_NONSUPPORTED}.\
+					But you specified ${_PYTHON_VERSION}
+.else
+.undef _PYTHON_VERSION
+.for ver in ${_PYTHON_ALLBRANCHES}
+__VER=		${ver}
+.if !defined(_PYTHON_VERSION) && \
+	!(!empty(_PYTHON_VERSION_MINIMUM) && ( \
+		${__VER} < ${_PYTHON_VERSION_MINIMUM})) && \
+	!(!empty(_PYTHON_VERSION_MAXIMUM) && ( \
+		${__VER} > ${_PYTHON_VERSION_MAXIMUM}))
+_PYTHON_VERSION=	${ver}
+_PYTHON_CMD=		${LOCALBASE}/bin/python${ver}
+.endif
+.endfor
+.if !defined(_PYTHON_VERSION)
+IGNORE=				needs an unsupported version of Python
+_PYTHON_VERSION=	${_PYTHON_PORTBRANCH} # just to avoid version sanity checking.
+.endif
+.endif	# defined(PYTHON_VERSION) || defined(PYTHON_CMD)
+.endif	# defined(_PYTHON_VERSION_NONSUPPORTED)
+
 PYTHON_VERSION?=	python${_PYTHON_VERSION}
-_PYTHON_PORTVERSION=	2.3.2
-PYTHON_CMD?=		${PYTHONBASE}/bin/${PYTHON_VERSION}
+PYTHON_CMD?=		${_PYTHON_CMD}
 PYTHONBASE!=		(${PYTHON_CMD} -c 'import sys; print sys.prefix') \
 						2> /dev/null || echo ${LOCALBASE}
-PYTHON_PORTVERSION!=	(${PYTHON_CMD} -c 'import string, sys; \
-								print string.split(sys.version)[0]') 2> /dev/null \
+PYTHON_PORTVERSION!=(${PYTHON_CMD} -c 'import string, sys; \
+							print string.split(sys.version)[0]') 2> /dev/null \
 					|| echo ${_PYTHON_PORTVERSION}
 
 # Python-2.4
@@ -207,6 +266,7 @@ PYTHON_WRKSRC=		${WRKDIR}/Python-${_PYTHON_PORTVERSION}
 PYTHON_INCLUDEDIR=		${PYTHONBASE}/include/${PYTHON_VERSION}
 PYTHON_LIBDIR=			${PYTHONBASE}/lib/${PYTHON_VERSION}
 PYTHON_PKGNAMEPREFIX=	py${PYTHON_SUFFIX}-
+PYTHON_PKGNAMESUFFIX=	-py${PYTHON_SUFFIX}
 PYTHON_PLATFORM!=		expr ${OPSYS:L}${OSREL} : '\(.*\)\.'
 PYTHON_SITELIBDIR=		${PYTHON_LIBDIR}/site-packages
 
