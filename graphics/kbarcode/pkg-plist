@@ -19,6 +19,7 @@ share/icons/hicolor/32x32/actions/kbarcoderect.png
 share/icons/hicolor/32x32/apps/kbarcode.png
 share/icons/hicolor/64x64/apps/kbarcode.png
 share/locale/de/LC_MESSAGES/kbarcode.mo
+share/locale/el/LC_MESSAGES/kbarcode.mo
 share/locale/es/LC_MESSAGES/kbarcode.mo
 share/locale/fi/LC_MESSAGES/kbarcode.mo
 share/locale/fr/LC_MESSAGES/kbarcode.mo
