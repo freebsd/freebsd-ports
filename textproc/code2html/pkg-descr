@@ -1,0 +1,14 @@
+Sourcecode to HTML converter
+
+code2html converts a program source code to syntax
+highlighted HTML. It may be called as a CGI script and
+can also handle include commands in HTML files.
+
+Support for the following languages:
+	Ada, C, C++, HTML, Java, JavaScript, Makefile,
+	Pascal, Perl, SQL, Awk, m4, groff.
+
+WWW: http://www.cosy.sbg.ac.at/~ppalfrad/code2html/
+
+- Chris D. Faulhaber
+jedgar@fxp.org
