@@ -26,15 +26,25 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-stable
 MAINTAINER=	m.seaman@infracaninophile.co.uk
 COMMENT=	MySQL Connector/J: JDBC interface for MySQL
 
+.if !defined(WITHOUT_COMPILE)
+
 BUILD_DEPENDS=	${ANT}:${PORTSDIR}/devel/apache-ant \
 		${LOCALBASE}/share/java/classes/junit.jar:${PORTSDIR}/java/junit
-USE_JAVA=	1.2+
+USE_JAVA=	1.4+
 NEED_JAVAC=	YES
 
 ANT?=		${LOCALBASE}/bin/ant
 ANT_TARGET=	clean compile-driver
-APIDOCSDIR=	${DOCSDIR}/javadoc
 BUILDDIR=	${WRKDIR}/build-mysql-jdbc/${DISTNAME}
+
+.else
+
+USE_JAVA=	1.2+
+BUILDDIR=	${WRKDIR}/${DISTNAME}
+
+.endif
+
+APIDOCSDIR=	${DOCSDIR}/javadoc
 DESTJARFILE=	${PORTNAME}.jar
 EXTRAJARS=	jdbc2_0-stdext.jar jta-spec1_0_1.jar
 EXTRADOCS=	README CHANGES
@@ -45,8 +55,20 @@ JDCLASSPATH=	${WRKSRC}:${WRKSRC}/lib/jdbc2_0-stdext.jar:${WRKSRC}/lib/jta-spec1_
 PORTDOCS=	*
 .endif
 
+pre-fetch:
+	@${ECHO} ""
+	@${ECHO} "You may use the following build options:"
+	@${ECHO} ""
+	@${ECHO} "    WITHOUT_COMPILE-yes    Install the pre-compiled .jar file"
+	@${ECHO} ""
+	@${ECHO} "This port requires JDK 1.4.x or better to compile, but the"
+	@${ECHO} "JDBC driver will operate with JVM 1.2.x or better"
+	@${ECHO} ""
+
 do-build:
+.if !defined(WITHOUT_COMPILE)
 	@cd ${WRKSRC} && ${ANT} ${ANT_TARGET}
+.endif
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${BUILDDIR}/doc && cd ${WRKSRC} && \
 	 ${JAVADOC} -d ${BUILDDIR}/doc -package      \
