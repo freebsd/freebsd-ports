@@ -5,11 +5,11 @@
 # Date created:         15 Dec 1994
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.39 1997/05/28 22:21:48 fenner Exp $
+# $Id: Makefile,v 1.40 1997/07/15 20:46:21 ache Exp $
 #
 
 DISTNAME=       lynx2-7-1
-PKGNAME=        lynx-2.7.1+fotemods
+PKGNAME=        lynx+fotemods-2.7.1
 CATEGORIES=	www
 MASTER_SITES=   http://www.slcc.edu/lynx/fote/ \
 		http://www.slcc.edu/lynx/fote/patches/
