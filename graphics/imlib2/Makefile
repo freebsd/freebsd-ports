@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	enlightenment
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	The next generation graphic library for enlightenment package
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		ltdl.1:${PORTSDIR}/devel/libtool \

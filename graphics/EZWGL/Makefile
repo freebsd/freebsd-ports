@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.ma.utexas.edu/pub/mzou/
 DISTFILES=	${DISTNAME}-demo.tgz ${DISTNAME}-doc.tgz ${DISTNAME}-src.tgz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	The EZ Widget and Graphics Library
 
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 		png.5:${PORTSDIR}/graphics/png

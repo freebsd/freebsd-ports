@@ -13,6 +13,7 @@ DISTNAME=	${PORTNAME}.${PORTVERSION}
 EXTRACT_SUFX=	.r3.17.tgz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A Visualization Tool for compiler graphs
 
 BUILD_DEPENDS=	imake:${PORTSDIR}/devel/imake-4
 

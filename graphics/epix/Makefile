@@ -13,6 +13,7 @@ MASTER_SITES=	http://mathcs.holycross.edu/~ahwang/software/
 DISTNAME=	${PORTNAME}-${PORTVERSION}_src
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Creates math plots and line figures using easy-to-learn syntax
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash2
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash2 \

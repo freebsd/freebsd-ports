@@ -11,6 +11,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.remotesensing.org/pub/gdal/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A translator library for raster geospatial data formats
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/doxygen:${PORTSDIR}/devel/doxygen
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \

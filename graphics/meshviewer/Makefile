@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.dai.ed.ac.uk/homes/helmutc/mesh_viewer/
 DISTNAME=	mview-src-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Mesh Viewer
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 

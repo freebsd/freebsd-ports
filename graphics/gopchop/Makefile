@@ -16,6 +16,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	GOPchop-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	MPEG2 GOP-accurate editor
 
 BROKEN=		Does not work with libmpeg 0.3.0 and later
 

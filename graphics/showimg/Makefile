@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.jalix.org/projects/showimg/download/0.8-Beta1/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.20/-20/}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A picture viewer designed to run under KDE 2.x
 
 LIB_DEPENDS=	png:${PORTSDIR}/graphics/png \
 		jpeg:${PORTSDIR}/graphics/jpeg

@@ -14,6 +14,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 MASTER_SITE_SUBDIR=	ods
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Access Flashpoint Digita-based cameras, download images and more
 
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes

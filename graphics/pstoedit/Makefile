@@ -11,6 +11,7 @@ CATEGORIES=	graphics print
 MASTER_SITES=	http://home.t-online.de/home/helga.glunz/wglunz/pstoedit/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Convert PostScript to other vector graphic formats
 
 BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig \
 		gs:${PORTSDIR}/print/ghostscript-gnu

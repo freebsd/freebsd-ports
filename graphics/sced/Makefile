@@ -11,6 +11,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://www.cs.wisc.edu/~schenney/sced/src/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	SCene EDitor for povray/renderman/genray/etc
 
 RUN_DEPENDS=	povray:${PORTSDIR}/graphics/povray
 

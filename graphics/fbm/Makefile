@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	apps/graphics/convert
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Fuzzy Pixmap Manipulation utilities
 
 NO_WRKSUBDIR=	yes
 

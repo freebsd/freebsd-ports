@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.netsw.org/graphic/movie/mpeg/mpegedit/
 DISTNAME=	${PORTNAME}_v${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A program to edit encoded mpeg streams
 
 LIB_DEPENDS=	netpbm.1:${PORTSDIR}/graphics/netpbm
 

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	aa-project
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/rc/}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Graphics viewer for viewing netpbm format on console or X using aalib
 
 RUN_DEPENDS=	anytopnm:${PORTSDIR}/graphics/netpbm \
 		convert:${PORTSDIR}/graphics/ImageMagick

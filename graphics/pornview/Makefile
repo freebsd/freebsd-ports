@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	PornView is an image viewer/manager
 
 LIB_DEPENDS=	exif.8:${PORTSDIR}/graphics/libexif
 

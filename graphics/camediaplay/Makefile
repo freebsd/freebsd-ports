@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.itojun.org/pub/digi-cam/C-400L/unix/ \
 		ftp://ftp.digipri.co.jp/pub/free-software/Olympus/C-400L/unix/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Digital camera downloading tool for Epson/Sanyo/Olympus/Agfa camera
 
 WRKSRC=		${WRKDIR}/${PORTNAME}/build
 

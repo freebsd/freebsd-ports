@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	. previous_versions
 DISTNAME=	${PORTNAME}.${PORTVERSION}.full
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A drawing program for X11
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \

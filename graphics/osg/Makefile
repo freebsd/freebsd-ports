@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.openscenegraph.org/download/snapshots/
 DISTNAME=	OpenSceneGraph-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	C++ OpenGL scene graph library for real-time rendering
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \

@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A photorealistic rendering system
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libargparse.a:${PORTSDIR}/devel/libargparse
 LIB_DEPENDS=	tiff:${PORTSDIR}/graphics/tiff

@@ -14,6 +14,7 @@ DISTNAME=	${PORTNAME}.${PORTVERSION}
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	An extensible system for creating ray-traced images
 
 BUILD_DEPENDS=	$(LOCALBASE)/lib/librle.a:${PORTSDIR}/graphics/urt
 

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	graphics
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	The dos based 'fractint' with an X/Motif front end
 
 USE_MOTIF=	yes
 USE_X_PREFIX=	yes

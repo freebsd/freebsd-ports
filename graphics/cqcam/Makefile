@@ -12,6 +12,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://www.cs.duke.edu/~reynolds/cqcam/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Color Quickcam control program
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 

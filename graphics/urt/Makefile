@@ -17,6 +17,7 @@ PATCHFILES=	urt-3.1b-3.1b1.patch
 PATCH_DIST_STRIP=-p1
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Toolkit and library for raster image processing
 
 LIB_DEPENDS=	netpbm.1:${PORTSDIR}/graphics/netpbm
 

@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	rhh
 DISTNAME=	TerrainApps-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Virtual Terrain Project Applications
 
 LIB_DEPENDS=    vtdata.1:${PORTSDIR}/graphics/vterrain-sdk \
 		wx_gtk-2.2_gl.2:${PORTSDIR}/x11-toolkits/wxgtk \

@@ -13,6 +13,7 @@ MASTER_SITES=	http://fractorama.com/
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Fractal generation program
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 

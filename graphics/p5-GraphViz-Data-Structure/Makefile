@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	GraphViz
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Visualise data structures
 
 BUILD_DEPENDS=	${PERL_SITELIBDIR}/GraphViz.pm:${PORTSDIR}/graphics/p5-GraphViz \
 		${PERL_SITELIBDIR}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple

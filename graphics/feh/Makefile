@@ -12,6 +12,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://www.linuxbrit.co.uk/downloads/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	An image viewer that utilizes Imlib2
 
 LIB_DEPENDS=	giblib.1:${PORTSDIR}/graphics/giblib
 

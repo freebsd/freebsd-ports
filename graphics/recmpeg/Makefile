@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	fame
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A simple video encoder
 
 LIB_DEPENDS=	fame-0.9.0:${PORTSDIR}/graphics/libfame
 

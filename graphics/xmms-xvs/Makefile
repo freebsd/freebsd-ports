@@ -13,6 +13,7 @@ MASTER_SITES=	http://jgregor.ps.pl/xvs/download/
 DISTNAME=	xvs-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	X Visualization System, a plugin for XMMS
 
 BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2

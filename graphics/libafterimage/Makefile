@@ -15,6 +15,7 @@ MASTER_SITE_SUBDIR=	afterstep
 DISTNAME=	libAfterImage-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Generic imaging library originally designed for AfterStep
 
 BUILD_DEPENDS=	freetype-config:${PORTSDIR}/print/freetype2	# XXX
 LIB_DEPENDS=	AfterBase.0:${PORTSDIR}/devel/libafterbase \

@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.libpng.org/pub/png/src/ \
 		ftp://swrinde.nde.swri.edu/pub/png/applications/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Checks the integrity of PNG images
 
 MAKEFILE=	Makefile.unx
 

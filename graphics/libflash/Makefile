@@ -13,6 +13,7 @@ DISTNAME=	flash-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	GPL Flash (TM) Library
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 

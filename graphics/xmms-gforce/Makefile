@@ -12,6 +12,7 @@ MASTER_SITES=	http://dl.droso.net/ports/
 DISTNAME=	gforce-1.1.6xp3
 
 MAINTAINER=	ports@freebsd.org
+COMMENT=	A visual plugin for XMMS
 
 BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms
 RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms

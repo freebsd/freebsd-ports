@@ -14,6 +14,7 @@ DISTNAME=	flash-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	GPL standalone Flash (TM) player
 
 LIB_DEPENDS=	flash.0:${.CURDIR}/../libflash
 

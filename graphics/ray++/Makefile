@@ -12,6 +12,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://www.mpa-garching.mpg.de/~martin/ray++/download/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A collection of C++ classes needed for ray tracing
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared --enable-fast-handles

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	rhh
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	X-based TV Display and Capture Application (for use with bt848 driver)
 
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 		Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d

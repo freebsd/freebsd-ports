@@ -14,6 +14,7 @@ MASTER_SITES=	http://www.research.ibm.com/dx/srcDownload/srcArchive/ \
 DISTNAME=	dxsamples-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Example files for IBM's OpenDX
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	SHELL=/bin/sh

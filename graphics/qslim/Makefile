@@ -12,6 +12,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://graphics.cs.uiuc.edu/~garland/dist/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	SlimKit Surface Modeling Tools
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \

@@ -15,6 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	ImLib3D-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A 3D Image Processing Framework
 
 LIB_DEPENDS=	fftw.2:${PORTSDIR}/math/fftw \
 		gsl.4:${PORTSDIR}/math/gsl \

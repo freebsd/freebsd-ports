@@ -13,6 +13,7 @@ MASTER_SITES=	http://netpedia.net/hosting/gview/ \
 		ftp://ftp.petech.ac.za/pub/viewers/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Image viewer for X Window System with interface similar to ACDSee
 
 USE_X_PREFIX=	yes
 USE_GNOMENG=	yes

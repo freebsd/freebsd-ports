@@ -12,6 +12,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://anime.org.ru/soft/avinfo/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A utility for displaying AVI header information
 
 USE_ZIP=	yes
 WRKSRC=		${WRKDIR}/src

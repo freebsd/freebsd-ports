@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://mm-ftp.CS.Berkeley.EDU/pub/multimedia/mpeg/encode/
 DISTNAME=	${PKGNAME}-src
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	UCB's MPEG-I video stream encoder
 
 MAN1=		mpeg_encode.1
 

@@ -14,6 +14,7 @@ MASTER_SITES=	http://www.csv.ica.uni-stuttgart.de/vrml/dune/
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}pl${PORTVERSION:E}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Graphical VRML97 Editor and animation tool
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png

@@ -13,6 +13,7 @@ PKGNAMEPREFIX=	p5-
 DISTNAME=	${PORTNAME}-Perl-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Perl bindings for Imlib2
 
 LIB_DEPENDS=	Imlib2.1:${PORTSDIR}/graphics/imlib2
 

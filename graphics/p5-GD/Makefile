@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	GD
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A perl5 interface to Gd Graphics Library
 
 LIB_DEPENDS=	gd.2:${PORTSDIR}/graphics/gd
 

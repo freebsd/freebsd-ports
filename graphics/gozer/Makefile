@@ -11,6 +11,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://www.linuxbrit.co.uk/downloads/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A commandline text rendering utility that creates images from arbitrary text
 
 LIB_DEPENDS=	giblib.1:${PORTSDIR}/graphics/giblib
 

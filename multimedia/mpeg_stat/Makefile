@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://mm-ftp.CS.Berkeley.EDU/pub/multimedia/mpeg/stat/
 DISTNAME=	${PKGNAME}-src
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	An MPEG-I statistics gatherer
 
 MAN1=		mpeg_stat.1
 MANCOMPRESSED=	yes

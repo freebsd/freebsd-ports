@@ -12,6 +12,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://www.inf.bme.hu/~pts/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Converts TIFF- sampled images to PNM image
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash2
 LIB_DEPENDS=	tiff:${PORTSDIR}/graphics/tiff

@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.libpng.org/pub/png/src/ \
 		ftp://swrinde.nde.swri.edu/pub/png/applications/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Converts TIFF images to PNG format
 
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 		png.5:${PORTSDIR}/graphics/png
