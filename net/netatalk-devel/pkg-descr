@@ -1,0 +1,21 @@
+netatalk - File and Print Server for AppleTalk networks
+
+netatalk is a server software for AppleTalk networks. Features include:
+
+o Access to the UNIX file system for Macintosh and other systems with
+  AppleShare client software.
+
+o Spool PostScript print jobs to the lpd(8) spool system via Printer Access
+  Protocol (PAP).
+
+o Output PostScript print jobs from the lpd(8) spool system via Printer
+  Access Protocol (PAP).
+
+o Filter PostScript, ASCII, and various other formats to PostScript,
+  including banner pages and page reversal.
+
+o Route AppleTalk between multiple Ethernet interfaces.
+
+Requires AppleTalk support in the kernel (FreeBSD 2.2 or newer).
+
+See http://www.umich.edu/~rsug/netatalk/ for further information.
