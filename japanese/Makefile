@@ -13,7 +13,6 @@
     SUBDIR += addttfont
     SUBDIR += binder
     SUBDIR += bookview
-    SUBDIR += camltk41
     SUBDIR += canuum
     SUBDIR += cdrom2
     SUBDIR += chasen
