@@ -1,15 +1,40 @@
+bin/autopvf
+bin/basictopvf
 bin/faxspool
 bin/faxq
 bin/faxrm
 bin/faxrunq
 bin/g3cat
 bin/g32pbm
+bin/g3topbm
 bin/newslock
+bin/lintopvf
 bin/mg.echo
 bin/pbm2g3
+bin/pvfamp
+bin/pvfcut
+bin/pvfecho
+bin/pvffft
+bin/pvffile
+bin/pvfmix
+bin/pvfreverse
+bin/pvfsine
+bin/pvfspeed
+bin/pvftoau
+bin/pvftobasic
+bin/pvftolin
+bin/pvftormd
+bin/pvftovoc
+bin/pvftowav
+bin/rmdfile
+bin/rmdtopvf
+bin/vm
+bin/voctopvf
+bin/wavtopvf
 etc/mgetty+sendfax/dialin.config
 etc/mgetty+sendfax/faxrunq.config
 etc/mgetty+sendfax/login.config
+etc/mgetty+sendfax/voice.conf-dist
 @unexec rm -f %D/etc/mgetty+sendfax/faxheader %D/etc/mgetty+sendfax/mgetty.config* %D/etc/mgetty+sendfax/sendfax.config*
 @unexec install-info --delete %D/info/mgetty.info %D/info/dir
 info/mgetty.info
@@ -30,13 +55,17 @@ man/man1/faxspool.1.gz
 man/man1/g3cat.1.gz
 man/man1/g32pbm.1.gz
 man/man1/pbm2g3.1.gz
+man/man1/pvf.1.gz
+man/man1/zplay.1.gz
 man/man4/mgettydefs.4.gz
 man/man5/faxqueue.5.gz
-man/man8/sendfax.8.gz
-man/man8/mgetty.8.gz
 man/man8/callback.8.gz
+man/man8/faxrunqd.8.gz
+man/man8/mgetty.8.gz
+man/man8/sendfax.8.gz
+sbin/faxrunqd
 sbin/mgetty
 sbin/sendfax
-sbin/faxrunqd
+sbin/vgetty
 @dirrm etc/mgetty+sendfax
 @dirrm lib/mgetty+sendfax

@@ -1,126 +1,95 @@
-*** Makefile.orig	Sun Aug 17 21:36:47 1997
---- Makefile	Thu Oct 30 23:14:09 1997
-***************
-*** 4,11 ****
-  #
-  # this is the C compiler to use (on SunOS, the standard "cc" does not
-  # grok my code, so please use gcc there. On ISC 4.0, use "icc".).
-! CC=gcc
-! #CC=cc
-  #
-  #### C Compiler Flags ####
-  #
---- 4,11 ----
-  #
-  # this is the C compiler to use (on SunOS, the standard "cc" does not
-  # grok my code, so please use gcc there. On ISC 4.0, use "icc".).
-! #CC=gcc
-! CC=cc
-  #
-  #### C Compiler Flags ####
-  #
-***************
-*** 108,114 ****
-  # prompt first. Don't forget to activate the /AutoPPP/ line in login.config!
-  #
-  #CFLAGS=-Wall -O2 -pipe -DSECUREWARE -DUSE_POLL
-! CFLAGS=-O2 -Wall -pipe
-  #CFLAGS=-O -DSVR4
-  #CFLAGS=-O -DSVR4 -DSVR42
-  #CFLAGS=-O -DUSE_POLL
---- 108,114 ----
-  # prompt first. Don't forget to activate the /AutoPPP/ line in login.config!
-  #
-  #CFLAGS=-Wall -O2 -pipe -DSECUREWARE -DUSE_POLL
-! #CFLAGS=-O2 -Wall -pipe
-  #CFLAGS=-O -DSVR4
-  #CFLAGS=-O -DSVR4 -DSVR42
-  #CFLAGS=-O -DUSE_POLL
-***************
-*** 151,157 ****
-  # For Linux, add "-lutil" if the linker complains about "updwtmp".
-  #
-  LDFLAGS=
-! LIBS=
-  #LIBS=-lprot -lsocket				# SCO Unix
-  #LIBS=-lsocket
-  #LIBS=-lbsd					# OSF/1
---- 151,157 ----
-  # For Linux, add "-lutil" if the linker complains about "updwtmp".
-  #
-  LDFLAGS=
-! LIBS=-lutil
-  #LIBS=-lprot -lsocket				# SCO Unix
-  #LIBS=-lsocket
-  #LIBS=-lbsd					# OSF/1
-***************
-*** 260,268 ****
-  # please use the "mg.echo" program provided in the compat/ subdirectory.
-  # Set ECHO="mg.echo" and INSTALL_MECHO to mg.echo
-  #
-! ECHO="echo"
-  #
-! # INSTALL_MECHO=mg.echo
-  
-  #
-  # for mgetty, that's it. If you want to use the voice
---- 260,268 ----
-  # please use the "mg.echo" program provided in the compat/ subdirectory.
-  # Set ECHO="mg.echo" and INSTALL_MECHO to mg.echo
-  #
-! ECHO="mg.echo"
-  #
-! INSTALL_MECHO=mg.echo
-  
-  #
-  # for mgetty, that's it. If you want to use the voice
-***************
-*** 555,566 ****
-  install: install.bin install.doc
-  
-  install.bin: mgetty sendfax newslock \
-! 		login.config mgetty.config sendfax.config 
-  #
-  # binaries
-  #
-  	-test -d $(BINDIR)  || ( ./mkidirs $(BINDIR)  ; chmod 755 $(BINDIR)  )
-! 	$(INSTALL) -m 755 newslock $(BINDIR)
-  
-  	-test -d $(SBINDIR) || ( ./mkidirs $(SBINDIR) ; chmod 755 $(SBINDIR) )
-  	-mv -f $(SBINDIR)/mgetty $(SBINDIR)/mgetty.old
---- 555,566 ----
-  install: install.bin install.doc
-  
-  install.bin: mgetty sendfax newslock \
-! 		login.config #mgetty.config sendfax.config 
-  #
-  # binaries
-  #
-  	-test -d $(BINDIR)  || ( ./mkidirs $(BINDIR)  ; chmod 755 $(BINDIR)  )
-! 	$(INSTALL) -s -m 755 newslock $(BINDIR)
-  
-  	-test -d $(SBINDIR) || ( ./mkidirs $(SBINDIR) ; chmod 755 $(SBINDIR) )
-  	-mv -f $(SBINDIR)/mgetty $(SBINDIR)/mgetty.old
-***************
-*** 576,585 ****
-  		( ./mkidirs $(CONFDIR); chmod 755 $(CONFDIR))
-  	test -f $(CONFDIR)/login.config || \
-  		$(INSTALL) -o root -m 600 login.config $(CONFDIR)/
-! 	test -f $(CONFDIR)/mgetty.config || \
-! 		$(INSTALL) -o root -m 600 mgetty.config $(CONFDIR)/
-! 	test -f $(CONFDIR)/sendfax.config || \
-! 		$(INSTALL) -o root -m 644 sendfax.config $(CONFDIR)/
-  	test -f $(CONFDIR)/dialin.config || \
-  		$(INSTALL) -o root -m 600 dialin.config $(CONFDIR)/
-  	test -f $(CONFDIR)/faxrunq.config || \
---- 576,585 ----
-  		( ./mkidirs $(CONFDIR); chmod 755 $(CONFDIR))
-  	test -f $(CONFDIR)/login.config || \
-  		$(INSTALL) -o root -m 600 login.config $(CONFDIR)/
-! #	test -f $(CONFDIR)/mgetty.config || \
-! #		$(INSTALL) -o root -m 600 mgetty.config $(CONFDIR)/
-! #	test -f $(CONFDIR)/sendfax.config || \
-! #		$(INSTALL) -o root -m 644 sendfax.config $(CONFDIR)/
-  	test -f $(CONFDIR)/dialin.config || \
-  		$(INSTALL) -o root -m 600 dialin.config $(CONFDIR)/
-  	test -f $(CONFDIR)/faxrunq.config || \
+--- Makefile.orig	Tue Dec 16 21:44:14 1997
++++ Makefile	Mon Dec 29 22:41:35 1997
+@@ -4,8 +4,8 @@
+ #
+ # this is the C compiler to use (on SunOS, the standard "cc" does not
+ # grok my code, so please use gcc there. On ISC 4.0, use "icc".).
+-CC=gcc
+-#CC=cc
++#CC=gcc
++CC=cc
+ #
+ #### C Compiler Flags ####
+ #
+@@ -108,7 +108,7 @@
+ # prompt first. Don't forget to activate the /AutoPPP/ line in login.config!
+ #
+ #CFLAGS=-Wall -O2 -pipe -DSECUREWARE -DUSE_POLL
+-CFLAGS=-O2 -Wall -pipe
++#CFLAGS=-O2 -Wall -pipe
+ #CFLAGS=-O -DSVR4
+ #CFLAGS=-O -DSVR4 -DSVR42
+ #CFLAGS=-O -DUSE_POLL
+@@ -151,7 +151,7 @@
+ # For Linux, add "-lutil" if the linker complains about "updwtmp".
+ #
+ LDFLAGS=
+-LIBS=
++LIBS=-lutil
+ #LIBS=-lprot -lsocket				# SCO Unix
+ #LIBS=-lsocket
+ #LIBS=-lbsd					# OSF/1
+@@ -261,9 +261,9 @@
+ # please use the "mg.echo" program provided in the compat/ subdirectory.
+ # Set ECHO="mg.echo" and INSTALL_MECHO to mg.echo
+ #
+-ECHO="echo"
++ECHO="mg.echo"
+ #
+-# INSTALL_MECHO=mg.echo
++INSTALL_MECHO=mg.echo
+ 
+ #
+ # for mgetty, that's it. If you want to use the voice
+@@ -271,7 +271,7 @@
+ 
+ # To maintain security, I recommend creating a new group for
+ # users who are allowed to manipulate the recorded voice messages.
+-PHONE_GROUP=phone
++PHONE_GROUP=uucp
+ PHONE_PERMS=770
+ 
+ # Add -DNO_STRSTR to CFLAGS if you don't have strstr().
+@@ -303,7 +303,7 @@
+ 
+ all:	bin-all doc-all
+ 
+-bin-all: mgetty sendfax newslock subdirs call-back 
++bin-all: mgetty sendfax newslock subdirs call-back vgetty
+ 
+ # a few C files need extra compiler arguments
+ 
+@@ -562,15 +562,15 @@
+ 	cd bindist; gtar cvvfz mgetty$(MR).$(SR)-bin.tgz *
+ 
+ 
+-install: install.bin install.doc
++install: install.bin install.doc install-vgetty
+ 
+ install.bin: mgetty sendfax newslock \
+-		login.config mgetty.config sendfax.config 
++		login.config #mgetty.config sendfax.config 
+ #
+ # binaries
+ #
+ 	-test -d $(BINDIR)  || ( ./mkidirs $(BINDIR)  ; chmod 755 $(BINDIR)  )
+-	$(INSTALL) -m 755 newslock $(BINDIR)
++	$(INSTALL) -s -m 755 newslock $(BINDIR)
+ 
+ 	-test -d $(SBINDIR) || ( ./mkidirs $(SBINDIR) ; chmod 755 $(SBINDIR) )
+ 	-mv -f $(SBINDIR)/mgetty $(SBINDIR)/mgetty.old
+@@ -586,10 +586,10 @@
+ 		( ./mkidirs $(CONFDIR); chmod 755 $(CONFDIR))
+ 	test -f $(CONFDIR)/login.config || \
+ 		$(INSTALL) -o root -m 600 login.config $(CONFDIR)/
+-	test -f $(CONFDIR)/mgetty.config || \
+-		$(INSTALL) -o root -m 600 mgetty.config $(CONFDIR)/
+-	test -f $(CONFDIR)/sendfax.config || \
+-		$(INSTALL) -o root -m 644 sendfax.config $(CONFDIR)/
++#	test -f $(CONFDIR)/mgetty.config || \
++#		$(INSTALL) -o root -m 600 mgetty.config $(CONFDIR)/
++#	test -f $(CONFDIR)/sendfax.config || \
++#		$(INSTALL) -o root -m 644 sendfax.config $(CONFDIR)/
+ 	test -f $(CONFDIR)/dialin.config || \
+ 		$(INSTALL) -o root -m 600 dialin.config $(CONFDIR)/
+ 	test -f $(CONFDIR)/faxrunq.config || \
