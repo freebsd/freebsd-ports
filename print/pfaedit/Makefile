@@ -25,14 +25,14 @@ LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 USE_GMAKE=	yes
 USE_XLIB=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
+	CFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2"
 WRKSRC=		${WRKDIR}/${PORTNAME}
 ALL_TARGET=	pfaedit
 
 MAN1=		pfaedit.1 sfddiff.1
 
-DIST_VER=	020507
+DIST_VER=	020518
 EXTRACT_ONLY=	${PORTNAME}_full-${DIST_VER}.tgz cidmaps.tgz
 
 .if !defined(NOPORTDOCS)
