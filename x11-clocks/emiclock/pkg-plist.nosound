@@ -1,0 +1,5 @@
+bin/emiclock
+lib/X11/app-defaults/EmiClock
+lib/X11/ja_JP.EUC/app-defaults/EmiClock
+lib/X11/EmiClock/COPYRIGHT
+lib/X11/EmiClock/COPYRIGHT.en
