@@ -21,9 +21,9 @@ etc/rc.d/020.jakarta-tomcat41.sh
 %%T%%/common/lib/activation.jar
 %%T%%/common/lib/ant.jar
 %%T%%/common/lib/commons-collections.jar
-%%T%%/common/lib/commons-dbcp.jar
+%%T%%/common/lib/commons-dbcp-1.1.jar
 %%T%%/common/lib/commons-logging-api.jar
-%%T%%/common/lib/commons-pool.jar
+%%T%%/common/lib/commons-pool-1.1.jar
 %%T%%/common/lib/jasper-compiler.jar
 %%T%%/common/lib/jasper-runtime.jar
 %%T%%/common/lib/jdbc2_0-stdext.jar
@@ -43,6 +43,8 @@ etc/rc.d/020.jakarta-tomcat41.sh
 %%T%%/conf/web.xml
 %%T%%/logs/stderr.log
 %%T%%/logs/stdout.log
+@exec mkdir %D/%%T%%/server || true
+@exec mkdir %D/%%T%%/server/classes || true
 %%T%%/server/lib/catalina-ant.jar
 %%T%%/server/lib/catalina.jar
 %%T%%/server/lib/commons-beanutils.jar
@@ -51,7 +53,7 @@ etc/rc.d/020.jakarta-tomcat41.sh
 %%T%%/server/lib/commons-logging.jar
 %%T%%/server/lib/commons-modeler.jar
 %%T%%/server/lib/jaas.jar
-%%T%%/server/lib/jakarta-regexp-1.2.jar
+%%T%%/server/lib/jakarta-regexp-1.3.jar
 %%T%%/server/lib/mx4j-jmx.jar
 %%T%%/server/lib/mx4j.license
 %%T%%/server/lib/servlets-cgi.renametojar
@@ -120,6 +122,7 @@ etc/rc.d/020.jakarta-tomcat41.sh
 %%T%%/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/defaultcontext/DeleteDefaultContextsAction.class
 %%T%%/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/defaultcontext/EditDefaultContextAction.class
 %%T%%/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/defaultcontext/SaveDefaultContextAction.class
+@exec mkdir %D/%%T%%/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/filters ||true
 %%T%%/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/host/AddAliasAction.class
 %%T%%/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/host/AddHostAction.class
 %%T%%/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/host/AliasForm.class
@@ -364,6 +367,9 @@ etc/rc.d/020.jakarta-tomcat41.sh
 %%T%%/server/webapps/manager/images/tomcat.gif
 %%T%%/server/webapps/manager/images/void.gif
 %%T%%/server/webapps/manager/manager-howto.html
+@exec mkdir %D/%%T%%/shared || true
+@exec mkdir %D/%%T%%/shared/classes || true
+@exec mkdir %D/%%T%%/shared/lib || true
 %%T%%/temp/README.txt
 %%T%%/webapps/ROOT/WEB-INF/web.xml
 %%T%%/webapps/ROOT/index.jsp
@@ -1230,6 +1236,8 @@ etc/rc.d/020.jakarta-tomcat41.sh
 %%T%%/webapps/tomcat-docs/jasper/docs/api/stylesheet.css
 %%T%%/webapps/tomcat-docs/jk2/common/AJPv13-extensions-proposal.html
 %%T%%/webapps/tomcat-docs/jk2/common/AJPv13.html
+%%T%%/webapps/tomcat-docs/jk2/common/doccontrib.html
+%%T%%/webapps/tomcat-docs/jk2/common/tools.html
 %%T%%/webapps/tomcat-docs/jk2/faq.html
 %%T%%/webapps/tomcat-docs/jk2/images/corner.gif
 %%T%%/webapps/tomcat-docs/jk2/images/jakarta.gif
@@ -1247,12 +1255,15 @@ etc/rc.d/020.jakarta-tomcat41.sh
 %%T%%/webapps/tomcat-docs/jk2/jk/workershowto.html
 %%T%%/webapps/tomcat-docs/jk2/jk2/confighowto.html
 %%T%%/webapps/tomcat-docs/jk2/jk2/configtc.html
+%%T%%/webapps/tomcat-docs/jk2/jk2/configtccom.html
 %%T%%/webapps/tomcat-docs/jk2/jk2/configtcex.html
 %%T%%/webapps/tomcat-docs/jk2/jk2/configweb.html
 %%T%%/webapps/tomcat-docs/jk2/jk2/configwebcom.html
 %%T%%/webapps/tomcat-docs/jk2/jk2/configwebex.html
 %%T%%/webapps/tomcat-docs/jk2/jk2/installhowto.html
+%%T%%/webapps/tomcat-docs/jk2/jk2/vhosthowto.html
 %%T%%/webapps/tomcat-docs/jk2/style.css
+@exec mkdir %D/%%T%%/webapps/tomcat-docs/jk2/printer ||true
 %%T%%/webapps/tomcat-docs/jndi-datasource-examples-howto.html
 %%T%%/webapps/tomcat-docs/jndi-resources-howto.html
 %%T%%/webapps/tomcat-docs/manager-howto.html
@@ -1441,8 +1452,9 @@ etc/rc.d/020.jakarta-tomcat41.sh
 %%T%%/webapps/webdav/index.html
 %%T%%/webapps/webdav/tomcat-power.gif
 %%T%%/webapps/webdav/tomcat.gif
-@dirrm share/nls/en_US.US-ASCII
-@dirrm share/nls/POSIX
+@exec mkdir %D/%%T%%/work || true
+@exec mkdir %D/%%T%%/common/classes ||true
+@exec chown -R %%WWWOWN%%:%%WWWGRP%% %D/%%T%%/
 @dirrm %%T%%/work
 @dirrm %%T%%/webapps/webdav/WEB-INF
 @dirrm %%T%%/webapps/webdav
