@@ -3,13 +3,13 @@
 # Date created:         21 September 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.8 1995/04/15 04:58:59 asami Exp $
+# $Id: Makefile,v 1.9 1996/03/13 00:36:40 jmz Exp $
 #
 
-DISTNAME=	mgetty-0.98
+DISTNAME=	mgetty-0.99
 CATEGORIES+=	comms
 MASTER_SITES=	ftp://ftp.leo.org/pub/comp/networking/communication/modem/mgetty/
-DISTFILES=	mgetty+sendfax-0.98.tar.gz
+DISTFILES=	mgetty099-Aug07.tar.gz
 
 MAINTAINER=	jmz@FreeBSD.org
 

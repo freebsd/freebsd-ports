@@ -1,0 +1,19 @@
+*** doc/Makefile~	Mon Jul 29 18:44:40 1996
+--- doc/Makefile	Fri Sep 13 22:06:59 1996
+***************
+*** 26,32 ****
+  
+  all:
+  
+! doc-all: mgetty.asc mgetty.info mgetty.dvi mgetty.ps fmt-manpages
+  
+  manpages: $(MANSRC)
+  
+--- 26,32 ----
+  
+  all:
+  
+! doc-all: mgetty.asc mgetty.info fmt-manpages
+  
+  manpages: $(MANSRC)
+  
