@@ -16,6 +16,8 @@ EXTRACT_ONLY=
 
 MAINTAINER=	clive@FreeBSD.org
 
+LIB_DEPENDS=	c.2:${PORTSDIR}/misc/compat22
+
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 NO_CDROM=	'Do not sell for profit.'
