@@ -151,6 +151,7 @@
     SUBDIR += p5-GD-TextUtil
     SUBDIR += p5-Gimp
     SUBDIR += p5-Image-Size
+    SUBDIR += p5-Imlib2
     SUBDIR += p5-chart
     SUBDIR += panorama
     SUBDIR += pgperl
