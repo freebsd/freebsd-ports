@@ -1,0 +1,13 @@
+This is the current release of the Mozilla open source web browser. It should 
+be fully compliant with all W3C standards, including HTML, CSS, XML, XSL, 
+JavaScript, MathML, SVG and RDF.  This version also supports SSL encryption, 
+and Java with the use of the FreeBSD native Java plug-in.
+
+This is the latest release of the Mozilla browser.  It contains all the 
+bugfixes and security enhancements from the mozilla port as well as
+new new features.
+
+This version has been built with GTK+-2 bindings for use with applications
+such as Galeon 2.
+
+WWW: http://www.mozilla.org/
