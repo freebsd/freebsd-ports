@@ -895,7 +895,6 @@ claraocr	ports/graphics/claraocr
 clarence	ports/math/clarence
 clean		ports/sysutils/clean
 clean-theme-gtk	ports/x11-toolkits/clean-theme-gtk
-clean_		ports/sysutils/clean_
 cleanfeed	ports/news/cleanfeed
 cleanscore	ports/news/cleanscore
 clementine	ports/x11-wm/clementine
