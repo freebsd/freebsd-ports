@@ -1,2 +1,4 @@
 bin/cymbaline
 lib/%%PYTHON_VERSION%%/site-packages/mp3.py
+%%PORTDOCS%%share/doc/cymbaline/README
+%%PORTDOCS%%@dirrm share/doc/cymbaline
