@@ -1,10 +1,4 @@
 bin/chbg
-%%GNOME:%%share/gnome/apps/Graphics/chbg.desktop
-%%GNOME:%%share/gnome/control-center/.data/ChBgxss1.desktop
-%%GNOME:%%share/gnome/control-center/.data/ChBgxss2.desktop
-%%GNOME:%%share/gnome/control-center/.data/ChBgxss3.desktop
-%%GNOME:%%share/gnome/control-center/.data/chbg_logo.xpm
-%%GNOME:%%share/gnome/pixmaps/chbg_64x64.xpm
 share/locale/de/LC_MESSAGES/chbg.mo
 share/locale/fr/LC_MESSAGES/chbg.mo
 share/locale/sk/LC_MESSAGES/chbg.mo
