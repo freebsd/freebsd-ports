@@ -1,8 +1,10 @@
-Gnokii is a tool suite and modem driver for Nokia mobile phones. It currently
-supports most phones from the 3810/8110, 5110/6110, and 2110 series, details
-including bugs specific to each series appear in the files README-3810,
-README-6110 and README-2110 respectively.
+Gnokii is a Unix/Linux tool suite for mobile phones. It provides a
+library to communicate with a phone hiding the communication protocol.
+The library handles SMS, phonebook, calendar, phone calls, and other
+mobile phone capabilities. It supports most of the GSM phones: Nokia
+ones using Nokia proprietary protocol and AT-capable ones -- using
+standard AT commands.
 
 WWW: http://www.gnokii.org/
 
-- Anders Nordby <anders@fix.no>
+- Guido Falsi <mad@madpilot.net>
