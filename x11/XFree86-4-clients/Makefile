@@ -6,12 +6,17 @@
 #
 
 PORTNAME=	clients
-PORTVERSION=	4.0.1
+PORTVERSION=	4.0.3
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_XFREE}
 MASTER_SITE_SUBDIR=	${PORTVERSION}
 PKGNAMEPREFIX=	XFree86-
-DISTFILES=	X401src-1.tgz
+DISTFILES=	X402src-1.tgz X402src-2.tgz
+EXTRACT_ONLY=	X402src-1.tgz
+
+PATCH_SITES=	${MASTER_SITE_XFREE:S,%SUBDIR%/source,4.0.3/patches,g}
+PATCHFILES=	4.0.2-4.0.3.diff.gz
+PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	taguchi@tohoku.iij.ad.jp
 
@@ -19,117 +24,40 @@ XFREE86_VERSION=	4
 USE_IMAKE=		YES
 DIST_SUBDIR=		xc
 WRKSRC=			${WRKDIR}/xc
-PATCHDIR=		${PORTSDIR}/x11/XFree86-4-libraries/files
-SCRIPTS_ENV+=		PREFIX=${PREFIX} \
-			X11BASE=${X11BASE} \
-			WRKDIR=${WRKDIR} \
-			DISTDIR=${DISTDIR} \
-			InstallXdmConfig=${InstallXdmConfig} \
+PATCHDIR=		${.CURDIR}/../XFree86-4-libraries/files
+SCRIPTS_ENV=		InstallXdmConfig=${InstallXdmConfig} \
 			InstallXinitConfig=${InstallXinitConfig} \
 			InstallAppDefFiles=${InstallAppDefFiles} \
-			BuildAoutLibraries=${BuildAoutLibraries}
+			HasXdmAuth=${HasXdmAuth} \
+			HasSecureRPC=${HasSecureRPC} \
+			HasPam=${HasPam}
+MAKE_ENV=		PKGNAMEPREFIX=${PKGNAMEPREFIX} \
+			PORTNAME=${PORTNAME} \
+			PORTVERSION=${PORTVERSION}
 ALL_TARGET=		FreeBSDPortsBuild
-INSTALL_TARGET= 	FreeBSDPortsInstall FreeBSDPortsInstall.man
-MANCOMPRESSED=		yes
-MAN1=			appres.1 \
-			atobm.1 \
-			bdftopcf.1 \
-			beforelight.1 \
-			bitmap.1 \
-			bmtoa.1 \
-			cxpm.1 \
-			dga.1 \
-			editres.1 \
-			fsinfo.1 \
-			fslsfonts.1 \
-			fstobdf.1 \
-			iceauth.1 \
-			ico.1 \
-			imake.1 \
-			lbxproxy.1 \
-			libxrx.1 \
-			listres.1 \
-			lndir.1 \
-			makedepend.1 \
-			makeg.1 \
-			makepsres.1 \
-			makestrs.1 \
-			mkcfm.1 \
-			mkdirhier.1 \
-			mkfontdir.1 \
-			oclock.1 \
-			proxymngr.1 \
-			pswrap.1 \
-			resize.1 \
-			revpath.1 \
-			rman.1 \
-			rstart.1 \
-			rstartd.1 \
-			sessreg.1 \
-			setxkbmap.1 \
-			showfont.1 \
-			smproxy.1 \
-			startx.1 \
-			sxpm.1 \
-			twm.1 \
-			viewres.1 \
-			x11perf.1 \
-			x11perfcomp.1 \
-			xauth.1 \
-			xbiff.1 \
-			xcalc.1 \
-			xclipboard.1 \
-			xclock.1 \
-			xcmsdb.1 \
-			xconsole.1 \
-			xcutsel.1 \
-			xditview.1 \
-			xdm.1 \
-			xdpyinfo.1 \
-			xedit.1 \
-			xev.1 \
-			xeyes.1 \
-			xf86cfg.1 \
-			xfd.1 \
-			xfindproxy.1 \
-			xfontsel.1 \
-			xfwp.1 \
-			xgamma.1 \
-			xgc.1 \
-			xhost.1 \
-			xieperf.1 \
-			xinit.1 \
-			xkbcomp.1 \
-			xkbevd.1 \
-			xkbprint.1 \
-			xkill.1 \
-			xload.1 \
-			xlogo.1 \
-			xlsatoms.1 \
-			xlsclients.1 \
-			xlsfonts.1 \
-			xmag.1 \
-			xman.1 \
-			xmessage.1 \
-			xmkmf.1 \
-			xmodmap.1 \
-			xon.1 \
-			xprop.1 \
-			xrdb.1 \
-			xrefresh.1 \
-			xset.1 \
-			xsetmode.1 \
-			xsetpointer.1 \
-			xsetroot.1 \
-			xsm.1 \
-			xstdcmap.1 \
-			xterm.1 \
-			xvidtune.1 \
-			xwd.1 \
-			xwininfo.1 \
-			xwud.1
+INSTALL_TARGET=		FreeBSDPortsInstall FreeBSDPortsInstall.man
 
-.if defined(XDM_DES)
+# ---
+# XFree86 User Config:
+# Name          Default		Meaning
+# ----------------------------------------------------------------------------
+# HasXdmAuth	YES		support XDM-AUTHORIZATION-1.
+# HasSecureRPC	YES		build with SecureRPC (require FreeBSD-3 or later)
+# HasPam	YES		support PAM (require FreeBSD-3.1 or later)
+# InstallXdmConfig      YES     install config files for xdm.
+# InstallXinitConfig    YES     install config files for xinit.
+# InstallAppDefFiles    YES	install resource files.
+# ----------------------------------------------------------------------------
+# DEFAULT means ports will use values which set by ${PORTSDIR}/devel/imake-4
+#
+InstallXdmConfig?=	DEFAULT
+InstallXinitConfig?=	DEFAULT
+InstallAppDefFiles?=	DEFAULT
+HasXdmAuth?=		DEFAULT
+HasSecureRPC?=		DEFAULT
+HasPam?=		DEFAULT
+
+.if ${HasXdmAuth} == DEFAULT || ${HasXdmAuth} == YES
 .if ${USA_RESIDENT} == YES
 pre-fetch:
 	@${ECHO}
@@ -138,25 +66,22 @@ pre-fetch:
 MASTER_SITES+=	ftp://psych.psy.uq.oz.au/pub/X11R5/ \
 		ftp://ftp.internat.freebsd.org/pub/FreeBSD/X11-Crypto/ \
 		ftp://ftp3.za.freebsd.org/pub/FreeBSD/X11-Crypto/
-EXTRACT_ONLY=	X401src-1.tgz
+EXTRACT_ONLY=	X402src-1.tgz
 DISTFILES+=	Wraphelp.c
 IGNOREFILES=	Wraphelp.c
 .endif
 .endif
 
+.include <bsd.port.pre.mk>
+.include "${FILESDIR}/manpages"
+
+post-extract:
+	( cd ${WRKDIR} && \
+	 ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
+	   ${DISTDIR}/${DIST_SUBDIR}/X402src-2.tgz \
+	    | ${TAR} -xf - xc/fonts/util )
+
 do-configure:
 	cd ${.CURDIR} && ${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure
 
-# User Config:
-# If you want to save your current config files for Xdm, set following as NO
-InstallXdmConfig?=	YES
-# If you want to save your current config files for Xinit, set following as NO
-InstallXinitConfig?=	YES
-# If you want to save your current apprication default files (aka. resource
-# files), set following as NO
-InstallAppDefFiles?=	YES
-# If you want to build Aout libraries (for some application which use legacy
-# aout libs, such as Netscape), then set following as YES
-BuildAoutLibraries?=	NO
-
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

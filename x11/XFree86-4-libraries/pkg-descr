@@ -2,8 +2,3 @@ This package containts XFree86 include header files and (shared)
 library files.
 
 WWW: http://www.xfree86.org/
-
-Note:
-This is part of the XFree86 distribution, there is a
-complete distribution available in the ports collection
-as well.

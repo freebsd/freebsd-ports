@@ -1,0 +1,41 @@
+--- /usr/local/src/XFree86-4/ORIG/xc/config/cf/Library.tmpl	Tue Dec  5 11:59:31 2000
++++ config/cf/Library.tmpl	Tue Dec 19 17:18:56 2000
+@@ -67,7 +67,7 @@
+ STD_DEFINES = LibraryDefines $(PROJECT_DEFINES)
+ CDEBUGFLAGS = LibraryCDebugFlags
+ CLIBDEBUGFLAGS = LibraryDebugOpt
+-     CFLAGS = $(CDEBUGFLAGS) $(CLIBDEBUGFLAGS) $(CCOPTIONS) $(THREADS_CFLAGS) $(ALLDEFINES)
++     CFLAGS += $(CDEBUGFLAGS) $(CLIBDEBUGFLAGS) $(CCOPTIONS) $(THREADS_CFLAGS) $(ALLDEFINES)
+ # if defined(LargePICTable) && LargePICTable && defined(LargePositionIndependentCFlags)
+    PICFLAGS = LargePositionIndependentCFlags
+ # endif
+@@ -92,7 +92,7 @@
+   STD_DEFINES = LibraryDefines $(PROJECT_DEFINES)
+ CXXDEBUGFLAGS = LibraryCplusplusDebugFlags
+ CXXLIBDEBUGFLAGS = LibraryDebugOpt
+-     CXXFLAGS = $(CXXDEBUGFLAGS) $(CXXLIBDEBUGFLAGS) $(CXXOPTIONS) $(THREADS_CXXFLAGS) $(CXXDEFINES)
++     CXXFLAGS += $(CXXDEBUGFLAGS) $(CXXLIBDEBUGFLAGS) $(CXXOPTIONS) $(THREADS_CXXFLAGS) $(CXXDEFINES)
+ # if defined(LargePICTable) && LargePICTable
+ #  ifdef LargePositionIndependentCplusplusFlags
+   CXXPICFLAGS = LargePositionIndependentCplusplusFlags
+@@ -434,15 +434,19 @@
+ # ifdef IncSubdir
+ #  ifdef IncSubSubdir
+ BuildIncludes($(HEADERS),IncSubdir/IncSubSubdir,../..)
++#   if !defined(LibHeaders) || LibHeaders
+ InstallMultipleFlags($(HEADERS),$(INCDIR)/IncSubdir/IncSubSubdir,$(INSTINCFLAGS))
++#   endif /* LibHeaders */
+ #  else
+ BuildIncludes($(HEADERS),IncSubdir,..)
++#   if !defined(LibHeaders) || LibHeaders
+ InstallMultipleFlags($(HEADERS),$(INCDIR)/IncSubdir,$(INSTINCFLAGS))
++#   endif /* LibHeaders */
+ #  endif
+ # else
+ #  ifndef CplusplusSource
+-#   if !defined(LibHeaders) || LibHeaders
+ BuildIncludesTop($(HEADERS))
++#   if !defined(LibHeaders) || LibHeaders
+ InstallMultipleFlags($(HEADERS),$(INCDIR),$(INSTINCFLAGS))
+ #   endif
+ #  endif

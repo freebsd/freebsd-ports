@@ -1,20 +1,70 @@
---- config/cf/Imake.rules.orig	Thu Jul 27 15:15:59 2000
-+++ config/cf/Imake.rules	Thu Jul 27 16:21:00 2000
-@@ -2266,7 +2266,7 @@
- #endif
+--- config/cf/Imake.rules~	Fri Dec 15 14:26:40 2000
++++ config/cf/Imake.rules	Fri Dec 15 14:32:56 2000
+@@ -1193,10 +1193,14 @@
+  * short file names).
+  */
+ #ifndef InstallManPageLong
++#if !defined(ManInstall) || ManInstall
+ #define	InstallManPageLong(file,destdir,dest)				@@\
+ BuildInstallHtmlManPage(file,dest,$(MANSUFFIX))				@@\
+ 									@@\
+ InstallNamedTarget(install.man,file.man,$(INSTMANFLAGS),destdir,dest.$(MANSUFFIX))
++#else
++#define	InstallManPageLong(file,destdir,dest)
++#endif /* ManInstall */
+ #endif /* InstallManPageLong */
  
- #ifndef LinkBuildLibrary
--#ifdef UseInstalled
-+#if defined(UseInstalled) || (defined(LibInstall) && !defined(LibInstallBuild) && !LibInstall) || (defined(LibInstallBuild) && !LibInstallBuild)
- #define LinkBuildLibrary(lib) $(_NULLCMD_)
- #else
- #define LinkBuildLibrary(lib) MakeDir($(BUILDLIBDIR))			@@\
-@@ -3205,7 +3205,7 @@
- #endif
  
- #ifndef InstallLibraryModule
--#if !DoLoadableServer
-+#if !DoLoadableServer || (defined(ModuleInstall) && !ModuleInstall)
- #define InstallLibraryModule(module,dest,subdir)	/**/
- #else
- #if MakeDllModules
+@@ -1213,6 +1217,7 @@
+  * InstallManPageAliases - generate rules to install manual page aliases.
+  */
+ #ifndef InstallManPageAliases
++#if !defined(ManInstall) || ManInstall
+ #define	InstallManPageAliases(file,destdir,aliases)			@@\
+ InstallHtmlManPageAliases(file,aliases,$(MANSUFFIX))			@@\
+ 									@@\
+@@ -1224,6 +1229,9 @@
+ 	$(INSTALL) $(INSTALLFLAGS) $(INSTMANFLAGS) $${TMP} $(DESTDIR)destdir/$$i.$(MANSUFFIX)); \ @@\
+ 	done; \								@@\
+ 	RemoveFile($${TMP}))
++#else
++#define	InstallManPageAliases(file,destdir,aliases)
++#endif /* ManInstall */
+ #endif /* InstallManPageAliases */
+ 
+ 
+@@ -1232,12 +1240,16 @@
+  * doesn't assume MANSUFFIX.
+  */
+ #ifndef InstallGenManPageLong
++#if !define(ManInstall) || ManInstall
+ #define	InstallGenManPageLong(file,destdir,dest,suffix)			@@\
+ BuildInstallHtmlManPage(file,dest,suffix)				@@\
+ 									@@\
+ install.man:: file.man							@@\
+ 	MakeDir($(DESTDIR)destdir)					@@\
+ 	$(INSTALL) -c $(INSTMANFLAGS) file.man $(DESTDIR)destdir/dest.suffix
++#else
++#define	InstallGenManPageLong(file,destdir,dest,suffix)	
++#endif /* ManInstall */
+ #endif /* InstallGenManPageLong */
+ 
+ 
+@@ -1254,6 +1266,7 @@
+  * InstallGenManPageAliases - general equivalent of InstallManPageAliases
+  */
+ #ifndef InstallGenManPageAliases
++#if !defined(ManInstall) || ManInstall
+ #define	InstallGenManPageAliases(file,destdir,suffix,aliases)		@@\
+ InstallHtmlManPageAliases(file,aliases,suffix)				@@\
+ 									@@\
+@@ -1265,6 +1278,9 @@
+ 	$(INSTALL) $(INSTALLFLAGS) $(INSTMANFLAGS) $${TMP} $(DESTDIR)destdir/$$i.suffix); \ @@\
+ 	done; \								@@\
+ 	RemoveFile($${TMP}))
++#else
++#define	InstallGenManPageAliases(file,destdir,suffix,aliases)
++#endif /* ManInstall */
+ #endif /* InstallGenManPageAliases */
+ 
+ 

@@ -6,12 +6,16 @@
 #
 
 PORTNAME=	FontServer
-PORTVERSION=	4.0.1
+PORTVERSION=	4.0.3
 CATEGORIES=	x11-servers x11-fonts
 MASTER_SITES=	${MASTER_SITE_XFREE}
 MASTER_SITE_SUBDIR=	${PORTVERSION}
 PKGNAMEPREFIX=	XFree86-
-DISTFILES=	X401src-1.tgz
+DISTFILES=	X402src-1.tgz
+
+PATCH_SITES=	${MASTER_SITE_XFREE:S,%SUBDIR%/source,4.0.3/patches,g}
+PATCHFILES=	4.0.2-4.0.3.diff.gz
+PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	taguchi@tohoku.iij.ad.jp
 
@@ -19,14 +23,10 @@ XFREE86_VERSION=	4
 USE_IMAKE=		YES
 DIST_SUBDIR=		xc
 WRKSRC=			${WRKDIR}/xc
-PATCHDIR=		${PORTSDIR}/x11/XFree86-4-libraries/files
-SCRIPTS_ENV+=		PREFIX=${PREFIX} \
-			X11BASE=${X11BASE} \
-			WRKDIR=${WRKDIR} \
-			DISTDIR=${DISTDIR}
+PATCHDIR=		${.CURDIR}/../../x11/XFree86-4-libraries/files
+MAKE_ENV=		MAN_INSTALL_TARGET=FreeBSDPortsInstall.man
 ALL_TARGET=		FreeBSDPortsBuild
-INSTALL_TARGET= 	FreeBSDPortsInstall FreeBSDPortsInstall.man
-MANCOMPRESSED=		yes
+INSTALL_TARGET= 	FreeBSDPortsInstall installXserver.man
 MAN1=			Xserver.1 xfs.1
 
 do-configure:

@@ -1,0 +1,8 @@
+--- cf/Library.tmpl	Wed Oct 13 00:20:41 1999
++++ cf/Library.tmpl	Thu Dec 21 09:22:14 2000
+@@ -69,3 +69,3 @@
+ CLIBDEBUGFLAGS = LibraryDebugOpt
+-     CFLAGS = $(CDEBUGFLAGS) $(CLIBDEBUGFLAGS) $(CCOPTIONS) $(THREADS_CFLAGS) $(ALLDEFINES)
++     CFLAGS += $(CDEBUGFLAGS) $(CLIBDEBUGFLAGS) $(CCOPTIONS) $(THREADS_CFLAGS) $(ALLDEFINES)
+ # if defined(LargePICTable) && LargePICTable && defined(LargePositionIndependentCFlags)
+

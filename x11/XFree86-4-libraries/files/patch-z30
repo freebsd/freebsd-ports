@@ -1,10 +1,10 @@
---- lib/GL/mesa/src/drv/Imakefile~	Sat Jul  1 08:35:56 2000
-+++ lib/GL/mesa/src/drv/Imakefile	Tue Jul 18 16:52:39 2000
-@@ -59,6 +59,10 @@
- #endif
- #endif
+--- lib/GL/mesa/src/drv/Imakefile.orig	Tue Dec  5 10:17:23 2000
++++ lib/GL/mesa/src/drv/Imakefile	Tue Dec  5 13:29:59 2000
+@@ -70,6 +70,10 @@
  
-+#if (defined(FreeBSDBuildXlib) && FreeBSDBuildXlib) || (defined(ModuleInstall) && !ModuleInstall)
+ #endif /* GlxUseBuiltInDRIDriver */
+ 
++#if (defined(FreeBSDBuildXlib) && FreeBSDBuildXlib) || (defined(ModInstall) && !ModInstall)
 +SUBDIRS = common
 +#endif
 +

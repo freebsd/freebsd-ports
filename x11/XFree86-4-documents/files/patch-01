@@ -1,13 +1,13 @@
---- Imakefile~	Mon Dec 21 07:51:33 1998
-+++ Imakefile	Wed May 10 15:28:41 2000
-@@ -12,7 +12,11 @@
- SPECSDIR = specs
+--- Imakefile.orig	Fri Dec 15 04:24:23 2000
++++ Imakefile	Wed Dec 20 16:22:14 2000
+@@ -16,7 +16,11 @@
+ HARDCOPYDIR = hardcopy
  #endif
  
 +#if defined(FreeBSDBuildXdoc) || FreeBSDBuildXdoc
-+SUBDIRS = $(MISCDIR) $(SPECSDIR)
++SUBDIRS = $(MISCDIR) $(SPECSDIR) $(HARDCOPYDIR)
 +#else
- SUBDIRS = man $(MISCDIR) $(SPECSDIR)
+ SUBDIRS = man $(MISCDIR) $(SPECSDIR) $(HARDCOPYDIR)
 +#endif
  
  all::

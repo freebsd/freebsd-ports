@@ -1,0 +1,110 @@
+--- include/Xos_r.h.orig	Sat Mar 24 17:03:44 2001
++++ include/Xos_r.h	Sat Mar 24 17:03:56 2001
+@@ -245,7 +245,7 @@
+ 
+ /* NetBSD, at least, is missing several of the unixware passwd fields. */
+    
+-#if defined(__NetBSD__) || defined(__OpenBSD__)
++#if defined(__NetBSD__) || defined(__OpenBSD__) || defined(__FreeBSD__)
+ __inline__ void _Xpw_copyPasswd(_Xgetpwparams p)
+ {
+    memcpy(&(p).pws, (p).pwp, sizeof(struct passwd));
+@@ -412,7 +412,7 @@
+ /* UnixWare 2.0, or other systems with thread support but no _r API. */
+ /* WARNING:  The h_addr_list and s_aliases values are *not* copied! */
+ 
+-#if defined(__NetBSD__)
++#if defined(__NetBSD__) || defined(__FreeBSD__)
+ #include <sys/param.h>
+ #endif
+ 
+--- config/cf/FreeBSD.cf.orig	Sat Mar 24 17:03:55 2001
++++ config/cf/FreeBSD.cf	Sat Mar 24 17:04:13 2001
+@@ -66,6 +66,41 @@
+ #define InstallXloadSetGID	YES
+ #endif
+ 
++/*
++ * Multi-thread safe libs 
++ */	
++/* 2.2.7 and later has libc_r (POSIX threads) */
++#if OSMajorVersion == 2 && OSMinorVersion == 2 && OSTeenyVersion >= 7 || \
++    OSMajorVersion >= 3
++# ifndef HasLibPthread
++#  define HasLibPthread		NO
++# endif
++# define HasPosixThreads	YES
++# define ThreadedX		YES
++/*
++ * math.h uses _REENTRANT and stdio.h uses _THREAD_SAFE, so define both.
++ */
++# define SystemMTDefines	-D_REENTRANT -D_THREAD_SAFE
++/*
++ * FreeBSD has tread-safe api but no getpwnam_r yet.
++ */
++# define HasThreadSafeAPI	YES
++# define MTSafeAPIDefines	-DXUSE_MTSAFE_API -DXNO_MTSAFE_PWDAPI
++# if HasLibPthread
++#  define ThreadsLibraries	-lpthread
++# else
++#  define BuildThreadStubLibrary  YES 
++#  define NeedUIThrStubs          YES 
++#  if (OSRelVersion >= 500016)
++#   define ThreadsLibraries 	-lc_r
++#  else
++#   define ThreadsLibraries 	-pthread
++#  endif
++#  define SharedX11Reqs		$(LDPRELIB) $(XTHRSTUBLIB)
++#  define SharedXtReqs		$(LDPRELIB) $(XLIBONLY) $(SMLIB) $(ICELIB) $(XTHRSTUBLIB)
++# endif
++#endif
++
+ #define AvoidNullMakeCommand	YES
+ #define StripInstalledPrograms	YES
+ #define CompressAllFonts	YES
+@@ -97,7 +132,23 @@
+ #endif
+ #endif
+ 
+-#define CcCmd			cc
++/*
++ * Add an LD_LIBRARY_PATH environment variable, defined by $(CLIENTENVSETUP),
++ * when building X to avoid that for each client ld give the message
++ *
++ *    ld: warning: libXThrStub.so.6, needed by libX11.so, not found
++ */
++#if BuildThreadStubLibrary && !UseInstalled
++# define CcCmd			$(CLIENTENVSETUP) cc
++# define CplusplusCmd		$(CLIENTENVSETUP) c++
++#else
++# define CcCmd			cc
++# define CplusplusCmd		c++
++#endif
++
++#define CppCmd			/usr/bin/cpp
++#define PreProcessCmd		CppCmd
++#define StandardCppOptions	-traditional
+ #define CppCmd			/usr/bin/cpp
+ #define PreProcessCmd		CppCmd
+ #define StandardCppOptions	-traditional
+--- config/cf/bsdLib.tmpl.orig	Tue Aug 29 03:43:49 2000
++++ config/cf/bsdLib.tmpl	Sat Mar 24 17:03:56 2001
+@@ -47,7 +47,9 @@
+ #define SharedX11Reqs
+ #endif
+ #define SharedOldXReqs	$(LDPRELIB) $(XLIBONLY)
++#ifndef SharedXtReqs
+ #define SharedXtReqs	$(LDPRELIB) $(XLIBONLY) $(SMLIB) $(ICELIB)
++#endif
+ #define SharedXawReqs	$(LDPRELIB) $(XMULIB) $(XTOOLLIB) $(XPMLIB) $(XLIB)
+ #define SharedXaw6Reqs	$(LDPRELIB) $(XMULIB) $(XTOOLLIB) $(XLIB)
+ #define SharedXmuReqs	$(LDPRELIB) $(XTOOLLIB) $(XLIB)
+--- programs/glxinfo/Imakefile.orig	Fri Sep 22 20:35:46 2000
++++ programs/glxinfo/Imakefile	Sat Mar 24 17:03:56 2001
+@@ -1,5 +1,6 @@
+ XCOMM $XConsortium: Imakefile /main/7 1995/12/04 15:10:00 dpw $
+ XCOMM $XFree86: xc/programs/glxinfo/Imakefile,v 1.1 2000/09/22 11:35:46 alanh Exp $
++#include <Threads.tmpl>
+         DEPLIBS = $(DEPXTESTLIB) $(DEPXIELIB) $(DEPXLIB) $(DEPXKBFILELIB) $(DEPXF86LIBS) $(DEPXILIB)
+ #ifndef OS2Architecture
+ LOCAL_LIBRARIES = $(GLXLIB) $(XLIB) 

@@ -43,6 +43,10 @@ lib/X11/config/cde.rules
 lib/X11/config/cde.tmpl
 lib/X11/config/convex.cf
 lib/X11/config/cray.cf
+lib/X11/config/cygwin.cf
+lib/X11/config/cygwin.rules
+lib/X11/config/cygwin.tmpl
+lib/X11/config/darwin.cf
 lib/X11/config/fujitsu.cf
 lib/X11/config/generic.cf
 lib/X11/config/gnu.cf

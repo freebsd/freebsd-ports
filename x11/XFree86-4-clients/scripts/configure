@@ -22,25 +22,29 @@ configure () {
     grep -v '#define.*ProjectRoot' $ORIGHOSTDEF >> $LOCALDEF
     echo "#define ProjectRoot $PREFIX" >> $LOCALDEF
 
-    # setdefault values
-    if [ X$InstallXdmConfig = "X" ]; then
-	InstallXdmConfig=YES
-    fi
-    if [ X$InstallXinitConfig = "X" ]; then
-	InstallXinitConfig=YES
-    fi
-    if [ X$InstallAppDefFiles = "X" ]; then
-	InstallAppDefFiles=YES
-    fi
-    if [ X$BuildAoutLibraries = "X" ]; then
-	BuildAoutLibraries=NO
-    fi
-
+    # It's good for FreeBSD ports/packages system.
     echo "#define NothingOutsideProjectRoot YES" >> $LOCALDEF
+    echo "#define InstallXserverSetUID NO" >> $LOCALDEF
 
-    # I want to set this line.
-    # but the probrem is too deep. not yet done.
-    # echo "#define InstallXserverSetUID NO" >> $LOCALDEF
+    # User Config.
+    if [ X$HasSecureRPC != XDEFAULT -a X$HasSecureRPC != X ]; then
+	echo "#define HasSecureRPC $HasSecureRPC" >> $LOCALDEF
+    fi
+    if [ X$HasPam != XDEFAULT -a X$HasPam != X ]; then
+	echo "#define HasPam $HasPam" >> $LOCALDEF
+    fi
+    if [ X$InstallXdmConfig != XDEFAULT -a X$InstallXdmConfig != X ]; then
+	echo "#define InstallXdmConfig $InstallXdmConfig" >> $LOCALDEF
+    fi
+    if [ X$InstallXinitConfig != XDEFAULT -a X$InstallXinitConfig != X ]; then
+	echo "#define InstallXinitConfig $InstallXinitConfig" >> $LOCALDEF
+    fi
+    if [ X$InstallAppDefFiles != XDEFAULT -a X$InstallAppDefFiles != X ]; then
+	echo "#define InstallAppDefFiles $InstallAppDefFiles" >> $LOCALDEF
+    fi
+    if [ ! -d /sys -a ! -d /usr/src/sys ]; then
+        echo "#define BuildXF86DRI NO" >> $LOCALDEF
+    fi
 
     # disable some configs: there are not used this ports
     for i in \
@@ -58,17 +62,14 @@ configure () {
 	LibHeaders \
         LibInstall \
 	ForceNormalLib \
-	ModuleInstall
+	ModInstall \
+	XTrueTypeInstallCConvHeaders
     do \
 	echo "#define $i NO" >> $LOCALDEF
     done
     echo "#define LibInstallBuild  YES" >> $LOCALDEF
     echo "#define FreeBSDBuildXlib NO" >> $LOCALDEF
     echo "#define FreeBSDBuildXbin YES" >> $LOCALDEF
-    echo "#define InstallXdmConfig $InstallXdmConfig" >> $LOCALDEF
-    echo "#define InstallXinitConfig $InstallXinitConfig" >> $LOCALDEF
-    echo "#define InstallAppDefFiles $InstallAppDefFiles" >> $LOCALDEF
-    echo "#define BuildAoutLibraries $BuildAoutLibraries" >> $LOCALDEF
 
     # Check Wraphelp.c
     WH=$WRKDIR/xc/lib/Xdmcp/Wraphelp.c
@@ -90,6 +91,9 @@ configure () {
 	grep -v '#define.*HasXdmAuth' $ORIGDEF >> $DESTDEF
 	echo "#define HasXdmAuth NO" >> $DESTDEF
     else
+	if [ X$HasXdmAuth != XDEFAULT -a X$HasXdmAuth != X ]; then
+	    echo "#define HasXdmAuth $HasXdmAuth" >> $LOCALDEF
+        fi
 	cp -f $ORIGDEF $DESTDEF
     fi
 

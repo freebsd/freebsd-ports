@@ -1,0 +1,31 @@
+--- config/pswrap/main.c.orig	Wed Dec 20 15:30:23 2000
++++ config/pswrap/main.c	Wed Dec 20 15:32:06 2000
+@@ -129,7 +129,7 @@
+ 		strcpy(headid, slash ? slash+1 : hfile);
+ 		for (c = headid; *c != '\0'; c++) {
+ 		    if (*c == '.') *c = '_';
+-		    else isascii(*c) && islower(*c) && (*c = toupper(*c));
++		    else if (isascii(*c) && islower(*c)) *c = toupper(*c);
+ 		}
+ 		break;
+ 	    case 'o':
+--- config/pswrap/lexer.l.orig	Wed Dec 20 15:33:37 2000
++++ config/pswrap/lexer.l	Wed Dec 20 15:33:57 2000
+@@ -346,7 +346,7 @@
+ 	    DEBUGP((stderr,"DEF ->CINTEGER %s\n",yytext));
+ 	    /* I have no idea why the cast is needed in the next line,
+ 	       but it seems to make the compiler happy on alpha */
+-	    sscanf((char *) yytext,"%o",&yylval.intobj);
++	    sscanf((char *) yytext,"%lo",&yylval.intobj);
+ 	    return CINTEGER;
+ 	}
+ }
+@@ -355,7 +355,7 @@
+ 	if (nonComment) {
+ 	    DEBUGP((stderr,"DEF ->CINTEGER %s\n",yytext));
+ 	    /* See previous comment... */
+-	    sscanf((char *) yytext,"0x%x",&yylval.intobj);
++	    sscanf((char *) yytext,"0x%lx",&yylval.intobj);
+ 	    return CINTEGER;
+ 	}
+ }

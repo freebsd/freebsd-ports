@@ -6,15 +6,11 @@
 #
 
 PORTNAME=	fontLatin2
-PORTVERSION=	4.0.1
+PORTVERSION=	4.0.3
 CATEGORIES=	x11-fonts
-MASTER_SITES=	ftp://ftp.xfree86.org/pub/XFree86/${PORTVERSION}/source/ \
-		ftp://ftp.freesoftware.com/pub/XFree86/${PORTVERSION}/source/ \
-		ftp://ftp.lip6.fr/pub/X11/XFree86/XFree86-${PORTVERSION}/source/ \
-		ftp://ftp.cs.tu-berlin.de/pub/X/XFree86/${PORTVERSION}/source/ \
-		ftp://sunsite.doc.ic.ac.uk/packages/XFree86/${PORTVERSION}/source/
+MASTER_SITES=	${MASTER_SITE_XFREE}
 PKGNAMEPREFIX=	XFree86-
-DISTFILES=	X401src-2.tgz
+DISTFILES=	X402src-2.tgz
 
 MAINTAINER=	taguchi@tohoku.iij.ad.jp
 
@@ -27,9 +23,30 @@ PROJECTROOT=		-DProjectRoot=${PREFIX}
 DIST_SUBDIR=		xc
 EXTRACT_AFTER_ARGS=	| ${TAR} -xf - xc/fonts
 WRKSRC=			${WRKDIR}/xc/fonts/bdf/latin2
-# User Config:
-# If you want to disable 100dpi font, set following variable to "NO"
-Build100DpiFonts?=	YES
+
+# XFree86 User Config:
+# ---
+# Name          	Default		Meaning
+# ----------------------------------------------------------------------------
+# Build75DpiFonts	YES		build/install 75dpi fonts
+# Build100DpiFonts	YES		build/install 100dpi fonts
+Build75DpiFonts?=	DEFAULT
+Build100DpiFonts?=	DEFAULT
+
+.if ${Build75DpiFonts} == DEFAULT || ${Build75DpiFonts} == YES
+PLIST_SUB+=	75DPI:=""
+75DPI:=		-DBuild75DpiFonts=YES
+.elif ${Build75DpiFonts} == NO
+PLIST_SUB+=	75DPI:="@comment "
+75DPI:=		-DBuild75DpiFonts=NO
+.endif
+.if ${Build100DpiFonts} == DEFAULT || ${Build100DpiFonts} == YES
+PLIST_SUB+=	100DPI:=""
+100DPI:=	-DBuild100DpiFonts=YES
+.elif ${Build100DpiFonts} == NO
+PLIST_SUB+=	100DPI:="@comment "
+100DPI:=	-DBuild100DpiFonts=NO
+.endif
 
 do-configure:
 	(cd ${WRKDIR}/xc/fonts/encodings && \
@@ -39,8 +56,7 @@ do-configure:
 	 ${MAKE} includes ; \
 	 ${MAKE} depend)
 	(cd ${WRKSRC} && \
-	 imake -DUseInstalled -DBuild75DpiFonts=YES \
-		-DBuild100DpiFonts=${Build100DpiFonts} \
+	 imake -DUseInstalled ${75DPI} ${100DPI} \
 		${PROJECTROOT} \
 		-I${PREFIX}/lib/X11/config \
 		-DTOPDIR=../../.. -DCURDIR=.; \

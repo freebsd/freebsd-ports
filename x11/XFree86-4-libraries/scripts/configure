@@ -24,10 +24,30 @@ configure () {
 
     # It's good for FreeBSD ports/packages system.
     echo "#define NothingOutsideProjectRoot YES" >> $LOCALDEF
+    echo "#define InstallXserverSetUID NO" >> $LOCALDEF
 
-    # I want to set this line.
-    # but the probrem is too deep. not yet done.
-    # echo "#define InstallXserverSetUID NO" >> $LOCALDEF
+    # User Config.
+    if [ X$HasSecureRPC != XDEFAULT -a X$HasSecureRPC != X ]; then
+	echo "#define HasSecureRPC $HasSecureRPC" >> $LOCALDEF
+    fi
+    if [ X$BuildPexExt != XDEFAULT -a X$BuildPexExt != X ]; then
+	echo "#define BuildPexExt $BuildPexExt" >> $LOCALDEF
+    fi
+    if [ X$BuildXinerama != XDEFAULT -a X$BuildXinerama != X ]; then
+	echo "#define BuildXinerama $BuildXinerama" >> $LOCALDEF
+    fi
+    if [ X$BuildXIE != XDEFAULT -a X$BuildXIE != X ]; then
+	echo "#define BuildXIE $BuildXIE" >> $LOCALDEF
+    fi
+    if [ X$BuildAoutLibraries != XDEFAULT -a X$BuildAoutLibraries != X ]; then
+	echo "#define BuildAoutLibraries $BuildAoutLibraries" >> $LOCALDEF
+    fi
+    if [ X$ForceNormalLib != XDEFAULT -a X$ForceNormalLib != X ]; then
+	echo "#define ForceNormalLib $ForceNormalLib" >> $LOCALDEF
+    fi
+    if [ X$DebuggableLibraries != XDEFAULT -a X$DebuggableLibraries != X ]; then
+	echo "#define DebuggableLibraries $DebuggableLibraries" >> $LOCALDEF
+    fi
 
     # disable some configs: there are not used this ports
     for i in \
@@ -48,10 +68,9 @@ configure () {
     do \
 	echo "#define $i NO" >> $LOCALDEF
     done
-    echo "#define ForceNormalLib	 YES" >> $LOCALDEF
     echo "#define FreeBSDBuildXlib  YES" >> $LOCALDEF
     echo "#define FreeBSDBuildXbin   NO" >> $LOCALDEF
-    
+
     # Check Wraphelp.c
     WH=$WRKDIR/xc/lib/Xdmcp/Wraphelp.c
     cpwh=NO
@@ -72,6 +91,9 @@ configure () {
 	grep -v '#define.*HasXdmAuth' $ORIGDEF >> $DESTDEF
 	echo "#define HasXdmAuth NO" >> $DESTDEF
     else
+	if [ X$HasXdmAuth != XDEFAULT -a X$HasXdmAuth != X ]; then
+	    echo "#define HasXdmAuth $HasXdmAuth" >> $LOCALDEF
+        fi
 	cp -f $ORIGDEF $DESTDEF
     fi
 

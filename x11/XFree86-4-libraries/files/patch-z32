@@ -1,10 +1,10 @@
---- lib/GL/mesa/src/OSmesa/Imakefile.orig	Thu Jul 27 16:09:32 2000
-+++ lib/GL/mesa/src/OSmesa/Imakefile	Thu Jul 27 16:10:11 2000
-@@ -243,7 +243,8 @@
+--- lib/GL/mesa/src/OSmesa/Imakefile.orig	Thu Dec 14 17:30:09 2000
++++ lib/GL/mesa/src/OSmesa/Imakefile	Tue Dec 19 14:26:58 2000
+@@ -281,7 +281,8 @@
  /*InstallLibrary($(LIBNAME),$(USRLIBDIR))*/
  
  SharedDepLibraryTarget($(LIBNAME),$(SOREV), $(DONES), $(OBJS), ., .)
-+#if !defined(LibInstall) || LibInstall
++#if (!defined(LibInstall) || LibInstall) || (!defined(ModInstall) || ModInstall)
  InstallSharedLibrary($(LIBNAME),$(SOREV),$(SHLIBDIR))
 -
 +#endif
