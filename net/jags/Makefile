@@ -6,9 +6,11 @@
 #
 
 PORTNAME=	jags
-PORTVERSION=	0.20.1
+PORTVERSION=	0.20.2
 CATEGORIES=	net
-MASTER_SITES=	http://sumpan.campus.luth.se/software/jags/download/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+		http://sumpan.campus.luth.se/software/jags/download/
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	pat@databits.net
 
