@@ -111,6 +111,10 @@ SAPI_FILE=	bin/php
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "ia64"
+BROKEN=		"Does not compile on ia64"
+.endif
+
 CONFIGURE_ENV=	ac_cv_pthreads_lib=${PTHREAD_LIBS} \
 		ac_cv_pthreads_cflags=${PTHREAD_CFLAGS}
 
