@@ -38,10 +38,6 @@ PLIST_SUB=	VERSION=${PORTVERSION}-bonobo
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
-.endif
-
 post-install:
 .for dir in share/gnome lib
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${PREFIX}/${dir}/gnumeric
