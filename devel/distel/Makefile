@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	distel
-PORTVERSION=	3.1
-PORTREVISION=	1
+PORTVERSION=	3.2
 CATEGORIES=	devel elisp
 MASTER_SITES=	http://www.bluetail.com/%7Eluke/distel/ \
 		${MASTER_SITE_SOURCEFORGE}
