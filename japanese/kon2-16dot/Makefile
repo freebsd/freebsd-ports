@@ -3,7 +3,7 @@
 # Date created:		7 June 1995
 # Whom:			Takashi Ogura <ogura@st.rim.or.jp>
 #
-# $Id: Makefile,v 1.1.1.1 1995/06/24 09:25:16 asami Exp $
+# $Id: Makefile,v 1.2 1995/06/25 11:46:09 asami Exp $
 #
 
 DISTNAME=	kon
@@ -12,13 +12,18 @@ CATEGORIES+=	japanese
 MASTER_SITES=	ftp://ftp.iij.ad.jp/pub/linux-j/JE-sources/JE/
 DISTFILES=	kon-0.99.4e.tgz
 
+.if !defined(MASTER_SITE_OVERRIDE)
 FONT_SITE=	ftp://ftp.iij.ad.jp/pub/X/XFree86/XFree86/3.1.1/untarred/xc/fonts/bdf/misc/
 FONTFILES=	k14.bdf 7x14rk.bdf
+.else
+DISTFILES +=	k14.bdf 7x14rk.bdf
+.endif
 
 MAINTAINER=	asami@FreeBSD.ORG
 
 USE_GMAKE=	yes
 
+.if !defined(MASTER_SITE_OVERRIDE)
 pre-fetch: 
 	@(cd ${DISTDIR}; \
 	for file in ${FONTFILES} ; do \
@@ -28,6 +33,7 @@ pre-fetch:
 			fi \
 		fi \
 	done)
+.endif
 
 post-configure:
 	sed -e 's%%CURDIR%%${.CURDIR}' \
