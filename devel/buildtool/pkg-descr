@@ -1,0 +1,10 @@
+Buildtool is a set of utilities which will make your programs more portable
+and easier to build on any kind of Unix-like system. All the utilities are
+integrated with each other, which means that they all work together. It is
+completly free, licensed under the terms of the BSD license.
+
+If you have ever used GNU automake, autoconf and/or libtool, you will find
+buildtool very similar. In fact, it is an implementation of the ideas of the
+GNU programs, but with a completely different design.
+
+WWW: http://buildtool.sourceforge.net/
