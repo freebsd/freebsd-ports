@@ -7,7 +7,7 @@
 
 PORTNAME=	qmailadmin
 PORTVERSION=	1.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	mail www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -56,6 +56,11 @@ USE_GMAKE=	YES
 #			  hostname
 # WITHOUT_IDX_SQL	- disable the SQL support for mailing lists
 # WITH_HELP		- display help links on login page
+#
+# WITH_SPAM_DETECTION	- allow users to enable/disable spam checking
+# SPAM_COMMAND		- the command to use to check for spam;
+#			  default is "|preline /usr/local/bin/maildrop /etc/mailfilter"
+#			  do not forget the "|" at the start
 #
 
 CGIBINDIR?=	www/cgi-bin.default
@@ -116,6 +121,13 @@ CONFIGURE_ARGS+=	--disable-ezmlm-mysql
 
 .if defined(WITH_HELP)
 CONFIGURE_ARGS+=	--enable-help
+.endif
+
+.if defined(WITH_SPAM_DETECTION)
+CONFIGURE_ARGS+=     --enable-modify-spam=y
+.if defined(SPAM_COMMAND)
+CONFIGURE_ARGS+=    --enable-spam-command="${SPAM_COMMAND}"
+.endif    
 .endif
 
 .include <bsd.port.post.mk>
