@@ -2,10 +2,10 @@
 # Date created:		11 Mar 2000
 # Whom:			Jing-Tang Keith Jang <keith@FreeBSD.org>
 #
-# $FreeBSD: /tmp/pcvs/ports/chinese/netscape47-communicator/Attic/Makefile,v 1.2 2000-11-06 18:14:52 keith Exp $
+# $FreeBSD: /tmp/pcvs/ports/chinese/netscape47-communicator/Attic/Makefile,v 1.3 2000-11-15 02:24:24 keith Exp $
 #
 
-PORTNAME=	${REGION}-netscape-${BROWSER_ARC}
+PORTNAME=	netscape-${BROWSER_ARC}
 PORTVERSION=	${BROWSER_VERSION}
 CATEGORIES=	chinese www
 MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/keith/
@@ -23,6 +23,7 @@ RUN_DEPENDS?=	\
 		${X11BASE}/lib/X11/fonts/TrueType/bsmi00lp.ttf:${PORTSDIR}/chinese/arphicttf
 
 # These variables can be defined in ports that include this Makefile.
+PKGNAMEPREFIX?=		zh_TW-
 LOCALE?=		zh_TW.Big5
 REGION?=		tw
 BROWSER?=		communicator
