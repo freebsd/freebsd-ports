@@ -7,8 +7,8 @@
 
 PORTNAME=	python
 PORTVERSION=	2.2
-PORTREVISION=	1
-CATEGORIES=	lang python
+PORTREVISION=	2
+CATEGORIES=	lang python ipv6
 MASTER_SITES=	http://www.python.org/ftp/python/${PORTVERSION}/ \
 		http://SunSITE.Informatik.RWTH-Aachen.DE/python/ftp/python/${PORTVERSION}/
 DISTFILES=	${PYTHON_DISTFILE}
@@ -55,6 +55,12 @@ CONFIGURE_ARGS+=	--with-libs='-lxpg4'
 .endif
 .if ${OSVERSION} < 400020
 CONFIGURE_ARGS+=	--with-libs='-lxpg4'
+.endif
+
+.if ${OSVERSION} >= 400014
+CONFIGURE_ARGS+= --enable-ipv6
+.else
+CONFIGURE_ARGS+= --disable-ipv6
 .endif
 
 .if ${OSVERSION} >= 500000
