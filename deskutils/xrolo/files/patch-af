@@ -1,0 +1,38 @@
+*** popup.c.org	Sat Jan  9 22:53:12 1999
+--- popup.c	Sat Jan  9 22:54:07 1999
+***************
+*** 6,11 ****
+--- 6,14 ----
+   *	popup - pop up error dialog windows
+   */
+  
++ #ifdef HAVE_SYS_PARAM_H
++ #include <sys/param.h>
++ #endif
+  
+  #include <xview/xview.h>
+  #include <xview/panel.h>
+***************
+*** 26,32 ****
+  
+  /* ---------------------------- Imports -------------------------------- */
+  
+! #if !defined(sgi)
+  extern char		*sprintf ();
+  #endif
+  
+--- 29,35 ----
+  
+  /* ---------------------------- Imports -------------------------------- */
+  
+! #if !defined(sgi) && !(defined(BSD) && (BSD >= 199306))
+  extern char		*sprintf ();
+  #endif
+  
+***************
+*** 92,95 ****
+  	(void) sprintf (temp, s, a0, a1, a2, a3, a4, a5, a6, a7, a8, a9);
+  	return (do_pop (frame, temp, FALSE));
+  }
+- 
+--- 95,97 ----
