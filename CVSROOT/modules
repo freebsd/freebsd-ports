@@ -1228,7 +1228,7 @@ dvdrip		ports/multimedia/dvdrip
 dvdtape		ports/sysutils/dvdtape
 dvi2tty		ports/print/dvi2tty
 dvi2xx		ports/print/dvi2xx
-dvipdfm-cjk	ports/print/dvipdfm-cjk
+dvipdfmx	ports/print/dvipdfmx
 dvips		ports/print/dvips
 dvips2ascii	ports/print/dvips2ascii
 dviselect	ports/print/dviselect
