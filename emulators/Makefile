@@ -3,6 +3,7 @@
 
     SUBDIR += aftp
     SUBDIR += atari800
+    SUBDIR += basiliskII
     SUBDIR += bfe
     SUBDIR += bochs
     SUBDIR += bsvc
