@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Sun Oct 10 23:50:54 2004
++++ Makefile.in	Sun Nov 14 17:23:17 2004
+@@ -105,7 +105,7 @@
+ 
+ AUTOMAKE_OPTIONS = foreign 1.4
+ 
+-pkgconfigdir = $(libdir)/pkgconfig
++pkgconfigdir = @prefix@/libdata//pkgconfig
+ pkgconfig_DATA = gsoap.pc gsoap++.pc gsoapck.pc gsoapck++.pc
+ 
+ EXTRA_DIST = gsoap.pc.in gsoap++.pc.in gsoapck.pc.in gsoapck++.pc.in
