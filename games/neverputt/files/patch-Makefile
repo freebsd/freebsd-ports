@@ -1,0 +1,34 @@
+--- Makefile.orig	Mon Oct 27 21:35:19 2003
++++ Makefile	Mon Oct 27 21:37:26 2003
+@@ -3,15 +3,15 @@
+ 
+ # Maybe you need one of these.  Maybe you don't.
+ 
+-#X11_PATH= -L/usr/X11/lib
+-#X11_PATH= -L/usr/X11R6/lib
++X11_PATHL= -L${X11BASE}/lib
++X11_PATHI= -I${X11BASE}/include
+ 
+ #------------------------------------------------------------------------------
+ 
+-CFLAGS= -Wall -g -ansi $(shell sdl-config --cflags)
++CFLAGS+= -Wall -g -ansi $(shell ${SDL_CONFIG} --cflags) ${X11_PATHI}
+ 
+-X11_LIBS= $(X11_PATH) -lGLU -lGL -lm
+-SDL_LIBS= $(shell sdl-config --libs)
++X11_LIBS= $(X11_PATHL) -lGLU -lGL -lm
++SDL_LIBS= $(shell ${SDL_CONFIG} --libs)
+ 
+ MAPC_TARG= mapc
+ GAME_TARG= neverputt
+@@ -39,8 +39,8 @@
+ 	glext.o  \
+ 	main.o
+ 
+-MAPC_DEPS= $(GAME_SRCS:.c=.d)
+-GAME_DEPS= $(GAME_OBJS:.o=.d)
++MAPC_DEPS= $(GAME_SRCS:.c)
++GAME_DEPS= $(GAME_OBJS:.o)
+ 
+ MAPC_LIBS= $(SDL_LIBS) -lSDL_image $(X11_LIBS)
+ GAME_LIBS= $(SDL_LIBS) -lSDL_image -lSDL_ttf -lSDL_mixer -lfreetype $(X11_LIBS)
