@@ -1,0 +1,14 @@
+bin/synce-matchmaker
+include/rra/appointment.h
+include/rra/contact.h
+include/rra/matchmaker.h
+include/rra/syncmgr.h
+include/rra/task.h
+include/rra/timezone.h
+include/rra/uint32vector.h
+lib/librra.a
+lib/librra.la
+lib/librra.so
+lib/librra.so.0
+share/aclocal/rra.m4
+@dirrm include/rra

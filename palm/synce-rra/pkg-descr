@@ -1,0 +1,5 @@
+SynCE is a project for connecting to devices running Windows CE or Pocket PC.
+RRA implements the Remote Replication Agent Connection protocol for
+synchronising objects between a Windows CE device and other computer.
+
+WWW: http://synce.sourceforge.net/
