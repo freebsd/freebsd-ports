@@ -76,6 +76,7 @@
     SUBDIR += gpc
     SUBDIR += gprolog
     SUBDIR += guile
+    SUBDIR += helium
     SUBDIR += hope
     SUBDIR += hugs
     SUBDIR += icc
