@@ -39,7 +39,7 @@ CFLAGS+=	${PTHREAD_CFLAGS} -fPIC
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 50126
+.if ${OSVERSION} >= 502126
 BROKEN=		"Does not compile on FreeBSD >= 5.x"
 .endif
 
