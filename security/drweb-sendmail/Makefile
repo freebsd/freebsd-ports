@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	drweb_sendmail
-PORTVERSION=    4.28.4
+PORTVERSION=    4.28.10
 CATEGORIES=	security mail
 MASTER_SITES=   http://drweb.spb.ru/download/unix/
 DISTNAME=       drweb-clients-${PORTVERSION}-sources
@@ -15,7 +15,7 @@ MAINTAINER=	anton@chelcom.ru
 
 RUN_DEPENDS=    ${LOCALBASE}/etc/rc.d/drweb-0.sh:${PORTSDIR}/security/drwebd
 
-WRKSRC=         ${WRKDIR}/${DISTNAME}/opt/drweb/clients/sources/drwebdc
+WRKSRC=         ${WRKDIR}/drweb-filters-${PORTVERSION}-sources
 
 INST_PREFIX=	${PREFIX}/${PORTNAME}
 DOC_DIR=	${PREFIX}/share/doc/drweb-sendmail
@@ -38,9 +38,9 @@ RANDOM_NUMBER=!!!___EDIT_THIS___!!!
 RANDOM_NUMBER!=dd if=/dev/random count=1 2> /dev/null | /sbin/md5
 .endif
 
-LANGS=en ru
+LANGS=en-ru en-es
 CONFS=drweb_smf users
-TMPLS=error-admin mailbomb-admin mailbomb-sender skipobj-sender \
+TMPLS=error-admin error-sender mailbomb-admin mailbomb-sender skip-sender \
       virus-admin virus-rcpts virus-sender
 
 post-patch:
@@ -49,7 +49,7 @@ post-patch:
 	cd ${WRKSRC} && \
 	${SED} "s#%PREFIX%#${PREFIX}#g" < dw_options.c > ndwo.c && \
 	    mv ndwo.c dw_options.c
-	cd ${WRKSRC}/etc/sendmail/etc/drweb && \
+	cd ${WRKSRC}/etc && \
 	${SED} "s#%PREFIX%#${PREFIX}#g;\
 		s#%HOSTNAME%#${WITH_DRWEBSMF_HOSTNAME}#g;\
 		s#!!!___EDIT_THIS___!!!#${RANDOM_NUMBER}#" \
@@ -59,7 +59,9 @@ post-patch:
 post-configure:
 	cd ${WRKSRC} && { \
 		${ECHO_CMD} y; \
+		${ECHO_CMD} n; \
 		${ECHO_CMD} y; \
+		${ECHO_CMD} n; \
 		${ECHO_CMD} n; \
 		${ECHO_CMD} n; \
 		${ECHO_CMD} n; \
@@ -76,16 +78,16 @@ do-install:
 	${MKDIR} ${PREFIX}/etc/drweb/templates/${LANG}/sendmail
 .endfor
 .for CONF in ${CONFS}
-	${INSTALL_DATA} -m 600 ${WRKSRC}/etc/sendmail/etc/drweb/${CONF}.conf \
+	${INSTALL_DATA} -m 600 ${WRKSRC}/etc/${CONF}.conf \
 	    ${PREFIX}/etc/drweb/${CONF}.conf-dist
 	if [ ! -f ${PREFIX}/etc/drweb/${CONF}.conf ]; then \
-	    ${INSTALL_DATA} -m 600 ${WRKSRC}/etc/sendmail/etc/drweb/${CONF}.conf \
+	    ${INSTALL_DATA} -m 600 ${WRKSRC}/etc/${CONF}.conf \
 		${PREFIX}/etc/drweb/${CONF}.conf; \
 	fi
 .endfor
 .for LANG in ${LANGS}
 .for TMPL in ${TMPLS}
-	cd ${WRKSRC}/etc/sendmail/etc/drweb/templates/${LANG}/sendmail && \
+	cd ${WRKSRC}/etc/templates/${LANG}/sendmail && \
 	    ${INSTALL_DATA} ${TMPL}.msg \
 		${PREFIX}/etc/drweb/templates/${LANG}/sendmail/${TMPL}.msg-dist
 	if [ ! -f ${PREFIX}/etc/drweb/templates/${LANG}/sendmail/${TMPL}.msg ]; then \
@@ -99,6 +101,7 @@ do-install:
 	cd ${WRKSRC}/doc/sendmail && { \
 		${ECHO_CMD} ; \
 		${ECHO_CMD} "${PREFIX}/drweb"; \
+		${ECHO_CMD} "${PREFIX}/drweb/drweb32.ini"; \
 		${ECHO_CMD} "${PREFIX}/sbin"; \
 		${ECHO_CMD} "${PREFIX}/etc/drweb/drweb_smf.conf"; \
 		${ECHO_CMD} ; \
@@ -107,8 +110,9 @@ do-install:
 		${ECHO_CMD} ; \
 		${ECHO_CMD} ; \
 	} | ./configure
-	cd ${WRKSRC}/doc/sendmail; \
-		${INSTALL_DATA} readme* *.txt sendmail.??.addon ${DOC_DIR}
+	cd ${WRKSRC}/doc/sendmail && \
+		${INSTALL_DATA} readme* *.txt sendmail.??.addon \
+		${DOC_DIR}
 	${INSTALL_DATA} ${WRKSRC}/drweb-sendmail.sh \
 	    ${PREFIX}/etc/rc.d/drweb-sendmail.sh-dist
 	if [ ! -f ${PREFIX}/etc/rc.d/drweb-sendmail.sh ]; then \

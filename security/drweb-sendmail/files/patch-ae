@@ -1,40 +1,11 @@
---- dw_options.c.bak	Mon May  6 19:21:02 2002
-+++ dw_options.c	Fri May 10 12:13:40 2002
-@@ -68,7 +68,11 @@
+--- dw_options.c.bak	Thu Aug 22 18:35:50 2002
++++ dw_options.c	Sat Aug 24 19:19:13 2002
+@@ -92,7 +92,7 @@
  
  #if defined(__UNIX_DW)
  #if !defined(EMX_DW)
-+#ifdef __FreeBSD__
+-#define OS_SPEC_CONFNAME            "/usr/local/drweb/"CONF_FNAME
 +#define OS_SPEC_CONFNAME            "%PREFIX%/etc/drweb/"CONF_FNAME
-+#else
- #define OS_SPEC_CONFNAME            "/opt/drweb/"CONF_FNAME
-+#endif
  #else /* EMX */
  #define OS_SPEC_CONFNAME            "./"CONF_FNAME
  #endif /* EMX */
-@@ -900,6 +904,7 @@
-         return name;
-     }
-     DWC_Free( name );
-+#ifndef __FreeBSD__
-     name = DWC_Strdup( FHS_SPEC_CONFNAME );
-     if( access( name, R_OK ) == 0 )
-     {
-@@ -907,6 +912,7 @@
-         return name;
-     }
-     DWC_Free( name );
-+#endif
-     printLib( DW_LL_ERROR, "incorrect usage, try run in console with %s or read documentation", HELP_PARAM_3 );
-     printf( "%s: configuration file not found\nTry run with %s for more information.\n", argv[0], HELP_PARAM_3 );
-     return NULL;
-@@ -934,7 +940,9 @@
-     printf("Conf file must be present in one of location:\n");     
- #endif /* not QMAIL && not ZMAILER */    
-     printf(" "OS_SPEC_CONFNAME"\n");
-+#ifndef __FreeBSD__
-     printf(" "FHS_SPEC_CONFNAME"\n");
-+#endif
-     printf("\n"PROG_NOTE"\n");
-     exit(EX_USAGE);
- }
