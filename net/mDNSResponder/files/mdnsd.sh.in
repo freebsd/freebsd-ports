@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 # PROVIDE: mdnsd
-# REQIORE: DAEMON
+# REQIURE: DAEMON
 # KEYWORD: FreeBSD shutdown
 
 mdnsd_enable="NO"
@@ -10,7 +10,7 @@ mdnsd_enable="NO"
 . %%RC_SUBR%%
 
 name=mdnsd
-rc_var=`set_rcvar`
+rcvar=`set_rcvar`
 command="%%PREFIX%%/sbin/${name}"
 pidfile="/var/run/${name}.pid"
 
