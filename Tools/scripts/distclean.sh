@@ -14,7 +14,7 @@
 # Maxim Sobolev
 # ----------------------------------------------------------------------------
 #
-# $FreeBSD: /tmp/pcvs/ports/Tools/scripts/distclean.sh,v 1.10 2001-07-30 14:24:12 sobomax Exp $
+# $FreeBSD: /tmp/pcvs/ports/Tools/scripts/distclean.sh,v 1.11 2001-12-19 16:46:42 sobomax Exp $
 #
 # MAINTAINER= sobomax@FreeBSD.org
 
@@ -44,7 +44,7 @@ FN_PORTS=`mktemp -t dclean` || exit 1
 FN_DISTFILES=`mktemp -t dclean` || exit 1
 FN_RESULTS_SCRIPT=`mktemp -t dclean` || exit 1
 
-trap cleanup 1 2 3 4 5 6 7 8 10 11 12 13 14 15 16 21 22 23 24 25 26 27 28 29 \
+trap cleanup 1 2 3 4 5 6 7 8 10 11 12 13 14 15 16 21 22 23 24 25 26 27 28 \
 	     30 31
 
 echo -n "Building ports md5 index..."
