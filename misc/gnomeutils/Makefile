@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnomeutils
-PORTVERSION=	1.4.0.2
+PORTVERSION=	1.4.1
 CATEGORIES=	misc gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/gnome-utils
@@ -29,7 +29,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 MAN1=	gcalc.1 gcharmap.1 gcolorsel.1 gdialog.1 gdict.1 gdiskfree.1 \
 	gfontsel.1 gless.1 gnome-exe-handler.1 gsearchtool.1 guname.1 gw.1 \
-	logview.1 meat-grinder.1 splac.1 splash.1 stripchart-applet.1 \
+	gtt.1 logview.1 meat-grinder.1 splac.1 splash.1 stripchart-applet.1 \
 	stripchart.1
 MAN8=	gshutdown.8
 
