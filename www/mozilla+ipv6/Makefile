@@ -16,7 +16,7 @@ MASTER_SITES=	${MASTER_SITE_MOZILLA} \
 MASTER_SITE_SUBDIR=	mozilla/releases/${PORTNAME}${PORTVERSION:S/M/m/}/src \
 			sobomax/:local
 DISTFILES=	${PORTNAME}-source-${PORTVERSION}${EXTRACT_SUFX} \
-		libart_lgpl-${PORTVERSION}${EXTRACT_SUFX}
+		libart_lgpl-${PORTVERSION}${EXTRACT_SUFX}:local
 
 MAINTAINER=	sumikawa@FreeBSD.org
 
