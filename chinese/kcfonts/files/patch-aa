@@ -1,5 +1,5 @@
 --- Makefile.orig	Sun Dec 17 04:00:46 1995
-+++ Makefile	Fri Jun 18 15:52:57 1999
++++ Makefile	Sun Apr 30 10:58:22 2000
 @@ -2,13 +2,13 @@
  #	Kau Chauo Chinese Fanti Ming Fonts Version 1.05 For FreeBSD
  #
@@ -18,7 +18,24 @@
  FONTS	=kc24f.pcf.gz kc15f.pcf.gz kc8x15.pcf.gz kc12x24.pcf.gz
  PROGS	=kc24f kc15f kc8x15 kc12x24 kca2et
  OBJS	=tran.o kc24f.o kc15f.o kc8x15.o kc12x24.o kca2et.o
-@@ -42,7 +42,9 @@
+@@ -22,10 +22,14 @@
+ 	./kc15f | bdftopcf | gzip - > kc15f.pcf.gz 
+ kc8x15.pcf.gz:	kca2et kc8x15
+ 	./kca2et kctext16.f00 ascfont.15 256 16 15
+-	./kc8x15 | bdftopcf | gzip - > kc8x15.pcf.gz
++	./kc8x15 > kc8x15.bdf
++	patch < kc8x15.diff
++	bdftopcf kc8x15.bdf | gzip - > kc8x15.pcf.gz
+ kc12x24.pcf.gz:	kca2et kc12x24
+ 	./kca2et kctext24.f00 ascfont.24 256 48 48
+-	./kc12x24 | bdftopcf | gzip - > kc12x24.pcf.gz
++	./kc12x24 > kc12x24.bdf
++	patch < kc12x24.diff
++	bdftopcf kc12x24.bdf | gzip - > kc12x24.pcf.gz
+ 
+ kc24f:		tran.o kc24f.o
+ 	$(CC) $(CFLAGS) tran.o kc24f.o -o $@
+@@ -42,7 +46,9 @@
  	if [ ! -d $(CFONTDIR) ]; then mkdir $(CFONTDIR); fi
  	cp kc*f.pcf.gz $(CFONTDIR)
  	cp kc*x*.pcf.gz $(EFONTDIR)
