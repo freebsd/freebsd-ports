@@ -1,0 +1,3 @@
+bin/bitbox
+%%PORTDOCS%%share/doc/bitbox/quickstart.txt
+%%PORTDOCS%%@dirrm share/doc/bitbox

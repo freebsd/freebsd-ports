@@ -1,0 +1,13 @@
+--- makefile.orig	Mon Apr  9 01:41:48 2001
++++ makefile	Mon Apr  2 02:26:37 2001
+@@ -1,8 +1,8 @@
+ bitbox: bitbox.o
+-	gcc bitbox.o -o bitbox -lz
++	${CC} ${CFLAGS} bitbox.o -o bitbox -lz -L${LOCALBASE}/lib -lgnugetopt
+ 
+ bitbox.o: bitbox.c bitbox.h
+-	gcc -Wall -c bitbox.c -o bitbox.o
++	${CC} ${CFLAGS} -I${LOCALBASE}/include -c bitbox.c -o bitbox.o
+ 
+ 
+ 
