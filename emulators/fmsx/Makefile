@@ -3,7 +3,7 @@
 # Date created:         15 Oct 1996
 # Whom:                 dk
 #
-# $Id$
+# $Id: Makefile,v 1.2 1997/02/27 09:37:33 tg Exp $
 #
 
 DISTNAME=       fMSX-1.5
@@ -25,10 +25,10 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/dasm ${PREFIX}/bin/fmsx-dasm
 	${INSTALL_PROGRAM} ${WRKSRC}/rddsk ${PREFIX}/bin/fmsx-rddsk
 	${INSTALL_PROGRAM} ${WRKSRC}/wrdsk ${PREFIX}/bin/fmsx-wrdsk
-	${MKDIR} -p ${PREFIX}/share/fmsx
+	${MKDIR} ${PREFIX}/share/fmsx
 	${INSTALL_DATA} ${WRKSRC}/*.ROM ${WRKSRC}/*.FNT ${PREFIX}/share/fmsx
 .if !defined(NOPORTDOCS)
-	${MKDIR} -p ${PREFIX}/share/doc/fmsx
+	${MKDIR} ${PREFIX}/share/doc/fmsx
 	${INSTALL_DATA} ${WRKSRC}/*.doc ${PREFIX}/share/doc/fmsx
 .endif
 
