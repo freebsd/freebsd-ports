@@ -1,0 +1,19 @@
+share/themes/SimpLila/gtk-2.0/iconrc
+share/themes/SimpLila/gtk-2.0/gtkrc
+share/themes/SimpLila/metacity-1/metacity-theme-1.xml
+share/themes/SimpLila/index.theme
+share/themes/GorLila/gtk-2.0/iconrc
+share/themes/GorLila/gtk-2.0/gtkrc
+share/themes/GorLila/metacity-1/wm-restore.svg
+share/themes/GorLila/metacity-1/wm-min.svg
+share/themes/GorLila/metacity-1/wm-menu.svg
+share/themes/GorLila/metacity-1/wm-max.svg
+share/themes/GorLila/metacity-1/wm-close.svg
+share/themes/GorLila/metacity-1/metacity-theme-1.xml
+share/themes/GorLila/index.theme
+@dirrm share/themes/SimpLila/metacity-1
+@dirrm share/themes/SimpLila/gtk-2.0
+@dirrm share/themes/SimpLila
+@dirrm share/themes/GorLila/metacity-1
+@dirrm share/themes/GorLila/gtk-2.0
+@dirrm share/themes/GorLila
