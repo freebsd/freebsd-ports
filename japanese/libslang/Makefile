@@ -8,13 +8,12 @@
 PORTNAME=	libslang
 PORTVERSION=	${VERSION}.j${JP_VERSION}
 CATEGORIES=	japanese devel
-MASTER_SITES=	http://www.actweb.ne.jp/k-yosino/ \
-		http://home.sprintmail.com/~kikutani/slang/
+MASTER_SITES=	http://www.actweb.ne.jp/k-yosino/
 DISTNAME=	slang-${VERSION}jp${JP_VERSION}
 
 MAINTAINER=	mega@minz.org
 
-VERSION=	1.4.1
+VERSION=	1.4.2
 JP_VERSION=	0
 
 GNU_CONFIGURE=	yes

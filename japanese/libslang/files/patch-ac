@@ -1,5 +1,5 @@
---- autoconf/Makefile.in.orig	Sun Nov 14 15:20:58 1999
-+++ autoconf/Makefile.in	Tue Jul 18 04:53:27 2000
+--- autoconf/Makefile.in.orig	Wed Aug 30 19:43:10 2000
++++ autoconf/Makefile.in	Fri Sep  1 04:03:02 2000
 @@ -10,7 +10,7 @@
  	cd src; $(MAKE) all
  elf:
@@ -15,12 +15,12 @@
  	cd src; $(MAKE) install-elf
 -	@echo ""
 -	@echo "Although not required, consider doing 'make install-links' to extra links"
--	@echo "You will also have to run ldconfig."
+-	@echo "On some systems, e.g., linux, you will also have to run ldconfig."
 -	@echo ""
  install-links:
  	cd src; $(MAKE) install-links
 -	@echo ""
--	@echo "Make sure that you remember to run ldconfig to complete the installation."
+-	@echo "You may also have to run ldconfig to complete the installation."
 -	@echo ""
  #
  distclean:
