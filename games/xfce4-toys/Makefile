@@ -22,6 +22,7 @@ BUILD_DEPENDS=	xfce4-panel:${PORTSDIR}/x11-wm/xfce4-panel
 LIB_DEPENDS=	xfcegui4.1:${PORTSDIR}/x11-toolkits/libxfce4gui \
 		xml2.5:${PORTSDIR}/textproc/libxml2 \
 		startup-notification-1.0:${PORTSDIR}/x11/startup-notification
+RUN_DEPENDS=	xfce4-panel:${PORTSDIR}/x11-wm/xfce4-panel
 
 USE_GNOME=	gtk20
 USE_X_PREFIX=	yes
