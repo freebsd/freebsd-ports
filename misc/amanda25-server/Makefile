@@ -50,6 +50,8 @@ pre-fetch:
 	@${ECHO} "        The default is operator"
 	@${ECHO} ""
 
+USE_PERL5=	yes
+
 RUN_DEPENDS=	${LOCALBASE}/sbin/amrecover:${PORTSDIR}/misc/amanda-client
 BUILD_DEPENDS=	${LOCALBASE}/sbin/amrecover:${PORTSDIR}/misc/amanda-client
 
