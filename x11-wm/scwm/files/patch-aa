@@ -1,24 +1,15 @@
---- configure.orig	Fri Aug 14 18:42:57 1998
-+++ configure	Fri Apr  2 16:08:39 1999
-@@ -80,6 +80,8 @@
- # Initialize some other variables.
- subdirs=
- MFLAGS= MAKEFLAGS=
-+CFLAGS=-I/usr/local/include
-+LDFLAGS=-L/usr/local/lib
- # Maximum number of lines to put in a shell here document.
- ac_max_here_lines=12
- 
-@@ -3257,7 +3259,7 @@
+--- configure.orig	Wed Sep 15 06:33:59 1999
++++ configure	Mon Sep 27 10:43:27 1999
+@@ -5045,7 +5045,7 @@
    echo $ac_n "(cached) $ac_c" 1>&6
  else
    ac_save_LIBS="$LIBS"
 -LIBS="-lguile $GUILE_LIBS_PRE $GUILE_LIBS $LIBS"
 +LIBS="-lguile -lreadline $GUILE_LIBS_PRE $GUILE_LIBS $LIBS"
  cat > conftest.$ac_ext <<EOF
- #line 3263 "configure"
+ #line 5051 "configure"
  #include "confdefs.h"
-@@ -3285,7 +3287,7 @@
+@@ -5073,7 +5073,7 @@
  fi
  if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
    echo "$ac_t""yes" 1>&6

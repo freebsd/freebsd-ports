@@ -11,3 +11,5 @@ scheme configurable window manager
   patches/patch-af
   ${WORKDIR}/utilities/emacs
   ${WORKDIR}/configure --help
+
+SCWM Home Page: http://scwm.mit.edu/
