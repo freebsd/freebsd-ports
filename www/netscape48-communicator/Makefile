@@ -3,7 +3,7 @@
 # Date created:         24 Feb 1997
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.34 1999/05/19 16:06:18 sada Exp $
+# $Id: Makefile,v 1.35 1999/05/19 21:23:34 sada Exp $
 #
 
 DISTNAME?=	netscape-${BROWSER}-${BROWSER_VER}
@@ -17,6 +17,7 @@ Y2K=		http://home.netscape.com/products/year2000/faq/client.html
 
 ONLY_FOR_ARCHS=	i386
 
+USE_XLIB=	yes
 NO_BUILD=	yes
 NO_FILTER_SHLIBS=	yes
 STRIP=
