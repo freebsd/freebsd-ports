@@ -139,7 +139,9 @@
 %%TARGET_PREFIX%%/jre/lib/fonts/Courtbi_.ttf
 %%TARGET_PREFIX%%/jre/lib/fonts/Courtb__.ttf
 %%TARGET_PREFIX%%/jre/lib/fonts/Court___.ttf
+%%TARGET_PREFIX%%/jre/lib/font.properties.zh_TW.2.2.18-2
 %%TARGET_PREFIX%%/jre/lib/font.properties.zh_TW
+%%TARGET_PREFIX%%/jre/lib/font.properties.zh.2.2.18-2
 %%TARGET_PREFIX%%/jre/lib/font.properties.zh
 %%TARGET_PREFIX%%/jre/lib/font.properties.uk
 %%TARGET_PREFIX%%/jre/lib/font.properties.tr
@@ -156,6 +158,7 @@
 %%TARGET_PREFIX%%/jre/lib/font.properties.mk
 %%TARGET_PREFIX%%/jre/lib/font.properties.lv
 %%TARGET_PREFIX%%/jre/lib/font.properties.lt
+%%TARGET_PREFIX%%/jre/lib/font.properties.ko.2.2.18-2
 %%TARGET_PREFIX%%/jre/lib/font.properties.ko
 %%TARGET_PREFIX%%/jre/lib/font.properties.ja
 %%TARGET_PREFIX%%/jre/lib/font.properties.iw
