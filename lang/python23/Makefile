@@ -161,7 +161,8 @@ post-install:
 		${PREFIX}/lib
 	cd ${PREFIX}/lib; ${LN} -sf lib${PYTHON_VERSION}.so.1 \
 		lib${PYTHON_VERSION}.so
-	${LN} -sf ${PREFIX}/lib/lib${PYTHON_VERSION}.so ${PYTHON_LIBDIR}/config
+	${LN} -sf ${PREFIX}/lib/lib${PYTHON_VERSION}.so \
+		${PYTHONPREFIX_LIBDIR}/config
 	${INSTALL_PROGRAM} \
 		${SHARED_WRKSRC}/${PYTHON_VERSION:S/thon/thon-shared/} \
 		${PREFIX}/bin
