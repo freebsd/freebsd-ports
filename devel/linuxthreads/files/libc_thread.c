@@ -36,63 +36,84 @@
 #endif
 
 #include <dlfcn.h>
-#include <errno.h>
 #include <stdlib.h>
 #include "pthread.h"
+/* Our internal pthreads definitions are here. Set as needed */
+#if defined(COMPILING_UTHREADS)
+#include "pthread_private.h"
+#endif
+#if defined(LINUXTHREADS)
+#include <errno.h>
 #include "internals.h"
+#include "spinlock.h"
+#else
+/* Your internal definition here */
+#endif
 
-typedef struct {
-	volatile long	lock;
-	volatile int	nreaders; /* -1 when a write lock is held. */
-} rwlock_t;
+/* These are from lib/libc/include */
+#if !defined(LINUXTHREADS)
+#include "spinlock.h"
+#endif
 
-#define	_RWLOCK_PROTECT(l)	_spinlock(&((l)->lock))
-#define _RWLOCK_UNPROTECT(l)	(l)->lock = 0
-
-/*
- * This is defined in lib/libc/stdlib/exit.c.  It turns on thread safe behavior
- * in libc if non-zero.
+/* This is defined in lib/libc/stdlib/exit.c.  It turns on thread safe
+ * behavior in libc if non-zero.
  */
 extern int __isthreaded;
 
-/*
- * Optional.  In case our code is dependant on the existence of
+/* Optional.  In case our code is dependant on the existence of
  * the posix priority extentions kernel option.
  */
+#if defined(LINUXTHREADS)
 #include <sys/sysctl.h>
 int _posix_priority_scheduling;
+#endif
 
 #if defined(NEWLIBC)
-/*
- * The following are needed if we're going to get thread safe behavior in the
- * time functions in lib/libc/stdtime/localtime.c.
+/* The following are needed if we're going to get thread safe behavior
+ * in the time functions in lib/libc/stdtime/localtime.c
  */
+#if defined(COMPILING_UTHREADS)
+static struct pthread_mutex	_lcl_mutexd = PTHREAD_MUTEX_STATIC_INITIALIZER;
+static struct pthread_mutex	_gmt_mutexd = PTHREAD_MUTEX_STATIC_INITIALIZER;
+static struct pthread_mutex	_localtime_mutexd = PTHREAD_MUTEX_STATIC_INITIALIZER;
+static struct pthread_mutex	_gmtime_mutexd = PTHREAD_MUTEX_STATIC_INITIALIZER;
+static pthread_mutex_t		_lcl_mutex   = &_lcl_mutexd;
+static pthread_mutex_t		_gmt_mutex   = &_gmt_mutexd;
+static pthread_mutex_t		_localtime_mutex = &_localtime_mutexd;
+static pthread_mutex_t		_gmtime_mutex = &_gmtime_mutexd;
+#endif
+#if defined(LINUXTHREADS)
 static pthread_mutex_t	_lcl_mutex	= PTHREAD_MUTEX_INITIALIZER;
 static pthread_mutex_t	_gmt_mutex	= PTHREAD_MUTEX_INITIALIZER;
 static pthread_mutex_t	_localtime_mutex = PTHREAD_MUTEX_INITIALIZER;
 static pthread_mutex_t	_gmtime_mutex	= PTHREAD_MUTEX_INITIALIZER;
-
+#else
+/* Customize this based on your mutex declarations */
+static pthread_mutex_t	_lcl_mutex	= PTHREAD_MUTEX_INITIALIZER;
+static pthread_mutex_t	_gmt_mutex	= PTHREAD_MUTEX_INITIALIZER;
+static pthread_mutex_t	_localtime_mutex = PTHREAD_MUTEX_INITIALIZER;
+static pthread_mutex_t	_gmtime_mutex	= PTHREAD_MUTEX_INITIALIZER;
+#endif
 extern pthread_mutex_t	*lcl_mutex;
 extern pthread_mutex_t	*gmt_mutex;
 extern pthread_mutex_t	*localtime_mutex;
 extern pthread_mutex_t	*gmtime_mutex;
 #endif
 
-/* Use the constructor attribute so this gets run before main does. */
+void *lock_create (void *context);
+void rlock_acquire (void *lock);
+void wlock_acquire (void *lock);
+void lock_release (void *lock);
+void lock_destroy (void *lock);
+
+
+/* Use the constructor attribute so this gets run before main does */
 static void _pthread_initialize(void) __attribute__((constructor));
-
-/* Defined in _atomic_lock.S. */
-long	 _atomic_lock(volatile long *);
-
-void	 _spinlock(volatile long *lock);
-void	*lock_create (void *context);
-void	 rlock_acquire (void *lock);
-void	 wlock_acquire (void *lock);
-void	 lock_release (void *lock);
-void	 lock_destroy (void *lock);
 
 static void _pthread_initialize(void)
 {
+
+#if defined(LINUXTHREADS)
 	int mib[2];
 	size_t len;
 
@@ -101,8 +122,9 @@ static void _pthread_initialize(void)
 	mib[1] = CTL_P1003_1B_PRIORITY_SCHEDULING;
 	if (-1 == sysctl (mib, 2, &_posix_priority_scheduling, &len, NULL, 0))
 		_posix_priority_scheduling = 0;
+#endif
 
-	/* This turns on thread safe behaviour in libc when we link with it. */
+	/* This turns on thread safe behaviour in libc when we link with it */
 	__isthreaded = 1;
 
 	dllockinit (NULL,
@@ -114,7 +136,7 @@ static void _pthread_initialize(void)
 		    NULL);
 
 #if defined(NEWLIBC)
-	/* Set up pointers for lib/libc/stdtime/localtime.c. */
+	/* Set up pointers for lib/libc/stdtime/localtime.c */
 	lcl_mutex       = &_lcl_mutex;
 	gmt_mutex       = &_gmt_mutex;
 	localtime_mutex = &_localtime_mutex;
@@ -122,82 +144,42 @@ static void _pthread_initialize(void)
 #endif
 }
 
-void
-_spinlock(volatile long *lock)
+void _spinlock (int * spinlock)
 {
-	while(_atomic_lock(lock)) {
-		/* Spin. */
-	}
+	__pthread_acquire(spinlock);
 }
 
-/*
- * Simple nested spinning reader/writer lock implementation.  We can't use the
- * normal library implementation for bootstrapping reasons.  This implementation
- * allows one writer or any number of concurrent readers.  No lock grant
- * ordering guarantees are made.
- */
-
-void *
-lock_create (void *context)
+void * lock_create (void *context)
 {
-	rwlock_t	*retval;
+	pthread_rwlock_t *lock;
 
-	retval = (rwlock_t *)malloc(sizeof(rwlock_t));
-	if (retval == NULL)
-		goto RETURN;
+	lock = malloc (sizeof (*lock));
+	if (lock == NULL)
+		return (NULL);
 
-	bzero(retval, sizeof(rwlock_t));
-  RETURN:
-	return ((void *)retval);
+	pthread_rwlock_init (lock, NULL);
+	return (lock);
 }
 
-void
-rlock_acquire (void *lock)
+void rlock_acquire (void *lock)
 {
-	rwlock_t	*rwlock = lock;
-	
-	_RWLOCK_PROTECT(rwlock);
-	while (rwlock->nreaders < 0) {
-		_RWLOCK_UNPROTECT(rwlock);
-		_RWLOCK_PROTECT(rwlock);
-	}
-	rwlock->nreaders++;
-	
-	_RWLOCK_UNPROTECT(rwlock);
+	pthread_rwlock_rdlock ((pthread_rwlock_t *)lock);
+
 }
 
-void
-wlock_acquire (void *lock)
+void wlock_acquire (void *lock)
 {
-	rwlock_t	*rwlock = lock;
-	
-	_RWLOCK_PROTECT(rwlock);
-	while (rwlock->nreaders != 0) {
-		_RWLOCK_UNPROTECT(rwlock);
-		_RWLOCK_PROTECT(rwlock);
-	}
-	rwlock->nreaders--;
-	
-	_RWLOCK_UNPROTECT(rwlock);
+	pthread_rwlock_wrlock ((pthread_rwlock_t *)lock);
+
 }
 
-void
-lock_release (void *lock)
+void lock_release (void *lock)
 {
-	rwlock_t	*rwlock = lock;
-
-	_RWLOCK_PROTECT(rwlock);
-
-	if (rwlock->nreaders < 0)
-		rwlock->nreaders++;
-	else
-		rwlock->nreaders--;
-	
-	_RWLOCK_UNPROTECT(rwlock);
+	pthread_rwlock_unlock ((pthread_rwlock_t *)lock);
 }
 
-void
-lock_destroy (void *lock)
+void lock_destroy (void *lock)
 {
-	free(lock);
+	if (pthread_rwlock_destroy ((pthread_rwlock_t *)lock) == 0)
+		free (lock);
 }

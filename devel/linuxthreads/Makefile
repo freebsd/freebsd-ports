@@ -15,10 +15,9 @@ ONLY_FOR_ARCHS= i386
 
 MAINTAINER=    jasone@freebsd.org
 
-threads_files := _atomic_lock.S README.FreeBSD clone.S clone.h \
-	freebsd-compat.h getgr_r.c gethostby_r.c getnetby_r.c getprotoby_r.c \
-	getpw_r.c getservby_r.c lclone.c libc_calls.c libc_thread.c sched.c \
-	uthread_file.c
+threads_files := README.FreeBSD clone.S clone.h freebsd-compat.h getgr_r.c \
+	gethostby_r.c getnetby_r.c getprotoby_r.c getpw_r.c getservby_r.c \
+	lclone.c libc_calls.c libc_thread.c sched.c uthread_file.c
 
 WRKSRC=		${WRKDIR}/${PKGNAME}
 
@@ -27,7 +26,8 @@ LIBSRC_BASE=	${SRC_BASE}/lib
 
 post-extract:
 	@mv ${WRKDIR}/linuxthreads ${WRKDIR}/${PKGNAME}
-.for src in no-tsd.c oldsemaphore.c weaks.c sysdeps/pthread/semaphore.h
+.for src in lockfile.c no-tsd.c oldsemaphore.c weaks.c \
+	sysdeps/pthread/semaphore.h
 	@mv ${WRKSRC}/$(src) ${WRKSRC}/$(src).unused
 .endfor
 	@cd ${FILESDIR} ; \
