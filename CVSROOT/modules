@@ -11383,6 +11383,7 @@ xwelltris	ports/games/xwelltris
 xwhois		ports/net/xwhois
 xwipower	ports/sysutils/xwipower
 xwit		ports/x11/xwit
+xwlans		ports/sysutils/xwlans
 xword		ports/games/xword
 xworld		ports/astro/xworld
 xworm		ports/games/xworm
