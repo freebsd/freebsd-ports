@@ -280,6 +280,7 @@
     SUBDIR += linux-imlib
     SUBDIR += linux-jpeg
     SUBDIR += linux-libmng
+    SUBDIR += linux-panorama-tools
     SUBDIR += linux-png
     SUBDIR += linux-png10
     SUBDIR += linux-tiff
