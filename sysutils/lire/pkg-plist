@@ -9,6 +9,7 @@ bin/lr_log2mail
 bin/lr_log2report
 bin/lr_rawmail2mail
 bin/lr_run
+bin/lr_run_tests
 bin/lr_spoold
 bin/lr_sql2report
 bin/lr_xml2mail
@@ -657,5 +658,6 @@ share/perl5/Lire/XMLUtils.pm
 @dirrm share/perl5/Lire/Extensions
 @dirrm share/perl5/Lire/AsciiDlf
 @dirrm share/perl5/Lire
+@unexec rmdir %D/share/perl5 2>/dev/null || true
 
 @dirrm share/lire
