@@ -10,6 +10,7 @@ PKGNAMESUFFIX=		-lite
 
 MAINTAINER=		re@FreeBSD.org
 COMMENT=		The FreeBSD release "meta-port" for KDE
+DESCR=			${PORTSDIR}/x11/kde-lite/pkg-descr
 
 MASTERDIR=		${.CURDIR}/../../x11/kde3
 .if defined(IS_INTERACTIVE)
