@@ -23,9 +23,10 @@ CONFIGURE_ARGS=	--enable-compile-warnings=no
 
 pre-patch:
 	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
-	@find ${WRKSRC} -name "*Makefile*" | xargs ${PERL} -pi -e \
+	@find ${WRKSRC} -name "*Makefile*" | xargs ${PERL} -pi.dist -e \
 		's|-g -O2 -Wall -D_REENTRANT|\@CXXFLAGS\@|g ; \
-		 s|\$$\(datadir\)/gnome|\$$\(datadir\)|g ; \
-		 s|\$$\(datadir\)/locale|\$$\(prefix\)/share/locale|g'
+		 s|datadir\)/gnome|datadir\)|g ; \
+		 s|datadir\)/locale|prefix\)/share/locale|g ; \
+		 s|gnofract4d_helpdir\)/images|gnofract4d_helpdir\)|g'
 
 .include <bsd.port.mk>
