@@ -83,6 +83,7 @@
     SUBDIR += lpe
     SUBDIR += manedit
     SUBDIR += mg
+    SUBDIR += mode-info
     SUBDIR += moleskine
     SUBDIR += mp
     SUBDIR += muggy
