@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	newsgrab
-PORTVERSION=	0.2.2
+PORTVERSION=	0.3.1
 CATEGORIES=	news
-MASTER_SITES=	http://phunkbros.dk/newsgrab/
+MASTER_SITES=	http://telia.dl.sourceforge.net/sourceforge/newsgrab/ \
+		${MASTER_SITE_SOURCEFORGE}
 
 MAINTAINER=	petef@FreeBSD.org
 
@@ -19,15 +20,17 @@ RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/News/NNTPClient.pm:${P
 
 NO_BUILD=	yes
 USE_PERL5=	yes
+USE_REINPLACE=	yes
 
 post-patch:
-	@${PERL} -pi -e 's,^#!/usr/bin/perl,#!${PERL},' ${WRKSRC}/newsgrab.pl
+	@${REINPLACE_CMD} -e 's|^#!/usr/bin/perl|#!${PERL}|' ${WRKSRC}/newsgrab.pl
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/newsgrab.pl ${PREFIX}/bin/newsgrab
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/newsgrab
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/newsgrab
+	${INSTALL_DATA} ${WRKSRC}/newsgrabrc ${PREFIX}/share/doc/newsgrab
 .endif
 
 .include <bsd.port.mk>
