@@ -30,6 +30,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 MOZILLA?=	mozilla-devel
 
+BROKEN=		"Requires update to 1.4a"
+
 WITHOUT_CHATZILLA=	"Contains a buffer overflow reported at http://online.securityfocus.com/archive/1/270249"
 
 .if defined(WITH_GTK2)
