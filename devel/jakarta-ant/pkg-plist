@@ -1,6 +1,7 @@
 bin/ant
 %%T%%/bin/antRun
 %%T%%/lib/ant.jar
+%%T%%/lib/junit.jar
 %%T%%/lib/optional.jar
 %%T%%/lib/README
 %%T%%/lib/xercesImpl.jar
@@ -625,6 +626,7 @@ bin/ant
 %%T%%/docs/manual/api/org/apache/tools/ant/taskdefs/XSLTProcess.html
 %%T%%/docs/manual/api/org/apache/tools/ant/taskdefs/XSLTProcess.OutputProperty.html
 %%T%%/docs/manual/api/org/apache/tools/ant/taskdefs/XSLTProcess.Param.html
+%%T%%/docs/manual/api/org/apache/tools/ant/taskdefs/Zip.ArchiveState.html
 %%T%%/docs/manual/api/org/apache/tools/ant/taskdefs/Zip.Duplicate.html
 %%T%%/docs/manual/api/org/apache/tools/ant/taskdefs/Zip.html
 %%T%%/docs/manual/api/org/apache/tools/ant/taskdefs/Zip.WhenEmpty.html

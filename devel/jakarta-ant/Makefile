@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	apache-ant
-PORTVERSION=	1.5.2
+PORTVERSION=	1.5.3
 CATEGORIES=	devel java
 MASTER_SITES=	http://apache.mirror.trueserver.nl/dist/ant/binaries/ \
 		http://apache.proserve.nl/dist/ant/binaries/ \
