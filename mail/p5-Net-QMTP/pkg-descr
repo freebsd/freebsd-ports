@@ -1,0 +1,8 @@
+Net::QMTP is a perl module which provides an object interface to a Quick
+Mail Transfer Protocol (QMTP) client. QMTP is a replacement for the
+Simple Mail Transfer Protocol (SMTP).
+
+WWW: http://search.cpan.org/dist/Net-QMTP/
+
+James Raftery.
+<james@now.ie>
