@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	hs-
 MAINTAINER= 	ports@FreeBSD.org
 COMMENT=	Binding for OpenGL and GLUT for the lazy functional language Haskell
 
-BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc \
+BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc5 \
 		green-card:${PORTSDIR}/devel/hs-green-card
 
 RUN_DEPENDS=	ghc:${PORTSDIR}/lang/ghc5
