@@ -1,18 +1,23 @@
   __        ___  __ _     
-  \ \      / / \/  | |    
+  \ \      / / \/  | |      Website META Language
    \ \ /\ / / |\/| | |    
-    \ V  V /| |  | | |___ 
-     \_/\_/ |_|  |_|_____|
-                         
-  WML -- Website META Language
+    \ V  V /| |  | | |___   ``WML is the Unix toolkit for getting
+     \_/\_/ |_|  |_|_____|    your webdesigner's HTML job done.''
 
-  WML is a free HTML generation toolkit consisting of 9 independent languages.
-  The main idea of WML is a sequential filtering scheme where each language
-  provides one of 9 processing passes. So WML reads an input file, applies
-  passes 1-9 (or optionally only the passes specified) and finally produces
-  one or more output files. It operates as a powerful offline HTML generation
-  toolkit for webmasters. While not trivial and idiot proof it provides most
-  of the features real hackers always wanted for HTML generation. 
+  Copyright (c) 1996,1997,1998 Ralf S. Engelschall
 
-  The documentation and latest release can be found on
-  http://www.engelschall.com/sw/wml/
+  WML is a free and extensible Webdesigner's off-line HTML generation toolkit
+  for Unix, distributed under the GNU General Public License (GPL v2). It is
+  written in ANSI C and Perl 5, build via a GNU Autoconf based source tree
+  and runs out-of-the-box on all major Unix derivates.  It can be used
+  free of charge both in educational and commercial environments.
+  
+  WML consists of a control frontend driving up to nine backends in a
+  sequential pass-oriented filtering scheme. Each backend provides one
+  particular core language. For maximum power WML additionally ships with a
+  well-suited set of include files which provide higher-level features build
+  on top of the backends core languages. While not trivial and idiot proof WML
+  provides most of the core features real hackers always wanted for HTML
+  generation.
+                               http://www.engelschall.com/sw/wml/
+                                ftp://ftp.engelschall.com/sw/wml/
