@@ -3695,6 +3695,7 @@ ja-xyaku	ports/japanese/xyaku
 ja-yc.el	ports/japanese/yc.el
 ja-zangband	ports/japanese/zangband
 ja-zipcodes	ports/japanese/zipcodes
+ja-zope-ejsplitter	ports/japanese/zope-ejsplitter
 jabber		ports/net/jabber
 jabber-aim	ports/net/jabber-aim
 jabber-conference	ports/net/jabber-conference
