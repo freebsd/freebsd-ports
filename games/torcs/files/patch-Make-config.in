@@ -1,0 +1,28 @@
+--- Make-config.in.orig	Sat Apr 19 11:46:59 2003
++++ Make-config.in	Sat Apr 26 14:46:29 2003
+@@ -38,13 +38,13 @@
+ RANLIB = @RANLIB@
+ 
+ INSTALL = @INSTALL@
+-INSTALL_PROGRAM = @INSTALL@ -m 755
+-INSTALL_DATA = @INSTALL@ -m 644
++INSTALL_PROGRAM = @INSTALL_PROGRAM@
++INSTALL_DATA = @INSTALL_DATA@
+ INSTALL_SCRIPT = @INSTALL_SCRIPT@
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ 
+ CFLAGSD = -D_SVID_SOURCE -D_BSD_SOURCE -DSHM
+-CXXFLAGS +=  @CXXFLAGS@ ${CFLAGSD}
++CXXFLAGS +=  @CXXFLAGS@ @CPPFLAGS@ ${CFLAGSD}
+ CFLAGS   +=  @CFLAGS@ ${CFLAGSD}
+ 
+ #EXT_LIBS = -lpthread @LIBS@
+@@ -55,7 +55,7 @@
+ #INCFLAGS =  -I${EXPORTBASE}/include -I/usr/include -I/usr/local/include
+ INCFLAGS =  -I${EXPORTBASE}/include 
+ 
+-CPP = @CPP@ $(CPPFLAGS) -M -D__DEPEND__
++CPP = @CPP@ @CPPFLAGS@ -M -D__DEPEND__
+ 
+ PACKAGE = @PACKAGE@
+ VERSION = @VERSION@

@@ -1,0 +1,13 @@
+TORCS is a car simulator, and also a racing robots game.
+
+It requires a 3D accelerated card, with OpenGL support.
+
+For the player driver, the car parameters are located in the files:
+
+torcs/runtime/drivers/human/car*.xml
+
+depending on the car used.
+
+During the menus or the game hit the F1 key to get help.
+
+WWW: http://torcs.sourceforge.net/

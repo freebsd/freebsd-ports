@@ -326,6 +326,7 @@
     SUBDIR += tksol
     SUBDIR += tome
     SUBDIR += toppler
+    SUBDIR += torcs
     SUBDIR += tornado
     SUBDIR += tractorgen
     SUBDIR += trojka
