@@ -38,6 +38,12 @@ MAN8=		arbitron.8 collectnews.8 cyrquota.8 deliver.8 fud.8 \
 		imapd.8 mbpath.8 pop3d.8 reconstruct.8 rmnews.8 syncnews.8 \
 		timsieved.8
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 501000
+BROKEN=		"Does not compile"
+.endif
+
 post-patch:
 	${CP} ${FILESDIR}/600.cyrus ${WRKDIR}
 	${REINPLACE_CMD} -e 's,LOCALBASE,${LOCALBASE},g' ${WRKDIR}/600.cyrus
@@ -104,4 +110,4 @@ post-install:
 		@${ECHO_CMD} "@dirrm spool/imap" >>${TMPPLIST}
 		@PKG_PREFIX=${PREFIX} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

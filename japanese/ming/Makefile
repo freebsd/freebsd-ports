@@ -37,6 +37,12 @@ DOCS=		CHANGES \
 DOCS_UTIL=	README \
 		TODO
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 501000
+BROKEN=		"Does not compile"
+.endif
+
 post-extract:
 	${SED} -e 's:"\.\./\.\./ming\.h":<ming.h>:g' \
 		${WRKSRC}/ming.h > ${WRKSRC}/mingpp.h
@@ -84,4 +90,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

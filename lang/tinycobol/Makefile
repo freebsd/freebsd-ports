@@ -30,6 +30,12 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 MAN1=		htcobol.1 htcobf2f.1 htcobolpp.1
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 501000
+BROKEN=		"Does not compile"
+.endif
+
 pre-install:
 
 post-install:
@@ -38,4 +44,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/info/*.txt ${PREFIX}/share/doc/tinycobol
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

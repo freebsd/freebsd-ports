@@ -20,9 +20,15 @@ GNU_CONFIGURE=	yes
 
 MAN3=		libnids.3
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 501000
+BROKEN=		"Does not compile"
+.endif
+
 do-install:
 		${INSTALL_DATA} ${WRKSRC}/src/nids.h ${PREFIX}/include
 		${INSTALL_DATA} ${WRKSRC}/src/libnids.a ${PREFIX}/lib
 		${INSTALL_DATA} ${WRKSRC}/src/libnids.3 ${PREFIX}/man/man3
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

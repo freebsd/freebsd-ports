@@ -29,6 +29,12 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 MAN8=		magicfilter.8
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 501000
+BROKEN=		"Does not compile"
+.endif
+
 pre-fetch:
 .if !defined(WITH_GHOSTSCRIPT_AFPL) || ${WITH_GHOSTSCRIPT_AFPL} != yes
 	@${ECHO} ""
@@ -60,4 +66,4 @@ post-install:
 			${PREFIX}/share/examples/magicfilter/
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

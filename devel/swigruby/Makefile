@@ -24,6 +24,12 @@ USE_GMAKE=	yes
 DOCS_EN=	ChangeLog README
 DOCS_JA=	README.ja
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 501000
+BROKEN=		"Does not compile"
+.endif
+
 do-configure:
 	@cd ${WRKSRC}; \
 	${SETENV} ${CONFIGURE_ENV} ${RUBY} configure.rb --with-swig=swig1.1
@@ -41,4 +47,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -24,7 +24,13 @@ GNU_CONFIGURE=	yes
 
 MAKE_ENV=	QTDIR="${QTDIR}"
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 501000
+BROKEN=		"Does not compile"
+.endif
+
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/evolvotron ${PREFIX}/bin
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

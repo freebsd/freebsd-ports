@@ -21,6 +21,12 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-psim --target=powerpc-freebsd-elf \
 		--program-suffix=psim
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 501000
+BROKEN=		"Does not compile"
+.endif
+
 pre-configure:
 	@cd ${WRKSRC} ; ${RM} -rf dejagnu expect tcl texinfo
 
@@ -39,4 +45,4 @@ cklatest:
 	    ftp://mirrors.rcn.net/mirrors/sources.redhat.com/${MASTER_SITE_SUBDIR}/  \
 	    | ${GREP} gdb+dejagnu-
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
