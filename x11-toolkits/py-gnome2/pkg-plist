@@ -24,10 +24,12 @@ libdata/pkgconfig/gnome-python-2.0.pc
 %%PORTDOCS%%share/examples/py-gnome/applet/GNOME_PythonAppletSample.server
 %%PORTDOCS%%share/examples/py-gnome/applet/README
 %%PORTDOCS%%share/examples/py-gnome/applet/applet.py
+%%PORTDOCS%%share/examples/py-gnome/bonobo/bonobo-application.py
 %%PORTDOCS%%share/examples/py-gnome/bonobo/bonoboui/Bonobo_Sample_Hello.xml
 %%PORTDOCS%%share/examples/py-gnome/bonobo/bonoboui/hello.py
 %%PORTDOCS%%share/examples/py-gnome/bonobo/echo/README
 %%PORTDOCS%%share/examples/py-gnome/bonobo/echo/echo-client.py
+%%PORTDOCS%%share/examples/py-gnome/bonobo/unknown.py
 %%PORTDOCS%%share/examples/py-gnome/canvas/canvas-example.py
 %%PORTDOCS%%share/examples/py-gnome/gconf/basic-gconf-app.py
 %%PORTDOCS%%share/examples/py-gnome/gconf/simple-controller.py
