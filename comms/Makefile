@@ -13,6 +13,7 @@
     SUBDIR += hylafax
     SUBDIR += kermit
     SUBDIR += lrzsz
+    SUBDIR += ltmdm
     SUBDIR += mgetty+sendfax
     SUBDIR += minicom
     SUBDIR += mlan

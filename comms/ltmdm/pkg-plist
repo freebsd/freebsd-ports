@@ -1,0 +1,14 @@
+src/sys/modules/ltmdm/Makefile
+@dirrm src/sys/modules/ltmdm
+@dirrm src/sys/modules
+src/sys/dev/ltmdm/ltmdmsio.c
+src/sys/dev/ltmdm/ltmdmobj.o.uu
+@dirrm src/sys/dev/ltmdm
+@dirrm src/sys/dev
+@dirrm src/sys
+etc/rc.d/ltmdm.sh
+share/ltmdm/ltmdm.ko
+@dirrm share/ltmdm
+@exec rm -f /dev/cual0
+@exec mknod /dev/cual0 c 228 128 uucp:dialer
+@unexec rm -f /dev/cual0
