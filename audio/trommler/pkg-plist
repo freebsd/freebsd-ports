@@ -1,0 +1,26 @@
+bin/playsample
+bin/trommler
+bin/wav2smp
+share/trommler/Drums/bassdrum.1.smp
+share/trommler/Drums/bassdrum.2.smp
+share/trommler/Drums/bassdrum.3.smp
+share/trommler/Drums/bongo.high.smp
+share/trommler/Drums/bongo.low.smp
+share/trommler/Drums/bongo.slap.smp
+share/trommler/Drums/claves.smp
+share/trommler/Drums/conga.closed.smp
+share/trommler/Drums/conga.open.high.smp
+share/trommler/Drums/conga.open.low.smp
+share/trommler/Drums/conga.slap.smp
+share/trommler/Drums/cowbell.smp
+share/trommler/Drums/guiro.long.smp
+share/trommler/Drums/guiro.short.smp
+share/trommler/Drums/maracas.smp
+share/trommler/Drums/snare.high.smp
+share/trommler/Drums/snare.low.smp
+share/trommler/Drums/timbales.smp
+share/trommler/Drums/vibra.slap.smp
+share/trommler/Songs/rumba.sng
+@dirrm share/trommler/Drums
+@dirrm share/trommler/Songs
+@dirrm share/trommler
