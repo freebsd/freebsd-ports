@@ -1,5 +1,5 @@
---- dist/ile.c	Wed Jun  9 13:12:33 1993
-+++ ile.c	Sat Jan 20 08:23:07 2001
+--- ile.c	Tue Jun  8 23:12:33 1993
++++ ile.c	Tue Jun  4 20:34:21 2002
 @@ -51,7 +51,7 @@
  #include <errno.h>
  #include <sys/ioctl.h>
@@ -26,16 +26,60 @@
  int tty_ldisc;
  int tty_mode;
  
-@@ -269,8 +268,10 @@
+@@ -267,44 +266,46 @@
+ did, i.e., suspend, abort, exit with the proper status etc.
+ */
  void handle_child() {
-     union wait status;
+-    union wait status;
++    int status;
  
--    if (wait3(&status, WUNTRACED, NULL) != childpid) {
-+    if (wait3(&status.w_status, WUNTRACED, NULL) != childpid) {
+     if (wait3(&status, WUNTRACED, NULL) != childpid) {
  	fprintf(stderr, "ile: notified by unknown process\r\n");
 +	/* note the change so that we don't die after select */
 +	expect_exception = TRUE;
  	return;
      }
  
-
+     if (WIFSTOPPED(status)) {
+ 	/* ignore stop signals that we forwarded to the child */
+-	if (status.w_stopsig == SIGSTOP && ignorestop) {
++	if (WSTOPSIG(status) == SIGSTOP && ignorestop) {
+ 	    ignorestop = FALSE;
+ 	    return;
+ 	}
+ 
+ #ifdef DEBUG
+-	fprintf(stderr, "child stopped by signal %d\r\n", status.w_stopsig);
++	fprintf(stderr, "child stopped by signal %d\r\n", WSTOPSIG(status));
+ #endif
+ 	/* stop ourselves */
+-	handle_stop(status.w_stopsig);
++	handle_stop(WSTOPSIG(status));
+     }
+     else if (WIFSIGNALED(status)) {
+ #ifdef DEBUG
+-	fprintf(stderr, "child killed by signal %d\r\n", status.w_termsig);
++	fprintf(stderr, "child killed by signal %d\r\n", WTERMSIG(status));
+ #endif
+ 	clean_up();
+ 
+-	if (status.w_coredump) {
++	if (WCOREDUMP(status)) {
+ 		chdir ("/");		/* prevent own core dump */
+ 	}
+-	(void) signal (status.w_termsig, SIG_DFL);
+-	kill (getpid(), status.w_termsig);
++	(void) signal (WTERMSIG(status), SIG_DFL);
++	kill (getpid(), WTERMSIG(status));
+     }
+     else {
+ #ifdef DEBUG
+-	fprintf(stderr, "child exited with %d\r\n", status.w_retcode);
++	fprintf(stderr, "child exited with %d\r\n", WEXITSTATUS(status));
+ #endif
+ 	clean_up();
+-	exit (status.w_retcode);
++	exit (WEXITSTATUS(status));
+     }
+ }
+ 
