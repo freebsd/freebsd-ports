@@ -1,5 +1,5 @@
 lib/libtiff.a
-lib/libtiff.so.1
+lib/libtiff.so.4
 lib/libtiff.so
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %D/lib
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R

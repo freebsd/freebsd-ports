@@ -3,7 +3,7 @@
 # Date created:		August 13, 1997
 # Whom:			handy@physics.montana.edu
 #
-# $Id: Makefile,v 1.38 1998/11/24 16:04:41 tg Exp $
+# $Id: Makefile,v 1.39 1998/11/25 05:06:27 jseger Exp $
 
 DISTNAME=	WindowMaker-0.20.2
 PKGNAME=	windowmaker-0.20.2
@@ -19,7 +19,7 @@ LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
 		gif.3:${PORTSDIR}/graphics/giflib \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.2:${PORTSDIR}/graphics/png \
-		tiff.1:${PORTSDIR}/graphics/tiff34
+		tiff.4:${PORTSDIR}/graphics/tiff34
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes

@@ -8,11 +8,11 @@
 +	DSOSUF=so
 +	LIBCOPTS='-fpic -DPIC'
 +	if [ $PORTOBJFORMAT = elf ]; then
-+	    DSOSUF_VERSION=${DSOSUF}.1
++	    DSOSUF_VERSION=${DSOSUF}.4
 +	    DSOOPTS='-shared'
 +	    DSO=FREEBSD_ELF
 +	else
-+	    DSOSUF_VERSION=${DSOSUF}.1.0
++	    DSOSUF_VERSION=${DSOSUF}.4.0
 +	    DSOOPTS='-Bshareable'
 +	    DSO=FREEBSD_AOUT
 +	fi

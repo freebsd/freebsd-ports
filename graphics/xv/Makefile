@@ -3,7 +3,7 @@
 # Date created:		30 October 1994
 # Whom:			smace
 #
-# $Id: Makefile,v 1.29 1998/11/21 07:27:37 steve Exp $
+# $Id: Makefile,v 1.30 1998/11/25 05:06:28 jseger Exp $
 #
 
 DISTNAME=	xv-3.10a
@@ -25,7 +25,7 @@ PATCHFILES=     xv-3.10a.JPEG-patch xv-3.10a.TIFF-patch
 MAINTAINER?=	shige@kuis.kyoto-u.ac.jp
 
 LIB_DEPENDS=    jpeg.9:${PORTSDIR}/graphics/jpeg \
-		tiff.1:${PORTSDIR}/graphics/tiff34 \
+		tiff.4:${PORTSDIR}/graphics/tiff34 \
 		png.2:${PORTSDIR}/graphics/png
 
 USE_IMAKE=	yes
