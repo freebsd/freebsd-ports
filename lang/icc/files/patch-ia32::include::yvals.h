@@ -1,6 +1,9 @@
 --- ia32/include/yvals.h.orig	Tue Nov 26 22:50:59 2002
 +++ ia32/include/yvals.h	Thu Jan  9 17:27:12 2003
-@@ -3,88 +3,15 @@
+@@ -1,93 +1,17 @@
+-/* static char cvs_id[] = "$Id: yvals.h,v 1.35.2.2 2003/02/21 13:46:50 sne Exp $"; */
++/* static char cvs_id[] = "$Id: yvals.h,v 1.35.2.1 2002/12/26 08:38:02 grigory Exp $"; */
+ /* yvals.h values header for EDG/gcc on various Unix systems */
  #ifndef _YVALS
  #define _YVALS
  
@@ -79,6 +82,9 @@
   #ifndef _MULTI_THREAD
    #define _MULTI_THREAD	1	/* 0 for no locks, 1 for multithreaded library */
   #endif /* _MULTI_THREAD */
+- #ifndef _IOSTREAM_OP_LOCKS
+-  #define _IOSTREAM_OP_LOCKS	1
+- #endif /* _MULTI_THREAD */
 -#define _GLOBAL_LOCALE	0	/* 0 for per-thread locales, 1 for shared */
 -#define _FILE_OP_LOCKS	0	/* 0 for no file atomic locks, 1 for atomic */
  
@@ -89,7 +95,7 @@
   #define _HAS_TRADITIONAL_IOSTREAMS	1
   #define _HAS_TRADITIONAL_ITERATORS	1
   #define _HAS_TRADITIONAL_POS_TYPE	1
-@@ -131,211 +58,9 @@
+@@ -134,212 +58,9 @@
  
   #define _Restrict
  
@@ -276,7 +282,8 @@
 - #define _LOCK_LOCALE	0
 - #define _LOCK_MALLOC	1
 - #define _LOCK_STREAM	2
-- #define _MAX_LOCK		3	/* one more than highest lock number */
+- #define _LOCK_DEBUG	3
+- #define _MAX_LOCK		4	/* one more than highest lock number */
 -
 -
 -
