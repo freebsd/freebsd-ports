@@ -1,0 +1,6 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Data/JavaScript/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/Data/JavaScript.pm
+lib/perl5/site_perl/%%PERL_VER%%/Data/example.pl
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Data/JavaScript
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Data 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Data 2>/dev/null || true

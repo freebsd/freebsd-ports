@@ -93,6 +93,7 @@
     SUBDIR += oo2c
     SUBDIR += otcl
     SUBDIR += p2c
+    SUBDIR += p5-Data-JavaScript
     SUBDIR += p5-Error
     SUBDIR += p5-Expect
     SUBDIR += p5-F77

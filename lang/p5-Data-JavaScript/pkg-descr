@@ -1,0 +1,12 @@
+This module is aimed mainly for CGI programming, when a perl script
+generates a page with client side JavaScript code that needs access to
+structures created on the server.
+
+It works by creating one line of JavaScript code per datum. Therefore,
+structures cannot be created anonymously and needed to be assigned to
+variables. This enables dumping big structures.
+
+Author: Ariel Brosh <schop@cpan.org>
+WWW: http://search.cpan.org/search?dist=Data-JavaScript
+
+-- Anton
