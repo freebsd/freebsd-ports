@@ -8,17 +8,17 @@
 #
 
 PORTNAME=	xjman
-PORTVERSION=	0.5
+PORTVERSION?=	0.6
 CATEGORIES=	japanese
 MASTER_SITES=	${MASTER_SITE_PORTS_JP} \
 		http://xjman.dsl.gr.jp/
 
-MAINTAINER=	sada@FreeBSD.org
+MAINTAINER?=	sada@FreeBSD.org
 
 NO_MTREE=	yes
 PLIST=		${WRKDIR}/PLIST
 USE_BZIP2=	yes
-WRKSRC=		${WRKDIR}/man/ja_JP.eucJP
+WRKSRC?=	${WRKDIR}/xjman-4.0.3
 SCRIPTS_ENV+=	MANSECS="${MANSECS}"
 
 MANSECS=	1 3 5
