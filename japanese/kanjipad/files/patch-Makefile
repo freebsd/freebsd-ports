@@ -1,0 +1,24 @@
+--- Makefile.orig	Sat Mar 30 17:12:23 2002
++++ Makefile	Sat Mar 30 17:12:10 2002
+@@ -1,10 +1,10 @@
+ OPTIMIZE=-g -Wall
+ #OPTIMIZE=-O2 
+ 
+-GTKLIBS=`gtk-config --libs`
+-GTKINC=`gtk-config --cflags`
++GTKLIBS=`$(GTK_CONFIG) --libs`
++GTKINC=`$(GTK_CONFIG) --cflags`
+ 
+-PREFIX=/usr/local
++#PREFIX=/usr/local
+ DATADIR=$(PREFIX)/share
+ 
+ # location in which binaries are installed
+@@ -17,7 +17,7 @@
+ ####### No editing should be needed below here ##########
+ 
+ OBJS = kpengine.o scoring.o util.o
+-CFLAGS = $(OPTIMIZE) $(GTKINC) -DFOR_PILOT_COMPAT -DKP_LIBDIR=\"$(LIBDIR)\"
++CFLAGS += $(OPTIMIZE) $(GTKINC) -DFOR_PILOT_COMPAT -DKP_LIBDIR=\"$(LIBDIR)\"
+ 
+ all: kpengine kanjipad jdata.dat

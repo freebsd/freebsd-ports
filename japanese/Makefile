@@ -147,6 +147,7 @@
     SUBDIR += kakasi
     SUBDIR += kanji18
     SUBDIR += kanji26
+    SUBDIR += kanjipad
     SUBDIR += kappa20
     SUBDIR += kbanner
     SUBDIR += kcc
