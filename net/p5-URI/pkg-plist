@@ -1,4 +1,8 @@
 lib/perl5/site_perl/%%PERL_VER%%/URI.pm
+lib/perl5/site_perl/%%PERL_VER%%/URI/Escape.pm
+lib/perl5/site_perl/%%PERL_VER%%/URI/Heuristic.pm
+lib/perl5/site_perl/%%PERL_VER%%/URI/URL.pm
+lib/perl5/site_perl/%%PERL_VER%%/URI/WithBase.pm
 lib/perl5/site_perl/%%PERL_VER%%/URI/_foreign.pm
 lib/perl5/site_perl/%%PERL_VER%%/URI/_generic.pm
 lib/perl5/site_perl/%%PERL_VER%%/URI/_login.pm
@@ -6,10 +10,6 @@ lib/perl5/site_perl/%%PERL_VER%%/URI/_query.pm
 lib/perl5/site_perl/%%PERL_VER%%/URI/_segment.pm
 lib/perl5/site_perl/%%PERL_VER%%/URI/_server.pm
 lib/perl5/site_perl/%%PERL_VER%%/URI/_userpass.pm
-lib/perl5/site_perl/%%PERL_VER%%/URI/Escape.pm
-lib/perl5/site_perl/%%PERL_VER%%/URI/Heuristic.pm
-lib/perl5/site_perl/%%PERL_VER%%/URI/URL.pm
-lib/perl5/site_perl/%%PERL_VER%%/URI/WithBase.pm
 lib/perl5/site_perl/%%PERL_VER%%/URI/data.pm
 lib/perl5/site_perl/%%PERL_VER%%/URI/file.pm
 lib/perl5/site_perl/%%PERL_VER%%/URI/file/Base.pm
