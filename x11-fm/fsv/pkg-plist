@@ -1,0 +1,19 @@
+bin/fsv
+share/fsv/about.html
+share/fsv/back.png
+share/fsv/beyeview.png
+share/fsv/cd-root.png
+share/fsv/cd-up.png
+share/fsv/dirtree.png
+share/fsv/filelist.png
+share/fsv/fsv.html
+share/fsv/mapv.png
+share/fsv/menus.html
+share/fsv/mouse.html
+share/fsv/startup.html
+share/fsv/t1.html
+share/fsv/treev.png
+share/fsv/viewport.png
+share/fsv/window.html
+share/fsv/window.png
+@dirrm share/fsv
