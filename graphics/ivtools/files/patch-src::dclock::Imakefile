@@ -1,0 +1,11 @@
+--- src/dclock/Imakefile.orig	Tue Jul 27 16:11:41 1999
++++ src/dclock/Imakefile	Wed Mar 27 12:18:06 2002
+@@ -10,7 +10,7 @@
+ 
+ Use_libInterViews()
+ Use_2_6()
+-ComplexProgramTarget(dclock)
++ComplexProgramTargetNoInstall(dclock)
+ 
+ #define Obj(file) MakeObjectFromSrcFlags(file,)
+ 

@@ -1,0 +1,15 @@
+--- src/idemo/Imakefile.orig	Tue Jul 27 16:12:05 1999
++++ src/idemo/Imakefile	Wed Mar 27 12:18:06 2002
+@@ -9,11 +9,9 @@
+ CLIPPOLY_CCLDLIBS =
+ 
+ Use_libInterViews()
+-ComplexProgramTarget(idemo)
++ComplexProgramTargetNoInstall(idemo)
+ 
+ MakeObjectFromSrcFlags(main,)
+-
+-InstallScriptAs(../Idemo.defaults,$(LIBALLDIR),Idemo)
+ 
+ IncludeDependencies()
+ 

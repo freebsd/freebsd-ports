@@ -1,0 +1,11 @@
+--- src/scripts/Imakefile.orig	Wed Mar 27 12:18:06 2002
++++ src/scripts/Imakefile	Wed Mar 27 12:18:06 2002
+@@ -23,8 +23,6 @@
+ CppScriptTarget(ivmkmf,ivmkmf.cpp,-DCONFIGDIRSPEC='$(CONFIGDIRSPEC)' -DMAKEMAKESPEC='$(MAKEMAKESPEC)' -DUSE_INSTALLED,)
+ #endif
+ 
+-InstallMultipleFlags($(PROGRAMS),$(BINDIR),$(INSTBINFLAGS))
+-
+ LDLIB_SPEC = LD_LIBRARY_PATH='$(LIBABSDIR)':$$LD_LIBRARY_PATH
+ PATH_SPEC = PATH='$(BINDIR)':$$PATH
+ CppScriptTarget(ivct,ivct.cpp,-DLDLIB_SPEC='$(LDLIB_SPEC)' -DPATH_SPEC='$(PATH_SPEC)',)

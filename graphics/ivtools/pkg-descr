@@ -1,0 +1,11 @@
+This is a port of ivtools, a collection of vector-graphic drawing
+editors which augments the original idraw from Stanford University
+with mechanisms for scripting, networking, animation, and
+graph-editing.  They also add support for additional raster formats
+(PBM/PGM/PPM, PNG, GIF), arbitrary PostScript (using pstoedit), and
+export/import via Unix filters.
+
+WWW: http://www.ivtools.org
+
+- Scott Johnston
+johnston@vectaport.com

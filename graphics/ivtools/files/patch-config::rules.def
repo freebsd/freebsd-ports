@@ -1,0 +1,66 @@
+--- config/rules.def.orig	Tue Feb  5 09:12:01 2002
++++ config/rules.def	Wed Mar 27 12:18:06 2002
+@@ -1056,35 +1056,17 @@
+ 
+ #ifndef InstallIncludes
+ #if InstallRelative
+-#define InstallIncludes(dir)						@@\
+-install::								@@\
+-	-@if [ -h $(TOP)/include ]; then exit 0; else \                 @@\
+-        (cd $(TOP) && $(LN) src/include include); fi
++#define InstallIncludes(dir) /**/
+ #else
+-#define InstallIncludes(dir)						@@\
+-install::								@@\
+-	MakeDir($(INCDIR)/dir)						@@\
+-	$(INSTALL) -c $(INSTINCFLAGS) *.h $(INCDIR)/dir			@@\
+-									@@\
+-uninstall::								@@\
+-	(cd $(INCDIR)/dir;$(RM) *.h)
++#define InstallIncludes(dir) /**/
+ #endif
+ #endif
+ 
+ #ifndef InstallInclude
+ #if InstallRelative
+-#define InstallInclude(dir, file)					@@\
+-install::								@@\
+-	-@if [ -h $(TOP)/include ]; then exit 0; else \                 @@\
+-        (cd $(TOP) && $(LN) src/include include); fi
++#define InstallInclude(dir, file) /**/
+ #else
+-#define InstallInclude(dir, file)					@@\
+-install::								@@\
+-	MakeDir($(INCDIR)/dir)						@@\
+-	$(INSTALL) -c $(INSTINCFLAGS) file $(INCDIR)/dir		@@\
+-									@@\
+-uninstall::								@@\
+-	$(RM) $(INCDIR)/dir/file
++#define InstallInclude(dir, file) /**/
+ #endif
+ #endif
+ 
+@@ -1093,21 +1075,9 @@
+ #define InstallSymLink(dir, file) /**/
+ #else
+ #if !defined(SVR4)
+-#define InstallSymLink(dir, file)					@@\
+-install::								@@\
+-	MakeDir(dir)							@@\
+-	cp -fd file dir							@@\
+-									@@\
+-uninstall::								@@\
+-	$(RM) dir/file	
++#define InstallSymLink(dir, file) /**/
+ #else
+-#define InstallSymLink(dir, file)					@@\
+-install::								@@\
+-	MakeDir(dir)							@@\
+-	tar cf - file | (cd dir; tar xfp -)				@@\
+-									@@\
+-uninstall::								@@\
+-	$(RM) dir/file	
++#define InstallSymLink(dir, file) /**/
+ #endif
+ #endif	
+ #endif

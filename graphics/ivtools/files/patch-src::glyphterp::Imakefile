@@ -1,0 +1,11 @@
+--- src/glyphterp/Imakefile.orig	Tue Jul 27 16:12:03 1999
++++ src/glyphterp/Imakefile	Wed Mar 27 12:18:06 2002
+@@ -17,7 +17,7 @@
+ 
+ Use_libInterViews()
+ 
+-ComplexProgramTarget(glyphterp)
++ComplexProgramTargetNoInstall(glyphterp)
+ 
+ MakeObjectFromSrcFlags(main,)
+ 

@@ -1,0 +1,11 @@
+--- src/glyphs/gclock/Imakefile.orig	Tue Jul 27 16:11:58 1999
++++ src/glyphs/gclock/Imakefile	Wed Mar 27 12:18:06 2002
+@@ -16,7 +16,7 @@
+ 
+ Use_libInterViews()
+ 
+-ComplexProgramTarget(gclock)
++ComplexProgramTargetNoInstall(gclock)
+ 
+ MakeObjectFromSrcFlags(main,)
+ 

@@ -1,0 +1,11 @@
+--- src/man/man1/Imakefile.orig	Tue Jul 27 16:12:13 1999
++++ src/man/man1/Imakefile	Wed Mar 27 12:18:06 2002
+@@ -4,7 +4,7 @@
+ 
+ PACKAGE = man1_ivtools
+ 
+-TROFFSRCS	= comdraw.1 dclock.1 flipbook.1 iclass.1 ivmkmf.1 comterp.1\
++TROFFSRCS	= comdraw.1 flipbook.1 iclass.1 comterp.1\
+  drawtool.1 graphdraw.1 idraw.1
+ TROFFFLAGS 	= -man
+ TROFFOUTPUT	= man1.PS

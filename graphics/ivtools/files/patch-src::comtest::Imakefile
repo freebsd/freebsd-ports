@@ -1,0 +1,11 @@
+--- src/comtest/Imakefile.orig	Tue Jul 27 16:11:39 1999
++++ src/comtest/Imakefile	Wed Mar 27 12:18:06 2002
+@@ -16,7 +16,7 @@
+ OTHER_CCINCLUDES = $(ACE_CCINCLUDES)
+ OTHER_CCLDLIBS = $(ACE_CCLDLIBS)
+ 
+-ComplexProgramTarget(comtest)
++ComplexProgramTargetNoInstall(comtest)
+ 
+ #define Obj(file) MakeObjectFromSrcFlags(file,)
+ 

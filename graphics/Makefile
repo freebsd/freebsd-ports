@@ -122,6 +122,7 @@
     SUBDIR += imlib2_loaders
     SUBDIR += ipe
     SUBDIR += isreal
+    SUBDIR += ivtools
     SUBDIR += jasper
     SUBDIR += jbigkit
     SUBDIR += jgraph
