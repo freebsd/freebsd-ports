@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	sysutils kde
 MASTER_SITES=	http://www.methylblue.com/filelight/
 
-MAINTAINER=	markus@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Represent a file system as a set of concentric segmented-rings
 
 USE_KDELIBS_VER=3
