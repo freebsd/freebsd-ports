@@ -34,7 +34,7 @@ USE_AUTOCONF=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-qt-includes=${X11BASE}/include/qt2 \
 		--with-qt-libraries=${X11BASE}/lib \
-		--with-qtdoc-dir=${X11BASE}/share/doc/qt/html \
+		--with-qtdoc-dir=${X11BASE}/share/doc/qt2/html \
 		--with-extra-libs=${LOCALBASE}/lib
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${PREFIX}/include" \
 		MOC="${MOC}" LIBQT="-lqt2" LIBQTFILE="libqt2" \
