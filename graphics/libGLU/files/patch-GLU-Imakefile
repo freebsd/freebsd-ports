@@ -1,0 +1,11 @@
+--- lib/GLU/Imakefile.orig	Sun May  9 16:24:25 2004
++++ lib/GLU/Imakefile	Sun May  9 16:24:53 2004
+@@ -47,7 +47,7 @@
+ #define CplusplusSource
+ 
+ #ifdef SharedGLUReqs
+-REQUIREDLIBS = SharedGLUReqs
++REQUIREDLIBS = -L$(USRLIBDIR) SharedGLUReqs
+ #endif
+ 
+ #ifndef SeparateSharedCompile

@@ -199,6 +199,7 @@
     SUBDIR += leafpak
     SUBDIR += lfview
     SUBDIR += lib3ds
+    SUBDIR += libGLU
     SUBDIR += libafterimage
     SUBDIR += libart
     SUBDIR += libart_lgpl2
