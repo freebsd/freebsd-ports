@@ -1,0 +1,14 @@
+DISLIN is a high-level library of subroutines  and functions  that display
+data graphically. It is intended to be a powerful and easy to use software
+package for programmers and scientists  that does not require knowledge of
+hardware features. The software is available for the programming languages
+C, Fortran 77, Fortran 90, Perl, Python and Java.
+
+DISLIN can  display graphic information  directly on graphic terminals  or
+store them in metafiles.  The supported display types are VGA,  X Windows,
+Windows API  and Tektronix.  The supported file formats are  GKSLIN,  CGM,
+HPGL, PostScript, Prescribe, WMF, PNG, BMP and TIFF. DISLIN metafiles  can
+either be printed on various devices using the  DISLIN driver program DIS-
+DRV or imported into third party products such as TeX and MS Word.
+
+WWW: http://www.linmpi.mpg.de/dislin/
