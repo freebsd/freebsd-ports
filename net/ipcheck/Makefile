@@ -36,6 +36,6 @@ do-patch:
 			${WRKDIR}/ipcheck.py
 
 do-install:
-	@${INSTALL_SCRIPT} ${WRKDIR}/${DISTNAME} ${PREFIX}/bin/${PORTNAME}.py
+	@${INSTALL_SCRIPT} ${WRKDIR}/ipcheck.py ${PREFIX}/bin/
 
 .include <bsd.port.mk>
