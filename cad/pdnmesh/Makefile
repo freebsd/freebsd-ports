@@ -8,9 +8,10 @@
 PORTNAME=	pdnmesh
 PORTVERSION=	0.1.4
 CATEGORIES=	cad
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-		${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR=	${PORTNAME} science/visualization
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:sf/} \
+		${MASTER_SITE_SUNSITE:S/$/:sun/}
+MASTER_SITE_SUBDIR=	${PORTNAME}/:sf science/visualization/:sun
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:sf,sun
 
 MAINTAINER=	sarod@users.sf.net
 COMMENT=	A finite element program
