@@ -38,6 +38,7 @@ libexec/fontilus-context-menu
 libexec/gnome-settings-daemon
 share/gnome/application-registry/fontilus.applications
 share/gnome/application-registry/themus.applications
+share/gnome/applications/gnome-font-viewer.desktop
 share/gnome/applications/gnomecc.desktop
 share/gnome/control-center-2.0/capplets/accessibility-keyboard.desktop
 share/gnome/control-center-2.0/capplets/at-properties.desktop
@@ -176,6 +177,7 @@ share/locale/nb/LC_MESSAGES/control-center-2.0.mo
 share/locale/nl/LC_MESSAGES/control-center-2.0.mo
 share/locale/nn/LC_MESSAGES/control-center-2.0.mo
 share/locale/no/LC_MESSAGES/control-center-2.0.mo
+share/locale/nso/LC_MESSAGES/control-center-2.0.mo
 share/locale/pa/LC_MESSAGES/control-center-2.0.mo
 share/locale/pl/LC_MESSAGES/control-center-2.0.mo
 share/locale/pt/LC_MESSAGES/control-center-2.0.mo
@@ -196,6 +198,11 @@ share/locale/vi/LC_MESSAGES/control-center-2.0.mo
 share/locale/wa/LC_MESSAGES/control-center-2.0.mo
 share/locale/zh_CN/LC_MESSAGES/control-center-2.0.mo
 share/locale/zh_TW/LC_MESSAGES/control-center-2.0.mo
+share/locale/zu/LC_MESSAGES/control-center-2.0.mo
+@unexec rmdir %D/share/locale/zu/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/zu 2> /dev/null || true
+@unexec rmdir %D/share/locale/nso/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/nso 2> /dev/null || true
 @dirrm share/gnome/pixmaps/gnomecc-2
 @dirrm share/gnome/gnome-background-properties
 @dirrm share/gnome/cursor-fonts
