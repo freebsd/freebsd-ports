@@ -1,19 +1,20 @@
 bin/dotlock
+bin/mailbot
 bin/maildirmake
 bin/maildrop
 bin/makemime
 bin/reformail
 bin/reformime
-%%PORTDOCS%%share/maildrop/html/dotlock.html
-%%PORTDOCS%%share/maildrop/html/maildirmake.html
-%%PORTDOCS%%share/maildrop/html/maildrop.html
-%%PORTDOCS%%share/maildrop/html/maildropex.html
-%%PORTDOCS%%share/maildrop/html/maildropfilter.html
-%%PORTDOCS%%share/maildrop/html/maildropgdbm.html
-%%PORTDOCS%%share/maildrop/html/makemime.html
-%%PORTDOCS%%share/maildrop/html/reformail.html
-%%PORTDOCS%%share/maildrop/html/reformime.html
-%%PORTDOCS%%share/maildrop/html/rfc2045.html
-%%PORTDOCS%%share/maildrop/html/rfc822.html
-%%PORTDOCS%%@dirrm share/maildrop/html
-%%PORTDOCS%%@dirrm share/maildrop
+%%PORTDOCS%%share/doc/maildrop/dotlock.html
+%%PORTDOCS%%share/doc/maildrop/mailbot.html
+%%PORTDOCS%%share/doc/maildrop/maildirmake.html
+%%PORTDOCS%%share/doc/maildrop/maildrop.html
+%%PORTDOCS%%share/doc/maildrop/maildropex.html
+%%PORTDOCS%%share/doc/maildrop/maildropfilter.html
+%%PORTDOCS%%share/doc/maildrop/maildropgdbm.html
+%%PORTDOCS%%share/doc/maildrop/makemime.html
+%%PORTDOCS%%share/doc/maildrop/reformail.html
+%%PORTDOCS%%share/doc/maildrop/reformime.html
+%%PORTDOCS%%share/doc/maildrop/rfc2045.html
+%%PORTDOCS%%share/doc/maildrop/rfc822.html
+%%PORTDOCS%%@dirrm share/doc/maildrop

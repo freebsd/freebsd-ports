@@ -1,0 +1,20 @@
+--- Makefile.in.orig	Wed May 16 20:29:17 2001
++++ Makefile.in	Wed May 16 20:29:34 2001
+@@ -27,7 +27,7 @@
+ bindir = @bindir@
+ sbindir = @sbindir@
+ libexecdir = @libexecdir@
+-datadir = @datadir@
++datadir = ${PREFIX}/share/doc
+ sysconfdir = @sysconfdir@
+ sharedstatedir = @sharedstatedir@
+ localstatedir = @localstatedir@
+@@ -88,7 +88,7 @@
+ EXTRA_DIST = UPGRADE.html UPGRADE.txt INSTALL.txt README README.postfix maildroptips.txt maildropldap.config
+ 
+ scriptdir = $(pkgdatadir)/scripts
+-htmldir = $(pkgdatadir)/html
++htmldir = $(pkgdatadir)
+ @INSTALL_USERDB_TRUE@USERDBHTML = userdb.html makeuserdb.html userdbpw.html
+ @INSTALL_USERDB_FALSE@USERDBHTML = 
+ @INSTALL_USERDB_TRUE@USERDBMAN = userdb.8 makeuserdb.8 userdbpw.8
