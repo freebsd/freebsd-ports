@@ -11151,6 +11151,7 @@ xonix		ports/games/xonix
 xopps		ports/deskutils/xopps
 xorg		ports/x11/xorg
 xorg-clients	ports/x11/xorg-clients
+xorg-documents	ports/x11/xorg-documents
 xorg-fonts-100dpi	ports/x11-fonts/xorg-fonts-100dpi
 xorg-fonts-75dpi	ports/x11-fonts/xorg-fonts-75dpi
 xorg-fonts-cyrillic	ports/x11-fonts/xorg-fonts-cyrillic
