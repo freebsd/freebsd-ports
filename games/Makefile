@@ -85,6 +85,7 @@
     SUBDIR += flying
     SUBDIR += foobillard
     SUBDIR += frabs
+    SUBDIR += freebsd-games
     SUBDIR += freecell-solver
     SUBDIR += freeciv
     SUBDIR += freeciv-gtk
