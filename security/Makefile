@@ -20,6 +20,7 @@
     SUBDIR += find_ddos
     SUBDIR += firewalk
     SUBDIR += fragrouter
+    SUBDIR += fuzz
     SUBDIR += fwtk
     SUBDIR += gag
     SUBDIR += gnupg
