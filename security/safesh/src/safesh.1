@@ -95,6 +95,44 @@ authentication by default, but still allows the host that you connect to
 to grab your credentials and authenticate as you to anybody else when you
 do authentication forwarding to it.
 
+.Sh SIMPLE HOWTO
+Starting to make use of
+.Nm
+is trivial:
+.Bl -enum
+.It
+Do "safesh <hostname>".
+This will ask you for a passphrase (three times), and create a directory
+$HOME/.safesh/<yourusername>@<hostname>-22, which contains authentication
+data for your user at <hostname>.
+.It
+Add the contents of $HOME/.safesh/<yourusername>@<hostname>-22/id_dsa.pub to
+$HOME/.ssh/authorized_keys2 on the host you
+.Nm
+*to*.
+.It
+Log in with "safesh <hostname>" from now on.
+This will ask you for a passphrase if you have not logged into that host this
+session, and otherwise just let right in.
+.El
+
+To give an example, let us say I (eivind@FreeBSD.org) want to set up this up
+for use with the main FreeBSD development server, freefall.freebsd.org, from
+the account "eivind" on my workstation:
+.Bl -enum
+.It
+eivind(ws)--% safesh freefall.freebsd.org
+
+<answer passphrase three times, then break off password prompt>
+.It
+eivind(ws)--% cat ~/.safesh/eivind@freefall.freebsd.org-22/id_dsa.pub | safesh freefall.freebsd.org -- freefall.freebsd.org 'mkdir -p .ssh && cat >> ~/.ssh/authorized_keys2'
+
+Answer password prompt with the password used on freefall.
+The command above updates authorized_keys2 file with the key we just
+generated.
+From now on, it is possible to connect to freefall with just
+"safesh freefall.freebsd.org"
+.El
 
 .Sh NAME REPLACEMENT
 .Bl -tag -width "$HOME/.safesh" -compact
@@ -261,13 +299,21 @@ was written by
 .Xr ssh-add 1 ,
 .Xr ssh-agent 1 ,
 .Xr ssh-keygen 1 .
-.Sh MISSING FEATURES
-The present version of
-.Nm
-does to the best of the author's knowledge work correctly in what it does.
-However, there are a number of features that would make it easier to securely handle
-ssh authentication.
 
+.Sh KNOWN ISSUES
+.Nm does not handle whitespace in filenames specified in extra_keys correctly.
+
+The ssh-agents that are started by will hang around until next reboot unless
+you put 'killall ssh-agent' in .logout or similar.
+This allows any login to your account to use your authentication towards
+machines you have connected to (including anybody with root on the box),
+persisting after you log out.
+You must always assume that root can grab your authentication at the moment
+you run do it, so this is only an issue in that the authentication stays
+available longer.
+This is not resolvable without rewriting ssh-agent.
+
+.Sh MISSING FEATURES
 .Bl -tag -width "mmmm" -compact
 .It Pa Two-step secure SSH with an untrusted host in the middle
 It is possible to use the port forwarding capability of ssh to forward

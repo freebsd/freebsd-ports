@@ -1,6 +1,6 @@
 #!/bin/sh
 
-AKEYS=${HOME}/.safesh/
+AKEYS=${HOME}/.safesh
 # Use username as supplied on the command line if user@host syntax is used,
 # otherwise use the presently active username
 USER=`whoami`
@@ -38,25 +38,29 @@ shift 2> /dev/null;
 
 HOSTDIR=$AKEYS/$USER@${HOST}-22
 if [ ! -d $HOSTDIR ]; then
-	mkdir -p $HOSTDIR || myx "Unable to create $HOSTDIR"
+	mkdir -p $HOSTDIR || myx "$0: Unable to create $HOSTDIR"
 fi
 
 if [ ! -e $HOSTDIR/id_dsa ]; then
-	ssh-keygen -t dsa -f $HOSTDIR/id_dsa || myx "Unable to create $HOSTDIR/id_dsa"
+	if [ "$DISPLAY" != "" ] && (which ssh-askpass > /dev/null 2>&1); then
+		(ssh-keygen -t dsa -f $HOSTDIR/id_dsa >/dev/null < /dev/null 2>&1) || myx "$0: Unable to create $HOSTDIR/id_dsa"
+	else
+		ssh-keygen -t dsa -f $HOSTDIR/id_dsa || myx "Unable to create $HOSTDIR/id_dsa"
+	fi
 fi
 
 # We now have a key in $HOSTDIR/id_dsa
 
 ACTIVEAGENT=$HOSTDIR/activeagent-`hostname`
 if [ -e $ACTIVEAGENT.sh ]; then
-	. $ACTIVEAGENT.sh || myx "Unable to read $ACTIVEAGENT.sh"
+	. $ACTIVEAGENT.sh || myx "$0: Unable to read $ACTIVEAGENT.sh"
 fi
 
 if ! ssh-add -l > /dev/null 2>& 1; then
 	ssh-agent -s > $ACTIVEAGENT.tmp || myx "Unable to start ssh-agent"
 	sed '/^echo/d' < $ACTIVEAGENT.tmp > $ACTIVEAGENT.sh
 	rm -f $ACTIVEAGENT.tmp
-	. $ACTIVEAGENT.sh || myx "Unable to read $ACTIVEAGENT.sh after creating it"
+	. $ACTIVEAGENT.sh || myx "$0: Unable to read $ACTIVEAGENT.sh after creating it"
 	(echo setenv SSH_AUTH_SOCK $SSH_AUTH_SOCK\;
 	echo setenv SSH_AGENT_PID $SSH_AGENT_PID\;) > $ACTIVEAGENT.csh
 	#echo "Started agent with PID $SSH_AGENT_PID, socket $SSH_AUTH_SOCK" 1>&2
@@ -73,8 +77,10 @@ for i in $USER@${HOST}-22 `cat $HOSTDIR/extra_keys 2> /dev/null`; do
 	if [ -f $HOSTDIR/$tmp ]; then
 		IDENTITY=$HOSTDIR/$tmp
 	elif [ -d $AKEYS/$tmp/ ]; then
-		if ! [ -f $AKEYS/$tmp/id_dsa -a -r $AKEYS/$tmp/id_dsa ]; then
-			myx "Missing key for $tmp"
+		if ! [ -f $AKEYS/$tmp/id_dsa ]; then
+			myx "Missing key $AKEYS/$tmp/id_dsa"
+		elif ! [ -r $AKEYS/$tmp/id_dsa ]; then
+			myx "$AKEYS/$tmp/id_dsa is not readable"
 		fi
 		IDENTITY=$AKEYS/$tmp/id_dsa
 	elif [ -f "/$i" ]; then
@@ -93,11 +99,15 @@ for i in $USER@${HOST}-22 `cat $HOSTDIR/extra_keys 2> /dev/null`; do
 done
 
 if [ "${KEYLIST}" != "" ]; then
-	ssh-add $KEYLIST
+	if [ "$DISPLAY" != "" ] && (which ssh-askpass > /dev/null 2>&1); then
+		ssh-add $KEYLIST < /dev/null > /dev/null 2>&1
+	else
+		ssh-add $KEYLIST
+	fi
 fi
 
 if [ "$1" = "" ]; then
-	exec ssh $USER@$HOST
+	exec ssh -A $USER@$HOST
 else
 	exec ssh "$@"
 fi
