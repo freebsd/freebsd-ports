@@ -1,0 +1,26 @@
+*** ../Xbae-4.6.2-port/work/Xbae-4.6.2/Xbae.tmpl	Thu Jul 10 10:15:47 1997
+--- ./Xbae.tmpl	Wed Oct 29 15:42:55 1997
+***************
+*** 11,17 ****
+  XCOMM yes as the demos may have trouble finding the shared library.
+  
+  #define DoNormalLib		YES
+! #define DoSharedLib		NO /* Don't define if you want the demos! */
+  #define DoDebugLib		NO
+  
+  XCOMM Some of the examples use Wcl.  If you haven't got Wcl, it doesn't
+--- 11,17 ----
+  XCOMM yes as the demos may have trouble finding the shared library.
+  
+  #define DoNormalLib		YES
+! #define DoSharedLib		YES /* Don't define if you want the demos! */
+  #define DoDebugLib		NO
+  
+  XCOMM Some of the examples use Wcl.  If you haven't got Wcl, it doesn't
+***************
+*** 172,175 ****
+  osaber:
+          XCOMM load $(ALLDEFINES) $(OBJS)
+  #endif
+- 
+--- 172,174 ----
