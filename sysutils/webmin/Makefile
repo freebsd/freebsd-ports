@@ -7,6 +7,7 @@
 
 PORTNAME=	webmin
 PORTVERSION=	1.080
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.webmin.com/updates/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -24,7 +25,9 @@ NO_BUILD=	yes
 USE_PERL5=	yes
 SCRIPTS_ENV+=	WRKDIR="${WRKDIR}"
 
-WEBMIN_MODULES=	net-1.080-7.wbm.gz
+WEBMIN_MODULES=	net-1.080-7.wbm.gz \
+		proc-1.080-1.wbm.gz \
+		updown-1.080-1.wbm.gz
 
 WEBMIN_THEMES=
 
