@@ -71,6 +71,7 @@ share/doc/mutt/samples/iconv/iconv.solaris-2.5.1.rc
 share/doc/mutt/samples/iconv/iconv.solaris-2.6-cjk.rc
 share/doc/mutt/samples/iconv/iconv.solaris-2.6.rc
 share/doc/mutt/samples/iconv/iconv.solaris-2.7.rc
+share/locale/ca/LC_MESSAGES/mutt.mo
 share/locale/cs/LC_MESSAGES/mutt.mo
 share/locale/da/LC_MESSAGES/mutt.mo
 share/locale/de/LC_MESSAGES/mutt.mo
