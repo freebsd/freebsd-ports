@@ -1,6 +1,6 @@
-# $Id: Makefile,v 1.5 1994/10/14 04:12:19 jkh Exp $
+# $Id: Makefile,v 1.6 1994/11/06 02:15:02 jkh Exp $
 #
 SUBDIR=	a2ps dvi2xx dvips dviselect ghostscript psutils tex latex latex209 \
-	makeindex mltex texinfo
+	makeindex mltex texinfo transfig
 
 .include <bsd.port.subdir.mk>
