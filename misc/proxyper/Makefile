@@ -12,7 +12,7 @@ CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.distributed.net/pub/dcti/proxyper-rc5des/ \
 		http://http.distributed.net/pub/dcti/proxyper-rc5des/
 
-MAINTAINER=	globalpanic@gmx.net
+MAINTAINER=	dbaker@FreeBSD.org
 
 .include <bsd.port.pre.mk>
 
@@ -24,29 +24,29 @@ BROKEN=		"No version is built for your system."
 BROKEN=		"No version is currently available for your system.  Please try again later."
 .endif
 
-NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
-BINDIR=		${PREFIX}/proxyper/
+BINDIR=		${PREFIX}/distributed.net/proxy/
 LIBDIR=		${PREFIX}/etc/rc.d/
-WRKSRC=		${WRKDIR}/${DISTNAME}
 
-CLIENTUID=	nobody
-CLIENTGID=	daemon
+PROXYUID=	nobody
+PROXYGID=	daemon
 
 do-install:
 	if [ ! -d ${BINDIR} ]; then \
 		${MKDIR} ${BINDIR}; \
 	fi
-	${INSTALL} -c -m 711 -o ${CLIENTUID} -g ${CLIENTGID} ${WRKSRC}/proxyper ${BINDIR}
+	${INSTALL} -c -m 711 -o ${PROXYUID} -g ${PROXYGID} ${WRKSRC}/proxyper ${BINDIR}
 	${SED} s#CHANGETHIS#${BINDIR}# < ${FILESDIR}/proxyper.sh > ${WRKSRC}/proxyper.sh
-	${INSTALL} -c -m 711 -o ${CLIENTUID} -g ${CLIENTGID} ${WRKSRC}/proxyper.sh ${BINDIR}
-	${INSTALL} -c -m 644 -o ${CLIENTUID} -g ${CLIENTGID} ${WRKSRC}/proxyper.ini ${BINDIR}
-	${INSTALL} -c -m 644 -o ${CLIENTUID} -g ${CLIENTGID} ${WRKSRC}/ChangeLog.txt ${BINDIR}
-	${INSTALL} -c -m 644 -o ${CLIENTUID} -g ${CLIENTGID} ${WRKSRC}/Readme.txt ${BINDIR}
-	${INSTALL} -c -m 644 -o ${CLIENTUID} -g ${CLIENTGID} ${WRKSRC}/Readme.txt ${BINDIR}
-	${CHOWN} ${CLIENTUID}:${CLIENTGID} ${BINDIR}
+	${INSTALL} -c -m 711 -o ${PROXYUID} -g ${PROXYGID} ${WRKSRC}/proxyper.sh ${BINDIR}
+	${INSTALL} -c -m 644 -o ${PROXYUID} -g ${PROXYGID} ${WRKSRC}/proxyper.ini ${BINDIR}
+	${INSTALL} -c -m 644 -o ${PROXYUID} -g ${PROXYGID} ${WRKSRC}/ChangeLog.txt ${BINDIR}
+	${INSTALL} -c -m 644 -o ${PROXYUID} -g ${PROXYGID} ${WRKSRC}/Readme.txt ${BINDIR}
+	${INSTALL} -c -m 644 -o ${PROXYUID} -g ${PROXYGID} ${WRKSRC}/Readme.txt ${BINDIR}
+	${CHOWN} ${PROXYUID}:${PROXYGID} ${BINDIR}
 	${CHMOD} 755 ${BINDIR}
-	${LN} -s ${BINDIR}proxyper.sh ${LIBDIR}proxyper.sh
+	if [ ! -f ${BINDIR}/proxyper.sh ]; then \
+		${LN} -s ${BINDIR}proxyper.sh ${LIBDIR}proxyper.sh; \
+	fi
 
 .include <bsd.port.post.mk>
