@@ -28,4 +28,4 @@ Example usage:
   In other words, who-has the mac address of 10.10.15.1, tell 10.11.30.5 
   - assuming 00:01:02:03:04:05 is the source mac address of our 'ne0' device.
 
-WWW:  http://www.packetfactory.net/nemesis/
+WWW:  http://www.packetfactory.net/projects/nemesis/
