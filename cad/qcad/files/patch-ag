@@ -1,0 +1,35 @@
+--- dxflib/src/dl_entities.h.org	Wed Dec 10 20:06:25 2003
++++ dxflib/src/dl_entities.h	Wed Dec 10 20:06:50 2003
+@@ -1128,10 +1128,6 @@
+      */
+     bool defined;
+ 
+-#ifndef __GCC2x__
+-    union {
+-        struct {
+-#endif
+             /*! Start point (X). */
+             double x1;
+             /*! Start point (Y). */
+@@ -1140,10 +1136,6 @@
+             double x2;
+             /*! End point (Y). */
+             double y2;
+-#ifndef __GCC2x__
+-        };
+-        struct {
+-#endif
+             /*! Center point of arc (X). */
+             double cx;
+             /*! Center point of arc (Y). */
+@@ -1156,10 +1148,6 @@
+             double angle2;
+             /*! Counterclockwise flag. */
+             bool ccw;
+-#ifndef __GCC2x__
+-        };
+-    };
+-#endif
+ 
+ };
+ 

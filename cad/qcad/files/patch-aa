@@ -6,6 +6,6 @@
 -export MAKE=make
 -#export MAKE=gmake
 +#export MAKE=make
-+export MAKE=gmake
++#export MAKE=gmake
  #export QTDIR=/usr/share/qt3
  #export PATH=$PATH:$QTDIR/bin
