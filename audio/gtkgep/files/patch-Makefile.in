@@ -1,0 +1,11 @@
+--- Makefile.in.dist	Wed Jan 22 18:48:48 2003
++++ Makefile.in	Thu Jan 30 22:11:51 2003
+@@ -338,7 +338,7 @@
+ 
+ top_distdir = .
+ # Avoid unsightly `./'.
+-distdir = $(PACKAGE)-$(VERSION)
++distdir = $(PACKAGE)
+ 
+ GZIP_ENV = --best
+ 

@@ -101,6 +101,7 @@
     SUBDIR += grip
     SUBDIR += gsi
     SUBDIR += gsm
+    SUBDIR += gtkgep
     SUBDIR += holyshout
     SUBDIR += icecast
     SUBDIR += icecast2
