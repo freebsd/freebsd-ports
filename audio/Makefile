@@ -250,7 +250,6 @@
     SUBDIR += tosha
     SUBDIR += tracker
     SUBDIR += umix
-    SUBDIR += uzoo-console
     SUBDIR += vorbis-tools
     SUBDIR += waveplay
     SUBDIR += wavplay
