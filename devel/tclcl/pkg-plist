@@ -1,6 +1,5 @@
 bin/otcldoc
 bin/tcl2c++
-include/Tcl.h
 include/idlecallback.h
 include/iohandler.h
 include/rate-variable.h
