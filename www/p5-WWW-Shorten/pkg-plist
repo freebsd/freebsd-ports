@@ -1,10 +1,12 @@
 %%SITE_PERL%%/WWW/Shorten.pm
+%%SITE_PERL%%/WWW/Shorten/_dead.pm
 %%SITE_PERL%%/WWW/Shorten/BabyURL.pm
 %%SITE_PERL%%/WWW/Shorten/EkDk.pm
 %%SITE_PERL%%/WWW/Shorten/Linkz.pm
 %%SITE_PERL%%/WWW/Shorten/MakeAShorterLink.pm
 %%SITE_PERL%%/WWW/Shorten/Metamark.pm
 %%SITE_PERL%%/WWW/Shorten/NotLong.pm
+%%SITE_PERL%%/WWW/Shorten/OneShortLink.pm
 %%SITE_PERL%%/WWW/Shorten/Shorl.pm
 %%SITE_PERL%%/WWW/Shorten/ShortLink.pm
 %%SITE_PERL%%/WWW/Shorten/SmLnk.pm
