@@ -1,15 +1,15 @@
---- Makefile.in.orig	Fri Jun 28 09:56:30 2002
-+++ Makefile.in	Fri Jun 28 10:53:22 2002
+--- Makefile.in.orig	Mon Aug 12 15:13:39 2002
++++ Makefile.in	Mon Aug 12 15:31:13 2002
 @@ -186,7 +186,7 @@
  
  # This is set by the configure script to the list of directories which
  # should be built using the target tools.
--TARGET_CONFIGDIRS = libiberty libgloss $(SPECIAL_LIBS) newlib winsup opcodes bsp libstub cygmon libf2c libobjc
-+TARGET_CONFIGDIRS = libgloss $(SPECIAL_LIBS) newlib winsup opcodes bsp libstub cygmon
+-TARGET_CONFIGDIRS = libiberty libgloss $(SPECIAL_LIBS) newlib winsup opcodes libf2c libobjc
++TARGET_CONFIGDIRS = libgloss $(SPECIAL_LIBS) newlib winsup opcodes
  
  # Target libraries are put under this directory:
  # Changed by configure to $(target_alias) if cross.
-@@ -781,81 +781,19 @@
+@@ -755,74 +755,19 @@
  
  # This is a list of the targets for all of the modules which are compiled
  # using $(TARGET_FLAGS_TO_PASS).
@@ -24,14 +24,11 @@
 -	all-target-libiberty \
 -	all-target-gperf \
 -	all-target-examples \
--	all-target-libstub \
 -	all-target-libffi \
 -	all-target-libjava \
 -	all-target-zlib \
 -	all-target-boehm-gc \
--	all-target-qthreads \
--	all-target-bsp \
--	all-target-cygmon
+-	all-target-qthreads
 +ALL_TARGET_MODULES =
  
  # This is a list of the configure targets for all of the modules which
@@ -47,14 +44,11 @@
 -	configure-target-libiberty \
 -	configure-target-gperf \
 -	configure-target-examples \
--	configure-target-libstub \
 -	configure-target-libffi \
 -	configure-target-libjava \
 -	configure-target-zlib \
 -	configure-target-boehm-gc \
--	configure-target-qthreads \
--	configure-target-bsp \
--	configure-target-cygmon
+-	configure-target-qthreads
 +CONFIGURE_TARGET_MODULES =
  
  # This is a list of the check targets for all of the modules which are
@@ -85,7 +79,6 @@
 -	install-target-winsup \
 -	install-target-libgloss \
 -	install-target-libiberty \
--	install-target-bsp \
 -	install-target-libjava \
 -	install-target-zlib \
 -	install-target-boehm-gc \
