@@ -18,4 +18,7 @@ MTREE_FILE=	${FILESDIR}/mpd.mtree
 MAN8=		mpd.8
 MANCOMPRESSED=	maybe
 
+USE_OPENSSL=	yes
+MAKE_ENV=	COPTS=-I${OPENSSLINC} LDADD=-L${OPENSSLLIB}
+
 .include <bsd.port.mk>
