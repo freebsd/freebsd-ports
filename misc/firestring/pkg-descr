@@ -1,6 +1,4 @@
-From libfirestring(3):
-
-"libfirestring is a string handling library that provides
+libfirestring is a string handling library that provides
 maximum length aware string handling functions to programs.
 Several functions provide saner interfaces than the standard
 libc functions.  libfirestring also provides functions that
@@ -14,10 +12,9 @@ with the firestring functions, are overflow safe, because
 they include allocated memory size information with them.
 
 libfirestring also includes functions for dealing with
-reading configuration files in an easy to program fashion."
+reading configuration files in an easy to program fashion.
 
-WWW: http://firestuff.org/
+WWW:	http://firestuff.org/
 
 - Dean
-
 dean@odyssey.apana.org.au
