@@ -7,12 +7,14 @@
 
 PORTNAME=	Net_Dict
 PORTVERSION=	1.0.3
+PORTREVISION=	1
 CATEGORIES=	net www pear
 
 MAINTAINER=	antonio@php.net
 COMMENT=	PEAR interface to the DICT protocol
 
-BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear-PEAR
+BUILD_DEPENDS=	${PEARDIR}/Net/Socket.php:${PORTSDIR}/net/pear-Net_Socket \
+		${PEARDIR}/Cache/Cache.php:${PORTSDIR}/sysutils/pear-Cache
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 CATEGORY=	Net
