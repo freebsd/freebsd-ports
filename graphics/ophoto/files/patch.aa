@@ -1,0 +1,12 @@
+diff -ur ophoto/command.c ophoto.new/command.c
+--- ophoto/command.c	Sun Dec 19 02:35:16 1999
++++ ophoto.new/command.c	Sun Feb 24 11:09:37 2002
+@@ -61,7 +61,7 @@
+ char *monthname[16] = {
+ 	"???",
+ 	"Jan", "Feb", "Mar", "Apr", "May", "Jun",
+-	"Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
++	"Jul", "Aug", "Sep", "Oct", "Nov", "Dec",
+ 	"???", "???", "???"
+ };
+ 
