@@ -18,6 +18,7 @@ PATCHFILES=	wget_${PORTVERSION}-9.diff.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	sf@FreeBSD.org
+COMMENT=	Retrieve files from the Net via HTTP and FTP
 
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 

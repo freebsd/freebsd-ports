@@ -5,6 +5,8 @@
 # $FreeBSD$
 #
 
+# ftp/wget has now IPv6 capability. This port will be retired in near future.
+
 PORTNAME=	wget
 PORTVERSION=	1.7
 PORTREVISION=	3
@@ -23,6 +25,7 @@ PATCHFILES=	wget-17-v6-20010716a.diff.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	sf@FreeBSD.org
+COMMENT=	Retrieve files from the Net via HTTP and FTP with IPv6 capability
 
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 
