@@ -1,9 +1,9 @@
 # New ports collection makefile for:    rubytk
-# Version required:     1.2.5
+# Version required:     1.4.0
 # Date created:         15 March 1999
 # Whom:                 Yasuhiro Fukuma <yasuf@big.or.jp>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/04/27 12:39:46 taoka Exp $
 #
 
 DISTNAME=	ruby-${VERSION}
@@ -25,14 +25,19 @@ LIB_DEPENDS=	${TCL_LIB}.1:${PORTSDIR}/${TCL_CATEGORY}/tcl${TCL_VERSION} \
 
 USE_XLIB=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/ext
-CONFIGURE_ENV+=	TCL_LIB="${TCL_LIB}" TK_LIB="${TK_LIB}" \
-		PREFIX="${PREFIX}" X11BASE="${X11BASE}"
-PLIST_SUB+=	RUBY_ARCH="${RUBY_ARCH}"
+CONFIGURE_ARGS+= --with-tcllib="${TCL_LIB}" --with-tklib="${TK_LIB}" \
+		--with-tcl-lib="${PREFIX}/lib/${TCL_DIR}" \
+		--with-tk-lib="${PREFIX}/lib/${TK_DIR}" \
+		--with-tcl-include="${PREFIX}/include/${TCL_DIR}" \
+		--with-tk-include="${PREFIX}/include/${TK_DIR}" \
+		--with-X11-dir="${X11BASE}"
+PLIST_SUB+=	RUBY_VER="${RUBY_VER}" RUBY_ARCH="${RUBY_ARCH}"
 
+VERSION=	1.4.0
+BRANCH_NAME=	.
+
+RUBY_VER=	1.4
 RUBY_ARCH=	${ARCH}-freebsd${OSREL}
-
-VERSION=	1.2.5
-BRANCH_NAME=	1.2
 
 # Set these vars as the version numbers (without decimal points) of Tcl/Tk
 # you want to use with Ruby/Tk.
@@ -51,6 +56,8 @@ TCL_JP=		# empty
 
 TCL_LIB=	tcl${TCL_VERSION}${TCL_JP}
 TK_LIB=		tk${TK_VERSION}${TCL_JP}
+TCL_DIR=	`echo "${TCL_LIB}" | ${SED} 's/\([0-9]\)\([0-9]\)/\1.\2/'`
+TK_DIR=		`echo "${TK_LIB}"  | ${SED} 's/\([0-9]\)\([0-9]\)/\1.\2/'`
 
 RUBY=		${PREFIX}/bin/ruby
 EXTS=		tcltklib tk
@@ -58,7 +65,7 @@ EXTS=		tcltklib tk
 do-configure:
 .for dir in ${EXTS}
 	@${ECHO_MSG} "Configuring in ${dir}..."
-	@cd ${WRKSRC}/${dir}; ${SETENV} ${CONFIGURE_ENV} ${RUBY} extconf.rb
+	@cd ${WRKSRC}/${dir}; ${SETENV} ${CONFIGURE_ENV} ${RUBY} extconf.rb ${CONFIGURE_ARGS}
 .endfor
 
 do-build:
@@ -71,6 +78,8 @@ do-install:
 .for dir in ${EXTS}
 	@${ECHO_MSG} "Installing in ${dir}..."
 	@cd ${WRKSRC}/${dir}; ${SETENV} ${MAKE_ENV} ${MAKE} ${INSTALL_TARGET}
+	${MKDIR} ${PREFIX}/share/examples/ruby/${dir}
+	${INSTALL_DATA} ${WRKSRC}/${dir}/sample/* ${PREFIX}/share/examples/ruby/${dir}
 .endfor
 
 .include <bsd.port.mk>
