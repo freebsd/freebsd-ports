@@ -60,6 +60,7 @@ bin/highlight
 %%DATADIR%%/langDefs/py.lang
 %%DATADIR%%/langDefs/rb.lang
 %%DATADIR%%/langDefs/rexx.lang
+%%DATADIR%%/langDefs/rnc.lang
 %%DATADIR%%/langDefs/sc.lang
 %%DATADIR%%/langDefs/sh.lang
 %%DATADIR%%/langDefs/sma.lang
@@ -72,6 +73,7 @@ bin/highlight
 %%DATADIR%%/langDefs/vb.lang
 %%DATADIR%%/langDefs/vhd.lang
 %%DATADIR%%/langDefs/xml.lang
+%%DATADIR%%/langDefs/xpp.lang
 %%DATADIR%%/themes/aqua.style
 %%DATADIR%%/themes/berries-dark.style
 %%DATADIR%%/themes/berries-light.style
@@ -105,8 +107,7 @@ bin/highlight
 %%DATADIR%%/themes/matlab.style
 %%DATADIR%%/themes/navy.style
 %%DATADIR%%/themes/neon.style
-%%DATADIR%%/themes/neon2.style
-%%DATADIR%%/themes/night.style
+%%DATADIR%%/themes/neon2.style %%DATADIR%%/themes/night.style
 %%DATADIR%%/themes/nightvision.style
 %%DATADIR%%/themes/peachy.style
 %%DATADIR%%/themes/print.style
