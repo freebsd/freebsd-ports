@@ -10,8 +10,7 @@ PORTNAME=	openssl
 PORTVERSION=	0.9.7
 PORTREVISION!=	date -v-1d +%Y%m%d
 .else
-PORTVERSION=	0.9.7d
-PORTREVISION=	1
+PORTVERSION=	0.9.7e
 .endif
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.openssl.org/%SUBDIR%/ \
@@ -50,6 +49,7 @@ OPENSSL_SHLIBVER?=	3
 
 MAKE_ENV+=		MANPREFIX=${MANPREFIX}
 NOPRECIOUSMAKEVARS=	Too many _MLINKS for fetch
+USE_REINPLACE=		yes
 USE_PERL5_BUILD=	yes
 CFLAGS+=		-Wl,-rpath,${LOCALBASE}/lib
 
@@ -854,11 +854,12 @@ MAKE_ARGS+=	WHOLE_ARCHIVE_FLAG=-Bforcearchive
 MAKE_ARGS+=	WHOLE_ARCHIVE_FLAG=--whole-archive
 .endif
 
+EXTRACONFIGURE+=	no-fips
 .if defined(NOSHARED)
 PLIST_SUB+=	SHARED="@comment "
 .else
 PLIST_SUB+=	SHARED=""
-ALL_TARGET=	freebsd-shared all
+EXTRACONFIGURE+=	shared
 MAKE_ENV+=	SHLIBVER=${OPENSSL_SHLIBVER}
 PLIST_SUB+=	SHLIBVER=${OPENSSL_SHLIBVER}
 INSTALLS_SHLIB=	yes
@@ -889,8 +890,8 @@ PLIST_SUB+=	NOBASE=""
 .endif
 
 .if defined(BATCH) || defined(OPENSSL_WITH_386)
-.if ${MACHINE_ARCH} == "i386"
-EXTRACONFIGURE=	386
+.if ${ARCH} == "i386"
+EXTRACONFIGURE+=	386
 .endif
 .endif
 
@@ -900,6 +901,13 @@ do-configure:
 	PTHREAD_CFLAGS=${PTHREAD_CFLAGS} PTHREAD_LIBS=${PTHREAD_LIBS} \
 	./config --prefix=${PREFIX} --openssldir=${OPENSSLDIR} \
 	-L${PREFIX}/lib ${EXTRACONFIGURE}
+	@${REINPLACE_CMD} \
+		-e 's|^FIPS_DES_ENC=|#FIPS_DES_ENC=|' \
+		-e 's|^FIPS_SHA1_ASM_OBJ=|#FIPS_SHA1_ASM_OBJ=|' \
+		-e 's|^SHLIB_EXT=.*$$|SHLIB_EXT=.so.$(SHLIBVER)|' \
+		-e 's|^SHARED_LIBS_LINK_EXTS=.*$$|SHARED_LIBS_LINK_EXTS=.so|' \
+		-e 's|^SHLIBDIRS= fips|SHLIBDIRS=|' \
+		${WRKSRC}/Makefile
 
 post-install:
 .if !defined(NOSHARED)

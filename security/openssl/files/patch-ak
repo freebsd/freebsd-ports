@@ -1,6 +1,6 @@
---- apps/Makefile.ssl.orig	Tue Dec 24 11:50:16 2002
-+++ apps/Makefile.ssl	Thu Jan  2 17:58:03 2003
-@@ -111,7 +111,7 @@
+--- apps/Makefile.orig	Tue Aug 10 11:09:07 2004
++++ apps/Makefile	Tue Oct 26 07:00:51 2004
+@@ -112,7 +112,7 @@
  	 done
  	@cp openssl.cnf $(INSTALL_PREFIX)$(OPENSSLDIR)/openssl.cnf.new; \
  	chmod 644 $(INSTALL_PREFIX)$(OPENSSLDIR)/openssl.cnf.new; \

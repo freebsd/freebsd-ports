@@ -1,5 +1,6 @@
 bin/c_rehash
 bin/openssl
+bin/openssl_fips_fingerprint
 include/openssl/aes.h
 include/openssl/asn1.h
 include/openssl/asn1_mac.h
@@ -24,6 +25,8 @@ include/openssl/ec.h
 include/openssl/engine.h
 include/openssl/err.h
 include/openssl/evp.h
+include/openssl/fips.h
+include/openssl/fips_rand.h
 include/openssl/hmac.h
 include/openssl/idea.h
 include/openssl/krb5_asn.h
@@ -84,7 +87,6 @@ libdata/pkgconfig/openssl.pc
 @dirrm include/openssl
 @dirrm libdata/pkgconfig
 %%NOBASE%%@dirrm openssl/certs
-%%NOBASE%%@dirrm openssl/lib
 %%MANDIR%%@dirrm openssl/man/man1
 %%MANDIR%%@dirrm openssl/man/man3
 %%MANDIR%%@dirrm openssl/man/man5
