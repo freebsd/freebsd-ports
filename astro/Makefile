@@ -5,6 +5,7 @@
     SUBDIR += ephem
     SUBDIR += glunarclock
     SUBDIR += jday
+    SUBDIR += ksetiwatch
     SUBDIR += luna
     SUBDIR += openuniverse
     SUBDIR += p5-Astro-MoonPhase

@@ -1,0 +1,10 @@
+Ksetiwatch is a monitoring tool for the Seti@home distributed computing project,
+which searches for signals of extraterrestrial life. 
+It displays the state of the Seti@home client(s) running on your computer or in
+your local network, and logs/manages completed work units. In addition, 
+Ksetiwatch features a skymap that displays all work units processed, 
+a graphical display of scientific data (gaussians, pulses, and triplets), 
+a dock icon with detailed status information about a client, the option to 
+start/stop the SETI@home clients, and much more.
+
+WWW: http://ksetiwatch.sourceforge.net
