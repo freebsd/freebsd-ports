@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	meld
-PORTVERSION=	0.8.5
+PORTVERSION=	0.9.1
 CATEGORIES=	textproc devel python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	meld
@@ -21,32 +21,21 @@ USE_PYTHON=	yes
 USE_X_PREFIX=	yes
 NO_BUILD=	yes
 USE_REINPLACE=	yes
+USE_GMAKE=	yes
+
+MAKEFILE=	GNUmakefile
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|os.path.dirname(sys.argv\[0\])|"${INSTALLDIR}"|' ${WRKSRC}/misc.py
-	@${REINPLACE_CMD} -e 's|/"+os.path.abspath(misc.appdir("manual/index.html") )|${DOCSDIR}/index.html"|' ${WRKSRC}/meldapp.py
-	@${REINPLACE_CMD} -e 's|^Path=.*$$|Icon=${INSTALLDIR}/glade2/pixmaps/icon.png|' ${WRKSRC}/meld.desktop
-
-INSTALLDIR=	${PREFIX}/share/meld
-do-install:
-	${MKDIR} ${INSTALLDIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/meld ${INSTALLDIR}
-	${LN} -sf ${INSTALLDIR}/meld ${PREFIX}/bin/meld
-	${INSTALL_DATA} ${WRKSRC}/meld.desktop ${PREFIX}/share/gnome/applications
-	${INSTALL_DATA} ${WRKSRC}/*.py ${INSTALLDIR}
-	${MKDIR} ${INSTALLDIR}/glade2
-	${INSTALL_DATA} ${WRKSRC}/glade2/*.glade ${INSTALLDIR}/glade2
-	${MKDIR} ${INSTALLDIR}/glade2/pixmaps
-	${INSTALL_DATA} ${WRKSRC}/glade2/pixmaps/*.png ${INSTALLDIR}/glade2/pixmaps
-	${INSTALL_DATA} ${WRKSRC}/glade2/pixmaps/*.xpm ${INSTALLDIR}/glade2/pixmaps
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/manual/*.html ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/manual/*.css ${DOCSDIR}
-.endif
+	@${REINPLACE_CMD} -E 's,(prefix := )(.*),\1${PREFIX},g ; \
+		s,(libdir := )(.*),\1${PREFIX}/share,g ; \
+		s,( glade2/pixmaps/\*\.){xpm\,png},\1xpm\1png,g' ${WRKSRC}/GNUmakefile
+	@${REINPLACE_CMD} -E 's,(.+)(install )-D (-m 644 \$$\^ \$$@),\1mkdir -m 755 -p $$(shell dirname $$@) \&\& \2\3,g' ${WRKSRC}/po/GNUmakefile
+	@${REINPLACE_CMD} -e 's,^Path=.*$$,Icon=${DATADIR}/glade2/pixmaps/icon.png,' ${WRKSRC}/meld.desktop
 
 post-install:
-	@cd ${INSTALLDIR} && \
+	${INSTALL_DATA} ${WRKSRC}/meld.desktop ${PREFIX}/share/gnome/applications
+	${INSTALL_DATA} ${WRKSRC}/manual/stylesheet.css ${DOCSDIR}
+	@cd ${DATADIR} && \
 		${PYTHON_CMD} -c "import compileall; compileall.compile_dir('.', 0)"
 
 .include <bsd.port.mk>
