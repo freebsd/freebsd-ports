@@ -1,0 +1,49 @@
+include/mysqlcppapi/Allocator_Connection.h
+include/mysqlcppapi/ColData.h
+include/mysqlcppapi/Connection.h
+include/mysqlcppapi/const_subscript_container.h
+include/mysqlcppapi/convert.h
+include/mysqlcppapi/datetime/Date.h
+include/mysqlcppapi/datetime/DateTime.h
+include/mysqlcppapi/datetime/Time.h
+include/mysqlcppapi/datetime/date_base.h
+include/mysqlcppapi/datetime/datetime_base.h
+include/mysqlcppapi/datetime/stream2string.h
+include/mysqlcppapi/datetime/time_base.h
+include/mysqlcppapi/exceptions/ex_BadConversion.h
+include/mysqlcppapi/exceptions/ex_BadNullConversion.h
+include/mysqlcppapi/exceptions/ex_BadQuery.h
+include/mysqlcppapi/exceptions/ex_BadQuery_NotEnoughParameters.h
+include/mysqlcppapi/exceptions/ex_Locked.h
+include/mysqlcppapi/exceptions/ex_base.h
+include/mysqlcppapi/fields/FieldInfo.h
+include/mysqlcppapi/fields/FieldType.h
+include/mysqlcppapi/fields/Fields.h
+include/mysqlcppapi/mysqlcppapi.h
+include/mysqlcppapi/mysqlcppapi_internal.h
+include/mysqlcppapi/null.h
+include/mysqlcppapi/query/Query.h
+include/mysqlcppapi/query/sql_query.h
+include/mysqlcppapi/query_results/Allocator_Result.h
+include/mysqlcppapi/query_results/Result_NoData.h
+include/mysqlcppapi/query_results/Result_Store.h
+include/mysqlcppapi/query_results/Result_Use.h
+include/mysqlcppapi/row/Row.h
+include/mysqlcppapi/row/row_template.h
+include/mysqlcppapi/smartpointer/Allocator.h
+include/mysqlcppapi/smartpointer/SharedPtr.h
+include/mysqlcppapi/string_util.h
+include/mysqlcppapi/windows_includes.h
+lib/libmysqlcppapi-1.9.so
+lib/libmysqlcppapi-1.9.so.4
+lib/libmysqlcppapi.a
+lib/libmysqlcppapi.so
+libdata/pkgconfig/mysqlcppapi-2.0.pc
+@dirrm include/mysqlcppapi/smartpointer
+@dirrm include/mysqlcppapi/row
+@dirrm include/mysqlcppapi/query_results
+@dirrm include/mysqlcppapi/query
+@dirrm include/mysqlcppapi/fields
+@dirrm include/mysqlcppapi/exceptions
+@dirrm include/mysqlcppapi/datetime
+@dirrm include/mysqlcppapi

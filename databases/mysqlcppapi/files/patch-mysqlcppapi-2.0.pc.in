@@ -1,0 +1,11 @@
+--- mysqlcppapi-2.0.pc.in.orig	Thu Mar 21 03:06:01 2002
++++ mysqlcppapi-2.0.pc.in	Thu Aug  5 15:37:18 2004
+@@ -7,6 +7,6 @@
+ Description: C++ wrapper for MySQL client library
+ Requires:
+ Version: @VERSION@
+-Libs: -L${libdir} -lmysqlcppapi-1.9  @MYSQL_LIBS@
+-Cflags: -I${includedir}/mysqlcppapi-2.0 -I${libdir}/mysqlcppapi-2.0/include  @MYSQL_CFLAGS@
++Libs: -L${libdir} -lmysqlcppapi  @MYSQL_LIBS@ @LDFLAGS@
++Cflags: @CPPFLAGS@ @MYSQL_CFLAGS@ -I${prefix}/include
+ 
