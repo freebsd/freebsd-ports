@@ -1,0 +1,269 @@
+.\"-
+.\" Copyright (c) 2003 Eivind Eklund
+.\" All rights reserved.
+.\"
+.\" Redistribution and use in source and binary forms, with or without
+.\" modification, are permitted provided that the following conditions
+.\" are met:
+.\" 1. Redistributions of source code must retain the above copyright
+.\"    notice, this list of conditions and the following disclaimer
+.\"    in this position and unchanged.
+.\" 2. Redistributions in binary form must reproduce the above copyright
+.\"    notice, this list of conditions and the following disclaimer in the
+.\"    documentation and/or other materials provided with the distribution.
+.\" 3. The name of the author may not be used to endorse or promote products
+.\"    derived from this software without specific prior written permission.
+.\"
+.\" THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR
+.\" IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+.\" OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+.\" IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT,
+.\" INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
+.\" NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+.\" DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+.\" THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+.\" (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
+.\" THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+.\"
+.\"	$FreeBSD$
+.\"
+.Dd July 5, 2003
+.Dt ETCMERGE 1
+.Sh NAME
+.Nm etcmerge
+.Nd 3-way merge of /etc with updates from /usr/src
+.Sh SYNOPSIS
+.Nm etcmerge
+.Cm init
+.Nm
+.Cm install
+.Sh DESCRIPTION
+.Pp
+WARNING: ETCMERGE HAS NOT UNDERGONE EXTENSIVE PRODUCTION USE, SO USE AT YOUR
+OWN RISK.
+Taking a backup of
+.Pa /etc
+before running it won't hurt.
+.Pp
+.Nm
+is a tool for keeping your
+.Pa /etc
+up to date as you update your system.
+It fills the same niche as
+.Xr mergemaster 8 ,
+with the primary difference being that
+.Nm
+requires much less manual work.
+This is because
+.Nm
+merges two sets of changes instead of two copies of etc:
+The changes you have done locally are merged with the changes done by
+.Fx .
+.Nm
+does this by tracking three instead of two copies of
+.Pa etc
+- the active
+.Pa /etc
+(the one you are running your system on), the new etc distributed from
+.Fx
+(generated from
+.Pa /usr/src
+by
+.Nm
+), and a reference copy of the etc that was originally distributed from
+.Fx
+and which you have changed to get the active
+.Pa /etc .
+.Pp
+The use of all three copies allow
+.Nm
+to find the two sets of changes - changes by you (the difference from
+reference to installed etc) and changes by
+.Fx
+(the difference from reference etc to new etc).
+.Pp
+A three way merge is usually fully automated - no user interaction is needed
+for the merge itself.
+However, sometimes conflicting changes have been made - you have done one
+change, and
+.Fx
+has done a different change to the same part of
+.Pa /etc .
+.Sh "ROUGH DESCRIPTION OF USE"
+.Pp
+First, ensure you have a copy of the /etc distributed by FreeBSD (BEFORE you or
+.Xr sysinstall 8
+started modifying it) stored in
+.Pa /var/db/etc .
+The easiest way to do this is to run
+.Xr mergemaster 8
+one last time, and copy
+.Pa /var/tmp/temproot/etc
+to
+.Pa /var/db/etc .
+.Pp
+When you have
+.Pa /var/db/etc
+initialized, start a merge with
+.Ic "etcmerge init"
+(as root).
+.Nm
+will run for a while, and start printing out information about what operations
+it does, prefixed with ETCMERGE:.
+When it is finished, it will print out a line saying which work directory it
+has worked in (by default, ${HOME}/etc-work/<date>).
+Change to this directory, and check if you have any .conflicts files there.
+If you do, check through them, and resolve the conflicts.
+The conflicts will be recorded in different ways depending on what kind of
+conflicts they are.
+Under the directory
+.Pa etc-merged
+you'll find a replacement for /etc, including both changes done by you and
+FreeBSD.
+Any files that have normal change conflicts (you and FreeBSD have made
+different changes) will have conflict markers ("<<<<<<<<", "=====" and
+">>>>>>>") indicating where the conflict is.
+See
+.Xr merge 1
+for details.
+The files with this kind of conflict will be listed in
+.Pa 7.conflicts .
+Other forms of conflicts will be listed in other .conflict files; see below
+for details if you get any of these.
+.Pp
+When you are finished with resolving conflicts, type
+.Ic "etcmerge install"
+to make the present
+.Pa etc-merged
+directory replace
+.Pa /etc ,
+and make
+.Pa etc-new
+(newly generated etc, based on the present
+.Pa /usr/src )
+the new reference etc.
+.Sh "INTERNAL DESCRIPTION"
+.Pp
+In order to do its work,
+.Nm
+divides the files it operate in into different classes, and do different
+operations depending on which class the files belong in.
+This division makes a difference for how each file is treated.
+The exact treatment of each class will be printed out by
+.Nm
+when you run it, along with how many files is in each class, and how many
+conflicts occur.
+Each conflict is registered in
+.Pa <class-number>.conflicts -
+e.g.
+.Pa 7.conflicts
+for conflicts in class 7 (3-way merged files).
+.Sh CLASSES
+.Pp
+The following table define what the class numbers refer to.
+The headings "Reference", "New", and "Active" refers to various copies of
+.Pa etc
+- the one generated from
+.Pa /usr/src
+(New), the one stored as a Reference copy (basically the one generated from
+.Pa /usr/src
+the last time you ran
+.Nm
+or the one distributed with the
+.Fx
+you installed), and the one presently Active (ie, the one stored in
+.Pa /etc
+when you run
+.Nm etcmerge ).
+.Bl -column -offset indent ".Sy Class" ".Sy Reference" "Reference" ".Sy Active"
+.It Sy Class Ta Sy Reference Ta Sy New Ta Sy Active
+.It Li 1 Ta Absent Ta Absent Ta Present
+.It Li 2 Ta Absent Ta Present Ta Absent
+.It Li 3 Ta Absent Ta Present Ta Present
+.It Li 4 Ta Present Ta Absent Ta Absent
+.It Li 5 Ta Present Ta Absent Ta Present
+.It Li 6 Ta Present Ta Present Ta Absent
+.It Li 7 Ta Present Ta Present Ta Present
+.El
+.Pp
+Depending on what class each file (and I'm talking flat files here) is in, it
+will be handled differently.
+(See separate description for handling of directories and special files.)
+The following table describes how each class of files are handled when there
+are no conflicts in the file.
+.Bl -column -offset indent ".Sy Class" ".Sy Reference" "Reference" ".Sy Active"
+.It Sy Class Ta Sy "File merge handling"
+.It Li 1 Ta "Copy from Active"
+.It Li 2 Ta "Copy from New"
+.It Li 3 Ta "Copy from New"
+.It Li 4 Ta "Drop file"
+.It Li 5 Ta "Drop file (store in conflict dir if diffs)"
+.It Li 6 Ta "Drop file (store in conflict dir)"
+.It Li 7 Ta "Do a 3-way merge between all variant, and store result in etc-merged"
+.El
+Depending on what class a file is in, conflicts will be detected differently,
+and handled differently.
+The below table detail how conflicts are detected and handled for each class.
+.Bl -column -offset indent ".Sy Class" ".Sy Reference" "Reference" ".Sy Active"
+.It Sy Class Ta Sy "File conflict handling"
+.It Li 1 Ta "Cannot be a conflict"
+.It Li 2 Ta "Cannot be a conflict"
+.It Li 3 Ta "If there are differences between New and Active, store a diff file in merged-changed."
+.It Li 4 Ta "Cannot be a conflict"
+.It Li 5 Ta "If there are differences between New and Active, store a diff file in merged-removed."
+.It Li 6 Ta "Store file in merged-conflicts, with a diff file if there are diffs between Reference and New"
+.It Li 7 Ta "Conflicts are indicated inside the file, using <<<<<<<<<, ======= and >>>>>>>>> as markers.  See merge(1)."
+.El
+Directories and special files are also handled by
+.Nm etcmerge .
+Empty directories and special files are handled by class (see the tables
+below).
+Directories with content is handled alongside files.
+When a file is copied over to the merged etc (the one
+.Nm
+generates), all prefix directories will be copied too, using permissions
+either from the active (if available) or the new
+.Pa etc .
+Ie, if
+.Nm
+decide to copy
+.Pa etc/ssh/ssh_config
+from
+.Pa /etc ,
+then
+.Pa merged-etc/ssh
+will get the same permissions as
+.Pa /etc/ssh .
+.Pp
+This table details how special files (symlinks, device nodes, pipes, etc) and
+empty directories are handled.
+.Nm
+does not look for conflicts for these, but just copies them as appropriate.
+.Bl -column -offset indent ".Sy Class" ".Sy Directory/special.file.handling"
+.It Sy Class Ta Sy "Directory/special file handling"
+.It Li 1 Ta "Copy from Active"
+.It Li 2 Ta "Copy from New"
+.It Li 3 Ta "Copy from Active"
+.It Li 4 Ta "Ignore dir/special file"
+.It Li 5 Ta "Ignore dir/special file"
+.It Li 6 Ta "Ignore dir/special file"
+.It Li 7 Ta "Copy from Active"
+.El
+.Sh "DIRECTORIES USED"
+.Pp
+.Bl -column -offset indent "Directory" "Description"
+.It Li "etc-merged" Ta "Merged etc directory, based on etc-new but customized with on your changes."
+.It Li "etc-new" Ta "New etc directory, as distributed by FreeBSD.  Created based on /usr/src."
+.It Li "classes" Ta "Data about what goes in what class"
+.It Li "merged-removed" Ta "Files that have been removed, along with .diff files if the active file was different from the reference file."
+.It Li "merged-changed" Ta "Files that have been replaced by the update, along with .diff files saying what changes this has resulted in."
+.It Li "merged-conflicts" Ta "Files that are present in new and reference, but
+not in the active etc.  If these are changed, a .diff is also stored here."
+.El
+.Sh REFERENCES
+.Pp
+.Xr mergemaster 8 ,
+.Xr merge 1 .
+.Sh AUTHOR
+.Pp
+Eivind Eklund <eivind@FreeBSD.org>
