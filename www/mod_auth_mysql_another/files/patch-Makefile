@@ -1,20 +1,14 @@
 --- /dev/null	Sat Apr 20 17:11:40 2002
-+++ Makefile	Sat Apr 20 17:12:22 2002
-@@ -0,0 +1,17 @@
-+APXS      = %%APXS%%
-+APXSFLAGS = %%APXSFLAGS%%
-+DSO   = mod_auth_mysql.so
++++ Makefile.orig	Sat Apr 20 17:12:22 2002
+@@ -0,0 +1,11 @@
++APXS  = %%APXS%%
++DSO   = %%DSO%%
 +SRCS  = mod_auth_mysql.c
-+OPTS  = -I%%PREFIX%%/include -L%%PREFIX%%/lib/mysql -lmysqlclient
++OPTS  = -D %%APACHE_VER%% -I%%LOCALBASE%%/include -L%%LOCALBASE%%/lib/mysql -lmysqlclient
 +
-+all: $(DSO)
++all:
++	$(APXS) -c $(OPTS) $(SRCS)
 +
-+$(DSO): $(SRCS)
-+	$(APXS) $(APXSFLAGS) -o $(DSO) $(OPTS) -c $(SRCS) -rpath %%PREFIX%%/lib/mysql
-+
-+install: $(DSO)
-+	$(APXS) $(APXSFLAGS) $(NAME) -i -A $(DSO)
-+
-+clean:
-+	-rm -f *.o $(DSO)
++install:
++	$(APXS) -i -a $(DSO)
 +
