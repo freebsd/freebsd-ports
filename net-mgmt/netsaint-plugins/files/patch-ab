@@ -1,6 +1,103 @@
---- configure.in.orig	Thu Mar  1 22:22:50 2001
-+++ configure.in	Thu Mar  1 22:25:49 2001
-@@ -285,72 +285,72 @@
+--- configure.in.orig	Tue Mar  6 06:40:44 2001
++++ configure.in	Sat Mar 17 21:38:21 2001
+@@ -7,7 +7,7 @@
+ dnl AM_INIT_AUTOMAKE(netsaint-plugins,$VERSION)
+ AM_CONFIG_HEADER(plugins/config.h plugins/common.h plugins/version.h plugins/netutils.h plugins/utils.h plugins/popen.h)
+ 
+-AC_PREFIX_DEFAULT(/usr/local/netsaint)
++dnl AC_PREFIX_DEFAULT(/usr/local/netsaint)
+ 
+ dnl Figure out how to invoke "install" and what install options to use.
+ 
+@@ -126,18 +126,28 @@
+ LIBS="$_SAVEDLIBS"
+ CPPFLAGS="$_SAVEDCPPFLAGS"
+ 
++AC_ARG_ENABLE(radius,--enable-radius compile check_radius)
++if test $enableval; then
++dnl Check for radiusclient header file
++_SAVEDCPPFLAGS="$CPPFLAGS"
++CPPFLAGS="-I${LOCALBASE}/include"
++AC_CHECK_HEADERS(radiusclient.h,RADIUSINCLUDE="-I${LOCALBASE}/include")
++AC_SUBST(RADIUSINCLUDE)
++CPPFLAGS="$_SAVEDCPPFLAGS $RADIUSINCLUDE"
++
+ dnl Check for radius libraries
+ _SAVEDLIBS="$LIBS"
+-AC_CHECK_LIB(radiusclient,rc_read_config)
++AC_CHECK_LIB(radiusclient,rc_read_config,,,-L${LOCALBASE}/lib)
+ if test "$ac_cv_lib_radiusclient_rc_read_config" = "yes"; then
+   EXTRAS="$EXTRAS check_radius"
+-	RADIUSLIBS="-lradiusclient"
++	RADIUSLIBS="-L${LOCALBASE}/lib -lradiusclient"
+   AC_SUBST(RADIUSLIBS)
+ else
+   AC_MSG_WARN([Skipping radius plugin])
+   AC_MSG_WARN([install radius libs to compile this plugin (see Requirements).])
+ fi
+ LIBS="$_SAVEDLIBS"
++fi
+ 
+ dnl Check for LDAP libraries
+ _SAVEDLIBS="$LIBS"
+@@ -157,9 +167,9 @@
+ dnl Check for mysql libraries
+ _SAVEDLIBS="$LIBS"
+ _SAVEDCPPFLAGS="$CPPFLAGS"
+-CPPFLAGS="-I/usr/include"
++CPPFLAGS="-I${LOCALBASE}/include"
+ AC_ARG_WITH(mysqllibdir,--with-mysqllibdir=<dir> sets path to mysql libraries,[MYSQLLIBDIR=$withval])
+-if test -n "$MYSQLLIBS"; then
++if test -n "$MYSQLLIBDIR"; then
+   AC_CHECK_LIB(mysqlclient,mysql_init,MYSQLLIBS="-lmysqlclient -lz" check_mysql_LDFLAGS="-L$MYSQLLIBDIR",,-L$MYSQLLIBDIR -lz)
+ elif test -f /usr/lib/libmysqlclient.so; then
+   AC_CHECK_LIB(mysqlclient,mysql_init,MYSQLLIBS="-lmysqlclient -lz",,-lz)
+@@ -175,7 +185,8 @@
+   AC_CHECK_LIB(mysqlclient,mysql_close,MYSQLLIBS="-lmysqlclient" check_mysql_LDFLAGS="-L/usr/lib/mysql",,-L/usr/lib/mysql)
+ fi
+ if test "$ac_cv_lib_mysqlclient_mysql_init" = "yes" -o "$ac_cv_lib_mysqlclient_mysql_close" = "yes"; then
+-  AC_CHECK_HEADERS(mysql/mysql.h mysql/errmsg.h)
++  AC_CHECK_HEADERS(mysql/mysql.h mysql/errmsg.h,MYSQLINCLUDE="-I${LOCALBASE}/include")
++  AC_SUBST(MYSQLINCLUDE)
+   if test "$ac_cv_header_mysql_mysql_h" = "yes" -a "$ac_cv_header_mysql_errmsg_h" = "yes"; then
+     EXTRAS="$EXTRAS check_mysql"
+     AC_SUBST(MYSQLLIBS)
+@@ -189,7 +200,7 @@
+   AC_MSG_WARN([install mysql client libs to compile this plugin (see Requirements).])
+ fi
+ LIBS="$_SAVEDLIBS"
+-CPPFLAGS="$_SAVEDCPPFLAGS"
++CPPFLAGS="$_SAVEDCPPFLAGS $MYSQLINCLUDE"
+ 
+ dnl Check for OpenSSL location
+ AC_PATH_PROG(OPENSSL,openssl)
+@@ -268,16 +279,16 @@
+ dnl AC_SUBST(libgetopt_a_DEPENDENCIES)
+ dnl AC_SUBST(libsnprintf_a_SOURCES)
+ 
+-AC_MSG_CHECKING(for getopt_long)
+-AC_TRY_COMPILE([#include <getopt.h>
+-#include <stdlib.h>],
+-[int option_index=0;
+-static struct option *long_options;
+-getopt_long(0,NULL,"+h",long_options,&option_index);],
+-[AC_DEFINE(HAVE_GETOPT_H) AC_DEFINE(HAVE_GETOPT_LONG) AC_MSG_RESULT(yes)],
+-[AC_DEFINE(HAVE_GETOPT_H) AC_DEFINE(HAVE_GETOPT_LONG) AC_MSG_RESULT(no) import_sources=getopt])
++dnl AC_MSG_CHECKING(for getopt_long)
++dnl AC_TRY_COMPILE([#include <getopt.h>
++dnl #include <stdlib.h>],
++dnl [int option_index=0;
++dnl static struct option *long_options;
++dnl getopt_long(0,NULL,"+h",long_options,&option_index);],
++dnl [AC_DEFINE(HAVE_GETOPT_H) AC_DEFINE(HAVE_GETOPT_LONG) AC_MSG_RESULT(yes)],
++dnl [AC_DEFINE(HAVE_GETOPT_H) AC_DEFINE(HAVE_GETOPT_LONG) AC_MSG_RESULT(no) import_sources=getopt])
+ 
+-AC_CHECK_FUNCS(getopt_long_only,,LIBS="$LIBS -lgetopt" DEPLIBS="$DEPLIBS libgetopt.a")
++dnl AC_CHECK_FUNCS(getopt_long_only,,LIBS="$LIBS -lgetopt" DEPLIBS="$DEPLIBS libgetopt.a")
+ 
+ AC_CHECK_FUNC(vsnprintf,,LIBS="$LIBS -lsnprintf" DEPLIBS="$DEPLIBS libsnprintf.a")
+ 
+@@ -328,72 +339,72 @@
  	AC_DEFINE_UNQUOTED(RSS_COMMAND,"$PATH_TO_PS -eo 'rss comm'")
  	AC_DEFINE_UNQUOTED(RSS_FORMAT,"%d %s")
          echo "      ps syntax... $PATH_TO_PS -eo 's  comm vsz rss user ppid args'"
@@ -102,7 +199,7 @@
  dnl BSD-like mode in RH 6.1
  elif [ps waxno 'state comm vsz rss uid user ppid args' 2>/dev/null | egrep -i "^S +COMMAND +VSZ +RSS +UID +USER +PPID +[RGSCOMDNA]+" >/dev/null]
  then
-@@ -364,7 +364,7 @@
+@@ -407,7 +418,7 @@
  	AC_DEFINE_UNQUOTED(VSZ_FORMAT,"%d %s")
  	AC_DEFINE_UNQUOTED(RSS_COMMAND,"$PATH_TO_PS waxno 'rss comm'")
  	AC_DEFINE_UNQUOTED(RSS_FORMAT,"%d %s")
@@ -111,3 +208,20 @@
  dnl IRIX 53
  elif [ps -el 2>/dev/null | egrep -i "^ *F +S +UID +PID +PPID +C +PRI +NI +P +SZ +RSS +WCHAN +TTY +TIME +[RGSCOMDNA]+" >/dev/null]
  then
+@@ -618,6 +629,8 @@
+ 	AC_DEFINE_UNQUOTED(WHO_COMMAND,"$PATH_TO_WHO")
+ fi
+ 
++AC_ARG_ENABLE(snmp,--enable-snmp compile check_hpjd and check_snmp)
++if test $enableval; then
+ AC_PATH_PROG(PATH_TO_SNMPGET,snmpget)
+ if test -f "$PATH_TO_SNMPGET"
+ then
+@@ -625,6 +638,7 @@
+ 	EXTRAS="$EXTRAS check_hpjd check_snmp"
+ else
+ 	echo "** Get snmpget from http://ucd-snmp.ucdavis.edu to make check_hpjd and check_snmp plugins"
++fi
+ fi
+ 
+ AC_PATH_PROG(PATH_TO_SNMPGETNEXT,snmpgetnext)

@@ -6,9 +6,10 @@ libexec/netsaint/check_disk_smb
 libexec/netsaint/check_dns
 libexec/netsaint/check_dummy
 libexec/netsaint/check_flexlm
-libexec/netsaint/check_fping
+%%WANT_FPING%%libexec/netsaint/check_fping
 libexec/netsaint/check_ftp
-libexec/netsaint/check_game
+%%WANT_QSTAT%%libexec/netsaint/check_game
+%%WANT_SNMP%%libexec/netsaint/check_hpjd
 libexec/netsaint/check_http
 libexec/netsaint/check_imap
 libexec/netsaint/check_ircd
@@ -16,6 +17,7 @@ libexec/netsaint/check_load
 libexec/netsaint/check_log
 libexec/netsaint/check_mrtg
 libexec/netsaint/check_mrtgtraf
+%%WANT_MYSQL%%libexec/netsaint/check_mysql
 libexec/netsaint/check_netsaint
 libexec/netsaint/check_nntp
 libexec/netsaint/check_ntp
@@ -25,10 +27,12 @@ libexec/netsaint/check_overcr
 libexec/netsaint/check_ping
 libexec/netsaint/check_pop
 libexec/netsaint/check_procs
+%%WANT_RADIUS%%libexec/netsaint/check_radius
 libexec/netsaint/check_real
 libexec/netsaint/check_rpc
 libexec/netsaint/check_sensors
 libexec/netsaint/check_smtp
+%%WANT_SNMP%%libexec/netsaint/check_snmp
 libexec/netsaint/check_ssh
 libexec/netsaint/check_swap
 libexec/netsaint/check_tcp
