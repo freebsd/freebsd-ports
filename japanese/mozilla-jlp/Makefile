@@ -7,6 +7,7 @@
 
 PORTNAME=	mozilla
 PORTVERSION=	M18
+PORTREVISION=	1
 CATEGORIES=	japanese www
 MASTER_SITES=	http://www.mozilla.gr.jp/jlp/ \
 		http://mozilla.inmel.net/
