@@ -6185,6 +6185,7 @@ py-grouch	ports/devel/py-grouch
 py-gsl		ports/math/py-gsl
 py-gtk		ports/x11-toolkits/py-gtk
 py-gtk2		ports/x11-toolkits/py-gtk2
+py-gtkglext	ports/x11-toolkits/py-gtkglext
 py-gtkscintilla	ports/x11-toolkits/py-gtkscintilla
 py-htmlkit	ports/devel/py-htmlkit
 py-iconv	ports/converters/py-iconv
