@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	XFree86
-PORTVERSION= 	3.3.6
+PORTVERSION=	3.3.6
 PORTREVISION=	7
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_XFREE}
@@ -18,7 +18,7 @@ PATCH_SITES=	ftp://ftp.xfree.org/pub/XFree86/3.3.6/fixes/ \
 		ftp://ftp.lip6.fr/pub/X11/XFree86/XFree86-3.3.6/fixes/ \
 		ftp://ftp.cs.tu-berlin.de/pub/X/XFree86/3.3.6/fixes/ \
 		ftp://sunsite.doc.ic.ac.uk/packages/XFree86/3.3.6/fixes/
-PATCHFILES= 	fix-01-r128 fix-04-s3trio3d2x fix-05-s3trio3d fix-06-s3trio3d2x\
+PATCHFILES=	fix-01-r128 fix-04-s3trio3d2x fix-05-s3trio3d fix-06-s3trio3d2x\
 		fix-07-s3trio64v2gx+netfinity fix-08-s3savage_ix+mx   
 
 MAINTAINER=	jmz@FreeBSD.org
