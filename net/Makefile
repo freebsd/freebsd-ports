@@ -1,8 +1,10 @@
-# $Id: Makefile,v 1.54 1995/09/23 08:39:13 joerg Exp $
+# $Id: Makefile,v 1.55 1995/09/23 18:19:34 pst Exp $
 #
 
     SUBDIR += apache
     SUBDIR += archie
+    SUBDIR += cern_httpd
+    SUBDIR += cern_linemode
     SUBDIR += chimera
     SUBDIR += dgd
     BROKEN += dgd-lpmud
