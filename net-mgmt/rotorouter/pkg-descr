@@ -1,0 +1,5 @@
+A program for faking the standard unix udp-based traceroute.
+
+WWW: http://www.ussrback.com/UNIX/loggers/fakeroute.c
+
+- Paul Chvostek <paul+ports@it.ca>

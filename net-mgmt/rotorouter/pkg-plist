@@ -1,0 +1,3 @@
+sbin/rotorouter
+etc/rc.d/rotorouter.sh
+etc/rotorouter.conf-example

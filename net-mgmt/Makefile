@@ -120,6 +120,7 @@
     SUBDIR += rancid
     SUBDIR += rate
     SUBDIR += remarp
+    SUBDIR += rotorouter
     SUBDIR += ruby-snmp
     SUBDIR += satellite
     SUBDIR += scdp
