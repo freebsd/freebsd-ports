@@ -1,4 +1,5 @@
 bin/cfgmaker
+bin/cfgmaker_ip
 bin/indexmaker
 bin/mrtg
 bin/rateup
