@@ -19,6 +19,7 @@ PRE-INSTALL)
   ${PW} usershow -n ${GU_NAME} >/dev/null 2>&1 \
     || ${PW} useradd ${GU_NAME} -g ${GU_NAME} -u ${GU_ID} -s /sbin/nologin
   ${MKDIR} -p ${SPOOLDIR}
+  ${MKDIR} -p ${PREFIX}/share/examples/qs2mrtg
   ;;
 POST-INSTALL)
   # Directories
