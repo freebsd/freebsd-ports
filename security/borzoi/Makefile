@@ -9,7 +9,7 @@
 PORTNAME=	borzoi
 PORTVERSION=	0.9.1
 CATEGORIES=	security
-MASTER_SITES=	http://www1.kcn.ne.jp/~anthony/software/
+MASTER_SITES=	http://dragongate-technologies.com/borzoi/
 DISTNAME=	borZoi-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
