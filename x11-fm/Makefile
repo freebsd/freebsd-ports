@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.3 1998/08/10 00:28:47 steve Exp $
+# $Id: Makefile,v 1.4 1998/12/02 20:08:57 billf Exp $
 #
 
     SUBDIR += asfiles
@@ -6,6 +6,7 @@
     SUBDIR += explorer
     SUBDIR += ezfm
     SUBDIR += filerunner
+    SUBDIR += gnomemc
     SUBDIR += jafm
     SUBDIR += offix-files
     SUBDIR += q3dmenu
