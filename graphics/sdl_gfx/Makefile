@@ -8,7 +8,7 @@
 
 PORTNAME=	sdl_gfx
 PORTVERSION=	2.0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.ferzkopp.net/Software/SDL_gfx-${PORTVERSION:R}/
 DISTNAME=	SDL_gfx-${PORTVERSION}
@@ -20,9 +20,14 @@ LIB_DEPENDS=	SDL-1.1:${PORTSDIR}/devel/sdl12
 
 SDL_CONFIG=	${LOCALBASE}/bin/sdl11-config
 
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}"
 INSTALLS_SHLIB=	yes
+
+post-patch:
+	${REINPLACE_CMD} 's,^libSDL_gfxincludedir.*,&/SDL11,' \
+		${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
