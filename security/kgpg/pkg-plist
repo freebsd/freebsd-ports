@@ -1,0 +1,23 @@
+bin/kgpg
+share/icons/hicolor/16x16/actions/kgpg_key1.png
+share/icons/hicolor/16x16/actions/kgpg_key2.png
+share/icons/hicolor/16x16/apps/kgpg.png
+share/icons/hicolor/16x16/apps/kgpg2.png
+share/icons/hicolor/22x22/actions/kgpg_edit.png
+share/icons/hicolor/22x22/actions/kgpg_export.png
+share/icons/hicolor/22x22/actions/kgpg_gen.png
+share/icons/hicolor/22x22/actions/kgpg_import.png
+share/icons/hicolor/22x22/actions/kgpg_info.png
+share/icons/hicolor/22x22/actions/kgpg_manage.png
+share/icons/hicolor/22x22/actions/kgpg_sign.png
+share/icons/hicolor/22x22/actions/kgpg_photo.png
+share/icons/hicolor/22x22/actions/kgpg_identity.png
+share/icons/hicolor/32x32/apps/kgpg.png
+share/icons/hicolor/48x48/apps/kgpg.png
+share/applnk/Applications/kgpg.desktop
+share/applnk/Applications/keymanager.desktop
+share/apps/kgpg/kgpg.rc
+share/apps/kgpg/listkeys.rc
+share/apps/kgpg/tips
+share/apps/konqueror/servicemenus/encryptfile.desktop
+@dirrm share/apps/kgpg
