@@ -22,6 +22,7 @@ WANT_ESOUND=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
+USE_BISON=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -laudiofile"
 CONFIGURE_ARGS=	--disable-arts
