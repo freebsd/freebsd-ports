@@ -20,7 +20,7 @@ _pgmodule.so: pgmodule.o
 
 pgmodule.o: pgmodule.c
 	${CC} -c -I${PREFIX}/include/${PYTHON_VERSION} \
-	    -I${PREFIX}/include/pgsql -I${PREFIX}/pgsql/include ${.ALLSRC}
+	    -I${PREFIX}/include -I${PREFIX}/pgsql/include ${.ALLSRC}
 
 .py.pyc:
 	${SETENV} PYTHONPATH=${.CURDIR} ${PYTHON} -c 'import ${.IMPSRC:.py=}'
