@@ -1,0 +1,8 @@
+--- md5/Makefile	Wed Feb 12 01:38:38 1997
++++ /home/andy/tmp/wrk/md5/Makefile	Tue Apr 27 18:12:21 1999
+@@ -1,4 +1,4 @@
+-CC = gcc
++CC?= gcc
+ 
+ libmd5.a: md5c.o
+ 	ar rvc $@ md5c.o
