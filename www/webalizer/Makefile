@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.mrunix.net/pub/webalizer/ \
 		ftp://ftp.dinoex.de/pub/FreeBSD/distfiles/
 DISTNAME=	${PORTNAME}-2.01-10-src
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER?=	dinoex@FreeBSD.org
 
 .if !defined(LIB_DEPENDS)
 .if defined(WEBALIZER_WITH_GD2)
