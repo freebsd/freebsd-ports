@@ -32,6 +32,9 @@ EXTRACT_SUFX=		.tgz
 MAINTAINER=		eik@FreeBSD.org
 COMMENT?=		Open source LDAP server implementation
 
+DEPRECATED=		EOL, no longer actively maintained by the OpenLDAP Project. Please use OpenLDAP 2.2 instead
+EXPIRATION_DATE=	2005-03-01
+
 LATEST_LINK=		${PKGNAMEPREFIX}openldap21${PKGNAMESUFFIX}
 
 WANT_OPENLDAP_VER?=	21
