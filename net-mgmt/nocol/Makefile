@@ -1,17 +1,16 @@
 # New ports collection makefile for:   NOCOL
-# Version required:     4.2.2beta1
+# Version required:            4.3
 # Date created:                21 Nov 1998
 # Whom:                        bradh
 #
 # $FreeBSD$
 #
 
-DISTNAME=	nocol-4.2.2beta1
-PKGNAME=	nocol-4.2.2b1
+DISTNAME=	nocol-4.3
 CATEGORIES=	net
 MASTER_SITES=	http://www.netplex-tech.com/software/nocol/downloads/
 
-MAINTAINER=	bradh@iafrica.com
+MAINTAINER=	bradh@uunet.co.za
 
 MANPREFIX=	${PREFIX}/nocol/
 MAN1=		netconsole.1
