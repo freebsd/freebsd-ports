@@ -371,6 +371,8 @@ share/sawfish/%%VERSION%%/lisp/sawfish/wm/util/prompt.jl
 share/sawfish/%%VERSION%%/lisp/sawfish/wm/util/prompt.jlc
 share/sawfish/%%VERSION%%/lisp/sawfish/wm/util/rects.jl
 share/sawfish/%%VERSION%%/lisp/sawfish/wm/util/rects.jlc
+share/sawfish/%%VERSION%%/lisp/sawfish/wm/util/stacking.jl
+share/sawfish/%%VERSION%%/lisp/sawfish/wm/util/stacking.jlc
 share/sawfish/%%VERSION%%/lisp/sawfish/wm/util/window-order.jl
 share/sawfish/%%VERSION%%/lisp/sawfish/wm/util/window-order.jlc
 share/sawfish/%%VERSION%%/lisp/sawfish/wm/util/window-outline.jl
