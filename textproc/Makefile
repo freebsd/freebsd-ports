@@ -160,6 +160,7 @@
     SUBDIR += no-aspell
     SUBDIR += ocaml-pxp
     SUBDIR += ocaml-yaxpo
+    SUBDIR += openfts
     SUBDIR += openjade
     SUBDIR += opensched
     SUBDIR += opensp
