@@ -6,3 +6,4 @@ share/java/AdobeAcrobatViewer/acrobat.jar
 share/java/AdobeAcrobatViewer/help.pdf
 share/java/AdobeAcrobatViewer/lax.jar
 @dirrm share/java/AdobeAcrobatViewer
+@dirrm share/java
