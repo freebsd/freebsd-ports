@@ -1875,6 +1875,8 @@ firebird	ports/databases/firebird
 firebird-devel	ports/databases/firebird-devel
 firedns		ports/dns/firedns
 firefox		ports/www/firefox
+firemime	ports/mail/firemime
+firepay		ports/mail/firepay
 fireprofile	ports/databases/fireprofile
 firestring	ports/misc/firestring
 firetalk	ports/net/firetalk
