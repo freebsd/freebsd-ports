@@ -7,7 +7,7 @@
 
 PORTNAME=	gnustep-gui
 .if defined(GNUSTEP_GUI_DEVEL)
-PORTVERSION=	0.8.0
+PORTVERSION=	0.8.2
 .else
 PORTVERSION=	0.7.6
 .endif
@@ -20,13 +20,15 @@ MAINTAINER=	dinoex@FreeBSD.org
 
 BUILD_DEPENDS=	${COMBOLIBDIR}/libgnustep-base.so:${PORTSDIR}/lang/gnustep-base
 RUN_DEPENDS=	${COMBOLIBDIR}/libgnustep-base.so:${PORTSDIR}/lang/gnustep-base
-LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff
+LIB_DEPENDS+=	tiff.4:${PORTSDIR}/graphics/tiff
 
 BREAKS_IF_PEDANTIC=	yes
 .if defined(GNUSTEP_GUI_DEVEL)
 PLIST_SUB+=	DEVEL=""
+PLIST_SUB+=	NODEVEL="@comment "
 .else
 PLIST_SUB+=	DEVEL="@comment "
+PLIST_SUB+=	NODEVEL=""
 .endif
 
 .include <bsd.port.pre.mk>
@@ -42,6 +44,10 @@ USE_GMAKE=	yes
 MAKEFILE=
 MAKE_FLAGS=	OPTFLAG="${CFLAGS}"
 NO_MTREE=	yes
+CONFIGURE_ARGS+=	--with-tiff-library=${LOCALBASE}/lib
+CONFIGURE_ARGS+=	--with-tiff-include=${LOCALBASE}/include
+CONFIGURE_ARGS+=	--with-jpeg-library=${LOCALBASE}/lib
+CONFIGURE_ARGS+=	--with-jpeg-include=${LOCALBASE}/include
 
 .if ${MACHINE_ARCH} == "i386"
 GNU_ARCH=	ix86

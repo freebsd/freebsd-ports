@@ -6,11 +6,13 @@ System/Headers/AppKit/GMAppKit.h
 System/Headers/AppKit/GMArchiver.h
 %%DEVEL%%System/Headers/AppKit/GSDisplayServer.h
 System/Headers/AppKit/GSFontInfo.h
+%%DEVEL%%System/Headers/AppKit/GSFusedSilica.h
 System/Headers/AppKit/GSHbox.h
 System/Headers/AppKit/GSHelpManagerPanel.h
 System/Headers/AppKit/GSInfoPanel.h
 System/Headers/AppKit/GSMemoryPanel.h
 System/Headers/AppKit/GSMethodTable.h
+%%DEVEL%%System/Headers/AppKit/GSNibTemplates.h
 System/Headers/AppKit/GSPasteboardServer.h
 System/Headers/AppKit/GSServicesManager.h
 System/Headers/AppKit/GSTable.h
@@ -106,6 +108,7 @@ System/Headers/AppKit/NSSecureTextField.h
 System/Headers/AppKit/NSSelection.h
 System/Headers/AppKit/NSSlider.h
 System/Headers/AppKit/NSSliderCell.h
+%%DEVEL%%System/Headers/AppKit/NSSound.h
 System/Headers/AppKit/NSSpellChecker.h
 System/Headers/AppKit/NSSpellProtocol.h
 System/Headers/AppKit/NSSpellServer.h
@@ -134,7 +137,7 @@ System/Headers/AppKit/NSWindow.h
 System/Headers/AppKit/NSWindowController.h
 System/Headers/AppKit/NSWorkspace.h
 System/Headers/AppKit/PSOperators.h
-System/Headers/AppKit/nsimage-tiff.h
+%%NODEVEL%%System/Headers/AppKit/nsimage-tiff.h
 System/Headers/gnustep/AppKit/GMAppKit.h
 System/Headers/gnustep/AppKit/GMArchiver.h
 System/Headers/gnustep/AppKit/IMConnectors.h
