@@ -1,0 +1,13 @@
+--- pptpctrl.c.orig     Sat May  3 18:09:16 2003
++++ pptpctrl.c  Sat May  3 18:09:28 2003
+@@ -26,9 +26,9 @@
+ #include <time.h>
+ #include <sys/time.h>
+ #include <dirent.h>
++#include <sys/socket.h>
+ #include <net/if.h>
+ #include <sys/types.h>
+-#include <sys/socket.h>
+ #include <netinet/in.h>
+ #include <arpa/inet.h>
+ #ifdef HAVE_OPENPTY

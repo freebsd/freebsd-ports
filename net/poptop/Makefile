@@ -6,24 +6,23 @@
 #
 
 PORTNAME=		poptop
-PORTVERSION=		1.1.3
-PORTREVISION=		1
+PORTVERSION=		1.1.4.b3
 CATEGORIES=		net
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	poptop
-DISTNAME=		pptpd-${PORTVERSION}
+DISTNAME=		pptpd-${PORTVERSION:S/.b/-b/}
 
-MAINTAINER=		ports@freebsd.org
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=	Windows 9x compatible PPTP (VPN) server
 
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=		--with-bsdppp
+WRKSRC=			${WRKDIR}/${PORTNAME}-1.1.4
 
 MAN5=			pptpd.conf.5
 MAN8=			pptpd.8 pptpctrl.8
 
 pre-patch:
-	${RM} ${WRKSRC}/config.cache
 	${CP} ${WRKSRC}/our_getopt.h ${WRKSRC}/getopt.h
 
 post-install:

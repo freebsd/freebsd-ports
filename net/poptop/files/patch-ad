@@ -1,12 +1,16 @@
---- pptpd.c.orig	Wed Sep 22 17:01:28 1999
-+++ pptpd.c	Tue Oct  5 19:32:07 1999
-@@ -77,20 +77,19 @@
+--- pptpd.c.orig	Thu Feb 27 04:01:10 2003
++++ pptpd.c	Sat May  3 18:02:26 2003
+@@ -82,24 +82,23 @@
  static void showusage(char *prog)
  {
  	printf("\nPoPToP v%s\n", VERSION);
 -	printf("The PPTP Server for Linux\n");
 +	printf("The PPTP Server for FreeBSD\n");
  	printf("Usage: pptpd [options], where options are:\n\n");
+ #ifdef BCRELAY
+ 	printf(" [-b] [--bcrelay if]       Use broadcast relay for broadcasts comming from.\n");
+ 	printf("                           the specified interface (default is eth1).\n");
+ #endif
  	printf(" [-c] [--conf file]        Specifies the config file to read default\n");
 -	printf("                           settings from (default is /etc/pptpd.conf).\n");
 +	printf("                           settings from (default is " PPTPD_CONFIG_FILE_DEFAULT ").\n");
@@ -24,7 +28,7 @@
  #if !defined(BSDUSER_PPP)
  	printf(" [-s] [--speed baud]       Specifies the baud speed for the PPP daemon\n");
  	printf("                           (default is 115200).\n");
-@@ -100,7 +99,7 @@
+@@ -111,7 +110,7 @@
  	printf("\n\nLogs and debugging go to syslog as DAEMON.");
  
  	printf("\n\nCommand line options will override any default settings and any settings\n");
