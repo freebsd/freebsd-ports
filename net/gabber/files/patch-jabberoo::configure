@@ -1,9 +1,14 @@
-
-$FreeBSD$
-
---- jabberoo/configure	2002/01/14 13:30:11	1.1
-+++ jabberoo/configure	2002/01/14 13:31:00
-@@ -1532,8 +1532,8 @@
+--- jabberoo/configure.orig	Sun May 12 19:35:20 2002
++++ jabberoo/configure	Sun May 12 19:34:18 2002
+@@ -7377,6 +7377,7 @@
+ 
+ # This can be used to rebuild libtool when needed
+ LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
++$ac_aux_dir/ltconfig $LIBTOOL_DEPS
+ 
+ # Always use our own libtool.
+ LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+@@ -7598,8 +7599,8 @@
          CFLAGS="$CFLAGS -g"
  	CXXFLAGS="$CXXFLAGS -g"
  else
@@ -11,6 +16,6 @@ $FreeBSD$
 -	CXXFLAGS="$CXXFLAGS -O2"
 +	CFLAGS="$CFLAGS"
 +	CXXFLAGS="$CXXFLAGS"
-         echo "$ac_t""no" 1>&6
+         echo "$as_me:$LINENO: result: no" >&5
+ echo "${ECHO_T}no" >&6
  fi
- 
