@@ -1,6 +1,4 @@
 bin/knowit
-bin/%%BINNAME%%
-bin/knowit
 share/applnk/Applications/knowit.desktop
 share/apps/knowit/tips
 share/doc/HTML/en/knowit/common
@@ -17,13 +15,13 @@ share/locale/pl/LC_MESSAGES/knowit.mo
 share/locale/ru/LC_MESSAGES/knowit.mo
 share/locale/sk/LC_MESSAGES/knowit.mo
 share/locale/zh_CN/LC_MESSAGES/knowit.mo
-@dirrm share/icons/hicolor/32x32/apps
-@dirrm share/icons/hicolor/32x32
-@dirrm share/icons/hicolor/16x16/apps
-@dirrm share/icons/hicolor/16x16
-@dirrm share/icons/hicolor
+@unexec rmdir %D/share/icons/hicolor/32x32/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/32x32 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/16x16/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/16x16 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor 2>/dev/null || true
 @dirrm share/doc/HTML/en/knowit
-@dirrm share/doc/HTML/en
-@dirrm share/doc/HTML
+@unexec rmdir %D/share/doc/HTML/en 2>/dev/null || true
+@unexec rmdir %D/share/doc/HTML 2>/dev/null || true
 @dirrm share/apps/knowit
-@dirrm share/applnk/Applications
+@unexec rmdir %D/share/applnk/Applications 2>/dev/null || true
