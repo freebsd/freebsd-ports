@@ -1,5 +1,8 @@
 CGI::Cache is a perl extension to help cache output of time-intensive
-CGI scripts so that subsequent visists to such scripts will not cost
+CGI scripts so that subsequent visits to such scripts will not cost
 as much time.
 
---will
+WWW: http://search.cpan.org/search?dist=CGI-Cache
+
+- Pete
+petef@databits.net
