@@ -1,0 +1,22 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/XML/SAX/Machines/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/XML/Filter/Distributor.pm
+lib/perl5/site_perl/%%PERL_VER%%/XML/Filter/DocSplitter.pm
+lib/perl5/site_perl/%%PERL_VER%%/XML/Filter/Merger.pm
+lib/perl5/site_perl/%%PERL_VER%%/XML/Filter/Tee.pm
+lib/perl5/site_perl/%%PERL_VER%%/XML/SAX/ByRecord.pm
+lib/perl5/site_perl/%%PERL_VER%%/XML/SAX/EventMethodMaker.pm
+lib/perl5/site_perl/%%PERL_VER%%/XML/SAX/Machine.pm
+lib/perl5/site_perl/%%PERL_VER%%/XML/SAX/Machines.pm
+lib/perl5/site_perl/%%PERL_VER%%/XML/SAX/Machines/ConfigDefaults.pm
+lib/perl5/site_perl/%%PERL_VER%%/XML/SAX/Machines/ConfigHelper.pm
+lib/perl5/site_perl/%%PERL_VER%%/XML/SAX/Machines/SiteConfig.pm
+lib/perl5/site_perl/%%PERL_VER%%/XML/SAX/Manifold.pm
+lib/perl5/site_perl/%%PERL_VER%%/XML/SAX/Pipeline.pm
+lib/perl5/site_perl/%%PERL_VER%%/XML/SAX/Tap.pm
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/XML/SAX/Machines
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/XML/Filter 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/XML/SAX 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/XML 2>/dev/null || true
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/XML/SAX/Machines
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/XML/SAX 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/XML 2>/dev/null || true
