@@ -1,0 +1,29 @@
+# New ports collection makefile for:	libsmi
+# Version required:		0.1.8
+# Date created:			Tue Jan 27 2000
+# Whom:				Marcin Cieslak <saper@system.pl>
+#
+# $FreeBSD$
+#
+
+DISTNAME=	libsmi-0.1.8
+CATEGORIES=	net
+MASTER_SITES=	ftp://ftp.ibr.cs.tu-bs.de/pub/local/libsmi/
+
+MAINTAINER=	saper@system.pl
+
+#LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
+
+#USE_X_PREFIX=	yes
+
+GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
+MIBDIR=		${PREFIX}/share/smi/mibs
+CONFIGURE_ARGS+=--with-data-dir=${PREFIX}/share/smi \
+		--with-mibdir=${MIBDIR} \
+		--with-smipath=${MIBDIR}/ietf:${MIBDIR}/iana:${MIBDIR}/irtf:${MIBDIR}/site
+
+MAN1=	smiquery.1 smilint.1 smidump.1 smistrip.1
+MAN3=	libsmi.3 smi_config.3 smi_module.3 smi_macro.3 smi_node.3 smi_type.3
+
+.include <bsd.port.mk>
