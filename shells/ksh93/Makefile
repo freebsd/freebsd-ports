@@ -18,6 +18,7 @@ MAINTAINER=		naddy@mips.rhein-neckar.de
 
 ONLY_FOR_ARCHS=		i386
 RESTRICTED=		"Requires user to register with AT&T."
+BROKEN=			"Binary distribution no longer available"
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
