@@ -1494,6 +1494,7 @@ eruby		ports/textproc/eruby
 erun		ports/x11/erun
 erwn		ports/www/erwn
 es		ports/shells/es
+es-aspell	ports/textproc/es-aspell
 es-ooodict-ES	ports/editors/ooodict-es_ES
 es-openoffice	ports/editors/openoffice-es
 esh		ports/shells/esh
