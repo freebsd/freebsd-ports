@@ -22,6 +22,12 @@ USE_AUTOMAKE_VER=	14
 AUTOMAKE_ARGS=	--add-missing
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+BROKEN=		"Does not compile on amd64"
+.endif
+
 # get rid of symlinks
 pre-patch:
 	(cd ${WRKSRC}; ${RM} INSTALL install-sh mkinstalldirs missing COPYING)
@@ -32,4 +38,4 @@ post-build:
 do-install:
 	${INSTALL_PROGRAM} ${WRKDIR}/winhelpcgi/winhelpcgi/winhelpcgi.cgi ${PREFIX}/bin
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
