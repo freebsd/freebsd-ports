@@ -11,6 +11,7 @@ MASTER_SITES=	http://www.ecs.soton.ac.uk/~njl98r/code/ladspa/
 DISTNAME=	xmms_ladspa-${PORTVERSION}
 
 MAINTAINER=	arved@FreeBSD.org
+COMMENT=	"XMMS Plugin that provides LADSPA Plugins to XMMS"
 
 BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
 LIB_DEPENDS=	xmms.3:${PORTSDIR}/multimedia/xmms

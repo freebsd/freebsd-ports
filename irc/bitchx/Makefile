@@ -22,6 +22,7 @@ EXTRACT_ONLY=	ircii-pana-${PORTVERSION}${EXTRACT_SUFX}
 .endif
 
 MAINTAINER?=	arved@FreeBSD.org
+COMMENT?=	"An alternative ircII color client with optional GTK/GNOME support"
 
 .if defined(WITH_XMMS)
 LIB_DEPENDS+=	xmms.3:${PORTSDIR}/multimedia/xmms

@@ -11,6 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://plugin.org.uk/releases/alienwah/
 
 MAINTAINER=	arved@FreeBSD.org
+COMMENT=	"Paul Nasca's AlienWah LADSPA Plugin"
 
 BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
 

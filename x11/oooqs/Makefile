@@ -11,6 +11,7 @@ MASTER_SITES=	http://download.berlios.de/segfaultskde/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.R./_rc/}
 
 MAINTAINER=	arved@FreeBSD.org
+COMMENT=	"Quick launcher for Open Office"
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
