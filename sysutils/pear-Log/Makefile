@@ -40,12 +40,6 @@ LOCALBASE?=	/usr/local
 .include "${LOCALBASE}/etc/php.conf"
 .endif
 
-PHP_VERS=	${PHP_VERSION:S/.//g}
-
-.if defined(PHP_VERS) && ${PHP_VERS} < 430
-BROKEN=		"You need PHP 4.3.0 or later to install PEAR::Log"
-.endif
-
 .if defined(PHP_VER) && ${PHP_VER} == 5
 OPTIONS+=	PHP_SQLITE "PHP sqlite support" off
 .endif
