@@ -1,0 +1,6 @@
+bin/xfprint-manager
+bin/xfprint4
+lib/libxfprint.a
+lib/libxfprint.la
+lib/libxfprint.so
+lib/libxfprint.so.0
