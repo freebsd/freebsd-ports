@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-DISTNAME=	cdrecord-1.8a29
+DISTNAME=	cdrecord-1.8a30
 CATEGORIES=	sysutils audio
 MASTER_SITES=	ftp://ftp.fokus.gmd.de/pub/unix/cdrecord/alpha/ \
 		ftp://ftp.cs.tu-berlin.de/pub/misc/cdrecord/alpha/ \
