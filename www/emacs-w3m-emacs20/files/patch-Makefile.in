@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Sat Mar 24 03:52:13 2001
++++ Makefile.in	Sat Mar 24 03:52:22 2001
+@@ -41,7 +41,7 @@
+ 
+ install: default
+ 	@$(SHELL) ./mkinstalldirs $(lispdir);\
+-	for p in ChangeLog *.el; do\
++	for p in *.el; do\
+ 	  echo " $(INSTALL_DATA) $$p $(lispdir)/$$p";\
+ 	  $(INSTALL_DATA) $$p $(lispdir)/$$p;\
+ 	done;\
