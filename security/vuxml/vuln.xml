@@ -32,6 +32,78 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   "http://www.vuxml.org/dtd/vuxml-1/vuxml-10.dtd">
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
 
+  <vuln vid="cc0fb686-6550-11d8-80e3-0020ed76ef5a">
+    <topic>file disclosure in phpMyAdmin</topic>
+    <affects>
+      <package>
+	<name>phpMyAdmin</name>
+	<range><le>2.5.4</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Lack of proper input validation in phpMyAdmin may allow an
+	  attacker to obtain the contents of any file on the target
+	  system that is readable by the web server.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0129</cvename>
+      <url>http://marc.theaimsgroup.com/?l=bugtraq&amp;m=107582619125932&amp;w=2</url>
+      <url>http://cvs.sourceforge.net/viewcvs.py/phpmyadmin/phpMyAdmin/export.php#rev2.3.2.1</url>
+    </references>
+    <dates>
+      <discovery>2004-02-17</discovery>
+      <entry>2004-02-22</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="27c331d5-64c7-11d8-80e3-0020ed76ef5a">
+    <topic>Vulnerabilities in H.323 implementations</topic>
+    <affects>
+      <package>
+	<name>pwlib</name>
+	<range><lt>1.6.0</lt></range>
+      </package>
+      <package>
+	<name>asterisk</name>
+	<range><le>0.7.2</le></range>
+      </package>
+      <package>
+	<name>openh323</name>
+	<range><le>1.12.0_2</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The <a href="http://www.niscc.gov.uk/">NISCC</a> and the <a
+	    href="http://www.ee.oulu.fi/research/ouspg/">OUSPG</a>
+	  developed a test suite for the H.323 protocol.  This test
+	  suite has uncovered vulnerabilities in several H.323
+	  implementations with impacts ranging from denial-of-service
+	  to arbitrary code execution.</p>
+	<p>In the FreeBSD Ports Collection, `pwlib' is directly
+	  affected.  Other applications such as `asterisk' and
+	  `openh323' incorporate `pwlib' statically and so are also
+	  independently affected.</p>
+      </body>
+    </description>
+    <references>
+      <!-- General references -->
+      <url>http://www.uniras.gov.uk/vuls/2004/006489/h323.htm</url>
+      <url>http://www.ee.oulu.fi/research/ouspg/protos/testing/c07/h2250v4/index.html</url>
+      <certsa>CA-2004-01</certsa>
+      <certvu>749342</certvu>
+      <!-- pwlib and pwlib-using applications -->
+      <cvename>CAN-2004-0097</cvename>
+      <url>http://www.southeren.com/blog/archives/000055.html</url>
+    </references>
+    <dates>
+      <discovery>2004-01-13</discovery>
+      <entry>2004-02-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a20082c3-6255-11d8-80e3-0020ed76ef5a">
     <topic>metamail format string bugs and buffer overflows</topic>
     <affects>
