@@ -1,6 +1,6 @@
 # New ports collection makefile for:   snortreport
 # Date created:        18 Jan 2004
-# Whom:                Andrea Venturoli <a.ventu@FreeBSD.org>
+# Whom:                Andrea Venturoli <a.ventu@flashnet.it>
 #
 # $FreeBSD$
 #
