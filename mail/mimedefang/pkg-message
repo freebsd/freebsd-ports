@@ -9,3 +9,8 @@ To finish installation please follow these steps:
    define(`confINPUT_MAIL_FILTERS', `mimedefang')dnl
 
    rebuild sendmail.cf and install it.
+
+Also, you can install some anti-virus software to check your mail, for example:
+
+	security/p5-File-Scan (Perl5 anti-virus file scanning package)
+	security/vscan (Evaluation version of a DOS/Windows/Linux file virus scanner)

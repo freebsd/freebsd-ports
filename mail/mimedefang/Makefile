@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mimedefang
-PORTVERSION=	2.21
+PORTVERSION=	2.24
 CATEGORIES=	mail
 MASTER_SITES=	http://www.roaringpenguin.com/mimedefang/
 
@@ -21,6 +21,7 @@ BUILD_DEPENDS=	\
 	${PERL_SITELIBDIR}/Mail/SpamAssassin.pm:${PORTSDIR}/mail/p5-Mail-SpamAssassin
 
 USE_PERL5=	yes
+USE_REINPLACE=	yes
 PERL_SITELIBDIR=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc/mimedefang \
@@ -29,13 +30,17 @@ CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc/mimedefang \
 
 MAN5=	mimedefang-filter.5
 MAN7=	mimedefang-protocol.7
-MAN8=	mimedefang.8 mimedefang.pl.8 mimedefang-multiplexor.8
+MAN8=	mimedefang.8 mimedefang.pl.8 mimedefang-multiplexor.8 \
+	md-mx-ctrl.8 watch-mimedefang.8
 
 .if !exists( /usr/include/libmilter/mfapi.h )
 BUILD_DEPENDS+=	${LOCALBASE}/include/libmilter/mfapi.h:${PORTSDIR}/mail/sendmail
 .endif
 
 post-install:
+	@${REINPLACE_CMD} -e 's,# MX_USER=,MX_USER=,g ; \
+			s,# MX_MAX_RSS=,MX_MAX_RSS=,g ; \
+			s,# MX_MAX_AS=,MX_MAX_AS=,g' ${WRKSRC}/examples/init-script
 	@${INSTALL_SCRIPT} ${WRKSRC}/examples/init-script ${PREFIX}/etc/rc.d/mimedefang.sh-dist
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${EXAMPLESDIR}
