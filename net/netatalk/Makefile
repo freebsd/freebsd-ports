@@ -58,6 +58,12 @@ PLIST_SUB+=	NETATALKCNID=""
 CONFIGURE_ARGS+=	--with-did=last
 PLIST_SUB+=	NETATALKCNID="@comment "
 .endif
+.if defined (WITH_TIMELORD)
+CONFIGURE_ARGS+=	--enable-timelord
+PLIST_SUB+=	TIMELORD=""
+.else
+PLIST_SUB+=	TIMELORD="@comment "
+.endif
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=       --target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 USE_GMAKE=	yes
