@@ -9,7 +9,7 @@ PORTNAME=	colortail
 PORTVERSION=	0.3.0
 PORTREVISION=	2
 CATEGORIES=	misc
-MASTER_SITES=	http://www.student.hk-r.se/~pt98jan/
+MASTER_SITES=	# none
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A colour-able replacement for tail(1)
