@@ -4,14 +4,14 @@
 # Date created:				September 30th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-# $Id: Makefile,v 1.20 1998/08/19 13:09:15 vanilla Exp $
+# $Id: Makefile,v 1.21 1998/09/08 16:24:16 ache Exp $
 #
 
 DISTNAME=       libwww-perl-5.36
 PKGNAME=        p5-libwww-5.36
 CATEGORIES=     www perl5 devel
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	URI
+MASTER_SITE_SUBDIR=     LWP
 
 MAINTAINER=	jfitz@FreeBSD.ORG
 
