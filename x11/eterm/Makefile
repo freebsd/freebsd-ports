@@ -3,7 +3,7 @@
 # Date created:        24 November 1997
 # Whom:                Murray Stokely <murray@cdrom.com>
 #
-# $Id: Makefile,v 1.14 1999/02/22 04:09:33 steve Exp $
+# $Id: Makefile,v 1.15 1999/02/22 10:27:41 steve Exp $
 #
 
 DISTNAME=	Eterm-0.8.8
@@ -18,7 +18,7 @@ MASTER_SITES=	ftp://ftp.eterm.org/pub/Eterm/ \
 MAINTAINER=	murray@cdrom.com
 
 BUILD_DEPENDS=	libtool:${PORTSDIR}/devel/libtool
-LIB_DEPENDS=	Imlib.2:${PORTSDIR}/graphics/imlib
+LIB_DEPENDS=	Imlib.3:${PORTSDIR}/graphics/imlib
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes

@@ -3,7 +3,7 @@
 # Date Created:		28 Oct 1998
 # Whom:			Vanilla Pooh Shu <vanilla@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.9 1999/01/24 08:10:30 vanilla Exp $
+# $Id: Makefile,v 1.10 1999/02/02 17:07:22 vanilla Exp $
 #
 
 DISTNAME=	gqmpeg-0.4.6
@@ -14,7 +14,7 @@ EXTRACT_SUFX=	.src.tgz
 MAINTAINER=	nacai@iname.com
 
 RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
-LIB_DEPENDS=	Imlib.2:${PORTSDIR}/graphics/imlib
+LIB_DEPENDS=	Imlib.3:${PORTSDIR}/graphics/imlib
 
 USE_X_PREFIX=	yes
 ALL_TARGET=	gqmpeg

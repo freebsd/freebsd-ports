@@ -5,7 +5,7 @@
  
  
 -libImlib_la_LDFLAGS = -version-info 10:4:9
-+libImlib_la_LDFLAGS = -version-info 2:1:0
++libImlib_la_LDFLAGS = -version-info 3:0:0
  #libImlib_la_LDDADD     = $(SUPPORT_LIBS)
  libImlib_la_LIBADD = $(SUPPORT_LIBS)
  
@@ -16,7 +16,7 @@
  
  
 -libgdk_imlib_la_LDFLAGS = -version-info 10:4:9
-+libgdk_imlib_la_LDFLAGS = -version-info 2:1:0
++libgdk_imlib_la_LDFLAGS = -version-info 3:0:0
  libgdk_imlib_la_LIBADD = $(GMODULE_LIBS)
  
  include_HEADERS = gdk_imlib.h gdk_imlib_private.h gdk_imlib_types.h

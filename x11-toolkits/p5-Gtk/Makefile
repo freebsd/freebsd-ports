@@ -3,7 +3,7 @@
 # Date created:		28 Oct 1997
 # Whom:	      		Vanilla I. Shu <vanilla@MinJe.com.TW>
 #
-# $Id: Makefile,v 1.20 1998/11/17 15:24:47 vanilla Exp $
+# $Id: Makefile,v 1.21 1999/01/17 17:34:22 nectar Exp $
 #
 
 DISTNAME=	Gtk-0.4
@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR=	Gtk
 MAINTAINER=	vanilla@FreeBSD.ORG
 
 LIB_DEPENDS=	gtk11.1:${PORTSDIR}/x11-toolkits/gtk11 \
-		gdk_imlib.2:${PORTSDIR}/graphics/imlib
+		gdk_imlib.3:${PORTSDIR}/graphics/imlib
 
 USE_PERL5=	YES
 

@@ -3,7 +3,7 @@
 # Date created:			10 June 1997
 # Whom:				Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.32 1999/01/14 17:08:21 vanilla Exp $
+# $Id: Makefile,v 1.33 1999/01/22 16:01:45 vanilla Exp $
 #
 
 DISTNAME=	enlightenment-0.15.0-19990120
@@ -17,7 +17,7 @@ MAINTAINER=	vanilla@FreeBSD.ORG
 LIB_DEPENDS=	esd.1:${PORTSDIR}/audio/esound \
 		Fnlib.0:${PORTSDIR}/graphics/fnlib \
 		gif.3:${PORTSDIR}/graphics/giflib \
-		Imlib.2:${PORTSDIR}/graphics/imlib \
+		Imlib.3:${PORTSDIR}/graphics/imlib \
 		tiff.4:${PORTSDIR}/graphics/tiff34 \
 		ttf.3:${PORTSDIR}/print/freetype
 

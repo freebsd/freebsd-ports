@@ -3,7 +3,7 @@
 # Date created:		23 June 1997
 # Whom:			brett@peloton.physics.montana.edu
 #
-# $Id: Makefile,v 1.7 1999/01/17 18:19:15 nectar Exp $
+# $Id: Makefile,v 1.8 1999/01/27 08:31:50 fenner Exp $
 #
 
 DISTNAME=	fnlib-0.4
@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR=	enlightenment
 
 MAINTAINER=	vanilla@FreeBSD.ORG
 
-LIB_DEPENDS=	Imlib.2:${PORTSDIR}/graphics/imlib
+LIB_DEPENDS=	Imlib.3:${PORTSDIR}/graphics/imlib
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
