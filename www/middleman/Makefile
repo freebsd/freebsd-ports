@@ -7,6 +7,7 @@
 
 PORTNAME=	middleman
 PORTVERSION=	1.9
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	middle-man
@@ -51,7 +52,7 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/man/mman.8 ${MANPREFIX}/man/man8
 	${INSTALL_PROGRAM} ${WRKSRC}/mman ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/config.xml \
-		${PREFIX}/etc/mman.xml
+		${PREFIX}/etc/mman.xml.dist
 	${INSTALL_DATA} ${WRKSRC}/scripts/mman.init \
 		${PREFIX}/etc/rc.d/mman.sh.sample
 .if !defined(NOPORTDOCS)
