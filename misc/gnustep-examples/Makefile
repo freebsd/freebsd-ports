@@ -15,45 +15,33 @@ MASTER_SITE_SUBDIR=	core
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	GNUstep example applications
 
-BUILD_DEPENDS=	${BACKBUNDLEDIR}/libgnustep-back:${PORTSDIR}/x11-toolkits/gnustep-back
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libcallback.a:${PORTSDIR}/devel/ffcall
-RUN_DEPENDS=	${BACKBUNDLEDIR}/libgnustep-back:${PORTSDIR}/x11-toolkits/gnustep-back
-
 PREFIX=		${LOCALBASE}/GNUstep
+NO_MTREE=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}
 GUN_CONFIGURE=	yes
 USE_GMAKE=	yes
 MAKEFILE=	GNUmakefile
 ALL_TARGET=
-NO_MTREE=	yes
 
-BACKBUNDLEDIR=	${PREFIX}/System/Library/Bundles/libgnustep-back.bundle/${GNU_ARCH}/${OPSYS:L}/gnu-gnu-gnu
 MAKE_APPS=	Finger GFractal GPuzzle HostAddress
 INSTALL_APPS=	Finger GFractal GPuzzle HostAddress
 
 .include <bsd.port.pre.mk>
 
-.if ${MACHINE_ARCH} == "i386"
-GNU_ARCH=	ix86
-.else
-GNU_ARCH=	${MACHINE_ARCH}
-.endif
+USE_GNUSTEP_BACK=	yes
+USE_GNUSTEP_BUILD=	yes
+USE_GNUSTEP_INSTALL=	yes
+.include "${PORTSDIR}/devel/gnustep/bsd.gnustep.mk"
 
-PLIST_SUB+=	GNU_ARCH=${GNU_ARCH} OPSYS=${OPSYS:L}
-
-do-build:
-	@(cd ${WRKSRC}; . ${PREFIX}/System/Makefiles/GNUstep.sh; \
-		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${ALL_TARGET})
+post-build:
 .for i in ${MAKE_APPS}
-	@(cd ${WRKSRC}/gui/${i}; . ${PREFIX}/System/Makefiles/GNUstep.sh; \
+	@(cd ${WRKSRC}/gui/${i}; . ${SYSMAKEDIR}/GNUstep.sh; \
 		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${ALL_TARGET})
 .endfor
 
-do-install:
-	@(cd ${WRKSRC}; . ${PREFIX}/System/Makefiles/GNUstep.sh; \
-		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${INSTALL_TARGET})
+post-install:
 .for i in ${INSTALL_APPS}
-	@(cd ${WRKSRC}/gui/${i}; . ${PREFIX}/System/Makefiles/GNUstep.sh; \
+	@(cd ${WRKSRC}/gui/${i}; . ${SYSMAKEDIR}/GNUstep.sh; \
 		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${INSTALL_TARGET})
 .endfor
 

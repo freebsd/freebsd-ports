@@ -14,18 +14,14 @@ MASTER_SITES=	ftp://ftp.inf.uos.de/pub/elmar/gtk/objc-gtoolkit/
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Obj-C wrapper for gtk, a x11 graphics library
 
-BUILD_DEPENDS=	${COMBOLIBDIR}/libgnustep-base.so:${PORTSDIR}/lang/gnustep-base
-RUN_DEPENDS=	${COMBOLIBDIR}/libgnustep-base.so:${PORTSDIR}/lang/gnustep-base
-
 PREFIX=		${LOCALBASE}/GNUstep
+NO_MTREE=	yes
 USE_GMAKE=	yes
 USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
-NO_MTREE=	yes
-USE_GCC=	3.2
 
-MAKE_ARGS=	GNUSTEP_SYSTEM_ROOT=${PREFIX}/System
+MAKE_ARGS+=	GNUSTEP_SYSTEM_ROOT=${PREFIX}/System
 CONFIGURE_ARGS+=	--with-gnustep
 INSTALLS_SHLIB=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/GToolKit
@@ -38,40 +34,12 @@ post-patch:
 		> ${CONFIGURE_WRKSRC}/configure
 	${CHMOD} +x ${CONFIGURE_WRKSRC}/configure
 
-do-configure:
-	@(cd ${CONFIGURE_WRKSRC}; . ${PREFIX}/System/Makefiles/GNUstep.sh; \
-	    if ! ${SETENV} CC="${CC}" CXX="${CXX}" \
-		CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}" \
-		INSTALL="/usr/bin/install -c -o ${BINOWN} -g ${BINGRP}" \
-		INSTALL_DATA="${INSTALL} -c" \
-		INSTALL_PROGRAM="${INSTALL} -c" \
-		INSTALL_SCRIPT="${INSTALL_SCRIPT}" \
-		${CONFIGURE_ENV} ./${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS}; then \
-		    ${ECHO} "===>  Script \"${CONFIGURE_SCRIPT}\" failed: here are the contents of \"${CONFIGURE_LOG}\""; \
-		    ${CAT} ${CONFIGURE_LOG}; \
-		    ${ECHO} "(end of \"${CONFIGURE_LOG}\")"; \
-		    ${FALSE}; \
-	    fi)
-
-do-build:
-	@(cd ${WRKSRC}; . ${PREFIX}/System/Makefiles/GNUstep.sh; \
-		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${ALL_TARGET})
-
-do-install:
-	@(cd ${WRKSRC}; . ${PREFIX}/System/Makefiles/GNUstep.sh; \
-		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${INSTALL_TARGET})
-
 .include <bsd.port.pre.mk>
 
-.if ${MACHINE_ARCH} == "i386"
-GNU_ARCH=	ix86
-.else
-GNU_ARCH=	${MACHINE_ARCH}
-.endif
-PLIST_SUB+=	GNU_ARCH=${GNU_ARCH} OPSYS=${OPSYS:L} VERSION=${PORTVERSION}
-
-SYSTEMDIR=	${PREFIX}/System
-SYSLIBDIR=	${SYSTEMDIR}/Libraries/${GNU_ARCH}/${OPSYS:L}
-COMBOLIBDIR=	${SYSLIBDIR}/gnu-gnu-gnu
+USE_GNUSTEP_BASE=	yes
+USE_GNUSTEP_CONFIGURE=	yes
+USE_GNUSTEP_BUILD=	yes
+USE_GNUSTEP_INSTALL=	yes
+.include "${PORTSDIR}/devel/gnustep/bsd.gnustep.mk"
 
 .include <bsd.port.post.mk>

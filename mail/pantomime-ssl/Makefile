@@ -17,36 +17,25 @@ DISTNAME=	Pantomime-${PORTVERSION}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	SSL Connections for pantomime
 
-BUILD_DEPENDS+=	${LOCALLIBDIR}/libPantomime.so:${PORTSDIR}/mail/pantomime
-RUN_DEPENDS+=	${LOCALLIBDIR}/libPantomime.so:${PORTSDIR}/mail/pantomime
+BUILD_DEPENDS+=	${LOCALLIBDIR}/libPantomime.so:${PORTSDIR}/${PANTOMIME_PORT}
+RUN_DEPENDS+=	${LOCALLIBDIR}/libPantomime.so:${PORTSDIR}/${PANTOMIME_PORT}
 
 PREFIX=		${LOCALBASE}/GNUstep
+NO_MTREE=	yes
 WRKSRC=		${WRKDIR}/Pantomime/Bundles/SSL
 USE_GMAKE=	yes
 MAKEFILE=	GNUmakefile
 ALL_TARGET=
-NO_MTREE=	yes
-LOCALLIBDIR=	${PREFIX}/Local/Libraries/${GNU_ARCH}/${OPSYS:L}/gnu-gnu-gnu
-USE_GCC=	3.2
 
 .include <bsd.port.pre.mk>
 
 .include "${PORTSDIR}/security/openssl/bsd.openssl.mk"
 
-.if ${MACHINE_ARCH} == "i386"
-GNU_ARCH=	ix86
-.else
-GNU_ARCH=	${MACHINE_ARCH}
-.endif
+USE_GNUSTEP_BACK=	yes
+USE_GNUSTEP_BUILD=	yes
+USE_GNUSTEP_INSTALL=	yes
+.include "${PORTSDIR}/devel/gnustep/bsd.gnustep.mk"
 
-PLIST_SUB+=	GNU_ARCH=${GNU_ARCH} OPSYS=${OPSYS:L}
-
-do-build:
-	@(cd ${WRKSRC}; . ${PREFIX}/System/Makefiles/GNUstep.sh; \
-		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${ALL_TARGET})
-
-do-install:
-	@(cd ${WRKSRC}; . ${PREFIX}/System/Makefiles/GNUstep.sh; \
-		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${INSTALL_TARGET})
+PANTOMIME_PORT?=	mail/pantomime
 
 .include <bsd.port.post.mk>
