@@ -8,7 +8,7 @@
 #
 
 PORTNAME=	cfg
-PORTVERSION=	0.9.1
+PORTVERSION=	0.9.3
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.ossp.org/pkg/lib/cfg/
 PKGNAMEPREFIX=	ossp-
@@ -18,10 +18,8 @@ COMMENT=	A library for parsing arbitrary C/C++-style configuration files
 
 LIB_DEPENDS=	ex.10:${PORTSDIR}/devel/ossp-ex
 
-USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
+USE_LIBTOOL_VER=	15
 CONFIGURE_ARGS=	--with-ex=${LOCALBASE}
-USE_LIBTOOL_VER=	13
 INSTALLS_SHLIB=	yes
 
 .include <bsd.port.pre.mk>
