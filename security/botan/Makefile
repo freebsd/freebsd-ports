@@ -25,7 +25,7 @@ CONFIGURE_SCRIPT=	configure.pl
 CONFIGURE_ARGS=	gcc-freebsd-generic
 USE_GMAKE=	yes
 MAKE_ARGS=	CXX="${CXX}" LIB_OPT="${CXXFLAGS}" \
-		LANG_FLAGS="-fpermissive -ansi"
+		LANG_FLAGS="-fpermissive"
 INSTALLS_SHLIB=	yes
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
