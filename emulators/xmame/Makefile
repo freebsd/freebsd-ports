@@ -6,7 +6,8 @@
 #
 
 PORTNAME=	xmame
-PORTVERSION=	0.37b5.1
+PORTVERSION=	0.37b7.1
+PORTREVISION=	0
 CATEGORIES=	emulators
 MASTER_SITES=	http://x.mame.net/download/ \
 		ftp://ftp.kaupp.cx/pub/xmame/ \
@@ -22,9 +23,12 @@ MAKEFILE=	makefile.unix
 
 MAN6=		xmame.6
 
-XMAMEDOCS=	changes.mame changes.unix credits.unix leeme.unix \
-		liesmich.unix maillist.txt multiplayer-readme.txt \
-		readme.fx readme.mame readme.unix readme.xgl todo
+XMAMEDOCS=	changes.mame changes.unix gamelist.mame \
+		imgtool.txt liesmich.unix multiplayer-readme.txt \
+		readme.mame todo xmame-doc-1.html xmame-doc-2.html \
+		xmame-doc-3.html xmame-doc-4.html xmame-doc-5.html \
+		xmame-doc-6.html xmame-doc-7.html xmame-doc.html \
+		xmame-doc.lyx xmame-doc.ps xmame-doc.sgml xmame-doc.txt
 
 .if !defined(NOPORTDOCS)
 PLIST_SUB+=	PORTDOCS=""
@@ -37,7 +41,7 @@ PLIST_SUB+=	PORTDOCS="@comment "
 post-patch:
 	${PERL} -pi -e "s@%%PREFIX%%@${PREFIX}@g" ${WRKSRC}/doc/xmamerc.dist
 	@${CP} ${WRKSRC}/makefile.unix ${WRKSRC}/makefile.unix.sed
-	${SED} -e "s@= gcc@?=  ${CC}@g" -e "s@= -O -Wall@s?=  ${CFLAGS}@g" \
+	${SED} -e "s@= gcc@?=  ${CC}@g" -e "s@= -O -Wall@?=  ${CFLAGS}@g" \
 		-e "s@= cp@?=  ${INSTALL} ${COPY}@g" -e "s@/usr/games@${PREFIX}/bin@g" \
 		-e "s@/usr/local/man/man6@${PREFIX}/man/man6@g" \
 		-e "s@/usr/games/lib/\$\(NAME\)@${PREFIX}/share/\$\(NAME\)@g" \
