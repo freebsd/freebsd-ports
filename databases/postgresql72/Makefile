@@ -8,15 +8,7 @@
 PORTNAME?=	postgresql
 PORTVERSION?=	7.2.4
 CATEGORIES?=	databases
-MASTER_SITES=	ftp://ftp.postgresql.org/pub/%SUBDIR%/ \
-		ftp://ftp.se.postgresql.org/pub/database/relational/postgresql/%SUBDIR%/ \
-		ftp://ftp2.ch.postgresql.org/mirror/postgresql/%SUBDIR%/ \
-		ftp://ftp.de.postgresql.org/mirror/postgresql/%SUBDIR%/ \
-		ftp://ftp.chg.ru/pub/databases/postgresql/%SUBDIR%/ \
-		ftp://ftp.sunet.se/pub/unix/databases/relational/postgresql/%SUBDIR%/ \
-		ftp://ftp2.ch.postgresql.org/mirror/postgresql/%SUBDIR%/ \
-		ftp://ftp.jaist.ac.jp/pub/dbms/PostgreSQL/%SUBDIR%/ \
-		ftp://ftp.us.postgresql.org/%SUBDIR%/
+MASTER_SITES=	${MASTER_SITE_PGSQL}
 MASTER_SITE_SUBDIR=	source/v${PORTVERSION}
 DISTFILES=	postgresql-base-${PORTVERSION}${EXTRACT_SUFX} \
 		postgresql-opt-${PORTVERSION}${EXTRACT_SUFX}

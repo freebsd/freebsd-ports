@@ -8,7 +8,8 @@
 PORTNAME=	postgresql
 PORTVERSION=	7.2.5
 CATEGORIES=	databases
-MASTER_SITES=	http://odbc.postgresql.org/ftpsite/odbc/versions/src/
+MASTER_SITES=	${MASTER_SITE_PGSQL}
+MASTER_SITE_SUBDIR=	odbc/versions/src
 PKGNAMESUFFIX?=	-odbc
 DISTNAME=	psqlodbc-${PORTVERSION}
 DIST_SUBDIR=	postgresql
