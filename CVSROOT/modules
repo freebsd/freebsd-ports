@@ -4883,6 +4883,7 @@ mailman		ports/mail/mailman
 mailmgr		ports/mail/mailmgr
 mailscanner	ports/mail/mailscanner
 mailscanner-devel	ports/mail/mailscanner-devel
+mailscanner-mrtg	ports/mail/mailscanner-mrtg
 mailsync	ports/mail/mailsync
 mailx		ports/mail/mailx
 maint		ports/sysutils/maint
