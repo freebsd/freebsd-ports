@@ -15,17 +15,26 @@ MASTER_SITES=	ftp://ftp.mutt.org/mutt/ \
 		ftp://ftp.parodius.com/pub/mutt/
 DISTFILES=	${DISTNAME}i${EXTRACT_SUFX}
 
-PATCHVERSION=	1.4.1
+PATCHVERSION=		1.4.1
+SP_PATCHVERSION=	${PORTVERSION}
 .if ! defined(PATCHVERSION)
 PATCHVERSION=	${PORTVERSION}
 .endif
+.if ! defined(SP_PATCHVERSION)
+SP_PATCHVERSION=	${PATCHVERSION}
+.endif
+.if ! defined(VVV_PATCHVERSION)
+VVV_PATCHVERSION=	${PATCHVERSION}
+.endif
 PATCH_SITES=	http://www.spinnaker.de/mutt/compressed/:spinnaker \
-		http://www.mutt.org.ua/download/mutt-${PATCHVERSION}/:vvv \
-		http://www2.mutt.org.ua/download/mutt-${PATCHVERSION}/:vvv \
-		ftp://ftp.mutt.org.ua/pub/mutt/mutt-${PATCHVERSION}/:vvv \
-		ftp://ftp2.mutt.org.ua/pub/mutt/mutt-${PATCHVERSION}/:vvv
-PATCHFILES=	patch-${PATCHVERSION}.rr.compressed.1.gz:spinnaker \
-		patch-${PATCHVERSION}.vvv.initials.gz:vvv
+		http://www.mutt.org.ua/download/mutt-${VVV_PATCHVERSION}/:vvv \
+		http://www2.mutt.org.ua/download/mutt-${VVV_PATCHVERSION}/:vvv \
+		http://www3.mutt.org.ua/download/mutt-${VVV_PATCHVERSION}/:vvv \
+		ftp://ftp.mutt.org.ua/pub/mutt/mutt-${VVV_PATCHVERSION}/:vvv \
+		ftp://ftp2.mutt.org.ua/pub/mutt/mutt-${VVV_PATCHVERSION}/:vvv \
+		ftp://ftp3.mutt.org.ua/pub/mutt/mutt-${VVV_PATCHVERSION}/:vvv
+PATCHFILES=	patch-${SP_PATCHVERSION}.rr.compressed.1.gz:spinnaker \
+		patch-${VVV_PATCHVERSION}.vvv.initials.gz:vvv
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER?=	udo.schweigert@siemens.com
