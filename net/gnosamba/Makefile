@@ -8,15 +8,18 @@
 PORTNAME=	gnosamba
 PORTVERSION=	0.3.3
 CATEGORIES=	net gnome
-MASTER_SITES=	http://linuxberg.ii.net/files/gnome/network/ \
-		http://www.open-systems.com/gnosamba/
+MASTER_SITES=	${MASTER_SITE_DEBIAN}
+MASTER_SITE_SUBDIR=	pool/main/g/gnosamba
+DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Samba configuration tool for X Window System
 
-USE_REINPLACE=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}.orig
+
 USE_X_PREFIX=	yes
-USE_GNOME=	yes
+USE_GNOME=	gnomelibs
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 
 post-patch:
