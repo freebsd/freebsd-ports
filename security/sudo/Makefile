@@ -1,19 +1,19 @@
 # New ports collection makefile for:    sudo
-# Version required:     1.5.8.2
+# Version required:     1.5.9.2
 # Date created:         Sun Aug 13 12:36:14 CDT 1995
 # Whom:                 erich@rrnet.com
 #
-# $Id: Makefile,v 1.18 1999/03/29 00:52:35 billf Exp $
+# $Id: Makefile,v 1.19 1999/04/22 15:54:57 mharo Exp $
 #
 
-DISTNAME=	cu-sudo.v1.5.9p1
-PKGNAME=	sudo-1.5.9.1
+DISTNAME=	cu-sudo.v1.5.9p2
+PKGNAME=	sudo-1.5.9.2
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.cs.colorado.edu/pub/sysadmin/sudo/
 
 MAINTAINER=	mharo@FreeBSD.ORG
 
-WRKSRC=		${WRKDIR}/sudo.v1.5.9p1
+WRKSRC=		${WRKDIR}/sudo.v1.5.9p2
 GNU_CONFIGURE=	yes
 
 CONFIGURE_ARGS=	--with-skey \
