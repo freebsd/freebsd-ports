@@ -7,14 +7,13 @@
 
 PORTNAME=	fmirror
 PORTVERSION=	0.8.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	ftp
-MASTER_SITES=	ftp://ftp.guardian.no/pub/free/ftp/fmirror/
+MASTER_SITES=	ftp://ftp.guardian.no/pub/free/ftp/fmirror/ \
+		ftp://ftp.oav.net/pkg_freebsd/distfiles/
 
 MAINTAINER=	kiwi@oav.net
 COMMENT=	Program for mirroring files and directories from a remote FTP server
-
-#WRKSRC=		${WRKDIR}/${DISTNAME}
 
 GNU_CONFIGURE=	yes
 
