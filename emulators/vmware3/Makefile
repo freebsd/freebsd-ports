@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	vmware3
-PORTVERSION=	3.2.0-2230
+PORTVERSION=	3.2.1-2237
 PORTREVISION=	1
 CATEGORIES=	emulators linux
 MASTER_SITES=	http://www4.vmware.com/software/ \
 		${FREEBSD_MODULE_SITES} \
 		${VMWARE_MIRROR_SITES}
 DISTFILES=	VMware-workstation-${PORTVERSION}${EXTRACT_SUFX}:vmware \
-		vmmon-only-3.2.1-20030412${EXTRACT_SUFX}:patch \
+		vmmon-only-3.2.1-20030514${EXTRACT_SUFX}:patch \
 		vmnet-only-3.2.1-20030412${EXTRACT_SUFX}:patch
 
 # Feel free to post your questions/reports/suggestions on this port to
@@ -79,11 +79,13 @@ MAKE_ARGS=	KMODDIR="${VMDIR}/lib/modules"
 PLIST_SUB=	LINUXBASE="${LINUXBASE}" VMNET1_MINOR="${VMNET1_MINOR}"
 
 pre-fetch:
+.if ${OSVERSION} < 500113
 	@${ECHO}
 	@${ECHO} "You need a uncommitted kernel patch to run this port:"
 	@${ECHO} "You can get it at: http://people.freebsd.org/~mbr/patches/"
 	@${ECHO} "linux.shm.patch-cvs-freebsd5-20030329"
 	@${ECHO}
+.endif
 
 post-extract:
 .for m in ${MODULES}
