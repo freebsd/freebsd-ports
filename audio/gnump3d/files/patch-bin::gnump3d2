@@ -1,6 +1,6 @@
---- bin/gnump3d2.orig	Fri May  2 18:56:50 2003
-+++ bin/gnump3d2	Sat May  3 00:11:54 2003
-@@ -2457,9 +2457,9 @@
+--- bin/gnump3d2.orig	Fri Jul  4 10:20:24 2003
++++ bin/gnump3d2	Fri Jul  4 10:23:13 2003
+@@ -2620,9 +2620,9 @@
    {
        $CONFIG_FILE = $ENV{"HOME"} . "/.gnump3drc";
    }
@@ -12,7 +12,7 @@
    }
    elsif ( -e "gnump3d.conf" )
    {
-@@ -2599,8 +2599,8 @@
+@@ -2764,8 +2764,8 @@
    $PORT          = getConfig( "port", 8888 );
    $bind_address  = getConfig( "binding_host", "" );
    $host          = getConfig( "hostname", "localhost" );
@@ -23,12 +23,14 @@
    $always_stream = getConfig( "always_stream", 1 );
    $access_log    = getConfig( "logfile", "/var/log/gnump3d/access.log" );
    $error_log     = getConfig( "errorlog", "/var/log/gnump3d/error.log" );
-@@ -2608,10 +2608,10 @@
+@@ -2773,11 +2773,11 @@
    $client_host   = getConfig( "use_client_host", 1 );
    $default_theme = getConfig( "theme", "default" );
    $TIMEOUT       = getConfig( "read_time", 10 );
 -  $STATSPROG     = getConfig( "stats_program", "/usr/bin/gnump3d-top" );
+-  $INDEXPROG     = getConfig( "index_program", "/usr/bin/gnump3d-index" );
 +  $STATSPROG     = getConfig( "stats_program", "%%PREFIX%%/bin/gnump3d-top" );
++  $INDEXPROG     = getConfig( "index_program", "%%PREFIX%%/bin/gnump3d-index" );
    $STATSARGS     = getConfig( "stats_arguments", "" );
    $play_rec      = getConfig( "play_recursively_text",  "Play" );
 -  $mime_file     = getConfig( "mime_file",  "/etc/gnump3d/mime.types" );
@@ -36,3 +38,12 @@
    $enable_browse = getConfig( "enable_browsing", 1 );
    $sort_order    = getConfig( "sort_order", '$SONGNAME' );
  
+@@ -2813,7 +2813,7 @@
+   # Experimental features.
+   #
+   $jukebox        = getConfig( "jukebox_mode", 0 );
+-  $jukebox_binary = getConfig( "jukebox_player", "/usr/bin/mpg123" );
++  $jukebox_binary = getConfig( "jukebox_player", "%%PREFIX%%/bin/mpg123" );
+   if ( $jukebox )
+   {
+      $always_stream = 0;
