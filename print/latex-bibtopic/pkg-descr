@@ -1,0 +1,4 @@
+bibtopic is a LaTeX package for including several bibliographies in
+a document.  These bibliographies might be considered to cover different
+topics (hence the name) or bibliographic material (e.g., primary and
+secondary literature) and the like.

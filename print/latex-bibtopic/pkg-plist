@@ -1,0 +1,9 @@
+@comment $FreeBSD$
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%CLASSDIR%%/bibtopic.dtx
+%%CLASSDIR%%/bibtopic.ins
+%%CLASSDIR%%/bibtopic.sty
+@dirrm %%CLASSDIR%%
+@exec %%MKTEXLSR%%
+@unexec %%MKTEXLSR%%
