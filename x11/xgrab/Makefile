@@ -3,7 +3,7 @@
 # Date created:         27 February 1995
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.10 1997/08/11 01:02:00 jmz Exp $
+# $Id: Makefile,v 1.11 1998/06/07 01:08:05 asami Exp $
 #
 
 DISTNAME=	xgrabsc.2_41
@@ -25,5 +25,7 @@ XMKMF=		xmkmf
 .if !defined(DISPLAY)
 BROKEN=		requires X session to run xrdb
 .endif
+
+MAN1=		xgrab.1 xgrabsc.1
 
 .include <bsd.port.mk>
