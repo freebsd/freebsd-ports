@@ -81,12 +81,18 @@
 %%DATADIR%%/contrib/autoconf/sample-apache.vhost
 %%DATADIR%%/contrib/autoconf/sample-apache.vhost.in
 %%DATADIR%%/contrib/autoconf/README.configure
+%%DATADIR%%/contrib/rh8_apache20_config/httpd.conf
+%%DATADIR%%/contrib/rh8_apache20_config/local.inc
+%%DATADIR%%/contrib/rh8_apache20_config/php.conf
+%%DATADIR%%/contrib/rh8_apache20_config/php.ini
+%%DATADIR%%/contrib/rh8_apache20_config/readme.txt
 %%DATADIR%%/contrib/userlist.README
 %%DATADIR%%/contrib/tracker-cc.patch
 %%DATADIR%%/contrib/tracker-cc.README
 %%DATADIR%%/contrib/gforge-3.0-php_path.patch
 %%DATADIR%%/contrib/gforge-3.0-local_config.patch
 %%DATADIR%%/contrib/userlist.patch
+%%DATADIR%%/contrib/gforge.conf
 %%DATADIR%%/contrib/gforge-3.0-cronjobs.patch
 %%DATADIR%%/contrib/cmd-line-prototype.tar.gz
 %%DATADIR%%/contrib/beta1_install_from_scratch_install.php
@@ -138,6 +144,7 @@
 %%DATADIR%%/db/oci8port/shaguo/SourceForge2.5oci8-Trigger_er.sql
 %%DATADIR%%/db/oci8port/shaguo/database.php
 %%DATADIR%%/db/oci8port/shaguo/pgdb-convert.pl
+%%DATADIR%%/db/20030822.sql
 %%DATADIR%%/db/20030513.sql
 %%DATADIR%%/db/20030312.sql
 %%DATADIR%%/db/20030209.sql
@@ -365,21 +372,9 @@
 %%WWW_ROOT%%/gforge/www/themes/gforge/images/ic/tracker20w.png
 %%WWW_ROOT%%/gforge/www/themes/gforge/images/ic/forum20g.png
 %%WWW_ROOT%%/gforge/www/themes/gforge/images/ic/msg.png
-%%WWW_ROOT%%/gforge/www/themes/gforge/images/fr_login.png
-%%WWW_ROOT%%/gforge/www/themes/gforge/images/fr_logout.png
-%%WWW_ROOT%%/gforge/www/themes/gforge/images/fr_myaccount.png
-%%WWW_ROOT%%/gforge/www/themes/gforge/images/fr_newaccount.png
-%%WWW_ROOT%%/gforge/www/themes/gforge/images/login.png
 %%WWW_ROOT%%/gforge/www/themes/gforge/images/logo.png
-%%WWW_ROOT%%/gforge/www/themes/gforge/images/logout.png
-%%WWW_ROOT%%/gforge/www/themes/gforge/images/myaccount.png
-%%WWW_ROOT%%/gforge/www/themes/gforge/images/newaccount.png
 %%WWW_ROOT%%/gforge/www/themes/gforge/images/t.png
 %%WWW_ROOT%%/gforge/www/themes/gforge/images/t2.png
-%%WWW_ROOT%%/gforge/www/themes/gforge/images/it_login.png
-%%WWW_ROOT%%/gforge/www/themes/gforge/images/it_logout.png
-%%WWW_ROOT%%/gforge/www/themes/gforge/images/it_myaccount.png
-%%WWW_ROOT%%/gforge/www/themes/gforge/images/it_newaccount.png
 %%WWW_ROOT%%/gforge/www/themes/gforge/images/clear.png
 %%WWW_ROOT%%/gforge/www/themes/gforge/Theme.class
 %%WWW_ROOT%%/gforge/www/themes/osx/images/ic/forum20w.png
@@ -511,6 +506,7 @@
 %%WWW_ROOT%%/gforge/www/tracker/taskmgr.php
 %%WWW_ROOT%%/gforge/www/tracker/add.php
 %%WWW_ROOT%%/gforge/www/tracker/detail.php
+%%WWW_ROOT%%/gforge/www/tracker/mod-limited.php
 %%WWW_ROOT%%/gforge/www/survey/admin/survey_utils.php
 %%WWW_ROOT%%/gforge/www/survey/admin/add_survey.php
 %%WWW_ROOT%%/gforge/www/survey/admin/edit_question.php
@@ -735,6 +731,7 @@
 @dirrm %%BACKEND_DIR%%/utils
 @unexec rmdir %D/%%BACKEND_DIR%% 2>/dev/null || true
 @dirrm %%DATADIR%%/contrib/autoconf
+@dirrm %%DATADIR%%/contrib/rh8_apache20_config
 @dirrm %%DATADIR%%/contrib
 @dirrm %%DATADIR%%/db/SQL_2.5
 @dirrm %%DATADIR%%/db/SQL_migrate-2.5-to-2.6
