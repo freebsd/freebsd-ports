@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=		ufmcontrol-i18n
-PORTVERSION=		0.2
+PORTVERSION=		0.2.1
 CATEGORIES=		audio
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME:C/-i18n$//1}
@@ -14,6 +14,7 @@ MAINTAINER=		nivit@users.sourceforge.net
 COMMENT=		USB radio control utility
 
 INSTALLS_SHLIB=		yes
+MAKE_ENV=		NOPROFILE=yes
 
 MAN1=			ufmcontrol.1
 MANLANG=		"" it.ISO8859-1

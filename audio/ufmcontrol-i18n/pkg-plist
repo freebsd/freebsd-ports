@@ -1,7 +1,6 @@
 bin/ufmcontrol
 include/libufm.h
 lib/libufm.a
-lib/libufm_p.a
 lib/libufm.so.1
 lib/libufm.so
 %%PORTDOCS%%%%DOCSDIR%%/LEGENDA
