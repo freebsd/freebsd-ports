@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	linux-realplayer
-PORTVERSION= 	7.b2
+PORTVERSION= 	7.cs1
 CATEGORIES=	audio graphics linux
 MASTER_SITES=	# fetch manually
 DISTNAME=	rp${PORTVERSION:R}_linux20_libc6_i386_${PORTVERSION:E}
