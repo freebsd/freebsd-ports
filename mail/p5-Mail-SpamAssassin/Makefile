@@ -17,19 +17,18 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	DougB@FreeBSD.org
 COMMENT=	A highly efficient mail filter for identifying spam
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Net/DNS.pm:${PORTSDIR}/net/p5-Net-DNS \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/HTML/Parser.pm:${PORTSDIR}/www/p5-HTML-Parser \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Mail/Internet.pm:${PORTSDIR}/mail/p5-Mail-Tools
+BUILD_DEPENDS=	${SITE_PERL}/Net/DNS.pm:${PORTSDIR}/net/p5-Net-DNS \
+		${SITE_PERL}/${PERL_ARCH}/HTML/Parser.pm:${PORTSDIR}/www/p5-HTML-Parser \
+		${SITE_PERL}/Mail/Internet.pm:${PORTSDIR}/mail/p5-Mail-Tools
 RUN_DEPENDS=	${BUILD_DEPENDS} \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64 \
+		${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64 \
 		razor-client:${PORTSDIR}/mail/razor-agents
 
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500600
-PODPARSER=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Pod/Usage.pm:${PORTSDIR}/textproc/p5-PodParser
-RUN_DEPENDS+=	${PODPARSER}
-BUILD_DEPENDS+=	${PODPARSER}
+RUN_DEPENDS+=	${SITE_PERL}/Pod/Usage.pm:${PORTSDIR}/textproc/p5-PodParser
+BUILD_DEPENDS+=	${SITE_PERL}/Pod/Usage.pm:${PORTSDIR}/textproc/p5-PodParser
 .endif
 
 PERL_CONFIGURE=	yes
@@ -41,7 +40,10 @@ MAN3=		Mail::SpamAssassin.3 Mail::SpamAssassin::PerMsgStatus.3 \
 		Mail::SpamAssassin::Conf.3 \
 		Mail::SpamAssassin::PersistentAddrList.3 \
 		Mail::SpamAssassin::PerMsgLearner.3 \
-		Mail::SpamAssassin::Bayes.3
+		Mail::SpamAssassin::Bayes.3 \
+		Mail::SpamAssassin::AutoWhitelist.3 \
+		Mail::SpamAssassin::ConfSourceSQL.3
+
 MAN1PREFIX=	${PREFIX}
 MAN1=		spamd.1 spamassassin.1 spamc.1 sa-learn.1
 
@@ -49,6 +51,11 @@ DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 
 post-patch:
 	@${FIND} ${WRKSRC} -name \*.orig -delete
+
+	@${MV} ${WRKSRC}/rules/local.cf ${WRKSRC}/rules/local.cf.sample
+	@${SED} -e 's#local.cf#local.cf.sample#g' \
+		${WRKSRC}/Makefile.PL > ${WRKSRC}/Makefile.PL.sed
+	@${MV} ${WRKSRC}/Makefile.PL.sed ${WRKSRC}/Makefile.PL
 
 post-install:
 	@${STRIP_CMD} ${PREFIX}/bin/spamc
@@ -62,6 +69,6 @@ post-install:
 	    spamd/README* sql/spamassassin.sql ${DOCSDIR}
 .endif
 
-	@${SED} -e 's#PREFIX#/usr/local#' pkg-message
+	@${SED} -e 's#PREFIX#${PREFIX}#' pkg-message
 
 .include <bsd.port.post.mk>
