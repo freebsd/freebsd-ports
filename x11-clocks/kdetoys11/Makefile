@@ -3,17 +3,17 @@
 # Date created:		18 may 1999
 # Whom:			imura@cs.titech.ac.jp
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/06/22 23:48:10 sada Exp $
 #
 
 DISTNAME=	kdetoys-1.1.1
 PKGNAME=	kdetoys-i18n-1.1.1
 CATEGORIES=	x11-clocks kde
-MASTER_SITES=	http://apollon.cs.titech.ac.jp/~imura/kde-jp/po/
+MASTER_SITES=	http://www.kde.gr.jp/~imura/
 MASTER_SITES+=	$(MASTER_SITE_KDE)
 MASTER_SITE_SUBDIR= stable/1.1.1/distribution/tar/generic/source/bz2
 DISTFILES=	kdetoys-1.1.1.tar.bz2 \
-		kdelnkfiles-ja-19990523.tar.bz2
+		kdelnkfiles-ja-19990809.tar.bz2
 
 MAINTAINER=     imura@cs.titech.ac.jp
 
