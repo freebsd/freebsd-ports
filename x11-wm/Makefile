@@ -85,6 +85,7 @@
     SUBDIR += sawfish2
     SUBDIR += selectwm
     SUBDIR += swm
+    SUBDIR += tpager
     SUBDIR += treewm
     SUBDIR += tvtwm
     SUBDIR += ude

@@ -1,0 +1,21 @@
+--- Makefile	Wed May  7 19:45:54 2003
++++ Makefile.new	Thu Feb 12 00:47:45 2004
+@@ -1,10 +1,13 @@
+-CC=gcc
+-CFLAGS= -I/usr/X11R6/include
+-LDFLAGS= -L/usr/X11R6/lib -lX11
++CC?=gcc
++CFLAGS+= -I/usr/X11R6/include
++LDFLAGS+= -L/usr/X11R6/lib -lX11
++PREFIX?=/usr/local
+ PROGNAME=tpager
++
++all:	$(PROGNAME)
++
+ $(PROGNAME): Makefile tpager.c root_properties.c client_properties.c
+ 	$(CC) $(CFLAGS) $(LDFLAGS) tpager.c root_properties.c client_properties.c -o $(PROGNAME)
+-	strip $(PROGNAME)
+ 
+ install:
+-	install $(PROGNAME) /usr/local/bin
++	install $(PROGNAME) $(PREFIX)/bin
