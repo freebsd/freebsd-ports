@@ -1,9 +1,9 @@
 
 $FreeBSD$
 
---- au88x0.c.orig	Mon Jan 15 18:44:49 2001
-+++ au88x0.c	Mon Jan 15 18:44:49 2001
-@@ -32,7 +32,8 @@
+--- au88x0.c.orig	Fri May 10 10:34:49 2002
++++ au88x0.c	Sun Aug 31 17:22:38 2003
+@@ -29,10 +29,16 @@
   */
  
  #include <dev/sound/pcm/sound.h>
@@ -11,9 +11,17 @@ $FreeBSD$
 +#include "au88x0.h"
 +#include <sys/systm.h>
  
++#if __FreeBSD_version < 500000
  #include <pci/pcireg.h>
  #include <pci/pcivar.h>
-@@ -852,7 +853,11 @@
++#else
++#include <dev/pci/pcireg.h>
++#include <dev/pci/pcivar.h>
++#endif
+ #include <sys/queue.h>
+ 
+ SND_DECLARE_FILE("$FreeBSD$");
+@@ -852,7 +858,11 @@
  		/*highaddr*/BUS_SPACE_MAXADDR,
  		/*filter*/NULL, /*filterarg*/NULL,
  		/*maxsize*/AU_BUFFSIZE, /*nsegments*/1, /*maxsegz*/0x3ffff,
