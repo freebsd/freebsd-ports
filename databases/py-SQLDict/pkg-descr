@@ -4,3 +4,5 @@ From the module documentation:
 
    This creates a database interface which works pretty much like a
    Python dictionary (or shelve).
+
+WWW: http://dustman.net/andy/python/
