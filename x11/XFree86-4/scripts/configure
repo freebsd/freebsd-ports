@@ -144,17 +144,31 @@ cat >> $F <<END
 #endif
 END
 
+cat <<EOF
+app-default files, startup configuration files, keyboard definitions
+are normally installed in /etc/X11 (so that X binaries can be mounted 
+from a read-only volume like a CD-ROM). Otherwise default files will 
+be installed under /usr/X11R6.
+EOF
+yesno YES "Install config files in /etc/X11?"
+if [ $answ = NO ]; then
+    echo '#define UseSeparateConfDir NO' >> $F
+    ETC=${PREFIX}/lib
+else
+    ETC=/etc
+fi
+
 cat <<END
  Do you want to install the default system config files? This will overwrite
  and files that you may be currently using.  This would only be required
  on a first time build.
 END
-if [ -e /etc/X11/xdm/xdm-config ]; then
+if [ -e $ETC/X11/xdm/xdm-config ]; then
     XDMDEFAULT=NO
 else
     XDMDEFAULT=YES
 fi
-if [ -e /etc/X11/xinit/xinitrc ]; then
+if [ -e $ETC/X11/xinit/xinitrc ]; then
     XINITDEFAULT=NO
 else
     XINITDEFAULT=YES
