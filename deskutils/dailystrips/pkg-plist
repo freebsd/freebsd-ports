@@ -1,8 +1,11 @@
 bin/dailystrips
 bin/dailystrips-clean
+bin/dailystrips-update
 share/dailystrips/strips.def
-%%PORTDOCS%%share/doc/dailystrips/README
-%%PORTDOCS%%share/doc/dailystrips/README.DEFS
-%%PORTDOCS%%share/doc/dailystrips/README.LOCAL
-%%PORTDOCS%%@dirrm share/doc/dailystrips
+%%DOCSDIR%%/README
+%%DOCSDIR%%/README.DEFS
+%%DOCSDIR%%/README.LOCAL
+%%DOCSDIR%%/README.dailystrips-clean
+%%DOCSDIR%%/README.dailystrips-update
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm share/dailystrips
