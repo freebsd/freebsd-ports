@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	snarf
-PORTVERSION= 	2.0.5
+PORTVERSION= 	7.0
 CATEGORIES=	www
 MASTER_SITES=	http://www.xach.com/snarf/
 
