@@ -8,19 +8,19 @@
 #
 
 PORTNAME=	docbook
-PORTVERSION= 	4.0
+PORTVERSION=	4.0
 CATEGORIES=	textproc
-MASTER_SITES=	http://www.oasis-open.org/docbook/sgml/4.0beta5/
-DISTNAME=	docbk40beta5
+MASTER_SITES=	http://www.oasis-open.org/docbook/sgml/4.0/
+DISTNAME=	docbk40
 
 MAINTAINER=	asmodai@FreeBSD.org
 
 RUN_DEPENDS=	${ISOCAT}:${PORTSDIR}/textproc/iso8879
 
 USE_ZIP=	yes
-NO_MTREE=       yes
+NO_MTREE=	yes
 EXTRACT_ONLY=	# empty
-NO_BUILD=       yes
+NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
 INSTDIR=	${PREFIX}/share/sgml/docbook
