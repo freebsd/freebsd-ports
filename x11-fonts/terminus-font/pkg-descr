@@ -1,9 +1,9 @@
-The Terminus Font is designed for long (8 and more hours per day) work
-with computers. Version 3.96 contains 528 characters, which cover code
-pages ISO8859-1, ISO8859-2, ISO8859-5, ISO8859-15, Windows-1250,
-Windows-1251, Windows-1252, IBM-437, KOI8-R, KOI8-U, KOI8-E, KOI8-F,
-Bulgarian-MIK, Paratype-PT154, Paratype-PT254, IBM-855, IBM-866 and
-Macintosh-Ukrainian.
+Terminus Font is designed for long (8 and more hours per day) work
+with computers. Version 4.11 contains 594 characters, covering code
+pages ISO8859-1/2/5/9/13/15/16, Windows-1250/1251/1252/1254/1257,
+IBM-437/852/855/866, KOI8-R/U/E/F, Bulgarian-MIK, Paratype-PT154/PT254,
+Macintosh-Ukrainian and Esperanto, and also the vt100 and xterm
+pseudographic characters.
 
 Note: This ports also installed a slanted version of the terminus
 font, contributed by "Sascha Blank" <sblank@tiscali.de> which is NOT
