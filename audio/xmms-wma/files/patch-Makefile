@@ -1,20 +1,19 @@
---- Makefile	Wed Mar  3 17:47:58 2004
-+++ Makefile	Thu Mar 11 19:05:38 2004
+--- Makefile.orig	Mon Apr 19 08:42:08 2004
++++ Makefile	Mon Apr 19 08:55:24 2004
 @@ -1,6 +1,6 @@
--.PHONY: all install install-home uninstall uninstall-home clean
-+.PHONY: all install uninstall clean
+ .PHONY: all install install-home uninstall uninstall-home clean
  
 -INSTALL_DIR := /usr/lib/xmms/Input
 +INSTALL_DIR := `xmms-config --input-plugin-dir`
  INSTALL_DIR_HOME := ~/.xmms/Plugins/Input
  
  export PLUGIN_FILE := libwma.so
-@@ -11,34 +11,17 @@
+@@ -11,12 +11,9 @@
  export DEPS := $(SOURCES:%.c=$(DEPDIR)/%.d)
  
  all:
 -	@cd ffmpeg-strip-wma; make; cd ..
-+	@cd ffmpeg-strip-wma; gmake; cd ..
++	@cd ffmpeg-strip-wma; $(MAKE); cd ..
  	@$(MAKE) --no-print-directory -f Makefile.inc
  	@strip $(PLUGIN_FILE)
 -	@echo "The plug-in has been compiled. Run one of the following:"
@@ -23,26 +22,10 @@
  
  install: all
  	cp -f $(PLUGIN_FILE) $(INSTALL_DIR)
--	@echo "The plug-in has been installed."
--	@echo "Enjoy!"
--
--install-home: all
--	-mkdir ~/.xmms
--	-mkdir ~/.xmms/Plugins
--	-mkdir ~/.xmms/Plugins/Input
--	cp -f $(PLUGIN_FILE) $(INSTALL_DIR_HOME)
--	@echo "The plug-in has been installed."
--	@echo "Enjoy!"
- 
- uninstall:
- 	rm -f $(INSTALL_DIR)/$(PLUGIN_FILE)
+@@ -40,5 +37,5 @@
  	@echo "The plug-in has been uninstalled."
  
--uninstall-home:
--	rm -f $(INSTALL_DIR_HOME)/$(PLUGIN_FILE)
--	@echo "The plug-in has been uninstalled."
--
  clean:
 -	cd ffmpeg-strip-wma; make clean; cd ..
-+	cd ffmpeg-strip-wma; gmake clean; cd ..
++	cd ffmpeg-strip-wma; $(MAKE) clean; cd ..
  	rm -f $(OBJECTS) $(DEPS)

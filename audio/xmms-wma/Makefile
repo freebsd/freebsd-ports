@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xmms-wma
-PORTVERSION=	0.1.3
+PORTVERSION=	0.2
 CATEGORIES=	audio
 MASTER_SITES=	http://mcmcc.bat.ru/xmms-wma/
 
