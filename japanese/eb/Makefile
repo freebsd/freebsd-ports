@@ -6,16 +6,13 @@
 #
 
 PORTNAME=	eb
-PORTVERSION=	2.3.7
+PORTVERSION=	2.3.8
 CATEGORIES=	japanese
 MASTER_SITES=	ftp://ftp.sra.co.jp/pub/misc/eb/
 DISTFILES=	${EBFILES} \
 		${LISTFILES} \
 		${APPENDIXFILES}
 EXTRACT_ONLY=	${EBFILES}
-
-PATCH_SITES=	${MASTER_SITES}
-PATCHFILES=	${DISTNAME}+.diff
 
 MAINTAINER=	takamune@avrl.mei.co.jp
 
