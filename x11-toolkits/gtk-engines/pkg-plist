@@ -88,7 +88,6 @@ share/themes/Redmond95/ICON.png
 share/themes/Redmond95/README.html
 share/themes/Redmond95/gtk/gtkrc
 @dirrm share/themes/Redmond95/gtk
-@dirrm share/themes/Redmond95
 @dirrm share/themes/Raleigh/gtk
 @dirrm share/themes/Raleigh
 @dirrm share/themes/Pixmap/gtk
@@ -96,4 +95,5 @@ share/themes/Redmond95/gtk/gtkrc
 @dirrm share/themes/Notif/gtk
 @dirrm share/themes/Notif
 @dirrm share/themes/Metal/gtk
-@dirrm share/themes/Metal
+@unexec /bin/rmdir %D/share/themes/Redmond95 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/themes/Metal 2>/dev/null || /usr/bin/true
