@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	guikachu
-PORTVERSION=	1.5.4pre2
-PORTREVISION=	1
+PORTVERSION=	1.5.4
+PORTEPOCH=	1
 CATEGORIES=	devel palm gnome
 MASTER_SITES=	http://cactus.rulez.org/projects/guikachu/download/
 
@@ -25,6 +25,8 @@ USE_LIBTOOL_VER=15
 USE_REINPLACE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
+GCONF_SCHEMAS=	guikachu-form-editor.schemas guikachu-interface.schemas
 
 post-patch:
 	@${REINPLACE_CMD} -e '/mime_packagedir/s|(mimedir)|(prefix)/share/mime|' \

@@ -1,11 +1,5 @@
 bin/guikachu
 bin/guikachu2rcp
-@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/guikachu-form-editor.schemas > /dev/null || /usr/bin/true
-etc/gconf/schemas/guikachu-form-editor.schemas
-@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/guikachu-form-editor.schemas > /dev/null || /usr/bin/true
-@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/guikachu-interface.schemas > /dev/null || /usr/bin/true
-etc/gconf/schemas/guikachu-interface.schemas
-@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/guikachu-interface.schemas > /dev/null || /usr/bin/true
 share/gnome/application-registry/guikachu.applications
 share/gnome/apps/Development/guikachu.desktop
 share/gnome/guikachu/fonts/bigbold.txt
@@ -77,6 +71,7 @@ share/locale/sv/LC_MESSAGES/guikachu.mo
 share/locale/tr/LC_MESSAGES/guikachu.mo
 share/locale/uk/LC_MESSAGES/guikachu.mo
 share/locale/wa/LC_MESSAGES/guikachu.mo
+share/locale/zh_CN/LC_MESSAGES/guikachu.mo
 share/mime/application/x-guikachu.xml
 share/mime/packages/guikachu.mime.xml
 share/mime/text/x-rcp.xml
