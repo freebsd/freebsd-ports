@@ -1,5 +1,6 @@
-This is the distributed.net's rc5 and des brute force
-cracking client.
+This is the distributed.net's rc5 and ogr brute force
+cracking client.  DES and CSC cores are no longer
+included in the client.
 
 As a "loosely knit" group of computer users from all
 over the world, we take up challenges which require
