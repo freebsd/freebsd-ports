@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	XML-NamespaceSupport
-PORTVERSION=	1.07
+PORTVERSION=	1.08
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	XML
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	skv@FreeBSD.org
+COMMENT=	A simple generic namespace support class
 
 PERL_CONFIGURE=	yes
 
