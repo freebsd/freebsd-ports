@@ -48,6 +48,9 @@ do-install:
 	${MKDIR} ${PREFIX}/share/doc/cvsweb
 	cd ${WRKSRC} && ${INSTALL_DATA} INSTALL README TODO ${PREFIX}/share/doc/cvsweb/
 .endif
+.if defined(PACKAGE_BUILDING)
+	@${ECHO} "@dirrm share/apache" >> ${TMPPLIST}
+.endif
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
