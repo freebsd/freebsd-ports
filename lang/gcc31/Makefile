@@ -6,11 +6,12 @@
 # $FreeBSD$
 #
 
-SNAPDATE=	2002-02-25
+SNAPDATE=	2002-03-04
 SNAPVER=	${SNAPDATE:S/-//g}
 
-PORTNAME=	gcc31
-PORTVERSION=	${SNAPVER}
+PORTNAME=	gcc
+PORTVERSION=	3.1
+PORTREVISION=	${SNAPVER}
 CATEGORIES=	lang java
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE}  \
 		ftp://ftp.netwinder.org/pub/build/gcc/i386/${SNAPVER}/ \
@@ -134,14 +135,13 @@ post-install:
 	# These 3 libraries are moved from PREFIX/lib to avoid conflicts
 	# 	with the stock compiler.
 	${MV} -f ${PREFIX}/lib/libiberty.a ${TARGLIB}
-	${MV} -f ${PREFIX}/lib/libstdc++.* ${PREFIX}/lib/libsupc++.* ${TARGLIB}
-	-${MV} -f ${PREFIX}/lib/ieee ${TARGLIB}
-#.if defined(WANT_SHAREDLIBS)
-#	${MV} -f ${PREFIX}/lib/libstdc++.so* ${TARGLIB}
-#.endif
-.for info in cpp cppinternals g77 gcc gcj
-	install-info ${PREFIX}/info/${info}.info ${PREFIX}/info/dir
+.for file in libstdc++ libsupc++ libg2c libfrtbegin libobjc
+	${MV} -f ${PREFIX}/lib/${file}.* ${TARGLIB}
 .endfor
+	-${MV} -f ${PREFIX}/lib/ieee ${TARGLIB}
+#.for info in cpp cppinternals g77 gcc gcj
+#	install-info ${PREFIX}/info/${info}.info ${PREFIX}/info/dir
+#.endfor
 	cd ${PREFIX} ;\
 	    ${FIND} ${TARGLIB:S/^${PREFIX}\///} -type f -o -type l	\
 	    	>${WRKDIR}/PLIST.gcc-lib
@@ -156,5 +156,10 @@ post-install:
 	${ECHO_CMD} "x!"			>> ${WRKDIR}/ex.script
 	${CP} -p ${TMPPLIST} ${TMPPLIST}.pre-gcc-lib
 	cd ${WRKDIR} ; ex < ex.script
+
+chklatest:
+	ncftpls \
+	    ftp://mirrors.rcn.net/mirrors/sources.redhat.com/gcc/snapshots/  \
+	    | grep LATEST
 
 .include <bsd.port.post.mk>
