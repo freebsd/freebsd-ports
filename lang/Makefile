@@ -1,5 +1,5 @@
-# $Id: Makefile,v 1.4 1994/10/04 15:11:55 jkh Exp $
+# $Id: Makefile,v 1.5 1994/10/06 01:36:56 jkh Exp $
 #
-SUBDIR=	itcl p2c tcl tclX
+SUBDIR=	itcl logo p2c tcl tclX
 
 .include <bsd.port.subdir.mk>
