@@ -2,6 +2,10 @@
 %%FONTSDIR%%/DejaVuSans-BoldOblique.ttf
 %%FONTSDIR%%/DejaVuSans-Oblique.ttf
 %%FONTSDIR%%/DejaVuSans.ttf
+%%FONTSDIR%%/DejaVuSansCondensed-Bold.ttf
+%%FONTSDIR%%/DejaVuSansCondensed-BoldOblique.ttf
+%%FONTSDIR%%/DejaVuSansCondensed-Oblique.ttf
+%%FONTSDIR%%/DejaVuSansCondensed.ttf
 %%FONTSDIR%%/DejaVuSansMono-Bold.ttf
 %%FONTSDIR%%/DejaVuSansMono-BoldOb.ttf
 %%FONTSDIR%%/DejaVuSansMono-Oblique.ttf
@@ -10,6 +14,10 @@
 %%FONTSDIR%%/DejaVuSerif-BoldOblique.ttf
 %%FONTSDIR%%/DejaVuSerif-Oblique.ttf
 %%FONTSDIR%%/DejaVuSerif-Roman.ttf
+%%FONTSDIR%%/DejaVuSerifCondensed-Bold.ttf
+%%FONTSDIR%%/DejaVuSerifCondensed-BoldOblique.ttf
+%%FONTSDIR%%/DejaVuSerifCondensed-Oblique.ttf
+%%FONTSDIR%%/DejaVuSerifCondensed.ttf
 %%FONTSDIR%%/fonts.cache-1
 %%FONTSDIR%%/fonts.dir
 @exec %%X11BASE%%/bin/fc-cache -f -v %%FONTSDIR%% || /usr/bin/true
