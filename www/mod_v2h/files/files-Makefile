@@ -1,0 +1,26 @@
+APXS=${LOCALBASE}/sbin/apxs
+PERL=@@PERL@@
+RM=/bin/rm
+CP=/bin/cp
+MKDIR=/bin/mkdir
+
+CXX=g++
+CFLAGS+=-shared
+EXTRA_INCLUDES+=-I${LOCALBASE}/include/mysql -I${LOCALBASE}/include/apache2
+LIBS+=-lmysqlclient
+LDFLAGS+=-L${LOCALBASE}/lib/mysql -Wl,-R,/usr/local/lib/mysql \
+-Wl,-soname,mod_v2h.so
+
+all:
+	$(CXX) $(CFLAGS) $(EXTRA_INCLUDES) $(LDFLAGS) $(LIBS) -o mod_v2h.so mod_v2h.cpp
+
+install:
+	$(CP) mod_v2h.so ${LOCALBASE}/libexec/apache2/mod_v2h.so
+	$(PERL) add-module
+	$(MKDIR) -p ${LOCALBASE}/share/doc/mod_v2h
+	$(CP) README AUTHORS ${LOCALBASE}/share/doc/mod_v2h/
+
+clean:
+	$(RM) -rf .libs
+	$(RM) -f mod_v2h.la
+

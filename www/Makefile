@@ -208,6 +208,7 @@
     SUBDIR += mod_ticket
     SUBDIR += mod_trigger
     SUBDIR += mod_tsunami
+    SUBDIR += mod_v2h
     SUBDIR += mod_watch
 #    SUBDIR += mod_webapp-apache2
     SUBDIR += mod_zap

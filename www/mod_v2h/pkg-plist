@@ -1,0 +1,4 @@
+libexec/apache2/mod_v2h.so
+%%PORTDOCS%%share/doc/mod_v2h/AUTHORS
+%%PORTDOCS%%share/doc/mod_v2h/README
+%%PORTDOCS%%@dirrm share/doc/mod_v2h
