@@ -6,23 +6,23 @@
 #
 
 PORTNAME=	geomview
-PORTVERSION=	1.6.1
-CATEGORIES=	graphics tk82
-MASTER_SITES=	ftp://ftp.geom.umn.edu/pub/software/geomview/	\
-		ftp://ftp-sfb288.math.tu-berlin.de/pub/geomview/
-DISTFILES=	geomview-1.6.1-src.tar.gz
+PORTVERSION=	1.8.1
+CATEGORIES=	graphics tk83
+MASTER_SITES=	http://ftp1.sourceforge.net/geomview/ \
+		ftp://ftp1.sourceforge.net/pub/sourceforge/geomview/
 
 MAINTAINER=	fenner@freebsd.org
 
-BROKEN=		"Does not build"
+LIB_DEPENDS=	tk83.1:${PORTSDIR}/x11-toolkits/tk83
+# can't get autoconf to like forms.h, punt for now
+#forms.1:${PORTSDIR}/x11-toolkits/xforms \
 
-LIB_DEPENDS=	forms.1:${PORTSDIR}/x11-toolkits/xforms \
-		tk82.1:${PORTSDIR}/x11-toolkits/tk82
-
-WRKSRC=		${WRKDIR}/Geomview
 USE_MOTIF=	yes
 USE_X_PREFIX=	yes
 USE_MESA=	yes
+USE_AUTOCONF=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-opengl=${X11BASE}
 
 MAN1=		addbbox.1 animate.1 anytooff.1 anytoucd.1 bdy.1 clip.1 \
 		cplxview.1 crayola.1 example.1 flythrough.1 geomview.1 \
@@ -36,6 +36,14 @@ MAN5=		discgrp.5 geomview.5 oogl.5
 # Set "CPU" type for Geomview make
 # Allow user to specify "make install MAPLE_LIB=foo" as geomview wants
 MAKE_ENV=	CPU=FreeBSD MAPLE_LIB=${MAPLE_LIB}
+
+#
+# Don't let automake/autoconf try to rebuild everything.
+AC_FAKE_FILES=	aclocal.m4 config.h.in stamp-h stamp-h.in
+
+post-configure:
+	cd ${WRKSRC}; ${TOUCH} ${AC_FAKE_FILES}
+	find ${WRKSRC} -name Makefile.in | xargs ${TOUCH}
 
 pre-install:
 	${MKDIR} ${PREFIX}/share/geomview

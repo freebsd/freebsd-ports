@@ -1,0 +1,36 @@
+--- configure.in.orig	Sun Mar 25 17:56:01 2001
++++ configure.in	Mon Aug 12 18:07:49 2002
+@@ -433,6 +433,10 @@
+           AC_DEFINE(unix, 1)
+           AC_DEFINE(alloca, __alloca)
+ 	  ;;
++*freebsd*) MACHTYPE=$target_os
++	  AC_DEFINE_UNQUOTED(MACHTYPE, "$MACHTYPE")
++          AC_DEFINE(alloca, alloca)	dnl work around flawed GNU assumption
++          ;;
+        *) MACHTYPE=$target_os
+ 	  AC_DEFINE_UNQUOTED(MACHTYPE, "$MACHTYPE")
+           ;;
+@@ -471,7 +471,8 @@
+ 
+ 
+ AC_MSG_CHECKING([whether we need to link -lsocket to get socket()])
+-AC_TRY_LINK([ #include <sys/socket.h> ],
++AC_TRY_LINK([ #include <sys/types.h>
++	      #include <sys/socket.h> ],
+             [ int s = socket(AF_UNIX, SOCK_STREAM, 0); ],
+             [ SOCKETLIBS=""
+               AC_MSG_RESULT([no]) ],
+@@ -491,10 +492,10 @@
+ 
+ AC_CHECK_HEADERS(fpu_control.h i386/fpu_control.h netinet/in.h)
+ 
+-moduledir="\$(exec_prefix)/bin"
++moduledir="\$(exec_prefix)/libexec/geomview/modules"
+ AC_SUBST(moduledir)
+ 
+-geomdatadir="\$(prefix)/data"
++geomdatadir="\$(prefix)/share/geomview/data"
+ AC_SUBST(geomdatadir)
+ 
+ # cache 'moduledir' and 'geomdatadir' so individual module configure scripts
