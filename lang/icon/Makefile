@@ -3,7 +3,7 @@
 # Date created:         05 April 1995
 # Whom:                 thomas@ghpc8.ihf.rwth-aachen.de
 #
-# $Id$
+# $Id: Makefile,v 1.2 1995/04/15 05:44:38 asami Exp $
 #
 
 DISTNAME=       icon-9.0
@@ -14,5 +14,13 @@ MASTER_SITES=	ftp://cs.arizona.edu/icon/packages/unix/
 PATCH_STRIP=	-p1
 NO_WRKSUBDIR=	true
 ALL_TARGET=	Icon
+
+# work around a bug in rtt's preprocessor
+#
+do-build:
+	@(ENABLE_STARTUP_LOCALE=; \
+	  unset ENABLE_STARTUP_LOCALE; \
+	  cd ${WRKSRC}; \
+	  ${MAKE} PREFIX=${PREFIX} X11BASE=${X11BASE} ${MAKE_FLAGS} ${MAKEFILE} ${ALL_TARGET})
 
 .include <bsd.port.mk>
