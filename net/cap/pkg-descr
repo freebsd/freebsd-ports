@@ -19,3 +19,5 @@ Note: Files are installed into following locations:
 	/usr/local/etc/cap:		Sample configuration files.
 	/usr/local/lib/cap:		More sample configuration files.
 	/usr/local/share/doc/cap:	Relevant documentation.
+
+WWW: http://www.cs.mu.oz.au/appletalk/cap.html

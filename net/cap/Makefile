@@ -31,6 +31,8 @@ DIST_SUBDIR=	cap60
 ALL_TARGET=	libsmade dummy-libinstall programs
 INSTALL_TARGET=	include libinstall install
 
+USE_REINPLACE=	YES
+
 MAN1=		AUFS.1 ash.1 atlook.1 atprint.1 cvt2apple.1 getzones.1 \
 		instappl.1 snitch.1
 MAN3=		CAP.3
@@ -57,6 +59,8 @@ READMES=	applications/papif applications/lwsrv applications/aufs \
 pre-patch:
 	@(cd ${WRKSRC}; \
 	  for f in ../cap60.patch* ; do ${PATCH} -s -p < $$f ; done)
+post-patch:
+	${FIND} ${WRKSRC} -name Makefile.m4 -exec ${REINPLACE_CMD} -e 's/CFLAGS=/CFLAGS+=/' \{\} \;
 
 pre-install:
 	@${RM} -f ${WRKSRC}/libinstall
