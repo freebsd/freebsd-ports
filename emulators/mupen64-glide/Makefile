@@ -15,6 +15,8 @@ DISTNAME=	glide64_0_7_ME
 MAINTAINER?=	tlp@LiquidX.org
 COMMENT=	Glide64 graphics plugin for Mupen64
 
+BUILD_DEPENDS+=	nasm:${PORTSDIR}/devel/nasm
+
 USE_BZIP2=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
