@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.188 1998/11/15 21:26:38 nectar Exp $
+# $Id: Makefile,v 1.189 1998/11/16 16:07:14 vanilla Exp $
 #
 
     SUBDIR += SSLtelnet
@@ -98,6 +98,7 @@
     SUBDIR += pathchar
     SUBDIR += pcnfsd
     SUBDIR += pmf
+    SUBDIR += portscanner
     SUBDIR += pppload
     SUBDIR += proftpd
     SUBDIR += queso
