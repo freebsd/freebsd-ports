@@ -1,8 +1,10 @@
---- configure.orig	Tue Feb  8 23:14:06 2005
-+++ configure	Tue Feb  8 23:18:54 2005
-@@ -19192,6 +19192,8 @@
+--- configure.orig	Tue Mar 22 03:56:40 2005
++++ configure	Tue Mar 22 03:57:09 2005
+@@ -19191,7 +19191,10 @@
+   1.7.2) MOZILLA_SNAPSHOT=15 ;;
    1.7.3) MOZILLA_SNAPSHOT=15 ;;
    1.7.5) MOZILLA_SNAPSHOT=16 ;;
++  1.7.6) MOZILLA_SNAPSHOT=16 ;;
   1.8a3) MOZILLA_SNAPSHOT=17 ;;
 + 1.8a5) MOZILLA_SNAPSHOT=17 ;;
 + 1.8a6) MOZILLA_SNAPSHOT=17 ;;
