@@ -1,28 +1,37 @@
-libexec/sqwebmail/authlib/authcustom
-libexec/sqwebmail/authlib/authpam
-libexec/sqwebmail/authlib/authuserdb
-%%VPOPMAILFLAG%%libexec/sqwebmail/authlib/authvchkpw
+libexec/sqwebmail/authlib/authdaemon
+libexec/sqwebmail/authlib/authdaemon.passwd
+libexec/sqwebmail/authlib/authdaemond
+%%PGSQLFLAG%%libexec/sqwebmail/authlib/authdaemond.pgsql
+%%MYSQLFLAG%%libexec/sqwebmail/authlib/authdaemond.mysql
+libexec/sqwebmail/authlib/authdaemond.plain
+libexec/sqwebmail/authlib/authsystem.passwd
 libexec/sqwebmail/sqwebmail/maildirmake
 libexec/sqwebmail/sqwebmail/makedatprog
+libexec/sqwebmail/sqwebmail/makemime
 libexec/sqwebmail/sqwebmail/mimegpg
 libexec/sqwebmail/sqwebmail/reformime
-sbin/sqwebmail.makeuserdb
-sbin/sqwebmail.pw2userdb
-sbin/sqwebmail.userdb
-sbin/sqwebmail.userdbpw
-sbin/sqwebmail.vchkpw2userdb
+share/sqwebmail/authdaemonrc.dist
 share/sqwebmail/authmodulelist
+%%PGSQLFLAG%%share/sqwebmail/authpgsqlrc.dist
+%%MYSQLFLAG%%share/sqwebmail/authmysqlrc.dist
 %%CACHE%%@unexec %D/share/sqwebmail/cleancache.pl
 share/sqwebmail/cleancache.pl
-@unexec /bin/rm -f %D/share/sqwebmail/html/en
+share/sqwebmail/html/en
 share/sqwebmail/html/en-us/CHARSET
 share/sqwebmail/html/en-us/ISPELLDICT
 share/sqwebmail/html/en-us/LANGUAGE
 share/sqwebmail/html/en-us/LANGUAGE_PREF
 share/sqwebmail/html/en-us/LOCALE
+share/sqwebmail/html/en-us/TIMEZONELIST
 share/sqwebmail/html/en-us/abooklist.html
 share/sqwebmail/html/en-us/attachments.html
+share/sqwebmail/html/en-us/autoresponder.html
 share/sqwebmail/html/en-us/empty.html
+share/sqwebmail/html/en-us/eventdaily.html
+share/sqwebmail/html/en-us/eventdelete.html
+share/sqwebmail/html/en-us/eventmonthly.html
+share/sqwebmail/html/en-us/eventshow.html
+share/sqwebmail/html/en-us/eventweekly.html
 share/sqwebmail/html/en-us/expired.html
 share/sqwebmail/html/en-us/filter.html
 share/sqwebmail/html/en-us/folder.html
@@ -36,6 +45,7 @@ share/sqwebmail/html/en-us/keyimport.html
 share/sqwebmail/html/en-us/ldaplist.html
 share/sqwebmail/html/en-us/ldapsearch.html
 share/sqwebmail/html/en-us/login.html
+share/sqwebmail/html/en-us/newevent.html
 share/sqwebmail/html/en-us/newmsg.html
 share/sqwebmail/html/en-us/preferences.html
 share/sqwebmail/html/en-us/print.html
@@ -47,40 +57,67 @@ share/sqwebmail/html/en-us/redirect.html
 share/sqwebmail/html/en-us/spellchk.html
 share/sqwebmail/ldapaddressbook.dist
 share/sqwebmail/ldapsearch
+share/sqwebmail/lib/charset.alias
 share/sqwebmail/sbin/makeuserdb
 share/sqwebmail/sbin/pw2userdb
 share/sqwebmail/sbin/userdb
 share/sqwebmail/sbin/userdbpw
 share/sqwebmail/sbin/vchkpw2userdb
 share/sqwebmail/sendit.sh
+share/sqwebmail/share/locale/locale.alias
 share/sqwebmail/webgpg
 www/cgi-bin.default/sqwebmail/sqwebmail
 www/data.default/sqwebmail/bg.gif
+www/data.default/sqwebmail/bluebottomleft.gif
+www/data.default/sqwebmail/bluebottomright.gif
+www/data.default/sqwebmail/bluetopleft.gif
+www/data.default/sqwebmail/bluetopright.gif
+www/data.default/sqwebmail/calendar.gif
+www/data.default/sqwebmail/cancel.gif
 www/data.default/sqwebmail/folder.gif
 www/data.default/sqwebmail/folder2.gif
 www/data.default/sqwebmail/folders.gif
 www/data.default/sqwebmail/forward.gif
 www/data.default/sqwebmail/forwardatt.gif
 www/data.default/sqwebmail/fullheaders.gif
+www/data.default/sqwebmail/graybottomleft.gif
+www/data.default/sqwebmail/graybottomright.gif
+www/data.default/sqwebmail/graytopleft.gif
+www/data.default/sqwebmail/graytopright.gif
 www/data.default/sqwebmail/left.gif
 www/data.default/sqwebmail/left2.gif
+www/data.default/sqwebmail/logo.gif
 www/data.default/sqwebmail/print.gif
 www/data.default/sqwebmail/reply.gif
 www/data.default/sqwebmail/replyall.gif
 www/data.default/sqwebmail/replylist.gif
 www/data.default/sqwebmail/right.gif
 www/data.default/sqwebmail/right2.gif
+www/data.default/sqwebmail/sep.gif
+www/data.default/sqwebmail/signin.gif
 www/data.default/sqwebmail/sqwebmail.css
 www/data.default/sqwebmail/trash2.gif
+www/data.default/sqwebmail/uncancel.gif
 @dirrm www/data.default/sqwebmail
 @unexec /bin/rmdir %D/www/data.default 2> /dev/null || true
 @dirrm www/cgi-bin.default/sqwebmail
 @unexec /bin/rmdir %D/www/cgi-bin.default 2> /dev/null || true
 @unexec /bin/rmdir %D/www 2> /dev/null || true
+@dirrm share/sqwebmail/var/spool/calendar/public
+@dirrm share/sqwebmail/var/spool/calendar/private
+@dirrm share/sqwebmail/var/spool/calendar/localcache
+@dirrm share/sqwebmail/var/spool/calendar/authdaemon
+@dirrm share/sqwebmail/var/spool/calendar
+@dirrm share/sqwebmail/var/spool
+@dirrm share/sqwebmail/var/authdaemon
+@dirrm share/sqwebmail/var
+@dirrm share/sqwebmail/share/locale
+@dirrm share/sqwebmail/share
 @dirrm share/sqwebmail/sbin
 @dirrm share/sqwebmail/man/man8
 @dirrm share/sqwebmail/man/man1
 @dirrm share/sqwebmail/man
+@dirrm share/sqwebmail/lib
 @dirrm share/sqwebmail/html/en-us
 @dirrm share/sqwebmail/html
 @dirrm share/sqwebmail

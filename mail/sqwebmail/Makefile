@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sqwebmail
-PORTVERSION=	2.0.0
+PORTVERSION=	3.2.0
 CATEGORIES=	mail www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= courier
@@ -48,13 +48,15 @@ VCHKPWLOC?=	${LOCALBASE}/vpopmail
 
 # End of user variables
 
-GNU_CONFIGURE=	YES
+HAS_CONFIGURE=	YES
 
 CONFIGURE_ARGS= \
 	--enable-cgibindir=${CGIBINDIR}/${CGIBINSUBDIR} \
 	--enable-imagedir=${WEBDATADIR}/${WEBDATASUBDIR} \
 	--without-authmysql \
 	--libexecdir=${PREFIX}/libexec/sqwebmail \
+	--mandir=${PREFIX}/share/sqwebmail \
+	--prefix=${PREFIX}/share/sqwebmail \
 	--enable-imageurl=/${IMAGEURL}/
 
 .if defined(WITHOUT_CACHEDIR)
@@ -86,6 +88,22 @@ CONFIGURE_ARGS+=	--without-authvchkpw
 PLIST_SUB+=		VPOPMAILFLAG="@comment "
 .endif
 
+.if defined(WITH_MYSQL)
+CONFIGURE_ARGS+=	--with-authmysql
+PLIST_SUB+=		MYSQLFLAG=""
+.else
+CONFIGURE_ARGS+=	--without-authmysql
+PLIST_SUB+=		MYSQLFLAG="@comment "
+.endif
+
+.if defined(WITH_POSTGRESQL)
+CONFIGURE_ARGS+=	--with-authpgsql
+PLIST_SUB+=		PGSQLFLAG=""
+.else
+CONFIGURE_ARGS+=	--without-authpgsql
+PLIST_SUB+=		PGSQLFLAG="@comment "
+.endif
+
 .if defined(WITH_ISPELL)
 BUILD_DEPENDS+=	${LOCALBASE}/bin/ispell:${PORTSDIR}/textproc/ispell
 RUN_DEPENDS+=	${LOCALBASE}/bin/ispell:${PORTSDIR}/textproc/ispell
@@ -114,11 +132,6 @@ MLINKS=		authlib.8 authcram.8 \
 		makeuserdb.8 pw2userdb.8 \
 		makeuserdb.8 vchkpw2userdb.8
 
-SBINS=		makeuserdb pw2userdb userdb userdbpw vchkpw2userdb
-
-post-install:
-.for a in ${SBINS}
-	@${LN} -sf ${PREFIX}/share/sqwebmail/sbin/$a ${PREFIX}/sbin/sqwebmail.$a
-.endfor
+CONFIGURE_ARGS+=	${CONFIGURE_TARGET}
 
 .include <bsd.port.mk>
