@@ -1,0 +1,18 @@
+--- configure.in.orig	Tue Mar 16 11:07:38 2004
++++ configure.in	Thu Aug  5 09:59:56 2004
+@@ -109,6 +109,7 @@
+ 	# test for the library first, for people who may have the libs
+ 	# installed but no headers
+ 	AC_CHECK_LIB(vga, vga_getmousetype,
++		SVGALIB_LIBS="$SVGALIB_LIBS -lvga"
+ 		HAVE_SVGALIB=maybe,
+ 		HAVE_SVGALIB=no,
+ 		[ $SVGALIB_LIBS ]
+@@ -125,7 +126,6 @@
+ 	# if it's all there, define the relevant bits
+ 	if test "x$HAVE_SVGALIB" = xyes ; then
+ 		AC_DEFINE(HAVE_SVGALIB, 1, [Define this if you have SVGAlib])
+-		SVGALIB_LIBS="-lvga"
+ 		AC_SUBST(SVGALIB_CFLAGS)
+ 		AC_SUBST(SVGALIB_LIBS)
+ 	else
