@@ -15,6 +15,7 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	dbader@eece.unm.edu
 
+USE_XLIB=	yes
 NO_WRKSUBDIR=	yes
 
 BINARIES=	clique consense contml contrast dnacomp dnadist dnainvar \
