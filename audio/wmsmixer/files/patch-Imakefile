@@ -1,0 +1,13 @@
+*** Imakefile.orig	Mon Apr  2 03:17:43 2001
+--- Imakefile	Mon Apr  2 03:17:51 2001
+***************
+*** 10,13 ****
+  SRCS = wmsmixer.cc
+  OBJS = wmsmixer.o
+  
+! ComplexProgramTarget(wmsmixer)
+--- 10,13 ----
+  SRCS = wmsmixer.cc
+  OBJS = wmsmixer.o
+  
+! ComplexProgramTargetNoMan(wmsmixer)

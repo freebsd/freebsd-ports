@@ -184,6 +184,7 @@
     SUBDIR += wmix
     SUBDIR += wmmixer
     SUBDIR += wmmp3
+    SUBDIR += wmsmixer
     SUBDIR += wmtune
     SUBDIR += wmusic
     SUBDIR += workman
