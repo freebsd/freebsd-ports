@@ -1,0 +1,11 @@
+ViewKlass is a C++ framework for developing applications which use the
+LessTif, OpenMotif or OSF/Motif[TM] user interface toolkits. In particular
+it provides classes which support the creation of reusable components. This
+helps to simplify the development of applications using object-oriented
+techniques.
+
+It also provides classes which encapsulate some of the more difficult and
+tedious aspects of Motif development. These include classes which handle
+the creation of windows, dialogs and menus.
+
+WWW: http://viewklass.sourceforge.net/
