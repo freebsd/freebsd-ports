@@ -66,7 +66,6 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/mod_perl_tuning.pod
 libexec/apache/libperl.so
 @dirrm include/apache/modules/perl
 @dirrm include/apache/modules
-@dirrm include/apache
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/include/modules/perl
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/include/modules
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/include
