@@ -17,6 +17,8 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Netscape plugin support for Konqueror
 
+BUILD_DEPENDS=	xmkmf:${X_IMAKE_PORT}
+
 CONFLICTS=	kdebase-3.1.* kdebase-3.2.[0-3]
 
 USE_KDELIBS_VER=3
