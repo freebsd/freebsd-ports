@@ -15,8 +15,6 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:C/.0$/-0/}.shared.${ARCH}-${OPSYS}
 
 MAINTAINER=	holger@e-gitt.net
 
-LIB_DEPENDS=	c.4:${PORTSDIR}/misc/compat4x
-
 ONLY_FOR_ARCHS= i386 alpha
 USE_BZIP2=	yes
 USE_GNOMENG=    yes
@@ -34,6 +32,10 @@ post-install:
 	@${FMT} < ${PKGMESSAGE}
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500000
+LIB_DEPENDS+=	c_r.4:${PORTSDIR}/misc/compat4x
+.endif
 
 install-user: extract
 .if !defined(LANG)
