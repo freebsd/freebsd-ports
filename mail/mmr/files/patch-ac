@@ -1,5 +1,5 @@
---- terminal.h.orig	Mon Jun 23 13:49:40 1997
-+++ terminal.h	Sat Nov  1 08:55:42 1997
+--- terminal.h	Mon Jun 23 21:49:40 1997
++++ /home/andy/tmp/wrk/terminal.h	Tue Apr 27 18:06:25 1999
 @@ -13,7 +13,11 @@
  extern "C" {
  #include <stdlib.h>

@@ -1,10 +1,12 @@
---- headers.h.orig	Tue Feb 18 13:39:00 1997
-+++ headers.h	Sat Nov  1 08:55:42 1997
-@@ -12,4 +12,7 @@
- #include <signal.h>
- #include <errno.h>
- #include <sys/ioctl.h>
-+#ifdef __FreeBSD__
-+extern char* cuserid(char*);
+--- outgoing.cc	Fri Jul 17 04:10:02 1998
++++ /home/andy/tmp/wrk/outgoing.cc	Tue Apr 27 18:06:33 1999
+@@ -13,7 +13,9 @@
+ #include "terminal.h"
+ #include "rcfile.h"
+ 
++#ifndef MAILER
+ #define MAILER	"/usr/lib/sendmail -t"
 +#endif
- }
+ #define EDITOR	"vi +%d"
+ #define SIGFILE	".signature"
+ 
