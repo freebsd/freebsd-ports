@@ -3,8 +3,6 @@ web proxies.
 
 Add the following line to your ~/.ssh/config file (replacing HOST and
 PORT with your web proxy settings):
-	ProxyCommand /usr/local/bin/corkscrew HOST -p PORT %h %p
-
-Corkscrew is known to work with the Gauntlet and CacheFlow proxies.
+	ProxyCommand /usr/local/bin/corkscrew HOST PORT %h %p
 
 WWW: http://www.agroman.net/corkscrew/
