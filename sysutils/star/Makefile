@@ -7,8 +7,8 @@
 #
 
 PORTNAME=		star
-PORTVERSION=		1.2
-CATEGORIES=		sysutils
+PORTVERSION=		1.3
+CATEGORIES=		sysutils archivers
 MASTER_SITES=		ftp://ftp.fokus.gmd.de/pub/unix/star/ \
 			${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	utils/compress
@@ -27,7 +27,8 @@ post-extract:
 .endif
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/star/OBJ/${MACHINE_ARCH}-freebsd-cc/star \
+	${INSTALL_PROGRAM} \
+		${WRKSRC}/star/OBJ/${MACHINE_ARCH}-freebsd-${CC}/star \
 		${PREFIX}/bin
 	cd ${PREFIX}/bin ; ${LN} -f star ustar
 	${INSTALL_MAN} ${WRKSRC}/star/star.1 ${PREFIX}/man/man1
