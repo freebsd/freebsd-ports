@@ -1,6 +1,6 @@
---- src/wmtaskbar.cc.orig	Mon Jan 15 06:49:41 2001
-+++ src/wmtaskbar.cc	Mon Jan 15 22:18:04 2001
-@@ -47,6 +47,12 @@
+--- src/wmtaskbar.cc.orig	Fri Apr 27 09:32:22 2001
++++ src/wmtaskbar.cc	Tue May  1 06:15:49 2001
+@@ -47,12 +47,18 @@
  YPixmap *windowsPixmap = 0;
  YPixmap *taskbackPixmap = 0;
  
@@ -11,21 +11,17 @@
 +#endif
 +
  static void initPixmaps() {
-     static const char *home = getenv("HOME");
-     const char *base = 0;
-@@ -74,9 +80,9 @@
- 
- /** Use Linux 2.0 Penguin as start button */
  #ifndef START_PIXMAP
 -#define START_PIXMAP "linux.xpm"
-+//#define START_PIXMAP "linux.xpm"
- //#define START_PIXMAP "debian.xpm"
--//#define START_PIXMAP "bsd-daemon.xpm"
 +#define START_PIXMAP "bsd-daemon.xpm"
- //#define START_PIXMAP "start.xpm"
- //#define START_PIXMAP "xfree86os2.xpm"
- #endif
-@@ -256,7 +262,7 @@
+ /*
+ #define START_PIXMAP "debian.xpm"
+-#define START_PIXMAP "bsd-daemon.xpm"
++#define START_PIXMAP "linux.xpm"
+ #define START_PIXMAP "start.xpm"
+ #define START_PIXMAP "xfree86os2.xpm"
+ */
+@@ -240,7 +246,7 @@
      } else
          fClock = 0;
  #ifdef CONFIG_APPLET_APM
