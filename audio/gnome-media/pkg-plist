@@ -179,6 +179,7 @@ share/locale/zh_TW/LC_MESSAGES/gnome-media-2.0.mo
 @dirrm share/gnome/pixmaps/gnome-cd
 @dirrm share/gnome/gnome-sound-recorder/ui
 @dirrm share/gnome/gnome-sound-recorder
+@dirrm share/gnome/gnome-media-2.0
 @dirrm share/gnome/help/gnome-volume-control/C/figures
 @dirrm share/gnome/help/gnome-volume-control/C
 @dirrm share/gnome/help/gnome-volume-control
@@ -188,6 +189,7 @@ share/locale/zh_TW/LC_MESSAGES/gnome-media-2.0.mo
 @dirrm share/gnome/help/gnome-cd/C/figures
 @dirrm share/gnome/help/gnome-cd/C
 @dirrm share/gnome/help/gnome-cd
+@dirrm include/cddb-slave2
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnome-volume-control
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnome-sound-recorder/system-state
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnome-sound-recorder
