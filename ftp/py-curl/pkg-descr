@@ -1,0 +1,5 @@
+Python module interface to the cURL library which is
+a tool for transferring files with URL syntax, supporting
+many protocols.
+
+WWW: http://sourceforge.net/projects/pycurl/
