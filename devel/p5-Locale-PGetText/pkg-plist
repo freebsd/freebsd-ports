@@ -1,0 +1,6 @@
+bin/XText
+bin/MsgFormat
+lib/perl5/%%PERL_VERSION%%/man/man3/Locale::PGetText.3
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Locale/PGetText/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/Locale/PGetText.pm
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Locale/PGetText
