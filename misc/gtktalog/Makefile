@@ -6,15 +6,18 @@
 #
 
 PORTNAME=	gtktalog
-PORTVERSION=	0.99.19
+PORTVERSION=	0.99.20
 CATEGORIES=	misc
-MASTER_SITES=	http://freesoftware.fsf.org/download/gtktalog/gtktalog/sources/
+MASTER_SITES=	http://savannah.nongnu.org/download/gtktalog/gtktalog/sources/
 
 MAINTAINER=	rael@vectorstar.net
 
 USE_GNOMENG=	yes
 USE_GNOME=	gnomeprefix gnomelibs
 GNU_CONFIGURE=	yes
+USE_X_PREFIX=	yes
+USE_BZIP2=	yes
+USE_PERL5=	yes
 
 MAN1=		gtktalog.1
 
