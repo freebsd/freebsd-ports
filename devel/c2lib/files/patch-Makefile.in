@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Fri Feb 16 18:51:26 2001
++++ Makefile.in	Fri Feb 16 18:51:06 2001
+@@ -141,7 +141,7 @@
+ DEFS = @DEFS@ -I. -I$(srcdir) -I.
+ CPPFLAGS = @CPPFLAGS@
+ LDFLAGS = @LDFLAGS@
+-LIBS = @LIBS@
++LIBS = @LIBS@ -lm
+ libc2_la_LIBADD = 
+ libc2_la_OBJECTS =  hash.lo matvec.lo pool.lo pstring.lo vector.lo
+ PROGRAMS =  $(noinst_PROGRAMS)

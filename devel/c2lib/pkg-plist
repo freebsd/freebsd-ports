@@ -1,0 +1,9 @@
+include/c2lib_version.h
+include/hash.h
+include/matvec.h
+include/pool.h
+include/pstring.h
+include/vector.h
+lib/libc2.a
+lib/libc2.so
+lib/libc2.so.1
