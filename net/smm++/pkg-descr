@@ -1,0 +1,9 @@
+SMM++ is a MUD client with mapping functionality. You can just use
+mapping or just mudding or both together.
+
+It is based on itcl , which itself depends on tcl/tk . itcl, tcl/tk
+are free and standart programming languages. (If you need further
+information, where to get itcl and/or tcl/tk, please drop me a
+line.)
+
+http://www.physik.uni-dortmund.de/~issevers/SMM++/
