@@ -15,6 +15,7 @@ DISTNAME=	sphinx2-0.4
 MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	Speech recognition system
 
+DEST=		${WRKSRC}/src/libsphinx2/
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
@@ -25,9 +26,11 @@ IGNORE=		"audio read error"
 # contains i386 sound code
 ONLY_FOR_ARCHS=	i386
 
-post-patch:
-	${FIND} ${WRKSRC} -type f -exec ${PERL} -pi -e \
-		"s:<malloc.h>:<stdlib.h>:g" {} \;
+do-patch:
+.for ii in CM_funcs.c hash.c linklist.c list.c salloc.c
+	${MV} ${DEST}${ii} ${DEST}${ii}.orig
+	${SED} -e "s:<malloc.h>:<stdlib.h>:g" < ${DEST}${ii}.orig > ${DEST}${ii}
+.endfor
 
 post-build:
 	${ECHO_CMD} "*** WARNING ***"				 > ${PKGMESSAGE}
