@@ -1,0 +1,10 @@
+`setcdboot' is used on the DEC Alpha platform to mark a file bootable
+within an Alpha ISO-9660 image bootable.  First create an ISO-9660 image
+using `mkisofs', and then run
+
+	setcdboot <name_of_iso_image> <boot_path_within_image>
+
+Once a bootable file image has been marked with `setcdboot', burn the image
+to CDROM media in the usual manner.  To boot the resulting CDROM, simply
+specify the CDROM device as the boot device and the Alpha will boot as if
+from hard disk.
