@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 bin/lablgl
 lib/ocaml/lablGL/raw.cmi
 lib/ocaml/lablGL/gluMat.cmi
@@ -35,13 +36,11 @@ lib/ocaml/lablGL/glList.mli
 lib/ocaml/lablGL/glLight.mli
 lib/ocaml/lablGL/gl.mli
 lib/ocaml/lablGL/togl.mli
+lib/ocaml/lablGL/lablgltop
 lib/ocaml/lablGL/togl.cma
 lib/ocaml/lablGL/libtogl.a
 lib/ocaml/lablGL/lablgl.cma
 lib/ocaml/lablGL/liblablgl.a
-lib/ocaml/lablGL/lablgltop
-lib/ocaml/lablGL/dlltogl.so
-lib/ocaml/lablGL/dlllablgl.so
 lib/ocaml/lablGL/lablgl.cmxa
 lib/ocaml/lablGL/gluMat.cmx
 lib/ocaml/lablGL/gluTess.cmx
@@ -64,6 +63,8 @@ lib/ocaml/lablGL/togl.a
 lib/ocaml/lablGL/togl.cmxa
 lib/ocaml/lablGL/lablgl.a
 lib/ocaml/lablGL/togl.cmx
+lib/ocaml/stublibs/dlllablgl.so
+lib/ocaml/stublibs/dlltogl.so
 %%PORTDOCS%%share/doc/ocaml/lablgl/README
 share/examples/ocaml/lablgl/Makefile
 share/examples/ocaml/lablgl/README
