@@ -1,6 +1,6 @@
 --- configure.in.orig	Wed Oct 29 06:48:40 1997
-+++ configure.in	Tue Dec  7 02:22:17 1999
-@@ -243,9 +243,9 @@
++++ configure.in	Wed Jul 12 00:56:59 2000
+@@ -243,10 +243,10 @@
  	fi
       fi
    ])
@@ -8,10 +8,12 @@
 +  AC_SLANG(/usr/include, slang.h, , -I/usr/include , "slang on /usr/include")
    AC_SLANG(/usr/include/slang, slang.h, , -I/usr/include/slang , "slang on /usr/include/slang")
 -  AC_SLANG(/usr/local/include, slang.h, , -I/usr/local/include/slang , "slang on /usr/local/include")
-+  AC_SLANG(/usr/local/include, slang.h, , -I/usr/local/include , "slang on /usr/local/include")
-   AC_SLANG(/usr/local/include/slang, slang.h, , -I/usr/local/include/slang , "slang on /usr/local/include/slang")
+-  AC_SLANG(/usr/local/include/slang, slang.h, , -I/usr/local/include/slang , "slang on /usr/local/include/slang")
++  AC_SLANG(%%LOCALBASE%%/include, slang.h, , -I%%LOCALBASE%%/include , "slang on %%LOCALBASE%%/include")
++  AC_SLANG(%%LOCALBASE%%/include/slang, slang.h, , -I%%LOCALBASE%%/include/slang , "slang on %%LOCALBASE%%/include/slang")
    if test "$slang_driver" = true; then
      if test "$force_curses_driver" = false; then
+       echo "Disabling curses driver since slang is available"
 @@ -314,14 +314,14 @@
  then
      AC_CHECKING("location of curses")
@@ -19,13 +21,14 @@
 -    AC_NCURSES(/usr/include, ncurses.h, , -I/usr/include/ncurses , "ncurses on /usr/include")
 -    AC_NCURSES(/usr/include/ncurses, ncurses.h, , -I/usr/include/ncurses, "ncurses on /usr/include/ncurses")
 -    AC_NCURSES(/usr/local/include, ncurses.h, ,-L/usr/local/lib, -I/usr/local/include, "ncurses on /usr/local")
+-    AC_NCURSES(/usr/local/include/ncurses, ncurses.h, -L/usr/local/lib -L/usr/local/lib/ncurses, -I/usr/local/include/ncurses, "ncurses on /usr/local/include/ncurses")
 +    AC_NCURSES(/usr/include, ncurses.h, -L/usr/lib, -I/usr/include , "ncurses on /usr/include")
 +    AC_NCURSES(/usr/include/ncurses, ncurses.h, -L/usr/lib, -I/usr/include/ncurses, "ncurses on /usr/include/ncurses")
-+    AC_NCURSES(/usr/local/include, ncurses.h, -L/usr/local/lib, -I/usr/local/include, "ncurses on /usr/local")
-     AC_NCURSES(/usr/local/include/ncurses, ncurses.h, -L/usr/local/lib -L/usr/local/lib/ncurses, -I/usr/local/include/ncurses, "ncurses on /usr/local/include/ncurses")
++    AC_NCURSES(%%LOCALBASE%%/include, ncurses.h, -L%%LOCALBASE%%/lib, -I%%LOCALBASE%%/include, "ncurses on %%LOCALBASE%%")
++    AC_NCURSES(%%LOCALBASE%%/include/ncurses, ncurses.h, -L%%LOCALBASE%%/lib -L%%LOCALBASE%%/lib/ncurses, -I%%LOCALBASE%%/include/ncurses, "ncurses on %%LOCALBASE%%/include/ncurses")
  
 -    AC_NCURSES(/usr/local/include/ncurses, curses.h, -L/usr/local/lib, -I/usr/local/include/ncurses -DRENAMED_NCURSES, "renamed ncurses on /usr/local/.../ncurses")
-+    AC_NCURSES(/usr/local/include/ncurses, curses.h, -L/usr/local/lib, -I/usr/local/include/ncurses -DRENAMED_NCURSES, "renamed ncurses on /usr/local/include/ncurses")
++    AC_NCURSES(%%LOCALBASE%%/include/ncurses, curses.h, -L%%LOCALBASE%%/lib, -I%%LOCALBASE%%/include/ncurses -DRENAMED_NCURSES, "renamed ncurses on %%LOCALBASE%%/include/ncurses")
  
 -    AC_NCURSES(/usr/include/ncurses, curses.h, , -I/usr/include/ncurses -DRENAMED_NCURSES, "renamed ncurses on /usr/include/ncurses")
 +    AC_NCURSES(/usr/include/ncurses, curses.h, -L/usr/lib, -I/usr/include/ncurses -DRENAMED_NCURSES, "renamed ncurses on /usr/include/ncurses")
