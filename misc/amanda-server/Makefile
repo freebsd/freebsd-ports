@@ -134,7 +134,11 @@ CONFIGURE_ARGS+=	--with-portrange=${AMANDA_PORTRANGE}
 .if ${OSVERSION} < 400000
 PLIST_SUB+=	SCSICHG=''
 .elif ${OSVERSION} >= 480000
+.if ${MACHINE_ARCH} == "amd64"
+PLIST_SUB+=	SCSICHG='@comment '
+.else
 PLIST_SUB+=	SCSICHG=''
+.endif
 .else
 PLIST_SUB+=	SCSICHG='@comment '
 .endif
