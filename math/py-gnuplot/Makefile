@@ -13,18 +13,16 @@ DISTNAME=	Gnuplot-${PORTVERSION}
 
 MAINTAINER=	sobomax@FreeBSD.org
 
-BUILD_DEPENDS=	python1.5:${PORTSDIR}/lang/python15
-RUN_DEPENDS=	python1.5:${PORTSDIR}/lang/python15 \
-		gnuplot:${PORTSDIR}/math/gnuplot \
-		${LOCALBASE}/lib/python1.5/site-packages/Numeric/_numpy.so:${PORTSDIR}/math/numpy
+RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot \
+		${PYTHON_SITELIBDIR}/Numeric/_numpy.so:${PORTSDIR}/math/numpy
+
+USE_PYTHON=	yes
 
 do-build:
-	@${LOCALBASE}/bin/python \
-		${LOCALBASE}/lib/python1.5/compileall.py ${WRKSRC}
+	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
 
 do-install:
-	${MKDIR} ${PREFIX}/lib/python1.5/site-packages/Gnuplot
-	${INSTALL_DATA} ${WRKSRC}/*.py? \
-		${PREFIX}/lib/python1.5/site-packages/Gnuplot
+	${MKDIR} ${PYTHON_SITELIBDIR}/Gnuplot
+	${INSTALL_DATA} ${WRKSRC}/*.py? ${PYTHON_SITELIBDIR}/Gnuplot
 
 .include <bsd.port.mk>
