@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	sagasu
-PORTVERSION=	2.0.5
-PORTREVISION=	2
+PORTVERSION=	2.0.6
 CATEGORIES=	textproc gnome
 MASTER_SITES=	http://www3.sympatico.ca/sarrazip/dev/ \
 		http://demian.dyndns.org/src/
@@ -25,8 +24,5 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 MAN1=		sagasu.1
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ;' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
