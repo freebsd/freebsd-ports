@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	liveMedia
-PORTVERSION=	2002.11.18
+PORTVERSION=	2002.12.10
 CATEGORIES=	net devel
 MASTER_SITES=	http://www.LIVE.COM/liveMedia/public/
 MASTER_SITES+=	${MASTER_SITE_LOCAL}
@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	nork
 DISTNAME=	live.${PORTVERSION}
 
 MAINTAINER=	nork@FreeBSD.org
+
+NO_CDROM=	'dated material'
 
 WRKSRC=		${WRKDIR}/live
 
