@@ -30,6 +30,7 @@ etc/gconf/gconf.xml.defaults/apps/galeon/UI/Windows/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/galeon/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/galeon/Advanced/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/galeon/Advanced/Filtering/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/galeon/Advanced/Netword/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/galeon/Advanced/Network/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/galeon/Advanced/Persistent/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/galeon/Advanced/Security/%gconf.xml
@@ -68,7 +69,6 @@ share/gnome/galeon/bookmarks-editor.glade
 share/gnome/galeon/bookmarks.glade
 share/gnome/galeon/default-bookmarks.xbel
 share/gnome/galeon/fetch_favicon.xpm
-share/gnome/galeon/fonts.png
 share/gnome/galeon/freshmeat.png
 share/gnome/galeon/galeon-bookmark-alias-mark.png
 share/gnome/galeon/galeon-bookmark.png
@@ -82,14 +82,12 @@ share/gnome/galeon/galeon-separator.png
 share/gnome/galeon/galeon-viewsource.png
 share/gnome/galeon/galeon.glade
 share/gnome/galeon/galeon.png
-share/gnome/galeon/general.png
 share/gnome/galeon/google.png
 share/gnome/galeon/google_groups.png
 share/gnome/galeon/google_images.png
 share/gnome/galeon/imdb_movies.png
 share/gnome/galeon/logo.png
 share/gnome/galeon/myportal.css
-share/gnome/galeon/network.png
 share/gnome/galeon/new_alias.xpm
 share/gnome/galeon/new_alias_small.xpm
 share/gnome/galeon/new_folder.xpm
@@ -162,8 +160,6 @@ share/gnome/galeon/spinners/pipeon/013.png
 share/gnome/galeon/spinners/pipeon/014.png
 share/gnome/galeon/spinners/pipeon/rest.png
 share/gnome/galeon/stocks.png
-share/gnome/galeon/stop.png
-share/gnome/galeon/tabs.png
 share/gnome/galeon/toc.css
 share/gnome/galeon/toolbar-editor.glade
 share/gnome/gnome-2.0/ui/galeon-bookmarks-editor-ui.xml
@@ -192,6 +188,7 @@ share/gnome/help/galeon/C/preferences.xml
 share/gnome/omf/galeon/galeon-C.omf
 share/gnome/pixmaps/galeon.png
 share/gnome/sounds/galeon/clicked.wav
+share/locale/am/LC_MESSAGES/galeon-2.0.mo
 share/locale/az/LC_MESSAGES/galeon-2.0.mo
 share/locale/bg/LC_MESSAGES/galeon-2.0.mo
 share/locale/ca/LC_MESSAGES/galeon-2.0.mo
@@ -265,6 +262,7 @@ share/locale/zh_TW/LC_MESSAGES/galeon-2.0.mo
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/galeon/Advanced/Security
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/galeon/Advanced/Persistent
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/galeon/Advanced/Network
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/galeon/Advanced/Netword
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/galeon/Advanced/Filtering
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/galeon/Advanced
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/galeon
