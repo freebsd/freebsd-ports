@@ -1,0 +1,8 @@
+dancer-ircd has now been installed.
+
+You should now edit /usr/local/etc/dancer-ircd/ircd.conf
+to suit your needs.
+
+You may then start the server by running:
+
+	/usr/local/etc/rc.d/dancer-ircd.sh start
