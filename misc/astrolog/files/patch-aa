@@ -17,7 +17,7 @@
    xdata.o xgeneral.o xdevice.o xcharts0.o xcharts1.o xcharts2.o xscreen.o
   # If you don't have X windows, delete the "-lX11" part from the line below:
 ! LIBS = -lm -L/usr/X11R6/lib -lX11
-! CFLAGS = -O -I/usr/X11R6/include
+! CFLAGS += -I/usr/X11R6/include
   
 + all:	astrolog
 + 
@@ -26,7 +26,7 @@
   	strip $(NAME)
 + 
 + install:
-+ 	/usr/bin/install -c -s astrolog ${PREFIX}/bin
++ 	/usr/bin/install -c astrolog ${PREFIX}/bin
 + 	-mkdir -p ${PREFIX}/share/astrolog
 + 	/usr/bin/install -c Helpfile.500 ${PREFIX}/share/astrolog
 + 	@echo "See the file ${PREFIX}/share/astrolog/Helpfile.500 for help.
