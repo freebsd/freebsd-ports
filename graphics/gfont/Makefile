@@ -3,14 +3,14 @@
 # Date created:			09-Sep-1997
 # Whom:				Ralf S. Engelschall <rse@engelschall.com>
 #
-# $Id: Makefile,v 1.6 1998/11/16 07:12:06 asami Exp $
+# $Id: Makefile,v 1.7 1998/11/25 20:17:00 billf Exp $
 #
 
 DISTNAME=	gfont-1.0.2
 CATEGORIES=	graphics print www
 MASTER_SITES=	http://www.engelschall.com/sw/gfont/distrib/ \
 		ftp://ftp.engelschall.com/sw/gfont/ \
-		ftp://ftp.hyperreal.org/software/engelschall/gfont/
+		http://www.hyperreal.org/software/engelschall/gfont/
 
 MAINTAINER=	rse@engelschall.com
 
