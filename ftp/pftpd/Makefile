@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pftpd
-PORTVERSION=	0.33
+PORTVERSION=	0.39
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.lysator.liu.se/pub/unix/pftpd/
 
@@ -17,8 +17,7 @@ GNU_CONFIGURE=	yes
 NO_CDROM=	"License problem"
 NO_PACKAGE=	"License problem"
 
-post-configure:
-	@${PERL} -pi -e 's/.*man8.*//g' ${WRKSRC}/Makefile
+MAN1=		pftpd.1 rpad.1
 
 post-install:
 	@${CAT} ${WRKSRC}/ISSUES
