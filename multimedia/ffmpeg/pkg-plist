@@ -2,6 +2,7 @@ bin/ffmpeg
 bin/ffserver
 etc/ffserver.conf.sample
 include/libavcodec/avcodec.h
+include/libavcodec/common.h
 include/libavcodec/dsputil.h
 lib/libav.a
 lib/libavcodec.a

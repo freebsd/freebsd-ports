@@ -7,7 +7,7 @@
 
 PORTNAME=	ffmpeg
 PORTVERSION=	0.4.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -32,7 +32,8 @@ DOC_FILES=	README
 DOC_DOCFILES=	FAQ README.dev README.tech \
 		TODO bench.txt ffmpeg.txt \
 		ffserver.txt
-HEADER_FILES=	libavcodec/avcodec.h libavcodec/dsputil.h
+HEADER_FILES=	libavcodec/avcodec.h libavcodec/common.h \
+		libavcodec/dsputil.h
 LIB_FILES=	libav/libav.a libavcodec/libavcodec.a
 
 .ifdef(WITHOUT_MMX)
@@ -61,6 +62,9 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/doc/ffserver.conf \
 		${PREFIX}/etc/ffserver.conf.sample
 .for file in ${HEADER_FILES}
+# fix header references prior to installation
+	@${REINPLACE_CMD} -e 's|"common.h"|<libavcodec/common.h>|' \
+		${WRKSRC}/${file}
 	@${MKDIR} ${PREFIX}/include/${file:H}
 	@${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/include/${file}
 .endfor
