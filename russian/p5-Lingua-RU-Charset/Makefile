@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Lingua
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	kapr@crosswinds.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl extension for detecting and converting various russian character sets
 
 PERL_CONFIGURE=	YES

@@ -10,7 +10,7 @@ PORTVERSION=	0.7.2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.entity.cx/Download/files/all-versions/
 
-MAINTAINER=	jesse_mcconnell@hotmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A really rapid XML-based application development system
 
 LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre

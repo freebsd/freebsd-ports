@@ -11,7 +11,7 @@ CATEGORIES=	games net
 MASTER_SITES=	http://achurch.org/tetrinet/
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=	fredrik@wasadata.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A console tetrinet client
 
 do-install:

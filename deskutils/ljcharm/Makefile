@@ -11,7 +11,7 @@ CATEGORIES=	deskutils net
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ljcharm
 
-MAINTAINER=	schmidtcarl@earthlink.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A menu-driven python-based livejournal client
 
 USE_PYTHON=	yes

@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	nethack
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER?=	dscheidt@enteract.com
+MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	A dungeon explorin', slashin', hackin' game
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

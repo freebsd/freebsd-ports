@@ -17,7 +17,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${DISTNAME}.PC98.patch.gz
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	junya-w@remus.dti.ne.jp
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tools for manipulating MSDOS files + support 1232KB , Unicode LFN
 
 GNU_CONFIGURE=	yes

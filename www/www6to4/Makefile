@@ -9,7 +9,7 @@ PORTVERSION=	1.5
 CATEGORIES=	www ipv6
 MASTER_SITES=	ftp://ftp.pasta.cs.uit.no/pub/Vermicelli/
 
-MAINTAINER=	Janos.Mohacsi@dante.org.uk
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight http proxy to help IPv4 only browsers
 
 do-install:

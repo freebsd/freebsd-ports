@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	apps/graphics/hacks/X
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	malte.lance@gmx.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Four-Dimensional graphics tumbler for X11
 
 USE_XLIB=	yes

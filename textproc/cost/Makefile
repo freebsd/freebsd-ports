@@ -11,7 +11,7 @@ CATEGORIES=		textproc tk82
 MASTER_SITES=		http://www.flightlab.com/~joe/cost/ \
 			ftp://bowhill.vservers.com/pub/
 
-MAINTAINER=		kosmos@blarg.net
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=	SGML/XML application programming tool
 
 LIB_DEPENDS=		tcl82.1:${PORTSDIR}/lang/tcl82

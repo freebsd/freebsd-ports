@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.iij.ad.jp/pub/IIJ/dist/utashiro/perl/ \
 DISTNAME=	${PORTNAME}.pl-${PORTVERSION}
 EXTRACT_SUFX=
 
-MAINTAINER=	saito@miv.t.u-tokyo.ac.jp
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Text file to postscript converter (with Japanese support)
 
 EXTRACT_CMD=	${CP}

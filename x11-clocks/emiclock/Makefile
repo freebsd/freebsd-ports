@@ -11,7 +11,7 @@ PORTREVISIOIN=	1
 CATEGORIES=	x11-clocks
 MASTER_SITES=	ftp://ftp.noge.com/pub/EmiClock/X11/
 
-MAINTAINER=	koba@noge.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Hyper-animated face analog clock for X11
 
 .if ${MACHINE_ARCH} != "i386"
