@@ -1,11 +1,12 @@
---- programs/xdm/Imakefile.orig	Sun Aug  1 15:28:12 1999
-+++ programs/xdm/Imakefile	Sun Aug  1 15:33:53 1999
-@@ -20,7 +20,7 @@
-  */
- #ifndef SharedLibXdmGreet
- #define SharedLibXdmGreet						\
--    ((defined(AlphaArchitecture) &&					\
-+    ((defined(AlphaArchitecture) && !defined(FreeBSDArchitecture) &&	\
-       (!defined(NetBSDArchitecture) ||					\
-        (defined(NetBSDArchitecture) && HasSharedLibraries))) ||		\
-      SystemV4)
+--- programs/xdm/sessreg.c.old	Tue Feb 15 18:26:57 2000
++++ programs/xdm/sessreg.c	Tue Feb 15 18:26:59 2000
+@@ -76,7 +76,9 @@
+ 
+ #ifdef CSRG_BASED
+ /* *BSD doesn't like a ':0' type entry in utmp */
++#ifndef __FreeBSD__
+ #define NO_UTMP
++#endif
+ #endif
+ 
+ #ifndef WTMP_FILE

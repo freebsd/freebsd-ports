@@ -1,0 +1,10 @@
+--- programs/Xserver/hw/xfree86/os-support/bsd/bsd_jstk.c~	Sun Aug  2 08:43:34 1998
++++ programs/Xserver/hw/xfree86/os-support/bsd/bsd_jstk.c	Mon Oct 11 02:27:32 1999
+@@ -97,7 +97,6 @@
+     *centerY = js.y;
+     xf86Msg(X_PROBED, "Joystick: CenterY set to %d\n", *centerY);
+     }
+-  }
+ 
+   return status;
+ }

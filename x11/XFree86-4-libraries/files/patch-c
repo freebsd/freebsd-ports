@@ -1,12 +1,20 @@
---- programs/Xserver/hw/xfree86/XF86Setup/mouse.tcl.orig	Mon Jan 17 00:34:06 2000
-+++ programs/Xserver/hw/xfree86/XF86Setup/mouse.tcl	Wed Jan 19 02:51:43 2000
-@@ -586,6 +586,9 @@
- 	set mseRes          $initres
- 	if { $mseRes <= 0 } {
- 		set mseRes 100
-+	}
-+	if { $mseRes > 200 } {
-+		set mseRes 200
- 	}
- 	$w.mouse.resolution.$mseRes invoke
- 	set mseButtons      $initbtn
+--- config/cf/Imake.tmpl~	Tue Feb 22 02:42:26 2000
++++ config/cf/Imake.tmpl	Tue Feb 22 03:11:21 2000
+@@ -1282,7 +1282,7 @@
+        CXXOPTIONS = CplusplusOptions
+       CXXINCLUDES = $(INCLUDES) $(TOP_INCLUDES) $(CXXEXTRA_INCLUDES) 
+        CXXDEFINES = $(CXXINCLUDES) $(CXXSTD_DEFINES) $(THREADS_CXXDEFINES) $(CXXEXTRA_DEFINES) $(DEFINES)
+-         CXXFLAGS = $(CXXDEBUGFLAGS) $(CXXOPTIONS) $(THREADS_CXXFLAGS) $(CXXDEFINES)
++         CXXFLAGS += $(CXXDEBUGFLAGS) $(CXXOPTIONS) $(THREADS_CXXFLAGS) $(CXXDEFINES)
+ #endif
+          COMPRESS = CompressCmd
+           GZIPCMD = GzipCmd
+@@ -1469,7 +1469,7 @@
+  */
+       ALLINCLUDES = $(INCLUDES) $(EXTRA_INCLUDES) $(TOP_INCLUDES) $(STD_INCLUDES)
+        ALLDEFINES = $(ALLINCLUDES) $(STD_DEFINES) $(EXTRA_DEFINES) $(PROTO_DEFINES) $(THREADS_DEFINES) $(MODULE_DEFINES) $(DEFINES)
+-           CFLAGS = $(CDEBUGFLAGS) $(CCOPTIONS) $(THREADS_CFLAGS) $(MODULE_CFLAGS) $(ALLDEFINES)
++           CFLAGS += $(CDEBUGFLAGS) $(CCOPTIONS) $(THREADS_CFLAGS) $(MODULE_CFLAGS) $(ALLDEFINES)
+         LINTFLAGS = $(LINTOPTS) -DLINT $(ALLDEFINES) $(DEPEND_DEFINES)
+          LDPRELIB = LdPreLib
+         LDPOSTLIB = LdPostLib

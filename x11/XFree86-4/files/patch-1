@@ -1,0 +1,16 @@
+--- programs/Xserver/hw/xfree86/input/joystick/Imakefile~	Fri Oct  8 01:24:05 1999
++++ programs/Xserver/hw/xfree86/input/joystick/Imakefile	Fri Oct  8 14:17:12 1999
+@@ -12,11 +12,11 @@
+ 			-I$(SERVERSRC)/include -I$(XINCLUDESRC) -I$(EXTINCSRC)
+ 
+ #ifdef LinuxArchitecture
+-	ARCH_JSTK = ../os-support/linux/lnx_jstk.o
++ARCH_JSTK = ../os-support/linux/lnx_jstk.o
+ #endif
+ 
+ #if defined(FreeBSDArchitecture) || defined(NetBSDArchitecture) || defined(OpenBSDArchitecture)
+-	ARCH_JSTK = ../os-support/bsd/bsd_jstk.o
++ARCH_JSTK = ../os-support/bsd/bsd_jstk.o
+ #endif
+ 
+ #if MakeHasPosixVariableSubstitutions
