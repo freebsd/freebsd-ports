@@ -38,6 +38,12 @@ PLIST_SUB+=	PORTVERSION=${PORTVERSION} GDB_TARG=${PKGNAMEPREFIX:S/-$//} \
 BINARIES=	gdb:gdb run:sim/msp430
 MANPAGES=	gdb.1:gdb run.1:sim/common
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+BROKEN=		"Configure fails on amd64"
+.endif
+
 do-install:
 	@${MKDIR} ${PREFIX}/${PKGNAMEPREFIX:S/-$//}/bin
 .for F in ${BINARIES}
@@ -50,4 +56,4 @@ do-install:
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/sim/msp430/libsim.a ${PREFIX}/lib/libmsp430-sim.a
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
