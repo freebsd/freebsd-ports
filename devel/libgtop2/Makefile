@@ -7,6 +7,7 @@
 
 PORTNAME=	libgtop2
 PORTVERSION=	1.90.2
+PORTREVISION=	1
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	pre-gnome2/releases/gnome-2.0-desktop-beta4
@@ -36,5 +37,7 @@ post-install:
 	install-info --section="Programming \& development tools" \
 	--entry="* libgtop2: (libgtop2).	libgtop2 programming manual" \
 	${PREFIX}/info/libgtop2.info ${PREFIX}/info/dir
+	@${CHGRP} kmem ${PREFIX}/bin/libgtop_server2
+	@${CHMOD} 2555 ${PREFIX}/bin/libgtop_server2
 
 .include <bsd.port.mk>
