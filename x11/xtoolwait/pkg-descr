@@ -1,0 +1,23 @@
+This utility notably decreases the startup time of your X sessions, provided
+that you start a number of X clients automatically during the X session
+startup.
+Most people, for instance, start X clients like xterm, xclock, xconsole and
+xosview from their .xinitrc, .openwin-init, .xtoolplaces or .xsession file.
+
+These X clients are started simultaneously (in the background) which puts a
+high load on the X server and the OS:
+
+* The X server is not multi-threaded, so all X clients are competing to get
+  access to the X server and to use its resources, which causes a lot of
+  overhead (= delay).
+
+* The performance of other (non X related) tasks served by the system degrades
+  badly due to the high load.
+  If the system has not enough RAM to hold all the X clients, it is swapping
+  heavily, resulting again in a lot of delay.
+
+On the Sun platform there is a utility called 'toolwait' which solves these
+problems: it starts one X client in the background, waits until it has mapped
+a window and then exits.
+
+Xtoolwait is a free implementation of exactly the same idea.
