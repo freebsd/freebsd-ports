@@ -4,4 +4,3 @@ info/gdbm.info
 @exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
 @exec install-info %D/info/gdbm.info %D/info/dir
 lib/libgdbm.a
-man/man3/gdbm.3.gz
