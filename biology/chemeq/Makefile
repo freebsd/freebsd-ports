@@ -20,7 +20,7 @@ MAN1=		chemeq.1
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/chemeq ${PREFIX}/bin
-	${INSTALL_MAN}	${WRKSRC}/chemeq.1 ${PREFIX}/man/man1
+	${INSTALL_MAN}	${WRKSRC}/chemeq.1 ${MAN1PREFIX}/man/man1
 
 post-install:
 .if !defined(NOPORTDOCS)
