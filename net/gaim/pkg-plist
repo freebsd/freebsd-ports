@@ -130,5 +130,5 @@ share/locale/zh_CN/LC_MESSAGES/gaim.mo
 %%GNOME:%%@dirrm share/gnome/sounds/gaim
 @dirrm %%DATADIR%%/pixmaps/gaim/gnome
 @dirrm %%DATADIR%%/pixmaps/gaim
-@dirrm %%DATADIR%%/pixmaps
+%%NOGNOME:%%@dirrm %%DATADIR%%/pixmaps
 @dirrm lib/gaim
