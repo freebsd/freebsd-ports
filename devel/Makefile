@@ -486,6 +486,7 @@
     SUBDIR += omniORB
     SUBDIR += oniguruma
     SUBDIR += openthreads
+    SUBDIR += opentop
     SUBDIR += openzz
     SUBDIR += orbitcpp
     SUBDIR += ossp-al
