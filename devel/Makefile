@@ -11,6 +11,7 @@
     SUBDIR += ac-archive
     SUBDIR += acpicatools
     SUBDIR += adacurses
+    SUBDIR += adasdl
     SUBDIR += agenda-headers
     SUBDIR += agenda-libs
     SUBDIR += agenda-snow-libs
