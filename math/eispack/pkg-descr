@@ -13,3 +13,5 @@ it is otherwise the same. The package is described in:
 
 As the package is in FORTRAN there are no include files for the library,
 and the only thing to install is the library itself.
+
+WWW: http://www.netlib.org/eispack/
