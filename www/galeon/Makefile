@@ -7,7 +7,7 @@
 
 PORTNAME=	galeon
 PORTVERSION=	1.2.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,7 +16,7 @@ MAINTAINER=	gnome@FreeBSD.org
 
 BUILD_DEPENDS=	${X11BASE}/include/mozilla/gtkembedmoz/gtkmozembed.h:${PORTSDIR}/www/mozilla-headers \
 		${X11BASE}/lib/${MOZILLA}/libgtkembedmoz.so:${PORTSDIR}/www/${MOZILLA} \
-		msgfmt-new:${PORTSDIR}/devel/gettext
+		msgfmt:${PORTSDIR}/devel/gettext
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 RUN_DEPENDS=	${X11BASE}/lib/${MOZILLA}/libgtkembedmoz.so:${PORTSDIR}/www/${MOZILLA}
 
@@ -38,9 +38,7 @@ CONFIGURE_ARGS=	--with-mozilla-includes="${X11BASE}/include/mozilla" \
 		--with-mozilla-libs="${X11BASE}/lib/${MOZILLA}" \
 		--enable-nautilus-view
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -D_REENTRANT ${PTHREAD_CFLAGS}" \
-		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}" \
-		MSGFMT=${LOCALBASE}/bin/msgfmt-new \
-		XGETTEXT=${LOCALBASE}/bin/xgettext-new
+		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 MAN1=		galeon.1

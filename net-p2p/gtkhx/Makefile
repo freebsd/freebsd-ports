@@ -7,7 +7,7 @@
 
 PORTNAME=	gtkhx
 PORTVERSION=	0.9.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gtkhx
@@ -15,8 +15,7 @@ MASTER_SITE_SUBDIR=	gtkhx
 MAINTAINER=	jre@vineyard.net
 
 LIB_DEPENDS=	gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf \
-		intl.1:${PORTSDIR}/devel/gettext-old \
-		iconv.3:${PORTSDIR}/converters/libiconv
+		intl.2:${PORTSDIR}/devel/gettext
 
 USE_XLIB=	yes
 USE_GLIB=	yes

@@ -7,13 +7,14 @@
 
 PORTNAME=	xmps-win32-plugin
 PORTVERSION=	0.0.4
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://xmps.sourceforge.net/sources/
 
 MAINTAINER=	lioux@FreeBSD.org
 
 LIB_DEPENDS=	xmps.0:${PORTSDIR}/graphics/xmps \
-		intl.1:${PORTSDIR}/devel/gettext-old
+		intl.2:${PORTSDIR}/devel/gettext
 RUN_DEPENDS=	${CODEC_DETECTION_FILE}:${CODEC_PORT}
 
 USE_GMAKE=	yes

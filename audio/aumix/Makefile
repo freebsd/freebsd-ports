@@ -7,6 +7,7 @@
 
 PORTNAME=	aumix
 PORTVERSION=	2.7
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://jpj.net/~trevor/aumix/ \
@@ -15,7 +16,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	cpiazza@FreeBSD.org
 
-LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext-old
+LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext
 
 WANT_GTK=	yes
 GNU_CONFIGURE=	yes

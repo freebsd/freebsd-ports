@@ -1,71 +1,8 @@
-bin/gettext
-bin/gettextize
-bin/msgcmp
-bin/msgcomm
-bin/msgfmt
-bin/msgmerge
-bin/msgunfmt
-bin/xgettext
-@unexec install-info --delete %D/info/gettext.info %D/info/dir
-info/gettext.info
-@exec install-info %D/info/gettext.info %D/info/dir
-include/libintl.h
-lib/libintl.a
-lib/libintl.so
-lib/libintl.so.1
-share/aclocal/gettext.m4
-share/aclocal/lcmessage.m4
-share/aclocal/progtest.m4
-share/gettext/ABOUT-NLS
-share/gettext/po/Makefile.in.in
-share/gettext/intl/ChangeLog
-share/gettext/intl/Makefile.in
-share/gettext/intl/VERSION
-share/gettext/intl/bindtextdom.c
-share/gettext/intl/cat-compat.c
-share/gettext/intl/dcgettext.c
-share/gettext/intl/dgettext.c
-share/gettext/intl/explodename.c
-share/gettext/intl/finddomain.c
-share/gettext/intl/gettext.c
-share/gettext/intl/gettext.h
-share/gettext/intl/gettextP.h
-share/gettext/intl/hash-string.h
-share/gettext/intl/intl-compat.c
-share/gettext/intl/l10nflist.c
-share/gettext/intl/libgettext.h
-share/gettext/intl/linux-msg.sed
-share/gettext/intl/loadinfo.h
-share/gettext/intl/loadmsgcat.c
-share/gettext/intl/localealias.c
-share/gettext/intl/po2tbl.sed.in
-share/gettext/intl/xopen-msg.sed
-share/gettext/intl/textdomain.c
-share/locale/da/LC_MESSAGES/gettext.mo
-share/locale/de/LC_MESSAGES/gettext.mo
-share/locale/es/LC_MESSAGES/gettext.mo
-share/locale/fr/LC_MESSAGES/gettext.mo
-share/locale/ko/LC_MESSAGES/gettext.mo
-share/locale/nl/LC_MESSAGES/gettext.mo
-share/locale/no/LC_MESSAGES/gettext.mo
-share/locale/no@nynorsk/LC_MESSAGES/gettext.mo
-share/locale/pl/LC_MESSAGES/gettext.mo
-share/locale/pt/LC_MESSAGES/gettext.mo
-share/locale/sl/LC_MESSAGES/gettext.mo
-share/locale/sv/LC_MESSAGES/gettext.mo
-share/locale/locale.alias
-share/emacs/site-lisp/po-mode.el
-@dirrm share/gettext/intl
-@dirrm share/gettext/po
-@dirrm share/gettext
-@unexec rmdir %D/share/locale/*/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/* 2>/dev/null || true
-@unexec rmdir %D/share/locale 2>/dev/null || true
-@exec mkdir -p %%LOCALBASE%%/share/locale
-@unexec rmdir %%LOCALBASE%%/share/locale/*/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %%LOCALBASE%%/share/locale/* 2>/dev/null || true
-@unexec rmdir %%LOCALBASE%%/share/locale 2>/dev/null || true
-@exec mkdir -p %%X11BASE%%/share/locale
-@unexec rmdir %%X11BASE%%/share/locale/*/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %%X11BASE%%/share/locale/* 2>/dev/null || true
-@unexec rmdir %%X11BASE%%/share/locale 2>/dev/null || true
+bin/gettext-old
+bin/gettextize-old
+bin/msgcmp-old
+bin/msgcomm-old
+bin/msgfmt-old
+bin/msgmerge-old
+bin/msgunfmt-old
+bin/xgettext-old

@@ -7,6 +7,7 @@
 
 PORTNAME=	tar
 PORTVERSION=	1.13.25
+PORTREVISION=	1
 CATEGORIES=	archivers sysutils
 MASTER_SITES=	ftp://alpha.gnu.org/gnu/tar/ \
 		ftp://ftp.sunsite.org.uk/Mirrors/alpha.gnu.org/gnu/tar/ \
@@ -15,7 +16,7 @@ PKGNAMEPREFIX=	g
 
 MAINTAINER=	naddy@FreeBSD.org
 
-LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext-old
+LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-prefix=g

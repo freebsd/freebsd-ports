@@ -7,6 +7,7 @@
 
 PORTNAME=	kebook
 PORTVERSION=	0.3.5
+PORTREVISION=	1
 CATEGORIES=	japanese kde
 MASTER_SITES=	http://www.os.rim.or.jp/~s_mitu/library/kebook/ \
 		ftp://ftp.kde.gr.jp/pub/kde/unstable/contrib/
@@ -14,7 +15,7 @@ MASTER_SITES=	http://www.os.rim.or.jp/~s_mitu/library/kebook/ \
 MAINTAINER=	hige@higesoft.os.rim.or.jp
 
 LIB_DEPENDS=	eb.3:${PORTSDIR}/japanese/eb2
-BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext-old
+BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext
 
 USE_KDEBASE_VER=1
 USE_BZIP2=	yes

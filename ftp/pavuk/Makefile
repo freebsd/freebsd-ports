@@ -7,6 +7,7 @@
 
 PORTNAME=	pavuk
 PORTVERSION=	0.9.28
+PORTREVISION=	1
 CATEGORIES=	ftp www
 MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 		http://www.idata.sk/~ondrej/sw/
@@ -16,7 +17,7 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext-old
+LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext
 
 WANT_GTK=	yes
 USE_OPENSSL=	yes

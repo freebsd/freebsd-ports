@@ -7,6 +7,7 @@
 
 PORTNAME=	gnomegames
 PORTVERSION=	1.4.0.3
+PORTREVISION=	1
 CATEGORIES=	games gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/gnome-games
@@ -14,7 +15,7 @@ DISTNAME=	gnome-games-${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org
 
-BUILD_DEPENDS=	msgfmt-new:${PORTSDIR}/devel/gettext
+BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext
 LIB_DEPENDS=	guile.9:${PORTSDIR}/lang/guile
 
 USE_BZIP2=	yes
@@ -25,9 +26,7 @@ GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include \
 			  `gdk-pixbuf-config --cflags`" \
-		LIBS="-L${LOCALBASE}/lib" \
-		MSGFMT=${LOCALBASE}/bin/msgfmt-new \
-		XGETTEXT=${LOCALBASE}/bin/xgettext-new
+		LIBS="-L${LOCALBASE}/lib"
 
 pre-patch:
 	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \

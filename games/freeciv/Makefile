@@ -7,7 +7,7 @@
 
 PORTNAME=	freeciv
 PORTVERSION=	1.12.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.freeciv.org/pub/freeciv/stable/ \
 		ftp://ftp.netc.pt/pub/freeciv/stable/ \
@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://ftp.freeciv.org/pub/freeciv/stable/ \
 
 MAINTAINER=	adam-ports@blacktabby.org
 
-LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext-old
+LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext
 
 USE_XPM=	yes
 USE_BZIP2=	yes

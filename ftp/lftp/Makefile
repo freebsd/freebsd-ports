@@ -7,6 +7,7 @@
 
 PORTNAME=	lftp
 PORTVERSION=	2.5.0a
+PORTREVISION=	1
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	ftp://ftp.yars.free.net/pub/software/unix/net/ftp/client/lftp/ \
 		ftp://ftp.yars.free.net/pub/software/unix/net/ftp/client/lftp/old/ \
@@ -21,7 +22,7 @@ MASTER_SITES=	ftp://ftp.yars.free.net/pub/software/unix/net/ftp/client/lftp/ \
 
 MAINTAINER=	fm@astral.ntu-kpi.kiev.ua
 
-LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext-old
+LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext
 
 USE_BZIP2=	yes
 USE_OPENSSL=	yes

@@ -7,7 +7,7 @@
 
 PORTNAME=	gnomecore
 PORTVERSION=	1.4.0.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES?=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/gnome-core
@@ -15,7 +15,7 @@ DISTNAME=	gnome-core-${PORTVERSION}
 
 MAINTAINER?=	gnome@FreeBSD.org
 
-BUILD_DEPENDS=	msgfmt-new:${PORTSDIR}/devel/gettext
+BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext
 LIB_DEPENDS=	gtkhtml.21:${PORTSDIR}/www/gtkhtml
 RUN_DEPENDS=	${X11BASE}/share/gnome/sounds/login.wav:${PORTSDIR}/audio/gnomeaudio
 
@@ -27,9 +27,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-kde-datadir=${LOCALBASE}/share \
 		--with-gtkhtml=${X11BASE}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib" \
-		MSGFMT=${LOCALBASE}/bin/msgfmt-new \
-		XGETTEXT=${LOCALBASE}/bin/xgettext-new
+		LIBS="-L${LOCALBASE}/lib"
 
 MAN1=		deskguide_applet.1 gmenu.1 gnome-about.1 gnome-convert.1 \
 		gnome-download.1 gnome-edit.1 gnome-hint-properties-capplet.1 \

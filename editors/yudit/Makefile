@@ -7,6 +7,7 @@
 
 PORTNAME=	yudit
 PORTVERSION=	2.5.4
+PORTREVISION=	1
 CATEGORIES=	editors converters print
 MASTER_SITES=	http://yudit.org/download/ \
 		${MASTER_SITE_SUNSITE}
@@ -15,7 +16,7 @@ DISTNAME=	${PORTNAME}-2.5.4
 
 MAINTAINER=	jkoshy@freebsd.org
 
-BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext-old
+BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext
 
 USE_XLIB=	YES
 CONFIGURE_ENV=	LC_ALL=

@@ -7,6 +7,7 @@
 
 PORTNAME=	kvirc
 PORTVERSION=	2.1.1
+PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	ftp://ftp.kvirc.net/kvirc/${PORTVERSION}/source/ \
 		ftp://ftp.kvirc.bz.nu/pub/mirror/kvirc/${PORTVERSION}/source/ \
@@ -14,7 +15,7 @@ MASTER_SITES=	ftp://ftp.kvirc.net/kvirc/${PORTVERSION}/source/ \
 
 MAINTAINER=	trevor@FreeBSD.org
 
-BUILD_DEPENDS=	gettext:${PORTSDIR}/devel/gettext-old
+BUILD_DEPENDS=	msgfmt-old:${PORTSDIR}/devel/gettext-old
 
 ALL_TARGET=	kvirc
 INSTALLS_SHLIB=	yes
@@ -38,6 +39,7 @@ CONFIGURE_ARGS=	--x-includes=$(X11BASE)/include \
 		--with-qt-name=qt2 \
 		--disable-static
 
-CONFIGURE_ENV+=	SS_X_EXTRA_LIBS=-lxpg4
+CONFIGURE_ENV+=	SS_X_EXTRA_LIBS="-lxpg4" \
+		SS_MSGFMT="${LOCALBASE}/bin/msgfmt-old"
 
 .include <bsd.port.mk>

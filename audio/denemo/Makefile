@@ -7,6 +7,7 @@
 
 PORTNAME=	denemo
 PORTVERSION=	0.5.8
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,7 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	trevor@FreeBSD.org
 
 LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt \
-		intl.1:${PORTSDIR}/devel/gettext-old \
+		intl.2:${PORTSDIR}/devel/gettext \
 		xml.5:${PORTSDIR}/textproc/libxml
 
 GNU_CONFIGURE=	yes

@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	umix
+PORTREVISION=	1
 PORTVERSION=	0.5
 CATEGORIES=	audio
 MASTER_SITES=	http://www.ionstream.fi/sakari/umix/files/
 
 MAINTAINER=	greid@ukug.uk.freebsd.org
 
-LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext-old
+LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CC="$(CC) -I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib -lintl"

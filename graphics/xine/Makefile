@@ -7,7 +7,7 @@
 
 PORTNAME=	xine
 PORTVERSION=	0.9.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://xine.sourceforge.net/files/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -19,7 +19,7 @@ MAINTAINER=	nobutaka@FreeBSD.org
 LIB_DEPENDS=	xine.0:${PORTSDIR}/graphics/libxine \
 		aa.1:${PORTSDIR}/graphics/aalib \
 		png.5:${PORTSDIR}/graphics/png \
-		intl.1:${PORTSDIR}/devel/gettext-old
+		intl.2:${PORTSDIR}/devel/gettext
 
 USE_X_PREFIX=	yes
 USE_IMLIB=	yes

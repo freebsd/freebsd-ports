@@ -7,6 +7,7 @@
 
 PORTNAME=	kde-i18n
 PORTVERSION=	2.2.2
+PORTREVISION=	1
 CATEGORIES?=	misc kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/src
@@ -16,7 +17,7 @@ MAINTAINER?=	kde@FreeBSD.org
 
 BUILD_DEPENDS=	autoconf213:${PORTSDIR}/devel/autoconf213 \
 		automake14:${PORTSDIR}/devel/automake14
-LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext-old
+LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext
 
 USE_KDELIBS_VER=2
 USE_BZIP2=	yes

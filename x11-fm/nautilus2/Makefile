@@ -7,7 +7,7 @@
 
 PORTNAME=	nautilus
 PORTVERSION=	1.0.6
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-fm gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/nautilus
@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	stable/sources/nautilus
 MAINTAINER=	gnome@FreeBSD.org
 
 BUILD_DEPENDS=	freetype-config:${PORTSDIR}/print/freetype2 \
-		msgfmt-new:${PORTSDIR}/devel/gettext
+		msgfmt:${PORTSDIR}/devel/gettext
 LIB_DEPENDS=	medusa.0:${PORTSDIR}/sysutils/medusa \
 		freetype.9:${PORTSDIR}/print/freetype2 \
 		eel.0:${PORTSDIR}/x11-toolkits/eel
@@ -41,9 +41,7 @@ INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -fno-rtti -fno-exceptions" \
 		LIBS="${PTHREAD_LIBS} -L${LOCALBASE}/lib -L${X11BASE}/lib -liconv" \
-		LIBPNG="-L${LOCALBASE}/lib -lpng -lz ${MOZILLA_LIBS}" \
-		MSGFMT=${LOCALBASE}/bin/msgfmt-new \
-                XGETTEXT=${LOCALBASE}/bin/xgettext-new
+		LIBPNG="-L${LOCALBASE}/lib -lpng -lz ${MOZILLA_LIBS}"
 CONFIGURE_ARGS=	--with-freetype2-lib-place=${LOCALBASE}/lib \
 		--with-freetype2-include-place=${LOCALBASE}/include/freetype2
 

@@ -8,12 +8,13 @@
 
 PORTNAME=	rotix
 PORTVERSION=	0.82
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://elektron.its.tudelft.nl/~hemmin98/rotix_releases/
 
 MAINTAINER=	lintux@debian.org
 
-LIB_DEPENDS=	intl:${PORTSDIR}/devel/gettext-old
+LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext
 
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes

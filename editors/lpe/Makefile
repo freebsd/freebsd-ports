@@ -7,6 +7,7 @@
 
 PORTNAME=	lpe
 PORTVERSION=	1.2.6
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	ftp://ftp.twu.net/users/cdsmith/lpe/
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,7 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ryan@sasknow.com
 
 LIB_DEPENDS=	slang.1:${PORTSDIR}/devel/libslang \
-		intl.1:${PORTSDIR}/devel/gettext-old
+		intl.2:${PORTSDIR}/devel/gettext
 
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes

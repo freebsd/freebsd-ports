@@ -7,13 +7,14 @@
 
 PORTNAME=	rlpr
 PORTVERSION=	2.02
+PORTREVISION=	1
 CATEGORIES=	print net
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	system/printing
 
 MAINTAINER=	mi@aldan.algebra.com
 
-#LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext-old
+#LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext
 
 GNU_CONFIGURE=	yes
 #CONFIGURE_ENV=	CPPFLAGS="-I${PREFIX}/include" LDFLAGS="-L${PREFIX}/lib -lintl"

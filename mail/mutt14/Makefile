@@ -8,6 +8,7 @@
 
 PORTNAME=	mutt
 PORTVERSION=	1.2.5.1
+PORTREVISION=	1
 CATEGORIES+=	mail
 MASTER_SITES=	ftp://ftp.mutt.org/pub/mutt/ \
 		ftp://ftp.uib.no/pub/mutt/ \
@@ -42,7 +43,7 @@ WITH_DOCS=	yes
 .endif
 .endif
 
-LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext-old
+LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext
 .if defined(WITH_SLANG)
 LIB_DEPENDS+=	slang.1:${PORTSDIR}/devel/libslang
 .elif defined(WITH_NCURSES_PORT)

@@ -7,11 +7,12 @@
 
 PORTNAME=	gettext
 PORTVERSION=	0.11.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	gettext
 
-MAINTAINER=	sobomax@FreeBSD.org
+MAINTAINER=	portmgr@FreeBSD.org
 
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 
@@ -34,31 +35,11 @@ MAN3=		bind_textdomain_codeset.3 bindtextdomain.3 dcgettext.3 \
 pre-configure:
 	${RM} ${WRKSRC}/doc/gettext.info*
 
-.if !defined(WANT_FULL_GETTEXT)
-BINFILES=	gettext msgattrib msgcat msgcmp msgcomm msgconv msgen \
-		msgexec msgfilter msgfmt msggrep msginit msgmerge \
-		msgunfmt msguniq ngettext xgettext
-PLIST=		${WRKDIR}/PLIST
-CONFIGURE_ARGS=	--disable-shared
-.undef MAN1
-.undef MAN3
-.undef INSTALLS_SHLIB
-
-do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/misc/gettextize \
-		${PREFIX}/bin/gettextize-new
-	@${ECHO_CMD} bin/gettextize-new > ${WRKDIR}/PLIST
-.for file in ${BINFILES}
-	${INSTALL_PROGRAM} ${WRKSRC}/src/${file} ${PREFIX}/bin/${file}-new
-	@${ECHO_CMD} bin/${file}-new >> ${WRKDIR}/PLIST
-.endfor
-.else
 post-install:
 	@install-info ${PREFIX}/info/gettext.info ${PREFIX}/info/dir
 	${MKDIR} ${PREFIX}/share/emacs/site-lisp
 	${INSTALL_DATA} ${WRKSRC}/misc/po-mode.el \
 		${PREFIX}/share/emacs/site-lisp/po-mode.el
 	${MKDIR} ${X11BASE}/share/locale
-.endif
 
 .include <bsd.port.mk>

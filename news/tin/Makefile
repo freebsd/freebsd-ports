@@ -7,6 +7,7 @@
 
 PORTNAME=	tin
 PORTVERSION=    1.5.11
+PORTREVISION=	1
 CATEGORIES+=	news
 MASTER_SITES=	ftp://ftp.tin.org/pub/news/clients/tin/v1.5/ \
 		ftp://nuxi.ucdavis.edu/pub/tin/v1.5/ \
@@ -15,8 +16,7 @@ MASTER_SITES=	ftp://ftp.tin.org/pub/news/clients/tin/v1.5/ \
 MAINTAINER?=    ache@FreeBSD.org
 
 LIB_DEPENDS=	uu.1:${PORTSDIR}/converters/uulib \
-		intl.1:${PORTSDIR}/devel/gettext-old \
-		iconv.3:${PORTSDIR}/converters/libiconv
+		intl.2:${PORTSDIR}/devel/gettext
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes

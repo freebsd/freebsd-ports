@@ -7,7 +7,7 @@
 
 PORTNAME=	xine
 PORTVERSION=	0.9.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://xine.sourceforge.net/files/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -20,7 +20,7 @@ MAINTAINER=	nobutaka@FreeBSD.org
 BUILD_DEPENDS=	${LOCALBASE}/lib/libavcodec.a:${PORTSDIR}/graphics/ffmpeg
 LIB_DEPENDS=	a52.0:${PORTSDIR}/audio/liba52 \
 		aa.1:${PORTSDIR}/graphics/aalib \
-		intl.1:${PORTSDIR}/devel/gettext-old
+		intl.2:${PORTSDIR}/devel/gettext
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-lib-${PORTVERSION}
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	koffice-i18n
 PORTVERSION=	1.1.1
+PORTREVISION=	1
 CATEGORIES=	russian kde misc
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/koffice-${PORTVERSION}/src
@@ -17,7 +18,7 @@ MAINTAINER=	demon@FreeBSD.org
 
 BUILD_DEPENDS=	autoconf213:${PORTSDIR}/devel/autoconf213 \
 		automake14:${PORTSDIR}/devel/automake14
-LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext-old
+LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext
 RUN_DEPENDS=	koshell:${PORTSDIR}/editors/koffice
 
 USE_KDELIBS_VER=2

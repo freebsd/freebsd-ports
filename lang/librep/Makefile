@@ -7,6 +7,7 @@
 
 PORTNAME=	librep
 PORTVERSION=	0.15.2
+PORTREVISION=	1
 CATEGORIES=	lang gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/librep
@@ -15,7 +16,7 @@ MASTER_SITE_SUBDIR=	stable/sources/librep
 MAINTAINER=	gnome@FreeBSD.org
 
 LIB_DEPENDS=	gdbm.2:${PORTSDIR}/databases/gdbm \
-		intl.1:${PORTSDIR}/devel/gettext-old
+		intl.2:${PORTSDIR}/devel/gettext
 
 PLIST_SUB=	GNUHOST=${ARCH}-pc-freebsd${OSREL:C/\..*//} VERSION=${PORTVERSION}
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	gnupg
 PORTVERSION=	1.0.6
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.gnupg.org/pub/gcrypt/%SUBDIR%/ \
 		ftp://pgp.iijlab.net/pub/%SUBDIR%/ \
@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR=	gnupg
 
 MAINTAINER=	kuriyama@FreeBSD.org
 
-LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext-old
+LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext
 
 #RESTRICTED=	"Crypto; export-controlled"
 GNU_CONFIGURE=	YES
@@ -25,9 +25,6 @@ MLINKS=		gpg.1 gpgm.1
 
 .include <bsd.port.pre.mk>
 
-.if exists(${PREFIX}/lib/libiconv.so)
-LIB_DEPENDS+=	iconv.3:${PORTSDIR}/converters/libiconv
-.endif
 .if exists(${PREFIX}/lib/libgdbm.so)
 LIB_DEPENDS+=	gdbm.2:${PORTSDIR}/databases/gdbm
 .endif

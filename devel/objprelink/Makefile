@@ -7,7 +7,7 @@
 
 PORTNAME=	objprelink
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel kde
 MASTER_SITES=	http://leon.bottou.com/objprelink/ \
 		${MASTER_SITE_SOURCEWARE}
@@ -16,7 +16,7 @@ DISTFILES=	objprelink.c.gz binutils-${BINUTILS_VER}.tar.bz2
 
 MAINTAINER=	dominic_marks@btinternet.com
 
-LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext-old
+LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext
 
 ONLY_FOR_ARCHS=	i386
 BINUTILS_VER=	2.11.2
@@ -52,7 +52,7 @@ do-build:
 		${WRKSRC}/binutils/libiberty/libiberty.a \
 		-I${WRKSRC}/binutils/include -I${WRKSRC}/binutils/bfd \
 		-I${WRKSRC}/binutils/libiberty \
-		-L${LOCALBASE}/lib -lintl
+		-L${LOCALBASE}/lib -lintl -liconv
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/objprelink ${PREFIX}/bin

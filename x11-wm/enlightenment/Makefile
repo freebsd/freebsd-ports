@@ -7,7 +7,7 @@
 
 PORTNAME=	enlightenment
 PORTVERSION=	0.16.5
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://freebsd.sinica.edu.tw/pub/clive/
@@ -23,7 +23,7 @@ MAINTAINER=	vanilla@FreeBSD.org
 
 LIB_DEPENDS=	Fnlib.0:${PORTSDIR}/graphics/fnlib \
 		ghttp.1:${PORTSDIR}/www/libghttp \
-		intl.1:${PORTSDIR}/devel/gettext-old
+		intl.2:${PORTSDIR}/devel/gettext
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes

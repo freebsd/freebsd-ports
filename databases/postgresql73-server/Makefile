@@ -7,6 +7,7 @@
 
 PORTNAME?=	postgresql
 PORTVERSION?=	7.2.1
+PORTREVISION?=	1
 CATEGORIES?=	databases
 MASTER_SITES=	ftp://ftp.postgresql.org/pub/%SUBDIR%/ \
 		ftp://ftp.se.postgresql.org/pub/database/relational/postgresql/%SUBDIR%/ \
@@ -58,7 +59,7 @@ LIB_DEPENDS=	gnugetopt:${PORTSDIR}/devel/libgnugetopt
 CONFIGURE_ARGS+=--enable-nls
 CONFIGURE_ENV+=	"LIBS=-lintl"
 LDFLAGS+=	-L${LOCALBASE}/lib -lintl
-LIB_DEPENDS+=	intl:${PORTSDIR}/devel/gettext-old
+LIB_DEPENDS+=	intl.2:${PORTSDIR}/devel/gettext
 PLIST_SUB+=	GETTEXT=""
 .else
 PLIST_SUB+=	GETTEXT="@comment "

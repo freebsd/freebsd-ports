@@ -7,14 +7,14 @@
 
 PORTNAME=	elm
 PORTVERSION=	2.5.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.virginia.edu/pub/elm/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	toasty@dragondata.com
 
-LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext-old
+LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext
 BUILD_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
 
 WRKSRC=			${WRKDIR}/elm${PORTVERSION}

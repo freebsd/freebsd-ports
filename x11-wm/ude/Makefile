@@ -7,6 +7,7 @@
 
 PORTNAME=	ude
 PORTVERSION=	0.2.7b.1
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ude.the-coffeeshop.dk/pub/UDE/
@@ -15,7 +16,7 @@ DISTNAME=	${PORTNAME}-0.2.7b-BETA
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext-old
+LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext
 
 USE_X_PREFIX=	yes
 USE_XPM=	yes

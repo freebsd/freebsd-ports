@@ -7,7 +7,7 @@
 
 PORTNAME=	tgif
 PORTVERSION=	4.1.41
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://bourbon.cs.umd.edu/pub/tgif/ \
 		ftp://ftp.cs.ucla.edu/pub/tgif/ \
@@ -16,8 +16,7 @@ PKGNAMESUFFIX=	-nls
 
 MAINTAINER=	one@netlab.is.tsukuba.ac.jp
 
-BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext-old
-LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext-old
+LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext
 RUN_DEPENDS=	giftopnm:${PORTSDIR}/graphics/netpbm
 
 USE_IMAKE=	yes

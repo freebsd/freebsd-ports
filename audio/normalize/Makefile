@@ -7,12 +7,13 @@
 
 PORTNAME=	normalize
 PORTVERSION=	0.5.2
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.cs.columbia.edu/~cvaill/normalize/
 
 MAINTAINER=	greid@ukug.uk.freebsd.org
 
-LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext-old
+LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext
 
 GNU_CONFIGURE=	yes
 

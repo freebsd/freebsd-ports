@@ -7,6 +7,7 @@
 
 PORTNAME=	kwatch
 PORTVERSION=	2.2.0
+PORTREVISION=	1
 CATEGORIES=	misc kde
 MASTER_SITES=	http://www.m-j-s.net/pub/kde/ \
 		${MASTER_SITE_KDE}
@@ -14,7 +15,7 @@ MASTER_SITE_SUBDIR=	unstable/apps/utils
 
 MAINTAINER=	ports@FreeBSD.org
 
-BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext-old
+BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext
 
 USE_KDELIBS_VER=	2
 GNU_CONFIGURE=	yes

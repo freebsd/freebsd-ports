@@ -7,6 +7,7 @@
 
 PORTNAME=	kwix
 PORTVERSION=	1.0.9
+PORTREVISION=	1
 CATEGORIES=	x11-wm kde
 MASTER_SITES=	ftp://ftp.kde.com/pub/Art_Music/Themes/KwiX/ \
 		ftp://ftp.thekompany.com/pub/kwix/
@@ -14,7 +15,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}kb
 
 MAINTAINER=	demon@FreeBSD.org
 
-LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext-old
+LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext
 
 USE_KDEBASE_VER=2
 USE_GMAKE=	yes

@@ -7,12 +7,13 @@
 
 PORTNAME=	soribada
 PORTVERSION=	0.7
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://soribada.kldp.org/depot/
 
 MAINTAINER=	cjh@FreeBSD.org
 
-LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext-old
+LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext
 
 USE_X_PREFIX=	yes
 USE_GTK=	yes

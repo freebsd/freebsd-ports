@@ -8,16 +8,17 @@
 
 PORTNAME=	slmon
 PORTVERSION=	0.5.9
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	slang:${PORTSDIR}/devel/libslang \
-		gtop:${PORTSDIR}/devel/libgtop \
-		intl:${PORTSDIR}/devel/gettext-old \
-		gnugetopt:${PORTSDIR}/devel/libgnugetopt
+LIB_DEPENDS=	slang.1:${PORTSDIR}/devel/libslang \
+		gtop.1:${PORTSDIR}/devel/libgtop \
+		intl.2:${PORTSDIR}/devel/gettext \
+		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 
 GNU_CONFIGURE=	yes
 LIBGTOP_CONFIG=	${LOCALBASE}/bin/libgtop-config

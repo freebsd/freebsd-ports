@@ -8,12 +8,13 @@
 
 PORTNAME=	axel
 PORTVERSION=	1.0a
+PORTREVISION=	1
 CATEGORIES=	ftp
 MASTER_SITES=	http://www.lintux.cx/downloads/
 
 MAINTAINER=	lintux@debian.org
 
-LIB_DEPENDS=	intl:${PORTSDIR}/devel/gettext-old
+LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext
 
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes

@@ -7,6 +7,7 @@
 
 PORTNAME=	lyx
 PORTVERSION=	1.1.6.4
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.lyx.org/pub/lyx/stable/ \
 		ftp://ftp.sdsc.edu/pub/other/lyx/stable/ \
@@ -26,7 +27,7 @@ RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX
 RUN_DEPENDS+=	ispell:${PORTSDIR}/textproc/ispell
 .endif
 LIB_DEPENDS=	forms.0:${PORTSDIR}/x11-toolkits/xforms \
-		intl.1:${PORTSDIR}/devel/gettext-old
+		intl.2:${PORTSDIR}/devel/gettext
 
 USE_GMAKE=	yes
 USE_AUTOCONF=	yes

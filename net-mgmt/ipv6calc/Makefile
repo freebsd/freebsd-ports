@@ -7,12 +7,13 @@
 
 PORTNAME=	ipv6calc
 PORTVERSION=	0.38
+PORTREVISION=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.bieringer.de/pub/linux/IPv6/ipv6calc/
 
 MAINTAINER=	edwin@mavetju.org
 
-LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext-old \
+LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext \
 		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 
 GNU_CONFIGURE=	yes

@@ -1,0 +1,7 @@
+--- binutils/libiberty/Makefile.in.orig	Sat Dec  9 10:10:41 2000
++++ binutils/libiberty/Makefile.in	Wed Apr  3 19:01:38 2002
+@@ -95,3 +95,3 @@
+ # Subdirectories to recurse into. We need to override this during cleaning
+-SUBDIRS = testsuite
++SUBDIRS = # testsuite
+ 

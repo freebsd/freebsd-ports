@@ -6,6 +6,7 @@
 #
 
 PORTNAME=	samba
+PORTREVISION=	1
 PORTVERSION=	${SAMBA_VERSION}.j${SAMBA_JA_VERSION}
 CATEGORIES=	japanese net
 MASTER_SITES=	ftp://ftp.samba.gr.jp/pub/samba-jp/%SUBDIR%/ \
@@ -19,7 +20,7 @@ DISTNAME=	${PORTNAME}-${SAMBA_VERSION}-ja-${SAMBA_JA_VERSION}
 
 MAINTAINER=	nakaji@jp.FreeBSD.org
 
-BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext-old
+BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext
 
 NO_LATEST_LINK=	yes
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	xcin
 PORTVERSION=	2.5.2.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	chinese x11
 MASTER_SITES=	ftp://xcin.linux.org.tw/pub/xcin/xcin/ \
 		http://chewing.oio.cx/download/ \
@@ -17,7 +17,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} chewing-2001Nov01-snapshot.tar.gz
 MAINTAINER=	keith@FreeBSD.org
 
 LIB_DEPENDS=	tabe.0:${PORTSDIR}/chinese/libtabe \
-		intl.1:${PORTSDIR}/devel/gettext-old \
+		intl.2:${PORTSDIR}/devel/gettext \
 		db2.0:${PORTSDIR}/databases/db
 RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/local/kc15f.pcf.gz:${PORTSDIR}/chinese/kcfonts \
 		${LOCALBASE}/share/tabe/libtabe-0.2.2:${PORTSDIR}/chinese/libtabe

@@ -7,13 +7,14 @@
 
 PORTNAME=	ktranslator
 PORTVERSION=	0.6.1
+PORTREVISION=	1
 CATEGORIES=	devel kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	Attic/old/1.1.2/apps/utils
 
 MAINTAINER=	ports@FreeBSD.org
 
-BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext-old
+BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 
 USE_KDELIBS_VER=1

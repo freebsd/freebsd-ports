@@ -7,6 +7,7 @@
 
 PORTNAME=	wget
 PORTVERSION=	1.8.1
+PORTREVISION=	1
 CATEGORIES=	ftp www
 MASTER_SITES=	${MASTER_SITE_GNU} \
 		ftp://ftp.dl.ac.uk/ccp14/ftp-mirror/wget/pub/unix/util/wget/ \
@@ -21,7 +22,7 @@ EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	sf@FreeBSD.org
 
-LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext-old
+LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

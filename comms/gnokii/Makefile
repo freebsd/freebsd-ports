@@ -7,7 +7,7 @@
 
 PORTNAME=	gnokii
 PORTVERSION=	0.3.3
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	comms
 MASTER_SITES=	ftp://ftp.gnokii.org/pub/gnokii/ \
@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://ftp.gnokii.org/pub/gnokii/ \
 
 MAINTAINER=	anders@FreeBSD.org
 
-LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext-old
+LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext
 
 USE_GMAKE=	yes
 USE_AUTOCONF=	yes

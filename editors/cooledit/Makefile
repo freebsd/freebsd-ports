@@ -7,6 +7,7 @@
 
 PORTNAME=	cooledit
 PORTVERSION=	3.17.5
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 		http://www.netins.net/showcase/Comput-IT/cooledit/src/
@@ -14,7 +15,7 @@ MASTER_SITE_SUBDIR=	apps/editors/X/cooledit
 
 MAINTAINER=	brett@peloton.runet.edu
 
-LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext-old \
+LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext \
 		vga.1:${PORTSDIR}/graphics/svgalib
 
 USE_LIBTOOL=	yes

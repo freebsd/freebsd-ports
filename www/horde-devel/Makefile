@@ -7,7 +7,7 @@
 
 PORTNAME=	horde
 PORTVERSION=	2.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.horde.org/pub/horde/tarballs/
 PKGNAMESUFFIX=	-devel
@@ -23,7 +23,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 #
 #-----------------------------------------------------------------------
 
-LIB_DEPENDS+=	intl.1:${PORTSDIR}/devel/gettext-old
+LIB_DEPENDS+=	intl.2:${PORTSDIR}/devel/gettext
 .if !defined(WITHOUT_MCAL)
 LIB_DEPENDS+=	mcal.0:${PORTSDIR}/misc/libmcal
 .endif
@@ -75,7 +75,7 @@ pre-install:
 	    ${ECHO_MSG} "" ; \
 	    ${FALSE} ; \
 	fi
-	@if ! ${LDCONFIG} -r | ${GREP} -q -e "lintl.1"; then \
+	@if ! ${LDCONFIG} -r | ${GREP} -q -e "lintl.2"; then \
 	    ${ECHO_MSG} "" ; \
 	    ${ECHO_MSG} "Please configure PHP with gettext support." ; \
 	    ${ECHO_MSG} "" ; \
