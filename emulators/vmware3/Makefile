@@ -7,7 +7,7 @@
 
 PORTNAME=	vmware3
 PORTVERSION=	3.2.1.2242
-PORTREVISION=	6
+PORTREVISION=	7
 PORTEPOCH=	1
 CATEGORIES=	emulators linux
 MASTER_SITES=	http://www4.vmware.com/software/ \
@@ -143,7 +143,7 @@ setoptions:
 		-e 's;@@NETWORKING@@;${VMNET_NETWORKING};' \
 		-e 's;@@BRIDGED@@;${VMNET_BRIDGED};' \
 		-e 's;@@BRIDGE_INTF@@;${VMNET_BRIDGED_INTERFACE};' \
-		${FILESDIR}/vmware.sh > ${WRKDIR}/vmware.sh
+		${FILESDIR}/001.vmware.sh > ${WRKDIR}/001.vmware.sh
 
 	${SED} 	-e 's;@@PREFIX@@;${PREFIX};' \
 		-e 's;@@LINUXBASE@@;${LINUXBASE};' \
@@ -156,7 +156,7 @@ pre-install: setoptions
 	${MKDIR} ${PREFIX}/etc/vmware
 	${INSTALL_DATA} ${WRKDIR}/config ${PREFIX}/etc/vmware
 
-	${INSTALL_SCRIPT} ${WRKDIR}/vmware.sh ${PREFIX}/etc/rc.d
+	${INSTALL_SCRIPT} ${WRKDIR}/001.vmware.sh ${PREFIX}/etc/rc.d
 
 	${MKDIR} ${VMDIR}/bin
 	${INSTALL_SCRIPT} ${FILESDIR}/df ${VMDIR}/bin

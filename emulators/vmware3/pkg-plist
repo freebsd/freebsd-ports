@@ -1,5 +1,5 @@
 bin/vmware
-etc/rc.d/vmware.sh
+etc/rc.d/001.vmware.sh
 etc/vmware/config
 lib/vmware/modules/vmmon_smp.ko
 %%FREEBSD5%%lib/vmware/modules/linker.hints
