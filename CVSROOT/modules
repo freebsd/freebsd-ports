@@ -5219,7 +5219,6 @@ mysql_last_value	ports/databases/mysql_last_value
 mysqlcc		ports/databases/mysqlcc
 mysqlman	ports/databases/mysqlman
 mysqltcl	ports/databases/mysqltcl
-myth2_demo	ports/games/myth2_demo
 mythserver	ports/games/mythserver
 mytop		ports/databases/mytop
 mziq		ports/audio/mziq
