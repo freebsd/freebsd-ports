@@ -1,15 +1,15 @@
---- configure.orig	Sun Jun  9 14:48:49 2002
-+++ configure	Sun Jun  9 14:49:06 2002
-@@ -3252,7 +3252,7 @@
- echo "${ECHO_T}Using $GCONF_SCHEMA_FILE_DIR as install directory for schema files" >&6
+--- configure.orig	Mon Nov 25 21:02:50 2002
++++ configure	Fri Nov 29 20:30:44 2002
+@@ -3731,7 +3731,7 @@
  
- cat >>confdefs.h <<EOF
+ 
+ cat >>confdefs.h <<_ACEOF
 -#define GNOME_ICONDIR "${prefix}/share/pixmaps"
 +#define GNOME_ICONDIR "${datadir}/pixmaps"
- EOF
+ _ACEOF
  
- ALL_LINGUAS="az da de es fr gl hu it ja ko lv mk ms nl no pl pt pt_BR ru sk sl sv tr uk vi zh_CN zh_TW"
-@@ -5492,7 +5492,7 @@
+ 
+@@ -6630,7 +6630,7 @@
  s,@WARN_CFLAGS@,$WARN_CFLAGS,;t t
  s,@PKG_CONFIG@,$PKG_CONFIG,;t t
  s,@PROCMAN_CFLAGS@,$PROCMAN_CFLAGS,;t t
