@@ -1,0 +1,7 @@
+libggiwmh is a libggi extension whereby wmh stands for 'Window Manager Hints'
+It adds features like moving, resizing, iconifying, z-ordering Windows and more
+that happen to contain a ggi visual.
+It is safe to use it even on non-windowed targets. The ggiWmh* functions just
+fail in that case, where the failure indicates a NOOP.
+
+WWW: http://www.ggi-project.org/
