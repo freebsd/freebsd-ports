@@ -3,7 +3,7 @@
 # Date created:		10 April 1996
 # Whom:			Brian Somers <brian@Awfulhak.org>
 #
-# $Id: Makefile,v 1.4 1998/02/28 01:27:23 brian Exp $
+# $Id: Makefile,v 1.5 1999/03/22 01:25:41 brian Exp $
 #
 
 DISTNAME=	leafnode-1.9.2
@@ -17,8 +17,7 @@ MAINTAINER=	brian@Awfulhak.org
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--quiet --prefix=${PREFIX}
 MAKE_ARGS=	LOCKFILE=/var/spool/lock/news/fetch.lck \
-		LIBDIR=${PREFIX}/lib/leafnode \
-		PREFIX_VAR=${VAR}
+		LIBDIR=${PREFIX}/lib/leafnode
 MAN1=		newsq.1
 MAN8=		fetch.8 applyfilter.8 leafnode.8 texpire.8 checkgroups.8
 MLINKS+=	fetch.8 fetch-news.8
