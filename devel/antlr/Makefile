@@ -6,54 +6,51 @@
 #
 
 PORTNAME=	antlr
-PORTVERSION=	2.7.1
+PORTVERSION=	2.7.2
 CATEGORIES=	devel java
-MASTER_SITES=	http://www.ANTLR.org/nirvana/
-DISTNAME=	antlr-${PORTVERSION}
-DIST_SUBDIR=	antlr
-EXTRACT_ONLY=	antlr-${PORTVERSION}.tar.gz
+MASTER_SITES=	http://www.antlr.org/download/
+DISTNAME=	${PORTNAME}-${PORTVERSION}
+DIST_SUBDIR=	${PORTNAME}
+EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	mainland@apeiron.net
 COMMENT=	ANTLR: ANother Tool for Language Recognition
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/javavm:${PORTSDIR}/java/javavmwrapper
-RUN_DEPENDS=	${LOCALBASE}/bin/javavm:${PORTSDIR}/java/javavmwrapper
-
 USE_GMAKE=	yes
+USE_JAVA=	1.2+
+NEED_JAVAC=	YES
 
-.if defined(WITH_PARSEVIEW)
-DISTFILES+=	ParseView.zip
-BUILD_DEPENDS+= ${LOCALBASE}/bin/unzip:${PORTSDIR}/archivers/unzip
-
-PLIST_SUB+=	PARSEVIEW=""
-.else
-PLIST_SUB+=	PARSEVIEW="@comment "
-.endif
-
-ALL_TARGET=	antlr
+ALL_TARGET=	${PORTNAME}
 
 .include <bsd.port.pre.mk>
 
-.if !exists(${DISTDIR}/${DIST_SUBDIR}/antlr-${PORTVERSION}${EXTRACT_SUFX})
-IGNORE=	You must manually fetch the source distribution (antlr-${PORTVERSION}${EXTRACT_SUFX}) from http://www.jguru.com/jguru/download/view.jsp?EID=201927 (registration required), place it in ${DISTDIR}/${DIST_SUBDIR} and then run make again
-.endif
+BUILD_DEPENDS=	${JAVAC}:${PORTSDIR}/${JAVA_PORT} \
+		${JAVA}:${PORTSDIR}/${JAVA_PORT}
+RUN_DEPENDS=	${JAVA}:${PORTSDIR}/${JAVA_PORT}
 
-.if defined(WITH_PARSEVIEW)
 post-extract:
-	(cd ${WRKSRC} && unzip -o ${DISTDIR}/${DIST_SUBDIR}/ParseView.zip)
-.endif
+	(cd ${WRKSRC} && ${CP} antlr.jar antlrall.jar)
 
 post-configure:
-	(cd ${WRKSRC}/lib/cpp && ./configure --prefix=${PREFIX})
+	(cd ${WRKSRC} && \
+	JAVAC=${JAVAC} JAR=${JAR} JAVA=${JAVA} \
+	./configure --prefix=${PREFIX})
 
 do-build:
-	(cd ${WRKSRC}/lib/cpp && ${GMAKE})
+	(cd ${WRKSRC} && PATH="${PATH}:${JAVA_HOME}/bin" ${JAVA} -classpath "." antlr.build.Tool build)
+	(cd ${WRKSRC} && PATH="${PATH}:${JAVA_HOME}/bin" ${JAVA} -classpath "." antlr.build.Tool jar)
+	(cd ${WRKSRC} && ${GMAKE})
+	@${RM} -f ${WRKDIR}/antlr.sh
+	@${SED} "s|%%JAVA_CLASSES%%|${PREFIX}/java/classes|" ${FILESDIR}/antlr.sh \
+	| ${SED} "s|%%JAVA%%|${JAVA}|" >${WRKDIR}/antlr.sh
 
 do-install:
-	@${SED} "s|%%ANTLR_JAR_PATH%%|${PREFIX}/share/antlr|" ${FILESDIR}/antlr.sh >${WRKDIR}/antlr.sh
+	@${MKDIR} ${PREFIX}/bin
 	@${MKDIR} ${PREFIX}/share/antlr
+	@${MKDIR} ${PREFIX}/java/classes
 	@${INSTALL_SCRIPT} ${WRKDIR}/antlr.sh ${PREFIX}/bin/antlr
+	@${INSTALL_SCRIPT} ${WRKSRC}/antlr.jar ${PREFIX}/java/classes
 	(cd ${WRKSRC}/lib/cpp && ${GMAKE} install)
-	(cd ${WRKSRC} && (${TAR} cf - antlr doc examples/cpp examples/java | ${TAR} xf - -C ${PREFIX}/share/antlr))
+	(cd ${WRKSRC} && (${TAR} cf - doc examples/cpp examples/java | ${TAR} xf - -C ${PREFIX}/share/antlr))
 
 .include <bsd.port.post.mk>
