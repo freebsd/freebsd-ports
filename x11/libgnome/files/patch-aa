@@ -1,8 +1,8 @@
 
 $FreeBSD$
 
---- configure.orig	Wed Aug 22 16:15:39 2001
-+++ configure	Wed Aug 22 16:17:10 2001
+--- configure.orig	Fri Oct  5 10:53:42 2001
++++ configure	Fri Oct  5 12:02:38 2001
 @@ -5416,7 +5416,7 @@
  else
    
@@ -33,7 +33,7 @@ $FreeBSD$
  
  GNOME_LIBDIR='-L${libdir}'
 -GNOME_INCLUDEDIR='-I${includedir} -DNEED_GNOMESUPPORT_H -I${pkglibdir}/include'
-+GNOME_INCLUDEDIR='-I${includedir} -DNEED_GNOMESUPPORT_H'
++GNOME_INCLUDEDIR='-I${includedir}/gnome-1.0 -I${includedir} -DNEED_GNOMESUPPORT_H'
  GNOME_IDLDIR='-I${datadir}/idl'
  
  
