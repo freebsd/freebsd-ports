@@ -1,0 +1,24 @@
+# New ports collection makefile for:	unclutter
+# Version required:	-8
+# Date created:		03 Aug 1996
+# Whom:			shanee@rabbit.augusta.de
+#
+# $Id: Makefile,v 1.0 1996/08/03 18:49:00 shanee Exp $
+#
+
+DISTNAME=	unclutter
+EXTRACT_SUFX=	-8.tar.gz
+PKGNAME=	unclutter-8
+MASTER_SITES=	ftp://ftp.cs.umn.edu/packages/X11/contrib/utilities/ \
+		ftp://csg.uwaterloo.ca/pub/lhf/net/ \
+		ftp://ftp.univ-angers.fr/pub2/X11/contrib/utilities/ \
+		ftp://ftp.huji.ac.il/mirror/X11/contrib/utilities/ \
+		ftp://ftp.rz.uni-wuerzburg.de/pub/X11/contrib/utilities/
+
+CATEGORIES+=	misc
+
+MAINTAINER=	shanee@rabbit.augusta.de
+
+USE_IMAKE=	yes
+
+.include <bsd.port.mk>

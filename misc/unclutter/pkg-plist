@@ -1,0 +1,3 @@
+@cwd /usr/X11R6
+bin/unclutter
+man/man1/unclutter.1.gz
