@@ -10,7 +10,9 @@ PORTVERSION=	1.1.6
 CATEGORIES=	java editors
 MASTER_SITES=	ftp://ftp.bluej.org/pub/bluej/ \
 		ftp://ftp.monash.edu.au/pub/bluej/ \
-		http://www.metaverse.nl/~ernst/
+		http://www.metaverse.nl/~ernst/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	znerd
 DISTNAME=	bluej-116
 EXTRACT_SUFX=	.jar
 
