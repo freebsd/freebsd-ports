@@ -1,0 +1,4 @@
+This PEAR class provides an implementation of the IMAP protocol using PEAR's
+Net_Socket:: class.
+
+WWW: http://pear.php.net/package/Net_IMAP/
