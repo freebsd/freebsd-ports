@@ -3,13 +3,13 @@
 # Date created:         22 Dec 1994
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.7 1996/11/12 02:17:55 obrien Exp $
+# $Id: Makefile,v 1.8 1996/11/18 13:56:21 asami Exp $
 #
 
 DISTNAME=       zip21
 PKGNAME=        zip-2.1
 CATEGORIES=	archivers
-MASTER_SITES=   ftp://quest.jpl.nasa.gov/pub/
+MASTER_SITES=   ftp://ftp.cdrom.com/pub/infozip/src/
 EXTRACT_SUFX=   .zip
 
 MAINTAINER=     ache@FreeBSD.ORG
