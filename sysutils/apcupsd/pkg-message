@@ -1,5 +1,5 @@
 **************************************************
-NOTE:
+NOTE IF you install a apcupsd server:
 
 Change to /dev and create a softlink to usv from
 the serial line the USV is connected to, e.g.
