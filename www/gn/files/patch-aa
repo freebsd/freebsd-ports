@@ -1,0 +1,99 @@
+*** Makefile.org	Mon Jul 18 10:27:03 1994
+--- Makefile	Fri Sep 16 19:45:13 1994
+***************
+*** 8,14 ****
+  #	Where to put the programs
+  #
+  SERVBINDIR  = /usr/local/etc
+! BINDIR  = /home/john/bin
+  LIBDIR = /usr/local/etc
+  
+  #
+--- 8,14 ----
+  #	Where to put the programs
+  #
+  SERVBINDIR  = /usr/local/etc
+! BINDIR  = /usr/local/bin
+  LIBDIR = /usr/local/etc
+  
+  #
+***************
+*** 43,49 ****
+  
+  
+  all: 		gn mkcache uncache waisgn sgn
+! install:	inst-gn inst-mkcache inst-uncache
+  gn:		gn/gn
+  sgn:		gn/sgn
+  mkcache:	mkcache/mkcache
+--- 43,49 ----
+  
+  
+  all: 		gn mkcache uncache waisgn sgn
+! install:	inst-gn inst-mkcache inst-uncache inst-waisgn
+  gn:		gn/gn
+  sgn:		gn/sgn
+  mkcache:	mkcache/mkcache
+*** config.h.org	Sat Sep  3 16:51:51 1994
+--- config.h	Fri Sep 23 10:06:50 1994
+***************
+*** 13,24 ****
+   */
+  
+  
+! #define ROOT_DIR	"/your/root/data/dir"
+  /*
+   * Enter the complete path of your root data directory here.
+   */
+  
+! #define SUN_OS4
+  /*
+     Pick one of the following Operating System types which describes
+     your system and replace the SUN_OS4 value above
+--- 13,24 ----
+   */
+  
+  
+! #define ROOT_DIR	"/usr/local/gnroot"
+  /*
+   * Enter the complete path of your root data directory here.
+   */
+  
+! #define OTHER
+  /*
+     Pick one of the following Operating System types which describes
+     your system and replace the SUN_OS4 value above
+***************
+*** 48,54 ****
+   */
+  
+  
+! #define MIME_TYPE_FILE  "/path/to/src/mkcache/gn_mime.types"
+  /*
+   * This file contains information permitting mkcache to translate 
+   * ascertain the MIME "Content-type" from the suffix of a file name
+--- 48,54 ----
+   */
+  
+  
+! #define MIME_TYPE_FILE  "/usr/local/etc/gn_mime.types"
+  /*
+   * This file contains information permitting mkcache to translate 
+   * ascertain the MIME "Content-type" from the suffix of a file name
+***************
+*** 109,115 ****
+   * If you wish to run at a different port than 70, edit this line.
+   */
+  
+! #define DECOMPRESS	"/usr/net/bin/zcat"
+  /*
+   * This is the program which does "on the fly" decompression
+   */
+--- 109,115 ----
+   * If you wish to run at a different port than 70, edit this line.
+   */
+  
+! #define DECOMPRESS	"/usr/bin/zcat"
+  /*
+   * This is the program which does "on the fly" decompression
+   */

@@ -1,0 +1,7 @@
+@cwd /usr/local
+etc/gn_mime.types
+etc/gn
+etc/sgn
+etc/waisgn
+bin/mkcache
+bin/uncache

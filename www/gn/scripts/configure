@@ -1,0 +1,24 @@
+#!/bin/sh
+#
+if [ $# -ne 3 ]; then
+	echo "This script should only be run by the Makefile."
+	exit 1
+fi
+
+# First arg is top level ports directory, second is current directory,
+# third is the directory containing the dist.
+#
+PDIR=$1
+CDIR=$2
+WDIR=$3
+
+hostname=`hostname`
+echo -n "Hostname of server machine? [$hostname] "
+read answer; if [ X$answer != X ]; then hostname=$answer; fi
+maintainer="mailto:www-admin@$hostname"
+echo -n "URL to default WWW admin? [$maintainer] "
+read answer; if [ X$answer != X ]; then maintainer=$answer; fi
+sed -e "/GN_HOSTNAME/s/\".*\"/\"$hostname\"/" \
+    -e "/MAINTAINER/s/\".*\"/\"$maintainer\"/" \
+    $WDIR/config.h >$WDIR/config.h.foo
+mv $WDIR/config.h.foo $WDIR/config.h
