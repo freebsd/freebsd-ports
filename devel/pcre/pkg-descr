@@ -1,6 +1,6 @@
-PCRE is a Perl compatible library of regular expressions.  They
-are based on a completely seperate code-base from Henry Spencers
-originals.  It has been designed to make efficient use of memory
-for compiled regex's.
+PCRE is a Perl-compatible library of regular expressions.
+They are based on a completely separate code-base from Henry
+Spencer's originals.  The library has been designed to make
+efficient use of memory for compiled regular expressions.
 
 Original Author:  Phil Hazel <ph10@cam.ac.uk>

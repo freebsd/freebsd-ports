@@ -1,3 +1,5 @@
 bin/pgrep
 include/pcre.h
+include/pcreposix.h
 lib/libpcre.a
+lib/libpcreposix.a
