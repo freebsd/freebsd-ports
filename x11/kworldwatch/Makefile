@@ -3,7 +3,7 @@
 # Date created:        12 July 1998
 # Whom:                Marc G. Fournier <scrappy@freebsd.org>
 #
-# $Id: Makefile,v 1.5 1998/08/25 10:04:59 asami Exp $
+# $Id: Makefile,v 1.6 1998/09/30 02:07:28 jseger Exp $
 #
 
 DISTNAME=	kworldwatch-0.6
@@ -14,13 +14,9 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	scrappy@freebsd.org
 
-LIB_DEPENDS=	kdecore\\.1\\.:${PORTSDIR}/x11/kdelibs \
-		kdeui\\.1\\.:${PORTSDIR}/x11/kdelibs \
-		kfm\\.1\\.:${PORTSDIR}/x11/kdelibs
-
-BROKEN=		upgrade
-
-BROKEN_ELF=	depends on kdelibs
+LIB_DEPENDS=	kdecore.1:${PORTSDIR}/x11/kdelibs \
+		kdeui.1:${PORTSDIR}/x11/kdelibs \
+		kfm.1:${PORTSDIR}/x11/kdelibs
 
 USE_QT=		yes
 HAS_CONFIGURE=	yes
