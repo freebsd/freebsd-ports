@@ -9395,7 +9395,6 @@ raine		ports/emulators/raine
 rancid		ports/net-mgmt/rancid
 rand		ports/textproc/rand
 randrext	ports/x11/randrext
-rapip		ports/palm/rapip
 raproxy		ports/audio/raproxy
 raptor		ports/textproc/raptor
 rar		ports/archivers/rar
@@ -10534,6 +10533,7 @@ synaesthesia	ports/graphics/synaesthesia
 syncal		ports/palm/syncal
 synce-dccm	ports/palm/synce-dccm
 synce-gnomevfs	ports/palm/synce-gnomevfs
+synce-kde	ports/palm/synce-kde
 synce-librapi2	ports/palm/synce-librapi2
 synce-libsynce	ports/palm/synce-libsynce
 synce-rra	ports/palm/synce-rra
