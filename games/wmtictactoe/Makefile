@@ -1,14 +1,16 @@
 # New ports collection makefile for:	wmtictactoe
-# Version required:		1.0
+# Version required:		1.1-1
 # Date created:			28 Apr 1999
 # Whom:				Jim Mock <jim@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	wmtictactoe-1.0
+DISTNAME=	wmtictactoe-1.1-1
+PKGNAME=	wmtictactoe-1.1
 CATEGORIES=	games windowmaker afterstep
-MASTER_SITES=	http://www.cs.mun.ca/~gstarkes/wmaker/dockapps/files/
+MASTER_SITES=	http://atlas.ucpel.tche.br/~acamargo/ \
+		http://www.freebsd.org/~jim/distfiles/
 
 MAINTAINER=	jim@FreeBSD.org
 
@@ -19,10 +21,6 @@ WRKSRC=		${WRKDIR}/wmtictactoe.app/wmtictactoe
 USE_X_PREFIX=	yes
 
 post-install:
-	@${ECHO} "		"
-	@${ECHO} "-------------------------------------------------------"
-	@${ECHO} "===> Run 'wmtictactoe --help' for the available options"
-	@${ECHO} "-------------------------------------------------------"
-	@${ECHO} "		"
+	@${ECHO} "===>   Run 'wmtictactoe --help' for the available options"
 
 .include <bsd.port.mk>
