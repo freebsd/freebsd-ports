@@ -27,10 +27,28 @@ PERL_CONFIGURE=	yes
 MAN3=		Apache::Test.3 Apache::TestConfig.3 Apache::TestSmoke.3 \
 		Apache::TestTrace.3 Apache::TestUtil.3 Bundle::ApacheTest.3
 
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+RUN_DEPENDS+=	${SITE_PERL}/File/Spec.pm:${PORTSDIR}/devel/p5-File-Spec
+.endif
+
+.if ${PERL_LEVEL} < 500800
+EXTRA_PATCHES=	${PATCHDIR}/500503-Makefile.PL
+.endif
+
 post-patch:
 	@${PERL} -pi.bak -e 's/^/#/ if $$.==26;' ${WRKSRC}/Makefile.PL
+	@${PERL} -pi -e '$$_="" if $$.==11;' ${WRKSRC}/lib/Apache/Test5005compat.pm
+.if ${PERL_LEVEL} < 500800
+	@${PERL} -pi.bak -e 's/PERLRUN/PERL/;' ${WRKSRC}/install-pl
+.endif
+.if ${PERL_LEVEL} < 500600
+	@${PERL} -pi -e '$$_="" if /^use warnings/' \
+	${WRKSRC}/lib/Apache/*.pm ${WRKSRC}/Makefile.PL ${WRKSRC}/install-pl
+.endif
 
 post-configure:
 	@${PERL} -pi -e 's/^(POD2MAN_EXE.*)$$/\1 --lax/;' ${WRKSRC}/Makefile
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
