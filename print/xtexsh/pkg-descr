@@ -1,0 +1,6 @@
+xtexsh - xTeX Shell by Gerald Teschlxtem
+
+The present program is a simple TeX interface for the X Window System based on
+"wish", respectively Tcl/Tk.
+
+WWW: http://www.mat.univie.ac.at/~gerald/ftp/xtexsh/
