@@ -10043,6 +10043,7 @@ socketpipe	ports/net/socketpipe
 socklog		ports/sysutils/socklog
 socks5		ports/net/socks5
 sodipodi	ports/graphics/sodipodi
+softflowd	ports/net-mgmt/softflowd
 sokoban		ports/games/sokoban
 sol		ports/games/sol
 solarwolf	ports/games/solarwolf
