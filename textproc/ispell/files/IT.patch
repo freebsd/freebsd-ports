@@ -1,0 +1,12 @@
+--- ispell-it/Makefile.orig	Sun Apr 21 16:28:51 2002
++++ ispell-it/Makefile	Sun Apr 21 16:29:01 2002
+@@ -1,7 +1,7 @@
+ SHELL      = /bin/sh
+ MAKE       = make
+-BUILDHASH  = buildhash
+-MUNCHLIST  = munchlist
++BUILDHASH  = %%BH%%
++MUNCHLIST  = %%MH%%
+ LANGUAGE   = italian
+ AFFIXES    = $(LANGUAGE).aff
+ DICTIONARY = $(LANGUAGE).words
