@@ -1,24 +1,28 @@
 # New ports collection Makefile for: rxvt
-# Version required:     2.6.PRE3
+# Version required:     2.6.0
 # Date created:         Nov 16 1997
 # Whom:                 frankch@waru.life.nthu.edu.tw
 #
-# $Id: Makefile,v 1.11 1999/03/19 22:17:49 asami Exp $
+# $Id: Makefile,v 1.12 1999/04/13 15:11:32 taoka Exp $
 #
 
-DISTNAME=	rxvt-2.6.PRE3
-PKGNAME=	zh-rxvt-2.6.p3
+DISTNAME=	rxvt-2.6.0
+PKGNAME=	zh-rxvt-2.6.0
 CATEGORIES=	chinese x11
 MASTER_SITES=	ftp://mason.primenet.com.au/pub/rxvt/ \
 		ftp://ftp.rxvt.org/pub/rxvt/devel/
 
 MAINTAINER=	frankch@waru.life.nthu.edu.tw
 
-BUILD_DEPENDS=	yodl2man:${PORTSDIR}/textproc/yodl
+LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-big5=yes --enable-xim=yes
+USE_BZIP2=	yes
 MAN1=		crxvt.1
+
+CONFIGURE_ARGS+=--enable-xpm-background --enable-transparency \
+		--enable-menubar --enable-graphics --enable-xim \
+		--enable-big5 --disable-backspace-key --disable-delete-key
 
 .include <bsd.port.mk>
