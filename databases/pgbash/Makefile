@@ -22,25 +22,26 @@ LIB_DEPENDS=	pq.3:${PORTSDIR}/databases/postgresql-client
 
 WRKSRC=		${WRKDIR}/pgbash-7.3/src/bash-2.05a
 
+GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 
+CONFIGURE_ARGS=	--pginc-prefix=${LOCALBASE}/include --pglib-prefix=${LOCALBASE}/lib
+
 post-extract:
-	${ECHO_MSG} ">>> extracting bash"
-	${TAR} -C ${WRKDIR}/pgbash-7.3/src -xzf ${DISTDIR}/bash-2.05a.tar.gz
+	@${ECHO_MSG} ">>> extracting bash"
+	@${TAR} -C ${WRKDIR}/pgbash-7.3/src -xzf ${DISTDIR}/bash-2.05a.tar.gz
 
 pre-configure:
-	${REINPLACE_CMD} -e 's|/etc/pgbashrc|${PREFIX}/etc/pgbashrc|g' \
+	@${REINPLACE_CMD} -e 's|/etc/pgbashrc|${PREFIX}/etc/pgbashrc|g' \
 	${WRKDIR}/pgbash-7.3/src/bash-2.05a-patch/shell.c.patch
 .for i in Makefile.in.patch builtins-Makefile.in.patch \
 	builtins-declare.def.patch builtins-mkbuilrins.c.patch \
 	builtins-set.def.patch builtins-setattr.def.patch configure.in.patch \
 	configure.patch parse.y.patch shell.c.patch variables.c.patch
-	${PATCH} -d ${WRKSRC} -p1 < ${WRKDIR}/pgbash-7.3/src/bash-2.05a-patch/${i}
+	@${ECHO_MSG} ">>> applying pg patches"
+	@${PATCH} -d ${WRKSRC} -p1 < ${WRKDIR}/pgbash-7.3/src/bash-2.05a-patch/${i}
 .endfor
-
-do-configure:
-	cd ${WRKSRC}; ./configure --pginc-prefix=${LOCALBASE}/include --pglib-prefix=${LOCALBASE}/lib
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pgbash ${PREFIX}/bin
