@@ -196,6 +196,7 @@ share/apps/kalzium/icons/crystalsvg/scalable/actions/timeline.svgz
 share/apps/kalzium/kalziumrc
 share/apps/kalzium/kalziumui.rc
 share/apps/katepart/syntax/logohighlightstyle.en_US.xml
+%%BOOST_PYTHON%%share/apps/katepart/syntax/python-kig.xml
 share/apps/kbruch/kbruchui.rc
 share/apps/keduca/icons/crystalsvg/16x16/actions/addquestion.png
 share/apps/keduca/icons/crystalsvg/16x16/actions/control.png
