@@ -7,6 +7,7 @@
 
 PORTNAME=	tcl-sql
 PORTVERSION=	20000114
+PORTREVISION=	1
 CATEGORIES=	databases ${TCL_NODOT}
 MASTER_SITES=	http://www.binevolve.com/~tdarugar/tcl-sql/download/
 EXTRACT_SUFX=	.tgz

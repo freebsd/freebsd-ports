@@ -109,7 +109,7 @@ same queries.
 +	if (objc == 1) {
 +		Tcl_WrongNumArgs(interp, 1, objv, "command ?handle?");
  		return TCL_ERROR;
-@@ -133,75 +93,84 @@
+@@ -133,58 +93,58 @@
  	Manager_sql *mgr = (Manager_sql *)clientData;
 -	int res = TCL_OK;
 +	int res;
@@ -207,17 +207,17 @@ same queries.
 -			res = selectdbCmd(interp, conn, argv[3]);
 -		} else {
 -			Tcl_AppendResult(interp, "sql: unknown sql command: ", argv[1], NULL);
--			return TCL_ERROR;
 +	// take care of the command:
 +	if (subcommand < Disconnect && subcommand > Query) {
 +		/* get the "result handle" returned previously */
-+		if (Tcl_GetIntFromObj(NULL, objv[3], &res) != TCL_OK ||
++		if (objc < 4) res = 0; /* oddly, this is how it was -- bug? */
++		else if (Tcl_GetIntFromObj(NULL, objv[3], &res) != TCL_OK ||
 +				res < 0) {
 +			Tcl_SetObjResult(interp, objv[3]);
 +			Tcl_AppendResult(interp, ": invalid result"
 +				" handle", NULL);
-+			return TCL_OK;
- 		}
+ 			return TCL_ERROR;
+@@ -192,16 +152,26 @@
  	}
 -	
 -	return res;
@@ -256,7 +256,7 @@ same queries.
 +	}
 +	return TCL_ERROR; /* not reachable */
  }
-@@ -226,7 +195,7 @@
+@@ -226,7 +196,7 @@
  
 -	Tcl_CreateCommand (interp, "sql", SqlCmd ,(ClientData) s,
 -										 (Tcl_CmdDeleteProc*) NULL);
@@ -266,5 +266,5 @@ same queries.
 -	// Provide a package called Sample 
 -	if (Tcl_PkgProvide(interp, "Sql", "1.0") == TCL_ERROR)
 +	// Provide a package called ``sql'' 
-+	if (Tcl_PkgProvide(interp, "sql", "1.0") == TCL_ERROR)
++	if (Tcl_PkgProvide(interp, "sql", "1.1") == TCL_ERROR)
  		return TCL_ERROR;

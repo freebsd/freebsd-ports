@@ -1,0 +1,52 @@
+--- docs/api.html	Wed Jul 22 21:54:38 1998
++++ docs/api.html	Wed Jul 19 17:19:34 2000
+@@ -1,2 +1,5 @@
++<HTML>
++<HEAD>
+ <title>Generic Tcl Database Interface API</title>
++</HEAD>
+ <BODY BGCOLOR="#ffffff" LINK="#0000ff" ALINK="#ff0000" TEXT="#000000">
+@@ -55,3 +58,3 @@
+ 	    statement). Use with <code><font color="#000099">fetchrow</font></code> and <code><font color="#000099">endquery</font></code>. <br>
+-	 <code><font color="#000099">sql query $conn "select * from sample where x > 3"</font></code>
++	 <code><font color="#000099">set query [sql query $conn "select * from sample where x &gt; 3"]</font></code>
+ 
+@@ -62,3 +65,3 @@
+ 			is returned.<br>
+-	 <code><font color="#000099">while {[set row [sql fetchrow $conn]] != ""} { puts $row }</font></code>
++	 <code><font color="#000099">while {[set row [sql fetchrow $conn $query]] != ""} { puts $row }</font></code>
+ 	 
+@@ -66,4 +69,4 @@
+ <p>
+-<hr width=50%>
+-<a name=sample><h3>Sample Usage:</h3></a>
++<hr width="50%">
++<h3><a name=sample>Sample Usage:</a></h3>
+ Also see 
+@@ -86,3 +89,3 @@
+ # Put some dummy data in:
+-for {set i 0} {$i < 10} {incr i} {
++for {set i 0} {$i &lt; 10} {incr i} {
+ 	sql exec $conn "insert into junk values ($i, $i.01, 'xx $i xx')"
+@@ -91,5 +94,5 @@
+ # Do a select and display the results
+-sql query $conn "select * from junk where i > 3" 
++set query [sql query $conn "select * from junk where i &gt; 3"]
+ 
+-while {[set row [sql fetchrow $conn]] != ""} {
++while {[set row [sql fetchrow $conn $query]] != ""} {
+ 	puts "row = $row"
+@@ -97,3 +100,3 @@
+ 
+-sql endquery $conn
++sql endquery $conn $query
+ 
+@@ -113 +116,3 @@
+ </pre>
++</BODY>
++</HTML>
+
+>Release-Note:
+>Audit-Trail:
+>Unformatted:
+
