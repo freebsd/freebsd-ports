@@ -1,6 +1,6 @@
 --- nbase/configure.orig	Mon Oct  6 13:03:52 2003
 +++ nbase/configure	Mon Oct  6 13:04:08 2003
-@@ -2971,7 +2971,7 @@
+@@ -3081,7 +3081,7 @@
  
  
  
