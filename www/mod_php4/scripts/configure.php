@@ -123,6 +123,9 @@ while [ "$1" ]; do
 			echo "BUILD_DEPENDS+=	\${PREFIX}/lib/libldap.a:\${PORTSDIR}/net/openldap"
 			echo "BUILD_DEPENDS+=	\${PREFIX}/lib/liblber.a:\${PORTSDIR}/net/openldap"
 			echo "PHP_CONF_ARGS+=	--with-ldap=\${PREFIX}"
+			if [ -f /usr/lib/libkrb.a -a -f /usr/lib/libdes.a ]; then
+				echo "CONFIGURE_ENV+=	LIBS='-lkrb -ldes -L\${PREFIX}/lib'"
+			fi
 			;;
 		\"SNMP\")
 			echo "LIB_DEPENDS+=	snmp.4:\${PORTSDIR}/net/ucd-snmp"
