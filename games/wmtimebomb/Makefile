@@ -6,7 +6,7 @@
 
 PORTNAME=	wmtimebomb
 PORTVERSION=	0.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games windowmaker
 MASTER_SITES=	ftp://ftp.netmug.org/pub/FreeBSD/distfiles/
 DISTNAME=	wmtimebomb.20
@@ -14,10 +14,7 @@ DISTNAME=	wmtimebomb.20
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A minesweeper for WindowMaker
 
-BROKEN=		"Does not build with new version of windowmaker"
-
-LIB_DEPENDS=	PropList.2:${PORTSDIR}/devel/libPropList \
-		wraster.4:${PORTSDIR}/x11-wm/windowmaker
+LIB_DEPENDS=	wraster.4:${PORTSDIR}/x11-wm/windowmaker
 
 WRKSRC=		${WRKDIR}/wmtimebomb.app
 USE_IMAKE=	yes
