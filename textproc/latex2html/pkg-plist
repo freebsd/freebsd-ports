@@ -1,6 +1,8 @@
 bin/latex2html
 bin/pstoimg
 bin/texexpand
+lib/latex2html/cfgcache.pm
+lib/latex2html/l2hconf.pm
 share/doc/latex2html/FAQ
 share/doc/latex2html/INSTALL
 share/doc/latex2html/LICENSE
