@@ -12,10 +12,3 @@
  VPATH = $(topsrc)/share/bcih
  
  bcih.bin: mkbin bcih.dat
-@@ -21,4 +24,4 @@
- 	rm -f mkbin bcih.bin
- 
- distclean: clean
--	rm -f Makefile
-\ No newline at end of file
-+	rm -f Makefile

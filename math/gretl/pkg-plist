@@ -313,7 +313,10 @@ libdata/pkgconfig/gretl.pc
 %%GNOME:%%share/gnome/help/gretl/C/chapters/biblio.xml
 %%GNOME:%%share/gnome/help/gretl/C/chapters/cli.xml
 %%GNOME:%%share/gnome/help/gretl/C/chapters/cmdlist.xml
+%%GNOME:%%share/gnome/help/gretl/C/chapters/cmdlist_standalone_it.xml
 %%GNOME:%%share/gnome/help/gretl/C/chapters/cmdref.xml
+%%GNOME:%%share/gnome/help/gretl/C/chapters/cmdref_standalone.xml
+%%GNOME:%%share/gnome/help/gretl/C/chapters/cmdref_standalone_it.xml
 %%GNOME:%%share/gnome/help/gretl/C/chapters/datafiles.xml
 %%GNOME:%%share/gnome/help/gretl/C/chapters/graphs.xml
 %%GNOME:%%share/gnome/help/gretl/C/chapters/intro.xml
