@@ -17,7 +17,7 @@ PATCHFILES=	MH.6.8.4.Z
 
 MAINTAINER=	pst@FreeBSD.org
 
-FORBIDDEN=	"Buffer overflow in MIME parsing code, exploitable via email."
+FORBIDDEN=	"Buffer overflow in MIME parsing code, exploitable via email. Since mh is no longer actively developed, this bug may not get fixed - consider using the nmh port in /usr/ports/mail/nmh, which is the successor to mh."
 
 MAN1=	ali.1 anno.1 burst.1 comp.1 dist.1 folder.1 forw.1 inc.1 mark.1  \
 	mh-chart.1 mh.1 mhl.1 mhook.1 mhmail.1 mhn.1 mhparam.1 mhpath.1  \
