@@ -1,0 +1,33 @@
+*** main.c.orig	Tue Apr 15 01:07:37 1997
+--- main.c	Tue Apr 15 01:33:16 1997
+***************
+*** 16,22 ****
+  #include <signal.h>
+  #include <setjmp.h>
+  #include <math.h>
+! #ifdef VMS
+  #include <stdlib.h>
+  #endif
+  #include "astro.h"
+--- 16,22 ----
+  #include <signal.h>
+  #include <setjmp.h>
+  #include <math.h>
+! #if defined(VMS) || defined(unix)
+  #include <stdlib.h>
+  #endif
+  #include "astro.h"
+***************
+*** 51,57 ****
+--- 51,61 ----
+  
+  static jmp_buf fpe_err_jmp;	/* used to recover from SIGFPE */
+  static char *cfgfile;		/* !0 if -c used */
++ #ifdef unix
++ static char cfgdef[] = PREFIX "/share/ephem/ephem.cfg"; /* default configuration file name */
++ #else
+  static char cfgdef[] = "ephem.cfg"; /* default configuration file name */
++ #endif
+  static Now now;		/* where when and how, right now */
+  static double tminc;	/* hrs to inc time by each loop; RTC means use clock */
+  static int nstep;	/* steps to go before stopping */

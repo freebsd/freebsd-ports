@@ -1,0 +1,36 @@
+*** plot.c.orig	Tue Apr 15 01:07:37 1997
+--- plot.c	Tue Apr 15 02:42:45 1997
+***************
+*** 15,25 ****
+  
+  extern char *strcpy();
+  
+  #ifdef VMS
+  #include <perror.h>
+- #include <errno.h>
+  #else
+  extern char *sys_errlist[];
+  extern errno;
+  #endif
+  
+--- 15,34 ----
+  
+  extern char *strcpy();
+  
++ #if (defined(__unix__) || defined(unix)) && !defined(USG)             
++ #include <sys/param.h>                                                
++ #endif
++ 
++ #if defined(VMS) || defined(unix)
++ #include <errno.h>
++ #endif
++ 
+  #ifdef VMS
+  #include <perror.h>
+  #else
++ #ifndef BSD
+  extern char *sys_errlist[];
++ #endif
+  extern errno;
+  #endif
+  
