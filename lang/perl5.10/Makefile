@@ -7,7 +7,6 @@
 
 PORTNAME=	perl
 PORTVERSION=	${PERL_VER}
-PORTREVISION=	1
 CATEGORIES=	lang devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN} \
 		${MASTER_SITE_LOCAL:S/$/:local/} \
@@ -16,12 +15,11 @@ MASTER_SITE_SUBDIR=	../../src \
 			tobez/:local ./:local
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		BSDPAN-${PERL_VER}${EXTRACT_SUFX}:local
-#		BSDPAN-5.8.0_${BSDPAN_REVISION}${EXTRACT_SUFX}:local
 
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Practical Extraction and Report Language
 
-PERL_VER=	5.8.4
+PERL_VER=	5.8.5
 PERL_ARCH=	mach
 PERL_VERSION=	${PERL_VER}
 
@@ -106,8 +104,7 @@ test:
 BSDPAN_DEST=	${PREFIX}/lib/perl5/${PERL_VER}/BSDPAN
 BSDPAN_FILES=	BSDPAN.pm BSDPAN/Override.pm Config.pm \
 		ExtUtils/MM_Unix.pm ExtUtils/Packlist.pm
-BSDPAN_WRKSRC=	${WRKDIR}/BSDPAN-5.8.4
-# BSDPAN_REVISION=1
+BSDPAN_WRKSRC=	${WRKDIR}/BSDPAN-5.8.5
 
 post-patch:
 	${SED} -e 's|%%PREFIX%%|${PREFIX}|g;' \

@@ -6,9 +6,9 @@ fi
 
 INCLUDEDIR=/usr/include
 
-install -d ${PKG_PREFIX}/lib/perl5/site_perl/5.8.4/mach
-install -d ${PKG_PREFIX}/lib/perl5/site_perl/5.8.4/auto
-install -d ${PKG_PREFIX}/lib/perl5/5.8.4/man/man3
+install -d ${PKG_PREFIX}/lib/perl5/site_perl/5.8.5/mach
+install -d ${PKG_PREFIX}/lib/perl5/site_perl/5.8.5/auto
+install -d ${PKG_PREFIX}/lib/perl5/5.8.5/man/man3
 cd ${INCLUDEDIR} && ${PKG_PREFIX}/bin/h2ph *.h machine/*.h sys/*.h
 
 if [ -z "${OSVERSION}" ]; then
