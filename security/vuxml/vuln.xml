@@ -30,6 +30,35 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="a56a72bb-9f72-11d8-9585-0020ed76ef5a">
+    <topic>phpBB session table exhaustion</topic>
+    <affects>
+      <package>
+	<name>phpbb</name>
+	<range><le>2.0.8_2</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The includes/sessions.php unnecessarily adds session item into
+	  session table and therefore vulnerable to a denial-of-service
+	  attack.</p>
+	</body>
+    </description>
+    <references>
+      <url>http://marc.theaimsgroup.com/?l=bugtraq&amp;m=108256462710010</url>
+      <!--
+	<mlist msgid="20040421011055.GA1448@frontfree.net">
+	http://marc.theaimsgroup.com/?l=bugtraq&amp;m=108256462710010
+	</mlist>
+      -->
+    </references>
+    <dates>
+      <discovery>2004-03-05</discovery>
+      <entry>2004-05-06</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="446dbecb-9edc-11d8-9366-0020ed76ef5a">
     <topic>heimdal kadmind remote heap buffer overflow</topic>
     <affects>
