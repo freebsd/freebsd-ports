@@ -8,7 +8,7 @@
 PORTNAME=	farblazer
 PORTVERSION=	0.7
 CATEGORIES=	games
-MASTER_SITES=	http://www.zipcon.net/~adamf/software/farblazer/
+MASTER_SITES=	http://www.pygame.org/gamelets/games/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An action/arcade game originally based of StarBlazer on the Apple ][
