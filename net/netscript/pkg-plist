@@ -1,15 +1,17 @@
 bin/netscript
-share/examples/netscript/README
-share/examples/netscript/dict.ruleset
-share/examples/netscript/fingerd.ruleset
-share/examples/netscript/ftp.ruleset
-share/examples/netscript/http.ruleset
-share/examples/netscript/httpd.ruleset
-share/examples/netscript/identd.ruleset
-share/examples/netscript/irc.ruleset
-share/examples/netscript/irc2.ruleset
-share/examples/netscript/pop3.ruleset
-share/examples/netscript/smtp.ruleset
-share/examples/netscript/telnet.ruleset
-share/examples/netscript/telnetd.ruleset
-@dirrm share/examples/netscript
+%%PORTDOCS%%share/doc/netscript/README
+%%PORTDOCS%%share/examples/netscript/README
+%%PORTDOCS%%share/examples/netscript/dict.ruleset
+%%PORTDOCS%%share/examples/netscript/fingerd.ruleset
+%%PORTDOCS%%share/examples/netscript/ftp.ruleset
+%%PORTDOCS%%share/examples/netscript/http.ruleset
+%%PORTDOCS%%share/examples/netscript/httpd.ruleset
+%%PORTDOCS%%share/examples/netscript/identd.ruleset
+%%PORTDOCS%%share/examples/netscript/irc.ruleset
+%%PORTDOCS%%share/examples/netscript/irc2.ruleset
+%%PORTDOCS%%share/examples/netscript/pop3.ruleset
+%%PORTDOCS%%share/examples/netscript/smtp.ruleset
+%%PORTDOCS%%share/examples/netscript/telnet.ruleset
+%%PORTDOCS%%share/examples/netscript/telnetd.ruleset
+%%PORTDOCS%%@dirrm share/examples/netscript
+%%PORTDOCS%%@dirrm share/doc/netscript
