@@ -1,0 +1,8 @@
+--- Makefile~	Mon Jan 11 15:10:29 1999
++++ Makefile	Mon Jan 11 15:10:48 1999
+@@ -1,4 +1,4 @@
+-XSHODOU_PREFIX = /usr/X11R6
++XSHODOU_PREFIX = ${PREFIX}
+ XSHODOU_BIN = ${XSHODOU_PREFIX}/bin
+ XSHODOU_LIB = ${XSHODOU_PREFIX}/lib/X11/XShodou
+ XSHODOU_MAN = ${XSHODOU_PREFIX}/man/man1
