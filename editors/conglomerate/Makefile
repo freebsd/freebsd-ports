@@ -6,6 +6,7 @@
 
 PORTNAME=	conglomerate
 PORTVERSION=	0.7.8
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -23,5 +24,9 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/home/david/jhbuilt/share|${LOCALBASE}/share|' ${WRKSRC}/intltool-merge.in
+
+post-install:
+	${MKDIR} ${PREFIX}/share/gnome/${PORTNAME}/help
+	${LN} -sf ${PREFIX}/share/gnome/help/${PORTNAME} ${PREFIX}/share/gnome/${PORTNAME}/help/${PORTNAME}
 
 .include <bsd.port.mk>
