@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	wv2
-PORTVERSION=	0.1.8
-PORTREVISION=	1
+PORTVERSION=	0.2.1
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	wvware
@@ -17,7 +16,7 @@ COMMENT=	A library providing routines to access Microsoft Word/Excel files
 
 LIB_DEPENDS=	iconv:${PORTSDIR}/converters/libiconv
 
-CONFIGURE_ARGS=	--with-libiconv=${LOCALBASE}
+CONFIGURE_ARGS=	--with-libiconv=${LOCALBASE} --disable-debug
 
 USE_GNOME=	gnometarget libgsf
 USE_LIBTOOL=	yes
