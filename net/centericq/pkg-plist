@@ -1,19 +1,6 @@
 bin/centericq
 bin/cicqconv
 bin/cicqsync
-include/libicq2000/libicq2000/Client.h
-include/libicq2000/libicq2000/constants.h
-include/libicq2000/libicq2000/ContactList.h
-include/libicq2000/libicq2000/ContactTree.h
-include/libicq2000/libicq2000/Contact.h
-include/libicq2000/libicq2000/events.h
-include/libicq2000/libicq2000/exceptions.h
-include/libicq2000/libicq2000/ref_ptr.h
-include/libicq2000/libicq2000/sigslot.h
-include/libicq2000/libicq2000/time_extra.h
-include/libicq2000/libicq2000/Translator.h
-include/libicq2000/libicq2000/userinfoconstants.h
-include/libicq2000/libicq2000/version.h
 %%DATADIR%%/email.wav
 %%DATADIR%%/msg.wav
 %%DATADIR%%/offline.wav
@@ -36,6 +23,4 @@ include/libicq2000/libicq2000/version.h
 %%NLS%%share/locale/sv/LC_MESSAGES/centericq.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/centericq.mo
 %%NLS%%share/locale/zh_TW.Big5/LC_MESSAGES/centericq.mo
-@dirrm include/libicq2000/libicq2000
-@dirrm include/libicq2000
 @dirrm %%DATADIR%%
