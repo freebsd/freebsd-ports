@@ -80,11 +80,9 @@ post-patch:
 .endif
 
 do-install:
-	@${MKDIR} ${OWCGIDIR:S,${PORTNAME},,}
-	@cd ${WRKSRC}/cgi-bin && ${TAR} cf - ${PORTNAME} | (cd ${OWCGIDIR:S,${PORTNAME},,}; ${TAR} xf -)
-	@${MKDIR} ${OWDATADIR:S,${PORTNAME},,}
-	@cd ${WRKSRC}/data && ${TAR} cf - ${PORTNAME} | (cd ${OWDATADIR:S,${PORTNAME},,}; ${TAR} xf -)
-	@${CHOWN} -R root:mail ${OWCGIDIR}
+	@${MKDIR} ${OWCGIDIR} ${OWDATADIR}
+	@cd ${WRKSRC}/cgi-bin/openwebmail && ${FIND} . | cpio -dpum -R ${BINOWN}:mail ${OWCGIDIR}
+	@cd ${WRKSRC}/data/openwebmail && ${FIND} . | cpio -dpum -R ${SHAREOWN}:${SHAREGRP} ${OWDATADIR}
 	@${CHMOD} 0770 ${OWCGIDIR}/etc/sessions ${OWCGIDIR}/etc/users
 	@${CHMOD} 4755 ${OWCGIDIR}/openwebmail*pl
 	@${PERL} ${OWCGIDIR}/uty/wrapsuid.pl ${OWCGIDIR}
