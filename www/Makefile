@@ -459,6 +459,7 @@
     SUBDIR += p5-HTML-Breadcrumbs
     SUBDIR += p5-HTML-CalendarMonthSimple
     SUBDIR += p5-HTML-Clean
+    SUBDIR += p5-HTML-Diff
     SUBDIR += p5-HTML-Element-Extended
     SUBDIR += p5-HTML-Embperl
     SUBDIR += p5-HTML-FillInForm
