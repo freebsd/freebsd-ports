@@ -227,8 +227,10 @@ bin/yuvtoppm
 bin/zeisstopnm
 include/pbm.h
 include/pbmplus.h
-include/pbmshhopt.h
 include/pgm.h
+include/pm.h
+include/pm_config.h
+include/pm_shhopt.h
 include/pnm.h
 include/ppm.h
 include/ppmcmap.h

@@ -1,6 +1,7 @@
 BUILD_FIASCO = Y
 STATICLIB = N
 LD = ${CC}
+SYMLINK = ${LN} -sf
 MANCP = ${BSD_INSTALL_MAN}
 LDFLAGS = -Wl,--rpath,$(INSTALLLIBS)
 LDSHLIB = -shared -Wl,-soname,$(SONAME)
