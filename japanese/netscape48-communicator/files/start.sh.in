@@ -15,11 +15,19 @@ export XAPPLRESDIR=@RDIR@
 export TIMID_DIR=/usr/local/lib/timidity
 export XCMSDB=/dev/null
 ulimit -c 0
-if [ -e /usr/local/lib/aout/libxpg4-ns.so.2.0 ]; then
-	export LD_PRELOAD=/usr/local/lib/aout/libxpg4-ns.so.2.0
-elif [ x$JA_NETSCAPE_USE_LD_PRELOAD != x -a x$JA_NETSCAPE_USE_LD_PRELOAD != xno ]; then
-	export LD_PRELOAD=libxpg4.so.2.0
-else
-	export PATH_LOCALE=@RDIR@/locale
+ACRO_HOME=@PREFIX@/Acrobat4
+if [ -d $ACRO_HOME ]; then
+	export PATH=${PATH}:${ACRO_HOME}/bin
+	ACRO_PLUGIN_PATH=:${ACRO_HOME}/Browsers/intellinux
 fi
-exec ${MOZILLA_HOME}/@BROWSER_BIN@ "$@"
+if [ -z $NPX_PLUGIN_PATH ]; then
+	export NPX_PLUGIN_PATH=${MOZILLA_HOME}/plugins:${HOME}/.netscape/plugins${ACRO_PLUGIN_PATH}
+else
+	export NPX_PLUGIN_PATH=${NPX_PLUGIN_PATH}${ACRO_PLUGIN_PATH}
+fi
+if [ -x /compat/linux/usr/X11R6/lib/libXm-ns.so.1.0.2 ]; then
+	MOZILLA_BIN=${MOZILLA_HOME}/netscape-dynMotif
+else
+	MOZILLA_BIN=${MOZILLA_HOME}/@BROWSER_BIN@
+fi
+exec $MOZILLA_BIN "$@"
