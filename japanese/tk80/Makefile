@@ -3,7 +3,7 @@
 # Date created:		26 Dec 1997
 # Whom:			taguchi@tohoku.iij.ad.jp
 #
-# $Id: Makefile,v 1.6 1998/09/28 10:31:26 asami Exp $
+# $Id: Makefile,v 1.7 1998/09/28 15:15:11 kuriyama Exp $
 #
 
 DISTNAME=	tk8.0.3
@@ -12,7 +12,8 @@ CATEGORIES=	japanese x11-toolkits tk80
 MASTER_SITES=	ftp://ftp.scriptics.com/pub/tcl/tcl8_0/
 
 PATCH_SITES=	ftp://ftp.sra.co.jp/pub/lang/tcl/jp/
-PATCHFILES=	tk8.0.3jp1.1.patch.gz
+PATCHFILES=	tk8.0.3jp1.1.patch.gz \
+		tk8.0.3jp1.1-1.1fix1.patch.gz
 
 MAINTAINER=	taguchi@tohoku.iij.ad.jp
 
