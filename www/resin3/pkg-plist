@@ -1,13 +1,4 @@
-%%APP_NAME%%/doc/beta.xtp
-%%APP_NAME%%/doc/changes-1.xtp
-%%APP_NAME%%/doc/changes.xtp
-%%APP_NAME%%/doc/errata.xtp
-%%APP_NAME%%/doc/features.xtp
-%%APP_NAME%%/doc/future.xtp
-%%APP_NAME%%/doc/index.xtp
-%%APP_NAME%%/doc/href-map.xml
-%%APP_NAME%%/doc/toc.xml
-%%APP_NAME%%/doc/images/caucho-blue.gif
+%%APP_NAME%%/doc/css/default.css
 %%APP_NAME%%/doc/images/apache_srun.gif
 %%APP_NAME%%/doc/images/appserver.gif
 %%APP_NAME%%/doc/images/background.gif
@@ -15,6 +6,7 @@
 %%APP_NAME%%/doc/images/ball8.gif
 %%APP_NAME%%/doc/images/bean.gif
 %%APP_NAME%%/doc/images/bean1.gif
+%%APP_NAME%%/doc/images/caucho-white.jpg
 %%APP_NAME%%/doc/images/caucho.gif
 %%APP_NAME%%/doc/images/compiler.gif
 %%APP_NAME%%/doc/images/file.gif
@@ -24,6 +16,7 @@
 %%APP_NAME%%/doc/images/iis_srun.gif
 %%APP_NAME%%/doc/images/jndi_tree.gif
 %%APP_NAME%%/doc/images/jsp.gif
+%%APP_NAME%%/doc/images/left_background.gif
 %%APP_NAME%%/doc/images/logo.gif
 %%APP_NAME%%/doc/images/pixel.gif
 %%APP_NAME%%/doc/images/resin_powered.gif
@@ -34,33 +27,39 @@
 %%APP_NAME%%/doc/images/style.gif
 %%APP_NAME%%/doc/images/webserver.gif
 %%APP_NAME%%/doc/images/website_srun.gif
-%%APP_NAME%%/doc/images/caucho.jpg
-%%APP_NAME%%/doc/images/.xvpics/background.gif
-%%APP_NAME%%/doc/images/.xvpics/left_background.gif
-%%APP_NAME%%/doc/images/caucho-white.jpg
-%%APP_NAME%%/doc/images/left_background.gif
-%%APP_NAME%%/lib/resin.jar
-%%APP_NAME%%/lib/jsdk24.jar
-%%APP_NAME%%/lib/jta_101.jar
+%%APP_NAME%%/doc/changes-1.xtp
+%%APP_NAME%%/doc/changes.xtp
+%%APP_NAME%%/doc/index.xtp
+%%APP_NAME%%/doc/toc.xml
+%%APP_NAME%%/lib/dom.jar
 %%APP_NAME%%/lib/isorelax.jar
-%%APP_NAME%%/lib/jmx.jar
 %%APP_NAME%%/lib/jca-15.jar
+%%APP_NAME%%/lib/jmx-12.jar
+%%APP_NAME%%/lib/jsdk-24.jar
 %%APP_NAME%%/lib/jstl-11.jar
+%%APP_NAME%%/lib/jta-101.jar
+%%APP_NAME%%/lib/license.jar
+%%APP_NAME%%/lib/resin.jar
 %%APP_NAME%%/lib/webutil.jar
+%%APP_NAME%%/webapps/resin-doc.war
 %%APP_NAME%%/xsl/caucho/comment.xsl
 %%APP_NAME%%/xsl/caucho/contents.xsl
 %%APP_NAME%%/xsl/caucho/control.xsl
 %%APP_NAME%%/xsl/caucho/debug.xsl
 %%APP_NAME%%/xsl/caucho/defaultcopy.xsl
 %%APP_NAME%%/xsl/caucho/format.xsl
-%%APP_NAME%%/xsl/caucho/newstyle.xsl
-%%APP_NAME%%/xsl/caucho/weblog.xsl
 %%APP_NAME%%/xsl/caucho/fun.xsl
 %%APP_NAME%%/xsl/caucho/href.xsl
 %%APP_NAME%%/xsl/caucho/include.xsl
+%%APP_NAME%%/xsl/caucho/newstyle.xsl
 %%APP_NAME%%/xsl/caucho/nodeinfo.xsl
 %%APP_NAME%%/xsl/caucho/toc.xsl
 %%APP_NAME%%/xsl/caucho/viewfile.xsl
+%%APP_NAME%%/xsl/caucho/weblog.xsl
+%%APP_NAME%%/xsl/js/caucho/defaultcopy.xsl
+%%APP_NAME%%/xsl/js/caucho/format.xsl
+%%APP_NAME%%/xsl/js/caucho/weblog.xsl
+%%APP_NAME%%/xsl/tools/indexer.xsl
 %%APP_NAME%%/xsl/caucho_default.xsl
 %%APP_NAME%%/xsl/caucho_header.xsl
 %%APP_NAME%%/xsl/caucho_subpage.xsl
@@ -71,9 +70,6 @@
 %%APP_NAME%%/xsl/new_doc_header.xsl
 %%APP_NAME%%/xsl/search.xsl
 %%APP_NAME%%/xsl/subpage.xsl
-%%APP_NAME%%/xsl/js/caucho/defaultcopy.xsl
-%%APP_NAME%%/xsl/js/caucho/format.xsl
-%%APP_NAME%%/xsl/js/caucho/weblog.xsl
 %%APP_NAME%%/libexec/libresin.so
 %%APP_NAME%%/libexec/libresinssl.so
 etc/app-default.xml
@@ -82,13 +78,15 @@ sbin/%%APP_NAME%%ctl
 %%MOD_DIR%%/mod_caucho.so
 %%APACHE%%@exec %%APXS%% -e -a -n caucho %f
 %%APACHE%%@unexec %%APXS%% -e -A -n caucho %f
-@dirrm %%APP_NAME%%/doc/images/.xvpics
+@dirrm %%APP_NAME%%/doc/css
 @dirrm %%APP_NAME%%/doc/images
 @dirrm %%APP_NAME%%/doc
 @dirrm %%APP_NAME%%/lib
+@dirrm %%APP_NAME%%/webapps
 @dirrm %%APP_NAME%%/xsl/caucho
 @dirrm %%APP_NAME%%/xsl/js/caucho
 @dirrm %%APP_NAME%%/xsl/js
+@dirrm %%APP_NAME%%/xsl/tools
 @dirrm %%APP_NAME%%/xsl
 @dirrm %%APP_NAME%%/libexec
 @dirrm %%APP_NAME%%

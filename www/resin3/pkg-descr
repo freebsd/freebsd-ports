@@ -6,4 +6,20 @@ includes a full-featured HTTP/1.1 web server, provides a fast servlet runner
 for Apache, and supports the latest Servlet 2.3 and JSP 1.2 specifications from
 Sun.
 
+o You may use Resin for development, evaluation, and demos.
+o You must contact us to purchase a deployment license if either:
+
+    * You are paid to use Resin.
+    * You are paying someone else to use Resin. 
+
+o If no one is paid to use Resin, you may use Resin for deployment:
+
+    * students
+    * private use
+    * tiny startups with neither funding nor income. 
+
+o Anyone falling in between should contact us for a waiver.
+o Distributors must contact us.
+o If you are allowed to use Resin, you may modify the source for that use.
+
 WWW: http://www.caucho.com/
