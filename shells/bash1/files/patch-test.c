@@ -1,10 +1,10 @@
 --- test.c.orig	Fri Dec 23 06:45:12 1994
-+++ test.c	Sun Feb 10 02:34:09 2002
++++ test.c	Sat May  4 21:08:08 2002
 @@ -194,6 +194,7 @@
    return (stat (path, finfo));
  }
  
-+#if 0	/* use native FreeBSD libc version */
++#if defined(__FreeBSD__) && __FreeBSD_version < 500023	/* use native FreeBSD libc version */
  /* Do the same thing access(2) does, but use the effective uid and gid,
     and don't make the mistake of telling root that any file is
     executable. */
