@@ -1,0 +1,31 @@
+# New ports collection makefile for:	p5-Net-ext
+# Date created:				25 March 2000
+# Whom:					Igor Vinokurov <igor@zynaps.ru>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	Net-ext
+PORTVERSION=	0.931
+CATEGORIES=	net perl5
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=	Net
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	igor@zynaps.ru
+
+USE_PERL5=	yes
+MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
+
+MAN3=		Net::Gen.3 \
+		Net::Inet.3 \
+		Net::TCP.3 \
+		Net::TCP::Server.3 \
+		Net::UDP.3 \
+		Net::UNIX.3 \
+		Net::UNIX::Server.3
+
+do-configure:
+	@cd ${WRKSRC}; ${SETENV} ${CONFIGURE_ENV} ${PERL5} Makefile.PL
+
+.include <bsd.port.mk>

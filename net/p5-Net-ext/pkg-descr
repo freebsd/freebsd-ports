@@ -1,0 +1,13 @@
+Various modules for use Sockets with a TIESCALAR interface
+for really simple socket communications.
+
+Net::Gen	   - generic sockets interface handling
+Net::Inet	   - Internet socket interface module
+Net::TCP	   - TCP sockets interface module
+Net::TCP::Server   - TCP sockets interface module for listeners and servers
+Net::UDP	   - UDP sockets interface module
+Net::UNIX	   - UNIX-domain sockets interface module
+Net::UNIX::Server  - UNIX-domain sockets interface module for listeners
+
+-- Igor
+igor@zynaps.ru
