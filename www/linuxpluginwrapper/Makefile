@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	linuxpluginwrapper
-PORTVERSION=	20040831
+PORTVERSION=	20041010
 PORTREVISION=	0
-CATEGORIES=	www linux
+CATEGORIES=	www linux emulators
 MASTER_SITES=	http://people.FreeBSD.org/~nork/distfiles/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	nork
@@ -28,6 +28,7 @@ USE_MOTIF=	yes
 .endif
 
 ONLY_FOR_ARCHS=	i386
+MAKE_ENV=	EXAMPLESDIR=${EXAMPLESDIR} INSTALL_DATA="${INSTALL_DATA}"
 
 USE_XLIB=	yes
 USE_REINPLACE=	yes
@@ -37,8 +38,10 @@ PLIST=		${WRKDIR}/pkg-plist
 .endif
 CONFLICTS=	flashpluginwrapper-*
 
-.if		${OSVERSION} >= 500000
-LIBMAPCONF=	${WRKSRC}/misc/libmap.conf-FreeBSD5.x
+.if		${OSVERSION} >= 503001
+LIBMAPCONF=	${WRKSRC}/misc/libmap.conf-FreeBSD5-stable
+.elif		${OSVERSION} >= 500000
+LIBMAPCONF=	${WRKSRC}/misc/libmap.conf-FreeBSD5-current
 .else
 LIBMAPCONF=	${WRKSRC}/misc/libmap.conf-FreeBSD4.x
 .endif

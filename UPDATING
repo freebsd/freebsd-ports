@@ -6,6 +6,14 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20041011:
+  AFFECTS: users of www/linuxpluginwrapper who are running FreeBSD
+	   5.3-BETA7 or later (including -current)
+  AUTHOR: nork@freebsd.org
+
+  According to UPDATING(20041001), /etc/libmap.conf should be fixed
+  libm.so.2 to libm.so.3.
+
 20041001:
   AFFECTS: users of ports that require several base system libraries who
 	   are running FreeBSD 5.3-BETA7 or later (including -current)

@@ -9,6 +9,10 @@ libpthread.so.0			liblthread.so.3
 	to
 libpthread.so.0			pluginwrapper/flash6.so
 
+** PLEASE NOTICE TO USER USING FROM 5.0 TO 5.3-BETA6 **
+libm.so was version-bumped on 5.3-BETA7. Please change libm.so.2
+to libm.so.3.
+
 ================================================================
 
 
