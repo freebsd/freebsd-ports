@@ -11,4 +11,6 @@ MD5 (c-news/c-news-patch-doexpire) = ffd3c907cdaebe43ea2dfdc49b84686e
 MD5 (c-news/c-news-patch-queuelen.tay) = 58d3e06a518fbf6bfee10081041fb85c
 MD5 (c-news/c-news-patch-bunzip2) = c4893fcaec140b29f1bea42b81e1bdf5
 MD5 (c-news/c-news-patch-ctl-underscore) = 65ddefc8be3793cfc9d1e6d5b8302fd4
+MD5 (c-news/c-news-patch-y2k) = dc0587ac97c7795362558e90180ae8fa
 MD5 (c-news/c-news-patch-pgpverify-1.12) = 275fdc61a7473af2bbdc0b94aece5aa1
+MD5 (c-news/c-news-patch-gawk3) = 029502040db18868fe10e4c991af22ef
