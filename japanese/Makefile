@@ -121,6 +121,8 @@
     SUBDIR += libimg
     SUBDIR += libjcode
     SUBDIR += libslang
+    SUBDIR += linux-netscape47-communicator
+    SUBDIR += linux-netscape47-navigator
     SUBDIR += linux_locale
     SUBDIR += lipsf
     SUBDIR += lookup-emacs20
