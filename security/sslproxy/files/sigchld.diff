@@ -1,0 +1,36 @@
+--- /data/fbsd-ports/ports/security/sslproxy/work/sslproxy.1998_Jun_14/sslproxy.c	Thu Jan 13 22:51:14 2000
++++ sslproxy.c	Sun Jan 16 18:12:40 2000
+@@ -15,6 +15,20 @@
+ #include <openssl/ssl.h>
+ #include <openssl/err.h>
+ 
++#include <sys/types.h>
++#include <sys/wait.h>
++
++
++void
++child_handler(int arg)
++{
++	pid_t	pid;
++	int	dummy;
++
++	wait(&dummy);
++
++}
++
+ /* ------------------------------------------------------------------------- */
+ 
+ #define SRV_SSL_V23		0
+@@ -550,6 +564,12 @@
+ 		perror("listen");
+ 		exit(1);
+ 	}
++
++	if (signal(SIGCHLD, child_handler)) {
++		perror("signal");
++		exit(1);
++	}
++
+ 	fprintf(stderr, "proxy ready, listening for connections\n");
+ 	for(;;){
+ 		clientFd = accept(sockFd, NULL, NULL)

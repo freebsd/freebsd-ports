@@ -1,5 +1,5 @@
---- Makefile.orig	Sun Jun 14 13:52:50 1998
-+++ Makefile	Sat Jan 29 16:48:49 2000
+--- Makefile.orig	Sat Jan 29 11:36:07 2000
++++ Makefile	Mon Feb  7 17:07:20 2000
 @@ -10,15 +10,13 @@
  
  
@@ -7,7 +7,7 @@
 -CC= gcc
 +CC?= gcc
  
--SSLROOT= /usr/local/ssl
+-SSLROOT= /usr/local/openssl
 -
 -CFLAGS= -Wall -I$(SSLROOT)/include -O
 +CFLAGS+= -I$(OPENSSLINC)
