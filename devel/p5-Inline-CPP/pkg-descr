@@ -1,0 +1,8 @@
+The Inline::CPP module allows you to put C++ source code directly
+"inline" in a Perl script or module. You code classes or functions in
+C++, and you can use them as if they were written in Perl.
+
+WWW: http://search.cpan.org/search?dist=Inline-CPP
+
+-- Sergey Skvortsov
+skv@protey.ru
