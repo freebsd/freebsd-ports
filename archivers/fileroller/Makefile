@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	fileroller
-PORTVERSION=	1.0.2
-PORTREVISION=	1
+PORTVERSION=	2.1.0
 CATEGORIES=	archivers
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,6 +14,7 @@ DISTNAME=	file-roller-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
+LIB_DEPENDS=	gnomeui-2.0:${PORTSDIR}/x11-toolkits/libgnomeui
 RUN_DEPENDS=	bzip:${PORTSDIR}/archivers/bzip \
 		lha:${PORTSDIR}/archivers/lha \
 		rar:${PORTSDIR}/archivers/rar \
@@ -22,8 +22,9 @@ RUN_DEPENDS=	bzip:${PORTSDIR}/archivers/bzip \
 
 USE_X_PREFIX=	yes
 USE_GNOMENG=	yes
-USE_GNOME=	gnomeprefix gnomehack libglade gnomevfs bonobo
+USE_GNOME=	gnomeprefix gnomehack
 GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 

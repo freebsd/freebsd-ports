@@ -1,74 +1,75 @@
 bin/file-roller
-bin/fr-document-viewer
+etc/gconf/gconf.xml.defaults/apps/file-roller/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/file-roller/general/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/file-roller/listing/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/file-roller/ui/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/file-roller/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/file-roller/general/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/file-roller/listing/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/file-roller/ui/%gconf.xml
+etc/gconf/schemas/file-roller.schemas
 %%PORTDOCS%%share/doc/fileroller/AUTHORS
 %%PORTDOCS%%share/doc/fileroller/NEWS
 %%PORTDOCS%%share/doc/fileroller/README
 %%PORTDOCS%%share/doc/fileroller/TODO
 share/gnome/application-registry/file-roller.applications
-share/gnome/apps/Utilities/file-roller.desktop
-share/gnome/file-roller/glade/file_roller.glade
-share/gnome/file-roller/glade/file_roller_prop.glade
-share/gnome/file-roller/icons/add.xpm
-share/gnome/file-roller/icons/down.xpm
-share/gnome/file-roller/icons/extract.xpm
-share/gnome/file-roller/icons/file.xpm
-share/gnome/file-roller/icons/folder.xpm
-share/gnome/file-roller/icons/up.xpm
-share/gnome/file-roller/icons/view.xpm
+share/gnome/applications/file-roller.desktop
+share/gnome/file-roller/glade/file_roller.glade2
+share/gnome/file-roller/glade/file_roller_prop.glade2
 share/gnome/file-roller/scripts/Add_to_archive
 share/gnome/file-roller/scripts/Extract_here
 share/gnome/file-roller/scripts/Extract_in_a_subfolder
 share/gnome/file-roller/scripts/Extract_to
 share/gnome/file-roller/scripts/README
-share/gnome/help/file-roller/C/docbook.css
 share/gnome/help/file-roller/C/figures/fr-add-dialog.png
 share/gnome/help/file-roller/C/figures/fr-extract.png
 share/gnome/help/file-roller/C/figures/fr-mainwindow.png
 share/gnome/help/file-roller/C/figures/fr-prefs.png
-share/gnome/help/file-roller/C/file-roller.sgml
-share/gnome/help/file-roller/C/fr-about.html
-share/gnome/help/file-roller/C/fr-creating.html
-share/gnome/help/file-roller/C/fr-extracting.html
-share/gnome/help/file-roller/C/fr-modifying.html
-share/gnome/help/file-roller/C/fr-opening-viewing.html
-share/gnome/help/file-roller/C/fr-settings.html
-share/gnome/help/file-roller/C/fr-viewing-file.html
-share/gnome/help/file-roller/C/index.html
-share/gnome/help/file-roller/C/stylesheet-images/caution.gif
-share/gnome/help/file-roller/C/stylesheet-images/home.gif
-share/gnome/help/file-roller/C/stylesheet-images/important.gif
-share/gnome/help/file-roller/C/stylesheet-images/next.gif
-share/gnome/help/file-roller/C/stylesheet-images/note.gif
-share/gnome/help/file-roller/C/stylesheet-images/prev.gif
-share/gnome/help/file-roller/C/stylesheet-images/tip.gif
-share/gnome/help/file-roller/C/stylesheet-images/toc-blank.gif
-share/gnome/help/file-roller/C/stylesheet-images/toc-minus.gif
-share/gnome/help/file-roller/C/stylesheet-images/toc-plus.gif
-share/gnome/help/file-roller/C/stylesheet-images/up.gif
-share/gnome/help/file-roller/C/stylesheet-images/warning.gif
+share/gnome/help/file-roller/C/file-roller.xml
+share/gnome/help/file-roller/C/legal.xml
+share/gnome/help/file-roller/ru/figures/fr-add-dialog.png
+share/gnome/help/file-roller/ru/figures/fr-extract.png
+share/gnome/help/file-roller/ru/figures/fr-mainwindow.png
+share/gnome/help/file-roller/ru/figures/fr-prefs.png
+share/gnome/help/file-roller/ru/file-roller.xml
+share/gnome/help/file-roller/ru/legal.xml
 share/gnome/mime-info/file-roller.keys
 share/gnome/mime-info/file-roller.mime
 share/gnome/omf/file-roller/file-roller-C.omf
+share/gnome/omf/file-roller/file-roller-ru.omf
 share/gnome/pixmaps/file-roller.png
+share/locale/bg/LC_MESSAGES/file-roller.mo
+share/locale/ca/LC_MESSAGES/file-roller.mo
+share/locale/cs/LC_MESSAGES/file-roller.mo
 share/locale/de/LC_MESSAGES/file-roller.mo
 share/locale/es/LC_MESSAGES/file-roller.mo
-share/locale/fr_FR/LC_MESSAGES/file-roller.mo
+share/locale/fr/LC_MESSAGES/file-roller.mo
 share/locale/it/LC_MESSAGES/file-roller.mo
 share/locale/ja/LC_MESSAGES/file-roller.mo
 share/locale/ko/LC_MESSAGES/file-roller.mo
+share/locale/ms/LC_MESSAGES/file-roller.mo
 share/locale/nl/LC_MESSAGES/file-roller.mo
 share/locale/no/LC_MESSAGES/file-roller.mo
 share/locale/pl/LC_MESSAGES/file-roller.mo
 share/locale/pt_BR/LC_MESSAGES/file-roller.mo
+share/locale/ro/LC_MESSAGES/file-roller.mo
 share/locale/ru/LC_MESSAGES/file-roller.mo
 share/locale/sv/LC_MESSAGES/file-roller.mo
+share/locale/vi/LC_MESSAGES/file-roller.mo
 @dirrm share/gnome/omf/file-roller
-@dirrm share/gnome/help/file-roller/C/stylesheet-images
+@dirrm share/gnome/help/file-roller/ru/figures
+@dirrm share/gnome/help/file-roller/ru
 @dirrm share/gnome/help/file-roller/C/figures
 @dirrm share/gnome/help/file-roller/C
 @dirrm share/gnome/help/file-roller
 @dirrm share/gnome/file-roller/scripts
-@dirrm share/gnome/file-roller/icons
 @dirrm share/gnome/file-roller/glade
 @dirrm share/gnome/file-roller
-%%PORTDOCS%%@dirrm share/doc/fileroller
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/file-roller/ui
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/file-roller/listing
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/file-roller/general
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/file-roller
+@dirrm etc/gconf/gconf.xml.defaults/apps/file-roller/ui
+@dirrm etc/gconf/gconf.xml.defaults/apps/file-roller/listing
+@dirrm etc/gconf/gconf.xml.defaults/apps/file-roller/general
+@dirrm etc/gconf/gconf.xml.defaults/apps/file-roller
