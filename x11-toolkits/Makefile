@@ -160,6 +160,7 @@
     SUBDIR += pmw
     SUBDIR += py-SciParam
     SUBDIR += py-anygui
+    SUBDIR += py-fltk
     SUBDIR += py-fox
     SUBDIR += py-gnome
     SUBDIR += py-gnome2
