@@ -7,15 +7,20 @@
 
 PORTNAME=	xchat2
 PORTVERSION=	2.0.3
+PORTREVISION=	1
 CATEGORIES=	irc gnome ipv6
 MASTER_SITES=	http://xchat.org/files/source/2.0/ \
 		http://xchat.linuxpower.org/files/source/2.0/
 DISTNAME=	xchat-${PORTVERSION}
 
+PATCH_SITES=	${MASTER_SITES:S/$/patches\//}
+PATCHFILES=	xc203-fixtint.diff
+
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	An X11 IRC client using the GTK+ 2 toolkit
 
 USE_X_PREFIX=	yes
+PATCH_DIST_STRIP=-p1
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_PERL5=	yes
