@@ -11,7 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://s-tech.elsat.net.pl/braa/
 
 MAINTAINER=	ponomarew@oberon.net
-COMMENT=	Tool for making SNMP queries
+COMMENT=	Network auditing tool
 
 LIB_DEPENDS=	netsnmp.5:${PORTSDIR}/net/net-snmp
 
