@@ -8,7 +8,7 @@
 #
 
 PORTNAME=	c2lib
-PORTVERSION=	1.3.0
+PORTVERSION=	1.4.1
 PORTREVISION=	0
 PORTEPOCH=	0
 CATEGORIES=	devel
@@ -25,14 +25,17 @@ PREFIX?=	${LOCALBASE}
 MAKE_ENV+=	CC="${CC}"
 .include <bsd.port.pre.mk>
 
+do-configure:
+	cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} make+ configure
+
 do-build:
-	cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} make+ 
+	cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} make+
 
 do-install:
 	cd ${WRKSRC}; ${SETENV} ${MAKE_ENV}\
 		make+ install prefix=${PREFIX} manprefix=${PREFIX}
 
-.include "${.CURDIR}/manpages.mk"
+.include "${FILESDIR}/manpages.mk"
 .include <bsd.port.post.mk>
 
 #EOF
