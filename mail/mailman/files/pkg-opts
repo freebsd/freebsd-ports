@@ -1,0 +1,27 @@
+# Variable|Default value|Short description
+# 	Multi-line/long description (optional).
+# 	Multi-line/long description lines must start with whitespace!
+#
+USERNAME|mailman|The username of the Mailman user
+USERID|92|The user ID of the Mailman user
+	It is recommended that you do not change this option.
+GROUPNAME|mailman|The group to which the Mailman user will belong
+GROUPID|92|The group ID for the Mailman user
+	It is recommended that you do not change this option.
+MMDIR|mailman|Mailman will be installed in ${PREFIX}/${MMDIR}
+MAIL_GID|26|The group id under which your MTA performs mail delivery
+	Getting the value of MAIL_GID right is crucial to getting Mailman to
+	work with your MTA.  By default this port works with sendmail.  If
+	you're using an alternative MTA installed from ports, you should set
+	MAIL_GID at build time according to the following table.  (Please
+	contact this port's maintainer if you can fill in the blanks, or to
+	report mistakes!)
+	----------------------------------------------
+	MTA     | MAIL_GID | Submitted by
+	Exim    | 6        | <wjv>
+	Postfix | 65534    | <shamrock@cypherpunks.to>
+	Qmail   | ???      |
+GGI_GID|80|The group id under which your web server executes CGI scripts
+	By default, this port works with the current port of Apache.  If your
+	WWW server executes CGI scripts under a different GID, you'll have to
+	set this at build time.

@@ -1,17 +1,21 @@
-Mailman is software to help manage email discussion lists, much like Majordomo
-and Smartmail. Unlike most similar products, Mailman gives each mailing list a
-web page, and allows users to subscribe, unsubscribe, etc. over the web. Even
-the list manager can administer his or her list entirely from the web. Mailman
-also integrates most things people want to do with mailing lists, including
-archiving, mail-to-news gateways, integrated bounce handling, spam prevention,
-email-based admin commands, direct SMTP delivery (with fast bulk mailing),
-support for virtual domains, and more. 
+Paraphrasing the website:
 
-Mailman runs on most Un*x-like systems, is compatible with most web servers and
-browsers, and most SMTP servers. Mailman requires Python version 1.5 or newer.
-Python is a free object-oriented scripting language. A few files are written in
-C for security purposes. 
+  Mailman is a mailing list manager (MLM); that is, software to help manage
+  email discussion lists, much like Majordomo, LISTSERV, and the like.
+  Unlike most similar products, Mailman gives each mailing list a web page
+  and allows users to subscribe, unsubscribe, and change their preferences
+  via the web.  Even a list manager can administer his or her list(s)
+  entirely via the web.  Mailman integrates many common MLM features,
+  including web-based archiving (though it also has hooks for external
+  archivers), mail-to-news gateways, bounce handling, spam prevention,
+  Majordomo-style email-based list administration, direct SMTP delivery (with
+  fast bulk mailing), digest delivery, virtual domain support, and more. 
 
-The manual is still only a set of READMEs provided in the Mailman distribution.
+Mailman is written mostly in Python (with a smattering of C where necessary
+for security purposes), and includes hooks to make it easily scriptable and
+extensible.  It is compatible with most web servers and browsers, and most
+mail transfer agents (mail servers).  Mailman's documentation may be found on
+its website.
 
-WWW: http://www.list.org/
+Author: Barry Warsaw <barry@zope.com> and the Mailman Cabal
+WWW:    http://www.list.org/
