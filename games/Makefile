@@ -182,6 +182,7 @@
     SUBDIR += miscom
     SUBDIR += myth2_demo
     SUBDIR += mythserver
+    SUBDIR += nInvaders
     SUBDIR += nadar
     SUBDIR += nethack32
     SUBDIR += nethack33
