@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Module-Pluggable-Ordered
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Module
@@ -25,6 +25,13 @@ MAN3=		Module::Pluggable::Ordered.3
 
 .include <bsd.port.pre.mk>
 .if ${PERL_LEVEL} <= 500503
-EXTRA_PATCHES=	${PATCHDIR}/5.005_03-*
+post-patch:
+	${PERL} -pi -e '$$_ = "" if /use 5.006;/;' \
+		${WRKSRC}/Makefile.PL
+	${PERL} -pi -e '$$_ = "" if /use 5.006;/;' \
+		    -e '$$_ = "" if /use warnings/;' \
+		    -e 's/^our\s+([\$$\@\%]\w+)/use vars qw($$1); $$1/;' \
+		    -e 's/(->\$$order_name) /$$1\(\) /g;' \
+                ${WRKSRC}/Ordered.pm
 .endif
 .include <bsd.port.post.mk>
