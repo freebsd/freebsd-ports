@@ -11,5 +11,3 @@ USE_MPI=	YES
 .include "${.CURDIR}/../spooles/Makefile"
 
 PKGNAMESUFFIX=  -mpich
-
-BUILD_DEPENDS=  ${LOCALBASE}/mpich/lib/libmpich.a:${PORTSDIR}/net/mpich
