@@ -105,7 +105,7 @@
  	@for i in $(TOP_DIR)/library/*.tcl $(TOP_DIR)/library/tclIndex $(UNIX_DIR)/tclAppInit.c $(UNIX_DIR)/ldAix; \
  	    do \
  	    echo "Installing $$i"; \
-@@ -531,30 +552,37 @@
+@@ -531,30 +552,34 @@
  	@cd $(TOP_DIR)/doc; for i in *.1; \
  	    do \
  	    echo "Installing doc/$$i"; \
@@ -117,7 +117,7 @@
 +		    $$i | gzip -c > $(MAN1_INSTALL_DIR)/$$i.gz; \
 +	    chmod 444 $(MAN1_INSTALL_DIR)/$$i.gz; \
  	    done;
- 	$(UNIX_DIR)/mkLinks $(MAN1_INSTALL_DIR)
+-	$(UNIX_DIR)/mkLinks $(MAN1_INSTALL_DIR)
  	@cd $(TOP_DIR)/doc; for i in *.3; \
  	    do \
  	    echo "Installing doc/$$i"; \
@@ -129,7 +129,7 @@
 +		    $$i | gzip -c > $(MAN3_INSTALL_DIR)/$$i.gz; \
 +	    chmod 444 $(MAN3_INSTALL_DIR)/$$i.gz; \
  	    done;
- 	$(UNIX_DIR)/mkLinks $(MAN3_INSTALL_DIR)
+-	$(UNIX_DIR)/mkLinks $(MAN3_INSTALL_DIR)
  	@cd $(TOP_DIR)/doc; for i in *.n; \
  	    do \
  	    echo "Installing doc/$$i"; \
@@ -141,7 +141,7 @@
 +		    $$i | gzip -c > $(MANN_INSTALL_DIR)/$$i.gz; \
 +	    chmod 444 $(MANN_INSTALL_DIR)/$$i.gz; \
  	    done;
- 	$(UNIX_DIR)/mkLinks $(MANN_INSTALL_DIR)
+-	$(UNIX_DIR)/mkLinks $(MANN_INSTALL_DIR)
 +	@echo "**********"
 +	@echo "IMPORTANT:"
 +	@echo "**********"
