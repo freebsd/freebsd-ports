@@ -9,7 +9,7 @@
 PORTNAME=	star
 PORTVERSION=	1.4.1
 CATEGORIES=	archivers
-MASTER_SITES=	ftp://ftp.fokus.gmd.de/pub/unix/star/
+MASTER_SITES=	ftp://ftp.berlios.de/pub/star/
 
 MAINTAINER=	ports@FreeBSD.org
 
