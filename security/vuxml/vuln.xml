@@ -36,28 +36,41 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <topic>Multiple Potential Buffer Overruns in Samba</topic>
     <affects>
       <package>
-        <name>samba3</name>
-        <range><ge>3.0.2</ge><lt>3.0.5</lt></range>
+	<name>samba</name>
+        <range><ge>3.*</ge><lt>3.0.5,1</lt></range>
+	<range><lt>2.2.10</lt></range>
       </package>
       <package>
-	<name>samba</name>
-	<range><le>2.2.9</le></range>
+	<name>ja-samba</name>
+	<range><lt>2.2.10.*</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>Multiple vulnerabilities in SWAT could
-	  lead to buffer overruns.</p>
+        <p>Evgeny Demidov discovered that the Samba server has a
+          buffer overflow in the Samba Web Administration Tool (SWAT)
+          on decoding Base64 data during HTTP Basic Authentication.
+          Versions 3.0.2 through 3.0.4 are affected.</p>
+        <p>Another buffer overflow bug has been found in the code
+          used to support the "mangling method = hash" smb.conf
+          option. The default setting for this parameter is "mangling
+          method = hash2" and therefore not vulnerable. Versions
+          between 2.2.0 through 2.2.9 and 3.0.0 through 3.0.4 are affected.
+	  </p>
       </body>
     </description>
     <references>
       <cvename>CAN-2004-0600</cvename>
       <cvename>CAN-2004-0686</cvename>
-      <url>http://www.samba.org</url>
+      <mlist msgid="web-53121174@cgp.agava.net">http://www.securityfocus.com/archive/1/369698</mlist>
+      <mlist msgid="200407222031.25086.bugtraq@beyondsecurity.com">http://www.securityfocus.com/archive/1/369706</mlist>
+      <url>http://www.samba.org/samba/whatsnew/samba-3.0.5.html</url>
+      <url>http://www.samba.org/samba/whatsnew/samba-2.2.10.html</url>
     </references>
     <dates>
       <discovery>2004-07-14</discovery>
       <entry>2004-07-21</entry>
+      <modified>2004-07-22</modified>
     </dates>
   </vuln>
 
