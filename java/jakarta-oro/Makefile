@@ -12,6 +12,8 @@ MASTER_SITES=	http://jakarta.apache.org/builds/jakarta-oro/release/v${PORTVERSIO
 
 MAINTAINER=	dglo@ssec.wisc.edu
 
+BUILD_DEPENDS=	${LOCALBASE}/bin/ant:${PORTSDIR}/devel/jakarta-ant
+
 USE_JAVA=	1.2+
 NEED_JAVAC=	YES
 
