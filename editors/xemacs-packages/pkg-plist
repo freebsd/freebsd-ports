@@ -133,6 +133,20 @@ lib/xemacs/xemacs-packages/etc/psgml/ISO_8879-1986/entities/isotech.ent
 lib/xemacs/xemacs-packages/etc/psgml/ISOlat1.ent
 lib/xemacs/xemacs-packages/etc/psgml/README.cdtd
 lib/xemacs/xemacs-packages/etc/psgml/cals-tbl.dtd
+lib/xemacs/xemacs-packages/etc/psgml/cdtd/docbook
+lib/xemacs/xemacs-packages/etc/psgml/cdtd/html
+lib/xemacs/xemacs-packages/etc/psgml/cdtd/html-3
+lib/xemacs/xemacs-packages/etc/psgml/cdtd/html-3-r
+lib/xemacs/xemacs-packages/etc/psgml/cdtd/html-3.2
+lib/xemacs/xemacs-packages/etc/psgml/cdtd/html-4.01frame
+lib/xemacs/xemacs-packages/etc/psgml/cdtd/html-4.01s
+lib/xemacs/xemacs-packages/etc/psgml/cdtd/html-4frame
+lib/xemacs/xemacs-packages/etc/psgml/cdtd/html-4s
+lib/xemacs/xemacs-packages/etc/psgml/cdtd/html-r
+lib/xemacs/xemacs-packages/etc/psgml/cdtd/mathml
+lib/xemacs/xemacs-packages/etc/psgml/cdtd/xhtml1-frameset
+lib/xemacs/xemacs-packages/etc/psgml/cdtd/xhtml1-strict
+lib/xemacs/xemacs-packages/etc/psgml/cdtd/xhtml1-transitional
 lib/xemacs/xemacs-packages/etc/psgml/datatypes.dtd
 lib/xemacs/xemacs-packages/etc/psgml/dbcent.mod
 lib/xemacs/xemacs-packages/etc/psgml/dbgenent.mod
@@ -394,8 +408,6 @@ lib/xemacs/xemacs-packages/lisp/apel/broken.el
 lib/xemacs/xemacs-packages/lisp/apel/broken.elc
 lib/xemacs/xemacs-packages/lisp/apel/calist.el
 lib/xemacs/xemacs-packages/lisp/apel/calist.elc
-lib/xemacs/xemacs-packages/lisp/apel/emu-mule.el
-lib/xemacs/xemacs-packages/lisp/apel/emu-mule.elc
 lib/xemacs/xemacs-packages/lisp/apel/emu.el
 lib/xemacs/xemacs-packages/lisp/apel/emu.elc
 lib/xemacs/xemacs-packages/lisp/apel/file-detect.el
@@ -859,6 +871,8 @@ lib/xemacs/xemacs-packages/lisp/mail-lib/ChangeLog
 lib/xemacs/xemacs-packages/lisp/mail-lib/_pkg.el
 lib/xemacs/xemacs-packages/lisp/mail-lib/auto-autoloads.el
 lib/xemacs/xemacs-packages/lisp/mail-lib/auto-autoloads.elc
+lib/xemacs/xemacs-packages/lisp/mail-lib/base64.el
+lib/xemacs/xemacs-packages/lisp/mail-lib/base64.elc
 lib/xemacs/xemacs-packages/lisp/mail-lib/browse-url.el
 lib/xemacs/xemacs-packages/lisp/mail-lib/browse-url.elc
 lib/xemacs/xemacs-packages/lisp/mail-lib/custom-load.el
@@ -877,6 +891,8 @@ lib/xemacs/xemacs-packages/lisp/mail-lib/pop3.el
 lib/xemacs/xemacs-packages/lisp/mail-lib/pop3.elc
 lib/xemacs/xemacs-packages/lisp/mail-lib/reporter.el
 lib/xemacs/xemacs-packages/lisp/mail-lib/reporter.elc
+lib/xemacs/xemacs-packages/lisp/mail-lib/rfc2104.el
+lib/xemacs/xemacs-packages/lisp/mail-lib/rfc2104.elc
 lib/xemacs/xemacs-packages/lisp/mail-lib/rfc822.el
 lib/xemacs/xemacs-packages/lisp/mail-lib/rfc822.elc
 lib/xemacs/xemacs-packages/lisp/mail-lib/rmail-mini.el
@@ -887,6 +903,8 @@ lib/xemacs/xemacs-packages/lisp/mail-lib/sendmail.el
 lib/xemacs/xemacs-packages/lisp/mail-lib/sendmail.elc
 lib/xemacs/xemacs-packages/lisp/mail-lib/smtpmail.el
 lib/xemacs/xemacs-packages/lisp/mail-lib/smtpmail.elc
+lib/xemacs/xemacs-packages/lisp/mail-lib/starttls.el
+lib/xemacs/xemacs-packages/lisp/mail-lib/starttls.elc
 lib/xemacs/xemacs-packages/lisp/mailcrypt/ANNOUNCE
 lib/xemacs/xemacs-packages/lisp/mailcrypt/ChangeLog
 lib/xemacs/xemacs-packages/lisp/mailcrypt/INSTALL
@@ -1147,6 +1165,8 @@ lib/xemacs/xemacs-packages/lisp/texinfo/texnfo-upd.el
 lib/xemacs/xemacs-packages/lisp/texinfo/texnfo-upd.elc
 lib/xemacs/xemacs-packages/lisp/text-modes/ChangeLog
 lib/xemacs/xemacs-packages/lisp/text-modes/_pkg.el
+lib/xemacs/xemacs-packages/lisp/text-modes/ansi-color.el
+lib/xemacs/xemacs-packages/lisp/text-modes/ansi-color.elc
 lib/xemacs/xemacs-packages/lisp/text-modes/auto-autoloads.el
 lib/xemacs/xemacs-packages/lisp/text-modes/auto-autoloads.elc
 lib/xemacs/xemacs-packages/lisp/text-modes/autoinsert.el
@@ -1247,8 +1267,6 @@ lib/xemacs/xemacs-packages/lisp/w3/TODO
 lib/xemacs/xemacs-packages/lisp/w3/_pkg.el
 lib/xemacs/xemacs-packages/lisp/w3/auto-autoloads.el
 lib/xemacs/xemacs-packages/lisp/w3/auto-autoloads.elc
-lib/xemacs/xemacs-packages/lisp/w3/base64.el
-lib/xemacs/xemacs-packages/lisp/w3/base64.elc
 lib/xemacs/xemacs-packages/lisp/w3/css.el
 lib/xemacs/xemacs-packages/lisp/w3/css.elc
 lib/xemacs/xemacs-packages/lisp/w3/custom-load.el
@@ -1574,6 +1592,7 @@ lib/xemacs/xemacs-packages/pkginfo/MANIFEST.xemacs-devel
 @dirrm lib/xemacs/xemacs-packages/lisp/apel
 @dirrm lib/xemacs/xemacs-packages/etc/w3
 @dirrm lib/xemacs/xemacs-packages/etc/time
+@dirrm lib/xemacs/xemacs-packages/etc/psgml/cdtd
 @dirrm lib/xemacs/xemacs-packages/etc/psgml/ISO_8879-1986/entities
 @dirrm lib/xemacs/xemacs-packages/etc/psgml/ISO_8879-1986
 @dirrm lib/xemacs/xemacs-packages/etc/psgml

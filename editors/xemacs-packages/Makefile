@@ -6,41 +6,41 @@
 #
 
 PORTNAME=	xemacs-packages
-PORTVERSION=	1.7
+PORTVERSION=	1.8
 CATEGORIES=	editors elisp
 MASTER_SITES=	${MASTER_SITE_XEMACS} \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	packages kiri
 DISTFILES=	\
-		apel-1.19-pkg.tar.gz \
-		auctex-1.22-pkg.tar.gz \
-		c-support-1.15-pkg.tar.gz \
-		cc-mode-1.21-pkg.tar.gz \
-		debug-1.12-pkg.tar.gz \
-		dired-1.08-pkg.tar.gz \
-		edit-utils-1.53-pkg.tar.gz \
-		efs-1.21-pkg.tar.gz \
-		fsf-compat-1.07-pkg.tar.gz \
-		hm--html-menus-1.15-pkg.tar.gz \
-		ispell-1.21-pkg.tar.gz \
-		mail-lib-1.33-pkg.tar.gz \
-		mailcrypt-2.06-pkg.tar.gz \
-		net-utils-1.14-pkg.tar.gz \
-		os-utils-1.24-pkg.tar.gz \
-		pcl-cvs-1.50-pkg.tar.gz \
-		prog-modes-1.30-pkg.tar.gz \
-		ps-print-nomule-1.04-pkg.tar.gz \
-		psgml-1.20-pkg.tar.gz \
-		sgml-1.07-pkg.tar.gz \
-		sh-script-1.12-pkg.tar.gz \
-		texinfo-1.19-pkg.tar.gz \
-		text-modes-1.28-pkg.tar.gz \
-		time-1.10-pkg.tar.gz \
-		vc-1.24-pkg.tar.gz \
-		viper-1.22-pkg.tar.gz \
-		w3-1.16-pkg.tar.gz \
-		xemacs-base-1.46-pkg.tar.gz \
-		xemacs-devel-1.30-pkg.tar.gz
+		apel-1.20-pkg.tar.gz \
+		auctex-1.24-pkg.tar.gz \
+		c-support-1.16-pkg.tar.gz \
+		cc-mode-1.23-pkg.tar.gz \
+		debug-1.14-pkg.tar.gz \
+		dired-1.09-pkg.tar.gz \
+		edit-utils-1.55-pkg.tar.gz \
+		efs-1.22-pkg.tar.gz \
+		fsf-compat-1.08-pkg.tar.gz \
+		hm--html-menus-1.16-pkg.tar.gz \
+		ispell-1.22-pkg.tar.gz \
+		mail-lib-1.35-pkg.tar.gz \
+		mailcrypt-2.07-pkg.tar.gz \
+		net-utils-1.15-pkg.tar.gz \
+		os-utils-1.25-pkg.tar.gz \
+		pcl-cvs-1.51-pkg.tar.gz \
+		prog-modes-1.32-pkg.tar.gz \
+		ps-print-nomule-1.05-pkg.tar.gz \
+		psgml-1.22-pkg.tar.gz \
+		sgml-1.08-pkg.tar.gz \
+		sh-script-1.13-pkg.tar.gz \
+		texinfo-1.20-pkg.tar.gz \
+		text-modes-1.29-pkg.tar.gz \
+		time-1.11-pkg.tar.gz \
+		vc-1.26-pkg.tar.gz \
+		viper-1.24-pkg.tar.gz \
+		w3-1.18-pkg.tar.gz \
+		xemacs-base-1.49-pkg.tar.gz \
+		xemacs-devel-1.31-pkg.tar.gz
 DIST_SUBDIR=	xemacs
 
 MAINTAINER=	kiri@FreeBSD.org
