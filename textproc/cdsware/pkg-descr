@@ -1,0 +1,8 @@
+The CERN Document Server Software (CDSware) allows you to run your own
+electronic preprint server, your own online library catalogue or a document
+system on the web.
+
+It complies with the Open Archives Initiative metadata harvesting protocol
+(OAI-PMH) and uses MARC 21 as its underlying bibliographic standard.
+
+WWW: http://cdsware.cern.ch/

@@ -1,0 +1,20 @@
+--- ./modules/miscutil/bin/dbexec.wml.orig	Wed Mar 10 17:38:29 2004
++++ ./modules/miscutil/bin/dbexec.wml	Wed Jun 30 22:57:09 2004
+@@ -36,7 +36,7 @@
+ ###### okay, config file read, the script can continue ######
+ 
+ # is help called?
+-if [ "$1" == "-h" ] || [ "$1" == "--help" ]; then
++if [ "$1" = "-h" ] || [ "$1" = "--help" ]; then
+     echo "Usage: $0"
+     echo "General options:"
+     echo " -h, --help            Print this help."
+@@ -45,7 +45,7 @@
+ fi 
+ 
+ # is version called?
+-if [ "$1" == "-V" ] || [ "$1" == "--version" ]; then
++if [ "$1" = "-V" ] || [ "$1" = "--version" ]; then
+     echo "<: print generate_pretty_version_string('$Id: dbexec.wml,v 1.2 2004/03/10 16:38:29 tibor Exp $'); :>"
+     exit 0
+ fi 

@@ -1,0 +1,26 @@
+--- ./config/configbis.wml.in.orig	Tue Mar  2 11:56:59 2004
++++ ./config/configbis.wml.in	Sat Jul  3 20:29:43 2004
+@@ -44,19 +44,19 @@
+ @prefix@/lib
+ </define-tag>
+ <define-tag LOGDIR whitespace=delete>
+-@prefix@/var/log
++/var/log/cdsware
+ </define-tag>
+ <define-tag ETCDIR whitespace=delete>
+ @prefix@/etc
+ </define-tag>
+ <define-tag TMPDIR whitespace=delete>
+-@prefix@/var/tmp
++/var/tmp/cdsware
+ </define-tag>
+ <define-tag CACHEDIR whitespace=delete>
+-@prefix@/var/cache
++/var/cache/cdsware
+ </define-tag>
+ <define-tag DATADIR whitespace=delete>
+-@prefix@/var/data
++/var/data/cdsware
+ </define-tag>
+ <define-tag WEBDIR whitespace=delete>
+ @WEBDIR@

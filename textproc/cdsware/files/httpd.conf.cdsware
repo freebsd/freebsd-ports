@@ -1,0 +1,23 @@
+# This is included in Apache's httpd.conf for CDSware
+
+<Directory %%PREFIX%%/%%WEBDIR%%>
+    AddDefaultCharset UTF-8
+    DirectoryIndex index.en.html index.html index.py index.en.php index.php
+    AddHandler python-program .py
+    PythonHandler mod_python.publisher
+    PythonDebug On
+    <IfModule mod_php4.c>
+        php_flag log_errors = on
+        php_flag display_errors = off
+        php_flag expose_php = off
+        php_value max_execution_time 160
+        php_flag register_globals = on
+	php_flag short_open_tag = on
+    </IfModule>
+</Directory>
+
+<IfModule mod_alias.c>
+    Alias /%%WALIAS%%/ "%%PREFIX%%/%%WEBDIR%%/"
+</IfModule>
+# End of CDSW configuration ================
+

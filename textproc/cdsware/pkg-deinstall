@@ -1,0 +1,43 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# Try to restore httpd.conf when deinstalling CDSware
+
+if [ x$2 != xDEINSTALL ]; then
+    exit
+fi
+
+AP_CNF=${PKG_PREFIX}/etc/apache2/httpd.conf
+
+if [ -f ${AP_CNF}.beforeCDSware ] ; then
+	echo "Restoring httpd.conf..."
+	sed -e "s|Include ${PKG_PREFIX}/etc/cdsware|# Include ${PKG_PREFIX}/etc/cdsware|" \
+	< ${AP_CNF} > ${AP_CNF}.deinstcdsware
+	mv ${AP_CNF}.deinstcdsware ${AP_CNF}
+	if ! [ -z "${PACKAGE_BUILDING}" ]; then
+		rm ${AP_CNF}.beforeCDSware
+	fi
+fi
+
+# Backup CDSware's config files, if needed.
+
+cf=${PKG_PREFIX}/cdsware/lib/wml/cdsware/config.wml
+
+if [ -z "${PACKAGE_BUILDING}" ]; then
+  diff -bBqw $cf $cf.sample >/dev/null 2>&1
+  case $? in
+    0)  # original config file, can be deleted
+        ;;
+    1)  # config file has been updated, must be backuped
+        cp -p $cf $cf.previous
+        echo "===> Backing-up..."
+        echo "--->   $cf has been saved ***"
+        echo "--->      as $cf.previous ***"
+        ;;
+    *)  # not found?
+	exit
+        ;;
+    esac
+fi
+rm $cf

@@ -1,0 +1,11 @@
+--- modules/bibsched/bin/bibsched.wml.orig	Tue May  4 15:47:00 2004
++++ modules/bibsched/bin/bibsched.wml	Sun Jul  4 16:17:16 2004
+@@ -94,7 +94,7 @@
+         return None
+ 
+ def get_my_pid(process,args=''):
+-    COMMAND = "ps -C %s o '%%p%%a' | grep '%s %s' | sed -n 1p" % (process,process,args)
++    COMMAND = "ps -o pid,command | grep %s | grep '%s %s' | sed -n 1p" % (process,process,args)
+     answer = string.strip(os.popen(COMMAND).read())
+     if answer=='':
+         answer = 0
