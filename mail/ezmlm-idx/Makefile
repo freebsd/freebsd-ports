@@ -67,7 +67,7 @@ MY_CONFIG=	ezmlmglrc ezmlmrc ezmlmsubrc
 
 EZMLM_VERSION=	0.53
 
-PLIST=		${WRKDIR}/PLIST
+PLIST=		${WRKDIR}/pkg-plist
 
 pre-patch:
 	@${MV} -f ${WRKDIR}/ezmlm-idx-${PORTVERSION}/* ${WRKSRC}
@@ -85,9 +85,9 @@ post-patch:
 	@${MV} ${WRKSRC}/idx.h ${WRKSRC}/idx.h.orig
 	@${SED} -e 's#/etc/ezmlm/#'${PREFIX}'/etc/ezmlm/#' \
 		< ${WRKSRC}/idx.h.orig > ${WRKSRC}/idx.h
-	@${CP} ${PKGDIR}/PLIST ${WRKDIR}
+	@${CP} ${PKGDIR}/pkg-plist ${WRKDIR}
 .if !defined(NOPORTDOCS)
-	@${CAT} ${PKGDIR}/PLIST.docs >> ${WRKDIR}/PLIST
+	@${CAT} ${PKGDIR}/pkg-plist.docs >> ${WRKDIR}/pkg-plist
 .endif
 
 pre-install:
