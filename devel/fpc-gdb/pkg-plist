@@ -1,0 +1,12 @@
+bin/gdbfpc
+lib/fpc/1.0.10/units/freebsd/gdbint/libgdb/libbfd.a
+lib/fpc/1.0.10/units/freebsd/gdbint/libgdb/libgdb.a
+lib/fpc/1.0.10/units/freebsd/gdbint/libgdb/libiberty.a
+lib/fpc/1.0.10/units/freebsd/gdbint/libgdb/libintl.a
+lib/fpc/1.0.10/units/freebsd/gdbint/libgdb/libopcodes.a
+@dirrm lib/fpc/1.0.10/units/freebsd/gdbint/libgdb
+@dirrm lib/fpc/1.0.10/units/freebsd/gdbint
+@dirrm lib/fpc/1.0.10/units/freebsd
+@dirrm lib/fpc/1.0.10/units
+@dirrm lib/fpc/1.0.10
+@dirrm lib/fpc

@@ -1,0 +1,9 @@
+--- gdb/config/alpha/fbsd.mh	Sat Jan 19 17:12:50 2002
++++ gdb/config/alpha/fbsd.mh	Mon Jun  3 08:03:39 2002
+@@ -1,5 +1,5 @@
+ # Host: FreeBSD/Alpha
+ NATDEPFILES= fork-child.o infptrace.o inftarg.o \
+ 	solib.o solib-svr4.o solib-legacy.o \
+-	corelow.o core-regset.o alphabsd-nat.o
++	corelow.o core-regset.o alphabsd-nat.o freebsd-uthread.o
+ NAT_FILE= nm-fbsd.h
