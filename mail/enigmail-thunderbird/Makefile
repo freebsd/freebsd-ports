@@ -18,6 +18,6 @@ PKGINSTALL=	${.CURDIR}/pkg-install
 PKGDEINSTALL=	${.CURDIR}/pkg-deinstall
 
 LOCAL_SRCDIR=	mail/thunderbird
-LOCAL_SUBDIR=	lib/thunderbird/lib/mozilla-1.6b
+LOCAL_SUBDIR=	lib/thunderbird/lib/mozilla-1.6
 
 .include "${MASTERDIR}/Makefile"
