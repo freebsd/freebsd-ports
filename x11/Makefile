@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.114 1996/12/30 18:27:30 max Exp $
+# $Id: Makefile,v 1.115 1997/01/02 19:24:51 max Exp $
 #
 
     SUBDIR += FWF
@@ -10,6 +10,7 @@
     SUBDIR += blast
     SUBDIR += blt
     SUBDIR += bricons
+    SUBDIR += camltk41
     SUBDIR += ctwm
     SUBDIR += dclock
     SUBDIR += etlfonts
