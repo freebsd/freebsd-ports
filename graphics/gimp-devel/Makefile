@@ -43,7 +43,7 @@ CONFIGURE_ARGS=	--disable-perl \
 		--with-html-dir=${PREFIX}/share/doc/gimp \
 		--disable-gtk-doc
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}"
+		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
 GIMP_DISTFILE=	${DISTDIR}/${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 
