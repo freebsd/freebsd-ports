@@ -24,6 +24,8 @@ CONFIGURE_ARGS+=	--with-tclinclude=${LOCALBASE}/include/tcl8.3
 CONFIGURE_ARGS+=	--with-tcllib=${LOCALBASE}/lib/tcl8.3
 LIBS+=		-lgnugetopt
 CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib/ ${LIBS}"
-MAN=		cvs.1 cvs.5 cvsbug.8
+MAN1=		cvs.1
+MAN5=		cvs.5
+MAN8=		cvsbug.8
 
 .include <bsd.port.mk>
