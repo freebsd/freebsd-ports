@@ -46,6 +46,7 @@
     SUBDIR += gtk-qn-x11-theme
     SUBDIR += gtk-qnxtheme
     SUBDIR += gtk-sharp
+    SUBDIR += gtk-thinice-engine
     SUBDIR += gtk-xfce-engine
     SUBDIR += gtk-zenith-theme
     SUBDIR += gtk12
