@@ -1,0 +1,55 @@
+--- src/Makefile.in.orig	Mon Sep  9 06:33:08 2002
++++ src/Makefile.in	Sun Nov 16 02:33:16 2003
+@@ -146,7 +146,7 @@
+ @MAD_FALSE@MADSOURCES = 
+ 
+ normalize_SOURCES = normalize.c volume.c adjust.c mpegadjust.c \
+-	common.h version.c getopt.c getopt1.c getopt.h \
++	common.h version.c \
+ 	$(AUDIOFILESOURCES) $(MADSOURCES)
+ 
+ 
+@@ -184,7 +184,6 @@
+ am_normalize_OBJECTS = normalize-normalize.$(OBJEXT) \
+ 	normalize-volume.$(OBJEXT) normalize-adjust.$(OBJEXT) \
+ 	normalize-mpegadjust.$(OBJEXT) normalize-version.$(OBJEXT) \
+-	normalize-getopt.$(OBJEXT) normalize-getopt1.$(OBJEXT) \
+ 	$(am__objects_1) $(am__objects_2)
+ normalize_OBJECTS = $(am_normalize_OBJECTS)
+ normalize_LDFLAGS =
+@@ -199,8 +198,6 @@
+ depcomp = $(SHELL) $(top_srcdir)/config/depcomp
+ am__depfiles_maybe = depfiles
+ @AMDEP_TRUE@DEP_FILES = ./$(DEPDIR)/normalize-adjust.Po \
+-@AMDEP_TRUE@	./$(DEPDIR)/normalize-getopt.Po \
+-@AMDEP_TRUE@	./$(DEPDIR)/normalize-getopt1.Po \
+ @AMDEP_TRUE@	./$(DEPDIR)/normalize-mpegadjust.Po \
+ @AMDEP_TRUE@	./$(DEPDIR)/normalize-mpegvolume.Po \
+ @AMDEP_TRUE@	./$(DEPDIR)/normalize-normalize.Po \
+@@ -265,8 +262,6 @@
+ normalize-adjust.$(OBJEXT): adjust.c
+ normalize-mpegadjust.$(OBJEXT): mpegadjust.c
+ normalize-version.$(OBJEXT): version.c
+-normalize-getopt.$(OBJEXT): getopt.c
+-normalize-getopt1.$(OBJEXT): getopt1.c
+ normalize-wiener_af.$(OBJEXT): wiener_af.c
+ normalize-riff.$(OBJEXT): riff.c
+ normalize-mpegvolume.$(OBJEXT): mpegvolume.c
+@@ -301,8 +296,6 @@
+ 	-rm -f *.tab.c
+ 
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/normalize-adjust.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/normalize-getopt.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/normalize-getopt1.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/normalize-mpegadjust.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/normalize-mpegvolume.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/normalize-normalize.Po@am__quote@
+@@ -678,7 +635,7 @@
+ 
+ # test program targets follow
+ 
+-mktestwav: mktestwav.o riff.o version.o getopt.o getopt1.o
++mktestwav: mktestwav.o riff.o version.o
+ 	$(LINK) $^ -lm
+ 
+ mktestwav.o: mktestwav.c riff.h
