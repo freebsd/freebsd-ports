@@ -1,11 +1,26 @@
---- Util/Makefile.in.orig	Sun Apr  8 03:00:36 2001
-+++ Util/Makefile.in	Sun Apr  8 03:21:21 2001
-@@ -117,7 +117,7 @@
- STATIC_LIBRARY = libPTL.a
- PROFLIBRARY = libPTL_p.a
+--- Util/Makefile.in.orig	Sat Mar 30 03:15:35 2002
++++ Util/Makefile.in	Sat Mar 30 16:48:35 2002
+@@ -93,3 +93,3 @@
+ 
+-OPTCFLAGS  = -g -O3
++OPTCFLAGS  = -g -O -pipe -march=pentiumpro
+ INCLUDE    = -I. -I$(arch_includedir) $(ARCH_SPECIAL) -I$(srcdir) -I$(altsysdir)
+@@ -119,3 +119,3 @@
  SHARED_LIBRARY = libPTL.so
--SLIBVER = 2.0
+-SLIBVER = 2.1
 +SLIBVER = 2
  
- ALTSYS_LINK = -L$(altsysdir) -laltsys `cat $(altsysdir)/linker_opt`
+@@ -325,4 +325,4 @@
+ $(utildir)/configure: $(utildir)/configure.in
+-	test -f $(AUTOCONFBINDIR)/autoconf && \
+-	(cd $(utildir) ; autoconf) || exit 0
++	test -f $(AUTOCONFBINDIR)/autoconf213 && \
++	(cd $(utildir) ; autoconf213) || exit 0
  
+@@ -331,4 +331,4 @@
+ $(utildir)/stamp-h.in: configure.in acconfig.h
+-	test -f $(AUTOCONFBINDIR)/autoheader && \
+-	(cd $(utildir) ; autoheader configure.in > config.h.in) || exit 0
++	test -f $(AUTOCONFBINDIR)/autoheader213 && \
++	(cd $(utildir) ; autoheader213 configure.in > config.h.in) || exit 0
+ 	date > $(utildir)/stamp-h.in

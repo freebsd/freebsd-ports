@@ -7,6 +7,7 @@
 
 PORTNAME=	ptl
 PORTVERSION=	2.1.8
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.media.osaka-cu.ac.jp/pub/%SUBDIR%/ \
 		ftp://ftp.ics.es.osaka-u.ac.jp/pub/mirrors/%SUBDIR%/
@@ -15,7 +16,12 @@ DISTNAME=	${PORTNAME:U}-${PORTVERSION}
 
 MAINTAINER=	knu@FreeBSD.org
 
-BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf
+BUILD_DEPENDS=	autoconf213:${PORTSDIR}/devel/autoconf213
+
+PATCH_SITES=	${MASTER_SITES}
+PATCH_SITE_SUBDIR=	${MASTER_SITE_SUBDIR}
+PATCHFILES=	${DISTNAME}_readdir-patch
+PATCH_DIST_STRIP=	-p1
 
 MAKE_ARGS=	prefix="${PREFIX}"
 INSTALLS_SHLIB=	yes
@@ -33,8 +39,8 @@ post-patch:
 post-install:
 	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/${PORTNAME:U}
 	cd ${PREFIX} && ( \
-		find ${PORTNAME:U} -type f -o -type l | sort; \
-		find ${PORTNAME:U} -type d | sort -r | ${SED} 's/^/@dirrm /'; \
+		${FIND} ${PORTNAME:U} -type f -o -type l | sort; \
+		${FIND} ${PORTNAME:U} -type d | sort -r | ${SED} 's/^/@dirrm /'; \
 	) >> ${TMPPLIST}
 .if !defined(NOPORTDOCS)
 	${INSTALL_DATA} ${WRKSRC}/doc/PTL.info* ${PREFIX}/info/
