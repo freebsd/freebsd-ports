@@ -1,0 +1,19 @@
+*** ../pwlib/src/ptlib/unix/Makefile.orig	Sun Oct 27 15:54:26 2002
+--- ../pwlib/src/ptlib/unix/Makefile	Sun Oct 27 15:54:56 2002
+*************** $(DEPDIR)/getdate.tab.dep: $(GETDATE_SOU
+*** 553,559 ****
+  	$(CC) $(STDCCFLAGS) -M $< >> $@
+  
+  $(GETDATE_SOURCE): $(COMMON_SRC_DIR)/getdate.y
+! 	bison $(COMMON_SRC_DIR)/getdate.y
+  
+  #######################################################
+  
+--- 553,559 ----
+  	$(CC) $(STDCCFLAGS) -M $< >> $@
+  
+  $(GETDATE_SOURCE): $(COMMON_SRC_DIR)/getdate.y
+! 	bison $(COMMON_SRC_DIR)/getdate.y -o $(COMMON_SRC_DIR)/getdate.tab.c
+  
+  #######################################################
+  
