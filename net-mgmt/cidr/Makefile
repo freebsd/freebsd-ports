@@ -8,6 +8,8 @@ PORTNAME=	cidr
 PORTVERSION=	2.3.2
 CATEGORIES=	net
 MASTER_SITES=	http://geeksoul.com/robert/cidr/
+MASTER_SITES+=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	nork
 DISTNAME=	cidr-current
 
 MAINTAINER=	midom@dammit.lt
