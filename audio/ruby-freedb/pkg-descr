@@ -1,0 +1,6 @@
+Ruby/Freedb is a library that provides access to Freedb/CDDB servers
+to find some useful CD-Audio informations (CD-title, tracks titles).
+This library includes low-level functions to access CD-ROM device.
+
+Author:	Guillaume Pierronnet <moumar@netcourrier.com>
+WWW:	http://davedd.free.fr/ruby-freedb/
