@@ -9,20 +9,18 @@ bin/foomatic-printjob
 %%SITE_PERL%%/Foomatic/Defaults.pm
 %%SITE_PERL%%/Foomatic/PPD.pm
 %%SITE_PERL%%/Foomatic/UIElem.pm
-%%SITE_PERL%%/mach/auto/Foomatic/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Foomatic/.packlist
 sbin/foomatic-addpjloptions
 sbin/foomatic-fix-xml
 sbin/foomatic-getpjloptions
 sbin/foomatic-kitload
 sbin/foomatic-nonumericalids
-sbin/foomatic-ppdload
 sbin/foomatic-preferred-driver
 sbin/foomatic-replaceoldprinterids
 share/foomatic/templates/pjl_enum_choice.xml
 share/foomatic/templates/pjl_enum_option.xml
 share/foomatic/templates/pjl_num_option.xml
-@dirrm etc/foomatic
 @dirrm %%SITE_PERL%%/Foomatic
-@dirrm %%SITE_PERL%%/mach/auto/Foomatic/
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Foomatic
 @dirrm share/foomatic/templates
 @dirrm share/foomatic
