@@ -1,0 +1,38 @@
+bin/hanIM
+lib/X11/app-defaults/HanIM
+lib/X11/hanIM/hanroman.tbl
+lib/X11/hanIM/help/back5.gif
+lib/X11/hanIM/help/index.html
+lib/X11/hanIM/help/intro.gif
+lib/X11/hanIM/help/property.gif
+lib/X11/hanIM/help/title.gif
+lib/X11/hanIM/help/usage.gif
+lib/X11/hanIM/japanese.tbl
+@dirrm lib/X11/hanIM/help
+@dirrm lib/X11/hanIM
+share/doc/hanIM/LICENSE
+share/doc/hanIM/README
+share/doc/hanIM/XLC_LOCALE
+@comment copy new locale definition(no harm, so need not be uninstalled)
+@exec if [ -f %D/lib/X11/locale/ko/XLC_LOCALE ]; then mv -f %D/lib/X11/locale/ko/XLC_LOCALE %D/lib/X11/locale/ko/XLC_LOCALE.orig; fi
+@exec cp %D/share/doc/hanIM/XLC_LOCALE %D/lib/X11/locale/ko/
+@unexec if [ -f %D/lib/X11/locale/ko/XLC_LOCALE.orig ]; then mv -f %D/lib/X11/locale/ko/XLC_LOCALE.orig %D/lib/X11/locale/ko/XLC_LOCALE; fi
+share/doc/hanIM/samples/CVS/Entries
+share/doc/hanIM/samples/CVS/Repository
+share/doc/hanIM/samples/CVS/Root
+share/doc/hanIM/samples/IMDemo
+share/doc/hanIM/samples/Makefile
+share/doc/hanIM/samples/asample.c
+share/doc/hanIM/samples/geticval.c
+share/doc/hanIM/samples/getimval.c
+share/doc/hanIM/samples/gtkimtest.c
+share/doc/hanIM/samples/gtkimtest.rc
+share/doc/hanIM/samples/i18n.c
+share/doc/hanIM/samples/msample.c
+share/doc/hanIM/samples/offspot.c
+share/doc/hanIM/samples/onspot.c
+share/doc/hanIM/samples/overspot.c
+share/doc/hanIM/samples/rootwin.c
+@dirrm share/doc/hanIM/samples/CVS
+@dirrm share/doc/hanIM/samples
+@dirrm share/doc/hanIM
