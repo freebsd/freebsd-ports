@@ -7,6 +7,7 @@
 
 PORTNAME=	jpeg2ps
 PORTVERSION=	1.9
+PORTREVISION=	1
 CATEGORIES=	graphics converters
 MASTER_SITES=	http://www.pdflib.com/products/more/jpeg2ps/
 PKGNAMESUFFIX=	-${PAPERSIZE}
@@ -17,6 +18,8 @@ COMMENT=	Converter for JPEG compressed images to PostScript Level 2
 PAPERSIZE?=	letter
 
 INSTALL_TARGET=
+
+MAN1=           jpeg2ps.1
 
 .if ${PAPERSIZE} == a4
 post-patch:
@@ -30,6 +33,7 @@ post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/jpeg2ps.txt ${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/jpeg2ps.1 ${MANPREFIX}/man/man1
 .endif
 
 .include <bsd.port.mk>
