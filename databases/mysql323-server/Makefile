@@ -18,6 +18,8 @@ MASTER_SITES=	http://www.kernelnotes.de/MySQL/Downloads/MySQL-3.23/ \
 		ftp://ftp.gwdg.de/pub/misc/mysql/Downloads/MySQL-3.23/
 DISTFILES=	mysql-${PORTVERSION}${EXTRACT_SUFX}
 
+FORBIDDEN=	"Myltiple security vulnerabilities - see http://security.e-matters.de/advisories/042002.html"
+
 MAINTAINER=	dirk@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/mysql-${PORTVERSION}
