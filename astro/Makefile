@@ -5,6 +5,7 @@
     SUBDIR += ephem
     SUBDIR += luna
     SUBDIR += pyweather
+    SUBDIR += rmap
     SUBDIR += saoimage
     SUBDIR += sattrack
     SUBDIR += setiathome

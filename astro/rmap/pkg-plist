@@ -1,0 +1,4 @@
+bin/rmap
+share/rmap/rmap.colors
+share/rmap/earth.rez
+@dirrm share/rmap
