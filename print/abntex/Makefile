@@ -6,33 +6,30 @@
 #
 
 PORTNAME=	abntex
-PORTVERSION=	0.5
+PORTVERSION=	0.8.2
 CATEGORIES=	print
 MASTER_SITES=	http://download.codigolivre.org.br/abntex/
+DISTNAME=	${PORTNAME}-${PORTVERSION:R}-${PORTVERSION:E}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Both classes and styles for both LaTex and bibtex for ABNT rules
 
-RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX
+RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
+
 NO_BUILD=	yes
 
 do-install:
-# extract into staging area
-	@cd ${WRKDIR} && ${TAR} -xf ${WRKSRC}/abntex-texmf-${PORTVERSION}.tar
-# prepare information about installation
-	@cd ${WRKDIR} && ${FIND} texmf -type f > ${WRKDIR}/files && \
-		${FIND} texmf -type d | ${SORT} > ${WRKDIR}/dirs
-# create dirs
-	@for dir in `${CAT} ${WRKDIR}/dirs`; do \
-		${MKDIR} ${PREFIX}/share/$${dir} ; \
-	done
 # install files
-	@for file in `${CAT} ${WRKDIR}/files`; do \
-		${INSTALL_DATA} ${WRKDIR}/$${file} ${PREFIX}/share/$${file} ; \
-	done
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/geratss ${PREFIX}/bin
+.for dir in bibtex/bib bibtex/bst doc/bibtex doc/latex makeindex tex/latex
+	@${MKDIR} ${PREFIX}/share/texmf/${dir}
+	${TAR} -C ${WRKSRC}/texmf/${dir} --exclude ".*" --exclude "*~" \
+		-cf - abntex | ${TAR} -C ${PREFIX}/share/texmf/${dir} -xf -
+	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/texmf/${dir}
+.endfor
 # inform tex about installation
 	@${LOCALBASE}/bin/texhash
 
