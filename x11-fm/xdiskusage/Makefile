@@ -12,6 +12,7 @@ CATEGORIES=	x11-fm
 MASTER_SITES=	http://xdiskusage.sourceforge.net/
 EXTRACT_SUFX=	.tgz
 
+BROKEN=		"only works with 'du' output, e.g. du | xdiskusage -"
 MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	Show where disk space is taken up
 
