@@ -1,0 +1,17 @@
+bin/ac3spdif
+bin/augen
+bin/auquant
+bin/auquery
+bin/catcol
+bin/dao2toc
+bin/fifo
+bin/genam
+bin/genfm
+bin/plax
+bin/playlist
+bin/randhead
+bin/toc2plax-cut
+bin/toc2plax-idx
+bin/toc2plax-trk
+bin/toc2toc
+bin/wav2au
