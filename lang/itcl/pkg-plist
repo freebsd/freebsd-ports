@@ -1,0 +1,11 @@
+@cwd /usr/local
+include/itcl.h
+lib/libitcl.a
+lib/libitcl.so.1.5
+bin/itcl_wish
+bin/itcl_sh
+man/mann/incrTcl.n
+lib/itcl/destroy.tcl
+lib/itcl/itcl_mkindex.tcl
+lib/itcl/itcl_reload.tcl
+lib/itcl/tclIndex

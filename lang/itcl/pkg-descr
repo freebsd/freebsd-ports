@@ -1,0 +1,6 @@
+This package contains the binary release of [incr Tcl] version 1.5.
+[incr Tcl] is an object oriented extension to Tcl and Tk.  This
+package is also known as ``itcl'',
+
+NOTE: This package requires, as a pre-requisite, both the Tcl and Tk
+distributions. 
