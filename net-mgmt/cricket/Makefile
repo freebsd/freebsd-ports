@@ -33,6 +33,16 @@ CRICKET_USER?=	wwwadm
 CRICKET_UID?=	81
 CRICKET_GROUP?=	www
 CRICKET_GID?=	80
+USE_REINPLACE=	yes
+PKGMESSAGE=	${WRKDIR}/pkg-message
+
+post-patch:
+	@${REINPLACE_CMD} -e 's,/home/cricket,${PREFIX},g' \
+		${WRKSRC}/cricket-conf.pl.sample
+	@${REINPLACE_CMD} -e 's,/usr/local/net/bin/ssh,/usr/bin/ssh,g' \
+		${WRKSRC}/sample-config/news-server/Defaults
+	@${SED} -e 's,%%PREFIX%%,${PREFIX},' ${FILESDIR}/pkg-message.in > \
+		${PKGMESSAGE}
 
 do-install:
 	@PREFIX="${PREFIX}" USER="${CRICKET_USER}" GROUP="${CRICKET_GROUP}" \
@@ -53,12 +63,9 @@ do-install:
 		${ECHO_MSG} "You should migrate manually to use new cricket"; \
 		${ECHO_MSG} "installation scheme."; \
 	fi
+	@${INSTALL_DATA} ${WRKSRC}/cricket-conf.pl.sample ${PREFIX}/etc/cricket-conf.pl.dist
 
 post-install:
-	@${SED} -e "s:%%PREFIX%%:${PREFIX}:g" ${WRKSRC}/cricket-conf.pl.sample \
-		> ${PREFIX}/etc/cricket-conf.pl.dist
-	@${SED} -e 's,%%PREFIX%%,${PREFIX},' ${FILESDIR}/pkg-message.in > \
-		${PKGMESSAGE}
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
