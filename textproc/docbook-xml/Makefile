@@ -17,6 +17,7 @@ COMMENT=	XML version of the DocBook DTD
 
 RUN_DEPENDS=	${XMLCATMGR}:${PORTSDIR}/textproc/xmlcatmgr
 
+BUILD_DEPENDS=	unzip:/usr/ports/archivers/unzip
 USE_ZIP=	YES
 NO_BUILD=	YES
 NO_WRKSUBDIR=	YES
