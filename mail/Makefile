@@ -164,6 +164,7 @@
     SUBDIR += p5-Email-Find
     SUBDIR += p5-Email-Valid
     SUBDIR += p5-IMAP-Admin
+    SUBDIR += p5-IMAP-Sieve
     SUBDIR += p5-MIME-Lite
     SUBDIR += p5-MIME-Tools
     SUBDIR += p5-MIME-Types
