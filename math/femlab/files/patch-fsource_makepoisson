@@ -1,0 +1,11 @@
+
+$FreeBSD$
+
+--- fsource/makepoisson.orig	Thu Sep 14 09:47:27 1995
++++ fsource/makepoisson	Wed Jul 24 00:06:17 2002
+@@ -1,4 +1,4 @@
+-FFLAGS=		-O 
++FFLAGS=		-O -fno-globals
+ 
+ FFILES=		dwm1.f startpo.f preproc.f rhslhs.f  poisson.f output.f
+ 
