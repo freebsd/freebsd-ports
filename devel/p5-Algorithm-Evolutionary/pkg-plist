@@ -1,0 +1,42 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm/Evolutionary/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm/Evolutionary
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm 2>/dev/null || true
+%%SITE_PERL%%/Algorithm/Evolutionary.pm
+%%SITE_PERL%%/Algorithm/Evolutionary/Experiment.pm
+%%SITE_PERL%%/Algorithm/Evolutionary/Individual/Base.pm
+%%SITE_PERL%%/Algorithm/Evolutionary/Individual/BitString.pm
+%%SITE_PERL%%/Algorithm/Evolutionary/Individual/String.pm
+%%SITE_PERL%%/Algorithm/Evolutionary/Individual/Tree.pm
+%%SITE_PERL%%/Algorithm/Evolutionary/Individual/Vector.pm
+%%SITE_PERL%%/Algorithm/Evolutionary/Op/ArithCrossover.pm
+%%SITE_PERL%%/Algorithm/Evolutionary/Op/Base.pm
+%%SITE_PERL%%/Algorithm/Evolutionary/Op/Bitflip.pm
+%%SITE_PERL%%/Algorithm/Evolutionary/Op/CX.pm
+%%SITE_PERL%%/Algorithm/Evolutionary/Op/CanonicalGA.pm
+%%SITE_PERL%%/Algorithm/Evolutionary/Op/ChangeLengthMutation.pm
+%%SITE_PERL%%/Algorithm/Evolutionary/Op/Creator.pm
+%%SITE_PERL%%/Algorithm/Evolutionary/Op/Crossover.pm
+%%SITE_PERL%%/Algorithm/Evolutionary/Op/DeltaTerm.pm
+%%SITE_PERL%%/Algorithm/Evolutionary/Op/Easy.pm
+%%SITE_PERL%%/Algorithm/Evolutionary/Op/FullAlgorithm.pm
+%%SITE_PERL%%/Algorithm/Evolutionary/Op/GaussianMutation.pm
+%%SITE_PERL%%/Algorithm/Evolutionary/Op/GeneralGeneration.pm
+%%SITE_PERL%%/Algorithm/Evolutionary/Op/GenerationalTerm.pm
+%%SITE_PERL%%/Algorithm/Evolutionary/Op/IncMutation.pm
+%%SITE_PERL%%/Algorithm/Evolutionary/Op/Inverover.pm
+%%SITE_PERL%%/Algorithm/Evolutionary/Op/LinearFreezer.pm
+%%SITE_PERL%%/Algorithm/Evolutionary/Op/Mutation.pm
+%%SITE_PERL%%/Algorithm/Evolutionary/Op/NoChangeTerm.pm
+%%SITE_PERL%%/Algorithm/Evolutionary/Op/Permutation.pm
+%%SITE_PERL%%/Algorithm/Evolutionary/Op/QuadXOver.pm
+%%SITE_PERL%%/Algorithm/Evolutionary/Op/RouletteWheel.pm
+%%SITE_PERL%%/Algorithm/Evolutionary/Op/SimulatedAnnealing.pm
+%%SITE_PERL%%/Algorithm/Evolutionary/Op/TournamentSelect.pm
+%%SITE_PERL%%/Algorithm/Evolutionary/Op/TreeMutation.pm
+%%SITE_PERL%%/Algorithm/Evolutionary/Op/VectorCrossover.pm
+%%SITE_PERL%%/Algorithm/Evolutionary/Wheel.pm
+%%SITE_PERL%%/Algorithm/Evolutionary/XML.pod
+@dirrm %%SITE_PERL%%/Algorithm/Evolutionary/Individual
+@dirrm %%SITE_PERL%%/Algorithm/Evolutionary/Op
+@dirrm %%SITE_PERL%%/Algorithm/Evolutionary
+@unexec rmdir %D/%%SITE_PERL%%/Algorithm 2>/dev/null || true

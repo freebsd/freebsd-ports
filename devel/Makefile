@@ -492,6 +492,7 @@
     SUBDIR += p4delta
     SUBDIR += p5-Agent
     SUBDIR += p5-Algorithm-Diff
+    SUBDIR += p5-Algorithm-Evolutionary
     SUBDIR += p5-Algorithm-MDiff
     SUBDIR += p5-Algorithm-MarkovChain
     SUBDIR += p5-Algorithm-Numerical-Shuffle
