@@ -1,12 +1,12 @@
 # New ports collection makefile for:	lesstif
-# Version required:	0.88.1
+# Version required:	0.88.9
 # Date created:		December 10, 1996
 # Whom:			1wardd@airmail.net
 #
-# $Id: Makefile,v 1.31 1999/06/28 00:05:06 cpiazza Exp $
+# $Id: Makefile,v 1.32 1999/06/29 02:50:48 cpiazza Exp $
 #
 
-DISTNAME=	lesstif-0.88.1
+DISTNAME=	lesstif-0.88.9
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.lesstif.org/pub/hungry/lesstif/srcdist/  \
 		ftp://ftp.hungry.com/pub/hungry/lesstif/srcdist/ \
@@ -16,34 +16,34 @@ MASTER_SITES=	ftp://ftp.lesstif.org/pub/hungry/lesstif/srcdist/  \
 MAINTAINER=	ports@FreeBSD.org
 
 MANUAL_PACKAGE_BUILD=	do not want to install during interactive build
-GNU_CONFIGURE=  yes
-CONFIGURE_ARGS=	--disable-debug --enable-static --enable-shared \
-		--enable-production --with-xdnd
-USE_X_PREFIX=	yes
 
-MAN1=	mwm.1 xmbind.1 lesstif.1
-MAN3=	ApplicationShell.3 Composite.3 Constraint.3 Core.3 \
-	LessTifInternals.3 Object.3 OverrideShell.3 Rect.3 \
-	Shell.3 TopLevelShell.3 TransientShell.3 UnNamedObj.3 \
-	VendorShell.3 WmShell.3 XmArrowButton.3 XmArrowButtonGadget.3 \
-	XmBulletinBoard.3 XmCascadeButton.3 XmCascadeButtonGadget.3 \
-	XmClipboard.3 XmComboBox.3 XmCommand.3 XmDesktop.3 \
-	XmDialogShell.3 XmDialogShellExt.3 XmDisplay.3 \
-	XmDragContext.3 XmDragIcon.3 XmDragOverShell.3 \
-	XmDrawingArea.3 XmDrawnButton.3 XmDropSiteManager.3 \
-	XmDropTransfer.3 XmFileSelectionBox.3 XmForm.3 XmFrame.3 \
-	XmGadget.3 XmGrabShell.3 XmIconGadget.3 XmLabel.3 \
-	XmLabelGadget.3 XmList.3 XmMainWindow.3 XmManager.3 \
-	XmMenuShell.3 XmMessageBox.3 XmNotebook.3 XmPanedWindow.3 \
-	XmPrimitive.3 XmProtocol.3 XmPushButton.3 XmPushButtonGadget.3 \
-	XmRowColumn.3 XmSash.3 XmScale.3 XmScreen.3 XmScrollBar.3 \
-	XmScrolledWindow.3 XmSelectionBox.3 XmSeparator.3 \
-	XmSeparatorGadget.3 XmSpinBox.3 XmTearOffButton.3 \
-	XmText.3 XmTextField.3 XmToggleButton.3 XmToggleButtonGadget.3 \
-	XmVendorShell.3 XmWorld.3 \
-	XtConfigureObject.3 XtDestroyWidget.3 XtManageChild.3 \
+USE_X_PREFIX=	yes
+GNU_CONFIGURE=  yes
+CONFIGURE_ARGS+=  --enable-static --enable-shared --with-xdnd \
+	--enable-production --disable-debug
+
+MAN1 =	lesstif.1 mwm.1 xmbind.1
+
+MAN3 =	ApplicationShell.3 Composite.3 Constraint.3 Core.3 LessTifInternals.3 \
+	Object.3 OverrideShell.3 Rect.3 Shell.3 TopLevelShell.3 \
+	TransientShell.3 UnNamedObj.3 VendorShell.3 WmShell.3 XmArrowButton.3 \
+	XmArrowButtonGadget.3 XmBulletinBoard.3 XmCascadeButton.3 \
+	XmCascadeButtonGadget.3 XmClipboard.3 XmComboBox.3 XmCommand.3 \
+	XmDesktop.3 XmDialogShell.3 XmDialogShellExt.3 XmDisplay.3 \
+	XmDragContext.3 XmDragIcon.3 XmDragOverShell.3 XmDrawingArea.3 \
+	XmDrawnButton.3 XmDropSiteManager.3 XmDropTransfer.3 \
+	XmFileSelectionBox.3 XmForm.3 XmFrame.3 XmGadget.3 XmGrabShell.3 \
+	XmIconGadget.3 XmLabel.3 XmLabelGadget.3 XmList.3 XmMainWindow.3 \
+	XmManager.3 XmMenuShell.3 XmMessageBox.3 XmNotebook.3 \
+	XmPanedWindow.3 XmPrimitive.3 XmProtocol.3 XmPushButton.3 \
+	XmPushButtonGadget.3 XmRowColumn.3 XmSash.3 XmScale.3 XmScreen.3 \
+	XmScrollBar.3 XmScrolledWindow.3 XmSelectionBox.3 XmSeparator.3 \
+	XmSeparatorGadget.3 XmSpinBox.3 XmTearOffButton.3 XmText.3 \
+	XmTextField.3 XmToggleButton.3 XmToggleButtonGadget.3 XmVendorShell.3 \
+	XmWorld.3 XtConfigureObject.3 XtDestroyWidget.3 XtManageChild.3 \
 	XtUnmanageChild.3
-MAN5=	mwmrc.5
+
+MAN5 = mwmrc.5
 
 .if defined(HAVE_MOTIF)
 IS_INTERACTIVE= yes
@@ -67,23 +67,35 @@ pre-extract:
 .endif
 
 post-install:
-	${MKDIR} ${PREFIX}/lib/X11/mwm ${PREFIX}/lib/X11/app-defaults
-	${INSTALL_DATA} ${WRKSRC}/clients/Motif-1.2/mwm/system.mwmrc \
-		${PREFIX}/lib/X11/mwm
-	${INSTALL_DATA} ${WRKSRC}/clients/Motif-1.2/mwm/alt.map ${PREFIX}/lib/X11/mwm
-	${INSTALL_DATA} ${WRKSRC}/clients/Motif-1.2/mwm/Mwm \
-		${PREFIX}/lib/X11/app-defaults/Mwm
-	${LN} -sf ${PREFIX}/LessTif/Motif1.2/lib/libMrm.so.1 ${PREFIX}/lib/
-	${LN} -sf ${PREFIX}/LessTif/Motif2.0/lib/libMrm.so.2 ${PREFIX}/lib/
-	${LN} -sf ${PREFIX}/LessTif/Motif1.2/lib/libMrm.a ${PREFIX}/lib/
-	${LN} -sf ${PREFIX}/lib/libMrm.so.1 ${PREFIX}/lib/libMrm.so
-	${LN} -sf ${PREFIX}/LessTif/Motif1.2/lib/libXm.so.1 ${PREFIX}/lib/
-	${LN} -sf ${PREFIX}/LessTif/Motif2.0/lib/libXm.so.2 ${PREFIX}/lib/
-	${LN} -sf ${PREFIX}/LessTif/Motif1.2/lib/libXm.a ${PREFIX}/lib/
+	${RM} -rf ${PREFIX}/LessTif/doc/man
+	${RM} -rf ${PREFIX}/LessTif/doc/help.html
+	${RM} -rf ${PREFIX}/LessTif/doc/known.html
+	${RM} -f ${PREFIX}/lib/libXm.so.2
+	${RM} -f ${PREFIX}/lib/libMrm.so.2
+.if defined(MOTIF2)
+	${LN} -sf ${PREFIX}/LessTif/Motif2.0/include/Xm ${PREFIX}/include
+	${LN} -sf ${PREFIX}/LessTif/Motif2.0/include/Mrm ${PREFIX}/include
+	${LN} -sf ${PREFIX}/LessTif/Motif2.0/lib/libXm.so.1 ${PREFIX}/lib/libXm.so.1
 	${LN} -sf ${PREFIX}/lib/libXm.so.1 ${PREFIX}/lib/libXm.so
+	${LN} -sf ${PREFIX}/LessTif/Motif2.0/lib/libXm.a ${PREFIX}/lib/libXm.a
+	${LN} -sf ${PREFIX}/LessTif/Motif2.0/lib/libXm.la ${PREFIX}/lib/libXm.la
+	${LN} -sf ${PREFIX}/LessTif/Motif2.0/lib/libMrm.so.1 ${PREFIX}/lib/libMrm.so.1
+	${LN} -sf ${PREFIX}/lib/libMrm.so.1 ${PREFIX}/lib/libMrm.so
+	${LN} -sf ${PREFIX}/LessTif/Motif2.0/lib/libMrm.a ${PREFIX}/lib/libMrm.a
+	${LN} -sf ${PREFIX}/LessTif/Motif2.0/lib/libMrm.la ${PREFIX}/lib/libMrm.la
+.else
+	${LN} -sf ${PREFIX}/LessTif/Motif1.2/include/Xm ${PREFIX}/include
+	${LN} -sf ${PREFIX}/LessTif/Motif1.2/include/Mrm ${PREFIX}/include
+	${LN} -sf ${PREFIX}/LessTif/Motif1.2/lib/libXm.so.1 ${PREFIX}/lib/libXm.so.1
+	${LN} -sf ${PREFIX}/lib/libXm.so.1 ${PREFIX}/lib/libXm.so
+	${LN} -sf ${PREFIX}/LessTif/Motif1.2/lib/libXm.a ${PREFIX}/lib/libXm.a
+	${LN} -sf ${PREFIX}/LessTif/Motif1.2/lib/libXm.la ${PREFIX}/lib/libXm.la
+	${LN} -sf ${PREFIX}/LessTif/Motif1.2/lib/libMrm.so.1 ${PREFIX}/lib/libMrm.so.1
+	${LN} -sf ${PREFIX}/lib/libMrm.so.1 ${PREFIX}/lib/libMrm.so
+	${LN} -sf ${PREFIX}/LessTif/Motif1.2/lib/libMrm.a ${PREFIX}/lib/libMrm.a
+	${LN} -sf ${PREFIX}/LessTif/Motif1.2/lib/libMrm.la ${PREFIX}/lib/libMrm.la
+.endif
 	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
-	${RM} -f ${PREFIX}/share/doc/LessTif/COPYING
-	${RM} -f ${PREFIX}/share/doc/LessTif/COPYING.LIB
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
