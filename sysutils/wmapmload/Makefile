@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wmapmload
-PORTVERSION=	0.3.2
+PORTVERSION=	0.3.3
 CATEGORIES=	sysutils windowmaker
 MASTER_SITES=	http://tnemeth.free.fr/projets/programmes/
 
@@ -24,9 +24,5 @@ PLIST_FILES=	bin/wmapmload
 
 BINMODE=	2755
 BINGRP=		operator
-
-do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/src/wmapmload ${PREFIX}/bin
-	@${INSTALL_MAN} ${WRKSRC}/doc/wmapmload.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>
