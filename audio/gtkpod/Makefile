@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gtkpod
-PORTVERSION=	0.60
+PORTVERSION=	0.70
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,6 +16,15 @@ COMMENT=	GUI for Apple iPods using GTK2
 
 LIB_DEPENDS=	id3-3.8.2:${PORTSDIR}/audio/id3lib
 RUN_DEPENDS=	mp3gain:${PORTSDIR}/audio/mp3gain
+
+.if defined(WITH_AAC)
+	LIB_DEPENDS+=	mp4v2:${PORTSDIR}/multimedia/mpeg4ip
+.else
+pre-everything::
+	@${ECHO_MSG}
+	@${ECHO_MSG} "To enable AAC support define the WITH_AAC knob."
+	@${ECHO_MSG}
+.endif
 
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
@@ -38,6 +47,8 @@ post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/ChangeLog ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/TODOandBUGS.txt ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

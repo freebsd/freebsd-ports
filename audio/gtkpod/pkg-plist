@@ -4,4 +4,6 @@ share/locale/fr/LC_MESSAGES/gtkpod.mo
 share/locale/it/LC_MESSAGES/gtkpod.mo
 share/locale/ja/LC_MESSAGES/gtkpod.mo
 %%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/TODOandBUGS.txt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -3,17 +3,20 @@ gtkpod is a graphical user interface to upload and manage songs to your iPod.
 It allows you to :
     * Read your existing iTunesDB (i.e. import the existing contents of 
       your iPod).
-    * Add mp3 files to the iPod. You can choose the charset the ID3 tags 
+    * Add mp3 and m4a (no-protected AAC) files (single files, directories or
+      existing playlists) to the iPod. You can choose the charset the ID3 tags 
       are encoded in from within gtkpod. The default is the charset currently 
       used by your locale setting.
     * When adding songs, gtkpod detects duplicates (option).
     * Remove songs from the iPod.
     * Create and modify playlists.
     * Modify ID3 tags -- changes are also updated in the original file (option)
+    * Refresh ID3 tags from file (if you've changed the tags in the original
+      file).
+    * Sync directories.
+    * Normalize the volume of your tracks (uses mp3gain)
     * Write the updated iTunesDB and added songs to your iPod.
     * Work offline and synchronize your new playlists / songs with the iPod
       at a later time
-
-Nota: you need a Windows iPod
 
 WWW: http://gtkpod.sourceforge.net
