@@ -210,7 +210,7 @@ include/X11/fonts/fnlib_fonts/shinymetal/45/X.tif
 include/X11/fonts/fnlib_fonts/shinymetal/45/Y.tif
 include/X11/fonts/fnlib_fonts/shinymetal/45/Z.tif
 include/X11/fonts/fnlib_fonts/shinymetal/45/[.tif
-include/X11/fonts/fnlib_fonts/shinymetal/45/\.tif
+include/X11/fonts/fnlib_fonts/shinymetal/45/\\.tif
 include/X11/fonts/fnlib_fonts/shinymetal/45/].tif
 include/X11/fonts/fnlib_fonts/shinymetal/45/^.tif
 include/X11/fonts/fnlib_fonts/shinymetal/45/_.tif
