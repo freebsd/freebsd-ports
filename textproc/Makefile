@@ -181,6 +181,7 @@
     SUBDIR += xls2xml
     SUBDIR += xml-i18n-tools
     SUBDIR += xml4j
+    SUBDIR += xmlppm
     SUBDIR += xp
     SUBDIR += xsl-docbook-modular
     SUBDIR += xt

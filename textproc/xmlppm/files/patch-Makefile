@@ -1,0 +1,12 @@
+--- Makefile.orig	Sat May 12 03:21:58 2001
++++ Makefile	Tue May 15 11:59:08 2001
+@@ -1,7 +1,6 @@
+-CC = gcc
+ #XPPMFLAGS = -DELTPREC_P=1 -DATTPREC=1 -DCHARPREC=1 -DELTORDER=5 -DATTORDER=5 -DCHARORDER=5 -DATTS -DCHAR -DSYMS 
+-CFLAGS = $(XPPMFLAGS) -O2 -Wall -ansi 
+-LFLAGS = -lexpat -lm
++CFLAGS += -I%%LOCALBASE%%/include
++LFLAGS = -L%%LOCALBASE%%/lib -lexpat -lm
+ #LFLAGS = /usr/lib/libexpat.a -lm 
+ 
+ BINARIES = xmlppm xmlunppm
