@@ -1,12 +1,10 @@
---- Makefile.in.orig	Wed May 21 15:59:49 2003
-+++ Makefile.in	Wed May 21 16:00:16 2003
-@@ -98,8 +98,8 @@
- EXTRA_DIST = build_shared/Makefile_build.am_fragment 		  build_shared/Makefile_build_gensrc.am_fragment 		  build_shared/Makefile_gensrc.am_fragment
+--- Makefile.in.orig	Sun Aug 17 12:06:44 2003
++++ Makefile.in	Sun Aug 17 12:07:02 2003
+@@ -99,7 +99,7 @@
  
  
--pkgconfigdir = $(libdir)/pkgconfig
+ pkgconfigdir = $(prefix)/libdata/pkgconfig
 -pkgconfig_DATA = libbonobomm-2.0.pc libbonobomm-2.0-uninstalled.pc
-+pkgconfigdir = $(prefix)/libdata/pkgconfig
 +pkgconfig_DATA = libbonobomm-2.0.pc
  ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
  mkinstalldirs = $(SHELL) $(top_srcdir)/scripts/mkinstalldirs
