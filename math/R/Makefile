@@ -3,7 +3,7 @@
 # Date created:                Tue Jun 23 07:36:55 EST 1998
 # Whom:                        Maurice Castro <maurice@serc.rmit.edu.au>
 #
-# $Id: Makefile,v 1.5 1998/07/17 20:41:38 steve Exp $
+# $Id: Makefile,v 1.6 1998/08/20 10:21:20 asami Exp $
 #
 
 DISTNAME=	R-0.62.2
@@ -27,7 +27,8 @@ BROKEN=		package
 GNU_CONFIGURE=	yes
 USE_PERL5=	yes
 
-MANUAL_PACKAGE_BUILD=	PAPERSIZE has to be set to Letter A4
+LOOP_VAR=	PAPERSIZE
+LOOP_OPTIONS=	letter a4
 CONFIGURE_ENV=		R_PAPERSIZE=${PAPERSIZE}
 
 .if !defined(PAPERSIZE)
