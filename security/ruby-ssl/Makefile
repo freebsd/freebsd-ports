@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ssl
-PORTVERSION=	0.2.2
+PORTVERSION=	0.3.0
 CATEGORIES=	security ruby
 MASTER_SITES=	http://www.notwork.org/~gotoyuzo/ruby/src/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -24,8 +24,10 @@ INSTALL_TARGET=	site-install
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_EXAMPLESDIR}/ssl
-	${INSTALL_DATA} ${WRKSRC}/sample/* ${RUBY_EXAMPLESDIR}/ssl/
+	${MKDIR} ${RUBY_EXAMPLESDIR}/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/sample/* ${RUBY_EXAMPLESDIR}/${PORTNAME}/
+	${MKDIR} ${RUBY_DOCDIR}/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/ChangeLog ${RUBY_DOCDIR}/${PORTNAME}/
 .endif
 
 .include <bsd.port.mk>
