@@ -7,16 +7,16 @@
 
 PORTNAME=	vje
 PORTVERSION=	3.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese
 MASTER_SITES=	file:${MOUNT_PT}/freebsd/ \
-		file:${MOUNT_PT}/source/delta/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	knu
+		file:${MOUNT_PT}/source/delta/:source \
+		${MASTER_SITE_LOCAL:S/$/:update/}
+MASTER_SITE_SUBDIR=	knu/:update
 DISTFILES=	${MAINDIST} \
-		vje-delta-3.0-ELF-update.tgz \
-		delta.tgz \
-		vje-delta-3.0-source-update.tgz
+		delta.tgz:source \
+		vje-delta-3.0-ELF-update-2002.05.28.tgz:update \
+		vje-delta-3.0-source-update-2002.05.28.tgz:update
 DIST_SUBDIR=	vje30
 
 MAINTAINER=	knu@FreeBSD.org
@@ -81,7 +81,6 @@ post-patch:
 	@${FIND} ${WRKSRC} -name '*.orig' -delete
 	@${CP} ${FILESDIR}/vje.sh ${WRKSRC}/etc/rc.d/
 	@${PERL} -i -pe 's,/usr/X11R6,${X11BASE},g' ${BUILD_WRKSRC}/${MAKEFILE}
-	@${PERL} -i -pe 's,^(#include\s*)\<malloc\.h\>,$$1<stdlib.h>,' ${BUILD_WRKSRC}/*.c
 .if defined(NOPORTDOCS)
 	@cd ${WRKSRC}/vje30 && ${RM} -rf doc README FAQ REQUEST
 .endif
