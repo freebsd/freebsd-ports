@@ -17,6 +17,7 @@
     SUBDIR += edb
     SUBDIR += fastdb
     SUBDIR += firebird
+    SUBDIR += firebird-devel
     SUBDIR += freetds
     SUBDIR += gadfly
     SUBDIR += gdbm
