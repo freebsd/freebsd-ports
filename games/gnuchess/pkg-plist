@@ -10,7 +10,3 @@ lib/gnuchess.lang
 lib/eco.pgn
 lib/gnuchess.data
 lib/gnuchess.eco
-man/man6/game.6.gz
-man/man6/gnuan.6.gz
-man/man6/gnuchess.6.gz
-man/man6/postprint.6.gz

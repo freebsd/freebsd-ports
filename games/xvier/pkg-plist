@@ -1,5 +1,4 @@
 bin/xvier
 libexec/xvier_prog
-man/man6/xvier.6.gz
 share/doc/xvier/README
 @dirrm share/doc/xvier

@@ -1,5 +1,4 @@
 bin/dontspace
-man/man6/dontspace.6.gz
 share/games/dontspace/dontspaceMenus.tcl
 share/games/dontspace/dontspaceRules.tcl
 share/games/dontspace/help.tcl

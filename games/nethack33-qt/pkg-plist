@@ -2,11 +2,6 @@ bin/nethack
 @exec mkdir %D/lib/nethackdir/save
 @exec chmod 775 %D/lib/nethackdir/save
 @exec chown games.games %D/lib/nethackdir/save
-man/man6/dgn_comp.6.gz
-man/man6/dlb.6.gz
-man/man6/lev_comp.6.gz
-man/man6/nethack.6.gz
-man/man6/recover.6.gz
 lib/nethackdir/.nethackrc
 lib/nethackdir/A-filla.lev
 lib/nethackdir/A-fillb.lev

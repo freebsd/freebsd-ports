@@ -1,4 +1,3 @@
 bin/xabacus
 bin/xmabacus
 lib/X11/app-defaults/Abacus
-man/man1/xabacus.1.gz

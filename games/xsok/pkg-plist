@@ -13,7 +13,6 @@ lib/X11/xsok/floor.xpm
 lib/X11/xsok/keys
 lib/X11/xsok/keys.help
 lib/X11/xsok/objects.xpm
-man/man6/xsok.6x.gz
 share/doc/xsok/COPYRIGHT.GNU
 share/doc/xsok/COPYRIGHT.xpm
 share/doc/xsok/COPYRIGHT.xsok

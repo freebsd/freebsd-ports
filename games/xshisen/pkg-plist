@@ -36,6 +36,5 @@ lib/X11/xshisen/s8.xpm
 lib/X11/xshisen/s9.xpm
 lib/X11/xshisen/sha.xpm
 lib/X11/xshisen/ton.xpm
-man/man6/xshisen.6.gz
 lib/X11/app-defaults/XShisen
 @dirrm lib/X11/xshisen

@@ -1,5 +1,4 @@
 bin/xbomb
-man/man6/xbomb.6.gz
 lib/X11/app-defaults/XBomb
 lib/X11/xbomb/xbomb3.hi
 lib/X11/xbomb/xbomb4.hi

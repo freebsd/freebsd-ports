@@ -6,10 +6,8 @@ bin/x2imf
 bin/xshowimf
 lib/X11/app-defaults/XShowimf
 lib/X11/app-defaults/XShowimf-color
-man/man6/xconq.6.gz
 lib/xconqdir/lib-x11/README
 bin/cconq
-man/man6/cconq.6.gz
 lib/xconqdir/lib/1756.g
 lib/xconqdir/lib/1757.g
 lib/xconqdir/lib/1805.g

@@ -2,7 +2,6 @@ bin/xpwish
 bin/xprez
 bin/prez
 bin/aprez
-man/man6/tvp.6.gz
 share/doc/tvp/aprez.txt
 share/doc/tvp/libass.txt
 share/doc/tvp/president.txt

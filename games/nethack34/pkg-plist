@@ -4,11 +4,6 @@ lib/nethackdir/nethack
 @exec chmod -R 775 %D/lib/nethackdir
 @exec chown games.games %D/lib/nethackdir/save
 @unexec rm -rf %D/lib/nethackdir/save
-man/man6/dgn_comp.6.gz
-man/man6/dlb.6.gz
-man/man6/lev_comp.6.gz
-man/man6/nethack.6.gz
-man/man6/recover.6.gz
 lib/nethackdir/A-filla.lev
 lib/nethackdir/A-fillb.lev
 lib/nethackdir/A-goal.lev
