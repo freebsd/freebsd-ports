@@ -1,0 +1,15 @@
+Tvark is a network monitoring tool (sniffer) with a GUI front end and
+is tied to a MySQL database.  The GUI provides a view of traffic
+activity that can be seen from the machine/interface that Tvark is run
+on.  What you see is a list of source nodes on the left, destination
+nodes on the right, and lines drawn, left to right, showing traffic
+flow.  Tvark runs in "realtime", meaning you see the traffic roughly
+as it happens.  There is a small delay between actual traffic flow and
+the display because buffering of traffic information was necessary to
+be able to determine rate information.  The color of the nodes, and
+the lines between them, provide an indication of rate of traffic.
+
+WWW: http://www.tvark.com/
+
+--
+mwest@uct.ac.za
