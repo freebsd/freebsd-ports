@@ -3934,7 +3934,6 @@ linux_rar	ports/archivers/linux_rar
 linuxdoc	ports/textproc/linuxdoc
 linuxigd	ports/net/linuxigd
 linuxthreads	ports/devel/linuxthreads
-listar		ports/mail/listar
 listmanager	ports/mail/listmanager
 litestream	ports/audio/litestream
 livecd		ports/sysutils/livecd
