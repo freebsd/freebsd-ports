@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gkrellm
-PORTVERSION=	1.2.13
+PORTVERSION=	2.0.0
 CATEGORIES=	sysutils ipv6
 MASTER_SITES=	http://web.wt.net/~billw/gkrellm/ \
 		${MASTER_SITE_LOCAL}
@@ -14,22 +14,15 @@ MASTER_SITE_SUBDIR=	ume
 
 MAINTAINER=	ume@FreeBSD.org
 
+LIB_DEPENDS=	gtk-x11-2.0.0:${PORTSDIR}/x11-toolkits/gtk20
+
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
-USE_GNOME=	imlib
 USE_GMAKE=	yes
 
-INCLUDES=	gkrellm.h gkrellm_public_proto.h
 MAN1=		gkrellm.1
-DOCS=		COPYRIGHT README Themes.html
-
-# If you want to support LM78/79 feature, set this to `yes'.  You
-# should aware that GKrellM must be setuid root to obtain
-# temperatures.  Furthermore, this causes problem on some
-# motherboards.  If your motherboard doesn't support LM78/79 feature,
-# you should not enable this.
-# WITH_SENSOR=yes
+MAN8=		gkrellmd.8
+DOCS=		COPYRIGHT CREDITS README Themes.html
 
 .include <bsd.port.pre.mk>
 
@@ -38,41 +31,33 @@ ALL_TARGET=	freebsd2
 .else
 ALL_TARGET=	freebsd
 .endif
+INSTALL_TARGET=	install_netbsd
 
-BINGRP=		kmem
-.if defined(WITH_SENSOR)
-BINOWN=		root
-BINMODE=	4111
-.else
-BINMODE=	2111
-.endif
+MAKE_ENV+=	LOCALEDIR=${PREFIX}/share/locale INCLUDEDIR=${PREFIX}/include \
+		INSTALLDIR=${PREFIX}/bin SINSTALLDIR=${PREFIX}/sbin \
+		MANDIR=${MANPREFIX}/man/man1 SMANDIR=${MANPREFIX}/man/man8
 
-MAKE_ENV+=	LOCALEDIR=${PREFIX}/share/locale
-CFLAGS+=	-DSYSTEM_THEMES_DIR='\"${PREFIX}/share/gkrellm/themes\"' \
-		-DSYSTEM_PLUGINS_DIR='\"${PREFIX}/libexec/gkrellm/plugins\"'
+CFLAGS+=	-DSYSTEM_THEMES_DIR='\"${PREFIX}/share/gkrellm2/themes\"' \
+		-DSYSTEM_PLUGINS_DIR='\"${PREFIX}/libexec/gkrellm2/plugins\"' \
+		-DGKRELLMD_SYS_ETC='\"${PREFIX}/etc\"'
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/gkrellm ${PREFIX}/bin/gkrellm
-	@cd ${WRKSRC}/po && \
-		${GMAKE} install enable_nls=1 LOCALEDIR=${PREFIX}/share/locale
-
-	@${MKDIR} ${PREFIX}/include/gkrellm
-.for file in ${INCLUDES}
-	${INSTALL_DATA} ${WRKSRC}/src/${file} ${PREFIX}/include/gkrellm
-.endfor
-	@${MKDIR} ${PREFIX}/libexec/gkrellm/plugins
-	@${MKDIR} ${PREFIX}/share/gkrellm/themes
-.for file in ${MAN1}
-	${INSTALL_MAN} ${WRKSRC}/${file} ${MANPREFIX}/man/man1/${file}
-.endfor
+post-install:
+	@${MKDIR} ${PREFIX}/libexec/gkrellm2/plugins
+	@${MKDIR} ${PREFIX}/share/gkrellm2/themes
+	@${SED} -e "s;%%PREFIX%%;${PREFIX};g" \
+		${FILESDIR}/gkrellmd.sh > ${PREFIX}/etc/rc.d/gkrellmd.sh.sample
+	@${CHMOD} ${BINMODE} ${PREFIX}/etc/rc.d/gkrellmd.sh.sample
+	${INSTALL_DATA} ${WRKSRC}/server/gkrellmd.conf \
+		${PREFIX}/etc/gkrellmd.conf.sample
+	if [ ! -f ${PREFIX}/etc/gkrellmd.conf ]; then \
+		${CP} -p ${PREFIX}/etc/gkrellmd.conf.sample \
+			${PREFIX}/etc/gkrellmd.conf; \
+	fi
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/gkrellm
 .for file in ${DOCS}
 	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/gkrellm
 .endfor
-.endif
-.if !defined(WITH_SENSOR)
-	@${CAT} ${PKGMESSAGE}
 .endif
 
 .include <bsd.port.post.mk>
