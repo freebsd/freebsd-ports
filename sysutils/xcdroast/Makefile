@@ -7,12 +7,14 @@
 
 PORTNAME=	xcdroast
 PORTVERSION=	0.98.a.15
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-		http://www.xcdroast.org/download/
+		http://www.xcdroast.org/download/:src \
+		http://www.xcdroast.org/xcdr098/patches/:patch
 MASTER_SITE_SUBDIR=	xcdroast
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.a./alpha/}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:src new_configure.tar.gz:patch
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	Another X11 frontend to mkisofs/cdrecord
@@ -38,8 +40,7 @@ MAN1=		xcdroast.1
 .if defined(WITH_GTK2)
 RUN_DEPENDS+=	pkg-config:${PORTSDIR}/devel/pkgconfig
 LIB_DEPENDS+=	glib-2.0.200:${PORTSDIR}/devel/glib20 \
-		gtk-x11-2.0.200:${PORTSDIR}/x11-toolkits/gtk20 \
-		pcre.0:${PORTSDIR}/devel/pcre
+		gtk-x11-2.0.200:${PORTSDIR}/x11-toolkits/gtk20
 CONFIGURE_ARGS+=--enable-gtk2
 USE_GNOME=	gtk20
 .else
@@ -69,8 +70,14 @@ pre-everything::
 	@${ECHO} "         But beware!  This is a security risk! XCDRost will use an"
 	@${ECHO} "         own wrapping utility which gets a SUID Bit after enabling"
 	@${ECHO} "         the non-root mode inside the application!"
+	@${ECHO} "      WITH_GTK2=yes"
+	@${ECHO} "         enables gtk2 support"
 	@${ECHO} ""
 
 .endif
 
+pre-patch:
+	${CP} ${WRKDIR}/aclocal.m4 ${WRKSRC}
+	${CP} ${WRKDIR}/configure ${WRKSRC}
+	${CP} ${WRKDIR}/configure.in ${WRKSRC}
 .include <bsd.port.mk>
