@@ -7,6 +7,7 @@
 
 PORTNAME=	code_crusader
 PORTVERSION=	2.1.4
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.newplanetsoftware.com/pub/jx/source-1.5.3/ \
 		ftp://ftp.newplanetsoftware.com/pub/jcc/source/ \
@@ -16,35 +17,32 @@ DISTNAME=	${PORTNAME}_source-${PORTVERSION}
 
 MAINTAINER=	lioux@linf.unb.br
 
-BUILD_DEPENDS=	nonexistent:${JXPORT}:patch
-LIB_DEPENDS=	jtoolbar-0_5_4.0:${PORTSDIR}/x11-toolkits/libjtoolbar
-RUN_DEPENDS=	exctags:${PORTSDIR}/devel/ctags
+BUILD_DEPENDS=	nonexistent:${JXPORT}:configure \
+		makemake:${JXPORT}
+LIB_DEPENDS=	jx-1_5_3.1:${JXPORT} \
+		jtoolbar-0_5_4.0:${PORTSDIR}/x11-toolkits/libjtoolbar \
+		jtree-1_1_7.1:${PORTSDIR}/x11-toolkits/libjtree
+RUN_DEPENDS=	exctags:${PORTSDIR}/devel/ctags \
+		gmake:${PORTSDIR}/devel/gmake
 
 WRKSRC=		${WRKDIR}/JX-1.5.3
 
 USE_XLIB=	yes
-USE_BISON=	yes
 USE_PERL5=	yes
 USE_GMAKE=	yes
-MAKE_ENV=	JX_INSTALL_ROOT="${PREFIX}/bin" \
-		JX_LIB_ROOT="${PREFIX}/lib" \
-		X11PREFIX="${X11PREFIX}" \
-		PORTCFLAGS="${CFLAGS}" \
-		PORTCXXFLAGS="${CXXFLAGS}" \
-		PORTINCLUDES="${PORTINCLUDES}" \
-		PORTLIBS="${PORTLIBS}"
+MAKE_ARGS=	CC="${CC}" CXX="${CXX}" \
+		CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}"
+MAKE_ENV=	JX_INSTALL_ROOT="${X11BASE}/bin" \
+		JX_LIB_ROOT="${X11BASE}/lib"
 PLIST_SUB=	PORTNAME="${PORTNAME}"
 
-# Proper X11R6 Prefix
-# Change it, if you need it
-X11PREFIX?=	${X11BASE}
-
 # Make environment
-PORTINCLUDES=	-I${LOCALBASE}/include -I${LOCALBASE}/include/jx \
-		-I${LOCALBASE}/include/jtoolbar \
-		-I${LOCALBASE}/include/jtree \
-		-I${LOCALBASE}/share/jx
-PORTLIBS=	-L${LOCALBASE}/lib
+PORTINCLUDES=	-I${X11BASE}/include -I${X11BASE}/include/jx \
+		-I${X11BASE}/include/jcore \
+		-I${X11BASE}/include/jtoolbar \
+		-I${X11BASE}/include/jtree \
+		-I${X11BASE}/share/jx
+PORTLIBS=	-L${X11BASE}/lib
 
 # Installs dir with proper permissions
 INSTALL_DATA_DIR=	${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP} -m 755
@@ -55,7 +53,8 @@ PROGRAMFILES_SCRIPT=	code_crusader/dirdiff
 DOCFILES=       FAQ LICENSE README.binary
 DOCDIR_PREFIX=  ${PREFIX}/share/doc/${PORTNAME}
 # additional configuration and header files
-EXTRALIB_PREFIX=	${PREFIX}/lib/jx
+EXTRALIB_PREFIX=	${X11BASE}/lib/jx
+EXTRALIBFILES_MAKE_WRKSRC=	include/make
 # examples
 EXAMPLEDIRS=		desktop macros
 EXAMPLEDIR_PREFIX=	${PREFIX}/share/examples/${PORTNAME}
@@ -63,7 +62,7 @@ EXAMPLEDIR_PREFIX=	${PREFIX}/share/examples/${PORTNAME}
 JXPORT=		${PORTSDIR}/x11-toolkits/jx
 JXPORT_WRKSRC=	${JXPORT}/work/JX-1.5.3
 # main jx distribution files needed for building
-COPY_JXDIRS=	include lib libjcore
+COPY_JXDIRS=	include
 COPY_JXFILES=	Makefile
 JX_MAKE_CONSTANTS=	jtoolbar_constants jtree_constants
 
@@ -88,6 +87,12 @@ post-extract:
 .for i in ${COPY_JXFILES}
 	@${CP} -p ${JXPORT_WRKSRC}/${i} ${WRKSRC}
 .endfor
+
+post-patch:
+	@${ECHO} "SEARCHDIRS += ${PORTINCLUDES}" >> \
+		${WRKSRC}/${EXTRALIBFILES_MAKE_WRKSRC}/jx_constants
+	@${ECHO} "\nLOADLIBS += ${PORTLIBS}" >> \
+		${WRKSRC}/programs/${PORTNAME}/Make.header
 
 pre-build:
 .for i in ${JX_MAKE_CONSTANTS}

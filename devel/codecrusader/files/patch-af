@@ -1,9 +1,11 @@
---- Makefile.orig	Tue May 30 13:04:38 2000
-+++ Makefile	Tue May 30 13:09:41 2000
-@@ -264,11 +264,6 @@
+--- Makefile.orig	Sat Sep 11 17:44:38 1999
++++ Makefile	Wed Jun 14 01:07:15 2000
+@@ -262,25 +262,11 @@
+ freebsd2.x: prep
+ 	@ln -s sys/FreeBSD-2.x_g++ \
             include/make/jx_config
- 	@ln -s ../../include/missing_proto/jMissingProto_empty.h \
-            include/jcore/jMissingProto.h
+-	@ln -s ../../include/missing_proto/jMissingProto_empty.h \
+-           include/jcore/jMissingProto.h
 -	@ln -s config-freebsd.h \
 -           ACE/ACE_wrappers/ace/config.h
 -	@ln -s platform_freebsd.GNU \
@@ -12,10 +14,10 @@
  
  .PHONY : freebsd3.x
  freebsd3.x: prep
-@@ -276,11 +271,6 @@
+ 	@ln -s sys/FreeBSD-3.x_g++ \
             include/make/jx_config
- 	@ln -s ../../include/missing_proto/jMissingProto_empty.h \
-            include/jcore/jMissingProto.h
+-	@ln -s ../../include/missing_proto/jMissingProto_empty.h \
+-           include/jcore/jMissingProto.h
 -	@ln -s config-freebsd-pthread.h \
 -           ACE/ACE_wrappers/ace/config.h
 -	@ln -s platform_freebsd_pthread.GNU \

@@ -9,11 +9,11 @@ lib/jx/make/%%EXTRALIBFILES_MAKE_FILES%%
 lib/%%PORTNAME%%-%%LIBVERSION%%.a
 lib/%%PORTNAME%%-%%LIBVERSION%%.so
 lib/%%PORTNAME%%-%%LIBVERSION%%.so.%%LIBNUMBER%%
-%%PORTDOCS:%%share/doc/JX/LICENSE_%%PORTNAME%%
+%%PORTDOCS:%%share/doc/jx/LICENSE_%%PORTNAME%%
 share/jx/jsearch/find.xpm
 share/jx/jsearch/findnext.xpm
 share/jx/jsearch/findprev.xpm
 share/jx/jsearch/replace.xpm
 @dirrm share/jx/jsearch
-%%PORTDOCS:%%@unexec rmdir %D/share/doc/JX 2>/dev/null || true
+%%PORTDOCS:%%@unexec rmdir %D/share/doc/jx 2>/dev/null || true
 @dirrm include/%%INCLUDEDIR%%
