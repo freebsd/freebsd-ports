@@ -84,14 +84,14 @@ lib/%%PYTHON_VERSION%%/site-packages/gadfly/sqlsem.pyo
 lib/%%PYTHON_VERSION%%/site-packages/gadfly/sqlwhere.py
 lib/%%PYTHON_VERSION%%/site-packages/gadfly/sqlwhere.pyc
 lib/%%PYTHON_VERSION%%/site-packages/gadfly/sqlwhere.pyo
-share/doc/gadfly/COPYRIGHT
-share/doc/gadfly/gadfly.JPG
-share/doc/gadfly/gadfly.html
-share/doc/gadfly/gfSQL.html
-share/doc/gadfly/gffaq.html
-share/doc/gadfly/gfrecover.html
-share/doc/gadfly/index.html
-share/doc/gadfly/kwParsing.html
-share/doc/gadfly/server.html
-@dirrm share/doc/gadfly
+%%PORTDOCS%%share/doc/gadfly/COPYRIGHT
+%%PORTDOCS%%share/doc/gadfly/gadfly.JPG
+%%PORTDOCS%%share/doc/gadfly/gadfly.html
+%%PORTDOCS%%share/doc/gadfly/gfSQL.html
+%%PORTDOCS%%share/doc/gadfly/gffaq.html
+%%PORTDOCS%%share/doc/gadfly/gfrecover.html
+%%PORTDOCS%%share/doc/gadfly/index.html
+%%PORTDOCS%%share/doc/gadfly/kwParsing.html
+%%PORTDOCS%%share/doc/gadfly/server.html
+%%PORTDOCS%%@dirrm share/doc/gadfly
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/gadfly
