@@ -386,6 +386,7 @@ aslookup	ports/net/aslookup
 asm2html	ports/textproc/asm2html
 asmail		ports/mail/asmail
 asmem		ports/sysutils/asmem
+asmix		ports/audio/asmix
 asmodem		ports/comms/asmodem
 asmon		ports/sysutils/asmon
 asmutils	ports/devel/asmutils
