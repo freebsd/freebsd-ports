@@ -8628,6 +8628,7 @@ webalizer	ports/www/webalizer
 webalizer2	ports/polish/webalizer2
 webcheck	ports/www/webcheck
 webcopy		ports/www/webcopy
+webcpp		ports/www/webcpp
 webcrawl	ports/www/webcrawl
 webfonts	ports/x11-fonts/webfonts
 webfs		ports/www/webfs
