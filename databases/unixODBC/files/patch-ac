@@ -1,7 +1,7 @@
---- configure.in.orig	Fri Jan  5 00:07:39 2001
-+++ configure.in	Sat Jan  6 06:53:02 2001
-@@ -97,8 +97,8 @@
- 	AC_DEFINE(HAVE_READLINE, 1)])
+--- configure.in~	Sat Jan 20 23:52:26 2001
++++ configure.in	Sat Jan 20 23:56:35 2001
+@@ -110,8 +110,8 @@
+ ])
  AC_SUBST(READLINE)
  
 -AC_CHECK_LIB(c, strcasecmp, [AC_DEFINE(HAVE_STRCASECMP, 1)])
@@ -11,12 +11,12 @@
  
  LIBADD_DL=
  AC_CHECK_LIB(dl, dlopen, [AC_DEFINE(HAVE_LIBDL, 1) LIBADD_DL="-ldl"],
-@@ -121,25 +121,26 @@
+@@ -134,25 +134,26 @@
      AC_DEFINE(HAVE_LIBPTH,1)
    else
-     AC_CHECK_LIB(pthread, pthread_mutex_lock )
--    AC_CHECK_LIB(pthread, pthread_mutex_lock, 
-+    AC_CHECK_FUNC(c_r, pthread_mutex_lock, 
+     AC_CHECK_LIBPT(pthread, pthread_mutex_lock )
+-    AC_CHECK_LIBPT(pthread, pthread_mutex_lock, 
++    AC_CHECK_FUNC(c_r, pthread_mutex_lock,
      [
        AC_DEFINE(HAVE_LIBPTHREAD,1)
        if test "x$ac_cv_prog_gcc"="xyes"; then
