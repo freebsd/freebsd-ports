@@ -6,17 +6,16 @@
 # $FreeBSD$
 #
 
-SNAPDATE=	2003-07-07
+SNAPDATE=	2003-11-12
 #CVS_DATE=	${SNAPDATE} 18:53:04 EDT
 
 PORTNAME=	gcc
-PORTVERSION=	3.3.1
+PORTVERSION=	3.4
 PORTREVISION=	${SNAPDATE:S/-//g}
 CATEGORIES=	lang java
-VERSIONSTRING=	${PORTREVISION}
-MASTER_SITES=	${MASTER_SITE_GCC} \
-		http://web.inter.NL.net/hcc/Haj.Ten.Brugge/:bc
-MASTER_SITE_SUBDIR=	snapshots/3.3-${PORTREVISION}
+VERSIONSTRING=	${PORTVERSION}-${PORTREVISION}
+MASTER_SITES=	${MASTER_SITE_GCC}
+MASTER_SITE_SUBDIR=	snapshots/${VERSIONSTRING}
 .if !defined(CVS_DATE)
 DISTFILES=	\
 		gcc-core-${VERSIONSTRING}${EXTRACT_SUFX} \
@@ -28,17 +27,9 @@ DISTFILES=	\
 .endif
 
 MAINTAINER?=	ports@FreeBSD.org
-COMMENT?=	GNU Compiler Collection 3.3
+COMMENT?=	GNU Compiler Collection 3.4
 
-.if defined (WITH_BOUNDSCHECKING)
-# Fetch another file, but don't extract it.  Also add another patchfile.
-BCPATCH=	bounds-checking-gcc-3.3-1.00.patch.bz2
-DISTFILES+=	${BCPATCH}:bc
-EXTRACT_ONLY=	${DISTFILES:S/${BCPATCH}:bc//}
-EXTRA_PATCHES=	${FILESDIR}/opt.patch-bc
-.endif
-
-LATEST_LINK?=	gcc33${PKGNAMESUFFIX}
+LATEST_LINK?=	gcc34${PKGNAMESUFFIX}
 
 USE_BZIP2=	yes
 USE_REINPLACE=	yes
@@ -49,6 +40,8 @@ CONFIGURE_SCRIPT=	../${SRCDIR:C/${WRKDIR}//}/configure
 NOMANCOMPRESS=	yes	# too hard to deal with differences on 5-cur and releng4
 
 .include <bsd.port.pre.mk>
+
+BROKEN=		"Building libjava causes an Internal Compiler Error iff built within the ports tree"
 
 CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
 
@@ -66,7 +59,7 @@ USE_GMAKE=	yes
 USE_BISON=	yes
 CONFIGURE_ARGS=	--disable-nls \
 		--with-gxx-include-dir=${TARGLIB}/include/c++/${GCC_REV}
-#CONFIGURE_ARGS+=	--program-suffix=33
+#CONFIGURE_ARGS+=	--program-suffix=34
 #	Java
 CONFIGURE_ARGS+=	--with-system-zlib #--includedir=${TARGLIB}/include/Java -libdir=${TARGLIB}
 MAKE_ARGS+=	MAKEINFOFLAGS="--no-split"
@@ -83,20 +76,12 @@ CONFIGURE_ARGS+=	--enable-threads
 #	?is this an ObjC only thing?
 CONFIGURE_ARGS+=	--enable-threads=posix
 .endif
-ALL_TARGET=	bootstrap
-MAN1=		cpp33.1 g++33.1 g77-33.1 gcc33.1 gcov33.1 \
-		gcj33.1 gcjh33.1 gij33.1 grepjar33.1 jar33.1 \
-		jcf-dump33.1 jv-scan33.1 jv-convert33.1 \
-		rmic33.1 rmiregistry33.1
+ALL_TARGET=	bootstrap-lean
+MAN1=		cpp34.1 g++34.1 g77-34.1 gcc34.1 gcov34.1 \
+		gcj34.1 gcjh34.1 gij34.1 grepjar34.1 jar34.1 \
+		jcf-dump34.1 jv-scan34.1 jv-convert34.1 \
+		rmic34.1 rmiregistry34.1
 MAN7=		fsf-funding.7 gfdl.7 gpl.7
-
-pre-everything::
-	@${ECHO_MSG} "Making GCC ${DISTNAME:S/^gcc-//} for ${OPSYS} ${OSREL} ${PORTOBJFORMAT}	target ${CONFIGURE_TARGET}"
-.if !defined(WITH_BOUNDSCHECKING)
-	@${ECHO_MSG} "You can enable fine-grained bounds-checking support for compiled C programs"
-	@${ECHO_MSG} "by defining WITH_BOUNDSCHECKING.  Compile and link with \"-fbounds-checking\""
-	@${ECHO_MSG} "to use."
-.endif
 
 .if defined(CVS_DATE)
 NO_CHECKSUM=	yes
@@ -125,15 +110,6 @@ do-extract:
 	${MKDIR} ${SRCDIR}
 	cd ${DISTDIR}/${DIST_SUBDIR}/${DIST_SUBDIR ; pax -pe -rwt . ${SRCDIR}
 .endif	# CVS_DATE
-
-.if defined(WITH_BOUNDSCHECKING)
-# Extract bounds-checking patch, removing the ada parts of the patch with sed.
-pre-patch:
-	cd ${_DISTDIR} ; \
-	${BZCAT} ${BCPATCH} | \
-		${SED} -e '/^--- .*ada/,/^diff/d' | \
-		${PATCH} -d ${PATCH_WRKSRC} -E -p1 --quiet
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|\(const char version_string.*\)";|\1 [FreeBSD]";|' \
@@ -165,16 +141,16 @@ post-install:
 	done )
 .for f in gcc g++ cpp gcov ${CONFIGURE_TARGET}-gcc ${CONFIGURE_TARGET}-g++ gcj gcjh gij jv-scan jcf-dump jv-convert jar grepjar rmic rmiregistry
 	${STRIP_CMD} ${PREFIX}/bin/${f}
-	${MV} -f ${PREFIX}/bin/${f} ${PREFIX}/bin/${f}33
+	${MV} -f ${PREFIX}/bin/${f} ${PREFIX}/bin/${f}34
 	( ${TEST} ! -e ${PREFIX}/man/man1/${f}.1 \
 		|| ${MV} -f ${PREFIX}/man/man1/${f}.1 \
-		${PREFIX}/man/man1/${f}33.1 )
+		${PREFIX}/man/man1/${f}34.1 )
 .endfor
 .for f in g77
-	${MV} -f ${PREFIX}/bin/${f} ${PREFIX}/bin/${f}-33
+	${MV} -f ${PREFIX}/bin/${f} ${PREFIX}/bin/${f}-34
 	( ${TEST} ! -e ${PREFIX}/man/man1/${f}.1 \
 		|| ${MV} -f ${PREFIX}/man/man1/${f}.1 \
-		${PREFIX}/man/man1/${f}-33.1 )
+		${PREFIX}/man/man1/${f}-34.1 )
 .endfor
 	${MV} -f ${PREFIX}/bin/gccbug ${PREFIX}/bin/gccbug-${PORTVERSION}
 	# These 3 libraries are moved from PREFIX/lib to avoid conflicts
