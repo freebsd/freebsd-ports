@@ -1,5 +1,5 @@
---- configure.orig	Tue Oct 19 02:26:55 2004
-+++ configure	Fri Oct 22 01:36:34 2004
+--- ./configure.orig	Mon Oct 18 21:26:55 2004
++++ ./configure	Mon Jan 31 09:07:22 2005
 @@ -1,13 +1,6 @@
  #!/bin/sh
  #
@@ -78,6 +78,15 @@
    --scanners <list of installed content scanners>
  				    Defaults to "auto" - will use
  				    whatever scanners are found on system.
+@@ -910,7 +922,7 @@
+ 	    #Test to see if spamc is calling Unix sockets instead of TCP
+ 	    SPAMD_SOCKET=`ps -ef 2>/dev/null|egrep 'spamd.*socket'|grep -v grep|sed -e 's/^.*socketpath=//'|awk '{print $1}'`
+ 	    if [ "$SPAMD_SOCKET" = "" ]; then
+-		SPAMD_SOCKET=`ps aux 2>/dev/null|egrep 'spamd.*socket'|grep -v grep|sed -e 's/^.*socketpath=//'|awk '{print $1}'`
++		SPAMD_SOCKET=`ps auxwww 2>/dev/null|egrep 'spamd.*socket'|grep -v grep|sed -e 's/^.*socketpath=//'|awk '{print $1}'`
+ 	    fi
+ 	    if [ "$SPAMD_SOCKET" != "" -a -S "$SPAMD_SOCKET" ]; then
+ 		SPAMC_BINARY="$SPAMC_BINARY -U $SPAMD_SOCKET"
 @@ -1005,9 +1017,14 @@
  
  MAILDOMAIN=${MAILDOMAIN:-$FQDN}
