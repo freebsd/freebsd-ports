@@ -6,21 +6,44 @@
 #
 
 PORTNAME=	gnomepim
-PORTVERSION=	1.4.0
+PORTVERSION=	1.4.3
 CATEGORIES=	deskutils gnome
-MASTER_SITES=	${MASTER_SITE_GNOME}
+MASTER_SITES=	http://www.eskil.org/gnome-pilot/download/tarballs/ \
+		${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/gnome-pim
 DISTNAME=	gnome-pim-${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org
 
+.if defined(WITH_PILOT)
+BUILD_DEPENDS=	${X11BASE}/lib/gnome-pilot/conduits/libemail_conduit.so:${PORTSDIR}/palm/gnomepilot-conduits
+RUN_DEPENDS=	${X11BASE}/lib/gnome-pilot/conduits/libemail_conduit.so:${PORTSDIR}/palm/gnomepilot-conduits
+.endif
+
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	yes
 USE_LIBTOOL=	yes
+
+CPPFLAGS=	-I${LOCALBASE}/include
+LIBS=		-L${LOCALBASE}/lib
+.if !defined(WITH_PILOT)
 CONFIGURE_ARGS=	--without-pisock --disable-pilotlinktest
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/pilot/include
+LIBS+=		-L${LOCALBASE}/pilot/lib
+.endif
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" \
+		LIBS="${LIBS}"
+
+pre-extract:
+	@${ECHO_MSG}
+.if defined(WITH_PILOT)
+	@${ECHO_MSG} "Palm Pilot support enabled. You will be able to syncronize"
+	@${ECHO_MSG} "your palm with gnomecard and gnomecal."
+.else
+	@${ECHO_MSG} "You can enable Palm Pilot support by defining WITH_PILOT"
+.endif
+	@${ECHO_MSG}
 
 pre-patch:
 	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \

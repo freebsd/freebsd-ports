@@ -10,6 +10,7 @@ share/gnome/help/gnomecal/C/images/calmonth.gif
 share/gnome/help/gnomecal/C/images/calweek.gif
 share/gnome/help/gnomecal/C/images/calyear.gif
 share/gnome/help/gnomecal/C/topic.dat
+share/gnome/help/gnomecard/C/topic.dat
 share/gnome/idl/GnomeCal.idl
 share/gnome/idl/gnome-pim.idl
 share/gnome/mime-info/gnome-pim.keys
@@ -38,6 +39,7 @@ share/locale/ko/LC_MESSAGES/gnome-pim.mo
 share/locale/kw/LC_MESSAGES/gnome-pim.mo
 share/locale/lt/LC_MESSAGES/gnome-pim.mo
 share/locale/nl/LC_MESSAGES/gnome-pim.mo
+share/locale/nn/LC_MESSAGES/gnome-pim.mo
 share/locale/no/LC_MESSAGES/gnome-pim.mo
 share/locale/pl/LC_MESSAGES/gnome-pim.mo
 share/locale/pt/LC_MESSAGES/gnome-pim.mo
@@ -50,7 +52,9 @@ share/locale/tr/LC_MESSAGES/gnome-pim.mo
 share/locale/uk/LC_MESSAGES/gnome-pim.mo
 share/locale/wa/LC_MESSAGES/gnome-pim.mo
 share/locale/zh_CN.GB2312/LC_MESSAGES/gnome-pim.mo
-share/locale/zh_TW.Big5/LC_MESSAGES/gnome-pim.mo
+share/locale/zh_TW/LC_MESSAGES/gnome-pim.mo
+@dirrm share/gnome/help/gnomecard/C
+@dirrm share/gnome/help/gnomecard
 @dirrm share/gnome/help/gnomecal/C/images
 @dirrm share/gnome/help/gnomecal/C
 @dirrm share/gnome/help/gnomecal
