@@ -1,5 +1,5 @@
 *** Makefile.orig	Wed Aug 30 12:47:16 1995
---- Makefile	Tue Mar 12 02:57:34 1996
+--- Makefile	Sun Mar 17 04:52:26 1996
 ***************
 *** 4,11 ****
   #
@@ -92,7 +92,7 @@
   # binaries
   #
 ***************
-*** 547,555 ****
+*** 547,561 ****
   # data files + directories
   #
   	test -d $(LIBDIR)  || \
@@ -101,8 +101,14 @@
 ! 		( mkdir `dirname $(CONFDIR)` $(CONFDIR); chmod 755 $(CONFDIR))
   	test -f $(CONFDIR)/login.config || \
   		$(INSTALL) -o root -m 600 login.config $(CONFDIR)/
-  	test -f $(CONFDIR)/mgetty.config || \
---- 547,555 ----
+! 	test -f $(CONFDIR)/mgetty.config || \
+! 		$(INSTALL) -o root -m 600 mgetty.config $(CONFDIR)/
+! 	test -f $(CONFDIR)/sendfax.config || \
+! 		$(INSTALL) -o root -m 600 sendfax.config $(CONFDIR)/
+  	test -f $(CONFDIR)/dialin.config || \
+  		$(INSTALL) -o root -m 600 dialin.config $(CONFDIR)/
+  #
+--- 547,561 ----
   # data files + directories
   #
   	test -d $(LIBDIR)  || \
@@ -111,4 +117,10 @@
 ! 		( mkdir -p `dirname $(CONFDIR)` $(CONFDIR); chmod 755 $(CONFDIR))
   	test -f $(CONFDIR)/login.config || \
   		$(INSTALL) -o root -m 600 login.config $(CONFDIR)/
-  	test -f $(CONFDIR)/mgetty.config || \
+! #	test -f $(CONFDIR)/mgetty.config || \
+! #		$(INSTALL) -o root -m 600 mgetty.config $(CONFDIR)/
+! #	test -f $(CONFDIR)/sendfax.config || \
+! #		$(INSTALL) -o root -m 600 sendfax.config $(CONFDIR)/
+  	test -f $(CONFDIR)/dialin.config || \
+  		$(INSTALL) -o root -m 600 dialin.config $(CONFDIR)/
+  #
