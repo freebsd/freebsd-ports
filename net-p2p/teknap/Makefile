@@ -10,7 +10,7 @@ PORTVERSION=	1.2
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ukug.uk.freebsd.org/pub/lord_cj/	
 
-MAINTAINER=	LoRd_CJ@dalusers.com
+MAINTAINER=	calle.madestrand@norrgarden.se
 
 .if defined(WITH_MP3)
 BUILD_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
