@@ -1416,6 +1416,7 @@ share/locale/zh_TW/LC_MESSAGES/gnome-applets-2.0.mo
 @dirrm share/gnome/help/accessx-status/C/figures
 @dirrm share/gnome/help/accessx-status/C
 @dirrm share/gnome/help/accessx-status
+@dirrm share/gnome/gen_util
 %%BATTERY%%@dirrm share/gnome/battstat_applet
 @dirrm libexec/gnome-applets
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/stickynotes_applet/settings
