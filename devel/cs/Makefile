@@ -10,9 +10,8 @@ PORTVERSION=	0.5
 CATEGORIES=	devel
 MASTER_SITES=	ftp://cantor.informatik.rwth-aachen.de/pub/unix/
 
-MAINTAINER=	obrien@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
-NO_CDROM=	this port requires a written license
 ALL_TARGET=	cs
 MAN1=		cs.1
 
