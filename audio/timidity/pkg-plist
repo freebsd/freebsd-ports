@@ -202,3 +202,5 @@ lib/timidity/patch/woodblk1.pat
 lib/timidity/patch/woodblk2.pat
 lib/timidity/patch/woodflut.pat
 lib/timidity/patch/xylophon.pat
+@dirrm lib/timidity/patch
+@dirrm lib/timidity
