@@ -12,10 +12,10 @@ CATEGORIES=	www
 MASTER_SITES=	http://www.acme.com/software/thumbnail_index/
 DISTNAME=	${PORTNAME}_10aug98
 
-MAINTAINER=	sanpei@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 RUN_DEPENDS=	djpeg:${PORTSDIR}/graphics/jpeg \
-		pnmmerge:${PORTSDIR}/graphics/netpbm
+		pnmscale:${PORTSDIR}/graphics/netpbm
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 MAN1=		thumbnail_index.1
