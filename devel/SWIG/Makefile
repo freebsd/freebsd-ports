@@ -38,6 +38,6 @@ MAN1=		swig.1
 PLIST_SUB=	VER="${VER}"
 
 post-install:
-	${LN} ${PREFIX}/bin/swig ${PREFIX}/bin/swig${VER}
+	${LN} -f ${PREFIX}/bin/swig ${PREFIX}/bin/swig${VER}
 
 .include <bsd.port.mk>
