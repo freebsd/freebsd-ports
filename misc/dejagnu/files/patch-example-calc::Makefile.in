@@ -1,0 +1,12 @@
+--- example/calc/Makefile.in	Wed May  2 17:02:38 2001
++++ example/calc/Makefile.in.new	Sun Jul 29 23:02:49 2001
+@@ -346,7 +346,8 @@
+ all-recursive-am: calc.h
+ 	$(MAKE) $(AM_MAKEFLAGS) all-recursive
+ 
+-install-exec-am:
++install-exec-am: $(PROGRAMS)
++	$(INSTALL_PROGRAM) $(PROGRAMS) $(bindir)
+ install-exec: install-exec-am
+ 
+ install-data-am:

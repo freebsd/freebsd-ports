@@ -1,12 +1,12 @@
 bin/calc
 bin/runtest
 share/dejagnu/libexec/config.guess
-share/dejagnu/config.guess
 share/dejagnu/runtest.exp
 share/dejagnu/i960glue.c
 share/dejagnu/stub-loader.c
 share/dejagnu/testglue.c
 share/dejagnu/debugger.exp
+share/dejagnu/dejagnu.exp
 share/dejagnu/dg.exp
 share/dejagnu/framework.exp
 share/dejagnu/ftp.exp
@@ -112,6 +112,7 @@ share/dejagnu/config/cygmon.exp
 share/dejagnu/config/d10v.exp
 share/dejagnu/config/ddb-ether.exp
 share/dejagnu/config/ddb.exp
+share/dejagnu/config/default.exp
 share/dejagnu/config/dos.exp
 share/dejagnu/config/dve.exp
 share/dejagnu/config/gdb-comm.exp
