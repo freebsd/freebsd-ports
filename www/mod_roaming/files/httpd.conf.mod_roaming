@@ -1,0 +1,20 @@
+#
+# Example configuration for the mod_roaming module
+#
+# $FreeBSD$
+#
+
+LoadModule roaming_module     libexec/apache/mod_roaming.so
+
+AddModule mod_roaming.c
+
+<IfModule mod_roaming.c>
+    RoamingAlias /roaming /usr/local/etc/apache/roaming
+
+    <Location /roaming>
+        AuthUserFile /usr/local/etc/apache/roaming-htpasswd
+        AuthType Basic
+        AuthName "Roaming Access"
+        require valid-user
+    </Location>
+</IfModule>
