@@ -1,5 +1,5 @@
---- Makefile.orig	Wed Jan  1 20:51:57 2003
-+++ Makefile	Wed Jan  1 20:52:27 2003
+--- Makefile.orig	Sun Sep 28 17:26:39 2003
++++ Makefile	Sat Dec  6 02:29:28 2003
 @@ -6,8 +6,7 @@
  
  VPATH=$(SRC_PATH)
@@ -10,3 +10,14 @@
  
  ifeq ($(TARGET_GPROF),yes)
  CFLAGS+=-p
+@@ -69,8 +68,8 @@
+ all: lib $(PROG) $(PROGTEST) $(VHOOK)
+ 
+ lib:
+-	$(MAKE) -C libavcodec all
+-	$(MAKE) -C libavformat all
++	$(MAKE) LDFLAGS="$(LDFLAGS)" -C libavcodec all
++	$(MAKE) LDFLAGS="$(LDFLAGS)" -C libavformat all
+ 
+ ffmpeg_g$(EXESUF): ffmpeg.o cmdutils.o .libs
+ 	$(CC) $(LDFLAGS) -o $@ ffmpeg.o cmdutils.o $(FFLIBS) $(EXTRALIBS)

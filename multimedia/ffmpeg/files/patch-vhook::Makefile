@@ -1,0 +1,19 @@
+--- vhook/Makefile.orig	Fri Dec  5 20:07:04 2003
++++ vhook/Makefile	Fri Dec  5 20:07:55 2003
+@@ -29,13 +29,13 @@
+ 	install -s -m 755 $(HOOKS) $(INSTDIR)
+ 
+ imlib2.so: imlib2.o
+-	$(CC) -g -o $@ $(SHFLAGS) $< -lImlib2
++	$(CC) -o $@ $(LDFLAGS) $(SHFLAGS) $< -lImlib2
+ 
+ drawtext.so: drawtext.o
+-	$(CC) -g -o $@ $(SHFLAGS) $< `freetype-config --libs`
++	$(CC) -o $@ $(LDFLAGS) $(SHFLAGS) $< `freetype-config --libs`
+ 
+ %.so: %.o
+-	$(CC) -g -o $@ $(SHFLAGS) $<
++	$(CC) -o $@ $(LDFLAGS) $(SHFLAGS) $<
+ 
+ clean:
+ 	rm -f *.o *.d .depend *.so *~
