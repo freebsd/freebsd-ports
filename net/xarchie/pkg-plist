@@ -1,0 +1,3 @@
+@cwd /usr/X386
+bin/xarchie
+lib/X11/app-defaults/Xarchie

@@ -1,0 +1,19 @@
+*** FWF/Dir/Imakefile.orig	Sat Sep 24 04:28:46 1994
+--- FWF/Dir/Imakefile	Sat Sep 24 04:29:05 1994
+***************
+*** 28,34 ****
+  	    else echo "";					\
+  	    fi; exit 0)
+  	@rm -f regexp.h
+! 	@(if [ ! -f /usr/include/regexp.h ];			\
+  	    then echo "Patching because no regexp.h";		\
+  	         echo "#ifndef _BRIREGEXP_H_" > regexp.h;	\
+  	         echo "#define _BRIREGEXP_H_" >> regexp.h;	\
+--- 28,34 ----
+  	    else echo "";					\
+  	    fi; exit 0)
+  	@rm -f regexp.h
+! 	@(if [ ! -f /usr/include/__regexp.h ];			\
+  	    then echo "Patching because no regexp.h";		\
+  	         echo "#ifndef _BRIREGEXP_H_" > regexp.h;	\
+  	         echo "#define _BRIREGEXP_H_" >> regexp.h;	\
