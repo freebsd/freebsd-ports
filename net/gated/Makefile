@@ -11,7 +11,7 @@ PKGNAME=        gated-3.5.11
 CATEGORIES=	net
 MASTER_SITES=   ftp://ftp.gated.merit.edu/net-research/gated/
 
-MAINTAINER=	peter@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 FORBIDDEN=	"Security hole (buffer overflow possibly yielding root)"
 
