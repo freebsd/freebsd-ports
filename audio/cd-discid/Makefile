@@ -12,7 +12,7 @@ MASTER_SITES=	http://lly.org/~rcw/cd-discid/ \
 		http://www.soulwax.net/freebsd/
 DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 
-MAINTAINER=	chopra@soulwax.net
+MAINTAINER=	hcoyote@ghostar.org
 COMMENT=	Backend utility to retrieve CDDB discid information
 
 WRKSRC=		${WRKDIR}/${PKGNAME}

@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.hispalinux.es/~data/files/ \
 		http://www.soulwax.net/freebsd/
 DISTNAME=	abcde_${PORTVERSION}.orig
 
-MAINTAINER=	chopra@soulwax.net
+MAINTAINER=	hcoyote@ghostar.org
 COMMENT=	Front-end shell script to encode CDs in flac/mp3/ogg/speex format
 
 RUN_DEPENDS=	cd-discid:${PORTSDIR}/audio/cd-discid \
