@@ -8,8 +8,8 @@
 
 DISTNAME=	gicq-0.33
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.korsoft.com/pub/gicq/	\
-		http://www.nectar.com/distfiles/
+MASTER_SITES=	http://www.flathill.gr.jp/~flathill/distfiles/ \
+		ftp://ftp.korsoft.com/pub/gicq/
 
 MAINTAINER=	flathill@FreeBSD.org
 

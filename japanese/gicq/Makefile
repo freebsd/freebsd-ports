@@ -9,7 +9,8 @@
 DISTNAME=	gicq-0.33
 PKGNAME=	ja-gicq-0.33
 CATEGORIES=	japanese net
-MASTER_SITES=	ftp://ftp.korsoft.com/pub/gicq/
+MASTER_SITES=	http://www.flathill.gr.jp/~flathill/distfiles/ \
+		ftp://ftp.korsoft.com/pub/gicq/
 
 PATCH_SITES=	http://www.freebsd.org/~flathill/distfiles/ \
 		http://www-nagao.kuee.kyoto-u.ac.jp/member/taku/soft/
