@@ -7,7 +7,7 @@
 #
 
 VERSION=	1.3.9
-RA_VERSION=	29.0
+RA_VERSION=	29.2
 DISTNAME=       apache_${VERSION}
 PKGNAME=        rapache-${VERSION}
 CATEGORIES=	www russian
@@ -28,7 +28,7 @@ MASTER_SITES=	http://www.apache.org/dist/ \
 		ftp://apache.nextpath.com/pub/apache/dist/
 
 PATCH_SITES=	ftp://ftp.lexa.ru/pub/apache-rus/ \
-		ftp://ftp.lexa.ru/pub/apache-rus/old-versions
+		ftp://ftp.lexa.ru/pub/apache-rus/old-versions/
 PATCHFILES=	patches_${VERSION}rusPL${RA_VERSION}.tar.gz
 
 MAINTAINER=	vns@delta.odessa.ua
