@@ -9,7 +9,7 @@
 +  FREETYPELIBDIR ?= ${PREFIX}/lib
 +  FREETYPEINCDIR ?= ${PREFIX}/include
 +
-+  LIBTOOL = ${PREFIX}/bin/libtool
++  LIBTOOL = ../libtool
    VFLIB_INCDIR = ../src
    VFLIB_LIBDIR = ../src
  

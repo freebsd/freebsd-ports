@@ -3,7 +3,7 @@
 # Date created:		10 May 1996
 # Whom:			Mita Yoshio <mita@jp.FreeBSD.org>
 #
-# $Id: Makefile,v 1.18 1998/12/12 21:03:35 jseger Exp $
+# $Id: Makefile,v 1.19 1998/12/23 01:25:40 steve Exp $
 #
 
 DISTNAME=	VFlib2-2.24.1
@@ -15,7 +15,6 @@ DISTFILES=	VFlib2-2.24.1.tar.gz watanabe-vf.tar.Z
 
 MAINTAINER=	mita@jp.FreeBSD.org
 
-BUILD_DEPENDS=	libtool:${PORTSDIR}/devel/libtool
 LIB_DEPENDS=	ttf.3:${PORTSDIR}/print/freetype
 
 VFLIB_VERSION=	2.24.1
@@ -35,8 +34,8 @@ pre-install:
 	${MKDIR} ${PREFIX}/share/fonts/watanabe_font
 	tar -C ${PREFIX}/share/fonts/watanabe_font \
 	  -xzf ${DISTDIR}/watanabe-vf.tar.Z
+
 post-install:
 	${MV} ${PREFIX}/share/VFlib/${VFLIB_VERSION}/VF.h ${PREFIX}/include
-	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
