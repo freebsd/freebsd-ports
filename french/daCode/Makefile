@@ -8,12 +8,13 @@
 PORTNAME=	daCode
 PORTVERSION=	1.2.0
 CATEGORIES=	french
-MASTER_SITES=	http://switch.dl.sourceforge.net/sourceforge/dacode/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=dacode
 
 MAINTAINER=	gioria@FreeBSD.org
 
 RUN_DEPENDS+= 	${LOCALBASE}/sbin/httpd:${PORTSDIR}/www/apache13 \
-		${LOCALBASE}/libexec/apache/libphp3.so:${PORTSDIR}/lang/php3
+		${LOCALBASE}/libexec/apache/libphp3.so:${PORTSDIR}/www/mod_php3
 
 NO_BUILD=	yes
 
