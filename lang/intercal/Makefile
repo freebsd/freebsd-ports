@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	intercal
-PORTVERSION=	0.19
+PORTVERSION=	0.20
 CATEGORIES=	lang
 MASTER_SITES=	http://www.tuxedo.org/~esr/intercal/
 
