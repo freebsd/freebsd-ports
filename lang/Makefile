@@ -11,6 +11,7 @@
     SUBDIR += bwbasic
     SUBDIR += caml-light
     SUBDIR += cim
+    SUBDIR += clisp
     SUBDIR += cmucl
     SUBDIR += cu-prolog
     SUBDIR += dylan
