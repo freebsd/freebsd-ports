@@ -1,0 +1,16 @@
+--- configure.in.orig	Thu Apr 29 09:34:48 2004
++++ configure.in	Thu May 20 14:16:15 2004
+@@ -803,6 +803,13 @@
+    AC_DEFINE(HAVE_SIG_ATOMIC_T_TYPE,1,[Whether we have the atomic_t variable type])
+ fi
+ 
++AC_CACHE_CHECK([for optreset], samba_cv_var_optreset, [
++  AC_TRY_LINK([#include <unistd.h>],[optreset = 1],
++  [samba_cv_var_optreset=yes],[samba_cv_var_optreset=no])])
++if test x"$samba_cv_var_optreset" = x"yes"; then
++  AC_DEFINE(HAVE_OPTRESET,1,[Whether the system has optreset])
++fi
++
+ # stupid headers have the functions but no declaration. grrrr.
+ AC_HAVE_DECL(errno, [#include <errno.h>])
+ AC_HAVE_DECL(setresuid, [#include <unistd.h>])
