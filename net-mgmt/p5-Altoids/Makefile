@@ -16,7 +16,8 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	billf@FreeBSD.org
 COMMENT=	SNMP get/walk functionality with built-in name to OID translation
 
-RUN_DEPENDS=	${SITE_PERL}/SNMP_Session.pm:${PORTSDIR}/net-mgmt/p5-SNMP_Session
+BUILD_DEPENDS=	${SITE_PERL}/SNMP_Session.pm:${PORTSDIR}/net-mgmt/p5-SNMP_Session
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 GNU_CONFIGURE=	yes
 
