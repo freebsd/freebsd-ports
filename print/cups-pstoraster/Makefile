@@ -7,6 +7,7 @@
 
 PORTNAME=	cups-pstoraster
 PORTVERSION=	7.05.5
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.easysw.com/pub/ghostscript/
@@ -29,7 +30,7 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 CONFIGURE_ARGS=	--without-x --without-ijs --without-gimp-print \
 		--with-drivers=cups --with-gs=espgs \
 		--with-fontpath=${LOCALBASE}/share/ghostscript/fonts \
-		--enable-compiled-inits
+		--enable-compiled-inits --without-omni
 
 USE_REINPLACE=	yes
 
