@@ -7720,6 +7720,7 @@ sup_port	ports/net/sup
 super		ports/security/super
 superlu		ports/math/superlu
 superlu_mt	ports/math/superlu_mt
+suphp		ports/www/suphp
 surf		ports/math/surf
 surfraw		ports/www/surfraw
 susv2		ports/misc/susv2
