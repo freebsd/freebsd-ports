@@ -1,6 +1,14 @@
 --- block.c.orig	Wed Mar 24 01:39:36 1999
-+++ block.c	Sat Apr 10 09:57:16 1999
-@@ -32,7 +32,7 @@
++++ block.c	Wed Jun 18 04:38:34 2003
+@@ -12,6 +12,7 @@
+ 
+ #include <string.h>
+ #include <stdlib.h>
++#include <unistd.h>
+ 
+ /*heck - i started writing the thing using curses - then 
+          switched to ncurses, did not seem to make much
+@@ -32,7 +33,7 @@
  #define FF_HOME    4 
  #define FF_OVEN    5
  
@@ -9,11 +17,13 @@
  /* uncomment if you like lots of diagnostic garbage */
  /* #define DEBUG 1                                  */
  
-@@ -93,16 +93,16 @@
+@@ -92,17 +93,17 @@
+   } 
  
    
-   username = (char *) getlogin();
+-  username = (char *) getlogin();
 -  sprintf(buf,"/usr/games/lib/save/%s",username);
++  username = getlogin();
 +  sprintf(buf, PREFIX "/share/block/%s",username);
    fp = fopen( buf , "rt");
    if( fp != NULL ) {
@@ -29,7 +39,7 @@
        level=1;
    }
    strcpy(lname,buf); 
-@@ -172,7 +172,7 @@
+@@ -172,7 +173,7 @@
               break;
      case 1 : 
      case 2 : printf("Hmmm... trouble reading file %s\n",lname);
@@ -38,7 +48,7 @@
               if(loadnext(&cw,tmp)){
                 printf("Could not read %s either\n",tmp); 
                 if(loadnext(&cw,"default")){
-@@ -539,7 +539,7 @@
+@@ -539,7 +540,7 @@
  	       printw( "\t\t %2d. %8s       %4d         %5ld       %5ld\n", i+1, (char *)High[i].Name,High[i].Level,High[i].Score,High[i].Moves);
  	     }
  	     level++;
@@ -47,7 +57,7 @@
  	     fp = fopen(buf,"wt");
  	     if( fp != NULL ) {
  	         fprintf(fp , "%d", level);
-@@ -557,7 +557,7 @@
+@@ -557,7 +558,7 @@
    endwin();
                 /*Hope they come back again*/
    
@@ -56,7 +66,7 @@
    /* yuck - a messy kludge - the fname stores the name of the next game*/
    moves=0;
    if(looper)looper=2;    
-@@ -756,7 +756,9 @@
+@@ -756,7 +757,9 @@
  				High[j].Moves = High[j-1].Moves;
  				strncpy(High[j].Name,High[j-1].Name,10);
  			}
