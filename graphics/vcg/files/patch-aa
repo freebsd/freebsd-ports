@@ -1,0 +1,11 @@
+--- 1.1	1995/02/18 16:56:11
++++ demo/Makefile	1995/02/18 16:57:11
+@@ -124,7 +124,7 @@
+ 
+ # Generated Other - Files
+ GOFILES  = animfile1.vcg animfile2.vcg rbtree.vcg
+- 
++
+ # Object - Files
+ OFILES	= animation1.o animation2.o pbmrot90.o pbmshift.o vcgdemomaker.o \
+ 	  animation3.o vcgcount.o pbm2hp.o
