@@ -32,6 +32,7 @@ lib/libcdialog.a
 %%PORTDOCS%%%%EXAMPLESDIR%%/textbox
 %%PORTDOCS%%%%EXAMPLESDIR%%/radiolist
 %%PORTDOCS%%%%EXAMPLESDIR%%/msgbox
+%%PORTDOCS%%%%EXAMPLESDIR%%/msgbox5
 %%PORTDOCS%%%%EXAMPLESDIR%%/inputbox2
 %%PORTDOCS%%%%EXAMPLESDIR%%/inputbox3
 %%PORTDOCS%%%%EXAMPLESDIR%%/inputbox
