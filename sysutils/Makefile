@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.10 1996/11/26 09:05:33 asami Exp $
+# $Id: Makefile,v 1.11 1996/12/04 02:06:13 obrien Exp $
 #
 
     SUBDIR += afio
@@ -7,6 +7,7 @@
     SUBDIR += mkisofs
     SUBDIR += rtty
     SUBDIR += socket
+    SUBDIR += su2
     SUBDIR += top
     SUBDIR += tua
     SUBDIR += xbatt
