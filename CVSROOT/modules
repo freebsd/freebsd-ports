@@ -6982,7 +6982,6 @@ rubber		ports/textproc/rubber
 rubix		ports/games/rubix
 ruboard		ports/www/ruboard
 rubrica		ports/deskutils/rubrica
-ruby		ports/lang/ruby
 ruby-X11	ports/x11/ruby-X11
 ruby-acl	ports/security/ruby-acl
 ruby-aes	ports/security/ruby-aes
@@ -7020,7 +7019,6 @@ ruby-dbd_proxy	ports/databases/ruby-dbd_proxy
 ruby-dbd_sqlite	ports/databases/ruby-dbd_sqlite
 ruby-dbd_sqlrelay	ports/databases/ruby-dbd_sqlrelay
 ruby-dbi	ports/databases/ruby-dbi
-ruby-devel	ports/lang/ruby-devel
 ruby-devel-logger	ports/sysutils/ruby-devel-logger
 ruby-dialogs	ports/devel/ruby-dialogs
 ruby-dict	ports/net/ruby-dict
@@ -7216,11 +7214,13 @@ ruby-xslt	ports/textproc/ruby-xslt
 ruby-xtemplate	ports/textproc/ruby-xtemplate
 ruby-yaml	ports/devel/ruby-yaml
 ruby-zip	ports/archivers/ruby-zip
+ruby16		ports/lang/ruby16
 ruby16-shim-ruby18	ports/lang/ruby16-shim-ruby18
-ruby_r		ports/lang/ruby_r
-ruby_r-devel	ports/lang/ruby_r-devel
-ruby_static	ports/lang/ruby_static
-ruby_static-devel	ports/lang/ruby_static-devel
+ruby16_r	ports/lang/ruby16_r
+ruby16_static	ports/lang/ruby16_static
+ruby18	ports/lang/ruby18
+ruby18_r	ports/lang/ruby18_r
+ruby18_static	ports/lang/ruby18_static
 rubyphoto	ports/graphics/rubyphoto
 rudiments	ports/devel/rudiments
 runit		ports/sysutils/runit
