@@ -1,0 +1,8 @@
+%%SITE_PERL%%/WWW/SourceForge.pm
+%%SITE_PERL%%/WWW/SourceForge/Project.pm
+%%SITE_PERL%%/WWW/SourceForge/User.pm
+@dirrm %%SITE_PERL%%/WWW/SourceForge
+@unexec rmdir %D/%%SITE_PERL%%/WWW 2>/dev/null || true
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/SourceForge/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/SourceForge
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW 2>/dev/null || true
