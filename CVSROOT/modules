@@ -10745,6 +10745,7 @@ xoids		ports/games/xoids
 xoj		ports/games/xoj
 xonix		ports/games/xonix
 xopps		ports/deskutils/xopps
+xorg-libraries	ports/x11/xorg-libraries
 xorg-server	ports/x11-servers/xorg-server
 xosd		ports/misc/xosd
 xosmulti	ports/games/xosmulti
