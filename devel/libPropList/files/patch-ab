@@ -1,0 +1,44 @@
+--- filehandling.c.orig	Tue Feb 15 03:03:56 2000
++++ filehandling.c	Wed Jun  7 01:03:50 2000
+@@ -464,6 +464,7 @@
+   
+   if (atomically)
+     {
++#ifndef HAVE_MKSTEMP
+       theFileName = tmpnam(NULL);
+       strcpy(tmp_fileName, theFileName);
+ 
+@@ -492,14 +493,33 @@
+ 	} 
+       
+       theFileName = strcat(dirname, basename);
++#else /* HAVE_MKSTEMP */
++      int fd;
++
++      strcpy(tmp_fileName, "/tmp/tmp.XXXXXX");
++      if ((fd = mkstemp(tmp_fileName)) == -1)
++
++        goto failure; /* Not reached */
++
++      if ((theFile = fdopen(fd, "w+")) == NULL)
++
++        goto failure; /* Not reached */
++
++      theFileName = tmp_fileName;
++#endif
+     } 
+   else
+     { 
+       theFileName = theRealFileName;
++#ifdef HAVE_MKSTEMP
++      theFile = fopen(theFileName, "w");
++#endif /* HAVE_MKSTEMP */
+     } 
+ 
+   /* Open the file (whether temp or real) for writing. */
++#ifndef HAVE_MKSTEMP
+   theFile = fopen(theFileName, "w");
++#endif /* ! HAVE_MKSTEMP */
+ 
+   if (theFile == NULL)          /* Something went wrong; we weren't
+                                  * even able to open the file. */
