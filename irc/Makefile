@@ -6,6 +6,7 @@
     SUBDIR += bnc
     SUBDIR += epic4
     SUBDIR += ezbounce
+    SUBDIR += infobot
     SUBDIR += irc
     SUBDIR += ircII
     SUBDIR += ircd-hybrid
