@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
-BUILD_DEPENDS=	libtool:${PORTNAME}/devel/libtool
+BUILD_DEPENDS=	libtool:${PORTSDIR}/devel/libtool
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-dynamic
