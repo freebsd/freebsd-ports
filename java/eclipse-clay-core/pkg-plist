@@ -1,0 +1,97 @@
+eclipse/features/jp.azzurri.clay.core_%%RELEASEVERSION%%/azzurri_logo.gif
+eclipse/features/jp.azzurri.clay.core_%%RELEASEVERSION%%/feature.properties
+eclipse/features/jp.azzurri.clay.core_%%RELEASEVERSION%%/feature.xml
+eclipse/features/jp.azzurri.clay.core_%%RELEASEVERSION%%/feature_ja.properties
+eclipse/features/jp.azzurri.clay.core_%%RELEASEVERSION%%/license.html
+eclipse/features/jp.azzurri.clay.core_%%RELEASEVERSION%%/license_en.html
+eclipse/plugins/jp.azzurri.clay.core_%%RELEASEVERSION%%/about.html
+eclipse/plugins/jp.azzurri.clay.core_%%RELEASEVERSION%%/about.ini
+eclipse/plugins/jp.azzurri.clay.core_%%RELEASEVERSION%%/about.mappings
+eclipse/plugins/jp.azzurri.clay.core_%%RELEASEVERSION%%/about.properties
+eclipse/plugins/jp.azzurri.clay.core_%%RELEASEVERSION%%/about_en.html
+eclipse/plugins/jp.azzurri.clay.core_%%RELEASEVERSION%%/azzurri_clay_core.jar
+eclipse/plugins/jp.azzurri.clay.core_%%RELEASEVERSION%%/clayFeature.jpg
+eclipse/plugins/jp.azzurri.clay.core_%%RELEASEVERSION%%/license.html
+eclipse/plugins/jp.azzurri.clay.core_%%RELEASEVERSION%%/license_en.html
+eclipse/plugins/jp.azzurri.clay.core_%%RELEASEVERSION%%/nl/en/about.properties
+eclipse/plugins/jp.azzurri.clay.core_%%RELEASEVERSION%%/nl/en/welcome.xml
+eclipse/plugins/jp.azzurri.clay.core_%%RELEASEVERSION%%/nl/ja/about.properties
+eclipse/plugins/jp.azzurri.clay.core_%%RELEASEVERSION%%/nl/ja/welcome.xml
+eclipse/plugins/jp.azzurri.clay.core_%%RELEASEVERSION%%/plugin.xml
+eclipse/plugins/jp.azzurri.clay.core_%%RELEASEVERSION%%/schema/databaseModelValidators.exsd
+eclipse/plugins/jp.azzurri.clay.core_%%RELEASEVERSION%%/schema/sqldialects.exsd
+eclipse/plugins/jp.azzurri.clay.core_%%RELEASEVERSION%%/welcome.xml
+eclipse/plugins/jp.azzurri.clay.ui.jdbc_%%RELEASEVERSION%%/azzurri_clay_ui_jdbc.jar
+eclipse/plugins/jp.azzurri.clay.ui.jdbc_%%RELEASEVERSION%%/fragment.xml
+eclipse/plugins/jp.azzurri.clay.ui.jdbc_%%RELEASEVERSION%%/icons/reverse_database.gif
+eclipse/plugins/jp.azzurri.clay.ui_%%RELEASEVERSION%%/.options
+eclipse/plugins/jp.azzurri.clay.ui_%%RELEASEVERSION%%/about.html
+eclipse/plugins/jp.azzurri.clay.ui_%%RELEASEVERSION%%/about_en.html
+eclipse/plugins/jp.azzurri.clay.ui_%%RELEASEVERSION%%/azzurri.cer
+eclipse/plugins/jp.azzurri.clay.ui_%%RELEASEVERSION%%/azzurri_clay_ui.jar
+eclipse/plugins/jp.azzurri.clay.ui_%%RELEASEVERSION%%/icons/azzurri_logo.gif
+eclipse/plugins/jp.azzurri.clay.ui_%%RELEASEVERSION%%/icons/check_off_enabled.gif
+eclipse/plugins/jp.azzurri.clay.ui_%%RELEASEVERSION%%/icons/check_on_disabled.gif
+eclipse/plugins/jp.azzurri.clay.ui_%%RELEASEVERSION%%/icons/check_on_enabled.gif
+eclipse/plugins/jp.azzurri.clay.ui_%%RELEASEVERSION%%/icons/claycolumn.gif
+eclipse/plugins/jp.azzurri.clay.ui_%%RELEASEVERSION%%/icons/claycolumn_index.gif
+eclipse/plugins/jp.azzurri.clay.ui_%%RELEASEVERSION%%/icons/claycolumn_index_wbg.gif
+eclipse/plugins/jp.azzurri.clay.ui_%%RELEASEVERSION%%/icons/claycolumn_wbg.gif
+eclipse/plugins/jp.azzurri.clay.ui_%%RELEASEVERSION%%/icons/claycolumn_with_key.gif
+eclipse/plugins/jp.azzurri.clay.ui_%%RELEASEVERSION%%/icons/claycolumn_with_key_wbg.gif
+eclipse/plugins/jp.azzurri.clay.ui_%%RELEASEVERSION%%/icons/claycolumn_with_link.gif
+eclipse/plugins/jp.azzurri.clay.ui_%%RELEASEVERSION%%/icons/claycolumn_with_link_wbg.gif
+eclipse/plugins/jp.azzurri.clay.ui_%%RELEASEVERSION%%/icons/claydomain.gif
+eclipse/plugins/jp.azzurri.clay.ui_%%RELEASEVERSION%%/icons/claydomain_wbg.gif
+eclipse/plugins/jp.azzurri.clay.ui_%%RELEASEVERSION%%/icons/clayindex.gif
+eclipse/plugins/jp.azzurri.clay.ui_%%RELEASEVERSION%%/icons/clayindex_wbg.gif
+eclipse/plugins/jp.azzurri.clay.ui_%%RELEASEVERSION%%/icons/claykey.gif
+eclipse/plugins/jp.azzurri.clay.ui_%%RELEASEVERSION%%/icons/claykey_wbg.gif
+eclipse/plugins/jp.azzurri.clay.ui_%%RELEASEVERSION%%/icons/claylinks.gif
+eclipse/plugins/jp.azzurri.clay.ui_%%RELEASEVERSION%%/icons/claylinks_wbg.gif
+eclipse/plugins/jp.azzurri.clay.ui_%%RELEASEVERSION%%/icons/claymodel.gif
+eclipse/plugins/jp.azzurri.clay.ui_%%RELEASEVERSION%%/icons/claymodel_new.gif
+eclipse/plugins/jp.azzurri.clay.ui_%%RELEASEVERSION%%/icons/claymodel_wbg.gif
+eclipse/plugins/jp.azzurri.clay.ui_%%RELEASEVERSION%%/icons/clayschema.gif
+eclipse/plugins/jp.azzurri.clay.ui_%%RELEASEVERSION%%/icons/clayschema_wbg.gif
+eclipse/plugins/jp.azzurri.clay.ui_%%RELEASEVERSION%%/icons/claytable.gif
+eclipse/plugins/jp.azzurri.clay.ui_%%RELEASEVERSION%%/icons/claytable_new.gif
+eclipse/plugins/jp.azzurri.clay.ui_%%RELEASEVERSION%%/icons/claytable_wbg.gif
+eclipse/plugins/jp.azzurri.clay.ui_%%RELEASEVERSION%%/icons/connection16.gif
+eclipse/plugins/jp.azzurri.clay.ui_%%RELEASEVERSION%%/icons/connection32.gif
+eclipse/plugins/jp.azzurri.clay.ui_%%RELEASEVERSION%%/icons/copy_edit.gif
+eclipse/plugins/jp.azzurri.clay.ui_%%RELEASEVERSION%%/icons/cut_edit.gif
+eclipse/plugins/jp.azzurri.clay.ui_%%RELEASEVERSION%%/icons/database.gif
+eclipse/plugins/jp.azzurri.clay.ui_%%RELEASEVERSION%%/icons/disp_sbook_enabled.gif
+eclipse/plugins/jp.azzurri.clay.ui_%%RELEASEVERSION%%/icons/export_htmldoc_wiz.gif
+eclipse/plugins/jp.azzurri.clay.ui_%%RELEASEVERSION%%/icons/extension_obj.gif
+eclipse/plugins/jp.azzurri.clay.ui_%%RELEASEVERSION%%/icons/ext_point_obj.gif
+eclipse/plugins/jp.azzurri.clay.ui_%%RELEASEVERSION%%/icons/file_obj.gif
+eclipse/plugins/jp.azzurri.clay.ui_%%RELEASEVERSION%%/icons/fldr_obj.gif
+eclipse/plugins/jp.azzurri.clay.ui_%%RELEASEVERSION%%/icons/import_wiz.gif
+eclipse/plugins/jp.azzurri.clay.ui_%%RELEASEVERSION%%/icons/java_workingset_wiz.gif
+eclipse/plugins/jp.azzurri.clay.ui_%%RELEASEVERSION%%/icons/newsbook_wiz.gif
+eclipse/plugins/jp.azzurri.clay.ui_%%RELEASEVERSION%%/icons/outline.gif
+eclipse/plugins/jp.azzurri.clay.ui_%%RELEASEVERSION%%/icons/overview.gif
+eclipse/plugins/jp.azzurri.clay.ui_%%RELEASEVERSION%%/icons/packagefolder_obj.gif
+eclipse/plugins/jp.azzurri.clay.ui_%%RELEASEVERSION%%/icons/paste_edit.gif
+eclipse/plugins/jp.azzurri.clay.ui_%%RELEASEVERSION%%/icons/remove_disabled.gif
+eclipse/plugins/jp.azzurri.clay.ui_%%RELEASEVERSION%%/icons/remove_enabled.gif
+eclipse/plugins/jp.azzurri.clay.ui_%%RELEASEVERSION%%/icons/remove_gray.gif
+eclipse/plugins/jp.azzurri.clay.ui_%%RELEASEVERSION%%/icons/space.gif
+eclipse/plugins/jp.azzurri.clay.ui_%%RELEASEVERSION%%/icons/sqldoc.gif
+eclipse/plugins/jp.azzurri.clay.ui_%%RELEASEVERSION%%/icons/sqldoc_new.gif
+eclipse/plugins/jp.azzurri.clay.ui_%%RELEASEVERSION%%/icons/synch_synch.gif
+eclipse/plugins/jp.azzurri.clay.ui_%%RELEASEVERSION%%/license.html
+eclipse/plugins/jp.azzurri.clay.ui_%%RELEASEVERSION%%/license_en.html
+eclipse/plugins/jp.azzurri.clay.ui_%%RELEASEVERSION%%/plugin.xml
+@dirrm eclipse/plugins/jp.azzurri.clay.core_%%RELEASEVERSION%%/nl/en
+@dirrm eclipse/plugins/jp.azzurri.clay.core_%%RELEASEVERSION%%/nl/ja
+@dirrm eclipse/plugins/jp.azzurri.clay.core_%%RELEASEVERSION%%/nl
+@dirrm eclipse/plugins/jp.azzurri.clay.core_%%RELEASEVERSION%%/schema
+@dirrm eclipse/plugins/jp.azzurri.clay.core_%%RELEASEVERSION%%
+@dirrm eclipse/plugins/jp.azzurri.clay.ui.jdbc_%%RELEASEVERSION%%/icons
+@dirrm eclipse/plugins/jp.azzurri.clay.ui.jdbc_%%RELEASEVERSION%%
+@dirrm eclipse/plugins/jp.azzurri.clay.ui_%%RELEASEVERSION%%/icons
+@dirrm eclipse/plugins/jp.azzurri.clay.ui_%%RELEASEVERSION%%
+@dirrm eclipse/features/jp.azzurri.clay.core_%%RELEASEVERSION%%

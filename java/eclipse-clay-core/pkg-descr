@@ -1,0 +1,8 @@
+Clay is a database design tool that runs as a plug-in in the
+Eclipse development environment. Clay has an intuitive user
+interface for graphically designing database models. Clay can
+also create a database model by reverse engineering an existing
+database. Furthermore, Clay generates the SQL (DDL) code
+appropriate for your database.
+
+WWW: http://www.azzurri.jp/en/software/clay/
