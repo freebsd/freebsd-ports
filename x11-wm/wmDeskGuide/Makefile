@@ -17,10 +17,15 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnomelibs gdkpixbuf
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
 
 PORTDOCS=	README
 PLIST_FILES=	bin/wmDeskGuide
+
+post-patch:
+	@${FIND} ${WRKSRC} -name "*.c" | ${XARGS} ${REINPLACE_CMD} -e \
+		's|G_GNUC_PRETTY_FUNCTION |G_GNUC_PRETTY_FUNCTION, |g'
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/wmDeskGuide ${PREFIX}/bin
