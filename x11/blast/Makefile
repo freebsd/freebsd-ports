@@ -3,7 +3,7 @@
 # Date created:         9 Jul 1996
 # Whom:            searle
 #
-# $Id: Makefile,v 1.1.1.1 1996/07/31 22:07:51 chuckr Exp $
+# $Id: Makefile,v 1.2 1996/08/03 22:39:17 chuckr Exp $
 #
 
 DISTNAME=	blast-1.0-ss-9.03
@@ -18,8 +18,7 @@ MASTER_SITES=	ftp://hpux.csc.liv.ac.uk/hpux/X11/Demos/blast-1.0/ \
 MAINTAINER=	searle@longacre.demon.co.uk
 
 USE_X11=	yes
-
-MANDIR=		$(PREFIX)/man/man1
+MAN1=		blast.1
 
 pre-configure:
 	mv $(WRKDIR)/blast-1.0 $(WRKSRC)
@@ -28,10 +27,7 @@ do-build:
 	cc $(WRKSRC)/blast.c -I/usr/X11R6/include -O2 -L$(PREFIX)/lib -lX11 -lXext -o $(WRKSRC)/blast
 
 do-install:
-	$(INSTALL) -c $(WRKSRC)/blast $(PREFIX)/bin/blast
-	$(INSTALL) -c $(WRKSRC)/blast.man $(DESTDIR)$(MANDIR)/blast.1
-.if !defined(NOMANCOMPRESS)
-	gzip -9nf $(MANDIR)/blast.1
-.endif
+	$(INSTALL_PROGRAM) $(WRKSRC)/blast $(PREFIX)/bin/blast
+	$(INSTALL_MAN) $(WRKSRC)/blast.man $(PREFIX)/man/man1/blast.1
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 # Date created:		7 June 1995
 # Whom:			Takashi Ogura <ogura@st.rim.or.jp>
 #
-# $Id: Makefile,v 1.6 1996/09/19 04:38:17 asami Exp $
+# $Id: Makefile,v 1.7 1996/11/11 10:12:19 max Exp $
 #
 
 DISTNAME=	kon
@@ -18,16 +18,13 @@ EXTRACT_ONLY=	kon-0.99.4e.tgz
 MAINTAINER=	asami@FreeBSD.ORG
 
 USE_GMAKE=	yes
+MAN1=		kon.1
+MANLANG=	ja_JP.ujis
 
 post-configure:
 	sed -e 's%%CURDIR%%${.CURDIR}' \
 	  -e 's%%PREFIX%%${PREFIX}' \
 	  -e 's%%DISTDIR%%${DISTDIR}' \
 	  files/dotconfig > ${WRKSRC}/.config
-
-post-install:
-.if !defined(NOMANCOMPRESS)
-	gzip -9nf ${PREFIX}/man/ja_JP.ujis/man1/kon.1
-.endif
 
 .include <bsd.port.mk>
