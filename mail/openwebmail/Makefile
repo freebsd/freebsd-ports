@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	openwebmail
-PORTVERSION=	1.80
-PORTREVISION=	1
+PORTVERSION=	1.81
 CATEGORIES=	mail
 MASTER_SITES=	http://openwebmail.org/openwebmail/download/ \
 		http://turtle.ee.ncku.edu.tw/openwebmail/download/
