@@ -10,14 +10,14 @@ DISTNAME=	xc
 PKGNAME= 	XFree86-3.3.6
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.xfree86.org/pub/XFree86/3.3.6/source/ \
-		ftp://xfree86.cdrom.com/pub/XFree86/3.3.6/source/ \
+		ftp://ftp.freesoftware.com/pub/XFree86/3.3.6/source/ \
 		ftp://ftp.lip6.fr/pub/X11/XFree86/XFree86-3.3.6/source/ \
 		ftp://ftp.cs.tu-berlin.de/pub/X/XFree86/3.3.6/source/ \
 		ftp://sunsite.doc.ic.ac.uk/packages/XFree86/3.3.6/source/
 DISTFILES=	X336src-1.tgz X336src-2.tgz
 
 PATCH_SITES=	ftp://ftp.xfree.org/pub/XFree86/3.3.6/fixes/ \
-		ftp://xfree86.cdrom.com/pub/XFree86/3.3.6/fixes/ \
+		ftp://ftp.freesoftware.com/pub/XFree86/3.3.6/fixes/ \
 		ftp://ftp.lip6.fr/pub/X11/XFree86/XFree86-3.3.6/fixes/ \
 		ftp://ftp.cs.tu-berlin.de/pub/X/XFree86/3.3.6/fixes/ \
 		ftp://sunsite.doc.ic.ac.uk/packages/XFree86/3.3.6/fixes/
