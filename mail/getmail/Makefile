@@ -6,19 +6,20 @@
 #
 
 PORTNAME=	getmail
-PORTVERSION=	2.3.7
+PORTVERSION=	2.3.9
 CATEGORIES=	mail python
 MASTER_SITES=	http://www.qcc.sk.ca/~charlesc/software/getmail-2.0/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. old-versions
 
-MAINTAINER=	petef@FreeBSD.org
+MAINTAINER=	anders@hack.org
 
 USE_PYTHON=	yes
+USE_REINPLACE=	yes
 NO_BUILD=	yes
 
 post-patch:
-	@${PERL} -pi -e 's!/usr/lib/getmail!${DATADIR}!; \
-		s!`which python`!${PYTHON_CMD}!' ${WRKSRC}/getmail
+	@${REINPLACE_CMD} -e 's!/usr/lib/getmail!${DATADIR}!' \
+		-e 's!`which python`!${PYTHON_CMD}!' ${WRKSRC}/getmail
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/getmail ${PREFIX}/bin
