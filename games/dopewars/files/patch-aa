@@ -1,0 +1,10 @@
+--- Makefile.orig	Tue Jun 22 12:24:38 1999
++++ Makefile	Fri Jul 30 20:26:02 1999
+@@ -1,5 +1,5 @@
+-CFLAGS = -Wall
+-CC = gcc
++CFLAGS ?= -Wall
++CC ?= gcc
+ HEADERS = message.h dopewars.h serverside.h clientside.h AIPlayer.h
+ OBJS = message.o dopewars.o serverside.o clientside.o AIPlayer.o
+ LIBS = -lncurses
