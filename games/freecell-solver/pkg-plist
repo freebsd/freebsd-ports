@@ -1,4 +1,5 @@
 bin/fc-solve
+bin/freecell-solver-range-parallel-solve
 bin/make-aisleriot-freecell-board
 bin/make-gnome-freecell-board
 bin/make-microsoft-freecell-board
@@ -11,5 +12,5 @@ include/freecell-solver/fcs_user.h
 lib/libfreecell-solver.a
 lib/libfreecell-solver.la
 lib/libfreecell-solver.so
-lib/libfreecell-solver.so.2
+lib/libfreecell-solver.so.3
 @dirrm include/freecell-solver
