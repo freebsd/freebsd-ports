@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bouncycastle
-PORTVERSION=	1.11
+PORTVERSION=	1.16
 CATEGORIES=	java security
 MASTER_SITES=	http://www.bouncycastle.org/download/
 DISTNAME=	jce-jdk13-${PORTVERSION:S/.//}
