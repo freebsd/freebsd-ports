@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.232 1999/03/17 08:31:20 nectar Exp $
+# $Id: Makefile,v 1.233 1999/03/19 22:25:55 asami Exp $
 #
 
     SUBDIR += SSLtelnet
@@ -40,7 +40,6 @@
     SUBDIR += dgd
     SUBDIR += dgd-lpmud
     SUBDIR += dgd-net
-    SUBDIR += dict
     SUBDIR += dip
     SUBDIR += dlint
     SUBDIR += dnswalk
