@@ -1,0 +1,12 @@
+The package is essentially an implementation of a PageController pattern.
+
+Architecture:
+* Controller class that examines HTTP requests and manages form values
+  persistence across requests.
+* Page class (subclass of QuickForm) representing a single page of the form.
+* Business logic is contained in subclasses of Action class.
+
+Cool features:
+* Includes several default Actions that allow easy building of multipage forms.
+* Includes usage examples for common usage cases (single-page form, wizard, 
+  tabbed form).
