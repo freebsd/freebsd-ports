@@ -6,41 +6,23 @@
 #
 
 PORTNAME=	php_doc
-PORTVERSION=	1.20021101
+PORTVERSION=	20040518
 CATEGORIES?=	lang
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	dirk
-DISTNAME=	php_manual_${PHP_LANG}
+MASTER_SITES=	http://www.mavetju.org/download/adopted/
+DISTNAME=	php_manual_${PHP_LANG}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	edwin@mavetju.org
 COMMENT=	PHP documentation in HTML
 
 NO_BUILD=	YES
 NO_WRKSUBDIR=	YES
 SLAVEDIRS=	french/php_doc german/php_doc japanese/php_doc
-USE_BZIP2=	YES
 
 PHP_LANG?=	en
-PHPDOCDIR=	${PREFIX}/share/doc/php
+PHPDOCDIR=	${PREFIX}/share/doc/php-${PHP_LANG}
+PLIST=		${WRKDIR}/pkg-plist
 
-.if ${PHP_LANG} != en
-PKGNAMEPREFIX=	${PHP_LANG}-
-PLIST=		${PKGDIR}/pkg-plist.${PHP_LANG}
-PHPDOCDIR=	${PREFIX}/share/doc/${PHP_LANG}-php
-
-.if ${PHP_LANG} == de
-PORTVERSION=	1.20021103
-.endif
-.if ${PHP_LANG} == es
-PORTVERSION=	1.20021104
-.endif
-.if ${PHP_LANG} == fr
-PORTVERSION=	1.20020708
-.endif
-.if ${PHP_LANG} == ja
-PORTVERSION=	1.20021104
-.endif
-.endif
+PKGNAMESUFFIX=	-${PHP_LANG}
 
 PLIST_SUB=	PHPDOCDIR=${PHPDOCDIR:S/^${PREFIX}\///}
 
@@ -56,10 +38,15 @@ pre-fetch:
 	@${ECHO}
 .endif
 
+pre-install:
+	${FIND} ${WRKDIR} -type f ! -name '.*' | ${SED} -e "s,${WRKDIR},%%PHPDOCDIR%%," > ${PLIST}
+	${FIND} ${WRKDIR} -type d | ${SORT} -r | ${SED} -e "s,${WRKDIR},@dirrm %%PHPDOCDIR%%," >> ${PLIST}
+
 do-install:
 	@${MKDIR} ${PHPDOCDIR}
-	@for i in ${WRKSRC}/*; do \
-		${INSTALL_DATA} $$i ${PHPDOCDIR}; \
+	${FIND} ${WRKDIR} -type d | ${SED} -e "s,${WRKDIR},${PHPDOCDIR}/," | ${XARGS} ${MKDIR}
+	for f in `${FIND} ${WRKDIR} -type f ! -name '.*' | ${SED} -e "s,${WRKDIR}/,,"`; do \
+		${INSTALL_DATA} ${WRKDIR}/$$f ${PHPDOCDIR}/$$f; \
 	done
 
 # this is for the maintainer only
