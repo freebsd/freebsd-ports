@@ -18,7 +18,6 @@ COMMENT=	A "nine mens' morris" implementation for the GNOME Desktop Environment
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gnomeprefix gnomehack gnomelibs gdkpixbuf
 
 GNU_CONFIGURE=	yes
