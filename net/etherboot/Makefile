@@ -13,7 +13,7 @@ CATEGORIES=	net
 #use development sources for now instead of standard ftp site.
 MASTER_SITES=	http://etherboot.sourceforge.net/
 
-MAINTAINER=	ambrisko@ambrisko.com
+MAINTAINER=	ambrisko@freebsd.org
 
 NO_PACKAGE=	lots of configuration necessary
 USE_BZIP2=1
