@@ -93,6 +93,7 @@ include/magick/type.h
 include/magick/utility.h
 include/magick/version.h
 include/magick/widget.h
+include/magick/xwindow.h
 include/wand/drawing_wand.h
 include/wand/magick_wand.h
 include/wand/pixel_iterator.h
