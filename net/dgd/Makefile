@@ -3,10 +3,10 @@
 # Date created:		23 August 1994
 # Whom:			adam
 #
-# $Id: Makefile,v 1.75 1997/07/31 02:11:29 adam Exp $
+# $Id: Makefile,v 1.76 1998/03/21 04:10:46 adam Exp $
 #
 
-DISTNAME=	dgd-1.1p5
+DISTNAME=	dgd-1.1p6
 DISTFILES=	dgd-1.1.tar.gz
 CATEGORIES=	net lang
 MASTER_SITES=	ftp://ftp.imaginary.com/pub/LPC/servers/DGD/ \
@@ -22,7 +22,8 @@ PATCHFILES=	1.1p1.gz \
 		1.1p2.gz \
 		1.1p3.gz \
 		1.1p4.gz \
-		1.1p5.gz
+		1.1p5.gz \
+		1.1p6.gz
 
 MAINTAINER=	adam@veda.is
 
