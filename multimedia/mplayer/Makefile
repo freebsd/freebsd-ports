@@ -7,6 +7,7 @@
 
 PORTNAME=	mplayer
 PORTVERSION=	0.90.0.10
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://ftp.mplayerhq.hu/MPlayer/releases/ \
 		http://www.mplayerhq.hu/MPlayer/releases/ \
@@ -23,7 +24,6 @@ MAINTAINER=	riggs@rrr.de
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		iconv.3:${PORTSDIR}/converters/libiconv \
 		mp3lame.0:${PORTSDIR}/audio/lame
-RUN_DEPENDS=	${LOCALBASE}/share/mplayer/fonts:${PORTSDIR}/graphics/mplayer-fonts
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -137,6 +137,8 @@ BUILD_DEPENDS+=		${LOCALBASE}/live/liveMedia/libliveMedia.a:${PORTSDIR}/net/live
 CONFIGURE_ARGS+=	--with-extraincdir=${LOCALBASE}/include/freetype2 \
 			--enable-freetype
 LIB_DEPENDS+=		freetype.9:${PORTSDIR}/print/freetype2
+.else
+RUN_DEPENDS+=	${LOCALBASE}/share/mplayer/fonts:${PORTSDIR}/graphics/mplayer-fonts
 .endif
 
 .if defined(WITH_XANIM)
@@ -180,7 +182,6 @@ RUN_DEPENDS+=	${CODEC_DETECTION_FILE}:${CODEC_PORT}
 CONFIGURE_ARGS+=	--with-win32libdir=${LOCALBASE}/lib/win32
 
 CODEC_PORT=	${PORTSDIR}/graphics/win32-codecs
-#CODEC_PORT=	${.CURDIR}/../win32-codecs
 CODEC_DETECTION_FILE!=	${MAKE} -f ${CODEC_PORT}/Makefile -V CODEC_DETECTION_FILE
 .endif
 .endif # ARCH == i386
