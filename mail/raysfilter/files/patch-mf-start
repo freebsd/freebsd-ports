@@ -1,0 +1,20 @@
+--- mf-start.orig	Thu Mar  8 13:44:13 2001
++++ mf-start	Tue Dec 17 17:08:38 2002
+@@ -29,9 +29,9 @@
+ fi
+ LOGFILE="$WORK_DIR/mail-filter.log"
+ 
+-FILTER_PID=`ps -ef | grep $FILTER \
++FILTER_PID=`ps -af | grep $FILTER \
+            | grep -v $0 | grep -v 'grep' \
+-           | awk '{print $2}'`
++           | awk '{print $1}'`
+ if [ -n "$FILTER_PID" ]
+ then
+    DATE=`date +"%d-%b-%Y %T"`
+@@ -85,4 +85,5 @@
+    fi
+    sleep 10
+ done
++
+ 
