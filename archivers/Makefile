@@ -23,7 +23,6 @@
     SUBDIR += unrar
     SUBDIR += unzip
     SUBDIR += zip
-    SUBDIR += zip.with_encryption
     SUBDIR += zoo
 
 .include <bsd.port.subdir.mk>
