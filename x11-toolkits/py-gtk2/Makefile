@@ -5,24 +5,24 @@
 # $FreeBSD$
 
 PORTNAME=	gtk
-PORTVERSION=	1.99.12
+PORTVERSION=	1.99.13
 CATEGORIES=	x11-toolkits python
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/pygtk/1.99
-DISTNAME=	pygtk-${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	pygtk-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	marc@informatik.uni-bremen.de
 
-LIB_DEPENDS=	gtk-x11-2.0:${PORTSDIR}/x11-toolkits/gtk20 \
-		glade-2.0.0:${PORTSDIR}/devel/libglade2 \
+LIB_DEPENDS=	glade-2.0.0:${PORTSDIR}/devel/libglade2 \
 		gtkgl-2.0:${PORTSDIR}/x11-toolkits/gtkglarea2
 RUN_DEPENDS=	${PYNUMERIC}
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOMENG=	yes
+USE_GNOME=	gnomehack
 USE_PYTHON=	yes
 USE_LIBTOOL=	yes
 
