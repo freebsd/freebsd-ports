@@ -1,8 +1,8 @@
 bin/glbiff
-share/doc/glbiff/ChangeLog
-share/doc/glbiff/README
-share/doc/glbiff/README.last-minute
-share/doc/glbiff/TODO
+%%PORTDOCS%%share/doc/glbiff/ChangeLog
+%%PORTDOCS%%share/doc/glbiff/README
+%%PORTDOCS%%share/doc/glbiff/README.last-minute
+%%PORTDOCS%%share/doc/glbiff/TODO
 share/examples/glbiff/dot.glbiffrc.sample
-@dirrm share/doc/glbiff
+%%PORTDOCS%%@dirrm share/doc/glbiff
 @dirrm share/examples/glbiff

@@ -1,0 +1,6 @@
+-----------------------------------------------------------------
+You have installed glbiff, a program to visually represent you of
+new mail.  A sample ~/.glbiffrc file is located at:
+  ${PREFIX}/share/examples/glbiff/dot.glbiffrc.sample
+... and more information is available in the glbiffrc(5) manpage.
+-----------------------------------------------------------------
