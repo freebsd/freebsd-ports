@@ -1,0 +1,14 @@
+File::Remove
+
+remove()   
+
+A Perl 5 module that removes files and directories.
+
+Copyright (c) 1998 Gabor Egressy <gabor@vmunix.com>.
+All rights reserved.  All wrongs reversed.  This program is free
+software; you can redistribute and/or modify it under the same terms as
+Perl itself.
+
+WWW: http://www.cpan.org
+
+-jus (jus@security.za.net)
