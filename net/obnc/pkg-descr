@@ -1,0 +1,4 @@
+This is OpenBSD's nc(1), featuring cleaner code, an interface
+compatible with *hobbit*'s netcat, and IPv6 support.
+
+Please note that despite the port/package name, this installs as bin/nc!
