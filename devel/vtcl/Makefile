@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	vtcl
-PORTVERSION=	1.6.0b2
+PORTVERSION=	1.6.0
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,16 +17,16 @@ COMMENT=	An Application Development Environment For the TCL/TK language
 RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
 
 HAS_CONFIGURE=	yes
+CONFIGURE_ARGS= ${PREFIX}
 NO_BUILD=	yes
 
 pre-configure:
-	@${CHMOD} +x ${WRKSRC}/configure ${WRKSRC}/vtsetup.tcl
 	@${PERL} -pi -e "s|%%LOCALBASE%%|${LOCALBASE}|g" ${WRKSRC}/configure
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/vtcl ${PREFIX}/bin
 	@${MKDIR} ${PREFIX}/lib/vtcl
-.for data in ChangeLog LICENSE README vtcl.tcl vtsetup.tcl
+.for data in ChangeLog LICENSE README vtcl.tcl
 	${INSTALL_DATA} ${WRKSRC}/${data} ${PREFIX}/lib/vtcl
 .endfor
 	@${MKDIR} ${PREFIX}/lib/vtcl/images
@@ -37,7 +37,15 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/images/edit/*.gif ${PREFIX}/lib/vtcl/images/edit
 	@${MKDIR} ${PREFIX}/lib/vtcl/lib
 	${CP} -r ${WRKSRC}/lib/* ${PREFIX}/lib/vtcl/lib
-	@${MKDIR} ${PREFIX}/share/doc/vtcl
-	${INSTALL_DATA} ${WRKSRC}/doc/* ${PREFIX}/share/doc/vtcl
+
+post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/doc/* ${DOCSDIR}
+	@${MKDIR} ${EXAMPLESDIR}/sample
+	${CP} -r ${WRKSRC}/sample/* ${EXAMPLESDIR}/sample
+		@${MKDIR} ${EXAMPLESDIR}/demo
+	${CP} -r ${WRKSRC}/demo/* ${EXAMPLESDIR}/demo
+.endif
 
 .include <bsd.port.mk>
