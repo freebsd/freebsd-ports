@@ -8,7 +8,9 @@
 PORTNAME=	TenDRA
 PORTVERSION=	4.1.2
 CATEGORIES=	lang
-MASTER_SITES=	ftp://alph.dera.gov.uk/pub/TenDRA/
+MASTER_SITES=	ftp://ftp.uni-trier.de/pub/languages/c/implementation/TenDRA/ \
+		ftp://ftp.fh-wiesbaden.de/pub/Languages/C/TenDRA/ \
+		ftp://ftp.mayn.de/pub/unix/devel/compiler/tendra/
 
 MAINTAINER=	rnordier@FreeBSD.org
 
