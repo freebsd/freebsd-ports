@@ -62,8 +62,6 @@ PLIST_SUB=	PHPDOCDIR=${PHPDOCDIR:S/^${PREFIX}\///} \
 pre-fetch:
 	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure.php
 
-post-extract: post-extract-jstring post-extract-ming
-
 post-install:
 .if !defined(STANDALONE)
 	@${ECHO} "Restarting Apache..."
@@ -101,6 +99,14 @@ post-clean:
 
 .if exists(${WRKDIRPREFIX}${.CURDIR}/Makefile.inc)
 .include "${WRKDIRPREFIX}${.CURDIR}/Makefile.inc"
+.endif
+
+post-extract:
+.if target(post-extract-jstring)
+	${MAKE} post-extract-jstring
+.endif
+.if target(post-extract-ming)
+	${MAKE} post-extract-ming
 .endif
 
 .include <bsd.port.mk>
