@@ -22,6 +22,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 PERL_CONFIGURE=	yes
 
 MAN3=	Servlet.3 \
+	Servlet::Config.3 \
 	Servlet::Http::Cookie.3 \
 	Servlet::Http::HttpServlet.3 \
 	Servlet::Http::HttpServletRequest.3 \
@@ -40,9 +41,11 @@ MAN3=	Servlet.3 \
 	Servlet::Util::Principal.3 \
 	Servlet::Filter.3 \
 	Servlet::FilterChain.3 \
+	Servlet::FilterConfig.3 \
 	Servlet::GenericServlet.3 \
 	Servlet::RequestDispatcher.3 \
 	Servlet::Servlet.3 \
+	Servlet::ServletConfig.3 \
 	Servlet::ServletContext.3 \
 	Servlet::ServletContextAttributeEvent.3 \
 	Servlet::ServletContextAttributeListener.3 \
