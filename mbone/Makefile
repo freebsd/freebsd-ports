@@ -16,5 +16,6 @@
     SUBDIR += vic
     SUBDIR += wb
     SUBDIR += wbd
+    SUBDIR += xspeakfree
 
 .include <bsd.port.subdir.mk>
