@@ -1,22 +1,22 @@
-*** Makefile.orig	Wed Feb  1 23:08:49 1995
---- Makefile	Thu Feb  2 12:40:50 1995
+*** Makefile.orig	Thu Feb  9 17:36:13 1995
+--- Makefile	Thu Feb  9 23:57:16 1995
 ***************
 *** 11,21 ****
   #  hpalib, hplow, hp3, dec, solaris, sparc, linux, freebsd, sgi, 
-  #  soundblaster, aix.
-  # gmake needed to handle this file in FreeBSD
+  #  soundblaster, aix, next.
+  # gmake needed to handle this file in FreeBSD and NeXTStep
 ! MACHINE = sparc
   
   # The name of your C compiler. For most machines this will be
   # either 'cc' or 'gcc'.
-! CC = gcc
+! CC = acc
   
   OPTS=-c
   
 --- 11,21 ----
   #  hpalib, hplow, hp3, dec, solaris, sparc, linux, freebsd, sgi, 
-  #  soundblaster, aix.
-  # gmake needed to handle this file in FreeBSD
+  #  soundblaster, aix, next.
+  # gmake needed to handle this file in FreeBSD and NeXTStep
 ! MACHINE = freebsd
   
   # The name of your C compiler. For most machines this will be
@@ -26,36 +26,24 @@
   OPTS=-c
   
 ***************
-*** 26,36 ****
-  #
-  # If you don't wish to use the 'make install' and 'make install.man'
-  # commands, you can ignore these.
-! BIN_DIR = /users/algo/espie/pub/bin
-! MAN_DIR = /usr/local/man
+*** 31,37 ****
+  MAN_DIR = $(PREFIX)/man
   
   # Where to put the compression methods description
-! COMPRESSION_FILE=/users/algo/espie/pub/lib/compression_methods
+! COMPRESSION_FILE=$(PREFIX)/lib/compression_methods
   
   # How to install the binaries and manpage. If you have a unix system,
   # use the GNU install program if you have it, otherwise try 'cp'. For
---- 26,40 ----
-  #
-  # If you don't wish to use the 'make install' and 'make install.man'
-  # commands, you can ignore these.
-! PREFIX=/usr/local
-! #BIN_DIR = /users/algo/espie/pub/bin
-! BIN_DIR = $(PREFIX)/bin
-! #MAN_DIR = /usr/local/man
-! MAN_DIR = $(PREFIX)/man
+--- 31,37 ----
+  MAN_DIR = $(PREFIX)/man
   
   # Where to put the compression methods description
-! #COMPRESSION_FILE=/users/algo/espie/pub/lib/compression_methods
 ! COMPRESSION_FILE=$(PREFIX)/etc/compression_methods
   
   # How to install the binaries and manpage. If you have a unix system,
   # use the GNU install program if you have it, otherwise try 'cp'. For
 ***************
-*** 51,58 ****
+*** 52,59 ****
   #
   # If you don't wish to use the 'make install' and 'make install.man'
   # commands, you can ignore these.
@@ -64,7 +52,7 @@
   ###############################################################################
   #
   # C compiler flags and libraries for each machine.
---- 55,64 ----
+--- 52,61 ----
   #
   # If you don't wish to use the 'make install' and 'make install.man'
   # commands, you can ignore these.
