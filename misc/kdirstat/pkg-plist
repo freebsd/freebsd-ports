@@ -1,0 +1,56 @@
+bin/kdirstat
+share/applnk/Utilities/kdirstat.kdelnk
+share/apps/kdirstat/pics/directory.xpm
+share/apps/kdirstat/pics/dotentry.xpm
+share/apps/kdirstat/pics/file.xpm
+share/apps/kdirstat/pics/lockedfolder.xpm
+share/apps/kdirstat/pics/symlink.xpm
+share/apps/kdirstat/pics/working.xpm
+share/apps/kdirstat/toolbar/compress.xpm
+share/apps/kdirstat/toolbar/contents.xpm
+share/apps/kdirstat/toolbar/exit.xpm
+share/apps/kdirstat/toolbar/kde.xpm
+share/apps/kdirstat/toolbar/kfm.xpm
+share/apps/kdirstat/toolbar/kvt.xpm
+share/apps/kdirstat/toolbar/openurl.xpm
+share/apps/kdirstat/toolbar/refresh.xpm
+share/apps/kdirstat/toolbar/trashbin.xpm
+share/apps/kdirstat/toolbar/up.xpm
+share/doc/HTML/de/kdirstat/index.html
+share/doc/HTML/de/kdirstat/kdirstat-1.html
+share/doc/HTML/de/kdirstat/kdirstat-2.html
+share/doc/HTML/de/kdirstat/kdirstat-3.html
+share/doc/HTML/de/kdirstat/kdirstat-4.html
+share/doc/HTML/de/kdirstat/kdirstat-5.html
+share/doc/HTML/de/kdirstat/kdirstat-6.html
+share/doc/HTML/de/kdirstat/kdirstat-7.html
+share/doc/HTML/de/kdirstat/kdirstat-8.html
+share/doc/HTML/de/kdirstat/kdirstat-9.html
+share/doc/HTML/de/kdirstat/kdirstat.html
+share/doc/HTML/de/kdirstat/logotp3.gif
+share/doc/HTML/de/kdirstat/mainwin.gif
+share/doc/HTML/de/kdirstat/settings-cleanups.gif
+share/doc/HTML/de/kdirstat/settings-tree-colors.gif
+share/doc/HTML/en/kdirstat/index.html
+share/doc/HTML/en/kdirstat/kdirstat-1.html
+share/doc/HTML/en/kdirstat/kdirstat-2.html
+share/doc/HTML/en/kdirstat/kdirstat-3.html
+share/doc/HTML/en/kdirstat/kdirstat-4.html
+share/doc/HTML/en/kdirstat/kdirstat-5.html
+share/doc/HTML/en/kdirstat/kdirstat-6.html
+share/doc/HTML/en/kdirstat/kdirstat-7.html
+share/doc/HTML/en/kdirstat/kdirstat-8.html
+share/doc/HTML/en/kdirstat/kdirstat-9.html
+share/doc/HTML/en/kdirstat/kdirstat.html
+share/doc/HTML/en/kdirstat/logotp3.gif
+share/doc/HTML/en/kdirstat/mainwin.gif
+share/doc/HTML/en/kdirstat/settings-cleanups.gif
+share/doc/HTML/en/kdirstat/settings-tree-colors.gif
+share/icons/kdirstat.xpm
+share/icons/mini/kdirstat.xpm
+share/locale/de/LC_MESSAGES/kdirstat.mo
+@dirrm share/doc/HTML/en/kdirstat
+@dirrm share/doc/HTML/de/kdirstat
+@dirrm share/apps/kdirstat/toolbar
+@dirrm share/apps/kdirstat/pics
+@dirrm share/apps/kdirstat
