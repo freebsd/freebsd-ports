@@ -47,6 +47,7 @@
     SUBDIR += geist
     SUBDIR += geomview
     SUBDIR += gfont
+    SUBDIR += giblib
     SUBDIR += gif2png
     SUBDIR += gifmerge
     SUBDIR += gifsicle
