@@ -6,19 +6,19 @@
 #
 
 PORTNAME=	sawfish
-PORTVERSION=	1.0
-PORTREVISION=	1
+PORTVERSION=	1.0.1
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sawmill
 
 MAINTAINER=	gnome@FreeBSD.org
 
-LIB_DEPENDS=	rep.10:${PORTSDIR}/lang/librep
-BUILD_DEPENDS=	${X11BASE}/libexec/rep/${ARCH}--freebsd${OSREL}/gtk.so:${PORTSDIR}/x11-toolkits/rep-gtk
-RUN_DEPENDS=	${X11BASE}/libexec/rep/${ARCH}--freebsd${OSREL}/gtk.so:${PORTSDIR}/x11-toolkits/rep-gtk
+LIB_DEPENDS=	rep.11:${PORTSDIR}/lang/librep
+BUILD_DEPENDS=	${X11BASE}/libexec/rep/${GNUHOST}/gtk.so:${PORTSDIR}/x11-toolkits/rep-gtk
+RUN_DEPENDS=	${X11BASE}/libexec/rep/${GNUHOST}/gtk.so:${PORTSDIR}/x11-toolkits/rep-gtk
 
-PLIST_SUB=	GNUHOST=${ARCH}--freebsd${OSREL} VERSION=${PORTVERSION}
+GNUHOST=	${ARCH}-pc-freebsd${OSREL:C/\..*//}
+PLIST_SUB=	GNUHOST=${GNUHOST} VERSION=${PORTVERSION}
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
@@ -30,6 +30,7 @@ CONFIGURE_ARGS=	--with-readline \
 		--datadir=${PREFIX}/share
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_TARGET=	${ARCH}-freebsd${OSREL:C/\..*//}
 
 .include <bsd.port.pre.mk>
 

@@ -91,8 +91,8 @@ share/locale/ko/LC_MESSAGES/sawfish.mo
 share/locale/nl/LC_MESSAGES/sawfish.mo
 share/locale/no/LC_MESSAGES/sawfish.mo
 share/locale/pl/LC_MESSAGES/sawfish.mo
+share/locale/pt/LC_MESSAGES/sawfish.mo
 share/locale/pt_BR/LC_MESSAGES/sawfish.mo
-share/locale/pt_PT/LC_MESSAGES/sawfish.mo
 share/locale/ro/LC_MESSAGES/sawfish.mo
 share/locale/ru/LC_MESSAGES/sawfish.mo
 share/locale/sk/LC_MESSAGES/sawfish.mo
@@ -101,8 +101,8 @@ share/locale/sv/LC_MESSAGES/sawfish.mo
 share/locale/tr/LC_MESSAGES/sawfish.mo
 share/locale/uk/LC_MESSAGES/sawfish.mo
 share/locale/wa/LC_MESSAGES/sawfish.mo
-share/locale/zh_CN.GB2312/LC_MESSAGES/sawfish.mo
-share/locale/zh_TW.Big5/LC_MESSAGES/sawfish.mo
+share/locale/zh_CN/LC_MESSAGES/sawfish.mo
+share/locale/zh_TW/LC_MESSAGES/sawfish.mo
 share/sawfish/%%VERSION%%/lisp/anim-outline.jl
 share/sawfish/%%VERSION%%/lisp/anim-outline.jlc
 share/sawfish/%%VERSION%%/lisp/audio-events.jl
