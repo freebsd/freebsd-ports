@@ -6,20 +6,20 @@
 #
 
 PORTNAME=	mtoolsfm
-PORTVERSION=	1.7
+PORTVERSION=	1.8
 CATEGORIES=	x11-fm
 MASTER_SITES=	http://www.core-coutainville.org/MToolsFM/archive/SOURCES/
-DISTNAME=	MToolsFM-${PORTVERSION}-2
+DISTNAME=	MToolsFM-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
 RUN_DEPENDS=	mtools:${PORTSDIR}/emulators/mtools
 
-WRKSRC=		${WRKDIR}/MToolsFM-${PORTVERSION}
-
 USE_X_PREFIX=	yes
 USE_GTK=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LIBS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-conffile="${PREFIX}/etc/mtoolsfm.conf" \
 		--with-mtoolsdir="${LOCALBASE}/bin" \
 		--disable-gtktest
@@ -27,12 +27,14 @@ CONFIGURE_ARGS=	--with-conffile="${PREFIX}/etc/mtoolsfm.conf" \
 MAN1=		mtoolsfm.1
 
 post-patch:
-	@${PERL} -pi.in \
-		-e "s|%%PREFIX%%|${PREFIX}|g;" \
-		-e "s|%%LOCALBASE%%|${LOCALBASE}|g" ${WRKSRC}/MToolsFM.1
+	@${PERL} -pi -e 's|MToolsFM|mtoolsfm|g ; \
+		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
+	@${PERL} -pi -e 's|%%PREFIX%%|${PREFIX}|g ; \
+		 s|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/MToolsFM.1
+	@find ${WRKSRC} -name 'Makefile.in' | xargs ${PERL} -pi -e \
+		's|MToolsFM|mtoolsfm|g'
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/MToolsFM ${PREFIX}/bin/mtoolsfm
-	${INSTALL_MAN} ${WRKSRC}/MToolsFM.1 ${MANPREFIX}/man/man1/mtoolsfm.1
+pre-build:
+	@${LN} -sf ${WRKSRC}/MToolsFM.1 ${WRKSRC}/mtoolsfm.1
 
 .include <bsd.port.mk>
