@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	highlight
-PORTVERSION=	2.2.2
+PORTVERSION=	2.2.5
 PORTEPOCH=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.andre-simon.de/zip/
@@ -22,7 +22,7 @@ USE_GETOPT_LONG=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 MAKEFILE=	makefile
-MAKE_ARGS=	CC="${CXX}" \
+MAKE_ARGS=	CXX="${CXX}" \
 		CFLAGS="${CXXFLAGS} ${CPPFLAGS} -DHAVE_DECL_GETOPT" \
 		LDFLAGS="${LDFLAGS}"
 ALL_TARGET=	${PORTNAME}
@@ -59,7 +59,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/../${i} ${DOCSDIR}
 .endfor
 	@${MKDIR} ${EXAMPLESDIR}
-	${TAR} -C ${WRKSRC}/../utils -cf - . | \
+	${TAR} -C ${WRKSRC}/../examples -cf - . | \
 		${TAR} -C  ${EXAMPLESDIR} --unlink -xf -
 	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR}
 .endif
