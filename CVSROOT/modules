@@ -5460,6 +5460,7 @@ p5-Mac-FileSpec-Unixish	ports/devel/p5-Mac-FileSpec-Unixish
 p5-Mac-Macbinary	ports/archivers/p5-Mac-Macbinary
 p5-Mail-Audit	ports/mail/p5-Mail-Audit
 p5-Mail-Box	ports/mail/p5-Mail-Box
+p5-Mail-Box-Parser-C	ports/mail/p5-Mail-Box-Parser-C
 p5-Mail-Box1	ports/mail/p5-Mail-Box1
 p5-Mail-Bulkmail	ports/mail/p5-Mail-Bulkmail
 p5-Mail-CClient	ports/mail/p5-Mail-CClient
