@@ -12,6 +12,13 @@ MASTER_SITES=	http://wizard.ae.krakow.pl/~mike/download/
 
 MAINTAINER=	dannyboy@FreeBSD.org
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500014
+pre-patch:
+	@${PERL} -pi -e 's/kp_.?proc\.._/ki_/' ${WRKSRC}/process.c
+.endif
+
 GNU_CONFIGURE=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
