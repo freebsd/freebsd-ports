@@ -1,0 +1,23 @@
+[ excerpt from developer's site ]
+It is a free library for decoding mpeg-2 and mpeg-1 video
+streams. The main goals in libmpeg2 development are:
+
+Conformance - libmpeg2 is able to decode all mpeg streams that
+conform to certain restrictions: "constrained parameters" for
+mpeg-1, and "main profile" for mpeg-2. In practice, this is what
+most people are using. For streams that follow these restrictions,
+we believe libmpeg2 is 100% conformant to the mpeg standards - and
+we have a pretty extensive test suite to check this.
+
+Speed - for most current systems, the display will actually take
+more time than the mpeg-2 decoding. For systems that have hardware
+color conversion and scaling (as we can use with the xv extension
+in Xfree 4), you should be able to watch DVD streams on a Celeron
+400. On a PIII/666 with null display you should get about 110 frames
+per second.
+
+Portability - most of the code is written in C, and when we use
+platform-specific optimizations we always have a generic C routine
+to fall back on.
+
+WWW: http://libmpeg2.sourceforge.net/
