@@ -1,5 +1,5 @@
---- config/gdm.conf.in.orig	Fri Aug 23 13:53:53 2002
-+++ config/gdm.conf.in	Sun Oct 13 11:53:36 2002
+--- config/gdm.conf.in.orig	Fri Aug 23 18:53:53 2002
++++ config/gdm.conf.in	Sun Oct 13 17:57:14 2002
 @@ -33,14 +33,14 @@
  # The gdm configuration program that is run from the login screen, you should
  # probably leave this alone
@@ -26,6 +26,15 @@
  # You should probably never change this value unless you have a weird setup
  PidFile=/var/run/gdm.pid
  PostSessionScriptDir=@EXPANDED_SYSCONFDIR@/gdm/PostSession/
+@@ -72,7 +72,7 @@
+ # Reboot, Halt and suspend commands, you can add different commands
+ # separated by a semicolon and gdm will use the first one it can find
+ RebootCommand=/sbin/shutdown -r now;/usr/sbin/shutdown -r now
+-HaltCommand=/usr/bin/poweroff;/sbin/poweroff;/sbin/shutdown -h now;/usr/sbin/shutdown -h now
++HaltCommand=/sbin/shutdown -p now;/usr/sbin/shutdown -p now
+ SuspendCommand=
+ # Probably should not touch the below this is the standard setup
+ ServAuthDir=@EXPANDED_AUTHDIR@
 @@ -84,16 +84,16 @@
  UserAuthFBDir=/tmp
  UserAuthFile=.Xauthority
