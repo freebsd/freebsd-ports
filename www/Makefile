@@ -180,6 +180,7 @@
     SUBDIR += mnogosearch
     SUBDIR += mod_access_identd
     SUBDIR += mod_access_referer
+    SUBDIR += mod_accounting
     SUBDIR += mod_auth_any
     SUBDIR += mod_auth_external
     SUBDIR += mod_auth_kerb

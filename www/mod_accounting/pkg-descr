@@ -1,0 +1,5 @@
+mod_accounting is a simple Apache module that can record 
+traffic statistics (bytes in/out per http request) into
+SQL database (MySQL or PostgreSQL)
+
+WWW: http://mod-acct.sourceforge.net
