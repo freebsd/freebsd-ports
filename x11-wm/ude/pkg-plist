@@ -1,4 +1,8 @@
 bin/uwm
+doc/ude-0.2.7-BETA/html/uwm/uwm_manual.html
+doc/ude-0.2.7-BETA/html/uwm/index.html
+doc/ude-0.2.7-BETA/html/scratch.html
+doc/ude-0.2.7-BETA/html/index.html
 include/ude/ude-i18n.h
 include/ude/ude-bevels.h
 include/ude/ude-box.h
@@ -50,6 +54,9 @@ share/locale/de/LC_MESSAGES/ude.mo
 share/locale/es/LC_MESSAGES/ude.mo
 share/locale/pt_BR/LC_MESSAGES/ude.mo
 share/locale/tr/LC_MESSAGES/ude.mo
+@dirrm doc/ude-0.2.7-BETA/html/uwm
+@dirrm doc/ude-0.2.7-BETA/html
+@dirrm doc/ude-0.2.7-BETA
 @dirrm include/ude
 @dirrm share/ude/config
 @dirrm share/ude/doc
