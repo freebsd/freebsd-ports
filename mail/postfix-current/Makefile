@@ -7,7 +7,7 @@
 
 PORTNAME=	postfix
 PORTVERSION=	20020115
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/experimental/ \
 		ftp://ftp.aet.tu-cottbus.de/pub/postfix_tls/%SUBDIR%/ \
@@ -33,6 +33,9 @@ MAN8=	bounce.8 cleanup.8 defer.8 error.8 flush.8 lmtp.8 local.8 \
 	smtpd.8 spawn.8 trivial-rewrite.8 virtual.8
 
 NO_LATEST_LINK=	yes
+
+CONF1=	main.cf master.cf access aliases canonical pcre_table regexp_table \
+	relocated transport virtual
 
 .if !defined(DEBUG)
 MAKEFILEFLAGS+=	DEBUG=
@@ -80,11 +83,10 @@ do-install:
 	 sample_directory=${PREFIX}/etc/postfix \
 	 readme_directory=${READMEDIR}
 
-	@${INSTALL_DATA} ${WRKSRC}/conf/main.cf \
-		${PREFIX}/etc/postfix/sample-main.cf
-
-	@${INSTALL_DATA} ${WRKSRC}/conf/master.cf \
-		${PREFIX}/etc/postfix/sample-master.cf
+.for file in ${CONF1}
+	${INSTALL_DATA} ${WRKSRC}/conf/${file} \
+		${PREFIX}/etc/postfix/sample-${file}
+.endfor
 
 	@${INSTALL_SCRIPT} \
 		${WRKSRC}/auxiliary/rmail/rmail \

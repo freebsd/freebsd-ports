@@ -1,17 +1,25 @@
 @unexec if cmp -s %D/etc/postfix/main.cf %D/etc/postfix/sample-main.cf; then rm -f %D/etc/postfix/main.cf; fi
 @unexec if cmp -s %D/etc/postfix/master.cf %D/etc/postfix/sample-master.cf; then rm -f %D/etc/postfix/master.cf; fi
+@unexec if cmp -s %D/etc/postfix/access %D/etc/postfix/sample-access; then rm -f %D/etc/postfix/access; fi
+@unexec if cmp -s %D/etc/postfix/aliases %D/etc/postfix/sample-aliases; then rm -f %D/etc/postfix/aliases; fi
+@unexec if cmp -s %D/etc/postfix/canonical %D/etc/postfix/sample-canonical; then rm -f %D/etc/postfix/canonical; fi
+@unexec if cmp -s %D/etc/postfix/pcre_table %D/etc/postfix/sample-pcre_table; then rm -f %D/etc/postfix/pcre_table; fi
+@unexec if cmp -s %D/etc/postfix/regexp_table %D/etc/postfix/sample-regexp_table; then rm -f %D/etc/postfix/regexp_table; fi
+@unexec if cmp -s %D/etc/postfix/relocated %D/etc/postfix/sample-relocated; then rm -f %D/etc/postfix/relocated; fi
+@unexec if cmp -s %D/etc/postfix/transport %D/etc/postfix/sample-transport; then rm -f %D/etc/postfix/transport; fi
+@unexec if cmp -s %D/etc/postfix/virtual %D/etc/postfix/sample-virtual; then rm -f %D/etc/postfix/virtual; fi
 bin/rmail
 etc/postfix/LICENSE
-etc/postfix/access
-etc/postfix/aliases
-etc/postfix/canonical
 etc/postfix/main.cf.default
-etc/postfix/pcre_table
 etc/postfix/post-install
 etc/postfix/postfix-files
 etc/postfix/postfix-script
-etc/postfix/regexp_table
-etc/postfix/relocated
+etc/postfix/sample-access
+etc/postfix/sample-aliases
+etc/postfix/sample-canonical
+etc/postfix/sample-pcre_table
+etc/postfix/sample-regexp_table
+etc/postfix/sample-relocated
 etc/postfix/sample-aliases.cf
 etc/postfix/sample-auth.cf
 etc/postfix/sample-canonical.cf
@@ -40,8 +48,8 @@ etc/postfix/sample-smtp.cf
 etc/postfix/sample-smtpd.cf
 etc/postfix/sample-transport.cf
 etc/postfix/sample-virtual.cf
-etc/postfix/transport
-etc/postfix/virtual
+etc/postfix/sample-transport
+etc/postfix/sample-virtual
 %%SUB_TLS%%etc/postfix/sample-tls.cf
 libexec/postfix/bounce
 libexec/postfix/cleanup
