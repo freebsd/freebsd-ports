@@ -39,6 +39,14 @@ pre-fetch:
 .include "${WRKDIRPREFIX}${.CURDIR}/Makefile.inc"
 .endif
 
+.if ${CONFIGURE_ARGS:M--enable-opaque-lsa} != ""
+PLIST_SUB+=	OSPFAPI_HEADER="include/quagga/ospfapi/ospf_apiclient.h"
+PLIST_SUB+=	OSPFAPI_PATH="@dirrm include/quagga/ospfapi"
+.else
+PLIST_SUB+=	OSPFAPI_HEADER=
+PLIST_SUB+=	OSPFAPI_PATH=
+.endif
+
 .if !defined(ENABLE_USER)
 ENABLE_USER=quagga
 .endif
@@ -86,9 +94,6 @@ pre-everything::
 	@${ECHO} "   TCPSOCKETS       Use TCP/IP sockets for protocol daemons"
 
 pre-configure:
-.if !defined(BATCH)
-	@${RM} -f ${WRKDIRPREFIX}${.CURDIR}/Makefile.inc
-.endif
 	@(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOMAKE_ENV} ${ACLOCAL} )
 	@(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOHEADER_ENV} ${AUTOHEADER} \
 		${AUTOHEADER_ARGS})
