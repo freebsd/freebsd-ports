@@ -44,6 +44,7 @@
     SUBDIR += cksfv
     SUBDIR += clamav
     SUBDIR += clamav-devel
+    SUBDIR += clamsmtp
     SUBDIR += cmd5checkpw
     SUBDIR += cops
     SUBDIR += cp2fwb

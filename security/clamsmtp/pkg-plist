@@ -1,0 +1,4 @@
+@comment $FreeBSD$
+@unexec [ ! -f %%CLAMAV_PID_DIR%%/clamsmtpd.pid ] || %%PREFIX%%/etc/rc.d/clamsmtpd.sh stop || true
+sbin/clamsmtpd
+etc/rc.d/clamsmtpd.sh
