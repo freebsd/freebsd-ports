@@ -1,0 +1,12 @@
+*** externs.h.orig	Tue Nov 22 15:00:07 1994
+--- externs.h	Tue Nov 22 15:01:18 1994
+***************
+*** 72,78 ****
+  #ifdef POSIX_UNISTD
+  # include <unistd.h>
+  # if _POSIX_VERSION < 199009L	/* defined in <unistd.h>: can't test earlier */
+- typedef int	ssize_t;	/* not defined in original POSIX.1 */
+  # endif
+  # include <fcntl.h>
+  #else /* !POSIX_UNISTD */
+--- 72,77 ----
