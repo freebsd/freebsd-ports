@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	proftpd
-PORTVERSION=	1.2.10.r3
+PORTVERSION=	1.2.10
 PORTREVISION=	0
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.proftpd.net/distrib/source/ \
@@ -24,7 +24,7 @@ MASTER_SITES=	ftp://ftp.proftpd.net/distrib/source/ \
 		ftp://www.linuxceptional.com/proftpd/ \
 		ftp://ftp.ethereal.com/mirrors/ftp.proftpd.org/ \
 		ftp://mirror.cybercomm.nl/
-DISTNAME=	${PORTNAME}-1.2.10rc3
+DISTNAME=	${PORTNAME}-1.2.10
 
 MAINTAINER?=	mharo@FreeBSD.org
 COMMENT?=	Highly configurable ftp daemon
@@ -66,6 +66,10 @@ CONFIGURE_ARGS+=	--disable-pam
 
 .if defined(WITH_IPV6)
 CONFIGURE_ARGS+=	--enable-ipv6
+.endif
+
+.if defined(WITHOUT_IPV6)
+CONFIGURE_ARGS+=	--disable-ipv6
 .endif
 
 #allow user to override
