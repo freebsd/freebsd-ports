@@ -21,8 +21,7 @@ COMMENT=	Run PPP over Alcatel's USB Speedtouch device
 HAS_CONFIGURE=		yes
 SPEEDTOUCH=		speedtouch-1.2-beta2
 ALCATELDRIVER=		speedmgmt.tar.gz
-NO_CDROM=		"http://www.speedtouchdsl.com/disclaimer_lx.htm"
-NO_PACKAGE=		"http://www.speedtouchdsl.com/disclaimer_lx.htm"
+RESTRICTED=		"http://www.speedtouchdsl.com/disclaimer_lx.htm"
 RESTRICTED_FILES=	${ALCATELDRIVER}
 
 WRKSRC=			${WRKDIR}/${SPEEDTOUCH}
