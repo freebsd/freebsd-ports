@@ -74,7 +74,16 @@ lib/libsqlrclientwrapper.so.0
 %%PORTDOCS%%share/doc/sqlrelay/programming/pythondb.html
 %%PORTDOCS%%share/doc/sqlrelay/programming/ruby.html
 %%PORTDOCS%%share/doc/sqlrelay/programming/zope.html
+%%PORTDOCS%%share/doc/sqlrelay/programming/zope/instance.gif
+%%PORTDOCS%%share/doc/sqlrelay/programming/zope/management.gif
+%%PORTDOCS%%share/doc/sqlrelay/programming/zope/resultset.gif
+%%PORTDOCS%%share/doc/sqlrelay/programming/zope/sqlrelay.gif
+%%PORTDOCS%%share/doc/sqlrelay/programming/zope/test.gif
+%%PORTDOCS%%share/doc/sqlrelay/programming/zope/testzsqlmethod.gif
+%%PORTDOCS%%share/doc/sqlrelay/programming/zope/zsqlmethod.gif
+%%PORTDOCS%%share/doc/sqlrelay/programming/zope/zsqlmethodresultset.gif
 %%PORTDOCS%%share/doc/sqlrelay/running.html
+%%PORTDOCS%%@dirrm share/doc/sqlrelay/programming/zope
 %%PORTDOCS%%@dirrm share/doc/sqlrelay/programming
 %%PORTDOCS%%@dirrm share/doc/sqlrelay/css
 %%PORTDOCS%%@dirrm share/doc/sqlrelay/api/ruby
