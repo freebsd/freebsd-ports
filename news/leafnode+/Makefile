@@ -40,10 +40,10 @@ do-install:
 	@${INSTALL_MAN} ${WRKSRC}/${file} ${PREFIX}/man/man8
 .endfor
 .if !defined{NOPORTDOCS}
-	@${ECHO} "===>  Copying documents to ${PREFIX}/share/doc/leafnode+"
-	@${MKDIR} ${PREFIX}/share/doc/leafnode+
+	@${ECHO_MSG} "===>  Copying documents to ${DOCSDIR}"
+	@${MKDIR} ${DOCSDIR}
 .for file in Changes FAQ INSTALL README config.example
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/leafnode+
+	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
 
