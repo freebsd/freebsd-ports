@@ -40,4 +40,6 @@ do-install:
 	${CP} ${WRKDIR}/icons/* ${PREFIX}/share/doc/vrweb/icons
 .endif
 
+BROKEN=	"does not compile with recent Mesa"
+
 .include <bsd.port.mk>
