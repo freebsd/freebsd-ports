@@ -28,6 +28,8 @@ GNU_CONFIGURE=	yes
 USE_AUTOCONF=	yes
 CONFIGURE_ARGS=	--enable-shared
 RANLIB=		ranlib
+PKGINSTALL=	${PORTSDIR}/lang/tcl82/pkg/INSTALL.tclsh
+PKGDEINSTALL=	${PORTSDIR}/lang/tcl82/pkg/DEINSTALL.tclsh
 
 .include <bsd.port.pre.mk>
 
@@ -53,6 +55,9 @@ post-install:
 .if ${PORTOBJFORMAT} == "aout"
 	${LN} -sf libtcl80jp.so.1.5 ${PREFIX}/lib/libtcl80jp.so
 	${RANLIB} ${PREFIX}/lib/libtcl80jp.a
+.endif
+.if exists(${PKGINSTALL})
+	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL}
 .endif
 	@${CAT}	${PKGDIR}/MESSAGE
 

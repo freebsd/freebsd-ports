@@ -22,7 +22,8 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/unix
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared --enable-threads
 CONFIGURE_ENV=  PORTSDIR=${PORTSDIR}
-PKGINSTALL=     ${PORTSDIR}/lang/tcl80/pkg/INSTALL.tclsh
+PKGINSTALL=     ${PORTSDIR}/lang/tcl82/pkg/INSTALL.tclsh
+PKGDEINSTALL=	${PORTSDIR}/lang/tcl82/pkg/DEINSTALL.tclsh
 
 MAN1=	tclsh.1
 
