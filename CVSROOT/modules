@@ -1826,7 +1826,7 @@ gle		ports/graphics/gle
 gleyes		ports/games/gleyes
 glg		ports/devel/glg
 glib12		ports/devel/glib12
-glib13		ports/devel/glib13
+glib20		ports/devel/glib20
 glibstdc++28	ports/lang/glibstdc++28
 glibwww		ports/www/glibwww
 glide3		ports/graphics/glide3
@@ -2057,7 +2057,7 @@ gtk-theme-switch ports/x11/gtk-theme-switch
 gtk-zenith-theme	ports/x11-toolkits/gtk-zenith-theme
 gtk12		ports/x11-toolkits/gtk12
 gtk12-apireference	ports/x11-toolkits/gtk12-apireference
-gtk13		ports/x11-toolkits/gtk13
+gtk20		ports/x11-toolkits/gtk20
 gtkabale	ports/games/gtkabale
 gtkada		ports/x11-toolkits/gtkada
 gtkballs	ports/games/gtkballs
