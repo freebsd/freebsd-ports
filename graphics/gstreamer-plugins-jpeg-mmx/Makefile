@@ -6,6 +6,7 @@
 #
 
 CATEGORIES=	graphics
+PORTREVISION=	1
 
 GST_PLUGIN=	jpeg-mmx
 

@@ -246,7 +246,7 @@ CONFLICTS+=	gstreamer-plugins-jpeg-mmx-*
 
 # jpeg-mmx
 .if ${GST_PLUGIN}=="jpeg-mmx"
-LIB_DEPEDNS+=	jpeg-mmx.62:${PORTSDIR}/graphics/jpeg-mmx
+LIB_DEPENDS+=	jpeg-mmx.62:${PORTSDIR}/graphics/jpeg-mmx
 CONFLICTS+=	gstreamer-plugins-jpeg-*.*
 
 GST_PLUGIN_DIR= ext/jpeg
