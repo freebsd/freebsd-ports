@@ -1,4 +1,5 @@
 vpopmail/bin/clearopensmtp
+vpopmail/bin/dotqmail2valias
 vpopmail/bin/vaddaliasdomain
 vpopmail/bin/vadddomain
 vpopmail/bin/vadduser
