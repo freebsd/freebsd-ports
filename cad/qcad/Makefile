@@ -10,7 +10,7 @@ PORTVERSION=	2.0.1.3
 PORTREVISION=	2
 CATEGORIES=	cad
 MASTER_SITES=	http://www.ribbonsoft.com/archives/qcad/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-${PORTREVISION}.src
+DISTNAME=	${PORTNAME}-${PORTVERSION}-1.src
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Professional CAD system
