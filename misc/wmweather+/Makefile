@@ -6,6 +6,7 @@
 
 PORTNAME=	wmweather+
 PORTVERSION=	2.9
+PORTREVISION=	1
 CATEGORIES=	misc windowmaker
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	wmweatherplus
@@ -13,12 +14,9 @@ MASTER_SITE_SUBDIR=	wmweatherplus
 MAINTAINER=	harald.wille@students.jku.at
 COMMENT=	Think wmweather with forecasts, weather map, and a sky cond. display
 
-LIB_DEPENDS=	www[a-z]+:${PORTSDIR}/www/libwww \
-		xmltok:${PORTSDIR}/www/libwww \
-		xmlparse:${PORTSDIR}/www/libwww \
+LIB_DEPENDS=	xmlparse:${PORTSDIR}/www/libwww \
 		wraster:${PORTSDIR}/x11-wm/windowmaker \
 		pcre:${PORTSDIR}/devel/pcre \
-		Xpm:${PORTSDIR}/graphics/xpm \
 		tiff:${PORTSDIR}/graphics/tiff \
 		Hermes:${PORTSDIR}/graphics/Hermes \
 		png:${PORTSDIR}/graphics/png \
