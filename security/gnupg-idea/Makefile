@@ -24,20 +24,16 @@ RUN_DEPENDS=	${LOCALBASE}/bin/gpg:${PORTSDIR}/security/gnupg
 
 EXTRACT_AFTER_ARGS=	> ${WRKSRC}/idea.c
 RESTRICTED=	"IDEA is Patented in the USA and many European countries"
+NO_PACKAGE=	${RESTRICTED}
 
 NO_WRKSUBDIR=	yes
 CFLAGS+=	-shared -fPIC -DIS_MODULE
 CFLAGS+=	-Wall -Wcast-align -Wshadow -Wstrict-prototypes
 PLIST=		${WRKDIR}/.PLIST.more
 
-.if !defined(USA_RESIDENT) || ${USA_RESIDENT} != YES && ${USA_RESIDENT} != NO
-NO_PACKAGE=	You must set variable USA_RESIDENT to YES or NO
+.include <bsd.port.pre.mk>
 
-.include <bsd.port.mk>
-
-.elif defined(USA_RESIDENT)
-
-.if ${USA_RESIDENT} == NO || defined(MAKE_IDEA)
+.if defined(MAKE_IDEA) && !defined(WITHOUT_IDEA)
 CONTRIB=	idea rsa
 DISTFILES=	idea.c.gz:idea rsa.c
 EXTRACT_ONLY=	idea.c.gz
@@ -49,8 +45,6 @@ pre-fetch:
 	@${ECHO_MSG}
 	@${ECHO_MSG} You must set variable MAKE_IDEA to YES, only rsa is build now.
 .endif
-
-.include <bsd.port.pre.mk>
 
 pre-extract:
 	@${SED} -e s!%%PREFIX%%!${PREFIX}!g ${PKGMESSAGE}
@@ -80,7 +74,3 @@ do-install:
 .endfor
 
 .include <bsd.port.post.mk>
-
-.else
-
-.endif
