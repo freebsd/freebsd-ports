@@ -1,0 +1,49 @@
+--- Makefile.orig	Mon Apr 14 18:06:02 1997
++++ Makefile	Mon Apr 14 18:08:48 1997
+@@ -1,14 +1,16 @@
+ # Compiler: eg. cc or gcc
+ CC = cc                      
+ 
++#PREFIX=	/local
++
+ # Directory to install tcplist executable
+-BINDIR = /local/bin
++BINDIR = $(PREFIX)/bin
+ 
+ # Directory to install tcplist man page
+-MANDIR = /local/man/man1
++MANDIR = $(PREFIX)/man/man1
+ 
+ # Location of NOIDENT file
+-NOIDENT = /etc/hosts.noident
++NOIDENT = $(PREFIX)/etc/hosts.noident
+ 
+ # Owner of tcplist executable
+ OWNER = root
+@@ -45,18 +47,18 @@
+ # 
+ # Solaris 2.x (using LSOF):
+ #
+-LIBRARIES = -lsocket -lnsl
+-DEFS = -DLSOF
+-MODE = 755
+-GROUP = staff
++#LIBRARIES = -lsocket -lnsl
++#DEFS = -DLSOF
++#MODE = 755
++#GROUP = staff
+ 
+ # 
+ # Generic LSOF:
+ #
+-# LIBRARIES = 
+-# DEFS = -DLSOF
+-# MODE = 755
+-# GROUP = staff
++ LIBRARIES = 
++ DEFS = -DLSOF
++ MODE = 755
++ GROUP = staff
+ #
+ 
+ # If you're using an old version of lsof, uncomment this:
