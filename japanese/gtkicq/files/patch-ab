@@ -1,0 +1,23 @@
+*** src/l10n_conv.c.orig	Tue Aug 17 01:17:43 1999
+--- src/l10n_conv.c	Tue Aug 17 01:17:59 1999
+***************
+*** 10,18 ****
+  #ifdef L10N
+  #ifdef JAPANESE  
+    if(!strcmp(to, "toLocal")){
+!     return toStringEUC( t_in );
+    }else if(!strcmp(to, "toNet")){
+!     return toStringSJIS( t_in );
+    }
+  #else ifdef RUSSIAN
+    if(!strcmp(to, "toLocal")){
+--- 10,18 ----
+  #ifdef L10N
+  #ifdef JAPANESE  
+    if(!strcmp(to, "toLocal")){
+!     return toStringEUCfromSJIS( t_in );
+    }else if(!strcmp(to, "toNet")){
+!     return toStringSJISfromEUC( t_in );
+    }
+  #else ifdef RUSSIAN
+    if(!strcmp(to, "toLocal")){
