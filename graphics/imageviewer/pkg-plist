@@ -1,4 +1,8 @@
 Local/Applications/ImageViewer.app/ImageViewer
+Local/Applications/ImageViewer.app/Resources/English.lproj/Localizable.strings
+Local/Applications/ImageViewer.app/Resources/French.lproj/Localizable.strings
+Local/Applications/ImageViewer.app/Resources/German.lproj/Localizable.strings
+Local/Applications/ImageViewer.app/Resources/AUTHORS
 Local/Applications/ImageViewer.app/Resources/COPYING
 Local/Applications/ImageViewer.app/Resources/FileIcon_.gif.tiff
 Local/Applications/ImageViewer.app/Resources/FileIcon_.jpg.tiff
@@ -16,6 +20,9 @@ Local/Applications/ImageViewer.app/stamp.make
 @dirrm Local/Applications/ImageViewer.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
 @dirrm Local/Applications/ImageViewer.app/%%GNU_ARCH%%/%%OPSYS%%
 @dirrm Local/Applications/ImageViewer.app/%%GNU_ARCH%%
+@dirrm Local/Applications/ImageViewer.app/Resources/German.lproj
+@dirrm Local/Applications/ImageViewer.app/Resources/French.lproj
+@dirrm Local/Applications/ImageViewer.app/Resources/English.lproj
 @dirrm Local/Applications/ImageViewer.app/Resources
 @dirrm Local/Applications/ImageViewer.app
 @dirrm Local/Applications
