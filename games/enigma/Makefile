@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	enigma
-PORTVERSION=	0.50
+PORTVERSION=	0.60
 CATEGORIES=	games
 MASTER_SITES=	http://savannah.nongnu.org/download/enigma/
 
