@@ -23,8 +23,8 @@ System/Library/Headers/gnustep/guile/gstep_guile.h
 System/Library/Headers/gnustep/guile/gg_Object.h
 System/Library/Libraries/Guile/languages/gstep-guile.scm
 System/Library/Libraries/libScriptKit.so
-System/Library/Libraries/libScriptKit.so.1
-System/Library/Libraries/libScriptKit.so.1.0.0
+System/Library/Libraries/libScriptKit.so.%%MAJORLIBVERSION%%
+System/Library/Libraries/libScriptKit.so.%%LIBVERSION%%
 System/Library/Libraries/libgg_base.so
 System/Library/Libraries/libgg_base.so.%%VERSION%%
 System/Library/Libraries/libgg_base.so.1
