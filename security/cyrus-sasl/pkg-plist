@@ -1,8 +1,9 @@
 @comment The following makes sure that the pwcheck and saslauthd
 @comment daemons are stopped before removing the files.
-@unexec if [ -f /var/run/pwcheck.pid ] ; then %D/etc/rc.d/pwcheck.sh stop ; echo " stopped." ; fi
+@unexec if [ -f /var/run/pwcheck.pid ] ; then %D/etc/rc.d/cyrus_pwcheck.sh stop ; echo " stopped." ; fi
 @unexec if [ -f /var/state/saslauthd1/mux.pid ] ; then %D/etc/rc.d/saslauthd1.sh stop ; echo " stopped." ; fi
-etc/rc.d/pwcheck.sh
+etc/rc.d/cyrus_pwcheck.sh
+etc/rc.d/cyrus_sasl1
 etc/rc.d/saslauthd1.sh
 include/sasl1/hmac-md5.h
 include/sasl1/md5.h
@@ -82,6 +83,7 @@ sbin/saslauthd1
 %%PORTDOCS%%%%DOCSDIR%%/rfc2831.txt
 %%PORTDOCS%%%%DOCSDIR%%/gssapi.html
 %%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/macosx.html
 %%PORTDOCS%%%%DOCSDIR%%/programming.html
 %%PORTDOCS%%%%DOCSDIR%%/sysadmin.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
