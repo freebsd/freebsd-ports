@@ -99,7 +99,7 @@ while [ "$1" ]; do
 			echo "CONFIGURE_ARGS+=--with-mysql=\${PREFIX}"
 			;;
 		\"PostgreSQL\")
-			echo "LIB_DEPENDS+=	pq.2:\${PORTSDIR}/databases/postgresql"
+			echo "LIB_DEPENDS+=	pq.2:\${PORTSDIR}/databases/postgresql7"
 			echo "CONFIGURE_ARGS+=--with-pgsql=\${PREFIX}/pgsql"
 			;;
 		\"mSQL\")
