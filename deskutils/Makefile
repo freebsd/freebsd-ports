@@ -25,6 +25,7 @@
     SUBDIR += kronolith
     SUBDIR += logjam
     SUBDIR += loserjabber
+    SUBDIR += mcal
     SUBDIR += mhc
     SUBDIR += mhc-emacs20
     SUBDIR += mhc-xemacs21-mule
