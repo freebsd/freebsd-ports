@@ -6,48 +6,47 @@
 #
 
 PORTNAME=	xalan-j
-PORTVERSION=	2.5.1
+PORTVERSION=	2.6.0
 CATEGORIES=	textproc java
 MASTER_SITES=	${MASTER_SITE_APACHE_XML}
-MASTER_SITE_SUBDIR=	${PORTNAME}/
+MASTER_SITE_SUBDIR=	${PORTNAME}/source
 DISTNAME=	${PORTNAME}_${PORTVERSION:S/./_/g}-src
 
 MAINTAINER=	znerd@FreeBSD.org
 COMMENT=	Apache XSLT processor for transforming XML documents
 
-BUILD_DEPENDS=	${ANT}:${PORTSDIR}/devel/apache-ant
+RUN_DEPENDS=	${LOCALBASE}/bin/javavm:${PORTSDIR}/java/javavmwrapper \
+		${JAVAJARDIR:S,^${PREFIX},${LOCALBASE},}/xml-apis.jar:${PORTSDIR}/textproc/xerces-j
 
-USE_JAVA=	1.2+
+USE_JAVA=	yes
+JAVA_VERSION=	1.2+
+USE_ANT=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION:S/./_/g}
-ANT?=		${LOCALBASE}/bin/ant
-ANT_OPTS=	-Xmx16M
-ANT_TARGET=	jar
+ALL_TARGET=	jar
 .if !defined(NOPORTDOCS)
-ANT_TARGET+=	javadocs
-PORTDOCS=	apidocs
+ALL_TARGET+=	javadocs
+PORTDOCS=	apidocs design
 .endif
 JARFILE=	xalan.jar
-PLIST_FILES=	${JAVAJARDIR:S,^${PREFIX}/,,}/${JARFILE}
-
-# FIXME: the autojavadocs Ant target seems broken with Java 1.4
+PLIST_FILES=	%%JAVAJARDIR%%/${JARFILE} bin/xalan-j
 
 do-configure:
-	${SED} 's|%%PREFIX%%|${PREFIX}|g' ${FILESDIR}/xalan.sh >${WRKDIR}/xalan
-
-do-build:
-	@cd ${WRKSRC} && ${ANT} ${ANT_TARGET}
+	@${SED} 's|%%LOCALBASE%%|${LOCALBASE}|g ; s|%%JAVAJARDIR%%|${JAVAJARDIR}|g' ${FILESDIR}/xalan.sh >${WRKDIR}/xalan-j
 
 do-install:
-	@${ECHO} -n ">> Installing JAR as ${JAVAJARDIR}/${JARFILE}..."
-	@${CP} ${WRKSRC}/build/${JARFILE} ${JAVAJARDIR}/
-	@${ECHO} " [ DONE ]"
-
+	@${ECHO_MSG} -n ">> Installing JAR as ${JAVAJARDIR}/${JARFILE}..."
+	@${MKDIR} ${JAVAJARDIR}
+	@${INSTALL_DATA} ${WRKSRC}/build/${JARFILE} ${JAVAJARDIR}/
+	@${ECHO_MSG} " [ DONE ]"
 .if !defined(NOPORTDOCS)
-	@${ECHO} -n ">> Installing documentation in ${DOCSDIR}..."
-	@${MKDIR} ${DOCSDIR}
-	@${CP} -r ${WRKSRC}/build/docs/apidocs ${DOCSDIR}/
-	@${ECHO} " [ DONE ]"
+	@${ECHO_MSG} -n ">> Installing documentation in ${DOCSDIR}..."
+	@cd ${WRKSRC}/build/docs && ${FIND} ${PORTDOCS} \
+	  | ${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR} > /dev/null 2>&1
+	@${ECHO_MSG} " [ DONE ]"
 .endif
+	@${ECHO_MSG} -n ">> Installing script in ${PREFIX}/bin/..."
+	@${INSTALL_SCRIPT} ${WRKDIR}/xalan-j ${PREFIX}/bin/
+	@${ECHO_MSG} " [ DONE ]"
 
 .include <bsd.port.mk>

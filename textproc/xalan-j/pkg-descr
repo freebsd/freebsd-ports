@@ -1,7 +1,15 @@
-Xalan is an XSLT processor for transforming XML documents into HTML,
-text, or other XML document types. It implements the W3C
-Recommendations for XSL Transformations (XSLT) and the XML Path
-Language (XPath). It can be used from the command line, in an applet
-or a servlet, or as a module in other program.
+Xalan-Java is an XSLT processor for transforming XML documents into HTML, text,
+or other XML document types. It implements the W3C Recommendations for XSL
+Transformations (XSLT) Version 1.0 and the XML Path Language (XPath) Version
+1.0. It can be used from the command line, in an applet or a servlet, or as a
+module in other program.
+
+Xalan-Java recasts Xalan as an implementation of the Transformation API for XML
+(TrAX) interfaces, part of the Java API for XML Processing 1.2. TrAX provides a
+modular framework and a standard API for performing XML transformations, and it
+utilizes system properties to determine which Transformer and which XML parser
+to use.
+
+Xalan-Java also builds on SAX 2 and DOM level 2.
 
 WWW: http://xml.apache.org/xalan-j/

@@ -1,5 +1,4 @@
 #!/bin/sh
-CLASSDIR=%%PREFIX%%/share/java/classes
-exec javavm \
-    -classpath ${CLASSDIR}/xml-apis.jar \
-    -jar ${CLASSDIR}/xalan.jar "$@"
+
+export CLASSPATH=`%%LOCALBASE%%/bin/classpath`:%%JAVAJARDIR%%/xalan.jar
+exec %%LOCALBASE%%/bin/javavm org.apache.xalan.xslt.Process $@
