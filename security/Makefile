@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.18 1997/07/30 22:11:44 jdp Exp $
+# $Id: Makefile,v 1.19 1997/08/07 06:20:57 obrien Exp $
 #
 
     SUBDIR += SSLeay
@@ -16,7 +16,6 @@
     SUBDIR += pidentd
     SUBDIR += rsaref
     SUBDIR += safe-tcl
-    SUBDIR += socks4
     SUBDIR += ssh
     SUBDIR += sudo
     SUBDIR += super
