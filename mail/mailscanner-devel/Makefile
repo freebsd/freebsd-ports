@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	MailScanner
-PORTVERSION=	4.27.3
-PORTREVISION=	1
+PORTVERSION=	4.28.1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.sng.ecs.soton.ac.uk/mailscanner/files/4/tar/
 PKGNAMESUFFIX=	-devel
@@ -25,8 +24,8 @@ BUILD_DEPENDS=	\
 	${SITE_PERL}/MIME/Parser.pm:${PORTSDIR}/mail/p5-MIME-Tools \
 	${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp \
 	${SITE_PERL}/Convert/TNEF.pm:${PORTSDIR}/converters/p5-Convert-TNEF \
-	${SITE_PERL}/Net/CIDR.pm:${PORTSDIR}/net-mgmt/p5-Net-CIDR
-
+	${SITE_PERL}/Net/CIDR.pm:${PORTSDIR}/net-mgmt/p5-Net-CIDR \
+	${SITE_PERL}/Archive/Zip.pm:${PORTSDIR}/archivers/p5-Archive-Zip
 RUN_DEPENDS=	${BUILD_DEPENDS} \
 		${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash2 \
 		${LOCALBASE}/bin/tnef:${PORTSDIR}/converters/tnef \
@@ -140,7 +139,7 @@ do-install:
 	#
 	@${MKDIR} ${DATADIR}
 	cd ${WRKSRC}/etc && ${FIND} reports -type d -exec \
-		mkdir ${DATADIR}/{} \;
+		${MKDIR} ${DATADIR}/{} \;
 	cd ${WRKSRC}/etc && ${FIND} reports -type f ! -name "*.orig" -exec \
 		${INSTALL_DATA} {} ${DATADIR}/{}.sample \;
 	${CHMOD} -R ${BINMODE} ${DATADIR}/reports
@@ -166,7 +165,7 @@ do-install:
 	${INSTALL_DATA} ${FILESDIR}/README.FreeBSD.port ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOC_FILES} ${DOCSDIR}
 	cd ${WRKSRC}/docs && \
-		${FIND} * -type d -exec mkdir ${DOCSDIR}/{} \; && \
+		${FIND} * -type d -exec ${MKDIR} ${DOCSDIR}/{} \; && \
 		${FIND} * -type f ! -name "*.orig" -exec \
 			${INSTALL_DATA} {} ${DOCSDIR}/{} \;
 .endif

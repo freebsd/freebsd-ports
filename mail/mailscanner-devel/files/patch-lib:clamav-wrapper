@@ -1,0 +1,14 @@
+$FreeBSD$
+
+--- ../MailScanner-4.27.5.orig/lib/clamav-wrapper	Thu Feb 26 15:25:51 2004
++++ lib/clamav-wrapper	Thu Feb 26 15:26:23 2004
+@@ -51,6 +51,9 @@
+ 
+ # You may want to check this script for bash-isms
+ 
++PATH=$PATH:/usr/local/bin
++export PATH
++
+ TempDir="/tmp/clamav.$$"
+ ClamUser="clamav"
+ ClamGroup="clamav"

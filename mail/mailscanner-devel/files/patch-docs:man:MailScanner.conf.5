@@ -1,34 +1,10 @@
---- ../MailScanner-4.27.3.orig/docs/man/MailScanner.conf.5	Fri Feb 13 11:29:03 2004
-+++ docs/man/MailScanner.conf.5	Fri Feb 13 12:56:36 2004
+$FreeBSD$
+
+--- ../MailScanner-4.27.5.orig/docs/man/MailScanner.conf.5	Thu Feb 26 15:25:49 2004
++++ docs/man/MailScanner.conf.5	Thu Feb 26 15:27:43 2004
 @@ -1,4 +1,4 @@
--.TH "MailScanner.conf" "5" "4.26.6" "Julian Field" "Mail"
-+.TH "MailScanner.conf" "5" "4.27.3" "Julian Field" "Mail"
+-.TH "MailScanner.conf" "5" "4.27.4" "Julian Field" "Mail"
++.TH "MailScanner.conf" "5" "4.28.1" "Julian Field" "Mail"
  .SH "NAME"
  .LP 
  MailScanner.conf \- Main configuration for MailScanner
-@@ -1463,6 +1463,9 @@
- .br 
- "attachment" \- Convert the original message into an attachment of the message. This means the user has to take an extra step to open the spam, and stops "web bugs" very effectively.
- 
-+.br 
-+"bounce" \- bounce the spam message. This option should not be used and must be enabled with the "Enable Spam Bounce" option first.
-+
- .TP 
- \fBHigh Scoring Spam Actions\fR
- Default: deliver
-@@ -1518,6 +1521,15 @@
- 
- .br 
- If you use the 'notify' Spam Action or High Scoring Spam Action then this is the location of the notification message that is sent to the original recipients of the message.
-+
-+.TP 
-+\fBEnable Spam Bounce\fR
-+Default: %rules\-dir%/bounce.rules
-+.br 
-+
-+.br 
-+You can use this ruleset to enable the "bounce" Spam Action. You must *only* enable this for mail from sites with which you have agreed to bounce possible spam. Use it on low\-scoring spam only (<10) and only to your regular customers for use in the rare case that a message is mis\-tagged as spam when it shouldn't have been. Beware that many sites will automatically delete the bounce messages created by using this option unless you have agreed this with them in advance.
-+
- 
- .SH "System logging"
- .TP 
