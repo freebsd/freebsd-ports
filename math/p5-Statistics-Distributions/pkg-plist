@@ -1,8 +1,8 @@
-lib/perl5/site_perl/%%PERL_VER%%/Statistics/Distributions.pm
-lib/perl5/site_perl/%%PERL_VER%%/auto/Statistics/Distributions/autosplit.ix
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Statistics/Distributions/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/Statistics/Distributions
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Statistics/Distributions
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/auto/Statistics 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Statistics 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Statistics 2>/dev/null || true
+%%SITE_PERL%%/Statistics/Distributions.pm
+%%SITE_PERL%%/auto/Statistics/Distributions/autosplit.ix
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Statistics/Distributions/.packlist
+@dirrm %%SITE_PERL%%/auto/Statistics/Distributions
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Statistics/Distributions
+@unexec rmdir %D/%%SITE_PERL%%/auto/Statistics 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Statistics 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Statistics 2>/dev/null || true
