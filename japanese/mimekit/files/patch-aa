@@ -1,34 +1,36 @@
---- Makefile.orig	Tue Jun 10 13:09:55 1997
-+++ Makefile	Wed Sep 17 06:33:48 1997
-@@ -15,7 +15,7 @@
+--- Makefile.orig	Fri Sep  3 11:05:28 1999
++++ Makefile	Sun Dec 26 11:25:47 1999
+@@ -19,7 +19,7 @@
  
  LIBFILE =	libmimekit.a
  
 -CFLAGS =	-O
-+CFLAGS +=	-O
++CFLAGS ?=	-O
  TARGET =	all
  target:		$(TARGET)
  libx:		Makefile.go
-@@ -58,7 +58,8 @@
+@@ -60,7 +60,7 @@
+ DGDIR =		../src/
+ #endif #############
  
- MMDIR =		../../../src
- MMSDIR =	../
--INSTDIR =	/usr/local/lib
-+PREFIX ?= /usr/local
-+INSTDIR =	${PREFIX}/lib
+-INSTDIR =	/usr/local
++INSTDIR =	${PREFIX}
  
  LOCALFILES =	README \
  		README.LIB \
-@@ -154,9 +155,9 @@
+@@ -163,11 +163,11 @@
  		enMime deMime bench.o test.out sample.out
  
- install:	fromMime toMime $(LIBFILE)
--		install -o bin -g bin -m 755 fromMime $(INSTDIR)
--		install -o bin -g bin -m 755 toMime $(INSTDIR)
--		install -o root -g staff -m 644 $(LIBFILE) $(INSTDIR)
-+		install -s -c -o bin -g bin -m 755 fromMime $(INSTDIR)
-+		install -s  -c -o bin -g bin -m 755 toMime $(INSTDIR)
-+		install -c -o bin -g bin -m 644 $(LIBFILE) $(INSTDIR)
- 		-$(RANLIB) $(INSTDIR)/$(LIBFILE)
+ install:	deMime enMime $(LIBFILE)
+-		install -o bin -g bin -m 755 deMime $(INSTDIR)/bin
+-		install -o bin -g bin -m 755 enMime $(INSTDIR)/bin
++		${BSD_INSTALL_PROGRAM} deMime $(INSTDIR)/bin
++		${BSD_INSTALL_PROGRAM} enMime $(INSTDIR)/bin
  
- config.h:;	$(LKFILE) $(MMDIR)/config.h .
+-#		install -o root -g staff -m 644 $(LIBFILE) $(INSTDIR)/lib
+-#		-$(RANLIB) $(INSTDIR)/lib/$(LIBFILE)
++		${BSD_INSTALL_DATA} $(LIBFILE) $(INSTDIR)/lib
++		-$(RANLIB) $(INSTDIR)/lib/$(LIBFILE)
+ 
+ ystring.h:;	$(LKFILE) ../include/ystring.h
+ html.c:;	$(LKFILE) ../rary/html.c .

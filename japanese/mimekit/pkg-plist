@@ -1,5 +1,5 @@
-lib/fromMime
-lib/toMime
+bin/deMime
+bin/enMime
 lib/libmimekit.a
 share/doc/mimekit/README.LIB
 share/doc/mimekit/README.PGP
