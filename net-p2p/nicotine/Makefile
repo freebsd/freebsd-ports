@@ -13,7 +13,8 @@ MASTER_SITES=	http://nicotine.thegraveyard.org/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK2 SoulSeek filesharing client
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gtk/__init__.py:${PORTSDIR}/x11-toolkits/py-gtk2
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gtk/__init__.py:${PORTSDIR}/x11-toolkits/py-gtk2 \
+		${PYTHON_SITELIBDIR}/bsddb3/__init__.py:${PORTSDIR}/databases/py-bsddb3
 
 USE_BZIP2=		yes
 USE_PYTHON=		yes
