@@ -7,7 +7,7 @@
 
 PORTNAME=	grace
 PORTVERSION=	5.1.14
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math print
 #
 # You never know when and why it is moved to ../src/old/   :-)
@@ -30,7 +30,7 @@ LIB_DEPENDS=	Xbae:${PORTSDIR}/x11-toolkits/xbae 	\
 		png.5:${PORTSDIR}/graphics/png		\
 		t1:${PORTSDIR}/devel/t1lib		\
 		XmHTML.1:${PORTSDIR}/x11-toolkits/xmhtml \
-		pdf.6:${PORTSDIR}/print/pdflib
+		pdf.7:${PORTSDIR}/print/pdflib
 
 MAN1=		convcal.1 grace.1 xmgrace.1 gracebat.1 grconvert.1
 
