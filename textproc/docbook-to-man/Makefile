@@ -37,6 +37,7 @@ RUN_DEPENDS+=	${LOCALBASE}/share/sgml/docbook:${PORTSDIR}/textproc/docbook
 
 USE_IMAKE=	yes
 USE_X_PREFIX=	no
+USE_XLIB=	yes
 XFREE86_HTML_MAN= no
 
 MAN1=	oinstant.1
