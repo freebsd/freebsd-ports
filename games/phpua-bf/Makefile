@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	phpua
 MAINTAINER=	hido@neojapangz.com
 COMMENT=	A Battlefield 1942 plugin for phpUA
 
-RUN_DEPENDS=	${PKG_DBDIR}/phpua-engine-1.1.0b:${PORTSDIR}/games/phpua-engine
+RUN_DEPENDS=	${PHPUA}/index.php:${PORTSDIR}/games/phpua-engine
 
 # Some variables you can change
 PHPUA?=		www/data/phpua
