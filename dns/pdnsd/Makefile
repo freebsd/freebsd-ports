@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	pdnsd
-PORTVERSION=	1.1.11a
+PORTVERSION=	1.2
 CATEGORIES=	dns
-MASTER_SITES=	http://www.phys.uu.nl/~rombouts/pdnsd/
+MASTER_SITES=	http://www.phys.uu.nl/~rombouts/pdnsd/releases/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-par
 
 MAINTAINER=	ports@oven.org
@@ -20,6 +20,7 @@ CONFIGURE_ARGS=	--with-cachedir=${PDNSDB} \
 		--enable-ipv6
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
+MAN5=		pdnsd.conf.5
 MAN8=		pdnsd.8 pdnsd-ctl.8
 
 PDNSDB=		/var/db/pdnsd
