@@ -15,6 +15,8 @@ MASTER_SITES=	ftp://ftp.flightgear.org/pub/fgfs/Source/:src \
 MAINTAINER=	des@FreeBSD.org
 COMMENT=	The FlightGear flight simulator
 
+BROKEN=		"Missing dependency"
+
 BASEVERSION=	${PORTVERSION}
 BASEFILE=	fgfs-base-${BASEVERSION}${EXTRACT_SUFX}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:src \

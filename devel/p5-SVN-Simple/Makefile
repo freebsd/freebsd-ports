@@ -18,6 +18,8 @@ COMMENT=	Simple interface to SVN::Delta::Editor
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/SVN/Core.pm:${PORTSDIR}/devel/subversion-perl
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+BROKEN=		"Missing dependency"
+
 PERL_CONFIGURE=	yes
 
 MAN3=		SVN::Simple::Edit.3 SVN::Simple::Editor.3
