@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	httrack
-PORTVERSION=	3.32.00
+PORTVERSION=	3.32.03
 CATEGORIES=	www
 MASTER_SITES=	http://httrack.free.fr/mirror/ \
 		http://www.httrack.com/
-DISTNAME=	${PORTNAME}-${PORTVERSION:R}
+DISTNAME=	${PORTNAME}-${PORTVERSION:R}-2
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Easy-to-use offline browser utility and website copier
