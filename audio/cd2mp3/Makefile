@@ -1,6 +1,6 @@
 # New ports collection makefile for:	cd2mp3
 # Date created:				4 January 2000
-# Whom:					Jamie Heckford <jamie@jamiesdomain.co.uk>
+# Whom:					Jamie Heckford <jamie@blackhole.net>
 #
 # $FreeBSD$
 #
@@ -9,12 +9,9 @@ PORTNAME=		cd2mp3
 PORTVERSION=		0.81
 PORTEPOCH=		1
 CATEGORIES=		audio
-# both the NS servers for cd2mp3.org.uk are lame.
-# Informed maintainer - edwin 20021226
-MASTER_SITES=		http://download.cd2mp3.org.uk/${PORTVERSION}/
-MASTER_SITE_SUBDIR=	${PORTVERSION}
+MASTER_SITES=           http://www.blackh0le.net/cd2mp3/dist/${PORTVERSION}/
 
-MAINTAINER=		jamie@jamiesdomain.org.uk
+MAINTAINER=		jamie@blackh0le.net
 
 RUN_DEPENDS=		lame:${PORTSDIR}/audio/lame/ \
 			dagrab:${PORTSDIR}/audio/dagrab
