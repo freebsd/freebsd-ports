@@ -6,25 +6,28 @@
 #
 
 PORTNAME=	SoQt
-PORTVERSION=	1.0.2
-PORTREVISION=	1
+PORTVERSION=	1.2.0
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	ftp://ftp.coin3d.org/pub/coin/src/
+MASTER_SITES=	http://ftp.coin3d.org/coin/src/ \
+		ftp://ftp.coin3d.org/pub/coin/src/
 DIST_SUBDIR=	KDE
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Qt toolkit library for Coin
 
-LIB_DEPENDS=	Coin.41:${PORTSDIR}/graphics/Coin
+LIB_DEPENDS=	Coin.43:${PORTSDIR}/graphics/Coin
 
 USE_QT_VER=	3
-USE_LIBTOOL_VER=13
-CONFIGURE_ENV+=	QTDIR=${QT_PREFIX} CXXFLAGS="-pthread"
-CONFIGURE_ARGS+=	--with-pthread=yes --with-coin=${X11BASE}
-# avoid renaming of soqt-config and soqt-config.1
-CONFIGURE_TARGET=	--target=""
-MAKE_ENV+=	QTDIR=${QT_PREFIX}
+USE_GMAKE=	yes
+USE_LIBTOOL_VER=	15
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	QTDIR="${QT_PREFIX}"
+CONFIGURE_ARGS=	--with-pthread=yes --with-coin=${X11BASE}
 INSTALLS_SHLIB=	yes
+
 MAN1=		soqt-config.1
+
+post-install:
+	@${TOUCH} ${PREFIX}/include/Inventor/Qt/engines/.keep_me
 
 .include <bsd.port.mk>
