@@ -689,6 +689,7 @@ blimitd		ports/sysutils/blimitd
 blitz++		ports/math/blitz++
 block		ports/games/block
 blockade	ports/games/blockade
+blogtk		ports/deskutils/blogtk
 blop		ports/audio/blop
 blt		ports/x11-toolkits/blt
 blue		ports/games/blue
