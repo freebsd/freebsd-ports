@@ -1,9 +1,43 @@
 bin/lynx
 etc/lynx.cfg.default
 @exec if [ ! -f %D/etc/lynx.cfg ] ; then cp -p %D/%F %B/lynx.cfg; fi
+@exec mkdir -p %D/share/lynx_help
+share/doc/lynx/CHANGES
+share/doc/lynx/COPYHEADER
+@exec ln -sf %D/%F %D/share/lynx_help
+share/doc/lynx/COPYING
+@exec ln -sf %D/%F %D/share/lynx_help
+share/doc/lynx/PROBLEMS
+share/doc/lynx/README
+share/doc/lynx/samples/blue-background.lss
+share/doc/lynx/samples/cernrules.txt
+share/doc/lynx/samples/installdirs.html
+share/doc/lynx/samples/jumpsUnix.html
+share/doc/lynx/samples/jumpsVMS.html
+share/doc/lynx/samples/lynx-keymaps
+share/doc/lynx/samples/lynx.com
+share/doc/lynx/samples/lynx.lss
+share/doc/lynx/samples/mailcap
+share/doc/lynx/samples/mild-colors.lss
+share/doc/lynx/samples/mime.types
+share/doc/lynx/test/ALT88592.html
+share/doc/lynx/test/ISO_LATIN1_test.html
+share/doc/lynx/test/README.txt
+share/doc/lynx/test/TestComment.html
+share/doc/lynx/test/c1.html
+share/doc/lynx/test/iso8859-1.html
+share/doc/lynx/test/iso88592.html
+share/doc/lynx/test/raw8bit.html
+share/doc/lynx/test/sgml.html
+share/doc/lynx/test/spaces.html
+share/doc/lynx/test/tabtest.html
+share/doc/lynx/test/unicode.html
+share/lynx_help/COPYHEADER
+share/lynx_help/COPYING
 share/lynx_help/Lynx_users_guide.html
 share/lynx_help/about_lynx.html
 share/lynx_help/keystrokes/alt_edit_help.html
+share/lynx_help/keystrokes/bashlike_edit_help.html
 share/lynx_help/keystrokes/bookmark_help.html
 share/lynx_help/keystrokes/cookie_help.html
 share/lynx_help/keystrokes/dired_help.html
@@ -24,10 +58,8 @@ share/lynx_help/keystrokes/xterm_help.html
 share/lynx_help/lynx-dev.html
 share/lynx_help/lynx_help_main.html
 share/lynx_help/lynx_url_support.html
-share/lynx_help/COPYING
-share/lynx_help/COPYHEADER
-etc/lynx_doc/COPYING
-etc/lynx_doc/COPYHEADER
+@dirrm share/doc/lynx/samples
+@dirrm share/doc/lynx/test
+@dirrm share/doc/lynx
 @dirrm share/lynx_help/keystrokes
 @dirrm share/lynx_help
-@dirrm etc/lynx_doc
