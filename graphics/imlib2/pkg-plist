@@ -1,8 +1,9 @@
-include/X11/imlib.h
 etc/imlib/im_palette.pal
 etc/imlib/imrc
-lib/libIm.a
-lib/libIm.so.4.0
-@exec ldconfig -m %B
-man/man3/imlib.3.gz
+include/Imlib.h
+include/Imlib_private.h
+include/Imlib_types.h
+lib/libImlib.so
+lib/libImlib.so.1
+lib/libImlib.so.1.0
 @dirrm etc/imlib
