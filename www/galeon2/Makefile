@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	galeon2
-PORTVERSION=	1.3.11
+PORTVERSION=	1.3.11.a
 CATEGORIES=	www gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://osdn.dl.sourceforge.net/sourceforge/galeon/
 MASTER_SITE_SUBDIR=	${PORTNAME:S/2$//}
-DISTNAME=	${PORTNAME:S/2$//}-${PORTVERSION}
+DISTNAME=	${PORTNAME:S/2$//}-${PORTVERSION:S/.a$/a/}
 
 MAINTAINER=	gnome@freebsd.org
 COMMENT=	A GNOME 2 Web browser based on gecko (the Mozilla rendering engine)
@@ -87,6 +87,9 @@ post-patch:
 		's|malloc\.h|stdlib.h|g'
 	@${REINPLACE_CMD} -e 's|@prefix@/@DATADIRNAME@|@datadir@|g' \
 		${WRKSRC}/ui/galeon-bookmarks-editor-ui.xml.in
+	@${FIND} ${WRKSRC} -name "intltool-merge.in" | ${XARGS} ${REINPLACE_CMD} -e \
+		's|mkdir $$lang or|mkdir $$lang, 0777 or| ; \
+		 s|^push @INC, "/.*|push @INC, "${LOCALBASE}/share/intltool";|'
 
 post-configure:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g ; \
