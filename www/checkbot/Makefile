@@ -3,7 +3,7 @@
 # Date created:				2. Feb 1998
 # Whom:	      				wosch@FreeBSD.org
 #
-# $Id: Makefile,v 1.8 1997/06/24 18:43:25 jfitz Exp $
+# $Id: Makefile,v 1.1.1.1 1998/03/02 19:11:48 wosch Exp $
 #
 
 DISTNAME=	checkbot-1.51
@@ -17,6 +17,7 @@ BUILD_DEPENDS=  \
 		${PORTSDIR}/www/p5-libwww \
 		${PORTSDIR}/mail/p5-Mail-Tools
 
+BROKEN=		BUILD_DEPENDS list not right
 MAN1=		checkbot.1
 USE_PERL5=	YES
 
