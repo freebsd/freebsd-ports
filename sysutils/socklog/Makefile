@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	socklog
-PORTVERSION=	1.3.1
+PORTVERSION=	1.4.1
 CATEGORIES=	sysutils net
 MASTER_SITES=	http://smarden.org/socklog/
 
