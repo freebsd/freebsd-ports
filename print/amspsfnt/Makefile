@@ -33,9 +33,9 @@ do-install:
 	@${MKDIR} $(PREFIX)/lib/afm
 	$(INSTALL_DATA) ${WRKSRC}/afm/* $(PREFIX)/lib/afm
 
-.ifndef (NOPORTSDOC)
-	@${MKDIR} $(PREFIX)/share/doc/amspsfnt
-	$(INSTALL_DATA) ${WRKSRC}/READ.ME $(PREFIX)/share/doc/amspsfnt
+.ifndef (NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	$(INSTALL_DATA) ${WRKSRC}/READ.ME ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
