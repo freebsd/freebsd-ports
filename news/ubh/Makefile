@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ubh
-PORTVERSION=	2.2
+PORTVERSION=	2.5
 CATEGORIES=	news graphics
 MASTER_SITES=	http://ubh.sourceforge.net/download/
 
@@ -18,7 +18,8 @@ RUN_DEPENDS=	\
 	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Mail/Mailer.pm:${PORTSDIR}/mail/p5-Mail-Tools \
 	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/IO/Stringy.pm:${PORTSDIR}/devel/p5-IO-stringy \
 	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/i386-freebsd/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64 \
-	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/MIME/Decoder.pm:${PORTSDIR}/mail/p5-MIME-Tools
+	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/MIME/Decoder.pm:${PORTSDIR}/mail/p5-MIME-Tools \
+	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/i386-freebsd/String/CRC32.pm:${PORTSDIR}/devel/p5-String-CRC32
 
 NO_BUILD=	YES
 
