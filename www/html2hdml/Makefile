@@ -9,7 +9,6 @@ PORTNAME=	html2hdml
 PORTVERSION=	1.0.2
 CATEGORIES=	www textproc
 MASTER_SITES=	http://downloads.sourceforge.jp/html2hdml/2459/
-PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	An i-mode HTML to EZweb HDML converter
