@@ -9,7 +9,7 @@
 PORTNAME=	flyway
 PORTVERSION=	0.2.2
 CATEGORIES=	misc python
-MASTER_SITES=	http://www.xecu.net/dougbell/flyway/
+MASTER_SITES=	http://www.bellz.org/flyway/
 
 MAINTAINER=	kde@freebsd.org
 
