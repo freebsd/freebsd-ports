@@ -1,0 +1,11 @@
+--- configure	Sat Apr 15 09:59:57 2000
++++ configure.new	Sun May 28 21:23:23 2000
+@@ -5338,7 +5338,7 @@
+   echo "$ac_t""$kde_result" 1>&6
+ fi
+ 
+-bindir=$kde_bindir
++bindir=$prefix/bin
+ 
+ 
+ 
