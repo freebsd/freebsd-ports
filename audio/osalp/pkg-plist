@@ -29,20 +29,15 @@ include/aflib/aflibMemNode.h
 include/aflib/aflibMixerItem.h
 include/aflib/aflibRecorderItem.h
 include/aflib/aflibSampleData.h
-@dirrm include/aflib
-lib/aflib/libaflibBladeFile-0.7.2.so
+lib/aflib/libaflibBladeFile-%%VERSION%%.so
 lib/aflib/libaflibBladeFile.so
-lib/aflib/libaflibBladeFile.la
-lib/aflib/libaflibLameFile-0.7.2.so
+lib/aflib/libaflibLameFile-%%VERSION%%.so
 lib/aflib/libaflibLameFile.so
-lib/aflib/libaflibLameFile.la
-lib/aflib/libaflibMpgFile-0.7.2.so
+lib/aflib/libaflibMpgFile-%%VERSION%%.so
 lib/aflib/libaflibMpgFile.so
-lib/aflib/libaflibMpgFile.la
-lib/aflib/libaflibSoxFile-0.7.2.so
+lib/aflib/libaflibSoxFile-%%VERSION%%.so
 lib/aflib/libaflibSoxFile.so
-lib/aflib/libaflibSoxFile.la
-@dirrm lib/aflib
-lib/libaflib-0.7.2.so
+lib/libaflib-%%VERSION%%.so
 lib/libaflib.so
-lib/libaflib.la
+@dirrm lib/aflib
+@dirrm include/aflib
