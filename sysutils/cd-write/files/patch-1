@@ -5,7 +5,7 @@
  # Tk-based application.  Arranges class bindings for widgets.
  #
 -# SCCS: @(#) tk.tcl 1.87 96/09/30 09:28:02
-+# RCS: @(#) $Id: tk.tcl,v 1.5 1998/11/12 06:22:05 welch Exp $
++# RCS: @(#) $Id: patch-1,v 1.1 1999/05/03 22:49:45 jmz Exp $
  #
  # Copyright (c) 1992-1994 The Regents of the University of California.
  # Copyright (c) 1994-1996 Sun Microsystems, Inc.
@@ -15,8 +15,8 @@
  
 -package require -exact Tk 4.2
 -package require -exact Tcl 7.6
-+package require -exact Tk 8.0
-+package require -exact Tcl 8.0
++package require -exact Tk 8.2
++package require -exact Tcl 8.2
  
  
  # Turn off strict Motif look and feel as a default.
