@@ -39,6 +39,7 @@
     SUBDIR += libepplet
     SUBDIR += lwm
     SUBDIR += mlvwm
+    SUBDIR += mosfet-liquid
     SUBDIR += olvwm
     SUBDIR += oroborus
     SUBDIR += phluid
