@@ -1,0 +1,7 @@
+lib/ruby/site_ruby/uri.rb
+lib/ruby/site_ruby/urireg.rb
+share/examples/ruby/uri/test-uri.rb
+share/examples/ruby/uri/in-uri.txt
+@dirrm share/examples/ruby/uri
+share/doc/ruby/uri/index.html
+@dirrm share/doc/ruby/uri
