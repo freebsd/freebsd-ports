@@ -6264,6 +6264,7 @@ ports_java	ports/java
 ports_korean	ports/korean
 ports_lam	ports/net/lam
 ports_lang	ports/lang
+ports_libedit	ports/devel/libedit
 ports_lukemftp	ports/ftp/lukemftp
 ports_lukemftpd	ports/ftp/lukemftpd
 ports_mail	ports/mail
