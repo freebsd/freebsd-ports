@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	downloader
-PORTVERSION=	1.27
+PORTVERSION=	1.29
 CATEGORIES=	ftp
 MASTER_SITES=	http://www.krasu.ru/soft/chuchelo/files/ \
 		ftp://ftp.server51.freshmeat.net/pub/d4x/ \
