@@ -9,7 +9,7 @@
 
 PORTNAME=	apache
 PORTVERSION=	2.0.50
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD} \
 		http://sheepkiller.nerim.net/ports/${PORTNAME}/:powerlogo
@@ -87,7 +87,7 @@ CONFIGURE_ARGS+=	--enable-v4-mapped
 .   endif
 .endif
 
-.if !defined(WITHOUT_SSL)
+.if !defined(WITHOUT_SSL) || defined(WITHOUT_SSL_MODULES)
 USE_OPENSSL=	yes
 .endif
 
@@ -118,7 +118,7 @@ APACHEDIR=	${.CURDIR}
 APACHEDIR=	${MASTERDIR}
 .endif
 
-.if defined (WITH_LDAP)
+.if defined (WITH_LDAP) || defined (WITH_LDAP_MODULES)
 USE_OPENLDAP=		YES
 CONFIGURE_ARGS+=	--with-ldap \
 			--with-ldap-lib="${LOCALBASE}/lib" \
@@ -161,6 +161,12 @@ CONFIGURE_ARGS+=	--with-mpm=${WITH_MPM:L} ${CONFIGURE_TARGET}
 show-options:
 	@${SED} -ne 's/^##//p' ${APACHEDIR}/Makefile.doc
 
+show-categories:
+.for category in ${ALL_MODULES_CATEGORIES:S/SLAVE_PORT//}
+	@${ECHO_MSG} "${category} contains these modules:"
+	@${ECHO_MSG} "  ${${category}_MODULES}"
+.endfor
+
 show-modules:
 	@for module in ${AVAILABLE_MODULES} ; do \
 	${ECHO_MSG} -n "$${module}: ";\
@@ -177,6 +183,14 @@ show-modules:
 	done
 
 pre-everything::
+	@${ECHO_MSG}	""
+	@${ECHO_MSG}	" To enable a module category: WITH_<CATEGORY>_MODULES"
+	@${ECHO_MSG}	" To disable a module category: WITHOUT_<CATEGORY>_MODULES"
+	@${ECHO_MSG}	""
+	@${ECHO_MSG}	" Per default categories are:"
+	@${ECHO_MSG}	"  ${DEFAULT_MODULES_CATEGORIES}"
+	@${ECHO_MSG}	" Categories available:"
+	@${ECHO_MSG}	"  ${ALL_MODULES_CATEGORIES:C/SLAVE_PORT//}"
 	@${ECHO_MSG}	""
 	@${ECHO_MSG}	"  To see all available knobs, type make show-options"
 	@${ECHO_MSG}    "  You can check your modules configuration by using show-modules"
