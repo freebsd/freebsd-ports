@@ -1,0 +1,12 @@
+sbin/vncryptctl
+sbin/vndecrypt
+%%PORTDOCS%%%%DOCSDIR%%/ru/aes-cbc.rus.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/bf-cbc.rus.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/keyfile.rus.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/README.rus
+%%PORTDOCS%%%%DOCSDIR%%/en/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ru
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/en
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@cwd /
+%%KMODDIR%%/vncrypt.ko
