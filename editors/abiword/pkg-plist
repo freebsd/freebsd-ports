@@ -12,6 +12,7 @@ share/AbiSuite-2.0/AbiWord/glade/ap_UnixDialog_HdrFtr.glade
 share/AbiSuite-2.0/AbiWord/glade/ap_UnixDialog_InsertTable.glade
 share/AbiSuite-2.0/AbiWord/glade/ap_UnixDialog_Insert_DateTime.glade
 share/AbiSuite-2.0/AbiWord/glade/ap_UnixDialog_MailMerge.glade
+share/AbiSuite-2.0/AbiWord/glade/ap_UnixDialog_MetaData.glade
 share/AbiSuite-2.0/AbiWord/glade/ap_UnixDialog_New.glade
 share/AbiSuite-2.0/AbiWord/glade/ap_UnixDialog_PageNumbers.glade
 share/AbiSuite-2.0/AbiWord/glade/ap_UnixDialog_Replace.glade
