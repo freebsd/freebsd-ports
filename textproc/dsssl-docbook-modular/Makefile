@@ -7,7 +7,7 @@
 
 PORTNAME=	dsssl-docbook-modular
 PORTVERSION=	1.78
-PORTREVISION=	0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -21,6 +21,10 @@ COMMENT=	DSSSL stylesheets for the DocBook DTD by Norman Walsh
 NO_MTREE=	yes
 
 INSTDIR=	${PREFIX}/share/sgml/docbook/dsssl/modular
+XMLCATMGR=	${LOCALBASE}/bin/xmlcatmgr
+CATALOG_PORTS_SGML=	${PREFIX}/share/sgml/catalog.ports
+PLIST_SUB=	XMLCATMGR=${XMLCATMGR} DTDDIR=${INSTDIR} \
+		CATALOG_PORTS_SGML=${CATALOG_PORTS_SGML}
 
 do-build:
 	@${RM} -Rf ${WRKSRC}/docsrc
@@ -35,6 +39,7 @@ do-install:
 	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${INSTDIR}
 
 post-install:
+	${XMLCATMGR} -sc ${CATALOG_PORTS_SGML} add CATALOG ${INSTDIR}/catalog
 	@${CAT} ${FILESDIR}/install-note
 
 .include <bsd.port.mk>
