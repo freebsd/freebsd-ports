@@ -42,12 +42,12 @@ pre-extract:
 	@${ECHO_MSG} "    make KANJICODE=sjis"
 	@${ECHO_MSG} "for Shift-JIS.  KANJICODE can be one of sjis, jis or euc."
 	@sleep 10
+
+pre-configure:
 .if !exists(${WRKDIRPREFIX}${.CURDIR}/../ptex-base/work/.build_done.ja-ptex-base-${PORTVERSION})
 	@(cd ${.CURDIR}/../ptex-base; \
 	  ${SETENV} ${MAKE_ENV} ${MAKE})
 .endif
-
-post-extract:
 	@${RM} -rf ${WRKSRC}
 	@${MV} ${WRKDIR}/${SRCDIR} ${WRKDIRPREFIX}${.CURDIR}/../ptex-base/work/tetex-src-${TETEX_VERSION}/texk/web2c
 
