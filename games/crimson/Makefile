@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	crimson
-PORTVERSION=	0.3.8
-PORTREVISION=	1
+PORTVERSION=	0.4.4
 CATEGORIES=	games
 MASTER_SITES=	http://crimson.seul.org/files/
 PKGNAMESUFFIX=	-fields
@@ -19,7 +18,7 @@ GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
-USE_SDL=	mixer sdl
+USE_SDL=	mixer sdl ttf
 
 MAN6=	crimson.6
 
