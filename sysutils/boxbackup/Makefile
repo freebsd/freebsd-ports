@@ -25,6 +25,7 @@ USE_OPENSSL=	yes
 HAS_CONFIGURE=	yes
 USE_REINPLACE=	yes
 USE_RC_SUBR=	yes
+USE_PERL5=		yes
 
 PKGMESSAGE=		${WRKDIR}/pkg-message
 
