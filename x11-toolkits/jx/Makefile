@@ -73,7 +73,7 @@ EXTRALIBFILES_MAKE_DIR=		. sys
 # odd behavior
 POSTBUILD_WRKSRC=	makemake jxlayout
 # post patch preprocessing
-POSTPATCH_FILES=	patch-aa
+POSTPATCH_FILES=	post-patch-aa
 # post configure placement directory
 POSTCONFIGURE_WRKSRC=		include/make/sys
 # configuration preprocessing
@@ -102,7 +102,7 @@ PLIST_SUB+=	PORTDOCS:=
 post-patch:
 .for i in ${CONFIGURE_PREPROCESSING_FILES}
 	@${CP} ${WRKSRC}/${POSTCONFIGURE_WRKSRC}/${i} ${WRKDIR}/${i}.in
-	@cd ${WRKDIR}; ${PATCH} -s ${i}.in < ${FILESDIR}/${POSTPATCH_FILES}
+	@cd ${WRKDIR}; ${PATCH} -s ${i}.in < ${PATCHDIR}/${POSTPATCH_FILES}
 .endfor
 
 pre-configure:
