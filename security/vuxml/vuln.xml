@@ -34,10 +34,11 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <topic>exim buffer overflow when verify = header_syntax is used</topic>
     <affects>
       <package>
-        <name>exim{,-ldap2,-mysql,-postgresql}</name>
-        <range>
-          <lt>exim-4.33+20_1</lt>
-        </range>
+        <name>exim</name>
+        <name>exim-ldap2</name>
+        <name>exim-mysql</name>
+        <name>exim-postgresql</name>
+        <range><lt>4.33+20_1</lt></range>
       </package>
     </affects>
     <description>
