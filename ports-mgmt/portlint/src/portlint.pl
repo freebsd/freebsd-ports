@@ -17,7 +17,7 @@
 # OpenBSD and NetBSD will be accepted.
 #
 # $FreeBSD$
-# $Id: portlint.pl,v 1.63 2004/10/12 04:12:46 marcus Exp $
+# $Id: portlint.pl,v 1.69 2004/11/22 18:21:08 marcus Exp $
 #
 
 use vars qw/ $opt_a $opt_A $opt_b $opt_C $opt_c $opt_h $opt_t $opt_v $opt_M $opt_N $opt_B $opt_V /;
@@ -40,7 +40,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 6;
-my $micro = 8;
+my $micro = 9;
 
 sub l { '[{(]'; }
 sub r { '[)}]'; }
@@ -175,7 +175,7 @@ my @varlist =  qw(
 	PKGDIR COMMENT DESCR PLIST PKGCATEGORY PKGINSTALL PKGDEINSTALL
 	PKGREQ PKGMESSAGE MD5_FILE .CURDIR INSTALLS_SHLIB USE_LIBTOOL_VER
 	INDEXFILE PKGORIGIN CONFLICTS PKG_VERSION PKGINSTALLVER PLIST_FILES
-	OPTIONS
+	OPTIONS INSTALLS_OMF
 );
 
 my $cmd = join(' -V ', "make $makeenv MASTER_SITE_BACKUP=''", @varlist);
@@ -550,30 +550,14 @@ sub checkdescr {
 sub checkplist {
 	my($file) = @_;
 	my($curdir) = ($localbase);
-	my(%omfremoveseen) = ();
-	my(%omfinstallseen) = ();
-	my(%omfseen) = ();
 	my($inforemoveseen, $infoinstallseen, $infoseen) = (0, 0, 0);
-	my(%gconfinstallseen) = ();
-	my(%gconfremoveseen) = ();
-	my(%gconfseen) = ();
-	my(%omfafterinstall) = ();
-	my(%omfafterremove) = ();
 	my($infobeforeremove, $infoafterinstall) = (0, 0);
-	my(%gconfbeforeremove) = ();
-	my(%gconfafterinstall) = ();
 	my($infooverwrite) = (0);
 	my($rcsidseen) = (0);
 
-	my(@exec_omf) = ();
 	my(@exec_info) = ();
-	my(@exec_gconf) = ();
-	my(@unexec_omf) = ();
 	my(@unexec_info) = ();
-	my(@unexec_gconf) = ();
-	my(@omffile) = ();
 	my(@infofile) = ();
-	my(@gconffile) = ();
 
 	my $seen_dirrm_docsdir;
 
@@ -619,34 +603,12 @@ sub checkplist {
 				&perror("WARN: $file [$.]: use \"\@dirrm\" ".
 					"instead of \"\@unexec rmdir\".");
 				}
-			} elsif ($_ =~ /^\@exec[ \t]+scrollkeeper-install[ \t]+-q\s+(\S+)\s+.+$/) {
-				push(@exec_omf, $1);
-				my $ot = $1;
-				$ot =~ s/^\%D\///;
-				$omfinstallseen{$ot} = $.;
 			} elsif (!$autoinfo && $_ =~ /^\@exec[ \t]+install-info\s+(.+)\s+(.+)$/) {
 				$infoinstallseen = $.;
 				push(@exec_info, $1);
-			} elsif ($_ =~ /^\@exec[ \t]+env[ \t]+GCONF_CONFIG_SOURCE=\S+[ \t]+gconftool-2[ \t]+--makefile-install-rule\s+(\S+)\s+.+$/) {
-				push(@exec_gconf, $1);
-				my $gt = $1;
-				$gt =~ s/^\%D\///;
-				$gconfinstallseen{$gt} = $.;
-			} elsif ($autoinfo && $_ =~ /^\@exec[ \t]+install-info\s+(.+)\s+(.+)$/) {
-				&perror("WARN: $file [$.]: \@exec install-info is deprecated in favor of adding info files into the Makefile using the INFO macro.");
-			} elsif ($_ =~ /^\@unexec[ \t]+scrollkeeper-uninstall[ \t]+-q\s+(\S+)\s+.+$/) {
-				push(@unexec_omf, $1);
-				my $ot = $1;
-				$ot =~ s/^\%D\///;
-				$omfremoveseen{$ot} = $.;
 			} elsif (!$autoinfo && $_ =~ /^\@unexec[ \t]+install-info[ \t]+--delete\s+(.+)\s+(.+)$/) {
 				$inforemoveseen = $.;
 				push(@unexec_info, $1);
-			} elsif ($_ =~ /^\@unexec[ \t]+env[ \t]+GCONF_CONFIG_SOURCE=\S+[ \t]+gconftool-2[ \t]+--makefile-uninstall-rule\s+(\S+)\s+.+$/) {
-				push(@unexec_gconf, $1);
-				my $gt = $1;
-				$gt =~ s/^\%D\///;
-				$gconfremoveseen{$gt} = $.;
 			} elsif ($autoinfo && $_ =~ /^\@unexec[ \t]+install-info[ \t]+--delete\s+(.+)\s+(.+)$/) {
 				&perror("WARN: $file [$.]: \@unexec install-info is deprecated in favor of adding info files into the Makefile using the INFO macro.");
 			} elsif ($_ =~ /^\@(exec|unexec)/) {
@@ -661,6 +623,14 @@ sub checkplist {
 					"direct use of ldconfig ".
 					"in PLIST found. use ".
 					"INSTALLS_SHLIB instead.");
+				}
+				if (/scrollkeeper/) {
+					&perror("WARN: $file [$.]: possible ".
+						"direct use of scrollkeeper commands ".
+						"in PLIST found.  Use ".
+						"INSTALLS_OMF instead ".
+						"(see http://www.FreeBSD.org/gnome/docs/porting.html ".
+						"for more details).");
 				}
 			} elsif ($_ =~ /^\@(comment)/) {
 				$rcsidseen++ if (/\$$rcsidstr[:\$]/);
@@ -687,12 +657,12 @@ sub checkplist {
 				"for a way to completely eliminate .la files.");
 		}
 
-		if ($_ =~ /\%gconf.*\.xml/) {
-			&perror("WARN: $file [$.]: explicitly listing \%gconf key files ".
-				"in the plist is discouraged.  This will soon become a ".
-				"fatal error.  See ".
-				"http://www.FreeBSD.org/gnome/docs/porting.html ".
-				"for the preferred way to handle gconf schemas.");
+		if ($_ =~ /\%gconf.*\.xml/ || $_ =~ /gconf.*\.schemas?/) {
+			&perror("FATAL: $file [$.]: explicitly listing \%gconf key files ".
+				"or GConf schema files in the plist is not supported. ".
+				"Use GCONF_SCHEMAS in the Makefile instead. ".
+				"See http://www.FreeBSD.org/gnome/docs/porting.html ".
+				"for more details.");
 		}
 
 		if ($_ =~ m|lib/pkgconfig/[^\.]+.pc$|) {
@@ -707,19 +677,20 @@ sub checkplist {
 				"please define INSTALLS_SHLIB as appropriate");
 		}
 
+		if ($_ =~ m|\.omf$| && $makevar{INSTALLS_OMF} eq '') {
+			&perror("WARN: $file [$.]: installing OMF files, ".
+				"please define INSTALLS_OMF (see the FreeBSD GNOME ".
+				"porting guide at ".
+				"http://www.FreeBSD.org/gnome/docs/porting.html ".
+				"for more details)");
+		}
+
 		if ($autoinfo && $_ =~ /\.info$/) {
 			&perror("WARN: $file [$.]: enumerating info files in the plist is deprecated in favor of adding info files into the Makefile using the INFO macro.");
 		}
 
 		if ($autoinfo && $_ =~ /\.info-\d+$/) {
 			&perror("FATAL: $file [$.]: numbered info files are obsolete and not portable; add info files using the INFO macro in the Makefile.");
-		}
-
-		if ($_ =~ /.*\.omf$/) {
-			$omfseen{$_} = $.;
-			$omfafterinstall{$_}++ if ($omfinstallseen{$_});
-			$omfafterremove{$_}++ if ($omfremoveseen{$_});
-			push(@omffile, $_);
 		}
 
 		if (!$autoinfo) {
@@ -738,13 +709,6 @@ sub checkplist {
 			}
 		}
 
-		if ($_ =~ m|^etc/gconf/schemas/.*\.schemas?$|) {
-			$gconfseen{$_} = $.;
-			$gconfafterinstall{$_}++ if ($gconfinstallseen{$_});
-			$gconfbeforeremove{$_}++ if (!$gconfremoveseen{$_});
-			push(@gconffile, $_);
-		}
-
 		if ($_ =~ /^(\%\%PORTDOCS\%\%)?share\/doc\//) {
 			&perror("WARN: $file [$.]: consider using DOCSDIR macro");
 			$sharedocused++;
@@ -756,8 +720,11 @@ sub checkplist {
 			&perror("WARN: $file [$.]: consider using EXAMPLESDIR macro");
 		}
 
-		if ($_ =~ /^share\/$makevar{PORTNAME}\//) {
-			&perror("WARN: $file [$.]: consider using DATADIR macro");
+		{
+			my $tmpportname = quotemeta($makevar{PORTNAME});
+			if ($_ =~ /^share\/$tmpportname\//) {
+				&perror("WARN: $file [$.]: consider using DATADIR macro");
+			}
 		}
 
 		if ($_ =~ m#man/([^/]+/)?man([$manchapters])/([^\.]+\.[$manchapters])(\.gz)?$#) {
@@ -801,21 +768,6 @@ sub checkplist {
 		&perror("WARN: $file: Both ``\%\%PORTDOCS\%\%\@dirrm \%\%DOCSDIR\%\%'' and ``\%\%PORTDOCS\%\%\@unexec \%D/\%\%DOCSDIR\%\% 2>/dev/null || true'' are missing.  At least one should be used.");
 	}
 
-	# Check that each OMF file has an install and deinstall line.
-	my $omf_install = join(" ", @exec_omf);
-	$omf_install .= ' ';
-	my $omf_deinstall = join(" ", @unexec_omf);
-	$omf_deinstall .= ' ';
-
-	foreach my $of (@omffile) {
-		if ($omf_install !~ /\%D\/\Q$of\E/) {
-			&perror("FATAL: $file: you need an '\@exec scrollkeeper-install -q \%D/$of 2>/dev/null || /usr/bin/true' line");
-		}
-		if ($omf_deinstall !~ /\%D\/$of/) {
-			&perror("FATAL: $file: you need an '\@unexec scrollkeeper-uninstall -q \%D/$of 2>/dev/null || /usr/bin/true' line");
-		}
-	}
-
 	if (!$autoinfo) {
 # check that every infofile has an exec install-info and unexec install-info
 		my $exec_install = join(" ", @exec_info);
@@ -834,58 +786,14 @@ sub checkplist {
 		}
 	}
 
-	# Check that each gconf schema file has an install and deinstall line.
-	my $gconf_install = join(" ", @exec_gconf);
-	$gconf_install .= ' ';
-	my $gconf_deinstall = join(" ", @unexec_gconf);
-	$gconf_deinstall .= ' ';
-
-	foreach my $gf (@gconffile) {
-		if ($gconf_install !~ /\%D\/\Q$gf\E/) {
-			&perror("WARN: $file: you need an '\@exec env GCONF_CONFIG_SOURCE=xml::\%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule \%D/$gf >/dev/null || /usr/bin/true' line");
-		}
-		if ($gconf_deinstall !~ /\%D\/$gf/) {
-			&perror("WARN: $file: you need an '\@unexec env GCONF_CONFIG_SOURCE=xml::\%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule \%D/$gf >/dev/null || /usr/bin/true' line");
-		}
-	}
-
 	if ($rcsidinplist && !$rcsidseen) {
 		&perror("FATAL: $file: RCS tag \"\$$rcsidstr\$\" must be present ".
 			"as \@comment.")
 	}
 
-	if (((!$autoinfo && !$infoseen) || $autoinfo) && !scalar(keys %omfseen) &&
-		!scalar(keys %gconfseen)) {
+	if (((!$autoinfo && !$infoseen) || $autoinfo)) {
 		close(IN);
 		return 1;
-	}
-	if (scalar(keys %omfseen)) {
-		if (!scalar(keys %omfinstallseen)) {
-			&perror("FATAL: $file: scrollkeeper-install must be used to ".
-					"add/delete entries from the ScrollKeeper OMF database.");
-		} else {
-			foreach my $of (keys %omfseen) {
-				if ($omfafterinstall{$of}) {
-					&perror("FATAL: $file [$omfinstallseen{$of}]: move ".
-							"\"\@exec scrollkeeper-install\" ".
-							"line to make sure that it is placed after ".
-							"the $of entry.");
-				}
-			}
-		}
-		if (!scalar(keys %omfremoveseen)) {
-			&perror("FATAL: $file: \"\@unexec scrollkeeper-uninstall\" must ".
-					"be placed after the OMF file it uninstalls.");
-		} else {
-			foreach my $of (keys %omfseen) {
-				if ($omfafterremove{$of}) {
-					&perror("FATAL: $file [$omfremoveseen{$of}]: move ".
-							"\"\@unexec scrollkeeper-uninstall\" ".
-							"line to make sure that it is placed after ".
-							"the $of entry.");
-				}
-			}
-		}
 	}
 
 	if (!$autoinfo && $infoseen) {
@@ -909,35 +817,6 @@ sub checkplist {
 				"\"\@exec install-info --delete\" ".
 				"line to make sure ".
 				"that it is placed before any of the info files. ");
-		}
-	}
-
-	if (scalar(keys %gconfseen)) {
-		if (!scalar(keys %gconfinstallseen)) {
-			&perror("WARN: $file: gconftool-2 must be used to ".
-					"add/delete gconf schema keys.");
-		} else {
-			foreach my $gf (keys %gconfseen) {
-				if ($gconfafterinstall{$gf}) {
-					&perror("FATAL: $file [$gconfinstallseen{$gf}]: move ".
-							"\"\@exec gconftool-2\" ".
-							"line to make sure that it is placed after ".
-							"the $gf entry.");
-				}
-			}
-		}
-		if (!scalar(keys %gconfremoveseen)) {
-			&perror("FATAL: $file: \"\@unexec gconftool-2\" must ".
-					"be placed before the schema file it uninstalls.");
-		} else {
-			foreach my $gf (keys %gconfseen) {
-				if ($gconfbeforeremove{$gf}) {
-					&perror("FATAL: $file [$gconfremoveseen{$gf}]: move ".
-							"\"\@unexec gconftool-2\" ".
-							"line to make sure that it is placed after ".
-							"the $gf entry.");
-				}
-			}
 		}
 	}
 
@@ -1129,6 +1008,16 @@ sub checkmakefile {
 				$makevar{INSTALLS_SHLIB} eq '') {
 				&perror("WARN: PLIST_FILES: installing shared libraries, ".
 					"please define INSTALLS_SHLIB as appropriate");
+				last;
+			}
+		}
+		foreach my $plist_file (@plist_files) {
+			if ($plist_file =~ m|\.omf$| && $makevar{INSTALLS_OMF} eq '') {
+				&perror("WARN: PLIST_FILES: installing OMF files, ".
+					"please define INSTALLS_OMF (see the FreeBSD GNOME ".
+					"porting guide at ".
+					"http://www.FreeBSD.org/gnome/docs/porting.html ".
+					"for more details)");
 				last;
 			}
 		}
@@ -1720,9 +1609,19 @@ DISTFILES DIST_SUBDIR EXTRACT_ONLY
 	}
 
 	print "OK: sanity checking PORTNAME/PORTVERSION.\n" if ($verbose);
-	if ($distname ne '' && $distname eq "$portname-$portversion") {
-		&perror("WARN: $file: DISTNAME is \${PORTNAME}-\${PORTVERSION} by ".
-			"default, you don't need to define DISTNAME.");
+	if ($distname ne '') {
+		if ($distname eq "$portname-$portversion") {
+			&perror("WARN: $file: DISTNAME is \${PORTNAME}-\${PORTVERSION} by ".
+				"default, you don't need to define DISTNAME.");
+		}
+		if ($distname =~ /PORTREVISION/) {
+			&perror("FATAL: $file: DISTNAME contains a reference to ".
+				"PORTREVISION.  You should only be using PORTVERSION");
+		}
+		if ($distname =~ /PORTEPOCH/) {
+			&perror("FATAL: $file: DISTNAME contains a reference to ".
+				"PORTEPOCH.  You should only be using PORTVERSION");
+		}
 	}
 	if ($portname =~ /^$re_lang_short/) {
 		&perror("FATAL: $file: language prefix is automatically".
@@ -2331,7 +2230,7 @@ FETCH_DEPENDS DEPENDS DEPENDS_TARGET
 	# check OPTIONS
 	print "OK: checking OPTIONS.\n" if ($verbose);
 	@oopt = ($makevar{OPTIONS} =~ /(\w+)\s+\".*?\"\s+\w+/sg);
-	@mopt = ($tmp =~ /^\s*\.\s*(?:ifn?def\s+|if\s+\!?\s*defined\s*)\(?\s*WITH(?:OUT)?_(\w+)\s*\)?/mg);
+	@mopt = ($tmp =~ /\(?\s*WITH(?:OUT)?_(\w+)\s*\)?/mg);
 	foreach my $i (@oopt) {
 		if (!grep(/^$i$/, @mopt)) {
 			&perror("WARN: $file: $i is listed in OPTIONS, ".
@@ -2465,6 +2364,7 @@ sub abspathname {
 		if ($verbose);
 	foreach my $s (split(/\n+/, $str)) {
 		$i = '';
+		$s =~ s/#.*$//;
 		if ($s =~ /(^|[ \t\@'"-])(\/[\w\d])/) { #'
 			# suspected pathnames are recorded.
 			$i = $2 . $';
