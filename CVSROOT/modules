@@ -5817,6 +5817,7 @@ p5-Net-Radius	ports/net/p5-Net-Radius
 p5-Net-RawIP	ports/net/p5-Net-RawIP
 p5-Net-RawSock	ports/net/p5-Net-RawSock
 p5-Net-SCP	ports/net/p5-Net-SCP
+p5-Net-SFTP	ports/net/p5-Net-SFTP
 p5-Net-SMPP	ports/net/p5-Net-SMPP
 p5-Net-SMTP-Server	ports/mail/p5-Net-SMTP-Server
 p5-Net-SNMP	ports/net/p5-Net-SNMP
