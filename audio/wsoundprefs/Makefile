@@ -16,6 +16,7 @@ MAINTAINER=	sobomax@FreeBSD.org
 BUILD_DEPENDS=	wmaker:${PORTSDIR}/x11-wm/windowmaker
 LIB_DEPENDS=	PropList.2:${PORTSDIR}/devel/libPropList \
 		wsound.1:${PORTSDIR}/audio/wsoundserver
+RUN_DEPENDS=	wmaker:${PORTSDIR}/x11-wm/windowmaker
 
 USE_IMAKE=	yes
 NO_INSTALL_MANPAGES=yes
