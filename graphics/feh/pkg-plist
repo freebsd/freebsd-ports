@@ -1,5 +1,6 @@
 bin/cam
 bin/feh
+bin/gen_cam_menu.sh
 share/doc/feh/AUTHORS
 share/doc/feh/ChangeLog
 share/doc/feh/README
