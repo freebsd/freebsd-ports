@@ -1,0 +1,12 @@
+--- Makefile.orig	Wed Dec  9 04:49:42 1998
++++ Makefile	Wed Dec  9 04:51:23 1998
+@@ -1992,6 +1992,9 @@
+ 	./echogs -n - $(CC) $(LDFLAGS) $(XLIBDIRS) -o $(GS)$(XE) $(GSUNIX) >_temp_
+ 	./echogs -x 205c >>_temp_
+ 	cat ld.tr >>_temp_
++.if ${PORTOBJFORMAT} == "elf"
++	echo '-lICE -lSM \' >>_temp_
++.endif
+ 	./echogs - $(EXTRALIBS) -lm >>_temp_
+ 	$(SH) <_temp_
+ 

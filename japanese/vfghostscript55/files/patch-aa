@@ -1,5 +1,5 @@
-*** unix-gcc.mak.orig	Wed Jul 15 21:55:59 1998
---- unix-gcc.mak	Wed Jul 15 21:57:23 1998
+*** unix-gcc.mak.orig	Wed Dec  9 04:02:58 1998
+--- unix-gcc.mak	Wed Dec  9 04:04:16 1998
 ***************
 *** 213,219 ****
   # XLDFLAGS can be set from the command line.
@@ -161,3 +161,15 @@
   
   #    Copyright (C) 1990, 1995, 1996, 1997 Aladdin Enterprises.  All rights reserved.
   # 
+***************
+*** 5611,5616 ****
+--- 5614,5622 ----
+  	./echogs -w ldt.tr -n - $(CCLD) $(LDFLAGS) $(XLIBDIRS) -o $(GS_XE)
+  	./echogs -a ldt.tr -n -s gs.$(OBJ) -s
+  	cat ld.tr >>ldt.tr
++ .if ${PORTOBJFORMAT} == "elf"
++ 	echo '-lICE -lSM \' >>ldt.tr
++ .endif
+  	./echogs -a ldt.tr -s - $(EXTRALIBS) -lm
+  	LD_RUN_PATH=$(XLIBDIR); export LD_RUN_PATH; \
+  	XCFLAGS= XINCLUDE= XLDFLAGS= XLIBDIRS= XLIBS= \
