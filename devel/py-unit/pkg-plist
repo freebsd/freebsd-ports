@@ -1,0 +1,4 @@
+lib/%%PYTHON_VERSION%%/site-packages/unittest.py
+lib/%%PYTHON_VERSION%%/site-packages/unittest.pyc
+lib/%%PYTHON_VERSION%%/site-packages/unittestgui.py
+lib/%%PYTHON_VERSION%%/site-packages/unittestgui.pyc
