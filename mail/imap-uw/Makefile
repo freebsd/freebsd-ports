@@ -22,7 +22,7 @@ MAINTAINER=	imap-uw@freebsd.ady.ro
 
 LIB_DEPENDS=	c-client4.7:${PORTSDIR}/mail/cclient
 
-Y2K=		http://www.washington.edu/imap/IMAP-FAQs/FAQ-00002.html
+Y2K=		http://www.washington.edu/imap/IMAP-FAQs/faqs.xml#general1
 
 PAMAUTH?=	yes
 .if ${PAMAUTH} != "no"
