@@ -8,7 +8,8 @@
 PORTNAME=	diehard
 PORTVERSION=	0.1
 CATEGORIES=	math
-MASTER_SITES=	http://stat.fsu.edu/pub/diehard/
+MASTER_SITES=	http://www.cs.hku.hk/~diehard/cdrom/ \
+		http://stat.fsu.edu/pub/diehard/
 DISTNAME=	die.c
 
 MAINTAINER=	skv@FreeBSD.org
