@@ -4012,6 +4012,7 @@ ngpt		ports/devel/ngpt
 ngraph		ports/math/ngraph
 ngrep		ports/net/ngrep
 ngrep-lib	ports/net/ngrep-lib
+nhc98		ports/lang/nhc98
 nice		src/usr.bin/nice
 nicetext	ports/textproc/nicetext
 nickle		ports/lang/nickle
