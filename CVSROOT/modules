@@ -429,6 +429,7 @@ battalion	ports/games/battalion
 battleball	ports/games/battleball
 battlestar	src/games/battlestar
 battstat-applet ports/sysutils/battstat-applet
+baudline	ports/audio/baudline
 bayonne		ports/comms/bayonne
 bbapm		ports/x11-wm/bbapm
 bbbike		ports/german/BBBike
