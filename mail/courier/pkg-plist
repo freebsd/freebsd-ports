@@ -1,14 +1,13 @@
-@exec pw groupshow courier || pw groupadd courier -g 62 -h -
-@exec pw user show courier || pw useradd courier -u 62 -g 62 -h - -d /var/spool/courier -s /sbin/nologin -c "Courier Mail System"
-@exec install -d -o courier -g courier -m 0755 %D/etc/courier/aliasdir
-@exec install -d -o courier -g courier -m 0750 %D/etc/courier/aliases
-@exec install -d -o root -g wheel -m 0755 %D/etc/courier/esmtpacceptmailfor.dir
-@exec install -d -o root -g wheel -m 0755 %D/etc/courier/esmtppercentrelay.dir
-@exec install -d -o courier -g courier -m 0750 %D/etc/courier/filters/active
-@exec install -d -o courier -g courier -m 0755 %D/etc/courier/smtpaccess
-@exec install -d -o courier -g courier -m 0700 %D/etc/courier/webadmin
-@exec install -d -o courier -g courier -m 0755 %D/etc/courier/webadmin/added
-@exec install -d -o courier -g courier -m 0755 %D/etc/courier/webadmin/removed
+@exec pw groupshow %%MAILGRP%% || pw groupadd %%MAILGRP%% -g %%MAILUID%% -h -
+@exec pw user show %%MAILOWN%% || pw useradd %%MAILOWN%% -u %%MAILUID%% -g %%MAILGID%% -h - -d /var/spool/courier -s /sbin/nologin -c "Courier Mail System"
+@exec install -d -o %%MAILOWN%% -g %%MAILGRP%% -m 0755 %D/etc/courier/aliasdir
+@exec install -d -o %%MAILOWN%% -g %%MAILGRP%% -m 0750 %D/etc/courier/aliases
+@exec install -d -o %%MAILOWN%% -g %%MAILGRP%% -m 0755 %D/etc/courier/esmtpacceptmailfor.dir
+@exec install -d -o %%MAILOWN%% -g %%MAILGRP%% -m 0755 %D/etc/courier/esmtppercentrelay.dir
+@exec install -d -o %%MAILOWN%% -g %%MAILGRP%% -m 0750 %D/etc/courier/filters/active
+@exec install -d -o %%MAILOWN%% -g %%MAILGRP%% -m 0755 %D/etc/courier/smtpaccess
+@exec install -d -o %%MAILOWN%% -g %%MAILGRP%% -m 0700 %D/etc/courier/webadmin/added
+@exec install -d -o %%MAILOWN%% -g %%MAILGRP%% -m 0700 %D/etc/courier/webadmin/removed
 @unexec %D/etc/rc.d/courier.sh stop 2>/dev/null || true
 @unexec rm -f %D/etc/courier/*.dat 2>/dev/null || true
 @unexec cmp -s %D/etc/courier/authdaemonrc %D/etc/courier/authdaemonrc.dist && rm -f %D/etc/courier/authdaemonrc 2>/dev/null || true
@@ -17,6 +16,7 @@
 %%SUB_PGSQL%%@unexec cmp -s %D/etc/courier/authpgsqlrc %D/etc/courier/authpgsqlrc.dist && rm -f %D/etc/courier/authpgsqlrc 2>/dev/null || true
 @unexec cmp -s %D/etc/courier/courierd %D/etc/courier/courierd.dist && rm -f %D/etc/courier/courierd 2>/dev/null || true
 @unexec cmp -s %D/etc/courier/esmtpd-msa %D/etc/courier/esmtpd-msa.dist && rm -f %D/etc/courier/esmtpd-msa 2>/dev/null || true
+@unexec cmp -s %D/etc/courier/esmtpd-ssl %D/etc/courier/esmtpd-ssl.dist && rm -f %D/etc/courier/esmtpd-ssl 2>/dev/null || true
 @unexec cmp -s %D/etc/courier/esmtpd %D/etc/courier/esmtpd.dist && rm -f %D/etc/courier/esmtpd 2>/dev/null || true
 @unexec cmp -s %D/etc/courier/imapd-ssl %D/etc/courier/imapd-ssl.dist && rm -f %D/etc/courier/imapd-ssl 2>/dev/null || true
 @unexec cmp -s %D/etc/courier/imapd %D/etc/courier/imapd.dist && rm -f %D/etc/courier/imapd 2>/dev/null || true
@@ -65,6 +65,7 @@ etc/courier/enablefiltering
 etc/courier/esmtp.authpam
 etc/courier/esmtpauthclient
 etc/courier/esmtpd-msa.dist
+etc/courier/esmtpd-ssl.dist
 etc/courier/esmtpd.cnf
 etc/courier/esmtpd.dist
 etc/courier/imapd-ssl.dist
@@ -92,19 +93,20 @@ etc/courier/rfcerrheader.txt
 etc/courier/smtpaccess/default
 etc/courier/webmail.authpam
 @exec [ -e /etc/aliases ] && ln -sf /etc/aliases %D/etc/courier/aliases/system
-@exec [ -f %D/etc/courier/authdaemonrc ] || cp -p %D/etc/courier/authdaemonrc.dist %D/etc/courier/authdaemonrc
-%%SUB_LDAP%%@exec [ -f %D/etc/courier/authldaprc ] || cp -p %D/etc/courier/authldaprc.dist %D/etc/courier/authldaprc
-%%SUB_MYSQL%%@exec [ -f %D/etc/courier/authmysqlrc ] || cp -p %D/etc/courier/authmysqlrc.dist %D/etc/courier/authmysqlrc
-%%SUB_PGSQL%%@exec [ -f %D/etc/courier/authpgsqlrc ] || cp -p %D/etc/courier/authpgsqlrc.dist %D/etc/courier/authpgsqlrc
-@exec [ -f %D/etc/courier/courierd ] || cp -p %D/etc/courier/courierd.dist %D/etc/courier/courierd
-@exec [ -f %D/etc/courier/esmtpd-msa ] || cp -p %D/etc/courier/esmtpd-msa.dist %D/etc/courier/esmtpd-msa
-@exec [ -f %D/etc/courier/esmtpd ] || cp -p %D/etc/courier/esmtpd.dist %D/etc/courier/esmtpd
-@exec [ -f %D/etc/courier/imapd-ssl ] || cp -p %D/etc/courier/imapd-ssl.dist %D/etc/courier/imapd-ssl
-@exec [ -f %D/etc/courier/imapd ] || cp -p %D/etc/courier/imapd.dist %D/etc/courier/imapd
-@exec [ -f %D/etc/courier/ldapaddressbook ] || cp -p %D/etc/courier/ldapaddressbook.dist %D/etc/courier/ldapaddressbook
-%%SUB_LDAP%%@exec [ -f %D/etc/courier/ldapaliasrc ] || cp -p %D/etc/courier/ldapaliasrc.dist %D/etc/courier/ldapaliasrc
-@exec [ -f %D/etc/courier/pop3d-ssl ] || cp -p %D/etc/courier/pop3d-ssl.dist %D/etc/courier/pop3d-ssl
-@exec [ -f %D/etc/courier/pop3d ] || cp -p %D/etc/courier/pop3d.dist %D/etc/courier/pop3d
+@exec [ -f %D/etc/courier/authdaemonrc.dist ] && %D/share/sysconftool/sysconftool %D/etc/courier/authdaemonrc.dist
+%%SUB_LDAP%%@exec [ -f %D/etc/courier/authldaprc.dist ] && %D/share/sysconftool/sysconftool %D/etc/courier/authldaprc.dist
+%%SUB_MYSQL%%@exec [ -f %D/etc/courier/authmysqlrc.dist ] && %D/share/sysconftool/sysconftool %D/etc/courier/authmysqlrc.dist
+%%SUB_PGSQL%%@exec [ -f %D/etc/courier/authpgsqlrc.dist ] && %D/share/sysconftool/sysconftool %D/etc/courier/authpgsqlrc.dist
+@exec [ -f %D/etc/courier/courierd.dist ] && %D/share/sysconftool/sysconftool %D/etc/courier/courierd.dist
+@exec [ -f %D/etc/courier/esmtpd-msa.dist ] && %D/share/sysconftool/sysconftool %D/etc/courier/esmtpd-msa.dist
+@exec [ -f %D/etc/courier/esmtpd-ssl.dist ] && %D/share/sysconftool/sysconftool %D/etc/courier/esmtpd-ssl.dist
+@exec [ -f %D/etc/courier/esmtpd.dist ] && %D/share/sysconftool/sysconftool %D/etc/courier/esmtpd.dist
+@exec [ -f %D/etc/courier/imapd-ssl.dist ] && %D/share/sysconftool/sysconftool %D/etc/courier/imapd-ssl.dist
+@exec [ -f %D/etc/courier/imapd.dist ] && %D/share/sysconftool/sysconftool %D/etc/courier/imapd.dist
+@exec [ -f %D/etc/courier/ldapaddressbook.dist ] && %D/share/sysconftool/sysconftool %D/etc/courier/ldapaddressbook.dist
+%%SUB_LDAP%%@exec [ -f %D/etc/courier/ldapaliasrc.dist ] && %D/share/sysconftool/sysconftool %D/etc/courier/ldapaliasrc.dist
+@exec [ -f %D/etc/courier/pop3d-ssl.dist ] && %D/share/sysconftool/sysconftool %D/etc/courier/pop3d-ssl.dist
+@exec [ -f %D/etc/courier/pop3d.dist ] && %D/share/sysconftool/sysconftool %D/etc/courier/pop3d.dist
 @unexec rmdir %D/etc/courier/aliasdir 2>/dev/null || true
 @unexec rmdir %D/etc/courier/aliases 2>/dev/null || true
 @unexec rmdir %D/etc/courier/esmtpacceptmailfor.dir 2>/dev/null || true
@@ -167,6 +169,7 @@ sbin/courierfilter
 sbin/couriertcpd
 sbin/esmtpd
 sbin/esmtpd-msa
+sbin/esmtpd-ssl
 sbin/filterctl
 sbin/imapd
 sbin/imapd-ssl
@@ -268,6 +271,7 @@ share/courier/courierwebadmin/webadmin.pl
 share/courier/courierwebadmin/webadmin.pm
 @dirrm share/courier/courierwebadmin
 share/courier/esmtpd
+share/courier/esmtpd-ssl
 share/courier/filterctl
 share/courier/imapd
 share/courier/imapd-ssl
@@ -498,7 +502,7 @@ share/courier/webgpg
 %%PORTDOCS%%share/doc/courier/html/courierpop3d.html
 %%PORTDOCS%%share/doc/courier/html/couriertcpd.html
 %%PORTDOCS%%share/doc/courier/html/couriertls.html
-%%SUB_UUCP%%%%PORTDOCS%%share/doc/courier/html/courieruucp.html
+%%PORTDOCS%%%%SUB_UUCP%%share/doc/courier/html/courieruucp.html
 %%PORTDOCS%%share/doc/courier/html/deliverquota.html
 %%PORTDOCS%%share/doc/courier/html/dot-courier.html
 %%PORTDOCS%%share/doc/courier/html/dot-forward.html
@@ -557,93 +561,68 @@ share/courier/webgpg
 %%PORTDOCS%%share/doc/courier/html/userdbpw.html
 %%PORTDOCS%%@dirrm share/doc/courier/html
 %%PORTDOCS%%@dirrm share/doc/courier
-@exec chown courier:courier %D/bin/cancelmsg
-@exec chown root:mail %D/bin/maildrop
-@exec chown root:courier %D/bin/mailq
-@exec chown courier:courier %D/etc/courier
-@exec chown -Rh courier:courier %D/etc/courier/aliases
-@exec chown courier:courier %D/etc/courier/authdaemonrc.dist
-%%SUB_LDAP%%@exec chown root:wheel %D/etc/courier/authldaprc.dist
-@exec chown courier:courier %D/etc/courier/authmodulelist
-%%SUB_MYSQL%%@exec chown root:wheel %D/etc/courier/authmysqlrc.dist
-%%SUB_PGSQL%%@exec chown root:wheel %D/etc/courier/authpgsqlrc.dist
-@exec chown root:wheel %D/etc/courier/courierd.dist
-@exec chown courier:courier %D/etc/courier/dsndelayed.txt
-@exec chown courier:courier %D/etc/courier/dsndelivered.txt
-@exec chown courier:courier %D/etc/courier/dsnfailed.txt
-@exec chown courier:courier %D/etc/courier/dsnfooter.txt
-@exec chown courier:courier %D/etc/courier/dsnheader.txt
-@exec chown courier:courier %D/etc/courier/dsnrelayed.txt
-@exec chown courier:courier %D/etc/courier/dsnsubjectnotice.txt
-@exec chown courier:courier %D/etc/courier/dsnsubjectwarn.txt
-@exec chown root:wheel %D/etc/courier/enablefiltering
-@exec chown root:wheel %D/etc/courier/esmtp.authpam
-@exec chown courier:courier %D/etc/courier/esmtpauthclient
-@exec chown root:wheel %D/etc/courier/esmtpd-msa.dist
-@exec chown root:wheel %D/etc/courier/esmtpd.cnf
-@exec chown root:wheel %D/etc/courier/esmtpd.dist
-@exec chown root:wheel %D/etc/courier/imapd-ssl.dist
-@exec chown root:wheel %D/etc/courier/imapd.authpam
-@exec chown root:wheel %D/etc/courier/imapd.cnf
-@exec chown root:wheel %D/etc/courier/imapd.dist
-@exec chown root:wheel %D/etc/courier/ldapaddressbook.dist
-@exec chown root:wheel %D/etc/courier/locallowercase
-@exec chown root:wheel %D/etc/courier/maildrop
-@exec chown root:wheel %D/etc/courier/maildropfilter
-@exec chown courier:courier %D/etc/courier/module.dsn
-@exec chown courier:courier %D/etc/courier/module.esmtp
-@exec chown courier:courier %D/etc/courier/module.local
-%%SUB_UUCP%%@exec chown courier:courier %D/etc/courier/module.uucp
-@exec chown root:wheel %D/etc/courier/pop3d-ssl.dist
-@exec chown root:wheel %D/etc/courier/pop3d.authpam
-@exec chown root:wheel %D/etc/courier/pop3d.cnf
-@exec chown root:wheel %D/etc/courier/pop3d.dist
-@exec chown root:wheel %D/etc/courier/quotawarnmsg.example
-@exec chown root:wheel %D/etc/courier/rfcerr2045.txt
-@exec chown root:wheel %D/etc/courier/rfcerr2046.txt
-@exec chown root:wheel %D/etc/courier/rfcerr2047.txt
-@exec chown root:wheel %D/etc/courier/rfcerrheader.txt
-@exec chown root:wheel %D/etc/courier/smtpaccess/default
-@exec chown root:wheel %D/etc/courier/webmail.authpam     		
-@exec chown courier:courier %D/libexec/courier/aliascombine
-@exec chown courier:courier %D/libexec/courier/aliascreate
-@exec chown courier:courier %D/libexec/courier/aliasexp
-@exec chown courier:courier %D/libexec/courier/courierd
-@exec chown courier:courier %D/libexec/courier/modules/dsn/courierdsn
-@exec chown courier:courier %D/libexec/courier/modules/esmtp/addcr
-@exec chown root:wheel %D/libexec/courier/modules/esmtp/authend
-@exec chown root:courier %D/libexec/courier/modules/esmtp/authstart
-@exec chown courier:courier %D/libexec/courier/modules/esmtp/courieresmtp
-@exec chown courier:courier %D/libexec/courier/modules/esmtp/courieresmtpd
-%%SUB_UUCP%%@exec chown courier:courier %D/libexec/courier/modules/uucp/courieruucp
-@exec chown courier:courier %D/libexec/courier/submit
-@exec chown courier:courier %D/libexec/courier/submitmkdir
-@exec chown courier:courier %D/sbin/showmodules
-@exec install -d -o root -g wheel -m 0755 /var/spool/calendar
-@exec install -d -o %%CACHEOWNER%% -g courier -m 0700 /var/spool/calendar/localcache
-@exec install -d -o root -g courier -m 0750 /var/spool/calendar/private
-@exec install -d -o root -g courier -m 0755 /var/spool/calendar/public
-@exec install -d -o root -g wheel -m 0755 /var/spool/courier
-@exec install -d -o courier -g courier -m 0750 /var/spool/courier/allfilters
-@exec install -d -o courier -g courier -m 0770 /var/spool/courier/authdaemon
-@exec install -d -o courier -g courier -m 0750 /var/spool/courier/filters
-@exec install -d -o courier -g courier -m 0750 /var/spool/courier/msgq
-@exec install -d -o courier -g courier -m 0750 /var/spool/courier/msgs
-@exec install -d -o courier -g courier -m 0770 /var/spool/courier/tmp
-@exec install -d -o root -g wheel -m 0755 /var/spool/courier/tmp/broken
-@exec install -d -o %%CACHEOWNER%% -g mail -m 0700 /var/spool/webmail
-@exec crontab -u %%CACHEOWNER%% %D/etc/courier/crontab 2>/dev/null || true
-@unexec crontab -u %%CACHEOWNER%% -l 2>/dev/null || true
-@unexec crontab -u %%CACHEOWNER%% -r || true
-@unexec [ -d /var/spool/courier ] && chown -R courier:courier /var/spool/courier
+@exec chown %%MAILOWN%%:%%MAILGRP%% %D/bin/cancelmsg
+@exec chown %%BINOWN%%:mail %D/bin/maildrop
+@exec chown %%BINOWN%%:%%MAILGRP%% %D/bin/mailq
+@exec chown %%MAILOWN%%:%%MAILGRP%% %D/etc/courier
+@exec chown -Rh %%MAILOWN%%:%%MAILGRP%% %D/etc/courier/aliases
+@exec chown %%MAILOWN%%:%%MAILGRP%% %D/etc/courier/authdaemonrc.dist
+%%SUB_LDAP%%@exec chown %%BINOWN%%:%%BINGRP%% %D/etc/courier/authldaprc.dist
+@exec chown %%MAILOWN%%:%%MAILGRP%% %D/etc/courier/authmodulelist
+%%SUB_MYSQL%%@exec chown %%BINOWN%%:%%BINGRP%% %D/etc/courier/authmysqlrc.dist
+%%SUB_PGSQL%%@exec chown %%BINOWN%%:%%BINGRP%% %D/etc/courier/authpgsqlrc.dist
+@exec chown %%BINOWN%%:%%BINGRP%% %D/etc/courier/courierd.dist
+@exec chown %%MAILOWN%%:%%MAILGRP%% %D/etc/courier/dsndelayed.txt
+@exec chown %%MAILOWN%%:%%MAILGRP%% %D/etc/courier/dsndelivered.txt
+@exec chown %%MAILOWN%%:%%MAILGRP%% %D/etc/courier/dsnfailed.txt
+@exec chown %%MAILOWN%%:%%MAILGRP%% %D/etc/courier/dsnfooter.txt
+@exec chown %%MAILOWN%%:%%MAILGRP%% %D/etc/courier/dsnheader.txt
+@exec chown %%MAILOWN%%:%%MAILGRP%% %D/etc/courier/dsnrelayed.txt
+@exec chown %%MAILOWN%%:%%MAILGRP%% %D/etc/courier/dsnsubjectnotice.txt
+@exec chown %%MAILOWN%%:%%MAILGRP%% %D/etc/courier/dsnsubjectwarn.txt
+@exec chown %%MAILOWN%%:%%MAILGRP%% %D/etc/courier/esmtpauthclient
+@exec chown %%MAILOWN%%:%%MAILGRP%% %D/etc/courier/module.dsn
+@exec chown %%MAILOWN%%:%%MAILGRP%% %D/etc/courier/module.esmtp
+@exec chown %%MAILOWN%%:%%MAILGRP%% %D/etc/courier/module.local
+%%SUB_UUCP%%@exec chown %%MAILOWN%%:%%MAILGRP%% %D/etc/courier/module.uucp
+@exec chown %%MAILOWN%%:%%MAILGRP%% %D/libexec/courier/aliascombine
+@exec chown %%MAILOWN%%:%%MAILGRP%% %D/libexec/courier/aliascreate
+@exec chown %%MAILOWN%%:%%MAILGRP%% %D/libexec/courier/aliasexp
+@exec chown %%MAILOWN%%:%%MAILGRP%% %D/libexec/courier/courierd
+@exec chown %%MAILOWN%%:%%MAILGRP%% %D/libexec/courier/modules/dsn/courierdsn
+@exec chown %%MAILOWN%%:%%MAILGRP%% %D/libexec/courier/modules/esmtp/addcr
+@exec chown %%BINOWN%%:%%BINGRP%% %D/libexec/courier/modules/esmtp/authend
+@exec chown %%BINOWN%%:%%MAILGRP%% %D/libexec/courier/modules/esmtp/authstart
+@exec chown %%MAILOWN%%:%%MAILGRP%% %D/libexec/courier/modules/esmtp/courieresmtp
+@exec chown %%MAILOWN%%:%%MAILGRP%% %D/libexec/courier/modules/esmtp/courieresmtpd
+%%SUB_UUCP%%@exec chown %%MAILOWN%%:%%MAILGRP%% %D/libexec/courier/modules/uucp/courieruucp
+@exec chown %%MAILOWN%%:%%MAILGRP%% %D/libexec/courier/submit
+@exec chown %%MAILOWN%%:%%MAILGRP%% %D/libexec/courier/submitmkdir
+@exec chown %%MAILOWN%%:%%MAILGRP%% %D/sbin/showmodules
+@exec install -d -o %%BINOWN%% -g %%BINGRP%% -m 0755 /var/spool/calendar
+@exec install -d -o %%CACHEOWN%% -g %%MAILGRP%% -m 0700 /var/spool/calendar/localcache
+@exec install -d -o %%CACHEOWN%% -g %%MAILGRP%% -m 0750 /var/spool/calendar/private
+@exec install -d -o %%CACHEOWN%% -g %%MAILGRP%% -m 0755 /var/spool/calendar/public
+@exec install -d -o %%BINOWN%% -g %%BINGRP%% -m 0755 /var/spool/courier
+@exec install -d -o %%MAILOWN%% -g %%MAILGRP%% -m 0750 /var/spool/courier/allfilters
+@exec install -d -o %%MAILOWN%% -g %%MAILGRP%% -m 0770 /var/spool/courier/authdaemon
+@exec install -d -o %%MAILOWN%% -g %%MAILGRP%% -m 0750 /var/spool/courier/filters
+@exec install -d -o %%MAILOWN%% -g %%MAILGRP%% -m 0750 /var/spool/courier/msgq
+@exec install -d -o %%MAILOWN%% -g %%MAILGRP%% -m 0750 /var/spool/courier/msgs
+@exec install -d -o %%MAILOWN%% -g %%MAILGRP%% -m 0770 /var/spool/courier/tmp
+@exec install -c -o %%MAILOWN%% -g %%MAILGRP%% -m 0400 /dev/null /var/spool/courier/.noident
+@exec install -d -o %%CACHEOWN%% -g mail -m 0700 /var/spool/webmail
+@exec crontab -u %%CACHEOWN%% %D/etc/courier/crontab 2>/dev/null || true
+@unexec crontab -u %%CACHEOWN%% -l 2>/dev/null || true
+@unexec crontab -u %%CACHEOWN%% -r || true
+@unexec [ -d /var/spool/courier ] && chown -Rh %%MAILOWN%%:%%MAILGRP%% /var/spool/courier
 @unexec echo ""
 @unexec echo "Warning: Removing user courier will also delete any"
 @unexec echo "	 undelivered mail in the mail queue directories!!!"
 @unexec echo "	 Do not do it if you're upgrading and would like"
 @unexec echo "	 courier to continue trying to deliver this mail."
 @unexec echo ""
-@unexec rmuser courier 2>/dev/null || true
+@unexec rmuser %%MAILOWN%% 2>/dev/null || true
 @unexec [ -d /var/spool/courier ] && chown 0:0 /var/spool/courier 2>/dev/null || true
-@unexec [ -d /var/spool/courier/tmp/broken ] && chown 0:0 /var/spool/courier/tmp/broken 2>/dev/null || true
 @unexec rm -rf /var/spool/calendar 2>/dev/null || true
 @unexec rm -rf /var/spool/webmail 2>/dev/null || true
