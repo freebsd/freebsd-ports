@@ -5,10 +5,10 @@
 # $FreeBSD$
 #
 
-PORTNAME=       	libtar
-PORTVERSION=		1.2.5
-CATEGORIES=     	devel
-MASTER_SITES=		ftp://ftp-dev.cso.uiuc.edu/pub/libtar/
+PORTNAME=	libtar
+PORTVERSION=	1.2.11
+CATEGORIES=	devel
+MASTER_SITES=	ftp://ftp-dev.cso.uiuc.edu/pub/libtar/
 
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=		A library for manipulating POSIX and GNU tar files
