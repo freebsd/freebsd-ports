@@ -91,9 +91,3 @@ share/locale/zh_TW.Big5/LC_MESSAGES/bug-buddy.mo
 @dirrm share/gnome/help/bug-buddy/it
 @dirrm share/gnome/help/bug-buddy/C/stylesheet-images
 @dirrm share/gnome/help/bug-buddy/C/figures
-@dirrm share/gnome/help/bug-buddy/C
-@dirrm share/gnome/help/bug-buddy
-@dirrm share/gnome/bug-buddy/bugzilla/ximian
-@dirrm share/gnome/bug-buddy/bugzilla/gnome
-@dirrm share/gnome/bug-buddy/bugzilla
-@dirrm share/gnome/bug-buddy
