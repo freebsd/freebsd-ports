@@ -1,0 +1,49 @@
+# New ports collection makefile for:	Milk (gtk20 theme/master)
+# Date created:				28 Feb 2005
+# Whom:					Alexey Dokuchaev <danfe@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	milk
+PORTVERSION=	2.0
+CATEGORIES=	x11-themes gnome
+MASTER_SITES=	http://www.users.monornet.hu/linux/files/
+PKGNAMEPREFIX?=	${TYPE}-
+PKGNAMESUFFIX=	-theme
+DISTNAME=	Milk-${PORTVERSION}
+
+MAINTAINER=	danfe@FreeBSD.org
+COMMENT=	Port of Milk, Mac OS X theme
+
+TYPE?=		gtk
+
+THEME_NAME=	Milk
+WRKSRC=		"${WRKDIR}/${DISTNAME:S/-/ /}"
+
+USE_BZIP2=	yes
+USE_X_PREFIX=	yes
+NO_BUILD=	yes
+
+.if ${TYPE} == "gtk"
+THEME_DIR=	${PREFIX}/share/themes/${THEME_NAME}
+PLIST_SUB+=	GTK20="" METACITY="@comment "
+USE_GNOME=	gtk20
+.else	# metacity
+THEME_DIR=	${PREFIX}/share/gnome/themes/${THEME_NAME}
+PLIST_SUB+=	GTK20="@comment " METACITY=""
+USE_GNOME=	gnomehier
+.endif
+
+do-install:
+	@${MKDIR} ${THEME_DIR}
+.if ${TYPE} == "gtk"
+	cd ${WRKSRC} && ${FIND} gtk-2.0 -name '*[^~]' | \
+		${CPIO} -pdu -R ${SHAREOWN}:${SHAREGRP} ${THEME_DIR}
+	${INSTALL_DATA} ${WRKSRC}/index.theme ${THEME_DIR}
+.else
+	cd ${WRKSRC} && ${FIND} metacity-1 -name '*[^~]' | \
+		${CPIO} -pdu -R ${SHAREOWN}:${SHAREGRP} ${THEME_DIR}
+.endif
+
+.include <bsd.port.mk>
