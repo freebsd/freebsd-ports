@@ -287,8 +287,8 @@ info/liboctave.info
 info/liboctave.info-1
 info/liboctave.info-2
 info/liboctave.info-3
-@exec install-info --entry='* Octave: (octave).    Interactive language for numerical computations.' %D/octave.info %D/info/dir
-@exec install-info --entry='* LibOctave: (liboctave).      C++ class library for Octave.' %D/liboctave.info %D/info/dir
+@exec install-info --entry='* Octave: (octave).    Interactive language for numerical computations.' %D/info/octave.info %D/info/dir
+@exec install-info --entry='* LibOctave: (liboctave).      C++ class library for Octave.' %D/info/liboctave.info %D/info/dir
 lib/octave-%%OCTAVE_VERSION%%/libcruft.a
 lib/octave-%%OCTAVE_VERSION%%/liboctave.a
 lib/octave-%%OCTAVE_VERSION%%/liboctinterp.a
