@@ -7,23 +7,18 @@
 #
 
 PORTNAME=	integrit
-PORTVERSION=	2.03.02
+PORTVERSION=	3.00.05
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/b/-beta/}
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/$/-beta/}
 
 MAINTAINER=	josb@cncdsl.com
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}-beta
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
-ALL_TARGET=	${PORTNAME} aux
+ALL_TARGET=	${PORTNAME} utils
 
 MAN1=	i-ls.1 i-viewdb.1 integrit.1
-
-pre-configure:
-	@${PERL} -pi -e "s:= gcc:?=  cc:g" ${WRKSRC}/Makefile.in
-	@${PERL} -pi -e "s:/usr/bin/test:/bin/test:g" ${WRKSRC}/hashtbl/configure
 
 .include <bsd.port.mk>
