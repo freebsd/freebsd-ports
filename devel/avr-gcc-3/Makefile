@@ -5,21 +5,11 @@
 # $FreeBSD$
 #
 
-SNAPDATE=	2001-03-20
-SNAPVER=	${SNAPDATE:S/-//g}
-
 PORTNAME=	gcc
-PORTVERSION=	${SNAPVER}
+PORTVERSION=	3.0
 CATEGORIES=	devel
-#MASTER_SITES=	${MASTER_SITE_GNU}
-#MASTER_SITE_SUBDIR=	gcc
-MASTER_SITES=	ftp://ftp.freesoftware.com/pub/sourceware/gcc/snapshots/${SNAPDATE}/  \
-		ftp://egcs.cygnus.com/pub/egcs/snapshots/${SNAPDATE}/  \
-		ftp://ftp.ninemoons.com/pub/mirrors/egcs/snapshots/${SNAPDATE}/ \
-		ftp://ftp.iij.ad.jp/pub/egcs/snapshots/${SNAPDATE}/ \
-		ftp://ftp.yggdrasil.com/mirrors/site/egcs.cygnus.com/pub/egcs/snapshots/${SNAPDATE}/  \
-		ftp://ftp.fu-berlin.de/unix/languages/egcs/snapshots/
-PKGNAMEPREFIX=	avr-
+MASTER_SITES=	${MASTER_SITE_GNU}
+MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTNAME}-${PORTVERSION}
 DISTNAME=	gcc-core-${PORTVERSION}
 
 MAINTAINER=	joerg@freebsd.org
