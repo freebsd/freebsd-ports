@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Spreadsheet-WriteExcel
-PORTVERSION=	0.40
+PORTVERSION=	0.41
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Spreadsheet
@@ -33,13 +33,16 @@ MAN3=		Spreadsheet::WriteExcel.3 \
 		Spreadsheet::WriteExcel::Workbook.3 \
 		Spreadsheet::WriteExcel::WorkbookBig.3 \
 		Spreadsheet::WriteExcel::Worksheet.3
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500800
 BUILD_DEPENDS+=	${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
 .endif
+
+post-patch:
+	@${FIND} ${WRKSRC} -name "*.p[lm]"| \
+	${XARGS} ${PERL} -pi -e 's/\x0D(?=\x0A)//g'
 
 pre-configure:
 	@${MV} ${WRKSRC}/WriteExcel/doc	${WRKSRC}
