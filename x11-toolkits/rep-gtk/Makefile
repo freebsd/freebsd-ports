@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rep-gtk
-PORTVERSION=	0.9.1
+PORTVERSION=	0.10
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://rep-gtk.sourceforge.net/pub/rep-gtk/
 
@@ -35,5 +35,9 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		GTK_CONFIG="${GTK_CONFIG}" \
 		GLIB_CONFIG="${GLIB_CONFIG}" \
 		LIBS="-L${LOCALBASE}/lib"
+
+.if defined(NOGNOME)
+PLIST=		${PKGDIR}/PLIST.nognome
+.endif
 
 .include <bsd.port.mk>
