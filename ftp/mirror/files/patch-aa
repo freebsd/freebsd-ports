@@ -1,24 +1,24 @@
-*** makefile.orig	Thu Jun  1 21:26:26 1995
---- makefile	Sat Mar 16 16:19:59 1996
+*** makefile.orig	Mon Jun  1 20:28:47 1998
+--- makefile	Mon Jun  8 13:59:10 1998
 ***************
-*** 6,12 ****
-  	support/cyber-patches support/lstest.pl new-patches-by
+*** 41,47 ****
+  	$(WEBFILES)
   
   all:
 ! 	echo try make mirror.tar
   
   mirror.tar: $(FILES)
-  	rev=`./mirror -v | perl -ane 'print "$$F[2]\n";'`; echo $rev; \
---- 6,12 ----
-  	support/cyber-patches support/lstest.pl new-patches-by
+  	rev=`./mirror.pl -v | perl -ane 'print "$$F[2]\n";'`; echo $rev; \
+--- 41,47 ----
+  	$(WEBFILES)
   
   all:
 ! #	echo try make mirror.tar
   
   mirror.tar: $(FILES)
-  	rev=`./mirror -v | perl -ane 'print "$$F[2]\n";'`; echo $rev; \
+  	rev=`./mirror.pl -v | perl -ane 'print "$$F[2]\n";'`; echo $rev; \
 ***************
-*** 25,50 ****
+*** 65,89 ****
   # mode to install executables
   EXMODE = 755
   # group to own all the files
@@ -32,20 +32,19 @@
   
   install:
 ! 	install -m $(PLMODE) -g $(GRP) lchat.pl $(PLDIR)
-! 	install -m $(PLMODE) -g $(GRP) chat2.pl $(PLDIR)
 ! 	install -m $(PLMODE) -g $(GRP) dateconv.pl $(PLDIR)
 ! 	install -m $(PLMODE) -g $(GRP) ftp.pl $(PLDIR)
 ! 	install -m $(PLMODE) -g $(GRP) lsparse.pl $(PLDIR)
-! 	install -m $(EXMODE) -g $(GRP) mirror.pl $(PLDIR)
-! 	install -m $(EXMODE) -g $(GRP) do_unlinks $(BINDIR)
-! 	install -m $(EXMODE) -g $(GRP) pkgs_to_mmin $(BINDIR)
-! 	install -m $(EXMODE) -g $(GRP) mm $(BINDIR)/mirror-master
+! 	install -m $(EXMODE) -g $(GRP) mirror.pl $(BINDIR)/mirror
+! 	install -m $(EXMODE) -g $(GRP) do_unlinks.pl $(BINDIR)/do_unlinks
+! 	install -m $(EXMODE) -g $(GRP) pkgs_to_mmin.pl $(BINDIR)/pkgs_to_mmin
+! 	install -m $(EXMODE) -g $(GRP) mm.pl $(BINDIR)/mirror-master
 ! 	install -m $(PLMODE) -g $(GRP) mirror.man $(MANDIR)/mirror.1
 ! 	install -m $(PLMODE) -g $(GRP) mm.man $(MANDIR)/mirror-master.1
   
   # directory to install .pl (perl library) files for rperl
   RPLDIR = /usr/local/rperl5/lib/perl5
---- 25,51 ----
+--- 65,89 ----
   # mode to install executables
   EXMODE = 755
   # group to own all the files
@@ -59,16 +58,15 @@
   
   install:
 ! 	install -c -m $(PLMODE) -g $(GRP) lchat.pl $(PLDIR)
-! #	install -c -m $(PLMODE) -g $(GRP) chat2.pl $(PLDIR)
 ! 	install -c -m $(PLMODE) -g $(GRP) dateconv.pl $(PLDIR)
 ! 	install -c -m $(PLMODE) -g $(GRP) ftp.pl $(PLDIR)
 ! 	install -c -m $(PLMODE) -g $(GRP) lsparse.pl $(PLDIR)
 ! 	install -c -m $(EXMODE) -g $(GRP) mirror.pl $(BINDIR)/mirror
-! 	install -c -m $(EXMODE) -g $(GRP) do_unlinks $(BINDIR)
-! 	install -c -m $(EXMODE) -g $(GRP) pkgs_to_mmin $(BINDIR)
-! 	install -c -m $(EXMODE) -g $(GRP) mm $(BINDIR)/mirrormaster
+! 	install -c -m $(EXMODE) -g $(GRP) do_unlinks.pl $(BINDIR)/do_unlinks
+! 	install -c -m $(EXMODE) -g $(GRP) pkgs_to_mmin.pl $(BINDIR)/pkgs_to_mmin
+! 	install -c -m $(EXMODE) -g $(GRP) mm.pl $(BINDIR)/mirror-master
 ! 	install -c -m $(PLMODE) -g $(GRP) mirror.man $(MANDIR)/mirror.1
-! 	install -c -m $(PLMODE) -g $(GRP) mm.man $(MANDIR)/mirrormaster.1
+! 	install -c -m $(PLMODE) -g $(GRP) mm.man $(MANDIR)/mirror-master.1
 ! 	install -c -m $(PLMODE) -g $(GRP) mirror.defaults $(PLDIR)/mirror.defaults.sample
   
   # directory to install .pl (perl library) files for rperl
