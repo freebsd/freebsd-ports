@@ -6,16 +6,22 @@
 #
 
 PORTNAME=	opendchub
-PORTVERSION=	0.7.3
+PORTVERSION=	0.7.4
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Unofficial Unix version of the Direct Connect Hub software
 
 USE_PERL5=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+
+post-patch:
+.for file in src/fileio.c src/main.c
+	@${PERL} -pi -e 's|#include <crypt.h>||g' ${WRKSRC}/${file}
+.endfor
 
 post-install:
 .if !defined(NOPORTDOCS)

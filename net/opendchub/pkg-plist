@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 bin/opendchub
 %%PORTDOCS%%share/doc/opendchub/README
 %%PORTDOCS%%@dirrm share/doc/opendchub
