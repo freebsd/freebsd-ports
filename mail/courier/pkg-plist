@@ -18,6 +18,9 @@
 @unexec cmp -s %D/etc/courier/esmtpd-msa %D/etc/courier/esmtpd-msa.dist && rm -f %D/etc/courier/esmtpd-msa 2>/dev/null || true
 @unexec cmp -s %D/etc/courier/esmtpd-ssl %D/etc/courier/esmtpd-ssl.dist && rm -f %D/etc/courier/esmtpd-ssl 2>/dev/null || true
 @unexec cmp -s %D/etc/courier/esmtpd %D/etc/courier/esmtpd.dist && rm -f %D/etc/courier/esmtpd 2>/dev/null || true
+%%SUB_FAX%%@unexec cmp -s %D/etc/courier/faxcoverpage.tr %D/etc/courier/faxcoverpage.tr.dist && rm -f %D/etc/courier/faxcoverpage.tr 2>/dev/null || true
+%%SUB_FAX%%@unexec cmp -s %D/etc/courier/faxnotifyrc %D/etc/courier/faxnotifyrc.dist && rm -f %D/etc/courier/faxnotifyrc 2>/dev/null || true
+%%SUB_FAX%%@unexec cmp -s %D/etc/courier/faxrc %D/etc/courier/faxrc.dist && rm -f %D/etc/courier/faxrc 2>/dev/null || true
 @unexec cmp -s %D/etc/courier/imapd-ssl %D/etc/courier/imapd-ssl.dist && rm -f %D/etc/courier/imapd-ssl 2>/dev/null || true
 @unexec cmp -s %D/etc/courier/imapd %D/etc/courier/imapd.dist && rm -f %D/etc/courier/imapd 2>/dev/null || true
 @unexec cmp -s %D/etc/courier/ldapaddressbook %D/etc/courier/ldapaddressbook.dist && rm -f %D/etc/courier/ldapaddressbook 2>/dev/null || true
@@ -68,6 +71,9 @@ etc/courier/esmtpd-msa.dist
 etc/courier/esmtpd-ssl.dist
 etc/courier/esmtpd.cnf
 etc/courier/esmtpd.dist
+%%SUB_FAX%%etc/courier/faxcoverpage.tr.dist
+%%SUB_FAX%%etc/courier/faxnotifyrc.dist
+%%SUB_FAX%%etc/courier/faxrc.dist
 etc/courier/imapd-ssl.dist
 etc/courier/imapd.authpam
 etc/courier/imapd.cnf
@@ -79,6 +85,7 @@ etc/courier/maildrop
 etc/courier/maildropfilter
 etc/courier/module.dsn
 etc/courier/module.esmtp
+%%SUB_FAX%%etc/courier/module.fax
 etc/courier/module.local
 %%SUB_UUCP%%etc/courier/module.uucp
 etc/courier/pop3d-ssl.dist
@@ -101,6 +108,9 @@ etc/courier/webmail.authpam
 @exec [ -f %D/etc/courier/esmtpd-msa.dist ] && %D/share/sysconftool/sysconftool %D/etc/courier/esmtpd-msa.dist
 @exec [ -f %D/etc/courier/esmtpd-ssl.dist ] && %D/share/sysconftool/sysconftool %D/etc/courier/esmtpd-ssl.dist
 @exec [ -f %D/etc/courier/esmtpd.dist ] && %D/share/sysconftool/sysconftool %D/etc/courier/esmtpd.dist
+%%SUB_FAX%%@exec [ -f %D/etc/courier/faxcoverpage.tr.dist ] && %D/share/sysconftool/sysconftool %D/etc/courier/faxcoverpage.tr.dist
+%%SUB_FAX%%@exec [ -f %D/etc/courier/faxnotifyrc.dist ] && %D/share/sysconftool/sysconftool %D/etc/courier/faxnotifyrc.dist
+%%SUB_FAX%%@exec [ -f %D/etc/courier/faxrc.dist ] && %D/share/sysconftool/sysconftool %D/etc/courier/faxrc.dist
 @exec [ -f %D/etc/courier/imapd-ssl.dist ] && %D/share/sysconftool/sysconftool %D/etc/courier/imapd-ssl.dist
 @exec [ -f %D/etc/courier/imapd.dist ] && %D/share/sysconftool/sysconftool %D/etc/courier/imapd.dist
 @exec [ -f %D/etc/courier/ldapaddressbook.dist ] && %D/share/sysconftool/sysconftool %D/etc/courier/ldapaddressbook.dist
@@ -142,6 +152,7 @@ libexec/courier/modules/esmtp/authend
 libexec/courier/modules/esmtp/authstart
 libexec/courier/modules/esmtp/courieresmtp
 libexec/courier/modules/esmtp/courieresmtpd
+%%SUB_FAX%%libexec/courier/modules/fax/courierfax
 libexec/courier/modules/local/courierdeliver
 libexec/courier/modules/local/courierlocal
 libexec/courier/modules/modules.ctl
@@ -157,6 +168,7 @@ libexec/filters/perlfilter
 @dirrm libexec/authlib
 %%SUB_UUCP%%@dirrm libexec/courier/modules/uucp
 @dirrm libexec/courier/modules/local
+%%SUB_FAX%%@dirrm libexec/courier/modules/fax
 @dirrm libexec/courier/modules/esmtp
 @dirrm libexec/courier/modules/dsn
 @dirrm libexec/courier/modules
@@ -235,35 +247,39 @@ share/courier/courierwebadmin/admin-00machine.html
 share/courier/courierwebadmin/admin-00machine.pl
 share/courier/courierwebadmin/admin-05local.html
 share/courier/courierwebadmin/admin-05local.pl
-share/courier/courierwebadmin/admin-10password.html
 share/courier/courierwebadmin/admin-10password.pl
-share/courier/courierwebadmin/admin-15ldap.pl
-share/courier/courierwebadmin/admin-15ldapa.pl
+share/courier/courierwebadmin/admin-10password.html
 share/courier/courierwebadmin/admin-15ldap.html
+share/courier/courierwebadmin/admin-15ldap.pl
 share/courier/courierwebadmin/admin-15ldapa.html
+share/courier/courierwebadmin/admin-15ldapa.pl
 share/courier/courierwebadmin/admin-15mysql.html
 share/courier/courierwebadmin/admin-15mysql.pl
-share/courier/courierwebadmin/admin-15pgsql.pl
 share/courier/courierwebadmin/admin-15pgsql.html
-share/courier/courierwebadmin/admin-20aliases.html
+share/courier/courierwebadmin/admin-15pgsql.pl
 share/courier/courierwebadmin/admin-20aliases.pl
+share/courier/courierwebadmin/admin-20aliases.html
 share/courier/courierwebadmin/admin-30esmtp.html
 share/courier/courierwebadmin/admin-30esmtp.pl
-share/courier/courierwebadmin/admin-31esmtp.pl
 share/courier/courierwebadmin/admin-31esmtp.html
-share/courier/courierwebadmin/admin-40imap.pl
+share/courier/courierwebadmin/admin-31esmtp.pl
+share/courier/courierwebadmin/admin-34fax.html
+share/courier/courierwebadmin/admin-34fax.pl
+share/courier/courierwebadmin/admin-35fax.html
+share/courier/courierwebadmin/admin-35fax.pl
 share/courier/courierwebadmin/admin-40imap.html
-share/courier/courierwebadmin/admin-45pop3.pl
+share/courier/courierwebadmin/admin-40imap.pl
 share/courier/courierwebadmin/admin-45pop3.html
-share/courier/courierwebadmin/admin-47webmail.html
+share/courier/courierwebadmin/admin-45pop3.pl
 share/courier/courierwebadmin/admin-47webmail.pl
+share/courier/courierwebadmin/admin-47webmail.html
 share/courier/courierwebadmin/admin-50bofh.html
 share/courier/courierwebadmin/admin-50bofh.pl
 share/courier/courierwebadmin/admin-cancel.pl
 share/courier/courierwebadmin/admin-main.html
 share/courier/courierwebadmin/admin-main.pl
-share/courier/courierwebadmin/admin-save.pl
 share/courier/courierwebadmin/admin-save.html
+share/courier/courierwebadmin/admin-save.pl
 share/courier/courierwebadmin/dumpenv.pl
 share/courier/courierwebadmin/login.html
 share/courier/courierwebadmin/notsupp.html
@@ -273,6 +289,16 @@ share/courier/courierwebadmin/webadmin.pm
 @dirrm share/courier/courierwebadmin
 share/courier/esmtpd
 share/courier/esmtpd-ssl
+%%SUB_FAX%%share/courier/faxmail/application-pdf.filter
+%%SUB_FAX%%share/courier/faxmail/application-postscript.filter
+%%SUB_FAX%%share/courier/faxmail/coverpage
+%%SUB_FAX%%share/courier/faxmail/image-gif.filter
+%%SUB_FAX%%share/courier/faxmail/image-jpeg.filter
+%%SUB_FAX%%share/courier/faxmail/image-png.filter
+%%SUB_FAX%%share/courier/faxmail/init
+%%SUB_FAX%%share/courier/faxmail/new_fax
+%%SUB_FAX%%share/courier/faxmail/text-plain.filter
+%%SUB_FAX%%@dirrm share/courier/faxmail
 share/courier/filterctl
 share/courier/imapd
 share/courier/imapd-ssl
@@ -294,59 +320,151 @@ share/courier/perlfilter-wrapper.pl
 share/courier/pop3d
 share/courier/pop3d-ssl
 share/courier/pw2userdb
+share/courier/rootcerts/052e396b.0
 share/courier/rootcerts/0bb21872.0
+share/courier/rootcerts/0c364b2d.0
 share/courier/rootcerts/0e82f83a.0
 share/courier/rootcerts/11f154d6.0
+share/courier/rootcerts/128b9c8d.0
+share/courier/rootcerts/19899da5.0
 share/courier/rootcerts/1a147d5b.0
+share/courier/rootcerts/1bb6c7e0.0
 share/courier/rootcerts/256fd83b.0
 share/courier/rootcerts/2d047263.0
 share/courier/rootcerts/2edf7016.0
+share/courier/rootcerts/31044350.0
+share/courier/rootcerts/3ad48a91.0
+share/courier/rootcerts/3c58f906.0
+share/courier/rootcerts/3e7271e8.0
 share/courier/rootcerts/412bea73.0
+share/courier/rootcerts/418882ac.0
+share/courier/rootcerts/43d4bde2.0
+share/courier/rootcerts/4643210f.0
+share/courier/rootcerts/4d654d1d.0
+share/courier/rootcerts/5480ace1.0
 share/courier/rootcerts/54edfa5d.0
+share/courier/rootcerts/56e607f4.0
+share/courier/rootcerts/594f1775.0
+share/courier/rootcerts/5ee07a24.0
 share/courier/rootcerts/5f5e5caa.0
 share/courier/rootcerts/6166cb50.0
 share/courier/rootcerts/61f6c934.0
+share/courier/rootcerts/66eb5c17.0
 share/courier/rootcerts/66ec64da.0
+share/courier/rootcerts/6981fb07.0
+share/courier/rootcerts/6a15001a.0
 share/courier/rootcerts/6c55cf77.0
 share/courier/rootcerts/6d6ec79c.0
+share/courier/rootcerts/700b8679.0
 share/courier/rootcerts/709afd2b.0
 share/courier/rootcerts/72fa7371.0
+share/courier/rootcerts/73451336.0
+share/courier/rootcerts/739b7930.0
+share/courier/rootcerts/74c26bd0.0
 share/courier/rootcerts/7651b327.0
+share/courier/rootcerts/76d6205a.0
+share/courier/rootcerts/788c9bfc.0
+share/courier/rootcerts/7a9820c1.0
 share/courier/rootcerts/7d3cd826.0
 share/courier/rootcerts/7d453d8f.0
+share/courier/rootcerts/7e74191f.0
+share/courier/rootcerts/81447c6e.0
+share/courier/rootcerts/843b6c51.0
+share/courier/rootcerts/878cf4c6.0
+share/courier/rootcerts/8e6e2991.0
 share/courier/rootcerts/8efac7d4.0
-share/courier/rootcerts/9d0c2a65.0
+share/courier/rootcerts/8f7b96c4.0
+share/courier/rootcerts/95750816.0
+share/courier/rootcerts/97b4211c.0
+share/courier/rootcerts/a15b3b6b.0
+share/courier/rootcerts/a2be0f54.0
+share/courier/rootcerts/a2df7ad7.0
+share/courier/rootcerts/a38484ce.0
+share/courier/rootcerts/a3c60019.0
+share/courier/rootcerts/aaa45464.0
+share/courier/rootcerts/aba-ecom-root-ca.pem
+share/courier/rootcerts/addtrust-class-1-ca-root.pem
+share/courier/rootcerts/addtrust-external-ca-root.pem
+share/courier/rootcerts/addtrust-public-ca-root.pem
+share/courier/rootcerts/addtrust-qualified-ca-root.pem
+share/courier/rootcerts/american-express-certificate-authority.pem
+share/courier/rootcerts/american-express-global-certificate.pem
 share/courier/rootcerts/b0f3e76e.0
 share/courier/rootcerts/b5f329fa.0
+share/courier/rootcerts/ba386118.0
+share/courier/rootcerts/baltimore-cybertrust-code-signing.pem
+share/courier/rootcerts/baltimore-cybertrust-mobile-root.pem
+share/courier/rootcerts/baltimore-cybertrust-root.pem
+share/courier/rootcerts/bankengine.pem
+share/courier/rootcerts/bb0a889c.0
 share/courier/rootcerts/bcdd5959.0
 share/courier/rootcerts/belsign-object-publishing-ca.pem
 share/courier/rootcerts/belsign-secure-server-ca.pem
+share/courier/rootcerts/betrusted-root-ca.pem
 share/courier/rootcerts/bffe8b5d.0
 share/courier/rootcerts/c19d42c7.0
+share/courier/rootcerts/c215bc69.0
 share/courier/rootcerts/c33a80d4.0
 share/courier/rootcerts/c527e4ab.0
+share/courier/rootcerts/c9bc75ba.0
 share/courier/rootcerts/ccf7ff0e.0
+share/courier/rootcerts/certengine.pem
 share/courier/rootcerts/class-1-public-primary-ocsp-responder.pem
 share/courier/rootcerts/class-2-public-primary-ocsp-responder.pem
 share/courier/rootcerts/class-3-public-primary-ocsp-responder.pem
+share/courier/rootcerts/cybertrust-japan-root-ca.pem
+share/courier/rootcerts/cybertrust-japan-secure-server.pem
+share/courier/rootcerts/d2adc77d.0
+share/courier/rootcerts/d593166d.0
 share/courier/rootcerts/d78a75c7.0
+share/courier/rootcerts/db65db21.0
 share/courier/rootcerts/ddc328ff.0
+share/courier/rootcerts/deutsche-telekom-root-ca.pem
 share/courier/rootcerts/dfd0b044.0
+share/courier/rootcerts/digital-signature-trust-co-dstca-00.pem
+share/courier/rootcerts/digital-signature-trust-co-dstca-01.pem
+share/courier/rootcerts/dst-rootca-x1.pem
+share/courier/rootcerts/dst-rootca-x2.pem
+share/courier/rootcerts/e-certify-ca.pem
+share/courier/rootcerts/e-certify-ra.pem
+share/courier/rootcerts/e268a4c5.0
 share/courier/rootcerts/e28f6bbc.0
+share/courier/rootcerts/e7b8d656.0
+share/courier/rootcerts/e9aaa9de.0
 share/courier/rootcerts/ed049835.0
+share/courier/rootcerts/ed524cf5.0
 share/courier/rootcerts/ed62f4e3.0
+share/courier/rootcerts/entrust-net-certification-authority.pem
+share/courier/rootcerts/entrust-net-client-certification-00.pem
+share/courier/rootcerts/entrust-net-client-certification-01.pem
+share/courier/rootcerts/entrust-net-secure-server-certification-00.pem
+share/courier/rootcerts/entrust-net-secure-server-certification-01.pem
+share/courier/rootcerts/equifax-equifax-premium-certificate.pem
+share/courier/rootcerts/equifax-equifax-secure-certificate.pem
+share/courier/rootcerts/equifax-secure-ebusiness-ca-1.pem
+share/courier/rootcerts/equifax-secure-equifax-secure-ebusiness.pem
+share/courier/rootcerts/equifax-secure-global-ebusiness.pem
 share/courier/rootcerts/f10dd942.0
 share/courier/rootcerts/f4996e82.0
 share/courier/rootcerts/f73e89fd.0
+share/courier/rootcerts/fortengine.pem
 share/courier/rootcerts/globalsign-partners-ca.pem
 share/courier/rootcerts/globalsign-primary-class-1-ca.pem
 share/courier/rootcerts/globalsign-primary-class-2-ca.pem
 share/courier/rootcerts/globalsign-primary-class-3-ca.pem
 share/courier/rootcerts/globalsign-root-ca.pem
+share/courier/rootcerts/gp-root-2.pem
+share/courier/rootcerts/gp-root-3.pem
+share/courier/rootcerts/gp-root-4.pem
+share/courier/rootcerts/gp-root-5.pem
+share/courier/rootcerts/gte-cybertrust-global-root.pem
+share/courier/rootcerts/gte-cybertrust-root-5.pem
+share/courier/rootcerts/gte-cybertrust-root.pem
 share/courier/rootcerts/http-www-valicert-com-00.pem
 share/courier/rootcerts/http-www-valicert-com-01.pem
 share/courier/rootcerts/http-www-valicert-com-02.pem
 share/courier/rootcerts/http-www-valicert-net.pem
+share/courier/rootcerts/mailengine.pem
 share/courier/rootcerts/rsa-data-security-inc-secure-server.pem
 share/courier/rootcerts/secure-server-ocsp-responder.pem
 share/courier/rootcerts/tc-trustcenter-for-security-in-00.pem
@@ -359,7 +477,11 @@ share/courier/rootcerts/thawte-personal-freemail-ca.pem
 share/courier/rootcerts/thawte-personal-premium-ca.pem
 share/courier/rootcerts/thawte-premium-server-ca.pem
 share/courier/rootcerts/thawte-server-ca.pem
+share/courier/rootcerts/thawte-timestamping-ca.pem
 share/courier/rootcerts/thawte-universal-ca-root.pem
+share/courier/rootcerts/traderengine.pem
+share/courier/rootcerts/usps-production-ca-1.pem
+share/courier/rootcerts/usps-root-ca.pem
 share/courier/rootcerts/verisign-class-1-public-primary.pem
 share/courier/rootcerts/verisign-class-2-public-primary.pem
 share/courier/rootcerts/verisign-class-3-public-primary.pem
@@ -367,11 +489,17 @@ share/courier/rootcerts/verisign-class-4-public-primary.pem
 share/courier/rootcerts/verisign-inc-class-1-public-primary.pem
 share/courier/rootcerts/verisign-inc-class-2-public-primary.pem
 share/courier/rootcerts/verisign-inc-class-3-public-primary.pem
-share/courier/rootcerts/verisign-inc-class-4-public-primary.pem
 share/courier/rootcerts/verisign-inc-verisign-trust-network-00.pem
 share/courier/rootcerts/verisign-inc-verisign-trust-network-01.pem
 share/courier/rootcerts/verisign-inc-verisign-trust-network-02.pem
 share/courier/rootcerts/verisign-inc-verisign-trust-network-03.pem
+share/courier/rootcerts/verisign-time-stamping-authority.pem
+share/courier/rootcerts/visa-visa-international-service.pem
+share/courier/rootcerts/xcert-ez-by-dst.pem
+share/courier/rootcerts/xcert-international-inc-xcert-root-00.pem
+share/courier/rootcerts/xcert-international-inc-xcert-root-01.pem
+share/courier/rootcerts/xcert-international-inc-xcert-root-02.pem
+share/courier/rootcerts/xcert-international-inc-xcert-root-03.pem
 @dirrm share/courier/rootcerts
 share/courier/sqwebmail/cleancache.pl
 share/courier/sqwebmail/html/en-us/CHARSET
@@ -496,6 +624,7 @@ share/courier/webgpg
 %%PORTDOCS%%share/doc/courier/html/courier.html
 %%PORTDOCS%%share/doc/courier/html/courierd.html
 %%PORTDOCS%%share/doc/courier/html/courierdsn.html
+%%SUB_FAX%%%%PORTDOCS%%share/doc/courier/html/courierfax.html
 %%PORTDOCS%%share/doc/courier/html/courierfilter.html
 %%PORTDOCS%%share/doc/courier/html/courierldapaliasd.html
 %%PORTDOCS%%share/doc/courier/html/couriermlm.html
@@ -582,10 +711,15 @@ share/courier/webgpg
 @exec chown %%MAILOWN%%:%%MAILGRP%% %D/etc/courier/dsnsubjectnotice.txt
 @exec chown %%MAILOWN%%:%%MAILGRP%% %D/etc/courier/dsnsubjectwarn.txt
 @exec chown %%MAILOWN%%:%%MAILGRP%% %D/etc/courier/esmtpauthclient
+%%SUB_FAX%%@exec chown %%MAILOWN%%:%%MAILGRP%% %D/etc/courier/faxcoverpage.tr.dist
+%%SUB_FAX%%@exec chown %%MAILOWN%%:%%MAILGRP%% %D/etc/courier/faxnotifyrc.dist
+%%SUB_FAX%%@exec chown %%MAILOWN%%:%%MAILGRP%% %D/etc/courier/faxrc.dist
 @exec chown %%MAILOWN%%:%%MAILGRP%% %D/etc/courier/module.dsn
 @exec chown %%MAILOWN%%:%%MAILGRP%% %D/etc/courier/module.esmtp
+%%SUB_FAX%%@exec chown %%MAILOWN%%:%%MAILGRP%% %D/etc/courier/module.fax
 @exec chown %%MAILOWN%%:%%MAILGRP%% %D/etc/courier/module.local
 %%SUB_UUCP%%@exec chown %%MAILOWN%%:%%MAILGRP%% %D/etc/courier/module.uucp
+@exec chown -Rh %%BINOWN%%:%%BINGRP%% %D/libexec/authlib
 @exec chown %%MAILOWN%%:%%MAILGRP%% %D/libexec/courier/aliascombine
 @exec chown %%MAILOWN%%:%%MAILGRP%% %D/libexec/courier/aliascreate
 @exec chown %%MAILOWN%%:%%MAILGRP%% %D/libexec/courier/aliasexp
@@ -596,6 +730,7 @@ share/courier/webgpg
 @exec chown %%BINOWN%%:%%MAILGRP%% %D/libexec/courier/modules/esmtp/authstart
 @exec chown %%MAILOWN%%:%%MAILGRP%% %D/libexec/courier/modules/esmtp/courieresmtp
 @exec chown %%MAILOWN%%:%%MAILGRP%% %D/libexec/courier/modules/esmtp/courieresmtpd
+%%SUB_FAX%%@exec chown %%MAILOWN%%:%%MAILGRP%% %D/libexec/courier/modules/fax/courierfax
 %%SUB_UUCP%%@exec chown %%MAILOWN%%:%%MAILGRP%% %D/libexec/courier/modules/uucp/courieruucp
 @exec chown %%MAILOWN%%:%%MAILGRP%% %D/libexec/courier/submit
 @exec chown %%MAILOWN%%:%%MAILGRP%% %D/libexec/courier/submitmkdir
@@ -607,6 +742,7 @@ share/courier/webgpg
 @exec install -d -o %%BINOWN%% -g %%BINGRP%% -m 0755 /var/spool/courier
 @exec install -d -o %%MAILOWN%% -g %%MAILGRP%% -m 0750 /var/spool/courier/allfilters
 @exec install -d -o %%MAILOWN%% -g %%MAILGRP%% -m 0770 /var/spool/courier/authdaemon
+%%SUB_FAX%%@exec install -d -o %%MAILOWN%% -g %%MAILGRP%% -m 0700 /var/spool/courier/faxtmp
 @exec install -d -o %%MAILOWN%% -g %%MAILGRP%% -m 0750 /var/spool/courier/filters
 @exec install -d -o %%MAILOWN%% -g %%MAILGRP%% -m 0750 /var/spool/courier/msgq
 @exec install -d -o %%MAILOWN%% -g %%MAILGRP%% -m 0750 /var/spool/courier/msgs
@@ -614,16 +750,6 @@ share/courier/webgpg
 @exec install -c -o %%MAILOWN%% -g %%MAILGRP%% -m 0400 /dev/null /var/spool/courier/.noident
 @exec install -d -o %%CACHEOWN%% -g mail -m 0700 /var/spool/webmail
 @exec crontab -u %%CACHEOWN%% %D/etc/courier/crontab 2>/dev/null || true
-@unexec crontab -u %%CACHEOWN%% -l 2>/dev/null || true
-@unexec crontab -u %%CACHEOWN%% -r || true
-@unexec [ -d /var/spool/courier ] && chown -Rh %%MAILOWN%%:%%MAILGRP%% /var/spool/courier
-@unexec echo ""
-@unexec echo "Warning: Removing user courier will also delete any"
-@unexec echo "	 undelivered mail in the mail queue directories!!!"
-@unexec echo "	 Do not do it if you're upgrading and would like"
-@unexec echo "	 courier to continue trying to deliver this mail."
-@unexec echo ""
-@unexec rmuser %%MAILOWN%% 2>/dev/null || true
-@unexec [ -d /var/spool/courier ] && chown 0:0 /var/spool/courier 2>/dev/null || true
+@unexec echo y | crontab -u %%CACHEOWN%% -r || true
 @unexec rm -rf /var/spool/calendar 2>/dev/null || true
 @unexec rm -rf /var/spool/webmail 2>/dev/null || true

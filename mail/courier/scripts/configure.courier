@@ -1,5 +1,5 @@
 #!/bin/sh
-# $FreeBSD: /tmp/pcvs/ports/mail/courier/scripts/Attic/configure.courier,v 1.2 2002-01-22 04:44:18 dwhite Exp $
+# $FreeBSD: /tmp/pcvs/ports/mail/courier/scripts/Attic/configure.courier,v 1.3 2002-06-08 18:54:01 ijliao Exp $
 
 [ -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc ] && exit
 
@@ -13,86 +13,105 @@ else
 	PGSQLINCLUDES=${PGSQLBASE}/include/pgsql
 fi
 
-if [ "${BATCH}" = "yes" ]; then
-	[ "x${ENABLE_EXPECT}"	= "xYES" ] && OPTIONS="${OPTIONS} \"Expect\""
-	[ "x${ENABLE_GNUPG}"	= "xYES" ] && OPTIONS="${OPTIONS} \"GnuPG\""
-	[ "x${ENABLE_ASPELL}"	= "xYES" ] && OPTIONS="${OPTIONS} \"ASpell\""
-	[ "x${ENABLE_ISPELL}"	= "xYES" ] && OPTIONS="${OPTIONS} \"ISpell\""
-	[ "x${ENABLE_LDAP1}"	= "xYES" ] && OPTIONS="${OPTIONS} \"OpenLDAP1\""
-	[ "x${ENABLE_LDAP2}"	= "xYES" ] && OPTIONS="${OPTIONS} \"OpenLDAP2\""
-	[ "x${ENABLE_MYSQL}"	= "xYES" ] && OPTIONS="${OPTIONS} \"MySQL\""
-	[ "x${ENABLE_PGSQL}"	= "xYES" ] && OPTIONS="${OPTIONS} \"PostgreSQL\""
-	[ "x${ENABLE_VPOPMAIL}"	= "xYES" ] && OPTIONS="${OPTIONS} \"VPopMail\""
-	[ "x${ENABLE_PROCMAIL}"	= "xYES" ] && OPTIONS="${OPTIONS} \"Procmail\""
-	[ "x${ENABLE_IPV6}"	= "xYES" ] && OPTIONS="${OPTIONS} \"IPv6\""
+if [ ":${BATCH}" = ':yes' ]; then
+	[ ":${WITH_EXPECT}"	= ':yes' ] && OPTIONS="${OPTIONS} \"Expect\""
+	[ ":${WITH_GNUPG}"	= ':yes' ] && OPTIONS="${OPTIONS} \"GnuPG\""
+	[ ":${WITH_ASPELL}"	= ':yes' ] && OPTIONS="${OPTIONS} \"ASpell\""
+	[ ":${WITH_ISPELL}"	= ':yes' ] && OPTIONS="${OPTIONS} \"ISpell\""
+	[ ":${WITH_LDAP1}"	= ':yes' ] && OPTIONS="${OPTIONS} \"OpenLDAP1\""
+	[ ":${WITH_LDAP2}"	= ':yes' ] && OPTIONS="${OPTIONS} \"OpenLDAP2\""
+	[ ":${WITH_MYSQL}"	= ':yes' ] && OPTIONS="${OPTIONS} \"MySQL\""
+	[ ":${WITH_PGSQL}"	= ':yes' ] && OPTIONS="${OPTIONS} \"PostgreSQL\""
+	[ ":${WITH_VPOPMAIL}"	= ':yes' ] && OPTIONS="${OPTIONS} \"VPopMail\""
+	[ ":${WITH_PROCMAIL}"	= ':yes' ] && OPTIONS="${OPTIONS} \"Procmail\""
+	[ ":${WITH_SENDFAX}"	= ':yes' ] && OPTIONS="${OPTIONS} \"SendFax\""
+	[ ":${WITH_IPV6}"	= ':yes' ] && OPTIONS="${OPTIONS} \"IPv6\""
 	[ -n "${OPTIONS}" ] && set ${OPTIONS}
 else
-	if [ "x${ENABLE_EXPECT}" = "xYES" \
+	if [ ":${WITH_EXPECT}" = ':yes' \
 	  -o -x ${LOCALBASE}/bin/expect ]; then
 		SET_EXPECT="ON"
 	else
 		SET_EXPECT="OFF"
 	fi
-	if [ "x${ENABLE_GNUPG}" = "xYES" \
+	if [ ":${WITH_GNUPG}" = ':yes' \
 	  -o -x ${LOCALBASE}/bin/gpg ]; then
 		SET_GNUPG="ON"
 	else
 		SET_GNUPG="OFF"
 	fi
-	if [ "x${ENABLE_ASPELL}" = "xYES" \
+	if [ ":${WITH_ASPELL}" = ':yes' \
 	  -o -x ${LOCALBASE}/bin/aspell ]; then
 		SET_ASPELL="ON"
+		SET_ISPELL="OFF"
 	else
 		SET_ASPELL="OFF"
 	fi
-	if [ "x${ENABLE_ISPELL}" = "xYES" \
+	if [ ":${WITH_ISPELL}" = ':yes' \
 	  -o -x ${LOCALBASE}/bin/ispell \
-	  -a "x${SET_ASPELL}" = "xOFF" ]; then
+	  -a "${SET_ASPELL}" = "OFF" ]; then
 		SET_ISPELL="ON"
+		SET_ASPELL="OFF"
 	else
 		SET_ISPELL="OFF"
 	fi
-	if [ "x${ENABLE_LDAP1}" = "xYES" \
+	if [ ":${WITH_LDAP1}" = ':yes' \
 	  -o -f ${LOCALBASE}/lib/libldap.so.1 \
 	  -a -f ${LOCALBASE}/lib/liblber.so.1 ]; then
 		SET_LDAP1="ON"
+		SET_LDAP2="OFF"
 	else
 		SET_LDAP1="OFF"
 	fi
-	if [ "x${ENABLE_LDAP2}" = "xYES" \
+	if [ ":${WITH_LDAP2}" = ':yes' \
 	  -o -f ${LOCALBASE}/lib/libldap.so.2 \
-	  -a -f ${LOCALBASE}/lib/liblber.so.2 \
-	  -a "x${SET_LDAP1}" = "xOFF" ]; then
+	  -a -f ${LOCALBASE}/lib/liblber.so.2 ]; then
+		SET_LDAP1="OFF"
 		SET_LDAP2="ON"
 	else
 		SET_LDAP2="OFF"
 	fi
-	if [ "x${ENABLE_MYSQL}" = "xYES" \
+	if [ ":${WITH_MYSQL}" = ':yes' \
 	  -o -f ${LOCALBASE}/lib/mysql/libmysqlclient.so.10 ]; then
 		SET_MYSQL="ON"
 	else
 		SET_MYSQL="OFF"
 	fi
-	if [ "x${ENABLE_PGSQL}" = "xYES" \
+	if [ ":${WITH_PGSQL}" = ':yes' \
 	  -o -f ${PGSQLBASE}/lib/libpq.so.2 ]; then
 		SET_PGSQL="ON"
 	else
 		SET_PGSQL="OFF"
 	fi
-	if [ "x${ENABLE_VPOPMAIL}" = "xYES" \
+	if [ ":${WITH_VPOPMAIL}" = ':yes' \
 	  -o -f ${LOCALBASE}/vpopmail/lib/libvpopmail.a ]; then
 		SET_VPOPMAIL="ON"	# authvchkpw and authmysql
 		SET_MYSQL="OFF"		# are mutually exclusive
 	else
 		SET_VPOPMAIL="OFF"
 	fi
-	if [ "x${ENABLE_PROCMAIL}" = "xYES" \
+	if [ ":${WITH_PROCMAIL}" = ':yes' \
 	  -o -x ${LOCALBASE}/bin/procmail ]; then
 		SET_PROCMAIL="ON"
 	else
 		SET_PROCMAIL="OFF"
 	fi
-	if [ "x${ENABLE_IPV6}" = "xYES" ]; then
+	if [ ":${WITH_SENDFAX}" = ':yes' \
+	  -o -x ${LOCALBASE}/bin/pnmscale \
+	  -a -x ${LOCALBASE}/bin/giftopnm \
+	  -a -x ${LOCALBASE}/bin/jpegtopnm \
+	  -a -x ${LOCALBASE}/bin/ppmtopgm \
+	  -a -x ${LOCALBASE}/bin/pgmtopbm \
+	  -a -x ${LOCALBASE}/bin/pbmtog3 \
+	  -a -x ${LOCALBASE}/bin/g3topbm \
+	  -a -x ${LOCALBASE}/bin/pngtopnm \
+	  -a -x ${LOCALBASE}/bin/pnmtopng \
+	  -a -x ${LOCALBASE}/bin/gs ]; then
+		SET_SENDFAX="ON"
+	else
+		SET_SENDFAX="OFF"
+	fi
+	if [ ":${WITH_IPV6}" = ':yes' ]; then
 		SET_IPV6="ON"
 	else
 		SET_IPV6="OFF"
@@ -111,22 +130,18 @@ MySQL		"MySQL authentication support" ${SET_MYSQL} \
 PostgreSQL	"PostgreSQL authentication support" ${SET_PGSQL} \
 VPopMail	"VPopMail authentication support" ${SET_VPOPMAIL} \
 Procmail	"Procmail local delivery support" ${SET_PROCMAIL} \
+SendFax		"mgetty+sendfax support" ${SET_SENDFAX} \
 IPv6		"IPv6 support (experimental)" ${SET_IPV6} \
-2> $tempfile
+2> ${tempfile}
 
 	retval=$?
 
-	if [ -s $tempfile ]; then
-		set `cat $tempfile`
-	fi
-	rm -f $tempfile
+	[ -s ${tempfile} ] && set `cat ${tempfile}`
+	rm -f ${tempfile}
 
-	case $retval in
-		0)	[ -z "$*" ] && echo "Nothing selected"
-			;;
-		1)	echo "Cancel pressed."
-			exit 1
-			;;
+	case ${retval} in
+	0)	[ -z "$*" ] && echo "Nothing selected" ;;
+	1)	echo "Cancel pressed." && exit 1 ;;
 	esac
 fi
 
@@ -142,6 +157,7 @@ WITH_PGSQL="--without-authpgsql"
 WITH_VCHKPW="--without-authvchkpw"
 WITH_IPV6="--without-ipv6"
 
+SUB_FAX="@comment "
 SUB_LDAP="@comment "
 SUB_MYSQL="@comment "
 SUB_PGSQL="@comment "
@@ -149,10 +165,10 @@ SUB_PGSQL="@comment "
 while [ "$1" ]; do
 	case $1 in
 		\"Expect\")
-			echo "BUILD_DEPENDS+=	expect:${PORTSDIR}/lang/expect"
+			echo "BUILD_DEPENDS+=	expect:\${PORTSDIR}/lang/expect"
 			;;
 		\"GnuPG\")
-			echo "BUILD_DEPENDS+=	gpg:${PORTSDIR}/security/gnupg"
+			echo "BUILD_DEPENDS+=	gpg:\${PORTSDIR}/security/gnupg"
 			;;
 		\"ASpell\")
 			if [ "$ISPELL" ]; then
@@ -160,8 +176,8 @@ while [ "$1" ]; do
 				rm -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
 				exit 1
 			fi
-			echo "BUILD_DEPENDS+=	aspell:${PORTSDIR}/textproc/aspell"
-			WITH_ISPELL="--with-ispell=${LOCALBASE}/bin/aspell"
+			echo "BUILD_DEPENDS+=	aspell:\${PORTSDIR}/textproc/aspell"
+			WITH_ISPELL="--with-ispell=\${LOCALBASE}/bin/aspell"
 			ASPELL=1
 			;;
 		\"ISpell\")
@@ -170,8 +186,8 @@ while [ "$1" ]; do
 				rm -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
 				exit 1
 			fi
-			echo "BUILD_DEPENDS+=	ispell:${PORTSDIR}/textproc/ispell"
-			WITH_ISPELL="--with-ispell=${LOCALBASE}/bin/ispell"
+			echo "BUILD_DEPENDS+=	ispell:\${PORTSDIR}/textproc/ispell"
+			WITH_ISPELL="--with-ispell=\${LOCALBASE}/bin/ispell"
 			ISPELL=1
 			;;
 		\"OpenLDAP1\")
@@ -181,8 +197,8 @@ while [ "$1" ]; do
 				exit 1
 			fi
 			echo "LIB_DEPENDS+=	ldap.1:\${PORTSDIR}/net/openldap"
-			CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include"
-                        LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
+			CPPFLAGS="${CPPFLAGS} -I\${LOCALBASE}/include"
+			LDFLAGS="${LDFLAGS} -L\${LOCALBASE}/lib"
 			WITH_LDAP="--with-authldap"
 			PKGNAMESUFFIX="${PKGNAMESUFFIX}-ldap"
 			SUB_LDAP=""
@@ -195,8 +211,8 @@ while [ "$1" ]; do
 				exit 1
 			fi
 			echo "LIB_DEPENDS+=	ldap.2:\${PORTSDIR}/net/openldap2"
-			CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include"
-                        LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
+			CPPFLAGS="${CPPFLAGS} -I\${LOCALBASE}/include"
+			LDFLAGS="${LDFLAGS} -L\${LOCALBASE}/lib"
 			WITH_LDAP="--with-authldap"
 			PKGNAMESUFFIX="${PKGNAMESUFFIX}-ldap"
 			SUB_LDAP=""
@@ -209,10 +225,10 @@ while [ "$1" ]; do
 				rm -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
 				exit 1
 			else
-				echo "LIB_DEPENDS+=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client"
+				echo "LIB_DEPENDS+=	mysqlclient.10:\${PORTSDIR}/databases/mysql323-client"
 				WITH_MYSQL="--with-authmysql"
-				WITH_MYSQL="${WITH_MYSQL} --with-mysql-libs=${LOCALBASE}/lib/mysql"
-				WITH_MYSQL="${WITH_MYSQL} --with-mysql-includes=${LOCALBASE}/include/mysql"
+				WITH_MYSQL="${WITH_MYSQL} --with-mysql-libs=\${LOCALBASE}/lib/mysql"
+				WITH_MYSQL="${WITH_MYSQL} --with-mysql-includes=\${LOCALBASE}/include/mysql"
 				PKGNAMESUFFIX="${PKGNAMESUFFIX}-mysql"
 				SUB_MYSQL=""
 			fi	
@@ -226,12 +242,37 @@ while [ "$1" ]; do
 			SUB_PGSQL=""
 			;;
 		\"VPopMail\")
-			echo "BUILD_DEPENDS+=	${LOCALBASE}/vpopmail/lib/libvpopmail.a:${PORTSDIR}/mail/vpopmail"
+			echo "BUILD_DEPENDS+=	\${LOCALBASE}/vpopmail/lib/libvpopmail.a:\${PORTSDIR}/mail/vpopmail"
 			WITH_VCHKPW="--with-authvchkpw"
 			PKGNAMESUFFIX="${PKGNAMESUFFIX}-vpopmail"
 			;;
 		\"Procmail\")
-			echo "BUILD_DEPENDS+=	procmail:${PORTSDIR}/mail/procmail"
+			echo "BUILD_DEPENDS+=	procmail:\${PORTSDIR}/mail/procmail"
+			;;
+		\"SendFax\")
+			echo "BUILD_DEPENDS+=	gs:\${PORTSDIR}/print/ghostscript-gnu"
+			echo "BUILD_DEPENDS+=	pnmscale:\${PORTSDIR}/graphics/netpbm"
+			echo "BUILD_DEPENDS+=	giftopnm:\${PORTSDIR}/graphics/netpbm"
+			echo "BUILD_DEPENDS+=	jpegtopnm:\${PORTSDIR}/graphics/netpbm"
+			echo "BUILD_DEPENDS+=	ppmtopgm:\${PORTSDIR}/graphics/netpbm"
+			echo "BUILD_DEPENDS+=	pgmtopbm:\${PORTSDIR}/graphics/netpbm"
+			echo "BUILD_DEPENDS+=	pbmtog3:\${PORTSDIR}/graphics/netpbm"
+			echo "BUILD_DEPENDS+=	g3topbm:\${PORTSDIR}/graphics/netpbm"
+			echo "BUILD_DEPENDS+=	pngtopnm:\${PORTSDIR}/graphics/netpbm"
+			echo "BUILD_DEPENDS+=	pnmtopng:\${PORTSDIR}/graphics/netpbm"
+			echo "RUN_DEPENDS+=	gs:\${PORTSDIR}/print/ghostscript-gnu"
+			echo "RUN_DEPENDS+=	pnmscale:\${PORTSDIR}/graphics/netpbm"
+			echo "RUN_DEPENDS+=	giftopnm:\${PORTSDIR}/graphics/netpbm"
+			echo "RUN_DEPENDS+=	jpegtopnm:\${PORTSDIR}/graphics/netpbm"
+			echo "RUN_DEPENDS+=	ppmtopgm:\${PORTSDIR}/graphics/netpbm"
+			echo "RUN_DEPENDS+=	pgmtopbm:\${PORTSDIR}/graphics/netpbm"
+			echo "RUN_DEPENDS+=	pbmtog3:\${PORTSDIR}/graphics/netpbm"
+			echo "RUN_DEPENDS+=	g3topbm:\${PORTSDIR}/graphics/netpbm"
+			echo "RUN_DEPENDS+=	pngtopnm:\${PORTSDIR}/graphics/netpbm"
+			echo "RUN_DEPENDS+=	pnmtopng:\${PORTSDIR}/graphics/netpbm"
+			echo "WITH_FAX=		yes"
+			WITH_TRANSPORT="${WITH_TRANSPORT} fax"
+			SUB_FAX=""
 			;;
 		\"IPv6\")
 			WITH_IPV6=""
@@ -254,7 +295,11 @@ echo "CONFIGURE_ARGS+= ${WITH_MYSQL}"
 echo "CONFIGURE_ARGS+= ${WITH_PGSQL}"
 echo "CONFIGURE_ARGS+= ${WITH_VCHKPW}"
 echo "CONFIGURE_ARGS+= ${WITH_IPV6}"
-echo "PKGNAMESUFFIX=	${PKGNAMESUFFIX}"
+echo "CONFIGURE_ARGS+= --with-transport='${WITH_TRANSPORT}'"
+echo "PLIST_SUB+=	SUB_FAX='${SUB_FAX}'"
 echo "PLIST_SUB+=	SUB_LDAP='${SUB_LDAP}'"
 echo "PLIST_SUB+=	SUB_MYSQL='${SUB_MYSQL}'"
 echo "PLIST_SUB+=	SUB_PGSQL='${SUB_PGSQL}'"
+[ -n "${PKGNAMESUFFIX}" ] && echo "PKGNAMESUFFIX=	${PKGNAMESUFFIX}"
+
+exit 0

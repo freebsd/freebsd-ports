@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	courier
-PORTVERSION=	0.37.3
+PORTVERSION=	0.38.2
 CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	courier
@@ -16,7 +16,9 @@ MAINTAINER=	yds@CoolRat.org
 RUN_DEPENDS=	${LOCALBASE}/share/sysconftool/sysconftool:${PORTSDIR}/devel/sysconftool \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Net/CIDR.pm:${PORTSDIR}/net/p5-Net-CIDR
 
-NO_PACKAGE=	"Goes into an infinite loop during the build"
+.if !defined(BATCH) && !defined(PACKAGE_BUILDING)
+IS_INTERACTIVE=	yes
+.endif
 
 #
 # User-serviceable variables
@@ -43,11 +45,7 @@ LIBEXECDIR=	${PREFIX}/libexec
 LOCALSTATEDIR=	/var/spool/courier
 CACHEDIR=	/var/spool/webmail
 CALENDIR=	/var/spool/calendar
-MIMETYPES=	${LOCALBASE}/etc/apache/mime.types
-
-.if !defined(BATCH) && !defined(PACKAGE_BUILDING)
-IS_INTERACTIVE=	yes
-.endif
+MIMETYPES=	${LOCALBASE}/etc/apache/mime.types:${LOCALBASE}/etc/apache2/mime.types
 
 USE_SUBMAKE=	yes
 USE_PERL5=	yes
@@ -79,10 +77,11 @@ CONFIGURE_ARGS=	--disable-root-check --with-db=db \
 CONFIGURE_ENV=	PATH="${PATH}:${SCRIPTDIR}"
 
 # Respect the make.conf(5) NOUUCP setting
+WITH_TRANSPORT=	local esmtp dsn
 .if defined(NOUUCP)
-CONFIGURE_ARGS+=--with-transport='local esmtp dsn'
 PLIST_SUB+=	SUB_UUCP="@comment "
 .else
+WITH_TRANSPORT+=uucp
 PLIST_SUB+=	SUB_UUCP=""
 .endif
 
@@ -96,19 +95,31 @@ PLIST_SUB+=	BINOWN="${BINOWN}" BINGRP="${BINGRP}" \
 		CACHEOWN="${CACHEOWN}"
 
 SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
+		WITH_EXPECT="${WITH_EXPECT:L}" \
+		WITH_GNUPG="${WITH_GNUPG:L}" \
+		WITH_ASPELL="${WITH_ASPELL:L}" \
+		WITH_ISPELL="${WITH_ISPELL:L}" \
+		WITH_LDAP1="${WITH_LDAP1:L}" \
+		WITH_LDAP2="${WITH_LDAP2:L}" \
+		WITH_MYSQL="${WITH_MYSQL:L}" \
+		WITH_PGSQL="${WITH_PGSQL:L}" \
+		WITH_VPOPMAIL="${WITH_VPOPMAIL:L}" \
+		WITH_PROCMAIL="${WITH_PROCMAIL:L}" \
+		WITH_SENDFAX="${WITH_SENDFAX:L}" \
+		WITH_IPV6="${WITH_IPV6:L}" \
+		WITH_TRANSPORT="${WITH_TRANSPORT}" \
 		TOUCH="${TOUCH}" \
 		MKDIR="${MKDIR}"
 
+.if exists(${WRKDIRPREFIX}${.CURDIR}/Makefile.inc)
+.include "${WRKDIRPREFIX}${.CURDIR}/Makefile.inc"
+.endif
 .include "${.CURDIR}/Makefile.man"
 .include "${.CURDIR}/Makefile.doc"
 .include "${.CURDIR}/Makefile.own"
 
 pre-everything::
 	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure.${PORTNAME}
-
-.if exists(${WRKDIRPREFIX}${.CURDIR}/Makefile.inc)
-.include "${WRKDIRPREFIX}${.CURDIR}/Makefile.inc"
-.endif
 
 post-patch:
 	@${PERL} -pi -e 's:\@datadir\@:\@sysconfdir\@:g;' \
@@ -184,7 +195,9 @@ post-install:
 	@${CHOWN} -Rh ${MANOWN}:${MANGRP} ${MANPREFIX}/man/man[1-9ln]
 	@${CHOWN} -Rh ${SHAREOWN}:${SHAREGRP} ${DATADIR}
 	@${CHMOD} -R a-w ${DATADIR}
+	@${ECHO} ""
 	@${CAT} ${PKGMESSAGE}
+	@${ECHO} ""
 
 post-clean:
 	@${RM} -f ${WRKDIRPREFIX}${.CURDIR}/Makefile.inc

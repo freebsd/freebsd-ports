@@ -1,0 +1,28 @@
+#!/bin/sh
+#
+# $FreeBSD: /tmp/pcvs/ports/mail/courier/Attic/pkg-deinstall,v 1.1 2002-06-08 18:54:01 ijliao Exp $
+#
+
+PKG_PREFIX=${PKG_PREFIX:=/usr/local}
+
+USER=courier
+GROUP=courier
+
+if [ ":$2" = ":POST-DEINSTALL" -a -d /var/spool/courier ]; then
+    if [ -z "${PACKAGE_BUILDING}" ]; then
+        echo ""
+        echo "Warning: Removing user courier will also delete any"
+        echo "	 undelivered mail in the mail queue directories!!!"
+        echo "	 Do *not* do it if you're upgrading and would like"
+        echo "	 courier to continue trying to deliver this mail."
+        echo ""
+    else
+        AFFIRM='-y'
+    fi
+    if /usr/sbin/chown -Rh ${USER}:${GROUP} /var/spool/courier; then
+        /usr/sbin/rmuser ${AFFIRM} ${USER} 2> /dev/null
+    fi
+    if [ -d /var/spool/courier ]; then
+        /usr/sbin/chown root:wheel /var/spool/courier
+    fi
+fi

@@ -1,4 +1,3 @@
-
 		RTFM before configuring and running Courier!!!
 
 	Check and/or modify the following configuration files to
@@ -12,6 +11,9 @@
 		%%PREFIX%%/etc/courier/esmtpd
 		%%PREFIX%%/etc/courier/esmtpd-msa
 		%%PREFIX%%/etc/courier/esmtpd-ssl
+		%%PREFIX%%/etc/courier/faxcoverpage.tr
+		%%PREFIX%%/etc/courier/faxnotifyrc
+		%%PREFIX%%/etc/courier/faxrc
 		%%PREFIX%%/etc/courier/imapd
 		%%PREFIX%%/etc/courier/imapd-ssl
 		%%PREFIX%%/etc/courier/ldapaddressbook
@@ -30,4 +32,3 @@
 	Documentation (if installed locally) is located in
 	%%PREFIX%%/share/doc/courier/ otherwise see
 	http://www.Courier-MTA.org/
-
