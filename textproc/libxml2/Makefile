@@ -4,6 +4,12 @@
 #
 # $FreeBSD$
 #
+# WITH_THREADS enable pthread support (WILL BREAK OTHER PORTS!)
+# WITHOUT_SCHEMA disable XML schema support
+# WITH_MEM_DEBUG enable memory debugging (DEVELOPERS ONLY!)
+# WITH_XMLLINT_HIST enable history for xmllint
+# WITH_THREAD_ALLOC enable per-thread memory (DEVELOPERS ONLY!)
+#
 
 PORTNAME=	libxml2
 PORTVERSION=	2.6.16
@@ -32,15 +38,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 .if !defined(MASTERDIR)
 MAN1=		xml2-config.1 xmllint.1 xmlcatalog.1
 MAN3=		libxml.3
-
-OPTIONS=	THREADS "Enable pthread support (MAY BREAK OTHER PORTS!)" off \
-		SCHEMA "Enable XML schema support" on \
-		MEM_DEBUG "Enable memory debugging (DEVELOPERS ONLY!)" off \
-		XMLLINT_HIST "Enable history for xmllint" off \
-		THREAD_ALLOC "Enable per-thread memory (DEVELOPERS ONLY!)" off
 .endif
-
-.include <bsd.port.pre.mk>
 
 .if defined(WITH_THREADS)
 CONFIGURE_ARGS+=	--with-threads
@@ -68,4 +66,4 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/catalog.c ${WRKSRC}/xmlcatalog.c
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
