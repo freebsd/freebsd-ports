@@ -3,7 +3,7 @@
 # Date created:		22 September 1998
 # Whom:			Shigeyuki FUKUSHIMA <shige@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.4 1999/06/29 23:59:29 shige Exp $
+# $Id: Makefile,v 1.5 1999/08/06 14:18:48 shige Exp $
 #
 
 MAINTAINER=	shige@FreeBSD.ORG
@@ -16,7 +16,7 @@ MASTERDIR=	${.CURDIR}/../../editors/apel-emacs
 # emacs port setup
 EMACS_NAME=	emacs
 EMACS_PORT=	emacs20
-EMACS_VER=	20.3
+EMACS_VER=	20.4
 EMACS_LIBDIR=		share/${EMACS_NAME}
 EMACS_LIBDIR_WITH_VER=	${EMACS_LIBDIR}/${EMACS_VER}
 
