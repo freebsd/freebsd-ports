@@ -157,6 +157,7 @@ www/data-dist/phpgroupware/addressbook/templates/probusiness/full_format_us.tpl
 www/data-dist/phpgroupware/addressbook/templates/probusiness/images/folders.png
 www/data-dist/phpgroupware/addressbook/templates/probusiness/images/navbar.png
 www/data-dist/phpgroupware/addressbook/templates/probusiness/images/newcntc.png
+www/data-dist/phpgroupware/addressbook/templates/probusiness/images/single.png
 www/data-dist/phpgroupware/addressbook/templates/probusiness/import.tpl
 www/data-dist/phpgroupware/addressbook/templates/probusiness/index.tpl
 www/data-dist/phpgroupware/addressbook/templates/probusiness/line_format_de.tpl
@@ -563,6 +564,8 @@ www/data-dist/phpgroupware/bookmarks/templates/idsociety/images/user.gif
 www/data-dist/phpgroupware/bookmarks/templates/idsociety/images/user.png
 www/data-dist/phpgroupware/bookmarks/templates/idsociety/images/x.gif
 www/data-dist/phpgroupware/bookmarks/templates/idsociety/images/x.png
+www/data-dist/phpgroupware/bookmarks/templates/probusiness/images/folder.png
+www/data-dist/phpgroupware/bookmarks/templates/probusiness/images/navbar.png
 www/data-dist/phpgroupware/calendar/doc/rfc2445.txt
 www/data-dist/phpgroupware/calendar/help/DE/add.php
 www/data-dist/phpgroupware/calendar/help/DE/calendar.php
@@ -950,6 +953,7 @@ www/data-dist/phpgroupware/chat/templates/idsociety/images/navbar-over.gif
 www/data-dist/phpgroupware/chat/templates/idsociety/images/navbar-over.png
 www/data-dist/phpgroupware/chat/templates/idsociety/images/navbar.gif
 www/data-dist/phpgroupware/chat/templates/idsociety/images/navbar.png
+www/data-dist/phpgroupware/chat/templates/probusiness/images/navbar.png
 www/data-dist/phpgroupware/chat/templates/verdilak/images/navbar.gif
 www/data-dist/phpgroupware/chat/templates/verdilak/images/navbar.png
 www/data-dist/phpgroupware/chat/users.php
@@ -1002,6 +1006,7 @@ www/data-dist/phpgroupware/chora/setup/phpgw_de.lang
 www/data-dist/phpgroupware/chora/setup/phpgw_en.lang
 www/data-dist/phpgroupware/chora/setup/phpgw_fi.lang
 www/data-dist/phpgroupware/chora/setup/phpgw_fr.lang
+www/data-dist/phpgroupware/chora/setup/phpgw_ja.lang
 www/data-dist/phpgroupware/chora/setup/phpgw_pl.lang
 www/data-dist/phpgroupware/chora/setup/phpgw_sv.lang
 www/data-dist/phpgroupware/chora/setup/setup.inc.php
@@ -1087,6 +1092,8 @@ www/data-dist/phpgroupware/comic/doc/INSTALL
 www/data-dist/phpgroupware/comic/doc/LICENSE
 www/data-dist/phpgroupware/comic/doc/README
 www/data-dist/phpgroupware/comic/doc/TODO
+www/data-dist/phpgroupware/comic/images/source/template.xcf
+www/data-dist/phpgroupware/comic/images/source/template_sm.xcf
 www/data-dist/phpgroupware/comic/images/template.png
 www/data-dist/phpgroupware/comic/images/template_censor.png
 www/data-dist/phpgroupware/comic/images/template_censor_sm.png
@@ -1115,6 +1122,7 @@ www/data-dist/phpgroupware/comic/setup/phpgw_en.lang
 www/data-dist/phpgroupware/comic/setup/phpgw_fi.lang
 www/data-dist/phpgroupware/comic/setup/phpgw_fr.lang
 www/data-dist/phpgroupware/comic/setup/phpgw_it.lang
+www/data-dist/phpgroupware/comic/setup/phpgw_ja.lang
 www/data-dist/phpgroupware/comic/setup/phpgw_pl.lang
 www/data-dist/phpgroupware/comic/setup/phpgw_sv.lang
 www/data-dist/phpgroupware/comic/setup/setup.inc.php
@@ -1206,6 +1214,7 @@ www/data-dist/phpgroupware/dj/setup/phpgw_de.lang
 www/data-dist/phpgroupware/dj/setup/phpgw_en.lang
 www/data-dist/phpgroupware/dj/setup/phpgw_fi.lang
 www/data-dist/phpgroupware/dj/setup/phpgw_fr.lang
+www/data-dist/phpgroupware/dj/setup/phpgw_ja.lang
 www/data-dist/phpgroupware/dj/setup/phpgw_pl.lang
 www/data-dist/phpgroupware/dj/setup/phpgw_sv.lang
 www/data-dist/phpgroupware/dj/setup/setup.inc.php
@@ -1438,6 +1447,7 @@ www/data-dist/phpgroupware/doc/inlinedocparser_html.tpl
 www/data-dist/phpgroupware/doc/install/admin.html
 www/data-dist/phpgroupware/doc/install/apps.html
 www/data-dist/phpgroupware/doc/install/config.html
+www/data-dist/phpgroupware/doc/install/copyright.html
 www/data-dist/phpgroupware/doc/install/cover.html
 www/data-dist/phpgroupware/doc/install/download.html
 www/data-dist/phpgroupware/doc/install/index.html
@@ -1447,12 +1457,16 @@ www/data-dist/phpgroupware/doc/install/problems.html
 www/data-dist/phpgroupware/doc/install/security.html
 www/data-dist/phpgroupware/doc/install/tips.html
 www/data-dist/phpgroupware/doc/install/whatisphpgw.html
+www/data-dist/phpgroupware/doc/php-configuration.html
 www/data-dist/phpgroupware/doc/php-configuration.txt
 www/data-dist/phpgroupware/doc/phpgw-apache.conf
+www/data-dist/phpgroupware/doc/phpgw-apache.conf.html
 www/data-dist/phpgroupware/doc/pics/logo.png
 www/data-dist/phpgroupware/doc/rpm-build/build-phpgw-rpms
 www/data-dist/phpgroupware/doc/rpm-build/phpgroupware-rh-allapp.spec
 www/data-dist/phpgroupware/doc/rpm-build/phpgroupware-rh.spec
+www/data-dist/phpgroupware/doc/styles/print.css
+www/data-dist/phpgroupware/doc/styles/screen.css
 www/data-dist/phpgroupware/eldaptir/add.php
 www/data-dist/phpgroupware/eldaptir/addobj.php
 www/data-dist/phpgroupware/eldaptir/addserver.php
@@ -1728,6 +1742,10 @@ www/data-dist/phpgroupware/email/templates/default/images/AquaFusion/reply-all.g
 www/data-dist/phpgroupware/email/templates/default/images/AquaFusion/reply-all.png
 www/data-dist/phpgroupware/email/templates/default/images/AquaFusion/reply.gif
 www/data-dist/phpgroupware/email/templates/default/images/AquaFusion/reply.png
+www/data-dist/phpgroupware/email/templates/default/images/AquaFusion/search-16.gif
+www/data-dist/phpgroupware/email/templates/default/images/AquaFusion/search-16.png
+www/data-dist/phpgroupware/email/templates/default/images/AquaFusion/search-24.gif
+www/data-dist/phpgroupware/email/templates/default/images/AquaFusion/search-24.png
 www/data-dist/phpgroupware/email/templates/default/images/AquaFusion/send-16.gif
 www/data-dist/phpgroupware/email/templates/default/images/AquaFusion/send-16.png
 www/data-dist/phpgroupware/email/templates/default/images/AquaFusion/send-24.gif
@@ -1839,6 +1857,10 @@ www/data-dist/phpgroupware/email/templates/default/images/evo/reply-to-all.gif
 www/data-dist/phpgroupware/email/templates/default/images/evo/reply-to-all.png
 www/data-dist/phpgroupware/email/templates/default/images/evo/reply.gif
 www/data-dist/phpgroupware/email/templates/default/images/evo/reply.png
+www/data-dist/phpgroupware/email/templates/default/images/evo/search-16.gif
+www/data-dist/phpgroupware/email/templates/default/images/evo/search-16.png
+www/data-dist/phpgroupware/email/templates/default/images/evo/search-24.gif
+www/data-dist/phpgroupware/email/templates/default/images/evo/search-24.png
 www/data-dist/phpgroupware/email/templates/default/images/evo/send-16.gif
 www/data-dist/phpgroupware/email/templates/default/images/evo/send-16.png
 www/data-dist/phpgroupware/email/templates/default/images/evo/send-24.gif
@@ -1927,6 +1949,10 @@ www/data-dist/phpgroupware/email/templates/default/images/idots/reply-all.gif
 www/data-dist/phpgroupware/email/templates/default/images/idots/reply-all.png
 www/data-dist/phpgroupware/email/templates/default/images/idots/reply.gif
 www/data-dist/phpgroupware/email/templates/default/images/idots/reply.png
+www/data-dist/phpgroupware/email/templates/default/images/idots/search-16.gif
+www/data-dist/phpgroupware/email/templates/default/images/idots/search-16.png
+www/data-dist/phpgroupware/email/templates/default/images/idots/search-24.gif
+www/data-dist/phpgroupware/email/templates/default/images/idots/search-24.png
 www/data-dist/phpgroupware/email/templates/default/images/idots/send-16.gif
 www/data-dist/phpgroupware/email/templates/default/images/idots/send-16.png
 www/data-dist/phpgroupware/email/templates/default/images/idots/send-24.gif
@@ -2009,6 +2035,10 @@ www/data-dist/phpgroupware/email/templates/default/images/moz/reply-all.gif
 www/data-dist/phpgroupware/email/templates/default/images/moz/reply-all.png
 www/data-dist/phpgroupware/email/templates/default/images/moz/reply.gif
 www/data-dist/phpgroupware/email/templates/default/images/moz/reply.png
+www/data-dist/phpgroupware/email/templates/default/images/moz/search-16.gif
+www/data-dist/phpgroupware/email/templates/default/images/moz/search-16.png
+www/data-dist/phpgroupware/email/templates/default/images/moz/search-24.gif
+www/data-dist/phpgroupware/email/templates/default/images/moz/search-24.png
 www/data-dist/phpgroupware/email/templates/default/images/moz/send-16.gif
 www/data-dist/phpgroupware/email/templates/default/images/moz/send-16.png
 www/data-dist/phpgroupware/email/templates/default/images/moz/send-24.gif
@@ -2101,6 +2131,10 @@ www/data-dist/phpgroupware/email/templates/default/images/noia/reply-all.gif
 www/data-dist/phpgroupware/email/templates/default/images/noia/reply-all.png
 www/data-dist/phpgroupware/email/templates/default/images/noia/reply.gif
 www/data-dist/phpgroupware/email/templates/default/images/noia/reply.png
+www/data-dist/phpgroupware/email/templates/default/images/noia/search-16.gif
+www/data-dist/phpgroupware/email/templates/default/images/noia/search-16.png
+www/data-dist/phpgroupware/email/templates/default/images/noia/search-24.gif
+www/data-dist/phpgroupware/email/templates/default/images/noia/search-24.png
 www/data-dist/phpgroupware/email/templates/default/images/noia/send-16.gif
 www/data-dist/phpgroupware/email/templates/default/images/noia/send-16.png
 www/data-dist/phpgroupware/email/templates/default/images/noia/send-24.gif
@@ -2461,6 +2495,7 @@ www/data-dist/phpgroupware/etemplate/setup/etemplates.inc.php
 www/data-dist/phpgroupware/etemplate/setup/phpgw_de.lang
 www/data-dist/phpgroupware/etemplate/setup/phpgw_en.lang
 www/data-dist/phpgroupware/etemplate/setup/phpgw_fr.lang
+www/data-dist/phpgroupware/etemplate/setup/phpgw_ja.lang
 www/data-dist/phpgroupware/etemplate/setup/phpgw_sv.lang
 www/data-dist/phpgroupware/etemplate/setup/setup.inc.php
 www/data-dist/phpgroupware/etemplate/setup/tables_baseline.inc.php
@@ -2694,6 +2729,7 @@ www/data-dist/phpgroupware/filemanager/setup/default_records.inc.php
 www/data-dist/phpgroupware/filemanager/setup/phpgw_de.lang
 www/data-dist/phpgroupware/filemanager/setup/phpgw_en.lang
 www/data-dist/phpgroupware/filemanager/setup/phpgw_fr.lang
+www/data-dist/phpgroupware/filemanager/setup/phpgw_ja.lang
 www/data-dist/phpgroupware/filemanager/setup/phpgw_pl.lang
 www/data-dist/phpgroupware/filemanager/setup/phpgw_pt.lang
 www/data-dist/phpgroupware/filemanager/setup/phpgw_sv.lang
@@ -2733,6 +2769,8 @@ www/data-dist/phpgroupware/filemanager/templates/idsociety/images/navbar-over.gi
 www/data-dist/phpgroupware/filemanager/templates/idsociety/images/navbar-over.png
 www/data-dist/phpgroupware/filemanager/templates/idsociety/images/navbar.gif
 www/data-dist/phpgroupware/filemanager/templates/idsociety/images/navbar.png
+www/data-dist/phpgroupware/filemanager/templates/probusiness/images/folders.png
+www/data-dist/phpgroupware/filemanager/templates/probusiness/images/navbar.png
 www/data-dist/phpgroupware/filemanager/tests/benchmark_dav.php
 www/data-dist/phpgroupware/filemanager/tests/test.php
 www/data-dist/phpgroupware/filemanager/tests/test_dav.php
@@ -2895,6 +2933,7 @@ www/data-dist/phpgroupware/folders/phplayersmenu/templates/layersmenu-vertical_m
 www/data-dist/phpgroupware/folders/phplayersmenu/templates/layersmenu-vertical_menu.ihtml
 www/data-dist/phpgroupware/folders/setup/phpgw_de.lang
 www/data-dist/phpgroupware/folders/setup/phpgw_en.lang
+www/data-dist/phpgroupware/folders/setup/phpgw_ja.lang
 www/data-dist/phpgroupware/folders/setup/setup.inc.php
 www/data-dist/phpgroupware/folders/templates/default/folders.tpl
 www/data-dist/phpgroupware/folders/templates/default/helpers.tpl
@@ -3059,6 +3098,7 @@ www/data-dist/phpgroupware/ftp/setup/phpgw_en.lang
 www/data-dist/phpgroupware/ftp/setup/phpgw_fi.lang
 www/data-dist/phpgroupware/ftp/setup/phpgw_fr.lang
 www/data-dist/phpgroupware/ftp/setup/phpgw_it.lang
+www/data-dist/phpgroupware/ftp/setup/phpgw_ja.lang
 www/data-dist/phpgroupware/ftp/setup/phpgw_kr.lang
 www/data-dist/phpgroupware/ftp/setup/phpgw_nl.lang
 www/data-dist/phpgroupware/ftp/setup/phpgw_no.lang
@@ -4467,6 +4507,31 @@ www/data-dist/phpgroupware/infolog/templates/idsociety/images/view.png
 www/data-dist/phpgroupware/infolog/templates/idsociety/images/will-call.gif
 www/data-dist/phpgroupware/infolog/templates/idsociety/images/will-call.png
 www/data-dist/phpgroupware/infolog/templates/idsociety/info.css
+www/data-dist/phpgroupware/infolog/templates/probusiness/images/folder.png
+www/data-dist/phpgroupware/infolog/templates/probusiness/images/navbar.png
+www/data-dist/phpgroupware/ipc_test_suite/doc/IPC_XML-RPC.pdf
+www/data-dist/phpgroupware/ipc_test_suite/doc/IPC_XML-RPC.sxw
+www/data-dist/phpgroupware/ipc_test_suite/inc/class.ipc_test_suite.inc.php
+www/data-dist/phpgroupware/ipc_test_suite/inc/class.ipc_test_suite_addressbook.inc.php
+www/data-dist/phpgroupware/ipc_test_suite/inc/class.ipc_test_suite_bookmarks.inc.php
+www/data-dist/phpgroupware/ipc_test_suite/inc/class.ipc_test_suite_calendar.inc.php
+www/data-dist/phpgroupware/ipc_test_suite/inc/class.ipc_test_suite_email.inc.php
+www/data-dist/phpgroupware/ipc_test_suite/inc/class.ipc_test_suite_notes.inc.php
+www/data-dist/phpgroupware/ipc_test_suite/inc/class.ipc_test_suite_todo.inc.php
+www/data-dist/phpgroupware/ipc_test_suite/inc/class.ipc_test_suite_ui.inc.php
+www/data-dist/phpgroupware/ipc_test_suite/index.php
+www/data-dist/phpgroupware/ipc_test_suite/setup/setup.inc.php
+www/data-dist/phpgroupware/ipc_test_suite/sources/api/class.ipc_.inc.php
+www/data-dist/phpgroupware/ipc_test_suite/sources/api/class.ipc_manager.inc.php
+www/data-dist/phpgroupware/ipc_test_suite/sources/api/class.vcard.inc.php
+www/data-dist/phpgroupware/ipc_test_suite/sources/app/class.ipc_addressbook.inc.php
+www/data-dist/phpgroupware/ipc_test_suite/sources/app/class.ipc_bookmarks.inc.php
+www/data-dist/phpgroupware/ipc_test_suite/sources/app/class.ipc_calendar.inc.php
+www/data-dist/phpgroupware/ipc_test_suite/sources/app/class.ipc_notes.inc.php
+www/data-dist/phpgroupware/ipc_test_suite/sources/app/class.ipc_todo.inc.php
+www/data-dist/phpgroupware/ipc_test_suite/sources/dummy.txt
+www/data-dist/phpgroupware/ipc_test_suite/templates/default/images/navbar.gif
+www/data-dist/phpgroupware/ipc_test_suite/templates/default/images/navbar.png
 www/data-dist/phpgroupware/javassh/applet/colorSet.conf
 www/data-dist/phpgroupware/javassh/applet/jta25.jar
 www/data-dist/phpgroupware/javassh/applet/src/jta25-src.jar
@@ -4478,6 +4543,7 @@ www/data-dist/phpgroupware/javassh/inc/hook_sidebox_menu.inc.php
 www/data-dist/phpgroupware/javassh/index.php
 www/data-dist/phpgroupware/javassh/setup/phpgw_en.lang
 www/data-dist/phpgroupware/javassh/setup/phpgw_fr.lang
+www/data-dist/phpgroupware/javassh/setup/phpgw_ja.lang
 www/data-dist/phpgroupware/javassh/setup/phpgw_sv.lang
 www/data-dist/phpgroupware/javassh/setup/setup.inc.php
 www/data-dist/phpgroupware/javassh/setup/tables_current.inc.php
@@ -4744,6 +4810,7 @@ www/data-dist/phpgroupware/news_admin/setup/phpgw_de.lang
 www/data-dist/phpgroupware/news_admin/setup/phpgw_en.lang
 www/data-dist/phpgroupware/news_admin/setup/phpgw_fi.lang
 www/data-dist/phpgroupware/news_admin/setup/phpgw_fr.lang
+www/data-dist/phpgroupware/news_admin/setup/phpgw_ja.lang
 www/data-dist/phpgroupware/news_admin/setup/phpgw_pl.lang
 www/data-dist/phpgroupware/news_admin/setup/phpgw_sv.lang
 www/data-dist/phpgroupware/news_admin/setup/setup.inc.php
@@ -4767,6 +4834,7 @@ www/data-dist/phpgroupware/news_admin/templates/idsociety/images/navbar-over.gif
 www/data-dist/phpgroupware/news_admin/templates/idsociety/images/navbar-over.png
 www/data-dist/phpgroupware/news_admin/templates/idsociety/images/navbar.gif
 www/data-dist/phpgroupware/news_admin/templates/idsociety/images/navbar.png
+www/data-dist/phpgroupware/news_admin/templates/probusiness/images/navbar.png
 www/data-dist/phpgroupware/news_admin/website/export.php
 www/data-dist/phpgroupware/news_admin/website/index.php
 www/data-dist/phpgroupware/news_admin/website/news.inc.php
@@ -4939,6 +5007,7 @@ www/data-dist/phpgroupware/phonelog/templates/idsociety/images/navbar.gif
 www/data-dist/phpgroupware/phonelog/templates/idsociety/images/navbar.png
 www/data-dist/phpgroupware/phonelog/templates/verdilak/images/navbar.gif
 www/data-dist/phpgroupware/phonelog/templates/verdilak/images/navbar.png
+www/data-dist/phpgroupware/phpGroupWare - 0.9.16.kpf
 www/data-dist/phpgroupware/phpbrain/doc/INSTALL
 www/data-dist/phpgroupware/phpbrain/doc/README
 www/data-dist/phpgroupware/phpbrain/help.php
@@ -4952,6 +5021,7 @@ www/data-dist/phpgroupware/phpbrain/index.php
 www/data-dist/phpgroupware/phpbrain/setup/phpgw_de.lang
 www/data-dist/phpgroupware/phpbrain/setup/phpgw_en.lang
 www/data-dist/phpgroupware/phpbrain/setup/phpgw_fr.lang
+www/data-dist/phpgroupware/phpbrain/setup/phpgw_ja.lang
 www/data-dist/phpgroupware/phpbrain/setup/phpgw_sv.lang
 www/data-dist/phpgroupware/phpbrain/setup/setup.inc.php
 www/data-dist/phpgroupware/phpbrain/setup/tables_baseline.inc.php
@@ -4998,6 +5068,7 @@ www/data-dist/phpgroupware/phpgwapi/doc/classes/pdf/phpgwapi_small_color.pdf
 www/data-dist/phpgroupware/phpgwapi/doc/classes/pdf/phpinfolog_large_bw.pdf
 www/data-dist/phpgroupware/phpgwapi/doc/classes/pdf/phppreferences__bw.pdf
 www/data-dist/phpgroupware/phpgwapi/doc/coding_standard.txt
+www/data-dist/phpgroupware/phpgwapi/doc/contacts_indicies.sql
 www/data-dist/phpgroupware/phpgwapi/doc/create_ramdisk.php.txt
 www/data-dist/phpgroupware/phpgwapi/doc/cvs.html
 www/data-dist/phpgroupware/phpgwapi/doc/db-schema/index.html
@@ -6151,6 +6222,7 @@ www/data-dist/phpgroupware/phpgwapi/templates/probusiness/images/left.gif
 www/data-dist/phpgroupware/phpgwapi/templates/probusiness/images/left.png
 www/data-dist/phpgroupware/phpgwapi/templates/probusiness/images/logo.gif
 www/data-dist/phpgroupware/phpgwapi/templates/probusiness/images/logout.png
+www/data-dist/phpgroupware/phpgwapi/templates/probusiness/images/nonav.png
 www/data-dist/phpgroupware/phpgwapi/templates/probusiness/images/panel.png
 www/data-dist/phpgroupware/phpgwapi/templates/probusiness/images/pb_logo.png
 www/data-dist/phpgroupware/phpgwapi/templates/probusiness/images/right-grey.gif
@@ -6420,6 +6492,7 @@ www/data-dist/phpgroupware/phpsysinfo/setup/phpgw_de.lang
 www/data-dist/phpgroupware/phpsysinfo/setup/phpgw_en.lang
 www/data-dist/phpgroupware/phpsysinfo/setup/phpgw_fi.lang
 www/data-dist/phpgroupware/phpsysinfo/setup/phpgw_fr.lang
+www/data-dist/phpgroupware/phpsysinfo/setup/phpgw_ja.lang
 www/data-dist/phpgroupware/phpsysinfo/setup/phpgw_pl.lang
 www/data-dist/phpgroupware/phpsysinfo/setup/phpgw_sv.lang
 www/data-dist/phpgroupware/phpsysinfo/setup/setup.inc.php
@@ -6625,6 +6698,7 @@ www/data-dist/phpgroupware/polls/templates/idsociety/images/navbar.gif
 www/data-dist/phpgroupware/polls/templates/idsociety/images/navbar.png
 www/data-dist/phpgroupware/polls/templates/idsociety/images/pollbar.gif
 www/data-dist/phpgroupware/polls/templates/idsociety/images/pollbar.png
+www/data-dist/phpgroupware/polls/templates/probusiness/images/navbar.png
 www/data-dist/phpgroupware/polls/templates/verdilak/images/navbar.gif
 www/data-dist/phpgroupware/polls/templates/verdilak/images/navbar.png
 www/data-dist/phpgroupware/polls/templates/verdilak/images/pollbar.gif
@@ -6724,6 +6798,7 @@ www/data-dist/phpgroupware/projects/setup/phpgw_en.lang
 www/data-dist/phpgroupware/projects/setup/phpgw_es.lang
 www/data-dist/phpgroupware/projects/setup/phpgw_fr.lang
 www/data-dist/phpgroupware/projects/setup/phpgw_it.lang
+www/data-dist/phpgroupware/projects/setup/phpgw_ja.lang
 www/data-dist/phpgroupware/projects/setup/phpgw_nl.lang
 www/data-dist/phpgroupware/projects/setup/phpgw_pl.lang
 www/data-dist/phpgroupware/projects/setup/phpgw_pt.lang
@@ -6786,6 +6861,7 @@ www/data-dist/phpgroupware/qmailldap/index.php
 www/data-dist/phpgroupware/qmailldap/setup/phpgw_de.lang
 www/data-dist/phpgroupware/qmailldap/setup/phpgw_en.lang
 www/data-dist/phpgroupware/qmailldap/setup/phpgw_fr.lang
+www/data-dist/phpgroupware/qmailldap/setup/phpgw_ja.lang
 www/data-dist/phpgroupware/qmailldap/setup/setup.inc.php
 www/data-dist/phpgroupware/qmailldap/setup/tables_current.inc.php
 www/data-dist/phpgroupware/qmailldap/setup/tables_update.inc.php
@@ -6820,6 +6896,7 @@ www/data-dist/phpgroupware/registration/setup/phpgw_en.lang
 www/data-dist/phpgroupware/registration/setup/phpgw_fi.lang
 www/data-dist/phpgroupware/registration/setup/phpgw_fr.lang
 www/data-dist/phpgroupware/registration/setup/phpgw_it.lang
+www/data-dist/phpgroupware/registration/setup/phpgw_ja.lang
 www/data-dist/phpgroupware/registration/setup/phpgw_pl.lang
 www/data-dist/phpgroupware/registration/setup/phpgw_sv.lang
 www/data-dist/phpgroupware/registration/setup/setup.inc.php
@@ -6994,6 +7071,7 @@ www/data-dist/phpgroupware/sitemgr/setup/default_records.inc.php
 www/data-dist/phpgroupware/sitemgr/setup/phpgw_de.lang
 www/data-dist/phpgroupware/sitemgr/setup/phpgw_en.lang
 www/data-dist/phpgroupware/sitemgr/setup/phpgw_fr.lang
+www/data-dist/phpgroupware/sitemgr/setup/phpgw_ja.lang
 www/data-dist/phpgroupware/sitemgr/setup/phpgw_sv.lang
 www/data-dist/phpgroupware/sitemgr/setup/setup.inc.php
 www/data-dist/phpgroupware/sitemgr/setup/tables_baseline.inc.php
@@ -7004,6 +7082,7 @@ www/data-dist/phpgroupware/sitemgr/sitemgr-link/inc/hook_settings.inc.php
 www/data-dist/phpgroupware/sitemgr/sitemgr-link/index.php
 www/data-dist/phpgroupware/sitemgr/sitemgr-link/setup/phpgw_en.lang
 www/data-dist/phpgroupware/sitemgr/sitemgr-link/setup/phpgw_fr.lang
+www/data-dist/phpgroupware/sitemgr/sitemgr-link/setup/phpgw_ja.lang
 www/data-dist/phpgroupware/sitemgr/sitemgr-link/setup/setup.inc.php
 www/data-dist/phpgroupware/sitemgr/sitemgr-link/setup/tables_baseline.inc.php
 www/data-dist/phpgroupware/sitemgr/sitemgr-link/setup/tables_current.inc.php
@@ -7533,6 +7612,7 @@ www/data-dist/phpgroupware/soap/index.php
 www/data-dist/phpgroupware/soap/interop_harness.php
 www/data-dist/phpgroupware/soap/setup/phpgw_en.lang
 www/data-dist/phpgroupware/soap/setup/phpgw_fr.lang
+www/data-dist/phpgroupware/soap/setup/phpgw_ja.lang
 www/data-dist/phpgroupware/soap/setup/phpgw_sv.lang
 www/data-dist/phpgroupware/soap/setup/setup.inc.php
 www/data-dist/phpgroupware/soap/soaplib.soapinterop.php
@@ -7564,6 +7644,7 @@ www/data-dist/phpgroupware/stocks/setup/phpgw_en.lang
 www/data-dist/phpgroupware/stocks/setup/phpgw_fi.lang
 www/data-dist/phpgroupware/stocks/setup/phpgw_fr.lang
 www/data-dist/phpgroupware/stocks/setup/phpgw_it.lang
+www/data-dist/phpgroupware/stocks/setup/phpgw_ja.lang
 www/data-dist/phpgroupware/stocks/setup/phpgw_pl.lang
 www/data-dist/phpgroupware/stocks/setup/phpgw_sv.lang
 www/data-dist/phpgroupware/stocks/setup/setup.inc.php
@@ -7776,6 +7857,7 @@ www/data-dist/phpgroupware/wiki/setup/default_records.inc.php
 www/data-dist/phpgroupware/wiki/setup/phpgw_de.lang
 www/data-dist/phpgroupware/wiki/setup/phpgw_en.lang
 www/data-dist/phpgroupware/wiki/setup/phpgw_fr.lang
+www/data-dist/phpgroupware/wiki/setup/phpgw_ja.lang
 www/data-dist/phpgroupware/wiki/setup/phpgw_sv.lang
 www/data-dist/phpgroupware/wiki/setup/setup.inc.php
 www/data-dist/phpgroupware/wiki/setup/tables_current.inc.php
@@ -7806,6 +7888,7 @@ www/data-dist/phpgroupware/wiki/templates/default/images/vertshortbar.gif
 www/data-dist/phpgroupware/wiki/templates/idots/images/navbar.png
 www/data-dist/phpgroupware/wiki/templates/idsociety/images/navbar-over.png
 www/data-dist/phpgroupware/wiki/templates/idsociety/images/navbar.png
+www/data-dist/phpgroupware/wiki/templates/probusiness/images/navbar.png
 www/data-dist/phpgroupware/wiki/templates/terralab/images/navbar-over.gif
 www/data-dist/phpgroupware/wiki/templates/terralab/images/navbar.gif
 www/data-dist/phpgroupware/xmlrpc.php
@@ -7852,6 +7935,7 @@ www/data-dist/phpgroupware/xmlrpc/phpunit.php
 www/data-dist/phpgroupware/xmlrpc/server.php
 www/data-dist/phpgroupware/xmlrpc/setup/phpgw_en.lang
 www/data-dist/phpgroupware/xmlrpc/setup/phpgw_fr.lang
+www/data-dist/phpgroupware/xmlrpc/setup/phpgw_ja.lang
 www/data-dist/phpgroupware/xmlrpc/setup/phpgw_sv.lang
 www/data-dist/phpgroupware/xmlrpc/setup/setup.inc.php
 www/data-dist/phpgroupware/xmlrpc/templates/default/images/navbar.gif
@@ -7882,6 +7966,8 @@ www/data-dist/phpgroupware/xmlrpc/zopetest.php
 @dirrm www/data-dist/phpgroupware/xmlrpc
 @dirrm www/data-dist/phpgroupware/wiki/templates/terralab/images
 @dirrm www/data-dist/phpgroupware/wiki/templates/terralab
+@dirrm www/data-dist/phpgroupware/wiki/templates/probusiness/images
+@dirrm www/data-dist/phpgroupware/wiki/templates/probusiness
 @dirrm www/data-dist/phpgroupware/wiki/templates/idsociety/images
 @dirrm www/data-dist/phpgroupware/wiki/templates/idsociety
 @dirrm www/data-dist/phpgroupware/wiki/templates/idots/images
@@ -8096,6 +8182,8 @@ www/data-dist/phpgroupware/xmlrpc/zopetest.php
 @dirrm www/data-dist/phpgroupware/preferences
 @dirrm www/data-dist/phpgroupware/polls/templates/verdilak/images
 @dirrm www/data-dist/phpgroupware/polls/templates/verdilak
+@dirrm www/data-dist/phpgroupware/polls/templates/probusiness/images
+@dirrm www/data-dist/phpgroupware/polls/templates/probusiness
 @dirrm www/data-dist/phpgroupware/polls/templates/idsociety/images
 @dirrm www/data-dist/phpgroupware/polls/templates/idsociety
 @dirrm www/data-dist/phpgroupware/polls/templates/idots/images
@@ -8238,6 +8326,8 @@ www/data-dist/phpgroupware/xmlrpc/zopetest.php
 @dirrm www/data-dist/phpgroupware/news_admin/website/templates/images
 @dirrm www/data-dist/phpgroupware/news_admin/website/templates
 @dirrm www/data-dist/phpgroupware/news_admin/website
+@dirrm www/data-dist/phpgroupware/news_admin/templates/probusiness/images
+@dirrm www/data-dist/phpgroupware/news_admin/templates/probusiness
 @dirrm www/data-dist/phpgroupware/news_admin/templates/idsociety/images
 @dirrm www/data-dist/phpgroupware/news_admin/templates/idsociety
 @dirrm www/data-dist/phpgroupware/news_admin/templates/idots/images
@@ -8283,6 +8373,18 @@ www/data-dist/phpgroupware/xmlrpc/zopetest.php
 @dirrm www/data-dist/phpgroupware/javassh/applet/src
 @dirrm www/data-dist/phpgroupware/javassh/applet
 @dirrm www/data-dist/phpgroupware/javassh
+@dirrm www/data-dist/phpgroupware/ipc_test_suite/templates/default/images
+@dirrm www/data-dist/phpgroupware/ipc_test_suite/templates/default
+@dirrm www/data-dist/phpgroupware/ipc_test_suite/templates
+@dirrm www/data-dist/phpgroupware/ipc_test_suite/sources/app
+@dirrm www/data-dist/phpgroupware/ipc_test_suite/sources/api
+@dirrm www/data-dist/phpgroupware/ipc_test_suite/sources
+@dirrm www/data-dist/phpgroupware/ipc_test_suite/setup
+@dirrm www/data-dist/phpgroupware/ipc_test_suite/inc
+@dirrm www/data-dist/phpgroupware/ipc_test_suite/doc
+@dirrm www/data-dist/phpgroupware/ipc_test_suite
+@dirrm www/data-dist/phpgroupware/infolog/templates/probusiness/images
+@dirrm www/data-dist/phpgroupware/infolog/templates/probusiness
 @dirrm www/data-dist/phpgroupware/infolog/templates/idsociety/images
 @dirrm www/data-dist/phpgroupware/infolog/templates/idsociety
 @dirrm www/data-dist/phpgroupware/infolog/templates/idots/images
@@ -8459,6 +8561,8 @@ www/data-dist/phpgroupware/xmlrpc/zopetest.php
 @dirrm www/data-dist/phpgroupware/folders/doc
 @dirrm www/data-dist/phpgroupware/folders
 @dirrm www/data-dist/phpgroupware/filemanager/tests
+@dirrm www/data-dist/phpgroupware/filemanager/templates/probusiness/images
+@dirrm www/data-dist/phpgroupware/filemanager/templates/probusiness
 @dirrm www/data-dist/phpgroupware/filemanager/templates/idsociety/images
 @dirrm www/data-dist/phpgroupware/filemanager/templates/idsociety
 @dirrm www/data-dist/phpgroupware/filemanager/templates/idots/images
@@ -8540,6 +8644,7 @@ www/data-dist/phpgroupware/xmlrpc/zopetest.php
 @dirrm www/data-dist/phpgroupware/eldaptir/inc
 @dirrm www/data-dist/phpgroupware/eldaptir/doc
 @dirrm www/data-dist/phpgroupware/eldaptir
+@dirrm www/data-dist/phpgroupware/doc/styles
 @dirrm www/data-dist/phpgroupware/doc/rpm-build
 @dirrm www/data-dist/phpgroupware/doc/pics
 @dirrm www/data-dist/phpgroupware/doc/install
@@ -8589,6 +8694,7 @@ www/data-dist/phpgroupware/xmlrpc/zopetest.php
 @dirrm www/data-dist/phpgroupware/comic/templates
 @dirrm www/data-dist/phpgroupware/comic/setup
 @dirrm www/data-dist/phpgroupware/comic/inc
+@dirrm www/data-dist/phpgroupware/comic/images/source
 @dirrm www/data-dist/phpgroupware/comic/images
 @dirrm www/data-dist/phpgroupware/comic/doc
 @dirrm www/data-dist/phpgroupware/comic
@@ -8608,6 +8714,8 @@ www/data-dist/phpgroupware/xmlrpc/zopetest.php
 @dirrm www/data-dist/phpgroupware/chora
 @dirrm www/data-dist/phpgroupware/chat/templates/verdilak/images
 @dirrm www/data-dist/phpgroupware/chat/templates/verdilak
+@dirrm www/data-dist/phpgroupware/chat/templates/probusiness/images
+@dirrm www/data-dist/phpgroupware/chat/templates/probusiness
 @dirrm www/data-dist/phpgroupware/chat/templates/idsociety/images
 @dirrm www/data-dist/phpgroupware/chat/templates/idsociety
 @dirrm www/data-dist/phpgroupware/chat/templates/idots/images
@@ -8637,6 +8745,8 @@ www/data-dist/phpgroupware/xmlrpc/zopetest.php
 @dirrm www/data-dist/phpgroupware/calendar/help
 @dirrm www/data-dist/phpgroupware/calendar/doc
 @dirrm www/data-dist/phpgroupware/calendar
+@dirrm www/data-dist/phpgroupware/bookmarks/templates/probusiness/images
+@dirrm www/data-dist/phpgroupware/bookmarks/templates/probusiness
 @dirrm www/data-dist/phpgroupware/bookmarks/templates/idsociety/images
 @dirrm www/data-dist/phpgroupware/bookmarks/templates/idsociety
 @dirrm www/data-dist/phpgroupware/bookmarks/templates/idots/images
