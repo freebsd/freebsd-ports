@@ -15,6 +15,8 @@ DISTNAME=	quat-${PORTVERSION:S/.p/pre/}
 MAINTAINER=	dyeske@yahoo.com
 COMMENT=	A Three-dimensional fractal creator (X11 GUI)
 
+BROKEN=		"Does not build"
+
 LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
 
 USE_X_PREFIX=	yes
