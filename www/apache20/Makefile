@@ -7,6 +7,7 @@
 
 PORTNAME=	apache
 PORTVERSION=	2.0.48
+PORTREVISION=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD} \
 		http://sheepkiller.nerim.net/ports/${PORTNAME}/:powerlogo
@@ -33,23 +34,23 @@ CONFLICTS=	apache+ipv6-1.* apache+modssl-1.* apache+ssl-1.* apache-1.* apache_fp
 ##      WITH_MPM:                 prefork (default)
 ##                                worker
 ##                                perchild
-##      HTTP_PORT:                default: 80
+##      WITH_HTTP_PORT:           default: 80
 ##      WITH_LDAP:                Enable LDAP support (mod_auth_ldap)
 ##      WITHOUT_PROXY:            Disable proxy support
 ##          WITH_CUSTOM_PROXY:    Let you choose which proxy modules you wish
 ##      WITHOUT_AUTH:             Disable auth modules
 ##          WITH_CUSTOM_AUTH:     Let you choose which auth modules you wish
 ##      WITHOUT_DAV:              Disable DAV support
-##      IPV6_V6ONLY:              Disable IPv4 support
+##      WITH_IPV6_V6ONLY:         Disable IPv4 support
 ##      WITHOUT_SSL:              Disable SSL support
 ##      WITH_THREADS:             Enable threads support !! USE IT WITH CARE !!
 ##           WITH_CUSTOM_THREADS: Let you choose which threaded modules you want
 ##      WITH_EXPERIMENTAL:        Enable Experimental modules
 ##      WITH_DBM:                 Choose your DBM: bdb (Berkeley DB), gdbm or ndbm (default)
-##          WITH_BERKELEYDB:      Choose your BerkeleyDB version: db2, db3 or db4 (default)
+##          WITH_BERKELEYDB:      Choose your BerkeleyDB version: db2, db3, db4, db41 or FreeBSD (1.85)(default)
 ##      WITH_STATIC_SUPPORT:      Build statically linked support binaries
 ##      WITH_STATIC_APACHE:       Build a static version of httpd (implies WITH_STATIC_MODULES)
-##      WITH_ALL_STATIC_APACHE:   All modules statically linked.
+##      WITH_ALL_STATIC_MODULES:  All modules will be statically linked.
 ##      WITH_STATIC_MODULES:      List of modules to build modules statics (usefull for slave ports)
 ##                                (They must be already enabled (i.e. WITH_MODULES or with default configuration
 ##                                use 'make show-modules', to check if they are enabled)
@@ -60,12 +61,8 @@ CONFLICTS=	apache+ipv6-1.* apache+modssl-1.* apache+ssl-1.* apache-1.* apache_fp
 ##
 ##
 ##   Port-related:
-##      NOPORTDOCS:               Do not install documentation
-##      NO_CGI:                   Do not instal www/cgi-bin*
-##      NO_ERROR:                   Do not instal www/error
-##      NO_WWWDATA:               Do not instal www/data*
-##      NO_ICONS:                 Do not instal www/icons*
-##      NO_WWW:                   Implies NO_CGI, NO_WWWDATA, NO_ICONS and NO_ERROR
+##      WITHOUT_WWW:              Implies NO_CGI, NO_WWWDATA, NO_ICONS and NO_ERROR
+##           WITH_CUSTOM_WWW:     Let you choose your ${LOCALBASE}/www components: [cgi|errordocs|icons|wwwdata]
 ##
 ## Available make targets:
 ##      show-options:             prints this message
@@ -79,7 +76,7 @@ CONFLICTS=	apache+ipv6-1.* apache+modssl-1.* apache+ssl-1.* apache-1.* apache_fp
 ##
 
 WITH_MPM?=	prefork # or worker, perchild
-HTTP_PORT?=	80
+HTTP_PORT?=	${WITH_HTTP_PORT}
 
 GNU_CONFIGURE=	yes
 USE_LIBTOOL=	yes
@@ -108,7 +105,7 @@ MAKE_ENV+=	NOPORTDOCS=yes
 MAN1=		dbmmanage.1 htdigest.1 htpasswd.1
 MAN8=		ab.8 apachectl.8 apxs.8 httpd.8 logresolve.8 rotatelogs.8 suexec.8
 
-.if !defined(IPV6_V6ONLY)
+.if !defined(WITH_IPV6_V6ONLY)
 CONFIGURE_ARGS+=	--enable-v4-mapped
 .endif
 
@@ -117,45 +114,32 @@ USE_OPENSSL=	yes
 .endif
 
 .if defined(WITH_LDAP)
-USE_LDAP=	YES
+USE_OPENLDAP=	YES
 CONFIGURE_ARGS+=	--with-ldap \
 			--with-ldap-lib="${LOCALBASE}/lib" \
 			--with-ldap-include="${LOCALBASE}/include"
 .endif
 
-.if defined(NO_WWW)
+.if defined(WITHOUT_WWW)
 NO_CGI=		YES
 NO_WWWDATA=	YES
 NO_ICONS=	YES
 NO_ERROR=	YES
 .endif
 
-.if defined(NO_CGI)
-MAKE_ENV+=	NO_CGI=yes
-PLIST_SUB+=	CGI="@comment "
-.else
-PLIST_SUB+=	CGI=""
-.endif
-
-.if defined(NO_ICONS)
-MAKE_ENV+=	NO_ICONS=yes
-PLIST_SUB+=	ICONS="@comment "
-.else
-PLIST_SUB+=	ICONS=""
-.endif
-
-.if defined(NO_WWWDATA)
-MAKE_ENV+=	NO_WWWDATA=yes
-PLIST_SUB+=	WWWDATA="@comment "
-.else
-PLIST_SUB+=	WWWDATA=""
-.endif
-
-.if defined(NO_ERROR)
-MAKE_ENV+=	NO_ERROR=yes
-PLIST_SUB+=	ERROR="@comment "
-.else
-PLIST_SUB+=	ERROR=""
+.if defined(WITH_CUSTOM_WWW)
+.    if ${WITH_CUSTOM_WWW:Mcgi} == ""
+NO_CGI=		YES
+.    endif
+.    if ${WITH_CUSTOM_WWW:Mwwwdata} == ""
+NO_WWWDATA=		YES
+.    endif
+.    if ${WITH_CUSTOM_WWW:Merrordocs} == ""
+NO_ERROR=		YES
+.    endif
+.    if ${WITH_CUSTOM_WWW:Micons} == ""
+NO_ICONS=		YES
+.    endif
 .endif
 
 .if defined(WITH_STATIC_SUPPORT)
@@ -169,7 +153,7 @@ CONFIGURE_ARGS+=	--enable-static-support
 CONFIGURE_ARGS+=	--with-mpm=${WITH_MPM:L} ${CONFIGURE_TARGET}
 
 show-options:
-	@${EGREP} '^##' ${.CURDIR}/Makefile | ${SED} 's/##//'
+	@${SED} -ne 's/^##//p' ${.CURDIR}/Makefile
 
 show-modules:
 	@for module in $(AVAILABLE_MODULES) ; do \
