@@ -17,8 +17,7 @@ MAINTAINER=		ports@FreeBSD.org
 MAKEFILE=		Xmakefile
 REQUIRES_MOTIF=		yes
 USE_X_PREFIX=		yes
-
-BROKEN=			"Bad C++"
+CFLAGS=			-pedantic
 
 do-install:
 	@ ${INSTALL_PROGRAM} ${WRKSRC}/CaribbeanStud ${PREFIX}/bin
