@@ -1,6 +1,6 @@
 # New ports collection makefile for:	ruby-tmpl
 # Date created:		2001-08-22
-# Whom:			Sean Chittenden <sean@chittenden.org>
+# Whom:			Sean Chittenden <seanc@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	sean@chittenden.org
+MAINTAINER=	seanc@FreeBSD.org
 
 USE_RUBY=	yes
 
