@@ -7,6 +7,7 @@
 
 PORTNAME=	mkisofs
 PORTVERSION=	1.14
+PORTREVISION=	0
 CATEGORIES=	sysutils
 
 MASTERDIR=	${.CURDIR}/../cdrtools

@@ -1,0 +1,11 @@
+--- cdda2wav/ioctl.c.orig	Sat Dec  9 23:39:59 2000
++++ cdda2wav/ioctl.c	Sun Nov 18 10:38:23 2001
+@@ -162,7 +162,7 @@
+ 	exit( -1 );
+     }
+     for (i = 0; i < tracks; i++) {
+-        toc[i].dwStartSector = entry[i].cdte_addr.lba;
++        toc[i].dwStartSector = ntohl(entry[i].cdte_addr.lba);
+     }
+     bufferTOC[0] = '\0';
+     bufferTOC[1] = '\0';

@@ -7,6 +7,7 @@
 
 PORTNAME?=	cdrtools
 PORTVERSION?=	1.10
+PORTREVISION?=	1
 CATEGORIES?=	sysutils audio
 MASTER_SITES=	ftp://ftp.fokus.gmd.de/pub/unix/cdrecord/ \
 		ftp://ftp.cs.tu-berlin.de/pub/misc/cdrecord/ \
