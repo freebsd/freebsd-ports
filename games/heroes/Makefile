@@ -19,6 +19,8 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
 
 MAINTAINER=	sobomax@FreeBSD.org
 
+BROKEN=		"Does not package correctly"
+
 LIB_DEPENDS=	SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer \
 		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt \
 		iconv.3:${PORTSDIR}/converters/libiconv
