@@ -9,3 +9,5 @@ has enough low-level capabilities to allow users to achieve a high degree of
 customization. Precise control is extended to all aspects of drawing, including
 line-widths, colors, and fonts.  Text includes a subset of the tex language, so
 that it is easy to incorporate Greek letters and mathematical symbols in labels.
+
+WWW: http://gri.sourceforge.net/
