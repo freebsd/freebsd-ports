@@ -1,0 +1,8 @@
+--- nls.orig/nls.alias	Tue Nov 17 10:31:52 1998
++++ nls/nls.alias	Tue Nov 17 10:32:06 1998
+@@ -6,4 +6,4 @@
+ ja_JP.eucJP	ja_JP.ujis
+ ct		wr_WR.ct
+ chinese		zh_CN.ugb
+-korean		ko_KR.euc
++ko_KR.EUC	ko_KR.euc
