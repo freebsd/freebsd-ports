@@ -128,6 +128,7 @@
     SUBDIR += mod_python
     SUBDIR += mod_roaming
     SUBDIR += mod_ruby
+    SUBDIR += mod_snake
     SUBDIR += mod_throttle
     SUBDIR += mod_zap
     SUBDIR += momspider
