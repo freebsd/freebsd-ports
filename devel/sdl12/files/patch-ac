@@ -1,15 +1,6 @@
---- configure.orig	Tue Oct  3 19:01:18 2000
-+++ configure	Thu Oct  5 19:49:53 2000
-@@ -609,7 +609,7 @@
- SDL_MAJOR_VERSION=1
- SDL_MINOR_VERSION=1
- SDL_MICRO_VERSION=6
--SDL_INTERFACE_AGE=1
-+SDL_INTERFACE_AGE=2
- SDL_BINARY_AGE=6
- SDL_VERSION=$SDL_MAJOR_VERSION.$SDL_MINOR_VERSION.$SDL_MICRO_VERSION
- 
-@@ -622,9 +622,9 @@
+--- configure.orig	Thu Dec 21 07:02:47 2000
++++ configure	Wed Jan  3 13:37:14 2001
+@@ -630,9 +630,9 @@
  
  # libtool versioning
  LT_RELEASE=$SDL_MAJOR_VERSION.$SDL_MINOR_VERSION
@@ -21,7 +12,7 @@
  
  
  
-@@ -3012,7 +3012,7 @@
+@@ -3022,7 +3022,7 @@
  
  
  SDL_CFLAGS=""
@@ -30,3 +21,18 @@
  
  
  case "$target" in
+@@ -5899,10 +5899,10 @@
+   cat >>$new <$old
+ 
+         # Set up files for the audio library
+-        if test x$enable_audio = xyes; then
+-            AUDIO_SUBDIRS="$AUDIO_SUBDIRS sun"
+-            AUDIO_DRIVERS="$AUDIO_DRIVERS sun/libaudio_sun.la"
+-        fi
++        #if test x$enable_audio = xyes; then
++        #    AUDIO_SUBDIRS="$AUDIO_SUBDIRS sun"
++        #    AUDIO_DRIVERS="$AUDIO_DRIVERS sun/libaudio_sun.la"
++        #fi
+         # Set up files for the joystick library
+         # (No joystick support yet)
+         if test x$enable_joystick = xyes; then
