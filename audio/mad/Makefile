@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mad
-PORTVERSION=	0.12.5b
+PORTVERSION=	0.13.0b
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.mars.org/pub/mpeg/
