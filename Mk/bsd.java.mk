@@ -36,6 +36,10 @@ Java_Include_MAINTAINER=	znerd@FreeBSD.org
 # Stage 1: Define constants
 #
 
+# System-global directories
+JAVASHAREDIR?=	${PREFIX}/share/java
+JAVAJARDIR?=	${JAVASHAREDIR}/classes
+
 # The complete list of Java versions supported.
 _JAVA_VERSIONS=		1.1 1.2 1.3 1.4
 
