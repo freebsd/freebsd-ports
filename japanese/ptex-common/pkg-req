@@ -22,7 +22,11 @@ echo
 if [ "x$3" != "xBATCH" ]; then
   echo 'If you proceed, these files will be renamed to *.old and new files'
   echo 'will be installed.'
-  read  -p 'Would you like to proceed? (y/N)> ' ans
+  if [ -z "${PACKAGE_BUILDING}" ]; then
+    read  -p 'Would you like to proceed? (y/N)> ' ans
+   else
+    ans=yes
+  fi
   case x$ans in
     xy*|xY*) for f in ${files_exist} ;do mv -f $f ${f}.old; done; exit 0
   esac
