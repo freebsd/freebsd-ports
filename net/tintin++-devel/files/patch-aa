@@ -1,26 +1,11 @@
-*** Makefile.in.orig	Thu Jul 20 11:46:17 2000
---- Makefile.in	Sat Sep  2 09:14:06 2000
-***************
-*** 9,19 ****
-  
-  DEFINES = -D_GNU_SOURCE @DEFS@
-  
-- CC = @CC@
-  MAKE = @MAKE@
-  
-  #this is the standard CFLAGS options, this is what most people should use
-! CFLAGS = -O2 $(DEFINES)
-  
-  #this is the debugging CFLAGS options, should only be used if you want to
-  #debug/code tintin
---- 9,18 ----
-  
-  DEFINES = -D_GNU_SOURCE @DEFS@
-  
-  MAKE = @MAKE@
-  
-  #this is the standard CFLAGS options, this is what most people should use
-! CFLAGS += $(DEFINES)
-  
-  #this is the debugging CFLAGS options, should only be used if you want to
-  #debug/code tintin
+--- Makefile.in.orig	Sun Feb 18 22:27:03 2001
++++ Makefile.in	Sun Feb 18 22:28:00 2001
+@@ -13,7 +13,7 @@
+ MAKE = @MAKE@
+ 
+ #this is the standard CFLAGS options, this is what most people should use
+-CFLAGS = -O2 $(DEFINES) @BIG5@
++CFLAGS += $(DEFINES) @BIG5@
+ 
+ #this is the debugging CFLAGS options, should only be used if you want to
+ #debug/code tintin

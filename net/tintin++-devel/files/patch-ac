@@ -1,19 +1,11 @@
---- chat.c.orig	Fri Sep  8 13:42:00 2000
-+++ chat.c	Tue Sep 23 12:46:11 2000
-@@ -66,7 +66,6 @@
- #include <stdio.h>
- #include <unistd.h>
- #include <memory.h>
--#include <malloc.h>
- #include <errno.h>
- #include <ctype.h>
- #include <sys/socket.h>
-@@ -1456,9 +1455,8 @@
+--- chat.c.orig	Sun Feb 18 22:32:15 2001
++++ chat.c	Sun Feb 18 22:33:18 2001
+@@ -1451,9 +1451,8 @@
+   sprintf(filestring, "%s/%s", getenv("HOME"), CONFIG_FILE);
    
-   
-   if ((f = fopen("chat.conf", "r")) == NULL) {
--    printf("\n#ERROR: chat.conf not found!\n");
--    printf("        This file must be in your current directory.\n");
+   if ((f = fopen(filestring, "r")) == NULL) {
+-    printf("\n#ERROR: tt.conf not found!\n");
+-    printf("        This file must be in your home directory.\n");
 -    printf("        Using defaults...\n");
 +    printf("\n#CHAT: chat.conf file must be in your current directory to enable it.\n");
 +    printf("       You can find example in /usr/local/share/doc/tintin, use with caution.\n");

@@ -1,19 +1,11 @@
-*** main.c.orig	Sat Sep  2 10:20:22 2000
---- main.c	Sat Sep  2 10:20:27 2000
-***************
-*** 70,76 ****
-  int verbatim = 0;
-  int prompt_on = 0;
-  int funcnum = 0;
-! int enable_chat = 1;
-  char homepath[1025];
-  char prompt_line[BUFFER_SIZE];
-  
---- 70,76 ----
-  int verbatim = 0;
-  int prompt_on = 0;
-  int funcnum = 0;
-! int enable_chat = 0;
-  char homepath[1025];
-  char prompt_line[BUFFER_SIZE];
-  
+--- main.c.orig	Sun Feb 18 22:31:06 2001
++++ main.c	Sun Feb 18 22:31:13 2001
+@@ -73,7 +73,7 @@
+ int verbatim = 0;
+ int prompt_on = 0;
+ int funcnum = 0;
+-int enable_chat = 1;
++int enable_chat = 0;
+ char homepath[1025];
+ char prompt_line[BUFFER_SIZE];
+ 

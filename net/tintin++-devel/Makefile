@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	tintin
-PORTVERSION=	1.8.3
+PORTVERSION=	1.8.4
 CATEGORIES=	net games
 MASTER_SITES=	http://mail.newclear.net/tintin/download/ \
 		http://freebsd.hanirc.org/~jhp/tintin++/ 
-DISTNAME=	tintin++v1.83
+DISTNAME=	tintin++v1.84
 
 MAINTAINER=	jhp@cocoja.holywar.net
 
@@ -24,7 +24,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/support/.tt_help.txt.Z ${PREFIX}/lib/tintin
 	${MKDIR} ${PREFIX}/share/doc/tintin
 	${INSTALL_DATA} ${WRKSRC}/support/.tintinrc ${PREFIX}/share/doc/tintin/tintinrc
-	${INSTALL_DATA} ${WRKSRC}/../chat.conf ${PREFIX}/share/doc/tintin/chat.conf.example
+	${INSTALL_DATA} ${WRKSRC}/support/tt.conf ${PREFIX}/share/doc/tintin/chat.conf.example
 	cd ${WRKSRC}/.. ; ${INSTALL_DATA} CHANGES FAQ CREDITS README docs/* ${PREFIX}/share/doc/tintin
 
 .include <bsd.port.mk>
