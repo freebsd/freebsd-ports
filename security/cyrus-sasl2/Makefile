@@ -86,6 +86,10 @@ CONFIGURE_ARGS+=--with-mysql=${PREFIX}
 MYSQL=	"@comment "
 .endif
 
+.if defined(WITH_DEV_URANDOM)
+CONFIGURE_ARGS+=--with-devrandom=/dev/urandom
+.endif
+
 .if defined(WITHOUT_OTP)
 CONFIGURE_ARGS+=--disable-otp
 OTP=	"@comment "
