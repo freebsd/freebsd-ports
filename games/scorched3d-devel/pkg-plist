@@ -20,6 +20,8 @@ games/scorched3d/data/accessories/default.bmp
 games/scorched3d/data/accessories/digger/black.bmp
 games/scorched3d/data/accessories/digger/digger.txt
 games/scorched3d/data/accessories/digger/swirl.bmp
+games/scorched3d/data/accessories/dirt/camo.bmp
+games/scorched3d/data/accessories/dirt/dirt.txt
 games/scorched3d/data/accessories/fatman/black.bmp
 games/scorched3d/data/accessories/fatman/fatman.txt
 games/scorched3d/data/accessories/flare.txt
@@ -38,8 +40,11 @@ games/scorched3d/data/accessories/m48/gradient.bmp
 games/scorched3d/data/accessories/m48/m48.txt
 games/scorched3d/data/accessories/m48/white.bmp
 games/scorched3d/data/accessories/m48/yellow.bmp
+games/scorched3d/data/accessories/magma.bmp
 games/scorched3d/data/accessories/mirvwarhead/black.bmp
 games/scorched3d/data/accessories/mirvwarhead/mirvwarhead.txt
+games/scorched3d/data/accessories/napalm/body.bmp
+games/scorched3d/data/accessories/napalm/napalm.txt
 games/scorched3d/data/accessories/palmtree/black.bmp
 games/scorched3d/data/accessories/palmtree/burntpalm.txt
 games/scorched3d/data/accessories/palmtree/burntpalm2.txt
@@ -51,7 +56,14 @@ games/scorched3d/data/accessories/patriot/gradient.bmp
 games/scorched3d/data/accessories/patriot/patriot.txt
 games/scorched3d/data/accessories/patriot/white.bmp
 games/scorched3d/data/accessories/patriot/yellow.bmp
+games/scorched3d/data/accessories/riot/base.bmp
+games/scorched3d/data/accessories/riot/body.bmp
+games/scorched3d/data/accessories/riot/riot.txt
 games/scorched3d/data/accessories/roller.ase
+games/scorched3d/data/accessories/roller/metal.bmp
+games/scorched3d/data/accessories/roller/roller.txt
+games/scorched3d/data/accessories/roller/warning.bmp
+games/scorched3d/data/accessories/roller/worn.bmp
 games/scorched3d/data/accessories/sa6/gradient.bmp
 games/scorched3d/data/accessories/sa6/sa6.txt
 games/scorched3d/data/accessories/sa6/white.bmp
@@ -78,8 +90,336 @@ games/scorched3d/data/accessories/white.bmp
 games/scorched3d/data/ainames.txt
 games/scorched3d/data/autoexec.xml
 games/scorched3d/data/fonts/test.ttf
+games/scorched3d/data/globalmods/apoc/authors.txt
+games/scorched3d/data/globalmods/apoc/data/accessories.xml
+games/scorched3d/data/globalmods/apoc/data/accessories/black.bmp
+games/scorched3d/data/globalmods/apoc/data/accessories/boulders/boulder1.txt
+games/scorched3d/data/globalmods/apoc/data/accessories/boulders/boulder2.txt
+games/scorched3d/data/globalmods/apoc/data/accessories/boulders/boulder3.txt
+games/scorched3d/data/globalmods/apoc/data/accessories/boulders/boulder4.txt
+games/scorched3d/data/globalmods/apoc/data/accessories/boulders/rock1.bmp
+games/scorched3d/data/globalmods/apoc/data/accessories/boulders/rock5.bmp
+games/scorched3d/data/globalmods/apoc/data/accessories/boulders/rock6.bmp
+games/scorched3d/data/globalmods/apoc/data/accessories/brownboulders/boulder1.txt
+games/scorched3d/data/globalmods/apoc/data/accessories/brownboulders/boulder2.txt
+games/scorched3d/data/globalmods/apoc/data/accessories/brownboulders/boulder3.txt
+games/scorched3d/data/globalmods/apoc/data/accessories/brownboulders/boulder4.txt
+games/scorched3d/data/globalmods/apoc/data/accessories/brownboulders/rock1.bmp
+games/scorched3d/data/globalmods/apoc/data/accessories/brownboulders/rock2.bmp
+games/scorched3d/data/globalmods/apoc/data/accessories/brownboulders/rock5.bmp
+games/scorched3d/data/globalmods/apoc/data/accessories/brownboulders/rock6.bmp
+games/scorched3d/data/globalmods/apoc/data/accessories/cactus/burnt.bmp
+games/scorched3d/data/globalmods/apoc/data/accessories/cactus/cactus.txt
+games/scorched3d/data/globalmods/apoc/data/accessories/cactus/cactusburnt.txt
+games/scorched3d/data/globalmods/apoc/data/accessories/cactus/cactussmall.txt
+games/scorched3d/data/globalmods/apoc/data/accessories/cactus/cactussmallburnt.txt
+games/scorched3d/data/globalmods/apoc/data/accessories/cactus/green.bmp
+games/scorched3d/data/globalmods/apoc/data/accessories/church1/black.bmp
+games/scorched3d/data/globalmods/apoc/data/accessories/church1/church1.txt
+games/scorched3d/data/globalmods/apoc/data/accessories/church1/church1burnt.txt
+games/scorched3d/data/globalmods/apoc/data/accessories/church1/door.bmp
+games/scorched3d/data/globalmods/apoc/data/accessories/church1/gold.bmp
+games/scorched3d/data/globalmods/apoc/data/accessories/church1/stainglass.bmp
+games/scorched3d/data/globalmods/apoc/data/accessories/church1/white.bmp
+games/scorched3d/data/globalmods/apoc/data/accessories/cityoffice/cityoffice.txt
+games/scorched3d/data/globalmods/apoc/data/accessories/cityoffice/cityofficeburnt.txt
+games/scorched3d/data/globalmods/apoc/data/accessories/cityoffice/grey.bmp
+games/scorched3d/data/globalmods/apoc/data/accessories/cityoffice/window.bmp
+games/scorched3d/data/globalmods/apoc/data/accessories/deer/black.bmp
+games/scorched3d/data/globalmods/apoc/data/accessories/deer/body.bmp
+games/scorched3d/data/globalmods/apoc/data/accessories/deer/deer1.txt
+games/scorched3d/data/globalmods/apoc/data/accessories/deer/deer2.txt
+games/scorched3d/data/globalmods/apoc/data/accessories/deer/deerburnt.txt
+games/scorched3d/data/globalmods/apoc/data/accessories/deer/white.bmp
+games/scorched3d/data/globalmods/apoc/data/accessories/factory1/black.bmp
+games/scorched3d/data/globalmods/apoc/data/accessories/factory1/burntwalls.bmp
+games/scorched3d/data/globalmods/apoc/data/accessories/factory1/burntwindow.bmp
+games/scorched3d/data/globalmods/apoc/data/accessories/factory1/factory1.txt
+games/scorched3d/data/globalmods/apoc/data/accessories/factory1/factory1burnt.txt
+games/scorched3d/data/globalmods/apoc/data/accessories/factory1/grey.bmp
+games/scorched3d/data/globalmods/apoc/data/accessories/factory1/stacksmoke.bmp
+games/scorched3d/data/globalmods/apoc/data/accessories/factory1/window.bmp
+games/scorched3d/data/globalmods/apoc/data/accessories/factory1/woodbeam.bmp
+games/scorched3d/data/globalmods/apoc/data/accessories/farm1/black.bmp
+games/scorched3d/data/globalmods/apoc/data/accessories/farm1/farm1.txt
+games/scorched3d/data/globalmods/apoc/data/accessories/farm1/farm1burnt.txt
+games/scorched3d/data/globalmods/apoc/data/accessories/farm1/red.bmp
+games/scorched3d/data/globalmods/apoc/data/accessories/farm1/redsiding.bmp
+games/scorched3d/data/globalmods/apoc/data/accessories/farm1/white.bmp
+games/scorched3d/data/globalmods/apoc/data/accessories/farm1/yellow.bmp
+games/scorched3d/data/globalmods/apoc/data/accessories/fusionbarrel/fusionbarrel.txt
+games/scorched3d/data/globalmods/apoc/data/accessories/fusionbarrel/main.bmp
+games/scorched3d/data/globalmods/apoc/data/accessories/fusionbarrel/rings.bmp
+games/scorched3d/data/globalmods/apoc/data/accessories/fusionbarrel/tops.bmp
+games/scorched3d/data/globalmods/apoc/data/accessories/green.bmp
+games/scorched3d/data/globalmods/apoc/data/accessories/grenade/gradient.bmp
+games/scorched3d/data/globalmods/apoc/data/accessories/grenade/grenade.txt
+games/scorched3d/data/globalmods/apoc/data/accessories/grenade/olive.bmp
+games/scorched3d/data/globalmods/apoc/data/accessories/grenade/pin.bmp
+games/scorched3d/data/globalmods/apoc/data/accessories/grenade/pineapple.bmp
+games/scorched3d/data/globalmods/apoc/data/accessories/house1/black.bmp
+games/scorched3d/data/globalmods/apoc/data/accessories/house1/brick.bmp
+games/scorched3d/data/globalmods/apoc/data/accessories/house1/door.bmp
+games/scorched3d/data/globalmods/apoc/data/accessories/house1/flamebrick1.bmp
+games/scorched3d/data/globalmods/apoc/data/accessories/house1/house1.txt
+games/scorched3d/data/globalmods/apoc/data/accessories/house1/house1burnt.txt
+games/scorched3d/data/globalmods/apoc/data/accessories/house1/step.bmp
+games/scorched3d/data/globalmods/apoc/data/accessories/house1/windows.bmp
+games/scorched3d/data/globalmods/apoc/data/accessories/house1/woodbeam.bmp
+games/scorched3d/data/globalmods/apoc/data/accessories/logcabin1/door.bmp
+games/scorched3d/data/globalmods/apoc/data/accessories/logcabin1/frame.bmp
+games/scorched3d/data/globalmods/apoc/data/accessories/logcabin1/logcabin1.txt
+games/scorched3d/data/globalmods/apoc/data/accessories/logcabin1/logcabin1burnt.txt
+games/scorched3d/data/globalmods/apoc/data/accessories/logcabin1/roof.bmp
+games/scorched3d/data/globalmods/apoc/data/accessories/logcabin1/window.bmp
+games/scorched3d/data/globalmods/apoc/data/accessories/m7a3grenade/black.bmp
+games/scorched3d/data/globalmods/apoc/data/accessories/m7a3grenade/gradient.bmp
+games/scorched3d/data/globalmods/apoc/data/accessories/m7a3grenade/green.bmp
+games/scorched3d/data/globalmods/apoc/data/accessories/m7a3grenade/m7a3grenade.txt
+games/scorched3d/data/globalmods/apoc/data/accessories/m7a3grenade/olive.bmp
+games/scorched3d/data/globalmods/apoc/data/accessories/molten.bmp
+games/scorched3d/data/globalmods/apoc/data/accessories/napalm/body.bmp
+games/scorched3d/data/globalmods/apoc/data/accessories/napalm/napalm.txt
+games/scorched3d/data/globalmods/apoc/data/accessories/officeplaza1/antenna.bmp
+games/scorched3d/data/globalmods/apoc/data/accessories/officeplaza1/glasstop.bmp
+games/scorched3d/data/globalmods/apoc/data/accessories/officeplaza1/grey.bmp
+games/scorched3d/data/globalmods/apoc/data/accessories/officeplaza1/officeplaza1.txt
+games/scorched3d/data/globalmods/apoc/data/accessories/officeplaza1/officeplaza1burnt.txt
+games/scorched3d/data/globalmods/apoc/data/accessories/officeplaza1/roof.bmp
+games/scorched3d/data/globalmods/apoc/data/accessories/officeplaza1/window.bmp
+games/scorched3d/data/globalmods/apoc/data/accessories/redhornet/black.bmp
+games/scorched3d/data/globalmods/apoc/data/accessories/redhornet/red.bmp
+games/scorched3d/data/globalmods/apoc/data/accessories/redhornet/redhornet.txt
+games/scorched3d/data/globalmods/apoc/data/accessories/remorcebomblet/remorce.bmp
+games/scorched3d/data/globalmods/apoc/data/accessories/remorcebomblet/remorcebomblet.txt
+games/scorched3d/data/globalmods/apoc/data/accessories/remorcebomblet/yellow.bmp
+games/scorched3d/data/globalmods/apoc/data/accessories/shockbomblet/gradient.bmp
+games/scorched3d/data/globalmods/apoc/data/accessories/shockbomblet/liquid.bmp
+games/scorched3d/data/globalmods/apoc/data/accessories/shockbomblet/shockbomblet.txt
+games/scorched3d/data/globalmods/apoc/data/accessories/shockrocket/black.bmp
+games/scorched3d/data/globalmods/apoc/data/accessories/shockrocket/gradient.bmp
+games/scorched3d/data/globalmods/apoc/data/accessories/shockrocket/liquid.bmp
+games/scorched3d/data/globalmods/apoc/data/accessories/shockrocket/red.bmp
+games/scorched3d/data/globalmods/apoc/data/accessories/shockrocket/shockrocket.txt
+games/scorched3d/data/globalmods/apoc/data/accessories/shockrocket/white.bmp
+games/scorched3d/data/globalmods/apoc/data/accessories/shockrocket/yellow.bmp
+games/scorched3d/data/globalmods/apoc/data/accessories/skyscraper1/antenna.bmp
+games/scorched3d/data/globalmods/apoc/data/accessories/skyscraper1/black.bmp
+games/scorched3d/data/globalmods/apoc/data/accessories/skyscraper1/grey.bmp
+games/scorched3d/data/globalmods/apoc/data/accessories/skyscraper1/red.bmp
+games/scorched3d/data/globalmods/apoc/data/accessories/skyscraper1/skyscraper1.txt
+games/scorched3d/data/globalmods/apoc/data/accessories/skyscraper1/skyscraper1burnt.txt
+games/scorched3d/data/globalmods/apoc/data/accessories/skyscraper1/window.bmp
+games/scorched3d/data/globalmods/apoc/data/accessories/smalloak/brown.bmp
+games/scorched3d/data/globalmods/apoc/data/accessories/smalloak/brownburnt.bmp
+games/scorched3d/data/globalmods/apoc/data/accessories/smalloak/green.bmp
+games/scorched3d/data/globalmods/apoc/data/accessories/smalloak/smalloak.txt
+games/scorched3d/data/globalmods/apoc/data/accessories/smalloak/smalloakburnt.txt
+games/scorched3d/data/globalmods/apoc/data/accessories/smalloak/smalloakfall.txt
+games/scorched3d/data/globalmods/apoc/data/accessories/store1/black.bmp
+games/scorched3d/data/globalmods/apoc/data/accessories/store1/brick.bmp
+games/scorched3d/data/globalmods/apoc/data/accessories/store1/door.bmp
+games/scorched3d/data/globalmods/apoc/data/accessories/store1/grey.bmp
+games/scorched3d/data/globalmods/apoc/data/accessories/store1/greybrick.bmp
+games/scorched3d/data/globalmods/apoc/data/accessories/store1/red.bmp
+games/scorched3d/data/globalmods/apoc/data/accessories/store1/store1.txt
+games/scorched3d/data/globalmods/apoc/data/accessories/store1/store1burnt.txt
+games/scorched3d/data/globalmods/apoc/data/accessories/store1/window.bmp
+games/scorched3d/data/globalmods/apoc/data/accessories/store1/yellow.bmp
+games/scorched3d/data/globalmods/apoc/data/accessories/trailorhouse1/black.bmp
+games/scorched3d/data/globalmods/apoc/data/accessories/trailorhouse1/chrome.bmp
+games/scorched3d/data/globalmods/apoc/data/accessories/trailorhouse1/red.bmp
+games/scorched3d/data/globalmods/apoc/data/accessories/trailorhouse1/trailorhouse1.txt
+games/scorched3d/data/globalmods/apoc/data/accessories/trailorhouse1/trailorhouse1burnt.txt
+games/scorched3d/data/globalmods/apoc/data/ainames.txt
+games/scorched3d/data/globalmods/apoc/data/landscapes.xml
+games/scorched3d/data/globalmods/apoc/data/landscapes/apoccity-pic.bmp
+games/scorched3d/data/globalmods/apoc/data/landscapes/apoccity.bmp
+games/scorched3d/data/globalmods/apoc/data/landscapes/arizonaislands-pic.bmp
+games/scorched3d/data/globalmods/apoc/data/landscapes/arizonaislands.bmp
+games/scorched3d/data/globalmods/apoc/data/landscapes/bighill-pic.bmp
+games/scorched3d/data/globalmods/apoc/data/landscapes/bullseye-map.bmp
+games/scorched3d/data/globalmods/apoc/data/landscapes/bullseye.bmp
+games/scorched3d/data/globalmods/apoc/data/landscapes/castle-pic.bmp
+games/scorched3d/data/globalmods/apoc/data/landscapes/castle.bmp
+games/scorched3d/data/globalmods/apoc/data/landscapes/colosseum-pic.bmp
+games/scorched3d/data/globalmods/apoc/data/landscapes/colosseum.bmp
+games/scorched3d/data/globalmods/apoc/data/landscapes/craters-pic.bmp
+games/scorched3d/data/globalmods/apoc/data/landscapes/craters.bmp
+games/scorched3d/data/globalmods/apoc/data/landscapes/desertmesa-pic.bmp
+games/scorched3d/data/globalmods/apoc/data/landscapes/desertmesa.bmp
+games/scorched3d/data/globalmods/apoc/data/landscapes/halved.bmp
+games/scorched3d/data/globalmods/apoc/data/landscapes/hexisle-pic.bmp
+games/scorched3d/data/globalmods/apoc/data/landscapes/hexisle.bmp
+games/scorched3d/data/globalmods/apoc/data/landscapes/hillcity-pic.bmp
+games/scorched3d/data/globalmods/apoc/data/landscapes/hillcity.bmp
+games/scorched3d/data/globalmods/apoc/data/landscapes/masks/anywhere.bmp
+games/scorched3d/data/globalmods/apoc/data/landscapes/masks/center-square.bmp
+games/scorched3d/data/globalmods/apoc/data/landscapes/masks/city1all.bmp
+games/scorched3d/data/globalmods/apoc/data/landscapes/masks/city1rural.bmp
+games/scorched3d/data/globalmods/apoc/data/landscapes/masks/city1rural2.bmp
+games/scorched3d/data/globalmods/apoc/data/landscapes/masks/city1suburban.bmp
+games/scorched3d/data/globalmods/apoc/data/landscapes/masks/city1suburban2.bmp
+games/scorched3d/data/globalmods/apoc/data/landscapes/masks/city1urban.bmp
+games/scorched3d/data/globalmods/apoc/data/landscapes/masks/city1urban2.bmp
+games/scorched3d/data/globalmods/apoc/data/landscapes/masks/city2all.bmp
+games/scorched3d/data/globalmods/apoc/data/landscapes/masks/city2rural.bmp
+games/scorched3d/data/globalmods/apoc/data/landscapes/masks/city2rural2.bmp
+games/scorched3d/data/globalmods/apoc/data/landscapes/masks/city2suburban.bmp
+games/scorched3d/data/globalmods/apoc/data/landscapes/masks/city2suburban2.bmp
+games/scorched3d/data/globalmods/apoc/data/landscapes/masks/city2urban.bmp
+games/scorched3d/data/globalmods/apoc/data/landscapes/masks/city2urban2.bmp
+games/scorched3d/data/globalmods/apoc/data/landscapes/masks/city3all.bmp
+games/scorched3d/data/globalmods/apoc/data/landscapes/masks/city3rural.bmp
+games/scorched3d/data/globalmods/apoc/data/landscapes/masks/city3rural2.bmp
+games/scorched3d/data/globalmods/apoc/data/landscapes/masks/city3suburban.bmp
+games/scorched3d/data/globalmods/apoc/data/landscapes/masks/city3suburban2.bmp
+games/scorched3d/data/globalmods/apoc/data/landscapes/masks/city3urban.bmp
+games/scorched3d/data/globalmods/apoc/data/landscapes/masks/city3urban2.bmp
+games/scorched3d/data/globalmods/apoc/data/landscapes/masks/usa-cactus.bmp
+games/scorched3d/data/globalmods/apoc/data/landscapes/masks/usa-palms.bmp
+games/scorched3d/data/globalmods/apoc/data/landscapes/masks/usa-pines.bmp
+games/scorched3d/data/globalmods/apoc/data/landscapes/maze-pic.bmp
+games/scorched3d/data/globalmods/apoc/data/landscapes/maze.bmp
+games/scorched3d/data/globalmods/apoc/data/landscapes/moon-pic.bmp
+games/scorched3d/data/globalmods/apoc/data/landscapes/moon.bmp
+games/scorched3d/data/globalmods/apoc/data/landscapes/mountains-pic.bmp
+games/scorched3d/data/globalmods/apoc/data/landscapes/nexuscanyon-pic.bmp
+games/scorched3d/data/globalmods/apoc/data/landscapes/nexuscanyon.bmp
+games/scorched3d/data/globalmods/apoc/data/landscapes/pillars-pic.bmp
+games/scorched3d/data/globalmods/apoc/data/landscapes/pillars.bmp
+games/scorched3d/data/globalmods/apoc/data/landscapes/plateau-pic.bmp
+games/scorched3d/data/globalmods/apoc/data/landscapes/plateau.bmp
+games/scorched3d/data/globalmods/apoc/data/landscapes/pyramids-pic.bmp
+games/scorched3d/data/globalmods/apoc/data/landscapes/pyramids-v2-pic.bmp
+games/scorched3d/data/globalmods/apoc/data/landscapes/pyramids-v2.bmp
+games/scorched3d/data/globalmods/apoc/data/landscapes/pyramids.bmp
+games/scorched3d/data/globalmods/apoc/data/landscapes/ring-mask.bmp
+games/scorched3d/data/globalmods/apoc/data/landscapes/ring.bmp
+games/scorched3d/data/globalmods/apoc/data/landscapes/ruffles-pic.bmp
+games/scorched3d/data/globalmods/apoc/data/landscapes/ruffles.bmp
+games/scorched3d/data/globalmods/apoc/data/landscapes/steppes-pic.bmp
+games/scorched3d/data/globalmods/apoc/data/landscapes/steppes.bmp
+games/scorched3d/data/globalmods/apoc/data/landscapes/terraces-pic.bmp
+games/scorched3d/data/globalmods/apoc/data/landscapes/terraces.bmp
+games/scorched3d/data/globalmods/apoc/data/landscapes/twotowers-pic.bmp
+games/scorched3d/data/globalmods/apoc/data/landscapes/twotowers.bmp
+games/scorched3d/data/globalmods/apoc/data/landscapes/usa-map.bmp
+games/scorched3d/data/globalmods/apoc/data/landscapes/usa.bmp
+games/scorched3d/data/globalmods/apoc/data/landscapes/volcano-pic.bmp
+games/scorched3d/data/globalmods/apoc/data/landscapes/volcano.bmp
+games/scorched3d/data/globalmods/apoc/data/landscapes/weathered-pic.bmp
+games/scorched3d/data/globalmods/apoc/data/landscapes/weathered.bmp
+games/scorched3d/data/globalmods/apoc/data/landscapes/world-map.bmp
+games/scorched3d/data/globalmods/apoc/data/landscapes/world.bmp
+games/scorched3d/data/globalmods/apoc/data/landscapesdefn.xml
+games/scorched3d/data/globalmods/apoc/data/landscapestex.xml
+games/scorched3d/data/globalmods/apoc/data/server.xml
+games/scorched3d/data/globalmods/apoc/data/singleeasy.xml
+games/scorched3d/data/globalmods/apoc/data/singlegames.xml
+games/scorched3d/data/globalmods/apoc/data/singlehard.xml
+games/scorched3d/data/globalmods/apoc/data/singlenormal.xml
+games/scorched3d/data/globalmods/apoc/data/singletarget.xml
+games/scorched3d/data/globalmods/apoc/data/tankais.xml
+games/scorched3d/data/globalmods/apoc/data/textures/explode/acid00_1.bmp
+games/scorched3d/data/globalmods/apoc/data/textures/explode/acid00_10.bmp
+games/scorched3d/data/globalmods/apoc/data/textures/explode/acid00_11.bmp
+games/scorched3d/data/globalmods/apoc/data/textures/explode/acid00_12.bmp
+games/scorched3d/data/globalmods/apoc/data/textures/explode/acid00_2.bmp
+games/scorched3d/data/globalmods/apoc/data/textures/explode/acid00_3.bmp
+games/scorched3d/data/globalmods/apoc/data/textures/explode/acid00_4.bmp
+games/scorched3d/data/globalmods/apoc/data/textures/explode/acid00_5.bmp
+games/scorched3d/data/globalmods/apoc/data/textures/explode/acid00_6.bmp
+games/scorched3d/data/globalmods/apoc/data/textures/explode/acid00_7.bmp
+games/scorched3d/data/globalmods/apoc/data/textures/explode/acid00_8.bmp
+games/scorched3d/data/globalmods/apoc/data/textures/explode/acid00_9.bmp
+games/scorched3d/data/globalmods/apoc/data/textures/explode/cloud00_1.bmp
+games/scorched3d/data/globalmods/apoc/data/textures/explode/cloud00_2.bmp
+games/scorched3d/data/globalmods/apoc/data/textures/explode/cloud00_3.bmp
+games/scorched3d/data/globalmods/apoc/data/textures/explode/cloud00_4.bmp
+games/scorched3d/data/globalmods/apoc/data/textures/explode/cloud00_5.bmp
+games/scorched3d/data/globalmods/apoc/data/textures/explode/gas00_1.bmp
+games/scorched3d/data/globalmods/apoc/data/textures/explode/gas00_2.bmp
+games/scorched3d/data/globalmods/apoc/data/textures/explode/gas00_3.bmp
+games/scorched3d/data/globalmods/apoc/data/textures/explode/gas00_4.bmp
+games/scorched3d/data/globalmods/apoc/data/textures/explode/gas00_5.bmp
+games/scorched3d/data/globalmods/apoc/data/textures/explode/gas00_6.bmp
+games/scorched3d/data/globalmods/apoc/data/textures/explode/gas00_7.bmp
+games/scorched3d/data/globalmods/apoc/data/textures/explode/gas00_8.bmp
+games/scorched3d/data/globalmods/apoc/data/textures/explode/light00_1.bmp
+games/scorched3d/data/globalmods/apoc/data/textures/explode/light00_2.bmp
+games/scorched3d/data/globalmods/apoc/data/textures/explode/light00_3.bmp
+games/scorched3d/data/globalmods/apoc/data/textures/explode/light00_4.bmp
+games/scorched3d/data/globalmods/apoc/data/textures/landscape/grass/scorch.bmp
+games/scorched3d/data/globalmods/apoc/data/textures/landscape/grass/texture1.bmp
+games/scorched3d/data/globalmods/apoc/data/textures/landscape/grass/texture2.bmp
+games/scorched3d/data/globalmods/apoc/data/textures/landscape/moon/rockside.bmp
+games/scorched3d/data/globalmods/apoc/data/textures/landscape/moon/surround.bmp
+games/scorched3d/data/globalmods/apoc/data/textures/landscape/moon/texture0.bmp
+games/scorched3d/data/globalmods/apoc/data/textures/landscape/moon/texture1.bmp
+games/scorched3d/data/globalmods/apoc/data/textures/landscape/moon/texture2.bmp
+games/scorched3d/data/globalmods/apoc/data/textures/landscape/moon/texture3.bmp
+games/scorched3d/data/globalmods/apoc/data/textures/wicons/ablast.bmp
+games/scorched3d/data/globalmods/apoc/data/textures/wicons/anapalm.bmp
+games/scorched3d/data/globalmods/apoc/data/textures/wicons/arain.bmp
+games/scorched3d/data/globalmods/apoc/data/textures/wicons/asplash.bmp
+games/scorched3d/data/globalmods/apoc/data/textures/wicons/atlantis.bmp
+games/scorched3d/data/globalmods/apoc/data/textures/wicons/down.bmp
+games/scorched3d/data/globalmods/apoc/data/textures/wicons/drill.bmp
+games/scorched3d/data/globalmods/apoc/data/textures/wicons/dring.bmp
+games/scorched3d/data/globalmods/apoc/data/textures/wicons/dshield.bmp
+games/scorched3d/data/globalmods/apoc/data/textures/wicons/emp.bmp
+games/scorched3d/data/globalmods/apoc/data/textures/wicons/fant.bmp
+games/scorched3d/data/globalmods/apoc/data/textures/wicons/flight.bmp
+games/scorched3d/data/globalmods/apoc/data/textures/wicons/fungus.bmp
+games/scorched3d/data/globalmods/apoc/data/textures/wicons/fworm.bmp
+games/scorched3d/data/globalmods/apoc/data/textures/wicons/gas.bmp
+games/scorched3d/data/globalmods/apoc/data/textures/wicons/grenade.bmp
+games/scorched3d/data/globalmods/apoc/data/textures/wicons/hardhat.bmp
+games/scorched3d/data/globalmods/apoc/data/textures/wicons/hornet.bmp
+games/scorched3d/data/globalmods/apoc/data/textures/wicons/hstorm.bmp
+games/scorched3d/data/globalmods/apoc/data/textures/wicons/light.bmp
+games/scorched3d/data/globalmods/apoc/data/textures/wicons/meteor.bmp
+games/scorched3d/data/globalmods/apoc/data/textures/wicons/mountain.bmp
+games/scorched3d/data/globalmods/apoc/data/textures/wicons/mshower.bmp
+games/scorched3d/data/globalmods/apoc/data/textures/wicons/nblast.bmp
+games/scorched3d/data/globalmods/apoc/data/textures/wicons/nsplash.bmp
+games/scorched3d/data/globalmods/apoc/data/textures/wicons/pit.bmp
+games/scorched3d/data/globalmods/apoc/data/textures/wicons/qsand.bmp
+games/scorched3d/data/globalmods/apoc/data/textures/wicons/quake.bmp
+games/scorched3d/data/globalmods/apoc/data/textures/wicons/skull.bmp
+games/scorched3d/data/globalmods/apoc/data/textures/wicons/swave.bmp
+games/scorched3d/data/globalmods/apoc/data/textures/wicons/up.bmp
+games/scorched3d/data/globalmods/apoc/data/textures/wicons/x.bmp
+games/scorched3d/data/globalmods/apoc/data/textures/wicons/xmirv.bmp
+games/scorched3d/data/globalmods/apoc/data/textureset.xml
+games/scorched3d/data/globalmods/apoc/data/wav/explosions/acid.wav
+games/scorched3d/data/globalmods/apoc/data/wav/explosions/bees.wav
+games/scorched3d/data/globalmods/apoc/data/wav/explosions/dirt.wav
+games/scorched3d/data/globalmods/apoc/data/wav/explosions/empsmall.wav
+games/scorched3d/data/globalmods/apoc/data/wav/explosions/gas.wav
+games/scorched3d/data/globalmods/apoc/data/wav/explosions/lightning.wav
+games/scorched3d/data/globalmods/apoc/data/wav/explosions/lightningbolt.wav
+games/scorched3d/data/globalmods/apoc/data/wav/explosions/meteor.wav
+games/scorched3d/data/globalmods/apoc/data/wav/explosions/quake.wav
+games/scorched3d/data/globalmods/apoc/data/wav/explosions/shockwave.wav
+games/scorched3d/data/globalmods/apoc/data/wav/explosions/thud.wav
+games/scorched3d/data/globalmods/apoc/data/wav/explosions/thunder.wav
+games/scorched3d/data/globalmods/apoc/data/wav/shoot/tripleshot.wav
+games/scorched3d/data/globalmods/apoc/data/windows/nuke-easy.bmp
+games/scorched3d/data/globalmods/apoc/data/windows/nuke-hard.bmp
+games/scorched3d/data/globalmods/apoc/data/windows/nuke-med.bmp
+games/scorched3d/data/globalmods/apoc/data/windows/nuke.bmp
+games/scorched3d/data/globalmods/apoc/data/windows/scorched.bmp
+games/scorched3d/data/globalmods/apoc/data/windows/target.bmp
+games/scorched3d/data/globalmods/apoc/data/windows/wait.bmp
+games/scorched3d/data/globalmods/apoc/license.txt
+games/scorched3d/data/globalmods/apoc/readme-nexus.txt
+games/scorched3d/data/globalmods/apoc/readme.txt
+games/scorched3d/data/globalmods/globalmods.txt
 games/scorched3d/data/keys.xml
 games/scorched3d/data/landscapes.xml
+games/scorched3d/data/landscapes/half-mask-start.bmp
 games/scorched3d/data/landscapes/half-mask.bmp
 games/scorched3d/data/landscapes/halved.bmp
 games/scorched3d/data/landscapes/hilly.bmp
@@ -92,8 +432,11 @@ games/scorched3d/data/landscapes/oldstyle.bmp
 games/scorched3d/data/landscapes/picture-none.bmp
 games/scorched3d/data/landscapes/ridge-mask.bmp
 games/scorched3d/data/landscapes/ridge.bmp
+games/scorched3d/data/landscapes/surround-mask.bmp
 games/scorched3d/data/landscapes/valley-mask.bmp
 games/scorched3d/data/landscapes/valley.bmp
+games/scorched3d/data/landscapesdefn.xml
+games/scorched3d/data/landscapestex.xml
 games/scorched3d/data/meshes/autoaim.ase
 games/scorched3d/data/meshes/bounce.ase
 games/scorched3d/data/meshes/concrete.ase
@@ -102,16 +445,15 @@ games/scorched3d/data/meshes/rock2.ase
 games/scorched3d/data/meshes/survivalraft.txt
 games/scorched3d/data/meshes/wind.ase
 games/scorched3d/data/meshes/wrap.ase
-games/scorched3d/data/motd.txt
 games/scorched3d/data/mysql.xml
 games/scorched3d/data/playernames.txt
 games/scorched3d/data/prunetables.sql
 games/scorched3d/data/random.no
-games/scorched3d/data/resource.xml
 games/scorched3d/data/safedisplay.xml
 games/scorched3d/data/server.xml
 games/scorched3d/data/singlecustom.xml
 games/scorched3d/data/singleeasy.xml
+games/scorched3d/data/singlegames.xml
 games/scorched3d/data/singlehard.xml
 games/scorched3d/data/singlenormal.xml
 games/scorched3d/data/singletarget.xml
@@ -126,6 +468,12 @@ games/scorched3d/data/talk/talk1.txt
 games/scorched3d/data/talk/talk2.txt
 games/scorched3d/data/tankais.xml
 games/scorched3d/data/tanks.xml
+games/scorched3d/data/tanks/CF-104/104.txt
+games/scorched3d/data/tanks/CF-104/black.bmp
+games/scorched3d/data/tanks/CF-104/cockpit.bmp
+games/scorched3d/data/tanks/CF-104/engine.bmp
+games/scorched3d/data/tanks/CF-104/red.bmp
+games/scorched3d/data/tanks/CF-104/seams.bmp
 games/scorched3d/data/tanks/a7v.ase
 games/scorched3d/data/tanks/a7v.bmp
 games/scorched3d/data/tanks/aat.ase
@@ -151,6 +499,12 @@ games/scorched3d/data/tanks/bradley.bmp
 games/scorched3d/data/tanks/bradley2/bradley.bmp
 games/scorched3d/data/tanks/bradley2/bradley2.txt
 games/scorched3d/data/tanks/bradleyb.bmp
+games/scorched3d/data/tanks/cannontower/base.bmp
+games/scorched3d/data/tanks/cannontower/cannontower.txt
+games/scorched3d/data/tanks/cannontower/gun.bmp
+games/scorched3d/data/tanks/cannontower/side.bmp
+games/scorched3d/data/tanks/cannontower/side2.bmp
+games/scorched3d/data/tanks/cannontower/top.bmp
 games/scorched3d/data/tanks/death/black.bmp
 games/scorched3d/data/tanks/death/chrome.bmp
 games/scorched3d/data/tanks/death/death.txt
@@ -215,6 +569,11 @@ games/scorched3d/data/tanks/m7priest.ase
 games/scorched3d/data/tanks/m7priest.bmp
 games/scorched3d/data/tanks/mark1.ase
 games/scorched3d/data/tanks/mark1.bmp
+games/scorched3d/data/tanks/missileturret/chrome.bmp
+games/scorched3d/data/tanks/missileturret/missileturret.txt
+games/scorched3d/data/tanks/missileturret/red.bmp
+games/scorched3d/data/tanks/missileturret/side.bmp
+games/scorched3d/data/tanks/missileturret/white.bmp
 games/scorched3d/data/tanks/mlrs/camo.bmp
 games/scorched3d/data/tanks/mlrs/chrome.bmp
 games/scorched3d/data/tanks/mlrs/mlrs.txt
@@ -300,6 +659,14 @@ games/scorched3d/data/tanks/towedartillery2/chrome.bmp
 games/scorched3d/data/tanks/towedartillery2/tan.bmp
 games/scorched3d/data/tanks/towedartillery2/towedartillery2.txt
 games/scorched3d/data/tanks/towedartilleryb.bmp
+games/scorched3d/data/tanks/turret2/chrome.bmp
+games/scorched3d/data/tanks/turret2/missileturret.bmp
+games/scorched3d/data/tanks/turret2/turret2.txt
+games/scorched3d/data/tanks/tux/black.bmp
+games/scorched3d/data/tanks/tux/grey.bmp
+games/scorched3d/data/tanks/tux/tux.txt
+games/scorched3d/data/tanks/tux/white.bmp
+games/scorched3d/data/tanks/tux/yellow.bmp
 games/scorched3d/data/tanks/v2.ase
 games/scorched3d/data/tanks/v2.bmp
 games/scorched3d/data/tanks/wespe.ase
@@ -317,6 +684,7 @@ games/scorched3d/data/textures/bordershield/grid.bmp
 games/scorched3d/data/textures/bordershield/grid2.bmp
 games/scorched3d/data/textures/bordershield/grid22.bmp
 games/scorched3d/data/textures/bordershield/hit.bmp
+games/scorched3d/data/textures/clearsky.bmp
 games/scorched3d/data/textures/explode/exp00_1.bmp
 games/scorched3d/data/textures/explode/exp00_10.bmp
 games/scorched3d/data/textures/explode/exp00_2.bmp
@@ -470,14 +838,20 @@ games/scorched3d/data/textures/lensflare/shine6.bw
 games/scorched3d/data/textures/lensflare/shine7.bw
 games/scorched3d/data/textures/lensflare/shine8.bw
 games/scorched3d/data/textures/lensflare/shine9.bw
+games/scorched3d/data/textures/lightning.bmp
+games/scorched3d/data/textures/particle.bmp
 games/scorched3d/data/textures/pine.bmp
 games/scorched3d/data/textures/pinea.bmp
+games/scorched3d/data/textures/rain.bmp
+games/scorched3d/data/textures/rainm.bmp
+games/scorched3d/data/textures/ring.bmp
 games/scorched3d/data/textures/smoke01.bmp
 games/scorched3d/data/textures/smoke02.bmp
+games/scorched3d/data/textures/snow.bmp
+games/scorched3d/data/textures/snowm.bmp
 games/scorched3d/data/textures/talk.bmp
 games/scorched3d/data/textures/waves.bmp
 games/scorched3d/data/textures/waves2.bmp
-games/scorched3d/data/textures/wicons/Thumbs.db
 games/scorched3d/data/textures/wicons/autod.bmp
 games/scorched3d/data/textures/wicons/battery.bmp
 games/scorched3d/data/textures/wicons/bdigger.bmp
@@ -486,6 +860,7 @@ games/scorched3d/data/textures/wicons/bnuke.bmp
 games/scorched3d/data/textures/wicons/broller.bmp
 games/scorched3d/data/textures/wicons/bshog.bmp
 games/scorched3d/data/textures/wicons/dball.bmp
+games/scorched3d/data/textures/wicons/dcharge.bmp
 games/scorched3d/data/textures/wicons/dclod.bmp
 games/scorched3d/data/textures/wicons/dhead.bmp
 games/scorched3d/data/textures/wicons/digger.bmp
@@ -498,6 +873,7 @@ games/scorched3d/data/textures/wicons/hrbomb.bmp
 games/scorched3d/data/textures/wicons/hroller.bmp
 games/scorched3d/data/textures/wicons/hshield.bmp
 games/scorched3d/data/textures/wicons/hshog.bmp
+games/scorched3d/data/textures/wicons/laser.bmp
 games/scorched3d/data/textures/wicons/lfrog.bmp
 games/scorched3d/data/textures/wicons/mag.bmp
 games/scorched3d/data/textures/wicons/mirv.bmp
@@ -505,7 +881,9 @@ games/scorched3d/data/textures/wicons/missile.bmp
 games/scorched3d/data/textures/wicons/napalm.bmp
 games/scorched3d/data/textures/wicons/nuke.bmp
 games/scorched3d/data/textures/wicons/para.bmp
+games/scorched3d/data/textures/wicons/rblast.bmp
 games/scorched3d/data/textures/wicons/rbomb.bmp
+games/scorched3d/data/textures/wicons/rcharge.bmp
 games/scorched3d/data/textures/wicons/roller.bmp
 games/scorched3d/data/textures/wicons/shield.bmp
 games/scorched3d/data/textures/wicons/shog.bmp
@@ -513,6 +891,8 @@ games/scorched3d/data/textures/wicons/smag.bmp
 games/scorched3d/data/textures/wicons/stracer.bmp
 games/scorched3d/data/textures/wicons/tdirt.bmp
 games/scorched3d/data/textures/wicons/tracer.bmp
+games/scorched3d/data/textureset.xml
+games/scorched3d/data/tips.txt
 games/scorched3d/data/wav/battery/battery.wav
 games/scorched3d/data/wav/explosions/crunch.wav
 games/scorched3d/data/wav/explosions/gloop.wav
@@ -528,6 +908,7 @@ games/scorched3d/data/wav/misc/para.wav
 games/scorched3d/data/wav/misc/play.wav
 games/scorched3d/data/wav/misc/splash.wav
 games/scorched3d/data/wav/misc/text.wav
+games/scorched3d/data/wav/misc/thunder.wav
 games/scorched3d/data/wav/movement/elevate.wav
 games/scorched3d/data/wav/movement/movement.wav
 games/scorched3d/data/wav/movement/turn.wav
@@ -552,6 +933,7 @@ games/scorched3d/data/windows/client.bmp
 games/scorched3d/data/windows/diff.bmp
 games/scorched3d/data/windows/diffa.bmp
 games/scorched3d/data/windows/display.bmp
+games/scorched3d/data/windows/donate.bmp
 games/scorched3d/data/windows/exclaim.gif
 games/scorched3d/data/windows/help.bmp
 games/scorched3d/data/windows/helpa.bmp
@@ -563,6 +945,7 @@ games/scorched3d/data/windows/move.bmp
 games/scorched3d/data/windows/ok.gif
 games/scorched3d/data/windows/plan.bmp
 games/scorched3d/data/windows/plana.bmp
+games/scorched3d/data/windows/planaa.bmp
 games/scorched3d/data/windows/player.bmp
 games/scorched3d/data/windows/playera.bmp
 games/scorched3d/data/windows/playera2.bmp
@@ -572,6 +955,8 @@ games/scorched3d/data/windows/question.gif
 games/scorched3d/data/windows/save.bmp
 games/scorched3d/data/windows/scorched.bmp
 games/scorched3d/data/windows/server.bmp
+games/scorched3d/data/windows/sound.bmp
+games/scorched3d/data/windows/sounda.bmp
 games/scorched3d/data/windows/tank-cus.bmp
 games/scorched3d/data/windows/tank-easy.bmp
 games/scorched3d/data/windows/tank-hard.bmp
@@ -593,13 +978,16 @@ games/scorched3d/documentation/README-ODE.txt
 games/scorched3d/documentation/README-SDL.txt
 games/scorched3d/documentation/README-SDLMIXER.txt
 games/scorched3d/documentation/README-SDLNET.txt
+games/scorched3d/documentation/README-apoc.txt
 games/scorched3d/documentation/README-wxwindows.txt
 games/scorched3d/documentation/README-zlib.txt
 games/scorched3d/documentation/html/accessories.html
 games/scorched3d/documentation/html/aiming.html
 games/scorched3d/documentation/html/buttons/donate.gif
+games/scorched3d/documentation/html/buttons/dummies.gif
 games/scorched3d/documentation/html/buttons/scorchedlarge2.gif
 games/scorched3d/documentation/html/camera.html
+games/scorched3d/documentation/html/dummies.html
 games/scorched3d/documentation/html/index.html
 games/scorched3d/documentation/html/keys.html
 games/scorched3d/documentation/html/modelling.html
@@ -641,7 +1029,6 @@ games/scorched3d/documentation/html/screenshots/server2.gif
 games/scorched3d/documentation/html/screenshots/tooltip1.gif
 games/scorched3d/documentation/html/screenshots/weapon.gif
 games/scorched3d/documentation/html/screenshots/wind.gif
-games/scorched3d/documentation/readme.txt
 @dirrm games/scorched3d/documentation/html/screenshots
 @dirrm games/scorched3d/documentation/html/numbers
 @dirrm games/scorched3d/documentation/html/buttons
@@ -671,6 +1058,8 @@ games/scorched3d/documentation/readme.txt
 @dirrm games/scorched3d/data/textures
 @dirrm games/scorched3d/data/tanks/zsu57
 @dirrm games/scorched3d/data/tanks/zsu23
+@dirrm games/scorched3d/data/tanks/tux
+@dirrm games/scorched3d/data/tanks/turret2
 @dirrm games/scorched3d/data/tanks/towedartillery2
 @dirrm games/scorched3d/data/tanks/thel
 @dirrm games/scorched3d/data/tanks/t90
@@ -678,6 +1067,7 @@ games/scorched3d/documentation/readme.txt
 @dirrm games/scorched3d/data/tanks/photoncannon
 @dirrm games/scorched3d/data/tanks/patriot
 @dirrm games/scorched3d/data/tanks/mlrs
+@dirrm games/scorched3d/data/tanks/missileturret
 @dirrm games/scorched3d/data/tanks/m48
 @dirrm games/scorched3d/data/tanks/m1a1
 @dirrm games/scorched3d/data/tanks/lav-25
@@ -686,28 +1076,73 @@ games/scorched3d/documentation/readme.txt
 @dirrm games/scorched3d/data/tanks/guntower
 @dirrm games/scorched3d/data/tanks/gorilla
 @dirrm games/scorched3d/data/tanks/death
+@dirrm games/scorched3d/data/tanks/cannontower
 @dirrm games/scorched3d/data/tanks/bradley2
 @dirrm games/scorched3d/data/tanks/bm13
 @dirrm games/scorched3d/data/tanks/battleship
+@dirrm games/scorched3d/data/tanks/CF-104
 @dirrm games/scorched3d/data/tanks
 @dirrm games/scorched3d/data/talk/polish
 @dirrm games/scorched3d/data/talk/german
 @dirrm games/scorched3d/data/talk
 @dirrm games/scorched3d/data/meshes
 @dirrm games/scorched3d/data/landscapes
+@dirrm games/scorched3d/data/globalmods/apoc/data/windows
+@dirrm games/scorched3d/data/globalmods/apoc/data/wav/shoot
+@dirrm games/scorched3d/data/globalmods/apoc/data/wav/explosions
+@dirrm games/scorched3d/data/globalmods/apoc/data/wav
+@dirrm games/scorched3d/data/globalmods/apoc/data/textures/wicons
+@dirrm games/scorched3d/data/globalmods/apoc/data/textures/landscape/moon
+@dirrm games/scorched3d/data/globalmods/apoc/data/textures/landscape/grass
+@dirrm games/scorched3d/data/globalmods/apoc/data/textures/landscape
+@dirrm games/scorched3d/data/globalmods/apoc/data/textures/explode
+@dirrm games/scorched3d/data/globalmods/apoc/data/textures
+@dirrm games/scorched3d/data/globalmods/apoc/data/landscapes/masks
+@dirrm games/scorched3d/data/globalmods/apoc/data/landscapes
+@dirrm games/scorched3d/data/globalmods/apoc/data/accessories/trailorhouse1
+@dirrm games/scorched3d/data/globalmods/apoc/data/accessories/store1
+@dirrm games/scorched3d/data/globalmods/apoc/data/accessories/smalloak
+@dirrm games/scorched3d/data/globalmods/apoc/data/accessories/skyscraper1
+@dirrm games/scorched3d/data/globalmods/apoc/data/accessories/shockrocket
+@dirrm games/scorched3d/data/globalmods/apoc/data/accessories/shockbomblet
+@dirrm games/scorched3d/data/globalmods/apoc/data/accessories/remorcebomblet
+@dirrm games/scorched3d/data/globalmods/apoc/data/accessories/redhornet
+@dirrm games/scorched3d/data/globalmods/apoc/data/accessories/officeplaza1
+@dirrm games/scorched3d/data/globalmods/apoc/data/accessories/napalm
+@dirrm games/scorched3d/data/globalmods/apoc/data/accessories/m7a3grenade
+@dirrm games/scorched3d/data/globalmods/apoc/data/accessories/logcabin1
+@dirrm games/scorched3d/data/globalmods/apoc/data/accessories/house1
+@dirrm games/scorched3d/data/globalmods/apoc/data/accessories/grenade
+@dirrm games/scorched3d/data/globalmods/apoc/data/accessories/fusionbarrel
+@dirrm games/scorched3d/data/globalmods/apoc/data/accessories/farm1
+@dirrm games/scorched3d/data/globalmods/apoc/data/accessories/factory1
+@dirrm games/scorched3d/data/globalmods/apoc/data/accessories/deer
+@dirrm games/scorched3d/data/globalmods/apoc/data/accessories/cityoffice
+@dirrm games/scorched3d/data/globalmods/apoc/data/accessories/church1
+@dirrm games/scorched3d/data/globalmods/apoc/data/accessories/cactus
+@dirrm games/scorched3d/data/globalmods/apoc/data/accessories/brownboulders
+@dirrm games/scorched3d/data/globalmods/apoc/data/accessories/boulders
+@dirrm games/scorched3d/data/globalmods/apoc/data/accessories
+@dirrm games/scorched3d/data/globalmods/apoc/data
+@dirrm games/scorched3d/data/globalmods/apoc
+@dirrm games/scorched3d/data/globalmods
 @dirrm games/scorched3d/data/fonts
 @dirrm games/scorched3d/data/accessories/v2missile
 @dirrm games/scorched3d/data/accessories/smallpine
 @dirrm games/scorched3d/data/accessories/shell
 @dirrm games/scorched3d/data/accessories/sa6
+@dirrm games/scorched3d/data/accessories/roller
+@dirrm games/scorched3d/data/accessories/riot
 @dirrm games/scorched3d/data/accessories/patriot
 @dirrm games/scorched3d/data/accessories/palmtree
+@dirrm games/scorched3d/data/accessories/napalm
 @dirrm games/scorched3d/data/accessories/mirvwarhead
 @dirrm games/scorched3d/data/accessories/m48
 @dirrm games/scorched3d/data/accessories/littleboy
 @dirrm games/scorched3d/data/accessories/icbm
 @dirrm games/scorched3d/data/accessories/hawkmissile
 @dirrm games/scorched3d/data/accessories/fatman
+@dirrm games/scorched3d/data/accessories/dirt
 @dirrm games/scorched3d/data/accessories/digger
 @dirrm games/scorched3d/data/accessories/bouncingbetty
 @dirrm games/scorched3d/data/accessories/bomblet
@@ -717,3 +1152,4 @@ games/scorched3d/documentation/readme.txt
 @dirrm games/scorched3d/data/accessories
 @dirrm games/scorched3d/data
 @dirrm games/scorched3d
+@unexec rmdir %D/games 2>/dev/null || true

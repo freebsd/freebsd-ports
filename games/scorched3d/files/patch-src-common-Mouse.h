@@ -1,5 +1,5 @@
---- ./src/common/Mouse.h.orig	Fri Jan 23 17:59:04 2004
-+++ ./src/common/Mouse.h	Fri Jan 23 18:01:59 2004
+--- ./src/common/Mouse.h.orig	Thu Jul 10 18:28:52 2003
++++ ./src/common/Mouse.h	Tue Jan 25 19:34:22 2005
 @@ -23,7 +23,7 @@
  #define _MOUSE_H_
  

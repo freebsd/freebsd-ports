@@ -1,5 +1,5 @@
---- ./src/scorched/main.cpp.orig	Fri May 28 00:24:45 2004
-+++ ./src/scorched/main.cpp	Sun May 30 22:43:49 2004
+--- ./src/scorched/main.cpp.orig	Sat Nov 27 03:56:04 2004
++++ ./src/scorched/main.cpp	Tue Jan 25 19:34:30 2005
 @@ -20,7 +20,7 @@
  
  #include <wx/wx.h>

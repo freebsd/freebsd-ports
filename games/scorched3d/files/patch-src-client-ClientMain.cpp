@@ -1,6 +1,6 @@
---- ./src/client/ClientMain.cpp.orig	Fri May 28 00:24:45 2004
-+++ ./src/client/ClientMain.cpp	Sun May 30 22:43:47 2004
-@@ -66,7 +66,7 @@
+--- ./src/client/ClientMain.cpp.orig	Mon Nov 29 19:08:50 2004
++++ ./src/client/ClientMain.cpp	Tue Jan 25 19:34:20 2005
+@@ -71,7 +71,7 @@
  #include <common/Gamma.h>
  #include <common/Sound.h>
  #include <common/Clock.h>

@@ -1,9 +1,9 @@
---- ./src/coms/NetBuffer.h.orig	Fri Jan 23 17:59:08 2004
-+++ ./src/coms/NetBuffer.h	Fri Jan 23 18:02:09 2004
-@@ -22,8 +22,8 @@
- #define _NETBUFFER_H_
+--- ./src/coms/NetBuffer.h.orig	Wed Jun 30 18:35:46 2004
++++ ./src/coms/NetBuffer.h	Tue Jan 25 19:34:23 2005
+@@ -23,8 +23,8 @@
  
  #include <string>
+ #include <common/Vector.h>
 -#include <SDL/SDL.h>
 -#include <SDL/SDL_net.h>
 +#include <SDL11/SDL.h>
