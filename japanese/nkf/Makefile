@@ -3,10 +3,11 @@
 # Date created:		5 February 1995
 # Whom:			asami
 #
-# $Id: Makefile,v 1.8 1996/08/30 08:49:03 asami Exp $
+# $Id: Makefile,v 1.9 1996/09/17 15:07:40 max Exp $
 #
 
 DISTNAME=	nkf-1.6
+PKGNAME=	jp-nkf-1.6
 CATEGORIES+=	japanese
 MASTER_SITES=	http://www.sfc.wide.ad.jp/~max/FreeBSD/ports/distfiles/
 
