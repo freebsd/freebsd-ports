@@ -7,13 +7,15 @@
 
 PORTNAME=	libgda
 PORTVERSION=	0.2.90
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/gnome-db
 
 MAINTAINER=	gnome@FreeBSD.org
 
+BUILD_DEPENDS=	automake:${PORTSDIR}/devel/automake \
+		libtool:${PORTSDIR}/devel/libtool
 LIB_DEPENDS=	gdbm.2:${PORTSDIR}/databases/gdbm \
 		bonobo.2:${PORTSDIR}/devel/bonobo
 
@@ -33,5 +35,18 @@ pre-patch:
 		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g ; \
 		 s|share/idl|share/gnome/idl|g ; \
 		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g'
+
+# <GNOME release management sucks!!!>
+MISSED=		install-sh config.sub config.guess mkinstalldirs
+
+pre-configure:
+.for file in ${MISSED}
+	@${LN} -sf ${LOCALBASE}/share/automake/${file} ${WRKSRC}/
+	@${LN} -sf ${LOCALBASE}/share/automake/${file} ${WRKDIR}/
+.endfor
+
+pre-build:
+	@${LN} -sf ${LOCALBASE}/bin/libtool ${WRKSRC}/
+# </GNOME release management sucks!!!>
 
 .include <bsd.port.mk>
