@@ -1,0 +1,19 @@
+--- Makefile.orig	Sat Jan 29 20:20:01 2000
++++ Makefile	Sat Jan 29 20:20:18 2000
+@@ -11,10 +11,10 @@
+ all: snowflake
+ 
+ .c.o:
+-	$(CC) `gtk-config --cflags` -c $*.c -o $*.o
++	$(CC) `gtk12-config --cflags` -c $*.c -o $*.o
+ 
+ snowflake: $(OBJS)
+-	$(CC) `gtk-config --libs` $(OBJS) -o $@
++	$(CC) `gtk12-config --libs` $(OBJS) -o $@
+ 
+ getopt: getopt.c
+ 	$(CC) -DTEST_LONG_OPTIONS $< -o $@
+@@ -26,4 +26,4 @@
+ sf_control.o:  $(HDRS)
+ sf_generate.o: $(HDRS)
+ sf_view.o:     $(HDRS) $(INCS)
