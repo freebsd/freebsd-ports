@@ -1,0 +1,35 @@
+--- MUTE/layers/messageRouting/Makefile.orig	Sat Dec 20 00:01:04 2003
++++ MUTE/layers/messageRouting/Makefile	Sat Dec 20 00:02:01 2003
+@@ -532,10 +532,10 @@
+ 
+ # targets
+ 
+-all: libmuteMessageRouter.a test/testMessageRouter test/testMessageRouter2 test/testTalker test/testBystander test/testCatcher
++all: libmuteMessageRouter.a test/testMessageRouter2 test/testTalker test/testBystander test/testCatcher
+ 
+ clean:
+-	rm -f ${DEPENDENCY_FILE} ${LAYER_OBJECTS} ${TEST_OBJECTS} ${NEEDED_MINOR_GEMS_OBJECTS} libmuteMessageRouter.a test/testMessageRouter test/testMessageRouter2 test/testTalker test/testBystander test/testCatcher
++	rm -f ${DEPENDENCY_FILE} ${LAYER_OBJECTS} ${NEEDED_MINOR_GEMS_OBJECTS} libmuteMessageRouter.a test/testMessageRouter2 test/testTalker test/testBystander test/testCatcher
+ 
+ 
+ 
+@@ -576,7 +576,6 @@
+ s/^SecureInputStream.o/$${STREAM_PATH}\/SecureInputStream.o/; \
+ s/^SecureOutpuStream.o/$${STREAM_PATH}\/SecureOutputStream.o/; \
+ s/^SecureStreamFactory.o/$${STREAM_PATH}\/SecureStreamFactory.o/; \
+-s/^testMessageRouter.o/test\/testMessageRouter.o/; \
+ s/^testMessageRouter2.o/test\/testMessageRouter2.o/; \
+ s/^testTalker.o/test\/testTalker.o/; \
+ s/^testBystander.o/test\/testBystander.o/; \
+@@ -585,9 +584,9 @@
+ 
+ 
+ # build the dependency file
+-${DEPENDENCY_FILE}: ${LAYER_SOURCE} ${TEST_SOURCE}
++${DEPENDENCY_FILE}: ${LAYER_SOURCE}
+ 	rm -f ${DEPENDENCY_FILE}
+-	${COMPILE} -I${ROOT_PATH} -MM ${LAYER_SOURCE} ${TEST_SOURCE} >> ${DEPENDENCY_FILE}.temp
++	${COMPILE} -I${ROOT_PATH} -MM ${LAYER_SOURCE} >> ${DEPENDENCY_FILE}.temp
+ 	cat ${DEPENDENCY_FILE}.temp | ${MESSAGE_ROUTING_SED_FIX_COMMAND} >> ${DEPENDENCY_FILE}
+ 	rm -f ${DEPENDENCY_FILE}.temp
+ 

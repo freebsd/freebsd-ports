@@ -1,0 +1,32 @@
+%%GUI%%bin/fileSharingMUTE
+%%GUI%%bin/fileSharingMUTE-real
+%%TEXT%%bin/textFileSharingMUTE
+%%TEXT%%bin/textFileSharingMUTE-real
+%%GUI%%%%DATADIR%%/gui_settings/broadcastProbability.ini
+%%GUI%%%%DATADIR%%/gui_settings/inboundMessageLimit.ini
+%%GUI%%%%DATADIR%%/gui_settings/logConnections.ini
+%%GUI%%%%DATADIR%%/gui_settings/logLevel.ini
+%%GUI%%%%DATADIR%%/gui_settings/logMessageHistory.ini
+%%GUI%%%%DATADIR%%/gui_settings/logRoutingHistory.ini
+%%GUI%%%%DATADIR%%/gui_settings/mime.ini
+%%GUI%%%%DATADIR%%/gui_settings/outboundMessageLimit.ini
+%%GUI%%%%DATADIR%%/gui_settings/port.ini
+%%GUI%%%%DATADIR%%/gui_settings/seedHosts.ini
+%%GUI%%%%DATADIR%%/gui_settings/sharingPath.ini
+%%GUI%%%%DATADIR%%/gui_settings/showNiceQuit.ini
+%%GUI%%%%DATADIR%%/gui_settings/targetConnectionCount.ini
+%%TEXT%%%%DATADIR%%/text_settings/broadcastProbability.ini
+%%TEXT%%%%DATADIR%%/text_settings/inboundMessageLimit.ini
+%%TEXT%%%%DATADIR%%/text_settings/logConnections.ini
+%%TEXT%%%%DATADIR%%/text_settings/logLevel.ini
+%%TEXT%%%%DATADIR%%/text_settings/logMessageHistory.ini
+%%TEXT%%%%DATADIR%%/text_settings/logRoutingHistory.ini
+%%TEXT%%%%DATADIR%%/text_settings/mime.ini
+%%TEXT%%%%DATADIR%%/text_settings/outboundMessageLimit.ini
+%%TEXT%%%%DATADIR%%/text_settings/port.ini
+%%TEXT%%%%DATADIR%%/text_settings/seedHosts.ini
+%%TEXT%%%%DATADIR%%/text_settings/sharingPath.ini
+%%TEXT%%%%DATADIR%%/text_settings/targetConnectionCount.ini
+%%TEXT%%@dirrm %%DATADIR%%/text_settings
+%%GUI%%@dirrm %%DATADIR%%/gui_settings
+@dirrm %%DATADIR%%

@@ -1,0 +1,10 @@
+--- MUTE/layers/pointToPoint/Makefile.all.orig	Sun Dec 21 00:53:18 2003
++++ MUTE/layers/pointToPoint/Makefile.all	Sun Dec 21 00:53:26 2003
+@@ -34,6 +34,7 @@
+ LAYER_OBJECTS = ${LAYER_SOURCE:.cpp=.o}
+ 
+ NEEDED_MINOR_GEMS_OBJECTS = \
++${SHA1_O}
+  
+ 
+ CRYPTO_LIB = ${ROOT_PATH}/MUTE/crypto/libcrypto.a

@@ -1,0 +1,72 @@
+--- MUTE/configure.orig	Mon Dec 15 13:17:49 2003
++++ MUTE/configure	Fri Dec 19 23:19:02 2003
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ 
+ #
+ # Modification History
+@@ -31,23 +31,9 @@
+ 
+ while [ -z "$userEntry" ]
+ do
+-    echo "select platform:"
+-
+-    echo "  1 --  GNU/Linux X86"
+-    echo "  2 --  GNU/Linux PPC"
+-    echo "  3 --  FreeBSD X86"
+-    echo "  4 --  MacOSX"
+-    echo "  5 --  Solaris"
+-    echo "  6 --  Win32 using MinGW"
+-    echo "  q --  quit"
+-
+-    echo ""
+-    echo -n "> "
+-
+-    read userEntry
+-
++userEntry=3
+ 	
+-	if [ "$userEntry" == "q" ]
++	if [ "$userEntry" = "q" ]
+     then
+         exit
+     fi
+@@ -55,12 +41,12 @@
+ 
+     # use ASCII comparison.
+ 
+-	if [[ "$userEntry" > "6" ]]
++	if [ "$userEntry" -gt "6" ]
+     then
+         userEntry=""
+     fi
+ 
+-    if [[ "$userEntry" < "1" ]]
++    if [ "$userEntry" -lt "1" ]
+     then
+         userEntry=""
+     fi
+@@ -316,20 +302,10 @@
+ esac
+ 
+ 
+-echo ""
+-echo ""
+-echo "Enter full path to wxWindows wx-config script."
+-echo "   Example:   /usr/bin/wx-config"
+-echo "To us the default setting, or if you do not plan to build the"
+-echo "wxWindows-based GUI, leave this blank."
+-
+-echo ""
+-echo -n "> "
+-
+-read userEntry
++userEntry=%%WX_CONFIG%%
+ 
+ 
+-if [ "$userEntry" == "" ]
++if [ "$userEntry" = "" ]
+ then
+     userEntry="/usr/bin/wx-config"
+ fi

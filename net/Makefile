@@ -343,6 +343,7 @@
     SUBDIR += msntp
     SUBDIR += mtr
     SUBDIR += mudix
+    SUBDIR += mute-net
     SUBDIR += mutella
     SUBDIR += nagios
     SUBDIR += nagios-plugins
