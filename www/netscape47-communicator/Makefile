@@ -21,8 +21,12 @@ MASTER_SITES=	ftp://ftp.netscape.com/pub/communicator/english/${NETSCAPE_DIST_SU
 DISTFILES=	${BROWSER}-v474-us.${NETSCAPE_DIST_TAG}.tar.gz
 
 MASTERDIR=	${.CURDIR}/../netscape4-communicator
-WRKSRC?=	${WRKDIR}/${BROWSER}-v474.${NETSCAPE_DIST_TAG}
+WRKSRC=		${WRKDIR}/${BROWSER}-v474.${NETSCAPE_DIST_TAG}
 ONLY_FOR_ARCHS?=	i386 alpha
+
+.if ${ARCH} == "alpha" && !defined(BROWSER)
+PLIST=		${PKGDIR}/PLIST.alpha
+.endif
 
 .if ${ARCH} == "alpha"
 NETSCAPE_DIST_ARCH=	supported/dec_unix40
