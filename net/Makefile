@@ -559,6 +559,7 @@
     SUBDIR += rdist6
     SUBDIR += redir
     SUBDIR += relay
+    SUBDIR += remarp
     SUBDIR += rfbproxy
     SUBDIR += rinetd
     SUBDIR += ripetools
