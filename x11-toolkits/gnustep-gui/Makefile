@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnustep-gui
-PORTVERSION=	0.9.4
+PORTVERSION=	0.9.5
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_GNUSTEP}
 MASTER_SITE_SUBDIR=	core
@@ -48,7 +48,7 @@ NO_FILTER_SHLIBS=	yes
 PLIST_SUB+=	BASEVERSION=${PORTVERSION:C/[.][0-9]*$//1}
 
 .if !exists(/proc/curproc)
-IGNORE=		requires procfs mounted to build or run
+IGNORE=		requires procfs mounted to build or run, for details see procfs(5)
 .endif 
 
 pre-configure:
