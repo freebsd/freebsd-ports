@@ -20,6 +20,8 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 PERL_CONFIGURE=	yes
 
 MAN1=		texi2db.1
-PLIST_FILES=	bin/texi2db
+PLIST_FILES=	bin/texi2db \
+		${SITE_PERL_REL}/${PERL_ARCH}/auto/texi2db/.packlist
+PLIST_DIRS=	${SITE_PERL_REL}/${PERL_ARCH}/auto/texi2db
 
 .include <bsd.port.mk>
