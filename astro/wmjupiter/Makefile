@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wmjupiter
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	astro windowmaker
 MASTER_SITES=	http://www.inxsoft.net/wmjupiter/
 
