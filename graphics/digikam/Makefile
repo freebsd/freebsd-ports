@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	digikam
-PORTVERSION=	0.6
-PORTREVISION=	1
+PORTVERSION=	0.7
 CATEGORIES=	graphics kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,11 +14,11 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	avleeuwen@piwebs.com
 COMMENT=	Photo album manager for KDE with gphoto2 backend
 
-LIB_DEPENDS=	exif:${PORTSDIR}/graphics/libexif \
+LIB_DEPENDS=	kexif.0:${PORTSDIR}/graphics/libkexif \
+		kipi.0:${PORTSDIR}/graphics/libkipi \
 		gphoto2.2:${PORTSDIR}/graphics/libgphoto2 \
-		Imlib.5:${PORTSDIR}/graphics/imlib
-
-BROKEN=		Does not compile
+		Imlib2.2:${PORTSDIR}/graphics/imlib2 \
+		gdbm.3:${PORTSDIR}/databases/gdbm
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
@@ -29,12 +28,10 @@ USE_REINPLACE=	yes
 CONFIGURE_ARGS+=--program-prefix=''
 INSTALLS_SHLIB=	yes
 
-MAN1=		digikam.1 digikamcameraclient.1
-MANCOMPRESSED=	yes
-
 .include <bsd.port.pre.mk>
 
-pre-configure::
-	${REINPLACE_CMD} -e 's@-lpthread@${PTHREAD_LIBS}@g' ${WRKSRC}/configure
+post-patch:
+	@${REINPLACE_CMD} -e 's|-O2||g' ${WRKSRC}/${CONFIGURE_SCRIPT}
+	@${REINPLACE_CMD} -e 's@-lpthread@${PTHREAD_LIBS}@g' ${WRKSRC}/${CONFIGURE_SCRIPT}
 
 .include <bsd.port.post.mk>

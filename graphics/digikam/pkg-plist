@@ -1,144 +1,209 @@
 bin/digikam
-bin/digikamcameraclient
-include/digikam/albuminfo.h
-include/digikam/albummanager.h
-include/digikam/digikamio.h
-include/digikam/plugin.h
-include/digikam/thumbnailjob.h
+include/digikam/colorgradientwidget.h
+include/digikam/guiclient.h
+include/digikam/guifactory.h
+include/digikam/histogramwidget.h
+include/digikam/imagehistogram.h
+include/digikam/imageiface.h
+include/digikam/imagelevels.h
+include/digikam/imagepaniconwidget.h
+include/digikam/imageplugin.h
+include/digikam/imagepreviewwidget.h
+include/digikam/imageregionwidget.h
+include/digikam/imagewidget.h
+lib/kde3/digikamimageplugin_core.la
+lib/kde3/digikamimageplugin_core.so
+lib/kde3/kio_digikamio.la
+lib/kde3/kio_digikamio.so
+lib/kde3/kio_digikamtags.la
+lib/kde3/kio_digikamtags.so
 lib/kde3/kio_digikamthumbnail.la
 lib/kde3/kio_digikamthumbnail.so
 lib/libdigikam.la
 lib/libdigikam.so
 lib/libdigikam.so.0
 share/applnk/Graphics/digikam.desktop
+share/apps/digikam/data/image_broken.png
 share/apps/digikam/digikam-splash.png
 share/apps/digikam/digikamui.rc
 share/apps/digikam/icons/hicolor/32x32/actions/addimagefolder.png
 share/apps/digikam/icons/hicolor/32x32/actions/albumfoldercomment.png
 share/apps/digikam/icons/hicolor/32x32/actions/albumfoldernew.png
+share/apps/digikam/icons/hicolor/32x32/actions/cameradownload.png
 share/apps/digikam/icons/hicolor/32x32/actions/digitalcam.png
 share/apps/digikam/icons/hicolor/32x32/actions/editimage.png
 share/apps/digikam/icons/hicolor/32x32/actions/exifinfo.png
+share/apps/digikam/icons/hicolor/32x32/actions/flip_image.png
 share/apps/digikam/icons/hicolor/32x32/actions/imagecomment.png
 share/apps/digikam/icons/hicolor/32x32/actions/importfolders2albums.png
-share/apps/digikamcameraclient/digikamcameraui.rc
-share/apps/digikamcameraclient/icons/documents.png
-share/apps/digikamcameraclient/icons/generic.png
-share/apps/digikamcameraclient/icons/hicolor/32x32/actions/cameraconnect.png
-share/apps/digikamcameraclient/icons/hicolor/32x32/actions/camerainfo.png
-share/apps/digikamcameraclient/icons/hicolor/32x32/actions/deleteimage.png
-share/apps/digikamcameraclient/icons/hicolor/32x32/actions/downloadcamera.png
-share/apps/digikamcameraclient/icons/hicolor/32x32/actions/hidecamerafolders.png
-share/apps/digikamcameraclient/icons/hicolor/32x32/actions/uploadcamera.png
-share/apps/digikamcameraclient/icons/multimedia.png
-share/apps/digikamcameraclient/icons/new.png
-share/apps/digikamcameraclient/icons/pictures.png
-share/apps/digikamcameraclient/icons/sound.png
-share/doc/HTML/de/digikam/addcamera.png
-share/doc/HTML/de/digikam/cameraclient.png
-share/doc/HTML/de/digikam/imageviewer.png
-share/doc/HTML/de/digikam/index.docbook
-share/doc/HTML/de/digikam/index_de.po
-share/doc/HTML/de/digikam/mainwindow.png
-share/doc/HTML/de/digikam/setupalbum.png
+share/apps/digikam/icons/hicolor/32x32/actions/tag-events.png
+share/apps/digikam/icons/hicolor/32x32/actions/tag-folder.png
+share/apps/digikam/icons/hicolor/32x32/actions/tag-people.png
+share/apps/digikam/icons/hicolor/32x32/actions/tag-places.png
+share/apps/digikam/icons/hicolor/32x32/actions/tag.png
+share/apps/digikam/themes/Clean
+share/apps/digikam/themes/Dreary
+share/apps/digikam/themes/Marine
+share/apps/digikam/tips
+share/doc/HTML/da/digikam/common
+share/doc/HTML/da/digikam/index.cache.bz2
+share/doc/HTML/da/digikam/index.docbook
 share/doc/HTML/en/digikam/addcamera.png
+share/doc/HTML/en/digikam/albumproperties.png
+share/doc/HTML/en/digikam/assigntags.png
 share/doc/HTML/en/digikam/cameraclient.png
-share/doc/HTML/en/digikam/imageviewer.png
+share/doc/HTML/en/digikam/cameraclientadvanced.png
+share/doc/HTML/en/digikam/cameraclientdownload.png
+share/doc/HTML/en/digikam/commentstags.png
+share/doc/HTML/en/digikam/common
+share/doc/HTML/en/digikam/digikamlogo.png
+share/doc/HTML/en/digikam/editoradjustlevels.png
+share/doc/HTML/en/digikam/editorautosizebutton.png
+share/doc/HTML/en/digikam/editorbcgadjust.png
+share/doc/HTML/en/digikam/editorblurplugin.png
+share/doc/HTML/en/digikam/editorcolorbalance.png
+share/doc/HTML/en/digikam/editorcropbutton.png
+share/doc/HTML/en/digikam/editorhsladjust.png
+share/doc/HTML/en/digikam/editorimageselection.png
+share/doc/HTML/en/digikam/editornoisereductionplugin.png
+share/doc/HTML/en/digikam/editorraindropsplugin.png
+share/doc/HTML/en/digikam/editorredeyescorrection.png
+share/doc/HTML/en/digikam/editorresizetool.png
+share/doc/HTML/en/digikam/editorrotationtool.png
+share/doc/HTML/en/digikam/editorsharpenplugin.png
+share/doc/HTML/en/digikam/editorunsharpedmaskplugin.png
+share/doc/HTML/en/digikam/exifviewer.png
+share/doc/HTML/en/digikam/firstrundialog.png
+share/doc/HTML/en/digikam/foldericon.png
+share/doc/HTML/en/digikam/histogramdescription.png
+share/doc/HTML/en/digikam/histogramimageplugin.png
+share/doc/HTML/en/digikam/histogramsample1.png
+share/doc/HTML/en/digikam/histogramsample2.png
+share/doc/HTML/en/digikam/histogramsample3.png
+share/doc/HTML/en/digikam/imageeditor.png
+share/doc/HTML/en/digikam/imageeditorcomments.png
+share/doc/HTML/en/digikam/imageeditortoolbar.png
 share/doc/HTML/en/digikam/index.cache.bz2
 share/doc/HTML/en/digikam/index.docbook
-share/doc/HTML/en/digikam/index_en.pot
+share/doc/HTML/en/digikam/maintoolbar.png
 share/doc/HTML/en/digikam/mainwindow.png
 share/doc/HTML/en/digikam/setupalbum.png
-share/doc/HTML/fr/digikam/addcamera.png
-share/doc/HTML/fr/digikam/cameraclient.png
-share/doc/HTML/fr/digikam/imageviewer.png
-share/doc/HTML/fr/digikam/index.docbook
-share/doc/HTML/fr/digikam/index_fr.po
-share/doc/HTML/fr/digikam/mainwindow.png
-share/doc/HTML/fr/digikam/setupalbum.png
-share/icons/hicolor/16x16/apps/digikam.png
-share/icons/hicolor/16x16/apps/digikamcameraclient.png
-share/icons/hicolor/22x22/apps/digikam.png
-share/icons/hicolor/22x22/apps/digikamcameraclient.png
-share/icons/hicolor/32x32/apps/digikam.png
-share/icons/hicolor/32x32/apps/digikamcameraclient.png
-share/icons/hicolor/48x48/apps/digikam.png
-share/icons/hicolor/48x48/apps/digikamcameraclient.png
-share/icons/locolor/16x16/apps/digikam.png
-share/icons/locolor/16x16/apps/digikamcameraclient.png
-share/icons/locolor/22x22/apps/digikam.png
-share/icons/locolor/22x22/apps/digikamcameraclient.png
-share/icons/locolor/32x32/apps/digikam.png
-share/icons/locolor/32x32/apps/digikamcameraclient.png
-share/icons/locolor/48x48/apps/digikam.png
-share/icons/locolor/48x48/apps/digikamcameraclient.png
+share/doc/HTML/en/digikam/setupcamera.png
+share/doc/HTML/en/digikam/setupcollections.png
+share/doc/HTML/en/digikam/setupembededinfo.png
+share/doc/HTML/en/digikam/setupimageeditor.png
+share/doc/HTML/en/digikam/setupkipi.png
+share/doc/HTML/en/digikam/setupmimetypes.png
+share/doc/HTML/en/digikam/setupmisc.png
+share/doc/HTML/en/digikam/tagsview.png
+share/doc/HTML/en/digikam/targetalbumdialog.png
+share/doc/HTML/en/digikam/zoombuttons.png
+share/doc/HTML/et/digikam/common
+share/doc/HTML/et/digikam/index.cache.bz2
+share/doc/HTML/et/digikam/index.docbook
+share/doc/HTML/it/digikam/addcamera.png
+share/doc/HTML/it/digikam/common
+share/doc/HTML/it/digikam/imageeditor.png
+share/doc/HTML/it/digikam/index.cache.bz2
+share/doc/HTML/it/digikam/index.docbook
+share/doc/HTML/it/digikam/mainwindow.png
+share/doc/HTML/it/digikam/setupalbum.png
+share/doc/HTML/nl/digikam/common
+share/doc/HTML/nl/digikam/index.cache.bz2
+share/doc/HTML/nl/digikam/index.docbook
+share/doc/HTML/pt/digikam/common
+share/doc/HTML/pt/digikam/index.cache.bz2
+share/doc/HTML/pt/digikam/index.docbook
+share/doc/HTML/pt_BR/digikam/addcamera.png
+share/doc/HTML/pt_BR/digikam/cameraclient.png
+share/doc/HTML/pt_BR/digikam/common
+share/doc/HTML/pt_BR/digikam/imageeditor.png
+share/doc/HTML/pt_BR/digikam/index.cache.bz2
+share/doc/HTML/pt_BR/digikam/index.docbook
+share/doc/HTML/pt_BR/digikam/mainwindow.png
+share/doc/HTML/pt_BR/digikam/setupalbum.png
+share/doc/HTML/sv/digikam/common
+share/doc/HTML/sv/digikam/index.cache.bz2
+share/doc/HTML/sv/digikam/index.docbook
+share/icons/crystalsvg/128x128/apps/digikam.png
+share/icons/crystalsvg/16x16/apps/digikam.png
+share/icons/crystalsvg/22x22/apps/digikam.png
+share/icons/crystalsvg/32x32/apps/digikam.png
+share/icons/crystalsvg/48x48/apps/digikam.png
+share/icons/crystalsvg/64x64/apps/digikam.png
+share/locale/bg/LC_MESSAGES/digikam.mo
+share/locale/br/LC_MESSAGES/digikam.mo
+share/locale/ca/LC_MESSAGES/digikam.mo
 share/locale/cs/LC_MESSAGES/digikam.mo
+share/locale/cy/LC_MESSAGES/digikam.mo
 share/locale/da/LC_MESSAGES/digikam.mo
 share/locale/de/LC_MESSAGES/digikam.mo
+share/locale/en_GB/LC_MESSAGES/digikam.mo
 share/locale/es/LC_MESSAGES/digikam.mo
+share/locale/et/LC_MESSAGES/digikam.mo
+share/locale/fi/LC_MESSAGES/digikam.mo
 share/locale/fr/LC_MESSAGES/digikam.mo
+share/locale/ga/LC_MESSAGES/digikam.mo
+share/locale/gl/LC_MESSAGES/digikam.mo
 share/locale/hu/LC_MESSAGES/digikam.mo
+share/locale/is/LC_MESSAGES/digikam.mo
 share/locale/it/LC_MESSAGES/digikam.mo
+share/locale/nl/LC_MESSAGES/digikam.mo
+share/locale/pl/LC_MESSAGES/digikam.mo
+share/locale/pt/LC_MESSAGES/digikam.mo
+share/locale/pt_BR/LC_MESSAGES/digikam.mo
+share/locale/ro/LC_MESSAGES/digikam.mo
+share/locale/ru/LC_MESSAGES/digikam.mo
+share/locale/sr/LC_MESSAGES/digikam.mo
+share/locale/sv/LC_MESSAGES/digikam.mo
+share/locale/ta/LC_MESSAGES/digikam.mo
+share/locale/tr/LC_MESSAGES/digikam.mo
+share/services/digikamimageplugin_core.desktop
+share/services/digikamio.protocol
+share/services/digikamtags.protocol
 share/services/digikamthumbnail.protocol
-share/servicetypes/digikamplugin.desktop
-@dirrm share/servicetypes
-@dirrm share/services
-@dirrm share/nls/en_US.US-ASCII
-@dirrm share/nls/POSIX
-@dirrm share/locale/it/LC_MESSAGES
-@dirrm share/locale/it
-@dirrm share/locale/hu/LC_MESSAGES
-@dirrm share/locale/hu
-@dirrm share/locale/fr/LC_MESSAGES
-@dirrm share/locale/fr
-@dirrm share/locale/es/LC_MESSAGES
-@dirrm share/locale/es
-@dirrm share/locale/de/LC_MESSAGES
-@dirrm share/locale/de
-@dirrm share/locale/da/LC_MESSAGES
-@dirrm share/locale/da
-@dirrm share/locale/cs/LC_MESSAGES
-@dirrm share/locale/cs
-@dirrm share/locale
-@dirrm share/icons/locolor/48x48/apps
-@dirrm share/icons/locolor/48x48
-@dirrm share/icons/locolor/32x32/apps
-@dirrm share/icons/locolor/32x32
-@dirrm share/icons/locolor/22x22/apps
-@dirrm share/icons/locolor/22x22
-@dirrm share/icons/locolor/16x16/apps
-@dirrm share/icons/locolor/16x16
-@dirrm share/icons/locolor
-@dirrm share/icons/hicolor/48x48/apps
-@dirrm share/icons/hicolor/48x48
-@dirrm share/icons/hicolor/32x32/apps
-@dirrm share/icons/hicolor/32x32
-@dirrm share/icons/hicolor/22x22/apps
-@dirrm share/icons/hicolor/22x22
-@dirrm share/icons/hicolor/16x16/apps
-@dirrm share/icons/hicolor/16x16
-@dirrm share/icons/hicolor
-@dirrm share/icons
-@dirrm share/doc/HTML/fr/digikam
-@dirrm share/doc/HTML/fr
-@dirrm share/doc/HTML/en/digikam/common
+share/servicetypes/digikamimageplugin.desktop
+@unexec rmdir %D/share/servicetypes 2>/dev/null || true
+@unexec rmdir %D/share/services 2>/dev/null || true
+@unexec rmdir %D/share/icons/crystalsvg/64x64/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/crystalsvg/64x64 2>/dev/null || true
+@unexec rmdir %D/share/icons/crystalsvg/48x48/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/crystalsvg/48x48 2>/dev/null || true
+@unexec rmdir %D/share/icons/crystalsvg/32x32/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/crystalsvg/32x32 2>/dev/null || true
+@unexec rmdir %D/share/icons/crystalsvg/22x22/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/crystalsvg/22x22 2>/dev/null || true
+@unexec rmdir %D/share/icons/crystalsvg/16x16/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/crystalsvg/16x16 2>/dev/null || true
+@unexec rmdir %D/share/icons/crystalsvg/128x128/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/crystalsvg/128x128 2>/dev/null || true
+@unexec rmdir %D/share/icons/crystalsvg 2>/dev/null || true
+@unexec rmdir %D/share/icons 2>/dev/null || true
+@dirrm share/doc/HTML/sv/digikam
+@unexec rmdir %D/share/doc/HTML/sv 2>/dev/null || true
+@dirrm share/doc/HTML/pt_BR/digikam
+@unexec rmdir %D/share/doc/HTML/pt_BR 2>/dev/null || true
+@dirrm share/doc/HTML/pt/digikam
+@unexec rmdir %D/share/doc/HTML/pt 2>/dev/null || true
+@dirrm share/doc/HTML/nl/digikam
+@unexec rmdir %D/share/doc/HTML/nl 2>/dev/null || true
+@dirrm share/doc/HTML/it/digikam
+@unexec rmdir %D/share/doc/HTML/it 2>/dev/null || true
+@dirrm share/doc/HTML/et/digikam
+@unexec rmdir %D/share/doc/HTML/et 2>/dev/null || true
 @dirrm share/doc/HTML/en/digikam
-@dirrm share/doc/HTML/en
-@dirrm share/doc/HTML/de/digikam
-@dirrm share/doc/HTML/de
-@dirrm share/doc/HTML
-@dirrm share/apps/digikamcameraclient/icons/hicolor/32x32/actions
-@dirrm share/apps/digikamcameraclient/icons/hicolor/32x32
-@dirrm share/apps/digikamcameraclient/icons/hicolor
-@dirrm share/apps/digikamcameraclient/icons
-@dirrm share/apps/digikamcameraclient
+@unexec rmdir %D/share/doc/HTML/en 2>/dev/null || true
+@dirrm share/doc/HTML/da/digikam
+@unexec rmdir %D/share/doc/HTML/da 2>/dev/null || true
+@unexec rmdir %D/share/doc/HTML 2>/dev/null || true
+@dirrm share/apps/digikam/themes
 @dirrm share/apps/digikam/icons/hicolor/32x32/actions
 @dirrm share/apps/digikam/icons/hicolor/32x32
 @dirrm share/apps/digikam/icons/hicolor
 @dirrm share/apps/digikam/icons
+@dirrm share/apps/digikam/data
 @dirrm share/apps/digikam
-@dirrm share/apps
-@dirrm share/applnk/Graphics
-@dirrm share/applnk
-@dirrm lib/kde3
+@unexec rmdir %D/share/apps 2>/dev/null || true
+@unexec rmdir %D/share/applnk/Graphics 2>/dev/null || true
+@unexec rmdir %D/share/applnk 2>/dev/null || true
 @dirrm include/digikam
