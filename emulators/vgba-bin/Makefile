@@ -1,21 +1,20 @@
-# New ports collection makefile for:   vgb-bin
+# New ports collection makefile for:   vgba-bin
 # Date created:		04 Aug 2000
 # Whom:			Mario S F Ferreira <lioux@linf.unb.br> et al.
 #
 # $FreeBSD$
 #
 
-PORTNAME=	vgb
-PORTVERSION=	2.2
-PORTEPOCH=	1
+PORTNAME=	vgba
+PORTVERSION=	1.7
 CATEGORIES=	emulators
-MASTER_SITES=	http://fms.komkon.org/VGB/
+MASTER_SITES=	http://fms.komkon.org/VGBA/
 PKGNAMESUFFIX=	-bin
-DISTNAME=	VGB${PORTVERSION:S/.//}-FreeBSD-80x86-bin
+DISTNAME=	VGBA${PORTVERSION:S/.//}-FreeBSD-80x86-bin
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	lioux@FreeBSD.org
-COMMENT=	Nintendo GameBoy(tm) emulator (closed binary version of vgb)
+COMMENT=	Virtual GameBoy Advance is an emulator of Nintendo GameBoy Advance(TM)
 
 ONLY_FOR_ARCHS=	i386
 USE_X_PREFIX=	yes
@@ -25,13 +24,10 @@ NO_WRKSUBDIR=	no
 INSTALL_DIR=	${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP}
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/vgb ${PREFIX}/bin
-	@${INSTALL_PROGRAM} ${WRKSRC}/vgb-debug ${PREFIX}/bin
-	@${INSTALL_DIR} ${PREFIX}/share/vgb
-	@${INSTALL_DATA} ${WRKSRC}/CART.GB ${PREFIX}/share/vgb
+	@${INSTALL_PROGRAM} ${WRKSRC}/vgba ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
-	@${INSTALL_DIR} ${PREFIX}/share/doc/vgb
-	@${INSTALL_DATA} ${WRKSRC}/VGB.html ${PREFIX}/share/doc/vgb
+	@${INSTALL_DIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/VGBA.html ${DOCSDIR}
 .endif # !defined(NOPORTDOCS)
 
 .include <bsd.port.mk>

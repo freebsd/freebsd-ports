@@ -1,13 +1,10 @@
-Virtual Game Boy is the Nintendo GameBoy(tm) emulator on X-Window.
+Virtual GameBoy Advance (VGBA) is an emulator of the GameBoy Advance
+videogame console produced by Nintendo. It allows to run GameBoy
+Advance games on PCs, Macs, or just about any other sufficiently
+fast computers in existence. It can also help to debug GameBoy
+Advance software without using a costly development system. VGBA
+is not a real GameBoy Advance though. Get the real thing if you
+want a real experience. Also, VGBA will not play older GameBoy and
+GameBoy Color games. You will need VGB for that.
 
-  Test your VGB installation with the command(default):
-
-	vgb /usr/X11R6/share/vgb/CART.GB
-
-Virtual GameBoy (VGB) is a portable emulator of the Nintendo GameBoy
-handheld videogame console. It allows to run most of GameBoy software
-on a personal computer, as well as debug this software. As VGB is
-written in a portable C programming language, it runs on many
-different platforms and operating systems
-
-WWW: http://www.komkon.org/fms/VGB/
+WWW: http://www.komkon.org/fms/VGBA/
