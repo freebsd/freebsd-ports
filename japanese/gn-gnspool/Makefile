@@ -1,21 +1,19 @@
 # New ports collection makefile for: 	gn(Gon's Newsreader with gnspool)
-# Version required:			1.36
+# Version required:			1.40
 # Date created:				14 Feb. 1997
 # Whom:					Kiroh HARADA <kiroh@kh.rim.or.jp>
 #
-# $Id: Makefile,v 1.4 1998/06/04 14:47:24 kuriyama Exp $
+# $Id$
 #
 
-DISTNAME=	gn-1.36
-PKGNAME=	ja-gn-gnspool-1.36
+DISTNAME=	gn-1.40
+PKGNAME=	ja-gn-gnspool-1.40
 CATEGORIES=	japanese news
 MASTER_SITES=	ftp://ftp.omronsoft.co.jp/pub/misc/gn/
 
 MAINTAINER=	kiroh@kh.rim.or.jp
 
-BROKEN=		infinite loop
-
-WRKSRC=		${WRKDIR}/gn-1.36/src
+WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
 pre-configure:
 	@${CP} ${WRKDIR}/${DISTNAME}/mkfiles/unix/common ${WRKSRC}/Makefile
@@ -37,7 +35,8 @@ post-install:
 	@${CP} ${FILESDIR}/Changes.FreeBSD.port ${PREFIX}/share/doc/gn-gnspool
 .endif
 .if !defined(NOMANCOMPRESS)
-	@gzip -9nf ${PREFIX}/man/ja/cat1/gn.1 ${PREFIX}/man/ja/cat1/gnspool.1
+	@gzip -9nf ${PREFIX}/man/ja/cat1/gn.1 \
+	${PREFIX}/man/ja/cat1/gnspool.1 ${PREFIX}/man/ja/cat1/gnloops.1
 .endif
 	@${MKDIR} ${PREFIX}/share/examples/gn-gnspool
 	@${CP} ${FILESDIR}/_gnrc ${PREFIX}/share/examples/gn-gnspool

@@ -1,37 +1,65 @@
---- Makefile.orig	Wed Feb  4 16:39:44 1998
-+++ Makefile	Wed Feb  4 16:42:02 1998
-@@ -13,11 +13,11 @@
- COLUMNS		= 80
- 
- BINDIR		= /usr/local/bin
--MANDIR		= /usr/local/man/man1
-+MANDIR		= /usr/local/man/ja/cat1
- MANEXT		= .1
- 
--NEWSSPOOL	= /usr/spool/news
--NEWSLIB		= /usr/lib/news
-+NEWSSPOOL	= /var/spool/gnspool
-+NEWSLIB		= /usr/local/news/lib
- 
- NEWSRC		= .newsrc
- SIGNATURE	= .signature
-@@ -30,7 +30,7 @@
- MAILER		= /usr/lib/sendmail -t
- 
- CC		= cc
--OPTCFLAGS	= -O
-+OPTCFLAGS	= -UHAS_MALLOC_H
- OPTGNOBJS	= 
- OPTGNSPOOLOBJS	= 
- OPTLFLAGS	= 
-@@ -38,7 +38,9 @@
- 
- SHELL		= /bin/sh
- DEFINES		= -DUNIX
--HEADER_DEFINES	=
-+HEADER_DEFINES = -DHAS_STRING_H -DHAS_STDLIB_H -DHAS_MALLOC_H -DHAS_UNISTD_H \
-+	-DHAS_NETDB_H -DHAS_SYS_IOCTL_H -DHAS_SYS_SOCKET_H -DHAS_NETINET_IN_H \
-+	-DHAS_ARPA_INET_H
- CFLAGS		= $(DEFINES) $(HEADER_DEFINES) $(OPTCFLAGS)
- LFLAGS		= $(OPTLFLAGS)
- LIBS		= $(OPTLIBS)
+*** Makefile.orig	Fri Jan 30 00:12:32 1998
+--- Makefile	Sat Jun 20 07:05:19 1998
+***************
+*** 12,23 ****
+  LINES		= 24
+  COLUMNS		= 80
+  
+! BINDIR		= /usr/local/bin
+! MANDIR		= /usr/local/man/man1
+  MANEXT		= .1
+  
+! NEWSSPOOL	= /usr/spool/news
+! NEWSLIB		= /usr/lib/news
+  
+  NEWSRC		= .newsrc
+  SIGNATURE	= .signature
+--- 12,23 ----
+  LINES		= 24
+  COLUMNS		= 80
+  
+! BINDIR		= ${PREFIX}/bin
+! MANDIR		= ${PREFIX}/man/ja/cat1
+  MANEXT		= .1
+  
+! NEWSSPOOL	= /var/spool/gnspool
+! NEWSLIB		= ${PREFIX}/news/lib
+  
+  NEWSRC		= .newsrc
+  SIGNATURE	= .signature
+***************
+*** 30,36 ****
+  MAILER		= /usr/lib/sendmail -t
+  
+  CC		= cc
+! OPTCFLAGS	= -O
+  OPTGNOBJS	= 
+  OPTGNSPOOLOBJS	= 
+  OPTLFLAGS	= 
+--- 30,36 ----
+  MAILER		= /usr/lib/sendmail -t
+  
+  CC		= cc
+! OPTCFLAGS	= -UHAS_MALLOC_H
+  OPTGNOBJS	= 
+  OPTGNSPOOLOBJS	= 
+  OPTLFLAGS	= 
+***************
+*** 38,44 ****
+  
+  SHELL		= /bin/sh
+  DEFINES		= -DUNIX
+! HEADER_DEFINES	=
+  CFLAGS		= $(DEFINES) $(HEADER_DEFINES) $(OPTCFLAGS)
+  LFLAGS		= $(OPTLFLAGS)
+  LIBS		= $(OPTLIBS)
+--- 38,46 ----
+  
+  SHELL		= /bin/sh
+  DEFINES		= -DUNIX
+! HEADER_DEFINES = -DHAS_STRING_H -DHAS_STDLIB_H -DHAS_MALLOC_H -DHAS_UNISTD_H \
+! 	-DHAS_NETDB_H -DHAS_SYS_IOCTL_H -DHAS_SYS_SOCKET_H -DHAS_NETINET_IN_H \
+! 	-DHAS_ARPA_INET_H
+  CFLAGS		= $(DEFINES) $(HEADER_DEFINES) $(OPTCFLAGS)
+  LFLAGS		= $(OPTLFLAGS)
+  LIBS		= $(OPTLIBS)
