@@ -4,7 +4,6 @@ sbin/nntpd
 %%NEWSBIN%%/nntpxfer
 @comment     just in case anyone wants it
 %%NEWSBIN%%/shlock
-%%NEWSCTL%%/overview.fmt
 %%PORTDOCS%%share/doc/nntp/AUTHORIZE
 %%PORTDOCS%%share/doc/nntp/CHANGES
 %%PORTDOCS%%share/doc/nntp/README
@@ -16,3 +15,5 @@ sbin/nntpd
 %%PORTDOCS%%share/doc/nntp/xfer-README
 %%PORTDOCS%%share/doc/nntp/xmit-README
 %%PORTDOCS%%@dirrm share/doc/nntp
+@cwd %%VARBASE%%
+%%NEWSCTL%%/overview.fmt

@@ -7,7 +7,7 @@
 
 PORTNAME=	nntp
 PORTVERSION=	1.5.12.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	news
 MASTER_SITES=	ftp://ftp.academ.com/pub/nntp/server/
 DISTNAME=	${PORTNAME}.${PORTVERSION}
@@ -24,17 +24,19 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libcnews.a:${PORTSDIR}/news/cnews
 NO_WRKSUBDIR=	yes
 MAN1=		nntpxmit.1
 MAN8=		nntpd.8c acttimes.8c
-PLIST_SUB+=	NEWSBIN=${NEWSBIN:S=${PREFIX}/==}
-PLIST_SUB+=	NEWSCTL=${NEWSCTL:S=${PREFIX}/==}
+PLIST_SUB+=	VARBASE=${VARBASE}
+PLIST_SUB+=	NEWSBIN=${NEWSBIN:S=^${PREFIX}/==}
+PLIST_SUB+=	NEWSCTL=${NEWSCTL:S=^${VARBASE}/==}
 
 MODIFY=		conf.h Makefile
 DOCSFILES1=	AUTHORIZE CHANGES README README-conf.h SYSLOG doc/rfc977
 DOCSFILES2=	server support xfer xmit
 
+VARBASE?=	/var
 NEWSBIN?=	${PREFIX}/libexec/cnews
-NEWSCTL?=	${PREFIX}/news/lib
-NEWSARTS?=	/var/news
-NEWSOV?=	/var/news/over.view
+NEWSCTL?=	${VARBASE}/lib/news
+NEWSARTS?=	${VARBASE}/news
+NEWSOV?=	${VARBASE}/news
 
 MAKE_ENV+=	DBLIBS="${LOCALBASE}/lib/libcnews.a -lcrypt -lutil"
 MAKE_ENV+=	ETCDIR="${LOCALBASE}/sbin" BINDIR="${NEWSBIN}"
