@@ -20,7 +20,7 @@ MAN6=	xtet42.6
 
 do-install:
 	${MKDIR} ${PREFIX}/lib/X11/xtet42
-	@${CHOWN} games:games ${PREFIX}/lib/X11/xtet42
+	@${CHOWN} root:games ${PREFIX}/lib/X11/xtet42
 	@${CHMOD} 775 ${PREFIX}/lib/X11/xtet42
 	${INSTALL} -c -m 2755 -g games ${WRKSRC}/xtet42 ${PREFIX}/bin
 	${INSTALL} -c -m 664  -g games ${WRKSRC}/xtet42.hiscore ${PREFIX}/lib/X11/xtet42/.xtet42.hiscore
