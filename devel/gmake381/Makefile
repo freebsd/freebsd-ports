@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	make
 DISTNAME=	make-${PORTVERSION}
 
-MAINTAINER=	jseger@FreeBSD.org
+MAINTAINER=	portmgr@FreeBSD.org
 
 LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
 

@@ -11,7 +11,7 @@ CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.win.or.jp/pub/network/misc/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	jseger@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/strobe
 ALL_TARGET=	strobe

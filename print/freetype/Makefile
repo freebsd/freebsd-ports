@@ -17,7 +17,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S,%SUBDIR%,freetype,} \
 		ftp://ftp.freetype.org/pub/%SUBDIR%/
 MASTER_SITE_SUBDIR=	freetype1
 
-MAINTAINER=	jseger@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes

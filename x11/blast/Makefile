@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://hpux.csc.liv.ac.uk/hpux/X11/Demos/blast-1.0/ \
 		ftp://hpftp.cict.fr/hpux/X11/Demos/blast-1.0/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-ss-10.20
 
-MAINTAINER=	jseger@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_X_PREFIX=	yes

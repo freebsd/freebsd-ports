@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	games/strategy
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	jseger@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 USE_IMAKE=	yes
 MAN6=		xpipeman.6

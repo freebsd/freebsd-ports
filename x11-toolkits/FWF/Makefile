@@ -11,7 +11,7 @@ CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=libs/X/fwf
 
-MAINTAINER=	jseger@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 BROKEN=		"Does not compile"
 

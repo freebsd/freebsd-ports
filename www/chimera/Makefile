@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.cs.unlv.edu/pub/chimera/
 
-MAINTAINER=	jseger@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 NO_LATEST_LINK=	yes
 USE_IMAKE=	yes

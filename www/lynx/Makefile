@@ -11,7 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://lynx.isc.org/current/
 DISTNAME=	${PORTNAME}2.8.4rel.1
 
-MAINTAINER=	jseger@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 USE_BZIP2=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}2-8-4

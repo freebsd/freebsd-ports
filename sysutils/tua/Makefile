@@ -10,7 +10,7 @@ PORTVERSION=	4.0
 CATEGORIES=	sysutils
 MASTER_SITES=   ftp://ftp.vmunix.org/pub/misc/tua/
 
-MAINTAINER=	torstenb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 MAN1=		tua.1

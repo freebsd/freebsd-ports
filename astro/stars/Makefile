@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://hpux.csc.liv.ac.uk/hpux/X11/Demos/stars-1.0/ \
 		ftp://askdonald.ask.uni-karlsruhe.de/hpux/X11/Demos/stars-1.0/
 DISTFILES=	stars-1.0-ss-11.00.tar.gz
 
-MAINTAINER=	jseger@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 USE_X_PREFIX=	yes
 

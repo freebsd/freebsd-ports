@@ -11,7 +11,7 @@ CATEGORIES=	lang tcl80 tk80
 MASTER_SITES=	ftp://ftp.neosoft.com/pub/tcl/tclx-distrib/
 DISTNAME=	tclX8.0.4
 
-MAINTAINER=	jseger@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	tk80.1:${PORTSDIR}/x11-toolkits/tk80
 

@@ -11,7 +11,7 @@ CATEGORIES=	graphics print
 MASTER_SITES=	http://www.geocities.com/SiliconValley/Network/1958/pstoedit/
 DISTNAME=	${PORTNAME}_${PORTVERSION:S/./_/}
 
-MAINTAINER=	jseger@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript-gnu
 LIB_DEPENDS=	plot.4:${PORTSDIR}/graphics/plotutils \

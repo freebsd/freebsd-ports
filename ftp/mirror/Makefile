@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://src.doc.ic.ac.uk/computing/archiving/mirror/
 PATCH_SITES=	http://sunsite.org.uk/packages/mirror/
 PATCHFILES=	ftp.pl_wupatch
 
-MAINTAINER=	torstenb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 USE_PERL5=	yes
 NO_WRKSUBDIR=	yes

@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_GNU} \
 		ftp://ftp.guile.org/pub/
 MASTER_SITE_SUBDIR=	guile
 
-MAINTAINER=	jseger@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes

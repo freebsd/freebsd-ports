@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://tf.tcp.com/pub/tinyfugue/ \
 		ftp://ftp.ci.uminho.pt/pub/mirrors/tinyfugue/
 DISTNAME=	tf-40s1
 
-MAINTAINER=	jseger@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 .if defined(PARALLEL_PACKAGE_BUILD)
 BROKEN=		tries to cd to directory that do not exist yet
