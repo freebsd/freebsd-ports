@@ -1,0 +1,20 @@
+--- Makefile.orig	Fri Dec  5 13:22:24 1997
++++ Makefile	Fri Dec  5 13:20:45 1997
+@@ -0,0 +1,17 @@
++#matpt.h
++#seaview.h
++CC	= gcc
++CFLAGS+= -I/usr/X11R6/include
++LIBS	= -L/usr/X11R6/lib -lxforms -lX11 -lm
++SRCS	= align.c load_seq.c regions.c seaview.c use_mase_files.c xfmatpt.c
++OBJS	= align.o load_seq.o regions.o seaview.o use_mase_files.o xfmatpt.o
++
++all: seaview
++
++seaview: $(OBJS)
++	$(CC) -o seaview $(OBJS) $(LIBS)
++
++c.o.: $(SRCS)
++	$(CC) $(CFLAGS) -c $(SRCS)
++
++

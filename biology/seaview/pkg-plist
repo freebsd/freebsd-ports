@@ -1,0 +1,3 @@
+bin/seaview
+lib/X11/seaview/seaview.help
+@dirrm lib/X11/seaview
