@@ -9,20 +9,24 @@ arm-aout/lib/ldscripts/armaoutl.xbn
 arm-aout/lib/ldscripts/armaoutl.xn
 arm-aout/lib/ldscripts/armaoutl.xr
 arm-aout/lib/ldscripts/armaoutl.xu
-bin/arm-aout-ld
-bin/arm-aout-gasp
-bin/arm-aout-as
-bin/arm-aout-nm
-bin/arm-aout-strip
 bin/arm-aout-addr2line
-bin/arm-aout-objcopy
-bin/arm-aout-c++filt
-bin/arm-aout-ranlib
 bin/arm-aout-ar
-bin/arm-aout-strings
+bin/arm-aout-as
+bin/arm-aout-c++filt
+bin/arm-aout-gasp
+bin/arm-aout-ld
+bin/arm-aout-nm
+bin/arm-aout-objcopy
 bin/arm-aout-objdump
+bin/arm-aout-ranlib
 bin/arm-aout-size
-@dirrm arm-aout/bin
-@dirrm arm-aout/lib/ldscripts
-@dirrm arm-aout/lib
-@dirrm arm-aout
+bin/arm-aout-strings
+bin/arm-aout-strip
+include/ansidecl.h
+include/bfd.h
+include/bfdlink.h
+lib/libbfd.a
+lib/libbfd.la
+lib/libiberty.a
+lib/libopcodes.a
+lib/libopcodes.la
