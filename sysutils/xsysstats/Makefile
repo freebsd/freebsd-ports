@@ -24,6 +24,8 @@ MAN1=		xsysstats.1
 
 ALL_TARGET=	xsysstats
 
+PLIST_FILES=	bin/xsysstats
+
 pre-patch:
 	${RM} ${WRKSRC}/headers.h && ${TOUCH} ${WRKSRC}/headers.h
 
