@@ -6,76 +6,81 @@
 #
 
 PORTNAME=	linux-realplayer
-PORTVERSION=	5.0
-CATEGORIES=	audio linux
+PORTVERSION= 	7.b2
+CATEGORIES=	audio graphics linux
 MASTER_SITES=	# fetch manually
-DISTNAME=	rv50_linux20
+DISTNAME=	rp${PORTVERSION:R}_linux20_libc6_i386_${PORTVERSION:E}
+EXTRACT_SUFX=	_rpm
 
-MAINTAINER=	kris@FreeBSD.org
+MAINTAINER=	vns@delta.odessa.ua
 
-RUN_DEPENDS=	/compat/linux/usr/i486-linux-libc5/lib/libc.so.5:${PORTSDIR}/emulators/linux_base
+RUN_DEPENDS=	/compat/linux/lib/libc.so.6:${PORTSDIR}/emulators/linux_base
+BUILD_DEPENDS=	rpm2cpio:${PORTSDIR}/misc/rpm2cpio
 
-ONLY_FOR_ARCHS= i386
-NO_CDROM=       "Redistribution not allowed"
-NO_BUILD=	yes
-WRKSRC=		${WRKDIR}/rvplayer5.0/
+EXTRACT_CMD=	rpm2cpio
+EXTRACT_BEFORE_ARGS=
+EXTRACT_AFTER_ARGS= | cpio -id --quiet
+RADIR=		${PREFIX}/lib/RealPlayer${PORTVERSION:R}
+WRKSRC=		${WRKDIR}/usr/lib/RealPlayer${PORTVERSION:R}
+PLUGINSDIR=	${PREFIX}/lib/netscape-linux/plugins
+RABINDIR=	${PREFIX}/bin
 
 STRIP=		# Linux binary should not be stripped by INSTALL_PROGRAM as it uses /usr/bin/strip which then brands the binary as a FreeBSD ELF one.
 
-LIBFILES=	libdecdnet.so libra14_4.so libra28_8.so libradnet.so \
-		librarv10.so librasipr.so librv10dec.so librvcore.so \
-		librvplayer.so
-
-DATAFILES=	License.txt Mailcap Mime.types RAObserver.class \
-		RAPlayer.class rvplayer.ad
-
 .include <bsd.port.pre.mk>
 
-.if !exists(${DISTDIR}/${DISTNAME}.tar.gz)
+.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
 IGNORE=		may not be automatically fetched due to licensing\
-		restrictions.  You MUST manually fetch the Linux ELF version after\
+		restrictions.  You MUST manually fetch the Linux RPM version after\
 		reading and agreeing to the license at:\
-		http://proforma.real.com/real/player/blackjack.html \
+		http://www.real.com/player/7/ \
 		- once ${DISTFILES} has been downloaded, move it to\
 		${DISTDIR} and then restart this build.
 .endif
 
+ONLY_FOR_ARCHS=	i386
+NO_CDROM=	"Redistribution not allowed"
+NO_BUILD=	yes
+
 do-install:
-
-	${MKDIR} ${PREFIX}/lib/rvplayer5.0/
-	${MKDIR} ${PREFIX}/share/rvplayer5.0/
-
-.for i in ${DATAFILES}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/lib/rvplayer5.0/
+	${MKDIR} ${RADIR}
+.for f in mimeinstall.sh pluginstall.sh postinstall.sh
+	${INSTALL_SCRIPT} ${WRKSRC}/${f} ${RADIR}
 .endfor
+.for f in realplay rpnphelper rpnp.so
+	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${RADIR}
+.endfor
+.for f in LICENSE Mailcap Mime.types README app.kdelnk audiosig.rm \
+	firstrun.rm firstrun.smi firstrun.swf mime.kdelnk raclass.zip \
+	realplay.desktop rp7.xpm rp7doc.png rp7doc.xpm rp7mini.xpm
+	${INSTALL_DATA} ${WRKSRC}/${f} ${RADIR}
+.endfor
+.for d in Codecs Common Plugins
+	${MKDIR} ${RADIR}/${d}
+	${INSTALL_PROGRAM} ${WRKSRC}/${d}/*.so* ${RADIR}/${d}
+.endfor
+	${MKDIR} ${RADIR}/Plugins/ExtResources
+	${INSTALL_PROGRAM} ${WRKSRC}/Plugins/ExtResources/* ${RADIR}/Plugins/ExtResources/
 
-.if !defined(NOPORTSDOCS)
-	${MKDIR} ${PREFIX}/share/doc/rvplayer5.0/
-	${CP} -rp ${WRKSRC}/README ${WRKSRC}/index.htm ${WRKSRC}/doc/ \
-		 ${PREFIX}/share/doc/rvplayer5.0/
+	${LN} -sf ${RADIR}/realplay ${RABINDIR}
+	${LN} -sf ${RADIR}/rpnphelper ${RABINDIR}
+
+.if exists(${PLUGINSDIR})
+	${LN} -sf ${RADIR}/raclass.zip ${PLUGINSDIR}
+	${LN} -sf ${RADIR}/rpnp.so ${PLUGINSDIR}
 .endif
 
-.for i in ${LIBFILES}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/lib/rvplayer5.0/
-.endfor
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${PREFIX}/share/doc/RealPlayer7
+	${INSTALL_DATA} ${WRKSRC}/Help/readme ${PREFIX}/share/doc/RealPlayer7
+	${INSTALL_DATA} ${WRKSRC}/Help/realplay.htm ${PREFIX}/share/doc/RealPlayer7
+	${MKDIR} ${PREFIX}/share/doc/RealPlayer7/realplay
+	${INSTALL_DATA} ${WRKSRC}/Help/realplay/*.htm ${PREFIX}/share/doc/RealPlayer7/realplay
+	${MKDIR} ${PREFIX}/share/doc/RealPlayer7/realplay/pics
+	${INSTALL_DATA} ${WRKSRC}/Help/realplay/pics/* ${PREFIX}/share/doc/RealPlayer7/realplay/pics
+.endif
 
-	${INSTALL_PROGRAM} ${WRKSRC}/rvplayer ${PREFIX}/bin/
-	/compat/linux/usr/bin/strip ${PREFIX}/bin/rvplayer
-	/usr/bin/brandelf -t Linux ${PREFIX}/bin/rvplayer
-
-	${INSTALL_DATA} ${WRKSRC}/welcome.rm ${PREFIX}/share/rvplayer5.0/
-
-	@${ECHO_MSG} ---------------------------------------------------------------
-	@${ECHO_MSG} You must add ${PREFIX}/lib/rvplayer5.0 to your
-	@${ECHO_MSG} LD_LIBRARY_PATH environment variable to use RealPlayer 5.0.
-	@${ECHO_MSG}
-	@${ECHO_MSG} To use the Netscape plugin, you must have a Linux version of
-	@${ECHO_MSG} netscape \(e.g., ${PORTSDIR}/www/linux-netscape4/\) - see
-	@${ECHO_MSG} ${PREFIX}/share/doc/rvplayer5.0/plugin.htm for instructions.
-	@${ECHO_MSG}
-	@${ECHO_MSG} To use rvplayer as an external helper app for Netscape \(any
-	@${ECHO_MSG} version\), follow the instructions in
-	@${ECHO_MSG} ${PREFIX}/share/doc/rvplayer5.0/browser.htm.
-	@${ECHO_MSG} ---------------------------------------------------------------
+post-install:
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
