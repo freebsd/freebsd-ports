@@ -8,7 +8,7 @@
 PORTNAME=	hns
 PORTVERSION=	2.10.3
 CATEGORIES=	japanese www perl5
-MASTER_SITES=	http://www.h14m.org/dist/
+MASTER_SITES=	http://downloads.sourceforge.jp/h14m/3249/
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}-pl${PORTVERSION:E}
 
 MAINTAINER=	hnsmaster@h14m.org
