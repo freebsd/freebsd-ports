@@ -1,0 +1,8 @@
+include/libgringotts.h
+lib/libgringotts.so.2
+lib/libgringotts.so
+lib/libgringotts.la
+lib/libgringotts.a
+libdata/pkgconfig/libgringotts.pc
+%%PORTDOCS%%share/doc/libgringotts/manual.htm
+%%PORTDOCS%%@dirrm share/doc/libgringotts

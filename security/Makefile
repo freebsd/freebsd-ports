@@ -103,6 +103,7 @@
     SUBDIR += libecc
     SUBDIR += libfwbuilder
     SUBDIR += libgcrypt
+    SUBDIR += libgringotts
     SUBDIR += libident
     SUBDIR += libmcrypt
     SUBDIR += libparanoia
