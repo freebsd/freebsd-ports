@@ -6,14 +6,18 @@
 #
 
 PORTNAME=	liferea
-PORTVERSION=	0.4.7b
-PORTREVISION=	1
+PORTVERSION=	0.4.7c
 CATEGORIES=	net gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	liferea
 
 MAINTAINER=	perky@FreeBSD.org
 COMMENT=	Simple RSS/RDF feed reader
+
+.ifdef WITH_MOZILLA
+BUILD_DEPENDS=	mozilla:${PORTSDIR}/www/mozilla
+RUN_DEPENDS=	mozilla:${PORTSDIR}/www/mozilla
+.endif
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomeprefix gnomehack gconf2 libxml2 libgtkhtml \
@@ -23,9 +27,19 @@ USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+.ifdef WITH_MOZILLA
+PLIST_SUB=	MOZ=""
+.else
+PLIST_SUB=	MOZ="@comment "
+.endif
 
 post-patch:
+.ifdef WITH_MOZILLA
 	${REINPLACE_CMD} -e 's,/usr/lib/moz,${X11BASE}/lib/moz,g' \
 		${WRKSRC}/src/liferea
+.else
+	${REINPLACE_CMD} -e 's,gtkmozembed,donttrythis,g' \
+		${WRKSRC}/configure
+.endif
 
 .include <bsd.port.mk>
