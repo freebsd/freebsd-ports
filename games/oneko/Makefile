@@ -3,12 +3,13 @@
 # Date created:		5 December 1994
 # Whom:			asami
 #
-# $Id: Makefile,v 1.9 1997/01/03 07:48:22 obrien Exp $
+# $Id: Makefile,v 1.10 1998/08/27 02:20:47 asami Exp $
 #
 
 DISTNAME=	oneko-1.2
 CATEGORIES=	games
-MASTER_SITES=	http://www.asahi-net.or.jp/~ZW6T-KND/oneko/
+MASTER_SITES=	ftp://ftp.cin.nihon-u.ac.jp/pub/Linux/PJE/PJE-0.1.2/sources/xclt/ \
+		http://www.asahi-net.or.jp/~ZW6T-KND/oneko/
 
 MAINTAINER=	candy@fct.kgc.co.jp
 
