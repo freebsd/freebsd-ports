@@ -1,0 +1,3 @@
+lib/libarts_xine.la
+lib/libarts_xine.so
+lib/mcop/xinePlayObject.mcopclass
