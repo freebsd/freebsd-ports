@@ -6,25 +6,38 @@
 #
 
 PORTNAME=	XML-XSH
-PORTVERSION=	1.4
+PORTVERSION=	1.8.2
 CATEGORIES=	textproc perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	XML
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN:S/$/:cpan/} \
+		${MASTER_SITE_SOURCEFORGE:S/$/:sourceforge/}
+MASTER_SITE_SUBDIR=	XML/:cpan xsh/:sourceforge
 PKGNAMEPREFIX=	p5-
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:cpan,sourceforge
 
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	This is xsh - an XML Editing Shell
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/XML/LibXML.pm:${PORTSDIR}/textproc/p5-XML-LibXML \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Text/Iconv.pm:${PORTSDIR}/converters/p5-Text-Iconv \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Parse/RecDescent.pm:${PORTSDIR}/devel/p5-Parse-RecDescent \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/XML/XUpdate/LibXML.pm:${PORTSDIR}/textproc/p5-XML-XUpdate-LibXML
+BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/LibXML.pm:${PORTSDIR}/textproc/p5-XML-LibXML \
+		${SITE_PERL}/${PERL_ARCH}/XML/LibXSLT.pm:${PORTSDIR}/textproc/p5-XML-LibXSLT \
+		${SITE_PERL}/XML/LibXML/Iterator.pm:${PORTSDIR}/textproc/p5-XML-LibXML-Iterator \
+		${SITE_PERL}/Parse/RecDescent.pm:${PORTSDIR}/devel/p5-Parse-RecDescent \
+		${SITE_PERL}/XML/XUpdate/LibXML.pm:${PORTSDIR}/textproc/p5-XML-XUpdate-LibXML \
+		${SITE_PERL}/${PERL_ARCH}/XML/LibXML/XPathContext.pm:${PORTSDIR}/textproc/p5-XML-LibXML-XPathContext
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-post-patch:
-	@${PERL} -pi -e 's/^(?=no warnings;)/#/ if $$.==6' \
-		${WRKSRC}/lib/XML/XSH/Functions.pm
+MAN1=		xsh.1
+MAN3=		XSH.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+IGNORE=		"requires perl 5.6.x or later. Install lang/perl5 and try again"
+.endif
+
+test: build
+	@cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} \
+		${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} test
+
+.include <bsd.port.post.mk>
