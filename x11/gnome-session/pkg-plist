@@ -1,9 +1,12 @@
-bin/gnome-login-check
 bin/gnome-session
 bin/gnome-session-properties
 bin/gnome-session-save
 bin/gnome-smproxy
 bin/gnome-wm
+etc/gconf/gconf.xml.defaults/apps/gnome-session/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/gnome-session/options/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/gnome-session/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/gnome-session/options/%gconf.xml
 etc/gconf/schemas/gnome-session.schemas
 share/gnome/control-center-2.0/capplets/session-properties.desktop
 share/gnome/default.session
@@ -55,3 +58,7 @@ share/locale/zh_CN/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-session-2.0.mo
 @dirrm share/gnome/pixmaps/splash
 @dirrm share/gnome/omf/gnome-core
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnome-session/options
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnome-session
+@dirrm etc/gconf/gconf.xml.defaults/apps/gnome-session/options
+@dirrm etc/gconf/gconf.xml.defaults/apps/gnome-session

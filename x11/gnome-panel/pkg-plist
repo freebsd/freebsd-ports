@@ -69,7 +69,6 @@ share/gnome/gnome-2.0/ui/GNOME_MailCheckApplet.xml
 share/gnome/gnome-2.0/ui/GNOME_PagerApplet.xml
 share/gnome/gnome-2.0/ui/GNOME_Panel_Popup.xml
 share/gnome/gnome-2.0/ui/GNOME_TasklistApplet.xml
-share/gnome/gnome-panel/glade/panel-test-applets.glade2
 share/gnome/gnome-panelrc
 share/doc/panel-applet/applet-popups.html
 share/doc/panel-applet/applet-porting.html
@@ -80,7 +79,9 @@ share/doc/panel-applet/multi-applets.html
 share/doc/panel-applet/panel-applet.html
 share/doc/panel-applet/panel-signals.html
 share/doc/panel-applet/panelapplet.html
+share/doc/panel-applet/server-files.html
 share/doc/panel-applet/session-saving.html
+share/gnome/gnome-panel/glade/panel-test-applets.glade
 share/gnome/help/clock/C/clock.xml
 share/gnome/help/clock/C/figures/clock_applet.png
 share/gnome/help/clock/C/legal.xml
@@ -96,9 +97,11 @@ share/gnome/help/mailcheck/C/legal.xml
 share/gnome/help/mailcheck/C/mailcheck.xml
 share/gnome/help/window-list/C/figures/window_list_applet.png
 share/gnome/help/window-list/C/figures/window_list_group.png
+share/gnome/help/window-list/C/figures/window_list_group_applet.png
 share/gnome/help/window-list/C/legal.xml
 share/gnome/help/window-list/C/window-list.xml
 share/gnome/help/workspace-switcher/C/figures/workspacelist_applet.png
+share/gnome/help/workspace-switcher/C/figures/workspace_switcher_applet.png
 share/gnome/help/workspace-switcher/C/legal.xml
 share/gnome/help/workspace-switcher/C/workspace-switcher.xml
 share/gnome/idl/gnome-panel-2.0/GNOME_Panel.idl
@@ -108,7 +111,7 @@ share/gnome/omf/gnome-panel/mailcheck-C.omf
 share/gnome/omf/gnome-panel/window-list-C.omf
 share/gnome/omf/gnome-panel/workspace-switcher-C.omf
 share/gnome/panel/gnome-panel-preferences.glade
-share/gnome/panel/gnome-panel-screenshot.glade2
+share/gnome/panel/gnome-panel-screenshot.glade
 share/gnome/pixmaps/fish/fishanim.png
 share/gnome/pixmaps/fish/footguy.png
 share/gnome/pixmaps/fish/monkey.png
