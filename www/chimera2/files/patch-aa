@@ -1,14 +1,11 @@
-*** libhtmlw/HTML-PSformat.c~	Wed Sep 14 19:53:22 1994
---- libhtmlw/HTML-PSformat.c	Tue Oct 18 14:41:47 1994
-***************
-*** 47,53 ****
---- 47,55 ----
-  #include <stdio.h>
-  #include <ctype.h>
-  #include <math.h>
-+ #ifndef __FreeBSD__
-  #include <malloc.h>
-+ #endif
-  #include "HTMLP.h"
-  
-  /* Fix thanks to robm. */
+--- ./Common.tmpl.dist.org	Fri Dec 16 20:10:16 1994
++++ ./Common.tmpl.dist	Mon Dec 19 02:52:52 1994
+@@ -103,7 +103,7 @@
+ NEEDFUNCS = -DNEED_STRSTR -DNEED_GETCWD
+ */
+ 
+-EXTRA_DEFINES = -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_UNISTD_H -DHAVE_MALLOC_H $(MYPROTO) $(MYBSD) $(NEEDFUNCS)
++EXTRA_DEFINES = -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_UNISTD_H $(MYPROTO) $(MYBSD) $(NEEDFUNCS)
+ 
+ /*
+  * Extra libraries
