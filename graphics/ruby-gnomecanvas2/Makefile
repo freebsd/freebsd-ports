@@ -17,7 +17,7 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	Ruby binding for GnomeCanvas2
 
-LIB_DEPENDS=    gnomecanvas-2.0:${PORTSDIR}/graphics/libgnomecanvas
+LIB_DEPENDS=    gnomecanvas-2.200:${PORTSDIR}/graphics/libgnomecanvas
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/glib2.so:${PORTSDIR}/devel/ruby-glib2 \
 		${RUBY_SITEARCHLIBDIR}/gtk2.so:${PORTSDIR}/x11-toolkits/ruby-gtk2 \
 		${RUBY_SITEARCHLIBDIR}/libart2.so:${PORTSDIR}/graphics/ruby-libart2
