@@ -41,6 +41,7 @@
     SUBDIR += gtk-aluminumalloy-smog-theme
     SUBDIR += gtk-aluminumalloy-toxic-theme
     SUBDIR += gtk-aluminumalloy-volcanic-theme
+    SUBDIR += gtk-ana-theme
     SUBDIR += gtk-aqualightblue-theme
     SUBDIR += gtk-bluecurve-theme
     SUBDIR += gtk-cleanice-engine
