@@ -5,7 +5,7 @@
 # Porter (original):	nils@guru.ims.uni-stuttgart.de
 # Porter (version 3):	maurice@serc.rmit.edu.au
 #
-# $Id: Makefile,v 1.15 1998/01/18 12:09:58 asami Exp $
+# $Id: Makefile,v 1.16 1998/01/18 15:12:38 steve Exp $
 #
 # Note:
 # - FreeBSD tasking libraries created by Dan Eischen have been incorportated
@@ -33,6 +33,7 @@ BROKEN=		"requires patched gcc compiler"
 # if you have one, if you have one put it here, otherwise,
 # you will need to install from a package first
 
+USE_GMAKE=	yes
 MAN1=		adagcc.1 cccp.1
 
 # Make sure we use the patched gcc compiler
