@@ -1,0 +1,247 @@
+--- header.ps.org	Wed Jan 31 21:59:27 2001
++++ header.ps	Wed Jan 31 22:00:47 2001
+@@ -4,15 +4,197 @@
+ %%Pages: 1
+ %%PageOrder: Ascend
+ %%BoundingBox: 0 0 612 792
+-%%DocumentFonts: Times-Roman
++%%DocumentFonts: Times-Roman Rymin-Light-EUC-H
+ %%EndComments
+ 
++%%BeginProcSet: cmpfont.ps 1 2
++% composite fonts for ASCII-EUC mixed string
++% Version 1.2 1/31/1990
++% Author Ken'ichi HANDA (handa@etl.go.jp)
++% Modified Norio Katayama (katayama@rd.nacsis.ac.jp),1998% Anyone can freely copy, modify, distribute this program.
++/copyfont {	% font-dic extra-entry-count  copyfont  font-dic
++	1 index maxlength add dict begin
++	{	1 index /FID ne 2 index /UniqueID ne and
++		{def} {pop pop} ifelse
++	} forall
++	currentdict
++	end
++} bind def
++
++/compositefont {	% ASCIIFontName EUCFontName  compositefont  font'
++    userdict /fixeucfont_dict known not {
++	userdict begin
++	    /fixeucfont_dict 2 dict begin
++		/UpperByteEncoding [
++		    16#00 1 16#20 { pop 0 } for
++		    16#21 1 16#28 { 16#20 sub } for
++		    16#29 1 16#2F { pop 0 } for
++		    16#30 1 16#74 { 16#27 sub } for
++		    16#75 1 16#FF { pop 0 } for
++		] def
++	        /LowerByteEncoding [
++		    16#00 1 16#A0 { pop /.notdef } for
++		    16#A1 1 16#FE { 16#80 sub 16 2 string cvrs
++				    (cXX) dup 1 4 -1 roll
++				    putinterval cvn } for
++		    /.notdef
++		] def
++		currentdict
++	    end def
++	end
++    } if
++    findfont dup /FontType get 0 eq {
++	12 dict begin
++	    %
++	    % 7+8 bit EUC font
++	    %
++	    12 dict begin
++		/EUCFont exch def
++		/FontInfo (7+8 bit EUC font) readonly def
++		/PaintType 0 def
++		/FontType 0 def
++		/FontMatrix matrix def
++		% /FontName
++		/Encoding fixeucfont_dict /UpperByteEncoding get def
++		/FMapType 2 def
++		EUCFont /WMode known
++		{ EUCFont /WMode get /WMode exch def }
++		{ /WMode 0 def } ifelse
++		/FDepVector [
++		    EUCFont /FDepVector get 0 get
++		    [ 16#21 1 16#28 {} for 16#30 1 16#74 {} for ]
++		    {
++			13 dict begin
++			    /EUCFont EUCFont def
++			    /UpperByte exch 16#80 add def	
++			    % /FontName
++			    /FontInfo (EUC lower byte font) readonly def
++			    /PaintType 0 def
++			    /FontType 3 def
++			    /FontMatrix matrix def
++			    /FontBBox {0 0 0 0} def
++			    /Encoding
++				fixeucfont_dict /LowerByteEncoding get def
++			    % /UniqueID
++			    % /WMode
++			    /BuildChar {
++				gsave
++				exch dup /EUCFont get setfont
++				/UpperByte get
++				2 string
++				dup 0 4 -1 roll put
++				dup 1 4 -1 roll put
++				dup stringwidth setcharwidth
++				0 0 moveto show
++				grestore
++			    } bind def
++			    currentdict
++			end
++			/lowerbytefont exch definefont
++		    } forall
++		] def
++		currentdict
++	    end
++	    /eucfont exch definefont
++	    exch
++	    findfont 1 copyfont dup begin
++		/FontMatrix FontMatrix [1 0 0 1 0 0.05] matrix concatmatrix def
++	    end
++	    /asciifont exch definefont
++	    exch
++	    /FDepVector [ 4 2 roll ] def
++	    /FontType 0 def
++	    /WMode 0 def
++	    /FMapType 4 def
++	    /FontMatrix matrix def
++	    /Encoding [0 1] def
++	    /FontBBox {0 0 0 0} def
++	    currentdict
++	end
++    }{
++	pop findfont 0 copyfont
++    } ifelse
++} def	
++
++/slantfont {	% FontName slant-degree  slantfont  font'
++    exch findfont 1 copyfont begin
++    [ 1 0 4 -1 roll 1 0 0 ] FontMatrix exch matrix concatmatrix
++    /FontMatrix exch def
++    currentdict
++    end
++} def
++%%EndProcSet
++
++% reencodeISO was modified to deal with a composite font correctly.
++% Modifier: Shigeru Chiba (chiba@is.s.u-tokyo.ac.jp)
++%           Kazuhiro Kazama (kazama@expert-sun.ntt.jp)
++/reencodeISOa {		% CompFontName font reencodeISOb font' 
++dup length dict begin
++{ 1 index /FID ne { def }{ pop pop } ifelse } forall
++/Encoding ISOLatin1Encoding def
++currentdict end definefont
++} def
++
++/reencodeISO {		% FontName reencodeISO font
++    dup dup findfont dup /FontType get 0 ne {
++    reencodeISOa
++}{
++    dup length dict begin {
++    1 index dup /FID eq {
++	pop pop pop
++    }{ /FDepVector eq {
++	dup length array copy
++	dup dup 0 get 4 index exch reencodeISOa	0 exch put def
++    }{
++	def
++    } ifelse } ifelse } forall
++    currentdict end definefont
++} ifelse } def
++
++/ISOLatin1Encoding [
++/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef
++/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef
++/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef
++/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef
++/space/exclam/quotedbl/numbersign/dollar/percent/ampersand/quoteright
++/parenleft/parenright/asterisk/plus/comma/minus/period/slash
++/zero/one/two/three/four/five/six/seven/eight/nine/colon/semicolon
++/less/equal/greater/question/at/A/B/C/D/E/F/G/H/I/J/K/L/M/N
++/O/P/Q/R/S/T/U/V/W/X/Y/Z/bracketleft/backslash/bracketright
++/asciicircum/underscore/quoteleft/a/b/c/d/e/f/g/h/i/j/k/l/m
++/n/o/p/q/r/s/t/u/v/w/x/y/z/braceleft/bar/braceright/asciitilde
++/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef
++/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef
++/.notdef/dotlessi/grave/acute/circumflex/tilde/macron/breve
++/dotaccent/dieresis/.notdef/ring/cedilla/.notdef/hungarumlaut
++/ogonek/caron/space/exclamdown/cent/sterling/currency/yen/brokenbar
++/section/dieresis/copyright/ordfeminine/guillemotleft/logicalnot
++/hyphen/registered/macron/degree/plusminus/twosuperior/threesuperior
++/acute/mu/paragraph/periodcentered/cedilla/onesuperior/ordmasculine
++/guillemotright/onequarter/onehalf/threequarters/questiondown
++/Agrave/Aacute/Acircumflex/Atilde/Adieresis/Aring/AE/Ccedilla
++/Egrave/Eacute/Ecircumflex/Edieresis/Igrave/Iacute/Icircumflex
++/Idieresis/Eth/Ntilde/Ograve/Oacute/Ocircumflex/Otilde/Odieresis
++/multiply/Oslash/Ugrave/Uacute/Ucircumflex/Udieresis/Yacute
++/Thorn/germandbls/agrave/aacute/acircumflex/atilde/adieresis
++/aring/ae/ccedilla/egrave/eacute/ecircumflex/edieresis/igrave
++/iacute/icircumflex/idieresis/eth/ntilde/ograve/oacute/ocircumflex
++/otilde/odieresis/divide/oslash/ugrave/uacute/ucircumflex/udieresis
++/yacute/thorn/ydieresis
++] def
++
++%%BeginSetup
++/Times-Ryumin
++    /Times-Roman /Ryumin-Light-EUC-H compositefont definefont pop
++/Times-Ryumin reencodeISO def
++%%EndSetup
++
+ % Simple defs
+ /inch { 72 mul } def
+ /mm { 72 mul 25.4 div } def
+ 
+ % User-defined parameters (with defaults)
+-/FontName	/Times-Roman	def
++/FontName	/Times-Ryumin	def
+ /RealWidth	8.5 inch	def
+ /RealHeight	11 inch		def
+ /LandScape      true            def
+@@ -52,44 +234,6 @@
+ /SetFontHeight          { /FontHeight exch def } def
+ /SetA4Paper		{ /RealWidth 210 mm def /RealHeight 297 mm def} def
+ /SetUSLetter		{ /RealWidth 8.5 inch def /RealHeight 11 inch def } def
+-
+-% Define /ISOLatin1Encoding only if it's not already there.
+-/ISOLatin1Encoding where { pop save true }{ false } ifelse
+-    /ISOLatin1Encoding [
+-	StandardEncoding 0 45 getinterval aload pop
+-	/minus
+-	StandardEncoding 46 98 getinterval aload pop
+-	/dotlessi /grave /acute /circumflex /tilde /macron /breve /dotaccent
+-	/dieresis /.notdef /ring /cedilla /.notdef /hungarumlaut /ogonek
+-	/caron /space /exclamdown /cent /sterling /currency /yen /brokenbar
+-	/section /dieresis /copyright /ordfeminine /guillemotleft /logicalnot
+-	/hyphen /registered /macron /degree /plusminus /twosuperior
+-	/threesuperior /acute /mu /paragraph /periodcentered /cedilla
+-	/onesuperior /ordmasculine /guillemotright /onequarter /onehalf
+-	/threequarters /questiondown /Agrave /Aacute /Acircumflex /Atilde
+-	/Adieresis /Aring /AE /Ccedilla /Egrave /Eacute /Ecircumflex /Edieresis
+-	/Igrave /Iacute /Icircumflex /Idieresis /Eth /Ntilde /Ograve /Oacute
+-	/Ocircumflex /Otilde /Odieresis /multiply /Oslash /Ugrave /Uacute
+-	/Ucircumflex /Udieresis /Yacute /Thorn /germandbls /agrave /aacute
+-	/acircumflex /atilde /adieresis /aring /ae /ccedilla /egrave /eacute
+-	/ecircumflex /edieresis /igrave /iacute /icircumflex /idieresis /eth
+-	/ntilde /ograve /oacute /ocircumflex /otilde /odieresis /divide /oslash
+-	/ugrave /uacute /ucircumflex /udieresis /yacute /thorn /ydieresis
+-    ] def
+-{ restore } if
+-
+-/reencodeISO { %def
+-    findfont dup length dict
+-    begin
+-	{ 1 index /FID ne { def }{ pop pop } ifelse } forall
+-	/Encoding ISOLatin1Encoding def
+-	currentdict
+-    end
+-    definefont pop
+-} bind def
+-
+-/isoFont FontName reencodeISO
+-/FontName /isoFont def
+ 
+ % Compute layout
+ /ComputeLayout {
