@@ -3,9 +3,9 @@
 # Whom:			pst
 # Version required:	5.26
 #
-# $Id: Makefile,v 1.32 1998/06/28 23:25:51 steve Exp $
+# $Id: Makefile,v 1.33 1998/08/07 23:56:28 asami Exp $
 #
-# Note this file is included from japanese/extract/Makefile
+# Note this file is included from japanese/expect/Makefile
 
 DISTNAME=	expect-5.26
 CATEGORIES=	lang tcl80 tk80
