@@ -6,7 +6,7 @@
 # $Id: Makefile,v 1.13 1996/11/13 15:18:23 adam Exp $
 #
 
-DISTNAME=	dgd-net-1.0.93
+DISTNAME=	dgd-net-1.0.97
 DISTFILES=	dgd-1.0.91.tar.gz
 CATEGORIES=	net lang
 MASTER_SITES=	ftp.lysator.liu.se:/pub/lpmud/drivers/dgd/
@@ -16,7 +16,11 @@ PATCH_SITES=	ftp.lysator.liu.se:/pub/lpmud/drivers/dgd/patches/ \
 		ftp.veda.is:/pub/mud/dgd/patches/
 PATCHFILES=	1.0.91-1.0.92.gz \
 		1.0.92-1.0.93.gz \
-		net-10.dgd-91.gz
+		1.0.93-1.0.94.gz \
+		1.0.94-1.0.95.gz \
+		1.0.95-1.0.96.gz \
+		1.0.96-1.0.97.gz \
+		net-10.dgd-97.gz
 
 MAINTAINER=	adam@veda.is
 
