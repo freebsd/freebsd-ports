@@ -1,0 +1,100 @@
+*** Makefile.in.orig	Fri Dec  4 16:04:23 1998
+--- Makefile.in	Thu Feb 27 18:37:45 2003
+***************
+*** 83,95 ****
+  #------------------------------------------------------------------------------
+  # define names for Mpexpr tclsh/tcl executable
+  
+! TCL_EXEC   = tclsh
+  TCLX_EXEC  = tcl
+  
+  #------------------------------------------------------------------------------
+  # define name for Mpexpr wish/wishx executable
+  
+! WISH_EXEC  = wish
+  WISHX_EXEC = wishx
+  
+  #------------------------------------------------------------------------------
+--- 83,95 ----
+  #------------------------------------------------------------------------------
+  # define names for Mpexpr tclsh/tcl executable
+  
+! TCL_EXEC   = tclsh8.3
+  TCLX_EXEC  = tcl
+  
+  #------------------------------------------------------------------------------
+  # define name for Mpexpr wish/wishx executable
+  
+! WISH_EXEC  = wish8.3
+  WISHX_EXEC = wishx
+  
+  #------------------------------------------------------------------------------
+***************
+*** 210,226 ****
+  # a make clobber and try LITTLE_ENDIAN.  If that fails, ask a wizard
+  # for help.
+  #
+! BYTE_ORDER=
+  #BYTE_ORDER= BIG_ENDIAN
+! #BYTE_ORDER= LITTLE_ENDIAN
+  
+  # Determine the number of bits in a long
+  #
+  # If in doubt, leave LONG_BITS empty.  This makefile will run
+  # the longbits program to determine the length.
+  #
+! LONG_BITS=
+! #LONG_BITS= 32
+  #LONG_BITS= 64
+  
+  
+--- 210,226 ----
+  # a make clobber and try LITTLE_ENDIAN.  If that fails, ask a wizard
+  # for help.
+  #
+! #BYTE_ORDER=
+  #BYTE_ORDER= BIG_ENDIAN
+! BYTE_ORDER= LITTLE_ENDIAN
+  
+  # Determine the number of bits in a long
+  #
+  # If in doubt, leave LONG_BITS empty.  This makefile will run
+  # the longbits program to determine the length.
+  #
+! #LONG_BITS=
+! LONG_BITS= 32
+  #LONG_BITS= 64
+  
+  
+***************
+*** 473,486 ****
+  #------------------------------------------------------------------------------
+  # install targets
+  
+! install:	@INSTALL_TARGET@  install-man install-tools
+  
+  install-shared:	$(LIB_SH_MPEXPR)   
+  	@echo installing $(LIB_SH_MPEXPR)
+  	$(INSTALL_PROGRAM) $(LIB_SH_MPEXPR)  $(LIB_DIR)/$(LIB_SH_MPEXPR)
+  	@echo installing pkgIndex.tcl
+  	-mkdir $(LIB_DIR)/Mpexpr$(MPEXPR_LIBVER)
+! 	$(INSTALL_PROGRAM) pkgIndex.tcl  $(LIB_DIR)/Mpexpr$(MPEXPR_LIBVER)/pkgIndex.tcl
+  
+  install-static:	@PROGS@   $(LIB_MPEXPR)
+  	@for f in $(T_EXEC) $(W_EXEC) ; do  \
+--- 473,487 ----
+  #------------------------------------------------------------------------------
+  # install targets
+  
+! #install:	@INSTALL_TARGET@  install-man install-tools
+! install:	@INSTALL_TARGET@  install-man
+  
+  install-shared:	$(LIB_SH_MPEXPR)   
+  	@echo installing $(LIB_SH_MPEXPR)
+  	$(INSTALL_PROGRAM) $(LIB_SH_MPEXPR)  $(LIB_DIR)/$(LIB_SH_MPEXPR)
+  	@echo installing pkgIndex.tcl
+  	-mkdir $(LIB_DIR)/Mpexpr$(MPEXPR_LIBVER)
+! 	$(INSTALL_DATA) pkgIndex.tcl  $(LIB_DIR)/Mpexpr$(MPEXPR_LIBVER)/pkgIndex.tcl
+  
+  install-static:	@PROGS@   $(LIB_MPEXPR)
+  	@for f in $(T_EXEC) $(W_EXEC) ; do  \

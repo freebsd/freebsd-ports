@@ -1,0 +1,15 @@
+Mpexpr adds two new commands to Tcl, 'mpexpr' and 'mpformat'.  Mpexpr works 
+much like Tcl's  native 'expr', but does all calculations using an arbitrary 
+precision math package.  Mpexpr numbers can be any number of digits, with any 
+decimal precision.  Final precision is controlled by a Tcl variable 
+'mp_precision', which can be any reasonable integer, limiting only the
+number of digits to the right of the decimal point. 
+
+Mpformat works much like Tcl's 'format', except it formats multiple
+precision numbers in a variety of formats.
+
+Mpexpr also includes most math functions provided by 'expr', as well
+as several new functions.  Mpexpr also supports Tcl variables and
+nested evaluation, just like 'expr':
+
+WWW: http://www.neosoft.com/tcl/ftparchive/sorted/math/mpexpr-1.0
