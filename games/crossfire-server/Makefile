@@ -57,12 +57,14 @@ post-configure:
 post-install:
 	(cd ${CFDIR}/lib; tar -xzf ${DISTDIR}/${CF_MAPS})
 	(cd ${CFDIR}; tar -xzf ${DISTDIR}/${CF_SOUNDS})
-	chown games.games ${PREFIX}/bin/crossfire
+	mkdir -p ${CFDIR}/doc
+	cp -r ${WRKDIR}/crossfire-0.92.8-doc/* ${CFDIR}/doc
+	touch ${PREFIX}/crossfire/lib/bookarch
+	chmod 664 ${PREFIX}/crossfire/lib/bookarch
 	chown -R games.games ${CFDIR}
 	chmod 0664 ${PREFIX}/crossfire/lib/highscore
+	chown games.games ${PREFIX}/bin/crossfire
 	chmod 6555 ${PREFIX}/bin/crossfire
-	mkdir ${CFDIR}/doc
-	cp -r ${WRKDIR}/crossfire-0.92.8-doc/* ${CFDIR}/doc
 	@echo ""
 	@echo ""
 	@echo "======================================================"
