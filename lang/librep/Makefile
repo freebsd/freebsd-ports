@@ -41,6 +41,8 @@ PREFIX?=	${X11BASE}
 .include <bsd.port.pre.mk>
 .if ${OSVERSION} > 500023
 LIB_DEPENDS+=	gmp.6:${PORTSDIR}/math/libgmp4
+.else
+EXTRA_PATCHES+=	${FILESDIR}/stable-patch-src_numbers.c
 .endif
 
 .if ${XFREE86_VERSION} == 3
