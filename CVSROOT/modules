@@ -9715,6 +9715,7 @@ zh-unzip	ports/chinese/unzip
 zh-ve		ports/chinese/ve
 zh-vflib	ports/chinese/vflib
 zh-wangttf	ports/chinese/wangttf
+zh-wenju	ports/chinese/wenju
 zh-xcin25	ports/chinese/xcin25
 zh-xemacs	ports/chinese/xemacs
 zh-xemacs21	ports/chinese/xemacs21
