@@ -8083,6 +8083,7 @@ pear-HTML_Form	ports/devel/pear-HTML_Form
 pear-HTML_Javascript	ports/devel/pear-HTML_Javascript
 pear-HTML_QuickForm	ports/devel/pear-HTML_QuickForm
 pear-HTML_QuickForm_Controller	ports/devel/pear-HTML_QuickForm_Controller
+pear-HTML_QuickForm_SelectFilter	ports/devel/pear-HTML_QuickForm_SelectFilter
 pear-HTML_Select	ports/devel/pear-HTML_Select
 pear-HTML_Select_Common	ports/devel/pear-HTML_Select_Common
 pear-HTML_Table	ports/devel/pear-HTML_Table
