@@ -17,7 +17,7 @@
 # OpenBSD and NetBSD will be accepted.
 #
 # $FreeBSD$
-# $Id: portlint.pl,v 1.41 2004/03/10 06:25:06 marcus Exp $
+# $Id: portlint.pl,v 1.43 2004/03/21 07:31:33 marcus Exp $
 #
 
 use vars qw/ $opt_a $opt_A $opt_b $opt_c $opt_h $opt_t $opt_v $opt_M $opt_N $opt_B $opt_V /;
@@ -40,7 +40,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 5;
-my $micro = 8;
+my $micro = 9;
 
 sub l { '[{(]'; }
 sub r { '[)}]'; }
@@ -1046,16 +1046,6 @@ sub checkmakefile {
 	}
 
 	#
-	# whole file: anything after bsd.port(.post).mk
-	#
-	print "OK: checking for anything after bsd.port(.post).mk.\n"
-		if ($verbose);
-	if ($whole =~ /^\.include\s+<bsd\.port(?:\.post)?\.mk>\s*[^\s]/m) {
-		&perror("FATAL: $file: do not include anything after ".
-			"bsd.port(.post).mk.");
-	}
-
-	#
 	# whole file: USE_* as a user-settable option
 	#
 	print "OK: checking for USE_* as a user-settable option.\n" if ($verbose);
@@ -1077,6 +1067,16 @@ sub checkmakefile {
 		my $lineno = &linenumber($`);
 		&perror("FATAL: $file [$lineno]: use of NO_CHECKSUM discouraged. ".
 			"it is intended to be a user variable.");
+	}
+
+	#
+	# whole file: MACHINE_ARCH
+	#
+	print "OK: checking MACHINE_ARCH.\n" if ($verbose);
+	if ($whole =~ /\nMACHINE_ARCH/) {
+		my $lineno = &linenumber($`);
+		&perror("FATAL: $file [$lineno]: MACHINE_ARCH should never be ".
+		    "overridden.");
 	}
 
 	#
@@ -1225,6 +1225,15 @@ pax perl printf rm rmdir ruby sed sh sort touch tr which xargs xmkmf
 	}
 
 	#
+	# whole file: ${MACHINE_ARCH}
+	#
+	if ($j =~ /\${MACHINE_ARCH}\s*[!=]=/) {
+		my $lineno = &linenumber($`);
+		&perror("FATAL: $file [$lineno]: MACHINE_ARCH should never be tested ".
+			"directly; use ARCH instead.");
+	}
+
+	#
 	# whole file: full path name
 	#
 	&abspathname($whole, $file);
@@ -1274,13 +1283,35 @@ pax perl printf rm rmdir ruby sed sh sort touch tr which xargs xmkmf
 		$slaveport = 1;
 		print "OK: slave port detected, checking for inclusion of $masterdir/Makefile.\n"
 			if ($verbose);
-		if ($whole !~ /\n\.include\s+[<"]\$\{MASTERDIR\}\/Makefile[">]\s*$/) {
-			&perror('FATAL: $file: the last line of a slave port\'s Makefile has to be'.
+		if ($whole =~ /^\.\s*include\s*[<"]bsd\.port(?:\.post)?\.mk[">]/m) {
+			&perror("FATAL: $file: supposedly non-slave port with".
+				" .CURDIR != MASTERDIR");
+		} elsif ($whole =~ /^\.\s*include\s*[<"]bsd\.port\.pre\.mk[">]/m) {
+			&perror("FATAL: $file: slave ports may not include".
+				" bsd.port.pre.mk");
+		}
+		if ($whole !~ /\n\.include\s+"\$\{MASTERDIR\}\/Makefile"\s*$/s) {
+			&perror("FATAL: $file: the last line of a slave port's Makefile has to be".
 				' .include "${MASTERDIR}/Makefile"');
 		}
 		print "OK: checking master port in $masterdir.\n" if ($verbose);
 		if (! -e "$masterdir/Makefile") {
 			&perror("WARN: unable to locate master port in $masterdir");
+		}
+		if ($whole !~ /^MASTERDIR=\s*\$\{\.CURDIR\}(?:\/\.\.){1,2}(?:\/[\w\@.+-]+){1,2}\s*$/m) {
+			&perror("WARN: $file: slave ports must define MASTERDIR=".
+				'${.CURDIR}/..(/../<category>)/<port>');
+		}
+	} else {
+		#$slaveport = 0;
+		print "OK: non-slave port detected, checking for anything after bsd.port(.post).mk.\n"
+			if ($verbose);
+		if ($whole !~ /\n\.include\s+<bsd\.port(?:\.post)?\.mk>\s*$/s) {
+			&perror("FATAL: $file: the last line of Makefile has to be".
+				' .include <bsd.port(.post).mk>');
+		}
+		if ($whole =~ /^MASTERDIR\s*[+?:!]?\s*=/m) {
+			&perror("WARN: $file: non-slave ports may not define MASTERDIR");
 		}
 	}
 
@@ -1555,10 +1586,10 @@ DISTFILES DIST_SUBDIR EXTRACT_ONLY
 			"number");
 	} elsif ($portversion =~ /-/) {
 		&perror("FATAL: $file: PORTVERSION should not contain a hyphen.".
-			"should modify \"$portversion\".");
+			"You should modify \"$portversion\".");
 	} else {
 		&perror("FATAL: $file: PORTVERSION looks illegal. ".
-			"should modify \"$portversion\".");
+			"You should modify \"$portversion\".");
 
 	}
 
