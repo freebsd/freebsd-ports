@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.181 1999/01/07 12:05:25 asami Exp $
+# $Id: Makefile,v 1.182 1999/01/11 05:23:35 steve Exp $
 #
 
     SUBDIR += 3dc
@@ -29,7 +29,6 @@
     SUBDIR += crossfire
     SUBDIR += dontspace
     SUBDIR += doom
-    SUBDIR += doomsrc
     SUBDIR += empire
     SUBDIR += fkiss
     SUBDIR += flying
@@ -58,6 +57,7 @@
     SUBDIR += ladder
     SUBDIR += libshhcards
     SUBDIR += lincity
+    SUBDIR += linuxdoom
     SUBDIR += maelstrom
     SUBDIR += mangband
     SUBDIR += merlin
