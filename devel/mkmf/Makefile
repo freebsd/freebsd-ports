@@ -3,7 +3,7 @@
 # Date created:		14 Mar 1996
 # Whom:			se
 #
-# $Id: Makefile,v 1.2 1996/11/18 11:23:12 asami Exp $
+# $Id: Makefile,v 1.3 1998/03/08 10:17:41 max Exp $
 #
 
 DISTNAME=	mkmf
@@ -12,5 +12,10 @@ CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.uni-koeln.de/util/
 
 MAINTAINER=	se@FreeBSD.org
+
+MAN1=		mkmf.1
+.if !defined(NOMANCOMPRESS)
+MANCOMPRESSED=	yes
+.endif
 
 .include <bsd.port.mk>
