@@ -56,10 +56,10 @@ MIMEUI_COOKIE=		semi-${EMACS_PORT_NAME}-${MIMEUI_VERSION}.FreeBSD-packages
 MANIFEST=		MANIFEST.t-gnus
 EMACS_PACKAGESDIR=	lib/xemacs/site-packages
 CONFIGURE_ARGS=	--with-xemacs=${EMACS_CMD} --with-packagedir=${LOCALBASE}/${EMACS_PACKAGESDIR}
-BUILD_DEPENDS+=	${LOCALBASE}/${EMACS_LIBDIR}/xemacs-packages/lisp/mh-e/mh-e.el:${PORTSDIR}/editors/xemacs-comm-packages \
-		${LOCALBASE}/${EMACS_LIBDIR}/xemacs-packages/lisp/bbdb/bbdb.el:${PORTSDIR}/editors/xemacs-comm-packages
-RUN_DEPENDS+=	${LOCALBASE}/${EMACS_LIBDIR}/xemacs-packages/lisp/mh-e/mh-e.el:${PORTSDIR}/editors/xemacs-comm-packages \
-		${LOCALBASE}/${EMACS_LIBDIR}/xemacs-packages/lisp/bbdb/bbdb.el:${PORTSDIR}/editors/xemacs-comm-packages
+BUILD_DEPENDS+=	${LOCALBASE}/${EMACS_LIBDIR}/xemacs-packages/lisp/mh-e/mh-e.el:${PORTSDIR}/editors/xemacs-packages \
+		${LOCALBASE}/${EMACS_LIBDIR}/xemacs-packages/lisp/bbdb/bbdb.el:${PORTSDIR}/editors/xemacs-packages
+RUN_DEPENDS+=	${LOCALBASE}/${EMACS_LIBDIR}/xemacs-packages/lisp/mh-e/mh-e.el:${PORTSDIR}/editors/xemacs-packages \
+		${LOCALBASE}/${EMACS_LIBDIR}/xemacs-packages/lisp/bbdb/bbdb.el:${PORTSDIR}/editors/xemacs-packages
 INFODIR=	${LOCALBASE}/${EMACS_PACKAGESDIR}/info
 STARTUPDIR=	${EMACS_PACKAGESDIR}/lisp
 INFOFILES=	emacs-mime gnus gnus-ja message message-ja sieve
