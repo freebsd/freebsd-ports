@@ -8,7 +8,7 @@ CXX  ?= c++
 CXXFLAGS += -DGL_GLEXT_LEGACY ${PTHREAD_CFLAGS}
 PROG  = Glasteroids
 
-LIBES = -lglut -lMesaGLU -lMesaGL -lXmu -lX11 -lXext -lm -lXi ${PTHREAD_LIBS}
+LIBS = -lglut -lGLU -lGL -lXmu -lX11 -lXext -lm -lXi ${PTHREAD_LIBS}
 
 INCDIR = -I/usr/X11R6/include
 LIBDIR = -L/usr/X11R6/lib
@@ -23,7 +23,7 @@ PREFIX ?= /usr/X11R6
 all: $(PROG)
 
 $(PROG): $(OBJS)
-	$(CXX) -o $(PROG) -Wall $(OBJS) $(LIBDIR) $(LIBES)
+	$(CXX) -o $(PROG) -Wall $(OBJS) $(LIBDIR) $(LIBS)
 
 clean:
 	rm -f *.o *~ $(PROG)
