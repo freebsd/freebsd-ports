@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ecasound
-PORTVERSION=	2.0.3
+PORTVERSION=	2.0.4
 CATEGORIES=	audio
 MASTER_SITES=	http://ecasound.seul.org/download/ \
 		${MASTER_SITE_SOURCEFORGE}

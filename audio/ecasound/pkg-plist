@@ -133,14 +133,13 @@ lib/libkvutils.so.2
 share/ecasound/effect_presets
 share/ecasound/generic_oscillators
 %%PORTDOCS%%share/doc/ecasound/ecasound-iam_manpage.html
-%%PORTDOCS%%share/doc/ecasound/ecasound_faq.html
-%%PORTDOCS%%share/doc/ecasound/ecasound_faq.txt
 %%PORTDOCS%%share/doc/ecasound/ecasound_manpage.html
 %%PORTDOCS%%share/doc/ecasound/ecasoundrc_manpage.html
 %%PORTDOCS%%share/doc/ecasound/ecatools_manpage.html
+%%PORTDOCS%%share/doc/ecasound/edi-list.txt
 %%PORTDOCS%%share/doc/ecasound/examples.html
 %%PORTDOCS%%share/doc/ecasound/index.html
-%%PORTDOCS%%share/doc/ecasound/edi-list.txt
+%%PORTDOCS%%share/doc/ecasound/manpages.html
 %%PORTDOCS%%share/doc/ecasound/programmers_guide/eci_doc.html
 %%PORTDOCS%%share/doc/ecasound/programmers_guide/programmers_guide.html
 %%PORTDOCS%%share/doc/ecasound/users_guide/users_guide.html
