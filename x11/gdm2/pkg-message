@@ -11,10 +11,10 @@ gdm     auth            requisite       pam_unix.so     try_first_pass
 gdm     account         requisite       pam_unix.so     try_first_pass
 gdm     session         required        pam_permit.so
 
-- To enable GDM after booting, edit your /etc/ttys(5), and change the line
-  for ttyv8 to
-
-ttyv8   "/usr/X11R6/bin/gdm --nodaemon"  xterm   on
+- Do _NOT_ use /etc/ttys to start gdm at boot time.  This will result in gdm 
+  hanging or restarting constantly.  Instead, copy the included gdm.sh.sample 
+  script to gdm.sh, and restart.  This script is found, by default, in
+  /usr/X11R6/etc/rc.d.
 
 These notes were written by:  Yukihiro Nakai <nakai@FreeBSD.org>
-and updated by: Joe Marcus Clarke <marcus@marcuscom.com>
+and updated by: Joe Marcus Clarke <marcus@FreeBSD.org>

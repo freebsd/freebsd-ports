@@ -7,7 +7,7 @@ fi
 if [ "$2" = "POST-INSTALL" ]; then
 	USER=gdm
 	GROUP=${USER}
-	UID=91
+	UID=92
 	GID=${UID}
 	PW=/usr/sbin/pw
 

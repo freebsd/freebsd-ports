@@ -9,16 +9,25 @@ bin/gdmlogin
 bin/gdmmktemp
 bin/gdmphotosetup
 bin/gdmsetup
-etc/gdm/Init/Default
-etc/gdm/PostSession/Default
-etc/gdm/PreSession/Default
-etc/gdm/Sessions/Gnome
-etc/gdm/Sessions/Xsession
-etc/gdm/XKeepsCrashing
+@unexec if cmp -s %D/etc/gdm/Init/Default %D/etc/gdm/Init/factory-Default; then rm -f %D/etc/gdm/Init/Default; fi
+etc/gdm/Init/factory-Default
+@unexec if cmp -s %D/etc/gdm/PostSession/Default %D/etc/gdm/PostSession/factory-Default; then rm -f %D/etc/gdm/PostSession/Default; fi
+etc/gdm/PostSession/factory-Default
+@unexec if cmp -s %D/etc/gdm/PreSession/Default %D/etc/gdm/PreSession/factory-Default; then rm -f %D/etc/gdm/PreSession/Default; fi
+etc/gdm/PreSession/factory-Default
+@unexec if cmp -s %D/etc/gdm/Sessions/Gnome %D/etc/gdm/Sessions/factory-Gnome; then rm -f %D/etc/gdm/Sessions/Gnome; fi
+etc/gdm/Sessions/factory-Gnome
+@unexec if cmp -s %D/etc/gdm/Sessions/Xsession %D/etc/gdm/Sessions/factory-Xsession; then rm -f %D/etc/gdm/Sessions/Xsession; fi
+etc/gdm/Sessions/factory-Xsession
+@unexec if cmp -s %D/etc/gdm/XKeepsCrashing %D/etc/gdm/factory-XKeepsCrashing; then rm -f %D/etc/gdm/XKeepsCrashing; fi
+etc/gdm/factory-XKeepsCrashing
+@unexec if cmp -s %D/etc/gdm/gnomerc %D/etc/gdm/factory-gnomerc; then rm -f %D/etc/gdm/gnomerc; fi
+etc/gdm/factory-gnomerc
+@unexec if cmp -s %D/etc/gdm/gdm.conf %D/etc/gdm/factory-gdm.conf; then rm -f %D/etc/gdm/gdm.conf; fi
 etc/gdm/factory-gdm.conf
-etc/gdm/gdm.conf
-etc/gdm/gnomerc
-etc/gdm/locale.alias
+@unexec if cmp -s %D/etc/gdm/locale.alias %D/etc/gdm/factory-locale.alias; then rm -f %D/etc/gdm/locale.alias; fi
+etc/gdm/factory-locale.alias
+etc/rc.d/gdm.sh.sample
 sbin/gdm-restart
 sbin/gdm-safe-restart
 sbin/gdmaskpass
