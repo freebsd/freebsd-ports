@@ -1,6 +1,6 @@
 Apsfilter is a magic printfilter, that allows you to print different document
 types "automagically" without having to convert them manually into something
-which is understood by your lineprinter. Apsfilter development started in 1994,
+which is understood by your lineprinter. Apsfilter development started in 1993,
 so apsfilter is now a mature and powerful printing solution for any flavour of
 Unix running lpd or LPRng as line printer scheduler.
 
