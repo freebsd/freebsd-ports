@@ -1617,6 +1617,7 @@ lib/X11/doc/html/bmtoa.1.html
 lib/X11/doc/html/chips.4.html
 lib/X11/doc/html/cirrus.4.html
 lib/X11/doc/html/cxpm.1.html
+lib/X11/doc/html/cyrix.4.html
 lib/X11/doc/html/dga.1.html
 lib/X11/doc/html/dynapro.4.html
 lib/X11/doc/html/editres.1.html
@@ -3229,6 +3230,7 @@ lib/modules/drivers/chips_drv.o
 lib/modules/drivers/cirrus_alpine.o
 lib/modules/drivers/cirrus_drv.o
 lib/modules/drivers/cirrus_laguna.o
+lib/modules/drivers/cyrix_drv.o
 lib/modules/drivers/fbdev_drv.o
 lib/modules/drivers/glint_drv.o
 lib/modules/drivers/i740_drv.o
@@ -4404,6 +4406,7 @@ man/man4/apm.4.gz
 man/man4/ati.4.gz
 man/man4/chips.4.gz
 man/man4/cirrus.4.gz
+man/man4/cyrix.4.gz
 man/man4/dynapro.4.gz
 man/man4/elographics.4.gz
 man/man4/fbdev.4.gz
