@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	doc++
-PORTVERSION=	3.4.4
+PORTVERSION=	3.4.10
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	docpp
@@ -55,12 +55,6 @@ ADDITIONAL_DOCS=	ClassGraph.class \
 			supportedTeXmacros.html \
 			toc.html
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile (bad C++ code)"
-.endif
-
 post-install:
 .if !defined(NOPORTSDOCS)
 	${MKDIR} ${PREFIX}/share/doc/doc++
@@ -69,4 +63,4 @@ post-install:
 	done
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

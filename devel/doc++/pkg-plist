@@ -34,8 +34,8 @@ share/doc/doc++/index.html
 share/doc/doc++/supportedHTMLmacros.html
 share/doc/doc++/supportedTeXmacros.html
 share/doc/doc++/toc.html
+share/locale/fr/LC_MESSAGES/doc++.mo
 share/locale/ja/LC_MESSAGES/doc++.mo
-share/locale/rudos/LC_MESSAGES/doc++.mo
-share/locale/rukoi8/LC_MESSAGES/doc++.mo
-share/locale/ruwin/LC_MESSAGES/doc++.mo
+share/locale/ro/LC_MESSAGES/doc++.mo
+share/locale/ru/LC_MESSAGES/doc++.mo
 @dirrm share/doc/doc++
