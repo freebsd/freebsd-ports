@@ -4,12 +4,12 @@ bin/gimp-config
 bin/gimp-remote
 bin/gimp.setfont
 bin/gimptool
-etc/gimp/1.1/gimprc
-etc/gimp/1.1/gimprc_user
-etc/gimp/1.1/gtkrc
-etc/gimp/1.1/gtkrc_user
-etc/gimp/1.1/ps-menurc
-etc/gimp/1.1/unitrc
+etc/gimp/1.2/gimprc
+etc/gimp/1.2/gimprc_user
+etc/gimp/1.2/gtkrc
+etc/gimp/1.2/gtkrc_user
+etc/gimp/1.2/ps-menurc
+etc/gimp/1.2/unitrc
 include/gck/gck.h
 include/libgimp/gimp.h
 include/libgimp/gimp_pdb.h
@@ -96,170 +96,168 @@ lib/libgimp.so.%%SHLIBVER%%
 lib/libgimpui.a
 lib/libgimpui.so
 lib/libgimpui.so.%%SHLIBVER%%
-libexec/gimp/1.1/modules/libcdisplay_gamma.so
-libexec/gimp/1.1/modules/libcdisplay_highcontrast.so
-libexec/gimp/1.1/modules/libcolorsel_gtk.so
-libexec/gimp/1.1/modules/libcolorsel_triangle.so
-libexec/gimp/1.1/modules/libcolorsel_water.so
-libexec/gimp/1.1/plug-ins/AlienMap
-libexec/gimp/1.1/plug-ins/AlienMap2
-libexec/gimp/1.1/plug-ins/CEL
-libexec/gimp/1.1/plug-ins/CML_explorer
-libexec/gimp/1.1/plug-ins/FractalExplorer
-libexec/gimp/1.1/plug-ins/Lighting
-libexec/gimp/1.1/plug-ins/MapObject
-libexec/gimp/1.1/plug-ins/aa
-libexec/gimp/1.1/plug-ins/align_layers
-libexec/gimp/1.1/plug-ins/animationplay
-libexec/gimp/1.1/plug-ins/animoptimize
-libexec/gimp/1.1/plug-ins/apply_lens
-libexec/gimp/1.1/plug-ins/autocrop
-libexec/gimp/1.1/plug-ins/autostretch_hsv
-libexec/gimp/1.1/plug-ins/blinds
-libexec/gimp/1.1/plug-ins/blur
-libexec/gimp/1.1/plug-ins/bmp
-libexec/gimp/1.1/plug-ins/borderaverage
-libexec/gimp/1.1/plug-ins/bumpmap
-libexec/gimp/1.1/plug-ins/bz2
-libexec/gimp/1.1/plug-ins/c_astretch
-libexec/gimp/1.1/plug-ins/checkerboard
-libexec/gimp/1.1/plug-ins/color_enhance
-libexec/gimp/1.1/plug-ins/colorify
-libexec/gimp/1.1/plug-ins/colortoalpha
-libexec/gimp/1.1/plug-ins/compose
-libexec/gimp/1.1/plug-ins/convmatrix
-libexec/gimp/1.1/plug-ins/csource
-libexec/gimp/1.1/plug-ins/cubism
-libexec/gimp/1.1/plug-ins/curve_bend
-libexec/gimp/1.1/plug-ins/dbbrowser
-libexec/gimp/1.1/plug-ins/decompose
-libexec/gimp/1.1/plug-ins/deinterlace
-libexec/gimp/1.1/plug-ins/depthmerge
-libexec/gimp/1.1/plug-ins/despeckle
-libexec/gimp/1.1/plug-ins/destripe
-libexec/gimp/1.1/plug-ins/diffraction
-libexec/gimp/1.1/plug-ins/displace
-libexec/gimp/1.1/plug-ins/edge
-libexec/gimp/1.1/plug-ins/emboss
-libexec/gimp/1.1/plug-ins/engrave
-libexec/gimp/1.1/plug-ins/exchange
-libexec/gimp/1.1/plug-ins/faxg3
-libexec/gimp/1.1/plug-ins/film
-libexec/gimp/1.1/plug-ins/fits
-libexec/gimp/1.1/plug-ins/flame
-libexec/gimp/1.1/plug-ins/flarefx
-libexec/gimp/1.1/plug-ins/fp
-libexec/gimp/1.1/plug-ins/fractaltrace
-libexec/gimp/1.1/plug-ins/gap_decode_mpeg
-libexec/gimp/1.1/plug-ins/gap_filter
-libexec/gimp/1.1/plug-ins/gap_frontends
-libexec/gimp/1.1/plug-ins/gap_navigator_dialog
-libexec/gimp/1.1/plug-ins/gap_plugins
-libexec/gimp/1.1/plug-ins/gauss_iir
-libexec/gimp/1.1/plug-ins/gauss_rle
-libexec/gimp/1.1/plug-ins/gbr
-libexec/gimp/1.1/plug-ins/gdyntext
-libexec/gimp/1.1/plug-ins/gee
-libexec/gimp/1.1/plug-ins/gfig
-libexec/gimp/1.1/plug-ins/gflare
-libexec/gimp/1.1/plug-ins/gfli
-libexec/gimp/1.1/plug-ins/gicon
-libexec/gimp/1.1/plug-ins/gif
-libexec/gimp/1.1/plug-ins/gifload
-libexec/gimp/1.1/plug-ins/gimpressionist
-libexec/gimp/1.1/plug-ins/glasstile
-libexec/gimp/1.1/plug-ins/gpb
-libexec/gimp/1.1/plug-ins/gqbist
-libexec/gimp/1.1/plug-ins/gradmap
-libexec/gimp/1.1/plug-ins/grid
-libexec/gimp/1.1/plug-ins/gtm
-libexec/gimp/1.1/plug-ins/guillotine
-libexec/gimp/1.1/plug-ins/gz
-libexec/gimp/1.1/plug-ins/header
-libexec/gimp/1.1/plug-ins/hot
-libexec/gimp/1.1/plug-ins/hrz
-libexec/gimp/1.1/plug-ins/ifscompose
-libexec/gimp/1.1/plug-ins/illusion
-libexec/gimp/1.1/plug-ins/imagemap
-libexec/gimp/1.1/plug-ins/iwarp
-libexec/gimp/1.1/plug-ins/jigsaw
-libexec/gimp/1.1/plug-ins/jpeg
-libexec/gimp/1.1/plug-ins/laplace
-libexec/gimp/1.1/plug-ins/lic
-libexec/gimp/1.1/plug-ins/mail
-libexec/gimp/1.1/plug-ins/mapcolor
-libexec/gimp/1.1/plug-ins/max_rgb
-libexec/gimp/1.1/plug-ins/maze
-libexec/gimp/1.1/plug-ins/mblur
-libexec/gimp/1.1/plug-ins/mosaic
-libexec/gimp/1.1/plug-ins/mpeg
-libexec/gimp/1.1/plug-ins/newsprint
-libexec/gimp/1.1/plug-ins/nlfilt
-libexec/gimp/1.1/plug-ins/noisify
-libexec/gimp/1.1/plug-ins/normalize
-libexec/gimp/1.1/plug-ins/nova
-libexec/gimp/1.1/plug-ins/oilify
-libexec/gimp/1.1/plug-ins/pagecurl
-libexec/gimp/1.1/plug-ins/papertile
-libexec/gimp/1.1/plug-ins/pat
-libexec/gimp/1.1/plug-ins/pcx
-libexec/gimp/1.1/plug-ins/pix
-libexec/gimp/1.1/plug-ins/pixelize
-libexec/gimp/1.1/plug-ins/plasma
-libexec/gimp/1.1/plug-ins/plugindetails
-libexec/gimp/1.1/plug-ins/png
-libexec/gimp/1.1/plug-ins/pnm
-libexec/gimp/1.1/plug-ins/polar
-libexec/gimp/1.1/plug-ins/print
-libexec/gimp/1.1/plug-ins/ps
-libexec/gimp/1.1/plug-ins/psd
-libexec/gimp/1.1/plug-ins/psp
-libexec/gimp/1.1/plug-ins/randomize
-libexec/gimp/1.1/plug-ins/rcm
-libexec/gimp/1.1/plug-ins/ripple
-libexec/gimp/1.1/plug-ins/rotate
-libexec/gimp/1.1/plug-ins/sample_colorize
-libexec/gimp/1.1/plug-ins/scatter_hsv
-libexec/gimp/1.1/plug-ins/screenshot
-libexec/gimp/1.1/plug-ins/script-fu
-libexec/gimp/1.1/plug-ins/sel2path
-libexec/gimp/1.1/plug-ins/sel_gauss
-libexec/gimp/1.1/plug-ins/semiflatten
-libexec/gimp/1.1/plug-ins/sgi
-libexec/gimp/1.1/plug-ins/sharpen
-libexec/gimp/1.1/plug-ins/shift
-libexec/gimp/1.1/plug-ins/sinus
-libexec/gimp/1.1/plug-ins/smooth_palette
-libexec/gimp/1.1/plug-ins/snoise
-libexec/gimp/1.1/plug-ins/sobel
-libexec/gimp/1.1/plug-ins/sparkle
-libexec/gimp/1.1/plug-ins/spheredesigner
-libexec/gimp/1.1/plug-ins/spread
-libexec/gimp/1.1/plug-ins/struc
-libexec/gimp/1.1/plug-ins/sunras
-libexec/gimp/1.1/plug-ins/tga
-libexec/gimp/1.1/plug-ins/threshold_alpha
-libexec/gimp/1.1/plug-ins/tiff
-libexec/gimp/1.1/plug-ins/tile
-libexec/gimp/1.1/plug-ins/tileit
-libexec/gimp/1.1/plug-ins/tiler
-libexec/gimp/1.1/plug-ins/uniteditor
-libexec/gimp/1.1/plug-ins/unsharp
-libexec/gimp/1.1/plug-ins/url
-libexec/gimp/1.1/plug-ins/video
-libexec/gimp/1.1/plug-ins/vinvert
-libexec/gimp/1.1/plug-ins/vpropagate
-libexec/gimp/1.1/plug-ins/warp
-libexec/gimp/1.1/plug-ins/waves
-libexec/gimp/1.1/plug-ins/webbrowser
-libexec/gimp/1.1/plug-ins/whirlpinch
-libexec/gimp/1.1/plug-ins/wind
-libexec/gimp/1.1/plug-ins/wmf
-libexec/gimp/1.1/plug-ins/xbm
-libexec/gimp/1.1/plug-ins/xjt
-libexec/gimp/1.1/plug-ins/xpm
-libexec/gimp/1.1/plug-ins/xwd
-libexec/gimp/1.1/plug-ins/zealouscrop
+libexec/gimp/1.2/modules/libcolorsel_gtk.so
+libexec/gimp/1.2/modules/libcolorsel_triangle.so
+libexec/gimp/1.2/modules/libcolorsel_water.so
+libexec/gimp/1.2/plug-ins/AlienMap
+libexec/gimp/1.2/plug-ins/AlienMap2
+libexec/gimp/1.2/plug-ins/CEL
+libexec/gimp/1.2/plug-ins/CML_explorer
+libexec/gimp/1.2/plug-ins/FractalExplorer
+libexec/gimp/1.2/plug-ins/Lighting
+libexec/gimp/1.2/plug-ins/MapObject
+libexec/gimp/1.2/plug-ins/aa
+libexec/gimp/1.2/plug-ins/align_layers
+libexec/gimp/1.2/plug-ins/animationplay
+libexec/gimp/1.2/plug-ins/animoptimize
+libexec/gimp/1.2/plug-ins/apply_lens
+libexec/gimp/1.2/plug-ins/autocrop
+libexec/gimp/1.2/plug-ins/autostretch_hsv
+libexec/gimp/1.2/plug-ins/blinds
+libexec/gimp/1.2/plug-ins/blur
+libexec/gimp/1.2/plug-ins/bmp
+libexec/gimp/1.2/plug-ins/borderaverage
+libexec/gimp/1.2/plug-ins/bumpmap
+libexec/gimp/1.2/plug-ins/bz2
+libexec/gimp/1.2/plug-ins/c_astretch
+libexec/gimp/1.2/plug-ins/checkerboard
+libexec/gimp/1.2/plug-ins/color_enhance
+libexec/gimp/1.2/plug-ins/colorify
+libexec/gimp/1.2/plug-ins/colortoalpha
+libexec/gimp/1.2/plug-ins/compose
+libexec/gimp/1.2/plug-ins/convmatrix
+libexec/gimp/1.2/plug-ins/csource
+libexec/gimp/1.2/plug-ins/cubism
+libexec/gimp/1.2/plug-ins/curve_bend
+libexec/gimp/1.2/plug-ins/dbbrowser
+libexec/gimp/1.2/plug-ins/decompose
+libexec/gimp/1.2/plug-ins/deinterlace
+libexec/gimp/1.2/plug-ins/depthmerge
+libexec/gimp/1.2/plug-ins/despeckle
+libexec/gimp/1.2/plug-ins/destripe
+libexec/gimp/1.2/plug-ins/diffraction
+libexec/gimp/1.2/plug-ins/displace
+libexec/gimp/1.2/plug-ins/edge
+libexec/gimp/1.2/plug-ins/emboss
+libexec/gimp/1.2/plug-ins/engrave
+libexec/gimp/1.2/plug-ins/exchange
+libexec/gimp/1.2/plug-ins/faxg3
+libexec/gimp/1.2/plug-ins/film
+libexec/gimp/1.2/plug-ins/fits
+libexec/gimp/1.2/plug-ins/flame
+libexec/gimp/1.2/plug-ins/flarefx
+libexec/gimp/1.2/plug-ins/fp
+libexec/gimp/1.2/plug-ins/fractaltrace
+libexec/gimp/1.2/plug-ins/gap_decode_mpeg
+libexec/gimp/1.2/plug-ins/gap_filter
+libexec/gimp/1.2/plug-ins/gap_frontends
+libexec/gimp/1.2/plug-ins/gap_navigator_dialog
+libexec/gimp/1.2/plug-ins/gap_plugins
+libexec/gimp/1.2/plug-ins/gauss_iir
+libexec/gimp/1.2/plug-ins/gauss_rle
+libexec/gimp/1.2/plug-ins/gbr
+libexec/gimp/1.2/plug-ins/gdyntext
+libexec/gimp/1.2/plug-ins/gee
+libexec/gimp/1.2/plug-ins/gee_zoom
+libexec/gimp/1.2/plug-ins/gfig
+libexec/gimp/1.2/plug-ins/gflare
+libexec/gimp/1.2/plug-ins/gfli
+libexec/gimp/1.2/plug-ins/gicon
+libexec/gimp/1.2/plug-ins/gif
+libexec/gimp/1.2/plug-ins/gifload
+libexec/gimp/1.2/plug-ins/gih
+libexec/gimp/1.2/plug-ins/gimpressionist
+libexec/gimp/1.2/plug-ins/glasstile
+libexec/gimp/1.2/plug-ins/gqbist
+libexec/gimp/1.2/plug-ins/gradmap
+libexec/gimp/1.2/plug-ins/grid
+libexec/gimp/1.2/plug-ins/gtm
+libexec/gimp/1.2/plug-ins/guillotine
+libexec/gimp/1.2/plug-ins/gz
+libexec/gimp/1.2/plug-ins/header
+libexec/gimp/1.2/plug-ins/hot
+libexec/gimp/1.2/plug-ins/hrz
+libexec/gimp/1.2/plug-ins/ifscompose
+libexec/gimp/1.2/plug-ins/illusion
+libexec/gimp/1.2/plug-ins/imagemap
+libexec/gimp/1.2/plug-ins/iwarp
+libexec/gimp/1.2/plug-ins/jigsaw
+libexec/gimp/1.2/plug-ins/jpeg
+libexec/gimp/1.2/plug-ins/laplace
+libexec/gimp/1.2/plug-ins/lic
+libexec/gimp/1.2/plug-ins/mail
+libexec/gimp/1.2/plug-ins/mapcolor
+libexec/gimp/1.2/plug-ins/max_rgb
+libexec/gimp/1.2/plug-ins/maze
+libexec/gimp/1.2/plug-ins/mblur
+libexec/gimp/1.2/plug-ins/mosaic
+libexec/gimp/1.2/plug-ins/mpeg
+libexec/gimp/1.2/plug-ins/newsprint
+libexec/gimp/1.2/plug-ins/nlfilt
+libexec/gimp/1.2/plug-ins/noisify
+libexec/gimp/1.2/plug-ins/normalize
+libexec/gimp/1.2/plug-ins/nova
+libexec/gimp/1.2/plug-ins/oilify
+libexec/gimp/1.2/plug-ins/pagecurl
+libexec/gimp/1.2/plug-ins/papertile
+libexec/gimp/1.2/plug-ins/pat
+libexec/gimp/1.2/plug-ins/pcx
+libexec/gimp/1.2/plug-ins/pix
+libexec/gimp/1.2/plug-ins/pixelize
+libexec/gimp/1.2/plug-ins/plasma
+libexec/gimp/1.2/plug-ins/plugindetails
+libexec/gimp/1.2/plug-ins/png
+libexec/gimp/1.2/plug-ins/pnm
+libexec/gimp/1.2/plug-ins/polar
+libexec/gimp/1.2/plug-ins/print
+libexec/gimp/1.2/plug-ins/ps
+libexec/gimp/1.2/plug-ins/psd
+libexec/gimp/1.2/plug-ins/psp
+libexec/gimp/1.2/plug-ins/randomize
+libexec/gimp/1.2/plug-ins/rcm
+libexec/gimp/1.2/plug-ins/ripple
+libexec/gimp/1.2/plug-ins/rotate
+libexec/gimp/1.2/plug-ins/sample_colorize
+libexec/gimp/1.2/plug-ins/scatter_hsv
+libexec/gimp/1.2/plug-ins/screenshot
+libexec/gimp/1.2/plug-ins/script-fu
+libexec/gimp/1.2/plug-ins/sel2path
+libexec/gimp/1.2/plug-ins/sel_gauss
+libexec/gimp/1.2/plug-ins/semiflatten
+libexec/gimp/1.2/plug-ins/sgi
+libexec/gimp/1.2/plug-ins/sharpen
+libexec/gimp/1.2/plug-ins/shift
+libexec/gimp/1.2/plug-ins/sinus
+libexec/gimp/1.2/plug-ins/smooth_palette
+libexec/gimp/1.2/plug-ins/snoise
+libexec/gimp/1.2/plug-ins/sobel
+libexec/gimp/1.2/plug-ins/sparkle
+libexec/gimp/1.2/plug-ins/spread
+libexec/gimp/1.2/plug-ins/struc
+libexec/gimp/1.2/plug-ins/sunras
+libexec/gimp/1.2/plug-ins/tga
+libexec/gimp/1.2/plug-ins/threshold_alpha
+libexec/gimp/1.2/plug-ins/tiff
+libexec/gimp/1.2/plug-ins/tile
+libexec/gimp/1.2/plug-ins/tileit
+libexec/gimp/1.2/plug-ins/tiler
+libexec/gimp/1.2/plug-ins/uniteditor
+libexec/gimp/1.2/plug-ins/unsharp
+libexec/gimp/1.2/plug-ins/url
+libexec/gimp/1.2/plug-ins/video
+libexec/gimp/1.2/plug-ins/vinvert
+libexec/gimp/1.2/plug-ins/vpropagate
+libexec/gimp/1.2/plug-ins/warp
+libexec/gimp/1.2/plug-ins/waves
+libexec/gimp/1.2/plug-ins/webbrowser
+libexec/gimp/1.2/plug-ins/whirlpinch
+libexec/gimp/1.2/plug-ins/wind
+libexec/gimp/1.2/plug-ins/wmf
+libexec/gimp/1.2/plug-ins/xbm
+libexec/gimp/1.2/plug-ins/xjt
+libexec/gimp/1.2/plug-ins/xpm
+libexec/gimp/1.2/plug-ins/xwd
+libexec/gimp/1.2/plug-ins/zealouscrop
 share/aclocal/gimp.m4
 share/gimp/brushes/10x10square.gbr
 share/gimp/brushes/10x10squareBlur.gbr
@@ -302,12 +300,11 @@ share/gimp/brushes/hsparks.gih
 share/gimp/brushes/galaxy.gbr
 share/gimp/brushes/galaxy_big.gbr
 share/gimp/brushes/galaxy_small.gbr
-share/gimp/brushes/pepper.gpb
+share/gimp/brushes/pepper.gbr
 share/gimp/brushes/pixel.gbr
 share/gimp/brushes/thegimp.gbr
 share/gimp/brushes/vine.gih
 share/gimp/brushes/xcf.gbr
-share/gimp/devel-docs/html/libgimp/book1.html
 share/gimp/devel-docs/html/libgimp/gimpchainbutton.html
 share/gimp/devel-docs/html/libgimp/gimpcolorbutton.html
 share/gimp/devel-docs/html/libgimp/gimpdefinitions.html
@@ -319,8 +316,6 @@ share/gimp/devel-docs/html/libgimp/gimpsizeentry.html
 share/gimp/devel-docs/html/libgimp/gimpunitmenu.html
 share/gimp/devel-docs/html/libgimp/index.html
 share/gimp/devel-docs/html/libgimp/index.sgml
-share/gimp/devel-docs/html/libgimp/libgimp-color-display.html
-share/gimp/devel-docs/html/libgimp/libgimp-color-selector.html
 share/gimp/devel-docs/html/libgimp/libgimp-gimp.html
 share/gimp/devel-docs/html/libgimp/libgimp-gimpbrushes.html
 share/gimp/devel-docs/html/libgimp/libgimp-gimpchannel.html
@@ -376,11 +371,6 @@ share/gimp/devel-docs/html/libgimp/libgimp-gimputils.html
 share/gimp/devel-docs/html/libgimp/libgimp-gimpvector.html
 share/gimp/devel-docs/html/libgimp/libgimp-gimpwidgets.html
 share/gimp/devel-docs/html/libgimp/libgimp-gimpwire.html
-share/gimp/devel-docs/html/libgimp/libgimp-gserialize.html
-share/gimp/devel-docs/html/libgimp/libgimp-parasite.html
-share/gimp/devel-docs/html/libgimp/libgimp-parasitef.html
-share/gimp/devel-docs/html/libgimp/libgimp-parasiteio.html
-share/gimp/devel-docs/html/libgimp/libgimp-parasitep.html
 share/gimp/devel-docs/html/libgimp/libgimp.html
 share/gimp/devel-docs/html/libgimp/libgimpui.html
 share/gimp/fractalexplorer/Asteroid_Field
@@ -502,7 +492,9 @@ share/gimp/gimpressionist/Paper/canvas2.pgm
 share/gimp/gimpressionist/Paper/defaultpaper.pgm
 share/gimp/gimpressionist/Paper/marble.pgm
 share/gimp/gimpressionist/Paper/marble2.pgm
+share/gimp/gimpressionist/Paper/struc.pgm
 share/gimp/gimpressionist/Paper/stone.pgm
+share/gimp/gimpressionist/Presets/ApplyCanvas
 share/gimp/gimpressionist/Presets/Ballpark
 share/gimp/gimpressionist/Presets/Canvas
 share/gimp/gimpressionist/Presets/Crosshatch
@@ -616,6 +608,7 @@ share/gimp/help/C/channels/duplicate_channel.html
 share/gimp/help/C/channels/index.html
 share/gimp/help/C/channels/lower_channel.html
 share/gimp/help/C/channels/raise_channel.html
+share/gimp/help/C/command_line.html
 share/gimp/help/C/contents.html
 share/gimp/help/C/dialogs/about.html
 share/gimp/help/C/dialogs/border_selection.html
@@ -623,20 +616,15 @@ share/gimp/help/C/dialogs/brush_editor.html
 share/gimp/help/C/dialogs/brush_selection.html
 share/gimp/help/C/dialogs/channels/channels.html
 share/gimp/help/C/dialogs/channels/edit_channel_attributes.html
-share/gimp/help/C/dialogs/channels/index.html
 share/gimp/help/C/dialogs/channels/new_channel.html
 share/gimp/help/C/dialogs/color_selectors/built_in.html
 share/gimp/help/C/dialogs/color_selectors/gtk.html
-share/gimp/help/C/dialogs/color_selectors/index.html
 share/gimp/help/C/dialogs/color_selectors/triangle.html
 share/gimp/help/C/dialogs/color_selectors/watercolor.html
 share/gimp/help/C/dialogs/convert_to_indexed.html
 share/gimp/help/C/dialogs/copy_named.html
 share/gimp/help/C/dialogs/cut_named.html
 share/gimp/help/C/dialogs/device_status.html
-share/gimp/help/C/dialogs/display_filters/display_filters.html
-share/gimp/help/C/dialogs/display_filters/gamma.html
-share/gimp/help/C/dialogs/display_filters/index.html
 share/gimp/help/C/dialogs/document_index.html
 share/gimp/help/C/dialogs/edit_qmask_attributes.html
 share/gimp/help/C/dialogs/error_console.html
@@ -647,11 +635,10 @@ share/gimp/help/C/dialogs/file_save.html
 share/gimp/help/C/dialogs/gradient_editor/copy_gradient.html
 share/gimp/help/C/dialogs/gradient_editor/delete_gradient.html
 share/gimp/help/C/dialogs/gradient_editor/gradient_editor.html
-share/gimp/help/C/dialogs/gradient_editor/index.html
 share/gimp/help/C/dialogs/gradient_editor/new_gradient.html
 share/gimp/help/C/dialogs/gradient_editor/rename_gradient.html
 share/gimp/help/C/dialogs/gradient_editor/replicate_segment.html
-share/gimp/help/C/dialogs/gradient_editor/save_as_pov_ray.html
+share/gimp/help/C/dialogs/gradient_editor/save_as_povray.html
 share/gimp/help/C/dialogs/gradient_editor/split_segments_uniformly.html
 share/gimp/help/C/dialogs/gradient_selection.html
 share/gimp/help/C/dialogs/grow_selection.html
@@ -660,9 +647,8 @@ share/gimp/help/C/dialogs/index.html
 share/gimp/help/C/dialogs/indexed_palette.html
 share/gimp/help/C/dialogs/info_window.html
 share/gimp/help/C/dialogs/input_devices.html
-share/gimp/help/C/dialogs/layers/add_mask.html
+share/gimp/help/C/dialogs/layers/add_layer_mask.html
 share/gimp/help/C/dialogs/layers/edit_layer_attributes.html
-share/gimp/help/C/dialogs/layers/index.html
 share/gimp/help/C/dialogs/layers/layer_boundary_size.html
 share/gimp/help/C/dialogs/layers/layers.html
 share/gimp/help/C/dialogs/layers/merge_visible_layers.html
@@ -674,23 +660,19 @@ share/gimp/help/C/dialogs/navigation_window.html
 share/gimp/help/C/dialogs/offset.html
 share/gimp/help/C/dialogs/palette_editor/delete_palette.html
 share/gimp/help/C/dialogs/palette_editor/import_palette.html
-share/gimp/help/C/dialogs/palette_editor/index.html
 share/gimp/help/C/dialogs/palette_editor/merge_palette.html
 share/gimp/help/C/dialogs/palette_editor/new_palette.html
 share/gimp/help/C/dialogs/palette_editor/palette_editor.html
 share/gimp/help/C/dialogs/palette_selection.html
 share/gimp/help/C/dialogs/paste_named.html
+share/gimp/help/C/dialogs/paths/edit_path_attributes.html
 share/gimp/help/C/dialogs/paths/export_path.html
 share/gimp/help/C/dialogs/paths/import_path.html
-share/gimp/help/C/dialogs/paths/index.html
 share/gimp/help/C/dialogs/paths/paths.html
-share/gimp/help/C/dialogs/paths/rename_path.html
 share/gimp/help/C/dialogs/pattern_selection.html
-share/gimp/help/C/dialogs/preferences/default_comment.html
 share/gimp/help/C/dialogs/preferences/directories.html
 share/gimp/help/C/dialogs/preferences/display.html
 share/gimp/help/C/dialogs/preferences/environment.html
-share/gimp/help/C/dialogs/preferences/index.html
 share/gimp/help/C/dialogs/preferences/interface.html
 share/gimp/help/C/dialogs/preferences/monitor.html
 share/gimp/help/C/dialogs/preferences/new_file.html
@@ -698,6 +680,7 @@ share/gimp/help/C/dialogs/preferences/preferences.html
 share/gimp/help/C/dialogs/preferences/session.html
 share/gimp/help/C/dialogs/really_close.html
 share/gimp/help/C/dialogs/really_quit.html
+share/gimp/help/C/dialogs/revert_image.html
 share/gimp/help/C/dialogs/scale_image.html
 share/gimp/help/C/dialogs/scale_layer_warn.html
 share/gimp/help/C/dialogs/set_canvas_size.html
@@ -718,168 +701,52 @@ share/gimp/help/C/file/last_opened.html
 share/gimp/help/C/file/quit.html
 @exec ln -sf %D/share/gimp/help/C/save %D/share/gimp/help/C/file/save
 @unexec rm -f %D/share/gimp/help/C/file/save
-share/gimp/help/C/file/revert.html
-share/gimp/help/C/filters/alienmap.html
-share/gimp/help/C/filters/alienmap2.html
-share/gimp/help/C/filters/align_layers.html
-share/gimp/help/C/filters/animationplay.html
-share/gimp/help/C/filters/animoptimize.html
-share/gimp/help/C/filters/apply_lens.html
-share/gimp/help/C/filters/autocrop.html
-share/gimp/help/C/filters/autostretch_hsv.html
-share/gimp/help/C/filters/avi.html
+share/gimp/help/C/file_formats.html
+share/gimp/help/C/filters/applycanvas.html
 share/gimp/help/C/filters/blinds.html
 share/gimp/help/C/filters/blur.html
-share/gimp/help/C/filters/bmp.html
-share/gimp/help/C/filters/borderaverage.html
-share/gimp/help/C/filters/bumpmap.html
 share/gimp/help/C/filters/bz2.html
-share/gimp/help/C/filters/c_astretch.html
-share/gimp/help/C/filters/cel.html
-share/gimp/help/C/filters/checkerboard.html
-share/gimp/help/C/filters/cml_explorer.html
-share/gimp/help/C/filters/color_enhance.html
-share/gimp/help/C/filters/colorify.html
-share/gimp/help/C/filters/compose.html
-share/gimp/help/C/filters/convmatrix.html
-share/gimp/help/C/filters/csource.html
 share/gimp/help/C/filters/cubism.html
-share/gimp/help/C/filters/curve_bend.html
-share/gimp/help/C/filters/dataurl.html
-share/gimp/help/C/filters/dbbrowser.html
-share/gimp/help/C/filters/decompose.html
-share/gimp/help/C/filters/deinterlace.html
-share/gimp/help/C/filters/depthmerge.html
-share/gimp/help/C/filters/despeckle.html
-share/gimp/help/C/filters/destripe.html
-share/gimp/help/C/filters/diffraction.html
-share/gimp/help/C/filters/displace.html
-share/gimp/help/C/filters/edge.html
-share/gimp/help/C/filters/emboss.html
-share/gimp/help/C/filters/engrave.html
-share/gimp/help/C/filters/exchange.html
-share/gimp/help/C/filters/faxg3.html
-share/gimp/help/C/filters/film.html
 share/gimp/help/C/filters/fits.html
-share/gimp/help/C/filters/flame.html
-share/gimp/help/C/filters/flarefx.html
-share/gimp/help/C/filters/fp.html
-share/gimp/help/C/filters/fractalexplorer.html
-share/gimp/help/C/filters/fractaltrace.html
-share/gimp/help/C/filters/gap_filter.html
-share/gimp/help/C/filters/gap_plugins.html
 share/gimp/help/C/filters/gauss_iir.html
 share/gimp/help/C/filters/gauss_rle.html
-share/gimp/help/C/filters/gbr.html
-share/gimp/help/C/filters/gdyntext.html
-share/gimp/help/C/filters/gfig.html
-share/gimp/help/C/filters/gflare.html
-share/gimp/help/C/filters/gfli.html
-share/gimp/help/C/filters/gicon.html
-share/gimp/help/C/filters/gif.html
-share/gimp/help/C/filters/gifload.html
-share/gimp/help/C/filters/gimp_xcf_load.html
-share/gimp/help/C/filters/gimp_xcf_save.html
-share/gimp/help/C/filters/gimpressionist.html
-share/gimp/help/C/filters/glasstile.html
-share/gimp/help/C/filters/gpb.html
+share/gimp/help/C/filters/gih.html
 share/gimp/help/C/filters/gqbist.html
-share/gimp/help/C/filters/gradmap.html
-share/gimp/help/C/filters/grid.html
 share/gimp/help/C/filters/gtm.html
-share/gimp/help/C/filters/guillotine.html
 share/gimp/help/C/filters/gz.html
-share/gimp/help/C/filters/header.html
-share/gimp/help/C/filters/hot.html
 share/gimp/help/C/filters/hrz.html
-share/gimp/help/C/filters/ifscompose.html
-share/gimp/help/C/filters/illusion.html
-share/gimp/help/C/filters/imagemap.html
 share/gimp/help/C/filters/index.html
-share/gimp/help/C/filters/iwarp.html
-share/gimp/help/C/filters/jigsaw.html
 share/gimp/help/C/filters/jpeg.html
-share/gimp/help/C/filters/laplace.html
-share/gimp/help/C/filters/lic.html
-share/gimp/help/C/filters/lighting.html
-share/gimp/help/C/filters/mail.html
-share/gimp/help/C/filters/mapcolor.html
-share/gimp/help/C/filters/mapobject.html
-share/gimp/help/C/filters/max_rgb.html
-share/gimp/help/C/filters/maze.html
-share/gimp/help/C/filters/mblur.html
 share/gimp/help/C/filters/miff.html
-share/gimp/help/C/filters/mosaic.html
-share/gimp/help/C/filters/mpeg.html
-share/gimp/help/C/filters/newsprint.html
-share/gimp/help/C/filters/nlfilt.html
-share/gimp/help/C/filters/noisify.html
-share/gimp/help/C/filters/normalize.html
-share/gimp/help/C/filters/nova.html
 share/gimp/help/C/filters/oilify.html
-share/gimp/help/C/filters/pagecurl.html
-share/gimp/help/C/filters/papertile.html
 share/gimp/help/C/filters/pat.html
-share/gimp/help/C/filters/pcx.html
-share/gimp/help/C/filters/pix.html
 share/gimp/help/C/filters/pixelize.html
-share/gimp/help/C/filters/plasma.html
-share/gimp/help/C/filters/plugindetails.html
 share/gimp/help/C/filters/png.html
 share/gimp/help/C/filters/pnm.html
-share/gimp/help/C/filters/polar.html
 share/gimp/help/C/filters/print.html
-share/gimp/help/C/filters/ps.html
 share/gimp/help/C/filters/psd.html
 share/gimp/help/C/filters/psp.html
-share/gimp/help/C/filters/randomize.html
-share/gimp/help/C/filters/rcm.html
 share/gimp/help/C/filters/repeat_last.html
 share/gimp/help/C/filters/reshow_last.html
 share/gimp/help/C/filters/ripple.html
-share/gimp/help/C/filters/rotate.html
-share/gimp/help/C/filters/sample_colorize.html
 share/gimp/help/C/filters/scatter_hsv.html
-share/gimp/help/C/filters/screenshot.html
-share/gimp/help/C/filters/script-fu.html
-share/gimp/help/C/filters/sel2path.html
-share/gimp/help/C/filters/sel_gauss.html
 share/gimp/help/C/filters/semiflatten.html
 share/gimp/help/C/filters/sgi.html
 share/gimp/help/C/filters/sharpen.html
 share/gimp/help/C/filters/shift.html
-share/gimp/help/C/filters/sinus.html
-share/gimp/help/C/filters/smooth_palette.html
-share/gimp/help/C/filters/snoise.html
-share/gimp/help/C/filters/sobel.html
-share/gimp/help/C/filters/sparkle.html
-share/gimp/help/C/filters/spheredesigner.html
-share/gimp/help/C/filters/spread.html
-share/gimp/help/C/filters/struc.html
 share/gimp/help/C/filters/sunras.html
 share/gimp/help/C/filters/tga.html
-share/gimp/help/C/filters/threshold_alpha.html
 share/gimp/help/C/filters/tiff.html
 share/gimp/help/C/filters/tile.html
-share/gimp/help/C/filters/tileit.html
-share/gimp/help/C/filters/tiler.html
-share/gimp/help/C/filters/uniteditor.html
-share/gimp/help/C/filters/unsharp.html
 share/gimp/help/C/filters/url.html
-share/gimp/help/C/filters/video.html
 share/gimp/help/C/filters/vinvert.html
-share/gimp/help/C/filters/vpropagate.html
-share/gimp/help/C/filters/warp.html
-share/gimp/help/C/filters/waves.html
-share/gimp/help/C/filters/webbrowser.html
-share/gimp/help/C/filters/whirlpinch.html
-share/gimp/help/C/filters/wind.html
+share/gimp/help/C/filters/undocumented_filter.html
 share/gimp/help/C/filters/wmf.html
-share/gimp/help/C/filters/xbm.html
-share/gimp/help/C/filters/xjt.html
-share/gimp/help/C/filters/xpm.html
 share/gimp/help/C/filters/xwd.html
-share/gimp/help/C/filters/zealouscrop.html
+share/gimp/help/C/gimp_license.html
+share/gimp/help/C/gimp_remote.html
+share/gimp/help/C/gimptool.html
+share/gimp/help/C/glossary.html
 @exec mkdir -p %D/share/gimp/help/C/image
 @exec ln -sf %D/share/gimp/help/C/dialogs %D/share/gimp/help/C/image/dialogs
 @unexec rm -f %D/share/gimp/help/C/image/dialogs
@@ -890,7 +757,6 @@ share/gimp/help/C/image/edit/cut.html
 @exec ln -sf %D/share/gimp/help/C/dialogs %D/share/gimp/help/C/image/edit/dialogs
 @unexec rm -f %D/share/gimp/help/C/image/edit/dialogs
 share/gimp/help/C/image/edit/fill.html
-share/gimp/help/C/image/edit/index.html
 share/gimp/help/C/image/edit/paste.html
 share/gimp/help/C/image/edit/paste_as_new.html
 share/gimp/help/C/image/edit/paste_into.html
@@ -902,22 +768,17 @@ share/gimp/help/C/image/edit/undo.html
 @exec ln -sf %D/share/gimp/help/C/filters %D/share/gimp/help/C/image/filters
 @unexec rm -f %D/share/gimp/help/C/image/filters
 share/gimp/help/C/image/image/colors/auto/equalize.html
-share/gimp/help/C/image/image/colors/auto/index.html
 share/gimp/help/C/image/image/colors/desaturate.html
-share/gimp/help/C/image/image/colors/index.html
 share/gimp/help/C/image/image/colors/invert.html
 @exec mkdir -p %D/share/gimp/help/C/image/image
 @exec ln -sf %D/share/gimp/help/C/dialogs %D/share/gimp/help/C/image/image/dialogs
 @unexec rm -f %D/share/gimp/help/C/image/image/dialogs
 share/gimp/help/C/image/image/duplicate.html
-share/gimp/help/C/image/image/index.html
 share/gimp/help/C/image/image/mode/convert_to_grayscale.html
 share/gimp/help/C/image/image/mode/convert_to_rgb.html
 @exec mkdir -p %D/share/gimp/help/C/image/image/mode
 @exec ln -sf %D/share/gimp/help/C/dialogs %D/share/gimp/help/C/image/image/mode/dialogs
 @unexec rm -f %D/share/gimp/help/C/image/image/mode/dialogs
-share/gimp/help/C/image/image/mode/index.html
-share/gimp/help/C/image/image/transforms/index.html
 @exec mkdir -p %D/share/gimp/help/C/image/image/transforms
 @exec ln -sf %D/share/gimp/help/C/dialogs %D/share/gimp/help/C/image/image/transforms/dialogs
 @unexec rm -f %D/share/gimp/help/C/image/image/transforms/dialogs
@@ -930,7 +791,6 @@ share/gimp/help/C/image/select/all.html
 @exec ln -sf %D/share/gimp/help/C/dialogs %D/share/gimp/help/C/image/select/dialogs
 @unexec rm -f %D/share/gimp/help/C/image/select/dialogs
 share/gimp/help/C/image/select/float.html
-share/gimp/help/C/image/select/index.html
 share/gimp/help/C/image/select/invert.html
 share/gimp/help/C/image/select/none.html
 share/gimp/help/C/image/select/save_to_channel.html
@@ -943,7 +803,6 @@ share/gimp/help/C/image/select/sharpen.html
 @exec ln -sf %D/share/gimp/help/C/dialogs %D/share/gimp/help/C/image/view/dialogs
 @unexec rm -f %D/share/gimp/help/C/image/view/dialogs
 share/gimp/help/C/image/view/dot_for_dot.html
-share/gimp/help/C/image/view/index.html
 share/gimp/help/C/image/view/new_view.html
 share/gimp/help/C/image/view/shrink_wrap.html
 share/gimp/help/C/image/view/snap_to_guides.html
@@ -952,7 +811,18 @@ share/gimp/help/C/image/view/toggle_rulers.html
 share/gimp/help/C/image/view/toggle_selection.html
 share/gimp/help/C/image/view/toggle_statusbar.html
 share/gimp/help/C/image/view/zoom.html
+share/gimp/help/C/images/image_menu.png
+share/gimp/help/C/images/image_window.png
+share/gimp/help/C/images/layers_dialog.png
+share/gimp/help/C/images/layers_menu.png
+share/gimp/help/C/images/print_color.png
+share/gimp/help/C/images/print_main.png
+share/gimp/help/C/images/print_setup.png
+share/gimp/help/C/images/tool_options.png
+share/gimp/help/C/images/toolbox.png
 share/gimp/help/C/index.html
+share/gimp/help/C/introduction.html
+share/gimp/help/C/keyboard_shortcuts.html
 share/gimp/help/C/layers/add_alpha_channel.html
 share/gimp/help/C/layers/alpha_to_selection.html
 share/gimp/help/C/layers/anchor_layer.html
@@ -968,9 +838,10 @@ share/gimp/help/C/layers/index.html
 share/gimp/help/C/layers/layer_to_image_size.html
 share/gimp/help/C/layers/mask_to_selection.html
 share/gimp/help/C/layers/merge_down.html
-share/gimp/help/C/layers/stack/index.html
 share/gimp/help/C/layers/stack/stack.html
-share/gimp/help/C/modes.html
+share/gimp/help/C/layers/using_layers.html
+share/gimp/help/C/ln7.html
+share/gimp/help/C/main_interface.html
 @exec mkdir -p %D/share/gimp/help/C/open
 @exec ln -sf %D/share/gimp/help/C/dialogs %D/share/gimp/help/C/open/dialogs
 @unexec rm -f %D/share/gimp/help/C/open/dialogs
@@ -1006,7 +877,6 @@ share/gimp/help/C/save/save_by_extension.html
 @exec ln -sf %D/share/gimp/help/C/filters %D/share/gimp/help/C/toolbox/filters
 @unexec rm -f %D/share/gimp/help/C/toolbox/filters
 share/gimp/help/C/toolbox/help/context_help.html
-share/gimp/help/C/toolbox/help/index.html
 @exec mkdir -p %D/share/gimp/help/C/toolbox/help
 @exec ln -sf %D/share/gimp/help/C/dialogs %D/share/gimp/help/C/toolbox/help/dialogs
 @unexec rm -f %D/share/gimp/help/C/toolbox/help/dialogs
@@ -1042,7 +912,6 @@ share/gimp/help/C/tools/magnify.html
 share/gimp/help/C/tools/measure.html
 share/gimp/help/C/tools/move.html
 share/gimp/help/C/tools/paintbrush.html
-share/gimp/help/C/tools/path.html
 share/gimp/help/C/tools/pencil.html
 share/gimp/help/C/tools/posterize.html
 share/gimp/help/C/tools/rect_select.html
@@ -1054,9 +923,27 @@ share/gimp/help/C/tools/transform_perspective.html
 share/gimp/help/C/tools/transform_rotate.html
 share/gimp/help/C/tools/transform_scale.html
 share/gimp/help/C/tools/transform_shear.html
-share/gimp/help/C/tools/xinput_airbrush.html
-share/gimp/help/C/welcome.html
+share/gimp/help/C/using_gimp.html
+share/gimp/help/C/why_gimp.html
+share/gimp/help/images/anchor_icon.png
+share/gimp/help/images/delete_icon.png
+share/gimp/help/images/duplicate_icon.png
 share/gimp/help/images/eek.png
+share/gimp/help/images/layers_example.png
+share/gimp/help/images/layers_overview.png
+share/gimp/help/images/lower_icon.png
+share/gimp/help/images/new_icon.png
+share/gimp/help/images/note.gif
+share/gimp/help/images/pen_add_icon.png
+share/gimp/help/images/pen_delete_icon.png
+share/gimp/help/images/pen_edit_icon.png
+share/gimp/help/images/pen_normal_icon.png
+share/gimp/help/images/raise_icon.png
+share/gimp/help/images/selection_to_path_icon.png
+share/gimp/help/images/stroke_icon.png
+share/gimp/help/images/tip.gif
+share/gimp/help/images/to_selection_icon.png
+share/gimp/help/images/warning.gif
 share/gimp/help/images/wilber.png
 share/gimp/palettes/Bears
 share/gimp/palettes/Bgold
@@ -1350,13 +1237,13 @@ share/locale/uk/LC_MESSAGES/gimp-libgimp.mo
 share/locale/uk/LC_MESSAGES/gimp-script-fu.mo
 share/locale/uk/LC_MESSAGES/gimp-std-plugins.mo
 share/locale/uk/LC_MESSAGES/gimp.mo
-@dirrm etc/gimp/1.1
+@dirrm etc/gimp/1.2
 @dirrm etc/gimp
 @dirrm include/gck
 @dirrm include/libgimp
-@dirrm libexec/gimp/1.1/plug-ins
-@dirrm libexec/gimp/1.1/modules
-@dirrm libexec/gimp/1.1
+@dirrm libexec/gimp/1.2/plug-ins
+@dirrm libexec/gimp/1.2/modules
+@dirrm libexec/gimp/1.2
 @dirrm libexec/gimp
 @dirrm share/gimp/brushes
 @dirrm share/gimp/devel-docs/html/libgimp
@@ -1375,7 +1262,6 @@ share/locale/uk/LC_MESSAGES/gimp.mo
 @dirrm share/gimp/help/C/dialogs/paths
 @dirrm share/gimp/help/C/dialogs/palette_editor
 @dirrm share/gimp/help/C/dialogs/gradient_editor
-@dirrm share/gimp/help/C/dialogs/display_filters
 @dirrm share/gimp/help/C/dialogs/color_selectors
 @dirrm share/gimp/help/C/dialogs/preferences
 @dirrm share/gimp/help/C/dialogs
@@ -1386,6 +1272,7 @@ share/locale/uk/LC_MESSAGES/gimp.mo
 @dirrm share/gimp/help/C/paths
 @dirrm share/gimp/help/C/toolbox/help
 @dirrm share/gimp/help/C/toolbox
+@dirrm share/gimp/help/C/images
 @dirrm share/gimp/help/C/image/edit
 @dirrm share/gimp/help/C/image/select
 @dirrm share/gimp/help/C/image/view
