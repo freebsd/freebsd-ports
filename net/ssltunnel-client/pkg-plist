@@ -1,0 +1,7 @@
+bin/pppclient
+@unexec if cmp -s %D/etc/ssltunnel/client.conf %D/etc/ssltunnel/client.conf.sample; then rm -f %D/etc/ssltunnel/client.conf; fi
+etc/ssltunnel/client.conf.sample
+%%PORTDOCS%%%%DOCSDIR%%/LISEZ-MOI
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@unexec rmdir %D/etc/ssltunnel 2>/dev/null || true
