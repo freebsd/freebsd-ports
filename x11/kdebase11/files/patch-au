@@ -1,0 +1,76 @@
+*** po/en_UK/Makefile.in~	Thu Dec 31 14:25:01 1998
+--- po/en_UK/Makefile.in	Sat Jan  9 21:22:05 1999
+***************
+*** 168,172 ****
+  
+  GMOFILES = kcmkwm.gmo kcmsyssound.gmo kdehelp.gmo kdisplay.gmo kdmconfig.gmo \
+! 	kfm.gmo klock.gmo kvt.gmo kwm.gmo
+  
+  POFILES = $(GMOFILES:.gmo=.po)
+--- 168,172 ----
+  
+  GMOFILES = kcmkwm.gmo kcmsyssound.gmo kdehelp.gmo kdisplay.gmo kdmconfig.gmo \
+! 	klock.gmo kvt.gmo kwm.gmo
+  
+  POFILES = $(GMOFILES:.gmo=.po)
+*** po/ko/Makefile.in~	Thu Dec 31 14:24:45 1998
+--- po/ko/Makefile.in	Sat Jan  9 21:22:55 1999
+***************
+*** 172,177 ****
+  	kcmbell.gmo kcminfo.gmo kcminput.gmo kcmkwm.gmo \
+  	kcmsamba.gmo kcmsample.gmo kcontrol.gmo kmenuedit.gmo \
+! 	kdmconfig.gmo kcmkpanel.gmo kcmlocale.gmo kcmsyssound.gmo \
+! 	kstart.gmo 
+  
+  POFILES = $(GMOFILES:.gmo=.po)
+--- 172,176 ----
+  	kcmbell.gmo kcminfo.gmo kcminput.gmo kcmkwm.gmo \
+  	kcmsamba.gmo kcmsample.gmo kcontrol.gmo kmenuedit.gmo \
+! 	kdmconfig.gmo kcmkpanel.gmo kcmlocale.gmo kcmsyssound.gmo
+  
+  POFILES = $(GMOFILES:.gmo=.po)
+*** po/nl/Makefile.in~	Thu Dec 31 14:24:47 1998
+--- po/nl/Makefile.in	Sat Jan  9 21:23:26 1999
+***************
+*** 171,175 ****
+  	kcmbell.gmo kcminput.gmo kcmkwm.gmo kcmsamba.gmo kcmsyssound.gmo \
+  	kcminfo.gmo kcmkpanel.gmo kcmlocale.gmo kcmsample.gmo kmenuedit.gmo \
+! 	kdm.gmo kdmconfig.gmo kstart.gmo klock.gmo kikbd.gmo
+  
+  POFILES = $(GMOFILES:.gmo=.po)
+--- 171,175 ----
+  	kcmbell.gmo kcminput.gmo kcmkwm.gmo kcmsamba.gmo kcmsyssound.gmo \
+  	kcminfo.gmo kcmkpanel.gmo kcmlocale.gmo kcmsample.gmo kmenuedit.gmo \
+! 	kdm.gmo kdmconfig.gmo klock.gmo kikbd.gmo
+  
+  POFILES = $(GMOFILES:.gmo=.po)
+*** po/sl/Makefile.in~	Thu Dec 31 14:24:56 1998
+--- po/sl/Makefile.in	Sat Jan  9 21:23:42 1999
+***************
+*** 170,174 ****
+  	kcmkpanel.gmo kcmlocale.gmo kcmsamba.gmo kcmsyssound.gmo \
+  	kcontrol.gmo kcmsyssound.gmo kdehelp.gmo kdm.gmo kpanel.gmo \
+! 	krootwm.gmo kstart.gmo kfm.gmo
+  
+  POFILES = $(GMOFILES:.gmo=.po)
+--- 170,174 ----
+  	kcmkpanel.gmo kcmlocale.gmo kcmsamba.gmo kcmsyssound.gmo \
+  	kcontrol.gmo kcmsyssound.gmo kdehelp.gmo kdm.gmo kpanel.gmo \
+! 	krootwm.gmo kfm.gmo
+  
+  POFILES = $(GMOFILES:.gmo=.po)
+*** po/zh_TW.Big5/Makefile.in~	Thu Dec 31 14:24:59 1998
+--- po/zh_TW.Big5/Makefile.in	Sat Jan  9 21:24:19 1999
+***************
+*** 168,172 ****
+  
+  GMOFILES = kfind.gmo kdehelp.gmo kdisplay.gmo kvt.gmo \
+! 	kfm.gmo kwm.gmo kfontmanager.gmo kstart.gmo \
+  	kdm.gmo kpanel.gmo klock.gmo krootwm.gmo \
+  	kcmbell.gmo kcminfo.gmo kcminput.gmo kcmkwm.gmo \
+--- 168,172 ----
+  
+  GMOFILES = kfind.gmo kdehelp.gmo kdisplay.gmo kvt.gmo \
+! 	kfm.gmo kwm.gmo kfontmanager.gmo \
+  	kdm.gmo kpanel.gmo klock.gmo krootwm.gmo \
+  	kcmbell.gmo kcminfo.gmo kcminput.gmo kcmkwm.gmo \
