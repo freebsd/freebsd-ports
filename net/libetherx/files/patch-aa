@@ -1,11 +1,10 @@
---- configure.orig	Tue Mar 28 13:59:55 2000
-+++ configure	Mon Apr 10 20:02:14 2000
-@@ -2264,7 +2264,7 @@
-   echo $ac_n "(cached) $ac_c" 1>&6
- else
-   ac_save_LIBS="$LIBS"
--LIBS="-ladns  $LIBS"
-+LIBS="-ladns "-L$prefix/lib" $LIBS"
- cat > conftest.$ac_ext <<EOF
- #line 2270 "configure"
- #include "confdefs.h"
+--- man/etherx-config.1.orig	Wed Mar  1 04:58:40 2000
++++ man/etherx-config.1	Wed May 10 17:50:59 2000
+@@ -1,7 +1,6 @@
+ .\" Process this file with
+ .\" groff -man -Tascii etherx-config.1
+ .\"
+-
+ .PU
+ .TH ETHERX-CONFIG 1
+ 
