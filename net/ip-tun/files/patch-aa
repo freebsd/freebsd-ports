@@ -1,0 +1,12 @@
+--- Makefile.orig	Fri Jan 19 23:53:16 2001
++++ Makefile	Fri Jan 19 23:53:33 2001
+@@ -83,7 +83,8 @@
+ #
+ # Primary Author: Stephen Suryaputra
+ 
+-CFLAGS = -g -O2 -Wall -pipe -DHAVE_SOCKADDR_SA_LEN -DIPV6 
++CFLAGS ?= -O2
++CFLAGS += -g -Wall -pipe -DHAVE_SOCKADDR_SA_LEN -DIPV6 
+ LDFLAGS = 
+ LDLIBS =
+ PREFIX?=	/usr/local
