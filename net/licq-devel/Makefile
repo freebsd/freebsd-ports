@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	licq
-PORTVERSION=	0.81
+PORTVERSION=	0.85
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.wibble.net/pub/licq/srcs/ \
@@ -24,8 +24,10 @@ BUILD_DEPENDS=	aclocal:${PORTSDIR}/devel/automake
 USE_GMAKE=	yes
 USE_AUTOCONF=	yes
 USE_NEWGCC=     yes
+USE_OPENSSL=	yes
 USE_PERL5=      yes
 
+CONFIGURE_TARGET= $(ARCH)-unknown-freebsdelf$(OSREL)
 DATANAME=       licq-data-1.6
 DATAFILES=	${DATANAME}${EXTRACT_SUFX}
 DATADIR=	${WRKDIR}/${DATANAME}
@@ -56,7 +58,6 @@ post-install:
 	cd ${WRKSRC}/plugins/qt-gui;\
 	   ${SETENV} ${MAKE_ENV} \
 	   ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET}
-	strip ${PREFIX}/lib/licq/licq_qt-gui.so
 	${MKDIR} ${PREFIX}/share/licq/contrib
 	${INSTALL_SCRIPT} ${DATADIR}/contrib/licq.* ${PREFIX}/share/licq/contrib
 	${INSTALL_SCRIPT} ${DATADIR}/contrib/*.sh ${PREFIX}/share/licq/contrib
