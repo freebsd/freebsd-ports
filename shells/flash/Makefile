@@ -67,4 +67,4 @@ post-install:
 	@${ECHO} "it to work properly."
 	@${ECHO}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
