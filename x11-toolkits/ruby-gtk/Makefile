@@ -1,12 +1,12 @@
 # New ports collection makefile for:    ruby-gtk
-# Version required:     0.20
+# Version required:     0.21
 # Date created:         19 April 1999
 # Whom:                 Yasuhiro Fukuma <yasuf@big.or.jp>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/08/26 21:22:49 cpiazza Exp $
 #
 
-DISTNAME=	ruby-gtk-0.20
+DISTNAME=	ruby-gtk-0.21
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://www.ueda.info.waseda.ac.jp/~igarashi/ruby/ \
 		ftp://ftp.netlab.co.jp/pub/lang/ruby/contrib/ \
@@ -30,15 +30,25 @@ RUBY=		${PREFIX}/bin/ruby
 RUBY_VER=	1.4
 RUBY_ARCH=	${ARCH}-freebsd${OSREL}
 
+.if defined(NO_IMLIB)
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
+.else
+LIB_DEPENDS+=	Imlib.4:${PORTSDIR}/graphics/imlib
+GTK_CONFIG?=	${X11BASE}/bin/imlib-config
+.endif
 
 do-configure:
 	@cd ${WRKSRC}; ${SETENV} ${CONFIGURE_ENV} ${RUBY} extconf.rb ${GTK_CONFIG}
 
 post-install:
+	${INSTALL_DATA} ${WRKSRC}/lib/*.rb ${PREFIX}/lib/ruby/${RUBY_VER}
 	${MKDIR} ${PREFIX}/share/examples/ruby/gtk
 	${INSTALL_DATA} ${WRKSRC}/sample/*.rb ${PREFIX}/share/examples/ruby/gtk
 	${MKDIR} ${PREFIX}/share/examples/ruby/gtk/browser
 	${INSTALL_DATA} ${WRKSRC}/doc/*.rb ${PREFIX}/share/examples/ruby/gtk/browser
+.if !defined(NO_IMLIB)
+	${MKDIR} ${PREFIX}/share/examples/ruby/gtk/gdkimlib
+	${INSTALL_DATA} ${WRKSRC}/sample/gdkimlib/*.rb ${PREFIX}/share/examples/ruby/gtk/gdkimlib
+.endif
 
 .include <bsd.port.mk>
