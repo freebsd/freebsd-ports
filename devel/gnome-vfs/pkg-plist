@@ -52,7 +52,6 @@ include/gnome-vfs-1.0/libgnomevfs/gnome-vfs-xfer.h
 include/gnome-vfs-1.0/libgnomevfs/gnome-vfs.h
 lib/libgnomevfs-pthread.a
 lib/libgnomevfs-pthread.so
-lib/libgnomevfs-pthread.so.0
 lib/libgnomevfs.a
 lib/libgnomevfs.so
 lib/libgnomevfs.so.0
@@ -75,6 +74,8 @@ lib/vfs/extfs/zip
 lib/vfs/extfs/zoo
 lib/vfs/modules/libbzip2.a
 lib/vfs/modules/libbzip2.so
+lib/vfs/modules/libdesktop.a
+lib/vfs/modules/libdesktop.so
 lib/vfs/modules/libextfs.a
 lib/vfs/modules/libextfs.so
 lib/vfs/modules/libfile.a
@@ -115,6 +116,7 @@ share/locale/nl/LC_MESSAGES/gnome-vfs.mo
 share/locale/nn/LC_MESSAGES/gnome-vfs.mo
 share/locale/no/LC_MESSAGES/gnome-vfs.mo
 share/locale/pl/LC_MESSAGES/gnome-vfs.mo
+share/locale/pt/LC_MESSAGES/gnome-vfs.mo
 share/locale/pt_BR/LC_MESSAGES/gnome-vfs.mo
 share/locale/ro/LC_MESSAGES/gnome-vfs.mo
 share/locale/ru/LC_MESSAGES/gnome-vfs.mo
