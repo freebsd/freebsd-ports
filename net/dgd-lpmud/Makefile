@@ -3,7 +3,7 @@
 # Date created:		10 November 1994
 # Whom:			adam
 #
-# $Id: Makefile,v 1.7 1996/02/12 04:40:55 adam Exp $
+# $Id: Makefile,v 1.8 1996/02/29 08:50:30 asami Exp $
 #
 
 DISTNAME=	dgd-lpmud
@@ -15,6 +15,8 @@ DISTFILES=	sim-2.4.5.tar.gz 2.4.5.tar.gz
 
 PATCH_SITES=	ftp://ftp.lysator.liu.se/pub/lpmud/drivers/dgd/
 PATCHFILES=	sim-diffs
+
+MAINTAINER=	adam@veda.is
 
 RUN_DEPENDS=	${PREFIX}/dgd/bin/driver:${PORTSDIR}/net/dgd
 
