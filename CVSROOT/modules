@@ -3415,6 +3415,7 @@ linux-vmware-toolbox ports/emulators/linux-vmware-toolbox
 linux_base	ports/emulators/linux_base
 linux_base-7	ports/emulators/linux_base-7
 linux_devtools	ports/devel/linux_devtools
+linux_dri	ports/graphics/linux_dri
 linux_glide	ports/graphics/linux_glide
 linux_glx	ports/graphics/linux_glx
 linux_kdump	ports/devel/linux_kdump
