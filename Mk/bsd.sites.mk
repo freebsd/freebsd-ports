@@ -396,7 +396,7 @@ MASTER_SITE_FEDORA_LINUX+= \
 	ftp://mirror.pop-rs.rnp.br/pub/download.fedora.redhat.com/pub/fedora/linux/core/%SUBDIR%/ \
 	ftp://ftp.tecnoera.com/pub/fedora/linux/%SUBDIR%/ \
 	ftp://mirror.netglobalis.net/pub/fedora/%SUBDIR%/ \
-	ftp://ftp.telmexchile.cl/Unix/fedora/linux/core/ --> %SUBDIR%/ \
+	ftp://ftp.telmexchile.cl/Unix/fedora/linux/core/%SUBDIR%/ \
 	http://ftp.isu.net.sa/pub/mirrors/fedora.redhat.com/%SUBDIR%/ \
 	ftp://ftp.isu.net.sa/pub/mirrors/fedora.redhat.com/fedora/%SUBDIR%/ \
 	http://ftp.udl.es/pub/fedora/linux/core/%SUBDIR%/ \
