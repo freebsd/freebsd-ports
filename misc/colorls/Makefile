@@ -1,21 +1,20 @@
 # New ports collection makefile for:	colorls
-# Version required:	FreeBSD-current (around October '95)
+# Version required:	FreeBSD-current (around January '97)
 # Date created:		8 March 1995
 # Whom:			Satoshi Asami
 #
-# $Id: Makefile,v 1.10 1996/11/11 05:49:20 obrien Exp $
+# $Id: Makefile,v 1.11 1996/12/17 12:33:29 asami Exp $
 #
 
 DISTNAME=	colorls
-PKGNAME=	colorls-2.1
+PKGNAME=	colorls-2.2
 CATEGORIES=	misc
-MASTER_SITES=	ftp://ftp.freebsd.org/pub/FreeBSD/FreeBSD-current/src/bin/
+MASTER_SITES=	ftp://freefall.freebsd.org/pub/FreeBSD/LOCAL_PORTS/
 DISTFILES=	ls.tar.gz
 
 MAINTAINER=	asami@FreeBSD.ORG
 
 WRKSRC=		${WRKDIR}/ls
-IGNOREFILES=	${DISTFILES}
 
 pre-patch:
 	${CP} ${WRKSRC}/ls.1 ${WRKSRC}/colorls.1
