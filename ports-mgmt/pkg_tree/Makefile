@@ -6,10 +6,17 @@
 #
 
 PORTNAME=	pkg_tree
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.mavetju.org/download/
 
 MAINTAINER=	edwin@mavetju.org
+
+MAN7=		pkg_tree.7
+
+post-patch:
+	@${PERL} -pi -e 's|__PREFIX__|${PREFIX}|g ; \
+		s|__INSTALL_MAN__|${INSTALL_MAN}|g ; \
+		s|__INSTALL_SCRIPT__|${INSTALL_SCRIPT}|g' ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
