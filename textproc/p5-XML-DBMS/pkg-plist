@@ -1,5 +1,5 @@
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/XML/XMLtoDBMS/.packlist
-lib/perl5/site_perl/%%PERL_VER%%/XML/XMLtoDBMS.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/XMLtoDBMS/.packlist
+%%SITE_PERL%%/XML/XMLtoDBMS.pm
 %%PORTDOCS%%%%EXAMPLESDIR%%/sales.map
 %%PORTDOCS%%%%EXAMPLESDIR%%/sales.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/sales.sql
@@ -7,6 +7,6 @@ lib/perl5/site_perl/%%PERL_VER%%/XML/XMLtoDBMS.pm
 %%PORTDOCS%%%%EXAMPLESDIR%%/sales1.map
 %%PORTDOCS%%%%EXAMPLESDIR%%/sales2.map
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/XML/XMLtoDBMS
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/XML 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/XML 2>/dev/null || true
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/XMLtoDBMS
+@unexec rmdir %D/%%SITE_PERL%%/XML 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML 2>/dev/null || true
