@@ -3,7 +3,7 @@
 # Date created:				Oct 9 1996
 # Whom:	      				Matthew Stein <matt@bdd.net>
 #
-#   $Id: Makefile,v 1.3 1996/10/10 12:53:49 jfitz Exp $
+#   $Id: Makefile,v 1.4 1996/11/17 03:18:45 obrien Exp $
 
 PKGNAME=	postgres95-1.08
 CATEGORIES=	databases
@@ -45,7 +45,7 @@ post-install:
 .endif
 		@ chown -R postgres:postgres ${PREFIX}/postgres95
 		@ echo 'Initializing Postgres95 Databases - this may take a few minutes...'
-		@ su -l posgres -c ${PREFIX}/postgres95/bin/initdb
+		@ su -l postgres -c ${PREFIX}/postgres95/bin/initdb
 		@ ${MKDIR} ${PREFIX}/etc/rc.d
 		@ if [ ! -f ${PREFIX}/etc/rc.d/postgres95.sh ]; then \
 			echo "Installing ${PREFIX}/etc/rc.d/postgres95.sh startup file."; \
