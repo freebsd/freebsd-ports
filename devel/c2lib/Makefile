@@ -7,17 +7,15 @@
 #
 
 PORTNAME=	c2lib
-PORTVERSION=	1.2.11
+PORTVERSION=	1.2.12
 CATEGORIES=	devel
 MASTER_SITES=	http://www.annexia.org/freeware/c2lib/
 
-MAINTAINER=	ijliao@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 USE_LIBTOOL=	yes
-
 USE_GMAKE=	yes
-
 INSTALLS_SHLIB=	yes
 
 SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
