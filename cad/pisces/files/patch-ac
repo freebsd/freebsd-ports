@@ -1,5 +1,5 @@
-*** utils/imakesrc/Imake.tmpl.orig	Tue May 28 20:11:14 1991
---- utils/imakesrc/Imake.tmpl	Fri Apr 21 18:34:35 2000
+*** utils/imakesrc/Imake.tmpl.orig	Tue May 28 14:11:14 1991
+--- utils/imakesrc/Imake.tmpl	Wed Sep 13 19:41:33 2000
 ***************
 *** 16,21 ****
 --- 16,31 ----
@@ -50,3 +50,20 @@
   #  endif
   #endif
   
+***************
+*** 328,334 ****
+  #define InstBinFlags 0755
+  #endif
+  #ifndef InstLibFlags
+! #define InstLibFlags 0664
+  #endif
+  #ifndef InstIncFlags
+  #define InstIncFlags 0444
+--- 338,344 ----
+  #define InstBinFlags 0755
+  #endif
+  #ifndef InstLibFlags
+! #define InstLibFlags 0644
+  #endif
+  #ifndef InstIncFlags
+  #define InstIncFlags 0444
