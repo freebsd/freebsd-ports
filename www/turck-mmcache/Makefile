@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	turck-mmcache
-PORTVERSION=	2.3.18
+PORTVERSION=	2.3.19
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	sysadmin@alexdupre.com
 COMMENT=	An opcode cache for PHP with encoder and loader
 
+USE_BZIP2=	yes
 USE_REINPLACE=	yes
 USE_PHPIZE=	yes
 
