@@ -11,15 +11,16 @@ squirrelmail/config/config_default.php
 squirrelmail/config/index.php
 squirrelmail/config/ri_once.pl
 squirrelmail/configure
+squirrelmail/data/.htaccess
 squirrelmail/data/default_pref
 squirrelmail/data/index.php
-squirrelmail/data/.htaccess
 squirrelmail/doc/README.russian_apache
 squirrelmail/doc/ReleaseNotes/1.2/Notes-1.2.0.txt
 squirrelmail/doc/ReleaseNotes/1.2/Notes-1.2.1.txt
 squirrelmail/doc/ReleaseNotes/1.2/Notes-1.2.2.txt
 squirrelmail/doc/ReleaseNotes/1.2/Notes-1.2.3.txt
 squirrelmail/doc/ReleaseNotes/1.2/Notes-1.2.4.txt
+squirrelmail/doc/ReleaseNotes/1.2/Notes-1.2.5
 squirrelmail/doc/addressbook.txt
 squirrelmail/doc/db-backend.txt
 squirrelmail/doc/ie_ssl.txt
@@ -328,6 +329,12 @@ squirrelmail/plugins/delete_move_next/index.php
 squirrelmail/plugins/delete_move_next/setup.php
 squirrelmail/plugins/filters/CHANGES
 squirrelmail/plugins/filters/README
+squirrelmail/plugins/filters/bulkquery/INSTALL
+squirrelmail/plugins/filters/bulkquery/Makefile
+squirrelmail/plugins/filters/bulkquery/README
+squirrelmail/plugins/filters/bulkquery/bq.in
+squirrelmail/plugins/filters/bulkquery/bq.out
+squirrelmail/plugins/filters/bulkquery/bulkquery.c
 squirrelmail/plugins/filters/filters.php
 squirrelmail/plugins/filters/index.php
 squirrelmail/plugins/filters/options.php
@@ -504,6 +511,7 @@ squirrelmail/themes/spice_of_life_lite.php
 @dirrm squirrelmail/plugins/newmail
 @dirrm squirrelmail/plugins/mail_fetch
 @dirrm squirrelmail/plugins/listcommands
+@dirrm squirrelmail/plugins/filters/bulkquery
 @dirrm squirrelmail/plugins/filters
 @dirrm squirrelmail/plugins/delete_move_next
 @dirrm squirrelmail/plugins/calendar
