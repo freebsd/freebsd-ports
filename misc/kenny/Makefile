@@ -9,6 +9,7 @@
 
 PORTNAME=	kenny
 PORTVERSION=	1.6
+PORTREVISION=	1
 CATEGORIES=	misc perl5
 MASTER_SITES=	http://www.h.shuttle.de/mitch/stuff/
 DISTNAME=	kenny.pl-${PORTVERSION}
@@ -19,6 +20,7 @@ MAINTAINER=	ports@geeksrus.net
 
 USE_PERL5=	yes
 NO_BUILD=	yes
+NO_WRKSUBDIR=	yes
 
 MAN1=		kenny.1
 
@@ -46,6 +48,3 @@ do-install:
 	@${INSTALL_MAN} ${WRKDIR}/${manpage} ${MANPREFIX}/man/man1/${manpage}
 
 .include <bsd.port.mk>
-
-#
-#EOF
