@@ -6,8 +6,7 @@
 #
 
 PORTNAME=		rox-archive
-PORTVERSION=		1.9.3
-PORTREVISION=	1
+PORTVERSION=		1.9.4
 CATEGORIES=		archivers
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	rox
@@ -21,6 +20,9 @@ RUN_DEPENDS=		${LOCALBASE}/bin/rox:${PORTSDIR}/x11-fm/rox-filer \
 			${LOCALBASE}/lib/ROX-Lib2/python/rox/__init__.py:${PORTSDIR}/devel/py-roxlib
 
 USE_PYTHON=		yes
+
+post-patch:
+	@${FIND} ${WRKSRC} -name CVS | ${XARGS} ${RM} -r
 
 do-build:
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
