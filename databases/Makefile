@@ -2,6 +2,7 @@
 #
     SUBDIR += cdb
     SUBDIR += db
+    SUBDIR += db3
     SUBDIR += dbview
     SUBDIR += dbf2mysql
     SUBDIR += freetds
