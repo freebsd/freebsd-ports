@@ -1,13 +1,13 @@
---- silcd/Makefile.in.orig	Fri Nov  9 13:26:07 2001
-+++ silcd/Makefile.in	Fri Nov  9 13:28:59 2001
-@@ -240,8 +240,8 @@
- 	  if test -f $$p \
+--- silcd/Makefile.in.orig	Fri Dec 21 02:15:06 2001
++++ silcd/Makefile.in	Fri Dec 21 02:16:08 2001
+@@ -260,8 +260,8 @@
+ 	     || test -f $$p1 \
  	  ; then \
  	    f=`echo $$p1|sed '$(transform);s/$$/$(EXEEXT)/'`; \
--	   echo " $(INSTALL_PROGRAM_ENV) $(INSTALL_PROGRAM) $$p $(DESTDIR)$(sbindir)/$$f"; \
--	   $(INSTALL_PROGRAM_ENV) $(INSTALL_PROGRAM) $$p $(DESTDIR)$(sbindir)/$$f; \
-+	   echo " $(INSTALL_PROGRAM_ENV) $(INSTALL_PROGRAM) $$p $(DESTDIR)$(sbindir)/$$p"; \
-+	   $(INSTALL_PROGRAM_ENV) $(INSTALL_PROGRAM) $$p $(DESTDIR)$(sbindir)/$$p; \
+-	   echo " $(INSTALL_PROGRAM_ENV) $(LIBTOOL) --mode=install $(INSTALL_PROGRAM) $$p $(DESTDIR)$(sbindir)/$$f"; \
+-	   $(INSTALL_PROGRAM_ENV) $(LIBTOOL) --mode=install $(INSTALL_PROGRAM) $$p $(DESTDIR)$(sbindir)/$$f; \
++	   echo " $(INSTALL_PROGRAM_ENV) $(LIBTOOL) --mode=install $(INSTALL_PROGRAM) $$p $(DESTDIR)$(sbindir)/$$p"; \
++	   $(INSTALL_PROGRAM_ENV) $(LIBTOOL) --mode=install $(INSTALL_PROGRAM) $$p $(DESTDIR)$(sbindir)/$$p; \
  	  else :; fi; \
  	done
  
