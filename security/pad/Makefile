@@ -6,7 +6,8 @@
 #
 
 PORTNAME=	pad
-PORTVERSION=	1.0.4
+PORTEPOCH=	1
+PORTVERSION=	0.7
 CATEGORIES=	security
 MASTER_SITES=	http://www.lammah.com/pad/
 EXTRACT_SUFX=	.tgz
