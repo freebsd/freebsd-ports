@@ -98,6 +98,9 @@ version number and exit.
 .It Fl v
 Verbose mode: show more information about what is being done.
 .El
+.Pp
+If no options are specified, the default is to build the specified
+ports.
 .Ss Port names
 The port names listed on the command line may be either unqualified or
 fully qualified.
@@ -232,6 +235,13 @@ password every time), but prefers correctness to performance.
 The maximum number of invocations is (2 + NC + NP), where NC and NP
 are the number of distinct categories and ports (including master
 directories and dependencies).
+.Sh ENVIRONMENT
+.Bl -tag -width PORTEASY_OPTIONS
+.It Ev PORTEASY_OPTIONS
+Specifies a set of default options for
+.Nm .
+These options can be overridden by command line parameters.
+.El
 .Sh FILES
 .Nm
 maintains and operates on a ports tree, normally
