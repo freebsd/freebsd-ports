@@ -101,17 +101,6 @@ share/nab/test/write_sander_inp.nab
 share/nab/test/duplex.nab
 share/nab/test/ltest.out.check
 share/nab/test/dg_gyrate.out.check
-share/nab/peptide/COPYING
-share/nab/peptide/aaaa.pdb
-share/nab/peptide/lprot.nab
-share/nab/peptide/write_pdb.nab
-share/nab/peptide/README
-share/nab/peptide/Makefile
-share/nab/peptide/conf.lib
-share/nab/peptide/peptide.nab
-share/nab/peptide/match_template.nab
-share/nab/peptide/peptide.c
-share/nab/peptide/fix_angles.nab
 share/nab/suppose/suppose.1
 share/nab/suppose/suppose.nab
 share/nab/dgdb/adna.basepair.db
@@ -131,6 +120,8 @@ share/nab/dgdb/trna.stack.db
 share/nab/dgdb/zdna.basepair.db
 share/nab/dgdb/zdna.nucleotide.db
 share/nab/dgdb/zdna.stack.db
+share/nab/peptide/peptide.nab
+share/nab/peptide/README
 share/nab/reslib/leap.log
 share/nab/reslib/hetatm.amber94/hetatm.amber94.chi
 share/nab/reslib/hetatm.amber94/hetatm.amber94.bnd
@@ -301,6 +292,7 @@ share/nab/fd_data/sbdna.dat
 share/nab/fd_data/abdna.dat
 share/nab/fd_data/aprna.dat
 share/nab/fd_data/lbdna.dat
+share/nab/fd_data/abdna.dat.old
 share/nab/coords
 share/nab/lib/cifparse.a
 share/nab/lib/libnab.a
