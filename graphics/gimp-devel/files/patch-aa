@@ -1,88 +1,250 @@
---- plug-ins/Makefile.in.orig	Thu Feb 27 05:41:52 1997
-+++ plug-ins/Makefile.in	Thu Feb 27 08:46:09 1997
-@@ -28,6 +28,7 @@
+--- /a/gimp-0.99.6/ltmain.sh	Wed Feb 26 03:39:50 1997
++++ ltmain.sh	Wed Mar 12 20:20:40 1997
+@@ -334,7 +335,9 @@
+ 	  exit 1
+ 	  ;;
+ 	esac
+-	deplibs="$deplibs $arg"
++	compile_shlibpath="$compile_shlibpath$dir:"
++	printf "compile_shlibpath: $compile_shlibpath\n"
++	arg=""
+ 	;;
  
- pkgdatadir = $(datadir)/@PACKAGE@
- pkglibdir = $(libdir)/@PACKAGE@
-+pkglibexecdir = $(libexecdir)/@PACKAGE@
- pkgincludedir = $(includedir)/@PACKAGE@
+       -l*) deplibs="$deplibs $arg" ;;
+--- /a/gimp-0.99.6/gtk+/ltmain.sh	Wed Feb 26 03:39:50 1997
++++ gtk+/ltmain.sh	Wed Mar 12 20:20:40 1997
+@@ -334,7 +335,9 @@
+ 	  exit 1
+ 	  ;;
+ 	esac
+-	deplibs="$deplibs $arg"
++	compile_shlibpath="$compile_shlibpath$dir:"
++	printf "compile_shlibpath: $compile_shlibpath\n"
++	arg=""
+ 	;;
  
- top_builddir = ..
-@@ -58,7 +59,7 @@
- X_LDFLAGS =
- X_LIBS =
+       -l*) deplibs="$deplibs $arg" ;;
+--- /a/gimp-0.99.6/gtk+/glib/ltmain.sh	Wed Feb 26 03:39:50 1997
++++ gtk+/glib/ltmain.sh	Wed Mar 12 20:20:40 1997
+@@ -334,7 +335,9 @@
+ 	  exit 1
+ 	  ;;
+ 	esac
+-	deplibs="$deplibs $arg"
++	compile_shlibpath="$compile_shlibpath$dir:"
++	printf "compile_shlibpath: $compile_shlibpath\n"
++	arg=""
+ 	;;
  
--pluginlibdir = $(pkglibdir)/plug-ins
-+pluginlibdir = $(pkglibexecdir)/plug-ins
+       -l*) deplibs="$deplibs $arg" ;;
+--- /a/gimp-0.99.6/gtk+/gtk/Makefile.am	Mon Mar 10 05:58:16 1997
++++ gtk+/gtk/Makefile.am	Wed Mar 12 21:10:32 1997
+@@ -149,23 +149,23 @@
+ X_LIBS = @x_libs@
  
- pluginlib_PROGRAMS =	\
- 	blur		\
---- ./app/batch.c~	Mon Feb 24 14:38:51 1997
-+++ ./app/batch.c	Wed Feb 26 08:51:05 1997
-@@ -3,7 +3,7 @@
- #include <stdlib.h>
- #include <string.h>
- #include <unistd.h>
--
-+#include <errno.h>
- #include "appenv.h"
- #include "app_procs.h"
- #include "batch.h"
---- ./app/xcf.c~	Wed Feb 26 05:21:25 1997
-+++ ./app/xcf.c	Wed Feb 26 09:07:30 1997
-@@ -1,3 +1,4 @@
-+#include <sys/types.h>
- #include <netinet/in.h>
- #include <stdarg.h>
- #include <stdio.h>
---- configure.orig	Thu Feb 27 09:55:32 1997
-+++ configure	Thu Feb 27 09:55:40 1997
-@@ -609,7 +609,7 @@
+ EXTRA_DIST = line-arrow.xbm line-wrap.xbm testgtkrc
++INCLUDES = -I$(top_srcdir) $(X_CFLAGS)
+-INCLUDES = $(X_CFLAGS) -I$(top_srcdir)
  
+ noinst_PROGRAMS = testgtk simple
+ testgtk_LDADD = \
+ 	libgtk.la				\
+ 	$(top_builddir)/gdk/libgdk.la		\
++	$(top_builddir)/glib/libglib.la		\
+ 	$(X_LDFLAGS)				\
+ 	$(X_LIBS)				\
+-	$(top_builddir)/glib/libglib.la		\
+ 	-lm
+ 
+ simple_LDADD = \
+ 	libgtk.la				\
+ 	$(top_builddir)/gdk/libgdk.la		\
++	$(top_builddir)/glib/libglib.la		\
+ 	$(X_LDFLAGS)				\
+ 	$(X_LIBS)				\
+-	$(top_builddir)/glib/libglib.la		\
+ 	-lm
+
+ 
+--- /a/gimp-0.99.6/gtk+/gtk/Makefile.in	Mon Mar 10 07:13:59 1997
++++ gtk+/gtk/Makefile.in	Wed Mar 12 21:09:50 1997
+@@ -198,23 +198,23 @@
+ X_LIBS = @x_libs@
+ 
+ EXTRA_DIST = line-arrow.xbm line-wrap.xbm testgtkrc
++INCLUDES = -I$(top_srcdir) $(X_CFLAGS)
+-INCLUDES = $(X_CFLAGS) -I$(top_srcdir)
+ 
+ noinst_PROGRAMS = testgtk simple
+ testgtk_LDADD = \
+ 	libgtk.la				\
+ 	$(top_builddir)/gdk/libgdk.la		\
++	$(top_builddir)/glib/libglib.la		\
+ 	$(X_LDFLAGS)				\
+ 	$(X_LIBS)				\
+-	$(top_builddir)/glib/libglib.la		\
+ 	-lm
+ 
+ simple_LDADD = \
+ 	libgtk.la				\
+ 	$(top_builddir)/gdk/libgdk.la		\
++	$(top_builddir)/glib/libglib.la		\
+ 	$(X_LDFLAGS)				\
+ 	$(X_LIBS)				\
+-	$(top_builddir)/glib/libglib.la		\
+ 	-lm
+ 
+ DEPS = \
+ DEPS = \
+--- /a/gimp-0.99.6/plug-ins/Makefile.am	Mon Mar 10 06:36:32 1997
++++ plug-ins/Makefile.am	Wed Mar 12 21:49:12 1997
+@@ -43,9 +43,9 @@
+ mosaic_SOURCES = mosaic.c mosaic_logo.h
+ 
+ INCLUDES = \
+-	$(X_CFLAGS)			\
+ 	-I$(top_srcdir)			\
+ 	-I$(top_srcdir)/gtk+		\
++	$(X_CFLAGS)			\
+ 	-I/usr/local/include
+ 
+ x_LDADD = \
+--- /a/gimp-0.99.6/plug-ins/Makefile.in	Mon Mar 10 07:13:47 1997
++++ plug-ins/Makefile.in	Wed Mar 12 21:48:51 1997
+@@ -89,9 +89,9 @@
+ mosaic_SOURCES = mosaic.c mosaic_logo.h
+ 
+ INCLUDES = \
+-	$(X_CFLAGS)			\
+ 	-I$(top_srcdir)			\
+ 	-I$(top_srcdir)/gtk+		\
++	$(X_CFLAGS)			\
+ 	-I/usr/local/include
+ 
+ x_LDADD = \
+--- /a/gimp-0.99.6/plug-ins/script-fu/Makefile.am	Mon Mar 10 06:36:21 1997
++++ plug-ins/script-fu/Makefile.am	Wed Mar 12 21:52:31 1997
+@@ -29,9 +29,9 @@
+ 	siodp.h
+ 
+ INCLUDES = \
+-	$(X_CFLAGS)			\
+ 	-I$(top_srcdir)			\
+-	-I$(top_srcdir)/gtk+
++	-I$(top_srcdir)/gtk+    \
++	$(X_CFLAGS)
+ 
+ LDADD = \
+ 	$(top_builddir)/libgimp/libgimp.la	\
+--- /a/gimp-0.99.6/plug-ins/script-fu/Makefile.in	Mon Mar 10 07:13:48 1997
++++ plug-ins/script-fu/Makefile.in	Wed Mar 12 21:52:47 1997
+@@ -76,9 +76,9 @@
+ 	siodp.h
+ 
+ INCLUDES = \
+-	$(X_CFLAGS)			\
+ 	-I$(top_srcdir)			\
+-	-I$(top_srcdir)/gtk+
++	-I$(top_srcdir)/gtk+    \
++	$(X_CFLAGS)
+ 
+ LDADD = \
+ 	$(top_builddir)/libgimp/libgimp.la	\
+--- /a/gimp-0.99.6/app/Makefile.am	Mon Mar 10 06:36:39 1997
++++ app/Makefile.am	Wed Mar 12 21:58:49 1997
+@@ -267,21 +267,21 @@
+ 
+ CPPFLAGS = \
+ 	-DLIBDIR=\""$(pkglibdir)"\"	\
+-	-DDATADIR=\""$(pkgdatadir)"\"	\
++	-DDATADIR=\""$(gimpdatadir)"\"	\
+ 	-DVERSION=\"$(VERSION)\"
+ 
+ INCLUDES = \
+-	$(X_CFLAGS)			\
+ 	-I$(top_srcdir)/gtk+		\
+-	-I$(top_srcdir)
++	-I$(top_srcdir)         \
++	$(X_CFLAGS)
+ 
+ gimp_LDADD = \
+ 	$(top_builddir)/gtk+/gtk/libgtk.la	\
+ 	$(top_builddir)/gtk+/gdk/libgdk.la	\
+-	$(X_LDFLAGS)				\
+-	$(X_LIBS)				\
+ 	$(top_builddir)/libgimp/libgimpi.a	\
+ 	$(top_builddir)/gtk+/glib/libglib.la	\
++	$(X_LDFLAGS)				\
++	$(X_LIBS)				\
+ 	-lm
+ 
+ DEPS = \
+--- /a/gimp-0.99.6/app/Makefile.in	Mon Mar 10 07:13:52 1997
++++ app/Makefile.in	Wed Mar 12 21:59:15 1997
+@@ -314,21 +314,21 @@
+ 
+ CPPFLAGS = \
+ 	-DLIBDIR=\""$(pkglibdir)"\"	\
+-	-DDATADIR=\""$(pkgdatadir)"\"	\
++	-DDATADIR=\""$(gimpdatadir)"\"	\
+ 	-DVERSION=\"$(VERSION)\"
+ 
+ INCLUDES = \
+-	$(X_CFLAGS)			\
+ 	-I$(top_srcdir)/gtk+		\
+-	-I$(top_srcdir)
++	-I$(top_srcdir)         \
++	$(X_CFLAGS)
+ 
+ gimp_LDADD = \
+ 	$(top_builddir)/gtk+/gtk/libgtk.la	\
+ 	$(top_builddir)/gtk+/gdk/libgdk.la	\
+-	$(X_LDFLAGS)				\
+-	$(X_LIBS)				\
+ 	$(top_builddir)/libgimp/libgimpi.a	\
+ 	$(top_builddir)/gtk+/glib/libglib.la	\
++	$(X_LDFLAGS)				\
++	$(X_LIBS)				\
+ 	-lm
+ 
+ DEPS = \
+--- /a/gimp-0.99.6/configure	Mon Mar 10 05:19:54 1997
++++ configure	Wed Mar 12 22:09:11 1997
+@@ -617,7 +617,7 @@
  test -z "$INSTALL_DATA" && INSTALL_DATA='${INSTALL} -m 644'
  
--
-+INSTALL_SCRIPT="/usr/bin/install -c -m 755"
- test -z "$INSTALL_SCRIPT" && INSTALL_SCRIPT='${INSTALL_PROGRAM}'
+ 
+-test -z "$INSTALL_SCRIPT" && INSTALL_SCRIPT='${INSTALL_PROGRAM}'
++test -z "$INSTALL_SCRIPT" && INSTALL_SCRIPT='${INSTALL} -m 555'
  
  
-@@ -2040,7 +2040,7 @@
- CFLAGS="$OPTFLAG $CFLAGS"
- 
- gimpdatadir=$datadir/$PACKAGE
--gimpplugindir=$libdir/$PACKAGE
-+gimpplugindir=$libexecdir/$PACKAGE
+ PACKAGE=gimp
+@@ -2108,7 +2108,7 @@
  
  
+ gimpdatadir=$datadir/$PACKAGE-$VERSION
+-gimpplugindir=$libdir/$PACKAGE-$VERSION
++gimpplugindir=$libexecdir/$PACKAGE-$VERSION
  
---- gtk+/configure.orig	Sun Mar  2 09:06:35 1997
-+++ gtk+/configure	Sun Mar  2 09:06:48 1997
-@@ -570,6 +570,7 @@
- # SVR4 /usr/ucb/install, which tries to use the nonexistent group "staff"
- # ./install, which can be erroneously created by make from ./install.sh.
- echo $ac_n "checking for a BSD compatible install""... $ac_c" 1>&6
-+INSTALL="/usr/bin/install -c"
- echo "configure:574: checking for a BSD compatible install" >&5
- if test -z "$INSTALL"; then
- if eval "test \"`echo '$''{'ac_cv_path_install'+set}'`\" = set"; then
---- gtk+/glib/configure.orig	Sun Mar  2 09:07:07 1997
-+++ gtk+/glib/configure	Sun Mar  2 09:07:22 1997
-@@ -561,6 +561,7 @@
- # ./install, which can be erroneously created by make from ./install.sh.
- echo $ac_n "checking for a BSD compatible install""... $ac_c" 1>&6
- echo "configure:564: checking for a BSD compatible install" >&5
-+INSTALL="/usr/bin/install -c"
- if test -z "$INSTALL"; then
- if eval "test \"`echo '$''{'ac_cv_path_install'+set}'`\" = set"; then
-   echo $ac_n "(cached) $ac_c" 1>&6
---- plug-ins/script-fu/Makefile.in.orig	Thu Feb 27 20:47:10 1997
-+++ plug-ins/script-fu/Makefile.in	Thu Feb 27 20:46:30 1997
-@@ -59,7 +59,7 @@
  
- SUBDIRS = scripts
  
--pluginlibdir = $(pkglibdir)/plug-ins
-+pluginlibdir = $(gimpplugindir)/plug-ins
+--- gimprc.in~	Thu Mar 13 10:32:12 1997
++++ gimprc.in	Thu Mar 13 10:32:25 1997
+@@ -68,7 +68,7 @@
+ # causes the gimp to use more swap space and less memory.
+ # Note: the gimp will still run even if `tile-cache-size' is
+ # set to 0. The actual size can contain a suffix of 'm', 'M',
+-* 'k', 'K', 'b' or 'B', which makes the gimp interpret the
++# 'k', 'K', 'b' or 'B', which makes the gimp interpret the
+ # size as being specified in megabytes, kilobytes and bytes
+ # respectively. If no suffix is specified the size defaults to
+ # being specified in kilobytes.
+@@ -90,7 +90,7 @@
+ #  colors remaining after the allocation of the colorcube
+ #  will be left to the system palette in an effort to reduce
+ #  colormap "flashing".
+-(color-cube 6 6 4)
++(color-cube 6 6 4 24)
  
- pluginlib_PROGRAMS = script-fu
-
+ # Install a GIMP colormap by default -- only for 8-bit displays
+ # (install-colormap)
