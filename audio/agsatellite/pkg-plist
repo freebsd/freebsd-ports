@@ -1,0 +1,6 @@
+bin/AGSatellite
+bin/AGSatellite-real
+%%PORTDOCS%%share/doc/agsatellite/german_readme.txt
+%%PORTDOCS%%share/doc/agsatellite/license.txt
+%%PORTDOCS%%share/doc/agsatellite/readme.txt
+%%PORTDOCS%%@dirrm share/doc/agsatellite
