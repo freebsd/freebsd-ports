@@ -1,0 +1,8 @@
+The SHA module allows you to use the NIST SHA message digest algorithm
+from within Perl programs.
+
+The final message digest value is returned by the digest operation as
+a 20-byte binary string. This operation delivers the result of
+operations since the last new or reset operation. Once the operation
+has been performed, the context must be reset before being used to
+calculate another digest value.
