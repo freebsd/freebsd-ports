@@ -535,6 +535,7 @@ binder		ports/x11-fm/binder
 bing		ports/net/bing
 binkd		ports/net/binkd
 binutils	src/gnu/usr.bin/binutils
+bioflip		ports/biology/flip
 biojava		ports/biology/biojava
 biorythm	ports/games/biorythm
 biosboot	src/sys/i386/boot/biosboot
