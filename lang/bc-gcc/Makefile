@@ -14,6 +14,7 @@ MASTER_SITES=	${MASTER_SITE_GNU}  \
 		ftp://ftp.cs.yale.edu/WWW/pub/bradley/bcc/  \
 		ftp://ftp.cs.columbia.edu/archives/gnu/bcc/
 MASTER_SITE_SUBDIR=	gcc
+DISTNAME=	gcc-2.7.2
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} documentation-as-8x11-ps.tgz
 
 PATCH_SITES=	ftp://dse.doc.ic.ac.uk/pub/misc/bcc/  \
