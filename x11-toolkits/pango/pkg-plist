@@ -14,12 +14,14 @@ include/pango-1.0/pango/pango-indic.h
 include/pango-1.0/pango/pango-item.h
 include/pango-1.0/pango/pango-layout.h
 include/pango-1.0/pango/pango-modules.h
+%%XFREE4:%%include/pango-1.0/pango/pango-ot.h
 include/pango-1.0/pango/pango-tabs.h
 include/pango-1.0/pango/pango-types.h
 include/pango-1.0/pango/pango-utils.h
 include/pango-1.0/pango/pango.h
 include/pango-1.0/pango/pangoft2.h
 include/pango-1.0/pango/pangox.h
+%%XFREE4:%%include/pango-1.0/pango/pangoxft.h
 lib/libpango.a
 lib/libpango.so
 lib/libpango.so.0
@@ -29,9 +31,14 @@ lib/libpangoft2.so.0
 lib/libpangox.a
 lib/libpangox.so
 lib/libpangox.so.0
+%%XFREE4:%%lib/libpangoxft.a
+%%XFREE4:%%lib/libpangoxft.so
+%%XFREE4:%%lib/libpangoxft.so.0
 lib/pango/modules/pango-arabic-x.so
+%%XFREE4:%%lib/pango/modules/pango-arabic-xft.so
 lib/pango/modules/pango-basic-ft2.so
 lib/pango/modules/pango-basic-x.so
+%%XFREE4:%%lib/pango/modules/pango-basic-xft.so
 lib/pango/modules/pango-bengali-x.so
 lib/pango/modules/pango-devanagari-x.so
 lib/pango/modules/pango-gujarati-x.so
@@ -40,10 +47,12 @@ lib/pango/modules/pango-hangul-x.so
 lib/pango/modules/pango-hebrew-x.so
 lib/pango/modules/pango-myanmar-x.so
 lib/pango/modules/pango-tamil-x.so
+%%XFREE4:%%lib/pango/modules/pango-tamil-xft.so
 lib/pango/modules/pango-thai-x.so
 libdata/pkgconfig/pango.pc
 libdata/pkgconfig/pangoft2.pc
 libdata/pkgconfig/pangox.pc
+%%XFREE4:%%libdata/pkgconfig/pangoxft.pc
 @dirrm lib/pango/modules
 @dirrm lib/pango
 @dirrm include/pango-1.0/pango

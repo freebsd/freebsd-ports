@@ -27,8 +27,16 @@ CONFIGURE_ARGS=	--with-qt=no
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
+.include <bsd.port.pre.mk>
+
+.if ${XFREE86_VERSION} == 3
+PLIST_SUB+=	XFREE4:="@comment "
+.else
+PLIST_SUB+=	XFREE4:=""
+.endif
+
 pre-patch:
 	@find ${WRKSRC} -name Makefile.in | xargs ${PERL} -pi -e \
 		's|\$\(libdir\)/pkgconfig|\$\(prefix\)/libdata/pkgconfig|g'
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
