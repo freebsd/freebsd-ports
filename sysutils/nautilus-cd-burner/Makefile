@@ -33,11 +33,6 @@ GCONF_SCHEMAS=	ncb.schemas
 
 .include <bsd.port.pre.mk>
 
-.if defined(PACKAGE_BUILDING) || defined(PARALLEL_PACKAGE_BUILD)
-.undef WITHOUT_DVD
-WITH_DVD=	yes
-.endif
-
 .if exists(${LOCALBASE}/bin/growisofs)
 WITH_DVD=	yes
 .endif
