@@ -1,0 +1,8 @@
+This module provide a single function called dump_xml() that takes
+a list of perl values as argument and produce a string as result.
+The string returned is an XML document that represents any perl
+data structures passed in. Reference loops are handled correctly.
+
+WWW: http://search.cpan.org/search?dist=Data-DumpXML
+
+Seamus Venasse <svenasse@polaris.ca>

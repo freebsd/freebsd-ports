@@ -1,0 +1,7 @@
+lib/perl5/site_perl/%%PERL_VER%%/Data/DumpXML.pm
+lib/perl5/site_perl/%%PERL_VER%%/Data/DumpXML/Parser.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Data/DumpXML/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Data/DumpXML
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Data 2>/dev/null || true
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Data/DumpXML
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Data 2>/dev/null || true

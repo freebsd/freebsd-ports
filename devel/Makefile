@@ -352,6 +352,7 @@
     SUBDIR += p5-Curses
     SUBDIR += p5-Curses-Widgets
     SUBDIR += p5-Data-Compare
+    SUBDIR += p5-Data-DumpXML
     SUBDIR += p5-Data-Flow
     SUBDIR += p5-Data-HexDump
     SUBDIR += p5-Data-ShowTable
