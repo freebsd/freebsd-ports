@@ -1,0 +1,12 @@
+--- tape-src/Makefile.in.orig	Fri Jan 26 14:28:19 2001
++++ tape-src/Makefile.in	Sun Feb 11 21:18:00 2001
+@@ -353,7 +353,8 @@
+ check: check-am
+ installcheck-am:
+ installcheck: installcheck-am
+-install-exec-am: install-libLTLIBRARIES
++@WANT_CLIENT_TRUE@install-exec-am: @WANT_CLIENT_TRUE@install-libLTLIBRARIES
++@WANT_SERVER_TRUE@install-exec-am:
+ install-exec: install-exec-am
+ 
+ install-data-am:
