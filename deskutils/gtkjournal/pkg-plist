@@ -1,0 +1,4 @@
+bin/gtkjournal
+lib/libsqlitemm.a
+lib/libsqlitemm.so
+lib/libsqlitemm.so.0
