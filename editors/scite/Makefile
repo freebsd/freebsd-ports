@@ -37,11 +37,7 @@ MAKE_ARGS=	GTK1=yes
 
 MAN1=		scite.1
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502102
-BROKEN=		"Does not compile on 5.x"
-.endif
+BROKEN=		"Does not compile"
 
 pre-everything::
 	@${ECHO_MSG} ""
@@ -67,4 +63,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/../doc/*.png ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/../src/*.properties ${DATADIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
