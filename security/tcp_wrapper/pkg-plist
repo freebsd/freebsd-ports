@@ -1,0 +1,7 @@
+@cwd /usr/local
+sbin/tcpd
+lib/libwrap.a
+man/man3/hosts_access.3
+man/man5/hosts_access.5
+man/man5/hosts_options.5
+man/man8/tcpd.8
