@@ -1,0 +1,9 @@
+mrtg-ping-probe is a ping probe for MRTG 2.x.  It is used to monitor
+the round trip time and packet loss to networked devices.  MRTG uses
+its output to generate graphs visualizing minimum and maximum round
+trip times or packet loss.
+
+WWW: http://pwo.de/projects/mrtg/
+
+Yoshiro MIHIRA
+<sanpei@FreeBSD.org>

@@ -1,0 +1,17 @@
+--- mrtg-ping-cfg.org	Sat Jan 17 22:28:55 2004
++++ mrtg-ping-cfg	Sat Jan 17 22:35:40 2004
+@@ -1,4 +1,4 @@
+-#!/bin/ksh
++#!/bin/sh
+ #
+ # mrtg-ping-cfg <device> <"Title of page">
+ #
+@@ -10,7 +10,7 @@
+ # IT Site Infrastructure Services
+ 
+ # location of mrtg ping probe
+-PING_PROBE=/usr/local/httpd/mrtg/mrtg-ping-probe
++PING_PROBE=/usr/local/bin/mrtg-ping-probe
+ 
+ if [ $# -ne 2 ]
+ then

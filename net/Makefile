@@ -357,6 +357,7 @@
     SUBDIR += mpich
     SUBDIR += mrt
     SUBDIR += mrtg
+    SUBDIR += mrtg-ping-probe
     SUBDIR += msend
     SUBDIR += msntp
     SUBDIR += mtr
