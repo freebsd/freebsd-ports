@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wxgtk
-PORTVERSION=	2.2.4
+PORTVERSION=	2.2.6
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://wesley.informatik.uni-freiburg.de/pub/linux/wxxt/source/
 DISTNAME=	wxGTK-${PORTVERSION}
@@ -17,10 +17,7 @@ LIB_DEPENDS=	png.4:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
 
-WRKSRC=		${WRKDIR}/wxGTK
-
 USE_X_PREFIX=	yes
-USE_NEWGCC=	yes
 USE_GMAKE=	yes
 USE_GTK=	yes
 USE_AUTOCONF=	yes
