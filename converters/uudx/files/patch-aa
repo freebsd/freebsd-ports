@@ -1,5 +1,5 @@
---- uudx-299.orig/uudx.c	Sun Jan 29 16:44:42 1995
-+++ uudx-299/uudx.c	Sun Jun  2 16:04:27 1996
+--- uudx.c.orig	Sun Jan 29 16:44:42 1995
++++ uudx.c	Mon Sep 15 02:05:44 1997
 @@ -89,7 +89,11 @@
  #else
  #define strchr		index
