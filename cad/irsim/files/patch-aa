@@ -7,10 +7,10 @@
 -	@echo '	-gentbl' >> MAKEFILE
 +	@echo '	-./gentbl' >> MAKEFILE
  	@echo 'gentbl : gentbl.c' >> MAKEFILE
- 	@echo '	$(CC) $$(CFLAGS) -o gentbl gentbl.c' >> MAKEFILE
+ 	@echo '	$$(CC) $$(CFLAGS) -o gentbl gentbl.c' >> MAKEFILE
  	@echo 'spiketbl.c : genspktbl' >> MAKEFILE
 -	@echo '	genspktbl spiketbl.c' >> MAKEFILE
 +	@echo '	./genspktbl spiketbl.c' >> MAKEFILE
  	@echo 'genspktbl : genspktbl.c' >> MAKEFILE
- 	@echo '	$(CC) -o genspktbl genspktbl.c -lm' >> MAKEFILE
+ 	@echo '	$$(CC) -o genspktbl genspktbl.c -lm' >> MAKEFILE
  	@/bin/csh ../utils/CO $(SRCS)
