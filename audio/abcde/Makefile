@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	abcde
-PORTVERSION=	2.1.4
+PORTVERSION=	2.1.5
 CATEGORIES=	audio
 MASTER_SITES=	http://www.hispalinux.es/~data/files/
 DISTNAME= 	abcde_${PORTVERSION}.orig
@@ -14,11 +14,10 @@ DISTNAME= 	abcde_${PORTVERSION}.orig
 MAINTAINER=	chopra@soulwax.net
 COMMENT=	Front-end shell script to encode CDs in ogg, mp3 or flac format
 
-RUN_DEPENDS=    cd-discid:${PORTSDIR}/audio/cd-discid \
+RUN_DEPENDS=	cd-discid:${PORTSDIR}/audio/cd-discid \
 		cdparanoia:${PORTSDIR}/audio/cdparanoia \
 		id3v2:${PORTSDIR}/audio/id3v2 \
 		lame:${PORTSDIR}/audio/lame \
-		normalize:${PORTSDIR}/audio/normalize \
 		oggenc:${PORTSDIR}/audio/vorbis-tools
 
 USE_REINPLACE=	yes
@@ -33,21 +32,33 @@ CDDA2WAV_MSG=	"Define WITH_CDDA2WAV to enable cdda2wav support."
 .endif
 
 .if defined(WITH_DAGRAB)
-RUN_DEPENDS+=   dagrab:${PORTSDIR}/audio/dagrab
+RUN_DEPENDS+=	dagrab:${PORTSDIR}/audio/dagrab
 .else
-DAGRAB_MSG=     "Define WITH_DAGRAB to enable dagrab support."
+DAGRAB_MSG=	"Define WITH_DAGRAB to enable dagrab support."
 .endif
 
 .if defined(WITH_EJECT)
-RUN_DEPENDS+=   eject:${PORTSDIR}/sysutils/eject
+RUN_DEPENDS+=	eject:${PORTSDIR}/sysutils/eject
 .else
-EJECT_MSG=     "Define WITH_EJECT to enable auto-eject support."
+EJECT_MSG=	"Define WITH_EJECT to enable auto-eject support."
 .endif
 
 .if defined(WITH_FLAC)
 RUN_DEPENDS+=	flac:${PORTSDIR}/audio/flac
 .else
-FLAC_MSG=     "Define WITH_FLAC to enable flac support."
+FLAC_MSG=	"Define WITH_FLAC to enable FLAC support."
+.endif
+
+.if defined(WITH_NORMALIZE)
+RUN_DEPENDS+=	normalize:${PORTSDIR}/audio/normalize
+.else
+NORMALIZE_MSG=	"Define WITH_NORMALIZE to enable normalize support."
+.endif
+
+.if defined(WITH_SPEEX)
+RUN_DEPENDS+=	speexenc:${PORTSDIR}/audio/speex
+.else
+SPEEX_MSG=	"Define WITH_SPEEX to enable Speex support."
 .endif
 
 pre-fetch:
@@ -65,6 +76,14 @@ pre-fetch:
 .endif
 .if defined(FLAC_MSG)
 	@${ECHO_MSG} ${FLAC_MSG}
+	@${ECHO_MSG} ""
+.endif
+.if defined(NORMALIZE_MSG)
+	@${ECHO_MSG} ${NORMALIZE_MSG}
+	@${ECHO_MSG} ""
+.endif
+.if defined(SPEEX_MSG)
+	@${ECHO_MSG} ${SPEEX_MSG}
 	@${ECHO_MSG} ""
 .endif
 
@@ -85,11 +104,9 @@ post-install:
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "Please copy ${PREFIX}/etc/abcde.conf to ~/.abcde.conf"
 	@${ECHO_MSG} "and edit as necessary. Sane defaults have been set."
-	@${ECHO_MSG} "
-	@${ECHO_MSG} "NOTE: As of version 2.1.4, you will need to start with"
-	@${ECHO_MSG} "a fresh copy of the supplied abcde.conf file. Since all"
-	@${ECHO_MSG} "FreeBSD-specific patches have now entered the vendor"
-	@${ECHO_MSG} "code, little or no editing should be necessary."
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "NOTE: If you have been using ${PORTNAME}-2.1.4 or older,"
+	@${ECHO_MSG} "you must start with a fresh ~/.abcde.conf."
 	@${ECHO_MSG} ""
 
 .include <bsd.port.mk>
