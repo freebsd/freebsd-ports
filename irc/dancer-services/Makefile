@@ -15,6 +15,10 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	The IRC services (nickserv, chanserv, etc.) for dancer-ircd
 
+BROKEN=		"Configure fails"
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2004-04-21
+
 BUILD_DEPENDS+=		${LOCALBASE}/bin/autoconf:${PORTSDIR}/devel/autoconf
 
 USE_REINPLACE=	yes
@@ -28,12 +32,6 @@ MAKE_ARGS=	BINDIR=${PREFIX}/sbin \
 
 .if !defined(PACKAGE_BUILDING) && !defined(BATCH)
 IS_INTERACTIVE=	yes
-.endif
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502000
-BROKEN=		"Configure fails"
 .endif
 
 post-patch:
@@ -84,4 +82,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
