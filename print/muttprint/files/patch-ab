@@ -1,21 +1,6 @@
---- muttprint.orig	Sun Feb 17 23:53:01 2002
-+++ muttprint	Mon Feb 18 00:00:39 2002
-@@ -1,4 +1,4 @@
--#!/usr/bin/perl
-+#!/usr/bin/perl -w
- #
- # Hinweis:	Tabulatorbreite: 4 Zeichen
- #			(automatische Einstellung für ViM durch letzte Zeile)
-@@ -34,7 +34,7 @@
- # Deklaration erzwingen
- use strict;
- # for developing and testing only
--use warnings;
-+#use warnings;
- # Deklaration nach Perl-5.005-Art
- use vars qw($VERSION %String $LPack $charset);
- use sigtrap qw(die INT QUIT);
-@@ -185,8 +185,8 @@
+--- muttprint.orig	Sat Feb 23 23:15:04 2002
++++ muttprint	Sat Feb 23 23:15:35 2002
+@@ -183,8 +183,8 @@
  
  if ($Config{'PENGUIN'} eq "on") {
  	$Config{'PENGUIN'} = 
