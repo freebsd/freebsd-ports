@@ -1,17 +1,24 @@
-*** score.c.orig	Fri Oct 11 11:35:59 1991
---- score.c	Mon Jan  2 23:46:28 1995
+*** score.c.orig	Fri Sep 13 16:32:12 1991
+--- score.c	Sun Apr 12 12:33:16 1998
 ***************
-*** 52,57 ****
---- 52,58 ----
+*** 50,56 ****
+  #include <X11/Xaw/Label.h>
+  #endif
   
-  #include <X11/Xos.h>	/* brings in <sys/file.h> */
+! #include <X11/Xos.h>	/* brings in <sys/file.h> */
   #include <stdio.h>
-+ #include <stdlib.h>
   #include "xpipeman.h"
   
-  /*----------------------------------------------------------------------*/
+--- 50,56 ----
+  #include <X11/Xaw/Label.h>
+  #endif
+  
+! #include <sys/file.h>
+  #include <stdio.h>
+  #include "xpipeman.h"
+  
 ***************
-*** 63,69 ****
+*** 64,70 ****
   
   static SCORE scores[MAXSCORES];
   
@@ -28,35 +35,7 @@
   	load_scores(), 
   	write_out_scores();
 ***************
-*** 106,117 ****
-  #ifndef SYSV
-    flock(scorefile->_file, LOCK_EX);
-  #endif
-!   while( fgets(scores[i].score,6,scorefile) 	/* get score */
-!       && fgets(scores[i].name,26,scorefile) 	/* get name */
-!       && fgetc(scorefile))			/* and newline */
-!   {
-!     i++;
-!     if( i > MAXSCORES ) break;
-    }
-  }
-  
---- 107,119 ----
-  #ifndef SYSV
-    flock(scorefile->_file, LOCK_EX);
-  #endif
-!   for(i = 0; i < MAXSCORES; i++) {
-!     if(!fgets(scores[i].score, 6, scorefile)) 	/* get score */
-!       break;
-!     if(!fgets(scores[i].name, 26, scorefile)) 	/* get name */
-!       break;
-!     if(!fgetc(scorefile))			/* and newline */
-!       break;
-    }
-  }
-  
-***************
-*** 190,196 ****
+*** 198,204 ****
   
   
   /*ARGSUSED*/
@@ -64,7 +43,7 @@
   popdown_callback(w, closure, call_data)
     Widget w;
     caddr_t closure;
---- 192,198 ----
+--- 198,204 ----
   
   
   /*ARGSUSED*/
@@ -72,20 +51,3 @@
   popdown_callback(w, closure, call_data)
     Widget w;
     caddr_t closure;
-***************
-*** 249,255 ****
-  show_scores()
-  {
-    int i;
-!   char tmp_str[31];
-    Arg tmp_arg;
-  
-    for(i = 0;i<MAXSCORES;i++) {
---- 251,257 ----
-  show_scores()
-  {
-    int i;
-!   char tmp_str[64];
-    Arg tmp_arg;
-  
-    for(i = 0;i<MAXSCORES;i++) {
