@@ -5,7 +5,7 @@
  EXTRA_DIST = $(PIXMAPS)
  
 -pixmapdir = $(datadir)/pixmaps/gq
-+pixmapdir = $(datadir)/gnome/pixmaps/gq
++pixmapdir = $(datadir)/gq
  pixmap_DATA = $(PIXMAPS)
  mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
  CONFIG_HEADER = ../config.h
