@@ -44,6 +44,7 @@
     SUBDIR += metis
     SUBDIR += mtrxmath
     SUBDIR += mupad
+    SUBDIR += nauty
     SUBDIR += netcdf
     SUBDIR += ngraph
     SUBDIR += ntl

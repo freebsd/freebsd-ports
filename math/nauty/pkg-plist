@@ -1,0 +1,7 @@
+bin/dreadnaut 
+bin/dreadnaut1 
+bin/dreadnautL1 
+bin/dreadnautB
+%%PORTDOCS%%share/doc/nauty/oldmanual.ps
+%%PORTDOCS%%share/doc/nauty/read.me
+%%PORTDOCS%%@dirrm share/doc/nauty
