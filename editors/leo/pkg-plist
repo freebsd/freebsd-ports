@@ -43,14 +43,18 @@ bin/leo
 %%PYTHON_SITELIBDIR%%/leo/plugins/enable_gc.py
 %%PYTHON_SITELIBDIR%%/leo/plugins/french.py
 %%PYTHON_SITELIBDIR%%/leo/plugins/french_fm.py
+%%PYTHON_SITELIBDIR%%/leo/plugins/gnx_code.py
 %%PYTHON_SITELIBDIR%%/leo/plugins/image.py
 %%PYTHON_SITELIBDIR%%/leo/plugins/import_cisco_config.py
 %%PYTHON_SITELIBDIR%%/leo/plugins/leoPlugins.leo
+%%PYTHON_SITELIBDIR%%/leo/plugins/mod_autosave.ini
+%%PYTHON_SITELIBDIR%%/leo/plugins/mod_autosave.py
 %%PYTHON_SITELIBDIR%%/leo/plugins/mod_spelling.ini
 %%PYTHON_SITELIBDIR%%/leo/plugins/mod_spelling.py
 %%PYTHON_SITELIBDIR%%/leo/plugins/mod_spelling.txt
 %%PYTHON_SITELIBDIR%%/leo/plugins/mod_spelling.wl
 %%PYTHON_SITELIBDIR%%/leo/plugins/mod_test.ini
+%%PYTHON_SITELIBDIR%%/leo/plugins/mod_timestamp.py
 %%PYTHON_SITELIBDIR%%/leo/plugins/nav_buttons.py
 %%PYTHON_SITELIBDIR%%/leo/plugins/open_shell.py
 %%PYTHON_SITELIBDIR%%/leo/plugins/open_with.py
@@ -63,6 +67,7 @@ bin/leo
 %%PYTHON_SITELIBDIR%%/leo/plugins/rst.py
 %%PYTHON_SITELIBDIR%%/leo/plugins/script_io_to_body.py
 %%PYTHON_SITELIBDIR%%/leo/plugins/scripts_menu.py
+%%PYTHON_SITELIBDIR%%/leo/plugins/settings_menu.py
 %%PYTHON_SITELIBDIR%%/leo/plugins/startfile.py
 %%PYTHON_SITELIBDIR%%/leo/plugins/test.ini
 %%PYTHON_SITELIBDIR%%/leo/plugins/test.py
@@ -70,6 +75,8 @@ bin/leo
 %%PYTHON_SITELIBDIR%%/leo/plugins/trace_keys.py
 %%PYTHON_SITELIBDIR%%/leo/plugins/trace_tags.py
 %%PYTHON_SITELIBDIR%%/leo/plugins/vim.py
+%%PYTHON_SITELIBDIR%%/leo/plugins/word_export.ini
+%%PYTHON_SITELIBDIR%%/leo/plugins/word_export.py
 %%PYTHON_SITELIBDIR%%/leo/plugins/xemacs.py
 @dirrm %%PYTHON_SITELIBDIR%%/leo/plugins
 %%PYTHON_SITELIBDIR%%/leo/src/LeoPy.leo
@@ -87,6 +94,7 @@ bin/leo
 %%PYTHON_SITELIBDIR%%/leo/src/leoFontPanel.py
 %%PYTHON_SITELIBDIR%%/leo/src/leoFrame.py
 %%PYTHON_SITELIBDIR%%/leo/src/leoGlobals.py
+%%PYTHON_SITELIBDIR%%/leo/src/leoGui.py
 %%PYTHON_SITELIBDIR%%/leo/src/leoImport.py
 %%PYTHON_SITELIBDIR%%/leo/src/leoNodes.py
 %%PYTHON_SITELIBDIR%%/leo/src/leoPlugins.py
