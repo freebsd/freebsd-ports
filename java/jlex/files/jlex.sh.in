@@ -1,0 +1,5 @@
+#!/bin/sh
+#
+# $FreeBSD$
+
+"%%LOCALBASE%%/bin/java" -cp "%%JAVAJARDIR%%/jlex.jar" JLex.Main "$@"

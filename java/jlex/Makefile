@@ -7,6 +7,7 @@
 
 PORTNAME=	jlex
 PORTVERSION=	1.2.6
+PORTREVISION=	1
 CATEGORIES=	java devel
 MASTER_SITES=	http://www.cs.princeton.edu/~appel/modern/java/JLex/Archive/1.2.6/
 DISTNAME=	Main
@@ -16,12 +17,12 @@ EXTRACT_ONLY=	#
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A lexical analyzer generator, written for Java, in Java
 
-PLIST_FILES=	%%JAVAJARDIR%%/jlex.jar
-USE_JAVA=	1.1+
-NEED_JAVAC=	yes
+PLIST_FILES=	%%JAVAJARDIR%%/jlex.jar bin/jlex
+USE_JAVA=	yes
 NO_WRKSUBDIR=	yes
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
+SUB_FILES=	jlex.sh
 
 do-extract:
 	@${RM} -rf ${WRKDIR}
@@ -35,6 +36,7 @@ do-build:
 
 do-install:
 	@${INSTALL_DATA} ${WRKDIR}/${PORTNAME}.jar ${JAVAJARDIR}
+	@${INSTALL_SCRIPT} ${WRKDIR}/jlex.sh ${PREFIX}/bin/jlex
 	@${SED} s:%%JAVAJARDIR%%:${JAVAJARDIR}: < ${PKGDIR}/pkg-message \
 		> ${PKGMESSAGE}
 
