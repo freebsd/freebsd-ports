@@ -41,7 +41,7 @@ pre-everything::
 	@${ECHO_MSG} '*  - Afrikaans                 ISPELL_AF=yes            *'
 	@${ECHO_MSG} '*  - British                   ISPELL_BRITISH=yes       *'
 	@${ECHO_MSG} '*    (replaces the American dictionary)                 *'
-	@${ECHO_MSG} '*  - Brasilian                 ISPELL_BR=yes            *'
+	@${ECHO_MSG} '*  - Brazilian Portuguese      ISPELL_BR=yes            *'
 	@${ECHO_MSG} '*  - Dutch                     ISPELL_NL=yes            *'
 	@${ECHO_MSG} '*  - Danish                    ISPELL_DA=yes            *'
 	@${ECHO_MSG} '*  - Finnish                   ISPELL_FI=yes            *'
