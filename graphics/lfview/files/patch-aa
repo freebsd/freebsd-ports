@@ -1,6 +1,6 @@
---- config.tmpl.orig	Wed Feb 24 21:42:57 1999
-+++ config.tmpl	Wed Feb 24 21:44:34 1999
-@@ -3,11 +3,11 @@
+--- config.tmpl.orig	Wed Jan 10 02:33:32 2001
++++ config.tmpl	Wed Jan 10 02:33:35 2001
+@@ -3,7 +3,7 @@
  XCOMM    1. $HOME/.lfview/BASE_PLUGIN
  XCOMM    2. PLUGINDIR/BASE_PLUGIN
  XCOMM
@@ -9,11 +9,6 @@
  BASE_PLUGIN=liblfv_leaf.so
  
  XCOMM debug flag for GCC
--CDEBUGFLAGS= -g -Wall
-+XCOMM CDEBUGFLAGS= -g -Wall
- 
- XCOMM Linux (Slackware 3.x)
- XCOMM
 @@ -24,7 +24,7 @@
  XCOMM FreeBSD
  XCOMM (Thanks to NOGAYA Shigeki & Nonaka Kimihiro)
