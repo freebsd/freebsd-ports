@@ -31,10 +31,12 @@ NO_CDROM=	"Size; the data set is much too big"
 NO_BUILD=	yes
 .if (${PORTNAME}==cs)
 PORTREVISION=	1
-BUILD_DEPENDS=	${NONEXISTENT}:${HALFLIFESERVER_PORT}:patch
+BUILD_DEPENDS+=	${NONEXISTENT}:${HALFLIFESERVER_PORT}:patch
 WRKSRC?=		${WRKDIR}/cstrike
 .else
+.ifndef(NO_WRKSUBDIR)
 WRKSRC?=		${WRKDIR}/${PORTNAME}
+.endif # NO_WRKSUBDIR
 .endif
 PLIST_SUB+=	${PLIST_SUB_MASTER}
 
@@ -85,6 +87,7 @@ install-parse-plist: generate-plist
 			-e 'chop($$file = <FHANDLER>);' \
 			-e '$$dir = $$file_partial = $$file;' \
 			-e '$$file_partial =~ s!^${HLDSDIR:S!^/!!}!!;' \
+			-e '$$file_partial =~ s!^[^/]+/!! if defined(${NO_WRKSUBDIR});' \
 			-e 'print FDIR "${INSTALL_DIR}", \
 				" ", "\"${PREFIX}/$$dir\"", \
 				"\n" if $$dir =~ s!(^\@dirrm\s+)!!;' \
@@ -104,7 +107,11 @@ install-run-scripts:
 	@${SH} ${WRKDIR}/${script}.sh
 .endfor
 
-post-install:
+.if !target(slaveport-post-install)
+slaveport-post-install:
+.endif
+
+post-install: slaveport-post-install
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
