@@ -125,7 +125,6 @@
     SUBDIR += wmxss
     SUBDIR += workrave
     SUBDIR += wrapper
-    SUBDIR += wscan
     SUBDIR += wterm
     SUBDIR += x3270
     SUBDIR += xaniroc
