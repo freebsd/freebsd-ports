@@ -45,7 +45,7 @@ info/ebzip.info
 lib/libeb.a
 lib/libeb.la
 lib/libeb.so
-lib/libeb.so.6
+lib/libeb.so.7
 share/eb/appendix/LIST
 share/eb/appendix/LIST-ja
 share/eb/appendix/cencro-1.0/catalog
@@ -76,6 +76,14 @@ share/eb/appendix/crownfj-2.0/crown_fj.app
 share/eb/appendix/crownfj-2.0/crown_fj/data/furoku
 share/eb/appendix/crownfj-2.0/daily_ei.app
 share/eb/appendix/crownfj-2.0/daily_ei/data/furoku
+share/eb/appendix/crownfj2-1.0/catalog
+share/eb/appendix/crownfj2-1.0/catalog.app
+share/eb/appendix/crownfj2-1.0/crfre.app
+share/eb/appendix/crownfj2-1.0/crfre/appendix
+share/eb/appendix/crowngj-1.0/catalog
+share/eb/appendix/crowngj-1.0/catalog.app
+share/eb/appendix/crowngj-1.0/crger.app
+share/eb/appendix/crowngj-1.0/crger/appendix
 share/eb/appendix/daihyakka-1.0/catalog
 share/eb/appendix/daihyakka-1.0/catalog.app
 share/eb/appendix/daihyakka-1.0/dhk01.app
@@ -90,6 +98,12 @@ share/eb/appendix/dd75-2.0/chujiten.app
 share/eb/appendix/dd75-2.0/chujiten/appendix
 share/eb/appendix/dd75-2.0/koujien.app
 share/eb/appendix/dd75-2.0/koujien/appendix
+share/eb/appendix/gendai2000-1.0/catalog
+share/eb/appendix/gendai2000-1.0/catalog.app
+share/eb/appendix/gendai2000-1.0/gn00eb01.app
+share/eb/appendix/gendai2000-1.0/gn00eb01/appendix
+share/eb/appendix/gendai2000-1.0/gn00eb02.app
+share/eb/appendix/gendai2000-1.0/gn00eb02/appendix
 share/eb/appendix/genius-1.0/catalog
 share/eb/appendix/genius-1.0/catalog.app
 share/eb/appendix/genius-1.0/genius.app
@@ -207,7 +221,6 @@ share/eb/appendix/superdic98-1.0/kanjigen.app
 share/eb/appendix/superdic98-1.0/kanjigen/data/furoku
 share/eb/appendix/superdic98-1.0/koujien.app
 share/eb/appendix/superdic98-1.0/koujien/data/furoku
-share/eb/eb3.m4
 share/locale/ja/LC_MESSAGES/eb.mo
 share/locale/ja/LC_MESSAGES/ebutils.mo
 @dirrm share/eb/appendix/cencro-1.0/cencro
@@ -217,6 +230,9 @@ share/locale/ja/LC_MESSAGES/ebutils.mo
 @dirrm share/eb/appendix/genius2-1.1/genius/data
 @dirrm share/eb/appendix/genius2-1.1/genius
 @dirrm share/eb/appendix/genius2-1.1
+@dirrm share/eb/appendix/gendai2000-1.0/gn00eb02
+@dirrm share/eb/appendix/gendai2000-1.0/gn00eb01
+@dirrm share/eb/appendix/gendai2000-1.0
 @dirrm share/eb/appendix/chujiten-2.3/eiwa
 @dirrm share/eb/appendix/chujiten-2.3/waei
 @dirrm share/eb/appendix/chujiten-2.3
@@ -228,6 +244,10 @@ share/locale/ja/LC_MESSAGES/ebutils.mo
 @dirrm share/eb/appendix/colloc-2.0/colloc/data
 @dirrm share/eb/appendix/colloc-2.0/colloc
 @dirrm share/eb/appendix/colloc-2.0
+@dirrm share/eb/appendix/crowngj-1.0/crger
+@dirrm share/eb/appendix/crowngj-1.0
+@dirrm share/eb/appendix/crownfj2-1.0/crfre
+@dirrm share/eb/appendix/crownfj2-1.0
 @dirrm share/eb/appendix/crownfj-2.0/crown_fj/data
 @dirrm share/eb/appendix/crownfj-2.0/crown_fj
 @dirrm share/eb/appendix/crownfj-2.0/daily_ei/data
