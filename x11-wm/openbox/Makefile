@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	openbox
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.4
 CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://sunsite.dk/projects/openbox/
 
