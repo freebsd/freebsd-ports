@@ -47,7 +47,7 @@ NO_FILTER_SHLIBS=	yes
 
 PLIST_SUB+=	BASEVERSION=${PORTVERSION:C/[.][0-9]*$//1}
 
-.if !exists(/proc/1)
+.if !exists(/proc/curproc)
 IGNORE=		requires procfs mounted to build or run
 .endif 
 
