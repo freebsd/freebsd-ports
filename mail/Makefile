@@ -108,6 +108,7 @@
     SUBDIR += smapi
     SUBDIR += smtpd
     SUBDIR += smtpfeed
+    SUBDIR += smunge
     SUBDIR += solidpop3d
     SUBDIR += spruce
     SUBDIR += sylpheed
