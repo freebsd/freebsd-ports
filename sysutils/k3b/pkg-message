@@ -4,16 +4,16 @@ Notes:
    (http://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/creating-cds.html#ATAPICAM)
 2. Your CD and DVD drives must have a mount point in /etc/fstab. They have
    to be accessed through their atapicam device. I.e. the drives
-   have to be adressed by /dev/cd0c instead of /dev/acd0c.
+   have to be adressed by e.g. /dev/cd0c instead of /dev/acd0c.
 3. k3b has to be started from a root console, which is not recommended.
-   Alternatively do the following:
+   Alternatively do all of the following:
 3a. set the suid flag on cdrecord and cdrdao. The 'Notes' the chapter of
     'man cdrecord' discusses this.
 3b. - install sudo (security/sudo) and add the following line or similar to
       sudoers (usually in /usr/local/etc/sudoers):
       ALL             ALL = NOPASSWD: /sbin/camcontrol devlist
-    - or execute 'camcontrol devlist' For every user who should be able to use 
-      k3b. Resolve all errors e.g by giving him/her access rights to /dev/xpt0.
+    - or execute 'camcontrol devlist'. For every user who should be able to use 
+      k3b. Resolve all errors e.g. by giving him/her access rights to /dev/xpt0.
       'camcontrol devlist' must run without error for all these users!
       Note that giving access rights to /dev/xpt* might be a security leak!
     - or give camcontrol the suid flag, which is a security leak as well.
@@ -50,5 +50,4 @@ Notes:
 10. To normalize the volumes of audio cds, install the port audio/normalize.
 11. To rip into more audio formats, install the port audio/sox.
 
-To read these instructions again, type 'make showinfo' in the k3b port
-directory.
+To read this instructions again, type 'make showinfo' in the k3b port directory

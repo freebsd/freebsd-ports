@@ -1,6 +1,6 @@
---- src/rip/k3bmovieview.cpp.orig	Thu Jun 12 16:07:42 2003
-+++ src/rip/k3bmovieview.cpp	Fri Nov  7 12:35:44 2003
-@@ -248,8 +248,11 @@
+--- src/rip/k3bmovieview.cpp.orig	Fri Feb  6 12:08:51 2004
++++ src/rip/k3bmovieview.cpp	Fri Feb 13 21:03:38 2004
+@@ -223,8 +223,11 @@
      }
  
      QWidget::show();
