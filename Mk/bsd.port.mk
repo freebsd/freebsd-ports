@@ -575,7 +575,7 @@ PREFIX?=		${LOCALBASE}
 .if ${OSVERSION} >= 400014
 .if !exists(/usr/lib/libcrypto.a)
 	@${ECHO} "This port requires the OpenSSL library, which is part of"
-	@${ECHO} "the FreeBSD crypto distribution but not installed on your
+	@${ECHO} "the FreeBSD crypto distribution but not installed on your"
 	@${ECHO} "machine. Please see Chapter 6.5 in the handbook for"
 	@${ECHO} "instructions on how to obtain and install the FreeBSD"
 	@${ECHO} "OpenSSL distribution."
@@ -1156,7 +1156,7 @@ maintainer:
 VALID_CATEGORIES+=	afterstep archivers astro audio benchmarks biology \
 	cad chinese comms converters databases deskutils devel \
 	editors elisp emulators ftp games german gnome graphics \
-	ipv6 irc japanese java kde korean lang \
+	ipv6 irc japanese java kde korean lang linux \
 	mail math mbone misc net news \
 	offix palm perl5 plan9 print python russian \
 	security shells sysutils \
