@@ -16,7 +16,7 @@ COMMENT=	The gtk2 port of emelfm, a fast graphical filemanager
 USE_GNOME=	gtk20
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GCC=	3.3
+USE_GCC=	3.2
 USE_GETOPT_LONG=yes
 INSTALLS_SHLIB=	yes
 
