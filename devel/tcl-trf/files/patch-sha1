@@ -1,14 +1,13 @@
 --- generic/sha1.c	Wed Aug  9 15:13:18 2000
-+++ generic/sha1.c	Fri Jul  9 16:41:33 2004
-@@ -30,4 +30,7 @@
- #include "loadman.h"
++++ generic/sha1.c	Sat Jul 10 18:00:47 2004
+@@ -28,5 +28,6 @@
+  */
  
-+#include <sys/types.h>
-+#include <sha.h>
-+
+ #include "loadman.h"
++#include <openssl/sha.h>
+ 
  /*
-  * Generator description
-@@ -49,9 +52,6 @@
+@@ -49,9 +50,6 @@
   */
  
 -static void MDsha1_Start     _ANSI_ARGS_ ((VOID* context));
@@ -18,7 +17,7 @@
 -static int  MDsha1_Check     _ANSI_ARGS_ ((Tcl_Interp* interp));
  
  /*
-@@ -67,9 +67,9 @@
+@@ -67,9 +65,9 @@
    sizeof (CTX_TYPE),
    DIGEST_SIZE,
 -  MDsha1_Start,
@@ -31,7 +30,7 @@
 +  NULL
  };
  
-@@ -106,30 +106,4 @@
+@@ -106,30 +104,4 @@
   *------------------------------------------------------*
   *
 - *	MDsha1_Start --
@@ -62,7 +61,7 @@
 - *
   *	MDsha1_Update --
   *
-@@ -155,33 +129,5 @@
+@@ -155,33 +127,5 @@
    unsigned char buf = character;
  
 -  sha1f.update ((SHA_CTX*) context, &buf, 1);
@@ -97,7 +96,7 @@
 +  SHA1_Update ((SHA_CTX*) context, &buf, 1);
  }
  
-@@ -211,9 +157,9 @@
+@@ -211,9 +155,9 @@
  {
  #ifndef OTP
 -  sha1f.final ((unsigned char*) digest, (SHA_CTX*) context);
@@ -109,7 +108,7 @@
 +    SHA1_Final ((unsigned char*) result, (SHA_CTX*) context);
  
      result[0] ^= result[2];
-@@ -224,30 +170,3 @@
+@@ -224,30 +168,3 @@
      memcpy ((VOID *) digest, (VOID *) result, DIGEST_SIZE);
  #endif
 -}

@@ -1,24 +1,16 @@
-Use FreeBSD's native md2 and sha implementations instead of those from
-the OpenSSL library.
-
-	-mi
-
 --- generic/loadman.h	Fri Feb 15 14:49:06 2002
 +++ generic/loadman.h	Fri Feb 15 14:50:48 2002
-@@ -48,9 +48,7 @@
+@@ -48,9 +48,4 @@
  
-+#include <sys/types.h>
-+
  #ifdef HAVE_MD2_H
 -#   ifdef OPENSSL_SUB
 -#       include <openssl/md2.h>
 -#   else
 -#       include <md2.h>
 -#   endif
-+#   include <md2.h>
  #else
  #   include "../compat/md2.h"
-@@ -58,9 +54,5 @@
+@@ -58,9 +54,4 @@
  
  #ifdef HAVE_SHA_H
 -#   ifdef OPENSSL_SUB
@@ -26,6 +18,5 @@ the OpenSSL library.
 -#   else
 -#       include <sha.h>
 -#   endif
-+#   include <sha.h>
  #else
  #   include "../compat/sha.h"

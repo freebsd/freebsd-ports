@@ -1,22 +1,15 @@
 --- generic/sha.c	Wed Aug  9 15:13:18 2000
-+++ generic/sha.c	Fri Jul  9 16:28:57 2004
-@@ -30,34 +30,6 @@
- #include "transformInt.h"
++++ generic/sha.c	Sat Jul 10 16:49:48 2004
+@@ -34,5 +34,5 @@
+ #endif
  
--#ifndef WORDS_BIGENDIAN
--#define LITTLE_ENDIAN
--#endif
--
 -#include "sha/sha.h"
--
--/*
-- * Generator description
-- * ---------------------
-- *
-- * The SHA alogrithm is used to compute a cryptographically strong
-- * message digest.
-- */
--
++#include <openssl/sha.h>
+ 
+ /*
+@@ -44,28 +44,9 @@
+  */
+ 
 -#define DIGEST_SIZE               (SHA_DIGESTSIZE)
 -#define CTX_TYPE                  sha_trf_info
 -#define CHUNK_SIZE                256
@@ -33,11 +26,9 @@
 -  unsigned char  buf [CHUNK_SIZE]; /* SHA block */
 -} sha_trf_info;
 -
-+#include <sys/types.h>
-+#include <sha.h>
- 
+-
  /*
-@@ -65,7 +37,5 @@
+  * Declarations of internal procedures.
   */
  
 -static void MDsha_Start     _ANSI_ARGS_ ((VOID* context));
@@ -45,7 +36,7 @@
 -static void MDsha_UpdateBuf _ANSI_ARGS_ ((VOID* context, unsigned char* buffer, int bufLen));
  static void MDsha_Final     _ANSI_ARGS_ ((VOID* context, VOID* digest));
  
-@@ -76,9 +46,9 @@
+@@ -76,9 +57,9 @@
  static Trf_MessageDigestDescription mdDescription = { /* THREADING: constant, read-only => safe */
    "sha",
 -  sizeof (CTX_TYPE),
@@ -59,7 +50,7 @@
 +  (Trf_MDUpdateBuf *)SHA_Update,
    MDsha_Final,
    NULL
-@@ -113,33 +83,4 @@
+@@ -113,33 +94,4 @@
   *------------------------------------------------------*
   *
 - *	MDsha_Start --
@@ -93,7 +84,7 @@
 - *
   *	MDsha_Update --
   *
-@@ -163,79 +104,7 @@
+@@ -163,79 +115,7 @@
  unsigned int   character;
  {
 -  sha_trf_info* s = (sha_trf_info*) context;
@@ -175,7 +166,7 @@
 +  SHA_Update ((SHA_CTX*)context, &buf, 1);
  }
  
-@@ -264,26 +133,4 @@
+@@ -264,26 +144,4 @@
  VOID* digest;
  {
 -  sha_trf_info* s = (sha_trf_info*) context;
