@@ -1,0 +1,15 @@
+Serveez is a server framework. It provides routines and help for implementing
+IP based servers (currently TCP, UDP and ICMP). It is also possible to use
+named pipes for all connection oriented protocols. We think it is worth the
+effort because many people need server functionality within their applications.
+However, many people experience problems with select()- or poll()-loops, and
+with non-blocking operations. This application demonstrates various aspects of
+advanced network programming in a portable manner. You can use it for
+implementing your own servers or for understanding how certain network
+services and operations work. The package includes a number of servers that
+work already: an HTTP server, an IRC server, a Gnutella spider and some others.
+One of the highlights is that you can run all protocols on the same port. The
+application itself is single threaded but it uses helper processes for
+concurrent name resolution and ident lookups.
+
+WWW: http://www.gnu.org/software/serveez/
