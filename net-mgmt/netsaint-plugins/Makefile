@@ -31,6 +31,12 @@ USE_AUTOMAKE_VER=	14
 USE_AUTOCONF_VER=	213
 USE_GMAKE=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 503000
+BROKEN=		'Does not compile on FreeBSD >= 5.x'
+.endif
+
 pre-fetch:
 	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure
 
@@ -48,4 +54,4 @@ post-patch:
 post-clean:
 	@${RM} -f ${WRKDIRPREFIX}${.CURDIR}/Makefile.inc
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
