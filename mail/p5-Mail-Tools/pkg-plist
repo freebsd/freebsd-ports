@@ -1,4 +1,3 @@
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Mail/.packlist
 lib/perl5/site_perl/%%PERL_VER%%/Mail/Address.pm
 lib/perl5/site_perl/%%PERL_VER%%/Mail/Cap.pm
 lib/perl5/site_perl/%%PERL_VER%%/Mail/Field.pm
@@ -29,10 +28,11 @@ lib/perl5/site_perl/%%PERL_VER%%/auto/Mail/Util/autosplit.ix
 lib/perl5/site_perl/%%PERL_VER%%/auto/Mail/Util/mailaddress.al
 lib/perl5/site_perl/%%PERL_VER%%/auto/Mail/Util/maildomain.al
 lib/perl5/site_perl/%%PERL_VER%%/auto/Mail/Util/read_mbox.al
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Mail/.packlist
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Mail 2>/dev/null || true
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/Mail/Util
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/Mail/Internet
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/Mail
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/Mail/Mailer
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/Mail/Field
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Mail
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Mail
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Mail 2>/dev/null || true
