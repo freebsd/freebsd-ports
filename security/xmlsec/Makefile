@@ -11,7 +11,7 @@ PORTVERSION=	0.0.9
 CATEGORIES=	security
 MASTER_SITES=	http://www.aleksey.com/xmlsec/download/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jim@corebsd.or.id
 
 LIB_DEPENDS=	xslt:${PORTSDIR}/textproc/libxslt
 
