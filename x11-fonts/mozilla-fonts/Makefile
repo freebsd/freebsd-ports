@@ -14,13 +14,13 @@ MASTER_SITES=	http://www.myrddin.demon.co.uk/dist/
 
 MAINTAINER=	dom@happygiraffe.net
 
+USE_X_PREFIX=	true
+
 .include <bsd.port.pre.mk>
 
 .if ${XFREE86_VERSION} == 4
 BUILD_DEPENDS=  bdftopcf:${PORTSDIR}/x11/XFree86-4-clients
 .endif
-
-USE_X_PREFIX=	true
 
 post-install:
 .if !defined(NOPORTDOCS)
