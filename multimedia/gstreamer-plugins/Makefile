@@ -7,6 +7,7 @@
 
 PORTNAME=	gstreamer
 PORTVERSION=	0.8.6
+PORTREVISION=	1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/gst-plugins/ \
 		${MASTER_SITE_GNOME}
@@ -94,11 +95,15 @@ post-extract:
 # MD5 (MPlayer-1.0pre4.tar.bz2) = 83ebac0f05b192516a41fca2350ca01a
 	@${CP} ${FILESDIR}/bsdi_dvd.h ${WRKSRC}/sys/vcd/
 
+.include <bsd.port.pre.mk>
+
 post-patch:
+.if ${CXXFLAGS:M*=athlon-4} || ${CXXFLAGS:M*=athlon-mp} || ${CXXFLAGS:M*=athlon-xp}
 # Fix gst-register when using -O -march=athlon-xp
 	@${REINPLACE_CMD} -e 's|@CXXF|-fgcse @CXXF|g' \
 		${WRKSRC}/gst/modplug/Makefile.in \
 		${WRKSRC}/gst/modplug/libmodplug/Makefile.in
+.endif
 # as of this writing, FreeBSD does not support lrint* C99 math functions
 	@${REINPLACE_CMD} -E -e \
 		's|^#define.*LRINT.*$$||' \
@@ -140,8 +145,6 @@ post-patch:
 # tell configure where the musepack includes live
 	@${REINPLACE_CMD} -e 's|/usr/include/musepack|${LOCALBASE}/include/musepack|g' \
 		${WRKSRC}/configure
-
-.include <bsd.port.pre.mk>
 
 # hermes is required for gstreamer-player to work
 # since it is currently the only colorspace plugin available
@@ -263,6 +266,11 @@ WITH_LIBA52=yes
 WITH_LIBAUDIOFILE=yes
 .endif
 
+# libcdaudio
+.if exists(${LOCALBASE}/lib/libcdaudio.a)
+WITH_LIBCDAUDIO=yes
+.endif
+
 # libdv
 .if exists(${LOCALBASE}/lib/libdv.a)
 WITH_LIBDV=yes
@@ -379,7 +387,7 @@ WITH_SPEEX=yes
 .endif
 
 # swfdec
-.if exists(${X11BASE}/lib/libswfdec.a)
+.if exists(${X11BASE}/lib/libswfdec-0.3.a)
 WITH_SWFDEC=yes
 .endif
 
@@ -633,6 +641,16 @@ PLIST_SUB+=	LIBCACA="@comment "
 .else
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libcaca.a:${PORTSDIR}/graphics/libcaca
 PLIST_SUB+=	LIBCACA=""
+.endif
+
+# libcdaudio
+.ifndef(WITH_LIBCDAUDIO)
+CONFIGURE_ARGS+=	--disable-cdaudio
+PLIST_SUB+=	LIBCDAUDIO="@comment "
+.else
+LIB_DEPENDS+=	cdaudio.1:${PORTSDIR}/audio/libcdaudio
+
+PLIST_SUB+=	LIBCDAUDIO=""
 .endif
 
 # libdv
@@ -894,15 +912,15 @@ PLIST_SUB+=	SPEEX="@comment "
 #.endif
 
 # swfdec
-#.ifndef(WITH_SWFDEC)
+.ifndef(WITH_SWFDEC)
 CONFIGURE_ARGS+=	--disable-swfdec
 PLIST_SUB+=	SWFDEC="@comment "
-#.else
-#LIB_DEPENDS+=	swfdec.0:${PORTSDIR}/graphics/swfdec
-#
-#CONFIGURE_ARGS+=	--enable-swfdec
-#PLIST_SUB+=	SWFDEC=""
-#.endif
+.else
+LIB_DEPENDS+=	swfdec-0.3.0:${PORTSDIR}/graphics/swfdec
+
+CONFIGURE_ARGS+=	--enable-swfdec
+PLIST_SUB+=	SWFDEC=""
+.endif
 
 # vorbis
 .ifndef(WITH_VORBIS)
@@ -946,6 +964,16 @@ PLIST_SUB+=	XVID="@comment "
 LIB_DEPENDS+=	xvidcore.4:${PORTSDIR}/multimedia/xvid
 PLIST_SUB+=	XVID=""
 .endif
+
+pre-build:
+# This port cannot be CFLAGS safe, using p4 optimizations
+# break the mod plugin
+	@${REINPLACE_CMD} -E \
+		-e 's|(-march=pentiu)m4|\1m3|g' \
+		-e 's|(-mcpu=pentiu)m4|\1m3|g' \
+		-e 's|(-mtune=pentiu)m)4|\1m3|g' \
+		${WRKSRC}/gst/modplug/Makefile \
+		${WRKSRC}/gst/modplug/libmodplug/Makefile
 
 post-build:
 .ifdef(EXTRA_BUILD_DIR)
@@ -1059,6 +1087,10 @@ pre-everything::
 .ifndef(WITH_LIBCACA)
 	@${ECHO_MSG} '===>'
 	@${ECHO_MSG} '===> Define WITH_LIBCACA to enable libcaca Video plugin'
+.endif
+.ifndef(WITH_LIBCDAUDIO)
+	@${ECHO_MSG} '===>'
+	@${ECHO_MSG} '===> Define WITH_LIBCDAUDIO to enable libcdaudio Audio plugin'
 .endif
 .ifndef(WITH_LIBDV)
 	@${ECHO_MSG} '===>'

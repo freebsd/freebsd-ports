@@ -49,6 +49,7 @@ lib/gstreamer-%%VERSION%%/libgstaudioscale.so
 lib/gstreamer-%%VERSION%%/libgstauparse.so
 lib/gstreamer-%%VERSION%%/libgstavi.so
 %%LIBCACA%%lib/gstreamer-%%VERSION%%/libgstcacasink.so
+%%LIBCDAUDIO%%lib/gstreamer-%%VERSION%%/libgstcdaudio.so
 %%CDPARANOIA%%lib/gstreamer-%%VERSION%%/libgstcdparanoia.so
 lib/gstreamer-%%VERSION%%/libgstcdplayer.so
 lib/gstreamer-%%VERSION%%/libgstcdxaparse.so
