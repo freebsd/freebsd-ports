@@ -39,7 +39,6 @@
     SUBDIR += libident
     SUBDIR += libmcrypt
     SUBDIR += libparanoia
-    SUBDIR += librc4
     SUBDIR += librsaintl
     SUBDIR += logcheck
     SUBDIR += lsh
