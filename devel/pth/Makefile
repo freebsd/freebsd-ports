@@ -7,9 +7,9 @@
 
 PORTNAME=	pth
 PORTVERSION=	1.4.1
+PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_GNU} \
-		ftp://ftp.engelschall.com/sw/pth/
+MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	pth
 
 MAINTAINER=	ports@FreeBSD.org
@@ -29,6 +29,9 @@ MAN3=		pth.3 pthread.3
 
 post-build:
 	@${ECHO_MSG} "===>  Use 'make test' to run a quick test suite."
+
+post-install:
+	@${INSTALL_SCRIPT} ${FILESDIR}/pth.sh ${PREFIX}/etc/rc.d/000.pth.sh
 
 test:
 	@cd ${WRKSRC} && ${MAKE} test
