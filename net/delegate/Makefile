@@ -1,25 +1,44 @@
 # New ports collection makefile for:	DeleGate
-# Version required:		5.9.12
+# Version required:		5.9.13
 # Date created:			26 Jan 1997
 # Whom:				Masafumi NAKANE <max@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	delegate5.9.12
-PKGNAME=	delegate-5.9.12
+DISTNAME=	delegate5.9.13
+PKGNAME=	delegate-5.9.13
 CATEGORIES=	net www japanese
 MASTER_SITES=	ftp://etlport.etl.go.jp/pub/DeleGate/
 
 MAINTAINER=	max@FreeBSD.org
-
-#FORBIDDEN=	"Remote buffer overflow yielding setuid nobody shell"
-
+NO_PACKAGE=	"Insecure program."
 MAKE_ENV=	PATH=$${PATH}:.
+IS_INTERACTIVE=	YES
 
-.if defined(BATCH)
-pre-build:
-	@${ECHO} "MANAGER=root@localhost" >> ${WRKSRC}/DELEGATE_CONF
+pre-fetch:
+.if !defined(FORCE_BUILD) || ${FORCE_BUILD}!="YES"
+	@${ECHO} "*********************************************************************"
+	@${ECHO} "*   WARNING!     WARNING!     WARNING!     WARNING!     WARNING!    *"
+	@${ECHO} "* This program has know security problems which may allow a remote  *"
+	@${ECHO} "* attacker to take control of your machine.                         *"
+	@${ECHO} "* See FreeBSD security advisory 00:04 for more information.         *"
+	@${ECHO} "*                                                                   *"
+	@${ECHO} "* It is strongly recommended that you avoid using this program.     *"
+	@${ECHO} "*                                                                   *"
+	@${ECHO} "* If you would like to use this program despite the danger, run     *"
+	@${ECHO} "* make with ``FORCE_BUILD=YES''                                     *"
+	@${ECHO} "*   WARNING!     WARNING!     WARNING!     WARNING!     WARNING!    *"
+	@${ECHO} "*********************************************************************"
+	@${FALSE}
+.else
+	@${ECHO} "*********************************************************************"
+	@${ECHO} "*   WARNING!     WARNING!     WARNING!     WARNING!     WARNING!    *"
+	@${ECHO} "* You have chosen to build an insecure program.                     *"
+	@${ECHO} "* This program has know security problems which may allow a remote  *"
+	@${ECHO} "* attacker to take control of your machine.                         *"
+	@${ECHO} "* See FreeBSD security advisory 00:04 for more information.         *"
+	@${ECHO} "*********************************************************************"
 .endif
 
 do-install:
