@@ -168,6 +168,7 @@
     SUBDIR += gift-gnutella
     SUBDIR += gift-openft
     SUBDIR += giftcurs
+    SUBDIR += giftoxic
     SUBDIR += gini
     SUBDIR += ginsu
     SUBDIR += gkrellm_snmp
