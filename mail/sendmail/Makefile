@@ -7,7 +7,8 @@
 
 PORTNAME=	sendmail
 PORTVERSION=	8.11.1
-CATEGORIES=	mail
+PORTREVISION=	1
+CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.sendmail.org/pub/sendmail/
 DISTNAME=	${PORTNAME}.${PORTVERSION}
 
@@ -18,14 +19,26 @@ NO_PACKAGE=	"sendmail included in base system"
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 PLIST=		${WRKDIR}/.PLIST.more
 
-.if exists(/etc/mail/mailer.conf)
+.if defined(SENDMAIL_WITH_TSL)
+USE_OPENSSL=	yes
+.endif
+
+.if exists(${DESTDIR}/etc/mail/mailer.conf)
 pre-configure:
 	${SED} -e "s=%%PREFIX%%=${PREFIX}=" \
 	${FILESDIR}/site.config.m4 >${WRKSRC}/devtools/Site/site.config.m4
+.if defined(SENDMAIL_WITH_TSL)
+	${CAT} ${FILESDIR}/site.config.m4.tls \
+		>> ${WRKSRC}/devtools/Site/site.config.m4
+.endif
 .else
 pre-configure:
 	${SED} -e "s=%%PREFIX%%=${PREFIX}=" \
 	${FILESDIR}/site.config.m4.pre4 >${WRKSRC}/devtools/Site/site.config.m4
+.if defined(SENDMAIL_WITH_TSL)
+	${SED} -e "s=%%LOCALBASE%%=${LOCALBASE}=" ${FILESDIR}/site.config.m4.ssl \
+		>> ${WRKSRC}/devtools/Site/site.config.m4
+.endif
 
 PREFIX?=	${DESTDIR}/usr
 MANPREFIX?=	${DESTDIR}/usr/share
@@ -46,6 +59,7 @@ pre-install:
 	${AWK} '{print "share/sendmail/" $$1}' >>${PLIST}
 	cd ${WRKSRC} && find -d cf -type d | \
 	${AWK} '{print "@dirrm share/sendmail/" $$1}' >>${PLIST}
+	${ECHO} "@dirrm share/sendmail" >>${PLIST}
 .endif
 
 # We want mail.local and rmail for our system.
