@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	fwanalog
-PORTVERSION=	0.6
+PORTVERSION=	0.6.1
 CATEGORIES=	security
 MASTER_SITES=	http://tud.at/programm/fwanalog/
 
-MAINTAINER=	fuyuki@mj.0038.net
+MAINTAINER=	ports@FreeBSD.org
 
 RUN_DEPENDS=	analog:${PORTSDIR}/www/analog
 
