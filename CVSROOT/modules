@@ -5254,6 +5254,7 @@ p5-Digest-SHA2	ports/security/p5-Digest-SHA2
 p5-EasyTCP	ports/net/p5-EasyTCP
 p5-Email-Find	ports/mail/p5-Email-Find
 p5-Email-Valid	ports/mail/p5-Email-Valid
+p5-Email-Valid-Loose	ports/mail/p5-Email-Valid-Loose
 p5-Encode-compat	ports/devel/p5-Encode-compat
 p5-Errno	ports/devel/p5-Errno
 p5-Error	ports/lang/p5-Error
