@@ -7,7 +7,7 @@
 
 PORTNAME=	gdb
 PORTVERSION=	5.2
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	gdb
@@ -49,7 +49,8 @@ PATCH_DIST_STRIP?=	-p1
 .if ${LCLTARGET} == powerpc-rtems
 PATCHFILES+=	powerpc-gdb-5.2-hw_sem.c.diff:THN \
 		powerpc-gdb-5.2-hw_shm.c.diff:THN \
-		powerpc-gdb-5.2-ppc-ppc-instructions.diff:THN
+		powerpc-gdb-5.2-ppc-ppc-instructions.diff:THN \
+		powerpc-gdb-5.2-gdb-remote-sds.c.diff:THN
 PATCH_SITES+=	http://rtems.thehousleys.net/:THN
 .endif
 
