@@ -1,0 +1,35 @@
+--- Makefile.orig	Thu Sep 18 13:03:00 1997
++++ Makefile	Fri Mar 19 18:15:00 1999
+@@ -1,26 +1,22 @@
+ # Makefile adapted from that in the GMix distribution, thanks.
+ CC=gcc
++GTK_FLAGS=`gtk12-config --cflags` `gtk12-config  --libs` 
+ LINK=gcc
+ INCDIR=
+ LIBDIR=-L/usr/X11R6/lib
+-LDLIBS=-lgnome -lgnomeui -lgdk -lgtk -lglib -lm
+-OPTFLAGS= -m486 -O2 -Wall
++#LDLIBS=-lgnome -lgnomeui -lgdk -lgtk -lglib -lm
++#OPTFLAGS= -m486 -O2 -Wall
+ DEST=garith
+ 
+ OBJS=garith.o
+ SRCS=garith.c
+ 
+-CFLAGS=  $(OPTFLAGS) $(DEFINES) $(INCDIR)
++CFLAGS=  $(OPTFLAGS) $(DEFINES) $(INCDIR) $(GTK_FLAGS)
+ LFLAGS= $(LIBDIR) $(LDLIBS)
+ 
+-$(DEST) : $(OBJS)
+-	$(LINK) $(CFLAGS) -o $@ $(OBJS) $(LFLAGS)
++$(DEST) : garith.c
++	$(CC) -Wall $(GTK_FLAGS) garith.c -o garith ${CFLAGS}
+ 
+ clean:
+ 	rm -f *~
+ 	rm -f *.o $(DEST)
+-
+-.c.o:
+-	$(CC) $(CFLAGS) -c $<
+-
+-garith.o: garith.c
