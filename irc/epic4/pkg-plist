@@ -1,5 +1,5 @@
 bin/epic
-bin/epic-EPIC4pre2.001-NR9
+bin/epic-EPIC4pre2.001-NR13
 libexec/wserv
 share/epic/help/1_General/away
 share/epic/help/1_General/describe
@@ -879,7 +879,6 @@ share/epic/script/killpath
 share/epic/script/kpstat
 share/epic/script/langtrans
 share/epic/script/less
-share/epic/script/langtrans.irc
 share/epic/script/less-pipe
 share/epic/script/list
 share/epic/script/local.examp
