@@ -3,7 +3,7 @@
 # Date created:        15 Jun 1998
 # Whom:                Kentaro Inagaki <inagaki@tg.rim.or.jp>
 #
-# $Id: Makefile,v 1.2 1998/07/11 14:06:58 kuriyama Exp $
+# $Id: Makefile,v 1.3 1998/07/20 02:35:33 steve Exp $
 #
 
 DISTNAME=	xdvik-20c
@@ -20,7 +20,7 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	inagaki@tg.rim.or.jp
 
 RUN_DEPENDS=	mf:${PORTSDIR}/japanese/ptex-common
-LIB_DEPENDS=	VFlib2\\.23\\.:${PORTSDIR}/japanese/vflib
+LIB_DEPENDS=	VFlib2.23:${PORTSDIR}/japanese/vflib
 
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
