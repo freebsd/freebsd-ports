@@ -1,5 +1,5 @@
 --- wmSpaceWeather.c.orig	Thu Feb 18 17:57:45 1999
-+++ wmSpaceWeather.c	Wed Jun 18 03:08:57 2003
++++ wmSpaceWeather.c	Tue Apr 13 20:06:41 2004
 @@ -115,7 +115,7 @@ XEvent		event;
  int			i, n, s, k, m, dt1, dt2;
  int 		Year, Month, Day, DayOfMonth, OldDayOfMonth;
@@ -44,7 +44,7 @@
      	     *  Read in Kp values
      	     */
 -    	    if ((fp = fopen("/tmp/LatestKp.txt", "r")) != NULL){
-+	    snprintf(FileName, sizeof(FileName), "%s/.wmSpaceWeatherReports/LatestKp.txt", getenv("HOME"));
++	    snprintf(FileName, sizeof(FileName), "/tmp/LatestKp.txt", getenv("HOME"));
 +	    if ((fp = fopen(FileName, "r")) != NULL){
  
      	        for (i=0; i<8; ++i){
