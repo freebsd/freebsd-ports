@@ -1,21 +1,17 @@
 # New ports collection makefile for:    mtools
-# Version required:     3.8
+# Version required:     3.9.1
 # Date created:         5 October 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.20 1998/05/07 01:59:22 vanilla Exp $
+# $Id: Makefile,v 1.21 1998/05/07 09:52:34 obrien Exp $
 #
 
-DISTNAME=	mtools-3.9
+DISTNAME=	mtools-3.9.1
 CATEGORIES=	emulators
 MASTER_SITES=	ftp://linux.wauug.org/pub/knaff/mtools/
 
-PATCH_SITES=	${MASTER_SITES}
-PATCHFILES=	mtools-3.9-0305.diff.gz 
-
 MAINTAINER=	jmz@FreeBSD.org
 
-PATCH_DIST_STRIP=	-p1
 HAS_CONFIGURE=		yes
 CONFIGURE_ARGS=		--enable-xdf --prefix=${PREFIX}
 
