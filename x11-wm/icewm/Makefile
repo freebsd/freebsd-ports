@@ -1,12 +1,12 @@
 # New ports collection makefile for:	icewm
-# Version required:	0.9.41
+# Version required:	0.9.48
 # Date created:		10 August 1997
 # Whom:			Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.37 1999/06/07 01:57:36 steve Exp $
+# $Id: Makefile,v 1.38 1999/06/08 23:58:37 steve Exp $
 #
 
-DISTNAME=	icewm-0.9.41
+DISTNAME=	icewm-0.9.48
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.kiss.uni-lj.si/~k4fr0235/icewm/devel/ \
 		http://www.physik.TU-Berlin.DE/~ibex/ports/distfiles/icewm/
@@ -25,9 +25,6 @@ USE_X_PREFIX=	yes
 
 .if defined(USE_I18N)
 CONFIGURE_ARGS+=	--enable-i18n
-.endif
-.if defined(GNOME)
-ICEOPTION+=	--with-imlib --with-gnome
 .endif
 
 post-install:

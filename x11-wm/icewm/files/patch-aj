@@ -1,0 +1,12 @@
+--- src/ysocket.h.orig	Thu Aug 26 20:45:05 1999
++++ src/ysocket.h	Thu Aug 26 20:45:58 1999
+@@ -1,6 +1,9 @@
+ #ifndef YSOCKET_H_
+ #define YSOCKET_H_
+ 
++#ifdef __FreeBSD__
++#include <db.h>
++#endif
+ #include <netinet/in.h>
+ 
+ class YSocketListener {
