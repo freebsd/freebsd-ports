@@ -34,7 +34,7 @@ post-patch:
 post-install:
 .if !defined(NOPORTDOCS) 
 	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/ ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/ccrypt.html ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
