@@ -24,7 +24,7 @@ BUILD_DEPENDS+=	bzip2:${PORTSDIR}/archivers/bzip2
 .endif
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
-		freetype7:${PORTSDIR}/print/freetype2
+		freetype.7:${PORTSDIR}/print/freetype2
 
 USE_FREETYPE2=	yes
 
