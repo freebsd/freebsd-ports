@@ -6,22 +6,24 @@
 #
 
 PORTNAME=	biew
-PORTVERSION=    5.1.0
+PORTVERSION=	5.1.2
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=       ${PORTNAME}-510
+DISTNAME=	${PORTNAME}-512
 
 MAINTAINER=	ports@FreeBSD.org
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 
+PORTDOCS=	biew_en.txt biew_ru.txt develop.en develop.ru file_ini.en \
+		file_ini.ru licence.en licence.ru release.txt unix.txt
+
 .include <bsd.port.pre.mk>
 
-HOST_CFLAGS=    ${CFLAGS}
-HOST_LD=        ${CC}
-MAKEFILE=       makefile
+HOST_CFLAGS=	${CFLAGS} -DLIBDIR="\'\"${PREFIX}/share\"\'"
+MAKEFILE=	makefile
 
 .if ${OSVERSION} < 400010
 LIB_DEPENDS=    ncurses.4:${PORTSDIR}/devel/ncurses
@@ -29,18 +31,14 @@ HOST_CFLAGS+=   -D__FreeBSD_version=${OSVERSION} -I${LOCALBASE}/include
 HOST_LD+=       -L${LOCALBASE}/lib
 .endif
 
-MAKE_ARGS+=     HOST_CFLAGS="${HOST_CFLAGS}" LD="${HOST_LD}" \
+MAKE_ARGS+=	HOST_CFLAGS="${HOST_CFLAGS}" CC="${CC}" LD="${CC}" \
 		TARGET_OS=unix TARGET_SCREEN_LIB=curses \
 		USE_MOUSE=y
 
-post-patch:
-	@${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g" \
-		${WRKSRC}/lib/sysdep/generic/unix/os_dep.c
-
 post-build:
-	@ ${LN} -sf ../../lib ${WRKSRC}/tools/biewhlp/lib
+	@ ${LN} -sf ../../biewlib ${WRKSRC}/tools/biewhlp/biewlib
 	cd ${WRKSRC}/tools/biewhlp; ${GMAKE} ${MAKE_ARGS}
-	@ ${LN} -sf ../../lib ${WRKSRC}/tools/lzss/lib
+	@ ${LN} -sf ../../biewlib ${WRKSRC}/tools/lzss/biewlib
 	cd ${WRKSRC}/tools/lzss; ${GMAKE} ${MAKE_ARGS}
 	@ (cd ${WRKSRC}/hlp;${LN} -sf ../tools/biewhlp/biewhlp ./;\
 	${LN} -sf ../tools/lzss/lzss ./;./biewhlp biewhlp.prj)
@@ -48,7 +46,14 @@ post-build:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/biew ${PREFIX}/bin
 	@ ${MKDIR} ${PREFIX}/share/biew
-	${INSTALL_DATA} ${WRKSRC}/hlp/biew.hlp ${WRKSRC}/bin_rc/standard.skn \
-		${PREFIX}/share/biew
+.for file in bin_rc/assembly.skn bin_rc/standard.skn hlp/biew.hlp
+	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/biew
+.endfor
+.if !defined(NOPORTDOCS)
+	@ ${MKDIR} ${PREFIX}/share/doc/biew
+.for file in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/doc/${file} ${PREFIX}/share/doc/biew
+.endfor
+.endif
 
 .include <bsd.port.post.mk>

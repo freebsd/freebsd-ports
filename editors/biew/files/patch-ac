@@ -1,11 +1,20 @@
---- makefile.inc.orig	Fri Jun  2 21:01:36 2000
-+++ makefile.inc	Fri Jun  9 09:09:38 2000
-@@ -116,7 +116,7 @@
+--- makefile.inc.orig	Thu Jul  6 14:27:58 2000
++++ makefile.inc	Mon Jul 24 23:15:43 2000
+@@ -115,7 +115,7 @@
+ ifeq ($(TARGET_PLATFORM),i386)
   MACHINE=ia32
-  CDEFSYS=-D__BITNESS__=32 -D__MACHINE__=ia32 -D__CPU_NAME__='"i386"'\
-          -D__CPU__=386 -D__BYTE_ORDER__="__LITTLE_ENDIAN__"\
+  CDEFSYS=-D__MACHINE__=ia32 -D__CPU_NAME__='"i386"' -D__CPU__=386\
 -         -D__DEFAULT_DISASM=0 -m386 -fno-builtin
-+	 -D__DEFAULT_DISASM=0
++         -D__DEFAULT_DISASM=0
  endif
  ifeq ($(TARGET_PLATFORM),i486)
   MACHINE=ia32
+@@ -216,7 +216,7 @@
+ ifeq ($(compilation),debug)
+ CFLAGS += -g3 -p -ax -fcheck-memory-usage -fstack-check
+ else
+-CFLAGS += -O2 -fomit-frame-pointer -DNDEBUG=1
++CFLAGS += -fomit-frame-pointer -DNDEBUG=1
+ endif
+ adv_warn = -W -Winline -Wuninitialized -Wcast-align\
+  -Wswitch -Wshadow -Wbad-function-cast -Wmissing-noreturn -Wcast-qual\

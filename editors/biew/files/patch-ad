@@ -1,6 +1,6 @@
---- lib/sysdep/generic/unix/vio.c.orig	Fri Apr 14 15:02:21 2000
-+++ lib/sysdep/generic/unix/vio.c	Mon Apr 17 23:49:05 2000
-@@ -71,7 +71,11 @@
+--- biewlib/sysdep/generic/unix/vio.c.orig	Thu Jul  6 14:31:08 2000
++++ biewlib/sysdep/generic/unix/vio.c	Mon Jul 24 23:04:47 2000
+@@ -84,7 +84,11 @@
  #endif
  
  #ifdef	_CURSES_
