@@ -1,0 +1,13 @@
+--- doc/gnugo.info.orig	Mon Feb 14 07:10:18 2000
++++ doc/gnugo.info	Wed Apr 26 20:47:36 2000
+@@ -1,5 +1,10 @@
+ This is gnugo.info, produced by makeinfo version 4.0 from gnugo.texi.
+ 
++INFO-DIR-SECTION Games
++START-INFO-DIR-ENTRY
++* GNU Go: (gnugo).              A Go program.
++END-INFO-DIR-ENTRY
++
+ 
+ Indirect:
+ gnugo.info-1: 71

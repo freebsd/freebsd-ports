@@ -1,1 +1,9 @@
 bin/gnugo
+@unexec install-info --delete %D/info/gnugo.info %D/info/dir
+info/gnugo.info
+info/gnugo.info-1
+info/gnugo.info-2
+info/gnugo.info-3
+info/gnugo.info-4
+info/gnugo.info-5
+@exec install-info %D/info/gnugo.info %D/info/dir
