@@ -7,6 +7,7 @@
 
 PORTNAME=	mozilla
 PORTVERSION=	0.9.9
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_MOZILLA} \
@@ -65,13 +66,12 @@ CONFIGURE_ARGS=					\
 		--with-system-png=${LOCALBASE}	\
 		--with-pthreads
 .if !defined(WITHOUT_CHATZILLA)
-CONFIGURE_ARGS+=	--with-extensions=default,irc
+CONFIGURE_ARGS+=	--enable-extensions=default,irc,xmlterm
 .endif
 CONFIGURE_ENV=	MOZ_INTERNAL_LIBART_LGPL=1
 MAKE_ENV=	LD_LIBRARY_PATH=${WRKSRC}/dist/bin \
 		MOZ_INTERNAL_LIBART_LGPL=1
 ALL_TARGET=	default
-CFLAGS:=	-I${LOCALBASE}/include/freetype2 ${CFLAGS}
 
 post-build:
 	${SED} -e "s;@PREFIX@;${PREFIX};g" \
