@@ -1,15 +1,6 @@
---- configure.orig	Sat Mar  8 09:29:30 2003
-+++ configure	Mon May  5 21:48:08 2003
-@@ -3780,7 +3780,7 @@
- esac
- 
- if test "${enable_cplusplus}" = yes; then
--      addobjs="$addobjs gc_cpp.lo"
-+      addobjs="$addobjs gc_cpp.lo -lstdc++"
-       addincludes="$addincludes include/gc_cpp.h include/gc_allocator.h"
-       addtests="$addtests test_cpp"
- fi
-@@ -8479,6 +8479,7 @@
+--- configure.orig	Wed May 14 05:07:49 2003
++++ configure	Mon Jun  2 22:48:04 2003
+@@ -8488,6 +8488,7 @@
  
  # This can be used to rebuild libtool when needed
  LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
