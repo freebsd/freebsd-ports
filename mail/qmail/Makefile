@@ -120,7 +120,7 @@ PATCHFILES+=	outgoingip.patch
 .endif # WITH_OUTGOINGIP_PATCH && !MAIN_QMAIL_PORT_WITH_OUTGOINGIP_PATCH_BARRIER
 
 MAINTAINER=	lioux@FreeBSD.org
-COMMENT?=	A SECURE, reliable, efficient, simple, and FAST MTA for UNIX systems
+COMMENT?=	A secure, reliable, efficient, simple, and fast MTA
 
 NO_PACKAGE=	djb\'s packaging license does not allow non-standard\
 		qmail binary distributions
