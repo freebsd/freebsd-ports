@@ -1,3 +1,4 @@
+# ex:ts=8
 # New ports collection makefile for:	cdk
 # Date created:				6 May 1999
 # Whom:					Andrey Zakhvatov
@@ -6,19 +7,24 @@
 #
 
 PORTNAME=		cdk
-PORTVERSION=		4.9.1
+PORTVERSION=		4.9.9
 CATEGORIES=		devel
-MASTER_SITES=		${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR=	libs/ui
+MASTER_SITES=	http://www.vexus.ca/release/
+DISTNAME=	latestCDK
+EXTRACT_SUFX=	.tgz
 
-MAINTAINER=		obrien@FreeBSD.org
+MAINTAINER=	obrien@FreeBSD.org
 
-ALL_TARGET=		SRCDIR=${WRKSRC} libcdk.so.1
+WRKSRC=		${WRKDIR}/${PKGNAME}
+GNU_CONFIGURE=	yes
+ALL_TARGET=	default
 
-MAN3=	alphalist.3 binding.3 buttonbox.3 calendar.3 cdk.3 dialog.3 \
-	display.3 entry.3 fselect.3 graph.3 histogram.3 itemlist.3 label.3 \
-	marquee.3 matrix.3 mentry.3 menu.3 misc.3 radio.3 scale.3 screen.3 \
-	scroll.3 selection.3 slider.3 swindow.3 template.3 viewer.3
+MAN3=	cdk_alphalist.3 cdk_binding.3 cdk_buttonbox.3 cdk_calendar.3 cdk_cdk.3 \
+	cdk_dialog.3 cdk_display.3 cdk_entry.3 cdk_fselect.3 cdk_graph.3 \
+	cdk_histogram.3 cdk_itemlist.3 cdk_label.3 cdk_marquee.3 cdk_matrix.3 \
+	cdk_mentry.3 cdk_menu.3 cdk_misc.3 cdk_radio.3 cdk_scale.3 \
+	cdk_screen.3 cdk_scroll.3 cdk_selection.3 cdk_slider.3 cdk_swindow.3 \
+	cdk_template.3 cdk_viewer.3
 
 do-install:
 	@ ${INSTALL_DATA} ${WRKSRC}/libcdk.so.1 ${PREFIX}/lib
@@ -45,12 +51,16 @@ do-install:
 	@ ${INSTALL_DATA} ${WRKSRC}/cli/utils/* ${PREFIX}/share/examples/cdk/cli/utils
 	@ ${LDCONFIG} -m ${PREFIX}/lib
 
-post-install:
+ post-install:
+	@${MKDIR} ${PREFIX}/share/examples/cdk
+	${INSTALL_DATA} ${WRKSRC}/examples/Makefile ${PREFIX}/share/examples/cdk
+	${INSTALL_DATA} ${WRKSRC}/examples/*.c ${PREFIX}/share/examples/cdk
 .if !defined(NOPORTDOCS)
-	@ ${MKDIR} ${PREFIX}/share/doc/cdk
-.for file in BUGS COPYING EXPANDING NOTES README TODO
-	@ ${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/cdk
+	@${MKDIR} ${PREFIX}/share/doc/cdk
+.for file in BUGS EXPANDING INSTALL NOTES README TODO
+	@${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/cdk
 .endfor
+	${LDCONFIG} -m ${PREFIX}/lib
 .endif
 
 .include <bsd.port.mk>

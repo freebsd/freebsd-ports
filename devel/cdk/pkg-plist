@@ -1,8 +1,8 @@
-include/cdk.h
 include/cdk/alphalist.h
 include/cdk/binding.h
 include/cdk/buttonbox.h
 include/cdk/calendar.h
+include/cdk/cdk.h
 include/cdk/cdk_util.h
 include/cdk/cdkscreen.h
 include/cdk/curdefs.h
@@ -26,13 +26,14 @@ include/cdk/slider.h
 include/cdk/swindow.h
 include/cdk/template.h
 include/cdk/viewer.h
+lib/libcdk.a
 lib/libcdk.so
 lib/libcdk.so.1
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
+@exec /sbin/ldconfig -m %B
+@unexec /sbin/ldconfig -R
 share/doc/cdk/BUGS
-share/doc/cdk/COPYING
 share/doc/cdk/EXPANDING
+share/doc/cdk/INSTALL
 share/doc/cdk/NOTES
 share/doc/cdk/README
 share/doc/cdk/TODO
@@ -64,57 +65,9 @@ share/examples/cdk/slider_ex.c
 share/examples/cdk/subwindow_ex.c
 share/examples/cdk/swindow_ex.c
 share/examples/cdk/template_ex.c
+share/examples/cdk/tst.c
 share/examples/cdk/viewer_ex.c
-share/examples/cdk/cli/Makefile
-share/examples/cdk/cli/cdkalphalist.c
-share/examples/cdk/cli/cdkcalendar.c
-share/examples/cdk/cli/cdkdialog.c
-share/examples/cdk/cli/cdkentry.c
-share/examples/cdk/cli/cdkfselect.c
-share/examples/cdk/cli/cdkitemlist.c
-share/examples/cdk/cli/cdklabel.c
-share/examples/cdk/cli/cdkmatrix.c
-share/examples/cdk/cli/cdkmentry.c
-share/examples/cdk/cli/cdkradio.c
-share/examples/cdk/cli/cdkscale.c
-share/examples/cdk/cli/cdkscroll.c
-share/examples/cdk/cli/cdkselection.c
-share/examples/cdk/cli/cdkslider.c
-share/examples/cdk/cli/cdktemplate.c
-share/examples/cdk/cli/cdkviewer.c
-share/examples/cdk/cli/samples/alphalist.sh
-share/examples/cdk/cli/samples/calendar.sh
-share/examples/cdk/cli/samples/dialog.sh
-share/examples/cdk/cli/samples/entry.sh
-share/examples/cdk/cli/samples/fselect.sh
-share/examples/cdk/cli/samples/itemlist.sh
-share/examples/cdk/cli/samples/label.sh
-share/examples/cdk/cli/samples/matrix.sh
-share/examples/cdk/cli/samples/mentry.sh
-share/examples/cdk/cli/samples/radio.sh
-share/examples/cdk/cli/samples/scale.sh
-share/examples/cdk/cli/samples/scroll.sh
-share/examples/cdk/cli/samples/selection.sh
-share/examples/cdk/cli/samples/slider.sh
-share/examples/cdk/cli/samples/template.sh
-share/examples/cdk/cli/samples/viewer.sh
-share/examples/cdk/cli/utils/adduser
-share/examples/cdk/cli/utils/netconfig
-share/examples/cdk/demo/Makefile
-share/examples/cdk/demo/appointment.c
-share/examples/cdk/demo/clock.c
-share/examples/cdk/demo/command.c
-share/examples/cdk/demo/fileview.c
-share/examples/cdk/demo/rolodex.c
-share/examples/cdk/demo/rolodex.h
-share/examples/cdk/demo/serial.c
-share/examples/cdk/demo/stopSign.c
-share/examples/cdk/demo/syb.c
-share/examples/cdk/demo/vinstall.c
-@dirrm include/cdk
-@dirrm share/doc/cdk
-@dirrm share/examples/cdk/cli/samples
-@dirrm share/examples/cdk/cli/utils
-@dirrm share/examples/cdk/cli
-@dirrm share/examples/cdk/demo
+share/examples/cdk/vinstall.c
 @dirrm share/examples/cdk
+@dirrm share/doc/cdk
+@dirrm include/cdk
