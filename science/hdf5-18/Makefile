@@ -8,9 +8,10 @@
 
 PORTNAME=	hdf5
 PORTVERSION=	1.6.2
+PORTREVISION=	1
 CATEGORIES=	science archivers graphics
 MASTER_SITES=	ftp://hdf.ncsa.uiuc.edu/pub/outgoing/hdf5/snapshots/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-post1
+DISTNAME=	${PORTNAME}-${PORTVERSION}-post2
 
 MAINTAINER=	koziol@ncsa.uiuc.edu
 COMMENT=	Hierarchical Data Format library (from NCSA)
@@ -27,10 +28,6 @@ ALL_TARGET=	lib progs
 INSTALLS_SHLIB=	yes
 
 .include <bsd.port.pre.mk>
-
-.if ${ARCH} == "sparc64"
-BROKEN=		"Configure fails on sparc64"
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
