@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	XML-NamespaceSupport
-PORTVERSION=	1.04
+PORTVERSION=	1.07
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	XML
@@ -17,7 +17,6 @@ MAINTAINER=	skv@FreeBSD.org
 PERL_CONFIGURE=	yes
 
 MAN3=		XML::NamespaceSupport.3
-
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
+MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>
