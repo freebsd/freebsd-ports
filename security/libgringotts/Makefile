@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libgringotts
-PORTVERSION=	1.1.2
+PORTVERSION=	1.2.1
 CATEGORIES=	security
 MASTER_SITES=	http://devel.pluto.linux.it/projects/libGringotts/current/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/
