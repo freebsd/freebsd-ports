@@ -22,7 +22,7 @@ INST_AIRTOOLS=	${CONF_AIRTOOLS} ${MAKE_AIRTOOLS}
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 .if !exists(/usr/include/dev/wi/if_wavelan_ieee.h)
-FORBIDDEN=You need to upgrade
+BROKEN=	You need to upgrade
 .endif
 
 do-build:

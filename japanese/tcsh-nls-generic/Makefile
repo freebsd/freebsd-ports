@@ -18,7 +18,7 @@ BUILD_DEPENDS=	nkf:${PORTSDIR}/japanese/nkf
 
 .include <bsd.port.pre.mk>
 .if ${OSVERSION} >= 500006 || ${OSVERSION} < 500000 && ${OSVERSION} >= 400021
-FORBIDDEN=	tcsh in base system cannot deal with local message catalogs yet
+BROKEN=	tcsh in base system cannot deal with local message catalogs yet
 .endif
 
 CATALOGNAME?=	generic

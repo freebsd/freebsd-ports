@@ -12,7 +12,7 @@ MASTERDIR=	${.CURDIR}/../lookup
 EMACS_PORT_NAME=xemacs21-mule
 
 .if defined(PARALLEL_PACKAGE_BUILD)
-FORBIDDEN=	hang
+IGNORE=	hang
 .endif
 
 .include	"${MASTERDIR}/Makefile"

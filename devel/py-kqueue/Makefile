@@ -22,10 +22,10 @@ PLIST_SUB+=		PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR:S/^${LOCALBASE}\///g}
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 400018
-FORBIDDEN="requires new kqueue API"
+IGNORE="requires new kqueue API"
 .endif
 .if ${OSVERSION} >= 500000 && ${OSVERSION} < 500010
-FORBIDDEN="requires new kqueue API"
+IGNORE="requires new kqueue API"
 .endif
 
 do-configure:
