@@ -1,9 +1,9 @@
---- usrinfo.cpp.orig	Tue May 18 04:50:46 2004
-+++ usrinfo.cpp	Tue May 25 02:18:09 2004
-@@ -147,4 +147,5 @@
+--- usrinfo.cpp.orig	Wed May 26 04:32:17 2004
++++ usrinfo.cpp	Wed May 26 09:17:15 2004
+@@ -157,4 +157,5 @@
+ 	argtest(argc, argv);
  	usrtest(argv);
- 	preftest(argv);
  	infodisplay(argv);
--	return 0;//end}
-+	return 0;//end
+-	return 0;//die}
++	return 0;//die
 +}
