@@ -34,7 +34,7 @@ PLIST_SUB+=	FVWM_VERSION="${PORTVERSION}"
 USE_GNOME=	yes
 PLIST_SUB+=	GNOMEDATADIR="share/gnome/fvwm"
 .else
-CONFIGURE_ARGS+=	--disable-gnome
+CONFIGURE_ARGS+=	--without-gnome
 PLIST_SUB+=	GNOMEDATADIR="share/fvwm"
 .endif
 
