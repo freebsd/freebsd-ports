@@ -1,6 +1,18 @@
 --- configure.orig	Wed Dec 25 06:03:25 1996
-+++ configure	Tue Dec 31 14:33:35 1996
-@@ -2592,11 +2592,11 @@
++++ configure	Sun Jan  5 20:14:01 1997
+@@ -2583,20 +2583,20 @@
+         done
+     fi
+ 
+-    if test ! -r $TCL75_SRC_DIR/unix/tclConfig.sh.in; then
+-	TCL75_SRC_DIR=""
+-    fi
++#    if test ! -r $TCL75_SRC_DIR/unix/tclConfig.sh.in; then
++#	TCL75_SRC_DIR=""
++#    fi
+ 
+     if test "$TCL75_SRC_DIR" = ""; then
+         echo "$ac_t""(not found)" 1>&6
      else
          echo "$ac_t""$TCL75_SRC_DIR" 1>&6
  
@@ -17,6 +29,35 @@
      fi
  
      #
+@@ -2614,20 +2614,20 @@
+         done
+     fi
+ 
+-    if test ! -r $TK41_SRC_DIR/unix/tkConfig.sh.in; then
+-	TK41_SRC_DIR=""
+-    fi
++#    if test ! -r $TK41_SRC_DIR/unix/tkConfig.sh.in; then
++#	TK41_SRC_DIR=""
++#    fi
+ 
+     if test "$TK41_SRC_DIR" = ""; then
+         echo "$ac_t""(not found)" 1>&6
+     else
+         echo "$ac_t""$TK41_SRC_DIR" 1>&6
+ 
+-        if test ! -r "$TK41_SRC_DIR/unix/tkConfig.sh"; then
+-	    echo "warning: $TK41_SRC_DIR/unix/tkConfig.sh missing"
+-  	    echo "         Please to configure tk 4.1 first."
+-	    TK41_SRC_DIR=""
+-        fi
++#        if test ! -r "$TK41_SRC_DIR/unix/tkConfig.sh"; then
++#	    echo "warning: $TK41_SRC_DIR/unix/tkConfig.sh missing"
++#  	    echo "         Please to configure tk 4.1 first."
++#	    TK41_SRC_DIR=""
++#        fi
+     fi
+     #----------------------------------------------------------------------
+     #	MAIN STUFF
 @@ -2635,7 +2635,7 @@
      if test "$TK41_SRC_DIR" != "" -a "$TCL75_SRC_DIR" != ""; then
  	# 1. Load the compilation flags for TCL 7.5
