@@ -1,5 +1,5 @@
-*** identd.8.orig	Thu Jul 27 21:18:14 1995
---- identd.8	Thu Jul 27 21:16:53 1995
+*** identd.man.orig	Thu Jul 27 21:18:14 1995
+--- identd.man	Thu Jul 27 21:16:53 1995
 ***************
 *** 6,12 ****
   .SH NAME

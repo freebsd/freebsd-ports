@@ -35,19 +35,22 @@
   all:
   	@echo "Please specify the type of system you wish to build for."
 ***************
-*** 387,393 ****
+*** 387,394 ****
   
   install: in.identd
-  	cp identd.8  $(MANDIR)/identd.8
+	cp identd.man  $(MANDIR)/identd.$(MANSECT)
+	echo ".so man$(MANSECT)/identd.$(MANSECT)" > $(MANDIR)/in.identd.$(MANSECT)
 ! 	cp in.identd $(DESTDIR)/in.identd
   
   tests:
   	(cd testdir ; make)
---- 387,393 ----
+--- 387,394 ----
   
   install: in.identd
-  	cp identd.8  $(MANDIR)/identd.8
+	cp identd.man  $(MANDIR)/identd.$(MANSECT)
+	echo ".so man$(MANSECT)/identd.$(MANSECT)" > $(MANDIR)/in.identd.$(MANSECT)
 ! 	cp in.identd $(DESTDIR)/identd
   
   tests:
   	(cd testdir ; make)
+	cp in.identd $(DESTDIR)/in.identd
