@@ -10,6 +10,6 @@ PORTREVISION=	0
 COMMENT=	Fast C routines (Single Percision)
 
 FFTW_FLAVOR=	float
-MASTERDIR=	${.CURDIR}/../../math//fftw
+MASTERDIR=	${.CURDIR}/../../math/fftw
 
 .include "${MASTERDIR}/Makefile"
