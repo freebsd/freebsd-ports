@@ -1,0 +1,53 @@
+*** cgi/Makefile.in.orig	Thu Jun 21 10:16:41 2001
+--- cgi/Makefile.in	Sun Dec  2 11:04:54 2001
+***************
+*** 84,89 ****
+--- 84,92 ----
+  	rm -f Makefile config.h
+  
+  install: cgi
++ 	@if test ! -d $(cgibin) ; then \
++ 		mkdir -p $(cgibin); \
++ 	fi
+  	@for p in $(CGIPROGS) ; do \
+  		echo $(INSTALL_PROGRAM) $$p $(cgibin); \
+  		$(INSTALL_PROGRAM) $$p $(cgibin); \
+***************
+*** 98,114 ****
+  	   echo "No CSS_DIR found, did not install multimon.css" ; \
+  	fi
+  	# don't overwrite any existing config file
+! 	@if test ! -f $(sysconfdir)/hosts.conf; then \
+! 		(echo "Installing hosts.conf..." && $(INSTALL_DATA) ../etc/hosts.conf $(sysconfdir)/hosts.conf); \
+! 	else \
+! 	       (echo "Installing hosts.conf in $(sysconfdir)/hosts.conf.new" && $(INSTALL_DATA) ../etc/hosts.conf $(sysconfdir)/hosts.conf.new); \
+! 	fi
+  	# don't overwrite any existing config file
+! 	@if test ! -f $(sysconfdir)/multimon.conf; then \
+! 		(echo "Installing multimon.conf..." && $(INSTALL_DATA) ../etc/multimon.conf $(sysconfdir)/multimon.conf); \
+! 	else \
+! 	       (echo "Installing multimon.conf in $(sysconfdir)/multimon.conf.new" && $(INSTALL_DATA) ../etc/multimon.conf $(sysconfdir)/multimon.conf.new); \
+! 	fi
+  
+  uninstall:
+  	@echo "Uninstalling cgi program support..."
+--- 101,119 ----
+  	   echo "No CSS_DIR found, did not install multimon.css" ; \
+  	fi
+  	# don't overwrite any existing config file
+! #	@if test ! -f $(sysconfdir)/hosts.conf; then \
+! #		(echo "Installing hosts.conf..." && $(INSTALL_DATA) ../etc/hosts.conf $(sysconfdir)/hosts.conf); \
+! #	else \
+! #	       (echo "Installing hosts.conf in $(sysconfdir)/hosts.conf.new" && $(INSTALL_DATA) ../etc/hosts.conf $(sysconfdir)/hosts.conf.new); \
+! #	fi
+! 	$(INSTALL_DATA) ../etc/hosts.conf $(sysconfdir)/hosts.conf.sample
+  	# don't overwrite any existing config file
+! #	@if test ! -f $(sysconfdir)/multimon.conf; then \
+! #		(echo "Installing multimon.conf..." && $(INSTALL_DATA) ../etc/multimon.conf $(sysconfdir)/multimon.conf); \
+! #	else \
+! #	       (echo "Installing multimon.conf in $(sysconfdir)/multimon.conf.new" && $(INSTALL_DATA) ../etc/multimon.conf $(sysconfdir)/multimon.conf.new); \
+! #	fi
+! 	$(INSTALL_DATA) ../etc/multimon.conf $(sysconfdir)/multimon.conf.sample
+  
+  uninstall:
+  	@echo "Uninstalling cgi program support..."
