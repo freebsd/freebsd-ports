@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dvipdfmx
-PORTVERSION=	20031006
+PORTVERSION=	20031009
 CATEGORIES=	print
 MASTER_SITES=	http://project.ktug.or.kr/dvipdfmx/snapshot/
 
@@ -19,13 +19,6 @@ RUN_DEPENDS=	${LOCALBASE}/share/ghostscript/Resource/ai0/CMap/Identity-H:${PORTS
 		kpsepath:${PORTSDIR}/print/teTeX
 
 GNU_CONFIGURE=	yes
-
-post-patch:
-	@${RM} ${WRKSRC}/data/config/dvipdfmx.cfg.orig
-
-pre-install:
-	${CP} ${LOCALBASE}/bin/dvipdfm ${LOCALBASE}/bin/dvipdfm-orig > /dev/null 2>&1 || ${TRUE}
-	${MV} ${LOCALBASE}/share/texmf/dvipdfm ${LOCALBASE}/share/texmf/dvipdfm-orig > /dev/null 2>&1 || ${TRUE}
 
 post-install:
 	@${LN} -fs ${LOCALBASE}/share/ghostscript/Resource ${PREFIX}/share/texmf/dvipdfm/
