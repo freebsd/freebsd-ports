@@ -34,7 +34,7 @@ IGNORE="Please manually download ${DISTFILES} from www.sun.com/staroffice or cop
 .endif
 
 post-configure:
-	${PERL} -pi.orig -e 's/DefaultDestPath = "Office51";/DefaultDestPath = "${PREFIX}/Office51";/' ${WRKSRC}/office51/setup.ins
+	${PERL} -pi.orig -e 's|DefaultDestPath = "Office51";|DefaultDestPath = "${PREFIX}/Office51";|' ${WRKSRC}/office51/setup.ins
 
 do-install:
 	unzip -u -L ${WRKDIR}/so51inst/office51/setup.zip -d ${WRKDIR}/tmp
