@@ -1,0 +1,11 @@
+Inline::C allows for quick and use of inlined C code in Ruby scripts.
+This library automatically:
+
+* provides rudimentary automatic conversion between Ruby and C basic
+  types: (unsigned)? (char|int|long|char *)
+* provides compilation of inline code
+* only recompiles if the C code has changed
+* can easily provide speedups in excess of 25x for tight loops when
+  objects are being recycled too quickly.
+
+WWW: http://sourceforge.net/projects/rubyinline

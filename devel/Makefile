@@ -758,6 +758,7 @@
     SUBDIR += ruby-gettext
     SUBDIR += ruby-glib2
     SUBDIR += ruby-gnustep
+    SUBDIR += ruby-inline
     SUBDIR += ruby-intl
     SUBDIR += ruby-libglade
     SUBDIR += ruby-libglade2
