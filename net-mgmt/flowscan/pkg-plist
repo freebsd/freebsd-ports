@@ -1,4 +1,4 @@
-etc/rc.d/flowscan.sh.sample
+etc/rc.d/cflowd-flowscan.sh.sample
 var/db/flows/bin/flowscan
 var/db/flows/bin/FlowScan.pm
 var/db/flows/bin/CampusIO.pm
