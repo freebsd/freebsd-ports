@@ -363,6 +363,7 @@ share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/tic.m
 share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/toc.m
 share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/version.m
 share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/xor.m
+share/octave/%%OCTAVE_VERSION%%/m/plot/__axis_label__.m
 share/octave/%%OCTAVE_VERSION%%/m/plot/__plr1__.m
 share/octave/%%OCTAVE_VERSION%%/m/plot/__plr2__.m
 share/octave/%%OCTAVE_VERSION%%/m/plot/__plr__.m
