@@ -5,3 +5,6 @@ xearth updates the displayed image every five minutes. The
 time between updates can be changed with the -wait option.
 Xearth  can  also  render  directly into PPM and GIF files
 instead of drawing in the root window.
+
+This version has a new option (-freebsd) that will display
+notable FreeBSD sites instead of city names.
