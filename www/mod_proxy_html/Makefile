@@ -15,6 +15,8 @@ EXTRACT_SUFX=	.c
 MAINTAINER=	dsl@webize.com.au
 COMMENT=	Apache module for rewriting HTML links in proxied content
 
+BROKEN=		Size mismatch
+
 USE_GNOME=	libxml2
 USE_APACHE=	yes
 WITH_APACHE2=	yes

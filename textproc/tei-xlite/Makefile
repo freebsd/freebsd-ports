@@ -20,6 +20,8 @@ COMMENT=	XML version of the TEI-Lite DTD
 
 RUN_DEPENDS=	${XMLCATMGR}:${PORTSDIR}/textproc/xmlcatmgr
 
+BROKEN=		Size mismatch
+
 NO_BUILD=	yes
 PLIST_SUB=	XMLCATMGR=${XMLCATMGR}
 PLIST_SUB+=	DTDDIR=${INSTDIR}

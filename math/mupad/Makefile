@@ -17,6 +17,7 @@ DIST_SUBDIR=	mupad
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	A sophisticated computer algebra system
 
+BROKEN=		Size mismatch
 NO_CDROM=	"unsure to sell for profit"
 
 USE_LINUX=		yes

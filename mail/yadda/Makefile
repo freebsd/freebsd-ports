@@ -16,6 +16,8 @@ COMMENT=	Yet Another Damn Delivery Agent
 
 RUN_DEPENDS=	${SITE_PERL}/Mail/Audit.pm:${PORTSDIR}/mail/p5-Mail-Audit
 
+BROKEN=		Size mismatch
+
 USE_PERL5_RUN=	yes
 
 do-build:

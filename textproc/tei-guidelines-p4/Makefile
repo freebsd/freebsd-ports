@@ -15,6 +15,8 @@ DISTNAME=	p4html
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	TEI's Guidelines for Electronic Text Encoding and Interchange
 
+BROKEN=		Size mismatch
+
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/TEI_P4
 LATEST_LINK=	tei-guidelines-p4

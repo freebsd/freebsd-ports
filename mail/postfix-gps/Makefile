@@ -20,6 +20,8 @@ COMMENT=	Greylist Policy Service for postfix
 LIB_DEPENDS=	dbi.0:${PORTSDIR}/databases/libdbi
 RUN_DEPENDS=	${LOCALBASE}/lib/dbd:${PORTSDIR}/databases/libdbi-drivers
 
+BROKEN=		Size mismatch
+
 SCRIPT_FILES=	gps-maintain.pl
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

@@ -22,6 +22,8 @@ COMMENT=	A library of routines for performing sparse factorization
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libf77blas.a:${PORTSDIR}/math/atlas
 
+BROKEN=		Size mismatch
+
 USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/SuperLU_3.0
 ALL_TARGET=	superlulib

@@ -19,6 +19,8 @@ NO_BUILD=	yes
 
 RUN_DEPENDS=	${LOCALBASE}/bin/wget:${PORTSDIR}/ftp/wget
 
+BROKEN=		Size mismatch
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000

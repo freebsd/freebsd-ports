@@ -18,6 +18,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	Test bind() semantics of IPv6 sockets
 
+BROKEN=		Size mismatch
+
 MAN1=		bindtest.1
 
 do-install:

@@ -16,6 +16,8 @@ DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Enhanced support for editing and running Scheme code
 
+BROKEN=		Size mismatch
+
 RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
 
 EMACS_PORT_NAME?=	emacs21
