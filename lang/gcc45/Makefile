@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-SNAPDATE=	2003-12-10
+SNAPDATE=	2003-12-24
 #CVS_DATE=	${SNAPDATE} 18:53:04 EDT
 
 PORTNAME=	gcc
@@ -14,7 +14,8 @@ PORTVERSION=	3.4
 PORTREVISION=	${SNAPDATE:S/-//g}
 CATEGORIES=	lang java
 VERSIONSTRING=	${PORTVERSION}-${PORTREVISION}
-MASTER_SITES=	${MASTER_SITE_GCC}
+MASTER_SITES=	${MASTER_SITE_GCC} \
+		http://web.inter.NL.net/hcc/Haj.Ten.Brugge/:bc
 MASTER_SITE_SUBDIR=	snapshots/${VERSIONSTRING}
 .if !defined(CVS_DATE)
 DISTFILES=	\
@@ -190,7 +191,7 @@ post-install:
 
 cklatest:
 .for SITE in ftp://gcc.gnu.org/pub/gcc/snapshots/                                   ftp://mirrors.rcn.net/mirrors/sources.redhat.com/gcc/snapshots/
-	@-ncftpls ${SITE} | ${GREP} LATEST
+	@-ncftpls ${SITE} | ${GREP} 'LATEST.*3\.4'
 .endfor
 
 .include <bsd.port.post.mk>

@@ -1,5 +1,0 @@
---- gcc/configure.orig	Sun Dec 14 22:51:04 2003
-+++ gcc/configure	Sun Dec 14 22:51:25 2003
-@@ -8112 +8112 @@
--s%@CPPFLAGS@%$CPPFLAGS%g
-+s%@CONFIGURE_CPPFLAGS@%$CPPFLAGS%g

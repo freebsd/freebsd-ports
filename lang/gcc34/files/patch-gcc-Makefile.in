@@ -1,5 +1,0 @@
---- gcc/Makefile.in.orig	Sun Dec  7 18:32:10 2003
-+++ gcc/Makefile.in	Sun Dec 14 23:19:41 2003
-@@ -707 +707 @@
--ALL_CPPFLAGS = $(CPPFLAGS) $(X_CPPFLAGS) $(T_CPPFLAGS)
-+ALL_CPPFLAGS = $(CPPFLAGS) $(X_CPPFLAGS) $(T_CPPFLAGS) @CONFIGURE_CPPFLAGS@
