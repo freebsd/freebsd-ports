@@ -7,9 +7,18 @@
 
 PORTNAME=	qt
 PORTVERSION=	2.2.3
+.if exists(${X11BASE}/lib/libXft.so) && !defined(NO_AA)
+PORTREVISION=	1
+.endif
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.trolltech.com/qt/source/
 DISTNAME=	qt-x11-${PORTVERSION}
+
+.if exists(${X11BASE}/lib/libXft.so) && !defined(NO_AA)
+PATCHFILES=	qt-aa-${PORTVERSION}.diff.gz
+PATCH_SITES=	${MASTER_SITE_LOCAL}
+PATCH_SITE_SUBDIR=	will
+.endif
 
 MAINTAINER=	will@FreeBSD.org
 
@@ -28,6 +37,7 @@ CONFIGURE_ARGS=	-system-zlib -system-libpng -system-jpeg -sm -gif \
 		-system-libmng \
 		-I${LOCALBASE}/include -L${LOCALBASE}/lib
 CONFIGURE_ENV=	${YES} yes | QTDIR=${WRKSRC}
+MAKE_ARGS+=	MAKE="${GMAKE} -j2"
 MAKE_ENV=	QTDIR=${WRKSRC} LD_LIBRARY_PATH=${WRKSRC}/lib
 
 CONFIG=		${WRKSRC}/configs/freebsd-g++-${STATIC}
@@ -58,14 +68,20 @@ pre-fetch:
 
 pre-configure:
 	@${CP} ${CONFIG} ${CONFIG}.new
-	${SED} -e "s,gcc,${CC},g" ${CONFIG}.new | ${SED} -e "s,g\+\+,${CXX},g" | \
-		${SED} -e "s,/usr/X11R6,${X11BASE},g" | ${SED} -e "s,-pipe -O2,${CXXFLAGS},g" > ${CONFIG}
-	${PERL} -pi -e "s@VER_MAJ = 2@VER_MAJ = 4@g" ${WRKSRC}/src/Makefile.in
-	${PERL} -pi -e "s@TARGET	= qt@TARGET = qt2@g" ${WRKSRC}/src/Makefile.in
+	${SED} -e "s,gcc,${CC},g" -e "s,g\+\+,${CXX},g" -e "s,/usr/X11R6,${X11BASE},g" \
+		-e "s,-pipe -O2,${CXXFLAGS},g" ${CONFIG}.new > ${CONFIG}
+.if exists(${X11BASE}/lib/libXft.so) && !defined(NO_AA)
+	@${CP} ${CONFIG} ${CONFIG}.new
+	${SED} -e "s,= -lXext,= -lXft -lXext,g" -e "s,= -I${X11BASE}/include,= -DQT_XFT -I${X11BASE}/include,g" \
+		${CONFIG}.new > ${CONFIG}
+.endif
+	${CP} ${WRKSRC}/src/Makefile.in ${WRKSRC}/src/Makefile.in.new
+	${SED} -e "s,VER_MAJ = 2,VER_MAJ = 4,g" -e "s,TARGET	= qt,TARGET = qt2,g" ${WRKSRC}/src/Makefile.in.new > ${WRKSRC}/src/Makefile.in
 	${PERL} -pi -e "s@TARGET\t= moc@TARGET = moc2@g" ${WRKSRC}/src/moc/Makefile.in
-	${PERL} -pi -e "s@rm -f bin/moc@rm -f bin/moc2@g" ${WRKSRC}/Makefile
-	${PERL} -pi -e "s@cp src/moc/moc bin/moc@cp src/moc/moc2  bin/moc2@g" ${WRKSRC}/Makefile
-	${PERL} -pi -e "s@symlinks  src-moc src-mt sub-src sub-tools sub-tutorial sub-examples@symlinks src-moc src-mt sub-src sub-tools@g" ${WRKSRC}/Makefile
+	${CP} ${WRKSRC}/Makefile ${WRKSRC}/Makefile.new
+	${SED} -e "s,rm -f bin/moc,rm -f  bin/moc2,g" -e "s,cp src/moc/moc bin/moc,cp src/moc/moc2 bin/moc2,g" \
+		-e "s,symlinks  src-moc src-mt sub-src sub-tools sub-tutorial sub-examples,symlinks src-moc src-mt sub-src sub-tools,g" \
+		${WRKSRC}/Makefile.new > ${WRKSRC}/Makefile
 	${PERL} -pi -e "s@-L../lib@-L${WRKSRC}/lib@g" ${WRKSRC}/tools/designer/uic/Makefile.in
 
 post-configure:
@@ -108,10 +124,9 @@ do-install:
 
 .if defined(WANT_STATIC)
 post-install:
-	@${PERL} -pi -e 's/libqt2\.so/libqt2.a/' ${TMPPLIST}
-	@${PERL} -pi -e 's/.*libqt2\.a\.\d\n//' ${TMPPLIST}
-	@${PERL} -pi -e 's/libqutil\.so/libqutil.a/' ${TMPPLIST}
-	@${PERL} -pi -e 's/.*libqutil\.a\.\d\n//' ${TMPPLIST}
+	${CP} ${TMPPLIST} ${TMPPLIST}.new
+	${SED} -e "s/libqt2\/.so/libqt2\.a/" -e "s/.*libqt2\.a\.\d\n//" -e "s/libqutil\.so/libqutil.a" \
+		-e "s/.*libqutil\.a\.\d\n//" ${TMPPLIST}.new > ${TMPPLIST}
 .endif
 
 .include <bsd.port.mk>
