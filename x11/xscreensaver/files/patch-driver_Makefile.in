@@ -1,0 +1,11 @@
+--- driver/Makefile.in.orig	Fri May 31 20:43:49 2002
++++ driver/Makefile.in	Wed Jun  5 00:37:42 2002
+@@ -24,7 +24,7 @@
+ 
+ GNOME_DATADIR	= @GNOME_DATADIR@
+ GNOME_CCDIR	= $(GNOME_DATADIR)/control-center/Desktop
+-GNOME_PANELDIR1 = $(GNOME_DATADIR)/gnome/apps/Settings/Desktop
++GNOME_PANELDIR1 = $(GNOME_DATADIR)/apps/Settings/Desktop
+ GNOME_PANELDIR2	= $(GNOME_DATADIR)/applications
+ GNOME_PANELDIR	= @GNOME_PANELDIR@
+ GLADE_DATADIR	= @GLADE_DATADIR@

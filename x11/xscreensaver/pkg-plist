@@ -6,6 +6,7 @@ bin/xscreensaver-getimage
 bin/xscreensaver-getimage-file
 bin/xscreensaver-getimage-video
 bin/xscreensaver-gl-helper
+bin/xscreensaver-hacks/anemone
 bin/xscreensaver-hacks/ant
 bin/xscreensaver-hacks/apollonian
 bin/xscreensaver-hacks/atlantis
@@ -72,6 +73,7 @@ bin/xscreensaver-hacks/kaleidescope
 bin/xscreensaver-hacks/kumppa
 bin/xscreensaver-hacks/lament
 bin/xscreensaver-hacks/laser
+bin/xscreensaver-hacks/lavalite
 bin/xscreensaver-hacks/lightning
 bin/xscreensaver-hacks/lisa
 bin/xscreensaver-hacks/lissie
@@ -98,6 +100,7 @@ bin/xscreensaver-hacks/polyominoes
 bin/xscreensaver-hacks/pulsar
 bin/xscreensaver-hacks/pyro
 bin/xscreensaver-hacks/qix
+bin/xscreensaver-hacks/queens
 bin/xscreensaver-hacks/rd-bomb
 bin/xscreensaver-hacks/ripples
 bin/xscreensaver-hacks/rocks
@@ -114,6 +117,7 @@ bin/xscreensaver-hacks/slip
 bin/xscreensaver-hacks/sonar
 bin/xscreensaver-hacks/speedmine
 bin/xscreensaver-hacks/sphere
+bin/xscreensaver-hacks/spheremonics
 bin/xscreensaver-hacks/spiral
 bin/xscreensaver-hacks/spotlight
 bin/xscreensaver-hacks/sproingies
@@ -135,7 +139,6 @@ bin/xscreensaver-hacks/vidwhacker
 bin/xscreensaver-hacks/vines
 bin/xscreensaver-hacks/wander
 bin/xscreensaver-hacks/webcollage
-bin/xscreensaver-hacks/webcollage-helper
 bin/xscreensaver-hacks/whirlwindwarp
 bin/xscreensaver-hacks/whirlygig
 bin/xscreensaver-hacks/worm
@@ -160,6 +163,7 @@ lib/X11/app-defaults/XScreenSaver
 %%GNOME:%%share/gnome/pixmaps/screensaver-snap.xpm
 %%GNOME:%%share/gnome/pixmaps/xscreensaver.xpm
 share/xscreensaver/config/README
+share/xscreensaver/config/anemone.xml
 share/xscreensaver/config/ant.xml
 share/xscreensaver/config/apollonian.xml
 share/xscreensaver/config/atlantis.xml
@@ -201,6 +205,7 @@ share/xscreensaver/config/flag.xml
 share/xscreensaver/config/flame.xml
 share/xscreensaver/config/flipscreen3d.xml
 share/xscreensaver/config/flow.xml
+share/xscreensaver/config/fluidballs.xml
 share/xscreensaver/config/forest.xml
 share/xscreensaver/config/galaxy.xml
 share/xscreensaver/config/gears.xml
@@ -228,6 +233,7 @@ share/xscreensaver/config/kaleidescope.xml
 share/xscreensaver/config/kumppa.xml
 share/xscreensaver/config/lament.xml
 share/xscreensaver/config/laser.xml
+share/xscreensaver/config/lavalite.xml
 share/xscreensaver/config/lightning.xml
 share/xscreensaver/config/lisa.xml
 share/xscreensaver/config/lissie.xml
@@ -254,6 +260,7 @@ share/xscreensaver/config/polyominoes.xml
 share/xscreensaver/config/pulsar.xml
 share/xscreensaver/config/pyro.xml
 share/xscreensaver/config/qix.xml
+share/xscreensaver/config/queens.xml
 share/xscreensaver/config/rd-bomb.xml
 share/xscreensaver/config/ripples.xml
 share/xscreensaver/config/rocks.xml
@@ -271,6 +278,7 @@ share/xscreensaver/config/sonar.xml
 share/xscreensaver/config/speedmine.xml
 share/xscreensaver/config/sphere.xml
 share/xscreensaver/config/sphereEversion.xml
+share/xscreensaver/config/spheremonics.xml
 share/xscreensaver/config/spiral.xml
 share/xscreensaver/config/spotlight.xml
 share/xscreensaver/config/sproingies.xml

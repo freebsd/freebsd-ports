@@ -1,6 +1,6 @@
---- configure.orig	Mon Mar 18 15:42:35 2002
-+++ configure	Sat Mar 23 23:58:01 2002
-@@ -10728,13 +10728,13 @@
+--- configure.orig	Fri May 31 20:43:47 2002
++++ configure	Wed Jun  5 00:58:27 2002
+@@ -17452,13 +17452,13 @@
  # Now that we know whether we have Gnome, we can decide where the XML
  # config files get installed.
  #
@@ -20,18 +20,4 @@
 +#fi
  
  
-
-@@ -11658,8 +11658,12 @@
  
- # M4 sucks!!
- 
--rpmv=`(rpm -qv xscreensaver) 2>&- | \
-+case `uname` in
-+[Ll]inux)
-+  rpmv=`(rpm -qv xscreensaver) 2>&- | \
-       sed -n 's/^xscreensaver-\([0-9][0-9]*[.][0-9][0-9]*\)-.*$/\1/p'`
-+  ;;
-+esac
- 
- 
- if test \! -z "$rpmv" ; then
