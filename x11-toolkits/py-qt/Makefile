@@ -20,6 +20,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_QT_VER=	3
 USE_PYTHON=	yes
+USE_REINPLACE=	yes
 
 .include <bsd.port.pre.mk>
 
@@ -34,6 +35,18 @@ do-configure:
 		-b ${PREFIX}/bin -d ${PYTHONPREFIX_SITELIBDIR} \
 		-n ${X11BASE}/include -o ${X11BASE}/lib \
 		-v ${PREFIX}/share/sip)
+
+.if ${OSVERSION} < 500000
+post-configure:
+	@${REINPLACE_CMD} -e \
+		's|static_cast<sipQTable::sipEditMode>(QTable::editMode())|\
+				(sipQTable::sipEditMode) QTable::editMode()|' \
+				${WRKSRC}/qttable/sipqttableQTable.cpp
+	@${REINPLACE_CMD} -e \
+		's|static_cast<sipQDataTable::sipEditMode>(QTable::editMode())|\
+				(sipQDataTable::sipEditMode) QTable::editMode()|' \
+				${WRKSRC}/qtsql/sipqtsqlQDataTable.cpp
+.endif
 
 post-install:
 	@${PYTHON_CMD} -c "import pyqtconfig"
