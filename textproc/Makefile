@@ -373,6 +373,7 @@
     SUBDIR += p5-XML-XSH
     SUBDIR += p5-XML-XSLT
     SUBDIR += p5-XML-XUpdate-LibXML
+    SUBDIR += p5-XML-Xerces
     SUBDIR += p5-YAML
     SUBDIR += p5-YAPE-HTML
     SUBDIR += p5-YAPE-Regex
