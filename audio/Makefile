@@ -50,6 +50,7 @@
     SUBDIR += csound-manual
     SUBDIR += cue2toc
     SUBDIR += cymbaline
+    SUBDIR += daapd
     SUBDIR += daaplib
     SUBDIR += dagrab
     SUBDIR += dap

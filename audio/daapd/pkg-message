@@ -1,0 +1,28 @@
+=================================================================
+
+daapd has now been installed.
+
+A sample configuration file has been placed at:
+
+  %%PREFIX%%/etc/daapd.conf.sample
+
+You need to copy this to
+
+  %%PREFIX%%/etc/daapd.conf
+
+and edit it to suit your requirements.
+Documentation is installed at:
+
+  %%DOCSDIR%%/README
+
+Once configured, you can start daapd by running:
+
+  %%PREFIX%%/etc/rc.d/daapd.sh start
+
+daapd keeps its logfile in
+
+  %%LOGDIR%%/daapd.log
+
+Enjoy!
+
+=================================================================

@@ -1,0 +1,15 @@
+--- makefile.orig	Tue Oct 21 22:59:55 2003
++++ makefile	Tue Oct 21 23:00:44 2003
+@@ -2,9 +2,9 @@
+ TARGET = daapd
+ OBJS = daapd.o db.o dboutput.o songcache.o parsemp3.o
+ LIBS = -ldaaplib -lhttpd -lid3tag -lz
+-LIBPATH = -L. -L/usr/local/lib
+-INCPATH = -I.
+-DEPLOY = /usr/local/bin
++LIBPATH = -L. -L%%LOCALBASE%%/lib
++INCPATH = -I. -I%%LOCALBASE%%/include
++DEPLOY = %%PREFIX%%/sbin
+ CFLAGS = -Wall -Wno-multichar
+ 
+ .cc.o:
