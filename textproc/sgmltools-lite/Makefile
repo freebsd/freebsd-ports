@@ -11,7 +11,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sgmltools-lite
 
-MAINTAINER=	benno@netizen.com.au
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generates various output formats from DocBook SGML documents
 
 BUILD_DEPENDS+=	python:${PORTSDIR}/lang/python \
