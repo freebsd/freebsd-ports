@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	pp3
-PORTVERSION=	1.3.2
+PORTVERSION=	1.3.3
 CATEGORIES=	astro
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -20,8 +20,8 @@ RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX
 USE_BZIP2=	yes
 
 do-build:
-	@cd ${WRKSRC} && \
-		${CXX} ${CXXFLAGS} -DPP3DATA=\"${DATADIR}\" pp3.cc -o pp3
+	cd ${WRKSRC} \
+		&& ${CXX} ${CXXFLAGS} -DPP3DATA=\"${DATADIR}\" pp3.cc -o pp3
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pp3 ${PREFIX}/bin
@@ -29,7 +29,8 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/*.dat ${DATADIR}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/pp3.ps ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/WHATSNEW ${DOCSDIR}
 	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/* ${EXAMPLESDIR}
 .endif

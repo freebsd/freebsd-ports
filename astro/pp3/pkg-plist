@@ -1,12 +1,6 @@
 bin/pp3
-%%DATADIR%%/boundaries.dat
-%%DATADIR%%/lines.dat
-%%DATADIR%%/milkyway.dat
-%%DATADIR%%/nebulae.dat
-%%DATADIR%%/stars.dat
-@dirrm %%DATADIR%%
-%%PORTDOCS%%%%DOCSDIR%%/pp3.ps
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/WHATSNEW
 %%PORTDOCS%%%%EXAMPLESDIR%%/Makefile
 %%PORTDOCS%%%%EXAMPLESDIR%%/andromeda.pp3
 %%PORTDOCS%%%%EXAMPLESDIR%%/antlia.pp3
@@ -100,4 +94,11 @@ bin/pp3
 %%PORTDOCS%%%%EXAMPLESDIR%%/wiki-convert-sky-chart.scm
 %%PORTDOCS%%%%EXAMPLESDIR%%/wiki.pp3
 %%PORTDOCS%%%%EXAMPLESDIR%%/wiki.tex
+%%DATADIR%%/boundaries.dat
+%%DATADIR%%/lines.dat
+%%DATADIR%%/milkyway.dat
+%%DATADIR%%/nebulae.dat
+%%DATADIR%%/stars.dat
+@dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
