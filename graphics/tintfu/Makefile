@@ -17,22 +17,24 @@ EXTRACT_SUFX=	.jar
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A GraphViz .dot file editor
 
+RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
+
 NO_WRKSUBDIR=	yes
 EXTRACT_CMD=	${CP}
 EXTRACT_BEFORE_ARGS=	# empty
 EXTRACT_AFTER_ARGS=	.
 NO_BUILD=	yes
-USE_JAVA=	1.3+
+USE_JAVA=	yes
+JAVA_VERSION=	1.3+
 
 PLIST_FILES=	%%JAVAJARDIR%%/${DISTNAME}.jar \
 		bin/tintfu
 
-post-patch:
-	@${SED} -e 's,%%JAVAJARDIR%%,${JAVAJARDIR},' \
-		-e 's,%%DISTNAME%%,${DISTNAME},' ${FILESDIR}/tintfu > ${WRKSRC}/tintfu
+SUB_FILES=	tintfu.sh
+SUB_LIST=	DISTNAME=${DISTNAME}
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/${DISTNAME}.jar ${JAVAJARDIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKDIR}/tintfu.sh ${PREFIX}/bin/tintfu
 
 .include <bsd.port.mk>
