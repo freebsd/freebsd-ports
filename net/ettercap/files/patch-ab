@@ -47,15 +47,36 @@
  fi
  WGET_PATH=$ac_cv_path_WGET_PATH
  
-@@ -6735,7 +6735,6 @@
-          echo "$as_me:$LINENO: checking whether $CC accepts -pthread" >&5
- echo $ECHO_N "checking whether $CC accepts -pthread... $ECHO_C" >&6
-          CFLAGS_store="$CFLAGS"
--         CFLAGS="$CFLAGS -pthread"
-          cat >conftest.$ac_ext <<_ACEOF
+@@ -6676,8 +6676,8 @@
+ fi
+ rm -f conftest.$ac_objext conftest$ac_exeext conftest.$ac_ext
+ if test "$ac_cv_search_pthread_create" = no; then
+-  for ac_lib in pthread; do
+-    LIBS="-l$ac_lib  $ac_func_search_save_LIBS"
++#  for ac_lib in pthread; do
++    LIBS="%%PTHREAD_LIBS%%  $ac_func_search_save_LIBS"
+     cat >conftest.$ac_ext <<_ACEOF
  #line $LINENO "configure"
  /* confdefs.h.  */
-@@ -9656,14 +9655,14 @@
+@@ -6713,7 +6713,7 @@
+   ac_status=$?
+   echo "$as_me:$LINENO: \$? = $ac_status" >&5
+   (exit $ac_status); }; }; then
+-  ac_cv_search_pthread_create="-l$ac_lib"
++  ac_cv_search_pthread_create="%%PTHREAD_LIBS%%"
+ break
+ else
+   echo "$as_me: failed program was:" >&5
+@@ -6721,7 +6721,7 @@
+ 
+ fi
+ rm -f conftest.$ac_objext conftest$ac_exeext conftest.$ac_ext
+-  done
++#  done
+ fi
+ LIBS=$ac_func_search_save_LIBS
+ fi
+@@ -9720,14 +9720,14 @@
        ;;
     no)  echo "$as_me:$LINENO: result: no." >&5
  echo "${ECHO_T}no." >&6
@@ -72,7 +93,7 @@
     ac_cv_ec_debug=no
  
  fi;
-@@ -10085,6 +10084,8 @@
+@@ -10149,6 +10149,8 @@
     if test $ac_cv_ec_ssh = "yes"; then
        CYGWINLIB="$CYGWINLIB cygcrypto.dll cygssl.dll"
        echo "Dissector_ssh" >> ./src/ec_add.def
@@ -81,7 +102,7 @@
     fi
  
  
-@@ -10238,9 +10239,15 @@
+@@ -10302,9 +10304,15 @@
  if test "$ac_cv_ec_plugin" = "yes"; then
  
     PLUGINS=`ls ./plugins | grep -v Make | grep -v CVS | awk ' { printf "%s ", $1 } '`
