@@ -41,16 +41,16 @@ do-install:
 	@${MKDIR} ${PREFIX}/share/ewipe
 	${INSTALL_SCRIPT} ${WRKSRC}/ewipe ${PREFIX}/bin
 .for file in ${TCLLIBS}
-	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/ewipe
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DATADIR}
 .endfor
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/ewipe
+	@${MKDIR} ${DOCSDIR}
 .for file in ${MYPORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/ewipe
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
-	@${MKDIR} ${PREFIX}/share/examples/ewipe
+	@${MKDIR} ${EXAMPLESDIR}
 .for file in ${EXAMPLES}
-	${INSTALL_DATA} ${WRKSRC}/sample/${file} ${PREFIX}/share/examples/ewipe
+	${INSTALL_DATA} ${WRKSRC}/sample/${file} ${EXAMPLESDIR}
 .endfor
 .endif
 

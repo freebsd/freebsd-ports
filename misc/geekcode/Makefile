@@ -17,8 +17,8 @@ COMMENT=	A Geek Code Generator
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/geekcode ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/geekcode
-	${INSTALL_DATA} ${WRKSRC}/geekcode.txt ${PREFIX}/share/doc/geekcode
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/geekcode.txt ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
