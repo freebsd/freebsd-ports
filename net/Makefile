@@ -85,6 +85,7 @@
     SUBDIR += kdetelnet
     SUBDIR += kicq
     SUBDIR += ksamba
+    SUBDIR += lambdamoo
     SUBDIR += ldap
     SUBDIR += ldapsdk
     SUBDIR += libicq
