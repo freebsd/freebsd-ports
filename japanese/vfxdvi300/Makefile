@@ -3,7 +3,7 @@
 # Date created:		8 Nov 1996
 # Whom:			Mita Yoshio <mita@jp.FreeBSD.org>
 #
-# $Id: Makefile,v 1.8 1997/09/14 21:36:18 max Exp $
+# $Id: Makefile,v 1.9 1997/11/10 11:23:08 asami Exp $
 #
 
 DISTNAME=	xdvi-17
@@ -20,7 +20,7 @@ DISTFILES=	xdvi-17.tar.gz xdvi-17miyu.patch-beta6.gz \
 
 MAINTAINER=	mita@jp.FreeBSD.org
 
-LIB_DEPENDS=	VFlib\\.2\\.:${PORTSDIR}/japanese/vflib
+LIB_DEPENDS=	VFlib2\\.23\\.:${PORTSDIR}/japanese/vflib
 RUN_DEPENDS=	${LOCALBASE}/lib/fonts/pk${RESOLUTION}:${PORTSDIR}/print/pkfonts
 
 MANUAL_PACKAGE_BUILD=	RESOLUTION has to be set to 118 240 300 360 400 600
@@ -50,7 +50,7 @@ pre-fetch:
 .elif defined(RESOLUTION_INVALID)
 	@echo "Error: invalid value for RESOLUTION: \"${RESOLUTION}\""
 	@echo "Possible values are: 118, 240, 300 (default), 360, 400 and 600."
-	@/usr/bin/false
+	@${FALSE}
 .endif
 
 pre-patch:
