@@ -77,6 +77,7 @@
     SUBDIR += perlftlib
     SUBDIR += pic2fig
     SUBDIR += pips-sc680_777
+    SUBDIR += pips-sc880
     SUBDIR += pips2200
     SUBDIR += pips3000
     SUBDIR += pips3300
