@@ -6,7 +6,7 @@ CFLAGS += -DDISTRIBUTE -DMSG_STYLE
 PROGRAM = today
 MANPAGE = today.1
 PREFIX = /usr/local
-MANDIR = ${PREFIX}/man/ja_JP.euc/cat1
+MANDIR = ${PREFIX}/man/ja_JP.EUC/cat1
 OBJSMV = birthday.o config.o date.o event.o getfile.o getsb.o \
 	 history.o kansi.o kyureki.o kyusei.o list.o machine.o \
 	 main.o misc.o pager.o rdcalendar.o schedule.o sekki.o sepparam.o
