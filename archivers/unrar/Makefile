@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	unrar
-PORTVERSION=    3.30b4
-PORTEPOCH=	2
+PORTVERSION=    3.30
+PORTEPOCH=      3
 CATEGORIES=	archivers
 MASTER_SITES=	http://files10.rarlab.com/rar/
-DISTNAME=       unrarsrc-3.3.4
+DISTNAME=       unrarsrc-3.3.5
 
 MAINTAINER=	ache@FreeBSD.org
 COMMENT=	Extract, view & test RAR archives
