@@ -1268,6 +1268,8 @@ System/Tools/plser
 System/Tools/set_show_service
 System/Tools/sfparse
 System/share/config.site
+../etc/gdomap_if
+../etc/rc.d/GNUstep.sh
 @exec mkdir -p %D/Local
 @exec mkdir -p %D/Local/Users
 @exec mkdir -p %D/Local/Users/Administrator
@@ -1350,5 +1352,3 @@ System/share/config.site
 @dirrm Local/Users/Administrator
 @dirrm Local/Users
 @dirrm Local
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
