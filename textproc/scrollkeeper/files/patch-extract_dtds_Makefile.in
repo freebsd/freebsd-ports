@@ -1,15 +1,6 @@
---- extract/dtds/Makefile.in.orig	Wed Apr 23 00:40:45 2003
-+++ extract/dtds/Makefile.in	Wed Apr 23 00:41:44 2003
-@@ -138,7 +138,7 @@
- am__include = @am__include@
- am__quote = @am__quote@
- install_sh = @install_sh@
--CATALOG = $(sysconfdir)/xml/catalog
-+CATALOG = %%LOCALBASE%%/share/xml/catalog
- dtdsdir = $(datadir)/xml/scrollkeeper/dtds
- dtds_HEADERS = scrollkeeper-omf.dtd scrollkeeper-cl.dtd
- subdir = extract/dtds
-@@ -335,7 +335,7 @@
+--- extract/dtds/Makefile.in.orig	Sat Dec  6 17:43:49 2003
++++ extract/dtds/Makefile.in	Sat Dec  6 17:43:49 2003
+@@ -408,7 +408,7 @@
  
  # ScrollKeeper OMF Variation DTD V1.0
  install-data-hook:

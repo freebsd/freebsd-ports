@@ -1,6 +1,6 @@
---- configure.orig	Thu Jan 23 01:12:13 2003
-+++ configure	Wed Apr 23 00:40:24 2003
-@@ -7407,6 +7407,7 @@
+--- configure.orig	Sat Dec  6 03:18:20 2003
++++ configure	Sat Dec  6 17:46:38 2003
+@@ -7864,6 +7864,7 @@
  
  # This can be used to rebuild libtool when needed
  LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
@@ -8,21 +8,12 @@
  
  # Always use our own libtool.
  LIBTOOL='$(SHELL) $(top_builddir)/libtool'
-@@ -8795,13 +8796,13 @@
-    *)
- 	echo "$as_me:$LINENO: checking for docbook-dtd412-xml" >&5
- echo $ECHO_N "checking for docbook-dtd412-xml... $ECHO_C" >&6
--	if xmlcatalog /etc/xml/catalog "-//OASIS//DTD DocBook XML V4.1.2//EN" | grep "No entry" >/dev/null ; then
-+	if test ! -f $LOCALBASE/share/xml/docbook/4.1.2/docbook.cat ; then
- 		echo "* ERROR * "
- 		echo " "
--		echo "Couldn't find the DocBook XML V4.1.2 DTD.  Please make sure that you have the docbook-dtd412-xml package installed. If it is installed, the package probably did not register the DTD in the catalog properly. Consult http://scrollkeeper.sourceforge.net/docbook.shtml for more information."
-+		echo "Couldn't find the DocBook XML V4.1.2 DTD.  Please make sure that you have the docbook-dtd412-xml package installed."
- 		echo " "
--		{ { echo "$as_me:$LINENO: error: DocBook XML V4.1.2 DTD not present in /etc/xml/catalog. Make sure docbook-dtd412-xml is installed and registers DTD in catalog." >&5
--echo "$as_me: error: DocBook XML V4.1.2 DTD not present in /etc/xml/catalog. Make sure docbook-dtd412-xml is installed and registers DTD in catalog." >&2;}
-+		{ { echo "$as_me:$LINENO: error: DocBook XML V4.1.2 DTD not present in $LOCALBASE/share/xml. Make sure docbook-dtd412-xml is installed and registers DTD in catalog." >&5
-+echo "$as_me: error: DocBook XML V4.1.2 DTD not present in $LOCALBASE/share/xml. Make sure docbook-dtd412-xml is installed and registers DTD in catalog." >&2;}
-    { (exit 1); exit 1; }; }
- 	fi
- 	echo "$as_me:$LINENO: result: found" >&5
+@@ -8360,7 +8361,7 @@
+ 	echo "$as_me:$LINENO: checking for DocBook XML DTD" >&5
+ echo $ECHO_N "checking for DocBook XML DTD... $ECHO_C" >&6
+ 	db_found=
+-	for vers in 4.2 4.1.2; do
++	for vers in 4.1.2 4.2; do
+ 	   if xmlcatalog $XML_CATALOG "-//OASIS//DTD DocBook XML V$vers//EN" >/dev/null ; then
+ 	      db_found=$vers
+ 	      break
