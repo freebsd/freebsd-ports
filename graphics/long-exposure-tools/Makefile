@@ -8,14 +8,14 @@
 PORTNAME=	long-exposure-tools
 PORTVERSION=	0.1
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.joat.ca/software/long-exposure-tools/
+MASTER_SITES=	http://www.qqqq.ca/cgi-bin/wiki.cgi/download/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	ahze
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simulate the effects of long exposures
 
 LIB_DEPENDS=	netpbm.1:${PORTSDIR}/graphics/netpbm
-
-BROKEN=		Unfetchable
 
 USE_REINPLACE=	yes
 
