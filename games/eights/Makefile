@@ -14,8 +14,8 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Text based card game, the objective is to get rid of all your cards
 
+NO_WRKSUBDIR=	yes
 PLIST_FILES=	bin/eights
-WRKSRC=		${WRKDIR}
 
 do-build:
 	@cd ${WRKSRC} && ${CC} ${CFLAGS} ${PORTNAME}.c -o ${PORTNAME}
