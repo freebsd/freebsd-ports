@@ -1,5 +1,5 @@
 etc/rc.d/imspd.sh
-lib/sasl/imspd.conf
+lib/sasl2/imspd.conf
 sbin/imspd
 %%PORTDOCS%%share/doc/imspd/Setup-instructions
 %%PORTDOCS%%share/doc/imspd/option.registry
