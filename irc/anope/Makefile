@@ -53,6 +53,10 @@ ANOPEUMASK?=	077
 BROKEN=		"Does not build on amd64 (shared libraries must be compiled with -fPIC)"
 .endif
 
+.if ${ARCH} == "ia64"
+BROKEN=		"Does not build on ia64"
+.endif
+
 .if defined(WITH_MYSQL)
 USE_MYSQL=	yes
 .endif
