@@ -142,6 +142,7 @@
     SUBDIR += jamboree
     SUBDIR += juk
     SUBDIR += juke
+    SUBDIR += jxm
     SUBDIR += ksmp3play
     SUBDIR += ladspa
     SUBDIR += lame
