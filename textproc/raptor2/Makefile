@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	raptor
-PORTVERSION=	0.9.9
+PORTVERSION=	0.9.10
 PORTREVISION=	0
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
@@ -21,22 +21,17 @@ LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
 		xmlparse.1:${PORTSDIR}/www/libwww \
 		curl.2:${PORTSDIR}/ftp/curl
 
-LIBWWW_CONFIG=	${LOCALBASE}/bin/libwww-config
-
+USE_GETOPT_LONG=	yes
+USE_GNOME=	gnomehack
 USE_LIBTOOL=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-CONFIGURE_ARGS=	--with-xml-parser=libxml
+CONFIGURE_ARGS=	--with-xml2-config=${LOCALBASE}/bin/xml2-config \
+		--with-curl-config=${LOCALBASE}/bin/curl-config \
+		--with-libwww-config=${LOCALBASE}/bin/libwww-config \
+		--with-pkg-config=${LOCALBASE}/bin/pkg-config \
+		--with-xml-parser=libxml
 INSTALLS_SHLIB=	yes
 
 MAN1=		rapper.1 raptor-config.1
 MAN3=		libraptor.3
-
-CPPFLAGS=	-I${LOCALBASE}/include `${LIBWWW_CONFIG} --cflags`
-LDFLAGS=	-L${LOCALBASE}/lib `${LIBWWW_CONFIG} --libs`
-
-.if !exists(/usr/include/getopt.h)
-LIB_DEPENDS+=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
-LDFLAGS+=	-lgnugetopt
-.endif
 
 .include <bsd.port.mk>
