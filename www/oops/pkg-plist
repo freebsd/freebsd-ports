@@ -31,3 +31,7 @@ libexec/oops/vary_header.so
 @dirrm libexec/oops
 @dirrm etc/oops/tables
 @dirrm etc/oops
+@unexec rmdir %D/oops/DB 2>/dev/null || true
+@unexec rmdir %D/oops/logs 2>/dev/null || true
+@unexec rmdir %D/oops/storages 2>/dev/null || true
+@unexec rmdir %D/oops 2>/dev/null || true
