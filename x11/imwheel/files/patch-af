@@ -1,0 +1,34 @@
+--- imwheelrc.orig	Wed Feb 23 15:14:20 2000
++++ imwheelrc	Wed Feb 23 15:25:12 2000
+@@ -34,6 +34,10 @@
+ None,       Down,	KP_Subtract
+ None,       Up,		KP_Add
+ 
++"^fxtv"
++None,		Down,	KP_Subtract
++None,		Up,	KP_Add
++
+ "^Xman"
+ None,		Down,	F
+ Shift_L,	Down,	3
+@@ -52,14 +56,14 @@
+ None,   	Down,   Shift_L|Page_Down
+ 
+ "^rxvt"
+-Alt_L,  	Up,		Alt_L|Page_Up
+-Alt_L,  	Down,	Alt_L|Page_Down
++None,	  	Up,	Alt_L|Page_Up
++None,  		Down,	Alt_L|Page_Down
+ 
+ "^XTerm"
+-Alt_L,		Up,		Shift_R|Page_Up
+-Alt_L,		Down,	Shift_R|Page_Down
+-Alt_L,		Left,	Control_L|A
+-Alt_L,		Right,	Control_L|E
++None,		Up,	Shift_R|Page_Up
++None,		Down,	Shift_R|Page_Down
++None,		Left,	Control_L|A
++None,		Right,	Control_L|E
+ #Shift_L,	Down,	Shift_L|1
+ 
+ "^Netscape"

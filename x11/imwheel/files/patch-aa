@@ -1,0 +1,46 @@
+--- Makefile.orig	Wed Feb  2 04:24:39 2000
++++ Makefile	Tue Feb 22 08:49:17 2000
+@@ -5,7 +5,7 @@
+ 
+ .PHONY: jax getopt mdetect
+ 
+-CC=gcc
++#CC=gcc
+ 
+ ifeq ("$(shell uname -s)","Linux")
+ SHELL=/bin/sh
+@@ -19,17 +19,17 @@
+ endif
+ else
+ SHELL=/bin/sh
+-INCDIRS=-I/usr/X11R6/include -Ijax -Igetopt
+-LIBDIRS=-L/usr/X11R6/lib
++INCDIRS=-I${X11BASE}/include -Ijax -Igetopt
++LIBDIRS=-L${X11BASE}/lib
+ SUBDIRLIBS=jax/libjax.a getopt/libgetopt.a
+-SUBDIRS=jax getopt mdetect
++SUBDIRS=jax getopt
+ LIBS=-lX11 -lXext -lXtst -lXmu
+ GPM=
+ endif
+ 
+ #FLAGS=-g -DDEBUG -Wall
+ #FLAGS=-g -pg
+-FLAGS=-O6 -s -Wall
++FLAGS=-Wall -DIMWHEELRC="\"${PREFIX}/etc/imwheelrc\""
+ INSTALLDIR=/usr/local/bin
+ # No spaces are allowd before or after the PIDDIR directory
+ #PIDDIR=/var/run#NOTE : this is great for root users... but regular users
+@@ -38,9 +38,9 @@
+                # another setuid root program in your install base.
+ PIDDIR=/tmp#NOTE : This has been voted by a large majority to be the best
+            # place for this file. for the good of all users.
+-CFLAGS=$(FLAGS) $(INCDIRS) -DPIDDIR="\"$(PIDDIR)\"" -DVERSION="\"$(VERSION)\""
+-LDFLAGS=$(FLAGS) $(LIBDIRS) $(LIBS)
+-PROGS= imwheel $(GPM) mdump setimps2 getmdt setmmplus setps2
++CFLAGS+=$(FLAGS) $(INCDIRS) -DPIDDIR="\"$(PIDDIR)\"" -DVERSION="\"$(VERSION)\""
++LDFLAGS+=$(FLAGS) $(LIBDIRS) $(LIBS)
++PROGS= imwheel
+ 
+ all: $(SUBDIRS) $(PROGS)
+ 

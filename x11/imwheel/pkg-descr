@@ -1,0 +1,18 @@
+From the README:
+
+  This is a not so short little ditty that does the simple conversion of mouse
+  button presses into key presses.  By grabbing only the 4th and 5th mouse
+  buttons the program is able to receive input from the Intellimouse series
+  mice.  The wheel button can always be used as middle button, this program
+  does not affect how the XServer reacts towards it.  A mouse with a wheel
+  button is a 3 button mouse, and should be configured as such!
+
+Note that other wheeled mice such as the Logitech MouseMan+ or TrackMan+ are
+Intellimouse compatible and can be used with this as well.  For more
+information on setting up your wheeled mouse to work with X, see either the
+imwheel man page or the FAQ.
+
+WWW: http://jcatki.dhs.org/imwheel/
+
+- John
+jhb@FreeBSD.org
