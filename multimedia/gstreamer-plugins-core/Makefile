@@ -7,7 +7,7 @@
 
 PORTNAME=	gstreamer-plugins-core
 PORTVERSION=	0.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia audio
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -31,6 +31,9 @@ USE_GSTREAMER+=	mad vorbis
 
 # Graphics plugins
 USE_GSTREAMER+=	libpng
+
+# Misc plugins
+USE_GSTREAMER+=	gconf
 
 # Multimedia plugins
 USE_GSTREAMER+=	ffmpeg
