@@ -32,6 +32,8 @@ LIB_DEPENDS=	Xbae:${PORTSDIR}/x11-toolkits/xbae 	\
 		XmHTML.1:${PORTSDIR}/x11-toolkits/xmhtml \
 		pdf.7:${PORTSDIR}/print/pdflib
 
+BROKEN=		"Does not build"
+
 MAN1=		convcal.1 grace.1 xmgrace.1 gracebat.1 grconvert.1
 
 USE_X_PREFIX=	YES
