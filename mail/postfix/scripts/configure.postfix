@@ -1,5 +1,5 @@
 #!/bin/sh
-# $FreeBSD: /tmp/pcvs/ports/mail/postfix/scripts/Attic/configure.postfix,v 1.32 2003-04-15 07:44:41 leeym Exp $
+# $FreeBSD: /tmp/pcvs/ports/mail/postfix/scripts/Attic/configure.postfix,v 1.33 2003-05-12 21:02:53 obraun Exp $
 
 if [ -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc ]; then
 	exit
@@ -23,7 +23,7 @@ NOPCRE		"DISABLE Perl Compatible Regular Expressions" "$status_NOPCRE" \
 SASL		"Cyrus SASLv1 (Simple Authentication and Security Layer)" "$status_SASL" \
 SASL2		"Cyrus SASLv2 (Simple Authentication and Security Layer)" "$status_SASL2" \
 TLS		"SSL and TLS" "$status_TLS" \
-IPv6		"IPv6 support (currently broken)" "$status_IPv6" \
+IPv6		"IPv6 support" "$status_IPv6" \
 IPv6TLS		"IPv6 support with SSL and TLS" "$status_IPv6TLS" \
 DB3		"Berkeley DB3 (required if SASL also built with DB3)" "$status_DB3" \
 DB40		"Berkeley DB4.0 (required if SASL also built with DB4.0)" "$status_DB40" \
@@ -84,7 +84,7 @@ while [ "$1" ]; do
                                 echo "POSTFIX_AUXLIBS+= \${LOCALBASE}/lib/mysql/libmysqlclient.a -lm -lz"
                         fi
                         echo ".if exists(/usr/lib/libkrb.a)"
-                        echo "POSTFIX_AUXLIBS+= -lkrb -lcrypto -ldes -lcom_err"
+                        echo "POSTFIX_AUXLIBS+= -lkrb -lcrypto -lcom_err"
                         echo ".endif"
                         SUB_SASL=""
                         ;;
@@ -103,7 +103,7 @@ while [ "$1" ]; do
 				echo "POSTFIX_AUXLIBS+= \${LOCALBASE}/lib/mysql/libmysqlclient.a -lm -lz"
 			fi
 			echo ".if exists(/usr/lib/libkrb.a)"
-			echo "POSTFIX_AUXLIBS+=	-lkrb -lcrypto -ldes -lcom_err"
+			echo "POSTFIX_AUXLIBS+=	-lkrb -lcrypto -lcom_err"
 			echo ".endif"
 			SUB_SASL=""
 			;;
@@ -112,8 +112,8 @@ while [ "$1" ]; do
 			echo "USE_OPENSSL=	yes"
 			echo "POSTFIX_CCARGS+=	-DHAS_SSL -I\${OPENSSLINC}"
 			echo "POSTFIX_AUXLIBS+=	-L\${OPENSSLLIB} -lssl -lcrypto"
-			echo "DISTFILES+=	\${DISTNAME}.tar.gz pfixtls-0.8.13-2.0.6-0.9.7a.tar.gz"
-			echo "EXTRA_PATCHES+=	\${WRKDIR}/pfixtls-0.8.13-2.0.6-0.9.7a/pfixtls.diff"
+			echo "DISTFILES+=	\${DISTNAME}.tar.gz pfixtls-0.8.13-2.0.9-0.9.7b.tar.gz"
+			echo "EXTRA_PATCHES+=	\${WRKDIR}/pfixtls-0.8.13-2.0.9-0.9.7b/pfixtls.diff"
 			echo "PATCH_STRIP=	-p1"
 			echo "TLS_SUFFIX=	+tls"
 			SUB_TLS=""
@@ -165,10 +165,10 @@ while [ "$1" ]; do
 			echo "LIB_DEPENDS+=	pq.3:\${PORTSDIR}/\${POSTGRESQL_PORT}"
 			echo "POSTFIX_CCARGS+=	-DHAS_PGSQL -I\${LOCALBASE}/include  -I\${LOCALBASE}/pgsql/include"
 			echo "POSTFIX_AUXLIBS+=	-L\${LOCALBASE}/lib -L\${LOCALBASE}/pgsql/lib -lpq -lcrypt"
-			echo "PGSQL_SUFFIX=	+pgsql"
 			echo "PATCH_SITES+=	http://mat.cc/postfix/"
 			echo "PATCHFILES+=	postfix-pg.postfix-2.0.0.2.patch"
 			echo "PATCH_DIST_STRIP= -p1"
+			echo "PGSQL_SUFFIX=	+pgsql"
 			;;
 		OpenLDAP12)
 			echo "BUILD_DEPENDS+=	\${LOCALBASE}/lib/libldap.a:\${PORTSDIR}/net/openldap12"
@@ -193,19 +193,14 @@ while [ "$1" ]; do
 			SUB_TEST=""
 			;;
 		IPv6)
-			if [ `uname -m` != "i386" ]; then
-				/usr/bin/dialog --msgbox "IPv6 patch currently only supported on i386!" 5 60 > /dev/stderr
-				rm -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
-			exit 1
-			fi
 			if [ X$SUB_TLS = "X" ]; then
 				/usr/bin/dialog --msgbox "Select exactly one of the IPv6 and TLS patches" 5 60 > /dev/stderr
 				rm -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
 				exit 1
 			fi
-			echo "PATCH_SITES+=	http://www.cyber-magic.org/~taka/misc/"
-			echo "PATCHFILES+=	postfix-1.1.11+ipv6.patch.gz"
-			echo "PATCH_DIST_STRIP= -p1"
+			echo "PATCH_SITES+=	ftp://ftp.stack.nl/pub/postfix/tls+ipv6/1.14/"
+			echo "PATCHFILES+=	ipv6-1.14-pf-2.0.9.patch.gz"
+			echo "PATCH_DIST_STRIP=	-p1"
 			echo "IPv6_SUFFIX=	+ipv6"
 			echo ""
 			IPv6SELECTED=YES
@@ -220,8 +215,8 @@ while [ "$1" ]; do
 			echo "USE_OPENSSL=	yes"
 			echo "POSTFIX_CCARGS+=	-DHAS_SSL -I\${OPENSSLINC}"
 			echo "POSTFIX_AUXLIBS+=	-L\${OPENSSLLIB} -lssl -lcrypto"
-			echo "PATCH_SITES+=	ftp://ftp.stack.nl/pub/postfix/tls+ipv6/1.13/"
-			echo "PATCHFILES+=	tls+ipv6-1.13-pf-2.0.7.patch.gz"
+			echo "PATCH_SITES+=	ftp://ftp.stack.nl/pub/postfix/tls+ipv6/1.14/"
+			echo "PATCHFILES+=	tls+ipv6-1.14-pf-2.0.9.patch.gz"
 			echo "PATCH_DIST_STRIP=	-p1"
 			echo "TLS_SUFFIX=	+tls+ipv6"
 			SUB_TLS=""
