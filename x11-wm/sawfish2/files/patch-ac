@@ -1,5 +1,5 @@
---- configure.in.orig	Sun Jul  2 18:17:23 2000
-+++ configure.in	Mon Jul  3 13:19:32 2000
+--- configure.in.orig	Sun Jul  9 17:35:13 2000
++++ configure.in	Tue Jul 11 12:54:41 2000
 @@ -57,7 +57,7 @@
  sawfishdir='${datadir}/sawfish'
  lispdir='${sawfishdir}/${version}/lisp'
@@ -9,21 +9,3 @@
  sawfishexecdir='${libexecdir}/sawfish/${version}/${host_type}'
  
  dnl Checks for programs.
-@@ -108,12 +108,12 @@
-   (error
-     (throw 'quit 1)))
- EOF
--if rep ./conftest 2>&5; then
-+#if rep ./conftest 2>&5; then
-   AC_MSG_RESULT([yes])
--else
--  AC_MSG_RESULT([no])
--  AC_MSG_ERROR([You need rep-gtk version ${rep_gtk_version}+])
--fi
-+#else
-+#  AC_MSG_RESULT([no])
-+#  AC_MSG_ERROR([You need rep-gtk version ${rep_gtk_version}+])
-+#fi
- 
- dnl is X available?
- if test "${no_x}" != "yes"; then
