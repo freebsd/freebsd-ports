@@ -88,6 +88,7 @@
     SUBDIR += kde31-apireference
     SUBDIR += kdebase3
     SUBDIR += kdelibs3
+    SUBDIR += kdelibs3-nocups
     SUBDIR += keylaunch
     SUBDIR += libGL
     SUBDIR += libICE
