@@ -121,6 +121,7 @@
     SUBDIR += libimg
     SUBDIR += libjcode
     SUBDIR += libslang
+    SUBDIR += linux_locale
     SUBDIR += lipsf
     SUBDIR += lookup-emacs20
     SUBDIR += lookup-mule
