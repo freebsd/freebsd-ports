@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		openldap
-PORTVERSION=		2.2.6
+PORTVERSION=		2.2.7
 PORTREVISION=		${OPENLDAP_PORTVERSION}
 CATEGORIES=		net databases
 MASTER_SITES=		ftp://ftp.OpenLDAP.org/pub/OpenLDAP/%SUBDIR%/ \
