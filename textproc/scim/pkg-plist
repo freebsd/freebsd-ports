@@ -13,6 +13,7 @@ include/scim-1.0/scim.h
 include/scim-1.0/scim_attribute.h
 include/scim-1.0/scim_backend.h
 include/scim-1.0/scim_bind.h
+include/scim-1.0/scim_compose_key.h
 include/scim-1.0/scim_config_base.h
 include/scim-1.0/scim_config_module.h
 include/scim-1.0/scim_config_path.h
@@ -40,10 +41,10 @@ include/scim-1.0/scim_types.h
 include/scim-1.0/scim_utility.h
 lib/libscim-1.0.a
 lib/libscim-1.0.so
-lib/libscim-1.0.so.3
+lib/libscim-1.0.so.4
 lib/libscim-gtkutils-1.0.a
 lib/libscim-gtkutils-1.0.so
-lib/libscim-gtkutils-1.0.so.3
+lib/libscim-gtkutils-1.0.so.4
 lib/gtk-2.0/immodules/im-scim.so
 lib/scim-1.0/1.0.0/Config/gconf.so
 lib/scim-1.0/1.0.0/Config/simple.so
