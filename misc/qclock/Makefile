@@ -15,9 +15,10 @@ MAINTAINER=	brett@peloton.runet.edu
 
 NO_WRKSUBDIR=	yes
 
-ALL_TARGET=	qclock
+do-build:
+	cd ${WRKSRC}; ${CC} ${CFLAGS} qclock.c -o qclock
 
 do-install:
-	${CP} ${WRKDIR}/qclock ${PREFIX}/bin/qclock
+	${INSTALL_PROGRAM} ${WRKDIR}/qclock ${PREFIX}/bin
 
 .include <bsd.port.mk>
