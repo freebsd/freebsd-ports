@@ -1,3 +1,3 @@
-MD5 (bind-src.tar.gz) = ee0535239e3b254e98d7efe53f4d0fe7
-MD5 (bind-doc.tar.gz) = 54c63ec52daf69d52668299ada2dac68
-MD5 (zh-bind-8.3.1.diff.gz) = cb7ac3e616f17dcf9776ba3e62ab72da
+MD5 (bind-8.3.1/bind-src.tar.gz) = ee0535239e3b254e98d7efe53f4d0fe7
+MD5 (bind-8.3.1/bind-doc.tar.gz) = 54c63ec52daf69d52668299ada2dac68
+MD5 (bind-8.3.1/zh-bind-8.3.1.diff.gz) = cb7ac3e616f17dcf9776ba3e62ab72da
