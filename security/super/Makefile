@@ -4,7 +4,7 @@
 # Date created:			  Fri Mar 18, 1997
 # Whom:				  David O'Brien (obrien@NUXI.com)
 #
-# $Id: Makefile,v 1.3 1998/11/23 09:02:19 asami Exp $
+# $Id: Makefile,v 1.4 1998/12/01 09:50:50 obrien Exp $
 #
 
 DISTNAME=	super-3.11.6
@@ -14,6 +14,10 @@ MASTER_SITES=	ftp://phobos.caltech.edu/users/will/  \
 		ftp://ftp.infodrom.north.de/pub/unix/utilities/super/
 
 MAINTAINER=     obrien@FreeBSD.org
+
+.if ${OSVERSION} < 300000
+BROKEN=	'/usr/include/prot.h parse error'         
+.endif
 
 GNU_CONFIGURE=	yes
 MAN1=		super.1 setuid.1
