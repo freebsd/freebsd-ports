@@ -97,6 +97,7 @@
     SUBDIR += tosha
     SUBDIR += tracker
     SUBDIR += waveplay
+    SUBDIR += wavplay
     SUBDIR += wmcdplay
     SUBDIR += wmmixer
     SUBDIR += wmmp3
