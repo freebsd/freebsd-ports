@@ -1,0 +1,4 @@
+This module subclasses Class::Accessor and Class::Accessor::Fast
+in order to provide lvalue accessor makers.
+
+WWW: http://search.cpan.org/dist/Class-Accessor-Lvalue/
