@@ -285,6 +285,7 @@ amyc		ports/www/amyc
 an		ports/games/an
 analog		ports/www/analog
 ancontrol	src/usr.sbin/ancontrol
+and		ports/sysutils/and
 angband		ports/games/angband
 angst		ports/net/angst
 anjuta		ports/devel/anjuta
