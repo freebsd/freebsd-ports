@@ -3,7 +3,7 @@
 @@ -71,7 +71,9 @@
  CFLAGS+= $(TCL_SHLIB_CFLAGS) $(TCL_DEFS)
  
- CFLAGS+= -I$(SRCDIR)/include -I$(SRCDIR)/backend
+ CFLAGS+= -I$(SRCDIR)/include -I$(SRCDIR)/backend $(PGSQL_INCLUDES)
 -        
 +
 +CFLAGS+= -I$(TCL_INCDIR)

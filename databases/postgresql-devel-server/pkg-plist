@@ -13,6 +13,7 @@ pgsql/bin/ipcclean
 pgsql/bin/pg_ctl
 pgsql/bin/pg_dump
 pgsql/bin/pg_dumpall
+pgsql/bin/pg_encoding
 pgsql/bin/pg_id
 pgsql/bin/pg_passwd
 pgsql/bin/pg_upgrade
@@ -140,12 +141,11 @@ pgsql/lib/local1_template1.bki.source
 pgsql/lib/local1_template1.description
 pgsql/lib/pg_geqo.sample
 pgsql/lib/pg_hba.conf.sample
+pgsql/lib/pg_ident.conf.sample
 pgsql/lib/pg_options.sample
 pgsql/lib/plpgsql.so
 pgsql/lib/postmaster.opts.default.sample
 pgsql/post-install-notes
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 @dirrm pgsql/bin
 @dirrm pgsql/data/base/template1
 @dirrm pgsql/data/base
