@@ -7,7 +7,7 @@
 
 PORTNAME=	qpopper
 PORTVERSION=	4.0.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.qualcomm.com/eudora/servers/unix/popper/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. old
