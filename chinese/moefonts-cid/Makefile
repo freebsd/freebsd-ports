@@ -31,6 +31,6 @@ do-install:
 		${FILESDIR}/MOESung-Regular-ETen-B5-H.gsf \
 		${FILESDIR}/MOESung-Regular-ETen-B5-V.gsf \
 		${PREFIX}/share/ghostscript/fonts
-	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	@${SETENV} ${SCRIPTS_ENV} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>

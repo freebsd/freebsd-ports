@@ -1,7 +1,7 @@
 #!/bin/sh
 
-GSVER=7.06
-GSDIR=${PKG_PREFIX}/share/ghostscript
+GSVER=`cd ${PORTSDIR}/print/ghostscript-gnu && make -V GS_VERSION`
+GSDIR=${PREFIX}/share/ghostscript
 FONTMAP=${GSDIR}/${GSVER}/lib/Fontmap.GS
 
 # Run just once.
