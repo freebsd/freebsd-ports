@@ -6,7 +6,7 @@
 # $FreeBSD$
 
 DISTNAME=	ftnchek
-PKGNAME=	ftnchek-2.11.0
+PKGNAME=	ftnchek-2.11.2
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.netlib.org/fortran/
 EXTRACT_SUFX=	.tgz
