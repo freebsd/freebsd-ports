@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-RUN_DEPENDS=	${PREFIX}/share/emacs/site-lisp/bitmap/bitmap.el:${PORTSDIR}/editors/bitmap-emacs20 \
+RUN_DEPENDS=	${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/bitmap/bitmap.el:${PORTSDIR}/editors/bitmap-emacs20 \
 
 MASTERDIR=	${.CURDIR}/../lookup
 EMACS_PORT_NAME=	emacs20
