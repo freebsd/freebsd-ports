@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	darcs
-PORTVERSION=	0.9.8
-PORTREVISION=	1
+PORTVERSION=	0.9.9
 CATEGORIES=	devel
 MASTER_SITES=	http://www.abridgegame.org/darcs/
 
@@ -19,7 +18,7 @@ LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
 
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
-ALL_TARGET=	darcs darcs.1
+ALL_TARGET=	darcs darcs.1 darcs-patcher darcs-createrepo
 
 GHC_VERSION=	`${PREFIX}/bin/ghc --version 2>&1 | \
 			${SED} 's/^.*version[ ]*\([0-9.]*\).*/\1/'`
@@ -61,6 +60,8 @@ do-configure:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/darcs ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/darcs.1 ${MANPREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/darcs-patcher ${PREFIX}/libexec
+	${INSTALL_PROGRAM} ${WRKSRC}/darcs-createrepo ${PREFIX}/bin
 .if defined(WITH_CGI)
 	${MKDIR} ${PREFIX}/${CGIDIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/darcs_cgi ${PREFIX}/${CGIDIR}/darcs
