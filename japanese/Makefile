@@ -241,6 +241,7 @@
     SUBDIR += skkserv
     SUBDIR += slrn
     SUBDIR += srd-fpw
+    SUBDIR += srd-fpw-package
     SUBDIR += tcl76
     SUBDIR += tcl80
     SUBDIR += tcsh
