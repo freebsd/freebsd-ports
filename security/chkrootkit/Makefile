@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	chkrootkit
-PORTVERSION=	0.30
+PORTVERSION=	0.31
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.pangeia.com.br/pub/seg/pac/
-DISTNAME=	${PORTNAME}
 
 MAINTAINER=	cordeiro@iqm.unicamp.br
 
