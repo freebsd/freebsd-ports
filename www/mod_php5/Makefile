@@ -3,11 +3,11 @@
 # Date created:         Fri Aug 25 16:42:36 CDT 1995
 # Whom:                 erich@rrnet.com
 #
-# $Id: Makefile,v 1.7 1996/02/07 03:15:26 jfieber Exp $
+# $Id: Makefile,v 1.8 1996/02/22 21:54:58 ache Exp $
 #
 
-DISTNAME=       apache_1.0.3
-PKGNAME=        apache-1.0.3
+DISTNAME=       apache_1.0.5
+PKGNAME=        apache-1.0.5
 CATEGORIES+=	www
 MASTER_SITES=	ftp://www.apache.org/apache/dist/
 MASTER_SITES+=	ftp://gd.tuwien.ac.at/pub/infosys/servers/http/apache/dist/
