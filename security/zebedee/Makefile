@@ -6,17 +6,20 @@
 #
 
 PORTNAME=	zebedee
-PORTVERSION=	2.2.1
+PORTVERSION=	2.2.2
 CATEGORIES=	security
 MASTER_SITES=	http://www.winton.org.uk/zebedee/ \
 		http://www.hewgill.com/zebedee/
 
 MAINTAINER=	greg@hewgill.com
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libbz2.a:${PORTSDIR}/archivers/bzip2
+LIB_DEPENDS=	bz2.1:${PORTSDIR}/archivers/bzip2
 
 USE_OPENSSL=	YES
 USE_PERL5=	yes
+
+MAKE_ENV+=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
+		PTHREAD_LIBS=${PTHREAD_LIBS}
 
 MAN1=		zebedee.1 ftpgw.tcl.1
 
@@ -34,11 +37,13 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/client1.key ${PREFIX}/share/examples/zebedee
 	${INSTALL_DATA} ${WRKSRC}/client2.key ${PREFIX}/share/examples/zebedee
 	${INSTALL_DATA} ${WRKSRC}/clients.id ${PREFIX}/share/examples/zebedee
-	${MKDIR} ${PREFIX}/share/doc/zebedee
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${PREFIX}/share/doc/zebedee
 	${INSTALL_DATA} ${WRKSRC}/README.txt ${PREFIX}/share/doc/zebedee
 	${INSTALL_DATA} ${WRKSRC}/LICENCE.txt ${PREFIX}/share/doc/zebedee
 	${INSTALL_DATA} ${WRKSRC}/CHANGES.txt ${PREFIX}/share/doc/zebedee
 	${INSTALL_DATA} ${WRKSRC}/zebedee.html ${PREFIX}/share/doc/zebedee
 	${INSTALL_DATA} ${WRKSRC}/ftpgw.tcl.html ${PREFIX}/share/doc/zebedee
+.endif
 
 .include <bsd.port.mk>
