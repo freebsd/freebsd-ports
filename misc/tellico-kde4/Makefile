@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bookcase
-PORTVERSION=	0.6.6
+PORTVERSION=	0.7.1
 CATEGORIES=	misc kde
 MASTER_SITES=	http://www.periapsis.org/bookcase/download/
 
@@ -15,7 +15,6 @@ COMMENT=	Personal book collection manager for KDE
 
 USE_KDELIBS_VER=3
 GNU_CONFIGURE=	yes
-
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=--build=${ARCH}-portbld-freebsd${OSREL}
 
 .include <bsd.port.mk>
