@@ -3319,6 +3319,7 @@ libsocketcpp	ports/net/libsocketcpp
 libss		src/lib/libss
 libstand	src/lib/libstand
 libstdc++	src/gnu/lib/libstdc++
+libstocks	ports/devel/libstocks
 libstrfunc	ports/devel/libstrfunc
 libsvm		ports/science/libsvm
 libsx		ports/x11/libsx
