@@ -16,7 +16,6 @@ MASTER_SITE_SUBDIR=	gcc/releases/gcc-${GCC_REV}
 DISTFILES=	gcc-core-${GCC_REV}${EXTRACT_SUFX} \
 		gcc-g++-${GCC_REV}${EXTRACT_SUFX} \
 		gcc-g77-${GCC_REV}${EXTRACT_SUFX} \
-		gcc-java-${GCC_REV}${EXTRACT_SUFX} \
 		gcc-objc-${GCC_REV}${EXTRACT_SUFX}
 
 MAINTAINER=	obrien@FreeBSD.org
@@ -111,7 +110,7 @@ post-install:
 #.if defined(WANT_SHAREDLIBS)
 #	${MV} -f ${PREFIX}/lib/libstdc++.so* ${TARGLIB}
 #.endif
-.for info in cpp cppinternals g77 gcc gcj
+.for info in cpp cppinternals g77 gcc
 	install-info ${PREFIX}/info/${info}.info ${PREFIX}/info/dir
 .endfor
 	cd ${PREFIX} ;\
