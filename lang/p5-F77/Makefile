@@ -1,0 +1,36 @@
+# New ports collection makefile for:	p5-ExtUtils-F77
+# Version required:			1.12
+# Date created:				December 7 1999
+# Whom:	      				jmz
+#
+# $FreeBSD$
+#
+
+DISTNAME=	ExtUtils-F77-1.12
+PKGNAME=	p5-ExtUtils-F77-1.12
+CATEGORIES=	lang perl5
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=	ExtUtils
+
+MAINTAINER=	jmz@FreeBSD.org
+
+USE_PERL5=	YES
+
+MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
+MAN3=		ExtUtils::F77.3
+
+.include <bsd.port.pre.mk>
+.if ${OSVERSION} >= 400005
+F2CLIB= -lg2c
+.else
+F2CLIB= -lf2c
+.endif
+
+post-patch:
+	@(cd ${WRKSRC}; ${MV} -f F77.pm F77.pm~; \
+	${PERL5} -e  'while(<>){s/(.*Freebsd.*lib )(-lf2c)(.*)/$$1 ${F2CLIB} $$3/;print $$_;}' < F77.pm~ > F77.pm)
+
+do-configure:
+		@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL
+
+.include <bsd.port.mk>
