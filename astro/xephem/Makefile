@@ -27,11 +27,18 @@ LIBLILXMLSRC=	${WRKDIR}/${DISTNAME}/liblilxml
 
 NO_CDROM=	Personal use only
 
+# XXX needs to be the same as DISTFILES
+XEPHEMSRC=	${PORTNAME}-${PORTVERSION}.tar.gz
+
 .include <bsd.port.pre.mk>
 
-.for file in ${DISTFILES}
+.for file in ${XEPHEMSRC}
 .if !exists(${DISTDIR}/${file})
-IGNORE=You must manually fetch ${file} from http://www.clearskyinstitute.com/xephem/, place it in ${DISTDIR} and then run make again.
+ECHO_MSG=	/usr/bin/printf
+IGNORE=:\n\
+Because of licensing restrictions, you must manually fetch\n\
+${file} from http://www.clearskyinstitute.com/xephem/,\n\
+place it in ${DISTDIR} and then run make again.\n
 .endif
 .endfor
 
