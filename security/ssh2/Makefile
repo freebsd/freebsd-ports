@@ -3,7 +3,7 @@
 # Date created:		30 Jul 1995
 # Whom:			torstenb@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.19 1996/03/23 23:36:32 ache Exp $
+# $Id: Makefile,v 1.20 1996/03/24 23:04:17 ache Exp $
 #
 # Maximal ssh package requires YES values for
 # USE_PERL, USE_WISH, USE_TCPWRAP
@@ -27,7 +27,7 @@ MASTER_SITES=	\
 	ftp://isdec.vc.cvut.cz/pub/security/unimi/crypt/applied-crypto/
 .endif
 
-NO_PACKAGE=	YES
+RESTRICTED=	"Crypto; export-controlled"
 IS_INTERACTIVE=	YES
 
 GNU_CONFIGURE=	YES
