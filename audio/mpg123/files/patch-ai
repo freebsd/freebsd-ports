@@ -1,5 +1,5 @@
 --- audio.c.orig	Tue Apr  6 17:53:05 1999
-+++ audio.c	Sat Jan 31 13:28:57 2004
++++ audio.c	Sat Jan 31 15:56:38 2004
 @@ -75,7 +75,11 @@
  		return;
  	}
@@ -12,7 +12,7 @@
  	if(param.force_rate) {
  		rates[NUM_RATES-1] = param.force_rate;
  		k1 = NUM_RATES;
-@@ -86,6 +90,9 @@
+@@ -86,8 +90,15 @@
  		exit(1);
  	}
  
@@ -20,9 +20,16 @@
 +	if(param.force_rate)
 +#endif
  	for(i=0;i<NUM_CHANNELS;i++) {
- 		for(j=0;j<NUM_RATES;j++) {
+-		for(j=0;j<NUM_RATES;j++) {
++#ifdef WITH_FREEBSD_DSP_ONLY
++		for(j=0;j<NUM_RATES;j++)
++		j = NUM_RATES - 1;
++#endif
++		{
  			ai1.channels = channels[i];
-@@ -96,6 +103,8 @@
+ 			ai1.rate = rates[j];
+ 			fmts = audio_get_formats(&ai1);
+@@ -96,6 +107,8 @@
  			for(k=0;k<NUM_ENCODINGS;k++) {
  				if((fmts & encodings[k]) == encodings[k])
  					capabilities[i][k][j] = 1;
