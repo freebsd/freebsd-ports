@@ -22,6 +22,7 @@ INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--without-included-gettext
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+CFLAGS+=	-fPIC
 
 MAN1=		recode.1
 INFO=		recode
