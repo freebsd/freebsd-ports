@@ -426,6 +426,7 @@
     SUBDIR += xmms-infinity
     SUBDIR += xmms-iris
     SUBDIR += xmms-jess
+    SUBDIR += xmms-nebulus
     SUBDIR += xmms-paranormal
     SUBDIR += xmms-xvs
     SUBDIR += xmorph
