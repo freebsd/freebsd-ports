@@ -97,5 +97,20 @@ post-install:
 	test -e ${PREFIX}/bin/rgview || (cd ${PREFIX}/bin ; ${LN} -s vim rgview)
 	@${RM} -f ${PREFIX}/man/man1/etags.1
 	@${MV} ${PREFIX}/man/man1/ctags.1 ${PREFIX}/man/man1/ectags.1
+	cd ${PREFIX} ;\
+	    find share/vim/${DISTNAME:S/-//:S/.//}/ -type f -o -type l	\
+	    	| sort \
+	    	>${WRKDIR}/PLIST.share-vim
+	cd ${PREFIX} ;\
+	    find share/vim/${DISTNAME:S/-//:S/.//}/ -type d \
+	    	| sort -r | ${SED} -e 's/^/@dirrm /g' \
+		>>${WRKDIR}/PLIST.share-vim
+	${ECHO} "r ${TMPPLIST}"			> ${WRKDIR}/ex.script
+	${ECHO} "/Insert PLIST.share-vim"	>> ${WRKDIR}/ex.script
+	${ECHO} "d"				>> ${WRKDIR}/ex.script
+	${ECHO} "r ${WRKDIR}/PLIST.share-vim"	>> ${WRKDIR}/ex.script
+	${ECHO} "x!"				>> ${WRKDIR}/ex.script
+	${CP} -p ${TMPPLIST} ${TMPPLIST}.pre-share-vim
+	cd ${WRKDIR} ; ex < ex.script
 
 .include <bsd.port.post.mk>
