@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	liveMedia
-PORTVERSION=	2004.02.19
+PORTVERSION=	2004.02.20a
 PORTEPOCH=	1
 CATEGORIES=	net devel
 MASTER_SITES=	http://www.LIVE.COM/liveMedia/public/
@@ -144,11 +144,6 @@ liveMedia=		\
 
 post-extract:
 	@${CP} ${FILESDIR}/config.fixed-${OPSYS:L} ${WRKSRC}/
-
-post-patch:
-	${REINPLACE_CMD} 's/strstream\.h/sstream/' \
-		${WRKSRC}/groupsock/Groupsock.cpp \
-		${WRKSRC}/groupsock/NetInterface.cpp
 
 post-build:
 	@${RM} -f ${PLIST}
