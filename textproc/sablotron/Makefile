@@ -7,8 +7,12 @@
 
 PORTNAME=	Sablot
 PORTVERSION=	0.65
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://download.gingerall.cz/sablot/
+
+PATCH_SITES=	http://www.gingerall.com/download/
+PATCHFILES=	Sablot-0.65.1.patch
 
 MAINTAINER=	skv@protey.ru
 
