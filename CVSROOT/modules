@@ -8202,6 +8202,7 @@ qconfirm	ports/mail/qconfirm
 qcread		ports/graphics/qcread
 qdbm		ports/databases/qdbm
 qdecoder	ports/www/qdecoder
+qdvdauthor	ports/multimedia/qdvdauthor
 qemacs		ports/editors/qemacs
 qextmdi		ports/devel/qextmdi
 qfsm		ports/cad/qfsm
