@@ -6,18 +6,19 @@
 #
 
 PORTNAME=	gnomecore
-PORTVERSION=	1.4.0.6
-PORTREVISION=	2
+PORTVERSION=	1.4.0.7
 CATEGORIES?=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/gnome-core
 DISTNAME=	gnome-core-${PORTVERSION}
+DIST_SUBDIR=	gnome
 
 MAINTAINER?=	gnome@FreeBSD.org
 
 LIB_DEPENDS=	gtkhtml.21:${PORTSDIR}/www/gtkhtml
 RUN_DEPENDS=	${X11BASE}/share/gnome/sounds/login.wav:${PORTSDIR}/audio/gnomeaudio
 
+USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOMECTRL=	yes
@@ -34,7 +35,9 @@ MAN1=		deskguide_applet.1 gmenu.1 gnome-about.1 gnome-convert.1 \
 		gnome-hint.1 gnome-info2html.1 gnome-man2html.1 \
 		gnome-panel-add-launcher.1 gnome-panel-properties-capplet.1 \
 		gnome-session.1 gnome-terminal.1 gnome-wm.1 panel.1 \
-		save-session.1 tasklist_applet.1
+		save-session.1 tasklist_applet.1 gnome-libice-check.1 \
+		gnome-login-check.1 gnome-smproxy.1 session-properties.1 \
+		session-properties-capplet.1 
 MAN5=		default.session.5
 
 pre-patch:
