@@ -1,170 +1,55 @@
---- gcc/c-format.c.orig	Sat Jan 13 15:29:57 2001
-+++ gcc/c-format.c	Wed Feb 14 03:47:34 2001
-@@ -75,13 +75,16 @@
-    last.  */
- enum format_type { printf_format_type, scanf_format_type,
- 		   strftime_format_type, strfmon_format_type,
-+		   printf0_format_type,
- 		   format_type_error };
- 
- static enum format_type decode_format_type	PARAMS ((const char *));
- static void record_function_format	PARAMS ((tree, tree, enum format_type,
--						 int, int));
-+						 int, int, int));
- static void record_international_format	PARAMS ((tree, tree, int));
- 
-+inline static int get_null_fmt_ok	PARAMS ((enum format_type));
-+
- /* Handle the format attribute (with arguments ARGS) attached to the decl
-    DECL.  It is already verified that DECL is a decl and ARGS contains
-    exactly three arguments.  */
-@@ -99,6 +102,7 @@
-   enum format_type format_type;
-   tree argument;
-   unsigned int arg_num;
-+  int null_format_ok;
- 
-   if (TREE_CODE (decl) != FUNCTION_DECL)
-     {
-@@ -109,7 +113,7 @@
- 
-   if (TREE_CODE (format_type_id) != IDENTIFIER_NODE)
-     {
--      error ("unrecognized format specifier");
-+      error_with_decl (decl, "unrecognized format specifier");
-       return;
-     }
-   else
-@@ -117,6 +121,7 @@
-       const char *p = IDENTIFIER_POINTER (format_type_id);
- 
-       format_type = decode_format_type (p);
-+      null_format_ok = get_null_fmt_ok (format_type);
- 
-       if (format_type == format_type_error)
- 	{
-@@ -195,7 +200,8 @@
-     }
- 
-   record_function_format (DECL_NAME (decl), DECL_ASSEMBLER_NAME (decl),
--			  format_type, format_num, first_arg_num);
-+			  format_type, format_num, first_arg_num,
-+			  null_format_ok);
- }
- 
- 
-@@ -276,6 +282,7 @@
+--- gcc/c-format.c.orig	Sun Nov 25 10:54:11 2001
++++ gcc/c-format.c	Sat Feb  2 19:04:24 2002
+@@ -82,12 +82,15 @@
    enum format_type format_type;	/* type of format (printf, scanf, etc.) */
-   int format_num;		/* number of format argument */
-   int first_arg_num;		/* number of first arg (zero for varargs) */
-+  int null_format_ok;		/* TRUE if the format string may be NULL */
+   unsigned HOST_WIDE_INT format_num;	/* number of format argument */
+   unsigned HOST_WIDE_INT first_arg_num;	/* number of first arg (zero for varargs) */
++  /* int null_format_ok; */	/* TRUE if the format string may be NULL */
  } function_format_info;
  
- static function_format_info *function_format_list = NULL;
-@@ -309,44 +316,44 @@
-     {
-       /* Functions from ISO/IEC 9899:1990.  */
-       record_function_format (get_identifier ("printf"), NULL_TREE,
--			      printf_format_type, 1, 2);
-+			      printf_format_type, 1, 2, 0);
-       record_function_format (get_identifier ("__builtin_printf"), NULL_TREE,
--			      printf_format_type, 1, 2);
-+			      printf_format_type, 1, 2, 0);
-       record_function_format (get_identifier ("fprintf"), NULL_TREE,
--			      printf_format_type, 2, 3);
-+			      printf_format_type, 2, 3, 0);
-       record_function_format (get_identifier ("__builtin_fprintf"), NULL_TREE,
--			      printf_format_type, 2, 3);
-+			      printf_format_type, 2, 3, 0);
-       record_function_format (get_identifier ("sprintf"), NULL_TREE,
--			      printf_format_type, 2, 3);
-+			      printf_format_type, 2, 3, 0);
-       record_function_format (get_identifier ("scanf"), NULL_TREE,
--			      scanf_format_type, 1, 2);
-+			      scanf_format_type, 1, 2, 0);
-       record_function_format (get_identifier ("fscanf"), NULL_TREE,
--			      scanf_format_type, 2, 3);
-+			      scanf_format_type, 2, 3, 0);
-       record_function_format (get_identifier ("sscanf"), NULL_TREE,
--			      scanf_format_type, 2, 3);
-+			      scanf_format_type, 2, 3, 0);
-       record_function_format (get_identifier ("vprintf"), NULL_TREE,
--			      printf_format_type, 1, 0);
-+			      printf_format_type, 1, 0, 0);
-       record_function_format (get_identifier ("vfprintf"), NULL_TREE,
--			      printf_format_type, 2, 0);
-+			      printf_format_type, 2, 0, 0);
-       record_function_format (get_identifier ("vsprintf"), NULL_TREE,
--			      printf_format_type, 2, 0);
-+			      printf_format_type, 2, 0, 0);
-       record_function_format (get_identifier ("strftime"), NULL_TREE,
--			      strftime_format_type, 3, 0);
-+			      strftime_format_type, 3, 0, 0);
-     }
+ static bool decode_format_attr		PARAMS ((tree,
+ 						 function_format_info *, int));
+ static enum format_type decode_format_type	PARAMS ((const char *));
  
-   if (flag_hosted && flag_isoc99)
-     {
-       /* ISO C99 adds the snprintf and vscanf family functions.  */
-       record_function_format (get_identifier ("snprintf"), NULL_TREE,
--			      printf_format_type, 3, 4);
-+			      printf_format_type, 3, 4, 0);
-       record_function_format (get_identifier ("vsnprintf"), NULL_TREE,
--			      printf_format_type, 3, 0);
-+			      printf_format_type, 3, 0, 0);
-       record_function_format (get_identifier ("vscanf"), NULL_TREE,
--			      scanf_format_type, 1, 0);
-+			      scanf_format_type, 1, 0, 0);
-       record_function_format (get_identifier ("vfscanf"), NULL_TREE,
--			      scanf_format_type, 2, 0);
-+			      scanf_format_type, 2, 0, 0);
-       record_function_format (get_identifier ("vsscanf"), NULL_TREE,
--			      scanf_format_type, 2, 0);
-+			      scanf_format_type, 2, 0, 0);
-     }
- 
-   if (flag_hosted && flag_noniso_default_format_attributes)
-@@ -357,7 +364,7 @@
-       record_international_format (get_identifier ("dcgettext"), NULL_TREE, 2);
-       /* X/Open strfmon function.  */
-       record_function_format (get_identifier ("strfmon"), NULL_TREE,
--			      strfmon_format_type, 3, 4);
-+			      strfmon_format_type, 3, 4, 0);
-     }
- }
- 
-@@ -372,12 +379,13 @@
- 
- static void
- record_function_format (name, assembler_name, format_type,
--			format_num, first_arg_num)
-+			format_num, first_arg_num, null_format_ok)
-       tree name;
-       tree assembler_name;
-       enum format_type format_type;
-       int format_num;
-       int first_arg_num;
-+      int null_format_ok;
++/* inline static int get_null_fmt_ok	PARAMS ((enum format_type)); */
++
+ /* Handle a "format" attribute; arguments as in
+    struct attribute_spec.handler.  */
+ tree
+@@ -97,6 +100,7 @@
+      tree args;
+      int flags;
+      bool *no_add_attrs;
++     /* int null_format_ok; */
  {
-   function_format_info *info;
+   tree type = *node;
+   function_format_info info;
+@@ -257,6 +261,7 @@
+       const char *p = IDENTIFIER_POINTER (format_type_id);
  
-@@ -401,6 +409,7 @@
-   info->format_type = format_type;
-   info->format_num = format_num;
-   info->first_arg_num = first_arg_num;
-+  info->null_format_ok = null_format_ok;
- }
+       info->format_type = decode_format_type (p);
++      /* info->null_format_ok = get_null_fmt_ok (format_type); */
  
- /* Record information for the names of function that modify the format
-@@ -677,6 +686,8 @@
+       if (info->format_type == format_type_error)
+ 	{
+@@ -292,6 +297,7 @@
+ 
+   info->format_num = TREE_INT_CST_LOW (format_num_expr);
+   info->first_arg_num = TREE_INT_CST_LOW (first_arg_num_expr);
++  /* info->null_format_ok = TREE_INT_CST_LOW (null_format_ok); */
+   if (info->first_arg_num != 0 && info->first_arg_num <= info->format_num)
+     {
+       if (validated_p)
+@@ -540,6 +546,8 @@
    /* Pointer to type of argument expected if '*' is used for a precision,
       or NULL if '*' not used for precisions.  */
-   tree *precision_type;
+   tree *const precision_type;
 +  /* Needed for FreeBSD kernel and the printf0() printf-like function.  */
-+  int null_format_ok;
++  /* int null_format_ok; */
  } format_kind_info;
  
  
-@@ -902,6 +913,20 @@
+@@ -765,6 +773,20 @@
  
  static const format_char_info print_char_table[] =
  {
@@ -185,65 +70,70 @@
    /* C89 conversion specifiers.  */
    { "di",  0, STD_C89, { T89_I,   T99_SC,  T89_S,   T89_L,   T9L_LL,  TEX_LL,  T99_SST, T99_PD,  T99_IM  }, "-wp0 +'I", "i"  },
    { "oxX", 0, STD_C89, { T89_UI,  T99_UC,  T89_US,  T89_UL,  T9L_ULL, TEX_ULL, T99_ST,  T99_UPD, T99_UIM }, "-wp0#",    "i"  },
-@@ -985,22 +1010,33 @@
+@@ -848,23 +870,36 @@
      FMT_FLAG_ARG_CONVERT|FMT_FLAG_DOLLAR_MULTIPLE|FMT_FLAG_USE_DOLLAR|FMT_FLAG_EMPTY_PREC_OK,
      'w', 0, 'p', 0, 'L',
      &integer_type_node, &integer_type_node
-+    ,0
++    /* ,0 */
    },
    { "scanf",    scanf_length_specs,   scan_char_table,  "*'I", NULL, 
      scanf_flag_specs, scanf_flag_pairs,
-     FMT_FLAG_ARG_CONVERT|FMT_FLAG_SCANF_A_KLUDGE|FMT_FLAG_USE_DOLLAR|FMT_FLAG_ZERO_WIDTH_BAD,
+     FMT_FLAG_ARG_CONVERT|FMT_FLAG_SCANF_A_KLUDGE|FMT_FLAG_USE_DOLLAR|FMT_FLAG_ZERO_WIDTH_BAD|FMT_FLAG_DOLLAR_GAP_POINTER_OK,
      'w', 0, 0, '*', 'L',
      NULL, NULL
-+    ,0
++    /* ,0 */
    },
    { "strftime", NULL,                 time_char_table,  "_-0^#", "EO",
      strftime_flag_specs, strftime_flag_pairs,
      FMT_FLAG_FANCY_PERCENT_OK, 'w', 0, 0, 0, 0,
      NULL, NULL
-+    ,0
++    /* ,0 */
    },
    { "strfmon",  strfmon_length_specs, monetary_char_table, "=^+(!-", NULL, 
      strfmon_flag_specs, strfmon_flag_pairs,
      FMT_FLAG_ARG_CONVERT, 'w', '#', 'p', 0, 'L',
      NULL, NULL
-+    ,0
-+  },
++    /* ,0 */
+   }
++  /*
 +  { "printf0",   printf_length_specs,  print_char_table, " +#0-'I", NULL, 
 +    printf_flag_specs, printf_flag_pairs,
 +    FMT_FLAG_ARG_CONVERT|FMT_FLAG_DOLLAR_MULTIPLE|FMT_FLAG_USE_DOLLAR|FMT_FLAG_EMPTY_PREC_OK,
 +    'w', 0, 'p', 0, 'L',
 +    &integer_type_node, &integer_type_node
 +    ,1
-   }
++  },
++  */
  };
  
-@@ -1053,6 +1089,14 @@
+ 
+@@ -917,6 +952,16 @@
  
  static void check_format_types	PARAMS ((int *, format_wanted_type *));
  
 +
++/*
 +inline static int get_null_fmt_ok (fmttype)
 +	enum format_type fmttype;
 +{
 +  return format_types[(int)fmttype].null_format_ok;
 +}
++*/
 +
 +
  /* Decode a format type from a string, returning the type, or
     format_type_error if not valid, in which case the caller should print an
     error message.  */
-@@ -1568,7 +1612,7 @@
+@@ -1475,7 +1520,7 @@
  	 specially if info == NULL and add a res->number_null entry for
  	 that case, or maybe add a function pointer to be called at
  	 the end instead of hardcoding check_format_info_main.  */
 -      status_warning (status, "null format string");
-+      if (!info->null_format_ok) status_warning (status, "null format string");
++      /*if (!info->null_format_ok)*/ status_warning (status, "null format string");
  
        /* Skip to first argument to check, so we can see if this format
  	 has any arguments (it shouldn't).  */
-@@ -1764,6 +1808,54 @@
+@@ -1710,6 +1755,54 @@
  	      main_arg_num = opnum + info->first_arg_num - 1;
  	    }
  	}
@@ -298,7 +188,7 @@
  
        /* Read any format flags, but do not yet validate them beyond removing
  	 duplicates, since in general validation depends on the rest of
-@@ -2166,7 +2258,7 @@
+@@ -2113,7 +2206,7 @@
  	  else if (strchr (fci->flags2, '2') != 0)
  	    y2k_level = 2;
  	  if (y2k_level == 3)

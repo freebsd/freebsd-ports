@@ -1,32 +1,52 @@
---- gcc/config/freebsd.h.orig	Mon Nov 22 22:17:32 1999
-+++ gcc/config/freebsd.h	Fri Feb  4 05:29:31 2000
-@@ -48,13 +48,26 @@
- #undef WORD_SWITCH_TAKES_ARG
- #define WORD_SWITCH_TAKES_ARG(STR) (FBSD_WORD_SWITCH_TAKES_ARG(STR))
+--- gcc/config/freebsd-spec.h.orig	Tue Nov 20 18:06:45 2001
++++ gcc/config/freebsd-spec.h	Sat Feb  2 13:37:38 2002
+@@ -48,29 +48,32 @@
+    || !strcmp ((STR), "soname") || !strcmp ((STR), "defsym") 		\
+    || !strcmp ((STR), "assert") || !strcmp ((STR), "dynamic-linker"))
  
 +/* Place spaces around this string.  We depend on string splicing to produce
 +   the final CPP_PREDEFINES value.  */
-+#define FBSD_CPP_PREDEFINES " -Dunix -D__FreeBSD__ -Asystem(unix) -Asystem(bsd) -Asystem(FreeBSD) "
 +
-+#undef CPP_PREDEFINES
-+#define CPP_PREDEFINES  FBSD_CPP_PREDEFINES
-+
- /* Provide a CPP_SPEC appropriate for FreeBSD.  We just deal with the GCC 
-    option `-posix', and PIC issues.  */
+ #if FBSD_MAJOR == 6
+ #define FBSD_CPP_PREDEFINES \
+-  "-D__FreeBSD__=6 -Dunix -D__ELF__ -D__KPRINTF_ATTRIBUTE__ -Asystem=unix -Asystem=bsd -Asystem=FreeBSD"
++  " -D__FreeBSD__=6 -Dunix -D__KPRINTF_ATTRIBUTE__ -Asystem=unix -Asystem=bsd -Asystem=FreeBSD "
+ #endif
  
--#undef CPP_SPEC
--#define CPP_SPEC "%(cpp_cpu)						\
-+#define FBSD_CPP_SPEC "							\
-+  %(cpp_cpu)								\
+ #if FBSD_MAJOR == 5
+ #define FBSD_CPP_PREDEFINES \
+-  "-D__FreeBSD__=5 -Dunix -D__ELF__ -D__KPRINTF_ATTRIBUTE__ -Asystem=unix -Asystem=bsd -Asystem=FreeBSD"
++  " -D__FreeBSD__=5 -Dunix -D__KPRINTF_ATTRIBUTE__ -Asystem=unix -Asystem=bsd -Asystem=FreeBSD "
+ #endif
+ 
+ #if FBSD_MAJOR == 4
+ #define FBSD_CPP_PREDEFINES \
+-  "-D__FreeBSD__=4 -Dunix -D__ELF__ -D__KPRINTF_ATTRIBUTE__ -Asystem=unix -Asystem=bsd -Asystem=FreeBSD"
++  " -D__FreeBSD__=4 -Dunix -D__KPRINTF_ATTRIBUTE__ -Asystem=unix -Asystem=bsd -Asystem=FreeBSD "
+ #endif
+ 
+ #if FBSD_MAJOR == 3
+ #define FBSD_CPP_PREDEFINES \
+-  "-D__FreeBSD__=3 -Dunix -D__ELF__ -D__KPRINTF_ATTRIBUTE__ -Asystem=unix -Asystem=bsd -Asystem=FreeBSD"
++  " -D__FreeBSD__=3 -Dunix -D__KPRINTF_ATTRIBUTE__ -Asystem=unix -Asystem=bsd -Asystem=FreeBSD "
+ #endif
+ 
+ #ifndef FBSD_CPP_PREDEFINES
+ #define FBSD_CPP_PREDEFINES \
+-  "-D__FreeBSD__   -Dunix -D__ELF__ -D__KPRINTF_ATTRIBUTE__ -Asystem=unix -Asystem=bsd -Asystem=FreeBSD"
++  " -D__FreeBSD__   -Dunix -D__KPRINTF_ATTRIBUTE__ -Asystem=unix -Asystem=bsd -Asystem=FreeBSD "
+ #endif
+ 
+ /* Provide a CPP_SPEC appropriate for FreeBSD.  We just deal with the GCC 
+@@ -79,7 +82,10 @@
+ #define FBSD_CPP_SPEC "							\
+   %(cpp_cpu)								\
    %{fPIC:-D__PIC__ -D__pic__} %{fpic:-D__PIC__ -D__pic__}		\
 -  %{posix:-D_POSIX_SOURCE}"
 +  %{posix:-D_POSIX_SOURCE}						\
 +  %{!maout: -D__ELF__}							\
 +  %{munderscores: -D__UNDERSCORES__}					\
 +  %{maout: %{!mno-underscores: -D__UNDERSCORES__}}"
-+
-+#undef CPP_SPEC
-+#define CPP_SPEC FBSD_CPP_SPEC
  
- /* Provide a LIB_SPEC appropriate for FreeBSD.  Just select the appropriate
-    libc, depending on whether we're doing profiling or need threads support.
+ /* Provide a STARTFILE_SPEC appropriate for FreeBSD.  Here we add
+    the magical crtbegin.o file (see crtstuff.c) which provides part 

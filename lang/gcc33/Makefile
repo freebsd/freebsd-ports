@@ -6,27 +6,43 @@
 # $FreeBSD$
 #
 
-SNAPDATE=	2001-04-30
+SNAPDATE=	2002-01-28
 SNAPVER=	${SNAPDATE:S/-//g}
 
 PORTNAME=	gcc-devel
 PORTVERSION=	${SNAPVER}
 CATEGORIES=	lang java
-MASTER_SITES=	ftp://egcs.cygnus.com/pub/egcs/snapshots/${SNAPDATE}/  \
-		${MASTER_SITE_SOURCEWARE}
+MASTER_SITES=	${MASTER_SITE_SOURCEWARE}  \
+		ftp://ftp.netwinder.org/pub/build/gcc/i386/${SNAPVER}/ \
+		ftp://egcs.cygnus.com/pub/egcs/snapshots/${SNAPDATE}/
 MASTER_SITE_SUBDIR=	gcc/snapshots/${SNAPDATE}
-DISTFILES=	gcc-core-${SNAPVER}${EXTRACT_SUFX} \
+DISTFILES=	\
+		gcc-core-${SNAPVER}${EXTRACT_SUFX} \
 		gcc-g++-${SNAPVER}${EXTRACT_SUFX} \
 		gcc-g77-${SNAPVER}${EXTRACT_SUFX} \
 		gcc-java-${SNAPVER}${EXTRACT_SUFX} \
 		gcc-objc-${SNAPVER}${EXTRACT_SUFX}
+#		gcc-ss-3.1-0_${SNAPVER}.src.rpm
 
 MAINTAINER=	obrien@FreeBSD.org
 
 NO_CDROM=	'dated material'
 
+.if defined(NETWINDER_SS)
+BUILD_DEPENDS=	rpm:${PORTSDIR}/archivers/rpm
+
+EXTRACT_CMD=		rpm2cpio
+EXTRACT_BEFORE_ARGS=
+EXTRACT_AFTER_ARGS=	|cpio -idum
+EXTRACT_ONLY=
+.endif
+PATCH_ARGS=	-d ${SRCDIR} -E ${PATCH_STRIP}
+.if !defined(PATCH_DEBUG)
+PATCH_ARGS+=	--forward --quiet
+.endif
 PATCH_WRKDIR=	${SRCDIR}
-CONFIGURE_SCRIPT=	../gcc-${SNAPVER}/configure
+#CONFIGURE_SCRIPT=	../gcc-${SNAPVER}/configure
+CONFIGURE_SCRIPT=	../${SRCDIR:C/${WRKDIR}//}/configure
 
 .include <bsd.port.pre.mk>
 
@@ -36,11 +52,11 @@ CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_TARGET=	${ARCH}-portbld-freebsdaout${OSREL}
 .endif
 
-EGCS_REV=	3.0
-SRCDIR=		${WRKDIR}/gcc-${SNAPVER}
+GCC_REV=	${PORTVERSION:C/\.0$//}
+SRCDIR=		${WRKDIR}/gcc-${GCC_REV}
 WRKSRC=		${WRKDIR}/build
-TARGLIB=	${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${EGCS_REV}
-PLIST_SUB=	EGCS_REV=${EGCS_REV} GNU_HOST=${CONFIGURE_TARGET}  \
+TARGLIB=	${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${GCC_REV}
+PLIST_SUB=	GCC_REV=${GCC_REV} GNU_HOST=${CONFIGURE_TARGET}  \
 		SNAPVER=${SNAPVER}
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
@@ -64,10 +80,16 @@ MAN1=		gcpp.1 gg++.1 gg77.1 ggcc.1 ggcov.1
 pre-fetch:
 	@${ECHO} "Making GCC ${DISTNAME:S/^gcc-//} for ${OPSYS} ${OSREL} ${PORTOBJFORMAT}	target ${ARCH}-portbld-freebsd${OSREL}"
 
+.if defined(NETWINDER_SS)
+post-extract:
+.for F in ${DISTFILES}
+	cd ${WRKDIR} ; rpm2cpio ${DISTDIR}/$F |cpio -idum
+.endfor
+	cd ${WRKDIR} ; ${TAR} -xzf gcc-${SNAPVER}.tar.gz
+	cd ${WRKDIR} ; ${LN} -sf gcc gcc-${SNAPVER}
+.endif
+
 pre-configure:
-	@(MAJ=`sysctl -n kern.osreldate | ${SED} -e '/.....$$/s///'` ; \
-	    ${PERL} -pi.orig -e "s:__FreeBSD__:__FreeBSD__=$${MAJ}:" \
-	    ${SRCDIR}/gcc/config/freebsd.h )
 	@# Keep from running `autoconf' and `autoheader' since we modified
 	@# configure.in by patching it.
 	@touch ${SRCDIR}/gcc/configure
@@ -86,12 +108,12 @@ post-install:
 	@(for prog in ${PREFIX}/bin/gcc ${PREFIX}/bin/g++ \
 		${PREFIX}/bin/g++filt ${PREFIX}/bin/g77 ${PREFIX}/bin/gcov \
 		${PREFIX}/bin/${CONFIGURE_TARGET}-gcc \
-		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${EGCS_REV}/cc1 \
-		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${EGCS_REV}/cc1obj \
-		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${EGCS_REV}/cc1plus \
-		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${EGCS_REV}/cpp0 \
-		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${EGCS_REV}/collect2 \
-		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${EGCS_REV}/f771 ; \
+		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${GCC_REV}/cc1 \
+		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${GCC_REV}/cc1obj \
+		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${GCC_REV}/cc1plus \
+		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${GCC_REV}/cpp0 \
+		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${GCC_REV}/collect2 \
+		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${GCC_REV}/f771 ; \
 	do \
 		strip $$prog ; \
 	done )
