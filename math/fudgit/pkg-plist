@@ -10,3 +10,4 @@ lib/fudgit/fit.ft
 lib/fudgit/fudgitrc        
 lib/fudgit/if.ft           
 lib/fudgit/fudgit.help
+@dirrm lib/fudgit

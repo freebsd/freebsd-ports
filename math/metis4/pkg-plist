@@ -9,3 +9,4 @@ bin/mesh2dual
 bin/graphchk
 lib/libmetis.a
 share/doc/METIS/manual.ps
+@dirrm share/doc/METIS
