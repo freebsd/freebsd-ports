@@ -6,6 +6,24 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20040726:
+  AFFECTS: users of devel/apache-ant
+  AUTHOR: glewis@FreeBSD.org
+
+  The update to Ant 1.6.2 introduces the following changes which may break
+  older environments, according to the 1.6.2 release notes:
+
+  . The import task used the canonical version of a file path. This
+    has been changed to use the absolute path. Bugzilla 28505.
+  . ant-xalan2.jar has been removed since the only class contained
+    in it didn't depend on Xalan-J 2 at all. Its sole dependency has
+    always been TraX and so it has been merged into ant-trax.jar.
+  . All exceptions thrown by tasks are now wrapped in a buildexception
+    giving the location in the buildfile of the task.
+  . Nested elements for namespaced tasks and types may belong to
+    the Ant default namespace as well as the task's or type's namespace.
+  . <junitreport> will very likely no longer work with Xalan-J 1.
+
 20040724:
   AFFECTS: users for xorg and GNOME
   AUTHOR: gnome@FreeBSD.org
