@@ -586,6 +586,7 @@ bcwipe		ports/security/bcwipe
 bdfresize	ports/x11-fonts/bdfresize
 beacon		ports/net/beacon
 beacon-server	ports/net/beacon-server
+beagle		ports/devel/beagle
 beav		ports/editors/beav
 beaver		ports/editors/beaver
 bebocd		ports/audio/bebocd
