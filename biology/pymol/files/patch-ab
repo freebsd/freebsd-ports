@@ -1,0 +1,18 @@
+--- setup/pymol.com.linux-rh7x.orig	Thu Jul 11 08:33:42 2002
++++ setup/pymol.com.linux-rh7x	Thu Jul 11 08:34:37 2002
+@@ -5,7 +5,7 @@
+ # ==============================================================
+ # Set PYMOL_PATH to point at the correct location on your system
+ #
+-setenv PYMOL_PATH /usr/local/pymol
++setenv PYMOL_PATH @PREFIX@/share/pymol
+ #
+ # ==============================================================
+ # (no changes usually required below here)
+@@ -21,5 +21,5 @@
+ #
+ #dbx /usr/bin/python 
+ #gdb /usr/bin/python 
+-/usr/bin/python $PYMOL_PATH/modules/launch_pymol.py $*
++@PREFIX@/bin/python $PYMOL_PATH/modules/launch_pymol.py $*
+ 

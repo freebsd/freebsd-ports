@@ -41,6 +41,7 @@
     SUBDIR += povchem
     SUBDIR += psi88
     SUBDIR += py-biopython
+    SUBDIR += pymol
     SUBDIR += rasmol
     SUBDIR += recombine
     SUBDIR += ruby-bio
