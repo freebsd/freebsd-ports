@@ -1,9 +1,9 @@
 bin/gctags
 bin/global
+bin/gnusort
 bin/gozilla
 bin/gtags
 bin/htags
-bin/htags.pl
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
@@ -13,13 +13,13 @@ bin/htags.pl
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/THANKS
+share/gtags/bless.sh.tmpl
+share/gtags/global.cgi.tmpl
 share/gtags/globash.rc
 share/gtags/gtags.conf
 share/gtags/gtags.el
 share/gtags/gtags.pl
 share/gtags/gtags.vim
 share/gtags/nvi-1.79-gtags.diff
-share/gtags/bless.sh.tmpl
-share/gtags/global.cgi.tmpl
 @dirrm share/gtags
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
