@@ -11,7 +11,7 @@ CATEGORIES=	security
 MASTER_SITES=	ftp://minnie.cs.adfa.edu.au/pub/NetSecurity/
 DISTNAME=	${PORTNAME}1_2
 
-MAINTAINER=	wkt@cs.adfa.edu.au
+MAINTAINER=	wkt@tuhs.org
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tcpsuck ${PREFIX}/libexec
