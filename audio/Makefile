@@ -179,6 +179,7 @@
     SUBDIR += s3mod
     SUBDIR += sbagen
     SUBDIR += sdl_mixer
+    SUBDIR += sfront
     SUBDIR += shntool
     SUBDIR += shorten
     SUBDIR += shout
