@@ -26,6 +26,8 @@ CONFLICTS=	apache+ipv6-* \
                 apache+mod_ssl+mod_snmp+ipv6-* \
                 apache+mod_ssl+mod_accel-* \
                 apache+mod_ssl+mod_snmp+mod_accel-* \
+		apache-worker-* \
+		apache-perchild-* \
 		apache-[0-9]* \
 		apache_fp-* \
 		publicfile-* \
