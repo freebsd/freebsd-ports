@@ -16,6 +16,8 @@ COMMENT=	Collection of image editor plugins for Digikam
 
 LIB_DEPENDS=	digikam.0:${PORTSDIR}/graphics/digikam
 
+BROKEN=		Incomplete pkg-plist
+
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
