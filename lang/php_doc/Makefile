@@ -37,6 +37,17 @@ PHPDOCDIR=	${PREFIX}/share/doc/${PHP_LANG}-php
 
 PLIST_SUB=	PHPDOCDIR=${PHPDOCDIR:S/^${PREFIX}\///}
 
+.if ${PHP_LANG} == en
+pre-fetch:
+	@${ECHO}
+	@${ECHO} "You may set PHP_LANG to"
+	@${ECHO} "	de (german),"
+	@${ECHO} "	es (spanish) or"
+	@${ECHO} "	fr (french)"
+	@${ECHO} "to get a different language than the default one (english)."
+	@${ECHO}
+.endif
+
 do-install:
 	@${MKDIR} ${PHPDOCDIR}
 	@for i in ${WRKSRC}/*; do \
