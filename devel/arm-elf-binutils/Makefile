@@ -15,19 +15,22 @@ PKGNAMEPREFIX=	arm-elf-
 
 MAINTAINER=	esk@ira.uka.de
 
-BROKEN=		"Distinfo not yet updated"
-
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-CONFIGURE_ARGS=	--target=arm-elf
 USE_LIBTOOL=	yes
+CONFIGURE_TARGET=	--target=${PKGNAMEPREFIX:S/-$//}
+CONFIGURE_ARGS=	--infodir=${PREFIX}/${PKGNAMEPREFIX:S/-$//}/info
 LIBTOOLFILES=	configure bfd/configure binutils/configure etc/configure \
 		gas/configure gprof/configure intl/configure ld/configure \
 		libiberty/configure opcodes/configure
-MAN1=		arm-elf-ar.1 arm-elf-nm.1 arm-elf-objdump.1 arm-elf-ranlib.1 \
-		arm-elf-size.1 arm-elf-strings.1 arm-elf-strip.1 \
-		arm-elf-objcopy.1 arm-elf-addr2line.1 arm-elf-nlmconv.1 \
-		arm-elf-c++filt.1 arm-elf-as.1 arm-elf-ld.1
+MAN1=		${PKGNAMEPREFIX}addr2line.1 ${PKGNAMEPREFIX}as.1 \
+		${PKGNAMEPREFIX}ar.1 ${PKGNAMEPREFIX}c++filt.1 \
+		${PKGNAMEPREFIX}dlltool.1 ${PKGNAMEPREFIX}ld.1 \
+		${PKGNAMEPREFIX}nlmconv.1 ${PKGNAMEPREFIX}nm.1 \
+		${PKGNAMEPREFIX}objcopy.1 ${PKGNAMEPREFIX}objdump.1 \
+		${PKGNAMEPREFIX}ranlib.1 ${PKGNAMEPREFIX}readelf.1 \
+		${PKGNAMEPREFIX}size.1 ${PKGNAMEPREFIX}strings.1 \
+		${PKGNAMEPREFIX}strip.1 ${PKGNAMEPREFIX}windres.1
 
 post-install:
 .for F in addr2line c++filt gasp objcopy objdump readelf size strings
@@ -37,7 +40,9 @@ post-install:
 	cd ${PREFIX}/lib ; ${MV} libbfd.a libiberty.a libopcodes.a \
 		${PREFIX}/${PKGNAMEPREFIX:S/-$//}/lib
 	${MKDIR} ${PREFIX}/${PKGNAMEPREFIX:S/-$//}/include
-	cd ${PREFIX}/include ; ${MV} ansidecl.h bfd.h bfdlink.h  \
+	cd ${PREFIX}/include ; ${MV} ansidecl.h bfd.h bfdlink.h symcat.h \
 		${PREFIX}/${PKGNAMEPREFIX:S/-$//}/include
+	${RM} ${PREFIX}/${PKGNAMEPREFIX:S/-$//}/info/*
+	${RMDIR} ${PREFIX}/${PKGNAMEPREFIX:S/-$//}/info
 
 .include <bsd.port.mk>

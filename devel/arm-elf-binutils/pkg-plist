@@ -16,14 +16,15 @@ arm-elf/bin/strip
 arm-elf/include/ansidecl.h
 arm-elf/include/bfd.h
 arm-elf/include/bfdlink.h
+arm-elf/include/symcat.h
 arm-elf/lib/ldscripts/armelf.x
 arm-elf/lib/ldscripts/armelf.xbn
+arm-elf/lib/ldscripts/armelf.xc
 arm-elf/lib/ldscripts/armelf.xn
 arm-elf/lib/ldscripts/armelf.xr
 arm-elf/lib/ldscripts/armelf.xs
-arm-elf/lib/ldscripts/armelf.xu
-arm-elf/lib/ldscripts/armelf.xc
 arm-elf/lib/ldscripts/armelf.xsc
+arm-elf/lib/ldscripts/armelf.xu
 arm-elf/lib/libbfd.a
 arm-elf/lib/libiberty.a
 arm-elf/lib/libopcodes.a
@@ -41,6 +42,28 @@ bin/arm-elf-readelf
 bin/arm-elf-size
 bin/arm-elf-strings
 bin/arm-elf-strip
+share/locale/da/LC_MESSAGES/opcodes.mo
+share/locale/de/LC_MESSAGES/opcodes.mo
+share/locale/es/LC_MESSAGES/bfd.mo
+share/locale/es/LC_MESSAGES/binutils.mo
+share/locale/es/LC_MESSAGES/gas.mo
+share/locale/es/LC_MESSAGES/ld.mo
+share/locale/es/LC_MESSAGES/opcodes.mo
+share/locale/fr/LC_MESSAGES/bfd.mo
+share/locale/fr/LC_MESSAGES/binutils.mo
+share/locale/fr/LC_MESSAGES/gas.mo
+share/locale/fr/LC_MESSAGES/ld.mo
+share/locale/fr/LC_MESSAGES/opcodes.mo
+share/locale/ja/LC_MESSAGES/bfd.mo
+share/locale/ja/LC_MESSAGES/binutils.mo
+share/locale/sv/LC_MESSAGES/bfd.mo
+share/locale/sv/LC_MESSAGES/ld.mo
+share/locale/sv/LC_MESSAGES/opcodes.mo
+share/locale/tr/LC_MESSAGES/bfd.mo
+share/locale/tr/LC_MESSAGES/binutils.mo
+share/locale/tr/LC_MESSAGES/gas.mo
+share/locale/tr/LC_MESSAGES/ld.mo
+share/locale/tr/LC_MESSAGES/opcodes.mo
 @dirrm arm-elf/bin
 @dirrm arm-elf/include
 @dirrm arm-elf/lib/ldscripts
