@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nail
-PORTVERSION=	10.7
+PORTVERSION=	10.8
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,13 +17,19 @@ COMMENT=	BSD mail utility with MIME extensions
 USE_BZIP2=	yes
 USE_ICONV=	yes
 USE_OPENSSL=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-openssl --with-rcfile="${PREFIX}/etc/nail.rc"
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+MAKE_ARGS=	PREFIX="${PREFIX}" \
+		SYSCONFDIR="${PREFIX}/etc" \
+		SENDMAIL="/usr/sbin/sendmail"
 
 MAN1=		nail.1
+PLIST_FILES=	bin/nail etc/nail.rc
 
-CPPFLAGS=	-I${LOCALBASE}/include
+CPPFLAGS=	-I${LOCALBASE}/include -DHAVE_ICONV -DHAVE_IPv6_FUNCS
 LDFLAGS=	-L${LOCALBASE}/lib -liconv
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/nail ${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/nail.rc ${PREFIX}/etc
+	${INSTALL_MAN} ${WRKSRC}/nail.1 ${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
