@@ -29,7 +29,7 @@ GNU_CONFIGURE=	yes
 
 MAN1=		cervisia.1
 
-pre-everything:
+pre-everything::
 .if !defined(KDE_VERSION)
 	@${ECHO}
 	@${ECHO} "You may define KDE_VERSION=1 (make KDE_VERSION=1)"
