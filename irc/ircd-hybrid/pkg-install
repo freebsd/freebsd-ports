@@ -50,7 +50,7 @@ EOF
 fi
 
 echo ""
-if grep -q "^ircd:" /etc/group; then
+if pw groupshow ircd 2> /dev/nul ; then
 	echo "You already have a group \"ircd\", so I will use it."
 else
 	echo "You need a group \"ircd\"."
@@ -59,15 +59,15 @@ else
 		echo "Done."
 	else
 		echo "Please create it, and try again."
-		if ! grep -q "^ircd:" /etc/passwd; then
-			echo "While you're at it, please create a user \"${user}\" too,"
-			echo "with a default group of \"${group}\"."
+		if ! pw usershow ircd 2> /dev/null ; then
+			echo "While you're at it, please create a user \"ircd\""
+			echo 'too, with a default group of "ircd".'
 		fi
 		exit 1
 	fi
 fi
 
-if grep -q "^ircd:" /etc/passwd; then
+if pw usershow ircd 2> /dev/null ; then
 	echo "You already have a user \"ircd\", so I will use it."
 else
 	echo "You need a user \"ircd\"."
