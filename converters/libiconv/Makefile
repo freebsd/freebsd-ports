@@ -7,6 +7,7 @@
 
 PORTNAME=	libiconv
 PORTVERSION=	1.8
+PORTREVISION=	1
 CATEGORIES=	converters devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,7 +16,8 @@ MAINTAINER=	gnome@FreeBSD.org
 
 USE_LIBTOOL=	yes
 LIBTOOLFILES=	configure libcharset/configure
-CONFIGURE_ARGS=	--enable-static
+CONFIGURE_ARGS=	--enable-static \
+		--without-libintl-prefix
 INSTALLS_SHLIB=	yes
 
 MAN1=		iconv.1
