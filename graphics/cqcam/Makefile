@@ -8,7 +8,7 @@
 PORTNAME=	cqcam
 PORTVERSION=	0.45a
 CATEGORIES=	graphics tk82
-MASTER_SITES=	ftp://ftp.cdrom.com/pub/unixfreeware/graphics/
+MASTER_SITES=	ftp://ftp.freesoftware.com/pub/unixfreeware/graphics/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
