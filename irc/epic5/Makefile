@@ -10,14 +10,10 @@ PORTVERSION=	1.0.1
 # Make these variables overridable for slave ports
 PORTREVISION?=	2
 CATEGORIES?=	irc ipv6
-MASTER_SITES=	ftp://ftp.epicsol.org/pub/epic/%SUBDIR%/ \
-		ftp://ftp.magenet.com/pub/epic/%SUBDIR%/ \
+MASTER_SITES=	http://ftp.prbh.org/pub/epic/EPIC4-PRODUCTION/ \
 		ftp://ftp.icm.edu.pl/vol/rzm0/irc/EPIC/%SUBDIR%/ \
 		ftp://ftp.archive.de.uu.net/pub/unix/irc/epic/%SUBDIR%/ \
 		ftp://ftp.nl.uu.net/pub/unix/irc/epic/%SUBDIR%/ \
-#		ftp://ftp.neato.org/pub/epic/%SUBDIR%/ \
-#		ftp://totem.fix.no/pub/mirrors/epic/%SUBDIR%/ \
-#		ftp://broken.com/pub/ircii/%SUBDIR%/
 MASTER_SITE_SUBDIR=	EPIC4-PRODUCTION
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTFILE_HELP}
 DIST_SUBDIR=	epic4
