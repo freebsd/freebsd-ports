@@ -4467,6 +4467,7 @@ libpci		ports/devel/libpci
 libpdel		ports/devel/libpdel
 libpdf++	ports/print/libpdf++
 libprelude	ports/security/libprelude
+libpreps	ports/devel/libpreps
 libpst		ports/mail/libpst
 libquicktime	ports/multimedia/libquicktime
 libranlib	ports/math/libranlib
