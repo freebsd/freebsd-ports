@@ -1,10 +1,11 @@
 Fix a const-related compiler warning produced by the "execve" wrapper.
 Move network related wrappers to separate files, for SOCKS support.
 Fix some things so that it will compile under FreeBSD-3.0.
+Add a wrapper for the "chflags" system call.
 
 Index: m3/m3core/src/runtime/FreeBSD2/RTHeapDepC.c
 --- RTHeapDepC.c.orig	Sat Mar 23 14:52:21 1996
-+++ RTHeapDepC.c	Wed Mar 26 10:19:53 1997
++++ RTHeapDepC.c	Wed Mar 26 13:21:39 1997
 @@ -92,6 +92,14 @@
  #include <sys/uio.h>
  #include <sys/wait.h>
@@ -61,7 +62,26 @@ Index: m3/m3core/src/runtime/FreeBSD2/RTHeapDepC.c
  /* not implemented
  int cachectl(addr, nbytes, op)
  char *addr;
-@@ -314,19 +295,6 @@
+@@ -278,6 +259,18 @@
+   return result;
+ }
+ 
++int chflags(path, flags)
++const char *path;
++u_long flags;
++{ int result;
++
++  ENTER_CRITICAL;
++  MAKE_READABLE(path);
++  result = syscall(SYS_chflags, path, flags);
++  EXIT_CRITICAL;
++  return result;
++}
++
+ int chmod(path, mode)   /* ok */
+ char *path;
+ mode_t mode;
+@@ -314,19 +307,6 @@
    return result;
  }
  
@@ -81,7 +101,7 @@ Index: m3/m3core/src/runtime/FreeBSD2/RTHeapDepC.c
  /* not implemented (obsolete)
  int creat(name, mode)   
  const char *name;
-@@ -356,8 +324,8 @@
+@@ -356,8 +336,8 @@
      result = syscall(SYS_execve, name, argv, envp);
      if (result == -1 && errno == EFAULT) {
        MAKE_READABLE(name);
@@ -92,7 +112,7 @@ Index: m3/m3core/src/runtime/FreeBSD2/RTHeapDepC.c
      } else {
        return result;
      }
-@@ -513,20 +481,6 @@
+@@ -513,20 +493,6 @@
  }
  */
  
@@ -113,7 +133,7 @@ Index: m3/m3core/src/runtime/FreeBSD2/RTHeapDepC.c
  int getrlimit(resource, rlp)   /* ok */
  int resource;
  struct rlimit *rlp;
-@@ -551,20 +505,6 @@
+@@ -551,20 +517,6 @@
    return result;
  }
  
@@ -134,7 +154,7 @@ Index: m3/m3core/src/runtime/FreeBSD2/RTHeapDepC.c
  int getsockopt(s, level, optname, optval, optlen)   /* ok */
  int s, level, optname;
  void *optval;
-@@ -821,19 +761,6 @@
+@@ -821,19 +773,6 @@
    return result;
  }
  
@@ -154,7 +174,7 @@ Index: m3/m3core/src/runtime/FreeBSD2/RTHeapDepC.c
  int readlink(path, buf, bufsiz)   /* ok */
  char *path;
  char *buf;
-@@ -865,46 +792,6 @@
+@@ -865,46 +804,6 @@
    return result;
  }
  
@@ -201,7 +221,7 @@ Index: m3/m3core/src/runtime/FreeBSD2/RTHeapDepC.c
  int recvmsg(s, msg, flags)   /* ok */
  int s;
  struct msghdr msg[];
-@@ -950,24 +837,6 @@
+@@ -950,24 +849,6 @@
    return result;
  }
  
@@ -226,7 +246,7 @@ Index: m3/m3core/src/runtime/FreeBSD2/RTHeapDepC.c
  int semctl(semid, semnum, cmd, arg)   /* ok ? */
  int semid, cmd;
  int semnum;
-@@ -1012,24 +881,6 @@
+@@ -1012,24 +893,6 @@
    return result;
  }
  
@@ -251,7 +271,7 @@ Index: m3/m3core/src/runtime/FreeBSD2/RTHeapDepC.c
  int sendmsg(s, msg, flags)   /* ok */
  int s;
  const struct msghdr msg[];
-@@ -1051,27 +902,6 @@
+@@ -1051,27 +914,6 @@
    return result;
  }
  
@@ -279,7 +299,7 @@ Index: m3/m3core/src/runtime/FreeBSD2/RTHeapDepC.c
  int setdomainname(name, namelen)   /* ok */
  char *name;
  int namelen;
-@@ -1414,19 +1244,6 @@
+@@ -1414,19 +1256,6 @@
    ENTER_CRITICAL;
    MAKE_WRITABLE(status);
    result = syscall(SYS_wait4, pid, status, options, NULL);
