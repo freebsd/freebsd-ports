@@ -350,6 +350,7 @@
     SUBDIR += netscape48-communicator
     SUBDIR += netscape48-navigator
     SUBDIR += netscape7
+    SUBDIR += nginx
     SUBDIR += notftp
     SUBDIR += npc
     SUBDIR += nscache
