@@ -13,5 +13,5 @@ share/doc/xml2rfc/rfc2629.dtd
 share/doc/xml2rfc/rfc2629.html
 share/doc/xml2rfc/rfc2629.txt
 share/doc/xml2rfc/rfc2629.xml
-share/doc/xml2rfc/rfc2629.xslt
+share/doc/xml2rfc/rfc2629.xsd
 @dirrm share/doc/xml2rfc
