@@ -4,7 +4,7 @@
 # Date created:         Mon Nov 18, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.5 1997/02/04 11:32:02 obrien Exp $
+# $Id: Makefile,v 1.6 1997/10/10 06:53:30 obrien Exp $
 #
 
 DISTNAME=	MaRS-2.1
@@ -24,6 +24,7 @@ MAKEFILE=       Makefile.XMotif
 .elif defined(WITH_X) && (${WITH_X} == NO || ${WITH_X} == no)
 MAKEFILE=	Makefile.NoX
 .else
+USE_XLIB=	yes
 MAKEFILE=	Makefile.SimpleX
 .endif
 ALL_TARGET=	depend mars

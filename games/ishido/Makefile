@@ -4,7 +4,7 @@
 # Date created:         Wed June 24, 1998
 # Whom:                 Steven H. Samorodin (samorodi@NUXI.com)
 #
-# $Id: Makefile,v 1.16 1998/01/14 02:40:04 obrien Exp $
+# $Id: Makefile,v 1.1.1.1 1998/06/25 08:04:11 obrien Exp $
 #
 
 DISTNAME=	ishido-1.1
@@ -14,6 +14,7 @@ MASTER_SITES=	ftp://nuxi.ucdavis.edu/pub/misc/ \
 
 MAINTAINER=     samorodi@NUXI.com
 
+USE_XLIB=	yes
 MAN6=		ishido.6
 
 do-install:

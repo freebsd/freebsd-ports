@@ -3,7 +3,7 @@
 # Date created:         Wed Nov 26, 1996
 # Whom:                 pgf
 #
-# $Id: Makefile,v 1.15 1998/06/04 20:42:03 gj Exp $
+# $Id: Makefile,v 1.16 1998/06/27 05:19:53 asami Exp $
 #
 
 DISTNAME=	vile-8.0
@@ -16,6 +16,7 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	gj@freebsd.org
 
+USE_XLIB=	yes
 MAKEFILE=	makefile
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS= --with-screen=${SCREEN_TYPE} ${WITH_PERL}
