@@ -183,6 +183,7 @@
     SUBDIR += scanssh
     SUBDIR += seahorse
     SUBDIR += secpanel
+    SUBDIR += sha
     SUBDIR += siphon
     SUBDIR += skip
     SUBDIR += slurpie
