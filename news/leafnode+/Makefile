@@ -12,7 +12,7 @@ CATEGORIES=	news ipv6
 MASTER_SITES=	http://www.io.com/~kazushi/leafnode+/ \
 		ftp://ftp.io.com/pub/usr/kazushi/leafnode+/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	kris@FreeBSD.org
 COMMENT=	Multi-user offline Usenet news package for small sites
 
 MAN8=		checkgroups.8 fetchnews.8 leafnode.8 texpire.8
