@@ -414,3 +414,9 @@ chinese/pycodec||2003-07-20|is replaced by converters/py-cjkcodecs
 korean/pycodec||2003-07-20|is replaced by converters/py-cjkcodecs
 devel/jakarta-ant|devel/apache-ant|2003-07-21|project renamed
 games/newkind||2003-07-22|project abandoned
+print/acroread4|print/acroread5|2003-07-24|security vulnerability
+print/acroread-commfont|print/acroread5-commfont|2003-07-24|security vulnerability
+japanese/acroread-jpnfont|japanese/acroread5-jpnfont|2003-07-24|security vulnerability
+korean/acroread-korfont|korean/acroread5-korfont|2003-07-24|security vulnerability
+chinese/acroread-chsfont|chinese/acroread5-chsfont|2003-07-24|security vulnerability
+chinese/acroread-chtfont|chinese/acroread5-chtfont|2003-07-24|security vulnerability
