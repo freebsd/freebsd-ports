@@ -1575,7 +1575,6 @@ edonkey-gui-gtk-urlslave	ports/net/edonkey-gui-gtk-urlslave
 edonkey-gui-java	ports/net/edonkey-gui-java
 edonkey-tool-hash	ports/misc/edonkey-tool-hash
 edonkey-tool-slist	ports/misc/edonkey-tool-slist
-eel		ports/x11-toolkits/eel
 eel2		ports/x11-toolkits/eel2
 efancylauncher	ports/x11/efancylauncher
 efax		ports/comms/efax
