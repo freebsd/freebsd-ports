@@ -1,6 +1,6 @@
---- Makefile.orig	Wed Oct  4 18:55:00 2000
-+++ Makefile	Mon Dec 11 05:24:04 2000
-@@ -10,28 +10,38 @@
+--- Makefile.orig	Fri Dec 15 14:13:16 2000
++++ Makefile	Sun Jul 21 17:24:46 2002
+@@ -10,28 +10,36 @@
  #	SWITCHES macro definitions ... see config.eng or config.jpn.
  #-----------------------------------------------------------------------
  
@@ -44,11 +44,9 @@
 -INSTALL = install
 -INSTALLBIN = -s -m 755
 -INSTALLMAN = -m 644
-+#INSTALL = install
-+#INSTALLBIN = -s -m 755
-+#INSTALLMAN = -m 644
-+INSTALLBIN = -c -s -o ${BINOWN} -g ${BINGRP} -m ${BINMODE}
-+INSTALLMAN = -c -o ${MANOWN} -g ${MANGRP} -m ${MANMODE}
++INSTALL =
++INSTALLBIN = ${BSD_INSTALL_PROGRAM}
++INSTALLMAN = ${BSD_INSTALL_MAN}
  
  SUBDIRS = src man
  

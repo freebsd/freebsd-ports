@@ -1,5 +1,5 @@
---- keycvt/makefile.orig	Tue May 18 01:43:30 1993
-+++ keycvt/makefile	Sat Apr  7 05:29:54 2001
+--- keycvt/makefile.orig	Tue May 18 00:43:30 1993
++++ keycvt/makefile	Sun Jul 21 17:32:13 2002
 @@ -48,7 +48,7 @@
  
  PROJ	= keycvt
@@ -35,7 +35,7 @@
 +		@$(MAKE) $(PROJ)
 +
 +freebsd.install:
-+		$(INSTALL) $(COPY) $(STRIP) -o $(BINOWN) -g $(BINGRP) $(PROJ) $(PREFIX)/bin
++		$(BSD_INSTALL_PROGRAM) $(PROJ) $(PREFIX)/bin
  
  # Generic: Generic BSD-ish system running gcc.  Can't continue, we really
  # need user intervention here.
