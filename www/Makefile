@@ -123,6 +123,7 @@
     SUBDIR += publicfile
     SUBDIR += py-HTMLgen
     SUBDIR += qdecoder
+    SUBDIR += quanta
     SUBDIR += roxen
     SUBDIR += ruboard
     SUBDIR += screem
