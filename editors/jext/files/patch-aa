@@ -1,0 +1,19 @@
+--- jext.orig	Wed Mar  1 22:40:49 2000
++++ jext	Wed Mar  1 22:41:16 2000
+@@ -4,11 +4,14 @@
+ # This version allows for an install in a central area like /usr/local/jext.
+ # Set the JEXT_HOME to /usr/local/jext and add this to your PATH.
+ # Norbert Seidel
+-
++JEXT_HOME=%JEXT_HOME%
++CLASSPATH=$CLASSPATH:%JFC%:$JEXT_HOME/jext.jar
++export CLASSPATH
++export JEXT_HOME
+ # Add links to plugins
+ if [ ! -d "$HOME/.jext" ]; then
+    mkdir -p $HOME/.jext/xinsert
+    ln -s $JEXT_HOME/plugins $HOME/.jext
+ fi
+ 
+-java -ms4m -mx16m -classpath $JEXT_HOME/jext.jar com.chez.powerteam.jext.Jext $* &
++%JAVAVM% -ms4m -mx16m -Djava.compiler=%JAVAJIT% com.chez.powerteam.jext.Jext $*
