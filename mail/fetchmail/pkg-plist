@@ -1,7 +1,6 @@
 bin/fetchmail
 bin/fetchmailconf
 libexec/fetchmailconf.bin
-man/man1/fetchmailconf.1.gz
 share/doc/fetchmail/README
 share/doc/fetchmail/COPYING
 share/doc/fetchmail/FAQ
