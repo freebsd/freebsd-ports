@@ -1,12 +1,12 @@
 # New ports collection makefile for:	aumix
-# Version required:    1.29
+# Version required:    1.30
 # Date created:        21 May 1999
 # Whom:                Chris Piazza <cpiazza@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	aumix-1.29
+DISTNAME=	aumix-1.30
 CATEGORIES=	audio
 MASTER_SITES=	http://jpj.net/~trevor/aumix/ \
 		http://jpj.net/~trevor/aumix/old/ \
@@ -19,11 +19,10 @@ MAINTAINER=	cpiazza@FreeBSD.org
 LIB_DEPENDS=    intl.1:${PORTSDIR}/devel/gettext
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 CONFIGURE_ARGS=	--includedir="${LOCALBASE}/include" \
 		--libdir="${LOCALBASE}/lib"
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" CPPFLAGS="-I${LOCALBASE}/include"
 
-MAN1=	aumix.1
+MAN1=	aumix.1 xaumix.1
 
 .include <bsd.port.mk>
