@@ -1,8 +1,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Directory/.packlist
 %%SITE_PERL%%/XML/Directory.pm
-%%SITE_PERL%%/XML/Directory.pod
 %%SITE_PERL%%/XML/Directory/Apache.pm
-%%SITE_PERL%%/XML/Directory/Exception.pm
 %%SITE_PERL%%/XML/Directory/SAX.pm
 %%SITE_PERL%%/XML/Directory/String.pm
 @dirrm %%SITE_PERL%%/XML/Directory
