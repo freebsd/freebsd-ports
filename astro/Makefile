@@ -10,6 +10,7 @@
     SUBDIR += glunarclock
     SUBDIR += jday
     SUBDIR += ksetiwatch
+    SUBDIR += kstars
     SUBDIR += luna
     SUBDIR += openuniverse
     SUBDIR += p5-Astro-MoonPhase
