@@ -1,0 +1,14 @@
+The ng_netflow node implements Cisco's Netflow (c) version 5 protocol
+on router running FreeBSD.  ng_netflow listens for incoming traffic and
+identifies unique flows in it. Flows are distinguished by endpoint IP
+addresses, TCP/UDP port numbers and ToS. Expired flows are exported out
+of the node.
+All operation is done in kernel: both traffic capturing and export
+datagram generation. Exported data contaion almost all Netflow version 5
+fields, except of AS numbers.
+
+WWW: http://www.sourceforge.net/projects/ng-netflow
+
+--
+Gleb Smirnoff
+<glebius@cell.sick.ru>

@@ -411,6 +411,7 @@
     SUBDIR += netspoc
     SUBDIR += netstrain
     SUBDIR += nettest
+    SUBDIR += ng_netflow
     SUBDIR += ngrep
     SUBDIR += ngrep-lib
     SUBDIR += nic
