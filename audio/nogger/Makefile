@@ -23,18 +23,15 @@ LIB_DEPENDS=	gtk-x11-2.0.200:${PORTSDIR}/x11-toolkits/gtk20 \
 BROKEN=	"just makes a humming noise"
 .endif
 
-PLIST=		${WRKDIR}/plist
-USE_GMAKE=	y
-ALL_TARGET=	nogger
-
-pre-install:
-	${ECHO_CMD} bin/nogger > ${PLIST}
+PLIST_FILES=	bin/nogger
 .ifndef(NOPORTDOCS)
 .for ii in COPYING README Thanks
-	${ECHO_CMD} share/doc/nogger/${ii} >> ${PLIST}
+PLIST_FILES+=	share/doc/nogger/${ii}
 .endfor
-	${ECHO_CMD} @dirrm share/doc/nogger >> ${PLIST}
+PLIST_DIRS=	share/doc/nogger
 .endif
+USE_GMAKE=	y
+ALL_TARGET=	nogger
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/nogger ${PREFIX}/bin
