@@ -9,27 +9,16 @@ PORTNAME=	runit
 PORTVERSION=	0.2.4
 CATEGORIES=	devel ruby
 MASTER_SITES=	http://homepage1.nifty.com/markey/ruby/rubyunit/
-PKGNAMEPREFIX=	ruby-
+PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME:S/^r/ruby/}-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
 
-BUILD_DEPENDS=	ruby:${PORTSDIR}/lang/ruby
-RUN_DEPENDS=	ruby:${PORTSDIR}/lang/ruby
-
+USE_RUBY=	yes
 .if !defined(NOPORTDOCS)
-BUILD_DEPENDS+=	rd2:${PORTSDIR}/textproc/ruby-rdtool
+USE_RUBY_RD=	yes
 .endif
-
-PLIST_SUB=	RUBY_VER="${RUBY_VER}" RUBY_ARCH="${RUBY_ARCH}"
-
-RUBY?=		${LOCALBASE}/bin/ruby
-RUBY_VER?=	1.4
-RUBY_ARCH?=	${ARCH}-freebsd${OSREL}
-
-RUBY_SITELIBDIR?=	${LOCALBASE}/lib/ruby/site_ruby/${RUBY_VER}
-RUBY_SITEARCHLIBDIR?=	${LOCALBASE}/lib/ruby/site_ruby/${RUBY_VER}/${RUBY_ARCH}
 
 BINS=		c2t	runtest
 DOCS=		HISTORY	README	ToDo
@@ -47,13 +36,15 @@ do-install:
 	${LN} -sf ${f}.rb ${PREFIX}/bin/${f}
 .endfor
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/examples/ruby/runit
-	${CP} -R ${WRKSRC}/sample/ ${PREFIX}/share/examples/ruby/runit/
-	${MKDIR} ${PREFIX}/share/doc/ruby/runit
+	${MKDIR} ${RUBY_EXAMPLESDIR}/runit
+	${CP} -R ${WRKSRC}/sample/ ${RUBY_EXAMPLESDIR}/runit/
+	${MKDIR} ${RUBY_DOCDIR}/runit
 .for f in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/share/doc/ruby/runit/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/runit/
 .endfor
-	${CP} -R ${WRKSRC}/doc_en/ ${PREFIX}/share/doc/ruby/runit/
+	${CP} -R ${WRKSRC}/doc_en/ ${RUBY_DOCDIR}/runit/
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.include "${PORTSDIR}/Mk/bsd.ruby.mk"
+.include <bsd.port.post.mk>
