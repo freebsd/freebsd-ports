@@ -17,9 +17,9 @@ MAKEFILE=	Makefile.BSD
 RADIUS_DIR=	${PREFIX}/etc/raddb
 MAKE_ENV+=	RADIUS_DIR="${RADIUS_DIR}"
 
-MAN1=		radlast.1 radtest.1 raduse.1 radwho.1 radzap.1
+MAN1=		radclient.1 radlast.1 radtest.1 raduse.1 radwho.1 radzap.1
 MAN5=		clients.5rad naslist.5rad
-MAN8=		radiusd.8 radwatch.8
+MAN8=		radiusd.8 radrelay.8 radwatch.8
 
 do-build:
 	cd ${WRKSRC}/src && ${SETENV} ${MAKE_ENV} ${MAKE} -f ${MAKEFILE}
