@@ -3,7 +3,7 @@
 # Date created:         Sun Aug 13 12:36:14 CDT 1995
 # Whom:                 erich@rrnet.com
 #
-# $Id: Makefile,v 1.7 1996/11/26 15:27:10 erich Exp $
+# $Id: Makefile,v 1.8 1997/10/22 08:46:03 obrien Exp $
 #
 
 DISTNAME=	cu-sudo.v1.5.3
@@ -15,7 +15,7 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	erich@rrnet.com
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-C2 --with-fbsdops
+CONFIGURE_ARGS=	--with-C2 --with-skey --with-fbsdops
 WRKSRC=		${WRKDIR}/sudo.v1.5.3
 MAN5=		sudoers.5
 MAN8=		sudo.8 visudo.8
