@@ -12,21 +12,6 @@ include/dns/cache.h
 include/dns/callbacks.h
 include/dns/cert.h
 include/dns/compress.h
-include/dns/confacl.h
-include/dns/confcache.h
-include/dns/confcommon.h
-include/dns/confctl.h
-include/dns/confctx.h
-include/dns/confip.h
-include/dns/confkeys.h
-include/dns/conflog.h
-include/dns/conflsn.h
-include/dns/conflwres.h
-include/dns/confparser.h
-include/dns/confresolv.h
-include/dns/confrrset.h
-include/dns/confview.h
-include/dns/confzone.h
 include/dns/db.h
 include/dns/dbiterator.h
 include/dns/dbtable.h
@@ -47,7 +32,6 @@ include/dns/master.h
 include/dns/masterdump.h
 include/dns/message.h
 include/dns/name.h
-include/dns/namedconf.h
 include/dns/ncache.h
 include/dns/nxt.h
 include/dns/peer.h
@@ -68,6 +52,7 @@ include/dns/rootns.h
 include/dns/sdb.h
 include/dns/secalg.h
 include/dns/secproto.h
+include/dns/soa.h
 include/dns/ssu.h
 include/dns/tcpmsg.h
 include/dns/time.h
@@ -79,6 +64,7 @@ include/dns/validator.h
 include/dns/view.h
 include/dns/xfrin.h
 include/dns/zone.h
+include/dns/zonekey.h
 include/dns/zt.h
 include/dst/dst.h
 include/dst/lib.h
@@ -144,6 +130,7 @@ include/isc/stdio.h
 include/isc/stdtime.h
 include/isc/string.h
 include/isc/symtab.h
+include/isc/syslog.h
 include/isc/task.h
 include/isc/taskpool.h
 include/isc/thread.h
@@ -151,6 +138,21 @@ include/isc/time.h
 include/isc/timer.h
 include/isc/types.h
 include/isc/util.h
+include/isccc/alist.h
+include/isccc/base64.h
+include/isccc/cc.h
+include/isccc/ccmsg.h
+include/isccc/events.h
+include/isccc/lib.h
+include/isccc/result.h
+include/isccc/sexpr.h
+include/isccc/symtab.h
+include/isccc/symtype.h
+include/isccc/types.h
+include/isccc/util.h
+include/isccfg/cfg.h
+include/isccfg/check.h
+include/isccfg/log.h
 include/lwres/context.h
 include/lwres/int.h
 include/lwres/ipv6.h
@@ -163,16 +165,11 @@ include/lwres/net.h
 include/lwres/netdb.h
 include/lwres/platform.h
 include/lwres/result.h
-include/omapi/compatibility.h
-include/omapi/lib.h
-include/omapi/omapi.h
-include/omapi/private.h
-include/omapi/result.h
-include/omapi/types.h
 lib/libdns.a
 lib/libisc.a
+lib/libisccc.a
+lib/libisccfg.a
 lib/liblwres.a
-lib/libomapi.a
 sbin/dnssec-keygen
 sbin/dnssec-makekeyset
 sbin/dnssec-signkey
@@ -182,6 +179,7 @@ sbin/named
 sbin/named-checkconf
 sbin/named-checkzone
 sbin/rndc
+sbin/rndc-confgen
 %%PORTDOCS%%share/doc/bind9/CHANGES
 %%PORTDOCS%%share/doc/bind9/COPYRIGHT
 %%PORTDOCS%%share/doc/bind9/FAQ
@@ -197,16 +195,20 @@ sbin/rndc
 %%PORTDOCS%%share/doc/bind9/arm/Bv9ARM.ch09.html
 %%PORTDOCS%%share/doc/bind9/arm/Bv9ARM.html
 %%PORTDOCS%%share/doc/bind9/misc/dnssec
+%%PORTDOCS%%share/doc/bind9/misc/format-options.pl
 %%PORTDOCS%%share/doc/bind9/misc/ipv6
 %%PORTDOCS%%share/doc/bind9/misc/migration
 %%PORTDOCS%%share/doc/bind9/misc/migration-4to9
 %%PORTDOCS%%share/doc/bind9/misc/options
+%%PORTDOCS%%share/doc/bind9/misc/rfc-compliance
+%%PORTDOCS%%share/doc/bind9/misc/roadmap
 %%PORTDOCS%%share/doc/bind9/misc/sdb
 %%PORTDOCS%%@dirrm share/doc/bind9/arm
 %%PORTDOCS%%@dirrm share/doc/bind9/misc
 %%PORTDOCS%%@dirrm share/doc/bind9
-@dirrm include/omapi
-@dirrm include/lwres
-@dirrm include/isc
-@dirrm include/dst
 @dirrm include/dns
+@dirrm include/dst
+@dirrm include/isc
+@dirrm include/isccc
+@dirrm include/isccfg
+@dirrm include/lwres
