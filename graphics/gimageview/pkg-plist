@@ -1,19 +1,37 @@
 bin/gimv
-lib/gimageview/archiver/libarc_lha_ext.so
-lib/gimageview/archiver/libarc_rar_ext.so
-lib/gimageview/archiver/libarc_tar_ext.so
-lib/gimageview/archiver/libarc_zip_ext.so
-lib/gimageview/image_saver/libpng_saver.so
-lib/gimageview/image_saver/libpnm_saver.so
-lib/gimageview/image_saver/libxvpics_saver.so
-lib/gimageview/thumbnail/libee_thumb.so
+lib/gimageview/archiver/libgimv_lha_extarc.so
+lib/gimageview/archiver/libgimv_rar_extarc.so
+lib/gimageview/archiver/libgimv_tar_extarc.so
+lib/gimageview/archiver/libgimv_zip_extarc.so
+lib/gimageview/image_loader/libgimv_bmp_loader.so
+lib/gimageview/image_loader/libgimv_jpeg_loader.so
+lib/gimageview/image_loader/libgimv_mag_loader.so
+lib/gimageview/image_loader/libgimv_mng_loader.so
+lib/gimageview/image_loader/libgimv_pcx_loader.so
+lib/gimageview/image_loader/libgimv_pixbuf_loader.so
+lib/gimageview/image_loader/libgimv_png_loader.so
+lib/gimageview/image_loader/libgimv_tga_loader.so
+lib/gimageview/image_loader/libgimv_wmf_loader.so
+lib/gimageview/image_loader/libgimv_xbm_loader.so
+lib/gimageview/image_loader/libgimv_xcf_loader.so
+lib/gimageview/image_loader/libgimv_xvpics_loader.so
+lib/gimageview/image_saver/libgimv_png_saver.so
+lib/gimageview/image_saver/libgimv_pnm_saver.so
+lib/gimageview/image_saver/libgimv_xvpics_saver.so
+lib/gimageview/image_view/libgimv_mplayer.so
+lib/gimageview/io_stream/libgimv_bz_io.so
+lib/gimageview/io_stream/libgimv_gzip_io.so
+lib/gimageview/thumbnail/libgimv_ee_thumb.so
+lib/gimageview/thumbnail/libgimv_gqview_thumb.so
+lib/gimageview/thumbnail/libgimv_konq_old_thumb.so
+lib/gimageview/thumbnail/libgimv_konqueror_thumb.so
+lib/gimageview/thumbnail/libgimv_nautilus-2.0_thumb.so
+lib/gimageview/thumbnail/libgimv_nautilus_thumb.so
 lib/gimageview/thumbnail/libgimv_thumb.so
-lib/gimageview/thumbnail/libgqview_thumb.so
-lib/gimageview/thumbnail/libkonq_old_thumb.so
-lib/gimageview/thumbnail/libkonqueror_thumb.so
-lib/gimageview/thumbnail/libnautilus-2.0_thumb.so
-lib/gimageview/thumbnail/libnautilus_thumb.so
-lib/gimageview/thumbnail/libxvpics_thumb.so
+lib/gimageview/thumbnail/libgimv_xvpics_thumb.so
+lib/gimageview/thumbnail_view/libgimv_thumbview_detail.so
+lib/gimageview/thumbnail_view/libgimv_thumbview_list.so
+lib/gimageview/thumbnail_view/libgimv_thumbview_table.so
 share/doc/gimageview/html/ja/01.html
 share/doc/gimageview/html/ja/02.html
 share/doc/gimageview/html/ja/03.html
@@ -34,14 +52,17 @@ share/doc/gimageview/text/C/COPYING
 share/doc/gimageview/text/C/ChangeLog
 share/doc/gimageview/text/C/INSTALL
 share/doc/gimageview/text/C/NEWS
+share/doc/gimageview/text/C/README
 share/doc/gimageview/text/C/TODO
-share/doc/gimageview/text/ja/COPYING.jp
-share/doc/gimageview/text/ja/ChangeLog.jp
-share/doc/gimageview/text/ja/INSTALL.jp
-share/doc/gimageview/text/ja/README.jp
-share/doc/gimageview/text/ja/TODO.jp
+share/doc/gimageview/text/ja/COPYING.ja
+share/doc/gimageview/text/ja/ChangeLog.ja
+share/doc/gimageview/text/ja/INSTALL.ja
+share/doc/gimageview/text/ja/NEWS.ja
+share/doc/gimageview/text/ja/README.ja
+share/doc/gimageview/text/ja/TODO.ja
 share/doc/gimageview/text/ja/gimageview.txt
 share/gimageview/gtkrc
+share/gimageview/mplayerrc
 share/gimageview/pixmaps/default/alert.xpm
 share/gimageview/pixmaps/default/archive.xpm
 share/gimageview/pixmaps/default/back.xpm
@@ -98,8 +119,12 @@ share/locale/fr/LC_MESSAGES/gimageview.mo
 share/locale/ja/LC_MESSAGES/gimageview.mo
 share/pixmaps/gimv.png
 @dirrm lib/gimageview/archiver
+@dirrm lib/gimageview/image_loader
 @dirrm lib/gimageview/image_saver
+@dirrm lib/gimageview/image_view
+@dirrm lib/gimageview/io_stream
 @dirrm lib/gimageview/thumbnail
+@dirrm lib/gimageview/thumbnail_view
 @dirrm lib/gimageview
 @dirrm share/doc/gimageview/html/ja
 @dirrm share/doc/gimageview/html
