@@ -12,13 +12,17 @@ CATEGORIES=	french editors linux
 MASTER_SITES=	ftp://sunsite.cnlab-switch.ch/mirror/staroffice/francais/ \
 		ftp://ftp.math.u-bordeaux.fr/pub/StarOffice/Linux-Intel/ \
 		ftp://ftp.be.embnet.org/pub/tools/StarOffice/Linux/ \
-		ftp://ftp.medasys-digital-systems.fr/pub1/linux/staroffice/
+		ftp://ftp.medasys-digital-systems.fr/pub1/linux/staroffice/ \
+		ftp://ftp.hu-berlin.de/pub/mirrors/sunsolve.sun.com/pub/patches/ \
+		ftp://sunsite.anu.edu.au/mnt/disk3/sun-info/sun-patches/ \
+		ftp://ftp.gtn.com/os/Sun/patches/
+		
 DISTNAME=	so-5_2-ga-bin-linux-fr.bin
-DISTFILES=	so-5_2-ga-bin-linux-fr.bin
+DISTFILES=	so-5_2-ga-bin-linux-fr.bin 109939-02.tar.Z
 .if defined(WITH_ADABAS)
 DISTFILES+=	soa-5_2-ga-bin-linux-fr.bin so-5_2-ga-bin-linux-fr.bin
 .endif
-EXTRACT_ONLY=
+EXTRACT_ONLY=	109939-02.tar.Z
 
 MAINTAINER=	mb@imp.ch
 
@@ -33,6 +37,7 @@ WRKSRC=		${WRKDIR}/office52
 TMPDIR=		${WRKDIR}/tmp
 LD_PATH=	${TMPDIR}:${WRKSRC}:${LINUXBASE}/linux/lib:${LINUXBASE}/usr/lib
 INSTDB.INS=	${PREFIX}/office52/program/instdb.ins
+SUNSOLVE=	${WRKDIR}/109939-02
 
 .include <bsd.port.pre.mk>
 
@@ -85,6 +90,13 @@ do-extract:
 	@cd ${WRKSRC}
 	@SAL_IGNOREXERRORS=1 ${WRKSRC}/${DISTNAME} -extract ${WRKSRC}
 	@cd ../../
+	@for file in ${EXTRACT_ONLY}; do \
+		if ! (cd ${WRKDIR} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
+		    ${_DISTDIR}/$$file ${EXTRACT_AFTER_ARGS}) ; \
+		then \
+			exit 1; \
+		 fi \
+	done
 .endif
 .endif
 
@@ -116,6 +128,12 @@ do-install:
 		${ECHO} ; \
 		${FALSE} ; \
 	fi
+.if ! defined(WITH_CDROM)
+	@${ECHO_MSG} "===>   Applying sunsolve patches for ${PKGNAME}"
+	@for file in ${SUNSOLVE}/* ; do \
+		${CP} -Rv $$file ${PREFIX}/office52/ ; \
+	done
+.endif
 .endif
 
 post-install:
