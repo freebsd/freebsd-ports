@@ -666,6 +666,7 @@
     SUBDIR += p5-Make
     SUBDIR += p5-Memoize
     SUBDIR += p5-Module-Build
+    SUBDIR += p5-Module-CoreList
     SUBDIR += p5-Module-Info
     SUBDIR += p5-Module-ScanDeps
     SUBDIR += p5-OLE-Storage_Lite
