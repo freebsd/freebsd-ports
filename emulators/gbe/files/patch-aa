@@ -1,0 +1,10 @@
+--- Makefile.orig	Mon Apr 16 21:07:21 2001
++++ Makefile	Mon Apr 16 21:13:21 2001
+@@ -1,5 +1,5 @@
+-LFLAGS = -L/usr/X11R6/lib -lX11 -g3 -lreadline -lncurses -lvga 
+-CFLAGS = -O6 -DBUILD_SVGA -DBUILD_X11 -DBUILD_JLIB -DCPU_DEBUG  -g3 -ffast-math -fomit-frame-pointer -finline-functions #-DNOT_LINEBASED #-DCPU_DEBUG_EXTENDED 
++LFLAGS = -L/usr/X11R6/lib -lX11 -g3 -lgnugetopt -L/usr/local/lib
++CFLAGS = -I/usr/X11R6/include -I/usr/local/include -O6 -DBUILD_X11 -g3 -ffast-math -fomit-frame-pointer -finline-functions #-DNOT_LINEBASED #-DCPU_DEBUG_EXTENDED
+ OBJS = main.o rom.o mem.o cpu.o vram.o debug.o joypad.o jlib.o x11.o svga.o
+ BIN = gbe
+ 
