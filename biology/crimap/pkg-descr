@@ -1,0 +1,10 @@
+"The main purpose of CRI-MAP is to allow rapid, largely automated
+construction of multilocus linkage maps (and facilitate the attendant
+tasks of assessing support relative to alternative locus orders,
+generating LOD tables, and detecting data errors)."
+- from the documentation
+
+WWW: http://compgen.rutgers.edu/multimap/crimap/
+
+--
+Tony Maher <tonym@biolateral.com.au>
