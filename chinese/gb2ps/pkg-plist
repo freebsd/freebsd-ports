@@ -1,0 +1,8 @@
+bin/gb2ps
+share/chinese/cover.ps
+share/chinese/gb/csong24.ccf
+share/chinese/gb/ckai24.ccf
+share/chinese/gb/cfang24.ccf
+share/chinese/gb/chei24.ccf
+share/chinese/gb/cfan24.ccf
+share/doc/gb2ps/gb2ps.help
