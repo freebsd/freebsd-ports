@@ -8,20 +8,17 @@
 PORTNAME=	eawpats
 PORTVERSION=	12
 CATEGORIES=	audio
-MASTER_SITES=	http://www.stardate.bc.ca/eawpatches/
+MASTER_SITES=	${MASTER_SITE_GENTOO}
+MASTER_SITE_SUBDIR=	distfiles
 DISTNAME=	eawpats12_full
-EXTRACT_SUFX=   .rar
+EXTRACT_SUFX=	.rar
 
 MAINTAINER=	lennox@cs.columbia.edu
 COMMENT=	Eric A. Welsh's collection of Gravis Ultrasound MIDI patches
 
-EXTRACT_DEPENDS= unrar:${PORTSDIR}/archivers/unrar
+EXTRACT_DEPENDS=unrar:${PORTSDIR}/archivers/unrar
 # Not useful without timidity.
 RUN_DEPENDS=	timidity:${PORTSDIR}/audio/timidity++
-
-BROKEN=		"Unfetchable"
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2004-06-18
 
 RESTRICTED=	Some of the patches are marked no-commercial-use
 
@@ -34,8 +31,8 @@ DOC_SUBDIRS=	ethnic gsdrum08 gsdrum25 gsdrum40 power wime
 WRKSRC=		${WRKDIR}
 TIMIDITY_DATADIR=	${PREFIX}/share/timidity
 
-EXTRACT_CMD=    unrar
-EXTRACT_BEFORE_ARGS= x
+EXTRACT_CMD=	unrar
+EXTRACT_BEFORE_ARGS=x
 EXTRACT_AFTER_ARGS=
 
 post-patch:
