@@ -179,6 +179,7 @@
     SUBDIR += t1utils
     SUBDIR += teTeX
     SUBDIR += tex
+    SUBDIR += texpower
     SUBDIR += tgif2tex
     SUBDIR += tipograf
     SUBDIR += tr2latex

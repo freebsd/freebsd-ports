@@ -1,0 +1,6 @@
+share/texmf/tex/latex/texpower/powersem.cls
+share/texmf/tex/latex/texpower/texpower.sty
+share/texmf/tex/latex/texpower/tpcolors.cfg
+share/texmf/tex/latex/texpower/tpoptions.cfg
+share/texmf/tex/latex/texpower/tpsettings.cfg
+@dirrm share/texmf/tex/latex/texpower
