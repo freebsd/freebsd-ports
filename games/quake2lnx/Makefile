@@ -69,6 +69,10 @@ PLIST_SUB+=	SDLGL=""
 . else
 PLIST_SUB+=	SDLGL="@comment "
 . endif
+.else
+PLIST_SUB+=	SDLCLIENT="@comment "
+PLIST_SUB+=	SDL="@comment "
+PLIST_SUB+=	SDLGL="@comment "
 .endif
 
 .if !defined(WITHOUT_X11)
