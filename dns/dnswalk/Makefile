@@ -3,7 +3,7 @@
 # Date created:				17 January 1998
 # Whom:					Matthew Hunt <mph@pobox.com>
 #
-# $Id: Makefile,v 1.2 1998/04/17 23:26:26 mph Exp $
+# $Id: Makefile,v 1.3 1998/09/15 21:31:49 asami Exp $
 
 DISTNAME=	dnswalk-2.0.2
 CATEGORIES=	net
@@ -11,7 +11,7 @@ MASTER_SITES=	http://www.cis.ohio-state.edu/~barr/dnswalk/
 
 MAINTAINER=	mph@freebsd.org
 
-RUN_DEPENDS=	${PREFIX}/lib/perl5/site_perl/Net/DNS.pm:${PORTSDIR}/net/p5-Net-DNS
+RUN_DEPENDS=	${PREFIX}/lib/perl5/site_perl/${PERL_VER}/Net/DNS.pm:${PORTSDIR}/net/p5-Net-DNS
 
 NO_WRKSUBDIR=	YES
 NO_BUILD=	YES
