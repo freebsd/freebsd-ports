@@ -8,4 +8,3 @@ The system was originally inspired by Raima's db_VISTA (today Raima Data
 Manager) but is relational rather than network based. Typhoon lacks some of
 db_VISTA's features, but also contains a number of nice features not found in 
 db_VISTA.
-
