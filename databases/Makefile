@@ -81,6 +81,7 @@
     SUBDIR += mird
     SUBDIR += mrtg-mysql-load
     SUBDIR += msql
+    SUBDIR += msql3
     SUBDIR += mtop
     SUBDIR += myodbc
     SUBDIR += mysql++
