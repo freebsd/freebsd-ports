@@ -1,0 +1,11 @@
+--- ddd/Ddd.in.orig	Wed Sep 25 06:27:33 1996
++++ ddd/Ddd.in	Sun May  4 12:49:05 1997
+@@ -167,7 +167,7 @@
+ 
+ 
+ ! Paper size, in format WIDTH x HEIGHT.	 (Default: A4).
+-Ddd*paperSize: 210mm x 297mm
++Ddd*paperSize: 8.5" x 11"
+ 
+ 
+ ! The `edit' command to invoke an editor on the specific file.
