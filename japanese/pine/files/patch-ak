@@ -1,10 +1,31 @@
-*** pine/osdep/err_desc	Fri Jul 16 01:06:44 1993
---- pine/osdep/err_desc	Fri Sep  2 02:35:46 1994
+*** imap/Makefile.orig	Fri Sep 20 13:44:01 1996
+--- imap/Makefile	Fri Sep 20 13:44:43 1996
 ***************
-*** 1,3 ****
---- 1,5 ----
-+ #if !defined(__FreeBSD__)
-  extern char *sys_errlist[];
-+ #endif
+*** 47,53 ****
   
-  /*----------------------------------------------------------------------
+  # ANSI compiler ports.  Note for SCO you may have to set LN to "copy -rom"
+  
+! a32 a41 aix bs2 bsi d-g drs lnx lyn mct mnt neb nxt osf sc5 sco sgi slx sos:
+  	$(MAKE) build SYSTYPE=ANSI OS=$@
+  
+  # Non-ANSI compiler ports.
+--- 47,53 ----
+  
+  # ANSI compiler ports.  Note for SCO you may have to set LN to "copy -rom"
+  
+! a32 a41 aix bs2 bsi bsf d-g drs lnx lyn mct mnt neb nxt osf sc5 sco sgi slx sos:
+  	$(MAKE) build SYSTYPE=ANSI OS=$@
+  
+  # Non-ANSI compiler ports.
+***************
+*** 81,86 ****
+--- 81,89 ----
+  
+  #bs2:
+  #	$(MAKE) build SYSTYPE=ANSI OS=bsi
++ 
++ bsf:
++ 	$(MAKE) build OS=bsf PROCESS=an
+  
+  pt1:
+  	$(MAKE) build SYSTYPE=non-ANSI OS=ptx

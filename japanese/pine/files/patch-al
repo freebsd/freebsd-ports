@@ -1,29 +1,64 @@
-*** pine/osdep/makefile.orig	Tue Apr  9 04:03:23 1996
---- pine/osdep/makefile	Tue Apr  9 04:33:59 1996
+*** build.orig	Fri Sep 20 13:44:00 1996
+--- build	Fri Sep 20 13:44:42 1996
 ***************
-*** 7,13 ****
-  		os-dyn.c os-gen.c os-hpp.c os-isc.c os-lnx.c os-nxt.c \
-  		os-osf.c os-ptx.c os-s40.c os-sgi.c \
-  		os-sun.c os-sv4.c os-ult.c os-aux.c \
-! 		os-ews.c
+*** 169,181 ****
+          rm -f pine mtest imapd pico pilot
+          if [ -s ../pine/pine ] ;      then ln ../pine/pine  pine      ; fi
+          if [ -s ../c-client/mtest ] ; then ln ../c-client/mtest mtest ; fi
+          if [ -s ../imapd/imapd ] ;    then ln ../imapd/imapd imapd    ; fi
+          if [ -s ../pico/pico ] ;      then ln ../pico/pico pico ; fi
+          if [ -s ../pico/pilot ] ;     then ln ../pico/pilot pilot ; fi
+          cd $PHOME
+          echo ''
+          echo "Links to executables are in bin directory:"
+!         size bin/pine bin/mtest bin/imapd bin/pico bin/pilot
+          echo "Done"
+          ;;
   
-  .SUFFIXES: .ic
-  
---- 7,13 ----
-  		os-dyn.c os-gen.c os-hpp.c os-isc.c os-lnx.c os-nxt.c \
-  		os-osf.c os-ptx.c os-s40.c os-sgi.c \
-  		os-sun.c os-sv4.c os-ult.c os-aux.c \
-! 		os-bsf.c os-ews.c
-  
-  .SUFFIXES: .ic
+--- 169,191 ----
+          rm -f pine mtest imapd pico pilot
+          if [ -s ../pine/pine ] ;      then ln ../pine/pine  pine      ; fi
+          if [ -s ../c-client/mtest ] ; then ln ../c-client/mtest mtest ; fi
++         if [ -s ../c-client/libc-client.so.1.3 ] ; 
++ 		then ln ../c-client/libc-client.so.1.3 libc-client.so.1.3 ; fi
+          if [ -s ../imapd/imapd ] ;    then ln ../imapd/imapd imapd    ; fi
++         if [ -s ../imap/systype/ipopd/ipop2d ] ;
++ 		then ln ../imap/systype/ipopd/ipop2d ipop2d ; fi
++         if [ -s ../imap/systype/ipopd/ipop3d ] ;
++ 		then ln ../imap/systype/ipopd/ipop3d ipop3d ; fi
+          if [ -s ../pico/pico ] ;      then ln ../pico/pico pico ; fi
+          if [ -s ../pico/pilot ] ;     then ln ../pico/pilot pilot ; fi
++         if [ -s ../pico/libpico.so.1.3 ] ;     
++ 		then ln ../pico/libpico.so.1.3 libpico.so.1.3 ; fi
+          cd $PHOME
+          echo ''
+          echo "Links to executables are in bin directory:"
+!         size bin/pine bin/mtest bin/imapd bin/pico bin/pilot \
+! 		bin/ipop2d bin/ipop3d \
+! 		bin/libc-client.so.1.3 bin/libpico.so.1.3 
+          echo "Done"
+          ;;
   
 ***************
-*** 43,48 ****
---- 43,49 ----
-  os-aux.c: bld_path canacces canonicl chnge_pw coredump creatdir diskquot.non domnames err_desc execview expnfldr fgetpos.non filesize fltrname fnexpand header hostname jobcntrl lstcmpnt mimedisp pipe pw_stuff readfile rename.hom sendmail tempfile tempnam writ_dir os-aux.ic
-  os-bsd.c: bld_path canacces canonicl chnge_pw coredump creatdir diskquot domnames err_desc execview expnfldr fgetpos.non filesize fltrname fnexpand header hostname jobcntrl lstcmpnt mimedisp pipe pw_stuff readfile rename sendmail tempfile tempnam writ_dir os-bsd.ic
-  os-bsi.c: bld_path canacces canonicl chnge_pw coredump creatdir diskquot.non domnames err_desc execview expnfldr fgetpos filesize fltrname fnexpand header hostname jobcntrl lstcmpnt mimedisp pipe pw_stuff readfile rename sendmail tempfile tempnam writ_dir os-bsi.ic
-+ os-bsf.c: bld_path canacces canonicl chnge_pw coredump creatdir diskquot.non domnames err_desc execview expnfldr fgetpos filesize fltrname fnexpand header hostname jobcntrl lstcmpnt mimedisp pipe pw_stuff readfile rename sendmail tempfile tempnam writ_dir os-bsf.ic
-  os-cvx.c: bld_path canacces canonicl chnge_pw coredump creatdir diskquot.non domnames err_desc execview expnfldr fgetpos.non filesize fltrname fnexpand header hostname jobcntrl lstcmpnt mimedisp pipe pw_stuff readfile rename sendmail tempfile tempnam writ_dir os-cvx.ic
-  os-dos.c: bld_path.dos canacces canonicl.dos chnge_pw.dos coredump creatdir.dos diskquot.non domnames.dos dosextra err_desc.dos execview.dos expnfldr.dos fgetpos filesize fltrname.dos fnexpand.dos header hostname jobcntrl.dos lstcmpnt.dos mimedisp pipe.dos pw_stuff.dos readfile.dos rename.dos sendmail.dos tempfile tempnam.dos writ_dir os-dos.ic
-  os-dyn.c: bld_path canacces canonicl chnge_pw coredump.fpe creatdir diskquot.sun domnames err_desc execview expnfldr fgetpos.non filesize fltrname fnexpand header hostname jobcntrl lstcmpnt mimedisp pipe pw_stuff readfile rename sendmail tempfile.non tempnam writ_dir os-dyn.ic
+*** 186,195 ****
+  	make clean
+          echo "Cleaning Pine"
+          cd $PHOME/pine
+!         make -f makefile.ult clean
+          echo "Cleaning pico"
+          cd $PHOME/pico
+!         make $makeargs -f makefile.ult clean
+          echo "Done"
+          cd $PHOME
+          ;;
+--- 196,205 ----
+  	make clean
+          echo "Cleaning Pine"
+          cd $PHOME/pine
+!         make -f makefile.bsf clean
+          echo "Cleaning pico"
+          cd $PHOME/pico
+!         make $makeargs -f makefile.bsf clean
+          echo "Done"
+          cd $PHOME
+          ;;
