@@ -1,0 +1,20 @@
+*** prcc.prototypes.h.orig	Sun Oct 30 14:32:00 1994
+--- prcc.prototypes.h	Fri Sep 29 04:06:51 1995
+***************
+*** 16,23 ****
+  static void per_file_init(void);
+  static void per_file_cleanup(void);
+  static BOOLEAN name_redefined(int isvar);
+! static void display_keywords(const char *type, char **words);
+! static void show_all_keywords(void);
+  static BOOLEAN name_to_list(name_t **lp, char *lex_name);
+  static BOOLEAN name_from_list(name_t **lp);
+  static BOOLEAN name_in_list(name_t *l);
+--- 16,22 ----
+  static void per_file_init(void);
+  static void per_file_cleanup(void);
+  static BOOLEAN name_redefined(int isvar);
+! static void show_all_lists(void);
+  static BOOLEAN name_to_list(name_t **lp, char *lex_name);
+  static BOOLEAN name_from_list(name_t **lp);
+  static BOOLEAN name_in_list(name_t *l);
