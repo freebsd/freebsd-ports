@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pvm
-PORTVERSION=	3.4.4
+PORTVERSION=	3.4.5
 CATEGORIES=	net parallel
 MASTER_SITES=	http://www.netlib.org/pvm3/	\
 		ftp://ftp.chg.ru/pub/prog/parallel/pvm3/
@@ -141,6 +141,6 @@ do-install:
 	cd ${WRKSRC}/man/man3 && ${INSTALL_MAN} ${MAN3} ${PREFIX}/man/man3
 
 post-install:
-	${SED} 's|/usr/local|${PREFIX}|g' ${PKGMESSAGE}
+	@${SED} 's|%%PREFIX%%|${PREFIX}|g' ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
