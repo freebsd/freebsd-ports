@@ -1,0 +1,44 @@
+--- coromodule/Makefile.pre.in.orig	Fri Feb  2 12:49:53 2001
++++ coromodule/Makefile.pre.in	Wed Jul  4 22:16:53 2001
+@@ -95,7 +95,7 @@
+ PYTHON=		python
+ 
+ # Add more -I and -D options here
+-CFLAGS=		$(OPT) -I$(INCLUDEPY) -I$(EXECINCLUDEPY) $(DEFS)
++CFLAGS+=	$(OPT) -I$(INCLUDEPY) -I$(EXECINCLUDEPY) $(DEFS) ${EXTRA_INCLUDE} ${EXTRA_LIB}
+ 
+ # These two variables can be set in Setup to merge extensions.
+ # See example[23].
+@@ -116,7 +116,7 @@
+ LINKCC=		@LINKCC@
+ SGI_ABI=	@SGI_ABI@
+ OPT=		@OPT@
+-LDFLAGS=	-rdynamic @LDFLAGS@
++LDFLAGS=	-rdynamic @LDFLAGS@ ${EXTRA_LIB}
+ LDLAST=		@LDLAST@
+ DEFS=		@DEFS@
+ LIBS=		@LIBS@
+@@ -168,7 +168,10 @@
+ MAKEFILE=	$(LIBPL)/Makefile
+ CONFIGC=	$(LIBPL)/config.c
+ CONFIGCIN=	$(LIBPL)/config.c.in
+-SETUP=		$(LIBPL)/Setup.thread $(LIBPL)/Setup.local $(LIBPL)/Setup
++SETUP=		$(LIBPL)/Setup.local $(LIBPL)/Setup
++.if ${PYTHON_VERSION} < 2.0
++SETUP+=		${LIBPL}/Setup.thread
++.endif
+ 
+ SYSLIBS=	$(LIBM) $(LIBC)
+ 
+@@ -217,9 +220,9 @@
+ 
+ # This runs makesetup *twice* to use the BASESETUP definition from Setup
+ config.c Makefile:	Makefile.pre Setup $(BASESETUP) $(MAKESETUP)
+-		$(MAKESETUP) \
++		ExtraLibs="${EXTRA_LIB}" $(MAKESETUP) \
+ 		 -m Makefile.pre -c $(CONFIGCIN) Setup -n $(BASESETUP) $(SETUP)
+-		$(MAKE) -f Makefile do-it-again
++		ExtraLibs="${EXTRA_LIB}" $(MAKE) -f Makefile do-it-again
+ 
+ # Internal target to run makesetup for the second time
+ do-it-again:
