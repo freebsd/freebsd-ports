@@ -45,6 +45,7 @@
     SUBDIR += gtk20-apireference
     SUBDIR += gtkada
     SUBDIR += gtkdatabox
+    SUBDIR += gtkdatabox2
     SUBDIR += gtkextra
     SUBDIR += gtkextra--
     SUBDIR += gtkglarea
