@@ -1,0 +1,68 @@
+#! /bin/sh
+# anders@FreeBSD.org, 2002-02-08
+
+if [ -z "$1" ]
+then
+	prefix=/usr/local/majordomo
+else
+	prefix=$1/majordomo
+fi
+tempfile=`/usr/bin/mktemp -t radiolist`
+
+/usr/bin/dialog --title "Making the majordomo wrapper run" --clear --radiolist "We need to make the majordomo wrapper program executable by your Mail\nDelivery Agent, but do not want it executable for all users due\nto security reasons.\n\n(This script can be re-executed from\n/usr/ports/mail/majordomo/scripts/adaptwrapper.)\n\nAdapt to the MDA of:" -1 -1 5 \
+Sendmail	"(add users daemon/mailnull to the majordom group)" ON \
+Postfix		"(change group ownership of wrapper to nobody)" OFF \
+2>$tempfile
+
+if [ "$?" = "1" ]
+then
+	echo "Cancel pressed. You will need to make wrapper executable yourself."
+fi
+
+choice=`cat $tempfile`
+rm -f $tempfile
+if [ -z "$choice" ]
+then
+	echo "Empty selection."
+	exit 1
+fi
+
+addmember() {
+# $1: group $2: user
+	if !(pw groupmod $1 -m $2 >/dev/null 2>&1)
+	then
+		echo "Error: Could not add user $2 to group $1."
+		exit 1
+	fi
+}
+
+changegroup() {
+# $1: group
+	mywrapper=$prefix/wrapper
+	if !(chgrp $1 $mywrapper >/dev/null 2>&1)
+	then
+		echo "Error: Could not change group ownership of"
+		echo "$mywrapper"
+		echo "to group $1."
+		exit 1
+	fi
+}
+
+case $choice in
+'Sendmail')
+	addmember majordom daemon
+	if (pw usershow mailnull >/dev/null 2>&1)
+	then
+		addmember majordom mailnull
+	fi
+	;;
+'Postfix')
+	changegroup nobody
+	;;
+'None')
+	echo "Fine. I see you want to make wrapper executable yourself."
+	;;
+*)
+	echo "Unknown MTA specified."
+	;;
+esac

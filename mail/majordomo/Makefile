@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.greatcircle.com/pub/majordomo/1.94.5/ \
 		ftp://ftp.sgi.com/other/majordomo/1.94.5/
 EXTRACT_SUFX=   .tgz
 
-MAINTAINER=	anders@fix.no
+MAINTAINER=	anders@FreeBSD.org
 
 .if defined(WITH_SHA1_COOKIES)
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Digest/SHA1.pm:${PORTSDIR}/security/p5-Digest-SHA1
@@ -93,6 +93,7 @@ post-install:
 		@ ${CHMOD} 755 ${PREFIX}/majordomo/lists/test-l-digest.archive
 		@ ${CHMOD} 660 ${PREFIX}/majordomo/lists/*.passwd
 .if !defined(BATCH)
+		@ ${SH} ${SCRIPTDIR}/adaptwrapper ${PREFIX}
 		@ /usr/bin/more -e ${FILESDIR}/post-install-notes
 .endif
 
