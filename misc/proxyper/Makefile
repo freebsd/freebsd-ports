@@ -32,21 +32,22 @@ LIBDIR=		${PREFIX}/etc/rc.d/
 PROXYUID=	nobody
 PROXYGID=	daemon
 
+SHAREOWN=	${PROXYUID}
+SHAREGRP=	${PROXYGID}
+SHAREMODE=	644
+
 do-install:
 	if [ ! -d ${BINDIR} ]; then \
 		${MKDIR} ${BINDIR}; \
 	fi
-	${INSTALL} -c -m 711 -o ${PROXYUID} -g ${PROXYGID} ${WRKSRC}/proxyper ${BINDIR}
 	${SED} s#CHANGETHIS#${BINDIR}# < ${FILESDIR}/proxyper.sh > ${WRKSRC}/proxyper.sh
-	${INSTALL} -c -m 711 -o ${PROXYUID} -g ${PROXYGID} ${WRKSRC}/proxyper.sh ${BINDIR}
-	${INSTALL} -c -m 644 -o ${PROXYUID} -g ${PROXYGID} ${WRKSRC}/proxyper.ini ${BINDIR}
-	${INSTALL} -c -m 644 -o ${PROXYUID} -g ${PROXYGID} ${WRKSRC}/ChangeLog.txt ${BINDIR}
-	${INSTALL} -c -m 644 -o ${PROXYUID} -g ${PROXYGID} ${WRKSRC}/Readme.txt ${BINDIR}
-	${INSTALL} -c -m 644 -o ${PROXYUID} -g ${PROXYGID} ${WRKSRC}/Readme.txt ${BINDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/proxyper ${BINDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/proxyper.sh ${BINDIR}
+	${INSTALL_DATA} ${WRKSRC}/proxyper.ini ${BINDIR}
+	${INSTALL_MAN} ${WRKSRC}/ChangeLog.txt ${BINDIR}
+	${INSTALL_MAN} ${WRKSRC}/Readme.txt ${BINDIR}
 	${CHOWN} ${PROXYUID}:${PROXYGID} ${BINDIR}
 	${CHMOD} 755 ${BINDIR}
-	if [ ! -f ${LIBDIR}/proxyper.sh ]; then \
-		${LN} -s ${BINDIR}proxyper.sh ${LIBDIR}proxyper.sh; \
-	fi
+	${LN} -sf ${BINDIR}proxyper.sh ${LIBDIR}proxyper.sh
 
 .include <bsd.port.post.mk>
