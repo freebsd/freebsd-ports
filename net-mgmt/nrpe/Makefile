@@ -19,7 +19,8 @@ RUN_DEPENDS=	${LOCALBASE}/libexec/nagios/check_nagios:${PORTSDIR}/net/nagios-plu
 
 GNU_CONFIGURE=	yes
 
-CONFIGURE_ARGS=	--libexecdir=${PREFIX}/libexec/nagios --sysconfdir=${PREFIX}/etc
+CONFIGURE_ARGS=	--libexecdir=${PREFIX}/libexec/nagios --sysconfdir=${PREFIX}/etc \
+		--sbindir=${PREFIX}/sbin --bindir=${PREFIX}/sbin
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/nrpe ${PREFIX}/sbin/nrpe
