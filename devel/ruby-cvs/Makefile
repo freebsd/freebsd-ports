@@ -17,7 +17,7 @@ MAINTAINER=	knu@FreeBSD.org
 COMMENT=	A Ruby library to provide a high level interface to a CVS repository
 
 # optional, but strongly suggested
-RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/flex.so:${PORTSDIR}/devel/ruby-flex_rb
+#RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/flex.so:${PORTSDIR}/devel/ruby-flex_rb
 
 USE_RUBY=	yes
 
