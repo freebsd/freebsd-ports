@@ -323,6 +323,7 @@ anomy-sanitizer	ports/mail/anomy-sanitizer
 anope		ports/irc/anope
 ant-xinclude-task	ports/textproc/ant-xinclude-task
 anteater	ports/sysutils/anteater
+anthem		ports/audio/anthem
 antipolix	ports/games/antipolix
 antivir-milter	ports/security/antivir-milter
 antivirus-milter	ports/mail/antivirus-milter
