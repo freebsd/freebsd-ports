@@ -1,0 +1,7 @@
+Artemis is a DNA sequence viewer and annotation tool that allows visualisation
+of sequence features and the results of analyses within the context of the
+sequence, and its six-frame translation.  Artemis is written in Java, reads
+EMBL or GENBANK format sequences and feature tables, and can work on sequences
+of any size.
+
+WWW:  http://www.sanger.ac.uk/Software/Artemis/manual
