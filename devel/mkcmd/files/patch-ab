@@ -5,7 +5,7 @@
  .BI \-I directory
  \fBMkcmd\fP searches for the files on the command line first in the
 -current directory, then in a standard place (\*(lq/usr/local/lib/mkcmd\*(rq),
-+current directory, then in a standard place (\*(lq/usr/local/share/mkcmd\*(rq),
++current directory, then in a standard place (\*(lq%%PREFIX%%/share/mkcmd\*(rq),
  then in any \fIdirectory\fP listed as parameters to this option.
  .TP
  .BI \-m manpage
