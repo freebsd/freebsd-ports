@@ -24,6 +24,7 @@ Acrobat3/Reader/Acrobat.pdf
 Acrobat3/Reader/License.pdf
 Acrobat3/Reader/MapTypes.pdf
 Acrobat3/Reader/ReadMe
+Acrobat3/Reader/ReadMe302
 Acrobat3/Reader/help/reader.pdf
 Acrobat3/Reader/intellinux/app-defaults/AcroRead
 Acrobat3/Reader/intellinux/bin/acroread
@@ -34,6 +35,9 @@ Acrobat3/Reader/intellinux/lib/libpfs.so
 Acrobat3/Reader/intellinux/lib/libpfs.so.2.5
 Acrobat3/Reader/intellinux/lib/libreadcore.so
 Acrobat3/Reader/intellinux/lib/libreadcore.so.3.0
+Acrobat3/Reader/intellinux/plug_ins/AFString.js
+Acrobat3/Reader/intellinux/plug_ins/AForm.js
+Acrobat3/Reader/intellinux/plug_ins/AcroForm.api
 Acrobat3/Reader/intellinux/plug_ins/Highlight.api
 Acrobat3/Reader/intellinux/plug_ins/ewh.api
 Acrobat3/Reader/intellinux/plug_ins/wwwlink.api
