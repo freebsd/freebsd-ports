@@ -11,7 +11,7 @@
 #  WITHOUT_NESSUS_GTK
 
 PORTNAME=	nessus-devel
-PORTVERSION=	2.1.3
+PORTVERSION=	2.2.0
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.nessus.org/pub/nessus/nessus-${PORTVERSION}/src/ \
 		ftp://ftp.gwdg.de/pub/linux/misc/nessus/nessus-${PORTVERSION}/src/ \
@@ -25,7 +25,7 @@ MAINTAINER=	udo.schweigert@siemens.com
 COMMENT=	A security scanner: looks for vulnerabilities in a given network
 
 CONFLICTS=	nessus-[0-9]* nessus-gtk-[0-9]* nessus-gtk2-[0-9]*
-LIB_DEPENDS=	nasl.3:${PORTSDIR}/security/nessus-libnasl-devel
+LIB_DEPENDS=	nasl.4:${PORTSDIR}/security/nessus-libnasl-devel
 
 DIST_SUBDIR=	nessus
 WRKSRC=		${WRKDIR}/nessus-core
