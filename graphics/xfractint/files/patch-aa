@@ -1,11 +1,11 @@
---- Makefile.orig	Sat Sep 11 20:32:16 1999
-+++ Makefile	Fri Oct  8 18:18:25 1999
+--- Makefile.orig	Sun Sep 12 10:32:16 1999
++++ Makefile	Tue Oct 12 20:41:38 1999
 @@ -2,11 +2,11 @@
  # SRCDIR should be a path to the directory that will hold fractint.hlp
  # You will have to copy fractint.hlp to SRCDIR and make it world readable.
  # SRCDIR should also hold the .par, .frm, etc. files
 -SRCDIR =  /usr/src/xfractint
-+SRCDIR =  ${PREFIX}/lib/fractint
++SRCDIR =  ${PREFIX}/share/fractint
  # BINDIR is where you put your X11 binaries
 -BINDIR = /usr/X11R6/bin
 +BINDIR = ${PREFIX}/bin
@@ -24,6 +24,15 @@
  
  # Gcc is often the only compiler that works for this
  # For HPUX, use CC = cc -Aa -D_HPUX_SOURCE
+@@ -60,7 +60,7 @@
+ # For Sun Solaris 2.x w/SparcCompilerC (cc), use CC = cc.
+ # For Sun Solaris 2.x w/GNU gcc, use CC = gcc
+ #CC = gcc
+-CC = cc
++CC ?= cc
+ 
+ # For HPUX, use LIBS = -L/usr/lib/X11R4 -lX11 -lm -lcurses -ltermcap
+ # For AIX or OSF/1, add -lbsd
 @@ -68,8 +68,8 @@
  # For Apollo, change -lX11 to -L/usr/X11/libX11
  # For Solaris, add -L/usr/openwin/lib
@@ -31,7 +40,7 @@
 -LIBS = -L/usr/X11R6/lib -lX11 -lm -lncurses -ltermcap
 -#LIBS = -L/usr/X11R6/lib -lX11 -lm -lcurses -ltermcap
 +#LIBS = -L/usr/X11R6/lib -lX11 -lm -lncurses -ltermcap
-+LIBS = -L/usr/X11R6/lib -lX11 -lm -lcurses -ltermcap
++LIBS = -L${X11BASE}/lib -lX11 -lm -lcurses -ltermcap
  #LIBS = -lX11 -lm -lcurses -ltermcap
  
  # HPUX fixes thanks to David Allport, Bill Broadley, and R. Lloyd.
@@ -44,16 +53,25 @@
  xfractint: fractint.hlp .WAIT $(OBJS)
  	$(CC) -o xfractint $(CFLAGS) $(OBJS) $(LIBS)
  #	strip xfractint
-@@ -183,6 +185,12 @@
- 	cp xfractint $(BINDIR)/xfractint
- 	strip $(BINDIR)/xfractint
- 	chmod a+x $(BINDIR)/xfractint
+@@ -180,13 +182,14 @@
+ 	rm -f $(OBJS) $(HOBJS) fractint.doc fractint.hlp hc xfractint helpdefs.h
+ 
+ install: xfractint fractint.hlp
+-	cp xfractint $(BINDIR)/xfractint
+-	strip $(BINDIR)/xfractint
+-	chmod a+x $(BINDIR)/xfractint
+-	cp fractint.hlp $(PARFILES) $(FRMFILES) $(IFSFILES) $(LFILES) $(MAPFILES) $(SRCDIR)
+-	(cd $(SRCDIR); chmod a+r fractint.hlp $(PARFILES) $(FRMFILES) $(IFSFILES) $(LFILES) $(MAPFILES) )
+-	cp xfractint.man $(MANDIR)/xfractint.1
+-	chmod a+r $(MANDIR)/xfractint.1
++	${BSD_INSTALL_PROGRAM} xfractint $(BINDIR)/xfractint
 +	if [ ! -d $(SRCDIR) ]; then \
 +		echo "Making $(SRCDIR)"; \
-+		mkdir $(SRCDIR); \
-+		chmod 755 $(SRCDIR); \
++		${INSTALL} -d -m 555 $(SRCDIR); \
 +		else true; \
 +	fi;
- 	cp fractint.hlp $(PARFILES) $(FRMFILES) $(IFSFILES) $(LFILES) $(MAPFILES) $(SRCDIR)
- 	(cd $(SRCDIR); chmod a+r fractint.hlp $(PARFILES) $(FRMFILES) $(IFSFILES) $(LFILES) $(MAPFILES) )
- 	cp xfractint.man $(MANDIR)/xfractint.1
++	${BSD_INSTALL_DATA} fractint.hlp $(PARFILES) $(FRMFILES) $(IFSFILES) $(LFILES) $(MAPFILES) $(SRCDIR)
++	${BSD_INSTALL_MAN} xfractint.man $(MANDIR)/xfractint.1
+ 
+ fractint.hlp: hc $(HELP)
+ 	./hc /c
