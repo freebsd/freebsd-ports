@@ -1,13 +1,22 @@
---- src/Makefile.in	Mon Apr 26 10:53:52 1999
-+++ src/Makefile.in.new	Wed Sep  1 14:34:27 1999
-@@ -121,6 +121,10 @@
+--- src/Makefile.in.orig	Fri Nov  5 13:03:54 1999
++++ src/Makefile.in	Sat Jan  8 19:27:47 2000
+@@ -106,7 +106,7 @@
+ libEterm_la_SOURCES = activeconfig.c activeeterm.c activetags.c command.c 		graphics.c grkelot.c menubar.c misc.c netdisp.c options.c 		pixmap.c screen.c scrollbar.c system.c threads.c utmp.c
  
- EXTRA_DIST = activeconfig.h activeeterm.h activetags.h command.h debug.h              eterm_imlib.h feature.h.in graphics.h grkelot.h grx.h main.h              menubar.h misc.h options.h pixmap.h profile.h screen.h scrollbar.h              system.h threads.h graphics/Makefile.am graphics/Makefile.in              graphics/README graphics/data graphics/grxlib.c graphics/grxlib.h              graphics/qplot.c Eterm.xpm
+ libEterm_la_DEPENDENCIES = $(DIST_ROOT)/libmej/libmej.la feature.h
+-libEterm_la_LDFLAGS = -release $(VERSION)
++libEterm_la_LDFLAGS = -version-info 8:8:8
  
+ bin_PROGRAMS = Eterm
+ Eterm_SOURCES = main.c
+@@ -117,6 +117,10 @@
+ LDADD = $(DIST_ROOT)/libmej/libmej.la -L$(libdir) -L$(prefix)/lib $(LIBS) $(GRLIBS) $(X_LIBS)
+ 
+ EXTRA_DIST = activeconfig.h activeeterm.h activetags.h command.h debug.h              eterm_imlib.h eterm_utmp.h feature.h.in graphics.h grkelot.h grx.h main.h              menubar.h misc.h options.h pixmap.h profile.h screen.h scrollbar.h              system.h threads.h graphics/Makefile.am graphics/Makefile.in              graphics/README graphics/data graphics/grxlib.c graphics/grxlib.h              graphics/qplot.c Eterm.xpm
++
 +ifeq ($(PORTOBJFORMAT),elf)
 +LDFLAGS+=-Wl,-rpath,$(X11BASE)/lib
 +endif
-+
+ 
  mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
  CONFIG_HEADER = ../config.h
- CONFIG_CLEAN_FILES = 
