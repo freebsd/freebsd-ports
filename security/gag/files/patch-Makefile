@@ -1,5 +1,5 @@
 --- Makefile.orig	Mon Jan 10 13:13:12 2000
-+++ Makefile	Sun Feb 13 17:41:35 2000
++++ Makefile	Mon May 12 15:15:36 2003
 @@ -1,7 +1,7 @@
 -CFLAGS=
 +#CFLAGS=
@@ -10,3 +10,12 @@
  
  default:
  	@clear
+@@ -11,7 +11,7 @@
+ 	@echo "to suit your operating system, then use 'make gag'"
+ 
+ gag:	gag.o
+-	$(CC) -o gag gag.c $(LIBS)
++	$(CC) -o gag gag.o $(LIBS)
+ 
+ # This assumes the source is in a directory named "sickenscan".
+ tar: sickenscan.tar
