@@ -25,6 +25,7 @@ BUNDLE_ID=	7065
 DOWNLOAD_URL=	http://java.sun.com/webapps/download/Display?BundleId=${BUNDLE_ID}
 
 NO_BUILD=	yes
+PLIST=		${WRKDIR}/PLIST
 USE_ZIP=	yes
 
 .include <bsd.port.pre.mk>

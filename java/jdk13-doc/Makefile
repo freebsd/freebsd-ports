@@ -24,6 +24,7 @@ JDK_MAJOR_VER=	${JDK_VERSION:R}
 DOWNLOAD_URL=	http://java.sun.com/j2se/${JDK_MAJOR_VER}/docs.html\#Download
 
 NO_BUILD=	yes
+PLIST=		${WRKDIR}/PLIST
 USE_ZIP=	yes
 
 .include <bsd.port.pre.mk>
