@@ -35,6 +35,7 @@
     SUBDIR += roxirc
     SUBDIR += ruby-irc
     SUBDIR += ruby-rica
+    SUBDIR += ruby-rice
     SUBDIR += scrollz
     SUBDIR += scrollz-doc
     SUBDIR += sic
