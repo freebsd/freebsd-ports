@@ -1,6 +1,6 @@
---- Makefile.orig	Tue Mar 10 12:15:11 1998
-+++ Makefile	Tue Aug 11 02:51:32 1998
-@@ -13,10 +13,10 @@
+--- Makefile.orig	Sat Jul 25 12:05:46 1998
++++ Makefile	Sun Dec 13 18:37:58 1998
+@@ -22,10 +22,10 @@
  #
  
  # Where to install things for Linux sites (FSSTND)
@@ -15,82 +15,80 @@
  
  # fmg 8/22/97: seems a more logical place for this :-)
  # Select Compile Options you want:
-@@ -29,14 +29,14 @@
- # -D_SEARCH_HISTORY	- Support searching of History buffer
- #                         For documentation, see file "../doc/HistSearch"
+@@ -40,18 +40,18 @@
+ # -D_I18N_		- Internationalization and localized text strings
+ #			  see file "../doc/Locales"
  #
 -OPFLAGS	= -D_HISTORY -D_HAVE_MACROS -D_SEARCH_HISTORY -D_I18N_
-+OPFLAGS	= -D_HISTORY -D_HAVE_MACROS -D_SEARCH_HISTORY # -D_I18N_
++OPFLAGS	= -D_HISTORY -D_HAVE_MACROS -D_SEARCH_HISTORY ## -D_I18N_
+ 
+ # Remove if you don't have gettext and don't want to install it and use
+ # the localized strings
+ PO	= po
  
  # Where to install things for FreeBSD sites.
 -# BINDIR = /usr/local/bin
 -# LIBDIR = /usr/local/etc/minicom
-+ BINDIR = $(PREFIX)/bin
-+ LIBDIR = $(PREFIX)/etc/minicom
++BINDIR = $(PREFIX)/bin
++LIBDIR = $(PREFIX)/etc/minicom
  ##DOCDIR = /usr/local/share/minicom
 -# DOCDIR = /usr/local/etc/minicom
 -# MANDIR = /usr/local/man/man1
-+ DOCDIR = $(PREFIX)/etc/minicom
-+ MANDIR = $(PREFIX)/man/man1
++DOCDIR = $(PREFIX)/etc/minicom
++MANDIR = $(PREFIX)/man/man1
  
  # Where to install things for "normal" sites.
  # BINDIR	= /usr/local/bin
-@@ -45,19 +45,19 @@
+@@ -60,19 +60,19 @@
  # MANDIR	= /usr/local/man/man1
  
  # Take these compilation flags for Linux with libncurses.
 -FLAGS	= -Wall -D_POSIX -D_SYSV -D_SELECT -pipe # -I/usr/include/ncurses
--PROGS	= minicom runscript ascii-xfr
--LFLAGS	= -s
--LIBS	= -lncurses -lintl
--CC	= cc
--
--# Take these compilation flags for FreeBSD.
--#FLAGS	= -Wall -D_POSIX -D_BSD43 -D_SELECT -D_DCDFLOW
-+#FLAGS	= -Wall -D_POSIX -D_SYSV -D_SELECT -pipe # -I/usr/include/ncurses
- #PROGS	= minicom runscript ascii-xfr
- #LFLAGS	= -s
--#LIBS	= -ltermcap
-+#LIBS	= -lncurses -lintl
- #CC	= cc
- 
++# FLAGS	= -Wall -D_POSIX -D_SYSV -D_SELECT -pipe # -I/usr/include/ncurses
++# PROGS	= minicom runscript ascii-xfr
++# LFLAGS	= -s
++# LIBS	= -lncurses #-lintl
++# CC	= cc
++
 +# Take these compilation flags for FreeBSD.
 +FLAGS	= -Wall -D_POSIX -D_BSD43 -D_SELECT -D_DCDFLOW -D_HAVE_MACROS
-+PROGS	= minicom runscript ascii-xfr
-+LFLAGS	= -s
+ PROGS	= minicom runscript ascii-xfr
+ LFLAGS	= -s
+-LIBS	= -lncurses #-lintl
 +LIBS	= -ltermcap -lcurses
-+CC	= cc
-+
+ CC	= cc
+ 
+-# Take these compilation flags for FreeBSD.
+-#FLAGS	= -Wall -D_POSIX -D_BSD43 -D_SELECT -D_DCDFLOW
+-#PROGS	= minicom runscript ascii-xfr
+-#LFLAGS	= -s
+-#LIBS	= -ltermcap
+-#CC	= cc
+-
  # Take these flags for SCO unix.
  #FLAGS	= -D_SYSV -D_SCO -D_POSIX -D_SELECT
  #PROGS	= minicom runscript ascii-xfr
-@@ -165,13 +165,13 @@
- 
- R	= $(ROOTDIR)
- 
--all:		$(PROGS) po
-+all:		$(PROGS) # po
- 
- minicom:	$(MOBJS)
+@@ -188,7 +188,7 @@
  		$(CC) $(LFLAGS) -o minicom $(MOBJS) $(LIBS)
  
  po: dummy
 -		make -C po
-+		$(MAKE) -C po
++		## cd po ; $(MAKE)
  
  keyserv:	$(KOBJS)
  		$(CC) -o keyserv $(LFLAGS) $(KOBJS) $(LIBS)
-@@ -223,11 +223,11 @@
+@@ -241,12 +241,12 @@
+ dummy:
  
  install:	$(PROGS)
+-		make -C po install R=$(R)
++		## cd po ; $(MAKE) install R=$(R)
  		sh install.sh $(R)$(LIBDIR) $(R)$(BINDIR) $(R)$(MANDIR) $(R)$(DOCDIR)
--		make -C po install
-+		# $(MAKE) -C po install
  
  clobber:
  		rm -f *.o *~ minicom keyserv runscript ascii-xfr
 -		make -C po clean
-+		# $(MAKE) -C po clean
++		## cd po ; $(MAKE) clean
  
  clean:		
  		rm -f *.o

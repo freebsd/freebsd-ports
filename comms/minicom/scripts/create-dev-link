@@ -26,7 +26,7 @@ echo -n "Lets see if you have too..."
 
 # might want to test for ``-h'' rather than ``-e''
 if [ -e /dev/modem ]; then
-	echo "  Good you do:"
+	echo "  Good you have:"
 	/bin/ls -l /dev/modem
 else
 	echo "Nope, you haven't (yet)."
