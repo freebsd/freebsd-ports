@@ -1,5 +1,5 @@
 A program for adjusting audio mixers from the command line or
 scripts, or interactively at the console or a terminal with a full-screen,
-ncurses-based interface
+ncurses-based interface and sysmouse(4) support.
 
 WWW: http://jpj.net/~trevor/aumix.html
