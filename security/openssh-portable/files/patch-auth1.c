@@ -1,23 +1,20 @@
---- auth1.c.orig	Thu Aug 12 14:40:25 2004
-+++ auth1.c	Tue Aug 17 05:40:29 2004
-@@ -25,6 +25,7 @@
- #include "session.h"
+--- auth1.c.orig	Tue Feb  8 11:52:48 2005
++++ auth1.c	Sat Mar 19 21:34:47 2005
+@@ -26,6 +26,7 @@
  #include "uidswap.h"
  #include "monitor_wrap.h"
+ #include "buffer.h"
 +#include "canohost.h"
  
  /* import */
  extern ServerOptions options;
-@@ -69,6 +70,18 @@
+@@ -71,6 +72,15 @@
  	u_int dlen;
  	u_int ulen;
  	int prev, type = 0;
 +#ifdef HAVE_LOGIN_CAP
 +	login_cap_t *lc;
-+#endif
-+#ifdef USE_PAM
-+	struct inverted_pam_cookie *pam_cookie;
-+#endif /* USE_PAM */
++#endif /* HAVE_LOGIN_CAP */
 +#if defined(HAVE_LOGIN_CAP) || defined(LOGIN_ACCESS)
 +	const char *from_host, *from_ip;
 +
@@ -27,7 +24,7 @@
  
  	debug("Attempting authentication for %s%.100s.",
  	    authctxt->valid ? "" : "invalid user ", authctxt->user);
-@@ -217,6 +230,34 @@
+@@ -219,6 +229,34 @@
  			logit("Unknown message during authentication: type %d", type);
  			break;
  		}

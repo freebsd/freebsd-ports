@@ -1,14 +1,14 @@
---- auth2.c.orig	Thu Aug 12 14:40:25 2004
-+++ auth2.c	Mon Sep 20 05:04:48 2004
-@@ -35,6 +35,7 @@
- #include "dispatch.h"
+--- auth2.c.orig	Tue Feb  8 11:52:48 2005
++++ auth2.c	Sat Mar 19 20:50:32 2005
+@@ -36,6 +36,7 @@
  #include "pathnames.h"
  #include "monitor_wrap.h"
+ #include "buffer.h"
 +#include "canohost.h"
  
  #ifdef GSSAPI
  #include "ssh-gss.h"
-@@ -134,6 +135,15 @@
+@@ -136,6 +137,15 @@
  	Authmethod *m = NULL;
  	char *user, *service, *method, *style = NULL;
  	int authenticated = 0;
@@ -24,7 +24,7 @@
  
  	if (authctxt == NULL)
  		fatal("input_userauth_request: no authctxt");
-@@ -178,6 +188,41 @@
+@@ -183,6 +193,41 @@
  		    "(%s,%s) -> (%s,%s)",
  		    authctxt->user, authctxt->service, user, service);
  	}
