@@ -10,36 +10,29 @@ PORTVERSION=	0.5.0
 CATEGORIES=	databases ruby
 MASTER_SITES=	ftp://moulon.inra.fr/pub/ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
-.if defined(WITH_BDB4)
-PKGNAMESUFFIX=	4
-.endif
+PKGNAMESUFFIX=	${WITH_BDB_VER}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	Ruby interface to Sleepycat's Berkeley DB revision 2 or later
 
-.if defined(WITH_BDB41)
-LIB_DEPENDS=	db41.1:${PORTSDIR}/databases/db41
-.elif defined(WITH_BDB4)
-LIB_DEPENDS=	db4.0:${PORTSDIR}/databases/db4
-.else
-LIB_DEPENDS=	db3.3:${PORTSDIR}/databases/db3
+LIB_DEPENDS=	db${WITH_BDB_VER}:${PORTSDIR}/databases/db${WITH_BDB_VER}
+
+.if defined(WITH_BDB3) || defined(WITH_DB3)
+WITH_BDB_VER=	3
+.elif defined(WITH_BDB4) || defined(WITH_DB4)
+WITH_BDB_VER=	4
+.elif defined(WITH_BDB41) || defined(WITH_DB41)
+WITH_BDB_VER=	41
 .endif
+WITH_BDB_VER?=	4
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 USE_RUBY_RDOC=		yes
 
-.if defined(WITH_BDB41)
-CONFIGURE_ARGS=	--with-db-include="${PREFIX}/include/db41" \
-		--with-db-version=41
-.elif defined(WITH_BDB4)
-CONFIGURE_ARGS=	--with-db-include="${PREFIX}/include/db4" \
-		--with-db-version=4
-.else
-CONFIGURE_ARGS=	--with-db-include="${PREFIX}/include/db3" \
-		--with-db-version=3
-.endif
+CONFIGURE_ARGS=	--with-db-include="${PREFIX}/include/db${WITH_BDB_VER}" \
+		--with-db-version=${WITH_BDB_VER}
 INSTALL_TARGET=	site-install
 
 DOCS=		Changes \
