@@ -8,6 +8,7 @@
 
 PORTNAME=	clearsilver
 PORTVERSION=	0.9.13
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.clearsilver.net/downloads/
 
@@ -55,10 +56,11 @@ MAN3=	cBroadcast.3 cCreate.3 cDestroy.3 cSignal.3 cWait.3 \
 	hdf_set_attr.3 hdf_set_buf.3 hdf_set_copy.3 hdf_set_int_value.3 \
 	hdf_set_symlink.3 hdf_set_value.3 hdf_set_valuef.3 hdf_sort_obj.3 \
 	hdf_write_file.3 hdf_write_file_atomic.3 hdf_write_string.3 mCreate.3 \
-	mDestroy.3 mLock.3 mUnlock.3 nerr_ignore.3 nerr_log_error.3 \
-	nerr_pass.3 nerr_pass_ctx.3 nerr_raise.3 skipDelete.3 skipFreeList.3 \
-	skipInsert.3 skipNewList.3 skipNext.3 skipRelease.3 skipSearch.3 \
-	wdb_keys.3
+	mDestroy.3 mLock.3 mUnlock.3 nerr_ignore.3 nerr_error_string.3 \
+	nerr_error_traceback.3 nerr_handle.3 nerr_init.3 nerr_log_error.3 \
+	nerr_match.3 nerr_pass.3 nerr_pass_ctx.3 nerr_raise.3 nerr_register.3 \
+	skipDelete.3 skipFreeList.3 skipInsert.3 skipNewList.3 skipNext.3 \
+	skipRelease.3 skipSearch.3 wdb_keys.3
 
 .include <bsd.port.pre.mk>
 
