@@ -1,5 +1,5 @@
-*** Makefile.orig	Thu Feb  4 01:43:27 1999
---- Makefile	Sat Aug  5 15:29:56 2000
+*** Makefile.org	Sat Jan  6 19:35:41 2001
+--- Makefile	Sat Jan  6 19:46:00 2001
 ***************
 *** 40,46 ****
   # remove the examples directory from this line.
@@ -13,10 +13,27 @@
   # remove the examples directory from this line.
   # If you want to build the XmHTML tutorial examples, add the book directory.
   
-! SUBDIRS= lib http examples tools book contrib
+! SUBDIRS= lib http
   
   # some common definitions
   #
+***************
+*** 55,61 ****
+  RANLIB= ranlib
+  
+  SHELL     = /bin/sh
+! MAKE      = make 
+  # change this to makedepend if your system doesn't have gcc
+  MAKEDEPEND= gccmakedep
+  
+--- 55,61 ----
+  RANLIB= ranlib
+  
+  SHELL     = /bin/sh
+! #MAKE      = make
+  # change this to makedepend if your system doesn't have gcc
+  MAKEDEPEND= gccmakedep
+  
 ***************
 *** 64,72 ****
   # Compiler Settings #
@@ -32,8 +49,8 @@
   # Compiler Settings #
   #                   #
   #####################
-! CC       = libtool gcc
-! CFLAGS   = -O2 -funroll-loops -pipe -ansi
+! #CC       = gcc
+! #CFLAGS   = -g -funroll-loops -Wall -pipe -ansi
 ! #LDFLAGS  =
   
   # The following flags are *very* usefull if you are getting unresolved
@@ -105,12 +122,12 @@
 ! PLATFORMINC=-I../../include/XmHTML -I${X11BASE}/include
   else
   ifeq ($(PLATFORM),gtk)
-! PLATFORMINC=-I../../include/gtk-xmhtml -I${LOCALBASE}/include
+! PLATFORMINC=-I../../include/gtk-xmhtml -I${X11BASE}/include
   endif
   endif
   
 ***************
-*** 192,208 ****
+*** 192,201 ****
   # Motif version (default)
   ifeq ($(PLATFORM),Motif)
   
@@ -121,14 +138,7 @@
   
   else
   
-  # gtk version (only supported port for now)
-  ifeq($(PLATFORM),gtk)
-  
-! LIBDIR = -L/usr/local/lib
-  LIBS   = -lgdk -lgtk -lX11
-  
-  # endif gtk
---- 192,208 ----
+--- 192,201 ----
   # Motif version (default)
   ifeq ($(PLATFORM),Motif)
   
@@ -138,18 +148,3 @@
 ! LIBS   = ${MOTIFLIB} -lXpm -lXmu -lXt -lXext -lX11 -lSM -lICE
   
   else
-  
-  # gtk version (only supported port for now)
-  ifeq($(PLATFORM),gtk)
-  
-! LIBDIR = -L${X11BASE}/lib
-  LIBS   = -lgdk -lgtk -lX11
-  
-  # endif gtk
-***************
-*** 308,311 ****
-  	tools/scansrc.sh ./lib/common > docs/sources.desc
-  	tools/scansrc.sh ./lib/Motif >> docs/sources.desc
-  	tools/scansrc.sh ./lib/gtk >> docs/sources.desc
-- 
---- 308,310 ----
