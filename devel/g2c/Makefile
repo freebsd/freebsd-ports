@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
+BROKEN=		"Configure fails"
+
 USE_REINPLACE=	yes
 USE_GNOMENG=	yes
 USE_GNOME=	gtk12 gnomehack
