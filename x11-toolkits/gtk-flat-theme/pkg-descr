@@ -1,0 +1,5 @@
+This theme engine gives gtk+ a flattened appearance with elements taken from
+the MacOS and Metal uis. Modified from the default and metal theme engines;
+the colors and background pixmaps are fully customizable.
+
+WWW: http://gtk.themes.org/themes.phtml?themeid=972185985
