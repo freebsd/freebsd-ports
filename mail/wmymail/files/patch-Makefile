@@ -1,0 +1,49 @@
+--- Makefile.orig	Fri Jul 27 00:25:37 2001
++++ Makefile	Tue Aug 27 12:34:53 2002
+@@ -1,32 +1,22 @@
+ #
+-# Makefile for wmymail
++# Makefile for xmymail (FreeBSD) -bms
+ #
+ 
++PROG=	wmymail
+ 
+-VERSION = 0.2
+-CC      = gcc
+-LIBS    = -L/usr/X11R6/lib -lX11 -lXpm -lXext -ldockapp
+-CFLAGS  = -O2 -I/usr/X11R6/include -Wall
+-XPMS = xpm/main.xpm xpm/mbox_1.xpm xpm/mbox_2.xpm xpm/mbox_3.xpm \
+-  xpm/numbers.xpm xpm/unumbers.xpm
+-DISTFILES = Makefile README README.old ChangeLog wmymail.c raw-envelope.jpg
++SRCS=	wmymail.c
++
++CFLAGS+=	-I${X11BASE}/include -O2 -Wall
++LDADD+=	-lXpm -lX11 -lXext -ldockapp
++LDADD+= -L${X11BASE}/lib
+ 
+-default all target: wmymail
++NOMAN=
++
++XPMS= xpm/main.xpm xpm/mbox_1.xpm xpm/mbox_2.xpm xpm/mbox_3.xpm \
++  xpm/numbers.xpm xpm/unumbers.xpm
+ 
+-wmymail: wmymail.o
+-	$(CC) $< $(CFLAGS) $(LIBS) -o $@
++BINDIR?=	${X11BASE}/bin
+ 
+-wmymail.o: wmymail.c $(XPMS)
+-	$(CC) $(CFLAGS) $(MY_INCS) -o $@ -c $<
+-
+-clean:
+-	rm -f wmymail wmymail.o
+-
+-dist:
+-	rm -fr wmymail-$(VERSION)
+-	mkdir -p wmymail-$(VERSION)/xpm
+-	cp $(DISTFILES) wmymail-$(VERSION)
+-	cp $(XPMS) wmymail-$(VERSION)/xpm
+-	rm -f wmymail-$(VERSION).tar.gz
+-	tar czvf wmymail-$(VERSION).tar.gz wmymail-$(VERSION)
++wmymail.o: wmymail.c ${XPMS}
+ 
++.include <bsd.prog.mk>
