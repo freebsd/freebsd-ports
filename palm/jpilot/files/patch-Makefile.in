@@ -1,33 +1,51 @@
---- Makefile.in.orig	Mon Dec 18 16:53:30 2000
-+++ Makefile.in	Thu Dec 21 21:22:37 2000
-@@ -43,7 +43,7 @@
- INTLLIBS = @INTLLIBS@
- 
- # Targets
--all: po_dir intl_dir jpilot jpilot-sync jpilot-dump
-+all: po_dir intl_dir jpilot jpilot-sync jpilot-dump synctime expense
- 
- jpilot: jpilot.o datebook.o address.o todo.o memo.o \
- 	utils.o sync.o prefs.o log.o plugins.o \
-@@ -210,6 +210,12 @@
- intl_dir:
- 	cd intl; $(MAKE)
- 
-+synctime:
-+	cd SyncTime; $(MAKE)
-+
-+expense:
-+	cd Expense; $(MAKE)
-+
- clean:
- 	rm -f *.o *~ config.cache
- 
-@@ -236,6 +242,8 @@
- 	./install-sh -c -m 755 empty/MemoDB.pdb $(prefix)/share/jpilot/
+--- Makefile.in.orig	Tue Feb  5 22:29:18 2002
++++ Makefile.in	Wed Feb  6 09:33:52 2002
+@@ -427,39 +427,18 @@
+ 	$(INSTALL) -m 644 empty/MemoDB.pdb $(prefix)/share/$(PACKAGE)/
+ 	$(INSTALL) -m 644 empty/Memo32DB.pdb $(prefix)/share/$(PACKAGE)/
+ 	$(INSTALL) -m 644 empty/ExpenseDB.pdb $(prefix)/share/$(PACKAGE)/
+-	$(INSTALL) -d -m 755 $(prefix)/doc/$(PACKAGE)-$(VERSION)
+-	$(INSTALL) -m 644 docs/manual.html $(prefix)/doc/$(PACKAGE)-$(VERSION)/manual.html
+-	$(INSTALL) -m 644 docs/plugin.html $(prefix)/doc/$(PACKAGE)-$(VERSION)
+-	$(INSTALL) -m 644 docs/jpilot-address.png $(prefix)/doc/$(PACKAGE)-$(VERSION)
+-	$(INSTALL) -m 644 docs/jpilot-datebook.png $(prefix)/doc/$(PACKAGE)-$(VERSION)
+-	$(INSTALL) -m 644 docs/jpilot-expense.png $(prefix)/doc/$(PACKAGE)-$(VERSION)
+-	$(INSTALL) -m 644 docs/jpilot-install.png $(prefix)/doc/$(PACKAGE)-$(VERSION)
+-	$(INSTALL) -m 644 docs/jpilot-memo.png $(prefix)/doc/$(PACKAGE)-$(VERSION)
+-	$(INSTALL) -m 644 docs/jpilot-prefs.png $(prefix)/doc/$(PACKAGE)-$(VERSION)
+-	$(INSTALL) -m 644 docs/jpilot-print.png $(prefix)/doc/$(PACKAGE)-$(VERSION)
+-	$(INSTALL) -m 644 docs/jpilot-search.png $(prefix)/doc/$(PACKAGE)-$(VERSION)
+-	$(INSTALL) -m 644 docs/jpilot-todo.png $(prefix)/doc/$(PACKAGE)-$(VERSION)
+-	$(INSTALL) -m 644 docs/jpilot-toplogo.jpg $(prefix)/doc/$(PACKAGE)-$(VERSION)
+-	$(INSTALL) -d -m 644 $(prefix)/doc/$(PACKAGE)-$(VERSION)/icons
+-	$(INSTALL) -m 644 icons/README $(prefix)/doc/$(PACKAGE)-$(VERSION)/icons/README
+-	$(INSTALL) -m 644 icons/jpilot-icon1.xpm $(prefix)/doc/$(PACKAGE)-$(VERSION)/icons/
+-	$(INSTALL) -m 644 icons/jpilot-icon2.xpm $(prefix)/doc/$(PACKAGE)-$(VERSION)/icons/
+-	$(INSTALL) -m 644 icons/jpilot-icon3.xpm $(prefix)/doc/$(PACKAGE)-$(VERSION)/icons/
+-	$(INSTALL) -m 644 icons/jpilot-icon4.xpm $(prefix)/doc/$(PACKAGE)-$(VERSION)/icons/
+-	$(INSTALL) -m 644 BUGS $(prefix)/doc/$(PACKAGE)-$(VERSION)/
+-	$(INSTALL) -m 644 CHANGELOG $(prefix)/doc/$(PACKAGE)-$(VERSION)/
+-	$(INSTALL) -m 644 COPYING $(prefix)/doc/$(PACKAGE)-$(VERSION)/
+-	$(INSTALL) -m 644 CREDITS $(prefix)/doc/$(PACKAGE)-$(VERSION)/
+-	$(INSTALL) -m 644 INSTALL $(prefix)/doc/$(PACKAGE)-$(VERSION)/
+-	$(INSTALL) -m 644 README $(prefix)/doc/$(PACKAGE)-$(VERSION)/
+-	$(INSTALL) -m 644 TODO $(prefix)/doc/$(PACKAGE)-$(VERSION)/
+-	$(INSTALL) -m 644 UPGRADING $(prefix)/doc/$(PACKAGE)-$(VERSION)/
++	$(INSTALL) -d -m 755 $(prefix)/share/jpilot/icons
++	$(INSTALL) -d -m 644 $(prefix)/share/jpilot/icons
++	$(INSTALL) -m 644 icons/jpilot-icon1.xpm $(prefix)/share/jpilot/icons/
++	$(INSTALL) -m 644 icons/jpilot-icon2.xpm $(prefix)/share/jpilot/icons/
++	$(INSTALL) -m 644 icons/jpilot-icon3.xpm $(prefix)/share/jpilot/icons/
++	$(INSTALL) -m 644 icons/jpilot-icon4.xpm $(prefix)/share/jpilot/icons/
  	cd intl; $(MAKE) install
  	cd po; $(MAKE) install
-+	cd SyncTime; $(MAKE) install
-+	cd Expense; $(MAKE) install
+ 	$(INSTALL) -d -m 755 $(mandir)/man1/
+-	cat docs/jpilot.1 | gzip -9c > $(mandir)/man1/jpilot.1.gz
+-	cat docs/jpilot-sync.1 | gzip -9c > $(mandir)/man1/jpilot-sync.1.gz
+-	cat docs/jpilot-upgrade-99.1 | gzip -9c > $(mandir)/man1/jpilot-upgrade-99.1.gz
++	$(INSTALL) -m 644 docs/jpilot.1 $(mandir)/man1/
++	$(INSTALL) -m 644 docs/jpilot-sync.1 $(mandir)/man1/
++	$(INSTALL) -m 644 docs/jpilot-upgrade-99.1 $(mandir)/man1/
  
- uninstall:
- 	rm $(prefix)/share/jpilot/*
+ install_plugins:
+ 	cd SyncTime; $(MAKE) install
