@@ -1,5 +1,5 @@
 --- configure.old	Sun Oct  7 23:36:29 2001
-+++ configure	Fri Oct 12 11:22:39 2001
++++ configure	Tue Nov 13 15:38:29 2001
 @@ -299,7 +299,7 @@
  _confcygwin="TARGET_CYGWIN=no"
  _confwin32=
@@ -56,7 +56,41 @@
   { _gl=no; echo "GL includes not found!";}
  else
  $_cc $TMPC -o $TMPO $_x11libdir -lX11 -lXext -lGL -lm $_socklib > /dev/null 2>&1 || \
-@@ -1645,33 +1634,33 @@
+@@ -998,33 +987,10 @@
+ # ---
+ # check availability of some header files
+ 
+-cat > $TMPC << EOF
+-#include <malloc.h>
+-int main( void ) { return 0; }
+-EOF
+ 
+-_memalign_def=
+ _memalign=no
+ _malloc_h=no
+-if $_cc -o $TMPO $TMPC 2> /dev/null ; then
+-_malloc_h=yes
+-# check for memalign - atmos
+-# should this be restricted to x86, or customized for cpu types (opt for cacheline sizes)?
+-cat > $TMPC << EOF
+-#include <malloc.h>
+-int main ( void ) {
+-char *string = NULL;
+-string = memalign(64, sizeof(char));
+-return 0;
+-}
+-EOF
+-_memalign_def='/* #define memalign(a,b) malloc(b) */'
+-_memalign=yes
+-$_cc -o $TMPO $TMPC 2> /dev/null || _memalign=no 
+-if [ "$_memalign" = "no" ]; then
+ _memalign_def='#define memalign(a,b) malloc(b)'
+-fi
+-fi
+ 
+ 
+ cat > $TMPC << EOF
+@@ -1645,33 +1611,33 @@
  
  echo
  echo $_echo_n "Checking for gtk version ... $_echo_c"
@@ -96,7 +130,7 @@
  [ -z "$_gliblib" ] && { echo 'glib not found.'; exit 1; }
  echo "done"
  
-@@ -1700,7 +1689,7 @@
+@@ -1700,7 +1666,7 @@
     if [ "$system_name" = "FreeBSD" -o "$system_name" = "OpenBSD" ]; then
        # Under XFree86 4.x GL port is poorly designed
        if [ -r /usr/X11R6/bin/XFree86 ]; then
@@ -105,7 +139,7 @@
        else
           _gllib='-lGL'
        fi
-@@ -1926,7 +1915,7 @@
+@@ -1926,7 +1892,7 @@
  # Under FreeBSD (maybe other systems as well?) we have to add to CFLAGS
  # for MT applications: 
  if [ "$system_name" = "FreeBSD" ]; then
