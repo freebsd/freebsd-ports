@@ -3444,6 +3444,7 @@ lbreakout	ports/games/lbreakout
 lc		ports/misc/lc
 lcdproc		ports/sysutils/lcdproc
 lcms		ports/graphics/lcms
+lcrzo		ports/security/lcrzo
 ld		src/gnu/usr.bin/ld
 ldapsdk		ports/net/ldapsdk
 ldconfig	src/sbin/ldconfig
