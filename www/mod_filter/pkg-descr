@@ -1,0 +1,9 @@
+mod_filter allows you to filter output from other modules inside
+of Apache. This allows you to implement filters (think Swedish Chef,
+jive, etc.). You can also use it to retailer output for your locale.
+This works with HTML documents, mod_perl, PHP, JServ, CGIs, and for
+that matter just about any sort of custom handler you might have.
+
+WWW: http://software.tangent.org/
+
+Seamus Venasse <svenasse@polaris.ca>

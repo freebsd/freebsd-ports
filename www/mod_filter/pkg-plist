@@ -1,0 +1,10 @@
+@exec %D/sbin/apxs -e -a -n filter
+@unexec %D/sbin/apxs -e -A -n filter mod_filter.so
+libexec/apache/mod_filter.so
+%%PORTDOCS%%share/doc/mod_filter/README
+%%PORTDOCS%%share/doc/mod_filter/contrib/README
+%%PORTDOCS%%share/doc/mod_filter/contrib/echo.cgi
+%%PORTDOCS%%share/doc/mod_filter/contrib/eecummings.cgi
+%%PORTDOCS%%share/doc/mod_filter/contrib/head.cgi
+%%PORTDOCS%%@dirrm share/doc/mod_filter/contrib
+%%PORTDOCS%%@dirrm share/doc/mod_filter

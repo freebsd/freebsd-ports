@@ -179,6 +179,7 @@
     SUBDIR += mod_dtcl
     SUBDIR += mod_extract_forwarded
     SUBDIR += mod_fastcgi
+    SUBDIR += mod_filter
     SUBDIR += mod_frontpage
     SUBDIR += mod_gzip
     SUBDIR += mod_hosts_access
