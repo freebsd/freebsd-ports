@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	xvid
-PORTVERSION=	0.20020404
+PORTVERSION=	0.20020412
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.xvid.org/ \
-		http://lofi.dyndns.org/
+MASTER_SITES=	http://www.xvid.org/
 DISTNAME=	xvid_snapshot_${PORTVERSION:S/^0.//}
 
-MAINTAINER=	lofi@lofi.dyndns.org
+MAINTAINER=	michaelnottebrock@gmx.net
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/nasm:${PORTSDIR}/devel/nasm
 
@@ -22,7 +21,7 @@ USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
 
 CONFIGURE_WRKSRC=	${WRKDIR}
-WRKSRC=			${WRKDIR}/xvid_20020404/xvidcore/build/generic
+WRKSRC=			${WRKDIR}/xvid_20020412/xvidcore/build/generic
 
 pre-everything::
 .if !defined(WITH_OPTIMIZED_CFLAGS)
