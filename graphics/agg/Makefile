@@ -24,10 +24,6 @@ PLIST_FILES=	lib/libagg.a
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile with gcc 3.4.2"
-.endif
-
 post-extract:
 	@${CP} -f ${FILESDIR}/Makefile.in.FreeBSD ${WRKSRC}
 	@${SED} 's,%%X11BASE%%,${X11BASE},g' < ${FILESDIR}/Makefile.in.FreeBSD > ${WRKSRC}/Makefile.in.FreeBSD
