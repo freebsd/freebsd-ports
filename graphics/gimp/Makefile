@@ -32,8 +32,6 @@ CONFLICTS=	gimp-1.*
 
 SHLIBVER?=	0
 
-NO_LATEST_LINK=	yes
-
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_XPM=	yes
