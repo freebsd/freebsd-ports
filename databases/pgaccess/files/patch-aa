@@ -11,7 +11,7 @@
  proc main {argc argv} {
  global pref newdbname newpport newhost
 -load libpgtcl.so
-+load /usr/local/pgsql/lib/libpgtcl.so.1
++load /usr/local/pgsql/lib/libpgtcl.so
  catch {draw_tabs}
  load_pref
  if {$pref(autoload) && ($pref(lastdb)!="")} {
