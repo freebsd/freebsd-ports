@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	exim
-PORTVERSION=	3.952
-PORTREVISION=	1
+PORTVERSION=	4.00
 CATEGORIES=	mail
-MASTER_SITES=	ftp://ftp.csx.cam.ac.uk/pub/software/email/exim/Testing/ \
-		http://www.exim.org/ftp/Testing/ \
-		ftp://ftp.is.co.za/networking/mail/transport/exim/Testing/
-DISTFILES=	exim-3.952.tar.bz2 exim-texinfo-3.951.tar.bz2
+MASTER_SITES=	ftp://ftp.csx.cam.ac.uk/pub/software/email/exim/exim4/ \
+		http://www.exim.org/ftp/exim4/ \
+		ftp://ftp.is.co.za/networking/mail/transport/exim/exim4/
+DISTFILES=	exim-4.00.tar.bz2 exim-texinfo-4.00.tar.bz2
 
 MAINTAINER=	sheldonh@FreeBSD.org
 
@@ -199,7 +198,7 @@ do-configure:
 	${MKDIR} ${WRKSRC}/Local
 	${SED} ${SEDLIST} < ${WRKSRC}/src/EDITME > ${WRKSRC}/Local/Makefile
 	cd ${WRKSRC}/doc && \
-	for i in ../../exim-texinfo-3.951/doc/* ; do \
+	for i in ../../exim-texinfo-4.00/doc/* ; do \
 		${LN} -sf $$i ; \
 	done
 
