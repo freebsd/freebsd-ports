@@ -1,0 +1,7 @@
+The Comprehensive Perl Archive Network (CPAN) is a very useful collection of
+Perl code. It has several indices of the files that it hosts, including a file
+named "02packages.details.txt.gz" in the "modules" directory. This file
+contains lots of useful information and this module provides a simple interface
+to the data contained within.
+
+WWW: http://search.cpan.org/dist/Parse-CPAN-Packages/
