@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	deal
-PORTVERSION=	2.1
+PORTVERSION=	2.2
 CATEGORIES=	games
 MASTER_SITES=	http://catb.org/~esr/deal/
 
 MAINTAINER=	markp@FreeBSD.org
+COMMENT=	A calculator for card-draw probabilities
 
 ALL_TARGET=	deal
 USE_REINPLACE=	yes
