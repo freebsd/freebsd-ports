@@ -3,15 +3,6 @@ $FreeBSD$
 
 --- compiler.h	2002/04/26 17:13:45	1.1
 +++ compiler.h	2002/04/26 17:17:19
-@@ -18,7 +18,7 @@
-   along with this program; if not, write to the Free Software
-   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
- 
--  $Id: compiler.h,v 1.1 2002/04/26 17:13:45 root Exp root $
-+  $Id: compiler.h,v 1.1 2002/04/26 17:13:45 root Exp $
- */
- 
- #ifndef _COMPILER_H_
 @@ -61,13 +61,13 @@
  // Additional type definition
  
