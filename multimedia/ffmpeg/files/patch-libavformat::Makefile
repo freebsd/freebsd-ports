@@ -6,8 +6,8 @@
  	install -d $(prefix)/lib
 -	install -s -m 755 $(SLIB) $(prefix)/lib/libavformat-$(VERSION).so
 -	ln -sf libavformat-$(VERSION).so $(prefix)/lib/libavformat.so
-+	install -s -m 755 $(SLIB) $(prefix)/lib/libavformat.so.0
-+	ln -sf libavformat.so.0 $(prefix)/lib/libavformat.so
++	install -s -m 755 $(SLIB) $(prefix)/lib/libavformat.so.1
++	ln -sf libavformat.so.1 $(prefix)/lib/libavformat.so
  	ldconfig || true
  	mkdir -p $(prefix)/include/ffmpeg
  	install -m 644 $(VPATH)/avformat.h $(prefix)/include/ffmpeg/avformat.h
