@@ -9168,6 +9168,7 @@ streamtuner-python	ports/audio/streamtuner-python
 streamtuner-xiph	ports/audio/streamtuner-xiph
 strobe		ports/security/strobe
 stuffit		ports/archivers/stuffit
+stund		ports/net/stund
 stunnel		ports/security/stunnel
 stuphead	ports/mail/stuphead
 stvef-paks	ports/games/stvef-paks
