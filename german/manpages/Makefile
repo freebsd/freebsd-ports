@@ -5,11 +5,12 @@
 # $FreeBSD$
 #
 
-PORTNAME=	manpages
-PORTVERSION=	1.0
+PORTNAME=	manpages-de
+PORTVERSION=	0.4
+
 CATEGORIES=	german
-MASTER_SITES=   http://wolfram.schneider.org/src/
-DISTFILES=	${manpages}.tgz
+MASTER_SITES=   http://www.infodrom.org/projects/manpages-de/download/ \
+		http://wolfram.schneider.org/src/
 
 MAINTAINER=	wosch@FreeBSD.org
 COMMENT=	German GNU and Linux manual pages
@@ -19,11 +20,10 @@ NO_WRKSUBDIR=	YES
 PLIST=		${WRKSRC}/PLIST
 
 mandir=		${PREFIX}/man/${LANG}
-manpages=	manpages-de
+manpages=	${PORTNAME}-${PORTVERSION}
 
 do-build:
-	${LN} -s ${WRKSRC}/${manpages} ${WRKSRC}/de-man
-	makewhatis ${WRKSRC}/de-man
+	makewhatis ${WRKSRC}/${manpages}
 .if !defined(NOMANCOMPRESS)
 	${GZIP_CMD} -r ${WRKSRC}/${manpages}/man* || exit 0
 .endif
