@@ -73,6 +73,7 @@ lib/mh/tmac.h
 lib/mh/viamail
 lib/libmh.so.3.2
 @exec ldconfig -m %B
+@unexec /sbin/ldconfig -R
 libexec/popd
 man/man1/ali.1.gz
 man/man1/anno.1.gz
