@@ -18,12 +18,13 @@ COMMENT=	Graphical score editor
 LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext \
 		xml.5:${PORTSDIR}/textproc/libxml
 
-USE_GETOPT_LONG=yes
 GNU_CONFIGURE=	yes
 PLIST=		${WRKDIR}/pkg-plist
 SHARED=		denemo.conf denemo.keymaprc english.keymaprc french.keymaprc
 DOCS=		AUTHORS ChangeLog DESIGN GOALS NEWS README TODO
 DOCDIR=		share/doc/${PORTNAME}
+USE_BISON=	yes
+USE_GETOPT_LONG=yes
 USE_GNOME=	gtk12
 USE_X_PREFIX=	yes
 
