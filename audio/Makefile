@@ -50,6 +50,7 @@
     SUBDIR += play
     SUBDIR += playmidi
     SUBDIR += radio
+    SUBDIR += raproxy
     SUBDIR += replay
     SUBDIR += rio
     SUBDIR += ripenc
