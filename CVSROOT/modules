@@ -8124,6 +8124,7 @@ qfsm		ports/cad/qfsm
 qglviewer	ports/graphics/qglviewer
 qgo		ports/games/qgo
 qhacc		ports/finance/qhacc
+qhull		ports/math/qhull
 qico		ports/comms/qico
 qident		ports/security/qident
 qinx		ports/x11-wm/qinx
