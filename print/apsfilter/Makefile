@@ -55,7 +55,7 @@ GSPORT?=	print/ghostscript-gnu
 #
 # ps emulator
 .if defined(WITHOUT_X11)
-GSPORT=		${GSPORT}-nox11
+GSPORT:=		${GSPORT}-nox11
 .endif
 RUN_DEPENDS=	gs:${PORTSDIR}/${GSPORT}
 # all needed decompression utilities
@@ -106,7 +106,7 @@ RUN_DEPENDS+=	smbclient:${PORTSDIR}/net/samba
 #
 # ps emulator
 .if defined(WITHOUT_X11)
-GSPORT=		${GSPORT}-nox11
+GSPORT:=		${GSPORT}-nox11
 .endif
 RUN_DEPENDS=	gs:${PORTSDIR}/${GSPORT}
 # most important "xxx to ps" filter utilities
