@@ -34,7 +34,7 @@
 +		$output =~ s/=([\da-fA-F]{2})/pack("C", hex($1))/ge;
 +		$out->print($output);
 +	} else {
-+		$out->print(decode_qp($output));
++		$out->print(decode_qp($_));
 +	}
      }
      1;
