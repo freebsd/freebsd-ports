@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	siproxd
-PORTVERSION=	0.5.8
+PORTVERSION=	0.5.9
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	siproxd
@@ -16,25 +16,34 @@ COMMENT=	A proxy/masquerading daemon for the SIP protocol
 
 LIB_DEPENDS=	osip2.2:${PORTSDIR}/net/libosip2
 
+USE_REINPLACE=	yes
 USE_GETOPT_LONG=yes
 USE_RC_SUBR=	yes
-HAS_CONFIGURE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	# empty
 
-PORTDOCS=	AUTHORS ChangeLog README RELNOTES \
-		doc/FAQ doc/KNOWN_BUGS doc/RFC3261_compliance.txt \
-		doc/sample_cfg_budgetone.txt doc/sample_cfg_x-lite.txt
+PORTDOCS1=	AUTHORS ChangeLog README RELNOTES
+PORTDOCS2=	FAQ KNOWN_BUGS RFC3261_compliance.txt \
+		sample_cfg_budgetone.txt sample_cfg_x-lite.txt
+PORTDOCS=	${PORTDOCS1} ${PORTDOCS2}
+PLIST_FILES=	etc/rc.d/siproxd.sh etc/siproxd.conf.example \
+		etc/siproxd_passwd.cfg sbin/siproxd
 
 .include <bsd.port.pre.mk>
 
+post-patch:
 .if ${OSVERSION} >= 500041
-LIB_DEPENDS+=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
+	@${REINPLACE_CMD} -e 's,-lgnugetopt,,g' ${WRKSRC}/${CONFIGURE_SCRIPT}
 .endif
 
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-.for i in ${PORTDOCS}
+.for i in ${PORTDOCS1}
 	${INSTALL_MAN} ${WRKSRC}/${i} ${DOCSDIR}
+.endfor
+.for i in ${PORTDOCS2}
+	${INSTALL_MAN} ${WRKSRC}/doc/${i} ${DOCSDIR}
 .endfor
 .endif
 	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
