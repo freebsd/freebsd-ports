@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- configure.orig	Wed Dec 19 21:36:45 2001
++++ configure	Wed Dec 19 21:37:16 2001
+@@ -2106,7 +2106,7 @@
+ 
+ fi
+ 
+-for ac_func in getopt_long
++for ac_func in getopt_long strcasestr
+ do
+ echo $ac_n "checking for $ac_func""... $ac_c" 1>&6
+ echo "configure:2113: checking for $ac_func" >&5
