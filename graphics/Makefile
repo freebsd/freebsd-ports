@@ -114,6 +114,7 @@
     SUBDIR += ipe
     SUBDIR += isreal
     SUBDIR += iview
+    SUBDIR += jasper
     SUBDIR += jbigkit
     SUBDIR += jgraph
     SUBDIR += jgv
