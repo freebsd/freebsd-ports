@@ -3306,6 +3306,7 @@ imp3		ports/mail/imp3
 impress		ports/editors/impress
 imwheel		ports/x11/imwheel
 indexme		ports/www/indexme
+indubstrial	ports/x11-themes/indubstrial
 ines		ports/emulators/ines
 info2html	ports/textproc/info2html
 info_to_html	ports/textproc/info_to_html
