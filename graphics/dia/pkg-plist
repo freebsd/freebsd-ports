@@ -1,17 +1,10 @@
 bin/dia
-lib/dia/liber_objects.la
 lib/dia/liber_objects.so
-lib/dia/libflowchart_objects.la
 lib/dia/libflowchart_objects.so
-lib/dia/libfs_objects.la
 lib/dia/libfs_objects.so
-lib/dia/libnetwork_objects.la
 lib/dia/libnetwork_objects.so
-lib/dia/libstandard_objects.la
 lib/dia/libstandard_objects.so
-lib/dia/libsybase_objects.la
 lib/dia/libsybase_objects.so
-lib/dia/libuml_objects.la
 lib/dia/libuml_objects.so
 lib/locale/da/LC_MESSAGES/dia.mo
 lib/locale/de/LC_MESSAGES/dia.mo
