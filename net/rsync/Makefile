@@ -1,6 +1,6 @@
 # ex:ts=8
 # New ports collection makefile for:    rsync
-# Version required:     1.6.2
+# Version required:     2.3.1
 # Date created:         Sat Aug 3, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #
