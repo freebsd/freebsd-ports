@@ -1,0 +1,7 @@
+-----------------------------------------------------------------
+winhelpcgi.cgi has been installed into %%PREFIX%%/bin
+
+You now need to copy winhelpcgi.cgi along with all winhelp files
+you wish for it to handle into the cgi-bin/ (or a subdir in
+cgi-bin/) of a http server that can handle cgi (such as Apache).
+-----------------------------------------------------------------
