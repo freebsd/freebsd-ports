@@ -13,17 +13,18 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DATAFILES}
 
 MAINTAINER=	sobomax@FreeBSD.org
 
-BUILD_DEPENDS=	host:${PORTSDIR}/net/host
+BUILD_DEPENDS=	${LOCALBASE}/bin/host:${PORTSDIR}/net/host
 LIB_DEPENDS=	gtkgl.5:${PORTSDIR}/x11-toolkits/gtkglarea \
 		gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf
-RUN_DEPENDS=	host:${PORTSDIR}/net/host
+RUN_DEPENDS=	${LOCALBASE}/bin/host:${PORTSDIR}/net/host
 
 USE_X_PREFIX=	yes
 USE_MESA=	yes
 USE_GTK=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-GL-prefix=${X11BASE}/lib \
-		--with-lib-GL
+		--with-lib-GL \
+		--with-host=${LOCALBASE}/bin/host
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
