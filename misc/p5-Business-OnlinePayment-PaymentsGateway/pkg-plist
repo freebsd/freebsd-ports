@@ -3,3 +3,4 @@ lib/perl5/site_perl/%%PERL_VER%%/auto/Business/OnlinePayment/PaymentsGateway/aut
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Business/OnlinePayment/PaymentsGateway/.packlist
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Business/OnlinePayment/PaymentsGateway
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/Business/OnlinePayment/PaymentsGateway
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Business/OnlinePayment 2>/dev/null || true
