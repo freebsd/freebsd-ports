@@ -1,6 +1,6 @@
 # New ports collection makefile for:	oops
 # Date created:		15 August 2000
-# Whom:			Sergey Osokin aka oZZ <ports@FreeBSD.org>
+# Whom:			Sergey Osokin aka oZZ <osa@FreeBSD.org.ru>
 #
 # $FreeBSD$
 #
@@ -12,16 +12,16 @@ MASTER_SITES=	http://oops-cache.org/
 DISTNAME=	${PORTNAME}-${OOPSVERSION}
 
 PATCH_SITES=	${MASTER_SITES}
-PATCHFILES=	${PORTNAME}-${OOPSVERSION}-${OOPSDATE}.patch
+PATCHFILES=	${PORTNAME}-${OOPSVERSION}-${OOPSDATE}.patch.gz
 PATCH_DIST_STRIP=	-d ${WRKDIR}/${DISTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	osa@FreeBSD.org.ru
 COMMENT=	A caching web proxy server
 
 BUILD_DEPENDS+=	gawk:${PORTSDIR}/lang/gawk
 
 OOPSVERSION=	1.5.22
-OOPSDATE=	20021204
+OOPSDATE=	20030321
 
 USE_SUBMAKE=	yes
 USE_AUTOCONF=	yes
