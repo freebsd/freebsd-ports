@@ -1,0 +1,21 @@
+This is the binary distribution of XForms, a graphical user interface
+toolkit for X Window Systems. It should work under X11 R4, R5 & R6.
+
+Documentation on XForms is available from bloch.phys.uwm.edu /pub/xforms
+via anonymous ftp.
+
+The entire XForms distribution is also accessible via
+http://bragg.phys.uwm.edu/xforms OR http://www.uwm.edu/~zhao 
+
+There is also a mailing list for XForms. Send an empty message
+to  xforms-request@cs.ruu.nl with one of the following headers
+
+  subscribe (your_name) Your_EmailAddress
+  unsubscribe (your_name) Your_EmailAddress
+
+to get on and off the list.
+
+To use the mailing list, send your message to
+  xforms@cs.ruu.nl
+Remember your message will be sent to many people. Please DO NOT
+send subscribe/unsubscribe messages to the list.
