@@ -1,0 +1,11 @@
+[ excerpt from developer's site ]
+
+SpamOracle, a.k.a. "Saint Peter", is a tool to help detect and
+filter away "spam" (unsolicited commercial e-mail). It proceeds by
+statistical analysis of the words that appear in the e-mail, comparing
+the frequencies of words with those found in a user-provided corpus
+of known spam and known legitimate e-mail. The classification
+algorithm is based on Bayes' formula, and is described in Paul
+Graham's paper, A plan for spam.
+
+WWW: http://cristal.inria.fr/~xleroy/software.html
