@@ -1,5 +1,5 @@
 # Creator:  Jordan Hubbard
-# $Id: LEGAL,v 1.80 1997/07/10 06:31:05 tg Exp $
+# $Id: LEGAL,v 1.81 1997/07/15 14:19:33 cracauer Exp $
 
 Some of the ports in this directory have restrictive copyrights prohibiting
 their actual redistribution on mass media.  When creating compilations
@@ -24,8 +24,6 @@ bzip-*			ports/archivers/bzip	Some algorithms used may
 						Opinions differ. Commercial 
 						use could render you liable 
 						to unfriendly legal action.
-camediaplay-*		ports/graphics/camediaplay No redistribution due to
-						beta status
 cap60/*			ports/net/cap		Don't sell for profit
 cku190.tar.gz		ports/comms/kermit	Restrictive copyright
 contool-*		ports/sysutils/contool	Don't incorporate the source
@@ -35,6 +33,8 @@ cosmo/*			ports/games/cosmo	Possible copyright infringement
 crack-5.0		ports/security/crack	Crypto; export-controlled
 cs-0.3			ports/devel/cs		License required for
 						redistribution on CDROM.
+dc3play-*		ports/graphics/dc3play	No redistribution due to
+						beta status
 dgd/dgd-1.0.37.tar.gz	ports/net/dgd		License required for commercial
 						use as a server, and even for
 						distribution of sources and/or
