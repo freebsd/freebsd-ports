@@ -1,8 +1,15 @@
 @comment $NetBSD: PLIST,v 1.2 1999/06/07 09:54:39 sakamoto Exp $
 bin/chasen
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Text/ChaSen.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Text/ChaSen/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Text/ChaSen/ChaSen.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Text/ChaSen/ChaSen.so
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Text/ChaSen
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Text 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Text/ChaSen 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Text 2>/dev/null || true
 share/chasen/dic/Makefile
 share/chasen/dic/cforms.cha
-share/chasen/dic/chadic.ary
 share/chasen/dic/chadic.int
 share/chasen/dic/chadic.pat
 share/chasen/dic/chasenrc

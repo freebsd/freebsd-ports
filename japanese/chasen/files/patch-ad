@@ -1,0 +1,11 @@
+--- mkchadic/Makefile~	Fri Dec 17 02:52:59 1999
++++ mkchadic/Makefile	Sun Feb 27 00:13:05 2000
+@@ -5,7 +5,7 @@
+ CP      = cp
+ MV      = mv -f
+ SHELL   = /bin/sh
+-LIBDIR  = /usr/local/lib/chasen
++LIBDIR  = $(PREFIX)/share/chasen
+ 
+ MKDICDIR = $(LIBDIR)/mkchadic
+ LIBDIR = ../lib
