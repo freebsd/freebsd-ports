@@ -5,8 +5,7 @@
 #
 
 PORTNAME=	gaim
-PORTVERSION=	0.60
-PORTREVISION?=	2
+PORTVERSION=	0.61
 CATEGORIES?=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -27,11 +26,15 @@ MAN1=		gaim.1
 
 .ifndef(WITHOUT_GTKSPELL)
 LIB_DEPENDS+=	gtkspell.0:${PORTSDIR}/textproc/gtkspell2
+.else
+CONFIGURE_ARGS+=	--disable-gtkspell
 .endif
 
 .ifndef(WITHOUT_AUDIO)
 LIB_DEPENDS+=	ao.3:${PORTSDIR}/audio/libao \
 		audiofile.0:${PORTSDIR}/audio/libaudiofile
+.else
+CONFIGURE_ARGS+=	--diable-audio
 .endif
 
 pre-everything::
