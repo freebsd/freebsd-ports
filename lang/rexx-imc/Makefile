@@ -36,6 +36,12 @@ DOCFILES=	rexx.info rexx.ref rexx.summary rexx.tech
 RMEFILES=	README README.Y2K README.bugreport README.docs \
 		README.files README.make README.news README.platforms
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 600000
+BROKEN=		"Does not compile on FreeBSD >= 6.x"
+.endif
+
 post-patch:
 # CFLAGS safeness for ARCHs other than i386
 	@${REINPLACE_CMD} -e 's|-O2||' ${WRKSRC}/Make
@@ -71,4 +77,4 @@ do-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
