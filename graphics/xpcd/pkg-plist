@@ -1,0 +1,12 @@
+bin/pcdtoppm
+bin/xpcd
+include/X11/pixmaps/xpcd-color.xpm
+include/X11/pixmaps/xpcd-gray.xpm
+lib/X11/app-defaults/Xpcd-2
+lib/X11/da/app-defaults/Xpcd-2
+lib/X11/de/app-defaults/Xpcd-2
+lib/X11/xpcd/system.xpcdrc
+@dirrm lib/X11/app-defaults
+@dirrm lib/X11/da
+@dirrm lib/X11/de
+@dirrm lib/X11/xpcd

@@ -1,0 +1,5 @@
+This is a PhotoCD tool collection.
+
+This packages core application is a command line tool which can read
+so-called PhotoCD (*.pcd) images and convert them to PPM or JPEG
+(pcdtoppm).  Also included is a PhotoCD viewing frontend for X (xpcd).
