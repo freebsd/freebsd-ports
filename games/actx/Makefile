@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	actx
-PORTVERSION=	1.21.1
+PORTVERSION=	1.23
 CATEGORIES=	games
 MASTER_SITES=	http://kurumi.sakura.ne.jp/~chimari/ActX/
-DISTNAME=	${PORTNAME}-${PORTVERSION:R}p${PORTVERSION:E}
 
 MAINTAINER=	esu@yk.rim.or.jp
 
@@ -20,7 +19,6 @@ USE_XPM=	yes
 MAN1=		actx.1
 MANLANG=	"" ja
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 ACTXDIR=	${PREFIX}/share/examples/actx
 
 post-extract:
