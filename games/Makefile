@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.209 1999/06/06 17:08:54 steve Exp $
+# $Id: Makefile,v 1.210 1999/06/06 17:45:17 steve Exp $
 #
 
     SUBDIR += 3dc
@@ -46,6 +46,7 @@
     SUBDIR += garith
     SUBDIR += gemdropx
     SUBDIR += gleyes
+    SUBDIR += gma
     SUBDIR += gnomegames
     SUBDIR += gnuchess
     SUBDIR += gnugo
