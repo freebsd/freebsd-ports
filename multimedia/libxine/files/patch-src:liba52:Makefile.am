@@ -1,0 +1,18 @@
+--- src/liba52/Makefile.am.orig	Fri Oct 19 16:55:18 2001
++++ src/liba52/Makefile.am	Fri Oct 19 16:57:31 2001
+@@ -8,13 +8,9 @@
+ 
+ lib_LTLIBRARIES = xineplug_decode_a52.la
+ 
+-xineplug_decode_a52_la_SOURCES =  bitstream.c bit_allocate.c \
+-	parse.c downmix.c imdct.c imdct_mlib.c \
+-	xine_decoder.c
++xineplug_decode_a52_la_SOURCES = xine_decoder.c
++xineplug_decode_a52_la_LIBADD = -la52
+ xineplug_decode_a52_la_LDFLAGS = -avoid-version -module
+-
+-noinst_HEADERS = a52.h a52_internal.h \
+-	bitstream.h tables.h
+ 
+ ##
+ ## Install header files (default=$includedir/xine)

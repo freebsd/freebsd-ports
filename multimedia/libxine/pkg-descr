@@ -4,3 +4,5 @@ mpeg elementary streams (audio/video only, e.g. mp3 files) and
 AVI files (using win32 codec dlls).
 
 These are the libraries for the xine.
+
+WWW: http://xine.sourceforge.net/
