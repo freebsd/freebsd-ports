@@ -1,0 +1,4 @@
+sbin/ipfm
+man/man5/ipfm.conf.5
+man/man8/ipfm.8
+etc/ipfm.conf
