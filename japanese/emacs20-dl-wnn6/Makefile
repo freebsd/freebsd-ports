@@ -15,6 +15,7 @@ MAINTAINER=	shige@FreeBSD.org
 
 LIB_DEPENDS=	wnn6.1:${.CURDIR}/../../japanese/Wnn6-lib
 BUILD_DEPENDS=	emacs-dl-${EMACS_VER}:${EMACSDL_DIR} \
+		autoconf:${PORTSDIR}/devel/autoconf \
 		/nonexistent:${EMACSDL_DIR}:configure
 RUN_DEPENDS=	emacs-dl-${EMACS_VER}:${EMACSDL_DIR}
 
