@@ -16,6 +16,5 @@ WRKSRC?=	${WRKDIR}/${BROWSER}-v47.x86-unknown-freebsd
 BROWSER_VER=	4.7
 INFILE_HEAD?=	'Communicator,4.7.0.19990915'
 NO_AUTOADMIN=	yes
-NO_FORTIFY=	yes
 
 .include "${MASTERDIR}/Makefile"
