@@ -12,7 +12,8 @@ CATEGORIES=	textproc www pear
 MAINTAINER=	pav@FreeBSD.org
 COMMENT=	PEAR class for writing Microsoft Excel files
 
-BUILD_DEPENDS=	${PEARDIR}/OLE.php:${PORTSDIR}/devel/pear-OLE
+BUILD_DEPENDS=	${PEARDIR}/OLE.php:${PORTSDIR}/devel/pear-OLE \
+		${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear-PEAR
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 CATEGORY=	Spreadsheet/Excel
