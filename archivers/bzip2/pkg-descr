@@ -1,0 +1,10 @@
+This is bzip2, a block-sorting file compressor.
+
+From the README:
+
+   To the best of my knowledge, bzip2 does not use any patented
+   algorithms.  However, I do not have the resources available to
+   carry out a full patent search.  Therefore I cannot give any
+   guarantee of the above statement.
+
+   Julian Seward <jseward@acm.org>
