@@ -1,0 +1,19 @@
+## example of bsfilter.conf
+#jtokenizer kakasi # 'make WITH_KAKASI=yes install'
+#jtokenizer MeCab # 'make WITH_MECAB=yes install'
+spam-cutoff 0.6
+
+## IMAP 
+## (bsfilter --imap --imap-fetch-unflagged --insert-flag --insert-probability --imap-folder-spam inbox.spam inbox)
+#imap-server server.example.com
+#imap-auth login
+#imap-user alibaba
+#imap-password open_sesame
+
+## POP Proxy
+## (bsfilter --pop --auto-update)
+#pop-server server.example.com
+#pop-proxy-port 10110
+#pop-user alibaba
+#insert-flag
+#insert-probability
