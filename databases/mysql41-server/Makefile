@@ -142,7 +142,7 @@ pre-fetch:
 	@${ECHO} "	BUILD_STATIC=yes	Build a static version of mysqld."
 	@${ECHO} "				(use it if you need even more speed)."
 	@${ECHO} "	WITHOUT_INNODB=yes	Disable support for InnoDB table handler."
-	@${ECHO} "	WITH_NDB=yes		Disable support for NDB Cluster."
+	@${ECHO} "	WITH_NDB=yes		Enable support for NDB Cluster."
 	@${ECHO} ""
 
 post-patch:
