@@ -6,3 +6,5 @@ consistent and predictable interfaces to incompatible whois response formats.
 The Whois RFC (954) does not define a template for presenting server data;
 consequently there is a large variation in layout styles as well as content
 served across servers. 
+
+WWW: http://search.cpan.org/dist/Net-XWhois/
