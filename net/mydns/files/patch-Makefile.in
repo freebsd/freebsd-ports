@@ -1,6 +1,6 @@
---- Makefile.in.orig	Mon Jul 29 21:37:45 2002
-+++ Makefile.in	Mon Jul 29 21:38:30 2002
-@@ -440,7 +440,6 @@
+--- Makefile.in.orig	Wed Dec 18 15:16:33 2002
++++ Makefile.in	Wed Dec 18 15:16:43 2002
+@@ -529,7 +529,6 @@
  
  install-data-am:
  	@$(NORMAL_INSTALL)
