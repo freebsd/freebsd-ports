@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gsl
-PORTVERSION=	0.1
+PORTVERSION=	0.2.3
 CATEGORIES=	math ruby
 MASTER_SITES=	http://www5d.biglobe.ne.jp/~ytsune/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -21,6 +21,7 @@ USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
 RUBY_SETUP=	install.rb
 
+WRKSRC=		${WRKDIR}/rb-${PORTNAME}
 CONFIGURE_ARGS=	-- --with-opt-dir="${LOCALBASE}"
 
 EXAMPLES_EN=	test/*
