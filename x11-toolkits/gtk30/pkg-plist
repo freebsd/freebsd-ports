@@ -11,6 +11,7 @@ include/gtk-2.0/gdk-pixbuf/gdk-pixbuf.h
 include/gtk-2.0/gdk-pixbuf/gdk-pixdata.h
 include/gtk-2.0/gdk/gdk.h
 include/gtk-2.0/gdk/gdkcolor.h
+include/gtk-2.0/gdk/gdkconfig.h
 include/gtk-2.0/gdk/gdkcursor.h
 include/gtk-2.0/gdk/gdkdnd.h
 include/gtk-2.0/gdk/gdkdrawable.h
@@ -35,7 +36,6 @@ include/gtk-2.0/gdk/gdktypes.h
 include/gtk-2.0/gdk/gdkvisual.h
 include/gtk-2.0/gdk/gdkwindow.h
 include/gtk-2.0/gdk/gdkx.h
-include/gtk-2.0/gtk/gdkconfig.h
 include/gtk-2.0/gtk/gtk.h
 include/gtk-2.0/gtk/gtkaccelgroup.h
 include/gtk-2.0/gtk/gtkaccellabel.h
