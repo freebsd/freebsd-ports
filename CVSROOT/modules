@@ -5473,6 +5473,7 @@ nntpcache	ports/news/nntpcache
 no-aspell	ports/textproc/no-aspell
 no-login	ports/sysutils/no-login
 noattach	ports/mail/noattach
+noatun-plugins	ports/multimedia/noatun-plugins
 nocatauth-gateway	ports/net/nocatauth-gateway
 nocatauth-server	ports/net/nocatauth-server
 nocatsplash	ports/net/nocatsplash
