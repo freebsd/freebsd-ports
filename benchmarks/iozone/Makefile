@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	iozone
-PORTVERSION=	3.172
+PORTVERSION=	3.196
 PORTREVISION=	0
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://www.iozone.org/src/current/
@@ -15,8 +15,6 @@ EXTRACT_SUFX=	.tar
 
 MAINTAINER=	jmz@FreeBSD.org
 COMMENT=	Performance Test of Sequential File I/O
-
-BROKEN=		Checksum mismatch
 
 WRKSRC=		${WRKDIR}/src/current
 
