@@ -341,6 +341,7 @@
     SUBDIR += source-highlight
     SUBDIR += sp
     SUBDIR += spell
+    SUBDIR += sv-aspell
     SUBDIR += tclExpat
     SUBDIR += tdtd.el
     SUBDIR += tex2im
