@@ -3,7 +3,7 @@
 # Date created:		Mon Aug  5 10:54:25 CDT 1996
 # Whom:			erich@FreeBSD.org
 #
-# $Id: Makefile,v 1.5 1997/09/08 13:37:47 tg Exp $
+# $Id: Makefile,v 1.6 1998/01/08 18:52:03 fenner Exp $
 #
 
 DISTNAME=	xmmix-1.2
@@ -15,5 +15,7 @@ MAINTAINER=	erich@FreeBSD.org
 
 USE_IMAKE=	yes
 REQUIRES_MOTIF=	yes
+
+MAN1=		xmmix.1
 
 .include <bsd.port.mk>

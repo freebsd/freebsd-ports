@@ -3,7 +3,7 @@
 # Date created:         25 Now 1995
 # Whom:                 Donald Burr <d_burr@ix.netcom.com>
 #
-# $Id: Makefile,v 1.5 1998/08/07 23:56:10 asami Exp $
+# $Id: Makefile,v 1.6 1998/09/21 22:13:46 steve Exp $
 #
 
 DISTNAME=       WorkMan-1.3a
@@ -18,5 +18,6 @@ LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview-lib
 
 WRKSRC=		${WRKDIR}/workman
 USE_IMAKE=	yes
+MAN1=		workman.1
 
 .include <bsd.port.mk>
