@@ -22,6 +22,8 @@ EXTRACT_ONLY=	binutils-2.14.tar.bz2 gdb-5.3.tar.bz2 gcc-2.95.3.tar.bz2 \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Collection of tools supporting C and C++ programming for Palm OS
 
+BROKEN=		Incorrect pkg-plist
+
 # it is unknown whether it could actually be made to work elsewhere,
 # but right now it does not.
 ONLY_FOR_ARCHS=	i386
