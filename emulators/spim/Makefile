@@ -21,6 +21,7 @@ CONFIGURE_SCRIPT=	Configure
 USE_IMAKE=	yes
 XMKMF=		xmkmf
 ALL_TARGET=	y.tab.c depend cl-spim cl-xspim
+MAN1=		spim.1 xspim.1
 
 pre-configure:
 	@${RM} -f ${WRKSRC}/y.tab.*
