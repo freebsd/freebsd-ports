@@ -1,0 +1,13 @@
+%%SITE_PERL%%/Parse/Lex.pm
+%%SITE_PERL%%/Parse/ALex.pm
+%%SITE_PERL%%/Parse/LexEvent.pm
+%%SITE_PERL%%/Parse/YYLex.pm
+%%SITE_PERL%%/Parse/Template.pm
+%%SITE_PERL%%/Parse/CLex.pm
+%%SITE_PERL%%/Parse/Trace.pm
+%%SITE_PERL%%/Parse/Token.pm
+%%SITE_PERL%%/Parse/Token-t.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Parse/Lex/.packlist
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Parse/Lex 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Parse 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Parse 2>/dev/null || true

@@ -1,0 +1,7 @@
+The Parse::Lex.pm module for perl5 is an object-oriented generator of
+lexical analyzers.
+
+This distribution includes Parse::YYLex (writed by Vladimir Alexiev)
+a lexer generator that you can use with yacc parsers.
+
+WWW: http://search.cpan.org/~pverd
