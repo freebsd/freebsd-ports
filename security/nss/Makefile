@@ -8,7 +8,8 @@
 PORTNAME=	nss
 PORTVERSION=	3.4.2
 CATEGORIES=	security
-MASTER_SITES=	ftp://ftp.mozilla.org/pub/security/nss/releases/NSS_${PORTVERSION:S/./_/g}_RTM/src/
+MASTER_SITES=	${MASTER_SITE_MOZILLA}
+MASTER_SITE_SUBDIR=	security/nss/releases/NSS_${PORTVERSION:S/./_/g}_RTM/src
 
 MAINTAINER=	gnome@FreeBSD.org
 
