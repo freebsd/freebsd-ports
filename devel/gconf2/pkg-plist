@@ -79,11 +79,22 @@ share/locale/uk/LC_MESSAGES/GConf2.mo
 share/locale/zh_CN/LC_MESSAGES/GConf2.mo
 @dirrm share/doc/gconf
 @dirrm lib/GConf/2
-@unexec /bin/rmdir %D/lib/GConf 2>/dev/null || /usr/bin/true
 @dirrm include/gconf/2/gconf
 @dirrm include/gconf/2
-@unexec /bin/rmdir %D/include/gconf 2>/dev/null || /usr/bin/true
 @dirrm etc/gconf/2
-@unexec /bin/rmdir %D/etc/gconf/gconf.xml.mandatory 2>/dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/etc/gconf/gconf.xml.defaults 2>/dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/etc/gconf 2>/dev/null || /usr/bin/true
+@exec   /bin/mkdir -p %D/etc/gconf/gconf.xml.defaults/apps
+@exec   /bin/mkdir -p %D/etc/gconf/gconf.xml.defaults/schemas/apps
+@exec   /bin/mkdir -p %D/etc/gconf/schemas
+@unexec /bin/rmdir    %D/lib/GConf 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir    %D/include/gconf 2>/dev/null || /usr/bin/true
+@unexec /bin/rm    -f %D/etc/gconf/gconf.xml.defaults/%%gconf.xml 2>/dev/null || true
+@unexec /bin/rm    -f %D/etc/gconf/gconf.xml.defaults/apps/%%gconf.xml 2>/dev/null || true
+@unexec /bin/rm    -f %D/etc/gconf/gconf.xml.defaults/schemas/%%gconf.xml 2>/dev/null || true
+@unexec /bin/rm    -f %D/etc/gconf/gconf.xml.defaults/schemas/apps/%%gconf.xml 2>/dev/null || true
+@unexec /bin/rmdir    %D/etc/gconf/schemas 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir    %D/etc/gconf/gconf.xml.mandatory 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir    %D/etc/gconf/gconf.xml.defaults/schemas/apps 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir    %D/etc/gconf/gconf.xml.defaults/schemas 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir    %D/etc/gconf/gconf.xml.defaults/apps 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir    %D/etc/gconf/gconf.xml.defaults 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir    %D/etc/gconf 2>/dev/null || /usr/bin/true
