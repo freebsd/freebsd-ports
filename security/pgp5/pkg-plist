@@ -2,11 +2,11 @@ bin/pgp5
 @exec ln -fs %D/%F %B/pgpe
 @exec ln -fs %D/%F %B/pgps
 @exec ln -fs %D/%F %B/pgpv
-@exec ln -fs %D/%F %B/pgp_old
+@exec ln -fs %D/%F %B/pgpo
 @unexec rm %B/pgpe
 @unexec rm %B/pgps
 @unexec rm %B/pgpv
-@unexec rm %B/pgp_old
+@unexec rm %B/pgpo
 bin/pgpk
 lib/libbn.a
 lib/libpgp.a

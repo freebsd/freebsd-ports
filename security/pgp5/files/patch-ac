@@ -22,7 +22,7 @@
 -	    $(LN_S) pgp pgpe;				\
 -	    $(LN_S) pgp pgps;				\
 -	    $(LN_S) pgp pgpv;				\
--	    $(LN_S) pgp pgp_old				\
+-	    $(LN_S) pgp pgpo				\
 +	    $(LN_S) $(INSTPGP) pgpe;			\
 +	    $(LN_S) $(INSTPGP) pgps;			\
 +	    $(LN_S) $(INSTPGP) pgpv;			\
