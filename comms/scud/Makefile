@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	scud
-PORTVERSION=	1.3
+PORTVERSION=	1.4
 CATEGORIES=	comms
-MASTER_SITES=	http://bsdone.bsdwins.com/scud/downloads/
+MASTER_SITES=	http://bsdone.bsdwins.com/dist/scud/downloads/
 
 MAINTAINER=	drq@bsdwins.com
 
