@@ -1,0 +1,23 @@
+
+$FreeBSD$
+
+--- configure	2001/09/28 13:29:15	1.1
++++ configure	2001/09/28 13:29:37
+@@ -3974,7 +3974,7 @@
+ fi
+ 
+ 
+-	     CATOBJEXT=.gmo
++	     CATOBJEXT=.mo
+ 	   fi
+ 	
+ else
+@@ -4096,7 +4096,7 @@
+         
+ 	BUILD_INCLUDED_LIBINTL=yes
+ 	USE_INCLUDED_LIBINTL=yes
+-        CATOBJEXT=.gmo
++        CATOBJEXT=.mo
+ 	INTLLIBS="\$(top_builddir)/intl/libintl.a $LIBICONV"
+ 	LIBS=`echo " $LIBS " | sed -e 's/ -lintl / /' -e 's/^ //' -e 's/ $//'`
+       fi

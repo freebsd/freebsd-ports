@@ -1,0 +1,32 @@
+
+$FreeBSD$
+
+--- po/Makefile.in.in	2001/09/28 13:21:12	1.1
++++ po/Makefile.in.in	2001/09/28 13:21:31
+@@ -106,7 +106,7 @@
+ 	@catalogs='$(CATALOGS)'; \
+ 	for cat in $$catalogs; do \
+ 	  cat=`basename $$cat`; \
+-	  lang=`echo $$cat | sed 's/\.gmo$$//'`; \
++	  lang=`echo $$cat | sed 's/\.mo$$//'`; \
+ 	  dir=$(localedir)/$$lang/LC_MESSAGES; \
+ 	  $(mkinstalldirs) $(DESTDIR)$$dir; \
+ 	  if test -r $$cat; then \
+@@ -126,7 +126,7 @@
+ 	catalogs='$(CATALOGS)'; \
+ 	for cat in $$catalogs; do \
+ 	  cat=`basename $$cat`; \
+-	  lang=`echo $$cat | sed 's/\.gmo$$//'`; \
++	  lang=`echo $$cat | sed 's/\.mo$$//'`; \
+ 	  rm -f $(DESTDIR)$(localedir)/$$lang/LC_MESSAGES/$(PACKAGE).mo; \
+ 	done
+ 	if test "$(PACKAGE)" = "gettext"; then \
+@@ -172,7 +172,7 @@
+ 	catalogs='$(GMOFILES)'; \
+ 	for cat in $$catalogs; do \
+ 	  cat=`basename $$cat`; \
+-	  lang=`echo $$cat | sed 's/\.gmo$$//'`; \
++	  lang=`echo $$cat | sed 's/\.mo$$//'`; \
+ 	  echo "$$lang:"; \
+ 	  if $(MSGMERGE) $$lang.po $(PACKAGE).pot -o $$lang.new.po; then \
+ 	    mv -f $$lang.new.po $$lang.po; \

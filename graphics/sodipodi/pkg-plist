@@ -50,6 +50,7 @@ share/gnome/sodipodi/display.glade
 share/gnome/sodipodi/div.xpm
 share/gnome/sodipodi/document.c
 share/gnome/sodipodi/document.glade
+share/gnome/sodipodi/draw_dynahand.xpm
 share/gnome/sodipodi/draw_ellipse.xpm
 share/gnome/sodipodi/draw_freehand.xpm
 share/gnome/sodipodi/draw_node.xpm
