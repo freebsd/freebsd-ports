@@ -2,20 +2,39 @@ Index: webmagick.in
 ===================================================================
 RCS file: /cvsroot/webmagick/WebMagick/webmagick.in,v
 retrieving revision 1.103
-retrieving revision 1.106
-diff -u -r1.103 -r1.106
+diff -u -r1.103 webmagick.in
 --- webmagick.in	28 Aug 2002 21:42:32 -0000	1.103
-+++ webmagick.in	6 Sep 2002 23:28:46 -0000	1.106
-@@ -302,7 +302,7 @@
- $opt_serversidemap = 0;         # Enable server-side maps writting
- 				
- $perlVarsVersion = 0; # default this to 0 for it to be overidden by appropriate status files				
--$requiredPerlVarsVersion = 2.2; # need this version to avoid regeneration of files
-+$requiredPerlVarsVersion = 2.3; # need this version to avoid regeneration of files
++++ webmagick.in	7 Sep 2002 01:06:29 -0000
+@@ -122,7 +122,6 @@
+     $opt_lowresformat,
+     $opt_lowresgeom,
+     $opt_lowresmin,
+-    $opt_lowresgeometry,
+     $opt_coloralink,
+     $opt_colorback,
+     $opt_colorfore,
+@@ -459,11 +458,10 @@
+ 					#  this size will not be cached.
  
- #
- # RC files
-@@ -1214,6 +1214,8 @@
+ #PMF: I have added a low resolution of the pictures, by default 640x480
+-$opt_lowresgeometry	= '640x480+2+2>'; # Size of low resolution images (width x height)
+ $opt_lowres		= 1;		# Cache low resolution images
+ $opt_lowresdir		= '.640x480';	# Subdirectory to cache low resolution images in
+ $opt_lowresformat	= 'JPEG';	# Format to use for low resolution images
+-$opt_lowresgeom		= $opt_lowresgeometry; # Low Resolution Images geometry
++$opt_lowresgeom         = '640x480+2+2>'; # Size of low resolution images (width x height)
+ $opt_lowresmin		= 640*480;	# Smallest image to cache in total pixels
+ 					#  (width * height).  Images smaller than
+ 					#  this size will not be cached.
+@@ -769,7 +767,6 @@
+ 		'lowresformat=s'		=> \$opt_lowresformat,
+ 		'lowresgeom=s'		=> \$opt_lowresgeom,
+ 		'lowresmin=i'		=> \$opt_lowresmin,
+-		'lowresgeometry=s'	=> \$opt_lowresgeometry,
+ 		'coloralink=s'		=> \$opt_coloralink,
+ 		'colorback=s'		=> \$opt_colorback,
+ 		'colorfore=s'		=> \$opt_colorfore,
+@@ -1214,6 +1211,8 @@
      #	close LOCKFILE;
      #}	
  
@@ -24,21 +43,22 @@ diff -u -r1.103 -r1.106
  
      $currentDate = strftime ($opt_msg_date_format, localtime);
  
-@@ -1596,8 +1598,8 @@
+@@ -1596,8 +1595,7 @@
  	 'address'		=> $opt_address,	 
  	 'anonymous'		=> $opt_anonymous,
  	 'backgroundimg'	=> $opt_icons{'background'},
 -	 'cachedir'             => $opt_cachedir,
 -	 'lowresdir'             => $opt_lowresdir,
-+	 'cache'                => !$opt_tables ? 0 : $opt_cache,
-+	 'cachedir'             => !$opt_cache || !$opt_tables ? "" : $opt_cachedir,
++	 'cachedir'             => !$opt_tables ? "" : $opt_cachedir,
  	 'coloralink'		=> $opt_coloralink,
  	 'colorback'		=> $opt_colorback,
  	 'colorfore'		=> $opt_colorfore,
-@@ -1904,14 +1906,13 @@
+@@ -1903,15 +1901,14 @@
+     #
      # Clean up cached thumbnails
      #
-     if( $opt_cache && -d $opt_cachedir ) {
+-    if( $opt_cache && -d $opt_cachedir ) {
++    if( ($opt_cache || $opt_tables) && -d $opt_cachedir ) {
 +        my @extra;
 +        my %tarray;
 +
@@ -53,7 +73,7 @@ diff -u -r1.103 -r1.106
  
          grep( $tarray{$_}++, @imgfiles );
          @extra = grep( $_ = "$opt_cachedir/$_", grep( ! $tarray{$_}, @cacheFiles ));
-@@ -1922,14 +1923,13 @@
+@@ -1922,14 +1919,13 @@
      # Clean up cached low resolution images
      #
      if( $opt_lowres && -d $opt_lowresdir ) {
@@ -71,12 +91,12 @@ diff -u -r1.103 -r1.106
  
          grep( $tarray{$_}++, @imgfiles );
          @extra = grep( $_ = "$opt_lowresdir/$_", grep( ! $tarray{$_}, @lowresFiles ));
-@@ -2889,12 +2889,12 @@
+@@ -2889,12 +2885,12 @@
      #
      # If caching thumbnails then ensure that directory exists
      #
 -    mkdir( $opt_cachedir, 0755 ) if ! -d $opt_cachedir;
-+    mkdir( $opt_cachedir, 0755 ) if $opt_cache && ! -d $opt_cachedir;
++    mkdir( $opt_cachedir, 0755 ) if ($opt_cache || $opt_tables) && ! -d $opt_cachedir;
  
      #
      # If caching low resolution images then ensure that directory exists
@@ -86,38 +106,248 @@ diff -u -r1.103 -r1.106
  
      # Read images into PerlMagick object
      print( STDERR "\nReading images: ", join(' ', @{$imageNames[$pageNumber - 1]}), "\n" )
-@@ -2925,18 +2925,20 @@
- 				$filesize,	# Image file size
- 				$magick);
+@@ -2919,217 +2915,38 @@
+ READ:       
+ 	foreach $imagename (@{$imageNames[$pageNumber - 1]}) {
  
-+		if ($opt_lowres) {
+-		my ($rc, #return code
+-				$width,		# Image width
+-				$height,	# Image height
+-				$filesize,	# Image file size
+-				$magick);
++	    my ($rc,        #return code
++		$width,     # Image width
++		$height,    # Image height
++		$filesize,  # Image file size
++		$magick);
+ 
++	    if ($opt_lowres) {
  #PMF: resize images using createLowResolutionImage()
--		#first do the low resolution image
+ 		#first do the low resolution image
 -		($rc, $filesize, $width, $height, $magick) = 
 -			&createLowResolutionImage ($image, $opt_lowresdir, $imagename, 0, $opt_lowres, 0,
 -																 $opt_forcelowres, $opt_lowresgeometry, 
 -																 $opt_lowresformat, $opt_lowresmin, 
 -																 0, 0);
--		if ($rc == -1) {
++		($rc, $filesize, $width, $height, $magick) =
++		    &createLowResolutionImage ($image, $opt_lowresdir, $imagename, 0, 1, 0,
++					       $opt_forcelowres, $opt_lowresgeom,
++					       $opt_lowresformat, $opt_lowresmin,
++					       0, 0);
+ 		if ($rc == -1) {
+-			next READ;
++		    next READ;
+ 		}
+ 
+ 		undef @$image; # Only delete image data, not object
++	    }
+ 
+-		#then do the thumbnail
+-		($rc, $filesize, $width, $height, $magick) = 
+-			&createLowResolutionImage ($image, $opt_cachedir, $imagename, $opt_cache, 0, $opt_tables,
+-																 $opt_forcecache, $opt_thumbgeometry, 
+-																 $opt_cacheformat, $opt_cachemin,
+-																 $opt_thumbprehook, $opt_thumbposthook);
+-		if ($rc	== -1) {
 -			next READ;
 -		}
-+			#first do the low resolution image
-+			($rc, $filesize, $width, $height, $magick) =
-+				&createLowResolutionImage ($image, $opt_lowresdir, $imagename, 0, 1, 0,
-+																	 $opt_forcelowres, $opt_lowresgeometry,
-+																	 $opt_lowresformat, $opt_lowresmin,
-+																	 0, 0);
-+			if ($rc == -1) {
-+				next READ;
-+			}
+-
+-#PMF: moved to createLowResolutionImage()
+-#	    my (
+-#		$width,		# Image width
+-#		$height,	# Image height
+-#		$base_columns,	# Original width
+-#		$base_rows,	# Original height
+-#		$class,		# Image class
+-#		$comment,	# Image comment
+-#		$depth,		# Image color depth
+-#		$filesize,	# Image file size
+-#		$magick,	# Image magick
+-#		);
+-#	    #
+-#	    # Handle thumbnail cache
+-#	    #
+-#	    my $cachename = "$opt_cachedir/$imagename";
+-
+-#	    $newthumb = 1;	# Start presuming that thumbnail is new
+-#	    # If we are caching, and cache thumbnail exists and is newer then use it
+-#	    # always make cache if doing tables, or if version is not correct
+-#	    if ( ($opt_cache || $opt_tables) && ! $opt_forcecache && -f $cachename 
+-#	    	&& (fmtime($cachename) >= fmtime($imagename))) {
+-#		# Read image
+-#		print( STDERR "Reading $cachename ...\n" ) if $opt_debug;
+-#		$status = $image->Read("$cachename");
+-#		if("$status") {
+-#		    undef @$image; # Only delete image data, not object
+-#		    handleMagickError( __FILE__, __LINE__, $cachename, $status);
+-#		    next READ; # Try to read next image
+-#		}
+-
+-#		# Obtain original image parameters
+-#		$comment = $image->Get("comment");
+-#		if ($comment =~
+-#		    # xv 3.00 & 3.10 format
+-#		    /IMGINFO:(\d+)x(\d+) (\S+) file\s+\((\d+) bytes\)/ ) {
+-#		    $width = $1;
+-#		    $height = $2;
+-#		    $magick = $3;
+-#		    $filesize = $4;
+-#		} else {
+-#		    print( STDERR "Failed to grock image info from thumbnail ${cachename}!\n",
+-#			  "Removing cache file ...\n" );
+-#		    print( STDERR "Run WebMagick again to re-generate the thumbnail.\n" );
+-#		    print( STDERR "If problem continues then your ImageMagick is out of date.\n" );
+-#		    unlink( $cachename );
+-#		}
+-
+-#		# Indicate that thumbnail came from cache
+-#		$newthumb = 0;
+-#	    } else {
+-#		# Otherwise, read and scale image
+-
+-#		# Set desired image read size.  The JPEG library will
+-#		# read and return a reduced image which is at least
+-#		# the size specified (it returns a number of standard
+-#		# scaled sizes) but not smaller.
+-#		# This uses a feature available in PerlMagick 1.12 and beyond
+-#		$status = $image->Set(size=>$opt_thumbgeometry);
+-#		handleMagickError( __FILE__, __LINE__, "$opt_thumbgeometry", $status) if "$status";
+-		
+-#		# Read image
+-#		print( STDERR "Reading ${imagename}\[0\] ...\n" ) if $opt_debug;
+-#		$status = $image->Read("${imagename}\[0\]");
+-#		if("$status" && handleMagickError( __FILE__, __LINE__, $imagename, $status)) {
+-#		    undef @$image; # Only delete image data, not object
+-#		    print("Trying next image ...\n" );
+-#		    next READ; # Try to read next image		    }
+-#		}
+-
+-#		# Scale image and obtain original parameters if not from cache
+-#		if( $newthumb ) {
+-
+-#		    #
+-#		    # Apply any PerlMagick operations specified by $opt_thumbprehook
+-#		    #
+-#		    if( $opt_thumbprehook ) {
+-#			print("Evaluating thumbnail pre-hook ...\n$opt_thumbprehook\n" )
+-#			    if $opt_debug;
+-#			eval $opt_thumbprehook;
+-#		    }
+-
+-#		    # Obtain image parameters
+-#		    ( $width, $height, $filesize, $magick, $class, $depth ) =
+-#			$image->Get(
+-#				    'width',
+-#				    'height',
+-#				    'filesize',
+-#				    'magick',
+-#				    'class',
+-#				    'depth');
+-		    
+-#		    if( $opt_debug ) {
+-#		      print("Image: ${width}x${height} $class $filesize bytes $magick $depth bits\n");
+-#		    }
+-
+-#		    # Obtain original image size.  This uses a feature
+-#		    # available in PerlMagick 1.12 and beyond.  If the
+-#		    # feature is not supported then undefined values
+-#		    # should be returned.
+-#		    ($base_columns, $base_rows) = $image->Get('base-columns', 'base-rows');
+-#		    if( defined($base_columns) && defined($base_rows) ) {
+-#			$width = $base_columns;
+-#			$height = $base_rows;
+-#			print("Saving original image size ${base_columns}x${base_rows}\n")
+-#			    if $opt_debug;
+-#		    }
+-
+-#		    my $geometry;
+-#		    if( $opt_cache ) {
+-#			$geometry = $opt_cachegeom;
+-#		    } else {
+-#			$geometry = $opt_thumbgeometry;
+-#		    }
+-
+-#		    my $opt_sampling = 0; # Set to 1 to enable sampling
+-#		    if( $class eq 'PseudoClass' && $opt_sampling ) {
+-#			print( STDERR "Sampling $imagename to geometry \"${geometry}>\" ...\n")
+-#			    if $opt_debug;
+-#			$status = $image->Sample(geometry=>"${geometry}>");
+-			
+-#		    } else {
+-#			print( STDERR "Zooming $imagename with geometry \"${geometry}>\" ...\n")
+-#			    if $opt_debug;
+-#			$status = $image->Zoom(filter=>"${opt_zoomfilter}",
+-#					       blur=>0.6,
+-#					       geometry=>"${geometry}>" );
+-#		    }
+-		    
+-#		    if("$status") {
+-#			undef @$image; # Only delete image data, not object
+-#			handleMagickError( __FILE__, __LINE__, $imagename, $status);
+-#			next READ; # Try to read next image
+-#		    }
+-#		}
+-
+-#		#
+-#		# Apply any PerlMagick operations specified by $opt_thumbposthook
+-#		#
+-#		if( $opt_thumbposthook ) {
+-#		    print("Evaluating thumbnail post-hook ...\n$opt_thumbposthook\n" ) if $opt_debug;
+-#		    eval $opt_thumbposthook;
+-#		}
+-
+-#		# If we are caching, thumbnail is new, and image is
+-#		# large enough, then write it to thumbnail cache
+-#		# if we are using tables, then we cache as long as it's new
+-#		if( ($opt_cache || $opt_tables) && $newthumb && ((($width*$height) > $opt_cachemin) || $opt_tables)) {
+-		
+-
+-#		    my $comment="IMGINFO:${width}x${height} ${magick} file  (${filesize} bytes)";
+-#		    print( STDERR "Applying image comment:\n${comment}\n") if $opt_debug;
+-
+-#		    # Apply comment to thumbnail image
+-#		    $status = $image->Comment( $comment );
+-#		    handleMagickError( __FILE__, __LINE__, $cachename, $status) if "$status";
+-		    
+-#		    print( STDERR "Writing ${cachename} with format ${opt_cacheformat} ...\n" )
+-#			if $opt_debug;
+-#                    #
+-#                    # Give JPEG files special treatment
+-#                    #
+-#                    if( $opt_cacheformat eq 'JPEG' || $opt_cacheformat eq 'JPG' ) {
+-#		        $status = $image->Write(
+-#                                                  filename=>"${opt_cacheformat}:${cachename}",
+-#					          interlace=>'None',
+-#					          quality=>85
+-#                                                );
+-#                    } else {
+-#		        $status = $image->Write(
+-#                                                  filename=>"${opt_cacheformat}:${cachename}"
+-#                                               );
+-#                    }
+-#		    handleMagickError( __FILE__, __LINE__, $cachename, $status) if "$status";
+-#		    # TODO: for some reason, the output looks like these are getting put in twice, once with .cache/
+-#		    $thumbImageSizes{$imagename} = html_imgsize($cachename);
+-		    		    
+-#		}
+-
+-#	    }
++	    #then do the thumbnail
++	    ($rc, $filesize, $width, $height, $magick) =
++		&createLowResolutionImage ($image, $opt_cachedir, $imagename, $opt_cache, 0, $opt_tables,
++					   $opt_forcecache,
++					   $opt_cache ? $opt_cachegeom : $opt_thumbgeometry,
++					   $opt_cacheformat, $opt_cachemin,
++					   $opt_thumbprehook, $opt_thumbposthook);
++	    if ($rc == -1) {
++		next READ;
++	    }
  
--		undef @$image; # Only delete image data, not object
-+			undef @$image; # Only delete image data, not object
-+		}
- 
- 		#then do the thumbnail
- 		($rc, $filesize, $width, $height, $magick) = 
-@@ -3910,7 +3912,10 @@
+-	    
+ 	    #
+ 	    # Add thumbnail to thumbs array
+ 	    #
+@@ -3910,7 +3727,10 @@
  		# the size specified (it returns a number of standard
  		# scaled sizes) but not smaller.
  		# This uses a feature available in PerlMagick 1.12 and beyond
@@ -129,3 +359,50 @@ diff -u -r1.103 -r1.106
  		handleMagickError( __FILE__, __LINE__, "$a_geometry", $status) if "$status";
  		
  		# Read image
+@@ -3960,27 +3780,18 @@
+ 			    if $opt_debug;
+ 			}
+ 
+-			my $geometry;
+-#			if ( $a_cache ) {
+-#				$geometry = $opt_cachegeom;
+-#			} else {
+-#				$geometry = $a_geometry;
+-#			}
+-			#PMF: I simplified this calculation of the geometry
+-			$geometry = $a_geometry;
+-
+ 			my $a_sampling = 0;			# Set to 1 to enable sampling
+ 			if ( $class eq 'PseudoClass' && $a_sampling ) {
+-				print( STDERR "Sampling $imagename to geometry \"${geometry}>\" ...\n")
++				print( STDERR "Sampling $imagename to geometry \"${a_geometry}>\" ...\n")
+ 			    if $opt_debug;
+-				$status = $image->Sample(geometry=>"${geometry}>");
++				$status = $image->Sample(geometry=>"${a_geometry}>");
+ 			
+ 			} else {
+-				print( STDERR "Zooming $imagename with geometry \"${geometry}>\" ...\n")
++				print( STDERR "Zooming $imagename with geometry \"${a_geometry}>\" ...\n")
+ 			    if $opt_debug;
+ 				$status = $image->Zoom(filter=>"${opt_zoomfilter}",
+-															 blur=>0.6,
+-															 geometry=>"${geometry}>" );
++						       blur=>0.6,
++						       geometry=>"${a_geometry}>" );
+ 			}
+ 		    
+ 			if ("$status") {
+@@ -4276,12 +4087,11 @@
+   --cachemin         Smallest image to cache in pixels. (default 300*200)
+ 
+ Low resolution images:
+-  --[no]lowres        Cache low resolution images (default on)
++  --[no]lowres        Cache low resolution images (default on for Javascript, off otherwise)
+   --lowresdir         Subdirectory name to cache low resolution images in (default .640x480)
+   --lowresformat      Format of cached low resolution images (default JPEG)
+   --lowresgeom        Cache low resolution geometry (default 640x480+2+2)
+   --lowresmin         Smallest image to resize in pixels. (default 640*480)
+-  --lowresgeometry    Low resolution geometry (widthxheight)
+ 
+ Montage:
+   --[no]forcegif     Force imagemap to be in GIF format (default off)
