@@ -3,13 +3,13 @@
 # Date created:		10 August 1997
 # Whom:			Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.32 1999/03/17 06:41:24 nectar Exp $
+# $Id: Makefile,v 1.33 1999/03/19 04:40:07 nectar Exp $
 #
 
-DISTNAME=	icewm-0.9.34
+DISTNAME=	icewm-0.9.36
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.kiss.uni-lj.si/~k4fr0235/icewm/devel/ \
-		http://www.freebsd.org/~vanilla/
+		http://www.physik.TU-Berlin.DE/~ibex/ports/distfiles/icewm/
 EXTRACT_SUFX=	.src.tar.gz
 
 MAINTAINER=	nacai@iname.com
