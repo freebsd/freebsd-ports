@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	yafc
-PORTVERSION=	0.6.5
+PORTVERSION=	0.6.6
 CATEGORIES=	ftp
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -21,8 +21,5 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -lintl"
 
 MAN1=		yafc.1
-
-post-install:
-	@install-info ${PREFIX}/info/yafc.info ${PREFIX}/info/dir
 
 .include <bsd.port.mk>
