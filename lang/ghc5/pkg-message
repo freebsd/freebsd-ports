@@ -1,5 +1,6 @@
 ******************************************************************************
-In order to avoid a conflict with the textproc/haxml and the devel/drift port,
+In order to avoid a conflict with the textproc/hs-haxml and the devel/hs-drift
+port,
 
                   DrIFT,     DtdToHaskell,     and  Xtract
 
