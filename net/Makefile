@@ -217,6 +217,7 @@
     SUBDIR += jabber-aim
     SUBDIR += jabber-conference
     SUBDIR += jabber-jud
+    SUBDIR += jabber-yahoo
     SUBDIR += jags
     SUBDIR += javadc
     SUBDIR += jift
