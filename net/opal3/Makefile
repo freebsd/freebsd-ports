@@ -19,8 +19,7 @@ COMMENT=	A H323 Video Conferencing library
 
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/devel/pwlib:build
 
-LIB_DEPENDS=	expat.4:${PORTSDIR}/textproc/expat2 \
-		ldap.2:${PORTSDIR}/net/openldap20-client
+LIB_DEPENDS=	expat.4:${PORTSDIR}/textproc/expat2
 
 .include <bsd.port.pre.mk>
 .if ${OSVERSION} < 500000
@@ -39,6 +38,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_BISON=	yes
 
 USE_GMAKE=	yes
+USE_OPENLDAP=	yes
 USE_AUTOCONF=	yes
 WANT_AUTOCONF_VER=	253
 GNU_CONFIGURE=	yes

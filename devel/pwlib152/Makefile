@@ -17,8 +17,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	roger@freebsd.org
 COMMENT=	A cross platform C++ library, used by OpenH323
 
-LIB_DEPENDS=	expat.4:${PORTSDIR}/textproc/expat2 \
-		ldap.2:${PORTSDIR}/net/openldap20-client
+LIB_DEPENDS=	expat.4:${PORTSDIR}/textproc/expat2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
@@ -26,6 +25,7 @@ USE_BISON=	yes
 
 USE_GMAKE=	yes
 USE_AUTOCONF=	yes
+USE_OPENLDAP=	yes
 WANT_AUTOCONF_VER=	253
 CONFIGURE_ENV=	OSRELEASE=${OSVERSION}
 ALL_TARGET=	optnoshared
