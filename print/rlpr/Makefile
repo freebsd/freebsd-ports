@@ -6,32 +6,26 @@
 #
 
 PORTNAME=	rlpr
-PORTVERSION=	2.02
-PORTREVISION=	2
+PORTVERSION=	2.04
 CATEGORIES=	print net
-MASTER_SITES=	${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR=	system/printing
+MASTER_SITES=	ftp://www.truffula.com/pub/
 
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Send print jobs to lpd servers anywhere on a network
-
-FORBIDDEN=	"Local and remote exploitable buffer overflow (CAN-2004-0393, CAN-2004-0454)"
 
 #LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
 
 GNU_CONFIGURE=	yes
 #CONFIGURE_ENV=	CPPFLAGS="-I${PREFIX}/include" LDFLAGS="-L${PREFIX}/lib -lintl"
+CONFIGURE_ENV=	CPPFLAGS="-I${FILESDIR}"
 CONFIGURE_ARGS=	--disable-nls --without-catgets
+USE_REINPLACE=	yes
 
 post-patch:
 	# Replacing references to /etc/rlprrc to ${PREFIX}/etc/rlprrc
-	@for f in ${WRKSRC}/src/rlprrc.h \
-			`${GREP} -l /etc/rlprrc ${WRKSRC}/man/*.[0-9n]`; do \
-		if test -e $$f.orig; then continue; fi; \
-		${MV} $$f $$f.orig ; \
-		${SED} s%/etc/rlprrc%${PREFIX}/etc/rlprrc%g < $$f.orig > \
-			$$f ; \
-	done
+	${REINPLACE_CMD} -e 's%/etc/rlprrc%${PREFIX}/etc/rlprrc%g' \
+		${WRKSRC}/src/rlprrc.h \
+		`${GREP} -Fl /etc/rlprrc ${WRKSRC}/man/*.[0-9n]`
 
 post-install:
 	# Making the installed binaries suid,\
