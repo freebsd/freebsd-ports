@@ -8,7 +8,7 @@
 PORTNAME=	dbench
 PORTVERSION=	1.3
 CATEGORIES=	benchmarks
-MASTER_SITES=	ftp://dnuc.polyn.kiae.su/pub/dbench/
+MASTER_SITES=	http://samba.org/ftp/tridge/dbench/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simulation of the Ziff-Davis netbench benchmark
