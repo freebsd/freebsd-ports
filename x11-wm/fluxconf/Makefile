@@ -17,4 +17,14 @@ USE_X_PREFIX=	yes
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 
+PORTDOCS=	fluxconf.png fluxkeys.png fluxmenu.png index.html
+
+post-install:
+.ifndef (NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for i in ${PORTDOCS}
+	@${INSTALL_DATA} ${WRKSRC}/docs/${i} ${DOCSDIR}
+.endfor
+.endif
+
 .include <bsd.port.mk>
