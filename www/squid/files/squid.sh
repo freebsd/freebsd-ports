@@ -20,9 +20,9 @@ command=%%PREFIX%%/sbin/squid
 extra_commands=reload
 reload_cmd="${command} -k reconfigure"
 stop_cmd="${command} -k shutdown"
-: ${squid_chdir:=%%PREFIX%%/squid/logs}
-: ${squid_user:=%%SQUID_UID%%}
-: ${squid_flags:="-D"}
+squid_chdir=${squid_chdir:-%%PREFIX%%/squid/logs}
+squid_user=${squid_user:-%%SQUID_UID%%}
+squid_flags=${squid_flags:-"-D"}
 default_config=%%PREFIX%%/etc/squid/squid.conf
 
 if [ -f /etc/rc.subr ]; then

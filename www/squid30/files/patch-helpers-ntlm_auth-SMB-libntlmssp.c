@@ -1,11 +1,11 @@
 This patch fixes a buffer overflow vulnerability in the NTLM auth
-helper which was reported by Stefan Esser on the 07th June 2004.
+helper which was reported by iDefense on the 07th June 2004.
 Original advisory:
 <http://www.idefense.com/application/poi/display?id=107&type=vulnerabilities&flashstatus=false>
 CVE-ID: CAN-2004-0541
 Patch obtained from:
 <http://www.squid-cache.org/~wessels/patch/libntlmssp.c.patch>
-The patch was slightly modified by the me (tmseck@netcologne.de) to make
+The patch was slightly modified by me (tmseck@netcologne.de) to make
 it apply cleanly to the FreeBSD port.
 
 Index: libntlmssp.c

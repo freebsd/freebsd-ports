@@ -12,8 +12,8 @@ if [ -x /usr/sbin/nologin ]; then
 else
 	nologin=/sbin/nologin
 fi
-: ${squid_user:=squid}
-: ${squid_group:=squid}
+squid_user=${squid_user:-squid}
+squid_group=${squid_group:-squid}
 squid_gid=100
 squid_uid=100
 # Try to catch the case where the $squid_user might have been created with an
