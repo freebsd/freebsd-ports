@@ -24,7 +24,7 @@ MAN1=		sary.1	mksary.1
 
 post-patch:
 	${REINPLACE_CMD} -e 's,glib-config,${GLIB_CONFIG},g' \
-		${WRKSRC}/configure
+		${WRKSRC}/configure ${WRKSRC}/sary-config.in
 .if !defined(NOPORTDOCS)
 	${FIND} ${WRKSRC}/docs -type f -name 'Makefile.in' | \
 		${XARGS} ${REINPLACE_CMD} \
