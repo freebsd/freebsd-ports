@@ -38,6 +38,10 @@ post-patch:
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 500000
+BROKEN=		"Does not build on FreeBSD 4.x"
+.endif
+
 .if ${HAVE_GNOME:Mlibcapplet}!="" || defined(WITH_GNOME)
 USE_GNOME+=	libcapplet
 PKGNAMESUFFIX=	-gnome
