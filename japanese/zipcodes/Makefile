@@ -1,13 +1,13 @@
 # New ports collection makefile for:	ja-zipcodes
-# Version required:	1.0
+# Version required:	19980130
 # Date created:		5 Nov 1997
 # Whom:			Jun-ichiro itojun Itoh <itojun@itojun.org>
 #
-# $Id: Makefile,v 1.2 1997/11/15 10:33:58 asami Exp $
+# $Id: Makefile,v 1.3 1998/01/01 01:34:26 max Exp $
 #
 
 DISTNAME=	ken_all
-PKGNAME=	ja-zipcodes-1.0
+PKGNAME=	ja-zipcodes-19980130
 CATEGORIES=	japanese misc
 MASTER_SITES=	http://www.postal.mpt.go.jp/lzh/
 EXTRACT_SUFX=	.lzh
@@ -16,8 +16,6 @@ MAINTAINER=	itojun@itojun.org
 
 BUILD_DEPENDS=	lha:${PORTSDIR}/archivers/lha \
 		nkf:${PORTSDIR}/japanese/nkf
-
-BROKEN=		checksum
 
 EXTRACT_CMD=	lha
 EXTRACT_BEFORE_ARGS=	xfqw=${WRKDIR}
