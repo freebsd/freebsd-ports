@@ -7280,6 +7280,7 @@ xbattbar	ports/sysutils/xbattbar
 xbattle		ports/games/xbattle
 xbill		ports/games/xbill
 xbindkeys	ports/x11/xbindkeys
+xbindkeys_config	ports/x11/xbindkeys_config
 xbl		ports/games/xbl
 xblackjack	ports/games/xblackjack
 xblast		ports/games/xblast
