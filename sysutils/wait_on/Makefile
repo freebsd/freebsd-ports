@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wait_on
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.ugh.net.au/pub/unix/wait_on/ \
 		ftp://ftp.megamirror.com/pub/ugh/unix/wait_on/ \
