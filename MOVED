@@ -957,3 +957,4 @@ textproc/orchard-c||2004-03-01|removed (obsolete)
 textproc/p5-Orchard-Perl||2004-03-01|removed (obsolete)
 devel/p5-POE-Component-IKC-ReallySimple||2004-03-01|obsolete - deleted from CPAN
 devel/p5-POE-Session-Cascading||2004-03-01|obsolete - deleted from CPAN
+games/linux_nwndata|games/nwndata|2004-03-01|Data files are not Linux-specific
