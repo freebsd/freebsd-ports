@@ -1,8 +1,8 @@
-# $Id: Makefile,v 1.64 1996/03/25 08:59:46 asami Exp $
+# $Id: Makefile,v 1.65 1996/03/25 10:13:47 asami Exp $
 #
 
     SUBDIR += archie
-RESTRICTED += dhcp	     # license issues for distribution
+    SUBDIR += dhcp
     SUBDIR += dgd
     SUBDIR += dgd-lpmud
     SUBDIR += dip
@@ -13,7 +13,7 @@ RESTRICTED += dhcp	     # license issues for distribution
     SUBDIR += imm
     SUBDIR += irc
     SUBDIR += ircII
-RESTRICTED += ivs            # crypto, export controlled
+    SUBDIR += ivs
     SUBDIR += mirror
     SUBDIR += moxftp
     SUBDIR += ncftp2
@@ -31,7 +31,7 @@ RESTRICTED += ivs            # crypto, export controlled
     SUBDIR += tinyfugue
     SUBDIR += tkined
     SUBDIR += vic
-    BROKEN += wais           # for XFree3.x
+    SUBDIR += wais
     SUBDIR += wu-ftpd
     SUBDIR += xarchie
     SUBDIR += xgopher
