@@ -102,6 +102,13 @@ MLINKS=		ggiDBGetBuffer.3 ggiDBGetNumBuffers.3 \
 
 .include <bsd.port.pre.mk>
 
+.if !exists(/usr/include/vgl.h) || ${MACHINE_ARCH} != "i386"
+CONFIGURE_ARGS+=	--disable-vgl
+PLIST_SUB+=	WITH_VGL="@comment "
+.else
+PLIST_SUB+=	WITH_VGL=""
+.endif
+
 .if defined(WITH_AALIB) || exists(${LOCALBASE}/include/aalib.h)
 LIB_DEPENDS+=	aa.1:${PORTSDIR}/graphics/aalib
 PLIST_SUB+=	WITH_AALIB=""
