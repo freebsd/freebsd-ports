@@ -1,3 +1,4 @@
+include/openhbci.h
 include/openhbci/abstracttrans.h
 include/openhbci/account.h
 include/openhbci/accountparams.h
