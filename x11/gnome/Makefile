@@ -25,7 +25,7 @@ LIB_DEPENDS=	glib12.3:${PORTSDIR}/devel/glib12 \
 		gnomeprint.5:${PORTSDIR}/print/gnomeprint \
 		ghttp.1:${PORTSDIR}/www/libghttp \
 		obgnome.1:${PORTSDIR}/lang/gnomeobjc \
-		glade.2:${PORTSDIR}/devel/libglade
+		glade.3:${PORTSDIR}/devel/libglade
 RUN_DEPENDS=	${X11BASE}/share/gnome/sounds/startup.wav:${PORTSDIR}/audio/gnomeaudio \
 		panel:${PORTSDIR}/x11/gnomecore \
 		gtcd:${PORTSDIR}/audio/gnomemedia \

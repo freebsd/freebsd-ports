@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.screem.org/src/
 
 MAINTAINER=	andrews@technologist.com
 
-LIB_DEPENDS=	glade.2:${PORTSDIR}/devel/libglade \
+LIB_DEPENDS=	glade.3:${PORTSDIR}/devel/libglade \
 		pthread.13:${PORTSDIR}/devel/pth-devel
 
 LIBGLADE_CONFIG?=	${LOCALBASE}/bin/libglade-config

@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	stable/sources/bug-buddy
 MAINTAINER=	nakai@FreeBSD.org
 
 LIB_DEPENDS=	gnome.3:${PORTSDIR}/x11/gnomelibs \
-		glade.2:${PORTSDIR}/devel/libglade
+		glade.3:${PORTSDIR}/devel/libglade
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
