@@ -8401,6 +8401,7 @@ urt		ports/graphics/urt
 urwfonts	ports/x11-fonts/urwfonts
 urwfonts-ttf	ports/x11-fonts/urwfonts-ttf
 us-zipcodes	ports/misc/us-zipcodes
+useracc		ports/databases/useracc
 userinfo	ports/sysutils/userinfo
 userlist	ports/sysutils/userlist
 usermin		ports/sysutils/usermin
