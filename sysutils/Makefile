@@ -93,6 +93,7 @@
     SUBDIR += dmidecode
     SUBDIR += doconfig
     SUBDIR += dt
+    SUBDIR += dtc
     SUBDIR += du2ps
     SUBDIR += dump9660
     SUBDIR += duplicity

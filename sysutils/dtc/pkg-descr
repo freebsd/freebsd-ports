@@ -1,0 +1,13 @@
+A hosting web GUI for admin and accounting apache/named/proftpd/qmail
+Domain Technologie Control (DTC) is a set of PHP scripts and a web
+interface that manage a MySQL database that handles all the host
+information. It generates backup scripts, statistic calculation scripts, and
+config files for bind, Apache, qmail, and proftpd, using a single system
+UID/GID. With DTC, you can delegate the task of creating subdomains, email,
+and FTP accounts to users for the domain names they own, and monitor
+bandwidth per user and service.
+
+WWW: http://www.gplhost.com/?rub=software&sousrub=dtc
+
+- Thomas GOIRAND
+thomas@goirand.fr
