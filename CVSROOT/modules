@@ -7064,6 +7064,7 @@ ruby-bigfloat	ports/math/ruby-bigfloat
 ruby-bio	ports/biology/ruby-bio
 ruby-bitvector	ports/math/ruby-bitvector
 ruby-blowfish	ports/security/ruby-blowfish
+ruby-borges	ports/www/ruby-borges
 ruby-bsearch	ports/devel/ruby-bsearch
 ruby-byaccr	ports/devel/ruby-byaccr
 ruby-bz2	ports/archivers/ruby-bz2
