@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	rt
-PORTVERSION?=	3.0.11
-PORTREVISION?=	1
+PORTVERSION?=	3.0.12
 CATEGORIES=	www
 MASTER_SITES?=	http://download.bestpractical.com/pub/rt/release/ \
 		http://download.bestpractical.com/pub/rt/devel/ \
@@ -18,7 +17,6 @@ MAINTAINER=	autrijus@autrijus.org
 COMMENT?=	RT is an industrial-grade ticketing system written in Perl
 
 BUILD_DEPENDS+=	${APXS}:${PORTSDIR}/${APACHE_PORT} \
-		${SITE_PERL}/Apache/Mason.pm:${PORTSDIR}/www/p5-HTML-Mason \
 		${SITE_PERL}/Apache/Session.pm:${PORTSDIR}/www/p5-Apache-Session \
 		${SITE_PERL}/Cache/Cache.pm:${PORTSDIR}/devel/p5-Cache-Cache \
 		${SITE_PERL}/CGI/Cookie.pm:${PORTSDIR}/www/p5-CGI.pm \
@@ -30,6 +28,7 @@ BUILD_DEPENDS+=	${APXS}:${PORTSDIR}/${APACHE_PORT} \
 		${SITE_PERL}/Getopt/Long.pm:${PORTSDIR}/devel/p5-Getopt-Long \
 		${SITE_PERL}/${PERL_ARCH}/HTML/Entities.pm:${PORTSDIR}/www/p5-HTML-Parser \
 		${SITE_PERL}/HTML/FormatText.pm:${PORTSDIR}/textproc/p5-HTML-Format \
+		${SITE_PERL}/HTML/Mason.pm:${PORTSDIR}/www/p5-HTML-Mason \
 		${SITE_PERL}/HTML/TreeBuilder.pm:${PORTSDIR}/www/p5-HTML-Tree \
 		${SITE_PERL}/Locale/Maketext.pm:${PORTSDIR}/devel/p5-Locale-Maketext \
 		${SITE_PERL}/Locale/Maketext/Fuzzy.pm:${PORTSDIR}/devel/p5-Locale-Maketext-Fuzzy \
@@ -53,8 +52,8 @@ BUILD_DEPENDS+=	${APXS}:${PORTSDIR}/${APACHE_PORT} \
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 HAS_CONFIGURE=	yes
-NO_BUILD=	yes
-NO_PACKAGE=	Executes scripts in post-install phase
+#NO_BUILD=	yes
+#NO_PACKAGE=	Executes scripts in post-install phase
 
 CONFIGURE_ARGS=	--prefix=${RT_PATH} \
 		--enable-layout=${LAYOUT} \
@@ -72,7 +71,7 @@ BUILD_DEPENDS+=	${LOCALBASE}/libexec/apache2/mod_fastcgi.so:${PORTSDIR}/www/mod_
 .else
 BUILD_DEPENDS+=	${LOCALBASE}/libexec/apache/mod_fastcgi.so:${PORTSDIR}/www/mod_fastcgi
 .endif
-BUILD_DEPENDS+=		${SITE_PERL}/${PERL_ARCH}/FCGI.pm:${PORTSDIR}/www/p5-FastCGI
+BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/FCGI.pm:${PORTSDIR}/www/p5-FastCGI
 DEPENDS_ARGS+=	WITHOUT_MODPERL=yes
 .else
 BUILD_DEPENDS+=	${SITE_PERL}/Apache/DBI.pm:${PORTSDIR}/www/p5-Apache-DBI
@@ -88,13 +87,13 @@ BUILD_DEPENDS+=	${LOCALBASE}/libexec/apache/libperl.so:${PORTSDIR}/www/mod_perl
 DB_TYPE?=	mysql
 
 .if ${DB_TYPE} == "Oracle"
-BUILD_DEPENDS+= ${SITE_PERL}/${PERL_ARCH}/DBD/Oracle.pm:${PORTSDIR}/databases/p5-DBD-Oracle
+BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Oracle.pm:${PORTSDIR}/databases/p5-DBD-Oracle
 .else
 .if ${DB_TYPE} == "Pg"
-BUILD_DEPENDS+= ${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg
+BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg
 .else
 .if ${DB_TYPE} == "SQLite"
-BUILD_DEPENDS+= ${SITE_PERL}/${PERL_ARCH}/DBD/SQLite.pm:${PORTSDIR}/databases/p5-DBD-SQLite
+BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/SQLite.pm:${PORTSDIR}/databases/p5-DBD-SQLite
 .else
 DB_TYPE=	mysql
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql
@@ -125,22 +124,23 @@ pre-fetch:
 	@${ECHO} "      DB_DBA_PASSWORD=password        Password of database administrator"
 	@${ECHO} "      WITH_FASTCGI                    Use FastCGI instead of mod_perl"
 	@${ECHO} "      WITH_APACHE2                    Use Apache2 as the web server"
-	@${ECHO} "      INITIAL_INSTALL                 Do initialize DB (for initial install only)"
+	@${ECHO} "      INITIAL_INSTALL                 Do initialize DB (for initial setup only)"
 	@${ECHO} ""
 
 pre-install:
-	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} \
+	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} \
 		${PKGNAME} PRE-INSTALL
+
+post-patch:
+	@${FIND} ${WRKSRC} -name "*.orig" -a -exec ${RM} -f {} \;
 
 post-install:
 	@${INSTALL_DATA} ${WRKSRC}/README ${RT_PATH}/README
-.if !defined(INITIAL_INSTALL)
-	@echo Upgrade of RT3 complete.
-.else
-	-@${PERL} $(RT_PATH)/sbin/rt-setup-database --force --action drop --dba ${DB_DBA_USER} --dba-password ${DB_DBA_PASSWORD}
-	-@${PERL} $(RT_PATH)/sbin/rt-setup-database --force --action init --dba ${DB_DBA_USER} --dba-password ${DB_DBA_PASSWORD}
-	@${SED} s!%%RT_PATH%%!${RT_PATH}!g ${PKGMESSAGE}
-.endif
+	@PKG_PREFIX=${PREFIX} RT_PATH=${RT_PATH} \
+	 DB_DBA_USER=${DB_DBA_USER} DB_DBA_PASSWORD=${DB_DBA_USER} \
+	 INITIAL_INSTALL=${INITIAL_INSTALL} PKGMESSAGE=${PKGMESSAGE} \
+	 ${SH} ${PKGINSTALL} \
+		${PKGNAME} POST-INSTALL
 
 .include <bsd.port.pre.mk>
 
