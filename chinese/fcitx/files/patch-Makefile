@@ -1,5 +1,5 @@
---- Makefile.orig	Wed Mar 26 02:29:39 2003
-+++ Makefile	Wed Mar 26 02:41:59 2003
+--- Makefile.orig	Thu Jan  1 21:11:24 2004
++++ Makefile	Thu Jan  1 21:14:40 2004
 @@ -1,12 +1,12 @@
  CC = gcc
  
@@ -9,7 +9,7 @@
 -INC =  -I/usr/X11R6/include -I.
 +INC =  -I${LOCALBASE}/include -I${X11BASE}/include -I.
  
- SRC = main.c ime.c AddPhraseWindow.c IC.c InputWindow.c MainWindow.c MyErrorsHandlers.c punc.c py.c PYFA.c pyParser.c pyMapTable.c SetLocale.c tools.c wbx.c window.c xim.c qw.c sp.c py-2.c
+ SRC = main.c ime.c KeyList.c AddPhraseWindow.c IC.c InputWindow.c MainWindow.c MyErrorsHandlers.c punc.c py.c PYFA.c pyParser.c pyMapTable.c SetLocale.c tools.c wbx.c window.c xim.c qw.c sp.c py-2.c
  
 -LIB = -L/usr/X11R6/lib -lX11
 +LIB = -L${LOCALBASE}/lib -L${X11BASE}/lib -lX11 -liconv
