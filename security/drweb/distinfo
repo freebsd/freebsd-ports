@@ -1,2 +1,4 @@
-MD5 (drweb-4.30-freebsd4.tar.gz) = 1f85f539fb946376d61e51b0984616cc
-MD5 (drweb-4.30-freebsd5.tar.gz) = 1b7eb3f2472ff0f85acd66729c62c70d
+MD5 (drweb-4.31.3-freebsd4.tar.gz) = 1c6d87efe66fd6bc0bf8aaeb4d4e9b53
+SIZE (drweb-4.31.3-freebsd4.tar.gz) = 2045333
+MD5 (drweb-4.31.3-freebsd5.tar.gz) = 8e87bcd9f53b254ce736ea5c2dd498c3
+SIZE (drweb-4.31.3-freebsd5.tar.gz) = 2350075

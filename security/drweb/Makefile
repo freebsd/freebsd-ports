@@ -6,12 +6,14 @@
 #
 
 PORTNAME=	drweb
-PORTVERSION=	4.30
+PORTVERSION=	4.31.3
 CATEGORIES=	security
-MASTER_SITES=	ftp://ftp.drweb.ru/pub/unix/archive/${PORTNAME}-${PORTVERSION}/
+MASTER_SITES=	ftp://ftp.drweb.ru/pub/unix/ \
+		ftp://ftp.drweb.ru/pub/unix/archive/ \
+		ftp://ftp.drweb.ru/pub/unix/archive/${PORTNAME}-${PORTVERSION}/
 DISTFILES=	${MAIN_NAME}.tar.gz
 
-MAINTAINER=	anton@chelcom.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DrWeb antivirus suite
 
 ONLY_FOR_ARCHS=	i386
