@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libxslt
-PORTVERSION=	1.0.30
+PORTVERSION=	1.0.31
 CATEGORIES=	textproc gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/1.0
@@ -23,7 +23,7 @@ USE_GNOME=	gnomehack libxml2
 CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"
 
-MAN4=		libexslt.4 libxslt.4
+MAN3=		libexslt.3 libxslt.3
 MAN1=		xsltproc.1
 
 .if !defined(WITHOUT_PYTHON)
