@@ -7,6 +7,7 @@
 
 PORTNAME=	dancer-services
 PORTVERSION=	1.8.0.6.8
+PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	http://www.doc.ic.ac.uk/~aps100/dancer/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTNAME}
