@@ -15,6 +15,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-libc6-src
 MAINTAINER=	olgeni@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+BROKEN=		"Source code no longer available (licensing change)"
 
 USE_X_PREFIX=	yes
 USE_XPM=	yes
