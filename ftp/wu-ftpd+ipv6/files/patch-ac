@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	Sat Jul  1 22:04:21 2000
++++ src/Makefile.in	Sun Dec 22 21:01:41 2002
+@@ -34,7 +34,7 @@
+ 
+ CFLAGS=$(WARNINGS) @CFLAGS@
+ LDFLAGS=@LDFLAGS@
+-YACC=@YACC@
++YACC=byacc
+ LIBS=@LIBS@
+ 
+ UTIL_SRC  = COPYRIGHT.c vers.c
