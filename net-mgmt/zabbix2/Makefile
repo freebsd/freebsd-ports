@@ -6,21 +6,19 @@
 #
 
 PORTNAME=	zabbix
-PORTVERSION=	1.0b14
+PORTVERSION=	1.0
+PORTEPOCH=	1
 CATEGORIES?=	net-mgmt
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}-${PORTVERSION:S|b|beta|}
 
 MAINTAINER=	asa@gascom.ru
 COMMENT=	Very advanced network monitoring system
 
-NOT_FOR_ARCHS=	amd64
-
 .ifndef(ZABBIX_AGENT_ONLY)
-OPTIONS=	PGSQL	"Use a PostgreSQL backend" Off	\
-		MYSQL	"Use a MySQL backend" On	\
-		FPING	"Use fping for pinging hosts" On
+OPTIONS=	PGSQL "Use a PostgreSQL backend" off \
+		MYSQL "Use a MySQL backend" on \
+		FPING "Use fping for pinging hosts" on
 .endif
 
 .include <bsd.port.pre.mk>
@@ -34,25 +32,27 @@ LIB_DEPENDS=	netsnmp.6:${PORTSDIR}/net-mgmt/net-snmp
 RUN_DEPENDS=	php:${PORTSDIR}/lang/php4-nms
 .endif # ZABBIX_AGENT_ONLY
 
-.ifdef(WITH_FPING)
+.ifndef(WITHOUT_FPING)
 RUN_DEPENDS+=	${LOCALBASE}/sbin/fping:${PORTSDIR}/net/fping
 .endif
 
+.ifndef(ZABBIX_AGENT_ONLY)
 .ifndef(WITH_PGSQL)
-. ifndef(WITH_MYSQL)
-IGNORE=	You should configure to use either a MySQL or PostgreSQL backend.
-. endif
+.ifdef(WITHOUT_MYSQL)
+IGNORE=		You should configure to use either a MySQL or PostgreSQL backend
+.endif
+.endif
 .endif
 
 .ifdef(WITH_PGSQL)
 CONFIGURE_ARGS+=--with-pgsql
 LIB_DEPENDS+=	pq.3:${PORTSDIR}/databases/postgresql-client
 .endif
-.ifdef(WITH_MYSQL)
+.ifndef(WITHOUT_MYSQL)
 USE_MYSQL=	yes
 CONFIGURE_ARGS=	--with-mysql
 .endif
-CONFIGURE_ARGS+=--with-netsnmp
+CONFIGURE_ARGS+=--with-net-snmp
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 USE_REINPLACE=	yes
@@ -81,7 +81,7 @@ pre-patch:
 .ifndef(ZABBIX_AGENT_ONLY)
 post-patch:
 	@${REINPLACE_CMD} 's|%LOCALBASE%|${LOCALBASE}|' ${WRKSRC}/src/zabbix_sucker/zabbix_sucker.c
-.ifndef WITH_FPING
+.ifdef WITHOUT_FPING
 	@${ECHO} 'DisablePinger=yes' >> ${WRKSRC}/misc/conf/zabbix_suckerd.conf
 .endif
 .endif # ZABBIX_AGENT_ONLY
