@@ -1,28 +1,21 @@
 # New ports collection makefile for:    apache HTTPD
-# Version required:     1.2.1
+# Version required:     1.3a1
 # Date created:         Fri Aug 25 16:42:36 CDT 1995
-# Whom:                 erich@rrnet.com
+# Whom:                 ache@nagual.pp.ru
 #
-# $Id: Makefile,v 1.35 1997/07/08 13:04:09 ache Exp $
+# $Id: Makefile,v 1.1.1.1 1997/07/26 17:14:02 ache Exp $
 #
 
-DISTNAME=       apache_1.2.1
-PKGNAME=        apache-1.2.1
+DISTNAME=       apache_1.3a1
+PKGNAME=        apache-1.3a1
 CATEGORIES=	www
 MASTER_SITES=   ftp://www.apache.org/apache/dist/
 
 MAINTAINER=     ache@freebsd.org
 
-# User-controlled variables list
-# DIR_ACHE      - add SuppressHTMLPreamble option to directory index
-#                 see http://www.nagual.ru/~ache/apache_dir.html
-# SECURE_SERVER - build Apache with SSL
-
-.if defined(DIR_ACHE)
-PATCH_SITES+=   http://www.nagual.pp.ru/~ache/
-PATCHFILES+=    dir.patch
-VERS_ID=        dir/ache
-.endif
+# User-controlled variable:
+# Set it for local-supplied patch, f.e.
+# VERS_ID = mods-1.0/me
 
 .if defined(VERS_ID)
 post-patch:
@@ -31,6 +24,9 @@ post-patch:
 	sed 's;^#*OPTIM=.*;OPTIM= -DSERVER_SUBVERSION=\\"${VERS_ID}\\";' \
 	< Configuration.old > Configuration
 .endif
+
+post-patch:
+	${CP} /usr/include/md5.h ${WRKSRC}/src/md5.h
 
 post-install:
 	@if [ ! -f ${PREFIX}/etc/rc.d/apache.sh ]; then \
