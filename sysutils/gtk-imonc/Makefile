@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gtk-imonc
-PORTVERSION=	0.6.2
+PORTVERSION=	0.6.3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://userpage.fu-berlin.de/~zeank/gtk-imonc/download/
 
@@ -18,8 +18,12 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 USE_GETTEXT=	yes
 USE_ICONV=	yes
-USE_GMAKE=	yes
+USE_REINPLACE=	yes
 USE_GNOME=	gtk20
 USE_X_PREFIX=	yes
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|<endian.h>|<sys/endian.h>|' \
+		${WRKSRC}/src/md5.h
 
 .include <bsd.port.mk>
