@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libgnomecanvas
-PORTVERSION=	2.2.0.2
+PORTVERSION=	2.2.1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.2
@@ -26,5 +26,9 @@ CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc \
 		--disable-gtk-doc
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
+		s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
