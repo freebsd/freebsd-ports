@@ -1,0 +1,3 @@
+wmavgload - WindowMaker docable average load monitor.
+Adapted from asload by Nic Bernstein.
+Optionnally executes a program on click (see 'wmavgload -h' for options).

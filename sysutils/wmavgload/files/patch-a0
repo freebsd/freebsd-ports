@@ -1,0 +1,36 @@
+*** Imakefile.orig	Tue Jul 21 04:22:43 1998
+--- Imakefile	Tue Jul 21 04:24:08 1998
+***************
+*** 2,8 ****
+  DESTDIR = /usr/X11R6
+  BINDIR = /bin
+  
+! XPMLIB = -L/usr/lib/X11 -L/opt/X11_Contrib/lib/sparc -lXpm -lm  
+  DEPLIBS = $(DEPXLIB) 
+  
+  /* uncomment -lrpcsvc at the end of the line below if compile on *sparc* */
+--- 2,8 ----
+  DESTDIR = /usr/X11R6
+  BINDIR = /bin
+  
+! XPMLIB =  -lXpm -lm  
+  DEPLIBS = $(DEPXLIB) 
+  
+  /* uncomment -lrpcsvc at the end of the line below if compile on *sparc* */
+***************
+*** 10,16 ****
+  
+  LINTLIBS = $(LINTXLIB)
+  
+! EXTRA_INCLUDES = -I/opt/X11_Contrib/include
+  
+  /* if your compiler does not define linux 
+     please add -Dlinux below (if you are on a linux box :) */
+--- 10,16 ----
+  
+  LINTLIBS = $(LINTXLIB)
+  
+! EXTRA_INCLUDES = 
+  
+  /* if your compiler does not define linux 
+     please add -Dlinux below (if you are on a linux box :) */
