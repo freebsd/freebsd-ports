@@ -1,5 +1,3 @@
-bin/pydoc
-bin/python
 bin/%%PYTHON_VERSION%%
 include/%%PYTHON_VERSION%%/Python.h
 include/%%PYTHON_VERSION%%/abstract.h
@@ -1349,6 +1347,7 @@ lib/%%PYTHON_VERSION%%/test/output/test_parser
 lib/%%PYTHON_VERSION%%/test/output/test_pickle
 lib/%%PYTHON_VERSION%%/test/output/test_pkg
 lib/%%PYTHON_VERSION%%/test/output/test_poll
+lib/%%PYTHON_VERSION%%/test/output/test_popen
 lib/%%PYTHON_VERSION%%/test/output/test_popen2
 lib/%%PYTHON_VERSION%%/test/output/test_posixpath
 lib/%%PYTHON_VERSION%%/test/output/test_pow
@@ -1708,6 +1707,9 @@ lib/%%PYTHON_VERSION%%/test/test_pkg.pyo
 lib/%%PYTHON_VERSION%%/test/test_poll.py
 lib/%%PYTHON_VERSION%%/test/test_poll.pyc
 lib/%%PYTHON_VERSION%%/test/test_poll.pyo
+lib/%%PYTHON_VERSION%%/test/test_popen.py
+lib/%%PYTHON_VERSION%%/test/test_popen.pyc
+lib/%%PYTHON_VERSION%%/test/test_popen.pyo
 lib/%%PYTHON_VERSION%%/test/test_popen2.py
 lib/%%PYTHON_VERSION%%/test/test_popen2.pyc
 lib/%%PYTHON_VERSION%%/test/test_popen2.pyo
@@ -1990,7 +1992,6 @@ lib/%%PYTHON_VERSION%%/xmllib.pyo
 lib/%%PYTHON_VERSION%%/zipfile.py
 lib/%%PYTHON_VERSION%%/zipfile.pyc
 lib/%%PYTHON_VERSION%%/zipfile.pyo
-share/emacs/site-lisp/python-mode.el
 %%PORTDOCS%%share/examples/%%PYTHON_VERSION%%/README
 %%PORTDOCS%%share/examples/%%PYTHON_VERSION%%/classes/Complex.py
 %%PORTDOCS%%share/examples/%%PYTHON_VERSION%%/classes/Dates.py
