@@ -13,13 +13,11 @@ MASTER_SITES=	http://MeepZor.Com/packages/mod_access_identd/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Apache module to supply access control based on ident reply
 
-USE_APACHE=	yes
-WRKSRC=		${WRKDIR}/mod_access_identd
+WRKSRC=		${WRKDIR}/${PORTNAME}
+WANT_APACHE=	13
+AP_FAST_BUILD=	YES
+AP_GENPLIST=	YES
 
-do-build:
-	@cd ${WRKSRC} && ${APXS} -c ${PORTNAME}.c
-
-do-install:
-	${APXS} -i -A -n ${PORTNAME:S/_//g} ${WRKSRC}/${PORTNAME}.so
-
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.include "${PORTSDIR}/www/apache2/Makefile.modules.3rd"
+.include <bsd.port.post.mk>
