@@ -6,17 +6,15 @@
 #
 
 PORTNAME=	grass
-PORTVERSION=	5.0.0.p3
-PORTREVISION=	2
+PORTVERSION=	5.0.0.p4
 PORTEPOCH=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://grass.itc.it/grass5/source/ \
 		ftp://grass.baylor.edu/pub/grass/grass5/source/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.p/pre/}
+DISTFILES=	${DISTNAME}_src${EXTRACT_SUFX}
 
 MAINTAINER=	reg@FreeBSD.org
-
-BROKEN=		"Configure fails"
 
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 		png.5:${PORTSDIR}/graphics/png \
@@ -46,13 +44,14 @@ CONFIGURE_ARGS=	--with-includes=${LOCALBASE}/include \
 		--with-gd-includes=${LOCALBASE}/include/gd \
 		--with-tcltk-includes="${LOCALBASE}/include/tcl8.3 \
 					 ${LOCALBASE}/include/tk8.3" \
-		--with-postgres-includes=${LOCALBASE}/include/pgsql \
+		--with-postgres-includes=${LOCALBASE}/include/postgresql/internal/ \
 		--with-opengl-includes=${X11BASE}/include \
 		--with-opengl-libs=${X11BASE}/lib \
 		--with-freetype \
 		--with-freetype-includes=${LOCALBASE}/include/freetype2 \
 		--with-blas \
 		--with-lapack \
+		--with-nls \
 		--without-motif
 
 post-install:
