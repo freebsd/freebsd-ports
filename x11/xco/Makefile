@@ -14,9 +14,14 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	taoka@FreeBSD.org
 
 USE_IMAKE=	yes
+USE_REINPLACE=	yes
 MAN1=		xco.1
 MANCOMPRESSED=	yes
 DOCDIR=		${PREFIX}/share/doc/xco
+
+post-patch:
+		@${REINPLACE_CMD} -e 's/extern char \*malloc();//g' \
+			${WRKSRC}/xco.c ${WRKSRC}/xargs.c
 
 post-install:
 		@${MKDIR} ${DOCDIR}
