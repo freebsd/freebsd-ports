@@ -9,8 +9,7 @@ PORTNAME=	openssl
 .ifdef OPENSSL_SNAPSHOT
 PORTREVISION!=	date -v-1d +%Y%m%d
 .else
-PORTVERSION=	0.9.7a
-PORTREVISION=	2
+PORTVERSION=	0.9.7b
 .endif
 CATEGORIES=	security devel
 .ifdef OPENSSL_SNAPSHOT
