@@ -111,11 +111,11 @@ pre-install:
 
 do-install:
 	${MKDIR} ${PREFIX}/jdk${JDK_VERSION}
-	(cd ${JDKIMAGEDIR} && ${TAR} -c -f - .) \
-		| (cd ${PREFIX}/jdk${JDK_VERSION} && ${TAR} --unlink -x -f -)
+	cd ${JDKIMAGEDIR} && /usr/bin/find . \
+		|  /usr/bin/cpio -pdmu -R ${LIBOWN}:${LIBGRP} ${PREFIX}/jdk${JDK_VERSION}
 .if !defined(NODEBUG)
-	(cd ${JDKIMAGEDIR_G} && ${TAR} -c -f - .) \
-		| (cd ${PREFIX}/jdk${JDK_VERSION} && ${TAR} --unlink -x -f -)
+	cd ${JDKIMAGEDIR_G} && /usr/bin/find . \
+		|  /usr/bin/cpio -pdmu -R ${LIBOWN}:${LIBGRP} ${PREFIX}/jdk${JDK_VERSION}
 .endif
 
 post-install:
