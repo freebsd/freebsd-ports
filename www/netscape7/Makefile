@@ -111,4 +111,7 @@ do-install:
 	${CP} -Rp ${WRKSRC}/bin/* ${INSTALL_DIR}
 	${INSTALL_SCRIPT} ${WRKDIR}/${STARTUP_CMD} ${PREFIX}/bin
 
+post-install:
+	${CAT} ${PKGMESSAGE}
+
 .include <bsd.port.mk>
