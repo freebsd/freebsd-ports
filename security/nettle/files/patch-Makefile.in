@@ -1,0 +1,10 @@
+--- Makefile.in.orig	Fri Oct 24 14:28:03 2003
++++ Makefile.in	Fri Oct 24 14:29:11 2003
+@@ -1067,7 +1067,6 @@ $(SHLIBFORLINK): $(SHLIBOBJECTS)
+ install-shared: $(SHLIBFORLINK)
+ 	$(INSTALL_DATA) $(SHLIBFORLINK) $(DESTDIR)$(libdir)/$(SHLIBFILE)
+ 	(cd $(DESTDIR)$(libdir) \
+-		&& ln -sf $(SHLIBFILE) $(SHLIBSONAME) \
+ 		&& ln -sf $(SHLIBFILE) $(SHLIBFORLINK) )
+ 
+ %.html : %.texinfo
