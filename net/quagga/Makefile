@@ -10,7 +10,7 @@ PORTVERSION=	0.96.4
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://quagga.net/download/
 
-MAINTAINER=	fuzzball@ipv6peer.net
+MAINTAINER=	boris@tagnet.ru
 COMMENT=	Free RIPv1, RIPv2, OSPFv2, BGP4 route software (server/reflector)
 
 CONFLICTS=	zebra-devel-* zebra-0*
