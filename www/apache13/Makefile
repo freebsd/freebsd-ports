@@ -32,6 +32,9 @@ PATCH_DIST_ARGS= -d ${WRKSRC}/src --forward --quiet -E ${PATCH_DIST_STRIP}
 
 MAINTAINER=	ache@freebsd.org
 
+FORBIDDEN=	"Vulnerable to denial-of-service.  See" \
+		"http://httpd.apache.org/info/security_bulletin_20020617.txt"
+
 DATADIR=${PREFIX}/www
 DOCUMENT_ROOT=${DATADIR}/data
 DEFAULT_PATH=/bin:/usr/bin:${PREFIX}/bin

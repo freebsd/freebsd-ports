@@ -40,6 +40,9 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@freebsd.org
 
+FORBIDDEN=	"Vulnerable to denial-of-service.  See" \
+		"http://httpd.apache.org/info/security_bulletin_20020617.txt"
+
 APACHE_VERSION=		1.3.12
 APACHE_SSL_VERSION=	1.40
 

@@ -23,6 +23,9 @@ EXTRACT_ONLY=	${DISTNAME}.tar.gz
 
 MAINTAINER?=	perky@fallin.lv
 
+FORBIDDEN=	"Vulnerable to denial-of-service.  See" \
+		"http://httpd.apache.org/info/security_bulletin_20020617.txt"
+
 LATEST_LINK=	apache2
 
 WITH_MPM?=	prefork # or worker, perchild (neither of them still has a problem on FreeBSD)

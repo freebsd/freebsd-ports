@@ -31,6 +31,9 @@ DISTFILES=	${APACHE} powerlogo.gif fplogo.gif
 
 MAINTAINER=	hetzels@westbend.net
 
+FORBIDDEN=	"Vulnerable to denial-of-service.  See" \
+		"http://httpd.apache.org/info/security_bulletin_20020617.txt"
+
 #PATCH_SITES=	http://www.apache.org/dist/patches/apply_to_${PORTVERSION}/
 #PATCHFILES=
 
