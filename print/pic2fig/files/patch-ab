@@ -1,5 +1,5 @@
 --- figd.c.orig	Sat Aug  6 19:52:43 1988
-+++ figd.c	Tue Jan 16 08:26:38 2001
++++ figd.c	Wed Feb  6 15:54:17 2002
 @@ -6,13 +6,16 @@
   *
   * Modified by Micah Beck to produce Fig code
@@ -232,7 +232,7 @@
  	}
  
  	pathsent = TRUE;
-@@ -234,17 +346,22 @@
+@@ -234,17 +346,23 @@
  {
  	register int i;
  
@@ -255,10 +255,11 @@
 -	    fprintf(TEXFILE, "9999 9999\n");
 +		}
 +	    /* fprintf(TEXFILE, "9999 9999\n"); */
++	    fprintf(TEXFILE, "\n");
  	}
  
  	pathsent = TRUE;
-@@ -294,7 +411,7 @@
+@@ -294,7 +412,7 @@
  fig_arc(xcenter, ycenter, xradius, yradius, start, stop)
  float	xcenter, ycenter, xradius, yradius, start, stop;
  {
@@ -267,7 +268,7 @@
      extern double cos(), sin();
  
      map(xcenter, ycenter, &X0, &Y0, FALSE);
-@@ -304,18 +421,85 @@
+@@ -304,18 +422,85 @@
      if (is_onarc(PI/2, start, stop)) ckbounds(X0, Y0+yrad);
      if (is_onarc(PI, start, stop)) ckbounds(X0-xrad, Y0);
      if (is_onarc(1.5*PI, start, stop)) ckbounds(X0, Y0-yrad);
@@ -356,7 +357,7 @@
  }
  
  
-@@ -347,14 +531,56 @@
+@@ -347,14 +532,56 @@
   */
  fig_begin_drawing()
  {
@@ -415,7 +416,7 @@
  }
  
  
-@@ -392,15 +618,67 @@
+@@ -392,15 +619,67 @@
  	clearpath();
      }
  
@@ -486,5 +487,3 @@
 +	}
 +    fprintf(TEXFILE, " 0.0\n");
  }
- 
- 
