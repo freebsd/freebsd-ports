@@ -1,0 +1,39 @@
+--- src/level.cpp.orig	Thu Apr 29 18:23:32 2004
++++ src/level.cpp	Mon May  3 23:30:23 2004
+@@ -616,11 +616,11 @@
+     }
+ 
+   reset_points.clear();
+-  name.clear();
+-  author.clear();
+-  theme.clear();
+-  song_title.clear();
+-  bkgd_image.clear();
++  name.erase();
++  author.erase();
++  theme.erase();
++  song_title.erase();
++  bkgd_image.erase();
+ 
+   badguy_data.clear();
+ }
+--- src/leveleditor.cpp.orig	Mon May  3 00:44:56 2004
++++ src/leveleditor.cpp	Mon May  3 23:33:52 2004
+@@ -294,7 +294,7 @@
+             cur_tilegroup
+             = select_tilegroup_menu->get_item_by_id(it).text;
+             Menu::set_current(0);
+-            cur_objects.clear();
++            cur_objects.erase();
+ 
+           }
+           break;
+@@ -309,7 +309,7 @@
+           if(it >= 0)
+           {
+             cur_objects = select_objects_menu->get_item_by_id(it).text;
+-            cur_tilegroup.clear();
++            cur_tilegroup.erase();
+ 
+             Menu::set_current(0);
+           }
