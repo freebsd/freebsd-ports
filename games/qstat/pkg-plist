@@ -1,5 +1,7 @@
 bin/qstat
 %%PORTDOCS%%share/doc/qstat/qstatdoc.html
+%%PORTDOCS%%share/doc/qstat/info/UT2003.txt
+%%PORTDOCS%%share/doc/qstat/info/GhostRecon.txt
 %%PORTDOCS%%share/doc/qstat/template/README.txt
 %%PORTDOCS%%share/doc/qstat/template/brocTh.html
 %%PORTDOCS%%share/doc/qstat/template/brocTp.html
@@ -19,4 +21,5 @@ bin/qstat
 %%PORTDOCS%%share/doc/qstat/template/unrealTs.html
 %%PORTDOCS%%share/doc/qstat/template/unrealTt.html
 %%PORTDOCS%%@dirrm share/doc/qstat/template
+%%PORTDOCS%%@dirrm share/doc/qstat/info
 %%PORTDOCS%%@dirrm share/doc/qstat
