@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	smpeg-xmms
-PORTVERSION=	0.3.3
+PORTVERSION=	0.3.4
 CATEGORIES=	graphics gnome
 MASTER_SITES=	ftp://ftp.xmms.org/xmms/plugins/smpeg-xmms/
 
