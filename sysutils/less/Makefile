@@ -1,12 +1,12 @@
 # New ports collection makefile for:    less
-# Version required:     2.90
+# Version required:     3.21
 # Date created:         8 Nov 1994
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.9 1995/11/26 10:47:49 asami Exp $
+# $Id: Makefile,v 1.10 1996/05/13 16:17:58 markm Exp $
 #
 
-DISTNAME=       less-290
+DISTNAME=       less-321
 CATEGORIES+=	misc
 MASTER_SITES=   ftp://prep.ai.mit.edu/pub/gnu/ ftp://ftp.uu.net/systems/gnu/
 
