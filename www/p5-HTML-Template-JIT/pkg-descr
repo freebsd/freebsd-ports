@@ -1,0 +1,13 @@
+This module provides a just-in-time compiler for HTML::Template.
+
+If your template needs to be compiled - either because it has changed
+or because it has never been compiled - then HTML::Template::JIT uses
+HTML::Template and Inline::C to compile your template to native
+machine instructions.
+
+The resulting compiled template is much faster than a normal cached
+template.  Benchmarks show HTML::Template::JIT, with a precompiled
+template, performing 4 to 8 times faster than HTML::Template in cache
+mode.
+
+WWW: http://html-template.sourceforge.net/html_template_jit.html
