@@ -116,14 +116,15 @@ while (<AVAIL>) {
 
     # Module matches if it is a NULL module list in the avail line.  If module
     # list is not null, we check every argument combination.
-    if (!($in_repo = !$m)) {
+    $in_repo = (!$m || 0);
+    if (!$in_repo) {
 	@tmp = split(/[\s,]+/,$m);
 	for $j (@tmp) {
 	    # If the repos from avail is a parent(or equal) dir of $repos, OK
 	    $in_repo = 1, last if ($repos eq $j || $repos =~ /^$j\//);
 	}
 	if (!$in_repo) {
-	    $in_repo = 1;
+	    #$in_repo = 1;
 	    for $j (@ARGV) {
 		last if !($in_repo = grep ($_ eq $j, @tmp));
 	    }
@@ -137,6 +138,6 @@ while (<AVAIL>) {
 close(AVAIL);
 print "$$ ==== \$exit_val = $exit_val\n" if $debug;
 print "**** Access denied: Insufficient Karma ($myname|$repos)\n" if $exit_val;
-#print "**** Access allowed: Personal Karma exceeds Environmental Karma.\n"
-#	if $universal_off && !$exit_val;
+print "**** Access allowed: Personal Karma exceeds Environmental Karma.\n"
+	if $debug && $universal_off && !$exit_val;
 exit($exit_val);
