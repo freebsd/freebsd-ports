@@ -3,7 +3,7 @@
 # Date created:				26 Jan 1998
 # Whom:					Josh Tiefenbach <josh@ican.net>
 #
-# $Id: Makefile,v 1.47 1999/04/06 22:28:43 dirk Exp $
+# $Id: Makefile,v 1.48 1999/04/14 00:02:57 scrappy Exp $
 #
 
 DISTNAME=	mysql-3.22.21
@@ -77,7 +77,7 @@ post-install:
 	@ ${ECHO} "#!/bin/sh" > ${PREFIX}/etc/rc.d/mysql.sh
 	@ ${ECHO} "#" >> ${PREFIX}/etc/rc.d/mysql.sh
 	@ ${ECHO} "" >> ${PREFIX}/etc/rc.d/mysql.sh
-	@ ${ECHO} "/sbin/ldconfig -m ${PREFIX}/lib/mysql" >> ${PREFIX}/etc/rc.d/mysql.sh
+	@ ${ECHO} "${LDCONFIG} -m ${PREFIX}/lib/mysql" >> ${PREFIX}/etc/rc.d/mysql.sh
 	@ ${ECHO} "" >> ${PREFIX}/etc/rc.d/mysql.sh
 	@ ${ECHO} "if [ -x ${PREFIX}/bin/safe_mysqld ]" >> ${PREFIX}/etc/rc.d/mysql.sh
 	@ ${ECHO} "then" >> ${PREFIX}/etc/rc.d/mysql.sh
