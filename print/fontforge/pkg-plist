@@ -147,6 +147,8 @@ lib/libuninameslist.so.0
 %%PORTDOCS%%share/doc/pfaedit/faq.html
 %%PORTDOCS%%share/doc/pfaedit/faqFS.html
 %%PORTDOCS%%share/doc/pfaedit/faqFrame.html
+%%PORTDOCS%%share/doc/pfaedit/feature-tag-pos.png
+%%PORTDOCS%%share/doc/pfaedit/feature-tag-sub.png
 %%PORTDOCS%%share/doc/pfaedit/ffi-caret.png
 %%PORTDOCS%%share/doc/pfaedit/ffi-moved.png
 %%PORTDOCS%%share/doc/pfaedit/ffi-refs.png
@@ -214,6 +216,7 @@ lib/libuninameslist.so.0
 %%PORTDOCS%%share/doc/pfaedit/l7.png
 %%PORTDOCS%%share/doc/pfaedit/l8.png
 %%PORTDOCS%%share/doc/pfaedit/l9.png
+%%PORTDOCS%%share/doc/pfaedit/langdlg.png
 %%PORTDOCS%%share/doc/pfaedit/layers.png
 %%PORTDOCS%%share/doc/pfaedit/lcani.gif
 %%PORTDOCS%%share/doc/pfaedit/license.html
@@ -265,7 +268,10 @@ lib/libuninameslist.so.0
 %%PORTDOCS%%share/doc/pfaedit/rplserifs.png
 %%PORTDOCS%%share/doc/pfaedit/sans-serif-def.png
 %%PORTDOCS%%share/doc/pfaedit/scripting.html
+%%PORTDOCS%%share/doc/pfaedit/scriptlist-pulldown.png
+%%PORTDOCS%%share/doc/pfaedit/scriptlist.png
 %%PORTDOCS%%share/doc/pfaedit/scriptnotes.html
+%%PORTDOCS%%share/doc/pfaedit/scriptsdlg.png
 %%PORTDOCS%%share/doc/pfaedit/search.html
 %%PORTDOCS%%share/doc/pfaedit/selections.html
 %%PORTDOCS%%share/doc/pfaedit/serif-def.png
