@@ -6,10 +6,10 @@
 #
 
 PORTNAME=		krb5
-PORTVERSION=		1.2.4b1
+PORTVERSION=		1.2.4b2
 CATEGORIES=		security
 MASTER_SITES=		# manual download
-DISTNAME=		krb5-1.2.4-beta1
+DISTNAME=		krb5-1.2.4-beta2
 
 MAINTAINER=		cy@FreeBSD.org
 
