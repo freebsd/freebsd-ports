@@ -3,7 +3,7 @@
 # Date created:		2 Dec 1997
 # Whom:			Yen-Shuo Su <yssu@CCCA.NCTU.edu.tw>
 #
-# $Id: Makefile,v 1.3 1997/12/04 22:42:40 vanilla Exp $
+# $Id: Makefile,v 1.4 1997/12/10 13:56:07 vanilla Exp $
 #
 
 DISTNAME=       tinpre-1.4-971204
@@ -15,6 +15,8 @@ MASTER_SITES=   ftp://nuxi.ucdavis.edu/pub/tin/ \
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=     yssu@CCCA.NCTU.edu.tw
+
+BROKEN=		fetch
 
 WRKSRC=         ${WRKDIR}/${DISTNAME:S/pre-1.4//}
 GNU_CONFIGURE=	yes
