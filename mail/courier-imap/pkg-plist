@@ -12,6 +12,7 @@ etc/courier-imap/quotawarnmsg.example
 libexec/courier-imap/authlib/authcustom
 libexec/courier-imap/authlib/authpwd
 libexec/courier-imap/authlib/authuserdb
+%%VPOPMAILFLAG%%libexec/courier-imap/authlib/authvchkpw
 libexec/courier-imap/couriertcpd
 libexec/courier-imap/deliverquota
 libexec/courier-imap/imapd-ssl.rc
