@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	dvdstyler
-PORTVERSION=	1.1
-PORTREVISION=	1
+PORTVERSION=	1.3b
 PORTEPOCH=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -32,6 +31,8 @@ USE_GMAKE=	yes
 
 CONFIGURE_ARGS=	--with-wx-config=wxgtk2-2.4-config
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
+
+PORTDOCS=	AUTHORS COPYING INSTALL ChangeLog README
 
 .include <bsd.port.pre.mk>
 
@@ -60,7 +61,7 @@ pre-everything::
 post-patch:
 	@${REINPLACE_CMD} -e 's|$$prefix/dvdstyler|${DATADIR}|' \
 		${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|mp2 AUTHORS COPYING INSTALL README ChangeLog|mp2|' \
+	@${REINPLACE_CMD} -e 's|@datadir@/docs/@PACKAGE@|${DOCSDIR}|' \
 		${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|/dev/dvd|${DEFAULT_DVD_DEVICE}|' \
 		${WRKSRC}/src/Config.h
