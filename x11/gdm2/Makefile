@@ -30,6 +30,11 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		GLIB_CONFIG="${GLIB_CONFIG}" \
 		LIBS="-L${LOCALBASE}/lib"
 
+pre-fetch:
+.if !defined(BATCH) && !defined(PACKAGE_BUILDING)
+	${SH} ${PKGDIR}/INSTALL
+.endif
+
 pre-patch:
 	@${PERL} -pi -e 's|-lpthread|-pthread|g ; \
 		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
