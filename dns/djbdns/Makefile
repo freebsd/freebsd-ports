@@ -12,6 +12,8 @@ MASTER_SITES=	http://cr.yp.to/dnscache/
 
 MAINTAINER=	nbm@FreeBSD.org
 
+RUN_DEPENDS=	setuidgid:${PORTSDIR}/sysutils/daemontools
+
 ALL_TARGET=	it
 INSTALL_TARGET=	setup check
 
