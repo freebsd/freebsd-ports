@@ -7,7 +7,7 @@
 
 PORTNAME=	gnustep-back
 .if defined(WITH_GNUSTEP_DEVEL)
-PORTVERSION=	0.8.6
+PORTVERSION=	0.8.7
 .else
 PORTVERSION=	0.8.5
 .endif
@@ -51,6 +51,9 @@ CONFIGURE_ARGS+=	--enable-graphics=art --with-name=art
 PLIST_SUB+=		BACK=art USE_XLIB="@comment "
 PLIST_SUB+=		USE_XLIB="@comment " USE_XDPS="@comment " USE_ART=""
 PKGNAMESUFFIX?=		-art
+.if !defined(WITH_GNUSTEP_DEVEL)
+EXTRA_PATCHES+=		${FILESDIR}/ftfont.m.diff
+.endif
 .else
 CONFIGURE_ARGS+=	--enable-graphics=xlib --with-name=back
 PLIST_SUB+=		BACK=back
