@@ -56,6 +56,7 @@ LDCONFIG?=	/sbin/ldconfig
 LN?=		/bin/ln
 LS?=		/bin/ls
 MKDIR?=		/bin/mkdir -p
+MKTEMP?=	/usr/bin/mktemp
 MV?=		/bin/mv
 OBJCOPY?=	/usr/bin/objcopy
 OBJDUMP?=	/usr/bin/objdump
