@@ -17,6 +17,8 @@ DIST_SUBDIR=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 MAINTAINER=	henrik.motakef@web.de
 COMMENT=	XSLT Stylesheets to convert TEI to HTML
 
+BROKEN=		Broken pkg-plist
+
 USE_ZIP=	yes
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
