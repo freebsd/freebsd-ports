@@ -27,7 +27,13 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 PLIST_FILES=	libexec/gkrellm2/plugins/gkrelltop.so \
 		libexec/gkrellm2/plugins/gkrelltopd.so
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		"Does not compile on FreeBSD 4.x"
+.endif
+
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
