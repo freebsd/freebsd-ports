@@ -37,12 +37,12 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <affects>
       <package>
 	<name>samba</name>
-        <range><ge>3.*</ge><lt>3.0.5,1</lt></range>
+        <range><ge>3</ge><lt>3.0.5,1</lt></range>
 	<range><lt>2.2.10</lt></range>
       </package>
       <package>
 	<name>ja-samba</name>
-	<range><lt>2.2.10.*</lt></range>
+	<range><lt>2.2.11</lt></range>
       </package>
     </affects>
     <description>
@@ -73,7 +73,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <dates>
       <discovery>2004-07-14</discovery>
       <entry>2004-07-21</entry>
-      <modified>2004-07-22</modified>
+      <modified>2004-08-12</modified>
     </dates>
   </vuln>
 
@@ -250,7 +250,8 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <topic>isc-dhcp3-server buffer overflow in logging mechanism</topic>
     <affects>
       <package>
-	<name>isc-dhcp3-{relay,server}</name>
+	<name>isc-dhcp3-relay</name>
+	<name>isc-dhcp3-server</name>
 	<range><ge>3.0.1.r12</ge><lt>3.0.1.r14</lt></range>
       </package>
     </affects>
@@ -273,7 +274,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <dates>
       <discovery>2004-06-22</discovery>
       <entry>2004-06-25</entry>
-      <modified>2004-06-28</modified>
+      <modified>2004-08-12</modified>
     </dates>
   </vuln>
 
@@ -1339,7 +1340,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       <package>
 	<name>linux-png</name>
 	<range><le>1.0.14_3</le></range>
-	<range><ge>1.2.*</ge><le>1.2.2</le></range>
+	<range><ge>1.2</ge><le>1.2.2</le></range>
       </package>
       <package>
 	<name>png</name>
@@ -1366,7 +1367,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <dates>
       <discovery>2004-04-29</discovery>
       <entry>2004-05-02</entry>
-      <modified>2004-08-10</modified>
+      <modified>2004-08-12</modified>
     </dates>
   </vuln>
 
@@ -3939,8 +3940,8 @@ misc.c:
     <affects>
       <package>
         <name>mysql-server</name>
-        <range><ge>4.1.*</ge><lt>4.1.3</lt></range>
-        <range><ge>5.*</ge><le>5.0.0_2</le></range>
+        <range><ge>4.1</ge><lt>4.1.3</lt></range>
+        <range><ge>5</ge><le>5.0.0_2</le></range>
       </package>
     </affects>
     <description>
@@ -3962,6 +3963,7 @@ misc.c:
     <dates>
       <discovery>2004-07-01</discovery>
       <entry>2004-07-05</entry>
+      <modified>2004-08-12</modified>
     </dates>
   </vuln>
 
@@ -4038,7 +4040,11 @@ misc.c:
     <affects>
       <package>
         <name>php4</name>
-        <name>php4-{cgi,cli,dtc,horde,nms}</name>
+        <name>php4-cgi</name>
+        <name>php4-cli</name>
+        <name>php4-dtc</name>
+        <name>php4-horde</name>
+        <name>php4-nms</name>
         <name>mod_php4-twig</name>
         <range><lt>4.3.8</lt></range>
       </package>
@@ -4048,7 +4054,8 @@ misc.c:
       </package>
       <package>
         <name>php5</name>
-        <name>php5-{cgi,cli}</name>
+        <name>php5-cgi</name>
+        <name>php5-cli</name>
         <range><lt>5.0.0</lt></range>
       </package>
       <package>
@@ -4081,6 +4088,7 @@ misc.c:
     <dates>
       <discovery>2007-07-07</discovery>
       <entry>2004-07-15</entry>
+      <modified>2004-08-12</modified>
     </dates>
   </vuln>
 
@@ -4102,7 +4110,7 @@ misc.c:
       <package>
         <name>mozilla</name>
         <range><le>1.7.1,2</le></range>
-        <range><ge>1.8.*,2</ge><le>1.8.a2,2</le></range>
+        <range><ge>1.8,2</ge><le>1.8.a2,2</le></range>
       </package>
       <package>
         <name>mozilla-gtk1</name>
@@ -4124,6 +4132,7 @@ misc.c:
     <dates>
       <discovery>2004-07-19</discovery>
       <entry>2004-07-30</entry>
+      <modified>2004-08-12</modified>
     </dates>
   </vuln>
 
@@ -4137,7 +4146,7 @@ misc.c:
       <package>
         <name>linux-png</name>
         <range><le>1.0.14_3</le></range>
-        <range><ge>1.2.*</ge><le>1.2.2</le></range>
+        <range><ge>1.2</ge><le>1.2.2</le></range>
       </package>
       <package>
         <name>firefox</name>
@@ -4158,27 +4167,35 @@ misc.c:
       <package>
         <name>mozilla</name>
         <range><lt>1.7.2,2</lt></range>
-        <range><ge>1.8.*,2</ge><le>1.8.a2,2</le></range>
+        <range><ge>1.8,2</ge><le>1.8.a2,2</le></range>
       </package>
       <package>
         <name>mozilla-gtk1</name>
         <range><lt>1.7.2</lt></range>
       </package>
       <package>
-        <name>netscape-{communicator,navigator}</name>
+        <name>netscape-communicator</name>
+        <name>netscape-navigator</name>
         <range><le>4.78</le></range>
       </package>
       <package>
-        <name>linux-netscape-{communicator,navigator}</name>
-        <name>{ja,ko}-netscape-{communicator,navigator}-linux</name>
+        <name>linux-netscape-communicator</name>
+        <name>linux-netscape-navigator</name>
+        <name>ko-netscape-navigator-linux</name>
+        <name>ko-netscape-communicator-linux</name>
+        <name>ja-netscape-communicator-linux</name>
+        <name>ja-netscape-navigator-linux</name>
         <range><le>4.8</le></range>
       </package>
       <package>
-        <name>{,ja-}netscape7</name>
+        <name>netscape7</name>
+        <name>ja-netscape7</name>
         <range><le>7.1</le></range>
       </package>
       <package>
-        <name>{de-,fr-,pt_BR-}netscape7</name>
+        <name>pt_BR-netscape7</name>
+        <name>fr-netscape7</name>
+        <name>de-netscape7</name>
         <range><le>7.02</le></range>
       </package>
     </affects>
@@ -4237,7 +4254,7 @@ misc.c:
       <package>
         <name>mozilla</name>
         <range><lt>1.7.2,2</lt></range>
-        <range><ge>1.8.*,2</ge><le>1.8.a2,2</le></range>
+        <range><ge>1.8,2</ge><le>1.8.a2,2</le></range>
       </package>
       <package>
         <name>mozilla-gtk1</name>
@@ -4262,7 +4279,7 @@ misc.c:
     <dates>
       <discovery>2004-07-25</discovery>
       <entry>2004-07-30</entry>
-      <modified>2004-08-05</modified>
+      <modified>2004-08-12</modified>
     </dates>
   </vuln>
 
@@ -4270,7 +4287,8 @@ misc.c:
     <topic>ImageMagick png vulnerability fix</topic>
     <affects>
       <package>
-        <name>ImageMagick{,-nox11}</name>
+        <name>ImageMagick</name>
+        <name>ImageMagick-nox11</name>
         <range><lt>6.0.4.2</lt></range>
       </package>
     </affects>
