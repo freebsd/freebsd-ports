@@ -16,7 +16,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	tg@FreeBSD.org
 
 BUILD_DEPENDS=	python:${PORTSDIR}/lang/python \
-		${PREFIX}/lib/yorick/1.4/lib/libgist.a:${PORTSDIR}/lang/yorick \
+		${LOCALBASE}/lib/yorick/1.4/lib/libgist.a:${PORTSDIR}/lang/yorick \
 		${NUMPYDIR}/Numeric.py:${PORTSDIR}/math/numpy \
 		${RNGDIR}/Ranf.py:${PORTSDIR}/math/rng
 RUN_DEPENDS=	python:${PORTSDIR}/lang/python \

@@ -14,7 +14,7 @@ DISTNAME=	Numerical-${PORTVERSION}
 
 MAINTAINER=	tg@FreeBSD.org
 
-BUILD_DEPENDS=	${PREFIX}/lib/python1.5/site-packages/distutils/core.py:${PORTSDIR}/misc/py-distutils
+BUILD_DEPENDS=	${LOCALBASE}/lib/python1.5/site-packages/distutils/core.py:${PORTSDIR}/misc/py-distutils
 RUN_DEPENDS=	python:${PORTSDIR}/lang/python
 
 DOCDIR=		${PREFIX}/share/doc/py-numeric
