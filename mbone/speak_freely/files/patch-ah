@@ -1,0 +1,11 @@
+--- lpc10/Makefile.orig	Wed Jun  9 04:07:02 2004
++++ lpc10/Makefile	Wed Jun  9 04:07:16 2004
+@@ -14,6 +14,8 @@
+ 	   placev.o preemp.o random.o round.o rcchk.o setup.o synths.o \
+ 	   tbdm.o voice.o voice_nn.o vparms.o
+ 
++CFLAGS += -D_ANSI_SOURCE
++
+ LSRC = $(LOBJECTS:.o=.c)
+ 
+ LIBS = -lm
