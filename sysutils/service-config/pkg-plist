@@ -1,0 +1,7 @@
+bin/ipc-config
+bin/ipcx-config
+bin/rules-config
+bin/service-config
+bin/svscan-config
+bin/tcp-config
+bin/tcpx-config

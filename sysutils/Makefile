@@ -130,6 +130,7 @@
     SUBDIR += samefile
     SUBDIR += sarah
     SUBDIR += sdd
+    SUBDIR += service-config
     SUBDIR += setcdboot
     SUBDIR += setquota
     SUBDIR += skill

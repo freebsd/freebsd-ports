@@ -1,0 +1,19 @@
+The programs in service-config create and configure svscan-format
+service directories.
+
+* server-config creates an svscan-format directory for an arbitrary
+  service.
+* rules-config configures access rules for use by a
+  service.
+* svscan-config configures a service to run svscan.
+* ipc-config configures a service to run ipcserver.
+* ipcx-config configures a service to run ipcserver using access
+  rules.
+* tcp-config configures a service to run tcpserver.
+* tcpx-config configures a service to run tcpserver using access
+  rules.
+
+WWW: http://www.superscript.com/service-config/intro.html
+
+- Pete
+petef@databits.net
