@@ -1,0 +1,11 @@
+bin/gswitchit-properties_capplet
+bin/gswitchit_applet
+etc/CORBA/servers/gswitchit_applet.gnorba
+share/gnome/applets/Utility/gswitchit_applet.desktop
+share/gnome/apps/Settings/gswitchit-properties.desktop
+share/gnome/control-center/gswitchit-properties.desktop
+share/gnome/pixmaps/gswitchit.png
+share/gnome/pixmaps/ru.xpm
+share/gnome/pixmaps/us.xpm
+share/locale/de/LC_MESSAGES/gswitchit_applet.mo
+share/locale/ru/LC_MESSAGES/gswitchit_applet.mo
