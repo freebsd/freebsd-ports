@@ -38,9 +38,9 @@ into the next release.
  	return filename;
  }
  
---- libs/extract.c	2002/03/16 19:08:48	1.12
-+++ libs/extract.c	2002/09/22 07:14:01	1.14
-@@ -43,16 +43,16 @@
+--- libs/extract.c.orig	Wed Jul 24 22:25:34 2002
++++ libs/extract.c	Thu Jan 16 01:39:54 2003
+@@ -43,16 +43,18 @@
  	int i;
  	int returnval = 1;
  	FILE *fid;
@@ -56,10 +56,12 @@ into the next release.
 +	int temp1_fd, temp2_fd, errors_fd;
  #endif
 -	struct stat buf;
++
++	setenv("XML_CATALOG_FILES", SK_XML_CATALOGS, 1);
  
  	if (input_file == NULL ||
  	    stylesheets == NULL ||
-@@ -69,11 +69,23 @@
+@@ -69,11 +71,23 @@
  #ifdef SOLARIS
  		doc = docbParseFile(input_file, NULL);
  #else
@@ -88,7 +90,7 @@ into the next release.
  
  		snprintf(command, 1024, "sgml2xml -xlower -f%s %s > %s", errors, input_file, temp1);
  		system(command);
-@@ -83,6 +95,7 @@
+@@ -83,6 +97,7 @@
  		fid = fopen(input_file, "r");
  		if (fid == NULL) {
  			sk_message(outputprefs, SKOUT_DEFAULT, SKOUT_QUIET, "(apply_stylesheets)", _("Cannot read file: %s : %s\n"),input_file, strerror(errno));
@@ -96,7 +98,7 @@ into the next release.
  			return 0;
  		}
  
-@@ -106,14 +119,25 @@
+@@ -106,14 +121,25 @@
  		}
  		
  		if (doctype == NULL) {
@@ -125,15 +127,16 @@ into the next release.
  			unlink(temp2);
  			return 0;
  		}
---- libs/Makefile.in.orig	Wed Oct  9 12:36:43 2002
-+++ libs/Makefile.in	Wed Oct  9 12:37:05 2002
-@@ -130,7 +130,8 @@
+--- libs/Makefile.in.orig	Thu Jan 16 01:38:23 2003
++++ libs/Makefile.in	Thu Jan 16 01:47:46 2003
+@@ -130,7 +130,9 @@
  INCLUDES = \
          $(XML_CFLAGS) \
  	$(XSLT_CFLAGS) \
 -	$(HOST_TYPE)
 +	$(HOST_TYPE) \
-+	-DSCROLLKEEPER_STATEDIR=\""$(localstatedir)"\"
++	-DSCROLLKEEPER_STATEDIR=\""$(localstatedir)"\" \
++	-DSK_XML_CATALOGS=\""%%LOCALBASE%%/share/sk/catalog %%LOCALBASE%%/share/sk/docbook/catalog"\"
  
  
  libscrollkeeper_la_SOURCES = \

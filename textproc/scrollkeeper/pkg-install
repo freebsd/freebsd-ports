@@ -8,21 +8,10 @@ PATH=${PATH}:/bin:/usr/bin:/usr/local/bin:/usr/X11R6/bin
 export PATH
 
 PREFIX=`xml2-config --prefix`
-ROOTCATALOG=${PREFIX}/share/xml/catalog
-CATALOG=${PREFIX}/share/xml/docbook/catalog
+ROOTCATALOG=${PREFIX}/share/sk/catalog
+CATALOG=${PREFIX}/share/sk/docbook/catalog
 
 if [ "$2" = "PRE-INSTALL" ]; then
-if [ -r $ROOTCATALOG ] ; then
-   echo backing up XML Catalog root $ROOTCATALOG
-   cp -f $ROOTCATALOG ${ROOTCATALOG}.bak
-   rm -f $ROOTCATALOG
-fi
-
-if [ -r $CATALOG ] ; then
-   echo backing up XML Catalog $CATALOG
-   cp -f $CATALOG ${CATALOG}.bak
-   rm -f $CATALOG
-fi
 
 #
 # create the catalogs root and docbook specific
@@ -53,52 +42,52 @@ if [ "$found" = "" ] ; then
     exit 1
 fi
 
-dtd421=""
+dtd412=""
 for dtd in $found; do
-    check=`grep '//OASIS//DTD DocBook XML V4.2//EN' $dtd`
+    check=`grep '//OASIS//DTD DocBook XML V4.1.2//EN' $dtd`
     if [ "$check" != "" ] ; then
-        dtd421=$dtd
+        dtd412=$dtd
         break
     fi
 done
 
-if [ "$dtd421" = "" ] ; then
-    echo could not locate version 4.2 of DocBook XML
+if [ "$dtd412" = "" ] ; then
+    echo could not locate version 4.1.2 of DocBook XML
     exit 1
 fi
 
-docbookdir=`dirname $dtd421`
-echo Found DocBook XML 4.2 DTD in $docbookdir
+docbookdir=`dirname $dtd412`
+echo Found DocBook XML 4.1.2 DTD in $docbookdir
 
 xmlcatalog --noout --add "public" \
-    "-//OASIS//ELEMENTS DocBook XML Information Pool V4.2//EN" \
+    "-//OASIS//ELEMENTS DocBook XML Information Pool V4.1.2//EN" \
     "file://$docbookdir/dbpoolx.mod" $CATALOG
 xmlcatalog --noout --add "public" \
-    "-//OASIS//DTD DocBook XML V4.2//EN" \
+    "-//OASIS//DTD DocBook XML V4.1.2//EN" \
     "file://$docbookdir/docbookx.dtd" $CATALOG
 xmlcatalog --noout --add "public" \
-    "-//OASIS//ENTITIES DocBook XML Character Entities V4.2//EN" \
+    "-//OASIS//ENTITIES DocBook XML Character Entities V4.1.2//EN" \
     "file://$docbookdir/dbcentx.mod" $CATALOG
 xmlcatalog --noout --add "public" \
-    "-//OASIS//ENTITIES DocBook XML Notations V4.2//EN" \
+    "-//OASIS//ENTITIES DocBook XML Notations V4.1.2//EN" \
     "file://$docbookdir/dbnotnx.mod" $CATALOG
 xmlcatalog --noout --add "public" \
-    "-//OASIS//ENTITIES DocBook XML Additional General Entities V4.2//EN" \
+    "-//OASIS//ENTITIES DocBook XML Additional General Entities V4.1.2//EN" \
     "file://$docbookdir/dbgenent.mod" $CATALOG
 xmlcatalog --noout --add "public" \
-    "-//OASIS//ELEMENTS DocBook XML Document Hierarchy V4.2//EN" \
+    "-//OASIS//ELEMENTS DocBook XML Document Hierarchy V4.1.2//EN" \
     "file://$docbookdir/dbhierx.mod" $CATALOG
 xmlcatalog --noout --add "public" \
     "-//OASIS//DTD XML Exchange Table Model 19990315//EN" \
     "file://$docbookdir/soextblx.dtd" $CATALOG
 xmlcatalog --noout --add "public" \
-    "-//OASIS//DTD DocBook XML CALS Table Model V4.2//EN" \
+    "-//OASIS//DTD DocBook XML CALS Table Model V4.1.2//EN" \
     "file://$docbookdir/calstblx.dtd" $CATALOG
 xmlcatalog --noout --add "rewriteSystem" \
-    "http://www.oasis-open.org/docbook/xml/4.2" \
+    "http://www.oasis-open.org/docbook/xml/4.1.2" \
     "file://$docbookdir" $CATALOG
 xmlcatalog --noout --add "rewriteURI" \
-    "http://www.oasis-open.org/docbook/xml/4.2" \
+    "http://www.oasis-open.org/docbook/xml/4.1.2" \
     "file://$docbookdir" $CATALOG
 
 xmlcatalog --noout --add "delegatePublic" \
@@ -255,7 +244,7 @@ if [ "$2" = "POST-INSTALL" ]; then
     xmlcatalog --noout --add "public" \
     	"-//OMF//DTD Scrollkeeper OMF Variant V1.0//EN" \
 	"${SKPREFIX}/share/gnome/xml/scrollkeeper/dtds/scrollkeeper-omf.dtd" \
-	${PREFIX}/share/xml/catalog
+	${ROOTCATALOG}
 
     scrollkeeper-rebuilddb -q -p /var/db/scrollkeeper || /usr/bin/true
 fi
