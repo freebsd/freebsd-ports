@@ -18,9 +18,8 @@ PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	mutoh@info.nara-k.ac.jp
 
-LIB_DEPENDS=	gdk_imlib:${PORTSDIR}/graphics/imlib
-
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	imlib
 GNU_CONFIGURE=	yes
 
 .include <bsd.port.mk>

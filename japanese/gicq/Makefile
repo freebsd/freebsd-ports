@@ -23,7 +23,8 @@ MAINTAINER=	flathill@FreeBSD.org
 LIB_DEPENDS=	icq.0:${PORTSDIR}/japanese/libicq
 
 USE_X_PREFIX=	yes
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-gnome --disable-nls
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

@@ -16,7 +16,8 @@ MAINTAINER=	yoichi@FreeBSD.org
 
 ALL_TARGET=
 USE_X_PREFIX=	yes
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 USE_REINPLACE=	yes
 
 post-patch:

@@ -16,7 +16,8 @@ BUILD_DEPENDS=	${LOCALBASE}/include/anthy.h:${PORTSDIR}/japanese/anthy
 
 GNU_CONFIGURE=	yes
 USE_X_PREFIX=	yes
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
