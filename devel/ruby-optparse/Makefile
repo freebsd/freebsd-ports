@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	optparse
-PORTVERSION=	0.7.10
-PORTREVISION=	1
+PORTVERSION=	0.8
 CATEGORIES=	devel ruby
 MASTER_SITES=	http://member.nifty.ne.jp/nokada/archive/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
