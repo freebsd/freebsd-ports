@@ -20,6 +20,8 @@ include/gretl/gretl_commands.h
 include/gretl/gretl_errors.h
 include/gretl/gretl_matrix.h
 include/gretl/gretl_matrix_private.h
+include/gretl/gretl_model.h
+include/gretl/gretl_paths.h
 include/gretl/gretl_utils.h
 include/gretl/gretl_win32.h
 include/gretl/interact.h
@@ -57,6 +59,7 @@ lib/gretl-gtk2/progress_bar.so
 lib/gretl-gtk2/range-mean.so
 lib/gretl-gtk2/stats_tables.so
 lib/gretl-gtk2/sur.so
+lib/gretl-gtk2/tobit.so
 lib/gretl-gtk2/tramo-x12a.so
 lib/libgretl-1.0.a
 lib/libgretl-1.0.so
@@ -167,6 +170,7 @@ libdata/pkgconfig/gretl.pc
 %%DATADIR%%/data/greene/greene18_1.gdt
 %%DATADIR%%/data/greene/greene18_2.gdt
 %%DATADIR%%/data/greene/greene19_1.gdt
+%%DATADIR%%/data/greene/greene22_2.gdt
 %%DATADIR%%/data/greene/greene5_1.gdt
 %%DATADIR%%/data/greene/greene7_8.gdt
 %%DATADIR%%/data/greene/greene8_3.gdt
@@ -175,6 +179,7 @@ libdata/pkgconfig/gretl.pc
 %%DATADIR%%/data/gretldata.dtd
 %%DATADIR%%/data/misc/arma.gdt
 %%DATADIR%%/data/misc/descriptions
+%%DATADIR%%/data/misc/djclose.gdt
 %%DATADIR%%/data/misc/ects_nls.gdt
 %%DATADIR%%/data/misc/hamilton.gdt
 %%DATADIR%%/data/misc/leverage.gdt
@@ -204,6 +209,7 @@ libdata/pkgconfig/gretl.pc
 %%DATADIR%%/scripts/greene14_2.inp
 %%DATADIR%%/scripts/greene18_6.inp
 %%DATADIR%%/scripts/greene19_1.inp
+%%DATADIR%%/scripts/greene22_2.inp
 %%DATADIR%%/scripts/greene7_8.inp
 %%DATADIR%%/scripts/greene8_3.inp
 %%DATADIR%%/scripts/greene9_1.inp
@@ -297,6 +303,7 @@ libdata/pkgconfig/gretl.pc
 %%GNOME:%%share/gnome/help/gretl/C/chapters/appendices.xml
 %%GNOME:%%share/gnome/help/gretl/C/chapters/biblio.xml
 %%GNOME:%%share/gnome/help/gretl/C/chapters/cli.xml
+%%GNOME:%%share/gnome/help/gretl/C/chapters/cmdlist.xml
 %%GNOME:%%share/gnome/help/gretl/C/chapters/cmdref.xml
 %%GNOME:%%share/gnome/help/gretl/C/chapters/datafiles.xml
 %%GNOME:%%share/gnome/help/gretl/C/chapters/graphs.xml
@@ -312,6 +319,7 @@ libdata/pkgconfig/gretl.pc
 %%GNOME:%%share/gnome/help/gretl/C/figures/adf1.png
 %%GNOME:%%share/gnome/help/gretl/C/figures/adf2.png
 %%GNOME:%%share/gnome/help/gretl/C/figures/aic.png
+%%GNOME:%%share/gnome/help/gretl/C/figures/arlags.png
 %%GNOME:%%share/gnome/help/gretl/C/figures/autocorr.png
 %%GNOME:%%share/gnome/help/gretl/C/figures/caution.png
 %%GNOME:%%share/gnome/help/gretl/C/figures/corc.png
@@ -320,6 +328,7 @@ libdata/pkgconfig/gretl.pc
 %%GNOME:%%share/gnome/help/gretl/C/figures/dffit.png
 %%GNOME:%%share/gnome/help/gretl/C/figures/greeneC.png
 %%GNOME:%%share/gnome/help/gretl/C/figures/gretl-logo.png
+%%GNOME:%%share/gnome/help/gretl/C/figures/hsk.png
 %%GNOME:%%share/gnome/help/gretl/C/figures/important.png
 %%GNOME:%%share/gnome/help/gretl/C/figures/influence.png
 %%GNOME:%%share/gnome/help/gretl/C/figures/lambda.png
@@ -333,12 +342,16 @@ libdata/pkgconfig/gretl.pc
 %%GNOME:%%share/gnome/help/gretl/C/figures/modelwin.png
 %%GNOME:%%share/gnome/help/gretl/C/figures/nls_window.png
 %%GNOME:%%share/gnome/help/gretl/C/figures/note.png
+%%GNOME:%%share/gnome/help/gretl/C/figures/nw1.png
+%%GNOME:%%share/gnome/help/gretl/C/figures/nw2.png
 %%GNOME:%%share/gnome/help/gretl/C/figures/plot_control.png
 %%GNOME:%%share/gnome/help/gretl/C/figures/scriptwin.png
 %%GNOME:%%share/gnome/help/gretl/C/figures/selector.png
 %%GNOME:%%share/gnome/help/gretl/C/figures/session.png
+%%GNOME:%%share/gnome/help/gretl/C/figures/simformula.png
 %%GNOME:%%share/gnome/help/gretl/C/figures/tip.png
 %%GNOME:%%share/gnome/help/gretl/C/figures/toolbar.png
+%%GNOME:%%share/gnome/help/gretl/C/figures/tworootT.png
 %%GNOME:%%share/gnome/help/gretl/C/figures/warning.png
 %%GNOME:%%share/gnome/help/gretl/C/gretl.xml
 %%GNOME:%%share/gnome/mime-info/gretl.keys

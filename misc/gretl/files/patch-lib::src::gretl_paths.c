@@ -1,6 +1,6 @@
---- lib/src/gretl_utils.c.orig	Mon Sep 30 06:13:40 2002
-+++ lib/src/gretl_utils.c	Mon Oct 21 08:31:52 2002
-@@ -1373,8 +1373,8 @@
+--- lib/src/gretl_paths.c.orig	Wed Feb 11 06:14:36 2004
++++ lib/src/gretl_paths.c	Sun Feb 29 18:10:53 2004
+@@ -432,8 +432,8 @@
  	if (home != NULL) {
  	    strcpy(ppaths->gretldir, home);
  	} else {
@@ -9,5 +9,5 @@
 +	    strcpy(ppaths->gretldir, DATADIR);
 +	    strcat(ppaths->gretldir, "/gretl/");
  	} 
- 	if (gui) {
- 	    sprintf(ppaths->binbase, "%sdb/", ppaths->gretldir);
+ 
+ 	sprintf(ppaths->binbase, "%sdb/", ppaths->gretldir);
