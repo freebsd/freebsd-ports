@@ -7,7 +7,7 @@
 
 PORTNAME=	deco
 PORTVERSION=	3.8.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.cronyx.ru/cronyx/deco/
 DISTNAME=	deco383
