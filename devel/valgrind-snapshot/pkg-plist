@@ -16,6 +16,7 @@ lib/valgrind/libc_r.so.5
 lib/valgrind/libkse.so.1
 lib/valgrind/libpthread.so
 lib/valgrind/libpthread.so.0
+lib/valgrind/libpthread.so.1
 lib/valgrind/libthr.so.1
 lib/valgrind/stage2
 lib/valgrind/valgrind
