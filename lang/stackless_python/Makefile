@@ -24,7 +24,8 @@ COMMENT=	Python implementation that does not use the C stack
 CONFLICTS=	python-2.3.*
 ONLY_FOR_ARCHS=	i386 powerpc
 CVSDATE=	040225
-MASTERDIR=	${.CURDIR}/../../lang/python
+MASTERDIR=	${.CURDIR}/../python
+STACKLESS_POST_CONFIGURE=	stackless-post-configure
 
 DESCR=		${.CURDIR}/pkg-descr
 MD5_FILE=	${.CURDIR}/distinfo
@@ -43,5 +44,12 @@ post-patch:
 	@${ECHO} "include/%%PYTHON_VERSION%%/${hf}" >>${PLIST}
 .endfor
 	@${CAT} ${MASTERDIR}/pkg-plist >>${PLIST}
+
+stackless-post-configure:
+	${MKDIR} -p ${SHARED_WRKSRC}/Stackless
+	${LN} -sf ${WRKSRC}/Stackless/slp_transfer.c \
+		${SHARED_WRKSRC}/Stackless/slp_transfer.c
+	${LN} -sf ${WRKSRC}/Stackless/*.h ${SHARED_WRKSRC}/Stackless/
+	
 
 .include "${MASTERDIR}/Makefile"
