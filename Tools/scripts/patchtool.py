@@ -1,4 +1,6 @@
 #!/usr/local/bin/python
+# ex:ts=4
+#-*- mode: Fundamental; tab-width: 4; -*-
 #
 # patchtool.py - a tool to automate common operation with patchfiles in the
 # FreeBSD Ports Collection.
@@ -50,7 +52,7 @@ class Vars:
 	DEV_NULL = '/dev/null'
 	ETC_MAKE_CONF = '/etc/make.conf'
 	
-	SLASH_REPL_SYMBOL = '::'	# The sysmbol to replace '/' when auto-generating
+	SLASH_REPL_SYMBOL = '_'	# The symbol to replace '/' when auto-generating
 							# patchnames
 
 
