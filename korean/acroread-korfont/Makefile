@@ -8,6 +8,8 @@
 DISTNAME=	korfont
 CATEGORIES=	korean
 
+COMMENT=	Asian Font Packs for Acrobat Reader 4.0 (for Korean)
+
 MASTERDIR=	${.CURDIR}/../../print/acroread-commfont
 
 .include "${MASTERDIR}/Makefile"

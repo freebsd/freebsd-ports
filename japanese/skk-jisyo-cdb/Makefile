@@ -10,13 +10,13 @@ PORTVERSION=	200209
 PORTREVISION=	0
 
 MAINTAINER=	toru@tkd.ne.jp
+COMMENT=	CDB jisyo (dictionary) files for the SKK Japanese-input software
 
 SKK_JISYO_SUFFIX=	.cdb
 
 MASTERDIR=	${.CURDIR}/../skk-jisyo
 
 MD5_FILE=	${.CURDIR}/distinfo
-COMMENTFILE=	${.CURDIR}/pkg-comment
 DESCR=		${.CURDIR}/pkg-descr
 
 .include "${MASTERDIR}/Makefile"

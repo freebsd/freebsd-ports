@@ -26,7 +26,7 @@ PKGNAMESUFFIX?=	-server
 DISTNAME=	${PORTNAME}-${PORTVERSION}-gamma
 
 MAINTAINER=	sysadmin@alexdupre.com
-COMMENT=	Multithreaded SQL database (server)
+COMMENT?=	Multithreaded SQL database (server)
 
 SLAVEDIRS=	databases/mysql40-client
 DB_DIR?=	/var/db/mysql

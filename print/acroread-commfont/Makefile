@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp-pac.adobe.com/pub/adobe/acrobatreader/unix/4.x/
 DISTNAME?=	commfont # dummy
 
 MAINTAINER=	taoka@FreeBSD.org
+COMMENT?=	Asian Font Packs for Acrobat Reader 4.0 (for common files)
 
 NO_BUILD=	yes
 SLAVEDIRS=	chinese/acroread-chsfont chinese/acroread-chtfont
@@ -42,7 +43,6 @@ RUN_DEPENDS=	acroread4:${PORTSDIR}/print/acroread4
 .else
 ###### For slave ports ##############################
 ## Use a local directory of the slave port!!
-COMMENTFILE=	${.CURDIR}/pkg-comment
 DESCR=		${.CURDIR}/pkg-descr
 PLIST=		${.CURDIR}/pkg-plist
 FILESDIR=	${.CURDIR}/files

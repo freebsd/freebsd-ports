@@ -6,6 +6,7 @@
 #
 
 MAINTAINER=	shige@FreeBSD.org
+COMMENT=	FLIM, message representation or encoding emacs lisp library for emacs19
 
 # This is a slave port.
 PORTCLASS=	slave

@@ -14,12 +14,13 @@ MASTER_SITE_SUBDIR=development/CVSup/snapshots
 DISTNAME=	cvsup-snap-${PORTVERSION}
 
 MAINTAINER=	jdp@FreeBSD.org
+COMMENT?=	General network file distribution system optimized for CVS (GUI version)
 
 .ifdef WITHOUT_X11
 M3FLAGS+=	-DNOGUI
 BUILD_DEPENDS=	${PREFIX}/lib/m3/pkg/tcp/${TARGET}/libm3tcp.a:${PORTSDIR}/lang/ezm3
 PKGNAMESUFFIX=	-without-gui
-COMMENTFILE=	${PKGDIR}/pkg-comment.nogui
+COMMENT=	General network file distribution system optimized for CVS (non-GUI version)
 DESCR=		${PKGDIR}/pkg-descr.nogui
 .else
 USE_XLIB=	yes

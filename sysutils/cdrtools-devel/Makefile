@@ -15,6 +15,7 @@ MASTER_SITES=	ftp://ftp.berlios.de/pub/cdrecord/ \
 DISTNAME=	cdrtools-2.0
 
 MAINTAINER=	dirk@FreeBSD.org
+COMMENT?=	Cdrecord, mkisofs and several other programs to record CD-R[W]
 
 .if defined(MKISOFS)
 MAN8=		apple_driver.8 isoinfo.8 mkhybrid.8 mkisofs.8

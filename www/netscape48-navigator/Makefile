@@ -6,7 +6,7 @@
 #
 
 MASTERDIR=	${.CURDIR}/../netscape48-communicator
-COMMENTFILE=	${.CURDIR}/pkg-comment
+COMMENT=	Linux Netscape navigator web-surfboard
 PLIST=		${.CURDIR}/pkg-plist
 
 BROWSER_NAME=	navigator

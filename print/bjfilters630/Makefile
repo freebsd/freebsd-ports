@@ -7,6 +7,8 @@
 
 MASTERDIR=	${.CURDIR}/../bjfilter850
 
+COMMENT=	Canon Bubble Jet Print Filter for Linux -- BJ S630
+
 PREFIX_PRTYPE=	s
 PRTYPE?=	630
 

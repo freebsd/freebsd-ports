@@ -8,7 +8,8 @@
 PKGNAMESUFFIX=	-xemacs
 
 MASTERDIR=	${.CURDIR}/../yatex
-COMMENTFILE=	${.CURDIR}/pkg-comment
+COMMENT=	Yet Another LaTeX mode and html mode on Emacs (for XEmacs21)
+
 EMACS_PORT_NAME=xemacs21
 
 .include	"${MASTERDIR}/Makefile"

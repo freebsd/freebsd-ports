@@ -6,13 +6,12 @@
 #
 
 MAINTAINER=	okazaki@FreeBSD.org
+COMMENT=	Universal encoding system for GNU Emacs 20
 
 PORTCLASS=	slave
 
 MASTERDIR=	${.CURDIR}/../../converters/mule-ucs
 
 EMACS_PORT_NAME=	emacs20
-
-COMMENTFILE=	${.CURDIR}/pkg-comment
 
 .include <${MASTERDIR}/Makefile>

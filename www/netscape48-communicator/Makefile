@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_NETSCAPE}
 DISTFILES=	${BROWSER_NAME}-v${BROWSER_V}-us.${NETSCAPE_DIST_TAG}.tar.gz
 
 MAINTAINER=	sada@FreeBSD.org
+COMMENT?=	Netscape ver 4 communicator web-surfboard
 
 RUN_DEPENDS+=	netscape:${PORTSDIR}/www/netscape-wrapper
 

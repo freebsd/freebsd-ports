@@ -7,6 +7,8 @@
 
 MASTERDIR=	${.CURDIR}/../bjfilter850
 
+COMMENT=	Canon Bubble Jet Print Filter for Linux -- BJ F860
+
 PRTYPE=		860
 
 .include "${MASTERDIR}/Makefile"

@@ -29,6 +29,7 @@ DISTNAME?=	${PORTNAME}-${PORTVERSION}
 EXTRACT_SUFX=	.i386.tgz
 
 MAINTAINER=	taoka@FreeBSD.org
+COMMENT?=	Photo Image Print System for Linux --- EPSON PM-800C
 
 RUN_DEPENDS=	${LINUXBASE}/lib/libc.so.6:${PORTSDIR}/emulators/linux_base \
 		${LINUXBASE}/usr/lib/libgtk-1.2.so.0:${PORTSDIR}/x11-toolkits/linux-gtk \
@@ -72,7 +73,6 @@ FILTER=		${FILESDIR}/filter.rev
 BASE_NAME=	pips${PRTYPE}
 PAPERSIZE?=	a4
 # for slave ports
-COMMENTFILE=	${.CURDIR}/pkg-comment
 DESCR=		${.CURDIR}/pkg-descr
 .if ${PORTVERSION} == 2.0 && !defined(INTERNATIONAL_PRODUCTS)
 LANGS=		ja
@@ -250,7 +250,7 @@ post-install:
 _MAKE_COMMENT_DESCR:
 .if defined(INTERNATIONAL_PRODUCTS)
 .if ${PRTYPE} != -sc880 || ${PORTVERSION} != 1.0
-.for file in pkg-comment pkg-descr
+.for file in pkg-descr
 .if ${PRTYPE} == -sc680_777
 	${SED}	-e 's,Stylus Color 880,Stylus Color 680/Stylus Color 777,g' \
 		-e 's/880/${PRTYPE:S/^-sc//}/g' \
@@ -275,7 +275,7 @@ _MAKE_COMMENT_DESCR:
 .endif
 .else # for defined(INTERNATIONAL_PRODUCTS)
 .if ${PRTYPE} != 800
-.for file in pkg-comment pkg-descr
+.for file in pkg-descr
 .if ${PRTYPE} == 750_2000
 	${SED}	-e 's/PM-800C/PM-750C PM-2000C/g' \
 		-e 's/pm800c/pm750c_2000c/g' \

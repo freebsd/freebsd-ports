@@ -7,6 +7,8 @@
 
 MASTERDIR=	${.CURDIR}/../bjfilter850
 
+COMMENT=	Canon Bubble Jet Print Filter for Linux -- BJ F850 (supported BCI-6 inks)
+
 PRTYPE=		850
 SUFFIX_PRTYPE=	ug
 

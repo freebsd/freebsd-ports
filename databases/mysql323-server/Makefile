@@ -19,6 +19,7 @@ MASTER_SITES=	http://www.kernelnotes.de/MySQL/Downloads/MySQL-3.23/ \
 DISTFILES=	mysql-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	dirk@FreeBSD.org
+COMMENT?=	Multithreaded SQL database (server)
 
 WRKSRC=		${WRKDIR}/mysql-${PORTVERSION}
 SLAVEDIRS=	databases/mysql323-client

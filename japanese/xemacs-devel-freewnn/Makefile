@@ -8,7 +8,7 @@
 CATEGORIES=	japanese
 
 MASTERDIR=	${.CURDIR}/../../editors/xemacs-devel-mule
-COMMENTFILE=	${.CURDIR}/../../japanese/xemacs-devel-freewnn/pkg-comment
+COMMENT=	XEmacs(gamma version) text editor, with SJ3, SKK and FreeWnn support
 
 FREEWNN=	yes
 

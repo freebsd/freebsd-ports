@@ -10,7 +10,7 @@ CATEGORIES=	graphics gnome
 
 MASTERDIR=	${.CURDIR}/../gdk-pixbuf
 
-COMMENTFILE=	${.CURDIR}/pkg-comment
+COMMENT=	A graphics library for GNOME
 DESCR=		${.CURDIR}/pkg-descr
 PLIST=		${.CURDIR}/pkg-plist
 

@@ -18,6 +18,7 @@ PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 DISTNAME=	Mule-UCS-${PORTVERSION}
 
 MAINTAINER?=	okazaki@FreeBSD.org
+COMMENT?=	Universal encoding system for GNU Emacs 21
 
 # This is a master port.
 PORTCLASS?=	master
