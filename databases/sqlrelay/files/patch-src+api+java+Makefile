@@ -1,0 +1,11 @@
+--- src/api/java/Makefile.orig	Sun Mar 24 09:09:19 2002
++++ src/api/java/Makefile	Mon Oct 28 02:46:52 2002
+@@ -3,7 +3,7 @@
+ top_srcdir = ../../..
+ INSTALL = $(top_srcdir)/install-sh -c
+ 
+-CPPFLAGS = $(BASECPPFLAGS) -I./ -I../c++/include $(RUDIMENTSINCLUDES) $(JAVAINCLUDES)
++CPPFLAGS = $(JAVAINCLUDES) $(BASECPPFLAGS) -I./ -I../c++/include $(RUDIMENTSINCLUDES)
+ 
+ SRCS = SQLRConnection.C SQLRCursor.C
+ OBJS = SQLRConnection.o SQLRCursor.o
