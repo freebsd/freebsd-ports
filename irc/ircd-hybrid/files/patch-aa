@@ -5,7 +5,7 @@
  static	Numeric	local_replies[] = {
  /* 000 */	0, (char *)NULL,
 -/* 001 */	RPL_WELCOME, ":Welcome to EFNet IRC - the Internet Relay Chat Network %s",
-+/* 001 */	RPL_WELCOME, ":Welcome to BSDet IRC - the Internet Relay Chat Network %s",
++/* 001 */	RPL_WELCOME, ":Welcome to BSDnet IRC - the Internet Relay Chat Network %s",
  /* 002 */	RPL_YOURHOST, ":Your host is %s, running version %s",
 -/* 003 */	RPL_CREATED, ":This server rose from the ashes %s",
 +/* 003 */	RPL_CREATED, ":This server was hatched %s",
