@@ -519,6 +519,7 @@
     SUBDIR += php4-yp
     SUBDIR += php5-ldap
     SUBDIR += php5-soap
+    SUBDIR += php5-sockets
     SUBDIR += phpldapadmin
     SUBDIR += pim6dd
     SUBDIR += pim6sd
