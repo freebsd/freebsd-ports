@@ -11,13 +11,14 @@ PORTREVISION=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.sendmail.org/pub/sendmail/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/mail/sendmail/&,}
+PKGNAMESUFFIX?=	${TLS_SUFFIX}${SFIO_SUFFIX}${SASL_SUFFIX}${LDAP_SUFFIX}${PKGNAMESUFFIX2}
 DISTNAME=	${PORTNAME}.${PORTVERSION}
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Reliable, highly configurable mail transfer agent with utilities
 
-CONFLICTS?=	courier-0.* postfix-1.* postfix-2.* sendmail-8.12.* sendmail-*-8.12.* \
-		smail-3.* zmailer-2.*
+CONFLICTS?=	courier-0.* postfix-1.* postfix-2.* smail-3.* zmailer-2.*
+CONFLICTS+=	sendmail-8.12.* sendmail-*-8.12.* sendmail+*-8.12.*
 NO_LATEST_LINK=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 WCONF=		${WRKSRC}/devtools/Site
@@ -40,22 +41,42 @@ LDAP_PORT?=	net/openldap21-client
 # SENDMAIL_WITH_LDAP=yes
 
 .if defined(SENDMAIL_WITH_LDAP)
-PKGNAMESUFFIX?=	-ldap
+LDAP_SUFFIX?=	+ldap
+CONFLICTS+=	sendmail+tls-8.* \
+		sendmail+tls+sfio-8.* \
+		sendmail+tls+sasl-8.* \
+		sendmail+tls+sfio+sasl-8.* \
+		sendmail+sfio-8.* \
+		sendmail+sfio+sasl-8.* \
+		sendmail+sasl-8.*
 CONFLICTS+=	sendmail-sasl-8.* sendmail-tls-8.*
 LIB_DEPENDS+=	ldap.2:${PORTSDIR}/${LDAP_PORT}
 LIB_DEPENDS+=	lber.2:${PORTSDIR}/${LDAP_PORT}
 .endif
 .if defined(SENDMAIL_WITH_SASL)
-LIB_DEPENDS+=	sasl.8:${PORTSDIR}/security/cyrus-sasl
-PKGNAMESUFFIX?=	-sasl
+SASL_SUFFIX?=	+sasl
+CONFLICTS+=	sendmail+tls-8.* \
+		sendmail+tls+sfio-8.* \
+		sendmail+tls+sfio+ldap-8.* \
+		sendmail+tls+ldap-8.* \
+		sendmail+sfio-8.* \
+		sendmail+sfio+ldap-8.* \
+		sendmail+ldap-8.*
 CONFLICTS+=	sendmail-ldap-8.* sendmail-tls-8.*
+LIB_DEPENDS+=	sasl.8:${PORTSDIR}/security/cyrus-sasl
 .endif
 .if defined(SENDMAIL_WITH_TLS) || defined(WITH_TLS)
-PKGNAMESUFFIX?=	-tls
+TLS_SUFFIX?=	+tls
+CONFLICTS+=	sendmail+sfio-8.* \
+		sendmail+sfio+sasl-8.* \
+		sendmail+sfio+sasl+ldap-8.* \
+		sendmail+sasl-8.* \
+		sendmail+sasl+ldap-8.* \
+		sendmail+ldap-8.*
 CONFLICTS+=	sendmail-sasl-8.* sendmail-ldap-8.*
 .endif
 .if defined(SENDMAIL_WITH_SFIO)
-PKGNAMESUFFIX?=	-sfio
+SFIO_SUFFIX?=	+sfio
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libsfio.a:${PORTSDIR}/devel/sfio
 .endif
 
