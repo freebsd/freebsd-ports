@@ -22,7 +22,7 @@ USE_RUBY=	yes
 USE_RUBY_RD=	yes
 .endif
 
-APXS=		${LOCALBASE}/sbin/apxs
+APXS?=		${LOCALBASE}/sbin/apxs
 
 CONFIGURE_ARGS=	--with-apxs="${APXS}" \
 		--enable-eruby=yes \
@@ -42,7 +42,7 @@ post-build:
 .endif
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/examples/httpd.conf ${PREFIX}/etc/apache/httpd.conf.${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/examples/httpd.conf `${APXS} -q SYSCONFDIR`/httpd.conf.${PORTNAME}
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_DOCDIR}/${PORTNAME}/ja
 .for f in ${DOCS_EN}
