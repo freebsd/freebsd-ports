@@ -8,7 +8,4 @@ it possible to handle the state-less access and to process the posted
 data of formfields, but DBIx::Recordset is not limited to web
 applications.
 
-WWW: http://search.cpan.org/search?dist=DBIx-Recordset
-
--- Sergey Skvortsov
-skv@FreeBSD.org
+WWW: http://search.cpan.org/dist/DBIx-Recordset/
