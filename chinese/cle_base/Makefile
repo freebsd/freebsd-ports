@@ -13,6 +13,7 @@ MASTER_SITES=		\
 	ftp://freebsd.sinica.edu.tw/pub/keith/zh-rpm/
 DISTFILES=		${RPM_SET1} ${RPM_LDCONFIG} ${RPM_BASH2} ${RPM_SET2} \
 			${RPM_RPM} ${RPM_SET3} ${RPM_L10N}
+EXTRACT_ONLY=
 
 MAINTAINER=		keith@FreeBSD.org
 
@@ -20,8 +21,7 @@ RUN_DEPENDS=		rpm:${PORTSDIR}/misc/rpm
 
 ONLY_FOR_ARCHS=		i386
 DIST_SUBDIR=		zh-rpm
-EXTRACT_ONLY=
-PREFIX=			/compat/linux
+PREFIX=			${LINUXBASE}
 NO_BUILD=		yes
 NO_FILTER_SHLIBS=	yes
 NO_MTREE=		yes
@@ -30,12 +30,12 @@ PKGINSTALL=		${WRKDIR}/pkg-install
 .include <bsd.port.pre.mk>
 
 LIBC5_COMPAT=		ld.so-1.9.5-13.i386.rpm libc-5.3.12-31.i386.rpm
-RPM_BINUTILS=           binutils-2.9.5.0.22-6.i386.rpm
-RPM_GLIB=               glib-1.2.6-3.i386.rpm
-RPM_GLIBC=              glibc-2.1.3-21.i386.rpm
-RPM_LDCONFIG=           ldconfig-1.9.5-16.i386.rpm
-RPM_RPM=                rpm-3.0.5-9.6x.i386.rpm
-RPM_X_LIBS=             XFree86-libs-3.3.6-24CLE.i386.rpm
+RPM_BINUTILS=		binutils-2.9.5.0.22-6.i386.rpm
+RPM_GLIB=		glib-1.2.6-3.i386.rpm
+RPM_GLIBC=		glibc-2.1.3-21.i386.rpm
+RPM_LDCONFIG=		ldconfig-1.9.5-16.i386.rpm
+RPM_RPM=		rpm-3.0.5-9.6x.i386.rpm
+RPM_X_LIBS=		XFree86-libs-3.3.6-24CLE.i386.rpm
 
 #
 # The file files/base-list lists all rpms that are installed
@@ -73,7 +73,7 @@ RPM_L10N=		${RPM_X_LIBS} \
 			xa+cv-0.7-pre1.i386.rpm
 
 DBPATH=			/var/lib/rpm
-RPMFLAGS=		--ignoreos --root ${PREFIX} --dbpath ${DBPATH} \
+RPMFLAGS=		--ignoreos --root ${LINUXBASE} --dbpath ${DBPATH} \
 			--nodeps --replacepkgs --notriggers --noscripts
 RPMDIR=			${DISTDIR}/${DIST_SUBDIR}
 
@@ -102,7 +102,7 @@ do-patch:
 	@${DO_NADA}
 
 post-patch:
-	@${SED} -e "s;@PREFIX@;${PREFIX};g" ${FILESDIR}/INSTALL.in > ${WRKDIR}/pkg-install
+	@${SED} -e "s;@LINUXBASE@;${LINUXBASE};g" ${FILESDIR}/INSTALL.in > ${WRKDIR}/pkg-install
 
 pre-install:
 # Handle the loading of the linux loadable kernel module if
@@ -110,19 +110,19 @@ pre-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 do-install:
-	@${MKDIR} ${PREFIX}/${DBPATH}
-	@${MKDIR} ${PREFIX}/var/tmp
-	@rpm --initdb --root ${PREFIX} --dbpath ${DBPATH}
+	@${MKDIR} ${LINUXBASE}/${DBPATH}
+	@${MKDIR} ${LINUXBASE}/var/tmp
+	@rpm --initdb --root ${LINUXBASE} --dbpath ${DBPATH}
 #
 # Make sure we have a /dev/null in the chrooted environment.
 #
-	@${MKDIR} ${PREFIX}/dev
-	@${RM} -f ${PREFIX}/dev/null
-	@mknod ${PREFIX}/dev/null c 2 2
-	@chmod 666 ${PREFIX}/dev/null
+	@${MKDIR} ${LINUXBASE}/dev
+	@${RM} -f ${LINUXBASE}/dev/null
+	@mknod ${LINUXBASE}/dev/null c 2 2
+	@chmod 666 ${LINUXBASE}/dev/null
 .if defined(NEEDLOADLINK)
-	@${MKDIR} ${PREFIX}/compat
-	@${LN} -s / ${PREFIX}/compat/linux
+	@${MKDIR} ${LINUXBASE}/compat
+	@${LN} -s / ${LINUXBASE}/compat/linux
 .endif
 #
 # Install all packages. Ignore dependencies just
@@ -134,15 +134,15 @@ do-install:
 	done
 	@${ECHO} ${RPM_LDCONFIG}
 	@rpm -U ${RPMFLAGS} ${RPMDIR}/${RPM_LDCONFIG}
-	@brandelf -t Linux ${PREFIX}/sbin/ldconfig
+	@brandelf -t Linux ${LINUXBASE}/sbin/ldconfig
 	@for R in ${RPM_SET2}; do \
 		${ECHO} $$R; \
 		rpm -U ${RPMFLAGS} ${RPMDIR}/$$R; \
 	done
-	@brandelf -t Linux ${PREFIX}/bin/sh
+	@brandelf -t Linux ${LINUXBASE}/bin/sh
 	@${ECHO} ${RPM_RPM}
 	@rpm -U ${RPMFLAGS} ${RPMDIR}/${RPM_RPM}
-	@brandelf -t Linux ${PREFIX}/bin/rpm
+	@brandelf -t Linux ${LINUXBASE}/bin/rpm
 	@for R in ${RPM_SET3}; do \
 		${ECHO} $$R; \
 		rpm -U ${RPMFLAGS} ${RPMDIR}/$$R; \
@@ -151,28 +151,28 @@ do-install:
 		${ECHO} $$R; \
 		rpm -U ${RPMFLAGS} ${RPMDIR}/$$R; \
 	done
-	@ln -sf ${PREFIX}/usr/X11R6/lib/libXpm.so.4.11 ${PREFIX}/usr/X11R6/lib/libXpm.so.4
-	@echo "/usr/i486-linux-libc5/lib" > ${PREFIX}/etc/ld.so.conf
-	@echo "/usr/X11R6/lib" >> ${PREFIX}/etc/ld.so.conf
-	@${PREFIX}/sbin/ldconfig
+	@ln -sf ${LINUXBASE}/usr/X11R6/lib/libXpm.so.4.11 ${LINUXBASE}/usr/X11R6/lib/libXpm.so.4
+	@echo "/usr/i486-linux-libc5/lib" > ${LINUXBASE}/etc/ld.so.conf
+	@echo "/usr/X11R6/lib" >> ${LINUXBASE}/etc/ld.so.conf
+	@${LINUXBASE}/sbin/ldconfig
 #
 # Install yp.conf as a hint to NIS users
 #
-	${INSTALL} ${COPY} -m 644 ${FILESDIR}/yp.conf ${PREFIX}/etc
+	${INSTALL} ${COPY} -m 644 ${FILESDIR}/yp.conf ${LINUXBASE}/etc
 #
 # Finish
 #
 .if defined(NEEDLOADLINK)
-	@${RM} -rf ${PREFIX}/compat
+	@${RM} -rf ${LINUXBASE}/compat
 .endif
 	@for D in ${REMOVE_DIRS}; do \
-		${RM} -rf ${PREFIX}/$$D; \
+		${RM} -rf ${LINUXBASE}/$$D; \
 	done
 	@for F in ${REMOVE_FILES}; do \
-		${RM} ${PREFIX}/$$F; \
+		${RM} ${LINUXBASE}/$$F; \
 	done
-	@${LN} -s /var/tmp ${PREFIX}/usr/tmp
-	@${TOUCH} ${PREFIX}/CLE-0.9p1
+	@${LN} -s /var/tmp ${LINUXBASE}/usr/tmp
+	@${TOUCH} ${LINUXBASE}/CLE-0.9p1
 
 post-install:
 	@${ECHO} ''
