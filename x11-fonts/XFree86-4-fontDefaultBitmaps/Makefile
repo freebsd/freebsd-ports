@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTNAME=	fontDefaultBitmap
+PORTNAME=	fontDefaultBitmaps
 PORTVERSION=	4.0.1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	ftp://ftp.xfree86.org/pub/XFree86/${PORTVERSION}/source/ \
