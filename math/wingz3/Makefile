@@ -3,13 +3,13 @@
 # Date created:         Wed Nov 27 09:15:10 CST 1996
 # Whom:                 erich@rrnet.com
 #
-# $Id: Makefile,v 1.1.1.1 1996/12/04 20:05:12 erich Exp $
+# $Id: Makefile,v 1.2 1996/12/05 00:43:55 asami Exp $
 #
 
 DISTNAME=	Wingz-142
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR=	apps/financial
+MASTER_SITE_SUBDIR=	apps/financial/spreadsheet
 EXTRACT_SUFX=	.tgz
 
 MANINAINER=	erich@FreeBSD.org
