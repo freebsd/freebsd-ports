@@ -23,7 +23,7 @@ MANCOMPRESSED=	no
 LATEST_LINK=	rat30
 
 do-build:
-	(cd ${WRKSRC};${SETENV} MAKE=${GMAKE} ${SH} ./Build rat)
+	(cd ${WRKSRC};${SETENV} ${MAKE_ENV} MAKE=${GMAKE} ${SH} ./Build rat)
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/rat ${PREFIX}/bin/rat30
