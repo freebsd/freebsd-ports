@@ -3,10 +3,10 @@
 # Date created:		9 October 1995
 # Whom:			torstenb@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.5 1996/11/17 20:59:54 torstenb Exp $
+# $Id: Makefile,v 1.6 1998/01/25 20:42:37 torstenb Exp $
 #
 
-DISTNAME=	libident-0.21
+DISTNAME=	libident-0.22
 CATEGORIES=	devel net security
 MASTER_SITES=	ftp://ftp.lysator.liu.se/pub/ident/libs/
 
