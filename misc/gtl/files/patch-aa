@@ -1,0 +1,18 @@
+--- include/GTL/GTL.h.orig	Fri Oct  1 13:22:15 1999
++++ include/GTL/GTL.h	Fri Oct  1 13:22:57 1999
+@@ -115,6 +115,7 @@
+ 
+ #include <memory>
+ 
++#ifndef __FreeBSD__
+ /**
+  * @internal
+  */
+@@ -122,6 +123,7 @@
+ class allocator : public alloc
+ {
+ };
++#endif
+ 
+ #endif
+ 

@@ -1,0 +1,33 @@
+include/GTL/GTL.h
+include/GTL/algorithm.h
+include/GTL/bfs.h
+include/GTL/biconnectivity.h
+include/GTL/debug.h
+include/GTL/dfs.h
+include/GTL/edge.h
+include/GTL/edge_data.h
+include/GTL/edge_map.h
+include/GTL/embedding.h
+include/GTL/gml_parser.h
+include/GTL/gml_scanner.h
+include/GTL/graph.h
+include/GTL/max_flow.h
+include/GTL/max_flow_mkm.h
+include/GTL/ne_map.h
+include/GTL/node.h
+include/GTL/node_data.h
+include/GTL/node_map.h
+include/GTL/planarity.h
+include/GTL/pq_node.h
+include/GTL/pq_tree.h
+include/GTL/st_number.h
+include/GTL/symlist.h
+include/GTL/topsort.h
+include/GTL/version.h
+lib/libGTL.a
+lib/libGTL.la
+lib/libGTL.so
+lib/libGTL.so.3
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
+@dirrm include/GTL
