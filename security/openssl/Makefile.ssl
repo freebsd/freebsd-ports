@@ -4,6 +4,31 @@
 #
 # $FreeBSD$
 #
+# this substitutes USE_OPENSSL=yes
+# just include this makefile after bsd.ports.pre.mk
+#
+# the user/port can now set this options in the makefiles.
+#
+# USE_OPENSSL_BASE=yes	- Use the version in the base system.
+# USE_OPENSSL_BETA=yes	- Use a snapshot of recent openssl
+#
+# The makefile sets this variables:
+# OPENSSLBASE		- "/usr" or ${LOCALBASE}
+# OPENSSLDIR		- path to openssl
+# OPENSSLLIB		- path to the libs
+# OPENSSLINC		- path to the matching includes
+#
+# MAKE_ENV		- extended with the variables above
+# LIB_DEPENDS		- are added if needed
+
+#	if no preference was set, check for an up to date base version
+.if !defined(USE_OPENSSL_BASE) && !defined(USE_OPENSSL_BETA)
+#	4-STABLE is not up to date yet
+#	5-CURRENT has 0.9.7 after 2003-01-28, 500100 was bumped at 2003-01-23
+.if exists(/usr/lib/libcrypto.so.3)
+USE_OPENSSL_BASE=yes
+.endif
+.endif
 
 .if defined(USE_OPENSSL_BASE)
 OPENSSLBASE=		/usr
