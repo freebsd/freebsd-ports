@@ -1,30 +1,25 @@
---- parse/glob.c.orig	Thu Aug  9 10:20:46 2001
-+++ parse/glob.c	Thu Aug 16 19:04:59 2001
-@@ -50,6 +50,7 @@
- #include "ca.h"
+--- parse/glob.c.orig	Sat Nov  3 18:28:57 2001
++++ parse/glob.c	Wed Nov 14 17:20:47 2001
+@@ -51,6 +51,7 @@
  #include "al.h"
  #include "parse.h"
+ #include "ox.h"
 +#include "version.h"
  #if PARI
  #include "genpari.h"
  #endif
-@@ -688,11 +689,15 @@
- 	printf("This is Risa/Asir, Version %d (%s Distribution).\n",
- 		get_asir_version(), get_asir_distribution());
- #endif
-+
+@@ -669,8 +670,12 @@
  	printf("Copyright (C) 1994-2000, all rights reserved, FUJITSU LABORATORIES LIMITED.\n");
  	printf("Copyright 2000,2001, Risa/Asir committers, http://www.openxm.org/.\n");
  	printf("GC 5.3, copyright 1999, H-J. Boehm, A. J. Demers, Xerox, SGI, HP.\n");
--	printf("PARI 2.0.17(beta), copyright (C) 1989-1999,\n");
+-	printf("PARI 2.2.1(alpha), copyright (C) 2000,\n");
 -	printf("     C. Batut, K. Belabas, D. Bernardi, H. Cohen and M. Olivier.\n");
--}
--
 +#if defined(PARI)
-+	printf("%s.\n",PARI_VERSION);
++	printf("%s.\n",PARI2_VERSION);
 +#endif
- 
 +#if defined(LAPACK)
 +	printf("%s.\n",LAPACK_VERSION);
 +#endif
-+}
+ }
+ 
+ 
