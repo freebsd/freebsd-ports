@@ -1,0 +1,78 @@
+$FreeBSD$
+
+--- cliplibs/clip-gtk/configure.orig	Fri Sep 27 15:38:08 2002
++++ cliplibs/clip-gtk/configure	Fri Sep 27 16:48:07 2002
+@@ -3,6 +3,8 @@
+ uname=`uname -s`
+ uver=`uname -r`
+ hname=`hostname -f 2>/dev/null`
++gtkconfig=gtk-config
++gtkpath=
+ 
+ [ -z "$CLIPROOT" ] && CLIPROOT=/usr/local/clip
+ DLLSUFF='.so'
+@@ -33,6 +35,8 @@
+ 		;;
+ 	FreeBSD*)
+ 		osname=FREEBSD
++		gtkconfig=gtk12-config
++		gtkpath=/gtk12
+ 		STATICLINK=-static
+ 		;;
+ 	NetBSD*)
+@@ -65,7 +69,7 @@
+ echo '#define SYSTEM "'$uname'"' >&3
+ echo '' >&3
+ 
+-gtkprefix=`gtk-config --prefix 2>/dev/null`
++gtkprefix=`${gtkconfig} --prefix 2>/dev/null`
+ 
+ if [ $? -ne 0 ]
+ then
+@@ -76,7 +80,7 @@
+ 	USE_GTK=no
+ else
+ #	LIBS='-lgtk -lgdk'
+-	LIBS=`gtk-config --libs`
++	LIBS=`${gtkconfig} --libs`
+ 
+ 	if [ "$osname" = "CYGWIN" ]
+ 	then
+@@ -85,7 +89,7 @@
+ 		EXTRACFLAGS='-fnative-struct'
+ #		LIBS='-lgtk-1.3 -lgdk-1.3 -lglib-1.3'
+ 	fi
+-	if [ -f $gtkprefix/include/gtk/gtk.h -o -f $gtkprefix/include/gtk+/gtk/gtk.h ]
++	if [ -f $gtkprefix/include$gtkpath/gtk/gtk.h -o -f $gtkprefix/include/gtk+/gtk/gtk.h ]
+ 	then
+ 		USE_GTK=yes
+ 		echo '#define HAVE_GTK' >&3
+@@ -93,8 +97,8 @@
+ 		echo
+ 		echo 'Warning: system do not have installed GTK+ development'
+ 	fi
+-	GTK_MAJOR=`gtk-config --version|cut -d. -f1`
+-	GTK_MINOR=`gtk-config --version|cut -d. -f2`
++	GTK_MAJOR=`${gtkconfig} --version|cut -d. -f1`
++	GTK_MINOR=`${gtkconfig} --version|cut -d. -f2`
+ 	if [ ! \( "$GTK_MAJOR" -ge 1 -o "$GTK_MINOR" -ge 2 -o "$GTK_MAJOR" -gt 1 \) ]
+ 	then
+ 		echo
+@@ -147,7 +151,7 @@
+ echo "DLLSUFF='$DLLSUFF'" >&3
+ echo "DLLREALSUFF='$DLLREALSUFF'" >&3
+ echo "CLIPROOT=$CLIPROOT" >&3
+-echo 'INCLUDEDIRS=-I. -I$(CLIPROOT)/include -I'$gtkprefix'/include' >&3
++echo 'INCLUDEDIRS=-I. -I$(CLIPROOT)/include -I'$gtkprefix'/include'${gtkpath} >&3
+ echo "XTARGETS='"'$(XLIB) $(XSLIB)'"'" >&3
+ echo "C_FLAGS=-Wall '"'$(INCLUDEDIRS)'"' '$EXTRACFLAGS'" >&3
+ echo "LIBS='$LIBS'" >&3
+@@ -160,7 +164,7 @@
+ #	else
+ #		XCFLAGS=`gtk-config --cflags`
+ #	fi
+-	XCFLAGS=`gtk-config --cflags`
++	XCFLAGS=`${gtkconfig} --cflags`
+ 	echo "XCFLAGS='$XCFLAGS'" >&3
+ fi
+ 

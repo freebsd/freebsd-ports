@@ -1,0 +1,83 @@
+$FreeBSD$
+
+--- cliplibs/clip-gd/gd/configure.orig	Fri Sep 27 15:29:21 2002
++++ cliplibs/clip-gd/gd/configure	Sat Sep 28 03:03:27 2002
+@@ -23,7 +23,9 @@
+ osname=UNIX
+ stdlibpath=/usr/local/lib
+ stdincpath=/usr/local/include
++freetypepath=
+ LIBXPM='-lXpm -lX11'
++DLLSUFF='.so'
+ 
+ case "$uname" in
+ 	BSD/OS*|bsdi*)
+@@ -36,6 +38,7 @@
+ 		;;
+ 	FreeBSD*)
+ 		osname=FREEBSD
++		freetypepath=/freetype
+ 		STATICLINK=-static
+ 		;;
+ 	NetBSD*)
+@@ -91,7 +94,7 @@
+ echo "INSTALL_LIB='$stdlibpath'" >&3
+ echo "INSTALL_INCLUDE='$stdincpath'" >&3
+ echo "LIBDIRS='-L. -L$stdlibpath -L/usr/lib/X11 -L/usr/X11R6/lib'" >&3
+-echo "INCLUDEDIRS='-I. -I/usr/include/freetype2 -I/usr/include/X11 -I/usr/X11R6/include -I/usr/X11R6/include/X11 -I$stdincpath'" >&3
++echo "INCLUDEDIRS='-I. -I${stdincpath}/freetype2 -I${stdincpath}/freetype2/freetype -I${stdincpath}/freetype1 -I${stdincpath}/freetype1/freetype -I/usr/include/X11 -I/usr/X11R6/include -I/usr/X11R6/include/X11 -I$stdincpath'" >&3
+ 
+ if [ -f $stdlibpath/libpng${DLLSUFF} ]
+ then
+@@ -108,18 +111,17 @@
+ fi
+ 
+ #??????????
+-if [ -f $stdlibpath/freetype${DLLSUFF} ]
++if [ -f $stdlibpath/libfreetype${DLLSUFF} ]
+ then
+ 	echo "LIBFREETYPE='-lfreetype'" >&3
+ else
+ 	echo 'Warning: libfreetype not installed'
+-fi
+-
+-if [ -f $stdlibpath/libttf${DLLSUFF} ]
+-then
+-	echo "LIBTTF='-lttf'" >&3
+-else
+-	echo 'Warning: libttf not installed'
++	if [ -f $stdlibpath/libttf${DLLSUFF} ]
++	then
++		echo "LIBTTF='-lttf'" >&3
++	else
++		echo 'Warning: libttf not installed'
++	fi
+ fi
+ 
+ if [ -f /usr/X11R6/include/X11/xpm.h -o -f /usr/include/X11/xpm.h ]
+@@ -178,18 +180,17 @@
+ 	echo '#define HAVE_LIBXPM'  >&3
+ fi
+ 
+-if [ -f $stdincpath/freetype2/freetype.h ]
++if [ -f $stdincpath/freetype2${freetypepath}/freetype.h ]
+ then
+ 	echo '#define HAVE_LIBFREETYPE' >&3
+ else
+ 	echo 'Warning: system do not have installed FREETYPE development'
+-fi
+-
+-if [ -f $stdincpath/freetype2/freetype.h ]
+-then
+-	echo '#define HAVE_LIBTTF' >&3
+-else
+-	echo 'Warning: system do not have installed TTF development'
++	if [ -f $stdincpath/freetype1${freetypepath}/freetype.h ]
++	then
++		echo '#define HAVE_LIBTTF' >&3
++	else
++		echo 'Warning: system do not have installed TTF development'
++	fi
+ fi
+ 
+ echo "#endif" >&3

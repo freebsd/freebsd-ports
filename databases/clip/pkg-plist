@@ -101,6 +101,7 @@ clip/charsets/ruscii.tbl
 clip/charsets/ruscii.uni
 clip/charsets/utf_8.uni
 clip/cliprc/.notrm
+clip/cliprc/clip-gtk.cliprc
 clip/cliprc/clipflags
 clip/doc/Readme.cygwin
 clip/doc/Readme.en
@@ -180,8 +181,47 @@ clip/doc/example/clip-com/Makefile
 clip/doc/example/clip-com/com.prg
 clip/doc/example/clip-crypto/Makefile
 clip/doc/example/clip-crypto/crypto.prg
+clip/doc/example/clip-fw/Makefile
+clip/doc/example/clip-fw/atest.prg
+clip/doc/example/clip-fw/bitmaps/calc.bmp
+clip/doc/example/clip-fw/bitmaps/calendar.bmp
+clip/doc/example/clip-fw/bitmaps/cara.bmp
+clip/doc/example/clip-fw/bitmaps/clipboar.bmp
+clip/doc/example/clip-fw/bitmaps/copy.bmp
+clip/doc/example/clip-fw/bitmaps/cut.bmp
+clip/doc/example/clip-fw/bitmaps/end.bmp
+clip/doc/example/clip-fw/bitmaps/exit.bmp
+clip/doc/example/clip-fw/bitmaps/fivewin.bmp
+clip/doc/example/clip-fw/bitmaps/fivewin1.bmp
+clip/doc/example/clip-fw/bitmaps/help.bmp
+clip/doc/example/clip-fw/bitmaps/info.bmp
+clip/doc/example/clip-fw/bitmaps/openprj.bmp
+clip/doc/example/clip-fw/bitmaps/paste.bmp
+clip/doc/example/clip-fw/bitmaps/plus.bmp
+clip/doc/example/clip-fw/bitmaps/saveprj.bmp
+clip/doc/example/clip-fw/bmp.prg
+clip/doc/example/clip-fw/combos.prg
+clip/doc/example/clip-fw/customer.prg
+clip/doc/example/clip-fw/data/custlast.ntx
+clip/doc/example/clip-fw/data/custname.ntx
+clip/doc/example/clip-fw/data/customer.dbf
+clip/doc/example/clip-fw/data/sales.dbf
+clip/doc/example/clip-fw/dlgtest.prg
+clip/doc/example/clip-fw/lines.prg
+clip/doc/example/clip-fw/t.prg
+clip/doc/example/clip-fw/test.prg
+clip/doc/example/clip-fw/testbar.prg
+clip/doc/example/clip-fw/testlbx.prg
+clip/doc/example/clip-fw/tooltip.prg
 clip/doc/example/clip-gd/Makefile
 clip/doc/example/clip-gd/gr.prg
+clip/doc/example/clip-gtk/Makefile
+clip/doc/example/clip-gtk/basket.bmp
+clip/doc/example/clip-gtk/clip.xpm
+clip/doc/example/clip-gtk/clipgtktest.prg
+clip/doc/example/clip-gtkextra/Makefile
+clip/doc/example/clip-gtkextra/pixmaps.ch
+clip/doc/example/clip-gtkextra/sheet.prg
 clip/doc/example/clip-gzip/Makefile
 clip/doc/example/clip-gzip/gz.prg
 clip/doc/example/hello.prg
@@ -327,6 +367,9 @@ clip/include/blob.ch
 clip/include/box.ch
 clip/include/browsys.ch
 clip/include/button.ch
+clip/include/clip-gtk.ch
+clip/include/clip-gtk.h
+clip/include/clip-gtkextra.ch
 clip/include/clip.ch
 clip/include/clip.h
 clip/include/clipbase.h
@@ -367,6 +410,49 @@ clip/include/fox.ch
 clip/include/foxsql.ch
 clip/include/frmdef.ch
 clip/include/func_ref.ch
+clip/include/fwin/clipapi.h
+clip/include/fwin/colors.ch
+clip/include/fwin/column.ch
+clip/include/fwin/comm.ch
+clip/include/fwin/constant.ch
+clip/include/fwin/database.ch
+clip/include/fwin/dbf.ch
+clip/include/fwin/dbm.ch
+clip/include/fwin/dbms.ch
+clip/include/fwin/dde.ch
+clip/include/fwin/dialog.ch
+clip/include/fwin/dict.ch
+clip/include/fwin/dll.ch
+clip/include/fwin/fivewin.ch
+clip/include/fwin/folder.ch
+clip/include/fwin/font.ch
+clip/include/fwin/fwini.ch
+clip/include/fwin/fwmsgs.h
+clip/include/fwin/fwstd.ch
+clip/include/fwin/info-unz.h
+clip/include/fwin/ini.ch
+clip/include/fwin/itk.ch
+clip/include/fwin/mail.ch
+clip/include/fwin/menu.ch
+clip/include/fwin/msgxpm.ch
+clip/include/fwin/obendcls.ch
+clip/include/fwin/objects.ch
+clip/include/fwin/objerror.ch
+clip/include/fwin/objinsp.ch
+clip/include/fwin/odbc.ch
+clip/include/fwin/print.ch
+clip/include/fwin/profiler.ch
+clip/include/fwin/redefcls.ch
+clip/include/fwin/report.ch
+clip/include/fwin/sql.ch
+clip/include/fwin/sysmetrics.ch
+clip/include/fwin/tcbrowse.ch
+clip/include/fwin/tree.ch
+clip/include/fwin/video.ch
+clip/include/fwin/vkey.ch
+clip/include/fwin/winapi.ch
+clip/include/fwin/winten.h
+clip/include/fwin/yacc.ch
 clip/include/gdinfo.ch
 clip/include/getexit.ch
 clip/include/html.ch
@@ -435,8 +521,13 @@ clip/lang/ru_RU.KOI8-U
 clip/lib/libclip-bzip2.so
 clip/lib/libclip-com.so
 clip/lib/libclip-crypto.so
+clip/lib/libclip-fw.so
 clip/lib/libclip-gd.a
 clip/lib/libclip-gd.so
+clip/lib/libclip-gtk.a
+clip/lib/libclip-gtk.so
+clip/lib/libclip-gtkextra.a
+clip/lib/libclip-gtkextra.so
 clip/lib/libclip-gzip.so
 clip/lib/libclip-nanfor.so
 clip/lib/libclip-netto.so
@@ -468,6 +559,10 @@ clip/locale.pot/bdbfs/modistru.pot
 clip/locale.pot/bdbfs/print.pot
 clip/locale.pot/bdbfs/tb2html.pot
 clip/locale.pot/bdbfs/viewer.pot
+clip/locale.pot/clip-fw/fw_msg.pot
+clip/locale.pot/clip-fw/fw_sys.pot
+clip/locale.pot/clip-fw/fw_utils.pot
+clip/locale.pot/clip-fw/x_sys.pot
 clip/locale.pot/debug/cld_obj.pot
 clip/locale.pot/debug/clip_cld.pot
 clip/locale.pot/debug/command.pot
@@ -491,6 +586,7 @@ clip/term/pcansi
 @dirrm clip/term
 @dirrm clip/locale.pot/pp
 @dirrm clip/locale.pot/debug
+@dirrm clip/locale.pot/clip-fw
 @dirrm clip/locale.pot/bdbfs
 @dirrm clip/locale.pot
 @dirrm clip/locale.po/ru_RU.KOI8-R
@@ -503,6 +599,7 @@ clip/term/pcansi
 @dirrm clip/include/netto
 @dirrm clip/include/nanfor
 @dirrm clip/include/memdebug
+@dirrm clip/include/fwin
 @dirrm clip/include
 @dirrm clip/etc/terminfo/x
 @dirrm clip/etc/terminfo/v
@@ -519,7 +616,12 @@ clip/term/pcansi
 @dirrm clip/doc/rus
 @dirrm clip/doc/ncpfs
 @dirrm clip/doc/example/clip-gzip
+@dirrm clip/doc/example/clip-gtkextra
+@dirrm clip/doc/example/clip-gtk
 @dirrm clip/doc/example/clip-gd
+@dirrm clip/doc/example/clip-fw/data
+@dirrm clip/doc/example/clip-fw/bitmaps
+@dirrm clip/doc/example/clip-fw
 @dirrm clip/doc/example/clip-crypto
 @dirrm clip/doc/example/clip-com
 @dirrm clip/doc/example/clip-bzip2

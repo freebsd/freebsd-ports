@@ -1,0 +1,74 @@
+$FreeBSD$
+
+--- cliplibs/clip-gtkextra/configure.orig	Sat Sep 28 02:21:40 2002
++++ cliplibs/clip-gtkextra/configure	Sat Sep 28 02:57:37 2002
+@@ -3,6 +3,10 @@
+ uname=`uname -s`
+ uver=`uname -r`
+ hname=`hostname -f 2>/dev/null`
++gtkconfig=gtk-config
++gtkpath=
++glibconfig=glib-config
++glibpath=
+ 
+ [ -z "$CLIPROOT" ] && CLIPROOT=/usr/local/clip
+ DLLSUFF='.so'
+@@ -33,6 +37,10 @@
+ 		;;
+ 	FreeBSD*)
+ 		osname=FREEBSD
++		gtkconfig=gtk12-config
++		gtkpath=/gtk12
++		glibconfig=glib12-config
++		glibpath=/glib12
+ 		STATICLINK=-static
+ 		;;
+ 	NetBSD*)
+@@ -69,7 +77,8 @@
+ #gtkextraincpath=/usr/local/include/gtkextra/
+ LIBS='-lgtk -lgdk -lgtkextra'
+ 
+-gtkprefix=`gtk-config --prefix 2>/dev/null`
++glibprefix=`${glibconfig} --prefix 2>/dev/null`
++gtkprefix=`${gtkconfig} --prefix 2>/dev/null`
+ if [ $? -ne 0 ]
+ then
+ 	echo
+@@ -79,7 +88,7 @@
+ 	USE_GTK=no
+ else
+ #	LIBS='-lgtk -lgdk'
+-	LIBS=`gtk-config --libs`
++	LIBS=`${gtkconfig} --libs`
+ 
+ 	if [ "$osname" = "CYGWIN" ]
+ 	then
+@@ -87,7 +96,7 @@
+                 LIBS=$LIBS" -L"$CLIPROOT"/lib -llibclip-gtk"
+ #		LIBS='-lgtk-1.3 -lgdk-1.3 -lglib-1.3'
+ 	fi
+-	if [ -f $gtkprefix/include/gtk/gtk.h -o -f $gtkprefix/include/gtk+/gtk/gtk.h ]
++	if [ -f $gtkprefix/include$gtkpath/gtk/gtk.h -o -f $gtkprefix/include/gtk+/gtk/gtk.h ]
+ 	then
+ 		USE_GTK=yes
+ 		echo '#define HAVE_GTK' >&3
+@@ -95,8 +104,8 @@
+ 		echo
+ 		echo 'Warning: system do not have installed GTK+ development'
+ 	fi
+-	GTK_MAJOR=`gtk-config --version|cut -d. -f1`
+-	GTK_MINOR=`gtk-config --version|cut -d. -f2`
++	GTK_MAJOR=`${gtkconfig} --version|cut -d. -f1`
++	GTK_MINOR=`${gtkconfig} --version|cut -d. -f2`
+ 	if [ ! \( "$GTK_MAJOR" -ge 1 -o "$GTK_MINOR" -ge 2 -o "$GTK_MAJOR" -gt 1 \) ]
+ 	then
+ 		echo
+@@ -177,7 +186,7 @@
+ echo "DLLSUFF='$DLLSUFF'" >&3
+ echo "DLLREALSUFF='$DLLREALSUFF'" >&3
+ echo "CLIPROOT=$CLIPROOT" >&3
+-echo 'INCLUDEDIRS=-I. -I$(CLIPROOT)/include -I'$gtkprefix'/include -I'$gtkextraprefix'/include' >&3
++echo 'INCLUDEDIRS=-I. -I$(CLIPROOT)/include -I'$gtkprefix'/include'${gtkpath}' -I'$glibprefix'/include'${glibpath}' -I'$gtkextraprefix'/include' >&3
+ echo "XTARGETS='"'$(XLIB) $(XSLIB)'"'" >&3
+ echo "C_FLAGS=-Wall '"'$(INCLUDEDIRS)'"' '$EXTRACFLAGS'" >&3
+ echo "LIBS='$LIBS'" >&3
