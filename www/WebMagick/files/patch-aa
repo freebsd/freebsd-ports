@@ -2,19 +2,37 @@ Index: webmagick.in
 ===================================================================
 RCS file: /cvsroot/webmagick/WebMagick/webmagick.in,v
 retrieving revision 1.117
-retrieving revision 1.124
-diff -u -r1.117 -r1.124
+retrieving revision 1.125
+diff -u -r1.117 -r1.125
 --- webmagick.in	23 Oct 2002 16:14:47 -0000	1.117
-+++ webmagick.in	2 Jun 2003 09:35:07 -0000	1.124
++++ webmagick.in	18 Jul 2003 00:27:35 -0000	1.125
 @@ -1,6 +1,6 @@
  #! @PERL@ 
  #
 -# $Id: webmagick.in,v 1.117 2002/10/23 16:14:47 clindell Exp $
-+# $Id: webmagick.in,v 1.124 2003/06/02 09:35:07 ache Exp $
++# $Id: webmagick.in,v 1.125 2003/07/18 00:27:35 ache Exp $
  #
  # You are looking at the main PERL script for WebMagick, a package to
  # intelligently create HTML and JavaScript index files and imagemaps
-@@ -492,7 +492,7 @@
+@@ -237,6 +237,8 @@
+     $opt_webmagickrc,	# Per-directory WebMagick rc file name
+     $opt_zoomfilter,
+     $opt_pichtml,
++    $opt_pichtmlaltend,
++    $opt_pichtmlaltstart,
+     $opt_pichtmlbottom,
+     $opt_pichtmlext,
+     $opt_pichtmlnav,
+@@ -391,6 +393,8 @@
+ $opt_date               = 1;    # Output updates date
+ 
+ $opt_pichtml            = 0;    # Write separate HTML for each picture
++$opt_pichtmlaltend      = '';   # Some words to append to ALT
++$opt_pichtmlaltstart    = '';   # Some words to prepend to ALT
+ $opt_pichtmlbottom      = '</CENTER>';
+ $opt_pichtmlext         = '.html'; # Use .shtml for SSI
+ $opt_pichtmlnav         = 0;    # Write navigation into pic's HTML
+@@ -492,7 +496,7 @@
  $opt_framemarginwidth	= 1;		# Pixels allocated to frame margin in horizontal direction
  $opt_framemarginheight	= 1;		# Pixels allocated to frame margin in vertical direction
  $opt_framebordersize	= 3 ;		# Pixels allocated to frame border
@@ -23,7 +41,7 @@ diff -u -r1.117 -r1.124
  $opt_framestyle		= 1;		# Frame style to use (out of those available)
  
  #
-@@ -596,12 +596,11 @@
+@@ -596,12 +600,11 @@
  # |  |          |
  #  -------------
  $opt_framefmt{1}=
@@ -38,7 +56,7 @@ diff -u -r1.117 -r1.124
  $opt_framefmt_frames{1}=2;	# Number of frames expressed by this frame format
  
  # Three frame screen with directories listed in top-left frame,
-@@ -616,16 +615,15 @@
+@@ -616,16 +619,15 @@
  # |  |          |
  #  -------------
  $opt_framefmt{2}=
@@ -58,7 +76,7 @@ diff -u -r1.117 -r1.124
  $opt_framefmt_frames{2}=3;	# Number of frames expressed by this frame format
  
  # Three frame screen with directories listed in left frame,
-@@ -640,16 +638,15 @@
+@@ -640,16 +642,15 @@
  # |  |          |
  #  -------------
  $opt_framefmt{3}=
@@ -78,7 +96,7 @@ diff -u -r1.117 -r1.124
  $opt_framefmt_frames{3}=3;	# Number of frames expressed by this frame format
  
  # Three frame screen with directories listed in lower-left frame,
-@@ -664,16 +661,15 @@
+@@ -664,16 +665,15 @@
  # |  |          |
  #  -------------
  $opt_framefmt{4}=
@@ -98,7 +116,7 @@ diff -u -r1.117 -r1.124
  $opt_framefmt_frames{4}=3;	# Number of frames expressed by this frame format
  
  #
-@@ -793,7 +789,7 @@
+@@ -793,7 +793,7 @@
  		'framemarginwidth=i'	=> \$opt_framemarginwidth,
  		'framemarginheight=i'	=> \$opt_framemarginheight,
  		'framebordersize=i'	=> \$opt_framebordersize,
@@ -107,7 +125,16 @@ diff -u -r1.117 -r1.124
  		'frames!'               => \$opt_frames,
  		'framestyle=i'		=> \$opt_framestyle,
  		'header=s'		=> \$opt_header,
-@@ -1619,7 +1615,7 @@
+@@ -828,6 +828,8 @@
+ 		'msg_up=s'              => \$opt_msg_up,
+ 		'pageindexname=s'	=> \$opt_pageindexname,
+ 		'pichtml!'              => \$opt_pichtml,
++		'pichtmlaltend=s'       => \$opt_pichtmlaltend,
++		'pichtmlaltstart=s'     => \$opt_pichtmlaltstart,
+ 		'pichtmlbottom=s'       => \$opt_pichtmlbottom,
+ 		'pichtmlext=s'          => \$opt_pichtmlext,
+ 		'pichtmlnav!'           => \$opt_pichtmlnav,
+@@ -1619,7 +1621,7 @@
  	 'framemarginwidth'     => !$opt_frames ? 0 : $opt_framemarginwidth,
  	 'framemarginheight'    => !$opt_frames ? 0 : $opt_framemarginheight,
  	 'framebordersize'      => !$opt_frames ? 0 : $opt_framebordersize,
@@ -116,7 +143,16 @@ diff -u -r1.117 -r1.124
  	 'frames'               => $opt_frames,
  	 'framestyle'           => !$opt_frames ? 1 : $opt_framestyle,
  	 'header'		=> $opt_header,
-@@ -2173,20 +2169,17 @@
+@@ -1659,6 +1661,8 @@
+ 	 'numpages'		=> $numPages,
+ 	 'pageindexname'        => $opt_pageindexname,
+ 	 'pichtml'              => $opt_pichtml,
++	 'pichtmlaltend'        => !$opt_pichtml ? "" : $opt_pichtmlaltend,
++	 'pichtmlaltstart'      => !$opt_pichtml ? "" : $opt_pichtmlaltstart,
+ 	 'pichtmlbottom'        => !$opt_pichtml ? "" : $opt_pichtmlbottom,
+ 	 'pichtmlext'           => !$opt_pichtml ? "" : $opt_pichtmlext,
+ 	 'pichtmlnav'           => !$opt_pichtml ? 0 : $opt_pichtmlnav,
+@@ -2173,20 +2177,17 @@
      print( INDEX $framespechtml );
      print( INDEX "<NOFRAMES>\n" );
      print( INDEX "<BODY\n" );
@@ -146,7 +182,7 @@ diff -u -r1.117 -r1.124
      close( INDEX );
  
  
-@@ -2242,17 +2235,14 @@
+@@ -2242,17 +2243,14 @@
      
      print( INDEX "</HEAD>\n" );
      print( INDEX "<BODY\n" );
@@ -172,7 +208,7 @@ diff -u -r1.117 -r1.124
      print( INDEX ">\n");
      print( INDEX $pagedirhtml );
      print( INDEX "</BODY></HTML>\n" );
-@@ -2379,16 +2369,13 @@
+@@ -2379,16 +2377,13 @@
  
      print( INDEX "</HEAD>\n" );
      print( INDEX "<BODY\n" );
@@ -196,7 +232,7 @@ diff -u -r1.117 -r1.124
      print( INDEX ">\n");
  
      print( INDEX "${opt_header}\n" ) if ("$opt_header" ne '');
-@@ -2397,8 +2384,12 @@
+@@ -2397,8 +2392,12 @@
      if( $numimages > 0 ) {
  	# Total HACK!!!
  	if( !$opt_frames || $opt_framestyle == 1 ) {
@@ -211,7 +247,7 @@ diff -u -r1.117 -r1.124
  	}
  	print( INDEX "$indexbar<BR>\n" );
  
-@@ -2433,22 +2424,30 @@
+@@ -2433,22 +2432,30 @@
  	
  	    my $pic = $imageNames[$pageNumber - 1][$imageNum];
  	    my $pichtml;
@@ -227,7 +263,7 @@ diff -u -r1.117 -r1.124
 +		($altlabel = $pic) =~ s/(.*)\.\w+$/$1/i;
 +		$altlabel =~ y/_/ /; # Usual space replacement in file name
 +	    }
-+	    $altlabel = escapehtml($altlabel);
++	    $altlabel = escapehtml($opt_pichtmlaltstart . $altlabel . $opt_pichtmlaltend);
  
  	    if ( $opt_pichtml ) {
  			
@@ -244,7 +280,7 @@ diff -u -r1.117 -r1.124
  
  			# Meta tags
  			print( PICHTML "  <META NAME=\"GENERATOR\" CONTENT=\"WebMagick/$webmagickInfo{version} [WebMagick]\">\n" );
-@@ -2469,28 +2468,19 @@
+@@ -2469,28 +2476,19 @@
  
  			print( PICHTML "</HEAD>\n" );
  			print( PICHTML "<BODY\n" );
@@ -281,7 +317,7 @@ diff -u -r1.117 -r1.124
  			}
  
  			if ($opt_pichtmlnav) {
-@@ -2526,9 +2516,9 @@
+@@ -2526,9 +2524,9 @@
  				} else {
  					print ( PICHTML "<A${target} HREF=\"");
  					if ($imageNum == 0 && $pageNumber != 1) {
@@ -293,7 +329,7 @@ diff -u -r1.117 -r1.124
  					}
  					print ( PICHTML $opt_pichtmlext);
  					print ( PICHTML "\"><IMG SRC=\"$iconImageUrls{'prev'}\"",
-@@ -2543,9 +2533,9 @@
+@@ -2543,9 +2541,9 @@
  				} else {
  					print ( PICHTML "<A${target} HREF=\"");
  					if (($imageNum == $#{$imageNames[$pageNumber - 1]}) && $pageNumber != $numPages) {
@@ -305,7 +341,7 @@ diff -u -r1.117 -r1.124
  					}
  					print ( PICHTML $opt_pichtmlext);
  					print ( PICHTML "\"><IMG SRC=\"$iconImageUrls{'next'}\"",
-@@ -2556,10 +2546,10 @@
+@@ -2556,10 +2554,10 @@
  				print ( PICHTML "</NOBR><BR>");
  			}
  
@@ -319,7 +355,7 @@ diff -u -r1.117 -r1.124
  			}
  
  			print( PICHTML "$opt_pichtmlbottom\n") if ("$opt_pichtmlbottom" ne '');
-@@ -2601,12 +2591,16 @@
+@@ -2601,12 +2599,16 @@
  			# TODO: make sure the thumbnails are created, and get some image sizes
  			# TODO: save the labels in a new array, maybe same with sizes
  			if ( $thumbImageSizes{$pic}) {
@@ -339,7 +375,33 @@ diff -u -r1.117 -r1.124
  						
  			if ($imageNum%$opt_columns == ($opt_columns - 1))
  			{
-@@ -4174,7 +4168,7 @@
+@@ -4156,25 +4158,29 @@
+   --footer           Page footer (imagemap frame) (default to </CENTER>)
+   --header           Page header (imagemap frame) (default to <CENTER>)
+   --[no]javascript   Enable JavaScript output (default off)
++  --[no]readmevisible Show README.html on first page rather than just linking (default off)
++  --[no]tables       Use HTML tables instead of imagemaps for thumbnails (default off)
++  --title            Page title
++
++Per-image HTML options:
+   --[no]pichtml      Per-image HTML file generation (default off)
+-  --pichtmlext       Per-image HTML file extension (default .html)
++  --pichtmlaltend    Some words to append to ALT= (default "")
++  --pichtmlaltstart  Some words to prepend to ALT= (default "")
+   --pichtmlbottom    Per-image HTML, extra HTML to display below image (default to </CENTER>)
++  --pichtmlext       Per-image HTML file extension (default .html)
+   --[no]pichtmlnav   Per-image HTML, show navigation buttons (default off)
+   --[no]pichtmlputtitle Put per-image HTML picture title (default on)
+   --pichtmltarget    Per-image HTML default frame target
+   --pichtmltitleend  End tags for per-image HTML picture title (default </P>)
+   --pichtmltitlestart Start tags for per-image HTML picture title (default <P>)
+   --pichtmltop       Per-image HTML, extra HTML to display above image (default to <CENTER>)
+-  --[no]readmevisible Show README.html on first page rather than just linking (default off)
+-  --[no]tables       Use HTML tables instead of imagemaps for thumbnails (default off)
+-  --title            Page title
+ 
+ Frame Options:
+   --[no]frames       Use frames, if no - single directory collection assumed (default on)
    --framemarginwidth Pixels allocated to frame margin in horizontal direction
    --framemarginheight Pixels allocated to frame margin in vertical direction
    --framebordersize  Pixels allocated to frame border
@@ -348,7 +410,7 @@ diff -u -r1.117 -r1.124
    --framestyle       Frame style to use (out of those available)
    --[no]allowconfig  Allow user to configure framestyle, columns and rows (requires javascript and tables) (default off)
  
-@@ -4296,6 +4290,7 @@
+@@ -4296,6 +4302,7 @@
      s/&/&amp;/g;
      s/>/&gt;/g;
      s/</&lt;/g;
@@ -356,7 +418,7 @@ diff -u -r1.117 -r1.124
      return( $_ );
  }
  
-@@ -4324,22 +4319,10 @@
+@@ -4324,22 +4331,10 @@
  # Escape unsafe characters in URLs
  #		
  sub escapeurl {

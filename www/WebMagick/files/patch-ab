@@ -1,0 +1,20 @@
+--- webmagickrc.in.old	Sat Dec  1 03:18:37 2001
++++ webmagickrc.in	Fri Jul 18 01:32:01 2003
+@@ -104,6 +104,8 @@
+ # $opt_date               = 1;    # Output updates date
+ 
+ # $opt_pichtml            = 0;    # Write separate HTML for each picture
++# $opt_pichtmlaltend      = '';   # Some words to append to ALT
++# $opt_pichtmlaltstart    = '';   # Some words to prepend to ALT
+ # $opt_pichtmlbottom      = '</CENTER>';
+ # $opt_pichtmlext         = '.html'; # Use .shtml for SSI
+ # $opt_pichtmlnav         = 0;    # Write navigation into pic's HTML
+@@ -200,7 +202,7 @@
+ # $opt_framemarginwidth	= 1;		# Pixels allocated to frame margin in horizontal direction
+ # $opt_framemarginheight	= 1;		# Pixels allocated to frame margin in vertical direction
+ # $opt_framebordersize	= 3 ;		# Pixels allocated to frame border
+-# $opt_frameborder	= 'YES';	# Enable (YES) or disable (NO) decorative frame borders
++# $opt_frameborder      = 1;            # Enable (1) or disable (0) decorative frame borders
+ # $opt_framestyle		= 1;		# Frame style to use (out of those available)
+ 
+ #
