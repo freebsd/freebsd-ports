@@ -11,6 +11,7 @@ PORTEPOCH=	1
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	joe-editor
+DISTNAME=	joe-${PORTVERSION}
 
 MAINTAINER=	petef@FreeBSD.org
 COMMENT=	Development version of Joe's own editor
