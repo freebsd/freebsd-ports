@@ -3,7 +3,7 @@
 # Date created:				18 June 1997
 # Whom:					koshy@india.hp.com
 #
-# $Id: Makefile,v 1.7 1998/11/28 23:10:26 asami Exp $
+# $Id: Makefile,v 1.8 1998/12/01 08:38:55 asami Exp $
 #
 
 DISTNAME=	MHonArc2.3.3
@@ -16,6 +16,8 @@ MASTER_SITES=	http://www.oac.uci.edu/indiv/ehood/tar/ \
 		http://www.perl.com/CPAN/authors/id/EHOOD/
 
 MAINTAINER=	jkoshy@freebsd.org
+
+Y2K=		http://www.oac.uci.edu/indiv/ehood/MHonArc/doc/faq/general.html#y2k
 
 USE_PERL5=	Yes
 NO_BUILD=	Yes

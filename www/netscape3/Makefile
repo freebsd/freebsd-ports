@@ -3,7 +3,7 @@
 # Date created:		21 August 1995
 # Whom:			asami
 #
-# $Id: Makefile,v 1.26 1998/12/19 11:20:11 markm Exp $
+# $Id: Makefile,v 1.27 1999/01/06 04:18:08 simokawa Exp $
 #
 
 DISTNAME=       netscape-3.04
@@ -12,6 +12,8 @@ MASTER_SITES=   ftp://archive:oldies@archive.netscape.com/archive/navigator/3.04
 DISTFILES=      netscape-v304-export.x86-unknown-bsd.tar.gz
 
 MAINTAINER=     ports@FreeBSD.ORG
+
+Y2K=		http://home.netscape.com/products/year2000/faq/client.html
 
 NOT_FOR_ARCHS=	alpha
 

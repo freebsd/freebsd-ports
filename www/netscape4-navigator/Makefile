@@ -3,7 +3,7 @@
 # Date created:         24 Feb 1997
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.34 1998/12/29 22:17:38 sada Exp $
+# $Id: Makefile,v 1.35 1999/01/06 04:18:14 simokawa Exp $
 #
 
 DISTNAME=       netscape-navigator-4.08
@@ -12,6 +12,8 @@ MASTER_SITES=	ftp://ftp.netscape.com/pub/communicator/4.08/english/unix/unsuppor
 DISTFILES=	navigator-v408-export.x86-unknown-freebsd.tar.gz
 
 MAINTAINER=     sada@FreeBSD.ORG
+
+Y2K=		http://home.netscape.com/products/year2000/faq/client.html
 
 ONLY_FOR_ARCHS=	i386
 
