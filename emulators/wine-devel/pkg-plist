@@ -17,8 +17,6 @@ bin/wmc
 bin/wrc
 @unexec if cmp -s %D/etc/wine.conf %D/etc/wine.conf.sample; then rm -f %D/etc/wine.conf; fi
 etc/wine.conf.sample
-include/wine/amaudio.h
-include/wine/amvideo.h
 include/wine/audevcod.h
 include/wine/basetsd.h
 include/wine/cderr.h
@@ -27,7 +25,6 @@ include/wine/comcat.h
 include/wine/commctrl.h
 include/wine/commdlg.h
 include/wine/compobj.h
-include/wine/control.h
 include/wine/cpl.h
 include/wine/d3d.h
 include/wine/d3dcaps.h
@@ -48,9 +45,6 @@ include/wine/dplay.h
 include/wine/dplobby.h
 include/wine/dshow.h
 include/wine/dsound.h
-include/wine/dvdmedia.h
-include/wine/errors.h
-include/wine/evcode.h
 include/wine/guiddef.h
 include/wine/imagehlp.h
 include/wine/imm.h
@@ -138,7 +132,6 @@ include/wine/sql.h
 include/wine/sqlext.h
 include/wine/sqltypes.h
 include/wine/storage.h
-include/wine/strmif.h
 include/wine/tapi.h
 include/wine/tlhelp32.h
 include/wine/unknwn.h
@@ -162,6 +155,7 @@ include/wine/wine/obj_base.h
 include/wine/wine/obj_cache.h
 include/wine/wine/obj_channel.h
 include/wine/wine/obj_clientserver.h
+include/wine/wine/obj_comcat.h
 include/wine/wine/obj_commdlgbrowser.h
 include/wine/wine/obj_connection.h
 include/wine/wine/obj_contextmenu.h
@@ -169,11 +163,11 @@ include/wine/wine/obj_control.h
 include/wine/wine/obj_dataobject.h
 include/wine/wine/obj_dockingwindowframe.h
 include/wine/wine/obj_dragdrop.h
+include/wine/wine/obj_enumguid.h
 include/wine/wine/obj_enumidlist.h
 include/wine/wine/obj_errorinfo.h
 include/wine/wine/obj_extracticon.h
 include/wine/wine/obj_inplace.h
-include/wine/wine/obj_ksproperty.h
 include/wine/wine/obj_marshal.h
 include/wine/wine/obj_misc.h
 include/wine/wine/obj_moniker.h
@@ -322,6 +316,7 @@ lib/wine/shell.dll.so
 lib/wine/shell32.dll.so
 lib/wine/shfolder.dll.so
 lib/wine/shlwapi.dll.so
+lib/wine/snmpapi.dll.so
 lib/wine/sound.dll.so
 lib/wine/sti.dll.so
 lib/wine/storage.dll.so
