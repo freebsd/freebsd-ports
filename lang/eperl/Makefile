@@ -31,6 +31,12 @@ CONFIGURE_ARGS= --with-perl=${PERL5}
 
 MAN1=	eperl.1
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 502000
+BROKEN=		"Configure fails"
+.endif
+
 test:
 	@(cd ${WRKSRC}; ${MAKE} test)
 
@@ -64,4 +70,4 @@ do-install:
 	fi
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
