@@ -1,0 +1,25 @@
+#!/bin/sh
+
+username=%%BOINC_USER%%
+group=%%BOINC_GROUP%%
+home=%%BOINC_HOME%%
+shell=/bin/sh
+
+case $2 in
+POST-INSTALL)
+    if ! pw usershow ${username} >/dev/null 2>&1; then
+	if ! pw useradd ${username} -g ${group} -c BOINC -d ${home} -s ${shell}; then
+		err=$?
+		echo "WARNING: Unable to create user.  pw returned $err"
+		echo "You will need to create a boinc user and chown the boinc dir."
+		exit $err
+	else
+		echo "boinc user created."
+	fi
+    else
+	echo "boinc user found.  using existing boinc user."
+    fi
+    mkdir -p ${home} ${home}/projects
+    chown ${username}:${group} ${home} ${home}/projects
+    ;;
+esac

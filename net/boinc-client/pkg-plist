@@ -1,0 +1,50 @@
+bin/boinc-client
+boinc/client/%%BOINC_BINARY%%
+etc/rc.d/boinc.sh
+boinc/Makefile.am
+boinc/lib/Makefile.am
+boinc/lib/app_ipc.h
+boinc/lib/base64.h
+boinc/lib/boinc_win.h
+boinc/lib/crypt.h
+boinc/lib/diagnostics.h
+boinc/lib/error_numbers.h
+boinc/lib/exception.h
+boinc/lib/filesys.h
+boinc/lib/gui_rpc_client.h
+boinc/lib/hostinfo.h
+boinc/lib/language.h
+boinc/lib/libboinc.a
+boinc/lib/librsaeuro.a
+boinc/lib/md5.h
+boinc/lib/md5_file.h
+boinc/lib/mfile.h
+boinc/lib/miofile.h
+boinc/lib/msg_log.h
+boinc/lib/msg_queue.h
+boinc/lib/parse.h
+boinc/lib/proxy_info.h
+boinc/lib/result_state.h
+boinc/lib/shmem.h
+boinc/lib/stackwalker_win.h
+boinc/lib/std_fixes.h
+boinc/lib/synch.h
+boinc/lib/util.h
+boinc/api/Makefile.am
+boinc/api/boinc_api.h
+boinc/api/boinc_gl.h
+boinc/api/graphics_api.h
+boinc/api/graphics_data.h
+boinc/api/gutil.h
+boinc/api/mac_app_opengl.h
+boinc/api/mac_carbon_gl.h
+boinc/api/reduce.h
+boinc/api/x_opengl.h
+@dirrm boinc/api
+@dirrm boinc/client
+@dirrm boinc/lib
+@dirrm boinc/projects
+@dirrm boinc
+@unexec if [ -d %%BOINC_HOME%% ]; then echo "If you are deinstalling boinc completely, remove the %%BOINC_HOME%% directory."; fi
+@unexec if [ -d %%BOINC_HOME%% ]; then echo -n "Also, d"; else echo -n "D"; fi
+@unexec echo "on't forget to remove the \"%%BOINC_USER%%\" user."

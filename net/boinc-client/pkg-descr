@@ -1,0 +1,8 @@
+BOINC is a software platform for distributed computing using volunteer
+computer resources.
+
+Many different projects can use BOINC.  SETI@HOME, for example, has
+been redesigned to use BOINC and the astro/boinc-setiathome port
+supercedes the astro/setiathome port.
+
+WWW: http://boinc.berkeley.edu/ 
