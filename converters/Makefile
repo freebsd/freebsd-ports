@@ -54,6 +54,7 @@
     SUBDIR += p5-Unicode-MapUTF8
     SUBDIR += p5-Unicode-String
     SUBDIR += pecl-fribidi
+    SUBDIR += php4-iconv
     SUBDIR += psiconv
     SUBDIR += py-cjkcodecs
     SUBDIR += py-iconv
