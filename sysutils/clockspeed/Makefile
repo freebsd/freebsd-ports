@@ -7,6 +7,7 @@
 
 PORTNAME=	clockspeed
 PORTVERSION=	0.62
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://cr.yp.to/clockspeed/
 
