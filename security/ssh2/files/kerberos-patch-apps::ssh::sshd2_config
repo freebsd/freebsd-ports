@@ -1,0 +1,19 @@
+--- apps/ssh/sshd2_config.orig	Wed Jan 21 19:12:25 2004
++++ apps/ssh/sshd2_config	Wed Jan 21 19:24:11 2004
+@@ -101,6 +101,7 @@
+ #	AllowedAuthentications		publickey,password
+ #	AllowedAuthentications		hostbased,publickey,password
+ #	AllowedAuthentications		hostbased,publickey,keyboard-interactive
++	AllowedAuthentications		kerberos-tgt-2@ssh.com,kerberos-2@ssh.com,password
+ #	RequiredAuthentications		publickey,password
+ #	LoginGraceTime			600
+ #	AuthInteractiveFailureTimeout	2
+@@ -169,7 +170,7 @@
+ #	AllowGroups			staff,users
+ #	DenyGroups			guest,anonymous
+ #	PermitRootLogin			yes
+-#	PermitRootLogin			nopwd
++	PermitRootLogin			nopwd
+ 
+ ## Chrooted environment
+ 
