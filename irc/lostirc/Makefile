@@ -7,7 +7,7 @@
 
 PORTNAME=	lostirc
 PORTVERSION=	0.3.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	irc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://demian.dyndns.org/src/
@@ -18,12 +18,13 @@ COMMENT=	LostIRC is a simple and minimal IRC client for X
 
 LIB_DEPENDS=	gtkmm-2:${PORTSDIR}/x11-toolkits/gtk--2
 
-USE_GETTEXT=	yes
 USE_X_PREFIX=	yes
-USE_GNOME=	gnomehack
-GNU_CONFIGURE=	yes
+USE_GNOME=	gnomehack gnometarget gnomehier
 USE_REINPLACE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib"
+USE_LIBTOOL_VER=15
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--disable-kde
 
 MAN1=	lostirc.1
 
