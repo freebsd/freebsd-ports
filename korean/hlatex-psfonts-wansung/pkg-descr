@@ -1,16 +1,16 @@
-HLaTeX PostScript Fonts
-=======================
+HLaTeX Wansung PS Fonts collection
+==================================
 
-This is Type1 font collection for HLaTeX.
+This is HLaTeX Wansung-type PS fonts collection. It can be used in
+HLaTeX-wansung package.
 
- - Myoungjo (pkmj)
- - Gothic (pkgt)
- - Hanja Myeoungjo (pshanja-myoungjo)
- - Hanja Gothic (pshanja-gothic)
- - KSC5601 Full-width symbols (phsym)
- - Taza (ptaza)
+There is two choice to use Wansung-type fonts. One is MF fonts, and the
+other is PS fonts.
 
-It can be used in korean/nhppf also.
+You should insert this preamble into your tex file to use these fonts:
+
+  \usepackage{hangul}
+  \usepackage[pshan]{wanfont}
 
 --
-Ports by CHOI Junho <junker@jazz.snu.ac.kr>
+Ports by CHOI Junho <cjh@FreeBSD.org>
