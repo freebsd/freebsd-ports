@@ -1,9 +1,10 @@
-# $Id: Makefile,v 1.7 1997/07/18 15:48:36 jfieber Exp $
+# $Id: Makefile,v 1.8 1997/08/06 14:49:29 markm Exp $
 #
 
     SUBDIR += agrep
     SUBDIR += docbook
     SUBDIR += glimpse
+    SUBDIR += html
     SUBDIR += isearch
     SUBDIR += iso12083
     SUBDIR += iso8879
