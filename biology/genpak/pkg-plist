@@ -1,4 +1,6 @@
 bin/gp_acc
+bin/gp_adjust
+bin/gp_cdndev
 bin/gp_cusage
 bin/gp_digest
 bin/gp_dimer
@@ -32,6 +34,8 @@ lib/genpak/standard.cdn
 %%PORTDOCS%%share/doc/gp/README.TXT
 %%PORTDOCS%%share/doc/gp/html/README.html
 %%PORTDOCS%%share/doc/gp/html/gp_acc.html
+%%PORTDOCS%%share/doc/gp/html/gp_adjust.html
+%%PORTDOCS%%share/doc/gp/html/gp_cdndev.html
 %%PORTDOCS%%share/doc/gp/html/gp_cusage.html
 %%PORTDOCS%%share/doc/gp/html/gp_digest.html
 %%PORTDOCS%%share/doc/gp/html/gp_dimer.html
