@@ -1,10 +1,3 @@
-bin/CA.sh
-bin/c_hash
-bin/c_info
-bin/c_issuer
-bin/c_name
-bin/c_rehash
-bin/der_chop
 bin/ssleay
 @exec ln -sf %D/%F %B/asn1parse
 @exec ln -sf %D/%F %B/base64
@@ -14,6 +7,12 @@ bin/ssleay
 @exec ln -sf %D/%F %B/bf-ecb
 @exec ln -sf %D/%F %B/bf-ofb
 @exec ln -sf %D/%F %B/ca
+@exec ln -sf %D/%F %B/cast
+@exec ln -sf %D/%F %B/cast-cbc
+@exec ln -sf %D/%F %B/cast5-cbc
+@exec ln -sf %D/%F %B/cast5-cfb
+@exec ln -sf %D/%F %B/cast5-ecb
+@exec ln -sf %D/%F %B/cast5-ofb
 @exec ln -sf %D/%F %B/ciphers
 @exec ln -sf %D/%F %B/crl
 @exec ln -sf %D/%F %B/crl2pkcs7
@@ -39,7 +38,6 @@ bin/ssleay
 @exec ln -sf %D/%F %B/enc
 @exec ln -sf %D/%F %B/errstr
 @exec ln -sf %D/%F %B/gendh
-@exec ln -sf %D/%F %B/gendsa
 @exec ln -sf %D/%F %B/genrsa
 @exec ln -sf %D/%F %B/idea
 @exec ln -sf %D/%F %B/idea-cbc
@@ -56,6 +54,11 @@ bin/ssleay
 @exec ln -sf %D/%F %B/rc2-ecb
 @exec ln -sf %D/%F %B/rc2-ofb
 @exec ln -sf %D/%F %B/rc4
+@exec ln -sf %D/%F %B/rc5
+@exec ln -sf %D/%F %B/rc5-cbc
+@exec ln -sf %D/%F %B/rc5-cfb
+@exec ln -sf %D/%F %B/rc5-ecb
+@exec ln -sf %D/%F %B/rc5-ofb
 @exec ln -sf %D/%F %B/req
 @exec ln -sf %D/%F %B/rsa
 @exec ln -sf %D/%F %B/s_client
@@ -76,6 +79,12 @@ bin/ssleay
 @unexec rm %B/bf-ecb
 @unexec rm %B/bf-ofb
 @unexec rm %B/ca
+@unexec rm %B/cast
+@unexec rm %B/cast-cbc
+@unexec rm %B/cast5-cbc
+@unexec rm %B/cast5-cfb
+@unexec rm %B/cast5-ecb
+@unexec rm %B/cast5-ofb
 @unexec rm %B/ciphers
 @unexec rm %B/crl
 @unexec rm %B/crl2pkcs7
@@ -101,7 +110,6 @@ bin/ssleay
 @unexec rm %B/enc
 @unexec rm %B/errstr
 @unexec rm %B/gendh
-@unexec rm %B/gendsa
 @unexec rm %B/genrsa
 @unexec rm %B/idea
 @unexec rm %B/idea-cbc
@@ -118,6 +126,11 @@ bin/ssleay
 @unexec rm %B/rc2-ecb
 @unexec rm %B/rc2-ofb
 @unexec rm %B/rc4
+@unexec rm %B/rc5
+@unexec rm %B/rc5-cbc
+@unexec rm %B/rc5-cfb
+@unexec rm %B/rc5-ecb
+@unexec rm %B/rc5-ofb
 @unexec rm %B/req
 @unexec rm %B/rsa
 @unexec rm %B/s_client
@@ -130,48 +143,62 @@ bin/ssleay
 @unexec rm %B/verify
 @unexec rm %B/version
 @unexec rm %B/x509
-include/asn1.h
-include/asn1_mac.h
-include/bio.h
-include/blowfish.h
-include/bn.h
-include/buffer.h
-include/conf.h
-include/cryptall.h
+bin/CA.sh
+bin/der_chop
+bin/c_hash
+bin/c_info
+bin/c_issuer
+bin/c_name
+bin/c_rehash
+etc/ssleay.cnf.sample
 include/crypto.h
-include/des.h
-include/dh.h
-include/dsa.h
-include/err.h
-include/evp.h
-include/idea.h
-include/lhash.h
+include/cryptall.h
 include/md2.h
 include/md5.h
+include/sha.h
 include/mdc2.h
-include/objects.h
-include/pem.h
-include/pkcs7.h
-include/rand.h
+include/hmac.h
+include/ripemd.h
+include/des.h
 include/rc2.h
 include/rc4.h
+include/rc5.h
+include/idea.h
+include/blowfish.h
+include/cast.h
+include/bn.h
 include/rsa.h
-include/sha.h
-include/ssl.h
-include/ssl2.h
-include/ssl23.h
-include/ssl3.h
+include/dsa.h
+include/dh.h
+include/buffer.h
+include/bio.h
+include/bss_file.c
 include/stack.h
-include/txt_db.h
+include/lhash.h
+include/rand.h
+include/err.h
+include/objects.h
+include/evp.h
+include/pem.h
+include/asn1.h
+include/asn1_mac.h
 include/x509.h
 include/x509_vfy.h
-lib/libRSAglue.a
-@exec ranlib %D/%F
+include/conf.h
+include/txt_db.h
+include/pkcs7.h
+include/ssl.h
+include/ssl2.h
+include/ssl3.h
+include/ssl23.h
+include/tls1.h
+lib/ssleay.cnf
 lib/libcrypto.a
 @exec ranlib %D/%F
 lib/libssl.a
 @exec ranlib %D/%F
-etc/ssleay.cnf.sample
+lib/libRSAglue.a
+@exec ranlib %D/%F
 share/doc/SSLeay/API.doc
 share/doc/SSLeay/a_verify.doc
 share/doc/SSLeay/apps.doc
@@ -184,7 +211,6 @@ share/doc/SSLeay/callback.doc
 share/doc/SSLeay/cipher.doc
 share/doc/SSLeay/cipher.m
 share/doc/SSLeay/conf.doc
-share/doc/SSLeay/danger
 share/doc/SSLeay/des.doc
 share/doc/SSLeay/digest.doc
 share/doc/SSLeay/encode.doc

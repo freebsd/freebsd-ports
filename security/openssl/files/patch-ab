@@ -1,28 +1,18 @@
-*** Makefile.ssl.ORIG	Tue Feb 17 21:43:38 1998
---- Makefile.ssl	Tue Feb 17 21:46:22 1998
-***************
-*** 122,128 ****
-  	VERSION PROBLEMS MINFO makefile.one e_os.h \
-  	MICROSOFT makevms.com
-  WDIRS=	windows
-! LIBS=	libcrypto.a libssl.a 
-  
-  GENERAL=	Makefile
-  BASENAME=	SSLeay
---- 122,128 ----
-  	VERSION PROBLEMS MINFO makefile.one e_os.h \
-  	MICROSOFT makevms.com
-  WDIRS=	windows
-! LIBS=	libcrypto.a libssl.a libRSAglue.a
-  
-  GENERAL=	Makefile
-  BASENAME=	SSLeay
-***************
-*** 272,276 ****
---- 272,277 ----
-  		sh util/ranlib.sh $(INSTALLTOP)/lib/$$i; \
-  		chmod 644 $(INSTALLTOP)/lib/$$i ); \
-  	done
-+ 	cp apps/ssleay.cnf $(INSTALLTOP)/etc/ssleay.cnf.sample
-  
-  # DO NOT DELETE THIS LINE -- make depend depends on it.
+--- Makefile.ssl.orig	Fri Jun 26 10:25:25 1998
++++ Makefile.ssl	Sat Aug 22 13:14:34 1998
+@@ -175,7 +175,7 @@
+ 	VERSION PROBLEMS MINFO makefile.one e_os.h \
+ 	MICROSOFT makevms.com config PATENTS
+ WDIRS=  windows
+-LIBS=   libcrypto.a libssl.a 
++LIBS=	libcrypto.a libssl.a libRSAglue.a
+ 
+ GENERAL=        Makefile
+ BASENAME=       SSLeay
+@@ -327,5 +327,6 @@
+ 		sh util/ranlib.sh $(INSTALLTOP)/lib/$$i; \
+ 		chmod 644 $(INSTALLTOP)/lib/$$i ); \
+ 	done
++	cp apps/ssleay.cnf $(INSTALLTOP)/etc/ssleay.cnf.sample
+ 
+ # DO NOT DELETE THIS LINE -- make depend depends on it.
