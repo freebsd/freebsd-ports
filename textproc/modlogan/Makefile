@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	modlogan
-PORTVERSION=	0.7.15
+PORTVERSION=	0.7.17
 CATEGORIES=	textproc www
 MASTER_SITES=	http://jan.kneschke.de/projects/modlogan/download/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -64,7 +64,8 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/doc/${i} ${PREFIX}/share/examples/modlogan/${i}
 .endfor
 	@# remove .la (can't use USE_LIBTOOL)
-	-${RM} ${PREFIX}/lib/libmla_*.la
+	@# don't do that yet, it breaks modlogan since 0.7.16
+	-#${RM} ${PREFIX}/lib/libmla_*.la
 	${MV} ${PREFIX}/bin/${CONFIGURE_TARGET}-modlogan ${PREFIX}/bin/modlogan
 	${MV} ${PREFIX}/man/man1/${CONFIGURE_TARGET}-modlogan.1 ${PREFIX}/man/man1/modlogan.1
 .for i in css conf def.conf
