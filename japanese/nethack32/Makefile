@@ -3,7 +3,7 @@
 # Date created:		13 February 1995
 # Whom:			asami
 #
-# $Id: Makefile,v 1.12 1996/11/13 12:41:06 asami Exp $
+# $Id: Makefile,v 1.13 1996/11/18 10:24:05 asami Exp $
 #
 
 DISTNAME=	nethack-3.2.1
@@ -11,7 +11,7 @@ PKGNAME=	jp-nethack-1.0.5.3.1
 CATEGORIES=	japanese games
 MASTER_SITES=	${MASTER_SITE_GNU}
 
-PATCH_SITES=	ftp://mitsuko.jaist.ac.jp/pub/jnethack/
+PATCH_SITES=	ftp://mitsuko.jaist.ac.jp/pub/nethack/
 PATCHFILES=	jnethack-1.0.5.3-beta-960925.gz
 
 MAINTAINER=	max@FreeBSD.ORG
