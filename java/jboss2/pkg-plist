@@ -1,5 +1,5 @@
-bin/jbossctl
-etc/rc.d/020.jboss.sh
+bin/jboss2ctl
+etc/rc.d/020.jboss2.sh
 %%T%%/docs/images/Entity_container_call.gif
 %%T%%/docs/images/confgui.gif
 %%T%%/docs/images/jbossgui.gif
@@ -1119,7 +1119,7 @@ etc/rc.d/020.jboss.sh
 %%T%%/bin/run.jar
 %%T%%/bin/run.sh
 %%T%%/bin/verifier.jar
-man/man1/jbossctl.1
+man/man1/jboss2ctl.1
 @dirrm %%T%%/application-deployments
 @dirrm %%T%%/docs/images
 @dirrm %%T%%/docs/api/org/jboss/mail
