@@ -7,9 +7,9 @@
 #
 
 PORTNAME=	ragel
-PORTVERSION=	1.2.2
+PORTVERSION=	1.3.0
 CATEGORIES=	devel
-MASTER_SITES=	http://www.ragel.ca/ragel/
+MASTER_SITES=	http://www.essemage.com/ragel/
 
 MAINTAINER=	ports@FreeBSD.org
 
