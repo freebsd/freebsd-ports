@@ -7,13 +7,13 @@
 
 PORTNAME=	cyrus-imapd
 PORTVERSION= 	2.0.16
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/ \
 		ftp://ftp.hanse.de/sites/transit/mirror/ftp.andrew.cmu.edu/pub/cyrus-mail/
 
 PATCH_SITES=	http://www.imasy.or.jp/~ume/ipv6/
-PATCHFILES=	${DISTNAME}-ipv6-20010728.diff.gz
+PATCHFILES=	${DISTNAME}-ipv6-20020118.diff.gz
 
 MAINTAINER=	ume@FreeBSD.org
 
