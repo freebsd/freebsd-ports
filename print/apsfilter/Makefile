@@ -44,7 +44,19 @@ USE_GHOSTSCRIPT_RUN=	yes
 # - APSFILTER_ALL	build and install all supported filter utilities
 # - WITHOUT_X11		toggles not to build tools that need X11, even if
 #			APSFILTER_ALL is set
-#
+# - PAPERSIZE		Use PAPERSIZE as in a2ps port, default to letter.
+PAPERSIZE?=     letter
+
+.if ${PAPERSIZE} != a4 && ${PAPERSIZE} != letter && ${PAPERSIZE} != letterdj
+.BEGIN:
+	@${ECHO_CMD}
+	@${ECHO_CMD} "PAPERSIZE incorrect value: ${PAPERSIZE}."
+	@${ECHO_CMD}
+	@${ECHO_CMD} "Must specify PAPERSIZE as one of a4, letter, or letterdj."
+	@${ECHO_CMD} "letterdj allows a slightly larger margins for DeskJets."
+	@${FALSE}
+.endif
+
 .if defined(BATCH) && defined(APSFILTER_ALL)
 #
 # Build and install all filter apsfilter knows about (rather expensive)
@@ -56,8 +68,8 @@ RUN_DEPENDS+=	bunzip2:${PORTSDIR}/archivers/bzip2
 RUN_DEPENDS+=	melt:${PORTSDIR}/archivers/freeze
 RUN_DEPENDS+=	lzop:${PORTSDIR}/archivers/lzop
 # all needed "ASCII to ps" filter utilities
-RUN_DEPENDS+=	a2ps:${PORTSDIR}/print/a2ps-letter
-RUN_DEPENDS+=	enscript:${PORTSDIR}/print/enscript-letter
+RUN_DEPENDS+=	a2ps:${PORTSDIR}/print/a2ps-${PAPERSIZE}
+RUN_DEPENDS+=	enscript:${PORTSDIR}/print/enscript-${PAPERSIZE}
 RUN_DEPENDS+=	mpage:${PORTSDIR}/print/mpage
 RUN_DEPENDS+=	recode:${PORTSDIR}/converters/recode
 # all needed "ARCHIVE" extraction utilities
@@ -72,7 +84,7 @@ RUN_DEPENDS+=	zoo:${PORTSDIR}/archivers/zoo
 # all needed "xxx to ps" filter utilities
 RUN_DEPENDS+=	fitstopnm:${PORTSDIR}/graphics/netpbm
 RUN_DEPENDS+=	htmldoc:${PORTSDIR}/textproc/htmldoc
-RUN_DEPENDS+=	psnup:${PORTSDIR}/print/psutils-letter
+RUN_DEPENDS+=	psnup:${PORTSDIR}/print/psutils-${PAPERSIZE}
 .if !defined(WITHOUT_X11)
 # "xxx to ps" filter utilities that require X
 RUN_DEPENDS+=	acroread5:${PORTSDIR}/print/acroread5
@@ -96,8 +108,8 @@ RUN_DEPENDS+=	smbclient:${PORTSDIR}/net/samba
 # since apsfilter should fit easily on installation CD 1...
 #
 # most important "xxx to ps" filter utilities
-RUN_DEPENDS+=	a2ps:${PORTSDIR}/print/a2ps-letter
-RUN_DEPENDS+=	psnup:${PORTSDIR}/print/psutils-letter
+RUN_DEPENDS+=	a2ps:${PORTSDIR}/print/a2ps-${PAPERSIZE}
+RUN_DEPENDS+=	psnup:${PORTSDIR}/print/psutils-${PAPERSIZE}
 .endif
 
 # needed for aps2file :-/
@@ -113,9 +125,6 @@ HAS_CONFIGURE=	yes
 USE_BZIP2=	yes
 WRKSRC=		${WRKDIR}/apsfilter
 SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" GHOSTSCRIPT_PORT="${GHOSTSCRIPT_PORT}"
-
-# make a2ps port happy in this early stage
-PAPERSIZE?=letter
 
 pre-everything::
 .if !defined(WITH_GHOSTSCRIPT_AFPL) || ${WITH_GHOSTSCRIPT_AFPL} != yes
