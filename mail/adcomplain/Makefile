@@ -1,6 +1,6 @@
 # New ports collection makefile for:    adcomplain
 # http://www.rdrop.com/users/billmc/adcomplain.html
-# Version required:     1.6
+# Version required:     2.56
 # Date created: 13 Sep 1997
 # Whom:         ache@FreeBSD.org
 #
@@ -8,7 +8,7 @@
 #
 
 DISTNAME=      adcomplain.pl.uu
-PKGNAME=       adcomplain-1.6
+PKGNAME=       adcomplain-2.56
 CATEGORIES=     mail news
 MASTER_SITES=   http://www.rdrop.com/users/billmc/
 EXTRACT_SUFX=	# none
