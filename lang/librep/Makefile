@@ -7,7 +7,7 @@
 
 PORTNAME=	librep
 PORTVERSION=	0.16.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang elisp gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	librep
@@ -40,8 +40,7 @@ PREFIX?=	${X11BASE}
 
 .include <bsd.port.pre.mk>
 .if ${OSVERSION} > 500023
-BUILD_DEPENDS+=	${LOCALBASE}/include/gmp.h:${PORTSDIR}/math/libgmp-freebsd
-RUN_DEPENDS+=	${LOCALBASE}/include/gmp.h:${PORTSDIR}/math/libgmp-freebsd
+LIB_DEPENDS+=	gmp.6:${PORTSDIR}/math/libgmp4
 .endif
 
 .if ${XFREE86_VERSION} == 3
