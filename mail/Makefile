@@ -157,6 +157,10 @@
     SUBDIR += mew2-emacs20
     SUBDIR += mew2-xemacs21
     SUBDIR += mew2-xemacs21-mule
+    SUBDIR += mew3
+    SUBDIR += mew3-emacs20
+    SUBDIR += mew3-xemacs21
+    SUBDIR += mew3-xemacs21-mule
     SUBDIR += milter-regex
     SUBDIR += milter-sender
     SUBDIR += mimedefang
