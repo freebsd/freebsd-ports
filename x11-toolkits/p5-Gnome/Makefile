@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Gnome
-PORTVERSION=	0.7004
+PORTVERSION=	0.7005
 CATEGORIES=	x11-toolkits lang perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Gtk
@@ -19,10 +19,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Gtk/Gdk
 
 USE_PERL5=	yes
 USE_GNOME=	yes
+PERL_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/${PORTNAME}
-
-do-configure:
-	@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL \
-	--with-panel CC="${CC}" CCFLAGS="${CFLAGS}"
 
 .include <bsd.port.mk>
