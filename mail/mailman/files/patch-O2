@@ -1,0 +1,20 @@
+--- configure.orig	Fri Sep 22 20:56:44 2000
++++ configure	Mon Mar 12 12:38:13 2001
+@@ -1034,7 +1034,7 @@
+   CFLAGS="$ac_save_CFLAGS"
+ elif test $ac_cv_prog_cc_g = yes; then
+   if test "$GCC" = yes; then
+-    CFLAGS="-g -O2"
++    CFLAGS=""
+   else
+     CFLAGS="-g"
+   fi
+@@ -1055,7 +1055,7 @@
+ 	case $GCC in
+ 	yes)
+ 		case $ac_cv_prog_cc_g in
+-		yes)	OPT="-g -O2";;
++		yes)	OPT="";;
+ 		*)	OPT="-O2";;
+ 		esac
+ 		;;
