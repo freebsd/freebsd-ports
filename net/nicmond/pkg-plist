@@ -1,0 +1,7 @@
+sbin/nicmond
+etc/nicmond.conf
+etc/rc.d/nicmond.sh
+libexec/cleanup_inet6_route
+%%PORTDOCS%%share/doc/nicmond/README
+%%PORTDOCS%%share/doc/nicmond/README.en
+%%PORTDOCS%%@dirrm share/doc/nicmond

@@ -1,0 +1,7 @@
+This program watches the link status of a network interface. When a
+change of state is detected, a script is launched. This is useful
+for machines that need to configure themselves whenever they are
+plugged into or out of the network, such as laptops.
+
+ -- Dan Pelleg
+daniel+nicmond@pelleg.org

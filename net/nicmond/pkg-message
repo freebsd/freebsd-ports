@@ -1,0 +1,7 @@
+To configure nicmond, do the following:
+
+1. Edit ${PREFIX}/etc/rc.d/nicmond.sh and set "if" to the
+name of the interface you want to monitor.
+
+2. Edit ${PREFIX}/etc/nicmond.conf and configure "up"
+and "down" actions.

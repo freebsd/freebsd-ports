@@ -1,0 +1,20 @@
+--- nicmond.conf.orig	Fri May 23 22:01:51 2003
++++ nicmond.conf	Fri May 23 22:02:43 2003
+@@ -6,10 +6,11 @@
+ info		info
+ 
+ interface fxp0
+-	up	/etc/pccard_ether $device start
+-	up	/sbin/rtsol $device
+-	down	/etc/pccard_ether $device stop
++#select and un-comment "up" and/or "down" actions as needed
++#	up	/etc/pccard_ether $device start
++#	up	/sbin/rtsol $device
++#	down	/etc/pccard_ether $device stop
+ #	down	/sbin/route delete $myaddr4 localhost
+-	down	/sbin/ifconfig $device inet6 $myaddr6 delete
+-	down	/usr/local/libexec/cleanup_inet6_route $device
+-	down	/sbin/ifconfig $device down
++#	down	/sbin/ifconfig $device inet6 $myaddr6 delete
++#	down	/usr/local/libexec/cleanup_inet6_route $device
++#	down	/sbin/ifconfig $device down
