@@ -7,7 +7,7 @@
 
 PORTNAME=	dancer-services
 PORTVERSION=	1.8.0.6.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	irc
 MASTER_SITES=	http://www.doc.ic.ac.uk/~aps100/dancer/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -22,7 +22,7 @@ GNU_CONFIGURE=	yes
 
 MAKE_ARGS=	BINDIR=${PREFIX}/sbin \
 		CONFDIR=${PREFIX}/etc/dancer-services \
-		HELPDIR=${PREFIX}/share/dancer-services \
+		HELPDIR=${PREFIX}/share/dancer-services/help \
 		WHOAMI=root
 
 .if !defined(PACKAGE_BUILDING) && !defined(BATCH)
@@ -35,15 +35,16 @@ post-patch:
 		${WRKSRC}/bin/settings.conf.in
 
 pre-install:
+	${MKDIR} ${PREFIX}/share/dancer-services
 .if !defined(PACKAGE_BUILDING) && !defined(BATCH)
 	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 .endif
 
 post-install:
 	${FIND} ${PREFIX}/share/dancer-services -type d -print0 | \
-		${XARGS} -0 ${CHMOD} -R 755
+		${XARGS} -0 ${CHMOD} 755
 	${FIND} ${PREFIX}/share/dancer-services -type f -print0 | \
-		${XARGS} -0 ${CHMOD} -R ${SHAREMODE}
+		${XARGS} -0 ${CHMOD} ${SHAREMODE}
 	${INSTALL} -d -m 700 -o ircservices -g ircservices \
 		/var/log/dancer-services \
 		/var/run/dancer-services
@@ -56,7 +57,10 @@ post-install:
 		${CP} ${PREFIX}/etc/dancer-services/${f}.sample ${PREFIX}/etc/dancer-services/${f}; \
 	fi
 .endfor
-	${CHMOD} -R ${SHAREMODE} ${PREFIX}/etc/dancer-services
+	${FIND} ${PREFIX}/etc/dancer-services -type d -print0 | \
+		${XARGS} -0 ${CHMOD} 700
+	${FIND} ${PREFIX}/etc/dancer-services -type f -print0 | \
+		${XARGS} -0 ${CHMOD} 600
 	${CHOWN} -R ircservices:ircservices ${PREFIX}/etc/dancer-services
 	${SED} -e "s,%PREFIX%,${PREFIX},g" ${FILESDIR}/dancer-services.sh \
 		> ${WRKDIR}/dancer-services.sh
