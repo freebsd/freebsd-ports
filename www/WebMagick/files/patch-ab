@@ -1,53 +1,10 @@
-*** webmagickrc.in.orig	Tue Mar 24 07:45:52 1998
---- webmagickrc.in	Thu Sep 24 08:32:41 1998
-***************
-*** 32,38 ****
-  # Name of per-directory rc file
-  # $opt_webmagickrc	= '.webmagickrc';
-  # global rc files
-! @global_option_files	= ("/etc/webmagickrc", "$ENV{'HOME'}/${opt_webmagickrc}");
-  
-  
-  # File naming
---- 32,38 ----
-  # Name of per-directory rc file
-  # $opt_webmagickrc	= '.webmagickrc';
-  # global rc files
-! @global_option_files    = ("@prefix@/etc/webmagickrc", "$ENV{'HOME'}/${opt_webmagickrc}");
-  
-  
-  # File naming
-***************
-*** 41,46 ****
---- 41,47 ----
-  # $opt_pageindexname	= '.index';	# Base name of secondary index files
-  # $opt_dirindexname	= '.dirindex';	# Subdirectory Title cross-reference
-  					#  dirname   Directory Title
-+ # $opt_dirhtmlext       = '.html';      # Use .shtml for SSI
-  # $opt_imgindexname	= '.imgindex';	# Image name to label cross-reference file
-  
-  #
-***************
-*** 82,94 ****
---- 83,103 ----
-  # $opt_forcehtml		= 0;	# Force HTML files to be generated (default off)
-  # $opt_forcemontage	= 0;	# Force montage (default off)
-  # $opt_forcegif		= 0;	# Force GIF imagemaps (default off)
-+ # $opt_forcejpeg        = 0;    # Force JPEG imagemaps (default off)
-  # $opt_help		= 0;	# Display usage message
-+ # $opt_htmlext          = '.html'; # Use .shtml for SSI
-  # $opt_header		= '';	# Imagemap extra page header (HTML)
-+ # $opt_footer           = '';   # Imagemap extra page footer (HTML)
-  # $opt_javascript		= 1;	# Enable JavaScript output
-  # $opt_readmevisible	= 0;	# Make README.html be first page.
-  # $opt_title		= '';	# Page title (blank provides default title)
-  # $opt_address		= '';	# Additonal address info for bottom of
-                                  #    imagemap page
-+ # $opt_pichtml          = 0;    # Write separate HTML for each picture
-+ # $opt_pichtmlext       = '.html'; # Use .shtml for SSI
-+ # $opt_pichtmltarget    = '';
-+ # $opt_pichtmltop       = '';
-+ # $opt_pichtmlbottom    = '';
-  
-  #				
-  # ImageMagick Montage settings
+--- webmagickrc.in.orig	Sun Dec 20 01:03:42 1998
++++ webmagickrc.in	Sun Feb 21 21:59:18 1999
+@@ -41,6 +41,7 @@
+ # $opt_pageindexname	= '.index';	# Base name of secondary index files
+ # $opt_dirindexname	= '.dirindex';	# Subdirectory Title cross-reference
+ 					#  dirname   Directory Title
++# $opt_dirhtmlext       = '.html';      # Use .shtml for SSI
+ # $opt_imgindexname	= '.imgindex';	# Image name to label cross-reference file
+ 
+ #
