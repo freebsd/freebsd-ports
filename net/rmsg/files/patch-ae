@@ -1,0 +1,11 @@
+--- misc.c.orig	Sun Sep 19 16:48:00 1999
++++ misc.c	Sun Sep 19 16:48:12 1999
+@@ -24,7 +24,7 @@
+ #include "rmsgprot.h"
+ 
+ char *append(), *ctime(), *malloc(), *strcpy();
+-long time();
++time_t time();
+ 
+ char *basename(x)
+ char *x;

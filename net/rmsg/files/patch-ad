@@ -1,5 +1,22 @@
-*** server.c.orig	Sat Jun 26 23:23:23 1993
---- server.c	Mon Oct  9 14:23:17 1995
+*** server.c.orig	Sat Jun 26 16:23:23 1993
+--- server.c	Sun Sep 19 16:48:42 1999
+***************
+*** 66,72 ****
+  #else
+  char *malloc();
+  #endif
+! long time();
+  uid_t getuid();
+  char *progname;
+  int debug = 0;
+--- 66,72 ----
+  #else
+  char *malloc();
+  #endif
+! time_t time();
+  uid_t getuid();
+  char *progname;
+  int debug = 0;
 ***************
 *** 99,118 ****
        }
