@@ -18,8 +18,6 @@ DISTFILES=	dnetc${PORTVERSION:E}-freebsd-x86-elf.tar.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Distributed.net distributed computing project client
 
-IGNORE=		uses an unregistered uid/gid.
-
 WRKSRC=		${WRKDIR}/dnetc${PORTVERSION:E}-freebsd-x86-elf
 
 ONLY_FOR_ARCHS=	i386
