@@ -74,7 +74,7 @@ CONFIGURE_ARGS+=--disable-3dnow
 .if defined(WITHOUT_DSP) || defined(WITHOUT_3DNOW) || ${OSVERSION} < 400021
 CONFIGURE_ARGS+=--disable-3dnowex
 .endif
-.if !defined(WITH_ESOUND) && !defined(HAVE_ESOUND) 
+.if !(defined(WITH_ESOUND) || defined(HAVE_ESOUND))
 CONFIGURE_ARGS+=--disable-esd
 .endif
 .if defined(WITHOUT_SSE)
@@ -107,7 +107,7 @@ pre-everything::
 .if !defined(WITH_DVD)
 	@${ECHO_MSG} "You can enable DVD support by defining WITH_DVD."
 .endif
-.if !defined(WITH_ESOUND) && !defined(HAVE_ESOUND)
+.if !(defined(WITH_ESOUND) || defined(HAVE_ESOUND))
 	@${ECHO_MSG} "You can enable ESOUND sound support by defining WITH_ESOUND."
 .endif
 .if !defined(WITH_SVGALIB)
