@@ -265,6 +265,7 @@ japanese/ptex-common|japanese/ptex-base|2003-04-13|only used by one port
 misc/kde3-i18n-he|hebrew/kde3-i18n|2003-04-13|new category
 misc/kde3-i18n-hu|hungarian/kde3-i18n|2003-04-13|new category
 misc/kde3-i18n-vi|vietnamese/kde3-i18n|2003-04-13|new category
+sysutils/asrpages|misc/asr-manpages|2003-04-15|port revived
 devel/linux_devtools|devel/linux_devtools-6|2003-04-17|finished repocopy
 emulators/linux-vmware-toolbox|emulators/linux-vmware-toolbox2|2003-04-19|port renamed
 emulators/vmware-guestd|emulators/vmware-guestd3|2003-04-19|port renamed
