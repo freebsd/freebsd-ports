@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	scgi
-PORTVERSION=	1.2.a2
+PORTVERSION=	1.2
 CATEGORIES=	www
 MASTER_SITES=	http://www.mems-exchange.org/software/files/scgi/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
