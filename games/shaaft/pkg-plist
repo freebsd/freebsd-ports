@@ -1,0 +1,4 @@
+bin/Packer
+bin/shaaft
+share/Shaaft/resource.dat
+@dirrm share/Shaaft
