@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ltris
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.4
 PORTEPOCH=	1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -17,16 +17,16 @@ COMMENT=	An another tetris clone but a good one with bunch of cool features
 
 LIB_DEPENDS=	SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer
 
-SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
-
+USE_SDL=	yes
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}"
 
-pre-patch:
-	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
-	@find ${WRKSRC} \( -name "*.[ch]" -or -name "*.cpp" \) | \
-		xargs ${PERL} -pi -e 's|"SDL/SDL|"SDL|g ; s|<SDL/SDL|<SDL|g'
+post-patch:
+	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
+	@${GREP} -lR "SDL/SDL" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
+		's|"SDL/SDL|"SDL|g ; \
+		 s|<SDL/SDL|<SDL|g'
 
 post-install:
 	${CHOWN} root:games ${PREFIX}/bin/${PORTNAME}
