@@ -34,6 +34,48 @@ libexec/fidogate/runout
 libexec/fidogate/runtoss
 libexec/fidogate/rununpack
 libexec/fidogate/sumcrc
+@dirrm libexec/fidogate
+share/doc/fidogate/Fido-Point-HOWTO
+share/doc/fidogate/Fido-Point-eng-HOWTO
+share/doc/fidogate/fidogate.texi
+share/doc/fidogate/fidogate.txt
+share/doc/fidogate/gatebau94.txt
+share/doc/fidogate/kludge-rfc.doc
+share/doc/fidogate/msgid.doc
+share/doc/fidogate/qmail.txt
+share/doc/fidogate/texinfo.tex
+share/doc/fidogate/fido/fsc-0018.txt
+share/doc/fidogate/fido/fsc-0028.txt
+share/doc/fidogate/fido/fsc-0035.txt
+share/doc/fidogate/fido/fsc-0039.004
+share/doc/fidogate/fido/fsc-0043.002
+share/doc/fidogate/fido/fsc-0047.001
+share/doc/fidogate/fido/fsc-0048.002
+share/doc/fidogate/fido/fsc-0054.txt
+share/doc/fidogate/fido/fsc-0057.002
+share/doc/fidogate/fido/fts-0001.015
+share/doc/fidogate/fido/fts-0004.txt
+share/doc/fidogate/fido/fts-0009.001
+share/doc/fidogate/gatebau/msgid.sgml
+share/doc/fidogate/gatebau/msgid.tex
+share/doc/fidogate/gatebau/msgid.txt
+share/doc/fidogate/info/fidogate.info
+share/doc/fidogate/info/fidogate.info-1
+share/doc/fidogate/info/fidogate.info-2
+share/doc/fidogate/howto/FidoNode-1.html
+share/doc/fidogate/howto/FidoNode-10.html
+share/doc/fidogate/howto/FidoNode-11.html
+share/doc/fidogate/howto/FidoNode-12.html
+share/doc/fidogate/howto/FidoNode-13.html
+share/doc/fidogate/howto/FidoNode-2.html
+share/doc/fidogate/howto/FidoNode-3.html
+share/doc/fidogate/howto/FidoNode-4.html
+share/doc/fidogate/howto/FidoNode-5.html
+share/doc/fidogate/howto/FidoNode-6.html
+share/doc/fidogate/howto/FidoNode-7.html
+share/doc/fidogate/howto/FidoNode-8.html
+share/doc/fidogate/howto/FidoNode-9.html
+share/doc/fidogate/howto/FidoNode.html
 share/doc/fidogate/html/ANNOUNCE
 share/doc/fidogate/html/fidogate_1.html
 share/doc/fidogate/html/fidogate_2.html
@@ -50,10 +92,215 @@ share/doc/fidogate/html/msgid-5.html
 share/doc/fidogate/html/msgid-6.html
 share/doc/fidogate/html/msgid-7.html
 share/doc/fidogate/html/msgid.html
-share/doc/fidogate/info/fidogate.info
-share/doc/fidogate/info/fidogate.info-1
-share/doc/fidogate/info/fidogate.info-2
-@dirrm share/doc/fidogate/info
+share/doc/fidogate/misc/ifmail-and-fidogate.doc
+share/doc/fidogate/misc/roland.doc
+share/doc/fidogate/misc/smail.doc
+share/doc/fidogate/misc/smail2.doc
+share/doc/fidogate/misc/smail3.doc
+share/doc/fidogate/misc/unpack-script.doc
+share/doc/fidogate/rfc/rfc-index.txt
+share/doc/fidogate/rfc/rfc1036.txt
+share/doc/fidogate/rfc/rfc1123.txt
+share/doc/fidogate/rfc/rfc2045.txt
+share/doc/fidogate/rfc/rfc2046.txt
+share/doc/fidogate/rfc/rfc2047.txt
+share/doc/fidogate/rfc/rfc2048.txt
+share/doc/fidogate/rfc/rfc2049.txt
+share/doc/fidogate/rfc/rfc822.txt
+share/doc/fidogate/rfc/son-of-1036.html
+@dirrm share/doc/fidogate/fido
+@dirrm share/doc/fidogate/gatebau
+@dirrm share/doc/fidogate/howto
 @dirrm share/doc/fidogate/html
+@dirrm share/doc/fidogate/info
+@dirrm share/doc/fidogate/misc
+@dirrm share/doc/fidogate/rfc
 @dirrm share/doc/fidogate
-@dirrm libexec/fidogate
+share/examples/fidogate/abis.abra.de/etc/mail/mailertable
+share/examples/fidogate/abis.abra.de/etc/mail/maketable
+share/examples/fidogate/abis.abra.de/etc/mail/sendmail.cf
+share/examples/fidogate/abis.abra.de/etc/mail/sendmail.ct
+share/examples/fidogate/abis.abra.de/etc/mail/sendmail.cw
+share/examples/fidogate/abis.abra.de/etc/aliases
+share/examples/fidogate/abis.abra.de/etc/ifmail/config
+share/examples/fidogate/abis.abra.de/etc/ifmail/passwd
+share/examples/fidogate/abis.abra.de/etc/ifmail/ifhold
+share/examples/fidogate/abis.abra.de/etc/ifmail/ifpoll
+share/examples/fidogate/abis.abra.de/etc/ifmail/ifreq
+share/examples/fidogate/abis.abra.de/etc/ifmail/magic/FGATE
+share/examples/fidogate/abis.abra.de/etc/ifmail/magic/FGATECFG
+share/examples/fidogate/abis.abra.de/etc/ifmail/magic/FGATEZIP
+share/examples/fidogate/abis.abra.de/etc/ifmail/magic/FILES
+share/examples/fidogate/abis.abra.de/etc/ifmail/magic/N2426GW
+share/examples/fidogate/abis.abra.de/etc/ifmail/magic/NEWFILES
+share/examples/fidogate/abis.abra.de/etc/ifmail/magic/fgate
+share/examples/fidogate/abis.abra.de/etc/ifmail/magic/fgatecfg
+share/examples/fidogate/abis.abra.de/etc/ifmail/magic/fgatezip
+share/examples/fidogate/abis.abra.de/etc/ifmail/magic/files
+share/examples/fidogate/abis.abra.de/etc/ifmail/magic/n2426gw
+share/examples/fidogate/abis.abra.de/etc/ifmail/magic/newfiles
+share/examples/fidogate/abis.abra.de/etc/inittab
+share/examples/fidogate/abis.abra.de/etc/mgetty/login.config
+share/examples/fidogate/abis.abra.de/etc/mgetty/mgetty.config
+share/examples/fidogate/abis.abra.de/etc/news/server
+share/examples/fidogate/abis.abra.de/etc/news/fidojunk
+share/examples/fidogate/abis.abra.de/etc/news/hosts.nntp
+share/examples/fidogate/abis.abra.de/etc/news/inn.conf
+share/examples/fidogate/abis.abra.de/etc/news/newsfeeds
+share/examples/fidogate/abis.abra.de/etc/news/newsjunk
+share/examples/fidogate/abis.abra.de/etc/news/nnrp.access
+share/examples/fidogate/abis.abra.de/etc/news/organization
+share/examples/fidogate/abis.abra.de/README.fgate
+share/examples/fidogate/abis.abra.de/usr/lib/news/send-fido
+share/examples/fidogate/abis.abra.de/usr/lib/sendmail.cf/site/abis.mc
+share/examples/fidogate/abis.abra.de/usr/local/lib/fidogate/hosts
+share/examples/fidogate/abis.abra.de/usr/local/lib/fidogate/aliases
+share/examples/fidogate/abis.abra.de/usr/local/lib/fidogate/areas
+share/examples/fidogate/abis.abra.de/usr/local/lib/fidogate/areas.bbs
+share/examples/fidogate/abis.abra.de/usr/local/lib/fidogate/config.common
+share/examples/fidogate/abis.abra.de/usr/local/lib/fidogate/config.ftp
+share/examples/fidogate/abis.abra.de/usr/local/lib/fidogate/config.gate
+share/examples/fidogate/abis.abra.de/usr/local/lib/fidogate/config.main
+share/examples/fidogate/abis.abra.de/usr/local/lib/fidogate/fareas.bbs
+share/examples/fidogate/abis.abra.de/usr/local/lib/fidogate/fido_run
+share/examples/fidogate/abis.abra.de/usr/local/lib/fidogate/packing
+share/examples/fidogate/abis.abra.de/usr/local/lib/fidogate/passwd
+share/examples/fidogate/abis.abra.de/usr/local/lib/fidogate/routing
+share/examples/fidogate/abis.abra.de/usr/local/lib/fidogate/routing.foot
+share/examples/fidogate/abis.abra.de/usr/local/lib/fidogate/routing.head
+share/examples/fidogate/abis.abra.de/usr/local/lib/fidogate/senduumail
+share/examples/fidogate/abis.abra.de/usr/local/lib/fidogate/unpack
+share/examples/fidogate/abis.abra.de/usr/src/fidogate/config.h
+share/examples/fidogate/abis.abra.de/usr/src/fidogate/config.make
+share/examples/fidogate/abis.abra.de/usr/src/ifmail/CONFIG
+share/examples/fidogate/abis.abra.de/var/spool/cron/crontabs/news
+share/examples/fidogate/abis.abra.de/var/spool/cron/crontabs/uucp
+share/examples/fidogate/README
+share/examples/fidogate/morannon/hosts
+share/examples/fidogate/morannon/aliases
+share/examples/fidogate/morannon/areas
+share/examples/fidogate/morannon/bounce.down
+share/examples/fidogate/morannon/bounce.insecure
+share/examples/fidogate/morannon/bounce.noto
+share/examples/fidogate/morannon/bounce.restricted
+share/examples/fidogate/morannon/config.common
+share/examples/fidogate/morannon/config.ffx
+share/examples/fidogate/morannon/config.ftp
+share/examples/fidogate/morannon/config.gate
+share/examples/fidogate/morannon/config.main
+share/examples/fidogate/morannon/packing
+share/examples/fidogate/morannon/passwd
+share/examples/fidogate/morannon/routing
+share/examples/fidogate/namib.north.de/etc/news/crontab
+share/examples/fidogate/namib.north.de/etc/news/hosts.nntp
+share/examples/fidogate/namib.north.de/etc/news/inn.conf
+share/examples/fidogate/namib.north.de/etc/news/nnrp.access
+share/examples/fidogate/namib.north.de/etc/news/nntpsend.ctl
+share/examples/fidogate/namib.north.de/etc/news/organization
+share/examples/fidogate/namib.north.de/etc/aliases
+share/examples/fidogate/namib.north.de/etc/ifmail/config
+share/examples/fidogate/namib.north.de/etc/ifmail/passwd
+share/examples/fidogate/namib.north.de/etc/ifmail/magic/FGATECFG
+share/examples/fidogate/namib.north.de/etc/ifmail/magic/FGUUPC
+share/examples/fidogate/namib.north.de/etc/ifmail/magic/FILES
+share/examples/fidogate/namib.north.de/etc/ifmail/magic/NEWFILES
+share/examples/fidogate/namib.north.de/etc/inittab
+share/examples/fidogate/namib.north.de/etc/cron.weekly/fido
+share/examples/fidogate/namib.north.de/etc/mgetty/login.config
+share/examples/fidogate/namib.north.de/etc/mgetty/mgetty.config
+share/examples/fidogate/namib.north.de/etc/smail/maps/ftn.path
+share/examples/fidogate/namib.north.de/etc/smail/config
+share/examples/fidogate/namib.north.de/etc/smail/COPYING
+share/examples/fidogate/namib.north.de/etc/smail/crontab
+share/examples/fidogate/namib.north.de/etc/smail/routers
+share/examples/fidogate/namib.north.de/etc/smail/transports
+share/examples/fidogate/namib.north.de/etc/smail/methods/ftn
+share/examples/fidogate/namib.north.de/README.fgate
+share/examples/fidogate/namib.north.de/usr/lib/fidogate/hosts
+share/examples/fidogate/namib.north.de/usr/lib/fidogate/aliases
+share/examples/fidogate/namib.north.de/usr/lib/fidogate/areas
+share/examples/fidogate/namib.north.de/usr/lib/fidogate/areas.bbs
+share/examples/fidogate/namib.north.de/usr/lib/fidogate/config.common
+share/examples/fidogate/namib.north.de/usr/lib/fidogate/config.gate
+share/examples/fidogate/namib.north.de/usr/lib/fidogate/config.main
+share/examples/fidogate/namib.north.de/usr/lib/fidogate/fareas.bbs
+share/examples/fidogate/namib.north.de/usr/lib/fidogate/fido_run
+share/examples/fidogate/namib.north.de/usr/lib/fidogate/packing
+share/examples/fidogate/namib.north.de/usr/lib/fidogate/passwd
+share/examples/fidogate/namib.north.de/usr/lib/fidogate/routing
+share/examples/fidogate/namib.north.de/usr/lib/fidogate/unpack
+share/examples/fidogate/namib.north.de/usr/lib/news/send-fido
+share/examples/fidogate/namib.north.de/usr/src/fidogate/config.h
+share/examples/fidogate/namib.north.de/usr/src/fidogate/config.make
+share/examples/fidogate/namib.north.de/usr/src/fidogate-4.1.2/config.h
+share/examples/fidogate/namib.north.de/usr/src/fidogate-4.1.2/config.make
+share/examples/fidogate/orodruin/areas
+share/examples/fidogate/orodruin/aliases
+share/examples/fidogate/orodruin/areas.bbs
+share/examples/fidogate/orodruin/hosts
+share/examples/fidogate/orodruin/config.common
+share/examples/fidogate/orodruin/config.ffx
+share/examples/fidogate/orodruin/config.ftp
+share/examples/fidogate/orodruin/config.gate
+share/examples/fidogate/orodruin/config.main
+share/examples/fidogate/orodruin/fareas.bbs
+share/examples/fidogate/orodruin/routing
+share/examples/fidogate/orodruin/packing
+share/examples/fidogate/orodruin/passwd
+share/examples/fidogate/win32/areas
+share/examples/fidogate/win32/README.WIN32
+share/examples/fidogate/win32/aliases
+share/examples/fidogate/win32/areas.bbs
+share/examples/fidogate/win32/hosts
+share/examples/fidogate/win32/config.common
+share/examples/fidogate/win32/config.gate
+share/examples/fidogate/win32/config.main
+share/examples/fidogate/win32/config.make
+share/examples/fidogate/win32/fareas.bbs
+share/examples/fidogate/win32/packing
+share/examples/fidogate/win32/routing
+share/examples/fidogate/win32/rundf
+share/examples/fidogate/win32/test-win32
+@dirrm share/examples/fidogate/abis.abra.de/etc/mail
+@dirrm share/examples/fidogate/abis.abra.de/etc/ifmail/magic
+@dirrm share/examples/fidogate/abis.abra.de/etc/ifmail
+@dirrm share/examples/fidogate/abis.abra.de/etc/mgetty
+@dirrm share/examples/fidogate/abis.abra.de/etc/news
+@dirrm share/examples/fidogate/abis.abra.de/etc
+@dirrm share/examples/fidogate/abis.abra.de/usr/lib/sendmail.cf/site
+@dirrm share/examples/fidogate/abis.abra.de/usr/lib/sendmail.cf
+@dirrm share/examples/fidogate/abis.abra.de/usr/lib/news
+@dirrm share/examples/fidogate/abis.abra.de/usr/lib
+@dirrm share/examples/fidogate/abis.abra.de/usr/local/lib/fidogate
+@dirrm share/examples/fidogate/abis.abra.de/usr/local/lib
+@dirrm share/examples/fidogate/abis.abra.de/usr/local
+@dirrm share/examples/fidogate/abis.abra.de/usr/src/fidogate
+@dirrm share/examples/fidogate/abis.abra.de/usr/src/ifmail
+@dirrm share/examples/fidogate/abis.abra.de/usr/src
+@dirrm share/examples/fidogate/abis.abra.de/usr
+@dirrm share/examples/fidogate/abis.abra.de/var/spool/cron/crontabs
+@dirrm share/examples/fidogate/abis.abra.de/var/spool/cron
+@dirrm share/examples/fidogate/abis.abra.de/var/spool
+@dirrm share/examples/fidogate/abis.abra.de/var
+@dirrm share/examples/fidogate/abis.abra.de
+@dirrm share/examples/fidogate/namib.north.de/etc/news
+@dirrm share/examples/fidogate/namib.north.de/etc/ifmail/magic
+@dirrm share/examples/fidogate/namib.north.de/etc/ifmail
+@dirrm share/examples/fidogate/namib.north.de/etc/cron.weekly
+@dirrm share/examples/fidogate/namib.north.de/etc/mgetty
+@dirrm share/examples/fidogate/namib.north.de/etc/smail/maps
+@dirrm share/examples/fidogate/namib.north.de/etc/smail/methods
+@dirrm share/examples/fidogate/namib.north.de/etc/smail
+@dirrm share/examples/fidogate/namib.north.de/etc
+@dirrm share/examples/fidogate/namib.north.de/usr/lib/news
+@dirrm share/examples/fidogate/namib.north.de/usr/lib/fidogate
+@dirrm share/examples/fidogate/namib.north.de/usr/lib
+@dirrm share/examples/fidogate/namib.north.de/usr/src/fidogate-4.1.2
+@dirrm share/examples/fidogate/namib.north.de/usr/src/fidogate
+@dirrm share/examples/fidogate/namib.north.de/usr/src
+@dirrm share/examples/fidogate/namib.north.de/usr
+@dirrm share/examples/fidogate/namib.north.de
+@dirrm share/examples/fidogate/morannon
+@dirrm share/examples/fidogate/orodruin
+@dirrm share/examples/fidogate/win32
+@dirrm share/examples/fidogate
