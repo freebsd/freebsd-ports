@@ -1,12 +1,12 @@
 # New ports collection makefile for:	screen
-# Version required:     3.7.1
+# Version required:     3.7.2
 # Date created:         25 Nov 1994
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.13 1996/11/11 05:50:09 obrien Exp $
+# $Id: Makefile,v 1.14 1996/11/18 14:07:23 asami Exp $
 #
 
-DISTNAME=       screen-3.7.1
+DISTNAME=       screen-3.7.2
 CATEGORIES=	misc
 MASTER_SITES=   ftp://ftp.uni-erlangen.de/pub/utilities/screen/
 
