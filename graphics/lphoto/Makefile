@@ -7,7 +7,7 @@
 
 PORTNAME=	lphoto
 PORTVERSION=	1.0.26
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://software.linspire.com/emptypool/lindowsos/pool/main/l/lphoto/
 DISTNAME=	${PORTNAME}_${PORTVERSION}-0.0.0.45.lindows0.1
@@ -21,7 +21,7 @@ RUN_DEPENDS=	gphoto2:${PORTSDIR}/graphics/gphoto2 \
 		kdepyuic:${PORTSDIR}/x11-toolkits/py-kde
 
 USE_REINPLACE=	yes
-USE_PYTHON=	2.3
+USE_PYTHON=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

@@ -8,6 +8,7 @@
 
 PORTNAME=	flyway
 PORTVERSION=	0.3.3
+PORTREVISION=	1
 CATEGORIES=	misc python
 MASTER_SITES=	http://www.bellz.org/flyway/
 
@@ -18,7 +19,7 @@ BUILD_DEPENDS=	pyuic:${PORTSDIR}/x11-toolkits/py-qt
 RUN_DEPENDS=	pyuic:${PORTSDIR}/x11-toolkits/py-qt
 
 USE_X_PREFIX=	yes
-USE_PYTHON=	2.3
+USE_PYTHON=	yes
 USE_REINPLACE=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/FlyWay
