@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dvdtape
-PORTVERSION=	1.4
+PORTVERSION=	1.5
 PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.Awfulhak.org/pub/dvdtape/ \

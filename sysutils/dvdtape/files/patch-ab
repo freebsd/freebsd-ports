@@ -1,10 +1,13 @@
 --- isosize.c.orig	Wed Nov 10 00:11:39 1999
-+++ isosize.c	Tue Apr  3 19:10:32 2001
-@@ -1,6 +1,6 @@
++++ isosize.c	Tue Jul  3 16:38:21 2001
+@@ -1,6 +1,10 @@
  #define _POSIX_SOURCE 1		/* fileno is POSIX, not ANSI */
  #include <stdio.h>
--#include <termio.h>
++#ifdef __FreeBSD__
 +#include <termios.h>
++#else
+ #include <termio.h>
++#endif
  #include <signal.h>
  #include <unistd.h>
  
