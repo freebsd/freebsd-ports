@@ -3,7 +3,7 @@
 # Date created:		11 September 1994
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.19 1998/08/19 04:16:32 jseger Exp $
+# $Id: Makefile,v 1.20 1999/01/27 07:41:07 fenner Exp $
 #
 
 DISTNAME=       make-3.77
@@ -21,6 +21,7 @@ MAN1=		gmake.1
 # joerg@freebsd.org says our getloadavg() no longer requires setgid kmem
 pre-install:
 	@if [ ! -f ${PREFIX}/info/dir ]; then \
+	  ${MKDIR} ${PREFIX}/info; \
 	  ${SED} -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
 	 fi
 
