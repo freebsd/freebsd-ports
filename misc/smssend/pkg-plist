@@ -1,0 +1,22 @@
+bin/smssend
+bin/email2smssend
+share/smssend/6sens.sms
+share/smssend/banana.sms
+share/smssend/billiger.sms
+share/smssend/free-sms.sms
+share/smssend/kiwee-inter.sms
+share/smssend/kiwee-pseudo.sms
+share/smssend/kiwee.sms
+share/smssend/koodpo.sms
+share/smssend/kostenlos.sms
+share/smssend/lycos.sms
+share/smssend/mobimel.sms
+share/smssend/mtnsms.sms
+share/smssend/paegas.sms
+share/smssend/passagen.sms
+share/smssend/sfr.sms
+share/smssend/smsboy.sms
+share/smssend/totalise.sms
+share/smssend/unimobile.sms
+share/smssend/vlf.sms
+@dirrm share/smssend

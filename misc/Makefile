@@ -137,6 +137,7 @@
     SUBDIR += sh-utils
     SUBDIR += sls
     SUBDIR += sma
+    SUBDIR += smssend
     SUBDIR += snowflake
     SUBDIR += splitvt
     SUBDIR += sshbuddy
