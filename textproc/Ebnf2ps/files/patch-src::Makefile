@@ -1,0 +1,22 @@
+--- src/Makefile.orig	Fri Nov 17 21:15:44 2000
++++ src/Makefile	Thu Nov 27 16:42:59 2003
+@@ -3,7 +3,7 @@
+ # copyright 1996, 1998 by Peter Thiemann
+ #
+ 
+-HC=	  ghc-4.08.1
++HC=	  ghc
+ HC_SPEC_FLAGS=	-cpp -package posix -package data -fglasgow-exts
+ HCLOADFLAGS=
+ 
+@@ -24,8 +24,8 @@
+ 
+ 
+ # change it, or correct it later with environment variables (see README)
+-AFMPATH= /usr/local/tex/Adobe
+-RGBPATH= /usr/lib/X11
++AFMPATH= ${X11BASE}/lib/X11/fonts/Type1
++RGBPATH= ${X11BASE}/lib/X11/rgb.txt
+ 
+ 
+ OBJECTS=  Parsers.o StringMatch.o Info.o Fonts.o IOSupplement.o EbnfLayout.o \
