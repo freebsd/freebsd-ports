@@ -20,13 +20,15 @@ BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
 RUN_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
 		latex:${PORTSDIR}/print/teTeX
 
+CONFLICTS=	cjk-lyx-*
+
 USE_BZIP2=	yes
-USE_GETTEXT=	yes
+USE_GNOME=	gnometarget lthack
 USE_PERL5=	yes
 USE_PYTHON=	yes
+USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=	14
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+USE_LIBTOOL=	yes
 CONFIGURE_ARGS=	--with-extra-lib="${LOCALBASE}/lib" \
 		--with-extra-inc="${LOCALBASE}/include"
 MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
@@ -58,9 +60,6 @@ RUN_DEPENDS+=	ispell:${PORTSDIR}/textproc/ispell
 
 .if ${OSVERSION} < 500035
 CFLAGS+=	-Wno-non-template-friend -ftemplate-depth-30
-.if defined(WITH_QT)
-BROKEN=	QT Frontend coredumps on 4.x. Use the xforms Frontend instead.
-.endif
 .endif
 
 pre-everything::
