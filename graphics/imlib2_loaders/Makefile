@@ -21,9 +21,8 @@ LIB_DEPENDS=	Imlib2.2:${PORTSDIR}/graphics/imlib2 \
 
 USE_X_PREFIX=	yes
 USE_LIBTOOL_VER=	15
+USE_GNOME=	gnomehack gnometarget
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>
-
-CONFIGURE_TARGET:=	--build=${CONFIGURE_TARGET}
