@@ -172,4 +172,10 @@ clean:
 .if exists(${WRKDIRPREFIX}${.CURDIR}/Makefile.inc)
 .include "${WRKDIRPREFIX}${.CURDIR}/Makefile.inc"
 .endif
+
+# Modssl needs to include bsd.port.pre.mk, so correct for this situation.
+.if defined(_PREMKINCLUDED)
+.include <bsd.port.post.mk>
+.else
 .include <bsd.port.mk>
+.endif
