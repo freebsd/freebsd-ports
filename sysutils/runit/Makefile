@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	runit
-PORTVERSION=	0.11.2
+PORTVERSION=	0.12.0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://smarden.org/${PORTNAME}/
 
