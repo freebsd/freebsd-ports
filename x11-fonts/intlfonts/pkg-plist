@@ -61,9 +61,9 @@
 %%FONTSDIR%%/j83-18.pcf.gz
 %%FONTSDIR%%/j83-18b.pcf.gz
 %%FONTSDIR%%/j83-18i.pcf.gz
-%%FONTSDIR%%/j83-32.pcf.gz
-%%FONTSDIR%%/j83-48.pcf.gz
 %%FONTSDIR%%/j90-16.pcf.gz
+%%FONTSDIR%%/jiskan48.pcf.gz
+%%FONTSDIR%%/jiskan32.pcf.gz
 %%FONTSDIR%%/jksp16.pcf.gz
 %%FONTSDIR%%/jksp24.pcf.gz
 %%FONTSDIR%%/jksp40.pcf.gz
