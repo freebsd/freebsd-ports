@@ -1,1 +1,6 @@
 bin/xaric
+share/xaric/help/copying
+share/xaric/help/help
+share/xaric/help/warranty
+@dirrm share/xaric/help
+@dirrm share/xaric
