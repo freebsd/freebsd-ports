@@ -7,7 +7,7 @@
 
 PORTNAME=	webmin
 PORTVERSION=	1.080
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.webmin.com/updates/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -28,7 +28,9 @@ SCRIPTS_ENV+=	WRKDIR="${WRKDIR}"
 WEBMIN_MODULES=	adsl-client-1.080-1.wbm.gz \
 		apache-1.080-1.wbm.gz \
 		lpadmin-1.080-1.wbm.gz \
+		mysql-1.080-6.wbm.gz \
 		net-1.080-7.wbm.gz \
+		postgresql-1.080-5.wbm.gz \
 		proc-1.080-1.wbm.gz \
 		software-1.080-1.wbm.gz \
 		updown-1.080-1.wbm.gz \
