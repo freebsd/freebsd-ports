@@ -5,9 +5,6 @@ bin/run-with-aspell
 bin/word-list-compress
 include/aspell.h
 include/pspell/pspell.h
-lib/libaspell-common-%%PORTVERSION%%.so
-lib/libaspell-common.a
-lib/libaspell-common.so
 lib/libaspell.a
 lib/libaspell.so
 lib/libaspell.so.15
@@ -38,6 +35,8 @@ share/aspell/standard.kbd
 share/aspell/viscii.dat
 %%PORTDOCS%%share/doc/aspell/dev-html/devel.css
 %%PORTDOCS%%share/doc/aspell/dev-html/devel.html
+%%PORTDOCS%%share/doc/aspell/dev-html/img1.png
+%%PORTDOCS%%share/doc/aspell/dev-html/img2.png
 %%PORTDOCS%%share/doc/aspell/dev-html/index.html
 %%PORTDOCS%%share/doc/aspell/dev-html/nx_grp_g.png
 %%PORTDOCS%%share/doc/aspell/dev-html/prev_g.png
