@@ -12,6 +12,7 @@ CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.netlib.org/linpack/ \
 		ftp://netlib.bell-labs.com/netlib/linpack/ \
 		ftp://www.hensa.ac.uk/mirrors/netlib/linpack/
+DISTFILES=	${SRCS:.f=.f.gz}
 
 MAINTAINER=	ports@FreeBSD.org
 
@@ -44,10 +45,6 @@ SRCS =	cchdc.f cchdd.f cchex.f cchud.f cgbco.f cgbdi.f cgbfa.f cgbsl.f \
 	zsico.f zsidi.f zsifa.f zsisl.f zspco.f zspdi.f zspfa.f zspsl.f \
 	zsvdc.f ztrco.f ztrdi.f ztrsl.f
 
-DISTFILES=	${SRCS:.f=.f.gz}
-
-.include <bsd.port.pre.mk>
-
 do-extract:
 	@${MKDIR} ${WRKDIR}
 .for file in ${SRCS}
@@ -58,9 +55,6 @@ pre-build:
 	${CP} ${FILESDIR}/Makefile.lib ${WRKSRC}/Makefile
 
 post-install:
-	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
-.if ${PORTOBJFORMAT} == "aout"
-	${LN} -sf liblinpack.so.1.0 ${PREFIX}/lib/liblinpack.so
-.endif
+	${LDCONFIG} -m ${PREFIX}/lib
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
