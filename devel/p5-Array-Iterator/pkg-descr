@@ -1,0 +1,11 @@
+This module implements several types of array iterators:
+- simple unidirectional
+- bidirectional
+- circular
+- reusable
+
+WWW: http://search.cpan.org/dist/Array-Iterator/
+Author: Stevan Little <stevan@iinteractive.com>
+
+- Aaron Dalton
+aaron@daltons.ca

@@ -1,0 +1,9 @@
+%%SITE_PERL%%/Array/Iterator.pm
+%%SITE_PERL%%/Array/Iterator/BiDirectional.pm
+%%SITE_PERL%%/Array/Iterator/Circular.pm
+%%SITE_PERL%%/Array/Iterator/Reusable.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Array/Iterator/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Array/Iterator
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Array 2>/dev/null || true
+@dirrm %%SITE_PERL%%/Array/Iterator
+@unexec rmdir %D/%%SITE_PERL%%/Array 2>/dev/null || true
