@@ -1,1 +1,3 @@
-MD5 (squid1110/squid-1.1.10-src.tar.gz) = 72c27b44e876985bdf01e3407d29037e
+MD5 (squid1111/squid-1.1.11-src.tar.gz) = fe3ba549f235e09285ccae981e8f1f6a
+MD5 (squid1111/config.h.in.patch) = ecf379837b13dedf107ae81707799d16
+MD5 (squid1111/long-dns-coredump.patch) = 155ff0da37e1ad0679ed8e121e9dd38b
