@@ -1,140 +1,80 @@
-*** Makefile.orig	Mon Nov 14 19:05:36 1994
---- Makefile	Sun Jan 29 22:00:58 1995
-***************
-*** 13,20 ****
-  RANLIB        = ranlib#   may need to set this to `true' for SGI's
-  
-  ARFLAGS       = ru#       this is supposed to replace only those .o files
-!                   #       than are newer than the .a file.  Should work
-!                   #       under most platforms. 
-  
-  #
-  # Step 2:
---- 13,20 ----
-  RANLIB        = ranlib#   may need to set this to `true' for SGI's
-  
-  ARFLAGS       = ru#       this is supposed to replace only those .o files
-! #			  than are newer than the .a file.  Should work
-! #			  under most platforms. 
-  
-  #
-  # Step 2:
-***************
-*** 33,42 ****
-  #       
-  
-  # SGI C Flags
-! CFLAGS        = -O2 -D__STDC__ -DFULL_COLOR_ONLY
-  
-  # GCC flags
-! #CFLAGS       = -O2 -DFULL_COLOR_ONLY
-  
-  # Note that the rest of these flags are inherited from the original
-  # Berkeley player's Makefile; I have no idea if they'll work on these
---- 33,42 ----
-  #       
-  
-  # SGI C Flags
-! # CFLAGS        = -O2 -D__STDC__ -DFULL_COLOR_ONLY
-  
-  # GCC flags
-! CFLAGS       = -O2 -fpic -D_HAVE_PARAM_H # -DFULL_COLOR_ONLY
-  
-  # Note that the rest of these flags are inherited from the original
-  # Berkeley player's Makefile; I have no idea if they'll work on these
-***************
-*** 72,78 ****
-  # Step 3:
-  #	Set DEST to pathname of final destination of library...
-  #
-! DEST	      = .
-  
-  #
-  # Step 4: 
---- 72,78 ----
-  # Step 3:
-  #	Set DEST to pathname of final destination of library...
-  #
-! DEST	      = ${PREFIX}/lib
-  
-  #
-  # Step 4: 
-***************
-*** 89,95 ****
-  DITHER_SRC    = fs2.c fs2fast.c fs4.c hybrid.c hybriderr.c 2x2.c gray.c \
-  		mono.c ordered.c ordered2.c mb_ordered.c
-  
-! SRC           = $(DECODER_SRC) # $(DITHER_SRC)
-  
-  
-  #
---- 89,95 ----
-  DITHER_SRC    = fs2.c fs2fast.c fs4.c hybrid.c hybriderr.c 2x2.c gray.c \
-  		mono.c ordered.c ordered2.c mb_ordered.c
-  
-! SRC           = $(DECODER_SRC) $(DITHER_SRC)
-  
-  
-  #
-***************
-*** 98,125 ****
-  HDRS	      = util.h video.h decoders.h dither.h fs2.h fs4.h \
-                  proto.h globals.h mpeg.h
-  
-! INSTALL	      = /etc/install
-  SHELL	      = /bin/sh
-  MAKEFILE      = Makefile
-  
-  OBJ	      = $(SRC:.c=.o)
-  
-! LIBRARY       = libmpeg.a
-  
-  # Targets...
-  
-! all:		$(LIBRARY)
-  
-! $(LIBRARY):     $(OBJ)
-! 		$(AR) $(ARFLAGS) $(LIBRARY) $(OBJ)
-! 		$(RANLIB) $(LIBRARY)
-! 
-! clean:;		rm -f *.o $(LIBRARY) core
-!  
-! install:	$(LIBRARY)
-! 		@echo Installing $(LIBRARY) in $(DEST)
-! 		@if [ $(DEST) != . ]; then \
-! 		(rm -f $(DEST)/$(LIBRARY); $(INSTALL) -f $(DEST) $(LIBRARY)); fi
-  
-  # easympeg is a short 'n simple MPEG player that requires the SGI Graphics
-  # LIbrary; this won't work on non-SGI platforms
---- 98,128 ----
-  HDRS	      = util.h video.h decoders.h dither.h fs2.h fs4.h \
-                  proto.h globals.h mpeg.h
-  
-! INSTALL	      = install
-  SHELL	      = /bin/sh
-  MAKEFILE      = Makefile
-  
-  OBJ	      = $(SRC:.c=.o)
-  
-! LIBRARY       = libmpeg.a libmpeg.so.1.1
-  
-  # Targets...
-  
-! all:	$(LIBRARY)
-  
-! libmpeg.a:     $(OBJ)
-! 		$(AR) $(ARFLAGS) libmpeg.a $(OBJ)
-! 		$(RANLIB) libmpeg.a
-! 
-! libmpeg.so.1.1: $(OBJ)
-! 	ld -Bshareable -o libmpeg.so.1.1 $(OBJ)
-! 
-! clean:	rm -f *.o $(LIBRARY) core
-! 
-! install: $(LIBRARY)
-! 	@echo Installing $(LIBRARY) in $(DEST)
-! 	$(INSTALL) -c $(LIBRARY) $(DEST)
-! 	$(INSTALL) -c mpeg.h ${PREFIX}/include
-  
-  # easympeg is a short 'n simple MPEG player that requires the SGI Graphics
-  # LIbrary; this won't work on non-SGI platforms
+--- Makefile.in.orig	Mon Feb 26 12:12:54 1996
++++ Makefile.in	Tue Oct 14 14:38:05 1997
+@@ -16,6 +16,7 @@
+ RANLIB        = @RANLIB@
+ SHELL         = /bin/sh
+ 
++.SUFFIXES: .so
+ 
+ # Source for the library itself -- note that we define LIBSRC and
+ # LIBOBJ this way (instead of just LIBOBJ=$(LIBSRC:.c=.o) because
+@@ -27,23 +28,32 @@
+ 		mono.c ordered.c ordered2.c mb_ordered.c
+ LIBSRC        = @libsrc@
+ LIBOBJ        = @libobj@
++SHLIBOBJ      = @shlibobj@
+ 
+ 
+ # Other files of interest
+ 
+ LIBRARY       = libmpeg.a
++SHLIBRARY	  = libmpeg.so.1.2
+ MPEGTEST      = mpegtest
+ 
+ # Targets for all platforms
+ 
+-all:		$(LIBRARY) @extras@
++all:		$(LIBRARY) ${SHLIBRARY} @extras@
+ 
+ $(LIBRARY):	$(LIBOBJ)
+ 		$(AR) $(ARFLAGS) $(LIBRARY) $(LIBOBJ)
+ 		$(RANLIB) $(LIBRARY)
+ 
++$(SHLIBRARY):	$(SHLIBOBJ)
++		cc -shared -o $(SHLIBRARY) $(SHLIBOBJ)
++
+ $(LIBOBJ):	Makefile
+ 
++install:
++	install -c -m 444 ${LIBRARY} ${SHLIBRARY} ${PREFIX}/lib
++	install -c -m 444 mpeg.h ${PREFIX}/include
++
+ @Makefile_extras@
+ 
+ clean:
+@@ -53,6 +63,9 @@
+ distclean: clean
+ 		rm -f config.cache config.log config.status Makefile config.h
+ 		cd extras && $(MAKE) distclean
++
++.c.so:
++	${CC} ${CFLAGS} -fpic -DPIC -c $< -o $@
+ 
+ # Include a system-specific Makefile fragment, if any
+ 
+--- configure.orig	Tue Oct 14 14:31:15 1997
++++ configure	Tue Oct 14 14:32:06 1997
+@@ -817,6 +817,7 @@
+ if test $dither = yes; then
+   libsrc='$(DECODER_SRC) $(DITHER_SRC)'
+   libobj='$(DECODER_SRC:.c=.o) $(DITHER_SRC:.c=.o)'
++  shlibobj='$(DECODER_SRC:.c=.so) $(DITHER_SRC:.c=.so)'
+   cat >> confdefs.h <<\EOF
+ #define ENABLE_DITHER 1
+ EOF
+@@ -825,6 +826,7 @@
+ else
+   libsrc='$(DECODER_SRC)'
+   libobj='$(DECODER_SRC:.c=.o)'
++  shlibobj='$(DECODER_SRC:.c=.so)'
+   cat >> confdefs.h <<\EOF
+ #define ENABLE_DITHER 0
+ EOF
+@@ -1459,6 +1461,7 @@
+ s%@AR@%$AR%g
+ s%@libsrc@%$libsrc%g
+ s%@libobj@%$libobj%g
++s%@shlibobj@%$shlibobj%g
+ s%@jrevdct@%$jrevdct%g
+ s%@extras@%$extras%g
+ /@Makefile_extras@/r $Makefile_extras
