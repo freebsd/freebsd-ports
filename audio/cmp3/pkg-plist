@@ -1,5 +1,0 @@
-bin/cmp3
-bin/rnmp3
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/sample.cmp3rc
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

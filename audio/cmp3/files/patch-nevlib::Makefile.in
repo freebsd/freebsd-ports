@@ -1,0 +1,10 @@
+--- nevlib/Makefile.in.orig	Sun Jul 29 14:09:13 2001
++++ nevlib/Makefile.in	Thu Mar 18 22:26:26 2004
+@@ -1,6 +1,6 @@
+ CC = @CC@
+ 
+-CFLAGS = -Wall -ansi -O2 -g
++CFLAGS = @CFLAGS@
+ 
+ FILES=llist.o inifile.o
+ LIBNAME=libnev.a
