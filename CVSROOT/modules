@@ -6861,6 +6861,7 @@ wmeyes		ports/games/wmeyes
 wmfire		ports/sysutils/wmfire
 wmfishtime	ports/x11-clocks/wmfishtime
 wmfsm		ports/sysutils/wmfsm
+wmfstatus	ports/x11/wmfstatus
 wmg		ports/x11-wm/wmg
 wmglobe		ports/astro/wmglobe
 wmgrabimage	ports/graphics/wmgrabimage
