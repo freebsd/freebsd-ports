@@ -10,21 +10,19 @@
 # If you want this script to start with the base rc scripts
 # move apache.sh to /etc/rc.d/apache
 
+prefix=%%PREFIX%%
+
 # Define the following apache_* variables in one of the following:
 #       /etc/rc.conf
 #       /etc/rc.conf.d/apache
-#       ${prefix}/etc/rc.conf.d/apache
+#       /etc/rc.conf.d/apache
 #
-#       apache_enable  - Set to YES to enable apache
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
 #
-#       apache_program - Path to apache program
-#                        Default: ${prefix}/sbin/httpd
-#
-#	apache_start   - Subcommand sent to apachectl to control how
-#			 httpd is started.
-#			 Default: start_FP
-
-prefix=%%PREFIX%%
+apache_enable="YES"			# Enable Apache
+#apache_program="${prefix}/sbin/httpd	# Location of httpd
+apache_start="start_FP"	# Subcommand sent to apachectl to control how
+			# httpd is started.
 
 apache_doit ()
 {
@@ -75,56 +73,45 @@ if [ -f /etc/rc.subr ]; then
 	restart_cmd="apache_doit restart"
 	reload_cmd="apache_doit reload"
 
-	# The below may be removed when load_local_rc_config is added to rc.subr
-
-	if [ -f ${prefix}/etc/rc.conf.d/"$name" ]; then
-		debug "Sourcing ${prefix}/etc/rc.conf.d/${name}"
-		. ${prefix}/etc/rc.conf.d/"$name"
-	fi
-
 	load_rc_config $name
-
-	if [ -z "${apache_enable}" ] ; then
-		apache_enable=yes
-	fi
-
-	# The above may be removed when load_local_rc_config is added to rc.subr
-	#
-	# load_local_rc_config $name
-
-	if [ -z "${apache_start}" ]; then
-		apache_start="start_FP"
-	fi
-
 	run_rc_command "$1"
 else
-	if [ -f ${prefix}/etc/rc.conf.d/apache ]; then
-		. ${prefix}/etc/rc.conf.d/apache
+	# Suck in the configuration variables.
+	if [ -z "${source_rc_confs_defined}" ]; then
+		if [ -r /etc/defaults/rc.conf ]; then
+			. /etc/defaults/rc.conf
+			source_rc_confs
+		elif [ -r /etc/rc.conf ]; then
+			. /etc/rc.conf
+		fi
 	fi
 
-	if [ -z '${apache_start}" ]; then
-		apache_start="start_FP"
-	fi
+	rc=0
 
-	case "$1" in
-
-	start)
-        	if [ -x ${prefix}/sbin/apachectl ]; then
-			new_key
-			${prefix}/sbin/apachectl ${apache_start} && echo -n ' httpd'
-		fi
+	case "${apache_enable}" in
+	    [Yy][Ee][Ss])
+		case "$1" in
+		    start)
+        		if [ -x ${prefix}/sbin/apachectl ]; then
+				new_key
+				${prefix}/sbin/apachectl ${apache_start} && echo -n ' httpd'
+			fi
+			;;
+		    stop)
+			if [ -r /var/run/httpd.pid ]; then
+				${prefix}/sbin/apachectl stop && echo -n ' httpd'
+			fi
+			;;
+		    *)
+			echo "usage: $0 {start|stop}" 1>&2
+			rc=64
+			;;
+		esac
 		;;
-
-	stop)
-		if [ -r /var/run/httpd.pid ]; then
-			${prefix}/sbin/apachectl stop && echo -n ' httpd'
-		fi
-		;;
-
-	*)
-		echo "usage: $0 {start|stop}" 1>&2
-		exit 64
-		;;
-
+            *)
+                rc=0
+                ;;
 	esac
+
+	exit $rc
 fi

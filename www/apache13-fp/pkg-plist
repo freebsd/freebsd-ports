@@ -105,6 +105,7 @@ sbin/rotatelogs
 share/doc/apache/apache_pb.gif
 @exec if [ ! -h %B/images ]; then (cd %B ; ln -s manual/images images); fi
 @unexec if [ -h %B/images ]; then rm -f %B/images; fi
+share/doc/apache/createdwFP.txt
 share/doc/apache/index.html.ca
 share/doc/apache/index.html.cz
 share/doc/apache/index.html.de
@@ -179,7 +180,7 @@ share/doc/apache/manual/howto/ssi.html.ja.jis
 share/doc/apache/manual/images/apache_header.gif
 share/doc/apache/manual/images/apache_pb.gif
 share/doc/apache/manual/images/custom_errordocs.gif
-share/doc/apache/manual/images/fplogo.gif
+share/doc/apache/manual/images/createdwFP.gif
 share/doc/apache/manual/images/home.gif
 share/doc/apache/manual/images/index.gif
 share/doc/apache/manual/images/mod_rewrite_fig1.fig
@@ -640,7 +641,6 @@ www/icons/world2.png
 @dirrm include/apache/xml
 @dirrm include/apache
 @dirrm libexec/apache
-@dirrm share/doc/apache/manual/frontpage
 @dirrm share/doc/apache/manual/howto
 @dirrm share/doc/apache/manual/images
 @dirrm share/doc/apache/manual/misc
@@ -648,13 +648,13 @@ www/icons/world2.png
 @dirrm share/doc/apache/manual/programs
 @dirrm share/doc/apache/manual/search
 @dirrm share/doc/apache/manual/vhosts
-@dirrm share/doc/apache/manual
-@dirrm share/doc/apache
+@unexec rmdir %D/share/doc/apache/manual 2> /dev/null || true
+@unexec rmdir %D/share/doc/apache 2> /dev/null || true
 @dirrm www/cgi-bin
 @dirrm www/cgi-bin.default
-@dirrm www/data/images
-@dirrm www/data
+@unexec rmdir %D/www/data/images 2> /dev/null || true
+@unexec rmdir %D/www/data 2> /dev/null || true
 @dirrm www/icons/small
 @dirrm www/icons
 @dirrm www/proxy
-@dirrm www
+@unexec rmdir %D/www 2> /dev/null || true
