@@ -1,3 +1,5 @@
+# $FreeBSD$
+
 MAN1=	epmd.1 \
 	driver_entry.1 \
 	erl.1 \
