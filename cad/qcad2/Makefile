@@ -18,6 +18,8 @@ MAKEFILE=	makefile
 MAKE_ENV=	CC="${CXX}"
 USE_QT2=	yes
 
+BROKEN=		"Compiler error"
+
 QCADDIR=	${PREFIX}/lib/qcad
 QCADDOCDIR=	${PREFIX}/share/doc/qcad
 QCADSAMPLEDIR=	${PREFIX}/share/examples/qcad
