@@ -1,6 +1,6 @@
---- Imakefile.orig     Fri Jun 18 04:41:41 1999
-+++ Imakefile  Tue Jun 27 22:55:53 2000
-@@ -1,7 +1,9 @@
+--- Imakefile.orig	Fri Jun 18 04:41:41 1999
++++ Imakefile	Wed Nov  1 09:04:52 2000
+@@ -1,9 +1,11 @@
  DEPLIBS = $(DEPXLIB)
  XPMLIB = -lXpm
  
@@ -11,3 +11,6 @@
  
  SRCS = dockapp.c wmmount.c
  OBJS = dockapp.o wmmount.o
+ 
+-ComplexProgramTarget(wmmount)
++ComplexProgramTargetNoMan(wmmount)
