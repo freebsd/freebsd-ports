@@ -23,8 +23,7 @@ bin/snmpusm
 bin/snmpvacm
 bin/snmpwalk
 bin/traptoemail
-@unexec if cmp -s %D/etc/snmpd.sh %D/etc/snmpd.sh.sample; then rm -f %D/etc/snmpd.sh; fi
-etc/rc.d/snmpd.sh.sample
+etc/rc.d/snmpd.sh
 include/net-snmp/agent/agent_callbacks.h
 include/net-snmp/agent/agent_handler.h
 include/net-snmp/agent/agent_index.h

@@ -7,7 +7,7 @@
 
 PORTNAME=	net-snmp
 PORTVERSION=	5.0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://sunsite.cnlab-switch.ch/mirror/ucd-snmp/ \
@@ -23,12 +23,23 @@ LIBTOOLFLAGS=	--disable-ltlibs --release-ignore
 NO_LATEST_LINK=	yes
 
 CONFIGURE_ARGS+= --enable-shared --with-mib-modules="host ucd-snmp/diskio" \
+		 --with-default-snmp-version="${DEFAULT_SNMP_VERSION}" \
+		 --with-sys-contact="${NET_SNMP_SYS_CONTACT}" \
+		 --with-sys-location="${NET_SNMP_SYS_LOCATION}" \
+		 --with-logfile="${NET_SNMP_LOGFILE}" \
+		 --with-persistent-directory="${NET_SNMP_PERSISTENTDIR}" \
 		 --with-gnu-ld --with-libwrap --with-libs="-lkvm -ldevstat"
 .if defined(BATCH)
 CONFIGURE_ARGS+= --with-defaults --with-sys-contact=nobody@no.where
 .else
 IS_INTERACTIVE= yes
 .endif
+
+DEFAULT_SNMP_VERSION?=	3
+NET_SNMP_SYS_CONTACT?=	nobody@no.where
+NET_SNMP_SYS_LOCATION?=	
+NET_SNMP_LOGFILE?=	/var/log/snmpd.log
+NET_SNMP_PERSISTENTDIR?=/var/net-snmp
 
 MAN1=		mib2c.1 \
 		snmpbulkget.1 snmpbulkwalk.1 snmpcmd.1 snmpconf.1 snmpd.1 \
@@ -81,15 +92,17 @@ PLIST_SUB+=	shlib=${SHLIB_VERSION}
 post-patch:
 	@${PERL} -pi -e "s|%%LOCALBASE%%|${LOCALBASE}|g" ${WRKSRC}/aclocal.m4
 
+pre-install:
+	-@[ -f ${STARTUP_FILE} ] && \
+	 (echo "Remove old ${STARTUP_FILE} before install." && exit 1)
+
 post-install:
 	@( cd ${PREFIX}/bin && ${STRIP_CMD} ${BIN} )
 	@( cd ${PREFIX}/sbin && ${STRIP_CMD} ${SBIN} )
 	@${FIND} ${PREFIX}/include/net-snmp ${PREFIX}/share/snmp/mibs -type f \
 		| ${XARGS} ${CHMOD} 644
-	@${INSTALL_SCRIPT} -m 751 ${FILESDIR}/snmpd.sh.sample ${PREFIX}/etc/rc.d
-	@if [ ! -f ${STARTUP_FILE} ]; then \
-		${ECHO} "Creating ${PREFIX}/etc/rc.d/snmpd.sh startup file."; \
-		${INSTALL_SCRIPT} -m 751 ${FILESDIR}/snmpd.sh.sample ${STARTUP_FILE}; \
-	 fi
+	@${INSTALL_SCRIPT} -m 751 ${FILESDIR}/snmpd.sh.sample ${STARTUP_FILE}
+	@${ECHO_MSG}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

@@ -1,0 +1,23 @@
+**** This port installs snmp daemon, include files and libraries but not
+     invoking snmpd by default.
+     If you want to invoke snmpd from startup, put these lines into
+     /etc/rc.conf.
+
+	net_snmpd_enable="YES"
+	net_snmpd_flags=""
+
+**** You can specify make variables as:
+
+	NET_SNMP_SYS_CONTACT="kuriyama@FreeBSD.org"
+	NET_SNMP_SYS_LOCATION="Tokyo, Japan"
+	DEFAULT_SNMP_VERSION=3
+	NET_SNMP_LOGFILE=/var/log/snmpd.log
+	NET_SNMP_PERSISTENTDIR=/var/net-snmp
+
+     to define default values (or overwriting defaults).  At least
+     setting first two variables, you will not be prompted during
+     configuration process.  Or you can set
+
+	BATCH="yes"
+
+     to make to avoid interactive configuration.
