@@ -5982,6 +5982,7 @@ mozilla		ports/www/mozilla
 mozilla-bonobo	ports/www/mozilla-bonobo
 mozilla-devel	ports/www/mozilla-devel
 mozilla-fonts	ports/x11-fonts/mozilla-fonts
+moztraybiff	ports/mail/moztraybiff
 mp		ports/editors/mp
 mp-a4		ports/print/mp-a4
 mp-letter	ports/print/mp-letter
