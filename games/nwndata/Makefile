@@ -7,7 +7,7 @@
 
 PORTNAME=	nwndata
 PORTVERSION=	1.29
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	ftp://jeuxlinux.com/bioware/Neverwinter_Nights/
 DISTNAME=	nwresources${PORTVERSION:S/.//}
@@ -18,15 +18,10 @@ COMMENT=	Neverwinter Nights Data Files
 ONLY_FOR_ARCHS=	i386
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/nwn
-TOLOWER=	${TR} '[:upper:]' '[:lower:]'
 
 do-install:
 	${MKDIR} ${DATADIR}
-	(cd ${WRKSRC} && ${FIND} * -type d | while read d ; do \
-		${MKDIR} "${DATADIR}/$${d}" ; \
-	done)
-	(cd ${WRKSRC} && ${FIND} * -type f -or -type l | while read f ; do \
-		${CP} -v "$${f}" "${DATADIR}/$$(echo $${f} | ${TOLOWER})" ; \
-	done)
+	(cd ${WRKSRC} && ${FIND} . -print | \
+	    ${CPIO} -pdmuv -R${SHAREOWN}:${SHAREGRP} ${DATADIR})
 
 .include <bsd.port.mk>
