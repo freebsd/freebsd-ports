@@ -3,10 +3,10 @@
 # Date created:        10 August 1998
 # Whom:                Bill Fumerola <billf@chc-chimes.com>
 #
-# $Id: Makefile,v 1.1.1.1 1998/09/18 21:53:24 vanilla Exp $
+# $Id: Makefile,v 1.2 1998/09/22 22:55:54 asami Exp $
 #
 
-DISTNAME=	ethereal-0.3.16
+DISTNAME=	ethereal-0.3.17
 CATEGORIES=	net
 MASTER_SITES=	http://ethereal.zing.org/distribution/ \
 		http://ethereal.boehm.org/distribution/
