@@ -1,0 +1,4 @@
+include make/unix.inc
+ALL_TARGETS := core core-examples core-headers
+@ALLEGRO@ ALL_TARGETS += allegro allegro-examples allegro-headers
+PREFIX := @LOCALBASE@
