@@ -1,0 +1,4 @@
+lib/perl5/man/man3/Mail::POP3Client.3.gz
+lib/perl5/site_perl/Mail/POP3Client.pm
+lib/perl5/site_perl/i386-freebsd/auto/Mail/POP3Client/.packlist
+@dirrm lib/perl5/site_perl/i386-freebsd/auto/Mail/POP3Client
