@@ -1,3 +1,5 @@
 bin/nexfontsel
 lib/X11/app-defaults/NeXFontSel
 lib/X11/ja_JP.EUC/app-defaults/NeXFontSel
+@dirrm lib/X11/ja_JP.EUC/app-defaults
+@dirrm lib/X11/ja_JP.EUC
