@@ -7,7 +7,7 @@
 
 PORTNAME=	libglade
 PORTVERSION=	1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel ruby gnome
 MASTER_SITES=	http://beta4.com/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -17,6 +17,7 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	knu@FreeBSD.org
 
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/gtk.so:${PORTSDIR}/x11-toolkits/ruby-gtk
+LIB_DEPENDS=	glade.4:${PORTSDIR}/devel/libglade
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
