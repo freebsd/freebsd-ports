@@ -20,7 +20,7 @@ MAN1=           w3mir.1 w3mfix.1
 
 do-configure:
 		@ cd ${WRKSRC}; \
-		${SETENV} ${MAKE_ENV} ${PERL} Makefile.PL PREFIX=${PREFIX} \
+		${SETENV} ${MAKE_ENV} ${PERL} Makefile.PL \
 				     INSTALLMAN1DIR=${PREFIX}/man/man1
 post-install:
 		${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP} -m 755 \
