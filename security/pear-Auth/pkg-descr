@@ -1,0 +1,11 @@
+The PEAR::Auth package provides methods for creating an authentication
+system using PHP.
+
+Currently it supports the following storage containers to read/write
+the login data:
+
+* All databases supported by the PEAR database layer
+* Plaintext files
+* LDAP servers.
+
+WWW: http://pear.php.net/manual/en/packages.auth.auth.php
