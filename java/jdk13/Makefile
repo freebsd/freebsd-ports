@@ -7,7 +7,7 @@
 
 PORTNAME=	jdk
 PORTVERSION=	${JDK_VERSION}p${JDK_PATCHSET_VERSION}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	java devel
 MASTER_SITES=	# http://www.sun.com/software/java2/download.html
 #		 http://www.eyesbeyond.com/freebsddom/java/jdk13.html
@@ -108,6 +108,9 @@ HOTSPOT_TARGETS=compiler1 compiler2
 PLIST_SUB+=	HOTSPOT:="@comment "
 .endif
 
+LD_LIBRARY_PATH_FILES=	../src/solaris/javavm/runtime/javai_md.c \
+			../../hotspot1.3.1/src/os/linux/vm/os_linux.cpp
+
 .include <bsd.port.pre.mk>
 
 .if !defined(JDK13DIR)
@@ -191,8 +194,10 @@ pre-patch:
 
 post-patch:
 	@-${FIND} ${WRKDIR} -name SCCS -exec ${RM} -rf {} \;
-	@${REINPLACE_CMD} -e "s:%%LOCALBASE%%:${LOCALBASE}:" \
-		${WRKSRC}/../src/solaris/javavm/runtime/javai_md.c
+	@for file in ${LD_LIBRARY_PATH_FILES}; do \
+		${REINPLACE_CMD} -e "s:%%LOCALBASE%%:${LOCALBASE}:" \
+			${WRKSRC}/$${file}; \
+	done
 .if defined(WITH_NATIVE_THREADS) || defined(WITH_HOTSPOT)
 	@for file in ${PTHREAD_FILES}; do \
 		${REINPLACE_CMD} -e "s:-pthread:${PTHREAD_LIBS}:g" ${WRKSRC}/$${file}; \
