@@ -1,0 +1,6 @@
+share/games/fortune/tangshi
+share/games/fortune/tangshi.dat
+share/games/fortune/yijing
+share/games/fortune/yijing.dat
+@dirrm share/games/fortune
+@dirrm share/games
