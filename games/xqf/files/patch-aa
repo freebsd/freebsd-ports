@@ -1,0 +1,21 @@
+--- Makefile.orig	Sun Jan 17 07:40:27 1999
++++ Makefile	Fri Apr  2 11:25:01 1999
+@@ -1,7 +1,7 @@
+ CC	= gcc
+ 
+-CFLAGS	= -O2 -g -Wall `gtk-config --cflags` # -DDEBUG
+-LDFLAGS	= `gtk-config --libs`
++CFLAGS	= -O2 -g -Wall `gtk10-config --cflags` # -DDEBUG
++LDFLAGS	= `gtk10-config --libs`
+ 
+ INSTALL_ROOT = /usr/local
+ 
+@@ -26,7 +26,7 @@
+ 	    $(CC) $(CFLAGS) $(CPPFLAGS) -MM $$i; done) > Makefile
+ 
+ install:
+-	install -s -m 755 -g root -o root $(TARGET) $(INSTALL_ROOT)/bin
++	install -c -s -m 755 -g wheel -o root $(TARGET) $(INSTALL_ROOT)/bin
+ 
+ clean:
+ 	rm -f *.[oasi] *~ core $(TARGET) Makefile.old
