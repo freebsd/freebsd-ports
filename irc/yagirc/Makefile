@@ -14,7 +14,7 @@ MAINTAINER=	mph@freebsd.org
 
 LIB_DEPENDS=	Imlib.4:${PORTSDIR}/graphics/imlib \
 		Xpm.4:${PORTSDIR}/graphics/xpm \
-		esd.1:${PORTSDIR}/audio/esound
+		esd.2:${PORTSDIR}/audio/esound
 
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 
