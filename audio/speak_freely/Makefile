@@ -2,7 +2,6 @@
 # Original WWW site: http://www.fourmilab.ch/speakfree/unix/index.html
 # Version required:     6.1c
 # Date created:         18 Apr 1996
-# Whom:                 ache
 #
 # $FreeBSD$
 #
@@ -11,7 +10,7 @@ DISTNAME=       speak_freely-6.1c
 CATEGORIES=     mbone audio security
 MASTER_SITES=   http://www.fourmilab.ch/speakfree/unix/prior-releases/6.1/
 
-MAINTAINER=     ache@FreeBSD.org
+MAINTAINER=     ports@FreeBSD.org
 
 LIB_DEPENDS=    gsm.1:${PORTSDIR}/audio/gsm
 
