@@ -1,17 +1,15 @@
---- Makefile.in.orig	Thu Jul 20 03:19:15 2000
-+++ Makefile.in	Fri Jul 21 18:32:23 2000
-@@ -114,11 +114,11 @@
+--- Makefile.in.orig	Mon Jul 24 19:02:08 2000
++++ Makefile.in	Mon Jul 24 19:02:52 2000
+@@ -178,9 +178,9 @@
+ 		rm -f $(srcdir)/stamp-h.in; \
+ 		$(MAKE) $(srcdir)/stamp-h.in; \
+ 	else :; fi
+-$(srcdir)/stamp-h.in: $(top_srcdir)/configure.in $(ACLOCAL_M4) acconfig.h
+-	cd $(top_srcdir) && $(AUTOHEADER)
+-	@echo timestamp > $(srcdir)/stamp-h.in 2> /dev/null
++#$(srcdir)/stamp-h.in: $(top_srcdir)/configure.in $(ACLOCAL_M4) acconfig.h
++#	cd $(top_srcdir) && $(AUTOHEADER)
++#	@echo timestamp > $(srcdir)/stamp-h.in 2> /dev/null
  
- SUBDIRS = intl po macros src sounds
- 
--pixmapdir = $(datadir)/pixmaps/gcompris
--icondir = $(datadir)/pixmaps
-+pixmapdir = $(PACKAGE_PIXMAPS_DIR)
-+icondir = $(PIXMAPS_DIR)
- soundlistdir = $(sysconfdir)/sound/events
- Gamesdir = $(datadir)/gnome/apps/Games
--scoredir = $(localstatedir)/games
-+scoredir = $(SCORE_DIR)
- 
- leveldatadir = $(datadir)/gcompris/data
+ mostlyclean-hdr:
  
