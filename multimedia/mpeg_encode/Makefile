@@ -3,15 +3,16 @@
 # Date created:         
 # Whom:                 erich@FreeBSD.org
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1996/08/01 20:04:36 erich Exp $
 #
 
 DISTNAME=	mpeg_encode-1.5b-src
 PKGNAME=	mpeg_encode-1.5b
 CATEGORIES+=	graphics
 MASTER_SITES=	ftp://s2k-ftp.CS.Berkeley.EDU/pub/multimedia/mpeg/encode/
-WRKSRC=		${WRKDIR}/mpeg_encode
 
 MAINTAINER=	erich@FreeBSD.org
+
+WRKSRC=		${WRKDIR}/mpeg_encode
 
 .include <bsd.port.mk>
