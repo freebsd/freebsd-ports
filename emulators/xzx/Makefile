@@ -15,6 +15,7 @@ MAINTAINER=	sheldonh@FreeBSD.org
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-oss
 
 MAN1=		xzx.1
 
