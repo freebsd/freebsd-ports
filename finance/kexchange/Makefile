@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	kexchange
-PORTVERSION=	0.3.2
+PORTVERSION=	1.0
 CATEGORIES=	finance kde
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	arved
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	brueffer@phoenix-systems.de
 COMMENT=	KDE currency converter
@@ -17,8 +17,6 @@ COMMENT=	KDE currency converter
 USE_KDELIBS_VER=	3
 GNU_CONFIGURE=		yes
 USE_REINPLACE=		yes
-
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O2||g' ${WRKSRC}/${CONFIGURE_SCRIPT}
