@@ -1,6 +1,7 @@
 bin/minimalist.pl
 etc/minimalist.conf-sample
 minimalist/README
+minimalist/CHANGES.txt
 minimalist/lists.lst
 minimalist/minimalist.conf-sample
 minimalist/sample/config
