@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	gnome-industrial-theme
-PORTVERSION=	0.2.26
-PORTREVISION=	1
+PORTVERSION=	0.2.29
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	http://ftp.ximian.com/pub/xd2/redhat-9-i386/source/
+MASTER_SITES=	http://ftp.ximian.com/pub/xd2/redhat-9-i386/source/ \
+		http://www.linux-friends.de/stoerte/FreeBSD/
 DISTNAME=	ximian-artwork-${PORTVERSION}-${XIMIAN_SUBVERSION}.ximian.${XIMIAN_DISTVERSION}.src
 EXTRACT_SUFX=   .rpm
 
@@ -45,7 +45,7 @@ ICON_DIRS=	Industrial/48x48/filesystems \
 		Industrial/scalable/filesystems
 
 XIMIAN_SUBVERSION=	0
-XIMIAN_DISTVERSION=	6.1
+XIMIAN_DISTVERSION=	6.2
 
 .if defined(WITH_XMMS)
 BUILD_DEPENDS+=	xmms:${PORTSDIR}/multimedia/xmms
@@ -68,7 +68,7 @@ pre-everything::
 do-extract:
 	@${RM} -rf ${WRKDIR}
 	@${MKDIR} ${WRKDIR}
-	@if ! (cd ${WRKDIR} && rpm2cpio ${_DISTDIR}/${DISTNAME}${EXTRACT_SUFX} \
+	@if ! (cd ${WRKDIR} && rpm2cpio ${_DISTDIR}/${DISTNAME}${EXTRACT_SUFX}\
 		| cpio -i ximian-artwork-${PORTVERSION}.tar.gz 2>/dev/null \
 		&& ${GZIP_CMD} -dc ximian-artwork-${PORTVERSION}.tar.gz \
 		| ${TAR} -xf - && ${RM} ximian-artwork-${PORTVERSION}.tar.gz);\
