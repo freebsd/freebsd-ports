@@ -1,0 +1,11 @@
+This PEAR package provides a Virtual File System API, with backends for:
+* SQL
+* FTP
+* Local filesystems
+* Hybrid SQL and filesystem
+
+... and more planned. Reading/writing/listing of files are all
+supported, and there are both object-based and array-based interfaces
+to directory listings.
+
+WWW: http://pear.php.net/package/VFS
