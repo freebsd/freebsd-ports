@@ -15,6 +15,8 @@ DISTNAME=	OpenJIT-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A high-performance reflective Java Just-In-Time (JIT) bytecode compiler
 
+BROKEN=		"Configure fails with diablo-jdk13"
+
 # Only native JDKs are allowed.  Default is java/diablo-jdk13
 .if defined(WITH_JDK13)
 JAVA_HOME=	${PREFIX}/jdk1.3.1
