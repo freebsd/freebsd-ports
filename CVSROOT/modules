@@ -2221,6 +2221,7 @@ gail		ports/accessibility/gail
 gaim		ports/net/gaim
 gaim-encryption	ports/security/gaim-encryption
 gaim-guifications	ports/misc/gaim-guifications
+gaim-rss-reader	ports/net/gaim-rss-reader
 gal		ports/x11-toolkits/gal
 gal2		ports/x11-toolkits/gal2
 galax		ports/textproc/galax
