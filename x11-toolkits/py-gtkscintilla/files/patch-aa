@@ -1,27 +1,28 @@
 
 $FreeBSD$
 
---- Makefile.orig	Tue Jan  2 02:03:18 2001
-+++ Makefile	Tue Jan 16 14:34:12 2001
-@@ -1,13 +1,16 @@
+--- Makefile.orig	Mon May 14 11:45:22 2001
++++ Makefile	Tue May 15 15:41:54 2001
+@@ -1,14 +1,16 @@
  NAME = PyGtkScintilla
- VERSION = 0.1.1
+ VERSION = 0.7.0
  
 -CC = gcc
 +CC ?= gcc
  
--PYTHON_PREFIX = /usr
--INSTALL_DIR = $(PYTHON_PREFIX)/lib/python1.5/site-packages
-+PYTHON_PREFIX ?= /usr
-+PITHON_INCLUDEDIR ?= $(PYTHON_PREFIX)/include/python1.5
-+INSTALL_DIR ?= $(PYTHON_PREFIX)/lib/python1.5/site-packages
+-PYTHON_PREFIX = $(shell python -c "import sys ; print '%s/lib/python%s' % (sys.exec_prefix,sys.version[:3])")
+-PYTHON_SITE = $(PYTHON_PREFIX)/site-packages
+-PYTHON_INCLUDE = $(shell python -c "import sys ; print '%s/include/python%s' % (sys.exec_prefix,sys.version[:3])")
++#PYTHON_PREFIX = $(shell python -c "import sys ; print '%s/lib/python%s' % (sys.exec_prefix,sys.version[:3])")
++#PYTHON_SITE = $(PYTHON_PREFIX)/site-packages
++#PYTHON_INCLUDE = $(shell python -c "import sys ; print '%s/include/python%s' % (sys.exec_prefix,sys.version[:3])")
  
 -LDFLAGS = -shared `gtk-config --libs` -lgtkscintilla
--CFLAGS = `gtk-config --cflags` -I$(PYTHON_PREFIX)/include/python1.5
+-CFLAGS = `gtk-config --cflags` -I$(PYTHON_INCLUDE)
 +GTK_LDFLAGS != $(GTK_CONFIG) --libs
 +GTK_CFLAGS != $(GTK_CONFIG) --cflags
 +LDFLAGS = -pthread -shared $(GTK_LDFLAGS) -lgtkscintilla
-+CFLAGS = -D_THREAD_SAFE $(GTK_CFLAGS) -I$(PYTHON_INCLUDEDIR) -I${X11BASE}/include/scintilla
++CFLAGS += -D_THREAD_SAFE $(GTK_CFLAGS) -I$(PYTHON_INCLUDE) -I${X11BASE}/include/scintilla
  
  all: _gtkscintillamodule.so
  

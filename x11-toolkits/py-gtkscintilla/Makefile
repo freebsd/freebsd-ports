@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	py-gtkscintilla
-PORTVERSION=	0.3
+PORTVERSION=	0.7.1
 CATEGORIES=	x11-toolkits python
 MASTER_SITES=	http://www.moleskine.f2s.com/files/
 DISTNAME=	PyGtkScintilla-${PORTVERSION}
@@ -17,7 +17,7 @@ LIB_DEPENDS=	gtkscintilla.0:${PORTSDIR}/x11-toolkits/gtkscintilla
 
 USE_PYTHON=	yes
 USE_GTK=	yes
-MAKE_ENV=	PYTHON_INCLUDEDIR="${PYTHON_INCLUDEDIR}"
+MAKE_ENV=	PYTHON_INCLUDE="${PYTHON_INCLUDEDIR}"
 
 INST_DIR=	${PREFIX}/lib/${PYTHON_VERSION}/site-packages
 
