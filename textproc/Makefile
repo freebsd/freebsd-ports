@@ -528,6 +528,7 @@
     SUBDIR += texi2db
     SUBDIR += texi2html
     SUBDIR += tkdiff
+    SUBDIR += tn-aspell
     SUBDIR += tnef2txt
     SUBDIR += trang
     SUBDIR += tth
