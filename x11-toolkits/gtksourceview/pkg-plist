@@ -1,7 +1,9 @@
 include/gtksourceview-1.0/gtksourceview/gtksourcebuffer.h
+include/gtksourceview-1.0/gtksourceview/gtksourceiter.h
 include/gtksourceview-1.0/gtksourceview/gtksourcelanguage.h
 include/gtksourceview-1.0/gtksourceview/gtksourcelanguagesmanager.h
 include/gtksourceview-1.0/gtksourceview/gtksourcemarker.h
+include/gtksourceview-1.0/gtksourceview/gtksourceprintjob.h
 include/gtksourceview-1.0/gtksourceview/gtksourcestylescheme.h
 include/gtksourceview-1.0/gtksourceview/gtksourcetag.h
 include/gtksourceview-1.0/gtksourceview/gtksourcetagstyle.h
@@ -12,6 +14,24 @@ lib/libgtksourceview-1.0.a
 lib/libgtksourceview-1.0.so
 lib/libgtksourceview-1.0.so.0
 libdata/pkgconfig/gtksourceview-1.0.pc
+share/doc/gtksourceview/GtkSourceBuffer.html
+share/doc/gtksourceview/GtkSourceLanguage.html
+share/doc/gtksourceview/GtkSourceLanguagesManager.html
+share/doc/gtksourceview/GtkSourcePrintJob.html
+share/doc/gtksourceview/GtkSourceStyleScheme.html
+share/doc/gtksourceview/GtkSourceTag.html
+share/doc/gtksourceview/GtkSourceTagTable.html
+share/doc/gtksourceview/GtkSourceView.html
+share/doc/gtksourceview/gtksourceview-GtkSourceMarker.html
+share/doc/gtksourceview/gtksourceview-GtkSourceTagStyle.html
+share/doc/gtksourceview/gtksourceview-Searching-in-a-GtkSourceBuffer.html
+share/doc/gtksourceview/gtksourceview.devhelp
+share/doc/gtksourceview/home.png
+share/doc/gtksourceview/index.html
+share/doc/gtksourceview/index.sgml
+share/doc/gtksourceview/left.png
+share/doc/gtksourceview/right.png
+share/doc/gtksourceview/up.png
 share/gnome/gtksourceview-1.0/language-specs/ada.lang
 share/gnome/gtksourceview-1.0/language-specs/c.lang
 share/gnome/gtksourceview-1.0/language-specs/cpp.lang
@@ -26,9 +46,15 @@ share/gnome/gtksourceview-1.0/language-specs/perl.lang
 share/gnome/gtksourceview-1.0/language-specs/po.lang
 share/gnome/gtksourceview-1.0/language-specs/python.lang
 share/gnome/gtksourceview-1.0/language-specs/xml.lang
+share/locale/cs/LC_MESSAGES/gtksourceview-1.0.mo
+share/locale/de/LC_MESSAGES/gtksourceview-1.0.mo
 share/locale/es/LC_MESSAGES/gtksourceview-1.0.mo
+share/locale/pt/LC_MESSAGES/gtksourceview-1.0.mo
+share/locale/ru/LC_MESSAGES/gtksourceview-1.0.mo
 share/locale/sv/LC_MESSAGES/gtksourceview-1.0.mo
+share/locale/zh_TW/LC_MESSAGES/gtksourceview-1.0.mo
 @dirrm share/gnome/gtksourceview-1.0/language-specs
 @dirrm share/gnome/gtksourceview-1.0
+@dirrm share/doc/gtksourceview
 @dirrm include/gtksourceview-1.0/gtksourceview
 @dirrm include/gtksourceview-1.0
