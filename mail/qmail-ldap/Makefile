@@ -7,7 +7,6 @@
 
 PORTNAME=	qmail
 PORTVERSION=	${QMAIL_VERSION}.${LDAP_PATCH_DATE}
-PORTREVISION=	1
 CATEGORIES=	mail
 PKGNAMESUFFIX=	-ldap
 
@@ -21,16 +20,16 @@ MAINTAINER=	lioux@FreeBSD.org
 
 LIB_DEPENDS+=	ldap.1:${PORTSDIR}/net/openldap
 
-.if defined(WITH_TLS)
+.if !defined(WITHOUT_TLS)
 PKGNAMESUFFIX=	-ldap-with_tls
 USE_OPENSSL=	yes
-.endif # WITH_TLS
+.endif # WITHOUT_TLS
 
 # Patches from the main qmail port are not wanted
 MAIN_QMAIL_PORT_DNS_PATCH_BARRIER=	yes
 MAIN_QMAIL_PORT_WITH_BIG_CONCURRENCY_PATCH_BARRIER=	yes
 
-LDAP_PATCH_DATE=	20010201
+LDAP_PATCH_DATE=	20010301
 
 # Using default from master port, i.e., /var/qmail
 PREFIX?=	${QMAIL_PORT_PREFIX}
@@ -53,10 +52,10 @@ DOCFILES+=	${WRKSRC}/QLDAPINSTALL ${WRKSRC}/QLDAPNEWS \
 slaveport-pre-fetch: qmail-ldap-pre-fetch
 
 qmail-ldap-pre-fetch:
-	@${ECHO_MSG} "WITH_TLS=yes			enable SMTP TLS support"
-	@${ECHO_MSG} "WITH_LDAP_CLUSTER=yes		enable cluster support"
-	@${ECHO_MSG} "WITH_AUTOMAILDIRMAKE=yes	enable the auto-maildir-make feature"
-	@${ECHO_MSG} "WITH_AUTOHOMEDIRMAKE=yes	enable the auto-homedir-make feature"
+	@${ECHO_MSG} "WITHOUT_TLS=yes			disable SMTP TLS support"
+	@${ECHO_MSG} "WITHOUT_LDAP_CLUSTER=yes		disable cluster support"
+	@${ECHO_MSG} "WITHOUT_AUTOMAILDIRMAKE=yes	disable the auto-maildir-make feature"
+	@${ECHO_MSG} "WITHOUT_AUTOHOMEDIRMAKE=yes	disable the auto-homedir-make feature"
 	@${ECHO_MSG} "WITH_LDAP_DEBUG=yes		enable the possibility to log and"
 	@${ECHO_MSG} "				debug imap and pop"
 	@${ECHO_MSG} "WITH_CLEARTEXTPASSWD=yes	use cleartext passwords"
@@ -64,18 +63,21 @@ qmail-ldap-pre-fetch:
 slaveport-post-patch: qmail-ldap-post-patch
 
 qmail-ldap-post-patch:
-.if defined(WITH_TLS)
-	@${PERL} -pi -ne "s|#TLSON=-DTLS|TLSON=-DTLS|;s|#TLSINCLUDES=-I/usr/local/include|TLSINCLUDES=-I${OPENSSLBASE}/include|;s|#TLSLIBS=-L/usr/local/lib|TLSLIBS=-L${OPENSSLBASE}/lib|" ${WRKSRC}/Makefile
-.endif # WITH_TLS
-.if defined(WITH_LDAP_CLUSTER)
-	@${PERL} -pi -ne "s|#LDAPFLAGS=-DQLDAP_CLUSTER|LDAPFLAGS\+=-DQLDAP_CLUSTER|" ${WRKSRC}/Makefile
-.endif # WITH_LDAP_CLUSTER
-.if defined(WITH_AUTOMAILDIRMAKE)
-	@${PERL} -pi -ne "s|#MDIRMAKE=-DAUTOMAILDIRMAKE|MDIRMAKE=-DAUTOMAILDIRMAKE|" ${WRKSRC}/Makefile
-.endif # WITH_AUTOMAILDIRMAKE
-.if defined(WITH_AUTOHOMEDIRMAKE)
-	@${PERL} -pi -ne "s|#HDIRMAKE=-DAUTOHOMEDIRMAKE|HDIRMAKE=-DAUTOHOMEDIRMAKE|" ${WRKSRC}/Makefile
-.endif # WITH_AUTOHOMEDIRMAKE
+	@${PERL} -pi -ne "s|LDAPLIBS=-L/usr/local/lib|LDAPLIBS=-L${LOCALBASE}/lib|;s|LDAPINCLUDES=-I/usr/local/include|LDAPINCLUDES=-I${LOCALBASE}/include|" ${WRKSRC}/Makefile
+.if defined(WITHOUT_TLS)
+	@${PERL} -pi -ne "s|TLSON=|#TLSON=|;s|TLSINCLUDES=|#TLSINCLUDES=|;s|TLSLIBS=|#TLSLIBS=|;s|OPENSSLBIN=|#OPENSSLBIN=|" ${WRKSRC}/Makefile
+.else # !WITH_TLS
+	@${PERL} -pi -ne "s|TLSINCLUDES=-I/usr/local/include|TLSINCLUDES=-I${OPENSSLBASE}/include|;s|TLSLIBS=-L/usr/local/lib|TLSLIBS=-L${OPENSSLBASE}/lib|;s|OPENSSLBIN=/usr/local/bin/openssl|OPENSSLBIN=${OPENSSLBASE}/bin/openssl|" ${WRKSRC}/Makefile
+.endif # !WITHOUT_TLS
+.if defined(WITHOUT_LDAP_CLUSTER)
+	@${PERL} -pi -ne "s|LDAPFLAGS=-DQLDAP_CLUSTER|#LDAPFLAGS\+=-DQLDAP_CLUSTER|" ${WRKSRC}/Makefile
+.endif # WITHOUT_LDAP_CLUSTER
+.if defined(WITHOUT_AUTOMAILDIRMAKE)
+	@${PERL} -pi -ne "s|MDIRMAKE=-DAUTOMAILDIRMAKE|#MDIRMAKE=-DAUTOMAILDIRMAKE|" ${WRKSRC}/Makefile
+.endif # WITHOUT_AUTOMAILDIRMAKE
+.if defined(WITHOUT_AUTOHOMEDIRMAKE)
+	@${PERL} -pi -ne "s|HDIRMAKE=-DAUTOHOMEDIRMAKE|#HDIRMAKE=-DAUTOHOMEDIRMAKE|" ${WRKSRC}/Makefile
+.endif # WITHOUT_AUTOHOMEDIRMAKE
 .if defined(WITH_LDAP_DEBUG)
 	@${PERL} -pi -ne "s|#DEBUG=-DDEBUG|DEBUG=-DDEBUG|" ${WRKSRC}/Makefile
 .endif # WITH_LDAP_DEBUG
