@@ -8,6 +8,7 @@
     SUBDIR += SN
     SUBDIR += SpecTcl
     SUBDIR += a2dev
+    SUBDIR += aap
     SUBDIR += ac-archive
     SUBDIR += acpicatools
     SUBDIR += adabroker
