@@ -1,11 +1,16 @@
 bin/distcc
+bin/distccmon-text
 sbin/distccd
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/COPYING.FDL
+%%PORTDOCS%%%%DOCSDIR%%/DEPENDENCIES
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/distcc.sgml
+%%PORTDOCS%%%%DOCSDIR%%/protocol-1.txt
+%%PORTDOCS%%%%DOCSDIR%%/status-1.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/distcc.html
 %%PORTDOCS%%%%DOCSDIR%%/html/distcc-1.html
 %%PORTDOCS%%%%DOCSDIR%%/html/distcc-2.html
