@@ -23,7 +23,7 @@ echo "installed because a given port may depend on a specific version."
 echo
 echo "On your system, tclsh is installed under at least the following names:"
 echo
-for name in $(/bin/ls $(echo $PATH | sed 's/:/ /g') 2> /dev/null | egrep '^i?tclsh[0-9]+\.[0-9]+([a-z][a-z])?$')
+for name in $(/bin/ls $(echo $PATH | sed 's/:/ /g') 2> /dev/null | egrep '^(i?tclsh[0-9]+\.[0-9]+(\_r)?([a-z][a-z])?)|otclsh$')
 do
 	echo $name
 done
