@@ -1,0 +1,6 @@
+share/sgml/iso12083/article.dtd
+share/sgml/iso12083/book.dtd
+share/sgml/iso12083/maths.dtd
+share/sgml/iso12083/serial.dtd
+share/sgml/iso12083/catalog
+@dirrm share/sgml/iso12083
