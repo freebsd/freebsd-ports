@@ -1,11 +1,68 @@
---- Imakefile.orig	Sat Oct 12 12:26:37 2002
-+++ Imakefile	Sat Oct 12 12:28:33 2002
-@@ -13,7 +13,7 @@
+--- Imakefile.orig	Sat Nov 29 11:40:11 2003
++++ Imakefile	Sat Nov 29 11:42:31 2003
+@@ -1,22 +1,23 @@
+-/**/#
+-/**/#	This is an Imakefile for the XGobi program.  The only change that
+-/**/#	might need to be made is for the XGOBID variable.
+-/**/#
+-
+-/**/# Remove the comment delimeters on the second to next line to
+-/**/# compile for CORBA.
+-/**/# Requires some Omegahat code - see README.corba.
+-/**/#define USE_CORBA 1
+-
+-/**/#  Set XGOBID to the directory containing 
+-/**/#  the xgobi directories src, help, ps, etc.
++/*
++** This is an Imakefile for the XGobi program.  The only change that
++** might need to be made is for the XGOBID variable.
++**
++** Remove the comment delimeters on the fourth to next line to
++** compile for CORBA.
++** Requires some Omegahat code - see README.corba.
++*/
++/*#define USE_CORBA 1 */
++/*
++** Set XGOBID to the directory containing 
++** the xgobi directories src, help, ps, etc.
++*/
           XGOBID = $(PWD)/..
  
- /**/# Use the gnu C compiler
+-/**/# Use the gnu C compiler
 -            CC = gcc
++/* Use the gnu C compiler */
 +            CC ?= gcc
       CCOPTIONS = -ansi -w
  
- /**/# Or use the C compiler on your system, and whatever options it requires.
+-/**/# Or use the C compiler on your system, and whatever options it requires.
++/* Or use the C compiler on your system, and whatever options it requires.*/
+ #             CC = cc
+ #      CCOPTIONS = -xansi -n32
+ 
+@@ -29,17 +30,19 @@
+ #endif   /* End of USE_CORBA */
+ 
+ 
+-/**/#
+-/**/# RPC: Remote Procedure Calls
+-/**/#
++/*
++** RPC: Remote Procedure Calls
++*/
++
++/* If you plan to use RPC, uncomment this #define
++** RPC is the define for any kind of RPC
++*/
+ 
+-/**/# If you plan to use RPC, uncomment this #define
+-/**/# RPC is the define for any kind of RPC
+ /* #define RPC */
+ 
+-/**/# Special RPCs
++/* Special RPCs */
+ /* #define DCE_RPC */
+-/**/# If you plan to use XPLORE, uncomment this #define
++/* If you plan to use XPLORE, uncomment this #define */
+ /* #define XPLORE */
+ 
+ #ifdef HPArchitecture
