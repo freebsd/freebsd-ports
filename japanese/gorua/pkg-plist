@@ -2,7 +2,12 @@ bin/goRua.rb
 bin/new_2ch_bbsmenu.rb
 %%RUBY_SITELIBDIR%%/connect2ch.rb
 %%PORTDOCS%%share/doc/ja/goRua/README
+@exec mkdir -p %D/share/examples/goRua/dot.goRua_2ch/subject
+@exec mkdir -p %D/share/examples/goRua/dot.goRua_2ch/thread
 share/examples/goRua/dot.goRua_2ch/board_info
+share/examples/goRua/dot.goRua_2ch/bookmarks
+share/examples/goRua/dot.goRua_2ch/config
+share/examples/goRua/dot.goRua_2ch/gtkrc
 %%PORTDOCS%%@dirrm share/doc/ja/goRua
 @dirrm share/examples/goRua/dot.goRua_2ch/subject
 @dirrm share/examples/goRua/dot.goRua_2ch/thread
