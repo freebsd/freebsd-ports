@@ -6,10 +6,10 @@
 
 PORTNAME=		gambas
 PORTVERSION=		0.99
-PORTREVISION=		3
+PORTREVISION=		4
 CATEGORIES=		lang
 MASTER_SITES=		http://gambas.sourceforge.net/
-DISTNAME=		${PORTNAME}-${PORTVERSION}.RC4
+DISTNAME=		${PORTNAME}-${PORTVERSION}.RC5
 
 MAINTAINER=		thierry@FreeBSD.org
 COMMENT=		Gambas Almost Means BASic
@@ -46,6 +46,14 @@ PLIST_SUB+=		SDL=""
 .else
 CONFIGURE_ARGS+=	--disable-sdl
 PLIST_SUB+=		SDL="@comment "
+.endif
+
+.if !defined(WITHOUT_XML)
+USE_GNOME=		libxml2 libxslt
+PLIST_SUB+=		XML=""
+.else
+CONFIGURE_ARGS+=	--disable-libxml --disable-xslt
+PLIST_SUB+=		XML="@comment "
 .endif
 
 .include <bsd.port.pre.mk>

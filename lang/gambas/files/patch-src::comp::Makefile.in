@@ -1,16 +1,19 @@
---- src/comp/Makefile.in.orig	Sun Mar 14 15:21:41 2004
-+++ src/comp/Makefile.in	Tue Mar 23 22:36:49 2004
-@@ -141,10 +141,10 @@
- gbi_DEPENDENCIES = 
- gbi_LDFLAGS = 
- CFLAGS = @CFLAGS@
--COMPILE = $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
--LTCOMPILE = $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
-+COMPILE = $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) $(GBX_THREAD_INC)
-+LTCOMPILE = $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) $(GBX_THREAD_INC)
+--- src/comp/Makefile.in.orig	Mon Dec 20 12:13:43 2004
++++ src/comp/Makefile.in	Tue Dec 21 21:49:45 2004
+@@ -96,13 +96,13 @@
+ @AMDEP_TRUE@	./$(DEPDIR)/gbc_trans_tree.Po \
+ @AMDEP_TRUE@	./$(DEPDIR)/gbc_type.Po ./$(DEPDIR)/gbi.Po
+ COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
+-	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
++	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) $(GBX_THREAD_INC)
+ LTCOMPILE = $(LIBTOOL) --mode=compile $(CC) $(DEFS) \
+ 	$(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) \
+-	$(AM_CFLAGS) $(CFLAGS)
++	$(AM_CFLAGS) $(CFLAGS) $(GBX_THREAD_INC)
  CCLD = $(CC)
--LINK = $(LIBTOOL) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(LDFLAGS) -o $@
-+LINK = $(LIBTOOL) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(LDFLAGS) $(GBX_THREAD_LIB) -o $@
- DIST_COMMON =  Makefile.am Makefile.in
- 
- 
+ LINK = $(LIBTOOL) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
+-	$(AM_LDFLAGS) $(LDFLAGS) -o $@
++	$(AM_LDFLAGS) $(LDFLAGS) $(GBX_THREAD_LIB) -o $@
+ SOURCES = $(gba_SOURCES) $(gbc_SOURCES) $(gbi_SOURCES)
+ DIST_SOURCES = $(gba_SOURCES) $(gbc_SOURCES) $(gbi_SOURCES)
+ ETAGS = etags
