@@ -1,5 +1,5 @@
---- poppassd.c.orig	Fri Dec  5 13:14:06 2003
-+++ poppassd.c	Fri Dec  5 13:15:49 2003
+--- poppassd.c.orig	Thu Aug 26 23:51:33 2004
++++ poppassd.c	Thu Aug 26 23:53:03 2004
 @@ -13,11 +13,11 @@
   * 
   * Doesn't actually change any passwords itself.  It simply listens for
@@ -23,8 +23,12 @@
   * Well, maybe it is, since the use of a dedicated port makes it slightly
   * easier for a network snooper to snarf passwords off the wire.
   *
-@@ -47,7 +47,7 @@
-  * (which talks to /bin/password) is directly descended from Smith's
+@@ -44,10 +44,10 @@
+  *
+  * The front-end code (which talks to the client) is directly 
+  * descended from Leavitt's original version.  The back-end pseudo-tty stuff 
+- * (which talks to /bin/password) is directly descended from Smith's
++ * (which talks to /usr/bin/password) is directly descended from Smith's
   * version, with changes for SunOS and HP-UX by Norstad (with help from
   * sample code in "Advanced Programming in the UNIX Environment"
 - * by W. Richard Stevens). The code to report /bin/passwd error messages
@@ -32,7 +36,7 @@
   * back to the client in the final 500 response, and a new version of the
   * code to find the next free pty, is by Norstad.
   *        
-@@ -125,7 +125,7 @@
+@@ -125,12 +125,23 @@
  #include <ctype.h>
  #include <strings.h>
  #include <errno.h>
@@ -41,7 +45,23 @@
  #include <pwd.h>
  #include <string.h>
  #include <termios.h>
-@@ -145,8 +145,11 @@
+ #include <dirent.h>
++#include <libutil.h>
+ 
++/* prototypes to keep modern compilers happy */
++void ReadFromClient (char *line);
++void WriteToClient (char *fmt, ...);
++int chkPass (char *user, char *pass, struct passwd *pw);
++int dochild (int master, char *slavedev, char *user);
++int expect (int master, char **expected, char *buf);
++void getemess (int master, char **expected, char *buf);
++int match (char *str, char *pat);
++int talktochild (int master, char *user, char *oldpass, char *newpass, char *emess);
++void writestring (int fd, char *s);
+ 
+ /* Prompt strings expected from the "passwd" command. If you want
+  * to port this program to yet another flavor of UNIX, you may need to add
+@@ -145,8 +156,11 @@
  static char *P1[] =
     {"Old password:",
      "Changing password for *.\nOld password:",
@@ -53,7 +73,7 @@
      "Changing password for *\n*'s Old password:",
      ""};
  
-@@ -165,7 +168,10 @@
+@@ -165,13 +179,14 @@
      
  static char *P4[] =
     {"\n",
@@ -64,7 +84,14 @@
      ""};
  
  
-@@ -180,17 +186,14 @@
+-main (argc, argv)
+-int argc;
+-char *argv[];
++int main (int argc, char *argv[])
+ {
+      char line[BUFSIZE];
+      char user[BUFSIZE];
+@@ -180,17 +195,14 @@
       char emess[BUFSIZE];
       char *slavedev;
       struct passwd *pw, *getpwnam();
@@ -84,7 +111,7 @@
       
       WriteToClient ("200 poppassd v%s hello, who are you?", VERSION);
       ReadFromClient (line);
-@@ -212,12 +215,16 @@
+@@ -212,12 +224,16 @@
       
       if ((pw = getpwnam (user)) == NULL)
       {
@@ -102,7 +129,7 @@
  	  WriteToClient ("500 Old password is incorrect.");
  	  exit(1);
       }
-@@ -232,99 +239,96 @@
+@@ -232,215 +248,118 @@
  	  WriteToClient ("500 New password required.");
  	  exit(1);
       }
@@ -284,9 +311,13 @@
   *
   * Code adapted from "Advanced Programming in the UNIX Environment"
   * by W. Richard Stevens.
-@@ -335,105 +339,14 @@
- int master;
- char *slavedev, *user;
+  *
+  */
+ 
+-dochild (master, slavedev, user)
+-int master;
+-char *slavedev, *user;
++int dochild (int master, char *slavedev, char *user)
  {
 -   int slave;
 -   struct termios stermios;
@@ -393,7 +424,26 @@
  /*
   * writestring()
   *
-@@ -485,9 +398,11 @@
+  * Write a string in a single write() system call.
+  */
+-writestring (fd, s)
+-char *s;
++void writestring (int fd, char *s)
+ {
+      int l;
+ 
+@@ -458,9 +377,7 @@
+  * FAILURE if any errors are encountered (in which case, it can be assumed
+  * that the password wasn't changed).
+  */
+-talktochild (master, user, oldpass, newpass, emess)
+-int master;
+-char *user, *oldpass, *newpass, *emess;
++int talktochild (int master, char *user, char *oldpass, char *newpass, char *emess)
+ {
+      char buf[BUFSIZE];
+      char pswd[BUFSIZE+1];
+@@ -485,9 +402,11 @@
       }
  
       writestring(master, pswd);
@@ -406,14 +456,49 @@
       return SUCCESS;
  }
  
-@@ -630,13 +545,11 @@
+@@ -507,9 +426,7 @@
+  *		  the pattern.
+  *		2 if the string matches the full pattern.
+  */
+-match (str, pat)
+-char *str;
+-char *pat;
++int match (char *str, char *pat)
+ {
+    int result;
+    
+@@ -542,10 +459,7 @@
+  * is not an initial segment of or exact match for at least one of 
+  * the expected strings, the function returns FAILURE.
+  */
+-expect (master, expected, buf)
+-int master;
+-char **expected;
+-char *buf;
++int expect (int master, char **expected, char *buf)
+ {
+      int n, m;
+      char **s;
+@@ -596,10 +510,7 @@
+  * returning just the error message text. Newlines in the error message
+  * text are replaced by spaces.
+  */
+-getemess (master, expected, buf)
+-int master;
+-char **expected;
+-char *buf;
++void getemess (int master, char **expected, char *buf)
+ {
+    int n, m;
+    char **s;
+@@ -630,21 +541,18 @@
     }
  }
  
 -WriteToClient (fmt, va_alist)
 -char *fmt;
 -va_dcl
-+WriteToClient (char *fmt, ...)
++void WriteToClient (char *fmt, ...)
  {
  	va_list ap;
  	
@@ -422,3 +507,24 @@
  	vfprintf (stdout, fmt, ap);
  	fputs ("\r\n", stdout );
  	fflush (stdout);
+ 	va_end (ap);
+ }
+ 
+-ReadFromClient (line)
+-char *line;
++void ReadFromClient (char *line)
+ {
+ 	char *sp;
+ 	int i;
+@@ -659,10 +567,7 @@
+ 	for (sp = line; isalpha(*sp); sp++) *sp = tolower(*sp);
+ }
+ 
+-int chkPass (user, pass, pw)
+-char *user;
+-char *pass;
+-struct passwd *pw;
++int chkPass (char *user, char *pass, struct passwd *pw)
+ {
+      /*  Compare the supplied password with the password file entry */
+      if (strcmp (crypt (pass, pw->pw_passwd), pw->pw_passwd) != 0)
