@@ -3,7 +3,7 @@
 # Date created:		23.Feb.1996
 # Whom:			sanpei@yy.cs.keio.ac.jp
 #
-# $Id: Makefile,v 1.4 1998/09/05 00:34:30 max Exp $
+# $Id: Makefile,v 1.5 1998/10/16 03:10:45 jseger Exp $
 #
 
 DISTNAME=	iv-3.1
@@ -13,14 +13,12 @@ MASTER_SITES=	ftp://interviews.stanford.edu/pub/ \
 		ftp://ports.jp.freebsd.org/pub/FreeBSD-jp/ports-jp/LOCAL_PORTS/
 DISTFILES=	3.1.tar.Z iv3_1j_gamma.tar.gz
 
-MAINTAINER=	sanpei@yy.cs.keio.ac.jp
-
-BROKEN_ELF=	yes
+MAINTAINER=	sanpei@sanpei.org
 
 DIST_SUBDIR=	iv
 WRKSRC=		${WRKDIR}/iv
 PATCH_DIST_STRIP=	-p1
-MAKE_ENV+=	CPU=`make CPU`
+MAKE_ENV=	CPU=`make CPU`
 
 MANPREFIX=	${PREFIX}/interviews
 MANN=		Adjuster.n Banner.n BasicDialog.n Border.n Box2_6.n \
@@ -65,8 +63,16 @@ pre-patch:
 post-install:
 	@${INSTALL_DATA} ${WRKDIR}/idraw-3_1j.ad ${PREFIX}/interviews/lib/all/app-defaults/idraw
 # need these in ${PREFIX}/lib so that ldconfig can find them
-	@${LN} -fs ../interviews/lib/libIV.so.3.1 ${PREFIX}/lib
-	@${LN} -fs ../interviews/lib/libUnidraw.so.3.1 ${PREFIX}/lib
-	${LDCONFIG} -m ${PREFIX}/lib
+	@${LN} -fs ../interviews/lib/libIV.so.${IV_LIB_VER} ${PREFIX}/lib
+	@${LN} -fs ../interviews/lib/libUnidraw.so.${IV_LIB_VER} ${PREFIX}/lib
+	@${LN} -fs ${PREFIX}/lib/libIV.so.${IV_LIB_VER} ${PREFIX}/lib/libIV.so
+	@${LN} -fs ${PREFIX}/lib/libUnidraw.so.${IV_LIB_VER} ${PREFIX}/lib/libUnidraw.so
+	@${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
+
+.if ${PORTOBJFORMAT} == "elf"
+IV_LIB_VER=	3
+.else
+IV_LIB_VER=	3.1
+.endif

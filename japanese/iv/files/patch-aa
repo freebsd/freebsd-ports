@@ -165,44 +165,6 @@
   #undef XLibDir
 ! #define XLibDir /usr/X11R6/lib
 ! 
-*** src/config/InterViews/rules.def	Thu Sep 24 15:06:33 1992
---- /usr/oports/x11/iv/src/config/InterViews/rules.def	Thu Jun 16 18:34:12 1994
-***************
-*** 399,404 ****
---- 399,421 ----
-  /*
-   * Make a shared library.
-   */
-+ #if defined(FreeBSDArchitecture)
-+ #define NormalSunOSSharedLibraryTarget(libname,rev,depobjs,ldobjs)	@@\
-+ AOUT = Concat(lib,libname.so.rev)					@@\
-+ SHARED_CCFLAGS = SharedCCFlags						@@\
-+ 									@@\
-+ AllTarget(Concat(lib,libname.so.rev))					@@\
-+ 									@@\
-+ Concat(lib,libname.so.rev): depobjs					@@\
-+ 	@echo "building $@"						@@\
-+ 	$(RM) $@~							@@\
-+ 	$(LD) -o $@~ -Bshareable ldobjs					@@\
-+ 	$(RM) $@							@@\
-+ 	$(MV) $@~ $@							@@\
-+ 									@@\
-+ clean::									@@\
-+ 	$(RM) Concat(lib,libname.so.rev)
-+ #else
-  #ifndef NormalSunOSSharedLibraryTarget
-  #if OSMajorVersion < 5
-  #define NormalSunOSSharedLibraryTarget(libname,rev,depobjs,ldobjs)	@@\
-***************
-*** 434,439 ****
---- 451,457 ----
-  									@@\
-  clean::									@@\
-  	$(RM) Concat(lib,libname.so.rev)
-+ #endif
-  #endif
-  #endif
-  
 *** src/lib/IV-X11/xwindow.c	Mon Nov 23 12:26:43 1992
 --- /usr/oports/x11/iv/src/lib/IV-X11/xwindow.c	Tue Apr 26 17:03:44 1994
 ***************

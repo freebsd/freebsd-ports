@@ -1,0 +1,39 @@
+--- src/config/InterViews/rules.def.orig	Fri Sep 25 07:06:33 1992
++++ src/config/InterViews/rules.def	Wed Oct  7 16:25:41 1998
+@@ -399,6 +399,28 @@
+ /*
+  * Make a shared library.
+  */
++#if defined(FreeBSDArchitecture)
++#define NormalSunOSSharedLibraryTarget(libname,rev,depobjs,ldobjs)	@@\
++AOUT = Concat(lib,libname.so.rev)					@@\
++SHARED_CCFLAGS = SharedCCFlags						@@\
++									@@\
++AllTarget(Concat(lib,libname.so.rev))					@@\
++									@@\
++Concat(lib,libname.so.rev): depobjs					@@\
++	@echo "building $@"						@@\
++	$(RM) $@~							@@\
++.if $(PORTOBJFORMAT) == "elf"						@@\
++	$(CC) -shared  -Wl,-soname,Concat(lib,libname.so.rev) -o $@~ ldobjs @@\
++.else									@@\
++	$(LD) -o $@~ -Bshareable ldobjs					@@\
++.endif									@@\
++	$(RM) $@							@@\
++	$(MV) $@~ $@							@@\
++	$(LN) $@ Concat(lib,libname.so)					@@\
++									@@\
++clean::									@@\
++	$(RM) Concat(lib,libname.so.rev)
++#else
+ #ifndef NormalSunOSSharedLibraryTarget
+ #if OSMajorVersion < 5
+ #define NormalSunOSSharedLibraryTarget(libname,rev,depobjs,ldobjs)	@@\
+@@ -434,6 +456,7 @@
+ 									@@\
+ clean::									@@\
+ 	$(RM) Concat(lib,libname.so.rev)
++#endif
+ #endif
+ #endif
+ 

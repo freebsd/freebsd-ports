@@ -1,6 +1,10 @@
 @exec ln -fs ../interviews/lib/libIV.so.3.1 %D/lib
 @exec ln -fs ../interviews/lib/libUnidraw.so.3.1 %D/lib
+@exec ln -fs %D/lib/libIV.so.3.1 %D/lib/libIV.so
+@exec ln -fs %D/lib/libUnidraw.so.3.1 %D/lib/libUnidraw.so
+@unexec rm %D/lib/libIV.so
 @unexec rm %D/lib/libIV.so.3.1
+@unexec rm %D/lib/libUnidraw.so
 @unexec rm %D/lib/libUnidraw.so.3.1
 interviews/config/InterViews/template
 interviews/config/InterViews/TIFF.def
@@ -524,5 +528,42 @@ interviews/bin/ibmkmf
 interviews/bin/ivmkmf
 interviews/bin/remind
 interviews/man/refman.PS
-@exec ldconfig -m %D/lib
-@unexec /sbin/ldconfig -R
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %D/lib
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
+@dirrm interviews/bin
+@dirrm interviews/config/InterViews
+@dirrm interviews/config
+@dirrm interviews/include/Dispatch
+@dirrm interviews/include/IV-2_6/InterViews
+@dirrm interviews/include/IV-2_6
+@dirrm interviews/include/IV-X11
+@dirrm interviews/include/IV-look
+@dirrm interviews/include/InterViews/Bitmaps
+@dirrm interviews/include/InterViews
+@dirrm interviews/include/OS
+@dirrm interviews/include/Unidraw/Commands
+@dirrm interviews/include/Unidraw/Components
+@dirrm interviews/include/Unidraw/Graphic
+@dirrm interviews/include/Unidraw/Tools
+@dirrm interviews/include/Unidraw
+@dirrm interviews/include
+@dirrm interviews/lib/all/app-defaults
+@dirrm interviews/lib/all/doc-samples
+@dirrm interviews/lib/all/drawings
+@dirrm interviews/lib/all/ibuild-samples/Clock
+@dirrm interviews/lib/all/ibuild-samples/Grapher
+@dirrm interviews/lib/all/ibuild-samples/Meter
+@dirrm interviews/lib/all/ibuild-samples/Pie
+@dirrm interviews/lib/all/ibuild-samples/Punidraw
+@dirrm interviews/lib/all/ibuild-samples/Sted
+@dirrm interviews/lib/all/ibuild-samples/VMouse
+@dirrm interviews/lib/all/ibuild-samples/VWork
+@dirrm interviews/lib/all/ibuild-samples
+@dirrm interviews/lib/all/images
+@dirrm interviews/lib/all/logos
+@dirrm interviews/lib/all/styles
+@dirrm interviews/lib/all
+@dirrm interviews/lib
+@dirrm interviews/man/mann
+@dirrm interviews/man
+@dirrm interviews
