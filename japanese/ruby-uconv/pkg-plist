@@ -1,5 +1,6 @@
 %%RUBY_SITEARCHLIBDIR%%/uconv.so
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/uconv/ja/euc2unicode.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/uconv/ja/test-utf.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/uconv/ja/test_euc.txt
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/uconv/ja/test_euc.xml
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/uconv/ja/trilang.xml
