@@ -1,0 +1,10 @@
+--- modules/gsqlitebackend/ssqlite.cc	Fri Mar  5 22:06:33 2004
++++ modules/gsqlitebackend/ssqlite.cc	Fri Mar  5 22:06:56 2004
+@@ -6,6 +6,7 @@
+ 
+ #include "pdns/utility.hh"
+ #include <string>
++#include <unistd.h>
+ #include "ssqlite.hh"
+ #include <iostream>
+ 
