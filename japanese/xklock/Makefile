@@ -3,7 +3,7 @@
 # Date created:		20 April 1997
 # Whom:			nkazushi@highway.or.jp
 #
-# $Id: Makefile,v 1.1.1.1 1998/02/28 23:29:17 obrien Exp $
+# $Id: Makefile,v 1.2 1998/08/05 09:31:20 asami Exp $
 #
 
 DISTNAME=	xklock-2.7
@@ -19,6 +19,8 @@ PATCHFILES=	xklock-2.7+lx.diff.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	nkazushi@highway.or.jp
+
+BROKEN_ELF=	yes
 
 WRKSRC=	${WRKDIR}
 USE_X_PREFIX=	yes
