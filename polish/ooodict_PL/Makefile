@@ -16,4 +16,6 @@ LANGDIST+=	pl_PL.zip
 MASTERDIR=	${.CURDIR}/../../editors/ooodict-all
 RDEP=		${PORTSDIR}/polish/openoffice-1.0
 
+BROKEN=		"Checksum mismatch"
+
 .include "${MASTERDIR}/Makefile"
