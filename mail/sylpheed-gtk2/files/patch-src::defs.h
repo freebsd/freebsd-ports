@@ -1,6 +1,11 @@
---- src/defs.h.orig	Sun Sep  7 06:09:06 2003
-+++ src/defs.h	Thu Jan 22 20:23:18 2004
-@@ -64,7 +64,7 @@
+--- src/defs.h.orig	Sun Jun 13 23:42:41 2004
++++ src/defs.h	Wed Jun 16 02:57:31 2004
+@@ -60,11 +60,11 @@
+ #define CACHE_FILE		".sylpheed_cache"
+ #define MARK_FILE		".sylpheed_mark"
+ /*#warning FIXME_GTK2 */
+-#define CACHE_VERSION		2018
++#define CACHE_VERSION		2019
  #define MARK_VERSION		2
  
  #define DEFAULT_SIGNATURE	".signature"
