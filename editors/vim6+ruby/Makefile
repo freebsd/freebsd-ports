@@ -14,7 +14,7 @@ PKGNAMESUFFIX=	+ruby
 
 MAINTAINER=	knu@FreeBSD.org
 
-COMMENT=	${.CURDIR}/pkg-comment
+COMMENTFILE=	${.CURDIR}/pkg-comment
 
 #EXTRA_PATCHES=	${.CURDIR}/files/patch-*
 

@@ -8,7 +8,7 @@
 PKGNAMESUFFIX=	-canna
 
 MASTERDIR=	${.CURDIR}/../ng
-COMMENT=	${.CURDIR}/pkg-comment
+COMMENTFILE=	${.CURDIR}/pkg-comment
 DESCR=		${.CURDIR}/pkg-descr
 
 LIB_DEPENDS=	canna.1:${PORTSDIR}/japanese/Canna

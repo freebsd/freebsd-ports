@@ -72,7 +72,7 @@ FILTER=		${FILESDIR}/filter.rev
 BASE_NAME=	pips${PRTYPE}
 PAPERSIZE?=	a4
 # for slave ports
-COMMENT=	${.CURDIR}/pkg-comment
+COMMENTFILE=	${.CURDIR}/pkg-comment
 DESCR=		${.CURDIR}/pkg-descr
 .if ${PORTVERSION} == 2.0 && !defined(INTERNATIONAL_PRODUCTS)
 LANGS=		ja

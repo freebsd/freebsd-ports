@@ -19,7 +19,7 @@ MAINTAINER=	jdp@FreeBSD.org
 M3FLAGS+=	-DNOGUI
 BUILD_DEPENDS=	${PREFIX}/lib/m3/pkg/tcp/${TARGET}/libm3tcp.a:${PORTSDIR}/lang/ezm3
 PKGNAMESUFFIX=	-without-gui
-COMMENT=	${PKGDIR}/pkg-comment.nogui
+COMMENTFILE=	${PKGDIR}/pkg-comment.nogui
 DESCR=		${PKGDIR}/pkg-descr.nogui
 .else
 USE_XLIB=	yes

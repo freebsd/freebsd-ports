@@ -34,7 +34,7 @@ INSTALLS_SHLIB=	yes
 WRKSRC=		${WRKDIR}/aspell-${PORTVERSION}	# needed for slave ports / options
 DOCSDIR=	${PREFIX}/share/doc/aspell
 DATADIR=	${PREFIX}/share/aspell
-COMMENT=	${.CURDIR}/pkg-comment
+COMMENTFILE=	${.CURDIR}/pkg-comment
 DESCR=		${.CURDIR}/pkg-descr
 
 CONF_DICT_ENV=	ASPELL="${PREFIX}/bin/aspell"	\

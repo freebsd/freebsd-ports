@@ -10,7 +10,7 @@ PORTREVISION=	1
 CATEGORIES=	lang
 
 MASTERDIR=	${.CURDIR}/../../www/mod_php3
-COMMENT=	${PKGDIR}/pkg-comment.standalone
+COMMENTFILE=	${PKGDIR}/pkg-comment.standalone
 PKGMESSAGE=	mustnotexist
 PLIST=		${PKGDIR}/pkg-plist.standalone
 

@@ -11,7 +11,7 @@ PORTREVISION=	0
 CATEGORIES=	sysutils
 
 MASTERDIR=	${.CURDIR}/../cdrtools
-COMMENT=	${PKGDIR}/pkg-comment.mkisofs
+COMMENTFILE=	${PKGDIR}/pkg-comment.mkisofs
 DESCR=		${PKGDIR}/pkg-descr.mkisofs
 PLIST=		${PKGDIR}/pkg-plist.mkisofs
 

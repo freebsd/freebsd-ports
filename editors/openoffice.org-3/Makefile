@@ -51,7 +51,7 @@ LANG_EXT=01
 # Add pkg-comment and pkg-descr if available
 #
 .if exists(${.CURDIR}/pkg-comment)
-COMMENT=	${.CURDIR}/pkg-comment
+COMMENTFILE=	${.CURDIR}/pkg-comment
 .endif
 .if exists(${.CURDIR}/pkg-descr)
 DESCR=	${.CURDIR}/pkg-descr

@@ -11,7 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 
 MASTERDIR=	${.CURDIR}/../xvi-euc
 
-COMMENT=	${.CURDIR}/pkg-comment
+COMMENTFILE=	${.CURDIR}/pkg-comment
 PLIST=		${.CURDIR}/pkg-plist
 
 PROG=		xvi

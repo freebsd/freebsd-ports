@@ -24,7 +24,7 @@ ONLY_FOR_ARCHS=	i386 powerpc
 CVSDATE=	021026
 MASTERDIR=	${.CURDIR}/../../lang/python
 
-COMMENT=	${.CURDIR}/pkg-comment
+COMMENTFILE=	${.CURDIR}/pkg-comment
 DESCR=		${.CURDIR}/pkg-descr
 MD5_FILE=	${.CURDIR}/distinfo
 PLIST=		${WRKDIR}/pkg-plist

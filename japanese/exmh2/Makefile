@@ -12,7 +12,7 @@ MAINTAINER=	ports@FreeBSD.org
 JAPANESE_EXMH=	yes
 
 MASTERDIR=	${.CURDIR}/../../mail/exmh2
-COMMENT=	${.CURDIR}/pkg-comment
+COMMENTFILE=	${.CURDIR}/pkg-comment
 DESCR=		${.CURDIR}/pkg-descr
 WRKDIR=		${WRKDIRPREFIX}${.CURDIR}/work
 

@@ -12,7 +12,7 @@ PKGNAMEPREFIX=	zh-
 MAINTAINER=	hetzels@westbend.net
 
 MD5_FILE=	${.CURDIR}/distinfo
-COMMENT=	${.CURDIR}/pkg-comment
+COMMENTFILE=	${.CURDIR}/pkg-comment
 DESCR=		${.CURDIR}/pkg-descr
 PLIST=		${.CURDIR}/pkg-plist
 

@@ -49,7 +49,7 @@ PKGNAMESUFFIX=	-${LANGSUFFIX}
 .endif
 
 .if exists(${.CURDIR}/pkg-comment)
-COMMENT=	${.CURDIR}/pkg-comment
+COMMENTFILE=	${.CURDIR}/pkg-comment
 .endif
 
 .if exists(${.CURDIR}/pkg-descr)

@@ -8,7 +8,7 @@
 PKGNAMESUFFIX=	-euckr
 
 MASTERDIR=	${.CURDIR}/../../editors/nvi-m17n
-COMMENT=	${.CURDIR}/pkg-comment
+COMMENTFILE=	${.CURDIR}/pkg-comment
 
 CATEGORIES=	korean editors
 
