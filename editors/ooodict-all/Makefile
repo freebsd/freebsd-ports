@@ -36,7 +36,9 @@ INSTALLATION_BASEDIR=	OpenOffice.org1.0
 DIST_SUBDIR=		openoffice
 DICT_DIR=		${INSTALLATION_BASEDIR}/share/dict/ooo
 DICT_PATH=		${LOCALBASE}/${DICT_DIR}
-DICT_LIST=		${DICT_PATH}/dictionary.lst
+DICT_LIST_INST=		${DICT_PATH}/dictionary.lst
+DICT_PATH_PLIST=	"%D/${DICT_DIR}"
+DICT_LIST=		${DICT_PATH_PLIST}/dictionary.lst
 
 .if defined(LANGPREFIX)
 PKGNAMEPREFIX=	${LANGPREFIX}-
@@ -57,11 +59,11 @@ WRKSRC=		${WRKDIR}
 NO_BUILD=	yes
 
 .if defined(RDEP)
-BUILD_DEPENDS=	${DICT_LIST}:${RDEP}
-RUN_DEPENDS=	${DICT_LIST}:${RDEP}
+BUILD_DEPENDS=	${DICT_LIST_INST}:${RDEP}
+RUN_DEPENDS=	${DICT_LIST_INST}:${RDEP}
 .else
-#BUILD_DEPENDS=	${DICT_LIST}:${PORTSDIR}/editors/openoffice
-#RUN_DEPENDS=	${DICT_LIST}:${PORTSDIR}/editors/openoffice
+BUILD_DEPENDS=	${DICT_LIST_INST}:${PORTSDIR}/editors/openoffice
+RUN_DEPENDS=	${DICT_LIST_INST}:${PORTSDIR}/editors/openoffice
 .endif
 
 EXTRACT_CMD_L?=		unzip
@@ -81,7 +83,7 @@ post-install:
 		LANGUAGE=`${ECHO_CMD} $${ABRV} | ${SED} -e 's|_.*||'`; \
 		COUNTRY=`${ECHO_CMD} $${ABRV} | ${SED} -e 's|.*_||' | ${CUT} -c 1,2`; \
 		if ! ( ${GREP} "DICT $${LANGUAGE} $${COUNTRY}" \
-		    ${DICT_LIST} > /dev/null && test -z $${DICT_OVERWRITE} ) ; \
+		    ${DICT_LIST_INST} > /dev/null && test -z $${DICT_OVERWRITE} ) ; \
 		then  \
 			if ! (cd ${DICT_PATH} && ${EXTRACT_CMD_L} \
 				${EXTRACT_BEFORE_ARGS_L} \
@@ -94,7 +96,7 @@ post-install:
 			${ECHO_MSG} "===>   Register spelling dictionary $${LANGUAGE}_$${COUNTRY}"; \
 			${ECHO} "@exec ${ECHO} \"DICT $${LANGUAGE} $${COUNTRY} $${ABRV}\" \
 			    >> ${DICT_LIST}" >> ${TMPPLIST} ; \
-			${ECHO_CMD} "DICT $${LANGUAGE} $${COUNTRY} $${ABRV}" >> ${DICT_LIST} ; \
+			${ECHO_CMD} "DICT $${LANGUAGE} $${COUNTRY} $${ABRV}" >> ${DICT_LIST_INST} ; \
 			cd ${PREFIX} && ${FIND} -s ${DICT_DIR} -type f | \
 			    ${GREP} $${LANGUAGE}_$${COUNTRY} >> ${TMPPLIST} ; \
 			${ECHO} "@unexec ${CP} ${DICT_LIST} \
