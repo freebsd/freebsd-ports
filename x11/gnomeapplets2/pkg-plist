@@ -475,6 +475,9 @@ share/locale/zh_TW/LC_MESSAGES/gnome-applets-2.0.mo
 @dirrm share/gnome/help/gtik2_applet2/C/figures
 @dirrm share/gnome/help/gtik2_applet2/C
 @dirrm share/gnome/help/gtik2_applet2
+@dirrm share/gnome/help/gkb/C/figures
+@dirrm share/gnome/help/gkb/C
+@dirrm share/gnome/help/gkb
 @dirrm share/gnome/help/geyes/C/figures
 @dirrm share/gnome/help/geyes/C
 @dirrm share/gnome/help/geyes
@@ -487,6 +490,9 @@ share/locale/zh_TW/LC_MESSAGES/gnome-applets-2.0.mo
 @dirrm share/gnome/help/cdplayer/C/figures
 @dirrm share/gnome/help/cdplayer/C
 @dirrm share/gnome/help/cdplayer
+%%BATTERY%%@dirrm share/gnome/help/battstat/C/figures
+%%BATTERY%%@dirrm share/gnome/help/battstat/C
+%%BATTERY%%@dirrm share/gnome/help/battstat
 @dirrm share/gnome/gweather
 @dirrm share/gnome/gkb
 @dirrm share/gnome/geyes/Horrid
