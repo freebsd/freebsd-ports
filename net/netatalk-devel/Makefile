@@ -7,6 +7,7 @@
 
 PORTNAME=	netatalk
 PORTVERSION=	2.0.b1
+PORTREVISION=	1
 CATEGORIES=	net print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	netatalk
@@ -22,8 +23,10 @@ LIB_DEPENDS+=	slp.1:${PORTSDIR}/net/openslp
 
 NO_LATEST_LINK=	yes
 USE_BZIP2=	yes
+USE_ICONV=	yes
 CONFIGURE_ARGS+=	--with-tcp-wrappers \
-			--with-pkgconfdir=${PREFIX}/etc
+			--with-pkgconfdir=${PREFIX}/etc \
+			--with-libiconv=${LOCALBASE}
 .if defined(WITH_PAM)
 CONFIGURE_ARGS+=	--with-pam=/etc/pam.d
 PLIST_SUB+=		NETATALKPAM=""
