@@ -1,0 +1,69 @@
+# Example .mailcap file for FreeBSD machines
+#
+# First a note about syntax:
+#    The first token in a configuration line represents a mime type.
+#    A mime type is of the form "SubGroup/Item" and either token
+#    can be replaced by the wildcard character "*"
+# 
+#    the second token is the command that you would run
+#    when the specified mime type is encountered.  An example
+#    would be "xv %s" where %s will be replaced by a filename
+#
+#    remaining tokens represent name value pairs.
+#
+#    the "test=<SOME TEST COMMAND>" pair invokes the test command
+#    specified and checks the UNIX shell return code to see if the
+#    test passed.  If the test passes the mime mapping is made, otherwise
+#    the mapping is not made.
+#
+#    the "stream-buffer-size=<NUMBER>" pair tells the application
+#    to use a popen command to invoke the program specified and to
+#    pipe all data into the command.  Only programs that can handle
+#    piped input can use this method.  When this method is used
+#    a "%s" should not be included in the command.  You should
+#    make sure that the program you wish to use can accept piped
+#    data by trying something like this before using it:
+#       cat "YOUR_DATA_FILE_HERE" | COMMAND_TO_TEST
+#
+#    You may continue lines by using the backslash character "\"
+
+# FreeBSD doesn't seem to support `sfplay' yet, but if a port comes
+# along then the following should be enabled.
+#
+# plays AIFF files
+#audio/x-aiff; sfplay %s
+
+# plays AIFC files
+#audio/x-aifc; sfplay %s
+
+# FreeBSD has no wavplay utility either, but if someone
+# would care to port one then this can also be used.
+# plays WAV files
+#audio/x-wav; wavplay %s > /dev/null 2>&1
+
+# FreeBSD /dev/audio is sun compliant
+audio/basic; cat %s > /dev/audio
+
+# use this to play MPEG audio if you have maplay installed  
+audio/x-mpeg; maplay -; stream-buffer-size=2000
+
+# use this to play MPEG video files if you have mpeg_play installed
+video/mpeg; mpeg_play -quiet %s
+
+# All other anims go well with xanim (if installed)
+video/*; xanim %s > /dev/null 2>&1
+
+# use this to display postscript files
+application/postscript; ghostview %s
+
+# use this to display pdf files
+application/pdf; xpdf %s 2>/dev/null
+
+# this is the default for non GIF or JPEG images
+image/*; xv %s
+
+# if you would prefer an external viewer for GIF and JPEG images
+# uncomment the following lines for XV to act as your external viewer.
+#image/gif; xv %s
+#image/jpg; xv %s
+#image/jpeg; xv %s

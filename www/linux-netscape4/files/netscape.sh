@@ -1,0 +1,7 @@
+#!/bin/sh
+export XKEYSYMDB ; XKEYSYMDB=@X11BASE@/lib/X11/XKeysymDB
+export XNLSPATH  ; XNLSPATH=@X11BASE@/lib/X11/nls
+export XAPPLRESDIR ; XAPPLRESDIR=@X11BASE@/lib/X11/app-defaults
+export MOZILLA_HOME; MOZILLA_HOME=${MOZILLA_HOME:=@PREFIX@/lib/netscape}
+export CLASSPATH ; CLASSPATH=.:$MOZILLA_HOME
+exec $MOZILLA_HOME/netscape.bin $*
