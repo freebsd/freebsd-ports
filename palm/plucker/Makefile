@@ -7,6 +7,7 @@
 
 PORTNAME=	plucker
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	palm www
 MASTER_SITES=	http://downloads.plkr.org/1.2/
 DISTNAME=	${PORTNAME}_bin-${PORTVERSION}
