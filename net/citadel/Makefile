@@ -16,6 +16,7 @@ DISTNAME=	${PORTNAME}-ux-${PORTVERSION}
 MAINTAINER=	brian@shadowcom.net
 
 BROKEN=		"Does not install/package"
+NO_PACKAGE=	"Infinite loop"
 
 LIB_DEPENDS=    gdbm:${PORTSDIR}/databases/gdbm
 
