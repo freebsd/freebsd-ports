@@ -1,0 +1,37 @@
+# New ports collection makefile for:	bebocd
+# Date created:				02 July 2003
+# Whom:					Adam Weinberger <adamw@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	bebocd
+PORTVERSION=	0.3
+CATEGORIES=	audio
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
+
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	GTK2 CD Player
+
+LIB_DEPENDS=	cdaudio.1:${PORTSDIR}/audio/libcdaudio
+
+USE_X_PREFIX=	yes
+USE_GNOME=	gnomehack gtk20 gnomeprefix
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+USE_REINPLACE=	yes
+CONFIGURE_ARGS=	CPPFLAGS=-I${LOCALBASE}/include \
+		LIBS=-L${LOCALBASE}/lib
+
+post-patch:
+.if defined(CDROM) && exists(${CDROM})
+	@${REINPLACE_CMD} -e "s|/dev/cdrom|${CDROM}|" ${WRKSRC}/src/main.h
+.else
+	@${ECHO} ""
+	@${ECHO} "You can specify the default CD-ROM device by defining CDROM."
+	@${ECHO} "For example, CDROM=\"/dev/acd0c\" make"
+	@${ECHO} ""
+.endif
+
+.include <bsd.port.mk>

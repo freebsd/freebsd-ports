@@ -23,6 +23,7 @@
     SUBDIR += autools
     SUBDIR += autozen
     SUBDIR += baudline
+    SUBDIR += bebocd
     SUBDIR += beep
     SUBDIR += bladeenc
     SUBDIR += blop
