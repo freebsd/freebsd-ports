@@ -8,6 +8,7 @@
     SUBDIR += afterstep
     SUBDIR += afterstep-i18n
     SUBDIR += afterstep-stable
+    SUBDIR += ahwm
     SUBDIR += alloywm
     SUBDIR += amaterus
     SUBDIR += amiwm
