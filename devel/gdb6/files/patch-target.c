@@ -1,11 +1,14 @@
---- gdb/target.c	Thu Jan 31 17:01:21 2002
-+++ gdb/target.c	Mon May 27 18:16:52 2002
-@@ -1361,7 +1361,7 @@
+--- gdb/target.c.orig	Thu Jan 31 17:01:21 2002
++++ gdb/target.c	Fri Jun  7 16:36:06 2002
+@@ -1361,7 +1361,11 @@
    for (t = target_structs; t < target_structs + target_struct_size;
         ++t)
      {
--      if ((*t)->to_stratum == core_stratum)
++#if defined(__FreeBSD__) && !defined(__sparc64__)
 +      if ((*t)->to_stratum == (kernel_debugging ? kcore_stratum : core_stratum))
++#else
+       if ((*t)->to_stratum == core_stratum)
++#endif
  	{
  	  runable = *t;
  	  ++count;
