@@ -27,6 +27,7 @@
     SUBDIR += p5-IRC
     SUBDIR += party
     SUBDIR += pure-emacs20
+    SUBDIR += pure-xemacs21-mule
     SUBDIR += quirc
     SUBDIR += roxirc
     SUBDIR += ruby-irc
