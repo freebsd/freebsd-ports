@@ -525,7 +525,7 @@ share/ghostscript/fonts/z003034l.pfm
 @dirrm share/ghostscript/%%GS_VERSION%%/examples
 @dirrm share/ghostscript/%%GS_VERSION%%/doc
 @dirrm share/ghostscript/%%GS_VERSION%%
-@dirrm share/ghostscript
+@unexec rmdir %D/share/ghostscript 2>/dev/null || true
 %%PORTDOCS%%@dirrm share/doc/ghostscript/%%GS_VERSION%%/pcl3
 %%PORTDOCS%%@dirrm share/doc/ghostscript/%%GS_VERSION%%/npdl
 %%PORTDOCS%%@dirrm share/doc/ghostscript/%%GS_VERSION%%/mjc
