@@ -8,6 +8,10 @@
 @exec mkdir -p %D/%%MMDIR%%/logs && chmod 2775 %D/%%MMDIR%%/logs
 @exec mkdir -p %D/%%MMDIR%%/qfiles && chmod 2775 %D/%%MMDIR%%/qfiles
 @exec mkdir -p %D/%%MMDIR%%/spam && chmod 2775 %D/%%MMDIR%%/spam
+%%IMGDIR%%/PythonPowered.png
+%%IMGDIR%%/gnu-head-tiny.jpg
+%%IMGDIR%%/mailman.jpg
+%%IMGDIR%%/powerlogo.gif
 %%MMDIR%%/Mailman/Archiver/Archiver.py
 %%MMDIR%%/Mailman/Archiver/Archiver.pyc
 %%MMDIR%%/Mailman/Archiver/HyperArch.py
@@ -297,10 +301,6 @@
 %%PORTDOCS%%share/doc/mailman/README.QMAIL
 %%PORTDOCS%%share/doc/mailman/README.SENDMAIL
 %%PORTDOCS%%share/doc/mailman/UPGRADING
-www/icons/PythonPowered.png
-www/icons/gnu-head-tiny.jpg
-www/icons/mailman.jpg
-www/icons/powerlogo.gif
 @dirrm %%MMDIR%%/templates
 @dirrm %%MMDIR%%/scripts
 @dirrm %%MMDIR%%/mail
@@ -317,8 +317,6 @@ www/icons/powerlogo.gif
 @dirrm %%MMDIR%%/Mailman/Bouncers
 @dirrm %%MMDIR%%/Mailman/Archiver
 %%PORTDOCS%%@dirrm share/doc/mailman
-@unexec rmdir %D/www/icons 2>/dev/null || true
-@unexec rmdir %D/www 2>/dev/null || true
 @unexec rmdir %D/%%MMDIR%%/spam 2>/dev/null || true
 @unexec rmdir %D/%%MMDIR%%/qfiles 2>/dev/null || true
 @unexec rmdir %D/%%MMDIR%%/logs 2>/dev/null || true
@@ -329,3 +327,4 @@ www/icons/powerlogo.gif
 @unexec rmdir %D/%%MMDIR%%/archives 2>/dev/null || true
 @unexec rmdir %D/%%MMDIR%%/Mailman 2>/dev/null || true
 @unexec rmdir %D/%%MMDIR%%/ 2>/dev/null || true
+@unexec rmdir %D/%%IMGDIR%% 2>/dev/null || true

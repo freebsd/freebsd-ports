@@ -2,13 +2,13 @@
 # 	Multi-line/long description (optional).
 # 	Multi-line/long description lines must start with whitespace!
 #
-USERNAME|mailman|The username of the Mailman user
-USERID|92|The user ID of the Mailman user
+MM_USERNAME|mailman|The username of the Mailman user
+MM_USERID|92|The user ID of the Mailman user
 	It is recommended that you do not change this option.
-GROUPNAME|mailman|The group to which the Mailman user will belong
-GROUPID|92|The group ID for the Mailman user
+MM_GROUPNAME|mailman|The group to which the Mailman user will belong
+MM_GROUPID|92|The group ID for the Mailman user
 	It is recommended that you do not change this option.
-MMDIR|mailman|Mailman will be installed in ${PREFIX}/${MMDIR}
+MM_DIR|mailman|Mailman will be installed in ${PREFIX}/${MM_DIR}
 MAIL_GID|26|The group id under which your MTA performs mail delivery
 	Getting the value of MAIL_GID right is crucial to getting Mailman to
 	work with your MTA.  By default this port works with sendmail.  If
@@ -25,4 +25,5 @@ CGI_GID|80|The group id under which your web server executes CGI scripts
 	By default, this port works with the current port of Apache.  If your
 	WWW server executes CGI scripts under a different GID, you'll have to
 	set this at build time.
-IMGDIR|${PREFIX}/www/data/icons|The directory where icon images will be installed
+IMGDIR|www/icons|Icon images will be installed in ${PREFIX}/${IMGDIR}
+WITH_APACHE2|undefined|Port depends on Apache 2.x if defined, not 1.3.x
