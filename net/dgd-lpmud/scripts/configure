@@ -1,6 +1,7 @@
 cd ${WRKDIR}
 mv 2.4.5 lpmud-2.4.5
+mv rundgd runlpmud
+ln -s ${PREFIX}/dgd/doc/kfun lpmud-2.4.5/doc
 mkdir -p bin; mv hname.c bin
 cp ${FILESDIR}/oconv.c bin
 cp ${FILESDIR}/Makefile.bin bin/Makefile
-mv rundgd runlpmud

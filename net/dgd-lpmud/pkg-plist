@@ -40,6 +40,7 @@ lpmud-2.4.5/banish/wolf.o
 lpmud-2.4.5/banish/woman.o
 lpmud-2.4.5/banish/woodelf.o
 lpmud-2.4.5/banish/worker.o
+lpmud-2.4.5/doc/kfun
 lpmud-2.4.5/doc/lfun/exit
 lpmud-2.4.5/doc/lfun/query_value
 lpmud-2.4.5/doc/lfun/catch_tell
