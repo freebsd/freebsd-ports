@@ -1,14 +1,5 @@
 --- Makefile.in.orig	Mon Nov 26 21:42:32 2001
 +++ Makefile.in	Thu Jan 17 23:18:54 2002
-@@ -32,7 +32,7 @@
- prefix = @prefix@
- exec_prefix = @exec_prefix@
- srcdir = @srcdir@
--docdir = /usr/share/doc/argus-2.0
-+docdir = @prefix@/share/doc/argus-2.0
- 
- 
- #### End of system configuration section. ####
 @@ -63,28 +63,6 @@
  .PHONY: all
  
