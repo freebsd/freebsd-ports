@@ -1,0 +1,77 @@
+bin/amarok
+bin/amarokapp
+lib/libamarokarts.la
+lib/libamarokarts.so
+lib/mcop/Amarok/RawScope.mcopclass
+lib/mcop/Amarok/Synth_STEREO_XFADE.mcopclass
+lib/mcop/amarokarts.mcopclass
+lib/mcop/amarokarts.mcoptype
+share/applications/kde/amarok.desktop
+share/apps/amarok/amarokui.rc
+share/apps/amarok/data/ball.png
+share/apps/amarok/data/dot.png
+share/apps/amarok/data/grid.png
+share/apps/amarok/data/metasound.xml
+share/apps/amarok/data/startupTip.txt
+share/apps/amarok/data/wirl1.png
+share/apps/amarok/data/wirl2.png
+share/apps/amarok/images/b_next.png
+share/apps/amarok/images/b_next_down.png
+share/apps/amarok/images/b_pause.png
+share/apps/amarok/images/b_pause_down.png
+share/apps/amarok/images/b_play.png
+share/apps/amarok/images/b_play_down.png
+share/apps/amarok/images/b_prev.png
+share/apps/amarok/images/b_prev_down.png
+share/apps/amarok/images/b_stop.png
+share/apps/amarok/images/b_stop_down.png
+share/apps/amarok/images/bucky.png
+share/apps/amarok/images/description.png
+share/apps/amarok/images/ensure_visible.png
+share/apps/amarok/images/eq_active2.png
+share/apps/amarok/images/eq_inactive2.png
+share/apps/amarok/images/logo_splash.png
+share/apps/amarok/images/logo_web.png
+share/apps/amarok/images/pl_active2.png
+share/apps/amarok/images/pl_inactive2.png
+share/apps/amarok/images/time_minus.png
+share/apps/amarok/images/time_plus.png
+share/apps/amarok/images/vol_speaker.png
+share/config.kcfg/amarok.kcfg
+share/config/amarokrc
+share/doc/HTML/en/amarok/common
+share/doc/HTML/en/amarok/index.cache.bz2
+share/doc/HTML/en/amarok/index.docbook
+share/doc/HTML/en/amarok/logo.png
+share/doc/HTML/en/amarok/player_window.png
+share/doc/HTML/en/amarok/playlist_window.png
+share/icons/crystalsvg/16x16/apps/amarok.png
+share/icons/crystalsvg/22x22/apps/amarok.png
+share/icons/crystalsvg/32x32/apps/amarok.png
+share/icons/crystalsvg/48x48/apps/amarok.png
+share/icons/crystalsvg/64x64/apps/amarok.png
+@unexec rmdir %D/share/icons/crystalsvg/64x64/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/crystalsvg/64x64 2>/dev/null || true
+@unexec rmdir %D/share/icons/crystalsvg/48x48/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/crystalsvg/48x48 2>/dev/null || true
+@unexec rmdir %D/share/icons/crystalsvg/32x32/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/crystalsvg/32x32 2>/dev/null || true
+@unexec rmdir %D/share/icons/crystalsvg/22x22/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/crystalsvg/22x22 2>/dev/null || true
+@unexec rmdir %D/share/icons/crystalsvg/16x16/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/crystalsvg/16x16 2>/dev/null || true
+@unexec rmdir %D/share/icons/crystalsvg 2>/dev/null || true
+@unexec rmdir %D/share/icons 2>/dev/null || true
+@dirrm share/doc/HTML/en/amarok
+@unexec rmdir %D/share/doc/HTML/en 2>/dev/null || true
+@unexec rmdir %D/share/doc/HTML 2>/dev/null || true
+@unexec rmdir %D/share/config.kcfg 2>/dev/null || true
+@unexec rmdir %D/share/config 2>/dev/null || true
+@dirrm share/apps/amarok/images
+@dirrm share/apps/amarok/data
+@dirrm share/apps/amarok
+@unexec rmdir %D/share/apps 2>/dev/null || true
+@unexec rmdir %D/share/applications/kde 2>/dev/null || true
+@unexec rmdir %D/share/applications 2>/dev/null || true
+@dirrm lib/mcop/Amarok
+@unexec rmdir %D/lib/mcop 2>/dev/null || true
