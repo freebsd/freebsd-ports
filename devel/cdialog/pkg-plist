@@ -2,3 +2,4 @@ bin/cdialog
 include/cdialog/colors.h
 include/cdialog/dialog.h
 lib/libcdialog.a
+@dirrm include/cdialog
