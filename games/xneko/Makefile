@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	../R5contrib
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	The classic cat-and-mouse
 
 NO_WRKSUBDIR=	yes

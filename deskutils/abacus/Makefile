@@ -16,7 +16,7 @@ PATCH_SITES=	${MASTER_SITE_LOCAL}
 PATCH_SITE_SUBDIR=	steve
 PATCHFILES=	${PORTNAME}-${PORTVERSION}.patch.gz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Spread sheet for X Window System
 
 LIB_DEPENDS=	tcl82.1:${PORTSDIR}/lang/tcl82 \
