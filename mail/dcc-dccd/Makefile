@@ -6,9 +6,11 @@
 #
 
 PORTNAME=	dcc-dccd
-PORTVERSION=	1.2.39
+PORTVERSION=	1.2.44
 CATEGORIES=	mail
-MASTER_SITES=	http://www.rhyolite.com/anti-spam/dcc/source/old/
+MASTER_SITES=	http://www.rhyolite.com/anti-spam/dcc/source/old/ \
+		http://www.wa.apana.org.au/~dean/sources/ \
+		ftp://ftp.wa.apana.org.au/pub/unix/packages/
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	dean@odyssey.apana.org.au
@@ -18,9 +20,8 @@ USE_REINPLACE=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--homedir=${PREFIX}/dcc
 MANCOMPRESSED=	yes
-MAN8=		cdcc.8		dcc.8		dccd.8 \
-		dccm.8		dccproc.8	dccsight.8 \
-		dccifd.8	dbclean.8	dblist.8
+MAN8=		cdcc.8 dbclean.8 dblist.8 dcc.8 dccd.8 dccifd.8 dccm.8 \
+		dccproc.8 dccsight.8
 
 .if exists(/usr/lib/libmilter.a) || exists(${LOCALBASE}/lib/libmilter.a)
 PLIST_SUB+=	WITH_SENDMAIL=""
