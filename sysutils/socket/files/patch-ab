@@ -1,0 +1,13 @@
+--- Makefile.orig	Thu Sep 10 16:59:31 1992
++++ Makefile	Mon Apr 22 15:23:31 2002
+@@ -8,7 +8,7 @@
+ ### socket.1 in /usr/local/man/man1/socket.1
+ ### Make sure the target directories exist before doing a "make install".
+ 
+-INSTALLBASE = /usr/local
++INSTALLBASE = ${DESTDIR}/usr/local
+ INSTALLBINPATH = $(INSTALLBASE)/bin
+ INSTALLBINMODE = 755
+ INSTALLMANPATH = $(INSTALLBASE)/man
+
+
