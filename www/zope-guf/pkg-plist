@@ -1,29 +1,29 @@
-%%ZOPEBASEDIR%%/lib/python/Products/GenericUserFolder/CHANGES.txt
-%%ZOPEBASEDIR%%/lib/python/Products/GenericUserFolder/GenericUserFolder.py
-%%ZOPEBASEDIR%%/lib/python/Products/GenericUserFolder/GenericUserFolder.pyc
-%%ZOPEBASEDIR%%/lib/python/Products/GenericUserFolder/LICENCE.txt
-%%ZOPEBASEDIR%%/lib/python/Products/GenericUserFolder/Makefile
-%%ZOPEBASEDIR%%/lib/python/Products/GenericUserFolder/README.txt
-%%ZOPEBASEDIR%%/lib/python/Products/GenericUserFolder/User.py
-%%ZOPEBASEDIR%%/lib/python/Products/GenericUserFolder/User.pyc
-%%ZOPEBASEDIR%%/lib/python/Products/GenericUserFolder/WALKTHROUGH.txt
-%%ZOPEBASEDIR%%/lib/python/Products/GenericUserFolder/__init__.py
-%%ZOPEBASEDIR%%/lib/python/Products/GenericUserFolder/__init__.pyc
-%%ZOPEBASEDIR%%/lib/python/Products/GenericUserFolder/addGenericUserFolder.dtml
-%%ZOPEBASEDIR%%/lib/python/Products/GenericUserFolder/folder.gif
-%%ZOPEBASEDIR%%/lib/python/Products/GenericUserFolder/manage_cache.dtml
-%%ZOPEBASEDIR%%/lib/python/Products/GenericUserFolder/manage_listUsers.dtml
-%%ZOPEBASEDIR%%/lib/python/Products/GenericUserFolder/manage_properties.dtml
-%%ZOPEBASEDIR%%/lib/python/Products/GenericUserFolder/manage_userInfo.dtml
-%%ZOPEBASEDIR%%/lib/python/Products/GenericUserFolder/templates/dumb/docLogin.dtml
-%%ZOPEBASEDIR%%/lib/python/Products/GenericUserFolder/templates/dumb/docLoginSuccess.dtml
-%%ZOPEBASEDIR%%/lib/python/Products/GenericUserFolder/templates/dumb/docLogout.dtml
-%%ZOPEBASEDIR%%/lib/python/Products/GenericUserFolder/templates/dumb/userAuthenticate.dtml
-%%ZOPEBASEDIR%%/lib/python/Products/GenericUserFolder/templates/dumb/userDomains.dtml
-%%ZOPEBASEDIR%%/lib/python/Products/GenericUserFolder/templates/dumb/userList.dtml
-%%ZOPEBASEDIR%%/lib/python/Products/GenericUserFolder/templates/dumb/userRoles.dtml
-%%ZOPEBASEDIR%%/lib/python/Products/GenericUserFolder/user.gif
-%%ZOPEBASEDIR%%/lib/python/Products/GenericUserFolder/version.txt
-@dirrm %%ZOPEBASEDIR%%/lib/python/Products/GenericUserFolder/templates/dumb
-@dirrm %%ZOPEBASEDIR%%/lib/python/Products/GenericUserFolder/templates
-@dirrm %%ZOPEBASEDIR%%/lib/python/Products/GenericUserFolder
+%%ZOPEPRODUCTDIR%%/GenericUserFolder/CHANGES.txt
+%%ZOPEPRODUCTDIR%%/GenericUserFolder/GenericUserFolder.py
+%%ZOPEPRODUCTDIR%%/GenericUserFolder/GenericUserFolder.pyc
+%%ZOPEPRODUCTDIR%%/GenericUserFolder/LICENCE.txt
+%%ZOPEPRODUCTDIR%%/GenericUserFolder/Makefile
+%%ZOPEPRODUCTDIR%%/GenericUserFolder/README.txt
+%%ZOPEPRODUCTDIR%%/GenericUserFolder/User.py
+%%ZOPEPRODUCTDIR%%/GenericUserFolder/User.pyc
+%%ZOPEPRODUCTDIR%%/GenericUserFolder/WALKTHROUGH.txt
+%%ZOPEPRODUCTDIR%%/GenericUserFolder/__init__.py
+%%ZOPEPRODUCTDIR%%/GenericUserFolder/__init__.pyc
+%%ZOPEPRODUCTDIR%%/GenericUserFolder/addGenericUserFolder.dtml
+%%ZOPEPRODUCTDIR%%/GenericUserFolder/folder.gif
+%%ZOPEPRODUCTDIR%%/GenericUserFolder/manage_cache.dtml
+%%ZOPEPRODUCTDIR%%/GenericUserFolder/manage_listUsers.dtml
+%%ZOPEPRODUCTDIR%%/GenericUserFolder/manage_properties.dtml
+%%ZOPEPRODUCTDIR%%/GenericUserFolder/manage_userInfo.dtml
+%%ZOPEPRODUCTDIR%%/GenericUserFolder/templates/dumb/docLogin.dtml
+%%ZOPEPRODUCTDIR%%/GenericUserFolder/templates/dumb/docLoginSuccess.dtml
+%%ZOPEPRODUCTDIR%%/GenericUserFolder/templates/dumb/docLogout.dtml
+%%ZOPEPRODUCTDIR%%/GenericUserFolder/templates/dumb/userAuthenticate.dtml
+%%ZOPEPRODUCTDIR%%/GenericUserFolder/templates/dumb/userDomains.dtml
+%%ZOPEPRODUCTDIR%%/GenericUserFolder/templates/dumb/userList.dtml
+%%ZOPEPRODUCTDIR%%/GenericUserFolder/templates/dumb/userRoles.dtml
+%%ZOPEPRODUCTDIR%%/GenericUserFolder/user.gif
+%%ZOPEPRODUCTDIR%%/GenericUserFolder/version.txt
+@dirrm %%ZOPEPRODUCTDIR%%/GenericUserFolder/templates/dumb
+@dirrm %%ZOPEPRODUCTDIR%%/GenericUserFolder/templates
+@dirrm %%ZOPEPRODUCTDIR%%/GenericUserFolder

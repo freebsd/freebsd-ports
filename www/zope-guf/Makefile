@@ -7,6 +7,7 @@
 
 PORTNAME=	guf
 PORTVERSION=	1.2.4
+PORTREVISION=	1
 CATEGORIES=	www zope
 MASTER_SITES=	http://www.zope.org/Members/Zen/GenericUserFolder/
 PKGNAMEPREFIX=	zope-
@@ -16,20 +17,12 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	wjv@FreeBSD.org
 COMMENT=	A roll-your-own user folder product for Zope
 
-RUN_DEPENDS=	${LOCALBASE}/${SZOPEBASEDIR}/z2.py:${PORTSDIR}/www/zope
-
+USE_ZOPE=	yes
 USE_PYTHON=	yes
 DIST_SUBDIR=	zope
 
-# You can change this in the environment if you like
-SZOPEBASEDIR?=		www/Zope
-
-# Don't change these
-ZOPEBASEDIR=		${PREFIX}/${SZOPEBASEDIR}
 ZOPEPRODUCTNAME=	GenericUserFolder
-ZOPEPRODUCTDIR=		lib/python/Products
 
-PLIST_SUB=	ZOPEBASEDIR=${SZOPEBASEDIR}
 WRKSRC=		${WRKDIR}/${ZOPEPRODUCTDIR}/${ZOPEPRODUCTNAME}
 CPIO=		cpio --quiet -pdum -R
 
