@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.246 1999/01/07 12:05:29 asami Exp $
+# $Id: Makefile,v 1.247 1999/01/09 03:19:31 asami Exp $
 #
 
     SUBDIR += 9term
@@ -60,7 +60,6 @@
     SUBDIR += lupe
     SUBDIR += offix-clipboard
     SUBDIR += offix-execute
-    SUBDIR += p5-mkttfdir
     SUBDIR += props
     SUBDIR += rxvt
     SUBDIR += sxpc
