@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cthumb
-PORTVERSION=	3.4
+PORTVERSION=	4.0
 CATEGORIES=	graphics www
 MASTER_SITES=	http://puchol.com/cpg/software/cthumb/
 
@@ -29,12 +29,15 @@ THEMES=		blue-steel.theme \
 		classic.theme \
 		crosshair.theme \
 		film.theme \
+		flaps.theme \
 		float-medium.theme \
 		float-more.theme \
 		float-thick.theme \
 		float.theme \
+		ithumb.theme \
 		neat-round.theme \
 		neat-square.theme \
+		oak.theme \
 		postcard.theme \
 		shiny-tube.theme \
 		simpleframe.theme \
@@ -42,6 +45,7 @@ THEMES=		blue-steel.theme \
 		slides-clean.theme \
 		slides-huge.theme \
 		slides-small.theme \
+		spotlight.theme \
 		tv-large.theme \
 		tv.theme
 
