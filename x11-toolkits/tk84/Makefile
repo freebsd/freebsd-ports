@@ -341,6 +341,9 @@ MLINKS=	3DBorder.3 Tk_Alloc3DBorderFromObj.3 \
 
 .include <bsd.port.pre.mk>
 
+pre-extract:
+	@if test -e "${NONEXISTENT}"; then echo "=== Aborted, please remove ${NONEXISTENT}"; exit 1; fi
+
 post-configure:
 	${REINPLACE_CMD} -e 's=${WRKDIRPREFIX}${PORTSDIR}=$${WRKDIRPREFIX}${PORTSDIR}=' \
 		${WRKSRC}/tkConfig.sh
