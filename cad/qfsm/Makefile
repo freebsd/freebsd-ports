@@ -8,6 +8,7 @@
 
 PORTNAME=	qfsm
 PORTVERSION=	0.41
+PORTREVISION=	1
 CATEGORIES=	cad
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -20,6 +21,10 @@ USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+
+post-patch:
+	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
+		's|^AM_CXXFLAGS =.*$$|AM_CXXFLAGS =|g'
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/qfsm ${PREFIX}/bin
