@@ -258,6 +258,7 @@
     SUBDIR += irrtoolset
     SUBDIR += isc-dhcp3
     SUBDIR += isc-dhcp3-devel
+    SUBDIR += isc-dhcp3-relay
     SUBDIR += isic
     SUBDIR += jabber
     SUBDIR += jabber-aim
