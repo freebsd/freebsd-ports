@@ -7,7 +7,7 @@
 
 PORTNAME=	cyrus-sasl
 PORTVERSION=	1.5.28
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security ipv6
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/%SUBDIR%/ \
 		ftp://ftp.westbend.net/pub/cyrus-mail/%SUBDIR%/ \
@@ -46,6 +46,8 @@ MAN3=		sasl.3 sasl_authorize_t.3 sasl_callbacks.3 sasl_checkpass.3 \
 		sasl_server_new.3 sasl_server_start.3 sasl_server_step.3 \
 		sasl_setprop.3 sasl_usererr.3
 MAN8=		sasldblistusers.8 saslpasswd.8 saslauthd1.8
+
+USE_RC_SUBR=	YES
 
 USE_AUTOMAKE_VER=14
 USE_LIBTOOL=	YES
@@ -182,6 +184,7 @@ pre-fetch:
 .endif
 
 RC_SCRIPTS_SUB=	PREFIX=${PREFIX} \
+		RC_SUBR=${RC_SUBR} \
 		PWCHECK=${PWCHECK} \
 		ENABLE_PWCHECK=${ENABLE_PWCHECK} \
 		ENABLE_SASLAUTHD=${ENABLE_SASLAUTHD} \
