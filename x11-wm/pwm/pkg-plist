@@ -7,7 +7,7 @@ etc/pwm/menus-default.conf
 @unexec if cmp -s %B/sample.conf %B/pwm.conf; then rm -f %B/pwm.conf; fi
 etc/pwm/sample.conf
 @exec if [ ! -e %B/pwm.conf ]; then cp %B/sample.conf %B/pwm.conf; fi
-share/doc/pwm/LICENSE
-share/doc/pwm/config.txt
-@dirrm share/doc/pwm
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/config.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm etc/pwm
