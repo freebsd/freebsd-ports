@@ -1,1 +1,3 @@
 bin/wmpinboard
+share/doc/wmpinboard/README
+@dirrm share/doc/wmpinboard

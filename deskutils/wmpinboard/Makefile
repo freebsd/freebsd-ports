@@ -1,12 +1,12 @@
 # New ports collection makefile for:	wmpinboard
-# Version required:	0.7
-# Date created:		17 January 1999
-# Whom:			Jim Mock <jim@phrantic.phear.net>
+# Version required:		0.8.2
+# Date created:			17 January 1999
+# Whom:				Jim Mock <jim@phrantic.phear.net>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/01/26 03:55:45 steve Exp $
 #
 
-DISTNAME=	wmpinboard-0.7
+DISTNAME=	wmpinboard-0.8.2
 CATEGORIES=	deskutils afterstep windowmaker
 MASTER_SITES=	http://www.tu-ilmenau.de/~gomar/stuff/wmpinboard/
 
@@ -21,5 +21,14 @@ NO_INSTALL_MANPAGES=	yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/wmpinboard ${X11BASE}/bin
+
+post-install:
+	@${ECHO} "              "
+	@${ECHO} "------------------------------------------------------------"
+	@${ECHO} "===>  Installing README in ${PREFIX}/share/doc/wmpinboard"
+	@${ECHO} "------------------------------------------------------------"
+	@${ECHO} "              "
+	@${MKDIR} ${PREFIX}/share/doc/wmpinboard && chmod a+rx ${PREFIX}/share/doc/wmpinboard
+	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/wmpinboard
 
 .include <bsd.port.mk>
