@@ -67,7 +67,7 @@ bin/navigator-%%BROWSER_VER%%
 %%NSUBDIR%%/java/classes/jio40.jar
 %%NSUBDIR%%/java/classes/joptio40.jar
 %%NSUBDIR%%/java/classes/jsd10.jar
-%%NSUBDIR%%/java/classes/ldap30.jar
+%%NSUBDIR%%/java/classes/ldap40.jar
 %%NSUBDIR%%/java/classes/resource.jar
 %%NSUBDIR%%/java/classes/scd10.jar
 %%NSUBDIR%%/mailcap
