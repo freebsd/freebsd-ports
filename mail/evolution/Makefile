@@ -6,18 +6,19 @@
 #
 
 PORTNAME=	evolution
-PORTVERSION=	1.0.2
-PORTREVISION=	2
+PORTVERSION=	1.0.3
 CATEGORIES=	mail gnome
-MASTER_SITES=	http://www.sleepycat.com/update/3.1.17/:db \
-		${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	stable/sources/evolution
+MASTER_SITES=	${MASTER_SITE_GNOME} \
+		${MASTER_SITE_LOCAL:S,$,:local,}
+MASTER_SITE_SUBDIR=	stable/sources/evolution \
+			sobomax/:local
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
-		db-3.1.17.tar.gz:db
+		db-3.1.17${EXTRACT_SUFX}:local
+DIST_SUBDIR=	gnome
 
 PATCH_SITES=	${MASTER_SITE_LOCAL}
 PATCH_SITE_SUBDIR=	sobomax
-PATCHFILES=	evolution-${PORTVERSION}-reply-to.diff.gz
+PATCHFILES=	evolution-1.0.2-reply-to.diff.gz
 
 MAINTAINER=	gnome@FreeBSD.org
 
@@ -32,6 +33,7 @@ BUILD_DEPENDS+=	${X11BASE}/lib/gnome-pilot/conduits/libemail_conduit.so:${PORTSD
 RUN_DEPENDS+=	${X11BASE}/lib/gnome-pilot/conduits/libemail_conduit.so:${PORTSDIR}/palm/gnomepilot-conduits
 .endif
 
+USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_BISON=	yes
 USE_X_PREFIX=	yes
