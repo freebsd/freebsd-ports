@@ -1,0 +1,14 @@
+--- src/wmtaskbar.cc.orig      Sun May 23 00:57:11 1999
++++ src/wmtaskbar.cc   Sun May 23 00:57:25 1999
+@@ -331,9 +331,9 @@
+ 
+ /** Use Linux 2.0 Penguin as start button */
+ #ifndef START_PIXMAP
+-#define START_PIXMAP "linux.xpm"
++//#define START_PIXMAP "linux.xpm"
+ //#define START_PIXMAP "debian.xpm"
+-//#define START_PIXMAP "bsd-daemon.xpm"
++#define START_PIXMAP "bsd-daemon.xpm"
+ //#define START_PIXMAP "start.xpm"
+ //#define START_PIXMAP "xfree86os2.xpm"
+ #endif
