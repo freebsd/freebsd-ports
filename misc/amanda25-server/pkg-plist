@@ -1,4 +1,3 @@
-lib/libamserver.a
 %%PLOT%%libexec/amanda/amcat.awk
 libexec/amanda/amcleanupdisk
 libexec/amanda/amindexd
@@ -14,6 +13,7 @@ libexec/amanda/chg-manual
 libexec/amanda/chg-mtx
 libexec/amanda/chg-multi
 libexec/amanda/chg-rth
+libexec/amanda/chg-scsi
 %%SCSICHG%%libexec/amanda/chg-scsi
 libexec/amanda/chg-zd-mtx
 libexec/amanda/driver

@@ -1,6 +1,3 @@
-lib/libamanda.a
-lib/libamclient.a
-lib/libamtape.a
 libexec/amanda/amandad
 libexec/amanda/amidxtaped
 libexec/amanda/calcsize
@@ -26,6 +23,7 @@ share/amanda/INTERNALS
 share/amanda/KERBEROS
 share/amanda/LABEL.PRINTING
 share/amanda/MULTITAPE
+share/amanda/RAIT
 share/amanda/PORT.USAGE
 share/amanda/RESTORE
 share/amanda/SAMBA
@@ -34,6 +32,7 @@ share/amanda/SYSTEM.NOTES
 share/amanda/TAPE.CHANGERS
 share/amanda/TAPETYPES
 share/amanda/UPGRADE
+share/amanda/VTAPE-API
 share/amanda/WHATS.NEW
 share/amanda/WISHLIST
 share/amanda/YEAR2000
