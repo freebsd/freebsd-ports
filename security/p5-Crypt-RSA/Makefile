@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Crypt-RSA
-PORTVERSION=	1.48
+PORTVERSION=	1.50
 CATEGORIES=	security perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Crypt
@@ -15,21 +15,20 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	mharo@FreeBSD.org
 COMMENT=	RSA public-key cryptosystem
 
-PERLBASE=	${SITE_PERL}
-
-BUILD_DEPENDS=	${PERLBASE}/${PERL_ARCH}/Digest/SHA1.pm:${PORTSDIR}/security/p5-Digest-SHA1 \
-		${PERLBASE}/${PERL_ARCH}/Crypt/Blowfish.pm:${PORTSDIR}/security/p5-Crypt-Blowfish \
-		${PERLBASE}/Crypt/Random.pm:${PORTSDIR}/security/p5-Crypt-Random \
-		${PERLBASE}/Crypt/Primes.pm:${PORTSDIR}/security/p5-Crypt-Primes \
-		${PERLBASE}/Crypt/CBC.pm:${PORTSDIR}/security/p5-Crypt-CBC \
-		${PERLBASE}/Convert/ASCII/Armor.pm:${PORTSDIR}/converters/p5-Convert-ASCII-Armour \
-		${PERLBASE}/Data/Buffer.pm:${PORTSDIR}/misc/p5-Data-Buffer \
-		${PERLBASE}/Sort/Versions.pm:${PORTSDIR}/devel/p5-Sort-Versions \
-		${PERLBASE}/Class/Loader.pm:${PORTSDIR}/devel/p5-Class-Loader \
-		${PERLBASE}/${PERL_ARCH}/Digest/MD2.pm:${PORTSDIR}/security/p5-Digest-MD2 \
-		${PERLBASE}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
-		${PERLBASE}/Tie/EncryptedHash.pm:${PORTSDIR}/security/p5-Tie-EncryptedHash \
-		${PERLBASE}/MD5.pm:${PORTSDIR}/security/p5-MD5
+BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Digest/SHA1.pm:${PORTSDIR}/security/p5-Digest-SHA1 \
+		${SITE_PERL}/${PERL_ARCH}/Crypt/Blowfish.pm:${PORTSDIR}/security/p5-Crypt-Blowfish \
+		${SITE_PERL}/Crypt/Random.pm:${PORTSDIR}/security/p5-Crypt-Random \
+		${SITE_PERL}/Crypt/Primes.pm:${PORTSDIR}/security/p5-Crypt-Primes \
+		${SITE_PERL}/Crypt/CBC.pm:${PORTSDIR}/security/p5-Crypt-CBC \
+		${SITE_PERL}/Convert/ASCII/Armor.pm:${PORTSDIR}/converters/p5-Convert-ASCII-Armour \
+		${SITE_PERL}/Data/Buffer.pm:${PORTSDIR}/misc/p5-Data-Buffer \
+		${SITE_PERL}/Sort/Versions.pm:${PORTSDIR}/devel/p5-Sort-Versions \
+		${SITE_PERL}/Class/Loader.pm:${PORTSDIR}/devel/p5-Class-Loader \
+		${SITE_PERL}/${PERL_ARCH}/Digest/MD2.pm:${PORTSDIR}/security/p5-Digest-MD2 \
+		${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
+		${SITE_PERL}/Tie/EncryptedHash.pm:${PORTSDIR}/security/p5-Tie-EncryptedHash \
+		${SITE_PERL}/MD5.pm:${PORTSDIR}/security/p5-MD5
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
