@@ -29,7 +29,7 @@
 + all: mshell
 + 
   mshell: $(OBJS)
-! 	cc $(CFLAGS) $(OBJS) -lncurses -ltermcap -o mshell
+! 	cc $(CFLAGS) $(OBJS) -lncurses -o mshell
   
   $(OBJS) : mshell.h
   
