@@ -1,0 +1,7 @@
+pymsgauth is a toolkit for automatically and securely dealing with qsecretary
+confirmation notices.
+
+pymsgauth is written in Python, and licensed under the GNU General Public
+License version 2.
+
+WWW:	http://www.qcc.ca/~charlesc/software/pymsgauth/pymsgauth.html
