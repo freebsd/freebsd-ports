@@ -414,8 +414,8 @@ post-patch:
 		${PERL} -pi -e "s|<malloc.h>|<stdlib.h>|g"
 
 fix-kdewrappers:
-	@${PERL} -pi -e 's|"Exec", "\\"\<progpath\>/program/|"Exec", "\\"${PREFIX}/bin/openoffice_${RELEASE_NR}-|' \
-		${WRKSRC}/../sysui/oounix/office/kde2/kdeint
+# 	@${PERL} -pi -e 's|"Exec", "\\"\<progpath\>/program/|"Exec", "\\"${PREFIX}/bin/openoffice_${RELEASE_NR}-|' \
+#		${WRKSRC}/../sysui/oounix/office/kde2/kdeint
 
 fix-gnomewrappers:
 	@${PERL} -pi -e 's|"Exec", "<progpath>/program/|"Exec", "${PREFIX}/bin/openoffice_${RELEASE_NR}-|' \
