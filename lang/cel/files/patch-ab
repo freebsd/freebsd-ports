@@ -1,0 +1,11 @@
+--- vm/Makefile.orig	Tue Feb 27 03:03:15 2001
++++ vm/Makefile	Tue Feb 27 03:03:19 2001
+@@ -23,7 +23,7 @@
+ FILES= atom.o crc.o memstream.o runtime.o sd2cel.o cel2sd.o svm32.o assemble.o array.o compiler.o codegen.o while.o
+ 
+ cel: main.o $(FILES)
+-	$(CC) $(CFLAGS) -export-dynamic -o cel $^ ../hash/libhash.a ../celmalloc/celmalloc.o -ldl
++	$(CC) $(CFLAGS) -export-dynamic -o cel $^ ../hash/libhash.a ../celmalloc/celmalloc.o
+ 
+ celdump: celdump.o $(FILES)
+ 	$(CC) $(CFLAGS) -o celdump  $^ ../hash/libhash.a ../celmalloc/celmalloc.o 

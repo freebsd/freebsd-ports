@@ -1,6 +1,5 @@
-bin/aq
+bin/cel
 %%PORTDOCS%%share/doc/cel/CoreArchitecture.html
-%%PORTDOCS%%share/doc/cel/Credits
 %%PORTDOCS%%share/doc/cel/DefaultProtos
 %%PORTDOCS%%share/doc/cel/Linker.html
 %%PORTDOCS%%share/doc/cel/Logs.html

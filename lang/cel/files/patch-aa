@@ -1,7 +1,12 @@
---- Makefile.notreal	Thu Jan  1 01:00:00 1970
-+++ Makefile		Mon Jan  1 16:25:56 2001
-@@ -0,0 +1,4 @@
-+all:
-+	cd aqmalloc; ${MAKE}
-+	cd hash; ${MAKE} libhash.a
-+	cd vm; ${MAKE}
+--- Makefile.orig	Tue Feb 27 03:02:51 2001
++++ Makefile	Tue Feb 27 03:02:58 2001
+@@ -1,9 +1,7 @@
+-CFLAGS = -O -g
+ 
+ # DEPENDENCIES
+ 
+ SUBDIRS=	celmalloc hash vm kits
+-MAKE=		make
+ 
+ all:
+ 	for i in $(SUBDIRS); do \
