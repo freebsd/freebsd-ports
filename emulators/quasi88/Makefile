@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	quasi88
-PORTVERSION=	0.4.3
+PORTVERSION=	0.4.4
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.117.ne.jp/~show/pc8801/
 EXTRACT_SUFX=	.tgz
@@ -20,9 +20,16 @@ DATAFILES=	FAQ FORMAT GET-IMAGE HISTORY MANUAL QUASI88 _quasi88rc
 
 .if !defined(WITH_SOUND)
 pre-everything::
-	@ ${ECHO} "You can make quasi88 use sound by defining WITH_SOUND"
+	@ ${ECHO_MSG} "===> If you want to enable sound, use \"make WITH_SOUND=yes\"."
 .else
-EXTRA_PATCHES=	${FILESDIR}/extra-patch-aa
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-aa
+.endif
+
+.if !defined(WITH_DGA)
+pre-everything::
+	@ ${ECHO_MSG} "===> If you want to enable sound, use \"make WITH_DGA=yes\"."
+.else
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-ab
 .endif
 
 do-install:

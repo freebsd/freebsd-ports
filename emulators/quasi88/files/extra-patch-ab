@@ -1,0 +1,13 @@
+--- Makefile.orig	Wed Dec 26 13:08:55 2001
++++ Makefile	Wed Jan  2 08:52:58 2002
+@@ -82,8 +82,8 @@
+ # DGA の設定です。興味のある方はどうぞ・・・
+ #	DGAを有効にするには、root権限が必要なので、ご注意下さい。
+ 
+-# MDGA		= -DUSE_DGA
+-# DGA_LIB 	= -lXxf86dga
++MDGA		= -DUSE_DGA
++DGA_LIB 	= -lXxf86dga
+ 
+ 
+ 
