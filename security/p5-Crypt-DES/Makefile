@@ -3,7 +3,7 @@
 # Date created:				October 20th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.8 1998/09/03 13:45:44 asami Exp $
+# $Id: Makefile,v 1.9 1998/09/15 21:31:52 asami Exp $
 #
 
 DISTNAME=	Crypt-DES-1.0
@@ -14,12 +14,12 @@ MASTER_SITE_SUBDIR=	Crypt
 
 MAINTAINER=	jfitz@FreeBSD.ORG
 
-BROKEN=		perl5 upgrade
+RESTRICTED=	"Crypto; export-controlled"
 
 USE_PERL5=	YES
 
+MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Crypt::DES.3
-MANPREFIX=	${PREFIX}/lib/perl5
 
 do-configure:
 		@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL
