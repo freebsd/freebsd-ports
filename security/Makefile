@@ -8,6 +8,7 @@
     SUBDIR += amavis-perl
     SUBDIR += apg
     SUBDIR += beecrypt
+    SUBDIR += bfbtester
     SUBDIR += bjorb
     SUBDIR += bro
     SUBDIR += bugs
