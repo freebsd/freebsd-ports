@@ -94,15 +94,8 @@ bin/epp
 %%DATADIR%%/misc/e-kde.desktop
 %%DATADIR%%/misc/enlightenment.desktop
 %%DATADIR%%/scripts/e_cache_clean
-%%DATADIR%%/scripts/e_cache_clean.pl
 %%DATADIR%%/scripts/e_cache_query
-%%DATADIR%%/scripts/e_cache_query.pl
-%%DATADIR%%/scripts/e_gen_gnome_menu
-%%DATADIR%%/scripts/e_gen_kde_menu
 %%DATADIR%%/scripts/e_gen_menu
-%%DATADIR%%/scripts/e_gen_menu.e16_5
-%%DATADIR%%/scripts/e_gen_menu.pl
-%%DATADIR%%/scripts/enlightenment.install
 %%DATADIR%%/themes/winter/ABOUT/MAIN
 %%DATADIR%%/themes/winter/ABOUT/MAIN.ko
 %%DATADIR%%/themes/winter/ABOUT/bg.png
