@@ -290,6 +290,7 @@
     SUBDIR += p5-HTML
     SUBDIR += p5-HTML-CalendarMonthSimple
     SUBDIR += p5-HTML-Clean
+    SUBDIR += p5-HTML-Element-Extended
     SUBDIR += p5-HTML-Embperl
     SUBDIR += p5-HTML-FillInForm
     SUBDIR += p5-HTML-Mason
