@@ -26,7 +26,7 @@ for ver in latest full; do
 #    cd $home && ${scripts}/comparelogs ${arch} $num-$ver 4-$ver
 #    cd $home && ${scripts}/comparelogs ${arch} 4-$ver $num-$ver
 #  done
-  cd $home && ${scripts}/bothlogs ${arch} [45]-$ver
+  cd $home && ${scripts}/bothlogs ${arch} 4-$ver 5-$ver
 done
 
 rm -f $lock
