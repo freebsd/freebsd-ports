@@ -1,0 +1,11 @@
+--- dialects/freebsd/machine.h.orig	Mon Jul 29 11:32:54 1996
++++ dialects/freebsd/machine.h	Tue Aug  6 18:55:07 1996
+@@ -274,7 +274,7 @@
+  * (the one that its user logged on with) of the lsof process.
+  */
+ 
+-/* #define	HASSECURITY	1 */
++#define	HASSECURITY	1
+ 
+ 
+ /*
