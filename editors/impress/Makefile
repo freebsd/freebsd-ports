@@ -7,15 +7,16 @@
 
 PORTNAME=	impress
 PORTVERSION=	1.1b9
-CATEGORIES=	editors
+PORTREVISION=	1
+CATEGORIES=	editors tk84
 MASTER_SITES=	http://www.ntlug.org/~ccox/impress/
 DISTNAME=	imp${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Publishing and presentation tool
 
-RUN_DEPENDS=    wish8.3:${PORTSDIR}/x11-toolkits/tk83
+RUN_DEPENDS=    wish8.4:${PORTSDIR}/x11-toolkits/tk84
 
-WRKSRC=		${WRKDIR}/${PKGNAME}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 .include <bsd.port.mk>
