@@ -26,6 +26,17 @@ t3x/r8/bin/txprint
 t3x/r8/bin/txsum
 t3x/r8/bin/txtrn
 t3x/r8/bin/txx
+t3x/r8/classes/2/CLASSNDX
+t3x/r8/classes/2/char.cls
+t3x/r8/classes/2/iostream.cls
+t3x/r8/classes/2/memory.cls
+t3x/r8/classes/2/rtcode.cls
+t3x/r8/classes/2/string.cls
+t3x/r8/classes/2/system.cls
+t3x/r8/classes/2/t3x.cls
+t3x/r8/classes/2/tcode.cls
+t3x/r8/classes/2/ttyctl.cls
+t3x/r8/classes/2/util.cls
 t3x/r8/classes/CLASSNDX
 t3x/r8/classes/char.cls
 t3x/r8/classes/char.dir
@@ -76,7 +87,10 @@ t3x/r8/system.txrc
 t3x/r8/txprint.rules
 @unexec rm -f %D/t3x/r8/classes/CLASSND-
 @unexec rm -f %D/t3x/r8/classes/CLASSNDX
+@unexec rm -f %D/t3x/r8/classes/2/CLASSND-
+@unexec rm -f %D/t3x/r8/classes/2/CLASSNDX
 @dirrm t3x/r8/bin
+@dirrm t3x/r8/classes/2
 @dirrm t3x/r8/classes
 @dirrm t3x/r8/lib
 @dirrm t3x/r8/doc
