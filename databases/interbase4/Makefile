@@ -3,7 +3,7 @@
 # Date created:				1998-nov-01
 # Whom:					Berend de Boer <berend@pobox.com>
 #
-# $Id: Makefile,v 1.1.1.1 1998/12/26 08:54:56 kuriyama Exp $
+# $Id: Makefile,v 1.2 1998/12/26 19:42:05 obrien Exp $
 #
 
 DISTNAME=	IB_4.0_FreeBSD
@@ -12,6 +12,8 @@ CATEGORIES=	databases
 MASTER_SITES=	http://iblinux.rios.co.jp/dloadfb/
 
 MAINTAINER=	berend@pobox.com
+
+ONLY_FOR_ARCHS=	i386
 
 NO_WRKSUBDIR=
 NO_BUILD=
