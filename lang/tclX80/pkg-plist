@@ -3,13 +3,21 @@ bin/tclhelp
 bin/wishx
 include/tclExtend.h
 lib/libtclx802.a
-@exec ranlib %D/%F
 lib/libtclx802.so.1.2
+lib/libtclx802.so
 lib/libtkx802.a
-@exec ranlib %D/%F
 lib/libtkx802.so.1.2
-@exec /sbin/ldconfig -m %D/lib
+lib/libtkx802.so
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
+lib/tclX8.0.2/tclx.tcl
+lib/tclX8.0.2/tcl.tlib
+lib/tclX8.0.2/tcl.tndx
 lib/tclX8.0.2/buildidx.tcl
+lib/tclX8.0.2/autoload.tcl
+lib/tclX8.0.2/tclxConfig.sh
+lib/tclX8.0.2/pkgIndex.tcl
+lib/tclX8.0.2/tclXAppInit.c
 lib/tclX8.0.2/help/Tcl.brf
 lib/tclX8.0.2/help/TclX.brf
 lib/tclX8.0.2/help/help
@@ -199,12 +207,10 @@ lib/tclX8.0.2/help/tcl/variables/trace
 lib/tclX8.0.2/help/tcl/variables/unset
 lib/tclX8.0.2/help/tcl/variables/upvar
 lib/tclX8.0.2/help/tcl/variables/variable
-lib/tclX8.0.2/pkgIndex.tcl
-lib/tclX8.0.2/tcl.tlib
-lib/tclX8.0.2/tcl.tndx
-lib/tclX8.0.2/tclXAppInit.c
-lib/tclX8.0.2/tclx.tcl
-lib/tclxConfig.sh
+lib/tkX8.0.2/tkxConfig.sh
+lib/tkX8.0.2/pkgIndex.tcl
+lib/tkX8.0.2/tkx.tcl
+lib/tkX8.0.2/tkXAppInit.c
 lib/tkX8.0.2/help/Tk.brf
 lib/tkX8.0.2/help/tk/control/bell
 lib/tkX8.0.2/help/tk/control/bind
@@ -259,34 +265,6 @@ lib/tkX8.0.2/help/tk/widgets/tk_messageBox
 lib/tkX8.0.2/help/tk/widgets/tk_optionMenu
 lib/tkX8.0.2/help/tk/widgets/tk_popup
 lib/tkX8.0.2/help/tk/widgets/toplevel
-lib/tkX8.0.2/pkgIndex.tcl
-lib/tkX8.0.2/tkXAppInit.c
-lib/tkX8.0.2/tkx.tcl
-lib/tkxConfig.sh
-man/man3/TclCommandWriting.3.gz
-man/man3/TclX_KeyedListDelete.3
-man/man3/TclX_KeyedListGet.3
-man/man3/TclX_KeyedListGetKeys.3
-man/man3/TclX_KeyedListSet.3
-man/man3/TclX_Main.3.gz
-man/man3/TclX_NewKeyedListObj.3
-man/man3/Tcl_HandleAlloc.3.gz
-man/man3/Tcl_HandleFree.3.gz
-man/man3/Tcl_HandleTblInit.3.gz
-man/man3/Tcl_HandleTblRelease.3.gz
-man/man3/Tcl_HandleTblUseCount.3.gz
-man/man3/Tcl_HandleWalk.3.gz
-man/man3/Tcl_HandleXlate.3.gz
-man/man3/Tclx_Init.3.gz
-man/man3/Tclxcmd_Init.3.gz
-man/man3/TkX_Main.3.gz
-man/man3/Tkx_Init.3.gz
-man/mann/Tcl_DisplayMemory.n.gz
-man/mann/Tcl_InitMemory.n.gz
-man/mann/Tcl_ValidateAllMemory.n.gz
-man/mann/ckalloc.n.gz
-man/mann/ckfree.n.gz
-man/mann/memory.n.gz
 @dirrm lib/tclX8.0.2/help/tcl/variables
 @dirrm lib/tclX8.0.2/help/tcl/time
 @dirrm lib/tclX8.0.2/help/tcl/tclshell
