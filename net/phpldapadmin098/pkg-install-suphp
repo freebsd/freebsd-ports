@@ -1,0 +1,98 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+PATH=/usr/sbin:/usr/bin:/bin ; export PATH
+
+pladir=%%PREFIX%%/%%PLADIR%%
+plausr=%%PLAUSR%%
+plagrp=%%PLAGRP%%
+
+plagcos="phpLDAPadmin Owner"
+plahome=/nonexistent
+plashell=/sbin/nologin
+
+create_group() {
+    local user group gcos home shell
+
+    user=$1
+    group=$2
+    gcos=$3
+    home=$4
+    shell=$5
+
+    if pw groupadd -n $group ; then
+	echo "===> Group $group created"
+    else
+	cat <<-EOERRORMSG
+	*** Failed to create the $group group.
+
+	Please add the $user user and $group group
+	manually with the commands:
+
+	    pw groupadd -n $group
+	    pw useradd -n $user -g $group -c "$gcos" \\
+	        -d $home -s $shell -h -
+	    
+	and retry installing this package.
+	EOERRORMSG
+	exit 1
+    fi
+}
+
+
+create_user() {
+    local user group gcos home shell
+
+    user=$1
+    group=$2
+    gcos=$3
+    home=$4
+    shell=$5
+
+    if pw useradd -n $user -g $group -c "$gcos" -d $home -s $shell -h - ; then
+	echo "===> Created $user user"
+    else
+	cat <<-EOERRORMSG
+	*** Failed to create the $user user.
+
+	Please add the $user user manually with the command:
+
+	    pw useradd -n $user -g $group -c "$gcos" \\
+		        -d $home -s $shell -h -
+
+	and retry installing this package.
+	EOERRORMSG
+	exit 1
+    fi
+}
+
+
+case $2 in
+    PRE-INSTALL)
+
+        # Create the pla user and group if they do not already exist
+
+        if pw user show -n $plausr >/dev/null 2>&1 ; then
+	    echo "===> Using pre-existing user $plausr"
+	else
+	    if ! pw group show -n $plagrp >/dev/null 2>&1 ; then
+		create_group $plausr $plagrp "$plagcos" $plahome \
+		    $plashell
+	    fi
+	    create_user $plausr $plagrp "$plagcos" $plahome $plashell
+	fi
+	;;
+    POST-INSTALL)
+
+    	# Change ownership of the phpLDAPadmin directory
+
+        echo "===> Adjusting file ownership in $pladir"
+        chown -R $plausr:$plagrp $pladir || exit 1
+	;;
+esac
+
+#
+# That's All Folks!
+#

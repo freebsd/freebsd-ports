@@ -1,0 +1,7 @@
+@mode 640
+@group %%PLAGRP%%
+@unexec if cmp -s %D/%%PLADIR%%/config.php.example %D/%%PLADIR%%/config.php ; then rm -f %D/%%PLADIR%%/config.php ; fi
+%%PLADIR%%/config.php.example
+@exec [ ! -f %B/config.php ] && cp -p %B/%f %B/config.php || true
+@mode
+@group
