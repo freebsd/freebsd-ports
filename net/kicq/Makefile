@@ -8,7 +8,7 @@
 
 DISTNAME=	kicq-0.3.0
 CATEGORIES=	net kde
-MASTER_SITES=	http://www.cn.ua/~denis/kde/
+MASTER_SITES=	http://download.sourceforge.net/kicq/
 
 MAINTAINER=	paxvel@iname.com
 
