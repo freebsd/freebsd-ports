@@ -10278,3 +10278,4 @@ zziplib		ports/devel/zziplib
 starttls	ports/security/starttls
 howm		ports/deskutils/howm
 p5-Regexp-Shellish	ports/devel/p5-Regexp-Shellish
+p5-XML-AutoWriter	ports/textproc/p5-XML-AutoWriter
