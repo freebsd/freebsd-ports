@@ -22,7 +22,7 @@ USE_GNOME=	gnomehack gnomeprefix libgnomeui
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 
-CONFLICTS=	gnomesu-*
+CONFLICTS=	gnomesu-[0-9]*
 
 post-install:
 	${MKDIR} ${EXAMPLESDIR}
