@@ -30,7 +30,8 @@ USE_MESA=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 MAKEFILE=	makefile
-MAKE_ENV=	FREEBSD=1
+MAKE_ENV+=	FREEBSD=1 PTHREAD_LIBS="${PTHREAD_LIBS}" \
+		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}"
 
 # I have no ideas about build status on other platforms
 ONLY_FOR_ARCHS=		i386
