@@ -8,28 +8,22 @@ include/GL/glu_mangle.h
 include/GL/glut.h
 include/GL/glx.h
 include/GL/glx_mangle.h
-include/GL/gmesa.h
 include/GL/mglmesa.h
 include/GL/osmesa.h
+include/GL/osmesa3.h
 include/GL/svgamesa.h
 include/GL/wmesa.h
 include/GL/xmesa.h
-include/glaux.h
-include/gltk.h
 lib/libGL.a
-lib/libGL.so.13.6
+lib/libGL.so.14.0
 lib/libGLU.a
-lib/libGLU.so.13.6
+lib/libGLU.so.14.0
 lib/libMesaGL.a
-lib/libMesaGL.so.13.6
+lib/libMesaGL.so.14.0
 lib/libMesaGLU.a
-lib/libMesaGLU.so.13.6
-lib/libMesaaux.a
-lib/libMesaaux.so.13.6
-lib/libMesatk.a
-lib/libMesatk.so.13.6
+lib/libMesaGLU.so.14.0
 lib/libglut.a
-lib/libglut.so.3.6
+lib/libglut.so.3.7
 @exec /sbin/ldconfig -m %B
 @unexec /sbin/ldconfig -R
 @dirrm include/GL
