@@ -244,6 +244,7 @@ CONFIGURE_ARGS+=--disable-dvbpsi
 
 .if defined(WITH_LIBMATROSKA) && !defined(WITHOUT_LIBMATROSKA)
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libmatroska.a:${PORTSDIR}/multimedia/libmatroska
+PLIST_FILES+=	lib/vlc/libmkv.a
 .endif
 
 # After libmpeg2 release 0.3.2
@@ -322,9 +323,16 @@ PLIST_FILES+=	lib/vlc/libi420_rgb_mmx.a lib/vlc/libi420_ymga_mmx.a \
 		lib/vlc/libmemcpymmxext.a
 .endif
 
-.if ${OSVERSION} >= 502102
-BROKEN=		"conflicts with new threads architecture"
+.if ${ARCH} != "i386"
+.if ${OSVERSION} >= 502102 &&  ${OSVERSION} < 503000
+BROKEN=		"conflicts with threads architecture, dumps core"
 .endif
+.else
+.if ${OSVERSION} >= 502102
+BROKEN=		"conflicts with threads architecture, dumps core"
+.endif
+.endif
+
 .if ${ARCH} == "alpha" && ${OSVERSION} < 500000
 # libstdc++.a(eh_terminate.o): gp-relative relocation against dynamic symbol __cxxabiv1::__terminate_handler
 BROKEN=		"gp-relative relocation against dynamic symbol"
