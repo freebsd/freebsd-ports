@@ -3,7 +3,7 @@
 # Date created:		07 Jan 1997
 # Whom:			Hung-Chi Chu <hcchu@r350.ee.ntu.edu.tw>
 #
-# $Id: Makefile,v 1.4 1997/09/22 17:48:21 max Exp $
+# $Id: Makefile,v 1.5 1997/10/22 10:25:17 obrien Exp $
 #
 # This port is adapted from japanese/kon
 #
@@ -26,6 +26,8 @@ MASTER_SITES=	ftp://ftp.iij.ad.jp/pub/linux-j/JE-sources/JE/ \
 DISTFILES=	kon-0.99.4e.tgz 8x16.bdf.gz taipei16.bdf.gz
 
 MAINTAINER=	hcchu@r350.ee.ntu.edu.tw
+
+BROKEN=		fetch
 
 #from Hung-Chi Chu <hcchu@r350.ee.ntu.edu.tw>:  The font is transformed from
 #	a font with restrictive copyright, so I think you can't distribute
