@@ -1517,6 +1517,7 @@ frontpage-ar	ports/www/frontpage-ar
 frontpage-de	ports/www/frontpage-de
 frontpage-es	ports/www/frontpage-es
 frontpage-fr	ports/www/frontpage-fr
+frontpage-he	ports/www/frontpage-he
 frotz		ports/games/frotz
 fsck		src/sbin/fsck
 fsck_ext2fs	ports/sysutils/fsck_ext2fs
