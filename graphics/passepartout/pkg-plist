@@ -28,3 +28,4 @@ share/xml/passepartout/xml2ps.dtd
 @dirrm share/doc/passepartout/examples
 @dirrm share/doc/passepartout
 @dirrm share/xml/passepartout
+@unexec /bin/rmdir %D/share/xml 2> /dev/null || /usr/bin/true
