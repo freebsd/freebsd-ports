@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.2 1999/06/28 08:54:22 asami Exp $
+# $Id: Makefile,v 1.3 1999/08/02 21:54:35 cpiazza Exp $
 #
 
     SUBDIR += bitchx
@@ -17,6 +17,7 @@
     SUBDIR += olirc
     SUBDIR += quirc
     SUBDIR += roxirc
+    SUBDIR += scrollz
     SUBDIR += sic
     SUBDIR += sirc
     SUBDIR += tkirc
