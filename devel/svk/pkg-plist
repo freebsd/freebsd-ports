@@ -40,8 +40,10 @@ bin/svk
 %%SITE_PERL%%/SVK/Editor/Diff.pm
 %%SITE_PERL%%/SVK/Editor/Merge.pm
 %%SITE_PERL%%/SVK/Editor/Patch.pm
+%%SITE_PERL%%/SVK/Editor/Rename.pm
 %%SITE_PERL%%/SVK/Editor/Sign.pm
 %%SITE_PERL%%/SVK/Editor/Status.pm
+%%SITE_PERL%%/SVK/Editor/Translate.pm
 %%SITE_PERL%%/SVK/Editor/XD.pm
 %%SITE_PERL%%/SVK/I18N.pm
 %%SITE_PERL%%/SVK/I18N/i_default.po
