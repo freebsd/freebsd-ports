@@ -11,7 +11,7 @@ CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ksnes9x
 
-MAINTAINER=	will@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	kdeui.3:${PORTSDIR}/x11/kdelibs11
 RUN_DEPENDS=	snes9x:${PORTSDIR}/emulators/snes9x
