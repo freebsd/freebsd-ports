@@ -126,6 +126,7 @@
     SUBDIR += umatrix
     SUBDIR += umfpack
     SUBDIR += units
+    SUBDIR += unixstat
     SUBDIR += vecfem
     SUBDIR += vtk
     SUBDIR += wingz

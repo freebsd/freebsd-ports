@@ -1,0 +1,20 @@
+--- src/makefile.orig	Tue Jun 22 18:00:21 1993
++++ src/makefile	Thu Aug 23 15:57:48 2001
+@@ -14,14 +14,13 @@
+ ##########################################################################
+ 
+ DESTDIR=../bin#                               destination directory
+-DESTDIR=../../bin#                            destination directory
+-CFLAGS =-O#                                   C Compiler Options
++#DESTDIR=../../bin#                            destination directory
+ LINK   =$(CC) $(CFLAGS) -o $(DESTDIR)/$@#     Generic link command
+ LIBS   =-lm#                                  libraries needed (math)
+-EDITOR =/usr/ucb/vi#                          editor to call on make edit
++EDITOR =/usr/bin/vi#                          editor to call on make edit
+ RM     =/bin/rm -f#                           remove forcefully
+ MV     =/bin/mv#                              move/rename files
+-MAKE   =/bin/make#                            use for recursive makes
++MAKE   =/usr/bin/make#                            use for recursive makes
+ 
+ MAINS = abut.c anova.c calc.y colex.c contab.c desc.c dm.y dprime.c \
+ 	dsort.c features.c ff.c fpack.c linex.c maketrix.c oneway.c \
