@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	skim
-PORTVERSION=	0.9.3
-PORTREVISION=	1
+PORTVERSION=	0.9.4
 CATEGORIES=	textproc kde
-MASTER_SITES=	http://freedesktop.org/~cougar/skim/downloads/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+		http://freedesktop.org/~cougar/skim/downloads/
+MASTER_SITE_SUBDIR= scim
 
 MAINTAINER=	gaoj@cpsc.ucalgary.ca
 COMMENT=	An input method platform based on SCIM library and KDE/QT
