@@ -4,10 +4,10 @@
 # Date created:         Sat Aug 3, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.16 1998/08/14 09:18:03 obrien Exp $
+# $Id: Makefile,v 1.17 1998/10/09 07:37:13 obrien Exp $
 #
 
-DISTNAME=	rsync-2.1.1
+DISTNAME=	rsync-2.2.0
 CATEGORIES=	net
 MASTER_SITES=	ftp://samba.anu.edu.au/pub/rsync/  \
 		ftp://sunsite.auc.dk/pub/unix/rsync/  \
