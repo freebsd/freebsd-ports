@@ -12,16 +12,18 @@ CATEGORIES=	x11
 
 MAINTAINER=	trevor@FreeBSD.org
 
+RUN_DEPENDS=	XFree86:${PORTSDIR}/x11-servers/XFree86-4-Server
+
 NO_WRKSUBDIR=	yes
 USE_X_PREFIX=	yes
 
 do-fetch:
 
 do-build:
-	${CC} ${CFLAGS} -o ${WRKSRC}/Xwrapper ${FILESDIR}/wrapper.c
+	${CC} ${CFLAGS} -o ${WRKSRC}/Xwrapper-4 ${FILESDIR}/wrapper.c
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/Xwrapper ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/Xwrapper-4 ${PREFIX}/bin
 	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>
