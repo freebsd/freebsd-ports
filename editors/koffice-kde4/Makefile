@@ -30,7 +30,7 @@ USE_GMAKE=	yes
 
 CONFIGURE_ENV+=	DO_NOT_COMPILE=kontour	# KDE calls it "badly broken"
 
-.include "${PORTSDIR}/x11/kde3/Makefile.kde"
+.include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 
 pre-configure:
 	cd ${WRKSRC} && ${GMAKE} -f Makefile.cvs
