@@ -6,18 +6,10 @@
 
 PORTNAME=	gaim
 PORTVERSION=	0.74
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES?=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-
-.if !defined(WITHOUT_OPENSSL)
-PATCH_SITES+=		${MASTER_SITE_LOCAL} \
-			http://people.FreeBSD.org/~marcus/
-PATCH_SITE_SUBDIR+=	marcus
-PATCHFILES+=		${DISTNAME}-openssl.patch.gz
-PATCH_DIST_STRIP=	-p1
-.endif
 
 MAINTAINER?=	marcus@FreeBSD.org
 COMMENT=	Gtk+-2.0 open-source 'clone' of AOL's Instant Messenger client
@@ -40,15 +32,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_C
 		PTHREAD_LIB="${PTHREAD_LIBS}"
 
 MAN1=		gaim.1 gaim-remote.1
-
-.if defined(WITHOUT_OPENSSL)
-CONFIGURE_ARGS+=	--enable-openssl=no
-PLIST_SUB+=		OPENSSL:="@comment "
-.else
-USE_OPENSSL=		yes
-CONFIGURE_ARGS+=	--enable-openssl
-PLIST_SUB+=		OPENSSL:="" 
-.endif
 
 .include <bsd.port.pre.mk>
 
@@ -96,7 +79,7 @@ _TCL_VER=	${_TCL_DVER:C/(.)/\1./}
 .if ${_TCL_VER} != 8.3
 .	error Currently GAIM can only use Tcl/Tk 8.3
 .endif
-LIB_DEPENDS+=  tk${_TCL_DVER}:${PORTSDIR}/x11-toolkits/tk${_TCL_DVER}
+LIB_DEPENDS+=	tk${_TCL_DVER}:${PORTSDIR}/x11-toolkits/tk${_TCL_DVER}
 CONFIGURE_ARGS+=--with-tclconfig=${LOCALBASE}/lib/tcl${_TCL_VER} \
 		--with-tkconfig=${LOCALBASE}/lib/tk${_TCL_VER}
 CFLAGS+=	-I${LOCALBASE}/include/tk${_TCL_VER} -I${LOCALBASE}/include/tcl${_TCL_VER}
@@ -117,14 +100,13 @@ pre-everything::
 	@${ECHO_MSG} "Gaim has the following tunable option(s):"
 	@${ECHO_MSG} "	WITHOUT_GTKSPELL	Turns off spell checking"
 	@${ECHO_MSG} "	WITHOUT_AUDIO		Disable audio support"
-	@${ECHO_MSG} "	WITHOUT_OPENSSL		Disable OpenSSL encryption support"
 	@${ECHO_MSG} "	WITH_GNUTLS		Enable GNUTLS encryption support"
 	@${ECHO_MSG} "	WITHOUT_GNUTLS		Disable GNUTLS encryption support"
 	@${ECHO_MSG} "	WITH_NSS		Enable Mozilla NSS encryption support"
 	@${ECHO_MSG} "	WITHOUT_NSS		Disable Mozilla NSS encryption support"
 	@${ECHO_MSG} "	TCL_VER			Use Tcl/Tk (version)"
 	@${ECHO_MSG} ""
-.if !defined(WITH_GNUTLS) && !defined(WITH_NSS) && defined(WITHOUT_OPENSSL)
+.if !defined(WITH_GNUTLS) && !defined(WITH_NSS)
 	@${ECHO_MSG} "WARNING: In order to use MSN, you must define WITH_GNUTLS and/or WITH_NSS"
 	@${ECHO_MSG} "         if you disable OpenSSL support"
 	@${ECHO_MSG} ""
