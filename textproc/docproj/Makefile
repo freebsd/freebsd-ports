@@ -3,7 +3,7 @@
 # Date created:        27 June 1998
 # Whom:                Nik Clayton <nik@freebsd.org>
 #
-# $Id: Makefile,v 1.6 1998/12/20 20:49:13 nik Exp $
+# $Id: Makefile,v 1.7 1999/01/20 22:19:42 nik Exp $
 #
 
 DISTNAME=	docproj
@@ -23,7 +23,7 @@ IS_INTERACTIVE= "user must set JADETEX variable to 'yes' or 'no'"
 
 JADETEX?=
 
-.if empty(JADETEX)
+.if empty(JADETEX) && (make(fetch) || make(build) || make(install))
 .BEGIN:
 	@${CAT} pkg/JADETEX
 	@${FALSE}
