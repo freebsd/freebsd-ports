@@ -9,10 +9,12 @@
 PORTNAME=	libfxp
 PORTVERSION=	0.1.4
 CATEGORIES=	ftp
-MASTER_SITES=	http://millweed.com/projects/libfxp/
+MASTER_SITES=	# http://millweed.com/projects/libfxp/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An ftp client library
+
+BROKEN=		"master site has disappeared, and never worked on non-i386 in any case"
 
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
