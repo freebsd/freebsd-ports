@@ -1,2 +1,2 @@
 lib/timidity/interface_e.so
-lib/timidity/timidity.el
+share/emacs/site-lisp/timidity.el

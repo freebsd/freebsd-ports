@@ -6,41 +6,136 @@
 # $FreeBSD$
 #
 
-DISTNAME=	TiMidity++-1.3.10
-PKGNAME=	timidity++-emacs-1.3.10
+DISTNAME=	TiMidity++-${VERSION}
+PKGNAME=	${LANGPREFIX}timidity++-${INTERFACE}-${VERSION}
 CATEGORIES=	audio
 MASTER_SITES=	http://www.goice.co.jp/member/mo/timidity/dist/
 
 MAINTAINER=	yatt@msc.biglobe.ne.jp
 
 RUN_DEPENDS=	${PREFIX}/bin/timidity:${PORTSDIR}/audio/timidity++
+LIB_DEPENDS=	${INTERFACE_DEPS}
 
+VERSION=	2.9.0
+INTERFACE?=	emacs
+.if defined(JAPANESE)
+LANGPREFIX=	ja-
+.endif
+
+USE_BZIP2=	yes
+GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
+.if !${INTERFACE} == "emacs" && !${INTERFACE} == "slang"
 USE_XLIB=	yes
-USE_AUTOCONF=	yes
+.endif
 
-FILESDIR=	${.CURDIR}/../../audio/timidity++/files
+CONFIGURE_ARGS=	--enable-dynamic=${INTERFACE}
 
+MASTERDIR=	${.CURDIR}/../../audio/timidity++
+PKGDIR=		${.CURDIR}/pkg
+PKGMESSAGE=	${PKGDIR}/MESSAGE
+PLIST_SUB=	TIMID_LIBDIR=${TIMID_LIBDIR}
 DIST_SUBDIR=	timidity
+
+GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
+
+TIMID_LIBDIR=	${PREFIX}/lib/timidity
+
+.if ${INTERFACE} == "emacs"
+ELISPDIR=	${PREFIX}/share/emacs/site-lisp
+.elif ${INTERFACE} == "gtk"
+LINK=		gtkmidi
+INTERFACE_DEPS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
+CONFIGURE_ENV=	GTK_CONFIG=${GTK_CONFIG} SHLD="gcc -shared"
+.elif ${INTERFACE} == "motif"
+LINK=		xmmidi
+REQUIRES_MOTIF=	yes
+CONFIGURE_ENV=	MOTIFLIB="${MOTIFLIB}"
+.elif ${INTERFACE} == "slang"
+.if defined(JAPANESE)
+INTERFACE_DEPS=	slang.2:${PORTSDIR}/japanese/libslang
+.else
+INTERFACE_DEPS=	slang.1:${PORTSDIR}/devel/libslang
+.endif
+CONFIGURE_ARGS+=	--enable-ncurses
+.elif ${INTERFACE} == "tcltk"
+LINK=		tkmidi
+DOCFILES=	README.tk
+DOCLANG=	C ja_JP.ujis
+.if defined(JAPANESE)
+INTERFACE_DEPS=	tk80jp.1:${PORTSDIR}/japanese/tk80
+CONFIGURE_ARGS+=	--with-tcl-includes=${PREFIX}/include/tcl8.0jp \
+		--with-tk-includes=${PREFIX}/include/tk8.0jp \
+		--with-tcl-libs=${PREFIX}/lib --with-tk-libs=${PREFIX}/lib
+CONFIGURE_ENV=	WISH=wish8.0jp
+.else
+INTERFACE_DEPS=	tk80.1:${PORTSDIR}/x11-toolkits/tk80
+CONFIGURE_ARGS+=	--with-tcl-includes=${PREFIX}/include/tcl8.0 \
+		--with-tk-includes=${PREFIX}/include/tk8.0 \
+		--with-tcl-libs=${PREFIX}/lib --with-tk-libs=${PREFIX}/lib
+CONFIGURE_ENV=  WISH=wish8.0
+.endif
+.elif ${INTERFACE} == "xaw"
+LINK=		xawmidi
+DOCFILES=	README.xaw
+DOCLANG=	C ja_JP.ujis
+INTERFACE_DEPS=	Xaw3d.6:${PORTSDIR}/x11-toolkits/Xaw3d
+.elif ${INTERFACE} == "xskin"
+LINK=		xskinmidi
+DOCFILES=       README.xskin
+DOCLANG=        C ja_JP.ujis
+.else
+NO_BUILD=	yes
+NO_INSTALL=	yes
+.endif
 
 .include <bsd.port.pre.mk>
 
-CONFIGURE_ARGS= --prefix=${PREFIX} --with-x \
-		--disable-ncurses --disable-vt100 --disable-tcltk \
-		--enable-emacs=dynamic --disable-xaw --disable-xskin \
-		--disable-motif --disable-slang --disable-gtk \
-		--enable-network --enable-spectrogram --enable-wrd
 .if ${PORTOBJFORMAT} == "elf"
-CONFIGURE_ENV=	LDFLAGS=-export-dynamic
+CONFIGURE_ENV+=	LDFLAGS=-export-dynamic
 .endif
 
-TIMID_DIR=	${PREFIX}/lib/timidity
+.if ${INTERFACE} == "motif"
+post-configure:
+	@${MV} ${WRKSRC}/interface/Makefile ${WRKSRC}/interface/Makefile.orig
+	@${SED} -e 's^m_so_libs = $$^m_so_libs = -L/usr/X11R6/lib ${MOTIFLIB} -lXt -lXext -lSM -lICE -lX11 ^' \
+		-e 's^dynamic_targets = $$^dynamic_targets = interface_m.so^' \
+	${WRKSRC}/interface/Makefile.orig > ${WRKSRC}/interface/Makefile
+.endif
 
 do-build:
-	cd ${WRKSRC}/interface; ${MAKE}
+	@cd ${WRKSRC}/interface; ${MAKE} ${ALL_TARGET}
 
 do-install:
-	cd ${WRKSRC}/interface; ${MAKE} ${INSTALL_TARGET}
-	${INSTALL_DATA} ${WRKSRC}/interface/timidity.el ${TIMID_DIR}
-	@cat ${PKGDIR}/MESSAGE
+	@cd ${WRKSRC}/interface; ${MAKE} ${INSTALL_TARGET}
+
+post-install:
+.if ${INTERFACE} == "emacs"
+	@${MKDIR} ${ELISPDIR}
+	${INSTALL_DATA} ${WRKSRC}/interface/timidity.el ${ELISPDIR}
+.endif
+.if ${INTERFACE} == "xaw"
+	@${MKDIR} ${X11BASE}/lib/X11/ja_JP.EUC/app-defaults
+	${INSTALL_DATA} ${WRKSRC}/TiMidity.ad \
+	${X11BASE}/lib/X11/app-defaults/TiMidity
+	${INSTALL_DATA} ${WRKSRC}/TiMidity-uj.ad \
+	${X11BASE}/lib/X11/ja_JP.EUC/app-defaults/TiMidity
+.endif
+.if defined(DOCFILES)
+.if !defined(NOPORTDOCS)
+.for lang in ${DOCLANG}
+	@${MKDIR} \
+	${PREFIX}/share/doc/timidity/`echo ${lang} | ${SED} 's/_JP.ujis//'`
+	${INSTALL_DATA} ${WRKSRC}/doc/${lang}/${DOCFILES} \
+	${PREFIX}/share/doc/timidity/`echo ${lang} | ${SED} 's/_JP.ujis//'`
+.endfor
+.endif
+.endif
+.if defined(LINK)
+	${LN} -sf ${PREFIX}/bin/timidity ${PREFIX}/bin/${LINK}
+.endif
+.if exists(${PKGMESSAGE})
+	@${CAT} ${PKGMESSAGE}
+.endif
 
 .include <bsd.port.post.mk>
