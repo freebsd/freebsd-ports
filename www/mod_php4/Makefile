@@ -40,7 +40,9 @@ IS_INTERACTIVE=	yes
 
 .if defined(STANDALONE)
 CONFIGURE_ARGS=	--with-config-file-path=${PREFIX}/etc/php.standalone \
-		--disable-pear
+		--disable-pear \
+		--enable-discard-path \
+		--with-readline=/usr
 .else
 CONFIGURE_ARGS=	--with-apxs=${PREFIX}/sbin/apxs \
 		--with-config-file-path=${PREFIX}/etc
