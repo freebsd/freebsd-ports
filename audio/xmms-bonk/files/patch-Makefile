@@ -1,0 +1,22 @@
+
+$FreeBSD$
+
+--- Makefile.orig	Sat Jun 15 15:37:43 2002
++++ Makefile	Sat Jun 15 15:38:41 2002
+@@ -9,14 +9,10 @@
+ CPP=g++
+ INSTDIR=`xmms-config --plugin-dir`/Input
+ 
+-ifdef DEBUG
+-  CFLAGS=-Wall -O2 -fno-exceptions -ffast-math -D_REENTRANT `gtk-config --cflags` -g -DDEBUG
+-else
+-  CFLAGS=-Wall -O2 -fno-exceptions -ffast-math -D_REENTRANT `gtk-config --cflags`
+-endif
++CXXFLAGS+= -fno-exceptions -D_REENTRANT `xmms-config --cflags`
+ 
+ libbonk.so : bonk-xmms.cc
+-	$(CPP) $(CFLAGS) -shared -o libbonk.so bonk-xmms.cc -lstdc++
++	$(CXX) $(CXXFLAGS) -shared -o libbonk.so bonk-xmms.cc -lstdc++
+ 
+ install : libbonk.so
+ 	cp libbonk.so $(INSTDIR)
