@@ -1,0 +1,11 @@
+--- configure.in~	Sat Sep  9 00:15:48 2000
++++ configure.in	Mon Sep 25 18:53:56 2000
+@@ -111,7 +111,7 @@
+ AC_CHECK_LIB(m, sin, LIBS="$LIBS -lm", echo "I'm afraid you'll need libm."; exit 1)
+ 
+ dnl Should be allow dlopen of extensions?
+-AC_CHECK_LIB(dl, dlopen, LIBS="$LIBS -ldl", AC_DEFINE(NODLOPEN) echo "Can't dlopen extensions." )
++AC_CHECK_FUNC(dlopen, [], AC_CHECK_LIB(dl, dlopen, LIBS="$LIBS -ldl", AC_DEFINE(NODLOPEN) echo "Can't dlopen extensions." ))
+ 
+ dnl Special OS objs for target systems
+ case "$target" in

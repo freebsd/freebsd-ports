@@ -93,6 +93,7 @@
     SUBDIR += napster
     SUBDIR += nas
     SUBDIR += nspmod
+    SUBDIR += openal
     SUBDIR += opennap
     SUBDIR += p5-MP3-ID3v1Tag
     SUBDIR += pimp3
