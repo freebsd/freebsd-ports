@@ -1192,6 +1192,7 @@ disklabel	src/sbin/disklabel
 diskpart	src/usr.sbin/diskpart
 diskusage	ports/sysutils/diskusage
 display		ports/misc/display
+distcc		ports/devel/distcc
 distrib		distrib
 distrib_cvsup	distrib/cvsup
 distrib_cvsup_sup	distrib/cvsup/sup
