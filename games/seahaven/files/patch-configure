@@ -1,0 +1,14 @@
+--- configure	Sat Aug 17 12:15:42 2002
++++ configure.orig	Sat Aug 17 12:15:20 2002
+@@ -1805,9 +1805,9 @@
+ if test -n "$GXX"; then
+     # GNU C compiler
+     # -Wno-return-type is necessary for Xlib header files on many systems:
+-    CFLAGS="-Wall -Wno-return-type -O2 $X_CFLAGS"
++    CFLAGS="$CFLAGS $X_CFLAGS"
+     CFLAGS_D="-Wall -Wno-return-type -g -DDEBUG $X_CFLAGS"
+-    CXXFLAGS="-Wall -Wno-return-type -O2 $X_CFLAGS"
++    CXXFLAGS="$CXXFLAGS $X_CFLAGS"
+     CXXFLAGS_D="-Wall -Wno-return-type -g -DDEBUG $X_CFLAGS"
+ else
+ if test "`(uname) 2>/dev/null`" = IRIX; then
