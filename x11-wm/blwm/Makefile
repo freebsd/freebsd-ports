@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	blwm
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.4
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://labdid.if.usp.br/~blanes/arquivos/
 
@@ -22,7 +22,8 @@ PLIST=		${WRKDIR}/pkg-plist
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_XPM=	yes
-DOCS=		CHANGELOG INSTALL GPL LEIAME
+DOCS=		AUTHORS BUGS COPYING CREDITS FreeBSD INSTALAR LEIAME TODO
+
 CONFIGURE_ARGS=	--prefix=${PREFIX}
 
 do-patch:
@@ -40,30 +41,33 @@ pre-configure:
 pre-install:
 	${ECHO_CMD} bin/blwm > ${PLIST}
 .if !defined(NOPORTDOCS)
-.for i in ${DOCS}
-	${ECHO_CMD} share/doc/blwm/${i} >> ${PLIST}
+.for ii in ${DOCS} ChangeLog INSTALL README
+	${ECHO_CMD} share/doc/blwm/${ii} >> ${PLIST}
 .endfor
 	${ECHO_CMD} @dirrm share/doc/blwm >> ${PLIST}
 .endif
-	for i in `${LS} ${WRKSRC}/images | ${GREP} xpm`; do \
-		${ECHO_CMD} lib/blwm/images/$$i >> ${PLIST}; \
+	for ii in `${LS} ${WRKSRC}/images | ${GREP} xpm`; do \
+		${ECHO_CMD} lib/blwm/images/$$ii >> ${PLIST}; \
 	done
-	for i in `${LS} ${WRKSRC}/themes | ${GREP} -v Makefile`; do \
-		${ECHO_CMD} lib/blwm/themes/$$i >> ${PLIST}; \
+	for ii in `${LS} ${WRKSRC}/themes | ${GREP} -v Makefile`; do \
+		${ECHO_CMD} lib/blwm/themes/$$ii >> ${PLIST}; \
 	done
-	for i in `${LS} ${WRKSRC}/rc | ${GREP} -v Makefile`; do \
-		${ECHO_CMD} lib/blwm/conf/$$i >> ${PLIST}; \
+	for ii in `${LS} ${WRKSRC}/rc | ${GREP} -v Makefile`; do \
+		${ECHO_CMD} lib/blwm/conf/$$ii >> ${PLIST}; \
 	done
-.for i in conf images themes
-	${ECHO_CMD} @dirrm lib/blwm/${i} >> ${PLIST}
+.for ii in conf images themes
+	${ECHO_CMD} @dirrm lib/blwm/${ii} >> ${PLIST}
 .endfor
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/blwm ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-.for i in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/doc/${i} ${DOCSDIR}
+.for ii in ${DOCS}
+	${INSTALL_DATA} ${WRKSRC}/doc/${ii} ${DOCSDIR}
+.endfor
+.for ii in ChangeLog INSTALL README
+	${INSTALL_DATA} ${WRKSRC}/${ii} ${DOCSDIR}
 .endfor
 .endif
 	${MKDIR}	${PREFIX}/lib/blwm/conf \
