@@ -213,7 +213,6 @@
     SUBDIR += gengetopt
     SUBDIR += gettext
     SUBDIR += getxml
-    SUBDIR += gide
     SUBDIR += gindent
     SUBDIR += glade
     SUBDIR += glade2
