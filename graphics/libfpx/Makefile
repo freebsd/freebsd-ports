@@ -36,10 +36,6 @@ USE_BZIP2=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 502101
-BROKEN=		"Does not compile"
-.endif
-
 post-patch:
 	# Replacing references to <malloc.h> with <stdlib.h>
 	# Ignore the /dev/stderr warning below. (What a hack!)
