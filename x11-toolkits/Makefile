@@ -8,7 +8,6 @@
     SUBDIR += Xaw3d
     SUBDIR += XawPlus
     SUBDIR += bakery
-    SUBDIR += bakery_gnomeui
     SUBDIR += blt
     SUBDIR += bwidget
     SUBDIR += easygtk
