@@ -2183,6 +2183,7 @@ gift-gnutella	ports/net/gift-gnutella
 gift-openft	ports/net/gift-openft
 giftcurs	ports/net/giftcurs
 giftool		ports/graphics/giftool
+giftoxic	ports/net/giftoxic
 giftrans	ports/graphics/giftrans
 gigabase	ports/databases/gigabase
 gimageview	ports/graphics/gimageview
