@@ -1,0 +1,58 @@
+bin/atomix
+bin/atomixed
+share/gnome/atomix/levels/aethylen.atomix
+share/gnome/atomix/levels/ethane.atomix
+share/gnome/atomix/levels/methane.atomix
+share/gnome/atomix/levels/methanol.atomix
+share/gnome/atomix/levels/propylen.atomix
+share/gnome/atomix/levels/water.atomix
+share/gnome/atomix/themes/fabian/c.png
+share/gnome/atomix/themes/fabian/f.png
+share/gnome/atomix/themes/fabian/h.png
+share/gnome/atomix/themes/fabian/link1.png
+share/gnome/atomix/themes/fabian/link10.png
+share/gnome/atomix/themes/fabian/link11.png
+share/gnome/atomix/themes/fabian/link12.png
+share/gnome/atomix/themes/fabian/link2.png
+share/gnome/atomix/themes/fabian/link3.png
+share/gnome/atomix/themes/fabian/link4.png
+share/gnome/atomix/themes/fabian/link5.png
+share/gnome/atomix/themes/fabian/link6.png
+share/gnome/atomix/themes/fabian/link7.png
+share/gnome/atomix/themes/fabian/link8.png
+share/gnome/atomix/themes/fabian/link9.png
+share/gnome/atomix/themes/fabian/n.png
+share/gnome/atomix/themes/fabian/o.png
+share/gnome/atomix/themes/fabian/theme
+share/gnome/atomix/themes/fabian/wall1.png
+share/gnome/atomix/themes/fabian/wall2.png
+share/gnome/atomix/themes/fabian/wall3.png
+share/gnome/atomix/themes/fabian/wall4.png
+share/gnome/atomix/themes/katomic/atom-c.png
+share/gnome/atomix/themes/katomic/atom-h.png
+share/gnome/atomix/themes/katomic/atom-n.png
+share/gnome/atomix/themes/katomic/atom-o.png
+share/gnome/atomix/themes/katomic/conn-bottom-left.png
+share/gnome/atomix/themes/katomic/conn-bottom-right.png
+share/gnome/atomix/themes/katomic/conn-bottom.png
+share/gnome/atomix/themes/katomic/conn-double-bottom.png
+share/gnome/atomix/themes/katomic/conn-double-left.png
+share/gnome/atomix/themes/katomic/conn-double-right.png
+share/gnome/atomix/themes/katomic/conn-double-top.png
+share/gnome/atomix/themes/katomic/conn-left.png
+share/gnome/atomix/themes/katomic/conn-right.png
+share/gnome/atomix/themes/katomic/conn-top-left.png
+share/gnome/atomix/themes/katomic/conn-top-right.png
+share/gnome/atomix/themes/katomic/conn-top.png
+share/gnome/atomix/themes/katomic/theme
+share/gnome/atomix/themes/katomic/wall-1.png
+share/gnome/atomix/themes/katomic/wall-2.png
+share/gnome/atomix/themes/katomic/wall-3.png
+share/gnome/atomix/themes/katomic/wall-4.png
+share/gnome/games/atomix.scores
+@dirrm share/gnome/atomix/levels
+@dirrm share/gnome/atomix/themes/fabian
+@dirrm share/gnome/atomix/themes/katomic
+@dirrm share/gnome/atomix/themes
+@dirrm share/gnome/atomix
+@dirrm share/gnome/pixmaps/atomix
