@@ -3,7 +3,7 @@
 # Date created:        28 October 1997
 # Whom:                Stefan Eßer <se@freebsd.org>
 #
-# $Id: Makefile,v 1.11 1998/05/02 22:15:24 se Exp $
+# $Id: Makefile,v 1.12 1998/05/04 20:23:03 jseger Exp $
 #
 
 DISTNAME=	kdeutils-beta4-1
@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR= stable/Beta4/distribution/tgz/source
 EXTRACT_SUFX=	.src.tar.bz2
 
 MAINTAINER=	se@freebsd.org
+
+BROKEN=		upgrade to 1.0 will be committed within the next few days
 
 BUILD_DEPENDS=	bzip2:${PORTSDIR}/archivers/bzip2 \
 		moc:${PORTSDIR}/x11/qt
