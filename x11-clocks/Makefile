@@ -10,6 +10,7 @@
     SUBDIR += dclock
     SUBDIR += emiclock
     SUBDIR += eyeclock
+    SUBDIR += glclock
     SUBDIR += kdetoys11-i18n
     SUBDIR += mlclock
     SUBDIR += mouseclock
