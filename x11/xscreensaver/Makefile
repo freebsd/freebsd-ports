@@ -21,7 +21,7 @@ MAINTAINER?=	DougB@FreeBSD.org
 COMMENT=	Save your screen while you entertain your cat
 
 LIB_DEPENDS=	gle.3:${PORTSDIR}/graphics/gle \
-		xml.5:${PORTSDIR}/textproc/libxml
+		xml2.5:${PORTSDIR}/textproc/libxml2
 
 USE_X_PREFIX=	yes
 USE_XPM=	yes
