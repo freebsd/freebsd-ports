@@ -3,11 +3,11 @@
 # Date created:         15 Dec 1994
 # Whom:                 Stefan `Sec` Zehl <sec@42.org>
 #
-# $Id: Makefile,v 1.2 1999/06/02 07:23:49 dirk Exp $
+# $Id: Makefile,v 1.3 1999/06/03 18:41:58 mharo Exp $
 #
 
-DISTNAME=       lynx2.8.1rel.1
-PKGNAME=        lynx-ssl-2.8.1.1
+DISTNAME=       lynx2.8.2rel.1
+PKGNAME=        lynx-ssl-2.8.2.1
 CATEGORIES=	www
 MASTER_SITES=   http://sol.slcc.edu/lynx/current/
 
@@ -17,7 +17,7 @@ EXTRA_SSL_LIBS=	"-lRSAglue -lrsaref"
 .else
 PATCH_SITES=	ftp://ftp.musin.de/unix/
 .endif
-PATCHFILES=	lynx-281-ssl.patch.gz
+PATCHFILES=	lynx-282-ssl.patch.gz
 PATCH_DIST_STRIP= -p1
 
 MAINTAINER=	sec@42.org
@@ -35,7 +35,7 @@ MAKE_ENV+=	EXTRA_SSL_LIBS=${EXTRA_SSL_LIBS}
 INSTALL_TARGET= install install-help
 MAN1=		lynx.1
 
-WRKSRC=		${WRKDIR}/lynx2-8-1
+WRKSRC=		${WRKDIR}/lynx2-8-2
 
 post-install:
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/lib/lynx_help
