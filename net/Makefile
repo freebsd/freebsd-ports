@@ -653,6 +653,7 @@
     SUBDIR += staticcharge
     SUBDIR += sting
     SUBDIR += stone
+    SUBDIR += subcalc
     SUBDIR += suckblow
     SUBDIR += sup
     SUBDIR += svnc
