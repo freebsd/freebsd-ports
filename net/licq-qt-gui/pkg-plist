@@ -15,6 +15,11 @@ share/licq/qt-gui/dock.console/online.xpm
 share/licq/qt-gui/dock.console/regmsg.xpm
 share/licq/qt-gui/dock.console/statusmask.xpm
 share/licq/qt-gui/dock.console/sysmsg.xpm
+share/licq/qt-gui/dock.flower-ns/flower-ns.dock
+share/licq/qt-gui/dock.flower-ns/nomsg-mask.xpm
+share/licq/qt-gui/dock.flower-ns/nomsg.xpm
+share/licq/qt-gui/dock.flower-ns/regmsg-mask.xpm
+share/licq/qt-gui/dock.flower-ns/regmsg.xpm
 share/licq/qt-gui/dock.flower/away.xpm
 share/licq/qt-gui/dock.flower/bothmsg.xpm
 share/licq/qt-gui/dock.flower/dnd.xpm
@@ -30,11 +35,6 @@ share/licq/qt-gui/dock.flower/online.xpm
 share/licq/qt-gui/dock.flower/regmsg.xpm
 share/licq/qt-gui/dock.flower/statusmask.xpm
 share/licq/qt-gui/dock.flower/sysmsg.xpm
-share/licq/qt-gui/dock.flower-ns/flower-ns.dock
-share/licq/qt-gui/dock.flower-ns/nomsg-mask.xpm
-share/licq/qt-gui/dock.flower-ns/nomsg.xpm
-share/licq/qt-gui/dock.flower-ns/regmsg-mask.xpm
-share/licq/qt-gui/dock.flower-ns/regmsg.xpm
 share/licq/qt-gui/dock.glicq/glicq.dock
 share/licq/qt-gui/dock.glicq/msg.xpm
 share/licq/qt-gui/dock.glicq/nomsg.xpm
@@ -118,21 +118,8 @@ share/licq/qt-gui/icons.mark/offline.ppm
 share/licq/qt-gui/icons.mark/online.ppm
 share/licq/qt-gui/icons.mark/private.ppm
 share/licq/qt-gui/icons.mark/url.ppm
-share/licq/qt-gui/locale/cs.qm
-share/licq/qt-gui/locale/cs_CZ.qm
-share/licq/qt-gui/locale/de.qm
-share/licq/qt-gui/locale/es.qm
-share/licq/qt-gui/locale/fr.qm
-share/licq/qt-gui/locale/it.qm
-share/licq/qt-gui/locale/ja_JP.eucJP.qm
-share/licq/qt-gui/locale/pl.qm
-share/licq/qt-gui/locale/pt.qm
-share/licq/qt-gui/locale/ru.qm
-share/licq/qt-gui/locale/ru_RU.KOI8-R.qm
-share/licq/qt-gui/locale/sv.qm
-share/licq/qt-gui/locale/tr.qm
-share/licq/qt-gui/skin.basic/basic.skin
 share/licq/qt-gui/skin.basic-ncb/basic-ncb.skin
+share/licq/qt-gui/skin.basic/basic.skin
 share/licq/qt-gui/skin.bheart/Frame.png
 share/licq/qt-gui/skin.bheart/MenuButtonDown.png
 share/licq/qt-gui/skin.bheart/MenuButtonUp.png
@@ -165,8 +152,8 @@ share/licq/qt-gui/skin.gradient/buttonRaised.png
 share/licq/qt-gui/skin.gradient/gradient.skin
 share/licq/qt-gui/skin.gradient/msg.png
 share/licq/qt-gui/skin.gradient/status.png
-share/licq/qt-gui/skin.icq/icq.skin
 share/licq/qt-gui/skin.icq-ncb/icq-ncb.skin
+share/licq/qt-gui/skin.icq/icq.skin
 share/licq/qt-gui/skin.pli/Frame.png
 share/licq/qt-gui/skin.pli/MenuButtonDown.png
 share/licq/qt-gui/skin.pli/MenuButtonUp.png
@@ -177,26 +164,24 @@ share/licq/qt-gui/skin.shale/butMenuFocus.png
 share/licq/qt-gui/skin.shale/frame.png
 share/licq/qt-gui/skin.shale/shale.skin
 share/licq/qt-gui/skin.shale/status.png
-@dirrm share/licq/qt-gui/dock.console
-@dirrm share/licq/qt-gui/dock.flower
-@dirrm share/licq/qt-gui/dock.flower-ns
-@dirrm share/licq/qt-gui/dock.glicq
-@dirrm share/licq/qt-gui/dock.kde2
-@dirrm share/licq/qt-gui/dock.pli
-@dirrm share/licq/qt-gui/icons.computer
-@dirrm share/licq/qt-gui/icons.icq
-@dirrm share/licq/qt-gui/icons.icq2
 @dirrm share/licq/qt-gui/icons.mark
-@dirrm share/licq/qt-gui/locale
-@dirrm share/licq/qt-gui/skin.basic
-@dirrm share/licq/qt-gui/skin.basic-ncb
-@dirrm share/licq/qt-gui/skin.bheart
-@dirrm share/licq/qt-gui/skin.compact
-@dirrm share/licq/qt-gui/skin.dim
-@dirrm share/licq/qt-gui/skin.e
-@dirrm share/licq/qt-gui/skin.gradient
-@dirrm share/licq/qt-gui/skin.icq
-@dirrm share/licq/qt-gui/skin.icq-ncb
-@dirrm share/licq/qt-gui/skin.pli
+@dirrm share/licq/qt-gui/icons.icq2
+@dirrm share/licq/qt-gui/icons.icq
+@dirrm share/licq/qt-gui/icons.computer
+@dirrm share/licq/qt-gui/dock.pli
+@dirrm share/licq/qt-gui/dock.kde2
+@dirrm share/licq/qt-gui/dock.glicq
+@dirrm share/licq/qt-gui/dock.flower-ns
+@dirrm share/licq/qt-gui/dock.flower
+@dirrm share/licq/qt-gui/dock.console
 @dirrm share/licq/qt-gui/skin.shale
-@dirrm share/licq/qt-gui
+@dirrm share/licq/qt-gui/skin.pli
+@dirrm share/licq/qt-gui/skin.icq-ncb
+@dirrm share/licq/qt-gui/skin.icq
+@dirrm share/licq/qt-gui/skin.gradient
+@dirrm share/licq/qt-gui/skin.e
+@dirrm share/licq/qt-gui/skin.dim
+@dirrm share/licq/qt-gui/skin.compact
+@dirrm share/licq/qt-gui/skin.bheart
+@dirrm share/licq/qt-gui/skin.basic-ncb
+@dirrm share/licq/qt-gui/skin.basic
