@@ -12,7 +12,10 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	djvu
 
 MAINTAINER=	coop9211@uidaho.edu
+
 COMMENT=	DjVu viewers, encoders, browser plugin, and utilities
+
+BROKEN=		Broken pkg-plist
 
 LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
 		iconv.3:${PORTSDIR}/converters/libiconv
