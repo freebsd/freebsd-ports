@@ -1,0 +1,13 @@
+FTP4ALL is a free, open source FTP server implementation for the UNIX platform.
+FTP4ALL was designed to require no superuser privileges. The advantages are
+that FTP4ALL cannot be exploited to gain root access on a machine. And second,
+any user on a UNIX box can run this server. It does not use the default user
+database (/etc/passwd or NIS or whatever), or the UNIX file and directory
+permissions. Instead, FTP4ALL sets up its own user and group database and
+file and directory permission system. 
+
+Those and other features like user upload and download ratios, IP checks,
+bandwidth limit, transfer statistics make FTP4ALL a good choice for running
+a private, specialised FTP site.
+
+WWW: http://www.ftp4all.de/
