@@ -45,7 +45,6 @@ CONFLICTS=	apache+ipv6-1.* apache+modssl-1.* apache+ssl-1.* apache-1.* apache_fp
 ##      WITHOUT_SSL:              Disable SSL support
 ##      WITH_THREADS:             Enable threads support !! USE IT WITH CARE !!
 ##           WITH_CUSTOM_THREADS: Let you choose which threaded modules you want
-##      WITH_EXPERIMENTAL:        Enable Experimental modules
 ##      WITH_DBM:                 Choose your DBM: bdb (Berkeley DB), gdbm or ndbm (default)
 ##          WITH_BERKELEYDB:      Choose your BerkeleyDB version: db2, db3, db4, db41 or FreeBSD (1.85)(default)
 ##      WITH_STATIC_SUPPORT:      Build statically linked support binaries
