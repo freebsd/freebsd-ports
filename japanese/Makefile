@@ -84,7 +84,6 @@
     SUBDIR += gal
     SUBDIR += gawk
     SUBDIR += gd
-    SUBDIR += ghostscript-gnu-cjk
     SUBDIR += ghostscript-gnu-jpnfont
     SUBDIR += gicq
     SUBDIR += gn-gnspool
