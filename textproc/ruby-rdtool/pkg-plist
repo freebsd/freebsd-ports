@@ -2,8 +2,23 @@ bin/rd2
 bin/rdswap
 bin/rmi2html
 bin/rmi2html.rb
-%%RUBY_SITELIBDIR%%/rd/dot.rd2rc
+%%RUBY_SITELIBDIR%%/rd/block-element.rb
+%%RUBY_SITELIBDIR%%/rd/complex-list-item.rb
+%%RUBY_SITELIBDIR%%/rd/desclist.rb
+%%RUBY_SITELIBDIR%%/rd/document-struct.rb
+%%RUBY_SITELIBDIR%%/rd/element.rb
 %%RUBY_SITELIBDIR%%/rd/filter.rb
+%%RUBY_SITELIBDIR%%/rd/inline-element.rb
+%%RUBY_SITELIBDIR%%/rd/labeled-element.rb
+%%RUBY_SITELIBDIR%%/rd/list.rb
+%%RUBY_SITELIBDIR%%/rd/loose-struct.rb
+%%RUBY_SITELIBDIR%%/rd/methodlist.rb
+%%RUBY_SITELIBDIR%%/rd/output-format-visitor.rb
+%%RUBY_SITELIBDIR%%/rd/package.rb
+%%RUBY_SITELIBDIR%%/rd/parser-util.rb
+%%RUBY_SITELIBDIR%%/rd/rbl-file.rb
+%%RUBY_SITELIBDIR%%/rd/rbl-suite.rb
+%%RUBY_SITELIBDIR%%/rd/rd-struct.rb
 %%RUBY_SITELIBDIR%%/rd/rd2html-lib.rb
 %%RUBY_SITELIBDIR%%/rd/rd2html-opt.rb
 %%RUBY_SITELIBDIR%%/rd/rd2man-lib.rb
@@ -13,13 +28,14 @@ bin/rmi2html.rb
 %%RUBY_SITELIBDIR%%/rd/rdfmt.rb
 %%RUBY_SITELIBDIR%%/rd/rdinlineparser.tab.rb
 %%RUBY_SITELIBDIR%%/rd/rdvisitor.rb
+%%RUBY_SITELIBDIR%%/rd/reference-resolver.rb
+%%RUBY_SITELIBDIR%%/rd/search-file.rb
+%%RUBY_SITELIBDIR%%/rd/tree.rb
+%%RUBY_SITELIBDIR%%/rd/version.rb
+%%RUBY_SITELIBDIR%%/rd/visitor.rb
 @dirrm %%RUBY_SITELIBDIR%%/rd
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/rd/dot.rd2rc
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/rd
-lib/xemacs/site-lisp/rd-mode.el
-@unexec rmdir -p %D/lib/xemacs/site-lisp 2>/dev/null || true
-@exec ln -sf %D/%F %D/share/emacs/site-lisp/
-@unexec rm -f %D/share/emacs/site-lisp/rd-mode.el 2>/dev/null || true
 %%PORTDOCS%%@comment %%RUBY_DOCDIR%%/amstd/ja/amstd-ja.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/rd/README.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/rd/rd-draft.html
