@@ -1,0 +1,20 @@
+--- configure.orig	Fri Sep  5 01:16:52 2003
++++ configure	Fri Sep  5 01:16:58 2003
+@@ -8710,7 +8710,7 @@
+       LIBS="$LIBS -l$dbname"
+       echo "$as_me:$LINENO: checking for libdb (-l$dbname)" >&5
+ echo $ECHO_N "checking for libdb (-l$dbname)... $ECHO_C" >&6
+-if test "${found_libdb+set}" = set; then
++if test "${found_libdb}+set" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   if test "$cross_compiling" = yes; then
+@@ -8790,7 +8790,7 @@
+ echo "${ECHO_T}$found_libdb" >&6
+       CFLAGS="$ac_save_CFLAGS"
+       LIBS="$ac_save_LIBS"
+-      if test x$found_libdb == xyes; then break; fi
++      if test x$found_libdb = xyes; then break; fi
+     done
+   use_libdb=$found_libdb
+ else
