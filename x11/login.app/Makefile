@@ -8,13 +8,17 @@
 PORTNAME=	login.app
 PORTVERSION= 	2.0.0.a7
 CATEGORIES=	x11 windowmaker
-MASTER_SITES=	http://wm.current.nu/files/Login.app/
-DISTNAME=	Login.app-${PORTVERSION:S/.a/-Alpha-/}
+MASTER_SITES=	http://wm.current.nu/files/Login.app/ \
+		http://wm.current.nu/files/Login.app/Themes/
+DISTFILES=	Login.app-${PORTVERSION:S/.a/-Alpha-/}${EXTRACT_SUFX} \
+		Drone${EXTRACT_SUFX}
 
 MAINTAINER=	sobomax@FreeBSD.org
 
 LIB_DEPENDS=	wraster.3:${PORTSDIR}/x11-wm/windowmaker \
 		PropList.2:${PORTSDIR}/devel/libPropList
+
+WRKSRC=		${WRKDIR}/Login.app-${PORTVERSION:S/.a/-Alpha-/}
 
 USE_X_PREFIX=	yes
 USE_XPM=	yes
@@ -27,5 +31,9 @@ post-configure:
 		s|%%LOCALBASE%%|${LOCALBASE}|g' preferences.h Scripts/Login.user \
 		Scripts/Login.root Scripts/Logout.root Scripts/Startup \
 		Preferences config.h
+
+post-install:
+	@(cd ${WRKDIR} && ${TAR} --exclude "*.orig" -c -f - Drone) \
+		| (cd ${PREFIX}/GNUstep/Apps/Login.app/Themes && ${TAR} --unlink -x -f -)
 
 .include <bsd.port.mk>
