@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	xcin
-PORTVERSION=	2.5.2p4
+PORTVERSION=	2.5.2p5
 CATEGORIES=	chinese x11
 MASTER_SITES=	ftp://xcin.linux.org.tw/pub/xcin/xcin/devel/
-DISTNAME=	xcin-2.5.2-pre4
+DISTNAME=	xcin-2.5.2-pre5
 
 MAINTAINER=	keith@freebsd.sinica.edu.tw
 
@@ -38,7 +38,7 @@ post-install:
 	strip ${PREFIX}/lib/X11/xcin25/bin/cin2tab
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/lib/X11/xcin25/doc
-.for DOC in Bugs COPYING CREDITS Changes Cin CopyRight FAQ README README.En \
+.for DOC in Bugs COPYING CREDITS Changes Cin CopyRight FAQ README \
 		SETUP Todo Usage UserGuide
 	${INSTALL_MAN} ${WRKSRC}/doc/${DOC} ${PREFIX}/lib/X11/xcin25/doc
 .endfor
