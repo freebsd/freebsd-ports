@@ -1,6 +1,8 @@
 etc/rc.d/saslauthd.sh
 man/cat8/saslauthd.8.gz
 sbin/saslauthd
+sbin/saslcache
+sbin/testsaslauthd
 %%PORTDOCS%%%%DOCSDIR%%/saslauthd/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/saslauthd/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/saslauthd/ChangeLog
