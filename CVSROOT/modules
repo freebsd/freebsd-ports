@@ -5406,6 +5406,7 @@ mod_encoding	ports/www/mod_encoding
 mod_extract_forwarded	ports/www/mod_extract_forwarded
 mod_extract_forwarded2	ports/www/mod_extract_forwarded2
 mod_fastcgi	ports/www/mod_fastcgi
+mod_fcgid	ports/www/mod_fcgid
 mod_filter	ports/www/mod_filter
 mod_frontpage	ports/www/mod_frontpage
 mod_geoip	ports/www/mod_geoip
