@@ -3,7 +3,7 @@
 # Date created:         5th December 1994
 # Whom:                 gpalmer@FreeBSD.org
 #
-# $Id: Makefile,v 1.25 1999/08/18 19:30:47 cpiazza Exp $
+# $Id: Makefile,v 1.26 1999/08/23 04:35:16 cpiazza Exp $
 #
 
 DISTNAME=	rxvt-2.6.1
@@ -15,9 +15,12 @@ MASTER_SITE_SUBDIR=	X11/terms
 
 MAINTAINER=	andrews@technologist.com
 
+LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
+
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=  yes
-CONFIGURE_ARGS=	--enable-utmp --enable-wtmp
+CONFIGURE_ARGS=	--enable-utmp --enable-wtmp \
+		--with-xpm --enable-xpm-background --enable-transparency
 USE_BZIP2=	yes
 MAN1=		rxvt.1
 
