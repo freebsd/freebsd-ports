@@ -1,0 +1,5 @@
+lib/pam_mysql.so
+share/doc/pam_mysql/Changelog
+share/doc/pam_mysql/CREDITS
+share/doc/pam_mysql/Readme
+@dirrm share/doc/pam_mysql
