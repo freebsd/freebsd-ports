@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mytop
-PORTVERSION=	1.0
+PORTVERSION=	1.2
 CATEGORIES=	databases
 MASTER_SITES=	http://jeremy.zawodny.com/mysql/mytop/
 
