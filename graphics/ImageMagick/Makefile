@@ -7,6 +7,7 @@
 
 PORTNAME=	ImageMagick
 PORTVERSION=	5.2.7
+PORTREVISION=	1
 CATEGORIES=	graphics perl5
 MASTER_SITES=	ftp://ftp.simplesystems.org/pub/ImageMagick/ \
 		ftp://ftp.cdrom.com/pub/ImageMagick/ \
