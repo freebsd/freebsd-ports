@@ -1,0 +1,12 @@
+Muine is a music player for GNOME using Mono. It features:
+
+* A simple, intuitive user interface
+* Ogg Vorbis, FLAC and MP3 music playback support
+* Automatic album-cover fetching
+* Support for embedded ID3v2 album images
+* ReplayGain support
+* Support for multiple artist and performer tags per song
+* A system tray icon
+* Translations into many languages
+
+WWW: http://muine.gooeylinux.org/

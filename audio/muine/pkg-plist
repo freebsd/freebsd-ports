@@ -1,0 +1,37 @@
+bin/muine
+@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/muine.schemas > /dev/null || /usr/bin/true
+etc/gconf/schemas/muine.schemas
+@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/muine.schemas > /dev/null || /usr/bin/true
+lib/muine/AmazonSearchService.dll
+lib/muine/libmuine.a
+lib/muine/libmuine.so
+lib/muine/libmuine.so.0
+lib/muine/muine.exe
+lib/muine/muine.exe.config
+share/gnome/application-registry/muine.applications
+share/gnome/applications/muine.desktop
+share/gnome/pixmaps/muine.png
+share/locale/bg/LC_MESSAGES/muine.mo
+share/locale/ca/LC_MESSAGES/muine.mo
+share/locale/cs/LC_MESSAGES/muine.mo
+share/locale/da/LC_MESSAGES/muine.mo
+share/locale/de/LC_MESSAGES/muine.mo
+share/locale/en_CA/LC_MESSAGES/muine.mo
+share/locale/en_GB/LC_MESSAGES/muine.mo
+share/locale/es/LC_MESSAGES/muine.mo
+share/locale/eu/LC_MESSAGES/muine.mo
+share/locale/fr/LC_MESSAGES/muine.mo
+share/locale/hr/LC_MESSAGES/muine.mo
+share/locale/hu/LC_MESSAGES/muine.mo
+share/locale/is/LC_MESSAGES/muine.mo
+share/locale/ja/LC_MESSAGES/muine.mo
+share/locale/ko/LC_MESSAGES/muine.mo
+share/locale/nl/LC_MESSAGES/muine.mo
+share/locale/no/LC_MESSAGES/muine.mo
+share/locale/pl/LC_MESSAGES/muine.mo
+share/locale/pt/LC_MESSAGES/muine.mo
+share/locale/pt_BR/LC_MESSAGES/muine.mo
+share/locale/sr/LC_MESSAGES/muine.mo
+share/locale/sr@Latn/LC_MESSAGES/muine.mo
+share/locale/sv/LC_MESSAGES/muine.mo
+@dirrm lib/muine
