@@ -7,6 +7,7 @@
 
 PORTNAME=	gnumeric2
 PORTVERSION=	1.2.12
+PORTREVISION=	1
 CATEGORIES=	math gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/${PORTVERSION:R}
@@ -24,7 +25,7 @@ USE_X_PREFIX=	yes
 USE_PERL5=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack gnomehier libgnomeprintui libgnomedb \
-		libgsf
+		libgsf_gnome
 USE_PYTHON=	yes
 USE_REINPLACE=	yes
 USE_LIBTOOL_VER=13
