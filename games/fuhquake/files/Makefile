@@ -23,7 +23,7 @@ DO_CFLAGS +=	-Did386
 .endif
 
 .if make(glx)
-DO_CFLAGS +=	-DWITH_PNG -DWITH_JPEG -DGLQUAKE -DWITH_DGA -DWITH_VMODE
+DO_CFLAGS +=	-DWITH_ZLIB -DWITH_PNG -DWITH_JPEG -DGLQUAKE -DWITH_DGA -DWITH_VMODE
 .endif
 
 .if defined(WITH_OPTIMIZED_CFLAGS)
@@ -31,13 +31,9 @@ DO_CFLAGS +=	-O9 -pipe -s -ffast-math -funroll-loops -fomit-frame-pointer -fexpe
 .endif
 
 .if defined(WITH_XMMS) && !make(svga)
-DO_CFLAGS +=	-D__XMMS__ `xmms-config --cflags`
-XMMS_LIBS = -L${X11BASE}/lib -lxmms
-. if ${OSVERSION} < 500016
-XMMS_LIBS+=	-pthread
-. else
-XMMS_LIBS+=	-lc_r
-. endif
+XMMS_CFLAGS !=	glib-config --cflags
+DO_CFLAGS +=	-D__XMMS__ ${XMMS_CFLAGS} ${PTHREAD_CFLAGS}
+XMMS_LIBS = -L${X11BASE}/lib -lxmms ${PTHREAD_LIBS}
 .endif
 
 ########################################################################
@@ -84,11 +80,13 @@ CL_COMMON_OBJS = \
 		cl_main.o \
 		cl_parse.o \
 		cl_pred.o \
+		cl_screen.o \
 		cl_slist.o \
 		cl_tent.o \
 		cl_view.o \
 \
 		cmd.o \
+		com_msg.o \
 		common.o \
 		console.o \
 		crc.o \
@@ -108,8 +106,10 @@ CL_COMMON_OBJS = \
 		config_manager.o \
 		fchecks.o \
 		fmod.o \
+		fragstats.o \
 		ignore.o \
 		logging.o \
+		match_tools.o \
 		modules.o \
 		movie.o \
 		mp3_player.o \
@@ -129,7 +129,6 @@ CL_SOFT_OBJS = \
 		d_fill.o \
 		d_init.o \
 		d_modech.o \
-		d_part.o \
 		d_polyse.o \
 		d_scan.o \
 		d_sky.o \
@@ -137,8 +136,6 @@ CL_SOFT_OBJS = \
 		d_surf.o \
 		d_vars.o \
 		d_zpoint.o \
-\
-		screen.o \
 \
 		r_aclip.o \
 		r_alias.o \
@@ -171,7 +168,6 @@ CL_SOFT_AS_OBJS = \
 		r_drawa.o \
 		r_edgea.o \
 		r_varsa.o \
-		surf16.o \
 		surf8.o
 .endif
 
@@ -179,7 +175,6 @@ CL_X11_OBJS = vid_x11.o
 
 CL_GLX_OBJS = \
 		gl_draw.o \
-		gl_image.o \
 		gl_mesh.o \
 		gl_model.o \
 		gl_ngraph.o \
@@ -189,7 +184,6 @@ CL_GLX_OBJS = \
 		gl_rmisc.o \
 		gl_rpart.o \
 		gl_rsurf.o \
-		gl_screen.o \
 		gl_texture.o \
 		gl_warp.o \
 		r_part.o \

@@ -1,5 +1,5 @@
---- vid_svgalib.c.orig	Thu May 29 17:56:45 2003
-+++ vid_svgalib.c	Thu May 29 17:56:28 2003
+--- vid_svgalib.c.orig	Thu Feb  5 00:41:00 2004
++++ vid_svgalib.c	Thu Feb  5 00:51:44 2004
 @@ -20,12 +20,18 @@
  #include <termios.h>
  #include <sys/ioctl.h>
@@ -27,7 +27,7 @@
  cvar_t	m_filter = {"m_filter","0"};
  cvar_t cl_keypad = {"cl_keypad", "1"};
  
-@@ -330,45 +335,41 @@
+@@ -307,45 +312,41 @@
  }
  
  static byte scantokey_kp[128] = {
@@ -48,7 +48,7 @@
 -	KP_ENTER,K_RCTRL,KP_SLASH,0, K_RALT,  K_PAUSE,K_HOME, K_UPARROW,
 -	K_PGUP, K_LEFTARROW,K_RIGHTARROW,K_END, K_DOWNARROW,K_PGDN,K_INS,K_DEL,        // 6
 -	0,      0,      0,      0,      0,      0,      0,      K_PAUSE,
--	0,      0,      0,      0,      0,      0,      0,      0						 // 7
+-	0,      0,      0,      0,      0,      K_LWIN, K_RWIN, K_MENU					// 7
 +	0,            K_ESCAPE,   '1',          '2',           '3',         '4',           '5',         '6',
 +	'7',          '8',        '9',          '0',           '-',         '=',           K_BACKSPACE, 9,
 +	'q',          'w',        'e',          'r',           't',         'y',           'u',         'i',
@@ -62,7 +62,7 @@
 +	KP_DOWNARROW, KP_PGDN,     KP_INS,       KP_DEL,       0,           0,             0,           K_F11,
 +	K_F12,        KP_ENTER,    K_RCTRL,      KP_SLASH,     K_PRINTSCR,  K_RALT,        K_HOME,      K_UPARROW,
 +	K_PGUP,       K_LEFTARROW, K_RIGHTARROW, K_END,        K_DOWNARROW, K_PGDN,        K_INS,       K_DEL,
-+	K_PAUSE,      K_LWINDOW,   K_RWINDOW,    K_POPUPMENU,  0,           0,             0,           0,
++	K_PAUSE,      K_LWIN,      K_RWIN,       K_MENU,       0,           0,             0,           0,
 +	0,            0,           0,            0,            0,           0,             0,           0,
 +	0,            0,           0,            0,            0,           0,             0,           0
  };
@@ -85,7 +85,7 @@
 -	K_ENTER,K_RCTRL,'/',     0, K_RALT,  K_PAUSE,K_HOME, K_UPARROW,
 -	K_PGUP, K_LEFTARROW,K_RIGHTARROW,K_END, K_DOWNARROW,K_PGDN,K_INS,K_DEL,        // 6
 -	0,      0,      0,      0,      0,      0,      0,      K_PAUSE,
--	0,      0,      0,      0,      0,      0,      0,      0         // 7
+-	0,      0,      0,      0,      0,      K_LWIN, K_RWIN, K_MENU			// 7
 +	0,           K_ESCAPE,   '1',          '2',          '3',         '4',          '5',         '6',
 +	'7',         '8',        '9',          '0',          '-',         '=',          K_BACKSPACE, 9,
 +	'q',         'w',        'e',          'r',          't',         'y',          'u',         'i',
@@ -99,7 +99,7 @@
 +	K_DOWNARROW, K_PGDN,      K_INS,        K_DEL,       0,           0,            0,           K_F11,
 +	K_F12,       K_ENTER,     K_RCTRL,      '/',         K_PRINTSCR,  K_RALT,       K_HOME,      K_UPARROW,
 +	K_PGUP,      K_LEFTARROW, K_RIGHTARROW, K_END,       K_DOWNARROW, K_PGDN,       K_INS,       K_DEL,
-+	K_PAUSE,     K_LWINDOW,   K_RWINDOW,    K_POPUPMENU, 0,           0,            0,           0,
++	K_PAUSE,     K_LWIN,      K_RWIN,       K_MENU,      0,           0,            0,           0,
 +	0,           0,           0,            0,           0,           0,            0,           0,
 +	0,           0,           0,            0,           0,           0,            0,           0
  };

@@ -38,17 +38,6 @@ void R_Surf8Patch ()
 
 /*
 ================
-R_Surf16Patch
-================
-*/
-void R_Surf16Patch ()
-{
-	// we only patch code on Intel
-}
-
-
-/*
-================
 R_SurfacePatch
 ================
 */
