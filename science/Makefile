@@ -3,6 +3,7 @@
 
     SUBDIR += chemtool
     SUBDIR += clhep
+    SUBDIR += gdis
     SUBDIR += libsvm
     SUBDIR += mpqc
     SUBDIR += p5-Chemistry-Elements
