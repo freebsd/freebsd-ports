@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gdesklets
-PORTVERSION=	0.26.2
-PORTREVISION=	2
+PORTVERSION=	0.31.1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://www.pycage.de/download/${PORTNAME}/
 DISTNAME=	gDesklets-${PORTVERSION}
@@ -21,7 +20,7 @@ RUN_DEPENDS=	${PYXML} \
 		${PYTHON_SITELIBDIR}/gtk-2.0/gnome/__init__.py:${PORTSDIR}/x11-toolkits/py-gnome2
 
 USE_BZIP2=	yes
-WRKSRC=		${WRKDIR}/${DISTNAME}
+WRKSRC=		${WRKDIR}/${DISTNAME:C/\.1//}
 USE_GMAKE=	yes
 USE_LIBTOOL_VER=	15
 USE_PYTHON=	yes
@@ -31,7 +30,8 @@ USE_GNOME=	gnomehack gnomeprefix gnometarget intlhack
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}"
 
-MAN1=	gdesklets.1
+GCONF_SCHEMAS=	gdesklets-display-thumbnail.schemas
+MAN1=		gdesklets.1
 
 post-install:
 	@${MKDIR} ${PREFIX}/share/gnome/gdesklets/Displays

@@ -1,0 +1,11 @@
+--- libdesklets/system/Makefile.in.orig	Mon Jul 12 12:55:59 2004
++++ libdesklets/system/Makefile.in	Mon Jul 12 12:56:12 2004
+@@ -775,7 +775,7 @@
+ 	$(CC) -o $@ $(GLIBTOP_CFLAGS) $(GLIBTOP_LIBS) $^
+ 
+ glibtop_wrap.c glibtop.py: glibtop.i glibtop.c
+-	swig -python glibtop.i
++#	swig -python glibtop.i
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:
