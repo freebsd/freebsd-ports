@@ -15,8 +15,8 @@ MAINTAINER=	jim@FreeBSD.org
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 
-USE_LIBTOOL=	yes
-GNU_CONFIGURE=	yes
+USE_BZIP2=	yes
 USE_X_PREFIX=	yes
+USE_LIBTOOL=	yes
 
 .include <bsd.port.mk>
