@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.130 1998/07/19 15:46:04 kuriyama Exp $
+# $Id: Makefile,v 1.131 1998/07/20 03:00:17 steve Exp $
 #
 
     SUBDIR += Canna
@@ -132,6 +132,7 @@
     SUBDIR += sjxa
     SUBDIR += skk
     SUBDIR += skkinput
+    SUBDIR += slrn
     SUBDIR += tcl76
     SUBDIR += tcl80
     SUBDIR += tcsh
