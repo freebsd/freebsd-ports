@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	memo
-PORTVERSION=	0.1.4
-PORTREVISION=	1
+PORTVERSION=	0.1.5
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://gdesklets.gnomedesktop.org/files/
 PKGNAMEPREFIX=	gdesklets-sensor-psi_
@@ -18,11 +17,10 @@ COMMENT=	Memo Sensor from the Psi Sensor Package
 
 RUN_DEPENDS=	${X11BASE}/libdata/pkgconfig/gdesklets-core.pc:${PORTSDIR}/deskutils/gdesklets
 
-USE_BZIP2=	yes
 USE_PYTHON=	yes
 USE_X_PREFIX=	yes
 
-DISTVERSION=	20031028
+DISTVERSION=	20040420
 NAME=		Memo
 DATADIR=	${PREFIX}/share/gnome
 WRKSRC=		${WRKDIR}/${NAME}-${PORTVERSION}

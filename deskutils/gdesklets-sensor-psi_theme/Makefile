@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	theme
-PORTVERSION=	0.1.1
-PORTREVISION=	1
+PORTVERSION=	0.1.2
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://gdesklets.gnomedesktop.org/files/
 PKGNAMEPREFIX=	gdesklets-sensor-psi_
@@ -19,12 +18,11 @@ COMMENT=	Theme Sensor from the Psi Sensor Package
 RUN_DEPENDS=	${X11BASE}/libdata/pkgconfig/gdesklets-core.pc:${PORTSDIR}/deskutils/gdesklets \
 		${DATADIR}/gdesklets/Themes/Psi-Disp-Themes/icons/themes:${PORTSDIR}/deskutils/gdesklets-psi_themes
 
-USE_BZIP2=	yes
 USE_PYTHON=	yes
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
 
-DISTVERSION=	20031028
+DISTVERSION=	20040420
 NAME=		Theme
 DATADIR=	${PREFIX}/share/gnome
 WRKSRC=		${WRKDIR}/${NAME}-${PORTVERSION}

@@ -11,14 +11,13 @@ PORTREVISION=	1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://gdesklets.gnomedesktop.org/files/
 PKGNAMEPREFIX=	gdesklets-sensor-psi_
-DISTNAME=	PsiSensorPackage-20031028
+DISTNAME=	PsiSensorPackage-20040420
 
 MAINTAINER=	klammer@webonaut.com
 COMMENT=	ExternalInterval sensor from the Psi Sensor Package
 
 RUN_DEPENDS=	${X11BASE}/libdata/pkgconfig/gdesklets-core.pc:${PORTSDIR}/deskutils/gdesklets
 
-USE_BZIP2=	yes
 USE_PYTHON=	yes
 USE_X_PREFIX=	yes
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	themes
 PORTVERSION=	0.2
+PORTREVISION=	1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://gdesklets.gnomedesktop.org/files/
 PKGNAMEPREFIX=	gdesklets-psi_
@@ -15,10 +16,9 @@ DISTNAME=	PsiDisplayPackage-${DISTVERSION}
 MAINTAINER=	klammer@webonaut.com
 COMMENT=	Themes from the Psi Display Package
 
-USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 
-DISTVERSION=	20031028
+DISTVERSION=	20040420
 NAME_THEMES=	Psi-Disp-Themes
 DATADIR=	${PREFIX}/share/gnome
 WRKSRC=		${WRKDIR}/Themes
