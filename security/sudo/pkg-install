@@ -6,4 +6,5 @@ if [ -e ${PKG_PREFIX}/etc/sudoers ]; then
   echo "Will not overwrite existing ${PKG_PREFIX}/etc/sudoers file."
 else
   cp -p ${PKG_PREFIX}/etc/sudoers.sample ${PKG_PREFIX}/etc/sudoers
+  chmod 440 ${PKG_PREFIX}/etc/sudoers
 fi
