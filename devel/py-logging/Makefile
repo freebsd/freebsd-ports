@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	logging
-PORTVERSION=	0.4.7
+PORTVERSION=	0.4.9.2
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.red-dove.com/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
