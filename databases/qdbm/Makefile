@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qdbm
-PORTVERSION=	1.8.6
+PORTVERSION=	1.8.7
 CATEGORIES=	databases
 MASTER_SITES=	http://qdbm.sourceforge.net/ \
 		${MASTER_SITE_SOURCEFORGE_EXTENDED}
