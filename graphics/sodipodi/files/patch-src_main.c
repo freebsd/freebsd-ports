@@ -1,16 +1,17 @@
---- src/main.c.orig	Sun Apr 15 16:27:51 2001
-+++ src/main.c	Thu May 30 23:14:44 2002
-@@ -17,7 +17,7 @@
- #include <tree.h> /* libxml */
+--- src/main.c.orig	Sun Feb  8 08:42:01 2004
++++ src/main.c	Thu Nov 25 15:25:34 2004
+@@ -27,7 +27,8 @@
+ #endif
  
  #ifdef __FreeBSD__
 -#include <floatingpoint.h>
++#include <sys/types.h>
 +#include <ieeefp.h>
  #endif
- 
- #include "sodipodi-private.h"
-@@ -357,7 +357,7 @@
- 
+ #include <string.h>
+ #include <signal.h>
+@@ -216,7 +217,7 @@
+ 		result = sp_main_console (argc, argv);
  	}
  
 -#ifdef __FreeBSD__
