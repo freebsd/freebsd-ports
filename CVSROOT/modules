@@ -4528,6 +4528,7 @@ mlclock		ports/x11-clocks/mlclock
 mld6query	src/usr.sbin/mld6query
 mldonkey	ports/net/mldonkey
 mldonkey-gui	ports/net/mldonkey-gui
+mldonkey-src	ports/net/mldonkey-src
 mlterm		ports/x11/mlterm
 mlvwm		ports/x11-wm/mlvwm
 mlx		src/sys/dev/mlx
