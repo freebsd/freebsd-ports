@@ -1,11 +1,17 @@
-*** ./proto/pcre_table.orig	Wed Mar  8 19:18:11 2000
---- ./proto/pcre_table	Thu Jun  1 22:45:41 2000
-***************
-*** 6,8 ****
-  # SYNOPSIS
-! #	pcre:/etc/postfix/filename
-  # DESCRIPTION
---- 6,8 ----
-  # SYNOPSIS
-! #	pcre:!!PREFIX!!/etc/postfix/filename
-  # DESCRIPTION
+--- proto/pcre_table.orig	Tue Sep 17 18:54:38 2002
++++ proto/pcre_table	Wed Sep 18 15:18:11 2002
+@@ -4,11 +4,11 @@
+ # SUMMARY
+ #	format of Postfix PCRE tables
+ # SYNOPSIS
+-#	\fBpcre:/etc/postfix/\fIfilename\fR
++#	\fBpcre:!!PREFIX!!/etc/postfix/\fIfilename\fR
+ #
+-#	\fBpostmap -q "\fIstring\fB" pcre:/etc/postfix/\fIfilename\fR
++#	\fBpostmap -q "\fIstring\fB" pcre:!!PREFIX!!/etc/postfix/\fIfilename\fR
+ #
+-#	\fBpostmap -q - pcre:/etc/postfix/\fIfilename\fR <\fIinputfile\fR
++#	\fBpostmap -q - pcre:!!PREFIX!!/etc/postfix/\fIfilename\fR <\fIinputfile\fR
+ # DESCRIPTION
+ #	The Postfix mail system uses optional tables for address
+ #	rewriting or mail routing. These tables are usually in

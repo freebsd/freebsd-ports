@@ -1,11 +1,17 @@
-*** ./man/man5/pcre_table.5.orig	Thu Mar 30 14:05:28 2000
---- ./man/man5/pcre_table.5	Thu Jun  1 22:39:34 2000
-***************
-*** 10,12 ****
-  .nf
-! pcre:/etc/postfix/filename
-  .SH DESCRIPTION
---- 10,12 ----
-  .nf
-! pcre:!!PREFIX!!/etc/postfix/filename
-  .SH DESCRIPTION
+--- man/man5/pcre_table.5.orig	Wed Sep 18 15:12:38 2002
++++ man/man5/pcre_table.5	Wed Sep 18 15:13:05 2002
+@@ -8,11 +8,11 @@
+ .SH SYNOPSIS
+ .na
+ .nf
+-\fBpcre:/etc/postfix/\fIfilename\fR
++\fBpcre:!!PREFIX!!/etc/postfix/\fIfilename\fR
+ 
+-\fBpostmap -q "\fIstring\fB" pcre:/etc/postfix/\fIfilename\fR
++\fBpostmap -q "\fIstring\fB" pcre:!!PREFIX!!/etc/postfix/\fIfilename\fR
+ 
+-\fBpostmap -q - pcre:/etc/postfix/\fIfilename\fR <\fIinputfile\fR
++\fBpostmap -q - pcre:!!PREFIX!!/etc/postfix/\fIfilename\fR <\fIinputfile\fR
+ .SH DESCRIPTION
+ .ad
+ .fi
