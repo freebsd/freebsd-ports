@@ -1,1 +1,1 @@
-ELF (Executable and Linkable Format) reader and producer
+C++ library for reading and generating files in the ELF binary format

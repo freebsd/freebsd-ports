@@ -6,23 +6,28 @@
 # $FreeBSD$
 #
 
-PORTNAME=	elfio
-PORTVERSION=	0.2.7
+PORTNAME=	ELFIO
+PORTVERSION=	1.0.0
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITE_SUBDIR=	${PORTNAME:L}
 
 MAINTAINER=	ports@FreeBSD.org
 
-WRKSRC=		${WRKDIR}/ELFIO/ELFIO
-MAKEFILE=	makefile
-USE_REINPLACE=	yes
-ALL_TARGET=	# empty
+GNU_CONFIGURE=	yes
 
-post-patch:
-	@${REINPLACE_CMD} -e "s,^CXXFLAGS,#CXXFLAGS,g" ${WRKSRC}/makefile
+DOCS=		AUTHORS COPYING ChangeLog README
+DOCS2=		elf11g.zip tutorial.docbook tutorial.pdf
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/libELFIO.a ${PREFIX}/lib
+.if !defined(NOPORTDOCS)
+post-install:
+	@${MKDIR} ${DOCSDIR}
+.for file in ${DOCS}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.endfor
+.for file in ${DOCS2}
+	${INSTALL_DATA} ${WRKSRC}/doc/${file} ${DOCSDIR}
+.endfor
+.endif
 
 .include <bsd.port.mk>

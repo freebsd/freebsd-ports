@@ -1,1 +1,15 @@
+@comment $FreeBSD$
+bin/ELFDump
+include/ELFI.h
+include/ELFIO.h
+include/ELFO.h
+include/ELFTypes.h
 lib/libELFIO.a
+%%PORTDOCS%%share/doc/ELFIO/AUTHORS
+%%PORTDOCS%%share/doc/ELFIO/COPYING
+%%PORTDOCS%%share/doc/ELFIO/ChangeLog
+%%PORTDOCS%%share/doc/ELFIO/README
+%%PORTDOCS%%share/doc/ELFIO/elf11g.zip
+%%PORTDOCS%%share/doc/ELFIO/tutorial.docbook
+%%PORTDOCS%%share/doc/ELFIO/tutorial.pdf
+%%PORTDOCS%%@dirrm share/doc/ELFIO
