@@ -1,0 +1,13 @@
+
+$FreeBSD$
+
+--- configure.orig	Thu Jun 19 03:05:17 2003
++++ configure	Thu Jun 19 03:05:31 2003
+@@ -774,7 +774,6 @@
+ 	@echo LN=\"LN=$(LN)\"
+ 	@echo COMPRESS=\"COMPRESS=$(COMPRESS)\"
+ 	@echo MANPATH=\"MANPATH=$(MANPATH)\"
+-	@echo CC=\"$(CC)\"
+ 	@echo LDOPTIONS=\"$(LDOPTIONS)\"
+ 	@echo LINT=\"LINT=$(LINT)\"
+ 	@echo LINTFLAGS=\"LINTFLAGS=$(LINTFLAGS)\"
