@@ -8,7 +8,7 @@
 PORTNAME=	HLDS
 PORTVERSION=	3.1.0.6
 CATEGORIES=	games linux
-MASTER_SITES=	http://204.213.190.22/downloads/ \
+MASTER_SITES=	http://web2.globalwebhost.com/~pat/files/ \
 		http://ftp1download.gamespy.com/fileplanet/fpnew/action/half-life/official/ \
 		http://www.jetstreamgames.co.nz/files/pub/gamespyftp1/fpnew/action/half-life/official/ \
 		ftp://ftp.fasta.fh-dortmund.de/gdi/halflife/server/linux/ \
