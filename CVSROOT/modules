@@ -1591,6 +1591,7 @@ find		src/usr.bin/find
 find-zlib	ports/security/find-zlib
 find_ddos	ports/security/find_ddos
 finder		ports/x11/finder
+findlib		ports/devel/findlib
 findutils	ports/misc/findutils
 fine		ports/editors/fine
 finger		src/usr.bin/finger
