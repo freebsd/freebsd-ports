@@ -7,6 +7,7 @@
 
 PORTNAME=	erlang-doc
 PORTVERSION=	r9c
+PORTEPOCH=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.erlang.org/doc/r9c/pdf/ \
 		http://erlang.org/download/ \
