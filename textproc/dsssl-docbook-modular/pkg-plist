@@ -3,6 +3,7 @@ share/sgml/docbook/dsssl/modular/README
 share/sgml/docbook/dsssl/modular/TODO
 share/sgml/docbook/dsssl/modular/catalog
 share/sgml/docbook/dsssl/modular/docbook.dcl
+share/sgml/docbook/dsssl/modular/common/ChangeLog
 share/sgml/docbook/dsssl/modular/common/README
 share/sgml/docbook/dsssl/modular/common/dbcommon.dsl
 share/sgml/docbook/dsssl/modular/common/dbl10n.dsl
@@ -12,15 +13,10 @@ share/sgml/docbook/dsssl/modular/common/dbl1fr.dsl
 share/sgml/docbook/dsssl/modular/common/dbl1ru.dsl
 share/sgml/docbook/dsssl/modular/common/dbl1usen.dsl
 share/sgml/docbook/dsssl/modular/common/dbtable.dsl
-share/sgml/docbook/dsssl/modular/common/version.sgm
 share/sgml/docbook/dsssl/modular/common/xbl1usen.dsl
-share/sgml/docbook/dsssl/modular/common/changelog/HTML.manifest
-share/sgml/docbook/dsssl/modular/common/changelog/changelog.crf
-share/sgml/docbook/dsssl/modular/common/changelog/changelog.htm
-share/sgml/docbook/dsssl/modular/common/changelog/changelog.rtf
-share/sgml/docbook/dsssl/modular/common/changelog/changelog.sgm
-@dirrm share/sgml/docbook/dsssl/modular/common/changelog
+share/sgml/docbook/dsssl/modular/common/version.sgm
 @dirrm share/sgml/docbook/dsssl/modular/common
+share/sgml/docbook/dsssl/modular/doc/cals-table-class.html
 share/sgml/docbook/dsssl/modular/doc/custom.html
 share/sgml/docbook/dsssl/modular/doc/dblib.html
 share/sgml/docbook/dsssl/modular/doc/html.html
@@ -129,11 +125,11 @@ share/sgml/docbook/dsssl/modular/doc/lib-measurement-to-length.html
 share/sgml/docbook/dsssl/modular/doc/lib-my-debug.html
 share/sgml/docbook/dsssl/modular/doc/lib-node-list-filter-by-gi.html
 share/sgml/docbook/dsssl/modular/doc/lib-node-list-filter-by-not-gi.html
+share/sgml/docbook/dsssl/modular/doc/lib-node-list-filter-elements.html
 share/sgml/docbook/dsssl/modular/doc/lib-node-list-filter-out-pis.html
 share/sgml/docbook/dsssl/modular/doc/lib-node-list-first-element.html
 share/sgml/docbook/dsssl/modular/doc/lib-node-list-last-element.html
 share/sgml/docbook/dsssl/modular/doc/lib-node-list-last.html
-share/sgml/docbook/dsssl/modular/doc/lib-node-list-length.html
 share/sgml/docbook/dsssl/modular/doc/lib-node-list-reduce.html
 share/sgml/docbook/dsssl/modular/doc/lib-normalize.html
 share/sgml/docbook/dsssl/modular/doc/lib-nth-node.html
@@ -156,6 +152,7 @@ share/sgml/docbook/dsssl/modular/doc/lib-string-replace.html
 share/sgml/docbook/dsssl/modular/doc/lib-string-with-space.html
 share/sgml/docbook/dsssl/modular/doc/lib-unit-conversion-alist.html
 share/sgml/docbook/dsssl/modular/doc/lib-version.html
+share/sgml/docbook/dsssl/modular/doc/lib-x-absolute-child-number.html
 share/sgml/docbook/dsssl/modular/doc/pr-X25bf-sizeX25.html
 share/sgml/docbook/dsssl/modular/doc/pr-X25body-widthX25.html
 share/sgml/docbook/dsssl/modular/doc/pr-X25page-heightX25.html
@@ -177,6 +174,7 @@ share/sgml/docbook/dsssl/modular/doc/prp-component-subtitle-quadding.html
 share/sgml/docbook/dsssl/modular/doc/prp-component-title-quadding.html
 share/sgml/docbook/dsssl/modular/doc/prp-default-quadding.html
 share/sgml/docbook/dsssl/modular/doc/prp-default-simplesect-level.html
+share/sgml/docbook/dsssl/modular/doc/prp-page-n-columns.html
 share/sgml/docbook/dsssl/modular/doc/prp-para-sep.html
 share/sgml/docbook/dsssl/modular/doc/prp-division-subtitle-quadding.html
 share/sgml/docbook/dsssl/modular/doc/prp-division-title-quadding.html
@@ -215,7 +213,6 @@ share/sgml/docbook/dsssl/modular/doc/prp-linenumber-space.html
 share/sgml/docbook/dsssl/modular/doc/prp-mono-font-family.html
 share/sgml/docbook/dsssl/modular/doc/prp-number-address-lines.html
 share/sgml/docbook/dsssl/modular/doc/prp-number-funcsynopsisinfo-lines.html
-share/sgml/docbook/dsssl/modular/doc/prp-page-n-columns.html
 share/sgml/docbook/dsssl/modular/doc/prp-refentry-function.html
 share/sgml/docbook/dsssl/modular/doc/prp-two-side.html
 share/sgml/docbook/dsssl/modular/doc/cmnchanges.html
@@ -255,6 +252,7 @@ share/sgml/docbook/dsssl/modular/doc/testdata/test.rtf
 share/sgml/docbook/dsssl/modular/doc/testdata/test.sgm
 @dirrm share/sgml/docbook/dsssl/modular/doc/testdata
 @dirrm share/sgml/docbook/dsssl/modular/doc
+share/sgml/docbook/dsssl/modular/html/ChangeLog
 share/sgml/docbook/dsssl/modular/html/README
 share/sgml/docbook/dsssl/modular/html/XREF
 share/sgml/docbook/dsssl/modular/html/catalog
@@ -296,22 +294,14 @@ share/sgml/docbook/dsssl/modular/html/dbttlpg.dsl
 share/sgml/docbook/dsssl/modular/html/dbverb.dsl
 share/sgml/docbook/dsssl/modular/html/docbook.dsl
 share/sgml/docbook/dsssl/modular/html/version.dsl
-share/sgml/docbook/dsssl/modular/html/changelog/HTML.manifest
-share/sgml/docbook/dsssl/modular/html/changelog/changelog.htm
-share/sgml/docbook/dsssl/modular/html/changelog/changelog.rtf
-share/sgml/docbook/dsssl/modular/html/changelog/changelog.sgm
-@dirrm share/sgml/docbook/dsssl/modular/html/changelog
 @dirrm share/sgml/docbook/dsssl/modular/html
+share/sgml/docbook/dsssl/modular/lib/ChangeLog
 share/sgml/docbook/dsssl/modular/lib/README
 share/sgml/docbook/dsssl/modular/lib/dblib.dsl
 share/sgml/docbook/dsssl/modular/lib/doc.zip
 share/sgml/docbook/dsssl/modular/lib/version.sgm
-share/sgml/docbook/dsssl/modular/lib/changelog/HTML.manifest
-share/sgml/docbook/dsssl/modular/lib/changelog/changelog.htm
-share/sgml/docbook/dsssl/modular/lib/changelog/changelog.rtf
-share/sgml/docbook/dsssl/modular/lib/changelog/changelog.sgm
-@dirrm share/sgml/docbook/dsssl/modular/lib/changelog
 @dirrm share/sgml/docbook/dsssl/modular/lib
+share/sgml/docbook/dsssl/modular/print/ChangeLog
 share/sgml/docbook/dsssl/modular/print/README
 share/sgml/docbook/dsssl/modular/print/XREF
 share/sgml/docbook/dsssl/modular/print/catalog
@@ -353,16 +343,12 @@ share/sgml/docbook/dsssl/modular/print/docbook.dsl
 share/sgml/docbook/dsssl/modular/print/notoc.dsl
 share/sgml/docbook/dsssl/modular/print/plain.dsl
 share/sgml/docbook/dsssl/modular/print/version.dsl
-share/sgml/docbook/dsssl/modular/print/changelog/HTML.manifest
-share/sgml/docbook/dsssl/modular/print/changelog/changelog.htm
-share/sgml/docbook/dsssl/modular/print/changelog/changelog.rtf
-share/sgml/docbook/dsssl/modular/print/changelog/changelog.sgm
-@dirrm share/sgml/docbook/dsssl/modular/print/changelog
 @dirrm share/sgml/docbook/dsssl/modular/print
+share/sgml/docbook/dsssl/modular/test/ChangeLog
 share/sgml/docbook/dsssl/modular/test/docbook.css
-share/sgml/docbook/dsssl/modular/test/elements
 share/sgml/docbook/dsssl/modular/test/emc2.gif
 share/sgml/docbook/dsssl/modular/test/headft.dsl
+share/sgml/docbook/dsssl/modular/test/struct.sgm
 share/sgml/docbook/dsssl/modular/test/xarticle.sgm
 share/sgml/docbook/dsssl/modular/test/xbadtag.sgm
 share/sgml/docbook/dsssl/modular/test/xbiblio.sgm
