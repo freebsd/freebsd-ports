@@ -1,0 +1,6 @@
+include/X11/extensions/Xcomposite.h
+lib/libXcomposite.a
+lib/libXcomposite.la
+lib/libXcomposite.so
+lib/libXcomposite.so.1
+libdata/pkgconfig/xcomposite.pc
