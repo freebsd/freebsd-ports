@@ -6,17 +6,15 @@
 #
 
 PORTNAME=	qsstv
-PORTVERSION=	5.2e
+PORTVERSION=	5.3a
 CATEGORIES=	comms
-MASTER_SITES=	http://users.pandora.be/on1mh/download/
+MASTER_SITES=	http://users.telenet.be/on4qz/download/
 
 MAINTAINER=	db@db.net
 COMMENT=	Amateur Radio SSTV/FAX reception program for unix
 
 LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
 		png:${PORTSDIR}/graphics/png
-
-BROKEN=		Unfetchable
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
@@ -30,10 +28,6 @@ do-install:
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/qsstv/docs/en/*.png ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/qsstv/docs/en/*.html ${DOCSDIR}
-#	@cd ${WRKSRC}/qsstv/docs/en; \
-#		${INSTALL_DATA} *.png ${DOCSDIR};
-#	@cd ${WRKSRC}/qsstv/docs/en; \
-#		${INSTALL_DATA} *.html ${DOCSDIR};
 .endif
 
 .include <bsd.port.mk>
