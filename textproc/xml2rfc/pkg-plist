@@ -15,4 +15,10 @@ bin/xml2txt
 %%PORTDOCS%%%%DOCSDIR%%/rfc2629.txt
 %%PORTDOCS%%%%DOCSDIR%%/rfc2629.xml
 %%PORTDOCS%%%%DOCSDIR%%/rfc2629.xsd
+%%PORTDOCS%%%%DOCSDIR%%/contrib/concat.pl
+%%PORTDOCS%%%%DOCSDIR%%/contrib/fast-sync.sh
+%%PORTDOCS%%%%DOCSDIR%%/contrib/new-draft.xml
+%%PORTDOCS%%%%DOCSDIR%%/contrib/template.xml
+%%PORTDOCS%%%%DOCSDIR%%/contrib/xml2rfcpp.pl
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/contrib
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
