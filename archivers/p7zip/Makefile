@@ -24,7 +24,7 @@ ONLY_FOR_ARCHS=	alpha amd64 i386 ia64
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500039
-BROKEN=		Requires wchar functions (mbrtowc(3) etc.) for compilation
+BROKEN=		'Requires wchar functions (mbrtowc(3) etc.) for compilation'
 .endif
 
 do-install:
