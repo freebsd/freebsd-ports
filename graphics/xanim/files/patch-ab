@@ -1,6 +1,6 @@
---- Imakefile.orig	Sun Mar 21 14:36:26 1999
-+++ Imakefile	Mon Mar 29 12:01:48 1999
-@@ -116,7 +116,7 @@
+--- Imakefile.orig	Sun Mar 21 23:36:26 1999
++++ Imakefile	Fri May 28 15:57:16 1999
+@@ -116,12 +116,12 @@
  XCOMM XA_DLL_DEF = -DXA_DLL
  XCOMM
  XCOMM ### You may need this library.
@@ -9,6 +9,12 @@
  XCOMM
  XCOMM If you'd like to change the default directory that XAnim searches while
  XCOMM looking for dlls, then change the directory below.
+ XCOMM
+-XA_DLL_PATH = /usr/local/xanim/mods
++XA_DLL_PATH = $(LIBDIR)/xanim/mods
+ 
+ 
+ 
 @@ -190,7 +190,7 @@
  XCOMM XA_CVID_DEF = -DXA_CVID
  XCOMM XA_CYUV_DEF = -DXA_CYUV
