@@ -1,0 +1,11 @@
+--- doc/Makefile.in.orig	Fri Sep 21 12:31:16 2001
++++ doc/Makefile.in	Sun Oct  7 18:29:54 2001
+@@ -84,7 +84,7 @@
+ 
+ EXTRA_DIST =  evas.sdw evas.pdf
+ 
+-evasdir = $(datadir)/evas/doc
++evasdir = $(datadir)/doc/evas
+ evas_DATA =  evas.sdw evas.pdf
+ 
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs

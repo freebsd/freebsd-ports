@@ -6,24 +6,22 @@
 #
 
 PORTNAME=	evas
-PORTVERSION=	0.5.0
+PORTVERSION=	0.6.0
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	http://www.ny.us.rasterman.com/files/ \
+		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	enlightenment
 
 MAINTAINER=	ishmael27@home.com
 
 LIB_DEPENDS=	Imlib2.1:${PORTSDIR}/graphics/imlib2
 
+USE_BZIP2=	yes
 USE_X_PREFIX=	yes
-USE_FREETYPE=	yes
 USE_LIBTOOL=	yes
-INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 CONFIGURE_ARGS=	--disable-gl
-
-post-install:
-	@strip ${PREFIX}/lib/libevas.so.5
+INSTALLS_SHLIB=	yes
 
 .include <bsd.port.mk>

@@ -4,8 +4,10 @@ bin/evas_test_old
 include/Evas.h
 lib/libevas.a
 lib/libevas.so
-lib/libevas.so.5
+lib/libevas.so.6
 share/aclocal/evas.m4
+share/doc/evas/evas.pdf
+share/doc/evas/evas.sdw
 share/evas/fnt/andover.ttf
 share/evas/fnt/cinema.ttf
 share/evas/fnt/grunge.ttf
@@ -65,6 +67,7 @@ share/evas/img/sky001.png
 share/evas/img/spider.png
 share/evas/img/term.png
 share/evas/img/worlds.png
+@dirrm share/doc/evas
 @dirrm share/evas/fnt
 @dirrm share/evas/img
 @dirrm share/evas
