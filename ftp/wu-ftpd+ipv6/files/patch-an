@@ -1,0 +1,14 @@
+--- src/makefiles/common.bak	Thu Jan 28 20:04:59 1999
++++ src/makefiles/common	Wed Feb 10 11:57:18 1999
+@@ -15,7 +15,11 @@
+ 	${CC} ${LFLAGS} -o $@ ftpshut.o vers.o
+ 
+ ftpd: ${OBJS} ${XOBJS} ../support/libsupport.a
++.if defined(PACKAGE_BUILDING)
+ 	${CC} ${LFLAGS} -o $@ ${OBJS} ${XOBJS} ${XLIBS}
++.else
++	${CC} -static ${LFLAGS} -o $@ ${OBJS} ${XOBJS} ${XLIBS}
++.endif
+ 
+ ckconfig: ckconfig.o
+ 	${CC} ${LFLAGS} -o $@ ckconfig.o
