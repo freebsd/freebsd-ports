@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pure-ftpd
-PORTVERSION=	1.0.16b
+PORTVERSION=	1.0.16c
 PORTREVISION=	0
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	ftp://ftp.pureftpd.org/pub/pure-ftpd/releases/ \
