@@ -5,6 +5,7 @@ share/inform/linklpa.h
 share/inform/linklv.h
 share/inform/Parser.h
 share/inform/parserm.h
+share/inform/Relnote
 share/inform/Verblib.h
 share/inform/verblibm.h
 share/inform/VerbLib.h
