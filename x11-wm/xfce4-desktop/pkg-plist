@@ -116,3 +116,5 @@ share/xfce4/doc/C/xfdesktop.html
 @unexec rmdir %D/share/xfce4/doc/C 2>/dev/null || true
 @unexec rmdir %D/share/xfce4/doc 2>/dev/null || true
 @unexec rmdir %D/share/xfce4 2>/dev/null || true
+@unexec rmdir %D/share/locale/nb_NO/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/nb_NO 2>/dev/null || true
