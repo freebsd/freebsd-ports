@@ -33,4 +33,3 @@ diff -u -r1.1.1.1 -r1.2
 +# define PATHNAME_PROGS   "/usr/local/sbin" /* where to find the executables     */
  # define PATHNAME_BINDERY "/var/nwserv/db"  /* directory for bindery-files        */
  #endif
- 
