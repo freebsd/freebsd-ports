@@ -3,7 +3,7 @@
 # Date created:		26 Aug 1997
 # Whom:			Mita Yoshio <mita@jp.FreeBSD.org>
 #
-# $Id: Makefile,v 1.15 1998/01/23 00:44:37 itojun Exp $
+# $Id: Makefile,v 1.16 1998/03/16 07:33:42 itojun Exp $
 #
 
 DISTNAME=	ghostscript-5.10
@@ -42,8 +42,8 @@ GS_SOURCES=	ghostscript-5.10.tar.gz
 GS_SOURCES+=	jpegsrc.v6a.tar.gz
 GS_SOURCES+=	libpng-0.96.tgz
 GS_DRIVERS=	gs5.10-vflib-1.1.tar.gz
-GS_DRIVERS+=	gs5.10-jpdf-0.1.tar.gz
-GS_DRIVERS+=	gs5.10-VFlibBM.diff.gz
+GS_DRIVERS+=	gs5.10-jpdf-0.2.tar.gz
+GS_DRIVERS+=	gs5.10-VFlibBM-PL1.diff.gz
 GS_DRIVERS+=	gdevlips4-1.2.0.tar.gz
 GS_DRIVERS+=	gdevmjc-0.7.tar.gz
 GS_DRIVERS+=	gdevrpdl.tar.gz
@@ -65,15 +65,15 @@ pre-fetch:
 
 pre-patch:
 	(cd ${WRKSRC} ; tar xzf ${DISTDIR}/gs5.10-vflib-1.1.tar.gz )
-	(cd ${WRKSRC} ; tar xzf ${DISTDIR}/gs5.10-jpdf-0.1.tar.gz )
+	(cd ${WRKSRC} ; tar xzf ${DISTDIR}/gs5.10-jpdf-0.2.tar.gz )
 	(cd ${WRKDIR} ; \
 	  ${PATCH} -p < ${WRKSRC}/gs5.10-vflib-1.1/gs5.10-vflib-1.1.diff \
 		>/dev/null 2>&1)
 	(cd ${WRKDIR} ; \
-	  ${PATCH} -p < ${WRKSRC}/gs5.10-jpdf-0.1/gs5.10-jpdf.diff \
+	  ${PATCH} -p < ${WRKSRC}/gs5.10-jpdf-0.2/gs5.10-jpdf-0.2.diff \
 		>/dev/null 2>&1)
-	(cd ${WRKDIR} ;  zcat ${DISTDIR}/gs5.10-VFlibBM.diff.gz | ${PATCH} -p \
-		>/dev/null 2>&1)
+	(cd ${WRKDIR} ;  zcat ${DISTDIR}/gs5.10-VFlibBM-PL1.diff.gz | \
+		${PATCH} -p >/dev/null 2>&1)
 
 post-patch:
 	@( ${MKDIR} ${PRINTER} ; \
@@ -120,7 +120,7 @@ post-install:
 	  ${CP} ${WRKSRC}/gs5.10-vflib-1.1/README.CID ${DOC_DIR}/README.CID.gs5.10-vflib ; \
 	  ${CP} ${WRKSRC}/gs5.10-vflib-1.1/OLD-DOC/gs261d13-doc/* ${DOC_DIR} ; \
 	  ${CP} ${WRKSRC}/gs5.10-vflib-1.1/OLD-DOC/gs261j10-doc/* ${DOC_DIR} ; \
-	  ${CP} ${WRKSRC}/gs5.10-jpdf-0.1/README ${DOC_DIR}/README.gs5.10-jpdf ; \
+	  ${CP} ${WRKSRC}/gs5.10-jpdf-0.2/README ${DOC_DIR}/README.gs5.10-jpdf ; \
 	  ${CP} ${PRINTER}/gdev10v/gdev10v.jis ${DOC_DIR} ; \
 	  ${CP} ${PRINTER}/gdevep82/gdevep82.jis ${DOC_DIR} ; \
 	  ${CP} ${PRINTER}/gdevlips4-1.2.0/Readme ${DOC_DIR}/gdevlips4.euc ; \
