@@ -1,0 +1,4 @@
+bin/dc_gui
+%%PORTDOCS%%share/doc/dctc-gui/COPYING
+%%PORTDOCS%%share/doc/dctc-gui/ChangeLog
+%%PORTDOCS%%@dirrm share/doc/dctc-gui

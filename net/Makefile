@@ -65,6 +65,7 @@
     SUBDIR += dante
     SUBDIR += datapipe
     SUBDIR += dctc
+    SUBDIR += dctc-gui
     SUBDIR += ddc
     SUBDIR += ddclient
     SUBDIR += ddup

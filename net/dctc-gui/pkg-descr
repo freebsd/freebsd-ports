@@ -1,0 +1,21 @@
+[ from developer's site]
+
+This is a Graphical User Interface for DCTC
+
+I. What is DCTC
+DCTC is a Direct Connect clone, a windoz client allowing users to
+share their files and talk (like IRC but more software sharing
+oriented) using a proprietary protocol.
+
+DCTC stands for Direct Connect Text Client.
+
+II. What is not DCTC
+DCTC is written from scratch without any help from neo-modus using
+our experience of hotline protocol.
+
+DCTC is not designed to be used by human. It doesn't contains any
+GUI or CLI. The goal of this project is to build a Direct Connect
+client which can be used by other programs. So even if you can enter
+command using the keyboard, don't say the human interface is poor.
+
+WWW: http://ac2i.tzo.com/dctc/
