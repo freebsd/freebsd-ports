@@ -26,6 +26,8 @@ SRC=		${.CURDIR}/src
 
 MAN1=		pkg_cutleaves.1
 
+PLIST_FILES=	sbin/pkg_cutleaves
+
 do-fetch:
 	@${DO_NADA}
 
