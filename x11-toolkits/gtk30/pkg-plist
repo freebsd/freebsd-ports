@@ -145,11 +145,13 @@ share/locale/eu/LC_MESSAGES/gtk+.mo
 share/locale/fi/LC_MESSAGES/gtk+.mo
 share/locale/fr/LC_MESSAGES/gtk+.mo
 share/locale/ga/LC_MESSAGES/gtk+.mo
+share/locale/gl/LC_MESSAGES/gtk+.mo
 share/locale/hr/LC_MESSAGES/gtk+.mo
 share/locale/hu/LC_MESSAGES/gtk+.mo
 share/locale/it/LC_MESSAGES/gtk+.mo
 share/locale/ja/LC_MESSAGES/gtk+.mo
 share/locale/ko/LC_MESSAGES/gtk+.mo
+share/locale/lt/LC_MESSAGES/gtk+.mo
 share/locale/nl/LC_MESSAGES/gtk+.mo
 share/locale/no/LC_MESSAGES/gtk+.mo
 share/locale/pl/LC_MESSAGES/gtk+.mo
