@@ -1,21 +1,3 @@
---- xpcom/reflect/xptcall/src/md/unix/Makefile.in.orig	Mon May 26 13:26:01 2003
-+++ xpcom/reflect/xptcall/src/md/unix/Makefile.in	Mon May 26 13:30:04 2003
-@@ -287,6 +287,15 @@
- ASFILES		:= xptcinvoke_asm_sparc_netbsd.s xptcstubs_asm_sparc_netbsd.s
- endif
- #
-+# FreeBSD/SPARC64
-+#
-+ifeq ($(OS_ARCH),FreeBSD)
-+ifneq (,$(findstring sparc,$(OS_TEST)))
-+CPPSRCS		:= xptcinvoke_sparc64_freebsd.cpp xptcstubs_sparc64_freebsd.cpp
-+ASFILES		:= xptcinvoke_asm_sparc64_freebsd.s xptcstubs_asm_sparcv9_solaris.s
-+endif
-+endif
-+#
- # Solaris/SPARC
- #
- ifeq ($(OS_ARCH),SunOS)
 --- /dev/null	Mon May 26 13:22:00 2003
 +++ xpcom/reflect/xptcall/src/md/unix/xptcstubs_sparc64_freebsd.cpp	Mon May 26 04:12:55 2003
 @@ -0,0 +1,123 @@
