@@ -1,0 +1,24 @@
+
+$FreeBSD$
+
+--- src/Makefile.orig	Sat Mar  8 21:56:02 2003
++++ src/Makefile	Sat Mar  8 21:56:33 2003
+@@ -1,14 +1,14 @@
+ #CXXFLAGS= -g
+-CXXFLAGS= -O1
++#CXXFLAGS= -O1
+ 
+ chemeq : chemeq.o chemparser.o
+-	g++ $(CXXFLAGS) -o chemeq chemeq.o chemparser.o -lfl
++	$(CXX) $(CXXFLAGS) -o chemeq chemeq.o chemparser.o -lfl
+ 
+ chemeq.o : chemeq.cc chemeq.h
+-	g++ $(CXXFLAGS) -c chemeq.cc
++	$(CXX) $(CXXFLAGS) -c chemeq.cc
+ 
+ chemparser.o : chemparser.cc chemeq.h
+-	g++ $(CXXFLAGS) -c chemparser.cc
++	$(CXX) $(CXXFLAGS) -c chemparser.cc
+ 
+ chemparser.cc : chemlex.cc chemeq.y chemeq.h
+ 	bison  --verbose -o chemparser.cc chemeq.y
