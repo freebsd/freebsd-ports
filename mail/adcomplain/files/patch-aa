@@ -3,7 +3,7 @@
 ***************
 *** 1,3 ****
 --- 1,4 ----
-+ #!/usr/local/bin/perl
++ #!%PERL5%
   #! /bin/sh -- # -*- perl -*-
   # first line invokes sh.  Some systems may need to refer to perl directly, i.e.:
   
