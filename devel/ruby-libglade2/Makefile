@@ -19,9 +19,9 @@ MAINTAINER=	knu@FreeBSD.org
 COMMENT=	Ruby binding for Libglade2
 
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/gtk2.so:${PORTSDIR}/x11-toolkits/ruby-gtk2
-LIB_DEPENDS=	glade-2.0.0:${PORTSDIR}/devel/libglade2
 
 USE_RUBY=	yes
+USE_GNOME=	libglade2
 USE_RUBY_EXTCONF=	yes
 
 .include "${.CURDIR}/../../x11/ruby-gnome2/Makefile.common"
