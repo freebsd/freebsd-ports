@@ -1,15 +1,23 @@
---- Makefile.in.orig	Sun Jun 16 23:05:24 2002
-+++ Makefile.in	Sun Jun 16 23:06:31 2002
-@@ -398,10 +398,10 @@
- install-data-local:
+--- Makefile.in.orig	Mon Jun 17 12:05:59 2002
++++ Makefile.in	Mon Jun 17 16:11:32 2002
+@@ -90,7 +90,7 @@
+ EXTRA_DIST =  	autogen.sh 	metacity-setup.desktop 	metacity-setup.desktop.in
+ 
+ 
+-pixmapdir = $(prefix)/share/pixmaps
++pixmapdir = $(datadir)/pixmaps
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = config.h
+@@ -399,9 +399,10 @@
  	@$(NORMAL_INSTALL)
  	if test -d $(srcdir)/pixmaps; then \
--	  $(mkinstalldirs) $(DESTDIR)$(pkgdatadir)/pixmaps; \
-+	  $(mkinstalldirs) $(pixmapdir); \
+ 	  $(mkinstalldirs) $(DESTDIR)$(pixmapdir); \
++	  $(mkinstalldirs) $(DESTDIR)$(datadir)/metacity-setup/pixmaps; \
  	  for pixmap in $(srcdir)/pixmaps/*; do \
  	    if test -f $$pixmap; then \
--	      $(INSTALL_DATA) $$pixmap $(DESTDIR)$(prefix)share/pixmaps; \
-+	      $(INSTALL_DATA) $$pixmap $(pixmapdir); \
+-		$(INSTALL_DATA) $$pixmap $(DESTDIR)$(prefix)/share/pixmaps; \
++		$(INSTALL_DATA) $$pixmap $(DESTDIR)$(pixmapdir); \
+ 	    	$(INSTALL_DATA) $$pixmap $(DESTDIR)$(datadir)/metacity-setup/pixmaps; \
  	    fi \
  	  done \
- 	fi

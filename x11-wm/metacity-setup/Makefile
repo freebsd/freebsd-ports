@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	metacity-setup
-PORTVERSION=	0.5
+PORTVERSION=	0.5.1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://plastercast.tzo.com/~plastercast/Projects/ \
 		http://www.marcuscom.com/downloads/ \
