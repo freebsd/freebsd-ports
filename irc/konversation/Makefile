@@ -8,7 +8,8 @@
 PORTNAME=	konversation
 PORTVERSION=	0.15.1
 CATEGORIES=	irc kde
-MASTER_SITES=	http://download.berlios.de/${PORTNAME}/
+MASTER_SITES=	http://download.berlios.de/${PORTNAME}/ \
+		http://www.hitnet.rwth-aachen.de/~brueffer/distfiles/
 
 MAINTAINER=	markus@FreeBSD.org
 COMMENT=	A user friendly IRC client for KDE

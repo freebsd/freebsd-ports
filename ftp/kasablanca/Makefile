@@ -7,7 +7,8 @@
 PORTNAME=	kasablanca
 PORTVERSION=	0.4.0.2
 CATEGORIES=	ftp kde
-MASTER_SITES=	http://download.berlios.de/kasablanca/
+MASTER_SITES=	http://download.berlios.de/kasablanca/ \
+		http://www.hitnet.rwth-aachen.de/~brueffer/distfiles/
 
 MAINTAINER=	markus@FreeBSD.org
 COMMENT=	Graphical ftp client for KDE
