@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lcms
-PORTVERSION=	1.09
+PORTVERSION=	1.10
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.littlecms.com/
