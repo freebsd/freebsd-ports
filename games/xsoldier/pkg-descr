@@ -1,0 +1,42 @@
+Xsoldier is a shooting game for x11.
+
+OPTIONS:
+	-display <displayname>	Specify display.
+
+	-wait <unsigned int n>	Specify wait. To change this will let
+			 	your highscore unregistered.
+
+	-cmap			Use default colormap.
+				Without this option, xsoldier use pri-
+				vate colormap.
+
+	-score			Show 10 highscores.
+
+	-help			Show usage message.
+
+	You can use the head 1 charactor of an option instead.
+
+PLAY:
+	% xsolder
+
+	- Start game with [space]
+	- Cursor keys to move, [left-shift] to shot
+	- Defeat enemies and you sometimes find [Weapon] or [Power]
+	- You can change your speed with [a] and [s]
+	- [p] to pause the game and [q] to return to the title
+	- [q] at the title to quit game
+	- Boss at the last of a stage to defeat for the next stage
+	- You can get bonus points along defeat average  at  clear
+	  stage
+	- 1UP per 100,000 points
+	- 8 stages all and try to clear!!
+
+AUTHOR:
+	When you find bugs or some, please e-mail to the author
+
+	s945750@educ.info.kanagawa-u.ac.jp
+
+	Xsoldier home page is
+
+	http://www.educ.info.kanagawa-u.ac.jp/~s945750/xsoldier.html
+
