@@ -7,10 +7,11 @@
 
 PORTNAME=	ntp
 PORTVERSION=	4.0.99k
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.udel.edu/pub/ntp/ntp4/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	Cy.Schubert@uumail.gov.bc.ca
 
 # ntp's configure script created by autoconf 2.14.1 doesn't work
 # if GNU_CONFIGURE is defined
