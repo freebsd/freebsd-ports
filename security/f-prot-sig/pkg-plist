@@ -4,4 +4,4 @@ f-prot/SIGN2.ASC
 f-prot/SIGN2.DEF
 f-prot/MACRO.DEF
 f-prot/MACRO.ASC
-@unexec rmdir f-prot 2> /dev/null || true
+@unexec rmdir %D/f-prot 2>/dev/null || true

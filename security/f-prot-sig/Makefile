@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	f-prot-sig
-PORTVERSION=	20040216
+PORTVERSION=	20040302
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.f-prot.com/pub/
 
@@ -36,6 +36,6 @@ do-install:
 	${MKDIR} ${PREFIX}/f-prot
 	${INSTALL_DATA} ${WRKSRC}/* ${PREFIX}/f-prot
 
-	@${CAT} ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE} | ${SED} -e "s:%%PREFIX%%:${PREFIX}:g"
 
 .include <bsd.port.mk>
