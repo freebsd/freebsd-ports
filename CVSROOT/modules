@@ -2485,6 +2485,7 @@ ja-mhonarc	ports/japanese/mhonarc
 ja-micq		ports/japanese/micq
 ja-migemo	ports/japanese/migemo
 ja-migemo-emacs20	ports/japanese/migemo-emacs20
+ja-migemo-emacs21	ports/japanese/migemo-emacs21
 ja-migemo-xemacs21-mule	ports/japanese/migemo-xemacs21-mule
 ja-mimekit	ports/japanese/mimekit
 ja-mnews	ports/japanese/mnews
