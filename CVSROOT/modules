@@ -2410,6 +2410,8 @@ ja-chasen-base	ports/japanese/chasen-base
 ja-chimera	ports/japanese/chimera
 ja-csrd		ports/japanese/csrd
 ja-dbskkd-cdb	ports/japanese/dbskkd-cdb
+ja-ddskk	ports/japanese/ddskk
+ja-ddskk-emacs20	ports/japanese/ddskk-emacs20
 ja-deepforest	ports/japanese/deepforest
 ja-devil-fpw	ports/japanese/devil-fpw
 ja-diclookup-emacs20	ports/japanese/diclookup-emacs20
