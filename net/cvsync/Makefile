@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cvsync
-PORTVERSION=	0.24.7
+PORTVERSION=	0.24.8
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.cvsync.org/pub/cvsync/ \
 		ftp://ftp.allbsd.org/pub/cvsync/
