@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ptex
-PORTVERSION=	3.1.2
-PORTREVISION=	3
+PORTVERSION=	3.1.3
 CATEGORIES=	japanese print
 MASTER_SITES=	ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/tetex/
 PKGNAMEPREFIX=	ja-
@@ -17,8 +16,8 @@ DIST_SUBDIR=	teTeX
 MAINTAINER=	max@FreeBSD.org
 COMMENT=	Japanese specific files for ASCII Japanese pTeX
 
-BUILD_DEPENDS=	${PREFIX}/share/texmf/ptex/plain/base/ptex.tex:${PORTSDIR}/japanese/ptex-base
-RUN_DEPENDS=	${PREFIX}/share/texmf/ptex/plain/base/ptex.tex:${PORTSDIR}/japanese/ptex-base
+BUILD_DEPENDS=	${LOCALBASE}/share/texmf/ptex/plain/base/ptex.tex:${PORTSDIR}/japanese/ptex-base
+RUN_DEPENDS=	${LOCALBASE}/share/texmf/ptex/plain/base/ptex.tex:${PORTSDIR}/japanese/ptex-base
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
@@ -27,7 +26,7 @@ WRKSRC=	${WRKDIRPREFIX}${.CURDIR}/../ptex-base/work/tetex-src-${TETEX_VERSION}/t
 ALL_TARGET=	default
 
 KANJICODE?=	euc
-SRCDIR=		ptex-${PORTVERSION}
+SRCDIR=		ptex-src-${PORTVERSION}
 TETEX_VERSION=	2.0.2
 BINARIES=	ptex pdvitype jbibtex pltotf tftopl
 

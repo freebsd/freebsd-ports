@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	ptex
-PORTVERSION=	3.1.2
-PORTREVISION=	3
+PORTVERSION=	3.1.3
 CATEGORIES=	japanese print
 MASTER_SITES=	ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/tetex/ \
 		${MASTER_SITE_TEX_CTAN} \
-		ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/dvips/
+		ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/dvips/ \
+		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,text/TeX/ptex-win32/utils,:S,$,:udvipspatch,}
 MASTER_SITE_SUBDIR=	systems/unix/teTeX/2.0/distrib
 PKGNAMEPREFIX=	ja-
 PKGNAMESUFFIX=	-base
-DISTFILES=	${TETEX_SRC} ${TETEX_TEXMF} ${PTEX_TEXMF} ${DVIPSK_JPATCH}
+DISTFILES=	${TETEX_SRC} ${TETEX_TEXMF} ${PTEX_TEXMF} ${DVIPSK_JPATCH} ${UDVIPS_PATCH}:udvipspatch
 EXTRACT_ONLY=	${TETEX_SRC} ${DVIPSK_JPATCH}
 
 MAINTAINER=	max@FreeBSD.org
@@ -24,6 +24,15 @@ COMMENT=	Base files for ASCII Japanese pTeX
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		wwwcore.1:${PORTSDIR}/www/libwww \
 		t1.5:${PORTSDIR}/devel/t1lib
+
+OPTIONS=	DVIPSK "Install dvipsk with Japanize patch from ASCII" off
+OPTIONS+=	UDVIPS "Install udvips (Implies DVIPSK)" off
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_UDVIPS)
+WITH_DVIPSK=	yes
+.endif
 
 CONFLICTS=	teTeX-*
 .if defined(WITH_DVIPSK)
@@ -50,6 +59,11 @@ PLIST_SUB+=	DVIPSK=""
 .else
 CONFIGURE_ARGS+=--without-dvipsk
 PLIST_SUB+=	DVIPSK="@comment "
+.endif
+.if defined(WITH_UDVIPS)
+PLIST_SUB+=	UDVIPS=""
+.else
+PLIST_SUB+=	UDVIPS="@comment "
 .endif
 CONFIGURE_ENV=	INSTALL_PROGRAM="${BSD_INSTALL_SCRIPT}"
 MLINKS=		mktexpk.1 MakeTeXPK.1 allcm.1 allec.1 pdftex.1 cont-de.1 \
@@ -87,6 +101,7 @@ TETEX_SRC=	tetex-src-${TETEX_VERSION}.tar.gz
 TETEX_TEXMF=	tetex-texmf-${TETEX_VERSION}.tar.gz
 PTEX_TEXMF=	ptex-texmf-2.1.tar.gz
 DVIPSK_JPATCH=	dvipsk-jpatch-p1.6.tar.gz
+UDVIPS_PATCH=	udvips-5.94a-p1.6.patch
 LIBPNG_PREFIX?=	${LOCALBASE}
 LIBWWW_PREFIX?=	${LOCALBASE}
 LIBT1_PREFIX?=	${LOCALBASE}
@@ -109,11 +124,25 @@ post-extract:
 post-patch:
 .if defined(WITH_DVIPSK)
 	@${PATCH} -d ${WRKSRC}/texk -p0 -E --quiet < ${WRKDIR}/dvipsk-5.92b-p1.6.patch
+.if defined(WITH_UDVIPS)
+	@${PATCH} -d ${WRKSRC}/texk -p0 -E --quiet < ${_DISTDIR}/${UDVIPS_PATCH}
+.endif
+.endif
+
+post-configure:
+.if defined(WITH_UDVIPS)
+	@(cd ${WRKSRC}/texk; ${CP} -pr dvipsk udvipsk)
+.endif
+
+post-build:
+.if defined(WITH_UDVIPS)
+	(cd ${WRKSRC}/texk/udvipsk; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} program=udvips XDEFS=-DUDVIPS)
 .endif
 
 pre-install:
 	@${MKDIR} ${TEXMF_TREE}/dvips/base
 	@${TAR} ${EXCLUDE_DVIPSK} --exclude 'dvipdfm/*' -zxf ${_DISTDIR}/${TETEX_TEXMF} -C ${TEXMF_TREE}
+	@${INSTALL_DATA} ${FILESDIR}/listings.sty ${TEXMF_TREE}/tex/latex/listings/
 	@${TAR} -zxf ${_DISTDIR}/${PTEX_TEXMF} -C ${TEXMF_TREE}
 	@${MKDIR} ${TEXMF_TREE}/dvipdfm-teTeX-dist
 	@${CP} -pR ${WRKDIR}/dvipdfm/* ${TEXMF_TREE}/dvipdfm-teTeX-dist
@@ -133,6 +162,9 @@ pre-install:
 .endif
 
 post-install:
+.if defined(WITH_UDVIPS)
+	@${INSTALL_PROGRAM} ${WRKSRC}/texk/udvipsk/udvips ${PREFIX}/bin
+.endif
 	@${INSTALL_SCRIPT} ${WRKSRC}/utils/texinfo/util/texi2dvi ${PREFIX}/bin
 	@${SED} -e "s|^TEXMFMAIN = .*|TEXMFMAIN = ${TEXMF_TREE}|g" \
 		< ${WRKSRC}/texk/kpathsea/texmf.cnf \
@@ -145,4 +177,4 @@ post-install:
 	@${PREFIX}/bin/mktexlsr ${TEXMF_TREE}
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
