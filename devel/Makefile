@@ -103,6 +103,7 @@
     SUBDIR += chora
     SUBDIR += cl-asdf
     SUBDIR += cl-asdf-clisp
+    SUBDIR += cl-asdf-cmucl
     SUBDIR += cl-asdf-sbcl
     SUBDIR += clanlib
     SUBDIR += clig
