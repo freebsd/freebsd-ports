@@ -18,7 +18,7 @@ errorexit () {
 }
 
 usage () {
-  echo "usage: [-continue] [-incremental] [-restart] [-nofinish] [-finish] [-ftp] [-cdrom] [-nodummy] [-nobuild] [-noindex] [-noduds] [-norestr] [-nocvs] [-noportscvs] [-nodoccvs] [-plistcheck] [-distfiles] [-fetch-original] [-trybroken] branch date"
+  echo "usage: [-continue] [-incremental] [-restart] [-nofinish] [-finish] [-ftp] [-cdrom] [-nodummy] [-nobuild] [-noindex] [-noduds] [-norestr] [-nocvs] [-noportscvs] [-nodoccvs] [-noplistcheck] [-distfiles] [-fetch-original] [-trybroken] branch date"
   errorexit 1
 }
 
@@ -168,7 +168,7 @@ nocvs=0
 noportscvs=0
 nodoccvs=0
 norestr=0
-plistcheck=0
+noplistcheck=0
 nodummy=0
 cdrom=0
 ftp=0
@@ -208,8 +208,8 @@ while [ $# -gt 2 ]; do
     x-norestr)
       norestr=1
       ;;
-    x-plistcheck)
-      plistcheck=1
+    x-noplistcheck)
+      noplistcheck=1
       ;;
     x-nodummy)
       nodummy=1
@@ -270,7 +270,7 @@ if [ "$dodistfiles" = 1 ]; then
   export WANT_DISTFILES=1
 fi
 
-if [ "$plistcheck" = 1 ]; then
+if [ "$noplistcheck" = 0 ]; then
   export PLISTCHECK=1
 fi
 
