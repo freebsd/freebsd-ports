@@ -1,6 +1,6 @@
 include/gc.h
+include/gc_backptr.h
 include/gc_cpp.h
 lib/libgc.a
-lib/libgc.la
 lib/libgc.so
 lib/libgc.so.1
