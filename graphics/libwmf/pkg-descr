@@ -1,4 +1,6 @@
-This is an image format handler. It handles the following image
-formats:
+libwmf is a library for unix like machines that can convert wmf
+files into other formats, currently it supports a gd binding
+to convert to png, and an X one to draw direct to an X window
+or pixmap.
 
-bmp, gif, png, jpeg, tiff, xpm, xbm, and postscript.
+WWW: http://www.csn.ul.ie/~caolan/docs/libwmf.html

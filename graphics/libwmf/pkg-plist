@@ -1,5 +1,5 @@
 bin/wmftofig
-bin/wmftogif
+bin/wmftopng
 bin/xwmf
 include/Xwmfapi.h
 include/dibtoxpm.h
