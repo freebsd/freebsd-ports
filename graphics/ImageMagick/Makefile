@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ImageMagick
-PORTVERSION=	5.4.3.6
+PORTVERSION=	5.4.3.9
 CATEGORIES=	graphics perl5
 MASTER_SITES=	http://imagemagick.sourceforge.net/http/ \
 		ftp://ftp.yggdrasil.com/mirrors/site/ftp.simplesystems.org/pub/%SUBDIR%/ \
@@ -51,7 +51,10 @@ USE_GMAKE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--enable-shared --with-perl=${PERL5} \
-		--without-gslib --without-hdf --without-jp2
+		--without-gslib --without-jp2
+.ifndef WITH_HDF
+CONFIGURE_ARGS+=--without-hdf 
+.endif
 INSTALLS_SHLIB=	yes
 
 MAN1=		ImageMagick.1 Magick++-config.1 Magick-config.1 \
@@ -95,7 +98,7 @@ PLIST_SUB+=	MODULES='@comment '
 .endif
 
 .if defined(WITHOUT_X11)
-PKGNAMESUFFIX=	-nox11
+PKGNAMESUFFIX+=	-nox11
 BUILD_DEPENDS+=	gs:${PORTSDIR}/print/ghostscript-gnu-nox11
 RUN_DEPENDS+=	gs:${PORTSDIR}/print/ghostscript-gnu-nox11
 CONFIGURE_ARGS+=	--without-x --without-mpeg2 --without-wmf
@@ -120,5 +123,15 @@ pre-patch:
 		's|top_builddir\)/ltdl/libltdlc.la|LIBLTDL\)|g'
 	@${PERL} -pi -e 's|lcms/lcms.h|lcms.h|g' ${WRKSRC}/magick/transform.c
 	@${PERL} -pi -e 's|<malloc.h>|<stdlib.h>|g' ${WRKSRC}/ltdl/ltdl.c
+	@${PERL} -pi -e 's|timestamp: %ld|timestamp: %d|g' \
+		${WRKSRC}/magick/xwindow.c
+	@${PERL} -pi -e 's|pkgdocdir = (.+)|pkgdocdir = ${DOCSDIR}/|' \
+		${WRKSRC}/Makefile.in
+
+.if defined(NOPORTDOCS)
+pre-install:
+# Don't install the HTML documentation...
+	${TOUCH} ${WRKSRC}/install-data-html
+.endif
 
 .include <bsd.port.mk>
