@@ -1,0 +1,11 @@
+--- conf.c.orig	Fri Jun  1 19:32:10 2001
++++ conf.c	Fri Jun  1 19:33:37 2001
+@@ -204,8 +204,6 @@
+  fprintf(f,"\n");
+ 
+  fprintf(f,"char *getenv();\n");
+- if(sizeof(long)==8) fprintf(f,"int time();\n");
+- else fprintf(f,"long time();\n");
+  fprintf(f,"void *malloc();\n");
+  fprintf(f,"void free();\n");
+  fprintf(f,"void *calloc();\n");
