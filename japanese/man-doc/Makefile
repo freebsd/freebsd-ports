@@ -1,13 +1,13 @@
 # New ports collection makefile for:	Japanese man documents
-# Version required:	2.2.2g
+# Version required:	2.2.5a
 # Date created:		6 January 1997
 # Whom:			Kiriyama Kazuhiko <kiri@kiri.toba-cmt.ac.jp>
 #
-# $Id: Makefile,v 1.15 1997/12/10 04:43:15 max Exp $
+# $Id: Makefile,v 1.16 1997/12/10 08:57:16 asami Exp $
 #
 
-DISTNAME=	jpman-${VERSION}g
-PKGNAME=	ja-man-doc-2.2.2g
+DISTNAME=	jpman-${VERSION}a
+PKGNAME=	ja-man-doc-2.2.5a
 CATEGORIES=	japanese
 MASTER_SITES=	ftp://jaz.jp.freebsd.org/pub/FreeBSD-jp/man-jp/
 
@@ -22,7 +22,7 @@ SCRIPTS_ENV=	TMPL_FILE=${TMPL_FILE} PKGDIR=${PKGDIR} AWK=${AWK} \
 		RM=${RM} SED=${SED} 
 PLIST=		${WRKSRC}/PLIST
 
-VERSION=	2.2.2
+VERSION=	2.2.5
 TMPL_FILE=	install-man
 
 do-install:
