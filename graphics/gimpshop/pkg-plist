@@ -1548,9 +1548,9 @@ share/gimp/themes/Default/images/stock-wilber-64.png
 share/gimp/themes/Default/images/stock-wilber-eek-64.png
 share/gimp/themes/Small/gtkrc
 share/gimp/tips/gimp-tips.xml
-%%GNOME:%%share/gnome/application-registry/gimp-2.0.applications
-%%GNOME:%%share/gnome/applications/gimp-2.0.desktop
-%%GNOME:%%share/gnome/mime-info/gimp-2.0.keys
+%%GNOMEPANEL:%%share/gnome/application-registry/gimp-2.0.applications
+%%GNOMEPANEL:%%share/gnome/applications/gimp-2.0.desktop
+%%GNOMEPANEL:%%share/gnome/mime-info/gimp-2.0.keys
 share/locale/ca/LC_MESSAGES/gimp20-libgimp.mo
 share/locale/ca/LC_MESSAGES/gimp20-script-fu.mo
 share/locale/ca/LC_MESSAGES/gimp20-std-plug-ins.mo
