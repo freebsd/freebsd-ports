@@ -1,5 +1,5 @@
 #
-# $Id: avail,v 1.75 1999/03/10 17:44:41 msmith Exp $
+# $Id: avail,v 1.76 1999/03/30 12:53:33 jkh Exp $
 #
 # cvs-committers mail is sent to all members of the /etc/group group 'ncvs'
 # When adding a new committer, please add them to /etc/group first, before
@@ -18,9 +18,3 @@
 #
 unavail
 avail|dg,peter,jkh,phk,gpalmer,paul,wollman,bde,gibbs,asami,joerg,ache,pst,sos,nate,karl,csgr,ats,guido,martin,hsu,sef,se,torstenb,rich,dfr,gclarkii,swallace,ljo,dima,lars,jmz,ugen,dufault,wpaul,amurai,jmacd,jfieber,roberto,markm,gj,mpp,rgrimes,smace,erich,graichen,adam,tg,uhclem,jdp,fenner,wosch,scrappy,smpatel,jhay,alex,jraynard,andreas,chuckr,jfitz,max,steve,fsmp,imp,msmith,obrien,mckay,kato,davidn,mbarkah,nsj,brian,darrenr,tegge,yokota,cracauer,eivind,jgreco,danny,jmg,hanai,jmb,jb,stb,pds,tedm,kjc,stark,charnier,itojun,cwt,rse,mjacob,jlemon,helbig,brandon,hoek,jseger,vanilla,hosokawa,nik,semenu,pb,des,rnordier,dt,thepish,kuriyama,mph,dburr,jkoshy,ghelmer,nectar,ejc,dwhite,nsouch,abial,luoqi,motoyuki,rvb,grog,luigi,ken,mckusick,truckman,archie,billf,n_hibma,sada,flathill,wes,jesusr,foxfair,newton,mks,dirk,hm,simokawa,gallatin,roger,dcs,kris,julian,alc,shige,taoka,jasone,nsayer
-#
-# The doc/handbook and doc/en/handbook trees are currently frozen,
-# except for Nik Clayton.
-#
-unavail||doc/handbook,doc/en/handbook
-avail|nik
