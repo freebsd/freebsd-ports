@@ -1,2 +1,4 @@
 bin/balance
 etc/rc.d/balance.sh
+@exec mkdir /var/run/balance
+@unexec rmdir /var/run/balance 2>/dev/null || true
