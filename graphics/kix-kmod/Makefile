@@ -14,9 +14,11 @@ PKGNAMESUFFIX=	-kmod
 MAINTAINER=	jon@witchspace.com
 COMMENT=	A graphical screensaver kernel module
 
-.if !exists(/usr/src/sys/dev/syscons/syscons.h)
+SYSDIR?=	/usr/src/sys
+.if !exists(${SYSDIR}/dev/syscons/syscons.h)
 IGNORE=		Requires kernel source (/usr/src/sys) to build
 .endif
+MAKE_ENV+=	WERROR=
 PLIST_FILES=	lib/kix_saver.ko
 
 do-install:
