@@ -319,6 +319,7 @@
     SUBDIR += pgpin
     SUBDIR += php4-crack
     SUBDIR += php4-mcrypt
+    SUBDIR += php4-mhash
     SUBDIR += pidentd
     SUBDIR += pinentry
     SUBDIR += pinentry-curses
