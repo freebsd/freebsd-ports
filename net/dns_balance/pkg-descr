@@ -1,0 +1,9 @@
+DNS Balance is a load-balancing DNS server which:
+
+o Does dynamic load balancing.
+o Can answer the most proper resolution based on the client's IP
+  address.
+o Implements "A" record lookups only.  This would be good for
+  security.
+
+WWW:	http://openlab.ring.gr.jp/dns_balance/index.html.en

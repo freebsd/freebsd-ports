@@ -66,6 +66,7 @@
     SUBDIR += dictd-database
     SUBDIR += djbdns
     SUBDIR += dlint
+    SUBDIR += dns_balance
     SUBDIR += dnsutl
     SUBDIR += dnswalk
     SUBDIR += doc

@@ -1,0 +1,32 @@
+sbin/dns_balance
+@unexec if cmp -s %D/etc/dns_balance/addrdb.rb %D/etc/dns_balance/addrdb.rb-dist; then rm -f %D/etc/dns_balance/addrdb.rb; fi
+etc/dns_balance/addrdb.rb-dist
+@exec [ ! -f %B/addrdb.rb ] && cp %B/%f %B/addrdb.rb
+@unexec if cmp -s %D/etc/dns_balance/namespace.rb %D/etc/dns_balance/namespace.rb-dist; then rm -f %D/etc/dns_balance/namespace.rb; fi
+etc/dns_balance/namespace.rb-dist
+@exec [ ! -f %B/namespace.rb ] && cp %B/%f %B/namespace.rb
+@dirrm etc/dns_balance
+etc/rc.d/dns_balance.sh
+lib/dns_balance/datatype.rb
+lib/dns_balance/log_writer.rb
+lib/dns_balance/util.rb
+@dirrm lib/dns_balance
+%%PORTDOCS%%share/doc/dns_balance/Q_and_A.dns_balance.eng
+%%PORTDOCS%%share/doc/dns_balance/README.dns_balance.eng
+%%PORTDOCS%%share/doc/dns_balance/README.dnsbalance+daemontools.eng
+%%PORTDOCS%%share/doc/dns_balance/ja/ChangeLog
+%%PORTDOCS%%share/doc/dns_balance/ja/Q_and_A.dns_balance
+%%PORTDOCS%%share/doc/dns_balance/ja/README.dns_balance
+%%PORTDOCS%%share/doc/dns_balance/ja/README.dnsbalance+daemontools
+%%PORTDOCS%%@dirrm share/doc/dns_balance/ja
+%%PORTDOCS%%@dirrm share/doc/dns_balance
+%%PORTDOCS%%share/examples/dns_balance/addr
+%%PORTDOCS%%share/examples/dns_balance/addr.ring
+%%PORTDOCS%%share/examples/dns_balance/addr.ring.txt
+%%PORTDOCS%%share/examples/dns_balance/addr.txt
+%%PORTDOCS%%share/examples/dns_balance/make_namespace.rb
+%%PORTDOCS%%share/examples/dns_balance/makedb.rb
+%%PORTDOCS%%share/examples/dns_balance/makeringdb.rb
+%%PORTDOCS%%share/examples/dns_balance/namespace.txt
+%%PORTDOCS%%share/examples/dns_balance/ringupdate.sh
+%%PORTDOCS%%@dirrm share/examples/dns_balance
