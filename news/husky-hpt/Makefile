@@ -17,6 +17,13 @@ LIB_DEPENDS=	fidoconfig.0:${PORTSDIR}/news/husky-fidoconf
 
 USE_REINPLACE=	yes
 
+.if !defined(WITHOUT_PERL)
+MAKE_ARGS+=	PERL=1
+USE_PERL5=	yes
+.else
+MAKE_ARGS+=	PERL=0
+.endif
+
 MAN1=		hpt.1 hptlink.1 hpttree.1 txt2pkt.1
 MANCOMPRESSED=	yes
 INFO=		hpt
