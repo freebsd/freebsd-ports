@@ -1,5 +1,5 @@
---- config/mime_drivers.php.dist.orig	Fri Nov 19 03:40:31 2004
-+++ config/mime_drivers.php.dist	Thu Nov 25 21:58:43 2004
+--- config/mime_drivers.php.dist.orig	Mon Feb  7 23:17:54 2005
++++ config/mime_drivers.php.dist	Fri Feb 11 21:37:05 2005
 @@ -37,10 +37,20 @@
   * zip            Zip files
   */
@@ -29,7 +29,7 @@
   * Web C Plus Plus driver settings
   * http://webcpp.sourceforge.net/
   */
--$mime_drivers['horde']['webcpp']['location'] = 'C:\Program Files\Jeffrey Bakker\webcpp\webcpp.exe';
+-$mime_drivers['horde']['webcpp']['location'] = '/usr/bin/webcpp';
 -$mime_drivers['horde']['webcpp']['inline'] = true;
 -$mime_drivers['horde']['webcpp']['handles'] = array(
 -    'text/xml', 'text/sgml', 'application/xml',
@@ -78,7 +78,7 @@
   * Source-Highlight driver settings
   * http://www.gnu.org/software/src-highlite/
   */
--$mime_drivers['horde']['srchighlite']['location'] = 'C:\Program Files\src-highlite\bin\source-highlight.exe';
+-$mime_drivers['horde']['srchighlite']['location'] = '/usr/bin/source-highlight';
 -$mime_drivers['horde']['srchighlite']['inline'] = true;
 -$mime_drivers['horde']['srchighlite']['handles'] = array(
 -    'text/x-csrc', 'text/x-c++src', 'text/x-java',
@@ -109,7 +109,7 @@
 -$mime_drivers['horde']['enscript']['location'] = '/usr/bin/enscript';
 -$mime_drivers['horde']['enscript']['inline'] = true;
 -$mime_drivers['horde']['enscript']['handles'] = array(
--    'application/x-shellscript', 'application/x-javascript',
+-    'application/x-cgi', 'application/x-shellscript', 'application/x-javascript',
 -    'application/x-perl', 'application/xml', 'text/xml',
 -    'text/diff', 'text/x-diff', 'text/x-patch', 'text/x-csrc',
 -    'x-extension/cs', 'text/x-java', 'text/x-chdr', 'text/x-c++src',
@@ -123,10 +123,10 @@
 -    'text/x-chdr'              => 'source-h.png',
 -    'text/x-java'              => 'source-java.png',
 -    'application/x-javascript' => 'script-js.png');
-+//UNCOMMENTIFES$mime_drivers['horde']['enscript']['location'] = '%%LOCALBASE%%//bin/enscript';
++//UNCOMMENTIFES$mime_drivers['horde']['enscript']['location'] = '%%LOCALBASE%%/bin/enscript';
 +//UNCOMMENTIFES$mime_drivers['horde']['enscript']['inline'] = true;
 +//UNCOMMENTIFES$mime_drivers['horde']['enscript']['handles'] = array(
-+//UNCOMMENTIFES    'application/x-shellscript', 'application/x-javascript',
++//UNCOMMENTIFES    'application/x-cgi', 'application/x-shellscript', 'application/x-javascript',
 +//UNCOMMENTIFES    'application/x-perl', 'application/xml', 'text/xml',
 +//UNCOMMENTIFES    'text/diff', 'text/x-diff', 'text/x-patch', 'text/x-csrc',
 +//UNCOMMENTIFES    'x-extension/cs', 'text/x-java', 'text/x-chdr', 'text/x-c++src',
