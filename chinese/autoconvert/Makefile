@@ -8,7 +8,7 @@
 PORTNAME=	autoconvert
 PORTVERSION=	0.3.13
 CATEGORIES=	chinese
-MASTER_SITES=	http://people.debian.org/~ygh/
+MASTER_SITES=	ftp://banyan.dlut.edu.cn/pub/PEOPLE/saka/
 
 MAINTAINER=	yinjieh@csie.nctu.edu.tw
 COMMENT=	Intelligent Chinese encoding converter
