@@ -99,6 +99,7 @@
     SUBDIR += kdenetwork2
     SUBDIR += kdetelnet
     SUBDIR += kicq
+    SUBDIR += kmud
     SUBDIR += ksamba
     SUBDIR += kxicq
     SUBDIR += lambdamoo
