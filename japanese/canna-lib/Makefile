@@ -7,10 +7,9 @@
 #
 
 PORTNAME=	Canna
-PORTVERSION=	3.6
-PORTREVISION=	1
+PORTVERSION=	3.6.p1
 CATEGORIES=	japanese
-MASTER_SITES=	http://downloads.sourceforge.jp/canna/1425/
+MASTER_SITES=	http://downloads.sourceforge.jp/canna/1722/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
 
 MAINTAINER=	max@FreeBSD.org
@@ -30,7 +29,7 @@ MAN3=	RkCloseRoma.3 RkCvtEuc.3 RkCvtHan.3 RkCvtHira.3 RkCvtKana.3 \
 	RkEnlarge.3 RkFinalize.3 RkGetDicList.3 RkGetKanji.3 RkGetLex.3 \
 	RkGetStat.3 RkGetYomi.3 RkGoto.3 RkInitialize.3 RkIntro.3 RkLeft.3 \
 	RkMapPhonogram.3 RkMapRoma.3 RkMountD.3 RkNext.3 RkNfer.3 \
-	RkOpenRoma.3 RkPrev.3 RkRemountDic.3 RkResize.3 RkRgnBun.3 RkRight.3 \
+	RkOpenRoma.3 RkPrev.3 RkRemountDic.3 RkResize.3 RkBgnBun.3 RkRight.3 \
 	RkShorten.3 RkStoreYomi.3 RkUnmountDic.3 RkXfer.3 cannalib.3 uilib.3
 MANCOMPRESSED=	no
 XFREE86_HTML_MAN=	no
