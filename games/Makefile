@@ -34,6 +34,7 @@
     SUBDIR += bombermaze
     SUBDIR += bs
     SUBDIR += bugsx
+    SUBDIR += 44bsd-hunt
     SUBDIR += CaribbeanStud
     SUBDIR += bzflag
     SUBDIR += cgoban

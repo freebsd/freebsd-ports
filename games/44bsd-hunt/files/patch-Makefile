@@ -1,0 +1,69 @@
+--- Makefile.orig	Fri Jun 18 03:26:23 1993
++++ Makefile	Mon Jun 26 03:21:22 2000
+@@ -17,8 +17,9 @@
+ 
+ #
+ # Installation destinations
++# (with FreeBSD patches, unused except LIBDIR for pathname.o)
+ BINDIR=		/usr/games
+-LIBDIR=		/usr/libexec
++LIBDIR=		$(PREFIX)/bin
+ MANDIR=		/usr/contrib/man/cat6
+ 
+ #
+@@ -33,8 +34,8 @@
+ #	BOOTS	Include boots (which makes you immune to slime)
+ #	OTTO	Reserved for CGL automatic player
+ #
+-GAME_PARAM=	-DRANDOM -DREFLECT -DMONITOR -DOOZE -DFLY -DVOLCANO -DBOOTS \
+-		-DOTTO
++# (FreeBSD patches deleted -DOTTO because otto.c doesn't compile)
++GAME_PARAM=	-DRANDOM -DREFLECT -DMONITOR -DOOZE -DFLY -DVOLCANO -DBOOTS
+ 
+ #
+ # System parameter flags are:
+@@ -66,6 +67,11 @@
+ DEFS_SGI=	-DINTERNET -DLOG -DBSD_RELEASE=43 -DTERMINFO -DSIGNAL_TYPE=void
+ DEFS_NEXT=	$(DEFS_43) -bsd -traditional -Dconst= -DSIGNAL_TYPE=int
+ DEFS_OSF1=	-DINTERNET -DLOG -DBSD_RELEASE=43 -DSIGNAL_TYPE=void -D_BSD
++#
++# FreeBSD patches add this target and use it for DEFS
++# /etc/terminfo is there, and the faketalk feature is switched
++# off (deprecated)
++DEFS_FREEBSD= $(DEFS_BSD44) -DTERMINFO -DTALK_DISABLE
+ 
+ #
+ # The following flags are used for system specific compilation arguments.
+@@ -80,8 +86,10 @@
+ #
+ # Generic definitions
+ #
+-DEFS=		$(GAME_PARAM) $(DEFS_BSD44)
+-CFLAGS=		-O2 $(SYSCFLAGS) $(DEFS)
++DEFS=		$(GAME_PARAM) $(DEFS_FREEBSD)
++# FreeBSD patches change the CFLAGS definition to include the
++# user's definition, instead of overwriting it
++CFLAGS+=		$(SYSCFLAGS) $(DEFS)
+ 
+ #
+ # Normal targets
+@@ -129,14 +137,13 @@
+ 
+ #
+ # System installation
++# (modified by FreeBSD patches)
+ #
+ install:
+-	install -s -o bin -g bin -m 555 huntd ${LIBDIR}/huntd
+-	install -s -o bin -g bin -m 555 hunt ${BINDIR}/hunt
+-	nroff -man hunt.6 > ${MANDIR}/hunt.0
+-	nroff -man huntd.6 > ${MANDIR}/huntd.0
+-	chown bin.bin ${MANDIR}/hunt.0 ${MANDIR}/huntd.0
+-	chmod 444 ${MANDIR}/hunt.0 ${MANDIR}/huntd.0
++	$(BSD_INSTALL_PROGRAM) hunt $(PREFIX)/bin/hunt
++	$(BSD_INSTALL_MAN) hunt.6 $(PREFIX)/man/man6/hunt.6
++	$(BSD_INSTALL_PROGRAM) huntd $(PREFIX)/bin/huntd
++	$(BSD_INSTALL_MAN) huntd.6 $(PREFIX)/man/man6/huntd.6
+ 
+ #
+ # Object file dependencies
