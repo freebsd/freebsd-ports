@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	webmin
-PORTVERSION=	0.84
-PORTREVISION=	4
+PORTVERSION=	0.85
 CATEGORIES=	sysutils
 MASTER_SITES=	http://webadmin.sourceforge.net/webmin/updates/ \
 		http://webadmin.sourceforge.net/webmin/download/
@@ -23,15 +22,16 @@ USE_PERL5=	yes
 SCRIPTS_ENV+=	WRKDIR="${WRKDIR}"
 
 .if defined(WITH_UPDATES)
-WEBMIN_MODULES=	apache.wbm.gz mysql.wbm.gz status.wbm.gz \
-		file.wbm.gz dfsadmin-file.wbm.gz
+WEBMIN_MODULES=
 .endif
 
 post-extract:
 .if defined(WITH_UPDATES)
-	@for webmin_module in ${WEBMIN_MODULES}; do \
-		${TAR} xfz ${DISTDIR}/$${webmin_module} -C ${WRKSRC}; \
-	done
+	if [ "${WEBMIN_MODULES}" != "" ]; then \
+		for webmin_module in "${WEBMIN_MODULES}"; do \
+			${TAR} xfz ${DISTDIR}/$${webmin_module} -C ${WRKSRC}; \
+		done; \
+	fi
 .endif
 	@find ${WRKSRC} -name "*.bak" | xargs ${RM}
 
@@ -78,6 +78,7 @@ do-install:
 post-install:
 	@${CP} ${PLIST} ${TMPPLIST}
 	@find ${PREFIX}/lib/webmin -type f | ${SED} -e "s@${PREFIX}/@@" | sort >> ${TMPPLIST}
+	@find ${PREFIX}/lib/webmin -type l | ${SED} -e "s@${PREFIX}/@@" | sort >> ${TMPPLIST}
 	@find ${PREFIX}/lib/webmin -type d | ${SED} -e "s@${PREFIX}/@@" | ${PERL} -e 'print (join ("\n", reverse map ("\@dirrm " . substr ($$_, 0, -1), <STDIN>)) . "\n");' >> ${TMPPLIST}
 	@${CAT} ${PKGMESSAGE}
 
