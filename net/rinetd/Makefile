@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rinetd
-PORTVERSION=	0.61
+PORTVERSION=	0.62
 CATEGORIES=	net
 MASTER_SITES=	http://www.boutell.com/rinetd/http/
 DISTNAME=	rinetd
