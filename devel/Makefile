@@ -65,6 +65,7 @@
     SUBDIR += bcc
     SUBDIR += bcpp
     SUBDIR += bglibs
+    SUBDIR += bicyclerepair
     SUBDIR += bin86
     SUBDIR += bison
     SUBDIR += boaconstructor
