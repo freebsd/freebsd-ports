@@ -1,5 +1,14 @@
---- lib/freebsd-g++/tmake.conf	Sat Nov  4 19:00:02 2000
-+++ lib/freebsd-g++/tmake.conf.new	Wed Apr 11 11:36:10 2001
+--- lib/freebsd-g++/tmake.conf.orig	Sat Nov  4 13:00:02 2000
++++ lib/freebsd-g++/tmake.conf	Wed Nov  7 01:53:23 2001
+@@ -11,7 +11,7 @@
+ TMAKE_CFLAGS		= -pipe
+ TMAKE_CFLAGS_WARN_ON	= -Wall -W
+ TMAKE_CFLAGS_WARN_OFF	=
+-TMAKE_CFLAGS_RELEASE	= -O2
++TMAKE_CFLAGS_RELEASE	= 
+ TMAKE_CFLAGS_DEBUG	= -g
+ TMAKE_CFLAGS_SHLIB	= -fPIC
+ TMAKE_CFLAGS_YACC	= -Wno-unused -Wno-parentheses
 @@ -31,7 +31,7 @@
  TMAKE_LIBDIR		= /usr/local/lib
  TMAKE_INCDIR_X11	= /usr/X11R6/include
