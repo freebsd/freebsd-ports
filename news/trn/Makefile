@@ -3,14 +3,14 @@
 # Date created:		21 October 1994
 # Whom:			smace
 #
-# $Id: Makefile,v 1.11 1996/12/07 11:26:51 max Exp $
+# $Id: Makefile,v 1.12 1996/12/08 01:45:12 max Exp $
 #
 
 DISTNAME=	trn-3.6
 CATEGORIES=	news
 MASTER_SITES=	ftp://ftp.uu.net/networking/news/readers/trn/
 
-RUN_DEPENDS=  munpack:${PORTSDIR}/mail/mpack
+RUN_DEPENDS=  munpack:${PORTSDIR}/converters/mpack
 
 NO_PACKAGE=	"Too many questions"
 IS_INTERACTIVE=	yes
