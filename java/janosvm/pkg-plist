@@ -10,6 +10,7 @@ bin/javap
 bin/jdb
 bin/jsihey
 bin/jsiregister
+bin/jsiunregister
 bin/kaffe
 bin/kaffeh
 bin/kjc
@@ -387,6 +388,7 @@ share/kaffe/tools.jar
 %%PORTDOCS%%share/doc/janosvm/doc/janosvm/tex/janosvm.bib
 %%PORTDOCS%%share/doc/janosvm/doc/janosvm/tex/jos-substrate.tex
 %%PORTDOCS%%share/doc/janosvm/doc/janosvm/tex/jsihey-use.tex
+%%PORTDOCS%%share/doc/janosvm/doc/janosvm/tex/manual.bbl
 %%PORTDOCS%%share/doc/janosvm/doc/janosvm/tex/overview.tex
 %%PORTDOCS%%share/doc/janosvm/doc/janosvm/tex/preface.tex
 %%PORTDOCS%%share/doc/janosvm/doc/janosvm/tex/tex4ht.cfg
