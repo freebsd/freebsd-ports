@@ -1066,7 +1066,7 @@ done
 shift $(($OPTIND-1))
 
 $opt_list_master &&
-  { do_list_sites "MASTER" "$list-master" || exit 1; }
+  { do_list_sites "MASTER" "$list_master" || exit 1; }
 
 $opt_list_patch &&
   { do_list_sites "PATCH" "$list_patch" || exit 1; }
