@@ -1,0 +1,28 @@
+--- dvipsk/Makefile.in.orig	Sat Feb 12 23:09:22 2005
++++ dvipsk/Makefile.in	Sat Feb 12 23:11:12 2005
+@@ -37,10 +37,11 @@
+ pprescan.o papersiz.o color.o bbox.o hps.o t1part.o
+ 
+ program = dvips
+-programs = afm2tfm odvips $(program)
++programs = afm2tfm $(program)
++scripts = odvips
+ 
+ 
+-default all: $(programs) $(prologues) dvips.info
++default all: $(programs) $(scripts) $(prologues) dvips.info
+ 
+ $(program): $(kpathsea) $(objects)
+ 	$(kpathsea_link) $(objects) $(LOADLIBES) 
+@@ -93,9 +94,10 @@
+ 	rm -f $(bindir)/odvips
+ 	$(SHELL) $(top_srcdir)/../mkinstalldirs $(bindir)
+ 	for p in $(programs); do $(INSTALL_LIBTOOL_PROG) $$p $(bindir); done
++	for p in $(scripts); do $(INSTALL_SCRIPT) $$p $(bindir); done
+ 	chmod 0755 $(bindir)/odvips
+ uninstall-exec:
+-	for p in $(programs); do rm -f $(bindir)/$$p; done
++	for p in $(programs) $(scripts); do rm -f $(bindir)/$$p; done
+ 	rm -f $(bindir)/o$(program)
+ 
+ install-data: $(program).info

@@ -6,22 +6,20 @@
 #
 
 PORTNAME=	dvipsk
-PORTVERSION=	5.94a
-PORTREVISION=	2
+PORTVERSION=	5.95a
+PORTREVISION=	0
 CATEGORIES=	japanese print
-MASTER_SITES=	ftp://ftp.dante.de/tex-archive/systems/unix/teTeX-beta/ \
-		${MASTER_SITE_TEX_CTAN} \
-		ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/dvips/:jpatch \
+MASTER_SITES=	${MASTER_SITE_TEX_CTAN} \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,text/TeX/ptex-win32/utils,:S,$,:udvipspatch,}
-MASTER_SITE_SUBDIR=	systems/unix/teTeX/2.0/distrib/
+#		ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/dvips/:jpatch \
+MASTER_SITE_SUBDIR=	systems/unix/teTeX/3.0/distrib/
 PKGNAMEPREFIX=	ja-
 PKGNAMESUFFIX=	-tetex
 DISTFILES=	${TETEX_SRC}${EXTRACT_SUFX} \
-		dvipsk-jpatch-p${VER_JPATCH}${EXTRACT_SUFX}:jpatch \
-		udvips-5.94a-p1.6a1.patch:udvipspatch
+		dvipsk-${PORTVERSION}-p1.6a.tar.gz:udvipspatch
 DIST_SUBDIR=	teTeX
 EXTRACT_ONLY=	${TETEX_SRC}${EXTRACT_SUFX} \
-		dvipsk-jpatch-p${VER_JPATCH}${EXTRACT_SUFX}
+		dvipsk-${PORTVERSION}-p1.6a.tar.gz
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	A DVI to PostScript translator + Japanese patch
@@ -39,16 +37,17 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		t1.5:${PORTSDIR}/devel/t1lib
 
 PATCH_WRKSRC=	${WRKDIR}/${TETEX_SRC}/texk
-EXTRA_PATCHES=	${WRKDIR}/dvipsk-5.92b-p${VER_JPATCH}.patch \
-		${DISTDIR}/${DIST_SUBDIR}/udvips-5.94a-p1.6a1.patch
+EXTRA_PATCHES=	${WRKDIR}/dvipsk-5.95a-p1.6a.diff
 CONFIGURE_WRKSRC=${WRKDIR}/${TETEX_SRC}
 BUILD_WRKSRC=	${WRKDIR}/${TETEX_SRC}/texk/dvipsk
 INSTALL_WRKSRC=	${WRKDIR}/${TETEX_SRC}/texk/dvipsk
 
 PLIST_SUB=	DVIPSDIR=${DVIPSDIR} \
+		DVIPSCONFIGDIR=${DVIPSCONFIGDIR} \
 		MKTEXLSR=${MKTEXLSR} \
-		TEXMFDIR=${TEXMFDIR} \
-		FONTSMAPDIR=${FONTSMAPDIR}
+		TEXMFCONFIGDIR=${TEXMFCONFIGDIR} \
+		FONTSMAPDIR=${FONTSMAPDIR} \
+		UPDMAP_SYS_PTEX=${UPDMAP_SYS_PTEX}
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS= --disable-multiplatform \
@@ -69,34 +68,32 @@ CONFLICTS=	ja-ptex-base-[0-9]* \
 MAN1=		dvips.1 afm2tfm.1
 INFO=		dvips
 
-TETEX_SRC=	tetex-src-2.0.2
-VER_JPATCH=	1.6a1
+TETEX_SRC=	tetex-src-3.0
 
 MKTEXLSR?=	${LOCALBASE}/bin/mktexlsr
 TEXMFDIR=	share/texmf
 TEXMFDISTDIR=	share/texmf-dist
 TEXMFLOCALDIR=	share/texmf-local
+TEXMFCONFIGDIR=	share/texmf-config
 TEXMFLOCAL_LSR?=${LOCALBASE}/${TEXMFLOCALDIR}/ls-R
-FONTSMAPDIR=	${TEXMFDIR}/fonts/map/dvips
+FONTSMAPDIR=	${TEXMFDIR}/fonts/map/ptex
 DVIPSDIR?=	${TEXMFDIR}/dvips/ptex
+DVIPSCONFIGDIR?=${TEXMFCONFIGDIR}/dvips/ptex
 LIBPNG_PREFIX?=	${LOCALBASE}
 LIBWWW_PREFIX?=	${LOCALBASE}
 LIBT1_PREFIX?=	${LOCALBASE}
 
-UPDMAP_SUB=	PREFIX=${PREFIX} \
-		TEXMFDIR=${TEXMFDIR} \
-		DVIPSDIR=${DVIPSDIR}
+UPDMAP_SYS_PTEX=${LOCALBASE}/bin/updmap-sys-ptex
+TEXCONFIGBIN=	${LOCALBASE}/bin/texconfig-sys
 
 post-configure:
 	cd ${PATCH_WRKSRC} && \
 		${RM} -rf udvipsk && ${CP} -R dvipsk udvipsk
 
 do-build:
-.for D in dvipsk odvipsk
-	cd ${WRKDIR}/${TETEX_SRC}/texk/${D} &&\
+	cd ${WRKDIR}/${TETEX_SRC}/texk/dvipsk &&\
 		${SETENV} ${MAKE_ENV} ${GMAKE} \
 		${MAKE_FLAGS} ${MAKEFILE} ${ALL_TARGET}
-.endfor
 	cd ${WRKDIR}/${TETEX_SRC}/texk/udvipsk &&\
 		${SETENV} ${MAKE_ENV} ${GMAKE} \
 		${MAKE_FLAGS} ${MAKEFILE} \
@@ -104,31 +101,21 @@ do-build:
 		${ALL_TARGET}
 
 do-install:
-	${MKDIR} ${PREFIX}/${DVIPSDIR}/config
-.for D in dvipsk odvipsk
-	cd ${WRKDIR}/${TETEX_SRC}/texk/${D} &&\
+	${MKDIR} ${PREFIX}/${DVIPSCONFIGDIR}/config
+	cd ${WRKDIR}/${TETEX_SRC}/texk/dvipsk &&\
 		${SETENV} ${MAKE_ENV} ${GMAKE} \
 		${MAKE_FLAGS} ${MAKEFILE} ${INSTALL_TARGET}
-.endfor
 	${INSTALL_PROGRAM} \
 		${PATCH_WRKSRC}/udvipsk/udvips \
 		${PREFIX}/bin
-	${MKDIR} ${PREFIX}/${FONTSMAPDIR}/ptex
 	${INSTALL_DATA} \
 		${FILESDIR}/ptex-kanji.map \
-		${PREFIX}/${FONTSMAPDIR}/ptex/kanji.map
-	(${CAT} ${LOCALBASE}/${TEXMFDISTDIR}/web2c/updmap.cfg; \
-	 ${ECHO_CMD} "Map kanji.map" ) > ${WRKDIR}/updmap.cfg
-	${INSTALL_DATA} \
-		${WRKDIR}/updmap.cfg \
-		${PREFIX}/${TEXMFDIR}/web2c/ptex/updmap.cfg
-	${SED} ${UPDMAP_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		${FILESDIR}/updmap-ptex.in > ${WRKDIR}/updmap-ptex
-	${INSTALL_SCRIPT} ${WRKDIR}/updmap-ptex ${PREFIX}/bin/updmap-sys-ptex
+		${PREFIX}/${FONTSMAPDIR}/dvips/kanji.map
 	${MKTEXLSR}
-	${SH} ${PREFIX}/bin/updmap-sys-ptex --nohash
+	${SH} ${UPDMAP_SYS_PTEX} --enable Map=kanji.map
 
 post-install:
+	${TEXCONFIGBIN} dvips printcmd -
 	${MKTEXLSR}
 
 .include <bsd.port.mk>

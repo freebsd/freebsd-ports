@@ -3,8 +3,6 @@ bin/afm2tfm
 bin/dvips
 bin/odvips
 bin/udvips
-bin/updmap-sys-ptex
-%%TEXMFDIR%%/web2c/ptex/updmap.cfg
 %%DVIPSDIR%%/base/tex.pro
 %%DVIPSDIR%%/base/texps.pro
 %%DVIPSDIR%%/base/texc.pro
@@ -13,22 +11,11 @@ bin/updmap-sys-ptex
 %%DVIPSDIR%%/base/color.pro
 %%DVIPSDIR%%/base/crop.pro
 %%DVIPSDIR%%/base/hps.pro
-%%DVIPSDIR%%/base/builtin35.map
-%%DVIPSDIR%%/base/download35.map
-%%DVIPSDIR%%/base/dvipdfm.map
-%%DVIPSDIR%%/base/dvipdfm_dl14.map
-%%DVIPSDIR%%/base/dvipdfm_ndl14.map
-%%DVIPSDIR%%/base/pdftex.map
-%%DVIPSDIR%%/base/pdftex_dl14.map
-%%DVIPSDIR%%/base/pdftex_ndl14.map
-%%DVIPSDIR%%/base/ps2pk.map
-%%DVIPSDIR%%/base/psfonts.map
-%%DVIPSDIR%%/base/psfonts_pk.map
-%%DVIPSDIR%%/base/psfonts_t1.map
-%%DVIPSDIR%%/config/config.ps
+%%DVIPSCONFIGDIR%%/config/config.ps
 @dirrm %%DVIPSDIR%%/base
-@dirrm %%DVIPSDIR%%/config
-%%FONTSMAPDIR%%/ptex/kanji.map
-@dirrm %%FONTSMAPDIR%%/ptex
+@dirrm %%DVIPSCONFIGDIR%%/config
+%%FONTSMAPDIR%%/dvips/kanji.map
 @exec %%MKTEXLSR%%
+@exec %%UPDMAP_SYS_PTEX%% --enable Map=kanji.map
+@unexec %%UPDMAP_SYS_PTEX%% --disable kanji.map
 @unexec %%MKTEXLSR%%
