@@ -1,0 +1,46 @@
+--- Makefile.orig	Mon Jun  9 21:36:42 2003
++++ Makefile	Thu Jul 10 13:27:09 2003
+@@ -37,7 +37,7 @@
+ #
+ 
+ PREFIX    ?= /usr/local
+-RUBY      ?= $(shell which ruby)
++RUBY      ?= $(shell which ruby18)
+ HTML_PATH ?= /zc
+ 
+ LIBEXEC=$(PREFIX)/libexec
+@@ -83,7 +83,7 @@
+ 	@echo "Not automatized yet"
+ 
+ 
+-install: install-common install-cli install-cgi install-doc
++install: install-common install-cli install-doc
+ 
+ 
+ install-common:
+@@ -114,12 +114,11 @@
+ 
+ 	@echo "==> Installing default configuration file"
+ 	$(INSTALL) -d $(ETCDIR)
+-	$(INSTALL) -b -m 0644 etc/zc.conf $(ETCDIR)
+-	$(INSTALL) -b -m 0644 etc/zc.conf.fr $(ETCDIR)
+-	$(INSTALL) -b -m 0644 etc/zc.conf.arpa $(ETCDIR)
++	$(INSTALL) -b -m 0644 etc/zc.conf $(ETCDIR)/zc.conf-dist
++	$(INSTALL) -b -m 0644 etc/zc.conf.fr $(ETCDIR)/zc.conf.fr-dist
++	$(INSTALL) -b -m 0644 etc/zc.conf.arpa $(ETCDIR)/zc.conf.arpa-dist
+ 	@echo "*************************"
+-	@echo "** If you already had a zc.conf file it has been renamed"
+-	@echo "**   to zc.conf.old"
++	@echo "** zc.conf file installed as zc.conf-dist. "
+ 	@echo "** Don't forget to edit the zc.conf to reflect your system"
+ 	@echo "**   configuration"
+ 	@echo "*************************"
+@@ -141,7 +140,7 @@
+ install-cli:
+ 	@echo "==> Installing CLI"
+ 	$(INSTALL) -d $(BINDIR)
+-	$(LN) -f $(LIBEXEC)/zc/zc/zc.rb $(BINDIR)/zc
++	$(LN) -s $(LIBEXEC)/zc/zc/zc.rb $(BINDIR)/zc
+ 	@echo
+ 
+ install-doc:
