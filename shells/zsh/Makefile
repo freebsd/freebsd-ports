@@ -5,79 +5,121 @@
 # $FreeBSD$
 #
 
+# The following compile-time options are available:
+# NOSHARED=yes		compile a static version of zsh
+#			(default: use dynamically loadable modules)
+# WITHOUT_ZSH_MEM=yes	disable zsh-mem and zsh-secure-free options
+#			(default: on)
+# WITHOUT_ZSH_MAILDIR=yes disable support for Maildirs in MAIL and MAILPATH
+#			(default: on)
+# ZSH_ETCDIR=<dir>	directory for zsh system-wide configuration files:
+#			zshenv, zlogin, zprofile, zshrc, zlogout.
+#			e.g. use this to put config files inside ${PREFIX}
+#			(default: /etc)
+#			NOTE: does NOT have to be inside ${PREFIX} tree
+# ZSH_FNDIR=<dir>	directory for zsh functions (part of distribution)
+#			(default: ${PREFIX}/share/zsh/${ZSH_VER}/functions)
+#			NOTE: should be inside ${PREFIX} tree
+# ZSH_SITEFNDIR=<dir>	directory for zsh site functions (locally developed)
+#			(default: ${PREFIX}/share/zsh/site-functions)
+#			NOTE: does NOT have to be inside ${PREFIX} tree
+
 PORTNAME=	zsh
-PORTVERSION=	4.0.6
+PORTVERSION=	4.0.7
 CATEGORIES=	shells
-MASTER_SITES=	ftp://ftp.zsh.org/%SUBDIR%/ \
-		ftp://ftp.sterling.com/%SUBDIR%/ \
-		ftp://ftp.rge.com/pub/shells/%SUBDIR%/ \
-		ftp://ftp.fu-berlin.de/pub/unix/shells/%SUBDIR%/ \
-		ftp://ftp.ips.oz.au/pub/packages/%SUBDIR%/ \
-		ftp://ftp.uit.no/pub/unix/shells/%SUBDIR%/ \
-		ftp://ftp.iij.ad.jp/pub/misc/%SUBDIR%/ \
-		ftp://ftp.st.ryukoku.ac.jp/pub/utils/shell/%SUBDIR%/ \
-		ftp://ftp.icm.edu.pl/vol/wojsyl/%SUBDIR%/ \
-		ftp://ftp.sunsite.auc.dk/disk1/%SUBDIR%/
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	http://www.zsh.org/zsh/ \
+		ftp://ftp.zsh.org/zsh/ \
+		ftp://sunsite.dk/pub/unix/shells/zsh/ \
+		http://archive.progeny.com/zsh/ \
+		ftp://archive.progeny.com/zsh/ \
+		http://mirrors.theonlinerecordstore.com/zsh/ \
+		ftp://uiarchive.uiuc.edu/mirrors/ftp/ftp.zsh.org/pub/zsh/ \
+		ftp://ftp.rge.com/pub/shells/zsh/ \
+		ftp://sunsite.org.uk/packages/zsh/ \
+		ftp://ftp.net.lut.ac.uk/zsh/ \
+		ftp://ftp.fu-berlin.de/pub/unix/shells/zsh/ \
+		ftp://ftp.win.ne.jp/pub/shell/zsh/ \
+		ftp://ftp.ayamura.org/pub/zsh/ \
+		ftp://linux.sarang.net/mirror/systems/shell/zsh/ \
+		ftp://ftp.lysator.liu.se/pub/unix/zsh/ \
+		ftp://sunsite.icm.edu.pl/pub/unix/shells/zsh/ \
+		ftp://ftp.kappa.ro/pub/mirrors/ftp.zsh.org/pub/zsh/ \
+		ftp://ftp.demon.nl/pub/mirrors/zsh/
+DISTNAME=	${PORTNAME}-${ZSH_VER}
 .if !defined(NOPORTDOCS)
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} zsh-${PORTVERSION}-doc${EXTRACT_SUFX}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}-doc${EXTRACT_SUFX}
 .endif
 
-MAINTAINER?=	will@FreeBSD.org
+MAINTAINER?=	sergei@kolobov.com
 COMMENT?=	The Z shell
 
-USE_BZIP2=	yes
-USE_REINPLACE=	yes
-
 ZSH_VER=	${PORTVERSION}
-ZSHFUNC_SUBDIR=	share/zsh/${ZSH_VER}/functions
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-zsh-mem --enable-zsh-secure-free --enable-dynamic \
-		--enable-maildir-support --with-curses-terminfo
+# Conflicts with shells/zsh-devel as it installs files into the same locations
+CONFLICTS=	zsh-devel-* zsh-4.1.*
 
-.if !defined(NOPORTDOCS)
-INSTALL_TARGET=	install install.html
+USE_BZIP2=	yes
+GNU_CONFIGURE=	yes
+
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ARGS=	--enable-etcdir=${ZSH_ETCDIR} --with-curses-terminfo \
+		--enable-fndir=${ZSH_FNDIR} --enable-function-subdirs \
+		--enable-site-fndir=${ZSH_SITEFNDIR}
+
+.if !defined(WITHOUT_ZSH_MEM)
+CONFIGURE_ARGS+=	--enable-zsh-mem --enable-zsh-secure-free
 .endif
+
+.if !defined(WITHOUT_ZSH_MAILDIR)
+CONFIGURE_ARGS+=	--enable-maildir-support
+.endif
+
+.if defined(NOSHARED)
+CONFIGURE_ARGS+=	--disable-dynamic
+PLIST_SUB+=		NO_STATIC="@comment "
+.else
+CONFIGURE_ARGS+=	--enable-dynamic
+PLIST_SUB+=		NO_STATIC=""
+.endif
+
+# These variables can be overriden by user
+ZSH_ETCDIR?=	/etc
+ZSH_FNDIR?=	${DATADIR}/${ZSH_VER}/functions
+ZSH_SITEFNDIR?=	${DATADIR}/site-functions
+
+PLIST_SUB+=	ZSH_VER="${ZSH_VER}" ZSHETCDIR="${ZSH_ETCDIR}" \
+		ZSH_FNDIR="${ZSH_FNDIR:S!${PREFIX}/!!}" \
+		ZSH_SITEFNDIR="${ZSH_SITEFNDIR}"
 
 MAN1=		zsh.1 zshbuiltins.1 zshcompctl.1 zshcompwid.1 zshcompsys.1 \
 		zshcontrib.1 zshexpn.1 zshmisc.1 zshmodules.1 zshoptions.1 \
 		zshparam.1 zshzftpsys.1 zshzle.1 zshall.1
-
-PLIST_SUB=	ZSH_VER="${ZSH_VER}" ZSHFUNC_SUBDIR="${ZSHFUNC_SUBDIR}"
-
-.if defined(WANT_STATIC)
-CONFIGURE_ENV+=	"LDFLAGS=-static"
-PLIST_SUB+=	NO_STATIC="@comment "
-.else
-PLIST_SUB+=	NO_STATIC=""
-.endif
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|\$$(htmldir)|\$$(prefix)/share/doc/zsh|' \
-		${WRKSRC}/Doc/Makefile.in
+DOCS=		LICENCE META-FAQ README Etc/BUGS Etc/CONTRIBUTORS Etc/FAQ \
+		Etc/FEATURES Etc/NEWS Etc/completion-style-guide \
+		Doc/zsh*.html Doc/zsh.dvi Doc/zsh_a4.ps Doc/zsh_us.ps
+EXAMPLES=	zlogin zshenv zshrc
 
 post-build:
-# Fix ".so" macro problem by using "soelim" command.
-	@(cd ${WRKSRC} ; \
-		${LN} -sf ./Doc man1 ; \
-		if [ ! -f ./man1/zshall.1.source ]; then \
-			${MV} -f ./man1/zshall.1 ./man1/zshall.1.source ; \
-		fi ; \
-		${RM} -f ./man1/zshall.1 ; \
-		/usr/bin/soelim ./man1/zshall.1.source > ./man1/zshall.1 ; \
-	)
+	# Fix ".so" macro problem by using "soelim" command.
+	${LN} -sf ${WRKSRC}/Doc ${WRKSRC}/man1
+	${MV} ${WRKSRC}/Doc/zshall.1 ${WRKSRC}/Doc/zshall.1.source
+	cd ${WRKSRC} && /usr/bin/soelim ${WRKSRC}/Doc/zshall.1.source > \
+		${WRKSRC}/Doc/zshall.1
+.if !defined(NOPORTDOCS)
+	cd ${WRKSRC}/Doc && makeinfo --no-split zsh.texi
+.endif
 
 post-install:
+	${TEST} -d ${ZSH_ETCDIR} || ${MKDIR} ${ZSH_ETCDIR}
+	${TEST} -d ${ZSH_SITEFNDIR} || ${MKDIR} ${ZSH_SITEFNDIR}
+	@${MKDIR} ${EXAMPLESDIR}
+	cd ${WRKSRC}/StartupFiles && ${INSTALL_DATA} ${EXAMPLES} ${EXAMPLESDIR}
 .if !defined(NOPORTDOCS)
-	@${INSTALL_DATA} ${WRKSRC}/Doc/zsh.info* ${PREFIX}/info
-.endif
-	@${MKDIR} ${PREFIX}/share/examples/zsh
-.for file in zlogin zshenv zshrc
-	${INSTALL_DATA} ${WRKSRC}/StartupFiles/${file} \
-		${PREFIX}/share/examples/zsh
-.endfor
+	@${MKDIR} ${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/Doc/zsh.info ${PREFIX}/info
 	@install-info ${PREFIX}/info/zsh.info ${PREFIX}/info/dir
-	@${ECHO} "Updating /etc/shells"
+.endif
+	@${ECHO_MSG} "Updating /etc/shells"
 	@${CP} /etc/shells /etc/shells.bak
 	@(${GREP} -v ${PREFIX}/bin/zsh /etc/shells.bak; \
 	  ${ECHO_CMD} ${PREFIX}/bin/zsh) > /etc/shells
