@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.64 1998/12/31 12:13:15 luigi Exp $
+# $Id: Makefile,v 1.65 1999/01/02 19:41:28 hoek Exp $
 #
 
     SUBDIR += 8hz-mp3
@@ -16,6 +16,7 @@
     SUBDIR += gqmpeg
     SUBDIR += gsm
     SUBDIR += kdemultimedia
+    SUBDIR += kdemultimedia11
     SUBDIR += kmpg
     SUBDIR += lamer
     SUBDIR += libaudiofile

@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.179 1998/12/29 18:50:37 mph Exp $
+# $Id: Makefile,v 1.180 1999/01/01 03:16:55 ache Exp $
 #
 
     SUBDIR += 3dc
@@ -52,6 +52,7 @@
     SUBDIR += jetpack
     SUBDIR += jzip
     SUBDIR += kdegames
+    SUBDIR += kdegames11
     SUBDIR += klondike
     SUBDIR += ktamaga
     SUBDIR += ladder

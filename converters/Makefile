@@ -1,10 +1,11 @@
-# $Id: Makefile,v 1.13 1998/11/20 23:01:08 billf Exp $
+# $Id: Makefile,v 1.14 1998/11/20 23:23:00 billf Exp $
 #
 
     SUBDIR += aish
     SUBDIR += btoa
     SUBDIR += ish
     SUBDIR += kdesupport
+    SUBDIR += kdesupport11
     SUBDIR += mimepp
     SUBDIR += mpack
     SUBDIR += p5-Convert-UU

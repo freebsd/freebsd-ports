@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.244 1998/12/24 14:35:06 flathill Exp $
+# $Id: Makefile,v 1.245 1999/01/02 19:20:21 sada Exp $
 #
 
     SUBDIR += XFree86
@@ -47,8 +47,11 @@
     SUBDIR += gnomelibs
     SUBDIR += kb2mb2
     SUBDIR += kde
+    SUBDIR += kde11
     SUBDIR += kdebase
+    SUBDIR += kdebase11
     SUBDIR += kdelibs
+    SUBDIR += kdelibs11
     SUBDIR += kworldwatch
     SUBDIR += libdnd
     SUBDIR += libhelp
