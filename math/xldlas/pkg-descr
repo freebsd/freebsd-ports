@@ -1,0 +1,19 @@
+What is it?
+===========
+	It's for doing statistics.
+
+Highlights
+==========
+	* Based on the xforms library (ie. looks pretty slick)
+	* Point and click interface to statistical summaries, OLS
+	  regression, plotting, correlation analysis, etc.
+	* Neural network and Genetic Algorithm data fitting
+	  with some nice visual feedback.
+	* Very handy automatic generating of .tex format and html 
+	  log files, including tables and plots.
+	* Online help
+
+Feedback
+========
+	The author (Thor Sigvaldason) is happy to receive feedback 
+	at: thor@netcom.ca
