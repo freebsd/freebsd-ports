@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	runit
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://smarden.org/${PORTNAME}/
 
@@ -30,7 +30,7 @@ do-configure:
 	${ECHO_CMD} "${CC} ${CFLAGS}" > ${WRKSRC}/src/conf-cc
 
 do-build:
-	cd ${WRKSRC} && package/compile
+	cd ${WRKSRC} && package/compile && package/check
 	@${MKDIR} ${WRKDIR}/etc/getty-ttyv4
 	@${SED} -e 's!%%PREFIX%%!${PREFIX}!' \
 		-e 's!%%SERVICE_DIR%%!${SERVICE_DIR}!' \
