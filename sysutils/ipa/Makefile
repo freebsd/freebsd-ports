@@ -14,6 +14,9 @@ MAINTAINER=	simon@simon.org.ua
 
 NO_PACKAGE=	"Needs to be built uniquely for each site"
 ALL_TARGET=	FreeBSD
+.ifdef(NOPORTDOCS)
+MAKE_ENV=	NOPORTDOCS="${NOPORTDOCS}"
+.endif
 
 MAN5=		ipa.5 ipa.conf.5
 MAN8=		ipa.8 ipastat.8
@@ -22,5 +25,8 @@ MANLANG=	"" ru_RU.KOI8-R
 post-patch:
 	@${PERL} -pi -ne "s|/usr/local/|${PREFIX}/|" \
 		${WRKSRC}/Makefile
+
+post-install:
+	${CHMOD} 0400 ${PREFIX}/etc/ipa.conf.default
 
 .include <bsd.port.mk>
