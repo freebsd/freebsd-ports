@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	abcde
-PORTVERSION=	2.1.9
-PORTREVISION=	1
+PORTVERSION=	2.1.14
 CATEGORIES=	audio
 MASTER_SITES=	http://www.hispalinux.es/~data/files/
 DISTNAME=	abcde_${PORTVERSION}.orig
