@@ -1,6 +1,6 @@
 # New ports collection makefile for:	p5-IO-Socket-Multicast
-# Date created:		10 Sep 2002
-# Whom:	      		Kelly Yancey <kbyanc@FreeBSD.org>
+# Date created:		21 March 2002
+# Whom:	      		Janos.Mohacsi@dante.org.uk
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR= IO
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	kbyanc@FreeBSD.org
+MAINTAINER=	janos.mohacsi@dante.org.uk
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/IO/Interface.pm:${PORTSDIR}/net/p5-IO-Interface
 RUN_DEPENDS=	${BUILD_DEPENDS}
