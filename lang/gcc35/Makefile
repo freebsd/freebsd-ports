@@ -6,13 +6,13 @@
 # $FreeBSD$
 #
 
-SNAPDATE=	2000-05-01
+SNAPDATE=	2000-07-17
 SNAPVER=	${SNAPDATE:S/-//g}
 
 PORTNAME=	gcc-devel
 PORTVERSION=	${SNAPVER}
 CATEGORIES=	lang java
-MASTER_SITES=	ftp://ftp.freesoftware.com/pub/egcs/snapshots/${SNAPDATE}/  \
+MASTER_SITES=	ftp://ftp.freesoftware.com/pub/sourceware/gcc/snapshots/${SNAPDATE}/  \
 		ftp://egcs.cygnus.com/pub/egcs/snapshots/${SNAPDATE}/  \
 		ftp://ftp.ninemoons.com/pub/mirrors/egcs/snapshots/${SNAPDATE}/ \
 		ftp://ftp.iij.ad.jp/pub/egcs/snapshots/${SNAPDATE}/ \
@@ -28,35 +28,35 @@ MAINTAINER=	obrien@FreeBSD.org
 
 NO_CDROM=	'dated material'
 
-.include <bsd.port.pre.mk>
-
 EGCS_REV=	2.96
 LIBSTDCPP_REV=	4
 WRKSRC=		${WRKDIR}/egcs-${SNAPVER}
 
+.include <bsd.port.pre.mk>
+
 .if ${PORTOBJFORMAT} == "elf"
-.if ${MACHINE_ARCH} == "i386"
-PLIST=		${WRKDIR}/PLIST
-.endif
 CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
 .else
 CONFIGURE_TARGET=	${ARCH}-portbld-freebsdaout${OSREL}
 .endif
 
-PLIST_SUB=	EGCS_REV=${EGCS_REV} GNU_HOST=${CONFIGURE_TARGET}
+PLIST_SUB=	EGCS_REV=${EGCS_REV} GNU_HOST=${CONFIGURE_TARGET}  \
+		LIBSTDCPP_REV=${LIBSTDCPP_REV} SNAPVER=${SNAPVER}
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-CONFIGURE_ARGS=	--with-gnu-as --with-gnu-ld \
+USE_BISON=	yes
+CONFIGURE_ARGS=	--disable-nls --with-gnu-as --with-gnu-ld \
 		--with-gxx-include-dir=${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${EGCS_REV}/include/g++
 .if defined(WANT_SHAREDLIBS)
 CONFIGURE_ARGS+= --enable-shared
 .endif
-.if defined(WANT_THREADS)
+.if defined(WANT_THREADS_SUPPORT)
+CONFIGURE_ARGS+= --enable-threads
 #	?is this an ObjC only thing?
 CONFIGURE_ARGS+= --enable-threads=posix
 .endif
 ALL_TARGET=	bootstrap
-MAN1=		eg++.1 eg77.1 egcc.1
+MAN1=		ecpp.1 eg++.1 eg77.1 egcc.1
 
 pre-patch:
 	@${MV} ${WRKSRC}/gcc/config/i386/freebsd.h ${WRKSRC}/gcc/config/i386/freebsd-aout.h
@@ -64,16 +64,16 @@ pre-patch:
 
 pre-configure:
 	@(MAJ=`sysctl -n kern.osreldate | ${SED} -e '/.....$$/s///'` ; \
-	${PERL} -pi.orig -e "s:__FreeBSD__:__FreeBSD__=$${MAJ}:" \
-		${WRKSRC}/gcc/config/freebsd.h )
+	    ${PERL} -pi.orig -e "s:__FreeBSD__:__FreeBSD__=$${MAJ}:" \
+	    ${WRKSRC}/gcc/config/freebsd.h )
 	@${CP} ${FILESDIR}/alpha-freebsd.h ${WRKSRC}/gcc/config/alpha/freebsd.h
-.if ${PORTOBJFORMAT} == "elf" && ${MACHINE_ARCH} == "i386"
-	@${SED} -e 's/^@comment ELF-only://' ${PKGDIR}/PLIST >${PLIST}
-.endif
 	@# Keep from running `autoconf' and `autoheader' since we modified
 	@# configure.in by patching it.
 	@touch ${WRKSRC}/gcc/configure
 	@touch ${WRKSRC}/gcc/cstamp-h.in
+
+pre-build:
+	cd ${WRKSRC} ; contrib/gcc_update --touch
 
 pre-install:
 	${MKDIR} ${PREFIX}/info
@@ -92,19 +92,26 @@ post-install:
 		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${EGCS_REV}/f771 ; \
 	do \
 		strip $$prog ; \
-	done)
+	done )
 	${MV} ${PREFIX}/bin/gcc ${PREFIX}/bin/egcc
 	${MV} ${PREFIX}/bin/g++ ${PREFIX}/bin/eg++
 	${MV} ${PREFIX}/bin/g77 ${PREFIX}/bin/eg77
 	${MV} ${PREFIX}/bin/g++filt ${PREFIX}/bin/eg++filt
+	${MV} ${PREFIX}/bin/gccbug ${PREFIX}/bin/gccbug-${SNAPVER}
+	${RM} -f ${PREFIX}/bin/${GNU_HOST}-c++
 	${RM} -f ${PREFIX}/bin/cpp
+	# These 3 libraries are moved from PREFIX/lib to avoid conflicts
+	# 	with the stock compiler.
 	${MV} ${PREFIX}/lib/libiberty.a  \
 		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${EGCS_REV}
 	${MV} -f ${PREFIX}/lib/libstdc++.a.${LIBSTDCPP_REV}  \
-		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${EGCS_REV}/libstdc++.a
+		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${EGCS_REV}
+	cd ${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${EGCS_REV} ; \
+		${LN} -sf libstdc++.a.${LIBSTDCPP_REV} libstdc++.a
 	${MV} ${PREFIX}/man/man1/gcc.1 ${PREFIX}/man/man1/egcc.1
 	${MV} ${PREFIX}/man/man1/g++.1 ${PREFIX}/man/man1/eg++.1
 	${MV} ${PREFIX}/man/man1/g77.1 ${PREFIX}/man/man1/eg77.1
+	${MV} ${PREFIX}/man/man1/cpp.1 ${PREFIX}/man/man1/ecpp.1
 .if defined(WANT_SHAREDLIBS)
 	${MV} -f ${PREFIX}/lib/libstdc++.so*  \
 		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${EGCS_REV}
@@ -112,5 +119,15 @@ post-install:
 .for info in cpp g77 gcc
 	install-info ${PREFIX}/info/${info}.info ${PREFIX}/info/dir
 .endfor
+	cd ${PREFIX} ;\
+	    find lib/gcc-lib/${CONFIGURE_TARGET}/${EGCS_REV} \
+		-type f -o -type l >${WRKDIR}/PLIST.gcc-lib
+	${ECHO} "r ${TMPPLIST}"			> ${WRKDIR}/ex.script
+	${ECHO} "/Insert PLIST.gcc-lib"		>> ${WRKDIR}/ex.script
+	${ECHO} "d"				>> ${WRKDIR}/ex.script
+	${ECHO} "r ${WRKDIR}/PLIST.gcc-lib"	>> ${WRKDIR}/ex.script
+	${ECHO} "x!"				>> ${WRKDIR}/ex.script
+	${CP} -p ${TMPPLIST} ${TMPPLIST}.pre-gcc-lib
+	cd ${WRKDIR} ; ex < ex.script
 
 .include <bsd.port.post.mk>
