@@ -32,6 +32,62 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   "http://www.vuxml.org/dtd/vuxml-1/vuxml-10.dtd">
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
 
+  <vuln vid="705e003a-7f36-11d8-9645-0020ed76ef5a">
+    <topic></topic>
+    <affects>
+      <package>
+	<name>squid</name>
+	<range><lt>squid-2.5.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>From the Squid advisory:</p>
+	<blockquote
+	  cite="http://www.squid-cache.org/Advisories/SQUID-2004_1.txt">
+          <p> Squid versions 2.5.STABLE4 and earlier contain a bug
+          in the "%xx" URL decoding function.  It may insert a NUL
+          character into decoded URLs, which may allow users to bypass
+          url_regex ACLs.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.squid-cache.org/Advisories/SQUID-2004_1.txt</url>
+      <cvename>CVE-2004-0189</cvename>
+    </references>
+    <dates>
+      <discovery>2004-02-29</discovery>
+      <entry>2004-03-26</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="fde53204-7ea6-11d8-9645-0020ed76ef5a">
+    <topic>insecure temporary file creation in xine-check,
+      xine-bugreport</topic>
+    <affects>
+      <package>
+	<name>xine</name>
+	<range><ge>0</ge></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Some scripts installed with xine create temporary files
+	  insecurely.  It is recommended that these scripts (xine-check,
+	  xine-bugreport) not be used.  They are not needed for normal
+	  operation.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://marc.theaimsgroup.com/?l=bugtraq&amp;m=107997911025558</url>
+    </references>
+    <dates>
+      <discovery>2004-03-20</discovery>
+      <entry>2004-03-26</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c551ae17-7f00-11d8-868e-000347dd607f">
     <topic>multiple vulnerabilities in phpBB</topic>
     <affects>
