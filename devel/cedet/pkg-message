@@ -1,0 +1,8 @@
+********************************************************************
+* Add the following to your .emacs for start:                      *
+*                                                                  *
+* ;; Configuration variables here:                                 *
+* (setq semantic-load-turn-useful-things-on t)                     *
+* ;; Load CEDET                                                    *
+* (require 'cedet)                                                 *
+********************************************************************

@@ -1,0 +1,17 @@
+CEDET: Collection of Emacs Development Environment Tools
+
+CEDET is a collection of tools written with the end goal of creating
+an advanced development environment in Emacs.
+
+It includes:
+
+Semantic:	A infrastructure for parser based text analysis in Emacs.
+EIEIO:		Enhanced Implementation of Emacs Interpreted Objects.
+CEDET/common:	The CEDET common subpackage contains small utilities
+		recently drawn out of some of the other tools.
+Speedbar:	An Everything Browser. 
+EDE:		Emacs Development Environment.
+COGRE:		COnnected GRaph Editor.
+
+
+WWW: http://cedet.sourceforge.net/

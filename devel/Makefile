@@ -109,6 +109,7 @@
     SUBDIR += cdialog
     SUBDIR += cdk
     SUBDIR += cdoc
+    SUBDIR += cedet
     SUBDIR += cflow
     SUBDIR += cflow2vcg
     SUBDIR += chora
