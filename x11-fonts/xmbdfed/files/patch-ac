@@ -1,0 +1,14 @@
+--- bdf.h.orig	Fri Mar 17 05:08:51 2000
++++ bdf.h	Sat May 20 04:47:50 2000
+@@ -41,7 +41,11 @@
+ 
+ #ifdef HAVE_FREETYPE
+ #include <freetype.h>
++#ifdef __FreeBSD__
++#include <ftxsbit.h>
++#else
+ #include <extend/ftxsbit.h>
++#endif
+ #endif /* HAVE_FREETYPE */
+ 
+ #ifdef __cplusplus
