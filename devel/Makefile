@@ -1179,6 +1179,7 @@
     SUBDIR += styx
     SUBDIR += subversion
     SUBDIR += subversion-perl
+    SUBDIR += subversion-python
     SUBDIR += svk
     SUBDIR += swarm
     SUBDIR += swig11
