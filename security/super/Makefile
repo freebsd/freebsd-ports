@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	super
-PORTVERSION=	3.20.1
+PORTVERSION=	3.23.0
 CATEGORIES=	security sysutils
 MASTER_SITES=	ftp://ftp.ucolick.org/pub/users/will/
 EXTRACT_SUFX=	-tar.gz
