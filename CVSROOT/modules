@@ -8580,6 +8580,7 @@ xmlrpc-c	ports/net/xmlrpc-c
 xmlsec		ports/security/xmlsec
 xmlsec1		ports/security/xmlsec1
 xmltex		ports/print/xmltex
+xmlto		ports/textproc/xmlto
 xmlwrapp	ports/textproc/xmlwrapp
 xmmix		ports/audio/xmmix
 xmms		ports/multimedia/xmms
