@@ -30,4 +30,10 @@ MAN3=	optionFree.3 optionLoadLine.3 optionProcess.3 optionRestore.3 \
 	optionSaveFile.3 optionSaveState.3 optionVersion.3
 INFO=	autogen
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+BROKEN=		"Build fails on amd64"
+.endif
+
+.include <bsd.port.post.mk>
