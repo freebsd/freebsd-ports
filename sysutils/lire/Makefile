@@ -24,6 +24,7 @@ BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip \
 		\
 		${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
 		${SITE_PERL}/MIME/Tools.pm:${PORTSDIR}/mail/p5-MIME-Tools \
+		${SITE_PERL}/Time/Timezone.pm:${PORTSDIR}/devel/p5-Time-modules \
 		${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
 		${SITE_PERL}/${PERL_ARCH}/DBD/SQLite.pm:${PORTSDIR}/databases/p5-DBD-SQLite
 
@@ -106,7 +107,7 @@ MAN3=		\
 		Lire::Utils.3pm Lire::W3CExtendedLog.3pm Lire::WELF.3pm \
 		Lire::WWW::Domain.3pm Lire::WWW::Filename.3pm \
 		Lire::WWW::URL.3pm Lire::WWW::UserAgent.3pm \
-		Lire::WeekCalculator.3pm Time::Timezone.3pm \
+		Lire::WeekCalculator.3pm
 
 MAN7=		lire.7
 
