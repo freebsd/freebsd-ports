@@ -49,7 +49,7 @@ post-install:
 	@-${RM} -fr ${PREFIX}/libexec/autoconf213
 	${MKDIR} ${PREFIX}/libexec/autoconf213
 .for i in autoconf autoheader autoreconf autoscan autoupdate ifnames
-	${LN} -s ../../bin/${i}213 \
+	${LN} -sf ${PREFIX}/bin/${i}213 \
 		${PREFIX}/libexec/autoconf213/${i}
 .endfor
 	install-info ${PREFIX}/info/autoconf213.info \
