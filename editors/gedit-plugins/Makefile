@@ -21,15 +21,15 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 USE_BZIP2=	yes
 USE_PERL5=	yes
 USE_X_PREFIX=	yes
-USE_INC_LIBTOOL_VER=13
+USE_LIBTOOL_VER=15
 INSTALLS_SHLIB=	yes
 USE_REINPLACE=	yes
-USE_GNOME=	gnomehack gnomeprefix gnometarget lthack
+USE_GNOME=	gnomehack gnomeprefix gnometarget
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|gedit-2.4|gedit-2.8|g" \
+	@${REINPLACE_CMD} -e "s|gedit-2.4|gedit-2.10|g" \
 		${WRKSRC}/configure
 
 .include <bsd.port.mk>
