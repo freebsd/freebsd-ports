@@ -1,0 +1,11 @@
+--- curlpp-config.in.orig	Tue Aug 10 17:37:23 2004
++++ curlpp-config.in	Tue Aug 10 17:37:34 2004
+@@ -70,7 +70,7 @@
+ 	;;
+ 
+     --cflags)
+-       	echo -I@includedir@ @CURLPP_CFLAGS@
++       	echo -I@includedir@ @CURLPP_CXXFLAGS@
+        	;;
+ 
+     --libs)
