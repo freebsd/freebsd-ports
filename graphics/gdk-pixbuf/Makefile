@@ -26,6 +26,7 @@ USE_GNOMENG=	yes
 USE_GNOME+=	gnomehack gtk12
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
+USE_REINPLACE=	yes
 CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc \
 		--disable-gtk-doc
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
