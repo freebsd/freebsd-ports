@@ -1,0 +1,23 @@
+*** src/common.h.orig	Thu Jul 26 11:38:18 2001
+--- src/common.h	Thu Jul 26 11:40:18 2001
+***************
+*** 20,26 ****
+  
+  #include <gnome.h>
+  
+! #ifdef LINUX
+  #define AUDIO1 "/dev/dsp"
+  #define AUDIO2 "/dev/dsp1"
+  #define AUDIO3 "/dev/dsp2"
+--- 20,30 ----
+  
+  #include <gnome.h>
+  
+! #ifdef __FreeBSD__
+! #include <pthread.h>
+! #endif
+! 
+! #if defined(LINUX) || defined (__FreeBSD__)
+  #define AUDIO1 "/dev/dsp"
+  #define AUDIO2 "/dev/dsp1"
+  #define AUDIO3 "/dev/dsp2"
