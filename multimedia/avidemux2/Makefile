@@ -104,6 +104,10 @@ LIB_DEPENDS+=	faac.0:${PORTSDIR}/audio/faac
 LIB_DEPENDS+=	faad.0:${PORTSDIR}/audio/faad
 .endif
 
+post-extract:
+	@${REINPLACE_CMD} -e 's/[[:cntrl:]]*$$//' \
+		${WRKSRC}/avidemux/ADM_mplex/ADM_mplexout.cpp
+
 post-patch:
 	@${TOUCH} ${WRKSRC}/*
 	@${REINPLACE_CMD} 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure ${WRKSRC}/*/*/Makefile
