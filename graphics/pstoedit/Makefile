@@ -7,7 +7,7 @@
 
 PORTNAME=	pstoedit
 PORTVERSION=	3.33
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics print
 MASTER_SITES=	http://home.t-online.de/home/helga.glunz/wglunz/pstoedit/
 
@@ -18,12 +18,14 @@ USE_GHOSTSCRIPT=	yes
 
 LIB_DEPENDS=	Magick++.6:${PORTSDIR}/graphics/ImageMagick \
 		ming.3:${PORTSDIR}/graphics/ming \
-		plotter.4:${PORTSDIR}/graphics/plotutils
+		plotter.4:${PORTSDIR}/graphics/plotutils \
+		EMF.1:${PORTSDIR}/graphics/libemf
 
 USE_GNOME=	gnometarget pkgconfig
 USE_LIBTOOL=	yes
 USE_REINPLACE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ARGS+=	--with-libemf-include=${LOCALBASE}/include/libEMF
 INSTALLS_SHLIB=	yes
 
 MAN1=	pstoedit.1
