@@ -17,6 +17,7 @@
     SUBDIR += gigabase
     SUBDIR += gmysql
     SUBDIR += gnats
+    SUBDIR += gnomedb
     SUBDIR += grass
     SUBDIR += gtksql
     SUBDIR += interbase4
