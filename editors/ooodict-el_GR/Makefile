@@ -12,7 +12,7 @@ CATEGORIES=	editors
 
 LANGPREFIX=	el
 LANGSUFFIX=	GR
-LANGDIST+=	el_GR-enhanced.zip
+LANGDIST+=	el_GR.zip
 MASTERDIR=	${.CURDIR}/../ooodict-all
 RDEP=		${PORTSDIR}/editors/openoffice-gr
 

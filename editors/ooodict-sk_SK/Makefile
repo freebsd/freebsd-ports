@@ -13,7 +13,7 @@ CATEGORIES=	editors
 LANGPREFIX=	sk
 LANGSUFFIX=	SK
 LANGDIST+=	sk_SK.zip
-HYPHDIST+=	hyph_sk.zip
+HYPHDIST+=	hyph_sk_SK.zip
 MASTERDIR=	${.CURDIR}/../ooodict-all
 RDEP=		${PORTSDIR}/editors/openoffice
 
