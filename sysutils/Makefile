@@ -288,6 +288,7 @@
     SUBDIR += pear-File
     SUBDIR += pear-File_Find
     SUBDIR += pear-Log
+    SUBDIR += pecl-fileinfo
     SUBDIR += penv
     SUBDIR += perf
     SUBDIR += personality
