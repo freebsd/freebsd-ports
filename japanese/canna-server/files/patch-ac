@@ -1,5 +1,5 @@
 *** Canna.conf.orig	Wed Apr 12 22:15:03 1995
---- Canna.conf	Wed Sep 18 07:05:18 1996
+--- Canna.conf	Thu Oct 31 13:47:39 1996
 ***************
 *** 114,128 ****
    * $Id: Canna.conf,v 2.10.1.2 1995/04/12 13:15:03 misao Exp $
@@ -84,3 +84,32 @@
   
   #ifdef NeXT
   #define NO_X_ENV
+***************
+*** 311,323 ****
+  #endif
+  #define InstallLibManPageAliases(file,destdir,aliases)			@@\
+  install.man::								@@\
+!         @(TMP=/tmp/tmp.$$$$; \						@@\
+!         $(RM) $${TMP}; \						@@\
+!         echo .so `basename destdir/man$(LIBMANSUFFIX)`/file.$(LIBMANSUFFIX) > $${TMP}; \	@@\
+!         for i in aliases; do (set -x; \					@@\
+!         $(INSTALL) -c $(INSTMANFLAGS) $${TMP} $(DESTDIR)destdir/man$(LIBMANSUFFIX)/$$i.$(LIBMANSUFFIX)); \ @@\
+!         done; \								@@\
+!         $(RM) $${TMP})
+  #ifndef MakeDirectoriesLong
+  #define MakeDirectoriesLong(step,dirs,owner,group)			@@\
+  step::									@@\
+--- 311,323 ----
+  #endif
+  #define InstallLibManPageAliases(file,destdir,aliases)			@@\
+  install.man::								@@\
+! 	@(TMP=/tmp/tmp.$$$$; \						@@\
+! 	$(RM) $${TMP}; \						@@\
+! 	echo .so `basename destdir/man$(LIBMANSUFFIX)`/file.$(LIBMANSUFFIX) > $${TMP}; \	@@\
+! 	for i in aliases; do (set -x; \					@@\
+! 	$(INSTALL) -c $(INSTMANFLAGS) $${TMP} $(DESTDIR)destdir/man$(LIBMANSUFFIX)/$$i.$(LIBMANSUFFIX)); \ @@\
+! 	done; \								@@\
+! 	$(RM) $${TMP})
+  #ifndef MakeDirectoriesLong
+  #define MakeDirectoriesLong(step,dirs,owner,group)			@@\
+  step::									@@\
