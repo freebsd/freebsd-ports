@@ -1,5 +1,4 @@
 # New ports collection makefile for: netscape-linux-6
-# Version required:		6
 # Date created:			8 April 2000
 # Whom:				sada@FreeBSD.org
 #

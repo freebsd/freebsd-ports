@@ -1,5 +1,4 @@
 # New ports collection makefile for:	XEmacs additional packages except for mule
-# Version required:	1.0
 # Date created:		14 Feb 2000
 # Whom:			KIRIYAMA Kazuhiko<kiri@pis.toba-cmt.ac.jp>
 #

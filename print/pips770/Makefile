@@ -1,5 +1,4 @@
 # New ports collection makefile for: pips for EPSON PM-770C
-# Version required:    1.0
 # Date created:        00/04/21
 # Whom:                Satoshi Taoka <taoka@FreeBSD.org>
 #

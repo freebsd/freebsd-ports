@@ -1,5 +1,4 @@
 # New ports collection makefile for:	hpscan
-# Version required:	<own lineage>
 # Date created:		12 January 1996
 # Whom:			nate
 #

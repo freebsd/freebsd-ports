@@ -1,5 +1,4 @@
 # New ports collection makefile for: linux-gtk
-# Version required:     1.2.x
 # Date created:         8 April 2000
 # Whom:                 sada@FreeBSD.org
 # Based on:		emulators/linux_base by marcel@FreeBSD.org
