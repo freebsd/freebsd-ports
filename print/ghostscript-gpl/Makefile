@@ -219,7 +219,7 @@ pre-configure:
 
 do-configure:
 	${ECHO_MSG} ">>> in do-configure ..."
-.if defined(BATCH)
+.if defined(BATCH) || defined(PACKAGE_BUILDING)
 	${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure.batch
 .else
 	${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure
