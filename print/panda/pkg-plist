@@ -4,6 +4,8 @@ include/panda/objects.h
 include/panda/legacy.h
 @dirrm include/panda
 lib/libpanda.a
+lib/libpanda.so
+lib/libpanda.so.0
 %%PORTDOCS%%share/doc/panda/AUTHORS
 %%PORTDOCS%%share/doc/panda/BUGS
 %%PORTDOCS%%share/doc/panda/CONTRIBUTORS
