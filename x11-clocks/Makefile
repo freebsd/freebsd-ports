@@ -39,6 +39,5 @@
     SUBDIR += xmms-alarm
     SUBDIR += xtimer
     SUBDIR += xtu
-    SUBDIR += zclock
 
 .include <bsd.port.subdir.mk>
