@@ -56,7 +56,7 @@
 +	@install -m 644 -o root -g wheel ./exceptionuserlist $(CONFFILELOCATION)exceptionuserlist
 +	@install -m 644 -o root -g wheel ./exceptioniplist $(CONFFILELOCATION)exceptioniplist
 +	@install -m 644 -o root -g wheel ./pics $(CONFFILELOCATION)pics
-+	@install -m 755 -o root -g wheel ./dansguardian.bsdv $(SYSVLOCATION)dansguardian.sh
++	@install -m 755 -o root -g wheel ./dansguardian.bsdv $(SYSVLOCATION)start-dg.sh
 +	@install -m 755 -o root -g wheel ./dansguardian.pl $(CGIBINLOCATION)dansguardian.pl
 +	@install -m 644 -o root -g wheel ./dansguardian.8 $(MANUALFILES)man8/dansguardian.8
 +	@touch $(LOGLOCATION)dansguardian.log

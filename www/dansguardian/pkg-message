@@ -5,4 +5,3 @@
        This log file can get quite large.  Please read the newsyslog(8) man
        page for instructions on setting up log rotation and compression.
 *******************************************************************************
-
