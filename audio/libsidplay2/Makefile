@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libsidplay2
-PORTVERSION=	2.1.0
-PORTREVISION=	1
+PORTVERSION=	2.1.1
 CATEGORIES=	audio emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sidplay2
@@ -19,7 +18,12 @@ COMMENT=	Library to play Commodore 64 SID-tunes cycle accurate
 USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
-GNU_CONFIGURE=	yes
+USE_LIBTOOL_VER=	15
+LIBTOOLFILES=	builders/hardsid-builder/configure \
+		builders/resid-builder/configure \
+		libsidplay/configure \
+		libsidutils/configure \
+		resid/configure
 INSTALLS_SHLIB=	yes
 
 post-patch:
