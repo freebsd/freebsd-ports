@@ -1,5 +1,14 @@
---- Makefile	Tue Sep  2 20:03:47 1997
-+++ /home/andy/tmp/wrk/Makefile	Mon Jan  5 14:04:10 1998
+--- Makefile.orig	Mon May 11 04:12:35 1998
++++ Makefile	Wed May 13 02:30:12 1998
+@@ -29,7 +29,7 @@
+ # the following line and recompile
+ COLOR       = -DCOLOR_SUPPORT
+ #CLOCK	    = -DCLOCK_SUPPORT
+-CFLAGS      = $(ADD_CFLAGS) $(COLOR) $(CLOCK)
++#CFLAGS      = $(ADD_CFLAGS) $(COLOR) $(CLOCK)
+ LIBS        = -lncurses
+ 
+ ###########################
 @@ -39,12 +39,14 @@
  #LIBS       = -lcurses -ltermcap
  
@@ -11,8 +20,8 @@
  #ADD_LIB     = /usr/lib
  #CFLAGS      = -I$(ADD_INCLUDE) -DNCURSES $(ADD_CFLAGS)
  #LIBS        = -L$(ADD_LIB) -lncurses -lmytinfo -lcompat
-+CFLAGS      = -O -DCOLOR_SUPPORT -DNCURSES
-+LIBS        = -lncurses -lmytinfo -lcompat
++CFLAGS      += -DCOLOR_SUPPORT -DNCURSES
++LIBS         = -lncurses -lmytinfo -lcompat
  
  ###########################
  # NeXT (Thanks to fifi)
