@@ -3,7 +3,7 @@
 # Date created:		9 May 1999
 # Whom:			Shigeyuki FUKUSHIMA <shige@FreeBSD.ORG>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/05/09 16:45:58 shige Exp $
 #
 
 DISTNAME=	semi-${SEMI_VER}
@@ -37,7 +37,7 @@ ALL_TARGET?=	elc
 HAVE_COMMON_PORT=	NO
 .endif
 # if RUN_DEPENDS-emacs needs setup elisp
-.if !defined(REQUIRE_SETUP)
+.if !defined(REQUIRE_SETUPEL)
 REQUIRE_SETUPEL=	NO
 .endif
 
