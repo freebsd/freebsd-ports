@@ -1,2 +1,0 @@
-In this port/package, bsetbg and bsetroot are renamed to osetbg and osetroot in
-order to avoid conflict with blackbox.

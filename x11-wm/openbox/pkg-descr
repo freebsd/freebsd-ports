@@ -1,11 +1,3 @@
-Openbox is a window manager for the X11 windowing system. It currently runs
-on a large list of platforms. It was originally based on Blackbox and currently
-remains very similar, even using Blackbox styles (with available extensions)
-for its themeing.
-
--Why does Openbox exist?
-Openbox is the spawn of a number of previous Blackbox users/hackers. Being
-overall pleased with the window manager, but feeling left unable to contribute,
-this project was born. It aims to be open for all to contribute to.
+Openbox is based on, and similar to, blackbox.
 
 WWW: http://icculus.org/openbox/
