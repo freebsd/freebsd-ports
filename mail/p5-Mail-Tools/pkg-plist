@@ -1,5 +1,5 @@
 lib/perl5/man/man3/Mail::Address.3.gz
-lib/perl5/man/man3/Mail::Alias.gz
+lib/perl5/man/man3/Mail::Alias.3.gz
 lib/perl5/man/man3/Mail::Cap.3.gz
 lib/perl5/man/man3/Mail::Field.3.gz
 lib/perl5/man/man3/Mail::Header.3.gz
