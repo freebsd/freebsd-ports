@@ -1,11 +1,23 @@
---- Makefile.orig	Wed Mar 20 09:59:03 1996
-+++ Makefile	Wed Jul 30 12:04:03 1997
-@@ -193,12 +193,18 @@
+--- Makefile.orig	Wed Dec 25 15:43:50 1996
++++ Makefile	Mon Mar 22 23:12:48 1999
+@@ -71,8 +71,9 @@
+ #CC=cc
+ #COPT=-O -DNOT_ANSI_C -DPROTOTYPES=0
+ # for gcc, use
+-CC=gcc
+-COPT=-O2 -DPROTOTYPES=1 -DNOTDEF
++CC?=gcc
++CFLAGS?=-O2
++CFLAGS+=-DPROTOTYPES=1 -DNOTDEF
+ 
+ #1B: paths:
+ BINDIR=/usr/local/bin
+@@ -193,12 +194,18 @@
  ## not sure what to do for NeXT.  I think this works:
  #CFLAGS=$(COPT) -posix -D_BSD -DANYPORT -I$(RINCLUDES)
  
 +## use these for FreeBSD
-+CFLAGS=$(COPT) -DBSD44 -DANYPORT -DSHORTLINKS
++CFLAGS+=-DBSD44 -DANYPORT -DSHORTLINKS
 +LIBS=-lrpcsvc
 +COMPAT=-lcompat
 +RPCOPTS=
