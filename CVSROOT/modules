@@ -1196,6 +1196,7 @@ downloader	ports/ftp/downloader
 doxygen		ports/devel/doxygen
 dpt		src/usr.sbin/dpt
 drac		ports/mail/drac
+drbl		ports/mail/drbl
 drm		ports/games/drm
 drm-kmod	ports/graphics/drm-kmod
 drscheme	ports/lang/drscheme
