@@ -14,14 +14,7 @@ MASTER_SITES=	http://ldap2dns.tiscover.com/
 MAINTAINER=	bms@FreeBSD.org
 COMMENT=	Maintain DNS zones using an LDAP directory
 
-WITH_OPENLDAP_VER?=	12
-.if ${WITH_OPENLDAP_VER} == "21"
-LIB_DEPENDS=	ldap.2:${PORTSDIR}/net/openldap21-client
-.elif ${WITH_OPENLDAP_VER} == "20"
-LIB_DEPENDS=	ldap.2:${PORTSDIR}/net/openldap20-client
-.elif ${WITH_OPENLDAP_VER} == "12"
-LIB_DEPENDS=	ldap.1:${PORTSDIR}/net/openldap12
-.endif
+USE_OPENLDAP=	yes
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Net/DNS.pm:${PORTSDIR}/dns/p5-Net-DNS \
 		${SITE_PERL}/Net/LDAP.pm:${PORTSDIR}/net/p5-perl-ldap
