@@ -7,7 +7,7 @@
 #
 
 DISTNAME=	src/usr.bin/ssh
-PKGNAME=	OpenSSH-1.2
+PKGNAME=	OpenSSH-1.2.1
 CATEGORIES=	security net
 # ${MASTER_SITES} is only for if CVS won't work, period.
 MASTER_SITES=	ftp://internat.FreeBSD.org/pub/Crypto/OpenSSH/
@@ -23,7 +23,7 @@ CAT?=		/bin/cat
 DISTFILES!=	${CAT} ${FILESDIR}/distfiles
 
 CVS_CMD?=	cvs -z3
-CVS_DATE=	Tue Dec  7 22:46:23 EST 1999
+CVS_DATE=	Thu Dec 23 01:07:56 EST 1999
 SED?=		/usr/bin/sed
 CVS_DATE_!=	${ECHO} -n "${CVS_DATE}" | ${SED} 's/[ \t:]/_/g'
 CVS_SITES=	anoncvs@anoncvs1.ca.openbsd.org:/cvs \

@@ -1,0 +1,14 @@
+--- pty.c.orig	Thu Dec 23 01:13:10 1999
++++ pty.c	Thu Dec 23 01:14:05 1999
+@@ -16,7 +16,11 @@
+ #include "includes.h"
+ RCSID("$Id: pty.c,v 1.11 1999/12/11 09:35:46 markus Exp $");
+ 
++#ifdef __FreeBSD__
++#include <libutil.h>
++#else
+ #include <util.h>
++#endif
+ #include "pty.h"
+ #include "ssh.h"
+ 
