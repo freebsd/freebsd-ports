@@ -12,7 +12,7 @@ lib/esmtp-plugins/sasl-plain.a
 lib/esmtp-plugins/sasl-plain.so
 lib/libesmtp.a
 lib/libesmtp.so
-lib/libesmtp.so.5
+lib/libesmtp.so.6
 %%PORTDOCS%%share/doc/libesmtp/INSTALL
 %%PORTDOCS%%share/doc/libesmtp/Notes
 %%PORTDOCS%%share/doc/libesmtp/README
