@@ -1,4 +1,3 @@
-%%PYTHON_SITELIBDIR%%/gtk-1.2/_appletmodule.so
 %%PYTHON_SITELIBDIR%%/gtk-1.2/_cappletmodule.so
 %%PYTHON_SITELIBDIR%%/gtk-1.2/_gladegnomemodule.so
 %%PYTHON_SITELIBDIR%%/gtk-1.2/_gnomemodule.so
@@ -12,9 +11,6 @@
 %%PYTHON_SITELIBDIR%%/gtk-1.2/gnome/affine.py
 %%PYTHON_SITELIBDIR%%/gtk-1.2/gnome/affine.pyc
 %%PYTHON_SITELIBDIR%%/gtk-1.2/gnome/affine.pyo
-%%PYTHON_SITELIBDIR%%/gtk-1.2/gnome/applet.py
-%%PYTHON_SITELIBDIR%%/gtk-1.2/gnome/applet.pyc
-%%PYTHON_SITELIBDIR%%/gtk-1.2/gnome/applet.pyo
 %%PYTHON_SITELIBDIR%%/gtk-1.2/gnome/capplet.py
 %%PYTHON_SITELIBDIR%%/gtk-1.2/gnome/capplet.pyc
 %%PYTHON_SITELIBDIR%%/gtk-1.2/gnome/capplet.pyo
