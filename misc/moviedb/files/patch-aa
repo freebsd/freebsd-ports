@@ -1,0 +1,76 @@
+--- Makefile.orig	Tue Oct 22 00:36:06 1996
++++ Makefile	Tue Aug 15 08:54:20 2000
+@@ -118,13 +118,13 @@
+ 
+ ZLISTCOMPRESS = gzip
+ ZLISTEXT = .gz
+-ZLISTCAT = /usr/bin/gzip
+-ZLISTCATOPTS = -cd
++ZLISTCAT = /usr/bin/zcat
++ZLISTCATOPTS = 
+ 
+ ZDBSCOMPRESS = gzip
+ ZDBSEXT = .gz
+-ZDBSCAT = /usr/bin/gzip
+-ZDBSCATOPTS = -cd
++ZDBSCAT = /usr/bin/zcat
++ZDBSCATOPTS = 
+ 
+ 
+ # Set KEEPLIST to @true if you want to keep the lists.
+@@ -138,8 +138,7 @@
+ # Set AUTOUNCOMPRESS to nothing if you want to keep the source lists as
+ # compressed files (that is, as they come from the server). Setting it
+ # to nothing will reduce the extra space required during the install.
+-#AUTOUNCOMPRESS =
+-AUTOUNCOMPRESS = autouncompress
++AUTOUNCOMPRESS =
+ 
+ # Options for mkdb (for instance -m, -debug or -nochar)
+ # set to -nochar to ignore character names when processing the cast lists
+@@ -153,11 +152,11 @@
+ 
+ # Where will the databases be?
+ #DBDIR = ../dbs/
+-DBDIR = `pwd`/dbs/
++DBDIR = $(PREFIX)/lib/moviedb/
+ 
+ # Secondary files
+ #ETCDIR = ../etc/
+-ETCDIR = `pwd`/etc/
++ETCDIR = $(PREFIX)/libexec/moviedb/
+ 
+ # Source files
+ #SRCDIR = ../src/
+@@ -165,11 +164,11 @@
+ 
+ # Executable files
+ #BINDIR = ../bin/
+-BINDIR = `pwd`/bin/
++BINDIR = $(PREFIX)/bin/
+ 
+ # Top-level manpages directory (man1 should be a subdirectory of this)
+ #MANDIR = /usr/man/
+-MANDIR = `pwd`/man/
++MANDIR = $(PREFIX)/man/
+ 
+ # Main directory
+ #MAINDIR = ./
+@@ -235,7 +234,7 @@
+ # If the sanity check insists on telling you that ZLISTCAT, ZLISTCOMPRESS
+ # and so on are invalid, and you are definitively sure they are ok,
+ # set ZSANITYCHECK to the empty string.
+-ZSANITYCHECK = sanity-check-z
++ZSANITYCHECK = 
+ 
+ # If you are using compressed database files, you have the tempnam() call
+ # and you want control over the directory where the files are uncompressed,
+@@ -286,7 +285,7 @@
+                 do-installman
+ 
+ do-installman:
+-	cd $(MANDIR); $(MAKE) MANDIR="$(MANDIR)" DBDIR="$(DBDIR)" \
++	cd `pwd`/man; $(MAKE) MANDIR="$(MANDIR)" DBDIR="$(DBDIR)" \
+ 		MAINDIR="$(MAINDIR)" \
+ 		RELEASEDATE="$(RELEASEDATE)" VERSIONNUMBER="$(VERSIONNUMBER)"\
+                 installman

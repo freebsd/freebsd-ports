@@ -1,0 +1,28 @@
+--- src/moviedb.h.orig	Mon Mar  8 14:01:42 1999
++++ src/moviedb.h	Mon Aug 14 22:57:35 2000
+@@ -28,8 +28,8 @@
+ #define   FSEP                    '|'
+ #define   MAXZCATARGS              10
+ #define   MAXLSEEN              65534
+-#define   MAXTITLES            300000
+-#define   MAXATTRS             100000
++#define   MAXTITLES            600000
++#define   MAXATTRS             200000
+ #define   MAXFILMOGRAPHIES       1023
+ #define   MAXWITHATTRS           4095
+ #define   MAXTITLERESULTS        4095
+@@ -46,11 +46,11 @@
+ #define   MAXBUSENTRIES         20000
+ #define   MAXBIOENTRIES        150000
+ #define   MAXMRRENTRIES         40000
+-#define   MAXAKAENTRIES        100000
+-#define   MAXNAKAENTRIES        50000
++#define   MAXAKAENTRIES        200000
++#define   MAXNAKAENTRIES       100000
+ #define   MAXTITLEINFO         300000
+ #define   MAXPOS                  255
+-#define   MAXLINKS             200000
++#define   MAXLINKS             400000
+ #define   MAXLINKSPERMOVIE        250
+ 
+ #ifndef DBDIR
