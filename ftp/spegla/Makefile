@@ -17,6 +17,11 @@ MAINTAINER=	jkh@FreeBSD.org
 MANCOMPRESSED=	yes
 MAN1=		spegla.1
 
+post-extract:
+.for file in engine.c regcomp.c regerror.c regexec.c regfree.c cclass.h cname.h regex.h regex2.h utils.h
+	@${CP} ${WRKSRC}/regex/${file} ${WRKSRC}
+.endfor
+
 post-install:
 	@${MKDIR} ${PREFIX}/share/examples/spegla
 	${INSTALL_DATA} ${WRKSRC}/freebsd.org ${PREFIX}/share/examples/spegla
