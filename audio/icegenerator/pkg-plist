@@ -1,0 +1,4 @@
+bin/icegenerator
+etc/icegenerator.conf.dist
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
