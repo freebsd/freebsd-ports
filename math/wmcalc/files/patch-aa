@@ -1,23 +1,22 @@
---- Makefile.orig	Sat Nov 27 01:40:16 1999
-+++ Makefile	Tue Mar 28 22:21:05 2000
+--- Makefile.orig	Thu Apr  6 22:25:39 2000
++++ Makefile	Sun Apr 16 08:50:18 2000
 @@ -1,15 +1,15 @@
 -INCLUDES =-I/usr/X11R6/include/X11 -I/usr/local/include -I/usr/include/X11R6/X11
 -LIBINC =-L/usr/X11R6/lib -L/usr/include/lib
--LIBS = -lX11 -lXpm -lXext
-+INCLUDES=-I${X11BASE}/include
-+LIBINC=-L${X11BASE}/lib
-+LIBS = -lX11 -lXpm -lXext -lm
++INCLUDES =-I${X11BASE}/include
++LIBINC =-L${X11BASE}/lib
+ LIBS = -lX11 -lXpm -lXext -lm
  
  TARGET = wmcalc
  OBJECTS = wmcalc.o readln.o wmcalcswitch.o wmcalcfunc.o
  
  .c.o:
 -	gcc -O2 -c -Wall ${INCLUDES} ${FLAGS} $< -o $*.o
-+	${CC} ${CFLAGS} -c ${INCLUDES} ${FLAGS} $< -o $*.o
++	gcc ${CFLAGS} -c ${INCLUDES} ${FLAGS} $< -o $*.o
  
  ${TARGET}: ${OBJECTS}
 -	gcc -O2 -o ${TARGET} ${OBJECTS} ${LIBINC} ${LIBS}
-+	${CC} ${CFLAGS} -o ${TARGET} ${OBJECTS} ${LIBINC} ${LIBS}
++	gcc ${CFLAGS} -o ${TARGET} ${OBJECTS} ${LIBINC} ${LIBS}
  
  clean::
  	for i in ${OBJECTS}; do if [ -e $$i ] ; then rm $$i; fi; done 

@@ -14,7 +14,7 @@ MAINTAINER=	jedgar@FreeBSD.org
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 
-ALL_TARGET=	wmcalc
+ALL_TARGET=	clean wmcalc
 USE_X_PREFIX=   yes
 WRKSRC=		${WRKDIR}/wmcalc
 
