@@ -6,8 +6,8 @@
 # $FreeBSD$
 #
 
-DISTNAME=	SNMP_Session-0.72
-PKGNAME=	p5-SNMP_Session-0.72
+DISTNAME=	SNMP_Session-0.75
+PKGNAME=	p5-SNMP_Session-0.75
 CATEGORIES=	net perl5
 MASTER_SITES=	ftp://ftp.switch.ch/software/sources/network/snmp/perl/
 
