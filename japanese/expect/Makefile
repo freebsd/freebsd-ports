@@ -3,11 +3,11 @@
 # Date created:		17 Oct 1997
 # Whom:			taguchi
 #
-# $Id: Makefile,v 1.10 1998/07/27 00:12:13 steve Exp $
+# $Id: Makefile,v 1.11 1998/09/28 15:15:04 kuriyama Exp $
 #
 
-DISTNAME=	expect-5.26
-PKGNAME=	ja-expect-5.26
+DISTNAME=	expect-5.28
+PKGNAME=	ja-expect-5.28
 CATEGORIES=	japanese lang tk80
 MASTER_SITES=	ftp://peloton.physics.montana.edu/pub/distfiles/
 
@@ -27,7 +27,7 @@ NO_MAN_INSTALL=	yes
 post-install:
 	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 	if [ "${PORTOBJFORMAT}" = "aout" ]; then \
-		${LN} -sf libexpect526jp.so.1.2 ${PREFIX}/lib/libexpect526jp.so; \
+		${LN} -sf libexpect528jp.so.1.2 ${PREFIX}/lib/libexpect528jp.so; \
 	fi
 
 .include <bsd.port.mk>
