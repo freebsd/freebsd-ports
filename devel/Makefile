@@ -1,5 +1,6 @@
 # $FreeBSD$
 #
+    SUBDIR += zziplib
 
     SUBDIR += ElectricFence
     SUBDIR += ORBacus
