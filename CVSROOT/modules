@@ -7741,6 +7741,7 @@ py-sgfsummary	ports/games/py-sgfsummary
 py-sgrep	ports/textproc/py-sgrep
 py-simpleparse	ports/devel/py-simpleparse
 py-sip		ports/devel/py-sip
+py-ski		ports/games/py-ski
 py-smb		ports/net/py-smb
 py-snmp		ports/net-mgmt/py-snmp
 py-soapy	ports/net/py-soapy
