@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.161 1998/11/19 08:03:18 flathill Exp $
+# $Id: Makefile,v 1.162 1998/11/19 08:49:04 asami Exp $
 #
 
     SUBDIR += Canna
@@ -31,6 +31,7 @@
     SUBDIR += gd
     SUBDIR += ghostscript
     SUBDIR += gicq
+    SUBDIR += gimp
     SUBDIR += gn-gnspool
     SUBDIR += gn-mnews
     SUBDIR += gp
