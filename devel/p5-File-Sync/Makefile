@@ -3,7 +3,7 @@
 # Date created:		6 March 1998
 # Whom:			Jun Kuriyama <kuriyama@opt.phys.waseda.ac.jp>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/03/15 20:17:58 steve Exp $
 #
 
 DISTNAME=	File-Sync-0.06
@@ -13,8 +13,6 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	File
 
 MAINTAINER=	kuriyama@opt.phys.waseda.ac.jp
-
-NO_PATCH=	yes
 
 USE_PERL5=	YES
 
