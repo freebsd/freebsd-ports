@@ -135,7 +135,7 @@ RUN_DEPENDS+=	cervisia:${PORTSDIR}/devel/kdesdk3
 RUN_DEPENDS+=	kdevelop:${PORTSDIR}/devel/kdevelop
 .endif
 .if !defined(WITHOUT_KDEADDONS)
-RUN_DEPENDS+=	atlantikdesigner:${PORTSDIR}/misc/kdeaddons3
+DEPENDS+=	${PORTSDIR}/misc/kdeaddons3
 .endif
 .if !defined(WITHOUT_KDEEDU)
 RUN_DEPENDS+=	khangman:${PORTSDIR}/misc/kdeedu3
