@@ -5608,6 +5608,7 @@ p5-ORBit	ports/devel/p5-ORBit
 p5-Object-Realize-Later	ports/devel/p5-Object-Realize-Later
 p5-OpenGL	ports/graphics/p5-OpenGL
 p5-Orchard-Perl	ports/textproc/p5-Orchard-Perl
+p5-PAR		ports/devel/p5-PAR
 p5-PAR-Dist	ports/devel/p5-PAR-Dist
 p5-PDF-API2	ports/textproc/p5-PDF-API2
 p5-PDF-Create	ports/textproc/p5-PDF-Create
