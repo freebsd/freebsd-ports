@@ -13,8 +13,8 @@ upgrades.
   The cryptplug port is not compatible with recent versions of gpgme
   and has been changed to depend on gpgme03 (the last version of gpg-
   me compatible with cryptplug). 
-  Wsers who used cryptplug in order to enable PGP/MIME support with 
-  in KMail should DEINSTALL both cryptplug and gpgme03 before updating
+  Users who have been using cryptplug in order to enable PGP/MIME support 
+  in KMail should DEINSTALL BOTH cryptplug and gpgme03 before updating
   KDE to version 3.3.2. Cryptplug is NOT necessary anymore to enable 
   PGP/MIME support in KMail and will cause the kdepim3 build to fail due
   to conflicting dependencies.
