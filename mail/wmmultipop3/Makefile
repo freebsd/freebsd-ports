@@ -1,0 +1,35 @@
+# New ports collection makefile for:	wmmultipop3
+# Date created:				Fri Sep 28 16:25:34 EDT 2001
+# Whom:					Patrick Li <pat@databits.net>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	wmmultipop3
+PORTVERSION=	0.7
+CATEGORIES=	mail windowmaker
+MASTER_SITES=	http://sumpan.campus.luth.se/software/wmmultipop3/
+DISTNAME=	wmMultiPop3-${PORTVERSION}
+
+MAINTAINER=	pat@databits.net
+
+BUILD_WRKSRC=		${WRKDIR}/${DISTNAME}/${PORTNAME}
+USE_X_PREFIX=	yes
+USE_XPM=	yes
+USE_GMAKE=	yes
+
+DOC_FILES=	ChangeLog INSTALL README 
+
+do-install:
+	@${INSTALL_PROGRAM} ${BUILD_WRKSRC}/wmmultipop3 ${PREFIX}/bin
+.ifndef(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for file in ${DOC_FILES}
+	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.endfor
+.endif
+
+post-install:
+	@${CAT} ${PKGMESSAGE}
+
+.include <bsd.port.mk>
