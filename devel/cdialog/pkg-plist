@@ -11,6 +11,7 @@ lib/libcdialog.a
 %%PORTDOCS%%%%EXAMPLESDIR%%/calendar3
 %%PORTDOCS%%%%EXAMPLESDIR%%/calendar3-stdout
 %%PORTDOCS%%%%EXAMPLESDIR%%/checklist
+%%PORTDOCS%%%%EXAMPLESDIR%%/checklist-8bit
 %%PORTDOCS%%%%EXAMPLESDIR%%/checklist-utf8
 %%PORTDOCS%%%%EXAMPLESDIR%%/checklist1
 %%PORTDOCS%%%%EXAMPLESDIR%%/checklist10
@@ -49,6 +50,7 @@ lib/libcdialog.a
 %%PORTDOCS%%%%EXAMPLESDIR%%/form3
 %%PORTDOCS%%%%EXAMPLESDIR%%/form4
 %%PORTDOCS%%%%EXAMPLESDIR%%/form5
+%%PORTDOCS%%%%EXAMPLESDIR%%/form6
 %%PORTDOCS%%%%EXAMPLESDIR%%/fselect
 %%PORTDOCS%%%%EXAMPLESDIR%%/fselect-stdout
 %%PORTDOCS%%%%EXAMPLESDIR%%/fselect1
@@ -73,6 +75,7 @@ lib/libcdialog.a
 %%PORTDOCS%%%%EXAMPLESDIR%%/inputbox3
 %%PORTDOCS%%%%EXAMPLESDIR%%/inputbox4
 %%PORTDOCS%%%%EXAMPLESDIR%%/inputbox5
+%%PORTDOCS%%%%EXAMPLESDIR%%/inputbox6-8bit
 %%PORTDOCS%%%%EXAMPLESDIR%%/inputbox6-utf8
 %%PORTDOCS%%%%EXAMPLESDIR%%/inputbox7
 %%PORTDOCS%%%%EXAMPLESDIR%%/inputmenu
@@ -89,6 +92,7 @@ lib/libcdialog.a
 %%PORTDOCS%%%%EXAMPLESDIR%%/killall
 %%PORTDOCS%%%%EXAMPLESDIR%%/listing
 %%PORTDOCS%%%%EXAMPLESDIR%%/menubox
+%%PORTDOCS%%%%EXAMPLESDIR%%/menubox-8bit
 %%PORTDOCS%%%%EXAMPLESDIR%%/menubox-utf8
 %%PORTDOCS%%%%EXAMPLESDIR%%/menubox1
 %%PORTDOCS%%%%EXAMPLESDIR%%/menubox10
@@ -104,6 +108,7 @@ lib/libcdialog.a
 %%PORTDOCS%%%%EXAMPLESDIR%%/msgbox1
 %%PORTDOCS%%%%EXAMPLESDIR%%/msgbox2
 %%PORTDOCS%%%%EXAMPLESDIR%%/msgbox3
+%%PORTDOCS%%%%EXAMPLESDIR%%/msgbox4-8bit
 %%PORTDOCS%%%%EXAMPLESDIR%%/msgbox4-eucjp
 %%PORTDOCS%%%%EXAMPLESDIR%%/msgbox4-utf8
 %%PORTDOCS%%%%EXAMPLESDIR%%/msgbox5
@@ -112,17 +117,20 @@ lib/libcdialog.a
 %%PORTDOCS%%%%EXAMPLESDIR%%/password
 %%PORTDOCS%%%%EXAMPLESDIR%%/password1
 %%PORTDOCS%%%%EXAMPLESDIR%%/password2
+%%PORTDOCS%%%%EXAMPLESDIR%%/pause
 %%PORTDOCS%%%%EXAMPLESDIR%%/radiolist
 %%PORTDOCS%%%%EXAMPLESDIR%%/radiolist10
 %%PORTDOCS%%%%EXAMPLESDIR%%/radiolist2
 %%PORTDOCS%%%%EXAMPLESDIR%%/radiolist3
 %%PORTDOCS%%%%EXAMPLESDIR%%/radiolist4
+%%PORTDOCS%%%%EXAMPLESDIR%%/rotated-data
 %%PORTDOCS%%%%EXAMPLESDIR%%/slackware.rc
 %%PORTDOCS%%%%EXAMPLESDIR%%/sourcemage.rc
 %%PORTDOCS%%%%EXAMPLESDIR%%/tailbox
 %%PORTDOCS%%%%EXAMPLESDIR%%/tailboxbg
 %%PORTDOCS%%%%EXAMPLESDIR%%/tailboxbg1
 %%PORTDOCS%%%%EXAMPLESDIR%%/tailboxbg2
+%%PORTDOCS%%%%EXAMPLESDIR%%/testdata-8bit
 %%PORTDOCS%%%%EXAMPLESDIR%%/textbox
 %%PORTDOCS%%%%EXAMPLESDIR%%/textbox2
 %%PORTDOCS%%%%EXAMPLESDIR%%/timebox
