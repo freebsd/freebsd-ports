@@ -6,12 +6,12 @@
 #
 
 PORTNAME=		kgpg
-PORTVERSION=		0.9.5
+PORTVERSION=		1.0.0
 CATEGORIES=		security kde
 MASTER_SITES=		http://devel-home.kde.org/~kgpg/src/
 
 MAINTAINER=		rick@rptn.net
-COMMENT=	A simple KDE frontend for GnuPG
+COMMENT=		A simple KDE frontend for GnuPG
 
 RUN_DEPENDS=		gpg:${PORTSDIR}/security/gnupg
 
