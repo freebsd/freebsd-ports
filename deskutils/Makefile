@@ -82,6 +82,7 @@
     SUBDIR += ljit
     SUBDIR += logjam
     SUBDIR += mcal
+    SUBDIR += mcatalog
     SUBDIR += mdh
     SUBDIR += mencal
     SUBDIR += mhc
