@@ -1,0 +1,16 @@
+@comment $FreeBSD$
+bin/xml2rfc
+bin/xml2txt
+bin/xml2html
+bin/xml2nroff
+share/doc/xml2rfc/README.html
+share/doc/xml2rfc/README.txt
+share/doc/xml2rfc/README.xml
+share/doc/xml2rfc/draft-mrose-writing-rfcs.html
+share/doc/xml2rfc/draft-mrose-writing-rfcs.txt
+share/doc/xml2rfc/rfc2629.dtd
+share/doc/xml2rfc/rfc2629.html
+share/doc/xml2rfc/rfc2629.txt
+share/doc/xml2rfc/rfc2629.xml
+share/doc/xml2rfc/rfc2629.xslt
+@dirrm share/doc/xml2rfc
