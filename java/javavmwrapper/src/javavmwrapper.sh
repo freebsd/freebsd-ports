@@ -448,16 +448,19 @@ if [ ! -z "${JAVA_VERSION}" ]; then
     for version in ${JAVA_VERSION}; do
         case "${version}" in
             1.1+)
-                VERSION="${VERSION} 1.1 1.2 1.3 1.4"
+                VERSION="${VERSION} 1.1 1.2 1.3 1.4 1.5"
                 ;;
             1.2+)
-                VERSION="${VERSION} 1.2 1.3 1.4"
+                VERSION="${VERSION} 1.2 1.3 1.4 1.5"
                 ;;
             1.3+)
-                VERSION="${VERSION} 1.3 1.4"
+                VERSION="${VERSION} 1.3 1.4 1.5"
                 ;;
             1.4+)
-                VERSION="${VERSION} 1.4"
+                VERSION="${VERSION} 1.4 1.5"
+                ;;
+            1.5+)
+                VERSION="${VERSION} 1.5"
                 ;;
             *)
                 VERSION="${VERSION} ${version}"
