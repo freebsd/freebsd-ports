@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	erlang_xmlrpc
-PORTVERSION=	1.12
+PORTVERSION=	1.13
 CATEGORIES=	net
 MASTER_SITES=	http://www.gleipnir.com/xmlrpc/
 DISTNAME=	xmlrpc-${PORTVERSION}
@@ -29,7 +29,7 @@ XMLRPC_DOCS=	xmlrpc.pdf xmlrpc.ps xmlrpc.txt
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|XMERL_PATH=.*|XMERL_PATH=${LOCALBASE}/lib/erlang/lib/xmerl|g' ${WRKSRC}/src/Makefile
-	@${RM} ${WRKSRC}/src/Makefile.bak
+	@${RM} ${WRKSRC}/src/Makefile.bak ${WRKSRC}/src/*.orig
 
 do-build:
 	@cd ${WRKSRC}/src && ${GMAKE}
