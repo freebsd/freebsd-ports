@@ -22,12 +22,8 @@ CONFIGURE_ARGS+=	--program-prefix=''
 USE_GMAKE=	yes
 USE_KDELIBS_VER=3
 INSTALLS_SHLIB=	yes
-USE_REINPLACE=	yes
 USE_LIBTOOL=	yes
 
 .include <bsd.port.pre.mk>
-
-post-patch:
-	${REINPLACE_CMD} -e 's@-lpthread@${PTHREAD_LIBS}@g' ${WRKSRC}/configure
-
+.include "${PORTSDIR}/x11/kde3/Makefile.kde"
 .include <bsd.port.post.mk>
