@@ -165,6 +165,7 @@
     SUBDIR += ticker.app
     SUBDIR += timelimit
     SUBDIR += truncate
+    SUBDIR += ttyload
     SUBDIR += tua
     SUBDIR += ucspi-tcp
     SUBDIR += unquote
