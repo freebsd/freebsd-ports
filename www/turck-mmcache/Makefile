@@ -47,7 +47,7 @@ post-extract:
 	@cd ${WRKSRC} && ${LOCALBASE}/bin/phpize
 
 post-patch:
-	${REINPLACE_CMD} -e 's,/usr/local,${PREFIX},g' ${WRKSRC}/configure
+	${REINPLACE_CMD} -e 's,/usr/local,${LOCALBASE},g' ${WRKSRC}/configure
 
 post-build:
 	@${SED} "s|%%LOCALBASE%%|${LOCALBASE}|g;s|%%PREFIX%%|${PREFIX}|g;s|%%EXT_DIR%%|${EXT_DIR}|g" \
