@@ -1,0 +1,12 @@
+--- tircproxy.c.orig	Thu Mar 29 14:28:26 2001
++++ tircproxy.c	Thu Mar 29 14:28:28 2001
+@@ -2201,7 +2201,9 @@
+ 	/* People neither using the CDIR stuff nor running as root probably 
+ 	 * couldn't care less about ident problems.
+ 	 */
++#ifdef CDIR_IDENT
+ 	if (!use_cdir && getuid()) tries = 10;
++#endif
+ 
+ 	/* FIXME: dangerous sprintfs */
+ #ifdef CDIR

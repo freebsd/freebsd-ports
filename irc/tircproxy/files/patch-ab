@@ -1,5 +1,5 @@
---- Makefile.in.orig	Wed Aug 11 16:48:33 1999
-+++ Makefile.in	Wed Aug 11 16:48:49 1999
+--- Makefile.in.orig	Thu May  4 08:11:25 2000
++++ Makefile.in	Thu Mar 29 14:31:46 2001
 @@ -12,7 +12,7 @@
  TARGETNAME=@sbindir@/tircproxy
  STRIP=@STRIP@
@@ -9,3 +9,18 @@
  
  .SUFFIXES:
  .SUFFIXES: .c .o
+@@ -26,12 +26,12 @@
+ tircproxy.static:	tircproxy.o
+ 	$(CC) $(LDFLAGS) -static -O3 tircproxy.o -o $@ $(LIBS)
+ 	strip $@
+-	pgp -sba $@ -u 3004
++#	pgp -sba $@ -u 3004
+ 
+ manual:
+ 	@(cd docs; make all)
+ 
+-all:	tircproxy tircproxy.static documentation
++all:	tircproxy tircproxy.static
+ 
+ install:	tircproxy
+ 	$(INSTALL) -o bin -g bin -m 555 tircproxy $(TARGETNAME)
