@@ -14,6 +14,8 @@ MASTER_SITES=	http://www.srce.hr/~kreator/projects/tarballs/
 MAINTAINER=	rick@help-desk.ca
 COMMENT=	"HybServ2 IRCD Services"
 
+IGNORE=		uses a uid registered to the ircservices user
+
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
