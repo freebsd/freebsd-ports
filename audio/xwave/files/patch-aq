@@ -1,5 +1,5 @@
---- src/types.h.orig	Wed Aug 12 23:27:10 1998
-+++ src/types.h	Sun Jun 11 13:17:49 2000
+--- src/types.h.orig	Mon Nov  9 08:22:55 1998
++++ src/types.h	Fri Jun 30 19:49:19 2000
 @@ -27,7 +27,7 @@
  typedef unsigned char byte;
  typedef byte bool;

@@ -1,0 +1,11 @@
+--- src/XWave.orig	Mon Nov  9 08:22:55 1998
++++ src/XWave	Fri Jun 30 20:08:56 2000
+@@ -1,7 +1,7 @@
+ ! My self defined Resources
+ 
+ XWave*wdir: 					/usr/share/data/sounds/prosonus
+-XWave*tdir:					/mnt/d/tmp
++XWave*tdir:					/tmp
+ XWave*device:					/dev/dsp
+ XWave*maxmem:					1000
+ XWave*doubleplay:				False
