@@ -1,0 +1,6 @@
+This is another module produced by the "Perl Email Project", a reaction
+against the complexity and increasing bugginess of the "Mail::*"
+modules. It replaces Mail::Audit, and allows you to write programs
+describing how your mail should be filtered.
+
+WWW:	http://search.cpan.org/dist/Email-Filter
