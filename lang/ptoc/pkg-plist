@@ -1,0 +1,40 @@
+bin/cganal
+bin/ptoc
+etc/ptoc.cfg
+include/ptoc/array.h
+include/ptoc/graph.h
+include/ptoc/io.h
+include/ptoc/paslib.h
+include/ptoc/ptoc.h
+include/ptoc/set.h
+lib/libptoc.a
+lib/libXbgi.a
+share/doc/ptoc/README
+share/doc/ptoc/paslib.doc
+share/ptoc/ptoc.pas
+share/ptoc/tptoc.pas
+share/ptoc/graph.pas
+share/examples/ptoc/Makefile
+share/examples/ptoc/bgidemo.pas
+share/examples/ptoc/coord.txt
+share/examples/ptoc/hello.pas
+share/examples/ptoc/impact.pas
+share/examples/ptoc/lister.pas
+share/examples/ptoc/polut2.pas
+share/examples/ptoc/printer.pas
+share/examples/ptoc/q2.txt
+share/examples/ptoc/random.txt
+share/examples/ptoc/rename.pas
+share/examples/ptoc/set.pas
+share/examples/ptoc/test.pas
+share/examples/ptoc/tpascal.pas
+share/examples/ptoc/trinor.pas
+share/examples/ptoc/vibrkinp.pas
+share/examples/ptoc/vibrkinp.txt
+share/examples/ptoc/vibrtabl.pas
+share/examples/ptoc/war2.pas
+share/examples/ptoc/xy2orig.txt
+@dirrm include/ptoc
+@dirrm share/doc/ptoc
+@dirrm share/examples/ptoc
+@dirrm share/ptoc

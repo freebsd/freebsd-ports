@@ -1,0 +1,11 @@
+--- main.h	Tue Aug 26 21:16:28 1997
++++ /home/andy/tmp/wrk/main.h	Mon Dec  8 17:58:12 1997
+@@ -31,7 +31,7 @@
+ 
+ #define CALL_GRAPH_FILE     "call.grp"
+ #define RECURSIVE_PROC_FILE "recur.prc"
+-#define CONFIG_FILE         "ptoc.cfg"
++#define CONFIG_FILE         "/usr/local/etc/ptoc.cfg"
+ 
+ extern bool  use_call_graph;
+ extern bool  pio_init;
