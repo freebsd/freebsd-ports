@@ -7884,6 +7884,7 @@ utah-glx	ports/graphics/utah-glx
 utcount		ports/sysutils/utcount
 utf8conv	ports/converters/utf8conv
 utf8locale	ports/misc/utf8locale
+utftools	ports/misc/utftools
 utftpd		ports/net/utftpd
 utserver	ports/games/utserver
 utserver-asu	ports/games/utserver-asu
