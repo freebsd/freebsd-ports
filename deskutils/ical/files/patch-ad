@@ -1,0 +1,10 @@
+--- calendar/Makefile.in.orig	Sat Apr 29 15:16:46 2000
++++ calendar/Makefile.in	Sat Apr 29 15:16:54 2000
+@@ -12,7 +12,6 @@
+            AR = ar
+          ECHO = echo
+ 
+-   CXXFLAGS = -O
+     CXXINCS = -I.. -I$(srcdir) -I$(srcdir)/../types -I$(srcdir)/../time
+ 
+     CXXOBJS = arrays.o calendar.o calfile.o dateset.o item.o\

@@ -1,0 +1,18 @@
+--- Makefile.in.orig	Sat Apr 29 15:16:02 2000
++++ Makefile.in	Sat Apr 29 15:16:28 2000
+@@ -59,14 +59,11 @@
+ # Tiny bundled executable uses shared versions of tcl/tk libraries
+  TINY_BLIBS = $(LIBS)
+ 
+-       OPTF = -O
+-
+-   CXXFLAGS = $(OPTF)
+     CXXINCS = -I. -I$(srcdir) -I$(srcdir)/calendar \
+               -I$(srcdir)/types -I$(srcdir)/time \
+               $(X_CFLAGS) -I@TCL_INCDIR@ -I@TK_INCDIR@
+ 
+-     CFLAGS = $(OPTF) -I. -I$(srcdir) $(X_CFLAGS)
++     CFLAGS += -I. -I$(srcdir) $(X_CFLAGS)
+ 
+ OBJS = cal_tcl.o dateeditor.o dispatch.o ical.o ical_tcl.o \
+        item_tcl.o object.o time_tcl.o @LIBOBJS@
