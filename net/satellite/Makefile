@@ -26,6 +26,6 @@ pre-install:
 	@${SH} pkg-install ${PKGNAME} PRE-INSTALL
 
 post-install:
-	@${SH} pkg-install ${PKGNAME} POST-INSTALL
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

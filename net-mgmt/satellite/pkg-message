@@ -1,0 +1,18 @@
+If you are planning to use the Satellite server (not the client) on
+this machine you must complete several additional steps, substituting
+your installation prefix (usually /usr/local) for PREFIX:
+
+1) Create the Satellite configuration file:
+# PREFIX/sbin/satcfg -L
+# chown satellite PREFIX/etc/satellite.db
+# chmod 600 PREFIX/etc/satellite.db
+
+2) Create the Satellite log file:
+# touch /var/log/satellite
+# chown satellite /var/log/satellite
+
+3) Add Satellite to /etc/services with the line:
+satellite	1764/tcp
+
+4) Add Satellite to /etc/inetd.conf with the line:
+satellite stream tcp nowait satellite PREFIX/sbin/satellited satellited -v
