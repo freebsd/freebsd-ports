@@ -32,6 +32,35 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="c7ccc33f-7d31-11d9-a9e7-0001020eed82">
+    <topic>mailman -- directory traversal vulnerability</topic>
+    <affects>
+      <package>
+	<name>mailman</name>
+	<name>ja-mailman</name>
+	<range><lt>2.1.5_2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A directory traversal vulnerability in mailman allow remote
+	  attackers to read arbitrary files due to inadequate input
+	  sanitizing.  This could, among other things, lead remote
+	  attackers to gaining access to the mailman configuration
+	  database (which contains subscriber email addresses and
+	  passwords) or to the mail archives for private lists.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2005-0202</cvename>
+      <mlist msgid="20050209181502.GA26136@grok.org.uk">http://marc.theaimsgroup.com/?l=full-disclosure&amp;m=110797575304304</mlist>
+    </references>
+    <dates>
+      <discovery>2005-01-02</discovery>
+      <entry>2005-02-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="72da8af6-7c75-11d9-8cc5-000854d03344">
     <topic>enscript -- multiple vulnerabilities</topic>
     <affects>
