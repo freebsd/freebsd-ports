@@ -91,7 +91,7 @@
      fpstatep = &pcb_savefpu;
  
 -  print_387_status (fpstatep->sv_ex_sw, (struct env387 *)fpstatep);
-+  print_387_status (fpstatep->sv_env, (struct env387 *)fpstatep);
++  print_387_status (0, (struct env387 *)fpstatep);
  }
  #endif /* FLOAT_INFO */
  
