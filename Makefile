@@ -70,7 +70,7 @@ ${.CURDIR}/${INDEXFILE}:
 	export X11BASE=/nonexistentx; \
 	cd ${.CURDIR} && make describe ECHO_MSG="echo > /dev/null" | \
 		perl ${.CURDIR}/Tools/make_index | \
-	sed -e 's/  */ /g' -e 's/|  */|/g' -e 's/  *|/|/g' -e "s,${LOCALBASE},/usr/local," -e "s,${X11BASE},/usr/X11R6," > ${INDEXFILE}
+	sed -e 's/  */ /g' -e 's/|  */|/g' -e 's/  *|/|/g' -e "s,$${LOCALBASE},/usr/local," -e "s,$${X11BASE},/usr/X11R6," > ${INDEXFILE}
 .if !defined(INDEX_NOSORT)
 	@sed -e 's./..g' ${.CURDIR}/${INDEXFILE} | \
 		sort -t '|' +1 -2 | \
