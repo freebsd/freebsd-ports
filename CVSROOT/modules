@@ -4571,6 +4571,7 @@ newscache	ports/news/newscache
 newsfetch	ports/news/newsfetch
 newsfish	ports/news/newsfish
 newsgrab	ports/news/newsgrab
+newspost	ports/news/newspost
 newsx		ports/news/newsx
 newsyslog	src/usr.sbin/newsyslog
 newt		ports/devel/newt
