@@ -6480,6 +6480,7 @@ pvm		ports/net/pvm
 pvm++		ports/net/pvm++
 pvmpov		ports/graphics/pvmpov
 pwd_unmkdb	ports/sysutils/pwd_unmkdb
+pwebstats	ports/www/pwebstats
 pwg		ports/sysutils/pwg
 pwgen		ports/sysutils/pwgen
 pwm		ports/x11-wm/pwm
