@@ -13,7 +13,8 @@ MASTER_SITES=	http://www.mosfet.org/pixie/
 MAINTAINER=	avleeuwen@piwebs.com
 COMMENT=	A free, fast, and feature packed image browser and viewer for KDE
 
-LIB_DEPENDS=	Magick.5:${PORTSDIR}/graphics/ImageMagick
+LIB_DEPENDS=	Magick.5:${PORTSDIR}/graphics/ImageMagick \
+		ungif.5:${PORTSDIR}/graphics/libungif
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--program-prefix=''
