@@ -1,17 +1,17 @@
 # Ports collection makefile for: spin
-# Version required:	3.3.5
+# Version required:	3.3.7
 # Date created:		Oct 23, 1997
 # Whom:			jhanna@home.com
 #
 # $FreeBSD$
 #
 
-DISTNAME=	spin-3.35
+DISTNAME=	spin-3.37
 CATEGORIES=	math
 MASTER_SITES=	ftp://netlib.bell-labs.com/netlib/spin/ \
 		ftp://www.netlib.org/spin/ \
 		ftp://wcarchive.cdrom.com/pub/netlib/spin/
-DISTFILES=	spin335.tar.gz html.tar.gz
+DISTFILES=	spin337.tar.gz html.tar.gz
 
 MAINTAINER=	jhanna@home.com
 
@@ -28,9 +28,9 @@ pre-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/spin ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKDIR}/Xspin3.3/xspin333.tcl ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKDIR}/Xspin3.3/xspin337.tcl ${PREFIX}/bin
 	${RM} -f ${PREFIX}/bin/xspin
-	${LN} -s ${PREFIX}/bin/xspin333.tcl ${PREFIX}/bin/xspin
+	${LN} -s ${PREFIX}/bin/xspin337.tcl ${PREFIX}/bin/xspin
 
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/spin/Doc
