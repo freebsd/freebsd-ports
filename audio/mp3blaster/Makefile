@@ -15,8 +15,6 @@ MAINTAINER=	greid@ukug.uk.freebsd.org
 
 .include <bsd.port.pre.mk>
 
-LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
-
 .if ${OSVERSION} < 400010
 LIB_DEPENDS+=	ncurses.5:${PORTSDIR}/devel/ncurses
 .endif
