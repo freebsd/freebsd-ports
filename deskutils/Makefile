@@ -58,6 +58,7 @@
     SUBDIR += kronolith
     SUBDIR += krss
     SUBDIR += ktagebuch
+    SUBDIR += kuake
     SUBDIR += ljcharm
     SUBDIR += logjam
     SUBDIR += logjam2
