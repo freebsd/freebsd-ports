@@ -28,7 +28,7 @@ share/doc/NVIDIA/README.Linux
 share/doc/NVIDIA/XF86Config.sample
 share/doc/NVIDIA/license.txt
 %%FREEBSD4%%@cwd /modules
-%%FREEBSD5%%@cwd /boot/kernel
+%%FREEBSD5%%@cwd /boot/modules
 nvidia.ko
 %%FREEBSD4%%@cwd /dev
 %%FREEBSD4%%MAKEDEV.nvidia

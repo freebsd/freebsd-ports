@@ -7,7 +7,7 @@
 
 PORTNAME=	nvidia-driver
 PORTVERSION=	1.0.${NVVERSION}
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	x11
 MASTER_SITES=	http://download.nvidia.com/freebsd/1.0-${NVVERSION}/ \
 		ftp://download.nvidia.com/freebsd/1.0-${NVVERSION}/ \
@@ -59,19 +59,24 @@ pre-everything::
 	@${ECHO_MSG} "Define WITH_NVIDIA_HACKS to enable work-arounds to override basic AGP setup"
 .endif
 
-.if defined(WITH_FREEBSD_AGP) || defined(FORCE_AGP_RATE) || defined(WITH_NVIDIA_HACKS)
+.if defined(WITH_FREEBSD_AGP) || defined(FORCE_AGP_RATE) || defined(WITH_NVIDIA_HACKS) || ${OSVERSION} > 501106
 USE_REINPLACE=	yes
 
 post-patch:
 . if defined(WITH_FREEBSD_AGP)
-	@${REINPLACE_CMD} "s/undef USE_OS_AGP_GART/define USE_OS_AGP_GART/" \
+	@${REINPLACE_CMD} 's/undef USE_OS_AGP_GART/define USE_OS_AGP_GART/' \
 		${WRKSRC}/src/nv-freebsd.h
 . endif
 . if defined(FORCE_AGP_RATE)
-	@${REINPLACE_CMD} 's/NVreg_ReqAGPRate,[[:blank:]]*0/NVreg_ReqAGPRate, 1/' ${WRKSRC}/src/nvidia_os_registry.c
+	@${REINPLACE_CMD} 's/NVreg_ReqAGPRate,[[:blank:]]*0/NVreg_ReqAGPRate, 1/' \
+		${WRKSRC}/src/nvidia_os_registry.c
 . endif
 . if defined(WITH_NVIDIA_HACKS)
-	@${REINPLACE_CMD} 's/NVreg_UpdateKernelAGP,[[:blank:]]*1/NVreg_UpdateKernelAGP, 0/' ${WRKSRC}/src/nvidia_os_registry.c
+	@${REINPLACE_CMD} 's/NVreg_UpdateKernelAGP,[[:blank:]]*1/NVreg_UpdateKernelAGP, 0/' \
+		${WRKSRC}/src/nvidia_os_registry.c
+. endif
+. if ${OSVERSION} > 501106
+	@${REINPLACE_CMD} 's/PCIR_HEADERTYPE/PCIR_HDRTYPE/' ${WRKSRC}/src/nvidia_sysctl.c
 . endif
 .endif
 
