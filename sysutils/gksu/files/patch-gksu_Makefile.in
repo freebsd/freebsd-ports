@@ -1,0 +1,11 @@
+--- gksu/Makefile.in.orig	Fri Nov  5 00:55:23 2004
++++ gksu/Makefile.in	Fri Nov  5 00:55:33 2004
+@@ -167,7 +167,7 @@
+ sharedstatedir = @sharedstatedir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+-AM_CFLAGS = -g -O2 -Wall
++AM_CFLAGS = $(CFLAGS)
+ INCLUDES = `pkg-config --cflags gtk+-2.0 libgksu1.2 libgksuui1.0`
+ AM_CPPFLAGS = -DLOCALEDIR=\"$(prefix)/share/locale\" -DDATA_DIR=\"$(datadir)\" -DPREFIX=\"$(prefix)\"
+ 

@@ -1,0 +1,9 @@
+gksu is a Gtk+ frontend to /bin/su. It supports login shells and preserving
+environment when acting as a su frontend. It is useful to menu items or other
+graphical programs that need to ask a user's password to run another program
+as another user.
+
+WWW: http://www.gnu.org/non-gnu/gksu/
+
+- Jesse van den Kieboom
+troplosti@orcaweb.cjb.net
