@@ -7,6 +7,7 @@
 
 PORTNAME?=	mozilla
 PORTVERSION=	1.4a
+PORTREVISION?=	1
 PORTEPOCH?=	1
 CATEGORIES?=	www
 MASTER_SITES=	${MASTER_SITE_MOZILLA} \
@@ -31,7 +32,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 MOZILLA?=	mozilla-devel
 
 .if defined(WITH_GTK2)
-USE_GNOME=	gtk20 orbit2
+USE_GNOME=	gtk20 libidl
 .else
 USE_GNOME=	gtk12 orbit
 .endif
@@ -72,6 +73,11 @@ CONFIGURE_ARGS=					\
 		--disable-cpp-rtti		\
 		--enable-crypto			\
 		--disable-debug			\
+		--disable-debug			\
+		--disable-gtktest		\
+		--disable-freetypetest		\
+		--disable-installer		\
+		--disable-glibtest		\
 		--enable-double-buffer		\
 		--enable-mathml			\
 		--disable-md			\
@@ -149,12 +155,14 @@ ALL_TARGET=	default
 CONFIGURE_ARGS+=	--enable-reorder
 .endif
 
-.if !defined(WITHOUT_OPTIMIZE) && ${ARCH} != "alpha"
-CFLAGS+=	-O2
+.if defined(WITH_OPTIMIZED_CFLAGS) && ${ARCH} != "alpha"
+CFLAGS+=		-O2
+CONFIGURE_ARGS+=	--enable-optimize=-O2
 .endif
 
 .if ${ARCH} == "alpha"
-CFLAGS+=	-O0
+CFLAGS+=		-O0
+CONFIGURE_ARGS+=	--disable-optimize
 BROKEN=	"core dumps on alpha during post-build"
 .endif
 
@@ -172,7 +180,7 @@ pre-everything::
 	@${ECHO_MSG} "	WITHOUT_LDAP=yes	Disables LDAP support within the Mailnews module"
 	@${ECHO_MSG} "	WITHOUT_CHATZILLA=yes	Disable the Chatzilla IRC module"
 	@${ECHO_MSG} "	WITH_JAVASCRIPT_DEBUGGER=yes		Enable the DTD and JavaScript debuggers"
-	@${ECHO_MSG} "	WITHOUT_OPTIMIZE=yes	Disable -O2 optimization"
+	@${ECHO_MSG} "	WITH_OPTIMIZED_CFLAGS=yes	Enable -O2 optimization"
 	@${ECHO_MSG} ""
 .if defined(WITH_CALENDAR)
 	@${ECHO_MSG} "Calendar is still beta software."
