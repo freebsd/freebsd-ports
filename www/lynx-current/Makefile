@@ -1,29 +1,24 @@
 # New ports collection makefile for:    lynx
 # See http://www.wfbr.edu/dir/lynx/ for additional info
-# Version required:     2.5FM
+# Version required:     2.6
 # Date created:         15 Dec 1994
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.21 1996/05/03 19:48:58 ache Exp $
+# $Id: Makefile,v 1.22 1996/05/18 23:05:04 ache Exp $
 #
 
-DISTNAME=       lynx2-5FM
-PKGNAME=        lynx-2.5FM
+DISTNAME=       lynx2-6
+PKGNAME=        lynx-2.6
 CATEGORIES+=	www
-MASTER_SITES=   ftp://ftp.more.net/pub/mirrors/lynx/
-
-# Original location, lynx changes too often there
-#MASTER_SITES=   http://www.wfbr.edu/lynx/
-#NCFTP=          w3c
-#NCFTPFLAGS=     -to multipart/x-zip -timeout 300 -o ${DISTFILES}
-#FETCH_DEPENDS=  ${NCFTP}:${PORTSDIR}/www/comline
-
-# FTP mirror of original location. Beware ugly VMS names
-#NCFTPFLAGS=     -c
-#MASTER_SITES=   ftp://ftp.hhs.dk//fote_mirror/
-#NCFTPTAIL=      > ${DISTFILES}
+MASTER_SITES=   http://www.wfbr.edu/lynx/ \
+		ftp://ftp.more.net/pub/mirrors/lynx/
+EXTRACT_SUFX=   .zip
 
 MAINTAINER=	ache@FreeBSD.ORG
+
+BUILD_DEPENDS=  unzip:${PORTSDIR}/archivers/unzip
+EXTRACT_CMD=    unzip
+EXTRACT_ARGS=   -q
 
 ALL_TARGET=     freebsd-ncurses
 
