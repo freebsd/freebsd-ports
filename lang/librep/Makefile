@@ -23,7 +23,7 @@ TAR_VER=	'\"'`${TAR} --version 2>&1 | ${SED} 's/GNU tar version //'`'\"'
 post-patch:
 		${CAT} ${WRKSRC}/lisp/tar-file-handler.jl | \
 		${SED} '/^(defvar tarfh-gnu-tar-version/s/nil/'${TAR_VER}'/' \
-		> ${FILESDIR}/tmp.work
-		${CP} ${FILESDIR}/tmp.work ${WRKSRC}/lisp/tar-file-handler.jl
+		> ${WRKDIR}/tmp.work
+		${CP} ${WRKDIR}/tmp.work ${WRKSRC}/lisp/tar-file-handler.jl
 
 .include <bsd.port.mk>
