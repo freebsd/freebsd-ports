@@ -20,6 +20,7 @@ MAINTAINER=	will@FreeBSD.org
 
 LIB_DEPENDS=	kdecore.3:${PORTSDIR}/x11/kdelibs11
 
+NO_LATEST_LINK=	yes
 USE_BZIP2=	yes
 USE_QT=		yes
 GNU_CONFIGURE=	yes

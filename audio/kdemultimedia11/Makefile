@@ -16,6 +16,7 @@ MAINTAINER=	se@freebsd.org
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		kdecore.3:${PORTSDIR}/x11/kdelibs11
 
+NO_LATEST_LINK=	yes
 USE_BZIP2=	yes
 USE_QT=		yes
 HAS_CONFIGURE=	yes
