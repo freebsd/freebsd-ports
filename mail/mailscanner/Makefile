@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	MailScanner
-PORTVERSION=	4.33.3
+PORTVERSION=	4.34.8
 CATEGORIES=	mail
 MASTER_SITES=	http://www.sng.ecs.soton.ac.uk/mailscanner/files/4/tar/
 DISTNAME=	${PORTNAME}-install-${PORTVERSION}-${PATCHLEVEL}
@@ -32,9 +32,9 @@ RUN_DEPENDS=	${BUILD_DEPENDS} \
 		${LOCALBASE}/bin/wget:${PORTSDIR}/ftp/wget \
 		${LOCALBASE}/bin/unzip:${PORTSDIR}/archivers/unzip
 
-CONFLICTS=	MailScanner-devel-*
+CONFLICTS=	MailScanner-devel-[0-9]*
 
-PATCHLEVEL=	1
+PATCHLEVEL=	4
 
 USE_PERL5=	yes
 
@@ -60,6 +60,8 @@ DOC_FILES=	INSTALL INSTALL.FreeBSD INSTALL.OpenBSD README
 ETC_FILES=	MailScanner.conf filename.rules.conf \
 		filetype.rules.conf spam.assassin.prefs.conf \
 		spam.lists.conf virus.scanners.conf
+MCP_FILES=	mcp.spam.assassin.prefs.conf \
+		10_example.cf
 USRLOCAL_FILES_LIB=	\
 		bitdefender-autoupdate f-prot-autoupdate \
 		f-secure-wrapper inoculan-autoupdate \
@@ -140,7 +142,12 @@ do-install:
 		${INSTALL_DATA} EXAMPLES README ${PREFIX}/etc/MailScanner/rules
 	${INSTALL_DATA} ${WRKSRC}/etc/rules/spam.whitelist.rules \
 		${PREFIX}/etc/MailScanner/rules/spam.whitelist.rules.sample
-
+	${MKDIR} ${PREFIX}/etc/MailScanner/mcp
+	${CHMOD} ${BINMODE} ${PREFIX}/etc/MailScanner/mcp
+.for FILE in ${MCP_FILES}
+	${INSTALL_DATA} ${WRKSRC}/etc/mcp/${FILE} \
+		${PREFIX}/etc/MailScanner/mcp/${FILE}.sample
+.endfor
 	#
 	# Step 3: Install files in share
 	#
