@@ -1,0 +1,19 @@
+bin/imapfront-auth
+bin/pop3front-auth
+bin/pop3front-maildir
+bin/smtpfront-echo
+bin/smtpfront-qmail
+bin/smtpfront-reject
+%%PORTDOCS%%%%DOCSDIR%%/ANNOUNCEMENT
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/cvm-sasl.html
+%%PORTDOCS%%%%DOCSDIR%%/imapfront.html
+%%PORTDOCS%%%%DOCSDIR%%/mailfront.html
+%%PORTDOCS%%%%DOCSDIR%%/mailrules.html
+%%PORTDOCS%%%%DOCSDIR%%/pop3front.html
+%%PORTDOCS%%%%DOCSDIR%%/qmail-backend.html
+%%PORTDOCS%%%%DOCSDIR%%/qmail-validate.html
+%%PORTDOCS%%%%DOCSDIR%%/smtpfront.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
