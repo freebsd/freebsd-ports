@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 bin/celvis
 bin/cvi
 bin/virec

@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 sbin/dhcpc
 sbin/dhcpm
 sbin/relay
