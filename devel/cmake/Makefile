@@ -16,6 +16,6 @@ COMMENT=	A cross-platform make
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--docdir=${DOCSDIR:S|^${PREFIX}||} --datadir=${DATADIR:S|^${PREFIX}||}
 
-MAN1=	cmake.1
+MAN1=		ccmake.1 cmake.1 ctest.1
 
 .include <bsd.port.mk>
