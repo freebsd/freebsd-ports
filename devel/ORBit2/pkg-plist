@@ -1,13 +1,24 @@
-bin/naming-client
+bin/name-client
+bin/old-name-server
 bin/orbit-config
+bin/orbit-event-server
 bin/orbit-idl
-bin/orbit-naming-server
+bin/orbit-ird
+bin/orbit-name-server
 include/IIOP/IIOP-config.h
 include/IIOP/IIOP-types.h
 include/IIOP/IIOP.h
 include/IIOP/giop-msg-buffer.h
 include/IIOP/iiop-encoders.h
 include/IIOP/iiop-endian.h
+include/ORBitservices/CosEventChannel.idl
+include/ORBitservices/CosEventComm.idl
+include/ORBitservices/CosNaming.h
+include/ORBitservices/CosNaming.idl
+include/ORBitservices/CosNaming_impl.h
+include/ORBitservices/CosTypedEventChannel.idl
+include/ORBitservices/CosTypedEventComm.idl
+include/ORBitservices/LName.pidl
 include/ORBitutil/basic_types.h
 include/ORBitutil/compat.h
 include/ORBitutil/thread-safety.h
@@ -16,14 +27,13 @@ include/ORBitutil/util.h
 include/libIDL/IDL.h
 include/orb/allocator-defs.h
 include/orb/allocators.h
-include/orb/boa.h
 include/orb/cdr.h
 include/orb/corba_any.h
+include/orb/corba_any_proto.h
 include/orb/corba_any_type.h
 include/orb/corba_basic_sequences_type.h
 include/orb/corba_env.h
 include/orb/corba_env_type.h
-include/orb/corba_ir.h
 include/orb/corba_object.h
 include/orb/corba_object_type.h
 include/orb/corba_orb.h
@@ -37,6 +47,7 @@ include/orb/corba_typecode_type.h
 include/orb/dii.h
 include/orb/dynany.h
 include/orb/env.h
+include/orb/interface_repository.h
 include/orb/iop.h
 include/orb/ir.h
 include/orb/options.h
@@ -47,29 +58,40 @@ include/orb/orbit_object.h
 include/orb/orbit_object_type.h
 include/orb/orbit_poa.h
 include/orb/orbit_poa_type.h
+include/orb/orbit_typecode.h
 include/orb/orbit_types.h
 include/orb/poa.h
 include/orb/sequences.h
 include/orb/typecode.h
+@unexec install-info --delete %D/info/libIDL.info %D/info/dir
+info/libIDL.info
+@exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
+@exec install-info %D/info/libIDL.info %D/info/dir
 lib/libIDL.a
 lib/libIDL.la
 lib/libIDL.so
-lib/libIDL.so.0.3
+lib/libIDL.so.0.4
 lib/libIIOP.a
 lib/libIIOP.la
 lib/libIIOP.so
-lib/libIIOP.so.0.3
+lib/libIIOP.so.0.4
 lib/libORBit.a
 lib/libORBit.la
 lib/libORBit.so
-lib/libORBit.so.0.3
+lib/libORBit.so.0.4
+lib/libORBitCosNaming.a
+lib/libORBitCosNaming.la
+lib/libORBitCosNaming.so
+lib/libORBitCosNaming.so.0.4
 lib/libORBitutil.a
 lib/libORBitutil.la
 lib/libORBitutil.so
-lib/libORBitutil.so.0.3
+lib/libORBitutil.so.0.4
+lib/libname-server.a
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 @dirrm include/IIOP
+@dirrm include/ORBitservices
 @dirrm include/ORBitutil
 @dirrm include/libIDL
 @dirrm include/orb
