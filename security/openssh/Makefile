@@ -88,7 +88,7 @@ post-install:
 	${PREFIX}/bin/ssh-keygen -d -N "" -f ${PREFIX}/etc/ssh_host_dsa_key
 .endif
 .if !exists(${PREFIX}/etc/rc.d/sshd.sh)
-	@${NSTALL_SCRIPT} ${WRKSRC}/sshd.sh ${PREFIX}/etc/rc.d/
+	@${INSTALL_SCRIPT} ${WRKSRC}/sshd.sh ${PREFIX}/etc/rc.d/
 .endif
 .if !exists(${PREFIX}/etc/ssh_config) && !exists(${PREFIX}/etc/sshd_config)
 	@cd ${WRKSRC}; \
