@@ -1,0 +1,18 @@
+--- Makefile.orig	Sun Mar 28 20:09:45 2004
++++ Makefile	Thu Aug 12 15:25:07 2004
+@@ -1,11 +1,11 @@
+-CC = gcc
++#CC = gcc
+ #CFLAGS = -g -O3 -fomit-frame-pointer -funroll-loops -ffast-math -mcpu=athlon `gtk-config --cflags` -DUSE_GTK -Wall `sdl-config --cflags` -lm `sdl-config --libs`
+-CFLAGS = -O3 -fomit-frame-pointer -funroll-loops -ffast-math -mcpu=athlon `gtk-config --cflags` -DUSE_GTK -Wall `sdl-config --cflags`
++#CFLAGS = -O3 -fomit-frame-pointer -funroll-loops -ffast-math -mcpu=athlon `gtk-config --cflags` -DUSE_GTK -Wall `sdl-config --cflags`
+ 
+ #CFLAGS = -g -O3 -fomit-frame-pointer -funroll-loops -ffast-math -mcpu=athlon `gtk-config --cflags` -DUSE_GTK -Wall
+ 
+-LD = gcc
+-LDFLAGS = -shared -Wl,-Bsymbolic `gtk-config --libs` -lpthread -lm `sdl-config --libs`
++#LD = gcc
++#LDFLAGS = -shared -Wl,-Bsymbolic `gtk-config --libs` -lpthread -lm `sdl-config --libs`
+ 
+ OBJECTS	=	main.o
+ 
