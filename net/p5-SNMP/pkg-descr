@@ -1,0 +1,32 @@
+This is a Perl5 extension module which provides an interface to the
+CMU-SNMPv2 library.
+
+Description:
+
+The basic operations offered by SNMP are provided through an object
+oriented interface for modularity and ease of use. The primary object is
+SNMP::Session which is implemented as a blessed hash reference. The
+object supports 'get', 'set', and 'getNext' method calls. All calls are
+blocking/synchronous (i.e., they must receive a response or timeout
+before control is returned to the caller). The methods take a variety of
+input argument formats(see test.pl and examp/* for examples). A
+description of the objects data fields follow.
+
+SNMP::Session
+ DestHost - default 'localhost', hostname or ip addr of SNMP agent
+ Community - default 'public', SNMP community string
+ Version - default '1', v1 support only for now
+ Timeout - default '1000000', micro-seconds before retry
+ Retries - default '5', retries before failure
+ RetryNoSuch - default '1', for get request NOSUCH errors, the pdu will
+               be repaired, removing the varbind in error, and resent -
+               undef will be returned for all NOSUCH varbinds, setting
+               to '0' disables this feature and the entire get request
+               will fail on any NOSUCH error
+ ErrorStr - read-only, returns a test description of any error occuring
+            in the last request
+ ErrorNum - read-only, returns the snmp_err or staus of last request
+            private
+ DestAddr - internal field used to hold the translated DestHost field
+ SessPtr - internal field used to cache a created session structure
+

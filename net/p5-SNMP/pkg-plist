@@ -1,0 +1,8 @@
+lib/perl5/site_perl/i386-freebsd/auto/SNMP/SNMP.bs
+lib/perl5/site_perl/i386-freebsd/auto/SNMP/SNMP.so
+lib/perl5/site_perl/auto/SNMP/autosplit.ix
+lib/perl5/site_perl/SNMP.pm
+lib/perl5/site_perl/README.SNMP
+lib/perl5/site_perl/i386-freebsd/auto/SNMP/.packlist
+@dirrm lib/perl5/site_perl/auto/SNMP
+@dirrm lib/perl5/site_perl/i386-freebsd/auto/SNMP
