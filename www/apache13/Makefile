@@ -7,7 +7,7 @@
 
 PORTNAME=	apache
 PORTVERSION=    1.3.24
-PORTREVISION=   5
+PORTREVISION=   6
 CATEGORIES=	www
 MASTER_SITES=   http://www.apache.org/dist/httpd/ \
 		ftp://ftp.ccs.neu.edu/net/mirrors/ftp.apache.org/apache/dist/httpd/ \
@@ -117,7 +117,6 @@ pre-install:
 	PKG_PREFIX=${PREFIX} ${SH} pkg-install ${PKGNAME} PRE-INSTALL
 
 post-install:
-	chmod a+x ${DATADIR}/cgi-bin.default/*
 	${INSTALL_DATA} ${WRKSRC}/apache.sh ${PREFIX}/etc/rc.d/apache.sh.default
 	@if [ ! -f ${PREFIX}/etc/rc.d/apache.sh ]; then \
 		${ECHO} "Installing ${PREFIX}/etc/rc.d/apache.sh startup file."; \
