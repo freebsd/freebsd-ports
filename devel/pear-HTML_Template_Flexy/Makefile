@@ -20,8 +20,6 @@ OPTIONS=	PEAR_HTML_JAVASCRIPT "PEAR::HTML_Javascript support" off \
 		PEAR_FILE_GETTEXT "PEAR::File_Gettext support" off \
 		PEAR_TRANSLATION2 "PEAR::Translation2 support" off
 
-USE_PHP=	yes
-
 CATEGORY=	HTML/Template
 FILES=		Flexy.php Flexy/example.ini Flexy/Element.php Flexy/Element/Xul.php \
 		Flexy/Factory.php Flexy/Assign.php Flexy/Plugin.php \
@@ -69,12 +67,5 @@ RUN_DEPENDS+=	${PEARDIR}/Translation2.php:${PORTSDIR}/sysutils/pear-Translation2
 .endif
 
 .include <bsd.port.pre.mk>
-
-PHP_VERS=	${PHP_VERSION:S/.//g}
-
-.if defined(PHP_VERS) && ${PHP_VERS} < 430
-IGNORE=		"You need PHP 4.3.0 or later to install PEAR::HTML_Template_Flexy"
-.endif
-
 .include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
 .include <bsd.port.post.mk>
