@@ -13,7 +13,6 @@ MAINTAINER?=	lioux@FreeBSD.org
 COMMENT?=	KDE iconset theme
 
 USE_REINPLACE=	yes
-USE_SIZE=	yes
 NO_BUILD=	yes
 PLIST_SUB+=	DIRNAME="${PORT_SHAREDIR}"
 
