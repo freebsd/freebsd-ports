@@ -18,10 +18,7 @@ share/gnome/application-registry/file-roller.applications
 share/gnome/applications/file-roller.desktop
 share/gnome/file-roller/glade/file_roller.glade
 share/gnome/file-roller/glade/file_roller_prop.glade
-share/gnome/help/file-roller/C/figures/fr-add-dialog.png
-share/gnome/help/file-roller/C/figures/fr-extract.png
-share/gnome/help/file-roller/C/figures/fr-mainwindow.png
-share/gnome/help/file-roller/C/figures/fr-prefs.png
+share/gnome/help/file-roller/C/figures/file-roller_main_window.png
 share/gnome/help/file-roller/C/file-roller.xml
 share/gnome/help/file-roller/C/legal.xml
 share/gnome/help/file-roller/ru/figures/fr-add-dialog.png
@@ -38,6 +35,7 @@ share/gnome/omf/file-roller/file-roller-ru.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/file-roller/file-roller-ru.omf 2>/dev/null || /usr/bin/true
 share/gnome/pixmaps/file-roller.png
 share/locale/am/LC_MESSAGES/file-roller.mo
+share/locale/ar/LC_MESSAGES/file-roller.mo
 share/locale/az/LC_MESSAGES/file-roller.mo
 share/locale/be/LC_MESSAGES/file-roller.mo
 share/locale/bg/LC_MESSAGES/file-roller.mo
@@ -55,6 +53,7 @@ share/locale/ga/LC_MESSAGES/file-roller.mo
 share/locale/he/LC_MESSAGES/file-roller.mo
 share/locale/hi/LC_MESSAGES/file-roller.mo
 share/locale/hu/LC_MESSAGES/file-roller.mo
+share/locale/id/LC_MESSAGES/file-roller.mo
 share/locale/is/LC_MESSAGES/file-roller.mo
 share/locale/it/LC_MESSAGES/file-roller.mo
 share/locale/ja/LC_MESSAGES/file-roller.mo
