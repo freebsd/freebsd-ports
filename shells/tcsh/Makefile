@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 Y2K=		ftp://ftp.astron.com/pub/tcsh/Y2K
 
 .include <bsd.port.pre.mk>
-.if ${OSVERSION} >= 4000210
+.if ${OSVERSION} >= 400021
 NO_BUILD=	yes
 PLIST=		${PKGDIR}/PLIST.nobuild
 DISTFILES=	# empty
@@ -32,7 +32,7 @@ MASTER_SITE_TCSH=	http://www2.wbs.ne.jp/~znc/tcsh/
 DISTNAME_TCSH=	${PORTNAME}-${PORTVERSION}
 .endif
 
-.if ${OSVERSION} >= 4000210
+.if ${OSVERSION} >= 400021
 pre-fetch:
 	@${ECHO_MSG} "This port is just for making symlink from /bin/tcsh"
 	@${ECHO_MSG} "to ${PREFIX}/bin/tcsh and updating /etc/shells."
