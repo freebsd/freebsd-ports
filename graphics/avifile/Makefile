@@ -15,7 +15,7 @@ DISTFILES=	avifile-${PORTVERSION}.tar.gz \
 
 MAINTAINER=	holger@eit.uni-kl.de
 
-LIB_DEPENDS=	SDL-1.1.2:${PORTSDIR}/devel/sdl-devel
+LIB_DEPENDS=	SDL-1.1.3:${PORTSDIR}/devel/sdl-devel
 RUN_DEPENDS=	${CODEC_DETECTION_FILE}:${CODEC_PORT}
 
 ONLY_FOR_ARCHS=	i386
