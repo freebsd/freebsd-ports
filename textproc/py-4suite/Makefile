@@ -17,7 +17,7 @@ MAINTAINER=	mike@skew.org
 COMMENT=	A collection of Python tools for XML processing and object database management
 
 BROKEN=		"has a broken pkg-plist that removes dozens of files not installed by this port"
-EXPIRATION_DATE=2005-02-18
+EXPIRATION_DATE=2005-04-18
 DEPRECATED=	${BROKEN}
 
 BUILD_DEPENDS=	${PYXML}
