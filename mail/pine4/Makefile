@@ -10,6 +10,7 @@
 
 PORTNAME?=	pine
 PORTVERSION?=	4.33
+PORTREVISION=	1
 CATEGORIES=	mail news
 MASTER_SITES=	ftp://ftp.cac.washington.edu/pine/
 DISTNAME?=	${PORTNAME}${PORTVERSION}
