@@ -1,6 +1,3 @@
 bin/gperf
-@unexec install-info --delete %D/info/gperf.info %D/info/dir
-info/gperf.info
-@exec install-info %D/info/gperf.info %D/info/dir
 %%DOCSDIR%%/gperf.html
 @dirrm %%DOCSDIR%%

@@ -16,6 +16,7 @@ COMMENT=	Generates perfect hash functions for sets of keywords
 
 GNU_CONFIGURE=	yes
 MAN1=		gperf.1
+INFO=		gperf
 CONFIGURE_ARGS+=	--mandir=${PREFIX}/man
 
 post-install:
