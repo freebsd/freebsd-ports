@@ -7,6 +7,7 @@
 
 PORTNAME=	lynx
 PORTVERSION=    2.8.5d16
+PORTREVISION=   1
 CATEGORIES=     www ipv6
 MASTER_SITES=	http://lynx.isc.org/current/
 DISTNAME=       ${PORTNAME}2.8.5dev.16
@@ -23,7 +24,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-screen=ncurses --with-zlib --libdir="${L_LIB}" \
 		--enable-nsl-fork --enable-nls --enable-prettysrc \
 		--enable-file-upload --enable-nested-tables \
-		--enable-source-cache --enable-read-eta
+		--enable-source-cache --enable-read-eta \
+		--enable-scrollbar --enable-addrlist-page
 
 .ifndef NO_OPENSSL
 USE_OPENSSL=    yes
