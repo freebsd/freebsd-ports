@@ -1,0 +1,20 @@
+bin/opencdk-config
+include/opencdk.h
+lib/libopencdk.so.5
+lib/libopencdk.so
+lib/libopencdk.la
+lib/libopencdk.a
+%%PORTDOCS%%share/doc/opencdk/AUTHORS
+%%PORTDOCS%%share/doc/opencdk/NEWS
+%%PORTDOCS%%share/doc/opencdk/README
+%%PORTDOCS%%share/doc/opencdk/THANKS
+%%PORTDOCS%%share/doc/opencdk/opencdk-api.html
+%%PORTDOCS%%@dirrm share/doc/opencdk
+share/examples/opencdk/minpg.c
+share/examples/opencdk/pub.gpg
+share/examples/opencdk/sec-with-pwd.gpg
+share/examples/opencdk/sec.gpg
+share/examples/opencdk/t-stream.c
+share/examples/opencdk/ts.gpg
+share/examples/opencdk/wkold.gpg
+@dirrm share/examples/opencdk
