@@ -15,13 +15,14 @@ DISTNAME=	IRcatLite-r20000308
 MAINTAINER=	goto@snowy.to
 COMMENT=	A GTK based 'Internet Relay Chat' Client
 
+USE_GTK=	yes
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 500113
 BROKEN=         "Does not compile (bad C++ code)"
 .endif
 
-USE_GTK=	yes
 GNU_CONFIGURE=	yes
 
 USE_X_PREFIX=	yes
