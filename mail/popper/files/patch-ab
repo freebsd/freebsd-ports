@@ -1,123 +1,74 @@
-SKEY + pw_expire patches
-
-*** pop_pass.c.orig	Fri May 24 22:26:25 1996
---- pop_pass.c	Tue Dec 10 23:52:23 1996
-***************
-*** 482,497 ****
-  POP     *   p;
-  struct passwd  *   pw;
-  {
-      /*  We don't accept connections from users with null passwords */
-      /*  Compare the supplied password with the password file entry */
-  
-!     if ((pw->pw_passwd == NULL) || (*pw->pw_passwd == '\0') ||
-! 		strcmp(crypt(p->pop_parm[1], pw->pw_passwd), pw->pw_passwd)) {
-! 	sleep(SLEEP_SECONDS);
-! 	return (pop_msg(p,POP_FAILURE, pwerrmsg, p->user));
-      }
-  
-      return(POP_SUCCESS);
-  }
-  
-  #endif	/* AUTH */
---- 482,530 ----
-  POP     *   p;
-  struct passwd  *   pw;
-  {
-+ #ifdef SKEY
-+     int pass_ok;
-+ #endif
-+ #if defined(BSD) && (BSD >= 199306)
-+     /* Check password change and expire times before granting access */
-+     time_t now = time((time_t *) NULL);
-+ 
-+     if ((pw->pw_change && now > pw->pw_change) ||
-+         (pw->pw_expire && now > pw->pw_expire))
-+ 	goto error;
-+ #endif
-+ 
-      /*  We don't accept connections from users with null passwords */
-+     if ((pw->pw_passwd == NULL) || (*pw->pw_passwd == '\0'))
-+ 	goto error;
-+ 
-      /*  Compare the supplied password with the password file entry */
-+ #ifdef	SKEY
-+     pass_ok = skeyaccess(p->user, NULL, p->client, p->ipaddr);
-+     if (strcmp(skey_crypt(p->pop_parm[1], pw->pw_passwd, pw, pass_ok),
-+ 			  pw->pw_passwd)) {
-+ 	static char buf[128];
-+ 	struct skey skey;
-  
-! 	if (skeychallenge(&skey, p->user, buf))
-! 	    goto error;
-! 	if (pass_ok)
-! 	    sleep(SLEEP_SECONDS);
-! 	return (pop_msg(p,POP_FAILURE,
-! 		"\"%s\" %s%s, password is incorrect.",
-! 		p->user, buf,
-! 		pass_ok ? "" : " (required)"));
-      }
-+ #else
-+     if (strcmp(crypt(p->pop_parm[1], pw->pw_passwd), pw->pw_passwd))
-+ 	goto error;
-+ #endif
-  
-      return(POP_SUCCESS);
-+ 
-+   error:
-+     sleep(SLEEP_SECONDS);
-+     return (pop_msg(p,POP_FAILURE, pwerrmsg, p->user));
-  }
-  
-  #endif	/* AUTH */
-*** pop_user.c.orig	Sat Mar 29 07:30:36 1997
---- pop_user.c	Wed Apr 23 07:03:37 1997
-***************
-*** 163,168 ****
---- 163,180 ----
-      }
-  #endif /* APOP */
-  
-+ #ifdef	SKEY
-+     {
-+ 	static char buf[128];
-+ 	struct skey skey;
-+ 
-+ 	if (!skeychallenge(&skey, p->user, buf))
-+ 	   return(pop_msg(p,POP_SUCCESS,"%s%s", buf,
-+ 			  skeyaccess(p->user, NULL, p->client, p->ipaddr) ?
-+ 			  "" : " (required)"));
+--- pop_pass.c.orig	Mon Jul 30 19:29:19 2001
++++ pop_pass.c	Mon Jul 30 19:29:25 2001
+@@ -19,6 +19,12 @@
+ #include <pwd.h>
+ #include "popper.h"
+ 
++#ifdef OPIE
++#include <opie.h>
++extern int pwok;
++extern struct opie opiestate;
++#endif /* OPIE */
++
+ #define	SLEEP_SECONDS 10
+ 
+ 
+@@ -487,16 +493,28 @@
+ POP     *   p;
+ struct passwd  *   pw;
+ {
++#if defined(BSD) && (BSD >= 199306)
++    /* Check password change and expire times before granting access */
++    time_t now = time((time_t *) NULL);
++
++    if ((pw->pw_change && now > pw->pw_change) ||
++        (pw->pw_expire && now > pw->pw_expire))
++	goto error;
++#endif
++
+     /*  We don't accept connections from users with null passwords */
+-    /*  Compare the supplied password with the password file entry */
++    if ((pw->pw_passwd == NULL) || (*pw->pw_passwd == '\0'))
++	goto error;
+ 
+-    if ((pw->pw_passwd == NULL) || (*pw->pw_passwd == '\0') ||
+-		strcmp(crypt(p->pop_parm[1], pw->pw_passwd), pw->pw_passwd)) {
+-	sleep(SLEEP_SECONDS);
+-	return (pop_msg(p,POP_FAILURE, pwerrmsg, p->user));
+-    }
++    /*  Compare the supplied password with the password file entry */
++    if (strcmp(crypt(p->pop_parm[1], pw->pw_passwd), pw->pw_passwd))
++	goto error;
+ 
+     return(POP_SUCCESS);
++
++  error:
++    sleep(SLEEP_SECONDS);
++    return (pop_msg(p,POP_FAILURE, pwerrmsg, p->user));
+ }
+ 
+ #endif	/* AUTH_SPECIAL */
+@@ -611,12 +629,23 @@
+ 	return(pop_msg(p, POP_FAILURE, "\"%s\": shell not found.", p->user));
+ #endif
+ 
++#ifdef OPIE
++    if (opieverify(&opiestate, p->pop_parm[1])) {
++       if (pwok) {
++#endif /* OPIE */
+     if ((p->kerberos ? auth_user_kerberos(p, pw) : auth_user(p, pwp))
+ 							!= POP_SUCCESS) {
+ 	    pop_log(p,POP_PRIORITY,"Failed attempted login to %s from host %s",
+ 							    p->user, p->client);
+ 	return(POP_FAILURE);
+     }
++#ifdef OPIE
++	} else {
++	    sleep(SLEEP_SECONDS);
++	    return (pop_msg(p,POP_FAILURE, pwerrmsg, p->user));
++	}
 +     }
-+ #endif
-+ 
-      /*  Tell the user that the password is required */
-      return (pop_msg(p,POP_SUCCESS,"Password required for %s.",p->user));
-  }
-*** popper.h.orig	Thu Nov 20 00:20:39 1997
---- popper.h	Thu Nov 20 16:27:10 1997
-***************
-*** 31,41 ****
-  
-  #ifdef		HAVE_SYS_PARAM_H
-  #include <sys/param.h>
-- # if (defined(BSD) && (BSD >= 199103))
-- #  define	HAVE_UNISTD_H
-- #  define	HAVE_VPRINTF
-- #  define	BIND43
-- # endif
-  #endif
-  
-  #ifdef BSDI
---- 31,36 ----
-***************
-*** 308,313 ****
---- 303,311 ----
-  extern AUTH_DAT kdata;
-  #endif /* KERBEROS */
-  
-+ #if defined(SKEY)
-+ #include <skey.h>
-+ #endif
-  #if defined(AUTHFILE)
-  extern int  checkauthfile();
-  #endif
++#endif /* OPIE */
+ 
+ #ifdef SECURENISPLUS
+     seteuid(uid_save);

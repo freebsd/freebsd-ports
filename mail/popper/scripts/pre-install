@@ -12,5 +12,5 @@ usrdir=${PREFIX}/etc/popper
 if [ ! -d $usrdir ]; then
   mkdir -p $usrdir
 fi
-chown pop.daemon $usrdir
+chown pop:daemon $usrdir
 chmod 700 $usrdir
