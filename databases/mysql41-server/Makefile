@@ -176,7 +176,8 @@ post-install:
 		${FILESDIR}/mysql-server.sh > ${PREFIX}/etc/rc.d/mysql-server.sh
 	@${CHMOD} 750 ${PREFIX}/etc/rc.d/mysql-server.sh
 .if !defined(NOPORTDOCS)
-.for doc in ${DOCS}
+	@${MKDIR} ${DOCSDIR}
+.for doc in ${PORTDOCS}
 	@${INSTALL_DATA} ${WRKSRC}/Docs/${doc} ${DOCSDIR}
 .endfor
 .endif
