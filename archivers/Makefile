@@ -14,6 +14,7 @@
     SUBDIR += freeze
     SUBDIR += gshar+gunshar
     SUBDIR += gtar
+    SUBDIR += gzip
     SUBDIR += ha
     SUBDIR += hpack.non-usa.only
     SUBDIR += lbrate
