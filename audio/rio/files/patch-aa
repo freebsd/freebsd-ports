@@ -1,10 +1,10 @@
-*** app.cpp	Mon Feb  1 17:55:34 1999
---- rio.bsd/app.cpp	Sat Feb  6 21:00:07 1999
+*** app.cpp.orig	Mon Mar 15 06:53:16 1999
+--- app.cpp	Sat Sep 18 15:13:44 1999
 ***************
-*** 27,32 ****
---- 27,39 ----
-  	#include	<stdlib.h>
+*** 30,35 ****
+--- 30,42 ----
   	#define		SIZE_MAXPATH			_MAX_PATH
+  	#define		DELETEARRAY				delete[]
   
 + #elif defined(__FreeBSD__)
 + 	// FreeBSD g++
@@ -16,3 +16,20 @@
   #elif defined(__linux__)
   	// linux g++
   	#include	<unistd.h>
+***************
+*** 81,87 ****
+  {
+  	static char szBuf[ 64 ];
+  	struct tm* psDateTime;
+! 	psDateTime = localtime( &lValue );
+  
+  	if ( !psDateTime )
+  		strcpy( szBuf, "INVALID DATE/TIME" );
+--- 88,94 ----
+  {
+  	static char szBuf[ 64 ];
+  	struct tm* psDateTime;
+! 	psDateTime = localtime( (time_t *)&lValue );
+  
+  	if ( !psDateTime )
+  		strcpy( szBuf, "INVALID DATE/TIME" );

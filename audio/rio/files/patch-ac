@@ -1,0 +1,29 @@
+*** makefile.orig	Sat Sep 18 15:19:53 1999
+--- makefile	Sat Sep 18 15:20:20 1999
+***************
+*** 6,15 ****
+  #
+  ###############################################################################
+  
+  all: 		rio
+  
+  rio:		app.cpp rio.cpp
+! 		g++ -O1 -o rio app.cpp rio.cpp
+  		chmod +s rio
+  
+  clean:
+--- 6,19 ----
+  #
+  ###############################################################################
+  
++ .if ${MACHINE_ARCH} == "alpha"
++ LDADD=		-lio
++ .endif
++ 
+  all: 		rio
+  
+  rio:		app.cpp rio.cpp
+! 		g++ -O1 -o rio app.cpp rio.cpp ${LDADD}
+  		chmod +s rio
+  
+  clean:
