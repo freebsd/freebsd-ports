@@ -43,6 +43,7 @@ etc/pisg/pisg.cfg.sample
 %%SITE_PERL%%/Pisg/Parser/Format/supy.pm
 %%SITE_PERL%%/Pisg/Parser/Format/javabot.pm
 %%SITE_PERL%%/Pisg/Parser/Format/rbot.pm
+%%SITE_PERL%%/Pisg/Parser/Format/lulubot.pm
 %%SITE_PERL%%/Pisg/Parser/Logfile.pm
 %%DATADIR%%/layout/justgrey.css
 %%DATADIR%%/layout/darkgalaxy.css
