@@ -1,0 +1,6 @@
+bin/dasher
+share/dasher/alphabet.dtd
+share/dasher/alphabet.xml
+share/dasher/alphabet.xsl
+share/dasher/training_english_GB.txt
+@dirrm share/dasher

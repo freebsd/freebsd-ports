@@ -29,6 +29,7 @@
     SUBDIR += cooledit
     SUBDIR += custom-emacs
     SUBDIR += custom-mule
+    SUBDIR += dasher
     SUBDIR += dedit
     SUBDIR += dte
     SUBDIR += e3
