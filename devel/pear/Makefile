@@ -15,7 +15,7 @@ EXTRACT_ONLY=	# empty
 MAINTAINER=	thierry@pompo.net
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/php-config:${PORTSDIR}/www/mod_php4
-RUN_DEPENDS=	${PEARDIR}/PEAR.php.dist:${PORTSDIR}/devel/pear-PEAR	\
+RUN_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear-PEAR	\
 		${PEARDIR}/Console/Getopt.php.dist:${PORTSDIR}/devel/pear-Console_Getopt	\
 		${PEARDIR}/File.php:${PORTSDIR}/sysutils/pear-File	\
 		${PEARDIR}/Log.php:${PORTSDIR}/sysutils/pear-Log	\
