@@ -255,6 +255,7 @@
     SUBDIR += latex-mk
     SUBDIR += lc
     SUBDIR += less
+    SUBDIR += lesspipe
     SUBDIR += libhome
     SUBDIR += libmcal
     SUBDIR += libpri

@@ -1,0 +1,7 @@
+To use lesspipe.sh, type in the following commands
+
+LESSOPEN="|%%PREFIX%%/bin/lesspipe.sh %s"; export LESSOPEN     (sh, bash, ksh, zsh)
+
+setenv LESSOPEN "|%%PREFIX%%/bin/lesspipe.sh %s"               (csh, tcsh)
+
+or put these commands in your shell's startup file (e.g. .cshrc or .bashrc).

@@ -1,0 +1,42 @@
+--- configure~	Thu Dec  9 09:30:52 2004
++++ configure	Sat Dec 11 20:46:04 2004
+@@ -28,7 +28,7 @@
+ The Makefile is of little use (copy lesspipe.sh and code2color to the
+ install location)
+ EOF
+-  exit;
++  exit !$opt_help ? 1 : 0;
+ }
+ $opt_prefix ||= '/usr/local';
+ open OUT, ">Makefile";
+@@ -188,7 +188,7 @@
+   my $rc = system "$have{file} -L ./configure >/dev/null 2>&1";
+   if ( $rc ) {
+     print "  found system version of file, looking for GNU file\n";
+-    exit unless inpath("Continue anyway", 'gfile');
++    exit 1 unless inpath("Continue anyway", 'gfile');
+     $have{file} = $have{gfile} if $have{gfile};
+   }
+   $rc = system "$have{file} -L ./configure >/dev/null 2>&1";
+@@ -215,7 +215,7 @@
+         $have{file} = $rep{file};
+         check_file_vers();
+       }
+-      exit if $yesno =~ /^n/i;
++      exit 1 if $yesno =~ /^n/i;
+     } else {
+       $have{file} .= ' -L -s';
+       print "  found GNU file$vers (ok)\n";
+@@ -277,10 +277,10 @@
+     print OUT "#!$file$opt\n";
+     $selected_shell = $name if ! $selected_shell;
+   }
+-  if ( $#bad == 2 ) {
++  if ( !$selected_shell ) {
+     print "Sorry, no useable shell found, cannot create lesspipe.sh\n", @bad;
+     print "You could edit lesspipe.sh.in to adjust the path to the shell(s)\n";
+-    exit;
++    exit 1;
+   } else {
+     print OUT @bad;
+   }
