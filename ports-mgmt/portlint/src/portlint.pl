@@ -280,18 +280,8 @@ sub checkplist {
 				}
 			} elsif ($_ =~ /^\@(comment)/) {
 				$rcsidseen++ if (/\$$rcsidstr[:\$]/);
-			} elsif ($_ =~ /^\@(owner|group)\s+$/) {
-				&perror("WARN: $_ missing name in PLIST");
-			} elsif ($_ =~ /^\@(owner)(\s+)(.*)/) {
-				$space = $2;
-				$user = $3;
-				&perror("WARN: multiple spaces found in \"$_\"") if ($space =~ /\s\s+/);
-				&perror("WARN: \"$user\" unknown user in PLIST") if (getpwnam($user) eq "");
-			} elsif ($_ =~ /^\@(group)(\s+)(.*)/) {
-				$space = $2;
-				$group = $3;
-				&perror("WARN: multiple spaces found in \"$_\"") if ($space =~ /\s\s+/);
-				&perror("WARN: \"$group\" unknown group in PLIST") if (getgrnam($group) eq "");
+			} elsif ($_ =~ /^\@(owner|group)\s/) {
+				&perror("WARN: \@$1 should not be needed in PLIST");
 			} elsif ($_ =~ /^\@(dirrm|option)/) {
 				; # no check made
 			} else {
