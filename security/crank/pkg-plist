@@ -1,0 +1,7 @@
+bin/crank
+lib/crank/monoalphabetic.hillclimb-cracker.so
+lib/crank/monoalphabetic.key-controls.so
+lib/crank/statistics.n-grams.so
+lib/crank/text.simple-filters.so
+lib/crank/utilities.notepad.so
+@dirrm lib/crank

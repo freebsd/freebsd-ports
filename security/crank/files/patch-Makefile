@@ -1,0 +1,29 @@
+--- Makefile.orig	Tue Apr 17 08:42:25 2001
++++ Makefile	Wed Apr 18 23:57:16 2001
+@@ -1,7 +1,7 @@
+ VERSION = $(shell cat VERSION)
+ CC = gcc
+ DYNAMICGDB = -Wl,--dynamic-linker,/lib/ld-linux.so.2 
+-CFLAGS = -g -Wall -pedantic `gtk-config --cflags`
++CFLAGS += `gtk-config --cflags`
+ LIBS  = `gtk-config --libs`
+ OBJFILES = $(patsubst %.c,%.o,$(wildcard *.c))
+ PLUGIN-SRC = plugin-src
+@@ -10,7 +10,7 @@
+           $(PLUGIN-SRC)/statistics.n-grams.so \
+           $(PLUGIN-SRC)/text.simple-filters.so \
+           $(PLUGIN-SRC)/utilities.notepad.so
+-TMPDIR = /usr/tmp
++TMPDIR = /tmp
+ DISTFILES = *.[ch] Makefile Makefile.mingw README BUGS VERSION \
+             HISTORY LICENSE TODO ciphertext.txt 
+ DISTFILES_DATA = data/*.dat
+@@ -19,7 +19,7 @@
+ all: crank plugin
+
+ crank: $(OBJFILES)
+-	$(CC) $(CFLAGS) $(LIBDIR) -o crank $(OBJFILES) $(LIBS)
++	$(CC) $(CFLAGS) -o crank $(OBJFILES) $(LIBS)
+
+ $(OBJFILES) : crank.h
+
