@@ -1,0 +1,25 @@
+--- Makefile.am.orig	Thu Feb  7 18:14:11 2002
++++ Makefile.am	Sun May  5 10:53:00 2002
+@@ -3,7 +3,7 @@
+ 
+ AUTOMAKE_OPTIONS = foreign
+ EXTRA_PROGRAMS = mutt_dotlock pgpring makedoc
+-
++EXTRA_SCRIPTS = smime_keys
+ if BUILD_IMAP
+ IMAP_SUBDIR = imap
+ IMAP_INCLUDES = -I$(top_srcdir)/imap
+@@ -11,11 +11,11 @@
+ 
+ SUBDIRS = m4 po intl doc contrib $(IMAP_SUBDIR)
+ 
+-bin_SCRIPTS = muttbug flea
++bin_SCRIPTS = muttbug flea @SMIMEAUX_TARGET@
+ 
+ BUILT_SOURCES = keymap_defs.h patchlist.c
+ 
+-bin_PROGRAMS = mutt @DOTLOCK_TARGET@ @PGPAUX_TARGET@ @SMIMEAUX_TARGET@
++bin_PROGRAMS = mutt @DOTLOCK_TARGET@ @PGPAUX_TARGET@
+ mutt_SOURCES = $(BUILT_SOURCES) \
+ 	addrbook.c alias.c attach.c base64.c browser.c buffy.c color.c \
+ 	commands.c complete.c compose.c copy.c curs_lib.c curs_main.c date.c \

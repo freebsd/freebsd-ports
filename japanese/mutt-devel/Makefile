@@ -4,11 +4,13 @@
 #
 # $FreeBSD$
 #
+# WITH_MUTT_CYRUS_SASL:	if defined, 'Cyrus sasl' support.
+#
 
 PORTNAME=	mutt
 PORTVERSION=	${VERSION}.j${JP_VERSION}
 CATEGORIES=	japanese mail
-MASTER_SITES=	http://www.emaillab.org/mutt/1.3/ \
+MASTER_SITES=	http://www.emaillab.org/mutt/1.5/ \
 		http://www5.xdsl.ne.jp/~shuna/mutt/distfiles/ \
 		http://ha4.seikyou.ne.jp/home/Kohtaro.Hitomi/mutt/ \
 		ftp://ftp.mutt.org/pub/mutt/devel/
@@ -23,47 +25,47 @@ LIB_DEPENDS=	slang.2:${PORTSDIR}/japanese/libslang \
 		iconv.3:${PORTSDIR}/converters/libiconv
 .if !defined(WITH_GETTEXT)
 LIB_DEPENDS+=	intl.2:${PORTSDIR}/devel/gettext
-.endif
-.if defined(WITH_GETTEXT)
+.else
 BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext
+.endif
+.if defined(WITH_MUTT_CYRUS_SASL)
+LIB_DEPENDS+=	sasl.8:${PORTSDIR}/security/cyrus-sasl
 .endif
 RUN_DEPENDS=	urlview:${PORTSDIR}/textproc/urlview
 
-VERSION=	1.3.99
+VERSION=	1.5.1
 JP_VERSION=	1
-MANUALVERSION=	1.3.28
+MANUALVERSION=	1.4
+
+FETCH_BEFORE_ARGS=	-A	# ha4.seikyou.ne.jp is running broken httpd
 
 DIST_SUBDIR=	mutt
 NO_LATEST_LINK=	yes
 USE_GMAKE=	yes
 USE_AUTOMAKE=	yes
+USE_OPENSSL=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${VERSION}
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	CC="${CC} -I${LOCALBASE}/include -I${LOCALBASE}/include/slang" \
+		LDFLAGS=-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-slang --enable-locales-fix \
-		--with-libiconv-prefix=${PREFIX} \
+		--with-libiconv-prefix=${LOCALBASE} \
 		--without-wc-funcs \
 		--enable-flock --disable-fcntl \
+		--with-ssl \
 		--sysconfdir=${PREFIX}/etc \
-		--with-docdir=${PREFIX}/share/doc/mutt \
+		--with-docdir=${DOCSDIR} \
 		--enable-pop --enable-imap \
 		--enable-default-japanese
 .if defined(WITH_GETTEXT)
 CONFIGURE_ARGS+=	--with-included-gettext
 .endif
-
-FETCH_BEFORE_ARGS=	-A	# ha4.seikyou.ne.jp is running broken httpd
+.if defined(WITH_MUTT_CYRUS_SASL)
+CONFIGURE_ARGS+=	--with-sasl=${LOCALBASE}
+.endif
 
 NOMANCOMPRESS=	yes
 MAN1=		flea.1 mutt.1 muttbug.1 mutt_dotlock.1
 MAN5=		muttrc.5 mbox.5
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 400014
-USE_OPENSSL=	yes
-CONFIGURE_ARGS+=	--with-ssl
-.endif
 
 DIFFDIR=	${WRKDIR}/${DISTNAME}-ja.${JP_VERSION}
 DIFFNAME=	patch-${VERSION}.tt.ja.${JP_VERSION}
@@ -73,6 +75,10 @@ pre-patch:
 	(cd ${WRKSRC}; ${PATCH} -p1 < ${DIFFDIR}/${DIFFNAME})
 
 pre-configure:
+.if defined(NOPORTDOCS)
+	${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extrapatch-nodoc-aa
+	${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extrapatch-nodoc-ab
+.endif
 	(cd ${WRKSRC}; ${ACLOCAL} -I m4)
 
 post-configure:
@@ -83,11 +89,14 @@ post-configure:
 		s/^(s%\@AUTOHEADER\@%).+(%g)/\1${AUTOHEADER}\2/" \
 		${BUILD_WRKSRC}/config.status
 
+.if !defined(NOPORTDOCS)
 post-install:
-	${INSTALL_DATA} ${DIFFDIR}/INSTALL.JA-PATCH.en ${DOCSDIR}
 	${INSTALL_DATA} ${DIFFDIR}/INSTALL.JA-PATCH.ja ${DOCSDIR}
-	${INSTALL_DATA} ${DIFFDIR}/README.JA-PATCH.en ${DOCSDIR}
 	${INSTALL_DATA} ${DIFFDIR}/README.JA-PATCH.ja ${DOCSDIR}
+	${INSTALL_DATA} ${DIFFDIR}/html/INSTALL.JA-PATCH.en.html ${DOCSDIR}/html
+	${INSTALL_DATA} ${DIFFDIR}/html/INSTALL.JA-PATCH.ja.html ${DOCSDIR}/html
+	${INSTALL_DATA} ${DIFFDIR}/html/README.JA-PATCH.en.html ${DOCSDIR}/html
+	${INSTALL_DATA} ${DIFFDIR}/html/README.JA-PATCH.ja.html ${DOCSDIR}/html
 	${INSTALL_DATA} ${DIFFDIR}/html/manual-ja-patch.en.html ${DOCSDIR}/html
 	${INSTALL_DATA} ${DIFFDIR}/html/manual-ja-patch.ja.html ${DOCSDIR}/html
 	${INSTALL_DATA} ${DIFFDIR}/html/usage-japanese.en.html ${DOCSDIR}/html
@@ -99,5 +108,6 @@ post-install:
 	${INSTALL_DATA} ${WRKDIR}/manual_ja.tex ${DOCSDIR}
 	${INSTALL_DATA} ${WRKDIR}/manual_ja.html ${DOCSDIR}
 	${INSTALL_DATA} ${WRKDIR}/manual_ja.sgml ${DOCSDIR}
+.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
