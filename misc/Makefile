@@ -43,6 +43,7 @@
     SUBDIR += fortuneit
     SUBDIR += geekcode
     SUBDIR += git
+    SUBDIR += gnomeusersguide
     SUBDIR += gnomeutils
     SUBDIR += gnuls
     SUBDIR += gone
