@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	drb
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.2
 CATEGORIES=	net ruby
 MASTER_SITES=	http://www2a.biglobe.ne.jp/~seki/ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
