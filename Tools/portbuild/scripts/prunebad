@@ -1,0 +1,45 @@
+#!/bin/sh
+
+# configurable variables
+pb=/var/portbuild
+
+if [ $# -ne 2 ]; then
+    echo "prunebad <arch> <branch>"
+    exit 1
+fi
+
+arch=$1
+branch=$2
+shift 2
+
+. ${pb}/${arch}/portbuild.conf
+. ${pb}/scripts/buildenv
+
+buildenv ${pb} ${arch} ${branch}
+
+cd ${pb}/${arch}/${branch}
+
+if [ -f .packagelock ]; then exit; fi
+touch .packagelock
+
+cd packages/All
+if [ ! -f .packagestamp ]; then
+    newfiles=$(find . -name \*${PKGSUFFIX})
+else
+    newfiles=$(find . -name \*${PKGSUFFIX} -newer ../../.packagestamp)
+fi
+touch ../../.packagestamp
+echo Checking $newfiles
+
+mkdir -p ${pb}/${arch}/${branch}/bad
+echo "checking packages"
+for i in ${newfiles}; do
+  if ! ${PKGZIPCMD} -t $i; then
+    echo "Warning: package $i is bad, moving to ${pb}/${arch}/${branch}/bad"
+    # the latest link will be left behind...
+    mv $i ${pb}/${arch}/${branch}/bad
+    rm ../*/$i
+  fi
+done
+cd ../..
+rm .packagelock
