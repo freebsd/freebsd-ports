@@ -1,9 +1,9 @@
---- configure.orig	Mon May 13 22:52:10 2002
-+++ configure	Tue Jun  4 23:08:36 2002
-@@ -450,19 +450,10 @@
+--- configure.orig	Mon Jun 10 20:46:18 2002
++++ configure	Mon Jun 10 20:48:32 2002
+@@ -469,19 +469,10 @@
  
  # Try to find the available options for the current CPU
- if x86 ; then
+ if x86 || ppc; then
 -  if test -r /proc/cpuinfo ; then
 -    # linux with /proc mounted, extract cpu information from it
 -    _cpuinfo="cat /proc/cpuinfo"
@@ -11,7 +11,7 @@
 -    # FreeBSD with linux emulation /proc mounted,
 -    # extract cpu information from it
 -    _cpuinfo="cat /compat/linux/proc/cpuinfo"
--  else
+-  elif x86; then
      # all other OS try to extract cpu information from a small helper
      # program TOOLS/cpuinfo instead
      $_cc -o TOOLS/cpuinfo TOOLS/cpuinfo.c
@@ -20,7 +20,7 @@
  
    pname=`$_cpuinfo | grep 'model name' | cut -d ':' -f 2 | head -1`
    pvendor=`$_cpuinfo | grep 'vendor_id' | cut -d ':' -f 2  | cut -d ' ' -f 2 | head -1`
-@@ -1412,13 +1403,7 @@
+@@ -1485,13 +1476,7 @@
  
  
  echocheck "memalign()"
@@ -34,7 +34,7 @@
  if test "$_memalign" = yes ; then
   _def_memalign='#define HAVE_MEMALIGN 1'
  else
-@@ -1495,31 +1480,7 @@
+@@ -1568,31 +1553,7 @@
  
  
  echocheck "pthread"
@@ -67,7 +67,7 @@
  echores "yes (using $_ld_pthread)"
  
  
-@@ -3064,11 +3025,7 @@
+@@ -3219,11 +3180,7 @@
  
  echocheck "iconv"
  if test "$_iconv" = auto ; then
@@ -79,7 +79,7 @@
    cat > $TMPC << EOF
  #include <stdio.h>
  #include <unistd.h>
-@@ -3102,7 +3059,7 @@
+@@ -3257,7 +3214,7 @@
  EOF
    _iconv=no
    if freebsd ; then
@@ -88,7 +88,7 @@
    elif bsdos ; then
      cc_check  -lm -liconv && _iconv=yes
    else
-@@ -3111,7 +3068,7 @@
+@@ -3266,7 +3223,7 @@
  fi
  if test "$_iconv" = yes ; then
    _def_iconv='#define USE_ICONV 1'
@@ -97,7 +97,7 @@
    bsdos && _ld_iconv='-liconv'
  else
    _def_iconv='#undef USE_ICONV'
-@@ -3570,7 +3527,7 @@
+@@ -3733,7 +3690,7 @@
    CFLAGS="$CFLAGS -D_REENTRANT"
  elif bsd ; then
    # FIXME bsd needs this so maybe other OS'es
