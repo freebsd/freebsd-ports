@@ -1,10 +1,13 @@
-***************************************************************
-* Before using Wanderlust, you must set following elisp       *
-* to your own .emacs file.                                    *
-*                                                             *
-* (require 'wanderlust-startup)                               *
-*                                                             *
-* And if you use APOP authentication, Wanderlust requires     *
-* md5.el. md5.el is contained in Emacs/W3 package. Please get *
-* it from ftp://ftp.cs.indiana.edu/pub/elisp/w3/w3.tar.gz.    *
-***************************************************************
+************************************************************
+* Before using Wanderlust, you must set following elisp    *
+* to your own .emacs file.                                 *
+*                                                          *
+* (require 'wanderlust-startup)                            *
+*                                                          *
+* Sample configuration files are installed into            *
+* ${PREFIX}/share/wanderlust.  Please copy to your home    *
+* directory and edit them.                                 *
+*                                                          *
+* If you are to use APOP authentication, Wanderlust will   *
+* require md5.el, which is included in Emacs/W3 package.   *
+************************************************************
