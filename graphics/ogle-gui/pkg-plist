@@ -1,33 +1,33 @@
 lib/ogle/ogle_gui
-share/gnome/locale/de/LC_MESSAGES/ogle_gui.mo
-share/gnome/locale/sv/LC_MESSAGES/ogle_gui.mo
-share/gnome/ogle_gui/angle.xpm
-share/gnome/ogle_gui/enter.xpm
-share/gnome/ogle_gui/fastforward.xpm
-share/gnome/ogle_gui/go_up.xpm
-share/gnome/ogle_gui/menus.xpm
-share/gnome/ogle_gui/ogle.xpm
-share/gnome/ogle_gui/ogle_gui.glade
-share/gnome/ogle_gui/rewind.xpm
-share/gnome/ogle_gui/skip_backwards.xpm
-share/gnome/ogle_gui/skip_forwards.xpm
-share/gnome/ogle_gui/stock_down_arrow.xpm
-share/gnome/ogle_gui/stock_first.xpm
-share/gnome/ogle_gui/stock_last.xpm
-share/gnome/ogle_gui/stock_left_arrow.xpm
-share/gnome/ogle_gui/stock_pause.xpm
-share/gnome/ogle_gui/stock_right_arrow.xpm
-share/gnome/ogle_gui/stock_stop.xpm
-share/gnome/ogle_gui/stock_timer.xpm
-share/gnome/ogle_gui/stock_timer_stopped.xpm
-share/gnome/ogle_gui/stock_up_arrow.xpm
-share/gnome/ogle_gui/stock_volume.xpm
-share/gnome/ogle_gui/subpicture.xpm
-@dirrm share/gnome/ogle_gui
-@unexec rmdir %D/share/gnome/locale/sv/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/gnome/locale/sv 2>/dev/null || true
-@unexec rmdir %D/share/gnome/locale/de/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/gnome/locale/de 2>/dev/null || true
-@unexec rmdir %D/share/gnome/locale 2>/dev/null || true
-@unexec rmdir %D/share/gnome 2>/dev/null || true
+%%SHARE_DATADIR%%/locale/de/LC_MESSAGES/ogle_gui.mo
+%%SHARE_DATADIR%%/locale/sv/LC_MESSAGES/ogle_gui.mo
+%%SHARE_DATADIR%%/ogle_gui/angle.xpm
+%%SHARE_DATADIR%%/ogle_gui/enter.xpm
+%%SHARE_DATADIR%%/ogle_gui/fastforward.xpm
+%%SHARE_DATADIR%%/ogle_gui/go_up.xpm
+%%SHARE_DATADIR%%/ogle_gui/menus.xpm
+%%SHARE_DATADIR%%/ogle_gui/ogle.xpm
+%%SHARE_DATADIR%%/ogle_gui/ogle_gui.glade
+%%SHARE_DATADIR%%/ogle_gui/rewind.xpm
+%%SHARE_DATADIR%%/ogle_gui/skip_backwards.xpm
+%%SHARE_DATADIR%%/ogle_gui/skip_forwards.xpm
+%%SHARE_DATADIR%%/ogle_gui/stock_down_arrow.xpm
+%%SHARE_DATADIR%%/ogle_gui/stock_first.xpm
+%%SHARE_DATADIR%%/ogle_gui/stock_last.xpm
+%%SHARE_DATADIR%%/ogle_gui/stock_left_arrow.xpm
+%%SHARE_DATADIR%%/ogle_gui/stock_pause.xpm
+%%SHARE_DATADIR%%/ogle_gui/stock_right_arrow.xpm
+%%SHARE_DATADIR%%/ogle_gui/stock_stop.xpm
+%%SHARE_DATADIR%%/ogle_gui/stock_timer.xpm
+%%SHARE_DATADIR%%/ogle_gui/stock_timer_stopped.xpm
+%%SHARE_DATADIR%%/ogle_gui/stock_up_arrow.xpm
+%%SHARE_DATADIR%%/ogle_gui/stock_volume.xpm
+%%SHARE_DATADIR%%/ogle_gui/subpicture.xpm
+@dirrm %%SHARE_DATADIR%%/ogle_gui
+@unexec rmdir %D/%%SHARE_DATADIR%%/locale/sv/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/%%SHARE_DATADIR%%/locale/sv 2>/dev/null || true
+@unexec rmdir %D/%%SHARE_DATADIR%%/locale/de/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/%%SHARE_DATADIR%%/locale/de 2>/dev/null || true
+@unexec rmdir %D/%%SHARE_DATADIR%%/locale 2>/dev/null || true
+@unexec rmdir %D/%%SHARE_DATADIR%% 2>/dev/null || true
 @dirrm lib/ogle
