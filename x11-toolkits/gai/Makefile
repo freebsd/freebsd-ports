@@ -30,9 +30,14 @@ PLIST_FILES=	include/gai/gai.h lib/libgai.so.0.5.2 lib/libgai.so.0 \
 PLIST_DIRS=	include/gai
 INSTALLS_SHLIB=	yes
 
+.if ${MACHINE_ARCH:L} == "amd64"
+CFLAGS+=	-fPIC
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e "s|sdl-config --|${SDL_CONFIG} --|g" ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e "s|lib/pkgconfig/|libdata/pkgconfig/|" ${WRKSRC}/gai/Makefile.in
+	${REINPLACE_CMD} -e "s|-O2|${CFLAGS}|g" ${WRKSRC}/gai/Makefile.in
 
 .if !defined(NOPORTDOCS)
 post-install:
