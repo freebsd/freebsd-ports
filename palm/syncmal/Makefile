@@ -8,7 +8,7 @@
 PORTNAME=	syncmal
 PORTVERSION=	0.62.2
 CATEGORIES=	palm
-MASTER_SITES=	http://people.atl.mediaone.net/jasonday/code/syncmal/
+MASTER_SITES=	http://jasonday.home.att.net/code/syncmal/
 DISTNAME=	jpilot-${PORTNAME}_${PORTVERSION}${EXTRACTSUFX}
 
 MAINTAINER=	fenner@FreeBSD.Org
