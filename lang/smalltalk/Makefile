@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	smalltalk
-PORTVERSION=	1.95.10
+PORTVERSION=	1.95.11
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -34,7 +34,7 @@ post-extract:
 	@${RM} -f ${WRKSRC}/doc/gst.info*
 
 pre-patch:
-	@find ${WRKSRC} -name 'Makefile.in' | xargs ${PERL} -pi -e \
+	@${FIND} ${WRKSRC} -name 'Makefile.in' | ${XARGS} ${PERL} -pi -e \
 		's| -release \$$\(VERSION\)| -avoid-version|g'
 	@${PERL} -pi -e 's|<malloc.h>|<stdlib.h>|g' ${WRKSRC}/libltdl/ltdl.c
 
