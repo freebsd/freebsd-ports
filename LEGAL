@@ -100,6 +100,7 @@ dnews			ports/news/dnews	Only free for schools and
 						free trial for everybody.
 						We currently ask for permission
 						to put a package on the CD-ROM.
+dsnake-*		ports/games/dsnake	Licence prohibits any reselling.
 edith*			ports/editors/edith	Redistribution not allowed.
 eijiro*.txt		ports/japanese/eijiro-fpw The original dictionary is not
 						free
