@@ -1,0 +1,8 @@
+The readlink utility when invoked with the pathname of a symbolic link as
+its argument dereferences the symbolic link and prints the name of target
+on standard output.  If readlink is invoked with an argument other than
+the pathname of a symbolic link, it exits with a nonzero exit code with-
+out printing anything.
+
+In other words, this is a command-line interface to the readlink(2)
+system call.

@@ -119,6 +119,7 @@
     SUBDIR += rdate
     SUBDIR += rotate
     SUBDIR += rtty
+    SUBDIR += readlink
     SUBDIR += rmonitor
     SUBDIR += roottail
     SUBDIR += ruby-quota
