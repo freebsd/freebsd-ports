@@ -1,0 +1,9 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/Apache/RegistryLexInfo.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/B/LexInfo.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/B/LexInfo/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/B/LexInfo/LexInfo.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/B/LexInfo/LexInfo.so
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/B/LexInfo
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/B 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/B 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Apache 2>/dev/null || true

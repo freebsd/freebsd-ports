@@ -333,6 +333,7 @@
     SUBDIR += p5-AxKit-XSP-Sendmail
     SUBDIR += p5-AxKit-XSP-Util
     SUBDIR += p5-AxKit-XSP-WebUtils
+    SUBDIR += p5-B-LexInfo
     SUBDIR += p5-Bundle-Slash
     SUBDIR += p5-Bundle-Sledge
     SUBDIR += p5-CGI-Application
