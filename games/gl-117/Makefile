@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gl-117
-PORTVERSION=	0.8
+PORTVERSION=	0.8.2
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -38,5 +38,6 @@ post-patch:
 	@cd ${WRKSRC}/src \
 		&& ${MV} loader_tga.cpp loader_tga.cpp.bak \
 		&& ${TR} -d '\015' < loader_tga.cpp.bak > loader_tga.cpp
+		@${REINPLACE_CMD} -e 's!"SDL/!"SDL11/!g' ${WRKSRC}/src/common.h
 
 .include <bsd.port.mk>
