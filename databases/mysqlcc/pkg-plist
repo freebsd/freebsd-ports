@@ -2,8 +2,40 @@ bin/mysqlcc
 %%DATADIR%%/error.wav
 %%DATADIR%%/warning.wav
 %%DATADIR%%/syntax.txt
+%%DATADIR%%/translations/Deutsch.qm
+%%DATADIR%%/translations/Deutsch.ts
+%%DATADIR%%/translations/French.qm
+%%DATADIR%%/translations/French.ts
+%%DATADIR%%/translations/Italian.qm
+%%DATADIR%%/translations/Italian.ts
+%%DATADIR%%/translations/Polish.qm
+%%DATADIR%%/translations/Polish.ts
+%%DATADIR%%/translations/Russian.qm
+%%DATADIR%%/translations/Russian.ts
+%%DATADIR%%/translations/Spanish.qm
+%%DATADIR%%/translations/Spanish.ts
+%%DATADIR%%/translations/Simplified_Chinese.qm
+%%DATADIR%%/translations/Simplified_Chinese.ts
+%%DATADIR%%/translations/Traditional_Chinese.qm
+%%DATADIR%%/translations/Traditional_Chinese.ts
 %%PORTDOCS%%%%DOCSDIR%%/Changelog.txt
 %%PORTDOCS%%%%DOCSDIR%%/README.txt
 %%PORTDOCS%%%%DOCSDIR%%/TODO.txt
+%%PORTDOCS%%%%DOCSDIR%%/plugins/hello/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/plugins/hello/hello.cpp
+%%PORTDOCS%%%%DOCSDIR%%/plugins/hello/hello.h
+%%PORTDOCS%%%%DOCSDIR%%/plugins/hello/hello_plugin.cpp
+%%PORTDOCS%%%%DOCSDIR%%/plugins/hello/hello_plugin.def
+%%PORTDOCS%%%%DOCSDIR%%/plugins/hello/hello_plugin.h
+%%PORTDOCS%%%%DOCSDIR%%/plugins/hello/hello_plugin.pro
+%%PORTDOCS%%%%DOCSDIR%%/plugins/hello/main.cpp
+%%PORTDOCS%%%%DOCSDIR%%/plugins/hello/moc_hello.cpp
+%%PORTDOCS%%%%DOCSDIR%%/plugins/service/StdAfx.cpp
+%%PORTDOCS%%%%DOCSDIR%%/plugins/service/StdAfx.h
+%%PORTDOCS%%%%DOCSDIR%%/plugins/service/service.cpp
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/plugins/hello
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/plugins/service
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/plugins
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DATADIR%%/translations
 @dirrm %%DATADIR%%
