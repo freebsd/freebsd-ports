@@ -6,14 +6,19 @@
 #
 
 PORTNAME=	crystalosx
-PORTVERSION=	0.1.0
-MASTER_SITES=	http://www.korny.dk/apps/
-DISTNAME=	CrystalOSX
+PORTVERSION=	0.1.1
+MASTER_SITES=	http://mywebpages.comcast.net/c0d3monkey/
+DISTNAME=	${PORTNAME}
 
 COMMENT=	KDE iconset
 
-WRKSRC=		"${WRKDIR}/${DISTNAME}"
+USE_ZIP=	yes
 
-BROKEN=		"Unfetchable"
+NO_WRKSUBDIR=	yes
 
 .include "${.CURDIR}/../kde-icons-noia/Makefile.icons"
+
+PLIST_SUB+=	BUILD_COOKIE=${BUILD_COOKIE:S|^${WRKDIR}||:S|^/||} \
+		CONFIGURE_COOKIE=${CONFIGURE_COOKIE:S|^${WRKDIR}||:S|^/||} \
+		EXTRACT_COOKIE=${EXTRACT_COOKIE:S|^${WRKDIR}||:S|^/||} \
+		PATCH_COOKIE=${PATCH_COOKIE:S|^${WRKDIR}||:S|^/||}

@@ -1,3 +1,8 @@
+share/icons/%%DIRNAME%%/.PLIST.mktmp
+share/icons/%%DIRNAME%%/%%BUILD_COOKIE%%
+share/icons/%%DIRNAME%%/%%CONFIGURE_COOKIE%%
+share/icons/%%DIRNAME%%/%%EXTRACT_COOKIE%%
+share/icons/%%DIRNAME%%/%%PATCH_COOKIE%%
 share/icons/%%DIRNAME%%/128x128/actions/fileprint.png
 share/icons/%%DIRNAME%%/128x128/apps/ADDRE000.png
 share/icons/%%DIRNAME%%/128x128/apps/ADDRE001.png
@@ -10,7 +15,6 @@ share/icons/%%DIRNAME%%/128x128/apps/BURN_2_X.png
 share/icons/%%DIRNAME%%/128x128/apps/BURN_3_X.png
 share/icons/%%DIRNAME%%/128x128/apps/CALCULAT.png
 share/icons/%%DIRNAME%%/128x128/apps/CLIP.png
-share/icons/%%DIRNAME%%/128x128/apps/CLOCK.png
 share/icons/%%DIRNAME%%/128x128/apps/CUSTOMIZ.png
 share/icons/%%DIRNAME%%/128x128/apps/DISK_UTI.png
 share/icons/%%DIRNAME%%/128x128/apps/FAVORITE.png
@@ -27,7 +31,6 @@ share/icons/%%DIRNAME%%/128x128/apps/Microsoft_Entourage.png
 share/icons/%%DIRNAME%%/128x128/apps/Microsoft_Excel.png
 share/icons/%%DIRNAME%%/128x128/apps/Microsoft_PowerPoint.png
 share/icons/%%DIRNAME%%/128x128/apps/Microsoft_Word.png
-share/icons/%%DIRNAME%%/128x128/apps/Network.png
 share/icons/%%DIRNAME%%/128x128/apps/Office.png
 share/icons/%%DIRNAME%%/128x128/apps/Paint.png
 share/icons/%%DIRNAME%%/128x128/apps/Painter.png
@@ -375,7 +378,6 @@ share/icons/%%DIRNAME%%/16x16/apps/MSN.png
 share/icons/%%DIRNAME%%/16x16/apps/Microsoft_Excel.png
 share/icons/%%DIRNAME%%/16x16/apps/Microsoft_PowerPoint.png
 share/icons/%%DIRNAME%%/16x16/apps/Microsoft_Word.png
-share/icons/%%DIRNAME%%/16x16/apps/Network.png
 share/icons/%%DIRNAME%%/16x16/apps/Office.png
 share/icons/%%DIRNAME%%/16x16/apps/PRINTER.png
 share/icons/%%DIRNAME%%/16x16/apps/Paint.png
@@ -878,7 +880,6 @@ share/icons/%%DIRNAME%%/32x32/apps/BURN_2_X.png
 share/icons/%%DIRNAME%%/32x32/apps/BURN_3_X.png
 share/icons/%%DIRNAME%%/32x32/apps/CALCULAT.png
 share/icons/%%DIRNAME%%/32x32/apps/CLIP.png
-share/icons/%%DIRNAME%%/32x32/apps/CLOCK.png
 share/icons/%%DIRNAME%%/32x32/apps/CUSTOMIZ.png
 share/icons/%%DIRNAME%%/32x32/apps/DISK_UTI.png
 share/icons/%%DIRNAME%%/32x32/apps/FAVORITE.png
@@ -895,7 +896,6 @@ share/icons/%%DIRNAME%%/32x32/apps/Microsoft_Entourage.png
 share/icons/%%DIRNAME%%/32x32/apps/Microsoft_Excel.png
 share/icons/%%DIRNAME%%/32x32/apps/Microsoft_PowerPoint.png
 share/icons/%%DIRNAME%%/32x32/apps/Microsoft_Word.png
-share/icons/%%DIRNAME%%/32x32/apps/Network.png
 share/icons/%%DIRNAME%%/32x32/apps/Office.png
 share/icons/%%DIRNAME%%/32x32/apps/Paint.png
 share/icons/%%DIRNAME%%/32x32/apps/Painter.png
@@ -1100,7 +1100,6 @@ share/icons/%%DIRNAME%%/32x32/filesystems/Back_up.png
 share/icons/%%DIRNAME%%/32x32/filesystems/Caution.png
 share/icons/%%DIRNAME%%/32x32/filesystems/Classic.png
 share/icons/%%DIRNAME%%/32x32/filesystems/Dewdrop.png
-share/icons/%%DIRNAME%%/32x32/filesystems/Favorites.png
 share/icons/%%DIRNAME%%/32x32/filesystems/Icons.png
 share/icons/%%DIRNAME%%/32x32/filesystems/Library.png
 share/icons/%%DIRNAME%%/32x32/filesystems/Movies.png
@@ -1278,7 +1277,6 @@ share/icons/%%DIRNAME%%/48x48/apps/BURN_2_X.png
 share/icons/%%DIRNAME%%/48x48/apps/BURN_3_X.png
 share/icons/%%DIRNAME%%/48x48/apps/CALCULAT.png
 share/icons/%%DIRNAME%%/48x48/apps/CLIP.png
-share/icons/%%DIRNAME%%/48x48/apps/CLOCK.png
 share/icons/%%DIRNAME%%/48x48/apps/CUSTOMIZ.png
 share/icons/%%DIRNAME%%/48x48/apps/DISK_UTI.png
 share/icons/%%DIRNAME%%/48x48/apps/FAVORITE.png
@@ -1297,7 +1295,6 @@ share/icons/%%DIRNAME%%/48x48/apps/Microsoft_Entourage.png
 share/icons/%%DIRNAME%%/48x48/apps/Microsoft_Excel.png
 share/icons/%%DIRNAME%%/48x48/apps/Microsoft_PowerPoint.png
 share/icons/%%DIRNAME%%/48x48/apps/Microsoft_Word.png
-share/icons/%%DIRNAME%%/48x48/apps/Network.png
 share/icons/%%DIRNAME%%/48x48/apps/Office.png
 share/icons/%%DIRNAME%%/48x48/apps/Paint.png
 share/icons/%%DIRNAME%%/48x48/apps/Painter.png
@@ -1707,7 +1704,6 @@ share/icons/%%DIRNAME%%/64x64/apps/BURN_2_X.png
 share/icons/%%DIRNAME%%/64x64/apps/BURN_3_X.png
 share/icons/%%DIRNAME%%/64x64/apps/CALCULAT.png
 share/icons/%%DIRNAME%%/64x64/apps/CLIP.png
-share/icons/%%DIRNAME%%/64x64/apps/CLOCK.png
 share/icons/%%DIRNAME%%/64x64/apps/CUSTOMIZ.png
 share/icons/%%DIRNAME%%/64x64/apps/DISK_UTI.png
 share/icons/%%DIRNAME%%/64x64/apps/FAVORITE.png
@@ -1724,7 +1720,6 @@ share/icons/%%DIRNAME%%/64x64/apps/MSN.png
 share/icons/%%DIRNAME%%/64x64/apps/Microsoft_Excel.png
 share/icons/%%DIRNAME%%/64x64/apps/Microsoft_PowerPoint.png
 share/icons/%%DIRNAME%%/64x64/apps/Microsoft_Word.png
-share/icons/%%DIRNAME%%/64x64/apps/Network.png
 share/icons/%%DIRNAME%%/64x64/apps/Office.png
 share/icons/%%DIRNAME%%/64x64/apps/Paint.png
 share/icons/%%DIRNAME%%/64x64/apps/Painter.png
