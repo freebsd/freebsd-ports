@@ -1,6 +1,10 @@
-The popd server is a fast, full RFC1939 implimentation.
+The popd server is a fast, full, BSD-licensed RFC1939 implementation.
 
 Popd allows mail for users in multiple domains to be served from
 one server in `virtual' mode.  It allows for mail to be expired
 from the server when users collect mail older than a specified
 time, falsification of UIDL information and removal of old mail.
+
+Additional features include SSL and proxy support, as well as
+support for a variety of mailbox formats.  The bulletin feature
+is nonfunctional in this release.

@@ -1,0 +1,27 @@
+--- src/Makefile.orig	Thu Dec 27 12:13:00 2001
++++ src/Makefile	Fri Jan 18 16:14:29 2002
+@@ -3,14 +3,19 @@
+ #
+ 
+ PROG=	popd
+-CFLAGS+=	-Wall -Werror -pedantic -I../lib -L../lib -L/usr/local/lib \
++CFLAGS+=	-Wall -Werror -pedantic -I../lib -L../lib \
+     -DUSE_SSL -DUSE_IPV6
+ LDADD=	-lcrypt -lmd -lradius -lpoputil -lssl -lcrypto
+-DPSDD=	${LIBCRYPT} ${LIBMD}
++DPADD=	${LIBCRYPT} ${LIBMD} ${LIBRADIUS}  ${LIBSSL} ${LIBCRYPTO} \
++    ../lib/libpoputil.a
+ SRCS=	popd.c authenticate.c transaction.c signals.c proxy.c
+ MAN8=	popd.8
+-DESTDIR=/usr/local/
+-BINDIR=bin
+-MANDIR=share/man
++DESTDIR=	${PREFIX}/
++PREFIX?=	/usr/local
++BINDIR=libexec
++MANDIR=man/man
++
++popd.8:	popd.mdoc
++	sed -e "s,XX_PREFIX_XX,${PREFIX},g" < popd.mdoc > popd.8
+ 
+ .include <bsd.prog.mk>
