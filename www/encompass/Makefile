@@ -7,6 +7,7 @@
 
 PORTNAME=	encompass
 PORTVERSION=	0.4.5
+PORTREVISION=	1
 CATEGORIES=	www gnome
 MASTER_SITES=	http://elysium.zoned.net/${PORTNAME}/ \
 		http://encompass.sourceforge.net/ \
