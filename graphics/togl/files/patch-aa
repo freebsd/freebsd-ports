@@ -1,5 +1,8 @@
---- Makefile.orig	Thu Mar 12 13:11:26 1998
-+++ Makefile	Thu Aug 10 21:13:42 2000
+
+$FreeBSD$
+
+--- Makefile.orig	Thu Mar 12 06:11:26 1998
++++ Makefile	Tue Aug 14 12:52:23 2001
 @@ -58,26 +58,30 @@
  
  
@@ -24,9 +27,9 @@
 -# Where to find tcl.h, tk.h, OpenGL/Mesa headers, etc:
 -INCLUDES = -I/usr/local/include -I/usr/include/tcl
 +# Where to find tc.hl, tk.h, OpenGL/Mesa headers, etc:
-+INCLUDES = -I${LOCALBASE}/include/tcl8.2 \
-+           -I${LOCALBASE}/include/tk8.2 \
-+           -I${LOCALBASE}/include/tk8.2/generic \
++INCLUDES = -I${LOCALBASE}/include/tcl8.3 \
++           -I${LOCALBASE}/include/tk8.3 \
++           -I${LOCALBASE}/include/tk8.3/generic \
 +           -I${X11BASE}/include
  
  # Where to find libtcl.a, libtk.a, OpenGL/Mesa libraries:
@@ -36,7 +39,7 @@
  
  # Libraries to link with (-ldl for Linux only?):
 -LIBS = -ltk -ltcl -lGLU -lGL -L/usr/X11/lib -lX11 -lXmu -lXext -lXt -lm -ldl
-+LIBS = -ltk82 -ltcl82 -lGLU -lGL -lX11 -lXmu -lXext -lXt -lm
++LIBS = -ltk83 -ltcl83 -lGLU -lGL -lX11 -lXmu -lXext -lXt -lm $(PTHREAD_LIBS)
  
  TK_FLAGS =
  
@@ -45,7 +48,7 @@
  
  
 -CFLAGS = $(COPTS) $(INCLUDES) $(TK_FLAGS)
-+CFLAGS += $(COPTS) $(INCLUDES) $(TK_FLAGS)
++CFLAGS += $(COPTS) $(INCLUDES) $(TK_FLAGS) $(PTHREAD_CFLAGS)
  
  LFLAGS = $(LIBDIRS)
  
