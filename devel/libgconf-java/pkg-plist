@@ -1,0 +1,4 @@
+lib/libgconfjava%%GCONF_API_VERSION%%.so
+lib/libgconfjava%%GCONF_API_VERSION%%.so.%%PORTVERSION%%
+share/java/classes/gconf%%GCONF_API_VERSION%%-%%PORTVERSION%%.jar
+share/java/classes/gconf%%GCONF_API_VERSION%%.jar
