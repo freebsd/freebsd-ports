@@ -1,13 +1,13 @@
 # New ports collection makefile for:    apache HTTPD and HTTPSD
-# Version required:     1.2b3
+# Version required:     1.2b4
 # Date created:         Fri Aug 25 16:42:36 CDT 1995
 # Whom:                 erich@rrnet.com
 #
-# $Id: Makefile,v 1.24 1996/12/11 21:04:21 markm Exp $
+# $Id: Makefile,v 1.25 1996/12/25 22:53:22 ache Exp $
 #
 
-DISTNAME=       apache_1.2b3
-PKGNAME=        apache-1.2b3
+DISTNAME=       apache_1.2b4
+PKGNAME=        apache-1.2b4
 CATEGORIES=	www
 MASTER_SITES=   ftp://www.apache.org/apache/dist/
 
