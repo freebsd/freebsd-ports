@@ -1,0 +1,8 @@
+This module implements a simple SAX filter that provides XInclude
+support.  It does NOT support XPointer.
+
+WWW: http://search.cpan.org/search?dist=XML-Filter-XInclude
+WWW: http://www.w3.org/TR/XInclude
+
+-- Sergey Skvortsov
+skv@FreeBSD.org
