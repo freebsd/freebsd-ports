@@ -8,7 +8,7 @@
 
 DISTNAME=	wmhm-1.3
 CATEGORIES=	sysutils windowmaker
-MASTER_SITES= 	ftp://mongol.dhis.org/pub/wmhm/ \
+MASTER_SITES= 	ftp://mongol.dhis.net/pub/wmhm/ \
 		http://www.es.co.nz/~mmuir/
 
 MAINTAINER=	mmuir@es.co.nz
