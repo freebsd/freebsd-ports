@@ -8,8 +8,7 @@
 PORTNAME=	id3ren
 PORTVERSION=	0.97a
 CATEGORIES=	audio
-MASTER_SITES=	http://adis.on.ca/pub/Linux/cd-tools/ \
-		http://cbothamy.free.fr/projects/id3ren/
+MASTER_SITES=	http://cbothamy.free.fr/projects/id3ren/
 DISTNAME=	id3ren97a
 
 MAINTAINER=	jonny@jonny.eng.br
