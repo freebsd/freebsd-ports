@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	textproc java devel
 MASTER_SITES=	https://javacc.dev.java.net/files/documents/17/685/
 
-MAINTAINER=	gerweck@yahoo.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Compiler compiler for Java; includes tools for building syntax trees
 
 FETCH_DEPENDS=	${LOCALBASE}/bin/wget:${PORTSDIR}/ftp/wget
