@@ -7,6 +7,7 @@
 
 PORTNAME=	bsddb
 PORTVERSION=	${PYTHON_PORTVERSION}
+PORTREVISION=	1
 CATEGORIES=	databases python
 MASTER_SITES=	${PYTHON_MASTER_SITES}
 MASTER_SITE_SUBDIR=	${PYTHON_MASTER_SITE_SUBDIR}
@@ -17,12 +18,15 @@ MAINTAINER=	perky@FreeBSD.org
 COMMENT=	Python bindings to the Berkeley DB library
 
 .if defined(WITH_DB3)
-LIB_DEPENDS=	db3.3:${PORTSDIR}/databases/db3
-DBVERSION=	db3     
-PKGNAMESUFFIX=	-db3
+LIB_DEPENDS=    db3.3:${PORTSDIR}/databases/db3
+DBVERSION=      db3
+PKGNAMESUFFIX=  -db3
+.elif defined(WITH_DB4)
+LIB_DEPENDS=    db4.0:${PORTSDIR}/databases/db4
+DBVERSION=      db4
 .else
-LIB_DEPENDS=	db4.0:${PORTSDIR}/databases/db4
-DBVERSION=	db4     
+LIB_DEPENDS=    db41.1:${PORTSDIR}/databases/db41
+DBVERSION=      db41
 .endif
 
 DIST_SUBDIR=	python
