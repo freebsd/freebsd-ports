@@ -7,6 +7,7 @@
 
 PORTNAME=	HTML-Embperl
 PORTVERSION=	1.3.6
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	HTML
@@ -39,7 +40,8 @@ MAN3=		HTML::Embperl.3 HTML::Embperl::Faq.3 HTML::Embperl::Changes.3 \
 		HTML::Embperl::Intro.3 HTML::Embperl::Session.3 HTML::Embperl::Mail.3 \
 		HTML::Embperl::INSTALL.3 HTML::Embperl::NEWS.3 HTML::EmbperlObject.3 \
 		HTML::Embperl::IntroD.3 HTML::EmbperlD.3 HTML::Embperl::Features.3 \
-		HTML::Embperl::IntroEmbperlObject.3
+		HTML::Embperl::IntroEmbperlObject.3 HTML::Embperl::CVS.3
+
 MAN1=		embpexec.pl.1
 
 .include <bsd.port.pre.mk>

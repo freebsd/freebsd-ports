@@ -1,6 +1,7 @@
 bin/embpexec.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/HTML/Embperl.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/HTML/Embperl.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/HTML/Embperl/CVS.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/HTML/Embperl/Changes.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/HTML/Embperl/Faq.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/HTML/Embperl/Features.pod
