@@ -7,6 +7,7 @@
 
 PORTNAME=	Mesa
 PORTVERSION=	5.0.1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.fu-berlin.de/pub/unix/X11/graphics/Mesa/
