@@ -41,7 +41,7 @@
 .Op Fl p Ar dir
 .Op Fl r Ar dir
 .Op Fl t Ar tag
-.Op Ar port ...
+.Op Ar port | VAR=VAL ...
 .Sh DESCRIPTION
 .Nm
 maintains an updated ports tree, and fetches and builds ports
@@ -84,7 +84,7 @@ List the packing lists for the selected ports.
 .It Fl l
 List the selected ports.
 .It Fl p Ar dir
-Specify the ports directory (normally 
+Specify the ports directory (normally
 .Pa /usr/ports ) .
 .It Fl r Ar dir
 Specify the CVS root directory.
@@ -107,6 +107,14 @@ Verbose mode: show more information about what is being done.
 Show the URL of the port's web site if there is one listed in the port
 description.
 .El
+.Ss Environment settings
+Any command line argument of the form
+.Ar VAR=VAL
+is interpreted as a variable assignment which will be exported into
+subprocesses' environments.
+Thus compile-time configuration options can be specified on the
+.Nm
+command line.
 .Ss Port names
 The port names listed on the command line may be either unqualified or
 fully qualified.

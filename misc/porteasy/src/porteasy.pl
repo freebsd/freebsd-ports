@@ -33,7 +33,7 @@ use strict;
 use Fcntl;
 use Getopt::Long;
 
-my $VERSION	= "2.7.5";
+my $VERSION	= "2.7.6";
 my $COPYRIGHT	= "Copyright (c) 2000-2003 Dag-Erling Smørgrav. " .
 		  "All rights reserved.";
 
@@ -87,6 +87,17 @@ my %have_dep;			# Dependencies that are already present
 my %port_dep;			# Map ports to their dependency lists
 my %installed;			# Installed ports
 my $capture;			# Capture output
+
+#
+# Set process title
+#
+sub setproctitle(;$) {
+    my $title = shift;
+
+    $0 = "porteasy $VERSION";
+    $0 .= ": $title"
+	if defined($title);
+}
 
 #
 # Shortcut for 'print STDERR'
@@ -635,6 +646,8 @@ sub update_ports_tree(@) {
 	my $master;		# Master port
 	my $dependency;		# Dependency
 
+	setproctitle("updating");
+
 	# Determine which ports need updating
 	foreach $item (@additional) {
 	    next if $processed{$item};
@@ -674,6 +687,8 @@ sub update_ports_tree(@) {
 
 	# Process all unprocessed ports we know of so far
 	foreach $port (@update_now) {
+	    setproctitle("updating $port");
+
 	    # See if the port has an unprocessed master port
 	    if (($master = find_master($port)) && !$processed{$master}) {
 		add_port($master, &REQ_MASTER);
@@ -709,6 +724,7 @@ sub update_ports_tree(@) {
 	    $processed{$port} = 1;
 	}
     }
+    setproctitle();
 }
 
 #
@@ -898,8 +914,10 @@ sub list_installed() {
 sub clean_port($) {
     my $port = shift;		# Port to clean
 
+    setproctitle("cleaning $port");
     make($port, "clean")
 	or bsd::warnx("failed to clean %s", $port);
+    setproctitle();
 }
 
 #
@@ -925,8 +943,10 @@ sub clean_tree() {
 sub fetch_port($) {
     my $port = shift;		# Port to fetch
 
+    setproctitle("fetching $port");
     make($port, "fetch")
 	or bsd::errx(1, "failed to fetch %s", $port);
+    setproctitle();
 }
 
 #
@@ -939,21 +959,21 @@ sub build_port($) {
 
     if ($packages) {
 	push(@makeargs, "package");
-	push(@makeargs, "DEPENDS_TARGET=package clean", "-DNOCLEANDEPENDS")
-	    unless ($dontclean);
+	push(@makeargs, "DEPENDS_TARGET=package");
     } else {
 	push(@makeargs, "install");
-	push(@makeargs, "DEPENDS_TARGET=install clean", "-DNOCLEANDEPENDS")
-	    unless ($dontclean);
     }
     if ($force) {
 	push(@makeargs, "-DFORCE_PKG_REGISTER");
     }
     if (!$dontclean) {
 	push(@makeargs, "clean");
+	push(@makeargs, "DEPENDS_CLEAN=YES");
     }
+    setproctitle("building $port");
     make($port, @makeargs)
 	or bsd::errx(1, "failed to %s %s", $packages ? "package" : "build", $port);
+    setproctitle();
 }
 
 #
@@ -1020,6 +1040,9 @@ Report bugs to <des\@freebsd.org>.
 MAIN:{
     my $port;			# Port name
     my $err = 0;		# Error count
+    my $requested = 0;		# Number of ports on command line
+
+    setproctitle();
 
     # Show usage if no arguments were specified on the command line
     if (!@ARGV) {
@@ -1106,8 +1129,13 @@ MAIN:{
     update_index();
 
     # Step 2: build list of explicitly required ports
-    foreach $port (@ARGV) {
-	$err += add_port($port, &REQ_EXPLICIT);
+    foreach my $arg (@ARGV) {
+	if ($arg =~ m/^([A-Z0-9_]+)=(.*)$/) {
+	    $ENV{$1} = $2;
+	} else {
+	    $err += add_port($arg, &REQ_EXPLICIT);
+	    ++$requested;
+	}
     }
     if ($err) {
 	bsd::errx(1, "some required ports were not found.");
@@ -1174,7 +1202,7 @@ MAIN:{
 
     # Step A: clean the ports directories (or the entire tree)
     if ($clean) {
-	if (!@ARGV) {
+	if (!$requested) {
 	    clean_tree();
 	} else {
 	    foreach $port (keys(%reqd)) {
