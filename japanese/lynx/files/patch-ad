@@ -1,17 +1,6 @@
---- src/LYHistory.c.orig	Thu Dec 24 20:27:23 1998
-+++ src/LYHistory.c	Mon Feb 22 15:01:18 1999
-@@ -23,6 +23,10 @@
- #include <LYexit.h>
- #include <LYLeaks.h>
- 
-+#include <HTCJK.h>
-+extern HTCJKlang   HTCJK;
-+extern HTkcode     kanji_code;
-+
- PUBLIC HTList * Visited_Links = NULL;	/* List of safe popped docs. */
- 
- /*
-@@ -401,6 +405,20 @@
+--- src/LYHistory.c.orig	Sat Apr  1 09:33:40 2000
++++ src/LYHistory.c	Thu Jul 13 17:43:32 2000
+@@ -528,6 +528,20 @@
  	} else {
  	    StrAllocCopy(Title, NO_TITLE);
  	}
@@ -32,7 +21,7 @@
  	fprintf(fp0,
  		"%s<em>%d</em>. <tab id=t%d><a href=\"LYNXHIST:%d\">%s</a>\n",
  		(x > 99 ? "" : x < 10 ? "  " : " "),
-@@ -552,6 +570,20 @@
+@@ -765,6 +779,20 @@
  		StrAllocCopy(Title , NO_TITLE);
  	} else {
  	    StrAllocCopy(Title , NO_TITLE);

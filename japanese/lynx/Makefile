@@ -8,16 +8,14 @@
 PORTNAME=	lynx
 PORTVERSION=	${VERSION}.${MINOR_VERSION:S/.//}
 CATEGORIES=	japanese www
-MASTER_SITES=   http://sol.slcc.edu/lynx/current/
+MASTER_SITES=   http://lynx.isc.org/current/
 DISTNAME=	${PORTNAME}${VERSION}${MINOR_VERSION}
 
 MAINTAINER=	shige@FreeBSD.org
 
-FORBIDDEN=  "Riddled with buffer overflows exploitable by a malicious server to execute code as the local user."
-
 WRKSRC=		${WRKDIR}/${PORTNAME}${VERSION:S/./-/g}
 
-VERSION=	2.8.2
+VERSION=	2.8.3
 MINOR_VERSION=	rel.1
 
 USE_BZIP2?=	YES
@@ -25,7 +23,8 @@ GNU_CONFIGURE=  YES
 CONFIGURE_ARGS= --with-screen=ncurses --with-zlib \
 		--libdir="${PREFIX}/${L_ETCDIR}" \
 		--enable-nsl-fork --enable-defaults-colors --enable-prettysrc \
-		--enable-persistent-cookies --enable-gzip-help
+		--enable-persistent-cookies --enable-gzip-help \
+		 --enable-cjk
 MAKEFILE=       makefile
 MAKE_ARGS=	DOCDIR=${PREFIX}/${L_DOCDIR} HELPDIR=${PREFIX}/${L_HELPDIR}
 PLIST_SUB=	DOCDIR=${L_DOCDIR} HELPDIR=${L_HELPDIR} \
