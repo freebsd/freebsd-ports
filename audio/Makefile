@@ -61,6 +61,7 @@
     SUBDIR += dekagen
     SUBDIR += denemo
     SUBDIR += discid
+    SUBDIR += drumpiler
     SUBDIR += easytag
     SUBDIR += eawpats
     SUBDIR += ecasound
