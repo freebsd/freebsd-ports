@@ -1,0 +1,22 @@
+#!/bin/sh
+
+if [ "$2" != "POST-DEINSTALL" ]; then
+    exit 0
+fi
+
+USER=ejabberd
+
+if pw usershow "${USER}" 2>/dev/null 1>&2; then
+	echo "To delete ejabberd user permanently, use 'pw userdel ${USER}'"
+fi
+
+if pw groupshow "${USER}" 2>/dev/null 1>&2; then
+	echo "To delete ejabberd group permanently, use 'pw groupdel ${USER}'"
+fi
+
+rm -Rf /var/run/ejabberd
+
+echo "If you wish to delete ejabberd data and log files, remove"
+echo "'/var/spool/ejabberd' and '/var/log/ejabberd' directories."
+
+exit 0

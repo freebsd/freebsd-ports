@@ -1,0 +1,9 @@
+--- ejabberdctl.orig	Thu Jan  1 03:00:00 1970
++++ ejabberdctl	Sat Jul  3 15:53:38 2004
+@@ -0,0 +1,6 @@
++#!/bin/sh
++
++[ -r /var/run/ejabberd/.erlang.cookie ] && HOME=/var/run/ejabberd
++
++exec erl -noinput -sname ejabberdctl -s ejabberd_ctl -extra ejabberd@`hostname -s` "$@"
++
