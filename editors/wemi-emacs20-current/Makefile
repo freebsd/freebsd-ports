@@ -3,11 +3,11 @@
 # Date created:		23 September 1998
 # Whom:			Shigeyuki FUKUSHIMA <shige@kuis.kyoto-u.ac.jp>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/01/18 04:07:26 steve Exp $
 #
 
 DISTNAME=	wemi-${WEMI_VER}
-CATEGORIES=	editors elisps
+CATEGORIES=	editors elisp
 MASTER_SITES=	ftp://ftp.jaist.ac.jp/pub/GNU/elisp/semi/wemi/
 
 MAINTAINER?=	shige@kuis.kyoto-u.ac.jp
