@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-SNAPDATE=	2002-10-07
+SNAPDATE=	2002-10-14
 SNAPVER=	${SNAPDATE:S/-//g}
 #CVS_DATE=	${SNAPDATE} 18:53:04 EDT
 
@@ -38,7 +38,7 @@ USE_BZIP2=	yes
 
 PATCH_WRKSRC=	${SRCDIR}
 CONFIGURE_SCRIPT=	../${SRCDIR:C/${WRKDIR}//}/configure
-#NOMANCOMPRESS=	yes	# to hard to deal with differences on 5-cur and releng4
+NOMANCOMPRESS=	yes	# to hard to deal with differences on 5-cur and releng4
 
 .include <bsd.port.pre.mk>
 
@@ -79,7 +79,7 @@ CONFIGURE_ARGS+= --enable-threads=posix
 .endif
 ALL_TARGET=	bootstrap
 MAN1=		cpp33.1 g++33.1 g77-33.1 gcc33.1 gcov33.1 \
-		gcj33.1 gcjh33.1 gij.1 \
+		gcj33.1 gcjh33.1 gij.1 grepjar33.1 jar33.1 \
 		jcf-dump33.1 jv-scan33.1 jv-convert.1
 MAN7=		fsf-funding.7 gfdl.7 gpl.7
 
