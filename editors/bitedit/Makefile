@@ -6,14 +6,14 @@
 # $FreeBSD$
 
 PORTNAME=	bitedit
-PORTVERSION=	0.9.2
+PORTVERSION=	0.9.4
 CATEGORIES=	editors
 MASTER_SITES=	http://ledge.co.za/software/bitedit/
 
 MAINTAINER=	mich@FreeBSD.org
 COMMENT=	Bitedit is a simple ncurses program for editing a file
 
-MAKE_ARGS=	CFLAGS="${CFLAGS} -DDISABLE_SETFONT"
+MAKE_ARGS=	CFLAGS="${CFLAGS} -DVERSION=\\\"${PORTVERSION}\\\""
 
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}
 
