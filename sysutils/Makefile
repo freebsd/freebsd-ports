@@ -115,6 +115,7 @@
     SUBDIR += filedupe
     SUBDIR += filelight
     SUBDIR += fileprune
+    SUBDIR += fileschanged
     SUBDIR += finfo
     SUBDIR += flasher
     SUBDIR += flexbackup

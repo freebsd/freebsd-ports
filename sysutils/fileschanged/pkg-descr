@@ -1,0 +1,7 @@
+The fileschanged utility is a client to the FAM (File Alteration Monitor)
+server that is now available in some distributions. Here's how the fileschanged
+FAM client works: you give it some filenames on the command line and then it
+monitors those files for changes. When it discovers that a file has changed
+(or has been altered), it displays the filename on the standard-output.
+
+WWW: http://fileschanged.sourceforge.net/

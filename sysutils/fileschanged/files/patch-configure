@@ -1,0 +1,11 @@
+--- configure.orig Mon Feb 23 02:18:08 2004
++++ configure Tue May 18 15:08:38 2004
+@@ -341,7 +341,7 @@
+ bindir='${exec_prefix}/bin'
+ sbindir='${exec_prefix}/sbin'
+ libexecdir='${exec_prefix}/libexec'
+-datadir='${prefix}/share'
++datadir='${prefix}/share/doc'
+ sysconfdir='${prefix}/etc'
+ sharedstatedir='${prefix}/com'
+ localstatedir='${prefix}/var'
