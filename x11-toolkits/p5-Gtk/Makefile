@@ -18,7 +18,7 @@ MAINTAINER=	vanilla@FreeBSD.org
 COMMENT=	The base module of Gtk-Perl
 
 BUILD_DEPENDS=	${SITE_PERL}/XML/Writer.pm:${PORTSDIR}/textproc/p5-XML-Writer \
-		${SITE_PERL}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser
+		${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser
 
 USE_GNOME=	gtk12
 PERL_CONFIGURE=	yes
