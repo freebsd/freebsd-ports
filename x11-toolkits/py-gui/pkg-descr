@@ -1,0 +1,5 @@
+PyGUI is a GUI API that is designed specifically for Python, taking
+advantage of Python's unique language features and working smoothly
+with Python's data types.
+
+WWW: http://www.cosc.canterbury.ac.nz/~greg/python_gui/

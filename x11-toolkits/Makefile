@@ -142,6 +142,7 @@
     SUBDIR += py-gtkextra
     SUBDIR += py-gtkglext
     SUBDIR += py-gtkscintilla
+    SUBDIR += py-gui
     SUBDIR += py-kde
     SUBDIR += py-qt
     SUBDIR += py-tkinter
