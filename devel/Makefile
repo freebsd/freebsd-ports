@@ -363,6 +363,7 @@
     SUBDIR += ruby-intl
     SUBDIR += ruby-libglade
     SUBDIR += ruby-locale
+    SUBDIR += ruby-mmap
     SUBDIR += ruby-mutexm
     SUBDIR += ruby-optparse
     SUBDIR += ruby-property

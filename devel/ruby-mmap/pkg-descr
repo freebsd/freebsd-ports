@@ -1,0 +1,4 @@
+Ruby-Mmap is an interface to manage memory-mapped file objects.
+
+Author:	Guy Decoux <ts@moulon.inra.fr>
+WWW:	http://moulon.inra.fr/ruby/mmap.html
