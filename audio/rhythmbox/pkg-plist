@@ -67,6 +67,7 @@ share/gnome/pixmaps/rhythmbox.png
 share/gnome/rhythmbox/art/about-logo.png
 share/gnome/rhythmbox/art/rhythmbox-album.png
 share/gnome/rhythmbox/art/rhythmbox-audiocd.png
+share/gnome/rhythmbox/art/rhythmbox-automatic-playlist.png
 share/gnome/rhythmbox/art/rhythmbox-dnd.png
 share/gnome/rhythmbox/art/rhythmbox-iradio.png
 share/gnome/rhythmbox/art/rhythmbox-library.png
@@ -76,6 +77,7 @@ share/gnome/rhythmbox/art/rhythmbox-pause.png
 share/gnome/rhythmbox/art/rhythmbox-paused.png
 share/gnome/rhythmbox/art/rhythmbox-play.png
 share/gnome/rhythmbox/art/rhythmbox-playing.png
+share/gnome/rhythmbox/art/rhythmbox-playlist-menu.png
 share/gnome/rhythmbox/art/rhythmbox-playlist.png
 share/gnome/rhythmbox/art/rhythmbox-previous.png
 share/gnome/rhythmbox/art/rhythmbox-repeat.png
@@ -93,6 +95,7 @@ share/gnome/rhythmbox/art/rhythmbox-volume-min.png
 share/gnome/rhythmbox/art/rhythmbox-volume-mute.png
 share/gnome/rhythmbox/art/rhythmbox-volume-zero.png
 share/gnome/rhythmbox/glade/buffering-dialog.glade
+share/gnome/rhythmbox/glade/create-playlist.glade
 share/gnome/rhythmbox/glade/druid.glade
 share/gnome/rhythmbox/glade/general-prefs.glade
 share/gnome/rhythmbox/glade/library-prefs.glade
@@ -120,6 +123,7 @@ share/locale/el/LC_MESSAGES/rhythmbox.mo
 share/locale/es/LC_MESSAGES/rhythmbox.mo
 share/locale/fi/LC_MESSAGES/rhythmbox.mo
 share/locale/fr/LC_MESSAGES/rhythmbox.mo
+share/locale/id/LC_MESSAGES/rhythmbox.mo
 share/locale/it/LC_MESSAGES/rhythmbox.mo
 share/locale/ja/LC_MESSAGES/rhythmbox.mo
 share/locale/ko/LC_MESSAGES/rhythmbox.mo
@@ -130,6 +134,7 @@ share/locale/no/LC_MESSAGES/rhythmbox.mo
 share/locale/pl/LC_MESSAGES/rhythmbox.mo
 share/locale/pt/LC_MESSAGES/rhythmbox.mo
 share/locale/pt_BR/LC_MESSAGES/rhythmbox.mo
+share/locale/ro/LC_MESSAGES/rhythmbox.mo
 share/locale/ru/LC_MESSAGES/rhythmbox.mo
 share/locale/sr/LC_MESSAGES/rhythmbox.mo
 share/locale/sr@Latn/LC_MESSAGES/rhythmbox.mo
