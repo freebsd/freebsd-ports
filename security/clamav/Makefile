@@ -72,6 +72,12 @@ CFLAGS+=	-O
 LDFLAGS+=	-lcipher
 .endif
 
+.if ${OSVERSION} > 501113
+# Approximate time libgmp was removed from the base system
+LDFLAGS+=	-L${LOCALBASE}/lib
+LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4
+.endif
+
 .if defined(WITH_MILTER)
 USE_GETOPT_LONG=	yes
 CONFIGURE_ARGS+=	--enable-milter
