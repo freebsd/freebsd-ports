@@ -4371,7 +4371,6 @@ net-snmp-tkmib	ports/net/net-snmp-tkmib
 net-snmp4	ports/net/net-snmp4
 netams		ports/net/netams
 netatalk	ports/net/netatalk
-netboot		ports/net/netboot
 netcat		ports/net/netcat
 netcdf		ports/math/netcdf
 netcomponents	ports/java/netcomponents
@@ -5958,6 +5957,7 @@ ports_mbone	ports/mbone
 ports_misc	ports/misc
 ports_multimedia	ports/multimedia
 ports_net	ports/net
+ports_netboot	ports/net/netboot
 ports_news	ports/news
 ports_ntp	ports/net/ntp
 ports_ntp-devel	ports/net/ntp-devel
