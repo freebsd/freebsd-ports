@@ -6,23 +6,26 @@
 #
 
 PORTNAME=	newscache
-PORTVERSION=	0.99.22
-PORTREVISION=	1
+PORTVERSION=	1.1.12
 CATEGORIES=	news
-MASTER_SITES=	http://members.aon.at/hstraub/linux/newscache/ \
+MASTER_SITES=	http://www.hstraub.at/linux/downloads/src/ \
 		http://www.infosys.tuwien.ac.at/NewsCache/download/
 DISTNAME=	NewsCache-${PORTVERSION}
 
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	NewsCache is a free cache server for USENET News
 
-WRKSRC=		${WRKDIR}/NewsCache
+LIB_DEPENDS=	socket[+][+].1:${PORTSDIR}/net/libsocket++
 
-GNU_CONFIGURE=	yes
+USE_AUTOMAKE_VER=	15
 USE_GMAKE=	yes
-USE_GCC=	2.95
+CONFIGURE_ENV=	CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include" LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" 
+MAKE_ENV=	LIBS="-lsocket++"
 
 MAN5=	newscache.conf.5
-MAN8=	NewsCache.8 NewsCacheClean.8 updatenews.8
+MAN8=	newscache.8 newscacheclean.8 updatenews.8
+
+post-patch:
+	cd ${WRKSRC}; ./autogen
 
 .include <bsd.port.mk>
