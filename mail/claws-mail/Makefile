@@ -7,6 +7,7 @@
 
 PORTNAME=	sylpheed-claws
 PORTVERSION=	0.9.10
+PORTREVISION=	1
 CATEGORIES=	mail news ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sylpheed-claws
@@ -32,6 +33,10 @@ USE_REINPLACE=	yes
 
 MAN1=		sylpheed-claws.1
 
+.if defined(NOPORTDOCS)
+EXTRA_PATCHES=		${FILESDIR}/extra-doc:Makefile.in
+.endif
+
 .if !defined(WITHOUT_SSL)
 USE_OPENSSL=		yes
 CONFIGURE_ARGS=		--enable-openssl --with-openssl-includes=${OPENSSLINC} \
@@ -45,6 +50,17 @@ CONFIGURE_ARGS+=	--program-suffix="-claws" --enable-ipv6
 CONFIGURE_ENV=	CFLAGS="${CFLAGS}" CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 		LIBS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
 
+.if exists(${LOCALBASE}/include/clamav.h)
+WITH_CLAMAV=		yes
+.endif
+
+.if defined(WITH_CLAMAV) || defined(WITH_ALL)
+PLIST_SUB+=		CLAM_PLUG=""
+BUILD_DEPENDS=	   	${LOCALBASE}/sbin/clamd:${PORTSDIR}/security/clamav
+.else
+CONFIGURE_ARGS+=	--disable-clamav
+PLIST_SUB+=		CLAM_PLUG="@comment "
+.endif
 .if defined(WITH_PIXBUF) || defined(WITH_ALL)
 USE_GNOME+=		gdkpixbuf
 CONFIGURE_ARGS+=	--disable-imlib
@@ -98,10 +114,10 @@ PLIST_SUB+=	THEMES="@comment "
 PLIST_SUB+=	THEMES=""
 .endif
 .if defined(WITHOUT_IMAGE)
-PLIST_SUB+= IMAGE="@comment "
+PLIST_SUB+=	IMAGE="@comment "
 CONFIGURE_ARGS+=	--disable-image-viewer-plugin
 .else
-PLIST_SUB+= IMAGE=""
+PLIST_SUB+=	IMAGE=""
 .endif
 
 pre-everything::
@@ -118,6 +134,7 @@ pre-everything::
 	@${ECHO} "      WITH_JPILOT    Enable JPilot support"
 	@${ECHO} "      WITH_LDAP      Enable LDAP access support"
 	@${ECHO} "      WITH_SA_PLUG   Build Spamassassin plugin"
+	@${ECHO} "      WITH_CLAMAV    Build Clamav antivirus plugin"
 	@${ECHO} ""
 	@${ECHO} "      WITHOUT_SSL    Disable OpenSSL support"
 	@${ECHO} "      WITHOUT_IMAGE  Disable internal image viewer"
@@ -165,7 +182,7 @@ post-install:
 		${GREP} -vE '(xvpics|.directory)' | \
 		${CPIO} -pdu -R ${BINOWN}:${BINGRP} --quiet ${DATADIR}/themes/
 	@${CHMOD} -R a+r ${DATADIR}/themes
-	@${FIND} ${DATADIR}/themes -type d -print0 | xargs -0 ${CHMOD} a+x
+	@${FIND} ${DATADIR}/themes -type d -print0 | ${XARGS} -0 ${CHMOD} a+x
 .endif
 	@${INSTALL_SCRIPT} ${WRKSRC}/tools/sylpheed-switcher ${PREFIX}/bin
 	@${INSTALL_SCRIPT} ${WRKSRC}/tools/sylprint.pl ${PREFIX}/bin
