@@ -1277,7 +1277,11 @@ PKG_ARGS+=		-o ${PKGORIGIN}
 .if defined(PKG_NOCOMPRESS)
 PKG_SUFX?=		.tar
 .else
+.if ${OSVERSION} >= 500039
 PKG_SUFX?=		.tbz
+.else
+PKG_SUFX?=		.tgz
+.endif
 .endif
 # where pkg_add records its dirty deeds.
 PKG_DBDIR?=		/var/db/pkg
@@ -2066,10 +2070,6 @@ pre-everything:
 
 .if !target(do-fetch)
 do-fetch:
-	@if [ ! -w ${DISTDIR} ]; then \
-	   ${ECHO_MSG} ">> ${DISTDIR} is not writable; cannot fetch."; \
-	   exit 1; \
-	fi
 	@${MKDIR} ${_DISTDIR}
 	@(cd ${_DISTDIR}; \
 	 ${_MASTER_SITES_ENV} ; \
@@ -2092,6 +2092,10 @@ do-fetch:
 				fi; \
 			fi; \
 			${ECHO_MSG} ">> $$file doesn't seem to exist in ${_DISTDIR}."; \
+			if [ ! -w ${DISTDIR} ]; then \
+			   ${ECHO_MSG} ">> ${DISTDIR} is not writable by you; cannot fetch."; \
+			   exit 1; \
+			fi; \
 			if [ ! -z "$$select" ] ; then \
 				__MASTER_SITES_TMP= ; \
 				for group in $$select; do \
