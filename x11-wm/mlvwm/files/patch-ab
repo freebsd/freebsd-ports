@@ -1,56 +1,38 @@
-*** sample_rc/Mlvwmrc.orig	Mon Jan 20 00:19:09 1997
---- sample_rc/Mlvwmrc	Mon Jan 20 00:21:26 1997
+*** sample_rc/Mlvwmrc.orig	Thu Apr 10 23:17:40 1997
+--- sample_rc/Mlvwmrc	Sun May 25 19:11:32 1997
 ***************
-*** 14,32 ****
+*** 20,26 ****
   DoubleClickTime 300
   
   # Set icon search path. It needs before "Style".
 ! IconPath /usr/local/include/X11/pixmaps:/home2/tak/bin/pixmap
   IconMenuIcon label2.xpm
   
-  # Window decoration
-  Style
-- "*" MiniIcon mini-cross.xpm, MaxmizeScale 90
-- "KTerm" MaxmizeScale 100, MiniIcon mini-term.xpm
-- "Netscape" MiniIcon mini-nscape.xpm
-- "Emacs" MiniIcon mini-edit.xpm
-- "xv" MiniIcon mini-xv.xpm, EnableScroll
-- "XCalc" MiniIcon mini-calc.xpm
-- "Xarchie" MiniIcon mini.xarchie.xpm
-- "Xmag" MiniIcon mini.xmag.xpm
-  "XMeter" NoSBarH, NoSBarV, NoResizeR, NoMinMaxR, NoTitle, NoCloseR
-  "XMeter" NoWinList, Sticky, SkipSelect
-  "*biff" NoSBarH, NoSBarV, NoResizeR, NoMinMaxR, NoWinList, NoCloseR
---- 14,24 ----
+  # Font Settings(without LOCALE)
+--- 20,26 ----
   DoubleClickTime 300
   
   # Set icon search path. It needs before "Style".
-! IconPath /usr/X11R6/lib/X11/mlvwm/pixmap
+! IconPath /usr/X11R6/lib/X11/mlvwm/pixmap:/home2/tak/bin/pixmap
   IconMenuIcon label2.xpm
   
-  # Window decoration
-  Style
-  "XMeter" NoSBarH, NoSBarV, NoResizeR, NoMinMaxR, NoTitle, NoCloseR
-  "XMeter" NoWinList, Sticky, SkipSelect
-  "*biff" NoSBarH, NoSBarV, NoResizeR, NoMinMaxR, NoWinList, NoCloseR
+  # Font Settings(without LOCALE)
 ***************
-*** 47,55 ****
-  Menu "Apple" Icon label1.xpm
+*** 44,51 ****
+  Menu Apple, Icon label1.xpm, Stick
   "About this Workstation..." NonSelect, Gray, Action About
   "" NonSelect
 ! "Terminal"	Icon mini-display.xpm, Action Exec "kterm" exec kterm -ls
 ! "Editor"  Action Exec "mule" exec mule, Icon mini-edit.xpm
-! "calculator" Action Exec "xcal" exec xcalc, Icon mini-calc.xpm
+  "calculator" Action Exec "xcal" exec xcalc, Icon mini-calc.xpm
   END
   
-  Menu "File" Left
---- 39,47 ----
-  Menu "Apple" Icon label1.xpm
+--- 44,51 ----
+  Menu Apple, Icon label1.xpm, Stick
   "About this Workstation..." NonSelect, Gray, Action About
   "" NonSelect
-! "Terminal"	Action Exec "xterm" exec xterm -ls
-! "Editor"  Action Exec "emacs" exec emacs
-! "calculator" Action Exec "xcal" exec xcalc
+! "Terminal"	Icon mini-display.xpm, Action Exec "xterm" exec xterm -ls
+! "Editor"  Action Exec "emacs" exec emacs, Icon mini-edit.xpm
+  "calculator" Action Exec "xcal" exec xcalc, Icon mini-calc.xpm
   END
   
-  Menu "File" Left
