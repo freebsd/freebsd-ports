@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	wxgtk
-PORTVERSION=	2.3.2
-PORTREVISION=	1
+PORTVERSION=	2.4.0
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://wesley.informatik.uni-freiburg.de/pub/linux/wxxt/source/
@@ -22,6 +21,7 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 
 NO_LATEST_LINK=	"Unstable, development version."
 
+USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_MESA=	yes
 USE_GMAKE=	yes

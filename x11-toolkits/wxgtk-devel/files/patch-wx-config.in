@@ -1,14 +1,14 @@
 
 $FreeBSD$
 
---- wx-config.in.orig	Mon Dec 10 20:07:01 2001
-+++ wx-config.in	Sat Jan 19 12:19:14 2002
-@@ -37,7 +37,7 @@
-         includes=-I@includedir@
+--- wx-config.in.orig	Sun Jan  5 13:54:59 2003
++++ wx-config.in	Tue Jan 14 18:36:21 2003
+@@ -66,7 +66,7 @@
+     if test $inplace_flag = yes ; then
+ 	includes="-I$inplace_builddir/lib/wx/include/@TOOLCHAIN_NAME@ -I$inplace_include"
+     else
+-	includes="-I@libdir@/wx/include/@TOOLCHAIN_NAME@$includes"
++	includes="-I@prefix@/include $includes"
      fi
  
--    includes="-I@libdir@/wx/include/@TOOLCHAIN_NAME@ $includes"
-+    includes="-I@prefix@/include $includes"
- 
      if test $static_flag = yes ; then
-         echo $includes @WXDEBUG_DEFINE@ @TOOLCHAIN_DEFS@ @WXCONFIG_INCLUDE@

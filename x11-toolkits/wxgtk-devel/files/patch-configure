@@ -1,31 +1,16 @@
 
 $FreeBSD$
 
---- configure.orig	Thu Jan 31 12:17:48 2002
-+++ configure	Thu Jan 31 13:45:16 2002
-@@ -10036,10 +10036,10 @@
-   else
-      echo "$ac_t""no" 1>&6
-      if test "$GTK_CONFIG_2_0" = "no" ; then
--       echo "*** The gtk-config-2.0 script installed by GTK could not be found"
--       echo "*** If GTK was installed in PREFIX, make sure PREFIX/bin is in"
--       echo "*** your path, or set the GTK_CONFIG_2_0 environment variable to the"
--       echo "*** full path to gtk-config-2.0."
-+#       echo "*** The gtk-config-2.0 script installed by GTK could not be found"
-+#       echo "*** If GTK was installed in PREFIX, make sure PREFIX/bin is in"
-+#       echo "*** your path, or set the GTK_CONFIG_2_0 environment variable to the"
-+#       echo "*** full path to gtk-config-2.0."
-      else
-        if test -f conf.gtktest ; then
-         :
-@@ -10397,16 +10397,16 @@
+--- configure.orig	Tue Jan 14 18:31:00 2003
++++ configure	Tue Jan 14 18:31:55 2003
+@@ -13284,14 +13284,14 @@
          TOOLKIT=GTK
          GUIDIST=GTK_DIST
  
 -                echo $ac_n "checking for gdk_im_open in -lgdk""... $ac_c" 1>&6
--echo "configure:10402: checking for gdk_im_open in -lgdk" >&5
+-echo "configure:13289: checking for gdk_im_open in -lgdk" >&5
 +                echo $ac_n "checking for gdk_im_open in -lgdk12""... $ac_c" 1>&6
-+echo "configure:10413: checking for gdk_im_open in -lgdk12" >&5
++echo "configure:13289: checking for gdk_im_open in -lgdk12" >&5
  ac_lib_var=`echo gdk'_'gdk_im_open | sed 'y%./+-%__p_%'`
  if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
    echo $ac_n "(cached) $ac_c" 1>&6
@@ -34,25 +19,22 @@ $FreeBSD$
 -LIBS="-lgdk  $LIBS"
 +LIBS="-lgdk12  $LIBS"
  cat > conftest.$ac_ext <<EOF
--#line 10410 "configure"
-+#line 10421 "configure"
+ #line 13297 "configure"
  #include "confdefs.h"
- /* Override any gcc2 internal prototype to avoid an error.  */
- /* We use char because int might match the return type of a gcc2
-@@ -11862,8 +11862,8 @@
-     lib_debug_suffix=d
- fi
+@@ -15864,8 +15864,8 @@
  
--TOOLCHAIN_NAME="${TOOLKIT_DIR}${WIDGET_SET}${lib_unicode_suffix}${lib_debug_suffix}-${WX_RELEASE}"
--TOOLCHAIN_NAME_GL="${TOOLKIT_DIR}${WIDGET_SET}${lib_unicode_suffix}${lib_debug_suffix}_gl-${WX_RELEASE}"
+ WX_VERSION_TAG=`echo WX${TOOLKIT_DIR}${TOOLKIT_VERSION}${WIDGET_SET}${lib_unicode_suffix}${lib_debug_suffix}_${WX_RELEASE} | tr "[a-z]" "[A-Z]"`
+ 
+-TOOLCHAIN_NAME="${TOOLKIT_DIR}${TOOLKIT_VERSION}${WIDGET_SET}${lib_unicode_suffix}${lib_debug_suffix}-${WX_RELEASE}"
+-TOOLCHAIN_NAME_GL="${TOOLKIT_DIR}${TOOLKIT_VERSION}${WIDGET_SET}${lib_unicode_suffix}${lib_debug_suffix}_gl-${WX_RELEASE}"
 +TOOLCHAIN_NAME="${TOOLKIT_DIR}${WIDGET_SET}${lib_unicode_suffix}${lib_debug_suffix}"
 +TOOLCHAIN_NAME_GL="${TOOLKIT_DIR}${WIDGET_SET}${lib_unicode_suffix}${lib_debug_suffix}_gl"
  
  if test "$cross_compiling" = "yes"; then
      TOOLCHAIN_NAME="${TOOLCHAIN_NAME}-${host_alias}"
-@@ -11873,13 +11873,11 @@
- WX_LIBRARY="wx_${TOOLCHAIN_NAME}"
+@@ -15876,13 +15876,11 @@
  WX_LIBRARY_GL="wx_${TOOLCHAIN_NAME_GL}"
+ WX_LIBRARY_BASENAME="wx_${TOOLKIT_DIR}${TOOLKIT_VERSION}${WIDGET_SET}${lib_unicode_suffix}${lib_debug_suffix}"
  
 -WX_LIBRARY_NAME_SHARED="lib${WX_LIBRARY}.${SO_SUFFIX}.${WX_CURRENT}.${WX_REVISION}.${WX_AGE}"
 -WX_LIBRARY_NAME_SHARED_GL="lib${WX_LIBRARY_GL}.${SO_SUFFIX}.${WX_CURRENT}.${WX_REVISION}.${WX_AGE}"
@@ -66,9 +48,18 @@ $FreeBSD$
 +WX_LIBRARY_LINK1="lib${WX_LIBRARY}.${SO_SUFFIX}"
 +WX_LIBRARY_LINK1_GL="lib${WX_LIBRARY_GL}.${SO_SUFFIX}"
  
- WX_RESOURCES_MACOSX="lib${WX_LIBRARY}.rsrc"
- WX_RESOURCES_MACOSX_COMPILED="lib${WX_LIBRARY}.r"
-@@ -16167,6 +16165,7 @@
+ case "${host}" in
+     *-*-cygwin* | *-*-mingw32* )
+@@ -18379,7 +18377,7 @@
+                 fi
+                 ;;
+           *-*-freebsd*)
+-                                                THREAD_OPTS="-kthread lthread $THREAD_OPTS c_r"
++                                                THREAD_OPTS="$THREAD_OPTS pthread c_r"
+                 ;;
+           *-*-darwin* | *-*-cygwin* )
+                                                 THREAD_OPTS=""
+@@ -19136,6 +19134,7 @@
    fi
  fi
  
@@ -76,13 +67,10 @@ $FreeBSD$
  if test "$WXGTK20" = 1 ; then
    cat >> confdefs.h <<EOF
  #define __WXGTK20__ $WXGTK20
-@@ -16256,24 +16255,6 @@
-     fi
+@@ -19236,21 +19235,6 @@
+     esac
  fi
  
--
--CXXFLAGS=`echo "${CXXFLAGS}" | sed "s/\-O.//g" `
--CFLAGS=`echo "${CFLAGS}" | sed "s/\-O.//g" `
 -if test "$wxUSE_OPTIMISE" = "no" ; then
 -    OPTIMISE=
 -else
@@ -101,7 +89,7 @@ $FreeBSD$
  if test "$WXWIN_COMPATIBILITY_2" = "yes"; then
      cat >> confdefs.h <<\EOF
  #define WXWIN_COMPATIBILITY_2 1
-@@ -18935,13 +18916,11 @@
+@@ -22467,13 +22451,11 @@
  s%@WX_LIBRARY_IMPORTLIB@%$WX_LIBRARY_IMPORTLIB%g
  s%@WX_TARGET_LIBRARY@%$WX_TARGET_LIBRARY%g
  s%@WX_LIBRARY_LINK1@%$WX_LIBRARY_LINK1%g
