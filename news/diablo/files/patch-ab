@@ -1,0 +1,12 @@
+--- XMakefile.inst.orig	Wed Mar 21 18:12:44 2001
++++ XMakefile.inst	Wed Mar 21 18:13:49 2001
+@@ -2,8 +2,8 @@
+ .set BD 
+ #include "XMakefile.inc"
+ 
+-.set IDIRS	dbin samples samples/adm
+ .set TDIRS	`find samples -type d -print | fgrep -v CVS`
++.set IDIRS	dbin $(TDIRS)
+ .set IFILES	`find $(IDIRS) \( -type f -o -type l \) -print | sort | uniq | fgrep -v CVS`
+ .set TFILES	`find samples \( -type f -o -type l \) -print | fgrep -v CVS`
+ .set IMAN	`find man \( -type f -o -type l \) -print | fgrep -v CVS`
