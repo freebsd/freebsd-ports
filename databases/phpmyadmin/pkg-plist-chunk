@@ -1,0 +1,7 @@
+@mode 640
+@group %%MYADMGRP%%
+@unexec if cmp -s %D/%%MYADMDIR%%/config.inc.php.sample %D/%%MYADMDIR%%/config.inc.php ; then rm -f %D/%%MYADMDIR%%/config.inc.php ; fi
+%%MYADMDIR%%/config.inc.php.sample
+@exec [ ! -f %B/config.inc.php ] && cp -p %B/%f %B/config.inc.php || true
+@mode
+@group
