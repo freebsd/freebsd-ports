@@ -1525,6 +1525,7 @@ fbdesk		ports/x11-wm/fbdesk
 fbm		ports/graphics/fbm
 fbsd-icons	ports/x11/fbsd-icons
 fc++		ports/devel/fc++
+fceu		ports/emulators/fceu
 fcgi		ports/www/fcgi
 fcitx		ports/chinese/fcitx
 fconv		ports/converters/fconv
