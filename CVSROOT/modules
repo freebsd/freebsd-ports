@@ -5055,6 +5055,18 @@ p5-Business-CreditCard	ports/misc/p5-Business-CreditCard
 p5-Business-ISBN	ports/misc/p5-Business-ISBN
 p5-Business-ISIN	ports/misc/p5-Business-ISIN
 p5-Business-ISSN	ports/misc/p5-Business-ISSN
+p5-Business-OnlinePayment	ports/misc/p5-Business-OnlinePayment
+p5-Business-OnlinePayment-2CheckOut	ports/misc/p5-Business-OnlinePayment-2CheckOut
+p5-Business-OnlinePayment-AuthorizeNet	ports/misc/p5-Business-OnlinePayment-AuthorizeNet
+p5-Business-OnlinePayment-BankOfAmerica	ports/misc/p5-Business-OnlinePayment-BankOfAmerica
+p5-Business-OnlinePayment-Beanstream	ports/misc/p5-Business-OnlinePayment-Beanstream
+p5-Business-OnlinePayment-Cardstream	ports/misc/p5-Business-OnlinePayment-Cardstream
+p5-Business-OnlinePayment-LinkPoint	ports/misc/p5-Business-OnlinePayment-LinkPoint
+p5-Business-OnlinePayment-SurePay	ports/misc/p5-Business-OnlinePayment-SurePay
+p5-Business-OnlinePayment-TCLink	ports/misc/p5-Business-OnlinePayment-TCLink
+p5-Business-OnlinePayment-VirtualNet	ports/misc/p5-Business-OnlinePayment-VirtualNet
+p5-Business-OnlinePayment-WorldPay-Junior	ports/misc/p5-Business-OnlinePayment-WorldPay-Junior
+p5-Business-OnlinePayment-eSec		ports/misc/p5-Business-OnlinePayment-eSec
 p5-Business-UPS	ports/misc/p5-Business-UPS
 p5-C-Scan	ports/devel/p5-C-Scan
 p5-CDB_File	ports/databases/p5-CDB_File
@@ -5087,6 +5099,7 @@ p5-Class-Delegation	ports/devel/p5-Class-Delegation
 p5-Class-Factory	ports/devel/p5-Class-Factory
 p5-Class-Factory-Util	ports/devel/p5-Class-Factory-Util
 p5-Class-Fields	ports/devel/p5-Class-Fields
+p5-Class-Generate	ports/devel/p5-Class-Generate
 p5-Class-Inner	ports/devel/p5-Class-Inner
 p5-Class-Loader	ports/devel/p5-Class-Loader
 p5-Class-MakeMethods	ports/devel/p5-Class-MakeMethods
@@ -5134,6 +5147,7 @@ p5-Crypt-PGPSimple	ports/security/p5-Crypt-PGPSimple
 p5-Crypt-PassGen	ports/security/p5-Crypt-PassGen
 p5-Crypt-PasswdMD5	ports/security/p5-Crypt-PasswdMD5
 p5-Crypt-Primes	ports/security/p5-Crypt-Primes
+p5-Crypt-RandPasswd	ports/security/p5-Crypt-RandPasswd
 p5-Crypt-RC4	ports/security/p5-Crypt-RC4
 p5-Crypt-RC5	ports/security/p5-Crypt-RC5
 p5-Crypt-RC6	ports/security/p5-Crypt-RC6
@@ -5416,6 +5430,7 @@ p5-Mail-RBL	ports/mail/p5-Mail-RBL
 p5-Mail-Sender	ports/mail/p5-Mail-Sender
 p5-Mail-Sendmail	ports/mail/p5-Mail-Sendmail
 p5-Mail-SpamAssassin	ports/mail/p5-Mail-SpamAssassin
+p5-Mail-Spool	ports/mail/p5-Mail-Spool
 p5-Mail-Tools	ports/mail/p5-Mail-Tools
 p5-Mail-Verify	ports/mail/p5-Mail-Verify
 p5-Make		ports/devel/p5-Make
@@ -5479,6 +5494,7 @@ p5-Net-SSH	ports/net/p5-Net-SSH
 p5-Net-SSH-Perl	ports/net/p5-Net-SSH-Perl
 p5-Net-SSLeay	ports/security/p5-Net-SSLeay
 p5-Net-Server	ports/net/p5-Net-Server
+p5-Net-TCLink	ports/net/p5-Net-TCLink
 p5-Net-Telnet	ports/net/p5-Net-Telnet
 p5-Net-Traceroute	ports/net/p5-Net-Traceroute
 p5-Net-Traceroute6	ports/net/p5-Net-Traceroute6
@@ -5607,7 +5623,9 @@ p5-Storable	ports/devel/p5-Storable
 p5-String-Approx	ports/devel/p5-String-Approx
 p5-String-CRC32	ports/devel/p5-String-CRC32
 p5-String-Checker	ports/devel/p5-String-Checker
+p5-String-LRC	ports/devel/p5-String-LRC
 p5-String-Multibyte	ports/converters/p5-String-Multibyte
+p5-String-Parity	ports/devel/p5-String-Parity
 p5-String-Random	ports/devel/p5-String-Random
 p5-String-RexxParse	ports/devel/p5-String-RexxParse
 p5-String-Scanf	ports/textproc/p5-String-Scanf
