@@ -500,8 +500,6 @@ share/locale/xh/LC_MESSAGES/wavecapture.mo
 share/locale/xh/LC_MESSAGES/webarchiver.mo
 share/locale/xh/charset
 share/locale/xh/entry.desktop
-@dirrm share/locale/xh/LC_MESSAGES
-@dirrm share/locale/xh
 @dirrm share/doc/HTML/xh/kspell
 @dirrm share/doc/HTML/xh/konqueror
 @dirrm share/doc/HTML/xh/kmenuedit

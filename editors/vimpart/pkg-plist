@@ -2,12 +2,11 @@ lib/kde3/kcm_vim.la
 lib/kde3/kcm_vim.so
 lib/kde3/libvimpart.la
 lib/kde3/libvimpart.so
-lib/kde3/libvimpart.so.0
 lib/libxvim.la
 lib/libxvim.so
 lib/libxvim.so.0
 share/applications/kde/kcmvim.desktop
-share/applications/kdeaddons-vimpart-3.3.2
+share/applications/kdeaddons-vimpart-3.4.0
 share/apps/kcontrol/pics/kvim.png
 share/apps/vimpart/kvim.vim
 share/apps/vimpart/vimpartui.rc

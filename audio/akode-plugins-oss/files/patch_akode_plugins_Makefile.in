@@ -1,0 +1,14 @@
+--- akode/plugins/Makefile.in.orig	Wed Mar 16 14:00:40 2005
++++ akode/plugins/Makefile.in	Wed Mar 16 14:02:20 2005
+@@ -468,10 +468,7 @@
+ @include_oss_sink_TRUE@AKODE_OSS_SINK = oss_sink
+ @include_jack_sink_TRUE@AKODE_JACK_SINK = jack_sink
+ @include_polyp_sink_TRUE@AKODE_POLYP_SINK = polyp_sink
+-SUBDIRS = $(AKODE_MPC_DECODER) $(AKODE_XIPH_DECODER) $(AKODE_MPEG_DECODER) \
+-         $(AKODE_ALSA_SINK) $(AKODE_OSS_SINK) $(AKODE_JACK_SINK) $(AKODE_POLYP_SINK) \
+-         $(AKODE_SRC_RESAMPLER)
+-
++SUBDIRS = %%SUBDIRS%%
+ #>- all: all-recursive
+ #>+ 1
+ all: docs-am  all-recursive

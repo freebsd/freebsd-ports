@@ -9,6 +9,7 @@ lib/kde3/kfile_rpm.so
 share/applications/kde/kcron.desktop
 share/applications/kde/kpackage.desktop
 share/applications/kde/kuser.desktop
+share/apps/kcron/kcronui.rc
 share/apps/kpackage/kpackageui.rc
 share/apps/kpackage/pics/bnew.png
 share/apps/kpackage/pics/bsd.png
@@ -67,6 +68,9 @@ share/doc/HTML/en/kpackage/right-change.png
 share/doc/HTML/en/kpackage/right-files.png
 share/doc/HTML/en/kpackage/right-prop.png
 share/doc/HTML/en/kpackage/rpmloc.png
+share/doc/HTML/en/kpackage/search.png
+share/doc/HTML/en/kpackage/searchf.png
+share/doc/HTML/en/kpackage/searchl.png
 share/doc/HTML/en/kpackage/slackloc.png
 share/doc/HTML/en/kpackage/uninstall.png
 share/doc/HTML/en/ksysv/common
@@ -104,3 +108,4 @@ share/services/kfile_rpm.desktop
 @dirrm share/apps/kuser
 @dirrm share/apps/kpackage/pics
 @dirrm share/apps/kpackage
+@dirrm share/apps/kcron

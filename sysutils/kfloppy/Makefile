@@ -26,6 +26,7 @@ PREFIX=		${KDE_PREFIX}
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+USE_GETOPT_LONG=yes
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 DO_NOT_COMPILE+=klaptopdaemon kmilo

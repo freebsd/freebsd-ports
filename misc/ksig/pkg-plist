@@ -1,6 +1,6 @@
 bin/ksig
 share/applications/kde/ksig.desktop
-share/applications/kdeaddons-ksig-3.3.2
+share/applications/kdeaddons-ksig-3.4.0
 share/apps/ksig/ksigui.rc
 share/icons/hicolor/16x16/apps/ksig.png
 share/icons/hicolor/32x32/apps/ksig.png

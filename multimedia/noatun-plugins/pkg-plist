@@ -29,7 +29,7 @@ lib/kde3/noatunwakeup.la
 lib/kde3/noatunwakeup.so
 lib/kde3/noatunwavecapture.la
 lib/kde3/noatunwavecapture.so
-share/applications/kdeaddons-noatun-plugins-3.3.2
+share/applications/kdeaddons-noatun-plugins-3.4.0
 share/apps/noatun/alsaplayerui.plugin
 share/apps/noatun/blurscope.plugin
 share/apps/noatun/charlatanui.plugin

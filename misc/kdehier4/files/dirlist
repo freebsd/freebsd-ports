@@ -316,8 +316,8 @@ share/doc/HTML/zh_TW
 @comment share/doc/HTML/en/kwrite
 @comment ---------------------------------------------------------------------
 @comment -- Additional fonts could go here, I think.
-share/fonts
-share/fonts/override
+@comment share/fonts
+@comment share/fonts/override
 @comment share/icons/crystalsvg/128x128/apps
 @comment share/icons/crystalsvg/16x16/apps
 @comment share/icons/crystalsvg/16x16/apps/gnome

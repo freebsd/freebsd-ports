@@ -8,7 +8,7 @@ lib/kde3/math_panelapplet.la
 lib/kde3/math_panelapplet.so
 lib/kde3/mediacontrol_panelapplet.la
 lib/kde3/mediacontrol_panelapplet.so
-share/applications/kdeaddons-kicker-applets-3.3.2
+share/applications/kdeaddons-kicker-applets-3.4.0
 share/apps/kicker/applets/kbinaryclock.desktop
 share/apps/kicker/applets/kolourpicker.desktop
 share/apps/kicker/applets/ktimemon.desktop

@@ -1,0 +1,34 @@
+qt-bugs@ issue : 18598
+applied: no
+author: Pascal Létourneau <pletourn@globetrotter.net>
+
+Sometimes QIconView doesn't paint the top of an icon.
+It's because this part of QIconView::rebuildContainers() is never reached.
+
+...
+if ( d->arrangement == LeftToRight ) {
+        if ( item->y() < c->rect.y() && c->p ) {
+                c = c->p;           <<<<<<<<<<<<<<<<<
+                continue;
+...
+
+
+Index: src/iconview/qiconview.cpp
+===================================================================
+RCS file: /home/kde/qt-copy/src/iconview/qiconview.cpp,v
+retrieving revision 1.47
+diff -u -3 -p -r1.47 qiconview.cpp
+--- src/iconview/qiconview.cpp	16 May 2003 13:02:38 -0000	1.47
++++ src/iconview/qiconview.cpp	30 May 2003 20:32:34 -0000
+@@ -6122,7 +6123,9 @@ void QIconView::rebuildContainers()
+ 	    item->d->container2 = 0;
+ 	    c->items.append( item );
+ 	    item = item->next;
+-	} else if ( c->rect.intersects( item->rect() ) ) {
++	} else if ( c->rect.intersects( item->rect() ) && (
++			( d->arrangement == LeftToRight && item->y() >= c->rect.y() ) ||
++			( d->arrangement == TopToBottom && item->x() >= c->rect.x() ) ) ) {
+ 	    item->d->container1 = c;
+ 	    c->items.append( item );
+ 	    c = c->n;
+

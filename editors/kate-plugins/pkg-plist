@@ -1,5 +1,7 @@
 lib/kde3/katecppsymbolviewerplugin.la
 lib/kde3/katecppsymbolviewerplugin.so
+lib/kde3/katefiletemplates.la
+lib/kde3/katefiletemplates.so
 lib/kde3/katefll_initplugin.la
 lib/kde3/katefll_initplugin.so
 lib/kde3/katefll_plugin.la
@@ -12,6 +14,8 @@ lib/kde3/kateopenheaderplugin.la
 lib/kde3/kateopenheaderplugin.so
 lib/kde3/katepybrowseplugin.la
 lib/kde3/katepybrowseplugin.so
+lib/kde3/katesnippetsplugin.la
+lib/kde3/katesnippetsplugin.so
 lib/kde3/katetextfilterplugin.la
 lib/kde3/katetextfilterplugin.so
 lib/kde3/katexmlcheckplugin.la
@@ -20,22 +24,33 @@ lib/kde3/katexmltoolsplugin.la
 lib/kde3/katexmltoolsplugin.so
 lib/kde3/libkatetabbarextensionplugin.la
 lib/kde3/libkatetabbarextensionplugin.so
-share/applications/kdeaddons-kate-plugins-3.3.2
+share/applications/kdeaddons-kate-plugins-3.4.0
 share/applnk/.hidden/katefll.desktop
 share/apps/kate/plugins/katecppsymbolviewer/ui.rc
+share/apps/kate/plugins/katefiletemplates/templates/cppgpl.cpp.katetemplate
+share/apps/kate/plugins/katefiletemplates/templates/cppgpl.hh.katetemplate
+share/apps/kate/plugins/katefiletemplates/templates/cpplgpl.cpp.katetemplate
+share/apps/kate/plugins/katefiletemplates/templates/cpplgpl.hh.katetemplate
+share/apps/kate/plugins/katefiletemplates/templates/docbookchapter.xml.katetemplate
+share/apps/kate/plugins/katefiletemplates/templates/html.katetemplate
+share/apps/kate/plugins/katefiletemplates/templates/language.xml.katetemplate
+share/apps/kate/plugins/katefiletemplates/ui.rc
 share/apps/kate/plugins/katefll/ui.rc
 share/apps/kate/plugins/katehtmltools/ui.rc
 share/apps/kate/plugins/katemodeline/ui.rc
 share/apps/kate/plugins/kateopenheader/ui.rc
 share/apps/kate/plugins/katepybrowse/ui.rc
+share/apps/kate/plugins/katesnippets/plugin_katesnippets.rc
 share/apps/kate/plugins/katetabbarextension/ui.rc
 share/apps/kate/plugins/katetextfilter/ui.rc
 share/apps/kate/plugins/katexmlcheck/ui.rc
 share/apps/kate/plugins/katexmltools/ui.rc
 share/apps/kate/scripts/html-tidy.desktop
 share/apps/kate/scripts/html-tidy.sh
+share/apps/katepart/syntax/katetemplate.xml
 share/apps/katexmltools/html4-loose.dtd.xml
 share/apps/katexmltools/html4-strict.dtd.xml
+share/apps/katexmltools/kcfg.dtd.xml
 share/apps/katexmltools/kde-docbook.dtd.xml
 share/apps/katexmltools/kpartgui.dtd.xml
 share/apps/katexmltools/language.dtd.xml
@@ -56,12 +71,14 @@ share/doc/HTML/en/kate-plugins/textfilter.docbook
 share/doc/HTML/en/kate-plugins/xmlcheck.docbook
 share/doc/HTML/en/kate-plugins/xmltools.docbook
 share/services/katecppsymbolviewer.desktop
+share/services/katefiletemplates.desktop
 share/services/katefll_initplugin.desktop
 share/services/katefll_plugin.desktop
 share/services/katehtmltools.desktop
 share/services/katemodeline.desktop
 share/services/kateopenheader.desktop
 share/services/katepybrowse.desktop
+share/services/katesnippets.desktop
 share/services/katetabbarextension.desktop
 share/services/katetextfilter.desktop
 share/services/katexmlcheck.desktop
@@ -72,9 +89,12 @@ share/services/katexmltools.desktop
 @dirrm share/apps/kate/plugins/katexmlcheck
 @dirrm share/apps/kate/plugins/katetextfilter
 @dirrm share/apps/kate/plugins/katetabbarextension
+@dirrm share/apps/kate/plugins/katesnippets
 @dirrm share/apps/kate/plugins/katepybrowse
 @dirrm share/apps/kate/plugins/kateopenheader
 @dirrm share/apps/kate/plugins/katemodeline
 @dirrm share/apps/kate/plugins/katehtmltools
 @dirrm share/apps/kate/plugins/katefll
+@dirrm share/apps/kate/plugins/katefiletemplates/templates
+@dirrm share/apps/kate/plugins/katefiletemplates
 @dirrm share/apps/kate/plugins/katecppsymbolviewer

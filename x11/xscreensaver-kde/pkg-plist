@@ -1,6 +1,7 @@
 bin/kxsconfig
 bin/kxsrun
 share/applnk/System/ScreenSavers/anemone.desktop
+share/applnk/System/ScreenSavers/anemotaxis.desktop
 share/applnk/System/ScreenSavers/ant.desktop
 share/applnk/System/ScreenSavers/antinspect.desktop
 share/applnk/System/ScreenSavers/antspotlight.desktop
@@ -100,6 +101,7 @@ share/applnk/System/ScreenSavers/lissie.desktop
 share/applnk/System/ScreenSavers/lmorph.desktop
 share/applnk/System/ScreenSavers/loop.desktop
 share/applnk/System/ScreenSavers/maze.desktop
+share/applnk/System/ScreenSavers/memscroller.desktop
 share/applnk/System/ScreenSavers/menger.desktop
 share/applnk/System/ScreenSavers/metaballs.desktop
 share/applnk/System/ScreenSavers/mirrorblob.desktop

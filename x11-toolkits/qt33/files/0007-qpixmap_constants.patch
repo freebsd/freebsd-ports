@@ -1,0 +1,383 @@
+qt-bugs@ issue : 11790 (part of)
+applied: no
+author: Lubos Lunak <l.lunak@kde.org>
+
+See 0005-qpixmap_mitshm.patch for details.
+
+--- src/kernel/qpixmap_x11.cpp.sav	Tue Nov 26 15:32:21 2002
++++ src/kernel/qpixmap_x11.cpp	Tue Nov 26 15:37:21 2002
+@@ -1278,9 +1278,6 @@ bool QPixmap::convertFromImage( const QI
+ 	    return FALSE;
+ 	int    bppc = xi->bits_per_pixel;
+ 
+-	if ( bppc > 8 && xi->byte_order == LSBFirst )
+-	    bppc++;
+-
+ 	bool contig_bits = n_bits(red_mask) == rbits &&
+                            n_bits(green_mask) == gbits &&
+                            n_bits(blue_mask) == bbits;
+@@ -1329,32 +1326,70 @@ bool QPixmap::convertFromImage( const QI
+ 	    }
+ 	    init=TRUE;
+ 	}
++        
++        enum { BPP8, 
++               BPP16_8_3_M3, BPP16_7_2_M3, BPP16_MSB, BPP16_LSB,
++               BPP24_MSB, BPP24_LSB,
++               BPP32_16_8_0, BPP32_MSB, BPP32_LSB
++        } mode = BPP8;
+ 
+-	for ( uint y=0; y<h; y++ ) {
+-	    uchar* src = image.scanLine( y );
+-	    uchar* dst = newbits + xi->bytes_per_line*y;
+-	    QRgb* p = (QRgb *)src;
++	if ( bppc > 8 && xi->byte_order == LSBFirst )
++	    bppc++;
+ 
+-#define GET_RGB \
+-		int r = qRed  ( *p ); \
+-		int g = qGreen( *p ); \
+-		int b = qBlue ( *p++ ); \
+-		r = red_shift   > 0 \
+-		    ? r << red_shift   : r >> -red_shift; \
+-		g = green_shift > 0 \
+-		    ? g << green_shift : g >> -green_shift; \
+-		b = blue_shift  > 0 \
+-		    ? b << blue_shift  : b >> -blue_shift;
++        int wordsize;
++        bool bigendian;
++        qSysInfo( &wordsize, &bigendian );
++        bool same_msb_lsb = ( xi->byte_order == MSBFirst ) == ( bigendian );
++        
++        if( bppc == 8 ) // 8 bit
++            mode = BPP8;
++        else if( bppc == 16 || bppc == 17 ) { // 16 bit MSB/LSB
++            if( red_shift == 8 && green_shift == 3 && blue_shift == -3
++                && !d8 && same_msb_lsb )
++                mode = BPP16_8_3_M3;
++            else if( red_shift == 7 && green_shift == 2 && blue_shift == -3
++                && !d8 && same_msb_lsb )
++                mode = BPP16_7_2_M3;
++            else
++                mode = bppc == 17 ? BPP16_LSB : BPP16_MSB;
++        } else if( bppc == 24 || bppc == 25 ) { // 24 bit MSB/LSB
++            mode = bppc == 25 ? BPP24_LSB : BPP24_MSB;
++        } else if( bppc == 32 || bppc == 33 ) { // 32 bit MSB/LSB
++            if( red_shift == 16 && green_shift == 8 && blue_shift == 0
++                && !d8 && same_msb_lsb )
++                mode = BPP32_16_8_0;
++            else
++                mode = bppc == 33 ? BPP32_LSB : BPP32_MSB;
++        } else
++	    qFatal("Logic error 3");
+ 
+ #define GET_PIXEL \
+                 int pixel; \
+ 		if ( d8 ) pixel = pix[*src++]; \
+ 		else { \
+-		    GET_RGB \
+-		    pixel = (b & blue_mask)|(g & green_mask) | (r & red_mask) \
++		    int r = qRed  ( *p ); \
++		    int g = qGreen( *p ); \
++		    int b = qBlue ( *p++ ); \
++		    r = red_shift   > 0 \
++		        ? r << red_shift   : r >> -red_shift; \
++		    g = green_shift > 0 \
++		        ? g << green_shift : g >> -green_shift; \
++		    b = blue_shift  > 0 \
++		        ? b << blue_shift  : b >> -blue_shift; \
++		    pixel = (r & red_mask)|(g & green_mask) | (b & blue_mask) \
+ 			    | ~(blue_mask | green_mask | red_mask); \
+ 		}
+ 
++// optimized case - no d8 case, shift only once instead of twice, mask only once instead of twice,
++// use direct values instead of variables, and use only one statement
++// (*p >> 16), (*p >> 8 ) and (*p) are qRed(),qGreen() and qBlue() without masking
++// shifts have to be passed including the shift operator (e.g. '>>3'), because of the direction
++#define GET_PIXEL_OPT(red_shift,green_shift,blue_shift,red_mask,green_mask,blue_mask) \
++                int pixel = ((( *p >> 16 ) red_shift ) & red_mask ) \
++                    | ((( *p >> 8 ) green_shift ) & green_mask ) \
++                    | ((( *p ) blue_shift ) & blue_mask ); \
++                ++p;
++
+ #define GET_PIXEL_DITHER_TC \
+ 		int r = qRed  ( *p ); \
+ 		int g = qGreen( *p ); \
+@@ -1374,91 +1409,177 @@ bool QPixmap::convertFromImage( const QI
+ 		    ? g << green_shift : g >> -green_shift; \
+ 		b = blue_shift  > 0 \
+ 		    ? b << blue_shift  : b >> -blue_shift; \
+-		int pixel = (b & blue_mask)|(g & green_mask) | (r & red_mask);
++		int pixel = (r & red_mask)|(g & green_mask) | (b & blue_mask);
+ 
+-	    if ( dither_tc ) {
+-		uint x;
+-		switch ( bppc ) {
+-		case 16:			// 16 bit MSB
+-		    for ( x=0; x<w; x++ ) {
+-			GET_PIXEL_DITHER_TC
+-			*dst++ = (pixel >> 8);
+-			*dst++ = pixel;
+-		    }
++// again, optimized case
++// can't be optimized that much :(
++#define GET_PIXEL_DITHER_TC_OPT(red_shift,green_shift,blue_shift,red_mask,green_mask,blue_mask, \
++                                rbits,gbits,bbits) \
++		const int thres = D[x%16][y%16]; \
++		int r = qRed  ( *p ); \
++		if ( r <= (255-(1<<(8-rbits))) && ((r<<rbits) & 255) \
++			> thres) \
++		    r += (1<<(8-rbits)); \
++		int g = qGreen( *p ); \
++		if ( g <= (255-(1<<(8-gbits))) && ((g<<gbits) & 255) \
++			> thres) \
++		    g += (1<<(8-gbits)); \
++		int b = qBlue ( *p++ ); \
++		if ( b <= (255-(1<<(8-bbits))) && ((b<<bbits) & 255) \
++			> thres) \
++		    b += (1<<(8-bbits)); \
++                int pixel = (( r red_shift ) & red_mask ) \
++                    | (( g green_shift ) & green_mask ) \
++                    | (( b blue_shift ) & blue_mask );
++
++#define CYCLE(body) \
++	for ( uint y=0; y<h; y++ ) { \
++	    uchar* src = image.scanLine( y ); \
++	    uchar* dst = newbits + xi->bytes_per_line*y; \
++	    QRgb* p = (QRgb *)src; \
++            body \
++        }
++
++        if ( dither_tc ) {
++	    switch ( mode ) {
++                case BPP16_8_3_M3:
++                    CYCLE(
++                        Q_INT16* dst16 = (Q_INT16*)dst;
++		        for ( uint x=0; x<w; x++ ) {
++			    GET_PIXEL_DITHER_TC_OPT(<<8,<<3,>>3,0xf800,0x7e0,0x1f,5,6,5)
++                            *dst16++ = pixel;
++		        }
++                    )
+ 		    break;
+-		case 17:			// 16 bit LSB
+-		    for ( x=0; x<w; x++ ) {
+-			GET_PIXEL_DITHER_TC
+-			*dst++ = pixel;
+-			*dst++ = pixel >> 8;
+-		    }
++                case BPP16_7_2_M3:
++                    CYCLE(
++                        Q_INT16* dst16 = (Q_INT16*)dst;
++		        for ( uint x=0; x<w; x++ ) {
++			    GET_PIXEL_DITHER_TC_OPT(<<7,<<2,>>3,0x7c00,0x3e0,0x1f,5,5,5)
++                            *dst16++ = pixel;
++		        }
++                    )
++		    break;
++		case BPP16_MSB:			// 16 bit MSB
++                    CYCLE(
++		        for ( uint x=0; x<w; x++ ) {
++			    GET_PIXEL_DITHER_TC
++			    *dst++ = (pixel >> 8);
++			    *dst++ = pixel;
++		        }
++                    )
++		    break;
++		case BPP16_LSB:			// 16 bit LSB
++                    CYCLE(
++    		        for ( uint x=0; x<w; x++ ) {
++			    GET_PIXEL_DITHER_TC
++			    *dst++ = pixel;
++			    *dst++ = pixel >> 8;
++		        }
++                    )
+ 		    break;
+ 		default:
+ 		    qFatal("Logic error");
+ 		}
+-	    } else {
+-		uint x;
+-		switch ( bppc ) {
+-		case 8:			// 8 bit
+-		    for ( x=0; x<w; x++ ) {
+-			int pixel = pix[*src++];
+-			*dst++ = pixel;
+-		    }
++	} else {
++	    switch ( mode ) {
++		case BPP8:			// 8 bit
++                    CYCLE(
++                    Q_UNUSED(p);
++		        for ( uint x=0; x<w; x++ ) {
++			    int pixel = pix[*src++];
++			    *dst++ = pixel;
++		        }
++                    )
+ 		    break;
+-		case 16:			// 16 bit MSB
+-		    for ( x=0; x<w; x++ ) {
+-			GET_PIXEL
+-			*dst++ = (pixel >> 8);
+-			*dst++ = pixel;
+-		    }
++                case BPP16_8_3_M3:
++                    CYCLE(
++                        Q_INT16* dst16 = (Q_INT16*)dst;
++		        for ( uint x=0; x<w; x++ ) {
++			    GET_PIXEL_OPT(<<8,<<3,>>3,0xf800,0x7e0,0x1f)
++                            *dst16++ = pixel;
++		        }
++                    )
+ 		    break;
+-		case 17:			// 16 bit LSB
+-		    for ( x=0; x<w; x++ ) {
+-			GET_PIXEL
+-			*dst++ = pixel;
+-			*dst++ = pixel >> 8;
+-		    }
++                case BPP16_7_2_M3:
++                    CYCLE(
++                        Q_INT16* dst16 = (Q_INT16*)dst;
++		        for ( uint x=0; x<w; x++ ) {
++			    GET_PIXEL_OPT(<<7,<<2,>>3,0x7c00,0x3e0,0x1f)
++                            *dst16++ = pixel;
++		        }
++                    )
+ 		    break;
+-		case 24:			// 24 bit MSB
+-		    for ( x=0; x<w; x++ ) {
+-			GET_PIXEL
+-			*dst++ = pixel >> 16;
+-			*dst++ = pixel >> 8;
+-			*dst++ = pixel;
+-		    }
++		case BPP16_MSB:			// 16 bit MSB
++                    CYCLE(
++		        for ( uint x=0; x<w; x++ ) {
++			    GET_PIXEL
++			    *dst++ = (pixel >> 8);
++			    *dst++ = pixel;
++		        }
++                    )
+ 		    break;
+-		case 25:			// 24 bit LSB
+-		    for ( x=0; x<w; x++ ) {
+-			GET_PIXEL
+-			*dst++ = pixel;
+-			*dst++ = pixel >> 8;
+-			*dst++ = pixel >> 16;
+-		    }
++		case BPP16_LSB:			// 16 bit LSB
++                    CYCLE(
++		        for ( uint x=0; x<w; x++ ) {
++			    GET_PIXEL
++			    *dst++ = pixel;
++			    *dst++ = pixel >> 8;
++		        }
++                    )
+ 		    break;
+-		case 32:			// 32 bit MSB
+-		    for ( x=0; x<w; x++ ) {
+-			GET_PIXEL
+-			*dst++ = pixel >> 24;
+-			*dst++ = pixel >> 16;
+-			*dst++ = pixel >> 8;
+-			*dst++ = pixel;
+-		    }
++		case BPP24_MSB:			// 24 bit MSB
++                    CYCLE(
++		        for ( uint x=0; x<w; x++ ) {
++			    GET_PIXEL
++			    *dst++ = pixel >> 16;
++			    *dst++ = pixel >> 8;
++			    *dst++ = pixel;
++		        }
++                    )
+ 		    break;
+-		case 33:			// 32 bit LSB
+-		    for ( x=0; x<w; x++ ) {
+-			GET_PIXEL
+-			*dst++ = pixel;
+-			*dst++ = pixel >> 8;
+-			*dst++ = pixel >> 16;
+-			*dst++ = pixel >> 24;
+-		    }
++		case BPP24_LSB:			// 24 bit LSB
++                    CYCLE(
++		        for ( uint x=0; x<w; x++ ) {
++			    GET_PIXEL
++			    *dst++ = pixel;
++			    *dst++ = pixel >> 8;
++			    *dst++ = pixel >> 16;
++		        }
++                    )
+ 		    break;
+-		default:
+-		    qFatal("Logic error 2");
+-		}
+-	    }
+-	}
+-	xi->data = (char *)newbits;
++                case BPP32_16_8_0:
++                    CYCLE(
++                        memcpy( dst, p, w * 4 );
++                    )
++                    break;
++		case BPP32_MSB:			// 32 bit MSB
++                    CYCLE(
++		        for ( uint x=0; x<w; x++ ) {
++			    GET_PIXEL
++			    *dst++ = pixel >> 24;
++			    *dst++ = pixel >> 16;
++			    *dst++ = pixel >> 8;
++			    *dst++ = pixel;
++		        }
++                    )
++		    break;
++		case BPP32_LSB:			// 32 bit LSB
++                    CYCLE(
++		        for ( uint x=0; x<w; x++ ) {
++			    GET_PIXEL
++			    *dst++ = pixel;
++			    *dst++ = pixel >> 8;
++			    *dst++ = pixel >> 16;
++			    *dst++ = pixel >> 24;
++		        }
++                    )
++  		    break;
++  		default:
++  		    qFatal("Logic error 2");
++  	    }
++  	}
++  	xi->data = (char *)newbits;
+     }
+ 
+     if ( d == 8 && !trucol ) {			// 8 bit pixmap
+@@ -1738,15 +1859,24 @@ bool QPixmap::convertFromImage( const QI
+ 
+ 		if (image.depth() == 32) {
+ 		    const int *iptr = (const int *) image.bits();
+-		    int max = w * h;
+-		    while (max--)
+-			*aptr++ = *iptr++ >> 24; // squirt
++                    if( axi->bytes_per_line == (int)w ) {
++		        int max = w * h;
++		        while (max--)
++			    *aptr++ = *iptr++ >> 24; // squirt
++                    } else {
++                        for (uint i = 0; i < h; ++i ) {
++                            for (uint j = 0; j < w; ++j )
++                                *aptr++ = *iptr++ >> 24; // squirt
++                            aptr += ( axi->bytes_per_line - w );
++                        }
++                    }
+ 		} else if (image.depth() == 8) {
+ 		    const QRgb * const rgb = image.colorTable();
+ 		    for (uint y = 0; y < h; ++y) {
+ 			const uchar *iptr = image.scanLine(y);
+ 			for (uint x = 0; x < w; ++x)
+ 			    *aptr++ = qAlpha(rgb[*iptr++]);
++                        aptr += ( axi->bytes_per_line - w );
+ 		    }
+ 		}
+ 

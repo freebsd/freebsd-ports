@@ -1,9 +1,0 @@
-bin/nspluginscan
-bin/nspluginviewer
-lib/kde3/kcm_nsplugins.la
-lib/kde3/kcm_nsplugins.so
-lib/kde3/libnsplugin.la
-lib/kde3/libnsplugin.so
-share/applications/kde/khtml_plugins.desktop
-share/apps/plugin/nspluginpart.rc
-@dirrm share/apps/plugin

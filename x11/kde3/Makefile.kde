@@ -17,7 +17,6 @@ COPY=	-c -p
 # For ports that have I18N components only.
 .if defined(KDE_I18N)
 _NO_KDE_FINAL=	yes
-_NO_KDE_CLOSURE= yes
 _NO_KDE_NDEBUG=	yes
 DISTNAME?=	${PORTNAME}-${PKGNAMEPREFIX:S/-$//}-${PORTVERSION}
 # Since KDE 3.1.3, the kde-i18n tarballs have the ${KDE_VERSION}
@@ -40,10 +39,6 @@ post-extract:
 
 .if !defined(_NO_KDE_FINAL) && defined(WANT_KDE_FINAL)
 CONFIGURE_ARGS+=--enable-final
-.endif
-
-.if !defined(_NO_KDE_CLOSURE) && defined(WANT_KDE_CLOSURE)
-CONFIGURE_ARGS+=--enable-closure
 .endif
 
 .if !defined(_NO_KDE_NDEBUG)

@@ -120,8 +120,6 @@ share/doc/HTML/uk/.keep_me
 share/doc/HTML/xh/.keep_me
 share/doc/HTML/zh_CN/.keep_me
 share/doc/HTML/zh_TW/.keep_me
-share/fonts/.keep_me
-share/fonts/override/.keep_me
 share/icons/.keep_me
 share/icons/crystalsvg/.keep_me
 share/icons/crystalsvg/128x128/.keep_me
@@ -396,8 +394,6 @@ share/wallpapers/.keep_me
 @dirrm share/icons/crystalsvg/128x128
 @dirrm share/icons/crystalsvg
 @dirrm share/icons
-@dirrm share/fonts/override
-@dirrm share/fonts
 @dirrm share/doc/HTML/zh_TW
 @dirrm share/doc/HTML/zh_CN
 @dirrm share/doc/HTML/xh

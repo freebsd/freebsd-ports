@@ -1,6 +1,5 @@
 bin/artsbuilder
 bin/artscontrol
-bin/juk
 bin/kaboodle
 bin/kaudiocreator
 bin/kmid
@@ -12,25 +11,6 @@ bin/midisend
 bin/noatun
 bin/workman2cddb.pl
 etc/xdg/menus/applications-merged/kde-multimedia-music.menu
-include/akode/akodelib.h
-include/akode/audiobuffer.h
-include/akode/audioconfiguration.h
-include/akode/audioframe.h
-include/akode/crossfader.h
-include/akode/decoder.h
-include/akode/encoder.h
-include/akode/fast_resampler.h
-include/akode/file.h
-include/akode/framedecoder.h
-include/akode/frametostream_decoder.h
-include/akode/localfile.h
-include/akode/mmapfile.h
-include/akode/pluginhandler.h
-include/akode/resampler.h
-include/akode/sink.h
-include/akode/streamdecoder.h
-include/akode/streamtoframe_decoder.h
-include/akode/wav_decoder.h
 include/arts/artsbuilder.h
 include/arts/artsbuilder.idl
 include/arts/artsgui.h
@@ -110,6 +90,8 @@ lib/kde3/kfile_ogg.la
 lib/kde3/kfile_ogg.so
 lib/kde3/kfile_sid.la
 lib/kde3/kfile_sid.so
+lib/kde3/kfile_theora.la
+lib/kde3/kfile_theora.so
 lib/kde3/kfile_wav.la
 lib/kde3/kfile_wav.so
 lib/kde3/kio_audiocd.la
@@ -174,17 +156,6 @@ lib/kde3/noatun_winskin.la
 lib/kde3/noatun_winskin.so
 lib/kde3/noatunsimple.la
 lib/kde3/noatunsimple.so
-lib/libakode.la
-lib/libakode.so
-lib/libakode.so.1
-lib/libakode_mpc_decoder.la
-lib/libakode_mpc_decoder.so
-lib/libakode_mpeg_decoder.la
-lib/libakode_mpeg_decoder.so
-lib/libakode_xiph_decoder.la
-lib/libakode_xiph_decoder.so
-lib/libarts_akode.la
-lib/libarts_akode.so
 lib/libartsbuilder.la
 lib/libartsbuilder.so
 lib/libartsbuilder.so.0
@@ -309,6 +280,7 @@ lib/mcop/Arts/Synth_COMPRESSOR.mcopclass
 lib/mcop/Arts/Synth_DATA.mcopclass
 lib/mcop/Arts/Synth_DEBUG.mcopclass
 lib/mcop/Arts/Synth_DELAY.mcopclass
+lib/mcop/Arts/Synth_DIV.mcopclass
 lib/mcop/Arts/Synth_ENVELOPE_ADSR.mcopclass
 lib/mcop/Arts/Synth_FM_SOURCE.mcopclass
 lib/mcop/Arts/Synth_FREEVERB.mcopclass
@@ -359,14 +331,6 @@ lib/mcop/Noatun/StereoVolumeControlSSE.mcopclass
 lib/mcop/Noatun/WinSkinFFT.mcopclass
 lib/mcop/RawWriter.mcopclass
 lib/mcop/VoiceRemoval.mcopclass
-lib/mcop/akodeMPCPlayObject.mcopclass
-lib/mcop/akodeMPEGPlayObject.mcopclass
-lib/mcop/akodePlayObject.mcopclass
-lib/mcop/akodeSpeexStreamPlayObject.mcopclass
-lib/mcop/akodeVorbisStreamPlayObject.mcopclass
-lib/mcop/akodeXiphPlayObject.mcopclass
-lib/mcop/akodearts.mcopclass
-lib/mcop/akodearts.mcoptype
 lib/mcop/artsbuilder.mcopclass
 lib/mcop/artsbuilder.mcoptype
 lib/mcop/artseffects.mcopclass
@@ -394,7 +358,6 @@ lib/mcop/winskinvis.mcoptype
 share/applications/kde/artsbuilder.desktop
 share/applications/kde/artscontrol.desktop
 share/applications/kde/audiocd.desktop
-share/applications/kde/juk.desktop
 share/applications/kde/kaboodle.desktop
 share/applications/kde/kaudiocreator.desktop
 share/applications/kde/kmid.desktop
@@ -473,6 +436,7 @@ share/apps/artsbuilder/pics/Synth_ATAN_SATURATE.xpm
 share/apps/artsbuilder/pics/Synth_BUS_DOWNLINK.xpm
 share/apps/artsbuilder/pics/Synth_BUS_UPLINK.xpm
 share/apps/artsbuilder/pics/Synth_DEBUG.xpm
+share/apps/artsbuilder/pics/Synth_DIV.xpm
 share/apps/artsbuilder/pics/Synth_ENVELOPE_ADSR.xpm
 share/apps/artsbuilder/pics/Synth_FILEPLAY.xpm
 share/apps/artsbuilder/pics/Synth_MIDI_DEBUG.xpm
@@ -493,9 +457,6 @@ share/apps/artsbuilder/pics/Synth_WAVE_TRI.xpm
 share/apps/artsbuilder/pics/Synth_XFADE.xpm
 share/apps/artscontrol/artscontrol.rc
 share/apps/artscontrol/artsmidimanagerview.rc
-share/apps/juk/jukui-rtl.rc
-share/apps/juk/jukui.rc
-share/apps/juk/pics/playing.png
 share/apps/kaboodle/icons/crystalsvg/16x16/actions/kaboodleloop.png
 share/apps/kaboodle/icons/crystalsvg/22x22/actions/kaboodleloop.png
 share/apps/kaboodle/kaboodlepartui.rc
@@ -524,6 +485,7 @@ share/apps/kaudiocreator/pics/check.png
 share/apps/kconf_update/audiocd.upd
 share/apps/kconf_update/kaudiocreator-libkcddb.upd
 share/apps/kconf_update/kaudiocreator-meta.upd
+share/apps/kconf_update/kcmcddb-emailsettings.upd
 share/apps/kconf_update/noatun.upd
 share/apps/kconf_update/noatun20update
 share/apps/kconf_update/upgrade-kaudiocreator-metadata.sh
@@ -578,7 +540,7 @@ share/apps/kmix/pics/mix_treble.png
 share/apps/kmix/pics/mix_unknown.png
 share/apps/kmix/pics/mix_video.png
 share/apps/kmix/pics/mix_volume.png
-share/apps/konqueror/servicemenus/jukservicemenu.desktop
+share/apps/konqueror/servicemenus/audiocd_play.desktop
 share/apps/krec/icons/crystalsvg/16x16/actions/krec_record.png
 share/apps/krec/icons/crystalsvg/22x22/actions/krec_record.png
 share/apps/krec/icons/crystalsvg/32x32/actions/krec_record.png
@@ -643,6 +605,7 @@ share/apps/noatun/monoscope.plugin
 share/apps/noatun/net.plugin
 share/apps/noatun/noatunui.plugin
 share/apps/noatun/simple.plugin
+share/apps/noatun/simpleui.rc
 share/apps/noatun/skins/kaiman/car-preset/btn_exit.png
 share/apps/noatun/skins/kaiman/car-preset/btn_iconify.png
 share/apps/noatun/skins/kaiman/car-preset/btn_list.png
@@ -827,6 +790,7 @@ share/apps/noatun/systray.plugin
 share/apps/noatun/systrayui.rc
 share/apps/noatun/voiceprint.plugin
 share/apps/noatun/winskin.plugin
+share/apps/noatun/yhconfig.kcfg
 share/apps/profiles/kscd.profile.xml
 share/autostart/restore_kmix_volumes.desktop
 share/config.kcfg/audiocd_lame_encoder.kcfg
@@ -866,6 +830,7 @@ share/doc/HTML/en/artsbuilder/images/Synth_CDELAY.png
 share/doc/HTML/en/artsbuilder/images/Synth_COMPRESSOR.png
 share/doc/HTML/en/artsbuilder/images/Synth_DEBUG.png
 share/doc/HTML/en/artsbuilder/images/Synth_DELAY.png
+share/doc/HTML/en/artsbuilder/images/Synth_DIV.png
 share/doc/HTML/en/artsbuilder/images/Synth_ENVELOPE_ADSR.png
 share/doc/HTML/en/artsbuilder/images/Synth_FILEPLAY.png
 share/doc/HTML/en/artsbuilder/images/Synth_FM_SOURCE.png
@@ -919,12 +884,16 @@ share/doc/HTML/en/kaboodle/index.docbook
 share/doc/HTML/en/kcontrol/kmixcfg/common
 share/doc/HTML/en/kcontrol/kmixcfg/index.cache.bz2
 share/doc/HTML/en/kcontrol/kmixcfg/index.docbook
+share/doc/HTML/en/kio_audiocd/audiocd.docbook
 share/doc/HTML/en/kmid/common
 share/doc/HTML/en/kmid/index.cache.bz2
 share/doc/HTML/en/kmid/index.docbook
 share/doc/HTML/en/kmix/common
 share/doc/HTML/en/kmix/index.cache.bz2
 share/doc/HTML/en/kmix/index.docbook
+share/doc/HTML/en/kmix/kmix-channel-playback.png
+share/doc/HTML/en/kmix/kmix-channel-record.png
+share/doc/HTML/en/kmix/kmix-window.png
 share/doc/HTML/en/krec/common
 share/doc/HTML/en/krec/index.cache.bz2
 share/doc/HTML/en/krec/index.docbook
@@ -957,7 +926,6 @@ share/icons/crystalsvg/128x128/actions/artsfftscope.png
 share/icons/crystalsvg/128x128/actions/artsmediatypes.png
 share/icons/crystalsvg/128x128/actions/artsmidimanager.png
 share/icons/crystalsvg/128x128/apps/artscontrol.png
-share/icons/crystalsvg/128x128/apps/juk.png
 share/icons/crystalsvg/128x128/apps/kaboodle.png
 share/icons/crystalsvg/128x128/apps/kmix.png
 share/icons/crystalsvg/128x128/apps/krec.png
@@ -971,7 +939,6 @@ share/icons/crystalsvg/16x16/actions/artsmediatypes.png
 share/icons/crystalsvg/16x16/actions/artsmidimanager.png
 share/icons/crystalsvg/16x16/apps/artsbuilder.png
 share/icons/crystalsvg/16x16/apps/artscontrol.png
-share/icons/crystalsvg/16x16/apps/juk.png
 share/icons/crystalsvg/16x16/apps/kaboodle.png
 share/icons/crystalsvg/16x16/apps/kaudiocreator.png
 share/icons/crystalsvg/16x16/apps/kmid.png
@@ -985,7 +952,6 @@ share/icons/crystalsvg/22x22/actions/artsenvironment.png
 share/icons/crystalsvg/22x22/actions/artsfftscope.png
 share/icons/crystalsvg/22x22/actions/artsmediatypes.png
 share/icons/crystalsvg/22x22/actions/artsmidimanager.png
-share/icons/crystalsvg/22x22/actions/juk_dock.png
 share/icons/crystalsvg/22x22/apps/artscontrol.png
 share/icons/crystalsvg/22x22/apps/kaboodle.png
 share/icons/crystalsvg/22x22/apps/krec.png
@@ -996,7 +962,6 @@ share/icons/crystalsvg/32x32/actions/artsfftscope.png
 share/icons/crystalsvg/32x32/actions/artsmediatypes.png
 share/icons/crystalsvg/32x32/actions/artsmidimanager.png
 share/icons/crystalsvg/32x32/apps/artscontrol.png
-share/icons/crystalsvg/32x32/apps/juk.png
 share/icons/crystalsvg/32x32/apps/kaboodle.png
 share/icons/crystalsvg/32x32/apps/kaudiocreator.png
 share/icons/crystalsvg/32x32/apps/kmid.png
@@ -1010,7 +975,6 @@ share/icons/crystalsvg/48x48/actions/artsfftscope.png
 share/icons/crystalsvg/48x48/actions/artsmediatypes.png
 share/icons/crystalsvg/48x48/actions/artsmidimanager.png
 share/icons/crystalsvg/48x48/apps/artscontrol.png
-share/icons/crystalsvg/48x48/apps/juk.png
 share/icons/crystalsvg/48x48/apps/kaboodle.png
 share/icons/crystalsvg/48x48/apps/kmid.png
 share/icons/crystalsvg/48x48/apps/kmix.png
@@ -1023,7 +987,6 @@ share/icons/crystalsvg/64x64/actions/artsfftscope.png
 share/icons/crystalsvg/64x64/actions/artsmediatypes.png
 share/icons/crystalsvg/64x64/actions/artsmidimanager.png
 share/icons/crystalsvg/64x64/apps/artscontrol.png
-share/icons/crystalsvg/64x64/apps/juk.png
 share/icons/crystalsvg/64x64/apps/kaboodle.png
 share/icons/crystalsvg/64x64/apps/kmix.png
 share/icons/crystalsvg/64x64/apps/krec.png
@@ -1034,6 +997,7 @@ share/icons/crystalsvg/scalable/actions/artsenvironment.svg
 share/icons/crystalsvg/scalable/actions/artsfftscope.svg
 share/icons/crystalsvg/scalable/actions/artsmediatypes.svg
 share/icons/crystalsvg/scalable/actions/artsmidimanager.svg
+share/icons/crystalsvg/scalable/apps/artsbuilder.svgz
 share/icons/crystalsvg/scalable/apps/artscontrol.svg
 share/icons/locolor/16x16/apps/kaudiocreator.png
 share/icons/locolor/32x32/apps/kaudiocreator.png
@@ -1054,6 +1018,7 @@ share/services/kfile_mp3.desktop
 share/services/kfile_mpc.desktop
 share/services/kfile_ogg.desktop
 share/services/kfile_sid.desktop
+share/services/kfile_theora.desktop
 share/services/kfile_wav.desktop
 share/services/kmixctrl_restore.desktop
 share/services/krec_exportogg.desktop
@@ -1066,6 +1031,7 @@ share/servicetypes/krec_exportitem.desktop
 @dirrm share/doc/HTML/en/krec
 @dirrm share/doc/HTML/en/kmix
 @dirrm share/doc/HTML/en/kmid
+@dirrm share/doc/HTML/en/kio_audiocd
 @dirrm share/doc/HTML/en/kcontrol/kmixcfg
 @dirrm share/doc/HTML/en/kaboodle
 @dirrm share/doc/HTML/en/juk
@@ -1141,8 +1107,6 @@ share/servicetypes/krec_exportitem.desktop
 @dirrm share/apps/kaboodle/icons/crystalsvg
 @dirrm share/apps/kaboodle/icons
 @dirrm share/apps/kaboodle
-@dirrm share/apps/juk/pics
-@dirrm share/apps/juk
 @dirrm share/apps/artscontrol
 @dirrm share/apps/artsbuilder/pics
 @dirrm share/apps/artsbuilder/examples/todo
@@ -1152,5 +1116,4 @@ share/servicetypes/krec_exportitem.desktop
 @dirrm lib/mcop/Arts/Environment
 @dirrm include/noatun
 @dirrm include/libkcddb
-@dirrm include/akode
 @dirrm etc/xdg/menus/applications-merged

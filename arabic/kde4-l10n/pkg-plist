@@ -1,4 +1,3 @@
-share/locale/ar/LC_MESSAGES/alarmdaemonctrl.mo
 share/locale/ar/LC_MESSAGES/alsaplayerui.mo
 share/locale/ar/LC_MESSAGES/amor.mo
 share/locale/ar/LC_MESSAGES/appletproxy.mo
@@ -27,7 +26,6 @@ share/locale/ar/LC_MESSAGES/dub.mo
 share/locale/ar/LC_MESSAGES/extensionproxy.mo
 share/locale/ar/LC_MESSAGES/ffrs.mo
 share/locale/ar/LC_MESSAGES/filetypes.mo
-share/locale/ar/LC_MESSAGES/flashkard.mo
 share/locale/ar/LC_MESSAGES/fontinst.mo
 share/locale/ar/LC_MESSAGES/fsview.mo
 share/locale/ar/LC_MESSAGES/htmlsearch.mo
@@ -47,7 +45,6 @@ share/locale/ar/LC_MESSAGES/kaboodle.mo
 share/locale/ar/LC_MESSAGES/kaccess.mo
 share/locale/ar/LC_MESSAGES/kaddressbook.mo
 share/locale/ar/LC_MESSAGES/kalarm.mo
-share/locale/ar/LC_MESSAGES/kalarmdgui.mo
 share/locale/ar/LC_MESSAGES/kalzium.mo
 share/locale/ar/LC_MESSAGES/kandy.mo
 share/locale/ar/LC_MESSAGES/kappfinder.mo
@@ -100,7 +97,6 @@ share/locale/ar/LC_MESSAGES/kcmcrypto.mo
 share/locale/ar/LC_MESSAGES/kcmcss.mo
 share/locale/ar/LC_MESSAGES/kcmemail.mo
 share/locale/ar/LC_MESSAGES/kcmenergy.mo
-share/locale/ar/LC_MESSAGES/kcmfileshare.mo
 share/locale/ar/LC_MESSAGES/kcmfonts.mo
 share/locale/ar/LC_MESSAGES/kcmhtmlsearch.mo
 share/locale/ar/LC_MESSAGES/kcmicons.mo
@@ -217,6 +213,7 @@ share/locale/ar/LC_MESSAGES/kfile_vcf.mo
 share/locale/ar/LC_MESSAGES/kfile_wav.mo
 share/locale/ar/LC_MESSAGES/kfile_xbm.mo
 share/locale/ar/LC_MESSAGES/kfileaudiopreview.mo
+share/locale/ar/LC_MESSAGES/kfileshare.mo
 share/locale/ar/LC_MESSAGES/kfindpart.mo
 share/locale/ar/LC_MESSAGES/kfloppy.mo
 share/locale/ar/LC_MESSAGES/kfmclient.mo
@@ -256,10 +253,8 @@ share/locale/ar/LC_MESSAGES/kio_settings.mo
 share/locale/ar/LC_MESSAGES/kio_sftp.mo
 share/locale/ar/LC_MESSAGES/kio_sieve.mo
 share/locale/ar/LC_MESSAGES/kio_smb.mo
-share/locale/ar/LC_MESSAGES/kio_smbro.mo
 share/locale/ar/LC_MESSAGES/kio_smtp.mo
 share/locale/ar/LC_MESSAGES/kioexec.mo
-share/locale/ar/LC_MESSAGES/kit.mo
 share/locale/ar/LC_MESSAGES/kiten.mo
 share/locale/ar/LC_MESSAGES/kjobviewer.mo
 share/locale/ar/LC_MESSAGES/kjots.mo
@@ -290,7 +285,6 @@ share/locale/ar/LC_MESSAGES/kmouth.mo
 share/locale/ar/LC_MESSAGES/kmplot.mo
 share/locale/ar/LC_MESSAGES/kmrml.mo
 share/locale/ar/LC_MESSAGES/knewsticker.mo
-share/locale/ar/LC_MESSAGES/knorskverbs.mo
 share/locale/ar/LC_MESSAGES/knotes.mo
 share/locale/ar/LC_MESSAGES/knotify.mo
 share/locale/ar/LC_MESSAGES/kodo.mo
@@ -299,6 +293,7 @@ share/locale/ar/LC_MESSAGES/kolourpicker.mo
 share/locale/ar/LC_MESSAGES/kompare.mo
 share/locale/ar/LC_MESSAGES/konq_smbmounterplugin.mo
 share/locale/ar/LC_MESSAGES/konqsidebar_mediaplayer.mo
+share/locale/ar/LC_MESSAGES/konqsidebar_news.mo
 share/locale/ar/LC_MESSAGES/konqueror.mo
 share/locale/ar/LC_MESSAGES/konquest.mo
 share/locale/ar/LC_MESSAGES/konsole.mo
@@ -309,10 +304,10 @@ share/locale/ar/LC_MESSAGES/korganizer.mo
 share/locale/ar/LC_MESSAGES/korn.mo
 share/locale/ar/LC_MESSAGES/kpackage.mo
 share/locale/ar/LC_MESSAGES/kpager.mo
-share/locale/ar/LC_MESSAGES/kpaint.mo
 share/locale/ar/LC_MESSAGES/kpartapp.mo
 share/locale/ar/LC_MESSAGES/kpartsaver.mo
 share/locale/ar/LC_MESSAGES/kpat.mo
+share/locale/ar/LC_MESSAGES/kpdf.mo
 share/locale/ar/LC_MESSAGES/kpercentage.mo
 share/locale/ar/LC_MESSAGES/kpersonalizer.mo
 share/locale/ar/LC_MESSAGES/kpf.mo
@@ -352,6 +347,7 @@ share/locale/ar/LC_MESSAGES/kstars.mo
 share/locale/ar/LC_MESSAGES/kstart.mo
 share/locale/ar/LC_MESSAGES/kstartperf.mo
 share/locale/ar/LC_MESSAGES/kstyle_keramik_config.mo
+share/locale/ar/LC_MESSAGES/ksvgplugin.mo
 share/locale/ar/LC_MESSAGES/ksync.mo
 share/locale/ar/LC_MESSAGES/ksysguard.mo
 share/locale/ar/LC_MESSAGES/ksystemtrayapplet.mo
@@ -389,15 +385,6 @@ share/locale/ar/LC_MESSAGES/kweather.mo
 share/locale/ar/LC_MESSAGES/kwifimanager.mo
 share/locale/ar/LC_MESSAGES/kwin.mo
 share/locale/ar/LC_MESSAGES/kwin4.mo
-share/locale/ar/LC_MESSAGES/kwin_b2_config.mo
-share/locale/ar/LC_MESSAGES/kwin_cde_config.mo
-share/locale/ar/LC_MESSAGES/kwin_default_config.mo
-share/locale/ar/LC_MESSAGES/kwin_glow_config.mo
-share/locale/ar/LC_MESSAGES/kwin_icewm_config.mo
-share/locale/ar/LC_MESSAGES/kwin_keramik_config.mo
-share/locale/ar/LC_MESSAGES/kwin_modernsys_config.mo
-share/locale/ar/LC_MESSAGES/kwin_plastik_config.mo
-share/locale/ar/LC_MESSAGES/kwin_quartz_config.mo
 share/locale/ar/LC_MESSAGES/kwireless.mo
 share/locale/ar/LC_MESSAGES/kworldclock.mo
 share/locale/ar/LC_MESSAGES/kwriteconfig.mo
@@ -449,7 +436,6 @@ share/locale/ar/LC_MESSAGES/tippecanoe.mo
 share/locale/ar/LC_MESSAGES/tyler.mo
 share/locale/ar/LC_MESSAGES/uachangerplugin.mo
 share/locale/ar/LC_MESSAGES/umbrello.mo
-share/locale/ar/LC_MESSAGES/userinfo.mo
 share/locale/ar/LC_MESSAGES/validatorsplugin.mo
 share/locale/ar/LC_MESSAGES/vimpart.mo
 share/locale/ar/LC_MESSAGES/wakeup.mo

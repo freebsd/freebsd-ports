@@ -8,7 +8,6 @@
 
 PORTNAME=	kdeartwork
 PORTVERSION=	${KDE_VERSION}
-PORTREVISION=	1
 CATEGORIES=	x11-themes kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
@@ -16,6 +15,8 @@ DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Additional themes, sounds, wallpapers and window styles for KDE
+
+CONFLICTS=	phase-[0-9]*
 
 USE_KDEBASE_VER=3
 PREFIX=		${KDE_PREFIX}

@@ -1,5 +1,5 @@
---- soundserver/Makefile.in.orig	Wed Apr  7 09:12:08 2004
-+++ soundserver/Makefile.in	Wed Apr  7 09:14:08 2004
+--- soundserver/Makefile.in.orig	Fri Mar  4 10:58:22 2005
++++ soundserver/Makefile.in	Wed Mar 16 04:32:04 2005
 @@ -20,7 +20,7 @@
  
  
@@ -18,7 +18,7 @@
  subdir = soundserver
  DIST_COMMON = $(artsinclude_HEADERS) $(srcdir)/Makefile.am \
  	$(srcdir)/Makefile.in $(srcdir)/artsversion-new.h.in
-@@ -234,12 +234,12 @@
+@@ -192,12 +192,12 @@
  	$(libartswavplayobject_la_SOURCES) $(libkmedia2_la_SOURCES) \
  	$(libkmedia2_idl_la_SOURCES) $(libsoundserver_idl_la_SOURCES) \
  	$(artscat_SOURCES) $(artsd_SOURCES) $(artsplay_SOURCES) \
@@ -33,17 +33,17 @@
  mcopclassDATA_INSTALL = $(INSTALL_DATA)
  mcoptypeDATA_INSTALL = $(INSTALL_DATA)
  DATA = $(mcopclass_DATA) $(mcoptype_DATA)
-@@ -558,9 +558,6 @@
- artsplay_LDADD = libsoundserver_idl.la $(USE_THREADS)
+@@ -539,9 +539,6 @@
+ artsplay_LDFLAGS = $(USE_THREADS)
  artsplay_SOURCES = artsplay.cc
  artsplay_COMPILE_FIRST = soundserver.h artsversion.h
 -artswrapper_SOURCES = artswrapper.c
 -artswrapper_INCLUDES = -I$(top_builddir) -DEXECUTE=\"$(artsdpath)\"
 -artswrapper_LDADD = $(LIBPOSIX4)
- artsshell_LDADD = libsoundserver_idl.la $(USE_THREADS)
+ artsshell_LDADD = libsoundserver_idl.la $(LIBPTHREAD)
+ artsshell_LDFLAGS = $(USE_THREADS)
  artsshell_SOURCES = artsshell.cc tradercheck.cc
- artsshell_COMPILE_FIRST = soundserver.h artsversion.h
-@@ -571,10 +568,6 @@
+@@ -553,10 +550,6 @@
  mcopclassdir = $(libdir)/mcop/Arts
  mcopclass_DATA = FileInputStream.mcopclass $(WAV_MCOPCLASS) GSLPlayObject.mcopclass
  
@@ -54,7 +54,7 @@
  ######## install idl typeinfo files
  mcoptypedir = $(libdir)/mcop
  mcoptype_DATA = soundserver.mcoptype soundserver.mcopclass \
-@@ -725,9 +718,6 @@
+@@ -707,9 +700,6 @@
  artsshell$(EXEEXT): $(artsshell_OBJECTS) $(artsshell_DEPENDENCIES) 
  	@rm -f artsshell$(EXEEXT)
  	$(CXXLINK) $(artsshell_LDFLAGS) $(artsshell_OBJECTS) $(artsshell_LDADD) $(LIBS)
@@ -64,31 +64,3 @@
  
  mostlyclean-compile:
  	-rm -f *.$(OBJEXT)
---- soundserver/Makefile.in.orig	Tue Jun  1 16:36:34 2004
-+++ soundserver/Makefile.in	Tue Jun  1 16:45:08 2004
-@@ -545,20 +545,20 @@
- libartsgslplayobject_la_LDFLAGS = -no-undefined $(KDE_NO_UNDEFINED) -module $(all_libraries)
- libartsgslplayobject_la_COMPILE_FIRST = soundserver.h ../flow/artsflow.h
- artsd_LDADD = libsoundserver_idl.la $(FLOWLIBS) \
--              $(top_builddir)/mcop_mt/libmcop_mt.la $(USE_THREADS)
-+              $(top_builddir)/mcop_mt/libmcop_mt.la $(USE_THREADS) $(LIBPTHREAD)
- 
- artsd_SOURCES = soundserverv2_impl.cc soundserver_impl.cc simplesoundserver_impl.cc artsd.cc cpuusage.cc samplestorage_impl.cc crashhandler.cc soundserverstartup_impl.cc
- artsd_COMPILE_FIRST = soundserver.h artsversion.h
--artscat_LDADD = libsoundserver_idl.la $(FLOWLIBS) $(USE_THREADS)
-+artscat_LDADD = libsoundserver_idl.la $(FLOWLIBS) $(USE_THREADS) $(LIBPTHREAD)
- artscat_SOURCES = artscat.cc
- artscat_COMPILE_FIRST = soundserver.h artsversion.h 
--artsrec_LDADD = libsoundserver_idl.la $(FLOWLIBS) $(USE_THREADS)
-+artsrec_LDADD = libsoundserver_idl.la $(FLOWLIBS) $(USE_THREADS) $(LIBPTHREAD)
- artsrec_SOURCES = artsrec.cc
- artsrec_COMPILE_FIRST = soundserver.h artsversion.h
--artsplay_LDADD = libsoundserver_idl.la $(USE_THREADS)
-+artsplay_LDADD = libsoundserver_idl.la $(USE_THREADS) $(LIBPTHREAD)
- artsplay_SOURCES = artsplay.cc
- artsplay_COMPILE_FIRST = soundserver.h artsversion.h
--artsshell_LDADD = libsoundserver_idl.la $(USE_THREADS)
-+artsshell_LDADD = libsoundserver_idl.la $(USE_THREADS) $(LIBPTHREAD)
- artsshell_SOURCES = artsshell.cc tradercheck.cc
- artsshell_COMPILE_FIRST = soundserver.h artsversion.h
- DISTCLEANFILES = soundserver.cc soundserver.h soundserver.mcopclass \

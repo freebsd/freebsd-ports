@@ -1,0 +1,59 @@
+qt-bugs@ issue : 49417
+bugs.kde.org number : 74778
+applied: no
+author: Lubos Lunak <l.lunak@kde.org>
+
+ Hello,
+ 
+  please consider applying the two attached QPopupMenu patches fixing KDE bugs 
+  #58719 and #74778 (http://bugs.kde.org/show_bug.cgi?id=58719, 
+  http://bugs.kde.org/show_bug.cgi?id=74778), which complain about keyboard 
+  navigation in popup menus being very uncomfortable because of being affected 
+  by mouse position despite mouse not being used at all.
+
+  [... #58719 ... ]
+  
+  - ignoremousepos.patch - (#74778) - use keyboard to open some popup which 
+  doesn't show up at mouse position (e.g. Alt+F3 with KWin or the context menu 
+  key with some file selected in Konqueror). If the mouse is positioned in the 
+  area where the popup shows, the random entry happening to be at the cursor 
+  position becomes highlighted.
+  The patch fixes this by ignoring mouse events that happen at mouse position 
+  which was current when the popup was shown, i.e. all mouse move events that 
+  actually aren't triggered by mouse move are ignored. I first wanted to ignore 
+  only the very first mouse move event (which should be caused by EnterNotify 
+  for the popup) but I realized that Qt's event handling causes the popup to 
+  possibly get more than just one initial move event, caused by LeaveNotify 
+  events for normal widgets being transformed to mouse move events for the 
+  popup, so I have no better idea how to solve this problem.
+   
+--- src/widgets/qpopupmenu.cpp.sav	2004-05-25 17:48:21.000000000 +0200
++++ src/widgets/qpopupmenu.cpp	2004-05-25 17:57:28.981809096 +0200
+@@ -254,6 +254,7 @@ public:
+     QSize calcSize;
+     QRegion mouseMoveBuffer;
+     uint hasmouse : 1;
++    QPoint ignoremousepos;
+ };
+ 
+ static QPopupMenu* active_popup_menu = 0;
+@@ -1354,6 +1355,7 @@ void QPopupMenu::show()
+     popupActive = -1;
+     if(style().styleHint(QStyle::SH_PopupMenu_SubMenuPopupDelay, this))
+ 	d->mouseMoveBuffer = QRegion();
++    d->ignoremousepos = QCursor::pos();
+ }
+ 
+ /*!
+@@ -1701,6 +1703,11 @@ void QPopupMenu::mouseReleaseEvent( QMou
+ 
+ void QPopupMenu::mouseMoveEvent( QMouseEvent *e )
+ {
++    if( e->globalPos() == d->ignoremousepos ) {
++        return;
++    }
++    d->ignoremousepos = QPoint();
++
+     motion++;
+ 
+     if ( parentMenu && parentMenu->isPopupMenu ) {

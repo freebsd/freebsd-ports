@@ -6,6 +6,84 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+
+20050320:
+  AFFECTS: users of x11/kde3, x11/kdelibs3, x11/kdebase3, x11-themes/kdeartwork3, www/akregator, x11-themes/phase, multimedia/kdemultimedia3
+  AUTHOR: kde@freebsd.org
+
+  In KDE 3.4, a number of files were moved between ports, some ports
+  were added, one port has been removed and some applictions formerly available
+  in their own ports were incorporated into KDE. This means that you will have 
+  to take some precautions to update your KDE installation. A simple 
+  portupgrade -a will not work.
+
+  Portupgrade -R kde can fail as well, depending on what parts of KDE you
+  have currently installed. We therefore recommend sticking to the following
+  procedure. The procedure requires you to have sysutils/portupgrade installed
+  and you to be the superuser (or using sudo). We recommend not being logged in
+  to a KDE session on the machine you're performing the upgrade on. If you
+  choose to perform the update while being logged in to KDE, expect erratic
+  behaviour and crashes from applications launched until you log out and back 
+  in.
+
+  1.) Delete installed packages which conflict with the updated KDE
+      ports.
+
+      	pkg_deinstall -f kdeartwork-\[0-9\]\* kdebase-\[0-9\]\* \
+	kdebase-konqueror-nsplugins-\[0-9\]\* kdewebdev-\[0-9\]\* \
+	kde-\[0-9\]\* akregator\* phase\*
+
+  2.) Now update the remaining KDE ports.
+
+      	portupgrade arts\* kde\*
+
+      or, if you want to update KDE along with other updated ports:
+
+      	portupgrade -a
+
+  3.) Reinstall the KDE ports you deleted in step 2.
+
+      	portinstall -O kdebase kdeartwork kdewebdev
+
+   Changes in detail:
+
+	- www/akregator is now included into deskutils/kdepim3.
+	- x11-themes/phase is now included in x11-themes/kdeartwork3.
+	- www/konqueror-nsplugins has been removed and is now integrated into
+          x11/kdebase3.
+	- Juk has been split out of multimedia/kdemultimedia3 and is now
+          available as audio/juk.
+	- Akode has been split out of multimedia/kdemultimedia3 and is now
+          available as audio/akode and audio/akode-plugins-*. Akode is also
+	  a default dependency of multimedia/kdemultimedia3 now.
+	- audio/mpeglib_artsplug has been demoted to legacy status and is no
+          longer the default decoder backend for kdemultimedia3. It's also not
+          depended on by kdemultimedia3 by default anymore.
+
+  Known post-updating issues:
+
+  - If you're missing acoustic notifications (system sounds) after the update:
+
+    	rm ~/.kde/share/config/knotifyrc
+
+    Then log out of KDE and back in again (also see 
+    http://freebsd.kde.org/faq.php#q16).
+
+  - kdm users might get warnings from kdm about obsolete lines in kdmrc.
+    You can migrate your configuration while preserving your customizations
+    by running (as root or with sudo)
+
+    	genkdmconf
+
+    Make sure to backup your old kdm configuration (usually found in
+    /usr/local/share/config/kdm) beforehand in case the merge produces an
+    invalid configuration. Especially note that kdm does not use the Xservers
+    file anymore. A genkdmconf run will merge its contents into kdmrc.
+
+  Extensive information about changes and new features of KDE 3.4 can be found
+  at http://developer.kde.org/development-versions/kde-3.4-features.html. Bugs
+  can be reported at http://bugs.kde.org.
+
 20050320:
   AFFECTS: users of sysutils/portsnap
   AUTHOR: cperciva@FreeBSD.org

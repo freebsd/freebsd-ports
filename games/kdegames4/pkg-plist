@@ -37,12 +37,15 @@ include/atlantic/configoption.h
 include/atlantic/estate.h
 include/atlantic/estategroup.h
 include/atlantic/game.h
+include/atlantic/libatlantic_export.h
 include/atlantic/player.h
 include/atlantic/trade.h
 include/atlantik/ui/auction_widget.h
 include/atlantik/ui/board.h
 include/atlantik/ui/estatedetails.h
 include/atlantik/ui/estateview.h
+include/atlantik/ui/kwrappedlistviewitem.h
+include/atlantik/ui/libatlantikui_export.h
 include/atlantik/ui/portfolioestate.h
 include/atlantik/ui/portfolioview.h
 include/atlantik/ui/token.h
@@ -1107,7 +1110,6 @@ share/apps/katomic/levels/level_8
 share/apps/katomic/levels/level_80
 share/apps/katomic/levels/level_81
 share/apps/katomic/levels/level_82
-share/apps/katomic/levels/level_83
 share/apps/katomic/levels/level_84
 share/apps/katomic/levels/level_9
 share/apps/katomic/pics/abilder.png
@@ -1199,7 +1201,7 @@ share/apps/kdegames/pics/star.png
 share/apps/kenolaba/kenolabaui.rc
 share/apps/kenolaba/pics/edit.xpm
 share/apps/kenolaba/pics/hint.xpm
-share/apps/kenolaba/pics/net.xpm
+share/apps/kenolaba/pics/network.xpm
 share/apps/kenolaba/pics/new.xpm
 share/apps/kenolaba/pics/noball.xpm
 share/apps/kenolaba/pics/ok.xpm
@@ -1463,6 +1465,7 @@ share/apps/konquest/pics/planet7.xpm
 share/apps/konquest/pics/planet8.xpm
 share/apps/konquest/pics/planet9.xpm
 share/apps/konquest/pics/ruler.xpm
+share/apps/kpat/backgrounds/green.png
 share/apps/kpat/kpatui.rc
 share/apps/kpoker/kpokerui.rc
 share/apps/kpoker/sounds/cardflip.wav
@@ -2063,6 +2066,7 @@ share/apps/lskat/grafix/type1.png
 share/apps/lskat/grafix/type2.png
 share/apps/lskat/grafix/type3.png
 share/apps/lskat/lskatui.rc
+share/apps/zeroconf/_kbattleship._tcp
 share/config.kcfg/kasteroids.kcfg
 share/config.kcfg/kfouleggs.kcfg
 share/config.kcfg/kjumpingcube.kcfg
@@ -2079,6 +2083,7 @@ share/config/magic/kolf.magic
 share/doc/HTML/en/atlantik/common
 share/doc/HTML/en/atlantik/index.cache.bz2
 share/doc/HTML/en/atlantik/index.docbook
+share/doc/HTML/en/atlantik/man-atlantik.6.docbook
 share/doc/HTML/en/kasteroids/common
 share/doc/HTML/en/kasteroids/fuel.png
 share/doc/HTML/en/kasteroids/index.cache.bz2
@@ -2108,6 +2113,7 @@ share/doc/HTML/en/kenolaba/common
 share/doc/HTML/en/kenolaba/index.cache.bz2
 share/doc/HTML/en/kenolaba/index.docbook
 share/doc/HTML/en/kenolaba/kenolaba-pieces.png
+share/doc/HTML/en/kenolaba/man-kenolaba.6.docbook
 share/doc/HTML/en/kfouleggs/common
 share/doc/HTML/en/kfouleggs/gamescreen.png
 share/doc/HTML/en/kfouleggs/index.cache.bz2
@@ -2131,6 +2137,9 @@ share/doc/HTML/en/klickety/index.docbook
 share/doc/HTML/en/klines/common
 share/doc/HTML/en/klines/index.cache.bz2
 share/doc/HTML/en/klines/index.docbook
+share/doc/HTML/en/kmahjongg/common
+share/doc/HTML/en/kmahjongg/index.cache.bz2
+share/doc/HTML/en/kmahjongg/index.docbook
 share/doc/HTML/en/kmines/common
 share/doc/HTML/en/kmines/index.cache.bz2
 share/doc/HTML/en/kmines/index.docbook
@@ -2148,7 +2157,7 @@ share/doc/HTML/en/kpat/diamonds.png
 share/doc/HTML/en/kpat/hearts.png
 share/doc/HTML/en/kpat/index.cache.bz2
 share/doc/HTML/en/kpat/index.docbook
-share/doc/HTML/en/kpat/man.docbook
+share/doc/HTML/en/kpat/man-kpat.6.docbook
 share/doc/HTML/en/kpat/playfield.png
 share/doc/HTML/en/kpat/spades.png
 share/doc/HTML/en/kpoker/common
@@ -2209,13 +2218,17 @@ share/doc/HTML/en/kwin4/index.docbook
 share/doc/HTML/en/lskat/common
 share/doc/HTML/en/lskat/index.cache.bz2
 share/doc/HTML/en/lskat/index.docbook
+share/icons/crystalsvg/128x128/apps/katomic.png
 share/icons/crystalsvg/128x128/apps/kfouleggs.png
+share/icons/crystalsvg/128x128/apps/klickety.png
 share/icons/crystalsvg/128x128/apps/ksmiletris.png
+share/icons/crystalsvg/128x128/apps/ktron.png
 share/icons/crystalsvg/16x16/actions/endturn.png
 share/icons/crystalsvg/16x16/actions/highscore.png
 share/icons/crystalsvg/16x16/actions/roll.png
 share/icons/crystalsvg/16x16/apps/atlantik.png
 share/icons/crystalsvg/16x16/apps/kasteroids.png
+share/icons/crystalsvg/16x16/apps/katomic.png
 share/icons/crystalsvg/16x16/apps/kbackgammon.png
 share/icons/crystalsvg/16x16/apps/kbackgammon_engine.png
 share/icons/crystalsvg/16x16/apps/kbattleship.png
@@ -2224,6 +2237,7 @@ share/icons/crystalsvg/16x16/apps/kbounce.png
 share/icons/crystalsvg/16x16/apps/kenolaba.png
 share/icons/crystalsvg/16x16/apps/kfouleggs.png
 share/icons/crystalsvg/16x16/apps/kjumpingcube.png
+share/icons/crystalsvg/16x16/apps/klickety.png
 share/icons/crystalsvg/16x16/apps/klines.png
 share/icons/crystalsvg/16x16/apps/kmahjongg.png
 share/icons/crystalsvg/16x16/apps/kmines.png
@@ -2242,7 +2256,9 @@ share/icons/crystalsvg/16x16/apps/kspaceduel.png
 share/icons/crystalsvg/16x16/apps/ktron.png
 share/icons/crystalsvg/16x16/apps/kwin4.png
 share/icons/crystalsvg/22x22/actions/roll.png
+share/icons/crystalsvg/22x22/apps/katomic.png
 share/icons/crystalsvg/22x22/apps/kfouleggs.png
+share/icons/crystalsvg/22x22/apps/ktron.png
 share/icons/crystalsvg/32x32/actions/endturn.png
 share/icons/crystalsvg/32x32/actions/highscore.png
 share/icons/crystalsvg/32x32/actions/roll.png
@@ -2257,6 +2273,7 @@ share/icons/crystalsvg/32x32/apps/kbounce.png
 share/icons/crystalsvg/32x32/apps/kenolaba.png
 share/icons/crystalsvg/32x32/apps/kfouleggs.png
 share/icons/crystalsvg/32x32/apps/kjumpingcube.png
+share/icons/crystalsvg/32x32/apps/klickety.png
 share/icons/crystalsvg/32x32/apps/klines.png
 share/icons/crystalsvg/32x32/apps/kmahjongg.png
 share/icons/crystalsvg/32x32/apps/kmines.png
@@ -2278,11 +2295,13 @@ share/icons/crystalsvg/32x32/apps/kwin4.png
 share/icons/crystalsvg/32x32/apps/lskat.png
 share/icons/crystalsvg/48x48/apps/atlantik.png
 share/icons/crystalsvg/48x48/apps/kasteroids.png
+share/icons/crystalsvg/48x48/apps/katomic.png
 share/icons/crystalsvg/48x48/apps/kbackgammon.png
 share/icons/crystalsvg/48x48/apps/kbackgammon_engine.png
 share/icons/crystalsvg/48x48/apps/kblackbox.png
 share/icons/crystalsvg/48x48/apps/kenolaba.png
 share/icons/crystalsvg/48x48/apps/kfouleggs.png
+share/icons/crystalsvg/48x48/apps/klickety.png
 share/icons/crystalsvg/48x48/apps/kmahjongg.png
 share/icons/crystalsvg/48x48/apps/kmines.png
 share/icons/crystalsvg/48x48/apps/kolf.png
@@ -2296,11 +2315,17 @@ share/icons/crystalsvg/48x48/apps/ksirtet.png
 share/icons/crystalsvg/48x48/apps/ksmiletris.png
 share/icons/crystalsvg/48x48/apps/ksnake.png
 share/icons/crystalsvg/48x48/apps/ksokoban.png
+share/icons/crystalsvg/48x48/apps/ktron.png
 share/icons/crystalsvg/48x48/apps/kwin4.png
 share/icons/crystalsvg/48x48/apps/lskat.png
+share/icons/crystalsvg/64x64/apps/katomic.png
 share/icons/crystalsvg/64x64/apps/kfouleggs.png
+share/icons/crystalsvg/64x64/apps/klickety.png
 share/icons/crystalsvg/64x64/apps/ksmiletris.png
+share/icons/crystalsvg/64x64/apps/ktron.png
+share/icons/crystalsvg/scalable/apps/katomic.svgz
 share/icons/crystalsvg/scalable/apps/kfouleggs.svgz
+share/icons/crystalsvg/scalable/apps/ktron.svgz
 share/icons/hicolor/16x16/apps/kgoldrunner.png
 share/icons/hicolor/32x32/apps/kgoldrunner.png
 share/icons/locolor/16x16/apps/kbounce.png
@@ -2332,6 +2357,7 @@ share/services/atlantik.protocol
 @dirrm share/doc/HTML/en/konquest
 @dirrm share/doc/HTML/en/kolf
 @dirrm share/doc/HTML/en/kmines
+@dirrm share/doc/HTML/en/kmahjongg
 @dirrm share/doc/HTML/en/klines
 @dirrm share/doc/HTML/en/klickety
 @dirrm share/doc/HTML/en/kjumpingcube
@@ -2349,6 +2375,7 @@ share/services/atlantik.protocol
 @dirrm share/doc/HTML/en/kasteroids
 @dirrm share/doc/HTML/en/atlantik
 @dirrm share/config/magic
+@dirrm share/apps/zeroconf
 @dirrm share/apps/lskat/grafix
 @dirrm share/apps/lskat
 @dirrm share/apps/kwin4/grafix/default
@@ -2395,6 +2422,7 @@ share/services/atlantik.protocol
 @dirrm share/apps/kreversi
 @dirrm share/apps/kpoker/sounds
 @dirrm share/apps/kpoker
+@dirrm share/apps/kpat/backgrounds
 @dirrm share/apps/kpat
 @dirrm share/apps/konquest/pics
 @dirrm share/apps/konquest

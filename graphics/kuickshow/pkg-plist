@@ -22,11 +22,6 @@ share/icons/crystalsvg/16x16/apps/kuickshow.png
 share/icons/crystalsvg/32x32/apps/kuickshow.png
 share/icons/locolor/16x16/apps/kuickshow.png
 share/icons/locolor/32x32/apps/kuickshow.png
-@dirrm share/icons/locolor/32x32/apps
-@dirrm share/icons/locolor/32x32
-@dirrm share/icons/locolor/16x16/apps
-@dirrm share/icons/locolor/16x16
-@dirrm share/icons/locolor
 @dirrm share/doc/HTML/en/kuickshow
 @dirrm share/apps/kuickshow/pics
 @dirrm share/apps/kuickshow
