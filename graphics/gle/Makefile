@@ -28,4 +28,9 @@ MAN3=		gle.3gle gleExtrusion.3gle gleHelicoid.3gle gleLathe.3gle \
 		gleSuperExtrusion.3gle gleTextureMode.3gle gleToroid.3gle \
 		gleTwistExtrusion.3gle
 
+post-patch:
+.for file in ex_angle.c ex_cut_round.c ex_raw.c extrude.c round_cap.c segment.c texgen.c
+	@${PERL} -pi -e "s/malloc.h/stdlib.h/g" ${WRKSRC}/src/${file}
+.endfor
+
 .include <bsd.port.mk>
