@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	smokeping
-PORTVERSION=	1.19
+PORTVERSION=	1.20
 CATEGORIES=	net www
 MASTER_SITES=	http://people.ee.ethz.ch/~oetiker/webtools/smokeping/pub/
 
@@ -34,7 +34,7 @@ MAN1=		DNS.pm.1 EchoPing.pm.1 EchoPingChargen.pm.1 EchoPingDiscard.pm.1 \
 PKGMESSAGE=	${WRKDIR}/pkg-message
 DOCDIR=		${PREFIX}/share/doc/smokeping
 DOC1=		CHANGES CONTRIBUTORS COPYING COPYRIGHT README TODO
-DOC2=		DNS.pm EchoPing.pm EchoPingChargen.pm EchoPingDiscard.pm \
+DOC2=		Curl.pm DNS.pm EchoPing.pm EchoPingChargen.pm EchoPingDiscard.pm \
 		EchoPingHttp.pm EchoPingHttps.pm EchoPingIcp.pm EchoPingSmtp.pm \
 		FPing.pm FPing6.pm IOSPing.pm ParseConfig.pm Smokeping.pm \
 		base.pm basefork.pm basevars.pm smokeping.cgi \

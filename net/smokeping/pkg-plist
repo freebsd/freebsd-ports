@@ -18,6 +18,8 @@ share/doc/smokeping/COPYING
 share/doc/smokeping/COPYRIGHT
 share/doc/smokeping/README
 share/doc/smokeping/TODO
+share/doc/smokeping/Curl.pm.html
+share/doc/smokeping/Curl.pm.txt
 share/doc/smokeping/DNS.pm.html
 share/doc/smokeping/DNS.pm.txt
 share/doc/smokeping/EchoPing.pm.html
@@ -74,7 +76,9 @@ smokeping/lib/probes/EchoPingSmtp.pm
 smokeping/lib/probes/DNS.pm
 smokeping/lib/probes/basefork.pm
 smokeping/lib/probes/basevars.pm
+smokeping/lib/probes/Curl.pm
 smokeping/lib/ISG/ParseConfig.pm
+smokeping/lib/ISG/VppGateway.pm
 @unexec rmdir %D/etc/smokeping || true
 @exec mkdir -p %D/smokeping/htdocs/img; chown www:www %D/smokeping/htdocs/img
 @unexec rm -rf %D/smokeping/htdocs/img
