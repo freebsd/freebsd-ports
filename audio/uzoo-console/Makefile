@@ -16,6 +16,8 @@ MAINTAINER=	perky@FreeBSD.org
 USE_PYTHON=	yes
 NO_BUILD=	yes
 
+IGNORE=		"has been disabled for legal issue"
+
 do-install:
 	${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
 	${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
