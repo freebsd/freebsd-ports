@@ -31,8 +31,8 @@ PLIST_SUB=	JISYONAME=${SKKJISYO}
 
 pre-fetch:
 .if defined(SKKJISYO_SIZE_INVALID)
-	@echo "Error: invalid SKKJISYO_SIZE: ${SKKJISYO_SIZE}"
-	@echo "SKKJISYO_SIZE should be L, M, or S."
+	@${ECHO_MSG} "Error: invalid SKKJISYO_SIZE: ${SKKJISYO_SIZE}"
+	@${ECHO_MSG} "SKKJISYO_SIZE should be L, M, or S."
 	@${FALSE}
 .endif
 

@@ -3,7 +3,7 @@
 # Date created:					June 2nd 1997
 # Whom:						jfitz
 #
-# $Id: Makefile,v 1.5 1999/07/04 20:54:41 steve Exp $
+# $Id: Makefile,v 1.6 1999/08/22 18:59:40 mharo Exp $
 #
 
 DISTNAME=	diablo-1.15-rel
@@ -65,9 +65,9 @@ post-install:
 	@ ${ECHO} "if [ -x ${PREFIX}/news/rc.news ]" >> \
 		${PREFIX}/etc/rc.d/diablo.sh
 	@ ${ECHO} "then" >> ${PREFIX}/etc/rc.d/diablo.sh
-	@ ${ECHO} "#	${PREFIX}/news/rc.news && echo -n ' diablo'" >> \
+	@ ${ECHO} "#	${PREFIX}/news/rc.news && ${ECHO} -n ' diablo'" >> \
 		${PREFIX}/etc/rc.d/diablo.sh
-	@ ${ECHO} "	echo -n ' diablo(disabled)'" >> \
+	@ ${ECHO} "	${ECHO} -n ' diablo(disabled)'" >> \
 		${PREFIX}/etc/rc.d/diablo.sh
 	@ ${ECHO} "fi" >> ${PREFIX}/etc/rc.d/diablo.sh
 	${CHMOD} 0750 ${PREFIX}/etc/rc.d/diablo.sh

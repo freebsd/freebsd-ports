@@ -3,7 +3,7 @@
 # Date created:		Fr   4 Apr 1997 17:45:31 MET DST
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.10 1999/06/28 19:29:03 billf Exp $
+# $Id: Makefile,v 1.11 1999/08/22 23:33:30 mharo Exp $
 #
 
 DISTNAME=	mapedit2.3
@@ -19,7 +19,7 @@ NO_BUILD=	yes
 
 pre-install:
 	@${CAT} ${WRKSRC}/README.TXT
-	@echo ""
+	@${ECHO_MSG} ""
 
 do-install:
 	${MKDIR} ${PREFIX}/lib/mapedit

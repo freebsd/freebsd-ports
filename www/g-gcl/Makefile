@@ -3,7 +3,7 @@
 # Date created:				21 Jun 1999
 # Whom:					G. Adam Stanislav <adam@whizkidtech.net>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/06/22 06:23:45 cpiazza Exp $
 #
 
 DISTNAME=	g-gcl-1.10
@@ -31,10 +31,6 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/space.gcl.sample ${PREFIX}/share/examples/gracula
 	${INSTALL_SCRIPT} ${WRKSRC}/sec2000.gcl.sample ${PREFIX}/share/examples/gracula
 	${INSTALL_SCRIPT} ${WRKSRC}/tri.gcl.sample ${PREFIX}/share/examples/gracula
-	@echo
-	@echo "    Sample scripts installed in the"
-	@echo "    ${PREFIX}/share/examples/gracula/"
-	@echo "    directory."
-	@echo
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

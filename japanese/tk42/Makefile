@@ -55,14 +55,14 @@ post-install:
 .if ${PORTOBJFORMAT} == "aout"
 	${LN} -sf libtk42jp.so.1.0 ${PREFIX}/lib/libtk42jp.so
 .endif
-	@echo "**********"
-	@echo "IMPORTANT:"
-	@echo "**********"
-	@echo "We've installed:"
-	@echo "tkConfig.sh in $(PREFIX)/lib/tk$(VERSION)/tkConfig.sh"
-	@echo "tk.h        in $(PREFIX)/include/tk$(VERSION)/tk.h"
-	@echo "These are NOT the default place, but good place to avoid"
-	@echo "conflicting with another version of Tcl/Tks."
+	@${ECHO_MSG} "**********"
+	@${ECHO_MSG} "IMPORTANT:"
+	@${ECHO_MSG} "**********"
+	@${ECHO_MSG} "We've installed:"
+	@${ECHO_MSG} "tkConfig.sh in $(PREFIX)/lib/tk$(VERSION)/tkConfig.sh"
+	@${ECHO_MSG} "tk.h        in $(PREFIX)/include/tk$(VERSION)/tk.h"
+	@${ECHO_MSG} "These are NOT the default place, but good place to avoid"
+	@${ECHO_MSG} "conflicting with another version of Tcl/Tks."
 
 test:
 	cd ${WRKSRC}; ${SETENV} PORTOBJFORMAT=${PORTOBJFORMAT} ${MAKE} test

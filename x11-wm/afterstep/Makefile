@@ -3,7 +3,7 @@
 # Date created:		October 29th 1996
 # Whom:			jfitz@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.27 1999/01/18 03:38:24 billf Exp $
+# $Id: Makefile,v 1.28 1999/02/21 21:51:00 billf Exp $
 #
 
 DISTNAME=	AfterStep-1.0
@@ -48,9 +48,9 @@ post-install:
 		${INSTALL_DATA} ${WRKSRC}/icons/*.xpm ${PREFIX}/include/X11/pixmaps/
 .else
 .if !defined(BATCH)
-		@echo "===>  Note: to use the hi-color icons,"
-		@echo "      reinstall this port with -DUSE_HICOLOR_ICONS"
-		@echo "      defined"
+		@${ECHO_MSG} "===>  Note: to use the hi-color icons,"
+		@${ECHO_MSG} "      reinstall this port with -DUSE_HICOLOR_ICONS"
+		@${ECHO_MSG} "      defined"
 .endif
 		@for file in AFstep.xpm penguin.xpm monitor_bsd.xpm; do \
 			${CP} ${FILESDIR}/$$file ${WRKSRC}/icons/8bit; \

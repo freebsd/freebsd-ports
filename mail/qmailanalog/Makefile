@@ -43,14 +43,14 @@ post-patch:
 	@perl -pi.bak -e "s|.usr.local.qmailanalog|${QMPREFIX}|" ${WRKSRC}/conf-home
 	@perl -pi.bak -e "s|-O2|${CFLAGS}|" ${WRKSRC}/conf-cc
 	@perl -pi.bak -e '$$_ = "" if /cat/' ${WRKSRC}/hier.c
-	@echo ${PREFIX} > ${WRKDIR}/.PPREFIX
-	@echo ${QMAIL_DIR} >> ${WRKDIR}/.PPREFIX
+	@${ECHO} ${PREFIX} > ${WRKDIR}/.PPREFIX
+	@${ECHO} ${QMAIL_DIR} >> ${WRKDIR}/.PPREFIX
 
 pre-install:
-	@echo ${PREFIX} > ${WRKDIR}/.IPREFIX
-	@echo ${QMAIL_DIR} >> ${WRKDIR}/.IPREFIX
+	@${ECHO} ${PREFIX} > ${WRKDIR}/.IPREFIX
+	@${ECHO} ${QMAIL_DIR} >> ${WRKDIR}/.IPREFIX
 	@diff ${WRKDIR}/.[PI]PREFIX > /dev/null \
-	|| (echo ${DIFF_MSG} && exit 1)
+	|| (${ECHO} ${DIFF_MSG} && exit 1)
 	@${MKDIR} ${QMPREFIX}
 
 .include <bsd.port.mk>

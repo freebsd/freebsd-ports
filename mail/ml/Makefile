@@ -18,7 +18,7 @@ REQUIRES_MOTIF=		yes
 NO_INSTALL_MANPAGES=	yes
 
 pre-configure:
-	@echo "===>  Building c-client"
+	@${ECHO_MSG} "===>  Building c-client"
 	@( cd ${WRKSRC}/../imap-4; make bsi )
 	@( cd ${WRKSRC}; ${RM} -f makeproto )
 

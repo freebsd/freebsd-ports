@@ -3,7 +3,7 @@
 # Date created:         8 Feb 1998
 # Whom:                 Donald Burr <dburr@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.10 1999/06/22 17:30:06 steve Exp $
+# $Id: Makefile,v 1.11 1999/08/22 19:01:01 mharo Exp $
 #
 
 DISTNAME=	v-1.19
@@ -32,14 +32,14 @@ pre-build:
 post-install:
 	${RANLIB} ${PREFIX}/lib/libV.a
 .ifdef NOPORTDOCS
-	@echo "==> Extra documentation WILL NOT be installed."
+	@${ECHO_MSG} "==> Extra documentation WILL NOT be installed."
 .else
-	@echo "==> Installing extra docs under ${PREFIX}/share/doc/v..."
+	@${ECHO_MSG} "==> Installing extra docs under ${PREFIX}/share/doc/v..."
 	${MKDIR} ${PREFIX}/share/doc/v
 	${CP} -R ${WRKSRC}/doc/* ${PREFIX}/share/doc/v
 	find ${PREFIX}/share/doc/v -type d -exec ${CHMOD} 755 {} \;
 	find ${PREFIX}/share/doc/v -type f -exec ${CHMOD} 644 {} \;
-	@echo "==> Extra docs installed.  Note, you will need *tex to read 'em."
+	@${ECHO_MSG} "==> Extra docs installed.  Note, you will need *tex to read 'em."
 .endif
 	@${CAT} ${PKGDIR}/MESSAGE
 

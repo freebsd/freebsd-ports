@@ -29,13 +29,13 @@ MAN8=		pathalias.8 mkdbm.8 mkline.8 mksort.8 mkaliases.8 smail.8 \
 		mkuuwho.8 mailq.8 sendmail.8 runq.8 rmail.8 rsmtp.8 smtpd.8
 
 post-install:
-	@echo "If you want to replace sendmail with links to smail, type"
-	@echo "the following command as \"root\":"
-	@echo ""
-	@echo "      make replace"
+	@${ECHO_MSG} "If you want to replace sendmail with links to smail, type"
+	@${ECHO_MSG} "the following command as \"root\":"
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "      make replace"
 
 replace:
-	@echo "===> Replacing sendmail"
+	@${ECHO_MSG} "===> Replacing sendmail"
 	if [ -e /usr/sbin/sendmail ]; then \
 		${MV} -f /usr/sbin/sendmail /usr/sbin/sendmail.BAK; \
 		if [ -f /usr/sbin/sendmail.BAK ]; then \

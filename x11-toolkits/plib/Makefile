@@ -3,7 +3,7 @@
 # Date created:		26 June 1999
 # Whom:			Brian Buchanan <brian@CSUA.Berkeley.EDU>
 #
-# $Id: Makefile,v 1.3 1999/08/17 19:37:11 cpiazza Exp $
+# $Id: Makefile,v 1.4 1999/08/22 19:46:45 cpiazza Exp $
 #
 
 DISTNAME=		plib-1.0.12a
@@ -31,7 +31,7 @@ MAN1=			calibrate.1
 
 pre-build:
 	@(cd ${WRKDIR}/calibrate-0.0.1; ${MAKE})
-	@echo "${PREFIX}"
+	@${ECHO_MSG} "${PREFIX}"
 
 pre-install:
 	@(cd ${WRKDIR}/calibrate-0.0.1; ${MAKE} PREFIX=${PREFIX} install)

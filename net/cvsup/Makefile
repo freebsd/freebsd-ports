@@ -3,7 +3,7 @@
 # Date created:		7 August 1996
 # Whom:			asami
 #
-# $Id: Makefile,v 1.31 1999/01/28 05:39:14 jdp Exp $
+# $Id: Makefile,v 1.32 1999/02/10 02:47:55 jdp Exp $
 #
 
 DISTNAME=	cvsup-16.0
@@ -24,8 +24,8 @@ MAN8=		cvsupd.8
 M3FLAGS+=	-DNOGUI
 .else
 pre-fetch:
-	@echo -n "To build this port without X11 (and without the GUI),"
-	@echo " define \"NO_X11\"."
+	@${ECHO_MSG} -n "To build this port without X11 (and without the GUI),"
+	@${ECHO_MSG} " define \"NO_X11\"."
 
 .endif
 

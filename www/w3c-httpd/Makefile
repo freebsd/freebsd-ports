@@ -3,7 +3,7 @@
 # Date created:		29 October 1994
 # Whom:			pst (orig)
 #
-# $Id: Makefile,v 1.20 1999/05/10 04:05:14 steve Exp $
+# $Id: Makefile,v 1.21 1999/05/10 20:00:22 steve Exp $
 #
 
 DISTNAME=	w3c-httpd-3.0A
@@ -21,12 +21,12 @@ MAKE_ENV+=	PORTSDIR=${PORTSDIR}
 
 pre-configure:
 .if !defined(MD5_PW)
-	@echo ""
-	@echo "Defaulting to DES encrypted passwords."
-	@echo "Set the environment variable MD5_PW if you want MD5 encrypted passwords."
-	@echo ""
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "Defaulting to DES encrypted passwords."
+	@${ECHO_MSG} "Set the environment variable MD5_PW if you want MD5 encrypted passwords."
+	@${ECHO_MSG} ""
 .else
-	@echo "CFLAGS += -DMD5_PW" >> ${WRKDIR}/All/${OSNAME}/Makefile.include
+	@${ECHO} "CFLAGS += -DMD5_PW" >> ${WRKDIR}/All/${OSNAME}/Makefile.include
 .endif
 
 do-install:

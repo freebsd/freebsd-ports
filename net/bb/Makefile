@@ -3,7 +3,7 @@
 # Date created:         So  17 Nov 1996 16:59:23 MET
 # Whom:                 Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.31 1999/06/26 12:01:23 andreas Exp $
+# $Id: Makefile,v 1.32 1999/06/27 14:22:46 andreas Exp $
 #
 
 DISTNAME=	bb-1.2a
@@ -20,12 +20,12 @@ MAINTAINER=	andreas@FreeBSD.ORG
 WRKSRC=		${WRKDIR}/bb
 
 pre-configure:
-	@echo "==================================================="
-	@echo "You need to install a WWW Server to use this port"
-	@echo "For example: - apache13 or "
-	@echo "             - apache13-modssl
-	@echo "port."
-	@echo "==================================================="
+	@${ECHO_MSG} "==================================================="
+	@${ECHO_MSG} "You need to install a WWW Server to use this port"
+	@${ECHO_MSG} "For example: - apache13 or "
+	@${ECHO_MSG} "             - apache13-modssl
+	@${ECHO_MSG} "port."
+	@${ECHO_MSG} "==================================================="
 
 post-configure:
 	( cd ${WRKSRC}/doc; ${SH} bbconfig freebsd )
@@ -47,22 +47,6 @@ do-install:
 	@${RM} ${PREFIX}/bb/README
 	@${RM} ${PREFIX}/bb/README.CHANGES
 	@${RM} ${PREFIX}/bb/README.INSTALL
-	@echo ""
-	@echo "================================================================"
-	@echo "==== Configuration Notes:                                    ==="
-	@echo "================================================================"
-	@echo ""
-	@echo "a) your hosts 'full qualified domain name' and IP-address"
-	@echo "b) 'watched' hosts 'full qualified domain name' and IP-address"
-	@echo "go here -> ${PREFIX}/bb/etc/bb-hosts"
-	@echo "c) configure -> ${PREFIX}/bb/etc/bbdef.sh"
-	@echo "d) configure -> ${PREFIX}/bb/etc/bbinc.sh"
-	@echo "e) You need to have a running WWW server (apache)"
-	@echo "f) You need kermit or qpage for pager functionality"
-	@echo "After that, you can startup the big brother service by typing"
-	@echo "        ${PREFIX}/bb/runbb.sh &"
-	@echo "and watching your systems status by viewing this URL with"
-	@echo "Netscape or another WWW browser"
-	@echo "        http://localhost/bb"
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

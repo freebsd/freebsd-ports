@@ -3,7 +3,7 @@
 # Date created:		11 April 1999
 # Whom:			Mikhail Teterin
 #
-# $Id: Makefile,v 1.2 1999/05/12 21:31:19 asami Exp $
+# $Id: Makefile,v 1.3 1999/08/22 18:59:46 mharo Exp $
 
 DISTNAME=	rlpr-2.00
 CATEGORIES=	print net
@@ -20,7 +20,7 @@ CONFIGURE_ARGS=	--with-catgets
 RLPRRC=	${WRKSRC}/src/rlprrc.h
 
 post-patch:
-	@echo "Replacing references to /etc/rlprrc to ${PREFIX}/etc/rlprrc"
+	@${ECHO_MSG} "Replacing references to /etc/rlprrc to ${PREFIX}/etc/rlprrc"
 	@test -e ${RLPRRC}.orig || ${MV} ${RLPRRC} ${RLPRRC}.orig && \
 		${SED} s%/etc/%${PREFIX}/etc/% ${RLPRRC}.orig > ${RLPRRC}
 	@for man in `${GREP} -l /etc/rlprrc ${WRKSRC}/man/*.[0-9n]`; do \
@@ -31,8 +31,8 @@ post-patch:
 	done
 
 post-install:
-	@echo "Making the installed binaries suid,\
-		for the remote lpds to talk to them"
+	@${ECHO_MSG} "Making the installed binaries suid,\
+		      for the remote lpds to talk to them"
 	${CHMOD} u+s ${PREFIX}/bin/rlpq ${PREFIX}/bin/rlpr ${PREFIX}/bin/rlprm
 
 MAN1=	rlpr.1 rlpq.1 rlprm.1

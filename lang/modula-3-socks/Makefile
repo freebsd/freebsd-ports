@@ -44,9 +44,9 @@ pre-install:
 
 post-install:
 	@if [ ! -f ${PREFIX}/etc/m3socks.conf ]; then \
-	    echo -n "Please create a configuration file in "; \
-	    echo "${PREFIX}/etc/m3socks.conf"; \
-	    echo "Read m3socks.conf(5) for details"; \
+	    ${ECHO_MSG} -n "Please create a configuration file in "; \
+	    ${ECHO_MSG} "${PREFIX}/etc/m3socks.conf"; \
+	    ${ECHO_MSG} "Read m3socks.conf(5) for details"; \
 	fi
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 # Date created:		13 June 1996
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.10 1998/10/13 01:17:27 jseger Exp $
+# $Id: Makefile,v 1.11 1999/08/22 18:59:48 mharo Exp $
 #
 
 DISTNAME=	virtualpaper-1.4
@@ -28,7 +28,7 @@ do-build:
 	@cd ${WRKSRC}/editlectern; m3build
 
 do-install:
-	@echo "Installing files"
+	@${ECHO_MSG} "Installing files"
 	@cd ${WRKSRC}; \
 	    ${INSTALL_PROGRAM} \
 		lecternclient/FreeBSD2/LecternClient \
@@ -53,7 +53,7 @@ do-install:
 		${CHMOD} 755 ${PREFIX}/share/virtualpaper; \
 	    fi; \
 	    ${INSTALL_DATA} COPYRIGHT ${PREFIX}/share/virtualpaper
-	@echo "Stripping programs"
+	@${ECHO_MSG} "Stripping programs"
 	@cd ${PREFIX}/bin; \
 	    strip LecternClient Lectern BuildLectern EditLectern
 

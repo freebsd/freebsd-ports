@@ -20,7 +20,7 @@ DOCS=		errata.doc gaiji.txt index.doc install.doc kekka.txt \
 		ruigo.doc x_option.doc
 
 do-configure:
-	@echo "Copying custom Makefile."
+	@${ECHO_MSG} "Copying custom Makefile."
 	@${CP} ${FILESDIR}/Makefile ${WRKSRC}
 
 .if !defined(NOPORTDOCS)

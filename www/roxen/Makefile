@@ -3,7 +3,7 @@
 # Date created:		26 February 1999
 # Whom:			Kai Voigt (k@123.org)
 #
-# $Id: Makefile,v 1.1.1.1 1999/05/04 16:14:19 flathill Exp $
+# $Id: Makefile,v 1.2 1999/08/22 23:33:31 mharo Exp $
 #
 
 DISTNAME=	Roxen_1.2final-int
@@ -23,16 +23,6 @@ pre-build:
 
 post-install:
 	@${CP} ${FILESDIR}/roxen.sh ${PREFIX}/etc/rc.d/
-	@echo "Installation of Roxen Challenger finished!"
-	@echo ""
-	@echo "Now perform the following steps to initialize"
-	@echo "the webserver."
-	@echo ""
-	@echo "% cd ${PREFIX}/roxen/server/"
-	@echo "% ./install"
-	@echo ""
-	@echo "Then follow the instructions.  For further"
-	@echo "documentation read http://roxen.com/documentation/"
-	@echo ""
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

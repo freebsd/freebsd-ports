@@ -3,7 +3,7 @@
 # Date created:		6 January 1997
 # Whom:			proff@suburbia.net
 #
-# $Id: Makefile,v 1.10 1998/01/29 04:04:33 itojun Exp $
+# $Id: Makefile,v 1.11 1998/02/01 03:04:11 itojun Exp $
 #
 
 DISTNAME=	nntpcache-2.3.2
@@ -42,7 +42,7 @@ post-install:
 
 hardlink-pgp-files:
 	for i in ${PREFIX}/etc/nntpcache/*asc-dist ${PREFIX}/etc/nntpcache/*pgp-dist ; do \
-		j=`echo $$i | sed -e 's/-dist//'`; \
+		j=`${ECHO} $$i | sed -e 's/-dist//'`; \
 		if [ \! -f $$j ]; then \
 			ln $$i $$j; \
 		fi; \

@@ -5,7 +5,7 @@
 # Date created:         8 Jul 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.26 1999/08/22 23:33:24 mharo Exp $
+# $Id: Makefile,v 1.27 1999/08/23 04:23:54 mharo Exp $
 #
 
 # Pick an initial default, else it doesn't get set in the INDEX.
@@ -39,9 +39,9 @@ do-install:
 
 .if !defined(USA_RESIDENT) || ${USA_RESIDENT} != YES && ${USA_RESIDENT} != NO
 pre-fetch:
-	@echo
-	@echo You must set variable USA_RESIDENT to YES, if you are USA resident
-	@echo or to NO, if you aren\'t USA resident to build this package
+	@${ECHO_MSG}
+	@${ECHO_MSG} You must set variable USA_RESIDENT to YES, if you are USA resident
+	@${ECHO_MSG} or to NO, if you aren\'t USA resident to build this package
 	@${FALSE}
 .elif defined(USA_RESIDENT)
 .if ${USA_RESIDENT} == YES

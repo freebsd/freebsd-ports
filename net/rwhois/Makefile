@@ -3,7 +3,7 @@
 # Date created:				May 9th 1997
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.6 1999/06/26 22:58:41 mharo Exp $
+#   $Id: Makefile,v 1.7 1999/08/22 18:59:30 mharo Exp $
 #
 
 DISTNAME=	rwhois-1.0B9.2
@@ -28,14 +28,14 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/* ${PREFIX}/share/doc/rwhois
 	${MV} ${PREFIX}/share/doc/rwhois/rmkdbindex.8 ${PREFIX}/man/man8	
 	${MV} ${PREFIX}/share/doc/rwhois/rwhoisd.8 ${PREFIX}/man/man8	
-	@ echo "Installing ${PREFIX}/etc/rc.d/rwhoisd.sh startup file..."
-	@ echo "#!/bin/sh" > ${PREFIX}/etc/rc.d/rwhoisd.sh
-	@ echo "#" >> ${PREFIX}/etc/rc.d/rwhoisd.sh
-	@ echo "" >> ${PREFIX}/etc/rc.d/rwhoisd.sh
-	@ echo "# remove or comment the following line and uncomment the one below it once you have" >> ${PREFIX}/etc/rc.d/rwhoisd.sh
-	@ echo "# configured your server's data" >> ${PREFIX}/etc/rc.d/rwhoisd.sh
-	@ echo "echo \"rwhoisd not started; sample data still in place.   See ${PREFIX}/share/doc/rwhois for details.\"" >> ${PREFIX}/etc/rc.d/rwhoisd.sh 
-	@ echo "#[ -x ${PREFIX}/lib/rwhois/sbin/rwhoisd ] && ${PREFIX}/lib/rwhois/sbin/rwhoisd -c ${PREFIX}/lib/rwhois/rwhois.conf & && echo -n ' rwhoisd'" >> ${PREFIX}/etc/rc.d/rwhoisd.sh
+	@ ${ECHO_MSG} "Installing ${PREFIX}/etc/rc.d/rwhoisd.sh startup file..."
+	@ ${ECHO} "#!/bin/sh" > ${PREFIX}/etc/rc.d/rwhoisd.sh
+	@ ${ECHO} "#" >> ${PREFIX}/etc/rc.d/rwhoisd.sh
+	@ ${ECHO} "" >> ${PREFIX}/etc/rc.d/rwhoisd.sh
+	@ ${ECHO} "# remove or comment the following line and uncomment the one below it once you have" >> ${PREFIX}/etc/rc.d/rwhoisd.sh
+	@ ${ECHO} "# configured your server's data" >> ${PREFIX}/etc/rc.d/rwhoisd.sh
+	@ ${ECHO} "${ECHO} \"rwhoisd not started; sample data still in place.   See ${PREFIX}/share/doc/rwhois for details.\"" >> ${PREFIX}/etc/rc.d/rwhoisd.sh 
+	@ ${ECHO} "#[ -x ${PREFIX}/lib/rwhois/sbin/rwhoisd ] && ${PREFIX}/lib/rwhois/sbin/rwhoisd -c ${PREFIX}/lib/rwhois/rwhois.conf & && ${ECHO} -n ' rwhoisd'" >> ${PREFIX}/etc/rc.d/rwhoisd.sh
 	${CHMOD} 751 ${PREFIX}/etc/rc.d/rwhoisd.sh
 
 .include <bsd.port.mk>

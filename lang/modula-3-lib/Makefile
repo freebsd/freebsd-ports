@@ -72,7 +72,7 @@ major=		6
 PLIST=		${WRKDIR}/PLIST.noX11
 .else
 pre-fetch:
-	@echo "To build this port without X11, define \"NO_X11\"."
+	@${ECHO_MSG} "To build this port without X11, define \"NO_X11\"."
 
 USE_XLIB=	yes
 PLIST=		${WRKDIR}/PLIST
@@ -80,12 +80,12 @@ PLIST=		${WRKDIR}/PLIST
 
 post-extract:
 .if !empty(have_boot)
-	@echo "Copying bootstrap modula-3 compiler from ${have_boot}"
+	@${ECHO_MSG} "Copying bootstrap modula-3 compiler from ${have_boot}"
 	@${SH} ${SCRIPTDIR}/copy_files ${FILESDIR}/T.boot installed \
 	    ${have_boot} ${WRKSRC}
 .endif
 .if !empty(have_gcc)
-	@echo "Copying gcc sources from ${have_gcc}"
+	@${ECHO_MSG} "Copying gcc sources from ${have_gcc}"
 	@${SH} ${SCRIPTDIR}/copy_files ${FILESDIR}/T.gcc m3cc \
 	    ${have_gcc} ${WRKSRC}
 .endif
@@ -97,14 +97,14 @@ do-build:
 	@test -d ${temp_prefix}/man/man1 || ${MKDIR} ${temp_prefix}/man/man1
 	@test -d ${temp_prefix}/lib/m3/pkg/m3build/templates || \
 	    ${MKDIR} ${temp_prefix}/lib/m3/pkg/m3build/templates
-	@echo "++++++++++ quake ++++++++++"
+	@${ECHO_MSG} "++++++++++ quake ++++++++++"
 	@test -d ${WRKSRC}/m3/quake/FreeBSD2 || \
 	    ${MKDIR} ${WRKSRC}/m3/quake/FreeBSD2
 	@cd ${WRKSRC}/m3/quake/FreeBSD2; \
 	    make -f ../src/makefile TARGET=FreeBSD2 COPT=-O CDEBUG= ; \
 	    ${CP} -p quake ${temp_prefix}/bin; \
 	    ${CP} -p ../src/quake.1 ${temp_prefix}/man/man1
-	@echo "++++++++++ m3build ++++++++++"
+	@${ECHO_MSG} "++++++++++ m3build ++++++++++"
 	@cd ${WRKSRC}/m3/m3build; \
 	    PATH=${temp_prefix}/bin:$$PATH ./build FreeBSD2; \
 	    ${CP} -p FreeBSD2/m3build FreeBSD2/m3ship FreeBSD2/m3where \
@@ -115,13 +115,13 @@ do-build:
 		${temp_prefix}/lib/m3/pkg/m3build/templates; \
 	    ${CP} -p FreeBSD2/m3build.1 FreeBSD2/m3ship.1 FreeBSD2/m3where.1 \
 		${temp_prefix}/man/man1
-	@echo "++++++++++ m3cc ++++++++++"
+	@${ECHO_MSG} "++++++++++ m3cc ++++++++++"
 	@test -d ${WRKSRC}/m3cc/FreeBSD2 || ${MKDIR} ${WRKSRC}/m3cc/FreeBSD2
 	@cd ${WRKSRC}/m3cc/FreeBSD2; \
 	    ../gcc/configure i486-unknown-freebsd; \
 	    make m3cgc1 CC="${CC}" CFLAGS="${CFLAGS}"; \
 	    ${CP} -p m3cgc1 ${temp_prefix}/${libdir}
-	@echo "++++++++++ everything else ++++++++++"
+	@${ECHO_MSG} "++++++++++ everything else ++++++++++"
 	@cd ${WRKSRC}/m3; \
 	    LD_LIBRARY_PATH=${temp_prefix}/${libdir}:$$LD_LIBRARY_PATH; \
 	    PATH=${temp_prefix}/bin:$$PATH; \
@@ -129,11 +129,11 @@ do-build:
 	    m3build
 
 pre-install:
-	@echo "Checking for conflicting shared libraries"
+	@${ECHO_MSG} "Checking for conflicting shared libraries"
 	@PREFIX=${PREFIX} ${SH} ${PKGDIR}/INSTALL ${PKGNAME} PRE-INSTALL
 
 do-install:
-	@echo "Installing shared libraries"
+	@${ECHO_MSG} "Installing shared libraries"
 	@cd ${temp_prefix}; \
 	    umask 022; \
 	    ${GREP} '^lib/m3/' ${PLIST}.real | \
@@ -142,7 +142,7 @@ do-install:
 	    ${GREP} '^lib/m3/' ${PLIST}.real | xargs ${CHMOD} go=u-w; \
 	    find -X lib/m3 -type d | xargs ${CHOWN} ${BINOWN}.${BINGRP}; \
 	    find -X lib/m3 -type d | xargs ${CHMOD} 755
-	@echo "Installing copyright notice"
+	@${ECHO_MSG} "Installing copyright notice"
 	@if [ ! -d ${PREFIX}/share/modula-3-lib ]; then \
 	    ${MKDIR} ${PREFIX}/share/modula-3-lib; \
 	    ${CHMOD} 755 ${PREFIX}/share/modula-3-lib; \
@@ -150,15 +150,15 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/m3/src/COPYRIGHT \
 	    ${PREFIX}/share/modula-3-lib
 	@if [ ! -f ${startup_script} ]; then \
-	    echo "Installing ${startup_script} file"; \
+	    ${ECHO_MSG} "Installing ${startup_script} file"; \
 	    test -d ${startup_dir} || ${MKDIR} ${startup_dir}; \
-	    echo "#!/bin/sh" > ${startup_script}; \
-	    echo "echo -n ' Modula-3'" >> ${startup_script}; \
-	    echo "${LDCONFIG} -m ${PREFIX}/lib/m3/FreeBSD2" \
+	    ${ECHO} "#!/bin/sh" > ${startup_script}; \
+	    ${ECHO} "${ECHO} -n ' Modula-3'" >> ${startup_script}; \
+	    ${ECHO} "${LDCONFIG} -m ${PREFIX}/lib/m3/FreeBSD2" \
 		>> ${startup_script}; \
 	    ${CHMOD} 755 ${startup_script}; \
 	fi
-	@echo "Running ldconfig"
+	@${ECHO_MSG} "Running ldconfig"
 	@${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib/m3/FreeBSD2
 
 .include <bsd.port.mk>
