@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnocl
-PORTVERSION=	0.5.10
+PORTVERSION=	0.5.12
 CATEGORIES=	x11-toolkits devel
 MASTER_SITES=	http://www.dr-baum.net/gnocl/
 
@@ -23,13 +23,19 @@ BUILD_WRKSRC=	${WRKSRC}/src
 CFLAGS+=	-I${LOCALBASE}/include/tcl8.4
 
 USE_X_PREFIX=	yes
-USE_GNOME=	libgnomecanvas
+USE_GNOME=	libgnomecanvas gconf2
+
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == amd64
+CFLAGS+=	-fPIC
+.endif
 
 GNOCL_CANVAS_FILE="lib/libgnoclCanvas.so.1"
 
 .if defined(WITHOUT_CANVAS)
 ALL_TARGET=	gnocl
-USE_GNOME=	gtk20
+USE_GNOME=	gtk20 gconf2
 GNOCL_CANVAS_FILE=	"@comment "
 .endif
 
@@ -46,4 +52,4 @@ do-install:
 		${INSTALL_DATA} ${BUILD_WRKSRC}/gnoclCanvas.so ${PREFIX}/lib/libgnoclCanvas.so.1; \
 	fi; \
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
