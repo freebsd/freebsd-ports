@@ -3,7 +3,7 @@
 # Date created:        18 August 1998
 # Whom:                Bill Fumerola <billf@chc-chimes.com>
 #
-# $Id: Makefile,v 1.1.1.1 1998/11/18 21:02:48 billf Exp $
+# $Id: Makefile,v 1.2 1998/11/23 09:08:25 asami Exp $
 #
 
 DISTNAME=	htdig-3.1.0b2
@@ -17,13 +17,15 @@ MAINTAINER=	billf@FreeBSD.org
 GNU_CONFIGURE=	yes
 BUILD_TARGET=	depends all
 
-BROKEN=		package
-
 post-patch:
 
 	${MV} ${WRKSRC}/CONFIG.in ${WRKSRC}/CONFIG.in.old
 	${CAT} ${WRKSRC}/CONFIG.in.old | \
-	${SED} -e 's#/opt/www/#${PREFIX}/www/#g' | \
-	${SED} -e 's#htdocs#data#g' >> ${WRKSRC}/CONFIG.in
+	${SED} -e 's#/opt/www/#${PREFIX}/www/#g' \
+		-e 's#htdocs#data#g' \
+		-e 's#/conf#/etc#' \
+		-e 's#/common#/share/htdig#' \
+		-e 's#/db#/share/htdig#' \
+	>> ${WRKSRC}/CONFIG.in
 
 .include <bsd.port.mk>
