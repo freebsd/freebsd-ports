@@ -13,8 +13,8 @@ MASTER_SITES=	http://el.www.media.mit.edu/starlogo/download/
 
 MAINTAINER=	noway@nohow.demon.co.uk
 
-RUN_DEPENDS=	${PREFIX}/jdk${JDK_VERSION}/bin/java:${PORTSDIR}/java/jdk \
-		${PREFIX}/jdk${JDK_VERSION}/lib/i386/green_threads/libtya.so:${PORTSDIR}/java/tya
+RUN_DEPENDS=	${LOCALBASE}/jdk${JDK_VERSION}/bin/java:${PORTSDIR}/java/jdk \
+		${LOCALBASE}/jdk${JDK_VERSION}/lib/i386/green_threads/libtya.so:${PORTSDIR}/java/tya
 
 WRKSRC=		${WRKDIR}/starlogo-1.0b2
 JDK_VERSION=	1.1.8

@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	smalltalk
 
 MAINTAINER=	alex@big.endian.de
 
-BUILD_DEPENDS=	${PREFIX}/lib/libgdbm.a:${PORTSDIR}/databases/gdbm
+BUILD_DEPENDS=	${LOCALBASE}/lib/libgdbm.a:${PORTSDIR}/databases/gdbm
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-optimize --with-readline
