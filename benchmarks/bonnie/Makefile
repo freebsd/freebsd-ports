@@ -21,6 +21,6 @@ MAKE_ARGS+=	CFLAGS="${CFLAGS}"
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/Bonnie ${PREFIX}/bin/bonnie
-	${INSTALL_DATA} ${WRKSRC}/bonnie.1 ${PREFIX}/man/man1
+	${INSTALL_MAN} ${FILESDIR}/bonnie.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>
