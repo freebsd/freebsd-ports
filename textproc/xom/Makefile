@@ -25,6 +25,7 @@ PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar
 .if !defined(NOPORTDOCS)
 PORTDOCS=	overview.html apidocs
 PLIST_FILES+=	%%EXAMPLESDIR%%/xom-samples.jar
+PLIST_DIRS=	%%EXAMPLESDIR%%
 .endif
 
 do-install:
