@@ -44,14 +44,15 @@ include/skalibs/sgetopt.h
 include/skalibs/sha1.h
 include/skalibs/shglob.h
 include/skalibs/sig.h
-include/skalibs/skamisc.h
 include/skalibs/skalibs-version.h
+include/skalibs/skamisc.h
 include/skalibs/socket.h
 include/skalibs/stdcrypto.h
 include/skalibs/stddjb.h
 include/skalibs/stralloc.h
 include/skalibs/strerr.h
 include/skalibs/strerr2.h
+include/skalibs/syssocket.h
 include/skalibs/tai.h
 include/skalibs/ttymodes.h
 include/skalibs/uint16.h

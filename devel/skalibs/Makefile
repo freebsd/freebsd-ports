@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	skalibs
-PORTVERSION=	0.40
+PORTVERSION=	0.42
 CATEGORIES=	devel
 MASTER_SITES=	http://www.skarnet.org/software/${PORTNAME}/
 
