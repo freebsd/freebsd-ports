@@ -10,7 +10,7 @@ PORTVERSION=	0.5
 CATEGORIES=	audio afterstep
 MASTER_SITES=	http://www.tigr.net/afterstep/download/asmixer/
 
-MAINTAINER=	mtm@identd.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A mixer control for X, and specifically the AfterStep Window Manager
 
 MAN1=		${PORTNAME}.1x

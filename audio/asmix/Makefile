@@ -11,7 +11,7 @@ CATEGORIES=	audio afterstep
 MASTER_SITES=	http://www.tigr.net/afterstep/download/asmix/
 MASTER_SITE_SUBDIR=	apps/asmix
 
-MAINTAINER=	mtm@identd.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Volume control dock-app for the AfterStep Window Manager
 
 MAN1=		${PORTNAME}.1x
