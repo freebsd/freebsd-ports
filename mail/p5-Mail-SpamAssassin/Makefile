@@ -57,7 +57,7 @@ post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/sql/README ${DOCSDIR}/README.sql
-	cd ${WRKSRC} ; ${INSTALL_DATA} \
+	cd ${WRKSRC} ; ${INSTALL_DATA} INSTALL \
 	    BUGS COPYRIGHT Changes README TRADEMARK procmailrc.example sample* \
 	    spamd/README* sql/spamassassin.sql ${DOCSDIR}
 .endif
