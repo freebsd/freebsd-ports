@@ -208,6 +208,7 @@
     SUBDIR += snarf
     SUBDIR += squid22
     SUBDIR += squid23
+    SUBDIR += squid24
     SUBDIR += squidclients
     SUBDIR += squidguard
     SUBDIR += squidtimes
