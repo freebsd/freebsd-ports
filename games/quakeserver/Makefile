@@ -3,7 +3,7 @@
 # Date created:				October 26th 1996
 # Whom:					jfitz@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.4 1996/11/18 11:24:56 asami Exp $
+# $Id: Makefile,v 1.5 1996/11/19 02:39:16 asami Exp $
 #
 
 PKGNAME=	quakeserver-1.01
@@ -35,7 +35,7 @@ RUN_DEPENDS=	expect:${PORTSDIR}/lang/expect \
 
 NO_WRKSUBDIR=	YES
 NO_BUILD=	YES
-NO_CDROM=	YES
+NO_CDROM=	"This software is shareware"
 
 do-extract:
 		@ ${MKDIR} -p work/quake
