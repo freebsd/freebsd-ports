@@ -24,6 +24,9 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
+MAN1=		cvs.1
+MAN5=		cvs.5
+
 .if exists(/usr/include/gssapi.h)
 PLIST_SUB=	GSERVER=""
 .else
