@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTNAME=		openldap
+PKGNAMESUFFIX=		-sasl-server
 
 COMMENT=		Open source LDAP server implementation with SASL2 support
 

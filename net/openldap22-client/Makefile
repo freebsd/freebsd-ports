@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTNAME=		openldap
+PKGNAMESUFFIX=		-client
 
 COMMENT=		Open source LDAP client implementation
 

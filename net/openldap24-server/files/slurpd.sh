@@ -15,22 +15,22 @@
 # See slurpd(8) for more flags
 #
 
-. %%RC_SUBR%%
+. "%%RC_SUBR%%"
 
-name=slurpd
+name="slurpd"
 rcvar=`set_rcvar`
 
-command=%%PREFIX%%/libexec/slurpd
-required_files=%%PREFIX%%/etc/openldap/slapd.conf
+command="%%PREFIX%%/libexec/slurpd"
+required_files="%%PREFIX%%/etc/openldap/slapd.conf"
 
-[ -z "$slurpd_enable" ] && slurpd_enable="NO"
-[ -z "$slurpd_flags" ]  && slurpd_flags=
-
+# read settings, set defaults
 load_rc_config $name
-
-if [ -n "$slurpd_args" ]; then
+: ${slurpd_enable="NO"}
+if [ -n "${slurpd_args+set}" ]; then
   warn "slurpd_args is deprecated, use slurpd_flags"
-  slurpd_flags="$slurpd_args"
+  : ${slurpd_flags="$slurpd_args"}
+else
+  : ${slurpd_flags=""}
 fi
 
 run_rc_command "$1"
