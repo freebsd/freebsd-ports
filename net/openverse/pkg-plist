@@ -1,6 +1,5 @@
 bin/OpenVerse
 lib/OpenVerse/anims/default.av
-lib/OpenVerse/anims/SexyTux.av
 lib/OpenVerse/anims/Bob.av
 lib/OpenVerse/anims/BSDdevil.av
 lib/OpenVerse/icons/bulb.gif
@@ -39,15 +38,15 @@ lib/OpenVerse/images/devil.gif
 lib/OpenVerse/images/default.gif
 lib/OpenVerse/images/bob.gif
 lib/OpenVerse/language/Arabic
+lib/OpenVerse/language/Dutch
+lib/OpenVerse/language/Españoles
 lib/OpenVerse/language/ValSpeak
 lib/OpenVerse/language/PigLatin
 lib/OpenVerse/language/Jive
 lib/OpenVerse/language/Italiano
 lib/OpenVerse/language/Francais
 lib/OpenVerse/language/Finnish
-lib/OpenVerse/language/Españoles
 lib/OpenVerse/language/English
-lib/OpenVerse/language/Convert.tcl
 lib/OpenVerse/language/Chef
 lib/OpenVerse/language/h4x0r
 lib/OpenVerse/lib/AvEd.tcl
@@ -64,13 +63,13 @@ lib/OpenVerse/lib/Globals.tcl
 lib/OpenVerse/lib/GifHeader.tcl
 lib/OpenVerse/lib/Debug.tcl
 lib/OpenVerse/lib/ChtFuncs.tcl
-lib/OpenVerse/lib/BugRpt.tcl
 lib/OpenVerse/lib/Bubble.tcl
 lib/OpenVerse/lib/BaseFunc.tcl
 lib/OpenVerse/lib/Avatars.tcl
 lib/OpenVerse/lib/tkohlp.tcl
 lib/OpenVerse/panels/NotFun
 lib/OpenVerse/panels/KDE
+lib/OpenVerse/panels/Pro
 lib/OpenVerse/panels/Fun
 lib/OpenVerse/plugins/Query/PlugInit.tcl
 lib/OpenVerse/rooms/room.gif
@@ -78,13 +77,19 @@ lib/OpenVerse/OpenVerse.tcl
 lib/OpenVerse/server.cfg
 lib/OpenVerse/server.tcl
 lib/OpenVerse/passageways.txt
-share/doc/OpenVerse/help/server.vars
-share/doc/OpenVerse/help/jive_About.ohlp
 share/doc/OpenVerse/help/Technical.ohlp
 share/doc/OpenVerse/help/PServ.ohlp
 share/doc/OpenVerse/help/OpenVerse.ohlp
 share/doc/OpenVerse/help/About.ohlp
+share/doc/OpenVerse/help/FAQ.ohlp
 share/doc/OpenVerse/README
+lib/OpenVerse/icons/jump.gif
+lib/OpenVerse/icons/locked.gif~
+lib/OpenVerse/icons/room.gif
+lib/OpenVerse/icons/rubber.gif~
+lib/OpenVerse/icons/shiver.gif
+lib/OpenVerse/icons/shutdown.gif
+lib/OpenVerse/icons/unlocked.gif~
 @dirrm lib/OpenVerse/anims
 @dirrm lib/OpenVerse/icons
 @dirrm lib/OpenVerse/images
