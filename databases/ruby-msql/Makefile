@@ -15,6 +15,7 @@ DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	Ruby API for mSQL
 
 LIB_DEPENDS=	msql.1:${PORTSDIR}/databases/msql
 

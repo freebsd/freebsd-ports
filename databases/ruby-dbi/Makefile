@@ -15,6 +15,7 @@ DISTNAME=	${RUBY_DBI_DISTNAME}
 DIST_SUBDIR=	ruby	
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	DBI-for-Ruby - a common interface for SQL-based databases
 
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes

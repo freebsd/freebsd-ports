@@ -13,6 +13,7 @@ PKGNAMEPREFIX=	postgresql-
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	PL/Ruby procedural language for the PostgreSQL database system
 
 LIB_DEPENDS=	pq.3:${PGSQL_PORTDIR}
 RUN_DEPENDS=	postgres:${PORTSDIR}/${POSTGRESQL_PORT}

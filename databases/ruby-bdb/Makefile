@@ -16,6 +16,7 @@ PKGNAMESUFFIX=	4
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	Ruby interface to Sleepycat's Berkeley DB revision 2 or later
 
 .if defined(WITH_BDB41)
 LIB_DEPENDS=	db41.1:${PORTSDIR}/databases/db41

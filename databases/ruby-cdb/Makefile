@@ -15,6 +15,7 @@ DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	Ruby interface to D. J. Bernstein's cdb (constant database) library
 
 BUILD_DEPENDS=	${NONEXISTENT}:${CDB_PORTDIR}:build
 

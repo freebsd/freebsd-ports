@@ -14,6 +14,7 @@ PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	Ruby library which wraps libnmz of Namazu
 
 LIB_DEPENDS=	nmz.6:${PORTSDIR}/japanese/namazu2
 
