@@ -1,0 +1,23 @@
+--- makefile	21 Jan 2003 00:28:51 -0000	1.7
++++ makefile	21 Jan 2003 00:44:57 -0000
+@@ -15,8 +15,8 @@
+ # for the rest of the world, it is probably better to put the binaries
+ # in /usr/local/netperf or /opt/netperf
+ #
+-#NETPERF_HOME = /usr/local/netperf
+-NETPERF_HOME = /opt/netperf
++NETPERF_HOME = ${PREFIX}/netperf
++#NETPERF_HOME = /opt/netperf
+ 
+ # The compiler on your system might be somewhere else, and/or have
+ # a different name.
+@@ -91,7 +91,8 @@
+ #
+ 
+ LOG_FILE=DEBUG_LOG_FILE="\"/tmp/netperf.debug\""
+-CFLAGS = -Ae -O -D$(LOG_FILE) -DUSE_PSTAT -DHAVE_SENDFILE -DDO_FIRST_BURST
++CFLAGS = %CFLAGS% -D$(LOG_FILE) -DDO_FIRST_BURST #-DHAVE_SENDFILE
++CFLAGS+= -DHISTOGRAM -DDO_UNIX -DDO_1644 -DO_IPV6
+ 
+ # Some platforms, and some options, require additional libraries.
+ # you can add to the "LIBS =" line to accomplish this. if you find

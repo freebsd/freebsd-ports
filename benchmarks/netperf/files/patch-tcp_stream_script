@@ -1,0 +1,14 @@
+--- tcp_stream_script	2 Aug 1999 12:01:23 -0000	1.1.1.1
++++ tcp_stream_script	21 Jan 2003 00:45:21 -0000
+@@ -22,9 +22,9 @@
+ fi
+ 
+ # where the programs are
+-#NETHOME=/usr/local/netperf
++NETHOME=%%PREFIX%%/netperf
+ #NETHOME="/opt/netperf"
+-NETHOME=.
++#NETHOME=.
+ 
+ # at what port will netserver be waiting? If you decide to run
+ # netserver at a differnet port than the default of 12865, then set
