@@ -15,6 +15,12 @@ MAINTAINER=	usagi@clave.gr.jp
 
 USE_X_PREFIX=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${XFREE86_VERSION} == 4
+RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
+.endif
+
 FONTSDIR=	lib/X11/fonts/local
 MAKE_ENV=	FONTSDIR=${FONTSDIR}
 PLIST_SUB=	FONTSDIR=${FONTSDIR}
@@ -30,4 +36,4 @@ post-install:
 	@${CP} ${WRKSRC}/README ${PREFIX}/share/doc/naga10/
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

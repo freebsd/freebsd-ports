@@ -17,6 +17,13 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	obrien@FreeBSD.org
 
 USE_IMAKE=	yes
+
+.include <bsd.port.pre.mk>
+
+.if ${XFREE86_VERSION} == 4
+RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
+.endif
+
 XMKMF=		xmkmf
 MAN1=		vnterm.1
 CFLAGS+=	-I../../include
@@ -40,4 +47,4 @@ post-install:
 	@${INSTALL_MAN} ${WRKSRC}/README ${PREFIX}/share/doc/vnterm
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

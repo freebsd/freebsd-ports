@@ -14,6 +14,13 @@ DISTNAME=	elisat10
 MAINTAINER=	toshi@tea.forus.or.jp
 
 USE_X_PREFIX=	yes
+
+.include <bsd.port.pre.mk>
+
+.if ${XFREE86_VERSION} == 4
+RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
+.endif
+
 NO_WRKSUBDIR=	yes
 
 BDFTOPCF_CMD=	${PREFIX}/bin/bdftopcf
@@ -52,4 +59,4 @@ post-install:
 	)
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
