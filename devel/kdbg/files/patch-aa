@@ -1,0 +1,10 @@
+--- kdbg/ttywnd.cpp.orig	Sun Mar 12 13:20:47 2000
++++ kdbg/ttywnd.cpp	Thu Mar 23 07:48:38 2000
+@@ -28,6 +28,7 @@
+ #include <pty.h>			/* openpty */
+ #endif
+ #include <errno.h>
++#include <libutil.h>
+ 
+ #include "mydebug.h"
+ 

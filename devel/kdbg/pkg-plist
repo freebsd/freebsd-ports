@@ -13,7 +13,10 @@ share/apps/kdbg/pics/pgmnext.xpm
 share/apps/kdbg/pics/pgmrun.xpm
 share/apps/kdbg/pics/pgmstep.xpm
 share/apps/kdbg/pics/pointer.xpm
+share/apps/kdbg/pics/regs.xpm
 share/apps/kdbg/pics/search.xpm
+share/apps/kdbg/pics/watch.xpm
+share/apps/kdbg/pics/watchcoded.xpm
 share/apps/kdbg/types/X11.kdbgtt
 share/apps/kdbg/types/glib.kdbgtt
 share/apps/kdbg/types/gtk+.kdbgtt
@@ -24,6 +27,7 @@ share/apps/kdbg/types/qt2.kdbgtt
 share/doc/HTML/de/kdbg/index.html
 share/doc/HTML/de/kdbg/types.html
 share/doc/HTML/en/kdbg/index.html
+share/doc/HTML/en/kdbg/pgmsettings.html
 share/doc/HTML/en/kdbg/types.html
 share/doc/HTML/ru/kdbg/index.html
 share/doc/HTML/ru/kdbg/types.html
@@ -42,6 +46,7 @@ share/locale/pt/LC_MESSAGES/kdbg.mo
 share/locale/ro/LC_MESSAGES/kdbg.mo
 share/locale/ru/LC_MESSAGES/kdbg.mo
 share/locale/sk/LC_MESSAGES/kdbg.mo
+share/locale/sv/LC_MESSAGES/kdbg.mo
 share/locale/zh_CN.GB2312/LC_MESSAGES/kdbg.mo
 @dirrm share/applnk/Development
 @dirrm share/apps/kdbg/pics
