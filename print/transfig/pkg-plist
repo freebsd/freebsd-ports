@@ -1,0 +1,8 @@
+@cwd /usr/X11R6
+@owner bin
+@group bin
+@mode 755
+bin/transfig
+bin/fig2dev
+bin/fig2ps2tex
+bin/pic2tpic
