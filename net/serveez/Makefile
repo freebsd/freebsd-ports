@@ -8,23 +8,26 @@
 
 PORTNAME=	serveez
 PORTVERSION=	0.1.3
+PORTREVISOIN=	1
 CATEGORIES=	net devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	guile:${PORTSDIR}/lang/guile \
-		gnugetopt:${PORTSDIR}/devel/libgnugetopt \
-		bz2:${PORTSDIR}/archivers/bzip2
+LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt \
+		guile.10:${PORTSDIR}/lang/guile
+.if !exists(/usr/bin/bzip2)
+LIB_DEPENDS+=	bz2.1:${PORTSDIR}/archivers/bzip2
+.endif
 
 GUILE_CONFIG?=	${LOCALBASE}/bin/guile-config
-USE_LIBTOOL=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	\
-	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include `${GUILE_CONFIG} compile`" \
-	LDFLAGS="-L${LOCALBASE}/lib -lgnugetopt `${GUILE_CONFIG} link`"
+
 USE_GMAKE=	yes
+USE_LIBTOOL=	yes
+LIBTOOLFLAGS=	--disable-ltlibs --release-ignore
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include `${GUILE_CONFIG} compile`" \
+		LDFLAGS="-L${LOCALBASE}/lib -lgnugetopt `${GUILE_CONFIG} link`"
 INSTALLS_SHLIB=	yes
 
 MAN1=	serveez.1
