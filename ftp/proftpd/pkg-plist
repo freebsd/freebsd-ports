@@ -1,4 +1,5 @@
 bin/ftpcount
-etc/proftpd.conf
+etc/proftpd.conf.default
+@exec if [ ! -f %D/etc/proftpd.conf ] ; then cp -p %D/%F %B/proftpd.conf; fi
 libexec/proftpd
 sbin/ftpshut

@@ -3,7 +3,7 @@
 # Date created:		26 January 1998
 # Whom:			Stephane Legrand
 #
-# $Id: Makefile,v 1.12 1999/04/22 16:01:10 mharo Exp $
+# $Id: Makefile,v 1.13 1999/08/02 10:43:56 asami Exp $
 #
 
 DISTNAME=	proftpd-1.2.0pre3
@@ -11,6 +11,10 @@ PKGNAME=	proftpd-1.2.0
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.proftpd.org/distrib/ \
 		ftp://ftp3.proftpd.org/distrib/
+
+PATCH_SITES=	ftp://ftp.tos.net/pub/proftpd/
+PATCHFILES=	proftpd-1.2.0pre3a.patch.gz
+PATCH_DIST_STRIP= -p1
 
 MAINTAINER=	mharo@FreeBSD.org
 
@@ -40,6 +44,7 @@ post-configure:
 	@${SED}	-e 's:/usr/bin:${PREFIX}/bin:' \
 		< ${WRKSRC}/src/ftpcount.1.pre_sed > ${WRKSRC}/src/ftpcount.1
 
+STRIP=
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/ftpcount ${PREFIX}/bin/ftpcount
 	@${INSTALL_PROGRAM} ${WRKSRC}/proftpd ${PREFIX}/libexec/proftpd
@@ -47,9 +52,11 @@ do-install:
 	@${INSTALL_MAN} ${WRKSRC}/src/ftpcount.1 ${PREFIX}/man/man1/ftpcount.1
 	@${INSTALL_MAN} ${WRKSRC}/src/ftpshut.8 ${PREFIX}/man/man8/ftpshut.8
 	@${INSTALL_MAN} ${WRKSRC}/src/proftpd.8 ${PREFIX}/man/man8/proftpd.8
+	@${INSTALL_SCRIPT} \
+		${WRKSRC}/sample-configurations/basic.conf ${PREFIX}/etc/proftpd.conf.default
 	@if [ ! -f ${PREFIX}/etc/proftpd.conf ]; then \
 		${INSTALL_SCRIPT} \
-	${WRKSRC}/sample-configurations/basic.conf ${PREFIX}/etc/proftpd.conf; \
+		${WRKSRC}/sample-configurations/basic.conf ${PREFIX}/etc/proftpd.conf; \
 	fi
 
 .include <bsd.port.mk>
