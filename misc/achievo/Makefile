@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	achievo
-PORTVERSION=	1.0.3
+PORTVERSION=	1.0.4
 CATEGORIES=	misc www
 MASTER_SITES=	http://ftp.achievo.org/pub/achievo/
 DISTNAME=	${PORTNAME}-stable-${PORTVERSION}
@@ -19,6 +19,9 @@ WANT_PHP_MOD=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 NO_BUILD=	YES
+
+post-patch:
+	@${MV} ${WRKSRC}/config.inc.php ${WRKSRC}/config.inc.php-default
 
 do-install:
 	@${MKDIR} ${PREFIX}/www/data.default/achievo
