@@ -21,7 +21,7 @@ LIB_DEPENDS=		intl.1:${PORTSDIR}/devel/gettext
 WITHOUT_GTKEXTRA=	yes
 .endif
 .if !defined(WITHOUT_GTKEXTRA)
-LIB_DEPENDS+=		gtkextra.15:${PORTSDIR}/x11-toolkits/gtkextra
+LIB_DEPENDS+=		gtkextra.16:${PORTSDIR}/x11-toolkits/gtkextra
 .endif
 .if !defined(WITHOUT_GUILE)
 LIB_DEPENDS+=		guile.9:${PORTSDIR}/lang/guile
