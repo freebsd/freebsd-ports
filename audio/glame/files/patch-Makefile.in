@@ -1,14 +1,14 @@
 
 $FreeBSD$
 
---- Makefile.in.orig	Tue Jul  1 15:01:06 2003
-+++ Makefile.in	Tue Jul  1 15:01:55 2003
-@@ -147,7 +147,7 @@
- install_sh = @install_sh@
- pkgpixmapsdir = @pkgpixmapsdir@
- pkgscriptsdir = @pkgscriptsdir@
+--- Makefile.in.orig	Fri Oct 29 03:53:30 2004
++++ Makefile.in	Fri Oct 29 21:29:55 2004
+@@ -280,7 +280,7 @@
+ subdirs = @subdirs@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
 -SUBDIRS = intl libltdl macros src doc data po
 +SUBDIRS = intl macros src doc data po
- 
  ACLOCAL_AMFLAGS = -I macros -I .
- 
+ EXTRA_DIST = TODO MAINTAINERS CREDITS BUGS autogen.sh glame.spec
+ all: config.h

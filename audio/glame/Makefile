@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	glame
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.3
 CATEGORIES=	audio gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,13 +15,14 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A powerful, fast, stable, and easily extensible sound editor for GNOME
 
 BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
-LIB_DEPENDS=	vorbis.3:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS=	mad.2:${PORTSDIR}/audio/libmad \
+		vorbis.3:${PORTSDIR}/audio/libvorbis
 
-USE_LIBLTDL=	yes
 USE_X_PREFIX=	yes
-USE_GNOME=	gnomehack gnomeprefix gnometarget libglade lthack
+USE_GNOME=	gnomehack gnomeprefix gnometarget libglade
+USE_LIBLTDL=	yes
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=	13
+USE_LIBTOOL_VER=	15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib -lltdl ${PTHREAD_LIBS}" \
 		MAKEINFO="makeinfo --no-split"
