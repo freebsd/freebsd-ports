@@ -1,0 +1,15 @@
+$FreeBSD$
+
+--- ../../j2se/make/java/instrument/Makefile.orig	Thu Jan 13 02:04:44 2005
++++ ../../j2se/make/java/instrument/Makefile	Thu Jan 13 02:05:03 2005
+@@ -72,8 +72,8 @@
+ else
+ ifeq ($(PLATFORM), bsd)
+   ifneq ($(TRUE_PLATFORM), NetBSD)
+-    OTHER_INCLUDES += -I/usr/local/include
+-    OTHER_LDLIBS += -L/usr/local/lib -liconv
++    OTHER_INCLUDES += -I${LOCALBASE}/include
++    OTHER_LDLIBS += -L${LOCALBASE}/lib -liconv
+   endif
+ else
+   OTHER_LDLIBS = -lnsl -ldl
