@@ -94,6 +94,7 @@ jdk*-doc		ports/lang/jdk-doc	under license and export control
 jdk-tutorial-*		ports/lang/jdk-tutorial	This software is under license and export control.
 kaffe-*			ports/lang/kaffe	Restrictive copyright
 librc4-*		ports/security/librc4	Crypto; export-controlled
+lsh*			ports/security/lsh	Crypto; export-controlled
 mew-1.70.tar.gz		ports/mail/mew		ITAR export-controlled
 						(hooks to pgp)
 mindfocus-*		ports/games/mindfocus	contains commercial
@@ -117,6 +118,7 @@ prodosemu.*		ports/emulators/prodosemu	Restrictive copyright on the ROM image
 qvplay-*		ports/graphics/qvplay	No redistribution due to
 						beta status
 quake101.zip		ports/games/quakeserver	Shareware
+quakesw-*		ports/games/quakesw	Shareware
 radius*			ports/net/radius	Binary redistribution only,
 						no fee allowed
 rarlnx*			ports/archivers/linux_rar	Only unmodified original package can be distributed
