@@ -23,9 +23,8 @@ USE_GNOME=	esound gtk12
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	--disable-fbdev-dga --enable-fpe=uae
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
-
-CFLAGS+=	${PTHREAD_CFLAGS}
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
+		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
 MAN1=		BasiliskII.1
 
