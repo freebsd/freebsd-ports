@@ -15,8 +15,10 @@ MAINTAINER=	doc@hisio.safenet.pl
 
 RUN_DEPENDS=	i386-mingw32msvc-as:${PORTSDIR}/devel/mingw-binutils \
 		mingwm10.dll:${PORTSDIR}/devel/mingw-bin-msvcrt \
-		i386-mingw32msvc-gcc:${PORTSDIR}/devel/mingw-gcc \
-		${LOCALBASE}/i386-mingw32msvc/include/GL/gl.h:${PORTSDIR}/devel/mingw-opengl-headers
+		i386-mingw32msvc-gcc:${PORTSDIR}/devel/mingw-gcc
+.if !defined(PACKAGE_BUILDING)
+RUN_DEPENDS+=	${LOCALBASE}/i386-mingw32msvc/include/GL/gl.h:${PORTSDIR}/devel/mingw-opengl-headers
+.endif
 
 NO_BUILD=	yes
 
