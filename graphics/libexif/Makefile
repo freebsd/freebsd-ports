@@ -7,15 +7,22 @@
 
 PORTNAME=	libexif
 PORTVERSION=	0.5.0
-PORTREVISION=
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=libexif
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	pschmied@qwest.net
 
-INSTALLS_SHLIB= yes
-HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	# Intentionally blank
+BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
+RUN_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
+
+GNU_CONFIGURE=	yes
+INSTALLS_SHLIB=	yes
+
+post-patch:
+	@${PERL} -pi -e 's|-g -Wall||g' ${WRKSRC}/configure
+	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${PERL} -pi -e \
+		's|\$$\(libdir\)/pkgconfig|\$$\(prefix\)/libdata/pkgconfig|g'
 
 .include <bsd.port.mk>
