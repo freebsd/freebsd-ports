@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	rox-session
-PORTVERSION=	0.1.16
+PORTVERSION=	0.1.18
 CATEGORIES=	x11-fm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	rox
@@ -21,14 +21,24 @@ RUN_DEPENDS=	${LOCALBASE}/bin/rox:${PORTSDIR}/x11-fm/rox-filer
 
 WRKSRC=		${WRKDIR}/ROX-Session-${PORTVERSION}
 
+.include <bsd.port.pre.mk>
+
+.if (${ARCH} == "i386")
+BINARIES=	FreeBSD-ix86
+.else
+BINARIES=	FreeBSD-${ARCH}
+.endif
+
+PLIST_SUB=	BINARIES="${BINARIES}"
+
 do-build:
 	# Run the custom build procedure
 	@cd ${WRKSRC}/ROX-Session && GTK_CONFIG=${GTK_CONFIG} GLIB_CONFIG=${GLIB_CONFIG} ./AppRun --compile
 
 do-install:
 	@${MKDIR} ${PREFIX}/apps/ROX-Session
-	@cd ${WRKSRC}/ROX-Session && ${CP} -r AppIcon.xpm AppInfo.xml AppRun FreeBSD-ix86 Help Login MakeDefault.sh Options.xml Setup Styles WindowMans ${PREFIX}/apps/ROX-Session
+	@cd ${WRKSRC}/ROX-Session && ${CP} -r .DirIcon AppInfo.xml AppRun ${BINARIES} Help Login MakeDefault.sh Messages Options.xml Setup SetupPanel Styles WindowMans images ${PREFIX}/apps/ROX-Session
 	@${CAT} ${FILESDIR}/rox-session | ${SED} -e "s|%%PREFIX%%|${PREFIX}|" > ${PREFIX}/bin/rox-session
 	@${CHMOD} 775 ${PREFIX}/bin/rox-session
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
