@@ -2,3 +2,8 @@ bin/ratpoison
 %%PORTDOCS%%@unexec install-info --delete %D/info/ratpoison %D/info/dir
 %%PORTDOCS%%info/ratpoison.info
 %%PORTDOCS%%@exec install-info %D/info/ratpoison.info %D/info/dir
+%%PORTDOCS%%share/doc/ratpoison/AUTHORS
+%%PORTDOCS%%share/doc/ratpoison/COPYING
+%%PORTDOCS%%share/doc/ratpoison/ChangeLog
+%%PORTDOCS%%share/doc/ratpoison/NEWS
+%%PORTDOCS%%share/doc/ratpoison/README
