@@ -10,7 +10,7 @@
 *	"secret" key.  If you are using FreeBSD 4.x, visit		*
 *	http://people.freebsd.org/~dougb/randomness.html for		*
 *	information on how to set up entropy gathering. Users		*
-*	of FreeBSD 5.x do not need to perform this step. If		*
+*	of FreeBSD 5.x or later do not need to do this step. If		*
 *	you are running BIND 9 in a chroot environment, make		*
 *	sure that there is a /dev/random device in the chroot.		*
 *									*
