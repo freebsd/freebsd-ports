@@ -76,6 +76,7 @@
     SUBDIR += jikes
     SUBDIR += jlex
     SUBDIR += jlint
+    SUBDIR += jmf
     SUBDIR += jmp
     SUBDIR += jode
     SUBDIR += jre
