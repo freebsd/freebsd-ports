@@ -20,6 +20,7 @@ bin/freeride
 %%RUBY_SITELIBDIR%%/freeride/plugins/rubyide_tools_fox_source_browser/icons/module.png
 %%RUBY_SITELIBDIR%%/freeride/plugins/rubyide_tools_fox_source_browser/icons/method.png
 %%RUBY_SITELIBDIR%%/freeride/plugins/rubyide_tools_fox_source_browser/icons/class.png
+%%RUBY_SITELIBDIR%%/freeride/plugins/rubyide_tools_fox_script_runner/script_starter_with_pause.rb
 %%RUBY_SITELIBDIR%%/freeride/plugins/rubyide_tools_fox_script_runner/script_starter.rb
 %%RUBY_SITELIBDIR%%/freeride/plugins/rubyide_tools_fox_script_runner/script_runner.rb
 %%RUBY_SITELIBDIR%%/freeride/plugins/rubyide_tools_fox_script_runner/plugin.yaml
@@ -73,6 +74,7 @@ bin/freeride
 %%RUBY_SITELIBDIR%%/freeride/plugins/rubyide_gui/component_layout.yaml
 %%RUBY_SITELIBDIR%%/freeride/plugins/rubyide_gui/component.rb
 %%RUBY_SITELIBDIR%%/freeride/plugins/rubyide_gui/appframe.rb
+%%RUBY_SITELIBDIR%%/freeride/plugins/rubyide_fox_gui/icons/undock_dockpane.png
 %%RUBY_SITELIBDIR%%/freeride/plugins/rubyide_fox_gui/icons/undo.png
 %%RUBY_SITELIBDIR%%/freeride/plugins/rubyide_fox_gui/icons/styles.png
 %%RUBY_SITELIBDIR%%/freeride/plugins/rubyide_fox_gui/icons/separator.png
@@ -94,6 +96,8 @@ bin/freeride
 %%RUBY_SITELIBDIR%%/freeride/plugins/rubyide_fox_gui/icons/editdelete.png
 %%RUBY_SITELIBDIR%%/freeride/plugins/rubyide_fox_gui/icons/editcut.png
 %%RUBY_SITELIBDIR%%/freeride/plugins/rubyide_fox_gui/icons/editcopy.png
+%%RUBY_SITELIBDIR%%/freeride/plugins/rubyide_fox_gui/icons/dock_dockpane.png
+%%RUBY_SITELIBDIR%%/freeride/plugins/rubyide_fox_gui/icons/close_dockpane.png
 %%RUBY_SITELIBDIR%%/freeride/plugins/rubyide_fox_gui/icons/bullseye.ico
 %%RUBY_SITELIBDIR%%/freeride/plugins/rubyide_fox_gui/toolbar.yaml
 %%RUBY_SITELIBDIR%%/freeride/plugins/rubyide_fox_gui/toolbar.rb
@@ -201,6 +205,14 @@ bin/freeride
 %%RUBY_SITELIBDIR%%/freeride/redist/README
 %%RUBY_SITELIBDIR%%/freeride/redist/ripper.rb
 @unexec if [ -f %%LOCALBASE%%/%%RUBY_SITELIBDIR%%/freeride/config/properties.yaml ]; then rm %%LOCALBASE%%/%%RUBY_SITELIBDIR%%/freeride/config/properties.yaml; fi;
+@dirrm %%RUBY_SITELIBDIR%%/freeride/redist/runit/ext
+@dirrm %%RUBY_SITELIBDIR%%/freeride/redist/runit/cui
+@dirrm %%RUBY_SITELIBDIR%%/freeride/redist/runit
+@dirrm %%RUBY_SITELIBDIR%%/freeride/redist/rrb
+@dirrm %%RUBY_SITELIBDIR%%/freeride/redist/rexml/dtd
+@dirrm %%RUBY_SITELIBDIR%%/freeride/redist/rexml
+@dirrm %%RUBY_SITELIBDIR%%/freeride/redist/%%RUBY_ARCH%%
+@dirrm %%RUBY_SITELIBDIR%%/freeride/redist/
 @dirrm %%RUBY_SITELIBDIR%%/freeride/plugins/rubyide_util_logger
 @dirrm %%RUBY_SITELIBDIR%%/freeride/plugins/rubyide_tools_source_parser
 @dirrm %%RUBY_SITELIBDIR%%/freeride/plugins/rubyide_tools_rrb
@@ -218,19 +230,11 @@ bin/freeride
 @dirrm %%RUBY_SITELIBDIR%%/freeride/plugins/rubyide_tools_configurator
 @dirrm %%RUBY_SITELIBDIR%%/freeride/plugins/rubyide_project
 @dirrm %%RUBY_SITELIBDIR%%/freeride/plugins/rubyide_gui
+@dirrm %%RUBY_SITELIBDIR%%/freeride/plugins/rubyide_fox_gui/icons
 @dirrm %%RUBY_SITELIBDIR%%/freeride/plugins/rubyide_fox_gui/fxscintilla/util
 @dirrm %%RUBY_SITELIBDIR%%/freeride/plugins/rubyide_fox_gui/fxscintilla
-@dirrm %%RUBY_SITELIBDIR%%/freeride/plugins/rubyide_fox_gui/icons
 @dirrm %%RUBY_SITELIBDIR%%/freeride/plugins/rubyide_fox_gui
 @dirrm %%RUBY_SITELIBDIR%%/freeride/plugins/rubyide_commands
 @dirrm %%RUBY_SITELIBDIR%%/freeride/plugins
-@dirrm %%RUBY_SITELIBDIR%%/freeride/redist/runit/ext
-@dirrm %%RUBY_SITELIBDIR%%/freeride/redist/runit/cui
-@dirrm %%RUBY_SITELIBDIR%%/freeride/redist/runit
-@dirrm %%RUBY_SITELIBDIR%%/freeride/redist/rrb
-@dirrm %%RUBY_SITELIBDIR%%/freeride/redist/rexml/dtd
-@dirrm %%RUBY_SITELIBDIR%%/freeride/redist/rexml
-@dirrm %%RUBY_SITELIBDIR%%/freeride/redist/%%RUBY_ARCH%%
-@dirrm %%RUBY_SITELIBDIR%%/freeride/redist
-@dirrm %%RUBY_SITELIBDIR%%/freeride/config
-@dirrm %%RUBY_SITELIBDIR%%/freeride
+@dirrm %%RUBY_SITELIBDIR%%/freeride/config/
+@dirrm %%RUBY_SITELIBDIR%%/freeride/
