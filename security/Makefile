@@ -173,6 +173,7 @@
     SUBDIR += mac-robber
     SUBDIR += makepasswd
     SUBDIR += mcrypt
+    SUBDIR += md5crk
     SUBDIR += mdcrack
     SUBDIR += mhash
     SUBDIR += mindterm-binary
