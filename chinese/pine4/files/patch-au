@@ -1,11 +1,11 @@
---- pine/osdep/os-bsf.h.orig	Fri Jun 26 14:19:54 1998
-+++ pine/osdep/os-bsf.h	Wed Aug 19 10:45:25 1998
+--- pine/osdep/os-bsf.h.orig	Tue Sep 22 11:19:52 1998
++++ pine/osdep/os-bsf.h	Tue Sep 22 11:23:50 1998
 @@ -74,7 +74,7 @@
     default-composer-hdrs or customized-hdrs to get at it. Instead of
     defining NEVER_ALLOW_CHANGING_FROM, an easier way of preventing From
     changing is to put the feature "no-allow-changing-from" in the
 -   /usr/local/lib/pine.conf.fixed file.
-+   /usr/local/etc/pine.conf.fixed file.
++   @@PREFIX@@/etc/pine.conf.fixed file.
   ----*/
  /* #define NEVER_ALLOW_CHANGING_FROM /* probably not needed */
  
@@ -14,7 +14,18 @@
           file is included in the os-*.ic file for your system.
   ----*/
 -/* #define BACKGROUND_POST  /* comment out to disable posting from child */
-+#define BACKGROUND_POST     /* comment out to disable posting from child */
++#define BACKGROUND_POST  /* comment out to disable posting from child */
+ 
+ 
+ 
+@@ -160,8 +160,8 @@
+ 
+ 
+ /*----- System-wide config file ----------------------------------------*/
+-#define SYSTEM_PINERC             "/usr/local/lib/pine.conf"
+-#define SYSTEM_PINERC_FIXED       "/usr/local/lib/pine.conf.fixed"
++#define SYSTEM_PINERC             "@@PREFIX@@/etc/pine.conf"
++#define SYSTEM_PINERC_FIXED       "@@PREFIX@@/etc/pine.conf.fixed"
  
  
  

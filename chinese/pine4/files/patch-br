@@ -1,48 +1,57 @@
---- pine/pine.hlp.orig	Wed Jul 22 06:04:04 1998
-+++ pine/pine.hlp	Wed Aug 19 10:45:28 1998
-@@ -750,9 +750,9 @@
+--- pine/pine.hlp.orig	Tue Sep 22 20:33:23 1998
++++ pine/pine.hlp	Tue Sep 22 20:34:09 1998
+@@ -835,9 +835,9 @@
  
   executable     &lt;Unix search path&gt;/pine
   persnl cfg     ~/.pinerc
 - global cfg     /usr/local/lib/pine.conf
 - fixed cfg      /usr/local/lib/pine.conf.fixed
 - local help     /usr/local/lib/pine.info
-+ global cfg     /usr/local/etc/pine.conf
-+ fixed cfg      /usr/local/etc/pine.conf.fixed
-+ local help     /usr/local/etc/pine.info
++ global cfg     @@PREFIX@@/etc/pine.conf
++ fixed cfg      @@PREFIX@@/etc/pine.conf.fixed
++ local help     @@PREFIX@@/etc/pine.info
  
   interrupted    ~/.pine-interrupted-mail
   debug          ~/.pine-debugN
-@@ -1137,9 +1137,9 @@
+@@ -850,7 +850,7 @@
+  sentmail#      ~/mail/sent-mail
+  mailcap#       ~/.mailcap + /etc/mailcap
+                            + /usr/etc/mailcap + /usr/local/etc/mailcap
+- mimetypes#     ~/.mime.types + /etc/mime.types + /usr/local/lib/mime.types
++ mimetypes#     ~/.mime.types + /etc/mime.types + @@PREFIX@@/etc/mime.types
+ 
+  news-spool	varies across Unix flavors, e.g. /usr/spool/news or /var/news
+  active-news	varies across Unix flavors, e.g. /usr/lib/news/active
+@@ -1404,9 +1404,9 @@
  this link now to send a message to it:<BR>
  <A HREF="X-Pine-Gripe:_LOCAL_ADDRESS_?local"><!--#echo var="_LOCAL_FULLNAME_"--></A><P>
  <!--chtml endif-->
 -<!--chtml if [ -r /usr/local/lib/pine.info ]-->
-+<!--chtml if [ -r /usr/local/etc/pine.info ]-->
++<!--chtml if [ -r @@PREFIX@@/etc/pine.info ]-->
  <HR WIDTH="75%">Local Support Contacts:<P>
 -<!--#include file="/usr/local/lib/pine.info"-->
-+<!--#include file="/usr/local/etc/pine.info"-->
++<!--#include file="@@PREFIX@@/etc/pine.info"-->
  <HR WIDTH="75%">
  <!--chtml endif-->
  <P> 
-@@ -1226,7 +1226,7 @@
+@@ -1493,7 +1493,7 @@
  <OL>
    <LI> <A HREF="#intro">Introduction</A>
    <LI> <A HREF="#pine_help">Pine Help</A>
 -<!--chtml if [ -r /usr/local/lib/pine.info ]-->
-+<!--chtml if [ -r /usr/local/etc/pine.info ]-->
++<!--chtml if [ -r @@PREFIX@@/etc/pine.info ]-->
    <LI> <A HREF="#local_support">Local Support Contacts</A>
  <!--chtml endif-->
    <LI> <A HREF="#giving_cmds">Giving Commands in Pine</A>
-@@ -1333,9 +1333,9 @@
+@@ -1600,9 +1600,9 @@
  at your site.)
  
  
 -<!--chtml if [ -r /usr/local/lib/pine.info ]-->
-+<!--chtml if [ -r /usr/local/etc/pine.info ]-->
++<!--chtml if [ -r @@PREFIX@@/etc/pine.info ]-->
  <H2><A NAME="local_support">Local Support Contacts</A></H2>
 -<!--#include file="/usr/local/lib/pine.info"-->
-+<!--#include file="/usr/local/etc/pine.info"-->
++<!--#include file="@@PREFIX@@/etc/pine.info"-->
  <!--chtml endif-->
  
  <H2><A NAME="giving_cmds">Giving Commands in Pine</A></H2>

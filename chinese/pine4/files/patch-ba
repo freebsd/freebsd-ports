@@ -1,6 +1,6 @@
---- pine/mailcmd.c.orig	Fri Jul 17 13:57:21 1998
-+++ pine/mailcmd.c	Tue Aug  4 12:42:17 1998
-@@ -110,39 +110,39 @@
+--- pine/mailcmd.c.orig	Tue Sep 15 03:01:15 1998
++++ pine/mailcmd.c	Tue Sep 22 19:13:41 1998
+@@ -108,39 +108,39 @@
  /*
   * List of Select options used by apply_* functions...
   */
@@ -61,7 +61,7 @@
      { -1,   0, NULL, NULL},
      { -1,   0, NULL, NULL},
      { -1,   0, NULL, NULL},
-@@ -152,24 +152,24 @@
+@@ -150,24 +150,24 @@
  
  
  static char *sel_flag = 
@@ -96,7 +96,7 @@
      {ctrl('W'), 14, "^W", "Toggle When"},
      {KEY_UP,    12, "", ""},
      {KEY_DOWN,  13, "", ""},
-@@ -179,18 +179,18 @@
+@@ -177,18 +177,18 @@
  
  static char *sel_text =
  #ifdef	RECIPIENT
@@ -123,7 +123,7 @@
  #endif	/* RECIPIENT */
      {-1, 0, NULL, NULL}
  };
-@@ -244,7 +244,7 @@
+@@ -242,7 +242,7 @@
        case MC_HELP :
  	if(state->nr_mode) {
  	    q_status_message(SM_ORDER, 0, 3,
@@ -132,7 +132,7 @@
  	    break;
  	}
  
-@@ -273,7 +273,7 @@
+@@ -271,7 +271,7 @@
  
            /*------- View message text --------*/
        case MC_VIEW_TEXT :
@@ -141,7 +141,7 @@
  	    state->next_screen = mail_view_screen;
  #if	defined(DOS) && !defined(WIN32)
  	    flush_index_cache();		/* save room on PC */
-@@ -297,10 +297,10 @@
+@@ -295,10 +295,10 @@
  		mn_dec_cur(stream, msgmap);
  		if(i == mn_get_cur(msgmap))
  		  q_status_message(SM_ORDER, 0, 2,
@@ -154,7 +154,7 @@
  	}
  
  	break;
-@@ -312,7 +312,7 @@
+@@ -310,7 +310,7 @@
  	   && (i = mn_get_cur(msgmap)) < mn_get_total(msgmap)){
  	    mn_inc_cur(stream, msgmap);
  	    if(i == mn_get_cur(msgmap))
@@ -163,7 +163,7 @@
  	}
  	else{
  	    prompt[0] = '\0';
-@@ -329,7 +329,7 @@
+@@ -327,7 +327,7 @@
  		  strcat(prompt, ".  No more folders to TAB to.");
  	    }
  
@@ -260,18 +260,21 @@
  	    cmd_export(state, msgmap, question_line, 0);
  	    state->mangled_footer = 1;
  	}
-@@ -597,29 +597,28 @@
+@@ -596,9 +596,9 @@
+ 	dprint(2, (debugfile, "\n - expunge -\n"));
  	if(IS_NEWS(stream) && stream->rdonly){
  	    if((del_count = count_flagged(stream, F_DEL)) > 0L){
- 		state->mangled_footer = 1;
+-		state->mangled_footer = 1;
 -		sprintf(prompt, "Exclude %ld message%s from %s", del_count,
 -			plural(del_count), pretty_fn(state->cur_folder));
++
 +		sprintf(prompt, "自 %s 中排除 %ld 封信件",
 +			pretty_fn(state->cur_folder), del_count);
- 		if(F_ON(F_AUTO_EXPUNGE, state)
- 		   || want_to(prompt, 'y', 0, NO_HELP, WT_NORM) == 'y'){
- 		    msgno_exclude(stream, msgmap);
- 		    clear_index_cache();
+ 		if(F_ON(F_FULL_AUTO_EXPUNGE, state)
+ 		   || (F_ON(F_AUTO_EXPUNGE, state)
+ 		       && (state->context_current
+@@ -620,21 +620,20 @@
+ 
  		    state->mangled_body = 1;
  		    state->mangled_header = 1;
 -		    q_status_message2(SM_ORDER, 0, 4, "%s message%s excluded",
@@ -297,16 +300,16 @@
  	    break;
  	}
  
-@@ -634,7 +633,7 @@
- 		break;
- 	    }
- 	    else if(ret == 'x') {		/* ^C */
--		cmd_cancelled("Expunge");
-+		cmd_cancelled("刪除");
- 		break;
- 	    }
- 	}
-@@ -685,11 +684,11 @@
+@@ -653,7 +652,7 @@
+ 	      ret = 'y';
+ 
+ 	    if(ret == 'x')
+-	      cmd_cancelled("Expunge");
++	      cmd_cancelled("刪除");
+ 
+ 	    if(ret != 'y')
+ 	      break;
+@@ -705,11 +704,11 @@
  	if(state->expunge_count <= 0)
  	  if(del_count)
  	    q_status_message1(SM_ORDER, 0, 3,
@@ -320,7 +323,7 @@
  
  	break;
  
-@@ -719,16 +718,15 @@
+@@ -743,16 +742,15 @@
  		     */
  		    refresh_sort(msgmap, FALSE);
  		    state->mangled_header = 1;
@@ -342,7 +345,7 @@
  	}
  
  	break;
-@@ -736,7 +734,7 @@
+@@ -760,7 +758,7 @@
  
            /*------- Make Selection -----------*/
        case MC_SELECT :
@@ -351,7 +354,7 @@
  	    aggregate_select(state, msgmap, question_line, in_index);
  	    if(in_index && any_lflagged(msgmap, MN_SLCT) > 0L
  	       && !any_lflagged(msgmap, MN_HIDE)
-@@ -768,7 +766,7 @@
+@@ -792,7 +790,7 @@
  		  unzoom_index(state, msgmap);
  	    }
  	    else
@@ -360,7 +363,7 @@
  	}
  
  	break;
-@@ -846,21 +844,21 @@
+@@ -870,21 +868,21 @@
  {
      if(cmd == ctrl('Q') || cmd == ctrl('S'))
        q_status_message1(SM_ASYNC, 0, 2,
@@ -389,7 +392,7 @@
  }
  
  
-@@ -1133,11 +1131,9 @@
+@@ -1157,11 +1155,9 @@
      char *type, *cmd;
  {
      if(mn_get_total(map) <= 0L){
@@ -403,7 +406,7 @@
  	return(FALSE);
      }
  
-@@ -1161,8 +1157,8 @@
+@@ -1185,8 +1181,8 @@
  {
      if(READONLY_FOLDER || state->dead_stream){
  	q_status_message2(SM_ORDER | (state->dead_stream ? SM_DING : 0), 0, 3,
@@ -414,7 +417,7 @@
  	return(FALSE);
      }
  
-@@ -1182,7 +1178,7 @@
+@@ -1206,7 +1202,7 @@
  cmd_cancelled(cmd)
      char *cmd;
  {
@@ -423,7 +426,7 @@
  }
  
  
-@@ -1208,7 +1204,7 @@
+@@ -1232,7 +1228,7 @@
  
      dprint(4, (debugfile, "\n - delete message -\n"));
      if(!(any_messages(msgmap, NULL, "to Delete")
@@ -432,7 +435,7 @@
        return;
  
      if(state->io_error_on_stream) {
-@@ -1218,16 +1214,15 @@
+@@ -1242,16 +1238,15 @@
  
      if(agg){
  	sequence = selected_sequence(state->mail_stream, msgmap, &del_count);
@@ -452,7 +455,7 @@
  		lastmsg ? "" : long2string(msgno));
      }
  
-@@ -1289,7 +1284,7 @@
+@@ -1311,7 +1306,7 @@
  
      dprint(4, (debugfile, "\n - undelete -\n"));
      if(!(any_messages(msgmap, NULL, "to Undelete")
@@ -461,7 +464,7 @@
        return;
  
      if(agg){
-@@ -1380,7 +1375,7 @@
+@@ -1399,7 +1394,7 @@
      };
  
      if(!(any_messages(msgmap, NULL, "to Flag")
@@ -470,7 +473,7 @@
        return;
  
      if(state->io_error_on_stream) {
-@@ -1735,7 +1730,7 @@
+@@ -1754,7 +1749,7 @@
      if(msgno_any_exceptions(state->mail_stream, msgmap)
         && want_to("Saved copy will NOT include entire message!  Continue",
  		  'y', 'n', NO_HELP, WT_FLUSH_IN | WT_SEQ_SENSITIVE) != 'y'){
@@ -479,7 +482,7 @@
  	return;
      }
  
-@@ -1858,32 +1853,32 @@
+@@ -1877,32 +1872,32 @@
      ekey[rc].ch      = ctrl('T');
      ekey[rc].rval    = 2;
      ekey[rc].name    = "^T";
@@ -517,7 +520,7 @@
      }
  
      if(saveable_count > 1){
-@@ -2021,7 +2016,7 @@
+@@ -2040,7 +2035,7 @@
  	    /* else fall thru like they cancelled */
  
  	  case 1 :
@@ -526,7 +529,7 @@
  	    done--;
  	    break;
  
-@@ -3126,16 +3121,16 @@
+@@ -3162,16 +3157,16 @@
  {
      if(context && ps_global->context_list->next && context_isambig(folder)){
  	sprintf(tmp_20k_buf,
@@ -546,7 +549,7 @@
  	return(-1);
      }
  
-@@ -3259,14 +3254,14 @@
+@@ -3295,14 +3290,14 @@
      export_opts[i = 0].ch  = ctrl('T');
      export_opts[i].rval	   = 10;
      export_opts[i].name	   = "^T";
@@ -563,7 +566,7 @@
      }
  #endif	/* !(DOS || MAC) */
  
-@@ -3274,7 +3269,7 @@
+@@ -3310,7 +3305,7 @@
  	export_opts[i].ch      =  ctrl('I');
  	export_opts[i].rval    = 11;
  	export_opts[i].name    = "TAB";
@@ -572,7 +575,7 @@
      }
  
  #if	0
-@@ -3283,7 +3278,7 @@
+@@ -3319,7 +3314,7 @@
  	export_opts[i].ch      = ctrl('X');
  	export_opts[i].rval    = 14;
  	export_opts[i].name    = "^X";
@@ -581,7 +584,7 @@
      }
  #endif
  
-@@ -3297,7 +3292,7 @@
+@@ -3333,7 +3328,7 @@
      if(r < 0){
  	switch(r){
  	  case -1:
@@ -590,7 +593,7 @@
  	    break;
  
  	  case -2:
-@@ -3319,7 +3314,7 @@
+@@ -3355,7 +3350,7 @@
  
  	if(ps_global->restricted){
  	    q_status_message(SM_ORDER | SM_DING, 3, 3,
@@ -599,7 +602,7 @@
  	    goto fini;
  	}
  
-@@ -3338,7 +3333,7 @@
+@@ -3374,7 +3369,7 @@
  		 || !format_message(mn_m2raw(msgmap, mn_get_cur(msgmap)),
  				    env, b, FM_NEW_MESS | FM_NOWRAP, pc)){
  		  q_status_message(SM_ORDER | SM_DING, 3, 3,
@@ -608,7 +611,7 @@
  		  break;
  	      }
  
-@@ -3351,18 +3346,18 @@
+@@ -3387,18 +3382,18 @@
  		  (void) close_system_pipe(&syspipe);
  		else
  		  q_status_message(SM_ORDER | SM_DING, 3, 3,
@@ -630,7 +633,7 @@
  
  	goto fini;
      }
-@@ -3474,7 +3469,7 @@
+@@ -3512,7 +3507,7 @@
      STORE_S *store = NULL;
      struct variable *vars = ps->vars;
      static ESCKEY_S simple_export_opts[] = {
@@ -639,7 +642,7 @@
  	{-1, 0, NULL, NULL},
  	{-1, 0, NULL, NULL}};
  
-@@ -3482,7 +3477,7 @@
+@@ -3520,7 +3515,7 @@
  	simple_export_opts[r].ch    =  ctrl('I');
  	simple_export_opts[r].rval  = 11;
  	simple_export_opts[r].name  = "TAB";
@@ -648,7 +651,7 @@
      }
  
      if(!srctext){
-@@ -3555,7 +3550,7 @@
+@@ -3593,7 +3588,7 @@
  	break;
  
        case -1:
@@ -657,7 +660,7 @@
  	break;
  
        case -2:
-@@ -4131,32 +4126,32 @@
+@@ -4180,32 +4175,32 @@
      ekey[rc].ch	     = (allow_list) ? ctrl('T') : 0 ;
      ekey[rc].rval    = (allow_list) ? 2 : 0;
      ekey[rc].name    = (allow_list) ? "^T" : "";
@@ -695,7 +698,7 @@
      }
  
      if(ps_global->context_list->next){
-@@ -4272,15 +4267,15 @@
+@@ -4321,15 +4316,15 @@
  				    newfolder);
  		else if(tc->use & CNTXT_INCMNG)
  		  q_status_message1(SM_ORDER, 0, 3,
@@ -715,7 +718,7 @@
  				    newfolder);
  
  		return(NULL);
-@@ -4293,7 +4288,7 @@
+@@ -4342,7 +4337,7 @@
  	    /* fall thru like they cancelled */
  
  	  case 1 :				/* o_e says user cancel */
@@ -724,7 +727,7 @@
  	    return(NULL);
  
  	  case 2 :				/* o_e says user wants list */
-@@ -4529,7 +4524,7 @@
+@@ -4578,7 +4573,7 @@
  	else if ((new_context->use & CNTXT_INCMNG)
  		 && (folder_index(newfolder, new_context, FI_FOLDER) < 0)){
  	    q_status_message1(SM_ORDER, 3, 4,
@@ -733,7 +736,7 @@
  	    return(0);
  	}
      }
-@@ -4610,7 +4605,7 @@
+@@ -4659,7 +4654,7 @@
  	}
      }
  
@@ -742,7 +745,7 @@
  	    pretty_fn(newfolder), 70), "\"");
      we_cancel = busy_alarm(1, status_msg, NULL, 1);
  
-@@ -4693,7 +4688,7 @@
+@@ -4742,7 +4737,7 @@
  			 && !mn_get_revsort(ps_global->msgmap)))
  		      refresh_sort(ps_global->msgmap, FALSE);
  
@@ -751,7 +754,7 @@
                                        old_folder);
                  }
              }
-@@ -4774,14 +4769,13 @@
+@@ -4823,14 +4818,13 @@
  
      /* UWIN doesn't want to see this message */
      if(!ps_global->nr_mode)
@@ -770,7 +773,7 @@
  
      sort_folder(ps_global->msgmap, ps_global->def_sort,
  		ps_global->def_sort_rev, TRUE);
-@@ -4947,9 +4941,9 @@
+@@ -4996,9 +4990,9 @@
      char ing[4];
  
      if(final_msg)
@@ -782,7 +785,7 @@
  
      buff1[0] = '\0';
      buff2[0] = '\0';
-@@ -4958,7 +4952,7 @@
+@@ -5007,7 +5001,7 @@
                     stream->mailbox));
          if(!stream->rdonly){
  
@@ -791,7 +794,7 @@
  	    flush_status_messages(1);
  
  	    /* Save read messages? */
-@@ -4998,10 +4992,8 @@
+@@ -5047,10 +5041,8 @@
  		}
  		else{
  		    sprintf(prompt_b,
@@ -804,7 +807,7 @@
  		    ret = want_to(prompt_b, 'y', 0, NO_HELP, WT_NORM);
  		}
  
-@@ -5012,13 +5004,10 @@
+@@ -5061,13 +5053,10 @@
  
  		if(ret == 'y'){
  		    sprintf(buff2,
@@ -819,7 +822,7 @@
  			long2string(delete_count));
  		    if(final_msg)
  		      *final_msg = cpystr(buff2);
-@@ -5042,17 +5031,15 @@
+@@ -5093,17 +5082,15 @@
  	    if(ret != 'y'){
  		if(stream->nmsgs){
  		    sprintf(buff2,
@@ -841,7 +844,7 @@
  			ing, pretty_fn(folder));
  		}
  
-@@ -5071,7 +5058,7 @@
+@@ -5122,7 +5109,7 @@
  		  q_status_message(SM_ORDER,
  		      F_ON(F_AUTO_READ_MSGS,ps_global) ? 0 : 3, 5, moved_msg);
  
@@ -850,7 +853,7 @@
  			ing, pretty_fn(folder));
  
  		if(F_ON(F_NEWS_CROSS_DELETE, ps_global))
-@@ -5079,7 +5066,7 @@
+@@ -5130,7 +5117,7 @@
  	    }
              else
  	      sprintf(buff2,
@@ -859,7 +862,7 @@
  			ing, pretty_fn(folder));
  
  	    if(final_msg)
-@@ -5368,18 +5355,18 @@
+@@ -5430,18 +5417,18 @@
      if(in_index && F_ON(F_PRINT_INDEX, state)){
  	char m[10];
  	static ESCKEY_S prt_opts[] = {
@@ -883,7 +886,7 @@
  	    if(agg)
  	      restore_selected(msgmap);
  
-@@ -5396,11 +5383,11 @@
+@@ -5458,11 +5445,11 @@
      }
  
      if(do_index)
@@ -898,7 +901,7 @@
  
      if(open_printer(prompt) < 0){
  	if(agg)
-@@ -5663,7 +5650,7 @@
+@@ -5725,7 +5712,7 @@
  	    /* else fall thru as if cancelled */
  
  	  case 1 :
@@ -907,7 +910,7 @@
  	    done++;
  	    break;
  
-@@ -5746,7 +5733,7 @@
+@@ -5808,7 +5795,7 @@
      sel_opts = sel_opts2;
      if(old_tot = any_lflagged(msgmap, MN_SLCT)){
  	i = get_lflag(state->mail_stream, msgmap, mn_get_cur(msgmap), MN_SLCT);
@@ -916,7 +919,7 @@
  	sel_opts += 2;			/* disable extra options */
  	switch(q = radio_buttons(sel_pmt1, q_line, sel_opts1, 'c', 'x', help,
  				 RB_NORM)){
-@@ -5790,7 +5777,7 @@
+@@ -5852,7 +5839,7 @@
       */
      switch(q){
        case 'x':				/* cancel */
@@ -925,7 +928,7 @@
  	return;
  
        case 'c' :			/* select/unselect current */
-@@ -5998,14 +5985,14 @@
+@@ -6060,14 +6047,14 @@
  	sel_opts3[i].ch      = '*';
  	sel_opts3[i].rval    = '*';
  	sel_opts3[i].name    = "*";
@@ -942,7 +945,7 @@
      }
  
      /*
-@@ -6017,7 +6004,7 @@
+@@ -6079,7 +6066,7 @@
  	sel_opts3[i].ch      = 'b';
  	sel_opts3[i].rval    = 'b';
  	sel_opts3[i].name    = "B";
@@ -951,7 +954,7 @@
      }
  
      if(F_ON(F_ENABLE_PRYNT, state)){
-@@ -6088,7 +6075,7 @@
+@@ -6150,7 +6137,7 @@
  	break;
  
        case 'x' :			/* cancel */
@@ -960,7 +963,7 @@
  	rv = 0;
  	break;
  
-@@ -6205,7 +6192,7 @@
+@@ -6267,7 +6254,7 @@
  	*t = '\0';
  
          if(r == 1 || numbers[0] == '\0'){
@@ -969,7 +972,7 @@
  	    return(1);
          }
  	else
-@@ -6331,7 +6318,7 @@
+@@ -6393,7 +6380,7 @@
  			     prompt, sel_date_opt, help, &flags);
  	switch (r){
  	  case 1 :
@@ -978,7 +981,7 @@
  	    return(1);
  
  	  case 3 :
-@@ -6441,15 +6428,15 @@
+@@ -6503,15 +6490,15 @@
  	ekey[0].ch    = ctrl('T');
  	ekey[0].name  = "^T";
  	ekey[0].rval  = 10;
@@ -997,7 +1000,7 @@
  	break;
  
        case 's' :
-@@ -6457,7 +6444,7 @@
+@@ -6519,7 +6506,7 @@
  	ekey[0].ch    = ctrl('X');
  	ekey[0].name  = "^X";
  	ekey[0].rval  = 13;
@@ -1006,7 +1009,7 @@
  	break;
  
        case 'a' :
-@@ -6556,7 +6543,7 @@
+@@ -6618,7 +6605,7 @@
      }
  
      if(type == 'x' || r == 'x'){
@@ -1015,7 +1018,7 @@
  	return(1);
      }
  
-@@ -6735,7 +6722,7 @@
+@@ -6799,7 +6786,7 @@
  			  NO_HELP, RB_NORM);
  			  
  	if(s == 'x'){
@@ -1024,7 +1027,7 @@
  	    return(1);
  	}
  	else if(s == '!')
-@@ -6832,7 +6819,7 @@
+@@ -6896,7 +6883,7 @@
  
      /*----- String together the prompt ------*/
      tmp[1] = '\0';
@@ -1033,7 +1036,7 @@
      for(i = 0; state->sort_types[i] != EndofList && i < 8; i++) {
  	sorts[i].rval	   = i;
  	p = sorts[i].label = sort_name(state->sort_types[i]);
-@@ -6849,7 +6836,7 @@
+@@ -6913,7 +6900,7 @@
      sorts[i].ch     = 'r';
      sorts[i].rval   = 'r';
      sorts[i].name   = cpystr("R");
@@ -1042,7 +1045,7 @@
      sorts[++i].ch   = -1;
      help = h_select_sort;
  
-@@ -6862,7 +6849,7 @@
+@@ -6926,7 +6913,7 @@
      }
      else{
  	retval = 0;

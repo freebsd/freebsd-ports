@@ -1,5 +1,5 @@
---- pine/adrbkcmd.c.orig	Sat Jul 11 01:32:16 1998
-+++ pine/adrbkcmd.c	Tue Aug  4 12:42:16 1998
+--- pine/adrbkcmd.c.orig	Wed Sep 16 06:11:08 1998
++++ pine/adrbkcmd.c	Tue Sep 22 18:58:32 1998
 @@ -112,23 +112,23 @@
  static struct key abook_view_keys[] =
         {HELP_MENU,
@@ -49,7 +49,7 @@
  INST_KEY_MENU(abook_text_km, abook_text_keys);
  
  #define	VIEW_ABOOK_NONE		0
-@@ -301,15 +301,15 @@
+@@ -305,15 +305,15 @@
  	memset(&sargs, 0, sizeof(SCROLL_S));
  	sargs.text.text	   = so_text(out_store);
  	sargs.text.src	   = CharStar;
@@ -68,7 +68,7 @@
  	sargs.keys.menu	  = &abook_view_keymenu;
  	setbitmap(sargs.keys.bitmap);
  
-@@ -405,7 +405,7 @@
+@@ -421,7 +421,7 @@
  	if(adrbk_check_all_validity_now()){
  	    if(resync_screen(pab, AddrBookScreen, 0)){
  		q_status_message(SM_ORDER | SM_DING, 3, 4,
@@ -77,7 +77,7 @@
  		ps_global->mangled_screen = 1;
  		break;
  	    }
-@@ -433,7 +433,7 @@
+@@ -449,7 +449,7 @@
  	    abe_copy = copy_ae(abe);
  	    dprint(9, (debugfile,"Calling edit_entry to edit from view\n"));
  	    edit_entry(pab->address_book, abe_copy, entry,
@@ -86,16 +86,16 @@
  	    /*
  	     * The ABOOK_EDITED case doesn't mean that we necessarily
  	     * changed something, just that we might have but we know
-@@ -478,7 +478,7 @@
+@@ -494,7 +494,7 @@
  			  h_ab_text_or_vcard, RB_NORM);
  	switch(i){
  	  case 'x':
 -	    cancel_warning(NO_DING, "forward");
 +	    cancel_warning(NO_DING, "轉寄");
+ 	    rv = 0;
  	    break;
  
- 	  case 't':
-@@ -704,8 +704,8 @@
+@@ -729,8 +729,8 @@
      memset(&sargs, 0, sizeof(SCROLL_S));
      sargs.text.text = so_text(store);
      sargs.text.src  = CharStar;
@@ -106,7 +106,7 @@
      sargs.bar.style = TextPercent;
      sargs.keys.menu = &abook_text_km;
      setbitmap(sargs.keys.bitmap);
-@@ -772,8 +772,8 @@
+@@ -800,8 +800,8 @@
      memset(&sargs, 0, sizeof(SCROLL_S));
      sargs.text.text = so_text(store);
      sargs.text.src  = src;
@@ -117,7 +117,7 @@
      sargs.bar.style = TextPercent;
      sargs.keys.menu = &abook_text_km;
      setbitmap(sargs.keys.bitmap);
-@@ -796,19 +796,19 @@
+@@ -824,19 +824,19 @@
  */
  static struct headerentry headents_for_edit[]={
    {"Nickname  : ",  "Nickname",  h_composer_abook_nick, 12, 0, NULL,
@@ -144,7 +144,7 @@
     1, 1, 0, 0, 0, 0, 0, 0, 0, 0, KS_NONE},
    {NULL, NULL, NO_HELP, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, KS_NONE}
-@@ -923,7 +923,7 @@
+@@ -951,7 +951,7 @@
      pbuf.canceltest    = warped ? pico_cancel_for_adrbk_edit
  				: pico_cancel_for_adrbk_take;
      pbuf.expander      = expand_addrs_for_pico;
@@ -153,7 +153,7 @@
      pbuf.resize	       = resize_for_pico;
      pbuf.winch_cleanup = winch_cleanup;
      pbuf.suspend       = do_suspend;
-@@ -938,7 +938,7 @@
+@@ -966,7 +966,7 @@
      pbuf.browse_help   = h_composer_browse;
      pbuf.attach_help   = h_composer_ctrl_j;
      pbuf.composer_help = h_composer;
@@ -162,7 +162,7 @@
  	    readonly ? 'V' : islower((unsigned char)(*cmd))
  				    ? toupper((unsigned char)*cmd)
  				    : *cmd,
-@@ -1523,12 +1523,12 @@
+@@ -1551,12 +1551,12 @@
      ps_global->redrawer = redraw_pico;
      fix_windsize(ps_global);
      
@@ -177,7 +177,7 @@
  	break;
      }
  
-@@ -1552,8 +1552,8 @@
+@@ -1580,8 +1580,8 @@
      char *rstr = NULL;
      void (*redraw)() = ps_global->redrawer;
  
@@ -188,7 +188,7 @@
      ps_global->redrawer = redraw_pico;
      fix_windsize(ps_global);
      
-@@ -1576,7 +1576,7 @@
+@@ -1604,7 +1604,7 @@
  pico_cancel_for_adrbk_take(redraw_pico)
      void (*redraw_pico)();
  {
@@ -197,7 +197,7 @@
  }
  
  
-@@ -1584,7 +1584,7 @@
+@@ -1612,7 +1612,7 @@
  pico_cancel_for_adrbk_edit(redraw_pico)
      void (*redraw_pico)();
  {
@@ -206,7 +206,7 @@
  }
  
  
-@@ -1701,16 +1701,16 @@
+@@ -1729,16 +1729,16 @@
  
      if(ps_global->readonly_pinerc){
  	q_status_message1(SM_ORDER, 0, 3,
@@ -227,7 +227,7 @@
  	
  	return -1;
      }
-@@ -1759,7 +1759,7 @@
+@@ -1787,7 +1787,7 @@
      pbuf.browse_help   = h_composer_browse;
      pbuf.attach_help   = h_composer_ctrl_j;
      pbuf.composer_help = h_composer;
@@ -236,7 +236,7 @@
      pbuf.pine_anchor   = set_titlebar(titlebar,
  				      ps_global->mail_stream,
  				      ps_global->context_current,
-@@ -1828,8 +1828,8 @@
+@@ -1856,8 +1856,8 @@
      if(editor_result & COMP_CANCEL){
  	ret = -1;
  	q_status_message1(SM_ORDER, 0, 3,
@@ -247,7 +247,7 @@
      }
      else if(editor_result & COMP_EXIT){
  	if(!strcmp(server, def_serv ? def_serv : "") &&
-@@ -1837,8 +1837,8 @@
+@@ -1865,8 +1865,8 @@
  	   !strcmp(nickname, def_nick ? def_nick : "")){
  	    ret = -1;
  	    q_status_message1(SM_ORDER, 0, 3,
@@ -258,7 +258,7 @@
  	}
  	else{
  
-@@ -1898,8 +1898,8 @@
+@@ -1936,8 +1936,8 @@
  
  	    if(*tmp == '\0'){
  		q_status_message1(SM_ORDER, 0, 3,
@@ -269,7 +269,7 @@
  		ret = -1;
  		goto get_out;
  	    }
-@@ -1924,8 +1924,8 @@
+@@ -1962,8 +1962,8 @@
  	    if(set_variable_list(global ? V_GLOB_ADDRBOOK : V_ADDRESSBOOK,
  				 new_list, TRUE)){
  		q_status_message1(SM_ORDER, 0, 3,
@@ -280,7 +280,7 @@
  
  		set_current_val(&vars[global ? V_GLOB_ADDRBOOK : V_ADDRESSBOOK],
  				TRUE, FALSE);
-@@ -2099,7 +2099,7 @@
+@@ -2137,7 +2137,7 @@
  
      if(ps_global->readonly_pinerc){
  	if(err)
@@ -289,7 +289,7 @@
  	
  	return -1;
      }
-@@ -2116,10 +2116,10 @@
+@@ -2154,10 +2154,10 @@
  	if(err){
  	    if(pab->type & GLOBAL)
  	      *err =
@@ -302,7 +302,7 @@
  	}
  
  	return -1;
-@@ -2172,8 +2172,8 @@
+@@ -2210,8 +2210,8 @@
  	
  	if(cnt > 1){
  	    static ESCKEY_S opts[] = {
@@ -313,7 +313,7 @@
  		{-1, 0, NULL, NULL}};
  
  	    sprintf(tmp,
-@@ -2191,7 +2191,7 @@
+@@ -2229,7 +2229,7 @@
  		
  	      case 'x':
  		if(err)
@@ -322,7 +322,7 @@
  
  		return -1;
  	    }
-@@ -2202,7 +2202,7 @@
+@@ -2240,7 +2240,7 @@
  	      case 'n':
  	      case 'x':
  	        if(err)
@@ -331,7 +331,7 @@
  
  	        return -1;
  	    
-@@ -2247,7 +2247,7 @@
+@@ -2285,7 +2285,7 @@
  	  case 'x':				/* Cancel */
  	  default:
  	    if(err)
@@ -340,7 +340,7 @@
  
  	    return -1;
  	}
-@@ -2267,7 +2267,7 @@
+@@ -2305,7 +2305,7 @@
            case 'x':
  	  default:
  	    if(err)
@@ -349,7 +349,7 @@
  
  	    return -1;
  	
-@@ -2328,7 +2328,7 @@
+@@ -2366,7 +2366,7 @@
  		  case 'n':
  		  default:
  		    if(err)
@@ -358,7 +358,7 @@
  
  		    return -1;
  		}
-@@ -2467,7 +2467,7 @@
+@@ -2505,7 +2505,7 @@
      /* this also frees old variable contents for us */
      if(set_variable_list(varnum, new_list, TRUE)){
  	if(err)
@@ -367,7 +367,7 @@
  
  	set_current_val(&vars[varnum], TRUE, FALSE);
  	free_list_array(&new_list);
-@@ -2534,7 +2534,7 @@
+@@ -2572,7 +2572,7 @@
  
      if(ps_global->readonly_pinerc){
  	if(msg)
@@ -376,7 +376,7 @@
  	
  	return -1;
      }
-@@ -2544,12 +2544,12 @@
+@@ -2582,12 +2582,12 @@
      opts[i].ch      = 'u';
      opts[i].rval    = 'u';
      opts[i].name    = "U";
@@ -391,7 +391,7 @@
  
      opts[i].ch = -1;
      deefault = 'u';
-@@ -2557,7 +2557,7 @@
+@@ -2595,7 +2595,7 @@
      if(pab->type & GLOBAL){
  	if(vars[V_GLOB_ADDRBOOK].is_fixed){
  	    if(msg)
@@ -400,7 +400,7 @@
  	    
  	    return -1;
  	}
-@@ -2577,7 +2577,7 @@
+@@ -2615,7 +2615,7 @@
      else{
  	if(vars[V_ADDRESSBOOK].is_fixed){
  	    if(msg)
@@ -409,7 +409,7 @@
  	    
  	    return -1;
  	}
-@@ -2616,7 +2616,7 @@
+@@ -2654,7 +2654,7 @@
  
      if(rv == 'x'){
  	if(msg)
@@ -418,32 +418,32 @@
  	
  	return -1;
      }
-@@ -2659,7 +2659,7 @@
+@@ -2697,7 +2697,7 @@
      enum {NotSet, Pers, Glob, Empty} type1, type2;
-     int          i, j;
+     int          i, j, retval = -1;
      struct variable *vars = ps_global->vars;
 -    char *cancel_msg = "Shuffle cancelled: couldn't save configuration file";
 +    char *cancel_msg = "取消重整：無法存入設定檔";
  
      dprint(5, (debugfile, "- do_the_shuffle(%d, %d) -\n", anum1, anum2));
  
-@@ -2673,7 +2673,7 @@
+@@ -2711,7 +2711,7 @@
      if(type1 == Empty){
  	if(msg)
  	  *msg =
 -	      cpystr("Shuffle cancelled: highlight entry you wish to shuffle");
 +	      cpystr("取消重整：請先標示欲重整的項目");
  
- 	return -1;
+ 	return(retval);
      }
-@@ -2690,14 +2690,14 @@
+@@ -2728,14 +2728,14 @@
  
      if((type1 == Pers || type2 == Pers) && vars[V_ADDRESSBOOK].is_fixed){
  	if(msg)
 -	  *msg = cpystr("Cancelled: Sys. Mgmt. does not allow changing address book configuration");
 +	  *msg = cpystr("動作取消：系統管理員不允許\改變地址簿設定");
  
- 	return -1;
+ 	return(retval);
      }
  
      if((type1 == Glob || type2 == Glob) && vars[V_GLOB_ADDRBOOK].is_fixed){
@@ -451,9 +451,9 @@
 -	  *msg = cpystr("Cancelled: Sys. Mgmt. does not allow changing global address book config");
 +	  *msg = cpystr("動作取消：系統管理員不允許\改變整體的地址簿設定");
  
- 	return -1;
+ 	return(retval);
      }
-@@ -3167,7 +3167,7 @@
+@@ -3207,7 +3207,7 @@
      AdrBk_Entry *abe;
      VCARD_INFO_S *vinfo;
      static ESCKEY_S ab_export_opts[] = {
@@ -462,7 +462,7 @@
  	{-1, 0, NULL, NULL},
  	{-1, 0, NULL, NULL}};
      static ESCKEY_S vcard_or_addresses[] = {
-@@ -3190,7 +3190,7 @@
+@@ -3230,7 +3230,7 @@
  
      switch(i){
        case 'x':
@@ -471,7 +471,7 @@
  	return(ret);
      
        case 'a':
-@@ -3219,7 +3219,7 @@
+@@ -3259,7 +3259,7 @@
  	ab_export_opts[++r].ch  =  ctrl('I');
  	ab_export_opts[r].rval  = 11;
  	ab_export_opts[r].name  = "TAB";
@@ -480,7 +480,7 @@
      }
  
      ab_export_opts[++r].ch = -1;
-@@ -3232,7 +3232,7 @@
+@@ -3272,7 +3272,7 @@
      if(r < 0){
  	switch(r){
  	  case -1:
@@ -489,7 +489,7 @@
  	    break;
  
  	  case -2:
-@@ -3616,7 +3616,7 @@
+@@ -3656,7 +3656,7 @@
  	    switch(want_to("Expand nicknames", 'y', 'x', h_ab_forward,WT_NORM)){
  	      case 'x':
  		gf_clear_so_writec((STORE_S *) pb->contents.text.data);
@@ -498,7 +498,7 @@
  		goto bomb;
  		
  	      case 'y':
-@@ -3700,7 +3700,7 @@
+@@ -3740,7 +3740,7 @@
  
      gf_clear_so_writec((STORE_S *) pb->contents.text.data);
  
@@ -507,7 +507,7 @@
   	      NULL, NULL, NULL, NULL, 0);
      
      ps->mangled_screen = 1;
-@@ -4165,8 +4165,8 @@
+@@ -4207,8 +4207,8 @@
      char           tmp[200];
      ACTION_LIST_S *action_list = NULL, *al;
      static ESCKEY_S save_or_export[] = {
@@ -518,7 +518,7 @@
  	{-1, 0, NULL, NULL}};
  
      sprintf(tmp, "Save%s to address book or Export to filesystem ? ",
-@@ -4177,7 +4177,7 @@
+@@ -4219,7 +4219,7 @@
  		      h_ab_save_exp, RB_NORM);
      switch(i){
        case 'x':
@@ -527,7 +527,7 @@
  	return(0);
  
        case 'e':
-@@ -4356,7 +4356,7 @@
+@@ -4405,7 +4405,7 @@
  		if(action_list)
  		  fs_give((void **)&action_list);
  
@@ -536,7 +536,7 @@
  		return(ret);
  	    }
  
-@@ -4545,7 +4545,7 @@
+@@ -4594,7 +4594,7 @@
  	  q_status_message(SM_ORDER | SM_DING, 3, 4,
  			   "Save only partially completed");
  	else
@@ -545,7 +545,7 @@
      }
      else if (how_many_to_copy + how_many_no_action -
  	     (skip_dups ? how_many_dups : 0) > 0){
-@@ -4621,15 +4621,15 @@
+@@ -4670,15 +4670,15 @@
  
      if(!agg && as.opened){
  	static ESCKEY_S prt[] = {
@@ -564,7 +564,7 @@
  	    ps_global->mangled_footer = 1;
  	    return 0;
  
-@@ -4700,7 +4700,7 @@
+@@ -4749,7 +4749,7 @@
  		    switch(want_to("Expand nicknames", 'y', 'x', h_ab_forward,
  								    WT_NORM)){
  		      case 'x':
@@ -573,7 +573,7 @@
  			ps_global->mangled_footer = 1;
  			return 0;
  			
-@@ -4924,7 +4924,7 @@
+@@ -4973,7 +4973,7 @@
  		lineno = 0L;
  
  		if(as.opened)
@@ -582,7 +582,7 @@
  			      as.adrbks[as.cur].nickname);
  
  
-@@ -4979,7 +4979,7 @@
+@@ -5028,7 +5028,7 @@
      dprint(2, (debugfile, "- ab_delete -\n"));
  
      if(agg){
@@ -591,7 +591,7 @@
  	ch = want_to(prompt, 'n', 'n', NO_HELP, WT_NORM);
  	if(ch == 'y'){
  	    adrbk_cntr_t   newelnum, flushelnum = NO_NEXT;
-@@ -5144,7 +5144,7 @@
+@@ -5193,7 +5193,7 @@
  	    }
  	}
  	else
@@ -600,7 +600,7 @@
      }
  
      return(ret);
-@@ -5192,7 +5192,7 @@
+@@ -5241,7 +5241,7 @@
  			? (char *)rfc1522_decode((unsigned char *)tmp_20k_buf,
  						    abe->fullname, NULL)
  			: abe->nickname ? abe->nickname : "";
@@ -609,7 +609,7 @@
          break;
  
        case ListHead:
-@@ -5200,13 +5200,13 @@
+@@ -5249,13 +5249,13 @@
  			? (char *)rfc1522_decode((unsigned char *)tmp_20k_buf,
  						    abe->fullname, NULL)
  			: abe->nickname ? abe->nickname : "";
@@ -625,7 +625,7 @@
          break;
      } 
  
-@@ -5305,7 +5305,7 @@
+@@ -5354,7 +5354,7 @@
  	return 0;
      }
      else{
@@ -634,7 +634,7 @@
  	return 0;
      }
  }
-@@ -5441,7 +5441,7 @@
+@@ -5490,7 +5490,7 @@
      if(r == 1 || r != 10 && fbuf[0] == '\0'){
  	ps->mangled_footer = 1;
  	if(error)
@@ -643,7 +643,7 @@
  
  	return(ret);
      }
-@@ -5480,7 +5480,7 @@
+@@ -5529,7 +5529,7 @@
  	pbuf.browse_help   = h_composer_browse;
  	pbuf.attach_help   = h_composer_ctrl_j;
  	pbuf.composer_help = h_composer;
@@ -652,7 +652,7 @@
  					  ps_global->mail_stream,
  					  ps_global->context_current,
  					  ps_global->cur_folder,
-@@ -5728,13 +5728,13 @@
+@@ -5777,13 +5777,13 @@
  static struct key ldap_view_keys[] =
         {HELP_MENU,
  	NULL_MENU,
@@ -668,7 +668,7 @@
  	FWDEMAIL_MENU,
  	SAVE_MENU,
  	WHEREIS_MENU};
-@@ -5763,12 +5763,12 @@
+@@ -5812,12 +5812,12 @@
  	memset(&sargs, 0, sizeof(SCROLL_S));
  	sargs.text.text	  = so_text(srcstore);
  	sargs.text.src    = srctype;
@@ -684,7 +684,7 @@
  	sargs.keys.menu   = &ldap_view_keymenu;
  	setbitmap(sargs.keys.bitmap);
  
-@@ -6117,7 +6117,7 @@
+@@ -6174,7 +6174,7 @@
      struct headerentry *he;
      void (*redraw_pico)();
  {

@@ -1,5 +1,5 @@
---- pine/mailindx.c.orig	Tue Jul 21 01:21:48 1998
-+++ pine/mailindx.c	Tue Aug  4 12:42:18 1998
+--- pine/mailindx.c.orig	Thu Sep  3 00:22:21 1998
++++ pine/mailindx.c	Tue Sep 22 19:18:33 1998
 @@ -55,10 +55,10 @@
  /*
   * Some common Command Bindings
@@ -40,9 +40,9 @@
  	HELP_MENU,
  	OTHER_MENU,
 -	{":","SelectCur",{MC_SELCUR,1,{':'}},KS_SELECTCUR},
--	{"Z","ZoomMode",{MC_ZOOM,1,{'z'}},KS_NONE},
+-	{"Z","ZoomMode",{MC_ZOOM,1,{'z'}},KS_ZOOM},
 +	{":","選擇",{MC_SELCUR,1,{':'}},KS_SELECTCUR},
-+	{"Z","縮放模式",{MC_ZOOM,1,{'z'}},KS_NONE},
++	{"Z","縮放模式",{MC_ZOOM,1,{'z'}},KS_ZOOM},
  	LISTFLD_MENU,
  	NULL_MENU,
  	NULL_MENU,
@@ -58,7 +58,7 @@
  	PREVMSG_MENU,
  	NEXTMSG_MENU,
  	PREVPAGE_MENU,
-@@ -344,14 +344,14 @@
+@@ -356,14 +356,14 @@
      if(flags & INDX_HEADER)
        set_titlebar((stream == ps_global->mail_stream)
  		     ? (style == MsgIndex || style == MultiMsgIndex)
@@ -78,7 +78,7 @@
  		   stream, cntxt, folder, msgmap, 1, MessageNumber, 0, 0);
  
      if(flags & INDX_FOOTER) {
-@@ -443,7 +443,7 @@
+@@ -455,7 +455,7 @@
  {
      dprint(1, (debugfile, "\n\n ---- MAIL INDEX ----\n"));
      if(!state->mail_stream) {
@@ -87,7 +87,7 @@
          state->prev_screen = mail_index_screen;
  	state->next_screen = main_menu_screen;
  	return;
-@@ -624,7 +624,7 @@
+@@ -657,7 +657,7 @@
  	if(F_ON(F_SHOW_CURSOR, state) && cur_row < 0){
  	    q_status_message(SM_ORDER,
  		(ch==NO_OP_IDLE || ch==NO_OP_COMMAND) ? 0 : 3, 5,
@@ -96,7 +96,7 @@
  	    cur_row = state->ttyo->screen_rows - FOOTER_ROWS(state);
  	    display_message(ch);
  	}
-@@ -741,7 +741,7 @@
+@@ -778,7 +778,7 @@
  		    k = i;
  		    if(++j >= id.lines_per_page){
  			if((id.msg_at_top = i) == 1L)
@@ -105,7 +105,7 @@
  
  			break;
  		    }
-@@ -750,7 +750,7 @@
+@@ -787,7 +787,7 @@
  		if(i <= 1L){
  		    if(mn_get_cur(msgmap) == 1L)
  		      q_status_message(SM_ORDER, 0, 1,
@@ -114,7 +114,7 @@
  
  		    break;
  		}
-@@ -770,7 +770,7 @@
+@@ -807,7 +807,7 @@
  		    k = i;
  		    if(++j >= id.lines_per_page){
  			if(i+id.lines_per_page >= mn_get_total(msgmap))
@@ -123,7 +123,7 @@
  
  			id.msg_at_top = i;
  			break;
-@@ -779,7 +779,7 @@
+@@ -816,7 +816,7 @@
  
  		if(i >= mn_get_total(msgmap)){
  		    if(mn_get_cur(msgmap) == k)
@@ -132,7 +132,7 @@
  
  		    break;
  		}
-@@ -961,9 +961,9 @@
+@@ -1029,9 +1029,9 @@
  			}
  
  			q_status_message2(SM_ORDER, 0, 1,
@@ -144,7 +144,7 @@
  		    }
  
  		    break;
-@@ -985,9 +985,9 @@
+@@ -1053,9 +1053,9 @@
  			}
  
  			q_status_message2(SM_ORDER, 0, 1,
@@ -156,7 +156,7 @@
  		    }
  
  		    break;
-@@ -1787,7 +1787,7 @@
+@@ -1861,7 +1861,7 @@
  	    dprint(1, (debugfile,
  		       "parse_index_format: unrecognized token: %s\n", q));
  	    q_status_message1(SM_ORDER | SM_DING, 0, 3,
@@ -165,7 +165,7 @@
  	    continue;
  	}
  
-@@ -1829,7 +1829,7 @@
+@@ -1903,7 +1903,7 @@
      if(!column){
  	dprint(1, (debugfile, "Completely unrecognizable index-format\n"));
  	q_status_message(SM_ORDER | SM_DING, 0, 3,
@@ -174,16 +174,16 @@
  	return(0);
      }
  
-@@ -2320,7 +2320,7 @@
- 		    sprintf(str, "%ld", idata->msgno);
- 		  else if(idata->bogus < 2 && cdesc->ctype == iSubject)
- 		    sprintf(str, "%-*.*s", width, width,
--			    "[ No Message Text Available ]");
-+			    "[ 無法取得信件 ]");
- 	      }
- 	      else
- 		switch(cdesc->ctype){
-@@ -2959,8 +2959,8 @@
+@@ -2526,7 +2526,7 @@
+ 		sprintf(str, "%ld", idata->msgno);
+ 	      else if(idata->bogus < 2 && cdesc->ctype == iSubject)
+ 		sprintf(str, "%-*.*s", width, width,
+-			"[ No Message Text Available ]");
++			"[ 無法取得信件 ]");
+ 	  }
+ 	  else
+ 	    switch(cdesc->ctype){
+@@ -3425,8 +3425,8 @@
      HelpType	help;
      static char search_string[MAX_SEARCH+1] = { '\0' };
      static ESCKEY_S header_search_key[] = { {0, 0, NULL, NULL },
@@ -194,7 +194,7 @@
  					    {-1, 0, NULL, NULL} };
  
      dprint(4, (debugfile, "\n - search headers - \n"));
-@@ -2969,7 +2969,7 @@
+@@ -3435,7 +3435,7 @@
  	return;
      }
      else if(mn_total_cur(msgmap) > 1L){
@@ -203,7 +203,7 @@
  			  comatose(mn_total_cur(msgmap)));
  	return;
      }
-@@ -2980,13 +2980,13 @@
+@@ -3446,13 +3446,13 @@
      new_string[0] = '\0';
  
      while(1) {
@@ -219,7 +219,7 @@
  	}
  	else{
  	    header_search_key[0].ch   = header_search_key[0].rval  = 0;
-@@ -3005,7 +3005,7 @@
+@@ -3471,7 +3471,7 @@
              continue;
          }
  	else if(rc == 10){
@@ -228,7 +228,7 @@
  	    if(any_lflagged(msgmap, MN_HIDE)){
  		do{
  		    selected = sorted_msg;
-@@ -3021,7 +3021,7 @@
+@@ -3487,7 +3487,7 @@
  	    return;
  	}
  	else if(rc == 11){
@@ -237,7 +237,7 @@
  	    if(any_lflagged(msgmap, MN_HIDE)){
  		do{
  		    selected = sorted_msg;
-@@ -3046,7 +3046,7 @@
+@@ -3512,7 +3512,7 @@
      }
  
      if(rc == 1 || (new_string[0] == '\0' && search_string[0] == '\0')) {
@@ -246,7 +246,7 @@
          return;
      }
  
-@@ -3085,21 +3085,21 @@
+@@ -3551,21 +3551,21 @@
  	}
  
      if(ps_global->intr_pending){
@@ -273,7 +273,7 @@
  
  #ifndef	DOS
      intr_handling_off();
-@@ -3236,7 +3236,7 @@
+@@ -3702,7 +3702,7 @@
  		 && LEVELSORT(ps_global->mail_stream)))
  	      sort_func = percent_sorted;
  
@@ -282,7 +282,7 @@
  		    strsquish(tmp_20k_buf + 500, ps_global->cur_folder,
  			      ps_global->ttyo->screen_cols - 20));
  	    we_cancel = busy_alarm(1, sort_msg, sort_func, 1);
-@@ -3286,8 +3286,8 @@
+@@ -3752,8 +3752,8 @@
  		new_sort = mn_get_sort(msgmap);
  		new_rev  = mn_get_revsort(msgmap);
  		q_status_message2(SM_ORDER, 3, 3,
@@ -293,7 +293,7 @@
  				  sort_name(new_sort));
  	    }
  	    else if(mn_get_total(msgmap) < g_sort_prog->nmsgs)
-@@ -4045,7 +4045,7 @@
+@@ -4515,7 +4515,7 @@
  	      icache.name = temp_nam(NULL, "pi");
  
  	    if((icache.cache = (void *)fopen(icache.name,"w+b")) == NULL){
@@ -302,7 +302,7 @@
  		fatal(tmp_20k_buf);
  	    }
  
-@@ -4398,10 +4398,10 @@
+@@ -4897,10 +4897,10 @@
  	   && format_message(mn_m2raw(ps_global->msgmap,
  				      mn_get_cur(ps_global->msgmap)),
  			     env, body, FM_NEW_MESS, pc)){

@@ -1,0 +1,27 @@
+--- pine/osdep/expnfldr.orig	Tue Sep 22 21:19:44 1998
++++ pine/osdep/expnfldr	Tue Sep 22 21:20:44 1998
+@@ -32,13 +32,13 @@
+     } else if(ps_global->restricted
+ 	        && (strindex("./~", temp_filename[0]) != NULL
+ 		    || srchstr(temp_filename,"/../"))){
+-	q_status_message(SM_ORDER, 0, 3, "Can only open local folders");
++	q_status_message(SM_ORDER, 0, 3, "僅能開啟本地的檔案匣");
+ 	return(0);
+     } else if(temp_filename[0] == '*') {
+         strcpy(filename, temp_filename);
+     } else if(ps_global->VAR_OPER_DIR && srchstr(temp_filename,"..")){
+ 	q_status_message(SM_ORDER, 0, 3,
+-			 "\"..\" not allowed in folder name");
++			 "檔案匣名稱中不允許\有 \"..\"");
+ 	return(0);
+     } else if (temp_filename[0] == '~'){
+         if(fnexpand(temp_filename, sizeof(temp_filename)) == NULL) {
+@@ -46,7 +46,7 @@
+     	    if(p != NULL)
+     	      *p = '\0';
+     	    q_status_message1(SM_ORDER, 3, 3,
+-                    "Error expanding folder name: \"%s\" unknown user",
++                    "檔案匣展開錯誤：\"%s\" 未知的使用者",
+     	       temp_filename);
+     	    return(0);
+         }

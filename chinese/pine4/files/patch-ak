@@ -1,5 +1,5 @@
 --- pico/display.c.orig	Sat Jun 20 01:19:53 1998
-+++ pico/display.c	Tue Aug  4 12:42:14 1998
++++ pico/display.c	Tue Sep 22 18:30:04 1998
 @@ -71,32 +71,32 @@
   * Standard pico keymenus...
   */
@@ -15,8 +15,9 @@
 +    {"^X", "離開", KS_EXIT},           {"^J", "重整段落", KS_JUSTIFY},
 +    {"^W", "搜尋", KS_WHEREIS},        {"^V", "下一頁", KS_NEXTPAGE},
      {"^U", NULL, KS_NONE},
- #ifdef	SPELLER
+-#ifdef	SPELLER
 -    {"^T", "To Spell", KS_SPELLCHK}
++#if	defined(SPELLER) && !defined(__FreeBSD__)
 +    {"^T", "拼字檢查", KS_SPELLCHK}
  #else
 -    {"^D", "Del Char", KS_NONE}
@@ -38,8 +39,9 @@
 +    {"^C", "取消", KS_CANCEL},         {"^J", "重整段落", KS_JUSTIFY},
 +    {NULL, NULL, KS_NONE},             {"^V", "下一頁", KS_NEXTPAGE},
      {"^U", NULL, KS_NONE},
- #ifdef	SPELLER
+-#ifdef	SPELLER
 -    {"^T", "To Spell", KS_SPELLCHK}
++#if	defined(SPELLER) && !defined(__FreeBSD__)
 +    {"^T", "拼字檢查", KS_SPELLCHK}
  #else
 -    {"^D", "Del Char", KS_NONE}
@@ -111,8 +113,9 @@
 -					      ? "Postpone" : NULL;
 +					      ? "暫緩寫信" : NULL;
  	    menu_compose[WHERE_KEY].name  = (Pmaster->alt_ed) ? "^_" : "^W";
- 	    menu_compose[WHERE_KEY].label = (Pmaster->alt_ed) ? "Alt Edit" 
+-	    menu_compose[WHERE_KEY].label = (Pmaster->alt_ed) ? "Alt Edit" 
 -							      : "Where is";
++	    menu_compose[WHERE_KEY].label = (Pmaster->alt_ed) ? "自定編輯器" 
 +							      : "搜尋";
  	    KS_OSDATASET(&menu_compose[WHERE_KEY],
  			 (Pmaster->alt_ed) ? KS_ALTEDITOR : KS_WHEREIS);
