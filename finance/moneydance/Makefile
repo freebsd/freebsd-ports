@@ -16,6 +16,8 @@ EXTRACT_ONLY=
 MAINTAINER=	sreilly@seanreilly.com
 COMMENT=	A Personal Finance Manager
 
+BROKEN=		Checksum mismatch
+
 USE_JAVA=	1.3+
 RESTRICTED=	Strict license
 
