@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnupod
-PORTVERSION=	0.94
-PORTREVISION=	1
+PORTVERSION=	0.95
 CATEGORIES=	audio perl5
 MASTER_SITES=	http://blinkenlights.ch/gnupod-dist/stable/
 EXTRACT_SUFX=	.tgz
@@ -23,6 +22,10 @@ BUILD_DEPENDS=	${SITE_PERL}/MP3/Info.pm:${PORTSDIR}/audio/p5-MP3-Info \
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 INFO=		gnupod
+MAN1=		gnupod_addsong.pl.1 gnupod_check.pl.1 gnupod_INIT.pl.1 \
+		gnupod_otgsync.pl.1 gnupod_search.pl.1 mktunes.pl.1 \
+		tunes2pod.pl.1
+MANCOMPRESSED=	yes
 
 USE_PERL5=	yes
 HAS_CONFIGURE=	yes
