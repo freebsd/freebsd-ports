@@ -1,4 +1,5 @@
 bin/scp
+bin/slogin
 bin/ssh
 bin/ssh-add
 bin/ssh-agent
