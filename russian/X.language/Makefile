@@ -3,20 +3,20 @@
 # Date created:         31 Aug 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.5 1995/12/20 07:13:17 ache Exp $
+# $Id: Makefile,v 1.6 1996/03/10 16:52:20 ache Exp $
 #
 
-PKGNAME=        ru-X11
-CATEGORIES+=    russian x11
 DISTNAME=       xrus_bin
+PKGNAME=        ru-X11-3.1.2
+CATEGORIES+=    russian x11
 MASTER_SITES=   ftp://ftp.kiae.su/misc/fonts/cyrillic/xwindows/
 EXTRACT_SUFX=   .tgz
-WRKSRC=         ${WRKDIR}/cyrillic
 
 MAINTAINER=	ache@FreeBSD.ORG
 
 RUN_DEPENDS += ${X11BASE}/bin/xinit:${PORTSDIR}/x11/XFree86
 
+WRKSRC=         ${WRKDIR}/cyrillic
 NO_CONFIGURE=   YES
 NO_PATCH=       YES
 NO_BUILD=       YES
