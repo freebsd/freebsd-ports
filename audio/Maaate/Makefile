@@ -7,18 +7,18 @@
 #
 
 PORTNAME=	Maaate
-PORTVERSION=	0.1.0
+PORTVERSION=	0.2.1
 CATEGORIES=	audio
-MASTER_SITES=	http://www.cmis.csiro.au/dmis/maaate/
+MASTER_SITES=	http://www.cmis.csiro.au/maaate/packages/
 
-MAINTAINER=	ijliao@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
-USE_AUTOCONF=	yes
-USE_LIBTOOL=	yes
-
+GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-
 INSTALLS_SHLIB=	yes
+
+post-patch:
+	@${PERL} -pi -e "s,-ldl,,g ; s,\(CCLD,(CXXLD,g" ${WRKSRC}/demos/Makefile.in
 
 post-install:
 .if !defined(NOPORTDOCS)
