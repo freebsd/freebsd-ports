@@ -6,23 +6,23 @@
 #
 
 PORTNAME=	pgp
-PORTVERSION= 	2.6.3ia
-CATEGORIES=     russian
-MASTER_SITES=   ftp://ftp.kiarchive.ru/pub/unix/crypto/pgp/
+PORTVERSION=	2.6.3ia
+CATEGORIES=	russian
+MASTER_SITES=	ftp://ftp.kiarchive.ru/pub/unix/crypto/pgp/
 DISTNAME=	pgp26ru
 
 MAINTAINER=	ache@FreeBSD.org
 
+RUN_DEPENDS+=	${LOCALBASE}/lib/pgp/config.txt:${PORTSDIR}/security/pgp
+
 RESTRICTED=	"Crypto"
 
-RUN_DEPENDS += ${PREFIX}/lib/pgp/config.txt:${PORTSDIR}/security/pgp
-
 USE_ZIP=	YES
-NO_WRKSUBDIR=   YES
-NO_BUILD=       YES
+NO_WRKSUBDIR=	YES
+NO_BUILD=	YES
 
-PGPLIB=         ${PREFIX}/lib/pgp
-OBJS=           language.txt ru.hlp
+PGPLIB=		${PREFIX}/lib/pgp
+OBJS=		language.txt ru.hlp
 
 do-install:
 	[ -d ${PGPLIB} ] || ${MKDIR} ${PGPLIB}

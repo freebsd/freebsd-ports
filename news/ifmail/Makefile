@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 		ftp://ftp.lan-ks.de/pub/approved/
 MASTER_SITE_SUBDIR=	system/fido
 
-MAINTAINER=     dirk.meyer@dinoex.sub.org
+MAINTAINER=	dirk.meyer@dinoex.sub.org
 
 MAN3=		parsedate.3
 MAN8=		ifmail.8 iftoss.8

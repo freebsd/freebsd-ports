@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pilrc
-PORTVERSION= 	2.5b1
+PORTVERSION=	2.5b1
 CATEGORIES=	palm
 MASTER_SITES=	http://www.hig.se/~ardiri/development/palmIII/pilrc/
 DISTNAME=	pilrcsrc

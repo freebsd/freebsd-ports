@@ -1,20 +1,21 @@
 # New ports collection makefile for:    ru-pine
 # Whom:                 ache
+# Date created:		1996/12/03
 #
 # $FreeBSD$
 #
 
 PORTNAME=	pine
-PORTVERSION= 	4.21
-CATEGORIES=     russian mail
+PORTVERSION=	4.21
+CATEGORIES=	russian mail
+EXTRACT_ONLY=	# empty
 
-MAINTAINER=     ache@FreeBSD.org
+MAINTAINER=	ache@FreeBSD.org
 
-RUN_DEPENDS=    pine:${PORTSDIR}/mail/pine4
+RUN_DEPENDS=	pine:${PORTSDIR}/mail/pine4
 
-EXTRACT_ONLY=   # empty
-NO_WRKSUBDIR=   YES
-NO_BUILD=       YES
+NO_WRKSUBDIR=	YES
+NO_BUILD=	YES
 
 do-fetch:
 

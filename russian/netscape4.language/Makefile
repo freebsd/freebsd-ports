@@ -6,21 +6,21 @@
 #
 
 PORTNAME=	netscape
-PORTVERSION= 	3.01
-CATEGORIES=     russian www
+PORTVERSION=	3.01
+CATEGORIES=	russian www
+EXTRACT_ONLY=	# empty
 
 MAINTAINER=	ache@FreeBSD.org
 
-RUN_DEPENDS += ${X11BASE}/lib/X11/nls/ru_SU.KOI8-R:${PORTSDIR}/russian/X.language
-RUN_DEPENDS += netscape:${PORTSDIR}/www/netscape3
+RUN_DEPENDS+=	${X11BASE}/lib/X11/nls/ru_SU.KOI8-R:${PORTSDIR}/russian/X.language
+RUN_DEPENDS+=	netscape:${PORTSDIR}/www/netscape3
 
-RESTRICTED=     "Includes a copyrighted file from Netscape"
-EXTRACT_ONLY=   # empty
-NO_BUILD=       YES
-NO_WRKSUBDIR=   YES
-USE_X_PREFIX=   YES
+RESTRICTED=	"Includes a copyrighted file from Netscape"
+NO_BUILD=	YES
+NO_WRKSUBDIR=	YES
+USE_X_PREFIX=	YES
 
-APPDEF = ${X11BASE}/lib/X11/app-defaults
+APPDEF=		${X11BASE}/lib/X11/app-defaults
 
 # no distfile to fetch
 do-fetch:

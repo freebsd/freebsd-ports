@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xruskb
-PORTVERSION= 	1.9.3
+PORTVERSION=	1.9.3
 CATEGORIES=	russian x11
 MASTER_SITES=	ftp://ftp.yars.free.net/pub/software/unix/X11/xruskb-old/ \
 		# ftp://ftp.kiae.su/pub/x11/cyrillic/

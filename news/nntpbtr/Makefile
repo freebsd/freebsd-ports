@@ -8,8 +8,8 @@
 PORTNAME=	nntpbtr
 PORTVERSION=	1.7
 CATEGORIES=	news
-MASTER_SITES=   ftp://ftp.kiarchive.ru/pub/unix/news/
-EXTRACT_SUFX=   .tar.Z
+MASTER_SITES=	ftp://ftp.kiarchive.ru/pub/unix/news/
+EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	dk@farm.org
 

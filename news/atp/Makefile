@@ -17,7 +17,7 @@ MAINTAINER=		dburr@FreeBSD.org
 RUN_DEPENDS=		zip:${PORTSDIR}/archivers/zip \
 			unzip:${PORTSDIR}/archivers/unzip
 
-WRKSRC=                 ${WRKDIR}/${PKGNAME}
+WRKSRC=			${WRKDIR}/${PKGNAME}
 
 USE_GMAKE=		YES
 GNU_CONFIGURE=		YES

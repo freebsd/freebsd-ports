@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	prc-tools
-PORTVERSION= 	2.0
+PORTVERSION=	2.0
 CATEGORIES=	palm
 MASTER_SITES=	http://www.palm.com/devzone/tools/gcc/dist/
 

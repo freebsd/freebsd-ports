@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nn
-PORTVERSION= 	6.5.6
+PORTVERSION=	6.5.6
 CATEGORIES=	news
 MASTER_SITES=	ftp://ftp.visi.com/users/mtpins/nn/
 EXTRACT_SUFX=	.tar.Z

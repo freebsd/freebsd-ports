@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	imgvtopgm
-PORTVERSION= 	2.0
+PORTVERSION=	2.0
 CATEGORIES=	palm graphics
 MASTER_SITES=	http://www.trends.net/~mu/srcs/
 

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	coldsync
-PORTVERSION= 	1.1.2
+PORTVERSION=	1.1.2
 CATEGORIES=	palm comms
 MASTER_SITES=	http://www.ooblick.com/software/coldsync/
 

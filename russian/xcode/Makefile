@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xcode
-PORTVERSION= 	1.0
+PORTVERSION=	1.0
 CATEGORIES=	russian
 MASTER_SITES=	ftp://ftp.yars.free.net/pub/software/unix/util/text/
 DISTNAME=	${PORTNAME}

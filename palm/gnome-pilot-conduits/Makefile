@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnomepilot-conduits
-PORTVERSION= 	0.2
+PORTVERSION=	0.2
 CATEGORIES=	palm comms gnome
 MASTER_SITES=	http://www.gnome.org/gnome-pilot/download/
 DISTNAME=	gnome-pilot-conduits-${PORTVERSION}
