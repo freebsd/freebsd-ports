@@ -17,7 +17,7 @@ COMMENT=	A lightweight window manager with emphasis on usability
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
-MAKE_ENV=	X11_PREFIX="${X11BASE}"
+MAKE_ENV=	X11_PREFIX="${X11BASE}" HAS_SYSTEM_ASPRINTF=1
 
 MAN1=		pwm.1x
 
