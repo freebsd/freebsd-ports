@@ -3,8 +3,8 @@ include/libyahoo2/yahoo2_callbacks.h
 include/libyahoo2/yahoo2_types.h
 include/libyahoo2/yahoo_httplib.h
 include/libyahoo2/yahoo_list.h
-@dirrm include/libyahoo2
 lib/libyahoo2.a
 lib/libyahoo2.so
 lib/libyahoo2.so.3
-lib/pkgconfig/libyahoo2.pc
+libdata/pkgconfig/libyahoo2.pc
+@dirrm include/libyahoo2
