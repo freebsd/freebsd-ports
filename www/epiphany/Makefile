@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	epiphany
-PORTVERSION=	1.2.6
-PORTREVISION=	2
+PORTVERSION=	1.2.7
 CATEGORIES=	www gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/1.2
@@ -19,8 +18,6 @@ COMMENT=	An extremely lightweight and simple web browser for GNOME 2
 BUILD_DEPENDS=	${X11BASE}/lib/${MOZILLA}/components/libwidget_gtk2.so:${PORTSDIR}/www/${MOZILLA}
 RUN_DEPENDS=	${X11BASE}/lib/${MOZILLA}/components/libwidget_gtk2.so:${PORTSDIR}/www/${MOZILLA}
 
-MOZ_CONFIGURE_ARGS=	--with-mozilla-snapshot="1.7"
-
 MOZILLA=	mozilla
 HEADERS_SUFX=
 
@@ -31,7 +28,6 @@ HEADERS_SUFX=
 .if ${WITH_MOZILLA}=="mozilla-devel" || ${WITH_MOZILLA}=="mozilla-devel-gtk2"
 MOZILLA=	mozilla-devel
 HEADERS_SUFX=	-devel
-MOZ_CONFIGURE_ARGS=	--with-mozilla-snapshot="1.8a2"
 .else
 MOZILLA=	mozilla
 HEADERS_SUFX=
@@ -46,8 +42,7 @@ USE_LIBTOOL_VER=15
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 CONFIGURE_ARGS=	--with-mozilla-includes="${X11BASE}/include/mozilla${HEADERS_SUFX}" \
-		--with-mozilla-libs="${X11BASE}/lib/${MOZILLA}" \
-		${MOZ_CONFIGURE_ARGS}
+		--with-mozilla-libs="${X11BASE}/lib/${MOZILLA}"
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
