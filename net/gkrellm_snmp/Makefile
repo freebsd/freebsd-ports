@@ -12,7 +12,7 @@ MASTER_SITES=	http://triq.net/gkrellm/
 
 MAINTAINER=	eike.bernhardt@gmx.de
 
-LIB_DEPENDS=	snmp.4:${PORTSDIR}/net/ucd-snmp
+LIB_DEPENDS=	snmp.4:${PORTSDIR}/net/net-snmp
 BUILD_DEPENDS=	${X11BASE}/include/gkrellm/gkrellm.h:${PORTSDIR}/sysutils/gkrellm
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm
 
