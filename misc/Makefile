@@ -170,7 +170,6 @@
     SUBDIR += sls
     SUBDIR += smssend
     SUBDIR += snowflake
-    SUBDIR += speedtouch_usb
     SUBDIR += splitvt
     SUBDIR += sshbuddy
     SUBDIR += stan
