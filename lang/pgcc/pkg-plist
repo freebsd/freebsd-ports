@@ -1,6 +1,7 @@
 bin/c++
 bin/g++
 bin/gcc
+bin/gcov
 bin/pentium-freebsd-gcc
 bin/protoize
 bin/unprotoize
@@ -28,6 +29,8 @@ info/gcc.info-23
 info/gcc.info-24
 info/gcc.info-25
 info/gcc.info-26
+info/gcc.info-27
+info/gcc.info-28
 info/gcc.info-3
 info/gcc.info-4
 info/gcc.info-5
