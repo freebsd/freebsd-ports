@@ -7,12 +7,14 @@
 
 PORTNAME=	dopewars
 PORTVERSION=	1.5.8
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://bellatrix.pcl.ox.ac.uk/~ben/dopewars/
 MASTER_SITE_SUBDIR=	dopewars
 
 MAINTAINER=	petef@FreeBSD.org
+COMMENT=	A UNIX rewrite of a game originally based on "Drug Wars"
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
@@ -21,13 +23,13 @@ USE_GNOME=	gtk12
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
 
-CONFIGURE_ARGS+=	--enable-nls --enable-networking --disable-plugins
+CONFIGURE_ARGS=	--enable-networking --disable-plugins
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 .if defined(NOPORTDOCS)
 MAKE_ENV+=	NOPORTDOCS=yes
 .endif
-
-PLIST_SUB=	DOPEWARS=${PKGNAME}
 
 MAN6=	dopewars.6
 
