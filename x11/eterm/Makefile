@@ -3,7 +3,7 @@
 # Date created:        24 November 1997
 # Whom:                Murray Stokely <murray@cdrom.com>
 #
-# $Id: Makefile,v 1.13 1999/01/17 17:56:12 nectar Exp $
+# $Id: Makefile,v 1.14 1999/02/22 04:09:33 steve Exp $
 #
 
 DISTNAME=	Eterm-0.8.8
