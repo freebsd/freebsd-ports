@@ -1,0 +1,6 @@
+gff2ps is a script program developed with the aim of converting gff-formatted
+records into high quality one-dimensional plots in PostScript. Such plots maybe
+useful for comparing genomic structures and to visualizing outputs from genome
+annotation programs.
+
+WWW: http://www1.imim.es/~jabril/
