@@ -9,7 +9,7 @@ PORTNAME=	gconf2
 PORTVERSION=	1.1.8
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	pre-gnome2/releases/gnome-2.0-desktop-beta
+MASTER_SITE_SUBDIR=	pre-gnome2/releases/gnome-2.0-desktop-beta2
 DISTNAME=	GConf-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
@@ -18,7 +18,7 @@ MAINTAINER=	gnome@FreeBSD.org
 LIB_DEPENDS=	ORBit-2.0:${PORTSDIR}/devel/ORBit2 \
 		db3.2:${PORTSDIR}/databases/db3 \
 		xml2.5:${PORTSDIR}/textproc/libxml2 \
-		gtk-x11-1.3.14:${PORTSDIR}/x11-toolkits/gtk13
+		gtk-x11-2.0.0:${PORTSDIR}/x11-toolkits/gtk20
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
