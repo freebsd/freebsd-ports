@@ -31,6 +31,12 @@ CONFIGURE_ENV=	CPPFLAGS='-I${LOCALBASE}/include' \
 		LIBS='-L${LOCALBASE}/lib'
 MAN1=		balsa.1
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502126
+BROKEN=		"Does not compile on FreeBSD >= 5.x"
+.endif
+
 pre-patch:
 	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
 		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
@@ -45,4 +51,4 @@ pre-configure:
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/balsa.1 ${PREFIX}/man/man1
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

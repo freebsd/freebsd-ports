@@ -68,6 +68,10 @@ DOC_ja_JP=	QuickStart.txt QuickUsage.txt guide-1.html guide-2.html \
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 502126
+BROKEN=		"Does not compile on FreeBSD >= 5.x"
+.endif
+
 .if ${ARCH} == "ia64"
 BROKEN=		"Coredump during build on ia64"
 .endif

@@ -42,6 +42,12 @@ KON14FONT=Startup
 	@${FALSE}
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502126
+BROKEN=		"Does not compile on FreeBSD >= 5.x"
+.endif
+
 pre-build:
 	${SED} -e 's,%%PREFIX%%,${PREFIX},' \
 	  -e 's,%%DISTDIR%%,${DISTDIR},' \
@@ -60,4 +66,4 @@ post-install:
 		${DOCDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
