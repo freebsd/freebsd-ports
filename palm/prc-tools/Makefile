@@ -3,7 +3,7 @@
 # Date created:         November, 1997
 # Whom:                 Paul Traina <pst@freebsd.org>
 #
-# $Id: Makefile,v 1.1.1.1 1997/11/24 09:03:49 pst Exp $
+# $Id: Makefile,v 1.2 1997/11/24 09:43:42 pst Exp $
 #
 # *WARNING* write access to ${PREFIX} is required DURING build because the
 # make "all" target actually installs the gnu tools before building the
@@ -67,6 +67,9 @@ STRIP=		build-prc \
 # after we apply freebsd patches, apply prc-tool's patches to gcc/gdb/...
 post-patch:
 		(cd ${WRKSRC} ; make patch)
+
+pre-install:
+		${MKDIR} ${PREFIX}
 
 # the info files are redundant
 post-install:
