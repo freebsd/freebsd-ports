@@ -678,6 +678,7 @@
     SUBDIR += p5-Data-Dump-Streamer
     SUBDIR += p5-Data-DumpXML
     SUBDIR += p5-Data-Dumper
+    SUBDIR += p5-Data-Dumper-Simple
     SUBDIR += p5-Data-Flow
     SUBDIR += p5-Data-HexDump
     SUBDIR += p5-Data-Hexdumper

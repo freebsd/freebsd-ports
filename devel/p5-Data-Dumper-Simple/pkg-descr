@@ -1,0 +1,17 @@
+This module allow the user to dump variables in a Data::Dumper format.
+
+Unlike the default behavior of Data::Dumper, the variables are named
+(instead of $VAR1, $VAR2, etc.)  Data::Dumper provides an extended 
+interface that allows the programmer to name the variables, but this
+interface requires a lot of typing and is prone to tyops (sic).  This 
+module fixes that.
+
+Data::Dumper::Simple is actually a source filter that replaces all 
+instances of Dumper($some, @args) in your code with a call to 
+Data::Dumper->Dump(). You can use the one function provided to make 
+dumping variables for debugging a trivial task.
+
+Note that this is primarily a debugging tool. Data::Dumper offers a 
+bit more than that, so don't expect this module to be more than it is.
+
+WWW: http://search.cpan.org/dist/Data-Dumper-Simple/
