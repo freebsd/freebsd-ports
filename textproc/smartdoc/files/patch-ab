@@ -1,0 +1,62 @@
+--- doc/quick/HelloWorld_ja.sdoc~	Tue Jan  2 16:22:23 2001
++++ doc/quick/HelloWorld_ja.sdoc	Tue Jan  2 16:19:28 2001
+@@ -1,5 +1,5 @@
+-// <em>encoding="Shift_JIS"</em>
+-<?xml version='1.0' encoding="Shift_JIS" ?>
++// <em>encoding="EUC-JP"</em>
++<?xml version='1.0' encoding="EUC-JP" ?>
+ 
+ // <em>xml:lang="ja"</em>
+ <doc xml:lang="ja">
+--- doc/quick/quick.sdoc~	Tue Jan  2 17:29:25 2001
++++ doc/quick/quick.sdoc	Tue Jan  2 17:31:57 2001
+@@ -1,4 +1,4 @@
+-<?xml version='1.0' encoding="Shift_JIS" ?>
++<?xml version='1.0' encoding="EUC-JP" ?>
+ 
+ <doc>
+ <head>
+@@ -32,7 +32,7 @@
+ 日本語の場合にはもう少し<span ruby="おまじない">お呪い</span>が必要に
+ なります。
+ 
+-<program src="HelloWorld_ja.sdoc" encoding="Shift_JIS"/>
++<program src="HelloWorld_ja.sdoc" encoding="EUC-JP"/>
+ 
+ 日本語ために必要な設定は以下の2つです。
+ 
+@@ -42,8 +42,8 @@
+ </ul>
+ 
+ エンコーディングはSmartDocのテキストが使用しているコード系を指定します。
+-この例ではWindowsで使われているシフトJISを指定していますが、UNIXの場合
+-には日本語EUCを指定することになるでしょう。
++この例ではUNIXで使われている日本語EUCを指定していますが、Windowsの場合
++にはシフトJISを指定することになるでしょう。
+ 
+ <table caption="コード系">
+ <thead>
+--- doc/refman/refman.sdoc~	Tue Jan  2 16:05:39 2001
++++ doc/refman/refman.sdoc	Tue Jan  2 16:08:35 2001
+@@ -1,4 +1,4 @@
+-<?xml version='1.0' encoding="Shift_JIS" ?>
++<?xml version='1.0' encoding="EUC-JP" ?>
+ 
+ <doc xml:lang="ja">
+ 
+--- doc/sample/sample.sdoc~	Tue Jan  2 16:05:39 2001
++++ doc/sample/sample.sdoc	Tue Jan  2 16:08:45 2001
+@@ -1,4 +1,4 @@
+-<?xml version='1.0' encoding="Shift_JIS" ?>
++<?xml version='1.0' encoding="EUC-JP" ?>
+ 
+ <doc xml:lang="ja">
+ <head>
+--- doc/sampleI18N/sample.sdoc~	Tue Jan  2 16:05:40 2001
++++ doc/sampleI18N/sample.sdoc	Tue Jan  2 16:08:54 2001
+@@ -1,4 +1,4 @@
+-<?xml version='1.0' encoding="Shift_JIS" ?>
++<?xml version='1.0' encoding="EUC-JP" ?>
+ 
+ <doc xml:lang="ja">
+ <head>
