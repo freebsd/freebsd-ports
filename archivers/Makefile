@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.19 1997/11/20 08:21:26 tg Exp $
+# $Id: Makefile,v 1.20 1998/12/01 23:11:59 billf Exp $
 #
 
     SUBDIR += arc
@@ -13,6 +13,7 @@
     SUBDIR += nulib
     SUBDIR += p5-Compress-Zlib
     SUBDIR += rar
+    SUBDIR += unace
     SUBDIR += unarj
     SUBDIR += unrar
     SUBDIR += unzip
